@@ -347,6 +347,7 @@ librenms/LibreNMS/OS/Dlinkap.php
 librenms/LibreNMS/OS/Dnos.php
 librenms/LibreNMS/OS/Edgecos.php
 librenms/LibreNMS/OS/Edgeos.php
+librenms/LibreNMS/OS/Edgeosolt.php
 librenms/LibreNMS/OS/Edgeswitch.php
 librenms/LibreNMS/OS/Ekinops.php
 librenms/LibreNMS/OS/EltexMes23xx.php
@@ -395,6 +396,7 @@ librenms/LibreNMS/OS/Junos.php
 librenms/LibreNMS/OS/Junose.php
 librenms/LibreNMS/OS/Lcos.php
 librenms/LibreNMS/OS/Mimosa.php
+librenms/LibreNMS/OS/Mni.php
 librenms/LibreNMS/OS/MoxaEtherdevice.php
 librenms/LibreNMS/OS/Netscaler.php
 librenms/LibreNMS/OS/Netsure.php
@@ -657,6 +659,8 @@ librenms/LibreNMS/Snmptrap/Handlers/VmwVmPoweredOn.php
 librenms/LibreNMS/Snmptrap/Handlers/VmwVmSuspended.php
 librenms/LibreNMS/Snmptrap/Handlers/WarmBoot.php
 librenms/LibreNMS/Snmptrap/Trap.php
+librenms/LibreNMS/Traits/
+librenms/LibreNMS/Traits/RuntimeClassCache.php
 librenms/LibreNMS/Util/
 librenms/LibreNMS/Util/AutonomousSystem.php
 librenms/LibreNMS/Util/Categorizer.php
@@ -681,6 +685,7 @@ librenms/LibreNMS/Util/Laravel.php
 librenms/LibreNMS/Util/Mail.php
 librenms/LibreNMS/Util/Module.php
 librenms/LibreNMS/Util/ModuleTestHelper.php
+librenms/LibreNMS/Util/Notifications.php
 librenms/LibreNMS/Util/Number.php
 librenms/LibreNMS/Util/OS.php
 librenms/LibreNMS/Util/ObjectCache.php
@@ -996,6 +1001,7 @@ librenms/app/Http/Middleware/TrustHosts.php
 librenms/app/Http/Middleware/TrustProxies.php
 librenms/app/Http/Middleware/VerifyCsrfToken.php
 librenms/app/Http/Middleware/VerifyTwoFactor.php
+librenms/app/Http/Middleware/VerifyUserEnabled.php
 librenms/app/Http/Requests/
 librenms/app/Http/Requests/StoreUserRequest.php
 librenms/app/Http/Requests/TwoFactorManagementRequest.php
@@ -1012,12 +1018,14 @@ librenms/app/Listeners/LegacyQueryListener.php
 librenms/app/Listeners/MarkNotificationsRead.php
 librenms/app/Listeners/QueryDebugListener.php
 librenms/app/Listeners/QueryMetricListener.php
+librenms/app/Listeners/SocialiteWasCalledListener.php
 librenms/app/Listeners/UpdateDeviceGroups.php
 librenms/app/Logging/
 librenms/app/Logging/CliColorFormatter.php
 librenms/app/Logging/NoColorFormatter.php
 librenms/app/Logging/Reporting/
 librenms/app/Logging/Reporting/Middleware/
+librenms/app/Logging/Reporting/Middleware/AddGitInformation.php
 librenms/app/Logging/Reporting/Middleware/CleanContext.php
 librenms/app/Logging/Reporting/Middleware/SetGroups.php
 librenms/app/Models/
@@ -1185,7 +1193,6 @@ librenms/app/Providers/LegacyUserProvider.php
 librenms/app/Providers/PluginProvider.php
 librenms/app/Providers/RouteServiceProvider.php
 librenms/app/Providers/SnmptrapProvider.php
-librenms/app/Providers/SocialiteListenersServiceProvider.php
 librenms/app/Providers/TokenUserProvider.php
 librenms/app/StreamedOutput.php
 librenms/app/View/
@@ -2210,6 +2217,7 @@ librenms/html/images/os/mimosa.svg
 librenms/html/images/os/minkelsrms.png
 librenms/html/images/os/mirth.png
 librenms/html/images/os/mitsubishi.svg
+librenms/html/images/os/mni.svg
 librenms/html/images/os/mobileiron.png
 librenms/html/images/os/monowall.png
 librenms/html/images/os/motorola-cm.png
@@ -2864,6 +2872,7 @@ librenms/includes/definitions/discovery/edfa.yaml
 librenms/includes/definitions/discovery/edfamux.yaml
 librenms/includes/definitions/discovery/edgeos-ep.yaml
 librenms/includes/definitions/discovery/edgeos.yaml
+librenms/includes/definitions/discovery/edgeosolt.yaml
 librenms/includes/definitions/discovery/edgeswitch.yaml
 librenms/includes/definitions/discovery/eds.yaml
 librenms/includes/definitions/discovery/ees.yaml
@@ -3029,6 +3038,7 @@ librenms/includes/definitions/discovery/microsemipdsine.yaml
 librenms/includes/definitions/discovery/microsemitime.yaml
 librenms/includes/definitions/discovery/mimosa.yaml
 librenms/includes/definitions/discovery/minkelsrms.yaml
+librenms/includes/definitions/discovery/mni.yaml
 librenms/includes/definitions/discovery/monowall.yaml
 librenms/includes/definitions/discovery/motorola-cm.yaml
 librenms/includes/definitions/discovery/moxa-awk.yaml
@@ -3187,6 +3197,7 @@ librenms/includes/definitions/discovery/sub10.yaml
 librenms/includes/definitions/discovery/swos.yaml
 librenms/includes/definitions/discovery/symbol.yaml
 librenms/includes/definitions/discovery/tait-infra93.yaml
+librenms/includes/definitions/discovery/tait-tnadmin.yaml
 librenms/includes/definitions/discovery/teldat.yaml
 librenms/includes/definitions/discovery/teradici-pcoip.yaml
 librenms/includes/definitions/discovery/terra-sdi410c.yaml
@@ -3270,6 +3281,7 @@ librenms/includes/definitions/edfamux.yaml
 librenms/includes/definitions/edgecos.yaml
 librenms/includes/definitions/edgeos-ep.yaml
 librenms/includes/definitions/edgeos.yaml
+librenms/includes/definitions/edgeosolt.yaml
 librenms/includes/definitions/edgeswitch.yaml
 librenms/includes/definitions/eds.yaml
 librenms/includes/definitions/ees.yaml
@@ -3463,6 +3475,7 @@ librenms/includes/definitions/microsemitime.yaml
 librenms/includes/definitions/mimosa.yaml
 librenms/includes/definitions/minkelsrms.yaml
 librenms/includes/definitions/mirth.yaml
+librenms/includes/definitions/mni.yaml
 librenms/includes/definitions/mobileiron.yaml
 librenms/includes/definitions/monowall.yaml
 librenms/includes/definitions/motorola-cm.yaml
@@ -3661,6 +3674,7 @@ librenms/includes/definitions/svos.yaml
 librenms/includes/definitions/swos.yaml
 librenms/includes/definitions/symbol.yaml
 librenms/includes/definitions/tait-infra93.yaml
+librenms/includes/definitions/tait-tnadmin.yaml
 librenms/includes/definitions/teldat.yaml
 librenms/includes/definitions/teradici-pcoip.yaml
 librenms/includes/definitions/terra-sdi410c.yaml
@@ -3804,6 +3818,7 @@ librenms/includes/discovery/ports-stack.inc.php
 librenms/includes/discovery/ports.inc.php
 librenms/includes/discovery/ports/airos-af-ltu.inc.php
 librenms/includes/discovery/ports/brocade.inc.php
+librenms/includes/discovery/ports/edgeosolt.inc.php
 librenms/includes/discovery/ports/ekinops.inc.php
 librenms/includes/discovery/ports/luminato.inc.php
 librenms/includes/discovery/ports/zynos.inc.php
@@ -4721,6 +4736,11 @@ librenms/includes/html/graphs/application/puppet-agent_time.inc.php
 librenms/includes/html/graphs/application/pureftpd_bitrate.inc.php
 librenms/includes/html/graphs/application/pureftpd_connections.inc.php
 librenms/includes/html/graphs/application/pureftpd_users.inc.php
+librenms/includes/html/graphs/application/pwrstatd-common.inc.php
+librenms/includes/html/graphs/application/pwrstatd_minutes.inc.php
+librenms/includes/html/graphs/application/pwrstatd_percentage.inc.php
+librenms/includes/html/graphs/application/pwrstatd_voltage.inc.php
+librenms/includes/html/graphs/application/pwrstatd_wattage.inc.php
 librenms/includes/html/graphs/application/redis_clients.inc.php
 librenms/includes/html/graphs/application/redis_commands.inc.php
 librenms/includes/html/graphs/application/redis_connections.inc.php
@@ -5506,6 +5526,7 @@ librenms/includes/html/pages/device/apps/powermon.inc.php
 librenms/includes/html/pages/device/apps/proxmox.inc.php
 librenms/includes/html/pages/device/apps/puppet-agent.inc.php
 librenms/includes/html/pages/device/apps/pureftpd.inc.php
+librenms/includes/html/pages/device/apps/pwrstatd.inc.php
 librenms/includes/html/pages/device/apps/redis.inc.php
 librenms/includes/html/pages/device/apps/rrdcached.inc.php
 librenms/includes/html/pages/device/apps/sagan.inc.php
@@ -5879,7 +5900,6 @@ librenms/includes/html/table/wireless-sensors.inc.php
 librenms/includes/html/vars.inc.php
 librenms/includes/include-dir.inc.php
 librenms/includes/init.php
-librenms/includes/notifications.php
 librenms/includes/polling/
 librenms/includes/polling/applications/
 librenms/includes/polling/applications.inc.php
@@ -5930,6 +5950,7 @@ librenms/includes/polling/applications/powermon.inc.php
 librenms/includes/polling/applications/proxmox.inc.php
 librenms/includes/polling/applications/puppet-agent.inc.php
 librenms/includes/polling/applications/pureftpd.inc.php
+librenms/includes/polling/applications/pwrstatd.inc.php
 librenms/includes/polling/applications/redis.inc.php
 librenms/includes/polling/applications/rrdcached.inc.php
 librenms/includes/polling/applications/sagan.inc.php
@@ -6012,6 +6033,7 @@ librenms/includes/polling/ports/os/airos-af.inc.php
 librenms/includes/polling/ports/os/ciena-sds.inc.php
 librenms/includes/polling/ports/os/cmm.inc.php
 librenms/includes/polling/ports/os/cxr-ts.inc.php
+librenms/includes/polling/ports/os/edgeosolt.inc.php
 librenms/includes/polling/ports/os/ekinops.inc.php
 librenms/includes/polling/ports/os/fabos.inc.php
 librenms/includes/polling/ports/os/infinera-groove.inc.php
@@ -9485,10 +9507,14 @@ librenms/mibs/mitel/MITEL-MIB
 librenms/mibs/mitsubishi/
 librenms/mibs/mitsubishi/NET-SNMP-MIB
 librenms/mibs/mitsubishi/UPS-MIB
+librenms/mibs/mni/
+librenms/mibs/mni/MNI-PROTEUS-AMT-MIB
 librenms/mibs/moxa/
 librenms/mibs/moxa/MOXA-AWK4131A-MIB
 librenms/mibs/moxa/MOXA-EDSG508E-MIB
+librenms/mibs/moxa/MOXA-EDSG512E-MIB
 librenms/mibs/moxa/MOXA-EDSG512E8POE-MIB
+librenms/mibs/moxa/MOXA-EDSG516E-MIB
 librenms/mibs/moxa/MOXA-EDSP510A8POE-MIB
 librenms/mibs/moxa/MOXA-IKS6726A-MIB
 librenms/mibs/mrv/
@@ -10362,6 +10388,9 @@ librenms/mibs/tait/TAIT-INFRA93SERIES-MIB
 librenms/mibs/tait/TAIT-INFRA93SERIES-TC-MIB
 librenms/mibs/tait/TAIT-TN9300-MIB
 librenms/mibs/tait/TAIT-TN9300-TC
+librenms/mibs/tait/TAIT-TNADMIN-MIB
+librenms/mibs/tait/TAIT-TNADMIN-MODULE-MIB
+librenms/mibs/tait/TAIT-TNADMIN-TC
 librenms/mibs/tegile/
 librenms/mibs/tegile/TEGILE-MIB
 librenms/mibs/telco-systems/
@@ -10649,6 +10678,7 @@ librenms/mibs/ubnt/UBNT-AirFIBER-MIB
 librenms/mibs/ubnt/UBNT-AirMAX-MIB
 librenms/mibs/ubnt/UBNT-EdgeMAX-MIB
 librenms/mibs/ubnt/UBNT-MIB
+librenms/mibs/ubnt/UBNT-UFIBER-MIB
 librenms/mibs/ubnt/UBNT-UniFi-MIB
 librenms/mibs/ubnt/UI-AF60-MIB
 librenms/mibs/ucopia/
