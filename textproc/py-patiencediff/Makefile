@@ -16,6 +16,7 @@ WANTLIB +=		${MODPY_WANTLIB} pthread
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
+BUILD_DEPENDS =		lang/cython${MODPY_FLAVOR}
 
 FLAVORS =		python3
 FLAVOR =		python3
