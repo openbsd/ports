@@ -5,6 +5,7 @@ COMMENT=		free open source planetarium
 GH_TAGNAME=		v1.0
 GH_ACCOUNT=		Stellarium
 GH_PROJECT=		stellarium
+REVISION=		0
 
 CATEGORIES=		astro x11
 
@@ -28,7 +29,7 @@ MODULES=		devel/cmake \
 MODCMAKE_LDFLAGS=	-L${LOCALBASE}/lib
 MODPY_RUNDEP=		No
 
-BUILD_DEPENDS=		astro/calcmysky \
+BUILD_DEPENDS=		astro/calcmysky>=0.2.0 \
 			devel/indi,-libs
 
 LIB_DEPENDS=		misc/gpsd \

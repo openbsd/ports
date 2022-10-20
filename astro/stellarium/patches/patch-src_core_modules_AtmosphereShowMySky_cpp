@@ -1,0 +1,20 @@
+From 9f0c481d1096d3a56894991cbf1d1e1bdb66c303 Mon Sep 17 00:00:00 2001
+From: Ruslan Kabatsayev <b7.10110111@gmail.com>
+Date: Sat, 8 Oct 2022 21:04:52 +0300
+Subject: [PATCH] Add support for the versioned variant of ShowMySky library
+
+Index: src/core/modules/AtmosphereShowMySky.cpp
+--- src/core/modules/AtmosphereShowMySky.cpp.orig
++++ src/core/modules/AtmosphereShowMySky.cpp
+@@ -407,7 +407,11 @@ void AtmosphereShowMySky::resolveFunctions()
+ }
+ 
+ AtmosphereShowMySky::AtmosphereShowMySky()
++#ifdef SHOWMYSKY_LIB_NAME
++	: showMySkyLib(SHOWMYSKY_LIB_NAME, ShowMySky_ABI_version)
++#else // for compatibility with legacy unversioned naming
+ 	: showMySkyLib("ShowMySky")
++#endif
+ 	, viewport(0,0,0,0)
+ 	, gridMaxY(44)
+ 	, gridMaxX(44)
