@@ -1,25 +1,6 @@
 Gajim Plugins
 =============
 
-Upstream keeps removing the plugin installer plugin from the
-distribution tarball, so automatic of plugin installation is not
-possible at this point.
-
-To install plugins, clone the plugins repository:
-
-git clone \
-    https://dev.gajim.org/gajim/gajim-plugins \
-    ~/.local/share/gajim/plugins/
-
-Also, upstream decided to check for the output of sys.platform and
-compare to a json file on the plugins manifest.  Of course, this only
-includes "linux", "win32" and "darwin" for the majority of the plugins,
-so none of them will work on OpenBSD.  Some were tested by adding
-"openbsd7" to the list of platforms on the manifest JSON file for each
-plugin and they just work.  So, for each plugin you want to enable, edit
-the corresponding "plugin-manifest.json" file and add "openbsd7" to the
-list of platforms, and give it a try.
-
 Some plugins in Gajim require additional Python modules to function
 properly.  For instance, in order to use the OMEMO plugin, axolotl is
 required.  This is available on OpenBSD via the py3-axolotl package or

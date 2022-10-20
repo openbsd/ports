@@ -1,14 +1,13 @@
 COMMENT=	fully-featured XMPP client written in Python
-MODPY_EGG_VERSION=	1.4.7
+MODPY_EGG_VERSION=	1.5.2
 DISTNAME=	gajim-${MODPY_EGG_VERSION}
 CATEGORIES=	net x11
-REVISION=	0
 
 HOMEPAGE=	https://www.gajim.org
 
 MAINTAINER=    Paco Esteban <paco@openbsd.org>
 
-MASTER_SITES=	${HOMEPAGE}/downloads/1.4/
+MASTER_SITES=	${HOMEPAGE}/downloads/${MODPY_EGG_VERSION:R}/
 
 # GPLv3 only
 PERMIT_PACKAGE=	Yes
@@ -26,7 +25,7 @@ RUN_DEPENDS=	audio/gsound \
 		devel/py-gobject3 \
 		graphics/py-Pillow${MODPY_FLAVOR} \
 		graphics/py-cairo${MODPY_FLAVOR} \
-		net/py-nbxmpp${MODPY_FLAVOR}>=3.1.1 \
+		net/py-nbxmpp${MODPY_FLAVOR}>=3.2.4 \
 		security/py-cryptodome${MODPY_FLAVOR} \
 		security/py-gnupg${MODPY_FLAVOR} \
 		security/py-keyring${MODPY_FLAVOR} \
