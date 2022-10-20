@@ -1,3 +1,9 @@
+ONLY_FOR_ARCHS =	amd64
+# this depends on modernc.org/libc; as of v1.16.8 it only has code to
+# support amd64 on OpenBSD.
+# 
+# recheck when updating; 1.17 adds arm64 and 1.20 adds i386
+
 COMMENT =	open source implementation of the Tailscale control server
 
 MODGO_MODNAME =	github.com/juanfont/headscale
