@@ -3,10 +3,9 @@ ONLY_FOR_ARCHS =	amd64 aarch64
 
 PKG_ARCH =	*
 
-FV =		102.3.3
+FV =		102.4.0
 V =		${FV:C/b.$//}
 NAME =		thunderbird-i18n
-REVISION =	0
 
 CATEGORIES =	mail
 
