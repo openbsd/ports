@@ -1,0 +1,13 @@
+Index: configs/samples/ast_debug_tools.conf.sample
+--- configs/samples/ast_debug_tools.conf.sample.orig
++++ configs/samples/ast_debug_tools.conf.sample
+@@ -24,7 +24,8 @@
+ # The exclusion of files ending ".txt" is just for
+ # demonstration purposes as non-asterisk-coredumps will be
+ # ignored anyway.
+-COREDUMPS=( /tmp/core!(*.txt) )
++#COREDUMPS=( /tmp/core!(*.txt) )
++COREDUMPS=( /var/crash/asterisk/*.core /tmp/asterisk.core )
+ 
+ # OUTPUTDIR is the directory to contain output files and
+ # work directories. 

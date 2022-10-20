@@ -1,0 +1,4 @@
+@option is-branch
+@so lib/asterisk/modules/codec_speex.so
+@so lib/asterisk/modules/format_ogg_speex.so
+@so lib/asterisk/modules/func_speex.so

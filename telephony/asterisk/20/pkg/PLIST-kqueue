@@ -1,0 +1,2 @@
+@option is-branch
+@so lib/asterisk/modules/res_timing_kqueue.so

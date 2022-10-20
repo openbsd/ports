@@ -1,0 +1,36 @@
+Index: contrib/scripts/ast_coredumper
+--- contrib/scripts/ast_coredumper.orig
++++ contrib/scripts/ast_coredumper
+@@ -16,7 +16,8 @@ source <(sed -n -r -e "/^#@@@FUNCSSTART@@@/,\${p;/^#@@
+ 
+ # The "!(*.txt)" is a bash construct that excludes files ending with .txt
+ # from the glob match.
+-declare -a COREDUMPS=( /tmp/core!(*.txt) )
++#declare -a COREDUMPS=( /tmp/core!(*.txt) )
++declare -a COREDUMPS=( /var/crash/asterisk/*.core /tmp/asterisk.core )
+ 
+ # A line starting with ': ' is a POSIX construct that makes the shell
+ # perform the operation but ignore the result.  This is an alternative to
+@@ -27,7 +28,7 @@ declare -a COREDUMPS=( /tmp/core!(*.txt) )
+ : ${DELETE_COREDUMPS_AFTER:=false}
+ : ${DELETE_RESULTS_AFTER:=false}
+ : ${DRY_RUN:=false}
+-: ${GDB:=$(which gdb)}
++: ${GDB:=$(which egdb)}
+ : ${HELP:=false}
+ : ${LATEST:=false}
+ : ${OUTPUTDIR:=/tmp}
+@@ -566,11 +567,8 @@ DESCRIPTION
+ 		A list of coredumps or coredump search patterns.  These
+ 		will override the default and those specified in the config files.
+ 
+-		The default pattern is "/tmp/core!(*.txt)"
+-
+-		The "!(*.txt)" tells bash to ignore any files that match
+-		the base pattern and end in ".txt".  It$'s not strictly
+-		needed as non asterisk coredumps are always ignored.
++		The default pattern in the OpenBSD package is
++		"/var/crash/asterisk/*.core /tmp/asterisk.core"
+ 
+ NOTES
+ 	You must be root to use this program.

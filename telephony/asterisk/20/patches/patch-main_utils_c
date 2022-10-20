@@ -1,0 +1,12 @@
+Index: main/utils.c
+--- main/utils.c.orig
++++ main/utils.c
+@@ -2728,6 +2728,8 @@ int ast_get_tid(void)
+ 	long lwpid;
+ 	thr_self(&lwpid); /* available since sys/thr.h creation 2003 */
+ 	ret = lwpid;
++#elif defined(__OpenBSD__)
++	ret = getthrid();
+ #elif defined(__NetBSD__)
+ 	ret = _lwp_self();
+ #endif

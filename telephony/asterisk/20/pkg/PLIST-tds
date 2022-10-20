@@ -1,0 +1,7 @@
+@option is-branch
+@so lib/asterisk/modules/cdr_tds.so
+@so lib/asterisk/modules/cel_tds.so
+share/examples/asterisk/default/cdr_tds.conf
+@sample ${SYSCONFDIR}/asterisk/cdr_tds.conf
+share/examples/asterisk/default/cel_tds.conf
+@sample ${SYSCONFDIR}/asterisk/cel_tds.conf

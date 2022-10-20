@@ -1,0 +1,5 @@
+PostgreSQL functions for Asterisk. This includes:
+
+cdr_pgsql.so: Database-backed CDR logging
+cel_pgsql.so: Database-backed channel-event logging
+res_config_pgsql.so: Asterisk PostgreSQL RealTime configuration
