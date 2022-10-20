@@ -354,6 +354,7 @@
      SUBDIR += ruby-pledge,ruby31
      SUBDIR += ruby-rbnacl
      SUBDIR += ruby-rotp
+     SUBDIR += rust-openssl-tests
      SUBDIR += samdump2
      SUBDIR += scanlogd
      SUBDIR += scanssh
