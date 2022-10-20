@@ -1,7 +1,7 @@
 COMMENT =		c++ protocol buffers
 
 CPPMAJOR =		3
-PROTOBUF_VERSION =	21.7
+PROTOBUF_VERSION =	21.8
 V =			${CPPMAJOR}.${PROTOBUF_VERSION}
 TAG =			v${PROTOBUF_VERSION:S/rc-/rc/}
 DISTNAME =		protobuf-cpp-${V}
@@ -9,9 +9,9 @@ PKGNAME =		protobuf-${V:S/-//g}
 
 WRKDIST =		${WRKDIR}/protobuf-${V}
 
-SHARED_LIBS +=		protobuf-lite	17.0    # 32.7
-SHARED_LIBS +=		protobuf	19.0    # 32.7
-SHARED_LIBS +=		protoc		20.0    # 32.7
+SHARED_LIBS +=		protobuf-lite	18.0    # 32.8
+SHARED_LIBS +=		protobuf	20.0    # 32.8
+SHARED_LIBS +=		protoc		21.0    # 32.8
 
 CATEGORIES =		devel
 
