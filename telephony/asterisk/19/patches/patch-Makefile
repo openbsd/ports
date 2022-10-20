@@ -1,8 +1,5 @@
 - don't force compiler flags
 - don't unconditionally set -ftrampolines, it is gcc-only.
-(Blocksruntime isn't working correctly on OpenBSD anyway so clang
-is not yet an option, but patched away here to allow for easier
-testing, and added-back in the port Makefile).
 
 Index: Makefile
 --- Makefile.orig
