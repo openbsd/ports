@@ -110,6 +110,7 @@ MAKE_FLAGS+=		ASTCFLAGS="${CFLAGS}" \
 			ASTPJ_SO_VERSION="${LIBasteriskpj_VERSION}" \
 			NOISY_BUILD="Yes" \
 			OPTIMIZE=
+OLD_SAMPLECONF?=
 
 CONFIGURE_ARGS+=	--localstatedir=/var \
 			--with-download-cache=${FULLDISTDIR} \
@@ -351,7 +352,7 @@ post-install:
 		${PREFIX}/share/doc/asterisk
 	${INSTALL_DATA_DIR} ${EXAMPLEDIR}/basic-pbx
 	${INSTALL_DATA} ${WRKSRC}/configs/basic-pbx/* ${EXAMPLEDIR}/basic-pbx
-.if ${SHORTVER} != 19
+.if ${OLD_SAMPLECONF:L:Myes}
 	${INSTALL_DATA_DIR} ${EXAMPLEDIR}/openbsd
 .for i in ${EXAMPLEFILES}
 	@${SUBST_CMD} -c -m 444 ${FILESDIR}/$i.sample \
