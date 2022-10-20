@@ -13,15 +13,24 @@ Index: configure
  	fi
  fi
  
-@@ -290,6 +290,11 @@ elif test "$tmp1" = Darwin;then
- 	CFLAGS=`fc_add_string "$CFLAGS" "-DMLK_NO_SIMD"`
- elif test "$tmp1" = FreeBSD;then
- 	cf_os=freebsd
-+	cf_make=gmake
-+	CFLAGS=`fc_add_string "$CFLAGS" "-I/usr/local/include"`
-+	LDFLAGS=`fc_add_string "$LDFLAGS" "-L/usr/local/lib"`
-+elif test "$tmp1" = OpenBSD;then
-+	cf_os=openbsd
+@@ -293,6 +293,11 @@ elif test "$tmp1" = FreeBSD;then
  	cf_make=gmake
  	CFLAGS=`fc_add_string "$CFLAGS" "-I/usr/local/include"`
  	LDFLAGS=`fc_add_string "$LDFLAGS" "-L/usr/local/lib"`
++elif test "$tmp1" = OpenBSD;then
++	cf_os=openbsd
++	cf_make=gmake
++	CFLAGS=`fc_add_string "$CFLAGS" "-I/usr/local/include"`
++	LDFLAGS=`fc_add_string "$LDFLAGS" "-L/usr/local/lib"`
+ fi
+ 
+ # dir
+@@ -349,7 +354,7 @@ fc_check_sharedlib "iconv"
+ fc_check_funclink rt "clock_gettime"
+ 
+ fc_check_lib libpng "libpng" "" "-lpng -lz" "png.h" "" "libpng-dev or libpng-devel or libpng or png"
+-fc_check_lib zlib "zlib" "" "" "zlib.h" "" "zlib1g-dev or zlib-devel or zlib"
++fc_check_lib zlib "zlib" "" "-lz" "zlib.h" "" "zlib1g-dev or zlib-devel or zlib"
+ fc_check_lib libjpeg "libjpeg" "" "-ljpeg" "stdio.h jpeglib.h" "" "libjpeg-dev or libjpeg-devel or libjpeg-turbo or jpeg-turbo"
+ fc_check_lib libtiff "libtiff-4" "" "-ltiff" "tiff.h" "" "libtiff-dev or libtiff-devel or libtiff or tiff"
+ fc_check_lib libwebp "libwebp" "" "-lwebp" "webp/decode.h" "" "libwebp-dev or libwebp-devel or libwebp or webp"
