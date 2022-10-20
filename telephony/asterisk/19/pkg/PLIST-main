@@ -758,6 +758,7 @@ share/examples/asterisk/default/voicemail.conf
 share/examples/asterisk/default/xmpp.conf
 @mode 750
 @owner _asterisk
+@sample ${LOCALSTATEDIR}/cache/asterisk/
 @sample ${LOCALSTATEDIR}/spool/asterisk/
 @sample ${LOCALSTATEDIR}/spool/asterisk/dictate/
 @sample ${LOCALSTATEDIR}/spool/asterisk/meetme/
