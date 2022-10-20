@@ -3,8 +3,6 @@ devel/libvmime
 editors/libreoffice
 games/0ad/base
 games/openra
-lang/php/7.2
-lang/php/7.3
 lang/php/7.4
 www/webkitgtk4
 x11/gnustep/base
@@ -21,4 +19,4 @@ Index: source/common/unicode/umachine.h
 +#define U_DEFINE_FALSE_AND_TRUE 1
  #ifdef U_DEFINE_FALSE_AND_TRUE
      // Use the predefined value.
- #elif defined(U_COMBINED_IMPLEMENTATION) || \
+ #else
