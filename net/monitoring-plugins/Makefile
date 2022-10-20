@@ -9,8 +9,7 @@ COMMENT-samba=	samba monitoring plugin
 COMMENT-snmp=	monitoring plugins using snmp
 COMMENT-radius=	RADIUS monitoring plugin
 
-V=		2.3.1
-REVISION=	3
+V=		2.3.2
 
 DISTNAME=	monitoring-plugins-$V
 PKGNAME-main=	monitoring-plugins-$V
@@ -43,37 +42,37 @@ MASTER_SITES=	https://www.monitoring-plugins.org/download/
 LIB_DEPENDS=	devel/gettext,-runtime
 
 WANTLIB-main=	${WANTLIB} crypto curl m nghttp2 ssl uriparser z
-LIB_DEPENDS-main=${LIB_DEPENDS} \
+
+LIB_DEPENDS-main= ${LIB_DEPENDS} \
 		net/curl \
 		www/uriparser
-
-FAKE_FLAGS=	setuid_root_mode=0555
 
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.69
 CONFIGURE_ENV+= LDFLAGS="-L${LOCALBASE}/lib"
+FAKE_FLAGS=	setuid_root_mode=0555
+
 # cgiurl is only used to produce an href to traceroute.cgi in check_ping output
-CONFIGURE_ARGS+= --libexecdir=${PREFIX}/libexec/nagios \
+CONFIGURE_ARGS+= \
+		--libexecdir=${PREFIX}/libexec/nagios \
 		--with-cgiurl=/cgi-bin/nagios \
 		--with-openssl=/usr \
 		--without-gnutls
-# builds done with proot on a nosuid filesystem can't run ping so the parameter
-# autodetection fails; hardcode it instead
-CONFIGURE_ARGS+= --with-ping-command="/sbin/ping -n -c %d %s" \
-		--with-ping6-command="/sbin/ping6 -n -c %d %s"
+
 # can autodetect command paths, but hard-coding avoids build dependencies
-# or a detection which relies on being able to run ping (
-CONFIGURE_ARGS+= --with-fping-command="${LOCALBASE}/sbin/fping -4" \
+# or a detection which relies on being able to run ping (builds done with
+# proot on a nosuid filesystem can't run ping)
+CONFIGURE_ARGS+= \
+		--with-dig-command=/usr/bin/dig \
+		--with-fping-command="${LOCALBASE}/sbin/fping -4" \
 		--with-fping6-command="${LOCALBASE}/sbin/fping -6" \
+		--with-nslookup-command=/usr/bin/nslookup \
+		--with-ping-command="/sbin/ping -n -c %d %s" \
+		--with-ping6-command="/sbin/ping6 -n -c %d %s" \
+		--with-qstat-command=${LOCALBASE}/bin/qstat \
 		--with-smbclient-command=${LOCALBASE}/bin/smbclient \
 		--with-snmpget-command=${LOCALBASE}/bin/snmpget \
-		--with-snmpgetnext-command=${LOCALBASE}/bin/snmpgetnext \
-		--with-qstat-command=${LOCALBASE}/bin/qstat
-# listed here to make it easier to move BIND to ports
-CONFIGURE_ARGS+= --with-dig-command=/usr/bin/dig \
-		--with-nslookup-command=/usr/bin/nslookup
-
-CFLAGS+=	-DLDAP_DEPRECATED
+		--with-snmpgetnext-command=${LOCALBASE}/bin/snmpgetnext
 
 PSEUDO_FLAVORS=	no_db
 FLAVOR?=

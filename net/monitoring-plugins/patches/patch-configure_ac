@@ -1,6 +1,7 @@
---- configure.ac.orig	Fri Oct 16 10:18:36 2015
-+++ configure.ac	Sun Oct 18 11:22:40 2015
-@@ -208,13 +208,13 @@ AC_ARG_WITH(pgsql,
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -209,13 +209,13 @@ AC_ARG_WITH(pgsql,
  	ACX_HELP_STRING([--with-pgsql=DIR],
  		[sets path to pgsql installation]),
  	PGSQL=$withval,)
@@ -17,7 +18,7 @@
    if test "$ac_cv_lib_pq_PQsetdbLogin" = "yes"; then
      AC_CHECK_HEADERS(pgsql/libpq-fe.h)
      AC_CHECK_HEADERS(postgresql/libpq-fe.h)
-@@ -226,8 +226,8 @@ if test "$ac_cv_lib_crypt_main" = "yes" -a "x$PGSQL" !
+@@ -227,8 +227,8 @@ if test "$ac_cv_lib_crypt_main" = "yes" -a "x$PGSQL" !
        PGLIBS="-lpq -lcrypt"
        PGINCLUDE="-I/usr/include/pgsql"
      elif test  "$ac_cv_header_postgresql_libpq_fe_h" = "yes"; then

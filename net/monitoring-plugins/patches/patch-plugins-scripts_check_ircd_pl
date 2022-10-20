@@ -1,9 +1,10 @@
 Fix unportable code which assumes sockaddr does not include a length field.
 https://github.com/monitoring-plugins/monitoring-plugins/pull/1463
 
---- plugins-scripts/check_ircd.pl.orig	Fri Jan 27 10:13:26 2017
-+++ plugins-scripts/check_ircd.pl	Fri Jan 27 10:13:57 2017
-@@ -144,7 +144,6 @@ sub bindRemote ($$)
+Index: plugins-scripts/check_ircd.pl
+--- plugins-scripts/check_ircd.pl.orig
++++ plugins-scripts/check_ircd.pl
+@@ -146,7 +146,6 @@ sub bindRemote ($$)
  {
  	my ($in_remotehost, $in_remoteport) = @_;
  	my $proto = getprotobyname('tcp');
@@ -11,7 +12,7 @@ https://github.com/monitoring-plugins/monitoring-plugins/pull/1463
  	my $that;
  	my ($name, $aliases,$type,$len,$thataddr) = gethostbyname($in_remotehost);
  
-@@ -152,8 +151,7 @@ sub bindRemote ($$)
+@@ -154,8 +153,7 @@ sub bindRemote ($$)
  	    print "IRCD UNKNOWN: Could not start socket ($!)\n";
  	    exit $ERRORS{"UNKNOWN"};
  	}
