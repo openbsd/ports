@@ -21,4 +21,9 @@ LIB_DEPENDS=		graphics/gdk-pixbuf2 \
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+CFLAGS +=	-std=gnu99
+.endif
+
 .include <bsd.port.mk>
