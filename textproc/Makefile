@@ -1,5 +1,6 @@
      SUBDIR =
      SUBDIR += TclXML
+     SUBDIR += amber
      SUBDIR += antiword
      SUBDIR += apertium
      SUBDIR += apertium-dicts
