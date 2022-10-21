@@ -1,4 +1,4 @@
-VERSION =		4.17.0
+VERSION =		4.17.1
 DISTNAME =		samba-${VERSION}
 EPOCH =			0
 
@@ -7,8 +7,6 @@ COMMENT-docs =		additional documentation and examples for Samba
 
 PKGNAME-main =		${PKGNAME}
 PKGNAME-docs =		samba-docs-${VERSION}
-
-REVISION-main =		0
 
 PKG_ARCH-docs =		*
 
@@ -27,7 +25,7 @@ SHARED_LIBS =		dcerpc			1.1 \
 			samba-hostconfig	10.0 \
 			samba-passdb		3.0 \
 			samba-util		8.0 \
-			samdb			2.0 \
+			samdb			2.1 \
 			smbclient		6.1 \
 			smbconf			12.0 \
 			smbldap			1.0 \
