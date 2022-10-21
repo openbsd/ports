@@ -234,7 +234,7 @@ MODGO_MODULES =	\
 	github.com/xanzy/ssh-agent					 v0.3.1 \
 	github.com/xlab/treeprint					 v0.0.0-20161029104018-1d6e34225557 \
 	github.com/yuin/goldmark					 v1.4.1 \
-	github.com/zclconf/go-cty					 v1.11.0 \
+	github.com/zclconf/go-cty					 v1.11.1 \
 	github.com/zclconf/go-cty-debug					 v0.0.0-20191215020915-b22d67c1ba0b \
 	github.com/zclconf/go-cty-yaml					 v1.0.2 \
 	go.opencensus.io						 v0.23.0 \
@@ -246,11 +246,11 @@ MODGO_MODULES =	\
 	golang.org/x/lint						 v0.0.0-20210508222113-6edffad5e616 \
 	golang.org/x/mobile						 v0.0.0-20190719004257-d2bd2a29d028 \
 	golang.org/x/mod						 v0.6.0-dev.0.20220419223038-86c51ed26bb4 \
-	golang.org/x/net						 v0.0.0-20211216030914-fe4d6282115f \
+	golang.org/x/net						 v0.0.0-20220927171203-f486391704dc \
 	golang.org/x/oauth2						 v0.0.0-20210819190943-2bc19b11175f \
 	golang.org/x/sync						 v0.0.0-20210220032951-036812b2e83c \
-	golang.org/x/sys						 v0.0.0-20220517195934-5e4e11fc645e \
-	golang.org/x/term						 v0.0.0-20210615171337-6886f2dfbf5b \
+	golang.org/x/sys						 v0.0.0-20220728004956-3c1f35247d10 \
+	golang.org/x/term						 v0.0.0-20210927222741-03fcf44c2211 \
 	golang.org/x/text						 v0.3.7 \
 	golang.org/x/time						 v0.0.0-20220722155302-e5dcc9cfc0b9 \
 	golang.org/x/tools						 v0.1.11 \
@@ -619,6 +619,7 @@ MODGO_MODFILES =	\
 	golang.org/x/net						 v0.0.0-20211015210444-4f30a5c0130f \
 	golang.org/x/net						 v0.0.0-20211112202133-69e39bad7dc2 \
 	golang.org/x/net						 v0.0.0-20211209124913-491a49abca63 \
+	golang.org/x/net						 v0.0.0-20211216030914-fe4d6282115f \
 	golang.org/x/oauth2						 v0.0.0-20180821212333-d2e6202438be \
 	golang.org/x/oauth2						 v0.0.0-20190226205417-e64efc72b421 \
 	golang.org/x/oauth2						 v0.0.0-20190604053449-0f29369cfe45 \
@@ -701,7 +702,9 @@ MODGO_MODFILES =	\
 	golang.org/x/sys						 v0.0.0-20210809222454-d867a43fc93e \
 	golang.org/x/sys						 v0.0.0-20210831042530-f4d43177bf5e \
 	golang.org/x/sys						 v0.0.0-20211019181941-9d821ace8654 \
+	golang.org/x/sys						 v0.0.0-20220517195934-5e4e11fc645e \
 	golang.org/x/term						 v0.0.0-20201126162022-7de9c90e9dd1 \
+	golang.org/x/term						 v0.0.0-20210615171337-6886f2dfbf5b \
 	golang.org/x/text						 v0.0.0-20170915032832-14c0d48ead0c \
 	golang.org/x/text						 v0.3.0 \
 	golang.org/x/text						 v0.3.1-0.20180807135948-17ff2d5776d2 \
