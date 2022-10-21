@@ -1,0 +1,2 @@
+amber is a code search and replace tool written by Rust. This tool is inspired
+by ack, ag, and other grep-like tools.
