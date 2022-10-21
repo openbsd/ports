@@ -5,6 +5,7 @@ MODGO_MODNAME=	github.com/influxdata/influxdb
 GH_ACCOUNT =	influxdata
 GH_PROJECT =	influxdb
 GH_TAGNAME =	${MODGO_VERSION}
+REVISION =	0
 
 HOMEPAGE =	https://influxdata.com
 

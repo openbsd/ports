@@ -16,6 +16,8 @@
 @man man/man1/influxd-run.1
 @man man/man1/influxd-version.1
 @man man/man1/influxd.1
+share/examples/login.conf.d/influxdb
+@sample ${SYSCONFDIR}/login.conf.d/influxdb
 share/examples/influxdb/
 @sample ${SYSCONFDIR}/influxdb/
 share/examples/influxdb/config.sample.toml
