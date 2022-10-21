@@ -23,11 +23,13 @@ WRKDIST ?=	${WRKDIR}/${DISTNAME}
 
 SUBST_VARS +=	VERSION VERSION_I
 
+LICENSE ?=	LICENSE.txt
+
 do-install:
 	${INSTALL_DATA_DIR} ${FONT_DIR} ${DOC_DIR}
 	cd ${WRKDIST}; ${INSTALL_DATA} TTF/*.ttf OTF/*.otf \
 	    ${FONT_DIR}
-	cd ${WRKDIST}; ${INSTALL_DATA} LICENSE.txt README.md *.css *.json \
+	cd ${WRKDIST}; ${INSTALL_DATA} ${LICENSE} README.md *.css *.json \
 	    ${DOC_DIR}
 	cd ${WRKDIST}; if [ -e ReadMe.html ]; then \
 		${INSTALL_DATA} *.html ${DOC_DIR}; \

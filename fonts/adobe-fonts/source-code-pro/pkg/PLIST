@@ -1,10 +1,10 @@
 @pkgpath fonts/adobe-source-code-pro
 share/doc/adobe-source-code-pro/
-share/doc/adobe-source-code-pro/LICENSE.txt
+share/doc/adobe-source-code-pro/LICENSE.md
 share/doc/adobe-source-code-pro/README.md
-share/doc/adobe-source-code-pro/bower.json
 share/doc/adobe-source-code-pro/package.json
 share/doc/adobe-source-code-pro/source-code-pro.css
+share/doc/adobe-source-code-pro/source-code-variable.css
 share/fonts/
 @fontdir share/fonts/adobe-source-code-pro/
 share/fonts/adobe-source-code-pro/SourceCodePro-Black.otf

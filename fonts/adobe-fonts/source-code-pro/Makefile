@@ -1,9 +1,11 @@
 COMMENT =	monospaced OpenType fonts designed for coding environments
-VERSION =	2.030
-VERSION_I =	1.050
-REVISION =	0
+VERSION =	2.038
+VERSION_I =	1.058
+VERSION_V =	1.018
+
+LICENSE =	LICENSE.md
 
 GH_PROJECT =	source-code-pro
-GH_TAGNAME =	${VERSION}R-ro/${VERSION_I}R-it
+GH_TAGNAME =	${VERSION}R-ro/${VERSION_I}R-it/${VERSION_V}R-VAR
 
 .include <bsd.port.mk>
