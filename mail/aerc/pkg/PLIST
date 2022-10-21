@@ -29,5 +29,4 @@ share/aerc/templates/forward_as_body
 share/aerc/templates/new_message
 share/aerc/templates/quoted_reply
 share/applications/aerc.desktop
-share/doc/pkg-readmes/${PKGSTEM}
 @tag update-desktop-database

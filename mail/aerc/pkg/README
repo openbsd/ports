@@ -1,9 +1,0 @@
-+-------------------------------------------------------------------------------
-| Running ${PKGSTEM} on OpenBSD
-+-------------------------------------------------------------------------------
-
-aerc has a known bug where it may crash in the setup procedure if the
-terminal is not large enough.  As a workaround either resize the
-terminal window so it's large enough to display the text fields or copy
-${TRUEPREFIX}/share/aerc/accounts.conf to ~/.config/aerc/accounts.conf
-and edit it accordingly.
