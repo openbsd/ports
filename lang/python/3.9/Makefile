@@ -8,6 +8,11 @@ SHARED_LIBS =		python3.9 0.0
 VERSION_SPEC =		>=3.9,<3.10
 PORTROACH =		limit:^3\.9
 
+# -tkinter in 7.2-stable must be kept a higher version than 7.1-stable
+# due to dep changes (Tcl/Tk 8.5 -> 8.6); 7.2-current must be kept at same
+# or higher version than 7.2-stable.
+REVISION-tkinter =	0
+
 # This is the MODPY_DEFAULT_VERSION_3 version of Python:
 # - override "@comment" setting so that bin/python3 etc are installed
 PY_DEFAULTONLY =
