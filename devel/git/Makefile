@@ -25,6 +25,9 @@ MODULES =		perl \
 
 MODTK_VERSION =		8.6
 
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 BUILD_DEPENDS =		devel/gettext,-tools \
 			devel/p5-Error \
 			textproc/asciidoc \
