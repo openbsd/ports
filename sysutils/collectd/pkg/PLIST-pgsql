@@ -1,1 +1,1 @@
-lib/collectd/postgresql.so
+@so lib/collectd/postgresql.so

@@ -1,1 +1,1 @@
-lib/collectd/ping.so
+@so lib/collectd/ping.so

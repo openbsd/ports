@@ -1,1 +1,1 @@
-lib/collectd/python.so
+@so lib/collectd/python.so

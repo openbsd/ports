@@ -1,1 +1,1 @@
-lib/collectd/memcachec.so
+@so lib/collectd/memcachec.so

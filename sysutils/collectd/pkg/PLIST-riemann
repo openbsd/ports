@@ -1,1 +1,1 @@
-lib/collectd/write_riemann.so
+@so lib/collectd/write_riemann.so

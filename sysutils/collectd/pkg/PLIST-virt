@@ -1,1 +1,1 @@
-lib/collectd/virt.so
+@so lib/collectd/virt.so

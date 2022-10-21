@@ -1,1 +1,1 @@
-lib/collectd/nut.so
+@so lib/collectd/nut.so

@@ -1,2 +1,2 @@
-lib/collectd/rrdcached.so
-lib/collectd/rrdtool.so
+@so lib/collectd/rrdcached.so
+@so lib/collectd/rrdtool.so

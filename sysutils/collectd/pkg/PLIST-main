@@ -13,62 +13,63 @@ include/collectd/network_parse.h
 include/collectd/server.h
 include/collectd/types.h
 lib/collectd/
-lib/collectd/aggregation.so
-lib/collectd/apache.so
-lib/collectd/apcups.so
-lib/collectd/ascent.so
-lib/collectd/bind.so
-lib/collectd/cpu.so
-lib/collectd/csv.so
-lib/collectd/curl.so
-lib/collectd/curl_json.so
-lib/collectd/curl_xml.so
-lib/collectd/df.so
-lib/collectd/disk.so
-lib/collectd/dns.so
-lib/collectd/email.so
-lib/collectd/exec.so
-lib/collectd/filecount.so
-lib/collectd/interface.so
-lib/collectd/load.so
-lib/collectd/log_logstash.so
-lib/collectd/logfile.so
-lib/collectd/match_empty_counter.so
-lib/collectd/match_hashed.so
-lib/collectd/match_regex.so
-lib/collectd/match_timediff.so
-lib/collectd/match_value.so
-lib/collectd/memcached.so
-lib/collectd/memory.so
-lib/collectd/network.so
-lib/collectd/nginx.so
-lib/collectd/ntpd.so
-lib/collectd/olsrd.so
-lib/collectd/openvpn.so
-lib/collectd/pf.so
-lib/collectd/powerdns.so
-lib/collectd/processes.so
-lib/collectd/swap.so
-lib/collectd/syslog.so
-lib/collectd/table.so
-lib/collectd/tail.so
-lib/collectd/tail_csv.so
-lib/collectd/target_notification.so
-lib/collectd/target_replace.so
-lib/collectd/target_scale.so
-lib/collectd/target_set.so
-lib/collectd/target_v5upgrade.so
-lib/collectd/tcpconns.so
-lib/collectd/teamspeak2.so
-lib/collectd/ted.so
-lib/collectd/threshold.so
-lib/collectd/unixsock.so
-lib/collectd/uptime.so
-lib/collectd/users.so
-lib/collectd/uuid.so
-lib/collectd/write_graphite.so
-lib/collectd/write_http.so
-lib/collectd/write_log.so
+@so lib/collectd/aggregation.so
+@so lib/collectd/apache.so
+@so lib/collectd/apcups.so
+@so lib/collectd/ascent.so
+@so lib/collectd/bind.so
+@so lib/collectd/cpu.so
+@so lib/collectd/csv.so
+@so lib/collectd/curl.so
+@so lib/collectd/curl_json.so
+@so lib/collectd/curl_xml.so
+@so lib/collectd/df.so
+@so lib/collectd/disk.so
+@so lib/collectd/dns.so
+@so lib/collectd/email.so
+@so lib/collectd/exec.so
+@so lib/collectd/filecount.so
+@so lib/collectd/interface.so
+@so lib/collectd/load.so
+@so lib/collectd/log_logstash.so
+@so lib/collectd/logfile.so
+@so lib/collectd/match_empty_counter.so
+@so lib/collectd/match_hashed.so
+@so lib/collectd/match_regex.so
+@so lib/collectd/match_timediff.so
+@so lib/collectd/match_value.so
+@so lib/collectd/memcached.so
+@so lib/collectd/memory.so
+@so lib/collectd/network.so
+@so lib/collectd/nginx.so
+@so lib/collectd/ntpd.so
+@so lib/collectd/olsrd.so
+@so lib/collectd/openvpn.so
+@so lib/collectd/pf.so
+@so lib/collectd/powerdns.so
+@so lib/collectd/processes.so
+@so lib/collectd/swap.so
+@so lib/collectd/syslog.so
+@so lib/collectd/table.so
+@so lib/collectd/tail.so
+@so lib/collectd/tail_csv.so
+@so lib/collectd/target_notification.so
+@so lib/collectd/target_replace.so
+@so lib/collectd/target_scale.so
+@so lib/collectd/target_set.so
+@so lib/collectd/target_v5upgrade.so
+@so lib/collectd/tcpconns.so
+@so lib/collectd/teamspeak2.so
+@so lib/collectd/ted.so
+@so lib/collectd/threshold.so
+@so lib/collectd/unixsock.so
+@so lib/collectd/uptime.so
+@so lib/collectd/users.so
+@so lib/collectd/uuid.so
+@so lib/collectd/write_graphite.so
+@so lib/collectd/write_http.so
+@so lib/collectd/write_log.so
+@so lib/collectd/write_tsdb.so
 @comment lib/libcollectdclient.la
 @lib lib/libcollectdclient.so.${LIBcollectdclient_VERSION}
 lib/pkgconfig/libcollectdclient.pc

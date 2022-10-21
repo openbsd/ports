@@ -30,20 +30,20 @@ PKGNAME-redis =		collectd-redis-$V
 PKGNAME-prometheus =	collectd-prometheus-$V
 PKGNAME-ping =		collectd-ping-$V
 CATEGORIES =		sysutils
-REVISION-main =		1
-REVISION-memcachec =	1
-REVISION-mqtt =		0
-REVISION-mysql =	1
-REVISION-nut =		2
-REVISION-pgsql =	0
-REVISION-ping =		0
-REVISION-prometheus =	3
-REVISION-python =	2
-REVISION-redis =	0
-REVISION-riemann =	3
-REVISION-rrdtool =	3
-REVISION-snmp =		0
-REVISION-virt =		3
+REVISION-main =		2
+REVISION-memcachec =	2
+REVISION-mqtt =		1
+REVISION-mysql =	2
+REVISION-nut =		3
+REVISION-pgsql =	1
+REVISION-ping =		1
+REVISION-prometheus =	4
+REVISION-python =	3
+REVISION-redis =	1
+REVISION-riemann =	4
+REVISION-rrdtool =	4
+REVISION-snmp =		1
+REVISION-virt =		4
 
 HOMEPAGE =		http://www.collectd.org/
 SHARED_LIBS +=		collectdclient 1.0
@@ -156,7 +156,7 @@ ENABLED_PLUGINS =	apache apcups ascent bind cpu csv curl curl_xml \
 			target_set target_v5upgrade tcpconns teamspeak2 ted unixsock uptime \
 			users uuid write_http write_graphite pf python virt memcachec nut \
 			aggregation curl_json log_logstash memcached mqtt \
-			threshold write_log write_prometheus write_redis write_riemann
+			threshold write_log write_prometheus write_redis write_riemann write_tsdb
 
 .for _plugin in ${ENABLED_PLUGINS}
 CONFIGURE_ARGS += --enable-${_plugin}

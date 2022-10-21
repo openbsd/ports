@@ -1,1 +1,1 @@
-lib/collectd/mysql.so
+@so lib/collectd/mysql.so
