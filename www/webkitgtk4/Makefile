@@ -11,7 +11,7 @@ PORTROACH =		limitw:1,even
 
 COMMENT =		GTK+ port of the WebKit (${API}) rendering engine
 
-V =			2.38.0
+V =			2.38.1
 DISTNAME =		webkitgtk-${V}
 PKGNAME =		webkitgtk${API:S/.//}-${V}
 FULLPKGNAME =		${PKGNAME}
@@ -33,7 +33,7 @@ MAINTAINER =		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} EGL GL X11 Xcomposite Xdamage Xrender
-WANTLIB += Xt atk-1.0 c cairo cairo-gobject enchant-2 fontconfig
+WANTLIB += Xt c cairo cairo-gobject enchant-2 fontconfig
 WANTLIB += freetype gcrypt gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gpg-error gstallocators-1.0 gstapp-1.0
 WANTLIB += gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstgl-1.0 gstpbutils-1.0
@@ -143,7 +143,7 @@ FLAVOR ?=
 
 .if ${FLAVOR:Mwebkitgtk41}
 API =			4.1
-WANTLIB += gdk-3 gtk-3 soup-3.0
+WANTLIB += atk-1.0 gdk-3 gtk-3 soup-3.0
 LIB_DEPENDS +=		devel/libsoup3 \
 			x11/gtk+3
 CONFIGURE_ARGS +=	-DUSE_SOUP2=OFF
@@ -156,7 +156,7 @@ CONFIGURE_ARGS +=	-DUSE_SOUP2=OFF \
 			-DUSE_GTK4=ON
 .else
 API =			4.0
-WANTLIB += gdk-3 gtk-3 soup-2.4
+WANTLIB += atk-1.0 gdk-3 gtk-3 soup-2.4
 LIB_DEPENDS +=		devel/libsoup \
 			x11/gtk+3
 CONFIGURE_ARGS +=	-DUSE_SOUP2=ON
