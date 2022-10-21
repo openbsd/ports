@@ -1567,12 +1567,14 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/rum/2018-05-10/paginators
 lib/python${MODPY_VERSION}/site-packages/botocore/data/rum/2018-05-10/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/s3/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/s3/2006-03-01/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/s3/2006-03-01/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/s3/2006-03-01/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/s3/2006-03-01/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/s3/2006-03-01/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/s3/2006-03-01/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/s3control/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/s3control/2018-08-20/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/s3control/2018-08-20/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/s3control/2018-08-20/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/s3control/2018-08-20/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/s3control/2018-08-20/service-2.json
