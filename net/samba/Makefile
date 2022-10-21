@@ -8,6 +8,8 @@ COMMENT-docs =		additional documentation and examples for Samba
 PKGNAME-main =		${PKGNAME}
 PKGNAME-docs =		samba-docs-${VERSION}
 
+REVISION-main =		0
+
 PKG_ARCH-docs =		*
 
 SHARED_LIBS =		dcerpc			1.1 \
