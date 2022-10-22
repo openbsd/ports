@@ -2,7 +2,7 @@ COMMENT =	libkkc wrapper for fcitx5
 
 V =		5.0.8
 PKGNAME =	fcitx-kkc-$V
-REVISION =      0
+REVISION =      1
 
 GH_ACCOUNT =    fcitx
 GH_PROJECT =    fcitx5-kkc

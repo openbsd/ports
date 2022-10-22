@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	Thu Mar 10 03:25:57 2022
++++ CMakeLists.txt	Sat Oct 22 21:30:34 2022
+@@ -25,7 +25,7 @@
+ endif ()
+ 
+ if (NOT SKK_DEFAULT_PATH)
+-    set(SKK_DEFAULT_PATH "/usr/share/skk/")
++    set(SKK_DEFAULT_PATH "/usr/local/share/skk/")
+ endif ()
+ 
+ include("${FCITX_INSTALL_CMAKECONFIG_DIR}/Fcitx5Utils/Fcitx5CompilerSettings.cmake")
