@@ -1,3 +1,5 @@
+BROKEN-sparc64 = error libdispatch requires C11 with stdatomic.h
+
 COMMENT =	Grand Central Dispatch
 
 PKGNAME =	libdispatch-$V
