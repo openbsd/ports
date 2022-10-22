@@ -18,6 +18,9 @@ PERMIT_PACKAGE=		Yes
 
 MULTI_PACKAGES=		-main -libs
 
+# C++14
+COMPILER=		base-clang ports-gcc
+
 WANTLIB += ${COMPILER_LIBCXX} cfitsio fftw3 gsl gslcblas iconv jpeg
 WANTLIB += jpeg m nova ogg theoradec theoraenc usb-1.0 z
 
