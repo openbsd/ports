@@ -13,6 +13,9 @@ MAINTAINER=	Jan Klemkow <j.klemkow@wemelug.de>
 # ISC
 PERMIT_PACKAGE=	Yes
 
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 SONAME=		libgrapheme.so.$(LIBgrapheme_VERSION)
 SOFLAGS=	-shared -Wl,--soname=${SONAME}
 
