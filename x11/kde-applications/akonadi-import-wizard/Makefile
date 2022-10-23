@@ -25,8 +25,7 @@ MODKDE5_DESKTOP_FILE = yes
 MODKF5_L10N_CONFLICT = yes
 MODKF5_I18N_CONFLICT = yes
 
-BUILD_DEPENDS =	devel/boost \
-		devel/libinotify
+BUILD_DEPENDS =	devel/boost
 
 LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kauth \
@@ -53,6 +52,5 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		x11/kde-applications/messagelib \
 		x11/kde-applications/pimcommon \
 		x11/kde-applications/mailcommon
-
 
 .include <bsd.port.mk>
