@@ -1,6 +1,6 @@
 COMMENT =	port of Quake 1 using Vulkan instead of OpenGL
 
-V =		1.13.1
+V =		1.20.3
 PKGNAME =	vkquake-${V}
 GH_ACCOUNT =	Novum
 GH_PROJECT =	vkQuake
@@ -12,7 +12,7 @@ MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += SDL2 c m mad ogg vorbis vorbisfile vulkan
+WANTLIB += SDL2 c m mad ogg pthread vorbis vorbisfile vulkan
 
 # C11
 COMPILER =	base-clang ports-gcc
