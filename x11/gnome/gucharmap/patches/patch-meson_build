@@ -4,7 +4,7 @@
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -126,18 +126,6 @@ config_h.set('ENABLE_DEBUG', enable_debug)
+@@ -125,18 +125,6 @@ config_h.set('ENABLE_DEBUG', enable_debug)
  # FIXME AC_USE_SYSTEM_EXTENSIONS also supported non-gnu systems
  config_h.set10('_GNU_SOURCE', true)
  
@@ -23,7 +23,7 @@ Index: meson.build
  # Asserts must not be disabled
  
  assert(get_option('b_ndebug') == 'false', 'assertions may not be disabled')
-@@ -229,14 +217,16 @@ add_project_arguments(global_cflags, language: 'c',)
+@@ -228,14 +216,16 @@ add_project_arguments(global_cflags, language: 'c',)
  
  # Linker flags
  
