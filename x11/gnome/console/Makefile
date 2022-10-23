@@ -8,6 +8,10 @@ CATEGORIES=		x11
 # GPLv3
 PERMIT_PACKAGE=		Yes
 
+# C17
+COMPILER=		base-clang ports-gcc
+COMPILER_LANGS=		c
+
 WANTLIB += c gdk-3 gio-2.0 glib-2.0 gobject-2.0 gtk-3 gtop-2.0
 WANTLIB += handy-1 intl m nautilus-extension pango-1.0 vte-2.91
 
