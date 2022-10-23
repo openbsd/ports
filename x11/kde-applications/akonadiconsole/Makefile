@@ -1,6 +1,7 @@
 COMMENT =	Akonadi management and debugging console
 DISTNAME =	akonadiconsole-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=  akonadiconsole       1.1 # 5.13.2
 
@@ -24,8 +25,7 @@ MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
 
 BUILD_DEPENDS =	textproc/libxslt \
-		devel/boost \
-		devel/libinotify
+		devel/boost
 
 LIB_DEPENDS =	databases/xapian-core \
 		devel/kf5/kauth \
@@ -53,9 +53,6 @@ LIB_DEPENDS =	databases/xapian-core \
 		x11/kde-applications/libkdepim \
 		x11/kde-applications/messagelib \
 		x11/kde-applications/pimcommon
-
-CFLAGS +=	-I${LOCALBASE}/include/KF5
-CXXFLAGS +=	-I${LOCALBASE}/include/KF5
 
 TEST_IS_INTERACTIVE =	X11
 
