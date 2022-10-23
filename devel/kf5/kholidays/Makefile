@@ -1,5 +1,5 @@
-COMMENT =		holiday calculation library
-DISTNAME =		kholidays-${VERSION}
+COMMENT =	holiday calculation library
+DISTNAME =	kholidays-${VERSION}
 
 SHARED_LIBS +=  KF5Holidays               2.3 # 5.43
 

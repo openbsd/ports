@@ -53,6 +53,7 @@ include/KF5/KIOCore/KIO/SpecialJob
 include/KF5/KIOCore/KIO/StatJob
 include/KF5/KIOCore/KIO/StoredTransferJob
 include/KF5/KIOCore/KIO/TCPSlaveBase
+include/KF5/KIOCore/KIO/TCPWorkerBase
 include/KF5/KIOCore/KIO/TransferJob
 include/KF5/KIOCore/KIO/UDSEntry
 include/KF5/KIOCore/KIO/WorkerBase
@@ -124,6 +125,7 @@ include/KF5/KIOCore/kio/specialjob.h
 include/KF5/KIOCore/kio/statjob.h
 include/KF5/KIOCore/kio/storedtransferjob.h
 include/KF5/KIOCore/kio/tcpslavebase.h
+include/KF5/KIOCore/kio/tcpworkerbase.h
 include/KF5/KIOCore/kio/transferjob.h
 include/KF5/KIOCore/kio/udsentry.h
 include/KF5/KIOCore/kio/workerbase.h
@@ -655,6 +657,9 @@ share/doc/HTML/fr/kioslave5/help/index.docbook
 share/doc/HTML/fr/kioslave5/http/
 share/doc/HTML/fr/kioslave5/http/index.cache.bz2
 share/doc/HTML/fr/kioslave5/http/index.docbook
+share/doc/HTML/fr/kioslave5/mailto/
+share/doc/HTML/fr/kioslave5/mailto/index.cache.bz2
+share/doc/HTML/fr/kioslave5/mailto/index.docbook
 share/doc/HTML/fr/kioslave5/telnet/
 share/doc/HTML/fr/kioslave5/telnet/index.cache.bz2
 share/doc/HTML/fr/kioslave5/telnet/index.docbook
@@ -1114,9 +1119,9 @@ share/examples/kio/xdg/kshorturifilterrc
 @sample ${SYSCONFDIR}/xdg/kshorturifilterrc
 share/kconf_update/
 share/kconf_update/filepicker.upd
-share/kdevfiletemplates/
-share/kdevfiletemplates/templates/
-share/kdevfiletemplates/templates/kioworker.tar.bz2
+share/kdevappwizard/
+share/kdevappwizard/templates/
+share/kdevappwizard/templates/kioworker.tar.bz2
 share/kf5/kcookiejar/
 share/kf5/kcookiejar/domain_info
 share/kf5/mkspecs/qt_KIOCore.pri

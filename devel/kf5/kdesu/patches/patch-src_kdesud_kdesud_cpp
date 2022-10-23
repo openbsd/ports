@@ -1,0 +1,12 @@
+Index: src/kdesud/kdesud.cpp
+--- src/kdesud/kdesud.cpp.orig
++++ src/kdesud/kdesud.cpp
+@@ -86,7 +86,7 @@
+ 
+ #ifdef __FreeBSD__
+ #include <sys/procctl.h>
+-#else
++#elif !defined(__OpenBSD__)
+ #include <sys/prctl.h>
+ #endif
+ 

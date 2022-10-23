@@ -11,7 +11,7 @@ WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
 WANTLIB += X11 m
 
-BUILD_DEPENDS =		devel/gettext,-tools
+BUILD_DEPENDS =	devel/gettext,-tools
 
 LIB_DEPENDS =	devel/kf5/kauth>=${MODKF5_VERSION} \
 		devel/kf5/kcodecs>=${MODKF5_VERSION} \

@@ -1,8 +1,8 @@
 COMMENT =	KDE configuration system
 DISTNAME =	kconfig-${VERSION}
 
-SHARED_LIBS =	KF5ConfigCore		7.0
-SHARED_LIBS +=	KF5ConfigGui		7.1
+SHARED_LIBS =	KF5ConfigCore		7.1
+SHARED_LIBS +=	KF5ConfigGui		7.2
 SHARED_LIBS +=	KF5ConfigQml		0.0
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Gui Qt5Network
@@ -14,6 +14,5 @@ LIB_DEPENDS =	x11/qt5/qtdeclarative
 PORTHOME =		${WRKDIR}
 TEST_IS_INTERACTIVE =	X11
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
-
 
 .include <bsd.port.mk>

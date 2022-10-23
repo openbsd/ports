@@ -14,6 +14,7 @@ lib/cmake/KF5IdleTime/KF5IdleTimeTargets.cmake
 @lib lib/libKF5IdleTime.so.${LIBKF5IdleTime_VERSION}
 lib/qt5/plugins/kf5/
 lib/qt5/plugins/kf5/org.kde.kidletime.platforms/
+@so lib/qt5/plugins/kf5/org.kde.kidletime.platforms/KF5IdleTimeWaylandPlugin.so
 @so lib/qt5/plugins/kf5/org.kde.kidletime.platforms/KF5IdleTimeXcbPlugin0.so
 @so lib/qt5/plugins/kf5/org.kde.kidletime.platforms/KF5IdleTimeXcbPlugin1.so
 share/kf5/

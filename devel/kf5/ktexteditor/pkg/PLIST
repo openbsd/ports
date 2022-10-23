@@ -80,7 +80,7 @@ share/dbus-1/system.d/org.kde.ktexteditor.katetextbuffer.conf
 share/katepart5/
 share/katepart5/script/
 share/katepart5/script/README.md
-share/kdevfiletemplates/templates/ktexteditor-plugin.tar.bz2
+share/kdevappwizard/templates/ktexteditor-plugin.tar.bz2
 share/kf5/mkspecs/qt_KTextEditor.pri
 share/kservices5/katepart.desktop
 share/kservicetypes5/ktexteditor.desktop

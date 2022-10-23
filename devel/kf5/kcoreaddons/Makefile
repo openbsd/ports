@@ -1,7 +1,7 @@
 COMMENT =	core KDE extensions to Qt classes
 DISTNAME =	kcoreaddons-${VERSION}
 
-SHARED_LIBS =	KF5CoreAddons		8.0
+SHARED_LIBS =	KF5CoreAddons		8.1
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5DBus c m
 
@@ -9,6 +9,8 @@ BUILD_DEPENDS =	misc/shared-mime-info
 
 RUN_DEPENDS =	misc/shared-mime-info \
 		sysutils/accountsservice
+
+LIB_DEPENDS =		devel/libinotify
 
 # for tests
 PORTHOME =		${WRKDIR}

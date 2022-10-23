@@ -1,7 +1,7 @@
-COMMENT =		text editing widgets for KDE
-DISTNAME =		ktextwidgets-${VERSION}
+COMMENT =	text editing widgets for KDE
+DISTNAME =	ktextwidgets-${VERSION}
 
-SHARED_LIBS =		KF5TextWidgets		6.3
+SHARED_LIBS =	KF5TextWidgets		6.3
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons

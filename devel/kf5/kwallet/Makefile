@@ -11,7 +11,6 @@ WANTLIB += KF5I18n KF5Notifications KF5Service KF5WidgetsAddons
 WANTLIB += KF5WindowSystem Qt5Core Qt5DBus Qt5Gui Qt5Widgets Qt5Xml
 WANTLIB += X11 c gcrypt m qca-qt5
 
-
 BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/kf5/kdoctools>=${MODKF5_VERSION}
 

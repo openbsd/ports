@@ -1,6 +1,6 @@
-COMMENT =		QtQuickControls 2 style for painting
-DISTNAME =		qqc2-desktop-style-${VERSION}
-PKGNAME =		kf5-qqc2-desktop-style-${VERSION}
+COMMENT =	QtQuickControls 2 style for painting
+DISTNAME =	qqc2-desktop-style-${VERSION}
+PKGNAME =	kf5-qqc2-desktop-style-${VERSION}
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5IconThemes

@@ -1,7 +1,7 @@
-COMMENT =		original KDE HTML rendering engine
-DISTNAME =		khtml-${VERSION}
+COMMENT =	original KDE HTML rendering engine
+DISTNAME =	khtml-${VERSION}
 
-SHARED_LIBS =		KF5KHtml	6.0
+SHARED_LIBS =	KF5KHtml	6.0
 
 WANTLIB += ${COMPILER_LIBCXX} ICE KF5Archive KF5Auth KF5AuthCore
 WANTLIB += KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
@@ -14,28 +14,28 @@ WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets
 WANTLIB += Qt5X11Extras Qt5Xml SM X11 Xext gif jpeg m phonon4qt5
 WANTLIB += phonon4qt5experimental png z
 
-BUILD_DEPENDS =		devel/gettext,-tools
+BUILD_DEPENDS =	devel/gettext,-tools
 
-LIB_DEPENDS =		devel/kf5/karchive>=${MODKF5_VERSION} \
-			devel/kf5/kcodecs>=${MODKF5_VERSION} \
-			devel/kf5/kglobalaccel>=${MODKF5_VERSION} \
-			devel/kf5/ki18n>=${MODKF5_VERSION} \
-			devel/kf5/kiconthemes>=${MODKF5_VERSION} \
-			devel/kf5/kio>=${MODKF5_VERSION} \
-			devel/kf5/kjs>=${MODKF5_VERSION} \
-			devel/kf5/knotifications>=${MODKF5_VERSION} \
-			devel/kf5/kparts>=${MODKF5_VERSION} \
-			devel/kf5/ktextwidgets>=${MODKF5_VERSION} \
-			devel/kf5/kwallet>=${MODKF5_VERSION} \
-			devel/kf5/kwidgetsaddons>=${MODKF5_VERSION} \
-			devel/kf5/kwindowsystem>=${MODKF5_VERSION} \
-			devel/kf5/kxmlgui>=${MODKF5_VERSION} \
-			devel/kf5/sonnet>=${MODKF5_VERSION} \
-			graphics/giflib \
-			graphics/jpeg \
-			graphics/png \
-			x11/qt5/qtx11extras \
-			multimedia/phonon
+LIB_DEPENDS =	devel/kf5/karchive>=${MODKF5_VERSION} \
+		devel/kf5/kcodecs>=${MODKF5_VERSION} \
+		devel/kf5/kglobalaccel>=${MODKF5_VERSION} \
+		devel/kf5/ki18n>=${MODKF5_VERSION} \
+		devel/kf5/kiconthemes>=${MODKF5_VERSION} \
+		devel/kf5/kio>=${MODKF5_VERSION} \
+		devel/kf5/kjs>=${MODKF5_VERSION} \
+		devel/kf5/knotifications>=${MODKF5_VERSION} \
+		devel/kf5/kparts>=${MODKF5_VERSION} \
+		devel/kf5/ktextwidgets>=${MODKF5_VERSION} \
+		devel/kf5/kwallet>=${MODKF5_VERSION} \
+		devel/kf5/kwidgetsaddons>=${MODKF5_VERSION} \
+		devel/kf5/kwindowsystem>=${MODKF5_VERSION} \
+		devel/kf5/kxmlgui>=${MODKF5_VERSION} \
+		devel/kf5/sonnet>=${MODKF5_VERSION} \
+		graphics/giflib \
+		graphics/jpeg \
+		graphics/png \
+		x11/qt5/qtx11extras \
+		multimedia/phonon
 
 IS_PORTING_AID =	Yes
 

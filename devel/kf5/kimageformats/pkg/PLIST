@@ -9,6 +9,7 @@
 @so lib/qt5/plugins/imageformats/kimg_pic.so
 @so lib/qt5/plugins/imageformats/kimg_psd.so
 @so lib/qt5/plugins/imageformats/kimg_ras.so
+@so lib/qt5/plugins/imageformats/kimg_raw.so
 @so lib/qt5/plugins/imageformats/kimg_rgb.so
 @so lib/qt5/plugins/imageformats/kimg_tga.so
 @so lib/qt5/plugins/imageformats/kimg_xcf.so
@@ -27,6 +28,7 @@ share/kservices5/qimageioplugins/pcx.desktop
 share/kservices5/qimageioplugins/pic.desktop
 share/kservices5/qimageioplugins/psd.desktop
 share/kservices5/qimageioplugins/ras.desktop
+share/kservices5/qimageioplugins/raw.desktop
 share/kservices5/qimageioplugins/rgb.desktop
 share/kservices5/qimageioplugins/tga.desktop
 share/kservices5/qimageioplugins/xcf.desktop

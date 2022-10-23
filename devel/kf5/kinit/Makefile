@@ -9,18 +9,18 @@ WANTLIB += KF5KIOGui KF5KIOWidgets KF5Service KF5Solid KF5WidgetsAddons
 WANTLIB += KF5WindowSystem Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
 WANTLIB += Qt5Network Qt5Widgets X11 c m xcb
 
-BUILD_DEPENDS =		devel/gettext,-tools \
-			devel/kf5/kdoctools>=${MODKF5_VERSION}
+BUILD_DEPENDS =	devel/gettext,-tools \
+		devel/kf5/kdoctools>=${MODKF5_VERSION}
 
-RUN_DEPENDS =		devel/kf5/kdoctools>=${MODKF5_VERSION}
+RUN_DEPENDS =	devel/kf5/kdoctools>=${MODKF5_VERSION}
 
-LIB_DEPENDS =		devel/kf5/kconfig>=${MODKF5_VERSION} \
-			devel/kf5/kcrash>=${MODKF5_VERSION} \
-			devel/kf5/kdbusaddons>=${MODKF5_VERSION} \
-			devel/kf5/ki18n>=${MODKF5_VERSION} \
-			devel/kf5/kio>=${MODKF5_VERSION} \
-			devel/kf5/kservice>=${MODKF5_VERSION} \
-			devel/kf5/kwindowsystem>=${MODKF5_VERSION}
+LIB_DEPENDS =	devel/kf5/kconfig>=${MODKF5_VERSION} \
+		devel/kf5/kcrash>=${MODKF5_VERSION} \
+		devel/kf5/kdbusaddons>=${MODKF5_VERSION} \
+		devel/kf5/ki18n>=${MODKF5_VERSION} \
+		devel/kf5/kio>=${MODKF5_VERSION} \
+		devel/kf5/kservice>=${MODKF5_VERSION} \
+		devel/kf5/kwindowsystem>=${MODKF5_VERSION}
 
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Libcap=ON
 
