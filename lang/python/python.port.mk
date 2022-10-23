@@ -38,6 +38,11 @@ MODPY_DEFAULT_VERSION_3 = 3.9
 # - keep the @conflict python-*-${VERSION_SPEC} PLIST lines as-is, they are
 #   there to override the "@option no-default-conflict" and set automatically
 #   from the variable defined in 3.x/Makefile.
+# - after a change to PLISTs (or dependencies etc) in -current, keep
+#   the package version in -current higher than in -stable for the
+#   previous version (i.e. change made in 7.1-current -> REVISION
+#   must be set higher in 7.1-current/7.2 than 7.1-stable and this
+#   needs to be kept when Python is updated in -stable)
 
 # Also note:
 # - Some subpackages e.g. -idle have a conflict on an old version of the main
