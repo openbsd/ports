@@ -1,5 +1,5 @@
 COMMENT =	client program for playing muds with advanced features
-DISTNAME =	tintin-2.02.12
+DISTNAME =	tintin-2.02.20
 CATEGORIES =	net games
 
 HOMEPAGE =	https://tintin.sourceforge.io/
