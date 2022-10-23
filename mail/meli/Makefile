@@ -8,6 +8,8 @@ PKGNAME =	meli-0.7.2pl20221017
 
 # ring-v0.16.20 does not support those archs
 NOT_FOR_ARCHS =	powerpc64 riscv64 sparc64
+# error[E0308]: mismatched types                                  --> melib/src/backends/notmuch.rs:82:13
+ONLY_FOR_ARCHS = ${LP64_ARCHS}
 
 CATEGORIES =		mail
 
