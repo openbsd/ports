@@ -1,6 +1,6 @@
 QT6NAME =		Qt3D
 COMMENT =		Qt6 components for 3D graphics
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=  Qt63DAnimation            0.0 # 0.0
 SHARED_LIBS +=  Qt63DCore                 0.0 # 0.0
@@ -17,9 +17,10 @@ SHARED_LIBS +=  Qt63DRender               0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Concurrent Qt6Core Qt6Gui
 WANTLIB += Qt6Network Qt6OpenGL Qt6Qml Qt6QmlModels Qt6Quick Qt6ShaderTools
-WANTLIB += assimp c m xkbcommon z
+WANTLIB += assimp c m xkbcommon
 
-BUILD_DEPENDS =		x11/qt6/qtmultimedia
+BUILD_DEPENDS =		x11/qt6/qtmultimedia \
+			graphics/vulkan-loader
 
 LIB_DEPENDS =		multimedia/assimp \
 			x11/qt6/qtshadertools \
