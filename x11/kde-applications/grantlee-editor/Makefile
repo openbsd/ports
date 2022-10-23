@@ -3,6 +3,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	utilities and tools to manage themes in KDE PIM applications
 DISTNAME =	grantlee-editor-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=  grantleethemeeditor       1.0 # 5.13.2
 
@@ -28,8 +29,7 @@ MODKF5_L10N_CONFLICT = yes
 MODKF5_I18N_CONFLICT = yes
 
 BUILD_DEPENDS =	devel/boost \
-		devel/kf5/ktexteditor \
-		devel/libinotify
+		devel/kf5/ktexteditor
 
 RUN_DEPENDS =	x11/kde-applications/kdepim-runtime
 
