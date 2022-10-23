@@ -1,7 +1,7 @@
 COMMENT =		suite of solitaire card games
 
 GNOME_PROJECT =		aisleriot
-GNOME_VERSION =		3.22.25
+GNOME_VERSION =		3.22.26
 
 # override gnome MODULE
 MASTER_SITES =		https://gitlab.gnome.org/GNOME/${GNOME_PROJECT}/-/archive/${GNOME_VERSION}/
@@ -33,7 +33,7 @@ LIB_DEPENDS =		audio/libcanberra,-gtk3 \
 
 BUILD_DEPENDS =		shells/bash
 
-CONFIGURE_ARGS =	 -Dtheme_kde=false
+CONFIGURE_ARGS =	-Dtheme_kde=false
 
 # XXX horrible hack: make it possible to build when multiple guile versions are
 # installed (take precedence over -I${LOCALBASE}/include because meson reorders
