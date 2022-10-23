@@ -9,7 +9,7 @@ COMMENT=		Chromium browser sans integration with Google
 
 V=			106.0.5249.119
 UGV=			${V}-1
-REVISION=		1
+REVISION=		2
 
 DISTNAME=		ungoogled-chromium-${V}
 
@@ -275,7 +275,7 @@ do-install:
 	${INSTALL_PROGRAM} ${BUILDDIR}/chromedriver ${PREFIX}/bin/ungoogled-chromedriver
 	${INSTALL_MAN} ${WRKSRC}/chrome/app/resources/manpage.1.in ${PREFIX}/man/man1/ungoogled-chromium.1
 	@perl -pi -e "s,\@\@PACKAGE\@\@,chromium,g;s,\@\@MENUNAME\@\@,Chromium Web Browser,g" \
-		${PREFIX}/man/man1/ungoogled-chrome.1
+		${PREFIX}/man/man1/ungoogled-chromium.1
 	${INSTALL_DATA} ${BUILDDIR}/*.pak ${PREFIX}/${DIST_TARGET_DIR}
 
 	${INSTALL_DATA_DIR} ${PREFIX}/${DIST_TARGET_DIR}/locales
