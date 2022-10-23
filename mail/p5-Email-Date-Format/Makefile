@@ -2,9 +2,8 @@ COMMENT=	produce RFC 2822 date strings
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME =	Email-Date-Format-1.005
+DISTNAME =	Email-Date-Format-1.006
 CATEGORIES=	mail
-REVISION =	0
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
