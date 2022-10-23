@@ -3,6 +3,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	KDE PIM email client
 DISTNAME =	kmail-${VERSION}
 CATEGORIES =	net mail
+REVISION =	0
 
 SHARED_LIBS +=  kmailprivate       5.2 # 5.13.2
 
@@ -39,8 +40,7 @@ MODKDE5_DOCS = yes
 MODKF5_L10N_CONFLICT = yes
 MODKF5_I18N_CONFLICT = yes
 
-BUILD_DEPENDS =	devel/boost \
-		devel/libinotify
+BUILD_DEPENDS =	devel/boost
 
 RUN_DEPENDS =	x11/kde-applications/akonadi-import-wizard \
 		x11/kde-applications/kdepim-runtime \
