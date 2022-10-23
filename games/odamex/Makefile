@@ -3,6 +3,7 @@ COMMENT =	online multiplayer doom
 V =		0.9.5
 DISTNAME =	odamex-src-${V}
 PKGNAME =	odamex-${V}
+REVISION =	0
 
 CATEGORIES =	games
 HOMEPAGE =	https://odamex.net/
