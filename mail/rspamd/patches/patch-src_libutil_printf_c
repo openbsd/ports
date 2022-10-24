@@ -1,4 +1,7 @@
-OpenBSD doesn't have GNU ffsll() but both gcc and clang have it as builtin
+OpenBSD doesn't have GNU ffsll() but both gcc and clang have it as builtin.
+
+Remove for next release; obsoleted by
+https://github.com/rspamd/rspamd/commit/a30002b1c83196a621aa6d6bd24b91d39f312ca2
 
 Index: src/libutil/printf.c
 --- src/libutil/printf.c.orig
