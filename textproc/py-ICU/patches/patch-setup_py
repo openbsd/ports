@@ -1,15 +1,25 @@
+XXX push upstream
+
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -83,6 +83,7 @@ CONFIGURE_WITH_ICU_CONFIG = {
-     'darwin': True,
+@@ -64,12 +64,15 @@ if platform.startswith(('linux', 'gnu')):
+     platform = 'linux'
+ elif platform.startswith('freebsd'):
+     platform = 'freebsd'
++elif platform.startswith('openbsd'):
++    platform = 'openbsd'
+ 
+ 
+ CONFIGURE_WITH_ICU_CONFIG = {
+     'darwin': False,
      'linux': True,
      'freebsd': False, # not tested
 +    'openbsd': True,
      'win32': False,   # no icu-config
      'sunos5': False,  # not tested
      'cygwin': False,  # not tested
-@@ -92,6 +93,7 @@ CONFIGURE_WITH_PKG_CONFIG = {
+@@ -79,6 +82,7 @@ CONFIGURE_WITH_PKG_CONFIG = {
      'darwin': False,  # no pkg-config ?
      'linux': True,
      'freebsd': False, # not tested
@@ -17,7 +27,7 @@ Index: setup.py
      'win32': False,   # no pkg-config ?
      'sunos5': False,  # not tested
      'cygwin': False,  # not tested
-@@ -101,6 +103,7 @@ INCLUDES = {
+@@ -111,6 +115,7 @@ INCLUDES = {
      'darwin': [],
      'linux': [],
      'freebsd': ['/usr/local/include'],
@@ -25,7 +35,7 @@ Index: setup.py
      'win32': ['c:/icu/include'],
      'sunos5': [],
      'cygwin': [],
-@@ -119,6 +122,7 @@ PEDANTIC_FLAGS = {
+@@ -129,6 +134,7 @@ PEDANTIC_FLAGS = {
      'darwin': ['-pedantic'],
      'linux': ['-pedantic', '-Wno-variadic-macros'],
      'freebsd': ['-pedantic'],
@@ -33,15 +43,15 @@ Index: setup.py
      'win32': [],
      'sunos5': [],
      'cygwin': ['-pedantic'],
-@@ -128,6 +132,7 @@ CFLAGS = {
-     'darwin': [],
-     'linux': [],
+@@ -138,6 +144,7 @@ CFLAGS = {
+     'darwin': ['-std=c++11'],
+     'linux': ['-std=c++11'],
      'freebsd': ['-std=c++11'],
 +    'openbsd': ['-std=c++11'],
      'win32': ['/Zc:wchar_t', '/EHsc'],
      'sunos5': ['-std=c++11'],
      'cygwin': ['-D_GNU_SOURCE=1', '-std=c++11'],
-@@ -138,6 +143,7 @@ DEBUG_CFLAGS = {
+@@ -148,6 +155,7 @@ DEBUG_CFLAGS = {
      'darwin': ['-O0', '-g', '-DDEBUG'],
      'linux': ['-O0', '-g', '-DDEBUG'],
      'freebsd': ['-O0', '-g', '-DDEBUG'],
@@ -49,7 +59,7 @@ Index: setup.py
      'win32': ['/Od', '/DDEBUG'],
      'sunos5': ['-DDEBUG'],
      'cygwin': ['-Og', '-g', '-DDEBUG'],
-@@ -147,6 +153,7 @@ LFLAGS = {
+@@ -157,6 +165,7 @@ LFLAGS = {
      'darwin': [],
      'linux': [],
      'freebsd': ['-L/usr/local/lib'],
@@ -57,7 +67,7 @@ Index: setup.py
      'win32': ['/LIBPATH:c:/icu/lib'],
      'sunos5': [],
      'cygwin': [],
-@@ -156,6 +163,7 @@ LIBRARIES = {
+@@ -166,6 +175,7 @@ LIBRARIES = {
      'darwin': [],
      'linux': [],
      'freebsd': ['icui18n', 'icuuc', 'icudata'],
@@ -65,12 +75,3 @@ Index: setup.py
      'win32': ['icuin', 'icuuc', 'icudt'],
      'sunos5': ['icui18n', 'icuuc', 'icudata'],
      'cygwin': ['icui18n', 'icuuc', 'icudata'],
-@@ -166,6 +174,8 @@ if platform.startswith(('linux', 'gnu')):
-     platform = 'linux'
- elif platform.startswith('freebsd'):
-     platform = 'freebsd'
-+elif platform.startswith('openbsd'):
-+    platform = 'openbsd'
- 
- if 'PYICU_INCLUDES' in os.environ:
-     _includes = os.environ['PYICU_INCLUDES'].split(os.pathsep)
