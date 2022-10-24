@@ -1,6 +1,7 @@
 COMMENT =	KDE PIM messaging library
 DISTNAME =	messagelib-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=  KF5MessageComposer       11.0 # 5.13.2
 SHARED_LIBS +=  KF5MessageCore           3.1 # 5.13.2
@@ -29,11 +30,12 @@ WANTLIB += Qt5QmlModels Qt5Quick Qt5WebChannel Qt5WebEngineCore
 WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml X11 assuan gpgme
 WANTLIB += gpgmepp m qca-qt5 qgpgme
 
+WANTLIB += lib/inotify/inotify
+
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
 
-BUILD_DEPENDS =	devel/boost \
-		devel/libinotify
+BUILD_DEPENDS =	devel/boost
 
 LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kauth \
@@ -58,6 +60,7 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/solid \
 		devel/kf5/sonnet \
 		devel/kf5/syntax-highlighting \
+		devel/libinotify \
 		security/libassuan \
 		security/qca-qt5 \
 		x11/grantlee-qt5 \
@@ -83,8 +86,6 @@ TEST_IS_INTERACTIVE =	X11
 
 CXXFLAGS +=	-I${LOCALBASE}/include -I${LOCALBASE}/include/QGpgME -I${LOCALBASE}/include/gpgme++
 MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
-
-CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Inotify=On
 
 # XXX fix me
 #CONFIGURE_ARGS +=	-DKDEPIM_RUN_AKONADI_TEST=OFF

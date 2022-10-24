@@ -1,0 +1,47 @@
+Index: messageviewer/src/CMakeLists.txt
+--- messageviewer/src/CMakeLists.txt.orig
++++ messageviewer/src/CMakeLists.txt
+@@ -20,7 +20,7 @@ endif()
+ 
+ configure_file(settings/messageviewer.kcfg.cmake ${CMAKE_CURRENT_BINARY_DIR}/messageviewer.kcfg)
+ include(CheckIncludeFiles)
+-find_package(Inotify)
++find_package(Inotify REQUIRED)
+ set_package_properties(Inotify PROPERTIES
+                        PURPOSE "Filesystem alteration notifications using inotify")
+ if(Inotify_FOUND)
+@@ -397,12 +397,13 @@ endif()
+ 
+ generate_export_header(KF5MessageViewer BASE_NAME messageviewer)
+ 
+-if (${Inotify_FOUND})
+-    target_include_directories(KF5MessageViewer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/MessageViewer/;${Inotify_INCLUDE_DIRS}>")
+-else()
+-    target_include_directories(KF5MessageViewer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/MessageViewer/>")
++if(Inotify_FOUND)
++    target_include_directories(KF5MessageViewer PRIVATE ${Inotify_INCLUDE_DIRS})
++    target_link_libraries(KF5MessageViewer PUBLIC ${Inotify_LIBRARIES} )
+ endif()
+ 
++target_include_directories(KF5MessageViewer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/MessageViewer/>")
++
+ target_link_libraries(KF5MessageViewer
+     PUBLIC
+     KF5::MessageCore
+@@ -433,14 +434,13 @@ target_link_libraries(KF5MessageViewer
+     KF5::AkonadiContact
+     ${TEMPLATES_LIB}
+     Qt${QT_MAJOR_VERSION}::PrintSupport
+-    ${Inotify_LIBRARIES}
+     qca-qt${QT_MAJOR_VERSION}
+     KF5::Notifications
+     )
+ if (QT_MAJOR_VERSION STREQUAL "6")
+-    target_link_libraries(KF5MessageViewer PRIVATE QGpgmeQt6)
++    target_link_libraries(KF5MessageViewer PRIVATE qgpgmeQt6)
+ else()
+-    target_link_libraries(KF5MessageViewer PRIVATE QGpgme)
++    target_link_libraries(KF5MessageViewer PRIVATE qgpgme)
+ endif()
+ if (TARGET Qt6::Core5Compat)
+     target_link_libraries(KF5MessageViewer PRIVATE Qt6::Core5Compat) 
