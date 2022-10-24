@@ -5,17 +5,14 @@ PKGNAME=	postfix-${VERSION:S/-/./}
 CATEGORIES=	mail
 
 MASTER_SITE_POSTFIX= \
-		http://ftp.porcupine.org/mirrors/postfix-release/ \
-		http://de.postfix.org/ftpmirror/ \
-		http://mirror.tje.me.uk/pub/mirrors/postfix-release/ \
-		http://mirror.postfix.jp/postfix-release/ \
-		ftp://ftp.porcupine.org/mirrors/postfix-release/ \
-		ftp://ftp.cs.uu.nl/mirror/postfix/postfix-release/
+		https://archive.mgm51.com/mirrors/postfix-source/ \
+		https://de.postfix.org/ftpmirror/ \
+		https://postfix-mirror.horus-it.com/postfix-release/
 
 DIST_SUBDIR=	postfix
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-HOMEPAGE=	http://www.postfix.org/
+HOMEPAGE=	https://www.postfix.org/
 
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
