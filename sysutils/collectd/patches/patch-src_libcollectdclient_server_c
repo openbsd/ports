@@ -1,17 +1,16 @@
 Index: src/libcollectdclient/server.c
 --- src/libcollectdclient/server.c.orig
 +++ src/libcollectdclient/server.c
-@@ -34,11 +34,12 @@
- #include "collectd/server.h"
+@@ -39,10 +39,11 @@
  
+ // clang-format off
  #include <errno.h>
 +#include <sys/time.h>
 +#include <sys/socket.h>
- #include <net/if.h>
- #include <netdb.h>
- #include <netinet/in.h>
+ #include <stdbool.h>
  #include <string.h>
+ #include <unistd.h>
 -#include <sys/socket.h>
  #include <sys/types.h>
- #include <unistd.h>
- 
+ #include <net/if.h>
+ #include <netdb.h>

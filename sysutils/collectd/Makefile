@@ -13,7 +13,7 @@ COMMENT-redis =		collectd redis plugin
 COMMENT-prometheus =	collectd prometheus plugin
 COMMENT-ping =		collectd ping plugin
 
-V =			5.8.1
+V =			5.12.0
 DISTNAME =		collectd-$V
 PKGNAME-main =		collectd-$V
 PKGNAME-mysql =		collectd-mysql-$V
@@ -30,20 +30,6 @@ PKGNAME-redis =		collectd-redis-$V
 PKGNAME-prometheus =	collectd-prometheus-$V
 PKGNAME-ping =		collectd-ping-$V
 CATEGORIES =		sysutils
-REVISION-main =		2
-REVISION-memcachec =	2
-REVISION-mqtt =		1
-REVISION-mysql =	2
-REVISION-nut =		3
-REVISION-pgsql =	1
-REVISION-ping =		1
-REVISION-prometheus =	4
-REVISION-python =	3
-REVISION-redis =	1
-REVISION-riemann =	4
-REVISION-rrdtool =	4
-REVISION-snmp =		1
-REVISION-virt =		4
 
 HOMEPAGE =		http://www.collectd.org/
 SHARED_LIBS +=		collectdclient 1.0
@@ -78,7 +64,7 @@ LIB_DEPENDS-rrdtool =	net/rrdtool
 RUN_DEPENDS-rrdtool =	collectd-$V:${BASE_PKGPATH},-main
 
 LIB_DEPENDS-snmp =	net/net-snmp
-WANTLIB-snmp =		crypto netsnmp pthread c kvm m netsnmpagent perl
+WANTLIB-snmp =		crypto netsnmp pthread c kvm m netsnmpagent perl ssl
 RUN_DEPENDS-snmp =	collectd-$V:${BASE_PKGPATH},-main
 
 LIB_DEPENDS-virt =	sysutils/libvirt

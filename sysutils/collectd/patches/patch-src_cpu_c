@@ -5,7 +5,7 @@ by the kernel.
 Index: src/cpu.c
 --- src/cpu.c.orig
 +++ src/cpu.c
-@@ -64,6 +64,10 @@
+@@ -63,6 +63,10 @@
  #include <sys/sysctl.h>
  #endif
  
@@ -14,5 +14,5 @@ Index: src/cpu.c
 +#endif
 +
  #ifdef HAVE_SYS_DKSTAT_H
+ /* implies BSD variant */
  #include <sys/dkstat.h>
- #endif

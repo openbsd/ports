@@ -14,7 +14,7 @@ Index: src/nut.c
    nut_ups_t *next;
  };
  
-@@ -249,7 +249,7 @@ static int nut_read(user_data_t *user_data) {
+@@ -250,7 +250,7 @@ static int nut_read(user_data_t *user_data) {
    const char *query[3] = {"VAR", ups->upsname, NULL};
    unsigned int query_num = 2;
    char **answer;

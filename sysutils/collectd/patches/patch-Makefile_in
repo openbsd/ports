@@ -1,26 +1,26 @@
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -109,7 +109,7 @@ check_PROGRAMS = test_common$(EXEEXT) test_format_grap
- @BUILD_WITH_LIBSOCKET_TRUE@am__append_4 = -lsocket
- @BUILD_WITH_LIBKSTAT_TRUE@am__append_5 = -lkstat
- @BUILD_WITH_LIBDEVINFO_TRUE@am__append_6 = -ldevinfo
--@BUILD_FEATURE_DAEMON_TRUE@am__append_7 = -DPIDFILE='"${localstatedir}/run/${PACKAGE_NAME}.pid"'
-+@BUILD_FEATURE_DAEMON_TRUE@am__append_7 = -DPIDFILE='"${localstatedir}/${PACKAGE_NAME}/${PACKAGE_NAME}.pid"'
+@@ -129,7 +129,7 @@ TESTS = $(check_PROGRAMS) $(am__EXEEXT_3) $(am__EXEEXT
+ @BUILD_WIN32_TRUE@am__append_13 = -ldl -Wl,--out-implib,libcollectd.a \
+ @BUILD_WIN32_TRUE@	-Wl,--out-implib,libcollectd.a
+ @BUILD_WIN32_FALSE@am__append_14 = src/daemon/cmd.c
+-@BUILD_FEATURE_DAEMON_TRUE@am__append_15 = -DPIDFILE='"${localstatedir}/run/${PACKAGE_NAME}.pid"'
++@BUILD_FEATURE_DAEMON_TRUE@am__append_15 = -DPIDFILE='"${localstatedir}/${PACKAGE_NAME}/${PACKAGE_NAME}.pid"'
  
  # The daemon needs to call sg_init, so we need to link it against libstatgrab,
  # too. -octo
-@@ -3210,7 +3210,7 @@ AM_CPPFLAGS = \
- 	-DPREFIX='"${prefix}"' \
- 	-DCONFIGFILE='"${sysconfdir}/${PACKAGE_NAME}.conf"' \
- 	-DLOCALSTATEDIR='"${localstatedir}"' \
--	-DPKGLOCALSTATEDIR='"${localstatedir}/lib/${PACKAGE_NAME}"' \
-+	-DPKGLOCALSTATEDIR='"${localstatedir}/${PACKAGE_NAME}"' \
- 	-DPLUGINDIR='"${pkglibdir}"' \
- 	-DPKGDATADIR='"${pkgdatadir}"'
- 
-@@ -7821,16 +7821,8 @@ uninstall-man: uninstall-man1 uninstall-man5
- @HAVE_GRPC_CPP_TRUE@@HAVE_PROTOC3_TRUE@	$(V_PROTOC)$(PROTOC) -I$(srcdir)/proto --cpp_out=$(builddir) $<
+@@ -4000,7 +4000,7 @@ AM_YFLAGS = -d
+ @BUILD_WIN32_TRUE@cpkgdatadir = $(datadir)
+ @BUILD_WIN32_FALSE@cpkglibdir = $(pkglibdir)
+ @BUILD_WIN32_TRUE@cpkglibdir = $(libdir)/plugins
+-@BUILD_WIN32_FALSE@cpkglocalstatedir = ${localstatedir}/lib/${PACKAGE_NAME}
++@BUILD_WIN32_FALSE@cpkglocalstatedir = ${localstatedir}/${PACKAGE_NAME}
+ @BUILD_WIN32_TRUE@cpkglocalstatedir = ${localstatedir}
+ BUILT_SOURCES = src/libcollectdclient/collectd/lcc_features.h \
+ 	src/liboconfig/parser.h $(dist_man_MANS) $(am__append_298) \
+@@ -11535,16 +11535,8 @@ uninstall-man: uninstall-man1 uninstall-man5
+ @HAVE_GRPC_CPP_TRUE@@HAVE_PROTOC3_TRUE@	$(srcdir)/proto/types.proto
  
  install-exec-hook:
 -	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/run
@@ -29,12 +29,12 @@ Index: Makefile.in
 -	$(mkinstalldirs) $(DESTDIR)$(sysconfdir)
 -	if test -e $(DESTDIR)$(sysconfdir)/collectd.conf; \
 -	then \
--		$(INSTALL) -m 0640 $(srcdir)/src/collectd.conf $(DESTDIR)$(sysconfdir)/collectd.conf.pkg-orig; \
+-		$(INSTALL) -m 0640 $(builddir)/src/collectd.conf $(DESTDIR)$(sysconfdir)/collectd.conf.pkg-orig; \
 -	else \
--		$(INSTALL) -m 0640 $(srcdir)/src/collectd.conf $(DESTDIR)$(sysconfdir)/collectd.conf; \
+-		$(INSTALL) -m 0640 $(builddir)/src/collectd.conf $(DESTDIR)$(sysconfdir)/collectd.conf; \
 -	fi; \
 +	$(mkinstalldirs) ${PREFIX}/share/examples
 +	$(INSTALL) -m 0644 $(srcdir)/src/collectd.conf ${PREFIX}/share/examples/collectd.conf;
- 	$(mkinstalldirs) $(DESTDIR)$(pkgdatadir)
- 	$(INSTALL) -m 0644 $(srcdir)/src/types.db $(DESTDIR)$(pkgdatadir)/types.db;
+ 	$(mkinstalldirs) $(DESTDIR)$(cpkgdatadir)
+ 	$(INSTALL) -m 0644 $(srcdir)/src/types.db $(DESTDIR)$(cpkgdatadir)/types.db;
  	$(INSTALL) -m 0644 $(srcdir)/src/postgresql_default.conf \
