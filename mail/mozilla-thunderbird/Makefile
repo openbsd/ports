@@ -9,6 +9,7 @@ MOZILLA_PROJECT =	thunderbird
 MOZILLA_CODENAME =	comm/mail
 EXTRACT_SUFX =		.tar.xz
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
+REVISION = 0
 
 # XXX badly formed debug in libxul ?
 DWZ = :
@@ -73,7 +74,7 @@ MAKE_ENV +=		BUILD_VERBOSE_LOG="1" CARGOFLAGS="-j${MAKE_JOBS}"
 LIB_DEPENDS +=	security/rnp \
 		devel/libffi
 
-WANTLIB +=	Xrandr Xtst ffi
+WANTLIB +=	Xrandr Xtst ffi rnp
 
 ALL_TARGET =	default
 
