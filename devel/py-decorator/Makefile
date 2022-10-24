@@ -1,9 +1,8 @@
 COMMENT =		simplify usage of decorators
 
-MODPY_EGG_VERSION =	4.4.0
+MODPY_EGG_VERSION =	5.1.1
 DISTNAME =		decorator-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
 
 CATEGORIES =		devel
 
@@ -13,7 +12,8 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
+MODPY_PYTEST_ARGS =	src/tests/*.py
 
 FLAVORS =		python3
 FLAVOR =		python3
