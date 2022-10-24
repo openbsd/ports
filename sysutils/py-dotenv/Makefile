@@ -1,13 +1,14 @@
 COMMENT =	handle .env files
 
 MODPY_EGG_VERSION =	0.21.0
+REVISION =	0
 
 DISTNAME =	python-dotenv-${MODPY_EGG_VERSION}
 PKGNAME =	${DISTNAME:S/python-/py-/}
 
 CATEGORIES =	sysutils
 
-HOMEPAGE =	https://github.com/pedroburon/dotenv
+HOMEPAGE =	https://github.com/theskumar/python-dotenv
 
 # MIT
 PERMIT_PACKAGE =	Yes
