@@ -1,9 +1,11 @@
 COMMENT =	core KDE extensions to Qt classes
 DISTNAME =	kcoreaddons-${VERSION}
+REVISION =	0
 
 SHARED_LIBS =	KF5CoreAddons		8.1
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5DBus c m
+WANTLIB += lib/inotify/inotify
 
 BUILD_DEPENDS =	misc/shared-mime-info
 
