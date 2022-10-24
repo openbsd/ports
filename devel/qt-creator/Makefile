@@ -2,7 +2,7 @@ USE_WXNEEDED =		Yes
 
 COMMENT =		cross-platform IDE for use with Qt
 
-V =			8.0.1
+V =			8.0.2
 DISTNAME =		qt-creator-opensource-src-${V}
 PKGNAME =		qt-creator-${V}
 
@@ -13,9 +13,9 @@ SHARED_LIBS +=  GLSL                      1.1 # 0.0
 SHARED_LIBS +=  LanguageUtils             1.1 # 0.0
 SHARED_LIBS +=  QmlDebug                  5.0 # 0.0
 SHARED_LIBS +=  QmlEditorWidgets          1.1 # 0.0
-SHARED_LIBS +=  QmlJS                     9.0 # 0.0
+SHARED_LIBS +=  QmlJS                     9.1 # 0.0
 SHARED_LIBS +=  QtcSsh                    2.0 # 0.0
-SHARED_LIBS +=  Utils                     10.0 # 0.0
+SHARED_LIBS +=  Utils                     10.1 # 0.0
 SHARED_LIBS +=  Sqlite                    7.1 # 1.0
 SHARED_LIBS +=  Modeling                  6.1 # 1.0
 SHARED_LIBS +=  ClangSupport              2.0 # 4.5

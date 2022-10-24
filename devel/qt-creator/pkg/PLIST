@@ -382,6 +382,8 @@ share/qtcreator/qml/qmlpuppet/mockfiles/images/editor_particlesystem@2x.png
 share/qtcreator/qml/qmlpuppet/mockfiles/images/floor_tex.png
 share/qtcreator/qml/qmlpuppet/mockfiles/images/point.png
 share/qtcreator/qml/qmlpuppet/mockfiles/images/point@2x.png
+share/qtcreator/qml/qmlpuppet/mockfiles/images/preview_landscape.hdr
+share/qtcreator/qml/qmlpuppet/mockfiles/images/preview_studio.hdr
 share/qtcreator/qml/qmlpuppet/mockfiles/images/spot.png
 share/qtcreator/qml/qmlpuppet/mockfiles/images/spot@2x.png
 share/qtcreator/qml/qmlpuppet/mockfiles/images/static_floor.png
@@ -590,8 +592,13 @@ share/qtcreator/qmldesigner/formatconfiguration.json
 share/qtcreator/qmldesigner/itemLibraryQmlSources/
 share/qtcreator/qmldesigner/itemLibraryQmlSources/AddModuleView.qml
 share/qtcreator/qmldesigner/itemLibraryQmlSources/Assets.qml
+share/qtcreator/qmldesigner/itemLibraryQmlSources/AssetsContextMenu.qml
+share/qtcreator/qmldesigner/itemLibraryQmlSources/AssetsView.qml
+share/qtcreator/qmldesigner/itemLibraryQmlSources/ConfirmDeleteFolderDialog.qml
 share/qtcreator/qmldesigner/itemLibraryQmlSources/ItemDelegate.qml
 share/qtcreator/qmldesigner/itemLibraryQmlSources/ItemsView.qml
+share/qtcreator/qmldesigner/itemLibraryQmlSources/NewFolderDialog.qml
+share/qtcreator/qmldesigner/itemLibraryQmlSources/RenameFolderDialog.qml
 share/qtcreator/qmldesigner/landingpage/
 share/qtcreator/qmldesigner/landingpage/content/
 share/qtcreator/qmldesigner/landingpage/content/App.qml
@@ -620,8 +627,12 @@ share/qtcreator/qmldesigner/landingpage/mockimports/LandingPageTheme/
 share/qtcreator/qmldesigner/landingpage/mockimports/LandingPageTheme/Dummy.qml
 share/qtcreator/qmldesigner/landingpage/mockimports/LandingPageTheme/qmldir
 share/qtcreator/qmldesigner/materialBrowserQmlSource/
+share/qtcreator/qmldesigner/materialBrowserQmlSource/BundleMaterialItem.qml
 share/qtcreator/qmldesigner/materialBrowserQmlSource/MaterialBrowser.qml
+share/qtcreator/qmldesigner/materialBrowserQmlSource/MaterialBrowserContextMenu.qml
+share/qtcreator/qmldesigner/materialBrowserQmlSource/MaterialBundleContextMenu.qml
 share/qtcreator/qmldesigner/materialBrowserQmlSource/MaterialItem.qml
+share/qtcreator/qmldesigner/materialBrowserQmlSource/UnimportBundleMaterialDialog.qml
 share/qtcreator/qmldesigner/materialEditorQmlSources/
 share/qtcreator/qmldesigner/materialEditorQmlSources/EmptyMaterialEditorPane.qml
 share/qtcreator/qmldesigner/materialEditorQmlSources/MaterialEditorPane.qml
@@ -669,8 +680,21 @@ share/qtcreator/qmldesigner/newprojectdialog/imports/NewProjectDialog/qmldir
 share/qtcreator/qmldesigner/newprojectdialog/imports/ProjectType/
 share/qtcreator/qmldesigner/newprojectdialog/imports/ProjectType/DefaultProject.qml
 share/qtcreator/qmldesigner/newprojectdialog/imports/ProjectType/qmldir
+share/qtcreator/qmldesigner/newstateseditor/
+share/qtcreator/qmldesigner/newstateseditor/Main.qml
+share/qtcreator/qmldesigner/newstateseditor/MenuButton.qml
+share/qtcreator/qmldesigner/newstateseditor/StateMenu.qml
+share/qtcreator/qmldesigner/newstateseditor/StateScrollBar.qml
+share/qtcreator/qmldesigner/newstateseditor/StateThumbnail.qml
+share/qtcreator/qmldesigner/newstateseditor/images/
+share/qtcreator/qmldesigner/newstateseditor/images/checkers.png
+share/qtcreator/qmldesigner/newstateseditor/imports/
+share/qtcreator/qmldesigner/newstateseditor/imports/StatesEditor/
+share/qtcreator/qmldesigner/newstateseditor/imports/StatesEditor/Constants.qml
+share/qtcreator/qmldesigner/newstateseditor/imports/StatesEditor/qmldir
 share/qtcreator/qmldesigner/propertyEditorQmlSources/
 share/qtcreator/qmldesigner/propertyEditorQmlSources/PropertyTemplates/
+share/qtcreator/qmldesigner/propertyEditorQmlSources/PropertyTemplates/3DItemFilterComboBoxEditorTemplate.template
 share/qtcreator/qmldesigner/propertyEditorQmlSources/PropertyTemplates/BooleanEditorTemplate.template
 share/qtcreator/qmldesigner/propertyEditorQmlSources/PropertyTemplates/ColorEditorTemplate.template
 share/qtcreator/qmldesigner/propertyEditorQmlSources/PropertyTemplates/FontEditorTemplate.template
@@ -682,6 +706,11 @@ share/qtcreator/qmldesigner/propertyEditorQmlSources/PropertyTemplates/StringEdi
 share/qtcreator/qmldesigner/propertyEditorQmlSources/PropertyTemplates/TemplateTypes.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/PropertyTemplates/TextEditorTemplate.template
 share/qtcreator/qmldesigner/propertyEditorQmlSources/PropertyTemplates/UrlEditorTemplate.template
+share/qtcreator/qmldesigner/propertyEditorQmlSources/PropertyTemplates/Vector2dEditorTemplate.template
+share/qtcreator/qmldesigner/propertyEditorQmlSources/PropertyTemplates/Vector3dEditorTemplate.template
+share/qtcreator/qmldesigner/propertyEditorQmlSources/PropertyTemplates/Vector4dEditorTemplate.template
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QML/
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QML/QtObjectPane.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/Qt5HelperWindow.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/Qt6HelperWindow.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtMultimedia/
@@ -695,6 +724,7 @@ share/qtcreator/qmldesigner/propertyEditorQmlSources/QtMultimedia/VideoSpecifics
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQml/
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQml/ConnectionsSpecifics.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQml/QtObjectPane.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQml/TimerSpecifics.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/AdvancedSection.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/AlignDistributeSection.qml
@@ -829,6 +859,7 @@ share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/HelperWidgets/Const
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/HelperWidgets/ControlLabel.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/HelperWidgets/Controller.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/HelperWidgets/DoubleSpinBox.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/HelperWidgets/DynamicPropertiesSection.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/HelperWidgets/EditableListView.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/HelperWidgets/ExpandingSpacer.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/HelperWidgets/ExpressionTextField.qml
@@ -867,7 +898,6 @@ share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/HelperWidgets/Prope
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/HelperWidgets/PropertyLabel.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/HelperWidgets/RoundedPanel.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/HelperWidgets/ScrollView.qml
-share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/HelperWidgets/SearchBox.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/HelperWidgets/SecondColumnLayout.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/HelperWidgets/Section.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/HelperWidgets/SectionLayout.qml
@@ -908,7 +938,11 @@ share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/Chec
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/ComboBox.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/ComboBoxInput.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/ContextMenu.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/Dialog.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/DialogButton.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/DialogButtonBox.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/FilterComboBox.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/Indicator.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/InfinityLoopIndicator.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/ItemDelegate.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/LinkIndicator2D.qml
@@ -918,6 +952,7 @@ share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/Menu
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/MenuItem.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/MenuItemWithIcon.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/MenuSeparator.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/ProgressBar.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/RadioButton.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/RealSliderPopup.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/RealSpinBox.qml
@@ -925,6 +960,7 @@ share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/Real
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/RealSpinBoxInput.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/ScrollBar.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/ScrollView.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/SearchBox.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/SecondColumnLayout.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/Section.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/SectionLabel.qml
@@ -940,6 +976,7 @@ share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/TabB
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/TabButton.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/TextArea.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/TextField.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/ToolTip.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/TranslationIndicator.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/VerticalScrollBar.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/qmldir
@@ -1136,6 +1173,7 @@ share/qtcreator/qmldesigner/studio_templates/projects/common/CMakeLists.imports.
 share/qtcreator/qmldesigner/studio_templates/projects/common/CMakeLists.main.txt.tpl
 share/qtcreator/qmldesigner/studio_templates/projects/common/app.qmlproject.tpl
 share/qtcreator/qmldesigner/studio_templates/projects/common/app_environment.h.tpl
+share/qtcreator/qmldesigner/studio_templates/projects/common/asset_imports.txt
 share/qtcreator/qmldesigner/studio_templates/projects/common/contentmodule.main.qml.tpl
 share/qtcreator/qmldesigner/studio_templates/projects/common/fonts.txt
 share/qtcreator/qmldesigner/studio_templates/projects/common/import_qml_plugins.h.tpl
