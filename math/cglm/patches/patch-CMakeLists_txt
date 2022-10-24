@@ -3,7 +3,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -33,7 +33,7 @@ if(MSVC)
+@@ -38,7 +38,7 @@ if(MSVC)
      string(REGEX REPLACE "/RTC(su|[1su])" "" ${flag_var} "${${flag_var}}")
    endforeach(flag_var)
  else()
