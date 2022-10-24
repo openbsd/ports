@@ -40,16 +40,16 @@ here).
 
 Integration with MTAs and using sockets
 ---------------------------------------
-For OpenSMTPd, you can use the opensmtpd-filter-rspamd package which has its
-own pkg-readme file.
+For OpenSMTPd, you can either use the opensmtpd-filter-rspamd package which
+has its own pkg-readme file, or use rspamd as an external mda (mail delivery
+agent) which then hands the message over to another mda to deliver to the
+mailbox.
 
-The default setup uses network sockets on localhost, which can be used by any
-local user. The official documentation goes on to explain how to configure ssl
-and passwords to fix that problem, but a simpler option is using unix sockets.
-
-This example is for Postfix - where we have to put the proxy socket in Postfix's
-chroot - but it shouldn't be hard to adapt to other MTAs:
-
+For most other MTAs, see https://rspamd.com/doc/integration.html for details.
+At least for Sendmail and Postfix, configure rspamd's proxy worker in Milter.
+It's recommended to use unix sockets rather than the default TCP sockets -
+if you use Postfix with chroot you will need to place the proxy socket in
+that chroot - try configuration like this:
 
 - in ${SYSCONFDIR}/rspamd/local.d/worker-controller.inc
 
@@ -72,7 +72,3 @@ chroot - but it shouldn't be hard to adapt to other MTAs:
     smtpd_milters = unix:/var/run/rspamd-milter.sock
     non_smtpd_milters = unix:/var/run/rspamd-milter.sock
     milter_default_action = accept
-
-
-Of course you can also use https://rspamd.com/doc/integration.html for standard
-instructions.
