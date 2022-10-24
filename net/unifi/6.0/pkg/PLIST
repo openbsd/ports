@@ -54,6 +54,7 @@ share/unifi/lib/commons-lang3-3.10.jar
 share/unifi/lib/commons-logging-1.2.jar
 share/unifi/lib/commons-net-3.6.jar
 share/unifi/lib/commons-pool2-2.7.0.jar
+share/unifi/lib/commons-text-1.10.0.jar
 share/unifi/lib/commons-text-1.8.jar
 share/unifi/lib/commons-validator-1.6.jar
 share/unifi/lib/compiler-0.9.6.jar

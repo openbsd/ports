@@ -9,6 +9,9 @@ MASTER_SITES1 =	https://dl.ubnt-ut.com/snmp/
 LOG4J_V =	2.17.1
 MASTER_SITES2 =	https://dlcdn.apache.org/logging/log4j/${LOG4J_V}/
 
+COMMONSTEXT_V =	1.10.0
+MASTER_SITES3 =	https://dlcdn.apache.org/commons/text/binaries/
+
 DISTFILES +=	unifi-$V{UniFi.unix}.zip \
 		unifi_sh_api-$V{unifi_sh_api} \
 		UBNT-MIB:1 \
@@ -29,6 +32,11 @@ REPLACE_LOG4J ?= No
 .if ${REPLACE_LOG4J} == Yes
 DISTFILES +=	apache-log4j-${LOG4J_V}-bin.tar.gz:2
 EXTRACT_ONLY +=	apache-log4j-${LOG4J_V}-bin.tar.gz
+.endif
+REPLACE_COMMONSTEXT ?= No
+.if ${REPLACE_COMMONSTEXT} == Yes
+DISTFILES +=	commons-text-${COMMONSTEXT_V}-bin.tar.gz:3
+EXTRACT_ONLY +=	commons-text-${COMMONSTEXT_V}-bin.tar.gz
 .endif
 
 CATEGORIES =	net
@@ -92,6 +100,12 @@ do-configure:
 	@${INSTALL_DATA} ${WRKDIR}/apache-log4j-*/${l4j_comp}-${LOG4J_V}.jar ${WRKSRC}/lib
 	@cd ${WRKSRC}; ls -l lib/${l4j_comp}*; echo
 .  endfor
+.endif
+.if ${REPLACE_COMMONSTEXT} == Yes
+	@echo "** Overriding vulnerable commons-text version"; echo
+	@ln -fs commons-text-${COMMONSTEXT_V}.jar ${WRKSRC}/lib/commons-text-*jar
+	@${INSTALL_DATA} ${WRKDIR}/commons-text-*/commons-text-${COMMONSTEXT_V}.jar ${WRKSRC}/lib
+	@cd ${WRKSRC}; ls -l lib/commons-text*; echo
 .endif
 
 do-install:
