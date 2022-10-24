@@ -7,7 +7,8 @@ CATEGORIES=	mail
 MASTER_SITE_POSTFIX= \
 		https://archive.mgm51.com/mirrors/postfix-source/ \
 		https://de.postfix.org/ftpmirror/ \
-		https://postfix-mirror.horus-it.com/postfix-release/
+		https://postfix-mirror.horus-it.com/postfix-release/ \
+		ftp://ftp.porcupine.org/mirrors/postfix-release/
 
 DIST_SUBDIR=	postfix
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
