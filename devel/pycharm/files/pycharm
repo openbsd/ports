@@ -3,7 +3,7 @@
 # OpenBSD-specific startup script for PyCharm IDE
 
 PYCHARM_HOME=${TRUEPREFIX}/pycharm
-DATASIZE="2048000"
+DATASIZE="3072000"
 [[ `arch -s` == i386 ]] && DATASIZE="1536000"
 
 #-----------------------------------------------------------------------------
