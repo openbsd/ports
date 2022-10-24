@@ -31,7 +31,7 @@ Index: CMakeLists.txt
  # Configure MSVC Runtime
  if(MSVC)
  	include(MSVCRuntime)
-@@ -645,12 +649,13 @@ if(UNIX OR CYGWIN)
+@@ -656,12 +660,13 @@ if(UNIX OR CYGWIN)
  	if (HAVE_SYS_EVENTFD_H)
  		check_symbol_exists(eventfd_read sys/eventfd.h WITH_EVENTFD_READ_WRITE)
  	endif()
