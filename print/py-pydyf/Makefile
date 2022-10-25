@@ -1,6 +1,6 @@
 COMMENT =		low-level PDF generator
 
-MODPY_EGG_VERSION =	0.3.0
+MODPY_EGG_VERSION =	0.5.0
 DISTNAME =		pydyf-${MODPY_EGG_VERSION}
 PKGNAME =		py-pydyf-${MODPY_EGG_VERSION}
 
@@ -16,7 +16,8 @@ MODPY_PI =		Yes
 
 TEST_DEPENDS +=		devel/py-test-flake8${MODPY_FLAVOR} \
 			devel/py-test-isort${MODPY_FLAVOR} \
-			devel/py-test-xdist${MODPY_FLAVOR}
+			devel/py-test-xdist${MODPY_FLAVOR} \
+			graphics/py-Pillow${MODPY_FLAVOR}
 
 FLAVORS =		python3
 FLAVOR =		python3
