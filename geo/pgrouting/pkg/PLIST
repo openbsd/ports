@@ -21,5 +21,9 @@ share/postgresql/extension/pgrouting--3.2.2--${V}.sql
 share/postgresql/extension/pgrouting--3.3.0--${V}.sql
 share/postgresql/extension/pgrouting--3.3.1--${V}.sql
 share/postgresql/extension/pgrouting--3.3.2--${V}.sql
+share/postgresql/extension/pgrouting--3.3.3--${V}.sql
+share/postgresql/extension/pgrouting--3.3.4--${V}.sql
+share/postgresql/extension/pgrouting--3.3.5--${V}.sql
+share/postgresql/extension/pgrouting--3.4.0--${V}.sql
 share/postgresql/extension/pgrouting--${V}.sql
 share/postgresql/extension/pgrouting.control

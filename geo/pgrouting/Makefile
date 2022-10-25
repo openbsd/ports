@@ -2,7 +2,7 @@ BROKEN-i386 =	clang 10.0.1 ICE compiling get_edges_9_columns in edges_input.c
 
 COMMENT =	geospatial routing extension for PostgreSQL
 
-V =		3.4.0
+V =		3.4.1
 DISTNAME =	pgrouting-${V}
 MASTER_SITES =	https://github.com/pgRouting/pgrouting/releases/download/v${V}/
 
