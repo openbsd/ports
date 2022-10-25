@@ -1,4 +1,4 @@
-lib/lua/${MODLUA_VERSION}/lfs.so
+@so lib/lua/${MODLUA_VERSION}/lfs.so
 share/doc/${FULLPKGNAME}/
 share/doc/${FULLPKGNAME}/examples.html
 share/doc/${FULLPKGNAME}/index.html

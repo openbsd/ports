@@ -1,29 +1,14 @@
---- config.orig	Thu Jan 15 19:58:20 2015
-+++ config	Tue Feb 10 21:14:38 2015
-@@ -3,9 +3,9 @@
- # Default installation prefix
--PREFIX=/usr/local
-+#PREFIX=/usr/local
- 
- # System's libraries directory (where binary libraries are installed)
--LUA_LIBDIR= $(PREFIX)/lib/lua/5.1
-+LUA_LIBDIR?= $(LOCALBASE)/lib/lua/5.1
- 
- # Lua includes directory
--LUA_INC= $(PREFIX)/include
-+LUA_INC?= $(LOCALBASE)/include
- 
-@@ -15,9 +15,9 @@
- 
--LIBNAME= $T.so.$V
-+LIBNAME= $T.so
- 
+Index: config
+--- config.orig
++++ config
+@@ -20,7 +20,7 @@ LIB_OPTION= -shared #for Linux
+ MACOSX_DEPLOYMENT_TARGET= 10.5
+
  # Compilation directives
 -WARN= -O2 -Wall -fPIC -W -Waggregate-return -Wcast-align -Wmissing-prototypes -Wnested-externs -Wshadow -Wwrite-strings -pedantic
 +#WARN= -O2 -Wall -fPIC -W -Waggregate-return -Wcast-align -Wmissing-prototypes -Wnested-externs -Wshadow -Wwrite-strings -pedantic
- INCS= -I$(LUA_INC)
+ INCS= $(LUA_INC)
 -CFLAGS= $(WARN) $(INCS)
 -CC= gcc
-+CFLAGS+= -fPIC $(INCS)
++#CFLAGS+= -fPIC $(INCS)
 +#CC= gcc
- 

@@ -1,14 +1,14 @@
---- Makefile.orig	Thu Jan 15 19:58:20 2015
-+++ Makefile	Tue Feb 10 21:14:38 2015
-@@ -12,7 +12,10 @@ OBJS= src/$T.o
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -11,8 +11,8 @@ OBJS= src/$T.o
+ 
  lib: src/lfs.so
  
- src/lfs.so: $(OBJS)
--	MACOSX_DEPLOYMENT_TARGET="10.3"; export MACOSX_DEPLOYMENT_TARGET; $(CC) $(CFLAGS) $(LIB_OPTION) -o src/lfs.so $(OBJS)
-+	MACOSX_DEPLOYMENT_TARGET="10.3"; export MACOSX_DEPLOYMENT_TARGET; $(CC) $(CFLAGS) $(LIB_OPTION) lfs.o -o $(LIBNAME)
-+
-+$(OBJS): $(SRCS)
-+	$(CC) $(CFLAGS) $(INCS) -c src/lfs.c
+-src/lfs.so: $(OBJS)
+-	MACOSX_DEPLOYMENT_TARGET=$(MACOSX_DEPLOYMENT_TARGET); export MACOSX_DEPLOYMENT_TARGET; $(CC) $(LIB_OPTION) -o src/lfs.so $(OBJS)
++src/lfs.so: $(SRCS)
++	MACOSX_DEPLOYMENT_TARGET=$(MACOSX_DEPLOYMENT_TARGET); export MACOSX_DEPLOYMENT_TARGET; $(CC) -fPIC -shared $(CFLAGS) -o lfs.so src/lfs.c $(LDFLAGS)
  
  test: lib
  	LUA_CPATH=./src/?.so lua tests/test.lua

@@ -2,9 +2,8 @@ COMMENT =	file system library for the lua language
 
 GH_ACCOUNT =	keplerproject
 GH_PROJECT =	luafilesystem
-GH_TAGNAME =	v_1_6_3
-PKGNAME =	luafs-1.6.3
-REVISION =	1
+GH_TAGNAME =	v1_8_0
+PKGNAME =	luafs-1.8.0
 
 CATEGORIES =	devel
 
@@ -18,7 +17,8 @@ MODULES =	lang/lua
 FLAVORS =	lua52 lua53
 FLAVOR ?=
 
-MAKE_ENV +=	LUA_LIBDIR=${MODLUA_LIBDIR} LUA_INC=${MODLUA_INCL_DIR}
+CFLAGS +=	-I${MODLUA_INCL_DIR} -I${LOCALBASE}/include
+LDFLAGS +=	-L${MODLUA_LIBDIR} -L${LOCALBASE}/lib
 
 ALL_TARGET =	lib
 
