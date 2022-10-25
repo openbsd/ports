@@ -1,8 +1,7 @@
 COMMENT =		create PDFs from markdown or HTML
 
-MODPY_EGG_VERSION =	56.1
+MODPY_EGG_VERSION =	57.0
 DISTNAME =		weasyprint-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		print
 
@@ -25,7 +24,7 @@ RUN_DEPENDS +=		devel/pango \
 			devel/py-html5lib${MODPY_FLAVOR} \
 			archivers/py-zopfli${MODPY_FLAVOR} \
 			print/py-fonttools${MODPY_FLAVOR} \
-			print/py-pydyf${MODPY_FLAVOR} \
+			print/py-pydyf${MODPY_FLAVOR}>=0.5.0 \
 			textproc/py-tinycss2${MODPY_FLAVOR} \
 			textproc/py-cssselect2${MODPY_FLAVOR} \
 			textproc/py-pyphen${MODPY_FLAVOR} \
