@@ -17,11 +17,16 @@ libdata/perl5/site_perl/Remind/PDF/Entry.pm
 @man man/man3p/Remind::PDF.3p
 @man man/man3p/Remind::PDF::Entry.3p
 share/examples/remind/
+share/examples/remind/alignment.rem
+share/examples/remind/ansitext
+share/examples/remind/astro
 share/examples/remind/defs.rem
 share/examples/remind/remind.vim
 share/remind/
+share/remind/ansitext.rem
 share/remind/holidays/
 share/remind/holidays/ca.rem
+share/remind/holidays/jewish.rem
 share/remind/holidays/us.rem
 share/remind/lang/
 share/remind/lang/auto.rem
