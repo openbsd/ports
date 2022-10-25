@@ -1,0 +1,6 @@
+@bin bin/mariadb-ldb
+bin/myrocks_hotbackup
+bin/mysql_ldb
+@bin bin/sst_dump
+@so lib/mysql/plugin/ha_rocksdb.so
+@man man/man1/myrocks_hotbackup.1

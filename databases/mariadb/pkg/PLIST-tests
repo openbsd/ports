@@ -16874,3 +16874,4 @@ share/mysql-test/suite/wsrep/t/wsrep_variables_wsrep_off.cnf
 share/mysql-test/suite/wsrep/t/wsrep_variables_wsrep_off.test
 share/mysql-test/valgrind.supp
 %%le%%
+%%rocksdb%%

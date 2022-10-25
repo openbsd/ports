@@ -5,6 +5,8 @@ COMMENT-tests=	multithreaded SQL database (regression test suite/benchmark)
 VERSION=	10.9.3
 DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
+REVISION-server= 0
+REVISION-tests=	0
 EPOCH=		1
 
 CATEGORIES=	databases
@@ -92,11 +94,13 @@ CONFIGURE_ARGS+=-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 # force disabling the PAM auth plugin if OpenPAM is installed
 CONFIGURE_ARGS+=-DHAVE_PAM_APPL_H=0
 
-# The ColumnStore and RocksDB storage engines are disabled.
+# The ColumnStore storage engine is disabled.
 # ColumnStore is only buildable on X86.
-# RocksDB is only buildable on little endian archs and requires POSIX timers.
-CONFIGURE_ARGS+=-DPLUGIN_COLUMNSTORE=NO \
-		-DWITHOUT_ROCKSDB_STORAGE_ENGINE=1
+CONFIGURE_ARGS+=-DPLUGIN_COLUMNSTORE=NO
+
+.if ${MACHINE_ARCH} != "amd64" && ${MACHINE_ARCH} != "riscv64"
+CONFIGURE_ARGS+=-DWITHOUT_ROCKSDB_STORAGE_ENGINE=1
+.endif
 
 CFLAGS+=	-I${LOCALBASE}/include
 CXXFLAGS+=	-I${LOCALBASE}/include
@@ -117,6 +121,12 @@ PKG_ARGS+=	-Dle=1
 PKG_ARGS+=	-Dle=0
 .endif
 
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "riscv64"
+PKG_ARGS+=	-Drocksdb=1
+.else
+PKG_ARGS+=	-Drocksdb=0
+.endif
+
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/cmake/mysql_version.cmake \
 	    ${WRKSRC}/libmariadb/mariadb_config/mariadb_config.c.in \
@@ -131,8 +141,10 @@ post-install:
 		ln -sf libmariadb.so.${LIBmariadb_VERSION} libmysqlclient.so.${LIBmysqlclient_VERSION} && \
 		ln -sf libmariadb.so.${LIBmariadb_VERSION} libmysqlclient_r.so.${LIBmysqlclient_r_VERSION}
 	${INSTALL_DATA} ${FILESDIR}/my.cnf ${PREFIX}/share/examples/mysql/
+.if ${MACHINE_ARCH} != "amd64" && ${MACHINE_ARCH} != "riscv64"
 	rm -f ${PREFIX}/man/man1/myrocks_hotbackup.1
 	rm -Rf ${PREFIX}/share/mysql-test/plugin/rocksdb/
+.endif
 
 do-test:
 	(${MODCMAKE_TEST_TARGET}) || true # Keep on going even if regress tests fail
