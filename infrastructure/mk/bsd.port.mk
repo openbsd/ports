@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1578 2022/07/13 12:54:26 kn Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1579 2022/10/25 15:10:34 naddy Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1098,13 +1098,6 @@ _TERM_ENV = PKG_TMPDIR=${PKG_TMPDIR}
 _TERM_ENV += ${_v}=${${_v}:Q}
 .  endif
 .endfor
-
-# See bsd.lib.mk:162
-.if ${MACHINE_ARCH:Mmips64*}
-_PKG_ARGS += -Dno_mips64=0
-.else
-_PKG_ARGS += -Dno_mips64=1
-.endif
 
 _PKG_ARGS += -DFLAVORS=${FLAVOR_EXT:Q}
 _PKG_ARGS += -B ${WRKINST}
