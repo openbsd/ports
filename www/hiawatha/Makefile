@@ -1,11 +1,12 @@
 COMMENT =		secure webserver
 DISTNAME =		hiawatha-10.11
+REVISION =		0
 CATEGORIES =		www net
 
 HOMEPAGE =		https://www.hiawatha-webserver.org/
 
 # GPLv2 only
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE =	mbedtls Apache 2 license incompatible with GPLv2
 
 MASTER_SITES =		${HOMEPAGE}files/
 
