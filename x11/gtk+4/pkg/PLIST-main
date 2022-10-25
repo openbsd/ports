@@ -6,7 +6,6 @@
 @bin bin/gtk4-query-settings
 include/gtk-4.0/
 include/gtk-4.0/gdk/
-include/gtk-4.0/gdk/gdk-autocleanup.h
 include/gtk-4.0/gdk/gdk.h
 include/gtk-4.0/gdk/gdkapplaunchcontext.h
 include/gtk-4.0/gdk/gdkcairo.h
@@ -76,7 +75,6 @@ include/gtk-4.0/gdk/x11/gdkx11utils.h
 include/gtk-4.0/gsk/
 include/gtk-4.0/gsk/gl/
 include/gtk-4.0/gsk/gl/gskglrenderer.h
-include/gtk-4.0/gsk/gsk-autocleanup.h
 include/gtk-4.0/gsk/gsk.h
 include/gtk-4.0/gsk/gskcairorenderer.h
 include/gtk-4.0/gsk/gskenums.h
@@ -95,7 +93,6 @@ include/gtk-4.0/gtk/css/gtkcssenumtypes.h
 include/gtk-4.0/gtk/css/gtkcsserror.h
 include/gtk-4.0/gtk/css/gtkcsslocation.h
 include/gtk-4.0/gtk/css/gtkcsssection.h
-include/gtk-4.0/gtk/gtk-autocleanups.h
 include/gtk-4.0/gtk/gtk.h
 include/gtk-4.0/gtk/gtkaboutdialog.h
 include/gtk-4.0/gtk/gtkaccelgroup.h
