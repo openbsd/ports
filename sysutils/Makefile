@@ -195,6 +195,7 @@
      SUBDIR += lr
      SUBDIR += lscpu
      SUBDIR += lsyncd
+     SUBDIR += m1n1
      SUBDIR += mac-robber
      SUBDIR += mangl
      SUBDIR += mcollective
