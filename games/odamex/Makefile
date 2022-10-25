@@ -1,3 +1,5 @@
+BROKEN =	segfaults since SDL2 was updated
+
 COMMENT =	online multiplayer doom
 
 V =		0.9.5
