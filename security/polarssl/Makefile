@@ -17,7 +17,7 @@ CATEGORIES=	security
 
 HOMEPAGE=	https://tls.mbed.org/
 
-# Dual licensed: GPLv2+/Commercial, Apache v2 is also available
+# Apache v2 (or commerical license)
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += c pthread
