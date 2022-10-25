@@ -2,7 +2,7 @@ COMMENT-main=		GNOME desktop meta-package (core installation)
 COMMENT-extras=		GNOME desktop meta-package (world installation)
 
 # sync with gnome-desktop GNOME_VERSION
-V=			42.5
+V=			42.6
 PKGNAME=		gnome-${V}
 
 PKGNAME-main=		gnome-${V}
