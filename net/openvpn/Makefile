@@ -1,6 +1,7 @@
 COMMENT=	easy-to-use, robust, and highly configurable VPN
 
 DISTNAME=	openvpn-2.5.7
+REVISION=	0
 
 CATEGORIES=	net security
 
@@ -31,6 +32,9 @@ FLAVORS=	mbedtls
 FLAVOR?=
 
 .if ${FLAVOR:Mmbedtls}
+# If you run openvpn--mbedtls you'll have to build it yourself
+PERMIT_PACKAGE=	mbedtls Apache 2 license incompatible with GPLv2
+
 LIB_DEPENDS+=	security/polarssl
 CONFIGURE_ARGS+= --with-crypto-library=mbedtls
 WANTLIB += mbedcrypto mbedtls mbedx509 pthread
