@@ -6,7 +6,7 @@ COMMENT =		ANSI/200x Forth interpreter and compiler
 
 V =			0.7.3
 DISTNAME =		gforth-${V}
-REVISION =		3
+REVISION =		4
 CATEGORIES =		lang
 SHARED_LIBS +=		ffi			0.0 # 0.0
 

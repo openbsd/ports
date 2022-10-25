@@ -1,0 +1,25 @@
+Avoid sigaltstack with an RWX mmap.
+
+Index: engine/signals.c
+--- engine/signals.c.orig
++++ engine/signals.c
+@@ -403,13 +403,18 @@ void install_signal_handlers(void)
+ #ifdef SIGSTKSZ 
+   stack_t sigstack;
+   int sas_retval=-1;
++  extern char *progname;
+ 
+   sigstack.ss_size=SIGSTKSZ;
+   /* Actually the stack should only be ss_size large, and according to
+      SUSv2 ss_sp should point to the start of the stack, but
+      unfortunately Irix 6.5 (at least) expects ss_sp to point to the
+      end, so we work around this issue by accomodating everyone. */
+-  if ((sigstack.ss_sp = gforth_alloc(sigstack.ss_size*2)) != NULL) {
++  if ((sigstack.ss_sp = calloc(sigstack.ss_size, 2)) == NULL) {
++    perror(progname);
++    exit(1);
++  }
++  if (sigstack.ss_sp != NULL) {
+     sigstack.ss_sp += sigstack.ss_size;
+     sigstack.ss_flags=0;
+     sas_retval=sigaltstack(&sigstack,(stack_t *)0);
