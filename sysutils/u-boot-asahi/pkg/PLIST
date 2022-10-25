@@ -1,0 +1,6 @@
+share/u-boot/
+share/u-boot/apple_m1/
+share/u-boot/apple_m1/u-boot
+share/u-boot/apple_m1/u-boot-nodtb.bin
+share/u-boot/apple_m1/u-boot.bin
+share/u-boot/apple_m1/u-boot.dtb
