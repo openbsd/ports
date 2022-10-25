@@ -25,7 +25,7 @@ shells/bash
 To enable all support, add this to your ~/.bashrc:
 
 ```
-source ${BASH_SITE}/key_bindings.bash
+source ${BASH_SITE}/key-bindings.bash
 source ${BASH_SITE}/completion.bash
 ```
 
