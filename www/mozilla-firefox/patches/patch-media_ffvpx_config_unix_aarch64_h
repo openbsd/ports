@@ -1,6 +1,8 @@
 Revert toggling of CONFIG_LINUX_PERF to fix aarch64 build
 https://hg.mozilla.org/mozilla-central/rev/c174bd2624e2d4fc41721a5a51a48fbeae1666c2#l2.616
 
+https://bugzilla.mozilla.org/show_bug.cgi?id=1796893
+
 Index: media/ffvpx/config_unix_aarch64.h
 --- media/ffvpx/config_unix_aarch64.h.orig
 +++ media/ffvpx/config_unix_aarch64.h
