@@ -3,12 +3,12 @@ SDL versioning
 
 https://github.com/odamex/odamex/commit/84b88e156fd81cf74b70bc6c0129bde5d9588e1a
 
-Index: libraries/textscreen/txt_sdl.h
---- libraries/textscreen/txt_sdl.h.orig
-+++ libraries/textscreen/txt_sdl.h
-@@ -23,7 +23,7 @@
+Index: client/sdl/i_sdl.h
+--- client/sdl/i_sdl.h.orig
++++ client/sdl/i_sdl.h
+@@ -26,7 +26,7 @@
  
- #include "SDL.h"
+ #include <SDL.h>
  
 -#if (SDL_MAJOR_VERSION == 2 && SDL_MINOR_VERSION == 0)
 +#if (SDL_MAJOR_VERSION == 2)

@@ -1,11 +1,9 @@
-BROKEN =	segfaults since SDL2 was updated
-
 COMMENT =	online multiplayer doom
 
 V =		0.9.5
 DISTNAME =	odamex-src-${V}
 PKGNAME =	odamex-${V}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	games
 HOMEPAGE =	https://odamex.net/
