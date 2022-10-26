@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: pkg_check-version,v 1.4 2022/04/19 14:10:31 espie Exp $
+# $OpenBSD: pkg_check-version,v 1.5 2022/10/26 12:45:52 espie Exp $
 #
 # Copyright (c) 2021 Marc Espie <espie@openbsd.org>
 #
@@ -148,7 +148,7 @@ sub parse_and_run
 			$newer = shift @sorted;
 			next if !defined $older;
 			my $r = $older->compare($newer);
-			next if !defined $r;
+			next if defined $r;
 			$state->errsay(
 			    "WARNING: #1 and #2 are actually not comparable",
 			    $older->to_string, $newer->to_string);
