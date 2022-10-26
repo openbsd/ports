@@ -1,10 +1,10 @@
 COMMENT=	client library for accessing NFS
 
-DISTNAME=	libnfs-5.0.1
+DISTNAME=	libnfs-5.0.2
 CATEGORIES=	devel net
 MASTER_SITES=	https://github.com/sahlberg/libnfs/archive/
 
-SHARED_LIBS=	nfs	2.1
+SHARED_LIBS=	nfs	2.2
 
 HOMEPAGE=	https://github.com/sahlberg/libnfs
 
