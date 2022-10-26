@@ -1,6 +1,6 @@
 @conflict ldb-*
 @conflict tevent-*
-@conflict samba-util-<=4.15.8v0
+@conflict samba-util-*
 @pkgpath net/samba,ldap,-main
 @pkgpath net/samba,ads,-main
 @pkgpath net/samba,,-main
