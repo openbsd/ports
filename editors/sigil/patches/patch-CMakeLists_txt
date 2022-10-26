@@ -10,11 +10,11 @@ src/Exporters/ExportEPUB.cpp:173:134: error: use of undeclared identifier 'Z_DEF
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -78,7 +78,6 @@ if (USE_SYSTEM_LIBS)
+@@ -110,7 +110,6 @@ if (USE_SYSTEM_LIBS)
      MESSAGE(STATUS "Trying to use System Libraries...")
      find_package( ZLIB )
      find_package( PkgConfig )
 -    find_package( MiniZip )
      pkg_check_modules( HUNSPELL hunspell )
      if ( NOT APPLE )
-         pkg_check_modules( PCRE libpcre16 )
+         pkg_check_modules( PCRE2 libpcre2-16 )
