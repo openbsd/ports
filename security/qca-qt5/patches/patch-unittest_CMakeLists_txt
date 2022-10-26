@@ -1,7 +1,7 @@
 Index: unittest/CMakeLists.txt
 --- unittest/CMakeLists.txt.orig
 +++ unittest/CMakeLists.txt
-@@ -26,7 +26,7 @@ add_subdirectory(keystore)
+@@ -23,7 +23,7 @@ add_subdirectory(keystore)
  add_subdirectory(logger)
  add_subdirectory(macunittest)
  add_subdirectory(metatype)
