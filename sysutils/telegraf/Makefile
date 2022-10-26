@@ -8,6 +8,7 @@ GH_ACCOUNT =	influxdata
 GH_PROJECT =	telegraf
 GH_TAGNAME =	${MODGO_VERSION}
 HOMEPAGE =	https://www.influxdata.com/time-series-platform/telegraf/
+REVISION =	0
 
 MAINTAINER =	Lucas Raab <tuftedocelot@fastmail.fm>
 

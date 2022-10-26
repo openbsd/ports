@@ -1,5 +1,5 @@
 @newgroup _telegraf:826
-@newuser _telegraf:826:_telegraf:telegraf:telegraf user:/var/empty:/sbin/nologin
+@newuser _telegraf:826:_telegraf::telegraf user:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/telegraf
 @bin bin/telegraf
 share/doc/pkg-readmes/${PKGSTEM}
