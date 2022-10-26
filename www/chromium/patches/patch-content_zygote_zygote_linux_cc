@@ -2,7 +2,7 @@ Index: content/zygote/zygote_linux.cc
 --- content/zygote/zygote_linux.cc.orig
 +++ content/zygote/zygote_linux.cc
 @@ -1,6 +1,7 @@
- // Copyright (c) 2012 The Chromium Authors. All rights reserved.
+ // Copyright 2012 The Chromium Authors
  // Use of this source code is governed by a BSD-style license that can be
  // found in the LICENSE file.
 +#if 0

@@ -8,5 +8,5 @@ Index: net/third_party/quiche/BUILD.gn
 -build_epoll_based_tools = is_linux || is_chromeos
 +build_epoll_based_tools = (is_linux && !is_bsd) || is_chromeos
  
- config("quiche_internal_config") {
-   cflags = []
+ # TODO(crbug.com/1344231): Set this to always true. At which point, this
+ # variable can go away and the conditionals below that depends on it can be

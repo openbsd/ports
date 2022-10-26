@@ -8,5 +8,5 @@ Index: media/cdm/cdm_paths_unittest.cc
 -#elif BUILDFLAG(IS_LINUX)
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
      "linux";
- #else
- #error unsupported platform
+ #elif BUILDFLAG(IS_FUCHSIA)
+     "fuchsia";

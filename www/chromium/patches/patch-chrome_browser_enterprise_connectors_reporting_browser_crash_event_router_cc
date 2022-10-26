@@ -1,7 +1,7 @@
 Index: chrome/browser/enterprise/connectors/reporting/browser_crash_event_router.cc
 --- chrome/browser/enterprise/connectors/reporting/browser_crash_event_router.cc.orig
 +++ chrome/browser/enterprise/connectors/reporting/browser_crash_event_router.cc
-@@ -18,14 +18,14 @@
+@@ -19,14 +19,14 @@
  #include "chrome/common/chrome_paths.h"
  #include "components/version_info/version_info.h"
  

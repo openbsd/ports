@@ -10,29 +10,31 @@ Index: base/BUILD.gn
  buildflag_header("message_pump_buildflags") {
    header = "message_pump_buildflags.h"
    header_dir = "base/message_loop"
-@@ -1031,7 +1031,7 @@ mixed_component("base") {
+@@ -1035,7 +1035,7 @@ mixed_component("base") {
        "timer/hi_res_timer_manager_posix.cc",
      ]
  
 -    if (!is_nacl && !is_apple) {
 +    if (!is_nacl && !is_apple && !is_bsd) {
        sources += [
-         "profiler/stack_copier_signal.cc",
-         "profiler/stack_copier_signal.h",
-@@ -1040,6 +1040,12 @@ mixed_component("base") {
+         "profiler/stack_base_address_posix.cc",
+         "profiler/stack_base_address_posix.h",
+@@ -1046,6 +1046,14 @@ mixed_component("base") {
          "profiler/thread_delegate_posix.h",
        ]
      }
 +
 +    if (is_bsd) {
 +      sources += [
++        "profiler/stack_base_address_posix.cc",
++        "profiler/stack_base_address_posix.h",
 +        "profiler/stack_sampler_posix.cc",
 +      ]
 +    }
    }
  
    if (is_win) {
-@@ -1541,11 +1547,23 @@ mixed_component("base") {
+@@ -1557,11 +1565,23 @@ mixed_component("base") {
    # Needed for <atomic> if using newer C++ library than sysroot, except if
    # building inside the cros_sdk environment - use host_toolchain as a
    # more robust check for this.
@@ -56,17 +58,17 @@ Index: base/BUILD.gn
 +
    if (use_allocator_shim) {
      sources += [
-       "allocator/allocator_shim.cc",
-@@ -1573,7 +1591,7 @@ mixed_component("base") {
+       "allocator/partition_allocator/shim/allocator_shim.cc",
+@@ -1589,7 +1609,7 @@ mixed_component("base") {
        ]
        configs += [ "//base/allocator:mac_no_default_new_delete_symbols" ]
      }
 -    if (is_chromeos || is_linux) {
 +    if (is_chromeos || (is_linux && !is_bsd)) {
        sources += [
-         "allocator/allocator_shim_override_cpp_symbols.h",
-         "allocator/allocator_shim_override_glibc_weak_symbols.h",
-@@ -1629,7 +1647,7 @@ mixed_component("base") {
+         "allocator/partition_allocator/shim/allocator_shim_override_cpp_symbols.h",
+         "allocator/partition_allocator/shim/allocator_shim_override_glibc_weak_symbols.h",
+@@ -1643,7 +1663,7 @@ mixed_component("base") {
  
    # Allow more direct string conversions on platforms with native utf8
    # strings
@@ -75,7 +77,7 @@ Index: base/BUILD.gn
      defines += [ "SYSTEM_NATIVE_UTF8" ]
    }
  
-@@ -2211,6 +2229,42 @@ mixed_component("base") {
+@@ -2216,6 +2236,42 @@ mixed_component("base") {
      }
    }
  
@@ -118,7 +120,7 @@ Index: base/BUILD.gn
    # iOS
    if (is_ios) {
      sources -= [
-@@ -2310,7 +2364,7 @@ mixed_component("base") {
+@@ -2313,7 +2369,7 @@ mixed_component("base") {
    }
  
    if (dep_libevent) {
@@ -127,7 +129,7 @@ Index: base/BUILD.gn
    }
  
    if (use_libevent) {
-@@ -3545,7 +3599,7 @@ test("base_unittests") {
+@@ -3565,7 +3621,7 @@ test("base_unittests") {
      }
    }
  
@@ -136,16 +138,16 @@ Index: base/BUILD.gn
      sources += [
        "debug/proc_maps_linux_unittest.cc",
        "files/scoped_file_linux_unittest.cc",
-@@ -3593,7 +3647,7 @@ test("base_unittests") {
+@@ -3613,7 +3669,7 @@ test("base_unittests") {
        "posix/file_descriptor_shuffle_unittest.cc",
        "posix/unix_domain_socket_unittest.cc",
      ]
 -    if (!is_nacl && !is_apple) {
 +    if (!is_nacl && !is_apple && !is_bsd) {
        sources += [
+         "profiler/stack_base_address_posix_unittest.cc",
          "profiler/stack_copier_signal_unittest.cc",
-         "profiler/thread_delegate_posix_unittest.cc",
-@@ -3603,7 +3657,7 @@ test("base_unittests") {
+@@ -3624,7 +3680,7 @@ test("base_unittests") {
  
    # Allow more direct string conversions on platforms with native utf8
    # strings
@@ -154,7 +156,7 @@ Index: base/BUILD.gn
      defines += [ "SYSTEM_NATIVE_UTF8" ]
    }
  
-@@ -3791,7 +3845,7 @@ test("base_unittests") {
+@@ -3812,7 +3868,7 @@ test("base_unittests") {
      }
    }
  

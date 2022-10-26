@@ -1,7 +1,7 @@
 Index: net/dns/public/BUILD.gn
 --- net/dns/public/BUILD.gn.orig
 +++ net/dns/public/BUILD.gn
-@@ -74,7 +74,7 @@ source_set("tests") {
+@@ -76,7 +76,7 @@ source_set("tests") {
      "doh_provider_entry_unittest.cc",
    ]
  

@@ -10,7 +10,7 @@ Index: third_party/perfetto/src/base/unix_socket.cc
  #include <sys/ucred.h>
  #endif
  
-@@ -801,9 +801,13 @@ void UnixSocket::ReadPeerCredentialsPosix() {
+@@ -803,9 +803,13 @@ void UnixSocket::ReadPeerCredentialsPosix() {
      return;
    PERFETTO_CHECK(peer_cred_mode_ != SockPeerCredMode::kIgnore);
  
