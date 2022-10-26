@@ -1,0 +1,14 @@
+work around backslashes in paths that mono 6 can't handle
+
+Index: src/Content/ContentManager.cs
+--- src/Content/ContentManager.cs.orig
++++ src/Content/ContentManager.cs
+@@ -210,7 +210,7 @@ namespace Microsoft.Xna.Framework.Content
+ 				}
+ 			}
+ 			// Load the asset.
+-			result = ReadAsset<T>(assetName, null);
++			result = ReadAsset<T>(key, null);
+ 			loadedAssets[key] = result;
+ 			return result;
+ 		}
