@@ -36,6 +36,9 @@ LIB_DEPENDS =		inputmethods/fcitx \
 			inputmethods/fcitx-qt \
 			inputmethods/libkkc
 
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt
+
 # ninja: error: unknown target 'test'
 NO_TEST =		Yes
 
