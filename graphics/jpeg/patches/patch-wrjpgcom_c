@@ -1,7 +1,7 @@
 Index: wrjpgcom.c
 --- wrjpgcom.c.orig
 +++ wrjpgcom.c
-@@ -453,7 +453,7 @@ main(int argc, char **argv)
+@@ -438,7 +438,7 @@ main(int argc, char **argv)
                    (unsigned int)MAX_COM_LENGTH);
            exit(EXIT_FAILURE);
          }
@@ -10,7 +10,7 @@ Index: wrjpgcom.c
          for (;;) {
            comment_length = (unsigned int)strlen(comment_arg);
            if (comment_length > 0 && comment_arg[comment_length - 1] == '"') {
-@@ -468,8 +468,8 @@ main(int argc, char **argv)
+@@ -453,8 +453,8 @@ main(int argc, char **argv)
                      (unsigned int)MAX_COM_LENGTH);
              exit(EXIT_FAILURE);
            }
