@@ -1,6 +1,6 @@
 COMMENT =		PostgreSQL database adapter for Python
 
-MODPY_EGG_VERSION =	2.9.3
+MODPY_EGG_VERSION =	2.9.5
 DISTNAME =		psycopg2-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		databases
@@ -16,7 +16,8 @@ WANTLIB += pq pthread
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
+MODPY_PYTEST =		No
 
 LIB_DEPENDS =		databases/postgresql
 RUN_DEPENDS =		databases/postgresql
