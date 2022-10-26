@@ -7,10 +7,10 @@ create symbolic links like so (overwriting any previous default):
  ln -sf ${PREFIX}/bin/erb31 ${PREFIX}/bin/erb
  ln -sf ${PREFIX}/bin/gem31 ${PREFIX}/bin/gem
  ln -sf ${PREFIX}/bin/irb31 ${PREFIX}/bin/irb
- ln -sf ${PREFIX}/bin/rdoc31 ${PREFIX}/bin/racc
+ ln -sf ${PREFIX}/bin/racc31 ${PREFIX}/bin/racc
  ln -sf ${PREFIX}/bin/rake31 ${PREFIX}/bin/rake
- ln -sf ${PREFIX}/bin/rdoc31 ${PREFIX}/bin/rbs
- ln -sf ${PREFIX}/bin/rdoc31 ${PREFIX}/bin/rdbg
+ ln -sf ${PREFIX}/bin/rbs31 ${PREFIX}/bin/rbs
+ ln -sf ${PREFIX}/bin/rdbg31 ${PREFIX}/bin/rdbg
  ln -sf ${PREFIX}/bin/rdoc31 ${PREFIX}/bin/rdoc
  ln -sf ${PREFIX}/bin/ri31 ${PREFIX}/bin/ri
  ln -sf ${PREFIX}/bin/typeprof31 ${PREFIX}/bin/typeprof
