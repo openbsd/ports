@@ -4,6 +4,7 @@ MODPY_EGG_VERSION =	1.9.1
 GH_ACCOUNT =		pdfarranger
 GH_PROJECT =		pdfarranger
 GH_TAGNAME =		${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		print
 
@@ -25,6 +26,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			graphics/img2pdf \
 			print/poppler \
 			print/py-pikepdf${MODPY_FLAVOR} \
+			sysutils/py-packaging${MODPY_FLAVOR} \
 			x11/gtk+3 \
 			x11/gtk+3,-guic
 
