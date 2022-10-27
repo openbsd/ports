@@ -1,6 +1,17 @@
---- src/plugins/sndio/ao_sndio.c.orig	Tue Feb 14 01:46:06 2012
-+++ src/plugins/sndio/ao_sndio.c	Tue May 27 17:07:14 2014
-@@ -99,6 +99,7 @@ int ao_plugin_set_option(ao_device *device, const char
+Index: src/plugins/sndio/ao_sndio.c
+--- src/plugins/sndio/ao_sndio.c.orig
++++ src/plugins/sndio/ao_sndio.c
+@@ -67,6 +67,9 @@ int ao_plugin_device_init(ao_device *device)
+ {
+   ao_sndio_internal *internal;
+   internal = (ao_sndio_internal *) calloc(1,sizeof(*internal));
++  if (internal == NULL)
++    return 0;
++
+   internal->id=-1;
+   device->internal = internal;
+   device->output_matrix_order = AO_OUTPUT_MATRIX_FIXED;
+@@ -99,6 +102,7 @@ int ao_plugin_set_option(ao_device *device, const char
  int ao_plugin_open(ao_device *device, ao_sample_format *format)
  {
    ao_sndio_internal *internal = (ao_sndio_internal *) device->internal;
@@ -8,7 +19,7 @@
    struct sio_par par;
  
    if(!internal->dev && internal->id>=0){
-@@ -107,21 +108,27 @@ int ao_plugin_open(ao_device *device, ao_sample_format
+@@ -107,21 +111,27 @@ int ao_plugin_open(ao_device *device, ao_sample_format
      internal->dev = strdup(buf);
    }
  
@@ -42,7 +53,7 @@
  
    if(!device->inter_matrix){
      /* set up matrix such that users are warned about > stereo playback */
-@@ -148,9 +155,10 @@ int ao_plugin_close(ao_device *device)
+@@ -148,9 +158,10 @@ int ao_plugin_close(ao_device *device)
    ao_sndio_internal *internal = (ao_sndio_internal *) device->internal;
    struct sio_hdl *hdl = internal->hdl;
  

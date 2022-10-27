@@ -4,7 +4,7 @@ DISTNAME=	libao-1.2.0
 CATEGORIES=    	audio
 HOMEPAGE=	https://www.xiph.org/ao/
 SHARED_LIBS=	ao                   5.0      # 5.0
-REVISION=	1
+REVISION=	2
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
