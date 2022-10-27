@@ -1,9 +1,7 @@
 COMMENT=		framework for granting privileged operations to users
 
-V=			121
+V=			122
 DISTNAME=		polkit-${V}
-WRKDIST=		${WRKDIR}/polkit-v.${V}
-REVISION=		0
 
 SHARED_LIBS += polkit-gobject-1          2.0 # 0.0.0
 SHARED_LIBS += polkit-agent-1            2.0 # 0.0.0
@@ -19,7 +17,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c duktape expat gio-2.0 glib-2.0 gobject-2.0 intl pthread
 
-MASTER_SITES=		https://www.freedesktop.org/software/polkit/releases/
+MASTER_SITES=		https://gitlab.freedesktop.org/polkit/polkit/-/archive/${V}/
 
 MODULES=		devel/meson \
 			lang/python
