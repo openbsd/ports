@@ -4,7 +4,7 @@ different between Linux and OpenBSD.
 Index: etc/config.keycodes
 --- etc/config.keycodes.orig
 +++ etc/config.keycodes
-@@ -27,30 +27,30 @@ exec --no-startup-id dex --autostart --environment i3
+@@ -27,18 +27,18 @@ exec --no-startup-id dex --autostart --environment i3
  
  # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
  # screen before suspend. Use loginctl lock-session to lock your screen.
@@ -30,6 +30,8 @@ Index: etc/config.keycodes
  
  # Use Mouse+$mod to drag floating windows to their wanted position
  floating_modifier $mod
+@@ -48,13 +48,13 @@ floating_modifier $mod
+ tiling_drag modifier titlebar
  
  # start a terminal
 -bindcode $mod+36 exec i3-sensible-terminal
@@ -44,7 +46,7 @@ Index: etc/config.keycodes
  # A more modern dmenu replacement is rofi:
  # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
  # There also is i3-dmenu-desktop which only displays applications shipping a
-@@ -64,10 +64,10 @@ bindcode $mod+46 focus up
+@@ -68,10 +68,10 @@ bindcode $mod+46 focus up
  bindcode $mod+47 focus right
  
  # alternatively, you can use the cursor keys:
@@ -59,7 +61,7 @@ Index: etc/config.keycodes
  
  # move focused window
  bindcode $mod+Shift+44 move left
-@@ -76,10 +76,10 @@ bindcode $mod+Shift+46 move up
+@@ -80,10 +80,10 @@ bindcode $mod+Shift+46 move up
  bindcode $mod+Shift+47 move right
  
  # alternatively, you can use the cursor keys:
@@ -74,7 +76,7 @@ Index: etc/config.keycodes
  
  # split in horizontal orientation
  bindcode $mod+43 split h
-@@ -165,10 +165,10 @@ mode "resize" {
+@@ -169,10 +169,10 @@ mode "resize" {
          bindcode 47 resize grow width 10 px or 10 ppt
  
          # same bindings, but for the arrow keys
