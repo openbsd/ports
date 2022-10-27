@@ -1,0 +1,5 @@
+The Stripe CLI includes a telemetry feature that collects some usage data. This
+feature is enabled by default.
+
+To opt out of telemetry, set the STRIPE_CLI_TELEMETRY_OPTOUT environment
+variable to 1 or true.
