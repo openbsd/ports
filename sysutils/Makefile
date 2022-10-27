@@ -389,6 +389,7 @@
      SUBDIR += stan
      SUBDIR += stow
      SUBDIR += stress
+     SUBDIR += stripe-cli
      SUBDIR += sunxi-tools
      SUBDIR += superscript
      SUBDIR += supervisor
