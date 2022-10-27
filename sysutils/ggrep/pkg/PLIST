@@ -3,8 +3,6 @@ bin/gfgrep
 @bin bin/ggrep
 @info info/grep.info
 @comment lib/charset.alias
-@man man/man1/gegrep.1
-@man man/man1/gfgrep.1
 @man man/man1/ggrep.1
 share/locale/af/
 share/locale/af/LC_MESSAGES/
@@ -30,6 +28,9 @@ share/locale/hu/LC_MESSAGES/grep.mo
 share/locale/id/LC_MESSAGES/grep.mo
 share/locale/it/LC_MESSAGES/grep.mo
 share/locale/ja/LC_MESSAGES/grep.mo
+share/locale/ka/
+share/locale/ka/LC_MESSAGES/
+share/locale/ka/LC_MESSAGES/grep.mo
 share/locale/ko/LC_MESSAGES/grep.mo
 share/locale/ky/
 share/locale/ky/LC_MESSAGES/
@@ -49,6 +50,9 @@ share/locale/sk/LC_MESSAGES/grep.mo
 share/locale/sl/LC_MESSAGES/grep.mo
 share/locale/sr/LC_MESSAGES/grep.mo
 share/locale/sv/LC_MESSAGES/grep.mo
+share/locale/ta/
+share/locale/ta/LC_MESSAGES/
+share/locale/ta/LC_MESSAGES/grep.mo
 share/locale/th/
 share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/grep.mo
