@@ -7,6 +7,7 @@ DPB_PROPERTIES=		parallel parallel2
 COMMENT=		Chromium browser
 
 V=			107.0.5304.68
+REVISION=		0
 
 DISTNAME=		chromium-${V}
 
@@ -40,7 +41,8 @@ PERMIT_PACKAGE =	Yes
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/
 MASTER_SITES0=	http://nerd.hu/distfiles/
 
-MODULES=	lang/python
+MODULES=	lang/python x11/qt5
+MODQT5_DEPS=	No
 
 COMPILER =	base-clang ports-clang ports-gcc
 
@@ -77,6 +79,7 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		sysutils/pciutils \
 		devel/ninja \
 		x11/py-xcbgen${MODPY_FLAVOR} \
+		x11/qt5/qtbase,-main \
 		${MODGCC4_CPPDEP} \
 		${RUN_DEPENDS}
 LIB_DEPENDS=	archivers/snappy \
@@ -217,6 +220,7 @@ GN_ARGS+=	use_thin_lto=false \
 
 pre-configure:
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
+	@ln -sf ${MODQT5_MOC} ${WRKDIR}/bin/moc
 .for _arch in x64 ia32 arm64
 .  for _dir in avcodec avformat avutil
 	@cp -pR ${WRKSRC}/third_party/ffmpeg/chromium/config/Chrome/linux/${_arch}/lib${_dir} \
