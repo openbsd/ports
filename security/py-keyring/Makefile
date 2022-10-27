@@ -3,7 +3,7 @@ COMMENT=		store and access your passwords safely
 MODPY_EGG_VERSION=	23.6.0
 DISTNAME=		keyring-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		security
 
@@ -14,9 +14,7 @@ MODULES=		lang/python
 
 MODPY_ADJ_FILES=	keyring/cli.py
 MODPY_PI=		Yes
-MODPY_SETUPTOOLS=	Yes
-
-BUILD_DEPENDS=		devel/py-setuptools_scm${MODPY_FLAVOR}
+MODPY_PYBUILD=		setuptools_scm
 
 RUN_DEPENDS=		devel/py-entrypoints${MODPY_FLAVOR} \
 			devel/py-importlib-metadata${MODPY_FLAVOR} \
