@@ -3,8 +3,8 @@ BROKEN-alpha =	.got subsegment exceeds 64K (size 101480)
 COMMENT-main =	graphical network protocol analyzer, Qt user-interface
 COMMENT-text =	network protocol analyzer
 
-DPB_PROPERTIES =	parallel
-V =		4.0.0
+DPB_PROPERTIES =parallel
+V =		4.0.1
 PORTROACH =	limitw:1,even
 DISTNAME =	wireshark-$V
 PKGNAME-main =	wireshark-$V
