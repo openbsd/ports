@@ -28,6 +28,8 @@ lib/${BROWSER_NAME}/browser/defaults/preferences/pledge.main
 @sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/pledge.main
 lib/${BROWSER_NAME}/browser/defaults/preferences/pledge.rdd
 lib/${BROWSER_NAME}/browser/defaults/preferences/pledge.socket
+lib/${BROWSER_NAME}/browser/defaults/preferences/pledge.utility
+lib/${BROWSER_NAME}/browser/defaults/preferences/pledge.utility-audioDecoder
 lib/${BROWSER_NAME}/browser/defaults/preferences/unveil.content
 @sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/unveil.content
 lib/${BROWSER_NAME}/browser/defaults/preferences/unveil.gpu
@@ -36,6 +38,8 @@ lib/${BROWSER_NAME}/browser/defaults/preferences/unveil.main
 @sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/unveil.main
 lib/${BROWSER_NAME}/browser/defaults/preferences/unveil.rdd
 lib/${BROWSER_NAME}/browser/defaults/preferences/unveil.socket
+lib/${BROWSER_NAME}/browser/defaults/preferences/unveil.utility
+lib/${BROWSER_NAME}/browser/defaults/preferences/unveil.utility-audioDecoder
 lib/${BROWSER_NAME}/browser/defaults/profile/
 lib/${BROWSER_NAME}/browser/defaults/profile/bookmarks.html
 lib/${BROWSER_NAME}/browser/features/
@@ -193,6 +197,7 @@ lib/${BROWSER_NAME}/distribution/distribution.ini
 lib/${BROWSER_NAME}/fonts/
 lib/${BROWSER_NAME}/fonts/TwemojiMozilla.ttf
 @lib lib/${BROWSER_NAME}/libfreebl3.so.${LIBfreebl3_VERSION}
+@lib lib/${BROWSER_NAME}/libipcclientcerts.so.${LIBipcclientcerts_VERSION}
 @lib lib/${BROWSER_NAME}/liblgpllibs.so.${LIBlgpllibs_VERSION}
 @lib lib/${BROWSER_NAME}/libmozavcodec.so.${LIBmozavcodec_VERSION}
 @lib lib/${BROWSER_NAME}/libmozavutil.so.${LIBmozavutil_VERSION}

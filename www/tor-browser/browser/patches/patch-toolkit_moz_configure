@@ -3,7 +3,7 @@ Required to make font fingerprinting defenses work.
 Index: toolkit/moz.configure
 --- toolkit/moz.configure.orig
 +++ toolkit/moz.configure
-@@ -1581,7 +1581,7 @@ set_config(
+@@ -1770,7 +1770,7 @@ set_config(
  
  @depends(target)
  def bundled_fonts_default(target):

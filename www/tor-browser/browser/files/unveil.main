@@ -54,6 +54,7 @@
 $XDG_RUNTIME_DIR/dconf rwc
 $XDG_CACHE_HOME/thumbnails rwc
 $XDG_CONFIG_HOME/dconf rw
+$XDG_CONFIG_HOME/fcitx r
 $XDG_CONFIG_HOME/fontconfig r
 $XDG_CONFIG_HOME/gtk-3.0 r
 $XDG_CONFIG_HOME/mimeapps.list r

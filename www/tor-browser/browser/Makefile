@@ -5,30 +5,29 @@
 COMMENT =		modified version of Firefox ESR for browsing over Tor
 ONLY_FOR_ARCHS =	amd64
 
-BROKEN=			fail to build with lang/rust 1.64.0
-
 MOZILLA_VERSION =	${TB_VERSION}
 MOZILLA_PROJECT =	${BROWSER_NAME}
 MOZILLA_CODENAME =	browser
-TL_VERSION =		0.2.37
-REVISION =		1
+TL_VERSION =		0.2.39
 
 EXTRACT_SUFX =		.tar.xz
 PATCHORIG =		.pat.orig
 
-PKGNAME =		${TB_PREFIX}-browser-${TB_VERSION}
-DISTNAME =		src-firefox-tor-browser-91.13.0esr-11.5-1-build2
+# XXX
+#PKGNAME =		${TB_PREFIX}-browser-${TB_VERSION}
+PKGNAME =		${TB_PREFIX}-browser-12.0alpha3
+DISTNAME =		src-firefox-tor-browser-102.3.0esr-12.0-1-build2
 
 FIX_EXTRACT_PERMISSIONS	= Yes
 DISTFILES +=		${DISTNAME}.tar.xz \
 			src-tor-launcher-${TL_VERSION}.tar.xz \
 			tor-browser-linux64-${TB_VERSION}_en-US.tar.xz
 
-SO_VERSION =		7.0
+SO_VERSION =		8.0
 MOZILLA_LIBS =		xul clearkey lgpllibs mozavcodec mozavutil mozgtk
 MOZILLA_LIBS +=		freebl3 nss3 nssckbi
 MOZILLA_LIBS +=		nssutil3 smime3 softokn3 ssl3
-MOZILLA_LIBS +=		nspr4 mozsqlite3 plc4 plds4
+MOZILLA_LIBS +=		nspr4 mozsqlite3 plc4 plds4 ipcclientcerts
 
 # mozilla public license for the browser
 PERMIT_PACKAGE=	Yes
@@ -41,7 +40,6 @@ MODULES =		www/mozilla lang/python
 MODPY_RUNDEP =		No
 
 COMPILER =		ports-clang
-MODCLANG_ARCHS =	amd64 i386
 
 # tor-browser needs built-in nss, sqlite
 MOZILLA_USE_BUNDLED_NSPR =	Yes
@@ -49,7 +47,12 @@ MOZILLA_USE_BUNDLED_NSS =	Yes
 # 63 requires node because why not #1483595
 BUILD_DEPENDS +=	lang/node
 # 63 requires cbindgen #1478813
-BUILD_DEPENDS +=	devel/cbindgen>=0.19.0
+BUILD_DEPENDS +=	devel/cbindgen>=0.23.0
+# wasi
+BUILD_DEPENDS +=	lang/wasi-sdk/compiler-rt \
+			lang/wasi-sdk/libcxxabi \
+			lang/wasi-sdk/libcxx \
+			lang/wasi-libc
 
 # uses pledge()
 # Extra:  Xcomposite.4 Xdamage.4 Xfixes.6 gdk-x11-2.0.2400 gtk-x11-2.0.2400
@@ -81,12 +84,11 @@ RUN_DEPENDS +=		net/tor>=0.4.7.10
 CONFIGURE_ARGS +=	--enable-release #1386371
 CONFIGURE_ARGS +=	--enable-sandbox
 CONFIGURE_ARGS +=	--enable-forkserver
+CONFIGURE_ARGS +=	--with-wasi-sysroot=${LOCALBASE}/share/wasi-sysroot
 CONFIGURE_ARGS +=	--enable-lto=thin
 CONFIGURE_ARGS +=	--with-libclang-path=${LOCALBASE}/lib
-# remove post 96
-CONFIGURE_ARGS +=	--disable-necko-wifi
 
-# XXX badly formed debug in libxul ?
+# XXX badly formed debug
 DWZ = :
 #DEBUG_PACKAGES =	${BUILD_PACKAGES}
 DEBUG_CONFIGURE_ARGS +=	--enable-debug-symbols \
@@ -109,6 +111,8 @@ post-patch:
 	sed -i 's/#ifdef XP_LINUX/#if defined(XP_LINUX) || defined(XP_OPENBSD)/' \
 	    ${WRKSRC}/browser/app/profile/000-tor-browser.js
 	ln -s ${WRKSRC}/mozconfig-linux-x86_64 ${WRKSRC}/.mozconfig
+
+	${SUBST_CMD} ${WRKSRC}/xpcom/build/BinaryPath.h
 
 BROWSER_DIR = ${PREFIX}/lib/${BROWSER_NAME}
 TRUEBROWSER_DIR = ${TRUEPREFIX}/lib/${BROWSER_NAME}
@@ -164,8 +168,10 @@ post-install:
 	${SUBST_PROGRAM} ${FILESDIR}/${BROWSER_NAME} \
 	    ${PREFIX}/bin/${BROWSER_NAME}
 
-.for f in unveil.content unveil.gpu unveil.main unveil.rdd unveil.socket pledge.content pledge.gpu pledge.main pledge.rdd pledge.socket
-	${INSTALL_DATA} ${FILESDIR}/${f} ${BROWSER_DIR}/browser/defaults/preferences/
+.for f in unveil pledge
+.for t in content gpu main rdd socket utility utility-audioDecoder
+	${INSTALL_DATA} ${FILESDIR}/${f}.${t} ${BROWSER_DIR}/browser/defaults/preferences/
+.endfor
 .endfor
 
 .include <bsd.port.mk>

@@ -4,7 +4,7 @@ the new getTorFile() deal with it.
 Index: browser/extensions/tor-launcher/src/components/tl-process.js
 --- browser/extensions/tor-launcher/src/components/tl-process.js.orig
 +++ browser/extensions/tor-launcher/src/components/tl-process.js
-@@ -386,6 +386,8 @@ TorProcessService.prototype =
+@@ -388,6 +388,8 @@ TorProcessService.prototype =
        var torrcFile = TorLauncherUtil.getTorFile("torrc", true);
        var torrcDefaultsFile =
                      TorLauncherUtil.getTorFile("torrc-defaults", false);
@@ -13,7 +13,7 @@ Index: browser/extensions/tor-launcher/src/components/tl-process.js
        var hashedPassword = this.mProtocolSvc.TorGetPassword(true);
        var controlIPCFile = this.mProtocolSvc.TorGetControlIPCFile();
        var controlPort = this.mProtocolSvc.TorGetControlPort();
-@@ -413,19 +415,14 @@ TorProcessService.prototype =
+@@ -415,19 +417,14 @@ TorProcessService.prototype =
          return;
        }
  

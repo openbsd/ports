@@ -1,0 +1,15 @@
+https://bugzilla.mozilla.org/show_bug.cgi?id=1776713
+
+Index: toolkit/xre/glxtest.cpp
+--- toolkit/xre/glxtest.cpp.orig
++++ toolkit/xre/glxtest.cpp
+@@ -258,6 +258,9 @@ static void close_logging() {
+ #define PCI_BASE_CLASS_DISPLAY 0x03
+ 
+ static int get_pci_status() {
++#ifdef __OpenBSD__
++  return 1;
++#endif
+   void* libpci = dlopen("libpci.so.3", RTLD_LAZY);
+   if (!libpci) {
+     libpci = dlopen("libpci.so", RTLD_LAZY);

@@ -4,15 +4,15 @@ revert parts of https://hg.mozilla.org/mozilla-central/rev/aadba76932ea
 Index: toolkit/components/downloads/DownloadIntegration.jsm
 --- toolkit/components/downloads/DownloadIntegration.jsm.orig
 +++ toolkit/components/downloads/DownloadIntegration.jsm
-@@ -68,6 +68,7 @@ ChromeUtils.defineModuleGetter(
+@@ -58,6 +58,7 @@ ChromeUtils.defineModuleGetter(
    "NetUtil",
    "resource://gre/modules/NetUtil.jsm"
  );
 +ChromeUtils.defineModuleGetter(this, "OS", "resource://gre/modules/osfile.jsm");
  ChromeUtils.defineModuleGetter(
    this,
-   "CloudStorage",
-@@ -365,9 +366,7 @@ var DownloadIntegration = {
+   "Services",
+@@ -367,9 +368,7 @@ var DownloadIntegration = {
              Ci.nsIFile
            );
            directoryPath = directory.path;
@@ -21,9 +21,9 @@ Index: toolkit/components/downloads/DownloadIntegration.jsm
 -          });
 +          await OS.File.makeDir(directoryPath, { ignoreExisting: true });
          } catch (ex) {
+           Cu.reportError(ex);
            // Either the preference isn't set or the directory cannot be created.
-           directoryPath = await this.getSystemDownloadsDirectory();
-@@ -943,8 +942,8 @@ var DownloadIntegration = {
+@@ -958,8 +957,8 @@ var DownloadIntegration = {
      );
  
      // Create the Downloads folder and ignore if it already exists.

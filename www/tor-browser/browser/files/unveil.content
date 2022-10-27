@@ -1,4 +1,4 @@
-/dev/dri rw
+/dev/dri/card0 rw
 
 /etc/fonts r
 /etc/machine-id r
