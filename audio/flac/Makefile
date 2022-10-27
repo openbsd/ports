@@ -1,6 +1,6 @@
 COMMENT=	free lossless audio codec
 
-DISTNAME=	flac-1.4.1
+DISTNAME=	flac-1.4.2
 CATEGORIES=	audio archivers
 HOMEPAGE=	https://www.xiph.org/flac/
 SHARED_LIBS +=  FLAC                 13.0     # 12.0
@@ -21,13 +21,8 @@ COMPILER =	base-clang ports-gcc base-gcc
 
 LIB_DEPENDS=	audio/libogg converters/libiconv
 
-.if ${MACHINE_ARCH} == "i386"
-BUILD_DEPENDS+=	devel/nasm
-.endif
-
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--disable-sse \
-		--disable-altivec \
+CONFIGURE_ARGS=	--disable-altivec \
 		--disable-doxygen-docs \
 		--disable-thorough-tests
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
