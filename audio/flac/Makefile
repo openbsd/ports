@@ -11,8 +11,7 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://downloads.xiph.org/releases/flac/ \
-		https://ftp.osuosl.org/pub/xiph/releases/flac/
+MASTER_SITES=	https://downloads.xiph.org/releases/flac/
 EXTRACT_SUFX=	.tar.xz
 
 WANTLIB=	c iconv m ogg ${COMPILER_LIBCXX}
