@@ -1,11 +1,8 @@
 COMMENT =	modern GPS tracking platform
-V =		5.3
+V =		5.4
 PKGNAME =	traccar-${V}
 DISTNAME =	traccar-other-${V}
 EXTRACT_SUFX =	.zip
-
-DISTFILES =	${DISTNAME}-repack{${DISTNAME}}.zip
-REVISION =	0
 
 CATEGORIES =	geo
 HOMEPAGE =	https://www.traccar.org/
