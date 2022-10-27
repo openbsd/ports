@@ -106,6 +106,8 @@ include/cglm/simd/x86.h
 include/cglm/sphere.h
 include/cglm/struct/
 include/cglm/struct.h
+include/cglm/struct/affine-post.h
+include/cglm/struct/affine-pre.h
 include/cglm/struct/affine.h
 include/cglm/struct/affine2d.h
 include/cglm/struct/box.h
