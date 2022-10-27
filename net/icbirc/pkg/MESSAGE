@@ -1,0 +1,2 @@
+icbirc does not support "CAP LS" which newer irssi versions send by
+default; use 'no_cap = "yes"' in irssi server config to disable this.

@@ -1,17 +1,17 @@
 COMMENT=	proxy IRC client with ICB server
 
 DISTNAME=	icbirc-2.1
-REVISION=	3
+REVISION=	4
 CATEGORIES=	net
-MASTER_SITES=	http://www.benzedrine.ch/
+MASTER_SITES=	https://www.benzedrine.ch/
 
-HOMEPAGE=	http://www.benzedrine.ch/icbirc.html
+HOMEPAGE=	https://www.benzedrine.ch/icbirc.html
 
 # BSD
 PERMIT_PACKAGE=	Yes
 
 # uses pledge()
-WANTLIB=		c
+WANTLIB=	c
 
 NO_TEST=	Yes
 
