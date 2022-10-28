@@ -15,9 +15,10 @@ DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 ### stable
 .if ${PROPERTIES:Mrust}
+REVISION=		0
 SHARED_LIBS +=  rsvg-2               41.0     # 50.0
 GNOME_VERSION=		${STABLE_VERSION}
-MODULES +=	 	lang/python
+MODULES +=		lang/python
 MODPY_RUNDEP=		No
 BUILD_DEPENDS=		lang/rust \
 			textproc/py-docutils${MODPY_FLAVOR}

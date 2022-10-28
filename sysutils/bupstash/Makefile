@@ -3,7 +3,7 @@ COMMENT =		encrypted and deduplicated backup tool
 V =			0.11.1
 DISTNAME =		bupstash-v${V}
 PKGNAME =		bupstash-${V}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		sysutils
 

@@ -16,6 +16,7 @@ DISTNAME =		firefox-${V}esr.source
 EXTRACT_SUFX =		.tar.bz2
 PKGNAME =		spidermonkey${MOZILLA_VERSION}-${V}
 EPOCH =			1
+REVISION =		0
 
 SHARED_LIBS =		mozjs-91 0.0
 

@@ -4,7 +4,7 @@ GH_ACCOUNT =            rust-lang
 GH_PROJECT =            mdBook
 GH_TAGNAME =            v0.4.21
 PKGNAME =               ${DISTNAME:L}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		textproc www
 MAINTAINER =		Edd Barrett <edd@openbsd.org>

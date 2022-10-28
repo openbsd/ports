@@ -6,7 +6,7 @@ COMMENT =	alternative private front-end to Reddit
 GH_ACCOUNT =	spikecodes
 GH_PROJECT =	libreddit
 GH_TAGNAME =	v0.22.9
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	www
 

@@ -2,6 +2,7 @@ COMMENT =		historical real-time strategy game
 
 DISTNAME =		0ad-${V}-alpha-unix-build
 PKGNAME =		0ad-${V}
+REVISION =		0
 
 USE_WXNEEDED =		Yes
 

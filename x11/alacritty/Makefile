@@ -8,7 +8,7 @@ MAINTAINER =	Eric Auge <eau+obsd@unix4fun.net>
 GH_ACCOUNT =	alacritty
 GH_PROJECT =	alacritty
 GH_TAGNAME =	v0.10.0
-REVISION =	1
+REVISION =	2
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes

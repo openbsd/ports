@@ -3,7 +3,7 @@ COMMENT =	W3C webdriver for Gecko-based browsers
 GH_ACCOUNT =	mozilla
 GH_PROJECT =	geckodriver
 GH_TAGNAME =	v0.31.0
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	www
 

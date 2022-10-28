@@ -17,6 +17,7 @@ PATCHORIG =		.pat.orig
 #PKGNAME =		${TB_PREFIX}-browser-${TB_VERSION}
 PKGNAME =		${TB_PREFIX}-browser-12.0alpha3
 DISTNAME =		src-firefox-tor-browser-102.3.0esr-12.0-1-build2
+REVISION =		0
 
 FIX_EXTRACT_PERMISSIONS	= Yes
 DISTFILES +=		${DISTNAME}.tar.xz \

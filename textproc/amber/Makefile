@@ -6,6 +6,7 @@ GH_TAGNAME =		v${V}
 
 V =			0.5.9
 PKGNAME =		amber-${V}
+REVISION =		0
 
 CATEGORIES =		textproc sysutils
 MAINTAINER =		Edd Barrett <edd@openbsd.org>

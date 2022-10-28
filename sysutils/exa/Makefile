@@ -3,7 +3,7 @@ COMMENT =		ls alternative written in Rust
 GH_ACCOUNT =		ogham
 GH_PROJECT =		exa
 GH_TAGNAME =		v0.10.1
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		sysutils
 
