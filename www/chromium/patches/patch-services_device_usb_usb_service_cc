@@ -1,0 +1,21 @@
+Index: services/device/usb/usb_service.cc
+--- services/device/usb/usb_service.cc.orig
++++ services/device/usb/usb_service.cc
+@@ -29,6 +29,8 @@
+ #include "services/device/usb/usb_service_mac.h"
+ #elif BUILDFLAG(IS_WIN)
+ #include "services/device/usb/usb_service_win.h"
++#elif BUILDFLAG(IS_BSD)
++#include "services/device/usb/usb_service_impl.h"
+ #endif
+ 
+ namespace device {
+@@ -60,6 +62,8 @@ std::unique_ptr<UsbService> UsbService::Create() {
+     return base::WrapUnique(new UsbServiceMac());
+   else
+     return base::WrapUnique(new UsbServiceImpl());
++#elif BUILDFLAG(IS_BSD)
++  return base::WrapUnique(new UsbServiceImpl());
+ #else
+   return nullptr;
+ #endif
