@@ -1,13 +1,13 @@
 COMMENT=		GNOME document viewer
 
 GNOME_PROJECT=		evince
-GNOME_VERSION=		42.3
+GNOME_VERSION=		42.4
 
 MAJ_V=			3.0
 SUBST_VARS=		MAJ_V
 
-SHARED_LIBS +=  evdocument3               0.2 # 4.0
-SHARED_LIBS +=  evview3                   0.0 # 3.0
+SHARED_LIBS += evdocument3               0.2 # 4.0.0
+SHARED_LIBS += evview3                   0.0 # 3.0.0
 
 CATEGORIES=		graphics print
 
@@ -77,12 +77,11 @@ LIB_DEPENDS +=		graphics/djvulibre \
 			graphics/libgxps \
 			print/libspectre \
 			print/texlive/base,-mktexlsr \
-			x11/gnome/desktop \
-			x11/gnome/nautilus
+			x11/gnome/desktop
 WANTLIB += archive djvulibre gnome-desktop-3 gstreamer-1.0 gstvideo-1.0
-WANTLIB += gxps intl kpathsea m nautilus-extension spectre
+WANTLIB += gxps intl kpathsea m spectre
 
-# XXX not sure that's needed automatic conversion
+# DVI support
 RUN_DEPENDS +=	print/texlive/base,-main
 .endif
 
