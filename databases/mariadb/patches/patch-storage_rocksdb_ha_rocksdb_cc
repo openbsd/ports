@@ -1,3 +1,6 @@
+Rocksdb: Add initial OpenBSD support
+055cb3fcd1aec2a05908a312a2ae4dfd3a0d4d81
+
 Index: storage/rocksdb/ha_rocksdb.cc
 --- storage/rocksdb/ha_rocksdb.cc.orig
 +++ storage/rocksdb/ha_rocksdb.cc

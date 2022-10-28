@@ -1,0 +1,17 @@
+jemalloc_helper: Limit the mm_malloc.h hack to glibc on linux
+https://github.com/facebook/rocksdb/commit/bac399449d0bc8127a2bfb97e78c1ab6356b201c
+
+https://jira.mariadb.org/browse/MDEV-29875
+
+Index: storage/rocksdb/rocksdb/port/jemalloc_helper.h
+--- storage/rocksdb/rocksdb/port/jemalloc_helper.h.orig
++++ storage/rocksdb/rocksdb/port/jemalloc_helper.h
+@@ -5,7 +5,7 @@
+ 
+ #pragma once
+ 
+-#if defined(__clang__)
++#if defined(__clang__) && defined(__GLIBC__)
+ // glibc's `posix_memalign()` declaration specifies `throw()` while clang's
+ // declaration does not. There is a hack in clang to make its re-declaration
+ // compatible with glibc's if they are declared consecutively. That hack breaks
