@@ -13,6 +13,7 @@ include/curl/stdcheaders.h
 include/curl/system.h
 include/curl/typecheck-gcc.h
 include/curl/urlapi.h
+include/curl/websockets.h
 @static-lib lib/libcurl.a
 lib/libcurl.la
 @lib lib/libcurl.so.${LIBcurl_VERSION}
@@ -400,6 +401,7 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/CURLOPT_WILDCARDMATCH.3
 @man man/man3/CURLOPT_WRITEDATA.3
 @man man/man3/CURLOPT_WRITEFUNCTION.3
+@man man/man3/CURLOPT_WS_OPTIONS.3
 @man man/man3/CURLOPT_XFERINFODATA.3
 @man man/man3/CURLOPT_XFERINFOFUNCTION.3
 @man man/man3/CURLOPT_XOAUTH2_BEARER.3
@@ -485,6 +487,9 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/curl_url_strerror.3
 @man man/man3/curl_version.3
 @man man/man3/curl_version_info.3
+@man man/man3/curl_ws_meta.3
+@man man/man3/curl_ws_recv.3
+@man man/man3/curl_ws_send.3
 @man man/man3/libcurl-easy.3
 @man man/man3/libcurl-env.3
 @man man/man3/libcurl-errors.3

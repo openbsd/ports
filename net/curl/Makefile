@@ -1,7 +1,7 @@
 COMMENT=	transfer files with FTP, HTTP, HTTPS, etc.
 
-DISTNAME=	curl-7.85.0
-SHARED_LIBS=	curl                 26.16    # 12.0
+DISTNAME=	curl-7.86.0
+SHARED_LIBS=	curl                 26.17    # 12.0
 CATEGORIES=	net
 HOMEPAGE=	https://curl.se/
 
@@ -30,12 +30,6 @@ CONFIGURE_ARGS=	--with-openssl \
 		--without-libssh2 \
 		--without-zstd
 CONFIGURE_ENV=	ac_cv_path_NROFF="/usr/bin/mandoc -Tascii"
-
-# speed up some time-consuming configure tests
-CONFIGURE_ENV+= \
-    curl_cv_func_select_args="int,fd_set *,struct timeval *,int" \
-    curl_cv_func_recv_args="int,void *,size_t,int,ssize_t" \
-    curl_cv_func_send_args="int,const void *,size_t,int,ssize_t"
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
