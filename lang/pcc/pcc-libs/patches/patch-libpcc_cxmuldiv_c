@@ -1,0 +1,37 @@
+Allow powerpc to compile this file.
+
+Index: libpcc/cxmuldiv.c
+--- libpcc/cxmuldiv.c.orig
++++ libpcc/cxmuldiv.c
+@@ -402,6 +402,23 @@ __muldc3(double fa, double fb, double fc, double fd)
+ 	return ux.f + 1.0iF * uy.f;
+ }
+ 
++#if defined(mach_powerpc)
++/* Long double is double. */
++
++long double _Complex
++__divxc3(long double ax, long double bx, long double cx, long double dx)
++{
++	return __divdc3(ax, bx, cx, dx);
++}
++
++long double _Complex
++__mulxc3(long double fa, long double fb, long double fc, long double fd)
++{
++	return __mulxc3(fa, fb, fc, fd);
++}
++
++#else
++
+ /*
+  * Long double functions.
+  */
+@@ -618,5 +635,7 @@ __mulxc3(long double fa, long double fb, long double f
+ 	}
+ 	return ux.f + 1.0iF * uy.f;
+ }
++
++#endif
+ 
+ #endif

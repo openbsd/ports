@@ -1,7 +1,7 @@
 Index: cc/cc/cc.c
 --- cc/cc/cc.c.orig
 +++ cc/cc/cc.c
-@@ -1801,7 +1801,7 @@ static char *gcppflags[] = {
+@@ -1829,7 +1829,7 @@ static char *gcppflags[] = {
  #ifndef os_win32
  #ifdef GCC_COMPAT
  	"-D__GNUC__=4",
@@ -10,3 +10,12 @@ Index: cc/cc/cc.c
  	"-D__GNUC_PATCHLEVEL__=1",
  	"-D__REGISTER_PREFIX__=" REGISTER_PREFIX,
  	"-D__USER_LABEL_PREFIX__=" USER_LABEL_PREFIX,
+@@ -2016,7 +2016,7 @@ struct flgcheck asflgcheck[] = {
+ #if !defined(USE_YASM) && !defined(NO_AS_V)
+ 	{ &vflag, 1, "-v" },
+ #endif
+-#if defined(os_openbsd) && defined(mach_mips64)
++#if defined(os_openbsd) && (defined(mach_mips64) || defined(mach_powerpc))
+ 	{ &kflag, 1, "-KPIC" },
+ #else
+ 	{ &kflag, 1, "-k" },

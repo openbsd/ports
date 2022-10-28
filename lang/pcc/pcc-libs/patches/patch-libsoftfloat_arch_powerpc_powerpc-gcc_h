@@ -1,0 +1,21 @@
+Don't #include <machine/endian.h>, because its macro __weak_alias
+isn't compatible with NetBSD, but causes a compiler error in
+fpgetround.c under #ifdef __weak_alias.
+
+Index: libsoftfloat/arch/powerpc/powerpc-gcc.h
+--- libsoftfloat/arch/powerpc/powerpc-gcc.h.orig
++++ libsoftfloat/arch/powerpc/powerpc-gcc.h
+@@ -5,11 +5,10 @@
+ One of the macros `BIGENDIAN' or `LITTLEENDIAN' must be defined.
+ -------------------------------------------------------------------------------
+ */
+-#include <machine/endian.h>
+-#if _BYTE_ORDER == _BIG_ENDIAN
++#ifdef __BIG_ENDIAN__
+ #define BIGENDIAN
+ #endif
+-#if _BYTE_ORDER == _LITTLE_ENDIAN
++#ifdef __LITTLE_ENDIAN__
+ #define LITTLEENDIAN
+ #endif
+ 

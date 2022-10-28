@@ -1,0 +1,45 @@
+Emit code for the secure PLT, where r30 must point to the global
+offset table.
+
+Add a shape SGOTCON to emit code like "lwz %r3,.L459@got(30)" for
+loading a constant address from the global offset table.  This fixes
+string literals in PIC.
+
+Index: arch/powerpc/local2.c
+--- arch/powerpc/local2.c.orig
++++ arch/powerpc/local2.c
+@@ -143,8 +143,21 @@ prologue(struct interpass_prolog *ipp)
+ 
+ 	if (kflag) {
+ #if defined(ELFABI)
++#if 0 /* BSS PLT */
+ 		printf("\tbl _GLOBAL_OFFSET_TABLE_@local-4\n");
+ 		printf("\tmflr %s\n", rnames[GOTREG]);
++#else /* secure PLT */
++		const char *gotreg = rnames[GOTREG];
++		int lab = getlab2();
++
++		printf("\tbcl 20,31," LABFMT "\n", lab);
++		deflab(lab);
++		printf("\tmflr %s\n", gotreg);
++		printf("\taddis %s,%s,_GLOBAL_OFFSET_TABLE_-" LABFMT "@ha\n",
++		    gotreg, gotreg, lab);
++		printf("\taddi %s,%s,_GLOBAL_OFFSET_TABLE_-" LABFMT "@l\n",
++		    gotreg, gotreg, lab);
++#endif
+ #elif defined(MACHOABI)
+ 		printf("\tbcl 20,31,L%s$pb\n", ipp->ipp_name + 1);
+ 		printf("L%s$pb:\n", ipp->ipp_name + 1);
+@@ -1473,6 +1486,12 @@ special(NODE *p, int shape)
+ 	case SPCON:
+ 		if (o == ICON && p->n_name[0] == 0 && (getlval(p) & ~0x7fff) == 0)
+ 			return SRDIR;
++		break;
++	case SGOTCON:
++#if defined(ELFABI)
++		if (o == ICON && strstr(p->n_name, "@got(30)"))
++			return SRDIR;
++#endif
+ 		break;
+ 	}
+ 	return SRNOPE;

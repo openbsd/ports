@@ -1,0 +1,22 @@
+Add a shape SGOTCON to emit code like "lwz %r3,.L459@got(30)" for
+loading a constant address from the global offset table.  This fixes
+string literals in PIC.
+
+Index: arch/powerpc/table.c
+--- arch/powerpc/table.c.orig
++++ arch/powerpc/table.c
+@@ -745,6 +745,14 @@ struct optab table[] = {
+  * The next rules takes care of assignments. "=".
+  */
+ 
++#if defined(ELFABI)
++{ ASSIGN,	FOREFF|INAREG,
++	SAREG,		TWORD|TPOINT,
++	SGOTCON,	TANY,
++		0,	RDEST,
++		"	lwz AL,AR" COM "elfabi got constant" "\n", },
++#endif
++
+ { ASSIGN,	FOREFF|INAREG,
+ 	SAREG,		TWORD|TPOINT|TSHORT|TUSHORT|TCHAR|TUCHAR,
+ 	SSCON,		TANY,

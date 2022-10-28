@@ -1,0 +1,53 @@
+Don't clobber ELF's thread pointer in r2.
+
+Emit code for the secure PLT, where r30 must point to the global
+offset table.
+
+Add a shape SGOTCON to emit code like "lwz %r3,.L459@got(30)" for
+loading a constant address from the global offset table.  This fixes
+string literals in PIC.
+
+Index: arch/powerpc/macdefs.h
+--- arch/powerpc/macdefs.h.orig
++++ arch/powerpc/macdefs.h
+@@ -229,10 +229,16 @@ typedef long long OFFSZ;
+ #define NUMCLASS 3
+ #define	MAXREGS	64		/* XXX cannot have more than 64 */
+ 
++#ifdef ELFABI
++#define RSTATUS_R2	0	/* Thread Pointer */
++#else
++#define RSTATUS_R2	(SAREG|TEMPREG)
++#endif
++
+ #define RSTATUS 				\
+ 	0,			/* R0 */	\
+ 	0,			/* R1 */	\
+-	SAREG|TEMPREG,		/* R2 */	\
++	RSTATUS_R2,		/* R2 */	\
+ 	SAREG|TEMPREG,		/* R3 */	\
+ 	SAREG|TEMPREG,		/* R4 */	\
+ 	SAREG|TEMPREG,		/* R5 */	\
+@@ -337,8 +343,14 @@ typedef long long OFFSZ;
+  * capable of running in this manner, and expects a frame pointer.
+  */
+ #define SPREG   R1	/* stack pointer */
++#if defined(ELFABI)
++/* Secure PLT needs got in r30. */
++#define GOTREG	R30	/* global offset table (PIC) */
++#define FPREG   R31	/* frame pointer */
++#elif defined(MACHOABI)
+ #define FPREG   R30	/* frame pointer */
+ #define GOTREG	R31	/* global offset table (PIC) */
++#endif
+ 
+ #ifdef FPREG
+ #define ARGINIT		(24*8)	/* # bits above fp where arguments start */
+@@ -364,6 +376,7 @@ int retreg(int ty);
+ #define	SHSTR		(MAXSPECIAL+1)	/* short struct */
+ #define	SFUNCALL	(MAXSPECIAL+2)	/* struct assign after function call */
+ #define SPCON		(MAXSPECIAL+3)  /* positive constant */
++#define SGOTCON		(MAXSPECIAL+4)	/* constant in global offset table */
+ 
+ int features(int f);
+ #define FEATURE_BIGENDIAN	0x00010000
