@@ -1,7 +1,7 @@
 COMMENT =	fd.o-compliant menu editor
 
 MODPY_EGG_VERSION =	2.3.0
-REVISION =	0
+REVISION =	1
 DISTNAME =	menulibre-${MODPY_EGG_VERSION}
 GH_ACCOUNT =	bluesabre
 GH_PROJECT =	menulibre
@@ -16,15 +16,15 @@ HOMEPAGE =	https://bluesable.org/projects/menulibre/
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
 PORTHOME =	${WRKDIR}
-NO_BUILD =	Yes
+MODPY_PYBUILD =	setuptools
 BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/py-distutils-extra${MODPY_FLAVOR} \
 		devel/py-gobject3${MODPY_FLAVOR} \
 		x11/gtk+3
 RUN_DEPENDS +=	devel/desktop-file-utils \
 		devel/py-gobject3${MODPY_FLAVOR} \
+		sysutils/py-psutil${MODPY_FLAVOR} \
 		x11/gnome/menus \
 		devel/xdg-utils \
 		x11/gtk+3,-guic
