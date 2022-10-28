@@ -1,7 +1,7 @@
 COMMENT=		Google data interchange format (protocol buffers)
 
 PYMAJOR=		4
-PROTOBUF_VERSION=	21.8
+PROTOBUF_VERSION=	21.9
 
 V=			${PYMAJOR}.${PROTOBUF_VERSION}
 MODPY_EGG_VERSION=	${V:S/-//g}
@@ -17,7 +17,7 @@ WRKDIST=		${WRKDIR}/protobuf-${PYMAJOR}.${PROTOBUF_VERSION}/python
 CATEGORIES=		devel
 
 # BSD
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE=		Yes
 
 MODULES=		lang/python
 
