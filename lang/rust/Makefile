@@ -12,7 +12,7 @@ COMMENT-clippy =	Rust linter
 COMMENT-rustfmt =	Rust code formatter
 
 V =			1.64.0
-REVISION =		0
+REVISION =		1
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
