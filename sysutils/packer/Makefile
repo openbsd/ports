@@ -5,7 +5,7 @@ ONLY_FOR_ARCHS=		${LP64_ARCHS}
 COMMENT=		tool for building machine images
 
 MODGO_MODNAME=		github.com/hashicorp/packer
-MODGO_VERSION=		v1.8.3
+MODGO_VERSION=		v1.8.4
 DISTNAME=		packer-${MODGO_VERSION}
 
 CATEGORIES=		sysutils
@@ -15,7 +15,7 @@ HOMEPAGE=		http://www.packer.io
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # MPLv2
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += c pthread
 
