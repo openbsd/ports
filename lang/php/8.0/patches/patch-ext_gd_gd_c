@@ -36,7 +36,7 @@ Index: ext/gd/gd.c
  	REGISTER_LONG_CONSTANT("IMG_EFFECT_REPLACE", gdEffectReplace, CONST_CS | CONST_PERSISTENT);
  	REGISTER_LONG_CONSTANT("IMG_EFFECT_ALPHABLEND", gdEffectAlphaBlend, CONST_CS | CONST_PERSISTENT);
  	REGISTER_LONG_CONSTANT("IMG_EFFECT_NORMAL", gdEffectNormal, CONST_CS | CONST_PERSISTENT);
-@@ -3526,15 +3526,15 @@ PHP_FUNCTION(imageflip)
+@@ -3533,15 +3533,15 @@ PHP_FUNCTION(imageflip)
  	im = php_gd_libgdimageptr_from_zval_p(IM);
  
  	switch (mode) {
