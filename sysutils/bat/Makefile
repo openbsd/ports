@@ -2,8 +2,7 @@ COMMENT =		cat(1) clone with wings
 
 GH_ACCOUNT =		sharkdp
 GH_PROJECT =		bat
-GH_TAGNAME =		v0.22.0
-REVISION =		2
+GH_TAGNAME =		v0.22.1
 
 CATEGORIES =		sysutils
 

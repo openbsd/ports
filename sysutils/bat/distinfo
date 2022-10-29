@@ -1,4 +1,4 @@
-SHA256 (bat-0.22.0.tar.gz) = vsY7/8MVvae2XUcqGYM+FLuv9NJRzt+L/HfIKgC3e/w=
+SHA256 (bat-0.22.1.tar.gz) = JeRd6/fIZ5QoHWOlFWT+76lv399XU4HjrcXAZlPsrso=
 SHA256 (cargo/adler-1.0.2.tar.gz) = 8mIBYEyHseAb09mPjV2aj8u4FejO20H/zL60v1k6Nf4=
 SHA256 (cargo/aho-corasick-0.7.18.tar.gz) = HjfP1edletpF90LW6ZyleIWAtcUp3Hj68R7ObccCZW8=
 SHA256 (cargo/ansi_colours-1.1.1.tar.gz) = MmeCM7Z/kFawwUSznUbcMhhjfo2ErWA43tM54IsZYg0=
@@ -144,7 +144,7 @@ SHA256 (cargo/winapi-util-0.1.5.tar.gz) = cOxs6FuxWBUcrl5ch/lajpfSwMSwASI/M6M048
 SHA256 (cargo/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = cS4ieEHQV8HuHNL7Ivp+WlRhro5I+iynnsQs/BkxGD8=
 SHA256 (cargo/xml-rs-0.8.4.tar.gz) = 0tfTlIYT91yY/ZMoz9zEWsxNNgZVKJ0KfU7JMTkiAKM=
 SHA256 (cargo/yaml-rust-0.4.5.tar.gz) = VsGTbEzHocmrIaHrtgLrlCuoaMvUSpnLfNxYkjNeHIU=
-SIZE (bat-0.22.0.tar.gz) = 1794663
+SIZE (bat-0.22.1.tar.gz) = 1795451
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
 SIZE (cargo/aho-corasick-0.7.18.tar.gz) = 112923
 SIZE (cargo/ansi_colours-1.1.1.tar.gz) = 18739
