@@ -11,6 +11,7 @@ COMMENT =	program matching and transformation engine
 GH_ACCOUNT =	coccinelle
 GH_PROJECT =	coccinelle
 GH_TAGNAME =	1.1.1
+REVISION =	0
 
 CATEGORIES =	devel
 
@@ -19,7 +20,7 @@ HOMEPAGE =	https://coccinelle.gitlabpages.inria.fr/website/
 # GPLv2 only
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c m pcre ${MODPY_WANTLIB}
+WANTLIB += c m pcre
 
 MODULES =	lang/ocaml \
 		lang/python
@@ -29,6 +30,9 @@ BUILD_DEPENDS =	${RUN_DEPENDS} \
 		sysutils/findlib \
 		textproc/hevea \
 		textproc/latexmk
+
+LIB_DEPENDS =	devel/pcre
+
 RUN_DEPENDS =	sysutils/ggrep \
 		textproc/gdiff
 
