@@ -5,5 +5,6 @@ WANTLIB += gegl-0.4  babl-0.1 cairo json-glib-1.0 intl
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 
 LIB_DEPENDS += 	graphics/gimp/stable
+REVISION =	0
 
 .include <bsd.port.mk>
