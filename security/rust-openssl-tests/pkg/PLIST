@@ -3,7 +3,6 @@ share/rust-openssl-tests/.github/
 share/rust-openssl-tests/.github/workflows/
 share/rust-openssl-tests/.github/workflows/ci.yml
 share/rust-openssl-tests/.gitignore
-share/rust-openssl-tests/Cargo.lock
 share/rust-openssl-tests/Cargo.toml
 share/rust-openssl-tests/README.md
 share/rust-openssl-tests/THIRD_PARTY
