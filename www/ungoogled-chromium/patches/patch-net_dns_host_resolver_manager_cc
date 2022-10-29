@@ -1,7 +1,7 @@
 Index: net/dns/host_resolver_manager.cc
 --- net/dns/host_resolver_manager.cc.orig
 +++ net/dns/host_resolver_manager.cc
-@@ -3121,7 +3121,7 @@ HostResolverManager::HostResolverManager(
+@@ -3127,7 +3127,7 @@ HostResolverManager::HostResolverManager(
    }
    if (system_dns_config_notifier_)
      system_dns_config_notifier_->AddObserver(this);

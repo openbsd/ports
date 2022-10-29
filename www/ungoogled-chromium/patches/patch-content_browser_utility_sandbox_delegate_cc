@@ -2,7 +2,7 @@ Index: content/browser/utility_sandbox_delegate.cc
 --- content/browser/utility_sandbox_delegate.cc.orig
 +++ content/browser/utility_sandbox_delegate.cc
 @@ -63,10 +63,10 @@ UtilitySandboxedProcessLauncherDelegate::
- #if BUILDFLAG(ENABLE_PLUGINS)
+ #if BUILDFLAG(ENABLE_PPAPI)
        sandbox_type_ == sandbox::mojom::Sandbox::kPpapi ||
  #endif
 -#if BUILDFLAG(IS_FUCHSIA)

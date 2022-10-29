@@ -1,7 +1,7 @@
 Index: components/policy/resources/policy_templates.json
 --- components/policy/resources/policy_templates.json.orig
 +++ components/policy/resources/policy_templates.json
-@@ -1446,7 +1446,7 @@
+@@ -1450,7 +1450,7 @@
        'owners': ['file://components/policy/resources/OWNERS', 'pastarmovj@ch40m1um.qjz9zk'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -10,7 +10,7 @@ Index: components/policy/resources/policy_templates.json
        'future_on': ['fuchsia'],
        'features': {
          'dynamic_refresh': True,
-@@ -2596,7 +2596,7 @@
+@@ -2600,7 +2600,7 @@
        'owners': ['file://remoting/OWNERS', 'jamiewalch@ch40m1um.qjz9zk'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -19,7 +19,7 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'dynamic_refresh': True,
          'per_profile': False,
-@@ -4386,7 +4386,7 @@
+@@ -4420,7 +4420,7 @@
        'owners': ['file://components/policy/resources/OWNERS', 'pastarmovj@ch40m1um.qjz9zk'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -28,7 +28,7 @@ Index: components/policy/resources/policy_templates.json
        'future_on': ['fuchsia'],
        'features': {
          'dynamic_refresh': False,
-@@ -4416,7 +4416,7 @@
+@@ -4450,7 +4450,7 @@
        'owners': ['file://components/policy/resources/OWNERS', 'pastarmovj@ch40m1um.qjz9zk'],
        'type': 'string',
        'schema': { 'type': 'string' },
@@ -37,7 +37,7 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'dynamic_refresh': False,
          'per_profile': False,
-@@ -5400,7 +5400,7 @@
+@@ -5434,7 +5434,7 @@
        'owners': ['file://components/policy/resources/OWNERS', 'rsorokin@ch40m1um.qjz9zk'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -46,7 +46,7 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'dynamic_refresh': True,
          'per_profile': False,
-@@ -5462,7 +5462,7 @@
+@@ -5496,7 +5496,7 @@
        'owners': ['file://components/policy/resources/OWNERS', 'rsorokin@ch40m1um.qjz9zk'],
        'type': 'string',
        'schema': { 'type': 'string' },
@@ -55,7 +55,7 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'dynamic_refresh': False,
          'per_profile': False,
-@@ -5529,7 +5529,7 @@
+@@ -5563,7 +5563,7 @@
        'owners': ['file://components/policy/resources/OWNERS', 'rsorokin@ch40m1um.qjz9zk'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -64,7 +64,7 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'dynamic_refresh': True,
          'per_profile': False,
-@@ -11143,7 +11143,7 @@
+@@ -11183,7 +11183,7 @@
        'owners': ['file://net/cert/OWNERS', 'rsleevi@ch40m1um.qjz9zk'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -73,16 +73,16 @@ Index: components/policy/resources/policy_templates.json
        'future_on': ['fuchsia'],
        'features': {
          'dynamic_refresh': True,
-@@ -11268,7 +11268,7 @@
+@@ -11308,7 +11308,7 @@
        'owners': ['file://components/policy/resources/OWNERS', 'pmarko@ch40m1um.qjz9zk'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
--      'supported_on': ['chrome_os:77-83', 'chrome.linux:79-83', 'chrome.mac:83-'],
-+      'supported_on': ['chrome_os:77-83', 'chrome.linux:79-83', 'chrome.mac:83-', 'chrome.openbsd:79-83', 'chrome.freebsd:79-83'],
+-      'supported_on': ['chrome_os:77-83', 'chrome.linux:79-83', 'chrome.mac:83-106'],
++      'supported_on': ['chrome_os:77-83', 'chrome.linux:79-83', 'chrome.mac:83-106', 'chrome.openbsd:79-83', 'chrome.freebsd:79-83'],
+       'deprecated': True,
        'features': {
          'dynamic_refresh': False,
-         'per_profile': False,
-@@ -13532,7 +13532,7 @@
+@@ -13738,7 +13738,7 @@
        'owners': ['file://components/policy/resources/OWNERS', 'pmarko@ch40m1um.qjz9zk'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -91,7 +91,7 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'can_be_recommended': True,
          'dynamic_refresh': True,
-@@ -14402,7 +14402,7 @@
+@@ -14608,7 +14608,7 @@
        'owners': ['file://components/policy/resources/OWNERS', 'bartfab@ch40m1um.qjz9zk'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -100,7 +100,7 @@ Index: components/policy/resources/policy_templates.json
        'future_on': ['fuchsia'],
        'features': {
          'dynamic_refresh': True,
-@@ -17239,7 +17239,7 @@
+@@ -17483,7 +17483,7 @@
        'deprecated': True,
        'schema': { 'type': 'boolean' },
        'supported_on': ['chrome.win:64-', 'chrome.mac:66-', 'android:65-'],
@@ -109,7 +109,7 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'dynamic_refresh': False,
          'per_profile': False,
-@@ -21470,7 +21470,7 @@
+@@ -21716,7 +21716,7 @@
          'items': { 'type': 'string' }
        },
        # Spell checking is provided by macOS, so can't be controlled on Mac.
@@ -118,7 +118,7 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'can_be_recommended': False,
          'dynamic_refresh': True,
-@@ -21501,7 +21501,7 @@
+@@ -21747,7 +21747,7 @@
          'items': { 'type': 'string' }
        },
        # Spell checking is provided by macOS, so can't be controlled on Mac.
@@ -127,7 +127,7 @@ Index: components/policy/resources/policy_templates.json
        'deprecated': True,
        'features': {
          'can_be_recommended': False,
-@@ -21535,7 +21535,7 @@
+@@ -21781,7 +21781,7 @@
          'items': { 'type': 'string' }
        },
        # Spell checking is provided by macOS, so can't be controlled on Mac.
@@ -136,7 +136,7 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'can_be_recommended': False,
          'dynamic_refresh': True,
-@@ -22319,7 +22319,7 @@
+@@ -22565,7 +22565,7 @@
        'owners': ['fbeaufort@ch40m1um.qjz9zk', 'beccahughes@ch40m1um.qjz9zk'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -145,7 +145,7 @@ Index: components/policy/resources/policy_templates.json
        'future_on': ['fuchsia'],
        'features': {
          'dynamic_refresh': True,
-@@ -27015,7 +27015,7 @@
+@@ -27314,7 +27314,7 @@
        'owners': ['file://services/audio/OWNERS', 'dalecurtis@ch40m1um.qjz9zk'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -154,7 +154,7 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'dynamic_refresh': False,
          'per_profile': False,
-@@ -28415,7 +28415,7 @@ If this policy is left unset, privacy screen is disabl
+@@ -28714,7 +28714,7 @@ If this policy is left unset, privacy screen is disabl
        'owners': ['file://chrome/browser/notifications/OWNERS', 'knollr@ch40m1um.qjz9zk'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -163,7 +163,7 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'dynamic_refresh': True,
          'per_profile': True,
-@@ -28439,7 +28439,7 @@ If set to False, <ph name="PRODUCT_NAME">$1<ex>Google 
+@@ -28738,7 +28738,7 @@ If set to False, <ph name="PRODUCT_NAME">$1<ex>Google 
        'owners': ['file://chrome/browser/notifications/OWNERS'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -172,7 +172,7 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'dynamic_refresh': True,
          'per_profile': True,
-@@ -29549,7 +29549,7 @@ If you disable this policy, web page scrolling to spec
+@@ -29848,7 +29848,7 @@ If you disable this policy, web page scrolling to spec
        'owners': ['asumaneev@9oo91e.qjz9zk'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -181,7 +181,7 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'dynamic_refresh': True,
          'per_profile': False,
-@@ -30851,7 +30851,7 @@ This is the same behavior as <ph name="POLICY_VALUE_PR
+@@ -31206,7 +31206,7 @@ This is the same behavior as <ph name="POLICY_VALUE_PR
          },
        ],
        'default': True,
@@ -190,7 +190,7 @@ Index: components/policy/resources/policy_templates.json
        'future_on': ['fuchsia'],
        'features': {
          'dynamic_refresh': True,
-@@ -30985,7 +30985,7 @@ This is the same behavior as <ph name="POLICY_VALUE_PR
+@@ -31340,7 +31340,7 @@ This is the same behavior as <ph name="POLICY_VALUE_PR
        'owners': ['mattm@ch40m1um.qjz9zk'],
        'type': 'main',
        'schema': { 'type': 'boolean' },

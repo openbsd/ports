@@ -7,9 +7,8 @@ DPB_PROPERTIES=		parallel parallel2
 
 COMMENT=		Chromium browser sans integration with Google
 
-V=			106.0.5249.119
+V=			107.0.5304.87
 UGV=			${V}-1
-REVISION=		2
 
 DISTNAME=		ungoogled-chromium-${V}
 
@@ -43,7 +42,8 @@ PERMIT_PACKAGE =	Yes
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/
 MASTER_SITES0=	http://nerd.hu/distfiles/
 
-MODULES=	lang/python
+MODULES=	lang/python x11/qt5
+MODQT5_DEPS=	No
 
 COMPILER =	base-clang ports-clang ports-gcc
 
@@ -81,6 +81,7 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		sysutils/pciutils \
 		devel/ninja \
 		x11/py-xcbgen${MODPY_FLAVOR} \
+		x11/qt5/qtbase,-main \
 		${MODGCC4_CPPDEP} \
 		${RUN_DEPENDS}
 LIB_DEPENDS=	archivers/snappy \
@@ -274,7 +275,7 @@ do-install:
 	${SUBST_PROGRAM} ${FILESDIR}/${DIST_TARGET_DIR} ${PREFIX}/bin/${DIST_TARGET_DIR}
 	${INSTALL_PROGRAM} ${BUILDDIR}/chromedriver ${PREFIX}/bin/ungoogled-chromedriver
 	${INSTALL_MAN} ${WRKSRC}/chrome/app/resources/manpage.1.in ${PREFIX}/man/man1/ungoogled-chromium.1
-	@perl -pi -e "s,\@\@PACKAGE\@\@,chromium,g;s,\@\@MENUNAME\@\@,Chromium Web Browser,g" \
+	@perl -pi -e "s,\@\@PACKAGE\@\@,ungoogled-chromium,g;s,\@\@MENUNAME\@\@,Ungoogled Chromium Web Browser,g" \
 		${PREFIX}/man/man1/ungoogled-chromium.1
 	${INSTALL_DATA} ${BUILDDIR}/*.pak ${PREFIX}/${DIST_TARGET_DIR}
 

@@ -1,7 +1,7 @@
 Index: chrome/browser/policy/browser_signin_policy_handler.cc
 --- chrome/browser/policy/browser_signin_policy_handler.cc.orig
 +++ chrome/browser/policy/browser_signin_policy_handler.cc
-@@ -43,7 +43,7 @@ void BrowserSigninPolicyHandler::ApplyPolicySettings(c
+@@ -44,7 +44,7 @@ void BrowserSigninPolicyHandler::ApplyPolicySettings(c
        policies.GetValue(policy_name(), base::Value::Type::INTEGER);
    switch (static_cast<BrowserSigninMode>(value->GetInt())) {
      case BrowserSigninMode::kForced:

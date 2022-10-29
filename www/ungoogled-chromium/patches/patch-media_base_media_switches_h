@@ -1,7 +1,7 @@
 Index: media/base/media_switches.h
 --- media/base/media_switches.h.orig
 +++ media/base/media_switches.h
-@@ -203,7 +203,7 @@ MEDIA_EXPORT extern const base::Feature kUseDecoderStr
+@@ -202,7 +202,7 @@ MEDIA_EXPORT extern const base::Feature kUseDecoderStr
  MEDIA_EXPORT extern const base::Feature kUseFakeDeviceForMediaStream;
  MEDIA_EXPORT extern const base::Feature kUseMediaHistoryStore;
  MEDIA_EXPORT extern const base::Feature kUseR16Texture;
