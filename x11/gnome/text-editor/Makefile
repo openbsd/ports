@@ -2,6 +2,7 @@ COMMENT=		simple Text Editor for GNOME
 
 GNOME_PROJECT=		gnome-text-editor
 GNOME_VERSION=		42.2
+REVISION=		0
 
 CATEGORIES=		editors
 
@@ -22,6 +23,7 @@ MODULES=		devel/dconf \
 MODGNOME_TOOLS= 	desktop-file-utils gtk-update-icon-cache yelp
 
 LIB_DEPENDS=		textproc/enchant2 \
+			textproc/icu4c \
 			x11/gnome/libadwaita \
 			x11/gtksourceview5
 
