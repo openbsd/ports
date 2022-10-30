@@ -1,6 +1,6 @@
 COMMENT=	Bible reading, browsing, and searching tool
 
-DISTNAME=	bible-kjv_4.37
+DISTNAME=	bible-kjv_4.38
 PKGNAME=	${DISTNAME:S/_/-/}
 CATEGORIES=	misc
 
