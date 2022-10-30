@@ -1,9 +1,7 @@
 COMMENT =	multicast router utilizing IGMP forwarding
 
-GH_ACCOUNT =	pali
-GH_PROJECT =	igmpproxy
-GH_COMMIT =	0e7186b300c063ef4015f1551100765ef5537d4c
-DISTNAME =	igmpproxy-0.3.20210705
+V =		0.4
+DISTNAME =	igmpproxy-${V}
 
 CATEGORIES =	net
 
@@ -14,16 +12,14 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c
 
+MASTER_SITES =	${HOMEPAGE}/releases/download/${V}/
+
 MAKE_FLAGS =	CFLAGS="${CFLAGS} -Wall" \
 		LDFLAGS="${LDFLAGS}"
 
-CONFIGURE_STYLE =	autoreconf
+CONFIGURE_STYLE =	gnu
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
-
-AUTOCONF_VERSION =	2.63
-AUTOMAKE_VERSION =	1.12
-AUTORECONF =		./autogen.sh
 
 NO_TEST =	Yes
 

@@ -1,7 +1,7 @@
 Index: src/igmp.c
 --- src/igmp.c.orig
 +++ src/igmp.c
-@@ -139,6 +139,7 @@ void acceptIgmp(int recvlen) {
+@@ -132,6 +132,7 @@ void acceptIgmp(int recvlen) {
          }
          else {
              struct IfDesc *checkVIF;
@@ -9,7 +9,7 @@ Index: src/igmp.c
  
              for(i=0; i<MAX_UPS_VIFS; i++)
              {
-@@ -156,20 +157,29 @@ void acceptIgmp(int recvlen) {
+@@ -149,20 +150,29 @@ void acceptIgmp(int recvlen) {
                          return;
                      }
                      else if(!isAdressValidForIf(checkVIF, src)) {
@@ -49,7 +49,7 @@ Index: src/igmp.c
                          i = MAX_UPS_VIFS;
                      }
                  } else {
-@@ -199,9 +209,9 @@ void acceptIgmp(int recvlen) {
+@@ -192,9 +202,9 @@ void acceptIgmp(int recvlen) {
          return;
      }
  

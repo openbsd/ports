@@ -1,7 +1,7 @@
 Index: src/request.c
 --- src/request.c.orig
 +++ src/request.c
-@@ -183,6 +183,8 @@ void sendGroupSpecificMemberQuery(void *argument) {
+@@ -194,6 +194,8 @@ void sendGroupSpecificMemberQuery(void *argument) {
      // Loop through all downstream interfaces
      for ( Ix = 0; (Dp = getIfByIx(Ix)); Ix++ ) {
          if ( Dp->InAdr.s_addr && ! (Dp->Flags & IFF_LOOPBACK) ) {

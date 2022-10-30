@@ -18,7 +18,7 @@ Index: src/igmpproxy.h
  /*
   * Limit on length of route data
   */
-@@ -223,6 +224,7 @@ int getVifIx( struct IfDesc *IfDp );
+@@ -224,6 +225,7 @@ int getVifIx( struct IfDesc *IfDp );
  int loadConfig(char *configFile);
  void configureVifs(void);
  struct Config *getCommonConfig(void);

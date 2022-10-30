@@ -98,7 +98,7 @@ Index: src/rttable.c
      // Join the all routers group on downstream vifs...
      for ( Ix = 0; (Dp = getIfByIx(Ix)); Ix++ ) {
          // If this is a downstream vif, we should join the All routers group...
-@@ -213,29 +248,24 @@ static void sendJoinLeaveUpstream(struct RouteTable* r
+@@ -220,29 +255,24 @@ static void sendJoinLeaveUpstream(struct RouteTable* r
  *   Clear all routes from routing table, and alerts Leaves upstream.
  */
  void clearAllRoutes(void) {
@@ -132,7 +132,7 @@ Index: src/rttable.c
  
      // Send a notice that the routing table is empty...
      my_log(LOG_NOTICE, 0, "All routes removed. Routing table is empty.");
-@@ -246,15 +276,10 @@ void clearAllRoutes(void) {
+@@ -253,15 +283,10 @@ void clearAllRoutes(void) {
  *   Route Descriptor.
  */
  static struct RouteTable *findRoute(uint32_t group) {
@@ -151,7 +151,7 @@ Index: src/rttable.c
  }
  
  /**
-@@ -293,10 +318,8 @@ int insertRoute(uint32_t group, int ifx, uint32_t src)
+@@ -300,10 +325,8 @@ int insertRoute(uint32_t group, int ifx, uint32_t src)
          newroute = (struct RouteTable*)malloc(sizeof(struct RouteTable) + (conf->fastUpstreamLeave ? conf->downstreamHostsHashTableSize : 0));
          // Insert the route desc and clear all pointers...
          newroute->group      = group;
@@ -163,7 +163,7 @@ Index: src/rttable.c
  
          if(conf->fastUpstreamLeave) {
              // Init downstream hosts bit hash table
-@@ -321,54 +344,13 @@ int insertRoute(uint32_t group, int ifx, uint32_t src)
+@@ -328,54 +351,13 @@ int insertRoute(uint32_t group, int ifx, uint32_t src)
              BIT_SET(newroute->vifBits, ifx);
          }
  
@@ -223,7 +223,7 @@ Index: src/rttable.c
          // Log the cleanup in debugmode...
          my_log(LOG_INFO, 0, "Inserted route table entry for %s on VIF #%d",
              inetFmt(croute->group, s1),ifx);
-@@ -391,7 +373,7 @@ int insertRoute(uint32_t group, int ifx, uint32_t src)
+@@ -398,7 +380,7 @@ int insertRoute(uint32_t group, int ifx, uint32_t src)
              inetFmt(croute->group, s1), ifx);
  
          // Update route in kernel...
@@ -232,7 +232,7 @@ Index: src/rttable.c
              my_log(LOG_WARNING, 0, "The insertion into Kernel failed.");
              return 0;
          }
-@@ -413,7 +395,7 @@ int insertRoute(uint32_t group, int ifx, uint32_t src)
+@@ -420,7 +402,7 @@ int insertRoute(uint32_t group, int ifx, uint32_t src)
  *   activated, it's reinstalled in the kernel. If
  *   the route is activated, no originAddr is needed.
  */
@@ -241,7 +241,7 @@ Index: src/rttable.c
      struct RouteTable*  croute;
      int result = 0;
  
-@@ -432,43 +414,37 @@ int activateRoute(uint32_t group, uint32_t originAddr,
+@@ -439,43 +421,37 @@ int activateRoute(uint32_t group, uint32_t originAddr,
      }
  
      if(croute != NULL) {
@@ -308,7 +308,7 @@ Index: src/rttable.c
      }
      logRouteTable("Activate Route");
  
-@@ -485,12 +461,7 @@ void ageActiveRoutes(void) {
+@@ -492,12 +468,7 @@ void ageActiveRoutes(void) {
  
      my_log(LOG_DEBUG, 0, "Aging routes in table.");
  
@@ -322,7 +322,7 @@ Index: src/rttable.c
          // Run the aging round algorithm.
          if(croute->upstrState != ROUTESTATE_CHECK_LAST_MEMBER) {
              // Only age routes if Last member probe is not active...
-@@ -602,7 +573,7 @@ static int removeRoute(struct RouteTable*  croute) {
+@@ -609,7 +580,7 @@ static int removeRoute(struct RouteTable*  croute) {
      //BIT_ZERO(croute->vifBits);
  
      // Uninstall current route from kernel
@@ -331,7 +331,7 @@ Index: src/rttable.c
          my_log(LOG_WARNING, 0, "The removal from Kernel failed.");
          result = 0;
      }
-@@ -614,24 +585,8 @@ static int removeRoute(struct RouteTable*  croute) {
+@@ -621,24 +592,8 @@ static int removeRoute(struct RouteTable*  croute) {
          sendJoinLeaveUpstream(croute, 0);
      }
  
@@ -357,7 +357,7 @@ Index: src/rttable.c
      logRouteTable("Remove route");
  
      return result;
-@@ -676,6 +631,37 @@ int internAgeRoute(struct RouteTable*  croute) {
+@@ -683,6 +638,37 @@ int internAgeRoute(struct RouteTable*  croute) {
          }
      }
  
@@ -395,7 +395,7 @@ Index: src/rttable.c
      // If the aging counter has reached zero, its time for updating...
      if(croute->ageValue == 0) {
          // Check for activity in the aging process,
-@@ -685,7 +671,7 @@ int internAgeRoute(struct RouteTable*  croute) {
+@@ -692,7 +678,7 @@ int internAgeRoute(struct RouteTable*  croute) {
                           inetFmt(croute->group,s1));
  
              // Just update the routing settings in kernel...
@@ -404,7 +404,7 @@ Index: src/rttable.c
  
              // We append the activity counter to the age, and continue...
              croute->ageValue = croute->ageActivity;
-@@ -711,39 +697,61 @@ int internAgeRoute(struct RouteTable*  croute) {
+@@ -718,39 +704,61 @@ int internAgeRoute(struct RouteTable*  croute) {
  /**
  *   Updates the Kernel routing table. If activate is 1, the route
  *   is (re-)activated. If activate is false, the route is removed.
@@ -480,7 +480,7 @@ Index: src/rttable.c
          }
  
          // Do the actual Kernel route update...
-@@ -765,7 +773,7 @@ int internUpdateKernelRoute(struct RouteTable *route, 
+@@ -772,7 +780,7 @@ int internUpdateKernelRoute(struct RouteTable *route, 
  */
  void logRouteTable(const char *header) {
          struct Config       *conf = getCommonConfig();
@@ -489,7 +489,7 @@ Index: src/rttable.c
          unsigned            rcount = 0;
  
          my_log(LOG_DEBUG, 0, "");
-@@ -774,30 +782,22 @@ void logRouteTable(const char *header) {
+@@ -781,30 +789,22 @@ void logRouteTable(const char *header) {
          if(croute==NULL) {
              my_log(LOG_DEBUG, 0, "No routes in table...");
          } else {

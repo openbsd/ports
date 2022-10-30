@@ -1,7 +1,7 @@
 Index: src/config.c
 --- src/config.c.orig
 +++ src/config.c
-@@ -455,3 +455,21 @@ struct SubnetList *parseSubnetAddress(char *addrstr) {
+@@ -471,3 +471,21 @@ struct SubnetList *parseSubnetAddress(char *addrstr) {
  
      return tmpSubnet;
  }
