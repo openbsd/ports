@@ -1,6 +1,6 @@
 COMMENT =	UTF-8 support module for Lua and LuaJIT
 
-V =		0.1.3
+V =		0.1.4
 PKGNAME =	lua-utf8-${V}
 
 GH_ACCOUNT =	starwing
