@@ -1,6 +1,6 @@
 COMMENT =		Python HTTP client library
 
-MODPY_EGG_VERSION =	0.20.4
+MODPY_EGG_VERSION =	0.21.0
 DISTNAME =		httplib2-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -14,11 +14,11 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 RUN_DEPENDS =		devel/py-parsing${MODPY_FLAVOR}
-TEST_DEPENDS =		devel/py-test-timeout${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-test-timeout${MODPY_FLAVOR} \
+			${FULLPKGNAME}:${BUILD_PKGPATH}
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 MODPY_PYTEST_ARGS =	python3 tests
 
 FLAVORS =		python3
