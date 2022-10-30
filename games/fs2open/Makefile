@@ -8,7 +8,7 @@ DISTNAME =	fs2open-${V}
 GH_ACCOUNT =	scp-fs2open
 GH_PROJECT =	fs2open.github.com
 GH_TAGNAME =	release_${V:S/./_/g}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	games
 
@@ -46,8 +46,12 @@ LIB_DEPENDS =		audio/openal \
 			graphics/vulkan-loader \
 			devel/jansson
 
+# Disable Vulkan because of build failure, since upgrade to 1.3.224.1:
+# code/graphics/vulkan/VulkanRenderer.cpp:794:21: error: no viable overloaded '='
+# m_graphicsPipeline = m_device->createGraphicsPipelineUnique(nullptr, pipelineInfo);
 CONFIGURE_ARGS =	-DCMAKE_INSTALL_PREFIX=${LOCALBASE}/share/fs2open \
-			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=On
+			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=On \
+			-DFSO_BUILD_WITH_VULKAN=Off
 
 # currently not building; would be ${WRKBUILD}/bin/unittests
 NO_TEST =		Yes
