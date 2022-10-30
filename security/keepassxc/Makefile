@@ -1,6 +1,6 @@
 COMMENT =	management tool for password and sensitive data
 
-V =		2.7.3
+V =		2.7.4
 DISTNAME =	keepassxc-${V}
 
 CATEGORIES =	security
@@ -53,7 +53,6 @@ FLAVOR ?=
 LIB_DEPENDS +=		devel/libusb1 \
 			security/pcsc-lite
 CONFIGURE_ARGS +=	-DWITH_XC_YUBIKEY=ON
-WANTLIB += pcsclite usb-1.0
 .endif
 
 .if ${FLAVOR:Mbrowser}
