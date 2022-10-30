@@ -61,7 +61,7 @@ USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=autoreconf
 CONFIGURE_ARGS=	--disable-manualupdatecheck \
-		--with-dbus \
+		--with-dbus
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		GREP=/usr/bin/grep \
