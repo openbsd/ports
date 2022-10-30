@@ -27,8 +27,8 @@ Index: etc/config
  
  # use these keys for focus, movement, and resize directions when reaching for
  # the arrows is not convenient
-@@ -50,13 +50,13 @@ set $right semicolon
- floating_modifier Mod1
+@@ -54,13 +54,13 @@ floating_modifier Mod1
+ tiling_drag modifier titlebar
  
  # start a terminal
 -bindsym Mod1+Return exec i3-sensible-terminal

@@ -1,6 +1,6 @@
 COMMENT =	improved dynamic tiling window manager, fork with gaps
 
-V =		4.21
+V =		4.21.1
 DISTNAME =	i3-gaps-${V}
 
 CATEGORIES =	x11
