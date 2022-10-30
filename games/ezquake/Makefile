@@ -1,9 +1,9 @@
 N =		ezquake
-V =		3.2.3
+V =		3.6.0
 COMMENT =	modern QuakeWorld client
 
 PKGNAME =	${N}-${V}
-GH_ACCOUNT =	ezQuake
+GH_ACCOUNT =	QW-Group
 GH_PROJECT =	${N}-source
 GH_TAGNAME =	${V}
 
@@ -15,10 +15,11 @@ MAINTAINER =	Tom Murphy <openbsd@pertho.net>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += GL SDL2 c curl expat jansson jpeg m pcre png pthread
-WANTLIB += speex speexdsp z
+WANTLIB += GL SDL2 c curl expat freetype jansson jpeg m pcre png pthread
+WANTLIB += sndfile speex speexdsp z
 
-LIB_DEPENDS =	audio/speex \
+LIB_DEPENDS =	audio/libsndfile \
+		audio/speex \
 		graphics/jpeg \
 		graphics/png \
 		devel/sdl2 \
@@ -33,6 +34,7 @@ NO_TEST =	Yes
 
 GAMEDIR =	${PREFIX}/share/ezquake
 SUBST_VARS +=	GAMEDIR
+PATCHORIG =	.orig.port
 
 do-configure:
 	${SUBST_CMD} ${WRKSRC}/EX_browser_sources.c
