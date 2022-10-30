@@ -1,6 +1,6 @@
 COMMENT=		Python Imaging Library (friendly fork of PIL)
 
-MODPY_EGG_VERSION=	9.2.0
+MODPY_EGG_VERSION=	9.3.0
 DISTNAME=		Pillow-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		graphics
@@ -21,7 +21,7 @@ MODPY_PI =		Yes
 
 MODULES=		lang/python
 MODPY_PYTEST=		Yes
-MODPY_SETUPTOOLS=	Yes
+MODPY_PYBUILD=		setuptools
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 LIB_DEPENDS=		graphics/lcms2 \
