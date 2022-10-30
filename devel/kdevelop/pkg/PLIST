@@ -783,6 +783,8 @@ share/kdevelop/pics/typedef.png
 share/kdevelop/pics/union.png
 share/kdevelop/shortcuts/
 share/kdevelop/shortcuts/QtCreator
+share/kdevfiletemplates/
+share/kdevfiletemplates/templates/
 share/kdevfiletemplates/templates/c_gobject.tar.bz2
 share/kdevfiletemplates/templates/c_gobject_private.tar.bz2
 share/kdevfiletemplates/templates/c_gobject_properties.tar.bz2

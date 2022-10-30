@@ -23,6 +23,8 @@ WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5WebChannel Qt5WebEngineCore
 WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml X11 assuan c
 WANTLIB += gpgme gpgmepp m qgpgme
 
+WANTLIB += lib/inotify/inotify
+
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_ICON_CACHE = yes
 MODKDE5_DESKTOP_FILE = yes
@@ -35,7 +37,6 @@ BUILD_DEPENDS =	devel/boost \
 		devel/kf5/kitemviews \
 		devel/kf5/ktexteditor \
 		devel/kf5/solid  \
-		devel/libinotify \
 		x11/kde-applications/akonadi-contacts \
 		x11/kde-applications/kimap \
 		x11/kde-applications/mailcommon \
@@ -72,6 +73,7 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/sonnet \
 		devel/kf5/syndication \
 		productivity/kuserfeedback \
+		devel/libinotify \
 		security/gpgme,-qt \
 		x11/grantlee-qt5 \
 		x11/kde-applications/akonadi \

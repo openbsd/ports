@@ -1,0 +1,17 @@
+Index: PyKOpeningHours/CMakeLists.txt
+--- PyKOpeningHours/CMakeLists.txt.orig
++++ PyKOpeningHours/CMakeLists.txt
+@@ -21,10 +21,10 @@ kde_target_enable_exceptions(PyKOpeningHours PRIVATE)
+ target_compile_definitions(PyKOpeningHours PRIVATE KOPENINGHOURS_VALIDATOR_ONLY)
+ 
+ # Set up the libraries and header search paths for this target
+-target_link_libraries(PyKOpeningHours PUBLIC ${Boost_LIBRARIES} ${PYTHON_LIBRARIES} KOpeningHours)
+-target_include_directories(PyKOpeningHours PRIVATE ${Boost_INCLUDE_DIR} ${PYTHON_INCLUDE_DIRS})
++target_link_libraries(PyKOpeningHours PUBLIC ${Boost_LIBRARIES} ${Python3_LIBRARIES} KOpeningHours)
++target_include_directories(PyKOpeningHours PRIVATE ${Boost_INCLUDE_DIR} ${Python3_INCLUDE_DIRS})
+ 
+-set(_install_dir lib/python${PYTHONLIBS_VERSION_MAJOR}.${PYTHONLIBS_VERSION_MINOR}/site-packages)
++set(_install_dir lib/python${Python3_VERSION_MAJOR}.${Python3_VERSION_MINOR}/site-packages)
+ 
+ install(TARGETS PyKOpeningHours DESTINATION ${_install_dir}/PyKOpeningHours)
+ install(FILES PyKOpeningHours.pyi __init__.py DESTINATION ${_install_dir}/PyKOpeningHours)

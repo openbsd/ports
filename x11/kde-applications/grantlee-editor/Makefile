@@ -3,7 +3,6 @@ USE_WXNEEDED =	Yes
 COMMENT =	utilities and tools to manage themes in KDE PIM applications
 DISTNAME =	grantlee-editor-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
 SHARED_LIBS +=  grantleethemeeditor       1.0 # 5.13.2
 
@@ -21,6 +20,8 @@ WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport
 WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5WebChannel Qt5WebEngineCore
 WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml X11 assuan c
 WANTLIB += gpgme gpgmepp m qgpgme
+
+WANTLIB += lib/inotify/inotify
 
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DESKTOP_FILE = yes
@@ -53,6 +54,7 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kxmlgui \
 		devel/kf5/syntax-highlighting \
+		devel/libinotify \
 		security/gpgme,-qt \
 		x11/kde-applications/akonadi \
 		x11/kde-applications/akonadi-mime \

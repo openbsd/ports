@@ -1,7 +1,7 @@
 Index: src/backends/qalculate/qalculateexpression.cpp
 --- src/backends/qalculate/qalculateexpression.cpp.orig
 +++ src/backends/qalculate/qalculateexpression.cpp
-@@ -736,7 +736,7 @@ ParseOptions QalculateExpression::parseOptions()
+@@ -733,7 +733,7 @@ ParseOptions QalculateExpression::parseOptions()
      }
  
      po.base = QalculateSettings::base();

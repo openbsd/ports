@@ -1,7 +1,6 @@
 COMMENT =	certificate manager and a universal crypto GUI
 DISTNAME =	kleopatra-${VERSION}
 CATEGORIES =	security x11
-REVISION =	0
 
 SHARED_LIBS +=  kleopatraclientcore     1.0 # 1.3.0
 SHARED_LIBS +=  kleopatraclientgui      1.0 # 1.3.0

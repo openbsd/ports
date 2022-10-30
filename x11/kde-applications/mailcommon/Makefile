@@ -21,12 +21,12 @@ WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB += Qt5Widgets Qt5Xml X11 assuan gpgme gpgmepp m phonon4qt5
 WANTLIB += qgpgme
 
+
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
 
 BUILD_DEPENDS =	textproc/libxslt \
 		devel/boost \
-		devel/libinotify
 
 LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kauth \
@@ -47,6 +47,7 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/sonnet \
 		devel/kf5/syntax-highlighting \
 		security/gpgme,-qt \
+		devel/libinotify \
 		x11/kde-applications/akonadi \
 		x11/kde-applications/akonadi-mime \
 		x11/kde-applications/kidentitymanagement \

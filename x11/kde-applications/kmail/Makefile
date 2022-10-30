@@ -3,7 +3,6 @@ USE_WXNEEDED =	Yes
 COMMENT =	KDE PIM email client
 DISTNAME =	kmail-${VERSION}
 CATEGORIES =	net mail
-REVISION =	0
 
 SHARED_LIBS +=  kmailprivate       5.2 # 5.13.2
 
@@ -31,6 +30,8 @@ WANTLIB += Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport Qt5Qml
 WANTLIB += Qt5QmlModels Qt5Quick Qt5WebChannel Qt5WebEngineCore
 WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml X11 assuan c
 WANTLIB += gpgme gpgmepp m qgpgme qt5keychain
+
+WANTLIB += lib/inotify/inotify
 
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
@@ -79,6 +80,7 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/solid \
 		devel/kf5/sonnet \
 		devel/kf5/syntax-highlighting \
+		devel/libinotify \
 		security/gpgme,-qt \
 		productivity/kuserfeedback \
 		x11/kde-applications/akonadi \

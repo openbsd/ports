@@ -15,12 +15,12 @@ WANTLIB += KF5PimCommonAkonadi KF5PimTextEdit KF5Service KF5WidgetsAddons
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets
 WANTLIB += Qt5Xml assuan c gpgme gpgmepp m qgpgme
 
+
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DESKTOP_FILE = yes
 
-BUILD_DEPENDS =	devel/boost \
-		devel/libinotify
+BUILD_DEPENDS =	devel/boost
 
 LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kauth \
@@ -36,6 +36,7 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kitemmodels \
 		devel/kf5/kservice \
 		devel/kf5/kwidgetsaddons \
+		devel/libinotify \
 		security/gpgme,-qt \
 		x11/kde-applications/akonadi \
 		x11/kde-applications/akonadi-mime \

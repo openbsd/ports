@@ -18,6 +18,7 @@ WANTLIB += KF5PimTextEdit KF5Service KF5Wallet KF5WidgetsAddons
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB += Qt5Widgets Qt5Xml assuan c gpgme gpgmepp m qgpgme qt5keychain
 
+
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_ICON_CACHE = yes
 MODKDE5_DESKTOP_FILE = yes
@@ -41,6 +42,7 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kxmlgui \
 		security/gpgme,-qt \
+		devel/libinotify \
 		x11/kde-applications/akonadi \
 		x11/kde-applications/kidentitymanagement \
 		x11/kde-applications/kimap \

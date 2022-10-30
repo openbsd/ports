@@ -1,7 +1,6 @@
 COMMENT =	KDE PIM messaging library
 DISTNAME =	messagelib-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
 SHARED_LIBS +=  KF5MessageComposer       11.0 # 5.13.2
 SHARED_LIBS +=  KF5MessageCore           3.1 # 5.13.2

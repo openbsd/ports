@@ -22,11 +22,6 @@ SHARED_LIBS +=  scamconfiguresettings                    0.0 # 5.19.0
 SHARED_LIBS +=  openurlwithconfigure                     0.1 # 5.19.0
 SHARED_LIBS +=  akonadidatasetools                       0.0 # 0.0
 
-MODKDE5_TRANSLATIONS = yes
-MODKDE5_DESKTOP_FILE = yes
-
-MODKF5_L10N_CONFLICT = yes
-
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiCalendar
 WANTLIB += KF5AkonadiContact KF5AkonadiCore KF5AkonadiMime KF5AkonadiNotes
 WANTLIB += KF5AkonadiWidgets KF5Archive KF5Auth KF5AuthCore KF5CalendarCore
@@ -53,9 +48,12 @@ WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml X11 assuan gpgme
 WANTLIB += gpgmepp m markdown qgpgme
 
 
+MODKDE5_TRANSLATIONS = yes
+MODKDE5_DESKTOP_FILE = yes
+MODKF5_L10N_CONFLICT = yes
+
 BUILD_DEPENDS =	textproc/libxslt \
-		devel/boost \
-		devel/libinotify
+		devel/boost
 
 RUN_DEPENDS =	x11/gtk+3,-guic
 
@@ -76,7 +74,6 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kitemmodels \
 		devel/kf5/kitemviews \
 		devel/kf5/kjobwidgets \
-		devel/kf5/kparts \
 		devel/kf5/kservice \
 		devel/kf5/ktextwidgets \
 		devel/kf5/kwallet \
@@ -86,6 +83,7 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/solid \
 		devel/kf5/sonnet \
 		devel/kf5/syntax-highlighting \
+		devel/libinotify \
 		security/gpgme,-qt \
 		security/gpgme \
 		textproc/discount \
@@ -106,7 +104,6 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		x11/kde-applications/kitinerary \
 		x11/kde-applications/kmailtransport \
 		x11/kde-applications/kmime \
-		x11/kde-applications/kontactinterface \
 		x11/kde-applications/kpimtextedit \
 		x11/kde-applications/kpkpass \
 		x11/kde-applications/ktnef \

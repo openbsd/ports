@@ -21,11 +21,12 @@ WANTLIB += KF5XmlGui KUserFeedbackCore KUserFeedbackWidgets Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
 WANTLIB += X11 assuan c gpgme gpgmepp m qgpgme
 
+WANTLIB += lib/inotify/inotify
+
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DESKTOP_FILE = yes
 
-BUILD_DEPENDS =	devel/boost \
-		devel/libinotify
+BUILD_DEPENDS =	devel/boost
 
 LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kauth \
@@ -50,6 +51,7 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kxmlgui \
 		devel/kf5/solid \
+		devel/libinotify \
 		security/gpgme,-qt \
 		productivity/kuserfeedback \
 		x11/kde-applications/akonadi \

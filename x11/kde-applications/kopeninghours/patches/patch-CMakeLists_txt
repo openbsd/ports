@@ -1,0 +1,22 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -67,15 +67,10 @@ set_package_properties(FLEX PROPERTIES PURPOSE "Lexer 
+ find_package(BISON REQUIRED)
+ set_package_properties(BISON PROPERTIES PURPOSE "Grammar generator for parsing opening hours expressions")
+ 
+-find_package(PythonLibs 3.6 MODULE)
+-if (PythonLibs_FOUND)
+-    # Extract major/minor python version
+-    string(REPLACE "." ";" VERSION_LIST ${PYTHONLIBS_VERSION_STRING})
+-    list(GET VERSION_LIST 0 PYTHONLIBS_VERSION_MAJOR)
+-    list(GET VERSION_LIST 1 PYTHONLIBS_VERSION_MINOR)
+-
++find_package(Python3 COMPONENTS Interpreter Development)
++if (Python3_FOUND)
+     # boost-python requires exact version number
+-    find_package(Boost COMPONENTS python${PYTHONLIBS_VERSION_MAJOR}${PYTHONLIBS_VERSION_MINOR} MODULE)
++    find_package(Boost COMPONENTS python${Python3_VERSION_MAJOR}${Python3_VERSION_MINOR} MODULE)
+ endif()
+ 
+ add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x050d00)
