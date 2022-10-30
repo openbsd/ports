@@ -15,6 +15,10 @@ include/spirv-tools/linker.hpp
 include/spirv-tools/optimizer.hpp
 lib/cmake/
 lib/cmake/SPIRV-Tools/
+lib/cmake/SPIRV-Tools-diff/
+lib/cmake/SPIRV-Tools-diff/SPIRV-Tools-diffConfig.cmake
+lib/cmake/SPIRV-Tools-diff/SPIRV-Tools-diffTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/SPIRV-Tools-diff/SPIRV-Tools-diffTargets.cmake
 lib/cmake/SPIRV-Tools-link/
 lib/cmake/SPIRV-Tools-link/SPIRV-Tools-linkConfig.cmake
 lib/cmake/SPIRV-Tools-link/SPIRV-Tools-linkTargets${MODCMAKE_BUILD_SUFFIX}
@@ -34,6 +38,7 @@ lib/cmake/SPIRV-Tools-reduce/SPIRV-Tools-reduceTarget.cmake
 lib/cmake/SPIRV-Tools/SPIRV-ToolsConfig.cmake
 lib/cmake/SPIRV-Tools/SPIRV-ToolsTarget${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/SPIRV-Tools/SPIRV-ToolsTarget.cmake
+@static-lib lib/libSPIRV-Tools-diff.a
 @static-lib lib/libSPIRV-Tools-link.a
 @static-lib lib/libSPIRV-Tools-lint.a
 @static-lib lib/libSPIRV-Tools-opt.a

@@ -1,23 +1,19 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -188,13 +188,13 @@ set(LOADER_HELPER_FOLDER "Helper Targets")
+@@ -180,9 +180,9 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+ set(LOADER_HELPER_FOLDER "Helper Targets")
  
  if(UNIX)
-     set(
--        FALLBACK_CONFIG_DIRS "/etc/xdg"
-+        FALLBACK_CONFIG_DIRS "${SYSCONFDIR}/xdg"
-         CACHE
-             STRING
-             "Search path to use when XDG_CONFIG_DIRS is unset or empty or the current process is SUID/SGID. Default is freedesktop compliant."
-         )
-     set(
--        FALLBACK_DATA_DIRS "/usr/local/share:/usr/share"
-+        FALLBACK_DATA_DIRS "${X11BASE}/share:${LOCALBASE}/share:/usr/share"
-         CACHE
-             STRING
-             "Search path to use when XDG_DATA_DIRS is unset or empty or the current process is SUID/SGID. Default is freedesktop compliant."
-@@ -216,6 +216,7 @@ if(UNIX AND NOT APPLE) # i.e.: Linux
+-    set(FALLBACK_CONFIG_DIRS "/etc/xdg" CACHE STRING
++    set(FALLBACK_CONFIG_DIRS "${SYSCONFDIR}/xdg" CACHE STRING
+             "Search path to use when XDG_CONFIG_DIRS is unset or empty or the current process is SUID/SGID. Default is freedesktop compliant.")
+-    set(FALLBACK_DATA_DIRS "/usr/local/share:/usr/share" CACHE STRING
++    set(FALLBACK_DATA_DIRS "${X11BASE}/share:${LOCALBASE}/share:/usr/share" CACHE STRING
+             "Search path to use when XDG_DATA_DIRS is unset or empty or the current process is SUID/SGID. Default is freedesktop compliant.")
+     set(SYSCONFDIR "" CACHE STRING
+             "System-wide search directory. If not set or empty, CMAKE_INSTALL_FULL_SYSCONFDIR and /etc are used.")
+@@ -208,6 +208,7 @@ if(UNIX AND NOT APPLE) # i.e.: Linux
  
      if(BUILD_WSI_XCB_SUPPORT)
          find_package(XCB REQUIRED)

@@ -18,6 +18,7 @@ include/vulkan/vulkan_beta.h
 include/vulkan/vulkan_core.h
 include/vulkan/vulkan_directfb.h
 include/vulkan/vulkan_enums.hpp
+include/vulkan/vulkan_format_traits.hpp
 include/vulkan/vulkan_fuchsia.h
 include/vulkan/vulkan_funcs.hpp
 include/vulkan/vulkan_ggp.h
@@ -29,6 +30,7 @@ include/vulkan/vulkan_metal.h
 include/vulkan/vulkan_raii.hpp
 include/vulkan/vulkan_screen.h
 include/vulkan/vulkan_structs.hpp
+include/vulkan/vulkan_to_string.hpp
 include/vulkan/vulkan_vi.h
 include/vulkan/vulkan_wayland.h
 include/vulkan/vulkan_win32.h
@@ -39,12 +41,13 @@ share/vulkan/
 share/vulkan/registry/
 share/vulkan/registry/apiconventions.py
 share/vulkan/registry/cgenerator.py
-share/vulkan/registry/conventions.py
 share/vulkan/registry/generator.py
 share/vulkan/registry/genvk.py
 share/vulkan/registry/reg.py
 share/vulkan/registry/spec_tools/
+share/vulkan/registry/spec_tools/conventions.py
 share/vulkan/registry/spec_tools/util.py
 share/vulkan/registry/validusage.json
+share/vulkan/registry/video.xml
 share/vulkan/registry/vk.xml
 share/vulkan/registry/vkconventions.py

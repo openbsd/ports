@@ -1,8 +1,8 @@
 Index: loader/get_environment.c
 --- loader/get_environment.c.orig
 +++ loader/get_environment.c
-@@ -37,7 +37,7 @@
- #endif  // !defined(VULKAN_NON_CMAKE_BUILD)
+@@ -32,7 +32,7 @@
+ #include "log.h"
  
  // Environment variables
 -#if defined(__linux__) || defined(__APPLE__) || defined(__Fuchsia__) || defined(__QNXNTO__) || defined(__FreeBSD__)
@@ -10,10 +10,3 @@ Index: loader/get_environment.c
  
  bool is_high_integrity() { return geteuid() != getuid() || getegid() != getgid(); }
  
-@@ -169,4 +169,4 @@ void loader_free_getenv(char *val, const struct loader
-     (void)inst;
- }
- 
--#endif
-\ No newline at end of file
-+#endif

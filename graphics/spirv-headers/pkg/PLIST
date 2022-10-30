@@ -62,6 +62,7 @@ include/spirv/unified1/extinst.spv-amd-gcn-shader.grammar.json
 include/spirv/unified1/extinst.spv-amd-shader-ballot.grammar.json
 include/spirv/unified1/extinst.spv-amd-shader-explicit-vertex-parameter.grammar.json
 include/spirv/unified1/extinst.spv-amd-shader-trinary-minmax.grammar.json
+include/spirv/unified1/spirv.bf
 include/spirv/unified1/spirv.core.grammar.json
 include/spirv/unified1/spirv.cs
 include/spirv/unified1/spirv.h

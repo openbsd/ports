@@ -1,6 +1,6 @@
 COMMENT =	Vulkan Utilities and Tools
 
-V =		1.3.204.1
+V =		1.3.224.1
 PKGNAME =	vulkan-tools-${V}
 GH_TAGNAME =	sdk-${V}
 GH_ACCOUNT =	KhronosGroup
