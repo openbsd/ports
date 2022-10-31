@@ -10,6 +10,7 @@
      SUBDIR += ksh93
      SUBDIR += nsh
      SUBDIR += nsh,static
+     SUBDIR += nushell
      SUBDIR += perlsh
      SUBDIR += py-qtconsole,python3
      SUBDIR += sash
