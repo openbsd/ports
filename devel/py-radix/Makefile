@@ -1,20 +1,22 @@
 COMMENT =		Radix tree implementation for Python
 
-MODPY_EGG_VERSION = 	0.10.0
-DISTNAME =		py-radix-${MODPY_EGG_VERSION}
-CATEGORIES=		devel net
-REVISION =		5
+GH_ACCOUNT =		SEKOIA-IO
+GH_PROJECT =		py-radix
+GH_TAGNAME =		682a1b96fb5b9599bc4baf11c0ab08b2be4fe783
+MODPY_EGG_VERSION =	1.0.1
 
-HOMEPAGE =		https://github.com/mjschultz/py-radix/
+DISTNAME =		py-radix-${MODPY_EGG_VERSION}pre20220302
+CATEGORIES=		devel net
+
+# fork from https://github.com/mjschultz/py-radix/
+HOMEPAGE =		https://github.com/SEKOIA-IO/py-radix/
 
 MAINTAINER =		Job Snijders <job@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes
 
-MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 
 FLAVORS=		python3
 FLAVOR=			python3
