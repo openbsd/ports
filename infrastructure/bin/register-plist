@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-# $OpenBSD: register-plist,v 1.31 2022/05/26 06:55:06 espie Exp $
+# $OpenBSD: register-plist,v 1.32 2022/10/31 13:31:58 espie Exp $
 # Copyright (c) 2005,2012
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -273,6 +273,11 @@ sub compare_more
 		return Result::Different;
 	}
 
+	# XXX we would like to do something when pattern changes in
+	# inconsistent ways, because this should require a bump but patterns
+	# like pkg-=version (for instance go) will change all the time! Either
+	# parse it, or introduce some "version" keyword in the pattern that
+	# would match the version from def
 	return $self->make_result(
 	    OpenBSD::PackageName->from_string($self->{def})->compare(
 	    OpenBSD::PackageName->from_string($self2->{def})));
