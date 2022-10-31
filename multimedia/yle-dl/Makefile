@@ -23,7 +23,7 @@ RUN_DEPENDS =		devel/py-attrs${MODPY_FLAVOR} \
 			graphics/ffmpeg \
 			www/py-requests${MODPY_FLAVOR} \
 			net/wget \
-			textproc/py-lxml${MODPY_FLAVOR} \
+			textproc/py-lxml${MODPY_FLAVOR}
 
 TEST_DEPENDS =		devel/py-test-runner${MODPY_FLAVOR}
 

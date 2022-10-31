@@ -227,6 +227,6 @@ MODCABAL_MANIFEST	= \
 	xml-types	0.3.8	0	\
 	yaml	0.11.8.0	0	\
 	zip-archive	0.4.2.1	0	\
-	zlib	0.6.3.0	0	\
+	zlib	0.6.3.0	0
 
 .include <bsd.port.mk>

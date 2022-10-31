@@ -32,7 +32,7 @@ MODCABAL_MANIFEST = \
 	transformers-compat	0.7.1	1	\
 	unordered-containers	0.2.17.0	0	\
 	utf8-string	1.0.2	0	\
-	vector	0.12.3.1	1	\
+	vector	0.12.3.1	1
 
 LIB_DEPENDS =		converters/libiconv \
 			devel/gmp \

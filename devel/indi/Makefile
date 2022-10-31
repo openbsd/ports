@@ -38,7 +38,7 @@ LIB_DEPENDS=		astro/libnova \
 			graphics/jpeg \
 			math/cfitsio \
 			math/fftw3 \
-			multimedia/libtheora \
+			multimedia/libtheora
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			${BASE_PKGPATH},-libs \

@@ -7,7 +7,7 @@ EXTRACT_SUFX=	.tar.xz
 
 SHARED_LIBS=	GraphicsMagick		9.2 \
 		GraphicsMagick++	6.0 \
-		GraphicsMagickWand	4.0 \
+		GraphicsMagickWand	4.0
 
 HOMEPAGE=	http://www.graphicsmagick.org/
 

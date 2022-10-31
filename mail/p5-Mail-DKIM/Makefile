@@ -12,7 +12,7 @@ MODULES =		cpan
 RUN_DEPENDS =		mail/p5-Mail-AuthenticationResults \
 			mail/p5-Mail-Tools \
 			net/p5-Net-DNS \
-			security/p5-Crypt-OpenSSL-RSA \
+			security/p5-Crypt-OpenSSL-RSA
 
 TEST_DEPENDS =		devel/p5-Test-RequiresInternet \
 			devel/p5-YAML-XS \

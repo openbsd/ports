@@ -20,7 +20,7 @@ WRKDIST = ${WRKDIR}/${NHDIR}
 post-extract:
 	@cd ${WRKDIR} && ${TAR} zxqf ${FULLDISTDIR}/${DISTFILES} \
 	${NHDIR}/win/X11/ibm.bdf \
-	${NHDIR}/win/X11/nh10.bdf \
+	${NHDIR}/win/X11/nh10.bdf
 
 do-build:
 	cd ${WRKSRC}/win/X11 && \

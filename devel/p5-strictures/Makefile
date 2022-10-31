@@ -15,6 +15,6 @@ PERMIT_PACKAGE =	Yes
 # These allow additional strictures to be used, should we ever
 # get them ported.
 #RUN_DEPENDS +=	CPAN/p5-bareword-filehandles \
-#		CPAN/p5-multidimensional \
+#		CPAN/p5-multidimensional
 
 .include <bsd.port.mk>

@@ -27,7 +27,7 @@ MODULES =		devel/cmake \
 MODPY_RUNDEP =		No
 
 BUILD_DEPENDS =		devel/doxygen \
-			devel/gtest \
+			devel/gtest
 
 LIB_DEPENDS =		databases/sqlite3 \
 			devel/boost \

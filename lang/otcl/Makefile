@@ -27,7 +27,7 @@ CONFIGURE_ARGS+= --x-includes=${X11BASE}/include \
 		--with-tcl-ver=${MODTCL_VERSION} \
 		--with-tk-ver=${MODTCL_VERSION} \
 		--x-libraries=${X11BASE}/lib
-CONFIGURE_ENV=	LIBotcl_VERSION=${LIBotcl_VERSION} \
+CONFIGURE_ENV=	LIBotcl_VERSION=${LIBotcl_VERSION}
 
 NO_TEST=	Yes
 

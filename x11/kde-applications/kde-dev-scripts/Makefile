@@ -40,7 +40,7 @@ MODPY_ADJ_FILES = \
 	kde_generate_export_header \
 	kdelnk2desktop.py \
 	reviewboard-am \
-	zonetab2pot.py \
+	zonetab2pot.py
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/draw_lib_dependencies

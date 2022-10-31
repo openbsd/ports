@@ -18,7 +18,7 @@ MODULES =		devel/cabal
 MODCABAL_MANIFEST = \
         X11     1.10.2  0       \
         data-default-class      0.1.2.0 0       \
-        hsc2hs  0.68.8  0       \
+        hsc2hs  0.68.8  0
 
 LIB_DEPENDS =		converters/libiconv \
 			devel/gmp \

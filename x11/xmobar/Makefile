@@ -130,7 +130,7 @@ MODCABAL_MANIFEST	= \
 	x509-validation	1.6.12	0	\
 	xml-conduit	1.9.1.1	1	\
 	xml-types	0.3.8	0	\
-	zlib	0.6.3.0	0	\
+	zlib	0.6.3.0	0
 
 LIB_DEPENDS =		converters/libiconv \
 			devel/gmp \

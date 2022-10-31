@@ -60,7 +60,7 @@ CONFIGURE_ENV =		ac_cv_path_HAVE_PDFLATEX= \
 # prevent textproc/hyperscan from being picked up
 CONFIGURE_ENV +=	ac_cv_header_hs_h=no \
 			libhs_CFLAGS=-I${LOCALBASE}/include \
-			libhs_LIBS=-L${LOCALBASE}/lib \
+			libhs_LIBS=-L${LOCALBASE}/lib
 
 CONFIGURE_ARGS =	--disable-gccmarch-native \
 			--enable-geoip \

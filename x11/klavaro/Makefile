@@ -33,6 +33,6 @@ RUN_DEPENDS =	x11/gtk+3,-guic
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
-                LDFLAGS="-L${LOCALBASE}/lib" \
+                LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

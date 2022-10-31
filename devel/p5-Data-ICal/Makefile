@@ -15,7 +15,7 @@ RUN_DEPENDS =		devel/p5-Class-Accessor \
 			devel/p5-Text-vFile-asData \
 			devel/p5-Test-LongString \
 			devel/p5-Test-NoWarnings \
-			devel/p5-Test-Warn \
+			devel/p5-Test-Warn
 
 TEST_DEPENDS =	devel/p5-Test-Pod-Coverage
 

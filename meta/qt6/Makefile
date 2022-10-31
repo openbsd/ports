@@ -33,6 +33,6 @@ RUN_DEPENDS =	x11/qt6/qt3d=${MODQT6_VERSION} \
 		x11/qt6/qttools=${MODQT6_VERSION} \
 		x11/qt6/qttranslations=${MODQT6_VERSION} \
 		x11/qt6/qtvirtualkeyboard=${MODQT6_VERSION} \
-		x11/qt6/qtwayland=${MODQT6_VERSION} \
+		x11/qt6/qtwayland=${MODQT6_VERSION}
 
 .include <bsd.port.mk>

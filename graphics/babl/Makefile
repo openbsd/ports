@@ -35,7 +35,7 @@ BUILD_DEPENDS=		x11/gnome/librsvg
 
 LIB_DEPENDS=		graphics/lcms2
 
-CONFIGURE_ARGS=		-Dwith-docs=false \
+CONFIGURE_ARGS=		-Dwith-docs=false
 
 .if ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS +=	-Denable-sse=false \

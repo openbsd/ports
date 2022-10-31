@@ -21,7 +21,7 @@ WANTLIB += Qt5PrintSupport Qt5Svg Qt5Widgets c exiv2 lcms2 m opencv_core
 WANTLIB += opencv_imgproc quazip1-qt5 raw tiff z
 
 MODULES =		devel/cmake \
-			x11/qt5 \
+			x11/qt5
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic \

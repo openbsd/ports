@@ -22,7 +22,7 @@ BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR} \
 			textproc/py-m2r${MODPY_FLAVOR}
 
 RUN_DEPENDS =		devel/py-attrs${MODPY_FLAVOR} \
-			devel/py-six${MODPY_FLAVOR} \
+			devel/py-six${MODPY_FLAVOR}
 
 TEST_DEPENDS =		devel/py-twisted${MODPY_FLAVOR}
 

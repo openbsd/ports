@@ -125,6 +125,6 @@ MODCABAL_MANIFEST	= \
 	vector	0.12.3.1	2	\
 	wcwidth	0.0.2	0	\
 	witherable	0.4.2	3	\
-	wizards	1.0.3	1	\
+	wizards	1.0.3	1
 
 .include <bsd.port.mk>

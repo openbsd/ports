@@ -5,6 +5,6 @@ GH_PROJECT =	opt
 GH_TAGNAME =	v1.0
 
 FAKE_FLAGS =	PREFIX="${TRUEPREFIX}" \
-		MANPREFIX="${TRUEPREFIX}/man" \
+		MANPREFIX="${TRUEPREFIX}/man"
 
 .include <bsd.port.mk>

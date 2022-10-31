@@ -42,7 +42,7 @@ LIB_DEPENDS-gtk =	multimedia/gstreamer1/core \
 RUN_DEPENDS-gtk =	telephony/baresip/baresip,-main>=1.1.0
 
 MAKE_ENV +=		LIBRE_INC=${LOCALBASE}/include/re \
-			LIBRE_SO=${LOCALBASE}/lib LIBS="-lm -lrem" \
+			LIBRE_SO=${LOCALBASE}/lib LIBS="-lm -lrem"
 
 MAKE_FLAGS +=		MOD_AUTODETECT= \
 			EXTRA_MODULES="echo snapshot sndio swscale" \

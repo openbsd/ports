@@ -23,7 +23,7 @@ AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15
 
 # gettext-tools needed for aclocal/extern-inline.m4
-BUILD_DEPENDS =	devel/gettext,-tools \
+BUILD_DEPENDS =	devel/gettext,-tools
 
 CONFIGURE_STYLE =	autoreconf
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

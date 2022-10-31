@@ -43,7 +43,7 @@ BUILD_DEPENDS+=	devel/bison \
 
 RUN_DEPENDS=	devel/doxygen
 
-CONFIGURE_ARGS=	-Dbuild_wizard=ON \
+CONFIGURE_ARGS=	-Dbuild_wizard=ON
 
 WRKDIST=	${WRKDIR}/doxygen-${VERSION}
 

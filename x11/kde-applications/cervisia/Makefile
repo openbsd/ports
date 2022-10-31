@@ -21,7 +21,7 @@ MODKDE5_DOCS = yes
 BUILD_DEPENDS =devel/kf5/kinit
 
 RUN_DEPENDS =	misc/shared-mime-info \
-		devel/kf5/kinit \
+		devel/kf5/kinit
 
 LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcodecs \

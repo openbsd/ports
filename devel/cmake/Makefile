@@ -76,7 +76,7 @@ post-patch:
 	perl -e 's,/usr/local,${LOCALBASE},g' \
 		${SUBST_FILES}
 	perl -e 's,/usr/include,${LOCALBASE}/include,' \
-		${WRKSRC}/Modules/FindDCMTK.cmake \
+		${WRKSRC}/Modules/FindDCMTK.cmake
 
 pre-configure:
 	find ${WRKSRC}/Modules -name "*.cmake" -exec ${SUBST_CMD} {} +

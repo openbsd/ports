@@ -10,7 +10,7 @@ GH_TAGNAME =	v${V}
 MASTER_SITES0 =		https://github.com/rizinorg/cutter-translations/archive/
 TRANSLATIONS_COMMIT =	97429865
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
-			cutter-translations-{}${TRANSLATIONS_COMMIT}.tar.gz:0 \
+			cutter-translations-{}${TRANSLATIONS_COMMIT}.tar.gz:0
 
 CATEGORIES =	devel
 

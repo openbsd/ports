@@ -15,7 +15,7 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kcoreaddons \
 		devel/kf5/kservice \
 		devel/kf5/ki18n \
-		devel/kf5/kio \
+		devel/kf5/kio
 
 TEST_IS_INTERACTIVE =	X11
 

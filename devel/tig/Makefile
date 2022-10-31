@@ -29,7 +29,7 @@ CONFIGURE_ARGS += --with-libiconv=${LOCALBASE} DOCBOOK2PDF=false
 MAKE_FLAGS =	V=1
 
 FAKE_FLAGS =	mandir=${PREFIX}/man \
-		sysconfdir=${PREFIX}/share/examples/tig \
+		sysconfdir=${PREFIX}/share/examples/tig
 
 FAKE_TARGET =	install install-doc-man
 

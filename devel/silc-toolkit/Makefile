@@ -7,7 +7,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=silc/}
 EXTRACT_SUFX=	.tar.bz2
 
 SHARED_LIBS=	silc		10.0	\
-		silcclient	8.0	\
+		silcclient	8.0
 
 HOMEPAGE=	http://silcnet.org/dev.html
 

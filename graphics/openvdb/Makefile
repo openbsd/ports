@@ -28,7 +28,7 @@ MODULES=	devel/cmake
 
 LIB_DEPENDS=	archivers/blosc \
 		devel/boost \
-		devel/tbb \
+		devel/tbb
 
 NO_TEST=	Yes
 

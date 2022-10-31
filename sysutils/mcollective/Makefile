@@ -31,7 +31,7 @@ MODRUBY_ADJ_FILES=mco mcollectived
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/ext/Makefile \
 		${WRKSRC}/etc/server.cfg.dist \
-		${WRKSRC}/etc/client.cfg.dist \
+		${WRKSRC}/etc/client.cfg.dist
 
 do-install:
 	cd ${WRKSRC} && ${ALL_FAKE_FLAGS} ${RUBY} install.rb \

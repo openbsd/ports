@@ -289,6 +289,6 @@ MODCABAL_MANIFEST = \
 	yesod-form	1.7.2	0	\
 	yesod-persistent	1.6.0.8	0	\
 	yesod-static	1.6.1.0	0	\
-	zlib	0.6.3.0	0	\
+	zlib	0.6.3.0	0
 
 .include <bsd.port.mk>

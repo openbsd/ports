@@ -10,7 +10,7 @@ MODPY_PYTEST =		Yes
 
 BUILD_DEPENDS +=	devel/angr/vex>=9.0 \
 			devel/py-cffi${MODPY_FLAVOR} \
-			devel/py-cparser${MODPY_FLAVOR} \
+			devel/py-cparser${MODPY_FLAVOR}
 
 # dlopen(3)s libpyvex.so
 RUN_DEPENDS +=		devel/angr/vex>=9.0 \

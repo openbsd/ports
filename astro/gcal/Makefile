@@ -13,7 +13,7 @@ MASTER_SITES =		${MASTER_SITE_GNU:=gcal/}
 
 BUILD_DEPENDS =		devel/gettext,-tools
 LIB_DEPENDS =		converters/libunistring \
-			devel/gettext,-runtime \
+			devel/gettext,-runtime
 
 WANTLIB += c curses iconv intl m unistring
 

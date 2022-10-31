@@ -119,7 +119,7 @@ MODCABAL_MANIFEST	= \
 	vector	0.12.3.1	1	\
 	vector-binary-instances	0.2.5.2	1	\
 	witherable	0.4.2	2	\
-	zinza	0.2	3	\
+	zinza	0.2	3
 
 
 .include <bsd.port.mk>

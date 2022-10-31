@@ -24,7 +24,7 @@ MODULES =		databases/postgresql    \
 
 LIB_DEPENDS =		databases/postgresql	\
 			devel/proj		\
-			devel/boost		\
+			devel/boost
 
 BUILD_DEPENDS =		devel/libtool \
 			devel/fmt \

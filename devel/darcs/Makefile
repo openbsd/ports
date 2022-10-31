@@ -131,7 +131,7 @@ MODCABAL_MANIFEST =	\
 	x509-validation	1.6.12	0	\
 	xml	1.3.14	2	\
 	zip-archive	0.4.2.1	0	\
-	zlib	0.6.2.3	1	\
+	zlib	0.6.2.3	1
 
 LIB_DEPENDS =		converters/libiconv \
 			devel/gmp \

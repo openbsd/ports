@@ -23,7 +23,7 @@ WANTLIB += xcb-render xcb-shm xml2 z Xau Xdmcp jpeg
 WANTLIB += ${COMPILER_LIBCXX}
 
 LIB_DEPENDS=	x11/ogle \
-		textproc/libxml \
+		textproc/libxml
 
 LIB_DEPENDS+=	devel/libglade2 \
 		x11/gtk+2

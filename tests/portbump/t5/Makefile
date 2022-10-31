@@ -58,7 +58,7 @@ MULTI_PACKAGES=	-main -mono -qt3 -qt4 -gui -gtk -gtk3 -ui
 MODULES=	textproc/intltool
 
 BUILD_DEPENDS=	converters/xmltoman \
-		devel/gobject-introspection \
+		devel/gobject-introspection
 
 WANTLIB-main=	c expat glib-2.0 gobject-2.0 pcre pthread \
 		gdbm daemon dbus-1 ffi

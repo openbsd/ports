@@ -34,7 +34,7 @@ MULTI_PACKAGES +=	-main \
 			-graphics \
 			-multimedia \
 			-development \
-			-utils \
+			-utils
 
 HOMEPAGE =	https://kde.org
 
@@ -247,7 +247,7 @@ KDE_SDK = \
 	x11/kde-applications/kdesdk-thumbnailers \
 	x11/kde-applications/kompare \
 	x11/kde-applications/lokalize \
-	x11/kde-applications/poxml \
+	x11/kde-applications/poxml
 
 WANTLIB-development =
 LIB_DEPENDS-development =

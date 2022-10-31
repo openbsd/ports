@@ -53,7 +53,7 @@ DEBUG_PACKAGES=		-main -glib -gui -gtk3 -libs -python
 MODULES=		textproc/intltool
 
 BUILD_DEPENDS=		converters/xmltoman \
-			devel/gobject-introspection \
+			devel/gobject-introspection
 
 WANTLIB-main += avahi-client avahi-common c dbus-1 execinfo gdbm iconv
 WANTLIB-main += intl pthread avahi-core daemon expat

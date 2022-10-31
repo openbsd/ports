@@ -15,10 +15,10 @@ MODKDE5_TRANSLATIONS = yes
 
 BUILD_DEPENDS =	devel/boost \
 		misc/shared-mime-info \
-		textproc/libxslt \
+		textproc/libxslt
 
 RUN_DEPENDS =	misc/shared-mime-info \
-		textproc/libxslt \
+		textproc/libxslt
 
 LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcodecs \

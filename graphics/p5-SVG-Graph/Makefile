@@ -14,7 +14,7 @@ RUN_DEPENDS =		devel/p5-Tree-DAG_Node \
 			graphics/p5-SVG \
 			math/p5-Math-Derivative \
 			math/p5-Math-Spline \
-			math/p5-Statistics-Descriptive \
+			math/p5-Statistics-Descriptive
 
 CONFIGURE_STYLE =	modbuild
 

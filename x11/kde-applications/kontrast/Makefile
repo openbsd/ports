@@ -17,7 +17,7 @@ BUILD_DEPENDS =	devel/kf5/kconfig \
 		x11/qt5/qtquickcontrols
 
 RUN_DEPENDS =	x11/qt5/qtquickcontrols \
-		devel/kf5/kirigami2 \
+		devel/kf5/kirigami2
 
 LIB_DEPENDS =	devel/kf5/kcoreaddons \
 		devel/kf5/ki18n \

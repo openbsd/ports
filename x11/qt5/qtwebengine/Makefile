@@ -128,7 +128,7 @@ pre-configure:
 	# Rerun syncqt.pl -- otherwise the resulting package misses some forwarding headers
 	@cd ${WRKSRC} && /usr/local/lib/qt5/bin/syncqt.pl -version ${QT5_VERSION}
 	@cd ${WRKSRC} && env -i ${MAKE_ENV} ${CHROMESRC}/build/linux/unbundle/replace_gn_files.py \
-		--system-libraries ${GN_SYSTEM_LIBS} \
+		--system-libraries ${GN_SYSTEM_LIBS}
 
 
 pre-build:

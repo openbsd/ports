@@ -10,7 +10,7 @@ SHARED_LIBS=		lavfile		5.0 \
 			lavplay		5.0 \
 			mjpegutils	5.0 \
 			mpeg2encpp	6.0 \
-			mplex2		6.0 \
+			mplex2		6.0
 
 HOMEPAGE=		http://mjpeg.sourceforge.net/
 

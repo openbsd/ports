@@ -45,7 +45,7 @@ RUN_DEPENDS-main =	\
 			x11/qt5/qtwebkit \
 			x11/qt5/qtwebsockets,-main=${MODQT5_VERSION} \
 			x11/qt5/qtx11extras=${MODQT5_VERSION} \
-			x11/qt5/qtxmlpatterns,-main=${MODQT5_VERSION} \
+			x11/qt5/qtxmlpatterns,-main=${MODQT5_VERSION}
 
 WANTLIB-examples =
 LIB_DEPENDS-examples =
@@ -74,6 +74,6 @@ RUN_DEPENDS-examples =	\
 			x11/qt5/qtvirtualkeyboard,-examples=${MODQT5_VERSION} \
 			x11/qt5/qtwebchannel,-examples=${MODQT5_VERSION} \
 			x11/qt5/qtwebsockets,-examples=${MODQT5_VERSION} \
-			x11/qt5/qtxmlpatterns,-examples=${MODQT5_VERSION} \
+			x11/qt5/qtxmlpatterns,-examples=${MODQT5_VERSION}
 
 .include <bsd.port.mk>

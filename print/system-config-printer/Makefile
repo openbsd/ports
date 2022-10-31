@@ -33,7 +33,7 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 # pygobject introspections (not provided by indirect dependencies)
 RUN_DEPENDS +=		devel/libnotify \
 			x11/gnome/libsecret \
-			x11/gtk+3 \
+			x11/gtk+3
 
 # GNOME dark mode; not enforcing since it's installed as part of GNOME
 #RUN_DEPENDS +=		x11/libhandy

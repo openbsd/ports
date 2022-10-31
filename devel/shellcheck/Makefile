@@ -56,7 +56,7 @@ MODCABAL_MANIFEST	= \
 	unordered-containers	0.2.17.0	0	\
 	uuid-types	1.0.5	2	\
 	vector	0.12.3.1	1	\
-	witherable	0.4.2	2	\
+	witherable	0.4.2	2
 
 LIB_DEPENDS =		converters/libiconv \
 			devel/gmp \

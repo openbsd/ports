@@ -12,7 +12,7 @@ MODULES =		cpan
 
 RUN_DEPENDS =		devel/p5-Class-Inner \
 			devel/p5-Devel-Symdump \
-			devel/p5-Error \
+			devel/p5-Error
 
 PKG_ARCH =		*
 

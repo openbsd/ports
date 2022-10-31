@@ -21,7 +21,7 @@ FILES=\
 	m1n1-raw.elf \
 	m1n1.bin \
 	m1n1.macho \
-	m1n1.elf \
+	m1n1.elf
 
 do-build:
 	cd ${WRKSRC} && \

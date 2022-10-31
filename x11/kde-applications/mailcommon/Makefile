@@ -26,7 +26,7 @@ MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
 
 BUILD_DEPENDS =	textproc/libxslt \
-		devel/boost \
+		devel/boost
 
 LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kauth \

@@ -170,7 +170,7 @@ GN_ARGS+=	google_api_key=\"AIzaSyA015yecfJyWi8UQpneQVrNzIKlxjv4MhI\" \
 
 # These are now restricted to use by Google, so bye-bye sync.
 #GN_ARGS+=	google_default_client_id=\"451220141585.apps.googleusercontent.com\"
-#GN_ARGS+=	google_default_client_secret=\"nQcDyaBvDyCeDrsRqKIWSHJn\" \
+#GN_ARGS+=	google_default_client_secret=\"nQcDyaBvDyCeDrsRqKIWSHJn\"
 
 # XXX dwz doesn't work with iridium yet
 DWZ = :

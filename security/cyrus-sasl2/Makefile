@@ -40,7 +40,7 @@ CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LIBS="-L${LOCALBASE}/lib" \
-			ac_cv_prog_CC_FOR_BUILD="${CC}" \
+			ac_cv_prog_CC_FOR_BUILD="${CC}"
 
 CONFIGURE_ARGS=		--enable-static \
 			--without-pam \

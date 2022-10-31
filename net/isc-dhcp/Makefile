@@ -31,7 +31,7 @@ COMPILER_LANGS=	c
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-early-chroot \
-			--enable-paranoia \
+			--enable-paranoia
 
 NO_TEST=		Yes
 

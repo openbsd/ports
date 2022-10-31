@@ -221,7 +221,7 @@ MODCARGO_configure = \
 	echo "directory = '${MODCARGO_VENDOR_DIR}'" \
 		>>${WRKDIR}/.cargo/config; \
 	echo "[source.crates-io]" >>${WRKDIR}/.cargo/config; \
-	echo "replace-with = 'modcargo'" >>${WRKDIR}/.cargo/config; \
+	echo "replace-with = 'modcargo'" >>${WRKDIR}/.cargo/config;
 
 # set profile (based on 'release' profile) for 'build' and 'test'
 # see https://doc.rust-lang.org/cargo/reference/profiles.html#release

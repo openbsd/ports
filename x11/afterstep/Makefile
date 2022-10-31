@@ -46,7 +46,7 @@ CONFIGURE_ARGS=	--with-imageloader="xloadimage -onroot -quiet -colors 20" \
 		--without-gnome-session \
 		--enable-i18n \
 		--enable-different-looknfeels \
-		--disable-send-postcard-to-developer \
+		--disable-send-postcard-to-developer
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/configure \

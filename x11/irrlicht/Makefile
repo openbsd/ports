@@ -39,7 +39,7 @@ MAKE_ENV +=		CC="${CC}" \
 				  -DNO_IRR_COMPILE_WITH_JOYSTICK_EVENTS_" \
 			NDEBUG=1 \
 			SO_VERSION="${SO_VERSION}"
-MAKE_FLAGS +=		CXXINCS="-I../../include -I${LOCALBASE}/include -I${X11BASE}/include" \
+MAKE_FLAGS +=		CXXINCS="-I../../include -I${LOCALBASE}/include -I${X11BASE}/include"
 
 NO_TEST =		Yes
 

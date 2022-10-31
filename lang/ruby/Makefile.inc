@@ -44,7 +44,7 @@ CONFIGURE_ENV +=	LIBruby${BINREV}_VERSION=${LIBruby${BINREV}_VERSION} \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			DLDFLAGS="-L${LOCALBASE}/lib" \
 			ac_cv_prog_DOXYGEN="" \
-			ac_cv_prog_DOT="" \
+			ac_cv_prog_DOT=""
 
 MAKE_ENV +=		DLDFLAGS="-I${LOCALBASE}/lib"
 

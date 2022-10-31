@@ -24,6 +24,6 @@ RUN_DEPENDS=	databases/py-peewee${MODPY_FLAVOR} \
 		security/py-secretstorage${MODPY_FLAVOR} \
 		sysutils/borgbackup/1.2 \
 		sysutils/py-psutil${MODPY_FLAVOR} \
-		x11/py-qt5${MODPY_FLAVOR} \
+		x11/py-qt5${MODPY_FLAVOR}
 
 .include <bsd.port.mk>

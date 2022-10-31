@@ -27,7 +27,7 @@ MODULES =		devel/kf5
 BUILD_DEPENDS =		devel/boost \
 			devel/gettext,-tools \
 			devel/kf5/kbookmarks \
-			devel/kf5/kdoctools \
+			devel/kf5/kdoctools
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			devel/kf5/kbookmarks \

@@ -16,7 +16,7 @@ WANTLIB+=		c
 
 MAKE_FILE=		makefile
 MAKE_FLAGS=		MANDIR="${DESTDIR}${PREFIX}"/man/man8 \
-			VAL_STORE_PATH=/tmp \
+			VAL_STORE_PATH=/tmp
 
 # get rid of hardcoded -O2
 MAKE_FLAGS+=		SUFOPT=-I./include

@@ -29,7 +29,7 @@ BUILD_DEPENDS =		devel/gettext,-tools \
 			devel/iso-codes
 
 RUN_DEPENDS =		devel/desktop-file-utils \
-			misc/shared-mime-info \
+			misc/shared-mime-info
 
 LIB_DEPENDS =		inputmethods/fcitx \
 			misc/m17n/lib

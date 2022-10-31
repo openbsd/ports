@@ -52,7 +52,7 @@ _MANIFEST = \
 	splitmix	0.1.0.4	0	\
 	th-compat	0.1.3 0	\
 	tar	0.5.1.1	4	\
-	zlib	0.6.2.3	1	\
+	zlib	0.6.2.3	1
 
 .for _package _version _revision in ${_MANIFEST}
 DISTFILES += {${_package}-${_version}/}${_package}-${_version}.tar.gz:0

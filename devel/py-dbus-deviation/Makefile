@@ -18,7 +18,7 @@ MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
 
 BUILD_DEPENDS=		devel/py-setuptools_git${MODPY_FLAVOR} \
-			textproc/py-sphinx${MODPY_FLAVOR} \
+			textproc/py-sphinx${MODPY_FLAVOR}
 
 RUN_DEPENDS=		textproc/py-lxml${MODPY_FLAVOR}
 

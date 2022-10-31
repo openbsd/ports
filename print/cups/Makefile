@@ -53,7 +53,7 @@ LIBS_ENV=		LIBcups_VERSION=${LIBcups_VERSION} \
 			LIBcupscgi_VERSION=${LIBcupscgi_VERSION} \
 			LIBcupsimage_VERSION=${LIBcupsimage_VERSION} \
 			LIBcupsmime_VERSION=${LIBcupsmime_VERSION} \
-			LIBcupsppdc_VERSION=${LIBcupsppdc_VERSION} \
+			LIBcupsppdc_VERSION=${LIBcupsppdc_VERSION}
 
 FAKE_FLAGS=		BUILDROOT=${WRKINST} \
 			DBUSDIR=${PREFIX}/share/examples/cups/dbus-1 \

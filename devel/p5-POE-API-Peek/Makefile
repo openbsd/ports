@@ -14,7 +14,7 @@ PKG_ARCH=		*
 RUN_DEPENDS=		devel/p5-Devel-Size \
 			devel/p5-POE>=1.311
 TEST_DEPENDS=		devel/p5-Test-Distribution \
-			devel/p5-Test-NoWarnings \
+			devel/p5-Test-NoWarnings
 
 MAKE_ENV=		TEST_POD=1
 TEST_ENV=		RELEASE_TESTING=1

@@ -99,7 +99,7 @@ CONFIGURE_ARGS =	--disable-python2 \
 # requires unicode-emoji
 CONFIGURE_ARGS +=	--disable-emoji-dict
 CONFIGURE_ARGS +=	--with-unicode-emoji-dir=${LOCALBASE}/share/unicode/emoji \
-			--with-emoji-annotation-dir=${LOCALBASE}/share/unicode/cldr/common/annotations \
+			--with-emoji-annotation-dir=${LOCALBASE}/share/unicode/cldr/common/annotations
 			
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
