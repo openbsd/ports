@@ -18,7 +18,7 @@ AUTOCONF_VERSION=	2.71
 AUTOMAKE_VERSION=	1.16
 
 CONFIGURE_ARGS+=	--with-openssl-inc=/usr/include \
-			--with-openssl-lib=/usr/lib \
+			--with-openssl-lib=/usr/lib
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include/libnet-1.1 -I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib/libnet-1.1 -L${LOCALBASE}/lib"
 

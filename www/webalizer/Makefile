@@ -25,7 +25,7 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--enable-dns \
 		--with-db=${LOCALBASE}/include/db4 \
 		--with-dblib=${LOCALBASE}/lib/db4 \
-		--with-gd=${LOCALBASE}/include \
+		--with-gd=${LOCALBASE}/include
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 NO_TEST=	Yes
