@@ -1,7 +1,7 @@
 COMMENT=	GNUstep base library
 
 DISTNAME=	gnustep-base-1.28.0
-REVISION=	3
+REVISION=	4
 
 SHARED_LIBS=	gnustep-base 10.5
 CATEGORIES=	devel
@@ -37,7 +37,8 @@ LIB_DEPENDS +=	converters/libiconv \
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	ac_cv_header_execinfo_h=false
-CONFIGURE_ARGS +=	--disable-procfs \
+CONFIGURE_ARGS +=	--disable-libdispatch \
+			--disable-procfs \
 			--disable-procfs-psinfo
 MAKE_FLAGS +=		libgnustep-base_INTERFACE_VERSION=${LIBgnustep-base_VERSION}
 
