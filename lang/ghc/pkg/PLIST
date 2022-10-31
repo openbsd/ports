@@ -5444,6 +5444,7 @@ share/doc/ghc/html/haddock/_static/minus.png
 share/doc/ghc/html/haddock/_static/plus.png
 share/doc/ghc/html/haddock/_static/pygments.css
 share/doc/ghc/html/haddock/_static/searchtools.js
+share/doc/ghc/html/haddock/_static/sphinx_highlight.js
 share/doc/ghc/html/haddock/_static/underscore-1.13.1.js
 share/doc/ghc/html/haddock/_static/underscore.js
 share/doc/ghc/html/haddock/common-errors.html
@@ -8065,6 +8066,7 @@ share/doc/ghc/html/users_guide/_static/prof_scc.pdf
 share/doc/ghc/html/users_guide/_static/prof_scc.svg
 share/doc/ghc/html/users_guide/_static/pygments.css
 share/doc/ghc/html/users_guide/_static/searchtools.js
+share/doc/ghc/html/users_guide/_static/sphinx_highlight.js
 share/doc/ghc/html/users_guide/_static/underscore-1.13.1.js
 share/doc/ghc/html/users_guide/_static/underscore.js
 share/doc/ghc/html/users_guide/bugs.html

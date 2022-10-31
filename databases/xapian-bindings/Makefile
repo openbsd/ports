@@ -9,6 +9,8 @@ PKGNAME-main=	xapian-bindings-perl-${V}
 PKGNAME-python=	xapian-bindings-python-${V}
 PKGNAME-ruby=	ruby${MODRUBY_BINREV}-xapian-${V}
 
+REVISION-main=	0
+
 CATEGORIES=	databases textproc
 
 HOMEPAGE=	https://xapian.org/

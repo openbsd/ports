@@ -3,7 +3,7 @@ COMMENT=	administration and development platform for PostgreSQL
 V=		1.22.1
 DISTNAME=	pgadmin3-$V
 CATEGORIES=	databases devel
-REVISION=	8
+REVISION=	9
 
 HOMEPAGE=	https://www.pgadmin.org/
 

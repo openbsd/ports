@@ -196,6 +196,7 @@ share/pgadmin3/docs/en_US/_static/slony-set.png
 share/pgadmin3/docs/en_US/_static/slony-subscription.png
 share/pgadmin3/docs/en_US/_static/slony-table.png
 share/pgadmin3/docs/en_US/_static/slony-upgrade.png
+share/pgadmin3/docs/en_US/_static/sphinx_highlight.js
 share/pgadmin3/docs/en_US/_static/status.png
 share/pgadmin3/docs/en_US/_static/transaction.png
 share/pgadmin3/docs/en_US/_static/underscore-1.13.1.js

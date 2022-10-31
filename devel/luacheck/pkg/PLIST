@@ -44,6 +44,7 @@ share/doc/luacheck/_static/minus.png
 share/doc/luacheck/_static/plus.png
 share/doc/luacheck/_static/pygments.css
 share/doc/luacheck/_static/searchtools.js
+share/doc/luacheck/_static/sphinx_highlight.js
 share/doc/luacheck/_static/underscore-1.13.1.js
 share/doc/luacheck/_static/underscore.js
 share/doc/luacheck/cli.html

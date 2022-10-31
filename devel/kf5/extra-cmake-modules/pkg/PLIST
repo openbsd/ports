@@ -253,6 +253,7 @@ share/doc/ECM/html/_static/plus.png
 share/doc/ECM/html/_static/pygments.css
 share/doc/ECM/html/_static/searchtools.js
 share/doc/ECM/html/_static/sidebar.js
+share/doc/ECM/html/_static/sphinx_highlight.js
 share/doc/ECM/html/_static/underscore-1.13.1.js
 share/doc/ECM/html/_static/underscore.js
 share/doc/ECM/html/find-module/

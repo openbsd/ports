@@ -135,6 +135,7 @@ share/doc/${MODPY_PY_PREFIX}peewee/_static/plus.png
 share/doc/${MODPY_PY_PREFIX}peewee/_static/pygments.css
 share/doc/${MODPY_PY_PREFIX}peewee/_static/searchtools.js
 share/doc/${MODPY_PY_PREFIX}peewee/_static/sidebar.js
+share/doc/${MODPY_PY_PREFIX}peewee/_static/sphinx_highlight.js
 share/doc/${MODPY_PY_PREFIX}peewee/_static/underscore-1.13.1.js
 share/doc/${MODPY_PY_PREFIX}peewee/_static/underscore.js
 share/doc/${MODPY_PY_PREFIX}peewee/genindex.html

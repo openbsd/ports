@@ -9,7 +9,7 @@ DPB_PROPERTIES =	parallel
 NO_CCACHE =		Yes
 
 GHC_VERSION =		9.2.4
-REVISION =		2
+REVISION =		3
 DISTNAME =		ghc-${GHC_VERSION}
 CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/

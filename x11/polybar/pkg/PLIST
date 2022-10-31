@@ -30,6 +30,7 @@ share/doc/polybar/_static/minus.png
 share/doc/polybar/_static/plus.png
 share/doc/polybar/_static/pygments.css
 share/doc/polybar/_static/searchtools.js
+share/doc/polybar/_static/sphinx_highlight.js
 share/doc/polybar/_static/underscore-1.13.1.js
 share/doc/polybar/_static/underscore.js
 share/doc/polybar/config

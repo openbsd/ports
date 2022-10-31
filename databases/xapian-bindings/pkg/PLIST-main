@@ -60,3 +60,4 @@ share/doc/xapian-bindings/perl/examples/simpleindex.pl
 share/doc/xapian-bindings/perl/examples/simplematchdecider.pl
 share/doc/xapian-bindings/perl/examples/simplesearch.pl
 share/doc/xapian-bindings/perl/index.html
+share/doc/xapian-bindings/python3/html/_static/sphinx_highlight.js
