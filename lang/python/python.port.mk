@@ -74,7 +74,8 @@ MODPY_VERSION ?=	${MODPY_DEFAULT_VERSION_2}
 # verify if MODPY_VERSION found is correct
 .if ${MODPY_VERSION} != "2.7" && \
       ${MODPY_VERSION} != "3.9" && \
-      ${MODPY_VERSION} != "3.10"
+      ${MODPY_VERSION} != "3.10" && \
+      ${MODPY_VERSION} != "3.11"
 ERRORS += "Fatal: unknown or unsupported MODPY_VERSION: ${MODPY_VERSION}"
 .endif
 
