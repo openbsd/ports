@@ -4,14 +4,13 @@ bin/sphinx-apidoc
 bin/sphinx-autogen
 bin/sphinx-build
 bin/sphinx-quickstart
-lib/python${MODPY_VERSION}/site-packages/Sphinx-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/Sphinx-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/Sphinx-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/Sphinx-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/Sphinx-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/Sphinx-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/Sphinx-${MODPY_EGG_VERSION}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/sphinx/
+lib/python${MODPY_VERSION}/site-packages/sphinx-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/sphinx-${MODPY_EGG_VERSION}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/sphinx-${MODPY_EGG_VERSION}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/sphinx-${MODPY_EGG_VERSION}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/sphinx-${MODPY_EGG_VERSION}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/sphinx-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/sphinx/__init__.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sphinx/${MODPY_PYCACHE}/
@@ -340,6 +339,8 @@ lib/python${MODPY_VERSION}/site-packages/sphinx/highlighting.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/io.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/jinja2glue.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/locale/
+lib/python${MODPY_VERSION}/site-packages/sphinx/locale/.tx/
+lib/python${MODPY_VERSION}/site-packages/sphinx/locale/.tx/config
 lib/python${MODPY_VERSION}/site-packages/sphinx/locale/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sphinx/locale/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sphinx/locale/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -892,6 +893,7 @@ lib/python${MODPY_VERSION}/site-packages/sphinx/themes/basic/static/language_dat
 lib/python${MODPY_VERSION}/site-packages/sphinx/themes/basic/static/minus.png
 lib/python${MODPY_VERSION}/site-packages/sphinx/themes/basic/static/plus.png
 lib/python${MODPY_VERSION}/site-packages/sphinx/themes/basic/static/searchtools.js
+lib/python${MODPY_VERSION}/site-packages/sphinx/themes/basic/static/sphinx_highlight.js
 lib/python${MODPY_VERSION}/site-packages/sphinx/themes/basic/static/underscore-1.13.1.js
 lib/python${MODPY_VERSION}/site-packages/sphinx/themes/basic/static/underscore.js
 lib/python${MODPY_VERSION}/site-packages/sphinx/themes/basic/theme.conf
