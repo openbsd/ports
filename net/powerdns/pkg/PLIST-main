@@ -62,6 +62,7 @@ share/doc/pdns/3.4.0_to_4.0.0_schema.sqlite3.sql
 share/doc/pdns/4.0.0_to_4.2.0_schema.sqlite3.sql
 share/doc/pdns/4.2.0_to_4.3.0_schema.sqlite3.sql
 share/doc/pdns/4.3.0_to_4.3.1_schema.sqlite3.sql
+share/doc/pdns/4.3.1_to_4.7.0_schema.sqlite3.sql
 share/doc/pdns/bind-dnssec.4.2.0_to_4.3.0_schema.sqlite3.sql
 share/doc/pdns/bind-dnssec.schema.sqlite3.sql
 share/doc/pdns/dnssec-3.x_to_3.4.0_schema.sqlite3.sql
