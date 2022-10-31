@@ -4,16 +4,16 @@
 Index: cmake/platforms/unix.cmake
 --- cmake/platforms/unix.cmake.orig
 +++ cmake/platforms/unix.cmake
-@@ -81,7 +81,7 @@ function(check_x11)
- endfunction()
- check_x11()
+@@ -102,7 +102,7 @@ else()
+   set(NOT_X_WINDOWS ON)
+ endif()
  
 -include_directories(${CMAKE_SOURCE_DIR}/charset ${GTK_INCLUDE_DIRS} ${X11_INCLUDE_DIR})
 +include_directories(${CMAKE_SOURCE_DIR}/charset ${CMAKE_SOURCE_DIR} ${GTK_INCLUDE_DIRS} ${X11_INCLUDE_DIR})
  link_directories(${GTK_LIBRARY_DIRS})
  
  function(add_optional_system_lib library testfn)
-@@ -125,7 +125,7 @@ endif()
+@@ -211,7 +211,7 @@ endif()
  
  if(STRICT AND (CMAKE_C_COMPILER_ID MATCHES "GNU" OR
                 CMAKE_C_COMPILER_ID MATCHES "Clang"))

@@ -1,7 +1,7 @@
 Index: putty.h
 --- putty.h.orig
 +++ putty.h
-@@ -2069,6 +2069,7 @@ typedef enum NoiseSourceId {
+@@ -2124,6 +2124,7 @@ typedef enum NoiseSourceId {
      NOISE_SOURCE_THREADTIME,
      NOISE_SOURCE_PROCTIME,
      NOISE_SOURCE_PERFCOUNT,
