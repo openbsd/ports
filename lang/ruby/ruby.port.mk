@@ -53,8 +53,9 @@ FLAVOR =		ruby31
 .    for i in ruby27 ruby30 ruby31 jruby
 .      if ${FLAVOR:M$i}
 MODRUBY_REV = ${i:C/ruby([0-9])/\1./}
-.        if ${FLAVOR:N$i:Mruby27} || \ 
-            ${FLAVOR:N$i:Mruby30} || \ 
+.        if ${FLAVOR:N$i:Mruby27} || \
+            ${FLAVOR:N$i:Mruby30} || \
+            ${FLAVOR:N$i:Mruby31} || \
 	    ${FLAVOR:N$i:Mjruby}
 ERRORS += "Fatal: Conflicting flavors used: ${FLAVOR}"
 .        endif
