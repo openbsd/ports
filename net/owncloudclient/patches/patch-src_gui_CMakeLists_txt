@@ -1,0 +1,16 @@
+Index: src/gui/CMakeLists.txt
+--- src/gui/CMakeLists.txt.orig
++++ src/gui/CMakeLists.txt
+@@ -182,7 +182,11 @@ elseif(UNIX AND NOT APPLE )
+         target_link_libraries(owncloudCore PUBLIC Qt5::DBus)
+         target_compile_definitions(owncloudCore PUBLIC "USE_FDO_NOTIFICATIONS")
+     endif()
+-    target_sources(owncloudCore PRIVATE folderwatcher_linux.cpp)
++    if(Inotify_FOUND)
++        target_sources(owncloudCore PRIVATE folderwatcher_linux.cpp)
++        target_include_directories(owncloudCore PRIVATE ${Inotify_INCLUDE_DIRS})
++        target_link_libraries(owncloudCore PUBLIC ${Inotify_LIBRARIES} )
++    endif()
+ endif()
+ 
+ 

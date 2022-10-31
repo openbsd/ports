@@ -3,6 +3,7 @@ COMMENT =		owncloud sync client
 V = 			2.11.1.8438
 DISTNAME =		ownCloud-${V}
 PKGNAME =  		owncloudclient-${V}
+REVISION =              0
 
 SHARED_LIBS +=		owncloudsync	7.2
 SHARED_LIBS +=		owncloud_csync	1.1
@@ -39,13 +40,11 @@ CONFIGURE_ARGS +=	-Wno-dev \
 			-DKDE_INSTALL_PLUGINDIR=${PREFIX}/lib/ownCloud/plugins/ \
 			-DCMAKE_DISABLE_FIND_PACKAGE_KF5=TRUE \
 			-DCMAKE_DISABLE_FIND_PACKAGE_CMocka=TRUE \
-			-DInotify_INCLUDE_DIRS=${LOCALBASE}/include/inotify \
-			-DInotify_LIBRARIES=${LOCALBASE}/lib/inotify \
 			-DCSYNC_REQUIRED_LIBRARIES=c
 
-CFLAGS +=	-I${LOCALBASE}/include -I${LOCALBASE}/include/inotify -I${LOCALBASE}/include/qtkeychain
-CXXFLAGS +=	-I${LOCALBASE}/include -I${LOCALBASE}/include/inotify -I${LOCALBASE}/include/qtkeychain
-MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib -L${LOCALBASE}/lib/inotify -linotify -Wl,-rpath=${LOCALBASE}/lib/inotify
+CFLAGS +=	-I${LOCALBASE}/include -I${LOCALBASE}/include/qtkeychain
+CXXFLAGS +=	-I${LOCALBASE}/include -I${LOCALBASE}/include/qtkeychain
+MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
 
 NO_TEST =		Yes
 
