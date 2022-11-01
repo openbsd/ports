@@ -10,6 +10,7 @@ share/icons/hicolor/scalable/apps/YACReaderLibrary.svg
 share/yacreader/
 share/yacreader/languages/
 share/yacreader/languages/yacreader_de.qm
+share/yacreader/languages/yacreader_en.qm
 share/yacreader/languages/yacreader_es.qm
 share/yacreader/languages/yacreader_fr.qm
 share/yacreader/languages/yacreader_it.qm
@@ -21,6 +22,7 @@ share/yacreader/languages/yacreader_zh_CN.qm
 share/yacreader/languages/yacreader_zh_HK.qm
 share/yacreader/languages/yacreader_zh_TW.qm
 share/yacreader/languages/yacreaderlibrary_de.qm
+share/yacreader/languages/yacreaderlibrary_en.qm
 share/yacreader/languages/yacreaderlibrary_es.qm
 share/yacreader/languages/yacreaderlibrary_fr.qm
 share/yacreader/languages/yacreaderlibrary_it.qm
@@ -64,6 +66,8 @@ share/yacreader/server/docroot/images/readingMark.png
 share/yacreader/server/docroot/images/readingMark@2x.png
 share/yacreader/server/docroot/images/up.png
 share/yacreader/server/docroot/images/up@2x.png
+share/yacreader/server/docroot/images/webui/
+share/yacreader/server/docroot/images/webui/YACLibraryServer.svg
 share/yacreader/server/docroot/login.html
 share/yacreader/server/templates/
 share/yacreader/server/templates/folder.tpl

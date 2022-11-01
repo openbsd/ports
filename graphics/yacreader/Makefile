@@ -1,7 +1,7 @@
 COMMENT =	read and manage your digital comic collection
 
-V =		9.9.2
-DISTNAME =	yacreader-${V}.2210021
+V =		9.10.0
+DISTNAME =	yacreader-${V}.2210304
 PKGNAME =	yacreader-${V}
 
 CATEGORIES =	graphics
@@ -49,5 +49,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/YACReader{,Library}.svg \
 		${PREFIX}/share/icons/hicolor/scalable/apps
 	cd ${WRKSRC}/release && pax -rw . ${PREFIX}/share/yacreader
+	cd ${WRKBUILD}/release && pax -rw . ${PREFIX}/share/yacreader
 
 .include <bsd.port.mk>
