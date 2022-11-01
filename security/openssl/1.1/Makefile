@@ -1,6 +1,6 @@
 # bump security/sslscan if updating (static linked)
 PORTROACH=	limit:^1\.1\.[0-9][a-z] skipb:0 skipv:1.1.1
-V=		1.1.1q
+V=		1.1.1s
 PKGSPEC=	openssl->=1.1.0v0,<1.2v0
 EPOCH=		0
 
