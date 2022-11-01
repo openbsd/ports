@@ -1,9 +1,8 @@
 COMMENT =		owncloud sync client
 
-V = 			2.11.1.8438
+V = 			2.11.1.8946
 DISTNAME =		ownCloud-${V}
 PKGNAME =  		owncloudclient-${V}
-REVISION =              0
 
 SHARED_LIBS +=		owncloudsync	7.2
 SHARED_LIBS +=		owncloud_csync	1.1
