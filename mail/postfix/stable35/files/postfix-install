@@ -1,0 +1,87 @@
+#!/bin/sh
+#
+# Post-installation setup of postfix
+
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+CONFIG_DIR=${SYSCONFDIR}/postfix
+SAMPLE_CONFIG_DIR=${PREFIX}/share/examples/postfix
+SPOOL_DIR=/var/spool/postfix
+DATA_DIR=/var/postfix
+
+# Function: set up the postfix spool dir / chroot area
+#
+do_spooldir()
+{
+    echo "-> Creating Postfix spool directory and chroot area under $SPOOL_DIR"
+    [ -d $SPOOL_DIR ] || install -d -o root -g wheel -m 755 $SPOOL_DIR
+    [ -d $SPOOL_DIR/etc ] || install -d -o root -g wheel -m 755 $SPOOL_DIR/etc
+    [ -d $SPOOL_DIR/dev ] || install -d -o root -g wheel -m 755 $SPOOL_DIR/dev
+    for file in hosts localtime resolv.conf services ; do
+	install -o root -g wheel -m 644 /etc/$file $SPOOL_DIR/etc
+    done
+
+    echo "-> Creating Postfix data directory under $DATA_DIR"
+    [ -d $DATA_DIR ] || install -d -o _postfix -g wheel -m 700 $DATA_DIR
+}
+
+# Function: replace sendmail binaries with postfix
+#
+do_mailwrapper()
+{
+    echo "-> Creating /etc/mailer.conf.postfix"
+    cat <<MAILER  | sed "s@y0y0y0@$PREFIX@g" >/etc/mailer.conf.postfix
+sendmail	y0y0y0/sbin/sendmail
+send-mail	y0y0y0/sbin/sendmail
+mailq		y0y0y0/sbin/sendmail
+newaliases	y0y0y0/sbin/sendmail
+MAILER
+    chown root:wheel /etc/mailer.conf.postfix
+    chmod 644 /etc/mailer.conf.postfix
+}
+
+# Function: install the postfix configuration files from the samples
+#
+do_configs()
+{
+    POSTFIX="${PREFIX}/sbin/postfix"
+
+    if [ -d $CONFIG_DIR ]; then
+	if [ ! -d $CONFIG_DIR/postfix-files.d ]; then
+	    install -d -o root -g wheel -m 755 $CONFIG_DIR/postfix-files.d
+	fi
+	for file in main.cf.proto master.cf.proto postfix-files ; do
+	    if [ ! -f $CONFIG_DIR/$file ]; then
+		install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/$file $CONFIG_DIR
+	    fi
+	done
+
+	echo ""
+	$POSTFIX upgrade-configuration
+	echo ""
+
+	echo "+---------------"
+	echo "| The existing configuration files in $CONFIG_DIR have been preserved."
+	echo "| You may want to compare them to the current sample files,"
+	echo "| $SAMPLE_CONFIG_DIR, and update your configuration as needed."
+	echo "+---------------"
+	echo ""
+    else
+	install -d -o root -g wheel -m 755 $CONFIG_DIR
+	install -d -o root -g wheel -m 755 $CONFIG_DIR/postfix-files.d
+	install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/* $CONFIG_DIR
+
+	echo "+---------------"
+	echo "| Configuration files have been installed in $CONFIG_DIR."
+	echo "| Please update these files to meet your needs."
+	echo "+---------------"
+    fi
+
+    $POSTFIX set-permissions
+    $POSTFIX check
+}
+
+if [ "$1" = "install" ]; then
+    do_mailwrapper
+    do_spooldir
+fi
+do_configs

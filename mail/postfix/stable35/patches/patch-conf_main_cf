@@ -1,0 +1,18 @@
+Index: conf/main.cf
+--- conf/main.cf.orig
++++ conf/main.cf
+@@ -133,6 +133,9 @@ mail_owner = postfix
+ #inet_interfaces = $myhostname
+ #inet_interfaces = $myhostname, localhost
+ 
++# OpenBSD is IPv6-capable - use all available address families.
++inet_protocols = all
++
+ # The proxy_interfaces parameter specifies the network interface
+ # addresses that this mail system receives mail on by way of a
+ # proxy or network address translation unit. This setting extends
+@@ -673,4 +676,3 @@ sample_directory =
+ # readme_directory: The location of the Postfix README files.
+ #
+ readme_directory =
+-inet_protocols = ipv4

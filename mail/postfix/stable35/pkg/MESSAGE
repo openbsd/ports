@@ -1,0 +1,13 @@
+Postfix can be set up to replace smtpd entirely. Please read the
+documentation at file://${PREFIX}/share/doc/postfix/html/index.html or
+${HOMEPAGE} carefully before you decide to do this!
+
+To replace smtpd with Postfix you have to install a new mailer.conf
+using the following command:
+
+    ${PREFIX}/sbin/postfix-enable
+
+If you want to restore smtpd, this is done using the following command:
+
+    ${PREFIX}/sbin/postfix-disable
+    

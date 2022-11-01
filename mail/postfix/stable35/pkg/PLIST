@@ -1,0 +1,352 @@
+@option is-branch
+@conflict postfix-*
+@newgroup _postfix:507
+@newgroup _postdrop:508
+@newuser _postfix:507:507:daemon:Postfix Daemon:/var/empty:/sbin/nologin
+@unexec-delete ${PREFIX}/sbin/postfix-disable
+@unexec-delete rm -f /etc/mailer.conf.postfix
+@extra ${SYSCONFDIR}/postfix/
+@extra /var/postfix/
+@extra /var/spool/postfix/
+libexec/postfix/
+@bin libexec/postfix/anvil
+@bin libexec/postfix/bounce
+@bin libexec/postfix/cleanup
+@bin libexec/postfix/discard
+@bin libexec/postfix/dnsblog
+@bin libexec/postfix/error
+@bin libexec/postfix/flush
+@bin libexec/postfix/lmtp
+@bin libexec/postfix/local
+@bin libexec/postfix/master
+@bin libexec/postfix/nqmgr
+@bin libexec/postfix/oqmgr
+@bin libexec/postfix/pickup
+@bin libexec/postfix/pipe
+libexec/postfix/post-install
+libexec/postfix/postfix-script
+libexec/postfix/postfix-tls-script
+libexec/postfix/postfix-wrapper
+@bin libexec/postfix/postlogd
+libexec/postfix/postmulti-script
+@bin libexec/postfix/postscreen
+@bin libexec/postfix/proxymap
+@bin libexec/postfix/qmgr
+@bin libexec/postfix/qmqpd
+@bin libexec/postfix/scache
+@bin libexec/postfix/showq
+@bin libexec/postfix/smtp
+@bin libexec/postfix/smtpd
+@bin libexec/postfix/spawn
+@bin libexec/postfix/tlsmgr
+@bin libexec/postfix/tlsproxy
+@bin libexec/postfix/trivial-rewrite
+@bin libexec/postfix/verify
+@bin libexec/postfix/virtual
+@man man/man1/mailq.1
+@man man/man1/newaliases.1
+@man man/man1/postalias.1
+@man man/man1/postcat.1
+@man man/man1/postconf.1
+@man man/man1/postdrop.1
+@man man/man1/postfix-tls.1
+@man man/man1/postfix.1
+@man man/man1/postkick.1
+@man man/man1/postlock.1
+@man man/man1/postlog.1
+@man man/man1/postmap.1
+@man man/man1/postmulti.1
+@man man/man1/postqueue.1
+@man man/man1/postsuper.1
+@man man/man1/posttls-finger.1
+@man man/man1/qshape.1
+@man man/man1/sendmail.1
+@man man/man5/access.5
+@man man/man5/aliases.5
+@man man/man5/body_checks.5
+@man man/man5/bounce.5
+@man man/man5/canonical.5
+@man man/man5/cidr_table.5
+@man man/man5/generic.5
+@man man/man5/header_checks.5
+@man man/man5/ldap_table.5
+@man man/man5/lmdb_table.5
+@man man/man5/master.5
+@man man/man5/memcache_table.5
+@man man/man5/mysql_table.5
+@man man/man5/nisplus_table.5
+@man man/man5/pcre_table.5
+@man man/man5/pgsql_table.5
+@man man/man5/postconf.5
+@man man/man5/postfix-wrapper.5
+@man man/man5/regexp_table.5
+@man man/man5/relocated.5
+@man man/man5/socketmap_table.5
+@man man/man5/sqlite_table.5
+@man man/man5/tcp_table.5
+@man man/man5/transport.5
+@man man/man5/virtual.5
+@man man/man8/anvil.8
+@man man/man8/bounce.8
+@man man/man8/cleanup.8
+@man man/man8/defer.8
+@man man/man8/discard.8
+@man man/man8/dnsblog.8
+@man man/man8/error.8
+@man man/man8/flush.8
+@man man/man8/lmtp.8
+@man man/man8/local.8
+@man man/man8/master.8
+@man man/man8/oqmgr.8
+@man man/man8/pickup.8
+@man man/man8/pipe.8
+@man man/man8/postlogd.8
+@man man/man8/postscreen.8
+@man man/man8/proxymap.8
+@man man/man8/qmgr.8
+@man man/man8/qmqpd.8
+@man man/man8/scache.8
+@man man/man8/showq.8
+@man man/man8/smtp.8
+@man man/man8/smtpd.8
+@man man/man8/spawn.8
+@man man/man8/tlsmgr.8
+@man man/man8/tlsproxy.8
+@man man/man8/trace.8
+@man man/man8/trivial-rewrite.8
+@man man/man8/verify.8
+@man man/man8/virtual.8
+sbin/mailq
+sbin/newaliases
+@bin sbin/postalias
+@bin sbin/postcat
+@bin sbin/postconf
+@mode 2755
+@group _postdrop
+@bin sbin/postdrop
+@mode
+@group
+@bin sbin/postfix
+sbin/postfix-disable
+sbin/postfix-enable
+sbin/postfix-install
+@bin sbin/postkick
+@bin sbin/postlock
+@bin sbin/postlog
+@bin sbin/postmap
+@bin sbin/postmulti
+@mode 2755
+@group _postdrop
+@bin sbin/postqueue
+@mode
+@group
+@bin sbin/postsuper
+@bin sbin/posttls-finger
+sbin/qshape
+@bin sbin/sendmail
+share/doc/postfix/
+share/doc/postfix/html/
+share/doc/postfix/html/ADDRESS_CLASS_README.html
+share/doc/postfix/html/ADDRESS_REWRITING_README.html
+share/doc/postfix/html/ADDRESS_VERIFICATION_README.html
+share/doc/postfix/html/BACKSCATTER_README.html
+share/doc/postfix/html/BASIC_CONFIGURATION_README.html
+share/doc/postfix/html/BUILTIN_FILTER_README.html
+share/doc/postfix/html/CDB_README.html
+share/doc/postfix/html/COMPATIBILITY_README.html
+share/doc/postfix/html/CONNECTION_CACHE_README.html
+share/doc/postfix/html/CONTENT_INSPECTION_README.html
+share/doc/postfix/html/DATABASE_README.html
+share/doc/postfix/html/DB_README.html
+share/doc/postfix/html/DEBUG_README.html
+share/doc/postfix/html/DSN_README.html
+share/doc/postfix/html/ETRN_README.html
+share/doc/postfix/html/FILTER_README.html
+share/doc/postfix/html/FORWARD_SECRECY_README.html
+share/doc/postfix/html/INSTALL.html
+share/doc/postfix/html/IPV6_README.html
+share/doc/postfix/html/LDAP_README.html
+share/doc/postfix/html/LINUX_README.html
+share/doc/postfix/html/LMDB_README.html
+share/doc/postfix/html/LOCAL_RECIPIENT_README.html
+share/doc/postfix/html/MAILDROP_README.html
+share/doc/postfix/html/MILTER_README.html
+share/doc/postfix/html/MULTI_INSTANCE_README.html
+share/doc/postfix/html/MYSQL_README.html
+share/doc/postfix/html/NFS_README.html
+share/doc/postfix/html/OVERVIEW.html
+share/doc/postfix/html/PACKAGE_README.html
+share/doc/postfix/html/PCRE_README.html
+share/doc/postfix/html/PGSQL_README.html
+share/doc/postfix/html/POSTSCREEN_README.html
+share/doc/postfix/html/QSHAPE_README.html
+share/doc/postfix/html/RESTRICTION_CLASS_README.html
+share/doc/postfix/html/SASL_README.html
+share/doc/postfix/html/SCHEDULER_README.html
+share/doc/postfix/html/SMTPD_ACCESS_README.html
+share/doc/postfix/html/SMTPD_POLICY_README.html
+share/doc/postfix/html/SMTPD_PROXY_README.html
+share/doc/postfix/html/SOHO_README.html
+share/doc/postfix/html/SQLITE_README.html
+share/doc/postfix/html/STANDARD_CONFIGURATION_README.html
+share/doc/postfix/html/STRESS_README.html
+share/doc/postfix/html/TLS_LEGACY_README.html
+share/doc/postfix/html/TLS_README.html
+share/doc/postfix/html/TUNING_README.html
+share/doc/postfix/html/UUCP_README.html
+share/doc/postfix/html/VERP_README.html
+share/doc/postfix/html/VIRTUAL_README.html
+share/doc/postfix/html/XCLIENT_README.html
+share/doc/postfix/html/XFORWARD_README.html
+share/doc/postfix/html/access.5.html
+share/doc/postfix/html/aliases.5.html
+share/doc/postfix/html/anvil.8.html
+share/doc/postfix/html/bounce.8.html
+share/doc/postfix/html/canonical.5.html
+share/doc/postfix/html/cidr_table.5.html
+share/doc/postfix/html/cleanup.8.html
+share/doc/postfix/html/defer.8.html
+share/doc/postfix/html/discard.8.html
+share/doc/postfix/html/dnsblog.8.html
+share/doc/postfix/html/error.8.html
+share/doc/postfix/html/flush.8.html
+share/doc/postfix/html/generic.5.html
+share/doc/postfix/html/header_checks.5.html
+share/doc/postfix/html/index.html
+share/doc/postfix/html/ldap_table.5.html
+share/doc/postfix/html/lmtp.8.html
+share/doc/postfix/html/local.8.html
+share/doc/postfix/html/mailq.1.html
+share/doc/postfix/html/master.5.html
+share/doc/postfix/html/master.8.html
+share/doc/postfix/html/memcache_table.5.html
+share/doc/postfix/html/mysql_table.5.html
+share/doc/postfix/html/newaliases.1.html
+share/doc/postfix/html/nisplus_table.5.html
+share/doc/postfix/html/oqmgr.8.html
+share/doc/postfix/html/pcre_table.5.html
+share/doc/postfix/html/pgsql_table.5.html
+share/doc/postfix/html/pickup.8.html
+share/doc/postfix/html/pipe.8.html
+share/doc/postfix/html/postalias.1.html
+share/doc/postfix/html/postcat.1.html
+share/doc/postfix/html/postconf.1.html
+share/doc/postfix/html/postconf.5.html
+share/doc/postfix/html/postdrop.1.html
+share/doc/postfix/html/postfix-logo.jpg
+share/doc/postfix/html/postfix-manuals.html
+share/doc/postfix/html/postfix-wrapper.5.html
+share/doc/postfix/html/postfix.1.html
+share/doc/postfix/html/postkick.1.html
+share/doc/postfix/html/postlock.1.html
+share/doc/postfix/html/postlog.1.html
+share/doc/postfix/html/postlogd.8.html
+share/doc/postfix/html/postmap.1.html
+share/doc/postfix/html/postmulti.1.html
+share/doc/postfix/html/postqueue.1.html
+share/doc/postfix/html/postscreen.8.html
+share/doc/postfix/html/postsuper.1.html
+share/doc/postfix/html/proxymap.8.html
+share/doc/postfix/html/qmgr.8.html
+share/doc/postfix/html/qmqp-sink.1.html
+share/doc/postfix/html/qmqp-source.1.html
+share/doc/postfix/html/qmqpd.8.html
+share/doc/postfix/html/qshape.1.html
+share/doc/postfix/html/regexp_table.5.html
+share/doc/postfix/html/relocated.5.html
+share/doc/postfix/html/sendmail.1.html
+share/doc/postfix/html/showq.8.html
+share/doc/postfix/html/smtp-sink.1.html
+share/doc/postfix/html/smtp-source.1.html
+share/doc/postfix/html/smtp.8.html
+share/doc/postfix/html/smtpd.8.html
+share/doc/postfix/html/spawn.8.html
+share/doc/postfix/html/sqlite_table.5.html
+share/doc/postfix/html/tcp_table.5.html
+share/doc/postfix/html/tlsproxy.8.html
+share/doc/postfix/html/trace.8.html
+share/doc/postfix/html/transport.5.html
+share/doc/postfix/html/trivial-rewrite.8.html
+share/doc/postfix/html/verify.8.html
+share/doc/postfix/html/virtual.5.html
+share/doc/postfix/html/virtual.8.html
+share/doc/postfix/readme/
+share/doc/postfix/readme/AAAREADME
+share/doc/postfix/readme/ADDRESS_CLASS_README
+share/doc/postfix/readme/ADDRESS_REWRITING_README
+share/doc/postfix/readme/ADDRESS_VERIFICATION_README
+share/doc/postfix/readme/BACKSCATTER_README
+share/doc/postfix/readme/BASIC_CONFIGURATION_README
+share/doc/postfix/readme/BUILTIN_FILTER_README
+share/doc/postfix/readme/CDB_README
+share/doc/postfix/readme/COMPATIBILITY_README
+share/doc/postfix/readme/CONNECTION_CACHE_README
+share/doc/postfix/readme/CONTENT_INSPECTION_README
+share/doc/postfix/readme/DATABASE_README
+share/doc/postfix/readme/DB_README
+share/doc/postfix/readme/DEBUG_README
+share/doc/postfix/readme/DSN_README
+share/doc/postfix/readme/ETRN_README
+share/doc/postfix/readme/FILTER_README
+share/doc/postfix/readme/FORWARD_SECRECY_README
+share/doc/postfix/readme/INSTALL
+share/doc/postfix/readme/IPV6_README
+share/doc/postfix/readme/LDAP_README
+share/doc/postfix/readme/LINUX_README
+share/doc/postfix/readme/LMDB_README
+share/doc/postfix/readme/LOCAL_RECIPIENT_README
+share/doc/postfix/readme/MAILDROP_README
+share/doc/postfix/readme/MEMCACHE_README
+share/doc/postfix/readme/MILTER_README
+share/doc/postfix/readme/MULTI_INSTANCE_README
+share/doc/postfix/readme/MYSQL_README
+share/doc/postfix/readme/NFS_README
+share/doc/postfix/readme/OVERVIEW
+share/doc/postfix/readme/PACKAGE_README
+share/doc/postfix/readme/PCRE_README
+share/doc/postfix/readme/PGSQL_README
+share/doc/postfix/readme/POSTSCREEN_README
+share/doc/postfix/readme/QSHAPE_README
+share/doc/postfix/readme/RELEASE_NOTES
+share/doc/postfix/readme/RESTRICTION_CLASS_README
+share/doc/postfix/readme/SASL_README
+share/doc/postfix/readme/SCHEDULER_README
+share/doc/postfix/readme/SMTPD_ACCESS_README
+share/doc/postfix/readme/SMTPD_POLICY_README
+share/doc/postfix/readme/SMTPD_PROXY_README
+share/doc/postfix/readme/SOHO_README
+share/doc/postfix/readme/SQLITE_README
+share/doc/postfix/readme/STANDARD_CONFIGURATION_README
+share/doc/postfix/readme/STRESS_README
+share/doc/postfix/readme/TLS_LEGACY_README
+share/doc/postfix/readme/TLS_README
+share/doc/postfix/readme/TUNING_README
+share/doc/postfix/readme/ULTRIX_README
+share/doc/postfix/readme/UUCP_README
+share/doc/postfix/readme/VERP_README
+share/doc/postfix/readme/VIRTUAL_README
+share/doc/postfix/readme/XCLIENT_README
+share/doc/postfix/readme/XFORWARD_README
+share/examples/postfix/
+share/examples/postfix/LICENSE
+share/examples/postfix/TLS_LICENSE
+share/examples/postfix/access
+share/examples/postfix/aliases
+share/examples/postfix/bounce.cf.default
+share/examples/postfix/canonical
+share/examples/postfix/generic
+share/examples/postfix/header_checks
+share/examples/postfix/main.cf
+share/examples/postfix/main.cf.default
+share/examples/postfix/main.cf.proto
+share/examples/postfix/makedefs.out
+share/examples/postfix/master.cf
+share/examples/postfix/master.cf.proto
+share/examples/postfix/postfix-files
+@comment share/examples/postfix/postfix-files.d/
+share/examples/postfix/relocated
+share/examples/postfix/transport
+share/examples/postfix/virtual
+@exec-add PREFIX=%D SYSCONFDIR=${SYSCONFDIR} ${PREFIX}/sbin/postfix-install install
+@exec-update PREFIX=%D SYSCONFDIR=${SYSCONFDIR} ${PREFIX}/sbin/postfix-install upgrade
+@rcscript ${RCDIR}/postfix

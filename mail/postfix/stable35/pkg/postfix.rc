@@ -1,0 +1,17 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/libexec/postfix/master"
+
+. /etc/rc.d/rc.subr
+
+pexp="${daemon}.*"
+
+rc_start() {
+	rc_exec "${TRUEPREFIX}/sbin/postfix ${daemon_flags} start"
+}
+
+rc_stop() {
+	${TRUEPREFIX}/sbin/postfix stop
+}
+
+rc_cmd $1

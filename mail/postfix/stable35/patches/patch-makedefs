@@ -1,0 +1,27 @@
+Index: makedefs
+--- makedefs.orig
++++ makedefs
+@@ -300,22 +300,7 @@ case "$SYSTEM.$RELEASE" in
+ 		;;
+  DragonFly.*)	SYSTYPE=DRAGONFLY
+ 		;;
+-  OpenBSD.2*)	SYSTYPE=OPENBSD2
+-		;;
+-  OpenBSD.3*)	SYSTYPE=OPENBSD3
+-		;;
+-  OpenBSD.4*)	SYSTYPE=OPENBSD4
+-		;;
+-  OpenBSD.5*)	SYSTYPE=OPENBSD5
+-		: ${CC=cc}
+-		: ${SHLIB_SUFFIX=.so.1.0}
+-		: ${SHLIB_CFLAGS=-fPIC}
+-		: ${SHLIB_LD="${CC} -shared"' -Wl,-soname,${LIB}'}
+-		: ${SHLIB_RPATH='-Wl,-rpath,${SHLIB_DIR}'}
+-		: ${SHLIB_ENV="LD_LIBRARY_PATH=`pwd`/lib"}
+-		: ${PLUGIN_LD="${CC} -shared"}
+-		;;
+-  OpenBSD.6*)	SYSTYPE=OPENBSD6
++  OpenBSD.*)	SYSTYPE=OPENBSD
+ 		: ${CC=cc}
+ 		: ${SHLIB_SUFFIX=.so.1.0}
+ 		: ${SHLIB_CFLAGS=-fPIC}

@@ -1,0 +1,18 @@
+#!/bin/sh
+
+if [ -f /etc/mailer.conf.postfix ]; then
+    if [ -f /etc/mailer.conf ]; then
+        mv -f /etc/mailer.conf /etc/mailer.conf.pre-postfix
+        echo "old /etc/mailer.conf saved as /etc/mailer.conf.pre-postfix"
+    fi
+    mv -f /etc/mailer.conf.postfix /etc/mailer.conf
+    echo "postfix /etc/mailer.conf enabled"
+    echo ""
+    echo "NOTE: rc.conf changes are required to disable your previous MTA and"
+    echo "      start Postfix, e.g.:"
+    echo ""
+    echo "rcctl stop smtpd; rcctl disable smtpd"
+    echo "rcctl enable postfix; rcctl start postfix"
+else
+    echo "can't find /etc/mailer.conf.postfix, postfix not enabled"
+fi

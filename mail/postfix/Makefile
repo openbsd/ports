@@ -1,4 +1,13 @@
 SUBDIR =
+SUBDIR += stable35
+SUBDIR += stable35,ldap
+SUBDIR += stable35,ldap,sasl2
+SUBDIR += stable35,mysql
+SUBDIR += stable35,mysql,sasl2
+SUBDIR += stable35,pgsql
+SUBDIR += stable35,pgsql,sasl2
+SUBDIR += stable35,sasl2
+
 SUBDIR += stable
 SUBDIR += stable,ldap
 SUBDIR += stable,ldap,sasl2
