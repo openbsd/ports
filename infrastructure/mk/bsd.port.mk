@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1579 2022/10/25 15:10:34 naddy Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1580 2022/11/01 10:55:54 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -3392,7 +3392,7 @@ ${_i:L}-depends-list:
 
 # recursive depend targets
 
-print-package-signature print-update-signature:
+print-update-signature:
 	@if a=`SUBPACKAGE=${SUBPACKAGE} PKGPATH=${PKGPATH} ${MAKE} print-package-args`; \
 	then \
 		${_PKG_CREATE} -n -S $$a ${PKG_ARGS${SUBPACKAGE}} ${_PACKAGE_COOKIE${SUBPACKAGE}}; \

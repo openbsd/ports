@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Vars.pm,v 1.59 2019/11/09 17:06:37 espie Exp $
+# $OpenBSD: Vars.pm,v 1.60 2022/11/01 10:55:54 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -224,8 +224,8 @@ sub grab_signature
 	$core->start_pipe(sub {
 		my $shell = shift;
 		$class->run_command($core, $shell, $grabber, {$subdir => 1},
-			undef, 'print-package-signature', 'ECHO_MSG=:')
-	}, "PORT-SIGNATURE");
+			undef, 'print-update-signature', 'ECHO_MSG=:')
+	}, "UPDATE-SIGNATURE");
 	my $fh = $core->fh;
 	while (<$fh>) {
 		chomp;
