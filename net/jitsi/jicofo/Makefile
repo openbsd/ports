@@ -2,13 +2,12 @@ COMMENT =	server-side focus component used in Jitsi Meet conferences
 
 CATEGORIES =	net
 
-VERSION =	2.0.7648
+VERSION =	2.0.7882
 PKGNAME =	jicofo-${VERSION}
-REVISION =	0
 
 GH_ACCOUNT =	jitsi
 GH_PROJECT =	jicofo
-GH_TAGNAME =	jitsi-meet_7648
+GH_TAGNAME =	jitsi-meet_7882
 
 DISTFILES +=	${GH_DISTFILE}
 
@@ -45,6 +44,6 @@ do-install:
 	    ${FILESDIR}/jicofo.conf ${PREFIX}/share/jicofo/jicofo.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/lib/logging.properties \
 	    ${PREFIX}/share/jicofo/lib/logging.properties.sample
-	${INSTALL_DATA} ${WRKSRC}/target/jicofo-1.1-SNAPSHOT-jar-with-dependencies.jar ${MODJAVA_JAR_DIR}/jicofo.jar
+	${INSTALL_DATA} ${WRKSRC}/jicofo/target/jicofo-1.1-SNAPSHOT-jar-with-dependencies.jar ${MODJAVA_JAR_DIR}/jicofo.jar
 
 .include <bsd.port.mk>

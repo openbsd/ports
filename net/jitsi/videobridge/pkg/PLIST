@@ -27,7 +27,7 @@ share/jvb/lib/
 share/jvb/lib/logging.properties.sample
 @mode 640
 @group _jvb
-@sample share/jvb/lib/logging.properties
+@sample ${SYSCONFDIR}/jvb/logging.properties
 @mode
 @group
 share/jvb/lib/sip-communicator.properties.sample

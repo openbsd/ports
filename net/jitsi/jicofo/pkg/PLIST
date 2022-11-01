@@ -29,4 +29,4 @@ share/jicofo/lib/
 share/jicofo/lib/logging.properties.sample
 @mode 640
 @group _jicofo
-@sample share/jicofo/lib/logging.properties
+@sample ${SYSCONFDIR}/jicofo/logging.properties
