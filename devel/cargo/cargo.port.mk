@@ -23,6 +23,19 @@ MODCARGO_VENDOR_DIR ?= ${WRKSRC}/modcargo-crates
 # Default path for cargo manifest.
 MODCARGO_CARGOTOML ?= ${WRKSRC}/Cargo.toml
 
+# WANTLIB for Rust compiled code
+# it should be kept in sync with lang/rust code
+# - c/pthread : all syscalls
+# - c++abi / libgcc.a : unwind
+MODCARGO_WANTLIB = c pthread
+
+.if "${MARCHINE_ARCH}" != "sparc64"
+MODCARGO_WANTLIB +=	c++abi
+.else
+# libgcc.a is static
+MODCARGO_WANTLIB +=
+.endif
+
 # Define MASTER_SITES_CRATESIO for crates.io
 MASTER_SITES_CRATESIO =	https://crates.io/api/v1/crates/
 
