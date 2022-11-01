@@ -1,7 +1,6 @@
 COMMENT =		mobile shell
 
-DISTNAME =		mosh-1.3.2
-REVISION =		5
+DISTNAME =		mosh-1.4.0
 
 CATEGORIES =		net
 
@@ -25,9 +24,9 @@ COMPILER =		base-clang ports-gcc
 
 LIB_DEPENDS =		devel/protobuf
 
+USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
 # don't force PIE which doesn't work on all arches
-CONFIGURE_ENV =		ax_cv_check_cflags__Werror___fPIE=no \
-			ax_cv_check_cxxflags__Werror___fPIE=no
+CONFIGURE_ENV =		ax_cv_check_cxxflags__Werror___fPIE=no
 
 .include <bsd.port.mk>
