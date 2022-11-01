@@ -8,9 +8,9 @@ COMMENT = JavaScript runtime built on Chrome's V8 JavaScript engine
 NODE_VERSION =		v16.17.1
 PLEDGE_VER =		1.1.2
 DISTFILES =		node-pledge-{}${PLEDGE_VER}.tar.gz:0 \
-			${DISTNAME}-headers.tar.xz \
+			${DISTNAME}-headers.tar.gz \
 			${DISTNAME}.tar.xz
-REVISION =		0
+REVISION =		1
 
 DISTNAME =		node-${NODE_VERSION}
 PKGNAME =		${DISTNAME:S/v//g}
@@ -98,8 +98,8 @@ post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
 		${PREFIX}/lib/node_modules/npm/node_modules/node-gyp/update-gyp.py
 	${INSTALL_DATA_DIR} ${PREFIX}/share/node
-	${INSTALL_DATA} ${FULLDISTDIR}/${DISTNAME}-headers.tar.xz \
-		${PREFIX}/share/node/${DISTNAME}-headers.tar.xz
+	${INSTALL_DATA} ${FULLDISTDIR}/${DISTNAME}-headers.tar.gz \
+		${PREFIX}/share/node/${DISTNAME}-headers.tar.gz
 	ln -s ${TRUEPREFIX}/lib/node_modules/npm/bin/node-gyp-bin/node-gyp \
 		${PREFIX}/bin/node-gyp;
 	cd ${PREFIX}/lib/node_modules/npm/node_modules && for x in *; do \

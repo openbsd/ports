@@ -2518,7 +2518,7 @@ share/doc/node/
 share/doc/node/gdbinit
 share/doc/node/lldb_commands.py
 share/node/
-share/node/${DISTNAME}-headers.tar.xz
+share/node/${DISTNAME}-headers.tar.gz
 share/systemtap/
 share/systemtap/tapset/
 share/systemtap/tapset/node.stp
