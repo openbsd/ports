@@ -1,6 +1,6 @@
 COMMENT=		simulator of light scattering by planetary atmospheres
 
-GH_TAGNAME=		v0.2.0
+GH_TAGNAME=		v0.2.1
 GH_ACCOUNT=		10110111
 GH_PROJECT=		CalcMySky
 PKGNAME=		${DISTNAME:L}
