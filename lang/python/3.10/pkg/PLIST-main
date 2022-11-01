@@ -2073,7 +2073,7 @@ lib/python3.10/lib-dynload/
 @so lib/python3.10/lib-dynload/mmap.cpython-310.so
 @so lib/python3.10/lib-dynload/nis.cpython-310.so
 @so lib/python3.10/lib-dynload/pyexpat.cpython-310.so
-@so lib/python3.10/lib-dynload/readline.cpython-310_failed.so
+@so lib/python3.10/lib-dynload/readline.cpython-310.so
 @so lib/python3.10/lib-dynload/resource.cpython-310.so
 @so lib/python3.10/lib-dynload/select.cpython-310.so
 @so lib/python3.10/lib-dynload/syslog.cpython-310.so

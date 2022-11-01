@@ -2049,7 +2049,6 @@ lib/python3.9/lib-dynload/
 @so lib/python3.9/lib-dynload/parser.cpython-39.so
 @so lib/python3.9/lib-dynload/pyexpat.cpython-39.so
 @so lib/python3.9/lib-dynload/readline.cpython-39.so
-@so lib/python3.9/lib-dynload/readline.cpython-39_failed.so
 @so lib/python3.9/lib-dynload/resource.cpython-39.so
 @so lib/python3.9/lib-dynload/select.cpython-39.so
 @so lib/python3.9/lib-dynload/syslog.cpython-39.so

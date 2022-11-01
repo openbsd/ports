@@ -22,5 +22,8 @@ and calling close(2) on them.
 7.  Fix broken keccak implementation by pulling in the applicable part
     of the fix of CVE-2022-37454. 
 
+8.  Workaround for visibility issue seen when Modules/readline.c is
+compiled in c99 or c11 mode.
+
 These changes are available in the OpenBSD CVS repository
 <http://www.openbsd.org/anoncvs.html> in ports/lang/python/3.9.

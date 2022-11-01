@@ -1,0 +1,12 @@
+Index: Modules/readline.c
+--- Modules/readline.c.orig
++++ Modules/readline.c
+@@ -1349,6 +1349,8 @@ static struct PyModuleDef readlinemodule = {
+ };
+ 
+ 
++/* XXX hack around the visibility attribute being lost when compiled with c99 or c11 */
++#undef __attribute__
+ PyMODINIT_FUNC
+ PyInit_readline(void)
+ {

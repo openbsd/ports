@@ -19,5 +19,8 @@ compiler as passed to ports builds is /usr/bin/cc.
 6.  Use closefrom(2) instead of looping through all the file descriptors
 and calling close(2) on them.
 
+7.  Workaround for visibility issue seen when Modules/readline.c is
+compiled in c99 or c11 mode.
+
 These changes are available in the OpenBSD CVS repository
 <http://www.openbsd.org/anoncvs.html> in ports/lang/python/3.11.

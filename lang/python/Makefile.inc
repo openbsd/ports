@@ -73,6 +73,10 @@ WANTLIB-main +=		bz2 c crypto expat ffi intl m curses panel pthread \
 LIB_DEPENDS-main +=	archivers/xz
 WANTLIB-main +=		lzma
 .endif
+.if ${VERSION} == "3.11"
+LIB_DEPENDS-main +=	security/libb2
+WANTLIB-main +=		b2
+.endif
 
 WANTLIB-tests =
 WANTLIB-tools =
@@ -193,6 +197,9 @@ post-install:
 		${PREFIX}/bin/python${VERSION}-2to3
 .else
 	rm -f ${PREFIX}/bin/pip3 # in devel/py-pip for default Python version
+.endif
+.if ${VERSION} == "3.11"
+	rm ${PREFIX}/bin/pip3.10 # https://github.com/python/cpython/issues/98682
 .endif
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/python${VERSION}
 	${INSTALL_DATA} ${FILESDIR}/CHANGES.OpenBSD \
