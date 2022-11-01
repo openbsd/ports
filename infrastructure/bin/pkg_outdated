@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: pkg_outdated,v 1.5 2019/05/19 08:48:58 espie Exp $
+# $OpenBSD: pkg_outdated,v 1.6 2022/11/01 20:44:49 naddy Exp $
 #
 # Copyright (c) 2005 Bernd Ahlers <bernd@openbsd.org>
 #
@@ -144,7 +144,7 @@ sub collect_port_signatures
 	chomp $tempdir;
 	$ENV{'_DEPENDS_CACHE'} = $tempdir;
 	my $cmd = "cd $portsdir && FULLPATH=Yes SUBDIR=\"".join(' ', @subdirs)
-	    ."\" REPORT_PROBLEM=true make print-package-signature";
+	    ."\" REPORT_PROBLEM=true make print-update-signature";
 
 	my $count = 0;
 	my $total = scalar @subdirs;
