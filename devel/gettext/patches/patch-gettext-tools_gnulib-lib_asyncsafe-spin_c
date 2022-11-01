@@ -3,12 +3,12 @@
 Index: gettext-tools/gnulib-lib/asyncsafe-spin.c
 --- gettext-tools/gnulib-lib/asyncsafe-spin.c.orig
 +++ gettext-tools/gnulib-lib/asyncsafe-spin.c
-@@ -129,7 +129,7 @@ do_unlock (asyncsafe_spinlock_t *lock)
- 
- #   endif
- 
--#  elif (__GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ >= 1)) && !defined __ibmxl__
-+#  elif (__GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ >= 1)) && !defined __ibmxl__ && !defined(__hppa__)
- /* Use GCC built-ins (available in GCC >= 4.1).
+@@ -138,7 +138,7 @@ do_unlock (asyncsafe_spinlock_t *lock)
+ #  elif (((__GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ >= 1)) \
+           && !defined __sparc__) \
+          || __clang_major__ >= 3) \
+-        && !defined __ibmxl__
++        && !defined __ibmxl__ && !defined(__hppa__)
+ /* Use GCC built-ins (available in GCC >= 4.1, except on SPARC, and
+    clang >= 3.0).
     Documentation:
-    <https://gcc.gnu.org/onlinedocs/gcc-4.1.2/gcc/Atomic-Builtins.html>  */

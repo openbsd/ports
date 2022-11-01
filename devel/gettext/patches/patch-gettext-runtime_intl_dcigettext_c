@@ -1,7 +1,7 @@
 Index: gettext-runtime/intl/dcigettext.c
 --- gettext-runtime/intl/dcigettext.c.orig
 +++ gettext-runtime/intl/dcigettext.c
-@@ -494,6 +494,7 @@ DCIGETTEXT (const char *domainname, const char *msgid1
+@@ -489,6 +489,7 @@ DCIGETTEXT (const char *domainname, const char *msgid1
    const char *localename;
  #endif
    size_t domainname_len;
@@ -9,7 +9,7 @@ Index: gettext-runtime/intl/dcigettext.c
  
    /* If no real MSGID is given return NULL.  */
    if (msgid1 == NULL)
-@@ -685,6 +686,7 @@ DCIGETTEXT (const char *domainname, const char *msgid1
+@@ -680,6 +681,7 @@ DCIGETTEXT (const char *domainname, const char *msgid1
  	  /* We have a relative path.  Make it absolute now.  */
  	  size_t dirname_len = strlen (dirname) + 1;
  	  size_t path_max;
@@ -17,7 +17,7 @@ Index: gettext-runtime/intl/dcigettext.c
  	  char *resolved_dirname;
  	  char *ret;
  
-@@ -693,7 +695,8 @@ DCIGETTEXT (const char *domainname, const char *msgid1
+@@ -688,7 +690,8 @@ DCIGETTEXT (const char *domainname, const char *msgid1
  
  	  for (;;)
  	    {
@@ -27,7 +27,7 @@ Index: gettext-runtime/intl/dcigettext.c
  	      ADD_BLOCK (block_list, resolved_dirname);
  
  	      __set_errno (0);
-@@ -710,7 +713,8 @@ DCIGETTEXT (const char *domainname, const char *msgid1
+@@ -705,7 +708,8 @@ DCIGETTEXT (const char *domainname, const char *msgid1
  	       error but simply return the default string.  */
  	    goto return_untranslated;
  
@@ -37,7 +37,7 @@ Index: gettext-runtime/intl/dcigettext.c
  	  dirname = resolved_dirname;
  	}
  #endif
-@@ -729,13 +733,14 @@ DCIGETTEXT (const char *domainname, const char *msgid1
+@@ -724,13 +728,14 @@ DCIGETTEXT (const char *domainname, const char *msgid1
  #endif
  
    domainname_len = strlen (domainname);
@@ -57,7 +57,7 @@ Index: gettext-runtime/intl/dcigettext.c
  
    /* Creating working area.  */
    single_locale = (char *) alloca (strlen (categoryvalue) + 1);
-@@ -837,13 +842,17 @@ DCIGETTEXT (const char *domainname, const char *msgid1
+@@ -832,13 +837,17 @@ DCIGETTEXT (const char *domainname, const char *msgid1
  		  /* Create a new entry and add it to the search tree.  */
  		  size_t msgid_len;
  		  size_t size;
@@ -76,7 +76,7 @@ Index: gettext-runtime/intl/dcigettext.c
  #endif
  		  newp = (struct known_translation_t *) malloc (size);
  		  if (newp != NULL)
-@@ -859,7 +868,7 @@ DCIGETTEXT (const char *domainname, const char *msgid1
+@@ -854,7 +863,7 @@ DCIGETTEXT (const char *domainname, const char *msgid1
  		      memcpy (new_domainname, domainname, domainname_len + 1);
  #ifdef HAVE_PER_THREAD_LOCALE
  		      new_localename = new_domainname + domainname_len + 1;

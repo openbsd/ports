@@ -6,19 +6,17 @@ This was also a race if MAKE_JOBS > 1.
 Index: gettext-tools/gnulib-lib/Makefile.in
 --- gettext-tools/gnulib-lib/Makefile.in.orig
 +++ gettext-tools/gnulib-lib/Makefile.in
-@@ -2829,8 +2829,8 @@ libgettextlib_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined
- 	$(LIB_ACL) $(LIB_CLOCK_GETTIME) $(LIB_GETRANDOM) \
- 	$(LIB_HARD_LOCALE) $(LIB_MBRTOWC) $(LIB_SETLOCALE) \
- 	$(LIB_SETLOCALE_NULL) $(LOG10_LIBM) $(LTLIBICONV) $(LTLIBINTL) \
--	$(LTLIBUNISTRING) $(POW_LIBM) @INTL_MACOSX_LIBS@ -release \
--	@VERSION@ $(am__append_3) $(am__append_8) $(am__append_25) \
-+	$(LTLIBUNISTRING) $(POW_LIBM) @INTL_MACOSX_LIBS@ \
-+	$(am__append_3) $(am__append_8) $(am__append_25) \
- 	$(am__append_26)
+@@ -3542,7 +3542,7 @@ libgettextlib_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined
+ 	$(LIB_HARD_LOCALE) $(LIB_MBRTOWC) $(LIB_POSIX_SPAWN) \
+ 	$(LIB_SETLOCALE) $(LIB_SETLOCALE_NULL) $(LOG10_LIBM) \
+ 	$(LTLIBICONV) $(LTLIBINTL) $(LTLIBUNISTRING) $(POW_LIBM) \
+-	@INTL_MACOSX_LIBS@ -release @VERSION@ $(am__append_3) \
++	@INTL_MACOSX_LIBS@ $(am__append_3) \
+ 	$(am__append_8) $(am__append_25) $(am__append_26)
  
  # Use this preprocessor expression to decide whether #include_next works.
-@@ -3834,7 +3834,7 @@ getopt-cdefs.h: getopt-cdefs.in.h $(top_builddir)/conf
- 	mv -f $@-t $@
+@@ -4553,7 +4553,7 @@ fcntl.h: fcntl.in.h $(top_builddir)/config.status $(CX
+ @GL_GENERATE_GETOPT_CDEFS_H_FALSE@	rm -f $@
  
  # No need to install libgettextlib.a, except on AIX.
 -install-exec-local: install-libLTLIBRARIES install-exec-clean

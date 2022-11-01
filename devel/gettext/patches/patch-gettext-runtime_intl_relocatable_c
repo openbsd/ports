@@ -1,7 +1,7 @@
 Index: gettext-runtime/intl/relocatable.c
 --- gettext-runtime/intl/relocatable.c.orig
 +++ gettext-runtime/intl/relocatable.c
-@@ -515,13 +515,17 @@ relocate (const char *pathname)
+@@ -524,13 +524,17 @@ relocate (const char *pathname)
        if (pathname[orig_prefix_len] == '\0')
          {
            /* pathname equals orig_prefix.  */
@@ -21,7 +21,7 @@ Index: gettext-runtime/intl/relocatable.c
                return result;
              }
          }
-@@ -529,15 +533,19 @@ relocate (const char *pathname)
+@@ -538,15 +542,19 @@ relocate (const char *pathname)
          {
            /* pathname starts with orig_prefix.  */
            const char *pathname_tail = &pathname[orig_prefix_len];
