@@ -46,7 +46,7 @@ Index: installer/core_install.py
              'pil':              (False, ['scan'], PIL_STR, self.check_pil, DEPENDENCY_RUN_TIME, '-', 'FUNC#get_pil_version', GENERALDEP),
              #'imutils':          (True, ['scan'], IMUTILS_STR, self.check_imutils, DEPENDENCY_RUN_TIME, '-', None, GENERALDEP),
              # Optional fax packages
-@@ -960,7 +960,7 @@ class CoreInstall(object):
+@@ -884,7 +884,7 @@ class CoreInstall(object):
          return check_tool('gcc --version', 0) and check_tool('g++ --version', 0)
  
      def check_make(self):
@@ -55,7 +55,7 @@ Index: installer/core_install.py
         
      #def check_pkgconf(self):
          #return check_tool('pkgconf --version', 0)
-@@ -971,14 +971,14 @@ class CoreInstall(object):
+@@ -895,14 +895,14 @@ class CoreInstall(object):
              if not check_lib('libusb'):
                  return False
              if self.distro_name != "rhel":
@@ -72,7 +72,7 @@ Index: installer/core_install.py
              else:
                  return True
  
-@@ -992,10 +992,10 @@ class CoreInstall(object):
+@@ -916,10 +916,10 @@ class CoreInstall(object):
          return check_lib("libjpeg") and check_file("jpeglib.h")
  
      def check_libcrypto(self):
@@ -85,7 +85,7 @@ Index: installer/core_install.py
  
      def check_libnetsnmp(self):
          return check_lib("libnetsnmp") and check_file("net-snmp-config.h")
-@@ -1035,7 +1035,7 @@ class CoreInstall(object):
+@@ -959,7 +959,7 @@ class CoreInstall(object):
          return check_lib('libsane')
  
      def check_sane_devel(self):
@@ -94,7 +94,7 @@ Index: installer/core_install.py
  
      def check_xsane(self):
          if os.getenv('DISPLAY'):
-@@ -1110,7 +1110,7 @@ class CoreInstall(object):
+@@ -1034,7 +1034,7 @@ class CoreInstall(object):
              return False
  
      def check_python_devel(self):
@@ -103,7 +103,7 @@ Index: installer/core_install.py
          Found = False
          for p in dir_list:
              if check_file('Python.h', dir=p):
-@@ -1162,13 +1162,8 @@ class CoreInstall(object):
+@@ -1086,13 +1086,8 @@ class CoreInstall(object):
              return False
  
      def check_dbus(self):
@@ -119,7 +119,7 @@ Index: installer/core_install.py
  
      def check_cups_devel(self):
          return check_file('cups.h') and bool(utils.which('lpr'))
-@@ -1183,11 +1178,11 @@ class CoreInstall(object):
+@@ -1107,11 +1102,11 @@ class CoreInstall(object):
              return True
  
      def check_cups_image(self):
@@ -133,7 +133,7 @@ Index: installer/core_install.py
  
      def check_libtool(self):
          log.debug("Checking for libtool...")
-@@ -1254,7 +1249,7 @@ class CoreInstall(object):
+@@ -1178,7 +1173,7 @@ class CoreInstall(object):
      def check_cupsddk(self):
          log.debug("Checking for cups-ddk...")
          # TODO: Compute these paths some way or another...
@@ -142,7 +142,7 @@ Index: installer/core_install.py
  
      def check_libavahi_dev(self):
          log.debug("Checking for libavahi-dev")
-@@ -1309,7 +1304,7 @@ class CoreInstall(object):
+@@ -1233,7 +1228,7 @@ class CoreInstall(object):
  
      def check_hpaio(self):
          found = False
@@ -151,7 +151,7 @@ Index: installer/core_install.py
              log.debug("'Checking for hpaio' in '%s'..." % path)
              try:
                  f = open(path, 'r')
-@@ -1338,13 +1333,13 @@ class CoreInstall(object):
+@@ -1262,13 +1257,13 @@ class CoreInstall(object):
          if pat.match(home_dir) is not None:
              usrlib_dir = pat.match(home_dir).group(1) + "lib/"
              if os.path.exists(usrlib_dir + 'sane/libsane-hpaio.so.1'):
@@ -169,7 +169,7 @@ Index: installer/core_install.py
                      log.debug("cmd=%s" % cmd)
                      utils.run(cmd, self.passwordObj)
                  else:
-@@ -1357,20 +1352,20 @@ class CoreInstall(object):
+@@ -1281,20 +1276,20 @@ class CoreInstall(object):
                      f.close()
  
                  if not found:
@@ -195,7 +195,7 @@ Index: installer/core_install.py
                      cmd = self.passwordObj.getAuthCmd() % cmd
                      log.debug("cmd=%s" % cmd)
                      utils.run(cmd, self.passwordObj)
-@@ -1836,11 +1831,14 @@ class CoreInstall(object):
+@@ -1760,11 +1755,14 @@ class CoreInstall(object):
          return num_opt_missing
  
      def check_wget(self):
@@ -214,7 +214,7 @@ Index: installer/core_install.py
  
      def check_avahi_utils(self):
          if utils.which("avahi-browse"):
-@@ -1966,7 +1964,7 @@ class CoreInstall(object):
+@@ -1890,7 +1888,7 @@ class CoreInstall(object):
          cmds = []
          if self.get_distro_ver_data('fix_ppd_symlink', False, distro_ver):
              cmds.append(self.passwordObj.getAuthCmd() %

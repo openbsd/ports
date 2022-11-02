@@ -7,7 +7,7 @@ COMMENT-hpcups=		HP native CUPS driver
 COMMENT-hpijs=		HP ghostscript driver (spooler independent)
 COMMENT-gui=		HPLIP graphical tools
 
-V=			3.22.6
+V=			3.22.10
 DISTNAME=		hplip-${V}
 SUBST_VARS=		V
 
@@ -15,8 +15,6 @@ SUBST_VARS=		V
 MASTER_SITES0=		https://src.fedoraproject.org/rpms/hplip/raw/rawhide/f/
 PATCHFILES=		0026-Call-QMessageBox-constructors-of-PyQT5-with-the-corr.patch:0
 PATCH_DIST_STRIP=	-p1
-MASTER_SITES1=		https://src.fedoraproject.org/rpms/hplip/raw/b2f875a7674e3bb5e14291d1abe9f6484cc256ec/f/
-PATCHFILES +=		hplip-fab-import.patch:1
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-common=		hplip-common-${V}
@@ -24,8 +22,6 @@ PKGNAME-hpaio=		hpaio-${V}
 PKGNAME-hpcups=		hpcups-${V}
 PKGNAME-hpijs=		hpijs-${V}
 PKGNAME-gui=		hplip-gui-${V}
-
-REVISION-main=		0
 
 SHARED_LIBS +=  hpdiscovery          0.0      # 0.1
 SHARED_LIBS +=  hpmud                2.0      # 0.6
@@ -85,7 +81,7 @@ RUN_DEPENDS-main +=	print/cups
 ### -common
 WANTLIB-common += ${cWANTLIB} netsnmp usb-1.0 avahi-client
 WANTLIB-common += avahi-common avahi-core dbus-1 iconv intl
-WANTLIB-common += execinfo
+WANTLIB-common += execinfo ssl
 
 LIB_DEPENDS-common= 	devel/libusb1 \
 			net/avahi,-libs \
@@ -120,7 +116,7 @@ RUN_DEPENDS-hpcups=	# empty
 ### -hpijs
 WANTLIB-hpijs += ${cWANTLIB} hpip usb-1.0 hpdiscovery avahi-core
 WANTLIB-hpijs += c jpeg netsnmp ${COMPILER_LIBCXX} dbus-1 hpmud
-WANTLIB-hpijs += avahi-client avahi-common iconv intl execinfo
+WANTLIB-hpijs += avahi-client avahi-common iconv intl execinfo ssl
 
 LIB_DEPENDS-hpijs=	print/hplip,-common \
 			graphics/jpeg \

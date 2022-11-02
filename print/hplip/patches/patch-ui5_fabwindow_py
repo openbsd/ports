@@ -1,0 +1,14 @@
+https://bugs.launchpad.net/hplip/+bug/1914743
+
+Index: ui5/fabwindow.py
+--- ui5/fabwindow.py.orig
++++ ui5/fabwindow.py
+@@ -518,7 +518,7 @@ class FABWindow(QMainWindow,  Ui_MainWindow):
+                          self.__tr("Import fax addresses from LDIF or vCard"),
+                          #user_conf.workingDirectory(),
+                          self.user_settings.working_dir,
+-                         "vCard (*.vcf);;LDIF (*.ldif *.ldi)"))
++                         "vCard (*.vcf);;LDIF (*.ldif *.ldi)")[0])
+         result = (eval(result)[0])
+         if result:
+             working_directory = to_unicode(os.path.dirname(result))
