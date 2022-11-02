@@ -31,10 +31,17 @@ MAKE_CCARGS+=	-DUSE_SASL_AUTH
 MAKE_CCARGS+=	-DNO_EAI
 MAKE_AUXLIBS+=	-lsqlite3 -pthread
 
-WANTLIB+=	c pcre2-8 pthread sqlite3
+WANTLIB+=	c pthread sqlite3
 
-LIB_DEPENDS+=	databases/sqlite3 \
-		devel/pcre2
+LIB_DEPENDS+=	databases/sqlite3
+
+.if ${VERSION:M3.5*}
+WANTLIB+=	pcre
+LIB_DEPENDS+=	devel/pcre
+.else
+WANTLIB+=	pcre2-8
+LIB_DEPENDS+=	devel/pcre2
+.endif
 
 ALL_TARGET=	default
 
