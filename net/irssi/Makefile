@@ -6,7 +6,7 @@ MULTI_PACKAGES = -main -otr
 COMMENT-main =	modular IRC client with many features
 COMMENT-otr =	OTR (off-the-record) plugin for irssi
 
-V =		1.4.2
+V =		1.4.3
 DISTNAME =	irssi-$V
 PKGSPEC-main =	irssi-=$V
 PKGNAME-main =	irssi-$V
