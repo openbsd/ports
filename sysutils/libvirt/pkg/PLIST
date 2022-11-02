@@ -3,6 +3,7 @@
 @bin bin/virt-host-validate
 @bin bin/virt-pki-query-dn
 bin/virt-pki-validate
+bin/virt-qemu-qmp-proxy
 @bin bin/virt-qemu-run
 @bin bin/virt-ssh-helper
 bin/virt-xml-validate
@@ -53,6 +54,7 @@ libexec/libvirt-guests.sh
 @man man/man1/virt-host-validate.1
 @man man/man1/virt-pki-query-dn.1
 @man man/man1/virt-pki-validate.1
+@man man/man1/virt-qemu-qmp-proxy.1
 @man man/man1/virt-qemu-run.1
 @man man/man1/virt-xml-validate.1
 @man man/man7/virkeycode-atset1.7
@@ -377,6 +379,7 @@ share/doc/libvirt/html/manpages/virt-host-validate.html
 share/doc/libvirt/html/manpages/virt-login-shell.html
 share/doc/libvirt/html/manpages/virt-pki-query-dn.html
 share/doc/libvirt/html/manpages/virt-pki-validate.html
+share/doc/libvirt/html/manpages/virt-qemu-qmp-proxy.html
 share/doc/libvirt/html/manpages/virt-qemu-run.html
 share/doc/libvirt/html/manpages/virt-sanlock-cleanup.html
 share/doc/libvirt/html/manpages/virt-ssh-helper.html
@@ -468,6 +471,9 @@ share/libvirt/cpu_map/
 share/libvirt/cpu_map/arm_FT-2000plus.xml
 share/libvirt/cpu_map/arm_Falkor.xml
 share/libvirt/cpu_map/arm_Kunpeng-920.xml
+share/libvirt/cpu_map/arm_Neoverse-N1.xml
+share/libvirt/cpu_map/arm_Neoverse-N2.xml
+share/libvirt/cpu_map/arm_Neoverse-V1.xml
 share/libvirt/cpu_map/arm_Tengyun-S2500.xml
 share/libvirt/cpu_map/arm_ThunderX299xx.xml
 share/libvirt/cpu_map/arm_a64fx.xml
@@ -587,6 +593,7 @@ share/locale/fi/LC_MESSAGES/libvirt.mo
 share/locale/fr/LC_MESSAGES/libvirt.mo
 share/locale/gu/LC_MESSAGES/libvirt.mo
 share/locale/hi/LC_MESSAGES/libvirt.mo
+share/locale/hr/LC_MESSAGES/libvirt.mo
 share/locale/hu/LC_MESSAGES/libvirt.mo
 share/locale/id/LC_MESSAGES/libvirt.mo
 share/locale/it/LC_MESSAGES/libvirt.mo
