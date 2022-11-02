@@ -1,7 +1,6 @@
 COMMENT =	open network for secure, decentralized communication
 
-MODPY_EGG_VERSION =	1.68.0
-REVISION =	0
+MODPY_EGG_VERSION =	1.70.1
 
 GH_ACCOUNT =	matrix-org
 GH_PROJECT =	synapse
@@ -75,5 +74,7 @@ TEST_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH} \
 do-configure:
 	@${MODCARGO_configure}
 
+# to generate rust modules.inc:
+#  make modcargo-gen-crates and modcargo-gen-crates-licenses
 .include "modules.inc"
 .include <bsd.port.mk>
