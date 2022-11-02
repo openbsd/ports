@@ -1,23 +1,19 @@
-find our php-config-${PHP_VERSION}
+fix Examples/guile/multivalue & multimap regress tests
+
+ld: error: unknown argument '-I/usr/local/include'
+ld: error: unknown argument '-pthread'
+ld: error: unknown argument '-pthread'
+ld: error: unable to find library -lm
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -9924,14 +9924,14 @@ done
-       { $as_echo "$as_me:${as_lineno-$LINENO}: checking for PHP header files" >&5
- $as_echo_n "checking for PHP header files... " >&6; }
-             case $PHP in
--        *7.*)
--          PHPCONFIG=`echo "$PHP"|sed 's/7\...*$/-config&/'` ;;
-+        *8.*)
-+          PHPCONFIG=`echo "$PHP"|sed 's/\(-8\..\)/-config\1/'` ;;
-         *)
-           PHPCONFIG=$PHP-config ;;
-       esac
-       php_version=`$PHPCONFIG --version 2>/dev/null`
-       case $php_version in
--      7.*)
-+      8.*)
-         PHPINC=`$PHPCONFIG --includes 2>/dev/null`
-         if test -n "$PHPINC"; then
-           { $as_echo "$as_me:${as_lineno-$LINENO}: result: $PHPINC" >&5
+@@ -6648,7 +6648,7 @@ then
+ 	*-*-linux*) LDSHARED="\$(CC) -shared";;
+ 	*-*-dgux*) LDSHARED="ld -G";;
+ 	*-*-freebsd3*) LDSHARED="\$(CC) -shared";;
+-	*-*-freebsd* | *-*-openbsd*) LDSHARED="ld -Bshareable";;
++	*-*-freebsd* | *-*-openbsd*) LDSHARED="cc -shared";;
+ 	*-*-netbsd*)
+ 		if [ "`\$(CC) -dM -E - </dev/null | grep __ELF__`" != "" ]
+ 		then

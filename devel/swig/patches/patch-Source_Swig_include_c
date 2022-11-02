@@ -1,7 +1,7 @@
 Index: Source/Swig/include.c
 --- Source/Swig/include.c.orig
 +++ Source/Swig/include.c
-@@ -291,7 +291,6 @@ int Swig_insert_file(const_String_or_char_ptr filename
+@@ -287,7 +287,6 @@ int Swig_insert_file(const_String_or_char_ptr filename
    while ((nbytes = Read(f, buffer, 4096)) > 0) {
      Write(outfile, buffer, nbytes);
    }

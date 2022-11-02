@@ -1,0 +1,23 @@
+adapt for our pthread_set_name_np which returns void.
+
+Index: Examples/test-suite/director_thread.i
+--- Examples/test-suite/director_thread.i.orig
++++ Examples/test-suite/director_thread.i
+@@ -22,6 +22,7 @@
+ #include <process.h>
+ #else
+ #include <pthread.h>
++#include <pthread_np.h>
+ #include <errno.h>
+ #include <stdio.h>
+ #include <signal.h>
+@@ -112,7 +113,8 @@ extern "C" {
+ %#ifdef __APPLE__
+       int setname = pthread_setname_np("MyThreadName");
+ %#else
+-      int setname = pthread_setname_np(pthread_self(), "MyThreadName");
++      int setname = 0;
++      pthread_set_name_np(pthread_self(), "MyThreadName");
+ %#endif
+ 
+       if (setname != 0) {
