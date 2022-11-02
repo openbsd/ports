@@ -1,0 +1,6 @@
+Mojo::SQLite is a tiny wrapper around DBD::SQLite that makes SQLite
+<https://www.sqlite.org/> a lot of fun to use with the Mojolicious
+<https://mojolico.us> real-time web framework. Use all SQL features
+<http://sqlite.org/lang.html> SQLite has to offer, generate CRUD
+queries from data structures, and manage your database schema with
+migrations.

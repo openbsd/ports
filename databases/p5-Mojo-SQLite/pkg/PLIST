@@ -1,0 +1,13 @@
+${P5SITE}/Mojo/SQLite/
+${P5SITE}/Mojo/SQLite.pm
+${P5SITE}/Mojo/SQLite/Database.pm
+${P5SITE}/Mojo/SQLite/Migrations.pm
+${P5SITE}/Mojo/SQLite/PubSub.pm
+${P5SITE}/Mojo/SQLite/Results.pm
+${P5SITE}/Mojo/SQLite/Transaction.pm
+@man man/man3p/Mojo::SQLite.3p
+@man man/man3p/Mojo::SQLite::Database.3p
+@man man/man3p/Mojo::SQLite::Migrations.3p
+@man man/man3p/Mojo::SQLite::PubSub.3p
+@man man/man3p/Mojo::SQLite::Results.3p
+@man man/man3p/Mojo::SQLite::Transaction.3p

@@ -1,0 +1,2 @@
+${P5SITE}/SQL/Abstract/Pg.pm
+@man man/man3p/SQL::Abstract::Pg.3p
