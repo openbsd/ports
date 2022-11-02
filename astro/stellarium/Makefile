@@ -2,9 +2,8 @@ USE_WXNEEDED=		Yes
 
 COMMENT=		free open source planetarium
 
-GH_TAGNAME=		v1.1
-GH_ACCOUNT=		Stellarium
-GH_PROJECT=		stellarium
+V=			1.1.1
+DISTNAME=		stellarium-${V}
 
 CATEGORIES=		astro x11
 
@@ -20,6 +19,9 @@ WANTLIB += Qt5Gui Qt5Multimedia Qt5MultimediaWidgets Qt5Network
 WANTLIB += Qt5OpenGL Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels
 WANTLIB += Qt5Quick Qt5Script Qt5SerialPort Qt5WebChannel Qt5WebEngineCore
 WANTLIB += Qt5WebEngineWidgets Qt5Widgets c gps m z
+
+MASTER_SITES=		https://github.com/Stellarium/stellarium/releases/download/v${V:R}/
+WRKDIST=		${WRKDIR}/stellarium-${V:R}
 
 MODULES=		devel/cmake \
 			lang/python \
