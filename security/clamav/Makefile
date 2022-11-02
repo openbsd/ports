@@ -1,6 +1,7 @@
 COMMENT=	virus scanner
-DISTNAME=	clamav-0.105.1
-REVISION=	1
+DISTNAME=	clamav-0.105.1-2
+PKGNAME=	clamav-0.105.1pl2
+WRKDIST=	${WRKDIR}/clamav-0.105.1
 
 CATEGORIES=	security
 
