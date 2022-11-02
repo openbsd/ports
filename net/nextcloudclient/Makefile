@@ -4,6 +4,7 @@ COMMENT =	desktop sync client for Nextcloud
 
 V =		3.6.1
 DISTNAME =	nextcloudclient-${V}
+REVISION =	0
 
 GH_ACCOUNT =	nextcloud
 GH_PROJECT =	desktop
@@ -43,7 +44,8 @@ BUILD_DEPENDS +=	devel/cmocka
 RUN_DEPENDS =		devel/desktop-file-utils \
 			misc/shared-mime-info \
 			x11/gtk+3,-guic \
-			x11/qt5/qtgraphicaleffects
+			x11/qt5/qtgraphicaleffects \
+			x11/qt5/qtquickcontrols
 
 LIB_DEPENDS =		databases/sqlite3 \
 			devel/libinotify \
