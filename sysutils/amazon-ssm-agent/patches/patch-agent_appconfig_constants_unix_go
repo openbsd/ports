@@ -23,7 +23,7 @@ Index: agent/appconfig/constants_unix.go
  
  	// UpdaterArtifactsRoot represents the directory for storing update related information
  	UpdaterArtifactsRoot = AgentData + "update/"
-@@ -113,9 +113,9 @@ var (
+@@ -116,9 +116,9 @@ var (
  var PowerShellPluginCommandName string
  
  // DefaultProgramFolder is the default folder for SSM
@@ -35,7 +35,7 @@ Index: agent/appconfig/constants_unix.go
  var DefaultSSMAgentBinaryPath = defaultWorkerPath + "amazon-ssm-agent"
  var DefaultSSMAgentWorker = defaultWorkerPath + "ssm-agent-worker"
  var DefaultDocumentWorker = defaultWorkerPath + "ssm-document-worker"
-@@ -137,9 +137,9 @@ func init() {
+@@ -140,9 +140,9 @@ func init() {
  	/*
  	   Powershell command used to be poweshell in alpha versions, now it's pwsh in prod versions
  	*/

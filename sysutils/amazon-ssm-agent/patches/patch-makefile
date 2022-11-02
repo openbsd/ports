@@ -1,7 +1,7 @@
 Index: makefile
 --- makefile.orig
 +++ makefile
-@@ -17,14 +17,15 @@ export GO_SPACE
+@@ -18,14 +18,15 @@ export GO_SPACE
  
  checkstyle::
  #   Run checkstyle script
@@ -19,7 +19,7 @@ Index: makefile
  
  prepack:: cpy-plugins copy-win-dep prepack-linux prepack-linux-arm64 prepack-linux-386 prepack-windows prepack-windows-386
  
-@@ -42,6 +43,8 @@ finalize:: build-tests copy-package-dep
+@@ -43,6 +44,8 @@ finalize:: build-tests copy-package-dep
  dev-build-linux: clean quick-integtest checkstyle pre-release build-linux
  .PHONY: dev-build-freebsd
  dev-build-freebsd: clean quick-integtest checkstyle pre-release build-freebsd
@@ -28,7 +28,7 @@ Index: makefile
  .PHONY: dev-build-windows
  dev-build-windows: clean quick-integtest checkstyle pre-release build-windows
  .PHONY: dev-build-linux-386
-@@ -150,6 +153,12 @@ build-freebsd: GOARCH=amd64
+@@ -158,6 +161,12 @@ build-freebsd: GOARCH=amd64
  build-freebsd: GOOS=freebsd
  build-freebsd: GO_BUILD=$(GO_BUILD_NOPIE)
  build-freebsd: build-any-amd64-freebsd
