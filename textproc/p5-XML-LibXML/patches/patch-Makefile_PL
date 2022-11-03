@@ -22,14 +22,23 @@ Index: Makefile.PL
    "Config" => 0,
    "ExtUtils::MakeMaker" => 0,
  );
-@@ -71,7 +68,9 @@ my %prereqs = (
- my %xsbuild = (
+@@ -68,15 +65,13 @@ my %prereqs = (
+   "warnings" => 0,
+ );
+ 
+-my %xsbuild_concat = (
++my %xsbuild = (
    DEFINE  => '-DHAVE_UTF8',
    OBJECT  => '$(O_FILES)',
--  Alien::Base::Wrapper->mm_args,
 +  CCFLAGS => $Config{ccflags} .
 +	' -I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2',
 +  LIBS    => '-L${LOCALBASE}/lib -lxml2',
  );
+-my %xsbuild = Alien::Base::Wrapper->mm_args;  # Might contain a definition of DEFINE, must thus concatenate.
+-while (my ($k, $v) = each %xsbuild_concat) {
+-  my $base_val = $xsbuild{$k};
+-  $xsbuild{$k} = (defined($base_val) ? ($base_val . ' ' . $v) : $v);
+-}
  
  my %WriteMakefileArgs = (
+   "NAME" => "XML::LibXML",
