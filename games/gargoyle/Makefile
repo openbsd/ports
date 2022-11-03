@@ -16,7 +16,10 @@ PERMIT_PACKAGE = Yes
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Widgets SDL2 SDL2_mixer
 WANTLIB += c fontconfig freetype glib-2.0 intl jpeg m png speechd z
 
-COMPILER =	base-clang ports-gcc
+# ports-gcc fails:
+# ld: error: undefined symbol: std::filesystem::__cxx11::path::_M_split_cmpts()
+#COMPILER =	base-clang ports-gcc
+COMPILER =	base-clang
 
 MODULES =	devel/cmake \
 		x11/qt5
