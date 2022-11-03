@@ -21,6 +21,9 @@ ${P5SITE}/Devel/AssertOS/Extending.pod
 ${P5SITE}/Devel/AssertOS/FreeBSD.pm
 ${P5SITE}/Devel/AssertOS/GNUkFreeBSD.pm
 ${P5SITE}/Devel/AssertOS/HPUX.pm
+${P5SITE}/Devel/AssertOS/HWCapabilities/
+${P5SITE}/Devel/AssertOS/HWCapabilities/Int32.pm
+${P5SITE}/Devel/AssertOS/HWCapabilities/Int64.pm
 ${P5SITE}/Devel/AssertOS/Haiku.pm
 ${P5SITE}/Devel/AssertOS/Hurd.pm
 ${P5SITE}/Devel/AssertOS/Interix.pm
@@ -115,6 +118,8 @@ ${P5SITE}/Devel/CheckOS/Families.pod
 @man man/man3p/Devel::AssertOS::FreeBSD.3p
 @man man/man3p/Devel::AssertOS::GNUkFreeBSD.3p
 @man man/man3p/Devel::AssertOS::HPUX.3p
+@man man/man3p/Devel::AssertOS::HWCapabilities::Int32.3p
+@man man/man3p/Devel::AssertOS::HWCapabilities::Int64.3p
 @man man/man3p/Devel::AssertOS::Haiku.3p
 @man man/man3p/Devel::AssertOS::Hurd.3p
 @man man/man3p/Devel::AssertOS::Interix.3p
