@@ -1,0 +1,18 @@
+Index: modcargo-crates/jmap-client-0.1.0/src/client.rs
+--- modcargo-crates/jmap-client-0.1.0/src/client.rs.orig
++++ modcargo-crates/jmap-client-0.1.0/src/client.rs
+@@ -244,7 +244,14 @@ impl ClientBuilder {
+                             attempt.error("Too many redirects.")
+                         } else if matches!( attempt.url().host_str(), Some(host) if trusted_hosts_.contains(host) )
+                         {
++                        #[cfg(feature = "follow-trusted")]
++                        {
+                             attempt.follow_trusted()
++                        }
++                        #[cfg(not(feature = "follow-trusted"))]
++                        {
++                            attempt.follow()
++                        }
+                         } else {
+                             let message = format!(
+                                 "Aborting redirect request to unknown host '{}'.",
