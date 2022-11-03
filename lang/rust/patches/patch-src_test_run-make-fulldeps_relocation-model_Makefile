@@ -2,7 +2,7 @@ Index: src/test/run-make-fulldeps/relocation-model/Makefile
 --- src/test/run-make-fulldeps/relocation-model/Makefile.orig
 +++ src/test/run-make-fulldeps/relocation-model/Makefile
 @@ -1,5 +1,9 @@
- -include ../tools.mk
+ include ../tools.mk
  
 +ifeq ($(UNAME),OpenBSD)
 +skip:

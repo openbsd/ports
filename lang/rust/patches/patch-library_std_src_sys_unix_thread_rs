@@ -3,7 +3,7 @@ The stack is immutable, and the kernel good enough to have a stack guard page.
 Index: library/std/src/sys/unix/thread.rs
 --- library/std/src/sys/unix/thread.rs.orig
 +++ library/std/src/sys/unix/thread.rs
-@@ -761,6 +761,16 @@ pub mod guard {
+@@ -785,6 +785,16 @@ pub mod guard {
              const GUARD_PAGES: usize = 1;
              let guard = guardaddr..guardaddr + GUARD_PAGES * page_size;
              Some(guard)
