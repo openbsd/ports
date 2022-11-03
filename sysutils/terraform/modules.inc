@@ -115,7 +115,7 @@ MODGO_MODULES =	\
 	github.com/hashicorp/consul/api					 v1.9.1 \
 	github.com/hashicorp/consul/sdk					 v0.8.0 \
 	github.com/hashicorp/errwrap					 v1.1.0 \
-	github.com/hashicorp/go-azure-helpers				 v0.31.1 \
+	github.com/hashicorp/go-azure-helpers				 v0.43.0 \
 	github.com/hashicorp/go-checkpoint				 v0.5.0 \
 	github.com/hashicorp/go-cleanhttp				 v0.5.2 \
 	github.com/hashicorp/go-cty					 v1.4.1-0.20200414143053-d3edf31b6320 \
@@ -234,7 +234,7 @@ MODGO_MODULES =	\
 	github.com/xanzy/ssh-agent					 v0.3.1 \
 	github.com/xlab/treeprint					 v0.0.0-20161029104018-1d6e34225557 \
 	github.com/yuin/goldmark					 v1.4.1 \
-	github.com/zclconf/go-cty					 v1.11.1 \
+	github.com/zclconf/go-cty					 v1.12.0 \
 	github.com/zclconf/go-cty-debug					 v0.0.0-20191215020915-b22d67c1ba0b \
 	github.com/zclconf/go-cty-yaml					 v1.0.2 \
 	go.opencensus.io						 v0.23.0 \

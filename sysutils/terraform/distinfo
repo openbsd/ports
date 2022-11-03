@@ -373,8 +373,8 @@ SHA256 (go_modules/github.com/hashicorp/errwrap/@v/v1.0.0.mod) = k5heEa9A5jAfJdf
 SHA256 (go_modules/github.com/hashicorp/errwrap/@v/v1.1.0.mod) = k5heEa9A5jAfJdf4PMQDLS1tIvM4ruJ3RxqJNkxwCyk=
 SHA256 (go_modules/github.com/hashicorp/errwrap/@v/v1.1.0.zip) = IJrpm8A5RD4o5Na7ZlF9F1bZRot1eNMfG2OigQPY4Yw=
 SHA256 (go_modules/github.com/hashicorp/go-azure-helpers/@v/v0.12.0.mod) = 90dvSQxth+Floa/9jpVZ1xKlmLU2DrW/qM0N2r0oVn4=
-SHA256 (go_modules/github.com/hashicorp/go-azure-helpers/@v/v0.31.1.mod) = DP1YtRXmFEqah59pUYKuaHBsVan2Kq6vzsVyGaxLQ5E=
-SHA256 (go_modules/github.com/hashicorp/go-azure-helpers/@v/v0.31.1.zip) = OJf9DsYsXgVstFmGzKSuqn/01S6FuD322n6ynnn84Y4=
+SHA256 (go_modules/github.com/hashicorp/go-azure-helpers/@v/v0.43.0.mod) = 1CMmeoWMtcii8GRQNQzE26KuNDJ/5beP4z5SjmhIcic=
+SHA256 (go_modules/github.com/hashicorp/go-azure-helpers/@v/v0.43.0.zip) = 6sZ0GlXqj52Q1liiFFqmpH4/AF+KmecIspsV7JBXzGQ=
 SHA256 (go_modules/github.com/hashicorp/go-checkpoint/@v/v0.5.0.mod) = BgHsRfOX3Sw4D29rzWdkIinR9iFpDLMUPDe0JeePLyE=
 SHA256 (go_modules/github.com/hashicorp/go-checkpoint/@v/v0.5.0.zip) = G69jAQJx1sirwPTtyenUFIPLVSGOTjmcpMcO8iVBXzY=
 SHA256 (go_modules/github.com/hashicorp/go-cleanhttp/@v/v0.5.0.mod) = Ow708ZiEPkyaaPdLRW2a4lxOtQmMPlJmWxkVMXbAgN8=
@@ -699,8 +699,8 @@ SHA256 (go_modules/github.com/zclconf/go-cty-yaml/@v/v1.0.2.mod) = RxHTl0Pc7hyX+
 SHA256 (go_modules/github.com/zclconf/go-cty-yaml/@v/v1.0.2.zip) = eAuZvqTXCghMnjuPzjS3JRO2+Sdff4+GQX5l9Olj6u0=
 SHA256 (go_modules/github.com/zclconf/go-cty/@v/v1.0.0.mod) = GX5I510+0r6IJ+SFbEHFp8BV+hJT0AkHYL3O8ktNE5M=
 SHA256 (go_modules/github.com/zclconf/go-cty/@v/v1.1.0.mod) = GX5I510+0r6IJ+SFbEHFp8BV+hJT0AkHYL3O8ktNE5M=
-SHA256 (go_modules/github.com/zclconf/go-cty/@v/v1.11.1.mod) = +l0Ju/FrPaAoIaX83ZaBuC/FhkuIkr+CEKJhnOAQu8s=
-SHA256 (go_modules/github.com/zclconf/go-cty/@v/v1.11.1.zip) = SGMAexHiKU3MCysQ6QGaQC5Pz9OTxHvgFxJcqjBvdmA=
+SHA256 (go_modules/github.com/zclconf/go-cty/@v/v1.12.0.mod) = +l0Ju/FrPaAoIaX83ZaBuC/FhkuIkr+CEKJhnOAQu8s=
+SHA256 (go_modules/github.com/zclconf/go-cty/@v/v1.12.0.zip) = 7Nog7VuEQqzvXh3Ez3o0Y493qaIoiLjTab9ZHDAJqnw=
 SHA256 (go_modules/github.com/zclconf/go-cty/@v/v1.2.0.mod) = N3olwwoP5QJJQSY8gOCHFMHuyHp60aiU3mIdVZUaSls=
 SHA256 (go_modules/github.com/zclconf/go-cty/@v/v1.8.0.mod) = 7L1mA5NbOFHNk2KhPVkN81FOheXSdN/QNj4JSh4pz+Y=
 SHA256 (go_modules/github.com/zclconf/go-cty/@v/v1.8.4.mod) = 7L1mA5NbOFHNk2KhPVkN81FOheXSdN/QNj4JSh4pz+Y=
@@ -1183,7 +1183,7 @@ SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.2.1.mod) = MZI3y2a
 SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.2.1.zip) = 9L7QuayfT9ekxDVbSACgzs8kQ0ISmRJM7oZtb4J54Lc=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.mod) = 8ikTVRI4fWZj4fCZmkkiq3CN7UvcgExxzpPj1gK6ld0=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.zip) = Ve0Ixd9EigM79+LCkS1NqoW4VqBchUsMh8zIXH8/v8c=
-SHA256 (terraform-v1.3.3.zip) = xhVMq0auwfJKV0YBESReQqMZM4kPlJCCYIyQ2DInYwk=
+SHA256 (terraform-v1.3.4.zip) = k0whrOHRDzKhh5+4ATJE48Orj01qCGXZP5SxtQZGbB0=
 SIZE (go_modules/cloud.google.com/go/@v/v0.26.0.mod) = 27
 SIZE (go_modules/cloud.google.com/go/@v/v0.34.0.mod) = 27
 SIZE (go_modules/cloud.google.com/go/@v/v0.38.0.mod) = 1006
@@ -1559,8 +1559,8 @@ SIZE (go_modules/github.com/hashicorp/errwrap/@v/v1.0.0.mod) = 36
 SIZE (go_modules/github.com/hashicorp/errwrap/@v/v1.1.0.mod) = 36
 SIZE (go_modules/github.com/hashicorp/errwrap/@v/v1.1.0.zip) = 9497
 SIZE (go_modules/github.com/hashicorp/go-azure-helpers/@v/v0.12.0.mod) = 553
-SIZE (go_modules/github.com/hashicorp/go-azure-helpers/@v/v0.31.1.mod) = 2476
-SIZE (go_modules/github.com/hashicorp/go-azure-helpers/@v/v0.31.1.zip) = 151101
+SIZE (go_modules/github.com/hashicorp/go-azure-helpers/@v/v0.43.0.mod) = 2476
+SIZE (go_modules/github.com/hashicorp/go-azure-helpers/@v/v0.43.0.zip) = 205291
 SIZE (go_modules/github.com/hashicorp/go-checkpoint/@v/v0.5.0.mod) = 134
 SIZE (go_modules/github.com/hashicorp/go-checkpoint/@v/v0.5.0.zip) = 15916
 SIZE (go_modules/github.com/hashicorp/go-cleanhttp/@v/v0.5.0.mod) = 41
@@ -1885,8 +1885,8 @@ SIZE (go_modules/github.com/zclconf/go-cty-yaml/@v/v1.0.2.mod) = 80
 SIZE (go_modules/github.com/zclconf/go-cty-yaml/@v/v1.0.2.zip) = 68523
 SIZE (go_modules/github.com/zclconf/go-cty/@v/v1.0.0.mod) = 568
 SIZE (go_modules/github.com/zclconf/go-cty/@v/v1.1.0.mod) = 568
-SIZE (go_modules/github.com/zclconf/go-cty/@v/v1.11.1.mod) = 433
-SIZE (go_modules/github.com/zclconf/go-cty/@v/v1.11.1.zip) = 271851
+SIZE (go_modules/github.com/zclconf/go-cty/@v/v1.12.0.mod) = 433
+SIZE (go_modules/github.com/zclconf/go-cty/@v/v1.12.0.zip) = 278386
 SIZE (go_modules/github.com/zclconf/go-cty/@v/v1.2.0.mod) = 601
 SIZE (go_modules/github.com/zclconf/go-cty/@v/v1.8.0.mod) = 207
 SIZE (go_modules/github.com/zclconf/go-cty/@v/v1.8.4.mod) = 207
@@ -2369,4 +2369,4 @@ SIZE (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.2.1.mod) = 346
 SIZE (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.2.1.zip) = 239376
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.mod) = 106
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.zip) = 20937
-SIZE (terraform-v1.3.3.zip) = 6305216
+SIZE (terraform-v1.3.4.zip) = 6311779
