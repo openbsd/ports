@@ -234,6 +234,7 @@
      SUBDIR += spambayes
      SUBDIR += spampd
      SUBDIR += sqlgrey
+     SUBDIR += stalwart
      SUBDIR += swaks
      SUBDIR += sylpheed
      SUBDIR += sympa
