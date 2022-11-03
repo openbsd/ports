@@ -117,7 +117,7 @@ CONFIGURE_ARGS+=	--localstatedir=/var \
 			--with-pjproject-bundled
 CONFIGURE_ENV+=		PJPROJECT_CONFIGURE_OPTS="--disable-bcg729 --disable-vpx"
 MAKE_ENV=		LOCALBASE="${LOCALBASE}"
-.if defined(LLD_EMUL)
+.if ${LLD_EMUL} != ""
 MAKE_ENV+=		LLD_EMUL="-Wl,${LLD_EMUL}"
 .endif
 
