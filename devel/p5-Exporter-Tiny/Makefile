@@ -1,6 +1,6 @@
 COMMENT =	exporter with the features of Sub::Exporter
 
-DISTNAME =	Exporter-Tiny-1.004002
+DISTNAME =	Exporter-Tiny-1.004004
 
 CATEGORIES =	devel
 
