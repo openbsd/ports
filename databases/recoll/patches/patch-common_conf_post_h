@@ -1,0 +1,19 @@
+ports-gcc doesn't have features.h so this fails; ports-gcc is newer than 6.0 anyway
+
+Index: common/conf_post.h
+--- common/conf_post.h.orig
++++ common/conf_post.h
+@@ -73,11 +73,13 @@ typedef int ssize_t;
+ #define REAL_GCC   __GNUC__ // probably
+ #endif
+ 
++#if 0
+ #ifdef REAL_GCC
+ // Older gcc versions pretended to supply std::regex, but the resulting programs mostly crashed.
+ #include <features.h>
+ #if ! __GNUC_PREREQ(6,0)
+ #define NO_STD_REGEX 1
++#endif
+ #endif
+ #endif
+ 
