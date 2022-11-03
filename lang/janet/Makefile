@@ -3,7 +3,7 @@ CATEGORIES =	lang
 
 GH_ACCOUNT =	janet-lang
 GH_PROJECT =	janet
-GH_TAGNAME =	v1.25.0
+GH_TAGNAME =	v1.25.1
 
 SHARED_LIBS +=	janet		8.0 # 1.20
 

@@ -4,7 +4,7 @@ Fix installation.
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -27,13 +27,13 @@ PREFIX?=/usr/local
+@@ -28,13 +28,13 @@ JANETCONF_HEADER?=src/conf/janetconf.h
  INCLUDEDIR?=$(PREFIX)/include
  BINDIR?=$(PREFIX)/bin
  LIBDIR?=$(PREFIX)/lib
@@ -20,7 +20,7 @@ Index: Makefile
  JANET_PKG_CONFIG_PATH?=$(LIBDIR)/pkgconfig
  JANET_DIST_DIR?=janet-dist
  JPM_TAG?=master
-@@ -283,7 +283,7 @@ install: $(JANET_TARGET) $(JANET_LIBRARY) $(JANET_STAT
+@@ -284,7 +284,7 @@ install: $(JANET_TARGET) $(JANET_LIBRARY) $(JANET_STAT
  	cp $(JANET_TARGET) '$(DESTDIR)$(BINDIR)/janet'
  	mkdir -p '$(DESTDIR)$(INCLUDEDIR)/janet'
  	cp -r build/janet.h '$(DESTDIR)$(INCLUDEDIR)/janet'
@@ -29,7 +29,7 @@ Index: Makefile
  	mkdir -p '$(DESTDIR)$(JANET_PATH)'
  	mkdir -p '$(DESTDIR)$(LIBDIR)'
  	if test $(UNAME) = Darwin ; then \
-@@ -291,16 +291,13 @@ install: $(JANET_TARGET) $(JANET_LIBRARY) $(JANET_STAT
+@@ -292,16 +292,13 @@ install: $(JANET_TARGET) $(JANET_LIBRARY) $(JANET_STAT
  		ln -sf $(SONAME) '$(DESTDIR)$(LIBDIR)/libjanet.dylib' ; \
  		ln -sf libjanet.$(shell $(JANET_TARGET) -e '(print janet/version)').dylib $(DESTDIR)$(LIBDIR)/$(SONAME) ; \
  	else \
