@@ -20,11 +20,11 @@ lib/python${MODPY_VERSION}/site-packages/recoll/rclconfig.py
 lib/python${MODPY_VERSION}/site-packages/recoll/rclextract.py
 lib/python${MODPY_VERSION}/site-packages/recoll/recoll.py
 lib/recoll/
-@lib lib/recoll/${RECOLL_LIB}
+@so lib/recoll/librecoll-${MODPY_EGG_VERSION}.so
 @static-lib lib/recoll/librecoll.a
 lib/recoll/librecoll.la
-@lib lib/recoll/librecoll.so.${LIBrecoll_VERSION}
-@man man/man1/recoll.1
+@so lib/recoll/librecoll.so
+@man man/man1/rclgrep.1
 @man man/man1/recollindex.1
 @man man/man1/recollq.1
 @man man/man1/xadump.1

@@ -1,16 +1,7 @@
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -869,7 +869,7 @@ AM_YFLAGS = -d
- # after the recoll version (e.g librecoll-1.27.1.so)
- # -version-info $(VERSION_INFO) would handle ABI compat issues, we don't
- # need it
--librecoll_la_LDFLAGS = -release $(VERSION) -no-undefined @NO_UNDEF_LINK_FLAG@
-+librecoll_la_LDFLAGS = -release $(VERSION) -version-info 0:0 -no-undefined @NO_UNDEF_LINK_FLAG@
- librecoll_la_LIBADD = $(XSLT_LIBS) $(LIBXAPIAN) $(LIBICONV) $(X_LIBX11) $(LIBTHREADS)
- recollindex_SOURCES = \
-     index/checkindexed.cpp \
-@@ -2801,16 +2801,12 @@ PicStatic: $(librecoll_la_OBJECTS)
+@@ -2802,16 +2802,12 @@ PicStatic: $(librecoll_la_OBJECTS)
  @MAKEPYTHON_TRUE@clean-local:: recollpython-clean
  @MAKEPYTHON_TRUE@recollpython: librecoll.la
  @MAKEPYTHON_TRUE@	(cd python/recoll; set -x; \
@@ -29,22 +20,20 @@ Index: Makefile.in
  @MAKEPYTHON_TRUE@         )
  @MAKEPYTHON_TRUE@recollpython-clean:
  @MAKEPYTHON_TRUE@	rm -f python/recoll/*.pyc
-@@ -2826,16 +2822,12 @@ PicStatic: $(librecoll_la_OBJECTS)
+@@ -2827,14 +2823,11 @@ PicStatic: $(librecoll_la_OBJECTS)
  @MAKEPYTHONCHM_TRUE@clean-local:: rclpychm-clean
  @MAKEPYTHONCHM_TRUE@rclpychm:
  @MAKEPYTHONCHM_TRUE@	(cd python/pychm; set -x; \
--@MAKEPYTHONCHM_TRUE@        for v in 2 3;do \
+-@MAKEPYTHONCHM_TRUE@        for v in 3;do \
 -@MAKEPYTHONCHM_TRUE@        test -n "`which python$${v}`" && python$${v} setup.py build;\
 -@MAKEPYTHONCHM_TRUE@        done \
-+@MAKEPYTHONCHM_TRUE@        ${MODPY_BIN} setup.py build;\
++@MAKEPYTHONCHM_TRUE@        ${MODPY_BIN} setup.py build \
  @MAKEPYTHONCHM_TRUE@        )
  @MAKEPYTHONCHM_TRUE@rclpychm-install:
  @MAKEPYTHONCHM_TRUE@	(cd python/pychm; set -x; \
--@MAKEPYTHONCHM_TRUE@        for v in 2 3;do test -n "`which python$${v}`" && \
+-@MAKEPYTHONCHM_TRUE@        for v in 3;do test -n "`which python$${v}`" && \
 -@MAKEPYTHONCHM_TRUE@        python$${v} setup.py install \
 +@MAKEPYTHONCHM_TRUE@        ${MODPY_BIN} setup.py install \
  @MAKEPYTHONCHM_TRUE@         --prefix=${prefix} --root=$${DESTDIR:-/} $(OPTSFORPYTHON); \
--@MAKEPYTHONCHM_TRUE@        done \
+ @MAKEPYTHONCHM_TRUE@        done \
  @MAKEPYTHONCHM_TRUE@        )
- @MAKEPYTHONCHM_TRUE@rclpychm-clean:
- @MAKEPYTHONCHM_TRUE@	rm -rf python/pychm/build

@@ -1,4 +1,6 @@
+@conflict recoll-<1.33.1
 @bin bin/recoll
+@man man/man1/recoll.1
 share/applications/recoll-searchgui.desktop
 share/icons/hicolor/48x48/apps/recoll.png
 share/metainfo/

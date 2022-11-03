@@ -3,11 +3,8 @@ COMMENT-gui=	X user interface to recoll
 
 MULTI_PACKAGES=	-main -gui
 
-V=		1.32.7
+V=		1.33.1
 DISTNAME=	recoll-${V}
-
-SHARED_LIBS +=	recoll-${V}            1.0 # 0.0
-SHARED_LIBS +=  recoll                 1.0 # 0.0
 
 CATEGORIES=	databases sysutils
 
@@ -24,11 +21,7 @@ COMPILER=	base-clang ports-gcc
 WANTLIB=	${COMPILER_LIBCXX} c iconv m xapian z
 WANTLIB-main=	${WANTLIB} c iconv lzma m xapian xml2 xslt z
 WANTLIB-gui=	${WANTLIB} GL Qt5Core Qt5Gui Qt5Network Qt5PrintSupport \
-		Qt5Widgets Qt5Xml lib/recoll/recoll-${V}
-
-# otherwise dependency check during build fails when updating
-RECOLL_LIB=	librecoll-${V}.so.${LIBrecoll-${V}_VERSION}
-SUBST_VARS+=	RECOLL_LIB
+		Qt5Widgets Qt5Xml
 
 # partially works, but the Qt application doesn't get symbols
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
@@ -53,9 +46,8 @@ RUN_DEPENDS-main=	archivers/unzip \
 			graphics/p5-Image-ExifTool \
 			print/poppler,-utils \
 			textproc/unrtf
-
-LIB_DEPENDS-gui=	${MODQT5_LIB_DEPENDS} \
-			databases/recoll
+RUN_DEPENDS-gui=	${FULLPKGNAME-main}:${FULLPKGPATH-main}
+LIB_DEPENDS-gui=	${MODQT5_LIB_DEPENDS}
 
 CONFIGURE_STYLE=	gnu
 
