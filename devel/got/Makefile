@@ -4,6 +4,7 @@ COMMENT-webd =		game of trees repository fast-cgi server
 
 V =			0.78
 DISTNAME =		got-${V}
+REVISION =		0
 PKGNAME-web =		gotweb-${V}
 PKGNAME-webd =		gotwebd-${V}
 CATEGORIES =		devel
@@ -39,10 +40,5 @@ PREFIX-web =		${VARBASE}/www
 PREFIX-webd =		${VARBASE}/www
 TEST_TARGET =		regress
 FAKE_FLAGS =		MANDIR=${PREFIX}/man/man CHROOT_DIR=${VARBASE}/www
-
-.include <bsd.port.arch.mk>
-.if !${PROPERTIES:Mclang}
-CFLAGS +=	-std=gnu99
-.endif
 
 .include <bsd.port.mk>
