@@ -34,6 +34,13 @@ MODMESON_CONFIGURE_ARGS +=	-Ddisable-utf8proc=yes \
 				-Dwith-perl=yes \
 				-Dwith-proxy=yes
 
+# disable meson's default of using "-Wl,--as-needed" on ld.bfd arches;
+# build failures due to undefined references are often seen.
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mlld}
+MODMESON_CONFIGURE_ARGS +=      -Db_asneeded=false
+.endif
+
 RUN_DEPENDS-otr =	net/irssi,-main
 LIB_DEPENDS-otr =	devel/glib2>=2.28.0 \
 			security/libgcrypt>=1.2.0 \
