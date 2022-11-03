@@ -40,4 +40,9 @@ PREFIX-webd =		${VARBASE}/www
 TEST_TARGET =		regress
 FAKE_FLAGS =		MANDIR=${PREFIX}/man/man CHROOT_DIR=${VARBASE}/www
 
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+CFLAGS +=	-std=gnu99
+.endif
+
 .include <bsd.port.mk>
