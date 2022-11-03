@@ -9,6 +9,8 @@ SHARED_LIBS +=  pcre2-posix               1.0 # 2.3
 
 CATEGORIES =	devel
 
+REVISION =	0
+
 MASTER_SITES =	https://ftp.pcre.org/pub/pcre/ \
 		${MASTER_SITE_SOURCEFORGE:=pcre/} \
 		http://ftp.csx.cam.ac.uk/pub/software/programming/pcre/ \
@@ -27,7 +29,7 @@ LIB_DEPENDS =		archivers/bzip2
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--enable-pcre2-16 \
 			--enable-pcre2-32 \
-			--enable-newline-is-any \
+			--enable-newline-is-anycrlf \
 			--enable-pcre2grep-libz \
 			--enable-pcre2grep-libbz2 \
 			--enable-pcre2test-libreadline
