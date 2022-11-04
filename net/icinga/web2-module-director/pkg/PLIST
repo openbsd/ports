@@ -212,6 +212,8 @@ icinga-web2/modules/director/contrib/windows-agent-installer/Icinga2Agent.psm1
 icinga-web2/modules/director/doc/
 icinga-web2/modules/director/doc/01-Introduction.md
 icinga-web2/modules/director/doc/02-Installation.md
+icinga-web2/modules/director/doc/02-Installation.md.d/
+icinga-web2/modules/director/doc/02-Installation.md.d/From-Source.md
 icinga-web2/modules/director/doc/03-Automation.md
 icinga-web2/modules/director/doc/04-Getting-started.md
 icinga-web2/modules/director/doc/05-Upgrading.md
