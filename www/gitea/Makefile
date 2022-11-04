@@ -1,6 +1,6 @@
 COMMENT =		compact self-hosted Git service
 
-VERSION =		1.17.2
+VERSION =		1.17.3
 DISTNAME =		gitea-src-${VERSION}
 PKGNAME =		gitea-${VERSION}
 
@@ -20,10 +20,10 @@ MODULES =		lang/go
 
 GO_TAGS =		sqlite sqlite_unlock_notify
 MODGO_FLAGS +=		-tags "${GO_TAGS}"
-MODGO_LDFLAGS += -X code.gitea.io/gitea/modules/setting.AppWorkPath=${PREFIX}/share/gitea
+MODGO_LDFLAGS += -X code.gitea.io/gitea/modules/setting.AppWorkPath=${LOCALBASE}/share/gitea
 MODGO_LDFLAGS += -X code.gitea.io/gitea/modules/setting.CustomConf=${SYSCONFDIR}/gitea/app.ini
 MODGO_LDFLAGS += -X code.gitea.io/gitea/modules/setting.CustomPath=${LOCALSTATEDIR}/gitea/custom
-MODGO_LDFLAGS += -X code.gitea.io/gitea/modules/setting.StaticRootPath=${PREFIX}/share/gitea
+MODGO_LDFLAGS += -X code.gitea.io/gitea/modules/setting.StaticRootPath=${LOCALBASE}/share/gitea
 MODGO_LDFLAGS += -X main.Version=${VERSION}
 MODGO_LDFLAGS += -X 'main.Tags=${GO_TAGS}'
 
@@ -38,12 +38,15 @@ pre-configure:
 do-install:
 	${INSTALL_PROGRAM} ${MODGO_WORKSPACE}/bin/gitea ${PREFIX}/sbin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/gitea
-.for _d in custom/conf options public templates
+.for _d in custom/conf options templates
 	cp -Rp ${WRKSRC}/${_d} ${PREFIX}/share/gitea
 .endfor
+	${INSTALL_DATA_DIR} ${WRKINST}${VARBASE}/www/gitea
+	cp -Rp ${WRKSRC}/public ${WRKINST}${VARBASE}/www/gitea
+	ln -s ${VARBASE}/www/gitea/public ${PREFIX}/share/gitea/public
 
 post-install:
-	@find ${WRKINST} -type f \
-		\( -name '*.beforesubst' -o -name '*.orig' \) -delete
+	@find ${WRKINST}/ -type f \
+		\( -name '*.beforesubst' -o -name '*${PATCHORIG}' \) -delete
 
 .include <bsd.port.mk>
