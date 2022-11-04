@@ -20,7 +20,7 @@ HOMEPAGE =	https://cutter.re/
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} KF5SyntaxHighlighting Qt5Core Qt5Gui
-WANTLIB += Qt5Network Qt5Svg Qt5Widgets c cdt cgraph gvc m python3.9
+WANTLIB += Qt5Network Qt5Svg Qt5Widgets c cdt cgraph gvc m ${MODPY_WANTLIB}
 WANTLIB += rz_analysis rz_asm rz_bin rz_bp rz_config rz_cons rz_core
 WANTLIB += rz_crypto rz_debug rz_demangler rz_diff rz_egg rz_flag
 WANTLIB += rz_hash rz_il rz_io rz_lang rz_magic rz_parse rz_reg
