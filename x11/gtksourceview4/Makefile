@@ -3,6 +3,7 @@ COMMENT=		text widget that extends the GTK3 GtkTextView widget
 GNOME_PROJECT=		gtksourceview
 GNOME_VERSION=		4.8.4
 PKGNAME=		${GNOME_PROJECT}4-${GNOME_VERSION}
+REVISION=		0
 
 SHARED_LIBS += gtksourceview-4           0.0 # 0.0.0
 
@@ -11,8 +12,7 @@ CATEGORIES=		x11
 MAJOR_VERSION=		4.0
 SUBST_VARS=		MAJOR_VERSION
 
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
-			Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2/LGPLv2.1
 PERMIT_PACKAGE=	Yes

@@ -2,13 +2,13 @@ COMMENT=		GObject library for handling and rendering XPS documents
 
 GNOME_PROJECT=		libgxps
 GNOME_VERSION=		0.3.2
+REVISION=		0
 
 SHARED_LIBS += gxps                      0.2 # 2.2.4
 
 CATEGORIES=		graphics
 
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
-			Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE=		Yes

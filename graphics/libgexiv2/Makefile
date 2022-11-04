@@ -3,14 +3,13 @@ COMMENT=		GObject wrapper around exiv2
 GNOME_VERSION=		0.14.0
 GNOME_PROJECT=		gexiv2
 PKGNAME=		lib${DISTNAME}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		graphics
 
 SHARED_LIBS += gexiv2                    3.3 # 2.14.0
 
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
-			Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

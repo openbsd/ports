@@ -6,6 +6,8 @@ GNOME_VERSION=		0.56.3
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-valadoc=	valadoc-${GNOME_VERSION}
+REVISION-main=		0
+REVISION-valadoc=	0
 
 # !!! XXX API_V is used by x11/elementary/code
 API_V=			0.56
@@ -14,8 +16,7 @@ SHARED_LIBS +=  valadoc-${API_V}     0.0      # unknown
 
 CATEGORIES=		lang
 
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
-			Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2
 PERMIT_PACKAGE=		Yes

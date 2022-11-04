@@ -3,6 +3,7 @@ COMMENT=		C++ bindings for libxml2
 GNOME_VERSION=		5.0.2
 GNOME_PROJECT=		libxml++
 PKGNAME=		libxml++50-${GNOME_VERSION}
+REVISION=		0
 
 SHARED_LIBS += xml++-5.0                 0.0 # 1.0.0
 
@@ -10,8 +11,7 @@ CATEGORIES=		textproc
 
 HOMEPAGE=		https://libxmlplusplus.github.io/libxmlplusplus/
 
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
-			Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1+
 PERMIT_PACKAGE=		Yes

@@ -2,13 +2,13 @@ COMMENT=		GObject Introspection
 
 GNOME_VERSION=		1.72.1
 GNOME_PROJECT=		gobject-introspection
+REVISION=		0
 
 CATEGORIES=		devel
 
 SHARED_LIBS += girepository-1.0          3.1 # 1.0.0
 
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
-			Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # Library: LGPLv2+
 # Tools: GPLv2+

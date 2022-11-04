@@ -6,13 +6,13 @@ API_V=			2.91
 SUBST_VARS +=		API_V
 
 PKGNAME=		vte3-${GNOME_VERSION}
+REVISION=		0
 
 SHARED_LIBS += vte-2.91                  2.8 # 0.6800.0
 
 CATEGORIES=		devel
 
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
-			Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes

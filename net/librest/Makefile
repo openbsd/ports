@@ -3,15 +3,14 @@ COMMENT =	access web services that claim to be RESTful
 GNOME_VERSION =	0.8.1
 GNOME_PROJECT =	rest
 PKGNAME =	lib${DISTNAME}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	net devel
 
 SHARED_LIBS +=	rest-0.7  	0.3
 SHARED_LIBS +=	rest-extras-0.7 0.0
 
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
-		Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE =	Yes

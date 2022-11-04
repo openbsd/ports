@@ -2,6 +2,7 @@ COMMENT=		VNC viewer widget for GTK
 
 GNOME_PROJECT=		gtk-vnc
 GNOME_VERSION=		1.3.1
+REVISION=		0
 
 SHARED_LIBS += gvnc-1.0                  1.2 # 0.0.1
 SHARED_LIBS += gvncpulse-1.0             0.1 # 0.0.1
@@ -9,8 +10,7 @@ SHARED_LIBS += gtk-vnc-2.0               1.2 # 0.0.2
 
 CATEGORIES=		x11 net
 
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
-			Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE=		Yes

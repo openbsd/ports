@@ -2,7 +2,7 @@ COMMENT=		unified backend for PIM programs
 
 GNOME_PROJECT=		evolution-data-server
 GNOME_VERSION=		3.44.4
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		databases productivity
 
@@ -16,8 +16,7 @@ SHARED_LIBS +=  ebook-1.2            23.5
 SHARED_LIBS +=  ecal-2.0             0.5
 SHARED_LIBS +=  edata-cal-2.0        0.5
 
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
-		Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2
 PERMIT_PACKAGE=		Yes

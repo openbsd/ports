@@ -2,13 +2,13 @@ COMMENT=		GObject based collection library
 
 GNOME_PROJECT=		libgee
 GNOME_VERSION=		0.20.6
+REVISION=		0
 
 SHARED_LIBS +=  gee-0.8              3.1      # 8.1
 
 CATEGORIES=		devel
 
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
-			Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes

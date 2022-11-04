@@ -2,14 +2,14 @@ COMMENT=	gobject-based plugins engine
 
 GNOME_PROJECT=	libpeas
 GNOME_VERSION=	1.32.0
+REVISION=	0
 
 CATEGORIES=	devel
 
 SHARED_LIBS += peas-1.0                  400.3 # 0.3200.0
 SHARED_LIBS += peas-gtk-1.0              400.3 # 0.3200.0
 
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
-		Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2
 PERMIT_PACKAGE=	Yes

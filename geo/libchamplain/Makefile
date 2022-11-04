@@ -3,6 +3,7 @@ COMMENT=	library to provide a GTK+ widget to display maps
 GNOME_PROJECT=	libchamplain
 GNOME_VERSION=	0.12.20
 API_VERSION=	0.12
+REVISION=	0
 
 SHARED_LIBS +=  champlain-${API_VERSION}       2.0      # 11.10
 SHARED_LIBS +=  champlain-gtk-${API_VERSION}   2.0      # 11.10
@@ -11,8 +12,7 @@ SUBST_VARS+=	API_VERSION
 
 CATEGORIES=	geo devel
 
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
-		Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes

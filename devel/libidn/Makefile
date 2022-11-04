@@ -1,6 +1,7 @@
 COMMENT=		internationalized string handling
 
 DISTNAME=		libidn-1.41
+REVISION=		0
 
 SHARED_LIBS +=  idn                  18.0     # 18.4
 
@@ -8,8 +9,7 @@ CATEGORIES=		devel
 
 HOMEPAGE=		https://www.gnu.org/software/libidn/
 
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
-			Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE=	Yes

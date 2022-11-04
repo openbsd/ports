@@ -5,14 +5,13 @@ GH_PROJECT =		libpwquality
 GH_ACCOUNT =		libpwquality
 GH_TAGNAME =		libpwquality-${MODPY_EGG_VERSION}
 DISTNAME =		libpwquality-${MODPY_EGG_VERSION}
-REVISION =		3
+REVISION =		4
 
 SHARED_LIBS +=  pwquality            1.0      # 1.2
 
 CATEGORIES =		security
 
-MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
-			Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER =		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
