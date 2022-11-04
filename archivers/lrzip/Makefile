@@ -3,6 +3,7 @@ COMMENT =	compression utility for large files
 GH_ACCOUNT =	ckolivas
 GH_PROJECT =	lrzip
 GH_TAGNAME =	v0.651
+REVISION =	0
 
 CATEGORIES =	archivers
 
