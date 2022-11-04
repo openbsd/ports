@@ -1,6 +1,6 @@
 COMMENT =	JSON output from a shell
 
-V =		1.7
+V =		1.9
 DISTNAME =	jo-$V
 
 CATEGORIES =	textproc
