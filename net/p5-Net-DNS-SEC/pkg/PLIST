@@ -6,7 +6,6 @@ ${P5ARCH}/Net/DNS/SEC/
 ${P5ARCH}/Net/DNS/SEC.pm
 ${P5ARCH}/Net/DNS/SEC/DSA.pm
 ${P5ARCH}/Net/DNS/SEC/Digest.pm
-${P5ARCH}/Net/DNS/SEC/ECCGOST.pm
 ${P5ARCH}/Net/DNS/SEC/ECDSA.pm
 ${P5ARCH}/Net/DNS/SEC/EdDSA.pm
 ${P5ARCH}/Net/DNS/SEC/Keyset.pm
@@ -21,7 +20,6 @@ ${P5ARCH}/auto/Net/DNS/SEC/
 @man man/man3p/Net::DNS::SEC.3p
 @man man/man3p/Net::DNS::SEC::DSA.3p
 @man man/man3p/Net::DNS::SEC::Digest.3p
-@man man/man3p/Net::DNS::SEC::ECCGOST.3p
 @man man/man3p/Net::DNS::SEC::ECDSA.3p
 @man man/man3p/Net::DNS::SEC::EdDSA.3p
 @man man/man3p/Net::DNS::SEC::Keyset.3p
