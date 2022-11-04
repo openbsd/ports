@@ -6,6 +6,7 @@ COMMENT=		next generation GNOME shell
 # major upgrade
 GNOME_PROJECT=		gnome-shell
 GNOME_VERSION=		42.5
+REVISION=		0
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes

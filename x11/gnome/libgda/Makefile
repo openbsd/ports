@@ -8,11 +8,12 @@ GNOME_VERSION=		6.0.0
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}
+REVISION-pgsql=		0
 
 EPOCH-main=		2
 EPOCH-pgsql=		0
 
-REVISION-main=		0
+REVISION-main=		1
 
 CATEGORIES=		databases
 

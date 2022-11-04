@@ -2,6 +2,7 @@ COMMENT=		GnuPG extension for nautilus(1)
 
 GNOME_PROJECT=		seahorse-nautilus
 GNOME_VERSION=		3.11.92.1
+REVISION=		0
 
 # override gnome MODULE
 COMMIT=			b26a42b8b294b334aff27fdb0c3f80b7f12ba904

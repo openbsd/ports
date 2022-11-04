@@ -3,6 +3,7 @@ COMMENT=		python bindings for at-spi2
 GNOME_PROJECT=		pyatspi
 GNOME_VERSION=		2.38.2
 PKGNAME=		py-atspi-${GNOME_VERSION}
+REVISION=		0
 
 HOMEPAGE=		https://wiki.linuxfoundation.org/en/AT-SPI_on_D-Bus
 

@@ -4,7 +4,7 @@ COMMENT=	base icon theme for GNOME
 
 GNOME_PROJECT=	gnome-icon-theme
 GNOME_VERSION=	3.12.0
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	x11
 

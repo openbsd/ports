@@ -2,7 +2,7 @@ COMMENT=		extra themes for GNOME applications
 
 GNOME_PROJECT=		gnome-themes-extra
 GNOME_VERSION=		3.28
-REVISION=		3
+REVISION=		4
 
 # LGPLv2.1
 PERMIT_PACKAGE=		Yes

@@ -3,6 +3,7 @@ COMMENT=		DMAP client and server library
 GNOME_PROJECT=		libdmapsharing
 GNOME_VERSION=		3.9.10
 PKGNAME=		${GNOME_PROJECT}4-${GNOME_VERSION}
+REVISION=		0
 
 # override gnome MODULE
 MASTER_SITES=		https://www.flyn.org/projects/libdmapsharing/

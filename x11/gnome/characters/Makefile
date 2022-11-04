@@ -2,7 +2,7 @@ COMMENT =		GNOME utility to insert unusual characters
 
 GNOME_PROJECT =		gnome-characters
 GNOME_VERSION =		42.0
-REVISION =		0
+REVISION =		1
 
 # BSD3/GPLv2
 PERMIT_PACKAGE =	Yes

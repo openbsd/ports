@@ -2,7 +2,7 @@ COMMENT=		simple task management application
 
 GNOME_PROJECT=		gnome-todo
 GNOME_VERSION=		41.0
-REVISION=		1
+REVISION=		2
 
 # GPLv3+
 PERMIT_PACKAGE=		Yes

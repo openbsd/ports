@@ -3,6 +3,7 @@ COMMENT=		tracker miners and metadata extractors
 GNOME_PROJECT=		tracker-miners
 GNOME_VERSION=		3.4.1
 PKGNAME=		tracker3-miners-${GNOME_VERSION}
+REVISION=		0
 
 # LGPLv2.1+ - GPLv2+
 PERMIT_PACKAGE=		Yes

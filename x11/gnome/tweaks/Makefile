@@ -3,6 +3,7 @@ COMMENT=		customize advanced GNOME 3 options
 GNOME_PROJECT=		gnome-tweaks
 GNOME_VERSION=		42.beta
 PKGNAME=		${GNOME_PROJECT}-${GNOME_VERSION:S/.//}
+REVISION=		0
 
 CATEGORIES=		sysutils
 

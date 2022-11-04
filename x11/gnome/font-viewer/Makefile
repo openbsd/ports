@@ -2,6 +2,7 @@ COMMENT=		font viewer for GNOME
 
 GNOME_PROJECT=		gnome-font-viewer
 GNOME_VERSION=		42.0
+REVISION=		0
 
 # GPLv2
 PERMIT_PACKAGE=		Yes

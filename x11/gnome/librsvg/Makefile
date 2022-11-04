@@ -15,7 +15,7 @@ DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 ### stable
 .if ${PROPERTIES:Mrust}
-REVISION=		0
+REVISION=		1
 SHARED_LIBS +=  rsvg-2               41.0     # 50.0
 GNOME_VERSION=		${STABLE_VERSION}
 MODULES +=		lang/python
@@ -31,7 +31,7 @@ MAKE_FLAGS +=		V=1
 WANTLIB += ${COMPILER_LIBCXX} Xau Xdmcp cairo-gobject jpeg
 .else
 ### old
-REVISION=		3
+REVISION=		4
 SHARED_LIBS +=  rsvg-2               38.2     # 42.20
 GNOME_VERSION=		${OLD_VERSION}
 PATCH_LIST=		old-patch-*

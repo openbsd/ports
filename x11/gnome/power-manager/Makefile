@@ -2,6 +2,7 @@ COMMENT=		GNOME power manager
 
 GNOME_PROJECT=		gnome-power-manager
 GNOME_VERSION=		3.32.0
+REVISION=		0
 
 # LGPLv2
 PERMIT_PACKAGE=		Yes

@@ -1,6 +1,7 @@
 COMMENT-main=		common API for various GNOME modules (GTK3)
 COMMENT-gtk4=		common API for various GNOME modules (GTK4)
 COMMENT-common=		common API for various GNOME modules (common files)
+REVISION-main=		0
 
 GNOME_PROJECT=		gnome-desktop
 # sync with meta/gnome "V" variable
@@ -8,6 +9,8 @@ GNOME_VERSION=		42.6
 
 PKGNAME-gtk4=		gnome-desktop4-${GNOME_VERSION}
 PKGNAME-common=		gnome-desktop-common-${GNOME_VERSION}
+REVISION-common=	0
+REVISION-gtk4=		0
 
 SHARED_LIBS += gnome-desktop-4           0.0 # 1.2.4
 SHARED_LIBS += gnome-bg-4                0.0 # 1.2.4

@@ -4,6 +4,7 @@ COMMENT=		utilities to manage documentation for Yelp and the web
 
 GNOME_PROJECT=		yelp-tools
 GNOME_VERSION=		42.1
+REVISION=		0
 
 # GPLv2
 PERMIT_PACKAGE=		Yes

@@ -2,6 +2,7 @@ COMMENT=		implementation of the FreeDesktop Desktop Menu Spec
 
 GNOME_PROJECT=		gnome-menus
 GNOME_VERSION=		3.36.0
+REVISION=		0
 
 SHARED_LIBS +=  gnome-menu-3         0.0      # 0.1
 

@@ -7,8 +7,8 @@ GNOME_VERSION=		0.4.21
 PKGNAME-main=		caribou-${GNOME_VERSION}
 PKGNAME-gtk2=		caribou-gtk2-${GNOME_VERSION}
 
-REVISION-main=		9
-REVISION-gtk2=		1
+REVISION-main=		10
+REVISION-gtk2=		2
 
 SHARED_LIBS +=  caribou              0.0      # 0.0
 

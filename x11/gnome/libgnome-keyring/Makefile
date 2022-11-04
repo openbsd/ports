@@ -2,7 +2,7 @@ COMMENT=	library for gnome keyring integration
 
 GNOME_PROJECT=	libgnome-keyring
 GNOME_VERSION=	3.12.0
-REVISION=	9
+REVISION=	10
 
 SHARED_LIBS +=  gnome-keyring        7.0      # 2.0
 

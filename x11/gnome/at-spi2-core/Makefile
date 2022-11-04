@@ -2,6 +2,7 @@ COMMENT=		service interface for assistive technologies
 
 GNOME_PROJECT=		at-spi2-core
 GNOME_VERSION=		2.44.1
+REVISION=		0
 
 SHARED_LIBS += atspi                     1.0 # 0.0.1
 

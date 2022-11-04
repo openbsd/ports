@@ -2,7 +2,7 @@ COMMENT=		access, organize and share your photos on GNOME
 
 GNOME_PROJECT=		gnome-photos
 GNOME_VERSION=		42.0
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		graphics
 

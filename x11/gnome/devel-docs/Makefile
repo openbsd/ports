@@ -4,6 +4,7 @@ COMMENT=		developer documentation for GNOME
 
 GNOME_PROJECT=		gnome-devel-docs
 GNOME_VERSION=		40.3
+REVISION=		0
 
 # GPLv2
 PERMIT_PACKAGE=		Yes

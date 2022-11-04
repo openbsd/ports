@@ -2,6 +2,7 @@ COMMENT=		companion library to GObject and Gtk+
 
 GNOME_PROJECT=		libdazzle
 GNOME_VERSION=		3.44.0
+REVISION=		0
 
 SHARED_LIBS += dazzle-1.0                1.2 # 0
 

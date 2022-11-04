@@ -2,7 +2,7 @@ COMMENT=	interface components for OpenPGP
 
 GNOME_PROJECT=	libcryptui
 GNOME_VERSION=	3.12.2
-REVISION=	11
+REVISION=	12
 
 SHARED_LIBS +=  cryptui              2.0      # 0.0
 

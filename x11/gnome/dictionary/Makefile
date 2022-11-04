@@ -2,7 +2,7 @@ COMMENT=		GNOME dictionary application
 
 GNOME_PROJECT=		gnome-dictionary
 GNOME_VERSION=		40.0
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  gdict-1.0            9.1      # 10.0
 

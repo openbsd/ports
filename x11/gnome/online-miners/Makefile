@@ -2,7 +2,7 @@ COMMENT=		crawls through your online content
 
 GNOME_PROJECT=		gnome-online-miners
 GNOME_VERSION=		3.34.0
-REVISION=		3
+REVISION=		4
 
 # tracker3 support
 # https://gitlab.gnome.org/GNOME/gnome-online-miners/-/merge_requests/3

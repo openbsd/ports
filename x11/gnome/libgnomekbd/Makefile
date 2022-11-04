@@ -2,6 +2,7 @@ COMMENT=		keyboard configuration library
 
 GNOME_PROJECT=		libgnomekbd
 GNOME_VERSION=		3.28.1
+REVISION=		0
 
 SHARED_LIBS += gnomekbd                  8.0 # 8.0.0
 SHARED_LIBS += gnomekbdui                8.0 # 8.0.0

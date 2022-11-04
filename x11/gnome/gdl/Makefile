@@ -2,7 +2,7 @@ COMMENT=		GNOME Docking Library
 
 GNOME_PROJECT=		gdl
 GNOME_VERSION=		3.40.0
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  gdl-3                3.1      # 5.9
 

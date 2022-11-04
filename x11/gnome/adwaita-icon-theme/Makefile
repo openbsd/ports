@@ -4,6 +4,7 @@ COMMENT=		base icon theme for GNOME
 
 GNOME_PROJECT=		adwaita-icon-theme
 GNOME_VERSION=		42.0
+REVISION=		0
 
 CATEGORIES=		x11
 

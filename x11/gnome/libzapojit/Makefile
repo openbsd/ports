@@ -2,7 +2,7 @@ COMMENT=	GLib/GObject wrapper for SkyDrive and Hotmail REST APIs
 
 GNOME_PROJECT=	libzapojit
 GNOME_VERSION=	0.0.3
-REVISION=	5
+REVISION=	6
 
 API_V=		0.0
 SUBST_VARS=	API_V

@@ -3,6 +3,7 @@ COMMENT=		utility library for XKB
 GNOME_PROJECT=		libxklavier
 GNOME_VERSION=		5.4
 EXTRACT_SUFX=		.tar.bz2
+REVISION=		0
 
 SHARED_LIBS +=  xklavier             17.1     # .20.0
 

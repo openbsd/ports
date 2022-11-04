@@ -2,6 +2,7 @@ COMMENT=	GNOME terminal
 
 GNOME_PROJECT=	gnome-terminal
 GNOME_VERSION=	3.44.1
+REVISION=	0
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes

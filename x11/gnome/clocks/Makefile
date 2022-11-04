@@ -2,7 +2,7 @@ COMMENT=		clock application for GNOME
 
 GNOME_PROJECT=		gnome-clocks
 GNOME_VERSION=		42.0
-REVISION=		0
+REVISION=		1
 
 # GPLv2
 PERMIT_PACKAGE=		Yes

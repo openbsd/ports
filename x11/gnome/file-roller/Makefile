@@ -2,6 +2,7 @@ COMMENT=	archive manager utility for GNOME
 
 GNOME_PROJECT=	file-roller
 GNOME_VERSION=	3.42.0
+REVISION=	0
 
 CATEGORIES=	archivers
 

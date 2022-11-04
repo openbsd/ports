@@ -3,6 +3,7 @@ COMMENT=		GObject library for Facebook Graph API
 GNOME_PROJECT=		gfbgraph
 GNOME_VERSION=		0.2.5
 PKGNAME=		lib${GNOME_PROJECT}-${GNOME_VERSION}
+REVISION=		0
 
 SHARED_LIBS +=  gfbgraph-0.2         1.0      # unknown
 

@@ -10,6 +10,7 @@ COMMENT=		password agent for the GNOME project
 
 GNOME_PROJECT=		gnome-keyring
 GNOME_VERSION=		42.1
+REVISION=		0
 
 # GPLv2/LGPLv2
 PERMIT_PACKAGE=		Yes
