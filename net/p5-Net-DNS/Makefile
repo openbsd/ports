@@ -1,6 +1,6 @@
 COMMENT =	perl interface to the domain name system
 
-DISTNAME =	Net-DNS-1.34
+DISTNAME =	Net-DNS-1.35
 SUPDISTFILES =	${DISTFILES}.asc
 
 CATEGORIES =	net
@@ -19,7 +19,7 @@ RUN_DEPENDS =		security/p5-Digest-HMAC>=1.03
 TEST_DEPENDS =		devel/p5-Test-Pod>=1.45 \
 			net/p5-Net-DNS-SEC>=1.01 \
 			net/p5-Net-LibIDN>=0.12 \
-			security/p5-Digest-BubbleBabble>=0.01
+			security/p5-Digest-BubbleBabble>=0.02
 
 CONFIGURE_ARGS =	--noonline-tests
 
