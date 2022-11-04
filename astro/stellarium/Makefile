@@ -1,3 +1,5 @@
+PORTROACH=		skipv:1.1
+
 USE_WXNEEDED=		Yes
 
 COMMENT=		free open source planetarium
