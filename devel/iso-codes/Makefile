@@ -4,10 +4,11 @@ V =		4.11.0
 DISTNAME=	iso-codes-v${V}
 PKGNAME =	iso-codes-${V}
 CATEGORIES=	devel
+REVISION =	0
 
 HOMEPAGE=	https://salsa.debian.org/iso-codes-team/iso-codes
 
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes

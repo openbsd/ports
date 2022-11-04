@@ -2,6 +2,7 @@ COMMENT=		library to handle UPnP IGD port mapping
 
 GNOME_PROJECT=		gupnp-igd
 GNOME_VERSION=		1.2.0
+REVISION=		0
 
 SHARED_LIBS +=  gupnp-igd-1.0        1.0      # 4.0
 

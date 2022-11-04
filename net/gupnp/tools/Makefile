@@ -2,6 +2,7 @@ COMMENT=		collection of developer-oriented UPnP tools
 
 GNOME_PROJECT=		gupnp-tools
 GNOME_VERSION=		0.10.3
+REVISION=		0
 
 MODULES=		devel/meson \
 			x11/gnome

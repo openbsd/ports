@@ -2,7 +2,7 @@ CATEGORIES ?=		net devel
 
 HOMEPAGE ?=		https://wiki.gnome.org/Projects/GUPnP
 
-MAINTAINER?=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
+MAINTAINER ?=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2/LGPLv2.1
 PERMIT_PACKAGE?=	Yes

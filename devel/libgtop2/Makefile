@@ -6,13 +6,13 @@ COMMENT=		portable library for obtaining system information
 GNOME_VERSION=		2.40.0
 GNOME_PROJECT=		libgtop
 PKGNAME=		libgtop2-${VERSION}
-REVISION=		2
+REVISION=		3
 
 SHARED_LIBS=		gtop-2.0	10.0	# .10.0
 
 CATEGORIES=		devel
 
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

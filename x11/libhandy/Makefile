@@ -3,12 +3,13 @@ COMMENT =		building blocks for modern adaptive GNOME apps
 GNOME_PROJECT =		libhandy
 GNOME_VERSION =		1.8.0
 CATEGORIES =		x11
+REVISION =		0
 
 API_V =			1
 SUBST_VARS +=		API_V
 SHARED_LIBS += handy-1                   0.3 # 0
 
-MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
+MAINTAINER =		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE =	Yes

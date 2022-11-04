@@ -16,7 +16,7 @@ DIST_SUBDIR=		telepathy
 # BSD/GPL/LGPL
 PERMIT_PACKAGE?=	Yes
 
-MAINTAINER?=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
+MAINTAINER ?=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 USE_GMAKE?=	Yes
 

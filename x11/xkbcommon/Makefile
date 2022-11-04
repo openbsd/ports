@@ -1,6 +1,7 @@
 COMMENT=		library to handle keyboard descriptions
 
 DISTNAME=		libxkbcommon-1.4.1
+REVISION=		0
 
 SHARED_LIBS += xkbcommon                 1.6 # 0.0.0
 SHARED_LIBS += xkbcommon-x11             1.2 # 0.0.0
@@ -10,7 +11,7 @@ CATEGORIES=		x11 inputmethods
 
 HOMEPAGE=		https://xkbcommon.org/
 
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # All licenses are derivative of the MIT/X11 license, mostly identical other
 # than no-endorsement clauses (e.g. paragraph 4 of The Open Group's license).

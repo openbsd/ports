@@ -1,7 +1,7 @@
 COMMENT=		abstraction layer between apps and connection managers
 
 DISTNAME=		telepathy-mission-control-5.16.6
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  mission-control-plugins 3.0      # 5.1
 
