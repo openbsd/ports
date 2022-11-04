@@ -24,12 +24,13 @@ addr 05: 03f0:4812 HP, Officejet 7500 E910
                                                                                 
 # chown <username> /dev/ugen1.* /dev/usb0
 
+You can grant multiple users direct access to the scanner by adding them to the
+_saned group and allowing access to its ugen(4) and usb(4) devices.
+e.g.
+    # chgrp _saned /dev/ugen1.* && chmod 660 /dev/ugen1.* /dev/usb0
+
 To preserve your changes after a system update, use rc.local(8).
 Alternatively, hotplugd(8) attach/detach scripts can automate this.
-
-You can grant multiple users direct access to the scanner by adding them to the
-_saned group and allowing access to its ugen(4) device.
-e.g. chgrp _saned /dev/ugen1.* && chmod 660 /dev/ugen1.*
 
 SCSI
 ====

@@ -53,12 +53,14 @@ addr 05: 03f0:4812 HP, Officejet 7500 E910
 
 # chown _cups /dev/ugen1.* /dev/usb0
 
+For a multi-function device to work for both printing and scanning, the ugen(4)
+and usb(4) devices must be accessible by the _cups user and the _saned group:
+e.g.
+    # chown _cups:_saned /dev/ugen1.* /dev/usb0 &&
+	chmod 660 /dev/ugen1.* /dev/usb0
+
 To preserve your changes after a system update, use rc.local(8).
 Alternatively, hotplugd(8) attach/detach scripts can automate this.
-
-For a multi-function devices to work for both printing and scanning, the ugen(4)
-device must be accessed by both the _cups user and the _saned group:
-e.g. chown _cups:_saned /dev/ugen1.* /dev/usb0 && chmod 660 /dev/ugen1.*
 
 *** WARNING ***
 ulpt(4) needs to be disabled in the kernel (see bsd.re-config(5)) or the printer

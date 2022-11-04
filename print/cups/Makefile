@@ -6,7 +6,7 @@ GH_ACCOUNT=		OpenPrinting
 GH_PROJECT=		cups
 GH_TAGNAME=		v2.4.2
 
-REVISION-main=		0
+REVISION-main=		1
 
 CATEGORIES=		print sysutils
 
