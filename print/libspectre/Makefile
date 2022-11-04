@@ -2,12 +2,11 @@
 
 COMMENT=	library for rendering Postscript documents
 
-DISTNAME=	libspectre-0.2.10
-REVISION=	1
+DISTNAME=	libspectre-0.2.11
 
 CATEGORIES=	print
 
-SHARED_LIBS +=  spectre              1.0      # 2.10
+SHARED_LIBS +=  spectre              1.0      # 2.11
 
 HOMEPAGE=	http://libspectre.freedesktop.org/
 
