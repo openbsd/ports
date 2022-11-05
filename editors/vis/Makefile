@@ -4,7 +4,7 @@ V =			0.8
 DISTNAME =		vis-${V}
 
 TEST_V =		0.5
-SUPDISTNAME =		vis-test-${TEST_V}
+TEST_DISTNAME =		vis-test-${TEST_V}
 
 CATEGORIES =		editors
 
@@ -20,9 +20,8 @@ WANTLIB += c curses iconv intl m termkey tre ${MODLUA_WANTLIB}
 MASTER_SITES =		${HOMEPAGE}/releases/download/v${V}/
 MASTER_SITES0 =		${HOMEPAGE}-test/releases/download/v${TEST_V}/
 
-SUPDISTFILES =		${SUPDISTNAME}.tar.gz:0
-DISTFILES =		${DISTNAME}${EXTRACT_SUFX} ${SUPDISTFILES}
-EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
+DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
+			${TEST_DISTNAME}${EXTRACT_SUFX}:0
 
 MODULES =		lang/lua
 MODLUA_VERSION =	5.3
@@ -44,8 +43,8 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 USE_GMAKE =		Yes
 
 post-extract:
-	${TAR} -xzf ${FULLDISTDIR}/${SUPDISTNAME}.tar.gz \
-	    -C ${WRKSRC} -s /${SUPDISTNAME}/test/
+	rmdir ${WRKSRC}/test
+	mv ${WRKDIR}/${TEST_DISTNAME}/ ${WRKSRC}/test
 
 post-install:
 	cd ${PREFIX} && \
