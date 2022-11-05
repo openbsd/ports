@@ -2,13 +2,13 @@ COMMENT =	UNIX pager optimized for tabular data
 
 GH_ACCOUNT =	okbob
 GH_PROJECT =	pspg
-GH_TAGNAME =	5.5.8
+GH_TAGNAME =	5.5.9
 
 CATEGORIES =	databases
 
 MAINTAINER =	Omar Polo <op@openbsd.org>
 
-#BSD2
+# BSD2
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curses ereadline m panel pq
