@@ -6,7 +6,7 @@ VERSION=		0.29.2
 DISTNAME=		pkg-config-${VERSION}
 PKGNAME=		pkgconfig-${VERSION}
 CATEGORIES=		devel
-REVISION=		1
+REVISION=		2
 
 HOMEPAGE=		https://www.freedesktop.org/software/pkgconfig/
 MASTER_SITES=		https://pkgconfig.freedesktop.org/releases/
@@ -14,7 +14,7 @@ MASTER_SITES=		https://pkgconfig.freedesktop.org/releases/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=  c glib-2.0 iconv intl pcre pthread
+WANTLIB=  c glib-2.0 iconv intl pcre2-8 pthread
 
 LIB_DEPENDS=		devel/glib2
 

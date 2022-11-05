@@ -14,7 +14,7 @@ COMMENT=		cross-platform desktop applications
 
 ECV=			80.0.3987.158
 ELECTRON_V=		8.2.0
-REVISION=		6
+REVISION=		7
 
 DISTFILES+=		chromium-${ECV}${EXTRACT_SUFX} \
 			electron-${ELECTRON_V}_${ECV}${EXTRACT_SUFX}:0 \
@@ -63,7 +63,7 @@ WANTLIB += pangocairo-1.0
 WANTLIB += Xcomposite Xdamage
 WANTLIB += EGL Xau Xdmcp Xinerama Xxf86vm atspi cairo-gobject
 WANTLIB += drm epoxy fontconfig freetype fribidi gmodule-2.0 graphite2
-WANTLIB += gthread-2.0 intl pangoft2-1.0 pcre pixman-1
+WANTLIB += gthread-2.0 intl pangoft2-1.0 pcre2-8 pixman-1
 WANTLIB += plc4 plds4 util xcb-dri2 xcb-glx xcb-render xcb-shm
 WANTLIB += xml2 z
 WANTLIB += harfbuzz 

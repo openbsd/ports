@@ -11,6 +11,11 @@ PKGNAME-bogofilter=	claws-mail-bogofilter-${V}
 PKGNAME-spamassassin=	claws-mail-spamassassin-${V}
 PKGNAME-pdfviewer=	claws-mail-pdfviewer-${V}
 PKGNAME-gdata=		claws-mail-gdata-${V}
+REVISION-bogofilter=	0
+REVISION-gdata=		0
+REVISION-main=		0
+REVISION-pdfviewer=	0
+REVISION-spamassassin=	0
 
 CATEGORIES=		mail news
 
@@ -40,7 +45,7 @@ WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 cairo cairo-gobject
 WANTLIB += crypto curl etpan execinfo expat ffi fontconfig freetype
 WANTLIB += fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += graphite2 gtk-3 harfbuzz iconv intl jpeg m nghttp2 pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png pthread
 WANTLIB += sasl2 ssl xcb xcb-render xcb-shm z epoxy
 WANTLIB += ${COMPILER_LIBCXX}
 

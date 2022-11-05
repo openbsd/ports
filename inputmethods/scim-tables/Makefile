@@ -1,7 +1,7 @@
 COMMENT=	input method data tables for scim
 
 DISTNAME=	scim-tables-0.5.8
-REVISION=	15
+REVISION=	16
 
 CATEGORIES=	inputmethods chinese japanese korean
 
@@ -15,7 +15,7 @@ WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat
 WANTLIB += ffi fontconfig freetype fribidi gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz iconv intl m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png scim-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png scim-1.0
 WANTLIB += scim-gtkutils-1.0 scim-x11utils-1.0 xcb xcb-render
 WANTLIB += xcb-shm z Xau Xdmcp jpeg
 

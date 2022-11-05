@@ -5,7 +5,7 @@ V =		3.1.0
 DISTNAME =	mapnik-v${V}
 PKGNAME =	${DISTNAME:S/v//}
 EXTRACT_SUFX =	.tar.bz2
-REVISION =	4
+REVISION =	5
 
 SHARED_LIBS =	mapnik 4.0 #3.0
 CATEGORIES =	graphics geo
@@ -21,7 +21,7 @@ WANTLIB += X11 Xau Xdmcp Xext Xrender boost_filesystem
 WANTLIB += boost_program_options boost_regex harfbuzz webp
 WANTLIB += boost_system c cairo expat ffi fontconfig freetype
 WANTLIB += gdal glib-2.0 gobject-2.0 icudata icui18n icuuc
-WANTLIB += intl jpeg lzo2 m pcre pixman-1 png>=17.0 pq pthread
+WANTLIB += intl jpeg lzo2 m pcre2-8 pixman-1 png>=17.0 pq pthread
 WANTLIB += sqlite3 tiff xcb xcb-render xcb-shm xml2 z ${COMPILER_LIBCXX}
 
 MASTER_SITES =	https://github.com/mapnik/mapnik/releases/download/v${V}/

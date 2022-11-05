@@ -2,7 +2,7 @@ COMMENT=		tag editor for various audio file formats
 
 GNOME_PROJECT=		easytag
 GNOME_VERSION=		2.4.3
-REVISION=		9
+REVISION=		10
 
 CATEGORIES=		audio
 
@@ -16,7 +16,7 @@ WANTLIB += epoxy execinfo expat ffi fontconfig freetype fribidi
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += graphite2 gtk-3 harfbuzz iconv id3 id3tag intl jpeg
 WANTLIB += m ogg opus opusfile pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png speex tag vorbis vorbisfile wavpack
+WANTLIB += pcre2-8 pixman-1 png speex tag vorbis vorbisfile wavpack
 WANTLIB += xcb xcb-render xcb-shm z
 
 COMPILER =		base-clang ports-gcc base-gcc

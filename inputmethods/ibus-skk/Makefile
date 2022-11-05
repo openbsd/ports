@@ -2,7 +2,7 @@ COMMENT =		japanese skk input engine for ibus
 
 V =			1.4.3
 DISTNAME =		ibus-skk-${V}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		inputmethods japanese
 
@@ -17,7 +17,7 @@ WANTLIB += c cairo cairo-gobject epoxy expat ffi fontconfig freetype
 WANTLIB += fribidi gdk-3 gdk_pixbuf-2.0 gee-0.8 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gtk-3 harfbuzz ibus-1.0
 WANTLIB += iconv intl json-glib-1.0 m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png skk xcb xcb-render xcb-shm
+WANTLIB += pangoft2-1.0 pcre2-8 pixman-1 png skk xcb xcb-render xcb-shm
 WANTLIB += xkbcommon z Xau Xdmcp execinfo jpeg
 
 MASTER_SITES =		https://github.com/ueno/ibus-skk/releases/download/ibus-skk-${V}/

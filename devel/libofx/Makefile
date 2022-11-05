@@ -2,6 +2,7 @@ COMMENT=	opensource implementation of the OFX specification
 
 DISTNAME=	libofx-0.10.7
 CATEGORIES=	devel
+REVISION=	0
 
 HOMEPAGE=	http://libofx.sourceforge.net/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libofx/}
@@ -22,7 +23,7 @@ LIB_DEPENDS=	textproc/opensp \
 		textproc/libxml++
 
 WANTLIB += crypto curl ffi glib-2.0 glibmm-2.4 gmodule-2.0 gobject-2.0
-WANTLIB += lzma nghttp2 pcre sigc-2.0 ssl xml++-2.6 xml2 z
+WANTLIB += lzma nghttp2 pcre2-8 sigc-2.0 ssl xml++-2.6 xml2 z
 
 BUILD_DEPENDS =	devel/help2man
 

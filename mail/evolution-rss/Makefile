@@ -2,7 +2,7 @@ COMMENT=		RSS reader plugin for evolution
 
 GNOME_PROJECT=		evolution-rss
 GNOME_VERSION=		0.3.96
-REVISION=		10
+REVISION=		11
 
 CATEGORIES=		mail
 
@@ -42,7 +42,7 @@ WANTLIB += harfbuzz-icu hyphen ical ical-glib icalss icalvcal
 WANTLIB += iconv icudata icui18n icuuc idn2 intl javascriptcoregtk-4.0
 WANTLIB += jpeg json-glib-1.0 lber lcms2 ldap ltdl lz4 lzma m
 WANTLIB += notify nspr4 nss3 nssutil3 ogg openjp2 orc-0.4 p11-kit
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre phonenumber
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8 phonenumber
 WANTLIB += pixman-1 plc4 plds4 png protobuf psl sasl2 secret-1
 WANTLIB += smime3 soup-2.4 soup-gnome-2.4 sqlite3 ssl ssl3 tasn1
 WANTLIB += unistring vorbis vorbisfile webkit2gtk-4.0 webp webpdemux

@@ -2,6 +2,7 @@ COMMENT=	HEIF and AVIF file format decoder and encoder
 
 V=		1.13.0
 DISTNAME=	libheif-$V
+REVISION=	0
 
 SHARED_LIBS +=  heif                      1.3 # 9.0
 
@@ -14,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} aom c dav1d de265 ffi gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 iconv intl
-WANTLIB += jpeg m pcre png x265 z
+WANTLIB += jpeg m pcre2-8 png x265 z
 
 MASTER_SITES=	https://github.com/strukturag/libheif/releases/download/v$V/
 

@@ -1,7 +1,7 @@
 COMMENT=	GNU Image Manipulation Program
 
 DISTNAME =	gimp-2.10.32
-REVISION =	1
+REVISION =	2
 PKGSPEC =	gimp->=2,<2.99
 
 .for i in gimp gimpbase gimpcolor gimpconfig gimpmath gimpmodule \
@@ -34,7 +34,7 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gs gtk-x11-2.0 harfbuzz heif iconv idn ijs intl jbig2dec
 WANTLIB += jpeg json-c json-glib-1.0 lcms lcms2 lzma m mng mypaint
 WANTLIB += openjp2 pango-1.0 pangocairo-1.0 pangoft2-1.0 paper
-WANTLIB += pcre pixman-1 png poppler poppler-glib rsvg-2 ssl tiff
+WANTLIB += pcre2-8 pixman-1 png poppler poppler-glib rsvg-2 ssl tiff
 WANTLIB += webp webpdemux webpmux wmf-0.2 wmflite-0.2 x265 xcb
 WANTLIB += xcb-render xcb-shm xml2 z zstd
 

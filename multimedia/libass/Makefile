@@ -5,6 +5,7 @@ DISTNAME=	libass-${VER}
 CATEGORIES=	multimedia devel
 MASTER_SITES=	https://github.com/libass/libass/releases/download/${VER}/
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 SHARED_LIBS=	ass	3.1
 
@@ -16,7 +17,7 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB=	${COMPILER_LIBCXX} expat fontconfig freetype fribidi \
-		glib-2.0 graphite2 harfbuzz iconv intl m pcre z
+		glib-2.0 graphite2 harfbuzz iconv intl m pcre2-8 z
 
 COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c

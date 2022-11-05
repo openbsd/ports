@@ -2,9 +2,10 @@ BROKEN-hppa=		linking .libs/python-libpst.o fails
 
 COMMENT-main=		read and convert Microsoft Outlook mail files
 COMMENT-python=		python interface to libpst
+REVISION-main=		0
 
 DISTNAME=		libpst-0.6.76
-REVISION-python=	0
+REVISION-python=	1
 
 SHARED_LIBS +=  pst                  3.0      # 5.17
 
@@ -23,7 +24,7 @@ WANTLIB += m pthread z ${COMPILER_LIBCXX}
 
 WANTLIB-main += ${WANTLIB} iconv intl 
 WANTLIB-main += bz2 c expat ffi fontconfig freetype gd gio-2.0
-WANTLIB-main += glib-2.0 gobject-2.0 gsf-1 jpeg pcre png zstd
+WANTLIB-main += glib-2.0 gobject-2.0 gsf-1 jpeg pcre2-8 png zstd
 WANTLIB-main += tiff webp xml2 z m pthread ${COMPILER_LIBCXX} lzma
 
 WANTLIB-python += ${WANTLIB} iconv

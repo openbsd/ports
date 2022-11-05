@@ -5,6 +5,7 @@ COMMENT =	library to deal with pinyin
 V =		2.3.0
 DISTNAME =	libpinyin-$V
 PKGNAME =	zh-libpinyin-$V
+REVISION =	0
 
 SHARED_LIBS +=	pinyin	0.0	# 13.0
 SHARED_LIBS +=	zhuyin	0.0	# 13.0
@@ -18,7 +19,7 @@ MAINTAINER =	Kevin Lo <kevlo@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB +=	${COMPILER_LIBCXX} c db glib-2.0 iconv intl m pcre
+WANTLIB +=	${COMPILER_LIBCXX} c db glib-2.0 iconv intl m pcre2-8
 
 MASTER_SITES =	https://github.com/libpinyin/libpinyin/releases/download/$V/
 

@@ -7,6 +7,7 @@ GNOME_VERSION=		2.28.7
 
 PKGNAME=		py-gobject-${GNOME_VERSION}
 EPOCH=			0
+REVISION=		0
 
 CATEGORIES=		devel
 
@@ -20,7 +21,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB =  ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += iconv intl pcre pthread z
+WANTLIB += iconv intl pcre2-8 pthread z
 
 MODULES=		lang/python \
 			x11/gnome

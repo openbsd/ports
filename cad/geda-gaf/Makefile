@@ -3,7 +3,7 @@ DISTNAME =		geda-gaf-1.6.0
 CATEGORIES =		cad
 HOMEPAGE =		http://wiki.geda-project.org/geda:gaf
 
-REVISION =		22
+REVISION =		23
 
 SHARED_LIBS = 		geda	0.0	# 38.0
 
@@ -15,7 +15,7 @@ WANTLIB += Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo drm expat ffi
 WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gmp gobject-2.0 graphite2 gthread-2.0
 WANTLIB += gtk-x11-2.0 guile harfbuzz iconv intl ltdl m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread ${COMPILER_LIBCXX}
+WANTLIB += pangoft2-1.0 pcre2-8 pixman-1 png pthread ${COMPILER_LIBCXX}
 WANTLIB += xcb xcb-render xcb-shm z fribidi jpeg
 
 MASTER_SITES =		http://geda.seul.org/release/v1.6/1.6.0/

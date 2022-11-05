@@ -1,7 +1,7 @@
 COMMENT=		tools to edit/modify/encode video streams
 
 DISTNAME=		mjpegtools-2.0.0
-REVISION=		11
+REVISION=		12
 CATEGORIES=		multimedia
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mjpeg/}
 
@@ -22,7 +22,7 @@ WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo dv expat
 WANTLIB += ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz iconv intl jpeg m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png pthread
 WANTLIB += sndio usbhid xcb xcb-render xcb-shm z fribidi Xau Xdmcp
 WANTLIB += ${COMPILER_LIBCXX} 
 

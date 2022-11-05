@@ -1,7 +1,7 @@
 COMMENT =		lightweight mapping application for use with or without GPS
 
 DISTNAME =		foxtrotgps-1.2.2
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		geo x11
 
@@ -19,7 +19,7 @@ WANTLIB += Xrender atk-1.0 c cairo crypto curl dbus-1 exif expat ffi fontconfig
 WANTLIB += freetype fribidi gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gps graphite2 gthread-2.0
 WANTLIB += gtk-x11-2.0 harfbuzz iconv intl lzma m nghttp2 pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread sqlite3
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png pthread sqlite3
 WANTLIB += ssl xcb xcb-render xcb-shm xml2 z ${COMPILER_LIBCXX}
 WANTLIB += Xau Xdmcp execinfo jpeg
 

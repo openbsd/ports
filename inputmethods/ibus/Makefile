@@ -13,6 +13,10 @@ PKGNAME-main =		ibus-${GH_TAGNAME}
 PKGNAME-gtk2 =		ibus-gtk2-${GH_TAGNAME}
 PKGNAME-gtk3 =		ibus-gtk3-${GH_TAGNAME}
 PKGNAME-gtk4 =		ibus-gtk4-${GH_TAGNAME}
+REVISION-gtk2 =		0
+REVISION-gtk3 =		0
+REVISION-gtk4 =		0
+REVISION-main =		0
 
 SHARED_LIBS +=  ibus-1.0             4.4      # 5.527
 
@@ -29,7 +33,7 @@ WANTLIB += ${COMPILER_LIBCXX} X11 Xau Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender cairo expat ffi fontconfig
 WANTLIB += freetype fribidi gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 graphite2 harfbuzz iconv intl m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png xcb xcb-render
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png xcb xcb-render
 WANTLIB += xcb-shm z execinfo jpeg
 
 WANTLIB-main += ${WANTLIB}

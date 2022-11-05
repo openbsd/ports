@@ -2,7 +2,7 @@ COMMENT=		GNOME Structured File library
 
 GNOME_PROJECT=		libgsf
 GNOME_VERSION=		1.14.50
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		devel
 
@@ -14,7 +14,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += bz2 c ffi gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 iconv intl jpeg lzma m pcre png pthread
+WANTLIB += gobject-2.0 iconv intl jpeg lzma m pcre2-8 png pthread
 WANTLIB += xml2 z
 
 MODULES=		x11/gnome

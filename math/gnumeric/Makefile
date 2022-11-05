@@ -5,6 +5,7 @@ COMMENT=		spreadsheet application for GNOME
 
 GNOME_PROJECT=		gnumeric
 GNOME_VERSION=		1.12.53
+REVISION=		0
 
 GNUMERIC_API_VERSION=	${GNOME_VERSION:R}
 SUBST_VARS=		GNOME_VERSION GOFFICE_GNOME_VERSION GOFFICE_API_VERSION GNUMERIC_API_VERSION
@@ -23,7 +24,7 @@ WANTLIB += dbus-1 epoxy execinfo expat ffi fontconfig freetype
 WANTLIB += fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 goffice-0.10 graphite2 gs gsf-1 gthread-2.0
 WANTLIB += gtk-3 harfbuzz iconv intl jpeg lzma m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre perl pixman-1 png rsvg-2 spectre
+WANTLIB += pangoft2-1.0 pcre2-8 perl pixman-1 png rsvg-2 spectre
 WANTLIB += xcb xcb-render xcb-shm xml2 xslt z zstd
 
 # C++

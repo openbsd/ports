@@ -1,7 +1,7 @@
 COMMENT=	japanese handwriting recognition library
 
 DISTNAME=	tomoe-0.6.0
-REVISION=	3
+REVISION=	4
 
 HOMEPAGE= 	https://osdn.jp/projects/tomoe/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tomoe/}
@@ -13,7 +13,7 @@ SHARED_LIBS +=  tomoe                1.0      # 1.0
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
-WANTLIB =  ffi glib-2.0 gmodule-2.0 gobject-2.0 iconv intl pcre pthread
+WANTLIB =  ffi glib-2.0 gmodule-2.0 gobject-2.0 iconv intl pcre2-8 pthread
 
 MODULES=	textproc/intltool
 

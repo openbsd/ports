@@ -4,7 +4,7 @@ DISTNAME =		gnubg-release-$V-sources
 PKGNAME =		gnubg-$V
 CATEGORIES =		games x11
 HOMEPAGE =		http://gnubg.org/
-REVISION =		10
+REVISION =		11
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
@@ -16,7 +16,7 @@ WANTLIB += expat ffi fontconfig freetype fribidi gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gdkglext-x11-1.0 gio-2.0 glapi glib-2.0 gmodule-2.0
 WANTLIB += gmp gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0 gtkglext-x11-1.0
 WANTLIB += harfbuzz iconv intl ltdl m nghttp2 ogg pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread readline sqlite3
+WANTLIB += pangoft2-1.0 pcre2-8 pixman-1 png pthread readline sqlite3
 WANTLIB += ssl util vorbis vorbisfile xcb xcb-dri2 xcb-dri3 xcb-glx
 WANTLIB += xcb-present xcb-render xcb-shm xcb-sync xcb-xfixes
 WANTLIB += xshmfence z execinfo

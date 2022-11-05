@@ -4,7 +4,7 @@ COMMENT=	free cross-platform WYSIWYG word processor
 
 VERSION=	3.0.5
 DISTNAME=	abiword-${VERSION}
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	editors
 
@@ -23,7 +23,7 @@ WANTLIB += expat ffi fontconfig freetype fribidi gcrypt gdk-3
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gmp gobject-2.0
 WANTLIB += goffice-0.10 gpg-error graphite2 gs gsf-1 gthread-2.0
 WANTLIB += gtk-3 harfbuzz iconv intl jpeg ltdl lzma m mpfr nghttp2
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1
 WANTLIB += png raptor2 rasqal rdf rsvg-2 spectre ssl uuid wmf-0.2
 WANTLIB += wmflite-0.2 wv-1.2 xcb xcb-render xcb-shm xml2 xslt
 WANTLIB += yajl z zstd

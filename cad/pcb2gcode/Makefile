@@ -4,7 +4,7 @@ V =			2.4.0
 GH_ACCOUNT =		pcb2gcode
 GH_PROJECT =		pcb2gcode
 GH_TAGNAME =		v${V}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		cad
 
@@ -18,7 +18,7 @@ WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 boost_program_options-mt
 WANTLIB += c cairo expat ffi fontconfig freetype fribidi gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 geos gerbv gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 graphite2 gtk-x11-2.0 harfbuzz iconv intl
-WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1
 WANTLIB += png xcb xcb-render xcb-shm z Xau Xdmcp jpeg
 
 COMPILER =		base-clang ports-gcc

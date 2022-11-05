@@ -10,9 +10,9 @@ PKGNAME-main=		uim-$V
 PKGNAME-gtk=		uim-gtk-$V
 PKGNAME-gtk3=		uim-gtk3-$V
 
-REVISION-main=		3
-REVISION-gtk=		1
-REVISION-gtk3=		2
+REVISION-main=		4
+REVISION-gtk=		2
+REVISION-gtk3=		3
 
 MASTER_SITES=		https://github.com/uim/uim/releases/download/$V/
 HOMEPAGE=		https://github.com/uim/uim
@@ -50,7 +50,7 @@ WANTLIB-gtk += Xcomposite Xcursor Xdamage Xfixes Xi Xinerama Xrandr
 WANTLIB-gtk += atk-1.0 c cairo expat ffi gcroots gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB-gtk += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB-gtk += gtk-x11-2.0 harfbuzz pango-1.0 pangocairo-1.0
-WANTLIB-gtk += pangoft2-1.0 pcre pixman-1 png pthread fribidi
+WANTLIB-gtk += pangoft2-1.0 pcre2-8 pixman-1 png pthread fribidi
 WANTLIB-gtk += uim uim-custom uim-scm xcb xcb-render xcb-shm z
 
 LIB_DEPENDS-gtk=	inputmethods/uim \
@@ -62,7 +62,7 @@ WANTLIB-gtk3 += Xrandr atk-1.0 atk-bridge-2.0 c cairo cairo-gobject
 WANTLIB-gtk3 += expat ffi gcroots gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB-gtk3 += glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB-gtk3 += gtk-3 harfbuzz pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB-gtk3 += pcre pixman-1 png pthread uim uim-custom fribidi
+WANTLIB-gtk3 += pcre2-8 pixman-1 png pthread uim uim-custom fribidi
 WANTLIB-gtk3 += uim-scm xcb xcb-render xcb-shm z epoxy
 
 LIB_DEPENDS-gtk3=	inputmethods/uim \

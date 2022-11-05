@@ -1,5 +1,5 @@
 V =		0.21.12
-REVISION =	0
+REVISION =	1
 COMMENT =	simple to use paint program
 DISTNAME =	dibuja-${V}
 CATEGORIES =	graphics x11
@@ -16,7 +16,7 @@ WANTLIB += c cairo exiv2 expat ffi fontconfig freetype fribidi
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gegl-0.4 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gtk-x11-2.0 harfbuzz
 WANTLIB += iconv intl json-glib-1.0 lcms2 m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png xcb xcb-render xcb-shm
+WANTLIB += pangoft2-1.0 pcre2-8 pixman-1 png xcb xcb-render xcb-shm
 WANTLIB += z Xau Xdmcp jpeg
 
 MASTER_SITES =	https://launchpad.net/dibuja/trunk/${V}/+download/

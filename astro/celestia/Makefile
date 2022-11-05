@@ -4,7 +4,7 @@ GH_ACCOUNT=		CelestiaProject
 GH_PROJECT=		Celestia
 GH_TAGNAME=		1.6.2.2
 PKGNAME=		celestia-${GH_TAGNAME}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		astro x11
 
@@ -22,7 +22,7 @@ WANTLIB += freetype fribidi gdk-x11-2.0 gdk_pixbuf-2.0 gdkglext-x11-1.0
 WANTLIB += gio-2.0 glapi glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gtk-x11-2.0 gtkglext-x11-1.0 harfbuzz iconv intl jpeg
 WANTLIB += lua5.1 m ogg pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png theora xcb xcb-dri2 xcb-dri3 xcb-glx
+WANTLIB += pcre2-8 pixman-1 png theora xcb xcb-dri2 xcb-dri3 xcb-glx
 WANTLIB += xcb-present xcb-render xcb-shm xcb-sync xcb-xfixes
 WANTLIB += xshmfence z
 

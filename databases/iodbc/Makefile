@@ -1,10 +1,12 @@
 COMMENT-main=		ODBC 3.x driver manager
 COMMENT-admin=		ODBC 3.x driver manager admin application
+REVISION-admin=		3
+REVISION-main=		3
 
 V=			3.52.12
 DISTNAME=		libiodbc-$V
 PKGNAME=		iodbc-$V
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		databases
 
@@ -28,7 +30,7 @@ WANTLIB-admin += Xrandr Xrender atk-1.0 c cairo expat ffi fontconfig
 WANTLIB-admin += freetype fribidi gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB-admin += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0
 WANTLIB-admin += harfbuzz iconv intl iodbc iodbcinst m pango-1.0 pangocairo-1.0
-WANTLIB-admin += pangoft2-1.0 pcre pixman-1 png pthread xcb xcb-render
+WANTLIB-admin += pangoft2-1.0 pcre2-8 pixman-1 png pthread xcb xcb-render
 WANTLIB-admin += xcb-shm z Xau Xdmcp ${COMPILER_LIBCXX} jpeg
 
 PSEUDO_FLAVORS = bootstrap no_admin

@@ -1,7 +1,7 @@
 COMMENT=		front-end to external cd audio rippers and mp3 encoders
 
 DISTNAME=		grip-4.2.2
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		audio
 
@@ -16,7 +16,7 @@ WANTLIB += cdda_paranoia crypto curl expat ffi fontconfig freetype
 WANTLIB += fribidi gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gtk-x11-2.0 harfbuzz
 WANTLIB += iconv id3 intl jpeg m nghttp2 pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png ssl xcb xcb-render xcb-shm
+WANTLIB += pangoft2-1.0 pcre2-8 pixman-1 png ssl xcb xcb-render xcb-shm
 WANTLIB += z Xau Xdmcp
 
 COMPILER=		base-clang ports-gcc base-gcc

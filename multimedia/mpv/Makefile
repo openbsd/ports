@@ -4,7 +4,7 @@ GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
 GH_TAGNAME =		v0.34.1
 
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS +=		mpv		0.2 # 1.109
 
@@ -25,7 +25,7 @@ WANTLIB += Xrandr Xrender Xss Xv Xxf86vm archive ass avcodec avdevice
 WANTLIB += avfilter avformat avresample avutil bluray c cdio cdio_cdda
 WANTLIB += cdio_paranoia drm dvdnav dvdread epoxy expat fontconfig
 WANTLIB += freetype fribidi gbm glib-2.0 graphite2 harfbuzz iconv
-WANTLIB += intl jpeg lcms2 ${MODLUA_WANTLIB} m pcre placebo postproc
+WANTLIB += intl jpeg lcms2 ${MODLUA_WANTLIB} m pcre2-8 placebo postproc
 WANTLIB += pthread sndio swresample swscale udfread xcb xcb-dri2
 WANTLIB += xcb-glx xml2 z
 

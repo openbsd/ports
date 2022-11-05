@@ -3,6 +3,7 @@ COMMENT =	fast image processing library with low memory needs
 VERSION =	8.9.2
 DISTNAME =	vips-${VERSION}
 PKGNAME =	lib${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	graphics
 
@@ -17,7 +18,7 @@ MAINTAINER =	Stephane Guedon <stephane@22decembre.eu>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c expat ffi gif glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gthread-2.0 iconv intl jpeg lzma m pcre
+WANTLIB += gobject-2.0 gthread-2.0 iconv intl jpeg lzma m pcre2-8
 WANTLIB += png tiff webp webpdemux webpmux z zstd
 
 MASTER_SITES =	https://github.com/libvips/libvips/releases/download/v${VERSION}/

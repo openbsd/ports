@@ -2,7 +2,7 @@ COMMENT=		GObject based collection library
 
 GNOME_PROJECT=		libgee
 GNOME_VERSION=		0.20.6
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  gee-0.8              3.1      # 8.1
 
@@ -17,7 +17,7 @@ COMPILER=		base-clang ports-gcc
 COMPILER_LANGS=		c
 
 WANTLIB += ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 iconv
-WANTLIB += intl pcre pthread z
+WANTLIB += intl pcre2-8 pthread z
 
 MODULES=		x11/gnome
 

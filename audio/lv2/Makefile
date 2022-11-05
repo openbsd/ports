@@ -1,7 +1,7 @@
 COMMENT=	open standard for audio plugins, used by hundreds of plugins
 
 DISTNAME=	lv2-1.18.2
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	audio
 
@@ -17,7 +17,7 @@ WANTLIB += Xfixes Xft Xi Xinerama Xrandr Xrender atk-1.0 cairo
 WANTLIB += expat ffi fontconfig freetype fribidi gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gtk-x11-2.0 harfbuzz harfbuzz-gobject intl m ogg opus
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1
 WANTLIB += png pthread sndfile tiff vorbis vorbisenc xcb xcb-render
 WANTLIB += xcb-shm z jpeg lzo2
 

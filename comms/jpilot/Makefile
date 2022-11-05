@@ -2,7 +2,7 @@ COMMENT=	desktop organizer software for the palm pilot
 
 DISTNAME=	jpilot-1.8.2
 CATEGORIES=	comms
-REVISION=	5
+REVISION=	6
 
 HOMEPAGE=	http://www.jpilot.org/
 
@@ -14,7 +14,7 @@ WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat
 WANTLIB += ffi fontconfig freetype fribidi gcrypt gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gpg-error graphite2 gtk-x11-2.0 harfbuzz iconv intl
-WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pisock
+WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8 pisock
 WANTLIB += pixman-1 png xcb xcb-render xcb-shm Xau Xdmcp jpeg z
 
 MASTER_SITES=	http://www.jpilot.org/

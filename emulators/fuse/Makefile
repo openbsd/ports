@@ -2,13 +2,14 @@ COMMENT=		Free Unix Spectrum Emulator
 DISTNAME=		fuse-1.6.0
 CATEGORIES=		emulators
 HOMEPAGE=		http://fuse-emulator.sourceforge.net/
+REVISION=		0
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += FLAC SDL2 X11 Xcursor Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender Xss Xxf86vm audiofile bz2 c gcrypt glib-2.0
-WANTLIB += gpg-error iconv intl lzma m ogg pcre png pthread samplerate
+WANTLIB += gpg-error iconv intl lzma m ogg pcre2-8 png pthread samplerate
 WANTLIB += sndio spectrum usbhid xcb xml2 z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=fuse-emulator/}

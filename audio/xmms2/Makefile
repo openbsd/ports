@@ -3,7 +3,7 @@ COMMENT =		audio player daemon with library management
 V =			0.8
 DISTNAME =		xmms2-${V}DrO_o
 PKGNAME =		xmms2-${V}
-REVISION =		16
+REVISION =		17
 
 SHARED_LIBS +=		xmmsclient++		2.0 # 4.0.0
 SHARED_LIBS +=		xmmsclient++-glib	1.0 # 1.0.0
@@ -20,7 +20,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} FLAC ao avahi-client avahi-common
 WANTLIB += avahi-glib avcodec avutil c curl ffi gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 intl jack m mpg123
-WANTLIB += ogg opus pcre perl python2.7 readline sndfile sqlite3
+WANTLIB += ogg opus pcre2-8 perl python2.7 readline sndfile sqlite3
 WANTLIB += swresample vorbis vorbisenc vorbisfile xml2 z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=xmms2/}

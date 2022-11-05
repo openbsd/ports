@@ -6,6 +6,7 @@ COMMENT =		2D animation software
 V=			1.5.1
 DISTNAME =		synfig-$V
 API_V =			1.0
+REVISION =		0
 
 SHARED_LIBS +=  synfig                    3.0 # 0.0
 
@@ -24,7 +25,7 @@ WANTLIB += expat ffi fftw3 fontconfig freetype fribidi gio-2.0
 WANTLIB += giomm-2.4 glib-2.0 glibmm-2.4 gmodule-2.0 gobject-2.0
 WANTLIB += graphite2 gsm harfbuzz heif iconv intl jasper jbig
 WANTLIB += jpeg lcms lcms2 ltdl lzma m mlt++-7 mlt-7 mng mp3lame
-WANTLIB += ogg openjp2 opus pcre png raw_r sigc-2.0 speex ssl
+WANTLIB += ogg openjp2 opus pcre2-8 png raw_r sigc-2.0 speex ssl
 WANTLIB += swresample swscale theoradec theoraenc tiff vorbis
 WANTLIB += vorbisenc vpx webp webpdemux webpmux x264 x265 xcb
 WANTLIB += xml++-2.6 xml2 xvidcore z zstd

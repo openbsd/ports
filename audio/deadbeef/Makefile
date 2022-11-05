@@ -1,6 +1,7 @@
 COMMENT =		DeaDBeeF is an audio player
 DISTNAME =		deadbeef-1.9.2
 CATEGORIES =		audio
+REVISION =		0
 
 HOMEPAGE =		https://deadbeef.sourceforge.io/
 
@@ -16,7 +17,7 @@ WANTLIB += fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gsm gthread-2.0
 WANTLIB += gtk-3 harfbuzz iconv intl jansson jpeg lzma m mms mp3lame
 WANTLIB += mpcdec mpg123 nghttp2 ogg opus opusfile pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pulse
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png pulse
 WANTLIB += pulse-simple sndfile speex ssl swresample theoradec
 WANTLIB += theoraenc vorbis vorbisenc vorbisfile vpx wavpack x264
 WANTLIB += x265 xcb xcb-render xcb-shm xml2 xvidcore z zip zstd

@@ -3,7 +3,7 @@ COMMENT=	ZBar barcode reader
 GH_ACCOUNT=	mchehab
 GH_PROJECT=	zbar
 GH_TAGNAME=	0.23.90
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS=	zbar	0.1 \
 		zbargtk	0.1
@@ -28,7 +28,7 @@ WANTLIB += execinfo expat ffi fontconfig freetype fribidi gdk-3
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += graphite2 gtk-3 harfbuzz heif iconv intl jasper jbig
 WANTLIB += jpeg lcms2 lzma m openjp2 pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png raw_r tiff util webp
+WANTLIB += pangoft2-1.0 pcre2-8 pixman-1 png raw_r tiff util webp
 WANTLIB += webpdemux webpmux x265 xcb xcb-render xcb-shm xml2
 WANTLIB += z zstd
 

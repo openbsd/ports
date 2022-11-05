@@ -6,8 +6,8 @@ GNOME_VERSION=		0.56.3
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-valadoc=	valadoc-${GNOME_VERSION}
-REVISION-main=		0
-REVISION-valadoc=	0
+REVISION-main=		1
+REVISION-valadoc=	1
 
 # !!! XXX API_V is used by x11/elementary/code
 API_V=			0.56
@@ -21,7 +21,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += c ffi glib-2.0 gmodule-2.0 gobject-2.0 iconv intl pcre pthread
+WANTLIB += c ffi glib-2.0 gmodule-2.0 gobject-2.0 iconv intl pcre2-8 pthread
 
 WANTLIB-valadoc += ${WANTLIB}
 WANTLIB-valadoc += cdt cgraph expat gvc ltdl m pathplan vala-${API_V} xdot

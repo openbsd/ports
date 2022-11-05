@@ -2,7 +2,7 @@ COMMENT=		GNOME music player client
 
 VERSION=		11.8.16
 DISTNAME=		gmpc-${VERSION}
-REVISION =		19
+REVISION =		20
 
 CATEGORIES=		audio
 
@@ -18,7 +18,7 @@ WANTLIB += Xrandr Xrender atk-1.0 c cairo dbus-1 dbus-glib-1 expat ffi
 WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB += gtk-x11-2.0 harfbuzz iconv intl lzma m mpd pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread soup-2.4
+WANTLIB += pangoft2-1.0 pcre2-8 pixman-1 png pthread soup-2.4
 WANTLIB += sqlite3 unique-1.0 xcb xcb-render xcb-shm xml2 z
 WANTLIB += Xau Xdmcp brotlicommon brotlidec execinfo fribidi 
 WANTLIB += idn2 jpeg psl unistring

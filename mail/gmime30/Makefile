@@ -4,6 +4,7 @@ GH_ACCOUNT=		jstedfast
 GH_PROJECT=		gmime
 GH_TAGNAME=		3.2.13
 PKGNAME=		gmime30-${GH_TAGNAME}
+REVISION=		0
 
 SHARED_LIBS +=  gmime-3.0            2.2      # 213.0
 
@@ -15,7 +16,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += assuan ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gpg-error gpgme gthread-2.0 iconv idn2 intl pcre pthread
+WANTLIB += gpg-error gpgme gthread-2.0 iconv idn2 intl pcre2-8 pthread
 WANTLIB += unistring z
 
 USE_GMAKE=		Yes

@@ -2,7 +2,7 @@ V = 		1.3.3
 COMMENT =	open source video transcoder
 DISTNAME =	HandBrake-${V}-source
 PKGNAME =	handbrake-${V}
-REVISION =	2
+REVISION =	3
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	multimedia x11
 
@@ -21,7 +21,7 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gsm gstaudio-1.0 gstbase-1.0 gstpbutils-1.0 gstreamer-1.0
 WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz
 WANTLIB += iconv intl jansson lzma m mp3lame ogg opus orc-0.4
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1
 WANTLIB += png postproc speex ssl swresample swscale theoradec
 WANTLIB += theoraenc vorbis vorbisenc vpx x264 x265 xcb xcb-render
 WANTLIB += xcb-shm xml2 xvidcore z

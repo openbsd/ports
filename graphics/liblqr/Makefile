@@ -6,12 +6,12 @@ DISTNAME = 			liblqr-1-0.4.2
 PKGNAME = 			liblqr-0.4.2
 MASTER_SITES =			${HOMEPAGE}local--files/en:download-page/
 EXTRACT_SUFX =			.tar.bz2
-REVISION =                      0
+REVISION =                      1
 
 # Library is LGPLv3, examples are GPLv3
 PERMIT_PACKAGE =		Yes
 
-WANTLIB =  glib-2.0 iconv intl m pcre pthread
+WANTLIB =  glib-2.0 iconv intl m pcre2-8 pthread
 
 CONFIGURE_STYLE =		gnu
 SEPARATE_BUILD =		Yes

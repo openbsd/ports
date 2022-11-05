@@ -3,7 +3,7 @@ COMMENT=	Code::Blocks C/C++ IDE
 
 R=		12751
 V=		20.03
-REVISION=	1
+REVISION=	2
 
 DISTNAME=	codeblocks-${V}pl${R}
 EXTRACT_SUFX=	.tar.xz
@@ -43,7 +43,7 @@ WANTLIB += freetype fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB += gtk-3 harfbuzz hunspell-1.7 iconv intl jpeg lzma m
 WANTLIB += mspack notify pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png samplerate sndio tiff usbhid wx_baseu-3.0
+WANTLIB += pcre2-8 pixman-1 png samplerate sndio tiff usbhid wx_baseu-3.0
 WANTLIB += wx_baseu_net-3.0 wx_baseu_xml-3.0 wx_gtk3u_adv-3.0
 WANTLIB += wx_gtk3u_aui-3.0 wx_gtk3u_core-3.0 wx_gtk3u_html-3.0
 WANTLIB += wx_gtk3u_propgrid-3.0 wx_gtk3u_qa-3.0 wx_gtk3u_richtext-3.0

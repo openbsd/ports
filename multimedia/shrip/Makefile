@@ -1,7 +1,7 @@
 COMMENT =		shell client for ogmrip
 
 DISTNAME =		shrip-0.6.0
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		multimedia
 
@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =  c dvdcss dvdread enca ffi gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 iconv intl lzma m ogmdvd ogmjob ogmrip
-WANTLIB += ogmrip-lavc ogmrip-mplayer pcre pthread xml2 z
+WANTLIB += ogmrip-lavc ogmrip-mplayer pcre2-8 pthread xml2 z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=ogmrip/}
 

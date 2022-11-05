@@ -4,6 +4,7 @@ V=		1.8.11
 GUILE_V=	3.0
 
 DISTNAME=	mu-$V
+REVISION=	0
 
 FLAVORS=	guile
 FLAVOR ?=
@@ -20,7 +21,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} assuan c curses ffi gio-2.0 glib-2.0
 WANTLIB += gmime-3.0 gmodule-2.0 gobject-2.0 gpg-error gpgme gthread-2.0
-WANTLIB += iconv idn2 intl m pcre readline unistring xapian z
+WANTLIB += iconv idn2 intl m pcre2-8 readline unistring xapian z
 
 MASTER_SITES=	https://github.com/djcb/mu/releases/download/v${V}/
 EXTRACT_SUFX=	.tar.xz

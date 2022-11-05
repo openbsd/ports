@@ -1,7 +1,7 @@
 COMMENT =	smart common input method platform
 
 DISTNAME =	scim-1.4.9
-REVISION =	27
+REVISION =	28
 
 SHARED_LIBS +=  scim-1.0           0.0           # .10.4
 SHARED_LIBS +=  scim-x11utils-1.0  0.0           # .10.4
@@ -19,7 +19,7 @@ WANTLIB += Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo drm expat ffi
 WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0 
 WANTLIB += harfbuzz iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread ${COMPILER_LIBCXX} xcb xcb-render
+WANTLIB += pcre2-8 pixman-1 png pthread ${COMPILER_LIBCXX} xcb xcb-render
 WANTLIB += xcb-shm z fribidi jpeg
 
 COMPILER =		base-clang ports-gcc base-gcc

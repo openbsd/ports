@@ -1,7 +1,7 @@
 COMMENT =	convert various Microsoft formats into HTML/PNG
 
 DISTNAME =	wv-1.2.9
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	wv-1.2		1.0 \
 		wv		1.0
@@ -13,7 +13,7 @@ HOMEPAGE =	http://wvware.sourceforge.net/
 PERMIT_PACKAGE =	Yes
 
 WANTLIB =  X11 bz2 c expat ffi freetype gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gsf-1 iconv intl jpeg lzma m pcre png pthread
+WANTLIB += gobject-2.0 gsf-1 iconv intl jpeg lzma m pcre2-8 png pthread
 WANTLIB += wmf-0.2 wmflite-0.2 xcb xml2 z
 
 MASTER_SITES =	http://abisource.com/downloads/wv/1.2.9/

@@ -3,6 +3,7 @@ COMMENT =		japanese input engine for ibus
 GH_ACCOUNT =		ibus
 GH_PROJECT =		ibus-anthy
 GH_TAGNAME =		1.5.14
+REVISION =		0
 
 SHARED_LIBS +=  anthygobject-1.0     1.1      # 5.514
 
@@ -12,7 +13,7 @@ CATEGORIES =		inputmethods japanese
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += anthy anthydic ffi glib-2.0 gobject-2.0 iconv intl
-WANTLIB += m pcre pthread
+WANTLIB += m pcre2-8 pthread
 
 MODULES =		devel/dconf \
 			lang/python

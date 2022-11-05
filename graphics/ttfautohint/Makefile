@@ -3,6 +3,7 @@ COMMENT=		automated hinting process based on FreeType's autohinter #'
 DISTNAME =		ttfautohint-1.8.4
 SHARED_LIBS +=  ttfautohint               0.0 # 1.0
 CATEGORIES =		graphics
+REVISION =		0
 
 HOMEPAGE =		https://www.freetype.org/ttfautohint/#download
 
@@ -14,7 +15,7 @@ MASTER_SITES =		${MASTER_SITE_SAVANNAH:=/freetype/}
 COMPILER =		base-clang ports-gcc
 
 WANTLIB += c freetype glib-2.0 graphite2 harfbuzz iconv intl m pthread
-WANTLIB += pcre z ${COMPILER_LIBCXX}
+WANTLIB += pcre2-8 z ${COMPILER_LIBCXX}
 
 LIB_DEPENDS =		devel/harfbuzz
 

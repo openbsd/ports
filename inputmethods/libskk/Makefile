@@ -3,6 +3,7 @@ COMMENT =		library to deal with Japanese kana-to-kanji conversion
 V =			1.0.5
 DISTNAME =		libskk-${V}
 EXTRACT_SUFX =		.tar.xz
+REVISION =		0
 
 SHARED_LIBS +=  skk                  0.1      # 0.0
 
@@ -14,7 +15,7 @@ HOMEPAGE =		https://github.com/ueno/libskk/
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += c ffi gee-0.8 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += iconv intl json-glib-1.0 pcre pthread xkbcommon z
+WANTLIB += iconv intl json-glib-1.0 pcre2-8 pthread xkbcommon z
 
 MASTER_SITES =		https://github.com/ueno/libskk/releases/download/${V}/
 

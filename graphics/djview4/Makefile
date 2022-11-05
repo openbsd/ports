@@ -2,7 +2,7 @@ COMMENT=	portable DjVu viewer and browser plugin
 
 DISTNAME=	djview-4.10.6
 PKGNAME=	${DISTNAME:S/djview/djview4/}
-REVISION=	8
+REVISION=	9
 CATEGORIES=	graphics print
 
 HOMEPAGE=	http://djvu.sourceforge.net/djview4.html
@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5OpenGL
 WANTLIB += Qt5PrintSupport Qt5Widgets c djvulibre glib-2.0 iconv
-WANTLIB += intl m pcre tiff
+WANTLIB += intl m pcre2-8 tiff
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=djvu/}
 

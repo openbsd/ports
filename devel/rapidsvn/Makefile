@@ -4,7 +4,7 @@ COMMENT=	graphical subversion client
 VERSION=	0.12.1
 DISTNAME=	rapidsvn-${VERSION}
 CATEGORIES=	devel
-REVISION=	15
+REVISION=	16
 
 HOMEPAGE=	http://www.rapidsvn.org/
 
@@ -22,7 +22,7 @@ WANTLIB += cairo-gobject db dbus-1 epoxy expat ffi fontconfig
 WANTLIB += freetype fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3
 WANTLIB += harfbuzz iconv intl jpeg lz4 m mspack notify pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png samplerate
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png samplerate
 WANTLIB += sasl2 serf-1 sndio sqlite3 svn_client-1 svn_delta-1
 WANTLIB += svn_diff-1 svn_fs-1 svn_fs_base-1 svn_fs_fs-1 svn_fs_util-1
 WANTLIB += svn_fs_x-1 svn_ra-1 svn_ra_local-1 svn_ra_serf-1 svn_ra_svn-1

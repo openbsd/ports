@@ -6,7 +6,7 @@ COMMENT=		portable library for obtaining system information
 GNOME_VERSION=		2.40.0
 GNOME_PROJECT=		libgtop
 PKGNAME=		libgtop2-${VERSION}
-REVISION=		3
+REVISION=		4
 
 SHARED_LIBS=		gtop-2.0	10.0	# .10.0
 
@@ -17,7 +17,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += Xau c ffi glib-2.0 gobject-2.0 iconv intl kvm pcre
+WANTLIB += Xau c ffi glib-2.0 gobject-2.0 iconv intl kvm pcre2-8
 WANTLIB += pthread
 
 MODULES=		x11/gnome

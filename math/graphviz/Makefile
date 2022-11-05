@@ -2,7 +2,7 @@ COMMENT-main=	graph drawing software
 
 DISTNAME=	graphviz-2.42.3
 PKGNAME-main=	${DISTNAME}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	math devel graphics
 
 # there is only one multi-package due to legacy, but maybe more
@@ -52,7 +52,7 @@ WANTLIB += Xt atk-1.0 c cairo cairo-gobject expat ffi fontconfig
 WANTLIB += freetype gd gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gmp gobject-2.0 graphite2 gtk-x11-2.0
 WANTLIB += guile harfbuzz iconv intl jpeg lcms2 ltdl lzma m openjp2 pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre perl pixman-1 png
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 perl pixman-1 png
 WANTLIB += poppler poppler-glib pthread rsvg-2 ${COMPILER_LIBCXX}
 WANTLIB += tiff webp xcb xcb-render xcb-shm xml2 z zstd fribidi
 

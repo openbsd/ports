@@ -2,7 +2,7 @@ COMMENT =	visual programming environment and toolkit
 
 DISTNAME =	${PKGNAME}.src
 PKGNAME =	scratch-1.4.0.7
-REVISION =	11
+REVISION =	12
 CATEGORIES =	graphics
 HOMEPAGE =	http://scratch.mit.edu/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =  X11 Xau Xdmcp Xext Xrender cairo expat ffi fontconfig
 WANTLIB += freetype fribidi glib-2.0 gobject-2.0 graphite2 harfbuzz
-WANTLIB += intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1
 WANTLIB += png xcb xcb-render xcb-shm z
 WANTLIB += Xft gio-2.0 gmodule-2.0 harfbuzz-gobject lzo2 pthread
 

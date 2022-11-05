@@ -6,9 +6,9 @@ V=		0.30
 DISTNAME=	libcanberra-${V}
 EXTRACT_SUFX=	.tar.xz
 
-REVISION-main=	4
-REVISION-gtk=	9
-REVISION-gtk3=	9
+REVISION-main=	5
+REVISION-gtk=	10
+REVISION-gtk3=	10
 
 SHARED_LIBS +=  canberra             2.0      # 2.5
 SHARED_LIBS +=  canberra-gtk3        1.8      # 1.8
@@ -35,7 +35,7 @@ WANTLIB-gtk += Xi Xinerama Xrandr Xrender atk-1.0 cairo canberra
 WANTLIB-gtk += expat ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB-gtk += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB-gtk += gtk-x11-2.0 harfbuzz iconv intl pango-1.0 pangocairo-1.0
-WANTLIB-gtk += pangoft2-1.0 pcre pixman-1 png xcb xcb-render xcb-shm z
+WANTLIB-gtk += pangoft2-1.0 pcre2-8 pixman-1 png xcb xcb-render xcb-shm z
 WANTLIB-gtk += ${COMPILER_LIBCXX} fribidi Xau Xdmcp jpeg
 
 WANTLIB-gtk3 += ${cWANTLIB}
@@ -44,7 +44,7 @@ WANTLIB-gtk3 += Xrender atk-1.0 atk-bridge-2.0 c cairo cairo-gobject
 WANTLIB-gtk3 += canberra epoxy expat ffi fontconfig freetype jpeg
 WANTLIB-gtk3 += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB-gtk3 += graphite2 gthread-2.0 gtk-3 harfbuzz iconv intl pango-1.0
-WANTLIB-gtk3 += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png xcb xcb-render
+WANTLIB-gtk3 += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png xcb xcb-render
 WANTLIB-gtk3 += xcb-shm z ${COMPILER_LIBCXX} fribidi Xau Xdmcp execinfo
 
 COMPILER =		base-clang ports-gcc base-gcc

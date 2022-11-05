@@ -2,7 +2,7 @@ COMMENT =	gpx file viewer
 
 VERSION =	0.4.0
 DISTNAME =	gpx-viewer-${VERSION}
-REVISION =	15
+REVISION =	16
 
 CATEGORIES =	geo x11
 
@@ -19,7 +19,7 @@ WANTLIB += clutter-gtk-1.0 cogl cogl-pango cogl-path drm epoxy expat ffi
 WANTLIB += fontconfig freetype fribidi gbm gdk-3 gdk_pixbuf-2.0 gdl-3
 WANTLIB += gio-2.0 glapi glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gthread-2.0 gtk-3 harfbuzz iconv idn2 intl json-glib-1.0 lzma
-WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png psl
+WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png psl
 WANTLIB += pthread soup-2.4 sqlite3 unistring xcb xcb-dri2 xcb-dri3
 WANTLIB += xcb-present xcb-render xcb-shm xcb-sync xcb-xfixes xml2
 WANTLIB += xshmfence z Xau Xdmcp brotlicommon brotlidec execinfo jpeg

@@ -3,7 +3,7 @@ COMMENT=	scim input method module for chewing
 GH_ACCOUNT=	chewing
 GH_PROJECT=	scim-chewing
 GH_TAGNAME=	v0.5.1
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	inputmethods chinese
 
@@ -17,7 +17,7 @@ WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 cairo chewing
 WANTLIB += expat ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB += gtk-x11-2.0 harfbuzz iconv intl m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png scim-1.0 scim-gtkutils-1.0
+WANTLIB += pangoft2-1.0 pcre2-8 pixman-1 png scim-1.0 scim-gtkutils-1.0
 WANTLIB += scim-x11utils-1.0 sqlite3 xcb xcb-render xcb-shm z fribidi
 WANTLIB += Xau Xdmcp jpeg
 

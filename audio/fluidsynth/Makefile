@@ -2,7 +2,7 @@ COMMENT =		SoundFont2 software synthesizer
 GH_ACCOUNT =		FluidSynth
 GH_PROJECT =		fluidsynth
 GH_TAGNAME =		v1.1.9
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=	fluidsynth           2.0      # 6.0
 
@@ -13,7 +13,7 @@ HOMEPAGE =		https://www.fluidsynth.org/
 PERMIT_PACKAGE =	Yes
 
 WANTLIB =  FLAC c glib-2.0 gthread-2.0 iconv intl m curses ogg opus
-WANTLIB += pcre pthread readline sndfile sndio vorbis vorbisenc
+WANTLIB += pcre2-8 pthread readline sndfile sndio vorbis vorbisenc
 
 LIB_DEPENDS =		audio/libsndfile \
 			devel/glib2

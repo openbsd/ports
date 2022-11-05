@@ -2,7 +2,7 @@ COMMENT=		Settlers of Catan for GNOME/Gtk
 
 GNOME_PROJECT=		pioneers
 GNOME_VERSION=		15.5
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		games
 
@@ -16,7 +16,7 @@ WANTLIB += gobject-2.0 gtk-3 intl m notify pango-1.0 pangocairo-1.0
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 cairo-gobject
 WANTLIB += epoxy expat ffi fontconfig freetype fribidi gmodule-2.0
-WANTLIB += graphite2 harfbuzz iconv pangoft2-1.0 pcre pixman-1
+WANTLIB += graphite2 harfbuzz iconv pangoft2-1.0 pcre2-8 pixman-1
 WANTLIB += png pthread xcb xcb-render xcb-shm z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=pio/}

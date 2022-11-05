@@ -7,6 +7,7 @@ COMMENT-gnome-keyring=	GNOME keyring support for subversion
 
 VERSION=		1.14.2
 REVISION-ruby=		0
+REVISION-gnome-keyring=	0
 DISTNAME=		subversion-${VERSION:S/rc/-rc/}
 PKGNAME-main=		subversion-${VERSION}
 PKGNAME-perl=		p5-SVN-${VERSION}
@@ -116,7 +117,7 @@ WANTLIB-ruby +=	${_lib}>=${SO_VERSION}
 .endfor
 
 WANTLIB-gnome-keyring=	${WANTLIB} apr-1 aprutil-1 gcrypt gpg-error \
-		gio-2.0 glib-2.0 secret-1 pcre>=2 sqlite3 \
+		gio-2.0 glib-2.0 secret-1 pcre2-8 sqlite3 \
 		svn_subr-1>=${SO_VERSION} ffi gmodule-2.0 gobject-2.0
 LIB_DEPENDS-gnome-keyring= ${MAINSPEC} \
 		x11/gnome/libsecret
