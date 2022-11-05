@@ -2,7 +2,7 @@ COMMENT=	Xfce4 file manager
 
 XFCE_PROJECT=	thunar
 XFCE_VERSION=	4.16.11
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS=	thunarx-3	0.0
 
@@ -17,7 +17,7 @@ WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz iconv intl jpeg m
 WANTLIB += notify pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread startup-notification-1 xcb xcb-render xcb-shm
 WANTLIB += xcb-util xfce4kbd-private-3 xfce4ui-2 xfce4util xfconf-0 z
-WANTLIB += Xau Xdmcp
+WANTLIB += Xau Xdmcp pcre2-8
 WANTLIB += ${COMPILER_LIBCXX}
 
 MODULES=	x11/xfce4
