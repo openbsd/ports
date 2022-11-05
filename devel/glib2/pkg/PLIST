@@ -28,7 +28,6 @@ include/gio-unix-2.0/
 include/gio-unix-2.0/gio/
 include/gio-unix-2.0/gio/gdesktopappinfo.h
 include/gio-unix-2.0/gio/gfiledescriptorbased.h
-include/gio-unix-2.0/gio/gunixfdlist.h
 include/gio-unix-2.0/gio/gunixfdmessage.h
 include/gio-unix-2.0/gio/gunixinputstream.h
 include/gio-unix-2.0/gio/gunixmounts.h
@@ -185,6 +184,7 @@ include/glib-2.0/gio/gtlspassword.h
 include/glib-2.0/gio/gtlsserverconnection.h
 include/glib-2.0/gio/gunixconnection.h
 include/glib-2.0/gio/gunixcredentialsmessage.h
+include/glib-2.0/gio/gunixfdlist.h
 include/glib-2.0/gio/gunixsocketaddress.h
 include/glib-2.0/gio/gvfs.h
 include/glib-2.0/gio/gvolume.h
@@ -325,6 +325,7 @@ lib/pkgconfig/gmodule-export-2.0.pc
 lib/pkgconfig/gmodule-no-export-2.0.pc
 lib/pkgconfig/gobject-2.0.pc
 lib/pkgconfig/gthread-2.0.pc
+@bin libexec/gio-launch-desktop
 @man man/man1/gapplication.1
 @man man/man1/gdbus-codegen.1
 @man man/man1/gdbus.1
@@ -353,8 +354,8 @@ share/bash-completion/completions/gresource
 share/bash-completion/completions/gsettings
 share/doc/pkg-readmes/${PKGSTEM}
 share/gdb/auto-load/usr/local/lib/
-share/gdb/auto-load/usr/local/lib/libglib-2.0.so.0.7200.4-gdb.py
-share/gdb/auto-load/usr/local/lib/libgobject-2.0.so.0.7200.4-gdb.py
+share/gdb/auto-load/usr/local/lib/libglib-2.0.so.0.7400.1-gdb.py
+share/gdb/auto-load/usr/local/lib/libgobject-2.0.so.0.7400.1-gdb.py
 share/gettext/its/
 share/gettext/its/gschema.its
 share/gettext/its/gschema.loc
@@ -379,6 +380,9 @@ share/glib-2.0/schemas/
 share/glib-2.0/schemas/gschema.dtd
 share/glib-2.0/valgrind/
 share/glib-2.0/valgrind/glib.supp
+share/locale/ab/
+share/locale/ab/LC_MESSAGES/
+share/locale/ab/LC_MESSAGES/glib20.mo
 share/locale/af/
 share/locale/af/LC_MESSAGES/
 share/locale/af/LC_MESSAGES/glib20.mo

@@ -3,7 +3,7 @@ https://gitlab.gnome.org/GNOME/glib/merge_requests/832
 Index: glib/gfileutils.c
 --- glib/gfileutils.c.orig
 +++ glib/gfileutils.c
-@@ -258,7 +258,7 @@ g_mkdir_with_parents (const gchar *pathname,
+@@ -260,7 +260,7 @@ g_mkdir_with_parents (const gchar *pathname,
        
        if (!g_file_test (fn, G_FILE_TEST_EXISTS))
  	{
