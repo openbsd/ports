@@ -3,7 +3,7 @@ CATEGORIES =	x11 archivers
 GH_ACCOUNT =	ib
 GH_PROJECT =	xarchiver
 GH_TAGNAME =	0.5.4.17
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://xarchiver.sourceforge.net
 
@@ -15,7 +15,7 @@ WANTLIB += Xrender atk-1.0 atk-bridge-2.0 c cairo Xau Xdmcp execinfo jpeg
 WANTLIB += cairo-gobject epoxy expat ffi fontconfig freetype
 WANTLIB += fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 graphite2 gtk-3 harfbuzz iconv intl m
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png
 WANTLIB += pthread xcb xcb-render xcb-shm z ${COMPILER_LIBCXX}
 
 MODULES =	textproc/intltool

@@ -6,12 +6,14 @@ DISTNAME =		texlive-${DIST_V}-source
 PKGNAME =		texlive_base-${V}
 WRKDIST =		${WRKDIR}/texlive-${DIST_V}-source
 
-REVISION-main =		2
+REVISION-main =		3
 
 MULTI_PACKAGES =	-main -mktexlsr -synctex
 PKGNAME-mktexlsr =	texlive_mktexlsr-${V}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-synctex =	texlive_synctex-${V}
+REVISION-mktexlsr =	0
+REVISION-synctex =	0
 
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX}
@@ -26,7 +28,7 @@ WANTLIB += Xmu Xpm Xrender Xt avahi-client avahi-common c cairo
 WANTLIB += cups dbus-1 expat fontconfig freetype gd glib-2.0
 WANTLIB += graphite2 gs harfbuzz iconv icudata crypto ssl
 WANTLIB += icui18n icuio icuuc ijs intl jbig2dec jpeg kpathsea
-WANTLIB += lzma m paper pcre pixman-1 png
+WANTLIB += lzma m paper pcre2-8 pixman-1 png
 WANTLIB += tiff webp xcb xcb-render xcb-shm z zstd zzip
 WANTLIB += execinfo idn openjp2
 

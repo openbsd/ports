@@ -1,4 +1,5 @@
 COMMENT=		MATE screensaver
+REVISION=		0
 
 MATE_PROJECT=		mate-screensaver
 MATE_VERSION=		1.26.1
@@ -13,7 +14,7 @@ WANTLIB += expat ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glapi glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gthread-2.0 gtk-3 harfbuzz iconv intl lzma m mate-desktop-2
 WANTLIB += mate-menu matekbd matekbdui notify pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread startup-notification-1
+WANTLIB += pangoft2-1.0 pcre2-8 pixman-1 png pthread startup-notification-1
 WANTLIB += xcb xcb-dri2 xcb-dri3 xcb-glx xcb-present xcb-render xcb-shm
 WANTLIB += xcb-sync xcb-util xcb-xfixes xkbfile xklavier xml2 xshmfence
 WANTLIB += z

@@ -3,6 +3,7 @@ COMMENT=		generic spell checking library
 V=			2.3.3
 DISTNAME=		enchant-${V}
 PKGNAME=		enchant2-${V}
+REVISION=		0
 
 SHARED_LIBS +=  enchant-2            0.1      # 5.3
 
@@ -16,7 +17,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} aspell c curses glib-2.0 gmodule-2.0
-WANTLIB += hunspell-1.7 iconv intl m pcre
+WANTLIB += hunspell-1.7 iconv intl m pcre2-8
 
 MASTER_SITES =		https://github.com/AbiWord/enchant/releases/download/v${V}/
 

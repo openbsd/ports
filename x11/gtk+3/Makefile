@@ -14,8 +14,10 @@ GNOME_VERSION=		3.24.34
 PKGNAME-main=		gtk+3-${GNOME_VERSION}
 PKGNAME-cups=		gtk+3-cups-${GNOME_VERSION}
 PKGNAME-guic=		gtk-update-icon-cache-${GNOME_VERSION}
+REVISION-guic=		0
+REVISION-main=		0
 
-REVISION-cups=		0
+REVISION-cups=		1
 
 CATEGORIES=		x11 devel
 
@@ -31,7 +33,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE=		Yes
 
 WANTLIB += ffi gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += iconv intl jpeg m pcre pthread z
+WANTLIB += iconv intl jpeg m pcre2-8 pthread z
 
 MULTI_PACKAGES=		-main -cups -guic
 

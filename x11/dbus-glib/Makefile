@@ -2,7 +2,7 @@ COMMENT=		glib bindings for dbus message system
 
 DISTNAME=		dbus-glib-0.112
 EPOCH=			0
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  dbus-glib-1          5.0      # 5.4
 
@@ -16,7 +16,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB =  c dbus-1 execinfo expat ffi gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 iconv intl pcre pthread z
+WANTLIB += gobject-2.0 iconv intl pcre2-8 pthread z
 
 MASTER_SITES=		https://dbus.freedesktop.org/releases/dbus-glib/
 

@@ -1,5 +1,5 @@
 COMMENT=		MATE keyboard configuration library
-REVISION=		0
+REVISION=		1
 
 MATE_PROJECT=		libmatekbd
 
@@ -16,7 +16,7 @@ WANTLIB += Xrender atk-1.0 atk-bridge-2.0 cairo cairo-gobject epoxy
 WANTLIB += expat ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gtk-3 harfbuzz iconv intl lzma m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread xcb
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png pthread xcb
 WANTLIB += xcb-render xcb-shm xkbfile xkbfile xklavier xml2 z
 WANTLIB += ${COMPILER_LIBCXX} execinfo jpeg Xau Xdmcp
 

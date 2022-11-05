@@ -2,6 +2,7 @@ COMMENT=	Xfce4 desktop panel
 
 XFCE_PROJECT=	xfce4-panel
 XFCE_VERSION=	4.16.5
+REVISION=	0
 
 SHARED_LIBS=	xfce4panel-2.0	0.2 # 4.0
 
@@ -14,7 +15,7 @@ WANTLIB += c cairo cairo-gobject epoxy fribidi
 WANTLIB += expat ffi fontconfig freetype garcon-1 garcon-gtk3-1 gdk-3
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz
-WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
+WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png
 WANTLIB += pthread startup-notification-1 wnck-3 xcb
 WANTLIB += xcb-render xcb-shm xcb-util xfce4ui-2 xfce4util xfconf-0 z
 WANTLIB += iconv intl exo-2 jpeg

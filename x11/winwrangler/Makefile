@@ -2,7 +2,7 @@ COMMENT =	desktop daemon to perform advanced window manipulations
 
 V =		0.2.4
 DISTNAME =	winwrangler-$V
-REVISION =	16
+REVISION =	17
 
 CATEGORIES =	x11
 
@@ -16,7 +16,7 @@ WANTLIB += Xinerama Xrandr Xrender atk-1.0 c cairo expat ffi fontconfig
 WANTLIB += freetype fribidi gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gtk-x11-2.0
 WANTLIB += gtkhotkey harfbuzz iconv intl m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread wnck-1 xcb xcb-render
+WANTLIB += pangoft2-1.0 pcre2-8 pixman-1 png pthread wnck-1 xcb xcb-render
 WANTLIB += xcb-shm z Xau Xdmcp jpeg
 WANTLIB += ${COMPILER_LIBCXX}
 

@@ -1,4 +1,5 @@
 COMMENT=		implementation of the FreeDesktop menu spec for MATE
+REVISION=		0
 
 SHARED_LIBS +=  mate-menu                 6.9 # 6.9
 
@@ -11,7 +12,7 @@ PERMIT_PACKAGE=		Yes
 
 WANTLIB += ffi iconv intl pthread ${MODPY_WANTLIB} z
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += pcre
+WANTLIB += pcre2-8
 
 MODULES=		x11/gnome
 

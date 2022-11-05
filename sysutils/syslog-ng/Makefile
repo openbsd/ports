@@ -4,6 +4,7 @@ V =		3.38.1
 REL =		3.38.1
 DISTNAME =	syslog-ng-$V
 CATEGORIES =	sysutils
+REVISION =	0
 
 MAINTAINER =	Steven Mestdagh <steven@openbsd.org>
 
@@ -13,8 +14,8 @@ HOMEPAGE =	https://syslog-ng.com/
 PERMIT_PACKAGE =		Yes
 
 WANTLIB += c crypto curl dbi glib-2.0 gmodule-2.0 gthread-2.0
-WANTLIB += iconv intl ivykis json-c m maxminddb nghttp2 pcre pthread
-WANTLIB += ssl z
+WANTLIB += iconv intl ivykis json-c m maxminddb nghttp2 pcre pcre2-8
+WANTLIB += pthread ssl z
 
 MASTER_SITES =	https://github.com/balabit/syslog-ng/releases/download/${DISTNAME}/
 
@@ -36,6 +37,7 @@ BUILD_DEPENDS=	devel/bison>=3.4.2
 LIB_DEPENDS =	devel/glib2 \
 		devel/json-c \
 		devel/libivykis \
+		devel/pcre \
 		databases/libdbi>=0.9.0 \
 		net/curl \
 		net/libmaxminddb

@@ -1,5 +1,5 @@
 COMMENT=		glib/gio-based lib for file management
-REVISION=		0
+REVISION=		1
 
 WANTLIB += ${COMPILER_LIBCXX} X11 Xcomposite Xcursor Xdamage Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo exif
@@ -7,7 +7,7 @@ WANTLIB += expat ffi fm-extra fontconfig freetype fribidi gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz iconv intl
 WANTLIB += m menu-cache pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png xcb xcb-render xcb-shm z
+WANTLIB += pcre2-8 pixman-1 png xcb xcb-render xcb-shm z
 WANTLIB += Xau Xdmcp jpeg
 
 BUILD_DEPENDS=		lang/vala

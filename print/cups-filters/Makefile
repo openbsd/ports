@@ -4,6 +4,7 @@ BROKEN-hppa=	ICE on filter/pdftopdf/qpdf_pdftopdf.cc:147
 COMMENT=	OpenPrinting CUPS filters
 
 DISTNAME=	cups-filters-1.28.16
+REVISION=	0
 
 CATEGORIES=	print
 
@@ -21,7 +22,7 @@ WANTLIB += ${COMPILER_LIBCXX} avahi-client avahi-common avahi-glib
 WANTLIB += brotlidec brotlienc c crypto cups dbus-1 execinfo exif
 WANTLIB += expat ffi fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gmp gnutls gobject-2.0 hogweed iconv idn2 intl jpeg
-WANTLIB += lcms2 lzma m nettle openjp2 p11-kit pcre png poppler
+WANTLIB += lcms2 lzma m nettle openjp2 p11-kit pcre2-8 png poppler
 WANTLIB += poppler-cpp qpdf ssl tasn1 tiff unistring z zstd
 
 MASTER_SITES=	https://www.openprinting.org/download/cups-filters/

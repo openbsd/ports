@@ -1,6 +1,7 @@
 COMMENT=		console jabber client
 DISTNAME=		mcabber-1.1.2
 CATEGORIES=		net
+REVISION=		0
 
 HOMEPAGE=		https://mcabber.com/
 
@@ -10,7 +11,7 @@ MAINTAINER=		Markus Hennecke <markus-hennecke@markus-hennecke.de>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += assuan c crypto curses gcrypt glib-2.0 gpg-error gpgme iconv
-WANTLIB += idn intl loudmouth-1>=3 otr panel pcre pthread ssl
+WANTLIB += idn intl loudmouth-1>=3 otr panel pcre2-8 pthread ssl
 
 MASTER_SITES=		${HOMEPAGE}/files/
 EXTRACT_SUFX=		.tar.bz2

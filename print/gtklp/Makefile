@@ -2,7 +2,7 @@ COMMENT=		GTK+ frontend to CUPS
 
 DISTNAME=		gtklp-1.3.4
 EXTRACT_SUFX=		.src.tar.gz
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		print sysutils x11
 
@@ -19,7 +19,7 @@ WANTLIB += avahi-client avahi-common c cairo crypto cups dbus-1
 WANTLIB += execinfo expat ffi fontconfig freetype fribidi gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += graphite2 gtk-x11-2.0 harfbuzz iconv intl jpeg m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png ssl xcb
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png ssl xcb
 WANTLIB += xcb-render xcb-shm z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gtklp/}

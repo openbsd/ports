@@ -2,7 +2,7 @@ COMMENT=	interface components for OpenPGP
 
 GNOME_PROJECT=	libcryptui
 GNOME_VERSION=	3.12.2
-REVISION=	12
+REVISION=	13
 
 SHARED_LIBS +=  cryptui              2.0      # 0.0
 
@@ -19,7 +19,7 @@ WANTLIB += freetype fribidi gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gnome-keyring gobject-2.0 gpg-error
 WANTLIB += gpgme graphite2 gthread-2.0 gtk-3 harfbuzz iconv intl
 WANTLIB += jpeg m notify pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png xcb xcb-render xcb-shm z
+WANTLIB += pcre2-8 pixman-1 png xcb xcb-render xcb-shm z
 
 MODULES=	x11/gnome \
 		devel/dconf

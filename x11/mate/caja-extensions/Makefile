@@ -1,5 +1,5 @@
 COMMENT=		extensions for Caja, the MATE file manager
-REVISION=		0
+REVISION=		1
 
 MATE_PROJECT=		caja-extensions
 
@@ -12,7 +12,7 @@ WANTLIB += cairo-gobject caja-extension dbus-1 dbus-glib-1 dconf epoxy
 WANTLIB += expat ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gssdp-1.2
 WANTLIB += gthread-2.0 gtk-3 gupnp-1.2 harfbuzz iconv idn2 intl lzma m
-WANTLIB += mate-desktop-2 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB += mate-desktop-2 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8
 WANTLIB += pixman-1 png psl pthread soup-2.4 sqlite3
 WANTLIB += startup-notification-1 unistring xcb xcb-render xcb-shm
 WANTLIB += xcb-util xml2 z

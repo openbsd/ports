@@ -9,8 +9,8 @@ GNOME_PROJECT=		gtk+
 PKGNAME-main=		gtk+2-${GNOME_VERSION}
 PKGNAME-cups=		gtk+2-cups-${GNOME_VERSION}
 
-REVISION-main=		1
-REVISION-cups=		1
+REVISION-main=		2
+REVISION-cups=		2
 
 CATEGORIES=		x11 devel
 
@@ -30,7 +30,7 @@ WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 cairo expat
 WANTLIB += ffi fontconfig freetype fribidi gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 harfbuzz
 WANTLIB += iconv intl jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png xcb xcb-render xcb-shm z
+WANTLIB += pcre2-8 pixman-1 png xcb xcb-render xcb-shm z
 
 WANTLIB-main += ${WANTLIB} c
 

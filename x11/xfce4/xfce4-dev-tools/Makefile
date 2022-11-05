@@ -1,7 +1,7 @@
 COMMENT =	Xfce4 developer tools and macros
 
 XFCE_PROJECT =	xfce4-dev-tools
-REVISION =	2
+REVISION =	3
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
@@ -20,6 +20,6 @@ RUN_DEPENDS =	devel/libtool \
 AUTOMAKE_VERSION =	1.16
 AUTOCONF_VERSION =	2.69
 LIB_DEPENDS =	devel/glib2
-WANTLIB = c glib-2.0 pcre pthread iconv intl
+WANTLIB = c glib-2.0 pcre2-8 pthread iconv intl
 
 .include <bsd.port.mk>

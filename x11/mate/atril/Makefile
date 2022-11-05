@@ -1,7 +1,7 @@
 USE_WXNEEDED=		Yes
 
 COMMENT=		document viewer for the MATE desktop
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		graphics
 
@@ -17,7 +17,7 @@ WANTLIB += EGL GL ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm bz2
 WANTLIB += c crypto drm epoxy expat ffi fontconfig freetype gbm
 WANTLIB += gio-2.0 glapi glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += iconv intl m pcre pixman-1 pthread sqlite3
+WANTLIB += iconv intl m pcre2-8 pixman-1 pthread sqlite3
 WANTLIB += ${COMPILER_LIBCXX} xcb xcb-dri2 xcb-glx xcb-render xcb-shm xcb-xfixes
 WANTLIB += archive atk-1.0 atk-bridge-2.0 avahi-common
 WANTLIB += cairo-gobject cairo caja-extension dbus-1 djvulibre

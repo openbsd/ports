@@ -2,7 +2,7 @@ COMMENT=		graphical hard drive inspection tool (smartctl front-end)
 
 DISTNAME=		gsmartcontrol-1.1.3
 EXTRACT_SUFX=		.tar.bz2
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		sysutils x11
 
@@ -26,7 +26,8 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 			sysutils/smartmontools \
 			x11/gtk+3,-guic
 
-LIB_DEPENDS=		x11/gtk3mm
+LIB_DEPENDS=		devel/pcre \
+			x11/gtk3mm
 
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.13

@@ -2,7 +2,7 @@ COMMENT=		caching mechanism for freedesktop.org compliant menus
 
 DISTNAME=		menu-cache-1.1.0
 EXTRACT_SUFX=		.tar.xz
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  menu-cache           1.0      # 4.1
 
@@ -16,7 +16,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += c ffi fm-extra gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gthread-2.0 iconv intl m pcre pthread z
+WANTLIB += gthread-2.0 iconv intl m pcre2-8 pthread z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=lxde/}
 

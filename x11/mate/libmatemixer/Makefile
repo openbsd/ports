@@ -1,4 +1,5 @@
 COMMENT=		mixer library for MATE desktop
+REVISION=		0
 
 MATE_PROJECT=		libmatemixer
 
@@ -11,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += m pthread xcb pulse
 WANTLIB += FLAC dbus-1 execinfo ffi glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 iconv intl ogg pcre pulse-mainloop-glib
+WANTLIB += gobject-2.0 iconv intl ogg pcre2-8 pulse-mainloop-glib
 WANTLIB += sndfile vorbis vorbisenc
 WANTLIB += Xau Xdmcp opus
 

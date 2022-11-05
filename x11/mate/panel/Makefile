@@ -1,4 +1,5 @@
 COMMENT=		panel component for MATE
+REVISION=		0
 
 SHARED_LIBS +=  mate-panel-applet-4       1.1 # 1.1
 
@@ -16,7 +17,7 @@ WANTLIB += cairo cairo-gobject dconf epoxy expat ffi
 WANTLIB += fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gtk-3
 WANTLIB += harfbuzz iconv idn2 intl lzma m mate-desktop-2 mate-menu
-WANTLIB += mateweather pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB += mateweather pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8
 WANTLIB += pixman-1 png pthread soup-2.4 startup-notification-1
 WANTLIB += unistring wnck-3 xcb xcb-render xcb-shm xcb-util xml2 z
 WANTLIB += ${COMPILER_LIBCXX} execinfo jpeg Xau Xdmcp

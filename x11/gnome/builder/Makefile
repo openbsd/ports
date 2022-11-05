@@ -5,7 +5,7 @@ COMMENT=		IDE for GNOME
 
 GNOME_PROJECT=		gnome-builder
 GNOME_VERSION=		42.1
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		devel
 
@@ -46,6 +46,7 @@ LIB_DEPENDS=		devel/glade \
 			devel/libgit2/libgit2-glib \
 			devel/libpeas \
 			devel/llvm \
+			devel/pcre \
 			devel/template-glib \
 			devel/vte3 \
 			textproc/cmark \

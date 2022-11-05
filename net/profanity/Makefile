@@ -1,6 +1,7 @@
 COMMENT =	console based XMPP client
 DISTNAME =	profanity-0.13.1
 CATEGORIES =	net
+REVISION =	0
 
 HOMEPAGE =	https://profanity-im.github.io/
 
@@ -15,7 +16,7 @@ MASTER_SITES =	https://profanity-im.github.io/tarballs/
 
 WANTLIB += assuan c crypto curl curses ereadline expat ffi gcrypt
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gpg-error
-WANTLIB += gpgme iconv intl m nghttp2 otr pcre pthread ${MODPY_WANTLIB}
+WANTLIB += gpgme iconv intl m nghttp2 otr pcre2-8 pthread ${MODPY_WANTLIB}
 WANTLIB += qrencode signal-protocol-c sqlite3 ssl strophe util
 WANTLIB += z
 

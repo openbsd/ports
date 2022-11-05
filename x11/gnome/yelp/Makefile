@@ -2,7 +2,7 @@ COMMENT=		GNOME help browser
 
 GNOME_PROJECT=		yelp
 GNOME_VERSION=		42.2
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  yelp                 0.0      # unknown
 
@@ -21,7 +21,7 @@ WANTLIB += gstpbutils-1.0 gstreamer-1.0 gsttag-1.0 gstvideo-1.0
 WANTLIB += gtk-3 handy-1 harfbuzz harfbuzz-icu hyphen iconv icudata
 WANTLIB += icui18n icuuc idn2 intl javascriptcoregtk-4.1 jpeg
 WANTLIB += lcms2 lzma m nghttp2 openjp2 orc-0.4 pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png psl secret-1 soup-3.0
+WANTLIB += pangoft2-1.0 pcre2-8 pixman-1 png psl secret-1 soup-3.0
 WANTLIB += sqlite3 tasn1 unistring webkit2gtk-4.1 webp webpdemux
 WANTLIB += woff2common woff2dec xcb xcb-dri2 xcb-dri3 xcb-glx
 WANTLIB += xcb-present xcb-render xcb-shm xcb-sync xcb-xfixes

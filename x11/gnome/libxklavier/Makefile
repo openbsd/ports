@@ -3,7 +3,7 @@ COMMENT=		utility library for XKB
 GNOME_PROJECT=		libxklavier
 GNOME_VERSION=		5.4
 EXTRACT_SUFX=		.tar.bz2
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  xklavier             17.1     # .20.0
 
@@ -13,7 +13,7 @@ MASTER_SITES=	https://people.freedesktop.org/~svu/
 # LGPLv2
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += X11 Xext Xi ffi glib-2.0 gobject-2.0 lzma m pcre
+WANTLIB += X11 Xext Xi ffi glib-2.0 gobject-2.0 lzma m pcre2-8
 WANTLIB += pthread xcb xkbfile xml2 z iconv intl
 
 MODULES=		x11/gnome

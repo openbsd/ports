@@ -4,7 +4,7 @@ SHARED_LIBS +=  mate-slab                 0.0 # 0.0
 SHARED_LIBS +=  mate-window-settings      1.0 # 1.0
 
 MATE_PROJECT=		mate-control-center
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		x11
 
@@ -19,7 +19,7 @@ WANTLIB += expat ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gthread-2.0 gtk-3 harfbuzz iconv intl ltdl lzma m marco-private
 WANTLIB += mate-desktop-2 mate-menu matekbd matekbdui ogg pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png polkit-gobject-1
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png polkit-gobject-1
 WANTLIB += rsvg-2 startup-notification-1 vorbis vorbisfile xcb
 WANTLIB += xcb-render xcb-shm xcb-util xkbfile xklavier xml2 z
 WANTLIB += execinfo jpeg Xau Xdmcp

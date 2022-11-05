@@ -2,7 +2,7 @@ COMMENT =		labels and business card designer
 
 GNOME_PROJECT =		glabels
 GNOME_VERSION =		3.4.1
-REVISION =		12
+REVISION =		13
 
 CATEGORIES =		productivity graphics
 
@@ -25,7 +25,7 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 goa-1.0 gobject-2.0 gpg-error
 WANTLIB += graphite2 gtk-3 harfbuzz iconv icudata icui18n icuuc
 WANTLIB += idn2 iec16022 intl json-glib-1.0 lzma m nspr4 nss3
 WANTLIB += nssutil3 p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 plc4 plds4 png psl qrencode rsvg-2 secret-1
+WANTLIB += pcre2-8 pixman-1 plc4 plds4 png psl qrencode rsvg-2 secret-1
 WANTLIB += smime3 soup-2.4 sqlite3 ssl3 unistring xcb xcb-render
 WANTLIB += xcb-shm xml2 z protobuf
 WANTLIB += Xau Xdmcp boost_atomic-mt boost_chrono-mt boost_date_time-mt

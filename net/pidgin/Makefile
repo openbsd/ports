@@ -3,7 +3,7 @@ COMMENT-finch=	multi-protocol instant messaging client, console client
 COMMENT-libpurple= multi-protocol instant messaging library
 
 VERSION=	2.14.8
-REVISION-finch= 1
+REVISION-finch= 2
 DISTNAME=	pidgin-${VERSION}
 PKGNAME-main=	pidgin-${VERSION}
 PKGNAME-finch=	finch-${VERSION}
@@ -15,8 +15,8 @@ FULLPKGPATH$i= ${PKGPATH},$i${FLAVOR_EXT:S/-gtkspell//:S/-/,/g}
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pidgin/}
 EXTRACT_SUFX=	.tar.bz2
-REVISION-libpurple=0
-REVISION-main=	1
+REVISION-libpurple=1
+REVISION-main=	2
 
 SHARED_LIBS=	jabber		0.0 \
 		purple		7.1 \
@@ -33,7 +33,7 @@ COMPILER=	base-clang ports-gcc base-gcc
 
 WANTLIB=	c dbus-1 dbus-glib-1 execinfo ffi gadu gio-2.0 glib-2.0 \
 		gmodule-2.0 gobject-2.0 gthread-2.0 iconv idn intl lzma m \
-		pcre pthread xml2 z
+		pcre2-8 pthread xml2 z
 WANTLIB-main=	X11 ICE SM Xcomposite Xcursor Xdamage Xext Xfixes Xi \
 		Xinerama Xrandr Xrender Xss atk-1.0 cairo expat fontconfig \
 		freetype fribidi gdk-x11-2.0 gdk_pixbuf-2.0 graphite2 \

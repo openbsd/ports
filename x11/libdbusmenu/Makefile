@@ -1,6 +1,6 @@
 COMMENT =	D-Bus menu implementation for Gtk
 DISTNAME =	libdbusmenu-16.04.0
-REVISION =	3
+REVISION =	4
 CATEGORIES =	x11 devel
 SHARED_LIBS +=  dbusmenu-glib             0.0 # 4.12
 SHARED_LIBS +=  dbusmenu-gtk3             0.0 # 4.12
@@ -16,7 +16,7 @@ WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 c cairo cairo-gobject
 WANTLIB += epoxy expat ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gtk-3 harfbuzz iconv intl json-glib-1.0
-WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1
 WANTLIB += png pthread xcb xcb-render xcb-shm z Xau Xdmcp execinfo jpeg
 WANTLIB += ${COMPILER_LIBCXX}
 

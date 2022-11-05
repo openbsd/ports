@@ -3,7 +3,7 @@ COMMENT=		GObject library for Facebook Graph API
 GNOME_PROJECT=		gfbgraph
 GNOME_VERSION=		0.2.5
 PKGNAME=		lib${GNOME_PROJECT}-${GNOME_VERSION}
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  gfbgraph-0.2         1.0      # unknown
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE=		Yes
 
 WANTLIB += brotlicommon brotlidec ffi gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += goa-1.0 gobject-2.0 gthread-2.0 iconv idn2 intl json-glib-1.0
-WANTLIB += lzma m pcre psl pthread rest-0.7 soup-2.4 soup-gnome-2.4
+WANTLIB += lzma m pcre2-8 psl pthread rest-0.7 soup-2.4 soup-gnome-2.4
 WANTLIB += sqlite3 unistring xml2 z
 
 MODULES=		x11/gnome

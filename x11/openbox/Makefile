@@ -1,7 +1,7 @@
 COMMENT =	small, fast & usable window manager
 
 V =		3.6.1
-REVISION =	9
+REVISION =	10
 DISTNAME =	openbox-${V}
 SHARED_LIBS +=	obrender	12.0	# 32.0
 SHARED_LIBS +=	obt		1.1	# 2.2
@@ -20,7 +20,7 @@ WANTLIB += Xinerama Xrandr Xrender c cairo cairo-gobject expat ffi
 WANTLIB += fontconfig freetype fribidi gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 harfbuzz iconv
 WANTLIB += intl lzma m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pangoxft-1.0 pcre pixman-1 png pthread rsvg-2
+WANTLIB += pangoxft-1.0 pcre2-8 pixman-1 png pthread rsvg-2
 WANTLIB += startup-notification-1 xcb xcb-render xcb-shm xcb-util xml2 z
 WANTLIB += ${COMPILER_LIBCXX} Xdmcp jpeg
 

@@ -15,7 +15,7 @@ VERSION =		${QT5_WEBENGINE_VERSION}
 DIST_VERSION =		${QT5_WEBENGINE_VERSION}
 DISTNAME =		${QT5NAME:L}-everywhere-src-${DIST_VERSION}
 PKGNAME ?=		${DISTNAME:C/-everywhere-src//:C/-${DIST_VERSION}/-${VERSION}/}
-REVISION =		7
+REVISION =		8
 
 MASTER_SITES ?=		https://download.qt.io/official_releases/qt/${QT5_WEBENGINE_VERSION:R}/${QT5_WEBENGINE_VERSION}/submodules/ \
 			https://mirrors.ocf.berkeley.edu/qt/official_releases/qt/${QT5_WEBENGINE_VERSION:R}/${QT5_WEBENGINE_VERSION}/submodules/
@@ -39,7 +39,7 @@ WANTLIB += Xi Xrandr Xrender Xss Xtst avcodec avformat avutil
 WANTLIB += c cbor crypto cups dbus-1 event execinfo expat fido2
 WANTLIB += fontconfig freetype glib-2.0 graphite2 harfbuzz iconv
 WANTLIB += intl jpeg kvm lcms2 lzma m nspr4 nss3 nssutil3 opus
-WANTLIB += pcre plc4 plds4 png smime3 snappy sndio swresample
+WANTLIB += pcre2-8 plc4 plds4 png smime3 snappy sndio swresample
 WANTLIB += usbhid util vpx webp webpdemux webpmux xcb xcb-dri3
 WANTLIB += xkbcommon xml2 xslt z
 

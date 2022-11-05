@@ -4,7 +4,7 @@ COMMENT-tcl=	IAX client library, tcl bindings
 DISTNAME=	iaxclient-2.1beta3
 PKGNAME-main=	${DISTNAME}
 PKGNAME-tcl=	${DISTNAME:S/iaxclient/iaxclient-tcl/}
-REVISION=	30
+REVISION=	31
 
 CATEGORIES=	telephony
 SHARED_LIBS=	tcliaxclient02 0.0 \
@@ -34,7 +34,7 @@ WANTLIB-tcl	+= Xi Xinerama Xrandr Xrender atk-1.0 c cairo
 WANTLIB-tcl	+= expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB-tcl	+= gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB-tcl	+= gtk-x11-2.0 iaxclient iconv intl pango-1.0 pangocairo-1.0
-WANTLIB-tcl	+= pangoft2-1.0 pcre pixman-1 png xcb xcb-render
+WANTLIB-tcl	+= pangoft2-1.0 pcre2-8 pixman-1 png xcb xcb-render
 WANTLIB-tcl	+= graphite2 harfbuzz vorbis fribidi
 WANTLIB-tcl	+= xcb-shm ffi ${cWANTLIB} Xau Xdmcp jpeg ${COMPILER_LIBCXX}
 

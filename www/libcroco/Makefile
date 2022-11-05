@@ -4,7 +4,7 @@ COMMENT=		generic CSS parsing library for GNOME project
 
 GNOME_PROJECT=		libcroco
 GNOME_VERSION=		0.6.13
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  croco-0.6            4.0      # 3.1
 
@@ -17,7 +17,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c glib-2.0 iconv intl lzma m pcre pthread xml2 z
+WANTLIB += c glib-2.0 iconv intl lzma m pcre2-8 pthread xml2 z
 
 MODULES=		x11/gnome
 

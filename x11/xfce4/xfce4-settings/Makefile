@@ -2,6 +2,7 @@ COMMENT=	Xfce4 settings helpers
 
 XFCE_PROJECT=	xfce4-settings
 XFCE_VERSION=	4.16.3
+REVISION=	0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -25,7 +26,7 @@ WANTLIB += atk-1.0 c cairo expat jpeg
 WANTLIB += ffi fontconfig freetype gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += m notify pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread startup-notification-1
+WANTLIB += pcre2-8 pixman-1 png pthread startup-notification-1
 WANTLIB += xcb xcb-util xcb-render xcb-shm
 WANTLIB += xfce4util xfconf-0 xkbfile xklavier xml2 z garcon-1
 WANTLIB += harfbuzz graphite2 lzma iconv intl fribidi

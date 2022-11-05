@@ -1,7 +1,7 @@
 COMMENT=	personal accounting application
 
 DISTNAME=	grisbi-2.0.5
-REVISION=	2
+REVISION=	3
 
 EXTRACT_SUFX=	.tar.bz2
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=grisbi/}
@@ -22,7 +22,7 @@ WANTLIB += crypto dbus-1 epoxy execinfo expat ffi fontconfig freetype
 WANTLIB += fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 goffice-0.10 graphite2 gs gsf-1 gtk-3 harfbuzz
 WANTLIB += iconv intl jpeg lzma m ofx osp pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png rsvg-2 spectre xcb xcb-render
+WANTLIB += pangoft2-1.0 pcre2-8 pixman-1 png rsvg-2 spectre xcb xcb-render
 WANTLIB += xcb-shm xml2 xslt z zstd
 
 COMPILER =		base-clang ports-gcc base-gcc

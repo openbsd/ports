@@ -2,7 +2,7 @@ COMMENT =	Xfce4 freedesktop.org compliant menu implementation
 
 XFCE_PROJECT =	garcon
 XFCE_VERSION =	4.16.1
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS +=	garcon-1	0.0
 SHARED_LIBS +=	garcon-gtk3-1	0.1 # 0.0
@@ -22,7 +22,7 @@ WANTLIB += atk-bridge-2.0 cairo cairo-gobject epoxy expat ffi
 WANTLIB += fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB += gtk-3 harfbuzz iconv intl m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png startup-notification-1
+WANTLIB += pangoft2-1.0 pcre2-8 pixman-1 png startup-notification-1
 WANTLIB += xcb xcb-render xcb-shm xcb-util xfce4ui-2 xfce4util
 WANTLIB += z
 WANTLIB += Xau Xdmcp execinfo jpeg

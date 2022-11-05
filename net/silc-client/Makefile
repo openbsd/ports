@@ -1,7 +1,7 @@
 COMMENT=	Secure Internet Live Conferencing (SILC) client
 
 DISTNAME=	silc-client-1.1.11
-REVISION=	6
+REVISION=	7
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=silc/}
 EXTRACT_SUFX=	.tar.bz2
@@ -14,7 +14,7 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB=  c crypto glib-2.0>=1000 gmodule-2.0>=1000 iconv intl curses
-WANTLIB+= pcre pthread ssl
+WANTLIB+= pcre2-8 pthread ssl
 
 LIB_DEPENDS+=	devel/glib2
 

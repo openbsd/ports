@@ -2,12 +2,12 @@ COMMENT=	FUSE FTP driver
 
 DISTNAME=	curlftpfs-0.9.2
 CATEGORIES=	sysutils
-REVISION=	2
+REVISION=	3
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB =  c crypto curl fuse glib-2.0 iconv intl nghttp2 pcre pthread
+WANTLIB =  c crypto curl fuse glib-2.0 iconv intl nghttp2 pcre2-8 pthread
 WANTLIB += ssl z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=curlftpfs/}

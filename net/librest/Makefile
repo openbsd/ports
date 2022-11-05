@@ -3,7 +3,7 @@ COMMENT =	access web services that claim to be RESTful
 GNOME_VERSION =	0.8.1
 GNOME_PROJECT =	rest
 PKGNAME =	lib${DISTNAME}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	net devel
 
@@ -16,7 +16,7 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += iconv intl lzma m pcre pthread soup-2.4 soup-gnome-2.4
+WANTLIB += iconv intl lzma m pcre2-8 pthread soup-2.4 soup-gnome-2.4
 WANTLIB += sqlite3 xml2 z idn2 psl unistring brotlicommon brotlidec
 
 MODULES =		x11/gnome

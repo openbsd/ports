@@ -15,7 +15,7 @@ DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 ### stable
 .if ${PROPERTIES:Mrust}
-REVISION=		1
+REVISION=		2
 SHARED_LIBS +=  rsvg-2               41.0     # 50.0
 GNOME_VERSION=		${STABLE_VERSION}
 MODULES +=		lang/python
@@ -31,12 +31,12 @@ MAKE_FLAGS +=		V=1
 WANTLIB += ${COMPILER_LIBCXX} Xau Xdmcp cairo-gobject jpeg
 .else
 ### old
-REVISION=		4
+REVISION=		5
 SHARED_LIBS +=  rsvg-2               38.2     # 42.20
 GNOME_VERSION=		${OLD_VERSION}
 PATCH_LIST=		old-patch-*
 PKG_ARGS=		-Dold=1 -Dstable=0
-WANTLIB += ${COMPILER_LIBCXX} croco-0.6 ffi gmodule-2.0 jpeg pcre Xau Xdmcp
+WANTLIB += ${COMPILER_LIBCXX} croco-0.6 ffi gmodule-2.0 jpeg pcre2-8 Xau Xdmcp
 LIB_DEPENDS +=		www/libcroco
 CONFIGURE_ARGS +=	--disable-tools
 .endif
@@ -49,7 +49,7 @@ PERMIT_PACKAGE=		Yes
 WANTLIB += X11 Xext Xrender c cairo expat ffi fontconfig
 WANTLIB += freetype fribidi gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 harfbuzz iconv
-WANTLIB += intl lzma m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB += intl lzma m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8
 WANTLIB += pixman-1 png pthread xcb xcb-render xcb-shm xml2 z
 
 MODULES +=		x11/gnome

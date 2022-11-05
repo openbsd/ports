@@ -1,4 +1,5 @@
 COMMENT=		MATE session manager
+REVISION=		0
 
 MATE_PROJECT=		mate-session-manager
 
@@ -13,7 +14,7 @@ WANTLIB += cairo-gobject dbus-1 dbus-glib-1 epoxy execinfo expat ffi
 WANTLIB += fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gtk-3
 WANTLIB += harfbuzz iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread xcb xcb-render xcb-shm z
+WANTLIB += pcre2-8 pixman-1 png pthread xcb xcb-render xcb-shm z
 WANTLIB += EGL GL GLESv2 X11-xcb Xxf86vm drm gbm glapi xcb-dri2
 WANTLIB += xcb-dri3 xcb-glx xcb-present xcb-sync xcb-xfixes xshmfence
 WANTLIB += ${COMPILER_LIBCXX} Xdmcp jpeg

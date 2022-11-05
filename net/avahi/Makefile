@@ -18,12 +18,12 @@ PKGNAME-gui=		avahi-gui-${V}
 PKGNAME-libs=		avahi-libs-${V}
 PKGNAME-python=		py3-avahi-${V}
 
-REVISION-python=	4
-REVISION-gui=		7
-REVISION-gtk3=		3
-REVISION-main=		8
-REVISION-libs=		2
-REVISION-glib=		1
+REVISION-python=	5
+REVISION-gui=		8
+REVISION-gtk3=		4
+REVISION-main=		9
+REVISION-libs=		3
+REVISION-glib=		2
 
 CATEGORIES=		net devel
 
@@ -78,7 +78,7 @@ CONFIGURE_ARGS=		--disable-mono \
 			--disable-monodoc
 
 WANTLIB-glib += avahi-client avahi-common dbus-1 execinfo ffi glib-2.0
-WANTLIB-glib += gobject-2.0 iconv intl pcre pthread
+WANTLIB-glib += gobject-2.0 iconv intl pcre2-8 pthread
 
 LIB_DEPENDS-glib=	devel/glib2 \
 			${BUILD_PKGPATH},-libs
@@ -110,7 +110,7 @@ WANTLIB-gtk3 += avahi-common avahi-glib cairo cairo-gobject
 WANTLIB-gtk3 += dbus-1 expat fontconfig freetype gdbm gdk-3 gdk_pixbuf-2.0
 WANTLIB-gtk3 += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 epoxy
 WANTLIB-gtk3 += gtk-3 m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB-gtk3 += pcre pixman-1 png pthread xcb xcb-render graphite2
+WANTLIB-gtk3 += pcre2-8 pixman-1 png pthread xcb xcb-render graphite2
 WANTLIB-gtk3 += xcb-shm z ffi iconv intl fribidi atk-bridge-2.0 harfbuzz
 WANTLIB-gtk3 += ${COMPILER_LIBCXX} execinfo jpeg Xau Xdmcp
 
@@ -128,7 +128,7 @@ WANTLIB-gui += avahi-common avahi-core avahi-glib avahi-ui-gtk3 c
 WANTLIB-gui += cairo cairo-gobject dbus-1 expat fontconfig freetype
 WANTLIB-gui += gdbm gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB-gui += gobject-2.0 gtk-3 m pango-1.0 fribidi atk-bridge-2.0
-WANTLIB-gui += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
+WANTLIB-gui += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png pthread
 WANTLIB-gui += xcb xcb-render xcb-shm z ffi graphite2 epoxy iconv intl
 WANTLIB-gui += ${COMPILER_LIBCXX} execinfo jpeg Xau Xdmcp
 

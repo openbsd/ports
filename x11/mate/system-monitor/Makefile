@@ -1,5 +1,5 @@
 COMMENT=		MATE system monitor
-REVISION=		0
+REVISION=		1
 
 MATE_PROJECT=		mate-system-monitor
 
@@ -16,7 +16,7 @@ WANTLIB += gdk-3 gdk_pixbuf-2.0 gdkmm-3.0 gio-2.0 giomm-2.4 glib-2.0
 WANTLIB += glibmm-2.4 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gtk-3 gtkmm-3.0 gtop-2.0 harfbuzz iconv intl kvm lzma
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4
-WANTLIB += pcre pixman-1 png rsvg-2 sigc-2.0 xcb xcb-render
+WANTLIB += pcre2-8 pixman-1 png rsvg-2 sigc-2.0 xcb xcb-render
 WANTLIB += xcb-shm xml2 z
 WANTLIB += execinfo jpeg Xdmcp
 

@@ -3,7 +3,7 @@ COMMENT=	pidgin plugin to display messages through libnotify
 DISTNAME=	pidgin-libnotify-0.14
 CATEGORIES=	x11
 
-REVISION=	7
+REVISION=	8
 
 HOMEPAGE=	http://gaim-libnotify.sourceforge.net/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gaim-libnotify/}
@@ -15,7 +15,7 @@ WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 cairo expat ffi fontconfig freetype fribidi
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz iconv
-WANTLIB += intl m notify pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB += intl m notify pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8
 WANTLIB += pixman-1 png pthread xcb xcb-render xcb-shm z Xau Xdmcp jpeg
 WANTLIB += ${COMPILER_LIBCXX}
 

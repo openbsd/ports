@@ -5,7 +5,7 @@ COMMENT=	GTK+2 Python bindings
 GNOME_PROJECT=	pygtk
 GNOME_VERSION=	2.24.0
 PKGNAME=	py-gtk2-${VERSION}
-REVISION=	11
+REVISION=	12
 
 CATEGORIES=	x11
 
@@ -19,7 +19,7 @@ WANTLIB += Xrandr Xrender atk-1.0 cairo expat ffi fontconfig freetype
 WANTLIB += fribidi gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gtk-x11-2.0
 WANTLIB += harfbuzz iconv intl lzma m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread xcb xcb-render
+WANTLIB += pangoft2-1.0 pcre2-8 pixman-1 png pthread xcb xcb-render
 WANTLIB += xcb-shm xml2 z Xau Xdmcp jpeg
 WANTLIB += ${COMPILER_LIBCXX}
 

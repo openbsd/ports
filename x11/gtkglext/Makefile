@@ -1,7 +1,7 @@
 COMMENT=	OpenGL extension to GTK+ 2.0 and later
 
 DISTNAME=	gtkglext-1.2.0.20191219
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	x11 graphics devel
 
@@ -18,7 +18,7 @@ WANTLIB += Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo
 WANTLIB += drm expat ffi fontconfig freetype fribidi gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glapi glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += graphite2 gtk-x11-2.0 harfbuzz iconv intl m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png pthread
 WANTLIB += xcb xcb-dri2 xcb-dri3 xcb-glx xcb-present xcb-render
 WANTLIB += xcb-shm xcb-sync xcb-xfixes xshmfence z Xau Xdmcp jpeg
 WANTLIB += ${COMPILER_LIBCXX}

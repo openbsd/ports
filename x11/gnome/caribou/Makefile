@@ -7,8 +7,8 @@ GNOME_VERSION=		0.4.21
 PKGNAME-main=		caribou-${GNOME_VERSION}
 PKGNAME-gtk2=		caribou-gtk2-${GNOME_VERSION}
 
-REVISION-main=		10
-REVISION-gtk2=		2
+REVISION-main=		11
+REVISION-gtk2=		3
 
 SHARED_LIBS +=  caribou              0.0      # 0.0
 
@@ -21,7 +21,7 @@ WANTLIB += ${COMPILER_LIBCXX} X11 Xcomposite Xcursor Xdamage Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 cairo expat
 WANTLIB += ffi fontconfig freetype fribidi gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 harfbuzz iconv
-WANTLIB += intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1
 WANTLIB += png xcb xcb-render xcb-shm z jpeg Xau Xdmcp
 
 WANTLIB-main += ${WANTLIB}

@@ -1,7 +1,7 @@
 USE_WXNEEDED=		Yes
 
 COMMENT=		image viewer for the MATE desktop
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		graphics
 
@@ -14,7 +14,7 @@ WANTLIB += ICE X11 X11-xcb Xcomposite Xcursor Xdamage Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender c dconf epoxy expat
 WANTLIB += ffi fontconfig freetype gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 iconv intl jpeg
-WANTLIB += lzma m pcre pixman-1 png pthread xcb
+WANTLIB += lzma m pcre2-8 pixman-1 png pthread xcb
 WANTLIB += xcb-render xcb-shm xcb-util xml2 z
 WANTLIB += atk-1.0 atk-bridge-2.0 cairo-gobject cairo
 WANTLIB += exempi exif gdk-3 fribidi

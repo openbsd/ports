@@ -1,7 +1,7 @@
 COMMENT=		framework for defining and tracking users, sessions & seats
 
 PKGNAME=		${DISTNAME:L}
-REVISION=		0
+REVISION=		1
 
 GH_TAGNAME=		1.2.4
 GH_ACCOUNT=		ConsoleKit2
@@ -18,7 +18,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB =  ICE SM X11 c dbus-1 drm execinfo ffi gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 iconv intl kvm pcre polkit-gobject-1
+WANTLIB += gmodule-2.0 gobject-2.0 iconv intl kvm pcre2-8 polkit-gobject-1
 WANTLIB += pthread xcb z
 
 USE_GMAKE=		Yes

@@ -1,5 +1,5 @@
 COMMENT=		media tools for the MATE desktop
-REVISION=		0
+REVISION=		1
 
 MATE_PROJECT=		mate-media
 
@@ -9,7 +9,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender c epoxy expat ffi fontconfig
 WANTLIB += freetype gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gthread-2.0 iconv intl m pcre pixman-1
+WANTLIB += gobject-2.0 gthread-2.0 iconv intl m pcre2-8 pixman-1
 WANTLIB += png pthread xcb xcb-render xcb-shm z
 WANTLIB += atk-1.0 atk-bridge-2.0 cairo-gobject cairo
 WANTLIB += canberra-gtk3 canberra gdk-3 graphite2 gtk-3

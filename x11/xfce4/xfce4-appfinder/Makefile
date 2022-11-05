@@ -2,7 +2,7 @@ COMMENT=	Xfce4 application finder
 
 XFCE_PROJECT=	xfce4-appfinder
 XFCE_VERSION=	4.16.1
-REVISION=	1
+REVISION=	2
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -21,7 +21,7 @@ WANTLIB += c cairo cairo-gobject epoxy expat ffi fontconfig freetype
 WANTLIB += fribidi garcon-1 gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3
 WANTLIB += harfbuzz iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread startup-notification-1 xcb
+WANTLIB += pcre2-8 pixman-1 png pthread startup-notification-1 xcb
 WANTLIB += xcb-render xcb-shm xcb-util xfce4ui-2 xfce4util xfconf-0
 WANTLIB += z
 WANTLIB += ${COMPILER_LIBCXX}

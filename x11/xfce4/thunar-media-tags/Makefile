@@ -1,7 +1,7 @@
 COMMENT=	Thunar media tags plugin
 
 XFCE_VERSION=	0.3.0
-REVISION=	2
+REVISION=	3
 THUNAR_PLUGIN=	thunar-media-tags-plugin
 
 # GPLv3
@@ -15,7 +15,7 @@ WANTLIB=	X11 Xcomposite Xcursor Xdamage Xext fribidi \
 		expat fontconfig freetype gdk-3 gdk_pixbuf-2.0 \
 		gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 \
 		gtk-3 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pcre pixman-1 png ${COMPILER_LIBCXX} z xcb ffi ICE SM exo-2 xfce4util \
+		pcre2-8 pixman-1 png ${COMPILER_LIBCXX} z xcb ffi ICE SM exo-2 xfce4util \
 		thunarx-3 tag tag_c xcb-render xcb-shm \
 		atk-bridge-2.0 cairo-gobject epoxy fribidi \
 		harfbuzz pthread graphite2 iconv intl

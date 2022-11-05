@@ -2,7 +2,7 @@ COMMENT=		extra themes for GNOME applications
 
 GNOME_PROJECT=		gnome-themes-extra
 GNOME_VERSION=		3.28
-REVISION=		4
+REVISION=		5
 
 # LGPLv2.1
 PERMIT_PACKAGE=		Yes
@@ -12,7 +12,7 @@ WANTLIB += Xrandr Xrender atk-1.0 cairo expat ffi fontconfig freetype
 WANTLIB += fribidi gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0
 WANTLIB += harfbuzz iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread xcb xcb-render xcb-shm z
+WANTLIB += pcre2-8 pixman-1 png pthread xcb xcb-render xcb-shm z
 WANTLIB += Xau Xdmcp jpeg
 WANTLIB += ${COMPILER_LIBCXX}
 

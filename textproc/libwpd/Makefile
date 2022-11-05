@@ -3,7 +3,7 @@ COMMENT=	import and export WordPerfect(tm) documents
 DISTNAME=	libwpd-0.8.9
 CATEGORIES=	textproc
 
-REVISION=	12
+REVISION=	13
 
 SHARED_LIBS=	wpd-0.8		8.9 \
 		wpd-stream-0.8	8.9
@@ -16,7 +16,7 @@ MAINTAINER=	Robert Nagy <robert@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += bz2 c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gsf-1
-WANTLIB += gthread-2.0 iconv intl lzma m pcre pthread ${COMPILER_LIBCXX} xml2 z
+WANTLIB += gthread-2.0 iconv intl lzma m pcre2-8 pthread ${COMPILER_LIBCXX} xml2 z
 
 COMPILER =		base-clang ports-gcc base-gcc
 

@@ -3,7 +3,7 @@ COMMENT=		extensible window manager
 VERSION=		1.12.90
 DISTNAME=		sawfish_${VERSION}
 PKGNAME=		sawfish-${VERSION}
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		x11
 
@@ -23,7 +23,7 @@ WANTLIB += c cairo expat ffi fontconfig freetype fribidi gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gdk_pixbuf_xlib-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gmp gobject-2.0 graphite2 gtk-x11-2.0 harfbuzz
 WANTLIB += iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pangoxft-1.0 pcre rep xcb z jpeg png
+WANTLIB += pangoxft-1.0 pcre2-8 rep xcb z jpeg png
 
 BUILD_DEPENDS=		archivers/gtar \
 			devel/gettext,-tools \

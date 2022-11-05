@@ -2,7 +2,7 @@ COMMENT=	Xfce4 mount device panel plugin
 
 XFCE_VERSION=	1.1.5
 XFCE_PLUGIN=	mount
-REVISION=	1
+REVISION=	2
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -18,7 +18,7 @@ WANTLIB += atk-bridge-2.0 cairo-gobject epoxy gdk-3 gtk-3
 WANTLIB += gobject-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pixman-1 png xcb
 WANTLIB += xcb-util xcb-render xcb-shm xfce4util xfce4ui-2 z
-WANTLIB += ICE SM X11-xcb ffi pcre startup-notification-1
+WANTLIB += ICE SM X11-xcb ffi pcre2-8 startup-notification-1
 WANTLIB += harfbuzz pthread graphite2 iconv intl
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += Xau Xdmcp execinfo jpeg

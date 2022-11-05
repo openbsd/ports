@@ -2,7 +2,7 @@ COMMENT=		GNOME desktop sharing server
 
 GNOME_PROJECT=		vino
 GNOME_VERSION=		3.22.0
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		net
 
@@ -24,7 +24,7 @@ WANTLIB += freetype gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gmp gnutls gobject-2.0 gpg-error graphite2
 WANTLIB += gtk-3 harfbuzz hogweed iconv intl jpeg
 WANTLIB += m nettle notify p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread secret-1 tasn1
+WANTLIB += pcre2-8 pixman-1 png pthread secret-1 tasn1
 WANTLIB += telepathy-glib xcb xcb-render xcb-shm z
 WANTLIB += fribidi idn2 unistring ${COMPILER_LIBCXX} execinfo
 WANTLIB += Xau Xdmcp brotlidec brotlienc zstd

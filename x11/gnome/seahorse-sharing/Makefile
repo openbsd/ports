@@ -2,7 +2,7 @@ COMMENT=		PGP public keys sharing via DNS-SD and HKP
 
 GNOME_PROJECT=		seahorse-sharing
 GNOME_VERSION=		3.8.0
-REVISION=		16
+REVISION=		17
 
 CATEGORIES=		net security
 
@@ -17,7 +17,7 @@ WANTLIB += epoxy expat ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gpg-error
 WANTLIB += gpgme graphite2 gthread-2.0 gtk-3 harfbuzz iconv idn2
 WANTLIB += intl jpeg lzma m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png psl soup-2.4 sqlite3 unistring xcb
+WANTLIB += pcre2-8 pixman-1 png psl soup-2.4 sqlite3 unistring xcb
 WANTLIB += xcb-render xcb-shm xml2 z execinfo Xau Xdmcp
 
 MODULES=		x11/gnome

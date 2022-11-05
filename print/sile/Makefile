@@ -2,7 +2,7 @@ COMMENT =	typesetting system and improved layout engine
 
 V =		0.9.4
 PKGNAME =	sile-$V
-REVISION =	4
+REVISION =	5
 
 SHARED_LIBS +=  texpdf                    0.0 # 0.0
 
@@ -14,7 +14,7 @@ HOMEPAGE =	http://sile-typesetter.org/
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} expat fontconfig freetype glib-2.0 graphite2
-WANTLIB += harfbuzz iconv icudata icui18n icuio icuuc intl m pcre
+WANTLIB += harfbuzz iconv icudata icui18n icuio icuuc intl m pcre2-8
 WANTLIB += png pthread z ${MODLUA_WANTLIB}
 
 COMPILER =		base-clang ports-gcc base-gcc

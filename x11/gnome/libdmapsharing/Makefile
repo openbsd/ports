@@ -2,7 +2,7 @@ COMMENT=		DMAP client and server library
 
 GNOME_PROJECT=		libdmapsharing
 GNOME_VERSION=		2.9.41
-REVISION=		1
+REVISION=		2
 
 # override gnome MODULE
 MASTER_SITES=		https://www.flyn.org/projects/libdmapsharing/
@@ -18,7 +18,7 @@ PERMIT_PACKAGE=		Yes
 WANTLIB += avahi-client avahi-common avahi-glib brotlicommon brotlidec
 WANTLIB += dbus-1 execinfo ffi gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gstapp-1.0 gstbase-1.0 gstreamer-1.0
-WANTLIB += gthread-2.0 iconv idn2 intl jpeg lzma m pcre png psl
+WANTLIB += gthread-2.0 iconv idn2 intl jpeg lzma m pcre2-8 png psl
 WANTLIB += pthread soup-2.4 sqlite3 unistring xml2 z
 
 MODULES=		x11/gnome

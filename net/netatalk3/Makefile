@@ -6,7 +6,7 @@ EXTRACT_SUFX=		.tar.bz2
 PKGSPEC=		netatalk->=3,<4
 EPOCH=			0
 
-REVISION=		0
+REVISION=		1
 
 # https://github.com/Netatalk/Netatalk/pull/174
 MASTER_SITES0=		https://src.fedoraproject.org/rpms/netatalk/raw/rawhide/f/
@@ -26,7 +26,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += avahi-client avahi-common c crypto db dbus-1 dbus-glib-1
 WANTLIB += event_core event_extra ffi gcrypt gio-2.0 glib-2.0
-WANTLIB += gobject-2.0 gpg-error gthread-2.0 iconv intl pcre pthread
+WANTLIB += gobject-2.0 gpg-error gthread-2.0 iconv intl pcre2-8 pthread
 WANTLIB += tdb execinfo
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=netatalk/}

@@ -1,7 +1,7 @@
 COMMENT=	set of libraries and utilities to access smart cards
 
 V=		0.22.0
-REVISION=	2
+REVISION=	3
 DISTNAME=	opensc-${V}
 
 SHARED_LIBS +=	opensc 7.3	# 8.0
@@ -15,7 +15,7 @@ HOMEPAGE=	https://github.com/OpenSC/OpenSC/wiki
 PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c crypto curses ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 \
-		iconv intl pcre pthread readline z
+		iconv intl pcre2-8 pthread readline z
 
 MASTER_SITES=	https://github.com/OpenSC/OpenSC/releases/download/${V}/
 

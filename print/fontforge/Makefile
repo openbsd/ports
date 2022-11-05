@@ -10,7 +10,7 @@ SHARED_LIBS=		fontforge	4.0 \
 			gioftp		2.1 \
 			gunicode	5.1 \
 			gutils		2.1
-REVISION=		5
+REVISION=		6
 
 CATEGORIES=		print
 
@@ -25,7 +25,7 @@ WANTLIB =  ${COMPILER_LIBCXX} ${MODPY_WANTLIB}
 WANTLIB += ICE SM X11 Xext Xft Xi Xrender c cairo expat ffi fontconfig
 WANTLIB += freetype fribidi gif gio-2.0 gmodule-2.0 glib-2.0
 WANTLIB += gobject-2.0 graphite2 harfbuzz iconv intl jpeg lzma m
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pangoxft-1.0 pcre
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pangoxft-1.0 pcre2-8
 WANTLIB += pixman-1 png pthread spiro tiff util xcb xcb-render
 WANTLIB += xcb-shm xml2 z zstd
 

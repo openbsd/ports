@@ -2,7 +2,7 @@ COMMENT=		Facebook Messenger protocol plugin for bitlbee
 
 V=			1.2.2
 DISTNAME=		bitlbee-facebook-$V
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		net
 
@@ -12,7 +12,7 @@ HOMEPAGE=		https://github.com/bitlbee/bitlbee-facebook
 PERMIT_PACKAGE=		Yes
 
 WANTLIB +=		ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 iconv
-WANTLIB +=		intl json-glib-1.0 pcre pthread z
+WANTLIB +=		intl json-glib-1.0 pcre2-8 pthread z
 
 MASTER_SITES=		https://github.com/bitlbee/bitlbee-facebook/releases/download/v$V/
 
