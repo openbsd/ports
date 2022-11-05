@@ -4,6 +4,7 @@ COMMENT-ruby=	ruby interface to librrd
 
 VERSION=	1.7.2
 REVISION=	1
+REVISION-main=	2
 REVISION-ruby=	3
 DISTNAME=	rrdtool-${VERSION}
 PKGNAME-main=	${DISTNAME}
@@ -68,15 +69,14 @@ WANTLIB-ruby=	${cWANTLIB} ${MODRUBY_WANTLIB} c gmp m rrd
 # depends on Perl ABI
 WANTLIB-main=	${cWANTLIB} ${COMPILER_LIBCXX} perl
 WANTLIB-main += X11 Xext Xrender c cairo expat ffi fontconfig freetype
-WANTLIB-main += glib-2.0 gobject-2.0 graphite2 gthread-2.0
+WANTLIB-main += glib-2.0 gobject-2.0 graphite2
 WANTLIB-main += harfbuzz iconv intl lzma m pango-1.0 pangocairo-1.0
-WANTLIB-main += pangoft2-1.0 pcre pixman-1 png xcb
+WANTLIB-main += pangoft2-1.0 pcre2-8 pixman-1 png xcb
 WANTLIB-main += xcb-render xcb-shm xml2 z fribidi
 WANTLIB-main += Xau Xdmcp gio-2.0 gmodule-2.0
 
 LIB_DEPENDS-main=	devel/glib2 \
 			devel/pango \
-			devel/pcre \
 			graphics/png \
 			textproc/libxml
 RUN_DEPENDS-main=	rrdupdate-${VERSION}:net/rrdtool,-update
