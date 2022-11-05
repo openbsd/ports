@@ -1,8 +1,7 @@
 COMMENT=		HTML editor for experienced web designers
-MODPY_VERSION=3.10
 
 DISTNAME=		bluefish-2.2.12
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		www editors
 
