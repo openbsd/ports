@@ -5,6 +5,8 @@ Subject: [PATCH] build: don't set glib version constraints for g-ir-scanner
 
 Should match b_lundef in meson(1).
 
+XXX -Wpointer-sign: https://gitlab.com/libvirt/libvirt-glib/-/issues/4
+
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
@@ -28,7 +30,15 @@ Index: meson.build
  
  
  build_tests = not get_option('tests').disabled()
-@@ -518,6 +512,8 @@ common_cflags = [
+@@ -253,7 +247,6 @@ cc_flags += [
+   '-Wparentheses',
+   '-Wpointer-arith',
+   '-Wpointer-compare',
+-  '-Wpointer-sign',
+   '-Wpointer-to-int-cast',
+   '-Wpragmas',
+   '-Wpsabi',
+@@ -518,6 +511,8 @@ common_cflags = [
    '-DLOCALEDIR="@0@"'.format(localedir),
    '-DDATADIR="@0@"'.format(datadir),
    '-DLIBVIRT_GLIB_BUILD',
