@@ -31,9 +31,6 @@ MODULES=		devel/meson \
 # c++11
 COMPILER=		base-clang ports-gcc
 
-# clang-format
-BUILD_DEPENDS=		devel/llvm
-
 LIB_DEPENDS=		devel/libsigc++-2 \
 			devel/glib2
 
