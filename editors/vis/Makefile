@@ -1,8 +1,7 @@
 COMMENT =		vi-like editor with sam-style structural regex support
 
-V =			0.7
+V =			0.8
 DISTNAME =		vis-${V}
-REVISION =		0
 
 TEST_V =		0.5
 SUPDISTNAME =		vis-test-${TEST_V}
