@@ -1,0 +1,12 @@
+Index: configure
+--- configure.orig
++++ configure
+@@ -22428,7 +22428,7 @@ $as_echo_n "checking for $am_display_PYTHON version...
+ if ${am_cv_python_version+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+-  am_cv_python_version=`$PYTHON -c "import sys; sys.stdout.write(sys.version[:3])"`
++  am_cv_python_version=`$PYTHON -c "import sys; print ('%u.%u' % sys.version_info[[:2]])"`
+ fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $am_cv_python_version" >&5
+ $as_echo "$am_cv_python_version" >&6; }
