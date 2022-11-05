@@ -1,7 +1,7 @@
 COMMENT =		date and time object for Perl
 
 MODULES =		cpan
-DISTNAME =		DateTime-1.54
+DISTNAME =		DateTime-1.59
 EPOCH =			0
 CATEGORIES =		devel
 
@@ -24,6 +24,7 @@ RUN_DEPENDS =	devel/p5-DateTime-Locale>=1.06 \
 
 TEST_DEPENDS =	devel/p5-CPAN-Meta-Check>=0.011 \
 		devel/p5-Test-Fatal \
-		devel/p5-Test-Warnings>=0.005
+		devel/p5-Test-Warnings>=0.005 \
+		devel/p5-Test-Without-Module
 
 .include <bsd.port.mk>
