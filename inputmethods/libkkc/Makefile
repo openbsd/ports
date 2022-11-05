@@ -4,6 +4,8 @@ VERSION =	20210214
 DISTNAME =	libkkc
 PKGNAME =	libkkc-${VERSION}
 
+REVISION =	0
+
 GH_ACCOUNT =	ueno
 GH_PROJECT =	libkkc
 GH_COMMIT =	4583ab1753594b72592df5857106aedad98e533d
@@ -17,7 +19,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =	${COMPILER_LIBCXX} c ffi gee-0.8 gio-2.0 glib-2.0 \
 		gmodule-2.0 gobject-2.0 iconv intl json-glib-1.0 \
-		marisa pcre z
+		marisa pcre2-8 z
 
 # clang and libc++abi required
 COMPILER =	base-clang
@@ -36,7 +38,6 @@ LIB_DEPENDS =	devel/libffi \
 		devel/glib2 \
 		converters/libiconv \
 		devel/json-glib \
-		devel/pcre \
 		textproc/libmarisa
 
 USE_GMAKE =		Yes
