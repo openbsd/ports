@@ -1,10 +1,9 @@
 COMMENT =	pure Python OPC UA client and server library
 
-MODPY_EGG_VERSION =	0.98.12
+MODPY_EGG_VERSION =	0.98.13
 
 DISTNAME =	opcua-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
 
 CATEGORIES =	misc
 
@@ -25,9 +24,5 @@ MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =		python3
 FLAVOR =		python3
-
-# this file cannot be imported and does not exist in the github repository
-post-extract:
-	rm -- ${WRKDIST}/opcua/ua/extension_objects.py
 
 .include <bsd.port.mk>

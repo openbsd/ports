@@ -1,0 +1,14 @@
+https://github.com/FreeOpcUa/python-opcua/commit/2cfc9bc8f01d18e1b92d3410f7fb328df6950bfa
+
+Index: opcua/ua/uatypes.py
+--- opcua/ua/uatypes.py.orig
++++ opcua/ua/uatypes.py
+@@ -554,7 +554,7 @@ class LocalizedText(FrozenClass):
+     def to_string(self):
+         if self.Text is None:
+             return ""
+-        if self.Locale is None:
++        if not self.Locale:
+             return self.Text
+         return self.__str__()
+     
