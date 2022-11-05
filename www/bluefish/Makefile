@@ -2,7 +2,7 @@ COMMENT=		HTML editor for experienced web designers
 MODPY_VERSION=3.10
 
 DISTNAME=		bluefish-2.2.12
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		www editors
 
@@ -17,7 +17,7 @@ WANTLIB += c cairo cairo-gobject enchant-2 epoxy expat ffi fontconfig
 WANTLIB += freetype fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3
 WANTLIB += gucharmap_2_90 harfbuzz iconv intl lzma m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png ${MODPY_WANTLIB}
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pixman-1 png ${MODPY_WANTLIB}
 WANTLIB += util xcb xcb-render xcb-shm xml2 z Xau Xdmcp execinfo jpeg pcre2-8
 
 MASTER_SITES=		https://www.bennewitz.com/bluefish/stable/source/

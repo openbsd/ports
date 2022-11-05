@@ -1,6 +1,7 @@
 COMMENT =		tool to search text in PDF files
 
 DISTNAME =		pdfgrep-2.1.2
+REVISION =		0
 
 CATEGORIES =		textproc
 
@@ -19,7 +20,8 @@ WANTLIB +=		c m pthread poppler-cpp pcre gcrypt gpg-error
 
 MASTER_SITES =		https://pdfgrep.org/download/
 
-LIB_DEPENDS =		print/poppler \
+LIB_DEPENDS =		devel/pcre \
+			print/poppler \
 			security/libgcrypt
 TEST_DEPENDS =		devel/dejagnu \
 			print/texlive/base

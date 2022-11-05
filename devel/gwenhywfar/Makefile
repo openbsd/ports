@@ -1,7 +1,7 @@
 COMMENT=	helper library for networking and security applications
 
 DISTNAME=	gwenhywfar-5.4.0
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=  gwenhywfar           2.1      # 83.0
 SHARED_LIBS +=  gwengui-cpp          1.0      # 83.0
@@ -22,9 +22,9 @@ WANTLIB += cairo-gobject crypto double-conversion drm epoxy execinfo
 WANTLIB += expat ffi fontconfig freetype fribidi gcrypt gdk-3
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glapi glib-2.0 gmodule-2.0 gmp
 WANTLIB += gnutls gobject-2.0 gpg-error graphite2 gthread-2.0
-WANTLIB += gtk-3 harfbuzz hogweed iconv icudata icui18n icuio
+WANTLIB += gtk-3 harfbuzz hogweed iconv icudata icui18n
 WANTLIB += icuuc idn2 intl m nettle p11-kit pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pcre2-16 pixman-1 png ssl tasn1 unistring
+WANTLIB += pangoft2-1.0 pcre2-8 pcre2-16 pixman-1 png ssl tasn1 unistring
 WANTLIB += xcb xcb-dri2 xcb-dri3 xcb-glx xcb-present xcb-render
 WANTLIB += xcb-shm xcb-sync xcb-xfixes xshmfence z zstd
 WANTLIB += Xau Xdmcp brotlidec brotlienc jpeg

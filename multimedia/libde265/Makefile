@@ -6,6 +6,8 @@ DISTNAME=	libde265-$V
 PKGNAME-main=	${DISTNAME}
 PKGNAME-tools=	libde265-tools-$V
 
+REVISION-tools=	0
+
 SHARED_LIBS +=  de265                     1.0 # 0.12
 
 CATEGORIES=	multimedia
@@ -22,7 +24,7 @@ WANTLIB-tools += GL Qt5Core Qt5Gui Qt5Widgets SDL X11 X11-xcb Xau
 WANTLIB-tools += Xdmcp Xext Xfixes Xxf86vm avutil c de265 double-conversion
 WANTLIB-tools += drm execinfo expat freetype glapi glib-2.0 graphite2
 WANTLIB-tools += gthread-2.0 harfbuzz iconv icudata icui18n icuuc
-WANTLIB-tools += intl pcre pcre2-16 png sndio swscale usbhid xcb xcb-dri2
+WANTLIB-tools += intl pcre2-8 pcre2-16 png sndio swscale usbhid xcb xcb-dri2
 WANTLIB-tools += xcb-dri3 xcb-glx xcb-present xcb-sync xcb-xfixes xshmfence
 WANTLIB-tools += z zstd xcb-shm
 

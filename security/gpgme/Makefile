@@ -6,6 +6,8 @@ DISTNAME =		gpgme-${VERSION}
 PKGNAME-main =		gpgme-${VERSION}
 PKGNAME-qt =		gpgme-qt-${VERSION}
 
+REVISION-qt =		0
+
 CATEGORIES =		security devel
 
 SHARED_LIBS +=  gpgme                24.0     # 37.0
@@ -24,7 +26,7 @@ WANTLIB =	assuan gpg-error iconv intl
 WANTLIB-main =	${WANTLIB} c m
 WANTLIB-qt =	${COMPILER_LIBCXX} ${WANTLIB} Qt5Core double-conversion
 WANTLIB-qt +=	execinfo glib-2.0 gpgme gthread-2.0 icudata icui18n icuuc
-WANTLIB-qt +=	m pcre pcre2-16 z zstd
+WANTLIB-qt +=	m pcre2-8 pcre2-16 z zstd
 
 COMPILER =		base-clang ports-gcc
 

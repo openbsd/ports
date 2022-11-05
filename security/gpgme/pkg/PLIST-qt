@@ -134,7 +134,6 @@ include/qgpgme/verifyopaquejob.h
 include/qgpgme/wkdlookupjob.h
 include/qgpgme/wkdlookupresult.h
 include/qgpgme/wkspublishjob.h
-lib/cmake/
 lib/cmake/Gpgmepp/
 lib/cmake/Gpgmepp/GpgmeppConfig.cmake
 lib/cmake/Gpgmepp/GpgmeppConfigVersion.cmake

@@ -6,6 +6,8 @@ CATEGORIES = 	games emulators
 DISTNAME = 	stepmania-5.0.12
 HOMEPAGE =	http://www.stepmania.com
 
+REVISION =	0
+
 GH_ACCOUNT =	stepmania
 GH_PROJECT =	stepmania
 GH_TAGNAME =	v5.0.12
@@ -34,6 +36,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 LIB_DEPENDS =	audio/libvorbis \
 		audio/libmad \
+		devel/pcre \
 		graphics/ffmpeg \
 		audio/pulseaudio
 

@@ -6,7 +6,7 @@ GH_ACCOUNT =		bitcoin
 GH_PROJECT =		bitcoin
 GH_TAGNAME =		v0.21.2
 
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=  bitcoinconsensus          4.0 # 0.0
 SHARED_LIBS +=  secp256k1                 0.1 # 0.0
@@ -62,7 +62,7 @@ WANTLIB += GL Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets X11
 WANTLIB += X11-xcb Xau Xdmcp Xext Xfixes Xxf86vm crypto dbus-1
 WANTLIB += double-conversion drm execinfo expat freetype glapi
 WANTLIB += glib-2.0 graphite2 gthread-2.0 harfbuzz iconv icudata
-WANTLIB += icui18n icuuc intl miniupnpc pcre pcre2-16 png qrencode
+WANTLIB += icui18n icuuc intl miniupnpc pcre2-8 pcre2-16 png qrencode
 WANTLIB += ssl xcb xcb-dri2 xcb-dri3 xcb-glx xcb-present xcb-shm
 WANTLIB += xcb-sync xcb-xfixes xshmfence zstd
 
