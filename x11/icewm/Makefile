@@ -7,6 +7,8 @@ DISTNAME=	icewm-${V}
 EXTRACT_SUFX=	.tar.lz
 CATEGORIES=	x11
 
+REVISION=	0
+
 HOMEPAGE=	https://ice-wm.org/
 
 # LGPLv2 only
@@ -18,7 +20,7 @@ WANTLIB += ao c cairo cairo-gobject expat ffi fontconfig freetype
 WANTLIB += fribidi gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 harfbuzz iconv intl jpeg lzma m mp3lame
 WANTLIB += mpg123 ogg opus pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png rsvg-2 sndfile vorbis vorbisenc xcb
+WANTLIB += pcre2-8 pixman-1 png rsvg-2 sndfile vorbis vorbisenc xcb
 WANTLIB += xcb-render xcb-shm xml2 z
 
 COMPILER=	base-clang ports-gcc base-gcc
@@ -34,7 +36,6 @@ LIB_DEPENDS=	audio/libao \
 		devel/glib2 \
 		devel/harfbuzz \
 		devel/pango \
-		devel/pcre \
 		graphics/cairo \
 		graphics/gdk-pixbuf2 \
 		graphics/imlib2 \
