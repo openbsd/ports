@@ -60,6 +60,7 @@
      SUBDIR += libgweather4
      SUBDIR += libmediaart
      SUBDIR += libpanel
+     SUBDIR += librest1
      SUBDIR += librsvg
      SUBDIR += libsecret
      SUBDIR += libshumate
