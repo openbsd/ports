@@ -1,5 +1,6 @@
 @bin bin/gssdp-discover
 @bin bin/gupnp-av-cp
+@bin bin/gupnp-event-dumper
 @bin bin/gupnp-network-light
 @bin bin/gupnp-universal-cp
 @bin bin/gupnp-upload
