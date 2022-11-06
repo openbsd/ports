@@ -3,7 +3,7 @@ XXX push upstream
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -97,7 +97,6 @@ gsettings_desktop_dep = dependency('gsettings-desktop-
+@@ -100,7 +100,6 @@ gsettings_desktop_dep = dependency('gsettings-desktop-
  gtk_dep = dependency('gtk+-3.0', version: '>= 3.15.3')
  gtk_x11_dep = dependency('gtk+-x11-3.0')
  gweather_dep = dependency('gweather4')

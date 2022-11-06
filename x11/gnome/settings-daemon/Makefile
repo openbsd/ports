@@ -3,14 +3,13 @@
 COMMENT=		GNOME settings daemon
 
 GNOME_PROJECT=		gnome-settings-daemon
-GNOME_VERSION=		42.2
-REVISION=		1
+GNOME_VERSION=		43.0
 
 # GPLv3
 PERMIT_PACKAGE=		Yes
 
 WANTLIB += X11 Xext Xfixes Xi c canberra canberra-gtk3 cups fontconfig
-WANTLIB += gdk-3 geoclue-2 geocode-glib gio-2.0 glib-2.0 gnome-desktop-3
+WANTLIB += gdk-3 geoclue-2 geocode-glib-2 gio-2.0 glib-2.0 gnome-desktop-3
 WANTLIB += gobject-2.0 gtk-3 gweather-4 intl m notify nspr4 nss3
 WANTLIB += polkit-gobject-1 pulse pulse-mainloop-glib upower-glib
 
@@ -21,7 +20,8 @@ MODULES=		devel/dconf \
 LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			audio/pulseaudio \
 			devel/libnotify \
-			geo/geocode-glib \
+			geo/geoclue2 \
+			geo/geocode-glib,soup3 \
 			print/cups,-libs \
 			security/nss \
 			sysutils/upower \
@@ -36,10 +36,6 @@ RUN_DEPENDS +=		sysutils/polkit
 
 # polkit(8) almost always needs to know the "active" session
 RUN_DEPENDS +=		sysutils/consolekit
-
-# plugins/datetime/geoclue.c
-BUILD_DEPENDS +=	geo/geoclue2
-RUN_DEPENDS +=		geo/geoclue2
 
 # plugins/power/gsd-power-manager.c; optional dependency
 # cyclic dep: gnome-session -> gnome-settings-daemon -> gnome-session
