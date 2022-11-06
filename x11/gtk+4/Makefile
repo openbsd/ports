@@ -50,7 +50,6 @@ BUILD_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
 			textproc/py-docutils${MODPY_FLAVOR} \
 			www/sassc
 
-# x11/xkbcommon only needed for Wayland
 LIB_DEPENDS-main=	devel/pango \
 			graphics/gdk-pixbuf2 \
 			graphics/graphene
@@ -95,9 +94,12 @@ WANTLIB-media += gstplayer-1.0 gstreamer-1.0 gstvideo-1.0 gtk-4 m
 
 TEST_IS_INTERACTIVE=	x11
 
-CONFIGURE_ARGS=		-Dwayland-backend=false \
-			-Dvulkan=disabled \
+CONFIGURE_ARGS=		-Dvulkan=disabled \
 			-Dman-pages=true
+
+# disable wayland for now
+CONFIGURE_ARGS +=	-Dwayland-backend=false
+#LIB_DEPENDS +=		x11/xkbcommon
 
 # preference for media-gstreamer
 CONFIGURE_ARGS +=	-Dmedia-ffmpeg=disabled
