@@ -1,6 +1,6 @@
 COMMENT=	common interface to speech synthesis
 
-V=		0.11.1
+V=		0.11.4
 DISTNAME=	speech-dispatcher-${V}
 
 SHARED_LIBS +=  speechd              2.3      # .8.0

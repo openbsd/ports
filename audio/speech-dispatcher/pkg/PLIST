@@ -82,6 +82,7 @@ share/examples/speech-dispatcher/speech-dispatcher/modules/llia_phon-generic.con
 @sample ${SYSCONFDIR}/speech-dispatcher/modules/llia_phon-generic.conf
 share/examples/speech-dispatcher/speech-dispatcher/modules/mary-generic.conf
 @sample ${SYSCONFDIR}/speech-dispatcher/modules/mary-generic.conf
+share/examples/speech-dispatcher/speech-dispatcher/modules/mimic3-generic.conf
 share/examples/speech-dispatcher/speech-dispatcher/modules/swift-generic.conf
 @sample ${SYSCONFDIR}/speech-dispatcher/modules/swift-generic.conf
 share/examples/speech-dispatcher/speech-dispatcher/speechd.conf
@@ -156,6 +157,7 @@ share/speech-dispatcher/locale/bn/
 share/speech-dispatcher/locale/bn/emojis.dic
 share/speech-dispatcher/locale/bn/orca-chars.dic
 share/speech-dispatcher/locale/bn/orca.dic
+share/speech-dispatcher/locale/bn/symbols.dic
 share/speech-dispatcher/locale/bn_IN/
 share/speech-dispatcher/locale/bn_IN/orca-chars.dic
 share/speech-dispatcher/locale/bn_IN/orca.dic
@@ -205,6 +207,8 @@ share/speech-dispatcher/locale/de_CH/emojis.dic
 share/speech-dispatcher/locale/de_CH/symbols.dic
 share/speech-dispatcher/locale/doi/
 share/speech-dispatcher/locale/doi/emojis.dic
+share/speech-dispatcher/locale/dsb/
+share/speech-dispatcher/locale/dsb/emojis.dic
 share/speech-dispatcher/locale/el/
 share/speech-dispatcher/locale/el/emojis.dic
 share/speech-dispatcher/locale/el/orca-chars.dic
@@ -281,9 +285,14 @@ share/speech-dispatcher/locale/eu/orca.dic
 share/speech-dispatcher/locale/fa/
 share/speech-dispatcher/locale/fa/emojis.dic
 share/speech-dispatcher/locale/fa/symbols.dic
+share/speech-dispatcher/locale/ff/
+share/speech-dispatcher/locale/ff/emojis.dic
+share/speech-dispatcher/locale/ff_Adlm/
+share/speech-dispatcher/locale/ff_Adlm/emojis.dic
 share/speech-dispatcher/locale/fi/
 share/speech-dispatcher/locale/fi/emojis.dic
 share/speech-dispatcher/locale/fi/orca-chars.dic
+share/speech-dispatcher/locale/fi/orca.dic
 share/speech-dispatcher/locale/fi/symbols.dic
 share/speech-dispatcher/locale/fil/
 share/speech-dispatcher/locale/fil/emojis.dic
@@ -313,19 +322,26 @@ share/speech-dispatcher/locale/gu/
 share/speech-dispatcher/locale/gu/emojis.dic
 share/speech-dispatcher/locale/ha/
 share/speech-dispatcher/locale/ha/emojis.dic
+share/speech-dispatcher/locale/ha_NE/
+share/speech-dispatcher/locale/ha_NE/emojis.dic
 share/speech-dispatcher/locale/he/
 share/speech-dispatcher/locale/he/emojis.dic
+share/speech-dispatcher/locale/he/orca.dic
 share/speech-dispatcher/locale/he/symbols.dic
 share/speech-dispatcher/locale/hi/
 share/speech-dispatcher/locale/hi/emojis.dic
 share/speech-dispatcher/locale/hi/orca-chars.dic
 share/speech-dispatcher/locale/hi/orca.dic
 share/speech-dispatcher/locale/hi/symbols.dic
+share/speech-dispatcher/locale/hi_Latn/
+share/speech-dispatcher/locale/hi_Latn/emojis.dic
 share/speech-dispatcher/locale/hr/
 share/speech-dispatcher/locale/hr/emojis.dic
 share/speech-dispatcher/locale/hr/orca-chars.dic
 share/speech-dispatcher/locale/hr/orca.dic
 share/speech-dispatcher/locale/hr/symbols.dic
+share/speech-dispatcher/locale/hsb/
+share/speech-dispatcher/locale/hsb/emojis.dic
 share/speech-dispatcher/locale/hu/
 share/speech-dispatcher/locale/hu/emojis.dic
 share/speech-dispatcher/locale/hu/orca-chars.dic
@@ -398,6 +414,7 @@ share/speech-dispatcher/locale/mi/emojis.dic
 share/speech-dispatcher/locale/mk/
 share/speech-dispatcher/locale/mk/emojis.dic
 share/speech-dispatcher/locale/mk/orca-chars.dic
+share/speech-dispatcher/locale/mk/orca.dic
 share/speech-dispatcher/locale/mk/symbols.dic
 share/speech-dispatcher/locale/ml/
 share/speech-dispatcher/locale/ml/emojis.dic
@@ -413,6 +430,7 @@ share/speech-dispatcher/locale/mr/emojis.dic
 share/speech-dispatcher/locale/ms/
 share/speech-dispatcher/locale/ms/emojis.dic
 share/speech-dispatcher/locale/ms/orca-chars.dic
+share/speech-dispatcher/locale/ms/orca.dic
 share/speech-dispatcher/locale/mt/
 share/speech-dispatcher/locale/mt/emojis.dic
 share/speech-dispatcher/locale/my/
@@ -441,6 +459,7 @@ share/speech-dispatcher/locale/nn_NO/symbols.dic
 share/speech-dispatcher/locale/no/
 share/speech-dispatcher/locale/no/emojis.dic
 share/speech-dispatcher/locale/oc/
+share/speech-dispatcher/locale/oc/emojis.dic
 share/speech-dispatcher/locale/oc/orca-chars.dic
 share/speech-dispatcher/locale/oc/orca.dic
 share/speech-dispatcher/locale/or/
@@ -490,6 +509,10 @@ share/speech-dispatcher/locale/rw/
 share/speech-dispatcher/locale/rw/emojis.dic
 share/speech-dispatcher/locale/sa/
 share/speech-dispatcher/locale/sa/emojis.dic
+share/speech-dispatcher/locale/sat/
+share/speech-dispatcher/locale/sat/emojis.dic
+share/speech-dispatcher/locale/sc/
+share/speech-dispatcher/locale/sc/emojis.dic
 share/speech-dispatcher/locale/sd/
 share/speech-dispatcher/locale/sd/emojis.dic
 share/speech-dispatcher/locale/si/
@@ -502,6 +525,7 @@ share/speech-dispatcher/locale/sk/symbols.dic
 share/speech-dispatcher/locale/sl/
 share/speech-dispatcher/locale/sl/emojis.dic
 share/speech-dispatcher/locale/sl/orca-chars.dic
+share/speech-dispatcher/locale/sl/orca.dic
 share/speech-dispatcher/locale/sl/symbols.dic
 share/speech-dispatcher/locale/so/
 share/speech-dispatcher/locale/so/emojis.dic
@@ -597,6 +621,7 @@ share/speech-dispatcher/locale/zh_HK/symbols.dic
 share/speech-dispatcher/locale/zh_TW/
 share/speech-dispatcher/locale/zh_TW/emojis.dic
 share/speech-dispatcher/locale/zh_TW/orca-chars.dic
+share/speech-dispatcher/locale/zh_TW/orca.dic
 share/speech-dispatcher/locale/zh_TW/symbols.dic
 share/speech-dispatcher/locale/zu/
 share/speech-dispatcher/locale/zu/emojis.dic
