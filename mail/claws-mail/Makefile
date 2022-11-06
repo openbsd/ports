@@ -11,11 +11,11 @@ PKGNAME-bogofilter=	claws-mail-bogofilter-${V}
 PKGNAME-spamassassin=	claws-mail-spamassassin-${V}
 PKGNAME-pdfviewer=	claws-mail-pdfviewer-${V}
 PKGNAME-gdata=		claws-mail-gdata-${V}
-REVISION-bogofilter=	0
-REVISION-gdata=		0
-REVISION-main=		0
-REVISION-pdfviewer=	0
-REVISION-spamassassin=	0
+REVISION-bogofilter=	1
+REVISION-gdata=		1
+REVISION-main=		1
+REVISION-pdfviewer=	1
+REVISION-spamassassin=	1
 
 CATEGORIES=		mail news
 
@@ -92,7 +92,7 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			textproc/libical \
 			www/gumbo \
 			x11/dbus-glib \
-			x11/gnome/at-spi2-atk
+			x11/gnome/at-spi2-core
 
 LIB_DEPENDS-pdfviewer=	${LIB_DEPENDS} \
 			print/poppler

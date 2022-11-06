@@ -10,10 +10,10 @@ PKGSPEC-main =		qt6-qtbase-${QT6_PKGSPEC}
 PKGNAME-mysql =		qt6-mysql-${VERSION}
 PKGNAME-global =	qt6-global-${VERSION}
 PKGNAME-psql =		qt6-postgresql-${VERSION}
-REVISION-main =		0
-REVISION-global =	0
-REVISION-mysql =	0
-REVISION-psql =		0
+REVISION-main =		1
+REVISION-global =	1
+REVISION-mysql =	1
+REVISION-psql =		1
 
 PKG_ARCH-global =	*
 
@@ -60,7 +60,6 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			archivers/brotli \
 			archivers/zstd \
 			databases/iodbc \
-			devel/atk \
 			devel/harfbuzz \
 			x11/xkbcommon \
 			devel/pango \
@@ -72,6 +71,7 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			security/libb2 \
 			textproc/icu4c \
 			x11/dbus \
+			x11/gnome/at-spi2-core \
 			x11/gtk+3
 
 LIB_DEPENDS-global =

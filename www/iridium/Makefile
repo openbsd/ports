@@ -15,7 +15,7 @@ V=			2022.10.106.1
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
-REVISION=		0
+REVISION=		1
 
 PATCHFILES=		disable-privacy-sandbox.patch:0
 PATCH_DIST_STRIP=	-p1
@@ -85,7 +85,7 @@ LIB_DEPENDS=	archivers/snappy \
 		security/nss \
 		textproc/icu4c \
 		textproc/libxslt \
-		x11/gnome/at-spi2-atk \
+		x11/gnome/at-spi2-core \
 		x11/xkbcommon \
 		print/cups,-libs \
 		${MODGCC4_CPPLIBDEP}

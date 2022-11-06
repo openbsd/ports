@@ -2,7 +2,7 @@ COMMENT =	GTK IM module for fcitx5
 
 DISTNAME =	fcitx5-gtk-5.0.13
 PKGNAME =	${DISTNAME:S/fcitx5/fcitx/}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	Fcitx5GClient			0.0 # 0.0
 
@@ -36,7 +36,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 LIB_DEPENDS =		devel/harfbuzz,-main \
 			devel/pango \
 			graphics/gdk-pixbuf2 \
-			devel/atk \
+			x11/gnome/at-spi2-core \
 			x11/gtk+3,-main \
 			x11/xkbcommon
 

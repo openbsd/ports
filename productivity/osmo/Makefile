@@ -2,7 +2,7 @@ COMMENT=	handy personal organizer
 
 DISTNAME=	osmo-0.4.4
 CATEGORIES=	productivity
-REVISION=	1
+REVISION=	3
 
 HOMEPAGE=	https://clayo.org/osmo/
 
@@ -23,13 +23,13 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=osmo-pim/}
 BUILD_DEPENDS=	devel/gettext,-tools
 
 LIB_DEPENDS=	archivers/libarchive \
-		devel/atk \
 		devel/harfbuzz \
 		devel/libnotify \
 		devel/pango \
 		security/libgringotts \
 		textproc/gspell \
 		textproc/libical \
+		x11/gnome/at-spi2-core \
 		x11/gtk+3,-main \
 		www/webkitgtk4
 

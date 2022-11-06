@@ -5,6 +5,7 @@ COMMENT=		C++ binding for the ATK library
 GNOME_PROJECT=		atkmm
 GNOME_VERSION=		2.28.3
 PKGNAME=		atk2mm-${GNOME_VERSION}
+REVISION=		0
 
 CATEGORIES=		devel
 
@@ -27,7 +28,7 @@ MODULES=		devel/meson \
 COMPILER=		base-clang ports-gcc
 
 LIB_DEPENDS=		devel/glib2mm \
-			devel/atk
+			x11/gnome/at-spi2-core
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 

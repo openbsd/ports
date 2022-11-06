@@ -1,7 +1,7 @@
 COMMENT=	graphical mp3/ogg file splitter
 
 DISTNAME=	mp3splt-gtk-0.9.2
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	audio
 
@@ -22,11 +22,11 @@ WANTLIB += Xau Xdmcp execinfo jpeg
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mp3splt/}
 
 LIB_DEPENDS=	audio/libmp3splt \
-		devel/atk \
 		devel/glib2 \
 		devel/pango \
 		graphics/cairo \
-		multimedia/gstreamer1/core
+		multimedia/gstreamer1/core \
+		x11/gnome/at-spi2-core
 
 BUILD_DEPENDS=	multimedia/gstreamer1/plugins-base
 

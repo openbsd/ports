@@ -14,10 +14,10 @@ GNOME_VERSION=		3.24.34
 PKGNAME-main=		gtk+3-${GNOME_VERSION}
 PKGNAME-cups=		gtk+3-cups-${GNOME_VERSION}
 PKGNAME-guic=		gtk-update-icon-cache-${GNOME_VERSION}
-REVISION-guic=		0
-REVISION-main=		0
 
-REVISION-cups=		1
+REVISION-main=		1
+REVISION-cups=		2
+REVISION-guic=		1
 
 CATEGORIES=		x11 devel
 
@@ -45,7 +45,7 @@ DEBUG_PACKAGES=		${BUILD_PACKAGES}
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			devel/pango \
 			graphics/gdk-pixbuf2 \
-			x11/gnome/at-spi2-atk
+			x11/gnome/at-spi2-core
 RUN_DEPENDS-main=	${RUN_DEPENDS} \
 			x11/hicolor-icon-theme
 

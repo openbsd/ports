@@ -12,6 +12,8 @@ PKGNAME-global =	qt5-global-${VERSION}
 PKGNAME-psql =		qt5-postgresql-${VERSION}
 PKGNAME-tds =		qt5-tds-${VERSION}
 
+REVISION-main =		0
+
 PKG_ARCH-global =	*
 PKG_ARCH-examples =	*
 
@@ -66,7 +68,7 @@ USE_GMAKE =		Yes
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			archivers/zstd \
 			databases/sqlite3 \
-			devel/atk \
+			x11/gnome/at-spi2-core \
 			devel/harfbuzz \
 			devel/pango \
 			devel/pcre2 \

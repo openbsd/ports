@@ -9,7 +9,7 @@ COMMENT=		Chromium browser
 V=			107.0.5304.87
 
 DISTNAME=		chromium-${V}
-REVISION=		0
+REVISION=		1
 
 DISTFILES+=		${CHROMIUM_DISTFILES} \
 			${PROFILE_DISTFILES}:0 \
@@ -89,7 +89,7 @@ LIB_DEPENDS=	archivers/snappy \
 		security/nss \
 		textproc/icu4c \
 		textproc/libxslt \
-		x11/gnome/at-spi2-atk \
+		x11/gnome/at-spi2-core \
 		x11/xkbcommon \
 		print/cups,-libs \
 		${MODGCC4_CPPLIBDEP}

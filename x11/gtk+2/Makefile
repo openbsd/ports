@@ -9,8 +9,8 @@ GNOME_PROJECT=		gtk+
 PKGNAME-main=		gtk+2-${GNOME_VERSION}
 PKGNAME-cups=		gtk+2-cups-${GNOME_VERSION}
 
-REVISION-main=		2
-REVISION-cups=		2
+REVISION-main=		3
+REVISION-cups=		3
 
 CATEGORIES=		x11 devel
 
@@ -45,9 +45,9 @@ MODULES=		lang/python \
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
-LIB_DEPENDS-main=	devel/atk \
-			devel/pango \
-			graphics/gdk-pixbuf2
+LIB_DEPENDS-main=	devel/pango \
+			graphics/gdk-pixbuf2 \
+			x11/gnome/at-spi2-core
 
 RUN_DEPENDS-main=	${RUN_DEPENDS} \
 			x11/hicolor-icon-theme

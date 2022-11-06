@@ -4,7 +4,7 @@ V =			2.4.0
 GH_ACCOUNT =		pcb2gcode
 GH_PROJECT =		pcb2gcode
 GH_TAGNAME =		v${V}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		cad
 
@@ -28,11 +28,11 @@ BUILD_DEPENDS =         x11/gnome/librsvg \
                         x11/gtk2mm
 LIB_DEPENDS =		cad/gerbv \
 			devel/boost \
-			devel/atk \
 			devel/fribidi \
 			devel/libffi \
 			geo/geos \
-			graphics/cairo
+			graphics/cairo \
+			x11/gnome/at-spi2-core
 
 MAKE_FLAGS =		GIT_VERSION="${V}"
 

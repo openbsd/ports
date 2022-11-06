@@ -3,7 +3,7 @@ COMMENT =	japanese libkkc engine for ibus
 VERSION =	20220105
 DISTNAME =	ibus-kkc
 PKGNAME =	ibus-kkc-${VERSION}
-REVISION =	0
+REVISION =	1
 
 GH_ACCOUNT =	ueno
 GH_PROJECT =	ibus-kkc
@@ -28,8 +28,7 @@ WANTLIB =	${COMPILER_LIBCXX} X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
 BUILD_DEPENDS =		devel/gettext,-tools \
 			lang/vala
 
-LIB_DEPENDS =		devel/atk \
-			devel/json-glib \
+LIB_DEPENDS =		devel/json-glib \
 			devel/libffi \
 			devel/libgee \
 			devel/glib2 \
@@ -38,6 +37,7 @@ LIB_DEPENDS =		devel/atk \
 			inputmethods/ibus \
 			inputmethods/libkkc \
 			textproc/libmarisa \
+			x11/gnome/at-spi2-core \
 			x11/gtk+3
 
 USE_GMAKE =		Yes
