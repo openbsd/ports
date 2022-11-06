@@ -122,6 +122,10 @@ share/help/fr/gdm/legal.xml
 share/help/gl/gdm/
 share/help/gl/gdm/index.docbook
 share/help/gl/gdm/legal.xml
+share/help/hr/
+share/help/hr/gdm/
+share/help/hr/gdm/index.docbook
+share/help/hr/gdm/legal.xml
 share/help/hu/gdm/
 share/help/hu/gdm/index.docbook
 share/help/hu/gdm/legal.xml
@@ -132,10 +136,18 @@ share/help/it/
 share/help/it/gdm/
 share/help/it/gdm/index.docbook
 share/help/it/gdm/legal.xml
+share/help/ka/
+share/help/ka/gdm/
+share/help/ka/gdm/index.docbook
+share/help/ka/gdm/legal.xml
 share/help/ko/
 share/help/ko/gdm/
 share/help/ko/gdm/index.docbook
 share/help/ko/gdm/legal.xml
+share/help/nl/
+share/help/nl/gdm/
+share/help/nl/gdm/index.docbook
+share/help/nl/gdm/legal.xml
 share/help/oc/
 share/help/oc/gdm/
 share/help/oc/gdm/index.docbook
@@ -172,6 +184,7 @@ share/help/zh_CN/
 share/help/zh_CN/gdm/
 share/help/zh_CN/gdm/index.docbook
 share/help/zh_CN/gdm/legal.xml
+share/locale/ab/LC_MESSAGES/gdm.mo
 share/locale/af/LC_MESSAGES/gdm.mo
 share/locale/am/LC_MESSAGES/gdm.mo
 share/locale/an/LC_MESSAGES/gdm.mo
