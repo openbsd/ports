@@ -2,6 +2,7 @@ COMMENT=	archive manager utility for GNOME
 
 GNOME_PROJECT=	file-roller
 GNOME_VERSION=	43.0
+REVISION=	0
 
 CATEGORIES=	archivers
 
@@ -31,7 +32,6 @@ RUN_DEPENDS +=	archivers/unrar
 
 LIB_DEPENDS=	archivers/libarchive \
 		devel/json-glib \
-		sysutils/libportal \
 		sysutils/libportal,-gtk3 \
 		x11/gnome/nautilus \
 		x11/libhandy

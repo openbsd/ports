@@ -2,6 +2,7 @@ COMMENT=	GNOME web browser based on webkit
 
 GNOME_PROJECT=	epiphany
 GNOME_VERSION=	43.0
+REVISION=	0
 
 CATEGORIES=	www
 
@@ -22,8 +23,7 @@ BUILD_DEPENDS=	devel/iso-codes \
 RUN_DEPENDS=	devel/iso-codes \
 		devel/gsettings-desktop-schemas
 
-LIB_DEPENDS=	sysutils/libportal \
-		sysutils/libportal,-gtk3 \
+LIB_DEPENDS=	sysutils/libportal,-gtk3 \
 		www/webkitgtk4,webkitgtk41 \
 		x11/gnome/at-spi2-core \
 		x11/gnome/gcr \
