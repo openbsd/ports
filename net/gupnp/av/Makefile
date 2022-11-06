@@ -10,14 +10,14 @@ MODULES=		devel/meson \
 			x11/gnome
 
 # C11
-COMPILER =		base-clang ports-gcc
-COMPILER_LANGS =	c
+COMPILER=		base-clang ports-gcc
+COMPILER_LANGS=		c
 
 WANTLIB += glib-2.0 gobject-2.0 xml2
 
-DEBUG_PACKAGES =	${BUILD_PACKAGES}
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
-LIB_DEPENDS =		devel/glib2 \
+LIB_DEPENDS=		devel/glib2 \
 			textproc/libxml
 
 MODGNOME_TOOLS += gobject-introspection vala
