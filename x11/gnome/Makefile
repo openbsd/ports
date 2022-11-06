@@ -24,6 +24,7 @@
      SUBDIR += devel-docs
      SUBDIR += devhelp
      SUBDIR += dictionary
+     SUBDIR += endeavour
      SUBDIR += eog
      SUBDIR += eog-plugins
      SUBDIR += epub-thumbnailer
@@ -98,7 +99,6 @@
      SUBDIR += terminal
      SUBDIR += text-editor
      SUBDIR += themes-extra
-     SUBDIR += todo
      SUBDIR += totem
      SUBDIR += totem-pl-parser
      SUBDIR += tour
