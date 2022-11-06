@@ -1,31 +1,30 @@
 COMMENT=		extensions for Caja, the MATE file manager
-REVISION=		1
+REVISION=		2
 
 MATE_PROJECT=		caja-extensions
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += X11 X11-xcb Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 c cairo
-WANTLIB += cairo-gobject caja-extension dbus-1 dbus-glib-1 dconf epoxy
-WANTLIB += expat ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gssdp-1.2
-WANTLIB += gthread-2.0 gtk-3 gupnp-1.2 harfbuzz iconv idn2 intl lzma m
-WANTLIB += mate-desktop-2 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8
-WANTLIB += pixman-1 png psl pthread soup-2.4 sqlite3
-WANTLIB += startup-notification-1 unistring xcb xcb-render xcb-shm
-WANTLIB += xcb-util xml2 z
-WANTLIB += brotlicommon brotlidec
-WANTLIB += ${COMPILER_LIBCXX} execinfo jpeg Xau Xdmcp
+WANTLIB += ${COMPILER_LIBCXX} X11 X11-xcb Xau Xcomposite Xcursor
+WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
+WANTLIB += atk-1.0 atk-bridge-2.0 c cairo cairo-gobject caja-extension
+WANTLIB += dbus-1 dbus-glib-1 dconf epoxy execinfo expat ffi fontconfig
+WANTLIB += freetype fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3
+WANTLIB += harfbuzz iconv intl jpeg m mate-desktop-2 pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png startup-notification-1
+WANTLIB += xcb xcb-render xcb-shm xcb-util z
 
 MODULES=		devel/dconf \
 			x11/gnome
 
-LIB_DEPENDS=		net/gupnp/core>=1.1.2 \
-			x11/dbus-glib \
+LIB_DEPENDS=		x11/dbus-glib \
 			x11/mate/desktop \
 			x11/mate/caja
+
+# XXX needs support for libgupnp-1.6
+# LIB_DEPENDS +=	net/gupnp/core
 
 CONFIGURE_STYLE=	gnu
 
