@@ -41,6 +41,7 @@ share/glib-2.0/schemas/org.gnome.desktop.wm.preferences.gschema.xml
 share/glib-2.0/schemas/org.gnome.system.locale.gschema.xml
 share/glib-2.0/schemas/org.gnome.system.location.gschema.xml
 share/glib-2.0/schemas/org.gnome.system.proxy.gschema.xml
+share/locale/ab/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/as/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/bg/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/bs/LC_MESSAGES/gsettings-desktop-schemas.mo
@@ -67,6 +68,7 @@ share/locale/id/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/is/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/it/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/ja/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/ka/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/kk/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/lt/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/lv/LC_MESSAGES/gsettings-desktop-schemas.mo
