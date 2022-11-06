@@ -7,6 +7,7 @@ COMMENT=		next generation GNOME shell
 GNOME_PROJECT=		gnome-shell
 # sync with meta/gnome "V" variable
 GNOME_VERSION=		42.6
+REVISION=		0
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
@@ -45,6 +46,15 @@ LIB_DEPENDS=		audio/pulseaudio \
 			x11/gnome/gjs \
 			x11/gnome/mutter \
 			x11/gtk+4
+
+
+# convenience dependencies for gnome-shell consumers;
+# defaults set in gsettings-desktop-schema:
+#     org.gnome.desktop.background.gschema.xml
+#     org.gnome.desktop.interface.gschema.xml
+RUN_DEPENDS +=		fonts/adobe-fonts/source-code-pro \
+			fonts/cantarell-fonts \
+			x11/gnome/backgrounds
 
 # configure looks for gnome-keybindings.pc;
 # system.js, backgroundMenu.js, network.js, remoteSearch.js
