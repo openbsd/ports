@@ -1,0 +1,5 @@
+@bin bin/ministat
+@man man/man1/ministat.1
+share/examples/ministat/
+share/examples/ministat/chameleon
+share/examples/ministat/iguana

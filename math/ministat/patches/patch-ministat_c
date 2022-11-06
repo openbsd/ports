@@ -1,0 +1,68 @@
+Remove FBSDID and replace capsicum with pledge
+
+Index: ministat.c
+--- ministat.c.orig
++++ ministat.c
+@@ -11,15 +11,12 @@
+  */
+ 
+ #include <sys/cdefs.h>
+-__FBSDID("$FreeBSD$");
+ 
+-#include <sys/capsicum.h>
+ #include <sys/ioctl.h>
+ #include <sys/queue.h>
+ #include <sys/ttycom.h>
+ 
+ #include <assert.h>
+-#include <capsicum_helpers.h>
+ #include <ctype.h>
+ #include <err.h>
+ #include <errno.h>
+@@ -569,6 +566,9 @@ main(int argc, char **argv)
+ 	int termwidth = 74;
+ 	int suppress_plot = 0;
+ 
++	if (pledge("stdio rpath tty", NULL) == -1)
++		err(1, NULL);
++
+ 	if (isatty(STDOUT_FILENO)) {
+ 		struct winsize wsz;
+ 
+@@ -579,6 +579,9 @@ main(int argc, char **argv)
+ 			termwidth = wsz.ws_col - 2;
+ 	}
+ 
++	if (pledge("stdio rpath", NULL) == -1)
++		err(1, NULL);
++
+ 	ci = -1;
+ 	while ((c = getopt(argc, argv, "AC:c:d:snqw:")) != -1)
+ 		switch (c) {
+@@ -651,23 +654,14 @@ main(int argc, char **argv)
+ 		}
+ 	}
+ 
+-	if (caph_limit_stdio() < 0)
+-		err(2, "capsicum");
+-
+-	for (i = 0; i < nds; i++)
+-		if (caph_limit_stream(fileno(setfiles[i]), CAPH_READ) < 0)
+-			err(2, "unable to limit rights for %s",
+-			    setfilenames[i]);
+-
+-	/* Enter Capsicum sandbox. */
+-	if (caph_enter() < 0)
+-		err(2, "unable to enter capability mode");
+-
+ 	for (i = 0; i < nds; i++) {
+ 		ds[i] = ReadSet(setfiles[i], setfilenames[i], column, delim);
+ 		if (setfiles[i] != stdin)
+ 			fclose(setfiles[i]);
+ 	}
++
++	if (pledge("stdio", NULL) == -1)
++		err(1, NULL);
+ 
+ 	if (!flag_q) {
+ 		for (i = 0; i < nds; i++)
