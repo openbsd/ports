@@ -3,7 +3,7 @@ COMMENT=		GObject library for Facebook Graph API
 GNOME_PROJECT=		gfbgraph
 GNOME_VERSION=		0.2.5
 PKGNAME=		lib${GNOME_PROJECT}-${GNOME_VERSION}
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  gfbgraph-0.2         1.0      # unknown
 
@@ -21,7 +21,8 @@ MODULES=		x11/gnome
 
 MODGNOME_TOOLS=		gobject-introspection
 
-LIB_DEPENDS=		x11/gnome/online-accounts
+LIB_DEPENDS=		net/librest \
+			x11/gnome/online-accounts
 
 CONFIGURE_STYLE=	autoreconf
 AUTOCONF_VERSION=	2.69
