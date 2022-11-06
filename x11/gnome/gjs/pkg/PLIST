@@ -23,11 +23,13 @@ share/examples/gjs/gettext.js
 share/examples/gjs/gio-cat.js
 share/examples/gjs/glistmodel.js
 share/examples/gjs/gtk-application.js
-share/examples/gjs/gtk.js
 share/examples/gjs/gtk3-template.js
 share/examples/gjs/gtk3-template.ui
+share/examples/gjs/gtk3.js
+share/examples/gjs/gtk4-frame-clock.js
 share/examples/gjs/gtk4-template.js
 share/examples/gjs/gtk4-template.ui
+share/examples/gjs/gtk4.js
 share/examples/gjs/http-client.js
 share/examples/gjs/http-server.js
 share/examples/gjs/test.jpg
