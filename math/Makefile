@@ -60,6 +60,7 @@
      SUBDIR += mcl
      SUBDIR += mcsim
      SUBDIR += minisat
+     SUBDIR += ministat
      SUBDIR += mlpack
      SUBDIR += moo
      SUBDIR += muparser
