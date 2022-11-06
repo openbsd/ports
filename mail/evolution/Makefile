@@ -1,14 +1,13 @@
 COMMENT=		integrated email and PIM software for GNOME
 
 GNOME_PROJECT=		evolution
-GNOME_VERSION=		3.44.4
-REVISION=		0
+GNOME_VERSION=		3.46.1
 
 CATEGORIES=		mail
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
-SO_VERSION=		15.7 # 0.0
+SO_VERSION=		15.8 # 0.0
 .for _lib in \
 eabutil econtacteditor econtactlisteditor email-engine essmime \
 evolution-addressbook-importers evolution-calendar-importers \
@@ -24,15 +23,14 @@ PERMIT_PACKAGE=		Yes
 WANTLIB += X11 archive atk-1.0 c cairo cairo-gobject camel-1.2
 WANTLIB += canberra canberra-gtk3 cmark ebackend-1.2 ebook-1.2
 WANTLIB += ebook-contacts-1.2 ecal-2.0 edata-book-1.2 edataserver-1.2
-WANTLIB += edataserverui-1.2 enchant-2 gailutil-3 gck-1 gcr-base-3
-WANTLIB += gcr-ui-3 gdk-3 gdk_pixbuf-2.0 geocode-glib gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gnome-autoar-0 gnome-autoar-gtk-0
-WANTLIB += gnome-desktop-3 gobject-2.0 gspell-1 gtk-3 gweather-4
-WANTLIB += harfbuzz ical ical-glib icalss icalvcal iconv intl
-WANTLIB += javascriptcoregtk-4.0 lber ldap m notify nspr4 nss3
-WANTLIB += nssutil3 p11-kit pango-1.0 pangocairo-1.0 plc4 plds4
-WANTLIB += pst pthread secret-1 smime3 soup-2.4 sqlite3 ssl3 webkit2gtk-4.0
-WANTLIB += xml2 ytnef
+WANTLIB += edataserverui-1.2 enchant-2 gailutil-3 gdk-3 gdk_pixbuf-2.0
+WANTLIB += geocode-glib-2 gio-2.0 glib-2.0 gmodule-2.0 gnome-autoar-0
+WANTLIB += gnome-autoar-gtk-0 gnome-desktop-3 gobject-2.0 gspell-1
+WANTLIB += gtk-3 gweather-4 harfbuzz ical ical-glib icalss icalvcal
+WANTLIB += iconv intl javascriptcoregtk-4.1 json-glib-1.0 lber
+WANTLIB += ldap m notify nspr4 nss3 nssutil3 pango-1.0 pangocairo-1.0
+WANTLIB += plc4 plds4 pst pthread secret-1 smime3 soup-3.0 sqlite3
+WANTLIB += ssl3 webkit2gtk-4.1 xml2 ytnef
 
 MODULES=		devel/cmake \
 			devel/dconf \
@@ -44,7 +42,7 @@ LIB_DEPENDS=		converters/libpst \
 			converters/libytnef \
 			databases/evolution-data-server \
 			devel/libnotify \
-			geo/geocode-glib \
+			geo/geocode-glib,soup3 \
 			textproc/cmark \
 			textproc/gspell \
 			x11/gnome/autoar \

@@ -69,6 +69,7 @@ include/evolution/calendar/gui/e-week-view-main-item.h
 include/evolution/calendar/gui/e-week-view-titles-item.h
 include/evolution/calendar/gui/e-week-view.h
 include/evolution/calendar/gui/e-weekday-chooser.h
+include/evolution/calendar/gui/e-year-view.h
 include/evolution/calendar/gui/ea-cal-view-event.h
 include/evolution/calendar/gui/ea-cal-view.h
 include/evolution/calendar/gui/ea-calendar-helpers.h
@@ -195,6 +196,7 @@ include/evolution/e-util/e-filter-option.h
 include/evolution/e-util/e-filter-part.h
 include/evolution/e-util/e-filter-rule.h
 include/evolution/e-util/e-focus-tracker.h
+include/evolution/e-util/e-headerbar-button.h
 include/evolution/e-util/e-html-editor-actions.h
 include/evolution/e-util/e-html-editor-cell-dialog.h
 include/evolution/e-util/e-html-editor-dialog.h
@@ -227,10 +229,12 @@ include/evolution/e-util/e-map.h
 include/evolution/e-util/e-markdown-editor.h
 include/evolution/e-util/e-markdown-utils.h
 include/evolution/e-util/e-marshal.h
+include/evolution/e-util/e-menu-bar.h
 include/evolution/e-util/e-menu-tool-action.h
 include/evolution/e-util/e-menu-tool-button.h
 include/evolution/e-util/e-misc-utils.h
 include/evolution/e-util/e-mktemp.h
+include/evolution/e-util/e-month-widget.h
 include/evolution/e-util/e-name-selector-dialog.h
 include/evolution/e-util/e-name-selector-entry.h
 include/evolution/e-util/e-name-selector-list.h
@@ -526,6 +530,7 @@ include/evolution/shell/e-shell-backend.h
 include/evolution/shell/e-shell-common.h
 include/evolution/shell/e-shell-content.h
 include/evolution/shell/e-shell-enumtypes.h
+include/evolution/shell/e-shell-headerbar.h
 include/evolution/shell/e-shell-searchbar.h
 include/evolution/shell/e-shell-sidebar.h
 include/evolution/shell/e-shell-switcher.h
@@ -536,6 +541,10 @@ include/evolution/shell/e-shell-window-actions.h
 include/evolution/shell/e-shell-window.h
 include/evolution/shell/e-shell.h
 lib/evolution/
+lib/evolution-data-server/
+lib/evolution-data-server/camel-providers/
+@so lib/evolution-data-server/camel-providers/libcamelrss.so
+lib/evolution-data-server/camel-providers/libcamelrss.urls
 lib/evolution-data-server/ui-modules/
 @so lib/evolution-data-server/ui-modules/module-evolution-alarm-notify.so
 @lib lib/evolution/libeabutil.so.${LIBeabutil_VERSION}
@@ -587,6 +596,7 @@ lib/evolution/modules/
 @so lib/evolution/modules/module-plugin-lib.so
 @so lib/evolution/modules/module-plugin-manager.so
 @so lib/evolution/modules/module-prefer-plain.so
+@so lib/evolution/modules/module-rss.so
 @so lib/evolution/modules/module-settings.so
 @so lib/evolution/modules/module-spamassassin.so
 @so lib/evolution/modules/module-startup-wizard.so
@@ -805,6 +815,7 @@ share/evolution/icons/hicolor/16x16/actions/view-calendar-list.png
 share/evolution/icons/hicolor/16x16/actions/view-calendar-month.png
 share/evolution/icons/hicolor/16x16/actions/view-calendar-week.png
 share/evolution/icons/hicolor/16x16/actions/view-calendar-workweek.png
+share/evolution/icons/hicolor/16x16/actions/view-calendar-year.png
 share/evolution/icons/hicolor/16x16/apps/
 share/evolution/icons/hicolor/16x16/apps/contact-editor.png
 share/evolution/icons/hicolor/16x16/apps/im-aim.png
@@ -815,6 +826,7 @@ share/evolution/icons/hicolor/16x16/apps/im-msn.png
 share/evolution/icons/hicolor/16x16/apps/im-nov.png
 share/evolution/icons/hicolor/16x16/apps/im-yahoo.png
 share/evolution/icons/hicolor/16x16/places/
+share/evolution/icons/hicolor/16x16/places/folder-templates.png
 share/evolution/icons/hicolor/16x16/places/mail-inbox.png
 share/evolution/icons/hicolor/16x16/places/mail-outbox.png
 share/evolution/icons/hicolor/16x16/places/mail-sent.png
@@ -948,6 +960,7 @@ share/evolution/icons/hicolor/22x22/actions/view-calendar-list.png
 share/evolution/icons/hicolor/22x22/actions/view-calendar-month.png
 share/evolution/icons/hicolor/22x22/actions/view-calendar-week.png
 share/evolution/icons/hicolor/22x22/actions/view-calendar-workweek.png
+share/evolution/icons/hicolor/22x22/actions/view-calendar-year.png
 share/evolution/icons/hicolor/22x22/apps/
 share/evolution/icons/hicolor/22x22/apps/contact-editor.png
 share/evolution/icons/hicolor/22x22/apps/im-aim.png
@@ -958,6 +971,7 @@ share/evolution/icons/hicolor/22x22/apps/im-msn.png
 share/evolution/icons/hicolor/22x22/apps/im-nov.png
 share/evolution/icons/hicolor/22x22/apps/im-yahoo.png
 share/evolution/icons/hicolor/22x22/places/
+share/evolution/icons/hicolor/22x22/places/folder-templates.png
 share/evolution/icons/hicolor/22x22/places/mail-inbox.png
 share/evolution/icons/hicolor/22x22/places/mail-outbox.png
 share/evolution/icons/hicolor/22x22/places/mail-sent.png
@@ -1104,6 +1118,7 @@ share/evolution/icons/hicolor/24x24/actions/view-calendar-list.png
 share/evolution/icons/hicolor/24x24/actions/view-calendar-month.png
 share/evolution/icons/hicolor/24x24/actions/view-calendar-week.png
 share/evolution/icons/hicolor/24x24/actions/view-calendar-workweek.png
+share/evolution/icons/hicolor/24x24/actions/view-calendar-year.png
 share/evolution/icons/hicolor/24x24/apps/
 share/evolution/icons/hicolor/24x24/apps/contact-editor.png
 share/evolution/icons/hicolor/24x24/apps/im-aim.png
@@ -1122,6 +1137,7 @@ share/evolution/icons/hicolor/24x24/categories/preferences-mail-accounts.svg
 share/evolution/icons/hicolor/24x24/categories/preferences-mail.svg
 share/evolution/icons/hicolor/24x24/categories/preferences-system-network-proxy.svg
 share/evolution/icons/hicolor/24x24/places/
+share/evolution/icons/hicolor/24x24/places/folder-templates.png
 share/evolution/icons/hicolor/24x24/places/mail-inbox.png
 share/evolution/icons/hicolor/24x24/places/mail-outbox.png
 share/evolution/icons/hicolor/24x24/places/mail-sent.png
@@ -1244,8 +1260,11 @@ share/evolution/icons/hicolor/32x32/actions/view-calendar-list.png
 share/evolution/icons/hicolor/32x32/actions/view-calendar-month.png
 share/evolution/icons/hicolor/32x32/actions/view-calendar-week.png
 share/evolution/icons/hicolor/32x32/actions/view-calendar-workweek.png
+share/evolution/icons/hicolor/32x32/actions/view-calendar-year.png
 share/evolution/icons/hicolor/32x32/apps/
 share/evolution/icons/hicolor/32x32/apps/contact-editor.png
+share/evolution/icons/hicolor/32x32/places/
+share/evolution/icons/hicolor/32x32/places/folder-templates.png
 share/evolution/icons/hicolor/32x32/status/
 share/evolution/icons/hicolor/32x32/status/accessories-text-editor.png
 share/evolution/icons/hicolor/32x32/status/address-book-new.png
@@ -1381,6 +1400,8 @@ share/evolution/icons/hicolor/48x48/categories/preferences-mail-accounts.png
 share/evolution/icons/hicolor/48x48/categories/preferences-mail.png
 share/evolution/icons/hicolor/48x48/categories/preferences-plugins.svg
 share/evolution/icons/hicolor/48x48/categories/preferences-system-network-proxy.png
+share/evolution/icons/hicolor/48x48/places/
+share/evolution/icons/hicolor/48x48/places/folder-templates.png
 share/evolution/icons/hicolor/48x48/status/
 share/evolution/icons/hicolor/48x48/status/accessories-text-editor.png
 share/evolution/icons/hicolor/48x48/status/address-book-new.png
@@ -1494,6 +1515,9 @@ share/evolution/icons/hicolor/48x48/status/window-new.png
 share/evolution/icons/hicolor/48x48/status/zoom-in.png
 share/evolution/icons/hicolor/48x48/status/zoom-original.png
 share/evolution/icons/hicolor/48x48/status/zoom-out.png
+share/evolution/icons/hicolor/512x512/
+share/evolution/icons/hicolor/512x512/places/
+share/evolution/icons/hicolor/512x512/places/folder-templates.png
 share/evolution/icons/hicolor/8x8/
 share/evolution/icons/hicolor/8x8/status/
 share/evolution/icons/hicolor/8x8/status/emblem-default.png
@@ -1552,6 +1576,8 @@ share/evolution/icons/hicolor/scalable/actions/view-calendar-week-symbolic.svg
 share/evolution/icons/hicolor/scalable/actions/view-calendar-week.svg
 share/evolution/icons/hicolor/scalable/actions/view-calendar-workweek-symbolic.svg
 share/evolution/icons/hicolor/scalable/actions/view-calendar-workweek.svg
+share/evolution/icons/hicolor/scalable/actions/view-calendar-year-symbolic.svg
+share/evolution/icons/hicolor/scalable/actions/view-calendar-year.svg
 share/evolution/icons/hicolor/scalable/actions/x-office-address-book-symbolic.svg
 share/evolution/icons/hicolor/scalable/actions/x-office-calendar-symbolic.svg
 share/evolution/icons/hicolor/scalable/apps/
@@ -1567,6 +1593,9 @@ share/evolution/icons/hicolor/scalable/apps/im-nov.svg
 share/evolution/icons/hicolor/scalable/apps/im-yahoo.svg
 share/evolution/icons/hicolor/scalable/emblems/
 share/evolution/icons/hicolor/scalable/emblems/emblem-new.svg
+share/evolution/icons/hicolor/scalable/status/
+share/evolution/icons/hicolor/scalable/status/rss-symbolic.svg
+share/evolution/icons/hicolor/scalable/status/rss.svg
 share/evolution/images/
 share/evolution/images/confidential-stamp.jpg
 share/evolution/images/draft-paper.png
@@ -1664,6 +1693,8 @@ share/glib-2.0/schemas/org.gnome.evolution.plugin.templates.gschema.xml
 share/glib-2.0/schemas/org.gnome.evolution.shell.gschema.xml
 share/glib-2.0/schemas/org.gnome.evolution.spamassassin.gschema.xml
 share/glib-2.0/schemas/org.gnome.evolution.text-highlight.gschema.xml
+share/help/
+share/help/C/
 share/help/C/evolution/
 share/help/C/evolution/backup-restore.page
 share/help/C/evolution/calendar-alarms-and-reminders.page
@@ -1896,6 +1927,7 @@ share/help/C/evolution/tasks-webdav.page
 share/help/C/evolution/using-categories.page
 share/help/C/evolution/xinclude-filter-vfolder-conditions.xml
 share/help/C/evolution/xinclude-searching.xml
+share/help/ca/
 share/help/ca/evolution/
 share/help/ca/evolution/backup-restore.page
 share/help/ca/evolution/calendar-alarms-and-reminders.page
@@ -2128,6 +2160,7 @@ share/help/ca/evolution/tasks-webdav.page
 share/help/ca/evolution/using-categories.page
 share/help/ca/evolution/xinclude-filter-vfolder-conditions.xml
 share/help/ca/evolution/xinclude-searching.xml
+share/help/cs/
 share/help/cs/evolution/
 share/help/cs/evolution/backup-restore.page
 share/help/cs/evolution/calendar-alarms-and-reminders.page
@@ -2360,6 +2393,7 @@ share/help/cs/evolution/tasks-webdav.page
 share/help/cs/evolution/using-categories.page
 share/help/cs/evolution/xinclude-filter-vfolder-conditions.xml
 share/help/cs/evolution/xinclude-searching.xml
+share/help/de/
 share/help/de/evolution/
 share/help/de/evolution/backup-restore.page
 share/help/de/evolution/calendar-alarms-and-reminders.page
@@ -2592,6 +2626,7 @@ share/help/de/evolution/tasks-webdav.page
 share/help/de/evolution/using-categories.page
 share/help/de/evolution/xinclude-filter-vfolder-conditions.xml
 share/help/de/evolution/xinclude-searching.xml
+share/help/el/
 share/help/el/evolution/
 share/help/el/evolution/backup-restore.page
 share/help/el/evolution/calendar-alarms-and-reminders.page
@@ -3057,6 +3092,7 @@ share/help/en_GB/evolution/tasks-webdav.page
 share/help/en_GB/evolution/using-categories.page
 share/help/en_GB/evolution/xinclude-filter-vfolder-conditions.xml
 share/help/en_GB/evolution/xinclude-searching.xml
+share/help/es/
 share/help/es/evolution/
 share/help/es/evolution/backup-restore.page
 share/help/es/evolution/calendar-alarms-and-reminders.page
@@ -3289,6 +3325,7 @@ share/help/es/evolution/tasks-webdav.page
 share/help/es/evolution/using-categories.page
 share/help/es/evolution/xinclude-filter-vfolder-conditions.xml
 share/help/es/evolution/xinclude-searching.xml
+share/help/eu/
 share/help/eu/evolution/
 share/help/eu/evolution/backup-restore.page
 share/help/eu/evolution/calendar-alarms-and-reminders.page
@@ -3521,6 +3558,7 @@ share/help/eu/evolution/tasks-webdav.page
 share/help/eu/evolution/using-categories.page
 share/help/eu/evolution/xinclude-filter-vfolder-conditions.xml
 share/help/eu/evolution/xinclude-searching.xml
+share/help/fr/
 share/help/fr/evolution/
 share/help/fr/evolution/backup-restore.page
 share/help/fr/evolution/calendar-alarms-and-reminders.page
@@ -3753,6 +3791,7 @@ share/help/fr/evolution/tasks-webdav.page
 share/help/fr/evolution/using-categories.page
 share/help/fr/evolution/xinclude-filter-vfolder-conditions.xml
 share/help/fr/evolution/xinclude-searching.xml
+share/help/gl/
 share/help/gl/evolution/
 share/help/gl/evolution/backup-restore.page
 share/help/gl/evolution/calendar-alarms-and-reminders.page
@@ -3985,6 +4024,7 @@ share/help/gl/evolution/tasks-webdav.page
 share/help/gl/evolution/using-categories.page
 share/help/gl/evolution/xinclude-filter-vfolder-conditions.xml
 share/help/gl/evolution/xinclude-searching.xml
+share/help/hu/
 share/help/hu/evolution/
 share/help/hu/evolution/backup-restore.page
 share/help/hu/evolution/calendar-alarms-and-reminders.page
@@ -4683,6 +4723,7 @@ share/help/mk/evolution/tasks-webdav.page
 share/help/mk/evolution/using-categories.page
 share/help/mk/evolution/xinclude-filter-vfolder-conditions.xml
 share/help/mk/evolution/xinclude-searching.xml
+share/help/oc/
 share/help/oc/evolution/
 share/help/oc/evolution/backup-restore.page
 share/help/oc/evolution/calendar-alarms-and-reminders.page
@@ -4915,6 +4956,7 @@ share/help/oc/evolution/tasks-webdav.page
 share/help/oc/evolution/using-categories.page
 share/help/oc/evolution/xinclude-filter-vfolder-conditions.xml
 share/help/oc/evolution/xinclude-searching.xml
+share/help/pt_BR/
 share/help/pt_BR/evolution/
 share/help/pt_BR/evolution/backup-restore.page
 share/help/pt_BR/evolution/calendar-alarms-and-reminders.page
@@ -5380,6 +5422,7 @@ share/help/ru/evolution/tasks-webdav.page
 share/help/ru/evolution/using-categories.page
 share/help/ru/evolution/xinclude-filter-vfolder-conditions.xml
 share/help/ru/evolution/xinclude-searching.xml
+share/help/sl/
 share/help/sl/evolution/
 share/help/sl/evolution/backup-restore.page
 share/help/sl/evolution/calendar-alarms-and-reminders.page
@@ -5612,6 +5655,7 @@ share/help/sl/evolution/tasks-webdav.page
 share/help/sl/evolution/using-categories.page
 share/help/sl/evolution/xinclude-filter-vfolder-conditions.xml
 share/help/sl/evolution/xinclude-searching.xml
+share/help/sv/
 share/help/sv/evolution/
 share/help/sv/evolution/backup-restore.page
 share/help/sv/evolution/calendar-alarms-and-reminders.page
@@ -6077,6 +6121,7 @@ share/help/te/evolution/tasks-webdav.page
 share/help/te/evolution/using-categories.page
 share/help/te/evolution/xinclude-filter-vfolder-conditions.xml
 share/help/te/evolution/xinclude-searching.xml
+share/help/uk/
 share/help/uk/evolution/
 share/help/uk/evolution/backup-restore.page
 share/help/uk/evolution/calendar-alarms-and-reminders.page
@@ -6309,6 +6354,7 @@ share/help/uk/evolution/tasks-webdav.page
 share/help/uk/evolution/using-categories.page
 share/help/uk/evolution/xinclude-filter-vfolder-conditions.xml
 share/help/uk/evolution/xinclude-searching.xml
+share/help/zh_CN/
 share/help/zh_CN/evolution/
 share/help/zh_CN/evolution/backup-restore.page
 share/help/zh_CN/evolution/calendar-alarms-and-reminders.page
@@ -6558,6 +6604,7 @@ share/icons/hicolor/48x48/apps/evolution-memos.png
 share/icons/hicolor/48x48/apps/evolution-tasks.png
 share/icons/hicolor/scalable/apps/evolution-symbolic.svg
 share/icons/hicolor/scalable/apps/evolution.svg
+share/locale/ab/LC_MESSAGES/evolution.mo
 share/locale/af/LC_MESSAGES/evolution.mo
 share/locale/am/LC_MESSAGES/evolution.mo
 share/locale/an/LC_MESSAGES/evolution.mo
