@@ -1,16 +1,14 @@
 COMMENT=		map application for GNOME
 
 GNOME_PROJECT=		gnome-maps
-GNOME_VERSION=		42.3
-REVISION=		0
+GNOME_VERSION=		43.1
 
 SHARED_LIBS +=  gnome-maps                0.0 # 0.0.0
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += champlain-0.12 folks gee-0.8 geocode-glib gio-2.0 glib-2.0
-WANTLIB += gobject-2.0 rest-0.7 xml2
+WANTLIB += gio-2.0 glib-2.0 gobject-2.0 rest-1.0 shumate-1.0 xml2
 
 MODULES=		devel/dconf \
 			devel/meson \
@@ -19,9 +17,7 @@ MODULES=		devel/dconf \
 MODGNOME_TOOLS=		desktop-file-utils gobject-introspection \
 			gtk-update-icon-cache
 
-LIB_DEPENDS=		geo/geocode-glib \
-			geo/libchamplain \
-			net/telepathy/folks
+LIB_DEPENDS=		x11/gnome/libshumate
 
 BUILD_DEPENDS=		geo/geoclue2 \
 			x11/gnome/gjs \
