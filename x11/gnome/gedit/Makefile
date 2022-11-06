@@ -1,17 +1,17 @@
 COMMENT=		lightweight GNOME text editor
 
 GNOME_PROJECT=		gedit
-GNOME_VERSION=		42.2
-REVISION=		0
+GNOME_VERSION=		43.1
 
 CATEGORIES=		editors
 
 # GPLv2
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += atk-1.0 c cairo gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0
-WANTLIB += glib-2.0 gobject-2.0 gspell-1 gtk-3 gtksourceview-4
-WANTLIB += intl m pango-1.0 peas-1.0 peas-gtk-1.0 xml2
+WANTLIB += amtk-5 atk-1.0 c cairo gdk-3 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += girepository-1.0 glib-2.0 gobject-2.0 gspell-1 gtk-3
+WANTLIB += gtksourceview-4 intl m pango-1.0 peas-1.0 peas-gtk-1.0
+WANTLIB += tepl-6
 
 COMPILER=		base-clang ports-gcc
 COMPILER_LANGS=		c
@@ -28,6 +28,7 @@ BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
 
 LIB_DEPENDS=		devel/libpeas \
 			textproc/gspell \
+			x11/gnome/tepl \
 			x11/gtksourceview4
 
 RUN_DEPENDS=		devel/gsettings-desktop-schemas \
