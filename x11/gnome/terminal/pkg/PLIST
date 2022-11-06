@@ -3,10 +3,12 @@
 @bin bin/gnome-terminal
 lib/gnome-terminal/
 lib/gnome-terminal/gschemas.compiled
-@so lib/nautilus/extensions-3.0/libterminal-nautilus.so
+@so lib/nautilus/extensions-4/libterminal-nautilus.so
 lib/systemd/user/gnome-terminal-server.service
+@bin libexec/gnome-terminal-preferences
 @bin libexec/gnome-terminal-server
 @man man/man1/gnome-terminal.1
+share/applications/org.gnome.Terminal.Preferences.desktop
 share/applications/org.gnome.Terminal.desktop
 share/dbus-1/services/org.gnome.Terminal.service
 share/glib-2.0/schemas/org.gnome.Terminal.gschema.xml
@@ -481,6 +483,43 @@ share/help/id/gnome-terminal/txt-copy-paste.page
 share/help/id/gnome-terminal/txt-links.page
 share/help/id/gnome-terminal/txt-search.page
 share/help/id/gnome-terminal/txt-select-text.page
+share/help/ka/
+share/help/ka/gnome-terminal/
+share/help/ka/gnome-terminal/adv-keyboard-shortcuts.page
+share/help/ka/gnome-terminal/app-colors.page
+share/help/ka/gnome-terminal/app-cursor.page
+share/help/ka/gnome-terminal/app-fonts.page
+share/help/ka/gnome-terminal/app-fullscreen.page
+share/help/ka/gnome-terminal/app-terminal-sizes.page
+share/help/ka/gnome-terminal/app-zoom.page
+share/help/ka/gnome-terminal/figures/
+share/help/ka/gnome-terminal/figures/gnome-terminal.png
+share/help/ka/gnome-terminal/figures/keyboard-key-search.svg
+share/help/ka/gnome-terminal/figures/org.gnome.Terminal.svg
+share/help/ka/gnome-terminal/gs-execute-commands.page
+share/help/ka/gnome-terminal/gs-tabs.page
+share/help/ka/gnome-terminal/index.page
+share/help/ka/gnome-terminal/introduction.page
+share/help/ka/gnome-terminal/legal.xml
+share/help/ka/gnome-terminal/overview.page
+share/help/ka/gnome-terminal/pref-bell.page
+share/help/ka/gnome-terminal/pref-custom-command.page
+share/help/ka/gnome-terminal/pref-custom-exit.page
+share/help/ka/gnome-terminal/pref-keyboard-access.page
+share/help/ka/gnome-terminal/pref-login-shell.page
+share/help/ka/gnome-terminal/pref-menubar.page
+share/help/ka/gnome-terminal/pref-profile-char-width.page
+share/help/ka/gnome-terminal/pref-profile-encoding.page
+share/help/ka/gnome-terminal/pref-profiles.page
+share/help/ka/gnome-terminal/pref-scrolling.page
+share/help/ka/gnome-terminal/pref-tab-window.page
+share/help/ka/gnome-terminal/pref-user-input.page
+share/help/ka/gnome-terminal/pref.page
+share/help/ka/gnome-terminal/prob-reset.page
+share/help/ka/gnome-terminal/txt-copy-paste.page
+share/help/ka/gnome-terminal/txt-links.page
+share/help/ka/gnome-terminal/txt-search.page
+share/help/ka/gnome-terminal/txt-select-text.page
 share/help/ko/gnome-terminal/
 share/help/ko/gnome-terminal/adv-keyboard-shortcuts.page
 share/help/ko/gnome-terminal/app-colors.page
@@ -736,8 +775,11 @@ share/help/uk/gnome-terminal/txt-copy-paste.page
 share/help/uk/gnome-terminal/txt-links.page
 share/help/uk/gnome-terminal/txt-search.page
 share/help/uk/gnome-terminal/txt-select-text.page
+share/icons/hicolor/scalable/apps/org.gnome.Terminal.Preferences.svg
 share/icons/hicolor/scalable/apps/org.gnome.Terminal.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Terminal-symbolic.svg
+share/icons/hicolor/symbolic/apps/org.gnome.Terminal.Preferences-symbolic.svg
+share/locale/ab/LC_MESSAGES/gnome-terminal.mo
 share/locale/am/LC_MESSAGES/gnome-terminal.mo
 share/locale/an/LC_MESSAGES/gnome-terminal.mo
 share/locale/ar/LC_MESSAGES/gnome-terminal.mo
@@ -794,7 +836,6 @@ share/locale/lt/LC_MESSAGES/gnome-terminal.mo
 share/locale/lv/LC_MESSAGES/gnome-terminal.mo
 share/locale/mai/LC_MESSAGES/gnome-terminal.mo
 share/locale/mg/LC_MESSAGES/gnome-terminal.mo
-share/locale/mjw/LC_MESSAGES/gnome-terminal.mo
 share/locale/mk/LC_MESSAGES/gnome-terminal.mo
 share/locale/ml/LC_MESSAGES/gnome-terminal.mo
 share/locale/mn/LC_MESSAGES/gnome-terminal.mo
@@ -837,6 +878,8 @@ share/locale/zh_HK/LC_MESSAGES/gnome-terminal.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-terminal.mo
 share/metainfo/org.gnome.Terminal.Nautilus.metainfo.xml
 share/metainfo/org.gnome.Terminal.metainfo.xml
+share/xdg-terminals/
+share/xdg-terminals/org.gnome.Terminal.desktop
 @tag update-desktop-database
 @tag glib-compile-schemas
 @tag gtk-update-icon-cache %D/share/icons/hicolor

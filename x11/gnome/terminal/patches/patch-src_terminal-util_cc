@@ -3,7 +3,7 @@ Use strcspn(3) instead of non-portable strchrnul(3).
 Index: src/terminal-util.cc
 --- src/terminal-util.cc.orig
 +++ src/terminal-util.cc
-@@ -1176,7 +1176,7 @@ char *terminal_util_hyperlink_uri_label (const char *u
+@@ -1181,7 +1181,7 @@ char *terminal_util_hyperlink_uri_label (const char *u
        g_ascii_strncasecmp(unesc, "https://", 8) == 0) {
      gs_free char *unidn = nullptr;
      char *hostname = strchr(unesc, '/') + 2;
@@ -12,7 +12,7 @@ Index: src/terminal-util.cc
      char save = *hostname_end;
      *hostname_end = '\0';
      unidn = g_hostname_to_unicode(hostname);
-@@ -1519,7 +1519,7 @@ terminal_util_find_program_in_path (const char *path,
+@@ -1526,7 +1526,7 @@ terminal_util_find_program_in_path (const char *path,
        char *startp;
  
        path = p;

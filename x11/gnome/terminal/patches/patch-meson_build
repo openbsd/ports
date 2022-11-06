@@ -1,0 +1,15 @@
+In file included from ../gnome-terminal-3.46.4/src/terminal-screen.cc:36:
+/usr/include/sys/sysctl.h:499:2: error: unknown type name 'u_long'
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -162,7 +162,7 @@ config_h.set('ENABLE_SEARCH_PROVIDER', get_option('sea
+ # Enable libc features
+ 
+ libc_feature_defines = [
+-  ['_GNU_SOURCE', '1'],
++  ['_BSD_SOURCE', '1'],
+   ['_POSIX_C_SOURCE', '200809L'],
+   ['_XOPEN_SOURCE', '700'],
+   ['_XOPEN_SOURCE_EXTENDED', '1'],

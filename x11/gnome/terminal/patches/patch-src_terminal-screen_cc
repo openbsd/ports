@@ -3,7 +3,7 @@ https://github.com/freebsd/freebsd-ports/blob/main/x11/gnome-terminal/files/patc
 Index: src/terminal-screen.cc
 --- src/terminal-screen.cc.orig
 +++ src/terminal-screen.cc
-@@ -2260,7 +2260,7 @@ terminal_screen_has_foreground_process (TerminalScreen
+@@ -2283,7 +2283,7 @@ terminal_screen_has_foreground_process (TerminalScreen
    if (sysctl (mib, G_N_ELEMENTS (mib), nullptr, &len, nullptr, 0) == -1)
        return TRUE;
  
