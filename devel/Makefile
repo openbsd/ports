@@ -30,7 +30,6 @@
      SUBDIR += asm6
      SUBDIR += astyle
      SUBDIR += atf
-     SUBDIR += atk
      SUBDIR += atk2mm
      SUBDIR += atkmm236
      SUBDIR += atlas
@@ -1775,7 +1774,7 @@
      SUBDIR += sparsehash
      SUBDIR += spdlog
      SUBDIR += spice-protocol
-     SUBDIR += spidermonkey91
+     SUBDIR += spidermonkey102
      SUBDIR += splint
      SUBDIR += spyder
      SUBDIR += sqlc

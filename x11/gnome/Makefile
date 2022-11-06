@@ -2,7 +2,6 @@
      SUBDIR += accerciser
      SUBDIR += adwaita-icon-theme
      SUBDIR += aisleriot
-     SUBDIR += at-spi2-atk
      SUBDIR += at-spi2-core
      SUBDIR += autoar
      SUBDIR += backgrounds
