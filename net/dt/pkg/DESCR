@@ -1,0 +1,7 @@
+dt scans DNS domain and provides information about inconsistencies.
+
+Features:
+ * common records scanning (use -scan)
+ * validate DNSSEC chain (use -debug to see more info)
+ * change query speed for scanning (default 10 queries per second)
+ * diagnostic of your domain (similar to intodns.com, dnsspy.io)
