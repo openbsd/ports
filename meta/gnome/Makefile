@@ -9,6 +9,7 @@ PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
 REVISION-main=		0
+REVISION-extras=	0
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -112,6 +113,7 @@ RUN_DEPENDS-extras +=	devel/glade \
 			net/telepathy/telepathy-mission-control \
 			x11/gnome/devel-docs \
 			x11/gnome/dictionary \
+			x11/gnome/endeavour \
 			x11/gnome/file-roller \
 			x11/gnome/gedit \
 			x11/gnome/ghex \
@@ -122,7 +124,6 @@ RUN_DEPENDS-extras +=	devel/glade \
 			x11/gnome/screenshot \
 			x11/gnome/seahorse \
 			x11/gnome/terminal \
-			x11/gnome/todo \
 			x11/gnome/tweaks
 
 # gtk+2
