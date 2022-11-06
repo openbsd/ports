@@ -1,10 +1,10 @@
 @bin bin/kgx
-@so lib/nautilus/extensions-3.0/libkgx-nautilus.so
 share/applications/org.gnome.Console.desktop
 share/dbus-1/services/org.gnome.Console.service
 share/glib-2.0/schemas/org.gnome.Console.gschema.xml
 share/icons/hicolor/scalable/apps/org.gnome.Console.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Console-symbolic.svg
+share/locale/ab/LC_MESSAGES/kgx.mo
 share/locale/bg/LC_MESSAGES/kgx.mo
 share/locale/ca/LC_MESSAGES/kgx.mo
 share/locale/cs/LC_MESSAGES/kgx.mo
@@ -25,9 +25,11 @@ share/locale/hu/LC_MESSAGES/kgx.mo
 share/locale/id/LC_MESSAGES/kgx.mo
 share/locale/it/LC_MESSAGES/kgx.mo
 share/locale/ja/LC_MESSAGES/kgx.mo
+share/locale/ka/LC_MESSAGES/kgx.mo
 share/locale/kk/LC_MESSAGES/kgx.mo
 share/locale/ko/LC_MESSAGES/kgx.mo
 share/locale/lt/LC_MESSAGES/kgx.mo
+share/locale/lv/LC_MESSAGES/kgx.mo
 share/locale/nb/LC_MESSAGES/kgx.mo
 share/locale/ne/LC_MESSAGES/kgx.mo
 share/locale/nl/LC_MESSAGES/kgx.mo
@@ -46,6 +48,7 @@ share/locale/tr/LC_MESSAGES/kgx.mo
 share/locale/uk/LC_MESSAGES/kgx.mo
 share/locale/vi/LC_MESSAGES/kgx.mo
 share/locale/zh_CN/LC_MESSAGES/kgx.mo
+share/locale/zh_TW/LC_MESSAGES/kgx.mo
 share/metainfo/org.gnome.Console.metainfo.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag glib-compile-schemas

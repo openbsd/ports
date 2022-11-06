@@ -1,16 +1,16 @@
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -1,7 +1,7 @@
- project('gnome-console', 'c', version: '42.2',
-   meson_version: '>= 0.59.0',
-   default_options: [
--    'werror=true',
-+    'werror=false',
-     'buildtype=debugoptimized',
-     'c_std=c17',
-     'vte:c_std=gnu11',
-@@ -120,7 +120,7 @@ endif
+@@ -3,7 +3,7 @@ project('gnome-console', 'c',
+             meson_version: '>= 0.59.0',
+                   license: 'GPL-3.0-or-later',
+           default_options: [
+-                             'werror=true',
++                             'werror=false',
+                              'buildtype=debugoptimized',
+                              'c_std=c17',
+                              # So, apparently these two don’t currently do
+@@ -136,7 +136,7 @@ subdir('src')
  subdir('po')
  
  gnome.post_install(
