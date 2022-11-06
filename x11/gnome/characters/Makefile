@@ -1,19 +1,18 @@
 COMMENT =		GNOME utility to insert unusual characters
 
 GNOME_PROJECT =		gnome-characters
-GNOME_VERSION =		42.0
-REVISION =		1
+GNOME_VERSION =		43.0
 
 # BSD3/GPLv2
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += gio-2.0 glib-2.0 gobject-2.0 pango-1.0
+WANTLIB += gio-2.0 glib-2.0 gobject-2.0
 
 MODULES =		devel/dconf \
 			devel/meson \
 			x11/gnome
 
-LIB_DEPENDS =		devel/pango
+LIB_DEPENDS =		devel/glib2
 
 BUILD_DEPENDS =		x11/gnome/gjs \
 			x11/gnome/libadwaita
