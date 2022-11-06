@@ -11,7 +11,7 @@ GH_ACCOUNT =	letoram
 GH_PROJECT =	arcan
 GH_TAGNAME =	0.6.2
 
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	graphics devel
 HOMEPAGE =	https://arcan-fe.com
@@ -23,11 +23,11 @@ WRKSRC =		${WRKDIST}/src
 
 # uses pledge()
 WANTLIB += ${COMPILER_LIBCXX} EGL GL SDL2 archive avcodec avdevice
-WANTLIB += avfilter avformat avutil bz2 c curl drm espeak freetype
-WANTLIB += gbm iconv lzma m openal sqlite3 swresample swscale
-WANTLIB += tesseract util vlc vncclient vncserver xkbcommon z
-WANTLIB += magic wayland-server xcb xcb-composite xcb-icccm xcb-util
-WANTLIB += xcb-xfixes ${MODLUA_WANTLIB}
+WANTLIB += avfilter avformat avutil bz2 c curl drm espeak-ng freetype
+WANTLIB += gbm iconv ${MODLUA_WANTLIB} lzma m magic openal sqlite3 swresample
+WANTLIB += swscale tesseract util vlc vncclient vncserver wayland-server
+WANTLIB += xcb xcb-composite xcb-icccm xcb-util xcb-xfixes xkbcommon
+WANTLIB += z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
