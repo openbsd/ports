@@ -83,6 +83,7 @@
      SUBDIR += doh
      SUBDIR += dsocks
      SUBDIR += dsvpn
+     SUBDIR += dt
      SUBDIR += dxpc
      SUBDIR += echoping
      SUBDIR += ekg
