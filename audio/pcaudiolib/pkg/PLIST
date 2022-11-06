@@ -1,0 +1,5 @@
+include/pcaudiolib/
+include/pcaudiolib/audio.h
+@static-lib lib/libpcaudio.a
+lib/libpcaudio.la
+@lib lib/libpcaudio.so.${LIBpcaudio_VERSION}
