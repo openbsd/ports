@@ -1,0 +1,17 @@
+From 79a1e4cf8c256132978a1d8ab718c8ad132386de Mon Sep 17 00:00:00 2001
+From: Jens Georg <mail@jensge.org>
+Date: Tue, 3 May 2022 22:39:16 +0200
+Subject: [PATCH] Port to GUPnP 1.6 API
+
+Index: libgupnp-igd/meson.build
+--- libgupnp-igd/meson.build.orig
++++ libgupnp-igd/meson.build
+@@ -38,7 +38,7 @@ pkg.generate(
+     subdirs : 'gupnp-igd-1.0',
+     filebase : 'gupnp-igd-1.0',
+     description: 'GUPnP Simple IGD library',
+-    requires_private : 'gupnp-1.2'
++    requires_private : 'gupnp-1.6'
+ )
+ 
+ 

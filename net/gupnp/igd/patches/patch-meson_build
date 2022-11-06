@@ -1,0 +1,25 @@
+From 79a1e4cf8c256132978a1d8ab718c8ad132386de Mon Sep 17 00:00:00 2001
+From: Jens Georg <mail@jensge.org>
+Date: Tue, 3 May 2022 22:39:16 +0200
+Subject: [PATCH] Port to GUPnP 1.6 API
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -1,4 +1,4 @@
+-project('gupnp-igd', 'c', version: '1.2.0')
++project('gupnp-igd', 'c', version: '1.5.0')
+ 
+ gnome = import('gnome')
+ pkg = import('pkgconfig')
+@@ -7,8 +7,8 @@ glib_req = '>= 2.38'
+ dependencies = [
+     dependency('glib-2.0', version: glib_req, required: true),
+     dependency('gobject-2.0', version: glib_req, required: true),
+-    dependency('gupnp-1.2', version : '>= 1.2.0'),
+-    dependency('gssdp-1.2', version : '>= 1.2.0'),
++    dependency('gupnp-1.6', version : '>= 1.5.0'),
++    dependency('gssdp-1.6', version : '>= 1.5.0'),
+     dependency('gthread-2.0', required: true)
+ ]
+ 

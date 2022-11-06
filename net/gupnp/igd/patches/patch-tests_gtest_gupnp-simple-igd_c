@@ -1,0 +1,35 @@
+From 79a1e4cf8c256132978a1d8ab718c8ad132386de Mon Sep 17 00:00:00 2001
+From: Jens Georg <mail@jensge.org>
+Date: Tue, 3 May 2022 22:39:16 +0200
+Subject: [PATCH] Port to GUPnP 1.6 API
+
+Index: tests/gtest/gupnp-simple-igd.c
+--- tests/gtest/gupnp-simple-igd.c.orig
++++ tests/gtest/gupnp-simple-igd.c
+@@ -88,7 +88,7 @@ get_external_ip_address_cb (GUPnPService *service,
+   else
+     g_assert_not_reached ();
+ 
+-  gupnp_service_action_return (action);
++  gupnp_service_action_return_success (action);
+ 
+ }
+ 
+@@ -139,7 +139,7 @@ add_port_mapping_cb (GUPnPService *service,
+   if (return_conflict && external_port == INTERNAL_PORT)
+     gupnp_service_action_return_error (action, 718, "ConflictInMappingEntry");
+   else
+-    gupnp_service_action_return (action);
++    gupnp_service_action_return_success (action);
+ }
+ 
+ static gboolean
+@@ -172,7 +172,7 @@ delete_port_mapping_cb (GUPnPService *service,
+     g_assert (external_port != INTERNAL_PORT);
+   g_assert (proto && !strcmp (proto, "UDP"));
+ 
+-  gupnp_service_action_return (action);
++  gupnp_service_action_return_success (action);
+ 
+   g_free (remote_host);
+   g_free (proto);
