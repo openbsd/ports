@@ -1,10 +1,10 @@
 COMMENT=		API for handling SSDP resource discovery and announcement
 
 GNOME_PROJECT=		gssdp
-GNOME_VERSION=		1.4.0.1
-REVISION=		1
+GNOME_VERSION=		1.6.0
 
-SHARED_LIBS +=  gssdp-1.2            2.3      # 3.0
+SHARED_LIBS += gssdp-1.6                 0.0 # 0.106.0
+
 CATEGORIES=		net devel
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -12,7 +12,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c gio-2.0 glib-2.0 gobject-2.0 gtk-4 intl soup-2.4
+WANTLIB += c gio-2.0 glib-2.0 gobject-2.0 gtk-4 intl soup-3.0
 
 MODULES=		devel/meson \
 			x11/gnome
@@ -21,7 +21,7 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 MODGNOME_TOOLS +=	gobject-introspection vala
 
-LIB_DEPENDS=		devel/libsoup \
+LIB_DEPENDS=		devel/libsoup3 \
 			x11/gtk+4
 
 .include <bsd.port.mk>

@@ -4,7 +4,7 @@
 Index: libgssdp/gssdp-net-posix.c
 --- libgssdp/gssdp-net-posix.c.orig
 +++ libgssdp/gssdp-net-posix.c
-@@ -323,10 +323,11 @@ get_netmask (struct sockaddr *address,
+@@ -324,10 +324,11 @@ get_netmask (struct sockaddr *address,
          GError *error = NULL;
  
          g_return_val_if_fail (address != NULL, NULL);
