@@ -1,20 +1,25 @@
 COMMENT=		service interface for assistive technologies
 
 GNOME_PROJECT=		at-spi2-core
-GNOME_VERSION=		2.44.1
-REVISION=		0
+GNOME_VERSION=		2.46.0
 
-SHARED_LIBS += atspi                     1.0 # 0.0.1
+SHARED_LIBS +=	atspi                     1.1 # 0.0.1
+SHARED_LIBS +=	atk-1.0               21810.0 # 0.0
+SHARED_LIBS +=	atk-bridge-2.0            0.2 # 0.0
 
 HOMEPAGE=		https://wiki.linuxfoundation.org/en/AT-SPI_on_D-Bus
 
 # LGPLv2
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += X11 Xi Xtst c dbus-1 gio-2.0 glib-2.0 gobject-2.0 intl
+WANTLIB += X11 Xi Xtst c dbus-1 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += intl
 
 MODULES=		devel/meson \
 			x11/gnome
+
+BUILD_DEPENDS=		textproc/libxml
+RUN_DEPENDS=		textproc/libxml
 
 LIB_DEPENDS=		devel/glib2 \
 			x11/dbus
