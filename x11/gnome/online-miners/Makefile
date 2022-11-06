@@ -2,7 +2,7 @@ COMMENT=		crawls through your online content
 
 GNOME_PROJECT=		gnome-online-miners
 GNOME_VERSION=		3.34.0
-REVISION=		5
+REVISION=		6
 
 # tracker3 support
 # https://gitlab.gnome.org/GNOME/gnome-online-miners/-/merge_requests/3
@@ -31,7 +31,7 @@ LIB_DEPENDS=		devel/libgdata \
 			x11/gnome/tracker3
 
 # com.intel.dleyna-server
-RUN_DEPENDS +=		net/dleyna/server
+RUN_DEPENDS +=		net/dleyna
 
 # calls grl_registry_load...plugin
 RUN_DEPENDS +=		x11/gnome/grilo-plugins

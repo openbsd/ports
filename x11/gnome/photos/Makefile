@@ -2,7 +2,7 @@ COMMENT=		access, organize and share your photos on GNOME
 
 GNOME_PROJECT=		gnome-photos
 GNOME_VERSION=		42.0
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		graphics
 
@@ -38,7 +38,7 @@ RUN_DEPENDS += x11/gnome/tracker3-miners
 RUN_DEPENDS += x11/gnome/online-miners
 
 # com.intel.dleyna-renderer
-RUN_DEPENDS +=		net/dleyna/renderer
+RUN_DEPENDS +=		net/dleyna
 
 # calls grl_registry_load...plugin
 RUN_DEPENDS +=		x11/gnome/grilo-plugins
