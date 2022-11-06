@@ -1,14 +1,14 @@
 COMMENT=		terminal emulation library
 
 GNOME_PROJECT=		vte
-GNOME_VERSION=		0.68.0
+GNOME_VERSION=		0.70.1
 API_V=			2.91
 SUBST_VARS +=		API_V
 
 PKGNAME=		vte3-${GNOME_VERSION}
-REVISION=		0
 
-SHARED_LIBS += vte-2.91                  2.8 # 0.6800.0
+SHARED_LIBS += vte-2.91                  2.8 # 0.7000.1
+SHARED_LIBS += vte-2.91-gtk4             0.0 # 0
 
 CATEGORIES=		devel
 
@@ -17,10 +17,10 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += atk-1.0 c cairo cairo-gobject fribidi gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gnutls gobject-2.0 gtk-3 icuuc intl
-WANTLIB += m pango-1.0 pangocairo-1.0 pcre2-8 z
-WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} atk-1.0 c cairo cairo-gobject fribidi
+WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gnutls gobject-2.0
+WANTLIB += gtk-3 gtk-4 icuuc intl m pango-1.0 pangocairo-1.0 pcre2-8
+WANTLIB += z
 
 MODULES=		devel/meson \
 			x11/gnome
@@ -37,11 +37,15 @@ BUILD_DEPENDS+=		shells/bash
 LIB_DEPENDS=		devel/pcre2>=10.22p0 \
 			security/gnutls \
 			textproc/icu4c \
-			x11/gtk+3
+			x11/gtk+3 \
+			x11/gtk+4
 
 MODGNOME_TOOLS=		gobject-introspection vala
 
 TEST_DEPENDS=		shells/bash
+
+# needed by GNOME (e.g. gnome-console)
+CONFIGURE_ARGS +=	-Dgtk4=true
 
 .include <bsd.port.arch.mk>
 .if !${PROPERTIES:Mlld}

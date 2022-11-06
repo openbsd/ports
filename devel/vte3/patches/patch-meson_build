@@ -1,16 +1,15 @@
 XXX push upstream
-meson-logs/meson-log.txt, at configure time:
-error: use of undeclared identifier 'pwrite'; did you mean 'pwrite'?
+../vte-0.70.1/src/dumpkeys.c:164:2: error: implicit declaration of function 'cfmakeraw' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+        cfmakeraw(&tcattr);
 
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -387,7 +387,7 @@ foreach func: check_functions
-     __code,
-     args: [
-       '-D_GNU_SOURCE',
--      '-D_XOPEN_SOURCE',
-+      '-D_XOPEN_SOURCE=700',
-     ],
-     dependencies: __deps,
-     name: __name,
+@@ -215,6 +215,7 @@ endif
+ 
+ libc_feature_defines = [
+   ['_GNU_SOURCE', '1'],
++  ['_BSD_SOURCE', '1'],
+   ['_POSIX_C_SOURCE', '200809L'],
+   ['_XOPEN_SOURCE', '700'],
+   ['_XOPEN_SOURCE_EXTENDED', '1'],
