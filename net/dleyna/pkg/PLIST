@@ -1,0 +1,51 @@
+@conflict dleyna-connector-dbus-*
+@conflict dleyna-core-*
+@conflict dleyna-renderer-*
+@conflict dleyna-server-*
+@pkgpath net/dleyna/connector-dbus
+@pkgpath net/dleyna/core
+@pkgpath net/dleyna/renderer
+@pkgpath net/dleyna/server
+include/dleyna-1.0/
+include/dleyna-1.0/libdleyna/
+include/dleyna-1.0/libdleyna/core/
+include/dleyna-1.0/libdleyna/core/connector-mgr.h
+include/dleyna-1.0/libdleyna/core/connector.h
+include/dleyna-1.0/libdleyna/core/context-filter.h
+include/dleyna-1.0/libdleyna/core/control-point.h
+include/dleyna-1.0/libdleyna/core/core.h
+include/dleyna-1.0/libdleyna/core/error.h
+include/dleyna-1.0/libdleyna/core/gasync-task.h
+include/dleyna-1.0/libdleyna/core/log.h
+include/dleyna-1.0/libdleyna/core/main-loop.h
+include/dleyna-1.0/libdleyna/core/settings.h
+include/dleyna-1.0/libdleyna/core/task-atom.h
+include/dleyna-1.0/libdleyna/core/task-processor.h
+include/dleyna-1.0/libdleyna/renderer/
+include/dleyna-1.0/libdleyna/renderer/control-point-renderer.h
+include/dleyna-1.0/libdleyna/server/
+include/dleyna-1.0/libdleyna/server/control-point-server.h
+lib/dleyna/
+lib/dleyna-1.0/
+lib/dleyna-1.0/connectors/
+@so lib/dleyna-1.0/connectors/libdleyna-connector-dbus.so
+lib/dleyna-server/
+@lib lib/dleyna-server/libdleyna-server-1.0.so.${LIBdleyna-server-1.0_VERSION}
+@lib lib/dleyna/libdleyna-renderer-1.0.so.${LIBdleyna-renderer-1.0_VERSION}
+@lib lib/libdleyna-core-1.0.so.${LIBdleyna-core-1.0_VERSION}
+lib/pkgconfig/dleyna-core-1.0.pc
+lib/pkgconfig/dleyna-renderer-service-1.0.pc
+lib/pkgconfig/dleyna-server-service-1.0.pc
+@bin libexec/dleyna-renderer-service
+@bin libexec/dleyna-server-service
+@man man/man1/dleyna-renderer-service.1
+@man man/man1/dleyna-server-service.1
+@man man/man5/dleyna-renderer-service.conf.5
+@man man/man5/dleyna-server-service.conf.5
+share/dbus-1/services/com.intel.dleyna-renderer.service
+share/dbus-1/services/com.intel.dleyna-server.service
+share/examples/dleyna/
+share/examples/dleyna/dleyna-renderer-service.conf
+@sample ${SYSCONFDIR}/dleyna-renderer-service.conf
+share/examples/dleyna/dleyna-server-service.conf
+@sample ${SYSCONFDIR}/dleyna-server-service.conf
