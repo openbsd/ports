@@ -2,6 +2,7 @@ COMMENT=	common interface to speech synthesis
 
 V=		0.11.4
 DISTNAME=	speech-dispatcher-${V}
+REVISION=	0
 
 SHARED_LIBS +=  speechd              2.3      # .8.0
 
@@ -12,8 +13,9 @@ HOMEPAGE=	http://devel.freebsoft.org/speechd
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ao c dotconf espeak glib-2.0 gmodule-2.0 gthread-2.0
-WANTLIB += iconv intl ltdl m pthread sndfile
+WANTLIB += ao c dotconf espeak-ng execinfo glib-2.0 gmodule-2.0
+WANTLIB += gthread-2.0 iconv intl ltdl m ogg pcaudio pthread pulse
+WANTLIB += pulse-simple sndfile vorbis
 
 MASTER_SITES=	https://github.com/brailcom/speechd/releases/download/${V}/
 

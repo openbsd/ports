@@ -46,7 +46,8 @@ lib/speech-dispatcher/
 libexec/speech-dispatcher-modules/
 @bin libexec/speech-dispatcher-modules/sd_cicero
 @bin libexec/speech-dispatcher-modules/sd_dummy
-@bin libexec/speech-dispatcher-modules/sd_espeak
+@bin libexec/speech-dispatcher-modules/sd_espeak-ng
+libexec/speech-dispatcher-modules/sd_espeak-ng-mbrola
 @bin libexec/speech-dispatcher-modules/sd_festival
 @bin libexec/speech-dispatcher-modules/sd_generic
 share/examples/speech-dispatcher/
@@ -92,8 +93,6 @@ share/locale/de/LC_MESSAGES/speech-dispatcher.mo
 share/locale/eo/LC_MESSAGES/speech-dispatcher.mo
 share/locale/fr/LC_MESSAGES/speech-dispatcher.mo
 share/locale/hu/LC_MESSAGES/speech-dispatcher.mo
-share/locale/nb_NO/
-share/locale/nb_NO/LC_MESSAGES/
 share/locale/nb_NO/LC_MESSAGES/speech-dispatcher.mo
 share/locale/pt/LC_MESSAGES/speech-dispatcher.mo
 share/locale/pt_BR/LC_MESSAGES/speech-dispatcher.mo
