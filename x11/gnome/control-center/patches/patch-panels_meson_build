@@ -14,14 +14,14 @@ Index: panels/meson.build
    'default-apps',
    'diagnostics',
 @@ -14,7 +13,6 @@ panels = [
+   'keyboard',
    'location',
-   'lock',
    'microphone',
 -  'mouse',
    'multitasking',
    'notifications',
    'online-accounts',
-@@ -28,11 +26,13 @@ panels = [
+@@ -29,11 +27,13 @@ panels = [
    'universal-access',
    'usage',
    'user-accounts',

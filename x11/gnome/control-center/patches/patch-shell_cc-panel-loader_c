@@ -35,7 +35,7 @@ Index: shell/cc-panel-loader.c
  extern GType cc_sound_panel_get_type (void);
  #ifdef BUILD_THUNDERBOLT
  extern GType cc_bolt_panel_get_type (void);
-@@ -103,7 +106,6 @@ static CcPanelLoaderVtable default_panels[] =
+@@ -105,7 +108,6 @@ static CcPanelLoaderVtable default_panels[] =
    PANEL_TYPE("bluetooth",        cc_bluetooth_panel_get_type,            NULL),
  #endif
    PANEL_TYPE("camera",           cc_camera_panel_get_type,               NULL),
@@ -43,9 +43,9 @@ Index: shell/cc-panel-loader.c
    PANEL_TYPE("datetime",         cc_date_time_panel_get_type,            NULL),
    PANEL_TYPE("default-apps",     cc_default_apps_panel_get_type,         NULL),
    PANEL_TYPE("diagnostics",      cc_diagnostics_panel_get_type,          cc_diagnostics_panel_static_init_func),
-@@ -113,7 +115,9 @@ static CcPanelLoaderVtable default_panels[] =
+@@ -115,7 +117,9 @@ static CcPanelLoaderVtable default_panels[] =
    PANEL_TYPE("location",         cc_location_panel_get_type,             NULL),
-   PANEL_TYPE("lock",             cc_lock_panel_get_type,                 NULL),
+   PANEL_TYPE("firmware-security",cc_firmware_security_panel_get_type,    cc_firmware_security_panel_static_init_func),
    PANEL_TYPE("microphone",       cc_microphone_panel_get_type,           NULL),
 +#ifdef NOTYET
    PANEL_TYPE("mouse",            cc_mouse_panel_get_type,                NULL),
@@ -53,9 +53,9 @@ Index: shell/cc-panel-loader.c
    PANEL_TYPE("multitasking",     cc_multitasking_panel_get_type,         NULL),
  #ifdef BUILD_NETWORK
    PANEL_TYPE("network",          cc_network_panel_get_type,              NULL),
-@@ -126,7 +130,9 @@ static CcPanelLoaderVtable default_panels[] =
-   PANEL_TYPE("region",           cc_region_panel_get_type,               NULL),
+@@ -129,7 +133,9 @@ static CcPanelLoaderVtable default_panels[] =
    PANEL_TYPE("removable-media",  cc_removable_media_panel_get_type,      NULL),
+   PANEL_TYPE("screen",           cc_screen_panel_get_type,               NULL),
    PANEL_TYPE("search",           cc_search_panel_get_type,               NULL),
 +#ifdef BUILD_SHARING
    PANEL_TYPE("sharing",          cc_sharing_panel_get_type,              NULL),

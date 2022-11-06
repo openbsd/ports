@@ -6,13 +6,10 @@ From: Bastien Nocera <hadess@hadess.net>
 Date: Tue, 25 Jan 2022 23:12:58 +0100
 Subject: [PATCH] info: Use udev to get the hardware RAM size
 
-XXX implement minimal support for get_os_name() on OpenBSD;
-we should port cc_os_release_get_values
-
 Index: panels/info-overview/cc-info-overview-panel.c
 --- panels/info-overview/cc-info-overview-panel.c.orig
 +++ panels/info-overview/cc-info-overview-panel.c
-@@ -37,11 +37,16 @@
+@@ -38,8 +38,9 @@
  #include <glibtop/mountlist.h>
  #include <glibtop/mem.h>
  #include <glibtop/sysinfo.h>
@@ -23,41 +20,7 @@ Index: panels/info-overview/cc-info-overview-panel.c
  
  #include <gdk/gdk.h>
  
-+#ifdef __OpenBSD__
-+#include <sys/utsname.h>
-+#endif
-+
- #ifdef GDK_WINDOWING_WAYLAND
- #include <gdk/wayland/gdkwayland.h>
- #endif
-@@ -415,6 +420,7 @@ get_graphics_hardware_string (void)
- static char *
- get_os_name (void)
- {
-+#ifndef __OpenBSD__
-   g_autofree gchar *name = NULL;
-   g_autofree gchar *version_id = NULL;
-   g_autofree gchar *pretty_name = NULL;
-@@ -448,6 +454,18 @@ get_os_name (void)
-     }
- 
-   return result;
-+#else
-+  gchar *result = NULL;
-+  g_autofree gchar *name_version = NULL;
-+  struct utsname u;
-+
-+  if (uname (&u) == -1)
-+    return g_strdup (_("Unknown"));
-+
-+  name_version = g_strdup_printf ("%s %s %s", u.sysname, u.release, u.version);
-+  result = g_strdup (name_version);
-+  return result;
-+#endif
- }
- 
- static char *
-@@ -464,6 +482,7 @@ get_os_type (void)
+@@ -341,6 +342,7 @@ get_os_type (void)
  static void
  get_primary_disc_info (CcInfoOverviewPanel *self)
  {
@@ -65,7 +28,7 @@ Index: panels/info-overview/cc-info-overview-panel.c
    g_autoptr(UDisksClient) client = NULL;
    GDBusObjectManager *manager;
    g_autolist(GDBusObject) objects = NULL;
-@@ -510,6 +529,9 @@ get_primary_disc_info (CcInfoOverviewPanel *self)
+@@ -387,6 +389,9 @@ get_primary_disc_info (CcInfoOverviewPanel *self)
      {
        cc_list_row_set_secondary_label (self->disk_row,  _("Unknown"));
      }
@@ -75,7 +38,7 @@ Index: panels/info-overview/cc-info-overview-panel.c
  }
  
  static void
-@@ -727,7 +749,7 @@ get_windowing_system (void)
+@@ -604,7 +609,7 @@ get_windowing_system (void)
  }
  
  static guint64
@@ -84,7 +47,7 @@ Index: panels/info-overview/cc-info-overview-panel.c
  {
    glibtop_mem mem;
  
-@@ -735,30 +757,6 @@ get_ram_size_libgtop (void)
+@@ -612,30 +617,6 @@ get_ram_size_libgtop (void)
    return mem.total;
  }
  
@@ -112,10 +75,10 @@ Index: panels/info-overview/cc-info-overview-panel.c
 -  return ram_total;
 -}
 -
- static void
- info_overview_panel_setup_overview (CcInfoOverviewPanel *self)
+ static char *
+ get_gnome_version (GDBusProxy *proxy)
  {
-@@ -778,9 +776,7 @@ info_overview_panel_setup_overview (CcInfoOverviewPane
+@@ -711,9 +692,7 @@ info_overview_panel_setup_overview (CcInfoOverviewPane
  
    get_hardware_model (self);
  
