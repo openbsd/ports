@@ -16,6 +16,7 @@ include/gnome-desktop-4.0/libgnome-desktop/gnome-pnp-ids.h
 include/gnome-desktop-4.0/libgnome-desktop/gnome-systemd.h
 include/gnome-desktop-4.0/libgnome-desktop/gnome-wall-clock.h
 include/gnome-desktop-4.0/libgnome-desktop/gnome-xkb-info.h
+include/gnome-desktop-4.0/libgnome-desktop/gnome-desktop-version.h
 lib/girepository-1.0/GnomeBG-4.0.typelib
 lib/girepository-1.0/GnomeDesktop-4.0.typelib
 lib/girepository-1.0/GnomeRR-4.0.typelib

@@ -1,6 +1,4 @@
 @conflict gnome-desktop-<42.0
-share/gnome/
-share/gnome/gnome-version.xml
 share/help/
 share/help/C/
 share/help/C/fdl/

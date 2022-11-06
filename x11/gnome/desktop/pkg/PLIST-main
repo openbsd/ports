@@ -5,6 +5,7 @@ include/gnome-desktop-3.0/libgnome-desktop/gnome-bg-crossfade.h
 include/gnome-desktop-3.0/libgnome-desktop/gnome-bg-slide-show.h
 include/gnome-desktop-3.0/libgnome-desktop/gnome-bg.h
 include/gnome-desktop-3.0/libgnome-desktop/gnome-desktop-thumbnail.h
+include/gnome-desktop-3.0/libgnome-desktop/gnome-desktop-version.h
 include/gnome-desktop-3.0/libgnome-desktop/gnome-idle-monitor.h
 include/gnome-desktop-3.0/libgnome-desktop/gnome-languages.h
 include/gnome-desktop-3.0/libgnome-desktop/gnome-pnp-ids.h
