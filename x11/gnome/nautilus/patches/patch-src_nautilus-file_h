@@ -1,0 +1,20 @@
+commit 5cb0b96dc1978f3488291c455be49a53aed30014
+Author: Leonardo Hernández Hernández <leohdz172@protonmail.com>
+Date:   Fri Sep 30 17:35:50 2022 -0500
+nautilus-file: Fix clang build errors
+
+Index: src/nautilus-file.h
+--- src/nautilus-file.h.orig
++++ src/nautilus-file.h
+@@ -244,9 +244,9 @@ gboolean                nautilus_file_can_get_owner   
+ gboolean                nautilus_file_can_set_owner                     (NautilusFile                   *file);
+ gboolean                nautilus_file_can_get_group                     (NautilusFile                   *file);
+ gboolean                nautilus_file_can_set_group                     (NautilusFile                   *file);
+-uid_t                   nautilus_file_get_uid                           (NautilusFile                   *file);
++const uid_t             nautilus_file_get_uid                           (NautilusFile                   *file);
+ char *                  nautilus_file_get_owner_name                    (NautilusFile                   *file);
+-gid_t                   nautilus_file_get_gid                           (NautilusFile                   *file);
++const gid_t             nautilus_file_get_gid                           (NautilusFile                   *file);
+ char *                  nautilus_file_get_group_name                    (NautilusFile                   *file);
+ GList *                 nautilus_get_user_names                         (void);
+ GList *                 nautilus_get_all_group_names                    (void);
