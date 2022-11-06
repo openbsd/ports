@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1436 2022/09/22 09:59:59 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1437 2022/11/06 09:22:44 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -747,6 +747,8 @@ my $stem_extensions = {
 	'py-dbus' => 'py3-dbus',
 	'dspy' => 'd-spy',
 	'i3-mousedrag' => 'i3',
+# 7.3
+	'spidermonkey91' => 'spidermonkey102',
 };
 
 my $obsolete_reason = {};
