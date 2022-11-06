@@ -1,7 +1,7 @@
 COMMENT=		C++ API for parts of GLib
 
 GNOME_PROJECT=		glibmm
-GNOME_VERSION=		2.72.1
+GNOME_VERSION=		2.74.0
 PKGNAME=		glibmm268-${GNOME_VERSION}
 
 SHARED_LIBS += glibmm_generate_extra_defs-2.68 0.1 # 1.3.0
@@ -25,9 +25,6 @@ MODULES=		devel/meson \
 
 # c++11
 COMPILER=		base-clang ports-gcc
-
-# clang-format
-BUILD_DEPENDS=		devel/llvm
 
 LIB_DEPENDS=		devel/glib2 \
 			devel/libsigc++30
