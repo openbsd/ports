@@ -1,4 +1,5 @@
 @conflict webkitgtk4-*
+!%%webkitgtk50%%
 include/webkitgtk-${API}/
 include/webkitgtk-${API}/JavaScriptCore/
 include/webkitgtk-${API}/JavaScriptCore/JSBase.h
@@ -4069,4 +4070,3 @@ share/locale/uk/LC_MESSAGES/WebKit2GTK-${API}.mo
 share/locale/vi/LC_MESSAGES/WebKit2GTK-${API}.mo
 share/locale/zh_CN/LC_MESSAGES/WebKit2GTK-${API}.mo
 %%webkitgtk50%%
-!%%webkitgtk50%%
