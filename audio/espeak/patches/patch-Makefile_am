@@ -1,0 +1,30 @@
+Index: Makefile.am
+--- Makefile.am.orig
++++ Makefile.am
+@@ -895,7 +895,7 @@ espeak-ng-data/ro_dict: dictsource/ro_list dictsource/
+ 
+ ru: espeak-ng-data/ru_dict
+ dictsource/ru_listx:
+-	ln -svf extra/ru_listx dictsource/
++	ln -sf extra/ru_listx dictsource/
+ if HAVE_RU_EXTENDED_DICTIONARY
+ espeak-ng-data/ru_dict: dictsource/ru_list dictsource/ru_rules dictsource/ru_extra dictsource/ru_listx dictsource/ru_emoji
+ else
+@@ -981,7 +981,7 @@ espeak-ng-data/vi_dict: dictsource/vi_list dictsource/
+ 
+ cmn: espeak-ng-data/cmn_dict
+ dictsource/cmn_listx:
+-	ln -svf extra/cmn_listx dictsource/
++	ln -sf extra/cmn_listx dictsource/
+ if HAVE_CMN_EXTENDED_DICTIONARY
+ espeak-ng-data/cmn_dict: dictsource/cmn_list dictsource/cmn_rules dictsource/cmn_listx dictsource/cmn_extra dictsource/cmn_emoji
+ else
+@@ -990,7 +990,7 @@ endif
+ 
+ yue: espeak-ng-data/yue_dict
+ dictsource/yue_listx:
+-	ln -svf extra/yue_listx dictsource/
++	ln -sf extra/yue_listx dictsource/
+ 
+ # NOTE: keep in sync with espeak-ng-data/%_dict more generic rule.
+ if HAVE_YUE_EXTENDED_DICTIONARY
