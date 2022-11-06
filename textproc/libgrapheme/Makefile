@@ -1,6 +1,6 @@
 COMMENT=	unicode string library
 
-DISTNAME=	libgrapheme-2.0.1
+DISTNAME=	libgrapheme-2.0.2
 
 SHARED_LIBS=	grapheme	1.0	# 2.0.0
 
