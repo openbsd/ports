@@ -255,12 +255,15 @@ include/evolution-data-server/libedataserver/e-extensible.h
 include/evolution-data-server/libedataserver/e-extension.h
 include/evolution-data-server/libedataserver/e-flag.h
 include/evolution-data-server/libedataserver/e-free-form-exp.h
-include/evolution-data-server/libedataserver/e-gdata-oauth2-authorizer.h
+include/evolution-data-server/libedataserver/e-gdata-query.h
+include/evolution-data-server/libedataserver/e-gdata-session.h
 include/evolution-data-server/libedataserver/e-iterator.h
+include/evolution-data-server/libedataserver/e-json-utils.h
 include/evolution-data-server/libedataserver/e-list-iterator.h
 include/evolution-data-server/libedataserver/e-list.h
 include/evolution-data-server/libedataserver/e-memory.h
 include/evolution-data-server/libedataserver/e-module.h
+include/evolution-data-server/libedataserver/e-named-parameters.h
 include/evolution-data-server/libedataserver/e-network-monitor.h
 include/evolution-data-server/libedataserver/e-oauth2-service-base.h
 include/evolution-data-server/libedataserver/e-oauth2-service-google.h
@@ -269,11 +272,9 @@ include/evolution-data-server/libedataserver/e-oauth2-service-yahoo.h
 include/evolution-data-server/libedataserver/e-oauth2-service.h
 include/evolution-data-server/libedataserver/e-oauth2-services.h
 include/evolution-data-server/libedataserver/e-operation-pool.h
-include/evolution-data-server/libedataserver/e-proxy.h
 include/evolution-data-server/libedataserver/e-secret-store.h
 include/evolution-data-server/libedataserver/e-sexp.h
 include/evolution-data-server/libedataserver/e-soup-auth-bearer.h
-include/evolution-data-server/libedataserver/e-soup-logger.h
 include/evolution-data-server/libedataserver/e-soup-session.h
 include/evolution-data-server/libedataserver/e-soup-ssl-trust.h
 include/evolution-data-server/libedataserver/e-source-address-book.h
@@ -334,6 +335,7 @@ include/evolution-data-server/libedataserver/libedataserver.h
 include/evolution-data-server/libedataserverui/
 include/evolution-data-server/libedataserverui/e-buffer-tagger.h
 include/evolution-data-server/libedataserverui/e-cell-renderer-color.h
+include/evolution-data-server/libedataserverui/e-certificate-widget.h
 include/evolution-data-server/libedataserverui/e-credentials-prompter-impl-oauth2.h
 include/evolution-data-server/libedataserverui/e-credentials-prompter-impl-password.h
 include/evolution-data-server/libedataserverui/e-credentials-prompter-impl.h
@@ -342,6 +344,18 @@ include/evolution-data-server/libedataserverui/e-reminders-widget.h
 include/evolution-data-server/libedataserverui/e-trust-prompt.h
 include/evolution-data-server/libedataserverui/e-webdav-discover-widget.h
 include/evolution-data-server/libedataserverui/libedataserverui.h
+include/evolution-data-server/libedataserverui4/
+include/evolution-data-server/libedataserverui4/e-buffer-tagger.h
+include/evolution-data-server/libedataserverui4/e-cell-renderer-color.h
+include/evolution-data-server/libedataserverui4/e-certificate-widget.h
+include/evolution-data-server/libedataserverui4/e-credentials-prompter-impl-oauth2.h
+include/evolution-data-server/libedataserverui4/e-credentials-prompter-impl-password.h
+include/evolution-data-server/libedataserverui4/e-credentials-prompter-impl.h
+include/evolution-data-server/libedataserverui4/e-credentials-prompter.h
+include/evolution-data-server/libedataserverui4/e-reminders-widget.h
+include/evolution-data-server/libedataserverui4/e-trust-prompt.h
+include/evolution-data-server/libedataserverui4/e-webdav-discover-widget.h
+include/evolution-data-server/libedataserverui4/libedataserverui4.h
 lib/evolution-data-server/
 lib/evolution-data-server/addressbook-backends/
 @so lib/evolution-data-server/addressbook-backends/libebookbackendcarddav.so
@@ -390,6 +404,7 @@ lib/girepository-1.0/EDataBook-1.2.typelib
 lib/girepository-1.0/EDataCal-2.0.typelib
 lib/girepository-1.0/EDataServer-1.2.typelib
 lib/girepository-1.0/EDataServerUI-1.2.typelib
+lib/girepository-1.0/EDataServerUI4-1.0.typelib
 @lib lib/libcamel-1.2.so.${LIBcamel-1.2_VERSION}
 @lib lib/libebackend-1.2.so.${LIBebackend-1.2_VERSION}
 @lib lib/libebook-1.2.so.${LIBebook-1.2_VERSION}
@@ -399,6 +414,7 @@ lib/girepository-1.0/EDataServerUI-1.2.typelib
 @lib lib/libedata-cal-2.0.so.${LIBedata-cal-2.0_VERSION}
 @lib lib/libedataserver-1.2.so.${LIBedataserver-1.2_VERSION}
 @lib lib/libedataserverui-1.2.so.${LIBedataserverui-1.2_VERSION}
+@lib lib/libedataserverui4-1.0.so.${LIBedataserverui4-1.0_VERSION}
 lib/pkgconfig/camel-1.2.pc
 lib/pkgconfig/evolution-data-server-1.2.pc
 lib/pkgconfig/libebackend-1.2.pc
@@ -409,6 +425,7 @@ lib/pkgconfig/libedata-book-1.2.pc
 lib/pkgconfig/libedata-cal-2.0.pc
 lib/pkgconfig/libedataserver-1.2.pc
 lib/pkgconfig/libedataserverui-1.2.pc
+lib/pkgconfig/libedataserverui4-1.0.pc
 lib/systemd/user/evolution-addressbook-factory.service
 lib/systemd/user/evolution-calendar-factory.service
 lib/systemd/user/evolution-source-registry.service
@@ -489,6 +506,7 @@ share/gir-1.0/EDataBook-1.2.gir
 share/gir-1.0/EDataCal-2.0.gir
 share/gir-1.0/EDataServer-1.2.gir
 share/gir-1.0/EDataServerUI-1.2.gir
+share/gir-1.0/EDataServerUI4-1.0.gir
 share/glib-2.0/schemas/org.gnome.Evolution.DefaultSources.gschema.xml
 share/glib-2.0/schemas/org.gnome.evolution-data-server.addressbook.gschema.xml
 share/glib-2.0/schemas/org.gnome.evolution-data-server.calendar.gschema.xml
@@ -621,5 +639,7 @@ share/vala/vapi/libedataserver-1.2.deps
 share/vala/vapi/libedataserver-1.2.vapi
 share/vala/vapi/libedataserverui-1.2.deps
 share/vala/vapi/libedataserverui-1.2.vapi
+share/vala/vapi/libedataserverui4-1.0.deps
+share/vala/vapi/libedataserverui4-1.0.vapi
 @tag glib-compile-schemas
 @tag update-desktop-database

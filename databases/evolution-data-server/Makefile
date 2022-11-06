@@ -1,20 +1,20 @@
 COMMENT=		unified backend for PIM programs
 
 GNOME_PROJECT=		evolution-data-server
-GNOME_VERSION=		3.44.4
-REVISION=		1
+GNOME_VERSION=		3.46.1
 
 CATEGORIES=		databases productivity
 
-SHARED_LIBS +=  camel-1.2            41.7
-SHARED_LIBS +=  edataserver-1.2      22.7
-SHARED_LIBS +=  ebackend-1.2         8.7
-SHARED_LIBS +=  edataserverui-1.2    4.7
-SHARED_LIBS +=  ebook-contacts-1.2   5.7
-SHARED_LIBS +=  edata-book-1.2       20.5
-SHARED_LIBS +=  ebook-1.2            23.5
-SHARED_LIBS +=  ecal-2.0             0.5
-SHARED_LIBS +=  edata-cal-2.0        0.5
+SHARED_LIBS +=  camel-1.2            41.8
+SHARED_LIBS +=  edataserver-1.2      22.8
+SHARED_LIBS +=  ebackend-1.2         8.8
+SHARED_LIBS +=  edataserverui-1.2    4.8
+SHARED_LIBS +=	edataserverui4-1.0   0.0
+SHARED_LIBS +=  ebook-contacts-1.2   5.8
+SHARED_LIBS +=  edata-book-1.2       20.6
+SHARED_LIBS +=  ebook-1.2            23.6
+SHARED_LIBS +=  ecal-2.0             0.6
+SHARED_LIBS +=  edata-cal-2.0        0.6
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -22,14 +22,14 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE=		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} X11 atk-1.0 boost_thread-mt c cairo
-WANTLIB += cairo-gobject canberra canberra-gtk3 db gck-1 gcr-base-3
-WANTLIB += gcr-ui-3 gdata gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 goa-1.0 gobject-2.0 gtk-3 gweather-4 harfbuzz
-WANTLIB += ical ical-glib icalss icalvcal icudata icui18n icuuc
-WANTLIB += intl javascriptcoregtk-4.0 json-glib-1.0 lber ldap
-WANTLIB += m nspr4 nss3 nssutil3 p11-kit pango-1.0 pangocairo-1.0
-WANTLIB += phonenumber plc4 plds4 secret-1 smime3 soup-2.4 sqlite3
-WANTLIB += ssl3 webkit2gtk-4.0 xml2 z
+WANTLIB += cairo-gobject canberra canberra-gtk3 db gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 goa-1.0 gobject-2.0 graphene-1.0
+WANTLIB += gtk-3 gtk-4 gweather-4 harfbuzz ical ical-glib icalss
+WANTLIB += icalvcal icudata icui18n icuuc intl javascriptcoregtk-4.1
+WANTLIB += javascriptcoregtk-5.0 json-glib-1.0 lber ldap m nspr4
+WANTLIB += nss3 nssutil3 pango-1.0 pangocairo-1.0 phonenumber
+WANTLIB += plc4 plds4 secret-1 smime3 soup-3.0 sqlite3 ssl3 webkit2gtk-4.1
+WANTLIB += webkit2gtk-5.0 xml2 z
 
 COMPILER=		base-clang ports-gcc base-gcc
 
@@ -43,12 +43,11 @@ BUILD_DEPENDS=		devel/gperf
 LIB_DEPENDS= 		audio/libcanberra,-gtk3 \
 			databases/db/v4 \
 			databases/openldap \
-			devel/libgdata \
 			productivity/libphonenumber \
 			security/nss \
 			textproc/libical,-glib \
-			www/webkitgtk4 \
-			x11/gnome/gcr \
+			www/webkitgtk4,webkitgtk41 \
+			www/webkitgtk4,webkitgtk50 \
 			x11/gnome/libgweather4 \
 			x11/gnome/online-accounts
 
@@ -62,8 +61,7 @@ CONFIGURE_ARGS=		-DWITH_KRB5=OFF \
 			-DWITH_PHONENUMBER=ON \
 			-DWITH_LIBDB_CFLAGS="-I${LOCALBASE}/include/db4" \
 			-DWITH_LIBDB_LIBS="-L${LOCALBASE}/lib -ldb" \
-			-DWITH_OPENLDAP=${LOCALBASE} \
-			-DWITH_GWEATHER4=ON
+			-DWITH_OPENLDAP=${LOCALBASE}
 
 CFLAGS +=		-I${LOCALBASE}/include
 
