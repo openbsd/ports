@@ -204,6 +204,21 @@ share/help/id/gnome-clocks/timer.page
 share/help/id/gnome-clocks/world-add.page
 share/help/id/gnome-clocks/world-check.page
 share/help/id/gnome-clocks/world-remove.page
+share/help/it/
+share/help/it/gnome-clocks/
+share/help/it/gnome-clocks/alarm-add.page
+share/help/it/gnome-clocks/alarm-edit.page
+share/help/it/gnome-clocks/alarm-remove.page
+share/help/it/gnome-clocks/alarm-snooze-stop.page
+share/help/it/gnome-clocks/figures/
+share/help/it/gnome-clocks/figures/gnome-clocks.png
+share/help/it/gnome-clocks/index.page
+share/help/it/gnome-clocks/legal.xml
+share/help/it/gnome-clocks/stopwatch.page
+share/help/it/gnome-clocks/timer.page
+share/help/it/gnome-clocks/world-add.page
+share/help/it/gnome-clocks/world-check.page
+share/help/it/gnome-clocks/world-remove.page
 share/help/ko/gnome-clocks/
 share/help/ko/gnome-clocks/alarm-add.page
 share/help/ko/gnome-clocks/alarm-edit.page
@@ -321,6 +336,7 @@ share/help/uk/gnome-clocks/world-check.page
 share/help/uk/gnome-clocks/world-remove.page
 share/icons/hicolor/scalable/apps/org.gnome.clocks.svg
 share/icons/hicolor/symbolic/apps/org.gnome.clocks-symbolic.svg
+share/locale/ab/LC_MESSAGES/gnome-clocks.mo
 share/locale/af/LC_MESSAGES/gnome-clocks.mo
 share/locale/an/LC_MESSAGES/gnome-clocks.mo
 share/locale/ar/LC_MESSAGES/gnome-clocks.mo
@@ -358,6 +374,7 @@ share/locale/id/LC_MESSAGES/gnome-clocks.mo
 share/locale/is/LC_MESSAGES/gnome-clocks.mo
 share/locale/it/LC_MESSAGES/gnome-clocks.mo
 share/locale/ja/LC_MESSAGES/gnome-clocks.mo
+share/locale/ka/LC_MESSAGES/gnome-clocks.mo
 share/locale/kk/LC_MESSAGES/gnome-clocks.mo
 share/locale/kn/LC_MESSAGES/gnome-clocks.mo
 share/locale/ko/LC_MESSAGES/gnome-clocks.mo
