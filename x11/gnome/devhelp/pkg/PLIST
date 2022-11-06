@@ -190,6 +190,7 @@ share/help/zh_CN/devhelp/installing-api-documentation.page
 share/help/zh_CN/devhelp/search.page
 share/icons/hicolor/scalable/apps/org.gnome.Devhelp.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Devhelp-symbolic.svg
+share/locale/ab/LC_MESSAGES/devhelp.mo
 share/locale/am/LC_MESSAGES/devhelp.mo
 share/locale/ar/LC_MESSAGES/devhelp.mo
 share/locale/as/LC_MESSAGES/devhelp.mo
@@ -230,6 +231,7 @@ share/locale/id/LC_MESSAGES/devhelp.mo
 share/locale/is/LC_MESSAGES/devhelp.mo
 share/locale/it/LC_MESSAGES/devhelp.mo
 share/locale/ja/LC_MESSAGES/devhelp.mo
+share/locale/ka/LC_MESSAGES/devhelp.mo
 share/locale/kk/LC_MESSAGES/devhelp.mo
 share/locale/km/LC_MESSAGES/devhelp.mo
 share/locale/kn/LC_MESSAGES/devhelp.mo
