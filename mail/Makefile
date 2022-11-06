@@ -36,7 +36,6 @@
      SUBDIR += elm
      SUBDIR += evolution
      SUBDIR += evolution-ews
-     SUBDIR += evolution-rss
      SUBDIR += exim
      SUBDIR += exim,ldap
      SUBDIR += exim,mysql
