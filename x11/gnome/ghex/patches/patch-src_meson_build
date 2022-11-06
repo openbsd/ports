@@ -3,7 +3,7 @@ Should match b_lundef in meson(1).
 Index: src/meson.build
 --- src/meson.build.orig
 +++ src/meson.build
-@@ -24,9 +24,7 @@ libgtkhex_c_args = [
+@@ -25,9 +25,7 @@ libgtkhex_c_args = [
    '-DG_LOG_DOMAIN="gtkhex-4"'
  ]
  
