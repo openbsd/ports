@@ -1,8 +1,7 @@
 COMMENT=		simple Text Editor for GNOME
 
 GNOME_PROJECT=		gnome-text-editor
-GNOME_VERSION=		42.2
-REVISION=		2
+GNOME_VERSION=		43.1
 
 CATEGORIES=		editors
 
@@ -13,8 +12,8 @@ PERMIT_PACKAGE=		Yes
 COMPILER=		base-clang ports-gcc
 COMPILER_LANGS=		c
 
-WANTLIB += adwaita-1 c cairo enchant-2 gio-2.0 glib-2.0 gobject-2.0
-WANTLIB += gtk-4 gtksourceview-5 icuuc intl m pango-1.0 pcre
+WANTLIB += adwaita-1 c cairo editorconfig enchant-2 gio-2.0 glib-2.0
+WANTLIB += gobject-2.0 gtk-4 gtksourceview-5 icuuc intl m pango-1.0
 
 MODULES=		devel/dconf \
 			devel/meson \
@@ -22,7 +21,7 @@ MODULES=		devel/dconf \
 
 MODGNOME_TOOLS= 	desktop-file-utils gtk-update-icon-cache yelp
 
-LIB_DEPENDS=		devel/pcre \
+LIB_DEPENDS=		editors/editorconfig-core-c \
 			textproc/enchant2 \
 			textproc/icu4c \
 			x11/gnome/libadwaita \
