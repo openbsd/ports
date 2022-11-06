@@ -43,7 +43,6 @@ share/liblouis/tables/IPA-unicode-range.uti
 share/liblouis/tables/IPA.utb
 share/liblouis/tables/Lv-Lv-g1.utb
 share/liblouis/tables/Pl-Pl-g1.utb
-share/liblouis/tables/Se-Se-g1.utb
 share/liblouis/tables/afr-za-g1.ctb
 share/liblouis/tables/afr-za-g2.ctb
 share/liblouis/tables/ar-ar-comp8.utb
@@ -276,6 +275,7 @@ share/liblouis/tables/latinLetterDef6Dots.uti
 share/liblouis/tables/latinLetterDef8Dots.uti
 share/liblouis/tables/latinLowercase.uti
 share/liblouis/tables/latinUppercaseComp6.uti
+share/liblouis/tables/lg-ug-g1.utb
 share/liblouis/tables/litdigits6Dots.uti
 share/liblouis/tables/litdigits6DotsPlusDot6.uti
 share/liblouis/tables/loweredDigits6Dots.uti
@@ -355,6 +355,7 @@ share/liblouis/tables/ru-litbrl.ctb
 share/liblouis/tables/ru-ru-g1.ctb
 share/liblouis/tables/ru-unicode.dis
 share/liblouis/tables/ru.ctb
+share/liblouis/tables/rw-rw-g1.utb
 share/liblouis/tables/sa-in-g1.utb
 share/liblouis/tables/sa.tbl
 share/liblouis/tables/sah.utb
@@ -378,7 +379,9 @@ share/liblouis/tables/sr-g1.ctb
 share/liblouis/tables/sr.tbl
 share/liblouis/tables/sv-1989.ctb
 share/liblouis/tables/sv-1996.ctb
-share/liblouis/tables/sv.tbl
+share/liblouis/tables/sv-g0.utb
+share/liblouis/tables/sv-g1.ctb
+share/liblouis/tables/sv-g2.ctb
 share/liblouis/tables/ta-ta-g1.ctb
 share/liblouis/tables/ta.ctb
 share/liblouis/tables/ta.tbl
@@ -428,6 +431,7 @@ share/liblouis/tables/zh-tw.ctb
 share/liblouis/tables/zh_CHN.tbl
 share/liblouis/tables/zh_HK.tbl
 share/liblouis/tables/zh_TW.tbl
+share/liblouis/tables/zhcn-cbs.ctb
 share/liblouis/tables/zhcn-g1.ctb
 share/liblouis/tables/zhcn-g2.ctb
 share/liblouis/tables/zu-za-g1.utb
