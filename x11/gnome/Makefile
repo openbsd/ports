@@ -48,6 +48,7 @@
      SUBDIR += initial-setup
      SUBDIR += keyring
      SUBDIR += libadwaita
+     SUBDIR += libcloudproviders
      SUBDIR += libcryptui
      SUBDIR += libdazzle
      SUBDIR += libdmapsharing
