@@ -29,6 +29,7 @@ share/icons/Adwaita/16x16/mimetypes/audio-x-generic.png
 share/icons/Adwaita/16x16/mimetypes/font-x-generic.png
 share/icons/Adwaita/16x16/mimetypes/image-x-generic.png
 share/icons/Adwaita/16x16/mimetypes/inode-directory.png
+share/icons/Adwaita/16x16/mimetypes/inode-symlink.png
 share/icons/Adwaita/16x16/mimetypes/package-x-generic.png
 share/icons/Adwaita/16x16/mimetypes/text-html.png
 share/icons/Adwaita/16x16/mimetypes/text-x-generic-template.png
@@ -101,6 +102,7 @@ share/icons/Adwaita/22x22/mimetypes/audio-x-generic.png
 share/icons/Adwaita/22x22/mimetypes/font-x-generic.png
 share/icons/Adwaita/22x22/mimetypes/image-x-generic.png
 share/icons/Adwaita/22x22/mimetypes/inode-directory.png
+share/icons/Adwaita/22x22/mimetypes/inode-symlink.png
 share/icons/Adwaita/22x22/mimetypes/package-x-generic.png
 share/icons/Adwaita/22x22/mimetypes/text-html.png
 share/icons/Adwaita/22x22/mimetypes/text-x-generic-template.png
@@ -172,6 +174,7 @@ share/icons/Adwaita/24x24/mimetypes/audio-x-generic.png
 share/icons/Adwaita/24x24/mimetypes/font-x-generic.png
 share/icons/Adwaita/24x24/mimetypes/image-x-generic.png
 share/icons/Adwaita/24x24/mimetypes/inode-directory.png
+share/icons/Adwaita/24x24/mimetypes/inode-symlink.png
 share/icons/Adwaita/24x24/mimetypes/package-x-generic.png
 share/icons/Adwaita/24x24/mimetypes/text-html.png
 share/icons/Adwaita/24x24/mimetypes/text-x-generic-template.png
@@ -251,6 +254,7 @@ share/icons/Adwaita/32x32/mimetypes/audio-x-generic.png
 share/icons/Adwaita/32x32/mimetypes/font-x-generic.png
 share/icons/Adwaita/32x32/mimetypes/image-x-generic.png
 share/icons/Adwaita/32x32/mimetypes/inode-directory.png
+share/icons/Adwaita/32x32/mimetypes/inode-symlink.png
 share/icons/Adwaita/32x32/mimetypes/package-x-generic.png
 share/icons/Adwaita/32x32/mimetypes/text-html.png
 share/icons/Adwaita/32x32/mimetypes/text-x-generic-template.png
@@ -323,6 +327,7 @@ share/icons/Adwaita/48x48/mimetypes/audio-x-generic.png
 share/icons/Adwaita/48x48/mimetypes/font-x-generic.png
 share/icons/Adwaita/48x48/mimetypes/image-x-generic.png
 share/icons/Adwaita/48x48/mimetypes/inode-directory.png
+share/icons/Adwaita/48x48/mimetypes/inode-symlink.png
 share/icons/Adwaita/48x48/mimetypes/package-x-generic.png
 share/icons/Adwaita/48x48/mimetypes/text-html.png
 share/icons/Adwaita/48x48/mimetypes/text-x-generic-template.png
@@ -407,6 +412,7 @@ share/icons/Adwaita/512x512/mimetypes/audio-x-generic.png
 share/icons/Adwaita/512x512/mimetypes/font-x-generic.png
 share/icons/Adwaita/512x512/mimetypes/image-x-generic.png
 share/icons/Adwaita/512x512/mimetypes/inode-directory.png
+share/icons/Adwaita/512x512/mimetypes/inode-symlink.png
 share/icons/Adwaita/512x512/mimetypes/package-x-generic.png
 share/icons/Adwaita/512x512/mimetypes/text-html.png
 share/icons/Adwaita/512x512/mimetypes/text-x-generic-template.png
@@ -693,9 +699,13 @@ share/icons/Adwaita/scalable/actions/media-playback-pause-symbolic.svg
 share/icons/Adwaita/scalable/actions/media-playback-start-symbolic.svg
 share/icons/Adwaita/scalable/actions/media-playback-stop-symbolic.svg
 share/icons/Adwaita/scalable/actions/media-record-symbolic.svg
+share/icons/Adwaita/scalable/actions/media-seek-backward-symbolic-rtl.svg
 share/icons/Adwaita/scalable/actions/media-seek-backward-symbolic.svg
+share/icons/Adwaita/scalable/actions/media-seek-forward-symbolic-rtl.svg
 share/icons/Adwaita/scalable/actions/media-seek-forward-symbolic.svg
+share/icons/Adwaita/scalable/actions/media-skip-backward-symbolic-rtl.svg
 share/icons/Adwaita/scalable/actions/media-skip-backward-symbolic.svg
+share/icons/Adwaita/scalable/actions/media-skip-forward-symbolic-rtl.svg
 share/icons/Adwaita/scalable/actions/media-skip-forward-symbolic.svg
 share/icons/Adwaita/scalable/actions/media-view-subtitles-symbolic.svg
 share/icons/Adwaita/scalable/actions/object-flip-horizontal-symbolic.svg
@@ -793,6 +803,7 @@ share/icons/Adwaita/scalable/devices/audio-input-microphone-symbolic.svg
 share/icons/Adwaita/scalable/devices/audio-speakers-rtl-symbolic.svg
 share/icons/Adwaita/scalable/devices/audio-speakers-symbolic-rtl.svg
 share/icons/Adwaita/scalable/devices/audio-speakers-symbolic.svg
+share/icons/Adwaita/scalable/devices/auth-face-symbolic.svg
 share/icons/Adwaita/scalable/devices/auth-fingerprint-symbolic.svg
 share/icons/Adwaita/scalable/devices/auth-sim-symbolic.svg
 share/icons/Adwaita/scalable/devices/auth-smartcard-symbolic.svg
