@@ -163,6 +163,7 @@
      SUBDIR += libluksde
      SUBDIR += libmsiecf
      SUBDIR += libolecf
+     SUBDIR += libportal
      SUBDIR += libptytty
      SUBDIR += libqcow
      SUBDIR += libregf
