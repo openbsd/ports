@@ -1,8 +1,7 @@
 COMMENT=		directory tree analyzer for GNOME
 
 GNOME_PROJECT=		baobab
-GNOME_VERSION=		42.0
-REVISION=		0
+GNOME_VERSION=		43.0
 
 # GPLv2 - GFDLv1.1
 PERMIT_PACKAGE=		Yes
