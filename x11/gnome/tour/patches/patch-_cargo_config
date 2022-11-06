@@ -5,7 +5,7 @@ and devel/cargo/cargo.port.mk. The default doesn't work for i386.
 Index: .cargo/config
 --- .cargo/config.orig
 +++ .cargo/config
-@@ -3,3 +3,14 @@ replace-with = "vendored-sources"
+@@ -4,3 +4,14 @@ replace-with = "vendored-sources"
  
  [source.vendored-sources]
  directory = "vendor"

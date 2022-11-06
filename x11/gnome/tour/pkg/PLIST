@@ -27,6 +27,7 @@ share/locale/id/LC_MESSAGES/gnome-tour.mo
 share/locale/is/LC_MESSAGES/gnome-tour.mo
 share/locale/it/LC_MESSAGES/gnome-tour.mo
 share/locale/ja/LC_MESSAGES/gnome-tour.mo
+share/locale/ka/LC_MESSAGES/gnome-tour.mo
 share/locale/kk/LC_MESSAGES/gnome-tour.mo
 share/locale/ko/LC_MESSAGES/gnome-tour.mo
 share/locale/lt/LC_MESSAGES/gnome-tour.mo
@@ -50,7 +51,6 @@ share/locale/uk/LC_MESSAGES/gnome-tour.mo
 share/locale/vi/LC_MESSAGES/gnome-tour.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-tour.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-tour.mo
-share/metainfo/
 share/metainfo/org.gnome.Tour.metainfo.xml
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
