@@ -14,6 +14,7 @@ include/libwnck-3.0/libwnck/version.h
 include/libwnck-3.0/libwnck/window-action-menu.h
 include/libwnck-3.0/libwnck/window.h
 include/libwnck-3.0/libwnck/wnck-enum-types.h
+include/libwnck-3.0/libwnck/wnck-handle.h
 include/libwnck-3.0/libwnck/workspace.h
 lib/girepository-1.0/Wnck-3.0.typelib
 @lib lib/libwnck-3.so.${LIBwnck-3_VERSION}

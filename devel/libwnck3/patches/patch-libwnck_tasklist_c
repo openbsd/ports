@@ -3,7 +3,7 @@
 Index: libwnck/tasklist.c
 --- libwnck/tasklist.c.orig
 +++ libwnck/tasklist.c
-@@ -4701,7 +4701,8 @@ sequence_timeout_callback (void *user_data)
+@@ -4907,7 +4907,8 @@ sequence_timeout_callback (void *user_data)
    WnckTasklist *tasklist = user_data;
    GList *tmp;
    gint64 now;
