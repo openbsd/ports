@@ -1,0 +1,8 @@
+include/libportal-gtk3/
+include/libportal-gtk3/portal-gtk3.h
+lib/girepository-1.0/XdpGtk3-1.0.typelib
+@lib lib/libportal-gtk3.so.${LIBportal-gtk3_VERSION}
+lib/pkgconfig/libportal-gtk3.pc
+share/gir-1.0/XdpGtk3-1.0.gir
+share/vala/vapi/libportal-gtk3.deps
+share/vala/vapi/libportal-gtk3.vapi

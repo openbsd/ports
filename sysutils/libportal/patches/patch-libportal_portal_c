@@ -1,0 +1,13 @@
+Index: libportal/portal.c
+--- libportal/portal.c.orig
++++ libportal/portal.c
+@@ -27,7 +27,9 @@
+ #include <string.h>
+ #include <fcntl.h>
+ #include <errno.h>
++#ifndef __OpenBSD__
+ #include <sys/vfs.h>
++#endif
+ #include <stdio.h>
+ 
+ /**
