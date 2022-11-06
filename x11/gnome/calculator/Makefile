@@ -1,8 +1,7 @@
 COMMENT=		GNOME desktop calculator
 
 GNOME_PROJECT=		gnome-calculator
-GNOME_VERSION=		42.2
-REVISION=		0
+GNOME_VERSION=		43.0.1
 
 CATEGORIES=		math
 
@@ -13,7 +12,7 @@ SHARED_LIBS += gci-1                     0.0 # 0
 PERMIT_PACKAGE=		Yes
 
 WANTLIB += adwaita-1 c gee-0.8 gio-2.0 glib-2.0 gobject-2.0 gtk-4
-WANTLIB += gtksourceview-5 intl mpc mpfr soup-2.4 xml2
+WANTLIB += gtksourceview-5 intl mpc mpfr soup-3.0 xml2
 
 MODULES=		devel/dconf \
 			devel/meson \
@@ -21,7 +20,7 @@ MODULES=		devel/dconf \
 
 LIB_DEPENDS=		devel/libgee \
 			devel/libmpc \
-			devel/libsoup \
+			devel/libsoup3 \
 			devel/mpfr \
 			x11/gnome/libadwaita \
 			x11/gtksourceview5
