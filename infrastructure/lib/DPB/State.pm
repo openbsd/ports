@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: State.pm,v 1.31 2021/11/15 14:39:45 espie Exp $
+# $OpenBSD: State.pm,v 1.32 2022/11/06 09:29:12 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -275,6 +275,7 @@ sub parse_build_line
 sub parse_build_file
 {
 	my ($state, $fname) = @_;
+	my $errors = 0;
 	if (!-f $fname) {
 		my $arch = $state->arch;
 		if (-f "$fname/$arch/build.log") {
@@ -284,16 +285,24 @@ sub parse_build_file
 		}
 	}
 	open my $fh, '<', $fname or return;
+LINE:
 	while (<$fh>) {
 		next if m/!$/;
 		my $s = DPB::Serialize::Build->read($_);
-		if (!defined $s->{size}) {
-			print "bogus line #$. in ", $fname, "\n";
-			next;
+		for my $k (qw(host time size ts)) {
+			next if defined $s->{$k};
+			if (!$errors) {
+				print STDERR "\n";
+				$errors++;
+			}
+			print STDERR "bogus line #$. in ", $fname, ":\n";
+			print STDERR "\t$_\n";
+			next LINE;
 		}
 		my $o = DPB::PkgPath->new($s->{pkgpath});
 		push(@{$o->{stats}}, $s);
 	}
+	sleep(20) if $errors;
 }
 
 sub add_build_info
