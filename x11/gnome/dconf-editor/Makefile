@@ -1,15 +1,15 @@
 COMMENT=		graphical dconf(1) editor
 
 GNOME_PROJECT=		dconf-editor
-GNOME_VERSION=		3.38.3
-REVISION=		0
+GNOME_VERSION=		43.0
 
 CATEGORIES=		sysutils editors
 
 # LGPLv2.1
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += c dconf gdk-3 gio-2.0 glib-2.0 gobject-2.0 gtk-3 intl
+WANTLIB += c dconf gdk-3 gio-2.0 glib-2.0 gobject-2.0 gtk-3 handy-1
+WANTLIB += intl
 
 MODULES=		devel/dconf \
 			devel/meson \
@@ -17,7 +17,7 @@ MODULES=		devel/dconf \
 
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache vala
 
-LIB_DEPENDS=		x11/gtk+3
+LIB_DEPENDS=		x11/libhandy
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
