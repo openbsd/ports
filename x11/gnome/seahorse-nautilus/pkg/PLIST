@@ -1,6 +1,6 @@
 @conflict seahorse-plugins-*
 @bin bin/seahorse-tool
-@so lib/nautilus/extensions-3.0/libnautilus-seahorse.so
+@so lib/nautilus/extensions-4/libnautilus-seahorse.so
 @man man/man1/seahorse-tool.1
 share/applications/seahorse-pgp-encrypted.desktop
 share/applications/seahorse-pgp-keys.desktop
