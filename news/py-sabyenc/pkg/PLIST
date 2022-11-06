@@ -1,8 +1,9 @@
 @conflict py-sabyenc-*
 @pkgpath news/py-sabyenc
-lib/python${MODPY_VERSION}/site-packages/sabyenc3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/sabyenc3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/sabyenc3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/sabyenc3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/sabyenc3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/sabyenc3-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/sabyenc3-${MODPY_EGG_VERSION}.dist-info/LICENSE.md
+lib/python${MODPY_VERSION}/site-packages/sabyenc3-${MODPY_EGG_VERSION}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/sabyenc3-${MODPY_EGG_VERSION}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/sabyenc3-${MODPY_EGG_VERSION}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/sabyenc3-${MODPY_EGG_VERSION}.dist-info/top_level.txt
 @so lib/python${MODPY_VERSION}/site-packages/sabyenc3.${MODPY_PYC_MAGIC_TAG}so
