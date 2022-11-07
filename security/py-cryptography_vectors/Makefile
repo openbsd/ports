@@ -1,6 +1,6 @@
 COMMENT=	test vectors for py-cryptography
 
-MODPY_EGG_VERSION=	38.0.0
+MODPY_EGG_VERSION=	38.0.3
 DISTNAME=	cryptography_vectors-${MODPY_EGG_VERSION}
 PKGNAME=	${MODPY_PY_PREFIX}${DISTNAME}
 CATEGORIES=	security

@@ -2315,6 +2315,7 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/cp_use
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/cp_user_notice_with_explicit_text.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/cp_user_notice_with_notice_reference.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/crl_all_reasons.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/crl_almost_10k.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/crl_bad_version.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/crl_delta_crl_indicator.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/crl_dup_entry_ext.pem
