@@ -169,9 +169,6 @@ lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/observer_tv_wx.erl
 lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/observer_wx.erl
 lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/ttb.erl
 lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/ttb_et.erl
-lib/${ERLANG_V}/lib/${ERL_RUNTIME_TOOLS}/ebin/observer_backend.beam
-lib/${ERLANG_V}/lib/${ERL_RUNTIME_TOOLS}/include/observer_backend.hrl
-lib/${ERLANG_V}/lib/${ERL_RUNTIME_TOOLS}/src/observer_backend.erl
 lib/${ERLANG_V}/lib/${ERL_WX}/
 lib/${ERLANG_V}/lib/${ERL_WX}/ebin/
 lib/${ERLANG_V}/lib/${ERL_WX}/ebin/gl.beam

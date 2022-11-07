@@ -1,5 +1,6 @@
 @option no-default-conflict
 @pkgpath lang/erlang/21
+@conflict erlang-wx->=21v0,<=21.3.8.24p0v0
 bin/ct_run21
 bin/dialyzer21
 bin/epmd21
@@ -2183,6 +2184,7 @@ lib/${ERLANG_V}/lib/${ERL_RUNTIME_TOOLS}/ebin/dbg.beam
 lib/${ERLANG_V}/lib/${ERL_RUNTIME_TOOLS}/ebin/dyntrace.beam
 lib/${ERLANG_V}/lib/${ERL_RUNTIME_TOOLS}/ebin/erts_alloc_config.beam
 lib/${ERLANG_V}/lib/${ERL_RUNTIME_TOOLS}/ebin/msacc.beam
+lib/${ERLANG_V}/lib/${ERL_RUNTIME_TOOLS}/ebin/observer_backend.beam
 lib/${ERLANG_V}/lib/${ERL_RUNTIME_TOOLS}/ebin/runtime_tools.app
 lib/${ERLANG_V}/lib/${ERL_RUNTIME_TOOLS}/ebin/runtime_tools.appup
 lib/${ERLANG_V}/lib/${ERL_RUNTIME_TOOLS}/ebin/runtime_tools.beam
@@ -2214,6 +2216,7 @@ lib/${ERLANG_V}/lib/${ERL_RUNTIME_TOOLS}/examples/user-probe-n.systemtap
 lib/${ERLANG_V}/lib/${ERL_RUNTIME_TOOLS}/examples/user-probe.d
 lib/${ERLANG_V}/lib/${ERL_RUNTIME_TOOLS}/examples/user-probe.systemtap
 lib/${ERLANG_V}/lib/${ERL_RUNTIME_TOOLS}/include/
+lib/${ERLANG_V}/lib/${ERL_RUNTIME_TOOLS}/include/observer_backend.hrl
 lib/${ERLANG_V}/lib/${ERL_RUNTIME_TOOLS}/priv/
 lib/${ERLANG_V}/lib/${ERL_RUNTIME_TOOLS}/priv/lib/
 @so lib/${ERLANG_V}/lib/${ERL_RUNTIME_TOOLS}/priv/lib/dyntrace.so
@@ -2224,6 +2227,7 @@ lib/${ERLANG_V}/lib/${ERL_RUNTIME_TOOLS}/src/appmon_info.erl
 lib/${ERLANG_V}/lib/${ERL_RUNTIME_TOOLS}/src/dbg.erl
 lib/${ERLANG_V}/lib/${ERL_RUNTIME_TOOLS}/src/dyntrace.erl
 lib/${ERLANG_V}/lib/${ERL_RUNTIME_TOOLS}/src/erts_alloc_config.erl
+lib/${ERLANG_V}/lib/${ERL_RUNTIME_TOOLS}/src/observer_backend.erl
 lib/${ERLANG_V}/lib/${ERL_RUNTIME_TOOLS}/src/msacc.erl
 lib/${ERLANG_V}/lib/${ERL_RUNTIME_TOOLS}/src/runtime_tools.erl
 lib/${ERLANG_V}/lib/${ERL_RUNTIME_TOOLS}/src/runtime_tools_sup.erl
