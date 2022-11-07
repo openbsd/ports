@@ -84,7 +84,6 @@
      SUBDIR += screenshot
      SUBDIR += seahorse
      SUBDIR += seahorse-nautilus
-     SUBDIR += seahorse-sharing
      SUBDIR += secrets
      SUBDIR += session
      SUBDIR += settings-daemon
