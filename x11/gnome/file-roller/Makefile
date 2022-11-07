@@ -1,43 +1,56 @@
-COMMENT=	archive manager utility for GNOME
+COMMENT-main=		archive manager utility for GNOME
+COMMENT-nautilus=	file-roller extension for nautilus
 
-GNOME_PROJECT=	file-roller
-GNOME_VERSION=	43.0
-REVISION=	0
+GNOME_PROJECT=		file-roller
+GNOME_VERSION=		43.0
 
-CATEGORIES=	archivers
+PKGNAME-nautilus=	${GNOME_PROJECT}-nautilus-${GNOME_VERSION}
+
+REVISION-main=		0
+
+CATEGORIES=		archivers
 
 # GPLv2
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE=		Yes
 
-WANTLIB += archive c cairo gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gobject-2.0 gtk-3 handy-1 intl json-glib-1.0 m nautilus-extension
-WANTLIB += pango-1.0 portal portal-gtk3
+MULTI_PACKAGES=		-main -nautilus
 
-MODULES=	devel/dconf \
-		devel/meson \
-		x11/gnome
+WANTLIB-main += archive c cairo gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB-main += gobject-2.0 gtk-3 handy-1 intl json-glib-1.0 m pango-1.0
+WANTLIB-main += portal portal-gtk3
 
-BUILD_DEPENDS=	archivers/gcpio
+WANTLIB-nautilus += gio-2.0 glib-2.0 gobject-2.0 intl nautilus-extension
 
-RUN_DEPENDS=	archivers/gcpio \
-		archivers/gtar \
-		archivers/p7zip \
-		archivers/unzip \
-		archivers/xz \
-		archivers/zip \
-		sysutils/cdrtools
+MODULES=		devel/dconf \
+			devel/meson \
+			x11/gnome
+
+BUILD_DEPENDS=		archivers/gcpio
+
+RUN_DEPENDS-main=	${RUN_DEPENDS} \
+			archivers/gcpio \
+			archivers/gtar \
+			archivers/p7zip \
+			archivers/unzip \
+			archivers/xz \
+			archivers/zip \
+			sysutils/cdrtools
 
 # "The Unarchiver" has not been ported to OpenBSD yet
-RUN_DEPENDS +=	archivers/unrar
+RUN_DEPENDS-main +=	archivers/unrar
 
-LIB_DEPENDS=	archivers/libarchive \
-		devel/json-glib \
-		sysutils/libportal,-gtk3 \
-		x11/gnome/nautilus \
-		x11/libhandy
+LIB_DEPENDS-main=	archivers/libarchive \
+			devel/json-glib \
+			sysutils/libportal,-gtk3 \
+			x11/libhandy
 
-MODGNOME_TOOLS=	desktop-file-utils gtk-update-icon-cache yelp
+LIB_DEPENDS-nautilus=	${BASE_PKGPATH},-main \
+			x11/gnome/nautilus
 
-DEBUG_PACKAGES =${BUILD_PACKAGES}
+RUN_DEPENDS-nautilus=	# empty
+
+MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache yelp
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
