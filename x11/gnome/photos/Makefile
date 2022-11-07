@@ -2,6 +2,7 @@ COMMENT=		access, organize and share your photos on GNOME
 
 GNOME_PROJECT=		gnome-photos
 GNOME_VERSION=		43.0
+REVISION=		0
 
 CATEGORIES=		graphics
 
@@ -18,6 +19,10 @@ MODULES=		devel/dconf \
 			x11/gnome
 
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache yelp
+
+BUILD_DEPENDS=		devel/gsettings-desktop-schemas
+
+RUN_DEPENDS=		devel/gsettings-desktop-schemas
 
 LIB_DEPENDS=		geo/geocode-glib,soup3 \
 			graphics/gegl04 \
