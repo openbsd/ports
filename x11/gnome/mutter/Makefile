@@ -1,12 +1,12 @@
 COMMENT=		window and compositing manager based on Clutter
 
 GNOME_PROJECT=		mutter
-GNOME_VERSION=		42.6
+GNOME_VERSION=		43.1
 
-SHARED_LIBS += mutter-cogl-10            0.0 # 0.0.0
-SHARED_LIBS += mutter-cogl-pango-10      0.0 # 0.0.0
-SHARED_LIBS += mutter-clutter-10         0.0 # 0.0.0
-SHARED_LIBS += mutter-10                 0.0 # 0.0.0
+SHARED_LIBS += mutter-cogl-11            0.0 # 0.0.0
+SHARED_LIBS += mutter-cogl-pango-11      0.0 # 0.0.0
+SHARED_LIBS += mutter-clutter-11         0.0 # 0.0.0
+SHARED_LIBS += mutter-11                 0.0 # 0.0.0
 
 # GPLv2
 PERMIT_PACKAGE=		Yes
@@ -37,12 +37,10 @@ LIB_DEPENDS=		audio/libcanberra \
 			x11/xkbcommon
 
 BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
-			x11/gnome/settings-daemon \
-			x11/gnome/zenity
+			x11/gnome/settings-daemon
 
 RUN_DEPENDS=		devel/gsettings-desktop-schemas \
-			x11/gnome/settings-daemon \
-			x11/gnome/zenity
+			x11/gnome/settings-daemon
 
 # Required by embedded cogl/clutter forks.
 CONFIGURE_ARGS +=	-Dsm=true
@@ -58,7 +56,7 @@ CONFIGURE_ARGS +=	-Dopengl_libname=libGL.so \
 			-Dprofiler=false \
 			-Dsystemd=false
 
-# requires unported gnome-remote-desktop (which requires freerdp >= 2.2.0)
+# XXX requires unported gnome-remote-desktop
 CONFIGURE_ARGS +=	-Dremote_desktop=false
 
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include

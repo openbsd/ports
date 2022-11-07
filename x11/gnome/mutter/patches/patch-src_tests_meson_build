@@ -1,0 +1,22 @@
+No colord (needs GUdev) on OpenBSD (XXX add HAVE_COLORD to meson_options.txt)
+
+Index: src/tests/meson.build
+--- src/tests/meson.build.orig
++++ src/tests/meson.build
+@@ -234,16 +234,6 @@ test_cases += [
+     'suite': 'unit',
+     'sources': [ 'edid-tests.c', ],
+   },
+-  {
+-    'name': 'color-management',
+-    'suite': 'unit',
+-    'sources': [ 'color-management-tests.c', ],
+-  },
+-  {
+-    'name': 'color-management-profile-conflict',
+-    'suite': 'unit',
+-    'sources': [ 'color-management-profile-conflict-test.c', ],
+-  },
+ ]
+ 
+ if have_native_tests
