@@ -1,0 +1,21 @@
+@conflict vte3-<0.70.1p0
+@bin bin/vte-2.91-gtk4
+include/vte-2.91-gtk4/
+include/vte-2.91-gtk4/vte/
+include/vte-2.91-gtk4/vte/vte.h
+include/vte-2.91-gtk4/vte/vtedeprecated.h
+include/vte-2.91-gtk4/vte/vteenums.h
+include/vte-2.91-gtk4/vte/vteglobals.h
+include/vte-2.91-gtk4/vte/vtemacros.h
+include/vte-2.91-gtk4/vte/vtepty.h
+include/vte-2.91-gtk4/vte/vteregex.h
+include/vte-2.91-gtk4/vte/vteterminal.h
+include/vte-2.91-gtk4/vte/vtetypebuiltins-gtk4.h
+include/vte-2.91-gtk4/vte/vtetypebuiltins.h
+include/vte-2.91-gtk4/vte/vteversion.h
+lib/girepository-1.0/Vte-3.91.typelib
+@lib lib/libvte-2.91-gtk4.so.${LIBvte-2.91-gtk4_VERSION}
+lib/pkgconfig/vte-2.91-gtk4.pc
+share/gir-1.0/Vte-3.91.gir
+share/vala/vapi/vte-2.91-gtk4.deps
+share/vala/vapi/vte-2.91-gtk4.vapi

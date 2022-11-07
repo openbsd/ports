@@ -1,0 +1,24 @@
+@conflict vte-<0.28.2p3
+@conflict vte-ptyhelper-*
+@pkgpath devel/vte3
+@bin bin/vte-2.91
+include/vte-2.91/
+include/vte-2.91/vte/
+include/vte-2.91/vte/vte.h
+include/vte-2.91/vte/vtedeprecated.h
+include/vte-2.91/vte/vteenums.h
+include/vte-2.91/vte/vteglobals.h
+include/vte-2.91/vte/vtemacros.h
+include/vte-2.91/vte/vtepty.h
+include/vte-2.91/vte/vteregex.h
+include/vte-2.91/vte/vteterminal.h
+include/vte-2.91/vte/vtetypebuiltins-gtk3.h
+include/vte-2.91/vte/vtetypebuiltins.h
+include/vte-2.91/vte/vteversion.h
+lib/girepository-1.0/Vte-2.91.typelib
+@lib lib/libvte-2.91.so.${LIBvte-2.91_VERSION}
+lib/pkgconfig/vte-2.91.pc
+share/gir-1.0/Vte-2.91.gir
+share/glade/catalogs/vte-2.91.xml
+share/vala/vapi/vte-2.91.deps
+share/vala/vapi/vte-2.91.vapi
