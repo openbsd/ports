@@ -1,7 +1,6 @@
 COMMENT =	distribution-building parts of Flit
 
-MODPY_EGG_VERSION =	3.7.1
-REVISION =	2
+MODPY_EGG_VERSION =	3.8.0
 
 DISTNAME =	flit_core-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
@@ -27,6 +26,8 @@ MODPY_PYTEST_ARGS =	flit_core/tests
 # from flit_core distribution and must still work if flit_core is
 # not installed at build time.
 BUILD_DEPENDS =	devel/py-installer${MODPY_FLAVOR}
+
+TEST_DEPENDS =	devel/py-testpath${MODPY_FLAVOR}
 
 do-build:
 	cd ${WRKSRC} && ${MODPY_BIN} -m flit_core.wheel
