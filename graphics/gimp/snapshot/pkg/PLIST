@@ -750,16 +750,13 @@ lib/pkgconfig/gimp-3.0.pc
 lib/pkgconfig/gimpthumb-3.0.pc
 lib/pkgconfig/gimpui-3.0.pc
 @bin libexec/gimp-debug-tool-${V}
+@man man/man1/gimp-${V}-console.1
 @man man/man1/gimp-${V}.1
 @man man/man1/gimp-console-${V}.1
-@comment @man man/man1/gimp-console.1
-@comment @man man/man1/gimp.1
 @man man/man1/gimptool-${V}.1
-@comment @man man/man1/gimptool.1
 @man man/man5/gimprc-${V}.5
-@comment @man man/man5/gimprc.5
 share/aclocal/gimp-3.0.m4
-@comment share/applications/gimp.desktop
+share/applications/gimp-${V}.desktop
 share/doc/Gimp-3.0/
 share/doc/Gimp-3.0/Gimp-3.0.devhelp2
 share/doc/Gimp-3.0/RedHatDisplay-Black.woff
@@ -5462,12 +5459,12 @@ share/gimp/${V}/ui/plug-ins/plug-in-metadata-editor.ui
 share/gimp/${V}/ui/plug-ins/plug-in-metadata-viewer.ui
 share/gir-1.0/Gimp-3.0.gir
 share/gir-1.0/GimpUi-3.0.gir
-@comment share/icons/hicolor/16x16/apps/gimp.png
-@comment share/icons/hicolor/22x22/apps/gimp.png
-@comment share/icons/hicolor/24x24/apps/gimp.png
-@comment share/icons/hicolor/256x256/apps/gimp.png
-@comment share/icons/hicolor/32x32/apps/gimp.png
-@comment share/icons/hicolor/48x48/apps/gimp.png
+share/icons/hicolor/16x16/apps/gimp-${V}.png
+share/icons/hicolor/22x22/apps/gimp-${V}.png
+share/icons/hicolor/24x24/apps/gimp-${V}.png
+share/icons/hicolor/256x256/apps/gimp-${V}.png
+share/icons/hicolor/32x32/apps/gimp-${V}.png
+share/icons/hicolor/48x48/apps/gimp-${V}.png
 share/icons/hicolor/64x64/apps/gimp.png
 share/icons/hicolor/scalable/apps/gimp.svg
 share/locale/am/LC_MESSAGES/gimp30.mo
@@ -5825,7 +5822,7 @@ share/locale/zh_TW/LC_MESSAGES/gimp30-script-fu.mo
 share/locale/zh_TW/LC_MESSAGES/gimp30-std-plug-ins.mo
 share/locale/zh_TW/LC_MESSAGES/gimp30.mo
 share/metainfo/
-@comment share/metainfo/org.gimp.GIMP.appdata.xml
+share/metainfo/org.gimp-${V}.GIMP.appdata.xml
 share/vala/vapi/gimp-3.0.deps
 share/vala/vapi/gimp-3.0.vapi
 share/vala/vapi/gimp-ui-3.0.deps

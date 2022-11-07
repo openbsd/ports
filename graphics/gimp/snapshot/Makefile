@@ -1,7 +1,8 @@
 COMMENT=	GNU Image Manipulation Program
+
 V=		2.99
-REVISION=	0
 DISTNAME=	gimp-${V}.12
+REVISION=	1
 
 .for i in gimp gimpbase gimpcolor gimpconfig gimpmath gimpmodule \
 	gimpthumb gimpui gimpwidgets gimp-scriptfu
@@ -113,5 +114,21 @@ post-install:
 	mv ${WRKINST}${SYSCONFDIR}/gimp ${PREFIX}/share/examples/
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
 		${PREFIX}/lib/gimp/${V}/plug-ins
+
+# prevent conflicts with graphics/gimp/stable;
+# see also patch-desktop_gimp_desktop_in_in
+	cd ${PREFIX} && \
+		mv man/man1/gimp{,-${V}}-console.1 && \
+		mv man/man1/gimp{,-${V}}.1 && \
+		mv man/man1/gimptool{,-${V}}.1 && \
+		mv man/man5/gimprc{,-${V}}.5 && \
+		mv share/applications/gimp{,-${V}}.desktop && \
+		mv share/icons/hicolor/16x16/apps/gimp{,-${V}}.png && \
+		mv share/icons/hicolor/22x22/apps/gimp{,-${V}}.png && \
+		mv share/icons/hicolor/24x24/apps/gimp{,-${V}}.png && \
+		mv share/icons/hicolor/256x256/apps/gimp{,-${V}}.png && \
+		mv share/icons/hicolor/32x32/apps/gimp{,-${V}}.png && \
+		mv share/icons/hicolor/48x48/apps/gimp{,-${V}}.png && \
+		mv share/metainfo/org.gimp{,-${V}}.GIMP.appdata.xml
 
 .include <bsd.port.mk>
