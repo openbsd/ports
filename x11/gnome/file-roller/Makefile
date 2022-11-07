@@ -1,5 +1,5 @@
 COMMENT-main=		archive manager utility for GNOME
-COMMENT-nautilus=	file-roller extension for nautilus
+COMMENT-nautilus=	file-roller extension for Nautilus
 
 GNOME_PROJECT=		file-roller
 GNOME_VERSION=		43.0
@@ -7,6 +7,7 @@ GNOME_VERSION=		43.0
 PKGNAME-nautilus=	${GNOME_PROJECT}-nautilus-${GNOME_VERSION}
 
 REVISION-main=		0
+REVISION-nautilus=	0
 
 CATEGORIES=		archivers
 
@@ -44,10 +45,9 @@ LIB_DEPENDS-main=	archivers/libarchive \
 			sysutils/libportal,-gtk3 \
 			x11/libhandy
 
-LIB_DEPENDS-nautilus=	${BASE_PKGPATH},-main \
-			x11/gnome/nautilus
+LIB_DEPENDS-nautilus=	x11/gnome/nautilus
 
-RUN_DEPENDS-nautilus=	# empty
+RUN_DEPENDS-nautilus=	${BASE_PKGPATH},-main
 
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache yelp
 
