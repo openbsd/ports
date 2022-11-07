@@ -2,7 +2,7 @@ COMMENT=		map application for GNOME
 
 GNOME_PROJECT=		gnome-maps
 GNOME_VERSION=		43.1
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  gnome-maps                0.0 # 0.0.0
 
@@ -22,15 +22,16 @@ LIB_DEPENDS=		x11/gnome/librest1 \
 			x11/gnome/libshumate
 
 BUILD_DEPENDS=		geo/geoclue2 \
+			geo/geocode-glib,soup3 \
 			x11/gnome/gjs \
 			x11/gnome/libgweather4 \
-			x11/libhandy
+			x11/gnome/libadwaita
 
 RUN_DEPENDS=		geo/geoclue2 \
+			geo/geocode-glib,soup3 \
 			x11/gnome/gjs \
 			x11/gnome/libgweather4 \
-			x11/gnome/online-accounts \
-			x11/libhandy
+			x11/gnome/libadwaita
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
