@@ -1,0 +1,24 @@
+Check bounds before accessing the keycaps table.
+
+Index: lib/Xm/VirtKeys.c
+--- lib/Xm/VirtKeys.c.orig
++++ lib/Xm/VirtKeys.c
+@@ -558,10 +558,16 @@ FindVirtKey(Display *dpy,
+   XmDisplay     xmDisplay = (XmDisplay) XmGetXmDisplay( dpy);
+   XmVKeyBinding keyBindings = xmDisplay->display.bindings;
+   KeyCode       min_kcode;
+-  int           ks_per_kc;
++  int           min_kc, max_kc, ks_per_kc;
+   KeySym       *ks_table = XtGetKeysymTable( dpy, &min_kcode, &ks_per_kc);
+   KeySym       *kc_map = &ks_table[(keycode - min_kcode) * ks_per_kc];
+-  Modifiers     EffectiveSMMask = EffectiveStdModMask( dpy, kc_map, ks_per_kc);
++  Modifiers     EffectiveSMMask;
++
++  XDisplayKeycodes(dpy, &min_kc, &max_kc);
++  if (keycode < min_kcode || (keycode - min_kcode) * ks_per_kc >= max_kc)
++    return; 
++
++  EffectiveSMMask = EffectiveStdModMask( dpy, kc_map, ks_per_kc);
+   
+   /* Get the modifiers from the actual event */
+   Modifiers VirtualStdMods = 0;

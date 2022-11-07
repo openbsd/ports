@@ -1,6 +1,7 @@
 COMMENT=	Motif toolkit
 
 DISTNAME=	motif-2.3.8
+REVISION=	0
 
 SHARED_LIBS +=  Xm                   6.1      # 4.4
 SHARED_LIBS +=  Mrm                  4.1      # 4.4
