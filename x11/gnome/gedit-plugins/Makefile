@@ -1,8 +1,7 @@
 COMMENT=		plugins for Gedit
 
 GNOME_PROJECT=		gedit-plugins
-GNOME_VERSION=		42.1
-REVISION=		1
+GNOME_VERSION=		43.1
 
 CATEGORIES=		editors
 
@@ -10,7 +9,7 @@ CATEGORIES=		editors
 PERMIT_PACKAGE=		Yes
 
 WANTLIB += gdk-3 gio-2.0 glib-2.0 gobject-2.0 gtk-3 gtksourceview-4
-WANTLIB += intl peas-1.0 peas-gtk-1.0
+WANTLIB += peas-1.0 peas-gtk-1.0 tepl-6
 
 MODULES=		devel/dconf \
 			devel/meson \
