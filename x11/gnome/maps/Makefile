@@ -2,6 +2,7 @@ COMMENT=		map application for GNOME
 
 GNOME_PROJECT=		gnome-maps
 GNOME_VERSION=		43.1
+REVISION=		0
 
 SHARED_LIBS +=  gnome-maps                0.0 # 0.0.0
 
@@ -17,7 +18,8 @@ MODULES=		devel/dconf \
 MODGNOME_TOOLS=		desktop-file-utils gobject-introspection \
 			gtk-update-icon-cache
 
-LIB_DEPENDS=		x11/gnome/libshumate
+LIB_DEPENDS=		x11/gnome/librest1 \
+			x11/gnome/libshumate
 
 BUILD_DEPENDS=		geo/geoclue2 \
 			x11/gnome/gjs \
@@ -26,7 +28,6 @@ BUILD_DEPENDS=		geo/geoclue2 \
 
 RUN_DEPENDS=		geo/geoclue2 \
 			graphics/clutter/clutter-gtk \
-			net/librest \
 			x11/gnome/gjs \
 			x11/gnome/libgweather4 \
 			x11/gnome/online-accounts \
