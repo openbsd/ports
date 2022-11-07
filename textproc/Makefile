@@ -528,6 +528,7 @@
      SUBDIR += swish-e
      SUBDIR += tcpdf
      SUBDIR += tdom
+     SUBDIR += terraform-docs
      SUBDIR += texi2html
      SUBDIR += texi2mdoc
      SUBDIR += the_silver_searcher
