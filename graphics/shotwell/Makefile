@@ -2,6 +2,7 @@ COMMENT =		digital photo organizer
 
 GNOME_VERSION =		0.30.17
 GNOME_PROJECT =		shotwell
+REVISION =		0
 
 SHARED_LIBS += shotwell-plugin-dev-1.0   0.0 # 0.30.16
 SHARED_LIBS += shotwell-plugin-common    0.0 # 0.30.16
@@ -33,7 +34,8 @@ LIB_DEPENDS =		devel/libgdata \
 			devel/libgee \
 			graphics/libgexiv2 \
 			graphics/libgphoto2 \
-			graphics/libraw
+			graphics/libraw \
+			www/webkitgtk4
 
 CONFIGURE_ARGS =	-Dface-detection=false \
 			-Dudev=false
