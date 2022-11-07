@@ -1,6 +1,6 @@
 COMMENT =	low-level pure Python implementation of SSHv2
 
-MODPY_EGG_VERSION =	2.11.0
+MODPY_EGG_VERSION =	2.12.0
 DISTNAME =		paramiko-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		security
@@ -14,7 +14,7 @@ MODPY_PI =		Yes
 
 MODULES =		lang/python
 
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 MODPY_PYTEST =		Yes
 
 RUN_DEPENDS =		devel/py-asn1${MODPY_FLAVOR} \
