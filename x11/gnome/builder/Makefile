@@ -4,20 +4,19 @@
 COMMENT=		IDE for GNOME
 
 GNOME_PROJECT=		gnome-builder
-GNOME_VERSION=		42.1
-REVISION=		1
+GNOME_VERSION=		43.2
 
 CATEGORIES=		devel
 
 # GPLv3
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += c cairo cairo-gobject clang cmark dazzle-1.0 enchant-2
-WANTLIB += fontconfig gdk-3 gio-2.0 girepository-1.0 git2 git2-glib-1.0
-WANTLIB += gladeui-2 glib-2.0 gobject-2.0 gspell-1 gtk-3 gtksourceview-4
-WANTLIB += handy-1 intl json-glib-1.0 jsonrpc-glib-1.0 pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre peas-1.0 template_glib-1.0
-WANTLIB += vte-2.91 webkit2gtk-4.0 xml2
+WANTLIB += adwaita-1 c cairo clang cmark dspy-1 editorconfig enchant-2
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 girepository-1.0 git2 git2-glib-1.0
+WANTLIB += glib-2.0 gobject-2.0 gtk-4 gtksourceview-5 icuuc intl
+WANTLIB += json-glib-1.0 jsonrpc-glib-1.0 m panel-1 pango-1.0
+WANTLIB += peas-1.0 portal portal-gtk4 template_glib-1.0 vte-2.91-gtk4
+WANTLIB += webkit2gtk-5.0 xml2
 
 MODULES=		devel/dconf \
 			devel/meson \
@@ -41,29 +40,25 @@ RUN_DEPENDS +=		textproc/py-lxml${MODPY_FLAVOR}
 # see patch-src_plugins_todo_gbp-todo-model_c
 RUN_DEPENDS +=		sysutils/ggrep
 
-LIB_DEPENDS=		devel/glade \
-			devel/jsonrpc-glib \
+LIB_DEPENDS=		devel/jsonrpc-glib \
 			devel/libgit2/libgit2-glib \
 			devel/libpeas \
 			devel/llvm \
-			devel/pcre \
 			devel/template-glib \
 			devel/vte3 \
+			editors/editorconfig-core-c \
+			sysutils/dspy \
+			sysutils/libportal,-gtk4 \
 			textproc/cmark \
-			textproc/gspell \
-			x11/gnome/libdazzle \
-			x11/gtksourceview4 \
-			x11/libhandy
+			www/webkitgtk4,webkitgtk50 \
+			x11/gnome/libpanel \
+			x11/gtksourceview5
 
 CONFIGURE_ARGS=		-Dplugin_valgrind=false \
 			-Dplugin_flatpak=false \
 			-Dplugin_sysprof=false \
 			-Dplugin_update_manager=false \
 			-Dchannel=other
-
-# requires libportal
-CONFIGURE_ARGS +=	-Dplugin_color_picker=false \
-			-Dplugin_devhelp=false
 
 MODGNOME_LDFLAGS +=	-L${X11BASE}/lib
 

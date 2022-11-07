@@ -3,7 +3,7 @@ XXX rework and push upstream
 Index: src/plugins/todo/gbp-todo-model.c
 --- src/plugins/todo/gbp-todo-model.c.orig
 +++ src/plugins/todo/gbp-todo-model.c
-@@ -361,8 +361,10 @@ gbp_todo_model_mine_worker (IdeTask      *task,
+@@ -420,8 +420,10 @@ gbp_todo_model_mine_worker (IdeTask      *task,
      }
    else
      {

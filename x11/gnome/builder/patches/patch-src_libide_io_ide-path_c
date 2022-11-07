@@ -15,15 +15,15 @@ Index: src/libide/io/ide-path.c
  
  #include <libide-threading.h>
  
-@@ -42,6 +46,7 @@
-  *
-  * Since: 3.32
+@@ -40,6 +44,7 @@
+  * Returns: (transfer full): A newly allocated string containing the
+  *   expansion. A copy of the input string upon failure to expand.
   */
 +#if !defined(__OpenBSD__)
  gchar *
  ide_path_expand (const gchar *path)
  {
-@@ -88,6 +93,33 @@ ide_path_expand (const gchar *path)
+@@ -86,6 +91,33 @@ ide_path_expand (const gchar *path)
  
    return ret;
  }
