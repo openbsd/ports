@@ -5427,6 +5427,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/sns/list-tags-for-resou
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/sns/list-topics.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/sns/opt-in-phone-number.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/sns/publish.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/sns/put-data-protection-policy.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/sns/remove-permission.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/sns/set-endpoint-attributes.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/sns/set-platform-application-attributes.rst
