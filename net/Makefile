@@ -223,7 +223,6 @@
      SUBDIR += libproxy,
      SUBDIR += libpsl
      SUBDIR += librenms
-     SUBDIR += librest
      SUBDIR += librsync
      SUBDIR += libshout
      SUBDIR += libsignal-protocol-c
