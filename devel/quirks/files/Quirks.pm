@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1440 2022/11/06 22:34:12 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1441 2022/11/07 13:50:41 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1729,6 +1729,8 @@ setup_obsolete_reason(
 	3 => 'boar',
 # 7.3
 	3 => 'evolution-rss',
+	3 => 'libgfbgraph',
+	3 => 'gnome-online-miners',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
