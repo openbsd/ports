@@ -17,6 +17,8 @@ MODCARGO_CRATES_KEEP +=	libz-sys
 MODCARGO_ENV=	LIBCLANG_PATH=${LOCALBASE}/lib
 MAKE_ENV +=	DEP_BZIP2_INCLUDE=${LOCALBASE}/include
 
+#librocksdb-sys looks for libclang.so
+BUILD_DEPENDS=	devel/llvm
 LIB_DEPENDS +=	archivers/zstd \
 		archivers/bzip2
 
