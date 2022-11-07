@@ -2,7 +2,7 @@
 @pkgpath mail/postler
 @bin bin/geary
 lib/geary/
-@so lib/geary/libgeary-client-40.0.so
+@so lib/geary/libgeary-client-43.0.so
 lib/geary/plugins/
 lib/geary/plugins/desktop-notifications/
 lib/geary/plugins/desktop-notifications/desktop-notifications.plugin
@@ -251,6 +251,23 @@ share/help/pt_BR/geary/search.page
 share/help/pt_BR/geary/shortcuts.page
 share/help/pt_BR/geary/star.page
 share/help/pt_BR/geary/write.page
+share/help/ru/
+share/help/ru/geary/
+share/help/ru/geary/accounts.page
+share/help/ru/geary/archive.page
+share/help/ru/geary/bugs.page
+share/help/ru/geary/contributing.page
+share/help/ru/geary/figures/
+share/help/ru/geary/figures/geary.svg
+share/help/ru/geary/index.page
+share/help/ru/geary/label.page
+share/help/ru/geary/limits.page
+share/help/ru/geary/overview.page
+share/help/ru/geary/preferences.page
+share/help/ru/geary/search.page
+share/help/ru/geary/shortcuts.page
+share/help/ru/geary/star.page
+share/help/ru/geary/write.page
 share/help/sv/
 share/help/sv/geary/
 share/help/sv/geary/accounts.page
@@ -316,17 +333,10 @@ share/icons/hicolor/scalable/actions/format-unordered-list-symbolic.svg
 share/icons/hicolor/scalable/actions/mail-archive-symbolic.svg
 share/icons/hicolor/scalable/actions/mail-drafts-symbolic-rtl.svg
 share/icons/hicolor/scalable/actions/mail-drafts-symbolic.svg
-share/icons/hicolor/scalable/actions/mail-forward-symbolic-rtl.svg
-share/icons/hicolor/scalable/actions/mail-forward-symbolic.svg
 share/icons/hicolor/scalable/actions/mail-inbox-symbolic.svg
 share/icons/hicolor/scalable/actions/mail-outbox-symbolic.svg
-share/icons/hicolor/scalable/actions/mail-reply-all-symbolic-rtl.svg
-share/icons/hicolor/scalable/actions/mail-reply-all-symbolic.svg
-share/icons/hicolor/scalable/actions/mail-reply-sender-symbolic-rtl.svg
-share/icons/hicolor/scalable/actions/mail-reply-sender-symbolic.svg
 share/icons/hicolor/scalable/actions/mail-sent-symbolic-rtl.svg
 share/icons/hicolor/scalable/actions/mail-sent-symbolic.svg
-share/icons/hicolor/scalable/actions/marker-symbolic.svg
 share/icons/hicolor/scalable/actions/tag-symbolic-rtl.svg
 share/icons/hicolor/scalable/actions/tag-symbolic.svg
 share/icons/hicolor/scalable/actions/text-x-generic-symbolic.svg
