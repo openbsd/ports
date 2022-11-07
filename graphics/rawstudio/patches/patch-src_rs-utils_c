@@ -1,12 +1,12 @@
-Needed for strptime(3).
-
---- src/rs-utils.c.orig	Sun May 20 15:10:05 2012
-+++ src/rs-utils.c	Sun May 20 15:10:31 2012
-@@ -18,6 +18,7 @@
+Index: src/rs-utils.c
+--- src/rs-utils.c.orig
++++ src/rs-utils.c
+@@ -17,7 +17,7 @@
+  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   */
  
- #define _XOPEN_SOURCE /* strptime() */
-+#define _XOPEN_SOURCE_EXTENDED 1
+-#define _XOPEN_SOURCE /* strptime() */
++#define _XOPEN_SOURCE 700 /* strptime() */
  #include <config.h>
  #include <glib.h>
  #include <glib/gstdio.h>
