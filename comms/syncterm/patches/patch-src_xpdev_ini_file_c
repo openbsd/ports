@@ -1,0 +1,14 @@
+64bit time_t
+
+Index: src/xpdev/ini_file.c
+--- src/xpdev/ini_file.c.orig
++++ src/xpdev/ini_file.c
+@@ -707,7 +707,7 @@ char* iniSetDateTime(str_list_t* list, const char* sec
+ 	if(value==0)
+ 		SAFECOPY(str,"Never");
+ 	else if((p=ctime_r(&value,tstr))==NULL)
+-		SAFEPRINTF(str,"0x%lx",value);
++		SAFEPRINTF(str,"0x%llx",value);
+ 	else if(!include_time)	/* reformat into "Mon DD YYYY" */
+ 		safe_snprintf(str,sizeof(str),"%.3s %.2s %.4s"		,p+4,p+8,p+20);
+ 	else					/* reformat into "Mon DD YYYY HH:MM:SS" */

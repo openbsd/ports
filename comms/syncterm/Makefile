@@ -1,7 +1,7 @@
 COMMENT=	BBS terminal program
 
 DISTNAME=	syncterm-1.1
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	comms net
 
@@ -29,7 +29,7 @@ MAKE_FLAGS=	RELEASE=1 \
 		USE_SDL=1 \
 		SDL_CONFIG=${LOCALBASE}/bin/sdl2-config \
 		QUIET=
-CFLAGS+=	-DN_CURSES_LIB -D_XOPEN_SOURCE_EXTENDED=1
+CFLAGS+=	-DN_CURSES_LIB
 CFLAGS+=	${PICFLAG}
 
 .include <bsd.port.arch.mk>
