@@ -1,6 +1,6 @@
 COMMENT =		Python Build Reasonableness
 
-MODPY_EGG_VERSION =	5.10.0
+MODPY_EGG_VERSION =	5.11.0
 DISTNAME =		pbr-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/^/py-/}
 CATEGORIES =		devel
@@ -15,8 +15,9 @@ MODULES =	lang/python
 FLAVORS =	python3
 FLAVOR =	python3
 
-MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PI =	Yes
+MODPY_PYBUILD =	setuptools
+
 MODPY_PYTEST_ARGS =	pbr
 
 TEST_DEPENDS =	devel/py-testtools${MODPY_FLAVOR} \
