@@ -36,7 +36,6 @@
      SUBDIR += gdm
      SUBDIR += gedit
      SUBDIR += gedit-plugins
-     SUBDIR += gfbgraph
      SUBDIR += ghex
      SUBDIR += gitg
      SUBDIR += gjs
@@ -77,7 +76,6 @@
      SUBDIR += nautilus
      SUBDIR += notes
      SUBDIR += online-accounts
-     SUBDIR += online-miners
      SUBDIR += orca
      SUBDIR += photos
      SUBDIR += polari
