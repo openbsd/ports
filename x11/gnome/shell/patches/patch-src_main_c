@@ -36,7 +36,7 @@ not available.
 Index: src/main.c
 --- src/main.c.orig
 +++ src/main.c
-@@ -356,6 +356,7 @@ dump_gjs_stack_on_signal_handler (int signo)
+@@ -372,6 +372,7 @@ dump_gjs_stack_on_signal_handler (int signo)
  static void
  dump_gjs_stack_on_signal (int signo)
  {
@@ -44,7 +44,7 @@ Index: src/main.c
    struct sigaction sa = {
      .sa_flags   = SA_RESETHAND | SA_NODEFER,
      .sa_handler = dump_gjs_stack_on_signal_handler,
-@@ -365,6 +366,7 @@ dump_gjs_stack_on_signal (int signo)
+@@ -381,6 +382,7 @@ dump_gjs_stack_on_signal (int signo)
  
    sigaction (signo, &sa, NULL);
    _tracked_signals[signo] = TRUE;

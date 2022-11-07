@@ -45,6 +45,7 @@ share/dbus-1/services/org.gnome.Shell.CalendarServer.service
 share/dbus-1/services/org.gnome.Shell.Extensions.service
 share/dbus-1/services/org.gnome.Shell.HotplugSniffer.service
 share/dbus-1/services/org.gnome.Shell.Notifications.service
+share/dbus-1/services/org.gnome.Shell.Screencast.service
 share/examples/gnome-shell/
 share/examples/gnome-shell/xdg/
 share/examples/gnome-shell/xdg/autostart/
@@ -73,12 +74,15 @@ share/gnome-shell/org.gnome.Shell.Extensions
 share/gnome-shell/org.gnome.Shell.Extensions.src.gresource
 share/gnome-shell/org.gnome.Shell.Notifications
 share/gnome-shell/org.gnome.Shell.Notifications.src.gresource
+share/gnome-shell/org.gnome.Shell.Screencast
+share/gnome-shell/org.gnome.Shell.Screencast.src.gresource
 share/gnome-shell/perf-background.xml
 share/icons/hicolor/scalable/apps/org.gnome.Extensions.Devel.svg
 share/icons/hicolor/scalable/apps/org.gnome.Extensions.svg
 share/icons/hicolor/scalable/apps/org.gnome.Shell.Extensions.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Extensions-symbolic.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Shell.Extensions-symbolic.svg
+share/locale/ab/LC_MESSAGES/gnome-shell.mo
 share/locale/af/LC_MESSAGES/gnome-shell.mo
 share/locale/an/LC_MESSAGES/gnome-shell.mo
 share/locale/ar/LC_MESSAGES/gnome-shell.mo

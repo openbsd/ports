@@ -17,7 +17,7 @@ Index: js/misc/loginManager.js
 @@ -43,7 +49,7 @@ function canLock() {
                                                 -1, null);
  
-         let version = result.deep_unpack()[0].deep_unpack();
+         let version = result.deepUnpack()[0].deepUnpack();
 -        return haveSystemd() && versionCompare('3.5.91', version);
 +        return versionCompare('3.5.91', version);
      } catch (e) {
@@ -32,15 +32,17 @@ Index: js/misc/loginManager.js
      }
  
      return _loginManager;
-@@ -204,6 +210,79 @@ var LoginManagerSystemd = class {
+@@ -206,6 +212,79 @@ var LoginManagerSystemd = class extends Signals.EventE
+     }
  };
- Signals.addSignalMethods(LoginManagerSystemd.prototype);
  
-+var LoginManagerConsoleKit = class {
-+    constructor () {
++var LoginManagerConsoleKit = class extends Signals.EventEmitter {
++    constructor() {
++        super();
++
 +        this._proxy = new ConsoleKitManager(Gio.DBus.system,
-+                                            'org.freedesktop.ConsoleKit',
-+                                            '/org/freedesktop/ConsoleKit/Manager');
++                                              'LoginManagerConsoleKit',
++                                              '/org/freedesktop/ConsoleKit/Manager');
 +        this._proxy.connectSignal('PrepareForSleep',
 +                                  this._prepareForSleep.bind(this));
 +    }
@@ -49,80 +51,81 @@ Index: js/misc/loginManager.js
 +    // session objects have different interfaces - but in both cases there are
 +    // Lock/Unlock signals, and that's all we count upon at the moment.
 +
-+
-+    getCurrentSessionProxy(callback) {
-+        if (this._currentSession) {
-+            callback (this._currentSession);
-+            return;
++    async getCurrentSessionProxy() {
++        if (this._currentSession)
++            return this._currentSession;}
 +        }
 +
-+        this._proxy.GetCurrentSessionRemote((result, error) => {
-+            if (error) {
-+                logError(error, 'Could not get a proxy for the current session');
-+            } else {
-+                this._currentSession = new ConsoleKitSession(Gio.DBus.system,
-+                                                             'org.freedesktop.ConsoleKit',
-+                                                             result[0]);
-+                callback(this._currentSession);
-+            }
-+        });
++        try {
++            const [objectPath] = await this._proxy.GetSessionAsync(sessionId);
++            this._currentSession = new ConsoleKitSession(Gio.DBus.system,
++                'org.freedesktop.ConsoleKit', objectPath);
++            return this._currentSession;
++        } catch (error) {
++            logError(error, 'Could not get a proxy for the current session');
++            return null;
++        }
 +    }
 +
-+    canSuspend(asyncCallback) {
-+        this._proxy.CanSuspendRemote((result, error) => {
-+            if (error) {
-+                asyncCallback(false, false);
-+            } else {
-+                let needsAuth = result[0] == 'challenge';
-+                let canSuspend = needsAuth || result[0] == 'yes';
-+                asyncCallback(canSuspend, needsAuth);
-+            }
-+        });
++    async canSuspend() {
++        let canSuspend, needsAuth;
++
++        try {
++            const [result] = await this._proxy.CanSuspendAsync();
++            needsAuth = result === 'challenge';
++            canSuspend = needsAuth || result === 'yes';
++        } catch (error) {
++            canSuspend = false;
++            needsAuth = false;
++        }
++        return {canSuspend, needsAuth};
 +    }
 +
-+    listSessions(asyncCallback) {
-+        asyncCallback([]);
++    async listSessions() {
++        try {
++            const [sessions] = await this._proxy.ListSessionsAsync();
++            return sessions;
++        } catch (e) {
++            return [];
++        }
 +    }
 +
 +    suspend() {
-+        this._proxy.SuspendRemote(true);
++        this._proxy.SuspendAsync(true);
 +    }
 +
-+    async inhibit(reason, callback) {
-+        try {
-+            const inVariant = new GLib.Variant('(ssss)',
-+                ['sleep', 'GNOME Shell', reason, 'delay']);
-+            const [outVariant_, fdList] =
-+                await this._proxy.call_with_unix_fd_list('Inhibit',
-+                    inVariant, 0, -1, null, null);
-+            const [fd] = fdList.steal_fds();
-+            callback(new Gio.UnixInputStream({ fd }));
-+        } catch (e) {
-+            logError(e, 'Error getting ConsoleKit inhibitor');
-+            callback(null);
-+        }
++    async inhibit(reason, cancellable) {
++        const inVariant = new GLib.Variant('(ssss)',
++            ['sleep', 'GNOME Shell', reason, 'delay']);
++        const [outVariant_, fdList] =
++            await this._proxy.call_with_unix_fd_list('Inhibit',
++                inVariant, 0, -1, null, cancellable);
++        const [fd] = fdList.steal_fds();
++        return new Gio.UnixInputStream({ fd });
 +    }
 +
 +    _prepareForSleep(proxy, sender, [aboutToSuspend]) {
 +        this.emit('prepare-for-sleep', aboutToSuspend);
 +    }
-+}
-+Signals.addSignalMethods(LoginManagerConsoleKit.prototype);
++};
 +
- var LoginManagerDummy = class {
-     getCurrentSessionProxy(_callback) {
+ var LoginManagerDummy = class extends Signals.EventEmitter  {
+     getCurrentSessionProxy() {
          // we could return a DummySession object that fakes whatever callers
-@@ -213,13 +292,6 @@ var LoginManagerDummy = class {
- 
-     canSuspend(asyncCallback) {
-         asyncCallback(false, false);
+@@ -219,16 +298,6 @@ var LoginManagerDummy = class extends Signals.EventEmi
+             canSuspend: false,
+             needsAuth: false,
+         }));
 -    }
 -
--    canRebootToBootLoaderMenu(asyncCallback) {
--        asyncCallback(false, false);
+-    canRebootToBootLoaderMenu() {
+-        return new Promise(resolve => resolve({
+-            canRebootToBootLoaderMenu: false,
+-            needsAuth: false,
+-        }));
 -    }
 -
 -    setRebootToBootLoaderMenu() {
      }
  
-     listSessions(asyncCallback) {
+     listSessions() {

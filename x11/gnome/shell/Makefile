@@ -6,21 +6,20 @@ COMMENT=		next generation GNOME shell
 # major upgrade
 GNOME_PROJECT=		gnome-shell
 # sync with meta/gnome "V" variable
-GNOME_VERSION=		42.6
-REVISION=		0
+GNOME_VERSION=		43.1
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
 
 WANTLIB += X11 Xfixes atk-1.0 atk-bridge-2.0 c cairo ecal-2.0
-WANTLIB += edataserver-1.2 gcr-base-3 gdk-3 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += edataserver-1.2 gcr-4 gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += girepository-1.0 gjs glib-2.0 gnome-autoar-0 gnome-desktop-3
-WANTLIB += gobject-2.0 graphene-1.0 gtk-3 gtk-4 ical-glib intl json-glib-1.0
-WANTLIB += m mutter-10 pango-1.0 pangocairo-1.0 polkit-agent-1
-WANTLIB += polkit-gobject-1 pulse pulse-mainloop-glib
-WANTLIB += lib/mutter-10/mutter-clutter-10
-WANTLIB += lib/mutter-10/mutter-cogl-10
-WANTLIB += lib/mutter-10/mutter-cogl-pango-10
+WANTLIB += gobject-2.0 graphene-1.0 gtk-3 gtk-4 ical-glib intl
+WANTLIB += json-glib-1.0 m mutter-11 pango-1.0 pangocairo-1.0
+WANTLIB += polkit-agent-1 polkit-gobject-1 pulse pulse-mainloop-glib
+WANTLIB += lib/mutter-11/mutter-clutter-11
+WANTLIB += lib/mutter-11/mutter-cogl-11
+WANTLIB += lib/mutter-11/mutter-cogl-pango-11
 
 MODULES=		devel/dconf \
 			devel/meson \
@@ -42,7 +41,7 @@ LIB_DEPENDS=		audio/pulseaudio \
 			databases/evolution-data-server \
 			sysutils/polkit \
 			x11/gnome/autoar \
-			x11/gnome/gcr \
+			x11/gnome/gcr4 \
 			x11/gnome/gjs \
 			x11/gnome/mutter \
 			x11/gtk+4
