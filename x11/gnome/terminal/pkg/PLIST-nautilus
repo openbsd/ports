@@ -1,0 +1,3 @@
+@conflict gnome-terminal-<3.46.4p1
+@so lib/nautilus/extensions-4/libterminal-nautilus.so
+share/metainfo/org.gnome.Terminal.Nautilus.metainfo.xml
