@@ -3,7 +3,7 @@ Pledge.
 Index: main.c
 --- main.c.orig
 +++ main.c
-@@ -834,6 +834,30 @@ int main (int argc, char **argv, char **environ)
+@@ -841,6 +841,30 @@ int main (int argc, char **argv, char **environ)
        }
    }
  
