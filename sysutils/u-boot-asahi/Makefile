@@ -4,6 +4,7 @@ VERSION=	2022.07-3
 GH_ACCOUNT=	AsahiLinux
 GH_PROJECT=	u-boot
 GH_TAGNAME=	asahi-v${VERSION}
+REVISION=	0
 
 PKGNAME=	u-boot-asahi-${VERSION:S/-/./g}
 
@@ -39,8 +40,9 @@ do-build:
 	         O="build/" -f ${MAKE_FILE} ${ALL_TARGET}
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/u-boot/apple_m1
+	${INSTALL_DATA_DIR} ${PREFIX}/share/u-boot/apple_m1/dts
 	cd ${WRKSRC}/build && \
-	    ${INSTALL_DATA} ${FILES} ${PREFIX}/share/u-boot/apple_m1/
+	    ${INSTALL_DATA} ${FILES} ${PREFIX}/share/u-boot/apple_m1/ && \
+	    ${INSTALL_DATA} arch/arm/dts/*.dtb ${PREFIX}/share/u-boot/apple_m1/dts/
 
 .include <bsd.port.mk>
