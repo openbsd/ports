@@ -1,6 +1,7 @@
 @bin bin/B
 @bin bin/sam
 @bin bin/samterm
+bin/ssam
 @man man/man1/sam.1
 @man man/man5/samrc.5
 share/applications/deadpixi-sam.desktop
