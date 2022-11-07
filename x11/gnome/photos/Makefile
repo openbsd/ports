@@ -2,7 +2,7 @@ COMMENT=		access, organize and share your photos on GNOME
 
 GNOME_PROJECT=		gnome-photos
 GNOME_VERSION=		43.0
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		graphics
 
@@ -35,9 +35,6 @@ LIB_DEPENDS=		geo/geocode-glib,soup3 \
 
 # org.gnome.OnlineMiners.MediaServer
 RUN_DEPENDS += x11/gnome/tracker3-miners
-
-# org.freedesktop.Tracker3.Miner.Files
-RUN_DEPENDS += x11/gnome/online-miners
 
 # com.intel.dleyna-renderer
 RUN_DEPENDS +=		net/dleyna
