@@ -65,3 +65,5 @@ lib/python${MODPY_VERSION}/site-packages/pybind11/share/cmake/pybind11/pybind11C
 lib/python${MODPY_VERSION}/site-packages/pybind11/share/cmake/pybind11/pybind11NewTools.cmake
 lib/python${MODPY_VERSION}/site-packages/pybind11/share/cmake/pybind11/pybind11Targets.cmake
 lib/python${MODPY_VERSION}/site-packages/pybind11/share/cmake/pybind11/pybind11Tools.cmake
+lib/python${MODPY_VERSION}/site-packages/pybind11/share/pkgconfig/
+lib/python${MODPY_VERSION}/site-packages/pybind11/share/pkgconfig/pybind11.pc
