@@ -5,7 +5,7 @@ COMMENT=		API for accessing scanners, backends
 V=			1.1.1
 DISTNAME=		backends-${V}
 PKGNAME=		sane-${DISTNAME}
-REVISION=		2
+REVISION=		3
 
 SHARED_LIBS +=  sane                 2.2      # unknown
 

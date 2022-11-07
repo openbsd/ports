@@ -6,7 +6,7 @@ umax_pp.c:330: warning: implicit declaration of function 'putenv'
  
  /* For putenv */
  #define _XOPEN_SOURCE
-+#define _XOPEN_SOURCE_EXTENDED 1
++#define _XOPEN_SOURCE 700
  #include <stdlib.h>
  #include <unistd.h>
  #include <string.h>
