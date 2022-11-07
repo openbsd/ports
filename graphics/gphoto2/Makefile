@@ -3,6 +3,7 @@ COMMENT=		digital camera command-line interface
 VERSION=		2.5.28
 DISTNAME=		gphoto2-${VERSION}
 PKGNAME=		gphoto-${VERSION}
+REVISION=		0
 
 CATEGORIES=		graphics
 

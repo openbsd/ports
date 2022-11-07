@@ -1,23 +1,32 @@
+64bit time_t
+
 Index: gphoto2/actions.c
 --- gphoto2/actions.c.orig
 +++ gphoto2/actions.c
-@@ -19,7 +19,8 @@
+@@ -19,7 +19,7 @@
   * Boston, MA  02110-1301  USA
   */
  
 -#define _XOPEN_SOURCE	/* strptime proto, but this hides other prototypes */
-+/* strptime is XPG4v2 */
-+#define _XOPEN_SOURCE_EXTENDED 1	/* strptime proto, but this hides other prototypes */
++#define _XOPEN_SOURCE 700	/* strptime proto, but this hides other prototypes */
  #define _GNU_SOURCE	/* get all the other prototypes */
  #define __EXTENSIONS__	/* for solaris to get back strdup and strcasecmp */
  #define _DARWIN_C_SOURCE
-@@ -41,6 +42,9 @@
- #ifdef HAVE_SYS_TIME_H
- # include <sys/time.h>
- #endif
-+
-+/* basename(3) */
-+#include <libgen.h>
- 
- #include "actions.h"
- #include "i18n.h"
+@@ -380,7 +380,7 @@ print_file_action (GPParams *p, const char *folder, co
+                 if (info.file.fields & GP_FILE_INFO_TYPE)
+                     printf(" FILETYPE=%s", info.file.type);
+                 if (info.file.fields & GP_FILE_INFO_MTIME)
+-                    printf(" FILEMTIME=%ld", info.file.mtime);
++                    printf(" FILEMTIME=%lld", info.file.mtime);
+                 printf("\n");
+             } else
+                 printf ("FILENAME='%s/%s'\n", folder, filename);
+@@ -404,7 +404,7 @@ print_file_action (GPParams *p, const char *folder, co
+ 		    if (info.file.fields & GP_FILE_INFO_TYPE)
+                 printf(" %s", info.file.type);
+ 		    if (info.file.fields & GP_FILE_INFO_MTIME)
+-                printf(" %ld", info.file.mtime);
++                printf(" %lld", info.file.mtime);
+ 		    putchar ('\n');
+ 		} else
+ 		    printf("#%-5i %s\n", x+1, filename);
