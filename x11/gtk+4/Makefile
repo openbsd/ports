@@ -1,4 +1,3 @@
-# XXX add support for libcloudproviders? (-Dcloudproviders=enabled)
 # XXX add support for tracker3? (-Dtracker=enabled)
 
 DPB_PROPERTIES=		parallel

@@ -1,5 +1,3 @@
-# XXX add support for libcloudproviders?
-
 DPB_PROPERTIES=		parallel
 
 PORTROACH=		skipv:3.90.0,3.92.1,3.93.0,3.94.0
