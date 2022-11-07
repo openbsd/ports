@@ -3,7 +3,7 @@ BROKEN-alpha=	beam/erl_process.c:6692: internal compiler error: in final_scan_in
 COMMENT-main=	${COMMENT}
 COMMENT-wx=	WxWidgets bindings for Erlang
 
-V=		25.1.1
+V=		25.1.2
 PORTROACH=	limit:^OTP-25\.
 DISTNAME=	otp_src_$V
 PKGNAME=	erlang-$V
@@ -79,7 +79,7 @@ INETS_VSN       8.1 \
 JINTERFACE_VSN  1.13.1 \
 KERNEL_VSN      8.5.1 \
 MEGACO_VSN      4.4.1 \
-MNESIA_VSN      4.21.1 \
+MNESIA_VSN      4.21.2 \
 OBSERVER_VSN    2.13 \
 ODBC_VSN        2.14 \
 OS_MON_VSN      2.7.1 \
@@ -97,6 +97,6 @@ TFTP_VSN        1.0.3 \
 TOOLS_VSN       3.5.3 \
 WX_VSN  2.2 \
 XMERL_VSN       1.3.30 \
-ERTS_VSN        13.1.1
+ERTS_VSN        13.1.2
 
 .include <bsd.port.mk>
