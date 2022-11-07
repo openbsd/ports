@@ -4,6 +4,7 @@ CATEGORIES=	www
 GH_ACCOUNT=	msharov
 GH_PROJECT=	snownews
 GH_TAGNAME=	v1.8
+REVISION=	0
 
 # GPLv3 only
 PERMIT_PACKAGE=	Yes
