@@ -1,8 +1,7 @@
 COMMENT=		official media player for GNOME
 
 GNOME_PROJECT=		totem
-GNOME_VERSION=		42.0
-REVISION=		4
+GNOME_VERSION=		43.0
 
 SHARED_LIBS += totem                     0.0 # 0.0.0
 
@@ -11,12 +10,12 @@ CATEGORIES=		multimedia
 # GPLv2 with exception clause - LGPLv2
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += X11 atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
+WANTLIB += atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 girepository-1.0 glib-2.0 gmodule-2.0 gnome-desktop-3
 WANTLIB += gobject-2.0 grilo-0.3 grlpls-0.3 gstaudio-1.0 gstpbutils-1.0
 WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gtk-3 handy-1
 WANTLIB += intl m pango-1.0 pangocairo-1.0 peas-1.0 peas-gtk-1.0
-WANTLIB += totem-plparser
+WANTLIB += portal portal-gtk3 totem-plparser
 
 MODULES=		devel/dconf \
 			devel/meson \
@@ -37,11 +36,12 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 # calls grl_registry_load...plugin
 RUN_DEPENDS +=		x11/gnome/grilo-plugins
 
-LIB_DEPENDS=		x11/gnome/totem-pl-parser \
-			devel/gobject-introspection \
+LIB_DEPENDS=		devel/gobject-introspection \
 			devel/libpeas \
+			sysutils/libportal,-gtk3 \
 			x11/gnome/desktop \
 			x11/gnome/grilo \
+			x11/gnome/totem-pl-parser \
 			x11/libhandy
 
 # while the following are not "required" for totem to run, there's no
