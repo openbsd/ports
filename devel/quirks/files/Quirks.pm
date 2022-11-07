@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1443 2022/11/07 14:04:43 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1444 2022/11/07 22:07:33 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1733,6 +1733,7 @@ setup_obsolete_reason(
 	3 => 'gnome-online-miners',
 	3 => 'libzapojit',
 	3 => 'librest',
+	3 => 'seahorse-sharing',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
