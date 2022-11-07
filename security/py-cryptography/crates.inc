@@ -1,8 +1,8 @@
 MODCARGO_CRATES +=	Inflector	0.11.4	# BSD-2-Clause
 MODCARGO_CRATES +=	aliasable	0.1.3	# MIT
 MODCARGO_CRATES +=	android_system_properties	0.1.5	# MIT/Apache-2.0
-MODCARGO_CRATES +=	asn1	0.12.1	# BSD-3-Clause
-MODCARGO_CRATES +=	asn1_derive	0.12.1	# BSD-3-Clause
+MODCARGO_CRATES +=	asn1	0.12.2	# BSD-3-Clause
+MODCARGO_CRATES +=	asn1_derive	0.12.2	# BSD-3-Clause
 MODCARGO_CRATES +=	autocfg	1.1.0	# Apache-2.0 OR MIT
 MODCARGO_CRATES +=	base64	0.13.0	# MIT/Apache-2.0
 MODCARGO_CRATES +=	bitflags	1.3.2	# MIT/Apache-2.0
