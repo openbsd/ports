@@ -1,17 +1,20 @@
 COMMENT=		GNOME encryption interface
 
 GNOME_PROJECT=		seahorse
-GNOME_VERSION=		42.0
-REVISION=		0
+GNOME_VERSION=		43.0
 
 CATEGORIES=		security
+
+# override gnome MODULE
+MASTER_SITES=		https://gitlab.gnome.org/GNOME/${GNOME_PROJECT}/-/archive/${GNOME_VERSION}/
+EXTRACT_SUFX=		.tar.gz
 
 # GPLv2/GFDLv1.1
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += avahi-client avahi-common avahi-glib c gck-1 gcr-base-3
-WANTLIB += gcr-ui-3 gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
-WANTLIB += gpgme gtk-3 handy-1 intl ldap pwquality secret-1 soup-2.4
+WANTLIB += c gck-1 gcr-base-3 gcr-ui-3 gdk-3 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gobject-2.0 gpgme gtk-3 handy-1 intl ldap
+WANTLIB += pwquality secret-1 soup-3.0
 
 MODULES=		devel/dconf \
 			devel/meson \
@@ -32,8 +35,7 @@ CONFIGURE_ARGS +=	-Db_asneeded=false
 .endif
 
 LIB_DEPENDS=		databases/openldap \
-			devel/libsoup \
-			net/avahi,-glib \
+			devel/libsoup3 \
 			security/gpgme \
 			security/libpwquality \
 			x11/gnome/gcr \
@@ -42,5 +44,9 @@ LIB_DEPENDS=		databases/openldap \
 
 BUILD_DEPENDS +=	security/gnupg
 RUN_DEPENDS +=		security/gnupg
+
+# XXX ssh/libseahorse-ssh.a.p/key.c:903:2: error: non-void function
+# 'seahorse_ssh_key_parse_co' should return a value
+CFLAGS +=		-Wno-return-type
 
 .include <bsd.port.mk>

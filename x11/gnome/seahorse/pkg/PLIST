@@ -812,6 +812,7 @@ share/help/uk/seahorse/subkeys-examine.page
 share/help/uk/seahorse/subkeys-revoke.page
 share/icons/hicolor/scalable/apps/org.gnome.seahorse.Application.svg
 share/icons/hicolor/symbolic/apps/org.gnome.seahorse.Application-symbolic.svg
+share/locale/ab/LC_MESSAGES/seahorse.mo
 share/locale/ar/LC_MESSAGES/seahorse.mo
 share/locale/as/LC_MESSAGES/seahorse.mo
 share/locale/ast/LC_MESSAGES/seahorse.mo
@@ -854,6 +855,7 @@ share/locale/id/LC_MESSAGES/seahorse.mo
 share/locale/is/LC_MESSAGES/seahorse.mo
 share/locale/it/LC_MESSAGES/seahorse.mo
 share/locale/ja/LC_MESSAGES/seahorse.mo
+share/locale/ka/LC_MESSAGES/seahorse.mo
 share/locale/kk/LC_MESSAGES/seahorse.mo
 share/locale/kn/LC_MESSAGES/seahorse.mo
 share/locale/ko/LC_MESSAGES/seahorse.mo
