@@ -2,6 +2,7 @@ COMMENT =	vte-based terminal emulator of LXDE
 
 V =		0.3.2
 DISTNAME =	lxterminal-$V
+REVISION =	0
 
 CATEGORIES =	x11
 

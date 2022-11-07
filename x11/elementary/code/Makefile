@@ -1,6 +1,6 @@
 COMMENT =	code editor from elementary OS
 PKGNAME =	${DISTNAME:S/^/elementary-/}
-REVISION =	4
+REVISION =	5
 
 SHARED_LIBS +=	codecore                  0.0 # 0.0
 

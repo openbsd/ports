@@ -2,6 +2,7 @@ COMMENT=	GNOME terminal
 
 GNOME_PROJECT=	gnome-terminal
 GNOME_VERSION=	3.46.4
+REVISION=	0
 
 # override gnome MODULE
 MASTER_SITES=	https://gitlab.gnome.org/GNOME/${GNOME_PROJECT}/-/archive/${GNOME_VERSION}/

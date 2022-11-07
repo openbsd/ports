@@ -3,6 +3,7 @@ COMMENT=		GTK+ remote desktop client
 V=			1.4.23
 DISTNAME=		remmina-${V}
 WRKDIST=		${WRKDIR}/Remmina-v${V}-a03c1648a090458736434c77c0be00a7cf9cc44b
+REVISION=		0
 
 CATEGORIES=		x11 net
 

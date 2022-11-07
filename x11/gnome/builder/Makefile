@@ -5,6 +5,7 @@ COMMENT=		IDE for GNOME
 
 GNOME_PROJECT=		gnome-builder
 GNOME_VERSION=		43.2
+REVISION=		0
 
 CATEGORIES=		devel
 
@@ -45,7 +46,7 @@ LIB_DEPENDS=		devel/jsonrpc-glib \
 			devel/libpeas \
 			devel/llvm \
 			devel/template-glib \
-			devel/vte3 \
+			devel/vte3,-gtk4 \
 			editors/editorconfig-core-c \
 			sysutils/dspy \
 			sysutils/libportal,-gtk4 \

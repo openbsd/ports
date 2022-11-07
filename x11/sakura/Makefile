@@ -4,6 +4,8 @@ DISTNAME =	sakura-${V}
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	x11
 
+REVISION =	0
+
 HOMEPAGE =	http://www.pleyades.net/david/projects/sakura/
 MAINTAINER =	Victor Kukshiev <andrey0bolkonsky@gmail.com>
 

@@ -4,6 +4,7 @@ GH_ACCOUNT=		lanoxx
 GH_PROJECT=		tilda
 GH_TAGNAME=		tilda-1.5.0
 DISTNAME=		tilda-1.5.0
+REVISION=		0
 
 CATEGORIES=		x11
 

@@ -2,6 +2,7 @@ COMMENT=		user-friendly terminal emulator for GNOME
 
 GNOME_PROJECT=		gnome-console
 GNOME_VERSION=		43.0
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -28,7 +29,7 @@ BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
 BUILD_DEPENDS +=	devel/pcre2
 
 LIB_DEPENDS=		devel/libgtop2 \
-			devel/vte3 \
+			devel/vte3,-gtk4 \
 			x11/gnome/libadwaita
 
 # org.gnome.system.proxy

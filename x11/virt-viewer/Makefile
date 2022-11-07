@@ -3,6 +3,7 @@ BROKEN-hppa=	build stuck on virt-viewer-window.c
 COMMENT=	graphics viewer for KVM guest displays
 
 DISTNAME=	virt-viewer-11.0
+REVISION=	0
 
 CATEGORIES=	x11
 

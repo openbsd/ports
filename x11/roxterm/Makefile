@@ -3,6 +3,7 @@ COMMENT=		highly configurable terminal emulator
 GH_ACCOUNT=		realh
 GH_PROJECT=		roxterm
 GH_TAGNAME=		3.10.1
+REVISION=		0
 
 CATEGORIES=		x11
 
