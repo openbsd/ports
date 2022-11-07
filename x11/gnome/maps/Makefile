@@ -2,7 +2,7 @@ COMMENT=		map application for GNOME
 
 GNOME_PROJECT=		gnome-maps
 GNOME_VERSION=		43.1
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  gnome-maps                0.0 # 0.0.0
 
@@ -27,7 +27,6 @@ BUILD_DEPENDS=		geo/geoclue2 \
 			x11/libhandy
 
 RUN_DEPENDS=		geo/geoclue2 \
-			graphics/clutter/clutter-gtk \
 			x11/gnome/gjs \
 			x11/gnome/libgweather4 \
 			x11/gnome/online-accounts \
