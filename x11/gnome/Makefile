@@ -67,7 +67,6 @@
      SUBDIR += libsecret
      SUBDIR += libshumate
      SUBDIR += libxklavier
-     SUBDIR += libzapojit
      SUBDIR += mahjongg
      SUBDIR += maps
      SUBDIR += menus
