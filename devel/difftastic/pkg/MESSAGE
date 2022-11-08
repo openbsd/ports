@@ -1,0 +1,2 @@
+Difftastic may consume a lot of memory at runtime. If you experience frequent
+crashes, you may need to raise datasize-max for your login group to 8GB.

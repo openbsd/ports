@@ -1,0 +1,3 @@
+Difftastic is a structural diff tool that understands syntax. It
+supports over 30 programming languages, parses the code, and then
+compares the syntax trees.
