@@ -1,13 +1,15 @@
 @newgroup _go-ipfs:825
-@newuser _go-ipfs:825:825::IPFS Account:/var/empty:/sbin/nologin
-@rcscript ${RCDIR}/go_ipfs
+@newuser _go-ipfs:825:825::Kubo IPFS Account:/var/empty:/sbin/nologin
 @mode 750
 @owner _go-ipfs
 @group _go-ipfs
-@sample ${VARBASE}/go-ipfs/
+@sample ${VARBASE}/kubo/
 @mode
 @owner
 @group
+@rcscript ${RCDIR}/ipfs
 @bin bin/ipfs
 @bin bin/ipfswatch
 share/doc/pkg-readmes/${PKGSTEM}
+share/examples/login.conf.d/ipfs
+@sample ${SYSCONFDIR}/login.conf.d/ipfs

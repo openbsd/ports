@@ -3,6 +3,7 @@
 daemon="${TRUEPREFIX}/bin/ipfs daemon"
 daemon_user="_go-ipfs"
 daemon_timeout=60
+daemon_logger="daemon.info"
 
 . /etc/rc.d/rc.subr
 
@@ -10,7 +11,7 @@ rc_bg=YES
 rc_reload=NO
 
 rc_start() {
-	rc_exec "IPFS_PATH=\"${VARBASE}/go-ipfs\" ${daemon} ${daemon_flags}"
+	rc_exec "IPFS_PATH=\"${VARBASE}/kubo\" ${daemon} ${daemon_flags}"
 }
 
 rc_cmd $1

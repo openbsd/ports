@@ -1,15 +1,12 @@
-BROKEN =	error during build "quic-go doesn't build on Go 1.18 yet"
+COMMENT =	IPFS implementation in Go
 
-COMMENT =	global, versioned, peer-to-peer filesystem
+MODGO_MODNAME =	github.com/ipfs/kubo
+MODGO_VERSION =	v0.16.0
 
-MODGO_MODNAME =	github.com/ipfs/go-ipfs
-MODGO_VERSION =	v0.11.0
-
-DISTNAME =	go-ipfs-${MODGO_VERSION}
-REVISION =	2
+DISTNAME =	kubo-${MODGO_VERSION}
 
 CATEGORIES =	net
-HOMEPAGE =	https://ipfs.io
+HOMEPAGE =	https://ipfs.tech/
 
 # both MIT and Apache 2.0
 PERMIT_PACKAGE =	Yes

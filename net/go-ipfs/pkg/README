@@ -11,21 +11,7 @@ its database first.
 Run as root:
 
 	# su -l -s /bin/sh _go-ipfs -c \
-	    "IPFS_PATH=${VARBASE}/go-ipfs ${LOCALBASE}/bin/ipfs init"
-
-File Descriptors
-================
-
-${PKGSTEM} needs a lot of file descriptors. You will need an entry like this in
-your login.conf(5):
-
-	go_ipfs:\
-		:openfiles=2048:\
-		:tc=daemon:
-
-Don't forget to rebuild the login.conf.db file (if necessary):
-
-	# [ -f /etc/login.conf.db ] && cap_mkdb /etc/login.conf
+	    "IPFS_PATH=${VARBASE}/kubo ${LOCALBASE}/bin/ipfs init"
 
 Web Interface
 =============
