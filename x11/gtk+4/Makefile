@@ -93,8 +93,7 @@ WANTLIB-media += gstplayer-1.0 gstreamer-1.0 gstvideo-1.0 gtk-4 m
 
 TEST_IS_INTERACTIVE=	x11
 
-CONFIGURE_ARGS=		-Dvulkan=disabled \
-			-Dman-pages=true
+CONFIGURE_ARGS=		-Dman-pages=true
 
 # disable wayland for now
 CONFIGURE_ARGS +=	-Dwayland-backend=false
