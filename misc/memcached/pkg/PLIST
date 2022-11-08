@@ -1,5 +1,5 @@
 @newgroup _memcached:637
-@newuser _memcached:637:_memcached:daemon:memcache daemon:/var/empty:/sbin/nologin
+@newuser _memcached:637:_memcached::memcache daemon:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/memcached
 @bin bin/memcached
 bin/memcached-tool

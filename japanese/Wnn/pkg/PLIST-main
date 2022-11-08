@@ -1,5 +1,5 @@
 @pkgpath japanese/Wnn
-@newuser _wnn:517:bin:daemon:Wnn server:/nonexistent:/sbin/nologin
+@newuser _wnn:517:bin::Wnn server:/nonexistent:/sbin/nologin
 @bin bin/atod
 @bin bin/atof
 @bin bin/dtoa

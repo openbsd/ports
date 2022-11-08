@@ -3,6 +3,7 @@ COMMENT =		interface to various LCD displays
 V =			0.5.9
 DISTNAME =		lcdproc-$V
 CATEGORIES =		comms devel
+REVISION =		0
 
 HOMEPAGE =		http://www.lcdproc.org
 

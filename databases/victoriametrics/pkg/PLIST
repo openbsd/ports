@@ -1,5 +1,5 @@
 @newgroup _vmetrics:872
-@newuser _vmetrics:872:_vmetrics:daemon:VictoriaMetrics:${LOCALSTATEDIR}/db/vmetrics:/sbin/nologin
+@newuser _vmetrics:872:_vmetrics::VictoriaMetrics:${LOCALSTATEDIR}/db/vmetrics:/sbin/nologin
 @sample ${SYSCONFDIR}/vmetrics/
 @rcscript ${RCDIR}/vmetrics
 @bin bin/vmagent

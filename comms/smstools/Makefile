@@ -1,7 +1,7 @@
 COMMENT =	gateway to send and receive SMS through GSM mobile phones
 
 DISTNAME =	smstools3-3.1.21
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	comms
 FIX_EXTRACT_PERMISSIONS=Yes

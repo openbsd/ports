@@ -2,7 +2,7 @@
 @conflict courier-utils-*
 @pkgpath ${BASE_PKGPATH}
 @newgroup _courier:571
-@newuser _courier:571:571:daemon:Courier Mail Server:/var/empty:/sbin/nologin
+@newuser _courier:571:571::Courier Mail Server:/var/empty:/sbin/nologin
 @extraunexec rm -rf ${SYSCONFDIR}/*
 @mode 755
 @owner _courier

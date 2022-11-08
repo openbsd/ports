@@ -1,5 +1,5 @@
 @newgroup _milter-spamd:532
-@newuser _milter-spamd:532:_milter-spamd:daemon:milter-spamd Account:/nonexistent:/sbin/nologin
+@newuser _milter-spamd:532:_milter-spamd::milter-spamd Account:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/spool/milter-spamd/*
 @bin libexec/milter-spamd
 @man man/man8/milter-spamd.8

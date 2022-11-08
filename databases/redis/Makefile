@@ -3,6 +3,7 @@ COMMENT =		persistent key-value database
 DISTNAME =		redis-6.2.7
 CATEGORIES =		databases
 HOMEPAGE =		https://redis.io/
+REVISION =		0
 
 MAINTAINER =		Daniel Jakots <obsd@chown.me>
 

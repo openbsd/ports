@@ -1,5 +1,5 @@
 @newgroup _barman:723
-@newuser _barman:723:723:daemon:Barman User:/var/db/barman:/sbin/nologin
+@newuser _barman:723:723::Barman User:/var/db/barman:/sbin/nologin
 @extraunexec rm -rf /var/db/barman/*
 @extraunexec rm -rf /var/log/barman/*
 @mode 0750

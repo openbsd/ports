@@ -1,5 +1,5 @@
 @newgroup _dcc:863
-@newuser _dcc:863:_dcc:daemon:dcc user:/nonexistent:/sbin/nologin
+@newuser _dcc:863:_dcc::dcc user:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/dcc
 @mode 4555
 @owner _dcc

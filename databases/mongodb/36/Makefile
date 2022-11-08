@@ -7,7 +7,7 @@ PORTROACH =	limitw:^3\.6\.
 # dump/restore using mongodump from databases/mongo-tools (which was added
 # to ports between 7.1 and 7.2).
 V =		3.6.23
-REVISION =	1
+REVISION =	2
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += boost_filesystem-mt boost_iostreams-mt

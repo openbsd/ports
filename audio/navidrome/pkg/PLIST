@@ -1,5 +1,5 @@
 @newgroup _navidrome:866
-@newuser _navidrome:866:866:daemon:Navidrome Account:/var/empty:/sbin/nologin
+@newuser _navidrome:866:866::Navidrome Account:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/navidrome
 @mode 755
 @owner _navidrome

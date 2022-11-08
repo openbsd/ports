@@ -1,6 +1,6 @@
 @ask-update librenms-<1.60v0 pkg_add cannot handle this update directly. Cancel now, pkg_delete librenms, then install the new version.
 @newgroup _librenms:755
-@newuser _librenms:755:_librenms:daemon:librenms user:${INSTDIR}:/sbin/nologin
+@newuser _librenms:755:_librenms::librenms user:${INSTDIR}:/sbin/nologin
 @exec rm -f %D/librenms/bootstrap/cache/*
 @exec rm -rf %D/librenms/storage/framework/cache/data/*
 @exec rm -f %D/librenms/storage/framework/views/*

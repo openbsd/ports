@@ -1,5 +1,5 @@
 @newgroup _icbd:740
-@newuser _icbd:740:740:daemon:icbd:/var/icbd:/sbin/nologin
+@newuser _icbd:740:740::icbd:/var/icbd:/sbin/nologin
 @man man/man8/icbd.8
 @bin sbin/icbd
 @sample /var/icbd/

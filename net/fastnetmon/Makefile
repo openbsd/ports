@@ -3,7 +3,7 @@ COMMENT =		DDoS detector with multiple packet capture engines
 GH_ACCOUNT =		pavel-odintsov
 GH_PROJECT =		fastnetmon
 GH_TAGNAME =		v1.1.7
-REVISION =		1
+REVISION =		2
 
 HOMEPAGE =		https://fastnetmon.com/guides/
 

@@ -2,7 +2,7 @@
 @pkgpath courier/imap,-pop3,no_trashquota,imap_bugs
 @pkgpath courier/imap,-pop3,imap_bugs
 @newgroup _courier:571
-@newuser _courier:571:571:daemon:Courier Mail Server:/var/empty:/sbin/nologin
+@newuser _courier:571:571::Courier Mail Server:/var/empty:/sbin/nologin
 @extraunexec rm -rf ${SYSCONFDIR}/*
 @rcscript ${RCDIR}/courier_pop3
 @rcscript ${RCDIR}/courier_pop3_ssl

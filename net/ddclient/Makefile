@@ -3,6 +3,7 @@ COMMENT=	update client for dynamic DNS services
 GH_ACCOUNT=	ddclient
 GH_PROJECT=	ddclient
 GH_TAGNAME=	v3.9.1
+REVISION=	0
 
 CATEGORIES=	net
 

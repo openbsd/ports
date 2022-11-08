@@ -1,5 +1,5 @@
 @newgroup _gophernicus:704
-@newuser _gophernicus:704:704:daemon:Gophernicus Gopher Server:/nonexistent:/sbin/nologin
+@newuser _gophernicus:704:704::Gophernicus Gopher Server:/nonexistent:/sbin/nologin
 @bin libexec/in.gophernicus
 @man man/man8/gophernicus.8
 share/doc/gophernicus/

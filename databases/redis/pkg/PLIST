@@ -1,5 +1,5 @@
 @newgroup _redis:686
-@newuser _redis:686:_redis:daemon:redis account:${DBDIR}:/sbin/nologin
+@newuser _redis:686:_redis::redis account:${DBDIR}:/sbin/nologin
 @rcscript ${RCDIR}/redis
 @bin bin/redis-benchmark
 bin/redis-check-aof

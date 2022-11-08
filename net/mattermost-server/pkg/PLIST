@@ -1,5 +1,5 @@
 @newgroup _mattermost:804
-@newuser _mattermost:804:_mattermost:daemon:Mattermost Account:/nonexistent:/sbin/nologin
+@newuser _mattermost:804:_mattermost::Mattermost Account:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/log/mattermost/*
 @extraunexec rm -rf /var/mattermost/*
 @rcscript ${RCDIR}/mattermost

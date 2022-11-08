@@ -1,5 +1,5 @@
 @newgroup _geomyidae:754
-@newuser _geomyidae:754:_geomyidae:daemon:Geomyidae Gopher Daemon:/nonexistent:/sbin/nologin
+@newuser _geomyidae:754:_geomyidae::Geomyidae Gopher Daemon:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/geomyidae
 @bin bin/geomyidae
 @man man/man8/geomyidae.8

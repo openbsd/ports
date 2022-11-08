@@ -1,5 +1,5 @@
 @newgroup _inetsim:852
-@newuser _inetsim:852:852:daemon:Inetsim account:/nonexistent:/sbin/nologin
+@newuser _inetsim:852:852::Inetsim account:/nonexistent:/sbin/nologin
 bin/inetsim
 ${P5SITE}/INetSim/
 ${P5SITE}/INetSim.pm

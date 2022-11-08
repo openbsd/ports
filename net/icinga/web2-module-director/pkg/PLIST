@@ -1,4 +1,4 @@
-@newuser _icingadirector:864:_icingaweb2:daemon:Icinga Director user:${PREFIX}/icinga-web2:/sbin/nologin
+@newuser _icingadirector:864:_icingaweb2::Icinga Director user:${PREFIX}/icinga-web2:/sbin/nologin
 @rcscript ${RCDIR}/icingadirector
 icinga-web2/modules/director/
 icinga-web2/modules/director/.github/

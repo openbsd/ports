@@ -1,5 +1,5 @@
 @newgroup _opendmarc:835
-@newuser _opendmarc:835:_opendmarc:daemon:opendmarc Account:/nonexistent:/sbin/nologin
+@newuser _opendmarc:835:_opendmarc::opendmarc Account:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/opendmarc
 include/opendmarc/
 include/opendmarc/dmarc.h

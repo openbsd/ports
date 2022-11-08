@@ -1,7 +1,7 @@
 @conflict isc-dhcp-*
 @pkgpath net/isc-dhcp
 @newgroup _isc-dhcp:744
-@newuser _isc-dhcp:744:_isc-dhcp:daemon:ISC DHCP user:/nonexistent:/sbin/nologin
+@newuser _isc-dhcp:744:_isc-dhcp::ISC DHCP user:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/isc_dhcpd
 @rcscript ${RCDIR}/isc_dhcrelay
 @man man/man5/dhcp-eval.5

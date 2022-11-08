@@ -1,5 +1,5 @@
 @newgroup _flowd:542
-@newuser _flowd:542:542:daemon:flowd user:/var/empty:/sbin/nologin
+@newuser _flowd:542:542::flowd user:/var/empty:/sbin/nologin
 @bin bin/flowd-reader
 include/flowd/
 include/flowd/addr.h

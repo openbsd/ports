@@ -1,5 +1,6 @@
 COMMENT-main =	  LDAP client library and tools
 COMMENT-server =  LDAP directory server
+REVISION-server = 0
 
 DISTNAME =	  openldap-2.6.3
 
@@ -10,6 +11,7 @@ EXTRACT_SUFX =		.tgz
 FULLPKGNAME-main = ${DISTNAME:S/-/-client-/}${FLAVOR_EXT:S/-aci//}
 FULLPKGPATH-main = databases/openldap,-main${FLAVOR_EXT:S/-aci//:S/-/,/g}
 EPOCH =		0
+REVISION-main =    0
 
 SHARED_LIBS +=	lber	16.0
 SHARED_LIBS +=	ldap	16.0

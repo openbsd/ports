@@ -6,6 +6,8 @@ DISTNAME =		exim-${VERSION}
 PKGNAME-main =		exim-${VERSION}
 FULLPKGNAME-eximon =	exim-eximon-${VERSION}
 FULLPKGPATH-eximon =	${PKGPATH},-eximon
+REVISION-eximon =	0
+REVISION-main =		0
 
 CATEGORIES =		mail
 

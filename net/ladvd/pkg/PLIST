@@ -1,5 +1,5 @@
 @newgroup _ladvd:606
-@newuser _ladvd:606:606:daemon:Link Advertisement Daemon:/var/empty:/sbin/nologin
+@newuser _ladvd:606:606::Link Advertisement Daemon:/var/empty:/sbin/nologin
 @man man/man8/ladvd.8
 @man man/man8/ladvdc.8
 @bin sbin/ladvd

@@ -1,4 +1,4 @@
 @newgroup _iftop:615
-@newuser _iftop:615:_iftop:daemon:iftop user:/nonexistent:/sbin/nologin
+@newuser _iftop:615:_iftop::iftop user:/nonexistent:/sbin/nologin
 @man man/man8/iftop.8
 @bin sbin/iftop

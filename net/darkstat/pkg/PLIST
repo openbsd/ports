@@ -1,5 +1,5 @@
 @newgroup _darkstat:587
-@newuser _darkstat:587:_darkstat:daemon:Darkstat Network Monitor Account:/nonexistent:/sbin/nologin
+@newuser _darkstat:587:_darkstat::Darkstat Network Monitor Account:/nonexistent:/sbin/nologin
 @man man/man8/darkstat.8
 @bin sbin/darkstat
 share/doc/pkg-readmes/${PKGSTEM}

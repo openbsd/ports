@@ -3,7 +3,7 @@ COMMENT=	Music Player Daemon web client
 GH_ACCOUNT =	notandy
 GH_PROJECT =	ympd
 GH_TAGNAME =	v1.3.0
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	audio www
 

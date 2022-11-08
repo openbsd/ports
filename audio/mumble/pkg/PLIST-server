@@ -1,5 +1,5 @@
 @newgroup _murmurd:854
-@newuser _murmurd:854:_murmurd:daemon:Mumble server:/nonexistent:/sbin/nologin
+@newuser _murmurd:854:_murmurd::Mumble server:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/murmurd
 @bin bin/mumble-server
 @bin bin/murmurd

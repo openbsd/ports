@@ -1,5 +1,5 @@
 @newgroup _rocrail:685
-@newuser _rocrail:685:_rocrail:daemon:rocrail daemon user:/var/rocrail:/bin/sh
+@newuser _rocrail:685:_rocrail::rocrail daemon user:/var/rocrail:/bin/sh
 @bin bin/rocrail
 lib/rocrail/
 lib/rocrail/analyser.so

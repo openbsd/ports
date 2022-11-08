@@ -4,7 +4,7 @@
 @pkgpath databases/openldap23
 @ask-update openldap-server-<2.5 BDB/HDB backends are removed in 2.5, convert to MDB before updating if you use them. Backup your existing database with slapcat
 @newgroup _openldap:544
-@newuser _openldap:544:_openldap:daemon:OpenLDAP Account:/nonexistent:/sbin/nologin
+@newuser _openldap:544:_openldap::OpenLDAP Account:/nonexistent:/sbin/nologin
 @comment XXXextra @extraunexec rm -Rf ${LDAP_SYSCONF}/slapd.d/*
 @comment XXXextra @extraunexec rm -Rf /var/openldap-data/*
 @rcscript ${RCDIR}/slapd

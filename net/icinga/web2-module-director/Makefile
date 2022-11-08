@@ -1,4 +1,5 @@
 COMMENT=	web-based config deployment tool for Icinga 2
+REVISION=	0
 
 MODULE_NAME=	director
 MODULE_VERSION=	v1.10.2

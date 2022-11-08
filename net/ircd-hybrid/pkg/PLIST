@@ -2,7 +2,7 @@
 @conflict irc-*
 @conflict ircd-ratbox-*
 @newgroup _ircd-hybrid:616
-@newuser _ircd-hybrid:616:616:daemon:IRC Daemon:/var/empty:/sbin/nologin
+@newuser _ircd-hybrid:616:616::IRC Daemon:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/ircd_hybrid
 @owner _ircd-hybrid
 @group _ircd-hybrid

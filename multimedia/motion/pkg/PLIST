@@ -1,6 +1,6 @@
 @pkgpath multimedia/motion,bktr${FLAVOR_COMMA}
 @newgroup _motion:808
-@newuser _motion:808:_motion:daemon:motion user:/nonexistent:/sbin/nologin
+@newuser _motion:808:_motion::motion user:/nonexistent:/sbin/nologin
 @sample ${SYSCONFDIR}/motion/
 @rcscript ${RCDIR}/motion
 @bin bin/motion

@@ -3,7 +3,7 @@
 @pkgpath net/kismet,-gpsmap
 @conflict kismet-gpsmap-*
 @newgroup _kismet:547
-@newuser _kismet:547:_kismet:daemon:Kismet WLAN detector:/nonexistent:/sbin/nologin
+@newuser _kismet:547:_kismet::Kismet WLAN detector:/nonexistent:/sbin/nologin
 bin/kismet
 @mode 4550
 @group _kismet

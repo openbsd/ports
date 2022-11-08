@@ -1,5 +1,5 @@
 @newgroup _postgrey:563
-@newuser _postgrey:563:563:daemon:Postgrey Daemon:/var/empty:/sbin/nologin
+@newuser _postgrey:563:563::Postgrey Daemon:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/postgrey
 libexec/postgrey
 @man man/man1/postgrey.1

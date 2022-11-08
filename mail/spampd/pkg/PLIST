@@ -1,5 +1,5 @@
 @newgroup _spampd:746
-@newuser _spampd:746:_spampd:daemon:spampd user:/var/spampd:/sbin/nologin
+@newuser _spampd:746:_spampd::spampd user:/var/spampd:/sbin/nologin
 @comment homedir needed to store the .spamassassin bayes DB
 @extraunexec rm -rf /var/spampd/.spamassassin
 @rcscript ${RCDIR}/spampd

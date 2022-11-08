@@ -3,7 +3,7 @@ COMMENT=	milter for rspamd (also supports clamav, rate-limiting, etc)
 GH_ACCOUNT=	vstakhov
 GH_PROJECT=	rmilter
 GH_TAGNAME=	1.10.0
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	mail
 

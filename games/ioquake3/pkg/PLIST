@@ -1,5 +1,5 @@
 @newgroup _ioq3:776
-@newuser _ioq3:776:_ioq3:daemon:ioquake3 Server:/var/ioq3:/sbin/nologin
+@newuser _ioq3:776:_ioq3::ioquake3 Server:/var/ioq3:/sbin/nologin
 @rcscript ${RCDIR}/ioq3ded
 @bin bin/ioq3ded
 @bin bin/ioquake3

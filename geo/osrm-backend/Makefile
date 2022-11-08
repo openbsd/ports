@@ -7,6 +7,7 @@ COMMENT =		high-performance road network routing engine
 GH_ACCOUNT =		Project-OSRM
 GH_PROJECT =		osrm-backend
 GH_TAGNAME =		v5.22.0
+REVISION =		0
 
 CATEGORIES =		geo
 

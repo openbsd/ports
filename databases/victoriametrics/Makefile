@@ -6,6 +6,7 @@ GH_PROJECT =		VictoriaMetrics
 GH_TAGNAME =		v${V}
 
 PKGNAME =		victoriametrics-${V}
+REVISION =		0
 
 CATEGORIES =		databases
 

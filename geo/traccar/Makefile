@@ -3,6 +3,7 @@ V =		5.4
 PKGNAME =	traccar-${V}
 DISTNAME =	traccar-other-${V}
 EXTRACT_SUFX =	.zip
+REVISION =	0
 
 CATEGORIES =	geo
 HOMEPAGE =	https://www.traccar.org/

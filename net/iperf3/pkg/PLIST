@@ -1,5 +1,5 @@
 @newgroup _iperf3:847
-@newuser _iperf3:847:_iperf3:daemon:iperf3 server:/nonexistent:/sbin/nologin
+@newuser _iperf3:847:_iperf3::iperf3 server:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/iperf3
 @bin bin/iperf3
 include/iperf_api.h

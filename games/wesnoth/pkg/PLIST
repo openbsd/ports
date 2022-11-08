@@ -1,7 +1,7 @@
 @pkgpath games/wesnoth,tinygui
 @pkgpath games/wesnoth,lite
 @newgroup _wesnothd:708
-@newuser _wesnothd:708:_wesnothd:daemon:Wesnoth Server:/var/wesnothd:/sbin/nologin
+@newuser _wesnothd:708:_wesnothd::Wesnoth Server:/var/wesnothd:/sbin/nologin
 @rcscript ${RCDIR}/wesnothd
 @bin bin/campaignd
 @bin bin/wesnoth

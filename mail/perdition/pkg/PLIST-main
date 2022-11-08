@@ -1,6 +1,6 @@
 @pkgpath mail/perdition
 @newgroup _perdition:573
-@newuser _perdition:573:573:daemon:Perdition proxy:/var/empty:/sbin/nologin
+@newuser _perdition:573:573::Perdition proxy:/var/empty:/sbin/nologin
 @bin bin/makebdb
 lib/libperditiondb_bdb.a
 lib/libperditiondb_bdb.la

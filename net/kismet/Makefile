@@ -10,7 +10,7 @@ V=		2016-07-R1
 DISTNAME=	kismet-${V}
 PKGNAME=	kismet-${V:S,-,,g}
 CATEGORIES=	net security
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://www.kismetwireless.net/
 MASTER_SITES=	${HOMEPAGE}code/

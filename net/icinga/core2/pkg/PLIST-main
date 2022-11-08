@@ -1,6 +1,6 @@
 @newgroup _icinga:667
 @newgroup _icingaweb2:762
-@newuser _icinga:667:_icinga:daemon:Icinga user:/var/icinga:/sbin/nologin
+@newuser _icinga:667:_icinga::Icinga user:/var/icinga:/sbin/nologin
 @extraunexec rm -rf ${SYSCONFDIR}/icinga2/*
 @extraunexec rm -rf ${LOCALSTATEDIR}/lib/icinga2/*
 @extraunexec rm -rf ${LOCALSTATEDIR}/log/icinga2/*

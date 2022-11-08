@@ -1,5 +1,5 @@
 @newgroup _gdnsd:743
-@newuser _gdnsd:743:_gdnsd:daemon:gdns user:/var/empty:/sbin/nologin
+@newuser _gdnsd:743:_gdnsd::gdns user:/var/empty:/sbin/nologin
 @extraunexec rm -f ${SYSCONFDIR}/gdnsd/* ${SYSCONFDIR}/gdnsd/zones/*
 @sample ${SYSCONFDIR}/gdnsd/
 @sample ${SYSCONFDIR}/gdnsd/zones/

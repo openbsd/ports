@@ -1,7 +1,7 @@
 @conflict py-buildbot-*
 @pkgpath devel/py-buildbot
 @newgroup _buildbot:673
-@newuser _buildbot:673:_buildbot:daemon:BuildBot master daemon:${HOMEDIR}:/sbin/nologin
+@newuser _buildbot:673:_buildbot::BuildBot master daemon:${HOMEDIR}:/sbin/nologin
 @rcscript ${RCDIR}/buildbot
 @mode 700
 @owner _buildbot

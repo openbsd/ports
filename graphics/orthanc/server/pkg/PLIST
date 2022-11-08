@@ -1,5 +1,5 @@
 @newgroup _orthanc:791
-@newuser _orthanc:791:_orthanc:daemon:Orthanc user:/nonexistent:/sbin/nologin
+@newuser _orthanc:791:_orthanc::Orthanc user:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/orthanc
 @bin bin/OrthancRecoverCompressedFile
 include/orthanc/

@@ -1,5 +1,5 @@
 @newgroup _icecast:611
-@newuser _icecast:611:_icecast:daemon:Icecast Server:/var/empty:/sbin/nologin
+@newuser _icecast:611:_icecast::Icecast Server:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/icecast
 @bin bin/icecast
 share/doc/icecast/

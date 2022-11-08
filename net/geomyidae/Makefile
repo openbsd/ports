@@ -2,6 +2,7 @@ COMMENT =		Gopher protocol daemon
 
 DISTNAME =		geomyidae-v0.51
 PKGNAME =		${DISTNAME:S/-v/-/}
+REVISION =		0
 
 CATEGORIES =		net
 

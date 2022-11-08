@@ -1,5 +1,5 @@
 @newgroup _ympd:782
-@newuser _ympd:782:782:daemon:Ympd Daemon:/var/empty:/sbin/nologin
+@newuser _ympd:782:782::Ympd Daemon:/var/empty:/sbin/nologin
 @bin bin/ympd
 @man man/man1/ympd.1
 @rcscript ${RCDIR}/ympd

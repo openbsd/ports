@@ -7,7 +7,7 @@ PKGNAME-main=		maildrop-$V
 FULLPKGNAME-utils=	courier-utils-$V
 FULLPKGPATH-utils=	mail/maildrop,-utils
 CATEGORIES=		mail
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		http://www.courier-mta.org/maildrop/
 MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org>

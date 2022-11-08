@@ -1,5 +1,5 @@
 @newgroup _sympa:648
-@newuser _sympa:648:648:daemon:Sympa Daemon:/var/empty:/sbin/nologin
+@newuser _sympa:648:648::Sympa Daemon:/var/empty:/sbin/nologin
 @extraunexec rm -rf /var/sympa/*
 @mode 755
 @owner _sympa

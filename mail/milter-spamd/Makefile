@@ -1,7 +1,7 @@
 COMMENT=	sendmail milter plugin for SpamAssassin spamd
 
 DISTNAME=	milter-spamd-0.6
-REVISION=	5
+REVISION=	6
 CATEGORIES=	mail
 MASTER_SITES=	http://www.benzedrine.ch/
 

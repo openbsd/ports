@@ -1,6 +1,6 @@
 @pkgpath mail/p5-Mail-SpamAssassin
 @newgroup _spamdaemon:506
-@newuser _spamdaemon:506:506:daemon:SpamAssassin:${LOCALSTATEDIR}:/sbin/nologin
+@newuser _spamdaemon:506:506::SpamAssassin:${LOCALSTATEDIR}:/sbin/nologin
 @extraunexec rm -rf ${CONFDIR}/sa-update-keys
 @rcscript ${RCDIR}/spamassassin
 @owner _spamdaemon

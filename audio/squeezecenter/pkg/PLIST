@@ -1,5 +1,5 @@
 @newgroup _squeezecenter:610
-@newuser _squeezecenter:610:_squeezecenter:daemon:squeezecenter user:/nonexistent:/sbin/nologin
+@newuser _squeezecenter:610:_squeezecenter::squeezecenter user:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/db/squeezecenter/*
 @extraunexec rm -rf /var/log/squeezecenter/*
 bin/scanner.pl

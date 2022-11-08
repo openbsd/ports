@@ -4,7 +4,7 @@ V =		1.1.0
 DISTNAME =	Mail-Milter-Authentication-v${V}
 PKGNAME =	p5-Mail-Milter-Authentication-${V}
 CATEGORIES =	mail
-REVISION =	2
+REVISION =	3
 
 MAINTAINER =	Giovanni Bechis <giovanni@openbsd.org>
 

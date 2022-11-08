@@ -1,5 +1,5 @@
 @newgroup _rmilter:783
-@newuser _rmilter:783:_rmilter:daemon:rmilter user:/nonexistent:/sbin/nologin
+@newuser _rmilter:783:_rmilter::rmilter user:/nonexistent:/sbin/nologin
 @bin sbin/rmilter
 share/examples/rmilter/
 share/examples/rmilter/rmilter-grey.conf

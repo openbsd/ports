@@ -19,10 +19,13 @@ PKGSPEC-server=	dovecot-=${V_DOVECOT}v0
 PKGNAME-ldap=	dovecot-ldap-${V_DOVECOT}
 PKGNAME-mysql=	dovecot-mysql-${V_DOVECOT}
 PKGNAME-postgresql= dovecot-postgresql-${V_DOVECOT}
-REVISION-server= 0
+REVISION-server= 1
 CATEGORIES=	mail
 MASTER_SITES=	${HOMEPAGE}releases/${V_MAJOR}/
 DPB_PROPERTIES=	parallel
+REVISION-ldap=	0
+REVISION-mysql=	0
+REVISION-postgresql=0
 
 SHARED_LIBS=	dovecot-compression 1.1 \
 		dovecot-dsync	2.0 \

@@ -1,6 +1,6 @@
 @conflict gnokii-*
 @newgroup _smsd:590
-@newuser _smsd:590:_smsd:daemon:smsd user:/nonexistent:/sbin/nologin
+@newuser _smsd:590:_smsd::smsd user:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/spool/sms/*
 @extraunexec rm -rf /var/log/smsd/*
 @rcscript ${RCDIR}/smsd

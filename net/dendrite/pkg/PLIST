@@ -1,5 +1,5 @@
 @newgroup _dendrite:860
-@newuser _dendrite:860:860:daemon:Matrix.org Daemon:/var/dendrite:/sbin/nologin
+@newuser _dendrite:860:860::Matrix.org Daemon:/var/dendrite:/sbin/nologin
 @rcscript ${RCDIR}/dendrite
 @comment bin/client-api-proxy
 @bin bin/dendrite-create-account

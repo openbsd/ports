@@ -1,6 +1,6 @@
 @pkgpath misc/plan,lesstif
 @newgroup _netplan:549
-@newuser _netplan:549:549:daemon:Plan:/nonexistent:/sbin/nologin
+@newuser _netplan:549:549::Plan:/nonexistent:/sbin/nologin
 @bin bin/plan
 @bin bin/pland
 @man man/man1/plan.1

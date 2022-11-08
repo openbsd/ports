@@ -4,6 +4,7 @@ COMMENT=	auto-discovering network management/monitoring system
 GH_ACCOUNT=	librenms
 GH_PROJECT=	librenms
 GH_TAGNAME=	22.10.0
+REVISION=	0
 
 DISTFILES=	${GH_DISTFILE} \
 		${PKGNAME}-vendor.tar.xz:0

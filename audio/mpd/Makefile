@@ -5,6 +5,7 @@ DISTNAME =		mpd-${VER}
 EXTRACT_SUFX =		.tar.xz
 CATEGORIES =		audio
 HOMEPAGE =		https://www.musicpd.org/
+REVISION =		0
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

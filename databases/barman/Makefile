@@ -7,6 +7,7 @@ GH_PROJECT =	barman
 GH_TAGNAME =	release/${MODPY_EGG_VERSION}
 DISTNAME =	barman-${MODPY_EGG_VERSION}
 WRKDIST =	${WRKDIR}/barman-release-${MODPY_EGG_VERSION}
+REVISION =	0
 
 CATEGORIES =	databases
 HOMEPAGE =	https://www.pgbarman.org/

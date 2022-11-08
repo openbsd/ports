@@ -4,6 +4,7 @@ DISTNAME =	haproxy-2.6.6
 CATEGORIES =	net www
 HOMEPAGE =	https://www.haproxy.org/
 MAINTAINER =	Daniel Jakots <obsd@chown.me>
+REVISION =	0
 
 # GPLv2
 PERMIT_PACKAGE =		Yes

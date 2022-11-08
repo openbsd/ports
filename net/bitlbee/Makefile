@@ -7,7 +7,7 @@ V=			3.6
 DISTNAME=		bitlbee-$V
 PKGSPEC=		bitlbee-=$V
 CATEGORIES=		net
-REVISION=		1
+REVISION=		2
 
 HOMEPAGE=		https://bitlbee.org/
 

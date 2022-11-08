@@ -1,5 +1,5 @@
 @newgroup _i2pd:838
-@newuser _i2pd:838:838:daemon:i2pd account:${LOCALSTATEDIR}/lib/i2pd:/sbin/nologin
+@newuser _i2pd:838:838::i2pd account:${LOCALSTATEDIR}/lib/i2pd:/sbin/nologin
 @rcscript ${RCDIR}/i2pd
 @bin bin/i2pd
 include/i2pd/

@@ -1,5 +1,5 @@
 @newgroup _dnsmasq:631
-@newuser _dnsmasq:631:_dnsmasq:daemon:dnsmasq Account:/nonexistent:/sbin/nologin
+@newuser _dnsmasq:631:_dnsmasq::dnsmasq Account:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/dnsmasq
 @man man/man8/dnsmasq.8
 @bin sbin/dnsmasq

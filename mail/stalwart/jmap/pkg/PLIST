@@ -1,5 +1,5 @@
 @newgroup _stalwart-jmap:564
-@newuser _stalwart-jmap:564:564:daemon:JMAP Daemon:/var/empty:/sbin/nologin
+@newuser _stalwart-jmap:564:564::JMAP Daemon:/var/empty:/sbin/nologin
 @sample /var/stalwart/
 @mode 750
 @owner _stalwart-jmap

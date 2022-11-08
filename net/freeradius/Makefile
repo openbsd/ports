@@ -21,6 +21,15 @@ PKGNAME-mysql=	freeradius-mysql-$V
 PKGNAME-pgsql=	freeradius-pgsql-$V
 PKGNAME-python=	freeradius-python-$V
 PKGNAME-python3= freeradius-python3-$V
+REVISION-freetds=0
+REVISION-iodbc=	0
+REVISION-ldap=	0
+REVISION-main=	0
+REVISION-memcached=0
+REVISION-mysql=	0
+REVISION-pgsql=	0
+REVISION-python=0
+REVISION-python3=0
 
 CATEGORIES=	net security
 

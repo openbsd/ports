@@ -1,5 +1,5 @@
 @newgroup _milter-auth:770
-@newuser _milter-auth:770:_milter-auth:daemon:Milter Authentication Daemon:/var/empty:/sbin/nologin
+@newuser _milter-auth:770:_milter-auth::Milter Authentication Daemon:/var/empty:/sbin/nologin
 bin/authentication_milter
 bin/authentication_milter_client
 ${P5SITE}/Mail/Milter/

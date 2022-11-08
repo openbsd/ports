@@ -5,6 +5,7 @@ DISTNAME=		Mail-SpamAssassin-${VER}
 PKGNAME=		p5-${DISTNAME}
 RULESNAME=		Mail-SpamAssassin-rules-${VER}.r1888502.tgz
 CATEGORIES=		mail perl5
+REVISION=		0
 
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} ${RULESNAME}
 EXTRACT_SUFX=		.tar.bz2

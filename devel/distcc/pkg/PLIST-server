@@ -1,5 +1,5 @@
 @newgroup _distcc:764
-@newuser _distcc:764:_distcc:daemon:distcc user:/nonexistent:/sbin/nologin
+@newuser _distcc:764:_distcc::distcc user:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/distccd
 @bin bin/distccd
 @man man/man1/distccd.1

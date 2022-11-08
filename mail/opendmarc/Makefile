@@ -5,6 +5,7 @@ GH_ACCOUNT=	trusteddomainproject
 GH_PROJECT=	OpenDMARC
 GH_TAGNAME=	rel-opendmarc-${V:C/\./-/g}
 DISTNAME=	opendmarc-$V
+REVISION=	0
 
 SHARED_LIBS +=	opendmarc             1.0
 

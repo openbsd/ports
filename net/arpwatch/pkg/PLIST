@@ -1,5 +1,5 @@
 @newgroup _arpwatch:820
-@newuser _arpwatch:820:_arpwatch:daemon:arpwatch user:/nonexistent:/sbin/nologin
+@newuser _arpwatch:820:_arpwatch::arpwatch user:/nonexistent:/sbin/nologin
 @man man/man8/arpsnmp.8
 @man man/man8/arpwatch.8
 @bin sbin/arpsnmp

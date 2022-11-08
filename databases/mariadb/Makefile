@@ -5,9 +5,10 @@ COMMENT-tests=	multithreaded SQL database (regression test suite/benchmark)
 VERSION=	10.9.3
 DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
-REVISION-server= 1
-REVISION-tests=	1
+REVISION-server= 2
+REVISION-tests=	2
 EPOCH=		1
+REVISION-main=	0
 
 CATEGORIES=	databases
 MASTER_SITES=	https://downloads.mariadb.com/MariaDB/${DISTNAME}/source/ \

@@ -1,5 +1,5 @@
 @newgroup _inadyn:681
-@newuser _inadyn:681:_inadyn:daemon:inadyn daemon:/nonexistent:/sbin/nologin
+@newuser _inadyn:681:_inadyn::inadyn daemon:/nonexistent:/sbin/nologin
 @man man/man5/inadyn.conf.5
 @man man/man8/inadyn.8
 @bin sbin/inadyn

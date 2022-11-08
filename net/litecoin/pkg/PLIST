@@ -1,6 +1,6 @@
 @conflict bitcoin-*
 @newgroup _litecoind:832
-@newuser _litecoind:832:832:daemon:Litecoin Account:/var/empty:/sbin/nologin
+@newuser _litecoind:832:832::Litecoin Account:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/litecoind
 @mode 750
 @owner _litecoind

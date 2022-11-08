@@ -1,6 +1,6 @@
 @pkgpath net/bitlbee,no_ssl
 @newgroup _bitlbee:509
-@newuser _bitlbee:509:_bitlbee:daemon:Bitlbee Account:/nonexistent:/sbin/nologin
+@newuser _bitlbee:509:_bitlbee::Bitlbee Account:/nonexistent:/sbin/nologin
 @extraunexec rm -rf ${DB_DIR}/*
 @rcscript ${RCDIR}/bitlbee
 include/bitlbee/

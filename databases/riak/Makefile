@@ -6,7 +6,7 @@ COMMENT=			distributed data store
 DISTNAME=			riak-2.2.5
 CATEGORIES=			databases
 HOMEPAGE=			http://basho.com/
-REVISION=			2
+REVISION=			3
 
 MAINTAINER=			Jonathan Matthew <jmatthew@openbsd.org>
 

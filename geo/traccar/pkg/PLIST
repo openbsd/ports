@@ -1,5 +1,5 @@
 @newgroup _traccar:824
-@newuser _traccar:824:_traccar:daemon:Traccar user:/var/empty:/sbin/nologin
+@newuser _traccar:824:_traccar::Traccar user:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/traccar
 @extraunexec rm -r /var/db/traccar/* /var/log/traccar/*
 @mode 750

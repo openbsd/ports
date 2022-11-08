@@ -1,5 +1,5 @@
 @newgroup _yquake2:779
-@newuser _yquake2:779:_yquake2:daemon:Yamagi Quake II Server:/var/yquake2:/sbin/nologin
+@newuser _yquake2:779:_yquake2::Yamagi Quake II Server:/var/yquake2:/sbin/nologin
 @rcscript ${RCDIR}/q2ded
 bin/quake2
 lib/yquake2/

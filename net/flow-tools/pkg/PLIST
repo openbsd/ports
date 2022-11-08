@@ -1,5 +1,5 @@
 @newgroup _netflow:575
-@newuser _netflow:575:575:daemon:flow-tools user:/var/empty:/sbin/nologin
+@newuser _netflow:575:575::flow-tools user:/var/empty:/sbin/nologin
 @bin bin/flow-capture
 @bin bin/flow-cat
 @bin bin/flow-dscan

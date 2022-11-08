@@ -1,7 +1,7 @@
 COMMENT=	X11/Motif schedule planner with calendar
 
 DISTNAME=	plan-1.10.1
-REVISION=	4
+REVISION=	5
 CATEGORIES=	misc
 
 HOMEPAGE=	https://www.bitrot.de/plan.html

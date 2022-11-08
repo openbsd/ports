@@ -2,7 +2,7 @@ COMMENT=	caching IMAP proxy to be used with webmail clients
 
 DISTNAME=	squirrelmail-20210316_0200-SVN.imap_proxy
 PKGNAME=	imapproxy-1.2.8pre2021.02
-REVISION=	4
+REVISION=	5
 WRKDIST=	${WRKDIR}/squirrelmail.imap_proxy
 
 CATEGORIES=	mail

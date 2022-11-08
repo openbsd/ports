@@ -1,7 +1,7 @@
 COMMENT =		small memory footprint dynamic dns updater
 
 DISTNAME =		inadyn-1.98.0
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		net
 

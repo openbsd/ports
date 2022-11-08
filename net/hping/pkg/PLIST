@@ -1,4 +1,4 @@
 @newgroup _hping:784
-@newuser _hping:784:_hping:default:hping privdrop user:/nonexistent:/sbin/nologin
+@newuser _hping:784:_hping::hping privdrop user:/nonexistent:/sbin/nologin
 @man man/man8/hping.8
 @bin sbin/hping

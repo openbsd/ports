@@ -5,8 +5,8 @@ V=		5.2.19
 DISTNAME=	puppetdb-$V
 PKGNAME-plugin= puppetdb-termini-$V
 CATEGORIES=	databases
-REVISION-main=	1
-REVISION-plugin=3
+REVISION-main=	2
+REVISION-plugin=4
 
 HOMEPAGE=	https://puppet.com/docs/puppetdb/
 

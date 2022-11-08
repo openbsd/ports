@@ -2,7 +2,7 @@
 @conflict postfix-*
 @newgroup _postfix:507
 @newgroup _postdrop:508
-@newuser _postfix:507:507:daemon:Postfix Daemon:/var/empty:/sbin/nologin
+@newuser _postfix:507:507::Postfix Daemon:/var/empty:/sbin/nologin
 @unexec-delete ${PREFIX}/sbin/postfix-disable
 @unexec-delete rm -f /etc/mailer.conf.postfix
 @extra ${SYSCONFDIR}/postfix/

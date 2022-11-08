@@ -2,6 +2,7 @@ COMMENT =	multicast router utilizing IGMP forwarding
 
 V =		0.4
 DISTNAME =	igmpproxy-${V}
+REVISION =	0
 
 CATEGORIES =	net
 

@@ -4,6 +4,7 @@ DISTNAME=	deadwood-3.2.14
 PKGNAME=	${DISTNAME:S/^/maradns-/}
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	net
+REVISION=	0
 
 HOMEPAGE=	https://maradns.samiam.org/deadwood
 

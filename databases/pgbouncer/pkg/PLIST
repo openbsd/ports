@@ -1,5 +1,5 @@
 @newgroup _pgbouncer:653
-@newuser _pgbouncer:653:653:daemon:pgbouncer:/nonexistent:/sbin/nologin
+@newuser _pgbouncer:653:653::pgbouncer:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/log/pgbouncer/*
 @rcscript ${RCDIR}/pgbouncer
 @bin bin/pgbouncer

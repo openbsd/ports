@@ -1,5 +1,5 @@
 @newgroup _dicod:831
-@newuser _dicod:831:831:daemon:GNU dictionary server:/var/empty:/sbin/nologin
+@newuser _dicod:831:831::GNU dictionary server:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/dicod
 @bin bin/dico
 @bin bin/dicod

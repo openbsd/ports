@@ -1,6 +1,6 @@
 @comment riak uses su(1): homedir must exist and user must have a valid shell
 @newgroup _riak:702
-@newuser _riak:702:_riak:daemon:Riak daemon:/var/riak:/bin/sh
+@newuser _riak:702:_riak::Riak daemon:/var/riak:/bin/sh
 lib/riak/
 lib/riak/erts-${ERTS_V}/
 lib/riak/erts-${ERTS_V}/bin/

@@ -1,6 +1,6 @@
 @pkgpath mail/amavisd-new
 @newgroup _vscan:530
-@newuser _vscan:530:_vscan:daemon:Amavisd-new Daemon:/var/empty:/sbin/nologin
+@newuser _vscan:530:_vscan::Amavisd-new Daemon:/var/empty:/sbin/nologin
 @extraunexec rm -fr /var/amavisd/*
 @extraunexec rm -fr /var/virusmails/*
 @rcscript ${RCDIR}/amavisd

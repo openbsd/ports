@@ -1,7 +1,7 @@
 @conflict zarafa-*
 @pkgpath mail/zarafa/zarafa,-main
 @newgroup _kopano:793
-@newuser _kopano:793:_kopano:daemon:Kopano Account:/var/empty:/sbin/nologin
+@newuser _kopano:793:_kopano::Kopano Account:/var/empty:/sbin/nologin
 @extraunexec rm -rf /var/db/kopano/{0,1,2,3,4,5,6,7,8,9}
 @extraunexec rm -rf /var/db/kopano/attachments
 @extraunexec rm -rf /var/db/kopano/dagent/plugins/*

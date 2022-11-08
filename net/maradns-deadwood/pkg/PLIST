@@ -1,5 +1,5 @@
 @newgroup _deadwood:695
-@newuser _deadwood:695:_deadwood:daemon:maradns-deadwood user:/nonexistent:/sbin/nologin
+@newuser _deadwood:695:_deadwood::maradns-deadwood user:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/deadwood
 @man man/man1/Deadwood.1
 @bin sbin/Deadwood

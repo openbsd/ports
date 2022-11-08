@@ -5,7 +5,7 @@ CATEGORIES =		net
 DISTNAME =		ladvd-1.1.1
 MASTER_SITES =		https://github.com/sspans/ladvd/files/1065794/
 HOMEPAGE =		http://blinkenlights.nl/software/ladvd/
-REVISION =		1
+REVISION =		2
 
 MAINTAINER =		Paul de Weerd <weerd@weirdnet.nl>
 

@@ -1,5 +1,5 @@
 @newgroup _vaultwarden:879
-@newuser _vaultwarden:879:879:default:Vaultwarden Daemon:/nonexistent:/sbin/nologin
+@newuser _vaultwarden:879:879::Vaultwarden Daemon:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/vaultwarden
 @bin bin/vaultwarden
 share/doc/vaultwarden/

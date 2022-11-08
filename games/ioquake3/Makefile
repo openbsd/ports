@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS= amd64 i386 macppc
 COMMENT=	clone of the original Quake III Arena
 
 DISTNAME=	ioquake3-2020.09.29
-REVISION=	0
+REVISION=	1
 
 GH_ACCOUNT=	ioquake
 GH_PROJECT=	ioq3

@@ -2,7 +2,7 @@ COMMENT =		mail server storing messages in a database
 
 DISTNAME =		archiveopteryx-3.2.0
 CATEGORIES =		mail databases
-REVISION =		5
+REVISION =		6
 
 HOMEPAGE =		http://www.archiveopteryx.org/
 

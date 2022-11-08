@@ -1,6 +1,6 @@
 @pkgpath net/maradns/stable
 @newgroup _maradns:537
-@newuser _maradns:537:_maradns:daemon:MaraDNS Account:${SYSCONFDIR}/maradns:/sbin/nologin
+@newuser _maradns:537:_maradns::MaraDNS Account:${SYSCONFDIR}/maradns:/sbin/nologin
 @extraunexec rm -f ${SYSCONFDIR}/maradns/*
 @bin bin/askmara
 @bin bin/duende

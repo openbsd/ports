@@ -3,7 +3,7 @@
 @pkgpath devel/subversion,-main,gnome_keyring
 @pkgpath devel/subversion
 @newgroup _svnserve:777
-@newuser _svnserve:777:_svnserve:daemon:SVN Daemon:/nonexistent:/sbin/nologin
+@newuser _svnserve:777:_svnserve::SVN Daemon:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/svnserve
 @comment @bin bin/diff
 @comment @bin bin/diff3

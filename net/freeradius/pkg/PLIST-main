@@ -3,7 +3,7 @@
 @pkgpath net/freeradius3,-main
 @ask-update freeradius-<3 Major update. You should move away existing FreeRADIUS configuration (${SYSCONFIDR}/raddb) and create new, see https://github.com/FreeRADIUS/freeradius-server/blob/v3.0.x/raddb/README.rst
 @newgroup _freeradius:559
-@newuser _freeradius:559:559:daemon:Freeradius:/nonexistent:/sbin/nologin
+@newuser _freeradius:559:559::Freeradius:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/freeradius
 @bin bin/dhcpclient
 @bin bin/map_unit

@@ -2,7 +2,7 @@ COMMENT =	daemon to control digital model railroad systems
 
 DISTNAME =	srcpd-2.1.5
 CATEGORIES =	misc net
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://srcpd.sourceforge.net/
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=srcpd/}

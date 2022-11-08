@@ -1,5 +1,5 @@
 @newgroup _lcdproc:687
-@newuser _lcdproc:687:687:daemon:LCDproc Daemon:/var/lcdproc:/sbin/nologin
+@newuser _lcdproc:687:687::LCDproc Daemon:/var/lcdproc:/sbin/nologin
 @rcscript ${RCDIR}/lcdd
 @rcscript ${RCDIR}/lcdexec
 @rcscript ${RCDIR}/lcdproc

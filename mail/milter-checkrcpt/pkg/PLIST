@@ -1,5 +1,5 @@
 @newgroup _milter-checkrcpt:679
-@newuser _milter-checkrcpt:679:_milter-checkrcpt:daemon:milter-checkrcpt Account:/nonexistent:/sbin/nologin
+@newuser _milter-checkrcpt:679:_milter-checkrcpt::milter-checkrcpt Account:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/spool/milter-checkrcpt/*
 @bin libexec/milter-checkrcpt
 @man man/man8/milter-checkrcpt.8

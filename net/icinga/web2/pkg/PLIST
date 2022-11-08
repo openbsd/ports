@@ -1,5 +1,5 @@
 @newgroup _icingaweb2:762
-@newuser _icingaweb2:762:_icingaweb2:daemon:Icinga-web2 user:${PREFIX}/icinga-web2:/sbin/nologin
+@newuser _icingaweb2:762:_icingaweb2::Icinga-web2 user:${PREFIX}/icinga-web2:/sbin/nologin
 @extraunexec rm -rf %D/etc/icingaweb2/*
 @extraunexec rm -rf %D/icinga-web2/tmp/*
 conf/modules.sample/

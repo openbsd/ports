@@ -2,6 +2,7 @@ COMMENT=	modern gopher server
 
 V=		3.1.1
 DISTNAME=	gophernicus-${V}
+REVISION=	0
 
 CATEGORIES=	net
 

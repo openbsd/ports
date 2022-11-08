@@ -1,7 +1,7 @@
 COMMENT=	automagic packet filter configurator for FTP
 
 DISTNAME=	ftpsesame-0.95
-REVISION=	7
+REVISION=	8
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.sentia.org/projects/ftpsesame/

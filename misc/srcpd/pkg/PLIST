@@ -1,5 +1,5 @@
 @newgroup _srcpd:660
-@newuser _srcpd:660:_srcpd:daemon:srcpd user:/nonexistent:/sbin/nologin
+@newuser _srcpd:660:_srcpd::srcpd user:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/srcpd
 man/de/
 man/de/man5/

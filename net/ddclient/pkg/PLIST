@@ -1,5 +1,5 @@
 @newgroup _ddclient:750
-@newuser _ddclient:750:_ddclient:daemon:DynDNS Client:/nonexistent:/sbin/nologin
+@newuser _ddclient:750:_ddclient::DynDNS Client:/nonexistent:/sbin/nologin
 sbin/ddclient
 share/doc/ddclient/
 share/doc/ddclient/README.cisco

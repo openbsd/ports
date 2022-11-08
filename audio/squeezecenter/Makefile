@@ -3,7 +3,7 @@ COMMENT =	streaming audio server for Squeezebox network music players
 V =		7.3.3
 PKGNAME =	squeezecenter-${V}
 DISTNAME =	squeezecenter-${V}-noCPAN
-REVISION =	8
+REVISION =	9
 CATEGORIES =	audio net
 
 HOMEPAGE =	http://wiki.slimdevices.com/index.php/SqueezeCenter

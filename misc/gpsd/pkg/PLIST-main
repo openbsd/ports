@@ -1,6 +1,6 @@
 @conflict gpsd-python-<=2.38p3
 @pkgpath misc/gpsd,-python
-@newuser _gpsd:551:dialer:daemon:GPS server:/nonexistent:/sbin/nologin
+@newuser _gpsd:551:dialer::GPS server:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/gpsd
 @bin bin/cgps
 bin/gegps

@@ -1,5 +1,5 @@
 @newgroup _conserver:736
-@newuser _conserver:736:_conserver:daemon:Serial console server:/nonexistent:/sbin/nologin
+@newuser _conserver:736:_conserver::Serial console server:/nonexistent:/sbin/nologin
 @extra /var/log/conserver
 @extraunexec rm -rf /var/consoles/*
 @rcscript ${RCDIR}/conserver

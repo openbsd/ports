@@ -8,8 +8,8 @@ PKGNAME-main =		rocrail-${VERSION}.${REV}
 PKGNAME-gui =		rocview-${VERSION}.${REV}
 CATEGORIES =		misc x11
 
-REVISION-main =		8
-REVISION-gui =		8
+REVISION-main =		9
+REVISION-gui =		9
 
 HOMEPAGE =		http://www.rocrail.net/
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>

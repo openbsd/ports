@@ -1,5 +1,5 @@
 @newgroup _i2p:861
-@newuser _i2p:861:861:daemon:i2p account:${DB_DIR}:/sbin/nologin
+@newuser _i2p:861:861::i2p account:${DB_DIR}:/sbin/nologin
 @rcscript ${RCDIR}/i2p
 bin/eepget
 bin/i2prouter

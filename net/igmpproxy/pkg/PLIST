@@ -1,5 +1,5 @@
 @newgroup _igmpproxy:868
-@newuser _igmpproxy:868:868:daemon:IGMP multicast routing daemon:/var/empty:/sbin/nologin
+@newuser _igmpproxy:868:868::IGMP multicast routing daemon:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/igmpproxy
 @man man/man5/igmpproxy.conf.5
 @man man/man8/igmpproxy.8

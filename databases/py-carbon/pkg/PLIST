@@ -1,7 +1,7 @@
 @conflict py-carbon-*
 @pkgpath databases/py-carbon
 @newgroup _graphite:706
-@newuser _graphite:706:_graphite:daemon:Graphite and Carbon user:/nonexistent:/sbin/nologin
+@newuser _graphite:706:_graphite::Graphite and Carbon user:/nonexistent:/sbin/nologin
 bin/carbon-aggregator-cache.py
 bin/carbon-aggregator.py
 bin/carbon-cache.py

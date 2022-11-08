@@ -1,7 +1,7 @@
 @conflict courier-authlib-*
 @pkgpath mail/courier-authlib
 @newgroup _courier:571
-@newuser _courier:571:571:daemon:Courier Mail Server:/var/empty:/sbin/nologin
+@newuser _courier:571:571::Courier Mail Server:/var/empty:/sbin/nologin
 @sample ${SYSCONFDIR}/courier/
 @rcscript ${RCDIR}/courier_authdaemond
 @bin bin/courierauthconfig

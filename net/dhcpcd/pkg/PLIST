@@ -1,5 +1,5 @@
 @newgroup _dhcpcd:846
-@newuser _dhcpcd:846:_dhcpcd:daemon:dhcpcd user:/var/empty:/sbin/nologin
+@newuser _dhcpcd:846:_dhcpcd::dhcpcd user:/var/empty:/sbin/nologin
 @owner root
 @group wheel
 @sample /var/dhcpcd/

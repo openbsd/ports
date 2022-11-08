@@ -1,5 +1,5 @@
 @newgroup _opendkim:823
-@newuser _opendkim:823:_opendkim:daemon:opendkim Account:/nonexistent:/sbin/nologin
+@newuser _opendkim:823:_opendkim::opendkim Account:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/opendkim
 include/opendkim/
 include/opendkim/dkim.h

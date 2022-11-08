@@ -1,5 +1,5 @@
 @newgroup _sqlgrey:647
-@newuser _sqlgrey:647:_sqlgrey:daemon:SQLgrey Account:/nonexistent:/sbin/nologin
+@newuser _sqlgrey:647:_sqlgrey::SQLgrey Account:/nonexistent:/sbin/nologin
 bin/sqlgrey-logstats
 libdata/perl5/site_perl/DBIx/
 libdata/perl5/site_perl/DBIx/DBCluster.pm

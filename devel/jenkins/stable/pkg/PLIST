@@ -2,7 +2,7 @@
 @conflict hudson-*
 @pkgpath devel/jenkins
 @newgroup _jenkins:668
-@newuser _jenkins:668:_jenkins:daemon:Jenkins Account:${HOMEDIR}:/sbin/nologin
+@newuser _jenkins:668:_jenkins::Jenkins Account:${HOMEDIR}:/sbin/nologin
 @extraunexec rm -rf ${HOMEDIR}/*
 @owner _jenkins
 @group _jenkins

@@ -1,5 +1,5 @@
 @newgroup _vilter:538
-@newuser _vilter:538:538:daemon:smtp-vilter:/nonexistent:/sbin/nologin
+@newuser _vilter:538:538::smtp-vilter:/nonexistent:/sbin/nologin
 @extraunexec rm -fr /var/smtp-vilter/*
 lib/smtp-vilter/
 lib/smtp-vilter/vilter-attachment.so

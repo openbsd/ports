@@ -1,5 +1,5 @@
 @newgroup _fastnetmon:814
-@newuser _fastnetmon:814:_fastnetmon:daemon:FastNetMon User:/nonexistent:/sbin/nologin
+@newuser _fastnetmon:814:_fastnetmon::FastNetMon User:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/log/fastnetmon/*
 @extraunexec rm -rf /var/log/fastnetmon_attacks/*
 @rcscript ${RCDIR}/fastnetmon

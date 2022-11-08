@@ -3,7 +3,7 @@ COMMENT=	dkim signer integration to the OpenSMTPD daemon
 V=		0.5
 FILTER_NAME =	dkimsign
 DISTNAME =	filter-dkimsign-${V}
-REVISION =	0
+REVISION =	1
 
 FLAVORS =	ed25519
 FLAVOR	?=

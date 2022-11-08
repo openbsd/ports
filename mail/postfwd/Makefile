@@ -2,6 +2,7 @@ COMMENT =	Postfix policy server
 
 DISTNAME =	postfwd-2.03
 WRKDIST =	${WRKDIR}/postfwd
+REVISION =	0
 
 CATEGORIES =	mail
 

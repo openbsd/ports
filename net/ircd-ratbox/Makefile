@@ -4,7 +4,7 @@ DISTNAME =	ircd-ratbox-3.0.10
 CATEGORIES =	net
 MASTER_SITES =	${HOMEPAGE}download/
 EXTRACT_SUFX =	.tar.bz2
-REVISION =	3
+REVISION =	4
 
 HOMEPAGE =	http://www.ratbox.org/
 

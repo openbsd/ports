@@ -2,6 +2,7 @@ COMMENT =		suite for simulating common internet services
 
 DISTNAME =		inetsim-1.3.2
 CATEGORIES =		net
+REVISION =		0
 
 HOMEPAGE =		https://www.inetsim.org/
 

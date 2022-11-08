@@ -1,6 +1,6 @@
 @conflict py-buildslave-*
 @newgroup _buildslave:674
-@newuser _buildslave:674:_buildslave:daemon:BuildBot worker daemon:${HOMEDIR}:/sbin/nologin
+@newuser _buildslave:674:_buildslave::BuildBot worker daemon:${HOMEDIR}:/sbin/nologin
 @rcscript ${RCDIR}/buildbot_worker
 @mode 700
 @owner _buildslave

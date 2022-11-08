@@ -1,7 +1,7 @@
 COMMENT =		display bandwidth usage on an interface
 
 DISTNAME =		iftop-1.0pre4
-REVISION =		3
+REVISION =		4
 CATEGORIES =		net
 
 HOMEPAGE =		http://www.ex-parrot.com/~pdw/iftop/

@@ -1,6 +1,6 @@
 @conflict avenger-*
 @newgroup _aox:661
-@newuser _aox:661:661:daemon:Archiveopteryx Daemon:/var/empty:/sbin/nologin
+@newuser _aox:661:661::Archiveopteryx Daemon:/var/empty:/sbin/nologin
 @extraunexec rm -rf /var/archiveopteryx/*
 @bin bin/aox
 @bin bin/aoxdeliver

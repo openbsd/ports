@@ -1,5 +1,5 @@
 @newgroup _solid-pop3d:635
-@newuser _solid-pop3d:635:_solid-pop3d:daemon:solid-pop3d:/nonexistent:/sbin/nologin
+@newuser _solid-pop3d:635:_solid-pop3d::solid-pop3d:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/spool/spop3d/*
 @man man/man5/dot-spop3d.5
 @man man/man5/spop3d.conf.5

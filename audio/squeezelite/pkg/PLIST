@@ -1,5 +1,5 @@
 @newgroup _squeezelite:767
-@newuser _squeezelite:767:_squeezelite:daemon:squeezelite user:/var/squeezelite:/sbin/nologin
+@newuser _squeezelite:767:_squeezelite::squeezelite user:/var/squeezelite:/sbin/nologin
 @mode 750
 @owner root
 @group _squeezelite

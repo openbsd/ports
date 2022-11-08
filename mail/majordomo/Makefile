@@ -2,7 +2,7 @@ COMMENT=	mailing list manager
 
 V=		1.94.5
 DISTNAME=	majordomo-$V
-REVISION =	6
+REVISION =	7
 CATEGORIES=     mail
 
 HOMEPAGE=	http://www.greatcircle.com/majordomo/

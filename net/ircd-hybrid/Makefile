@@ -4,6 +4,7 @@ DISTNAME =	ircd-hybrid-8.2.43
 CATEGORIES =	net
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=ircd-hybrid/}
 EXTRACT_SUFX =	.tgz
+REVISION =	0
 
 HOMEPAGE =	http://ircd-hybrid.com/
 

@@ -1,6 +1,6 @@
 @option is-branch
 @newgroup _puppetdb:719
-@newuser _puppetdb:719:719:daemon:PuppetDB user:/nonexistent:/sbin/nologin
+@newuser _puppetdb:719:719::PuppetDB user:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/puppetdb
 bin/puppetdb
 share/doc/pkg-readmes/${PKGSTEM}

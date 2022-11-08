@@ -6,7 +6,7 @@ GH_PROJECT =		pop3d
 GH_TAGNAME =		v${VERSION}
 DISTNAME =		${GH_PROJECT}-${VERSION}
 CATEGORIES =		mail
-REVISION =		2
+REVISION =		3
 
 MAINTAINER =		James Turner <james@calminferno.net>
 

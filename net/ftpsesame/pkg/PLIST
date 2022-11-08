@@ -1,4 +1,4 @@
 @newgroup _ftpsesame:789
-@newuser _ftpsesame:789:_ftpsesame:daemon:ftpsesame user:/nonexistent:/sbin/nologin
+@newuser _ftpsesame:789:_ftpsesame::ftpsesame user:/nonexistent:/sbin/nologin
 @man man/man8/ftpsesame.8
 @bin sbin/ftpsesame

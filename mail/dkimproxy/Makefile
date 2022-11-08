@@ -1,7 +1,7 @@
 COMMENT =		SMTP proxy to verify or add DKIM signatures
 
 DISTNAME =		dkimproxy-1.4.1
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		mail
 

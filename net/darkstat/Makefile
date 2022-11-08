@@ -6,7 +6,7 @@ DISTNAME=		darkstat-3.0.719
 CATEGORIES=		net www
 MASTER_SITES=		${HOMEPAGE}
 EXTRACT_SUFX=		.tar.bz2
-REVISION=		2
+REVISION=		3
 
 HOMEPAGE=		https://unix4lyfe.org/darkstat/
 

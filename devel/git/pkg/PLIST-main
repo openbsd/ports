@@ -1,7 +1,7 @@
 @conflict git-x11-<2.33.1p0
 @pkgpath devel/git
 @newgroup _gitdaemon:778
-@newuser _gitdaemon:778:_gitdaemon:daemon:Git Daemon:/nonexistent:/sbin/nologin
+@newuser _gitdaemon:778:_gitdaemon::Git Daemon:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/gitdaemon
 @bin bin/git
 bin/git-cvsserver

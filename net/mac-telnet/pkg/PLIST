@@ -1,5 +1,5 @@
 @newgroup _mactelnet:812
-@newuser _mactelnet:812:_mactelnet:daemon:mactelnet user:/nonexistent:/sbin/nologin
+@newuser _mactelnet:812:_mactelnet::mactelnet user:/nonexistent:/sbin/nologin
 @bin bin/macping
 @bin bin/mactelnet
 @bin bin/mndp

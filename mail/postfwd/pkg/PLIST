@@ -1,5 +1,5 @@
 @newgroup _postfwd:715
-@newuser _postfwd:715:715:daemon:Postfwd Daemon:/var/empty:/sbin/nologin
+@newuser _postfwd:715:715::Postfwd Daemon:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/postfwd2
 @rcscript ${RCDIR}/postfwd3
 bin/postfwd-client.pl

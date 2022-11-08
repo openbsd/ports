@@ -3,6 +3,7 @@ COMMENT=		SMTP/LMTP proxy for Spamassassin
 GH_ACCOUNT=		mpaperno
 GH_PROJECT=		spampd
 GH_TAGNAME=		2.61
+REVISION=		0
 
 CATEGORIES=		mail
 

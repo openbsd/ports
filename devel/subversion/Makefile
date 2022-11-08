@@ -7,7 +7,7 @@ COMMENT-gnome-keyring=	GNOME keyring support for subversion
 
 VERSION=		1.14.2
 REVISION-ruby=		0
-REVISION-gnome-keyring=	0
+REVISION-gnome-keyring=	1
 DISTNAME=		subversion-${VERSION:S/rc/-rc/}
 PKGNAME-main=		subversion-${VERSION}
 PKGNAME-perl=		p5-SVN-${VERSION}

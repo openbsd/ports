@@ -1,7 +1,7 @@
 COMMENT=		geographically-aware, authoritative-only DNS server
 
 V=			2.4.3
-REVISION=		1
+REVISION=		2
 DISTNAME=		gdnsd-$V
 EXTRACT_SUFX=		.tar.xz
 

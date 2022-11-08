@@ -1,7 +1,7 @@
 COMMENT =		GitHub webhooks runner daemon
 
 V =			0.4.6
-REVISION =		1
+REVISION =		2
 DISTNAME =		snare-$V
 
 CATEGORIES =		devel

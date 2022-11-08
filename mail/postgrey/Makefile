@@ -1,7 +1,7 @@
 COMMENT=	postfix greylist daemon
 
 DISTNAME=	postgrey-1.37
-REVISION=	1
+REVISION=	2
 CATEGORIES=	mail
 
 HOMEPAGE=	https://postgrey.schweikert.ch/

@@ -9,10 +9,10 @@ PKGNAME-main=	perdition-${DISTVER:S/-//}
 PKGNAME-ldap=	perdition-ldap-${DISTVER:S/-//}
 PKGNAME-mysql=	perdition-mysql-${DISTVER:S/-//}
 PKGNAME-pgsql=	perdition-pgsql-${DISTVER:S/-//}
-REVISION-ldap=	4
-REVISION-main=	2
-REVISION-mysql=	3
-REVISION-pgsql=	3
+REVISION-ldap=	5
+REVISION-main=	3
+REVISION-mysql=	4
+REVISION-pgsql=	4
 
 CATEGORIES=	mail
 

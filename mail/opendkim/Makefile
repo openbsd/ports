@@ -1,7 +1,7 @@
 COMMENT=	library and milter for DKIM (Domain Keys Identified Mail)
 
 DISTNAME=	opendkim-2.10.3
-REVISION=	2
+REVISION=	3
 
 SHARED_LIBS +=	opendkim             0.0      # 10.3
 

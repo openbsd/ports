@@ -1,7 +1,7 @@
 @conflict irc-*
 @conflict ircd-hybrid-*
 @newgroup _ircd-ratbox:619
-@newuser _ircd-ratbox:619:619:daemon:IRC Daemon:/var/empty:/sbin/nologin
+@newuser _ircd-ratbox:619:619::IRC Daemon:/var/empty:/sbin/nologin
 @bin bin/bantool
 @bin bin/ircd
 @bin bin/ratbox-mkpasswd

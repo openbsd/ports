@@ -7,6 +7,7 @@ V =		7.1.2
 # and running "go mod tidy" + "go mod vendor"
 DISTNAME =	mattermost-server-vendored-${V}
 PKGNAME =	mattermost-server-${V}
+REVISION =	0
 
 MASTER_SITES =	https://distfiles.tristero.se/
 MASTER_SITES0 =	https://releases.mattermost.com/${V}/

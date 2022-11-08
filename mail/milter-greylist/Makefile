@@ -1,7 +1,7 @@
 COMMENT=	greylist milter
 
 DISTNAME=	milter-greylist-4.2.7
-REVISION=	5
+REVISION=	6
 CATEGORIES=	mail
 HOMEPAGE=	http://hcpnet.free.fr/milter-greylist/
 

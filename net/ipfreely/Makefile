@@ -1,7 +1,7 @@
 COMMENT=		simple, secure TCP proxy daemon
 
 DISTNAME=		ipfreely-20050327
-REVISION=		3
+REVISION=		4
 CATEGORIES=		net
 
 HOMEPAGE=		http://ipfreely.sourceforge.net/

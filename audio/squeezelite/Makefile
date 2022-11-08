@@ -5,7 +5,7 @@ GH_ACCOUNT=	ralph-irving
 GH_PROJECT=	squeezelite
 GH_COMMIT=	1cff80e5330501b1f587a474f06db08fd53d9521
 DISTNAME=	squeezelite-$V
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	audio
 

@@ -1,5 +1,5 @@
 @newgroup _haproxy:${HAPROXYGID}
-@newuser _haproxy:${HAPROXYUID}:_haproxy:daemon:HAProxy Daemon:/var/haproxy:/sbin/nologin
+@newuser _haproxy:${HAPROXYUID}:_haproxy::HAProxy Daemon:/var/haproxy:/sbin/nologin
 @rcscript ${RCDIR}/haproxy
 @man man/man1/haproxy.1
 @bin sbin/haproxy

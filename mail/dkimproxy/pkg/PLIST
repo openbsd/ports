@@ -1,5 +1,5 @@
 @newgroup _dkimproxy:721
-@newuser _dkimproxy:721:721:daemon:dkimproxy user:/nonexistent:/sbin/nologin
+@newuser _dkimproxy:721:721::dkimproxy user:/nonexistent:/sbin/nologin
 bin/dkim_responder.pl
 bin/dkimproxy.in
 bin/dkimproxy.out

@@ -1,5 +1,5 @@
 @newgroup _argus:603
-@newuser _argus:603:_argus:daemon:Argus Daemon:/nonexistent:/sbin/nologin
+@newuser _argus:603:_argus::Argus Daemon:/nonexistent:/sbin/nologin
 bin/argus-extip
 bin/argusbug
 @man man/man5/argus.conf.5

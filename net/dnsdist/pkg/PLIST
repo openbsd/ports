@@ -1,5 +1,5 @@
 @newgroup _dnsdist:788
-@newuser _dnsdist:788:_dnsdist:daemon:dnsdist DNS load balancer:/nonexistent:/sbin/nologin
+@newuser _dnsdist:788:_dnsdist::dnsdist DNS load balancer:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/dnsdist
 @bin bin/dnsdist
 @man man/man1/dnsdist.1

@@ -2,7 +2,7 @@
 @pkgpath net/dnscrypt-proxy,-main
 @pkgpath net/dnscrypt-proxy,-utils
 @newgroup _dnscrypt-proxy:688
-@newuser _dnscrypt-proxy:688:_dnscrypt-proxy:daemon:dnscrypt-proxy user:/var/empty:/sbin/nologin
+@newuser _dnscrypt-proxy:688:_dnscrypt-proxy::dnscrypt-proxy user:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/dnscrypt_proxy
 @extraunexec rm -rf /var/dnscrypt-proxy/*
 @bin bin/dnscrypt-proxy

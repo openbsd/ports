@@ -1,5 +1,5 @@
 @newgroup _pgpool:690
-@newuser _pgpool:690:_pgpool:daemon:pgpool daemon:/nonexistent:/sbin/nologin
+@newuser _pgpool:690:_pgpool::pgpool daemon:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/pgpool
 @bin bin/pcp_attach_node
 @bin bin/pcp_detach_node

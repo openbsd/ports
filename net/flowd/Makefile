@@ -1,7 +1,7 @@
 COMMENT=	NetFlow collector
 
 DISTNAME=	flowd-0.9.1.20140828
-REVISION=	0
+REVISION=	1
 
 GH_ACCOUNT=	djmdjm
 GH_PROJECT=	flowd

@@ -1,5 +1,5 @@
 @newgroup _influx:797
-@newuser _influx:797:_influx:daemon:InfluxDB user:${VARBASE}/influxdb:/sbin/nologin
+@newuser _influx:797:_influx::InfluxDB user:${VARBASE}/influxdb:/sbin/nologin
 @rcscript ${RCDIR}/influxdb
 @extraunexec rm -rf ${VARBASE}/influxdb/
 @bin bin/influx

@@ -3,7 +3,7 @@ COMMENT=	simple and performant DNS server
 VERSION=	1.3.07.15
 DISTNAME=	maradns-${VERSION}
 CATEGORIES=	net
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE=	http://www.maradns.org/
 

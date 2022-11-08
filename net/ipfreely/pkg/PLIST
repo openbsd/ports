@@ -1,4 +1,4 @@
 @newgroup _ipfreely:558
-@newuser _ipfreely:558:558:daemon:IP Freely Daemon:/var/empty:/sbin/nologin
+@newuser _ipfreely:558:558::IP Freely Daemon:/var/empty:/sbin/nologin
 @man man/man8/ipfreely.8
 @bin sbin/ipfreely

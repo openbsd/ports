@@ -1,5 +1,5 @@
 @newgroup _majordomo:520
-@newuser _majordomo:520:_majordomo:daemon:Majordomo:/root:/sbin/nologin
+@newuser _majordomo:520:_majordomo::Majordomo:/root:/sbin/nologin
 @extraunexec rm -rf /var/spool/majordomo/*
 @mode 755
 @owner _majordomo

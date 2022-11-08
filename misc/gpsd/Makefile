@@ -7,6 +7,9 @@ DISTNAME=		gpsd-${VERSION}
 PKGNAME-main=		gpsd-${VERSION}
 PKGNAME-x11=		gpsd-x11-${VERSION}
 PKGNAME-php=		gpsd-php-${VERSION}
+REVISION-main=		0
+REVISION-php=		0
+REVISION-x11=		0
 
 SHARED_LIBS +=		gps		22.2
 SHARED_LIBS +=		gpsdpacket	0.1

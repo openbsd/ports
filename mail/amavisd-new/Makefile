@@ -6,6 +6,8 @@ DISTNAME=		amavis-v${V}
 PKGNAME-main=		amavisd-new-${V}
 PKGNAME-utils=		amavisd-new-utils-${V}
 CATEGORIES=		mail security
+REVISION-main=		0
+REVISION-utils=		0
 
 HOMEPAGE=		http://www.amavis.org/
 MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org>

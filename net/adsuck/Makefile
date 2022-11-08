@@ -1,7 +1,7 @@
 COMMENT=		DNS relay for ad blocking
 
 V=			2.5.0
-REVISION=		8
+REVISION=		9
 GH_TAGNAME=		ADSUCK_${V:S/./_/g}
 GH_ACCOUNT=		conformal
 GH_PROJECT=		adsuck

@@ -6,6 +6,7 @@ V=		8.00
 PKGNAME=	${N}-${V}
 DISTNAME=	quake2-${V}
 CATEGORIES=	games
+REVISION=	0
 
 HOMEPAGE=	https://www.yamagi.org/quake2/
 MAINTAINER=	Adam Wolk <awolk@openbsd.org>

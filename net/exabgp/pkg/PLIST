@@ -1,5 +1,5 @@
 @newgroup _exabgp:839
-@newuser _exabgp:839:_exabgp:daemon:exabgp user:/nonexistent:/sbin/nologin
+@newuser _exabgp:839:_exabgp::exabgp user:/nonexistent:/sbin/nologin
 @extraunexec rm /var/log/exabgp/exabgp.log*
 @rcscript ${RCDIR}/exabgp
 bin/exabgp

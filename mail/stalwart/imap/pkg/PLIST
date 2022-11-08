@@ -1,5 +1,5 @@
 @newgroup _stalwart-imap:565
-@newuser _stalwart-imap:565:565:daemon:JMAP-to-IMAP proxy Daemon:/var/empty:/sbin/nologin
+@newuser _stalwart-imap:565:565::JMAP-to-IMAP proxy Daemon:/var/empty:/sbin/nologin
 @sample /var/stalwart/
 @mode 750
 @owner _stalwart-imap

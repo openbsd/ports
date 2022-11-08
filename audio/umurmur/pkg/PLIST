@@ -1,5 +1,5 @@
 @newgroup _umurmur:671
-@newuser _umurmur:671:_umurmur:daemon:uMurmur Account:/nonexistent:/sbin/nologin
+@newuser _umurmur:671:_umurmur::uMurmur Account:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/umurmurd
 @man man/man5/umurmur.conf.5
 @man man/man8/umurmurd.8

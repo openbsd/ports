@@ -2,7 +2,7 @@ COMMENT=	sendmail milter to scan messages for viruses and spam
 
 DISTNAME=	smtp-vilter-1.3.6
 EPOCH=		0
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	mail
 

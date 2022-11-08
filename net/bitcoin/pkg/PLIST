@@ -1,5 +1,5 @@
 @newgroup _bitcoind:813
-@newuser _bitcoind:813:813:daemon:Bitcoind Account:/var/empty:/sbin/nologin
+@newuser _bitcoind:813:813::Bitcoind Account:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/bitcoind
 @mode 750
 @owner _bitcoind

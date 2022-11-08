@@ -1,6 +1,6 @@
 @pkgpath net/isc-bind,ratelimit
 @newgroup _bind:741
-@newuser _bind:741:_bind:daemon:bind user:/nonexistent:/sbin/nologin
+@newuser _bind:741:_bind::bind user:/nonexistent:/sbin/nologin
 @extra ${SYSCONFDIR}/rndc.key
 @extra ${LOCALSTATEDIR}/named/etc/rndc.key
 @rcscript ${RCDIR}/isc_named

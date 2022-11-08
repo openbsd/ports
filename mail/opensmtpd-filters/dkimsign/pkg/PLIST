@@ -1,5 +1,5 @@
 @newgroup _dkimsign:843
-@newuser _dkimsign:843:843:daemon:OpenSMTP DKIM signer:/nonexistent:/sbin/nologin
+@newuser _dkimsign:843:843::OpenSMTP DKIM signer:/nonexistent:/sbin/nologin
 libexec/smtpd/
 @bin libexec/smtpd/filter-dkimsign
 @man man/man8/filter-dkimsign.8
