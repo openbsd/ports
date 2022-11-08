@@ -157,6 +157,7 @@
      SUBDIR += fossil
      SUBDIR += fossil,static
      SUBDIR += fox
+     SUBDIR += fpm
      SUBDIR += frama-c
      SUBDIR += fribidi
      SUBDIR += gas
