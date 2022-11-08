@@ -268,6 +268,7 @@
      SUBDIR += py-sane,python3
      SUBDIR += py-seaborn,python3
      SUBDIR += py-termcolor,python3
+     SUBDIR += py-tifffile,python3
      SUBDIR += py2-Pillow
      SUBDIR += py2-cairo
      SUBDIR += pycha,python3
