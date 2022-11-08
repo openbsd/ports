@@ -1,17 +1,9 @@
 COMMENT =		Python module to communicate with USB FIDO devices
 
-# using github for now, it has support for OpenBSD; should be ok to move back
-# to pypi for the next release.
-GH_ACCOUNT =		Yubico
-GH_PROJECT =		python-fido2
-GH_COMMIT =		46a0b649b9aa9af79566e6e3961021e070d98b1c
+MODPY_EGG_VERSION =	1.1.0
 
-MODPY_EGG_VERSION =	0.8.2.dev0
-
-#DISTNAME =		fido2-${MODPY_EGG_VERSION}
-#PKGNAME =		py-${DISTNAME}
-DISTNAME =		py-fido2-0.8.2pre20200313
-REVISION =		1
+DISTNAME =		fido2-${MODPY_EGG_VERSION}
+PKGNAME =		py-${DISTNAME}
 
 CATEGORIES =		security
 
@@ -24,11 +16,13 @@ MODULES =		lang/python
 FLAVOR =		python3
 FLAVORS =		python3
 
-#MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PI =		Yes
+MODPY_PYBUILD =		poetry-core
+
+# often hangs
+MODPY_PYTEST_ARGS =	--ignore tests/test_hid.py
 
 RUN_DEPENDS =		security/py-cryptography${MODPY_FLAVOR} \
-			devel/py-six${MODPY_FLAVOR} \
 			security/py-pyscard${MODPY_FLAVOR}
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
