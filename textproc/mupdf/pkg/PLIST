@@ -41,6 +41,8 @@ include/mupdf/fitz/pool.h
 include/mupdf/fitz/separation.h
 include/mupdf/fitz/shade.h
 include/mupdf/fitz/store.h
+include/mupdf/fitz/story-writer.h
+include/mupdf/fitz/story.h
 include/mupdf/fitz/stream.h
 include/mupdf/fitz/string-util.h
 include/mupdf/fitz/structured-text.h
@@ -113,8 +115,11 @@ share/doc/mupdf/style.css
 share/doc/mupdf/thirdparty.html
 share/doc/mupdf/viewers.html
 share/examples/mupdf/
+share/examples/mupdf/SnarkFront.svg
 share/examples/mupdf/example.c
+share/examples/mupdf/huntingofthesnark.png
 share/examples/mupdf/multi-threaded.c
+share/examples/mupdf/storytest.c
 share/pixmaps/
 share/pixmaps/mupdf.xpm
 @tag update-desktop-database
