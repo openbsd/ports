@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1444 2022/11/07 22:07:33 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1445 2022/11/08 14:22:42 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -751,6 +751,7 @@ my $stem_extensions = {
 	'spidermonkey91' => 'spidermonkey102',
 	'dleyna-core' => 'dleyna',
 	'gnome-todo' => 'endeavour',
+	'go-ipfs' => 'kubo',
 };
 
 my $obsolete_reason = {};
