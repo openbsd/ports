@@ -1,0 +1,19 @@
+XXX workaround issue from sys/netinet/tcp_timer.h r1.19 / tcp_var.h r1.161
+
+TCP_TIME is defined in tcp_var.h as a macro under #ifdef _KERNEL, but used
+used without #ifdef in tcp_timer.h in the definitions of TCPTV_MIN,
+TCPTV_REXMTMAX, TCPTV_SRTTDFLT
+
+Index: agent/mibgroup/mibII/tcp.c
+--- agent/mibgroup/mibII/tcp.c.orig
++++ agent/mibgroup/mibII/tcp.c
+@@ -41,7 +41,9 @@
+ #include <netinet/tcp_timer.h>
+ #endif
+ #ifdef HAVE_NETINET_TCP_VAR_H
++#define _KERNEL
+ #include <netinet/tcp_var.h>
++#undef _KERNEL
+ #endif
+ #ifdef HAVE_NETINET_TCP_FSM_H
+ #include <netinet/tcp_fsm.h>
