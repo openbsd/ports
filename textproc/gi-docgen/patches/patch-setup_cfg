@@ -1,0 +1,12 @@
+Index: setup.cfg
+--- setup.cfg.orig
++++ setup.cfg
+@@ -65,7 +65,7 @@ console_scripts =
+ 
+ [options.data_files]
+ share/pkgconfig = gi-docgen.pc
+-share/man/man1 = docs/gi-docgen.1
++man/man1 = docs/gi-docgen.1
+ 
+ [options.package_data]
+ gidocgen =
