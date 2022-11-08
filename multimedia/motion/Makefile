@@ -1,6 +1,5 @@
-V=		4.4.0
+V=		4.5.0
 COMMENT=	motion detection software for video
-REVISION=	2
 
 GH_ACCOUNT=	Motion-Project
 GH_PROJECT=	motion
@@ -46,7 +45,7 @@ CONFIGURE_ARGS=		--without-optimizecpu \
 
 .if ${FLAVOR:L:Mmysql}
 LIB_DEPENDS+=		databases/mariadb
-WANTLIB+=		crypto m mariadb ssl z
+WANTLIB+=		mariadb
 .else
 CONFIGURE_ARGS+=	--without-mysql --without-mariadb
 .endif
