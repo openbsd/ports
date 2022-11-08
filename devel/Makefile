@@ -1478,6 +1478,7 @@
      SUBDIR += py-plugnplay,python3
      SUBDIR += py-ply,python3
      SUBDIR += py-poetry-core,python3
+     SUBDIR += py-portalocker,python3
      SUBDIR += py-pretend,python3
      SUBDIR += py-process-tests,python3
      SUBDIR += py-progress,python3
@@ -1539,6 +1540,7 @@
      SUBDIR += py-suds
      SUBDIR += py-sure,python3
      SUBDIR += py-tabulate
+     SUBDIR += py-thrift,python3
      SUBDIR += py-typeguard,python3
      SUBDIR += py-tabulate,python3
      SUBDIR += py-tempora,python3
