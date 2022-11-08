@@ -1,3 +1,5 @@
+# ring-v0.16.20 does not support those archs
+NOT_FOR_ARCHS =		powerpc64 riscv64 sparc64
 
 GH_ACCOUNT =		stalwartlabs
 CATEGORIES =		mail
