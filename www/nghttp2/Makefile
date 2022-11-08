@@ -21,20 +21,22 @@ CONFIGURE_STYLE=	gnu
 # - examples have conflicts (libevent, libevent2, libev)
 # - hpack-tools require a C++11 compiler (array)
 # Both of these pull in additional libraries; deliberately trying to keep
-# dependencies light for this port (dep path cmake->curl->nghttp2, don't
-# want to restrict arch).
+# dependencies light for this port (dep path nghttp2->curl->cmake)
 CONFIGURE_ARGS+=	--disable-examples \
 			--disable-hpack-tools \
 			--disable-python-bindings \
+			--without-libnghttp3 \
+			--without-libngtcp2 \
 			--without-libxml2
 
 # Tests don't do much unless cunit is present at configure time.
-# As above, don't pull this in, to avoid restricting arch.
+# As above, don't pull this in, to keep dependencies light (and reduce
+# risk of circular deps)
 pre-test:
 	@if ! [ -f ${LOCALBASE}/lib/libcunit.a ]; then echo; \
 	    echo "====================================================="; \
 	    echo "To run tests, install the cunit package and re-build."; \
-	    echo "Dependency is not forced to avoid restricting arches."; \
+	    echo "Dependency is not forced to keep dependencies light."; \
 	    echo "====================================================="; \
 	    echo; exit 1; \
 	fi
