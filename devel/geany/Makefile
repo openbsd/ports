@@ -1,7 +1,7 @@
 COMMENT=	small and lightweight IDE
 
 DISTNAME =	geany-1.36
-REVISION =	2
+REVISION =	3
 SHARED_LIBS +=  geany                     0.0 # 0.0
 
 CATEGORIES=	devel

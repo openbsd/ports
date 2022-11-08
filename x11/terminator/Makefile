@@ -2,7 +2,7 @@ COMMENT =		GTK3 terminal emulator with split-window and tabs support
 
 VERSION =		1.92
 DISTNAME =		terminator-${VERSION}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		x11
 
