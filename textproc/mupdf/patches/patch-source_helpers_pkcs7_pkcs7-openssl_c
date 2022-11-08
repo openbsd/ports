@@ -1,0 +1,25 @@
+- avoid (harmless) compiler warning about incompatible function pointer types
+- add default_paths to STORE for checking signatures (aka /etc/ssl/cert.pem)
+
+Index: source/helpers/pkcs7/pkcs7-openssl.c
+--- source/helpers/pkcs7/pkcs7-openssl.c.orig
++++ source/helpers/pkcs7/pkcs7-openssl.c
+@@ -203,7 +203,7 @@ static int stream_free(BIO *b)
+ 	return 1;
+ }
+ 
+-static long stream_callback_ctrl(BIO *b, int cmd, bio_info_cb *fp)
++static long stream_callback_ctrl(BIO *b, int cmd, BIO_info_cb *fp)
+ {
+ 	return 1;
+ }
+@@ -513,6 +513,9 @@ check_certificate(fz_context *ctx, pdf_pkcs7_verifier 
+ 			X509_STORE_add_cert(st, c);
+ 		}
+ 	}
++
++	/* Add default paths */
++	X509_STORE_set_default_paths(st);
+ 
+ 	res = pk7_verify_cert(st, pk7sig);
+ 
