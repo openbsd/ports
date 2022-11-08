@@ -1,11 +1,11 @@
 remove -O3 and -march=native optimizations
 fix man directory
-disable wayland
+disable wayland, libcrypto
 
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -314,7 +314,6 @@ def init_env(
+@@ -355,7 +355,6 @@ def init_env(
          df += ' -Og'
          float_conversion = '-Wfloat-conversion'
      fortify_source = '' if sanitize and is_macos else '-D_FORTIFY_SOURCE=2'
@@ -13,7 +13,7 @@ Index: setup.py
      sanitize_args = get_sanitize_args(cc, ccver) if sanitize else set()
      cppflags_ = os.environ.get(
          'OVERRIDE_CPPFLAGS', '-D{}DEBUG'.format('' if debug else 'N'),
-@@ -328,12 +327,11 @@ def init_env(
+@@ -369,12 +368,11 @@ def init_env(
      werror = '' if ignore_compiler_warnings else '-pedantic-errors -Werror'
      std = '' if is_openbsd else '-std=c11'
      sanitize_flag = ' '.join(sanitize_args)
@@ -28,7 +28,7 @@ Index: setup.py
          )
      )
      cflags = shlex.split(cflags_) + shlex.split(
-@@ -341,7 +339,7 @@ def init_env(
+@@ -382,7 +380,7 @@ def init_env(
      )
      ldflags_ = os.environ.get(
          'OVERRIDE_LDFLAGS',
@@ -37,7 +37,25 @@ Index: setup.py
      )
      ldflags = shlex.split(ldflags_)
      ldflags.append('-shared')
-@@ -732,7 +730,7 @@ def find_c_files() -> Tuple[List[str], List[str]]:
+@@ -447,7 +445,7 @@ def kitty_env() -> Env:
+     at_least_version('harfbuzz', 1, 5)
+     cflags.extend(pkg_config('libpng', '--cflags-only-I'))
+     cflags.extend(pkg_config('lcms2', '--cflags-only-I'))
+-    cflags.extend(libcrypto_cflags)
++    #cflags.extend(libcrypto_cflags)
+     if is_macos:
+         platform_libs = [
+             '-framework', 'Carbon', '-framework', 'CoreText', '-framework', 'CoreGraphics',
+@@ -472,7 +470,7 @@ def kitty_env() -> Env:
+     gl_libs = ['-framework', 'OpenGL'] if is_macos else pkg_config('gl', '--libs')
+     libpng = pkg_config('libpng', '--libs')
+     lcms2 = pkg_config('lcms2', '--libs')
+-    ans.ldpaths += pylib + platform_libs + gl_libs + libpng + lcms2 + libcrypto_ldflags
++    ans.ldpaths += pylib + platform_libs + gl_libs + libpng + lcms2 #+ libcrypto_ldflags
+     if is_macos:
+         ans.ldpaths.extend('-framework Cocoa'.split())
+     elif not is_openbsd:
+@@ -761,7 +759,7 @@ def find_c_files() -> Tuple[List[str], List[str]]:
  
  
  def compile_glfw(compilation_database: CompilationDatabase) -> None:
@@ -46,18 +64,18 @@ Index: setup.py
      for module in modules.split():
          try:
              genv = glfw.init_env(env, pkg_config, pkg_version, at_least_version, test_compile, module)
-@@ -842,8 +840,6 @@ def build_launcher(args: Options, launcher_dir: str = 
+@@ -892,8 +890,6 @@ def build_launcher(args: Options, launcher_dir: str = 
              cflags.append('-g')
          if args.profile:
              libs.append('-lprofiler')
 -    else:
--        cflags.append('-O3')
+-        cflags.append('-g3' if args.debug else '-O3')
      if bundle_type.endswith('-freeze'):
          cppflags.append('-DFOR_BUNDLE')
          cppflags.append(f'-DPYVER="{sysconfig.get_python_version()}"')
-@@ -885,7 +881,7 @@ def build_launcher(args: Options, launcher_dir: str = 
+@@ -940,7 +936,7 @@ def build_launcher(args: Options, launcher_dir: str = 
  
- 
+ # Packaging {{{
  def copy_man_pages(ddir: str) -> None:
 -    mandir = os.path.join(ddir, 'share', 'man')
 +    mandir = os.path.join(ddir, 'man')
