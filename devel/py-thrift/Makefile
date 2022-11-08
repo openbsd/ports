@@ -7,6 +7,8 @@ PKGNAME =	py-${DISTNAME}
 
 CATEGORIES =	devel
 
+MAINTAINER =	Moritz Buhl <mbuhl@openbsd.org>
+
 HOMEPAGE =	https://thrift.apache.org/
 
 # Apache 2.0
