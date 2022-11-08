@@ -1,5 +1,5 @@
 @newgroup _tinc:759
-@newuser _tinc:759:_tinc:daemon:tinc user:/var/empty:/sbin/nologin
+@newuser _tinc:759:_tinc::tinc user:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/tincd
 @info info/tinc.info
 @man man/man5/tinc.conf.5

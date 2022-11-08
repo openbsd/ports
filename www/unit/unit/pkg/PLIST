@@ -1,6 +1,6 @@
 @pkgpath www/unit,-main
 @newgroup _unit:870
-@newuser _unit:870:870:daemon:NGINX Unit Daemon:/nonexistent:/sbin/nologin
+@newuser _unit:870:870::NGINX Unit Daemon:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/unit
 lib/unit/
 lib/unit/modules/

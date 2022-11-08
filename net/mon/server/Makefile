@@ -1,7 +1,7 @@
 COMMENT =	service monitoring daemon
 
 DISTNAME = 	mon-${V}
-REVISION =	11
+REVISION =	12
 
 WANTLIB = 	c
 

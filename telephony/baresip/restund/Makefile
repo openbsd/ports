@@ -5,6 +5,7 @@ GH_PROJECT =		restund
 GH_COMMIT =		c0ad4cc81fe534f9fbd9cf738a645a6e50120c69
 V =			0.4.12.0.20170302
 DISTNAME =		restund-${V}
+REVISION =		0
 
 WANTLIB =		c crypto mariadb pthread re ssl z
 LIB_DEPENDS =		telephony/baresip/re \

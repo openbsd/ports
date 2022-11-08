@@ -3,6 +3,7 @@ COMMENT=	TCP port scan detection tool
 DISTNAME=	scanlogd-2.2.8
 CATEGORIES=	security
 FIX_EXTRACT_PERMISSIONS=Yes
+REVISION=	0
 
 HOMEPAGE=	https://www.openwall.com/scanlogd/
 

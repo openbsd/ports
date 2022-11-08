@@ -1,7 +1,7 @@
 COMMENT =		highly flexible sniffer/NIDS
 
 DISTNAME =		snort-2.9.20
-REVISION =		0
+REVISION =		1
 RULESV =		29200
 SUBST_VARS =		RULESV APPID_COMMENT
 

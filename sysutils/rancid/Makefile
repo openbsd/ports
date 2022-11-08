@@ -3,6 +3,7 @@ COMMENT =	Really Awesome New Cisco confIg Differ
 DISTNAME =	rancid-3.13
 EPOCH = 	0
 CATEGORIES =	sysutils
+REVISION =	0
 
 HOMEPAGE =	https://www.shrubbery.net/rancid/
 

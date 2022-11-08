@@ -1,5 +1,5 @@
 @newgroup _prometheus:799
-@newuser _prometheus:799:_prometheus:daemon:prometheus:/nonexistent:/sbin/nologin
+@newuser _prometheus:799:_prometheus::prometheus:/nonexistent:/sbin/nologin
 @sample ${SYSCONFDIR}/prometheus/
 @rcscript ${RCDIR}/prometheus
 @bin bin/prometheus

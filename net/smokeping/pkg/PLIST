@@ -1,5 +1,5 @@
 @newgroup _smokeping:562
-@newuser _smokeping:562:562:daemon:Smokeping account:/var/empty:/sbin/nologin
+@newuser _smokeping:562:562::Smokeping account:/var/empty:/sbin/nologin
 bin/smokeinfo
 bin/smokeping
 bin/smokeping_cgi

@@ -1,5 +1,5 @@
 @newgroup _rsyslogd:803
-@newuser _rsyslogd:803:_rsyslogd:daemon:Rsyslog Daemon:/nonexistent:/sbin/nologin
+@newuser _rsyslogd:803:_rsyslogd::Rsyslog Daemon:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/rsyslogd
 lib/rsyslog/
 @so lib/rsyslog/fmhash.so

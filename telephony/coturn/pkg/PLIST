@@ -1,5 +1,5 @@
 @newgroup _turnserver:795
-@newuser _turnserver:795:795:daemon:TURN Server user:/var/empty:/sbin/nologin
+@newuser _turnserver:795:795::TURN Server user:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/turnserver
 @bin bin/turnadmin
 @bin bin/turnserver

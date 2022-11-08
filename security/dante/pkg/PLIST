@@ -1,7 +1,7 @@
 @conflict dsocks-*
 @conflict socks5-*
 @newgroup _sockd:728
-@newuser _sockd:728:_sockd:daemon:sockd daemon:/nonexistent:/sbin/nologin
+@newuser _sockd:728:_sockd::sockd daemon:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/sockd
 bin/socksify
 include/socks.h

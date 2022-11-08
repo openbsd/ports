@@ -4,7 +4,7 @@ COMMENT=	Prometheus exporter for SNMP metrics
 # "make mibs", update M version, "make makesum".
 V=		0.20.0
 M=		0.20.0
-REVISION=	0
+REVISION=	1
 GH_ACCOUNT=	prometheus
 GH_PROJECT=	snmp_exporter
 GH_TAGNAME=	v$V

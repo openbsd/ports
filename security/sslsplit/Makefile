@@ -2,7 +2,7 @@ COMMENT=	transparent and scalable SSL/TLS interception
 
 DISTNAME=	sslsplit-0.5.5
 EXTRACT_SUFX=	.tar.bz2
-REVISION=	4
+REVISION=	5
 
 CATEGORIES=	security
 

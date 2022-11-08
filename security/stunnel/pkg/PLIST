@@ -1,5 +1,5 @@
 @newgroup _stunnel:528
-@newuser _stunnel:528:_stunnel:daemon:stunnel account:/var/stunnel:/sbin/nologin
+@newuser _stunnel:528:_stunnel::stunnel account:/var/stunnel:/sbin/nologin
 @extra /var/stunnel/stunnel.pid
 @rcscript ${RCDIR}/stunnel
 @man man/man8/stunnel.8

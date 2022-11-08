@@ -3,7 +3,7 @@ COMMENT =	web and CGI vulnerability scanner with SSL support
 GH_ACCOUNT =	sullo
 GH_PROJECT =	nikto
 GH_TAGNAME =	2.1.6
-REVISION =	1
+REVISION =	2
 
 EPOCH = 	0
 CATEGORIES =	security www

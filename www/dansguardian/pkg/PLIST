@@ -1,7 +1,7 @@
 @conflict dansguardian-*-clamav
 @pkgpath www/dansguardian,clamav
 @newgroup _dansguardian:588
-@newuser _dansguardian:588:588:daemon:DansGuardian:/nonexistent:/sbin/nologin
+@newuser _dansguardian:588:588::DansGuardian:/nonexistent:/sbin/nologin
 @man man/man8/dansguardian.8
 @bin sbin/dansguardian
 share/dansguardian/

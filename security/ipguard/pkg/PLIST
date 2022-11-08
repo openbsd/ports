@@ -1,5 +1,5 @@
 @newgroup _ipguard:612
-@newuser _ipguard:612:612:daemon:IPguard User:/var/empty:/sbin/nologin
+@newuser _ipguard:612:612::IPguard User:/var/empty:/sbin/nologin
 @man man/man8/ipguard.8
 @bin sbin/ipguard
 @extraunexec rm -rf /var/log/ipguard/*

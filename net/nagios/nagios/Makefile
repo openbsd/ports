@@ -4,13 +4,13 @@ COMMENT-main=	host and service monitor
 COMMENT-web=	cgis and webpages for nagios
 
 V=		4.4.6
-REVISION=	0
+REVISION=	1
 DISTNAME=	nagios-$V
 PKGNAME-main=	nagios-$V
 PKGNAME-web=	nagios-web-$V
 CATEGORIES=	net
 
-REVISION-web=	0
+REVISION-web=	1
 
 HOMEPAGE=	https://www.nagios.org/
 

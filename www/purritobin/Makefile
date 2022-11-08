@@ -1,6 +1,6 @@
 COMMENT =	minimalistic command line pastebin
 PKGNAME =	${DISTNAME:L}
-REVISION =	1
+REVISION =	2
 CATEGORIES =	www net
 
 GH_ACCOUNT =	PurritoBin

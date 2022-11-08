@@ -1,5 +1,5 @@
 @newgroup _ffproxy:523
-@newuser _ffproxy:523:_ffproxy:daemon:ffproxy Account:/nonexistent:/sbin/nologin
+@newuser _ffproxy:523:_ffproxy::ffproxy Account:/nonexistent:/sbin/nologin
 bin/ffproxy
 @man man/man5/ffproxy.conf.5
 @man man/man7/ffproxy.quick.7

@@ -1,5 +1,5 @@
 @newgroup _news:519
-@newuser _news:519:_news:daemon:NNTP server:/var/spool/news:/sbin/nologin
+@newuser _news:519:_news::NNTP server:/var/spool/news:/sbin/nologin
 @extraunexec rm -rf /var/spool/news/*
 @bin bin/leafnode-version
 @bin bin/newsq

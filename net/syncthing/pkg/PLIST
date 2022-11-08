@@ -1,5 +1,5 @@
 @newgroup _syncthing:768
-@newuser _syncthing:768:_syncthing:daemon:Syncthing user:${VARBASE}/syncthing:/sbin/nologin
+@newuser _syncthing:768:_syncthing::Syncthing user:${VARBASE}/syncthing:/sbin/nologin
 @rcscript ${RCDIR}/syncthing
 @owner _syncthing
 @group _syncthing

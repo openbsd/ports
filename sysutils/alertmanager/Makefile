@@ -1,7 +1,7 @@
 COMMENT =	handles alerts sent by the Prometheus server
 
 MODGO_MODNAME =	github.com/prometheus/alertmanager
-REVISION =	0
+REVISION =	1
 MODGO_VERSION =	v0.24.0
 
 MODGO_LDFLAGS += -X github.com/prometheus/common/version.Version=${MODGO_VERSION}

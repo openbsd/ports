@@ -3,7 +3,7 @@ COMMENT =	host-based intrusion detection system
 GH_ACCOUNT =	ossec
 GH_PROJECT =	ossec-hids
 GH_TAGNAME =	3.0.0
-REVISION =	5
+REVISION =	6
 
 CATEGORIES =	security
 

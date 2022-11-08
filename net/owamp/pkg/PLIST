@@ -1,5 +1,5 @@
 @newgroup _owampd:678
-@newuser _owampd:678:_owampd:daemon:owampd user:/nonexistent:/sbin/nologin
+@newuser _owampd:678:_owampd::owampd user:/nonexistent:/sbin/nologin
 @bin bin/aespasswd
 @bin bin/owampd
 bin/owfetch

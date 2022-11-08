@@ -1,5 +1,5 @@
 @newgroup _whatsapp:851
-@newuser _whatsapp:851:851:daemon:Matrix.org whatsapp bridge Daemon:${VARBASE}/whatsapp:/sbin/nologin
+@newuser _whatsapp:851:851::Matrix.org whatsapp bridge Daemon:${VARBASE}/whatsapp:/sbin/nologin
 @rcscript ${RCDIR}/mautrix_whatsapp
 @bin bin/mautrix-whatsapp
 share/doc/pkg-readmes/${PKGSTEM}

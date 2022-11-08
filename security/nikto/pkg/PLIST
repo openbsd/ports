@@ -1,5 +1,5 @@
 @newgroup _nikto:710
-@newuser _nikto:710:710:daemon:Nikto web scanner:/nonexistent:/sbin/nologin
+@newuser _nikto:710:710::Nikto web scanner:/nonexistent:/sbin/nologin
 bin/nikto
 bin/replay
 @man man/man1/nikto.1

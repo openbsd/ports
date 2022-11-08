@@ -2,6 +2,7 @@ COMMENT =		federated status conveyance
 
 DISTNAME =		honk-0.9.8
 CATEGORIES =		www
+REVISION =		0
 
 HOMEPAGE =		https://humungus.tedunangst.com/r/honk
 

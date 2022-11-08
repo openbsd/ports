@@ -2,7 +2,7 @@
 @conflict trac-ldapplugin-<0.6.0
 @pkgpath www/trac-adminplugin
 @newgroup _trac:693
-@newuser _trac:693:_trac:daemon:trac user:/nonexistent:/sbin/nologin
+@newuser _trac:693:_trac::trac user:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/tracd
 bin/trac-admin
 bin/tracd

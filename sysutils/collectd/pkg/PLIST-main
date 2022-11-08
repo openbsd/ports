@@ -1,5 +1,5 @@
 @newgroup _collectd:652
-@newuser _collectd:652:652:daemon:Collectd Daemon:/var/empty:/sbin/nologin
+@newuser _collectd:652:652::Collectd Daemon:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/collectd
 @bin bin/collectd-nagios
 @bin bin/collectd-tg

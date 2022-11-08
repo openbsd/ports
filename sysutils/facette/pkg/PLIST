@@ -1,5 +1,5 @@
 @newgroup _facette:774
-@newuser _facette:774:774:daemon:Facette Daemon:${VARBASE}/empty:/sbin/nologin
+@newuser _facette:774:774::Facette Daemon:${VARBASE}/empty:/sbin/nologin
 @rcscript ${RCDIR}/facette
 @bin bin/facette
 @bin bin/facettectl

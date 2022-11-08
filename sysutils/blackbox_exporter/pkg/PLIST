@@ -1,5 +1,5 @@
 @newgroup _blackboxexporter:862
-@newuser _blackboxexporter:862:_blackboxexporter:daemon:blackboxexporter:/nonexistent:/sbin/nologin
+@newuser _blackboxexporter:862:_blackboxexporter::blackboxexporter:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/blackbox_exporter
 @bin bin/blackbox_exporter
 share/doc/blackbox_exporter/

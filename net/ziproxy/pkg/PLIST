@@ -1,5 +1,5 @@
 @newgroup _ziproxy:641
-@newuser _ziproxy:641:641:daemon:Ziproxy Daemon:/var/empty:/sbin/nologin
+@newuser _ziproxy:641:641::Ziproxy Daemon:/var/empty:/sbin/nologin
 @extraunexec rm -rf /var/log/ziproxy/*
 @rcscript ${RCDIR}/ziproxy
 @bin bin/ziproxy

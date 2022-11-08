@@ -3,7 +3,7 @@
 
 COMMENT =	content scanning web filter
 DISTNAME =	dansguardian-2.12.0.3
-REVISION =	4
+REVISION =	5
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	www net
 

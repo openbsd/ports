@@ -1,5 +1,5 @@
 @newgroup _mcastproxy:792
-@newuser _mcastproxy:792:792:daemon:Multicast Proxy:/var/empty:/sbin/nologin
+@newuser _mcastproxy:792:792::Multicast Proxy:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/mcastproxy
 @man man/man5/mcast-proxy.conf.5
 @man man/man8/mcast-proxy.8

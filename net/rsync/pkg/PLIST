@@ -1,5 +1,5 @@
 @newgroup _rsync:669
-@newuser _rsync:669:_rsync:daemon:rsync Daemon:/var/empty:/sbin/nologin
+@newuser _rsync:669:_rsync::rsync Daemon:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/rsyncd
 bin/rrsync
 @bin bin/rsync

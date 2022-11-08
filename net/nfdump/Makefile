@@ -7,6 +7,8 @@ GH_PROJECT =		nfdump
 GH_TAGNAME =		v$V
 FULLPKGNAME-main =	nfdump-$V
 FULLPKGNAME-nfprofile =	nfprofile-$V
+REVISION-main =		0
+REVISION-nfprofile =	0
 
 SHARED_LIBS +=	nfdump                    1.1
 

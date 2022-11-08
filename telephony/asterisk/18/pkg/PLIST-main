@@ -14,7 +14,7 @@
 @pkgpath telephony/asterisk,-main,imap
 @ask-update asterisk-*-imap IMAP voicemail moved from a flavour to an optional module. Install asterisk-vm_imap and enable in modules.conf
 @newgroup _asterisk:545
-@newuser _asterisk:545:_asterisk:daemon:asterisk user:/nonexistent:/sbin/nologin
+@newuser _asterisk:545:_asterisk::asterisk user:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/asterisk
 include/asterisk/
 include/asterisk.h

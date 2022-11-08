@@ -2,7 +2,7 @@ COMMENT =	protect LAN IP address space by ARP spoofing
 
 DISTNAME =	ipguard-1.04
 CATEGORIES =	security
-REVISION =	3
+REVISION =	4
 
 HOMEPAGE =	http://ipguard.deep.perm.ru/
 MASTER_SITES =	${HOMEPAGE}files/

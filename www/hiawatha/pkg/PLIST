@@ -1,5 +1,5 @@
 @newgroup _hiawatha:579
-@newuser _hiawatha:579:579:daemon:Hiawatha HTTP Server:/nonexistent:/sbin/nologin
+@newuser _hiawatha:579:579::Hiawatha HTTP Server:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/hiawatha
 @bin bin/ssi-cgi
 @man man/man1/cgi-wrapper.1

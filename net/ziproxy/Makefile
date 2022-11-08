@@ -2,6 +2,7 @@ COMMENT =		compressing non-caching HTTP proxy
 
 DISTNAME =		ziproxy-3.3.2
 EXTRACT_SUFX =		.tar.bz2
+REVISION =		0
 
 CATEGORIES =		net www
 

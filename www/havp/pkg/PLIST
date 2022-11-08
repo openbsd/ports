@@ -1,5 +1,5 @@
 @newgroup _havp:602
-@newuser _havp:602:_havp:daemon:Havp Account:/nonexistent:/sbin/nologin
+@newuser _havp:602:_havp::Havp Account:/nonexistent:/sbin/nologin
 @bin sbin/havp
 share/doc/havp/
 share/doc/havp/COPYING

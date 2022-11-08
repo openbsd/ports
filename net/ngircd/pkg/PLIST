@@ -1,5 +1,5 @@
 @newgroup _ngircd:703
-@newuser _ngircd:703:703:daemon:ngircd account:/var/ngircd:/sbin/nologin
+@newuser _ngircd:703:703::ngircd account:/var/ngircd:/sbin/nologin
 @mode 700
 @owner _ngircd
 @group _ngircd

@@ -1,6 +1,6 @@
 @pkgpath net/snort[,flexresp][,mysql][,prelude][,postgresql]
 @newgroup _snort:557
-@newuser _snort:557:_snort:daemon:Snort Account:/nonexistent:/sbin/nologin
+@newuser _snort:557:_snort::Snort Account:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/snort
 ${APPID_COMMENT}bin/appid_detector_builder.sh
 @bin bin/snort

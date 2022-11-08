@@ -1,5 +1,5 @@
 @newgroup _scamper:677
-@newuser _scamper:677:_scamper:daemon:Scamper Account:/nonexistent:/sbin/nologin
+@newuser _scamper:677:_scamper::Scamper Account:/nonexistent:/sbin/nologin
 @bin bin/sc_ally
 @bin bin/sc_analysis_dump
 @bin bin/sc_attach

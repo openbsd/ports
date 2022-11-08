@@ -1,7 +1,7 @@
 COMMENT=	daemon to modify pf tables from userland
 
 DISTNAME=	tabled-1.0.5
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	sysutils
 

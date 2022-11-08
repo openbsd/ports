@@ -1,6 +1,6 @@
 @conflict loki-<=2.4.2
 @newgroup _loki:848
-@newuser _loki:848:848:daemon:Loki Daemon:/var/empty:/sbin/nologin
+@newuser _loki:848:848::Loki Daemon:/var/empty:/sbin/nologin
 @extraunexec rm -rf /var/promtail/
 @rcscript ${RCDIR}/promtail
 @bin bin/promtail

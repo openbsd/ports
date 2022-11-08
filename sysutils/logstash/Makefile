@@ -5,6 +5,7 @@ V =			7.10.0
 DISTNAME =		logstash-oss-$V-darwin-x86_64
 PKGNAME =		logstash-$V
 EPOCH =			0
+REVISION =		0
 
 CATEGORIES =		sysutils
 

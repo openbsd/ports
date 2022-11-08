@@ -1,5 +1,5 @@
 @newgroup _privoxy:516
-@newuser _privoxy:516:_privoxy:daemon:Privoxy Account:/var/privoxy:/sbin/nologin
+@newuser _privoxy:516:_privoxy::Privoxy Account:/var/privoxy:/sbin/nologin
 @rcscript ${RCDIR}/privoxy
 bin/privoxy-log-parser.pl
 bin/privoxy-regression-test.pl

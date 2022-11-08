@@ -1,5 +1,5 @@
 @newgroup _natpmpd:691
-@newuser _natpmpd:691:691:daemon:NAT-PMP Daemon:/var/empty:/sbin/nologin
+@newuser _natpmpd:691:691::NAT-PMP Daemon:/var/empty:/sbin/nologin
 @man man/man5/natpmpd.conf.5
 @man man/man8/natpmpd.8
 @bin sbin/natpmpd

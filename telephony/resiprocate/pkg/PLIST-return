@@ -1,5 +1,5 @@
 @newgroup _return:856
-@newuser _return:856:856:daemon:reTurnServer user:/var/empty:/sbin/nologin
+@newuser _return:856:856::reTurnServer user:/var/empty:/sbin/nologin
 @extraunexec rm -f /var/log/reTurnServer/*
 @rcscript ${RCDIR}/reTurnServer
 include/reTurn/

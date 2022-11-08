@@ -3,7 +3,7 @@ COMMENT=	browser based analytics/search interface to ElasticSearch
 V =		7.10.0
 PKGNAME =	kibana-${V}
 DISTNAME =	kibana-oss-${V}-darwin-x86_64
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	www
 

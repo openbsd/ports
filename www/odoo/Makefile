@@ -3,7 +3,7 @@ COMMENT=		all-in-one management software
 MV=			15.0
 SV=			20220427
 V=			${MV}.${SV}
-REVISION=		2
+REVISION=		3
 
 DISTNAME=		odoo_${V}
 

@@ -1,5 +1,5 @@
 @newgroup _rt:841
-@newuser _rt:841:_rt:daemon:RT Account:/nonexistent:/sbin/nologin
+@newuser _rt:841:_rt::RT Account:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/rt
 bin/rt
 bin/rt-crontool

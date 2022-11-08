@@ -1,5 +1,5 @@
 @newgroup _silcd:512
-@newuser _silcd:512:_silcd:daemon:Silc-server Account:/nonexistent:/sbin/nologin
+@newuser _silcd:512:_silcd::Silc-server Account:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/log/silcd/*
 @man man/man5/silcd.conf.5
 @man man/man8/silcd.8

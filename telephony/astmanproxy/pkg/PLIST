@@ -1,5 +1,5 @@
 @newgroup _astmanproxy:640
-@newuser _astmanproxy:640:_astmanproxy:daemon:asterisk management proxy user:/nonexistent:/sbin/nologin
+@newuser _astmanproxy:640:_astmanproxy::asterisk management proxy user:/nonexistent:/sbin/nologin
 lib/astmanproxy/
 lib/astmanproxy/modules/
 @so lib/astmanproxy/modules/csv.so

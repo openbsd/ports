@@ -1,6 +1,6 @@
 @pkgpath ${BASE_PKGPATH}
 @newgroup _nagios:550
-@newuser _nagios:550:_nagios:daemon:Nagios user:/var/www/nagios:/sbin/nologin
+@newuser _nagios:550:_nagios::Nagios user:/var/www/nagios:/sbin/nologin
 @extraunexec rm -rf ${CHROOT}${SYSCONFDIR}/nagios/*
 @extraunexec rm -f ${CHROOT}/var/log/nagios/archives/*
 @rcscript ${RCDIR}/nagios

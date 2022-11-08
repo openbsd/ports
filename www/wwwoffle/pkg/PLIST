@@ -5,7 +5,7 @@
 @pkgpath www/wwwoffle,pl
 @pkgpath www/wwwoffle,ru
 @newgroup _wwwoffle:761
-@newuser _wwwoffle:761:_wwwoffle:daemon:wwwoffle user:${LOCALSTATEDIR}/spool/wwwoffle:/sbin/nologin
+@newuser _wwwoffle:761:_wwwoffle::wwwoffle user:${LOCALSTATEDIR}/spool/wwwoffle:/sbin/nologin
 @rcscript ${RCDIR}/wwwoffled
 @bin bin/wwwoffle
 bin/wwwoffle-fsck

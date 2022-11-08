@@ -3,6 +3,7 @@ COMMENT=		decentralized service discovery and orchestration
 MODGO_MODNAME=		github.com/hashicorp/serf
 MODGO_VERSION=		v0.10.1
 DISTNAME=		hashicorp-serf-${MODGO_VERSION:S/v//}
+REVISION=		0
 
 CATEGORIES=		sysutils net
 

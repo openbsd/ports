@@ -1,5 +1,5 @@
 @newgroup _mfi:747
-@newuser _mfi:747:_mfi:daemon:mfi user:/usr/local/share/mfi:/sbin/nologin
+@newuser _mfi:747:_mfi::mfi user:/usr/local/share/mfi:/sbin/nologin
 @ask-update mfi-<2.12 Make sure your existing database is backed up
 bin/mfi
 @owner _mfi

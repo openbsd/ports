@@ -1,7 +1,7 @@
 @conflict suricata-update-*
 @pkgpath security/suricata-update
 @newgroup _suricata:800
-@newuser _suricata:800:_suricata:daemon:Suricata Account:/nonexistent:/sbin/nologin
+@newuser _suricata:800:_suricata::Suricata Account:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/suricata
 @bin bin/suricata
 bin/suricata-update

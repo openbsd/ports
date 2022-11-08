@@ -5,6 +5,7 @@ COMMENT =	parallel internet measurement utility
 V =		20211212c
 DISTNAME =	scamper-cvs-$V
 PKGNAME =	scamper-$V
+REVISION =	0
 
 CATEGORIES =	net benchmarks
 

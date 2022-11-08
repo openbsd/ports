@@ -1,5 +1,5 @@
 @newgroup _ntopng:809
-@newuser _ntopng:809:_ntopng:daemon:ntopng user:/nonexistent:/sbin/nologin
+@newuser _ntopng:809:_ntopng::ntopng user:/nonexistent:/sbin/nologin
 @owner _ntopng
 @sample ${LOCALSTATEDIR}/db/ntopng/
 @owner

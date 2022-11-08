@@ -1,5 +1,5 @@
 @newgroup _taskd:734
-@newuser _taskd:734:734:daemon:Taskwarrior Sync Server:/var/taskd:/sbin/nologin
+@newuser _taskd:734:734::Taskwarrior Sync Server:/var/taskd:/sbin/nologin
 @extraunexec rm -rf /var/taskd
 @extraunexec rm -rf /var/log/taskd
 @mode 0750

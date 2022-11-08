@@ -1,5 +1,5 @@
 @newgroup _snmpexporter:845
-@newuser _snmpexporter:845:_snmpexporter:daemon:prometheus snmp_exporter:/nonexistent:/sbin/nologin
+@newuser _snmpexporter:845:_snmpexporter::prometheus snmp_exporter:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/snmp_exporter
 @bin bin/snmp_exporter
 @bin bin/snmp_generator

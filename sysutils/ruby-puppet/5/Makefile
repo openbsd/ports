@@ -1,7 +1,7 @@
 PORTROACH=		limit:^5
 
 VERSION=		5.5.22
-REVISION=		8
+REVISION=		9
 
 RUN_DEPENDS+=		databases/ruby-hiera3,${MODRUBY_FLAVOR} \
 			devel/ruby-gettext-setup,${MODRUBY_FLAVOR}>=0.28,<1 \

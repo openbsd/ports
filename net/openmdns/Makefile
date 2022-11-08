@@ -2,7 +2,7 @@ COMMENT =		MDNS/DNS-SD daemon
 
 DISTNAME =		openmdns-0.7
 CATEGORIES =		net
-REVISION =		2
+REVISION =		3
 
 MAINTAINER =		Gonzalo L. R. <gonzalo@openbsd.org>
 

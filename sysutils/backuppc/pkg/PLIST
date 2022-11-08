@@ -1,5 +1,5 @@
 @newgroup _backuppc:682
-@newuser _backuppc:682:682:daemon:BackupPC Daemon:/var/empty:/sbin/nologin
+@newuser _backuppc:682:682::BackupPC Daemon:/var/empty:/sbin/nologin
 bin/BackupPC
 bin/BackupPC_Admin
 bin/BackupPC_Admin.fcgi

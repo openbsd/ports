@@ -2,6 +2,7 @@ COMMENT=		WWW OFFLine Explorer
 
 DISTNAME=		wwwoffle-2.9j
 CATEGORIES=		www
+REVISION=		0
 
 HOMEPAGE=		http://www.gedanken.org.uk/software/wwwoffle/
 

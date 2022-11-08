@@ -1,5 +1,5 @@
 @newgroup _restund:742
-@newuser _restund:742:742:daemon:restund user:/var/empty:/sbin/nologin
+@newuser _restund:742:742::restund user:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/restund
 lib/restund/
 lib/restund/modules/

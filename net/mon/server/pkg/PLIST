@@ -1,5 +1,5 @@
 @newgroup _mon:643
-@newuser _mon:643:_mon:daemon:Mon Server:/var/empty:/bin/sh
+@newuser _mon:643:_mon::Mon Server:/var/empty:/bin/sh
 bin/mon
 lib/mon/
 lib/mon/alert.d/

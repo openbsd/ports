@@ -5,6 +5,7 @@ DISTNAME =	stunserver-${VERSION}
 PKGNAME =	stuntman-${VERSION}
 CATEGORIES =	telephony net
 EXTRACT_SUFX =	.tgz
+REVISION =	0
 
 HOMEPAGE =	http://www.stunprotocol.org/
 

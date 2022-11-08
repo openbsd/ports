@@ -1,4 +1,4 @@
-@newuser _puppetboard:739:www:daemon:Puppetboard user:/nonexistent:/sbin/nologin
+@newuser _puppetboard:739:www::Puppetboard user:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/puppetboard
 puppetboard/
 puppetboard/CHANGELOG.md

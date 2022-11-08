@@ -1,6 +1,7 @@
 COMMENT =		gemini server written in C used with inetd
 V =			2.0.0
 DISTNAME =		vger-${V}
+REVISION =		0
 
 CATEGORIES =		net
 

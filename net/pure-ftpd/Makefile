@@ -9,6 +9,7 @@ MASTER_SITES=	https://download.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp.nl.pureftpd.org/pub/pure-ftpd/releases/ \
 		${MASTER_SITE_SOURCEFORGE:=pureftpd/}
 EXTRACT_SUFX=	.tar.bz2
+REVISION=	0
 
 HOMEPAGE=	https://www.pureftpd.org/project/pure-ftpd/
 

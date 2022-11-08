@@ -3,6 +3,7 @@ COMMENT =		lightweight HTTP/SSL proxy
 V =			1.11.1
 DISTNAME =		tinyproxy-$V
 CATEGORIES =		www net
+REVISION =		0
 
 HOMEPAGE =		https://tinyproxy.github.io/
 

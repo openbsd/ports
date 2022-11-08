@@ -1,6 +1,7 @@
 COMMENT=	multi-router traffic grapher
 
 DISTNAME=	mrtg-2.17.10
+REVISION=	0
 
 CATEGORIES=	net
 

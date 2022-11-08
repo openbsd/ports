@@ -1,5 +1,5 @@
 @newgroup _mdnsd:664
-@newuser _mdnsd:664:_mdnsd:daemon:MDNS Daemon:/var/empty:/sbin/nologin
+@newuser _mdnsd:664:_mdnsd::MDNS Daemon:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/mdnsd
 @bin bin/mdnsctl
 @bin bin/mdnsd

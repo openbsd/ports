@@ -1,5 +1,5 @@
 @newgroup _vger:865
-@newuser _vger:865:865:daemon:Vger Gemini Server:/nonexistent:/sbin/nologin
+@newuser _vger:865:865::Vger Gemini Server:/nonexistent:/sbin/nologin
 @bin bin/vger
 @man man/man8/vger.8
 share/doc/pkg-readmes/${PKGSTEM}

@@ -4,7 +4,7 @@ DISTFILES=	mFi-$V{mFi.unix}.zip
 V=		2.1.2
 FW_VER=		2.1.2.1297
 PKGNAME=	mfi-$V
-REVISION=	9
+REVISION=	10
 
 CATEGORIES=	net
 

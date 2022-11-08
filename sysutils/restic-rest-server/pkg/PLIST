@@ -1,5 +1,5 @@
 @newgroup _restic:802
-@newuser _restic:802:_restic:daemon:Restic user:${VARBASE}/restic:/sbin/nologin
+@newuser _restic:802:_restic::Restic user:${VARBASE}/restic:/sbin/nologin
 @rcscript ${RCDIR}/restic_rest_server
 @bin bin/restic-rest-server
 @owner _restic

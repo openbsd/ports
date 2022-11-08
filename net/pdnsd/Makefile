@@ -4,7 +4,7 @@ DISTNAME=		pdnsd-1.2.9a-par
 PKGNAME=		${DISTNAME:S/-par//}
 CATEGORIES=		net
 MASTER_SITES=		${HOMEPAGE}/releases/
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		http://members.home.nl/p.a.rombouts/pdnsd/
 

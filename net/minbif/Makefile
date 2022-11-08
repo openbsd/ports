@@ -2,7 +2,7 @@ COMMENT =	IRC-friendly instant messaging client
 
 DISTNAME=	minbif-1.0.5
 CATEGORIES=	net
-REVISION=	5
+REVISION=	6
 
 HOMEPAGE =	http://minbif.im/
 MASTER_SITES=	${HOMEPAGE}attachments/download/148/

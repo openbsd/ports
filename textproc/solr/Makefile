@@ -3,6 +3,7 @@ COMMENT=	full-text search engine based on Lucene
 V=		8.11.2
 DISTNAME=	solr-$V
 EXTRACT_SUFX=	.tgz
+REVISION=	0
 
 PKG_ARCH=	*
 

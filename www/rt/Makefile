@@ -2,6 +2,7 @@ COMMENT=		industrial-grade ticketing system
 
 DISTNAME=		rt-5.0.2
 CATEGORIES=		www
+REVISION=		0
 
 MAINTAINER=		Robert Nagy <robert@openbsd.org>
 

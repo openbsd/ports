@@ -1,5 +1,5 @@
 @newgroup _miniflux:859
-@newuser _miniflux:859:_miniflux:daemon:Miniflux user:${VARBASE}/miniflux:/sbin/nologin
+@newuser _miniflux:859:_miniflux::Miniflux user:${VARBASE}/miniflux:/sbin/nologin
 @rcscript ${RCDIR}/miniflux
 @owner _miniflux
 @group _miniflux

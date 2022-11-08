@@ -1,5 +1,5 @@
 @newgroup _riemann:786
-@newuser _riemann:786:_riemann:daemon:Riemann Account:/nonexistent:/sbin/nologin
+@newuser _riemann:786:_riemann::Riemann Account:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/log/riemann/*
 @rcscript ${RCDIR}/riemann
 @mode 755

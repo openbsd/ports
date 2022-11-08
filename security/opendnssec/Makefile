@@ -1,6 +1,7 @@
 COMMENT=	open-source turn-key solution for DNSSEC
 
 DISTNAME=	opendnssec-2.1.11
+REVISION=	0
 
 CATEGORIES=	security
 

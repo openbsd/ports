@@ -1,5 +1,7 @@
 COMMENT-main =		like Prometheus, but for logs
 COMMENT-promtail =	tails log files and pushes them to Loki
+REVISION-main =		0
+REVISION-promtail =	0
 
 GH_ACCOUNT =	grafana
 GH_PROJECT =	loki

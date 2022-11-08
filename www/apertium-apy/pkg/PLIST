@@ -1,5 +1,5 @@
 @newgroup _apertium-apy:822
-@newuser _apertium-apy:822:822:daemon:Apertium Python Interface:/var/empty:/sbin/nologin
+@newuser _apertium-apy:822:822::Apertium Python Interface:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/apertium_apy
 bin/apertium-apy
 lib/python${MODPY_VERSION}/site-packages/apertium_apy/

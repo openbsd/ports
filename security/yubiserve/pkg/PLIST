@@ -1,5 +1,5 @@
 @newgroup _yubiserve:700
-@newuser _yubiserve:700:_yubiserve:daemon:yubiserve user:/nonexistent:/sbin/nologin
+@newuser _yubiserve:700:_yubiserve::yubiserve user:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/yubikeyedup
 bin/yubikeyedup
 bin/yubikeyedup-dbconf

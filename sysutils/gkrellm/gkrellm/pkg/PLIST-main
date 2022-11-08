@@ -1,7 +1,7 @@
 @pkgpath sysutils/gkrellm/gkrellm
 @pkgpath sysutils/gkrellm/gkrellm,no_client
 @newgroup _gkrellmd:607
-@newuser _gkrellmd:607:_gkrellmd:daemon:GKrellM Daemon:/var/empty:/sbin/nologin
+@newuser _gkrellmd:607:_gkrellmd::GKrellM Daemon:/var/empty:/sbin/nologin
 include/gkrellm2/gkrellmd.h
 @man man/man1/gkrellmd.1
 @mode 2755

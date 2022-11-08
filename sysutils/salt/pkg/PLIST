@@ -1,6 +1,6 @@
 @ask-update salt-<2014.1.5p0 Make sure the _salt-master user does not exist
 @newgroup _salt:722
-@newuser _salt:722:722:daemon:SaltStack Daemon:${LOCALSTATEDIR}/salt:/sbin/nologin
+@newuser _salt:722:722::SaltStack Daemon:${LOCALSTATEDIR}/salt:/sbin/nologin
 @comment needs a homedir to store ssh keys for GitFS
 @extraunexec rm -rf ${SYSCONFDIR}/salt/{master,minion}.d
 @extraunexec rm -f ${SYSCONFDIR}/salt/minion_id

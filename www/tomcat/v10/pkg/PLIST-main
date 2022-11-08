@@ -1,6 +1,6 @@
 @option is-branch
 @newgroup _tomcat:526
-@newuser _tomcat:526:_tomcat:daemon:Tomcat Account:/nonexistent:/sbin/nologin
+@newuser _tomcat:526:_tomcat::Tomcat Account:/nonexistent:/sbin/nologin
 @extraunexec rm -rf ${CATALINA_BASE}/logs/* ${CATALINA_BASE}/work/*
 @rcscript ${RCDIR}/tomcat
 @owner _tomcat

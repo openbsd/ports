@@ -1,5 +1,5 @@
 @newgroup _mlvpn:758
-@newuser _mlvpn:758:_mlvpn:daemon:mlvpn user:/var/empty:/sbin/nologin
+@newuser _mlvpn:758:_mlvpn::mlvpn user:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/mlvpn
 @man man/man1/mlvpn.1
 @man man/man5/mlvpn.conf.5

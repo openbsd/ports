@@ -7,7 +7,7 @@
 @pkgpath sysutils/nut,snmp
 @pkgpath sysutils/nut,no_cgi,snmp
 @newgroup _ups:529
-@newuser _ups:529:529:daemon:UPS User:/var/empty:/sbin/nologin
+@newuser _ups:529:529::UPS User:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/nut
 @rcscript ${RCDIR}/upsd
 @rcscript ${RCDIR}/upsmon

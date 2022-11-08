@@ -8,6 +8,7 @@ VERSION=		1.12.1
 #                          npm rebuild node-sass; yarn --verbose run build
 DISTNAME=		vault-vendored-${VERSION}
 PKGNAME=		vault-${VERSION}
+REVISION=		0
 
 ### Vault UI
 MODGO_FLAGS=		-tags=ui

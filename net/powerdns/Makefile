@@ -15,6 +15,10 @@ PKGNAME-ldap=		powerdns-ldap-${V}
 #REVISION-mysql=		0
 #REVISION-pgsql=		0
 #REVISION-ldap=		0
+REVISION-ldap=		0
+REVISION-main=		0
+REVISION-mysql=		0
+REVISION-pgsql=		0
 
 CATEGORIES=		net
 

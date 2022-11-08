@@ -6,6 +6,8 @@ EPOCH =			0
 DISTNAME =		vnstat-${V}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-vnstati =	vnstati-${V}
+REVISION-main =		0
+REVISION-vnstati =	0
 
 CATEGORIES =	net sysutils
 

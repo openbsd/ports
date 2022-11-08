@@ -1,5 +1,5 @@
 @newgroup _ocserv:749
-@newuser _ocserv:749:_ocserv:daemon:ocserv user:/nonexistent:/sbin/nologin
+@newuser _ocserv:749:_ocserv::ocserv user:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/ocserv
 @bin bin/occtl
 @bin bin/ocpasswd

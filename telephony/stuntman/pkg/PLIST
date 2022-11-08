@@ -1,5 +1,5 @@
 @newgroup _stuntman:718
-@newuser _stuntman:718:718:daemon:STUN server:/nonexistent:/sbin/nologin
+@newuser _stuntman:718:718::STUN server:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/stunserver
 @man man/man1/stunclient.1
 @man man/man1/stunserver.1

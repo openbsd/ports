@@ -2,7 +2,7 @@ COMMENT =	coturn STUN/TURN server
 
 V =		4.5.2
 DISTNAME =	turnserver-${V}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	telephony
 

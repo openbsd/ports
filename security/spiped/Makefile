@@ -2,7 +2,7 @@ COMMENT =		utility for creating secure pipes between socket addresses
 
 DISTNAME =		spiped-1.6.2
 CATEGORIES =		security sysutils
-REVISION =		0
+REVISION =		1
 
 MAINTAINER =		James Turner <james@calminferno.net>
 

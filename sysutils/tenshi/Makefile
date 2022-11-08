@@ -3,7 +3,7 @@ COMMENT =	log monitoring program to watch and report on log files
 VERSION =	0.17
 PKGNAME =	tenshi-${VERSION}
 DISTNAME =	tenshi-{}${VERSION}
-REVISION =	0
+REVISION =	1
 
 WRKDIST =	${WRKDIR}/${PKGNAME}
 

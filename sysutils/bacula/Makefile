@@ -16,6 +16,12 @@ PKGNAME-bat=		bacula-bat-$V
 PKGNAME-mysql=		bacula-mysql-$V
 PKGNAME-pgsql=		bacula-pgsql-$V
 PKGNAME-sqlite3=	bacula-sqlite3-$V
+REVISION-bat=		0
+REVISION-main=		0
+REVISION-mysql=		0
+REVISION-pgsql=		0
+REVISION-server=	0
+REVISION-sqlite3=	0
 
 CATEGORIES=		sysutils
 

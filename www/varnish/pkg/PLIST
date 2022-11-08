@@ -1,5 +1,5 @@
 @newgroup _varnish:625
-@newuser _varnish:625:_varnish:daemon:Varnish Cache:/var/varnish:/bin/sh
+@newuser _varnish:625:_varnish::Varnish Cache:/var/varnish:/bin/sh
 @rcscript ${RCDIR}/varnishd
 @bin bin/varnishadm
 @bin bin/varnishhist

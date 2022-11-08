@@ -1,7 +1,7 @@
 COMMENT=	monitors the status of mirrors
 
 DISTNAME=	mirmon-2.11
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	net
 HOMEPAGE=	http://people.cs.uu.nl/henkp/mirmon/

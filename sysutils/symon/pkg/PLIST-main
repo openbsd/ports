@@ -1,7 +1,7 @@
 @conflict symon-<2.87
 @pkgpath sysutils/symon,-mon
 @newgroup _symon:535
-@newuser _symon:535:_symon:daemon:symon Account:/var/empty:/sbin/nologin
+@newuser _symon:535:_symon::symon Account:/var/empty:/sbin/nologin
 @bin libexec/symon
 @man man/man8/symon.8
 share/examples/symon/

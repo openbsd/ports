@@ -9,6 +9,7 @@ MODGO_VERSION =	v0.0.0-${V:C/[-TZ]//g}-${SHORTCID}
 
 DISTNAME =	minio-${MODGO_VERSION}
 PKGNAME =	minio-0.${V:C/T.*//:S/-//g}
+REVISION =	0
 
 MODGO_LDFLAGS =	-s -w \
 		-X github.com/minio/minio/cmd.Version=${V:C/T([0-9]+)-([0-9]+)-([0-9]+)/T\1:\2:\3/} \

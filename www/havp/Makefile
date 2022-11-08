@@ -4,7 +4,7 @@ DISTNAME=	havp-0.92a
 CATEGORIES=	www
 MASTER_SITES=	${HOMEPAGE}/download/
 
-REVISION=	9
+REVISION=	10
 
 HOMEPAGE=	http://www.server-side.de/
 

@@ -3,7 +3,7 @@ COMMENT=		job scheduler and runbook automation
 V=			2.6.11
 DISTNAME=		rundeck-launcher-${V}
 PKGNAME=		rundeck-${V}
-REVISION=		8
+REVISION=		9
 
 CATEGORIES=		sysutils
 

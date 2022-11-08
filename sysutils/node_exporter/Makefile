@@ -4,6 +4,7 @@ MODGO_MODNAME =		github.com/prometheus/node_exporter
 MODGO_VERSION =		v1.3.1
 
 DISTNAME =		node_exporter-${MODGO_VERSION}
+REVISION =		0
 
 CATEGORIES =		sysutils
 

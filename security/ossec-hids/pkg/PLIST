@@ -1,7 +1,7 @@
 @newgroup _ossec:827
-@newuser _ossec:827:_ossec:daemon:OSSEC Account:/nonexistent:/sbin/nologin
-@newuser _ossecm:828:_ossec:daemon:OSSEC Mail Account:/nonexistent:/sbin/nologin
-@newuser _ossecr:829:_ossec:daemon:OSSEC Rem Account:/nonexistent:/sbin/nologin
+@newuser _ossec:827:_ossec::OSSEC Account:/nonexistent:/sbin/nologin
+@newuser _ossecm:828:_ossec::OSSEC Mail Account:/nonexistent:/sbin/nologin
+@newuser _ossecr:829:_ossec::OSSEC Rem Account:/nonexistent:/sbin/nologin
 ossec-hids/bin/
 @bin ossec-hids/bin/agent_control
 @bin ossec-hids/bin/clear_stats

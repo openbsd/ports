@@ -2,6 +2,7 @@ COMMENT =		Virtual Private Network (VPN) daemon
 DISTNAME =		tinc-1.1pre18
 CATEGORIES =		net security
 EPOCH =			0
+REVISION =		0
 
 HOMEPAGE =		https://www.tinc-vpn.org/
 

@@ -3,7 +3,7 @@
 @pkgpath net/unifi/5.7
 @pkgpath net/unifi/5.8
 @newgroup _unifi:732
-@newuser _unifi:732:_unifi:daemon:unifi user:${PREFIX}/share/unifi:/sbin/nologin
+@newuser _unifi:732:_unifi::unifi user:${PREFIX}/share/unifi:/sbin/nologin
 @rcscript ${RCDIR}/unifi
 bin/unifi
 bin/unifi-discover

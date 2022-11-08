@@ -1,7 +1,7 @@
 @conflict p5-RRD-*
 @pkgpath net/rrdtool,-perl
 @newgroup _rrdcached:726
-@newuser _rrdcached:726:_rrdcached:daemon:rrdcached user:/nonexistent:/sbin/nologin
+@newuser _rrdcached:726:_rrdcached::rrdcached user:/nonexistent:/sbin/nologin
 @extraunexec rm -f /var/db/rrd/*.rrd /var/db/rrd/journal/*
 @rcscript ${RCDIR}/rrdcached
 @bin bin/rrdcached

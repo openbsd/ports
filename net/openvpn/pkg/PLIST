@@ -1,5 +1,5 @@
 @newgroup _openvpn:577
-@newuser _openvpn:577:_openvpn:daemon:OpenVPN Daemon:/nonexistent:/sbin/nologin
+@newuser _openvpn:577:_openvpn::OpenVPN Daemon:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/openvpn
 include/openvpn/
 include/openvpn/openvpn-msg.h

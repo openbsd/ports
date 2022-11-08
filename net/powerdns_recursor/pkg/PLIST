@@ -1,5 +1,5 @@
 @newgroup _pdns_recursor:830
-@newuser _pdns_recursor:830:_pdns_recursor:daemon:PowerDNS Recursor:/nonexistent:/sbin/nologin
+@newuser _pdns_recursor:830:_pdns_recursor::PowerDNS Recursor:/nonexistent:/sbin/nologin
 @sample ${SYSCONFDIR}/
 @rcscript ${RCDIR}/pdns_recursor
 @bin bin/rec_control

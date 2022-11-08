@@ -14,6 +14,11 @@ PKGNAME-normalize =	rsyslog-normalize-$V
 PKGNAME-pgsql =		rsyslog-pgsql-$V
 PKGNAME-elasticsearch =	rsyslog-elasticsearch-$V
 CATEGORIES =		sysutils
+REVISION-elasticsearch =0
+REVISION-main =		0
+REVISION-mysql =	0
+REVISION-normalize =	0
+REVISION-pgsql =	0
 
 HOMEPAGE =		https://www.rsyslog.com/
 

@@ -1,6 +1,6 @@
 @pkgpath sysutils/loki
 @newgroup _loki:848
-@newuser _loki:848:848:daemon:Loki Daemon:/var/empty:/sbin/nologin
+@newuser _loki:848:848::Loki Daemon:/var/empty:/sbin/nologin
 @extraunexec rm -rf /var/loki/
 @rcscript ${RCDIR}/loki
 @bin bin/logcli

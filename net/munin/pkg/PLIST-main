@@ -1,8 +1,8 @@
 @conflict munin-server-<2.0.21
 @newgroup _munin:644
 @newgroup _munin-plugin:645
-@newuser _munin:644:_munin:daemon:munin user:/nonexistent:/sbin/nologin
-@newuser _munin-plugin:645:_munin-plugin:daemon:munin-plugin user:/nonexistent:/sbin/nologin
+@newuser _munin:644:_munin::munin user:/nonexistent:/sbin/nologin
+@newuser _munin-plugin:645:_munin-plugin::munin-plugin user:/nonexistent:/sbin/nologin
 @extraunexec rm -rf ${SYSCONFDIR}/munin/plugins/*
 @extraunexec rm -rf ${SYSCONFDIR}/munin/plugin-conf.d/*
 @extraunexec rm -rf /var/log/munin/*

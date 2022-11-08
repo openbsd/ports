@@ -5,6 +5,7 @@ DISTNAME=		pdns-recursor-${V}
 EXTRACT_SUFX =		.tar.bz2
 PKGNAME=		powerdns-recursor-${V}
 #REVISION=		0
+REVISION=		0
 
 CATEGORIES=		net
 

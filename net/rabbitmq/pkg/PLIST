@@ -1,5 +1,5 @@
 @newgroup _rabbitmq:646
-@newuser _rabbitmq:646:_rabbitmq:daemon:RabbitMQ account:/var/rabbitmq:/sbin/nologin
+@newuser _rabbitmq:646:_rabbitmq::RabbitMQ account:/var/rabbitmq:/sbin/nologin
 @rcscript ${RCDIR}/rabbitmq
 @mode 700
 @owner _rabbitmq

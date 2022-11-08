@@ -1,6 +1,6 @@
 @pkgpath sysutils/logstash/logstash
 @newgroup _logstash:752
-@newuser _logstash:752:_logstash:daemon:Logstash Account:/nonexistent:/sbin/nologin
+@newuser _logstash:752:_logstash::Logstash Account:/nonexistent:/sbin/nologin
 @extraunexec rm -rf ${SYSCONFDIR}/logstash/*
 @extraunexec rm -rf ${LOCALSTATEDIR}/log/logstash/*
 @extraunexec rm -rf ${LOCALSTATEDIR}/logstash/{.gem,.m2,data,plugins}/{.*,*}

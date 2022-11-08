@@ -4,6 +4,7 @@ V=		3.0.33
 DISTNAME=	privoxy-${V}-stable
 PKGNAME=	privoxy-${V}
 CATEGORIES=	www
+REVISION=	0
 
 HOMEPAGE=	https://www.privoxy.org/
 

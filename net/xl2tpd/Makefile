@@ -3,6 +3,7 @@ COMMENT=	l2tp client/server
 GH_ACCOUNT=	xelerance
 GH_PROJECT=	xl2tpd
 GH_TAGNAME=	v1.3.15
+REVISION=	0
 
 CATEGORIES=	net
 

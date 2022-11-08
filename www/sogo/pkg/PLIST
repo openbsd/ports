@@ -1,5 +1,5 @@
 @newgroup _sogo:659
-@newuser _sogo:659:_sogo:daemon:SOGo user:${VARBASE}/sogo:/bin/sh
+@newuser _sogo:659:_sogo::SOGo user:${VARBASE}/sogo:/bin/sh
 @rcscript ${RCDIR}/sogod
 include/GDLContentStore/
 include/GDLContentStore/EOAdaptorChannel+GCS.h

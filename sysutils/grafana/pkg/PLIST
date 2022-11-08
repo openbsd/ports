@@ -1,5 +1,5 @@
 @newgroup _grafana:798
-@newuser _grafana:798:798:daemon:Grafana Daemon:/var/empty:/sbin/nologin
+@newuser _grafana:798:798::Grafana Daemon:/var/empty:/sbin/nologin
 @extraunexec rm -rf /var/log/grafana/
 @extraunexec rm -rf /var/grafana/
 @rcscript ${RCDIR}/grafana

@@ -1,6 +1,6 @@
 @pkgpath net/transmission
 @newgroup _transmission:662
-@newuser _transmission:662:662:daemon:Transmission Account:/var/transmission:/sbin/nologin
+@newuser _transmission:662:662::Transmission Account:/var/transmission:/sbin/nologin
 @rcscript ${RCDIR}/transmission_daemon
 @mode 750
 @owner _transmission

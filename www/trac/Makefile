@@ -6,6 +6,7 @@ DISTNAME=	trac-1.5.4pre17604
 #DISTNAME=	Trac-${MODPY_EGG_VERSION:S/post/.post/}
 #PKGNAME=	trac-${MODPY_EGG_VERSION:S/post/pl/}
 CATEGORIES=	www devel
+REVISION=	0
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 

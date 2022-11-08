@@ -1,5 +1,5 @@
 @newgroup _kamailio:628
-@newuser _kamailio:628:628:daemon:Kamailio:/nonexistent:/sbin/nologin
+@newuser _kamailio:628:628::Kamailio:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/kamailio
 lib/kamailio/
 lib/kamailio/kamctl/

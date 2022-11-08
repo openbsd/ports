@@ -1,5 +1,5 @@
 @newgroup _prosody:638
-@newuser _prosody:638:_prosody:daemon:prosody user:/nonexistent:/sbin/nologin
+@newuser _prosody:638:_prosody::prosody user:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/prosody
 lib/prosody/
 lib/prosody/core/

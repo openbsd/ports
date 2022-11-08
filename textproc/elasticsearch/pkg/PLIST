@@ -1,5 +1,5 @@
 @newgroup _elasticsearch:748
-@newuser _elasticsearch:748:_elasticsearch:daemon:Elasticsearch Account:/nonexistent:/sbin/nologin
+@newuser _elasticsearch:748:_elasticsearch::Elasticsearch Account:/nonexistent:/sbin/nologin
 @extraunexec rm -rf ${SYSCONFDIR}/elasticsearch/elasticsearch.keystore
 @extraunexec rm -rf ${LOCALSTATEDIR}/elasticsearch/*
 @extraunexec rm -rf ${LOCALSTATEDIR}/log/elasticsearch/*

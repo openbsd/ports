@@ -1,6 +1,6 @@
 @option is-branch
 @newgroup _asterisk:545
-@newuser _asterisk:545:_asterisk:daemon:asterisk user:/nonexistent:/sbin/nologin
+@newuser _asterisk:545:_asterisk::asterisk user:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/asterisk
 include/asterisk/
 include/asterisk.h

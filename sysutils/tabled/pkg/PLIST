@@ -1,5 +1,5 @@
 @newgroup _tabled:582
-@newuser _tabled:582:582:daemon:tabled:/var/empty:/sbin/nologin
+@newuser _tabled:582:582::tabled:/var/empty:/sbin/nologin
 @man man/man5/tabled.conf.5
 @man man/man8/tablec.8
 @man man/man8/tabled.8

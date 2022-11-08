@@ -1,5 +1,5 @@
 @newgroup _solr:801
-@newuser _solr:801:_solr:daemon:solr user:/nonexistent:/sbin/nologin
+@newuser _solr:801:_solr::solr user:/nonexistent:/sbin/nologin
 @extraunexec rm -rf ${LOCALSTATEDIR}/db/solr/*
 @extraunexec rm /var/log/solr/*
 @rcscript ${RCDIR}/solr

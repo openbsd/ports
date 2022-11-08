@@ -4,6 +4,7 @@ V =			7.10.0
 DISTNAME =		elasticsearch-oss-$V-darwin-x86_64
 PKGNAME =		elasticsearch-$V
 CATEGORIES =		textproc
+REVISION =		0
 
 HOMEPAGE =		https://www.elastic.co/products/elasticsearch
 

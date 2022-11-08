@@ -1,4 +1,4 @@
-@newuser _notify_push:867:67:daemon:Nextcloud Notify Push daemon:/nonexistent:/sbin/nologin
+@newuser _notify_push:867:67::Nextcloud Notify Push daemon:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/nextcloud_notify_push
 @bin bin/notify_push
 share/doc/pkg-readmes/${PKGSTEM}

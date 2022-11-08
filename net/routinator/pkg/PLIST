@@ -1,5 +1,5 @@
 @newgroup _routinator:844
-@newuser _routinator:844:_routinator:daemon:routinator user:/nonexistent:/sbin/nologin
+@newuser _routinator:844:_routinator::routinator user:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/routinator
 @bin bin/routinator
 @man man/man1/routinator.1

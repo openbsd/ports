@@ -1,6 +1,7 @@
 COMMENT=	SOCKS client and server
 
 DISTNAME=	dante-1.4.3
+REVISION=	0
 
 CATEGORIES=	security
 

@@ -1,5 +1,5 @@
 @newgroup _siproxd:574
-@newuser _siproxd:574:574:daemon:SIP proxy:/var/empty:/sbin/nologin
+@newuser _siproxd:574:574::SIP proxy:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/siproxd
 lib/siproxd/
 @so lib/siproxd/plugin_blacklist.so

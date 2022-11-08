@@ -2,7 +2,7 @@ COMMENT =	lightweight server providing access to task data
 
 DISTNAME =	taskd-1.1.0
 CATEGORIES =	productivity net
-REVISION =	4
+REVISION =	5
 
 HOMEPAGE =	http://www.taskwarrior.org/
 

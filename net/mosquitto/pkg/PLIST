@@ -1,5 +1,5 @@
 @newgroup _mosquitto:753
-@newuser _mosquitto:753:753:daemon:Mosquitto MQTT Broker:/var/empty:/sbin/nologin
+@newuser _mosquitto:753:753::Mosquitto MQTT Broker:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/mosquitto
 @bin bin/mosquitto_passwd
 @bin bin/mosquitto_pub

@@ -1,5 +1,5 @@
 @newgroup _lighttpd:585
-@newuser _lighttpd:585:_lighttpd:daemon:lighttpd Account:/nonexistent:/sbin/nologin
+@newuser _lighttpd:585:_lighttpd::lighttpd Account:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/lighttpd
 lib/lighttpd/
 @so lib/lighttpd/mod_access.so

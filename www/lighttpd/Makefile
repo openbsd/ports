@@ -4,6 +4,7 @@ DISTNAME=	lighttpd-1.4.67
 CATEGORIES=	www net
 MASTER_SITES=	https://download.lighttpd.net/lighttpd/releases-1.4.x/
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 HOMEPAGE=	https://www.lighttpd.net/
 

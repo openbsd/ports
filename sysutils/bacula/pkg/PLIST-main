@@ -1,7 +1,7 @@
 @conflict bacula-server-<5.2.1
 @pkgpath sysutils/bacula,-client
 @newgroup _bacula:591
-@newuser _bacula:591:_bacula:daemon:Bacula Director:/nonexistent:/sbin/nologin
+@newuser _bacula:591:_bacula::Bacula Director:/nonexistent:/sbin/nologin
 @comment lib/bpipe-fd.a
 @rcscript ${RCDIR}/bacula
 @rcscript ${RCDIR}/bacula_fd

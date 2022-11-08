@@ -1,5 +1,5 @@
 @newgroup _vsftpd:513
-@newuser _vsftpd:513:_vsftpd:daemon:vsftpd user:/nonexistent:/sbin/nologin
+@newuser _vsftpd:513:_vsftpd::vsftpd user:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/vsftpd
 @man man/man5/vsftpd.conf.5
 @man man/man8/vsftpd.8

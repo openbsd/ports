@@ -6,11 +6,12 @@ DISTNAME=	net-snmp-$V
 MULTI_PACKAGES=	-main -tkmib
 PKGNAME-main=	net-snmp-$V
 PKGNAME-tkmib=	net-snmp-tkmib-$V
-REVISION-main=	2
+REVISION-main=	3
 
 # tkmib isn't flavoured
 FULLPKGPATH-tkmib= net/net-snmp,-tkmib
 FULLPKGNAME-tkmib= net-snmp-tkmib-$V
+REVISION-tkmib=    0
 
 # N.B. p5 module picks up installed libs in /usr/local
 # please check sysutils/snmp_exporter "make test" if updating

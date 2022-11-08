@@ -2,7 +2,7 @@
 @conflict burp-*
 @pkgpath sysutils/burp
 @newgroup _burp:794
-@newuser _burp:794:794:daemon:BackUp and Recovery Daemon:/var/empty:/sbin/nologin
+@newuser _burp:794:794::BackUp and Recovery Daemon:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/burp
 @bin bin/vss_strip
 @man man/man8/bedup.8

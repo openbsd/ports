@@ -1,5 +1,5 @@
 @newgroup _honk:833
-@newuser _honk:833:_honk:daemon:Honk User:${LOCALSTATEDIR}/honk:/sbin/nologin
+@newuser _honk:833:_honk::Honk User:${LOCALSTATEDIR}/honk:/sbin/nologin
 @rcscript ${RCDIR}/honk
 @bin bin/autobonker
 @bin bin/gettoken

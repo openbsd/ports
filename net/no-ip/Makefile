@@ -3,7 +3,7 @@ COMMENT=		No-IP.com Dynamic DNS client
 V=			2.1.9
 DISTNAME=		noip-${V}
 PKGNAME=		no-ip-${V}
-REVISION=		5
+REVISION=		6
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.no-ip.com/

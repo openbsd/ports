@@ -1,6 +1,6 @@
 @option is-branch
 @newgroup _trytond:675
-@newuser _trytond:675:675:daemon:Trytond Daemon:/var/trytond:/bin/sh
+@newuser _trytond:675:675::Trytond Daemon:/var/trytond:/bin/sh
 @rcscript ${RCDIR}/trytond
 @rcscript ${RCDIR}/trytond_cron
 @rcscript ${RCDIR}/trytond_worker

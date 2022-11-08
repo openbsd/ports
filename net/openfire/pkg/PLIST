@@ -1,5 +1,5 @@
 @newgroup _openfire:632
-@newuser _openfire:632:_openfire:daemon:openfire user:/var/empty:/bin/sh
+@newuser _openfire:632:_openfire::openfire user:/var/empty:/bin/sh
 @extraunexec rm -rf %D/openfire/conf/*
 @extraunexec rm -rf %D/openfire/embedded-db
 @extraunexec rm -rf %D/openfire/logs/*

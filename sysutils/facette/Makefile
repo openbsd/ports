@@ -5,7 +5,7 @@ COMMENT =	time series data visualization and graphing software
 GH_ACCOUNT =	facette
 GH_PROJECT =	facette
 GH_TAGNAME =	0.5.1
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	sysutils
 

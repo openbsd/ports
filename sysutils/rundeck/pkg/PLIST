@@ -1,5 +1,5 @@
 @newgroup _rundeck:780
-@newuser _rundeck:780:_rundeck:daemon:RunDeck user:/nonexistent:/sbin/nologin
+@newuser _rundeck:780:_rundeck::RunDeck user:/nonexistent:/sbin/nologin
 @mode 0750
 @owner _rundeck
 @group _rundeck

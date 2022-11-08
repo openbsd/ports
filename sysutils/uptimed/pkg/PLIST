@@ -1,6 +1,6 @@
 @extraunexec rm -f /var/db/uptimed/*
 @newgroup _uptimed:717
-@newuser _uptimed:717:717:daemon:Uptimed Account:/nonexistent:/sbin/nologin
+@newuser _uptimed:717:717::Uptimed Account:/nonexistent:/sbin/nologin
 @bin bin/uprecords
 lib/libuptimed.a
 lib/libuptimed.la

@@ -1,5 +1,5 @@
 @newgroup _tacacs:511
-@newuser _tacacs:511:_tacacs:daemon:TACACS+ user:/nonexistent:/sbin/nologin
+@newuser _tacacs:511:_tacacs::TACACS+ user:/nonexistent:/sbin/nologin
 @extraunexec rm -f /var/log/tac_plus/*
 @rcscript ${RCDIR}/tac_plus
 include/tacacs.h

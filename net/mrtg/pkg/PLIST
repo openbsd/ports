@@ -1,5 +1,5 @@
 @newgroup _mrtg:578
-@newuser _mrtg:578:578:daemon:MRTG account:/var/empty:/sbin/nologin
+@newuser _mrtg:578:578::MRTG account:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/mrtg
 bin/cfgmaker
 bin/indexmaker

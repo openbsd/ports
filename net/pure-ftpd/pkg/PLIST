@@ -1,5 +1,5 @@
 @newgroup _pure-ftpd:642
-@newuser _pure-ftpd:642:_pure-ftpd:daemon:pure-ftpd user:/nonexistent:/sbin/nologin
+@newuser _pure-ftpd:642:_pure-ftpd::pure-ftpd user:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/pure_ftpd
 @bin bin/pure-pw
 @bin bin/pure-pwconvert

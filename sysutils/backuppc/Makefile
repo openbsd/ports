@@ -2,7 +2,7 @@ COMMENT =	remote backup software system
 
 DISTNAME =	BackupPC-3.3.2
 PKGNAME =	${DISTNAME:L}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	sysutils
 

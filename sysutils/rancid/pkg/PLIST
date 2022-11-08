@@ -1,6 +1,6 @@
 @conflict par-*
 @newgroup _rancid:613
-@newuser _rancid:613:_rancid:daemon:Rancid user:/var/rancid:/bin/sh
+@newuser _rancid:613:_rancid::Rancid user:/var/rancid:/bin/sh
 bin/a10login
 bin/agmrancid
 bin/alogin

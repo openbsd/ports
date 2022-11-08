@@ -4,6 +4,7 @@ V =		4.0.4.28
 DISTNAME =	tacacs-F${V}
 PKGNAME =	tacacs+-${V}
 EPOCH =		0
+REVISION =	0
 
 SHARED_LIBS +=  tacacs                    1.0
 

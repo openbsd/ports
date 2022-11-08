@@ -4,6 +4,7 @@ GH_TAGNAME =	v5.3.4
 
 COMMENT =	content scanning web filter
 CATEGORIES =	www net
+REVISION =	0
 
 HOMEPAGE =	http://www.e2guardian.org/
 

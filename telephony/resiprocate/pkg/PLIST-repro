@@ -1,5 +1,5 @@
 @newgroup _repro:855
-@newuser _repro:855:855:daemon:repro user:/var/db/repro:/sbin/nologin
+@newuser _repro:855:855::repro user:/var/db/repro:/sbin/nologin
 @extraunexec rm -f /var/db/repro/*
 @extraunexec rm -f /var/log/repro/*
 @rcscript ${RCDIR}/repro

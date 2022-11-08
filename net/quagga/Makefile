@@ -1,7 +1,7 @@
 COMMENT=	multi-threaded routing daemon
 
 DISTNAME=	quagga-1.2.4
-REVISION=	2
+REVISION=	3
 CATEGORIES=	net
 
 .for i in ospf ospfapiclient zebra fpm_pb quagga_pb

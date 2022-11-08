@@ -1,5 +1,5 @@
 @newgroup _minio:796
-@newuser _minio:796:_minio:daemon:Minio user:${VARBASE}/minio:/sbin/nologin
+@newuser _minio:796:_minio::Minio user:${VARBASE}/minio:/sbin/nologin
 @bin bin/minio
 share/doc/pkg-readmes/${PKGSTEM}
 @rcscript ${RCDIR}/minio

@@ -6,8 +6,8 @@ DISTNAME=	symon-$V
 WRKDIST=	${WRKDIR}/symon
 PKGNAME-main=	${DISTNAME}
 FULLPKGNAME-mux= symux-$V
-REVISION-main=	6
-REVISION-mux=	4
+REVISION-main=	7
+REVISION-mux=	5
 
 CATEGORIES=	sysutils net
 

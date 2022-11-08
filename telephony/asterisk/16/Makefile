@@ -4,5 +4,6 @@ SHLIB_V=	0.0
 OLD_SAMPLECONF=	Yes
 VERSION_SPEC=	>=16.0,<17.0
 PORTROACH=	limit:^16\.
+REVISION-main=	0
 
 .include <bsd.port.mk>

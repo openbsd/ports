@@ -2,6 +2,7 @@ COMMENT=		FTP daemon which aims to be secure
 
 DISTNAME=		vsftpd-3.0.5
 CATEGORIES=		net
+REVISION=		0
 
 HOMEPAGE=		http://vsftpd.beasts.org/
 

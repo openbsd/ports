@@ -1,5 +1,5 @@
 @newgroup _tinyproxy:617
-@newuser _tinyproxy:617:_tinyproxy:daemon:tinyproxy:/nonexistent:/sbin/nologin
+@newuser _tinyproxy:617:_tinyproxy::tinyproxy:/nonexistent:/sbin/nologin
 @extraunexec rm -f /var/log/tinyproxy/tinyproxy.log
 @rcscript ${RCDIR}/tinyproxy
 @mode 700

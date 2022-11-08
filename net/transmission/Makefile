@@ -13,9 +13,9 @@ PKGNAME-qt=	transmission-qt-${VER}
 CATEGORIES=	net
 HOMEPAGE=	https://transmissionbt.com/
 MAINTAINER=	Josh Grosse <josh@jggimi.net>
-REVISION-gtk=	1
-REVISION-main=	1
-REVISION-qt=	1
+REVISION-gtk=	2
+REVISION-main=	2
+REVISION-qt=	2
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

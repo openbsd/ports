@@ -1,5 +1,5 @@
 @newgroup _nfcapd:649
-@newuser _nfcapd:649:_nfcapd:daemon:nfcapd user:/nonexistent:/sbin/nologin
+@newuser _nfcapd:649:_nfcapd::nfcapd user:/nonexistent:/sbin/nologin
 @bin bin/ft2nfdump
 @bin bin/nfanon
 @bin bin/nfcapd

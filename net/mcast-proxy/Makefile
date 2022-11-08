@@ -3,7 +3,7 @@ COMMENT =		multicast proxy daemon
 GH_ACCOUNT =		Esdenera
 GH_PROJECT =		mcast-proxy
 GH_TAGNAME =		v1.0
-REVISION =		6
+REVISION =		7
 
 DISTFILES =		mcast-proxy-1.0-0{mcast-proxy-1.0}.tar.gz
 

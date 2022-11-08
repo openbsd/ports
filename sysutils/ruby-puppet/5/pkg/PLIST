@@ -1,6 +1,6 @@
 @option is-branch
 @newgroup _puppet:580
-@newuser _puppet:580:580:daemon:Puppet user:/var/empty:/sbin/nologin
+@newuser _puppet:580:580::Puppet user:/var/empty:/sbin/nologin
 @extraunexec rm -rf ${SYSCONFDIR}/puppetlabs/*
 @rcscript ${RCDIR}/puppet
 @rcscript ${RCDIR}/puppetmaster

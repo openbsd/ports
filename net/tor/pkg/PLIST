@@ -1,5 +1,5 @@
 @newgroup _tor:566
-@newuser _tor:566:566:daemon:tor:/nonexistent:/sbin/nologin
+@newuser _tor:566:566::tor:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/tor
 @bin bin/tor
 @bin bin/tor-gencert

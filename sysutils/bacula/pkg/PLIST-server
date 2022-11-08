@@ -3,7 +3,7 @@
 @pkgpath sysutils/bacula,-server,mysql
 @pkgpath sysutils/bacula,-server,pgsql
 @pkgpath sysutils/bacula,-server,sqlite3
-@newuser _bacula-sd:599:_bacula:daemon:Bacula Storage Daemon:/nonexistent:/sbin/nologin
+@newuser _bacula-sd:599:_bacula::Bacula Storage Daemon:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/bacula
 @rcscript ${RCDIR}/bacula_dir
 @rcscript ${RCDIR}/bacula_sd

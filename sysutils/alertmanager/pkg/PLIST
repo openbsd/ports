@@ -1,5 +1,5 @@
 @newgroup _alertmanager:873
-@newuser _alertmanager:873:_alertmanager:daemon:Prometheus Alertmanager:/nonexistent:/sbin/nologin
+@newuser _alertmanager:873:_alertmanager::Prometheus Alertmanager:/nonexistent:/sbin/nologin
 @sample ${SYSCONFDIR}/alertmanager/
 @rcscript ${RCDIR}/alertmanager
 @bin bin/alertmanager

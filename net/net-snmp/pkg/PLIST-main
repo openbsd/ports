@@ -3,7 +3,7 @@
 @pkgpath net/net-snmp
 @pkgpath net/net-snmp,-perl
 @newgroup _netsnmp:760
-@newuser _netsnmp:760:_netsnmp:daemon:Net-SNMP user:/nonexistent:/sbin/nologin
+@newuser _netsnmp:760:_netsnmp::Net-SNMP user:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/net-snmp/*
 !%%readonly%%
 @rcscript ${RCDIR}/netsnmpd

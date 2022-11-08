@@ -1,5 +1,5 @@
 @newgroup _mirmon:651
-@newuser _mirmon:651:_mirmon:daemon:mirmon user:/nonexistent:/sbin/nologin
+@newuser _mirmon:651:_mirmon::mirmon user:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/db/mirmon/*
 bin/mirmon
 bin/mirmon-probe

@@ -2,6 +2,7 @@ COMMENT =	communications server for Jabber/XMPP written in Lua
 DISTNAME =	prosody-0.12.1
 CATEGORIES =	net
 HOMEPAGE =	https://prosody.im/
+REVISION =	0
 
 MAINTAINER =	Lucas <lucas@sexy.is>
 

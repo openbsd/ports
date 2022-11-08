@@ -5,6 +5,7 @@ V =		1.21.0-rc.1
 PKGNAME =	syncthing-1.21.0rc1
 DISTNAME =	syncthing-${V}
 DISTFILES =	syncthing-source-v${V}${EXTRACT_SUFX}
+REVISION =	0
 
 CATEGORIES =	net
 HOMEPAGE =	https://syncthing.net/

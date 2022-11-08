@@ -3,7 +3,7 @@
 @pkgpath net/powerdns,-sqlite
 @pkgpath net/powerdns,-sqlite3
 @newgroup _powerdns:609
-@newuser _powerdns:609:_powerdns:daemon:PowerDNS Server:/nonexistent:/sbin/nologin
+@newuser _powerdns:609:_powerdns::PowerDNS Server:/nonexistent:/sbin/nologin
 @sample ${SYSCONFDIR}/
 @rcscript ${RCDIR}/pdns_server
 @bin bin/calidns

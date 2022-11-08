@@ -2,6 +2,7 @@ COMMENT=		USENET software package designed for small sites
 
 DISTNAME=		leafnode-1.11.12
 CATEGORIES=		news
+REVISION=		0
 
 HOMEPAGE=		https://www.leafnode.org/
 

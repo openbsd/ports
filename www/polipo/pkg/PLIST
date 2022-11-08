@@ -1,5 +1,5 @@
 @newgroup _polipo:548
-@newuser _polipo:548:_polipo:daemon:Polipo Account:/nonexistent:/sbin/nologin
+@newuser _polipo:548:_polipo::Polipo Account:/nonexistent:/sbin/nologin
 @bin bin/polipo
 @info info/polipo.info
 @man man/man1/polipo.1

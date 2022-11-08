@@ -1,5 +1,5 @@
 @newgroup _thingsd:837
-@newuser _thingsd:837:_thingsd:daemon:Thingsd User:/var/empty:/sbin/nologin
+@newuser _thingsd:837:_thingsd::Thingsd User:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/thingsd
 @man man/man5/thingsd.conf.5
 @man man/man8/thingsctl.8

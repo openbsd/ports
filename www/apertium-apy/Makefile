@@ -5,7 +5,7 @@ DISTNAME =	apertium-apy-${MODPY_EGG_VERSION}
 # XXX: distfile for version 0.11.6 on pypi is many commits
 #      behind the github distfile with the same version
 MODPY_EGG_VERSION =	0.11.6
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =	www
 

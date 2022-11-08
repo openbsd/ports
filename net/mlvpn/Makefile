@@ -2,7 +2,7 @@ COMMENT =		link-aggregation VPN software
 
 V =			2.3.5
 DISTNAME =		mlvpn-$V
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		net
 

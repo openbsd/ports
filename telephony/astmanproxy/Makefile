@@ -6,7 +6,7 @@ GH_ACCOUNT =	davetroy
 GH_PROJECT =	astmanproxy
 GH_COMMIT =	f4b952a717b7e982b585bf0daa86398add394a88
 DISTNAME =	astmanproxy-1.22pre20081208
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	telephony
 

@@ -1,6 +1,6 @@
 COMMENT =		fast NTLM/NTLMv2 authenticating HTTP proxy
 DISTNAME =		cntlm-0.93beta5
-REVISION =		5
+REVISION =		6
 CATEGORIES =		www
 HOMEPAGE =		http://cntlm.sourceforge.net/
 

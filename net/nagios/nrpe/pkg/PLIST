@@ -1,6 +1,6 @@
 @pkgpath net/nagios/nrpe,no_ssl
 @newgroup _nrpe:556
-@newuser _nrpe:556:_nrpe:daemon:NRPE Account:/nonexistent:/sbin/nologin
+@newuser _nrpe:556:_nrpe::NRPE Account:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/nrpe
 @bin libexec/nagios/check_nrpe
 libexec/nagios/update-cfg.pl
