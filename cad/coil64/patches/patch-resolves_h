@@ -3,7 +3,7 @@ _N is collides with ctypes.h
 Index: resolves.h
 --- resolves.h.orig
 +++ resolves.h
-@@ -111,10 +111,10 @@ enum _FormCoil
+@@ -112,10 +112,10 @@ enum _FormCoil
      void  getMultiLayerI_fromResistance (double D, double lk, double c, double k, double Rm, _CoilResult *result);
      void getMultiLayerI_rectFormer(double a, double b, double l, double c, double dw, double k, _CoilResult *result);
      void getMultiLayerI_rectFormer_byN(double N, double a, double b, double l, double dw, double k, _CoilResult *result);

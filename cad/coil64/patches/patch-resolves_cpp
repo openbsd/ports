@@ -63,12 +63,3 @@ Index: resolves.cpp
      result->N = Ltotal;
      result->sec = Length_spiral / 1000;
  }
-@@ -1419,7 +1419,7 @@ double findPotCore_I(double N, double D1, double D2, d
-     double sum13 = l3 / A3;
-     double sum23 = l3 / (A3 * A3);
-     double s1 = r2 - sqrt(0.5 * (r2 * r2 + r1 * r1));
--    double s2 = sqrt(0.5 * (r3 * r3 + r3 * r3)) - r3;
-+    double s2 = sqrt(0.5 * (r3 * r3 + r4 * r4)) - r3;
-     double l4 = 0.25 * M_PI * (2 * s2 + h);
-     double l5 = 0.25 * M_PI * (2 * s1 + h);
-     double k4 = 1 - (2 * b / (M_PI * (r3 + r4)));
