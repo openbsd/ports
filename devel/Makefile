@@ -121,6 +121,7 @@
      SUBDIR += desktop-file-utils
      SUBDIR += dex2jar
      SUBDIR += dfu-programmer
+     SUBDIR += difftastic
      SUBDIR += diffutiltcl
      SUBDIR += dissy
      SUBDIR += distcc
