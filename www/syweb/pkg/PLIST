@@ -3,15 +3,18 @@ htdocs/syweb/class_cache.inc
 htdocs/syweb/class_graph.inc
 htdocs/syweb/class_layout.inc
 htdocs/syweb/class_lexer.inc
+htdocs/syweb/class_metric.inc
 htdocs/syweb/class_rrdtool.inc
 htdocs/syweb/class_session.inc
 htdocs/syweb/class_text.inc
 htdocs/syweb/class_vars.inc
 htdocs/syweb/configtest.php
 htdocs/syweb/graph.php
-htdocs/syweb/graph_defaults.inc
+htdocs/syweb/graph_template.inc
 htdocs/syweb/index.php
 htdocs/syweb/index_noui.php
+htdocs/syweb/metric.php
+htdocs/syweb/metric_template.inc
 htdocs/syweb/setup.inc.sample
 @sample htdocs/syweb/setup.inc
 htdocs/syweb/spacer.png

@@ -1,9 +1,5 @@
-BROKEN=		needs adapting for PHP >7.3
-
 COMMENT=	web frontend to symon
-DISTNAME=	syweb-0.65
-MODPHP_VERSION=	7.4
-REVISION=	11
+DISTNAME=	syweb-0.67
 CATEGORIES=	www sysutils
 
 HOMEPAGE=	http://www.xs4all.nl/~wpd/symon
@@ -24,7 +20,6 @@ RUN_DEPENDS=	net/rrdtool
 WRKDIST=	${WRKDIR}/syweb
 
 do-install:
-	find ${WRKDIR} -name \*.orig -delete
 	${TAR} -C ${WRKDIST} -cf - htdocs symon | ${TAR} -C ${PREFIX} -xpf -
 	${INSTALL_DATA_DIR} ${PREFIX}/symon
 	${INSTALL_SCRIPT} ${WRKDIST}/install_rrdtool.sh ${PREFIX}/symon
