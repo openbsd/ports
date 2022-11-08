@@ -1,0 +1,45 @@
+- add specific profiles 'egfortran' and 'gfortran' for OpenBSD
+
+Index: src/fpm/manifest/profiles.f90
+--- src/fpm/manifest/profiles.f90.orig
++++ src/fpm/manifest/profiles.f90
+@@ -171,7 +171,8 @@ module fpm_manifest_profile
+         logical, intent(out) :: is_valid
+         select case(compiler_name)
+           case("gfortran", "ifort", "ifx", "pgfortran", "nvfortran", "flang", "caf", &
+-                        & "f95", "lfortran", "lfc", "nagfor", "crayftn", "xlf90", "ftn95")
++                        & "f95", "lfortran", "lfc", "nagfor", "crayftn", "xlf90", &
++                        & "ftn95", "egfortran")
+             is_valid = .true.
+           case default
+             is_valid = .false.
+@@ -674,6 +675,16 @@ module fpm_manifest_profile
+ 
+         default_profiles = [ &
+               & new_profile('release', &
++                & 'egfortran', &
++                & OS_OPENBSD, &
++                & flags=' -O2 -Wimplicit-interface -fPIC -fmax-errors=1 -funroll-loops', &
++                & is_built_in=.true.), &
++              & new_profile('release', &
++                & 'gfortran', &
++                & OS_OPENBSD, &
++                & flags=' -O2 -Wimplicit-interface -fPIC -fmax-errors=1 -funroll-loops', &
++                & is_built_in=.true.), &
++              & new_profile('release', &
+                 & 'caf', &
+                 & OS_ALL, &
+                 & flags=' -O3 -Wimplicit-interface -fPIC -fmax-errors=1 -funroll-loops', &
+@@ -726,6 +737,12 @@ module fpm_manifest_profile
+                 &'lfortran', &
+                 & OS_ALL, &
+                 & flags = ' flag_lfortran_opt', &
++                & is_built_in=.true.), &
++              & new_profile('debug', &
++                & 'egfortran', &
++                & OS_OPENBSD, &
++                & flags = ' -Wall -Wextra -Wimplicit-interface -fPIC -fmax-errors=1 -g -fcheck=bounds&
++                          & -fcheck=array-temps -fbacktrace -fcoarray=single', &
+                 & is_built_in=.true.), &
+               & new_profile('debug', &
+                 & 'caf', &

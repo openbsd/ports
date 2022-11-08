@@ -1,0 +1,108 @@
+- use default compiler (fortran, C, C++) for OpenBSD
+- prefer -O2 as default optimization flag
+
+Index: src/fpm_compiler.f90
+--- src/fpm_compiler.f90.orig
++++ src/fpm_compiler.f90
+@@ -51,6 +51,7 @@ enum, bind(C)
+     enumerator :: &
+         id_unknown, &
+         id_gcc, &
++        id_cc_openbsd, &
+         id_f95, &
+         id_caf, &
+         id_intel_classic_nix, &
+@@ -135,6 +136,7 @@ character(*), parameter :: &
+     flag_gnu_coarray = " -fcoarray=single", &
+     flag_gnu_backtrace = " -fbacktrace", &
+     flag_gnu_opt = " -O3 -funroll-loops", &
++    flag_openbsd_opt = " -O2 -funroll-loops", &
+     flag_gnu_debug = " -g", &
+     flag_gnu_pic = " -fPIC", &
+     flag_gnu_warn = " -Wall -Wextra -Wimplicit-interface", &
+@@ -227,6 +229,14 @@ subroutine get_release_compile_flags(id, flags)
+             flag_gnu_limit//&
+             flag_gnu_coarray
+ 
++    case(id_cc_openbsd)
++        flags = &
++            flag_openbsd_opt//&
++            flag_gnu_external//&
++            flag_gnu_pic//&
++            flag_gnu_limit//&
++            flag_gnu_coarray
++
+     case(id_f95)
+         flags = &
+             flag_gnu_opt//&
+@@ -315,7 +325,7 @@ subroutine get_debug_compile_flags(id, flags)
+             flag_gnu_debug//&
+             flag_gnu_check//&
+             flag_gnu_backtrace
+-    case(id_gcc)
++    case(id_gcc, id_cc_openbsd)
+         flags = &
+             flag_gnu_warn//&
+             flag_gnu_pic//&
+@@ -403,7 +413,7 @@ pure subroutine set_cpp_preprocessor_flags(id, flags)
+     select case(id)
+     case default
+         flag_cpp_preprocessor = ""
+-    case(id_caf, id_gcc, id_f95, id_nvhpc)
++    case(id_caf, id_gcc, id_cc_openbsd, id_f95, id_nvhpc)
+         flag_cpp_preprocessor = "-cpp"
+     case(id_intel_classic_windows, id_intel_llvm_windows)
+         flag_cpp_preprocessor = "/fpp"
+@@ -500,7 +510,7 @@ function get_include_flag(self, path) result(flags)
+         & id_flang, id_flang_new, id_f18, &
+         & id_intel_classic_nix, id_intel_classic_mac, &
+         & id_intel_llvm_nix, id_lahey, id_nag, id_ibmxl, &
+-        & id_lfortran)
++        & id_lfortran, id_cc_openbsd)
+         flags = "-I "//path
+ 
+     case(id_intel_classic_windows, id_intel_llvm_windows)
+@@ -518,7 +528,7 @@ function get_module_flag(self, path) result(flags)
+     case default
+         flags = "-module "//path
+ 
+-    case(id_caf, id_gcc, id_f95, id_cray, id_lfortran)
++    case(id_caf, id_gcc, id_f95, id_cray, id_lfortran, id_cc_openbsd)
+         flags = "-J "//path
+ 
+     case(id_nvhpc, id_pgi, id_flang)
+@@ -569,7 +579,7 @@ subroutine get_default_c_compiler(f_compiler, c_compil
+     case(id_ibmxl)
+         c_compiler='xlc'
+ 
+-    case(id_lfortran)
++    case(id_lfortran, id_cc_openbsd)
+         c_compiler = 'cc'
+ 
+     case(id_gcc)
+@@ -607,6 +617,9 @@ subroutine get_default_cxx_compiler(f_compiler, cxx_co
+     case(id_lfortran)
+         cxx_compiler = 'cc'
+ 
++    case(id_cc_openbsd)
++        cxx_compiler = 'c++'
++
+     case(id_gcc)
+         cxx_compiler = 'g++'
+ 
+@@ -659,8 +672,13 @@ function get_id(compiler) result(id)
+ 
+     integer :: stat
+ 
+-    if (check_compiler(compiler, "gfortran")) then
+-        id = id_gcc
++    if (check_compiler(compiler, "gfortran") .or. check_compiler(compiler, "egfortran")) then
++        select case (get_os_type())
++        case default
++            id = id_gcc
++        case(OS_OPENBSD)
++            id = id_cc_openbsd
++        end select
+         return
+     end if
+ 

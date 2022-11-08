@@ -1,0 +1,20 @@
+- use vendored dependencies
+
+Index: fpm.toml
+--- fpm.toml.orig
++++ fpm.toml
+@@ -7,12 +7,10 @@ copyright = "2020 fpm contributors"
+ 
+ [dependencies]
+ [dependencies.toml-f]
+-git = "https://github.com/toml-f/toml-f"
+-rev = "e49f5523e4ee67db6628618864504448fb8c8939"
++path = "vendor/toml-f"
+ 
+ [dependencies.M_CLI2]
+-git = "https://github.com/urbanjost/M_CLI2.git"
+-rev = "ea6bbffc1c2fb0885e994d37ccf0029c99b19f24"
++path = "vendor/M_CLI2"
+ 
+ [[test]]
+ name = "cli-test"

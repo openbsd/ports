@@ -1,0 +1,17 @@
+- default to OpenBSD detection (still overridable with OSTYPE env)
+
+Index: src/fpm_environment.f90
+--- src/fpm_environment.f90.orig
++++ src/fpm_environment.f90
+@@ -114,6 +114,11 @@ contains
+             end if
+         end if
+ 
++        ! We are in ports tree, it is OpenBSD
++        r = OS_OPENBSD
++        ret = r
++        return
++
+         ! Linux
+         inquire (file='/etc/os-release', exist=file_exists)
+ 

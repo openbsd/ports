@@ -1,0 +1,23 @@
+- use egfortran by default
+
+Index: src/fpm_command_line.f90
+--- src/fpm_command_line.f90.orig
++++ src/fpm_command_line.f90
+@@ -144,7 +144,7 @@ character(len=80), parameter :: help_text_build_common
+     ]
+ !   '12345678901234567890123456789012345678901234567890123456789012345678901234567890',&
+ character(len=80), parameter :: help_text_compiler(*) = [character(len=80) :: &
+-    ' --compiler NAME    Specify a compiler name. The default is "gfortran"          ',&
++    ' --compiler NAME    Specify a compiler name. The default is "egfortran"         ',&
+     '                    unless set by the environment variable FPM_FC.              ',&
+     ' --c-compiler NAME  Specify the C compiler name. Automatically determined by    ',&
+     '                    default unless set by the environment variable FPM_CC.      ',&
+@@ -203,7 +203,7 @@ contains
+ 
+         character(len=*), parameter :: fc_env = "FC", cc_env = "CC", ar_env = "AR", &
+             & fflags_env = "FFLAGS", cflags_env = "CFLAGS", cxxflags_env = "CXXFLAGS", ldflags_env = "LDFLAGS", &
+-            & fc_default = "gfortran", cc_default = " ", ar_default = " ", flags_default = " ", &
++            & fc_default = "egfortran", cc_default = " ", ar_default = " ", flags_default = " ", &
+             & cxx_env = "CXX", cxx_default = " "
+         type(error_t), allocatable :: error
+ 
