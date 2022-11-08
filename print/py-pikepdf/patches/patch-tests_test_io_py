@@ -1,10 +1,10 @@
 Index: tests/test_io.py
 --- tests/test_io.py.orig
 +++ tests/test_io.py
-@@ -102,7 +102,7 @@ def test_invalid_output_stream(sandwich, bio_class, ex
+@@ -116,7 +116,7 @@ def _file_descriptor_is_open(
  
- @pytest.fixture
- def file_descriptor_is_open_for():
+ 
+ def _skip_file_descriptor_checks_if_not_supported():
 -    if sys.platform == 'win32' or sys.platform.startswith('freebsd'):
 +    if sys.platform == 'win32' or sys.platform.startswith('freebsd') or sys.platform.startswith('openbsd'):
          pytest.skip(
