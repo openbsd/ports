@@ -3,6 +3,7 @@ COMMENT-mysql =	MySQL support for icinga2
 COMMENT-pgsql =	PostgreSQL support for icinga2
 
 V =		2.13.5
+REVISION =	4
 
 GH_PROJECT =	icinga2
 GH_TAGNAME =	v$V
@@ -10,11 +11,6 @@ PKGNAME-main =	icinga2-$V
 PKGNAME-mysql =	icinga2-ido-mysql-$V
 PKGNAME-pgsql =	icinga2-ido-pgsql-$V
 EPOCH =		0
-REVISION-main =	4
-REVISION-mysql =4
-REVISION-pgsql =4
-
-REVISION =	4
 
 SHARED_LIBS +=	base                      0.0 # 2.6
 SHARED_LIBS +=	checker                   0.0 # 2.6

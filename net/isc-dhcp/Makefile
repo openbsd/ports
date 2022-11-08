@@ -3,14 +3,13 @@ COMMENT-client=	ISC DHCP Client
 COMMENT-omapi=	ISC DHCP OMAPI
 
 VERSION=	4.4.3-P1
+REVISION=	0
+
 DISTNAME=	isc-dhcp-${VERSION}
 PKGNAME-main=	isc-dhcp-server-${VERSION:S/-P/pl/}
 PKGNAME-client=	isc-dhcp-client-${VERSION:S/-P/pl/}
 PKGNAME-omapi=	isc-dhcp-omapi-${VERSION:S/-P/pl/}
 CATEGORIES=	net
-REVISION-client=0
-REVISION-main=	0
-REVISION-omapi=	0
 
 DISTFILES=	dhcp-${VERSION}.tar.gz
 WRKDIST=	${WRKDIR}/dhcp-${VERSION}
