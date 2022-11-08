@@ -2,7 +2,6 @@ bin/codespell
 lib/python${MODPY_VERSION}/site-packages/bin/
 lib/python${MODPY_VERSION}/site-packages/bin/codespell
 lib/python${MODPY_VERSION}/site-packages/codespell-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/codespell-${MODPY_EGG_VERSION}.dist-info/COPYING
 lib/python${MODPY_VERSION}/site-packages/codespell-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/codespell-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/codespell-${MODPY_EGG_VERSION}.dist-info/WHEEL
