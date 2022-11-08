@@ -2,6 +2,7 @@ COMMENT =	management tool for password and sensitive data
 
 V =		2.7.4
 DISTNAME =	keepassxc-${V}
+REVISION =	0
 
 CATEGORIES =	security
 
@@ -24,9 +25,9 @@ MODULES =	x11/qt5 \
 		devel/cmake
 
 LIB_DEPENDS =	archivers/minizip \
+		graphics/libqrencode \
 		security/argon2 \
 		security/botan2 \
-		graphics/libqrencode \
 		x11/qt5/qtsvg \
 		x11/qt5/qtx11extras  # needed for auto-type
 
@@ -50,6 +51,7 @@ FLAVORS =	browser yubikey
 FLAVOR ?=
 
 .if ${FLAVOR:Myubikey}
+WANTLIB += pcsclite usb-1.0
 LIB_DEPENDS +=		devel/libusb1 \
 			security/pcsc-lite
 CONFIGURE_ARGS +=	-DWITH_XC_YUBIKEY=ON
