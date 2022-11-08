@@ -15,7 +15,7 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-
+#include <ctype.h>
 #include <err.h>
 #include <errno.h>
 #include <limits.h>
