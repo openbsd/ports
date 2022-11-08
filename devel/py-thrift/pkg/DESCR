@@ -1,0 +1,4 @@
+Python API bindings to the Apache Thrift RPC subsystem.
+
+Thrift is a framework providing communication and data serialization for
+scalable cross-language services development.
