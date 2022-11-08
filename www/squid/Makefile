@@ -8,12 +8,12 @@ PKGNAME-main=	squid-$V
 PKGNAME-ldap=	squid-ldap-$V
 DPB_PROPERTIES=	parallel
 REVISION-main=	0
+REVISION-ldap=	0
 
 # subpackages aren't flavoured, so overwrite the default name/path
 FULLPKGNAME-ldap = squid-ldap-$V
 FULLPKGPATH-ldap = ${PKGPATH},-ldap
 RUN_DEPENDS-ldap += squid-$V:www/squid
-REVISION-ldap =    0
 
 CATEGORIES=	www
 

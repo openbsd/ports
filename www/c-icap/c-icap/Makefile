@@ -4,13 +4,13 @@ COMMENT-db=	Berkeley DB module for c-icap
 COMMENT-ldap=	LDAP module for c-icap
 
 V=		0.5.10
+REVISION-db=	0
+REVISION-main=	0
 REVISION-ldap=	1
 DISTNAME=	c_icap-$V
 PKGNAME-main=	c-icap-$V
 PKGNAME-db=	c-icap-db-$V
 PKGNAME-ldap=	c-icap-ldap-$V
-REVISION-db=	0
-REVISION-main=	0
 
 SHARED_LIBS +=	icapapi                   2.1 # 5.2
 

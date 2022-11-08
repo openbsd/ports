@@ -3,9 +3,7 @@ COMMENT-update=	lightweight update-only tool for rrdtool
 COMMENT-ruby=	ruby interface to librrd
 
 VERSION=	1.7.2
-REVISION=	2
-REVISION-main=	3
-REVISION-ruby=	4
+REVISION=	4
 DISTNAME=	rrdtool-${VERSION}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-update=	rrdupdate-${VERSION}

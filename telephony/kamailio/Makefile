@@ -1,6 +1,7 @@
 COMMENT-main =		mature and flexible open source SIP server
 
 VERSION =		5.5.4
+REVISION =		2
 
 DISTNAME =		kamailio-${VERSION}_src
 
@@ -15,18 +16,6 @@ PKGNAME-snmpstats =	kamailio-snmpstats-${VERSION}
 PKGNAME-perl =		kamailio-perl-${VERSION}
 PKGNAME-presence =	kamailio-presence-${VERSION}
 PKGNAME-radius =	kamailio-radius-${VERSION}
-REVISION-berkeley =	0
-REVISION-carrierroute =	0
-REVISION-ldap =		0
-REVISION-mysql =	0
-REVISION-perl =		0
-REVISION-postgresql =	0
-REVISION-presence =	0
-REVISION-radius =	0
-REVISION-snmpstats =	0
-REVISION-xml =		0
-
-REVISION-main =		2
 
 CATEGORIES =		telephony
 HOMEPAGE =		https://www.kamailio.org/
