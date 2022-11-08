@@ -6,6 +6,7 @@ COMMENT-ap2=		apache2 subversion modules
 COMMENT-gnome-keyring=	GNOME keyring support for subversion
 
 VERSION=		1.14.2
+REVISION-main=		0
 REVISION-ruby=		0
 REVISION-gnome-keyring=	1
 DISTNAME=		subversion-${VERSION:S/rc/-rc/}
