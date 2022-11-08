@@ -1,0 +1,4 @@
+Portalocker is a library to provide an easy API to file locking,
+including standard Unix filesystem locks, and a locking method based
+on Redis pubsub which allows for locks across multiple threads,
+processes and even distributed across multiple computers.
