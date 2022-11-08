@@ -1,9 +1,8 @@
 COMMENT =		encrypted and deduplicated backup tool
 
-V =			0.11.1
+V =			0.12.0
 DISTNAME =		bupstash-v${V}
 PKGNAME =		bupstash-${V}
-REVISION =		1
 
 CATEGORIES =		sysutils
 
@@ -14,7 +13,7 @@ MAINTAINER =		Bjorn Ketelaars <bket@openbsd.org>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =		c c++abi m pthread sodium
+WANTLIB =		${MODCARGO_WANTLIB} m sodium
 
 MASTER_SITES =		https://github.com/andrewchambers/bupstash/releases/download/v${V}/
 DISTFILES =		${DISTNAME}-man${EXTRACT_SUFX} \
