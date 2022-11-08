@@ -1,7 +1,7 @@
 COMMENT =	small, fast & usable window manager
 
 V =		3.6.1
-REVISION =	10
+REVISION =	11
 DISTNAME =	openbox-${V}
 SHARED_LIBS +=	obrender	12.0	# 32.0
 SHARED_LIBS +=	obt		1.1	# 2.2
@@ -27,9 +27,8 @@ WANTLIB += ${COMPILER_LIBCXX} Xdmcp jpeg
 MASTER_SITES =	${HOMEPAGE}dist/openbox/
 
 MODULES =	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
-RUN_DEPENDS =	devel/py-xdg \
+RUN_DEPENDS =	devel/py-xdg${MODPY_FLAVOR} \
 		devel/desktop-file-utils
 LIB_DEPENDS +=	devel/gettext,-runtime \
 		devel/pango \
@@ -41,7 +40,7 @@ LIB_DEPENDS +=	devel/gettext,-runtime \
 FAKE_FLAGS =	sysconfdir="${PREFIX}/share/examples/openbox" \
 		rcdir="${PREFIX}/share/examples/openbox"
 
-API_V = 	${V:R}
+API_V =		${V:R}
 SUBST_VARS =	API_V
 
 USE_GMAKE =	Yes
@@ -55,5 +54,7 @@ CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/data/autostart/autostart.in
+	2to3 --fix=all --no-diffs --nobackups --verbose --write \
+	    ${WRKSRC}/data/autostart/openbox-xdg-autostart
 
 .include <bsd.port.mk>

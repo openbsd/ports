@@ -29,10 +29,10 @@ include/openbox/${API_V}/obt/util.h
 include/openbox/${API_V}/obt/version.h
 include/openbox/${API_V}/obt/xml.h
 include/openbox/${API_V}/obt/xqueue.h
-lib/libobrender.a
+@static-lib lib/libobrender.a
 lib/libobrender.la
 @lib lib/libobrender.so.${LIBobrender_VERSION}
-lib/libobt.a
+@static-lib lib/libobt.a
 lib/libobt.la
 @lib lib/libobt.so.${LIBobt_VERSION}
 lib/pkgconfig/obrender-3.5.pc
