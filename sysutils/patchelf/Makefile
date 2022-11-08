@@ -1,6 +1,6 @@
 COMMENT =	utility for modifying existing ELF executables and libraries
 
-V =			0.16.1
+V =			0.17.0
 DISTNAME =		patchelf-${V}
 MASTER_SITES =		https://github.com/NixOS/patchelf/releases/download/${V}/
 
@@ -29,10 +29,10 @@ CONFIGURE_ARGS =	--mandir=${PREFIX}/man
 TEST_TARGET =		check
 
 .if !${PROPERTIES:Mclang}
-# use newer ports as(1) ports since base's 2.17 is too old to accept a type
-# argument for `.section' in ${WRKSRC}/tests/too-many-strtab2.s;  the old .c
-# version would compile but not link with ld.lld(1),  the new .s assembles and
-# links on all our archicture/compiler mixes with this workaorund.
+# use newer ports as(1) since base's 2.17 is too old to accept a type argument
+# for `.section' in ${WRKSRC}/tests/too-many-strtab2.s;
+# the old .c version would compile but not link with ld.lld(1), the new .s
+# assembles and links on all our archicture/compiler mixes with this workaorund.
 # (closed) https://github.com/NixOS/patchelf/issues/350
 TEST_DEPENDS +=		devel/gas
 
