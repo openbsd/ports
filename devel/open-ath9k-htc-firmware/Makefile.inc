@@ -1,3 +1,4 @@
+# if this port is updated, sysutils/firmware/athn must be bumped
 PKGNAME ?=	open-ath9k-htc-firmware-${ATH9K_FIRMWARE}-1.4.0pl20171105
 DISTNAME ?=	${GH_PROJECT}-${GH_COMMIT}
 

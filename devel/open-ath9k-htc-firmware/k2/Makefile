@@ -1,5 +1,6 @@
 COMMENT =		free firmware for Atheros AR9271
 
+# if this port is updated, sysutils/firmware/athn must be bumped
 ATH9K_FIRMWARE =	k2
 REVISION =		0
 
