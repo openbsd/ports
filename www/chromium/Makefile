@@ -9,7 +9,7 @@ COMMENT=		Chromium browser
 V=			107.0.5304.87
 
 DISTNAME=		chromium-${V}
-REVISION=		1
+REVISION=		2
 
 DISTFILES+=		${CHROMIUM_DISTFILES} \
 			${PROFILE_DISTFILES}:0 \
@@ -165,7 +165,7 @@ GN_ARGS=	enable_nacl=false \
 		extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\" \
 		fatal_linker_warnings=false \
 		use_custom_libcxx=false \
-		use_udev=false
+		use_udev=true
 
 # notyet
 GN_ARGS+=	use_vaapi=false

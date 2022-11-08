@@ -1,10 +1,11 @@
 Index: services/device/hid/BUILD.gn
 --- services/device/hid/BUILD.gn.orig
 +++ services/device/hid/BUILD.gn
-@@ -35,6 +35,25 @@ source_set("hid") {
+@@ -35,7 +35,26 @@ source_set("hid") {
      "//services/device/public/mojom",
    ]
  
+-  if ((is_linux || is_chromeos) && use_udev) {
 +  if (is_openbsd) {
 +    sources += [
 +      "hid_connection_fido.cc",
@@ -24,6 +25,7 @@ Index: services/device/hid/BUILD.gn
 +    ]
 +  }
 +
-   if ((is_linux || is_chromeos) && use_udev) {
++  if ((is_linux || is_chromeos) && !is_bsd && use_udev) {
      sources += [
        "hid_connection_linux.cc",
+       "hid_connection_linux.h",
