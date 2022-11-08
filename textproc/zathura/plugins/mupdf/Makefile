@@ -1,7 +1,7 @@
 V =		0.3.9
 COMMENT =	mupdf pdf plugin for zathura
 PROJECT =	zathura-pdf-mupdf
-REVISION =	0
+REVISION =	1
 
 # please check runtime if updating, mupdf linking is Very Annoying
 
