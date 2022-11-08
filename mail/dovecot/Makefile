@@ -12,7 +12,7 @@ V_MAJOR=	2.3
 V_DOVECOT=	2.3.19.1
 EPOCH=		0
 
-REVISION-server= 1
+REVISION-server= 2
 REVISION-ldap=	0
 REVISION-mysql=	0
 REVISION-postgresql=0

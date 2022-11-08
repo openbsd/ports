@@ -2,8 +2,7 @@
 | Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
-By default, the _dovecot user, and so the Dovecot processes run in
-the login(1) class of "dovecot".
+By default, the Dovecot processes run in the login(1) class of "dovecot".
 
 The capability database file is located at /etc/login.conf.d/dovecot
 

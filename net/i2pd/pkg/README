@@ -5,11 +5,11 @@
 Resource Limits: File Descriptors
 =================================
 
-By default, the _i2pd user, and so the i2pd process runs in the login(1)
-class of "daemon". The default limits on file descriptors are
-insufficient to run i2pd; instead you should put the _i2pd user and
-process in their own login(1) class with tuned resources. You should
-also raise the system-wide maxfiles limit.
+By default, the i2pd process runs in the login(1) class of "daemon".
+The default limits on file descriptors are insufficient to run i2pd; instead you
+should put the _i2pd user and process in their own login(1) class with tuned
+resources.
+You should also raise the system-wide maxfiles limit.
 
 1. Configure i2pd login class in the login.conf(5) file:
 
