@@ -1,6 +1,7 @@
 COMMENT =		tool for installing Python packages
 
 MODPY_EGG_VERSION =	22.3.1
+REVISION =		0
 DISTNAME =		pip-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
@@ -13,7 +14,9 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+# can't use MODPY_PYBUILD unless this loop is broken:
+# py-build -> py-packaging -> py-parsing -> py-pip -> py-build
+MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =		python3
 FLAVOR =		python3
