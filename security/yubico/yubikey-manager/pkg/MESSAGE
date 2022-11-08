@@ -1,2 +1,7 @@
 NOTE: yubikey-manager (ykman) is only partially functional on OpenBSD.
-Most of the "ykman fido xxx" commands (pin-setting and others) stall.
+
+"ykman otp" is not functional as there is no suitable HID backend; some OTP
+operations can be done with the Qt-based yubikey-personalization-gui package.
+
+For "ykman fido", make sure pcscd is running, and if commands stall,
+try removing and reconnecting your yubikey.
