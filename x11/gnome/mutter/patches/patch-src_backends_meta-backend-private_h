@@ -1,0 +1,23 @@
+No colord (needs GUdev) on OpenBSD (XXX add HAVE_COLORD to meson_options.txt
+
+Index: src/backends/meta-backend-private.h
+--- src/backends/meta-backend-private.h.orig
++++ src/backends/meta-backend-private.h
+@@ -67,7 +67,6 @@ struct _MetaBackendClass
+ 
+   MetaMonitorManager * (* create_monitor_manager) (MetaBackend *backend,
+                                                    GError     **error);
+-  MetaColorManager * (* create_color_manager) (MetaBackend *backend);
+   MetaCursorRenderer * (* get_cursor_renderer) (MetaBackend        *backend,
+                                                 ClutterInputDevice *device);
+   MetaCursorTracker * (* create_cursor_tracker) (MetaBackend *backend);
+@@ -127,9 +126,6 @@ MetaIdleMonitor * meta_backend_get_idle_monitor (MetaB
+                                                  ClutterInputDevice *device);
+ 
+ MetaIdleManager * meta_backend_get_idle_manager (MetaBackend *backend);
+-
+-META_EXPORT_TEST
+-MetaColorManager * meta_backend_get_color_manager (MetaBackend *backend);
+ 
+ META_EXPORT_TEST
+ MetaOrientationManager * meta_backend_get_orientation_manager (MetaBackend *backend);
