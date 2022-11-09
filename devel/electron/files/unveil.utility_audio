@@ -1,7 +1,0 @@
-# needed for chromium
-/etc/chromium r
-
-# needed for IPC communication, X.Org, etc.
-/tmp rwc
-
-~/.sndio rwc
