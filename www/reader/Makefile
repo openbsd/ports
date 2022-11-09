@@ -1,4 +1,4 @@
-COMMENT =	a lightweight tool offering better readability of web pages.
+COMMENT =	lightweight tool offering better readability of web pages
 
 V =		0.3.0
 MODGO_MODNAME =	github.com/mrusme/reader
