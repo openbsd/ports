@@ -1,6 +1,6 @@
 COMMENT =		built-package format for Python
 
-MODPY_EGG_VERSION =	0.38.2
+MODPY_EGG_VERSION =	0.38.3
 DISTNAME =		wheel-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
