@@ -1,6 +1,6 @@
 COMMENT=		collection of macros for GNU Autoconf
 
-DISTNAME=		autoconf-archive-2022.02.11
+DISTNAME=		autoconf-archive-2022.09.03
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gnu.org/software/autoconf-archive/
