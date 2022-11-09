@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1446 2022/11/09 11:39:42 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1447 2022/11/09 17:08:52 robert Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1733,6 +1733,7 @@ setup_obsolete_reason(
 	3 => 'libzapojit',
 	3 => 'librest',
 	3 => 'seahorse-sharing',
+	48 => 'electron',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
@@ -1793,6 +1794,7 @@ my $obsolete_message = {
 	45 => "crashes in many different ways at runtime",
 	46 => "moved to binary bootstraps",
 	47 => "DNS network daemon running as root and not using random source ports. use DNS64 support in unbound or isc-bind",
+	48 => "horrible ecosystem",
 };
 
 # ->is_base_system($handle, $state):
