@@ -1,7 +1,6 @@
 COMMENT =	Python interface to Discogs website
 
-MODPY_EGG_VERSION = 2.3.14
-REVISION =	0
+MODPY_EGG_VERSION = 2.5
 DISTNAME =	python3-discogs-client-${MODPY_EGG_VERSION}
 PKGNAME =	${DISTNAME:S/thon3//}
 CATEGORIES =	audio
