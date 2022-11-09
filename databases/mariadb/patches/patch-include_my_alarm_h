@@ -1,0 +1,17 @@
+Fix warning with signal typedef for *BSD
+7d96cb4703693cbf7a23308cfffee955022c86a9
+
+Index: include/my_alarm.h
+--- include/my_alarm.h.orig
++++ include/my_alarm.h
+@@ -31,7 +31,9 @@ extern ulong my_time_to_wait_for_lock;
+ #include <signal.h>
+ #ifdef HAVE_SIGHANDLER_T
+ #define sig_return sighandler_t
+-#elif defined(SOLARIS) || defined(__sun) || defined(__APPLE__) || defined(__FreeBSD__) || defined(_AIX)
++#elif defined(SOLARIS) || defined(__sun) || defined(__APPLE__) || \
++    defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__) || \
++    defined(__DragonFly__) || defined(_AIX)
+ typedef void (*sig_return)(int); /* Returns type from signal */
+ #else
+ typedef void (*sig_return)(void); /* Returns type from signal */

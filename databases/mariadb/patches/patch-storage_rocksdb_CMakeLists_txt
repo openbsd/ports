@@ -1,10 +1,7 @@
-Rocksdb: Add initial OpenBSD support
-055cb3fcd1aec2a05908a312a2ae4dfd3a0d4d81
-
 Index: storage/rocksdb/CMakeLists.txt
 --- storage/rocksdb/CMakeLists.txt.orig
 +++ storage/rocksdb/CMakeLists.txt
-@@ -51,15 +51,6 @@ IF(MSVC_ARM64)
+@@ -53,15 +53,6 @@ IF(MSVC_ARM64)
   SKIP_ROCKSDB_PLUGIN("Windows ARM64 not supported")
  ENDIF()
  
@@ -20,21 +17,3 @@ Index: storage/rocksdb/CMakeLists.txt
  # This plugin needs recent C++ compilers (it is using C++11 features)
  # Skip build for the old compilers
  SET(CXX11_FLAGS)
-@@ -191,7 +182,7 @@ ADD_DEPENDENCIES(rocksdb_aux_lib GenError)
- 
- # MARIAROCKS-TODO: how to properly depend on -lrt ?
- TARGET_LINK_LIBRARIES(rocksdb_aux_lib rocksdblib ${ZLIB_LIBRARY})
--if (UNIX AND NOT APPLE)
-+if (UNIX AND NOT APPLE AND NOT CMAKE_SYSTEM_NAME STREQUAL "OpenBSD")
-   TARGET_LINK_LIBRARIES(rocksdb_aux_lib -lrt)
- endif()
- TARGET_LINK_LIBRARIES(rocksdb_aux_lib ${ATOMIC_EXTRA_LIBS})
-@@ -242,7 +233,7 @@ ENDIF()
- #  ADD_SUBDIRECTORY(unittest)
- #ENDIF()
- 
--if (UNIX AND NOT APPLE)
-+if (UNIX AND NOT APPLE AND NOT CMAKE_SYSTEM_NAME STREQUAL "OpenBSD")
-   SET(rocksdb_static_libs ${rocksdb_static_libs} "-lrt")
- endif()
- 

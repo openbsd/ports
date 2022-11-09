@@ -2,14 +2,10 @@ COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
 COMMENT-tests=	multithreaded SQL database (regression test suite/benchmark)
 
-VERSION=	10.9.3
+VERSION=	10.9.4
 DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
-REVISION-server= 2
-REVISION-tests=	2
 EPOCH=		1
-REVISION-main=	0
-
 CATEGORIES=	databases
 MASTER_SITES=	https://downloads.mariadb.com/MariaDB/${DISTNAME}/source/ \
 		https://ftp.osuosl.org/pub/mariadb/${DISTNAME}/source/
@@ -95,11 +91,13 @@ CONFIGURE_ARGS+=-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 # force disabling the PAM auth plugin if OpenPAM is installed
 CONFIGURE_ARGS+=-DHAVE_PAM_APPL_H=0
 
-# The ColumnStore storage engine is disabled.
-# ColumnStore is only buildable on X86.
+# The ColumnStore storage engine is disabled. ColumnStore is only
+# buildable on X86.
 CONFIGURE_ARGS+=-DPLUGIN_COLUMNSTORE=NO
 
-.if ${MACHINE_ARCH} != "amd64" && ${MACHINE_ARCH} != "riscv64"
+.include <bsd.port.arch.mk>
+
+.if !${PROPERTIES:Mlp64} || ${PROPERTIES:Mbe}
 CONFIGURE_ARGS+=-DWITHOUT_ROCKSDB_STORAGE_ENGINE=1
 .endif
 
@@ -114,15 +112,13 @@ LDFLAGS+=	-latomic
 WANTLIB+=	atomic
 .endif
 
-.include <bsd.port.arch.mk>
-
 .if ${PROPERTIES:Mle}
 PKG_ARGS+=	-Dle=1
 .else
 PKG_ARGS+=	-Dle=0
 .endif
 
-.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "riscv64"
+.if ${PROPERTIES:Mlp64} && ${PROPERTIES:Mle}
 PKG_ARGS+=	-Drocksdb=1
 .else
 PKG_ARGS+=	-Drocksdb=0
@@ -142,7 +138,7 @@ post-install:
 		ln -sf libmariadb.so.${LIBmariadb_VERSION} libmysqlclient.so.${LIBmysqlclient_VERSION} && \
 		ln -sf libmariadb.so.${LIBmariadb_VERSION} libmysqlclient_r.so.${LIBmysqlclient_r_VERSION}
 	${INSTALL_DATA} ${FILESDIR}/my.cnf ${PREFIX}/share/examples/mysql/
-.if ${MACHINE_ARCH} != "amd64" && ${MACHINE_ARCH} != "riscv64"
+.if !${PROPERTIES:Mlp64} || ${PROPERTIES:Mbe}
 	rm -f ${PREFIX}/man/man1/myrocks_hotbackup.1
 	rm -Rf ${PREFIX}/share/mysql-test/plugin/rocksdb/
 .endif

@@ -228,6 +228,7 @@ include/mysql/server/private/log_event_old.h
 include/mysql/server/private/log_slow.h
 include/mysql/server/private/maria.h
 include/mysql/server/private/mariadb.h
+include/mysql/server/private/mariadb_capi_rename.h
 include/mysql/server/private/mdl.h
 include/mysql/server/private/mem_root_array.h
 include/mysql/server/private/message.h
@@ -361,6 +362,7 @@ include/mysql/server/private/sql_crypt.h
 include/mysql/server/private/sql_cte.h
 include/mysql/server/private/sql_cursor.h
 include/mysql/server/private/sql_db.h
+include/mysql/server/private/sql_debug.h
 include/mysql/server/private/sql_delete.h
 include/mysql/server/private/sql_derived.h
 include/mysql/server/private/sql_digest.h
