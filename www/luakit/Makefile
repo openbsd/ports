@@ -3,8 +3,7 @@ COMMENT =	fast, small, webkit based browser written in lua
 GH_ACCOUNT =	luakit
 GH_PROJECT =	luakit
 # used in MAKE_FLAGS
-GH_TAGNAME =	2.3.1
-REVISION =	1
+GH_TAGNAME =	2.3.3
 
 EPOCH =		1
 
