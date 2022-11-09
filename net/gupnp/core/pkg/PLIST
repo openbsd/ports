@@ -21,14 +21,10 @@ include/gupnp-1.6/libgupnp/gupnp-types.h
 include/gupnp-1.6/libgupnp/gupnp-uuid.h
 include/gupnp-1.6/libgupnp/gupnp-xml-doc.h
 include/gupnp-1.6/libgupnp/gupnp.h
-lib/girepository-1.0/
 lib/girepository-1.0/GUPnP-1.6.typelib
 @lib lib/libgupnp-1.6.so.${LIBgupnp-1.6_VERSION}
 lib/pkgconfig/gupnp-1.6.pc
 @man man/man1/gupnp-binding-tool-1.6.1
-share/gir-1.0/
 share/gir-1.0/GUPnP-1.6.gir
-share/vala/
-share/vala/vapi/
 share/vala/vapi/gupnp-1.6.deps
 share/vala/vapi/gupnp-1.6.vapi
