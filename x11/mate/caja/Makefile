@@ -3,7 +3,7 @@ COMMENT=		file manager for the MATE desktop
 SHARED_LIBS +=  caja-extension            5.0 # 5.0
 
 MATE_PROJECT=		caja
-REVISION=		2
+MATE_VERSION=		1.26.1
 
 CATEGORIES=		x11
 
