@@ -2,5 +2,5 @@
 @man man/man1/ii.1
 share/doc/ii/
 share/doc/ii/FAQ
+share/doc/ii/LICENSE
 share/doc/ii/README
-share/doc/ii/query.sh
