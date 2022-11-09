@@ -1,0 +1,2 @@
+nghttp3 is a C implementation of HTTP/3 mapping over QUIC (RFC 9114) and
+QPACK (RFC 9204).

@@ -1,0 +1,9 @@
+include/nghttp3/
+include/nghttp3/nghttp3.h
+include/nghttp3/version.h
+@static-lib lib/libnghttp3.a
+lib/libnghttp3.la
+@lib lib/libnghttp3.so.${LIBnghttp3_VERSION}
+lib/pkgconfig/libnghttp3.pc
+share/doc/nghttp3/
+share/doc/nghttp3/README.rst

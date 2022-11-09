@@ -1,0 +1,36 @@
+COMMENT=	implementation of HTTP/3
+
+V=		0.7.1
+DISTNAME=	nghttp3-$V
+
+SHARED_LIBS +=	nghttp3              0.0     # 3.1
+
+CATEGORIES=	www
+
+HOMEPAGE=	https://nghttp2.org/nghttp3/
+
+# MIT
+PERMIT_PACKAGE=	Yes
+
+MASTER_SITES=	https://github.com/ngtcp2/nghttp3/releases/download/v$V/
+
+SEPARATE_BUILD=		Yes
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
+
+COMPILER=		base-clang ports-gcc
+
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS=		--enable-lib-only
+
+# Don't pull this in as BUILD_DEPENDS to reduce dependencies on
+# the path to building curl->cmake.
+pre-test:
+	@if ! [ -f ${LOCALBASE}/lib/libcunit.a ]; then echo; \
+	    echo "====================================================="; \
+	    echo "To run tests, install the cunit package and re-build."; \
+	    echo "Dependency is not forced to avoid restricting arches."; \
+	    echo "====================================================="; \
+	    echo; exit 1; \
+	fi
+
+.include <bsd.port.mk>
