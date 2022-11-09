@@ -20,6 +20,8 @@ MODULES=		devel/meson \
 
 MODGNOME_TOOLS= 	gobject-introspection
 
+BUILD_DEPENDS=		textproc/gtk-doc
+
 LIB_DEPENDS=		textproc/icu4c \
 			x11/gnome/amtk \
 			x11/gtksourceview4
