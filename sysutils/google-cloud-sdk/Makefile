@@ -1,6 +1,6 @@
 COMMENT=		manage resources on Google Cloud Platform
 
-V=			408.0.1
+V=			409.0.0
 DISTNAME=		google-cloud-sdk-${V}-linux-x86
 PKGNAME=		google-cloud-sdk-${V}
 WRKDIST=		${WRKDIR}/google-cloud-sdk
@@ -21,7 +21,6 @@ MODULES=		lang/python
 MODPY_BUILDDEP=		Yes
 
 MODPY_ADJ_FILES=	bin/dev_appserver.py \
-			bin/endpointscfg.py \
 			bin/bootstrapping/install.py \
 			bin/bootstrapping/gsutil.py \
 			bin/bootstrapping/bq.py
