@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1445 2022/11/08 14:22:42 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1446 2022/11/09 11:39:42 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1694,9 +1694,7 @@ setup_obsolete_reason(
 	31 => 'py-scandir',
 	3 => 'd-feet',
 # 7.2
-	6 => 'tepl',
 	3 => 'gnome-documents',
-	6 => 'amtk',
 	3 => 'lumail',
 	3 => 'kalarmcal',
 	5 => 'gnats',
