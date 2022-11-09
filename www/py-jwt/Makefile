@@ -1,6 +1,6 @@
 COMMENT =	JSON Web Token implementation in Python
 
-MODPY_EGG_VERSION = 2.3.0
+MODPY_EGG_VERSION = 2.6.0
 DISTNAME =	PyJWT-${MODPY_EGG_VERSION}
 PKGNAME =	py-jwt-${MODPY_EGG_VERSION}
 CATEGORIES =	www
@@ -20,7 +20,7 @@ MODPY_PI =	Yes
 MODPY_SETUPTOOLS = Yes
 MODPY_PYTEST =	Yes
 
-RUN_DEPENDS =   security/py-cryptography${MODPY_FLAVOR}>=1.4.0
+RUN_DEPENDS =   security/py-cryptography${MODPY_FLAVOR}>=3.4.0
 
 TEST_DEPENDS =	devel/py-test-cov${MODPY_FLAVOR} \
 		devel/py-test-runner${MODPY_FLAVOR}
