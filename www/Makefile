@@ -111,6 +111,7 @@
      SUBDIR += nextcloud
      SUBDIR += nextcloud_notify_push
      SUBDIR += nghttp2
+     SUBDIR += nghttp3
      SUBDIR += nginx
      SUBDIR += nostromo
      SUBDIR += odoo
