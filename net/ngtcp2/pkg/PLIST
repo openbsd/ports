@@ -1,0 +1,15 @@
+include/ngtcp2/
+include/ngtcp2/ngtcp2.h
+include/ngtcp2/ngtcp2_crypto.h
+include/ngtcp2/ngtcp2_crypto_openssl.h
+include/ngtcp2/version.h
+@static-lib lib/libngtcp2.a
+lib/libngtcp2.la
+@lib lib/libngtcp2.so.${LIBngtcp2_VERSION}
+@static-lib lib/libngtcp2_crypto_openssl.a
+lib/libngtcp2_crypto_openssl.la
+@lib lib/libngtcp2_crypto_openssl.so.${LIBngtcp2_crypto_openssl_VERSION}
+lib/pkgconfig/libngtcp2.pc
+lib/pkgconfig/libngtcp2_crypto_openssl.pc
+share/doc/ngtcp2/
+share/doc/ngtcp2/README.rst
