@@ -1,0 +1,13 @@
+warning: implicit declaration of function 'strcasecmp' is invalid in C99
+
+Index: atk-adaptor/adaptors/collection-adaptor.c
+--- atk-adaptor/adaptors/collection-adaptor.c.orig
++++ atk-adaptor/adaptors/collection-adaptor.c
+@@ -23,6 +23,7 @@
+ /* collection.c: implements the Collection interface */
+ 
+ #include <string.h>
++#include <strings.h>
+ 
+ #include <atk/atk.h>
+ #include <droute/droute.h>
