@@ -2,7 +2,7 @@ COMMENT =	GNOME Shell style for Qt applications
 
 GH_ACCOUNT =	FedoraQt
 GH_PROJECT =	adwaita-qt
-GH_TAGNAME =	1.4.1
+GH_TAGNAME =	1.4.2
 
 CATEGORIES =	x11
 
