@@ -316,6 +316,7 @@
      SUBDIR += nfsen
      SUBDIR += ngircd
      SUBDIR += ngrep
+     SUBDIR += ngtcp2
      SUBDIR += nload
      SUBDIR += nmap
      SUBDIR += no-ip
