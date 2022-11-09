@@ -41,7 +41,8 @@ LIB_DEPENDS=		graphics/libgexiv2 \
 			x11/gnome/tracker3
 
 MODGNOME_TOOLS=		desktop-file-utils gobject-introspection \
-			gtk-update-icon-cache
+			gtk-update-icon-cache gi-docgen
+
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
