@@ -3,6 +3,7 @@
 daemon="${LOCALBASE}/bin/gotosocial"
 daemon_user="_gotosocial"
 daemon_flags="--config-path ${SYSCONFDIR}/gotosocial.yaml"
+daemon_logger="daemon.info"
 
 . /etc/rc.d/rc.subr
 
