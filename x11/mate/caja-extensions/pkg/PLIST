@@ -97,6 +97,9 @@ share/locale/el/LC_MESSAGES/caja-extensions.mo
 share/locale/en_AU/LC_MESSAGES/caja-extensions.mo
 share/locale/en_CA/LC_MESSAGES/caja-extensions.mo
 share/locale/en_GB/LC_MESSAGES/caja-extensions.mo
+share/locale/en_US/
+share/locale/en_US/LC_MESSAGES/
+share/locale/en_US/LC_MESSAGES/caja-extensions.mo
 share/locale/eo/LC_MESSAGES/caja-extensions.mo
 share/locale/es/LC_MESSAGES/caja-extensions.mo
 share/locale/es_AR/LC_MESSAGES/caja-extensions.mo
