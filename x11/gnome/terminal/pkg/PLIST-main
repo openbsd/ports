@@ -894,7 +894,6 @@ share/locale/zh_CN/LC_MESSAGES/gnome-terminal.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-terminal.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-terminal.mo
 share/metainfo/
-share/metainfo/org.gnome.Terminal.Nautilus.metainfo.xml
 share/metainfo/org.gnome.Terminal.metainfo.xml
 share/xdg-terminals/
 share/xdg-terminals/org.gnome.Terminal.desktop

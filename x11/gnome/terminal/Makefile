@@ -6,7 +6,8 @@ GNOME_VERSION=		3.46.4
 
 PKGNAME-nautilus=	${GNOME_PROJECT}-nautilus-${GNOME_VERSION}
 
-REVISION-main=		1
+REVISION-main=		2
+REVISION-nautilus=	0
 
 # override gnome MODULE
 MASTER_SITES=		https://gitlab.gnome.org/GNOME/${GNOME_PROJECT}/-/archive/${GNOME_VERSION}/
