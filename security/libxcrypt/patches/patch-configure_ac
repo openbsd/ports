@@ -1,0 +1,36 @@
+Don't use -Wl,--no-undefined on BSD systems; it's expected to have undefined
+references to libc functions.
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -160,29 +160,6 @@ zw_PROG_LD_WRAP
+ AX_CHECK_VSCRIPT
+ AX_GCC_FUNC_ATTRIBUTE(symver)
+ 
+-# FIXME: This only checks whether the linker accepts either
+-# -Wl,-z,defs or -Wl,--no-undefined.  It doesn't check that the switch
+-# actually does what we want it to do.
+-AC_CACHE_CHECK([how to make linking fail when undefined symbols remain],
+-  [ac_cv_ld_no_undefined], [
+-  ac_cv_ld_no_undefined=unknown
+-  SAVED_LDFLAGS="$LDFLAGS"
+-  LDFLAGS="$SAVED_LDFLAGS -Wl,-z,defs"
+-  AC_LINK_IFELSE([AC_LANG_PROGRAM([], [int i = 1;])],
+-    [ac_cv_ld_no_undefined=-Wl,-z,defs])
+-  if test "x$ac_cv_ld_no_undefined" = xunknown; then
+-    LDFLAGS="$SAVED_LDFLAGS -Wl,--no-undefined"
+-    AC_LINK_IFELSE([AC_LANG_PROGRAM([], [int i = 1;])],
+-      [ac_cv_ld_no_undefined=-Wl,--no-undefined])
+-  fi
+-  LDFLAGS="$SAVED_LDFLAGS"])
+-
+-UNDEF_FLAG=
+-if test "x$ac_cv_ld_no_undefined" != xunknown; then
+-  UNDEF_FLAG="$ac_cv_ld_no_undefined"
+-fi
+-AC_SUBST([UNDEF_FLAG])
+-
+ # FIXME: This only checks whether the linker accepts -Wl,-z,text.
+ # It doesn't check that the switch actually does what we want it to do.
+ AC_CACHE_CHECK([how to make linking fail when there are text relocations],
