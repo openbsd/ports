@@ -18,7 +18,6 @@ share/doc/tint2/html/manual.html
 share/doc/tint2/html/readme.html
 share/doc/tint2/tint2.md
 share/examples/tint2/
-@sample ${SYSCONFDIR}/xdg/
 @sample ${SYSCONFDIR}/xdg/tint2/
 share/examples/tint2/default_icon.png
 share/examples/tint2/horizontal-dark-opaque.tint2rc
@@ -44,6 +43,6 @@ share/locale/pl/LC_MESSAGES/tint2conf.mo
 share/locale/ru/LC_MESSAGES/tint2conf.mo
 share/locale/sr/LC_MESSAGES/tint2conf.mo
 share/mime/packages/tint2conf.xml
-@tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-mime-database
+@tag update-desktop-database
