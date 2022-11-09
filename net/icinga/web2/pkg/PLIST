@@ -2692,7 +2692,6 @@ icinga-web2/modules/monitoring/library/Monitoring/Web/Navigation/Action.php
 icinga-web2/modules/monitoring/library/Monitoring/Web/Navigation/HostAction.php
 icinga-web2/modules/monitoring/library/Monitoring/Web/Navigation/HostNote.php
 icinga-web2/modules/monitoring/library/Monitoring/Web/Navigation/Renderer/
-icinga-web2/modules/monitoring/library/Monitoring/Web/Navigation/Renderer/BackendAvailabilityNavigationItemRenderer.php
 icinga-web2/modules/monitoring/library/Monitoring/Web/Navigation/Renderer/MonitoringBadgeNavigationItemRenderer.php
 icinga-web2/modules/monitoring/library/Monitoring/Web/Navigation/ServiceAction.php
 icinga-web2/modules/monitoring/library/Monitoring/Web/Navigation/ServiceNote.php
