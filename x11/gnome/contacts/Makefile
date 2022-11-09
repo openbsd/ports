@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.92 2022/11/07 13:45:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.93 2022/11/09 15:08:55 ajacoutot Exp $
 
 COMMENT=		contacts manager for GNOME
 
 GNOME_PROJECT=		gnome-contacts
 GNOME_VERSION=		43.0
+REVISION=		0
 
 CATEGORIES=		productivity
 
@@ -20,14 +21,18 @@ MODULES=		devel/meson \
 			x11/gnome \
 			devel/dconf
 
-DEBUG_PACKAGES =	${BUILD_PACKAGES}
+MODGNOME_TOOLS=		desktop-file-utils docbook \
+			gobject-introspection gtk-update-icon-cache vala
+
+BUILD_DEPENDS=		sysutils/libportal,-gtk4
 
 LIB_DEPENDS=		net/telepathy/folks \
 			sysutils/libportal \
 			x11/gnome/libadwaita
 
-MODGNOME_TOOLS=		desktop-file-utils docbook \
-			gobject-introspection gtk-update-icon-cache vala
+RUN_DEPENDS=		sysutils/libportal,-gtk4
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 # XXX https://gitlab.gnome.org/GNOME/gnome-contacts/-/issues/275
 CFLAGS +=		-Wno-return-type
