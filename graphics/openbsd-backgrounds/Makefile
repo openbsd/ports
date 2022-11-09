@@ -4,7 +4,7 @@ CATEGORIES = 	graphics
 MAINTAINER = 	Marc Espie <espie@openbsd.org>
 
 GH_PROJECT = 	openbsd-backgrounds
-GH_TAGNAME = 	2.9
+GH_TAGNAME = 	3.1
 GH_ACCOUNT = 	marcespie
 MASTER_SITES = 	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${GH_TAGNAME}/
 
