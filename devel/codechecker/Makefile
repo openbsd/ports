@@ -30,8 +30,6 @@ CONFIGURE_STYLE =	none
 ALL_TARGET =	package package_api
 USE_GMAKE =	Yes
 
-PARALLEL_MAKE_FLAGS =
-
 RUN_DEPENDS =	databases/py-alembic${MODPY_FLAVOR} \
 		databases/py-sqlalchemy${MODPY_FLAVOR} \
 		devel/llvm \
