@@ -23,8 +23,8 @@ MODULES=		devel/dconf \
 
 BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/iso-codes \
-			devel/libsoup \
-			devel/py-gobject3${MODPY_FLAVOR}
+			devel/py-gobject3${MODPY_FLAVOR} \
+			textproc/gtk-doc
 
 LIB_DEPENDS=		devel/libpeas \
 			textproc/gspell \
