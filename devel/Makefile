@@ -80,7 +80,7 @@
      SUBDIR += coccigrep
      SUBDIR += coccinelle
      SUBDIR += codeblocks
-     SUBDIR += codechecker,python3
+     SUBDIR += codechecker
      SUBDIR += codeworker
      SUBDIR += coeurl
      SUBDIR += colordiff
