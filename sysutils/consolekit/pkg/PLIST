@@ -7,6 +7,7 @@ include/ConsoleKit/
 include/ConsoleKit/ck-connector/
 include/ConsoleKit/ck-connector/ck-connector.h
 include/ConsoleKit/libconsolekit.h
+include/ConsoleKit/sd-login.h
 lib/ConsoleKit/
 lib/ConsoleKit/run-seat.d/
 lib/ConsoleKit/run-session.d/
