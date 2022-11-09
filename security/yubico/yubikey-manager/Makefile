@@ -2,6 +2,7 @@ COMMENT=	library and CLI tool (ykman) for configuring a YubiKey
 
 # v5 requires newer click, and changes API
 MODPY_EGG_VERSION=	4.0.9
+REVISION=	0
 
 DISTNAME=	yubikey-manager-${MODPY_EGG_VERSION}
 YK_PROJECT=	yubikey-manager
@@ -9,9 +10,8 @@ YK_PROJECT=	yubikey-manager
 CATEGORIES=	sysutils
 
 MODULES=	lang/python
-
 MODPY_PYBUILD=	poetry-core
-MODPY_PI=		Yes
+MODPY_PI=	Yes
 
 RUN_DEPENDS=	devel/py-click${MODPY_FLAVOR}<9 \
 		security/pcsc-lite \
