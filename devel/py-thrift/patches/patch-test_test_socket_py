@@ -1,0 +1,12 @@
+Index: test/test_socket.py
+--- test/test_socket.py.orig
++++ test/test_socket.py
+@@ -3,7 +3,7 @@ import unittest
+ 
+ from test_sslsocket import ServerAcceptor
+ 
+-import _import_local_thrift  # noqa
++import thrift
+ 
+ from thrift.transport.TSocket import TServerSocket
+ from thrift.transport.TSocket import TSocket

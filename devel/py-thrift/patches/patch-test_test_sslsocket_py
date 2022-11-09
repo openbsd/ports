@@ -1,0 +1,12 @@
+Index: test/test_sslsocket.py
+--- test/test_sslsocket.py.orig
++++ test/test_sslsocket.py
+@@ -29,7 +29,7 @@ import unittest
+ import warnings
+ from contextlib import contextmanager
+ 
+-import _import_local_thrift  # noqa
++import thrift
+ 
+ SCRIPT_DIR = os.path.realpath(os.path.dirname(__file__))
+ ROOT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(SCRIPT_DIR)))
