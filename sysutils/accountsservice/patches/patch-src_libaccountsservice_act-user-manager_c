@@ -7,7 +7,157 @@ Subject: [PATCH] lib: don't set loaded state until seat is fetched
 Index: src/libaccountsservice/act-user-manager.c
 --- src/libaccountsservice/act-user-manager.c.orig
 +++ src/libaccountsservice/act-user-manager.c
-@@ -2547,7 +2547,7 @@ maybe_set_is_loaded (ActUserManager *manager)
+@@ -40,7 +40,11 @@
+ #include <glib-object.h>
+ #include <gio/gio.h>
+ #include <gio/gunixinputstream.h>
++#ifdef __linux__
+ #include <systemd/sd-login.h>
++#else
++#include <ConsoleKit/sd-login.h>
++#endif
+ 
+ #include "act-user-manager.h"
+ #include "act-user-private.h"
+@@ -99,9 +103,11 @@ typedef struct
+         char                        *id;
+         char                        *session_id;
+         guint                        load_idle_id;
++#ifdef __linux__
+         sd_login_monitor            *session_monitor;
+         GInputStream                *session_monitor_stream;
+         guint                        session_monitor_source_id;
++#endif
+ } ActUserManagerSeat;
+ 
+ typedef enum {
+@@ -261,6 +267,7 @@ activate_systemd_session_id (ActUserManager *manager,
+                 return FALSE;
+         }
+ 
++#ifdef __linux__
+         reply = g_dbus_connection_call_sync (connection,
+                                              "org.freedesktop.login1",
+                                              "/org/freedesktop/login1",
+@@ -274,6 +281,21 @@ activate_systemd_session_id (ActUserManager *manager,
+                                              -1,
+                                              NULL,
+                                              &error);
++#else
++        reply = g_dbus_connection_call_sync (connection,
++                                             "org.freedesktop.ConsoleKit",
++                                             "/org/freedesktop/ConsoleKit/Manager",
++                                             "org.freedesktop.ConsoleKit.Manager",
++                                             "ActivateSessionOnSeat",
++                                             g_variant_new ("(ss)",
++                                                            seat_id,
++                                                            session_id),
++                                             NULL,
++                                             G_DBUS_CALL_FLAGS_NONE,
++                                             -1,
++                                             NULL,
++                                             &error);
++#endif
+         if (reply == NULL) {
+                 g_warning ("Unable to activate session: %s", error->message);
+                 return FALSE;
+@@ -309,9 +331,7 @@ session_is_on_our_seat (ActUserManager *manager,
+         g_autofree gchar *session_seat = NULL;
+ 
+         res = sd_session_get_seat (session_id, &session_seat);
+-        if (res == -ENODATA) {
+-                return FALSE;
+-        } else if (res < 0) {
++        if (res < 0) {
+                 g_debug ("failed to determine seat of session %s: %s",
+                          session_id,
+                          strerror (-res));
+@@ -355,6 +375,8 @@ act_user_manager_goto_login_session (ActUserManager *m
+ static gboolean
+ _can_activate_systemd_sessions (ActUserManager *manager)
+ {
++printf("%s:%d\n", __FUNCTION__, __LINE__);
++#ifdef __linux__
+         ActUserManagerPrivate *priv = act_user_manager_get_instance_private (manager);
+         int res;
+ 
+@@ -366,6 +388,9 @@ _can_activate_systemd_sessions (ActUserManager *manage
+         }
+ 
+         return res > 0;
++#else
++        return TRUE;
++#endif
+ }
+ 
+ /**
+@@ -627,9 +652,7 @@ get_seat_id_for_current_session (ActUserManager *manag
+ 
+         res = sd_session_get_seat (priv->seat.session_id, &seat_id);
+ 
+-        if (res == -ENODATA) {
+-                seat_id = NULL;
+-        } else if (res < 0) {
++        if (res < 0) {
+                 g_warning ("Could not get current seat: %s",
+                            strerror (-res));
+                 unload_seat (manager);
+@@ -1332,8 +1355,12 @@ get_x11_display_for_new_session (ActUserManagerNewSess
+                 goto done;
+         }
+ 
++#ifndef __OpenBSD__ 
+         res = sd_session_get_display (new_session->id,
+                                       &x11_display);
++#else
++	res = -1;
++#endif
+         if (res < 0) {
+                 g_debug ("ActUserManager: Failed to get the x11 display of session '%s': %s",
+                          new_session->id,
+@@ -1562,6 +1589,7 @@ _remove_stale_systemd_sessions (ActUserManager *manage
+ static void
+ reload_systemd_sessions (ActUserManager *manager)
+ {
++#ifdef __linux__
+         int         res;
+         int         i;
+         g_auto(GStrv) sessions = NULL;
+@@ -1610,21 +1638,25 @@ reload_systemd_sessions (ActUserManager *manager)
+ 
+         _add_new_systemd_sessions (manager, systemd_sessions);
+         _remove_stale_systemd_sessions (manager, systemd_sessions);
++#endif
+ }
+ 
+ static gboolean
+ on_session_monitor_event (GPollableInputStream *stream,
+                           ActUserManager       *manager)
+ {
++#ifdef __linux__
+         ActUserManagerPrivate *priv = act_user_manager_get_instance_private (manager);
+         sd_login_monitor_flush (priv->seat.session_monitor);
+         reload_systemd_sessions (manager);
++#endif
+         return TRUE;
+ }
+ 
+ static void
+ _monitor_for_systemd_session_changes (ActUserManager *manager)
+ {
++#ifdef __linux__
+         ActUserManagerPrivate *priv = act_user_manager_get_instance_private (manager);
+         int res;
+         int fd;
+@@ -1651,6 +1683,7 @@ _monitor_for_systemd_session_changes (ActUserManager *
+                                NULL);
+         priv->seat.session_monitor_source_id = g_source_attach (source, NULL);
+         g_source_unref (source);
++#endif
+ }
+ 
+ static void
+@@ -2034,7 +2067,7 @@ maybe_set_is_loaded (ActUserManager *manager)
          /* Don't set is_loaded yet unless the seat is already loaded enough
           * or failed to load.
           */
@@ -16,3 +166,19 @@ Index: src/libaccountsservice/act-user-manager.c
                  g_debug ("ActUserManager: Seat loaded, so now setting loaded property");
          } else if (priv->seat.state == ACT_USER_MANAGER_SEAT_STATE_UNLOADED) {
                  g_debug ("ActUserManager: Seat wouldn't load, so giving up on it and setting loaded property");
+@@ -2513,6 +2546,7 @@ act_user_manager_finalize (GObject *object)
+                 g_source_remove (priv->seat.load_idle_id);
+         }
+ 
++#ifdef __linux__
+         if (priv->seat.session_monitor != NULL) {
+                 sd_login_monitor_unref (priv->seat.session_monitor);
+         }
+@@ -2524,6 +2558,7 @@ act_user_manager_finalize (GObject *object)
+         if (priv->seat.session_monitor_source_id != 0) {
+                 g_source_remove (priv->seat.session_monitor_source_id);
+         }
++#endif
+ 
+         if (priv->accounts_proxy != NULL) {
+                 g_object_unref (priv->accounts_proxy);

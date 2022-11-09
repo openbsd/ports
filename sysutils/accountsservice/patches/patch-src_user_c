@@ -1,7 +1,7 @@
 Index: src/user.c
 --- src/user.c.orig
 +++ src/user.c
-@@ -138,9 +138,14 @@ user_reset_icon_file (User *user)
+@@ -396,9 +396,14 @@ user_update_from_template (User *user)
  }
  
  void
@@ -11,12 +11,12 @@ Index: src/user.c
                          struct spwd   *spent)
 +#else
 +user_update_from_pwent (User          *user,
-+                        struct passwd *pwent)
-+#endif
++                        struct passwd *pwent)  
++#endif  
  {
          g_autofree gchar *real_name = NULL;
          gboolean is_system_account;
-@@ -199,10 +204,24 @@ user_update_from_pwent (User          *user,
+@@ -460,10 +465,24 @@ user_update_from_pwent (User          *user,
          accounts_user_set_shell (ACCOUNTS_USER (user), pwent->pw_shell);
  
          passwd = NULL;
@@ -41,7 +41,7 @@ Index: src/user.c
                  locked = TRUE;
          }
          else {
-@@ -218,6 +237,7 @@ user_update_from_pwent (User          *user,
+@@ -479,6 +498,7 @@ user_update_from_pwent (User          *user,
                  mode = PASSWORD_MODE_NONE;
          }
  
@@ -49,17 +49,17 @@ Index: src/user.c
          if (spent) {
                  if (spent->sp_lstchg == 0) {
                          mode = PASSWORD_MODE_SET_AT_LOGIN;
-@@ -231,6 +251,9 @@ user_update_from_pwent (User          *user,
+@@ -499,6 +519,9 @@ user_update_from_pwent (User          *user,
                  user->days_after_expiration_until_lock = spent->sp_inact;
                  user->account_expiration_policy_known = TRUE;
          }
 +#else
-+	user->expiration_time = pwent->pw_expire;
++        user->user_expiration_time = g_date_time_new_from_unix_utc(pwent->pw_expire);
 +#endif
  
          accounts_user_set_password_mode (ACCOUNTS_USER (user), mode);
          is_system_account = !user_classify_is_human (accounts_user_get_uid (ACCOUNTS_USER (user)),
-@@ -1602,7 +1625,11 @@ user_change_locked_authorized_cb (Daemon              
+@@ -2074,7 +2097,11 @@ user_change_locked_authorized_cb (Daemon              
                           accounts_user_get_user_name (ACCOUNTS_USER (user)),
                           accounts_user_get_uid (ACCOUNTS_USER (user)));
                  argv[0] = "/usr/sbin/usermod";
@@ -71,7 +71,7 @@ Index: src/user.c
                  argv[2] = "--";
                  argv[3] = accounts_user_get_user_name (ACCOUNTS_USER (user));
                  argv[4] = NULL;
-@@ -1671,14 +1698,24 @@ user_change_account_type_authorized_cb (Daemon        
+@@ -2142,7 +2169,12 @@ user_change_account_type_authorized_cb (Daemon        
  {
          AccountType account_type = GPOINTER_TO_INT (data);
          g_autoptr(GError) error = NULL;
@@ -84,8 +84,9 @@ Index: src/user.c
          gint ngroups;
          g_autoptr(GString) str = NULL;
          g_auto(GStrv) extra_admin_groups = NULL;
+@@ -2150,7 +2182,12 @@ user_change_account_type_authorized_cb (Daemon        
+         gsize n_extra_admin_groups_gids = 0;
          gid_t admin_gid;
-         struct group *grp;
          gint i;
 +#ifndef __OpenBSD__
          const gchar *argv[6];
@@ -96,9 +97,9 @@ Index: src/user.c
  
          if (((AccountType) accounts_user_get_account_type (ACCOUNTS_USER (user))) != account_type) {
                  sys_log (context,
-@@ -1694,17 +1731,33 @@ user_change_account_type_authorized_cb (Daemon        
+@@ -2164,7 +2201,15 @@ user_change_account_type_authorized_cb (Daemon        
+                         return;
                  }
-                 admin_gid = grp->gr_gid;
  
 +#ifdef __OpenBSD__
 +                ngroups = sizeof(groups) / sizeof(gid_t);
@@ -112,34 +113,26 @@ Index: src/user.c
  
                  str = g_string_new ("");
                  for (i = 0; i < ngroups; i++) {
-                         if (groups[i] == admin_gid)
-                                 continue;
+@@ -2177,14 +2222,28 @@ user_change_account_type_authorized_cb (Daemon        
+                                         group_is_admin = TRUE;
+ 
+                         if (!group_is_admin)
 +#ifdef __OpenBSD__
-+                        obsdgrp = getgrgid(groups[i]);
-+                        g_string_append_printf (str, "%s,", obsdgrp->gr_name);
++                        {
++                                obsdgrp = getgrgid(groups[i]);
++                                g_string_append_printf (str, "%s,", obsdgrp->gr_name);
++                        }
 +#else
-                         g_string_append_printf (str, "%d,", groups[i]);
+                                 g_string_append_printf (str, "%d,", groups[i]);
 +#endif
                  }
                  switch (account_type) {
                  case ACCOUNT_TYPE_ADMINISTRATOR:
-                         extra_admin_groups = g_strsplit (EXTRA_ADMIN_GROUPS, ",", 0);
 +#ifdef __OpenBSD__
 +                        class = "staff";
 +#endif
- 
-                         for (i = 0; extra_admin_groups[i] != NULL; i++) {
-                                 struct group *extra_group;
-@@ -1712,10 +1765,18 @@ user_change_account_type_authorized_cb (Daemon        
-                                 if (extra_group == NULL || extra_group->gr_gid == admin_gid)
-                                         continue;
- 
-+#ifdef __OpenBSD__
-+                                g_string_append_printf (str, "%s,", extra_group->gr_name);
-+#else
-                                 g_string_append_printf (str, "%d,", extra_group->gr_gid);
-+#endif
-                         }
+                         for (i = 0; i < n_extra_admin_groups_gids; i++)
+                                 g_string_append_printf (str, "%d,", extra_admin_groups_gids[i]);
  
 +#ifdef __OpenBSD__
 +                        g_string_append_printf (str, "%s", ADMIN_GROUP);
@@ -149,7 +142,7 @@ Index: src/user.c
                          break;
                  case ACCOUNT_TYPE_STANDARD:
                  default:
-@@ -1724,14 +1785,26 @@ user_change_account_type_authorized_cb (Daemon        
+@@ -2193,14 +2252,26 @@ user_change_account_type_authorized_cb (Daemon        
                          break;
                  }
  

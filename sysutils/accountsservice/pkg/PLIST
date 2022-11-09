@@ -10,14 +10,14 @@ lib/girepository-1.0/AccountsService-1.0.typelib
 @lib lib/libaccountsservice.so.${LIBaccountsservice_VERSION}
 lib/pkgconfig/accountsservice.pc
 @bin libexec/accounts-daemon
+share/accountsservice/
+share/accountsservice/user-templates/
+share/accountsservice/user-templates/administrator
+share/accountsservice/user-templates/standard
 share/dbus-1/interfaces/org.freedesktop.Accounts.User.xml
 share/dbus-1/interfaces/org.freedesktop.Accounts.xml
 share/dbus-1/system-services/org.freedesktop.Accounts.service
-share/examples/accountsservice/
-share/examples/accountsservice/dbus-1/
-share/examples/accountsservice/dbus-1/system.d/
-share/examples/accountsservice/dbus-1/system.d/org.freedesktop.Accounts.conf
-@sample ${SYSCONFDIR}/dbus-1/system.d/org.freedesktop.Accounts.conf
+share/dbus-1/system.d/org.freedesktop.Accounts.conf
 share/gir-1.0/AccountsService-1.0.gir
 share/locale/af/LC_MESSAGES/accounts-service.mo
 share/locale/ar/LC_MESSAGES/accounts-service.mo
@@ -100,7 +100,12 @@ share/locale/zh_CN/LC_MESSAGES/accounts-service.mo
 share/locale/zh_HK/LC_MESSAGES/accounts-service.mo
 share/locale/zh_TW/LC_MESSAGES/accounts-service.mo
 share/polkit-1/actions/org.freedesktop.accounts.policy
+share/vala/
+share/vala/vapi/
+share/vala/vapi/accountsservice.deps
+share/vala/vapi/accountsservice.vapi
 @sample /var/db/AccountsService/
 @sample /var/db/AccountsService/icons/
 @mode 0700
 @sample /var/db/AccountsService/users/
+@mode

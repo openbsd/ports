@@ -1,0 +1,11 @@
+Index: src/libaccountsservice/meson.build
+--- src/libaccountsservice/meson.build.orig
++++ src/libaccountsservice/meson.build
+@@ -34,6 +34,7 @@ deps = [
+   glib_dep,
+   libaccounts_generated_dep,
+   logind_dep,
++  libconsolekit_dep,
+ ]
+ 
+ symbol_map = join_paths(meson.current_source_dir(), 'symbol.map')

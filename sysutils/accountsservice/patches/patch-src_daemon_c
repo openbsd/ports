@@ -1,7 +1,7 @@
 Index: src/daemon.c
 --- src/daemon.c.orig
 +++ src/daemon.c
-@@ -36,6 +36,10 @@
+@@ -37,6 +37,10 @@
  #include <errno.h>
  #include <sys/types.h>
  
@@ -12,19 +12,19 @@ Index: src/daemon.c
  #include <glib.h>
  #include <glib/gi18n.h>
  #include <glib-object.h>
-@@ -81,7 +85,11 @@ typedef struct {
+@@ -84,7 +88,11 @@ typedef struct {
          GHashTable *extension_ifaces;
  } DaemonPrivate;
  
 +#ifdef HAVE_SHADOW_H
  typedef struct passwd * (* EntryGeneratorFunc) (Daemon *, GHashTable *, gpointer *, struct spwd **shadow_entry);
-+#else
++#else 
 +typedef struct passwd * (* EntryGeneratorFunc) (Daemon *, GHashTable *, gpointer *);
 +#endif
  
  typedef struct {
          Daemon *daemon;
-@@ -165,17 +173,25 @@ remove_cache_files (const gchar *user_name)
+@@ -168,17 +176,25 @@ remove_cache_files (const gchar *user_name)
  }
  
  static struct passwd *
@@ -50,7 +50,7 @@ Index: src/daemon.c
  
          struct {
                  FILE *fp;
-@@ -184,8 +200,11 @@ entry_generator_fgetpwent (Daemon       *daemon,
+@@ -187,8 +203,11 @@ entry_generator_fgetpwent (Daemon       *daemon,
  
          /* First iteration */
          if (*state == NULL) {
@@ -62,7 +62,7 @@ Index: src/daemon.c
                  struct spwd *shadow_entry;
  
                  fp = fopen (PATH_SHADOW, "r");
-@@ -219,17 +238,22 @@ entry_generator_fgetpwent (Daemon       *daemon,
+@@ -222,17 +241,22 @@ entry_generator_fgetpwent (Daemon       *daemon,
                          g_clear_pointer (&shadow_users, g_hash_table_unref);
                          return NULL;
                  }
@@ -85,7 +85,7 @@ Index: src/daemon.c
  
                  *state = generator_state;
          }
-@@ -240,18 +264,22 @@ entry_generator_fgetpwent (Daemon       *daemon,
+@@ -243,17 +267,27 @@ entry_generator_fgetpwent (Daemon       *daemon,
          if (g_hash_table_size (users) < MAX_LOCAL_USERS) {
                  pwent = fgetpwent (generator_state->fp);
                  if (pwent != NULL) {
@@ -96,9 +96,24 @@ Index: src/daemon.c
                              *spent = &shadow_entry_buffers->spbuf;
                          }
 +#endif
+ 
+                         /* Skip system users... */
++#ifdef HAVE_SHADOW_H
+                         if (!user_classify_is_human (pwent->pw_uid, pwent->pw_name, pwent->pw_shell, (*spent)? (*spent)->sp_pwdp : NULL)) {
++#else
++                        if (!user_classify_is_human (pwent->pw_uid, pwent->pw_name, pwent->pw_shell, NULL)) {
++#endif
+                                 g_debug ("skipping user: %s", pwent->pw_name);
+ 
++#ifdef HAVE_SHADOW_H
+                                 return entry_generator_fgetpwent (daemon, users, state, spent);
++#else
++                                return entry_generator_fgetpwent (daemon, users, state);
++#endif
+                         }
+ 
                          return pwent;
-                 }
-         }
+@@ -262,7 +296,9 @@ entry_generator_fgetpwent (Daemon       *daemon,
  
          /* Last iteration */
          fclose (generator_state->fp);
@@ -108,7 +123,7 @@ Index: src/daemon.c
          g_free (generator_state);
          *state = NULL;
  
-@@ -259,10 +287,16 @@ entry_generator_fgetpwent (Daemon       *daemon,
+@@ -270,10 +306,16 @@ entry_generator_fgetpwent (Daemon       *daemon,
  }
  
  static struct passwd *
@@ -125,7 +140,7 @@ Index: src/daemon.c
  {
          struct passwd *pwent;
          g_autoptr(GError) error = NULL;
-@@ -304,7 +338,9 @@ entry_generator_cachedir (Daemon       *daemon,
+@@ -315,7 +357,9 @@ entry_generator_cachedir (Daemon       *daemon,
                          errno = 0;
                          pwent = getpwnam (name);
                          if (pwent != NULL) {
@@ -135,7 +150,7 @@ Index: src/daemon.c
  
                                  return pwent;
                          } else if (errno == 0) {
-@@ -340,10 +376,16 @@ entry_generator_cachedir (Daemon       *daemon,
+@@ -345,10 +389,16 @@ entry_generator_cachedir (Daemon       *daemon,
  }
  
  static struct passwd *
@@ -152,7 +167,7 @@ Index: src/daemon.c
  {
          DaemonPrivate *priv = daemon_get_instance_private (daemon);
          struct passwd *pwent;
-@@ -371,7 +413,9 @@ entry_generator_requested_users (Daemon       *daemon,
+@@ -376,7 +426,9 @@ entry_generator_requested_users (Daemon       *daemon,
                                  if (pwent == NULL) {
                                          g_debug ("user '%s' requested previously but not present on system", name);
                                  } else {
@@ -162,7 +177,7 @@ Index: src/daemon.c
  
                                          return pwent;
                                  }
-@@ -394,19 +438,29 @@ load_entries (Daemon             *daemon,
+@@ -399,14 +451,20 @@ load_entries (Daemon             *daemon,
          DaemonPrivate *priv = daemon_get_instance_private (daemon);
          gpointer generator_state = NULL;
          struct passwd *pwent;
@@ -183,16 +198,7 @@ Index: src/daemon.c
                  if (pwent == NULL)
                          break;
  
-                 /* Skip system users... */
-+#ifdef HAVE_SHADOW_H
-                 if (!explicitly_requested && !user_classify_is_human (pwent->pw_uid, pwent->pw_name, pwent->pw_shell, spent? spent->sp_pwdp : NULL)) {
-+#else
-+                if (!explicitly_requested && !user_classify_is_human (pwent->pw_uid, pwent->pw_name, pwent->pw_shell, NULL)) {
-+#endif
-                         g_debug ("skipping user: %s", pwent->pw_name);
-                         continue;
-                 }
-@@ -428,7 +482,11 @@ load_entries (Daemon             *daemon,
+@@ -427,7 +485,11 @@ load_entries (Daemon             *daemon,
  
                          /* freeze & update users not already in the new list */
                          g_object_freeze_notify (G_OBJECT (user));
@@ -204,7 +210,7 @@ Index: src/daemon.c
  
                          g_hash_table_insert (users, g_strdup (user_get_user_name (user)), user);
                          g_debug ("loaded user: %s", user_get_user_name (user));
-@@ -843,15 +901,24 @@ throw_error (GDBusMethodInvocation *context,
+@@ -841,15 +903,24 @@ throw_error (GDBusMethodInvocation *context,
  }
  
  static User *
@@ -229,7 +235,7 @@ Index: src/daemon.c
          user_register (user);
  
          g_hash_table_insert (priv->users,
-@@ -880,9 +947,13 @@ daemon_local_find_user_by_id (Daemon *daemon,
+@@ -878,9 +949,13 @@ daemon_local_find_user_by_id (Daemon *daemon,
          user = g_hash_table_lookup (priv->users, pwent->pw_name);
  
          if (user == NULL) {
@@ -243,7 +249,7 @@ Index: src/daemon.c
  
                  priv->explicitly_requested_users = g_list_append (priv->explicitly_requested_users,
                                                                    g_strdup (pwent->pw_name));
-@@ -908,9 +979,13 @@ daemon_local_find_user_by_name (Daemon      *daemon,
+@@ -906,9 +981,13 @@ daemon_local_find_user_by_name (Daemon      *daemon,
          user = g_hash_table_lookup (priv->users, pwent->pw_name);
  
          if (user == NULL) {
@@ -257,7 +263,7 @@ Index: src/daemon.c
  
                  priv->explicitly_requested_users = g_list_append (priv->explicitly_requested_users,
                                                                    g_strdup (pwent->pw_name));
-@@ -1096,7 +1171,11 @@ daemon_create_user_authorized_cb (Daemon              
+@@ -1092,7 +1171,11 @@ daemon_create_user_authorized_cb (Daemon              
          CreateUserData *cd = data;
          User *user;
          g_autoptr(GError) error = NULL;
@@ -269,7 +275,7 @@ Index: src/daemon.c
          g_autofree gchar *admin_groups = NULL;
  
          if (getpwnam (cd->user_name) != NULL) {
-@@ -1119,9 +1198,17 @@ daemon_create_user_authorized_cb (Daemon              
+@@ -1128,9 +1211,17 @@ daemon_create_user_authorized_cb (Daemon              
  
                  argv[4] = "-G";
                  argv[5] = admin_groups;
@@ -287,7 +293,7 @@ Index: src/daemon.c
          }
          else if (cd->account_type == ACCOUNT_TYPE_STANDARD) {
                  argv[4] = "--";
-@@ -1302,6 +1389,34 @@ daemon_delete_user_authorized_cb (Daemon              
+@@ -1310,6 +1401,34 @@ daemon_delete_user_authorized_cb (Daemon              
                  return;
          }
  
@@ -322,7 +328,7 @@ Index: src/daemon.c
          sys_log (context, "delete user '%s' (%d)", pwent->pw_name, ud->uid);
  
          user = daemon_local_find_user_by_id (daemon, ud->uid);
-@@ -1320,11 +1435,18 @@ daemon_delete_user_authorized_cb (Daemon              
+@@ -1337,11 +1456,18 @@ daemon_delete_user_authorized_cb (Daemon              
  
          argv[0] = "/usr/sbin/userdel";
          if (ud->remove_files) {
