@@ -1,0 +1,22 @@
+Disable web and npm stuff
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -43,7 +43,7 @@ package_gerrit_skiplist:
+ 
+ package: package_dir_structure set_git_commit_template package_gerrit_skiplist
+ 	BUILD_DIR=$(BUILD_DIR) BUILD_LOGGER_64_BIT_ONLY=$(BUILD_LOGGER_64_BIT_ONLY) $(MAKE) -C $(CC_ANALYZER) package_analyzer
+-	BUILD_DIR=$(BUILD_DIR) $(MAKE) -C $(CC_WEB) package_web
++	# BUILD_DIR=$(BUILD_DIR) $(MAKE) -C $(CC_WEB) package_web
+ 
+ 	# Copy libraries.
+ 	mkdir -p $(CC_BUILD_LIB_DIR)/codechecker && \
+@@ -64,8 +64,6 @@ package: package_dir_structure set_git_commit_template
+ 
+ 	${PYTHON_BIN} ./scripts/build/create_commands.py -b $(BUILD_DIR) \
+ 	  --cmd-dir $(ROOT)/codechecker_common/cmd \
+-	    $(CC_WEB)/codechecker_web/cmd \
+-	    $(CC_SERVER)/codechecker_server/cmd \
+ 	    $(CC_CLIENT)/codechecker_client/cmd \
+ 	    $(CC_ANALYZER)/codechecker_analyzer/cmd \
+ 	  --bin-file $(ROOT)/bin/CodeChecker

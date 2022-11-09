@@ -1,0 +1,2 @@
+CodeChecker is a static analysis infrastructure built on the LLVM/Clang
+Static Analyzer toolchain, replacing scan-build.

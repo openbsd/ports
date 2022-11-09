@@ -1,0 +1,12 @@
+Index: web/Makefile
+--- web/Makefile.orig
++++ web/Makefile
+@@ -126,7 +126,7 @@ package: package_dir_structure package_web
+ 	cp $(ROOT)/LICENSE.TXT $(CC_BUILD_DIR)
+ 
+ package_api:
+-	${PYTHON_BIN} -m pip install --no-deps -t ${CC_BUILD_LIB_DIR} \
++	${PYTHON_BIN} -m pip install --no-index --no-cache --no-deps -t ${CC_BUILD_LIB_DIR} \
+ 		api/py/codechecker_api/dist/codechecker_api.tar.gz \
+ 		api/py/codechecker_api_shared/dist/codechecker_api_shared.tar.gz
+ 

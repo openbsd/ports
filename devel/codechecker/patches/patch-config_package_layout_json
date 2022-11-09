@@ -1,0 +1,13 @@
+Prevent use of base clang
+Index: config/package_layout.json
+--- config/package_layout.json.orig
++++ config/package_layout.json
+@@ -1,7 +1,7 @@
+ {
+   "runtime": {
+     "analyzers": {
+-      "clangsa": "clang",
++      "clangsa": "${LOCALBASE}/bin/clang",
+       "clang-tidy": "clang-tidy",
+       "cppcheck": "cppcheck"
+     },
