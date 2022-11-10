@@ -104,7 +104,7 @@ SEPARATE_BUILD ?=	Yes
 CATEGORIES +=		lang/go
 
 MODGO_BUILD_TARGET =	${MODGO_BUILD_CMD} ${ALL_TARGET}
-MODGO_FLAGS +=		-v -p=${MAKE_JOBS}
+MODGO_FLAGS +=		-v -buildvcs=false -p=${MAKE_JOBS}
 
 .if empty(DEBUG)
 # by default omit symbol table, debug information and DWARF symbol table
