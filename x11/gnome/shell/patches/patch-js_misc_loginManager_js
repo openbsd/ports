@@ -56,7 +56,7 @@ Index: js/misc/loginManager.js
 +            return this._currentSession;
 +
 +        try {
-+            const [objectPath] = await this._proxy.GetCurrentSessionAsync(sessionId);
++            const [objectPath] = await this._proxy.GetCurrentSessionAsync();
 +            this._currentSession = new ConsoleKitSession(Gio.DBus.system,
 +                'org.freedesktop.ConsoleKit', objectPath);
 +            return this._currentSession;
