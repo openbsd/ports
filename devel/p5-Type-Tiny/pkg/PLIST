@@ -1,6 +1,4 @@
-${P5SITE}/Devel/
 ${P5SITE}/Devel/TypeTiny/
-${P5SITE}/Devel/TypeTiny/Perl56Compat.pm
 ${P5SITE}/Devel/TypeTiny/Perl58Compat.pm
 ${P5SITE}/Error/
 ${P5SITE}/Error/TypeTiny/
@@ -25,10 +23,12 @@ ${P5SITE}/Type/Coercion/Union.pm
 ${P5SITE}/Type/Library.pm
 ${P5SITE}/Type/Params/
 ${P5SITE}/Type/Params.pm
+${P5SITE}/Type/Params/Alternatives.pm
 ${P5SITE}/Type/Params/Parameter.pm
 ${P5SITE}/Type/Params/Signature.pm
 ${P5SITE}/Type/Parser.pm
 ${P5SITE}/Type/Registry.pm
+${P5SITE}/Type/Tie.pm
 ${P5SITE}/Type/Tiny/
 ${P5SITE}/Type/Tiny.pm
 ${P5SITE}/Type/Tiny/Class.pm
@@ -58,10 +58,12 @@ ${P5SITE}/Type/Tiny/Manual/UsingWithOther.pod
 ${P5SITE}/Type/Tiny/Manual/UsingWithTestMore.pod
 ${P5SITE}/Type/Tiny/Role.pm
 ${P5SITE}/Type/Tiny/Union.pm
+${P5SITE}/Type/Tiny/_DeclaredType.pm
 ${P5SITE}/Type/Tiny/_HalfOp.pm
 ${P5SITE}/Type/Utils.pm
 ${P5SITE}/Types/
 ${P5SITE}/Types/Common/
+${P5SITE}/Types/Common.pm
 ${P5SITE}/Types/Common/Numeric.pm
 ${P5SITE}/Types/Common/String.pm
 ${P5SITE}/Types/Standard/
@@ -76,8 +78,6 @@ ${P5SITE}/Types/Standard/StrMatch.pm
 ${P5SITE}/Types/Standard/Tied.pm
 ${P5SITE}/Types/Standard/Tuple.pm
 ${P5SITE}/Types/TypeTiny.pm
-@man man/man3p/Devel::TypeTiny::Perl56Compat.3p
-@man man/man3p/Devel::TypeTiny::Perl58Compat.3p
 @man man/man3p/Error::TypeTiny.3p
 @man man/man3p/Error::TypeTiny::Assertion.3p
 @man man/man3p/Error::TypeTiny::Compilation.3p
@@ -93,6 +93,7 @@ ${P5SITE}/Types/TypeTiny.pm
 @man man/man3p/Type::Params.3p
 @man man/man3p/Type::Parser.3p
 @man man/man3p/Type::Registry.3p
+@man man/man3p/Type::Tie.3p
 @man man/man3p/Type::Tiny.3p
 @man man/man3p/Type::Tiny::Class.3p
 @man man/man3p/Type::Tiny::ConstrainedObject.3p
@@ -120,18 +121,11 @@ ${P5SITE}/Types/TypeTiny.pm
 @man man/man3p/Type::Tiny::Manual::UsingWithTestMore.3p
 @man man/man3p/Type::Tiny::Role.3p
 @man man/man3p/Type::Tiny::Union.3p
+@man man/man3p/Type::Tiny::_DeclaredType.3p
 @man man/man3p/Type::Tiny::_HalfOp.3p
 @man man/man3p/Type::Utils.3p
+@man man/man3p/Types::Common.3p
 @man man/man3p/Types::Common::Numeric.3p
 @man man/man3p/Types::Common::String.3p
 @man man/man3p/Types::Standard.3p
-@man man/man3p/Types::Standard::ArrayRef.3p
-@man man/man3p/Types::Standard::CycleTuple.3p
-@man man/man3p/Types::Standard::Dict.3p
-@man man/man3p/Types::Standard::HashRef.3p
-@man man/man3p/Types::Standard::Map.3p
-@man man/man3p/Types::Standard::ScalarRef.3p
-@man man/man3p/Types::Standard::StrMatch.3p
-@man man/man3p/Types::Standard::Tied.3p
-@man man/man3p/Types::Standard::Tuple.3p
 @man man/man3p/Types::TypeTiny.3p
