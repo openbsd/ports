@@ -2,12 +2,12 @@ COMMENT-main=	system to store and display time-series data
 COMMENT-update=	lightweight update-only tool for rrdtool
 COMMENT-ruby=	ruby interface to librrd
 
-VERSION=	1.7.2
-REVISION=	4
-DISTNAME=	rrdtool-${VERSION}
+V=		1.7.2
+REVISION=	5
+DISTNAME=	rrdtool-$V
 PKGNAME-main=	${DISTNAME}
-PKGNAME-update=	rrdupdate-${VERSION}
-PKGNAME-ruby=	ruby${MODRUBY_BINREV}-rrd-${VERSION}
+PKGNAME-update=	rrdupdate-$V
+PKGNAME-ruby=	ruby${MODRUBY_BINREV}-rrd-$V
 
 SHARED_LIBS +=	rrd                  5.3      # 10.0
 
@@ -15,8 +15,8 @@ CATEGORIES=	net databases
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
-HOMEPAGE=	http://oss.oetiker.ch/rrdtool/
-MASTER_SITES=	http://oss.oetiker.ch/rrdtool/pub/
+HOMEPAGE=	https://oss.oetiker.ch/rrdtool/
+MASTER_SITES=	https://github.com/oetiker/rrdtool-1.x/releases/download/v$V/
 
 # GPLv2+, with exemptions for use of the library with certain
 # named open-source licenses; see COPYRIGHT
@@ -77,12 +77,12 @@ LIB_DEPENDS-main=	devel/glib2 \
 			devel/pango \
 			graphics/png \
 			textproc/libxml
-RUN_DEPENDS-main=	rrdupdate-${VERSION}:net/rrdtool,-update
+RUN_DEPENDS-main=	rrdupdate-$V:net/rrdtool,-update
 
 LIB_DEPENDS-update=	devel/glib2
 RUN_DEPENDS-update=
 
-LIB_DEPENDS-ruby=	rrdtool-${VERSION}:net/rrdtool \
+LIB_DEPENDS-ruby=	rrdtool-$V:net/rrdtool \
 			${MODRUBY_LIB_DEPENDS}
 RUN_DEPENDS-ruby=	${MODRUBY_RUN_DEPENDS}
 
