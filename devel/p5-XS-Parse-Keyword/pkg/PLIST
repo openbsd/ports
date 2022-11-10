@@ -1,0 +1,21 @@
+${P5ARCH}/
+${P5ARCH}/XS/
+${P5ARCH}/XS/Parse/
+${P5ARCH}/XS/Parse/Infix/
+${P5ARCH}/XS/Parse/Infix.pm
+${P5ARCH}/XS/Parse/Infix/Builder.pm
+${P5ARCH}/XS/Parse/Infix/Builder_data.pm
+${P5ARCH}/XS/Parse/Keyword/
+${P5ARCH}/XS/Parse/Keyword.pm
+${P5ARCH}/XS/Parse/Keyword/Builder.pm
+${P5ARCH}/XS/Parse/Keyword/Builder_data.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/XS/
+${P5ARCH}/auto/XS/Parse/
+${P5ARCH}/auto/XS/Parse/Keyword/
+@comment ${P5ARCH}/auto/XS/Parse/Keyword/Keyword.bs
+@so ${P5ARCH}/auto/XS/Parse/Keyword/Keyword.so
+@man man/man3p/XS::Parse::Infix.3p
+@man man/man3p/XS::Parse::Infix::Builder.3p
+@man man/man3p/XS::Parse::Keyword.3p
+@man man/man3p/XS::Parse::Keyword::Builder.3p
