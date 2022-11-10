@@ -1063,6 +1063,7 @@
      SUBDIR += p5-Sub-Uplevel
      SUBDIR += p5-Switch
      SUBDIR += p5-Symbol-Global-Name
+     SUBDIR += p5-Syntax-Keyword-Match
      SUBDIR += p5-Sys-Mmap
      SUBDIR += p5-Sys-SigAction
      SUBDIR += p5-System-Command
