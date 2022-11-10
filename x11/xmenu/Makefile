@@ -3,10 +3,9 @@ COMMENT =	contextual menu for X11
 GH_ACCOUNT =	phillbush
 GH_PROJECT =	xmenu
 GH_TAGNAME =	v4.5.5
+REVISION =	0
 
 CATEGORIES =	x11
-
-MAINTAINER =	Guy Godfroy <guy.godfroy@gugod.fr>
 
 HOMEPAGE =	https://github.com/phillbush/xmenu
 
