@@ -1,0 +1,23 @@
+LibreSSL >= 3.4 has EVP_DigestSign() and EVP_DigestVerify()
+
+Index: ext/openssl/ossl_pkey.c
+--- ext/openssl/ossl_pkey.c.orig
++++ ext/openssl/ossl_pkey.c
+@@ -951,7 +951,7 @@ ossl_pkey_sign(int argc, VALUE *argv, VALUE self)
+             rb_jump_tag(state);
+         }
+     }
+-#if OPENSSL_VERSION_NUMBER >= 0x10101000 && !defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER >= 0x10101000
+     if (EVP_DigestSign(ctx, NULL, &siglen, (unsigned char *)RSTRING_PTR(data),
+                        RSTRING_LEN(data)) < 1) {
+         EVP_MD_CTX_free(ctx);
+@@ -1056,7 +1056,7 @@ ossl_pkey_verify(int argc, VALUE *argv, VALUE self)
+             rb_jump_tag(state);
+         }
+     }
+-#if OPENSSL_VERSION_NUMBER >= 0x10101000 && !defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER >= 0x10101000
+     ret = EVP_DigestVerify(ctx, (unsigned char *)RSTRING_PTR(sig),
+                            RSTRING_LEN(sig), (unsigned char *)RSTRING_PTR(data),
+                            RSTRING_LEN(data));
