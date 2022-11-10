@@ -4,7 +4,7 @@
 # finding foo.cmake and junking it if cmake is found & used)
 DPB_PROPERTIES +=	noconfigurejunk
 
-BUILD_DEPENDS +=	devel/meson>=0.63.3v0
+BUILD_DEPENDS +=	devel/meson>=0.64.0v0
 SEPARATE_BUILD ?=	Yes
 
 .if empty(CONFIGURE_STYLE)
