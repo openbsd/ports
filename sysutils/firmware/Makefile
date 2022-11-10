@@ -24,6 +24,7 @@
      SUBDIR += iwm
      SUBDIR += iwn
      SUBDIR += iwx
+     SUBDIR += m1n1-uboot
      SUBDIR += malo
      SUBDIR += mtw
      SUBDIR += ogx
