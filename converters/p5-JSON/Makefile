@@ -1,18 +1,18 @@
-COMMENT=	parse and convert to JSON (JavaScript Object Notation)
+COMMENT =	parse and convert to JSON (JavaScript Object Notation)
 
-DISTNAME =	JSON-4.09
-CATEGORIES=	converters
+DISTNAME =	JSON-4.10
+
+CATEGORIES =	converters
+
+MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE =	Yes
 
-MODULES=	cpan
+MODULES =		cpan
 
-RUN_DEPENDS=	www/p5-libwww
-TEST_DEPENDS=	converters/p5-JSON-XS
+TEST_DEPENDS =		converters/p5-JSON-XS>=2.34
 
-MAKE_ENV=	TEST_POD=Yes
-
-PKG_ARCH=	*
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
