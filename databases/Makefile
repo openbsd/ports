@@ -106,6 +106,7 @@
      SUBDIR += p5-Ima-DBI
      SUBDIR += p5-Jifty-DBI
      SUBDIR += p5-Mojo-Pg
+     SUBDIR += p5-Mojo-SQLite
      SUBDIR += p5-Net-Prometheus
      SUBDIR += p5-Redis
      SUBDIR += p5-Rose-DB
@@ -116,6 +117,7 @@
      SUBDIR += p5-SQL-Abstract-Classic
      SUBDIR += p5-SQL-Abstract-Limit
      SUBDIR += p5-SQL-Abstract-More
+     SUBDIR += p5-SQL-Abstract-Pg
      SUBDIR += p5-SQL-ReservedWords
      SUBDIR += p5-SQL-Statement
      SUBDIR += p5-SQL-Translator
