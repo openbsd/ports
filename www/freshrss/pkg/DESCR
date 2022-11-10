@@ -1,0 +1,7 @@
+Self hosted RSS/Atom aggregator, supporting multi-user and anonymous
+modes. It also boasts a number of other powerful features:
+- Instant push notifications from compatible sources, such as
+  Mastodon, Friendica, WordPress, Blogger, FeedBurner, etc.
+- Basic Web scraping, based on XPath, for Web sites not providing
+  any RSS/Atom feeds.
+- Custom tags and extensions for further tuning.

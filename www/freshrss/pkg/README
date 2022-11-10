@@ -1,0 +1,51 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Exposing a webserver
+====================
+
+An example nginx config is provided for reference:
+
+server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+
+    server_name <server-name>;
+
+    ssl_certificate /etc/ssl/freshrss.crt;
+    ssl_certificate_key /etc/ssl/private/freshrss.key;
+
+    root /freshrss/p;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ /index.php$query_string;
+    }
+
+    location ~ ^(.*\.php)(.*)$ {
+        try_files $fastcgi_script_name =404;
+        include        fastcgi_params;
+        fastcgi_split_path_info  ^(.*\.php)(.*)$;
+        fastcgi_pass   unix:run/php-fpm.sock;
+        fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+        fastcgi_param  PATH_INFO        $fastcgi_path_info;
+        fastcgi_buffer_size 16k;
+        fastcgi_buffers 4 16k;
+    }
+}
+
+PHP cron jobs
+=============
+
+FreshRSS needs to run periodic book-keeping tasks. These need to be
+scheduled using cron(8), via the crontab for the www user.
+
+$ crontab -l -u www
+#
+SHELL=/bin/sh
+PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
+HOME=/var/www
+#
+#minute	hour	mday	month	wday	[flags] command
+*	*	*	*	*	-n cd ${LOCALSTATEDIR}/www/freshrss && ${MODPHP_BIN} app/actualize_script.php
