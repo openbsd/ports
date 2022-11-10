@@ -13,7 +13,7 @@ CATEGORIES=		sysutils
 SHARED_LIBS +=  consolekit           0.1      # 1.0
 SHARED_LIBS +=  ck-connector         1.2      # 0.0
 
-MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=		Robert Nagy <robert@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

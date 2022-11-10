@@ -2,7 +2,7 @@
 
 COMMENT=	D-Bus interface for user account query and manipulation
 
-REVISION=	1
+REVISION=	2
 
 # XXX 0.6.43: https://bugs.freedesktop.org/show_bug.cgi?id=48177
 DISTNAME=	accountsservice-22.08.8
@@ -14,7 +14,7 @@ CATEGORIES=	sysutils
 
 HOMEPAGE=	http://cgit.freedesktop.org/accountsservice/
 
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE=	Yes

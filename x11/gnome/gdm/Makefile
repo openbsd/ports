@@ -2,6 +2,7 @@ COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		43.0
+REVISION=		0
 
 GH_ACCOUNT=		rnagy
 GH_PROJECT=		gdm
@@ -18,6 +19,8 @@ MASTER_SITES=		${MASTER_SITES_GITHUB}
 MASTER_SITES0=		https://distfiles.bsdfrog.org/
 
 SHARED_LIBS +=  gdm                  0.0      # 1.0
+
+MAINTAINER=		Robert Nagy <robert@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE=		Yes
