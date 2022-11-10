@@ -1,3 +1,5 @@
+# if updated, sysutils/firmware/m1n1-uboot must be updated too
+
 COMMENT=	Bootloader for Apple Silicon
 
 GH_ACCOUNT=	AsahiLinux

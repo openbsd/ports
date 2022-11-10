@@ -1,3 +1,5 @@
+# if updated, sysutils/firmware/m1n1-uboot must be updated too
+
 COMMENT=	U-Boot firmware for Apple Silicon
 
 VERSION=	2022.07-3
