@@ -14,8 +14,7 @@ WANTLIB =		c perl
 
 MODULES =		cpan
 
-BUILD_DEPENDS =		devel/p5-ExtUtils-CChecker>=0.11 \
-			devel/p5-Module-Build>=0.4004
+BUILD_DEPENDS =		devel/p5-ExtUtils-CChecker>=0.11
 
 CONFIGURE_STYLE =	modbuild
 
