@@ -1,7 +1,7 @@
 COMMENT=	monitor webpages for updates
 
 MODPY_EGG_VERSION=	2.25
-REVISION=	0
+REVISION=	1
 
 DISTNAME=	urlwatch-${MODPY_EGG_VERSION}
 
@@ -17,8 +17,7 @@ PERMIT_PACKAGE=	Yes
 MODULES=	lang/python
 
 MODPY_PI=	Yes
-MODPY_SETUPTOOLS= Yes
-MODPY_PYTEST=	Yes
+MODPY_PYBUILD=	setuptools
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	converters/py-html2text${MODPY_FLAVOR} \
@@ -37,7 +36,6 @@ TEST_DEPENDS=	devel/py-codestyle${MODPY_FLAVOR} \
 post-install:
 	mv ${PREFIX}/share/man/* ${PREFIX}/man/
 	mv ${PREFIX}/share/urlwatch/examples ${PREFIX}/share/examples/urlwatch
-	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/urlwatch/*${PATCHORIG}
 	rmdir ${PREFIX}/share/{man,urlwatch}
 
 .include <bsd.port.mk>
