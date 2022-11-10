@@ -2,9 +2,9 @@ COMMENT=		framework for defining and tracking users, sessions & seats
 
 DISTNAME=		ConsoleKit2-1.2.4
 PKGNAME=		${DISTNAME:L}
-REVISION=		3
+REVISION=		4
 
-GH_COMMIT=		c4e68a271d1ec922a3339385e3569f32040b710b
+GH_COMMIT=		74695630307785e571599a5c93f4a3bda129a17a
 GH_ACCOUNT=		ConsoleKit2
 GH_PROJECT=		ConsoleKit2
 

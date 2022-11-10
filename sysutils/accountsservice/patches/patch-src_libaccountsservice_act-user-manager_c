@@ -96,22 +96,7 @@ Index: src/libaccountsservice/act-user-manager.c
          if (res < 0) {
                  g_debug ("ActUserManager: Failed to get the x11 display of session '%s': %s",
                           new_session->id,
-@@ -1562,6 +1584,7 @@ _remove_stale_systemd_sessions (ActUserManager *manage
- static void
- reload_systemd_sessions (ActUserManager *manager)
- {
-+#ifdef __linux__
-         int         res;
-         int         i;
-         g_auto(GStrv) sessions = NULL;
-@@ -1610,21 +1633,25 @@ reload_systemd_sessions (ActUserManager *manager)
- 
-         _add_new_systemd_sessions (manager, systemd_sessions);
-         _remove_stale_systemd_sessions (manager, systemd_sessions);
-+#endif
- }
- 
- static gboolean
+@@ -1616,15 +1638,18 @@ static gboolean
  on_session_monitor_event (GPollableInputStream *stream,
                            ActUserManager       *manager)
  {
@@ -130,7 +115,7 @@ Index: src/libaccountsservice/act-user-manager.c
          ActUserManagerPrivate *priv = act_user_manager_get_instance_private (manager);
          int res;
          int fd;
-@@ -1651,6 +1678,7 @@ _monitor_for_systemd_session_changes (ActUserManager *
+@@ -1651,6 +1676,7 @@ _monitor_for_systemd_session_changes (ActUserManager *
                                 NULL);
          priv->seat.session_monitor_source_id = g_source_attach (source, NULL);
          g_source_unref (source);
@@ -138,7 +123,7 @@ Index: src/libaccountsservice/act-user-manager.c
  }
  
  static void
-@@ -2034,7 +2062,7 @@ maybe_set_is_loaded (ActUserManager *manager)
+@@ -2034,7 +2060,7 @@ maybe_set_is_loaded (ActUserManager *manager)
          /* Don't set is_loaded yet unless the seat is already loaded enough
           * or failed to load.
           */
@@ -147,7 +132,7 @@ Index: src/libaccountsservice/act-user-manager.c
                  g_debug ("ActUserManager: Seat loaded, so now setting loaded property");
          } else if (priv->seat.state == ACT_USER_MANAGER_SEAT_STATE_UNLOADED) {
                  g_debug ("ActUserManager: Seat wouldn't load, so giving up on it and setting loaded property");
-@@ -2513,6 +2541,7 @@ act_user_manager_finalize (GObject *object)
+@@ -2513,6 +2539,7 @@ act_user_manager_finalize (GObject *object)
                  g_source_remove (priv->seat.load_idle_id);
          }
  
@@ -155,7 +140,7 @@ Index: src/libaccountsservice/act-user-manager.c
          if (priv->seat.session_monitor != NULL) {
                  sd_login_monitor_unref (priv->seat.session_monitor);
          }
-@@ -2524,6 +2553,7 @@ act_user_manager_finalize (GObject *object)
+@@ -2524,6 +2551,7 @@ act_user_manager_finalize (GObject *object)
          if (priv->seat.session_monitor_source_id != 0) {
                  g_source_remove (priv->seat.session_monitor_source_id);
          }
