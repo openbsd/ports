@@ -1221,6 +1221,8 @@
      SUBDIR += p5-Tree-Simple-VisitorFactory
      SUBDIR += p5-Try-Tiny
      SUBDIR += p5-Type-Tiny
+     SUBDIR += p5-URI-Nested
+     SUBDIR += p5-URI-db
      SUBDIR += p5-USB-LibUSB
      SUBDIR += p5-UUID-Tiny
      SUBDIR += p5-Universal-can
