@@ -1,7 +1,6 @@
 COMMENT =		image processing routines for SciPy
 
-MODPY_EGG_VERSION =	0.17.2
-REVISION =		2
+MODPY_EGG_VERSION =	0.19.3
 DISTNAME =		scikit-image-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
@@ -22,8 +21,7 @@ FLAVORS =		python3
 FLAVOR =		python3
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =		math/py-numpy${MODPY_FLAVOR} \
 			math/py-scipy${MODPY_FLAVOR} \
@@ -31,10 +29,15 @@ RUN_DEPENDS =		math/py-numpy${MODPY_FLAVOR} \
 			math/py-networkx${MODPY_FLAVOR} \
 			graphics/py-Pillow${MODPY_FLAVOR} \
 			graphics/py-imageio${MODPY_FLAVOR} \
+			graphics/py-tifffile${MODPY_FLAVOR} \
 			math/py-PyWavelets${MODPY_FLAVOR}
 
-BUILD_DEPENDS =         lang/cython${MODPY_FLAVOR} \
+BUILD_DEPENDS =		lang/cython${MODPY_FLAVOR} \
+			lang/pythran${MODPY_FLAVOR} \
 			devel/py-wheel${MODPY_FLAVOR} \
 			math/py-numpy${MODPY_FLAVOR}
+
+# needs a bunch of new dependencies
+NO_TEST =		Yes
 
 .include <bsd.port.mk>
