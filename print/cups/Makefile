@@ -1,3 +1,9 @@
+# new major update of CUPS (v3.0) will drop support for print filter and driver;
+# look at bringing some native support with:
+# https://www.msweet.org/pappl/
+# https://www.msweet.org/lprint/
+# for details, see https://github.com/OpenPrinting/cups/issues/103
+
 COMMENT-main=		Common Unix Printing System
 COMMENT-libs=		CUPS libraries and headers
 
