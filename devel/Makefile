@@ -1234,6 +1234,7 @@
      SUBDIR += p5-Want
      SUBDIR += p5-WeakRef
      SUBDIR += p5-X-Tiny
+     SUBDIR += p5-XS-Parse-Keyword
      SUBDIR += p5-YAML
      SUBDIR += p5-YAML-Shell
      SUBDIR += p5-YAML-Syck
