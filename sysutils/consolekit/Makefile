@@ -34,6 +34,7 @@ RUN_DEPENDS +=		x11/dbus,-suid
 
 CONFIGURE_STYLE=	autoreconf
 CONFIGURE_ARGS=		--disable-pam-module \
+			--disable-libudev \
 			--with-pam-module-dir=${LOCALBASE}/lib/security
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
