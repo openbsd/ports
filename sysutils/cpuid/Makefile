@@ -17,7 +17,7 @@ NO_TEST=	Yes
 
 do-build:
 	cp ${FILESDIR}/cpuid.c ${WRKSRC}/
-	@cd ${WRKSRC}; make cpuid
+	cd ${WRKSRC}; ${MAKE_PROGRAM} cpuid
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cpuid ${PREFIX}/bin
