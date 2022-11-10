@@ -141,7 +141,6 @@
      SUBDIR += dwz
      SUBDIR += dyncall
      SUBDIR += ectags
-     SUBDIR += electron
      SUBDIR += elfcat
      SUBDIR += elftoolchain
      SUBDIR += epoll-shim
