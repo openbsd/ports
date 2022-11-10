@@ -5,6 +5,8 @@ COMMENT=		GNOME settings
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		43.1
 
+REVISION=		0
+
 CATEGORIES=		x11
 
 # GPLv2
@@ -73,6 +75,8 @@ MODGNOME_TOOLS +=	gtk-update-icon-cache yelp
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
 CONFIGURE_ARGS=		-Dwayland=false
+
+MODGNOME_LDFLAGS=	-rdynamic
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
