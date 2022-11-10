@@ -32,7 +32,7 @@ Index: js/misc/loginManager.js
      }
  
      return _loginManager;
-@@ -206,6 +212,81 @@ var LoginManagerSystemd = class extends Signals.EventE
+@@ -206,6 +212,78 @@ var LoginManagerSystemd = class extends Signals.EventE
      }
  };
  
@@ -41,7 +41,7 @@ Index: js/misc/loginManager.js
 +        super();
 +
 +        this._proxy = new ConsoleKitManager(Gio.DBus.system,
-+                                              'LoginManagerConsoleKit',
++                                              'org.freedesktop.ConsoleKit',
 +                                              '/org/freedesktop/ConsoleKit/Manager');
 +        this._proxy.connectSignal('PrepareForSleep',
 +                                  this._prepareForSleep.bind(this));
@@ -51,22 +51,19 @@ Index: js/misc/loginManager.js
 +    // session objects have different interfaces - but in both cases there are
 +    // Lock/Unlock signals, and that's all we count upon at the moment.
 +
-+    getCurrentSessionProxy(callback) {
-+        if (this._currentSession) {
-+            callback (this._currentSession);
-+            return;
-+        }
++    async getCurrentSessionProxy() {
++        if (this._currentSession)
++            return this._currentSession;
 +
-+        this._proxy.GetCurrentSessionRemote((result, error) => {
-+            if (error) {
-+                logError(error, 'Could not get a proxy for the current session');
-+            } else {
-+                this._currentSession = new ConsoleKitSession(Gio.DBus.system,
-+                                                             'org.freedesktop.ConsoleKit',
-+                                                             result[0]);
-+                callback(this._currentSession);
-+            }
-+        });
++        try {
++            const [objectPath] = await this._proxy.GetCurrentSessionAsync(sessionId);
++            this._currentSession = new ConsoleKitSession(Gio.DBus.system,
++                'org.freedesktop.ConsoleKit', objectPath);
++            return this._currentSession;
++        } catch (error) {
++            logError(error, 'Could not get a proxy for the current session');
++            return null;
++        }
 +    }
 +
 +    async canSuspend() {
@@ -114,7 +111,7 @@ Index: js/misc/loginManager.js
  var LoginManagerDummy = class extends Signals.EventEmitter  {
      getCurrentSessionProxy() {
          // we could return a DummySession object that fakes whatever callers
-@@ -219,16 +300,6 @@ var LoginManagerDummy = class extends Signals.EventEmi
+@@ -219,16 +297,6 @@ var LoginManagerDummy = class extends Signals.EventEmi
              canSuspend: false,
              needsAuth: false,
          }));
