@@ -1,0 +1,3 @@
+This module provides a syntax plugin that implements a control-flow
+block called match/case, which executes at most one of a choice of
+different blocks depending on the value of its controlling expression.
