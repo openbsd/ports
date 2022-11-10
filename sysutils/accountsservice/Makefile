@@ -2,11 +2,11 @@
 
 COMMENT=	D-Bus interface for user account query and manipulation
 
-REVISION=	2
-
 # XXX 0.6.43: https://bugs.freedesktop.org/show_bug.cgi?id=48177
 DISTNAME=	accountsservice-22.08.8
 EXTRACT_SUFX=	.tar.xz
+
+REVISION=	3
 
 SHARED_LIBS += accountsservice           0.1 # 0.0.0
 
@@ -42,7 +42,8 @@ RUN_DEPENDS +=	x11/dbus,-suid
 
 CONFIGURE_ARGS=	-Dsystemdsystemunitdir=no \
 		-Dadmin_group=wheel \
-		-Dminimum_uid=1000
+		-Dminimum_uid=1000 \
+		-Dconsolekit=true
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 

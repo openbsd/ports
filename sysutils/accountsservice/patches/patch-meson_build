@@ -10,15 +10,7 @@ Index: meson.build
    assert(run_command('test', '-e', path_wtmp).returncode() == 0, 'Do not know which filename to watch for wtmp changes')
    config_h.set_quoted('PATH_WTMP', path_wtmp)
  endif
-@@ -145,6 +145,7 @@ gio_dep = dependency('gio-2.0', version: '>= ' + glib_
- gio_unix_dep = dependency('gio-unix-2.0')
- glib_dep = dependency('glib-2.0', version: '>= ' + glib_min_version)
- polkit_gobject_dep = dependency('polkit-gobject-1')
-+libconsolekit_dep = dependency('libconsolekit')
- 
- # Using libxcrypt >= 4 we can be sure `crypt_gensalt (NULL, 0, NULL, 0)`
- # always returns a setting that is valid to use with `crypt (pw, setting)`.
-@@ -207,11 +208,7 @@ config_h.set('MINIMUM_UID', get_option('minimum_uid'))
+@@ -207,10 +207,12 @@ config_h.set('MINIMUM_UID', get_option('minimum_uid'))
  gdm_conf_file = get_option('gdmconffile')
  config_h.set_quoted('PATH_GDM_CUSTOM', gdm_conf_file)
  
@@ -26,8 +18,12 @@ Index: meson.build
 -  logind_dep = dependency('libelogind', version: '>= 229.4')
 -else
 -  logind_dep = dependency('libsystemd', version: '>= 186')
--endif
-+logind_dep = []
++if get_option('elogind')                                                       
++  logind_dep = dependency('libelogind', version: '>= 229.4')                   
++elif get_option('consolekit')
++  logind_dep = dependency('libconsolekit')                   
++else                                                                           
++  logind_dep = dependency('libsystemd', version: '>= 186')                     
+ endif
  
  subdir('data')
- subdir('src')

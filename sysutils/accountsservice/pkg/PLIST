@@ -108,4 +108,3 @@ share/vala/vapi/accountsservice.vapi
 @sample /var/db/AccountsService/icons/
 @mode 0700
 @sample /var/db/AccountsService/users/
-@mode

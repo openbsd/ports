@@ -1,0 +1,11 @@
+Index: meson_options.txt
+--- meson_options.txt.orig
++++ meson_options.txt
+@@ -6,6 +6,7 @@ option('extra_admin_groups', type: 'array', value: [],
+ option('minimum_uid', type: 'integer', value: 1000, description: 'Set minimum uid for human users')
+ 
+ option('elogind', type: 'boolean', value: false, description: 'Use elogind')
++option('consolekit', type: 'boolean', value: false, description: 'Use ConsoleKit')
+ 
+ option('introspection', type: 'boolean', value: true, description: 'Enable introspection for this build')
+ option('vapi', type: 'boolean', value: true, description : 'Enable Vala bindings for this build')
