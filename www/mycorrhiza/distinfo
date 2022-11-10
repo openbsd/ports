@@ -69,7 +69,7 @@ SHA256 (go_modules/gopkg.in/check.v1/@v/v0.0.0-20161208181325-20d25e280405.mod) 
 SHA256 (go_modules/gopkg.in/check.v1/@v/v0.0.0-20161208181325-20d25e280405.zip) = ThgX+WTKNOVFuBr9oDJaXonPWN4uQT2CB8Cv3dD9wVw=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.zip) = rPGcy0/KmDsjSjnvAy+vmrcOdZaAZzuz3/B353/uIP4=
-SHA256 (mycorrhiza-v1.12.1.zip) = FoAquWNlH0StchtVuaAQGUm4UpwFhOTXCq9ION62g5g=
+SHA256 (mycorrhiza-v1.13.0.zip) = H/AaZJnZ6sQhEwFA7TOmdYGMbwsFw52Lje0rjK86WTY=
 SIZE (go_modules/git.sr.ht/~bouncepaw/mycomarkup/v5/@v/v5.2.1.mod) = 51
 SIZE (go_modules/git.sr.ht/~bouncepaw/mycomarkup/v5/@v/v5.2.1.zip) = 58897
 SIZE (go_modules/github.com/andybalholm/brotli/@v/v1.0.2.mod) = 46
@@ -141,4 +141,4 @@ SIZE (go_modules/gopkg.in/check.v1/@v/v0.0.0-20161208181325-20d25e280405.mod) = 
 SIZE (go_modules/gopkg.in/check.v1/@v/v0.0.0-20161208181325-20d25e280405.zip) = 39844
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.zip) = 101467
-SIZE (mycorrhiza-v1.12.1.zip) = 197433
+SIZE (mycorrhiza-v1.13.0.zip) = 197866
