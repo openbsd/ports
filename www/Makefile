@@ -488,6 +488,7 @@
      SUBDIR += racktables
      SUBDIR += ratproxy
      SUBDIR += retawq
+     SUBDIR += reader
      SUBDIR += rt
      SUBDIR += ruby-addressable
      SUBDIR += ruby-capybara
