@@ -2,6 +2,8 @@
 
 COMMENT=	D-Bus interface for user account query and manipulation
 
+REVISION=	0
+
 # XXX 0.6.43: https://bugs.freedesktop.org/show_bug.cgi?id=48177
 DISTNAME=	accountsservice-22.08.8
 EXTRACT_SUFX=	.tar.xz
@@ -29,7 +31,7 @@ BUILD_DEPENDS=	devel/gettext,-tools \
 		lang/vala
 
 LIB_DEPENDS=	security/libxcrypt \
-		sysutils/consolekit \
+		sysutils/consolekit>=1.2.4p3 \
 		sysutils/polkit
 
 # polkit(8) almost always needs to know the "active" session

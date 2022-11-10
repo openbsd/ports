@@ -59,6 +59,21 @@ Index: src/user.c
  
          accounts_user_set_password_mode (ACCOUNTS_USER (user), mode);
          is_system_account = !user_classify_is_human (accounts_user_get_uid (ACCOUNTS_USER (user)),
+@@ -1642,10 +1665,10 @@ user_set_password_expiration_policy (AccountsUser     
+                 action_id = "org.freedesktop.accounts.user-administration";
+ 
+         pwd_expiration = g_new (PasswordExpirationPolicy, 1);
+-        pwd_expiration->min_days_between_changes = g_strdup_printf ("%ld", min_days_between_changes);
+-        pwd_expiration->max_days_between_changes = g_strdup_printf ("%ld", max_days_between_changes);
+-        pwd_expiration->days_to_warn = g_strdup_printf ("%ld", days_to_warn);
+-        pwd_expiration->days_after_expiration_until_lock = g_strdup_printf ("%ld", days_after_expiration_until_lock);
++        pwd_expiration->min_days_between_changes = g_strdup_printf ("%lld", min_days_between_changes);
++        pwd_expiration->max_days_between_changes = g_strdup_printf ("%lld", max_days_between_changes);
++        pwd_expiration->days_to_warn = g_strdup_printf ("%lld", days_to_warn);
++        pwd_expiration->days_after_expiration_until_lock = g_strdup_printf ("%lld", days_after_expiration_until_lock);
+ 
+         daemon_local_check_auth (user->daemon,
+                                  user,
 @@ -2074,7 +2097,11 @@ user_change_locked_authorized_cb (Daemon              
                           accounts_user_get_user_name (ACCOUNTS_USER (user)),
                           accounts_user_get_uid (ACCOUNTS_USER (user)));
