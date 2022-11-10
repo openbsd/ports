@@ -9,8 +9,8 @@ DISTFILES=
 PERMIT_PACKAGE=	  firmware
 PERMIT_DISTFILES= Yes
 
-BUILD_DEPENDS=		sysutils/m1n1 \
-			sysutils/u-boot-asahi
+BUILD_DEPENDS=	m1n1-=1.1.6:sysutils/m1n1 \
+		u-boot-asahi-=2022.07.3:sysutils/u-boot-asahi
 
 do-install:
 	cat ${LOCALBASE}/share/m1n1/m1n1.bin \
