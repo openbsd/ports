@@ -1,0 +1,1004 @@
+@bin bin/hx
+share/helix/
+share/helix/languages.toml
+share/helix/runtime/
+share/helix/runtime/grammars/
+@so share/helix/runtime/grammars/awk.so
+@so share/helix/runtime/grammars/bash.so
+@so share/helix/runtime/grammars/beancount.so
+@so share/helix/runtime/grammars/c-sharp.so
+@so share/helix/runtime/grammars/c.so
+@so share/helix/runtime/grammars/cairo.so
+@so share/helix/runtime/grammars/clojure.so
+@so share/helix/runtime/grammars/cmake.so
+@so share/helix/runtime/grammars/comment.so
+@so share/helix/runtime/grammars/cpon.so
+@so share/helix/runtime/grammars/cpp.so
+@so share/helix/runtime/grammars/css.so
+@so share/helix/runtime/grammars/cue.so
+@so share/helix/runtime/grammars/dart.so
+@so share/helix/runtime/grammars/devicetree.so
+@so share/helix/runtime/grammars/dockerfile.so
+@so share/helix/runtime/grammars/dot.so
+@so share/helix/runtime/grammars/edoc.so
+@so share/helix/runtime/grammars/eex.so
+@so share/helix/runtime/grammars/elixir.so
+@so share/helix/runtime/grammars/elm.so
+@so share/helix/runtime/grammars/elvish.so
+@so share/helix/runtime/grammars/embedded-template.so
+@so share/helix/runtime/grammars/erlang.so
+@so share/helix/runtime/grammars/esdl.so
+@so share/helix/runtime/grammars/fish.so
+@so share/helix/runtime/grammars/fortran.so
+@so share/helix/runtime/grammars/gdscript.so
+@so share/helix/runtime/grammars/git-commit.so
+@so share/helix/runtime/grammars/git-config.so
+@so share/helix/runtime/grammars/git-diff.so
+@so share/helix/runtime/grammars/git-rebase.so
+@so share/helix/runtime/grammars/gitattributes.so
+@so share/helix/runtime/grammars/gitignore.so
+@so share/helix/runtime/grammars/gleam.so
+@so share/helix/runtime/grammars/glsl.so
+@so share/helix/runtime/grammars/go.so
+@so share/helix/runtime/grammars/gomod.so
+@so share/helix/runtime/grammars/gotmpl.so
+@so share/helix/runtime/grammars/gowork.so
+@so share/helix/runtime/grammars/graphql.so
+@so share/helix/runtime/grammars/hare.so
+@so share/helix/runtime/grammars/haskell.so
+@so share/helix/runtime/grammars/hcl.so
+@so share/helix/runtime/grammars/heex.so
+@so share/helix/runtime/grammars/html.so
+@so share/helix/runtime/grammars/iex.so
+@so share/helix/runtime/grammars/java.so
+@so share/helix/runtime/grammars/javascript.so
+@so share/helix/runtime/grammars/jsdoc.so
+@so share/helix/runtime/grammars/json.so
+@so share/helix/runtime/grammars/julia.so
+@so share/helix/runtime/grammars/kotlin.so
+@so share/helix/runtime/grammars/latex.so
+@so share/helix/runtime/grammars/lean.so
+@so share/helix/runtime/grammars/ledger.so
+@so share/helix/runtime/grammars/llvm-mir.so
+@so share/helix/runtime/grammars/llvm.so
+@so share/helix/runtime/grammars/lua.so
+@so share/helix/runtime/grammars/make.so
+@so share/helix/runtime/grammars/markdown.so
+@so share/helix/runtime/grammars/markdown_inline.so
+@so share/helix/runtime/grammars/meson.so
+@so share/helix/runtime/grammars/nickel.so
+@so share/helix/runtime/grammars/nix.so
+@so share/helix/runtime/grammars/nu.so
+@so share/helix/runtime/grammars/ocaml-interface.so
+@so share/helix/runtime/grammars/ocaml.so
+@so share/helix/runtime/grammars/odin.so
+@so share/helix/runtime/grammars/openscad.so
+@so share/helix/runtime/grammars/org.so
+@so share/helix/runtime/grammars/pascal.so
+@so share/helix/runtime/grammars/perl.so
+@so share/helix/runtime/grammars/php.so
+@so share/helix/runtime/grammars/prisma.so
+@so share/helix/runtime/grammars/protobuf.so
+@so share/helix/runtime/grammars/python.so
+@so share/helix/runtime/grammars/r.so
+@so share/helix/runtime/grammars/regex.so
+@so share/helix/runtime/grammars/rescript.so
+@so share/helix/runtime/grammars/ruby.so
+@so share/helix/runtime/grammars/rust.so
+@so share/helix/runtime/grammars/scala.so
+@so share/helix/runtime/grammars/scheme.so
+@so share/helix/runtime/grammars/scss.so
+@so share/helix/runtime/grammars/slint.so
+@so share/helix/runtime/grammars/solidity.so
+@so share/helix/runtime/grammars/sql.so
+@so share/helix/runtime/grammars/sshclientconfig.so
+@so share/helix/runtime/grammars/svelte.so
+@so share/helix/runtime/grammars/swift.so
+@so share/helix/runtime/grammars/tablegen.so
+@so share/helix/runtime/grammars/task.so
+@so share/helix/runtime/grammars/toml.so
+@so share/helix/runtime/grammars/tsq.so
+@so share/helix/runtime/grammars/tsx.so
+@so share/helix/runtime/grammars/twig.so
+@so share/helix/runtime/grammars/typescript.so
+@so share/helix/runtime/grammars/ungrammar.so
+@so share/helix/runtime/grammars/v.so
+@so share/helix/runtime/grammars/vala.so
+@so share/helix/runtime/grammars/verilog.so
+@so share/helix/runtime/grammars/vue.so
+@so share/helix/runtime/grammars/wgsl.so
+@so share/helix/runtime/grammars/xit.so
+@so share/helix/runtime/grammars/yaml.so
+@so share/helix/runtime/grammars/zig.so
+share/helix/runtime/queries/
+share/helix/runtime/queries/awk/
+share/helix/runtime/queries/awk/highlights.scm
+share/helix/runtime/queries/awk/injections.scm
+share/helix/runtime/queries/awk/textobjects.scm
+share/helix/runtime/queries/bash/
+share/helix/runtime/queries/bash/highlights.scm
+share/helix/runtime/queries/bash/injections.scm
+share/helix/runtime/queries/beancount/
+share/helix/runtime/queries/beancount/folds.scm
+share/helix/runtime/queries/beancount/highlights.scm
+share/helix/runtime/queries/c/
+share/helix/runtime/queries/c-sharp/
+share/helix/runtime/queries/c-sharp/highlights.scm
+share/helix/runtime/queries/c-sharp/injections.scm
+share/helix/runtime/queries/c-sharp/textobjects.scm
+share/helix/runtime/queries/c/highlights.scm
+share/helix/runtime/queries/c/indents.scm
+share/helix/runtime/queries/c/injections.scm
+share/helix/runtime/queries/c/textobjects.scm
+share/helix/runtime/queries/cairo/
+share/helix/runtime/queries/cairo/highlights.scm
+share/helix/runtime/queries/cairo/injections.scm
+share/helix/runtime/queries/clojure/
+share/helix/runtime/queries/clojure/highlights.scm
+share/helix/runtime/queries/clojure/injections.scm
+share/helix/runtime/queries/cmake/
+share/helix/runtime/queries/cmake/highlights.scm
+share/helix/runtime/queries/cmake/indents.scm
+share/helix/runtime/queries/cmake/injections.scm
+share/helix/runtime/queries/cmake/textobjects.scm
+share/helix/runtime/queries/comment/
+share/helix/runtime/queries/comment/highlights.scm
+share/helix/runtime/queries/cpon/
+share/helix/runtime/queries/cpon/highlights.scm
+share/helix/runtime/queries/cpon/indents.scm
+share/helix/runtime/queries/cpp/
+share/helix/runtime/queries/cpp/highlights.scm
+share/helix/runtime/queries/cpp/indents.scm
+share/helix/runtime/queries/cpp/injections.scm
+share/helix/runtime/queries/cpp/textobjects.scm
+share/helix/runtime/queries/css/
+share/helix/runtime/queries/css/highlights.scm
+share/helix/runtime/queries/css/injections.scm
+share/helix/runtime/queries/cue/
+share/helix/runtime/queries/cue/highlights.scm
+share/helix/runtime/queries/dart/
+share/helix/runtime/queries/dart/highlights.scm
+share/helix/runtime/queries/dart/indents.scm
+share/helix/runtime/queries/dart/injections.scm
+share/helix/runtime/queries/dart/locals.scm
+share/helix/runtime/queries/devicetree/
+share/helix/runtime/queries/devicetree/highlights.scm
+share/helix/runtime/queries/dockerfile/
+share/helix/runtime/queries/dockerfile/highlights.scm
+share/helix/runtime/queries/dockerfile/injections.scm
+share/helix/runtime/queries/dot/
+share/helix/runtime/queries/dot/highlights.scm
+share/helix/runtime/queries/dot/injections.scm
+share/helix/runtime/queries/ecma/
+share/helix/runtime/queries/ecma/highlights.scm
+share/helix/runtime/queries/ecma/indents.scm
+share/helix/runtime/queries/ecma/injections.scm
+share/helix/runtime/queries/ecma/locals.scm
+share/helix/runtime/queries/ecma/textobjects.scm
+share/helix/runtime/queries/edoc/
+share/helix/runtime/queries/edoc/highlights.scm
+share/helix/runtime/queries/edoc/injections.scm
+share/helix/runtime/queries/eex/
+share/helix/runtime/queries/eex/highlights.scm
+share/helix/runtime/queries/eex/injections.scm
+share/helix/runtime/queries/ejs/
+share/helix/runtime/queries/ejs/highlights.scm
+share/helix/runtime/queries/ejs/injections.scm
+share/helix/runtime/queries/elixir/
+share/helix/runtime/queries/elixir/highlights.scm
+share/helix/runtime/queries/elixir/injections.scm
+share/helix/runtime/queries/elixir/textobjects.scm
+share/helix/runtime/queries/elm/
+share/helix/runtime/queries/elm/highlights.scm
+share/helix/runtime/queries/elm/injections.scm
+share/helix/runtime/queries/elm/locals.scm
+share/helix/runtime/queries/elm/tags.scm
+share/helix/runtime/queries/elvish/
+share/helix/runtime/queries/elvish/highlights.scm
+share/helix/runtime/queries/elvish/injections.scm
+share/helix/runtime/queries/erb/
+share/helix/runtime/queries/erb/highlights.scm
+share/helix/runtime/queries/erb/injections.scm
+share/helix/runtime/queries/erlang/
+share/helix/runtime/queries/erlang/highlights.scm
+share/helix/runtime/queries/erlang/injections.scm
+share/helix/runtime/queries/erlang/textobjects.scm
+share/helix/runtime/queries/esdl/
+share/helix/runtime/queries/esdl/highlights.scm
+share/helix/runtime/queries/fish/
+share/helix/runtime/queries/fish/highlights.scm
+share/helix/runtime/queries/fish/indents.scm
+share/helix/runtime/queries/fish/injections.scm
+share/helix/runtime/queries/fish/textobjects.scm
+share/helix/runtime/queries/fortran/
+share/helix/runtime/queries/fortran/folds.scm
+share/helix/runtime/queries/fortran/highlights.scm
+share/helix/runtime/queries/fortran/indents.scm
+share/helix/runtime/queries/gdscript/
+share/helix/runtime/queries/gdscript/highlights.scm
+share/helix/runtime/queries/gdscript/tags.scm
+share/helix/runtime/queries/git-attributes/
+share/helix/runtime/queries/git-attributes/highlights.scm
+share/helix/runtime/queries/git-commit/
+share/helix/runtime/queries/git-commit/highlights.scm
+share/helix/runtime/queries/git-commit/injections.scm
+share/helix/runtime/queries/git-config/
+share/helix/runtime/queries/git-config/highlights.scm
+share/helix/runtime/queries/git-diff/
+share/helix/runtime/queries/git-diff/highlights.scm
+share/helix/runtime/queries/git-ignore/
+share/helix/runtime/queries/git-ignore/highlights.scm
+share/helix/runtime/queries/git-rebase/
+share/helix/runtime/queries/git-rebase/highlights.scm
+share/helix/runtime/queries/git-rebase/injections.scm
+share/helix/runtime/queries/gleam/
+share/helix/runtime/queries/gleam/highlights.scm
+share/helix/runtime/queries/gleam/locals.scm
+share/helix/runtime/queries/gleam/textobjects.scm
+share/helix/runtime/queries/glsl/
+share/helix/runtime/queries/glsl/folds.scm
+share/helix/runtime/queries/glsl/highlights.scm
+share/helix/runtime/queries/glsl/indents.scm
+share/helix/runtime/queries/glsl/injections.scm
+share/helix/runtime/queries/glsl/locals.scm
+share/helix/runtime/queries/glsl/textobjects.scm
+share/helix/runtime/queries/go/
+share/helix/runtime/queries/go/highlights.scm
+share/helix/runtime/queries/go/indents.scm
+share/helix/runtime/queries/go/injections.scm
+share/helix/runtime/queries/go/locals.scm
+share/helix/runtime/queries/go/tags.scm
+share/helix/runtime/queries/go/textobjects.scm
+share/helix/runtime/queries/gomod/
+share/helix/runtime/queries/gomod/highlights.scm
+share/helix/runtime/queries/gomod/injections.scm
+share/helix/runtime/queries/gotmpl/
+share/helix/runtime/queries/gotmpl/highlights.scm
+share/helix/runtime/queries/gotmpl/injections.scm
+share/helix/runtime/queries/gowork/
+share/helix/runtime/queries/gowork/highlights.scm
+share/helix/runtime/queries/gowork/injections.scm
+share/helix/runtime/queries/graphql/
+share/helix/runtime/queries/graphql/highlights.scm
+share/helix/runtime/queries/hare/
+share/helix/runtime/queries/hare/highlights.scm
+share/helix/runtime/queries/hare/locals.scm
+share/helix/runtime/queries/haskell/
+share/helix/runtime/queries/haskell/highlights.scm
+share/helix/runtime/queries/haskell/injections.scm
+share/helix/runtime/queries/haskell/locals.scm
+share/helix/runtime/queries/hcl/
+share/helix/runtime/queries/hcl/folds.scm
+share/helix/runtime/queries/hcl/highlights.scm
+share/helix/runtime/queries/hcl/indents.scm
+share/helix/runtime/queries/hcl/injections.scm
+share/helix/runtime/queries/heex/
+share/helix/runtime/queries/heex/highlights.scm
+share/helix/runtime/queries/heex/injections.scm
+share/helix/runtime/queries/heex/textobjects.scm
+share/helix/runtime/queries/html/
+share/helix/runtime/queries/html/highlights.scm
+share/helix/runtime/queries/html/injections.scm
+share/helix/runtime/queries/iex/
+share/helix/runtime/queries/iex/highlights.scm
+share/helix/runtime/queries/iex/injections.scm
+share/helix/runtime/queries/java/
+share/helix/runtime/queries/java/highlights.scm
+share/helix/runtime/queries/java/injections.scm
+share/helix/runtime/queries/javascript/
+share/helix/runtime/queries/javascript/highlights.scm
+share/helix/runtime/queries/javascript/indents.scm
+share/helix/runtime/queries/javascript/injections.scm
+share/helix/runtime/queries/javascript/locals.scm
+share/helix/runtime/queries/javascript/tags.scm
+share/helix/runtime/queries/javascript/textobjects.scm
+share/helix/runtime/queries/jsdoc/
+share/helix/runtime/queries/jsdoc/highlights.scm
+share/helix/runtime/queries/jsdoc/injections.scm
+share/helix/runtime/queries/json/
+share/helix/runtime/queries/json/highlights.scm
+share/helix/runtime/queries/json/indents.scm
+share/helix/runtime/queries/jsx/
+share/helix/runtime/queries/jsx/highlights.scm
+share/helix/runtime/queries/jsx/indents.scm
+share/helix/runtime/queries/jsx/injections.scm
+share/helix/runtime/queries/jsx/locals.scm
+share/helix/runtime/queries/jsx/textobjects.scm
+share/helix/runtime/queries/julia/
+share/helix/runtime/queries/julia/folds.scm
+share/helix/runtime/queries/julia/highlights.scm
+share/helix/runtime/queries/julia/injections.scm
+share/helix/runtime/queries/julia/locals.scm
+share/helix/runtime/queries/kotlin/
+share/helix/runtime/queries/kotlin/folds.scm
+share/helix/runtime/queries/kotlin/highlights.scm
+share/helix/runtime/queries/kotlin/injections.scm
+share/helix/runtime/queries/latex/
+share/helix/runtime/queries/latex/folds.scm
+share/helix/runtime/queries/latex/highlights.scm
+share/helix/runtime/queries/latex/injections.scm
+share/helix/runtime/queries/latex/textobjects.scm
+share/helix/runtime/queries/lean/
+share/helix/runtime/queries/lean/folds.scm
+share/helix/runtime/queries/lean/highlights.scm
+share/helix/runtime/queries/lean/injections.scm
+share/helix/runtime/queries/lean/locals.scm
+share/helix/runtime/queries/ledger/
+share/helix/runtime/queries/ledger/highlights.scm
+share/helix/runtime/queries/ledger/injections.scm
+share/helix/runtime/queries/llvm/
+share/helix/runtime/queries/llvm-mir/
+share/helix/runtime/queries/llvm-mir-yaml/
+share/helix/runtime/queries/llvm-mir-yaml/highlights.scm
+share/helix/runtime/queries/llvm-mir-yaml/indents.scm
+share/helix/runtime/queries/llvm-mir-yaml/injections.scm
+share/helix/runtime/queries/llvm-mir/highlights.scm
+share/helix/runtime/queries/llvm-mir/indents.scm
+share/helix/runtime/queries/llvm-mir/injections.scm
+share/helix/runtime/queries/llvm-mir/textobjects.scm
+share/helix/runtime/queries/llvm/highlights.scm
+share/helix/runtime/queries/llvm/indents.scm
+share/helix/runtime/queries/llvm/injections.scm
+share/helix/runtime/queries/llvm/locals.scm
+share/helix/runtime/queries/llvm/textobjects.scm
+share/helix/runtime/queries/lua/
+share/helix/runtime/queries/lua/highlights.scm
+share/helix/runtime/queries/lua/indents.scm
+share/helix/runtime/queries/lua/injections.scm
+share/helix/runtime/queries/make/
+share/helix/runtime/queries/make/highlights.scm
+share/helix/runtime/queries/make/injections.scm
+share/helix/runtime/queries/markdown/
+share/helix/runtime/queries/markdown.inline/
+share/helix/runtime/queries/markdown.inline/highlights.scm
+share/helix/runtime/queries/markdown.inline/injections.scm
+share/helix/runtime/queries/markdown/highlights.scm
+share/helix/runtime/queries/markdown/injections.scm
+share/helix/runtime/queries/meson/
+share/helix/runtime/queries/meson/highlights.scm
+share/helix/runtime/queries/meson/indents.scm
+share/helix/runtime/queries/nickel/
+share/helix/runtime/queries/nickel/highlights.scm
+share/helix/runtime/queries/nickel/indents.scm
+share/helix/runtime/queries/nix/
+share/helix/runtime/queries/nix/highlights.scm
+share/helix/runtime/queries/nu/
+share/helix/runtime/queries/nu/folds.scm
+share/helix/runtime/queries/nu/highlights.scm
+share/helix/runtime/queries/nu/injections.scm
+share/helix/runtime/queries/nu/locals.scm
+share/helix/runtime/queries/ocaml/
+share/helix/runtime/queries/ocaml-interface/
+share/helix/runtime/queries/ocaml-interface/highlights.scm
+share/helix/runtime/queries/ocaml-interface/injections.scm
+share/helix/runtime/queries/ocaml/highlights.scm
+share/helix/runtime/queries/ocaml/indents.scm
+share/helix/runtime/queries/ocaml/injections.scm
+share/helix/runtime/queries/ocaml/locals.scm
+share/helix/runtime/queries/odin/
+share/helix/runtime/queries/odin/highlights.scm
+share/helix/runtime/queries/openscad/
+share/helix/runtime/queries/openscad/highlights.scm
+share/helix/runtime/queries/org/
+share/helix/runtime/queries/org/highlights.scm
+share/helix/runtime/queries/org/injections.scm
+share/helix/runtime/queries/pascal/
+share/helix/runtime/queries/pascal/highlights.scm
+share/helix/runtime/queries/pascal/injections.scm
+share/helix/runtime/queries/pascal/textobjects.scm
+share/helix/runtime/queries/perl/
+share/helix/runtime/queries/perl/highlights.scm
+share/helix/runtime/queries/perl/indents.scm
+share/helix/runtime/queries/perl/injections.scm
+share/helix/runtime/queries/perl/textobjects.scm
+share/helix/runtime/queries/php/
+share/helix/runtime/queries/php/highlights.scm
+share/helix/runtime/queries/php/indents.scm
+share/helix/runtime/queries/php/injections.scm
+share/helix/runtime/queries/php/tags.scm
+share/helix/runtime/queries/php/textobjects.scm
+share/helix/runtime/queries/prisma/
+share/helix/runtime/queries/prisma/highlights.scm
+share/helix/runtime/queries/protobuf/
+share/helix/runtime/queries/protobuf/highlights.scm
+share/helix/runtime/queries/protobuf/indents.scm
+share/helix/runtime/queries/protobuf/injections.scm
+share/helix/runtime/queries/python/
+share/helix/runtime/queries/python/highlights.scm
+share/helix/runtime/queries/python/indents.scm_
+share/helix/runtime/queries/python/injections.scm
+share/helix/runtime/queries/python/locals.scm
+share/helix/runtime/queries/python/tags.scm
+share/helix/runtime/queries/python/textobjects.scm
+share/helix/runtime/queries/queries/
+share/helix/runtime/queries/queries/awk/
+share/helix/runtime/queries/queries/awk/highlights.scm
+share/helix/runtime/queries/queries/awk/injections.scm
+share/helix/runtime/queries/queries/awk/textobjects.scm
+share/helix/runtime/queries/queries/bash/
+share/helix/runtime/queries/queries/bash/highlights.scm
+share/helix/runtime/queries/queries/bash/injections.scm
+share/helix/runtime/queries/queries/beancount/
+share/helix/runtime/queries/queries/beancount/folds.scm
+share/helix/runtime/queries/queries/beancount/highlights.scm
+share/helix/runtime/queries/queries/c/
+share/helix/runtime/queries/queries/c-sharp/
+share/helix/runtime/queries/queries/c-sharp/highlights.scm
+share/helix/runtime/queries/queries/c-sharp/injections.scm
+share/helix/runtime/queries/queries/c-sharp/textobjects.scm
+share/helix/runtime/queries/queries/c/highlights.scm
+share/helix/runtime/queries/queries/c/indents.scm
+share/helix/runtime/queries/queries/c/injections.scm
+share/helix/runtime/queries/queries/c/textobjects.scm
+share/helix/runtime/queries/queries/cairo/
+share/helix/runtime/queries/queries/cairo/highlights.scm
+share/helix/runtime/queries/queries/cairo/injections.scm
+share/helix/runtime/queries/queries/clojure/
+share/helix/runtime/queries/queries/clojure/highlights.scm
+share/helix/runtime/queries/queries/clojure/injections.scm
+share/helix/runtime/queries/queries/cmake/
+share/helix/runtime/queries/queries/cmake/highlights.scm
+share/helix/runtime/queries/queries/cmake/indents.scm
+share/helix/runtime/queries/queries/cmake/injections.scm
+share/helix/runtime/queries/queries/cmake/textobjects.scm
+share/helix/runtime/queries/queries/comment/
+share/helix/runtime/queries/queries/comment/highlights.scm
+share/helix/runtime/queries/queries/cpon/
+share/helix/runtime/queries/queries/cpon/highlights.scm
+share/helix/runtime/queries/queries/cpon/indents.scm
+share/helix/runtime/queries/queries/cpp/
+share/helix/runtime/queries/queries/cpp/highlights.scm
+share/helix/runtime/queries/queries/cpp/indents.scm
+share/helix/runtime/queries/queries/cpp/injections.scm
+share/helix/runtime/queries/queries/cpp/textobjects.scm
+share/helix/runtime/queries/queries/css/
+share/helix/runtime/queries/queries/css/highlights.scm
+share/helix/runtime/queries/queries/css/injections.scm
+share/helix/runtime/queries/queries/cue/
+share/helix/runtime/queries/queries/cue/highlights.scm
+share/helix/runtime/queries/queries/dart/
+share/helix/runtime/queries/queries/dart/highlights.scm
+share/helix/runtime/queries/queries/dart/indents.scm
+share/helix/runtime/queries/queries/dart/injections.scm
+share/helix/runtime/queries/queries/dart/locals.scm
+share/helix/runtime/queries/queries/devicetree/
+share/helix/runtime/queries/queries/devicetree/highlights.scm
+share/helix/runtime/queries/queries/dockerfile/
+share/helix/runtime/queries/queries/dockerfile/highlights.scm
+share/helix/runtime/queries/queries/dockerfile/injections.scm
+share/helix/runtime/queries/queries/dot/
+share/helix/runtime/queries/queries/dot/highlights.scm
+share/helix/runtime/queries/queries/dot/injections.scm
+share/helix/runtime/queries/queries/ecma/
+share/helix/runtime/queries/queries/ecma/highlights.scm
+share/helix/runtime/queries/queries/ecma/indents.scm
+share/helix/runtime/queries/queries/ecma/injections.scm
+share/helix/runtime/queries/queries/ecma/locals.scm
+share/helix/runtime/queries/queries/ecma/textobjects.scm
+share/helix/runtime/queries/queries/edoc/
+share/helix/runtime/queries/queries/edoc/highlights.scm
+share/helix/runtime/queries/queries/edoc/injections.scm
+share/helix/runtime/queries/queries/eex/
+share/helix/runtime/queries/queries/eex/highlights.scm
+share/helix/runtime/queries/queries/eex/injections.scm
+share/helix/runtime/queries/queries/ejs/
+share/helix/runtime/queries/queries/ejs/highlights.scm
+share/helix/runtime/queries/queries/ejs/injections.scm
+share/helix/runtime/queries/queries/elixir/
+share/helix/runtime/queries/queries/elixir/highlights.scm
+share/helix/runtime/queries/queries/elixir/injections.scm
+share/helix/runtime/queries/queries/elixir/textobjects.scm
+share/helix/runtime/queries/queries/elm/
+share/helix/runtime/queries/queries/elm/highlights.scm
+share/helix/runtime/queries/queries/elm/injections.scm
+share/helix/runtime/queries/queries/elm/locals.scm
+share/helix/runtime/queries/queries/elm/tags.scm
+share/helix/runtime/queries/queries/elvish/
+share/helix/runtime/queries/queries/elvish/highlights.scm
+share/helix/runtime/queries/queries/elvish/injections.scm
+share/helix/runtime/queries/queries/erb/
+share/helix/runtime/queries/queries/erb/highlights.scm
+share/helix/runtime/queries/queries/erb/injections.scm
+share/helix/runtime/queries/queries/erlang/
+share/helix/runtime/queries/queries/erlang/highlights.scm
+share/helix/runtime/queries/queries/erlang/injections.scm
+share/helix/runtime/queries/queries/erlang/textobjects.scm
+share/helix/runtime/queries/queries/esdl/
+share/helix/runtime/queries/queries/esdl/highlights.scm
+share/helix/runtime/queries/queries/fish/
+share/helix/runtime/queries/queries/fish/highlights.scm
+share/helix/runtime/queries/queries/fish/indents.scm
+share/helix/runtime/queries/queries/fish/injections.scm
+share/helix/runtime/queries/queries/fish/textobjects.scm
+share/helix/runtime/queries/queries/fortran/
+share/helix/runtime/queries/queries/fortran/folds.scm
+share/helix/runtime/queries/queries/fortran/highlights.scm
+share/helix/runtime/queries/queries/fortran/indents.scm
+share/helix/runtime/queries/queries/gdscript/
+share/helix/runtime/queries/queries/gdscript/highlights.scm
+share/helix/runtime/queries/queries/gdscript/tags.scm
+share/helix/runtime/queries/queries/git-attributes/
+share/helix/runtime/queries/queries/git-attributes/highlights.scm
+share/helix/runtime/queries/queries/git-commit/
+share/helix/runtime/queries/queries/git-commit/highlights.scm
+share/helix/runtime/queries/queries/git-commit/injections.scm
+share/helix/runtime/queries/queries/git-config/
+share/helix/runtime/queries/queries/git-config/highlights.scm
+share/helix/runtime/queries/queries/git-diff/
+share/helix/runtime/queries/queries/git-diff/highlights.scm
+share/helix/runtime/queries/queries/git-ignore/
+share/helix/runtime/queries/queries/git-ignore/highlights.scm
+share/helix/runtime/queries/queries/git-rebase/
+share/helix/runtime/queries/queries/git-rebase/highlights.scm
+share/helix/runtime/queries/queries/git-rebase/injections.scm
+share/helix/runtime/queries/queries/gleam/
+share/helix/runtime/queries/queries/gleam/highlights.scm
+share/helix/runtime/queries/queries/gleam/locals.scm
+share/helix/runtime/queries/queries/gleam/textobjects.scm
+share/helix/runtime/queries/queries/glsl/
+share/helix/runtime/queries/queries/glsl/folds.scm
+share/helix/runtime/queries/queries/glsl/highlights.scm
+share/helix/runtime/queries/queries/glsl/indents.scm
+share/helix/runtime/queries/queries/glsl/injections.scm
+share/helix/runtime/queries/queries/glsl/locals.scm
+share/helix/runtime/queries/queries/glsl/textobjects.scm
+share/helix/runtime/queries/queries/go/
+share/helix/runtime/queries/queries/go/highlights.scm
+share/helix/runtime/queries/queries/go/indents.scm
+share/helix/runtime/queries/queries/go/injections.scm
+share/helix/runtime/queries/queries/go/locals.scm
+share/helix/runtime/queries/queries/go/tags.scm
+share/helix/runtime/queries/queries/go/textobjects.scm
+share/helix/runtime/queries/queries/gomod/
+share/helix/runtime/queries/queries/gomod/highlights.scm
+share/helix/runtime/queries/queries/gomod/injections.scm
+share/helix/runtime/queries/queries/gotmpl/
+share/helix/runtime/queries/queries/gotmpl/highlights.scm
+share/helix/runtime/queries/queries/gotmpl/injections.scm
+share/helix/runtime/queries/queries/gowork/
+share/helix/runtime/queries/queries/gowork/highlights.scm
+share/helix/runtime/queries/queries/gowork/injections.scm
+share/helix/runtime/queries/queries/graphql/
+share/helix/runtime/queries/queries/graphql/highlights.scm
+share/helix/runtime/queries/queries/hare/
+share/helix/runtime/queries/queries/hare/highlights.scm
+share/helix/runtime/queries/queries/hare/locals.scm
+share/helix/runtime/queries/queries/haskell/
+share/helix/runtime/queries/queries/haskell/highlights.scm
+share/helix/runtime/queries/queries/haskell/injections.scm
+share/helix/runtime/queries/queries/haskell/locals.scm
+share/helix/runtime/queries/queries/hcl/
+share/helix/runtime/queries/queries/hcl/folds.scm
+share/helix/runtime/queries/queries/hcl/highlights.scm
+share/helix/runtime/queries/queries/hcl/indents.scm
+share/helix/runtime/queries/queries/hcl/injections.scm
+share/helix/runtime/queries/queries/heex/
+share/helix/runtime/queries/queries/heex/highlights.scm
+share/helix/runtime/queries/queries/heex/injections.scm
+share/helix/runtime/queries/queries/heex/textobjects.scm
+share/helix/runtime/queries/queries/html/
+share/helix/runtime/queries/queries/html/highlights.scm
+share/helix/runtime/queries/queries/html/injections.scm
+share/helix/runtime/queries/queries/iex/
+share/helix/runtime/queries/queries/iex/highlights.scm
+share/helix/runtime/queries/queries/iex/injections.scm
+share/helix/runtime/queries/queries/java/
+share/helix/runtime/queries/queries/java/highlights.scm
+share/helix/runtime/queries/queries/java/injections.scm
+share/helix/runtime/queries/queries/javascript/
+share/helix/runtime/queries/queries/javascript/highlights.scm
+share/helix/runtime/queries/queries/javascript/indents.scm
+share/helix/runtime/queries/queries/javascript/injections.scm
+share/helix/runtime/queries/queries/javascript/locals.scm
+share/helix/runtime/queries/queries/javascript/tags.scm
+share/helix/runtime/queries/queries/javascript/textobjects.scm
+share/helix/runtime/queries/queries/jsdoc/
+share/helix/runtime/queries/queries/jsdoc/highlights.scm
+share/helix/runtime/queries/queries/jsdoc/injections.scm
+share/helix/runtime/queries/queries/json/
+share/helix/runtime/queries/queries/json/highlights.scm
+share/helix/runtime/queries/queries/json/indents.scm
+share/helix/runtime/queries/queries/jsx/
+share/helix/runtime/queries/queries/jsx/highlights.scm
+share/helix/runtime/queries/queries/jsx/indents.scm
+share/helix/runtime/queries/queries/jsx/injections.scm
+share/helix/runtime/queries/queries/jsx/locals.scm
+share/helix/runtime/queries/queries/jsx/textobjects.scm
+share/helix/runtime/queries/queries/julia/
+share/helix/runtime/queries/queries/julia/folds.scm
+share/helix/runtime/queries/queries/julia/highlights.scm
+share/helix/runtime/queries/queries/julia/injections.scm
+share/helix/runtime/queries/queries/julia/locals.scm
+share/helix/runtime/queries/queries/kotlin/
+share/helix/runtime/queries/queries/kotlin/folds.scm
+share/helix/runtime/queries/queries/kotlin/highlights.scm
+share/helix/runtime/queries/queries/kotlin/injections.scm
+share/helix/runtime/queries/queries/latex/
+share/helix/runtime/queries/queries/latex/folds.scm
+share/helix/runtime/queries/queries/latex/highlights.scm
+share/helix/runtime/queries/queries/latex/injections.scm
+share/helix/runtime/queries/queries/latex/textobjects.scm
+share/helix/runtime/queries/queries/lean/
+share/helix/runtime/queries/queries/lean/folds.scm
+share/helix/runtime/queries/queries/lean/highlights.scm
+share/helix/runtime/queries/queries/lean/injections.scm
+share/helix/runtime/queries/queries/lean/locals.scm
+share/helix/runtime/queries/queries/ledger/
+share/helix/runtime/queries/queries/ledger/highlights.scm
+share/helix/runtime/queries/queries/ledger/injections.scm
+share/helix/runtime/queries/queries/llvm/
+share/helix/runtime/queries/queries/llvm-mir/
+share/helix/runtime/queries/queries/llvm-mir-yaml/
+share/helix/runtime/queries/queries/llvm-mir-yaml/highlights.scm
+share/helix/runtime/queries/queries/llvm-mir-yaml/indents.scm
+share/helix/runtime/queries/queries/llvm-mir-yaml/injections.scm
+share/helix/runtime/queries/queries/llvm-mir/highlights.scm
+share/helix/runtime/queries/queries/llvm-mir/indents.scm
+share/helix/runtime/queries/queries/llvm-mir/injections.scm
+share/helix/runtime/queries/queries/llvm-mir/textobjects.scm
+share/helix/runtime/queries/queries/llvm/highlights.scm
+share/helix/runtime/queries/queries/llvm/indents.scm
+share/helix/runtime/queries/queries/llvm/injections.scm
+share/helix/runtime/queries/queries/llvm/locals.scm
+share/helix/runtime/queries/queries/llvm/textobjects.scm
+share/helix/runtime/queries/queries/lua/
+share/helix/runtime/queries/queries/lua/highlights.scm
+share/helix/runtime/queries/queries/lua/indents.scm
+share/helix/runtime/queries/queries/lua/injections.scm
+share/helix/runtime/queries/queries/make/
+share/helix/runtime/queries/queries/make/highlights.scm
+share/helix/runtime/queries/queries/make/injections.scm
+share/helix/runtime/queries/queries/markdown/
+share/helix/runtime/queries/queries/markdown.inline/
+share/helix/runtime/queries/queries/markdown.inline/highlights.scm
+share/helix/runtime/queries/queries/markdown.inline/injections.scm
+share/helix/runtime/queries/queries/markdown/highlights.scm
+share/helix/runtime/queries/queries/markdown/injections.scm
+share/helix/runtime/queries/queries/meson/
+share/helix/runtime/queries/queries/meson/highlights.scm
+share/helix/runtime/queries/queries/meson/indents.scm
+share/helix/runtime/queries/queries/nickel/
+share/helix/runtime/queries/queries/nickel/highlights.scm
+share/helix/runtime/queries/queries/nickel/indents.scm
+share/helix/runtime/queries/queries/nix/
+share/helix/runtime/queries/queries/nix/highlights.scm
+share/helix/runtime/queries/queries/nu/
+share/helix/runtime/queries/queries/nu/folds.scm
+share/helix/runtime/queries/queries/nu/highlights.scm
+share/helix/runtime/queries/queries/nu/injections.scm
+share/helix/runtime/queries/queries/nu/locals.scm
+share/helix/runtime/queries/queries/ocaml/
+share/helix/runtime/queries/queries/ocaml-interface/
+share/helix/runtime/queries/queries/ocaml-interface/highlights.scm
+share/helix/runtime/queries/queries/ocaml-interface/injections.scm
+share/helix/runtime/queries/queries/ocaml/highlights.scm
+share/helix/runtime/queries/queries/ocaml/indents.scm
+share/helix/runtime/queries/queries/ocaml/injections.scm
+share/helix/runtime/queries/queries/ocaml/locals.scm
+share/helix/runtime/queries/queries/odin/
+share/helix/runtime/queries/queries/odin/highlights.scm
+share/helix/runtime/queries/queries/openscad/
+share/helix/runtime/queries/queries/openscad/highlights.scm
+share/helix/runtime/queries/queries/org/
+share/helix/runtime/queries/queries/org/highlights.scm
+share/helix/runtime/queries/queries/org/injections.scm
+share/helix/runtime/queries/queries/pascal/
+share/helix/runtime/queries/queries/pascal/highlights.scm
+share/helix/runtime/queries/queries/pascal/injections.scm
+share/helix/runtime/queries/queries/pascal/textobjects.scm
+share/helix/runtime/queries/queries/perl/
+share/helix/runtime/queries/queries/perl/highlights.scm
+share/helix/runtime/queries/queries/perl/indents.scm
+share/helix/runtime/queries/queries/perl/injections.scm
+share/helix/runtime/queries/queries/perl/textobjects.scm
+share/helix/runtime/queries/queries/php/
+share/helix/runtime/queries/queries/php/highlights.scm
+share/helix/runtime/queries/queries/php/indents.scm
+share/helix/runtime/queries/queries/php/injections.scm
+share/helix/runtime/queries/queries/php/tags.scm
+share/helix/runtime/queries/queries/php/textobjects.scm
+share/helix/runtime/queries/queries/prisma/
+share/helix/runtime/queries/queries/prisma/highlights.scm
+share/helix/runtime/queries/queries/protobuf/
+share/helix/runtime/queries/queries/protobuf/highlights.scm
+share/helix/runtime/queries/queries/protobuf/indents.scm
+share/helix/runtime/queries/queries/protobuf/injections.scm
+share/helix/runtime/queries/queries/python/
+share/helix/runtime/queries/queries/python/highlights.scm
+share/helix/runtime/queries/queries/python/indents.scm_
+share/helix/runtime/queries/queries/python/injections.scm
+share/helix/runtime/queries/queries/python/locals.scm
+share/helix/runtime/queries/queries/python/tags.scm
+share/helix/runtime/queries/queries/python/textobjects.scm
+share/helix/runtime/queries/queries/r/
+share/helix/runtime/queries/queries/r/highlights.scm
+share/helix/runtime/queries/queries/r/locals.scm
+share/helix/runtime/queries/queries/regex/
+share/helix/runtime/queries/queries/regex/highlights.scm
+share/helix/runtime/queries/queries/rescript/
+share/helix/runtime/queries/queries/rescript/highlights.scm
+share/helix/runtime/queries/queries/rescript/injections.scm
+share/helix/runtime/queries/queries/rescript/textobjects.scm
+share/helix/runtime/queries/queries/rmarkdown/
+share/helix/runtime/queries/queries/rmarkdown/highlights.scm
+share/helix/runtime/queries/queries/rmarkdown/indents.scm
+share/helix/runtime/queries/queries/rmarkdown/injections.scm
+share/helix/runtime/queries/queries/ron/
+share/helix/runtime/queries/queries/ron/highlights.scm
+share/helix/runtime/queries/queries/ron/indents.scm
+share/helix/runtime/queries/queries/ron/injections.scm
+share/helix/runtime/queries/queries/ruby/
+share/helix/runtime/queries/queries/ruby/highlights.scm
+share/helix/runtime/queries/queries/ruby/indents.scm
+share/helix/runtime/queries/queries/ruby/injections.scm
+share/helix/runtime/queries/queries/ruby/locals.scm
+share/helix/runtime/queries/queries/ruby/tags.scm
+share/helix/runtime/queries/queries/ruby/textobjects.scm
+share/helix/runtime/queries/queries/rust/
+share/helix/runtime/queries/queries/rust/highlights.scm
+share/helix/runtime/queries/queries/rust/indents.scm
+share/helix/runtime/queries/queries/rust/injections.scm
+share/helix/runtime/queries/queries/rust/locals.scm
+share/helix/runtime/queries/queries/rust/textobjects.scm
+share/helix/runtime/queries/queries/scala/
+share/helix/runtime/queries/queries/scala/highlights.scm
+share/helix/runtime/queries/queries/scala/indents.scm
+share/helix/runtime/queries/queries/scala/injections.scm
+share/helix/runtime/queries/queries/scheme/
+share/helix/runtime/queries/queries/scheme/highlights.scm
+share/helix/runtime/queries/queries/scheme/injections.scm
+share/helix/runtime/queries/queries/scss/
+share/helix/runtime/queries/queries/scss/highlights.scm
+share/helix/runtime/queries/queries/scss/injections.scm
+share/helix/runtime/queries/queries/slint/
+share/helix/runtime/queries/queries/slint/highlights.scm
+share/helix/runtime/queries/queries/slint/indents.scm
+share/helix/runtime/queries/queries/slint/locals.scm
+share/helix/runtime/queries/queries/solidity/
+share/helix/runtime/queries/queries/solidity/highlights.scm
+share/helix/runtime/queries/queries/sql/
+share/helix/runtime/queries/queries/sql/highlights.scm
+share/helix/runtime/queries/queries/sshclientconfig/
+share/helix/runtime/queries/queries/sshclientconfig/highlights.scm
+share/helix/runtime/queries/queries/starlark/
+share/helix/runtime/queries/queries/starlark/highlights.scm
+share/helix/runtime/queries/queries/starlark/injections.scm
+share/helix/runtime/queries/queries/starlark/textobjects.scm
+share/helix/runtime/queries/queries/svelte/
+share/helix/runtime/queries/queries/svelte/highlights.scm
+share/helix/runtime/queries/queries/svelte/injections.scm
+share/helix/runtime/queries/queries/swift/
+share/helix/runtime/queries/queries/swift/highlights.scm
+share/helix/runtime/queries/queries/swift/locals.scm
+share/helix/runtime/queries/queries/tablegen/
+share/helix/runtime/queries/queries/tablegen/highlights.scm
+share/helix/runtime/queries/queries/tablegen/indents.scm
+share/helix/runtime/queries/queries/tablegen/injections.scm
+share/helix/runtime/queries/queries/tablegen/textobjects.scm
+share/helix/runtime/queries/queries/task/
+share/helix/runtime/queries/queries/task/highlights.scm
+share/helix/runtime/queries/queries/task/injections.scm
+share/helix/runtime/queries/queries/toml/
+share/helix/runtime/queries/queries/toml/highlights.scm
+share/helix/runtime/queries/queries/toml/injections.scm
+share/helix/runtime/queries/queries/tsq/
+share/helix/runtime/queries/queries/tsq/highlights.scm
+share/helix/runtime/queries/queries/tsq/injections.scm
+share/helix/runtime/queries/queries/tsx/
+share/helix/runtime/queries/queries/tsx/highlights.scm
+share/helix/runtime/queries/queries/tsx/indents.scm
+share/helix/runtime/queries/queries/tsx/injections.scm
+share/helix/runtime/queries/queries/tsx/textobjects.scm
+share/helix/runtime/queries/queries/twig/
+share/helix/runtime/queries/queries/twig/highlights.scm
+share/helix/runtime/queries/queries/twig/injections.scm
+share/helix/runtime/queries/queries/typescript/
+share/helix/runtime/queries/queries/typescript/highlights.scm
+share/helix/runtime/queries/queries/typescript/indents.scm
+share/helix/runtime/queries/queries/typescript/injections.scm
+share/helix/runtime/queries/queries/typescript/locals.scm
+share/helix/runtime/queries/queries/typescript/tags.scm
+share/helix/runtime/queries/queries/typescript/textobjects.scm
+share/helix/runtime/queries/queries/ungrammar/
+share/helix/runtime/queries/queries/ungrammar/highlights.scm
+share/helix/runtime/queries/queries/v/
+share/helix/runtime/queries/queries/v/highlights.scm
+share/helix/runtime/queries/queries/vala/
+share/helix/runtime/queries/queries/vala/highlights.scm
+share/helix/runtime/queries/queries/verilog/
+share/helix/runtime/queries/queries/verilog/highlights.scm
+share/helix/runtime/queries/queries/verilog/injections.scm
+share/helix/runtime/queries/queries/verilog/locals.scm
+share/helix/runtime/queries/queries/verilog/textobjects.scm
+share/helix/runtime/queries/queries/vue/
+share/helix/runtime/queries/queries/vue/highlights.scm
+share/helix/runtime/queries/queries/vue/injections.scm
+share/helix/runtime/queries/queries/wgsl/
+share/helix/runtime/queries/queries/wgsl/highlights.scm
+share/helix/runtime/queries/queries/wgsl/injections.scm
+share/helix/runtime/queries/queries/xit/
+share/helix/runtime/queries/queries/xit/highlights.scm
+share/helix/runtime/queries/queries/yaml/
+share/helix/runtime/queries/queries/yaml/highlights.scm
+share/helix/runtime/queries/queries/yaml/indents.scm
+share/helix/runtime/queries/queries/yaml/injections.scm
+share/helix/runtime/queries/queries/zig/
+share/helix/runtime/queries/queries/zig/highlights.scm
+share/helix/runtime/queries/queries/zig/indents.scm
+share/helix/runtime/queries/queries/zig/injections.scm
+share/helix/runtime/queries/r/
+share/helix/runtime/queries/r/highlights.scm
+share/helix/runtime/queries/r/locals.scm
+share/helix/runtime/queries/regex/
+share/helix/runtime/queries/regex/highlights.scm
+share/helix/runtime/queries/rescript/
+share/helix/runtime/queries/rescript/highlights.scm
+share/helix/runtime/queries/rescript/injections.scm
+share/helix/runtime/queries/rescript/textobjects.scm
+share/helix/runtime/queries/rmarkdown/
+share/helix/runtime/queries/rmarkdown/highlights.scm
+share/helix/runtime/queries/rmarkdown/indents.scm
+share/helix/runtime/queries/rmarkdown/injections.scm
+share/helix/runtime/queries/ron/
+share/helix/runtime/queries/ron/highlights.scm
+share/helix/runtime/queries/ron/indents.scm
+share/helix/runtime/queries/ron/injections.scm
+share/helix/runtime/queries/ruby/
+share/helix/runtime/queries/ruby/highlights.scm
+share/helix/runtime/queries/ruby/indents.scm
+share/helix/runtime/queries/ruby/injections.scm
+share/helix/runtime/queries/ruby/locals.scm
+share/helix/runtime/queries/ruby/tags.scm
+share/helix/runtime/queries/ruby/textobjects.scm
+share/helix/runtime/queries/rust/
+share/helix/runtime/queries/rust/highlights.scm
+share/helix/runtime/queries/rust/indents.scm
+share/helix/runtime/queries/rust/injections.scm
+share/helix/runtime/queries/rust/locals.scm
+share/helix/runtime/queries/rust/textobjects.scm
+share/helix/runtime/queries/scala/
+share/helix/runtime/queries/scala/highlights.scm
+share/helix/runtime/queries/scala/indents.scm
+share/helix/runtime/queries/scala/injections.scm
+share/helix/runtime/queries/scheme/
+share/helix/runtime/queries/scheme/highlights.scm
+share/helix/runtime/queries/scheme/injections.scm
+share/helix/runtime/queries/scss/
+share/helix/runtime/queries/scss/highlights.scm
+share/helix/runtime/queries/scss/injections.scm
+share/helix/runtime/queries/slint/
+share/helix/runtime/queries/slint/highlights.scm
+share/helix/runtime/queries/slint/indents.scm
+share/helix/runtime/queries/slint/locals.scm
+share/helix/runtime/queries/solidity/
+share/helix/runtime/queries/solidity/highlights.scm
+share/helix/runtime/queries/sql/
+share/helix/runtime/queries/sql/highlights.scm
+share/helix/runtime/queries/sshclientconfig/
+share/helix/runtime/queries/sshclientconfig/highlights.scm
+share/helix/runtime/queries/starlark/
+share/helix/runtime/queries/starlark/highlights.scm
+share/helix/runtime/queries/starlark/injections.scm
+share/helix/runtime/queries/starlark/textobjects.scm
+share/helix/runtime/queries/svelte/
+share/helix/runtime/queries/svelte/highlights.scm
+share/helix/runtime/queries/svelte/injections.scm
+share/helix/runtime/queries/swift/
+share/helix/runtime/queries/swift/highlights.scm
+share/helix/runtime/queries/swift/locals.scm
+share/helix/runtime/queries/tablegen/
+share/helix/runtime/queries/tablegen/highlights.scm
+share/helix/runtime/queries/tablegen/indents.scm
+share/helix/runtime/queries/tablegen/injections.scm
+share/helix/runtime/queries/tablegen/textobjects.scm
+share/helix/runtime/queries/task/
+share/helix/runtime/queries/task/highlights.scm
+share/helix/runtime/queries/task/injections.scm
+share/helix/runtime/queries/toml/
+share/helix/runtime/queries/toml/highlights.scm
+share/helix/runtime/queries/toml/injections.scm
+share/helix/runtime/queries/tsq/
+share/helix/runtime/queries/tsq/highlights.scm
+share/helix/runtime/queries/tsq/injections.scm
+share/helix/runtime/queries/tsx/
+share/helix/runtime/queries/tsx/highlights.scm
+share/helix/runtime/queries/tsx/indents.scm
+share/helix/runtime/queries/tsx/injections.scm
+share/helix/runtime/queries/tsx/textobjects.scm
+share/helix/runtime/queries/twig/
+share/helix/runtime/queries/twig/highlights.scm
+share/helix/runtime/queries/twig/injections.scm
+share/helix/runtime/queries/typescript/
+share/helix/runtime/queries/typescript/highlights.scm
+share/helix/runtime/queries/typescript/indents.scm
+share/helix/runtime/queries/typescript/injections.scm
+share/helix/runtime/queries/typescript/locals.scm
+share/helix/runtime/queries/typescript/tags.scm
+share/helix/runtime/queries/typescript/textobjects.scm
+share/helix/runtime/queries/ungrammar/
+share/helix/runtime/queries/ungrammar/highlights.scm
+share/helix/runtime/queries/v/
+share/helix/runtime/queries/v/highlights.scm
+share/helix/runtime/queries/vala/
+share/helix/runtime/queries/vala/highlights.scm
+share/helix/runtime/queries/verilog/
+share/helix/runtime/queries/verilog/highlights.scm
+share/helix/runtime/queries/verilog/injections.scm
+share/helix/runtime/queries/verilog/locals.scm
+share/helix/runtime/queries/verilog/textobjects.scm
+share/helix/runtime/queries/vue/
+share/helix/runtime/queries/vue/highlights.scm
+share/helix/runtime/queries/vue/injections.scm
+share/helix/runtime/queries/wgsl/
+share/helix/runtime/queries/wgsl/highlights.scm
+share/helix/runtime/queries/wgsl/injections.scm
+share/helix/runtime/queries/xit/
+share/helix/runtime/queries/xit/highlights.scm
+share/helix/runtime/queries/yaml/
+share/helix/runtime/queries/yaml/highlights.scm
+share/helix/runtime/queries/yaml/indents.scm
+share/helix/runtime/queries/yaml/injections.scm
+share/helix/runtime/queries/zig/
+share/helix/runtime/queries/zig/highlights.scm
+share/helix/runtime/queries/zig/indents.scm
+share/helix/runtime/queries/zig/injections.scm
+share/helix/runtime/themes/
+share/helix/runtime/themes/README.md
+share/helix/runtime/themes/acme.toml
+share/helix/runtime/themes/autumn.toml
+share/helix/runtime/themes/autumn_night.toml
+share/helix/runtime/themes/ayu_dark.toml
+share/helix/runtime/themes/ayu_light.toml
+share/helix/runtime/themes/ayu_mirage.toml
+share/helix/runtime/themes/base16_default_dark.toml
+share/helix/runtime/themes/base16_default_light.toml
+share/helix/runtime/themes/base16_terminal.toml
+share/helix/runtime/themes/base16_transparent.toml
+share/helix/runtime/themes/bogster.toml
+share/helix/runtime/themes/boo_berry.toml
+share/helix/runtime/themes/catppuccin_frappe.toml
+share/helix/runtime/themes/catppuccin_latte.toml
+share/helix/runtime/themes/catppuccin_macchiato.toml
+share/helix/runtime/themes/catppuccin_mocha.toml
+share/helix/runtime/themes/dark_plus.toml
+share/helix/runtime/themes/doom_acario_dark.toml
+share/helix/runtime/themes/dracula.toml
+share/helix/runtime/themes/dracula_at_night.toml
+share/helix/runtime/themes/emacs.toml
+share/helix/runtime/themes/everforest_dark.toml
+share/helix/runtime/themes/everforest_light.toml
+share/helix/runtime/themes/flatwhite.toml
+share/helix/runtime/themes/fleetish.toml
+share/helix/runtime/themes/gruvbox.toml
+share/helix/runtime/themes/gruvbox_light.toml
+share/helix/runtime/themes/ingrid.toml
+share/helix/runtime/themes/meliora.toml
+share/helix/runtime/themes/monokai.toml
+share/helix/runtime/themes/monokai_pro.toml
+share/helix/runtime/themes/monokai_pro_machine.toml
+share/helix/runtime/themes/monokai_pro_octagon.toml
+share/helix/runtime/themes/monokai_pro_ristretto.toml
+share/helix/runtime/themes/monokai_pro_spectrum.toml
+share/helix/runtime/themes/night_owl.toml
+share/helix/runtime/themes/noctis.toml
+share/helix/runtime/themes/noctis_bordo.toml
+share/helix/runtime/themes/nord.toml
+share/helix/runtime/themes/nord_light.toml
+share/helix/runtime/themes/onedark.toml
+share/helix/runtime/themes/onelight.toml
+share/helix/runtime/themes/papercolor-light.toml
+share/helix/runtime/themes/penumbra+.toml
+share/helix/runtime/themes/pop-dark.toml
+share/helix/runtime/themes/rose_pine.toml
+share/helix/runtime/themes/rose_pine_dawn.toml
+share/helix/runtime/themes/rose_pine_moon.toml
+share/helix/runtime/themes/serika-dark.toml
+share/helix/runtime/themes/serika-light.toml
+share/helix/runtime/themes/snazzy.toml
+share/helix/runtime/themes/solarized_dark.toml
+share/helix/runtime/themes/solarized_light.toml
+share/helix/runtime/themes/sonokai.toml
+share/helix/runtime/themes/spacebones_light.toml
+share/helix/runtime/themes/tokyonight.toml
+share/helix/runtime/themes/tokyonight_storm.toml
+share/helix/runtime/tutor.txt

@@ -1,0 +1,15 @@
+Index: helix-loader/src/lib.rs
+--- helix-loader/src/lib.rs.orig
++++ helix-loader/src/lib.rs
+@@ -41,6 +41,11 @@ pub fn runtime_dir() -> PathBuf {
+         return conf_dir;
+     }
+ 
++    let data_dir = std::path::PathBuf::from("%%DATADIR%%").join(RT_DIR);
++    if data_dir.exists() {
++        return data_dir;
++    }
++
+     // fallback to location of the executable being run
+     std::env::current_exe()
+         .ok()

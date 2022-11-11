@@ -1,0 +1,8 @@
+A Kakoune / Neovim inspired text editor.
+
+Features:
+  - Vim-like modal editing
+  - Multiple selections
+  - Built-in language server support
+  - Smart, incremental syntax highlighting
+    and code editing via tree-sitter
