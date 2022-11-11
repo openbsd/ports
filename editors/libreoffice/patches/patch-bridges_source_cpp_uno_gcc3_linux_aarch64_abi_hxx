@@ -1,0 +1,12 @@
+Index: bridges/source/cpp_uno/gcc3_linux_aarch64/abi.hxx
+--- bridges/source/cpp_uno/gcc3_linux_aarch64/abi.hxx.orig
++++ bridges/source/cpp_uno/gcc3_linux_aarch64/abi.hxx
+@@ -70,7 +70,7 @@ namespace __cxxabiv1 {
+ struct __cxa_exception {
+ #if defined _LIBCPPABI_VERSION // detect libc++abi
+ #if defined __LP64__ || LIBCXXABI_ARM_EHABI
+-#ifdef MACOSX // on arm64
++#if defined MACOSX || defined OPENBSD // on arm64
+     // This is a new field added with LLVM 10
+     // <https://github.com/llvm/llvm-project/commit/674ec1eb16678b8addc02a4b0534ab383d22fa77>
+     // "[libcxxabi] Insert padding in __cxa_exception struct for compatibility".  For non-MACOSX,

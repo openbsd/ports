@@ -1,0 +1,12 @@
+Index: bridges/source/cpp_uno/gcc3_linux_aarch64/abi.cxx
+--- bridges/source/cpp_uno/gcc3_linux_aarch64/abi.cxx.orig
++++ bridges/source/cpp_uno/gcc3_linux_aarch64/abi.cxx
+@@ -148,7 +148,7 @@ std::type_info * getRtti(typelib_TypeDescription const
+ extern "C" void _GLIBCXX_CDTOR_CALLABI deleteException(void * exception) {
+     __cxxabiv1::__cxa_exception * header =
+         static_cast<__cxxabiv1::__cxa_exception *>(exception) - 1;
+-#if !defined MACOSX && defined _LIBCPPABI_VERSION // detect libc++abi
++#if !defined MACOSX && !defined OPENBSD && defined _LIBCPPABI_VERSION // detect libc++abi
+     // First, the libcxxabi commit
+     // <http://llvm.org/viewvc/llvm-project?view=revision&revision=303175>
+     // "[libcxxabi] Align unwindHeader on a double-word boundary" towards

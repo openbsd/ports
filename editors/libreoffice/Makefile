@@ -1,6 +1,6 @@
 USE_WXNEEDED=	Yes
 
-ONLY_FOR_ARCHS= amd64 i386
+ONLY_FOR_ARCHS= amd64 i386 aarch64
 
 COMMENT-main=	multi-platform productivity suite
 COMMENT-kde=	optional integration of LibreOffice to the KDE environment
@@ -374,13 +374,7 @@ MAKE_ENV+=	PYTHON="${MODPY_BIN}" verbose=f \
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION}
 
-.if ${MACHINE_ARCH} == "i386"
-OA=		x86
-.elif ${MACHINE_ARCH} == "amd64"
-OA=		x86_64
-.endif
-
-SUBST_VARS+=	BV OA
+SUBST_VARS+=	BV
 
 pre-patch:
 	@ln -fs /bin/md5 ${WRKDIR}/bin/md5sum

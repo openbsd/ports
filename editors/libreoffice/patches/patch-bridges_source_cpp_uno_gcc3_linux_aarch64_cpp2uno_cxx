@@ -1,0 +1,12 @@
+Index: bridges/source/cpp_uno/gcc3_linux_aarch64/cpp2uno.cxx
+--- bridges/source/cpp_uno/gcc3_linux_aarch64/cpp2uno.cxx.orig
++++ bridges/source/cpp_uno/gcc3_linux_aarch64/cpp2uno.cxx
+@@ -576,7 +576,7 @@ unsigned char * bridges::cpp_uno::shared::VtableFactor
+ void bridges::cpp_uno::shared::VtableFactory::flushCode(
+     unsigned char const * begin, unsigned char const * end)
+ {
+-#if !defined ANDROID && !defined MACOSX
++#if !defined ANDROID && !defined MACOSX && !defined OPENBSD
+    static void (*clear_cache)(unsigned char const *, unsigned char const *)
+        = (void (*)(unsigned char const *, unsigned char const *)) dlsym(
+            RTLD_DEFAULT, "__clear_cache");
