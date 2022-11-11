@@ -122,7 +122,6 @@
      SUBDIR += libssh
      SUBDIR += libssh2
      SUBDIR += libtasn1
-     SUBDIR += libxcrypt
      SUBDIR += logsentry
      SUBDIR += luasec
      SUBDIR += luasec,lua52
