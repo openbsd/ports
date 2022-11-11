@@ -6,12 +6,15 @@ GNOME_PROJECT=		libxml2
 
 PKGNAME-main=		libxml-${VERSION}
 PKGNAME-python=		py3-libxml-${VERSION}
-REVISION-main=		0
-REVISION-python=	0
+
+REVISION-main=		1
+REVISION-python=	1
 
 SHARED_LIBS +=  xml2                 18.0     # 12.3
 
 CATEGORIES=		textproc
+
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # BSD-like
 PERMIT_PACKAGE=	Yes
