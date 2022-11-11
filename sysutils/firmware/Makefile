@@ -14,6 +14,7 @@
      SUBDIR =
      SUBDIR += acx
      SUBDIR += amdgpu
+     SUBDIR += apple-boot
      SUBDIR += athn
      SUBDIR += bwfm
      SUBDIR += bwi
@@ -24,7 +25,6 @@
      SUBDIR += iwm
      SUBDIR += iwn
      SUBDIR += iwx
-     SUBDIR += m1n1-uboot
      SUBDIR += malo
      SUBDIR += mtw
      SUBDIR += ogx
