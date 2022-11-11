@@ -73,10 +73,9 @@ MODGNOME_TOOLS +=	desktop-file-utils docbook
 MODGNOME_TOOLS +=	gtk-update-icon-cache yelp
 
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
+MODGNOME_LDFLAGS+=	-rdynamic
 
 CONFIGURE_ARGS=		-Dwayland=false
-
-MODGNOME_LDFLAGS=	-rdynamic
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
