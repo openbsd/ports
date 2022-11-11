@@ -1,3 +1,5 @@
+XXX push upstream
+
 Index: libgweather/gweather-info.c
 --- libgweather/gweather-info.c.orig
 +++ libgweather/gweather-info.c
