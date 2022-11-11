@@ -1,0 +1,13 @@
+Index: src/libaccountsservice/act-user.c
+--- src/libaccountsservice/act-user.c.orig
++++ src/libaccountsservice/act-user.c
+@@ -26,7 +26,9 @@
+ #include <sys/stat.h>
+ #include <unistd.h>
+ 
++#ifdef __linux__
+ #include <crypt.h>
++#endif
+ 
+ #include <glib.h>
+ #include <glib/gi18n.h>

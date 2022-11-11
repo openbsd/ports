@@ -10,7 +10,20 @@ Index: meson.build
    assert(run_command('test', '-e', path_wtmp).returncode() == 0, 'Do not know which filename to watch for wtmp changes')
    config_h.set_quoted('PATH_WTMP', path_wtmp)
  endif
-@@ -207,10 +207,12 @@ config_h.set('MINIMUM_UID', get_option('minimum_uid'))
+@@ -159,7 +159,11 @@ polkit_gobject_dep = dependency('polkit-gobject-1')
+ crypt_dep = dependency('libxcrypt', required: false, version: '>= 4')
+ config_h.set('HAVE_CRYPT_GENSALT', crypt_dep.found())
+ if not crypt_dep.found()
+-  crypt_dep = cc.find_library('crypt')
++  if host_machine.system() == 'linux'
++    crypt_dep = cc.find_library('crypt')
++  else
++    crypt_dep = []
++  endif
+ endif
+ 
+ dbus_dep = dependency('dbus-1')
+@@ -207,10 +211,12 @@ config_h.set('MINIMUM_UID', get_option('minimum_uid'))
  gdm_conf_file = get_option('gdmconffile')
  config_h.set_quoted('PATH_GDM_CUSTOM', gdm_conf_file)
  

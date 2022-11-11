@@ -6,7 +6,7 @@ COMMENT=	D-Bus interface for user account query and manipulation
 DISTNAME=	accountsservice-22.08.8
 EXTRACT_SUFX=	.tar.xz
 
-REVISION=	3
+REVISION=	4
 
 SHARED_LIBS += accountsservice           0.1 # 0.0.0
 
@@ -19,8 +19,7 @@ MAINTAINER=	Robert Nagy <robert@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c gio-2.0 glib-2.0 gobject-2.0 intl polkit-gobject-1
-WANTLIB += consolekit crypt
+WANTLIB += c consolekit gio-2.0 glib-2.0 gobject-2.0 intl polkit-gobject-1
 
 MASTER_SITES=	http://www.freedesktop.org/software/accountsservice/
 
@@ -30,8 +29,7 @@ BUILD_DEPENDS=	devel/gettext,-tools \
 		devel/gobject-introspection \
 		lang/vala
 
-LIB_DEPENDS=	security/libxcrypt \
-		sysutils/consolekit>=1.2.4p4 \
+LIB_DEPENDS=	sysutils/consolekit>=1.2.4p4 \
 		sysutils/polkit
 
 # polkit(8) almost always needs to know the "active" session
