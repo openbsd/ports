@@ -23,6 +23,7 @@
      SUBDIR += ged
      SUBDIR += ghostwriter
      SUBDIR += gummi
+     SUBDIR += helix
      SUBDIR += hexcurse
      SUBDIR += hexedit
      SUBDIR += ht
