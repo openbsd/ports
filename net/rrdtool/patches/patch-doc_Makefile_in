@@ -1,7 +1,7 @@
 Index: doc/Makefile.in
 --- doc/Makefile.in.orig
 +++ doc/Makefile.in
-@@ -276,7 +276,7 @@ PYTHON_PLATFORM = @PYTHON_PLATFORM@
+@@ -278,7 +278,7 @@ PYTHON_PLATFORM = @PYTHON_PLATFORM@
  PYTHON_PREFIX = @PYTHON_PREFIX@
  PYTHON_VERSION = @PYTHON_VERSION@
  RANLIB = @RANLIB@

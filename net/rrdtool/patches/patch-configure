@@ -1,7 +1,7 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -28696,23 +28696,6 @@ $as_echo "$as_me: WARNING: unrecognized options: $ac_u
+@@ -28802,23 +28802,6 @@ $as_echo "$as_me: WARNING: unrecognized options: $ac_u
  fi
  
  

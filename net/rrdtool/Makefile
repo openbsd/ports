@@ -2,14 +2,13 @@ COMMENT-main=	system to store and display time-series data
 COMMENT-update=	lightweight update-only tool for rrdtool
 COMMENT-ruby=	ruby interface to librrd
 
-V=		1.7.2
-REVISION=	5
+V=		1.8.0
 DISTNAME=	rrdtool-$V
 PKGNAME-main=	${DISTNAME}
 PKGNAME-update=	rrdupdate-$V
 PKGNAME-ruby=	ruby${MODRUBY_BINREV}-rrd-$V
 
-SHARED_LIBS +=	rrd                  5.3      # 10.0
+SHARED_LIBS +=	rrd                  6.0      # 11.0
 
 CATEGORIES=	net databases
 
@@ -86,7 +85,8 @@ LIB_DEPENDS-ruby=	rrdtool-$V:net/rrdtool \
 			${MODRUBY_LIB_DEPENDS}
 RUN_DEPENDS-ruby=	${MODRUBY_RUN_DEPENDS}
 
-TEST_DEPENDS=		shells/bash
+TEST_DEPENDS=		shells/bash \
+			sysutils/coreutils
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/librrd.pc.in
@@ -94,6 +94,7 @@ pre-configure:
 pre-test:
 	find ${WRKSRC}/tests -type f -perm -0111 \
 	    -exec sed -i '1s,#!.*bash,#!${LOCALBASE}/bin/bash,' {} +
+	ln -fs ${LOCALBASE}/bin/gseq ${WRKDIR}/bin/seq
 
 post-install:
 	cd ${WRKSRC}; ${INSTALL_DATA} CHANGES COPYRIGHT \

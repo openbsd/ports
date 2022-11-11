@@ -1,1 +1,2 @@
-${MODRUBY_SITEARCHDIR}/RRD.so
+@so ${MODRUBY_SITEARCHDIR}/RRD.so
+@man man/man1/rrdruby.1

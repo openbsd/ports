@@ -1,11 +1,11 @@
 Index: bindings/Makefile.in
 --- bindings/Makefile.in.orig
 +++ bindings/Makefile.in
-@@ -738,6 +738,7 @@ install-data-local:
+@@ -741,6 +741,7 @@ install-data-local:
             && ( cd ${builddir}/python \
                  && env BUILDLIBDIR=${abs_top_builddir}/src/.libs \
                    $(PYTHON) ${abs_srcdir}/python/setup.py install \
 +                     --single-version-externally-managed \
-                      --skip-build --root=$(DESTDIR) --prefix=$(prefix) \
+                      --skip-build --root=$(DESTDIR)/// --prefix=$(prefix) \
                       --exec-prefix=$(exec_prefix)) \
             || true
