@@ -2,12 +2,11 @@ COMMENT=		send desktop notifications to a notification daemon
 
 GNOME_VERSION=		0.8.1
 GNOME_PROJECT=		libnotify
+REVISION=		0
 
 CATEGORIES=		devel
 
 SHARED_LIBS += notify                    5.0 # 4.0.0
-
-HOMEPAGE=		http://www.galago-project.org/
 
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes

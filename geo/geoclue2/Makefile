@@ -3,13 +3,11 @@ COMMENT=		modular geoinformation service on top of D-Bus
 VERSION=		2.6.0
 DISTNAME=		geoclue-${VERSION}
 PKGNAME=		geoclue2-${VERSION}
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		geo devel
 
 SHARED_LIBS += geoclue-2                 0.2 # 0.0.0
-
-HOMEPAGE=		http://geoclue.freedesktop.org/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 

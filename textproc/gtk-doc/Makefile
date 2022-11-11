@@ -5,11 +5,9 @@ COMMENT=		GTK C code documentation system
 
 GNOME_VERSION=		1.33.2
 GNOME_PROJECT=		gtk-doc
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		textproc devel
-
-HOMEPAGE=		http://www.gtk.org/gtk-doc/
 
 # GPLv3 - GFDLv1.1
 PERMIT_PACKAGE=		Yes

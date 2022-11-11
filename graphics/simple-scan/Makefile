@@ -2,10 +2,9 @@ COMMENT=		simple scanning utility
 
 GNOME_PROJECT=		simple-scan
 GNOME_VERSION=		42.5
+REVISION=		0
 
 CATEGORIES=		graphics
-
-HOMEPAGE=		https://launchpad.net/simple-scan
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 

@@ -2,13 +2,11 @@ COMMENT=		GNOME music player client
 
 VERSION=		11.8.16
 DISTNAME=		gmpc-${VERSION}
-REVISION =		20
+REVISION =		21
 
 CATEGORIES=		audio
 
 MAINTAINER=		Landry Breuil <landry@openbsd.org>
-
-HOMEPAGE =		https://gmpc.fandom.com/wiki/Gnome_Music_Player_Client
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

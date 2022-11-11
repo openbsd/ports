@@ -5,15 +5,13 @@ COMMENT=		text widget that extends GTK2's GtkTextView widget#'
 MAJOR_VERSION=		2.0
 GNOME_PROJECT=		gtksourceview
 GNOME_VERSION=		2.10.5
-REVISION=		9
+REVISION=		10
 
 SHARED_LIBS +=	gtksourceview-2.0    5.0      # .0.0
 
 CATEGORIES=		x11
 
 SUBST_VARS=		MAJOR_VERSION
-
-HOMEPAGE=		http://gtksourceview.sourceforge.net/
 
 # GPLv2/LGPLv2.1
 PERMIT_PACKAGE=	Yes

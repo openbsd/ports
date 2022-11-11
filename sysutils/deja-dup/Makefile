@@ -2,14 +2,13 @@ COMMENT=		simple encrypted backup tool for GNOME
 
 GNOME_VERSION=		43.4
 GNOME_PROJECT=		deja-dup
+REVISION=		0
 
 # override gnome MODULE
 MASTER_SITES=		https://gitlab.gnome.org/World/deja-dup/-/archive/${GNOME_VERSION}/
 EXTRACT_SUFX=		.tar.gz
 
 CATEGORIES=		sysutils
-
-HOMEPAGE=		https://launchpad.net/deja-dup
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 

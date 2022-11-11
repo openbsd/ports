@@ -2,7 +2,7 @@ COMMENT=		OpenGL-based interactive canvas library
 
 GNOME_PROJECT=		clutter
 GNOME_VERSION=		1.26.4
-REVISION=		3
+REVISION=		4
 
 SHARED_LIBS +=  clutter-1.0          6.1   # 2600.0
 

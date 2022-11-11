@@ -4,10 +4,11 @@ GNOME_PROJECT=		pygobject
 GNOME_VERSION=		3.42.2
 MODPY_EGG_VERSION=	${GNOME_VERSION}
 PKGNAME=		py3-gobject3-${GNOME_VERSION}
+REVISION=		0
 
 CATEGORIES=		devel
 
-HOMEPAGE=		http://www.pygtk.org/
+HOMEPAGE=		https://pygobject.readthedocs.io/en/latest/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 

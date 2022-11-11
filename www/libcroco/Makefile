@@ -4,13 +4,11 @@ COMMENT=		generic CSS parsing library for GNOME project
 
 GNOME_PROJECT=		libcroco
 GNOME_VERSION=		0.6.13
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  croco-0.6            4.0      # 3.1
 
 CATEGORIES=		www textproc devel
-
-HOMEPAGE=		http://www.freespiders.org/projects/libcroco/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 

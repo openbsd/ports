@@ -2,7 +2,7 @@ COMMENT=		GTK+ widget for clutter
 
 GNOME_PROJECT=		clutter-gtk
 GNOME_VERSION=		1.8.4
-REVISION=		4
+REVISION=		5
 
 SHARED_LIBS +=  clutter-gtk-1.0      0.1      # 800.4
 

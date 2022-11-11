@@ -3,8 +3,7 @@ COMMENT=		python bindings for at-spi2
 GNOME_PROJECT=		pyatspi
 GNOME_VERSION=		2.46.0
 PKGNAME=		py-atspi-${GNOME_VERSION}
-
-HOMEPAGE=		https://wiki.linuxfoundation.org/en/AT-SPI_on_D-Bus
+REVISION=		0
 
 # LGPLv2
 PERMIT_PACKAGE=		Yes
