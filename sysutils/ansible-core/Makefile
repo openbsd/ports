@@ -1,6 +1,6 @@
 COMMENT =		radically simple IT automation
 
-MODPY_EGG_VERSION =	2.13.5
+MODPY_EGG_VERSION =	2.14.0
 DISTNAME =		ansible-core-${MODPY_EGG_VERSION}
 
 CATEGORIES =		sysutils
@@ -74,6 +74,7 @@ pre-test:
 	-rm ${WRKSRC}/test/units/cli/test_galaxy.py
 	-rm ${WRKSRC}/test/units/module_utils/basic/test_selinux.py
 	-rm ${WRKSRC}/test/units/module_utils/urls/test_Request.py
+	-rm ${WRKSRC}/test/units/utils/test_display.py
 	@echo "[defaults]\nremote_tmp = ${WRKSRC}/.ansible/tmp" > \
 		${WRKSRC}/test/lib/ansible_test/_data/ansible.cfg
 
