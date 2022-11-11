@@ -1,3 +1,3 @@
-The GNOME desktop, core installation:
-https://gitlab.gnome.org/GNOME/gnome-build-meta/blob/master/elements/core.bst
-https://gitlab.gnome.org/GNOME/gnome-build-meta/blob/master/elements/core-deps.bst
+The GNOME desktop, core installation based on a subset of:
+- https://gitlab.gnome.org/GNOME/gnome-build-meta/blob/master/elements/core.bst
+- https://gitlab.gnome.org/GNOME/gnome-build-meta/blob/master/elements/core-deps.bst

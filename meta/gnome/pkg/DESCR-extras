@@ -1,2 +1,5 @@
-The GNOME desktop, world installation:
-https://gitlab.gnome.org/GNOME/gnome-build-meta/blob/master/elements/world.bst
+The GNOME desktop, world installation based on a subset of:
+- https://gitlab.gnome.org/GNOME/gnome-build-meta/blob/master/elements/core.bst
+- https://gitlab.gnome.org/GNOME/gnome-build-meta/blob/master/elements/core-deps.bst
+- https://gitlab.gnome.org/GNOME/gnome-build-meta/blob/master/elements/world.bst
+- and some Circle applications from https://apps.gnome.org/
