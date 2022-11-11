@@ -5,7 +5,7 @@ COMMENT=		GNOME settings
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		43.1
 
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		x11
 
@@ -73,7 +73,6 @@ MODGNOME_TOOLS +=	desktop-file-utils docbook
 MODGNOME_TOOLS +=	gtk-update-icon-cache yelp
 
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
-MODGNOME_LDFLAGS+=	-rdynamic
 
 CONFIGURE_ARGS=		-Dwayland=false
 

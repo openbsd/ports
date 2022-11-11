@@ -1,0 +1,12 @@
+Index: panels/user-accounts/cc-user-panel.c
+--- panels/user-accounts/cc-user-panel.c.orig
++++ panels/user-accounts/cc-user-panel.c
+@@ -1466,6 +1466,8 @@ cc_user_panel_init (CcUserPanel *self)
+         /* register types that the builder might need */
+         type = cc_permission_infobar_get_type ();
+ 
++        g_type_ensure(CC_TYPE_AVATAR_CHOOSER);
++
+         gtk_widget_init_template (GTK_WIDGET (self));
+ 
+         self->um = act_user_manager_get_default ();
