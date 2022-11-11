@@ -1919,6 +1919,11 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/savingsplans/2019-06-28/e
 lib/python${MODPY_VERSION}/site-packages/botocore/data/savingsplans/2019-06-28/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/savingsplans/2019-06-28/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/savingsplans/2019-06-28/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/scheduler/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/scheduler/2021-06-30/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/scheduler/2021-06-30/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/scheduler/2021-06-30/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/scheduler/2021-06-30/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/schemas/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/schemas/2019-12-02/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/schemas/2019-12-02/endpoint-rule-set-1.json
