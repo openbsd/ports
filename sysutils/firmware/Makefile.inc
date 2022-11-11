@@ -19,15 +19,17 @@ NO_BUILD ?=	Yes
 NO_TEST ?=	Yes
 
 # XXX fw_update doesn't know what to do with @ts
-PKG_ARGS += 	-DNO_TS_IN_PLIST
+PKG_ARGS +=	-DNO_TS_IN_PLIST
+UPDATE_PLIST_ARGS += -i PERMIT_PACKAGE
+
 .if ${PERMIT_PACKAGE:L:Myes}
 #
 # This is a special-purpose directory. Packages produced from this should
 # not be included in package directories on normal mirrors, but only on
 # firmware.openbsd.org mirrors and installed by fw_update.
 #
-# PERMIT_* should be set so that packages produced during bulk builds do
-# not get included in the main package directories.
+# PERMIT_PACKAGE should be set so that packages produced during bulk builds
+# do not get included in the main package directories.
 #
-ERRORS += "Fatal: packages for fw_update should not have PERMIT_*=Yes"
+ERRORS += "Fatal: packages for fw_update should not have PERMIT_PACKAGE=Yes"
 .endif
