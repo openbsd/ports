@@ -5,7 +5,7 @@ COMMENT=	Bootloader for Apple Silicon
 GH_ACCOUNT=	AsahiLinux
 GH_PROJECT=	m1n1
 GH_TAGNAME=	v1.1.6
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	sysutils
 HOMEPAGE=	https://github.com/AsahiLinux/m1n1
@@ -29,6 +29,10 @@ FILES=\
 	m1n1.macho \
 	m1n1.elf
 
+LICENSE_FILES=\
+	LICENSE \
+	3rdparty_licenses/*
+
 do-build:
 	rm ${WRKSRC}/data/bootlogo_128.png ${WRKSRC}/data/bootlogo_256.png
 	convert -background none -resize 128x128 -gravity center -extent 128x128 \
@@ -45,5 +49,7 @@ do-build:
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/m1n1
 	cd ${WRKSRC}/build && cp ${FILES} ${PREFIX}/share/m1n1/
+	cd ${WRKSRC} && for f in ${LICENSE_FILES}; do \
+	    (cat "$${f}"; echo) >> ${PREFIX}/share/m1n1/m1n1.LICENSE; done
 
 .include <bsd.port.mk>

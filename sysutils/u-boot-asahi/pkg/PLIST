@@ -1,5 +1,6 @@
 share/u-boot/
 share/u-boot/apple_m1/
+share/u-boot/apple_m1/LICENSE
 share/u-boot/apple_m1/dts/
 share/u-boot/apple_m1/dts/t6000-j314s.dtb
 share/u-boot/apple_m1/dts/t6000-j316s.dtb
