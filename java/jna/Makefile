@@ -6,6 +6,8 @@ GH_TAGNAME=	5.11.0
 CATEGORIES=	devel
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
+REVISION=	0
+
 HOMEPAGE=	https://github.com/java-native-access/jna
 
 # LGPLv2.1+
