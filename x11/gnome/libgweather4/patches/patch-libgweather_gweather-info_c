@@ -1,0 +1,12 @@
+Index: libgweather/gweather-info.c
+--- libgweather/gweather-info.c.orig
++++ libgweather/gweather-info.c
+@@ -880,7 +880,7 @@ is_locale_metric (void)
+ 
+     if (strcmp (e, "default:inch") == 0)
+         return FALSE;
+-    else if (strcmp (e, "default:mm") == 1)
++    else if (strcmp (e, "default:mm") == 0)
+         return TRUE;
+     else {
+         g_warning ("Wrong translation for libgweather; please file "

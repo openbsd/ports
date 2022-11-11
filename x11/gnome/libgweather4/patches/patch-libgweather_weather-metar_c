@@ -10,7 +10,7 @@ gnome-shell: vfprintf %s NULL in "<raw_text>%s "
 Index: libgweather/weather-metar.c
 --- libgweather/weather-metar.c.orig
 +++ libgweather/weather-metar.c
-@@ -670,6 +670,9 @@ metar_start_open (GWeatherInfo *info)
+@@ -675,6 +675,9 @@ metar_start_open (GWeatherInfo *info)
      if (!loc->latlon_valid)
          return;
  
