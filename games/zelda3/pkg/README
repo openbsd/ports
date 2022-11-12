@@ -1,0 +1,117 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Official documentation
+======================
+
+See the project wiki at https://github.com/snesrev/zelda3/wiki/
+
+Usage
+=====
+
+This game requires proprietary assets to run, which can be installed
+using the games/zelda3-data port.
+
+Because this game reads and creates files in the current working
+directory it is recommended to start the game inside a dedicated
+directory: mkdir ~/zelda3; cd ~/zelda3; zelda3
+
+The game creates a 'saves' directory in the current working directory
+where save states are stored.
+
+The game reads the configuration file zelda3.ini, which must be placed
+in the current working directory where the game is started. An example
+can be found at ${LOCALBASE}/share/examples/zelda3/zelda3.ini.
+All optional features which enhance or change the original gameplay
+experience must be manually enabled in zelda3.ini.
+
+Sound
+=====
+
+Sound is disabled by default and can be enabled in zelda3.ini.
+The example zelda3.ini file provided by the package enables sound.
+
+Controls
+========
+
+Keyboard Control Button Mapping
+-------------------------------
+
+The default mapping of joypad buttons to keyboard keys is as follows:
+
+| Button | Key         |
+| ------ | ----------- |
+| Up     | Up arrow    |
+| Down   | Down arrow  |
+| Left   | Left arrow  |
+| Right  | Right arrow |
+| Start  | Enter       |
+| Select | Right shift | (example zelda3.ini overrides this, see below)
+| A      | X           |
+| B      | Z           |
+| X      | S           |
+| Y      | A           |
+| L      | C           |
+| R      | V           |
++--------+-------------+
+
+Keys can be reconfigured in zelda3.ini.
+
+Because the 'Right shift' key did not work during initial play-testing
+on OpenBSD, the example zelda3.ini provided in the package uses the
+following keys for the Select button instead:
+
+| Keyboard | Key |
+| -------- | --- |
+| QWERTY   |  /  |
+| QWERTZ   |  -  |
+| AZERTY   |  !  |
++----------+-----+
+
+Additionally, the following commands are available:
+
+| Key          | Action
+| ------------ | -------------------------------------------
+| Tab          | Turbo mode
+| W            | Fill health/magic
+| Shift+W      | Fill rupees/bombs/arrows
+| Ctrl+E       | Reset
+| P            | Pause (with dim)
+| Shift+P      | Pause (without dim)
+| Ctrl+Up      | Increase window size
+| Ctrl+Down    | Decrease window size
+| T            | Toggle replay turbo mode
+| O            | Set dungeon key to 1
+| K            | Clear all input history from the joypad log
+| L            | Stop replaying a shapshot
+| R            | Toggle between fast and slow renderer
+| F            | Display renderer performance
+| F1-F10       | Load snapshot
+| Alt+Enter    | Toggle Fullscreen
+| Shift+F1-F10 | Save snapshot
+| Ctrl+F1-F10  | Replay the snapshot
+| 1-9          | run a dungeons playthrough snapshots
+| Ctrl+1-9     | run a dungeons playthrough in turbo mode
++ ------------ + -------------------------------------------
+
+In-game button assignment
+-------------------------
+
+Up/Down/Left/Right: Move the protaginist or move the select cursor in menus.
+Start:              Open the inventory menu.
+Select:             Open the save menu.
+A:                  Action button (talk, lift, push or pull things)
+B:                  Sword attack (hold and release for a charged attack).
+Y:                  Use inventory item assigned to button Y.
+X:                  View the map.
+L/R:                Switch current item.
+
+There is a secondary item slot on button X (Hold X in inventory to select).
+
+Alternative Sprites
+===================
+
+The games/zelda3-sprites port provides alternative sprites for the
+game's protaginist. These can be used by setting the LinkGraphics
+opion in zelda3.ini.

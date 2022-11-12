@@ -1,0 +1,20 @@
+Index: zelda3.ini
+--- zelda3.ini.orig
++++ zelda3.ini
+@@ -135,13 +135,13 @@ CancelBirdTravel = 0
+ # Order: Up, Down, Left, Right, Select, Start, A, B, X, Y, L, R
+ 
+ # This default is suitable for QWERTY keyboards.
+-Controls = Up, Down, Left, Right, Right Shift, Return, x, z, s, a, c, v
++Controls = Up, Down, Left, Right, /, Return, x, z, s, a, c, v
+ 
+ # This default is suitable for QWERTZ keyboards.
+-#Controls = Up, Down, Left, Right, Right Shift, Return, x, y, s, a, c, v
++#Controls = Up, Down, Left, Right, -, Return, x, y, s, a, c, v
+ 
+ # This one is suitable for AZERTY keyboards.
+-#Controls = Up, Down, Left, Right, Right Shift, Return, x, w, s, q, c, v
++#Controls = Up, Down, Left, Right, !, Return, x, w, s, q, c, v
+ 
+ CheatLife = w
+ CheatKeys = o
