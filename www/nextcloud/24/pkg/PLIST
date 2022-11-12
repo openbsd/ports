@@ -10179,6 +10179,8 @@ nextcloud/apps/contactsinteraction/l10n/lt_LT.js
 nextcloud/apps/contactsinteraction/l10n/lt_LT.json
 nextcloud/apps/contactsinteraction/l10n/mk.js
 nextcloud/apps/contactsinteraction/l10n/mk.json
+nextcloud/apps/contactsinteraction/l10n/nb.js
+nextcloud/apps/contactsinteraction/l10n/nb.json
 nextcloud/apps/contactsinteraction/l10n/nl.js
 nextcloud/apps/contactsinteraction/l10n/nl.json
 nextcloud/apps/contactsinteraction/l10n/pl.js
@@ -14399,6 +14401,8 @@ nextcloud/apps/lookup_server_connector/l10n/ko.js
 nextcloud/apps/lookup_server_connector/l10n/ko.json
 nextcloud/apps/lookup_server_connector/l10n/lt_LT.js
 nextcloud/apps/lookup_server_connector/l10n/lt_LT.json
+nextcloud/apps/lookup_server_connector/l10n/nb.js
+nextcloud/apps/lookup_server_connector/l10n/nb.json
 nextcloud/apps/lookup_server_connector/l10n/nl.js
 nextcloud/apps/lookup_server_connector/l10n/nl.json
 nextcloud/apps/lookup_server_connector/l10n/pl.js
@@ -15800,8 +15804,10 @@ nextcloud/apps/recommendations/composer.json
 nextcloud/apps/recommendations/composer.lock
 nextcloud/apps/recommendations/js/
 nextcloud/apps/recommendations/js/dashboard.js
+nextcloud/apps/recommendations/js/dashboard.js.LICENSE.txt
 nextcloud/apps/recommendations/js/dashboard.js.map
 nextcloud/apps/recommendations/js/main.js
+nextcloud/apps/recommendations/js/main.js.LICENSE.txt
 nextcloud/apps/recommendations/js/main.js.map
 nextcloud/apps/recommendations/krankerl.toml
 nextcloud/apps/recommendations/l10n/
@@ -19173,6 +19179,8 @@ nextcloud/apps/weather_status/l10n/ca.js
 nextcloud/apps/weather_status/l10n/ca.json
 nextcloud/apps/weather_status/l10n/cs.js
 nextcloud/apps/weather_status/l10n/cs.json
+nextcloud/apps/weather_status/l10n/da.js
+nextcloud/apps/weather_status/l10n/da.json
 nextcloud/apps/weather_status/l10n/de.js
 nextcloud/apps/weather_status/l10n/de.json
 nextcloud/apps/weather_status/l10n/de_DE.js
@@ -20732,8 +20740,6 @@ nextcloud/core/l10n/es_SV.js
 nextcloud/core/l10n/es_SV.json
 nextcloud/core/l10n/es_UY.js
 nextcloud/core/l10n/es_UY.json
-nextcloud/core/l10n/et_EE.js
-nextcloud/core/l10n/et_EE.json
 nextcloud/core/l10n/eu.js
 nextcloud/core/l10n/eu.json
 nextcloud/core/l10n/fa.js
@@ -20792,8 +20798,6 @@ nextcloud/core/l10n/sk.js
 nextcloud/core/l10n/sk.json
 nextcloud/core/l10n/sl.js
 nextcloud/core/l10n/sl.json
-nextcloud/core/l10n/sq.js
-nextcloud/core/l10n/sq.json
 nextcloud/core/l10n/sr.js
 nextcloud/core/l10n/sr.json
 nextcloud/core/l10n/sv.js
@@ -22121,6 +22125,7 @@ nextcloud/lib/private/Support/
 nextcloud/lib/private/Support/CrashReport/
 nextcloud/lib/private/Support/CrashReport/Registry.php
 nextcloud/lib/private/Support/Subscription/
+nextcloud/lib/private/Support/Subscription/Assertion.php
 nextcloud/lib/private/Support/Subscription/Registry.php
 nextcloud/lib/private/SystemConfig.php
 nextcloud/lib/private/SystemTag/
@@ -22837,6 +22842,7 @@ nextcloud/lib/public/Support/CrashReport/IReporter.php
 nextcloud/lib/public/Support/Subscription/
 nextcloud/lib/public/Support/Subscription/Exception/
 nextcloud/lib/public/Support/Subscription/Exception/AlreadyRegisteredException.php
+nextcloud/lib/public/Support/Subscription/IAssertion.php
 nextcloud/lib/public/Support/Subscription/IRegistry.php
 nextcloud/lib/public/Support/Subscription/ISubscription.php
 nextcloud/lib/public/Support/Subscription/ISupportedApps.php
@@ -22862,6 +22868,7 @@ nextcloud/lib/public/User/
 nextcloud/lib/public/User/Backend/
 nextcloud/lib/public/User/Backend/ABackend.php
 nextcloud/lib/public/User/Backend/ICheckPasswordBackend.php
+nextcloud/lib/public/User/Backend/ICountMappedUsersBackend.php
 nextcloud/lib/public/User/Backend/ICountUsersBackend.php
 nextcloud/lib/public/User/Backend/ICreateUserBackend.php
 nextcloud/lib/public/User/Backend/ICustomLogout.php
