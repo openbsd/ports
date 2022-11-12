@@ -1,0 +1,8 @@
+${P5SITE}/String/
+${P5SITE}/String/Tagged/
+${P5SITE}/String/Tagged.pm
+${P5SITE}/String/Tagged/Extent.pm
+${P5SITE}/String/Tagged/Formatting.pod
+@man man/man3p/String::Tagged.3p
+@man man/man3p/String::Tagged::Extent.3p
+@man man/man3p/String::Tagged::Formatting.3p

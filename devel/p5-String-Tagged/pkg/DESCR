@@ -1,0 +1,3 @@
+This module implements an object class, instances of which store a
+(mutable) string buffer that supports tags. A tag is a name/value pair
+that applies to some extent of the underlying string.
