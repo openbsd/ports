@@ -1,8 +1,10 @@
 COMMENT =	additional B helpers to check COW status
 
-DISTNAME =	B-COW-0.004
+DISTNAME =	B-COW-0.007
 
 CATEGORIES =	devel
+
+MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE =	Yes
