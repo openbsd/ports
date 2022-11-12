@@ -1,4 +1,3 @@
-This module provides conversions between commonly used ways
-to express colors.
-It provides conversions between color spaces such as RGB and HSV,
-and it provides ways to look up colors by a name.
+This module provides conversions between commonly used ways to express
+colors. It provides conversions between color spaces such as RGB and
+HSV, and it provides ways to look up colors by a name.

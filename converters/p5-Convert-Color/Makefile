@@ -1,19 +1,25 @@
-COMMENT=	color space conversions and named lookups
+COMMENT =	color space conversions and named lookups
 
 DISTNAME =	Convert-Color-0.12
-CATEGORIES=	converters
-MODULES=	cpan
-PKG_ARCH=	*
+REVISION =	0
+
+CATEGORIES =	converters
 
 # Perl
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE =	Yes
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	textproc/p5-List-UtilsBy \
-		devel/p5-Module-Pluggable
-TEST_DEPENDS =	devel/p5-Test-Number-Delta
+MODULES =		cpan
 
-CONFIGURE_STYLE=modbuild
-MODCPAN_EXAMPLES=Yes
+RUN_DEPENDS =		devel/p5-Module-Pluggable \
+			textproc/p5-List-UtilsBy
+TEST_DEPENDS =		devel/p5-Test-Number-Delta
+
+CONFIGURE_STYLE =	modbuild
+
+MAKE_ENV =		TEST_POD=Yes
+
+PKG_ARCH =		*
+
+MODCPAN_EXAMPLES =	Yes
 
 .include <bsd.port.mk>
