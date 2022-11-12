@@ -17,13 +17,12 @@ HOMEPAGE =	https://www.nintendo.com
 
 # Python is required to extract game assets from zelda3.sfc
 MODULES=	lang/python
-MODPY_VERSION = ${MODPY_DEFAULT_VERSION_3}
 MODPY_RUNDEP =  No
 
 USE_GMAKE =	Yes
 
-BUILD_DEPENDS =		graphics/py-Pillow \
-			textproc/py-yaml,python3
+BUILD_DEPENDS =	graphics/py-Pillow${MODPY_FLAVOR} \
+		textproc/py-yaml${MODPY_FLAVOR}
 
 FETCH_MANUALLY += "zelda3.sfc has sha256 checksum"
 FETCH_MANUALLY += "66871d66be19ad2c34c927d6b14cd8eb6fc3181965b6e517cb361f7316009cfb"
