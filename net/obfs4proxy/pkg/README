@@ -18,7 +18,7 @@ following configurations in your 'torrc' file:
 
 	## (Optional) Listen on the specified IP:PORT for obfs4 connections
 	## as opposed to picking a random port automatically
-	# ServerTransportListenAddr obfs4 0.0.0.0:443
+	# ServerTransportListenAddr obfs4 0.0.0.0:PORT
 
 obfs4proxy is backwards compatible with obfs2 and obfs3 either in
 client or server mode. If you want to use it like this, please adjust
@@ -26,4 +26,4 @@ your 'torrc' config file to fit your needs. It's compatible with
 ScrambleSuit in client mode.
 
 For more information, please consult the official wiki page at
-https://trac.torproject.org/projects/tor/wiki/doc/PluggableTransports/obfs4proxy
+https://community.torproject.org/relay/setup/bridge/openbsd/

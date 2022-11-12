@@ -19,7 +19,7 @@ SHA256 (go_modules/golang.org/x/text/@v/v0.3.3.mod) = +7eojtFAUV55Dsp6EP/TGcl4ax
 SHA256 (go_modules/golang.org/x/text/@v/v0.3.3.zip) = iolto0a6+Uq08ksOOW3wt5OTyTqgXFDvB83dVhof+Nc=
 SHA256 (go_modules/golang.org/x/tools/@v/v0.0.0-20180917221912-90fa682c2a6e.mod) = oOAvBnj+Ytw8S0vHf6kSybcN4Q+p988veq0DNzkrUq8=
 SHA256 (go_modules/golang.org/x/tools/@v/v0.0.0-20180917221912-90fa682c2a6e.zip) = ZnP+BmYvy+5fJG8Sr47YYDKL8I/QFv1JCYfNdqyxtP4=
-SHA256 (obfs4.git-v0.0.0-20220204003609-77af0cba934d.zip) = Bu+gQaJVx8UwOJLVMZ5k1bit9+8kF/CJpPoaV1DHglU=
+SHA256 (obfs4.git-v0.0.0-20220904064028-336a71d6e4cf.zip) = /tU10m0oYU9w1nIG73iibey7rs3cE+29RYF8281dPEQ=
 SIZE (go_modules/filippo.io/edwards25519/@v/v1.0.0-rc.1.0.20210721174708-390f27c3be20.mod) = 40
 SIZE (go_modules/filippo.io/edwards25519/@v/v1.0.0-rc.1.0.20210721174708-390f27c3be20.zip) = 50968
 SIZE (go_modules/git.torproject.org/pluggable-transports/goptlib.git/@v/v1.0.0.mod) = 59
@@ -41,4 +41,4 @@ SIZE (go_modules/golang.org/x/text/@v/v0.3.3.mod) = 97
 SIZE (go_modules/golang.org/x/text/@v/v0.3.3.zip) = 8010747
 SIZE (go_modules/golang.org/x/tools/@v/v0.0.0-20180917221912-90fa682c2a6e.mod) = 26
 SIZE (go_modules/golang.org/x/tools/@v/v0.0.0-20180917221912-90fa682c2a6e.zip) = 2687668
-SIZE (obfs4.git-v0.0.0-20220204003609-77af0cba934d.zip) = 140867
+SIZE (obfs4.git-v0.0.0-20220904064028-336a71d6e4cf.zip) = 143125

@@ -2,15 +2,14 @@ COMMENT =		a "look-like nothing" obfuscation protocol for TCP
 
 MODGO_MODNAME =		gitlab.com/yawning/obfs4.git
 
-# https://gitlab.com/yawning/obfs4/-/commit/77af0cba934d
-# commit 77af0cba934d73c4baeb709560bcfc9a9fbc661c
-# build: Do the release ritual for obfs4proxy-0.0.13
-MODGO_VERSION =		v0.0.0-20220204003609-77af0cba934d
+# https://gitlab.com/yawning/obfs4/-/commit/336a71d6
+# commit 336a71d6e4cfd2d33e9c57797828007ad74975e9
+# build: Do the release ritual for obfs4proxy-0.0.14
+MODGO_VERSION =		v0.0.0-20220904064028-336a71d6e4cf
 
 DISTNAME =		obfs4.git-${MODGO_VERSION}
 
-PKGNAME =		obfs4proxy-0.0.13
-REVISION =		0
+PKGNAME =		obfs4proxy-0.0.14
 
 CATEGORIES =		net www
 
