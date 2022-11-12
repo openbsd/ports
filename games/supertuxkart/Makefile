@@ -2,7 +2,7 @@ ONLY_FOR_ARCHS =	amd64 i386 powerpc
 
 COMMENT =		kart racing game with OSS mascots
 
-V =			1.3
+V =			1.4
 DISTNAME =		SuperTuxKart-${V}
 PKGNAME =		${DISTNAME:L}
 
