@@ -387,6 +387,7 @@
      SUBDIR += zangband
      SUBDIR += zangband,no_x11
      SUBDIR += zaz
+     SUBDIR += zelda3
      SUBDIR += zoom
      SUBDIR += ztrack
 
