@@ -1046,6 +1046,7 @@
      SUBDIR += p5-String-Interpolate
      SUBDIR += p5-String-Interpolate-Named
      SUBDIR += p5-String-Scanf
+     SUBDIR += p5-String-Tagged
      SUBDIR += p5-String-Truncate
      SUBDIR += p5-Struct-Dumb
      SUBDIR += p5-Sub-Attribute
