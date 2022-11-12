@@ -1,0 +1,3 @@
+${P5SITE}/Test/
+${P5SITE}/Test/Identity.pm
+@man man/man3p/Test::Identity.3p
