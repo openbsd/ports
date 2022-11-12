@@ -1,3 +1,5 @@
+REVISION=	0
+
 SHARED_LIBS=	chicken	8.0 # 11
 
 TEST_TARGET=	check
