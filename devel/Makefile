@@ -1127,6 +1127,7 @@
      SUBDIR += p5-Test-HTML-Tidy
      SUBDIR += p5-Test-HasVersion
      SUBDIR += p5-Test-HexDifferences
+     SUBDIR += p5-Test-Identity
      SUBDIR += p5-Test-Inline
      SUBDIR += p5-Test-Inter
      SUBDIR += p5-Test-JSON
