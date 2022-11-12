@@ -1,15 +1,16 @@
-COMMENT=	Perl Extensions for ICal objects
+COMMENT =	Perl extension for ICalendar date objects
 
-MODULES=	cpan
-PKG_ARCH=	*
-DISTNAME =	Date-ICal-2.678
-CATEGORIES=	devel
-REVISION =	1
+DISTNAME =	Date-ICal-2.679
 
-# perl
-PERMIT_PACKAGE=	Yes
+CATEGORIES =	devel
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	devel/p5-Date-Leapyear 
+# Perl
+PERMIT_PACKAGE =	Yes
+
+MODULES =		cpan
+
+RUN_DEPENDS =		devel/p5-Date-Leapyear>=1.03
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
