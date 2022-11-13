@@ -3,7 +3,7 @@ BROKEN-sparc64=	SIGILL on src/cgalutils.cc with CGAL-4.6.3
 
 V =			2021.01
 DISTNAME =		openscad-${V}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		cad
 

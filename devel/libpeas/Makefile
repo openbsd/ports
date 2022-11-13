@@ -2,6 +2,7 @@ COMMENT=	gobject-based plugins engine
 
 GNOME_PROJECT=	libpeas
 GNOME_VERSION=	1.34.0
+REVISION=	0
 
 CATEGORIES=	devel
 

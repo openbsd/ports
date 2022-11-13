@@ -6,6 +6,7 @@ V=		1.4.7
 
 DISTNAME=	tdb-$V
 PKGNAME-python=	py3-${DISTNAME}
+REVISION-python=0
 
 MULTI_PACKAGES=	-main -python
 

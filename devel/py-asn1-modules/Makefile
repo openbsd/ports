@@ -4,6 +4,7 @@ MODPY_EGG_VERSION =	0.2.8
 DISTNAME =		pyasn1-modules-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
 CATEGORIES =		devel
+REVISION =		0
 
 HOMEPAGE =		https://github.com/etingof/pyasn1
 

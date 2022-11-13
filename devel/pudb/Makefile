@@ -3,7 +3,7 @@ COMMENT =		console-based visual debugger for Python
 MODPY_EGG_VERSION =	2019.2
 DISTNAME =		pudb-${MODPY_EGG_VERSION}
 PKGNAME =		py-pudb-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 

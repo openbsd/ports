@@ -2,6 +2,7 @@ COMMENT=		GLib library wrapping libgit2
 
 V=			1.1.0
 DISTNAME=		libgit2-glib-$V
+REVISION=		0
 
 SHARED_LIBS += git2-glib-1.0             5.3 # 0.100.0
 

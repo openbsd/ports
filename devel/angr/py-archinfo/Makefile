@@ -1,5 +1,5 @@
 COMMENT =		classes with architecture-specific information
-REVISION =		0
+REVISION =		1
 
 ANGR_PYTHON_MODULE =	archinfo
 

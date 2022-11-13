@@ -3,6 +3,7 @@ COMMENT =	sqlalchemy support for flask
 MODPY_EGG_VERSION = 2.5.1
 DISTNAME =	Flask-SQLAlchemy-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
+REVISION =	0
 
 CATEGORIES =	databases www
 

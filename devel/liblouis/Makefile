@@ -2,6 +2,7 @@ COMMENT=	braille translator, back-translator and formatter
 
 V=		3.23.0
 DISTNAME=	liblouis-${V}
+REVISION=	0
 
 SHARED_LIBS +=  louis                8.0      # 20.11
 

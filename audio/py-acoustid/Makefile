@@ -3,7 +3,7 @@ COMMENT =	python bindings for Chromaprint and the Acoustid API
 MODPY_EGG_VERSION =	1.2.2
 DISTNAME =	pyacoustid-${MODPY_EGG_VERSION}
 PKGNAME =	py-acoustid-${MODPY_EGG_VERSION}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	audio
 

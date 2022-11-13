@@ -3,6 +3,7 @@ COMMENT =		country, language, currency and scripts definitions
 MODPY_EGG_VERSION =	22.3.5
 DISTNAME =		pycountry-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
+REVISION =		0
 
 CATEGORIES =		devel
 

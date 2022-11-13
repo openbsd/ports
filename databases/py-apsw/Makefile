@@ -6,7 +6,7 @@ DISTVERSIONSUFFIX = -r1
 DISTNAME =	apsw-${MODPY_EGG_VERSION}${DISTVERSIONSUFFIX}
 PKGNAME =	py-apsw-${MODPY_EGG_VERSION}
 CATEGORIES =	databases
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://rogerbinns.github.io/apsw/
 

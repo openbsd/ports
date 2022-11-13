@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	1.4
 DISTNAME =		pymetar-${MODPY_EGG_VERSION}
 PKGNAME =		py-metar-${MODPY_EGG_VERSION}
 CATEGORIES =		astro
-REVISION =		2
+REVISION =		3
 
 HOMEPAGE =		https://www.schwarzvogel.de/software/pymetar/
 

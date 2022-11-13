@@ -2,6 +2,7 @@ COMMENT =		modular python code checker wrapping pep8 and pyflakes
 
 MODPY_EGG_VERSION =	4.0.1
 DISTNAME =		flake8-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		devel
 

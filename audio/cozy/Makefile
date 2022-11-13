@@ -3,6 +3,7 @@ COMMENT =		gtk3 audiobook player
 GH_ACCOUNT =		geigi
 GH_PROJECT =		cozy
 GH_TAGNAME =		1.1.2
+REVISION =		0
 
 CATEGORIES =		audio
 

@@ -4,7 +4,7 @@ GH_ACCOUNT =		david-a-wheeler
 GH_PROJECT =		flawfinder
 GH_TAGNAME =		2.0.19
 CATEGORIES=		devel security
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE=		http://www.dwheeler.com/flawfinder/
 

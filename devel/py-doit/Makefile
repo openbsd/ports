@@ -3,6 +3,7 @@ COMMENT =		automation tool
 MODPY_EGG_VERSION =	0.35.0
 DISTNAME =		doit-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
+REVISION =		0
 
 HOMEPAGE =		https://pydoit.org/
 

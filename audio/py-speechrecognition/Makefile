@@ -1,7 +1,7 @@
 COMMENT =	Python library for performing speech recognition
 
 PKGNAME =	py-speechrecognition-${GH_TAGNAME}
-REVISION =	1
+REVISION =	2
 
 GH_ACCOUNT =	Uberi
 GH_PROJECT =	speech_recognition

@@ -3,6 +3,7 @@ COMMENT =	atomic file writes
 MODPY_EGG_VERSION =	1.4.1
 DISTNAME =	atomicwrites-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	devel
 

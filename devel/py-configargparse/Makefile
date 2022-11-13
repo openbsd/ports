@@ -3,6 +3,7 @@ COMMENT=		argparse replacement, allows options to be set via files/env
 MODPY_EGG_VERSION =	1.5.3
 DISTNAME=		ConfigArgParse-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
+REVISION=		0
 
 CATEGORIES=		devel
 

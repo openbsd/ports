@@ -10,6 +10,7 @@ PKGNAME-python=	xapian-bindings-python-${V}
 PKGNAME-ruby=	ruby${MODRUBY_BINREV}-xapian-${V}
 
 REVISION-main=	0
+REVISION-python=0
 
 CATEGORIES=	databases textproc
 
@@ -39,10 +40,10 @@ MODULES=	lang/python \
 
 MULTI_PACKAGES=	-main -python -ruby
 
-MODRUBY_RUNDEP = 	No
-MODPY_RUNDEP = 		No
+MODRUBY_RUNDEP=	No
+MODPY_RUNDEP=	No
 
-RUN_DEPENDS-python =	textproc/py-sphinx${MODPY_FLAVOR}>=4.0.2 \
+RUN_DEPENDS-python=	textproc/py-sphinx${MODPY_FLAVOR}>=4.0.2 \
 			${MODPY_RUN_DEPENDS}
 RUN_DEPENDS-ruby =	${MODRUBY_RUN_DEPENDS}
 SUBST_VARS+=		MODRUBY_BINREV

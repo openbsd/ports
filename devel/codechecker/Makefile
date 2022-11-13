@@ -3,6 +3,7 @@ COMMENT =	clang static code analyzer
 GH_ACCOUNT =	Ericsson
 GH_PROJECT =	codechecker
 GH_TAGNAME =	v6.20.0
+REVISION =	0
 
 CATEGORIES =	devel
 

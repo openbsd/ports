@@ -3,7 +3,7 @@ BROKEN-hppa =	SIGILL when running lilypond
 COMMENT =	solfege and ear training program
 
 DISTNAME =	solfege-3.23.4
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	audio x11
 

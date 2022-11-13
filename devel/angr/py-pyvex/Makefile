@@ -1,5 +1,5 @@
 COMMENT =		Python interface to libVEX and VEX IR
-REVISION =		0
+REVISION =		1
 
 ANGR_PYTHON_MODULE =	pyvex
 

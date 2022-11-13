@@ -3,7 +3,7 @@ COMMENT =		Python client for interacting with InfluxDB
 MODPY_EGG_VERSION =	5.3.1
 DISTNAME =		influxdb-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		databases
 

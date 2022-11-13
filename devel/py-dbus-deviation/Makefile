@@ -3,7 +3,7 @@ COMMENT=		D-Bus introspection XML parser and processor
 MODPY_EGG_VERSION=	0.6.1
 DISTNAME=		dbus-deviation-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		devel
 

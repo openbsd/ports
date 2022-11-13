@@ -4,6 +4,7 @@ COMMENT=	command line library for Python
 MODPY_EGG_VERSION=7.1.2
 DISTNAME=	click-${MODPY_EGG_VERSION}
 PKGNAME=	py-click-${MODPY_EGG_VERSION}
+REVISION=	0
 
 CATEGORIES=	devel
 

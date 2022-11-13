@@ -3,7 +3,7 @@ COMMENT =		Python binding of libdiscid
 MODPY_EGG_VERSION =	1.2.0
 DISTNAME =		discid-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		audio
 

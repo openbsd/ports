@@ -3,6 +3,7 @@ COMMENT =	decorator for caching properties in classes
 MODPY_EGG_VERSION = 1.5.2
 DISTNAME =	cached-property-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	devel
 

@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	0.11.0
 
 DISTNAME =		python-bitcoinlib-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/^python-/py-/}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		devel
 

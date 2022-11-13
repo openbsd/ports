@@ -5,6 +5,7 @@ CATEGORIES =	devel
 GH_ACCOUNT =	haskell
 GH_TAGNAME =	Cabal-v3.6.3.0
 GH_PROJECT =	cabal
+REVISION =	0
 
 HOMEPAGE =	https://github.com/haskell/cabal
 

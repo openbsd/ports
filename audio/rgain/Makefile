@@ -3,7 +3,7 @@ COMMENT=	multi-format tools and Python module for ReplayGain
 MODPY_EGG_VERSION= 1.1.1
 DISTNAME=	rgain3-${MODPY_EGG_VERSION}
 EPOCH=		0
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	audio
 

@@ -9,7 +9,7 @@ DISTNAME =		distcc-${VERSION}
 EPOCH =			0
 CATEGORIES =		devel net
 
-REVISION =		3
+REVISION =		4
 
 HOMEPAGE =		https://distcc.github.io/
 

@@ -3,7 +3,7 @@ COMMENT=		Python bindings to TagLib audio file tag library
 MODPY_EGG_VERSION =	2013.1
 DISTNAME =		tagpy-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		17
+REVISION =		18
 
 CATEGORIES =		audio devel
 

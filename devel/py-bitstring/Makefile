@@ -3,7 +3,7 @@ COMMENT =		construction, analysis and modification of binary data
 MODPY_EGG_VERSION =	3.1.5
 DISTNAME =		bitstring-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		devel
 

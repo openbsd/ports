@@ -3,6 +3,7 @@ COMMENT =		enhanced interactive Python shell
 MODPY_EGG_VERSION =	8.4.0
 DISTNAME =		ipython-${MODPY_EGG_VERSION}
 PKGNAME =		ipython${MODPY_MAJOR_VERSION}-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		devel
 

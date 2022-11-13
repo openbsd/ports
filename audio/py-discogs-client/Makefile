@@ -5,6 +5,7 @@ DISTNAME =	python3-discogs-client-${MODPY_EGG_VERSION}
 PKGNAME =	${DISTNAME:S/thon3//}
 CATEGORIES =	audio
 MAINTAINER =	Johan Huldtgren <jhuldtgren@gmail.com>
+REVISION =	0
 
 HOMEPAGE =	https://github.com/joalla/discogs_client
 

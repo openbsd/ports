@@ -3,7 +3,7 @@ COMMENT =		python attributes without boilerplate
 MODPY_EGG_VERSION =	14.3.0
 DISTNAME =		characteristic-${MODPY_EGG_VERSION}
 PKGNAME =		py-characteristic-${MODPY_EGG_VERSION}
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		devel
 

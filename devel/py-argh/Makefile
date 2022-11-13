@@ -5,7 +5,7 @@ DISTNAME =	argh-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	devel
 HOMEPAGE =	http://packages.python.org/argh
-REVISION =	5
+REVISION =	6
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes

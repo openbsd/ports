@@ -13,7 +13,7 @@ COMMENT=	Clang extra tools
 LLVM_V =	13.0.0
 DISTNAME =	llvm-${LLVM_V}.src
 PKGNAME=	clang-tools-extra-${LLVM_V}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	devel
 

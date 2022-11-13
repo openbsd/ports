@@ -3,6 +3,7 @@ COMMENT =	display coverage stats online via coveralls.io
 MODPY_EGG_VERSION =	3.3.1
 DISTNAME =	coveralls-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	devel
 

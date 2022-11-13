@@ -3,7 +3,7 @@ COMMENT =	RFC4510 conforming LDAP V3 pure Python client library
 MODPY_EGG_VERSION =	2.9.1
 DISTNAME =	ldap3-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	databases
 

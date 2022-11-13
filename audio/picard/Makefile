@@ -1,7 +1,7 @@
 COMMENT =	automatic audio files tagger using the MusicBrainz database
 
 MODPY_EGG_VERSION =	2.8.3
-REVISION =		0
+REVISION =		1
 DISTNAME =		picard-${MODPY_EGG_VERSION}
 
 CATEGORIES =		audio

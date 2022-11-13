@@ -3,7 +3,7 @@ COMMENT =	some useful dict-like structures
 MODPY_EGG_VERSION =	1.04
 DISTNAME =	cooldict-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	devel
 

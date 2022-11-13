@@ -1,7 +1,7 @@
 COMMENT =		abstraction layer for constraint solvers
 
 ANGR_PYTHON_MODULE =	claripy
-REVISION =		1
+REVISION =		2
 
 # tests write here
 PORTHOME =		${WRKDIR}

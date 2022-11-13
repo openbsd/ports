@@ -1,7 +1,7 @@
 COMMENT =		spreadsheet-like audio file tagger
 
 MODPY_EGG_VERSION =	2.1.1
-REVISION =		0
+REVISION =		1
 DISTNAME =		puddletag-${MODPY_EGG_VERSION}
 
 CATEGORIES =		audio

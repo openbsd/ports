@@ -4,6 +4,7 @@ MODPY_EGG_VERSION =	5.2.4
 DISTNAME =		PyGreSQL-${MODPY_EGG_VERSION}
 PKGNAME =		py-pygresql-${MODPY_EGG_VERSION}
 CATEGORIES =		databases
+REVISION =		0
 
 HOMEPAGE =		http://www.pygresql.org/
 

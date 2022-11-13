@@ -4,6 +4,7 @@ V =		2.1.0
 GH_ACCOUNT =	rizinorg
 GH_PROJECT =	cutter
 GH_TAGNAME =	v${V}
+REVISION =	0
 
 # Requires the translations submodule. For the next release there should be a
 # proper vendored tarball and this step should not be needed.

@@ -3,7 +3,7 @@ COMMENT =		let your Python tests travel through time
 MODPY_EGG_VERSION =	0.3.12
 DISTNAME =		freezegun-${MODPY_EGG_VERSION}
 PKGNAME =		py-freezegun-${MODPY_EGG_VERSION}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		devel
 

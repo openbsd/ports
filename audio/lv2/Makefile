@@ -1,7 +1,7 @@
 COMMENT=	open standard for audio plugins, used by hundreds of plugins
 
 DISTNAME=	lv2-1.18.2
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	audio
 

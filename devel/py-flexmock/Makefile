@@ -3,6 +3,7 @@ COMMENT =		testing library for Python
 MODPY_EGG_VERSION =	0.11.3
 DISTNAME =		flexmock-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

@@ -2,7 +2,7 @@ COMMENT =		command line tool for PostgreSQL server activity monitoring
 
 MODPY_EGG_VERSION =	2.2.0
 DISTNAME =		pg_activity-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 GH_ACCOUNT =		dalibo
 GH_PROJECT =		pg_activity

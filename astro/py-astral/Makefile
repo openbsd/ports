@@ -3,7 +3,7 @@ COMMENT =		calculations for the position of the sun and the moon
 MODPY_EGG_VERSION =	2.2
 DISTNAME =		astral-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		astro
 

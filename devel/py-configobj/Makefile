@@ -3,7 +3,7 @@ COMMENT=	config file reader and writer
 MODPY_EGG_VERSION =	5.0.6
 DISTNAME=	configobj-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
-REVISION=	6
+REVISION=	7
 
 CATEGORIES=	devel
 
