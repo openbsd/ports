@@ -3,6 +3,7 @@ COMMENT =		Python documentation generator
 MODPY_EGG_VERSION =	5.3.0
 DISTNAME =		Sphinx-${MODPY_EGG_VERSION}
 PKGNAME =		py-sphinx-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		textproc
 
@@ -18,9 +19,6 @@ FLAVOR =		python3
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		flit_core
-
-# remove after updating python to 3.10+
-RUN_DEPENDS +=		devel/py-importlib-metadata${MODPY_FLAVOR}
 
 RUN_DEPENDS +=		textproc/py-sphinxcontrib/applehelp${MODPY_FLAVOR} \
 			textproc/py-sphinxcontrib/devhelp${MODPY_FLAVOR} \
