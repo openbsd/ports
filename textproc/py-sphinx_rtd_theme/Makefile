@@ -8,7 +8,7 @@ GH_TAGNAME =		${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 DISTFILES =		${DISTNAME}.tar.gz \
 			sphinx-rtd-theme_${MODPY_EGG_VERSION}+dfsg-1.debian.tar.xz:0
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		textproc
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 MASTER_SITES0 =		${MASTER_SITE_DEBIAN:=main/s/sphinx-rtd-theme/}
 
 FLAVORS =		python3

@@ -4,7 +4,7 @@ MODPY_EGG_VERSION=	2.10.3
 DISTNAME=		Babel-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME:L}
 CATEGORIES=		devel
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		https://babel.pocoo.org/
 
@@ -14,8 +14,7 @@ PERMIT_PACKAGE=		Yes
 MODULES=		lang/python
 
 MODPY_PI=		Yes
-MODPY_SETUPTOOLS=	Yes
-MODPY_PYTEST=		Yes
+MODPY_PYBUILD=		setuptools
 
 RUN_DEPENDS=		devel/py-tz${MODPY_FLAVOR}
 TEST_DEPENDS=		devel/py-freezegun${MODPY_FLAVOR}
