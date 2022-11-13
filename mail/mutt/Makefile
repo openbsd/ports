@@ -1,6 +1,6 @@
 COMMENT=	tty-based e-mail client
 
-DISTNAME=	mutt-2.2.8
+DISTNAME=	mutt-2.2.9
 EPOCH=		3
 
 CATEGORIES=	mail
