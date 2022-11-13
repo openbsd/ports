@@ -1,0 +1,2 @@
+Platform native libraries required to speed-up Jitsi sessions by
+faster encryption/descryption support for SRTP and SRTCP.
