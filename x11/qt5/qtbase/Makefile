@@ -12,7 +12,7 @@ PKGNAME-global =	qt5-global-${VERSION}
 PKGNAME-psql =		qt5-postgresql-${VERSION}
 PKGNAME-tds =		qt5-tds-${VERSION}
 
-REVISION-main =		0
+REVISION-main =		1
 
 PKG_ARCH-global =	*
 PKG_ARCH-examples =	*
@@ -143,6 +143,10 @@ CONFIGURE_ARGS +=	-confirm-license \
 # We have to wait until arm64 is vulkan ready.
 #BUILD_DEPENDS =		graphics/vulkan-loader
 CONFIGURE_ARGS +=	-no-vulkan
+
+# Let's wait a little until we have more experience and test results
+#LIB_DEPENDS +=		sysutils/libudev-openbsd
+CONFIGURE_ARGS +=	-no-libudev
 
 # disabled
 CONFIGURE_ARGS +=	-no-ccache \
