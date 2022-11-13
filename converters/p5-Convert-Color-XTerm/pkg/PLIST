@@ -1,0 +1,4 @@
+${P5SITE}/Convert/Color/XTerm.pm
+@man man/man3p/Convert::Color::XTerm.3p
+share/examples/p5-Convert-Color-XTerm/
+share/examples/p5-Convert-Color-XTerm/html-sample.pl
