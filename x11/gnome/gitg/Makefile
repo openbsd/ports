@@ -2,7 +2,7 @@ COMMENT=		graphical user interface for git
 
 GNOME_PROJECT=		gitg
 GNOME_VERSION=		41
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS += gitg-1.0                  1.0 # 0.0.0
 SHARED_LIBS += gitg-ext-1.0              0.0 # 0.0.0

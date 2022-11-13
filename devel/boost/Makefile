@@ -9,7 +9,7 @@ VERSION=	1.80.0
 EPOCH =		0
 DISTNAME=	boost_${VERSION:S/./_/g}
 PKGNAME=	boost-${VERSION}
-REVISION-main=	1
+REVISION-main=	2
 CATEGORIES=	devel
 MASTER_SITES=	https://boostorg.jfrog.io/artifactory/main/release/${VERSION}/source/
 EXTRACT_SUFX=	.tar.bz2
@@ -35,10 +35,10 @@ BOOST_LIBS=	boost_atomic-mt \
 		boost_math_tr1f-mt boost_math_tr1f \
 		boost_math_tr1l-mt boost_math_tr1l \
 		boost_nowide-mt boost_nowide \
-		boost_numpy39-mt boost_numpy39 \
+		boost_numpy310-mt boost_numpy310 \
 		boost_prg_exec_monitor-mt boost_prg_exec_monitor \
 		boost_program_options-mt boost_program_options \
-		boost_python39-mt boost_python39 \
+		boost_python310-mt boost_python310 \
 		boost_random-mt boost_random \
 		boost_regex-mt boost_regex \
 		boost_serialization-mt boost_serialization \
