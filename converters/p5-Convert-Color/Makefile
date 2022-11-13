@@ -1,7 +1,6 @@
 COMMENT =	color space conversions and named lookups
 
-DISTNAME =	Convert-Color-0.12
-REVISION =	0
+DISTNAME =	Convert-Color-0.13
 
 CATEGORIES =	converters
 
