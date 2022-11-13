@@ -140,7 +140,6 @@
      SUBDIR += oledump
      SUBDIR += oletools
      SUBDIR += onesixtyone
-     SUBDIR += opencdk
      SUBDIR += opendnssec
      SUBDIR += openpam
      SUBDIR += opensc
