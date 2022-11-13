@@ -675,6 +675,7 @@
      SUBDIR += p5-Devel-Leak
      SUBDIR += p5-Devel-Leak-Object
      SUBDIR += p5-Devel-LexAlias
+     SUBDIR += p5-Devel-MAT-Dumper
      SUBDIR += p5-Devel-NYTProf
      SUBDIR += p5-Devel-OverloadInfo
      SUBDIR += p5-Devel-PartialDump
