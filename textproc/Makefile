@@ -551,7 +551,6 @@
      SUBDIR += wdg-sgml-lib
      SUBDIR += wdiff
      SUBDIR += wkhtmltopdf
-     SUBDIR += xalan-j
      SUBDIR += xerces-c
      SUBDIR += xlsx2csv
      SUBDIR += xml2rfc
