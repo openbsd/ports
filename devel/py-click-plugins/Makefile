@@ -3,7 +3,7 @@ COMMENT =		register CLI commands via setuptools entry-points
 MODPY_EGG_VERSION =	1.1.1
 DISTNAME =		click-plugins-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 
@@ -17,8 +17,7 @@ RUN_DEPENDS =		devel/py-click${MODPY_FLAVOR}
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 
 FLAVORS =		python3
 FLAVOR =		python3

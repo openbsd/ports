@@ -4,7 +4,7 @@ COMMENT=	command line library for Python
 MODPY_EGG_VERSION=7.1.2
 DISTNAME=	click-${MODPY_EGG_VERSION}
 PKGNAME=	py-click-${MODPY_EGG_VERSION}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 
@@ -16,9 +16,7 @@ PERMIT_PACKAGE=	Yes
 MODPY_PI =	Yes
 
 MODULES=	lang/python
-
-MODPY_SETUPTOOLS= Yes
-MODPY_PYTEST=	Yes
+MODPY_PYBUILD=	setuptools
 
 FLAVORS=	python3
 FLAVOR=		python3

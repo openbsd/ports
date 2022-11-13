@@ -21,8 +21,7 @@ FLAVORS =		python3
 FLAVOR =		python3
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-# MODPY_PYBUILD: pinned cython==0.29.30, also needs "oldest-supported-numpy"
+MODPY_PYBUILD =		setuptools
 MODPY_PYTEST_ARGS =	astropy
 
 BUILD_DEPENDS =		devel/py-extension-helpers${MODPY_FLAVOR} \
@@ -30,6 +29,7 @@ BUILD_DEPENDS =		devel/py-extension-helpers${MODPY_FLAVOR} \
 			devel/py-wheel${MODPY_FLAVOR} \
 			lang/cython${MODPY_FLAVOR} \
 			math/py-numpy${MODPY_FLAVOR} \
+			math/py-oldest-supported-numpy${MODPY_FLAVOR} \
 			www/py-jinja2${MODPY_FLAVOR}
 
 RUN_DEPENDS =		astro/py-erfa${MODPY_FLAVOR} \

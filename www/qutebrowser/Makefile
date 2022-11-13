@@ -2,7 +2,7 @@ COMMENT =		keyboard-focused browser with a minimal GUI
 
 MODPY_EGG_VERSION =	2.5.1
 DISTNAME =		qutebrowser-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://www.qutebrowser.org/
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			textproc/py-yaml${MODPY_FLAVOR} \

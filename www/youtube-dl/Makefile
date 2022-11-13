@@ -5,7 +5,7 @@ MODPY_EGG_VERSION =	${VERSION:S/.0/./g}
 
 DISTNAME =	youtube-dl-${VERSION}
 CATEGORIES =	www
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://yt-dl.org
 
@@ -18,8 +18,7 @@ MASTER_SITES =	https://youtube-dl.org/downloads/${VERSION}/
 
 MODULES =	lang/python
 
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =	setuptools
 
 TEST_DEPENDS +=	devel/flake8
 

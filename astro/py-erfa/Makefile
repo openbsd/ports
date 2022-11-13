@@ -18,15 +18,14 @@ MAINTAINER=	Wen Heping <wenheping2000@hotmail.com>
 
 MODULES=	lang/python
 
-MODPY_PI=		Yes
-MODPY_SETUPTOOLS=	Yes
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools_scm
 MODPY_PYTEST_ARGS=	erfa/tests
 
 FLAVOR=		python3
 FLAVORS=	python3
 
-BUILD_DEPENDS=	devel/py-setuptools_scm${MODPY_FLAVOR} \
-		math/py-numpy${MODPY_FLAVOR} \
+BUILD_DEPENDS=	math/py-numpy${MODPY_FLAVOR} \
 		sysutils/py-packaging${MODPY_FLAVOR}
 RUN_DEPENDS=	math/py-numpy${MODPY_FLAVOR}
 TEST_DEPENDS=	devel/py-test-doctestplus${MODPY_FLAVOR}

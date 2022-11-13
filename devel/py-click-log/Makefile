@@ -3,7 +3,7 @@ COMMENT =		logging integration for Python click
 MODPY_EGG_VERSION =	0.3.2
 DISTNAME =		click-log-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		devel
 
@@ -19,8 +19,7 @@ RUN_DEPENDS =		devel/py-click${MODPY_FLAVOR}
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 
 FLAVORS =		python3
 FLAVOR =		python3

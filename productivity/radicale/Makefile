@@ -1,7 +1,7 @@
 COMMENT =	simple CalDAV calendar server
 
 MODPY_EGG_VERSION = 1.1.6
-REVISION =	6
+REVISION =	7
 DISTNAME =	Radicale-${MODPY_EGG_VERSION}
 PKGNAME =	${DISTNAME:L}
 CATEGORIES =	productivity net
@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 MODPY_PI =	Yes
-MODPY_SETUPTOOLS = Yes
+MODPY_PYBUILD =	setuptools
 
 RUN_DEPENDS =	security/py-passlib${MODPY_FLAVOR}
 

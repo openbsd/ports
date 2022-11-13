@@ -3,7 +3,7 @@ COMMENT=		templating library able to output odt and pdf files
 MODPY_EGG_VERSION=	0.10.1
 DISTNAME=		relatorio-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		print textproc
 
@@ -18,7 +18,7 @@ MODPY_PI=		Yes
 
 MODULES=		lang/python
 
-MODPY_SETUPTOOLS=	Yes
+MODPY_PYBUILD=		setuptools
 
 FLAVOR=			python3
 FLAVORS=		python3

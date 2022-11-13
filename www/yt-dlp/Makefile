@@ -5,7 +5,7 @@ MODPY_EGG_VERSION =	${VERSION:S/.0/./g}
 
 DISTNAME =	yt-dlp-${VERSION}
 DISTFILES =	yt-dlp-${VERSION}{yt-dlp}${EXTRACT_SUFX}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	www
 
@@ -20,8 +20,7 @@ MASTER_SITES =	https://github.com/yt-dlp/yt-dlp/releases/download/${VERSION}/
 
 MODULES =	lang/python
 
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =	setuptools
 
 TEST_DEPENDS +=	devel/flake8
 

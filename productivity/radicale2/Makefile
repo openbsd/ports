@@ -4,7 +4,7 @@ MODPY_EGG_VERSION = 2.1.12
 DISTNAME =	Radicale-${MODPY_EGG_VERSION}
 PKGNAME =	${DISTNAME:L}
 CATEGORIES =	productivity net
-REVISION =	3
+REVISION =	4
 
 HOMEPAGE =	https://radicale.org/
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 MODPY_PI =	Yes
-MODPY_SETUPTOOLS = Yes
+MODPY_PYBUILD =	setuptools
 
 RUN_DEPENDS =	devel/py-dateutil${MODPY_FLAVOR}>=2.7.3 \
 		security/py-passlib${MODPY_FLAVOR} \

@@ -2,7 +2,7 @@ COMMENT =		standards based terminal calendar
 
 MODPY_EGG_VERSION =	0.10.4
 DISTNAME =		khal-${MODPY_EGG_VERSION}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		productivity
 
@@ -17,10 +17,7 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
-
-BUILD_DEPENDS +=	devel/py-setuptools_scm${MODPY_FLAVOR}
+MODPY_PYBUILD =		setuptools_scm
 
 RUN_DEPENDS =		devel/py-atomicwrites${MODPY_FLAVOR} \
 			devel/py-click${MODPY_FLAVOR} \

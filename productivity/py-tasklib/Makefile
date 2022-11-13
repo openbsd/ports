@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	2.4.3
 
 DISTNAME =		tasklib-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		productivity
 
@@ -17,8 +17,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 MODPY_PYTEST_ARGS =	tasklib/tests.py
 
 FLAVORS =		python3

@@ -2,7 +2,7 @@ COMMENT =		console vCard address book
 
 MODPY_EGG_VERSION =	0.17.0
 DISTNAME =		khard-${MODPY_EGG_VERSION}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		productivity
 
@@ -15,11 +15,9 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools_scm
 
-BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR} \
-			textproc/py-sphinx${MODPY_FLAVOR} \
+BUILD_DEPENDS =		textproc/py-sphinx${MODPY_FLAVOR} \
 			${RUN_DEPENDS}
 
 RUN_DEPENDS =		devel/py-atomicwrites${MODPY_FLAVOR} \

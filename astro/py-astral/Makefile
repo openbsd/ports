@@ -3,7 +3,7 @@ COMMENT =		calculations for the position of the sun and the moon
 MODPY_EGG_VERSION =	2.2
 DISTNAME =		astral-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		astro
 
@@ -17,8 +17,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-#MODPY_PYBUILD needs poetry (not poetry-core)
+MODPY_PYBUILD =		poetry-core
 MODPY_PYTEST =		Yes
 
 RUN_DEPENDS =		devel/py-tz${MODPY_FLAVOR}
