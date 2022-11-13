@@ -1,0 +1,18 @@
+Enable Ed25519 tests. Seven X25519 tests need EVP_PKEY_get1_tls_encodedpoint()
+which LibreSSL does not plan to support.
+
+Index: src/cryptography/hazmat/backends/openssl/backend.py
+--- src/cryptography/hazmat/backends/openssl/backend.py.orig
++++ src/cryptography/hazmat/backends/openssl/backend.py
+@@ -1987,7 +1987,10 @@ class Backend:
+     def ed25519_supported(self) -> bool:
+         if self._fips_enabled:
+             return False
+-        return not self._lib.CRYPTOGRAPHY_OPENSSL_LESS_THAN_111B
++        return (
++            not self._lib.CRYPTOGRAPHY_OPENSSL_LESS_THAN_111B
++            or not self._lib.CRYPTOGRAPHY_LIBRESSL_LESS_THAN_370
++        )
+ 
+     def ed25519_load_public_bytes(
+         self, data: bytes

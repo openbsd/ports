@@ -1,0 +1,29 @@
+https://github.com/pyca/cryptography/pull/7803
+
+Index: src/_cffi_src/openssl/cryptography.py
+--- src/_cffi_src/openssl/cryptography.py.orig
++++ src/_cffi_src/openssl/cryptography.py
+@@ -47,12 +47,15 @@ INCLUDES = """
+     (LIBRESSL_VERSION_NUMBER < 0x3040000f)
+ #define CRYPTOGRAPHY_LIBRESSL_LESS_THAN_350 \
+     (LIBRESSL_VERSION_NUMBER < 0x3050000f)
++#define CRYPTOGRAPHY_LIBRESSL_LESS_THAN_370 \
++    (LIBRESSL_VERSION_NUMBER < 0x3070000f)
+ 
+ #else
+ #define CRYPTOGRAPHY_LIBRESSL_LESS_THAN_322 (0)
+ #define CRYPTOGRAPHY_LIBRESSL_LESS_THAN_332 (0)
+ #define CRYPTOGRAPHY_LIBRESSL_LESS_THAN_340 (0)
+ #define CRYPTOGRAPHY_LIBRESSL_LESS_THAN_350 (0)
++#define CRYPTOGRAPHY_LIBRESSL_LESS_THAN_370 (0)
+ #endif
+ 
+ #if OPENSSL_VERSION_NUMBER < 0x10100000
+@@ -91,6 +94,7 @@ static const int CRYPTOGRAPHY_NEEDS_OSRANDOM_ENGINE;
+ 
+ static const int CRYPTOGRAPHY_LIBRESSL_LESS_THAN_340;
+ static const int CRYPTOGRAPHY_LIBRESSL_LESS_THAN_350;
++static const int CRYPTOGRAPHY_LIBRESSL_LESS_THAN_370;
+ 
+ static const int CRYPTOGRAPHY_IS_LIBRESSL;
+ static const int CRYPTOGRAPHY_IS_BORINGSSL;
