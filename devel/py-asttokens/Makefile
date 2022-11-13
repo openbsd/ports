@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	2.0.8
 
 DISTNAME =	asttokens-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 
@@ -16,15 +16,13 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools_scm
 MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
 FLAVOR =		python3
 
-BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR} \
-			devel/py-six${MODPY_FLAVOR}
-
+RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR}
 TEST_DEPENDS =		devel/py-astroid${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
