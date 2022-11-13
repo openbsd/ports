@@ -1,7 +1,7 @@
 COMMENT =	perl interface to GMP integer functions
 
 MODULES =	cpan
-DISTNAME =	Math-GMPz-0.51
+DISTNAME =	Math-GMPz-0.55
 CATEGORIES =	math
 
 # Perl
@@ -17,7 +17,8 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 TEST_DEPENDS =	math/p5-Math-BigInt-GMP \
-		math/p5-Math-GMPf
+		math/p5-Math-GMPf \
+		devel/p5-Test-Warn
 
 MAKE_ENV +=	TEST_POD=Yes
 
