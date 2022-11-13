@@ -1,0 +1,4 @@
+This module provides the memory-dumping function that creates a heap
+dump file which can later be read by Devel::MAT::Dumpfile. It provides
+a single function which is not exported, which writes a file to the
+given path.

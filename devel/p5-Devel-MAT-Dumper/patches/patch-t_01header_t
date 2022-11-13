@@ -1,0 +1,18 @@
+OpenBSD pobj permissions may not allow creating temp file in curdir.
+
+Index: t/01header.t
+--- t/01header.t.orig
++++ t/01header.t
+@@ -6,9 +6,11 @@ use warnings;
+ use Test::More;
+ 
+ use Config;
++use File::Temp 'tempfile';
+ use Devel::MAT::Dumper;
+ 
+-my $DUMPFILE = "test.pmat";
++my ($DUMPFH, $DUMPFILE) = tempfile("testXXXXXXXXXX",
++    SUFFIX => ".pmat", TMPDIR => 1);
+ 
+ Devel::MAT::Dumper::dump( $DUMPFILE );
+ END { unlink $DUMPFILE; }
