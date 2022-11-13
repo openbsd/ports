@@ -1,7 +1,7 @@
 COMMENT =		library for Junos automation
 
 MODPY_EGG_VERSION =	2.2.1
-REVISION =		3
+REVISION =		4
 DISTNAME =		junos-eznc-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 

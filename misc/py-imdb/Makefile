@@ -5,6 +5,7 @@ PORTROACH =	site:https://github.com/alberanid/imdbpy/releases/
 MODPY_EGG_VERSION = 2021.4.18
 DISTNAME =	IMDbPY-${MODPY_EGG_VERSION}
 PKGNAME =	py-imdb-${MODPY_EGG_VERSION}
+REVISION =	0
 
 CATEGORIES =	misc devel
 

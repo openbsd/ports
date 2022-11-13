@@ -3,7 +3,7 @@ COMMENT=	Python as a hardware description and verification language
 MODPY_EGG_VERSION=0.11
 DISTNAME=	myhdl-${MODPY_EGG_VERSION}
 CATEGORIES=	lang
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	http://www.myhdl.org/
 

@@ -3,7 +3,7 @@ COMMENT=		Python bindings to wrap the libsmbclient API
 MODPY_EGG_VERSION=	1.0.23
 DISTNAME=		pysmbc-${MODPY_EGG_VERSION}
 PKGNAME=		py-smbc-${MODPY_EGG_VERSION}
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		net devel
 

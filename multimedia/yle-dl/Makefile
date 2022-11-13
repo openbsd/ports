@@ -2,6 +2,7 @@ GH_ACCOUNT =		aajanki
 GH_PROJECT =		yle-dl
 GH_TAGNAME =		20220704
 MODPY_EGG_VERSION =	${GH_TAGNAME}
+REVISION =		0
 
 COMMENT =		download videos from YLE Areena
 

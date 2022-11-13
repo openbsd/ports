@@ -4,6 +4,7 @@ MODPY_EGG_VERSION = 0.16
 DISTNAME =	PyX-${MODPY_EGG_VERSION}
 PKGNAME =	py-pyx-${MODPY_EGG_VERSION}
 CATEGORIES =	graphics devel
+REVISION =	0
 
 HOMEPAGE =	http://pyx.sourceforge.net/
 

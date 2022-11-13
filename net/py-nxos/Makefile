@@ -1,7 +1,7 @@
 COMMENT =		library for managing Cisco NX-OS devices through NX-API
 
 MODPY_EGG_VERSION =	0.0.5
-REVISION =		4
+REVISION =		5
 DISTNAME =		pynxos-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:S/py//}
 

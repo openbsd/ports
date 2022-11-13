@@ -1,7 +1,7 @@
 COMMENT=		maths, science and engineering modules for Python
 
 MODPY_EGG_VERSION=	1.5.3
-REVISION=		2
+REVISION=		3
 DISTNAME=		scipy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 

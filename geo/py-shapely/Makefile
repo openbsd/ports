@@ -5,6 +5,7 @@ GH_TAGNAME =	${MODPY_EGG_VERSION}
 GH_ACCOUNT =	shapely
 GH_PROJECT =	shapely
 PKGNAME =	py-shapely-${MODPY_EGG_VERSION:S/.post/pl/}
+REVISION =	0
 
 CATEGORIES =	geo
 

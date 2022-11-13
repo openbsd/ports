@@ -4,6 +4,7 @@ MODPY_EGG_VERSION =	1.2.1
 DISTNAME =		mpmath-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
+REVISION =		0
 
 HOMEPAGE =		http://mpmath.org/
 

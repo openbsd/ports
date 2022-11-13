@@ -5,7 +5,7 @@ GH_ACCOUNT =		robhagemans
 GH_PROJECT =		pcbasic
 GH_TAGNAME =		v${MODPY_EGG_VERSION}
 DISTNAME =		pcbasic-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =	lang
 

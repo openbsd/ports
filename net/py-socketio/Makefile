@@ -4,6 +4,7 @@ COMMENT=	client/server implementation of Socket.IO
 MODPY_EGG_VERSION= 4.6.1
 DISTNAME=	python-socketio-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:S/python-/py-/}
+REVISION=	0
 
 CATEGORIES=	net
 

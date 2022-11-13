@@ -7,7 +7,7 @@ EXTRACT_SUFX=		.zip
 MASTER_SITES=		${HOMEPAGE}kits/${MODPY_EGG_VERSION}/
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		net
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		https://www.dnspython.org/
 

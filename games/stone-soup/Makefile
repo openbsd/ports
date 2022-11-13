@@ -6,7 +6,7 @@ VERSION = 	0.27.1
 
 DISTNAME=	stone_soup-${VERSION}-nodeps
 PKGNAME=	stone-soup-${VERSION}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES = 	games
 

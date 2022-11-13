@@ -5,6 +5,7 @@ DISTNAME =		steam-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		games
 HOMEPAGE =		https://github.com/ValvePython/steam
+REVISION =		0
 
 # MIT
 PERMIT_PACKAGE =	Yes

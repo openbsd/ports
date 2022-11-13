@@ -2,7 +2,7 @@ COMMENT =		GTK+2 IRC Client
 DISTNAME =		hexchat-2.14.3
 EXTRACT_SUFX =		.tar.xz
 CATEGORIES =		net x11
-REVISION =		1
+REVISION =		2
 
 HOMEPAGE =		https://hexchat.github.io/
 # GPLv2+

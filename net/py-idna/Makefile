@@ -4,6 +4,7 @@ MODPY_EGG_VERSION =	3.3
 DISTNAME =		idna-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		net
+REVISION =		0
 
 HOMEPAGE =		https://github.com/kjd/idna
 

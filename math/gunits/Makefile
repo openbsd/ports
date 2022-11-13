@@ -4,7 +4,7 @@ DISTNAME=		units-2.16
 PKGNAME=		g${DISTNAME}
 CATEGORIES=		math
 MASTER_SITES=		${MASTER_SITE_GNU:=units/}
-REVISION=		3
+REVISION=		4
 
 HOMEPAGE=		https://www.gnu.org/software/units/
 

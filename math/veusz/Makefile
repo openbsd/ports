@@ -5,7 +5,7 @@ COMMENT =	scientific plotting and graphing package
 MODPY_EGG_VERSION =	3.4
 DISTNAME =	veusz-${MODPY_EGG_VERSION}
 CATEGORIES =	math graphics
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://veusz.github.io/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>

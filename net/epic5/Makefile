@@ -6,6 +6,7 @@ CATEGORIES=	net
 HOMEPAGE=	http://www.epicsol.org/
 MAINTAINER=	Joey Beach <fro@disciples.com>
 MASTER_SITES=	http://ftp.epicsol.org/pub/epic/EPIC5-PRODUCTION/
+REVISION=	0
 
 # BSD
 PERMIT_PACKAGE=	Yes

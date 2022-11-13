@@ -3,7 +3,7 @@ COMMENT =	cloud optimized GeoTiff creation plugin for rasterio
 MODPY_EGG_VERSION =	1.1.10
 DISTNAME =	rio-cogeo-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:S/.dev/pre/}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	geo
 

@@ -3,7 +3,7 @@ COMMENT-finch=	multi-protocol instant messaging client, console client
 COMMENT-libpurple= multi-protocol instant messaging library
 
 VERSION=	2.14.8
-REVISION-finch= 2
+REVISION-finch= 3
 DISTNAME=	pidgin-${VERSION}
 PKGNAME-main=	pidgin-${VERSION}
 PKGNAME-finch=	finch-${VERSION}

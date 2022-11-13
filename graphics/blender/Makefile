@@ -8,6 +8,7 @@ DPB_PROPERTIES = parallel
 COMMENT =	3D creation software
 
 DISTNAME =	blender-3.0.1
+REVISION =	0
 
 CATEGORIES =	graphics
 

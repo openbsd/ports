@@ -4,7 +4,7 @@ MODPY_EGG_VERSION = 1.59
 DISTNAME =	python-memcached-${MODPY_EGG_VERSION}
 PKGNAME =	${DISTNAME:S/python-/py-/}
 CATEGORIES =	misc
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://www.tummy.com/Community/software/python-memcached/
 

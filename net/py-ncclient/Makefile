@@ -3,6 +3,7 @@ COMMENT =		Python library for NETCONF clients
 MODPY_EGG_VERSION =	0.6.12
 DISTNAME =		ncclient-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		net
 

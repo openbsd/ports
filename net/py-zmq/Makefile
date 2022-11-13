@@ -4,6 +4,7 @@ MODPY_EGG_VERSION =	24.0.1
 DISTNAME =		pyzmq-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
 EPOCH =			0
+REVISION =		0
 
 CATEGORIES =		net devel
 

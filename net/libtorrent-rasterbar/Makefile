@@ -2,6 +2,7 @@ COMMENT =		C++ library implementing a BitTorrent client
 
 MODPY_EGG_VERSION =	1.2.17
 DISTNAME =		libtorrent-rasterbar-${MODPY_EGG_VERSION}
+REVISION =		0
 
 SHARED_LIBS +=  	torrent-rasterbar 6.0	# 10.0.0
 

@@ -3,7 +3,7 @@ COMMENT=		enumerate IP addresses on the local network adapters
 MODPY_EGG_VERSION=	0.1.7
 DISTNAME=		ifaddr-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		net
 

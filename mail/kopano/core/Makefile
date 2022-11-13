@@ -9,7 +9,7 @@ PKGNAME-mapi=	kopano-mapi-${V}
 EPOCH=		0
 
 REVISION=	1
-REVISION-main=	2
+REVISION-main=	3
 
 CATEGORIES=	mail www productivity
 

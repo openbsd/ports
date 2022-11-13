@@ -5,6 +5,7 @@ COMMENT =	reference front-end for GLSL and ESSL
 GH_TAGNAME =	11.11.0
 GH_ACCOUNT =	KhronosGroup
 GH_PROJECT =	glslang
+REVISION =	0
 
 CATEGORIES =	devel graphics
 

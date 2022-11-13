@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	1.4.7
 DISTNAME =		snuggs-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
-REVISION =		2
+REVISION =		3
 
 MAINTAINER =		Martin Reindl <martin@catai.org>
 

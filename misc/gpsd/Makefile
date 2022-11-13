@@ -7,7 +7,7 @@ DISTNAME=		gpsd-${VERSION}
 PKGNAME-main=		gpsd-${VERSION}
 PKGNAME-x11=		gpsd-x11-${VERSION}
 PKGNAME-php=		gpsd-php-${VERSION}
-REVISION-main=		0
+REVISION-main=		1
 REVISION-php=		0
 REVISION-x11=		0
 

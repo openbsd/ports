@@ -3,7 +3,7 @@ COMMENT=		GObject wrapper around exiv2
 GNOME_VERSION=		0.14.0
 GNOME_PROJECT=		gexiv2
 PKGNAME=		lib${DISTNAME}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		graphics
 

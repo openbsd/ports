@@ -1,4 +1,5 @@
 COMMENT =		BitTorrent client with Qt interface
+REVISION =		0
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB += Qt5Sql Qt5Svg Qt5Widgets Qt5Xml boost_system-mt c crypto

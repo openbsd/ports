@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	0.2.1
 GH_ACCOUNT =		dotpy
 GH_PROJECT =		py-pf
 GH_TAGNAME =		${MODPY_EGG_VERSION}
-REVISION =		4
+REVISION =		5
 
 # remove with next update; tarball was regenerated at github
 DISTFILES =		${DISTNAME}_1{${DISTNAME}}${EXTRACT_SUFX}

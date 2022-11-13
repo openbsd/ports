@@ -3,6 +3,7 @@ COMMENT =		interface with Tuya WiFi smart devices
 MODPY_EGG_VERSION =	1.7.0
 DISTNAME =		tinytuya-${MODPY_EGG_VERSION}
 PKGNAME =		py-tinytuya-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		net
 

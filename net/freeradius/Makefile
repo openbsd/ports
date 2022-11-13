@@ -29,7 +29,7 @@ REVISION-memcached=0
 REVISION-mysql=	0
 REVISION-pgsql=	0
 REVISION-python=0
-REVISION-python3=0
+REVISION-python3=1
 
 CATEGORIES=	net security
 

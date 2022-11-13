@@ -3,6 +3,7 @@ COMMENT =		OSM data to PostgreSQL converter
 GH_TAGNAME =		1.7.0
 GH_PROJECT =		osm2pgsql
 GH_ACCOUNT =		openstreetmap
+REVISION =		0
 
 CATEGORIES =		geo databases
 

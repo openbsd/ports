@@ -3,6 +3,7 @@ COMMENT =		library for accessing OGC Web Services
 MODPY_EGG_VERSION =	0.27.2
 DISTNAME =		OWSLib-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
+REVISION =		0
 
 CATEGORIES =		geo devel
 

@@ -7,7 +7,7 @@ GH_COMMIT =		53aceee8943c30cc28850ca76e19a54689e3d119
 MODPY_EGG_VERSION =	1.1.1
 DISTNAME =		pyzor-1.1.1pre20210613
 CATEGORIES =		mail net
-REVISION =		1
+REVISION =		2
 
 HOMEPAGE =		https://www.pyzor.org/
 

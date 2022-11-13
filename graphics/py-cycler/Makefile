@@ -4,6 +4,7 @@ MODPY_EGG_VERSION =	0.11.0
 DISTNAME =		cycler-${MODPY_EGG_VERSION}
 PKGNAME =		py-cycler-${MODPY_EGG_VERSION}
 CATEGORIES =		graphics
+REVISION =		0
 
 HOMEPAGE =		https://github.com/matplotlib/cycler
 

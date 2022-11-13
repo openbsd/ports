@@ -3,7 +3,7 @@ COMMENT =		simplify Paramiko connections to network devices
 MODPY_EGG_VERSION =	3.1.1
 DISTNAME=		netmiko-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		net
 

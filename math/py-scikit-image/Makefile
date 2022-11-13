@@ -4,6 +4,7 @@ MODPY_EGG_VERSION =	0.19.3
 DISTNAME =		scikit-image-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
+REVISION =		0
 
 MAINTAINER =		Paul Irofti <paul@irofti.net>
 

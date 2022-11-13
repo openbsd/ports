@@ -3,7 +3,7 @@ MODPY_EGG_VERSION =	2.6.4
 DISTNAME =		PySolFC-${MODPY_EGG_VERSION}
 PKGNAME =		pysol-${MODPY_EGG_VERSION}
 CATEGORIES =		games
-REVISION =		3
+REVISION =		4
 
 HOMEPAGE =		http://pysolfc.sourceforge.net/
 

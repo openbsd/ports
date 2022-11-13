@@ -3,7 +3,7 @@ COMMENT=		twitter python module
 MODPY_EGG_VERSION=	1.18.0
 DISTNAME=		twitter-${MODPY_EGG_VERSION}
 PKGNAME=		py-twitter-${MODPY_EGG_VERSION}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		net www
 

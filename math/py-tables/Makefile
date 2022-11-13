@@ -4,7 +4,7 @@ MODPY_EGG_VERSION=	3.7.0
 DISTNAME=		tables-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		math
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		https://www.pytables.org/
 MAINTAINER=		Martin Reindl <martin@catai.org>

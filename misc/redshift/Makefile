@@ -2,7 +2,7 @@ COMMENT=		automatic color temperature adjustment
 
 V=			1.12
 DISTNAME=		redshift-$V
-REVISION=		6
+REVISION=		7
 
 CATEGORIES=		misc graphics
 

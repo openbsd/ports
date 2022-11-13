@@ -3,7 +3,7 @@ COMMENT=	ZBar barcode reader
 GH_ACCOUNT=	mchehab
 GH_PROJECT=	zbar
 GH_TAGNAME=	0.23.90
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS=	zbar	0.1 \
 		zbargtk	0.1

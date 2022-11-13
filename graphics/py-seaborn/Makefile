@@ -3,7 +3,7 @@ COMMENT =		statistical data visualization
 MODPY_EGG_VERSION =	0.11.2
 DISTNAME =		seaborn-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		graphics math
 

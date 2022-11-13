@@ -4,7 +4,7 @@ V =		3.10.7
 DISTNAME =	rabbitmq-server-$V
 PKGNAME =	rabbitmq-$V
 CATEGORIES =	net
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://www.rabbitmq.com/
 

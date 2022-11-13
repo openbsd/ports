@@ -5,7 +5,7 @@ DISTNAME=		dnslib-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		net
 MODPY_PI=		Yes
-REVISION=		4
+REVISION=		5
 
 
 MAINTAINER=		Bryan Everly <bryan@bceassociates.com>

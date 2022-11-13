@@ -3,6 +3,7 @@ COMMENT=		closed caption converter
 MODPY_EGG_VERSION=	2.0.5
 DISTNAME=		pycaption-${MODPY_EGG_VERSION}
 PKGNAME=		py-caption-${MODPY_EGG_VERSION}
+REVISION=		0
 
 CATEGORIES=		multimedia
 

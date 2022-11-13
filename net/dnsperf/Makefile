@@ -1,7 +1,7 @@
 COMMENT =	DNS performance testing tools
 
 DISTNAME =	dnsperf-2.4.2
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	net benchmarks
 

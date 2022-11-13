@@ -4,6 +4,7 @@ COMMENT=	client/server implementation of Engine.IO
 MODPY_EGG_VERSION= 3.14.2
 DISTNAME=	python-engineio-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:S/python-/py-/}
+REVISION=	0
 
 CATEGORIES=	net
 
