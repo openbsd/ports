@@ -1,15 +1,15 @@
 Index: Makefile.PL
 --- Makefile.PL.orig
 +++ Makefile.PL
-@@ -63,9 +63,8 @@ my %options = (
+@@ -106,9 +106,8 @@ my %options = (
    AUTHOR => 'Sisyphus (sisyphus at (@) cpan dot (.) org)',
    ABSTRACT => 'Perl interface to the GMP floating point functions',
    DEFINE   => $defines,
 -  LIBS => [
--    '-lgmp'
+-    $libopts
 -  ],
 +  INC  => "$ENV{CPPFLAGS}",
 +  LIBS => ["$ENV{LDFLAGS} -lgmp"],
    LICENSE  => 'perl',
    VERSION_FROM => 'GMPf.pm',
-   PREREQ_PM => {'Exporter' => '5.58'}, # avoid test failures on pre perl-5.8.4
+   PREREQ_PM => {'Exporter' => '5.58', 'Test::More' => '0.88'},
