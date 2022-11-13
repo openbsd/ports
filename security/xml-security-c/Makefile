@@ -1,11 +1,11 @@
 COMMENT =		C++ implementation of W3C security standards for XML
 
 V =			2.0.4
-REVISION =		0
+REVISION =		1
 DISTNAME =		xml-security-c-${V}
 CATEGORIES =		security textproc
 
-SHARED_LIBS +=		xml-security-c	0.0	# 20.4
+SHARED_LIBS +=		xml-security-c	1.0	# 20.4
 
 HOMEPAGE =		https://santuario.apache.org
 
@@ -15,24 +15,20 @@ MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		${COMPILER_LIBCXX} c crypto icudata icui18n icuuc m
-WANTLIB +=		xalan-c xalanMsg xerces-c
+WANTLIB +=		xerces-c
 
 MASTER_SITES =		https://dlcdn.apache.org/santuario/c-library/
 
 # C++
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =		base-clang ports-gcc
 
 LIB_DEPENDS =		textproc/icu4c \
-			textproc/xalan-c \
 			textproc/xerces-c>=3.2
 
 CONFIGURE_STYLE =	gnu
 
-# ChangeLog lists --with-xerces and --with-xalan, but
-# a) configure does not support --with-xerces
-# b) configure does not use pkg-config(1) for xalan
-# c) passing xalan_CXXFLAGS and xalan_LIBS does not work
-CONFIGURE_ARGS +=	--with-xalan=/usr/local
+# dead upstream
+CONFIGURE_ARGS +=	--without-xalan
 
 # configure: WARNING: NSS is no longer officially supported
 CONFIGURE_ARGS +=	--without-nss \
