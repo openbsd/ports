@@ -4,13 +4,10 @@ COMMENT =		P2P payment system
 
 GH_ACCOUNT =		bitcoin
 GH_PROJECT =		bitcoin
-GH_TAGNAME =		v0.21.2
+GH_TAGNAME =		v23.0
 
-REVISION =		2
-
-SHARED_LIBS +=  bitcoinconsensus          4.0 # 0.0
-SHARED_LIBS +=  secp256k1                 0.1 # 0.0
-SHARED_LIBS +=  univalue                  0.0 # 100.3
+SHARED_LIBS +=  bitcoinconsensus          5.0 # 0.0
+SHARED_LIBS +=  secp256k1                 0.2 # 0.0
 
 CATEGORIES =		net
 
@@ -21,19 +18,19 @@ MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} boost_filesystem boost_system boost_thread-mt
-WANTLIB += c db_cxx event_core event_extra event_pthreads m sodium
-WANTLIB += sqlite3 z zmq
+WANTLIB += ${COMPILER_LIBCXX} c db_cxx event_core event_extra
+WANTLIB += event_pthreads m sodium sqlite3 z zmq
+
+BUILD_DEPENDS =		devel/boost
 
 LIB_DEPENDS =		databases/db/v4 \
 			databases/sqlite3 \
-			devel/boost \
 			devel/libevent2 \
 			net/zeromq
 
 USE_GMAKE =		Yes
 
-# C++11
+# C++17
 # Undefined reference to boost and db4 with GCC
 COMPILER =		base-clang ports-clang
 
@@ -42,12 +39,13 @@ AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.14
 AUTORECONF =		./autogen.sh
 CONFIGURE_ARGS +=	--with-incompatible-bdb \
+			--with-sqlite=yes \
 			--disable-bip70
 
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include/db4 -I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib/db4"
 
-CXXFLAGS +=		-std=c++11
+CXXFLAGS +=		-std=c++17
 
 MAKE_FLAGS =		CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
 
@@ -55,7 +53,8 @@ FLAVORS =		no_x11
 FLAVOR ?=
 
 .if ${FLAVOR:Mno_x11}
-CONFIGURE_ARGS +=	--without-gui
+CONFIGURE_ARGS +=	--without-gui \
+			--with-miniupnpc=no
 .else
 
 WANTLIB += GL Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets X11
@@ -82,8 +81,6 @@ SUBST_VARS +=		VARBASE
 
 post-install:
 	cd ${WRKBUILD}/src/secp256k1 && \
-		${MAKE_PROGRAM} ${MAKE_FLAGS} install
-	cd ${WRKBUILD}/src/univalue && \
 		${MAKE_PROGRAM} ${MAKE_FLAGS} install
 	${INSTALL_DATA_DIR} ${PREFIX}/share/bitcoin
 	${INSTALL_SCRIPT} ${WRKDIST}/share/rpcauth/rpcauth.py \

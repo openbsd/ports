@@ -3,7 +3,7 @@ Build with BerkeleyDB >= 4.6
 Index: build-aux/m4/bitcoin_find_bdb48.m4
 --- build-aux/m4/bitcoin_find_bdb48.m4.orig
 +++ build-aux/m4/bitcoin_find_bdb48.m4
-@@ -22,7 +22,7 @@ AC_DEFUN([BITCOIN_FIND_BDB48],[
+@@ -24,7 +24,7 @@ AC_DEFUN([BITCOIN_FIND_BDB48],[
        AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[
          #include <${searchpath}db_cxx.h>
        ]],[[
@@ -12,7 +12,7 @@ Index: build-aux/m4/bitcoin_find_bdb48.m4
            #error "failed to find bdb 4.8+"
          #endif
        ]])],[
-@@ -35,7 +35,7 @@ AC_DEFUN([BITCOIN_FIND_BDB48],[
+@@ -37,7 +37,7 @@ AC_DEFUN([BITCOIN_FIND_BDB48],[
        AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[
          #include <${searchpath}db_cxx.h>
        ]],[[

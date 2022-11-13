@@ -1,7 +1,7 @@
 Index: src/wallet/bdb.cpp
 --- src/wallet/bdb.cpp.orig
 +++ src/wallet/bdb.cpp
-@@ -158,7 +158,9 @@ bool BerkeleyEnvironment::Open(bilingual_str& err)
+@@ -157,7 +157,9 @@ bool BerkeleyEnvironment::Open(bilingual_str& err)
      dbenv->set_errfile(fsbridge::fopen(pathErrorFile, "a")); /// debug
      dbenv->set_flags(DB_AUTO_COMMIT, 1);
      dbenv->set_flags(DB_TXN_WRITE_NOSYNC, 1);
@@ -11,7 +11,7 @@ Index: src/wallet/bdb.cpp
      int ret = dbenv->open(strPath.c_str(),
                           DB_CREATE |
                               DB_INIT_LOCK |
-@@ -201,7 +203,9 @@ BerkeleyEnvironment::BerkeleyEnvironment()
+@@ -200,7 +202,9 @@ BerkeleyEnvironment::BerkeleyEnvironment()
      dbenv->set_lk_max_locks(10000);
      dbenv->set_lk_max_objects(10000);
      dbenv->set_flags(DB_AUTO_COMMIT, 1);

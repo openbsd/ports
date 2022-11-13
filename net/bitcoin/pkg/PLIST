@@ -11,6 +11,7 @@
 @bin bin/bench_bitcoin
 @bin bin/bitcoin-cli
 @bin bin/bitcoin-tx
+@bin bin/bitcoin-util
 @bin bin/bitcoin-wallet
 @bin bin/bitcoind
 @comment @bin bin/test_bitcoin
@@ -21,23 +22,21 @@ include/secp256k1_extrakeys.h
 include/secp256k1_preallocated.h
 include/secp256k1_recovery.h
 include/secp256k1_schnorrsig.h
-include/univalue.h
 @static-lib lib/libbitcoinconsensus.a
 lib/libbitcoinconsensus.la
 @lib lib/libbitcoinconsensus.so.${LIBbitcoinconsensus_VERSION}
 @static-lib lib/libsecp256k1.a
 lib/libsecp256k1.la
 @lib lib/libsecp256k1.so.${LIBsecp256k1_VERSION}
-@static-lib lib/libunivalue.a
-lib/libunivalue.la
-@lib lib/libunivalue.so.${LIBunivalue_VERSION}
 lib/pkgconfig/libbitcoinconsensus.pc
 lib/pkgconfig/libsecp256k1.pc
-lib/pkgconfig/libunivalue.pc
 @man man/man1/bitcoin-cli.1
 @man man/man1/bitcoin-tx.1
+@man man/man1/bitcoin-util.1
 @man man/man1/bitcoin-wallet.1
 @man man/man1/bitcoind.1
+share/bash-completion/
+share/bash-completion/completions/
 share/bash-completion/completions/bitcoin/
 share/bash-completion/completions/bitcoin/bitcoin-cli.bash-completion
 share/bash-completion/completions/bitcoin/bitcoin-tx.bash-completion
