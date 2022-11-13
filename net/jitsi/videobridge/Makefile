@@ -4,6 +4,7 @@ CATEGORIES =	net
 
 VERSION =	2.0.7882
 DISTNAME =	jitsi-videobridge-${VERSION}
+REVISION =	0
 
 GH_ACCOUNT =	jitsi
 GH_PROJECT =	jitsi-videobridge
@@ -27,7 +28,8 @@ MODJAVA_VER =	11
 
 BUILD_DEPENDS =	devel/maven
 
-RUN_DEPENDS =	java/javaPathHelper
+RUN_DEPENDS =	java/javaPathHelper \
+		net/jitsi/srtp
 
 MAVEN_ARGS=	--offline -PbuildFatJar -DskipTests -Dassembly.skipAssembly=false
 MAVEN_REPO=	-Dmaven.repo.local=${WRKDIR}/m2
