@@ -1,7 +1,7 @@
 COMMENT =	open network for secure, decentralized communication
 
 MODPY_EGG_VERSION =	1.70.1
-REVISION =	0
+REVISION =	1
 
 GH_ACCOUNT =	matrix-org
 GH_PROJECT =	synapse
@@ -60,7 +60,7 @@ RUN_DEPENDS =	devel/py-jsonschema${MODPY_FLAVOR}>=3.0.0 \
 		devel/py-typing-extensions${MODPY_FLAVOR}>=4.3.0 \
 		security/py-cryptography${MODPY_FLAVOR} \
 		textproc/py-ijson${MODPY_FLAVOR} \
-		devel/py-matrix-common${MODPY_FLAVOR}->=1.3.0,<2.0.0 \
+		devel/py-matrix-common${MODPY_FLAVOR}>=1.3.0,<2.0.0 \
 		sysutils/py-packaging${MODPY_FLAVOR}
 # optional section
 RUN_DEPENDS +=	textproc/py-lxml${MODPY_FLAVOR}
