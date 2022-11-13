@@ -5,7 +5,7 @@ CATEGORIES +=		lang/python
 
 # define the default versions
 MODPY_DEFAULT_VERSION_2 = 2.7
-MODPY_DEFAULT_VERSION_3 = 3.9
+MODPY_DEFAULT_VERSION_3 = 3.10
 
 # If switching to a new MODPY_DEFAULT_VERSION_3, say 3.x to 3.y:
 # - All ports with a run/lib dep on python must be REVISION-bumped.
@@ -213,10 +213,10 @@ BUILD_DEPENDS +=	devel/py-hatchling${MODPY_FLAVOR}
 .  elif ${MODPY_PYBUILD} == poetry-core
 BUILD_DEPENDS +=	devel/py-poetry-core${MODPY_FLAVOR}
 .  elif ${MODPY_PYBUILD} == setuptools || ${MODPY_PYBUILD} == setuptools_scm
-DPB_PROPERTIES +=	nojunk
+#XXX trying without nojunk to see how it goes: may need to reinstate if there are issues
+#DPB_PROPERTIES +=	nojunk
 BUILD_DEPENDS +=	devel/py-setuptools${MODPY_FLAVOR} \
 			devel/py-wheel${MODPY_FLAVOR}
-MODPY_RUN_DEPENDS +=	devel/py-setuptools${MODPY_FLAVOR}
 .    if ${MODPY_PYBUILD} == setuptools_scm
 BUILD_DEPENDS +=	devel/py-setuptools_scm${MODPY_FLAVOR}
 .    endif

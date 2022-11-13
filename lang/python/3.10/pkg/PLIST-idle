@@ -1,6 +1,7 @@
 @option no-default-conflict
 @option is-branch
 @conflict python-idle-${VERSION_SPEC}
+@conflict python-idle->=3,<3.9.15p0
 ${PY_DEFAULTONLY}bin/idle3
 bin/idle3.10
 lib/python3.10/idlelib/
