@@ -2,6 +2,7 @@ COMMENT =	SVG vector drawing application
 
 VERSION =	1.2.1
 DISTNAME =	inkscape-${VERSION}
+REVISION =	0
 
 CATEGORIES =	graphics
 
@@ -62,7 +63,10 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/gettext,-runtime \
 		fonts/liberation-fonts \
 		math/py-numpy${MODPY_FLAVOR} \
+		print/transfig \
+		textproc/py-cssselect${MODPY_FLAVOR} \
 		textproc/py-lxml${MODPY_FLAVOR} \
+		www/py-request${MODPY_FLAVOR} \
 		x11/gtk+3,-guic
 
 WRKDIST =	${WRKDIR}/inkscape-${VERSION}_2022-07-14_9c6d41e410
