@@ -3,7 +3,7 @@ COMMENT=		documentation tool micro-framework
 MODPY_EGG_VERSION=	0.13.7
 DISTNAME=		hotdoc-${MODPY_EGG_VERSION}
 #PKGNAME=		py-${DISTNAME}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		textproc
 

@@ -1,7 +1,7 @@
 COMMENT =	handle .env files
 
 MODPY_EGG_VERSION =	0.21.0
-REVISION =	0
+REVISION =	1
 
 DISTNAME =	python-dotenv-${MODPY_EGG_VERSION}
 PKGNAME =	${DISTNAME:S/python-/py-/}

@@ -3,6 +3,7 @@ COMMENT =		distribution utilities
 MODPY_EGG_VERSION =	0.3.5
 DISTNAME =		distlib-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		sysutils
 

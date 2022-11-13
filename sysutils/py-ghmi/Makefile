@@ -3,7 +3,7 @@ COMMENT =		pure python IPMI protocol library
 MODPY_EGG_VERSION =	1.5.29
 DISTNAME =		pyghmi-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/${MODPY_PY_PREFIX}/}
-REVISION =		0
+REVISION =		1
 
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 

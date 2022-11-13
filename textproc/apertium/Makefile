@@ -3,7 +3,7 @@ COMMENT =		rule-based machine translation platform
 V =			3.7
 VER =			3.7.2
 DISTNAME =		apertium-${VER}
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=  apertium3-$V              1.0 # 0.0
 SHARED_LIBS +=  apertium3                 1.0 # 0.0

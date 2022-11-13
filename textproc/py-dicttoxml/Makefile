@@ -3,7 +3,7 @@ COMMENT =		convert dicts and other data types into XML
 MODPY_EGG_VERSION =	1.7.4
 DISTNAME = 		dicttoxml-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		textproc
 

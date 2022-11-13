@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	0.8.3
 DISTNAME =		sphinx-notfound-page-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		textproc
 

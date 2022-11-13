@@ -1,7 +1,7 @@
 COMMENT =		Python implementation of ECDSA cryptography
 
 MODPY_EGG_VERSION = 	0.18.0
-REVISION =		0
+REVISION =		1
 DISTNAME = 		ecdsa-${MODPY_EGG_VERSION}
 PKGNAME = 		py-${DISTNAME}
 CATEGORIES = 		security

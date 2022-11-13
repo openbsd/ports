@@ -3,7 +3,7 @@ COMMENT =	Digital Forensics Virtual File System (dfVFS)
 MODPY_EGG_VERSION = 20200625
 DISTNAME =	dfvfs-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	security
 

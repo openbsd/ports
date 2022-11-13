@@ -3,6 +3,7 @@ COMMENT =		canonical JSON
 MODPY_EGG_VERSION =	1.6.2
 DISTNAME =		canonicaljson-${MODPY_EGG_VERSION}
 PKGNAME =		py-canonicaljson-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		textproc
 

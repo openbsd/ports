@@ -3,6 +3,7 @@ COMMENT =		GitHub Flavored Markdown extension
 MODPY_EGG_VERSION =	1.0.2
 DISTNAME =		py-gfm-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:S/py-/py/}
+REVISION =		0
 
 CATEGORIES =		textproc
 

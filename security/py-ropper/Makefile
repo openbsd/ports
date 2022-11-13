@@ -3,7 +3,7 @@ COMMENT =	rop gadget finder and binary information tool
 MODPY_EGG_VERSION =	1.12.5
 DISTNAME =	ropper-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	security
 

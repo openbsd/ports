@@ -2,6 +2,7 @@ COMMENT =		ebook management application
 
 V =			5.44.0
 DISTNAME =		calibre-$V
+REVISION =		0
 
 CATEGORIES =		textproc
 

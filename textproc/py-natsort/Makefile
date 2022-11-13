@@ -3,7 +3,7 @@ COMMENT =		simple yet flexible natural sorting
 MODPY_EGG_VERSION =	7.1.1
 DISTNAME =		natsort-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		textproc devel
 

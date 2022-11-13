@@ -2,7 +2,7 @@ COMMENT =	information gathering suite
 
 VERSION =	3.0.6
 DISTNAME =	theharvester-${VERSION}
-REVISION =	3
+REVISION =	4
 
 GH_ACCOUNT =	laramies
 GH_PROJECT =	theHarvester

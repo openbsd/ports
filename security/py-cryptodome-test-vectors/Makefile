@@ -4,6 +4,7 @@ MODPY_EGG_VERSION =	1.0.10
 DISTNAME =	pycryptodome-test-vectors-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:S/py//}
 EXTRACT_SUFX =	.zip
+REVISION =	0
 
 CATEGORIES =	security
 

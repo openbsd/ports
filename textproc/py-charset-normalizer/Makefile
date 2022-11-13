@@ -4,6 +4,7 @@ MODPY_EGG_VERSION =	2.0.12
 
 DISTNAME =	charset-normalizer-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	textproc
 

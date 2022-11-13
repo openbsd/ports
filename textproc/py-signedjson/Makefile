@@ -3,7 +3,7 @@ COMMENT =		sign JSON with Ed25519 signatures
 MODPY_EGG_VERSION =	1.1
 DISTNAME =		signedjson-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		textproc
 

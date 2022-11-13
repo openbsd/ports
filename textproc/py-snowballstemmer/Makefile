@@ -3,6 +3,7 @@ COMMENT =		snowball stemming library collection for Python
 MODPY_EGG_VERSION =	2.2.0
 DISTNAME =		snowballstemmer-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		textproc
 

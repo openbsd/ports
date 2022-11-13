@@ -4,6 +4,7 @@ COMMENT-python=	sudo Python plugin
 V=		1.9.12
 DISTNAME=	sudo-${V}
 CATEGORIES=	security
+REVISION-python=0
 
 PKGNAME-main=	sudo-${V:S/p/./}
 PKGNAME-python=	sudo-python-${V:S/p/./}

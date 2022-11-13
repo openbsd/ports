@@ -2,7 +2,7 @@ COMMENT=		simple encrypted backup tool for GNOME
 
 GNOME_VERSION=		43.4
 GNOME_PROJECT=		deja-dup
-REVISION=		0
+REVISION=		1
 
 # override gnome MODULE
 MASTER_SITES=		https://gitlab.gnome.org/World/deja-dup/-/archive/${GNOME_VERSION}/

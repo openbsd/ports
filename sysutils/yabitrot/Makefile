@@ -2,7 +2,7 @@ COMMENT =		fast bitrot detection utility
 
 V =			0.4
 DISTNAME =		yabitrot-${V}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		sysutils
 

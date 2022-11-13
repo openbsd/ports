@@ -3,6 +3,7 @@ COMMENT =		SPDX license list database
 MODPY_EGG_VERSION =	2.5.1
 DISTNAME =		spdx-${MODPY_EGG_VERSION}
 PKGNAME =		py-spdx-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		textproc
 

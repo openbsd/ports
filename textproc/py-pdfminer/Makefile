@@ -1,7 +1,7 @@
 COMMENT =	PDF parser and analyzer
 
 MODPY_EGG_VERSION =	20211012
-REVISION =		0
+REVISION =		1
 DISTNAME =		pdfminer.six-${MODPY_EGG_VERSION}
 PKGNAME =		py-pdfminer-${MODPY_EGG_VERSION}
 

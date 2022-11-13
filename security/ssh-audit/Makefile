@@ -3,7 +3,7 @@ COMMENT =		ssh configuration security auditing tool
 MODPY_EGG_VERSION =	2.5.0
 
 DISTNAME =		ssh-audit-${MODPY_EGG_VERSION}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		security
 

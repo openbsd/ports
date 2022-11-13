@@ -3,7 +3,7 @@ COMMENT=	inline and side-by-side colored and incremental diff
 # was renamed cdiff->ydiff
 MODPY_EGG_VERSION=	1.2
 DISTNAME=	ydiff-${MODPY_EGG_VERSION}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	textproc
 

@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	7.0.3
 
 DISTNAME =		pyvmomi-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		sysutils
 

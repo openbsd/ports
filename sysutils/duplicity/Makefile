@@ -1,7 +1,7 @@
 COMMENT =		encrypted backup using rsync algorithm
 
 MODPY_EGG_VERSION =	0.8.21
-REVISION =		0
+REVISION =		1
 DISTNAME =		duplicity-${MODPY_EGG_VERSION}
 
 CATEGORIES =		sysutils

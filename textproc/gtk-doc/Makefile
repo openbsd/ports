@@ -5,7 +5,7 @@ COMMENT=		GTK C code documentation system
 
 GNOME_VERSION=		1.33.2
 GNOME_PROJECT=		gtk-doc
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		textproc devel
 

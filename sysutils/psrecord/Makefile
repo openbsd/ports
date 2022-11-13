@@ -3,7 +3,7 @@ COMMENT =	record the CPU and memory activity of a process
 MODPY_EGG_VERSION =	1.2
 
 DISTNAME =	psrecord-${MODPY_EGG_VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	sysutils
 

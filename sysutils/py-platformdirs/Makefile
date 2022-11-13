@@ -3,6 +3,7 @@ COMMENT =		determine appropriate platform-specific directories
 MODPY_EGG_VERSION =	2.5.2
 DISTNAME =		platformdirs-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		sysutils
 

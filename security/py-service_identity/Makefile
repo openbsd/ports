@@ -2,6 +2,7 @@ COMMENT =		service identity verification for pyOpenSSL/py-cryptography
 
 MODPY_EGG_VERSION =	21.1.0
 PKGNAME =		py-${DISTNAME:S/-/_/}
+REVISION =		0
 
 # also on pypi, but no tests present
 GH_ACCOUNT =		pyca

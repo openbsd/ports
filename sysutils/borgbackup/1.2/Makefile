@@ -1,5 +1,5 @@
 MODPY_EGG_VERSION =	1.2.2
-REVISION =		0
+REVISION =		1
 
 BUILD_DEPENDS =		devel/py-pkgconfig${MODPY_FLAVOR} \
 			lang/cython${MODPY_FLAVOR}

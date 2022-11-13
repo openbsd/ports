@@ -1,7 +1,7 @@
 COMMENT =	parser for the Open Financial Exchange file format
 
 MODPY_EGG_VERSION = 0.21
-REVISION =	0
+REVISION =	1
 DISTNAME =	ofxparse-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 

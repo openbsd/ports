@@ -4,6 +4,7 @@ MODPY_EGG_VERSION =	0.9.0
 DISTNAME =		jellyfish-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		textproc
+REVISION =		0
 
 HOMEPAGE =		https://jamesturk.github.io/jellyfish/
 

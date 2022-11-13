@@ -3,7 +3,7 @@ COMMENT =		python helper for Semantic Versioning
 MODPY_EGG_VERSION =	2.13.0
 DISTNAME =		semver-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		textproc
 

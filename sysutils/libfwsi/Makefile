@@ -3,7 +3,7 @@ COMMENT =	library to access the Windows Shell Item format
 VERSION =	20191221
 DISTNAME =	libfwsi-experimental-${VERSION}
 PKGNAME =	${DISTNAME:S/-experimental//}
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS +=  fwsi                       0.0 # 1.0
 

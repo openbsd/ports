@@ -3,7 +3,7 @@ COMMENT =		implementation of CSS4 Selectors
 MODPY_EGG_VERSION =	0.7.0
 DISTNAME =		cssselect2-${MODPY_EGG_VERSION}
 PKGNAME =		py-cssselect2-${MODPY_EGG_VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =		textproc
 

@@ -3,6 +3,7 @@ COMMENT =		pure-python hyphenation library
 MODPY_EGG_VERSION =	0.13.0
 DISTNAME =		pyphen-${MODPY_EGG_VERSION}
 PKGNAME =		py-pyphen-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		textproc
 

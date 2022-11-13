@@ -3,6 +3,7 @@ COMMENT =		simple library for color and formatting in terminal
 MODPY_EGG_VERSION =	1.4.3
 DISTNAME =		colored-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		textproc
 

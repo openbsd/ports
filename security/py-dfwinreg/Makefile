@@ -3,7 +3,7 @@ COMMENT =	Digital Forensics Windows Registry (dfWinReg)
 MODPY_EGG_VERSION = 20200415
 DISTNAME =	dfwinreg-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	security
 

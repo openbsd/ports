@@ -2,7 +2,7 @@ COMMENT=	library and CLI tool (ykman) for configuring a YubiKey
 
 # v5 requires newer click, and changes API
 MODPY_EGG_VERSION=	4.0.9
-REVISION=	0
+REVISION=	1
 
 DISTNAME=	yubikey-manager-${MODPY_EGG_VERSION}
 YK_PROJECT=	yubikey-manager

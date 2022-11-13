@@ -3,7 +3,7 @@ COMMENT =		python code formatter
 MODPY_EGG_VERSION =	19.3b0
 DISTNAME =		black-${MODPY_EGG_VERSION}
 PKGNAME =		py-black-${MODPY_EGG_VERSION:S/b/beta/}
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		textproc devel
 

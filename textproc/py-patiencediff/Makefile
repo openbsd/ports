@@ -3,6 +3,7 @@ COMMENT =		Python implementation of the patiencediff algorithm
 MODPY_EGG_VERSION =	0.2.6
 DISTNAME =		patiencediff-${MODPY_EGG_VERSION}
 PKGNAME =		py-patiencediff-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		textproc
 

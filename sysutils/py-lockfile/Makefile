@@ -3,7 +3,7 @@ COMMENT=		platform-independent file locking for Python
 MODPY_EGG_VERSION=	0.12.2
 DISTNAME=		lockfile-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		6
+REVISION=		7
 
 CATEGORIES=		sysutils
 

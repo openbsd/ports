@@ -3,6 +3,7 @@ COMMENT =		lib/cli for JSON/YAML schema validation
 MODPY_EGG_VERSION =	1.8.0
 DISTNAME =		pykwalify-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		textproc
 

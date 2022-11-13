@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	1.4.1
 DISTNAME =		pandocfilters-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		textproc
-REVISION =		4
+REVISION =		5
 
 HOMEPAGE =		https://github.com/jgm/pandocfilters
 

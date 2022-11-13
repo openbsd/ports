@@ -2,7 +2,7 @@ COMMENT =	web fuzzer
 
 MODPY_EGG_VERSION =	3.1.0
 DISTNAME =	wfuzz-${MODPY_EGG_VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	security www
 

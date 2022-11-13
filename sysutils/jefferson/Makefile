@@ -5,7 +5,7 @@ GH_COMMIT =		d1aff710928f05e889b0ae23d97d1b9640eecbd0
 GH_PROJECT =		jefferson
 GH_ACCOUNT =		wittrup
 DISTNAME =		jefferson-${MODPY_EGG_VERSION}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		sysutils
 

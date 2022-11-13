@@ -3,6 +3,7 @@ COMMENT =		SPDX license list query tool
 MODPY_EGG_VERSION =	0.3.3
 DISTNAME =		spdx-lookup-${MODPY_EGG_VERSION}
 PKGNAME =		py-spdx-lookup-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		textproc
 

@@ -2,7 +2,7 @@ COMMENT=		documentation generator for GObject-based libraries
 
 GNOME_PROJECT=		gi-docgen
 GNOME_VERSION=		2022.2
-REVISION=		0
+REVISION=		1
 
 # override gnome MODULE
 MASTER_SITES ?=         ${MASTER_SITE_GNOME:=sources/${GNOME_PROJECT}/${GNOME_VERSION:C/^([0-9]+)\..*/\1/}/}

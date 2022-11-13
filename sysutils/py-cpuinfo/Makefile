@@ -3,6 +3,7 @@ COMMENT =	get CPU info with pure Python
 MODPY_EGG_VERSION =	8.0.0
 
 DISTNAME =	py-cpuinfo-${MODPY_EGG_VERSION}
+REVISION =	0
 
 CATEGORIES =	sysutils
 

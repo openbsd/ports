@@ -3,7 +3,7 @@ PKG_ARCH=		*
 COMMENT=		translate XML documents with PO files
 
 DISTNAME=		itstool-2.0.7
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		textproc
 

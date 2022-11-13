@@ -4,6 +4,7 @@ MODPY_EGG_VERSION =	2.12.0
 DISTNAME =		paramiko-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		security
+REVISION =		0
 
 HOMEPAGE =		https://www.paramiko.org/
 

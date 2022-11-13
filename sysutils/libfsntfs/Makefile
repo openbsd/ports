@@ -3,7 +3,7 @@ COMMENT =	library and tools to access NTFS
 VERSION = 	20200805
 DISTNAME =	libfsntfs-experimental-${VERSION}
 PKGNAME =	${DISTNAME:S/-experimental//}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  fsntfs                       0.1 # 1.0
 

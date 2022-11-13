@@ -1,7 +1,7 @@
 COMMENT =		fast elliptic curve digital signatures
 
 MODPY_EGG_VERSION =	2.2.3
-REVISION =		0
+REVISION =		1
 
 DISTNAME =		fastecdsa-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
