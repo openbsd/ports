@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1450 2022/11/13 19:00:15 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.1451 2022/11/13 21:24:52 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1737,6 +1737,7 @@ setup_obsolete_reason(
 	3 => 'xalan-c',
 	5 => 'xalan-j',
 	5 => 'opencdk',
+	5 => 'klaxon',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually

@@ -92,7 +92,6 @@
      SUBDIR += keybase
      SUBDIR += keychain
      SUBDIR += keyringer
-     SUBDIR += klaxon
      SUBDIR += knockpy
      SUBDIR += kpcli
      SUBDIR += lastpass-cli
