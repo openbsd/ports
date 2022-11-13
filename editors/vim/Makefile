@@ -6,6 +6,7 @@ V=		9.0.0192
 GH_ACCOUNT=	vim
 GH_PROJECT=	vim
 GH_TAGNAME=	v$V
+REVISION-main=	0
 
 MASTER_SITES0=	https://github.com/vim/colorschemes/archive/
 DISTFILES=	${GH_DISTFILE} \

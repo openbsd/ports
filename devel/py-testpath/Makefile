@@ -3,6 +3,7 @@ COMMENT =		test utilities working with files and commands
 MODPY_EGG_VERSION =	0.6.0
 DISTNAME =		testpath-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

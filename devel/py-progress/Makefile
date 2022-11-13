@@ -4,6 +4,7 @@ MODPY_EGG_VERSION =	1.6
 DISTNAME =		progress-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
+REVISION =		0
 
 HOMEPAGE =		https://github.com/verigak/progress/
 

@@ -3,7 +3,7 @@ COMMENT =	access to parallel port from Python
 DISTNAME =	pyparallel-${V}
 PKGNAME =	py-parallel-${V}
 CATEGORIES =	devel
-REVISION =	4
+REVISION =	5
 
 HOMEPAGE =	https://github.com/pyserial/pyparallel
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>

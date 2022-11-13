@@ -3,7 +3,7 @@ COMMENT =		converting Jupyter notebooks
 MODPY_EGG_VERSION =	5.6.1
 DISTNAME =		nbconvert-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 

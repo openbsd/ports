@@ -4,7 +4,7 @@ DISTNAME =		python-magic-${MODPY_EGG_VERSION}
 PKGNAME =		py-magic-${MODPY_EGG_VERSION}
 EPOCH =			0
 CATEGORIES =		devel
-REVISION =		4
+REVISION =		5
 
 MAINTAINER =		Brian Callahan <bcallah@openbsd.org>
 

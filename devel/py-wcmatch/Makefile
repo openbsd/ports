@@ -3,7 +3,7 @@ COMMENT =		file matching and globbing library
 MODPY_EGG_VERSION =	8.1.1
 DISTNAME =		wcmatch-${MODPY_EGG_VERSION}
 PKGNAME =		py-wcmatch-${MODPY_EGG_VERSION}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel textproc
 

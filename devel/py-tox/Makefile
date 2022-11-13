@@ -4,6 +4,7 @@ MODPY_EGG_VERSION =	3.25.1
 DISTNAME =	tox-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	devel
+REVISION =	0
 
 HOMEPAGE =	https://tox.readthedocs.io/en/latest/
 

@@ -3,7 +3,7 @@ COMMENT=		setuptools plugin for unit tests with trial
 MODPY_EGG_VERSION=	0.6.0
 DISTNAME=		setuptools_trial-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		5
+REVISION=		6
 
 CATEGORIES=		devel
 

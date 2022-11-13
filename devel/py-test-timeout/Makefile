@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	1.4.2
 
 DISTNAME =		pytest-timeout-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 

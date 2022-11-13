@@ -4,6 +4,7 @@ MODPY_EGG_VERSION =	3.8.2
 DISTNAME =		pytest-mock-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
 CATEGORIES =		devel
+REVISION =		0
 
 HOMEPAGE =		https://github.com/pytest-dev/pytest-mock/
 

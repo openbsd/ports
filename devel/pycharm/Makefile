@@ -4,6 +4,7 @@ V=			2022.2.3
 DISTNAME=		pycharm-community-${V}
 PKGNAME=		pycharm-${V}
 CATEGORIES=		devel
+REVISION=		0
 
 HOMEPAGE=		https://www.jetbrains.com/pycharm/
 DISTFILES=		${DISTNAME}-no-jbr${EXTRACT_SUFX}

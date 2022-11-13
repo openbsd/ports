@@ -1,6 +1,7 @@
 COMMENT =	easy Python API to file locking
 
 MODPY_EGG_VERSION =	2.6.0
+REVISION =	0
 
 DISTNAME =	portalocker-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}

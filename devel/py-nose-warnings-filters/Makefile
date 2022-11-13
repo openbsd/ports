@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	0.1.5
 DISTNAME =		nose_warnings_filters-${MODPY_EGG_VERSION}
 PKGNAME =		py-nose-warnings-filters-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
-REVISION =		6
+REVISION =		7
 
 HOMEPAGE =		https://github.com/Carreau/nose_warnings_filters
 

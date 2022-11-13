@@ -3,6 +3,7 @@ COMMENT =		python parser
 MODPY_EGG_VERSION =	0.8.3
 DISTNAME =		parso-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

@@ -3,7 +3,7 @@ COMMENT =		IPython vestigial utilities
 MODPY_EGG_VERSION =	0.2.0
 DISTNAME =		ipython_genutils-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		devel
 

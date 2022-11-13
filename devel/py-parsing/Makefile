@@ -1,7 +1,7 @@
 COMMENT =		Python parsing module
 
 MODPY_EGG_VERSION =	3.0.9
-REVISION =		0
+REVISION =		1
 DISTNAME =		pyparsing-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
 CATEGORIES =		devel

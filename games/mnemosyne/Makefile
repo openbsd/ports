@@ -4,7 +4,7 @@ MODPY_EGG_VERSION = 2.8
 DISTNAME=	Mnemosyne-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=	games education
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://www.mnemosyne-proj.org/
 

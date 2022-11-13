@@ -4,7 +4,7 @@ MODPY_EGG_VERSION=	1.1
 DISTNAME=		html5lib-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		devel www textproc
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		https://github.com/html5lib/html5lib-python/
 

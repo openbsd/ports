@@ -5,6 +5,7 @@ MODPY_EGG_VERSION=	4.5.0
 DISTNAME=	zope.event-${MODPY_EGG_VERSION}
 PKGNAME=	py-zopeevent-${MODPY_EGG_VERSION}
 CATEGORIES=	devel
+REVISION=	0
 
 # Zope Public License
 PERMIT_PACKAGE=	Yes

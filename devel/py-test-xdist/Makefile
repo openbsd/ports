@@ -4,6 +4,7 @@ DISTNAME =		pytest-xdist-${MODPY_EGG_VERSION}
 PKGNAME =		py-test-xdist-${MODPY_EGG_VERSION}
 MODPY_EGG_VERSION =	2.5.0
 MODPY_PI =		Yes
+REVISION =		0
 
 CATEGORIES =	devel
 

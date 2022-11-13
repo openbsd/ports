@@ -1,7 +1,7 @@
 COMMENT =	wrappers to build Python packages using PEP 517 hooks
 
 MODPY_EGG_VERSION =	0.13.0
-REVISION =	0
+REVISION =	1
 
 DISTNAME =	pep517-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}

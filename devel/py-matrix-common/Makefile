@@ -4,6 +4,7 @@ MODPY_EGG_VERSION =	1.3.0
 
 DISTNAME =		matrix_common-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

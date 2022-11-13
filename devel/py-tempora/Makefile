@@ -3,6 +3,7 @@ COMMENT =		objects and routines pertaining to date and time
 MODPY_EGG_VERSION =	5.0.2
 DISTNAME =		tempora-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

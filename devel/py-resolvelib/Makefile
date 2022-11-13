@@ -4,6 +4,7 @@ MODPY_EGG_VERSION =	0.8.1
 DISTNAME =		resolvelib-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
+REVISION =		0
 
 HOMEPAGE =		https://github.com/sarugaku/resolvelib
 

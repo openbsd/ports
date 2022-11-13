@@ -3,6 +3,7 @@ COMMENT =	simple, safe single expression evaluator library
 MODPY_EGG_VERSION = 0.9.12
 DISTNAME =	simpleeval-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	devel
 

@@ -3,6 +3,7 @@ COMMENT =		threading and multiprocessing eye-candy
 MODPY_EGG_VERSION =	4.6.3
 DISTNAME =		Pebble-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
+REVISION =		0
 
 CATEGORIES =		devel
 

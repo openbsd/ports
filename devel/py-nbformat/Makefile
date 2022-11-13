@@ -3,7 +3,7 @@ COMMENT =		Jupyter notebook format
 MODPY_EGG_VERSION =	5.0.7
 DISTNAME =		nbformat-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 

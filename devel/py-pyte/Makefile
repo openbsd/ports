@@ -3,6 +3,7 @@ COMMENT =	simple VTXXX-compatible terminal emulator
 MODPY_EGG_VERSION = 0.8.1
 DISTNAME =	pyte-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	devel
 

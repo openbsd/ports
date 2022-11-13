@@ -3,7 +3,7 @@ COMMENT =	a generic plug-in system for python
 MODPY_EGG_VERSION =	0.5.4
 DISTNAME =	plugnplay-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	devel
 

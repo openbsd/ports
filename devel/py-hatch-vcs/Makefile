@@ -1,7 +1,7 @@
 COMMENT=	Hatch plugin for versioning with your preferred VCS
 
 MODPY_EGG_VERSION=	0.2.0
-REVISION=	1
+REVISION=	2
 
 DISTNAME=	hatch_vcs-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}

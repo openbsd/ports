@@ -3,7 +3,7 @@ COMMENT =	formatter for Python code
 MODPY_EGG_VERSION =	0.28.0
 DISTNAME =	yapf-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	devel
 

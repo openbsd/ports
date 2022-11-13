@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	1.1.5
 
 DISTNAME =		pytest-relaxed-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		devel
 

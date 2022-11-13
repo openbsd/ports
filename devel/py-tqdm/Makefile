@@ -3,7 +3,7 @@ COMMENT =		progress bar for Python
 MODPY_EGG_VERSION =	4.52.0
 DISTNAME =		tqdm-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 

@@ -3,7 +3,7 @@ COMMENT =		lint-like code checker for Python code
 # XXX check/update py-astroid pkgspec in RUN_DEPENDS when updating
 MODPY_EGG_VERSION =	2.7.4
 DISTNAME=		pylint-${MODPY_EGG_VERSION}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		devel
 

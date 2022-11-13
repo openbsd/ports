@@ -5,6 +5,7 @@ MODPY_EGG_VERSION=	0.2.5
 DISTNAME=	timelib-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 EXTRACT_SUFX=	.zip
+REVISION=	0
 
 HOMEPAGE=	https://github.com/pediapress/timelib/
 

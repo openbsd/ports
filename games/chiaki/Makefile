@@ -3,7 +3,7 @@ COMMENT =	open source PS4 and PS5 remote play client
 V =		v2.1.1
 DISTNAME =	chiaki-${V}-src
 PKGNAME =	${DISTNAME:S/-v/-/g:S/-src//g}
-REVISION =	0
+REVISION =	1
 
 WRKSRC =	${WRKDIR}/chiaki
 

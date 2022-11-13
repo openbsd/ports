@@ -3,7 +3,7 @@ COMMENT =		basic inter-process locks
 MODPY_EGG_VERSION =	2.0
 DISTNAME =		zc.lockfile-${MODPY_EGG_VERSION}
 PKGNAME =		py-zc-lockfile${DISTNAME}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		devel
 

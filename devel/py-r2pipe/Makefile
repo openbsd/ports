@@ -3,7 +3,7 @@ COMMENT =	pipe interface for radare2
 MODPY_EGG_VERSION =	1.6.2
 DISTNAME =	r2pipe-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 

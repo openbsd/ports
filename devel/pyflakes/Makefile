@@ -2,7 +2,7 @@ COMMENT =		passive checker of Python programs
 
 MODPY_EGG_VERSION =	2.3.1
 DISTNAME =		pyflakes-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 

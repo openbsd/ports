@@ -4,7 +4,7 @@ DISTNAME =		gnubg-release-$V-sources
 PKGNAME =		gnubg-$V
 CATEGORIES =		games x11
 HOMEPAGE =		http://gnubg.org/
-REVISION =		11
+REVISION =		12
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

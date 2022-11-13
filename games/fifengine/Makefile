@@ -7,7 +7,7 @@ COMMENT =	2D game engine
 GH_ACCOUNT =	fifengine
 GH_PROJECT =	fifengine
 GH_TAGNAME =	0.4.2
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	games
 

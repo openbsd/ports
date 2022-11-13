@@ -5,6 +5,7 @@ MODPY_EGG_VERSION =	6.47.1
 DISTNAME =		hypothesis-${MODPY_EGG_VERSION}
 PKGNAME =		py-hypothesis-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
+REVISION =		0
 
 HOMEPAGE =		https://hypothesis.works/
 

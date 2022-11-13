@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	1.1.0
 DISTNAME =		pytest-expect-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
 CATEGORIES =		devel
-REVISION =		6
+REVISION =		7
 
 HOMEPAGE =		https://github.com/gsnedders/pytest-expect
 
