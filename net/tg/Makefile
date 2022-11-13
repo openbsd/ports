@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+MODPY_PYBUILD =		poetry-core
 NO_TEST =		Yes
 
 RUN_DEPENDS =		net/py-telegram${MODPY_FLAVOR}
