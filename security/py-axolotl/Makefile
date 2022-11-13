@@ -3,7 +3,7 @@ COMMENT =		Python port of libaxolotl
 MODPY_EGG_VERSION =	0.2.3
 DISTNAME =		python-axolotl-${MODPY_EGG_VERSION}
 PKGNAME =		py-axolotl-${MODPY_EGG_VERSION}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		security
 

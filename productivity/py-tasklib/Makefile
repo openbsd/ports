@@ -4,6 +4,7 @@ MODPY_EGG_VERSION =	2.4.3
 
 DISTNAME =		tasklib-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		productivity
 

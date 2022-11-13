@@ -1,5 +1,6 @@
 MODPY_EGG_VERSION =	5.0.4
 TRYTON_MODULE =		analytic_invoice
+REVISION =		0
 
 TRYTON_DEPENDS +=	account_invoice \
 			analytic_account

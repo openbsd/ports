@@ -3,6 +3,7 @@ COMMENT =	ncurses Telegram client
 MODPY_EGG_VERSION =	0.19.0
 
 DISTNAME =	tg-${MODPY_EGG_VERSION}
+REVISION =	0
 
 CATEGORIES =	net
 

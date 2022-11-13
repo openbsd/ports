@@ -3,7 +3,7 @@ COMMENT =		ncurses-based Tox client
 GH_ACCOUNT =		Jfreegman
 GH_PROJECT =		toxic
 GH_TAGNAME =		v0.11.3
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		net
 

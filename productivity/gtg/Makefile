@@ -5,7 +5,7 @@ GH_ACCOUNT =		getting-things-gnome
 GH_COMMIT =		54b2793be236da41549360c5aeb0da5e33a7ff60
 MODPY_EGG_VERSION =	0.4.0
 DISTNAME =		gtg-${MODPY_EGG_VERSION}
-REVISION =		5
+REVISION =		6
 
 CATEGORIES=		productivity
 

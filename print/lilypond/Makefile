@@ -8,7 +8,7 @@ PKGNAME-main=		lilypond-${VERSION}
 PKGNAME-docs=		lilypond-docs-${VERSION}
 CATEGORIES=		print
 
-REVISION-main=		0
+REVISION-main=		1
 
 URW_V=			20200910
 DISTFILES=		${DISTNAME}.tar.gz ${DISTNAME-docs}.tar.bz2:0 urw-base35-fonts-${URW_V}.tar.gz:1

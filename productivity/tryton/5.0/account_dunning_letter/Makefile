@@ -1,5 +1,6 @@
 MODPY_EGG_VERSION =	5.0.5
 TRYTON_MODULE =		account_dunning_letter
+REVISION =		0
 
 TRYTON_DEPENDS += 	account \
 			account_dunning \

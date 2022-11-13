@@ -1,5 +1,6 @@
 MODPY_EGG_VERSION =	5.0.24
 TRYTON_MODULE =		account
+REVISION =		0
 
 TRYTON_DEPENDS +=	party \
 			currency \

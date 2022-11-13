@@ -4,7 +4,7 @@ CATEGORIES =	productivity
 
 MODPY_EGG_VERSION = 1.2.0
 DISTNAME =	yokadi-${MODPY_EGG_VERSION}
-REVISION =	2
+REVISION =	3
 
 HOMEPAGE =	https://yokadi.github.io/
 MASTER_SITES =	${HOMEPAGE}/download/

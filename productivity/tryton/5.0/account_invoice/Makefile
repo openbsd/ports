@@ -1,5 +1,6 @@
 MODPY_EGG_VERSION =	5.0.16
 TRYTON_MODULE =		account_invoice
+REVISION =		0
 
 TRYTON_DEPENDS +=	account \
 			account_product \

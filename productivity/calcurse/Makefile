@@ -2,6 +2,7 @@ COMMENT=	text-based calendar and scheduling application
 
 DISTNAME=	calcurse-4.8.0
 EPOCH=		0
+REVISION=	0
 
 CATEGORIES=	productivity
 

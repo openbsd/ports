@@ -1,5 +1,6 @@
 MODPY_EGG_VERSION =	5.0.6
 TRYTON_MODULE =		account_stock_continental
+REVISION =		0
 
 TRYTON_DEPENDS +=	account \
 			account_product \

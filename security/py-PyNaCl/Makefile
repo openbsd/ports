@@ -3,6 +3,7 @@ COMMENT =		Python binding to the NaCl library
 MODPY_EGG_VERSION =	1.5.0
 DISTNAME =		PyNaCl-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		security
 

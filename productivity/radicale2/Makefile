@@ -4,7 +4,7 @@ MODPY_EGG_VERSION = 2.1.12
 DISTNAME =	Radicale-${MODPY_EGG_VERSION}
 PKGNAME =	${DISTNAME:L}
 CATEGORIES =	productivity net
-REVISION =	2
+REVISION =	3
 
 HOMEPAGE =	https://radicale.org/
 

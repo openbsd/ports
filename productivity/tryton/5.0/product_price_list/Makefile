@@ -1,5 +1,6 @@
 MODPY_EGG_VERSION =	5.0.3
 TRYTON_MODULE =		product_price_list
+REVISION =		0
 
 TRYTON_DEPENDS +=	product \
 			company

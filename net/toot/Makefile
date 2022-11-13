@@ -2,7 +2,7 @@ COMMENT =		interact with Mastodon social networks from the command line
 
 MODPY_EGG_VERSION =	0.28.0
 DISTNAME =		toot-${MODPY_EGG_VERSION}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		net
 

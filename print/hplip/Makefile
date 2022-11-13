@@ -11,6 +11,9 @@ V=			3.22.10
 DISTNAME=		hplip-${V}
 SUBST_VARS=		V
 
+REVISION-hpaio=		0
+REVISION-main=		0
+
 # https://bugs.launchpad.net/ubuntu/+source/hplip/+bug/1745383
 MASTER_SITES0=		https://src.fedoraproject.org/rpms/hplip/raw/rawhide/f/
 PATCHFILES=		0026-Call-QMessageBox-constructors-of-PyQT5-with-the-corr.patch:0

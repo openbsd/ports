@@ -5,7 +5,7 @@ COMMENT =		ROP chain builder based off of angr
 
 MODPY_EGG_VERSION =	9.0.6642
 DISTNAME =		angrop-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		security
 

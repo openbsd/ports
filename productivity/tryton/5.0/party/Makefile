@@ -1,5 +1,6 @@
 MODPY_EGG_VERSION =	5.0.5
 TRYTON_MODULE =		party
+REVISION =		0
 
 TRYTON_DEPENDS +=	country
 

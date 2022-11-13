@@ -1,5 +1,6 @@
 MODPY_EGG_VERSION =	5.0.4
 TRYTON_MODULE =		edocument_uncefact
+REVISION =		0
 
 TRYTON_DEPENDS +=	edocument_unece
 

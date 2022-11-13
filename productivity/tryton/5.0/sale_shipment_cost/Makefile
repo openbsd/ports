@@ -1,5 +1,6 @@
 MODPY_EGG_VERSION =	5.0.6
 TRYTON_MODULE =		sale_shipment_cost
+REVISION =		0
 
 TRYTON_DEPENDS +=	account_invoice \
 			carrier \

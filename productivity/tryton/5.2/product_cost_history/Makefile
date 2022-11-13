@@ -1,6 +1,6 @@
 MODPY_EGG_VERSION =	5.2.1
 TRYTON_MODULE =		product_cost_history
-REVISION =		1
+REVISION =		2
 
 TRYTON_DEPENDS +=	product
 

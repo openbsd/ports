@@ -2,7 +2,7 @@ COMMENT =	extensible network protocol fuzzer
 
 MODPY_EGG_VERSION =	0.2.1
 DISTNAME =	boofuzz-${MODPY_EGG_VERSION}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	security
 

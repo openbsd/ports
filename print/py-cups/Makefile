@@ -3,7 +3,7 @@ COMMENT=		CUPS bindings for Python
 MODPY_EGG_VERSION=	2.0.1
 DISTNAME=		pycups-${MODPY_EGG_VERSION}
 PKGNAME=		${DISTNAME:S/^py/py-/}
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		print
 

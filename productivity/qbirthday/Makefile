@@ -3,6 +3,7 @@ COMMENT =		birthday reminder with tray notification
 GH_ACCOUNT = 		lafrech
 GH_PROJECT =		qbirthday
 GH_TAGNAME = 		v0.7.0b3
+REVISION =              0
 
 CATEGORIES =		productivity x11
 

@@ -1,6 +1,6 @@
 MODPY_EGG_VERSION =	5.2.4
 TRYTON_MODULE =		production_work
-REVISION =		1
+REVISION =		2
 
 TRYTON_DEPENDS +=	company \
 			production \

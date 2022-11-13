@@ -1,6 +1,6 @@
 MODPY_EGG_VERSION =	5.2.4
 TRYTON_MODULE =		account_payment_clearing
-REVISION =		1
+REVISION =		2
 
 TRYTON_DEPENDS +=	account_payment
 

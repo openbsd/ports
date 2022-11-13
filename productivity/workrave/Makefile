@@ -2,7 +2,7 @@ COMMENT=		RSI prevention tool
 
 V=			1.10.44
 DISTNAME=		workrave-${V}
-REVISION=		3
+REVISION=		4
 
 SHARED_LIBS +=  workrave-private-1.0 1.0      # unknown
 

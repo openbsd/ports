@@ -1,5 +1,6 @@
 MODPY_EGG_VERSION =	5.0.4
 TRYTON_MODULE =		account_stock_anglo_saxon
+REVISION =		0
 
 TRYTON_DEPENDS +=	account \
 			account_invoice \

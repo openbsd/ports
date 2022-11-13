@@ -3,6 +3,7 @@ COMMENT =	add an OCR text layer to scanned PDF files
 MODPY_EGG_VERSION =  13.7.0
 # intentionally no py- prefix
 DISTNAME =	ocrmypdf-${MODPY_EGG_VERSION}
+REVISION =	0
 
 CATEGORIES =	print
 

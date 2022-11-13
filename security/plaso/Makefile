@@ -1,7 +1,7 @@
 COMMENT =		engine and tools to automate creation of super timeline
 
 MODPY_EGG_VERSION =	20200717
-REVISION =		1
+REVISION =		2
 DISTNAME =		plaso-${MODPY_EGG_VERSION}
 
 CATEGORIES =		security
