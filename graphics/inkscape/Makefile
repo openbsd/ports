@@ -66,7 +66,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		print/transfig \
 		textproc/py-cssselect${MODPY_FLAVOR} \
 		textproc/py-lxml${MODPY_FLAVOR} \
-		www/py-request${MODPY_FLAVOR} \
+		www/py-requests${MODPY_FLAVOR} \
 		x11/gtk+3,-guic
 
 WRKDIST =	${WRKDIR}/inkscape-${VERSION}_2022-07-14_9c6d41e410
