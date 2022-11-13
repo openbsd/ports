@@ -32,7 +32,6 @@ LIB_DEPENDS-gui +=	x11/wxWidgets>=3.0.4
 RUN_DEPENDS-gui +=	${PKGPATH},-main
 
 USE_GMAKE =		Yes
-CONFIGURE_STYLE =	none
 MAKE_ENV =		CC="${CC}" CXX="${CXX}"
 MAKE_FILE =		makefile
 MAKE_FLAGS =		PLATFORM=OPENBSD

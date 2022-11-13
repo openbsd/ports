@@ -20,8 +20,6 @@ WANTLIB =		c kvm>=16.2
 MAKE_ENV =		BINDIR=${LOCALBASE}/sbin \
 			MANDIR=${LOCALBASE}/man/man
 
-CONFIGURE_STYLE =	none
-
 NO_TEST =		Yes
 
 .include <bsd.port.mk>

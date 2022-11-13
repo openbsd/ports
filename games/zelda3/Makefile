@@ -21,7 +21,6 @@ WANTLIB =		c m SDL2
 LIB_DEPENDS =		devel/sdl2
 
 USE_GMAKE =		Yes
-CONFIGURE_STYLE =	none
 ALL_TARGET =		zelda3
 
 pre-build:

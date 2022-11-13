@@ -14,7 +14,6 @@ HOMEPAGE =	https://snesrev.github.io/sprites-gfx/snes/zelda3/link/
 PERMIT_PACKAGE =	no license
 PERMIT_DISTFILES =	${PERMIT_PACKAGE}
 
-CONFIGURE_STYLE =	none
 NO_BUILD =		Yes
 
 do-install:

@@ -12,8 +12,6 @@ USE_GMAKE=		No
 
 BUILD_DEPENDS=		misc/osinfo/osinfo-db-tools
 
-CONFIGURE_STYLE=	none # !meson
-
 do-install:
 	osinfo-db-import --root ${WRKINST} --dir ${TRUEPREFIX}/share/osinfo \
 		${FULLDISTDIR}/${DISTFILES}

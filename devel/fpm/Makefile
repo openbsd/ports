@@ -39,8 +39,6 @@ TEST_DEPENDS +=	devel/git,-main
 
 SEPARATE_BUILD =	Yes
 
-CONFIGURE_STYLE =	none
-
 MAKE_ENV +=	FPM_FC="${MODFORTRAN_COMPILER}" \
 		FPM_FFLAGS="${FFLAGS}" \
 		FPM_CC="${CC}" \

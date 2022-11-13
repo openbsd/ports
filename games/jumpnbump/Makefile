@@ -22,8 +22,6 @@ LIB_DEPENDS =	archivers/bzip2 \
 
 RUN_DEPENDS =	devel/desktop-file-utils
 
-CONFIGURE_STYLE =	none
-
 USE_GMAKE =	Yes
 
 FAKE_FLAGS =	DESTDIR=
