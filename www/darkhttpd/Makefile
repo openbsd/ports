@@ -3,7 +3,7 @@ COMMENT=	simple and small webserver intended for ad-hoc usage
 CATEGORIES=	www
 GH_ACCOUNT=	emikulic
 GH_PROJECT=	darkhttpd
-GH_TAGNAME=	v1.13
+GH_TAGNAME=	v1.14
 
 HOMEPAGE=	https://unix4lyfe.org/darkhttpd/
 
@@ -12,7 +12,9 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c
 
+MAKE_ENV=	CC="${CC}"
 NO_TEST=	Yes
+
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/darkhttpd ${PREFIX}/sbin/
