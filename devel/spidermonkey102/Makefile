@@ -53,6 +53,9 @@ BUILD_DEPENDS +=	devel/autoconf/${AUTOCONF_VERSION} \
 			devel/cbindgen \
 			lang/rust
 
+# picks up llvm-ar(1)
+BUILD_DEPENDS +=	devel/llvm
+
 SEPARATE_BUILD =	Yes
 WRKDIST =		${WRKDIR}/firefox-${V}
 WRKSRC =		${WRKDIST}/js/src
