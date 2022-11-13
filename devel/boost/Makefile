@@ -1,13 +1,15 @@
 NOT_FOR_ARCHS-md = alpha hppa sparc64
 
+DPB_PROPERTIES=	parallel
+
 COMMENT-main=	free peer-reviewed portable C++ source libraries
 COMMENT-md=	machine-dependent libraries for boost
-REVISION-main=	0
 
 VERSION=	1.80.0
 EPOCH =		0
 DISTNAME=	boost_${VERSION:S/./_/g}
 PKGNAME=	boost-${VERSION}
+REVISION-main=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://boostorg.jfrog.io/artifactory/main/release/${VERSION}/source/
 EXTRACT_SUFX=	.tar.bz2
@@ -120,8 +122,6 @@ CONFIGURE_STYLE= none
 
 CONFIGURE_ENV=	BJAM_CONFIG="${BJAM_CONFIG}" \
 		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
-
-DPB_PROPERTIES= parallel
 
 NO_TEST=	Yes
 
