@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1451 2022/11/13 21:24:52 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.1452 2022/11/13 22:04:53 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1738,6 +1738,7 @@ setup_obsolete_reason(
 	5 => 'xalan-j',
 	5 => 'opencdk',
 	5 => 'klaxon',
+	49 => 'sentinel',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
@@ -1799,6 +1800,7 @@ my $obsolete_message = {
 	46 => "moved to binary bootstraps",
 	47 => "DNS network daemon running as root and not using random source ports. use DNS64 support in unbound or isc-bind",
 	48 => "horrible ecosystem",
+	49 => "has no license, unmaintained since too long, crashes at runtime",
 };
 
 # ->is_base_system($handle, $state):

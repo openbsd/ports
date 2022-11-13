@@ -1,5 +1,0 @@
-The sentinel project is an implementation of effective promiscuous
-detection techniques.
-
-These include:
-   DNS Test - ICMP Etherping Test - ARP Test

@@ -357,7 +357,6 @@
      SUBDIR += scanlogd
      SUBDIR += scanssh
      SUBDIR += scrypt
-     SUBDIR += sentinel
      SUBDIR += shash
      SUBDIR += shash,static
      SUBDIR += slurpie
