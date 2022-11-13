@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1447 2022/11/09 17:08:52 robert Exp $
+# $OpenBSD: Quirks.pm,v 1.1448 2022/11/13 11:01:33 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1734,6 +1734,7 @@ setup_obsolete_reason(
 	3 => 'librest',
 	3 => 'seahorse-sharing',
 	48 => 'electron',
+	3 => 'xalan-c',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
