@@ -63,6 +63,8 @@ FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/speech-dispatcher
 BUILD_DEPENDS +=	print/texinfo
 CONFIGURE_ENV +=	MAKEINFO="${LOCALBASE}/bin/gmakeinfo"
 
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
+
 pre-configure:
 	sed -i -e 's,/usr/share,${LOCALBASE}/share,g;' \
 		-e 's,/usr/bin,${LOCALBASE}/bin,g' \

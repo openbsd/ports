@@ -20,7 +20,7 @@ COMPILER=		base-clang ports-gcc base-gcc
 LIB_DEPENDS=		audio/pcaudiolib
 
 USE_GMAKE=		Yes
-#NO_TEST=		Yes
+NO_TEST=		Yes
 
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.16
@@ -30,5 +30,7 @@ CONFIGURE_STYLE=	autoreconf
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include"  \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 .include <bsd.port.mk>

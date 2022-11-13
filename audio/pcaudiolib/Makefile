@@ -25,4 +25,6 @@ CONFIGURE_STYLE=	autoreconf
 
 CONFIGURE_ARGS=		--without-oss
 
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
+
 .include <bsd.port.mk>
