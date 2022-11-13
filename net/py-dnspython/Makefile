@@ -19,9 +19,8 @@ FLAVOR=			python3
 
 MODULES=		lang/python
 MODPY_PI=		Yes
-MODPY_SETUPTOOLS=	Yes
+MODPY_PYBUILD=		poetry-core
 MODPY_ADJ_FILES=	examples/*.py
-MODPY_PYTEST=		Yes
 
 TEST_DEPENDS=		security/py-ecdsa${MODPY_FLAVOR}
 

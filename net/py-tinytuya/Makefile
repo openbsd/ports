@@ -1,9 +1,13 @@
 COMMENT =		interface with Tuya WiFi smart devices
 
 MODPY_EGG_VERSION =	1.7.0
+GH_ACCOUNT =		jasonacox
+GH_PROJECT =		tinytuya
+GH_TAGNAME =		v${MODPY_EGG_VERSION}
+
 DISTNAME =		tinytuya-${MODPY_EGG_VERSION}
 PKGNAME =		py-tinytuya-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		net
 
@@ -14,12 +18,8 @@ MAINTAINER =		Martin Reindl <martin@catai.org>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-GH_ACCOUNT =		jasonacox
-GH_PROJECT =		tinytuya
-GH_TAGNAME =		v${MODPY_EGG_VERSION}
-
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 FLAVORS =		python3
 FLAVOR =		python3

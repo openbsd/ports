@@ -4,7 +4,7 @@ MODPY_EGG_VERSION=	7.45.1
 DISTNAME=	pycurl-${MODPY_EGG_VERSION}
 PKGNAME=	py-curl-${MODPY_EGG_VERSION}
 CATEGORIES=	net
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	http://pycurl.io/
 
@@ -17,7 +17,7 @@ WANTLIB += crypto curl nghttp2 pthread ssl z
 MODULES=	lang/python
 
 MODPY_PI=	Yes
-MODPY_SETUPTOOLS=	Yes
+MODPY_PYBUILD=	setuptools
 
 FLAVORS=	python3
 FLAVOR=		python3
@@ -26,7 +26,6 @@ LIB_DEPENDS=	net/curl
 
 SUBST_VARS+=	MODPY_PY_PREFIX
 
-MODPY_PYTEST=		Yes
 MODPY_PYTEST_ARGS=	tests
 
 post-install:

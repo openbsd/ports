@@ -2,7 +2,7 @@ COMMENT =		securely transfer data between computers
 
 MODPY_EGG_VERSION =	0.12.0
 DISTNAME =		magic-wormhole-${MODPY_EGG_VERSION}
-REVISION =		3
+REVISION =		4
 
 HOMEPAGE =		https://magic-wormhole.readthedocs.io
 
@@ -15,7 +15,7 @@ MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =		devel/py-attrs${MODPY_FLAVOR} \
 			devel/py-automat${MODPY_FLAVOR} \

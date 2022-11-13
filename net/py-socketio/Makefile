@@ -4,7 +4,7 @@ COMMENT=	client/server implementation of Socket.IO
 MODPY_EGG_VERSION= 4.6.1
 DISTNAME=	python-socketio-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:S/python-/py-/}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	net
 
@@ -14,7 +14,7 @@ HOMEPAGE=	https://python-socketio.readthedocs.io/en/latest/
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-MODPY_SETUPTOOLS= Yes
+MODPY_PYBUILD=	setuptools
 
 MODPY_PI=	Yes
 NO_TEST=	Yes

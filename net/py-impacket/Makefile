@@ -7,7 +7,7 @@ DISTNAME =		impacket-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 EPOCH =			0
 CATEGORIES =		net security
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://www.secureauth.com/labs/open-source-tools/impacket
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 MODPY_ADJ_FILES =	impacket/ese.py \
 			impacket/examples/logger.py \
 			impacket/examples/ntlmrelayx/clients/httprelayclient.py \

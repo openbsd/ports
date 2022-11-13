@@ -1,7 +1,7 @@
 COMMENT =		library for Junos automation
 
 MODPY_EGG_VERSION =	2.2.1
-REVISION =		4
+REVISION =		5
 DISTNAME =		junos-eznc-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -15,7 +15,7 @@ FLAVORS =		python3
 FLAVOR =		python3
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =		devel/py-serial${MODPY_FLAVOR} \
 			devel/py-six${MODPY_FLAVOR} \

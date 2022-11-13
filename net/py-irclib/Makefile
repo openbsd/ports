@@ -4,15 +4,15 @@ GH_ACCOUNT=	sixohsix
 GH_PROJECT=	python-irclib
 GH_COMMIT=	acd5aa66f431550bd142e90590b64ff6840e6648
 DISTNAME=	py-irclib-0.4.8.20110306
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	net
 
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
-MODULES=		lang/python
-MODPY_SETUPTOOLS=	Yes
+MODULES=	lang/python
+MODPY_PYBUILD=	setuptools
 
 FLAVORS=	python3
 FLAVOR=		python3

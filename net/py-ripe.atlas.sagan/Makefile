@@ -1,22 +1,21 @@
 COMMENT =	parsing library for RIPE Atlas measurement results
 
+MODPY_EGG_VERSION =	1.3.1
 GH_ACCOUNT =	RIPE-NCC
 GH_PROJECT =	ripe-atlas-sagan
 GH_TAGNAME =	v${MODPY_EGG_VERSION}
-
-MODPY_EGG_VERSION =	1.3.1
-PKGNAME =	py-ripe.atlas.sagan-${MODPY_EGG_VERSION}
 REVISION =	0
+
+PKGNAME =	py-ripe.atlas.sagan-${MODPY_EGG_VERSION}
 
 CATEGORIES =	net
 
 HOMEPAGE =	https://github.com/RIPE-NCC/ripe.atlas.sagan
 
 # GPLv3
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE =Yes
 
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =	setuptools
 MODPY_PYTEST_ARGS =	tests/*.py
 
 MODULES =	lang/python

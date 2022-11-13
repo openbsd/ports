@@ -3,7 +3,7 @@ COMMENT =	ncurses Telegram client
 MODPY_EGG_VERSION =	0.19.0
 
 DISTNAME =	tg-${MODPY_EGG_VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	net
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 NO_TEST =		Yes
 
 RUN_DEPENDS =		net/py-telegram${MODPY_FLAVOR}

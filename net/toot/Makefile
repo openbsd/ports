@@ -2,7 +2,7 @@ COMMENT =		interact with Mastodon social networks from the command line
 
 MODPY_EGG_VERSION =	0.28.0
 DISTNAME =		toot-${MODPY_EGG_VERSION}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		net
 
@@ -14,8 +14,7 @@ MASTER_SITES =		https://github.com/ihabunek/toot/releases/download/${MODPY_EGG_V
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =		devel/py-future${MODPY_FLAVOR}>=0.16 \
 			devel/py-wcwidth${MODPY_FLAVOR}>=0.1.7 \

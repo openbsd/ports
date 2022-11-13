@@ -3,7 +3,7 @@ COMMENT=		unified interface for interacting with cloud services
 MODPY_EGG_VERSION=	3.6.1
 DISTNAME=		apache-libcloud-${MODPY_EGG_VERSION}
 PKGNAME=		py-libcloud-${MODPY_EGG_VERSION}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		net
 
@@ -18,8 +18,7 @@ MASTER_SITES=		${MASTER_SITE_APACHE:=libcloud/}
 
 MODULES=		lang/python
 
-MODPY_SETUPTOOLS=	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD=		setuptools
 
 FLAVORS=		python3
 FLAVOR=			python3

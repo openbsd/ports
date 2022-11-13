@@ -3,7 +3,7 @@ COMMENT =		Python client for Arista eAPI
 MODPY_EGG_VERSION =	0.8.3
 DISTNAME =		pyeapi-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:S/py//}
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		net
 
@@ -15,8 +15,7 @@ FLAVORS =		python3
 FLAVOR =		python3
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 MODPY_PYTEST_ARGS =	test/unit
 
 RUN_DEPENDS =		net/py-netaddr${MODPY_FLAVOR}

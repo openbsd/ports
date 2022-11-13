@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	1.5.3
 DISTNAME =		geventhttpclient-${MODPY_EGG_VERSION}
 PKGNAME =		${MODPY_PY_PREFIX}${DISTNAME}
 CATEGORIES =		net devel
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://github.com/gwik/geventhttpclient
 
@@ -15,7 +15,7 @@ WANTLIB += pthread ${MODPY_WANTLIB}
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 MODPY_PYTEST_ARGS =	src/geventhttpclient/
 
 FLAVORS =		python3

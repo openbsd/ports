@@ -3,7 +3,7 @@ COMMENT =		Python library for NETCONF clients
 MODPY_EGG_VERSION =	0.6.12
 DISTNAME =		ncclient-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		net
 
@@ -17,7 +17,7 @@ FLAVORS =		python3
 FLAVOR =		python3
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 NO_TEST =		Yes
 
 RUN_DEPENDS =		security/py-paramiko${MODPY_FLAVOR} \

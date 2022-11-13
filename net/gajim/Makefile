@@ -2,11 +2,11 @@ COMMENT=	fully-featured XMPP client written in Python
 MODPY_EGG_VERSION=	1.5.2
 DISTNAME=	gajim-${MODPY_EGG_VERSION}
 CATEGORIES=	net x11
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://www.gajim.org
 
-MAINTAINER=    Paco Esteban <paco@openbsd.org>
+MAINTAINER=	Paco Esteban <paco@openbsd.org>
 
 MASTER_SITES=	${HOMEPAGE}/downloads/${MODPY_EGG_VERSION:R}/
 
@@ -14,7 +14,7 @@ MASTER_SITES=	${HOMEPAGE}/downloads/${MODPY_EGG_VERSION:R}/
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-MODPY_SETUPTOOLS=	Yes
+MODPY_PYBUILD=	setuptools
 
 BUILD_DEPENDS=	devel/gettext,-tools
 

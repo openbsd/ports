@@ -10,7 +10,7 @@ GH_ACCOUNT =		helpsystems
 GH_PROJECT =		pcapy
 GH_TAGNAME =		${MODPY_EGG_VERSION:S/.dev0//}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		net devel
 
@@ -22,7 +22,7 @@ WANTLIB +=		${MODPY_WANTLIB} ${COMPILER_LIBCXX} m pcap
 COMPILER =		base-clang ports-gcc
 
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 FLAVORS =		python3
 FLAVOR =		python3

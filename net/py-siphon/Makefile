@@ -1,20 +1,20 @@
 COMMENT=	download data from remote data services (such as THREDDS)
 
 MODPY_EGG_VERSION=	0.9
-DISTNAME=		siphon-${MODPY_EGG_VERSION}
-PKGNAME=		py-${DISTNAME}
-CATEGORIES=		net
-REVISION=		2
+DISTNAME=	siphon-${MODPY_EGG_VERSION}
+PKGNAME=	py-${DISTNAME}
+CATEGORIES=	net
+REVISION=	3
 
-HOMEPAGE=		https://unidata.github.io/siphon/
+HOMEPAGE=	https://unidata.github.io/siphon/
 
-MAINTAINER=		Martin Reindl <martin@catai.org>
+MAINTAINER=	Martin Reindl <martin@catai.org>
 
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MODPY_SETUPTOOLS=	Yes
-MODPY_PI=		Yes
+MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
 MODULES=	lang/python
 

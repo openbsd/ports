@@ -3,7 +3,7 @@ COMMENT =		monitor TCP ports for bound or unbound states
 MODPY_EGG_VERSION =	3.1.0
 DISTNAME =		portend-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		net
 
@@ -17,9 +17,8 @@ FLAVOR =		python3
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools_scm
 
-BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}>=1.15.0
 RUN_DEPENDS =		devel/py-tempora${MODPY_FLAVOR}>=1.8
 
 NO_TEST =		Yes

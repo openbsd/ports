@@ -4,7 +4,7 @@ MODPY_EGG_VERSION=	4.2.21
 GH_ACCOUNT=		exa-networks
 GH_PROJECT=		exabgp
 GH_TAGNAME=		${MODPY_EGG_VERSION}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		net
 
@@ -12,7 +12,7 @@ CATEGORIES=		net
 PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
-MODPY_SETUPTOOLS=	Yes
+MODPY_PYBUILD=		setuptools
 
 TEST_DEPENDS=		devel/py-coverage${MODPY_FLAVOR} \
 			devel/py-nose${MODPY_FLAVOR} \

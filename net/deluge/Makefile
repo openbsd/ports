@@ -24,6 +24,9 @@ MODPY_PYTEST_ARGS =	-v \
 			--ignore deluge/tests/test_files_tab.py \
 			--ignore deluge/tests/test_torrentview.py \
 			--ignore deluge/tests/test_ui_entry.py
+# needs fixing up for MODPY_PYBUILD; doesn't install
+# share/appdata/deluge.appdata.xml
+# share/applications/deluge.desktop
 MODPY_SETUPTOOLS =	Yes
 BUILD_DEPENDS =		devel/py-wheel${MODPY_FLAVOR} \
 			devel/py-xdg${MODPY_FLAVOR} \

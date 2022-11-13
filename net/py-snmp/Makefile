@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	4.4.12
 DISTNAME =	pysnmp-${MODPY_EGG_VERSION}
 PKGNAME =	${DISTNAME:S/py/py-/}
 CATEGORIES =	net
-REVISION =	4
+REVISION =	5
 
 HOMEPAGE =	http://snmplabs.com/
 
@@ -15,8 +15,8 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 
-MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PI =	Yes
+MODPY_PYBUILD =	setuptools
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
 RUN_DEPENDS =	security/py-cryptodome${MODPY_FLAVOR} \

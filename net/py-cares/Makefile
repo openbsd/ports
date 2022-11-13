@@ -5,7 +5,7 @@ MODPY_EGG_VERSION =	4.2.2
 DISTNAME =		pycares-${MODPY_EGG_VERSION}
 PKGNAME =		py-cares-${MODPY_EGG_VERSION}
 CATEGORIES =		net
-REVISION =		0
+REVISION =		1
 
 # MIT
 PERMIT_PACKAGE =	Yes
@@ -15,8 +15,7 @@ WANTLIB += pthread ${MODPY_WANTLIB}
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 MODPY_PYTEST_ARGS =	tests/tests.py
 
 USE_GMAKE =		Yes

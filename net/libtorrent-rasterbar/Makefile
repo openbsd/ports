@@ -2,7 +2,7 @@ COMMENT =		C++ library implementing a BitTorrent client
 
 MODPY_EGG_VERSION =	1.2.17
 DISTNAME =		libtorrent-rasterbar-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=  	torrent-rasterbar 6.0	# 10.0.0
 
@@ -20,9 +20,8 @@ MASTER_SITES =		https://github.com/arvidn/libtorrent/releases/download/v${MODPY_
 
 MODULES =		lang/python
 
-MODPY_SETUPTOOLS =	Yes
-# MODPY_SETUPTOOLS sets TEST_TARGET to `test', so reset it to `check'
-TEST_TARGET =		check
+MODPY_PYBUILD =		setuptools
+MODPY_PYTEST =		No
 
 BUILD_DEPENDS =		devel/libtool
 

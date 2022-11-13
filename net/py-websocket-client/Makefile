@@ -3,7 +3,7 @@ COMMENT =		WebSocket client for Python
 MODPY_EGG_VERSION =	0.37.0
 DISTNAME =		websocket_client-${MODPY_EGG_VERSION}
 PKGNAME =		py-websocket-client-${MODPY_EGG_VERSION}
-REVISION =		8
+REVISION =		9
 
 CATEGORIES =		net
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
 MODPY_PI_DIR =		w/websocket-client
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 MODULES =		lang/python
 FLAVORS =		python3

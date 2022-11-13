@@ -1,7 +1,7 @@
 COMMENT =	powerful interactive packet manipulation in python
 
 MODPY_EGG_VERSION =	2.4.4
-REVISION =	3
+REVISION =	4
 
 DISTNAME =	scapy-${MODPY_EGG_VERSION}
 
@@ -20,7 +20,7 @@ EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 UPDATE_PLIST_ARGS =	-i MODPY_PY_PREFIX
 
 .include <bsd.port.arch.mk>

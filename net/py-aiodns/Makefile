@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	3.0.0
 DISTNAME =		aiodns-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		net
-REVISION =		1
+REVISION =		2
 
 MAINTAINER =		Kurt Mosiejczuk <kmos@openbsd.org>
 
@@ -14,8 +14,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 MODPY_PYTEST_ARGS =	tests.py
 
 FLAVORS =		python3

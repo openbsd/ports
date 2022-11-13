@@ -3,7 +3,7 @@ COMMENT =		command line gopher client
 MODPY_EGG_VERSION =	0.0.11
 DISTNAME =		VF-1-${MODPY_EGG_VERSION}
 PKGNAME =		vf1-${MODPY_EGG_VERSION}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		net
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/vf1/

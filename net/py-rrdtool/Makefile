@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	0.1.16
 
 DISTNAME =	rrdtool-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	databases net
 
@@ -18,9 +18,9 @@ WANTLIB += pthread rrd
 MODULES =	lang/python
 LIB_DEPENDS =	net/rrdtool
 
-MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-NO_TEST =		Yes
+MODPY_PI =	Yes
+MODPY_PYBUILD =	setuptools
+NO_TEST =	Yes
 
 FLAVORS =	python3
 FLAVOR =	python3

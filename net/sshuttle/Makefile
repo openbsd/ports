@@ -2,7 +2,7 @@ COMMENT=		VPN over an SSH tunnel
 
 MODPY_EGG_VERSION=	1.1.1
 DISTNAME=		sshuttle-${MODPY_EGG_VERSION}
-REVISION=		1
+REVISION=		2
 
 FIX_EXTRACT_PERMISSIONS=Yes
 
@@ -19,13 +19,11 @@ FLAVORS=		python3
 FLAVOR=			python3
 
 MODPY_PI=		Yes
-MODPY_PYTEST=		Yes
-MODPY_SETUPTOOLS=	Yes
+MODPY_PYBUILD=		setuptools_scm
 
 USE_GMAKE=		Yes
 
-BUILD_DEPENDS=		devel/py-setuptools_scm${MODPY_FLAVOR} \
-			textproc/py-sphinx${MODPY_FLAVOR}
+BUILD_DEPENDS=		textproc/py-sphinx${MODPY_FLAVOR}
 TEST_DEPENDS=		devel/py-test-cov${MODPY_FLAVOR}
 
 post-build:

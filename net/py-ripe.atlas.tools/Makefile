@@ -1,19 +1,19 @@
 COMMENT =		official command-line client for RIPE Atlas
 
+MODPY_EGG_VERSION =	3.0.2
 GH_ACCOUNT =		RIPE-NCC
 GH_PROJECT =		ripe-atlas-tools
 GH_TAGNAME =		v${MODPY_EGG_VERSION}
+REVISION =		1
 
-MODPY_EGG_VERSION =	3.0.2
 PKGNAME =		ripe.atlas.tools-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		net
 
 # GPLv3
 PERMIT_PACKAGE =	Yes
 
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	tests/test*.py tests/*/*.py
 

@@ -3,7 +3,7 @@ COMMENT =	extracts the top level domain (TLD) from the URL given
 MODPY_EGG_VERSION =	0.9.3
 DISTNAME =	tld-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	5
+REVISION =	6
 
 CATEGORIES =	net
 
@@ -13,7 +13,7 @@ MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
-MODPY_SETUPTOOLS = Yes
+MODPY_PYBUILD =	setuptools
 MODPY_PI =	Yes
 
 FLAVORS =	python3

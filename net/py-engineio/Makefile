@@ -4,7 +4,7 @@ COMMENT=	client/server implementation of Engine.IO
 MODPY_EGG_VERSION= 3.14.2
 DISTNAME=	python-engineio-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:S/python-/py-/}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	net
 
@@ -14,7 +14,7 @@ HOMEPAGE=	https://python-engineio.readthedocs.io/en/latest/
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-MODPY_SETUPTOOLS= Yes
+MODPY_PYBUILD=	setuptools
 
 MODPY_PI=	Yes
 NO_TEST=	Yes

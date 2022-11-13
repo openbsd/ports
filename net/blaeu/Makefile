@@ -3,7 +3,7 @@ COMMENT =	create measurements on RIPE Atlas probes
 MODPY_EGG_VERSION = 1.1.9
 DISTNAME =	blaeu-${MODPY_EGG_VERSION}
 CATEGORIES =	net
-REVISION =	0
+REVISION =	1
 
 MAINTAINER =	Denis Fondras <denis@openbsd.org>
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 NO_TEST =		Yes
 
 RUN_DEPENDS =		net/py-dnspython${MODPY_FLAVOR} \
