@@ -29,7 +29,7 @@ BOOTSTRAP-aarch64 =	pypy-bootstrap-aarch64-${BOOTSTRAP_V}-0.tar.xz
 # list bootstraps for all arches in SUPDISTFILES
 SUPDISTFILES +=		${BOOTSTRAP-amd64}:0
 SUPDISTFILES +=		${BOOTSTRAP-aarch64}:0
-REVISION =		6
+REVISION =		7
 
 CATEGORIES =		lang
 
