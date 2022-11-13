@@ -25,7 +25,7 @@ Index: scripts/miscellaneous/unpack.m
                            @__parse_tar__, false};
      commandlist.tarbz = commandlist.tarbz2;
      commandlist.tbz2 = commandlist.tarbz2;
-@@ -328,7 +328,9 @@ function files = __parse_gzip__ (output)
+@@ -332,7 +332,9 @@ function files = __parse_gzip__ (output)
    ## Parse the output from gzip and gunzip returning the files
    ## compressed (or decompressed).
  
