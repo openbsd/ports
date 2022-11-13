@@ -13,7 +13,7 @@ HOMEPAGE =		https://httpie.io/
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 # requires network access
 MODPY_PYTEST =		Yes
