@@ -3,7 +3,7 @@ COMMENT=		elegant and simple HTTP library for Python
 MODPY_EGG_VERSION=	2.28.1
 DISTNAME=		requests-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		www
 
@@ -18,7 +18,7 @@ FLAVORS=		python3
 FLAVOR=			python3
 
 MODPY_PI=		Yes
-MODPY_SETUPTOOLS=	Yes
+MODPY_PYBUILD=		setuptools
 MODPY_PYTEST_ARGS=	tests
 
 RUN_DEPENDS=		archivers/py-brotli${MODPY_FLAVOR} \

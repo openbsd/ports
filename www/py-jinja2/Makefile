@@ -3,7 +3,7 @@ COMMENT =		fast, optionally sandboxed, Python template engine
 MODPY_EGG_VERSION =	3.1.2
 DISTNAME =		Jinja2-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		www devel
 
@@ -18,8 +18,7 @@ RUN_DEPENDS =		textproc/py-MarkupSafe${MODPY_FLAVOR}
 FLAVORS =		python3
 FLAVOR =		python3
 
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 MODPY_PI =		Yes
 
 .include <bsd.port.mk>

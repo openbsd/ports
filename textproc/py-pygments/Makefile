@@ -5,7 +5,7 @@ MODPY_EGG_VERSION = 2.13.0
 DISTNAME=	Pygments-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:L:S/^/py-/}
 CATEGORIES=	textproc devel
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://pygments.org/
 
@@ -17,9 +17,8 @@ MODULES=	lang/python
 FLAVORS=	python3
 FLAVOR=		python3
 
-MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PI =	Yes
+MODPY_PYBUILD =	setuptools
 
 # requires port for wcag_contrast_ratio
 MODPY_PYTEST_ARGS =	--ignore tests/contrast/test_contrasts.py
