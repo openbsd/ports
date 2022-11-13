@@ -3,7 +3,7 @@ COMMENT =		library for creating DigiDoc signature files
 V =			3.14.10
 DISTNAME =		libdigidocpp-${V}
 CATEGORIES =		security
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS =		digidocpp	0.0	# 0.0
 
@@ -35,7 +35,7 @@ MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 # -std=gnu++17
 COMPILER =		base-clang ports-gcc
 
-WANTLIB +=		${COMPILER_LIBCXX} c crypto iconv m ssl xalan-c
+WANTLIB +=		${COMPILER_LIBCXX} c crypto iconv m ssl
 WANTLIB +=		xerces-c xml-security-c z
 
 MODULES =		devel/cmake
@@ -46,7 +46,6 @@ BUILD_DEPENDS =		devel/boost \
 
 LIB_DEPENDS =		converters/libiconv \
 			security/xml-security-c \
-			textproc/xalan-c \
 			textproc/xerces-c
 
 RUN_DEPENDS =		# empty
