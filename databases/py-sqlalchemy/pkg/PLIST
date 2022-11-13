@@ -892,6 +892,7 @@ share/doc/py-sqlalchemy/_static/nonannotated.png
 share/doc/py-sqlalchemy/_static/plus.png
 share/doc/py-sqlalchemy/_static/pygments.css
 share/doc/py-sqlalchemy/_static/searchtools.js
+share/doc/py-sqlalchemy/_static/sphinx_highlight.js
 share/doc/py-sqlalchemy/_static/sphinx_paramlinks.css
 share/doc/py-sqlalchemy/_static/underscore-1.13.1.js
 share/doc/py-sqlalchemy/_static/underscore.js
