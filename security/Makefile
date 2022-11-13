@@ -376,7 +376,6 @@
      SUBDIR += ssh-ldap-helper
      SUBDIR += sshguard
      SUBDIR += sshlockout
-     SUBDIR += sslScanner
      SUBDIR += sslscan
      SUBDIR += sslsplit
      SUBDIR += ssss
