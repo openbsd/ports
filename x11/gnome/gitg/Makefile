@@ -2,7 +2,7 @@ COMMENT=		graphical user interface for git
 
 GNOME_PROJECT=		gitg
 GNOME_VERSION=		41
-REVISION=		2
+REVISION=		3
 
 SHARED_LIBS += gitg-1.0                  1.0 # 0.0.0
 SHARED_LIBS += gitg-ext-1.0              0.0 # 0.0.0
@@ -19,6 +19,7 @@ WANTLIB += pango-1.0 peas-1.0 secret-1 xml2
 
 MODULES=		devel/dconf \
 			devel/meson \
+			lang/python \
 			x11/gnome
 
 MODGNOME_TOOLS=		desktop-file-utils gobject-introspection \
@@ -36,7 +37,8 @@ LIB_DEPENDS=		devel/json-glib \
 			x11/gtksourceview4
 
 RUN_DEPENDS=		devel/git \
-			devel/gsettings-desktop-schemas
+			devel/gsettings-desktop-schemas \
+			devel/py-gobject3${MODPY_FLAVOR}
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
