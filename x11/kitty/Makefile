@@ -8,6 +8,7 @@ DISTNAME =		kitty-${MODPY_EGG_VERSION}
 CATEGORIES =		x11
 HOMEPAGE =		https://sw.kovidgoyal.net/kitty/
 MAINTAINER =		Thomas Frohwein <thfr@openbsd.org>
+REVISION =		0
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

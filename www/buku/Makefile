@@ -2,6 +2,7 @@ COMMENT =	powerful command-line bookmark manager
 
 MODPY_EGG_VERSION =	4.7.1
 DISTNAME =	buku-${MODPY_EGG_VERSION}
+REVISION =	0
 
 CATEGORIES =	www
 

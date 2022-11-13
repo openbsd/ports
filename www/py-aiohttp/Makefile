@@ -3,7 +3,7 @@ COMMENT =		http client/server for asyncio
 MODPY_EGG_VERSION =	3.7.4
 DISTNAME =		aiohttp-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		www
 

@@ -2,7 +2,7 @@ COMMENT=		simple GTK desktop news aggregator
 
 V=			1.12.9
 DISTNAME=		liferea-${V}
-REVISION=		4
+REVISION=		5
 
 CATEGORIES=		www news x11
 

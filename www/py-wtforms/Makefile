@@ -4,6 +4,7 @@ MODPY_EGG_VERSION=3.0.1
 DISTNAME=	WTForms-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME:L}
 CATEGORIES=	www
+REVISION=	0
 
 HOMEPAGE=	https://wtforms.readthedocs.io/
 

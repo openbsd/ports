@@ -3,6 +3,7 @@ COMMENT=	checks HTML documents for broken links, CLI
 MODPY_EGG_VERSION= 10.1.0
 DISTNAME=	LinkChecker-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:L}
+REVISION=	0
 
 CATEGORIES=	www
 

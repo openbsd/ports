@@ -3,6 +3,7 @@ COMMENT =		OAuth library support for python-requests
 MODPY_EGG_VERSION =	1.3.1
 DISTNAME =		requests-oauthlib-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		www
 

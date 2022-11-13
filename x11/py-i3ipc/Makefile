@@ -4,6 +4,7 @@ MODPY_EGG_VERSION =	2.2.1
 DISTNAME =		i3ipc-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		x11
+REVISION =		0
 
 HOMEPAGE =		https://github.com/altdesktop/i3ipc-python/
 

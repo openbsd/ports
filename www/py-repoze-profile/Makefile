@@ -3,6 +3,7 @@ COMMENT =	aggregate profiling for wsgi requests
 MODPY_EGG_VERSION = 2.3
 DISTNAME =	repoze.profile-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:S/./-/}
+REVISION =	0
 
 CATEGORIES =	www devel
 

@@ -3,6 +3,7 @@ COMMENT=		filters to enhance web typography
 MODPY_EGG_VERSION=	2.0.7
 DISTNAME=		typogrify-${MODPY_EGG_VERSION}
 PKGNAME=		py-typogrify-${MODPY_EGG_VERSION}
+REVISION=		0
 
 CATEGORIES=		textproc
 

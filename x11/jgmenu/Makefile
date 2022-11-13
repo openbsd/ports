@@ -4,7 +4,7 @@ CATEGORIES =	x11
 GH_ACCOUNT =	johanmalm
 GH_PROJECT =	jgmenu
 GH_TAGNAME =	v2.1
-REVISION =	5
+REVISION =	6
 
 # GPLv2 only
 PERMIT_PACKAGE =	Yes

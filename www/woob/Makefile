@@ -2,7 +2,7 @@ COMMENT =	web outside of browsers
 
 MODPY_EGG_VERSION =	3.0
 DISTNAME =	woob-${MODPY_EGG_VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	www
 HOMEPAGE =	https://woob.tech/

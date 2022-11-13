@@ -3,7 +3,7 @@ COMMENT = high-performance, pure-Python HTTP server used by CherryPy
 MODPY_EGG_VERSION =	8.2.1
 DISTNAME =		cheroot-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		www
 

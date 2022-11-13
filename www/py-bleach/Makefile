@@ -4,6 +4,7 @@ MODPY_EGG_VERSION =	5.0.1
 DISTNAME =		bleach-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		www
+REVISION =		0
 
 HOMEPAGE =		https://github.com/mozilla/bleach
 

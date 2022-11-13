@@ -3,6 +3,7 @@ COMMENT =		CORS handling for flask
 MODPY_EGG_VERSION =	3.0.10
 DISTNAME =		Flask-Cors-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
+REVISION =		0
 
 CATEGORIES =		www
 

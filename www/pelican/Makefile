@@ -2,6 +2,7 @@ COMMENT =		static site generator written in Python
 
 MODPY_EGG_VERSION =	${GH_TAGNAME}
 DISTNAME =		pelican-${MODPY_EGG_VERSION}
+REVISION =		0
 
 GH_ACCOUNT =		getpelican
 GH_PROJECT =		pelican

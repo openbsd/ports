@@ -2,7 +2,7 @@ COMMENT=		GNOME password manager (Keepass)
 
 GNOME_PROJECT=		secrets
 GNOME_VERSION=		7.0
-REVISION=		0
+REVISION=		1
 
 # override gnome MODULE
 MASTER_SITES=		https://gitlab.gnome.org/World/secrets/-/archive/${GNOME_VERSION}/

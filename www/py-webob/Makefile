@@ -3,7 +3,7 @@ COMMENT =	wsgi request and response object
 MODPY_EGG_VERSION = 1.8.7
 DISTNAME =	WebOb-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	www devel
 

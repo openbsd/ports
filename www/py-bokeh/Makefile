@@ -3,6 +3,7 @@ COMMENT=		statistical and novel interactive HTML plots for Python
 MODPY_EGG_VERSION=	2.4.3
 DISTNAME=		bokeh-${MODPY_EGG_VERSION}
 PKGNAME=		py-bokeh-${MODPY_EGG_VERSION}
+REVISION=		0
 
 CATEGORIES=		www graphics
 

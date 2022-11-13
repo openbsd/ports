@@ -3,6 +3,7 @@ COMMENT =		terminals served to term.js using Tornado websockets
 MODPY_EGG_VERSION =	0.16.0
 DISTNAME =		terminado-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		www
 

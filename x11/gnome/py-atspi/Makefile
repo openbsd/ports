@@ -3,7 +3,7 @@ COMMENT=		python bindings for at-spi2
 GNOME_PROJECT=		pyatspi
 GNOME_VERSION=		2.46.0
 PKGNAME=		py-atspi-${GNOME_VERSION}
-REVISION=		0
+REVISION=		1
 
 # LGPLv2
 PERMIT_PACKAGE=		Yes
