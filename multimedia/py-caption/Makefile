@@ -1,9 +1,8 @@
 COMMENT=		closed caption converter
 
-MODPY_EGG_VERSION=	2.0.5
+MODPY_EGG_VERSION=	2.1.0
 DISTNAME=		pycaption-${MODPY_EGG_VERSION}
 PKGNAME=		py-caption-${MODPY_EGG_VERSION}
-REVISION=		0
 
 CATEGORIES=		multimedia
 
@@ -16,8 +15,8 @@ FLAVORS=		python3
 FLAVOR=			python3
 
 MODPY_PI=		Yes
-MODPY_SETUPTOOLS=	Yes
-MODPY_PYTEST_ARGS=	tests
+MODPY_PYBUILD=		setuptools
+#MODPY_PYTEST_ARGS=	tests
 
 RUN_DEPENDS=		textproc/py-cssutils${MODPY_FLAVOR} \
 			textproc/py-lxml${MODPY_FLAVOR} \
