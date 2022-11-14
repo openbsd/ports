@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	0.10.0
 
 DISTNAME =	pytest-astropy-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:S/py//}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 
@@ -16,13 +16,12 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools_scm
 NO_TEST =		Yes
 
 FLAVOR =	python3
 FLAVORS =	python3
 
-BUILD_DEPENDS =	devel/py-setuptools_scm${MODPY_FLAVOR}
 RUN_DEPENDS =	devel/py-attrs${MODPY_FLAVOR} \
 		devel/py-hypothesis${MODPY_FLAVOR} \
 		devel/py-test${MODPY_FLAVOR} \

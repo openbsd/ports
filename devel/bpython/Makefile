@@ -3,7 +3,7 @@ COMMENT=	fancy interface to the Python interpreter
 MODPY_EGG_VERSION=0.18
 DISTNAME=	bpython-${MODPY_EGG_VERSION}
 CATEGORIES=	devel
-REVISION=	3
+REVISION=	4
 
 HOMEPAGE=	https://bpython-interpreter.org/
 MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
@@ -15,7 +15,7 @@ MASTER_SITES=	${HOMEPAGE}/releases/
 
 MODULES=	lang/python
 
-MODPY_SETUPTOOLS=Yes
+MODPY_PYBUILD=	setuptools
 
 FLAVORS=	python3
 FLAVOR=		python3

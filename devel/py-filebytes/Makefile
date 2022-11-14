@@ -3,7 +3,7 @@ COMMENT =	python module to read and write ELF, PE, MachO or OAT
 MODPY_EGG_VERSION =	0.9.21
 DISTNAME =	filebytes-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	devel security
 
@@ -15,7 +15,7 @@ MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 MODPY_PI =		Yes
 
 FLAVORS =	python3

@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	3.4.1
 DISTNAME =		pytest-benchmark-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
 CATEGORIES =		devel
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://pytest-benchmark.readthedocs.io/en/stable/
 
@@ -14,8 +14,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 MODPY_PYTEST_ARGS =	tests
 
 RUN_DEPENDS =		devel/py-test${MODPY_FLAVOR} \

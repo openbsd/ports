@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	21.3.0
 
 DISTNAME =		incremental-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 MODPY_PYTEST_ARGS =	src/incremental
 
 TEST_DEPENDS =		devel/py-click${MODPY_FLAVOR} \

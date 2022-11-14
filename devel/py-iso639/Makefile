@@ -3,7 +3,7 @@ COMMENT =	Python library for the ISO 639 language code standard
 DISTNAME =	iso-639-${MODPY_EGG_VERSION}
 PKGNAME =	py-iso639-${MODPY_EGG_VERSION}
 CATEGORIES =	devel
-REVISION =	7
+REVISION =	8
 
 HOMEPAGE =	https://github.com/noumar/iso639
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 MODPY_PI =	Yes
 
 MODULES =	lang/python
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =	setuptools
 
 FLAVORS =	python3
 FLAVOR =	python3

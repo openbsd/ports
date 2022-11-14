@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	0.1.0
 
 DISTNAME =		rfc6555-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 
@@ -16,10 +16,9 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 # tests connect to www.google.com on port 80
-MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
 FLAVOR =		python3

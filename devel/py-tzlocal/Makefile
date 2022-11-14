@@ -3,7 +3,7 @@ COMMENT =		python tzinfo object for the local timezone
 MODPY_EGG_VERSION =	2.1
 DISTNAME =		tzlocal-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 
@@ -13,7 +13,7 @@ HOMEPAGE =		https://github.com/regebro/tzlocal
 PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 FLAVORS =		python3
 FLAVOR =		python3

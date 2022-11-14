@@ -2,7 +2,7 @@ COMMENT =		passive checker of Python programs
 
 MODPY_EGG_VERSION =	2.3.1
 DISTNAME =		pyflakes-${MODPY_EGG_VERSION}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 
@@ -14,8 +14,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 TEST_ENV =		PY_IGNORE_IMPORTMISMATCH=1
 
 FLAVORS =		python3

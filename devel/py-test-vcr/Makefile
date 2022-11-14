@@ -3,7 +3,7 @@ COMMENT =		plugin for managing VCR.py cassettes
 MODPY_EGG_VERSION =	1.0.2
 DISTNAME =		pytest-vcr-${MODPY_EGG_VERSION}
 PKGNAME =		py-test-vcr-${MODPY_EGG_VERSION}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		devel
 
@@ -15,9 +15,8 @@ MAINTAINER =		Pamela Mosiejczuk <pamela@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 MODPY_PI =		Yes
-MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
 FLAVOR =		python3

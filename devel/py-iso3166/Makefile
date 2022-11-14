@@ -3,7 +3,7 @@ COMMENT =	self-contained ISO 3166-1 country definitions library
 DISTNAME =	iso3166-${MODPY_EGG_VERSION}
 PKGNAME =	py-iso3166-${MODPY_EGG_VERSION}
 CATEGORIES =	devel
-REVISION =	4
+REVISION =	5
 
 HOMEPAGE =	https://github.com/deactivated/python-iso3166
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -14,8 +14,7 @@ PERMIT_PACKAGE =	Yes
 MODPY_PI =	Yes
 
 MODULES =	lang/python
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =	setuptools
 
 FLAVORS =	python3
 FLAVOR =	python3

@@ -4,7 +4,7 @@ DISTNAME =		pytest-xdist-${MODPY_EGG_VERSION}
 PKGNAME =		py-test-xdist-${MODPY_EGG_VERSION}
 MODPY_EGG_VERSION =	2.5.0
 MODPY_PI =		Yes
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =	devel
 
@@ -17,11 +17,9 @@ FLAVORS =		python3
 FLAVOR =		python3
 
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools_scm
 MODPY_PYTEST_ARGS =	testing
 
-BUILD_DEPENDS +=	devel/py-setuptools_scm${MODPY_FLAVOR}
 RUN_DEPENDS =		devel/py-execnet${MODPY_FLAVOR} \
 			devel/py-test${MODPY_FLAVOR} \
 			devel/py-apipkg${MODPY_FLAVOR}

@@ -3,7 +3,7 @@ COMMENT =	access to parallel port from Python
 DISTNAME =	pyparallel-${V}
 PKGNAME =	py-parallel-${V}
 CATEGORIES =	devel
-REVISION =	5
+REVISION =	6
 
 HOMEPAGE =	https://github.com/pyserial/pyparallel
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -17,7 +17,7 @@ FLAVORS =	python3
 FLAVOR =	python3
 
 MODULES =	lang/python
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =	setuptools
 
 # No tests upstream
 

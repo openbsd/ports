@@ -3,7 +3,7 @@ COMMENT =		library for getting/setting process names
 MODPY_EGG_VERSION =	1.3.2
 DISTNAME =		setproctitle-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 
@@ -15,10 +15,9 @@ PERMIT_PACKAGE =	Yes
 WANTLIB +=		pthread
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 MODULES =		lang/python
-MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
 FLAVOR =		python3

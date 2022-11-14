@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	1.4.2
 
 DISTNAME =		pytest-timeout-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 
@@ -18,8 +18,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =		devel/py-test${MODPY_FLAVOR}
 TEST_DEPENDS =		devel/py-pexpect${MODPY_FLAVOR} \

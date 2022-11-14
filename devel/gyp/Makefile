@@ -5,7 +5,7 @@ GH_PROJECT=	gyp
 GH_COMMIT=	caa60026e223fc501e8b337fd5086ece4028b1c6
 
 DISTNAME=	gyp-0.20200512
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	devel
 
@@ -15,7 +15,7 @@ HOMEPAGE=	https://bugs.chromium.org/p/gyp/
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-MODPY_SETUPTOOLS=	Yes
+MODPY_PYBUILD=	setuptools
 TEST_DEPENDS=	devel/ninja
 
 pre-configure:

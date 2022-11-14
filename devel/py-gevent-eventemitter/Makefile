@@ -5,14 +5,14 @@ DISTNAME =		gevent-eventemitter-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
 HOMEPAGE =		https://github.com/rossengeorgiev/gevent-eventemitter
-REVISION =		0
+REVISION =		1
 
 # MIT
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =		devel/py-gevent${MODPY_FLAVOR} \
 			devel/py-zopeevent${MODPY_FLAVOR} \

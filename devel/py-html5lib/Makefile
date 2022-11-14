@@ -4,7 +4,7 @@ MODPY_EGG_VERSION=	1.1
 DISTNAME=		html5lib-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		devel www textproc
-REVISION=		1
+REVISION=		2
 
 HOMEPAGE=		https://github.com/html5lib/html5lib-python/
 
@@ -14,8 +14,7 @@ PERMIT_PACKAGE=		Yes
 MODULES=		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR} \
 			textproc/py-webencodings${MODPY_FLAVOR}

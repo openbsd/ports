@@ -1,9 +1,9 @@
 COMMENT=		parse human-readable date/time text
 
-MODPY_EGG_VERSION =	2.6
+MODPY_EGG_VERSION=	2.6
 DISTNAME=		parsedatetime-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		devel
 
@@ -15,9 +15,8 @@ FLAVOR=			python3
 
 MODULES=		lang/python
 MODPY_PI=		Yes
-MODPY_SETUPTOOLS=	Yes
-MODPY_PYTEST =		Yes
-MODPY_PYTEST_ARGS =	tests/*.py
+MODPY_PYBUILD=		setuptools
+MODPY_PYTEST_ARGS=	tests/*.py
 
 BUILD_DEPENDS=		devel/py-test-runner${MODPY_FLAVOR}
 TEST_DEPENDS=		textproc/py-ICU${MODPY_FLAVOR}

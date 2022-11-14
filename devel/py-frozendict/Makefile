@@ -3,7 +3,7 @@ COMMENT =		immutable dictionary
 MODPY_EGG_VERSION =	2.3.4
 DISTNAME =		frozendict-${MODPY_EGG_VERSION}
 PKGNAME =		py-frozendict-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 
@@ -16,9 +16,8 @@ FLAVORS =		python3
 FLAVOR =		python3
 
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 MODPY_PI =		Yes
-MODPY_PYTEST =		Yes
 
 .include <bsd.port.arch.mk>
 .if !${PROPERTIES:Mclang}

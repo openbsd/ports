@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	1.4.0
 
 DISTNAME =		pytest-forked-${MODPY_EGG_VERSION}
 PKGNAME =		py-test-forked-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 
@@ -19,10 +19,9 @@ FLAVOR =		python3
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools_scm
 MODPY_PYTEST_ARGS =	-v
 
-BUILD_DEPENDS +=	devel/py-setuptools_scm${MODPY_FLAVOR}
 RUN_DEPENDS =		devel/py-test${MODPY_FLAVOR}
 
 .include <bsd.port.mk>

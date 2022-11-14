@@ -2,7 +2,7 @@ COMMENT =	 backup a github user or organization
 
 MODPY_EGG_VERSION =	0.33.0
 PKGNAME =	github-backup-${MODPY_EGG_VERSION}
-REVISION =	1
+REVISION =	2
 
 GH_ACCOUNT =	josegonzalez
 GH_PROJECT =	python-github-backup
@@ -16,6 +16,6 @@ MAINTAINER =	Laurence Tratt <laurie@tratt.net>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 .include <bsd.port.mk>

@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	1.0.9
 DISTNAME =		pretend-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		5
+REVISION =		6
 
 HOMEPAGE =		https://github.com/alex/pretend
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 FLAVORS =		python3
 FLAVOR =		python3

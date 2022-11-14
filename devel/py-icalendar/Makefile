@@ -3,7 +3,7 @@ COMMENT =		parser/generator of iCalendar files
 MODPY_EGG_VERSION =	4.0.4
 DISTNAME =		icalendar-${MODPY_EGG_VERSION}
 PKGNAME =		py-icalendar-${MODPY_EGG_VERSION}
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		devel
 
@@ -17,8 +17,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 MODPY_PYTEST_ARGS =	src/icalendar/tests
 
 RUN_DEPENDS =		devel/py-dateutil${MODPY_FLAVOR} \

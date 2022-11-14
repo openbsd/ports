@@ -1,9 +1,9 @@
 COMMENT=		argparse replacement, allows options to be set via files/env
 
-MODPY_EGG_VERSION =	1.5.3
+MODPY_EGG_VERSION=	1.5.3
 DISTNAME=		ConfigArgParse-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		devel
 
@@ -15,8 +15,7 @@ FLAVOR=			python3
 
 MODULES=		lang/python
 MODPY_PI=		Yes
-MODPY_SETUPTOOLS=	Yes
-MODPY_PYTEST=		Yes
+MODPY_PYBUILD=		setuptools
 
 TEST_DEPENDS=		textproc/py-yaml${MODPY_FLAVOR}
 

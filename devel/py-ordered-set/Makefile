@@ -3,7 +3,7 @@ COMMENT=		ordered sets in Python
 MODPY_EGG_VERSION=	4.1.0
 DISTNAME=		ordered-set-${MODPY_EGG_VERSION}
 PKGNAME=		py-ordered-set-${MODPY_EGG_VERSION}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		devel
 
@@ -19,8 +19,7 @@ MODULES=		lang/python
 FLAVORS=		python3
 FLAVOR=			python3
 
-MODPY_SETUPTOOLS=	Yes
+MODPY_PYBUILD=		flit_core
 MODPY_PI=		Yes
-MODPY_PYTEST=		Yes
 
 .include <bsd.port.mk>

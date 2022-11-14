@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	0.5.0
 
 DISTNAME =	pytest-arraydiff-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:S/py//}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 
@@ -16,13 +16,11 @@ PERMIT_PACKAGE =	Yes
 MODULES =	lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools_scm
 
 FLAVOR =	python3
 FLAVORS =	python3
 
-BUILD_DEPENDS =	devel/py-setuptools_scm${MODPY_FLAVOR}
 RUN_DEPENDS =	devel/py-test${MODPY_FLAVOR} \
 		math/py-numpy${MODPY_FLAVOR}
 TEST_DEPENDS =	astro/py-astropy${MODPY_FLAVOR}

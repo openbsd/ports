@@ -3,7 +3,7 @@ COMMENT =		console-based visual debugger for Python
 MODPY_EGG_VERSION =	2019.2
 DISTNAME =		pudb-${MODPY_EGG_VERSION}
 PKGNAME =		py-pudb-${MODPY_EGG_VERSION}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 
@@ -12,8 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =		devel/py-urwid${MODPY_FLAVOR}>=1.1.1 \
 			textproc/py-pygments${MODPY_FLAVOR}

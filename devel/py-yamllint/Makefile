@@ -3,7 +3,7 @@ COMMENT =	linter for YAML files
 MODPY_EGG_VERSION = 1.26.3
 DISTNAME =	yamllint-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 
@@ -14,8 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 MODPY_PI =	Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =	Yes
+MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =	devel/py-pathspec${MODPY_FLAVOR} \
 		textproc/py-yaml${MODPY_FLAVOR}

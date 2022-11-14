@@ -3,7 +3,7 @@ COMMENT =	display coverage stats online via coveralls.io
 MODPY_EGG_VERSION =	3.3.1
 DISTNAME =	coveralls-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 
@@ -18,7 +18,7 @@ FLAVORS =		python3
 FLAVOR =		python3
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =		devel/py-docopt${MODPY_FLAVOR} \
 			devel/py-coverage${MODPY_FLAVOR} \

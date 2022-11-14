@@ -3,7 +3,7 @@ COMMENT=		complementary command-line interface for Git
 MODPY_EGG_VERSION=	1.2.0
 DISTNAME=		legit-${MODPY_EGG_VERSION}
 CATEGORIES=		devel
-REVISION=		1
+REVISION=		2
 
 HOMEPAGE=		https://frostming.github.io/legit/
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 MODULES=		lang/python
 
 MODPY_PI=		Yes
-MODPY_SETUPTOOLS=	Yes
+MODPY_PYBUILD=		setuptools
 
 RUN_DEPENDS=		devel/py-clint${MODPY_FLAVOR}>=0.5.1 \
 			devel/py-click${MODPY_FLAVOR} \

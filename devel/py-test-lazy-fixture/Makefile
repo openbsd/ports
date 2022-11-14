@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	0.6.3
 
 DISTNAME =		pytest-lazy-fixture-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 
@@ -16,8 +16,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =		devel/py-test${MODPY_FLAVOR}
 
