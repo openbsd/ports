@@ -1,16 +1,15 @@
 COMMENT=		dynamic pixel format conversion library
 
-V=			0.1.96
+V=			0.1.98
 DISTNAME=		babl-${V}
 EXTRACT_SUFX=		.tar.xz
-REVISION=		0
 
 API_VERSION=		${V:R}
 SUBST_VARS=		API_VERSION
 
 CATEGORIES=		graphics devel
 
-SHARED_LIBS += babl-0.1                  1.8 # 0.195.1
+SHARED_LIBS += babl-0.1                  1.8 # 0.197.1
 
 HOMEPAGE=		http://gegl.org/babl/
 
