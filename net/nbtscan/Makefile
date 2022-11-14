@@ -1,15 +1,11 @@
 COMMENT=	NetBIOS name network scanner
 
-DISTNAME=	nbtscan_1.5.1
-PKGNAME=	${DISTNAME:S/_/-/}
-REVISION=	1
-WRKDIST=	${WRKDIR}/${PKGNAME}a
+GH_ACCOUNT=	resurrecting-open-source-projects
+GH_PROJECT=	nbtscan
+GH_TAGNAME=	1.5.1
+REVISION=	2
 
 CATEGORIES=	net
-
-MASTER_SITES=	http://www.inetcat.org/software/
-
-HOMEPAGE=	http://www.inetcat.org/software/nbtscan.html
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
