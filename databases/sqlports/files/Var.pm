@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.62 2021/02/25 23:26:30 espie Exp $
+# $OpenBSD: Var.pm,v 1.63 2022/11/14 12:54:47 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -1174,7 +1174,11 @@ sub add
 	my $filename = $self->fullpath;
 	open my $file, '<', $filename or die "Can't open $filename: $!";
 	local $/ = undef;
-	$self->add_value($ins, <$file>, $self->value);
+	# XXX save the file contents in a variable
+	# somehow, directly passing <$file> results in a missing value
+	# instead of '' if the file is empty
+	my $contents = <$file>;
+	$self->add_value($ins, $contents, $self->value);
 }
 
 sub view_columns
