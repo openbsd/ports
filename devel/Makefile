@@ -579,6 +579,7 @@
      SUBDIR += p5-Clone
      SUBDIR += p5-Clone-Choose
      SUBDIR += p5-Clone-PP
+     SUBDIR += p5-Commandable
      SUBDIR += p5-Conf-Libconfig
      SUBDIR += p5-Config-Any
      SUBDIR += p5-Config-Auto
