@@ -2,11 +2,9 @@ COMMENT =	Python package to parse and build CSS
 
 CATEGORIES =	textproc
 
-MODPY_EGG_VERSION =	2.4.2
+MODPY_EGG_VERSION =	2.6.0
 DISTNAME =	cssutils-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-MODPY_PI =	Yes
-REVISION =	0
 
 # GPLv3
 PERMIT_PACKAGE=	Yes
@@ -14,14 +12,14 @@ PERMIT_PACKAGE=	Yes
 HOMEPAGE =	https://github.com/jaraco/cssutils
 
 MODULES =	lang/python
-
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST_ARGS =	cssutils
+MODPY_PI =	Yes
+MODPY_PYBUILD =	setuptools_scm
 
 FLAVORS =	python3
 FLAVOR =	python3
 
-BUILD_DEPENDS =	devel/py-setuptools_scm${MODPY_FLAVOR}
+# tests also need jaraco.test (not in ports)
+NO_TEST =	Yes
 TEST_DEPENDS =	devel/py-test-cov${MODPY_FLAVOR} \
 		devel/py-mock${MODPY_FLAVOR} \
 		textproc/py-lxml${MODPY_FLAVOR} \
