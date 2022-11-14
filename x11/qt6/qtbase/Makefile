@@ -10,7 +10,7 @@ PKGSPEC-main =		qt6-qtbase-${QT6_PKGSPEC}
 PKGNAME-mysql =		qt6-mysql-${VERSION}
 PKGNAME-global =	qt6-global-${VERSION}
 PKGNAME-psql =		qt6-postgresql-${VERSION}
-REVISION-main =		1
+REVISION-main =		2
 REVISION-global =	1
 REVISION-mysql =	1
 REVISION-psql =		1
@@ -115,6 +115,7 @@ CONFIGURE_ARGS +=	-DCMAKE_INSTALL_PREFIX=${PREFIX} \
 			-DINSTALL_PLUGINSDIR=lib/qt6/plugins \
 			-DBUILD_WITH_PCH=OFF \
 			-DQT_FEATURE_journald=OFF \
+			-DQT_FEATURE_libudev=OFF \
 			-DQT_FEATURE_openssl_linked=ON \
 			-DQT_FEATURE_dtls=OFF
 
