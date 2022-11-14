@@ -1,12 +1,12 @@
 @so lib/python${MODPY_VERSION}/site-packages/_libldap0.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/ldap0/
-lib/python${MODPY_VERSION}/site-packages/ldap0-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/ldap0-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/ldap0-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/ldap0-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/ldap0-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
-lib/python${MODPY_VERSION}/site-packages/ldap0-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
-lib/python${MODPY_VERSION}/site-packages/ldap0-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/zip-safe
+lib/python${MODPY_VERSION}/site-packages/ldap0-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/ldap0-${MODPY_EGG_VERSION}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/ldap0-${MODPY_EGG_VERSION}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/ldap0-${MODPY_EGG_VERSION}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/ldap0-${MODPY_EGG_VERSION}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/ldap0-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/ldap0-${MODPY_EGG_VERSION}.dist-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/ldap0/__about__.py
 lib/python${MODPY_VERSION}/site-packages/ldap0/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ldap0/${MODPY_PYCACHE}/
@@ -130,6 +130,7 @@ lib/python${MODPY_VERSION}/site-packages/ldap0/modlist.py
 lib/python${MODPY_VERSION}/site-packages/ldap0/msad.py
 lib/python${MODPY_VERSION}/site-packages/ldap0/openldap.py
 lib/python${MODPY_VERSION}/site-packages/ldap0/pw.py
+lib/python${MODPY_VERSION}/site-packages/ldap0/py.typed
 lib/python${MODPY_VERSION}/site-packages/ldap0/res.py
 lib/python${MODPY_VERSION}/site-packages/ldap0/sasl.py
 lib/python${MODPY_VERSION}/site-packages/ldap0/schema/

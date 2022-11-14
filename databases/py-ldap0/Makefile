@@ -2,8 +2,7 @@ COMMENT =	provides an API to access LDAP directory servers for Python
 
 FIX_EXTRACT_PERMISSIONS = Yes
 
-MODPY_EGG_VERSION =	1.4.9
-REVISION =	1
+MODPY_EGG_VERSION =	1.4.10
 
 DISTNAME =	ldap0-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
@@ -24,14 +23,16 @@ FLAVOR =	python3
 FLAVORS =	python3
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =	setuptools
 
-# tests not shipped on PyPi
-NO_TEST =	Yes
 LIB_DEPENDS +=	databases/openldap
 RUN_DEPENDS =	devel/py-asn1${MODPY_FLAVOR} \
 		devel/py-asn1-modules${MODPY_FLAVOR}
+TEST_DEPENDS =	${RUN_DEPENDS} \
+		databases/openldap,-server
 
 MAKE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
+TEST_ENV=	BIN=${LOCALBASE}/bin \
+		SLAPD=${LOCALBASE}/libexec/slapd
 
 .include <bsd.port.mk>
