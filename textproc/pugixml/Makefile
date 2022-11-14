@@ -1,10 +1,9 @@
 COMMENT=	light-weight, simple and fast XML parser for C++
 
-V=		1.12.1
+V=		1.13
 DISTNAME=	pugixml-$V
-WRKDIST=	${WRKDIR}/pugixml-1.12
 
-SHARED_LIBS +=	pugixml                   1.1 # 1.9
+SHARED_LIBS +=	pugixml                   1.2
 
 CATEGORIES=	textproc devel
 
