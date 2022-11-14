@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1455 2022/11/14 09:08:11 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.1456 2022/11/14 15:08:09 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1742,6 +1742,7 @@ setup_obsolete_reason(
 	50 => 'sslScanner',
 	5 => 'softhsm',
 	1 => 'chntpw',
+	5 => 'nbaudit',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually

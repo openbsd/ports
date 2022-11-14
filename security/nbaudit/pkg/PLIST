@@ -1,4 +1,0 @@
-@newgroup _nbaudit:633
-@newuser _nbaudit:633:_nbaudit::nbaudit user:/nonexistent:/sbin/nologin
-@bin bin/nbaudit
-@man man/man1/nbaudit.1
