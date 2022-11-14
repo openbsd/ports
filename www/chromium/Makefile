@@ -7,6 +7,7 @@ DPB_PROPERTIES=		parallel parallel2
 COMMENT=		Chromium browser
 
 V=			107.0.5304.110
+REVISION=		0
 
 DISTNAME=		chromium-${V}
 
@@ -92,6 +93,8 @@ LIB_DEPENDS=	archivers/snappy \
 		x11/xkbcommon \
 		print/cups,-libs \
 		${MODGCC4_CPPLIBDEP}
+
+BUILD_DEPENDS+=	sysutils/libudev-openbsd:build
 
 .include <bsd.own.mk>
 
@@ -302,6 +305,8 @@ do-install:
     unveil.utility_network unveil.utility_video
 	${INSTALL_DATA} ${FILESDIR}/${f} ${PREFIX}/share/examples/chromium
 .endfor
+	${INSTALL_DATA} ${WRKDIR}/sysutils/libudev-openbsd/build-${MACHINE_ARCH}/libudev.so.0.0 \
+		${PREFIX}/${DIST_TARGET_DIR}/libudev.so.0
 
 pre-test:
 .for _d in ${REGRESS_DISTFILES:C/:[0-9]$//}
