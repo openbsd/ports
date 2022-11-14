@@ -1,10 +1,9 @@
 COMMENT =		serialize all of python
 
-MODPY_EGG_VERSION =	0.3.5.1
+MODPY_EGG_VERSION =	0.3.6
 DISTNAME =		dill-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		0
 
 # https://github.com/uqfoundation/dill
 HOMEPAGE =		https://dill.readthedocs.io/
