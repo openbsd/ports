@@ -3,11 +3,9 @@ COMMENT =		simple, fast and user-friendly alternative to 'find'
 GH_ACCOUNT =		sharkdp
 GH_PROJECT =		fd
 GH_TAGNAME =		v8.4.0
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		sysutils
-
-MAINTAINER =		Frederic Cambus <fcambus@openbsd.org>
 
 # MIT/Apache 2.0
 PERMIT_PACKAGE =	Yes
