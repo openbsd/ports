@@ -3,7 +3,7 @@ COMMENT-media =	wxMediaCtrl class for wxWidgets
 COMMENT-webkit = wxWebView class for wxWidgets
 
 V =		3.0.5.1
-REVISION-main =	3
+REVISION-main =	4
 REVISION-media = 1
 REVISION-webkit = 2
 DISTNAME =	wxWidgets-${V}
