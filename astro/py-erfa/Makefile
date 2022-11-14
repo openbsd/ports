@@ -26,7 +26,9 @@ FLAVOR=		python3
 FLAVORS=	python3
 
 BUILD_DEPENDS=	math/py-numpy${MODPY_FLAVOR} \
-		sysutils/py-packaging${MODPY_FLAVOR}
+		math/py-oldest-supported-numpy${MODPY_FLAVOR} \
+		sysutils/py-packaging${MODPY_FLAVOR} \
+		www/py-jinja2${MODPY_FLAVOR}
 RUN_DEPENDS=	math/py-numpy${MODPY_FLAVOR}
 TEST_DEPENDS=	devel/py-test-doctestplus${MODPY_FLAVOR}
 
