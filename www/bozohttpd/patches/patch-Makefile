@@ -1,6 +1,7 @@
---- Makefile.orig	Thu Oct 15 06:35:06 2020
-+++ Makefile	Fri Oct 16 08:49:22 2020
-@@ -24,17 +24,17 @@
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -24,24 +24,24 @@
  # for setting CFLAGS relevant to your make, eg
  #   % make COPTS="-DDO_HTPASSWD"
  
@@ -23,3 +24,20 @@
  
  WARNS?=	4
  
+ .if defined(.OS.MAKE)
+ OPSYS=	${.OS.MAKE}
+ .else
+-OPSYS:=	${:!uname -s!:S/-//g:S/\///g}
++OPSYS!=	uname -s
+ .endif
+ 
+ .if ${OPSYS} == "QNX"
+@@ -84,7 +84,7 @@ check:
+ .if empty(BOZOVER)
+ BOZOVER!=	sed -n \
+ 		    -e s/\"$$// -e \
+-		    's/\#define[ 	]*SERVER_SOFTWARE[ 	]*\"bozohttpd\///p'  ${.PARSEDIR}/bozohttpd.c
++		    's/\#define[ 	]*SERVER_SOFTWARE[ 	]*\"bozohttpd\///p'  bozohttpd.c
+ .endif
+ 
+ # Create a distfile: uses /tmp

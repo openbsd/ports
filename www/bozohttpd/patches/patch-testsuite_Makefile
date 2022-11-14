@@ -1,0 +1,14 @@
+trailing space
+
+Index: testsuite/Makefile
+--- testsuite/Makefile.orig
++++ testsuite/Makefile
+@@ -8,7 +8,7 @@ BIGFILETESTS=	partial4000 partial8000
+ BOZOHTTPD?=	../bozohttpd
+ BOZOHTTPD?=	../debug/bozohttpd-debug
+ WGET?=		wget
+-DATA?=		$(.CURDIR)/data 
++DATA?=		$(.CURDIR)/data
+ VERBOSE?=	yes
+ 
+ .if ${VERBOSE} != "yes"
