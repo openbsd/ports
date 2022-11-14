@@ -57,7 +57,8 @@ CONFIGURE_ARGS=		--with-cxx-binding \
 			--with-tcl-binding \
 			--with-python-binding \
 			--with-tcl=${MODTCL_LIBDIR} \
-			--with-xml-support
+			--with-xml-support \
+			--without-indi
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
