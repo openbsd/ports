@@ -20,7 +20,6 @@
      SUBDIR += ccrypt
      SUBDIR += cfssl
      SUBDIR += cgichk
-     SUBDIR += chntpw
      SUBDIR += chrootuid
      SUBDIR += clamav
      SUBDIR += clamav-unofficial-sigs
