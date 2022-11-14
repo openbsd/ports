@@ -1,10 +1,10 @@
 lib/python${MODPY_VERSION}/site-packages/bracex/
 lib/python${MODPY_VERSION}/site-packages/bracex-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/bracex-${MODPY_EGG_VERSION}.dist-info/LICENSE.md
 lib/python${MODPY_VERSION}/site-packages/bracex-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/bracex-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/bracex-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/bracex-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/bracex-${MODPY_EGG_VERSION}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/bracex-${MODPY_EGG_VERSION}.dist-info/licenses/LICENSE.md
 lib/python${MODPY_VERSION}/site-packages/bracex/__init__.py
 lib/python${MODPY_VERSION}/site-packages/bracex/__main__.py
 lib/python${MODPY_VERSION}/site-packages/bracex/__meta__.py

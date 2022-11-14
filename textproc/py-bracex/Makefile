@@ -1,20 +1,19 @@
-COMMENT =		brace expanding library
+COMMENT=	brace expanding library
 
-MODPY_EGG_VERSION =	2.2.1
-DISTNAME =		bracex-${MODPY_EGG_VERSION}
-PKGNAME =		py-bracex-${MODPY_EGG_VERSION}
-REVISION =		1
+MODPY_EGG_VERSION=	2.3.post1
+DISTNAME=	bracex-${MODPY_EGG_VERSION}
+PKGNAME=	py-bracex-${MODPY_EGG_VERSION:S/.post/pl/}
 
-CATEGORIES =		textproc
+CATEGORIES=	textproc
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
-MODPY_PYBUILD =		setuptools
-MODPY_PI =		Yes
+MODULES=	lang/python
+MODPY_PYBUILD=	hatchling
+MODPY_PI=	Yes
 
-FLAVORS =		python3
-FLAVOR =		python3
+FLAVORS=	python3
+FLAVOR=		python3
 
 .include <bsd.port.mk>
