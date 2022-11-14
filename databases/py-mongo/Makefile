@@ -3,7 +3,7 @@ COMMENT =	Python driver for mongodb
 MODPY_EGG_VERSION = 4.2.0
 DISTNAME =	pymongo-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:S/py//}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	databases devel
 
@@ -20,8 +20,7 @@ MODULES =	lang/python
 FLAVORS =	python3
 FLAVOR =	python3
 
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =	setuptools
 
 # unported dep
 MODPY_PYTEST_ARGS =	--ignore test/mockupdb

@@ -2,7 +2,7 @@ COMMENT =		command line tool for PostgreSQL server activity monitoring
 
 MODPY_EGG_VERSION =	2.2.0
 DISTNAME =		pg_activity-${MODPY_EGG_VERSION}
-REVISION =		1
+REVISION =		2
 
 GH_ACCOUNT =		dalibo
 GH_PROJECT =		pg_activity
@@ -16,7 +16,7 @@ MAINTAINER =		Ingo Feinerer <feinerer@logic.at>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 RUN_DEPENDS =		databases/py-psycopg2${MODPY_FLAVOR} \
 			devel/py-attrs${MODPY_FLAVOR} \
 			sysutils/py-blessed${MODPY_FLAVOR} \

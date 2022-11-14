@@ -5,7 +5,7 @@ MODPY_EGG_VERSION =	1.1.10
 DISTNAME =		whisper-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		databases
-REVISION =		0
+REVISION =		1
 
 # Apache
 PERMIT_PACKAGE =	Yes
@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 FLAVORS =		python3
 FLAVOR =		python3

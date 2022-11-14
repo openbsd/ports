@@ -3,7 +3,7 @@ COMMENT =		Python interface to MySQL
 MODPY_EGG_VERSION =	2.1.1
 DISTNAME =		mysqlclient-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		databases
 
@@ -21,7 +21,7 @@ COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
 
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 MODPY_PYTEST_ARGS =	tests
 
 FLAVORS =		python3

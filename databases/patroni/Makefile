@@ -2,7 +2,7 @@ COMMENT =		PostgreSQL HA cluster management tool
 
 MODPY_EGG_VERSION =	2.1.4
 DISTNAME =		patroni-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		databases
 
@@ -31,7 +31,7 @@ RUN_DEPENDS =		databases/postgresql,-server \
 			textproc/py-yaml${MODPY_FLAVOR} \
 			www/py-urllib3${MODPY_FLAVOR}
 
-MODPY_SETUPTOOLS = 	Yes
+MODPY_PYBUILD =		setuptools
 
 FLAVORS =		python3
 FLAVOR =		python3

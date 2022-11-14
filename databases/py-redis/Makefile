@@ -8,7 +8,7 @@ GH_TAGNAME =		${MODPY_EGG_VERSION}
 
 PKGNAME =		py-redis-${MODPY_EGG_VERSION}
 CATEGORIES =		databases
-REVISION =		3
+REVISION =		4
 
 HOMEPAGE =		https://github.com/andymccurdy/redis-py/
 
@@ -22,8 +22,7 @@ MODULES =		lang/python
 FLAVORS =		python3
 FLAVOR =		python3
 
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 
 # Be sure to have a redis server running on localhost
 TEST_IS_INTERACTIVE =	Yes

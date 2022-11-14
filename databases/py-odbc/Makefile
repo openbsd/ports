@@ -3,7 +3,7 @@ COMMENT =	ODBC bindings for Python
 MODPY_EGG_VERSION = 4.0.34
 DISTNAME =	pyodbc-${MODPY_EGG_VERSION}
 PKGNAME =	${DISTNAME:S/py/py-/}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	databases
 
@@ -19,7 +19,7 @@ COMPILER =	base-clang ports-gcc
 
 MODULES =	lang/python
 MODPY_PI =	Yes
-MODPY_SETUPTOOLS = Yes
+MODPY_PYBUILD =	setuptools
 
 NO_TEST =	Yes
 

@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	5.2.4
 DISTNAME =		PyGreSQL-${MODPY_EGG_VERSION}
 PKGNAME =		py-pygresql-${MODPY_EGG_VERSION}
 CATEGORIES =		databases
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		http://www.pygresql.org/
 
@@ -26,7 +26,7 @@ MODPY_PI =	Yes
 EXTRACT_SUFX =	.tar.gz
 NO_TEST =	Yes
 
-MODPY_SETUPTOOLS = Yes
+MODPY_PYBUILD =	setuptools
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${MODPY_PY_PREFIX}pygresql
