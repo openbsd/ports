@@ -14,6 +14,7 @@ bin/gdal_sieve.py
 bin/gdalattachpct.py
 bin/gdalcompare.py
 bin/gdalmove.py
+bin/ogr_layer_algebra.py
 bin/ogrmerge.py
 bin/pct2rgb.py
 bin/rgb2pct.py
@@ -36,7 +37,6 @@ lib/python${MODPY_VERSION}/site-packages/osgeo/${MODPY_PYCACHE}gnm.${MODPY_PYC_M
 lib/python${MODPY_VERSION}/site-packages/osgeo/${MODPY_PYCACHE}ogr.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo/${MODPY_PYCACHE}osr.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/python${MODPY_VERSION}/site-packages/osgeo/_gdal.${MODPY_PYC_MAGIC_TAG}so
-@so lib/python${MODPY_VERSION}/site-packages/osgeo/_gdal_array.${MODPY_PYC_MAGIC_TAG}so
 @so lib/python${MODPY_VERSION}/site-packages/osgeo/_gdalconst.${MODPY_PYC_MAGIC_TAG}so
 @so lib/python${MODPY_VERSION}/site-packages/osgeo/_gnm.${MODPY_PYC_MAGIC_TAG}so
 @so lib/python${MODPY_VERSION}/site-packages/osgeo/_ogr.${MODPY_PYC_MAGIC_TAG}so
@@ -66,6 +66,7 @@ lib/python${MODPY_VERSION}/site-packages/osgeo_utils/${MODPY_PYCACHE}gdal_sieve.
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/${MODPY_PYCACHE}gdalattachpct.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/${MODPY_PYCACHE}gdalcompare.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/${MODPY_PYCACHE}gdalmove.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/osgeo_utils/${MODPY_PYCACHE}ogr_layer_algebra.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/${MODPY_PYCACHE}ogrmerge.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/${MODPY_PYCACHE}pct2rgb.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/${MODPY_PYCACHE}rgb2pct.${MODPY_PYC_MAGIC_TAG}pyc
@@ -113,6 +114,7 @@ lib/python${MODPY_VERSION}/site-packages/osgeo_utils/gdal_sieve.py
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/gdalattachpct.py
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/gdalcompare.py
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/gdalmove.py
+lib/python${MODPY_VERSION}/site-packages/osgeo_utils/ogr_layer_algebra.py
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/ogrmerge.py
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/pct2rgb.py
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/rgb2pct.py
@@ -165,7 +167,6 @@ lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}ogr
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}ogr2vrt.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}ogr_build_junction_table.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}ogr_dispatch.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}ogr_layer_algebra.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}ogrinfo.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}ogrupdate.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}rel.${MODPY_PYC_MAGIC_TAG}pyc
@@ -224,7 +225,6 @@ lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/ogr2ogr.py
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/ogr2vrt.py
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/ogr_build_junction_table.py
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/ogr_dispatch.py
-lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/ogr_layer_algebra.py
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/ogrinfo.py
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/ogrupdate.py
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/rel.py
@@ -249,6 +249,7 @@ lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/wcs_virtds_params.p
 @man man/man1/gdal_sieve.1
 @man man/man1/gdalcompare.1
 @man man/man1/gdalmove.1
+@man man/man1/ogr_layer_algebra.1
 @man man/man1/ogrmerge.1
 @man man/man1/pct2rgb.1
 @man man/man1/rgb2pct.1
@@ -299,7 +300,6 @@ share/examples/${MODPY_PY_PREFIX}gdal/ogr2ogr.py
 share/examples/${MODPY_PY_PREFIX}gdal/ogr2vrt.py
 share/examples/${MODPY_PY_PREFIX}gdal/ogr_build_junction_table.py
 share/examples/${MODPY_PY_PREFIX}gdal/ogr_dispatch.py
-share/examples/${MODPY_PY_PREFIX}gdal/ogr_layer_algebra.py
 share/examples/${MODPY_PY_PREFIX}gdal/ogrinfo.py
 share/examples/${MODPY_PY_PREFIX}gdal/ogrupdate.py
 share/examples/${MODPY_PY_PREFIX}gdal/rel.py

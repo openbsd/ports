@@ -88,6 +88,7 @@ include/ogr_featurestyle.h
 include/ogr_geocoding.h
 include/ogr_geometry.h
 include/ogr_p.h
+include/ogr_recordbatch.h
 include/ogr_spatialref.h
 include/ogr_srs_api.h
 include/ogr_swq.h
