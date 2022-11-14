@@ -365,7 +365,6 @@
      SUBDIR += smurflog
      SUBDIR += sn0int
      SUBDIR += snort2pf
-     SUBDIR += softhsm
      SUBDIR += softhsm2
      SUBDIR += sops
      SUBDIR += spiped
