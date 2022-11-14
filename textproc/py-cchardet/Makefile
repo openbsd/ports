@@ -3,7 +3,7 @@ COMMENT=		high speed universal character encoding detector
 MODPY_EGG_VERSION=	2.1.7
 DISTNAME=		cchardet-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		textproc
 
@@ -17,7 +17,7 @@ WANTLIB += ${COMPILER_LIBCXX} m
 MODULES=		lang/python
 
 MODPY_PI=		Yes
-MODPY_SETUPTOOLS=	Yes
+MODPY_PYBUILD=		setuptools
 
 FLAVORS=		python3
 FLAVOR=			python3

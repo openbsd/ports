@@ -2,7 +2,7 @@ COMMENT =		jq wrapper for YAML/XML documents
 
 MODPY_EGG_VERSION =	3.1.0
 DISTNAME =		yq-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		textproc
 
@@ -13,11 +13,8 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools_scm
 MODPY_PYTEST_ARGS =	test/test.py
-
-BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}
 
 RUN_DEPENDS =		devel/py-argcomplete${MODPY_FLAVOR} \
 			textproc/jq \

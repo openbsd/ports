@@ -3,7 +3,7 @@ COMMENT =		iterative JSON parser
 MODPY_EGG_VERSION =	3.1.4
 DISTNAME =		ijson-${MODPY_EGG_VERSION}
 PKGNAME =		py-ijson-${MODPY_EGG_VERSION}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		textproc
 
@@ -17,9 +17,8 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += pthread yajl
 
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 MODPY_PI =		Yes
-MODPY_PYTEST =		Yes
 FLAVORS =		python3
 FLAVOR =		python3
 

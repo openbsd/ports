@@ -4,7 +4,7 @@ DISTNAME =		demjson-${MODPY_EGG_VERSION}
 MODPY_EGG_VERSION =	2.2.4
 MODPY_PI =		Yes
 PKGNAME =		py-${DISTNAME}
-REVISION =		8
+REVISION =		9
 
 CATEGORIES =	textproc devel
 
@@ -15,7 +15,7 @@ FLAVORS =               python3
 FLAVOR =		python3
 
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 TEST_DEPENDS +=		${FULLPKGNAME}:${FULLPKGPATH}
 

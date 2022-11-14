@@ -3,7 +3,7 @@ COMMENT =		SPDX license list query tool
 MODPY_EGG_VERSION =	0.3.3
 DISTNAME =		spdx-lookup-${MODPY_EGG_VERSION}
 PKGNAME =		py-spdx-lookup-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		textproc
 
@@ -13,7 +13,7 @@ HOMEPAGE =		https://github.com/bbqsrc/spdx-lookup-python
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 MODPY_PI =		Yes
 
 FLAVORS =		python3

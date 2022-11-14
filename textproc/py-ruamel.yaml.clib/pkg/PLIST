@@ -1,11 +1,9 @@
-@conflict py3-ruamel.yaml-<0.17.16
+@conflict ${MODPY_PY_PREFIX}ruamel.yaml-<0.17.16
 @so lib/python${MODPY_VERSION}/site-packages/_ruamel_yaml.${MODPY_PYC_MAGIC_TAG}so
-lib/python${MODPY_VERSION}/site-packages/ruamel/
-lib/python${MODPY_VERSION}/site-packages/ruamel.yaml.clib-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/ruamel.yaml.clib-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/ruamel.yaml.clib-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/ruamel.yaml.clib-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/ruamel.yaml.clib-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/namespace_packages.txt
-lib/python${MODPY_VERSION}/site-packages/ruamel.yaml.clib-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
-lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/
-lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/clib/
+lib/python${MODPY_VERSION}/site-packages/ruamel.yaml.clib-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/ruamel.yaml.clib-${MODPY_EGG_VERSION}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/ruamel.yaml.clib-${MODPY_EGG_VERSION}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/ruamel.yaml.clib-${MODPY_EGG_VERSION}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/ruamel.yaml.clib-${MODPY_EGG_VERSION}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/ruamel.yaml.clib-${MODPY_EGG_VERSION}.dist-info/namespace_packages.txt
+lib/python${MODPY_VERSION}/site-packages/ruamel.yaml.clib-${MODPY_EGG_VERSION}.dist-info/top_level.txt

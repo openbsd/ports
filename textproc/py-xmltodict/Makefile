@@ -1,9 +1,9 @@
 COMMENT =		makes working with XML feel like orking with JSON
 
 MODPY_EGG_VERSION =	0.12.0
-DISTNAME = 		xmltodict-${MODPY_EGG_VERSION}
+DISTNAME =		xmltodict-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		textproc
 
@@ -14,8 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 
 TEST_DEPENDS =		devel/py-coverage${MODPY_FLAVOR}
 

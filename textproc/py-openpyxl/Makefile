@@ -4,7 +4,7 @@ MODPY_EGG_VERSION=	3.0.10
 
 DISTNAME=	openpyxl-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	textproc
 
@@ -13,13 +13,13 @@ HOMEPAGE=	https://openpyxl.readthedocs.io/
 # MIT
 PERMIT_PACKAGE=	Yes
 
-MODULES=		lang/python
+MODULES=	lang/python
 
-MODPY_PI=		Yes
-MODPY_SETUPTOOLS=	Yes
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools
 
-FLAVOR=			python3
-FLAVORS=		python3
+FLAVOR=		python3
+FLAVORS=	python3
 
 # not in pypi distfile
 NO_TEST=		Yes

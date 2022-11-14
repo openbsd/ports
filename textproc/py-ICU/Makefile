@@ -3,7 +3,7 @@ COMMENT=		Python extension wrapping the ICU C++ API
 MODPY_EGG_VERSION=	2.10.2
 DISTNAME=		PyICU-${MODPY_EGG_VERSION}
 PKGNAME=		py-ICU-${MODPY_EGG_VERSION}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		textproc
 
@@ -17,8 +17,7 @@ WANTLIB += icudata icui18n icuuc m pthread ${COMPILER_LIBCXX}
 MODULES=		lang/python
 
 MODPY_PI=		Yes
-MODPY_PYTEST=		Yes
-MODPY_SETUPTOOLS=	Yes
+MODPY_PYBUILD=		setuptools
 
 FLAVORS=		python3
 FLAVOR=			python3

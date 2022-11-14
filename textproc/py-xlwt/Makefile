@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	1.3.0
 
 DISTNAME =	xlwt-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	textproc devel
 
@@ -17,9 +17,8 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 
-MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PI =	Yes
+MODPY_PYBUILD =	setuptools
 FLAVOR =	python3
 FLAVORS =	python3
 

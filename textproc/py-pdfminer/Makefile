@@ -1,7 +1,7 @@
 COMMENT =	PDF parser and analyzer
 
 MODPY_EGG_VERSION =	20211012
-REVISION =		1
+REVISION =		2
 DISTNAME =		pdfminer.six-${MODPY_EGG_VERSION}
 PKGNAME =		py-pdfminer-${MODPY_EGG_VERSION}
 
@@ -15,7 +15,7 @@ MAINTAINER =		Ingo Feinerer <feinerer@logic.at>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 MODPY_PI =		Yes
 
 RUN_DEPENDS =		security/py-cryptography${MODPY_FLAVOR} \

@@ -3,7 +3,7 @@ COMMENT =	extract data from xls and xlsx spreadsheet files
 MODPY_EGG_VERSION =	1.2.0
 DISTNAME =		xlrd-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		6
+REVISION =		7
 
 CATEGORIES =	textproc devel
 
@@ -17,8 +17,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =	lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS = 	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 PORTHOME =		${WRKDIR}
 
 FLAVORS =	python3

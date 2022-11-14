@@ -7,7 +7,7 @@ GH_ACCOUNT =		readthedocs
 GH_PROJECT =		recommonmark
 GH_TAGNAME =		${MODPY_EGG_VERSION}
 PKGNAME =		py-recommonmark-${MODPY_EGG_VERSION}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		textproc devel
 
@@ -21,8 +21,7 @@ MODULES =		lang/python
 FLAVORS =		python3
 FLAVOR  =		python3
 
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =		textproc/py-commonmark${MODPY_FLAVOR}>=0.8.1 \
 			textproc/py-docutils${MODPY_FLAVOR} \

@@ -4,7 +4,7 @@ MODPY_EGG_VERSION=	0.9.1
 DISTNAME=		commonmark-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		textproc
-REVISION=		2
+REVISION=		3
 
 MAINTAINER=		Sebastian Reitenbach <sebastia@openbsd.org>
 
@@ -17,7 +17,7 @@ FLAVORS=		python3
 FLAVOR =		python3
 
 MODPY_PI=		Yes
-MODPY_SETUPTOOLS=	Yes
+MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS=		devel/py-future${MODPY_FLAVOR}
 TEST_DEPENDS=		devel/flake8 \

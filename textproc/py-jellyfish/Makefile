@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	0.9.0
 DISTNAME =		jellyfish-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		textproc
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://jamesturk.github.io/jellyfish/
 
@@ -15,8 +15,7 @@ WANTLIB += ${MODPY_WANTLIB} pthread
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 MODPY_PYTEST_ARGS =	jellyfish/test.py
 
 FLAVORS =	python3

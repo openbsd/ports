@@ -3,7 +3,7 @@ COMMENT =		SPDX license list database
 MODPY_EGG_VERSION =	2.5.1
 DISTNAME =		spdx-${MODPY_EGG_VERSION}
 PKGNAME =		py-spdx-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		textproc
 
@@ -13,7 +13,7 @@ HOMEPAGE =		https://github.com/bbqsrc/spdx-python
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 MODPY_PI =		Yes
 NO_TEST =		Yes
 

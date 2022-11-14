@@ -4,7 +4,7 @@ MODPY_EGG_VERSION=	6.0.10
 DISTNAME=	feedparser-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	textproc
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://github.com/kurtmckee/feedparser
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 MODPY_PI=	Yes
-MODPY_SETUPTOOLS= Yes
+MODPY_PYBUILD=	setuptools
 MODPY_PYTEST_ARGS= tests/runtests.py
 
 FLAVORS=	python3

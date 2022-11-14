@@ -3,7 +3,7 @@ COMMENT =		internationalization helper for Sphinx
 MODPY_EGG_VERSION =	2.0.1
 PKGNAME =		py-sphinx-intl-${MODPY_EGG_VERSION}
 DISTNAME =		sphinx-intl-${MODPY_EGG_VERSION}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		textproc
 
@@ -16,7 +16,7 @@ FLAVORS =		python3
 FLAVOR  =		python3
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =		devel/py-babel${MODPY_FLAVOR} \
 			devel/py-click${MODPY_FLAVOR} \

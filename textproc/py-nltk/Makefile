@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	3.2.4
 DISTNAME=		nltk-${MODPY_EGG_VERSION}
 PKGNAME=		py-nltk-${MODPY_EGG_VERSION}
 CATEGORIES=		textproc
-REVISION=		5
+REVISION=		6
 
 EPOCH =			0
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE=	Yes
 MODULES=		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS=		devel/py-six${MODPY_FLAVOR} \
 			graphics/py-matplotlib${MODPY_FLAVOR} \
