@@ -1,8 +1,7 @@
 COMMENT =	full-featured LDAP client running as web application
 
-MODPY_EGG_VERSION =	1.7.8
+MODPY_EGG_VERSION =	1.8.0
 DISTNAME =	web2ldap-${MODPY_EGG_VERSION}
-REVISION =	1
 
 CATEGORIES =	databases www sysutils
 
@@ -18,8 +17,7 @@ MASTER_SITES =	https://www.web2ldap.de/download/
 MODULES =	lang/python
 
 FIX_EXTRACT_PERMISSIONS =	Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =	Yes
+MODPY_PYBUILD =	setuptools
 
 BUILD_DEPENDS =	databases/py-ldap0${MODPY_FLAVOR}>=1.4.7 \
 		devel/py-iso3166${MODPY_FLAVOR} \
