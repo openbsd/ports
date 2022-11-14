@@ -4,14 +4,14 @@ V=			3.1.6
 GH_ACCOUNT=		AcademySoftwareFoundation
 GH_PROJECT=		Imath
 GH_TAGNAME=		v${V}
-REVISION=		0
+REVISION=		1
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # /!\ see symlinks creation in post-install (LIBImath-3_1_VERSION is used)
 .for solib in Imath PyImath_Python3_10
-SHARED_LIBS +=  ${solib}     0.0 # 28
-SHARED_LIBS +=  ${solib}-3_1 0.0 # 28
+SHARED_LIBS +=  ${solib}     2.0 # 28
+SHARED_LIBS +=  ${solib}-3_1 2.0 # 28
 .endfor
 
 CATEGORIES=		math graphics devel
