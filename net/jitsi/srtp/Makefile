@@ -25,6 +25,8 @@ MODJAVA_VER =	11
 
 WANTLIB =	crypto
 
+BUILD_DEPENDS =		devel/maven
+
 # upstream cmake file is _bad_
 CONFIGURE_ARGS+= -DCMAKE_INSTALL_PREFIX=${PREFIX}/lib \
 		 -DJITSI_SRTP_LIBSSL_VERSION=1.1
