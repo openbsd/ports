@@ -1,20 +1,18 @@
 COMMENT =		list processes as a tree
-DISTNAME =		pstree-2.39
+
+GH_ACCOUNT =		FredHucht
+GH_PROJECT =		pstree
+GH_TAGNAME =		v2.40
+
 CATEGORIES =		sysutils
-HOMEPAGE =		http://www.thp.uni-duisburg.de/pstree/
-REVISION =		0
 
 # GPL
 PERMIT_PACKAGE =	Yes
 
 # uses pledge()
-WANTLIB =		c 
-
-MASTER_SITES =		ftp://ftp.thp.uni-duisburg.de/pub/source/
+WANTLIB =		c
 
 NO_TEST =		Yes
-
-WRKDIST =		${WRKDIR}
 
 do-build:
 	cd ${WRKBUILD} && ${CC} ${CFLAGS} -o pstree pstree.c
