@@ -14,6 +14,8 @@ COMMENT-rustfmt =	Rust code formatter
 V =			1.65.0
 DISTNAME =		rustc-${V}-src
 
+REVISION-gdb =		0
+
 # rustc bootstrap version
 BV-aarch64 =		1.65.0-20221103
 BV-amd64 =		1.65.0-20221101
