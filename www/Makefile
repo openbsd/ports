@@ -115,6 +115,7 @@
      SUBDIR += nghttp3
      SUBDIR += nginx
      SUBDIR += nostromo
+     SUBDIR += nostt
      SUBDIR += odoo
      SUBDIR += openradtool
      SUBDIR += opensearch-dashboards
