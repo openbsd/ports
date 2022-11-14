@@ -20,11 +20,13 @@ RUN_DEPENDS =		devel/py-dill${MODPY_FLAVOR}
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-NO_TEST =		Yes
-# needs "test.support" from somewhere..?
-MODPY_PYTEST_ARGS =	py${MODPY_VERSION}/multiprocess/tests
-
 FLAVORS =               python3
 FLAVOR =                python3
+
+TEST_DEPENDS =		lang/python/${MODPY_VERSION},-tests
+
+do-test:
+	ln -fs ${MODPY_BIN} ${WRKDIR}/bin/python
+	cd ${WRKSRC}; ${SETENV} ${ALL_TEST_ENV} ${MODPY_BIN} -m multiprocess.tests
 
 .include <bsd.port.mk>
