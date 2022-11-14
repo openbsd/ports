@@ -4,12 +4,12 @@ wpath is not enough
 Index: main.go
 --- main.go.orig
 +++ main.go
-@@ -63,7 +63,7 @@ func main() {
- 		}
- 		defer pprof.StopCPUProfile()
- 	}
+@@ -51,7 +51,7 @@ func main() {
+ 	// Example: https://go.dev/play/p/8214zCX6hVq.
+ 	defer writeCPUProfile()()
+ 
 -	if err := protect.Pledge("stdio rpath wpath cpath tty proc exec"); err != nil {
 +	if err := protect.Pledge("stdio rpath wpath cpath fattr tty proc exec"); err != nil {
  		panic(err)
  	}
- 	ctx := context.Background()
+ 
