@@ -1,0 +1,16 @@
+https://github.com/sjmulder/nostt/commit/0e925e803784234cf7a7c05594ba9988e74c8045
+
+Index: nostt.c
+--- nostt.c.orig
++++ nostt.c
+@@ -103,6 +103,10 @@ main(int argc, char **argv)
+ 	int		 line, col;
+ 
+ #ifdef __OpenBSD__
++	if (unveil("/etc/ssl/cert.pem", "r") == -1)
++		err(1, "unveil: /etc/ssl/cert.pem");
++	if (unveil("/etc/ssl/openssl.cnf", "r") == -1)
++		err(1, "unveil: /etc/ssl/openssl.cnf");
+ 	if (pledge("stdio rpath inet dns", NULL) == -1)
+ 		err(1, "pledge");
+ #endif
