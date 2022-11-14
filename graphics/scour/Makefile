@@ -1,6 +1,6 @@
 COMMENT =		SVG scrubber
 MODPY_EGG_VERSION =	0.35
-REVISION =		6
+REVISION =		7
 CATEGORIES =		graphics
 HOMEPAGE =		http://www.codedread.com/scour/
 
@@ -11,7 +11,7 @@ GH_PROJECT =		scour
 GH_TAGNAME =		v${MODPY_EGG_VERSION}
 
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR}
 
 do-test:

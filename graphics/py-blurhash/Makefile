@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	1.1.4
 
 DISTNAME =		blurhash-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		graphics
 
@@ -17,8 +17,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 
 TEST_DEPENDS =		graphics/py-Pillow${MODPY_FLAVOR} \
 			math/py-numpy${MODPY_FLAVOR}

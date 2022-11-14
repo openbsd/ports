@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	1.4.1
 DISTNAME =		imagesize-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		graphics
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://github.com/shibukawa/imagesize_py
 
@@ -17,7 +17,6 @@ FLAVOR =		python3
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 
 .include <bsd.port.mk>

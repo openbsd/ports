@@ -5,7 +5,7 @@ DISTNAME=		Sane-${MODPY_EGG_VERSION}
 DISTFILES=		${DISTNAME}{v${MODPY_EGG_VERSION}}.tar.gz
 PKGNAME=		py-${DISTNAME:L}
 CATEGORIES=		graphics
-REVISION=		1
+REVISION=		2
 
 HOMEPAGE=		http://python-pillow.github.io/
 
@@ -24,7 +24,7 @@ MODULES=		lang/python
 
 SUBST_VARS=		MODPY_SITEPKG
 
-MODPY_SETUPTOOLS=	Yes
+MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS=		graphics/py-Pillow${MODPY_FLAVOR} \
 			math/py-numpy${MODPY_FLAVOR}

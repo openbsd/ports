@@ -1,11 +1,10 @@
 COMMENT =		fractal image generator
 
 MODPY_EGG_VERSION =	4.3
-MODPY_SETUPTOOLS =	Yes
 
 MASTER_SITES =		https://github.com/fract4d/gnofract4d/releases/download/v${MODPY_EGG_VERSION}/
 DISTNAME =		gnofract4d-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		graphics
 
@@ -19,6 +18,7 @@ WANTLIB +=		${COMPILER_LIBCXX} m z png jpeg
 COMPILER =		base-clang ports-gcc
 
 MODULES =		lang/python
+MODPY_PYBUILD =		setuptools
 
 BUILD_DEPENDS +=	devel/glib2
 

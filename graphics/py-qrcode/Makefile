@@ -3,7 +3,7 @@ COMMENT =		QR Code image generator
 MODPY_EGG_VERSION =	7.3.1
 DISTNAME =		qrcode-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		graphics textproc
 
@@ -14,8 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 MODPY_PYTEST_ARGS =	qrcode
 
 RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR} \

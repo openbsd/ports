@@ -8,7 +8,7 @@ GH_ACCOUNT=		pygobject
 GH_PROJECT=		pycairo
 GH_TAGNAME=		v${MODPY_EGG_VERSION}
 PKGNAME=		py-cairo-${MODPY_EGG_VERSION}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		graphics
 
@@ -23,7 +23,7 @@ WANTLIB += cairo pthread
 
 MODULES=		lang/python
 
-MODPY_SETUPTOOLS=	Yes
+MODPY_PYBUILD=		setuptools
 
 FLAVORS=		python3
 FLAVOR=			python3

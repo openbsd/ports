@@ -3,7 +3,7 @@ COMMENT = 		Python charting module
 MODPY_EGG_VERSION =	0.8.1
 DISTNAME = 		pycha-${MODPY_EGG_VERSION}
 CATEGORIES = 		graphics
-REVISION =              1
+REVISION =              2
 
 # LGPL
 PERMIT_PACKAGE =	Yes
@@ -12,9 +12,8 @@ MODPY_PI = 		Yes
 
 MODULES = 		lang/python
 
-MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	tests/*.py
-MODPY_SETUPTOOLS = 	Yes
+MODPY_PYBUILD =		setuptools
 
 FLAVORS =		python3
 FLAVOR =		python3

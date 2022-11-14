@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	2.6.1
 DISTNAME =		imageio-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		graphics
-REVISION =		4
+REVISION =		5
 
 MAINTAINER =		Paul Irofti <paul@irofti.net>
 
@@ -22,7 +22,6 @@ RUN_DEPENDS =		math/py-numpy${MODPY_FLAVOR} \
 TEST_DEPENDS =		sysutils/py-psutil${MODPY_FLAVOR}
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 
 .include <bsd.port.mk>

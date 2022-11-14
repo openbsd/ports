@@ -5,7 +5,7 @@ GH_PROJECT=		gprof2dot
 GH_TAGNAME=		2021.02.21
 
 MODPY_EGG_VERSION=	${GH_TAGNAME:C/\.0/./g}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		graphics
 
@@ -13,8 +13,7 @@ CATEGORIES=		graphics
 PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
-
-MODPY_SETUPTOOLS=	Yes
+MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS=		math/graphviz
 

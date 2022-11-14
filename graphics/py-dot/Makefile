@@ -4,7 +4,7 @@ MODPY_EGG_VERSION= 1.4.2
 DISTNAME=	pydot-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:S/py/py-/}
 CATEGORIES=	graphics
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	https://github.com/erocarrera/pydot
 
@@ -16,8 +16,8 @@ FLAVOR=		python3
 
 MODULES=	lang/python
 
-MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools
 
 BUILD_DEPENDS=	devel/py-parsing${MODPY_FLAVOR}
 RUN_DEPENDS=	devel/py-parsing${MODPY_FLAVOR} \

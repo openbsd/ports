@@ -5,7 +5,7 @@ DISTNAME =		PyQRCode-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
 CATEGORIES =		graphics
 HOMEPAGE =		https://github.com/mnooner256/pyqrcode
-REVISION =		0
+REVISION =		1
 
 # BSD
 PERMIT_PACKAGE =	Yes
@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 FLAVORS =		python3
 FLAVOR =		python3
