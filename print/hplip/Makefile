@@ -12,6 +12,7 @@ DISTNAME=		hplip-${V}
 SUBST_VARS=		V
 
 REVISION-common=	0
+REVISION-gui=		0
 REVISION-hpaio=		0
 REVISION-main=		0
 
