@@ -1,4 +1,4 @@
-V =	3.3.1
+V =	3.3.2
 COMMENT=	geographic objects support for PostgreSQL
 DISTNAME=	postgis-${V}
 CATEGORIES=	geo databases
@@ -14,6 +14,7 @@ WANTLIB += c crypto curl expat freexl gdal geos geos_c geotiff gif iconv intl
 WANTLIB += jpeg json-c lz4 lzma m nghttp2 openjp2 pcre2-8 png pq>=5.3 protobuf-c zstd
 WANTLIB += proj pthread qhull_r spatialite sqlite3 ssl ${COMPILER_LIBCXX} tiff webp xml2 z
 WANTLIB += hdf5 hdf5_hl minizip netcdf rttopo execinfo fontconfig freetype lcms2 poppler
+WANTLIB += nghttp3 ngtcp2 ngtcp2_crypto_openssl
 
 COMPILER =		base-clang ports-gcc base-gcc
 
