@@ -1,0 +1,34 @@
+Let geoip/geoip6 file paths be set by prefs like everything else and let
+the new getTorFile() deal with it.
+
+Index: toolkit/components/tor-launcher/TorProcess.jsm
+--- toolkit/components/tor-launcher/TorProcess.jsm.orig
++++ toolkit/components/tor-launcher/TorProcess.jsm
+@@ -253,6 +253,8 @@ class TorProcess {
+     const torrcFile = TorLauncherUtil.getTorFile("torrc", true);
+     this._dataDir = TorLauncherUtil.getTorFile("tordatadir", true);
+     const onionAuthDir = TorLauncherUtil.getTorFile("toronionauthdir", true);
++    const geoipFile = TorLauncherUtil.getTorFile("geoip", false);
++    const geoip6File = TorLauncherUtil.getTorFile("geoip6", false);
+     const hashedPassword = TorProtocolService.torGetPassword(true);
+     let detailsKey;
+     if (!this._exeFile) {
+@@ -281,17 +283,13 @@ class TorProcess {
+       "torrc-defaults",
+       false
+     );
+-    // The geoip and geoip6 files are in the same directory as torrc-defaults.
+-    const geoipFile = torrcDefaultsFile.clone();
+-    geoipFile.leafName = "geoip";
+-    const geoip6File = torrcDefaultsFile.clone();
+-    geoip6File.leafName = "geoip6";
+ 
+     this._args = [];
+     if (torrcDefaultsFile) {
+       this._args.push("--defaults-torrc");
+       this._args.push(torrcDefaultsFile.path);
+     }
++    this._args.push("--ignore-missing-torrc");
+     this._args.push("-f");
+     this._args.push(torrcFile.path);
+     this._args.push("DataDirectory");

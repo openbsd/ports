@@ -13,16 +13,12 @@ TL_VERSION =		0.2.39
 EXTRACT_SUFX =		.tar.xz
 PATCHORIG =		.pat.orig
 
-# XXX
-#PKGNAME =		${TB_PREFIX}-browser-${TB_VERSION}
-PKGNAME =		${TB_PREFIX}-browser-12.0alpha3
-DISTNAME =		src-firefox-tor-browser-102.3.0esr-12.0-1-build2
-REVISION =		0
+PKGNAME =		${TB_PREFIX}-browser-${TB_VERSION:S/a/alpha/}
+DISTNAME =		src-firefox-tor-browser-102.4.0esr-12.0-2-build1
 
 FIX_EXTRACT_PERMISSIONS	= Yes
 DISTFILES +=		${DISTNAME}.tar.xz \
-			src-tor-launcher-${TL_VERSION}.tar.xz \
-			tor-browser-linux64-${TB_VERSION}_en-US.tar.xz
+			tor-browser-linux64-${TB_VERSION}_ALL.tar.xz
 
 SO_VERSION =		8.0
 MOZILLA_LIBS =		xul clearkey lgpllibs mozavcodec mozavutil mozgtk
@@ -56,8 +52,8 @@ BUILD_DEPENDS +=	lang/wasi-sdk/compiler-rt \
 			lang/wasi-libc
 
 # uses pledge()
-# Extra:  Xcomposite.4 Xdamage.4 Xfixes.6 gdk-x11-2.0.2400 gtk-x11-2.0.2400
-WANTLIB += Xt gthread-2.0 pangoft2-1.0
+# Extra:  Xcomposite.4 Xcursor.5 Xdamage.4 Xfixes.6 Xi.12 Xrender.6
+WANTLIB += Xrandr
 
 # Regression tests are too hard to adapt to run here
 NO_TEST =		Yes
@@ -96,9 +92,7 @@ DEBUG_CONFIGURE_ARGS +=	--enable-debug-symbols \
 			--disable-install-strip
 
 post-extract:
-	mv ${WRKDIR}/tor-browser_en-US ${WRKSRC}
-	mv ${WRKDIR}/tor-launcher-${TL_VERSION}/ \
-		${WRKSRC}/browser/extensions/tor-launcher
+	mv ${WRKDIR}/tor-browser ${WRKSRC}/tor-browser-linux64/
 
 post-patch:
 	# hack config/baseconfig.mk to not use MOZ_APP_VERSION in a few places
@@ -107,7 +101,7 @@ post-patch:
 	# drop in sh front end to configure.py so CONFIGURE_STYLE=simple works
 	${SUBST_PROGRAM} ${FILESDIR}/configure ${WRKSRC}/configure
 	${SUBST_PROGRAM} ${FILESDIR}/configure ${WRKSRC}/js/src/configure
-	${SUBST_CMD} ${WRKSRC}/browser/extensions/tor-launcher/src/defaults/preferences/torlauncher-prefs.js
+	${SUBST_CMD} ${WRKSRC}/browser/app/profile/000-tor-browser.js
 	# Not using a patch for this; patch context would contain UTF-8
 	sed -i 's/#ifdef XP_LINUX/#if defined(XP_LINUX) || defined(XP_OPENBSD)/' \
 	    ${WRKSRC}/browser/app/profile/000-tor-browser.js
@@ -158,10 +152,10 @@ post-install:
 	# install fonts.conf and fonts
 	${INSTALL_DATA_DIR} ${BROWSER_DIR}/browser/fontconfig
 	${SUBST_DATA} \
-	    ${WRKSRC}/tor-browser_en-US/Browser/TorBrowser/Data/fontconfig/fonts.conf \
+	    ${WRKSRC}/tor-browser-linux64/Browser/TorBrowser/Data/fontconfig/fonts.conf \
 	    ${BROWSER_DIR}/browser/fontconfig/fonts.conf
 	${INSTALL_DATA_DIR} ${BROWSER_DIR}/browser/fonts
-	cp ${WRKSRC}/tor-browser_en-US/Browser/fonts/* \
+	cp ${WRKSRC}/tor-browser-linux64/Browser/fonts/* \
 	    ${BROWSER_DIR}/browser/fonts
 
 	# install wrapper script (remove symlink first)

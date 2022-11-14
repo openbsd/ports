@@ -1,0 +1,15 @@
+Force DataOutsideOfAppDir on OpenBSD since it will always be true
+(turned on in patch-xpcom_io_TorFileUtils_cpp).
+
+Index: toolkit/components/tor-launcher/TorLauncherUtil.jsm
+--- toolkit/components/tor-launcher/TorLauncherUtil.jsm.orig
++++ toolkit/components/tor-launcher/TorLauncherUtil.jsm
+@@ -31,7 +31,7 @@ class TorFile {
+   checkIPCPathLen = true;
+ 
+   static _isFirstIPCPathRequest = true;
+-  static _isUserDataOutsideOfAppDir = undefined;
++  static _isUserDataOutsideOfAppDir = true;
+   static _dataDir = null;
+   static _appDir = null;
+ 

@@ -3,6 +3,10 @@ means we can not pass --disable-eme to configure so comment that out.
 
 Don't use --enable-rust-simd, fails to build.
 
+Remove $WASI_SYSROOT test, it breaks the build for us. Not sure if the test
+is relevant for us. Was added upstream in
+https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/41406
+
 Index: browser/config/mozconfigs/base-browser
 --- browser/config/mozconfigs/base-browser.orig
 +++ browser/config/mozconfigs/base-browser
@@ -28,3 +32,11 @@ Index: browser/config/mozconfigs/base-browser
  ac_add_options --enable-proxy-bypass-protection
  # See bugs #30575 and #32418: system policies are harmful either because they
  # could allow proxy bypass, and override a number of other preferences we set
+@@ -37,7 +37,3 @@ ac_add_options --enable-base-browser
+ 
+ # Disable telemetry
+ ac_add_options MOZ_TELEMETRY_REPORTING=
+-
+-if test -z "$WASI_SYSROOT"; then
+-    ac_add_options --without-wasm-sandboxed-libraries
+-fi
