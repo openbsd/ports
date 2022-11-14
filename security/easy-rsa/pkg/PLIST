@@ -6,7 +6,9 @@ share/easy-rsa/README.md
 share/easy-rsa/README.quickstart.md
 share/easy-rsa/doc/
 share/easy-rsa/doc/EasyRSA-Advanced.md
+share/easy-rsa/doc/EasyRSA-Contributing.md
 share/easy-rsa/doc/EasyRSA-Readme.md
+share/easy-rsa/doc/EasyRSA-Renew-and-Revoke.md
 share/easy-rsa/doc/EasyRSA-Upgrade-Notes.md
 share/easy-rsa/doc/Hacking.md
 share/easy-rsa/doc/Intro-To-PKI.md

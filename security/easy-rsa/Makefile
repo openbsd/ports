@@ -1,12 +1,17 @@
 COMMENT =	small RSA key management package
 
-V =		3.1.0
+V =		3.1.1
 PKGNAME =	easy-rsa-${V}
 DISTNAME =	EasyRSA-${V}
 EXTRACT_SUFX =	.tgz
 CATEGORIES =	security
 
 HOMEPAGE =	https://openvpn.net/
+
+# Use upstream commit to fix number_only option parsing
+MASTER_SITES0 =		https://github.com/OpenVPN/easy-rsa/commit/
+PATCH_DIST_STRIP =	-p2
+PATCHFILES =		easy-rsa-number_only-fix{4472516e24b068542cfd1ff5c3e51c3b89eb38b1}.patch:0
 
 # GPLv2 only
 PERMIT_PACKAGE =	Yes

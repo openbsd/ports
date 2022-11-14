@@ -1,2 +1,4 @@
-SHA256 (EasyRSA-3.1.0.tgz) = AbB+y1jcAD5H1OdPn8TaNexoQuls0APWbtcqQ9+YNlk=
-SIZE (EasyRSA-3.1.0.tgz) = 61255
+SHA256 (EasyRSA-3.1.1.tgz) = d51CXKzx3lYmK3p+1rkLNuYUzpJz8IrXuGmSdAyzsqU=
+SHA256 (easy-rsa-number_only-fix.patch) = TOznrkB8Qf4XPgmuWj7W6O/JibAKFwNNEjyz+A1AoZs=
+SIZE (EasyRSA-3.1.1.tgz) = 68434
+SIZE (easy-rsa-number_only-fix.patch) = 1409
