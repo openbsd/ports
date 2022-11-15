@@ -1,9 +1,8 @@
 COMMENT=		low-level, pure Python DBus protocol wrapper
 
-MODPY_EGG_VERSION=	0.7.1
+MODPY_EGG_VERSION=	0.8.0
 DISTNAME=		jeepney-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		2
 
 CATEGORIES=		devel
 
