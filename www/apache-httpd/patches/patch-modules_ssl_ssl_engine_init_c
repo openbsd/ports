@@ -1,7 +1,7 @@
 Index: modules/ssl/ssl_engine_init.c
 --- modules/ssl/ssl_engine_init.c.orig
 +++ modules/ssl/ssl_engine_init.c
-@@ -1601,7 +1601,7 @@ static apr_status_t ssl_init_proxy_certs(server_rec *s
+@@ -1681,7 +1681,7 @@ static apr_status_t ssl_init_proxy_certs(server_rec *s
      X509_STORE_CTX *sctx;
      X509_STORE *store = SSL_CTX_get_cert_store(mctx->ssl_ctx);
  

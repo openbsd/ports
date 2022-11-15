@@ -1,7 +1,7 @@
 Index: modules/ssl/ssl_private.h
 --- modules/ssl/ssl_private.h.orig
 +++ modules/ssl/ssl_private.h
-@@ -230,9 +230,11 @@
+@@ -232,9 +232,11 @@
  #define BN_get_rfc3526_prime_4096  get_rfc3526_prime_4096
  #define BN_get_rfc3526_prime_6144  get_rfc3526_prime_6144
  #define BN_get_rfc3526_prime_8192  get_rfc3526_prime_8192
