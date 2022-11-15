@@ -4,7 +4,7 @@ GNOME_PROJECT=		pygobject
 GNOME_VERSION=		3.42.2
 MODPY_EGG_VERSION=	${GNOME_VERSION}
 PKGNAME=		py3-gobject3-${GNOME_VERSION}
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		devel
 
@@ -26,7 +26,7 @@ MODULES=		lang/python \
 			x11/gnome
 
 MODGNOME_TOOLS=		gobject-introspection
-MODPY_PYBUILD =		setuptools
+MODPY_SETUPTOOLS=	Yes
 
 # XXX https://bugzilla.gnome.org/show_bug.cgi?id=737874
 MODULES +=		gcc4
