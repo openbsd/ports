@@ -382,6 +382,7 @@
      SUBDIR += py-chardet,python3
      SUBDIR += py-charset-normalizer,python3
      SUBDIR += py-colored,python3
+     SUBDIR += py-coloredlogs,python3
      SUBDIR += py-commonmark,python3
      SUBDIR += py-confuse,python3
      SUBDIR += py-cson,python3
@@ -402,6 +403,7 @@
      SUBDIR += py-et_xmlfile,python3
      SUBDIR += py-feedparser
      SUBDIR += py-feedparser,python3
+     SUBDIR += py-humanfriendly,python3
      SUBDIR += py-humanize,python3
      SUBDIR += py-ijson,python3
      SUBDIR += py-iniconfig,python3
