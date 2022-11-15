@@ -1,9 +1,8 @@
 COMMENT =	add an OCR text layer to scanned PDF files
 
-MODPY_EGG_VERSION =  13.7.0
+MODPY_EGG_VERSION =  14.0.1
 # intentionally no py- prefix
 DISTNAME =	ocrmypdf-${MODPY_EGG_VERSION}
-REVISION =	0
 
 CATEGORIES =	print
 
@@ -17,18 +16,17 @@ MODULES =	lang/python
 MODPY_PI =	Yes
 MODPY_PYBUILD =	setuptools_scm
 
-BUILD_DEPENDS =	devel/py-setuptools_scm_git_archive${MODPY_FLAVOR}
-
-# python deps: [optional dep: coloredlogs, not in ports]
+# python deps:
 RUN_DEPENDS =	graphics/py-Pillow${MODPY_FLAVOR} \
+		textproc/py-coloredlogs${MODPY_FLAVOR} \
+		devel/py-deprecation${MODPY_FLAVOR} \
 		graphics/img2pdf \
 		sysutils/py-packaging${MODPY_FLAVOR} \
 		textproc/py-pdfminer${MODPY_FLAVOR} \
 		print/py-pikepdf${MODPY_FLAVOR} \
 		devel/py-pluggy${MODPY_FLAVOR} \
 		print/py-reportlab${MODPY_FLAVOR} \
-		devel/py-tqdm${MODPY_FLAVOR} \
-		devel/py-typing-extensions${MODPY_FLAVOR}
+		devel/py-tqdm${MODPY_FLAVOR}
 
 # other deps
 # can also use jbig2enc, not in ports
