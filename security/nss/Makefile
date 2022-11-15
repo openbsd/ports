@@ -1,6 +1,6 @@
 COMMENT=		libraries to support development of security-enabled apps
 
-VERSION=		3.84
+VERSION=		3.85
 # from https://hg.mozilla.org/projects/nss/file/tip/automation/release/nspr-version.txt
 NSPR_VERSION=		4.35
 DISTNAME=		nss-${VERSION}
@@ -18,7 +18,7 @@ HOMEPAGE=		https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS
 PERMIT_PACKAGE=	Yes
 
 #for regular releases
-MASTER_SITES=		https://ftp.mozilla.org/pub/mozilla.org/security/nss/releases/${DISTNAME:U:C/[-.]/_/g}_RTM/src/
+MASTER_SITES=		https://ftp.mozilla.org/pub/security/nss/releases/${DISTNAME:U:C/[-.]/_/g}_RTM/src/
 
 LIB_DEPENDS=		databases/sqlite3 \
 			devel/nspr>=${NSPR_VERSION}
