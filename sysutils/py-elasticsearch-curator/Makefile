@@ -3,7 +3,7 @@ COMMENT=	manage Elasticsearch indices
 MODPY_EGG_VERSION=5.8.4
 DISTNAME=	elasticsearch-curator-${MODPY_EGG_VERSION}
 PKGNAME=	${MODPY_PY_PREFIX}elasticsearch-curator-${MODPY_EGG_VERSION}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	sysutils
 
@@ -19,7 +19,7 @@ MODPY_PI =	Yes
 MODPY_SETUPTOOLS= Yes
 
 RUN_DEPENDS=	devel/py-certifi${MODPY_FLAVOR}>=2019.9.11 \
-		devel/py-click${MODPY_FLAVOR}>=7.0,<8 \
+		devel/py-click${MODPY_FLAVOR}>=7.0,<9 \
 		devel/py-six${MODPY_FLAVOR}>=1.11.0 \
 		devel/py-voluptuous${MODPY_FLAVOR}>=0.9.3 \
 		net/py-boto3${MODPY_FLAVOR}>=1.9.142 \

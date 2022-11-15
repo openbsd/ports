@@ -1,7 +1,7 @@
 Index: setup.cfg
 --- setup.cfg.orig
 +++ setup.cfg
-@@ -23,23 +23,23 @@ classifiers = 
+@@ -23,18 +23,18 @@ classifiers = 
  install_requires = 
  	voluptuous>=0.12.1
  	elasticsearch>=7.12.0,<8.0.0
@@ -10,9 +10,9 @@ Index: setup.cfg
  	requests>=2.25.1
  	boto3>=boto3-1.17.57
  	requests_aws4auth>=1.0.1
- 	click>=7.0,<8.0
--	pyyaml>=5.4.1
-+	pyyaml>=5.3.1
+-	click>=7.0,<8.0
++	click>=7.0,<9.0
+ 	pyyaml>=5.4.1
  	certifi>=2020.12.5
  	six>=1.15.0
  setup_requires = 
@@ -23,9 +23,3 @@ Index: setup.cfg
  	requests>=2.25.1
  	boto3>=boto3-1.17.57
  	requests_aws4auth>=1.0.1
- 	click>=7.0,<8.0
--	pyyaml>=5.4.1
-+	pyyaml>=5.3.1
- 	certifi>=2020.12.5
- 	six>=1.15.0
- packages = curator
