@@ -4,13 +4,12 @@ ONLY_FOR_ARCHS = amd64 i386
 
 COMMENT =	free and open source reverse engineering framework
 
-V =		0.4.0
-REVISION =	0
+V =		0.4.1
 DISTNAME =	rizin-src-v${V}
 EXTRACT_SUFX =	.tar.xz
 PKGNAME =	rizin-${V}
 
-MASTER_SITES =	https://github.com/rizinorg/rizin/releases/download/v0.4.0/
+MASTER_SITES =	https://github.com/rizinorg/rizin/releases/download/v${V}/
 
 # Upstream shared lib versions are the same as the rizin release version.
 LIBV =			0.0	# ${V}

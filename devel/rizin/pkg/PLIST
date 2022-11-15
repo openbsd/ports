@@ -194,7 +194,6 @@ include/librz/sflib/linux-x86-64/
 include/librz/sflib/linux-x86-64/sflib.h
 include/librz/sflib/linux-x86-64/sfsyscall.h
 include/librz/sflib/linux-x86-64/sfsysnr.h
-lib/cmake/
 lib/cmake/Rizin/
 lib/cmake/Rizin/RizinConfig.cmake
 lib/cmake/rz_analysis/
