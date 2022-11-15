@@ -1,9 +1,8 @@
 COMMENT =		automation tool
 
-MODPY_EGG_VERSION =	0.35.0
+MODPY_EGG_VERSION =	0.36.0
 DISTNAME =		doit-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
-REVISION =		0
 
 HOMEPAGE =		https://pydoit.org/
 
@@ -11,7 +10,7 @@ HOMEPAGE =		https://pydoit.org/
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =	Yes
 MODPY_PI =		Yes
 # some tests fail as they need py-doitpy (not ported)
 MODPY_PYTEST =		Yes
