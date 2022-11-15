@@ -3,10 +3,7 @@ COMMENT=	dkim signer integration to the OpenSMTPD daemon
 V=		0.5
 FILTER_NAME =	dkimsign
 DISTNAME =	filter-dkimsign-${V}
-REVISION =	1
-
-FLAVORS =	ed25519
-FLAVOR	?=
+REVISION =	2
 
 CATEGORIES=	mail
 HOMEPAGE=	http://imperialat.at/dev/filter-dkimsign
@@ -21,19 +18,9 @@ LIB_DEPENDS=	mail/opensmtpd-filters/libopensmtpd
 # ISC
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	c opensmtpd
+WANTLIB=	c opensmtpd crypto
 NO_TEST=	Yes
 MAKE_FLAGS=	CC="${CC}"
-
-.if ${FLAVOR:Med25519}
-# OpenSSL used for EVP_PKEY_ED25519
-MAKE_ENV+=	HAVE_ED25519=1
-MAKE_ENV+=	LIBCRYPTOPC=libecrypto11
-LIB_DEPENDS+=	security/openssl/1.1
-WANTLIB+=	lib/eopenssl11/crypto
-.else
-WANTLIB+=	crypto
-.endif
-
+MAKE_ENV=	HAVE_ED25519=1
 
 .include <bsd.port.mk>

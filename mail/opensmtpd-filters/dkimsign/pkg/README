@@ -24,15 +24,13 @@ Then add the filter to each listener that should be signed:
 
 To use Ed25519 similar steps must be taken.
 
-  Make sure the ed25519 flavor of opensmtpd-filter-dkimsign is installed.
-
 To generate the private key:
 
-  doas -u _dkimsign eopenssl11 genpkey -algorithm ed25519 -outform PEM -out ${SYSCONFDIR}/mail/dkim/private.ed25519.key
+  doas -u _dkimsign openssl genpkey -algorithm ed25519 -outform PEM -out ${SYSCONFDIR}/mail/dkim/private.ed25519.key
 
 To generate the public key ready for dns:
 
-  printf "v=DKIM1;k=ed25519;p=%s" "$(eopenssl11 pkey -outform DER -pubout -in ${SYSCONFDIR}/mail/dkim/private.ed25519.key | tail -c +13 | openssl base64)"
+  printf "v=DKIM1;k=ed25519;p=%s\n" "$(doas -u _dkimsign openssl pkey -outform DER -pubout -in ${SYSCONFDIR}/mail/dkim/private.ed25519.key | tail -c +13 | openssl base64)"
 
 Edit the /etc/mail/smtpd.conf file to declare the filter:
 

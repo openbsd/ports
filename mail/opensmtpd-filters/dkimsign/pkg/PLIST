@@ -1,3 +1,4 @@
+@pkgpath mail/opensmtpd-filters/dkimsign,ed25519
 @newgroup _dkimsign:843
 @newuser _dkimsign:843:843::OpenSMTP DKIM signer:/nonexistent:/sbin/nologin
 libexec/smtpd/
