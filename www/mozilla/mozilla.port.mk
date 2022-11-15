@@ -28,12 +28,12 @@ MOZILLA_DIST_VERSION ?=	${MOZILLA_VERSION:C/rc.//}
 MOZILLA_MAJOR_VERSION =${MOZILLA_VERSION:C/\..*//}
 
 .if ${MOZILLA_VERSION:M*rc?}
-MASTER_SITES ?=	https://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_DIST}/candidates/${MOZILLA_DIST_VERSION}-candidates/build${MOZILLA_VERSION:C/.*(.)/\1/}/source/
+MASTER_SITES ?=	https://ftp.mozilla.org/pub/${MOZILLA_DIST}/candidates/${MOZILLA_DIST_VERSION}-candidates/build${MOZILLA_VERSION:C/.*(.)/\1/}/source/
 # first is the CDN and only has last releases
 # ftp.m.o has all the betas/candidate builds but should only be used as fallback
 .else
-MASTER_SITES ?=	https://releases.mozilla.org/pub/mozilla.org/${MOZILLA_DIST}/releases/${MOZILLA_DIST_VERSION}/source/ \
-		https://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_DIST}/releases/${MOZILLA_DIST_VERSION}/source/
+MASTER_SITES ?=	https://releases.mozilla.org/pub/${MOZILLA_DIST}/releases/${MOZILLA_DIST_VERSION}/source/ \
+		https://ftp.mozilla.org/pub/${MOZILLA_DIST}/releases/${MOZILLA_DIST_VERSION}/source/
 .endif
 
 .if defined(MOZILLA_COMMIT) && defined(MOZILLA_BRANCH)
