@@ -37,8 +37,6 @@ lib/${MOZILLA_PROJECT}/browser/defaults/preferences/pledge.socket
 @sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/pledge.socket
 lib/${MOZILLA_PROJECT}/browser/defaults/preferences/pledge.utility
 @sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/pledge.utility
-lib/${MOZILLA_PROJECT}/browser/defaults/preferences/pledge.utility-audioDecoder
-@sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/pledge.utility-audioDecoder
 lib/${MOZILLA_PROJECT}/browser/defaults/preferences/unveil.content
 @sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/unveil.content
 lib/${MOZILLA_PROJECT}/browser/defaults/preferences/unveil.gpu
@@ -51,8 +49,6 @@ lib/${MOZILLA_PROJECT}/browser/defaults/preferences/unveil.socket
 @sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/unveil.socket
 lib/${MOZILLA_PROJECT}/browser/defaults/preferences/unveil.utility
 @sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/unveil.utility
-lib/${MOZILLA_PROJECT}/browser/defaults/preferences/unveil.utility-audioDecoder
-@sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/unveil.utility-audioDecoder
 lib/${MOZILLA_PROJECT}/browser/features/
 lib/${MOZILLA_PROJECT}/browser/features/formautofill@mozilla.org.xpi
 lib/${MOZILLA_PROJECT}/browser/features/pictureinpicture@mozilla.org.xpi

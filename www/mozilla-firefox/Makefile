@@ -3,16 +3,15 @@ ONLY_FOR_ARCHS =	amd64 aarch64
 
 # Don't forget to bump www/firefox-i18n after updates.
 
-MOZILLA_VERSION =	106.0.2
-MOZILLA_PROFDATA_TASKID=B_dZBbYLQ-WzBhbCWn8k9w
+MOZILLA_VERSION =	107.0
+MOZILLA_PROFDATA_TASKID=Dtq49X5yT46PnaAAqdug_A
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
-REVISION =		1
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/b[0-9]*//}
 HOMEPAGE =	https://www.mozilla.org/firefox/
-SO_VERSION =	119.0
+SO_VERSION =	120.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	mozavcodec mozavutil mozgtk xul clearkey lgpllibs mozsqlite3 ipcclientcerts
@@ -93,7 +92,7 @@ post-install:
 	ln -f ${PREFIX}/lib/${MOZILLA_PROJECT}/browser/chrome/icons/default/default{48,}.png
 
 .for f in unveil pledge
-.for t in content gpu main rdd socket utility utility-audioDecoder
+.for t in content gpu main rdd socket utility
 	${INSTALL_DATA} ${FILESDIR}/${f}.${t} ${PREFIX}/lib/${MOZILLA_PROJECT}/browser/defaults/preferences/
 .endfor
 .endfor
