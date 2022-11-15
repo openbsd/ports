@@ -15,8 +15,8 @@ MAINTAINER=	Pavel Korovin <pvk@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-MODPY_PI =	Yes
-MODPY_SETUPTOOLS= Yes
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools
 
 RUN_DEPENDS=	devel/py-certifi${MODPY_FLAVOR}>=2019.9.11 \
 		devel/py-click${MODPY_FLAVOR}>=7.0,<9 \
