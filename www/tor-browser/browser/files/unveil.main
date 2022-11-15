@@ -26,6 +26,7 @@
 
 # printing
 /usr/bin/lpr rx
+/var/run/cups/cups.sock rw
 
 /etc/mailcap r
 ~/.mailcap r
