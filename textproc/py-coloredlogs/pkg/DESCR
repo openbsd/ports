@@ -1,0 +1,3 @@
+The coloredlogs package enables colored terminal output for Python's
+logging module. The ColoredFormatter class inherits from logging.Formatter
+and uses ANSI escape sequences to render your logging messages in color.
