@@ -19,7 +19,7 @@ WANTLIB=		c pthread
 # MPL - Mozilla Public License
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES =		https://ftp.mozilla.org/pub/mozilla.org/nspr/releases/v${VER}/src/
+MASTER_SITES =		https://ftp.mozilla.org/pub/nspr/releases/v${VER}/src/
 
 USE_GMAKE=		Yes
 AUTOCONF_VERSION=	2.69
