@@ -1,0 +1,15 @@
+The functions and classes in the humanfriendly package can be used to
+make text interfaces more user friendly. Some example features:
+
+- Parsing and formatting numbers, file sizes, pathnames and timespans in
+simple, human friendly formats.
+
+- Easy to use timers for long running operations, with human friendly
+formatting of the resulting timespans.
+
+- Prompting the user to select a choice from a list of options by typing
+the option's number or a unique substring of the option.
+
+- Terminal interaction including text styling (ANSI escape sequences),
+user friendly rendering of usage messages and querying the terminal for
+its size.
