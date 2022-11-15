@@ -17,4 +17,9 @@ CONFIGURE_STYLE =	modbuild
 
 MAKE_ENV =		TEST_POD=Yes
 
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+CFLAGS +=	-std=gnu99
+.endif
+
 .include <bsd.port.mk>
