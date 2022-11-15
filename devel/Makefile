@@ -1456,6 +1456,7 @@
      SUBDIR += py-multiprocess,python3
      SUBDIR += py-multitasking,python3
      SUBDIR += py-munch,python3
+     SUBDIR += py-mypy-extensions,python3
      SUBDIR += py-nbconvert,python3
      SUBDIR += py-nbformat,python3
      SUBDIR += py-nbval,python3
