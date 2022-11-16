@@ -1,0 +1,106 @@
+bin/pmat
+bin/pmat-cat-svpv
+bin/pmat-counts
+bin/pmat-diff
+bin/pmat-leakreport
+bin/pmat-list-orphans
+${P5ARCH}/Devel/MAT.pm
+${P5ARCH}/Devel/MAT/Cmd/
+${P5ARCH}/Devel/MAT/Cmd.pod
+${P5ARCH}/Devel/MAT/Cmd/Terminal.pm
+${P5ARCH}/Devel/MAT/Context.pm
+${P5ARCH}/Devel/MAT/Dumpfile.pm
+${P5ARCH}/Devel/MAT/Graph.pm
+${P5ARCH}/Devel/MAT/InternalTools.pm
+${P5ARCH}/Devel/MAT/SV.pm
+${P5ARCH}/Devel/MAT/Tool/
+${P5ARCH}/Devel/MAT/Tool.pm
+${P5ARCH}/Devel/MAT/Tool.pod
+${P5ARCH}/Devel/MAT/Tool/Callers.pm
+${P5ARCH}/Devel/MAT/Tool/Count.pm
+${P5ARCH}/Devel/MAT/Tool/Find.pm
+${P5ARCH}/Devel/MAT/Tool/Identify.pm
+${P5ARCH}/Devel/MAT/Tool/Inrefs.pm
+${P5ARCH}/Devel/MAT/Tool/ListDanglingPtrs.pm
+${P5ARCH}/Devel/MAT/Tool/Outrefs.pm
+${P5ARCH}/Devel/MAT/Tool/Reachability.pm
+${P5ARCH}/Devel/MAT/Tool/Roots.pm
+${P5ARCH}/Devel/MAT/Tool/Show.pm
+${P5ARCH}/Devel/MAT/Tool/Sizes.pm
+${P5ARCH}/Devel/MAT/Tool/Stack.pm
+${P5ARCH}/Devel/MAT/Tool/Summary.pm
+${P5ARCH}/Devel/MAT/Tool/Symbols.pm
+${P5ARCH}/Devel/MAT/Tool/Tools.pm
+${P5ARCH}/Devel/MAT/ToolBase/
+${P5ARCH}/Devel/MAT/ToolBase/GraphWalker.pm
+${P5ARCH}/Devel/MAT/UI.pod
+${P5ARCH}/Devel/MAT/UserGuide/
+${P5ARCH}/Devel/MAT/UserGuide.pod
+${P5ARCH}/Devel/MAT/UserGuide/IdentifyingAnSV.pod
+@comment ${P5ARCH}/auto/Devel/MAT/MAT.bs
+@so ${P5ARCH}/auto/Devel/MAT/MAT.so
+${P5ARCH}/auto/share/
+${P5ARCH}/auto/share/module/
+${P5ARCH}/auto/share/module/Devel-MAT-UI/
+${P5ARCH}/auto/share/module/Devel-MAT-UI/icons/
+${P5ARCH}/auto/share/module/Devel-MAT-UI/icons/reachable-internal.svg
+${P5ARCH}/auto/share/module/Devel-MAT-UI/icons/reachable-lexical.svg
+${P5ARCH}/auto/share/module/Devel-MAT-UI/icons/reachable-none.svg
+${P5ARCH}/auto/share/module/Devel-MAT-UI/icons/reachable-padlist.svg
+${P5ARCH}/auto/share/module/Devel-MAT-UI/icons/reachable-symtab.svg
+${P5ARCH}/auto/share/module/Devel-MAT-UI/icons/reachable-user.svg
+${P5ARCH}/auto/share/module/Devel-MAT-UI/icons/reachable-yes.svg
+${P5ARCH}/auto/share/module/Devel-MAT-UI/icons/refs-All.svg
+${P5ARCH}/auto/share/module/Devel-MAT-UI/icons/refs-Direct.svg
+${P5ARCH}/auto/share/module/Devel-MAT-UI/icons/refs-Strong.svg
+${P5ARCH}/auto/share/module/Devel-MAT-UI/icons/size-Owned.svg
+${P5ARCH}/auto/share/module/Devel-MAT-UI/icons/size-SV.svg
+${P5ARCH}/auto/share/module/Devel-MAT-UI/icons/size-Structure.svg
+${P5ARCH}/auto/share/module/Devel-MAT-UI/icons/strength-indirect.svg
+${P5ARCH}/auto/share/module/Devel-MAT-UI/icons/strength-inferred.svg
+${P5ARCH}/auto/share/module/Devel-MAT-UI/icons/strength-strong.svg
+${P5ARCH}/auto/share/module/Devel-MAT-UI/icons/strength-weak.svg
+${P5ARCH}/auto/share/module/Devel-MAT-UI/icons/type-ARRAY.svg
+${P5ARCH}/auto/share/module/Devel-MAT-UI/icons/type-BOOL.svg
+${P5ARCH}/auto/share/module/Devel-MAT-UI/icons/type-CODE.svg
+${P5ARCH}/auto/share/module/Devel-MAT-UI/icons/type-C_STRUCT.svg
+${P5ARCH}/auto/share/module/Devel-MAT-UI/icons/type-FORMAT.svg
+${P5ARCH}/auto/share/module/Devel-MAT-UI/icons/type-GLOB.svg
+${P5ARCH}/auto/share/module/Devel-MAT-UI/icons/type-HASH.svg
+${P5ARCH}/auto/share/module/Devel-MAT-UI/icons/type-INVLIST.svg
+${P5ARCH}/auto/share/module/Devel-MAT-UI/icons/type-IO.svg
+${P5ARCH}/auto/share/module/Devel-MAT-UI/icons/type-LVALUE.svg
+${P5ARCH}/auto/share/module/Devel-MAT-UI/icons/type-PAD.svg
+${P5ARCH}/auto/share/module/Devel-MAT-UI/icons/type-PADLIST.svg
+${P5ARCH}/auto/share/module/Devel-MAT-UI/icons/type-PADNAMES.svg
+${P5ARCH}/auto/share/module/Devel-MAT-UI/icons/type-REF.svg
+${P5ARCH}/auto/share/module/Devel-MAT-UI/icons/type-REGEXP.svg
+${P5ARCH}/auto/share/module/Devel-MAT-UI/icons/type-SCALAR.svg
+${P5ARCH}/auto/share/module/Devel-MAT-UI/icons/type-STASH.svg
+${P5ARCH}/auto/share/module/Devel-MAT-UI/icons/type-UNDEF.svg
+@man man/man1/pmat.1
+@man man/man3p/Devel::MAT.3p
+@man man/man3p/Devel::MAT::Cmd.3p
+@man man/man3p/Devel::MAT::Cmd::Terminal.3p
+@man man/man3p/Devel::MAT::Context.3p
+@man man/man3p/Devel::MAT::Dumpfile.3p
+@man man/man3p/Devel::MAT::Graph.3p
+@man man/man3p/Devel::MAT::SV.3p
+@man man/man3p/Devel::MAT::Tool.3p
+@man man/man3p/Devel::MAT::Tool::Callers.3p
+@man man/man3p/Devel::MAT::Tool::Count.3p
+@man man/man3p/Devel::MAT::Tool::Find.3p
+@man man/man3p/Devel::MAT::Tool::Identify.3p
+@man man/man3p/Devel::MAT::Tool::Inrefs.3p
+@man man/man3p/Devel::MAT::Tool::ListDanglingPtrs.3p
+@man man/man3p/Devel::MAT::Tool::Outrefs.3p
+@man man/man3p/Devel::MAT::Tool::Reachability.3p
+@man man/man3p/Devel::MAT::Tool::Roots.3p
+@man man/man3p/Devel::MAT::Tool::Show.3p
+@man man/man3p/Devel::MAT::Tool::Sizes.3p
+@man man/man3p/Devel::MAT::Tool::Stack.3p
+@man man/man3p/Devel::MAT::Tool::Summary.3p
+@man man/man3p/Devel::MAT::Tool::Symbols.3p
+@man man/man3p/Devel::MAT::UI.3p
+@man man/man3p/Devel::MAT::UserGuide.3p
+@man man/man3p/Devel::MAT::UserGuide::IdentifyingAnSV.3p
