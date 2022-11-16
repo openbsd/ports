@@ -1,0 +1,11 @@
+${P5ARCH}/Syntax/
+${P5ARCH}/Syntax/Keyword/
+${P5ARCH}/Syntax/Keyword/Defer.pm
+${P5ARCH}/Syntax/Keyword/Finally.pm
+${P5ARCH}/auto/Syntax/
+${P5ARCH}/auto/Syntax/Keyword/
+${P5ARCH}/auto/Syntax/Keyword/Defer/
+@comment ${P5ARCH}/auto/Syntax/Keyword/Defer/Defer.bs
+@so ${P5ARCH}/auto/Syntax/Keyword/Defer/Defer.so
+@man man/man3p/Syntax::Keyword::Defer.3p
+@man man/man3p/Syntax::Keyword::Finally.3p

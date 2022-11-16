@@ -1,0 +1,2 @@
+This module provides a syntax plugin that implements a block which
+executes when the containing scope has finished.
