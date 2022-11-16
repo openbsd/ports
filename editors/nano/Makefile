@@ -1,12 +1,12 @@
 COMMENT=	simple editor, inspired by Pico
 
-DISTNAME=	nano-6.4
+DISTNAME=	nano-7.0
 CATEGORIES=	editors
 HOMEPAGE=	https://www.nano-editor.org/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
-MASTER_SITES=	https://www.nano-editor.org/dist/v6/ \
+MASTER_SITES=	https://www.nano-editor.org/dist/v7/ \
 		${MASTER_SITE_GNU:=nano/}
 PORTROACH=	site:https://www.nano-editor.org/dist/latest/
 EXTRACT_SUFX=	.tar.xz
