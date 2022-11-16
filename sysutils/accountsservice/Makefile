@@ -48,4 +48,9 @@ DEBUG_PACKAGES=	${BUILD_PACKAGES}
 post-install:
 	rm -r ${WRKINST}/var/lib
 
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+CFLAGS +=	-std=gnu99
+.endif
+
 .include <bsd.port.mk>
