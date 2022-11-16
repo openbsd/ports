@@ -722,6 +722,7 @@
      SUBDIR += p5-ExtUtils-XSBuilder
      SUBDIR += p5-ExtUtils-XSpp
      SUBDIR += p5-FFI-CheckLib
+     SUBDIR += p5-Feature-Compat-Try
      SUBDIR += p5-File-Attributes
      SUBDIR += p5-File-Attributes-Recursive
      SUBDIR += p5-File-BOM
