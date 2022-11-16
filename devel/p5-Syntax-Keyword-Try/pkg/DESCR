@@ -1,0 +1,4 @@
+This module provides a syntax plugin that implements exception-handling
+semantics in a form familiar to users of other languages, being built
+on a block labeled with the try keyword, followed by at least one of a
+catch or finally block.
