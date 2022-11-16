@@ -1,7 +1,7 @@
 Index: src/Makefile.shlib
 --- src/Makefile.shlib.orig
 +++ src/Makefile.shlib
-@@ -80,7 +80,7 @@ shlib_major	= lib$(NAME)$(DLSUFFIX).$(SO_MAJOR_VERSION
+@@ -79,7 +79,7 @@ shlib_major	= lib$(NAME)$(DLSUFFIX).$(SO_MAJOR_VERSION
  shlib_bare	= lib$(NAME)$(DLSUFFIX)
  # Testing the soname variable is a reliable way to determine whether a
  # linkable library is being built.

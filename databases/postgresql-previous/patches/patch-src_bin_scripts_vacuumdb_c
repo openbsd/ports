@@ -1,12 +1,12 @@
 Index: src/bin/scripts/vacuumdb.c
 --- src/bin/scripts/vacuumdb.c.orig
 +++ src/bin/scripts/vacuumdb.c
-@@ -14,6 +14,8 @@
- #define FD_SETSIZE 1024			/* must set before winsock2.h is included */
- #endif
+@@ -10,6 +10,8 @@
+  *-------------------------------------------------------------------------
+  */
  
 +#include <sys/select.h> /* FD_SETSIZE */
 +
  #include "postgres_fe.h"
  
- #ifdef HAVE_SYS_SELECT_H
+ #include "catalog/pg_class_d.h"
