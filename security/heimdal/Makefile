@@ -39,6 +39,10 @@ MULTI_PACKAGES=		-main -devel-docs -libs
 
 MASTER_SITES=		https://github.com/heimdal/heimdal/releases/download/heimdal-${V}/
 
+MODULES=		lang/python
+
+MODPY_RUNDEP=		No
+
 BUILD_DEPENDS=		devel/bison \
 			converters/p5-JSON
 
