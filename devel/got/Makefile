@@ -32,6 +32,7 @@ BUILD_DEPENDS =		www/kcgi>=0.12.0
 
 # some tests will fail without working non-interactive 'ssh 127.0.0.1'
 TEST_IS_INTERACTIVE =	Yes
+TEST_ENV =		$${SSH_AUTH_SOCK:+SSH_AUTH_SOCK="$$SSH_AUTH_SOCK"}
 TEST_DEPENDS =		devel/git \
 			${PKGPATH}=${V}
 
