@@ -1,2 +1,4 @@
 SHA256 (pllua-REL_2_0_10.tar.gz) = XUN5S210YOmNCEGUD/ChukHFRfzfstVx3WwsTpqRJNw=
+SHA256 (pllua-pg-15-fix.patch) = P+uUdUFx2pvz7+100b1eFLpIqqWuENYV/duTbK/bThk=
 SIZE (pllua-REL_2_0_10.tar.gz) = 220676
+SIZE (pllua-pg-15-fix.patch) = 33575
