@@ -1,35 +1,34 @@
-COMMENT=		full text search plugin for Dovecot using Xapian
+COMMENT=	full text search plugin for Dovecot using Xapian
 
-GH_ACCOUNT=		slusarz
-GH_PROJECT=		dovecot-fts-flatcurve
-GH_TAGNAME=		v0.3.2
+GH_ACCOUNT=	slusarz
+GH_PROJECT=	dovecot-fts-flatcurve
+GH_TAGNAME=	v0.3.3
 
-CATEGORIES=		mail
+CATEGORIES=	mail
 
 # LGPLv2.1
-PERMIT_PACKAGE=		Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} m xapian z
 
-COMPILER=		base-clang ports-gcc
+COMPILER=	base-clang ports-gcc
 
-MAINTAINER=		Stuart Henderson <stu.ports@spacehopper.org>
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
-BUILD_DEPENDS=		mail/dovecot
-RUN_DEPENDS=		mail/dovecot
-DEBUG_PACKAGES=		${BUILD_PACKAGES}
+BUILD_DEPENDS=	mail/dovecot
+RUN_DEPENDS=	mail/dovecot
+LIB_DEPENDS=	databases/xapian-core
 
-LIB_DEPENDS=		databases/xapian-core
+SEPARATE_BUILD=	Yes
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
-SEPARATE_BUILD=		Yes
+CONFIGURE_STYLE=autoreconf
+CONFIGURE_ARGS=	--with-dovecot=${LOCALBASE}/lib/dovecot
+CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include
+LIBTOOL_FLAGS=	--tag=disable-static
 
-CONFIGURE_STYLE=	autoreconf
-CONFIGURE_ARGS=		--with-dovecot=${LOCALBASE}/lib/dovecot
-CONFIGURE_ENV=		CPPFLAGS=-I${LOCALBASE}/include
-LIBTOOL_FLAGS=		--tag=disable-static
-
-AUTOCONF_VERSION=	2.71
-AUTOMAKE_VERSION=	1.16
+AUTOCONF_VERSION= 2.71
+AUTOMAKE_VERSION= 1.16
 
 post-install:
 	find ${PREFIX}/lib/dovecot -name '*.la' -delete
