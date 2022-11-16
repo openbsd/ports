@@ -356,7 +356,6 @@
      SUBDIR += scrypt
      SUBDIR += shash
      SUBDIR += shash,static
-     SUBDIR += slurpie
      SUBDIR += smbsniff
      SUBDIR += smtpscan
      SUBDIR += smurflog
