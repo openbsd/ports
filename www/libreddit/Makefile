@@ -3,10 +3,9 @@ NOT_FOR_ARCHS = powerpc64 riscv64 sparc64
 
 COMMENT =	alternative private front-end to Reddit
 
-GH_ACCOUNT =	spikecodes
+GH_ACCOUNT =	libreddit
 GH_PROJECT =	libreddit
-GH_TAGNAME =	v0.22.9
-REVISION =	1
+GH_TAGNAME =	v0.24.0
 
 CATEGORIES =	www
 
@@ -15,7 +14,7 @@ MAINTAINER =	Lucas Raab <tuftedocelot@fastmail.fm>
 # AGPL3
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =	c c++abi m pthread
+WANTLIB =	${MODCARGO_WANTLIB} m
 
 MODULES =	devel/cargo
 BUILD_DEPENDS =	lang/rust
