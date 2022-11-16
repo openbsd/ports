@@ -90,7 +90,6 @@
 @man man/man3/EVP_hcrypto_camellia_256_cbc.3
 @man man/man3/EVP_hcrypto_des_cbc.3
 @man man/man3/EVP_hcrypto_des_ede3_cbc.3
-@man man/man3/EVP_hcrypto_md2.3
 @man man/man3/EVP_hcrypto_md4.3
 @man man/man3/EVP_hcrypto_md5.3
 @man man/man3/EVP_hcrypto_rc2_40_cbc.3
@@ -100,7 +99,6 @@
 @man man/man3/EVP_hcrypto_sha256.3
 @man man/man3/EVP_hcrypto_sha384.3
 @man man/man3/EVP_hcrypto_sha512.3
-@man man/man3/EVP_md2.3
 @man man/man3/EVP_md4.3
 @man man/man3/EVP_md5.3
 @man man/man3/EVP_md_null.3
@@ -884,6 +882,7 @@
 @man man/man3/krb5_plugin_register.3
 @man man/man3/krb5_prepend_config_files.3
 @man man/man3/krb5_prepend_config_files_default.3
+@man man/man3/krb5_prepend_error_message.3
 @man man/man3/krb5_princ_realm.3
 @man man/man3/krb5_princ_set_realm.3
 @man man/man3/krb5_principal.3

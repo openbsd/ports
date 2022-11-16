@@ -2,16 +2,12 @@ COMMENT-main=		Kerberos 5 implementation
 COMMENT-devel-docs=	Heimdal C functions documentation
 COMMENT-libs=		Heimdal libraries and headers
 
-V=			7.7.0
+V=			7.8.0
 DISTNAME=		heimdal-${V}
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-devel-docs=	heimdal-devel-docs-${V}
 PKGNAME-libs=		heimdal-libs-${V}
-
-REVISION-main=		1
-REVISION-devel-docs=	0
-REVISION-libs=		2
 
 CATEGORIES=		security net
 
@@ -22,13 +18,13 @@ SHARED_LIBS +=  sl                   1.0      # 2.1
 SHARED_LIBS +=  wind                 3.0      # 0.0
 SHARED_LIBS +=  asn1                 22.0     # 8.0
 SHARED_LIBS +=  heimsqlite           1.0      # unknown
-SHARED_LIBS +=  hcrypto              0.0      # 5.0
+SHARED_LIBS +=  hcrypto              1.0      # 5.0
 SHARED_LIBS +=  hx509                1.0      # 5.0
 SHARED_LIBS +=  krb5                 22.0     # 26.0
 SHARED_LIBS +=  heimntlm             1.0      # 1.0
 SHARED_LIBS +=  gssapi               9.0      # 3.0
 SHARED_LIBS +=  hdb                  3.1      # 11.0
-SHARED_LIBS +=  kadm5srv             3.0      # 8.1
+SHARED_LIBS +=  kadm5srv             3.1      # 8.1
 SHARED_LIBS +=  kadm5clnt            3.0      # 7.1
 SHARED_LIBS +=  kdc                  3.0      # 2.0
 
@@ -104,6 +100,7 @@ CONFIGURE_ARGS +=	--bindir=${PREFIX}/heimdal/bin \
 			--libdir=${PREFIX}/heimdal/lib \
 			--includedir=${PREFIX}/heimdal/include
 
+USE_GMAKE=		Yes
 MAKE_ENV=		INSTALL_CATPAGES=no
 
 pre-configure:

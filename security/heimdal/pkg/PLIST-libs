@@ -36,7 +36,6 @@ heimdal/include/hcrypto/evp-openssl.h
 heimdal/include/hcrypto/evp-pkcs11.h
 heimdal/include/hcrypto/evp.h
 heimdal/include/hcrypto/hmac.h
-heimdal/include/hcrypto/md2.h
 heimdal/include/hcrypto/md4.h
 heimdal/include/hcrypto/md5.h
 heimdal/include/hcrypto/pkcs12.h
@@ -107,52 +106,52 @@ heimdal/include/wind.h
 heimdal/include/wind_err.h
 heimdal/include/xdbm.h
 heimdal/lib/
-heimdal/lib/libasn1.a
+@static-lib heimdal/lib/libasn1.a
 heimdal/lib/libasn1.la
 @lib heimdal/lib/libasn1.so.${LIBasn1_VERSION}
-heimdal/lib/libgssapi.a
+@static-lib heimdal/lib/libgssapi.a
 heimdal/lib/libgssapi.la
 @lib heimdal/lib/libgssapi.so.${LIBgssapi_VERSION}
-heimdal/lib/libhcrypto.a
+@static-lib heimdal/lib/libhcrypto.a
 heimdal/lib/libhcrypto.la
 @lib heimdal/lib/libhcrypto.so.${LIBhcrypto_VERSION}
-heimdal/lib/libhdb.a
+@static-lib heimdal/lib/libhdb.a
 heimdal/lib/libhdb.la
 @lib heimdal/lib/libhdb.so.${LIBhdb_VERSION}
-heimdal/lib/libheimbase.a
+@static-lib heimdal/lib/libheimbase.a
 heimdal/lib/libheimbase.la
 @lib heimdal/lib/libheimbase.so.${LIBheimbase_VERSION}
-heimdal/lib/libheimedit.a
+@static-lib heimdal/lib/libheimedit.a
 heimdal/lib/libheimedit.la
 @lib heimdal/lib/libheimedit.so.${LIBheimedit_VERSION}
-heimdal/lib/libheimntlm.a
+@static-lib heimdal/lib/libheimntlm.a
 heimdal/lib/libheimntlm.la
 @lib heimdal/lib/libheimntlm.so.${LIBheimntlm_VERSION}
-heimdal/lib/libheimsqlite.a
+@static-lib heimdal/lib/libheimsqlite.a
 heimdal/lib/libheimsqlite.la
 @lib heimdal/lib/libheimsqlite.so.${LIBheimsqlite_VERSION}
-heimdal/lib/libhx509.a
+@static-lib heimdal/lib/libhx509.a
 heimdal/lib/libhx509.la
 @lib heimdal/lib/libhx509.so.${LIBhx509_VERSION}
-heimdal/lib/libkadm5clnt.a
+@static-lib heimdal/lib/libkadm5clnt.a
 heimdal/lib/libkadm5clnt.la
 @lib heimdal/lib/libkadm5clnt.so.${LIBkadm5clnt_VERSION}
-heimdal/lib/libkadm5srv.a
+@static-lib heimdal/lib/libkadm5srv.a
 heimdal/lib/libkadm5srv.la
 @lib heimdal/lib/libkadm5srv.so.${LIBkadm5srv_VERSION}
-heimdal/lib/libkdc.a
+@static-lib heimdal/lib/libkdc.a
 heimdal/lib/libkdc.la
 @lib heimdal/lib/libkdc.so.${LIBkdc_VERSION}
-heimdal/lib/libkrb5.a
+@static-lib heimdal/lib/libkrb5.a
 heimdal/lib/libkrb5.la
 @lib heimdal/lib/libkrb5.so.${LIBkrb5_VERSION}
-heimdal/lib/libroken.a
+@static-lib heimdal/lib/libroken.a
 heimdal/lib/libroken.la
 @lib heimdal/lib/libroken.so.${LIBroken_VERSION}
-heimdal/lib/libsl.a
+@static-lib heimdal/lib/libsl.a
 heimdal/lib/libsl.la
 @lib heimdal/lib/libsl.so.${LIBsl_VERSION}
-heimdal/lib/libwind.a
+@static-lib heimdal/lib/libwind.a
 heimdal/lib/libwind.la
 @lib heimdal/lib/libwind.so.${LIBwind_VERSION}
 heimdal/lib/pkgconfig/
