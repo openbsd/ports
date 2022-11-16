@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1457 2022/11/16 12:53:00 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.1458 2022/11/16 15:52:09 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1744,6 +1744,7 @@ setup_obsolete_reason(
 	1 => 'chntpw',
 	5 => 'nbaudit',
 	1 => 'despoof',
+	51 => 'zebedee',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
@@ -1807,6 +1808,7 @@ my $obsolete_message = {
 	48 => "horrible ecosystem",
 	49 => "has no license, unmaintained since too long, crashes at runtime",
 	50 => "abandoned ten years ago, broken by default due to missing runtime dependencies, use security/sslscan",
+	51 => "dead upstream, consider using socat or SSH",
 };
 
 # ->is_base_system($handle, $state):

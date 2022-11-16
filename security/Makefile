@@ -413,7 +413,6 @@
      SUBDIR += yubico
      SUBDIR += yubiserve
      SUBDIR += zaproxy
-     SUBDIR += zebedee
      SUBDIR += zkt
 
 .include <bsd.port.subdir.mk>
