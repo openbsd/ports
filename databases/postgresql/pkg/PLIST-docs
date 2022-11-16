@@ -46,6 +46,9 @@ share/doc/postgresql/html/app-vacuumdb.html
 share/doc/postgresql/html/appendix-obsolete.html
 share/doc/postgresql/html/appendixes.html
 share/doc/postgresql/html/applevel-consistency.html
+share/doc/postgresql/html/archive-module-callbacks.html
+share/doc/postgresql/html/archive-module-init.html
+share/doc/postgresql/html/archive-modules.html
 share/doc/postgresql/html/arrays.html
 share/doc/postgresql/html/auth-bsd.html
 share/doc/postgresql/html/auth-cert.html
@@ -68,6 +71,8 @@ share/doc/postgresql/html/backup-manifest-format.html
 share/doc/postgresql/html/backup-manifest-toplevel.html
 share/doc/postgresql/html/backup-manifest-wal-ranges.html
 share/doc/postgresql/html/backup.html
+share/doc/postgresql/html/basebackup-to-shell.html
+share/doc/postgresql/html/basic-archive.html
 share/doc/postgresql/html/bgworker.html
 share/doc/postgresql/html/biblio.html
 share/doc/postgresql/html/bki-commands.html
@@ -123,9 +128,11 @@ share/doc/postgresql/html/catalog-pg-namespace.html
 share/doc/postgresql/html/catalog-pg-opclass.html
 share/doc/postgresql/html/catalog-pg-operator.html
 share/doc/postgresql/html/catalog-pg-opfamily.html
+share/doc/postgresql/html/catalog-pg-parameter-acl.html
 share/doc/postgresql/html/catalog-pg-partitioned-table.html
 share/doc/postgresql/html/catalog-pg-policy.html
 share/doc/postgresql/html/catalog-pg-proc.html
+share/doc/postgresql/html/catalog-pg-publication-namespace.html
 share/doc/postgresql/html/catalog-pg-publication-rel.html
 share/doc/postgresql/html/catalog-pg-publication.html
 share/doc/postgresql/html/catalog-pg-range.html
@@ -192,6 +199,7 @@ share/doc/postgresql/html/contrib-spi.html
 share/doc/postgresql/html/contrib.html
 share/doc/postgresql/html/creating-cluster.html
 share/doc/postgresql/html/cube.html
+share/doc/postgresql/html/custom-rmgr.html
 share/doc/postgresql/html/custom-scan-execution.html
 share/doc/postgresql/html/custom-scan-path.html
 share/doc/postgresql/html/custom-scan-plan.html
@@ -539,12 +547,14 @@ share/doc/postgresql/html/locale.html
 share/doc/postgresql/html/locking-indexes.html
 share/doc/postgresql/html/logfile-maintenance.html
 share/doc/postgresql/html/logical-replication-architecture.html
+share/doc/postgresql/html/logical-replication-col-lists.html
 share/doc/postgresql/html/logical-replication-config.html
 share/doc/postgresql/html/logical-replication-conflicts.html
 share/doc/postgresql/html/logical-replication-monitoring.html
 share/doc/postgresql/html/logical-replication-publication.html
 share/doc/postgresql/html/logical-replication-quick-setup.html
 share/doc/postgresql/html/logical-replication-restrictions.html
+share/doc/postgresql/html/logical-replication-row-filter.html
 share/doc/postgresql/html/logical-replication-security.html
 share/doc/postgresql/html/logical-replication-subscription.html
 share/doc/postgresql/html/logical-replication.html
@@ -576,6 +586,7 @@ share/doc/postgresql/html/multibyte.html
 share/doc/postgresql/html/multivariate-statistics-examples.html
 share/doc/postgresql/html/mvcc-caveats.html
 share/doc/postgresql/html/mvcc-intro.html
+share/doc/postgresql/html/mvcc-serialization-failure-handling.html
 share/doc/postgresql/html/mvcc.html
 share/doc/postgresql/html/nls-programmer.html
 share/doc/postgresql/html/nls-translator.html
@@ -610,6 +621,7 @@ share/doc/postgresql/html/pgtrgm.html
 share/doc/postgresql/html/pgupgrade.html
 share/doc/postgresql/html/pgvisibility.html
 share/doc/postgresql/html/pgwaldump.html
+share/doc/postgresql/html/pgwalinspect.html
 share/doc/postgresql/html/pgxlogdump.html
 share/doc/postgresql/html/planner-optimizer.html
 share/doc/postgresql/html/planner-stats-details.html
@@ -703,12 +715,8 @@ share/doc/postgresql/html/regress-run.html
 share/doc/postgresql/html/regress-tap.html
 share/doc/postgresql/html/regress-variant.html
 share/doc/postgresql/html/regress.html
-share/doc/postgresql/html/release-14-1.html
-share/doc/postgresql/html/release-14-2.html
-share/doc/postgresql/html/release-14-3.html
-share/doc/postgresql/html/release-14-4.html
-share/doc/postgresql/html/release-14-5.html
-share/doc/postgresql/html/release-14.html
+share/doc/postgresql/html/release-15.html
+share/doc/postgresql/html/release-15-1.html
 share/doc/postgresql/html/release-prior.html
 share/doc/postgresql/html/release.html
 share/doc/postgresql/html/replication-origins.html
@@ -979,6 +987,7 @@ share/doc/postgresql/html/sql-keywords-appendix.html
 share/doc/postgresql/html/sql-listen.html
 share/doc/postgresql/html/sql-load.html
 share/doc/postgresql/html/sql-lock.html
+share/doc/postgresql/html/sql-merge.html
 share/doc/postgresql/html/sql-move.html
 share/doc/postgresql/html/sql-notify.html
 share/doc/postgresql/html/sql-prepare-transaction.html
@@ -1018,6 +1027,7 @@ share/doc/postgresql/html/sslinfo.html
 share/doc/postgresql/html/sspi-auth.html
 share/doc/postgresql/html/storage-file-layout.html
 share/doc/postgresql/html/storage-fsm.html
+share/doc/postgresql/html/storage-hot.html
 share/doc/postgresql/html/storage-init.html
 share/doc/postgresql/html/storage-page-layout.html
 share/doc/postgresql/html/storage-toast.html
@@ -1099,6 +1109,7 @@ share/doc/postgresql/html/view-pg-cursors.html
 share/doc/postgresql/html/view-pg-file-settings.html
 share/doc/postgresql/html/view-pg-group.html
 share/doc/postgresql/html/view-pg-hba-file-rules.html
+share/doc/postgresql/html/view-pg-ident-file-mappings.html
 share/doc/postgresql/html/view-pg-indexes.html
 share/doc/postgresql/html/view-pg-locks.html
 share/doc/postgresql/html/view-pg-matviews.html
@@ -1125,6 +1136,7 @@ share/doc/postgresql/html/view-pg-user-mappings.html
 share/doc/postgresql/html/view-pg-user.html
 share/doc/postgresql/html/view-pg-views.html
 share/doc/postgresql/html/views-overview.html
+share/doc/postgresql/html/views.html
 share/doc/postgresql/html/wal-async-commit.html
 share/doc/postgresql/html/wal-configuration.html
 share/doc/postgresql/html/wal-internals.html

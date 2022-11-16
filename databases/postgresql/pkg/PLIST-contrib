@@ -14,6 +14,8 @@
 @so lib/postgresql/auth_delay.so
 @so lib/postgresql/auto_explain.so
 @so lib/postgresql/autoinc.so
+@so lib/postgresql/basebackup_to_shell.so
+@so lib/postgresql/basic_archive.so
 @so lib/postgresql/bloom.so
 @so lib/postgresql/bool_plperl.so
 @so lib/postgresql/btree_gin.so
@@ -41,6 +43,7 @@
 @so lib/postgresql/pg_surgery.so
 @so lib/postgresql/pg_trgm.so
 @so lib/postgresql/pg_visibility.so
+@so lib/postgresql/pg_walinspect.so
 @so lib/postgresql/pgcrypto.so
 @so lib/postgresql/pgrowlocks.so
 @so lib/postgresql/pgstattuple.so
@@ -92,6 +95,7 @@ share/postgresql/extension/btree_gist--1.2.sql
 share/postgresql/extension/btree_gist--1.3--1.4.sql
 share/postgresql/extension/btree_gist--1.4--1.5.sql
 share/postgresql/extension/btree_gist--1.5--1.6.sql
+share/postgresql/extension/btree_gist--1.6--1.7.sql
 share/postgresql/extension/btree_gist.control
 share/postgresql/extension/citext--1.0--1.1.sql
 share/postgresql/extension/citext--1.1--1.2.sql
@@ -178,6 +182,7 @@ share/postgresql/extension/pageinspect--1.5.sql
 share/postgresql/extension/pageinspect--1.6--1.7.sql
 share/postgresql/extension/pageinspect--1.7--1.8.sql
 share/postgresql/extension/pageinspect--1.8--1.9.sql
+share/postgresql/extension/pageinspect--1.9--1.10.sql
 share/postgresql/extension/pageinspect.control
 share/postgresql/extension/pg_buffercache--1.0--1.1.sql
 share/postgresql/extension/pg_buffercache--1.1--1.2.sql
@@ -202,6 +207,7 @@ share/postgresql/extension/pg_stat_statements--1.5--1.6.sql
 share/postgresql/extension/pg_stat_statements--1.6--1.7.sql
 share/postgresql/extension/pg_stat_statements--1.7--1.8.sql
 share/postgresql/extension/pg_stat_statements--1.8--1.9.sql
+share/postgresql/extension/pg_stat_statements--1.9--1.10.sql
 share/postgresql/extension/pg_stat_statements.control
 share/postgresql/extension/pg_surgery--1.0.sql
 share/postgresql/extension/pg_surgery.control
@@ -217,6 +223,8 @@ share/postgresql/extension/pg_visibility--1.0--1.1.sql
 share/postgresql/extension/pg_visibility--1.1--1.2.sql
 share/postgresql/extension/pg_visibility--1.1.sql
 share/postgresql/extension/pg_visibility.control
+share/postgresql/extension/pg_walinspect--1.0.sql
+share/postgresql/extension/pg_walinspect.control
 share/postgresql/extension/pgcrypto--1.0--1.1.sql
 share/postgresql/extension/pgcrypto--1.1--1.2.sql
 share/postgresql/extension/pgcrypto--1.2--1.3.sql

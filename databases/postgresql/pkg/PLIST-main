@@ -29,6 +29,7 @@ include/postgresql/informix/esql/decimal.h
 include/postgresql/informix/esql/sqltypes.h
 include/postgresql/internal/
 include/postgresql/internal/c.h
+include/postgresql/internal/fe-auth-sasl.h
 include/postgresql/internal/libpq/
 include/postgresql/internal/libpq-int.h
 include/postgresql/internal/libpq/pqcomm.h
@@ -337,6 +338,7 @@ lib/postgresql/pgxs/src/test/regress/
 @man man/man7/LISTEN.7
 @man man/man7/LOAD.7
 @man man/man7/LOCK.7
+@man man/man7/MERGE.7
 @man man/man7/MOVE.7
 @man man/man7/NOTIFY.7
 @man man/man7/PREPARE.7

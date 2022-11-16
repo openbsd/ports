@@ -111,8 +111,11 @@ include/postgresql/server/access/xlog_internal.h
 include/postgresql/server/access/xlogarchive.h
 include/postgresql/server/access/xlogdefs.h
 include/postgresql/server/access/xloginsert.h
+include/postgresql/server/access/xlogprefetcher.h
 include/postgresql/server/access/xlogreader.h
 include/postgresql/server/access/xlogrecord.h
+include/postgresql/server/access/xlogrecovery.h
+include/postgresql/server/access/xlogstats.h
 include/postgresql/server/access/xlogutils.h
 include/postgresql/server/bootstrap/
 include/postgresql/server/bootstrap/bootstrap.h
@@ -199,6 +202,8 @@ include/postgresql/server/catalog/pg_operator.h
 include/postgresql/server/catalog/pg_operator_d.h
 include/postgresql/server/catalog/pg_opfamily.h
 include/postgresql/server/catalog/pg_opfamily_d.h
+include/postgresql/server/catalog/pg_parameter_acl.h
+include/postgresql/server/catalog/pg_parameter_acl_d.h
 include/postgresql/server/catalog/pg_partitioned_table.h
 include/postgresql/server/catalog/pg_partitioned_table_d.h
 include/postgresql/server/catalog/pg_policy.h
@@ -207,6 +212,8 @@ include/postgresql/server/catalog/pg_proc.h
 include/postgresql/server/catalog/pg_proc_d.h
 include/postgresql/server/catalog/pg_publication.h
 include/postgresql/server/catalog/pg_publication_d.h
+include/postgresql/server/catalog/pg_publication_namespace.h
+include/postgresql/server/catalog/pg_publication_namespace_d.h
 include/postgresql/server/catalog/pg_publication_rel.h
 include/postgresql/server/catalog/pg_publication_rel_d.h
 include/postgresql/server/catalog/pg_range.h
@@ -301,6 +308,7 @@ include/postgresql/server/common/
 include/postgresql/server/common/archive.h
 include/postgresql/server/common/base64.h
 include/postgresql/server/common/checksum_helper.h
+include/postgresql/server/common/compression.h
 include/postgresql/server/common/config_info.h
 include/postgresql/server/common/connect.h
 include/postgresql/server/common/controldata_utils.h
@@ -321,6 +329,7 @@ include/postgresql/server/common/logging.h
 include/postgresql/server/common/md5.h
 include/postgresql/server/common/openssl.h
 include/postgresql/server/common/pg_lzcompress.h
+include/postgresql/server/common/pg_prng.h
 include/postgresql/server/common/relpath.h
 include/postgresql/server/common/restricted_token.h
 include/postgresql/server/common/saslprep.h
@@ -330,6 +339,7 @@ include/postgresql/server/common/sha2.h
 include/postgresql/server/common/shortest_dec.h
 include/postgresql/server/common/string.h
 include/postgresql/server/common/unicode_combining_table.h
+include/postgresql/server/common/unicode_east_asian_fw_table.h
 include/postgresql/server/common/unicode_norm.h
 include/postgresql/server/common/unicode_norm_hashfunc.h
 include/postgresql/server/common/unicode_norm_table.h
@@ -463,6 +473,7 @@ include/postgresql/server/libpq/pqcomm.h
 include/postgresql/server/libpq/pqformat.h
 include/postgresql/server/libpq/pqmq.h
 include/postgresql/server/libpq/pqsignal.h
+include/postgresql/server/libpq/sasl.h
 include/postgresql/server/libpq/scram.h
 include/postgresql/server/mb/
 include/postgresql/server/mb/pg_wchar.h
@@ -531,6 +542,7 @@ include/postgresql/server/parser/parse_cte.h
 include/postgresql/server/parser/parse_enr.h
 include/postgresql/server/parser/parse_expr.h
 include/postgresql/server/parser/parse_func.h
+include/postgresql/server/parser/parse_merge.h
 include/postgresql/server/parser/parse_node.h
 include/postgresql/server/parser/parse_oper.h
 include/postgresql/server/parser/parse_param.h
@@ -621,6 +633,7 @@ include/postgresql/server/port/solaris.h
 @comment include/postgresql/server/port/win32_msvc/unistd.h
 @comment include/postgresql/server/port/win32_msvc/utime.h
 @comment include/postgresql/server/port/win32_port.h
+include/postgresql/server/port/win32ntdll.h
 include/postgresql/server/portability/
 include/postgresql/server/portability/instr_time.h
 include/postgresql/server/portability/mem.h
@@ -629,6 +642,7 @@ include/postgresql/server/postgres_ext.h
 include/postgresql/server/postgres_fe.h
 include/postgresql/server/postmaster/
 include/postgresql/server/postmaster/autovacuum.h
+include/postgresql/server/postmaster/auxprocess.h
 include/postgresql/server/postmaster/bgworker.h
 include/postgresql/server/postmaster/bgworker_internals.h
 include/postgresql/server/postmaster/bgwriter.h
@@ -647,8 +661,6 @@ include/postgresql/server/regex/regex.h
 include/postgresql/server/regex/regexport.h
 include/postgresql/server/regex/regguts.h
 include/postgresql/server/replication/
-include/postgresql/server/replication/backup_manifest.h
-include/postgresql/server/replication/basebackup.h
 include/postgresql/server/replication/decode.h
 include/postgresql/server/replication/logical.h
 include/postgresql/server/replication/logicallauncher.h
@@ -749,6 +761,7 @@ include/postgresql/server/storage/copydir.h
 include/postgresql/server/storage/dsm.h
 include/postgresql/server/storage/dsm_impl.h
 include/postgresql/server/storage/fd.h
+include/postgresql/server/storage/fileset.h
 include/postgresql/server/storage/freespace.h
 include/postgresql/server/storage/fsm_internals.h
 include/postgresql/server/storage/indexfsm.h
@@ -844,7 +857,6 @@ include/postgresql/server/utils/help_config.h
 include/postgresql/server/utils/hsearch.h
 include/postgresql/server/utils/index_selfuncs.h
 include/postgresql/server/utils/inet.h
-include/postgresql/server/utils/int8.h
 include/postgresql/server/utils/inval.h
 include/postgresql/server/utils/json.h
 include/postgresql/server/utils/jsonb.h
@@ -863,6 +875,7 @@ include/postgresql/server/utils/pg_crc.h
 include/postgresql/server/utils/pg_locale.h
 include/postgresql/server/utils/pg_lsn.h
 include/postgresql/server/utils/pg_rusage.h
+include/postgresql/server/utils/pgstat_internal.h
 include/postgresql/server/utils/pidfile.h
 include/postgresql/server/utils/plancache.h
 include/postgresql/server/utils/portal.h
@@ -917,9 +930,6 @@ include/postgresql/server/windowapi.h
 @so lib/postgresql/latin_and_mic.so
 @so lib/postgresql/libpqwalreceiver.so
 @so lib/postgresql/pgoutput.so
-lib/postgresql/pgxs/src/pl/
-lib/postgresql/pgxs/src/pl/plpython/
-lib/postgresql/pgxs/src/pl/plpython/regress-python3-mangle.mk
 lib/postgresql/pgxs/src/test/isolation/
 @bin lib/postgresql/pgxs/src/test/isolation/isolationtester
 @bin lib/postgresql/pgxs/src/test/isolation/pg_isolation_regress

@@ -4,23 +4,11 @@ include/postgresql/server/plpython.h
 @so lib/postgresql/jsonb_plpython3.so
 @so lib/postgresql/ltree_plpython3.so
 @so lib/postgresql/plpython3.so
-share/postgresql/extension/hstore_plpython2u--1.0.sql
-share/postgresql/extension/hstore_plpython2u.control
 share/postgresql/extension/hstore_plpython3u--1.0.sql
 share/postgresql/extension/hstore_plpython3u.control
-share/postgresql/extension/hstore_plpythonu--1.0.sql
-share/postgresql/extension/hstore_plpythonu.control
-share/postgresql/extension/jsonb_plpython2u--1.0.sql
-share/postgresql/extension/jsonb_plpython2u.control
 share/postgresql/extension/jsonb_plpython3u--1.0.sql
 share/postgresql/extension/jsonb_plpython3u.control
-share/postgresql/extension/jsonb_plpythonu--1.0.sql
-share/postgresql/extension/jsonb_plpythonu.control
-share/postgresql/extension/ltree_plpython2u--1.0.sql
-share/postgresql/extension/ltree_plpython2u.control
 share/postgresql/extension/ltree_plpython3u--1.0.sql
 share/postgresql/extension/ltree_plpython3u.control
-share/postgresql/extension/ltree_plpythonu--1.0.sql
-share/postgresql/extension/ltree_plpythonu.control
 share/postgresql/extension/plpython3u--1.0.sql
 share/postgresql/extension/plpython3u.control
