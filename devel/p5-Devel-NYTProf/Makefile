@@ -1,6 +1,6 @@
 COMMENT =	powerful feature-rich perl source code profiler
 
-DISTNAME =	Devel-NYTProf-6.11
+DISTNAME =	Devel-NYTProf-6.12
 
 CATEGORIES =	devel
 
@@ -14,7 +14,7 @@ WANTLIB =		c perl z
 MODULES =		cpan
 RUN_DEPENDS =		converters/p5-JSON-MaybeXS \
 			sysutils/p5-File-Which>=1.09
-TEST_DEPENDS =		devel/p5-Sub-Name>=0.05 \
+TEST_DEPENDS =		devel/p5-Sub-Name>=0.11 \
 			devel/p5-Test-Differences>=0.60 \
 			devel/p5-Test-Pod>=1.00 \
 			devel/p5-Test-Portability-Files \
