@@ -1,0 +1,4 @@
+${P5SITE}/Feature/
+${P5SITE}/Feature/Compat/
+${P5SITE}/Feature/Compat/Try.pm
+@man man/man3p/Feature::Compat::Try.3p
