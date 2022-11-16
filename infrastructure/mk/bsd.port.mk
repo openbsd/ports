@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1580 2022/11/01 10:55:54 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1581 2022/11/16 17:42:18 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1203,7 +1203,7 @@ _pkg_cookie${_S} = ${_PACKAGE_COOKIE${_S}}
 
 .  if ${DEBUG_PACKAGES:M${_S}}
 _DBG_PKG_ARGS${_S} := ${PKG_ARGS${_S}}
-_DBG_PKG_ARGS${_S} += -P${FULLPKGPATH${_S}}:${FULLPKGNAME${_S}}:${FULLPKGNAME${_S}}
+_DBG_PKG_ARGS${_S} += -P${FULLPKGPATH${_S}}:=:${FULLPKGNAME${_S}}
 _DBG_PKG_ARGS${_S} += -DCOMMENT="debug info for ${PKGSTEM${_S}}"
 _DBG_PKG_ARGS${_S} += -d"-debug info for ${FULLPKGNAME${_S}}"
 # XXX revisit that fullpkgpath later ?
