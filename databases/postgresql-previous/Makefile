@@ -1,6 +1,7 @@
 COMMENT=	PostgreSQL RDBMS (previous version, for pg_upgrade)
 
 VERSION=	14.6
+REVISION=	0
 DISTNAME=	postgresql-${VERSION}
 PKGNAME=	postgresql-previous-${VERSION}
 
@@ -30,13 +31,9 @@ USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=gnu
 
-MODULES=	lang/python
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_2}
-MODPY_RUNDEP=	No
 POSTGRESQL_DIR=	postgresql-${VERSION:C/.[0-9]+$//}
 
-CONFIGURE_ENV=	ac_cv_path_PYTHON=${MODPY_BIN} \
-		CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 CONFIGURE_ARGS=	--with-openssl=/usr \
