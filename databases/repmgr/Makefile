@@ -1,6 +1,6 @@
 COMMENT =	HA and replication cluster management for PostgreSQL
 
-DISTNAME =	repmgr-5.2.1
+DISTNAME =	repmgr-5.3.3
 CATEGORIES =	databases
 HOMEPAGE =	https://repmgr.org/
 
