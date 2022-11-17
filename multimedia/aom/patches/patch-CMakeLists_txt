@@ -1,7 +1,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -822,7 +822,7 @@ if(ENABLE_EXAMPLES AND "${CMAKE_GENERATOR}" MATCHES "M
+@@ -823,7 +823,7 @@ if(ENABLE_EXAMPLES AND "${CMAKE_GENERATOR}" MATCHES "M
  endif()
  
  if(BUILD_SHARED_LIBS)

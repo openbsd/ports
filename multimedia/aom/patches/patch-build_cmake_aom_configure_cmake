@@ -3,11 +3,10 @@ ARM uses compiler intrinsics, so don't require GNU as.
 Index: build/cmake/aom_configure.cmake
 --- build/cmake/aom_configure.cmake.orig
 +++ build/cmake/aom_configure.cmake
-@@ -183,17 +183,6 @@ elseif(AOM_TARGET_CPU MATCHES "arm")
-       set(AS_EXECUTABLE as)
+@@ -184,16 +184,6 @@ elseif(AOM_TARGET_CPU MATCHES "arm")
      endif()
    endif()
--  find_program(as_executable_found ${AS_EXECUTABLE})
+   find_program(as_executable_found ${AS_EXECUTABLE})
 -  if(NOT as_executable_found)
 -    message(
 -      FATAL_ERROR
