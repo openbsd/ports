@@ -14,14 +14,14 @@ SHARED_LIBS=	fftw3	7.1 \
 		fftw3f_threads	1.1
 CATEGORIES=	math
 
-REVISION=	1
+REVISION=	2
 
-HOMEPAGE=	http://www.fftw.org/
+HOMEPAGE=	https://www.fftw.org/
 
 # GPL
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://fftw.org/ \
+MASTER_SITES=	https://fftw.org/ \
 		ftp://ftp.fftw.org/pub/fftw/ \
 		ftp://ftp.fftw.org/pub/fftw/old/
 
