@@ -350,7 +350,6 @@
      SUBDIR += ruby-rbnacl
      SUBDIR += ruby-rotp
      SUBDIR += rust-openssl-tests
-     SUBDIR += samdump2
      SUBDIR += scanlogd
      SUBDIR += scanssh
      SUBDIR += scrypt
