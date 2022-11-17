@@ -1,12 +1,12 @@
 COMMENT =		Python parsing module
 
 MODPY_EGG_VERSION =	3.0.9
-REVISION =		1
+REVISION =		2
 DISTNAME =		pyparsing-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
 CATEGORIES =		devel
 
-HOMEPAGE =		http://pyparsing.wikispaces.com/
+HOMEPAGE =		https://github.com/pyparsing/pyparsing/
 
 # MIT
 PERMIT_PACKAGE =	Yes
