@@ -1,9 +1,7 @@
-COMMENT =  	makefile generator
+COMMENT =	makefile generator
 CATEGORIES =	devel x11
-DISTNAME = 	imake-1.0.8
-MASTER_SITES = 	${MASTER_SITE_XORG:=util/}
-
-REVISION =	1
+DISTNAME =	imake-1.0.9
+MASTER_SITES =	${MASTER_SITE_XORG:=util/}
 
 PERMIT_PACKAGE =	Yes
 
@@ -16,8 +14,8 @@ CONFIGURE_ENV =	RAWCPP=${TRUEPREFIX}/bin/tradcpp
 CONFIGURE_ARGS = --with-script-preproc-cmd="cc -E"
 
 SUBST_FILES =	${WRKSRC}/imakemdep.h
-	
-RUN_DEPENDS = 	devel/imake-cf \
+
+RUN_DEPENDS =	devel/imake-cf \
 		devel/tradcpp
 
 pre-configure:
