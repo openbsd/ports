@@ -1,10 +1,9 @@
 COMMENT=		manage resources on Google Cloud Platform
 
-V=			409.0.0
+V=			410.0.0
 DISTNAME=		google-cloud-sdk-${V}-linux-x86
 PKGNAME=		google-cloud-sdk-${V}
 WRKDIST=		${WRKDIR}/google-cloud-sdk
-REVISION=		0
 
 CATEGORIES=		sysutils
 
@@ -25,6 +24,7 @@ MODPY_ADJ_FILES=	bin/dev_appserver.py \
 			bin/bootstrapping/install.py \
 			bin/bootstrapping/gsutil.py \
 			bin/bootstrapping/bq.py
+
 UPDATE_PLIST_ARGS=	-i MODPY_VERSION
 
 NO_BUILD=		Yes
