@@ -18,5 +18,5 @@ share/doc/libdvdread/AUTHORS
 share/doc/libdvdread/COPYING
 share/doc/libdvdread/ChangeLog
 share/doc/libdvdread/NEWS
-share/doc/libdvdread/README
+share/doc/libdvdread/README.md
 share/doc/libdvdread/TODO
