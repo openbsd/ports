@@ -1,9 +1,8 @@
 COMMENT =		utility belt for advanced users of python-requests
 
-MODPY_EGG_VERSION =	0.9.1
+MODPY_EGG_VERSION =	0.10.1
 DISTNAME =		requests-toolbelt-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
 
 CATEGORIES =		www
 
@@ -17,9 +16,8 @@ MODULES =		lang/python
 RUN_DEPENDS =		www/py-requests${MODPY_FLAVOR}
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-# requires network access
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
+# tests require network access
 
 FLAVORS =		python3
 FLAVOR =		python3
