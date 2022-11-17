@@ -2,9 +2,8 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	desktop sync client for Nextcloud
 
-V =		3.6.1
+V =		3.6.2
 DISTNAME =	nextcloudclient-${V}
-REVISION =	0
 
 GH_ACCOUNT =	nextcloud
 GH_PROJECT =	desktop
@@ -14,7 +13,7 @@ CATEGORIES =	net
 
 HOMEPAGE =	https://nextcloud.com
 
-SHARED_LIBS +=  nextcloudsync             6.0 # 3.6.1
+SHARED_LIBS +=  nextcloudsync             7.0 # 3.6.2
 SHARED_LIBS +=  nextcloud_csync           2.2 # 3.6.0
 SHARED_LIBS +=  nextcloudsync_vfs_suffix  0.0 # 3.5.3
 
@@ -33,16 +32,18 @@ WANTLIB += sqlite3 ssl z
 MODULES =		devel/cmake \
 			x11/qt5
 
-BUILD_DEPENDS =		devel/gettext,-tools
+BUILD_DEPENDS =		devel/gettext,-tools \
+			x11/gnome/libcloudproviders
 
 # for converting svg icons to png
 BUILD_DEPENDS +=	x11/gnome/librsvg
 
 # for tests, but detected during configure
-BUILD_DEPENDS +=	devel/cmocka
+BUILD_DEPENDS +=	devel/cmocka \
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			misc/shared-mime-info \
+			x11/gnome/libcloudproviders \
 			x11/gtk+3,-guic \
 			x11/qt5/qtgraphicaleffects \
 			x11/qt5/qtquickcontrols
