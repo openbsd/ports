@@ -3,18 +3,18 @@ PORTROACH=	limit:^2\.
 COMMENT=	C routines for computing the Discrete Fourier Transform
 
 DISTNAME=	fftw-2.1.5
-REVISION=	3
+REVISION=	4
 SHARED_LIBS=	fftw	2.7 \
 		rfftw	2.7
 CATEGORIES=	math
 
-HOMEPAGE=	http://www.fftw.org/
+HOMEPAGE=	https://www.fftw.org/
 
 # GPL
 PERMIT_PACKAGE=	Yes
 WANTLIB=		m
 
-MASTER_SITES=	http://fftw.org/ \
+MASTER_SITES=	https://fftw.org/ \
 		ftp://ftp.fftw.org/pub/fftw/ \
 		ftp://ftp.fftw.org/pub/fftw/old/
 
