@@ -2,17 +2,15 @@ COMMENT =		movie player based on MPlayer/mplayer2
 
 GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
-GH_TAGNAME =		v0.34.1
+GH_TAGNAME =		v0.35.0
 
-REVISION =		2
-
-SHARED_LIBS +=		mpv		0.2 # 1.109
+SHARED_LIBS +=		mpv		1.0 # 2.0
 
 CATEGORIES =		multimedia x11
 
 HOMEPAGE =		https://mpv.io/
 
-WAF =			${WRKSRC}/waf-2.0.20
+WAF =			${WRKSRC}/waf-2.0.24
 MASTER_SITES0 =		https://waf.io/
 DISTFILES =		${GH_DISTFILE} ${WAF:T}:0
 EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
@@ -20,7 +18,7 @@ EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += EGL GL SDL2 X11 X11-xcb Xau Xdmcp Xext Xfixes Xinerama
+WANTLIB += EGL GL SDL2 X11 X11-xcb Xau Xdmcp Xext Xfixes Xinerama Xpresent
 WANTLIB += Xrandr Xrender Xss Xv Xxf86vm archive ass avcodec avdevice
 WANTLIB += avfilter avformat avresample avutil bluray c cdio cdio_cdda
 WANTLIB += cdio_paranoia drm dvdnav dvdread epoxy expat fontconfig
@@ -77,6 +75,7 @@ CONFIGURE_ARGS =	--confloaddir=${SYSCONFDIR}/mpv \
 			--disable-rubberband \
 			--disable-openal \
 			--disable-optimize \
+			--disable-pipewire \
 			--disable-pulse \
 			--disable-sixel \
 			--disable-sdl2-audio \
@@ -91,11 +90,11 @@ CONFIGURE_ARGS =	--confloaddir=${SYSCONFDIR}/mpv \
 			--disable-vdpau-gl-x11 \
 			--disable-videotoolbox-gl \
 			--disable-vulkan \
-			--disable-wayland-scanner \
-			--disable-wayland-protocols
+			--disable-wayland
 
 MAKE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
+			LIBmpv_VERSION=${LIBmpv_VERSION}
 MAKE_FLAGS =		-o "${WRKBUILD}" -t "${WRKSRC}" --destdir="${DESTDIR}"
 
 NO_TEST =		Yes
@@ -103,15 +102,11 @@ NO_TEST =		Yes
 DO_WAF =		cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MODPY_BIN} \
 				${WAF} ${MAKE_FLAGS}
 
-LMAJ =			${LIBmpv_VERSION:R}
-LMIN =			${LIBmpv_VERSION:E}
-UPDATE_PLIST_ARGS +=	-i LMAJ -i LMIN
-SUBST_VARS +=		LMAJ \
-			LMIN
+SUBST_VARS +=		LIBmpv_VERSION
 
 post-patch:
 	cp ${DISTDIR}/${WAF:T} ${WAF}
-	${SUBST_CMD} ${WRKSRC}/libmpv/client.h
+	${SUBST_CMD} ${WRKSRC}/wscript_build.py
 
 do-configure:
 	${DO_WAF} configure ${CONFIGURE_ARGS}
