@@ -1,17 +1,16 @@
-PKG_ARCH = 	*
-COMMENT =  	config files for imake
+PKG_ARCH =	*
+COMMENT =	config files for imake
 CATEGORIES =	devel x11
-V =		1.0.6
-DISTNAME = 	xorg-cf-files-${V}
-PKGNAME = 	imake-cf-${V}
-REVISION =	2
-MASTER_SITES = 	${MASTER_SITE_XORG:=util/}
+V =		1.0.7
+DISTNAME =	xorg-cf-files-${V}
+PKGNAME =	imake-cf-${V}
+MASTER_SITES =	${MASTER_SITE_XORG:=util/}
 
 PERMIT_PACKAGE =	Yes
 
-SUBST += 	-e 's|@prefix@|${X11BASE}|'
-SUBST += 	-e 's|@FONTROOTDIR@|${X11BASE}/lib/X11/fonts|'
-SUBST += 	-e 's|@ENCODINGSDIR|$${FONTROOTDIR}/encodings|'
+SUBST +=	-e 's|@prefix@|${X11BASE}|'
+SUBST +=	-e 's|@FONTROOTDIR@|${X11BASE}/lib/X11/fonts|'
+SUBST +=	-e 's|@ENCODINGSDIR|$${FONTROOTDIR}/encodings|'
 
 XCONFDIR =	${PREFIX}/lib/X11/config
 
