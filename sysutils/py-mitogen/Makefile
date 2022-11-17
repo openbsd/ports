@@ -2,12 +2,11 @@ COMMENT=	write distributed self-replicating programs in Python
 
 GH_ACCOUNT=	mitogen-hq
 GH_PROJECT=	mitogen
-GH_COMMIT=	572636a9d3c5a4ac4e8591c42f29763cb56fe602
+GH_COMMIT=	a47b9f3631ba3c37bf0410c6a4960c3eec152454
 
 MODPY_EGG_VERSION=	0.3.4
-DISTNAME=	mitogen-${MODPY_EGG_VERSION}pre0
+DISTNAME=	mitogen-${MODPY_EGG_VERSION}pre1
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	sysutils
 
