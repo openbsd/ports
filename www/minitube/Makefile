@@ -2,6 +2,7 @@ COMMENT =	standalone YouTube.com video browser/player
 
 V =		3.9.3
 DISTNAME =	minitube-$V
+REVISION =	0
 EXTRACT_SUFX =	.tar.bz2
 
 CATEGORIES =	www multimedia
