@@ -1,0 +1,14 @@
+Add support for OpenBSD systems which have TCP_INFO implemented.
+463571f25e8bcb49ae37fec77d63c3fe65dd0638
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -305,6 +305,7 @@ AC_CHECK_MEMBER([struct tcp_info.tcpi_snd_wnd],
+ [#ifdef HAVE_LINUX_TCP_H
+ #include <linux/tcp.h>
+ #else
++#include <sys/types.h>
+ #include <netinet/tcp.h>
+ #endif
+ ])
