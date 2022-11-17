@@ -116,6 +116,7 @@ ${P5SITE}/PDF/API2/Resource/XObject/Form/BarCode/code128.pm
 ${P5SITE}/PDF/API2/Resource/XObject/Form/BarCode/code3of9.pm
 ${P5SITE}/PDF/API2/Resource/XObject/Form/BarCode/ean13.pm
 ${P5SITE}/PDF/API2/Resource/XObject/Form/BarCode/int2of5.pm
+${P5SITE}/PDF/API2/Resource/XObject/Form/BarCode/qrcode.pm
 ${P5SITE}/PDF/API2/Resource/XObject/Form/Hybrid.pm
 ${P5SITE}/PDF/API2/Resource/XObject/Image/
 ${P5SITE}/PDF/API2/Resource/XObject/Image.pm
@@ -168,6 +169,7 @@ ${P5SITE}/PDF/API2/Win32.pm
 @man man/man3p/PDF::API2::Resource::XObject::Form.3p
 @man man/man3p/PDF::API2::Resource::XObject::Form::BarCode.3p
 @man man/man3p/PDF::API2::Resource::XObject::Form::BarCode::code128.3p
+@man man/man3p/PDF::API2::Resource::XObject::Form::BarCode::qrcode.3p
 @man man/man3p/PDF::API2::Resource::XObject::Image.3p
 @man man/man3p/PDF::API2::Resource::XObject::Image::TIFF.3p
 @man man/man3p/PDF::API2::ViewerPreferences.3p
