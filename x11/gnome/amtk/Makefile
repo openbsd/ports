@@ -1,11 +1,11 @@
 COMMENT=		Actions, Menus and Toolbars Kit
 
 GNOME_PROJECT=		amtk
-GNOME_VERSION=		5.6.0
+GNOME_VERSION=		5.6.1
 
 CATEGORIES=		devel
 
-SHARED_LIBS +=  amtk-5                    0.2 # 0.0
+SHARED_LIBS += amtk-5                    0.2 # 0
 
 # LGPLv2.1
 PERMIT_PACKAGE=		Yes
