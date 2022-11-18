@@ -119,6 +119,7 @@
      SUBDIR += gitmux
      SUBDIR += gitolite
      SUBDIR += git-sync
+     SUBDIR += gke-gcloud-auth-plugin
      SUBDIR += gkrellm
      SUBDIR += glances
      SUBDIR += glastree
