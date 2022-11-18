@@ -1,0 +1,2 @@
+gke-gcloud-auth-plugin is a kubectl authentication plugin to generate specific
+tokens for Google Kubernetes Engine (GKE).
