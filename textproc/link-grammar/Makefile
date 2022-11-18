@@ -79,6 +79,9 @@ CONFIGURE_ENV =		CFLAGS="${CFLAGS} ${ADD_CFLAGS}" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
 			JAVA_HOME=${JAVA_HOME}
 
+# don't pick-up maven; it would try to install stuff under /nonexistent/.m2/
+CONFIGURE_ENV +=	ac_cv_prog_MVNfound=
+
 CONFIGURE_ARGS =	--enable-perl-bindings \
 			--enable-python-bindings \
 			--with-hunspell-dictdir=${LOCALBASE}/share/mozilla-dicts
