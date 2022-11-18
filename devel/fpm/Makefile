@@ -1,6 +1,7 @@
 COMMENT =	Fortran Package Manager
 
 V =		0.7.0
+REVISION =	0
 
 GH_ACCOUNT =	fortran-lang
 GH_PROJECT =	fpm
@@ -25,7 +26,7 @@ DISTFILES =	${GH_DISTFILE} \
 
 # external dependencies (see fpm.toml)
 TOMLF_COMMIT =	e49f5523e4ee67db6628618864504448fb8c8939
-MCLI2_COMMIT =	ea6bbffc1c2fb0885e994d37ccf0029c99b19f24
+MCLI2_COMMIT =	90a1a146e19c8ad37b0469b8cbd04bc28eb67a50
 
 EXTRACT_CASES += \
 	*.F90)  install -m 0644 ${FULLDISTDIR}/$$archive ${WRKDIR};;
@@ -50,17 +51,18 @@ MAKE_ENV +=	FPM_FC="${MODFORTRAN_COMPILER}" \
 FC =		${MODFORTRAN_COMPILER}
 FFLAGS +=
 
-FPM_SRC0 =	${WRKDIR}/fpm-${V}.F90
+FPM_SRC0 =	${WRKSRC}/fpm-bootstrap.F90
 FPM_BIN0 =	${WRKBUILD}/stage0/fpm
 FPM_BIN1 =	${WRKBUILD}/stage1/fpm
 
 post-extract:
+	mv ${WRKDIR}/fpm-${V}.F90 ${FPM_SRC0}
 	mkdir ${WRKSRC}/vendor
 	mv ${WRKDIR}/toml-f-${TOMLF_COMMIT} ${WRKSRC}/vendor/toml-f
 	mv ${WRKDIR}/M_CLI2-${MCLI2_COMMIT} ${WRKSRC}/vendor/M_CLI2
 
 do-build:
-	mkdir ${WRKBUILD}/{stage0,stage1,stage2}
+	mkdir -p ${WRKBUILD}/{stage0,stage1,stage2}
 
 	# build the bootstrap (stage0)
 	if [ "${FPM_SRC0}" -nt "${FPM_BIN0}" ]; then \
