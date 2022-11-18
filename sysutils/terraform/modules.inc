@@ -136,7 +136,7 @@ MODGO_MODULES =	\
 	github.com/hashicorp/go-version					 v1.6.0 \
 	github.com/hashicorp/golang-lru					 v0.5.1 \
 	github.com/hashicorp/hcl					 v0.0.0-20170504190234-a4b07c25de5f \
-	github.com/hashicorp/hcl/v2					 v2.14.1 \
+	github.com/hashicorp/hcl/v2					 v2.15.0 \
 	github.com/hashicorp/jsonapi					 v0.0.0-20210826224640-ee7dae0fb22d \
 	github.com/hashicorp/logutils					 v1.0.0 \
 	github.com/hashicorp/mdns					 v1.0.1 \
@@ -234,7 +234,7 @@ MODGO_MODULES =	\
 	github.com/xanzy/ssh-agent					 v0.3.1 \
 	github.com/xlab/treeprint					 v0.0.0-20161029104018-1d6e34225557 \
 	github.com/yuin/goldmark					 v1.4.1 \
-	github.com/zclconf/go-cty					 v1.12.0 \
+	github.com/zclconf/go-cty					 v1.12.1 \
 	github.com/zclconf/go-cty-debug					 v0.0.0-20191215020915-b22d67c1ba0b \
 	github.com/zclconf/go-cty-yaml					 v1.0.2 \
 	go.opencensus.io						 v0.23.0 \
@@ -514,7 +514,6 @@ MODGO_MODFILES =	\
 	github.com/zclconf/go-cty					 v1.0.0 \
 	github.com/zclconf/go-cty					 v1.1.0 \
 	github.com/zclconf/go-cty					 v1.2.0 \
-	github.com/zclconf/go-cty					 v1.8.0 \
 	github.com/zclconf/go-cty					 v1.8.4 \
 	go.opencensus.io						 v0.21.0 \
 	go.opencensus.io						 v0.22.0 \
