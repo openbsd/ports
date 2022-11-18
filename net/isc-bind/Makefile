@@ -11,7 +11,7 @@ PATCH_DIST_STRIP= -p1
 
 DISTNAME=	bind-$V
 PKGNAME=	isc-bind-${V:S/-P/pl/}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	net
 
