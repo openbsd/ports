@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1460 2022/11/17 00:47:02 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.1461 2022/11/18 17:17:49 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1747,6 +1747,7 @@ setup_obsolete_reason(
 	51 => 'zebedee',
 	3 => 'slurpie',
 	1 => 'samdump2',
+	1 => 'smbsniff',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually

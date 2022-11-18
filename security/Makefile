@@ -355,7 +355,6 @@
      SUBDIR += scrypt
      SUBDIR += shash
      SUBDIR += shash,static
-     SUBDIR += smbsniff
      SUBDIR += smtpscan
      SUBDIR += smurflog
      SUBDIR += sn0int
