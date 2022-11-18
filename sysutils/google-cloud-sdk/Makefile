@@ -4,6 +4,7 @@ V=			410.0.0
 DISTNAME=		google-cloud-sdk-${V}-linux-x86
 PKGNAME=		google-cloud-sdk-${V}
 WRKDIST=		${WRKDIR}/google-cloud-sdk
+REVISION=		0
 
 CATEGORIES=		sysutils
 
@@ -35,17 +36,6 @@ RUN_DEPENDS=		devel/git
 do-install:
 	cp -Rp ${WRKSRC} ${PREFIX}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/google-cloud-sdk
-
-	mv ${PREFIX}/google-cloud-sdk/{LICENSE,README,RELEASE_NOTES} \
-		${PREFIX}/share/doc/google-cloud-sdk
-	mv ${PREFIX}/google-cloud-sdk/completion.bash.inc \
-		${PREFIX}/google-cloud-sdk/completion.bash.inc
-	mv ${PREFIX}/google-cloud-sdk/completion.zsh.inc \
-		${PREFIX}/google-cloud-sdk/completion.zsh.inc
-
-	rm -r ${PREFIX}/google-cloud-sdk/.install \
-		${PREFIX}/google-cloud-sdk/path.{bash,fish,zsh}.inc \
-		${PREFIX}/google-cloud-sdk/{deb,rpm}
 
 	find ${PREFIX} -type f \( -name '*.bat' -or -name '*.orig' \) \
 		-exec rm '{}' \+

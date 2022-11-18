@@ -9,3 +9,19 @@ source ${PREFIX}/google-cloud-sdk/completion.bash.inc
 
 * zsh
 source ${PREFIX}/google-cloud-sdk/completion.zsh.inc
+
+Quick start
+===========
+
+    $ gcloud auth login
+    $ gcloud config set project ${PROJECT_NAME}
+
+Connecting to Google Kubernes Engine
+------------------------------------
+
+Authenticating to a GKE cluster requires a specific provider:
+    $ doas pkg_add gke-gcloud-auth-plugin
+
+    $ gcloud container clusters get-credentials main --region ${REGION}
+    $ kubectl config set-context --current --namespace=${NAMESPACE}
+    $ kubectl get pods
