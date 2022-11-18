@@ -1,9 +1,8 @@
 COMMENT =	Python driver for mongodb
 
-MODPY_EGG_VERSION = 4.2.0
+MODPY_EGG_VERSION = 4.3.3
 DISTNAME =	pymongo-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:S/py//}
-REVISION =	1
 
 CATEGORIES =	databases devel
 
@@ -23,10 +22,12 @@ FLAVOR =	python3
 MODPY_PYBUILD =	setuptools
 
 # unported dep
-MODPY_PYTEST_ARGS =	--ignore test/mockupdb
+MODPY_PYTEST_ARGS =	--ignore test/mockupdb \
+			--ignore test/auth_aws/test_auth_aws.py
 
 # needs a running mongodb instance in 127.0.0.1:27017,
-# and increased kern.somaxconn
+# and increased kern.somaxconn, various missing files from the tar.gz
+# too it seems
 TEST_IS_INTERACTIVE = Yes
 
 .include <bsd.port.arch.mk>
