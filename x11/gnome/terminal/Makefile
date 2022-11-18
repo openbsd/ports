@@ -2,12 +2,9 @@ COMMENT-main=		GNOME terminal
 COMMENT-nautilus=	GNOME Terminal extension for Nautilus
 
 GNOME_PROJECT=		gnome-terminal
-GNOME_VERSION=		3.46.4
+GNOME_VERSION=		3.46.5
 
 PKGNAME-nautilus=	${GNOME_PROJECT}-nautilus-${GNOME_VERSION}
-
-REVISION-main=		2
-REVISION-nautilus=	0
 
 # override gnome MODULE
 MASTER_SITES=		https://gitlab.gnome.org/GNOME/${GNOME_PROJECT}/-/archive/${GNOME_VERSION}/
