@@ -8,5 +8,5 @@ Index: configure
 -PACKAGE_NAME='thread'
 +PACKAGE_NAME='tclthread'
  PACKAGE_TARNAME='thread'
- PACKAGE_VERSION='2.8.7'
- PACKAGE_STRING='thread 2.8.7'
+ PACKAGE_VERSION='2.8.8'
+ PACKAGE_STRING='thread 2.8.8'

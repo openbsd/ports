@@ -1,6 +1,6 @@
 COMMENT =		thread extension for Tcl
 
-V =			2.8.7
+V =			2.8.8
 
 DISTNAME =		thread${V}
 PKGNAME =		tclthread-${V}
