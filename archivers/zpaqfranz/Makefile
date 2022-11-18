@@ -2,28 +2,26 @@ COMMENT =	journaling archiver for incremental backup, fork of ZPAQ
 
 GH_ACCOUNT =	fcorbelli
 GH_PROJECT =	zpaqfranz
-GH_TAGNAME =	55.14
+GH_TAGNAME =	56.1
 
 CATEGORIES =	archivers
 MAINTAINER =	tux0r <tux0r@rosaelefanten.org>
 
-# Public Domain
+# various: public domain, MIT, zlib, BSD 2-clause, Apache 2.0
 PERMIT_PACKAGE =	yes
-
-FIX_CRLF_FILES =	Makefile zpaqfranz.cpp
 
 COMPILER=	base-clang ports-gcc base-gcc
 
 WANTLIB =	${COMPILER_LIBCXX} c m
 
-MAKE_FLAGS +=	CXX="${CXX}" \
-		CXXFLAGS="${CXXFLAGS}" \
-		CPPFLAGS="${CPPFLAGS}"
+USE_WXNEEDED =	Yes
 
-CPPFLAGS +=	-Dunix
-USE_WXNEEDED=	Yes
+do-build:
+	cd ${WRKSRC} && ${SET_ENV} ${MAKE_ENV} \
+		${CXX} ${CXXFLAGS} -Dunix -o zpaqfranz zpaqfranz.cpp -lm
 
-post-install:
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/zpaqfranz ${PREFIX}/bin/
 	${INSTALL_MAN} ${WRKSRC}/man/zpaqfranz.1 ${PREFIX}/man/man1/
 
 do-test:
