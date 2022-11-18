@@ -52,7 +52,6 @@
      SUBDIR += fierce
      SUBDIR += floss
      SUBDIR += foremost
-     SUBDIR += fragroute
      SUBDIR += fragrouter
      SUBDIR += fwbuilder
      SUBDIR += fwknop

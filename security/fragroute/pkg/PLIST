@@ -1,7 +1,0 @@
-@man man/man8/fragroute.8
-@man man/man8/fragtest.8
-@bin sbin/fragroute
-@bin sbin/fragtest
-share/examples/fragroute/
-share/examples/fragroute/fragroute.conf
-@sample ${SYSCONFDIR}/fragroute.conf
