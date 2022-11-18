@@ -19,7 +19,10 @@ Quick start
 Connecting to Google Kubernes Engine
 ------------------------------------
 
-Authenticating to a GKE cluster requires a specific provider:
+To interact with Kubernetes, the kubectl command is required:
+    $ doas pkg_add kubectl
+
+Authenticating to a GKE cluster also requires a specific provider:
     $ doas pkg_add gke-gcloud-auth-plugin
 
     $ gcloud container clusters get-credentials main --region ${REGION}
