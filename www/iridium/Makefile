@@ -15,7 +15,7 @@ V=			2022.10.106.1
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
-REVISION=		1
+REVISION=		2
 
 PATCHFILES=		disable-privacy-sandbox.patch:0
 PATCH_DIST_STRIP=	-p1
@@ -44,7 +44,6 @@ MODULES=	lang/python
 COMPILER =	base-clang ports-clang ports-gcc
 
 MODPY_RUNDEP=		No
-MODPY_SETUPTOOLS=	Yes
 
 PATCHORIG=	.orig.port
 

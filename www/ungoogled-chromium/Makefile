@@ -9,6 +9,7 @@ COMMENT=		Chromium browser sans integration with Google
 
 V=			107.0.5304.110
 UGV=			${V}-1
+REVISION=		0
 
 DISTNAME=		ungoogled-chromium-${V}
 
@@ -48,7 +49,6 @@ MODQT5_DEPS=	No
 COMPILER =	base-clang ports-clang ports-gcc
 
 MODPY_RUNDEP=		No
-MODPY_SETUPTOOLS=	Yes
 
 PATCHORIG=	.orig.port
 

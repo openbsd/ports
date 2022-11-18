@@ -7,7 +7,7 @@ DPB_PROPERTIES=		parallel parallel2
 COMMENT=		Chromium browser
 
 V=			107.0.5304.110
-REVISION=		1
+REVISION=		2
 
 DISTNAME=		chromium-${V}
 
@@ -47,7 +47,6 @@ MODQT5_DEPS=	No
 COMPILER =	base-clang ports-clang ports-gcc
 
 MODPY_RUNDEP=		No
-MODPY_SETUPTOOLS=	Yes
 
 PATCHORIG=	.orig.port
 
