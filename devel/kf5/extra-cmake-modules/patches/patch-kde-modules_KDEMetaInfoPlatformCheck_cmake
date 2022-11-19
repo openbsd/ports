@@ -2,7 +2,7 @@ Fake it until we supported
 Index: kde-modules/KDEMetaInfoPlatformCheck.cmake
 --- kde-modules/KDEMetaInfoPlatformCheck.cmake.orig
 +++ kde-modules/KDEMetaInfoPlatformCheck.cmake
-@@ -34,8 +34,12 @@ if (NOT "${KF_IGNORE_PLATFORM_CHECK}")
+@@ -38,8 +38,12 @@ if (NOT "${KF_IGNORE_PLATFORM_CHECK}")
                  if (CMAKE_SYSTEM_NAME MATCHES "Linux")
                      set(_MetainfoFoundSupportedPlatform true)
                  endif()

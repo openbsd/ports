@@ -1,7 +1,6 @@
 COMMENT =	doxygen wrapper for KDE
 DISTNAME =	kapidox-${VERSION}
 FULLPKGNAME =	${PKGNAME}${FLAVOR_EXT}
-REVISION =	0
 
 WANTLIB- =
 

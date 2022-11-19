@@ -11,7 +11,5 @@ LIB_DEPENDS +=	devel/kf5/kcoreaddons>=${MODKF5_VERSION} \
 		x11/qt5/qtx11extras
 
 TEST_IS_INTERACTIVE =	X11
-# TODO: The following tests FAILED:
-# 2 - kcrashtest (Failed)
 
 .include <bsd.port.mk>

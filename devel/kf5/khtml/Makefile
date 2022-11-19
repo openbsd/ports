@@ -39,8 +39,6 @@ LIB_DEPENDS =	devel/kf5/karchive>=${MODKF5_VERSION} \
 
 IS_PORTING_AID =	Yes
 
-#The following tests FAILED:
-#1 - khtml-parttest (Child aborted)
 TEST_IS_INTERACTIVE =	X11
 PORTHOME =		${WRKDIR}
 

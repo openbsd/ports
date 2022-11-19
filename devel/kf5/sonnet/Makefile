@@ -28,7 +28,4 @@ LIB_DEPENDS-hunspell =	${BASE_PKGPATH},-main \
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_HSPELL=ON \
 			-DCMAKE_DISABLE_FIND_PACKAGE_VOIKKO=ON
 
-#The following tests FAILED:
-# 5 - sonnet-test_highlighter (Failed)
-
 .include <bsd.port.mk>

@@ -170,7 +170,6 @@ share/kf5/
 share/kf5/mkspecs/
 share/kf5/mkspecs/qt_Kirigami2.pri
 share/locale/ar/LC_MESSAGES/libkirigami2plugin_qt.qm
-share/locale/ast/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/az/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/bg/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/ca/LC_MESSAGES/libkirigami2plugin_qt.qm

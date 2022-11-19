@@ -3,7 +3,7 @@ DISTNAME =	kcontacts-${VERSION}
 CATEGORIES =	devel mail
 EPOCH =		0
 
-SHARED_LIBS +=  KF5Contacts               3.1 # 5.1
+SHARED_LIBS +=  KF5Contacts               3.2 # 5.1
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Codecs KF5ConfigCore KF5CoreAddons
 WANTLIB += KF5I18n KF5I18nLocaleData Qt5Core Qt5Gui m

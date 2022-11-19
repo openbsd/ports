@@ -2,7 +2,6 @@ COMMENT =	KDE file search and metadata handling framework
 DISTNAME =	baloo-${VERSION}
 PKGNAME =	kf5-${DISTNAME}
 EPOCH =		0
-REVISION =	0
 
 SHARED_LIBS +=  KF5Baloo                  4.1 # 4.0
 SHARED_LIBS +=  KF5BalooEngine            5.1 # 5.0

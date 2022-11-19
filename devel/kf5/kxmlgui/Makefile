@@ -29,7 +29,4 @@ LIB_DEPENDS =	devel/kf5/kauth>=${MODKF5_VERSION} \
 TEST_IS_INTERACTIVE =	X11
 PORTHOME =		${WRKDIR}
 
-# TODO: The following tests FAILED:
-# 5 - kxmlgui_unittest (Failed)
-
 .include <bsd.port.mk>

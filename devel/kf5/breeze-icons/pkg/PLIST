@@ -15,6 +15,7 @@ share/icons/breeze-dark/actions/16/Info-amarok.svg
 share/icons/breeze-dark/actions/16/PrePostCondition.svg
 share/icons/breeze-dark/actions/16/accept_signal.svg
 share/icons/breeze-dark/actions/16/accept_time_event.svg
+share/icons/breeze-dark/actions/16/accessories-dictionary-symbolic.svg
 share/icons/breeze-dark/actions/16/acrobat.svg
 share/icons/breeze-dark/actions/16/action-albumfolder-importdir2.svg
 share/icons/breeze-dark/actions/16/action-rss_tag.svg
@@ -7037,6 +7038,7 @@ share/icons/breeze-dark/devices/24@3x
 share/icons/breeze-dark/devices/64/
 share/icons/breeze-dark/devices/64/audio-card.svg
 share/icons/breeze-dark/devices/64/audio-headphones.svg
+share/icons/breeze-dark/devices/64/audio-headset.svg
 share/icons/breeze-dark/devices/64/auth-sim.svg
 share/icons/breeze-dark/devices/64/battery.svg
 share/icons/breeze-dark/devices/64/camera-photo.svg
@@ -7419,6 +7421,7 @@ share/icons/breeze-dark/mimetypes/16/application-vnd.oasis.opendocument.text-mas
 share/icons/breeze-dark/mimetypes/16/application-vnd.oasis.opendocument.text-template.svg
 share/icons/breeze-dark/mimetypes/16/application-vnd.oasis.opendocument.text.svg
 share/icons/breeze-dark/mimetypes/16/application-vnd.oasis.opendocument.web-template.svg
+share/icons/breeze-dark/mimetypes/16/application-vnd.openofficeorg.extension.svg
 share/icons/breeze-dark/mimetypes/16/application-vnd.openxmlformats-officedocument.spreadsheetml.sheet.svg
 share/icons/breeze-dark/mimetypes/16/application-vnd.openxmlformats-officedocument.wordprocessingml.document.svg
 share/icons/breeze-dark/mimetypes/16/application-vnd.rar.svg
@@ -7709,6 +7712,7 @@ share/icons/breeze-dark/mimetypes/16/text-csv.svg
 share/icons/breeze-dark/mimetypes/16/text-directory.svg
 share/icons/breeze-dark/mimetypes/16/text-dockerfile.svg
 share/icons/breeze-dark/mimetypes/16/text-enriched.svg
+share/icons/breeze-dark/mimetypes/16/text-fortran.svg
 share/icons/breeze-dark/mimetypes/16/text-html.svg
 share/icons/breeze-dark/mimetypes/16/text-javascript.svg
 share/icons/breeze-dark/mimetypes/16/text-markdown.svg
@@ -7740,6 +7744,7 @@ share/icons/breeze-dark/mimetypes/16/text-x-credits.svg
 share/icons/breeze-dark/mimetypes/16/text-x-csharp.svg
 share/icons/breeze-dark/mimetypes/16/text-x-csrc.svg
 share/icons/breeze-dark/mimetypes/16/text-x-dtd.svg
+share/icons/breeze-dark/mimetypes/16/text-x-fortran.svg
 share/icons/breeze-dark/mimetypes/16/text-x-generic.svapplication-x-awk.svg
 share/icons/breeze-dark/mimetypes/16/text-x-generic.svg
 share/icons/breeze-dark/mimetypes/16/text-x-gettext-translation.svg
@@ -7919,6 +7924,7 @@ share/icons/breeze-dark/mimetypes/22/application-vnd.oasis.opendocument.text-mas
 share/icons/breeze-dark/mimetypes/22/application-vnd.oasis.opendocument.text-template.svg
 share/icons/breeze-dark/mimetypes/22/application-vnd.oasis.opendocument.text.svg
 share/icons/breeze-dark/mimetypes/22/application-vnd.oasis.opendocument.web-template.svg
+share/icons/breeze-dark/mimetypes/22/application-vnd.openofficeorg.extension.svg
 share/icons/breeze-dark/mimetypes/22/application-vnd.openxmlformats-officedocument.spreadsheetml.sheet.svg
 share/icons/breeze-dark/mimetypes/22/application-vnd.openxmlformats-officedocument.wordprocessingml.document.svg
 share/icons/breeze-dark/mimetypes/22/application-vnd.rar.svg
@@ -8209,6 +8215,7 @@ share/icons/breeze-dark/mimetypes/22/text-csv.svg
 share/icons/breeze-dark/mimetypes/22/text-directory.svg
 share/icons/breeze-dark/mimetypes/22/text-dockerfile.svg
 share/icons/breeze-dark/mimetypes/22/text-enriched.svg
+share/icons/breeze-dark/mimetypes/22/text-fortran.svg
 share/icons/breeze-dark/mimetypes/22/text-html.svg
 share/icons/breeze-dark/mimetypes/22/text-javascript.svg
 share/icons/breeze-dark/mimetypes/22/text-markdown.svg
@@ -8240,6 +8247,7 @@ share/icons/breeze-dark/mimetypes/22/text-x-credits.svg
 share/icons/breeze-dark/mimetypes/22/text-x-csharp.svg
 share/icons/breeze-dark/mimetypes/22/text-x-csrc.svg
 share/icons/breeze-dark/mimetypes/22/text-x-dtd.svg
+share/icons/breeze-dark/mimetypes/22/text-x-fortran.svg
 share/icons/breeze-dark/mimetypes/22/text-x-generic.svapplication-x-awk.svg
 share/icons/breeze-dark/mimetypes/22/text-x-generic.svg
 share/icons/breeze-dark/mimetypes/22/text-x-gettext-translation.svg
@@ -8426,6 +8434,7 @@ share/icons/breeze-dark/mimetypes/32/application-vnd.oasis.opendocument.text-mas
 share/icons/breeze-dark/mimetypes/32/application-vnd.oasis.opendocument.text-template.svg
 share/icons/breeze-dark/mimetypes/32/application-vnd.oasis.opendocument.text.svg
 share/icons/breeze-dark/mimetypes/32/application-vnd.oasis.opendocument.web-template.svg
+share/icons/breeze-dark/mimetypes/32/application-vnd.openofficeorg.extension.svg
 share/icons/breeze-dark/mimetypes/32/application-vnd.openxmlformats-officedocument.spreadsheetml.sheet.svg
 share/icons/breeze-dark/mimetypes/32/application-vnd.openxmlformats-officedocument.wordprocessingml.document.svg
 share/icons/breeze-dark/mimetypes/32/application-vnd.rar.svg
@@ -8717,6 +8726,7 @@ share/icons/breeze-dark/mimetypes/32/text-csv.svg
 share/icons/breeze-dark/mimetypes/32/text-directory.svg
 share/icons/breeze-dark/mimetypes/32/text-dockerfile.svg
 share/icons/breeze-dark/mimetypes/32/text-enriched.svg
+share/icons/breeze-dark/mimetypes/32/text-fortran.svg
 share/icons/breeze-dark/mimetypes/32/text-html.svg
 share/icons/breeze-dark/mimetypes/32/text-javascript.svg
 share/icons/breeze-dark/mimetypes/32/text-markdown.svg
@@ -8748,6 +8758,7 @@ share/icons/breeze-dark/mimetypes/32/text-x-credits.svg
 share/icons/breeze-dark/mimetypes/32/text-x-csharp.svg
 share/icons/breeze-dark/mimetypes/32/text-x-csrc.svg
 share/icons/breeze-dark/mimetypes/32/text-x-dtd.svg
+share/icons/breeze-dark/mimetypes/32/text-x-fortran.svg
 share/icons/breeze-dark/mimetypes/32/text-x-generic.svapplication-x-awk.svg
 share/icons/breeze-dark/mimetypes/32/text-x-generic.svg
 share/icons/breeze-dark/mimetypes/32/text-x-gettext-translation.svg
@@ -8925,6 +8936,7 @@ share/icons/breeze-dark/mimetypes/64/application-vnd.oasis.opendocument.text-mas
 share/icons/breeze-dark/mimetypes/64/application-vnd.oasis.opendocument.text-template.svg
 share/icons/breeze-dark/mimetypes/64/application-vnd.oasis.opendocument.text.svg
 share/icons/breeze-dark/mimetypes/64/application-vnd.oasis.opendocument.web-template.svg
+share/icons/breeze-dark/mimetypes/64/application-vnd.openofficeorg.extension.svg
 share/icons/breeze-dark/mimetypes/64/application-vnd.openxmlformats-officedocument.spreadsheetml.sheet.svg
 share/icons/breeze-dark/mimetypes/64/application-vnd.openxmlformats-officedocument.wordprocessingml.document.svg
 share/icons/breeze-dark/mimetypes/64/application-vnd.rar.svg
@@ -10512,6 +10524,7 @@ share/icons/breeze-dark/status/22/com.github.ztefn.haguichi-connecting-3.svg
 share/icons/breeze-dark/status/22/com.github.ztefn.haguichi-disconnected.svg
 share/icons/breeze-dark/status/22/data-error.svg
 share/icons/breeze-dark/status/22/data-information.svg
+share/icons/breeze-dark/status/22/data-success.svg
 share/icons/breeze-dark/status/22/data-warning.svg
 share/icons/breeze-dark/status/22/dialog-error.svg
 share/icons/breeze-dark/status/22/dialog-information.svg
@@ -10792,6 +10805,7 @@ share/icons/breeze-dark/status/24/com.github.ztefn.haguichi-connecting-1.svg
 share/icons/breeze-dark/status/24/com.github.ztefn.haguichi-connecting-2.svg
 share/icons/breeze-dark/status/24/com.github.ztefn.haguichi-connecting-3.svg
 share/icons/breeze-dark/status/24/com.github.ztefn.haguichi-disconnected.svg
+share/icons/breeze-dark/status/24/data-success.svg
 share/icons/breeze-dark/status/24/data-warning.svg
 share/icons/breeze-dark/status/24/dialog-error.svg
 share/icons/breeze-dark/status/24/dialog-information.svg
@@ -11058,6 +11072,7 @@ share/icons/breeze/actions/16/Info-amarok.svg
 share/icons/breeze/actions/16/PrePostCondition.svg
 share/icons/breeze/actions/16/accept_signal.svg
 share/icons/breeze/actions/16/accept_time_event.svg
+share/icons/breeze/actions/16/accessories-dictionary-symbolic.svg
 share/icons/breeze/actions/16/acrobat.svg
 share/icons/breeze/actions/16/action-albumfolder-importdir2.svg
 share/icons/breeze/actions/16/action-rss_tag.svg
@@ -18131,6 +18146,7 @@ share/icons/breeze/devices/24@3x
 share/icons/breeze/devices/64/
 share/icons/breeze/devices/64/audio-card.svg
 share/icons/breeze/devices/64/audio-headphones.svg
+share/icons/breeze/devices/64/audio-headset.svg
 share/icons/breeze/devices/64/auth-sim.svg
 share/icons/breeze/devices/64/battery.svg
 share/icons/breeze/devices/64/camera-photo.svg
@@ -18518,6 +18534,7 @@ share/icons/breeze/mimetypes/16/application-vnd.oasis.opendocument.text-master.s
 share/icons/breeze/mimetypes/16/application-vnd.oasis.opendocument.text-template.svg
 share/icons/breeze/mimetypes/16/application-vnd.oasis.opendocument.text.svg
 share/icons/breeze/mimetypes/16/application-vnd.oasis.opendocument.web-template.svg
+share/icons/breeze/mimetypes/16/application-vnd.openofficeorg.extension.svg
 share/icons/breeze/mimetypes/16/application-vnd.openxmlformats-officedocument.spreadsheetml.sheet.svg
 share/icons/breeze/mimetypes/16/application-vnd.openxmlformats-officedocument.wordprocessingml.document.svg
 share/icons/breeze/mimetypes/16/application-vnd.rar.svg
@@ -18808,6 +18825,7 @@ share/icons/breeze/mimetypes/16/text-csv.svg
 share/icons/breeze/mimetypes/16/text-directory.svg
 share/icons/breeze/mimetypes/16/text-dockerfile.svg
 share/icons/breeze/mimetypes/16/text-enriched.svg
+share/icons/breeze/mimetypes/16/text-fortran.svg
 share/icons/breeze/mimetypes/16/text-html.svg
 share/icons/breeze/mimetypes/16/text-javascript.svg
 share/icons/breeze/mimetypes/16/text-markdown.svg
@@ -18839,6 +18857,7 @@ share/icons/breeze/mimetypes/16/text-x-credits.svg
 share/icons/breeze/mimetypes/16/text-x-csharp.svg
 share/icons/breeze/mimetypes/16/text-x-csrc.svg
 share/icons/breeze/mimetypes/16/text-x-dtd.svg
+share/icons/breeze/mimetypes/16/text-x-fortran.svg
 share/icons/breeze/mimetypes/16/text-x-generic.svapplication-x-awk.svg
 share/icons/breeze/mimetypes/16/text-x-generic.svg
 share/icons/breeze/mimetypes/16/text-x-gettext-translation.svg
@@ -19018,6 +19037,7 @@ share/icons/breeze/mimetypes/22/application-vnd.oasis.opendocument.text-master.s
 share/icons/breeze/mimetypes/22/application-vnd.oasis.opendocument.text-template.svg
 share/icons/breeze/mimetypes/22/application-vnd.oasis.opendocument.text.svg
 share/icons/breeze/mimetypes/22/application-vnd.oasis.opendocument.web-template.svg
+share/icons/breeze/mimetypes/22/application-vnd.openofficeorg.extension.svg
 share/icons/breeze/mimetypes/22/application-vnd.openxmlformats-officedocument.spreadsheetml.sheet.svg
 share/icons/breeze/mimetypes/22/application-vnd.openxmlformats-officedocument.wordprocessingml.document.svg
 share/icons/breeze/mimetypes/22/application-vnd.rar.svg
@@ -19308,6 +19328,7 @@ share/icons/breeze/mimetypes/22/text-csv.svg
 share/icons/breeze/mimetypes/22/text-directory.svg
 share/icons/breeze/mimetypes/22/text-dockerfile.svg
 share/icons/breeze/mimetypes/22/text-enriched.svg
+share/icons/breeze/mimetypes/22/text-fortran.svg
 share/icons/breeze/mimetypes/22/text-html.svg
 share/icons/breeze/mimetypes/22/text-javascript.svg
 share/icons/breeze/mimetypes/22/text-markdown.svg
@@ -19339,6 +19360,7 @@ share/icons/breeze/mimetypes/22/text-x-credits.svg
 share/icons/breeze/mimetypes/22/text-x-csharp.svg
 share/icons/breeze/mimetypes/22/text-x-csrc.svg
 share/icons/breeze/mimetypes/22/text-x-dtd.svg
+share/icons/breeze/mimetypes/22/text-x-fortran.svg
 share/icons/breeze/mimetypes/22/text-x-generic.svapplication-x-awk.svg
 share/icons/breeze/mimetypes/22/text-x-generic.svg
 share/icons/breeze/mimetypes/22/text-x-gettext-translation.svg
@@ -19518,6 +19540,7 @@ share/icons/breeze/mimetypes/24/application-vnd.oasis.opendocument.text-master.s
 share/icons/breeze/mimetypes/24/application-vnd.oasis.opendocument.text-template.svg
 share/icons/breeze/mimetypes/24/application-vnd.oasis.opendocument.text.svg
 share/icons/breeze/mimetypes/24/application-vnd.oasis.opendocument.web-template.svg
+share/icons/breeze/mimetypes/24/application-vnd.openofficeorg.extension.svg
 share/icons/breeze/mimetypes/24/application-vnd.openxmlformats-officedocument.spreadsheetml.sheet.svg
 share/icons/breeze/mimetypes/24/application-vnd.openxmlformats-officedocument.wordprocessingml.document.svg
 share/icons/breeze/mimetypes/24/application-vnd.rar.svg
@@ -19807,6 +19830,7 @@ share/icons/breeze/mimetypes/24/text-csv.svg
 share/icons/breeze/mimetypes/24/text-directory.svg
 share/icons/breeze/mimetypes/24/text-dockerfile.svg
 share/icons/breeze/mimetypes/24/text-enriched.svg
+share/icons/breeze/mimetypes/24/text-fortran.svg
 share/icons/breeze/mimetypes/24/text-html.svg
 share/icons/breeze/mimetypes/24/text-javascript.svg
 share/icons/breeze/mimetypes/24/text-markdown.svg
@@ -19838,6 +19862,7 @@ share/icons/breeze/mimetypes/24/text-x-credits.svg
 share/icons/breeze/mimetypes/24/text-x-csharp.svg
 share/icons/breeze/mimetypes/24/text-x-csrc.svg
 share/icons/breeze/mimetypes/24/text-x-dtd.svg
+share/icons/breeze/mimetypes/24/text-x-fortran.svg
 share/icons/breeze/mimetypes/24/text-x-generic.svapplication-x-awk.svg
 share/icons/breeze/mimetypes/24/text-x-generic.svg
 share/icons/breeze/mimetypes/24/text-x-gettext-translation.svg
@@ -20014,6 +20039,7 @@ share/icons/breeze/mimetypes/32/application-vnd.oasis.opendocument.text-master.s
 share/icons/breeze/mimetypes/32/application-vnd.oasis.opendocument.text-template.svg
 share/icons/breeze/mimetypes/32/application-vnd.oasis.opendocument.text.svg
 share/icons/breeze/mimetypes/32/application-vnd.oasis.opendocument.web-template.svg
+share/icons/breeze/mimetypes/32/application-vnd.openofficeorg.extension.svg
 share/icons/breeze/mimetypes/32/application-vnd.openxmlformats-officedocument.spreadsheetml.sheet.svg
 share/icons/breeze/mimetypes/32/application-vnd.openxmlformats-officedocument.wordprocessingml.document.svg
 share/icons/breeze/mimetypes/32/application-vnd.rar.svg
@@ -20305,6 +20331,7 @@ share/icons/breeze/mimetypes/32/text-csv.svg
 share/icons/breeze/mimetypes/32/text-directory.svg
 share/icons/breeze/mimetypes/32/text-dockerfile.svg
 share/icons/breeze/mimetypes/32/text-enriched.svg
+share/icons/breeze/mimetypes/32/text-fortran.svg
 share/icons/breeze/mimetypes/32/text-html.svg
 share/icons/breeze/mimetypes/32/text-javascript.svg
 share/icons/breeze/mimetypes/32/text-markdown.svg
@@ -20336,6 +20363,7 @@ share/icons/breeze/mimetypes/32/text-x-credits.svg
 share/icons/breeze/mimetypes/32/text-x-csharp.svg
 share/icons/breeze/mimetypes/32/text-x-csrc.svg
 share/icons/breeze/mimetypes/32/text-x-dtd.svg
+share/icons/breeze/mimetypes/32/text-x-fortran.svg
 share/icons/breeze/mimetypes/32/text-x-generic.svapplication-x-awk.svg
 share/icons/breeze/mimetypes/32/text-x-generic.svg
 share/icons/breeze/mimetypes/32/text-x-gettext-translation.svg
@@ -20513,6 +20541,7 @@ share/icons/breeze/mimetypes/64/application-vnd.oasis.opendocument.text-master.s
 share/icons/breeze/mimetypes/64/application-vnd.oasis.opendocument.text-template.svg
 share/icons/breeze/mimetypes/64/application-vnd.oasis.opendocument.text.svg
 share/icons/breeze/mimetypes/64/application-vnd.oasis.opendocument.web-template.svg
+share/icons/breeze/mimetypes/64/application-vnd.openofficeorg.extension.svg
 share/icons/breeze/mimetypes/64/application-vnd.openxmlformats-officedocument.spreadsheetml.sheet.svg
 share/icons/breeze/mimetypes/64/application-vnd.openxmlformats-officedocument.wordprocessingml.document.svg
 share/icons/breeze/mimetypes/64/application-vnd.rar.svg
@@ -22238,6 +22267,7 @@ share/icons/breeze/status/22/com.github.ztefn.haguichi-connecting-3.svg
 share/icons/breeze/status/22/com.github.ztefn.haguichi-disconnected.svg
 share/icons/breeze/status/22/data-error.svg
 share/icons/breeze/status/22/data-information.svg
+share/icons/breeze/status/22/data-success.svg
 share/icons/breeze/status/22/data-warning.svg
 share/icons/breeze/status/22/dialog-error.svg
 share/icons/breeze/status/22/dialog-information.svg
@@ -22528,6 +22558,7 @@ share/icons/breeze/status/24/com.github.ztefn.haguichi-connecting-3.svg
 share/icons/breeze/status/24/com.github.ztefn.haguichi-disconnected.svg
 share/icons/breeze/status/24/data-error.svg
 share/icons/breeze/status/24/data-information.svg
+share/icons/breeze/status/24/data-success.svg
 share/icons/breeze/status/24/data-warning.svg
 share/icons/breeze/status/24/dialog-error.svg
 share/icons/breeze/status/24/dialog-information.svg

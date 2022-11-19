@@ -1,7 +1,7 @@
 COMMENT =	fully featured text editor component
 DISTNAME =	ktexteditor-${VERSION}
 
-SHARED_LIBS =	KF5TextEditor		19.0
+SHARED_LIBS =	KF5TextEditor		19.1
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5AuthCore KF5Codecs
 WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
@@ -22,7 +22,7 @@ RUN_DEPENDS =	x11/dbus,-suid \
 		x11/qt5/qtxmlpatterns
 
 # The following OPTIONAL packages have not been found:
-# * EditorConfi
+# * EditorConfig
 LIB_DEPENDS =	devel/kf5/karchive>=${MODKF5_VERSION} \
 		devel/kf5/kauth>=${MODKF5_VERSION} \
 		devel/kf5/kcodecs>=${MODKF5_VERSION} \
@@ -41,29 +41,6 @@ LIB_DEPENDS =	devel/kf5/karchive>=${MODKF5_VERSION} \
 		devel/kf5/sonnet>=${MODKF5_VERSION} \
 		devel/kf5/syntax-highlighting>=${MODKF5_VERSION}
 
-#The following tests FAILED:
-# 21 - kateindenttest_testPython (Failed)
-# 22 - kateindenttest_testCstyle (Failed)
-# 23 - kateindenttest_testCppstyle (Failed)
-# 24 - kateindenttest_testCMake (Failed)
-# 25 - kateindenttest_testRuby (Failed)
-# 26 - kateindenttest_testHaskell (Failed)
-# 27 - kateindenttest_testLatex (Failed)
-# 28 - kateindenttest_testPascal (Failed)
-# 29 - kateindenttest_testAda (Failed)
-# 30 - kateindenttest_testXml (Failed)
-# 31 - kateindenttest_testNormal (Failed)
-# 32 - kateindenttest_testReplicode (Failed)
-# 45 - bug313769 (Failed)
-# 46 - katedocument_test (Failed)
-# 48 - kateview_test (Failed)
-# 53 - katefoldingtest (Failed)
-# 57 - commands_test (Failed)
-# 58 - scripting_test (Failed)
-# 59 - bug313759 (Failed)
-# 60 - bug317111 (Failed)
-# 61 - bug205447 (Failed)
-# 66 - vimode_emulatedcommandbar (Failed)
 TEST_IS_INTERACTIVE =	X11
 PORTHOME =		${WRKDIR}
 

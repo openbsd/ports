@@ -76,7 +76,6 @@ lib/cmake/KF5Contacts/KF5ContactsTargets.cmake
 @lib lib/libKF5Contacts.so.${LIBKF5Contacts_VERSION}
 share/kf5/mkspecs/qt_KContacts.pri
 share/locale/ar/LC_MESSAGES/kcontacts5.mo
-share/locale/ast/LC_MESSAGES/kcontacts5.mo
 share/locale/az/LC_MESSAGES/kcontacts5.mo
 share/locale/be/LC_MESSAGES/kcontacts5.mo
 share/locale/bg/LC_MESSAGES/kcontacts5.mo

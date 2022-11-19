@@ -1,7 +1,6 @@
 COMMENT =	CMake modules required by KDE5
 DISTNAME =	extra-cmake-modules-${VERSION}
 HOMEPAGE =	https://projects.kde.org/projects/kdesupport/extra-cmake-modules
-REVISION =	1
 
 PKG_ARCH =	*
 

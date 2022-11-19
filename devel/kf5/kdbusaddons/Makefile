@@ -8,7 +8,6 @@ WANTLIB += c m
 
 LIB_DEPENDS =	x11/qt5/qtx11extras
 
-# XXX kdbusinterprocesslocktest tests stuck anyway
 PORTHOME =		${WRKDIR}
 TESTS_IS_INTERACTIVE =	X11
 

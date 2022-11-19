@@ -127,6 +127,7 @@ lib/cmake/KF5NewStuffQuick/KF5NewStuffQuickConfigVersion.cmake
 @lib lib/libKF5NewStuff.so.${LIBKF5NewStuff_VERSION}
 @lib lib/libKF5NewStuffCore.so.${LIBKF5NewStuffCore_VERSION}
 @lib lib/libKF5NewStuffWidgets.so.${LIBKF5NewStuffWidgets_VERSION}
+@so lib/qt5/plugins/designer/knewstuffwidgets.so
 lib/qt5/qml/org/kde/newstuff/
 lib/qt5/qml/org/kde/newstuff/Action.qml
 lib/qt5/qml/org/kde/newstuff/Button.qml

@@ -18,7 +18,4 @@ LIB_DEPENDS =	devel/kf5/karchive>=${MODKF5_VERSION} \
 		textproc/libxml \
 		textproc/libxslt
 
-#The following tests FAILED:
-#2 - kdoctools_install (Failed)
-
 .include <bsd.port.mk>

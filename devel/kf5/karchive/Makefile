@@ -10,7 +10,4 @@ LIB_DEPENDS =	archivers/xz \
 
 PORTHOME =	${WRKDIR}
 
-# The following tests FAILED:
-# 2 - kfiltertest (Child aborted)
-
 .include <bsd.port.mk>

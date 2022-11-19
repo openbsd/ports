@@ -34,7 +34,6 @@ share/kf5/mkspecs/qt_KNotifications.pri
 share/locale/af/LC_MESSAGES/knotifications5_qt.qm
 share/locale/ar/LC_MESSAGES/knotifications5_qt.qm
 share/locale/as/LC_MESSAGES/knotifications5_qt.qm
-share/locale/ast/LC_MESSAGES/knotifications5_qt.qm
 share/locale/az/LC_MESSAGES/knotifications5_qt.qm
 share/locale/be/LC_MESSAGES/knotifications5_qt.qm
 share/locale/be@latin/LC_MESSAGES/knotifications5_qt.qm

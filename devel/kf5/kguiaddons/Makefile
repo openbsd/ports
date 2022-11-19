@@ -1,9 +1,9 @@
 COMMENT =	Utilities for graphical user interfaces
 DISTNAME =	kguiaddons-${VERSION}
 
-SHARED_LIBS =	KF5GuiAddons		6.8
+SHARED_LIBS =	KF5GuiAddons		6.9
 
-WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5WaylandClient
+WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Gui Qt5WaylandClient
 WANTLIB += Qt5X11Extras X11 c m wayland-client xcb
 
 RUN_DEPENDS =		devel/desktop-file-utils

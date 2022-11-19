@@ -15,8 +15,6 @@ LIB_DEPENDS =	devel/kf5/karchive>=${MODKF5_VERSION} \
 		devel/kf5/kcoreaddons>=${MODKF5_VERSION} \
 		devel/kf5/ki18n>=${MODKF5_VERSION}
 
-#The following tests FAILED:
-# 2 - plasma-packagestructuretest (Failed)
 PORTHOME =		${WRKDIR}
 TEST_IS_INTERACTIVE =	X11
 
