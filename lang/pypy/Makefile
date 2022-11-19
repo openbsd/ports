@@ -87,6 +87,8 @@ post-extract:
 	echo '#!/bin/sh' > ${WRKDIR}/bin/pypy
 	echo 'LD_LIBRARY_PATH=${WRKDIR}/bootstrap/system-libs:${WRKDIR}/bootstrap/pypy/lib exec ${WRKDIR}/bootstrap/bin/pypy "$$@"' >> ${WRKDIR}/bin/pypy
 	chmod +x ${WRKDIR}/bin/pypy
+	chmod 644 ${WRKDIR}/bootstrap/system-libs/lib*.so* # XXX
+	cp /usr/lib/libc.so.96.* ${WRKDIR}/bootstrap/system-libs/ # XXX
 .endif
 
 SUBST_VARS +=	MODTK_INCDIR MODTCL_INCDIR MODTK_LIB MODTCL_LIB
