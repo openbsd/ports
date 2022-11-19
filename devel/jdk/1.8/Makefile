@@ -128,6 +128,8 @@ SUBST_VARS=	JDKHOME LIBARCH
 
 post-extract:
 	chmod +x ${WRKDIST}/configure
+	chmod 644 ${WRKDIR}/bootjdk-libs/lib*.so* # XXX
+	cp /usr/lib/libc.so.96.* ${WRKDIR}/bootjdk-libs/ # XXX
 
 post-build:
 	@rm -rf ${JDKIMAGEDIR}/man/ja ${JDKIMAGEDIR}/man/ja_JP.UTF-8

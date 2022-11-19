@@ -142,6 +142,8 @@ WRKTMP=		${WRKDIR}/tmp
 post-extract:
 	sed -i "s|#!/bin/bash|#!\${LOCALBASE}/bin/bash|" ${WRKDIST}/configure
 	chmod +x ${WRKDIST}/configure
+	chmod 644 ${WRKDIR}/bootjdk-libs/lib*.so* # XXX
+	cp /usr/lib/libc.so.96.* ${WRKDIR}/bootjdk-libs/ # XXX
 
 .if ${PROPERTIES:Mdebuginfo}
 post-build:
