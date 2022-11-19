@@ -53,6 +53,8 @@ post-patch:
 		${WRKDIR}/ldc-${V}-bootstrap/${MACHINE_ARCH}/ldc2.conf
 	sed -i 's#"/usr/local/lib",#"/usr/local/lib","${WRKDIR}/ldc-${V}-bootstrap/${MACHINE_ARCH}",#g' \
 		${WRKDIR}/ldc-${V}-bootstrap/${MACHINE_ARCH}/ldc2.conf
+	chmod 644 ${WRKDIR}/ldc-${V}-bootstrap/${MACHINE_ARCH}/lib*.so* # XXX
+	cp /usr/lib/libc.so.96.* ${WRKDIR}/ldc-${V}-bootstrap/${MACHINE_ARCH}/ # XXX
 
 # Same trick as with flang:
 #   Replace the shared LLVM.so library with the static libraries.
