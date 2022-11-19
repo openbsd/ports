@@ -3,6 +3,7 @@ PORTROACH=	limit:^1\.1\.[0-9][a-z] skipb:0 skipv:1.1.1
 V=		1.1.1s
 PKGSPEC=	openssl->=1.1.0v0,<1.2v0
 EPOCH=		0
+REVISION=	0
 
 SHLIBVER=	11.6
 SHARED_LIBS=	crypto ${SHLIBVER} \
@@ -19,7 +20,7 @@ FLAVORS=	no_man
 CONFIGURE_STYLE=	simple
 CONFIGURE_SCRIPT=	config
 CONFIGURE_ARGS+=	--prefix=${PREFIX} \
-			--openssldir=${PREFIX}/share/eopenssl11 \
+			--openssldir=/etc/ssl \
 			enable-ssl-trace \
 			no-threads no-rc5 no-ssl3 \
 			no-devcryptoeng \
@@ -54,6 +55,7 @@ post-configure:
 # OpenSSL's build infrastructure needs a bunch more patching.
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include/eopenssl11
+	mv ${WRKINST}/etc/ssl ${PREFIX}/share/eopenssl11
 .for i j in openssl eopenssl11 libssl libessl11 libcrypto libecrypto11
 	mv ${PREFIX}/lib/eopenssl11/pkgconfig/$i.pc ${PREFIX}/lib/pkgconfig/$j.pc
 .endfor

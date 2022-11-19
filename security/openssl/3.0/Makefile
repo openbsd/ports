@@ -5,6 +5,7 @@ V=		3.0.7
 PKGNAME=	openssl-${V}
 PKGSPEC=	openssl->=3v0,<3.1v0
 EPOCH=		0
+REVISION=	0
 
 SHLIBVER=	12.2
 SHARED_LIBS=	crypto ${SHLIBVER} \
@@ -21,7 +22,7 @@ FLAVORS=	no_man
 CONFIGURE_STYLE=	simple
 CONFIGURE_SCRIPT=	config
 CONFIGURE_ARGS+=	--prefix=${PREFIX} \
-			--openssldir=${PREFIX}/share/eopenssl30 \
+			--openssldir=/etc/ssl \
 			no-threads no-rc5 no-ssl3 \
 			no-devcryptoeng \
 			shared
@@ -59,6 +60,7 @@ post-configure:
 # OpenSSL's build infrastructure needs a bunch more patching.
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include/eopenssl30
+	mv ${WRKINST}/etc/ssl ${PREFIX}/share/eopenssl30
 .for i j in openssl eopenssl30 libssl libessl30 libcrypto libecrypto30
 	mv ${PREFIX}/lib/eopenssl30/pkgconfig/$i.pc ${PREFIX}/lib/pkgconfig/$j.pc
 .endfor

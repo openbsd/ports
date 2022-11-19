@@ -1,6 +1,6 @@
 PORTROACH=	limit:^1\.0\.
 V=		1.0.2u
-REVISION=	5
+REVISION=	6
 PKGSPEC=	openssl-<1.1.0v0
 
 SHLIBVER=	6.2
@@ -26,7 +26,7 @@ FAKE_FLAGS=	MANDIR=${PREFIX}/lib/eopenssl/man
 CONFIGURE_STYLE=	simple
 CONFIGURE_SCRIPT=	config
 CONFIGURE_ARGS+=	--prefix=${PREFIX} \
-			--openssldir=${PREFIX}/share/eopenssl \
+			--openssldir=/etc/ssl \
 			--install_prefix=${WRKINST} \
 			enable-ssl-trace \
 			no-threads no-krb5 \
@@ -53,6 +53,7 @@ post-configure:
 # OpenSSL's build infrastructure needs a bunch more patching.
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include/eopenssl
+	mv ${WRKINST}/etc/ssl ${PREFIX}/share/eopenssl
 .for i j in openssl eopenssl libssl libessl libcrypto libecrypto
 	mv ${PREFIX}/lib/eopenssl/pkgconfig/$i.pc ${PREFIX}/lib/pkgconfig/$j.pc
 .endfor
