@@ -1,6 +1,7 @@
 COMMENT=	statistics utility
 
 DISTNAME=	ministat-0.0.20211218
+REVISION=	0
 
 CATEGORIES=	math
 

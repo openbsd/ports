@@ -1,4 +1,6 @@
-Remove FBSDID and replace capsicum with pledge
+Remove FBSDID
+Replace capsicum with pledge
+Fix stdin handling
 
 Index: ministat.c
 --- ministat.c.orig
@@ -39,6 +41,15 @@ Index: ministat.c
  	ci = -1;
  	while ((c = getopt(argc, argv, "AC:c:d:snqw:")) != -1)
  		switch (c) {
+@@ -643,7 +646,7 @@ main(int argc, char **argv)
+ 		for (i = 0; i < nds; i++) {
+ 			setfilenames[i] = argv[i];
+ 			if (!strcmp(argv[i], "-"))
+-				setfiles[0] = stdin;
++				setfiles[i] = stdin;
+ 			else
+ 				setfiles[i] = fopen(argv[i], "r");
+ 			if (setfiles[i] == NULL)
 @@ -651,23 +654,14 @@ main(int argc, char **argv)
  		}
  	}
