@@ -14,6 +14,10 @@ MAINTAINER=	Dimitri Karamazov <deserter666@danwin1210.me>
 # MIT
 PERMIT_PACKAGE=	Yes
 
+# C11
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 WANTLIB +=	c m
 
 MASTER_SITES=	https://download.drobilla.net/
