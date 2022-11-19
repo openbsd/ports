@@ -1,7 +1,6 @@
 COMMENT=		kubectl authentication plugin for GKE
 
 V=			0.25.3
-DISTNAME=		cloud-provider-gcp-${V}
 PKGNAME=		gke-gcloud-auth-plugin-${V}
 
 CATEGORIES=		sysutils net
@@ -18,6 +17,7 @@ PERMIT_PACKAGE=		Yes
 # cd cloud-provider-gcp-providers-v${V} && go mod tidy && go mod vendor
 # cd .. && tar czf cloud-provider-gcp-${V}.tar.gz cloud-provider-gcp-providers-v${V}
 MASTER_SITES=		https://distfiles.bsdfrog.org/
+DISTNAME=		cloud-provider-gcp-${V}
 WRKDIST=		${WRKDIR}/cloud-provider-gcp-providers-v${V}
 
 WANTLIB += c pthread
