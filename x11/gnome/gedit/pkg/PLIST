@@ -1,27 +1,27 @@
 @bin bin/gedit
-include/gedit-3.38/
-include/gedit-3.38/gedit/
-include/gedit-3.38/gedit/gedit-app-activatable.h
-include/gedit-3.38/gedit/gedit-app.h
-include/gedit-3.38/gedit/gedit-commands.h
-include/gedit-3.38/gedit/gedit-debug.h
-include/gedit-3.38/gedit/gedit-document.h
-include/gedit-3.38/gedit/gedit-encodings-combo-box.h
-include/gedit-3.38/gedit/gedit-enum-types.h
-include/gedit-3.38/gedit/gedit-menu-extension.h
-include/gedit-3.38/gedit/gedit-message-bus.h
-include/gedit-3.38/gedit/gedit-message.h
-include/gedit-3.38/gedit/gedit-statusbar.h
-include/gedit-3.38/gedit/gedit-tab.h
-include/gedit-3.38/gedit/gedit-utils.h
-include/gedit-3.38/gedit/gedit-view-activatable.h
-include/gedit-3.38/gedit/gedit-view.h
-include/gedit-3.38/gedit/gedit-window-activatable.h
-include/gedit-3.38/gedit/gedit-window.h
+include/gedit-43/
+include/gedit-43/gedit/
+include/gedit-43/gedit/gedit-app-activatable.h
+include/gedit-43/gedit/gedit-app.h
+include/gedit-43/gedit/gedit-commands.h
+include/gedit-43/gedit/gedit-debug.h
+include/gedit-43/gedit/gedit-document.h
+include/gedit-43/gedit/gedit-encodings-combo-box.h
+include/gedit-43/gedit/gedit-enum-types.h
+include/gedit-43/gedit/gedit-menu-extension.h
+include/gedit-43/gedit/gedit-message-bus.h
+include/gedit-43/gedit/gedit-message.h
+include/gedit-43/gedit/gedit-statusbar.h
+include/gedit-43/gedit/gedit-tab.h
+include/gedit-43/gedit/gedit-utils.h
+include/gedit-43/gedit/gedit-view-activatable.h
+include/gedit-43/gedit/gedit-view.h
+include/gedit-43/gedit/gedit-window-activatable.h
+include/gedit-43/gedit/gedit-window.h
 lib/gedit/
 lib/gedit/girepository-1.0/
 lib/gedit/girepository-1.0/Gedit-3.0.typelib
-@so lib/gedit/libgedit-3.38.so
+@so lib/gedit/libgedit-43.so
 lib/gedit/plugins/
 lib/gedit/plugins/docinfo.plugin
 lib/gedit/plugins/externaltools/
