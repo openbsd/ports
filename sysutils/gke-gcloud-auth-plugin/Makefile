@@ -18,6 +18,7 @@ PERMIT_PACKAGE=		Yes
 # cd cloud-provider-gcp-providers-v${V} && go mod tidy && go mod vendor
 # cd .. && tar czf cloud-provider-gcp-${V}.tar.gz cloud-provider-gcp-providers-v${V}
 MASTER_SITES=		https://distfiles.bsdfrog.org/
+WRKDIST=		${WRKDIR}/cloud-provider-gcp-providers-v${V}
 
 WANTLIB += c pthread
 
