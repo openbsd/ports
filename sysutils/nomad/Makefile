@@ -14,6 +14,7 @@ PKGNAME=		nomad-${VERSION}
 # and running "go mod tidy" + "go mod vendor"
 DISTNAME=		nomad-vendored-${VERSION}
 MASTER_SITES=		https://distfiles.bsdfrog.org/
+ALL_TARGET=		github.com/hashicorp/nomad
 
 CATEGORIES=		sysutils
 
@@ -27,8 +28,6 @@ PERMIT_PACKAGE=		Yes
 WANTLIB += c pthread
 
 MODULES=		lang/go
-
-ALL_TARGET=		github.com/hashicorp/nomad
 
 post-extract:
 	cp ${FILESDIR}/*.go ${WRKDIST}/helper/freeport

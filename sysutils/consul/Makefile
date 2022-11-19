@@ -11,6 +11,7 @@ PKGNAME=		consul-${VERSION}
 # and running "go mod tidy" + "go mod vendor"
 DISTNAME=		consul-vendored-${VERSION}
 MASTER_SITES=		https://distfiles.bsdfrog.org/
+ALL_TARGET=		github.com/hashicorp/consul
 
 CATEGORIES=		sysutils net
 
@@ -24,8 +25,6 @@ PERMIT_PACKAGE=		Yes
 WANTLIB += c pthread
 
 MODULES=		lang/go
-
-ALL_TARGET=		github.com/hashicorp/consul
 
 # go/src/github.com/hashicorp/consul/scripts/build.sh
 # go/src/github.com/hashicorp/consul/version/version.go
