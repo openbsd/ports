@@ -1,6 +1,6 @@
 Remove FBSDID
 Replace capsicum with pledge
-Fix stdin handling
+Fix stdin handling (https://reviews.freebsd.org/D37346)
 
 Index: ministat.c
 --- ministat.c.orig
