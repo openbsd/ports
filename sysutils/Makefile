@@ -38,6 +38,7 @@
      SUBDIR += chezmoi
      SUBDIR += cl-launch
      SUBDIR += cloud-agent
+     SUBDIR += cloud-sql-proxy
      SUBDIR += clusterit
      SUBDIR += clusterit,no_x11
      SUBDIR += cmb
