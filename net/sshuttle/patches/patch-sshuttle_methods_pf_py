@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <net/if.h>
+#include <net/pfvar.h>
+
+int main (void) {
+	printf("%zu\n", sizeof(struct pfioc_rule));
+}
+
+Index: sshuttle/methods/pf.py
+--- sshuttle/methods/pf.py.orig
++++ sshuttle/methods/pf.py
+@@ -266,7 +266,7 @@ class OpenBsd(Generic):
+                         ("proto_variant", c_uint8),
+                         ("direction", c_uint8)]
+ 
+-        self.pfioc_rule = c_char * 3424
++        self.pfioc_rule = c_char * 3408
+         self.pfioc_natlook = pfioc_natlook
+         super(OpenBsd, self).__init__()
+ 
