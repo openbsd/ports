@@ -1,5 +1,6 @@
 COMMENT =	core components and tools of the Plasma Workspaces
 DISTNAME =	plasma-framework-${VERSION}
+VERSION =	5.100.1
 
 SHARED_LIBS =	KF5Plasma		12.2
 SHARED_LIBS +=	KF5PlasmaQuick		8.2
