@@ -1,10 +1,9 @@
 COMMENT =		Python tools for computational molecular biology
 
-MODPY_EGG_VERSION =	1.79
+MODPY_EGG_VERSION =	1.80
 DISTNAME =		biopython-${MODPY_EGG_VERSION}
 CATEGORIES =		biology
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
 
 HOMEPAGE =		http://www.biopython.org/
 
@@ -40,6 +39,6 @@ post-install:
 do-test:
 	@cd ${WRKSRC}/Tests && \
 		PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
-		${MODPY_BIN} ./run_tests.py
+		${MODPY_BIN} ./run_tests.py --offline
 
 .include <bsd.port.mk>
