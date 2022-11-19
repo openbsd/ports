@@ -1,13 +1,12 @@
 COMMENT =		interface with Tuya WiFi smart devices
 
-MODPY_EGG_VERSION =	1.7.0
+MODPY_EGG_VERSION =	1.7.2
 GH_ACCOUNT =		jasonacox
 GH_PROJECT =		tinytuya
 GH_TAGNAME =		v${MODPY_EGG_VERSION}
 
 DISTNAME =		tinytuya-${MODPY_EGG_VERSION}
 PKGNAME =		py-tinytuya-${MODPY_EGG_VERSION}
-REVISION =		1
 
 CATEGORIES =		net
 
