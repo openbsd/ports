@@ -28,7 +28,7 @@ PORTHOME=		${WRKDIR}
 MAKE_ENV=		GOPATH=${WRKDIR}/go \
 			GOCACHE=${WRKDIR}/go-cache
 .if empty(DEBUG)
-LDFLAGS=		-s -w
+LDFLAGS +=		-s -w
 .endif
 
 # git checkout the corresponding tag then:
@@ -38,7 +38,8 @@ LDFLAGS +=		-X k8s.io/component-base/version.gitVersion=v1.25.3-alpha+3d24dccb9f
 do-build:
 	cd ${WRKSRC}/cmd/gke-gcloud-auth-plugin && \
 		${SETENV} ${MAKE_ENV} go build \
-		-ldflags="${LDFLAGS}" -mod=vendor -modcacherw -trimpath
+		-ldflags="${LDFLAGS}" \
+		-mod=vendor -modcacherw -trimpath -buildvcs=false
 
 do-install:
 # INSTALL_SCRIPT: do not strip(1) go binaries
