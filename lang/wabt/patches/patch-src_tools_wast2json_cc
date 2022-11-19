@@ -20,4 +20,4 @@ Index: src/tools/wast2json.cc
 +  
    std::vector<uint8_t> file_data;
    Result result = ReadFile(s_infile, &file_data);
-   std::unique_ptr<WastLexer> lexer = WastLexer::CreateBufferLexer(
+   Errors errors;

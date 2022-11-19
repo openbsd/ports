@@ -48,7 +48,6 @@ include/wabt/interp/interp-util.h
 include/wabt/interp/interp-wasi.h
 include/wabt/interp/interp.h
 include/wabt/interp/istream.h
-include/wabt/interp/wasi_api.def
 include/wabt/intrusive-list.h
 include/wabt/ir-util.h
 include/wabt/ir.h
@@ -78,7 +77,6 @@ include/wabt/validator.h
 include/wabt/wast-lexer.h
 include/wabt/wast-parser.h
 include/wabt/wat-writer.h
-include/wasm-rt-impl.h
 include/wasm-rt.h
 lib/cmake/
 lib/cmake/wabt/
@@ -100,3 +98,7 @@ lib/cmake/wabt/wabt-targets.cmake
 @man man/man1/wast2json.1
 @man man/man1/wat-desugar.1
 @man man/man1/wat2wasm.1
+share/wabt/
+share/wabt/wasm2c/
+share/wabt/wasm2c/wasm-rt-impl.c
+share/wabt/wasm2c/wasm-rt-impl.h
