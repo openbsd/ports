@@ -1,0 +1,59 @@
+MODGO_MODULES =	\
+	github.com/!rasmus!lindroth/go-mastodon	 v0.0.9 \
+	github.com/atotto/clipboard		 v0.1.4 \
+	github.com/aymerick/douceur		 v0.2.0 \
+	github.com/davecgh/go-spew		 v1.1.1 \
+	github.com/gdamore/encoding		 v1.0.0 \
+	github.com/gdamore/tcell/v2		 v2.5.3 \
+	github.com/gen2brain/beeep		 v0.0.0-20220909211152-5a9ec94374f6 \
+	github.com/go-toast/toast		 v0.0.0-20190211030409-01e6764cf0a4 \
+	github.com/gobwas/glob			 v0.2.3 \
+	github.com/godbus/dbus/v5		 v5.1.0 \
+	github.com/gorilla/css			 v1.0.0 \
+	github.com/gorilla/websocket		 v1.5.0 \
+	github.com/icza/gox			 v0.0.0-20221026131554-a08a8cdc726a \
+	github.com/lucasb-eyer/go-colorful	 v1.2.0 \
+	github.com/mattn/go-runewidth		 v0.0.14 \
+	github.com/microcosm-cc/bluemonday	 v1.0.21 \
+	github.com/nu7hatch/gouuid		 v0.0.0-20131221200532-179d4d0c4d8d \
+	github.com/pelletier/go-toml/v2		 v2.0.6 \
+	github.com/pmezard/go-difflib		 v1.0.0 \
+	github.com/rivo/tview			 v0.0.0-20221117065207-09f052e6ca98 \
+	github.com/rivo/uniseg			 v0.4.3 \
+	github.com/stretchr/objx		 v0.5.0 \
+	github.com/stretchr/testify		 v1.8.1 \
+	github.com/tadvi/systray		 v0.0.0-20190226123456-11a2b8fa57af \
+	github.com/tomnomnom/linkheader		 v0.0.0-20180905144013-02ca5825eb80 \
+	golang.org/x/mod			 v0.6.0-dev.0.20220419223038-86c51ed26bb4 \
+	golang.org/x/net			 v0.2.0 \
+	golang.org/x/sys			 v0.2.0 \
+	golang.org/x/term			 v0.2.0 \
+	golang.org/x/text			 v0.4.0 \
+	golang.org/x/tools			 v0.1.12 \
+	gopkg.in/check.v1			 v0.0.0-20161208181325-20d25e280405 \
+	gopkg.in/ini.v1				 v1.67.0 \
+	gopkg.in/yaml.v3			 v3.0.1
+
+MODGO_MODFILES =	\
+	github.com/davecgh/go-spew	 v1.1.0 \
+	github.com/gdamore/tcell/v2	 v2.4.1-0.20210905002822-f057f0a857a1 \
+	github.com/mattn/go-runewidth	 v0.0.13 \
+	github.com/rivo/uniseg		 v0.2.0 \
+	github.com/rivo/uniseg		 v0.4.2 \
+	github.com/stretchr/objx	 v0.1.0 \
+	github.com/stretchr/objx	 v0.4.0 \
+	github.com/stretchr/testify	 v1.7.1 \
+	github.com/stretchr/testify	 v1.8.0 \
+	golang.org/x/net		 v0.0.0-20221002022538-bcab6841153b \
+	golang.org/x/sys		 v0.0.0-20201119102817-f84b799fce68 \
+	golang.org/x/sys		 v0.0.0-20210309074719-68d13333faf2 \
+	golang.org/x/sys		 v0.0.0-20220318055525-2edf467146b5 \
+	golang.org/x/sys		 v0.0.0-20220319134239-a9b59b0215f8 \
+	golang.org/x/sys		 v0.0.0-20220722155257-8c9f86f7a55f \
+	golang.org/x/term		 v0.0.0-20201210144234-2321bbc49cbf \
+	golang.org/x/term		 v0.0.0-20210220032956-6a3ed077a48d \
+	golang.org/x/text		 v0.3.0 \
+	golang.org/x/text		 v0.3.7 \
+	golang.org/x/tools		 v0.0.0-20180917221912-90fa682c2a6e \
+	gopkg.in/yaml.v3		 v3.0.0-20200313102051-9f266ea9e77c
+

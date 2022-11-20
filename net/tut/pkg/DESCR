@@ -1,0 +1,3 @@
+tut is a keyboard-driven TUI for Mastodon with vim-inspired keys.  It
+allows to compose new toots in your preferred $EDITOR and view media in
+your preferred programs.
