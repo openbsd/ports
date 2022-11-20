@@ -2,10 +2,9 @@ SHARED_LIBS +=  scamperfile               3.0 # 2.0
 
 COMMENT =	parallel internet measurement utility
 
-V =		20211212c
+V =		20211212d
 DISTNAME =	scamper-cvs-$V
 PKGNAME =	scamper-$V
-REVISION =	0
 
 CATEGORIES =	net benchmarks
 
