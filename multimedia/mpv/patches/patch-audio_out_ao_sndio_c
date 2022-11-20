@@ -1,0 +1,16 @@
+Use sio_flush() instead of sio_stop() to improve controls responsiveness
+
+Index: audio/out/ao_sndio.c
+--- audio/out/ao_sndio.c.orig
++++ audio/out/ao_sndio.c
+@@ -237,8 +237,8 @@ static void reset(struct ao *ao)
+     if (p->playing) {
+         p->playing = false;
+ 
+-        if (!sio_stop(p->hdl)) {
+-            MP_ERR(ao, "reset: couldn't sio_stop()\n");
++        if (!sio_flush(p->hdl)) {
++            MP_ERR(ao, "reset: couldn't sio_flush()\n");
+         }
+         p->delay = 0;
+         if (!sio_start(p->hdl)) {
