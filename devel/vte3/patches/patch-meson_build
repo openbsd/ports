@@ -1,15 +1,20 @@
-XXX push upstream
-../vte-0.70.1/src/dumpkeys.c:164:2: error: implicit declaration of function 'cfmakeraw' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
-        cfmakeraw(&tcattr);
+From 862561bcbd1547783aca0c56d799cadc087bb2b5 Mon Sep 17 00:00:00 2001
+From: Christian Persch <chpe@src.gnome.org>
+Date: Tue, 15 Nov 2022 00:31:51 +0100
+Subject: [PATCH] build: Add define for openbsd
 
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -215,6 +215,7 @@ endif
+@@ -239,6 +239,11 @@ elif system == 'netbsd'
+   libc_feature_defines += [
+     ['_NETBSD_SOURCE', '1'],
+   ]
++
++elif system == 'openbsd'
++  libc_feature_defines += [
++    ['_BSD_SOURCE', '1'],
++  ]
+ endif
  
- libc_feature_defines = [
-   ['_GNU_SOURCE', '1'],
-+  ['_BSD_SOURCE', '1'],
-   ['_POSIX_C_SOURCE', '200809L'],
-   ['_XOPEN_SOURCE', '700'],
-   ['_XOPEN_SOURCE_EXTENDED', '1'],
+ foreach f: libc_feature_defines
