@@ -1,7 +1,6 @@
 COMMENT =	KDE screen capture and screenshot program
 DISTNAME =	spectacle-${VERSION}
 CATEGORIES =	x11
-REVISION =	0
 
 HOMEPAGE =	https://apps.kde.org/spectacle/
 

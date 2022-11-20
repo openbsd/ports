@@ -1,7 +1,6 @@
 COMMENT =	KDE terminal emulator
 DISTNAME =	konsole-${VERSION}
 CATEGORIES =	editors x11
-REVISION =	1
 
 SHARED_LIBS +=  konsoleprivate            8.0 # 17.08
 SHARED_LIBS +=  konsoleapp                2.0 # 21

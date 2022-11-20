@@ -3,7 +3,6 @@ USE_WXNEEDED =	Yes
 COMMENT =	Akonadi calendar application
 
 DISTNAME =	kalendar-${MODKDE_VERSION}
-REVISION =	0
 
 CATEGORIES =	productivity x11
 

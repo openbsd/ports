@@ -297,6 +297,9 @@ share/doc/HTML/uk/okular/index.docbook
 share/doc/HTML/uk/okular/mainwindow.png
 share/doc/HTML/uk/okular/signatures-bar.png
 share/doc/HTML/uk/okular/signatures-panel.png
+share/examples/okular/
+share/examples/okular/xdg/
+share/examples/okular/xdg/okular.categories
 share/icons/hicolor/128x128/apps/okular.png
 share/icons/hicolor/16x16/apps/okular.png
 share/icons/hicolor/22x22/apps/okular.png
@@ -1376,7 +1379,6 @@ share/okular/pics/uparrow.png
 share/okular/pics/upleftarrow.png
 share/okular/tools.xml
 share/okular/toolsQuick.xml
-share/qlogging-categories5/okular.categories
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-mime-database

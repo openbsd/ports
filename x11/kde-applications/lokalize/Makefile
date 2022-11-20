@@ -1,7 +1,6 @@
 COMMENT =	KDE app localization tools
 DISTNAME =	lokalize-${VERSION}
 CATEGORIES =	x11 devel
-REVISION =	0
 
 HOMEPAGE =	https://kde.org/applications/office/org.kde.lokalize
 
