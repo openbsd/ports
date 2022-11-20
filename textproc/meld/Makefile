@@ -2,7 +2,7 @@ COMMENT=		graphical diff and merge tool
 
 GNOME_VERSION=		3.22.0
 GNOME_PROJECT=		meld
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		textproc
 
@@ -31,8 +31,5 @@ RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
 
 # org.gnome.desktop.interface
 RUN_DEPENDS +=		devel/gsettings-desktop-schemas
-
-post-install:
-	chmod +x ${PREFIX}/bin/meld
 
 .include <bsd.port.mk>
