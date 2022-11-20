@@ -5,13 +5,13 @@ COMMENT =		ROP chain builder based off of angr
 
 MODPY_EGG_VERSION =	9.0.6642
 DISTNAME =		angrop-${MODPY_EGG_VERSION}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		security
 
-HOMEPAGE =		https://github.com/salls/angrop
+HOMEPAGE =		https://github.com/angr/angrop
 
-# license field not set, consider bugging module's author
+# BSD
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
