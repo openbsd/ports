@@ -727,6 +727,7 @@
      SUBDIR += tremc
      SUBDIR += trickle
      SUBDIR += ttg
+     SUBDIR += tut
      SUBDIR += twirssi
      SUBDIR += ucspi-tcp
      SUBDIR += ucspi-tools
