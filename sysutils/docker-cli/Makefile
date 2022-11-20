@@ -1,12 +1,11 @@
 COMMENT =		command-line tool for controlling Docker
 
-V =			20.10.5
+V =			20.10.21
 
 GH_ACCOUNT =		docker
 GH_PROJECT =		cli
 GH_TAGNAME =		v${V}
 PKGNAME =		docker-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		sysutils
 
