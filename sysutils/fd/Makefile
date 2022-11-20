@@ -2,15 +2,14 @@ COMMENT =		simple, fast and user-friendly alternative to 'find'
 
 GH_ACCOUNT =		sharkdp
 GH_PROJECT =		fd
-GH_TAGNAME =		v8.4.0
-REVISION =		2
+GH_TAGNAME =		v8.5.3
 
 CATEGORIES =		sysutils
 
 # MIT/Apache 2.0
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=		c c++abi pthread
+WANTLIB +=		${MODCARGO_WANTLIB} pthread
 
 # as devel/cargo MODULES adds DISTFILES, GH_* didn't
 DISTFILES +=		${DISTNAME}${EXTRACT_SUFX}
