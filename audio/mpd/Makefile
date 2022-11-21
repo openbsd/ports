@@ -1,11 +1,10 @@
 BROKEN-hppa =		no atomic ops
 COMMENT =		Music Player Daemon
-VER =			0.23.9
+VER =			0.23.10
 DISTNAME =		mpd-${VER}
 EXTRACT_SUFX =		.tar.xz
 CATEGORIES =		audio
 HOMEPAGE =		https://www.musicpd.org/
-REVISION =		0
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
