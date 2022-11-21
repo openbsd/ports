@@ -1,5 +1,3 @@
-MODGO_VERSION =	v0.3.0
-
 MODGO_MODULES =	\
 	github.com/alecthomas/chroma		 v0.10.0 \
 	github.com/davecgh/go-spew		 v1.1.1 \
