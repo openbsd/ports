@@ -1,7 +1,7 @@
 COMMENT =	terminal Matrix client written in Go
 
 MODGO_MODNAME =	maunium.net/go/gomuks
-MODGO_VERSION =	v0.2.4
+MODGO_VERSION =	v0.3.0
 
 DISTNAME =	gomuks-${MODGO_VERSION}
 
