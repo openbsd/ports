@@ -1,0 +1,43 @@
+https://github.com/shlomif/perl-XML-LibXML/pull/73
+
+Index: LibXML.xs
+--- LibXML.xs.orig
++++ LibXML.xs
+@@ -4025,18 +4025,11 @@ is_valid(self, ...)
+     CODE:
+         INIT_ERROR_HANDLER;
+ 
++        memset(&cvp, 0, sizeof(cvp));
+         cvp.userData = saved_error;
+         cvp.error = (xmlValidityErrorFunc)LibXML_validity_error_ctx;
+         cvp.warning = (xmlValidityWarningFunc)LibXML_validity_warning_ctx;
+ 
+-        /* we need to initialize the node stack, because perl might
+-         * already have messed it up.
+-         */
+-        cvp.nodeNr = 0;
+-        cvp.nodeTab = NULL;
+-        cvp.vstateNr = 0;
+-        cvp.vstateTab = NULL;
+-
+         PmmClearPSVI(self);
+         PmmInvalidatePSVI(self);
+         if (items > 1) {
+@@ -4065,16 +4058,10 @@ validate(self, ...)
+     CODE:
+         INIT_ERROR_HANDLER;
+ 
++        memset(&cvp, 0, sizeof(cvp));
+         cvp.userData = saved_error;
+         cvp.error = (xmlValidityErrorFunc)LibXML_validity_error_ctx;
+         cvp.warning = (xmlValidityWarningFunc)LibXML_validity_warning_ctx;
+-        /* we need to initialize the node stack, because perl might
+-         * already have messed it up.
+-         */
+-        cvp.nodeNr = 0;
+-        cvp.nodeTab = NULL;
+-        cvp.vstateNr = 0;
+-        cvp.vstateTab = NULL;
+ 
+         PmmClearPSVI(self);
+         PmmInvalidatePSVI(self);
