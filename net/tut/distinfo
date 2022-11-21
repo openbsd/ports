@@ -1,5 +1,5 @@
-SHA256 (go_modules/github.com/!rasmus!lindroth/go-mastodon/@v/v0.0.9.mod) = 3RZ5H6txBYq5DzVoTxA0DGIxbViSK76RAHb3TJEb4fs=
-SHA256 (go_modules/github.com/!rasmus!lindroth/go-mastodon/@v/v0.0.9.zip) = Dp5sA00FS28MqEVEOLRfHwd1uoH6irsEu943qzKVVDc=
+SHA256 (go_modules/github.com/!rasmus!lindroth/go-mastodon/@v/v0.0.10.mod) = 3RZ5H6txBYq5DzVoTxA0DGIxbViSK76RAHb3TJEb4fs=
+SHA256 (go_modules/github.com/!rasmus!lindroth/go-mastodon/@v/v0.0.10.zip) = hbZKlUg6V4qAx6cKGbFXrFtOud1qU5cLEuGQiHKyGX0=
 SHA256 (go_modules/github.com/atotto/clipboard/@v/v0.1.4.mod) = hxgiy8ffN5L3ihAIhrf0mfc1VZOOM2uRhoIRlojqitA=
 SHA256 (go_modules/github.com/atotto/clipboard/@v/v0.1.4.zip) = 1nssNsZidRMJ/S7DUd82UVhL6oQL0nvpqQcCw6I4tD8=
 SHA256 (go_modules/github.com/aymerick/douceur/@v/v0.2.0.mod) = XgRUJBwle0xPnb3chOeOmeKcUnWzz67or9K7R25ySJc=
@@ -87,9 +87,9 @@ SHA256 (go_modules/gopkg.in/ini.v1/@v/v1.67.0.zip) = vYRd/HYqh6VuWjKgd3Dcg+hpdtt
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
-SHA256 (tut-1.0.18.zip) = 8K7uA6IJOnks08E5SBxhD6MMjwHyn8oaR9LmW1gcqHo=
-SIZE (go_modules/github.com/!rasmus!lindroth/go-mastodon/@v/v0.0.9.mod) = 172
-SIZE (go_modules/github.com/!rasmus!lindroth/go-mastodon/@v/v0.0.9.zip) = 49565
+SHA256 (tut-1.0.19.zip) = ecA0qUJUOh61vO+CPPv9zqcbS4fgkjmMxnOIwxx0D9U=
+SIZE (go_modules/github.com/!rasmus!lindroth/go-mastodon/@v/v0.0.10.mod) = 172
+SIZE (go_modules/github.com/!rasmus!lindroth/go-mastodon/@v/v0.0.10.zip) = 50308
 SIZE (go_modules/github.com/atotto/clipboard/@v/v0.1.4.mod) = 35
 SIZE (go_modules/github.com/atotto/clipboard/@v/v0.1.4.zip) = 8606
 SIZE (go_modules/github.com/aymerick/douceur/@v/v0.2.0.mod) = 35
@@ -177,4 +177,4 @@ SIZE (go_modules/gopkg.in/ini.v1/@v/v1.67.0.zip) = 71817
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = 104623
-SIZE (tut-1.0.18.zip) = 224336
+SIZE (tut-1.0.19.zip) = 224098
