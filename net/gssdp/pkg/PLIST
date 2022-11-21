@@ -11,6 +11,7 @@ include/gssdp-1.6/libgssdp/gssdp.h
 lib/girepository-1.0/GSSDP-1.6.typelib
 @lib lib/libgssdp-1.6.so.${LIBgssdp-1.6_VERSION}
 lib/pkgconfig/gssdp-1.6.pc
+@man man/man1/gssdp-device-sniffer.1
 share/gir-1.0/GSSDP-1.6.gir
 share/vala/vapi/gssdp-1.6.deps
 share/vala/vapi/gssdp-1.6.vapi
