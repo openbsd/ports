@@ -5,11 +5,9 @@ DISTNAME =	eduke32_src_${RDATE}-${RTAG}
 PKGNAME =	eduke32-2.0.0.${RTAG:C/-.*$//}
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	games x11
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://www.eduke32.com/
-
-MAINTAINER =	Ryan Freeman <ryan@slipgate.org>
 
 # GPLv2, BUILD license and shareware data
 PERMIT_PACKAGE =    "BUILD engine license is not compatible with GPLv2."
