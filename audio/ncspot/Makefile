@@ -7,8 +7,7 @@ COMMENT =		ncurses Spotify client
 
 GH_ACCOUNT =		hrkfdn
 GH_PROJECT =		ncspot
-GH_TAGNAME =		v0.11.1
-REVISION =		1
+GH_TAGNAME =		v0.11.2
 
 CATEGORIES =		audio
 
@@ -17,7 +16,7 @@ MAINTAINER =		Henrik Friedrichsen <henrik@diff.cc>
 # BSD
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=		c c++abi crypto curses dbus-1 m portaudio pthread ssl
+WANTLIB +=		${MODCARGO_WANTLIB} crypto curses dbus-1 m portaudio ssl	
 
 MODULES =		devel/cargo
 BUILD_DEPENDS =		lang/rust>=1.30
