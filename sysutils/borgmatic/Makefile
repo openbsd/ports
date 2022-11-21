@@ -2,8 +2,9 @@ COMMENT =		wrapper for Borg to create and prune backups
 
 MODPY_EGG_VERSION =	1.7.4
 DISTNAME =		borgmatic-${MODPY_EGG_VERSION}
+REVISION =		0
 
-MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
+MAINTAINER =		Stuart Henderson <stu.ports@spacehopper.org>
 
 HOMEPAGE =		https://torsion.org/borgmatic/
 
