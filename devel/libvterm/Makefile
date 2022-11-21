@@ -1,17 +1,11 @@
 COMMENT =	VT220/xterm/ECMA-48 terminal emulator library
-# No releases, so use date and a git hash.
-# Note that the github repo is a mirror of a bzr repo.
-VERSION =	20191009
-DISTNAME =	libvterm-${VERSION}
+DISTNAME =	libvterm-0.3
+EPOCH =		0
 
-GH_ACCOUNT =	neovim
-GH_PROJECT =	libvterm
-# Note this git sha is from the nvim branch because
-# Neovim requires patches from this branch to build.
-# see https://github.com/neovim/neovim/wiki/Deps
-GH_COMMIT =	7c72294d84ce20da4c27362dbd7fa4b08cfc91da
+HOMEPAGE =	https://www.leonerd.org.uk/code/libvterm/
+MASTER_SITES =	${HOMEPAGE}
 
-SHARED_LIBS +=  vterm                     1.0 # 0.0
+SHARED_LIBS +=  vterm                     2.0 # 0.0
 
 CATEGORIES =	devel
 
