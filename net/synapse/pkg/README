@@ -14,7 +14,7 @@ doas -u _synapse ${MODPY_BIN} -m synapse.app.homeserver \
 Register a user
 ===============
 doas -u _synapse \
-	${PREFIX}/share/synapse/register_new_matrix_user \
+	${PREFIX}/bin/register_new_matrix_user \
 	-c ${LOCALSTATEDIR}/synapse/homeserver.yaml \
 	http://localhost:8008
 
