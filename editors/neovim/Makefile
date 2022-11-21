@@ -13,7 +13,7 @@ COMMENT =	continuation and extension of Vim
 
 GH_ACCOUNT =	neovim
 GH_PROJECT =	neovim
-GH_TAGNAME =	v0.7.2
+GH_TAGNAME =	v0.8.0
 
 CATEGORIES =	editors devel
 HOMEPAGE =	https://neovim.io
@@ -172,6 +172,9 @@ pre-configure:
 
 # These are the "old tests". There is also a new suite, but we would need the
 # "busted" test suite for Lua, which is not yet ported.
+#
+# Test_language_cmd fails due to:
+# https://github.com/neovim/neovim/issues/19331
 #
 # If cscope is installed, one test fails:
 # https://github.com/neovim/neovim/issues/12744
