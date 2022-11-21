@@ -2,10 +2,10 @@
 @bin bin/fftwf-wisdom
 lib/cmake/fftw3/FFTW3fConfig.cmake
 lib/cmake/fftw3/FFTW3fConfigVersion.cmake
-lib/libfftw3f.a
+@static-lib lib/libfftw3f.a
 lib/libfftw3f.la
 @lib lib/libfftw3f.so.${LIBfftw3f_VERSION}
-lib/libfftw3f_threads.a
+@static-lib lib/libfftw3f_threads.a
 lib/libfftw3f_threads.la
 @lib lib/libfftw3f_threads.so.${LIBfftw3f_threads_VERSION}
 lib/pkgconfig/fftw3f.pc

@@ -1,7 +1,7 @@
 COMMENT-main=	C routines for computing the Discrete Fourier Transform
 COMMENT-common=	common files for the fftw3 packages
 
-V=		3.3.8
+V=		3.3.10
 DISTNAME=	fftw-${V}
 PKGNAME=	fftw3-${V}
 FULLPKGNAME-main=	fftw3-${V}
@@ -10,11 +10,9 @@ FULLPKGPATH-main=	math/fftw3,-main${FLAVOR_EXT:S/-/,/g}
 FULLPKGNAME-common=	fftw3-common-${V}
 SHARED_LIBS=	fftw3	7.1 \
 		fftw3f	7.1 \
-		fftw3_threads	1.1 \
-		fftw3f_threads	1.1
+		fftw3_threads	1.2 \
+		fftw3f_threads	1.2
 CATEGORIES=	math
-
-REVISION=	2
 
 HOMEPAGE=	https://www.fftw.org/
 
