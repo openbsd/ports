@@ -1,36 +1,36 @@
 COMMENT =	advanced drawing and image manipulation
 
-VERSION =	5.1.1
+VERSION =	5.1.3
 DISTNAME =	krita-${VERSION}
 
 SHARED_LIBS +=  kritabasicflakes          4.1 # 16.0
 SHARED_LIBS +=  kritacolord               2.0 # 16.0
-SHARED_LIBS +=  kritaflake                9.0 # 16.0
+SHARED_LIBS +=  kritaflake                10.0 # 16.0
 SHARED_LIBS +=  kritapigment              8.0 # 16.0
 SHARED_LIBS +=  kritaplugin               3.0 # 16.0
 SHARED_LIBS +=  kritastore                4.0 # 16.0
 SHARED_LIBS +=  kritaversion              1.0 # 16.0
 SHARED_LIBS +=  kritawidgets              7.0 # 16.0
-SHARED_LIBS +=  kritawidgetutils          7.0 # 16.0
+SHARED_LIBS +=  kritawidgetutils          7.1 # 16.0
 SHARED_LIBS +=  kritacommand              4.0 # 16.0
 SHARED_LIBS +=  kritaimpex                2.0 # 16.0
-SHARED_LIBS +=  kritalibkis               3.1 # 16.0
+SHARED_LIBS +=  kritalibkis               3.2 # 16.0
 SHARED_LIBS +=  kritalibkra               6.0 # 16.0
 SHARED_LIBS +=  kritaqml                  3.0 # 16.0
 SHARED_LIBS +=  kritametadata             2.0 # 18.0
 SHARED_LIBS +=  kritaqmicinterface        1.0 # 17.0
-SHARED_LIBS +=  kritaresources            3.0 # 17.0
+SHARED_LIBS +=  kritaresources            3.1 # 17.0
 SHARED_LIBS +=  kritaresourcewidgets      0.1 # 17.0
 SHARED_LIBS +=  kritapsdutils             0.0 # 0.0
 SHARED_LIBS +=  kritatiffpsd              0.0 # 0.0
 # XXX Version numbers from editors/calligra 2.x port
 SHARED_LIBS +=  kritapsd                  5.0 # 14.0
 SHARED_LIBS +=  kritacolor                3.0 # 14.0
-SHARED_LIBS +=  kritaglobal               5.2 # 14.0
-SHARED_LIBS +=  kritaimage                64.0 # 0.0
+SHARED_LIBS +=  kritaglobal               5.3 # 14.0
+SHARED_LIBS +=  kritaimage                64.1 # 0.0
 SHARED_LIBS +=  kritalibbrush             59.0 # 0.0
 SHARED_LIBS +=  kritalibpaintop           58.0 # 0.0
-SHARED_LIBS +=  kritaui                   67.0 # 0.0
+SHARED_LIBS +=  kritaui                   68.0 # 0.0
 
 CATEGORIES =	graphics
 
