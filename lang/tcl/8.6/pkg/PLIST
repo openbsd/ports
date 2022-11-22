@@ -936,12 +936,12 @@ lib/tcl/tcl8.6/man/mann/
 @man lib/tcl/tcl8.6/man/mann/yieldto.n
 @man lib/tcl/tcl8.6/man/mann/zlib.n
 lib/tcl/tcl8.6/modules/
-lib/tcl/tcl8.6/modules/http-2.9.5.tm
+lib/tcl/tcl8.6/modules/http-2.9.8.tm
 lib/tcl/tcl8.6/modules/msgcat-1.6.1.tm
 lib/tcl/tcl8.6/modules/platform/
-lib/tcl/tcl8.6/modules/platform-1.0.18.tm
+lib/tcl/tcl8.6/modules/platform-1.0.19.tm
 lib/tcl/tcl8.6/modules/platform/shell-1.1.4.tm
-lib/tcl/tcl8.6/modules/tcltest-2.5.3.tm
+lib/tcl/tcl8.6/modules/tcltest-2.5.5.tm
 lib/tcl/tcl8.6/msgs/
 lib/tcl/tcl8.6/msgs/af.msg
 lib/tcl/tcl8.6/msgs/af_za.msg

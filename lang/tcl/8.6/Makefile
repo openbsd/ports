@@ -1,6 +1,6 @@
 COMMENT =		Tool Command Language
 
-P =			12
+P =			13
 DISTNAME =		tcl8.6.${P}
 PKGNAME =		tcl-8.6.${P}
 PKGSTEM = 		tcl-8.6
@@ -44,15 +44,13 @@ ALL_TARGET =		binaries
 TEST_TARGET =		test-tcl
 
 TESTHOME =		${WRKDIR}/testhome
+
 # Use TESTFLAGS to control the Tcl tests
 TESTFLAGS =
 
-# These tests will always fail due to assumptions that don't hold on OpenBSD.
-# Skip them until they're improved.
-# fCmd-9.4.b expects to be able to overwrite a read-only directory.
-# Many socket-14.* expect certain socket errors to occur
-#   later rather than sooner. Bug 2911139.
-TESTFLAGS += -skip 'fCmd-9.4.b socket-14.*'
+# This test will always fail;
+# OpenBSD won't allow overwriting a read-only directory.
+TESTFLAGS += -skip 'fCmd-9.4.b'
 
 pre-configure:
 	@${SUBST_CMD} ${WRKDIST}/library/init.tcl
