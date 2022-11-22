@@ -222,6 +222,7 @@ libdata/perl5/site_perl/RT/REST2.pm
 libdata/perl5/site_perl/RT/REST2/Dispatcher.pm
 libdata/perl5/site_perl/RT/REST2/Middleware/
 libdata/perl5/site_perl/RT/REST2/Middleware/Auth.pm
+libdata/perl5/site_perl/RT/REST2/Middleware/CleanupRequest.pm
 libdata/perl5/site_perl/RT/REST2/Middleware/ErrorAsJSON.pm
 libdata/perl5/site_perl/RT/REST2/Middleware/Log.pm
 libdata/perl5/site_perl/RT/REST2/Resource/
@@ -1164,6 +1165,12 @@ share/examples/rt/upgrade/4.4.5/
 @sample ${SYSCONFDIR}/rt/upgrade/4.4.5/
 share/examples/rt/upgrade/4.4.5/content
 @sample ${SYSCONFDIR}/rt/upgrade/4.4.5/content
+share/examples/rt/upgrade/4.4.6/
+@sample ${SYSCONFDIR}/rt/upgrade/4.4.6/
+share/examples/rt/upgrade/4.4.6/indexes
+@sample ${SYSCONFDIR}/rt/upgrade/4.4.6/indexes
+share/examples/rt/upgrade/4.4.6/schema.Pg
+@sample ${SYSCONFDIR}/rt/upgrade/4.4.6/schema.Pg
 share/examples/rt/upgrade/4.5.0/
 @sample ${SYSCONFDIR}/rt/upgrade/4.5.0/
 share/examples/rt/upgrade/4.5.0/schema.Oracle
@@ -1232,6 +1239,12 @@ share/examples/rt/upgrade/5.0.2/
 @sample ${SYSCONFDIR}/rt/upgrade/5.0.2/
 share/examples/rt/upgrade/5.0.2/content
 @sample ${SYSCONFDIR}/rt/upgrade/5.0.2/content
+share/examples/rt/upgrade/5.0.3/
+@sample ${SYSCONFDIR}/rt/upgrade/5.0.3/
+share/examples/rt/upgrade/5.0.3/indexes
+@sample ${SYSCONFDIR}/rt/upgrade/5.0.3/indexes
+share/examples/rt/upgrade/5.0.3/schema.Pg
+@sample ${SYSCONFDIR}/rt/upgrade/5.0.3/schema.Pg
 share/examples/rt/upgrade/generate-rtaddressregexp
 @sample ${SYSCONFDIR}/rt/upgrade/generate-rtaddressregexp
 share/examples/rt/upgrade/reset-sequences
@@ -1617,6 +1630,7 @@ share/rt/html/Elements/Crypt/SignEncryptWidget
 share/rt/html/Elements/CryptStatus
 share/rt/html/Elements/Dashboards
 share/rt/html/Elements/DoAuth
+share/rt/html/Elements/DropdownMenu
 share/rt/html/Elements/EditCustomDateRanges
 share/rt/html/Elements/EditCustomField
 share/rt/html/Elements/EditCustomFieldAutocomplete
@@ -1627,6 +1641,7 @@ share/rt/html/Elements/EditCustomFieldDate
 share/rt/html/Elements/EditCustomFieldDateTime
 share/rt/html/Elements/EditCustomFieldDisplay
 share/rt/html/Elements/EditCustomFieldFreeform
+share/rt/html/Elements/EditCustomFieldHTML
 share/rt/html/Elements/EditCustomFieldIPAddress
 share/rt/html/Elements/EditCustomFieldIPAddressRange
 share/rt/html/Elements/EditCustomFieldImage
@@ -1761,6 +1776,7 @@ share/rt/html/Elements/ShowCustomFieldBinary
 share/rt/html/Elements/ShowCustomFieldCustomGroupings
 share/rt/html/Elements/ShowCustomFieldDate
 share/rt/html/Elements/ShowCustomFieldDateTime
+share/rt/html/Elements/ShowCustomFieldHTML
 share/rt/html/Elements/ShowCustomFieldImage
 share/rt/html/Elements/ShowCustomFieldText
 share/rt/html/Elements/ShowCustomFieldWikitext
@@ -2740,7 +2756,7 @@ share/rt/static/js/assets.js
 share/rt/static/js/autocomplete.js
 share/rt/static/js/bootstrap-combobox.js
 share/rt/static/js/bootstrap-select.min.js
-share/rt/static/js/bootstrap.min.js
+share/rt/static/js/bootstrap.bundle.min.js
 share/rt/static/js/cascaded.js
 share/rt/static/js/chartjs-plugin-colorschemes.min.js
 share/rt/static/js/chosen.jquery.min.js
@@ -2752,7 +2768,7 @@ share/rt/static/js/fontawesome.min.js
 share/rt/static/js/forms.js
 share/rt/static/js/history-folding.js
 share/rt/static/js/i18n.js
-share/rt/static/js/jquery-3.4.1.min.js
+share/rt/static/js/jquery-3.6.0.min.js
 share/rt/static/js/jquery-ui-patch-datepicker.js
 share/rt/static/js/jquery-ui-timepicker-addon.js
 share/rt/static/js/jquery-ui.min.js
@@ -2766,7 +2782,6 @@ share/rt/static/js/late.js
 share/rt/static/js/lifecycleui-editor.js
 share/rt/static/js/lifecycleui-model.js
 share/rt/static/js/mousetrap.min.js
-share/rt/static/js/popper.min.js
 share/rt/static/js/quoteselection.js
 share/rt/static/js/rights-inspector.js
 share/rt/static/js/selectize.min.js
