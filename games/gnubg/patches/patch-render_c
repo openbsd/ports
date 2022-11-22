@@ -1,13 +1,14 @@
 We make GNU Backgammon use system-supplied DejaVu fonts instead of bundling Vera
 fonts.  Thus stop building dynamically allocated paths for fonts.
 
---- render.c.orig	Sun Oct 19 23:24:53 2014
-+++ render.c	Tue Apr  7 11:21:30 2015
+Index: render.c
+--- render.c.orig
++++ render.c
 @@ -52,14 +52,6 @@
  static randctx rc;
  #define RAND irand( &rc )
  
--#if HAVE_FREETYPE
+-#if defined(HAVE_FREETYPE)
 -#define FONT_VERA "fonts/Vera.ttf"
 -#define FONT_VERA_SERIF_BOLD "fonts/VeraSeBd.ttf"
 -#if 0 /* unused for now */
@@ -18,11 +19,9 @@ fonts.  Thus stop building dynamically allocated paths for fonts.
  /* aaanPositions[Clockwise][x][point number][x, y. deltay] */
  int positions[2][30][3] = { {
                               {BAR_X, BAR_Y_1, -CHEQUER_HEIGHT}, /* bar - player 1 */
-@@ -1475,15 +1467,11 @@ RenderLabels(renderdata * prd, unsigned char *puch, in
-     FT_Face ftf;
-     int i;
+@@ -1487,13 +1479,10 @@ RenderLabels(renderdata * prd, unsigned char *puch, in
      FT_Glyph aftg[10];
--    char *file;
+     char *file;
  
 -    file = BuildFilename(FONT_VERA);
 -    if (FT_New_Face(ftl, file, 0, &ftf)) {
@@ -35,7 +34,7 @@ fonts.  Thus stop building dynamically allocated paths for fonts.
  
      if (FT_Set_Pixel_Sizes(ftf, 0, prd->nSize * 5 / 2)) {
          RenderBasicLabels(prd, puch, nStride, iStart, iEnd, iDelta);
-@@ -1761,10 +1749,8 @@ RenderChequerLabels(renderdata * prd, unsigned char *p
+@@ -1773,10 +1762,8 @@ RenderChequerLabels(renderdata * prd, unsigned char *p
      FT_Face ftf;
      FT_Glyph aftg[10];
      int fFreetype = FALSE;
@@ -47,7 +46,7 @@ fonts.  Thus stop building dynamically allocated paths for fonts.
          fFreetype = TRUE;
          for (i = 0; i < 10; i++) {
              FT_Load_Char(ftf, '0' + i, FT_LOAD_RENDER);
-@@ -1773,7 +1759,6 @@ RenderChequerLabels(renderdata * prd, unsigned char *p
+@@ -1785,7 +1772,6 @@ RenderChequerLabels(renderdata * prd, unsigned char *p
  
          FT_Done_Face(ftf);
      }
@@ -55,9 +54,11 @@ fonts.  Thus stop building dynamically allocated paths for fonts.
  #endif
  
      for (i = 0; i < 12; i++) {
-@@ -1932,8 +1917,7 @@ RenderCubeFaces(renderdata * prd, unsigned char *puch,
+@@ -1942,10 +1928,8 @@ RenderCubeFaces(renderdata * prd, unsigned char *puch,
+     FT_Face ftf;
+     FT_Glyph aftg[10], aftgSmall[10], aftgTiny[10];
      int fFreetype = FALSE;
-     char *file;
+-    char *file;
  
 -    file = BuildFilename(FONT_VERA_SERIF_BOLD);
 -    if (!FT_New_Face(ftl, file, 0, &ftf) && !FT_Set_Pixel_Sizes(ftf, 0, 3 * prd->nSize)) {
@@ -65,7 +66,7 @@ fonts.  Thus stop building dynamically allocated paths for fonts.
          fFreetype = TRUE;
  
          for (i = 0; i < 10; i++) {
-@@ -1950,7 +1934,6 @@ RenderCubeFaces(renderdata * prd, unsigned char *puch,
+@@ -1969,7 +1953,6 @@ RenderCubeFaces(renderdata * prd, unsigned char *puch,
  
          FT_Done_Face(ftf);
      }
@@ -73,9 +74,11 @@ fonts.  Thus stop building dynamically allocated paths for fonts.
  #endif
  
      for (i = 0; i < 6; i++) {
-@@ -2010,8 +1993,7 @@ RenderResignFaces(renderdata * prd, unsigned char *puc
+@@ -2045,10 +2028,8 @@ RenderResignFaces(renderdata * prd, unsigned char *puc
+     FT_Face ftf;
+     FT_Glyph aftg[10], aftgSmall[10];
      int fFreetype = FALSE;
-     char *file;
+-    char *file;
  
 -    file = BuildFilename(FONT_VERA_SERIF_BOLD);
 -    if (!FT_New_Face(ftl, file, 0, &ftf) && !FT_Set_Pixel_Sizes(ftf, 0, 4 * prd->nSize)) {
@@ -83,7 +86,7 @@ fonts.  Thus stop building dynamically allocated paths for fonts.
          fFreetype = TRUE;
  
          for (i = 0; i < 10; i++) {
-@@ -2028,7 +2010,6 @@ RenderResignFaces(renderdata * prd, unsigned char *puc
+@@ -2065,7 +2046,6 @@ RenderResignFaces(renderdata * prd, unsigned char *puc
  
          FT_Done_Face(ftf);
      }

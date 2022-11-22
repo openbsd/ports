@@ -1,0 +1,28 @@
+We make GNU Backgammon use system-supplied DejaVu fonts instead of bundling Vera
+fonts.  Thus stop building dynamically allocated paths for fonts.
+
+Index: board3d/font3dOGL.c
+--- board3d/font3dOGL.c.orig
++++ board3d/font3dOGL.c
+@@ -104,19 +104,14 @@ RenderText(const char* text, FT_Library ftLib, OGLFont
+ int
+ CreateFontText(OGLFont* ppFont, const char* text, const char* fontFile, int pitch, float size, float heightRatio)
+ {
+-	char* filename;
+-
+ 	FT_Library ftLib;
+ 	if (FT_Init_FreeType(&ftLib))
+ 		return 0;
+ 
+-	filename = BuildFilename(fontFile);
+-	if (!RenderText(text, ftLib, ppFont, filename, pitch, size, heightRatio)) {
+-		outputerrf(_("Failed to create font from (%s)\n"), filename);
+-		g_free(filename);
++	if (!RenderText(text, ftLib, ppFont, fontFile, pitch, size, heightRatio)) {
++		outputerrf(_("Failed to create font from (%s)\n"), fontFile);
+ 		return 0;
+ 	}
+-	g_free(filename);
+ 	return !FT_Done_FreeType(ftLib);
+ }
+ #endif
