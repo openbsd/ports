@@ -1,6 +1,6 @@
 COMMENT =		SQLite3 module for TDBC
 
-V =			1.1.3
+V =			1.1.5
 
 DISTNAME =		tdbcsqlite3-${V}
 PKGNAME =		tdbc-sqlite3-${V}
