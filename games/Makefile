@@ -389,6 +389,7 @@
      SUBDIR += zaz
      SUBDIR += zelda3
      SUBDIR += zelda3-data
+     SUBDIR += zelda3-rom
      SUBDIR += zelda3-sprites
      SUBDIR += zoom
      SUBDIR += ztrack
