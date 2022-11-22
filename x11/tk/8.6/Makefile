@@ -1,6 +1,6 @@
 COMMENT =		graphical toolkit for Tcl
 
-P =			12
+P =			13
 DISTNAME =		tk8.6.${P}
 PKGNAME =		tk-8.6.${P}
 SHARED_LIBS =		tk86 1.${P}
@@ -47,6 +47,7 @@ WRKSRC =		${WRKDIST}/unix
 TEST_TARGET =		test
 
 TESTHOME =		${WRKDIR}/testhome
+
 # Use TESTFLAGS to control the Tk tests
 TESTFLAGS =
 

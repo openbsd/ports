@@ -438,6 +438,7 @@ lib/tcl/tk8.6/msgs/en.msg
 lib/tcl/tk8.6/msgs/en_gb.msg
 lib/tcl/tk8.6/msgs/eo.msg
 lib/tcl/tk8.6/msgs/es.msg
+lib/tcl/tk8.6/msgs/fi.msg
 lib/tcl/tk8.6/msgs/fr.msg
 lib/tcl/tk8.6/msgs/hu.msg
 lib/tcl/tk8.6/msgs/it.msg
@@ -446,6 +447,7 @@ lib/tcl/tk8.6/msgs/pl.msg
 lib/tcl/tk8.6/msgs/pt.msg
 lib/tcl/tk8.6/msgs/ru.msg
 lib/tcl/tk8.6/msgs/sv.msg
+lib/tcl/tk8.6/msgs/zh_cn.msg
 lib/tcl/tk8.6/obsolete.tcl
 lib/tcl/tk8.6/optMenu.tcl
 lib/tcl/tk8.6/palette.tcl
