@@ -147,3 +147,5 @@ lib/python${MODPY_VERSION}/site-packages/pygeoapi/templates/stac/catalog.html
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/templates/stac/collection.html
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/templates/stac/item.html
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/util.py
+share/examples/pygeoapi/
+share/examples/pygeoapi/pygeoapi-config.yml
