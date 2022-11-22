@@ -1,0 +1,12 @@
+Index: 3rdparty/fmt/src/os.cc
+--- 3rdparty/fmt/src/os.cc.orig
++++ 3rdparty/fmt/src/os.cc
+@@ -203,7 +203,7 @@ void buffered_file::close() {
+ }
+ 
+ int buffered_file::descriptor() const {
+-  int fd = FMT_POSIX_CALL(fileno(file_));
++  int fd = fileno(file_);
+   if (fd == -1) FMT_THROW(system_error(errno, "cannot get file descriptor"));
+   return fd;
+ }

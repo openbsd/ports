@@ -1,7 +1,7 @@
 Index: doc/CMakeLists.txt
 --- doc/CMakeLists.txt.orig
 +++ doc/CMakeLists.txt
-@@ -261,7 +261,7 @@ if(UNIX)
+@@ -261,7 +261,7 @@ if(UNIX AND NOT SKIPPED_DOC_GENERATION)
  			)
  		endif()
  
