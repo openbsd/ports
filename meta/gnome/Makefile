@@ -9,7 +9,7 @@ PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
 REVISION-main=		1
-REVISION-extras=	4
+REVISION-extras=	5
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -128,13 +128,6 @@ RUN_DEPENDS-extras +=	devel/glade \
 # nautilus is already in the dependency chain
 RUN_DEPENDS-extras +=	x11/gnome/file-roller,-nautilus
 RUN_DEPENDS-extras +=	x11/gnome/terminal,-nautilus
-
-# gtk+2
-RUN_DEPENDS-extras +=	audio/libcanberra,-gtk \
-			inputmethods/ibus,-gtk2 \
-			x11/gnome/caribou,-gtk2 \
-			x11/gnome/themes-extra \
-			x11/gtk+2,-cups
 
 # depends on -main
 RUN_DEPENDS-extras +=	STEM-=${V}:${BASE_PKGPATH},-main
