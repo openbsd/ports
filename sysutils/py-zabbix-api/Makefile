@@ -1,9 +1,8 @@
 COMMENT =		Python Zabbix API
 
-MODPY_EGG_VERSION =	0.5.4
+MODPY_EGG_VERSION =	0.5.5
 DISTNAME =		zabbix-api-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		sysutils
 
@@ -19,5 +18,7 @@ MODPY_PI =		Yes
 
 FLAVORS =		python3
 FLAVOR =		python3
+
+NO_TEST =		Yes
 
 .include <bsd.port.mk>
