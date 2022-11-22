@@ -2,7 +2,7 @@ COMMENT =	lightweight compositor for X11
 
 GH_ACCOUNT =	yshui
 GH_PROJECT =	picom
-GH_TAGNAME =	v10
+GH_TAGNAME =	v10.1
 
 CATEGORIES =	x11
 
