@@ -3,12 +3,12 @@ gcc: error: '__SIZEOF_WCHAR_T__' undeclared
 Index: src/args.c
 --- src/args.c.orig
 +++ src/args.c
-@@ -263,7 +263,7 @@ print_versions(void)
+@@ -291,7 +291,7 @@ print_info(void)
  
  #endif
  
 -	fprintf(stdout, "wchar_t width: %d, max: %d\n", __SIZEOF_WCHAR_T__, __WCHAR_MAX__);
 +	fprintf(stdout, "wchar_t width: %zu, max: %d\n", sizeof(wchar_t), __WCHAR_MAX__);
  
- #ifdef HAVE_POSTGRESQL
+ #if NCURSES_EXT_FUNCS
  
