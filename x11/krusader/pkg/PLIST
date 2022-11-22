@@ -1,8 +1,45 @@
 @bin bin/krusader
-@so lib/qt5/plugins/kio_iso.so
-@so lib/qt5/plugins/kio_krarc.so
+@so lib/qt5/plugins/kf5/kio/kio_iso.so
+@so lib/qt5/plugins/kf5/kio/kio_krarc.so
 @man man/man1/krusader.1
 share/applications/org.kde.krusader.desktop
+share/doc/HTML/ca/krusader/
+share/doc/HTML/ca/krusader/advanced-functions.docbook
+share/doc/HTML/ca/krusader/archives.docbook
+share/doc/HTML/ca/krusader/basic-functions.docbook
+share/doc/HTML/ca/krusader/bookmarks.docbook
+share/doc/HTML/ca/krusader/checksum.docbook
+share/doc/HTML/ca/krusader/compare.docbook
+share/doc/HTML/ca/krusader/configuration-files.docbook
+share/doc/HTML/ca/krusader/credits-and-license.docbook
+share/doc/HTML/ca/krusader/diskusage.docbook
+share/doc/HTML/ca/krusader/editors-note.docbook
+share/doc/HTML/ca/krusader/faq.docbook
+share/doc/HTML/ca/krusader/features.docbook
+share/doc/HTML/ca/krusader/glossary.docbook
+share/doc/HTML/ca/krusader/help.docbook
+share/doc/HTML/ca/krusader/index.cache.bz2
+share/doc/HTML/ca/krusader/index.docbook
+share/doc/HTML/ca/krusader/introduction.docbook
+share/doc/HTML/ca/krusader/keyboard-commands.docbook
+share/doc/HTML/ca/krusader/konfigurator.docbook
+share/doc/HTML/ca/krusader/krusader-tools.docbook
+share/doc/HTML/ca/krusader/locate.docbook
+share/doc/HTML/ca/krusader/menu-commands.docbook
+share/doc/HTML/ca/krusader/mount.docbook
+share/doc/HTML/ca/krusader/mouse-commands.docbook
+share/doc/HTML/ca/krusader/occupied-space.docbook
+share/doc/HTML/ca/krusader/profiles.docbook
+share/doc/HTML/ca/krusader/release-overview.docbook
+share/doc/HTML/ca/krusader/remote-connections.docbook
+share/doc/HTML/ca/krusader/search.docbook
+share/doc/HTML/ca/krusader/splitter.docbook
+share/doc/HTML/ca/krusader/synchronizer.docbook
+share/doc/HTML/ca/krusader/user-interface.docbook
+share/doc/HTML/ca/krusader/useraction-xml.docbook
+share/doc/HTML/ca/krusader/useractions.docbook
+share/doc/HTML/ca/krusader/vfs.docbook
+share/doc/HTML/ca/krusader/viewer-editor.docbook
 share/doc/HTML/de/krusader/
 share/doc/HTML/de/krusader/advanced-functions.docbook
 share/doc/HTML/de/krusader/archives.docbook
@@ -65,7 +102,6 @@ share/doc/HTML/en/krusader/glossary.docbook
 share/doc/HTML/en/krusader/help.docbook
 share/doc/HTML/en/krusader/index.cache.bz2
 share/doc/HTML/en/krusader/index.docbook
-share/doc/HTML/en/krusader/installation.docbook
 share/doc/HTML/en/krusader/introduction.docbook
 share/doc/HTML/en/krusader/keyboard-commands.docbook
 share/doc/HTML/en/krusader/kgstartup.png
@@ -152,7 +188,6 @@ share/doc/HTML/nl/krusader/glossary.docbook
 share/doc/HTML/nl/krusader/help.docbook
 share/doc/HTML/nl/krusader/index.cache.bz2
 share/doc/HTML/nl/krusader/index.docbook
-share/doc/HTML/nl/krusader/installation.docbook
 share/doc/HTML/nl/krusader/introduction.docbook
 share/doc/HTML/nl/krusader/keyboard-commands.docbook
 share/doc/HTML/nl/krusader/konfigurator.docbook
@@ -362,13 +397,12 @@ share/krusader/total_commander.color
 share/krusader/total_commander.keymap
 share/krusader/total_commander.keymap.info
 share/krusader/useraction_examples.xml
-share/kservices5/iso.protocol
-share/kservices5/krarc.protocol
 share/kxmlgui5/
 share/kxmlgui5/krusader/
 share/kxmlgui5/krusader/krusaderlisterui.rc
 share/kxmlgui5/krusader/krusaderui.rc
 share/kxmlgui5/krusader/krviewer.rc
+share/locale/ar/LC_MESSAGES/krusader.mo
 share/locale/ast/LC_MESSAGES/krusader.mo
 share/locale/bg/LC_MESSAGES/krusader.mo
 share/locale/bs/LC_MESSAGES/krusader.mo
@@ -392,6 +426,7 @@ share/locale/hu/LC_MESSAGES/krusader.mo
 share/locale/ia/LC_MESSAGES/krusader.mo
 share/locale/it/LC_MESSAGES/krusader.mo
 share/locale/ja/LC_MESSAGES/krusader.mo
+share/locale/ka/LC_MESSAGES/krusader.mo
 share/locale/ko/LC_MESSAGES/krusader.mo
 share/locale/lt/LC_MESSAGES/krusader.mo
 share/locale/mai/LC_MESSAGES/krusader.mo
