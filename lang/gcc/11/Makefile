@@ -19,12 +19,12 @@ FULL_PKGVERSION = $V
 REVISION = 3
 REVISION-dlang = 4
 
-ADASTRAP-amd64 = adastrap-amd64-$V-1.tar.xz
+ADASTRAP-amd64 = adastrap-amd64-$V-2.tar.xz
 ADASTRAP-arm = adastrap-arm-4.9.4-0.tar.xz
 ADASTRAP-hppa = adastrap-hppa-8.3.0-1.tar.xz
-ADASTRAP-i386 = adastrap-i386-$V-1.tar.xz
+ADASTRAP-i386 = adastrap-i386-$V-2.tar.xz
 ADASTRAP-mips64 = adastrap-mips64-8.4.0-0.tar.xz
-ADASTRAP-powerpc = adastrap-powerpc-$V-1.tar.xz
+ADASTRAP-powerpc = adastrap-powerpc-$V-2.tar.xz
 ADASTRAP-sparc64 = adastrap-sparc64-6.5.0-0.tar.xz
 
 PKGNAME-main =  gcc-${FULL_PKGVERSION}
