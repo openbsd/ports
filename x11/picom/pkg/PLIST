@@ -3,6 +3,7 @@ bin/picom-trans
 @man man/man1/picom-trans.1
 @man man/man1/picom.1
 share/applications/picom.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/picom.desktop
 share/examples/picom/
 share/examples/picom/picom.sample.conf
 share/icons/hicolor/48x48/apps/picom.png

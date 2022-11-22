@@ -1,0 +1,24 @@
+- ignore git
+- autostart file in /etc/ needs PLIST @sample
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -7,8 +7,7 @@ cc = meson.get_compiler('c')
+ version = 'v'+meson.project_version()
+ 
+ # use git describe if that's available
+-git = find_program('git', required: false)
+-if git.found()
++if false
+ 	gitv = run_command('git', 'rev-parse', '--short=5', 'HEAD', check: false)
+ 	if gitv.returncode() == 0
+ 		version = 'vgit-'+gitv.stdout().strip()
+@@ -73,7 +72,6 @@ subdir('man')
+ 
+ install_data('bin/picom-trans', install_dir: get_option('bindir'))
+ install_data('picom.desktop', install_dir: 'share/applications')
+-install_data('picom.desktop', install_dir: get_option('sysconfdir') / 'xdg' / 'autostart')
+ 
+ if get_option('compton')
+ 	install_data('compton.desktop', install_dir: 'share/applications')
