@@ -3,6 +3,7 @@ COMMENT =	command-line NOS Teletekst reader
 GH_ACCOUNT =	sjmulder
 GH_PROJECT =	nostt
 GH_TAGNAME =	1.2.2
+REVISION =	0
 
 CATEGORIES =	www
 
