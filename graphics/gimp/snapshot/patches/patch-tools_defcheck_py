@@ -1,4 +1,5 @@
 uses nm options that arent supported by our nm
+
 Index: tools/defcheck.py
 --- tools/defcheck.py.orig
 +++ tools/defcheck.py

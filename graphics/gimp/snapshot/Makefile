@@ -1,23 +1,20 @@
 COMMENT=	GNU Image Manipulation Program
 
 V=		2.99
-DISTNAME=	gimp-${V}.12
-REVISION=	2
+DISTNAME=	gimp-${V}.14
 
 .for i in gimp gimpbase gimpcolor gimpconfig gimpmath gimpmodule \
 	gimpthumb gimpui gimpwidgets gimp-scriptfu
-SHARED_LIBS +=  $i-3.0 0.0
+SHARED_LIBS +=  ${i}-3.0 0.0
 .endfor
 
 CATEGORIES=	graphics
 
-DIR=		gimp/v${V}
-MASTER_SITES=	https://download.gimp.org/pub/${DIR}/ \
-		https://www.mirrorservice.org/sites/ftp.gimp.org/pub/${DIR}/
+MASTER_SITES=	https://download.gimp.org/gimp/v${V}/ \
+		https://www.mirrorservice.org/sites/ftp.gimp.org/gimp/v${V}/
+EXTRACT_SUFX=	.tar.xz
 
 HOMEPAGE=	https://www.gimp.org/
-
-EXTRACT_SUFX=	.tar.xz
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes
@@ -36,10 +33,10 @@ DEBUG_PACKAGES=	${BUILD_PACKAGES}
 # C++14
 COMPILER=	base-clang ports-gcc
 
-MODULES=	textproc/intltool \
-		devel/meson \
+MODULES=	devel/meson \
 		lang/lua \
 		lang/python
+
 SUBST_VARS +=	V
 MODLUA_RUNDEP=	No
 MODLUA_BUILDDEP=No
@@ -54,9 +51,10 @@ COMMON_DEPENDS=	archivers/lzip/lzlib \
 		print/poppler-data
 
 BUILD_DEPENDS=	${COMMON_DEPENDS} \
-		textproc/gi-docgen \
+		devel/gettext,-tools \
 		lang/vala \
 		shells/bash \
+		textproc/gi-docgen \
 		textproc/libxslt
 
 RUN_DEPENDS=	${COMMON_DEPENDS} \
@@ -66,18 +64,18 @@ RUN_DEPENDS=	${COMMON_DEPENDS} \
 LIB_DEPENDS=	archivers/bzip2 \
 		archivers/xz \
 		devel/appstream-glib \
-		devel/glib2>=2.54.2 \
-		devel/harfbuzz>=0.9.19 \
-		devel/pango>=1.29.4 \
+		devel/glib2 \
+		devel/harfbuzz \
+		devel/pango \
 		graphics/aalib \
-		graphics/babl>=0.1.52 \
-		graphics/cairo>=1.12.2 \
-		graphics/gdk-pixbuf2>=2.30.8 \
-		graphics/gegl04>=0.4.4 \
+		graphics/babl \
+		graphics/cairo \
+		graphics/gdk-pixbuf2 \
+		graphics/gegl04 \
 		graphics/jpeg \
 		graphics/lcms2 \
 		graphics/libgexiv2 \
-		graphics/libmypaint>=1.5.0 \
+		graphics/libmypaint \
 		graphics/libwmf \
 		graphics/openexr \
 		graphics/png \
@@ -93,7 +91,7 @@ CONFIGURE_ENV=	CC_FOR_BUILD="${CC}" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 # libmng has no pc file
-CONFIGURE_ARGS=-Dmng=disabled \
+CONFIGURE_ARGS=	-Dmng=disabled \
 		-Dicc-directory=${LOCALBASE}/share/color/icc \
 		-Dalsa=disabled \
 		-Dlinux-input=disabled \
@@ -109,19 +107,23 @@ UPDATE_PLIST_ARGS +=	-i MODPY_PY_PREFIX -i MODPY_BIN_SUFFIX
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/extensions/goat-exercises/goat-exercise-lua.lua
 
+# XXX remove once this GIMP version becomes the default;
+# see:
+# patch-libgimpwidgets_gimpwidgets-private_c
+# patch-desktop_gimp_desktop_in_in
+CONFIGURE_ARGS +=	-Denable-default-bin=false
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/libgimpwidgets/gimpwidgets-private.c
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/
 	mv ${WRKINST}${SYSCONFDIR}/gimp ${PREFIX}/share/examples/
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
 		${PREFIX}/lib/gimp/${V}/plug-ins
 
+# XXX remove once this GIMP version becomes the default;
 # prevent conflicts with graphics/gimp/stable;
-# see also patch-desktop_gimp_desktop_in_in
 	cd ${PREFIX} && \
-		mv man/man1/gimp{,-${V}}-console.1 && \
-		mv man/man1/gimp{,-${V}}.1 && \
-		mv man/man1/gimptool{,-${V}}.1 && \
-		mv man/man5/gimprc{,-${V}}.5 && \
 		mv share/applications/gimp{,-${V}}.desktop && \
 		mv share/icons/hicolor/16x16/apps/gimp{,-${V}}.png && \
 		mv share/icons/hicolor/22x22/apps/gimp{,-${V}}.png && \
@@ -129,6 +131,8 @@ post-install:
 		mv share/icons/hicolor/256x256/apps/gimp{,-${V}}.png && \
 		mv share/icons/hicolor/32x32/apps/gimp{,-${V}}.png && \
 		mv share/icons/hicolor/48x48/apps/gimp{,-${V}}.png && \
+		mv share/icons/hicolor/64x64/apps/gimp{,-${V}}.png && \
+		mv share/icons/hicolor/scalable/apps/gimp{,-${V}}.svg && \
 		mv share/metainfo/org.gimp{,-${V}}.GIMP.appdata.xml
 
 .include <bsd.port.mk>
