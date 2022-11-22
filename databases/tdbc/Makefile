@@ -1,6 +1,6 @@
 COMMENT =		Tcl Database Connectivity
 
-V =			1.1.3
+V =			1.1.5
 
 DISTNAME =		tdbc${V}
 PKGNAME =		tdbc-${V}

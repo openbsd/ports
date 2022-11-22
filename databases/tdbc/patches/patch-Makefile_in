@@ -1,7 +1,7 @@
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -434,8 +434,8 @@ install-lib-binaries: binaries
+@@ -448,8 +448,8 @@ install-lib-binaries: binaries
  	@$(INSTALL_DATA_DIR) "$(DESTDIR)$(pkglibdir)"
  	@list='$(lib_BINARIES)'; for p in $$list; do \
  	  if test -f $$p; then \
