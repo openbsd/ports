@@ -1,11 +1,10 @@
 COMMENT =	crypto and TLS for C++11
 
-VERSION =	2.19.2
+VERSION =	2.19.3
 DISTNAME =	Botan-${VERSION}
 PKGNAME =	botan2-${VERSION}
-REVISION =	0
 
-SHARED_LIBS =	botan-2		16.0
+SHARED_LIBS =	botan-2		17.0
 
 CATEGORIES =	security
 
