@@ -36,6 +36,11 @@ lib/dleyna-server/
 lib/pkgconfig/dleyna-core-1.0.pc
 lib/pkgconfig/dleyna-renderer-service-1.0.pc
 lib/pkgconfig/dleyna-server-service-1.0.pc
+lib/python${MODPY_VERSION}/site-packages/dLeyna/
+lib/python${MODPY_VERSION}/site-packages/dLeyna/download_sync_controller.py
+lib/python${MODPY_VERSION}/site-packages/dLeyna/mediaconsole.py
+lib/python${MODPY_VERSION}/site-packages/dLeyna/rendererconsole.py
+lib/python${MODPY_VERSION}/site-packages/dLeyna/upload_sync_controller.py
 @bin libexec/dleyna-renderer-service
 @bin libexec/dleyna-server-service
 @man man/man1/dleyna-renderer-service.1

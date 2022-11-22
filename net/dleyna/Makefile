@@ -1,7 +1,7 @@
 COMMENT=		services and D-Bus APIs to access UPnP and DLNA devices
 
 GNOME_PROJECT=		dLeyna
-GNOME_VERSION=		0.8.1
+GNOME_VERSION=		0.8.2
 PKGNAME=		dleyna-${GNOME_VERSION}
 
 SHARED_LIBS += dleyna-core-1.0           1.1 # 6.0.0
@@ -15,7 +15,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # override gnome MODULE
 MASTER_SITES=		https://gitlab.gnome.org/World/dLeyna/-/archive/v${GNOME_VERSION}/
 EXTRACT_SUFX=		.tar.gz
-WRKDIST=		${WRKDIR}/dLeyna-v${GNOME_VERSION}-21e074a2f5ab707698e3dff115c69bbb31dcfba8
+WRKDIST=		${WRKDIR}/dLeyna-v${GNOME_VERSION}-9444b8eb9e48a3985340c7f7e0d3a63d2b352302
 
 # LGPLv2.1
 PERMIT_PACKAGE=		Yes
@@ -27,16 +27,18 @@ MODULES=		devel/meson \
 			lang/python \
 			x11/gnome
 
-MODPY_RUNDEP=		No
-
-BUILD_DEPENDS=		textproc/py-docutils${MODPY_FLAVOR} \
+BUILD_DEPENDS=		devel/epoll-shim \
+			textproc/py-docutils${MODPY_FLAVOR} \
 			textproc/py-sphinx${MODPY_FLAVOR}
 
 LIB_DEPENDS=		net/gupnp/core \
 			net/gupnp/av \
 			net/gupnp/dlna
 
-RUN_DEPENDS=		x11/dbus
+RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
+			x11/dbus-python${MODPY_FLAVOR}
+
+MODGNOME_CPPFLAGS=	-I${LOCALBASE}/include/libepoll-shim
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/dleyna
