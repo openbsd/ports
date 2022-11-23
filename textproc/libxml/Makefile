@@ -8,7 +8,7 @@ PKGNAME-main=		libxml-${VERSION}
 PKGNAME-python=		py3-libxml-${VERSION}
 
 REVISION-main=		1
-REVISION-python=	2
+REVISION-python=	3
 
 SHARED_LIBS +=  xml2                 18.0     # 12.3
 
