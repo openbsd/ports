@@ -1,13 +1,13 @@
-COMMENT =		Scientific PYthon Development EnviRonment
+BROKEN =	needs updating for Python 3.10
+
+COMMENT =	Scientific PYthon Development EnviRonment
 
 MODPY_EGG_VERSION =	3.3.3
-REVISION =		8
-DISTNAME =		spyder-${MODPY_EGG_VERSION}
-PKGNAME =		spyder3-${MODPY_EGG_VERSION}
+REVISION =	8
+DISTNAME =	spyder-${MODPY_EGG_VERSION}
+PKGNAME =	spyder3-${MODPY_EGG_VERSION}
 
-PORTROACH=		limit:^3
-
-HOMEPAGE =		https://github.com/spyder-ide/spyder
+HOMEPAGE =	https://github.com/spyder-ide/spyder
 
 FLAVORS =	python3
 FLAVOR =	python3
