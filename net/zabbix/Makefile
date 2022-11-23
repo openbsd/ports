@@ -3,7 +3,7 @@ COMMENT-server =	network and application monitoring - server
 COMMENT-proxy =		network and application monitoring - proxy
 COMMENT-web =		network and application monitoring - web frontend
 
-VERSION =		6.2.3
+VERSION =		6.2.4
 DISTNAME =		zabbix-${VERSION}
 FULLPKGNAME-main =	zabbix-agent-${VERSION}
 FULLPKGPATH-main =	net/zabbix,-main
@@ -14,8 +14,6 @@ FULLPKGPATH-web =	net/zabbix,-web
 CATEGORIES =		net
 
 MAJV =			${VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
-
-REVISION-web =		0
 
 HOMEPAGE =		http://www.zabbix.com/
 

@@ -13,6 +13,33 @@ share/examples/zabbix/zabbix_proxy.conf
 share/zabbix-proxy/
 share/zabbix-proxy/schema/
 share/zabbix-proxy/schema/mysql/
+share/zabbix-proxy/schema/mysql/data.sql
+share/zabbix-proxy/schema/mysql/double.sql
+share/zabbix-proxy/schema/mysql/history_pk_prepare.sql
+share/zabbix-proxy/schema/mysql/images.sql
+share/zabbix-proxy/schema/mysql/schema.sql
+share/zabbix-proxy/schema/postgresql/
+@comment share/zabbix-proxy/schema/postgresql/Makefile
+@comment share/zabbix-proxy/schema/postgresql/Makefile.am
+@comment share/zabbix-proxy/schema/postgresql/Makefile.in
+share/zabbix-proxy/schema/postgresql/data.sql
+share/zabbix-proxy/schema/postgresql/double.sql
+share/zabbix-proxy/schema/postgresql/history_pk_prepare.sql
+share/zabbix-proxy/schema/postgresql/images.sql
+share/zabbix-proxy/schema/postgresql/schema.sql
+share/zabbix-proxy/schema/postgresql/timescaledb.sql
+share/zabbix-proxy/schema/postgresql/tsdb_history_pk_upgrade_no_compression/
+share/zabbix-proxy/schema/postgresql/tsdb_history_pk_upgrade_no_compression/history_pk.sql
+share/zabbix-proxy/schema/postgresql/tsdb_history_pk_upgrade_no_compression/history_pk_log.sql
+share/zabbix-proxy/schema/postgresql/tsdb_history_pk_upgrade_no_compression/history_pk_str.sql
+share/zabbix-proxy/schema/postgresql/tsdb_history_pk_upgrade_no_compression/history_pk_text.sql
+share/zabbix-proxy/schema/postgresql/tsdb_history_pk_upgrade_no_compression/history_pk_uint.sql
+share/zabbix-proxy/schema/postgresql/tsdb_history_pk_upgrade_with_compression/
+share/zabbix-proxy/schema/postgresql/tsdb_history_pk_upgrade_with_compression/history_pk.sql
+share/zabbix-proxy/schema/postgresql/tsdb_history_pk_upgrade_with_compression/history_pk_log.sql
+share/zabbix-proxy/schema/postgresql/tsdb_history_pk_upgrade_with_compression/history_pk_str.sql
+share/zabbix-proxy/schema/postgresql/tsdb_history_pk_upgrade_with_compression/history_pk_text.sql
+share/zabbix-proxy/schema/postgresql/tsdb_history_pk_upgrade_with_compression/history_pk_uint.sql
 share/zabbix-proxy/schema/sqlite3/
 @comment share/zabbix-proxy/schema/sqlite3/Makefile
 @comment share/zabbix-proxy/schema/sqlite3/Makefile.am
@@ -29,22 +56,7 @@ share/zabbix-proxy/schema/sqlite3/schema.sql
 @sample /var/log/zabbix/
 @mode
 @owner
-share/zabbix-server/schema/mysql/
+@comment share/zabbix-server/schema/mysql/
 @comment share/zabbix-server/schema/mysql/Makefile
 @comment share/zabbix-server/schema/mysql/Makefile.am
 @comment share/zabbix-server/schema/mysql/Makefile.in
-share/zabbix-proxy/schema/mysql/data.sql
-share/zabbix-proxy/schema/mysql/double.sql
-share/zabbix-proxy/schema/mysql/history_pk_prepare.sql
-share/zabbix-proxy/schema/mysql/images.sql
-share/zabbix-proxy/schema/mysql/schema.sql
-share/zabbix-proxy/schema/postgresql/
-@comment share/zabbix-proxy/schema/postgresql/Makefile
-@comment share/zabbix-proxy/schema/postgresql/Makefile.am
-@comment share/zabbix-proxy/schema/postgresql/Makefile.in
-share/zabbix-proxy/schema/postgresql/data.sql
-share/zabbix-proxy/schema/postgresql/double.sql
-share/zabbix-proxy/schema/postgresql/history_pk_prepare.sql
-share/zabbix-proxy/schema/postgresql/images.sql
-share/zabbix-proxy/schema/postgresql/schema.sql
-share/zabbix-proxy/schema/postgresql/timescaledb.sql
