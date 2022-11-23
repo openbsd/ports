@@ -1,8 +1,8 @@
-no SO_NOSIGPIPE on OpenBSD
+no SO_NOSIGPIPE on OpenBSD 
 
-Index: auxil/broker/caf-incubator/libcaf_net/src/network_socket.cpp
---- auxil/broker/caf-incubator/libcaf_net/src/network_socket.cpp.orig
-+++ auxil/broker/caf-incubator/libcaf_net/src/network_socket.cpp
+Index: auxil/broker/caf/libcaf_net/src/network_socket.cpp
+--- auxil/broker/caf/libcaf_net/src/network_socket.cpp.orig
++++ auxil/broker/caf/libcaf_net/src/network_socket.cpp
 @@ -42,7 +42,7 @@ uint16_t port_of(sockaddr& what) {
  
  namespace caf::net {

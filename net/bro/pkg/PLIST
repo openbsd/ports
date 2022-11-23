@@ -1201,6 +1201,7 @@ share/btest/data/pcaps/ftp/
 share/btest/data/pcaps/ftp/bigtransfer.pcap
 share/btest/data/pcaps/ftp/bruteforce.pcap
 share/btest/data/pcaps/ftp/cwd-navigation.pcap
+share/btest/data/pcaps/ftp/fake-long-commands.pcap
 share/btest/data/pcaps/ftp/fake-server-delays-all.pcap
 share/btest/data/pcaps/ftp/ftp-with-numbers-in-filename.pcap
 share/btest/data/pcaps/ftp/ipv4.trace
@@ -1221,6 +1222,7 @@ share/btest/data/pcaps/http/connect-with-smtp.trace
 share/btest/data/pcaps/http/content-range-gap-skip.trace
 share/btest/data/pcaps/http/content-range-gap.trace
 share/btest/data/pcaps/http/content-range-less-than-len.pcap
+share/btest/data/pcaps/http/curl_http_09.pcap
 share/btest/data/pcaps/http/entity_gap.trace
 share/btest/data/pcaps/http/entity_gap2.trace
 share/btest/data/pcaps/http/fake-content-length.pcap
@@ -1231,6 +1233,7 @@ share/btest/data/pcaps/http/get_nosyn.trace
 share/btest/data/pcaps/http/http-bad-request-with-version.trace
 share/btest/data/pcaps/http/http-filename.pcap
 share/btest/data/pcaps/http/http-post-large.pcap
+share/btest/data/pcaps/http/http_09.pcap
 share/btest/data/pcaps/http/http_large_req_8001.pcap
 share/btest/data/pcaps/http/methods.trace
 share/btest/data/pcaps/http/missing-zlib-header.pcap

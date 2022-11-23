@@ -1,7 +1,7 @@
 Index: auxil/broker/CMakeLists.txt
 --- auxil/broker/CMakeLists.txt.orig
 +++ auxil/broker/CMakeLists.txt
-@@ -368,8 +368,8 @@ set(BROKER_SRC
+@@ -351,8 +351,8 @@ set(BROKER_SRC
  if (ENABLE_SHARED)
    add_library(broker SHARED ${BROKER_SRC})
    set_target_properties(broker PROPERTIES

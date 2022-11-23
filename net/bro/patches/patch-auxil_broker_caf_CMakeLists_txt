@@ -1,7 +1,7 @@
 Index: auxil/broker/caf/CMakeLists.txt
 --- auxil/broker/caf/CMakeLists.txt.orig
 +++ auxil/broker/caf/CMakeLists.txt
-@@ -161,11 +161,11 @@ math(EXPR CAF_VERSION_MAJOR "${CAF_VERSION_INT} / 1000
+@@ -162,11 +162,11 @@ math(EXPR CAF_VERSION_MAJOR "${CAF_VERSION_INT} / 1000
  math(EXPR CAF_VERSION_MINOR "( ${CAF_VERSION_INT} / 100) % 100")
  math(EXPR CAF_VERSION_PATCH "${CAF_VERSION_INT} % 100")
  # Create full version string.
