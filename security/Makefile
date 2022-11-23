@@ -74,7 +74,6 @@
      SUBDIR += heimdal
      SUBDIR += hlfl
      SUBDIR += hydra
-     SUBDIR += ikeman
      SUBDIR += integrit
      SUBDIR += ipguard
      SUBDIR += isic

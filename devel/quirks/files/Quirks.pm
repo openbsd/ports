@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1462 2022/11/18 21:26:56 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.1463 2022/11/23 19:48:28 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1749,6 +1749,7 @@ setup_obsolete_reason(
 	1 => 'samdump2',
 	1 => 'smbsniff',
 	0 => 'fragroute',
+	52 => 'ikeman',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
@@ -1813,6 +1814,7 @@ my $obsolete_message = {
 	49 => "has no license, unmaintained since too long, crashes at runtime",
 	50 => "abandoned ten years ago, broken by default due to missing runtime dependencies, use security/sslscan",
 	51 => "dead upstream, consider using socat or SSH",
+	52 => "unmaintained since import, already on LibreSSL life support for too long",
 };
 
 # ->is_base_system($handle, $state):
