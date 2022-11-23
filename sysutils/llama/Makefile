@@ -1,7 +1,8 @@
-COMMENT =	terminal file manager.
+COMMENT =	terminal file manager
 
 MODGO_MODNAME = github.com/antonmedv/llama
 MODGO_VERSION = v1.2.0
+REVISION =	0
 
 CATEGORIES =	sysutils
 
