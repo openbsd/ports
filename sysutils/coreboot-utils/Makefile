@@ -7,12 +7,11 @@ COMMENT =		utilities to work on firmware images and hardware
 V =			4.17
 DISTNAME =		coreboot-${V}
 PKGNAME =		coreboot-utils-${V}
+REVISION =		0
 
 CATEGORIES =		sysutils devel
 
 HOMEPAGE =		https://coreboot.org
-
-MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
