@@ -1,9 +1,9 @@
 COMMENT =		VMware vSphere Automation SDK for Python
 
-MODPY_EGG_VERSION =	8.0.0.0
+MODPY_EGG_VERSION =	8.0.0.1
 GH_ACCOUNT =		vmware
 GH_PROJECT =		vsphere-automation-sdk-python
-GH_TAGNAME =		v8.0.0.0
+GH_TAGNAME =		v8.0.0.1
 
 PKGNAME =		py-vsphere-automation-${MODPY_EGG_VERSION}
 REVISION =		0
@@ -20,7 +20,6 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
 
 BUILD_DEPENDS =		devel/py-pip${MODPY_FLAVOR} \
 			sysutils/py-vmomi${MODPY_FLAVOR} \
@@ -30,18 +29,19 @@ RUN_DEPENDS =		devel/py-pip${MODPY_FLAVOR} \
 			sysutils/py-vmomi${MODPY_FLAVOR} \
 			security/py-openssl${MODPY_FLAVOR} \
 			textproc/py-lxml${MODPY_FLAVOR}
-TEST_DEPENDS =		devel/py-codestyle${MODPY_FLAVOR}
 
 MAKE_ENV =		PYTHONPATH=${WRKINST}/${MODPY_SITEPKG}
 
 FLAVORS =		python3
 FLAVOR =		python3
 
+NO_TEST =		Yes
+
 pre-build:
 	@cd ${WRKSRC}/lib/ && \
 		find . -name \*.whl -exec \
 		env ${MAKE_ENV} pip${MODPY_VERSION} install \
 		--no-cache-dir --no-index --no-warn-script-location \
-		--prefix=${PREFIX} --root=${DESTDIR} {} +
+		--prefix=${PREFIX} --root=${DESTDIR} --no-dependencies {} +
 
 .include <bsd.port.mk>
