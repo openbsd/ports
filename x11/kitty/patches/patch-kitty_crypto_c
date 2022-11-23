@@ -1,0 +1,16 @@
+Use freezero() since OPENSSL_clear_free() is not available in LibreSSL.
+
+Index: kitty/crypto.c
+--- kitty/crypto.c.orig
++++ kitty/crypto.c
+@@ -17,6 +17,10 @@
+ #include <sys/mman.h>
+ #include <structmember.h>
+ 
++#if defined(LIBRESSL_VERSION_NUMBER)
++#define OPENSSL_clear_free(a, b) freezero((a), (b))
++#endif
++
+ #define SHA1_DIGEST_LENGTH SHA_DIGEST_LENGTH
+ 
+ typedef enum HASH_ALGORITHM { SHA1_HASH, SHA224_HASH, SHA256_HASH, SHA384_HASH, SHA512_HASH } HASH_ALGORITHM;

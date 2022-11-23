@@ -8,13 +8,13 @@ DISTNAME =		kitty-${MODPY_EGG_VERSION}
 CATEGORIES =		x11
 HOMEPAGE =		https://sw.kovidgoyal.net/kitty/
 MAINTAINER =		Thomas Frohwein <thfr@openbsd.org>
-REVISION =		0
+REVISION =		1
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
 # canberra, fontconfig, freetype are loaded dynamically
-WANTLIB += GL X11 X11-xcb Xcursor Xinerama Xrandr c canberra dbus-1
+WANTLIB += GL X11 X11-xcb Xcursor Xinerama Xrandr c canberra crypto dbus-1
 WANTLIB += fontconfig freetype harfbuzz intl lcms2 m png pthread rsync
 WANTLIB += util xcb xkbcommon xkbcommon-x11 z ${MODPY_WANTLIB}
 
@@ -52,10 +52,6 @@ TEST_ENV = 		CI=true \
 
 # needed for 'make test'
 USE_GMAKE =		Yes
-
-# disable crypto for encrypted communication; depends on OpenSSL3; not worth it
-post-extract:
-	rm ${WRKSRC}/kitty/crypto.c
 
 pre-test:
 	mkdir -p ${WRKDIR}/tmp/cache
