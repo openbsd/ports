@@ -3,8 +3,6 @@
 lib/gnome-settings-daemon-3.0/
 lib/gnome-settings-daemon-3.0/gtk-modules/
 lib/gnome-settings-daemon-3.0/gtk-modules/canberra-gtk-module.desktop
-lib/gtk-3.0/
-lib/gtk-3.0/modules/
 lib/gtk-3.0/modules/libcanberra-gtk-module.so
 lib/gtk-3.0/modules/libcanberra-gtk3-module.so
 lib/libcanberra-gtk3.a

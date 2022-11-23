@@ -8,7 +8,7 @@ EXTRACT_SUFX=	.tar.xz
 
 REVISION-main=	5
 REVISION-gtk=	10
-REVISION-gtk3=	10
+REVISION-gtk3=	11
 
 SHARED_LIBS +=  canberra             2.0      # 2.5
 SHARED_LIBS +=  canberra-gtk3        1.8      # 1.8
