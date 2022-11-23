@@ -69,7 +69,6 @@
      SUBDIR += gringotts
      SUBDIR += hashdeep
      SUBDIR += hashid
-     SUBDIR += hatchet
      SUBDIR += hcxtools
      SUBDIR += heimdal
      SUBDIR += hlfl

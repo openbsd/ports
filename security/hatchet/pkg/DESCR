@@ -1,3 +1,0 @@
-Hatchet is a log parsing/presentation program written for PF firewall 
-logs, such as those found in OpenBSD. It offers a browser-based interface
-for quickly reviewing log events and performing deeper analysis.

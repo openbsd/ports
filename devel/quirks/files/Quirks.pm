@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1464 2022/11/23 19:51:55 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.1465 2022/11/23 20:47:27 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1751,6 +1751,7 @@ setup_obsolete_reason(
 	0 => 'fragroute',
 	52 => 'ikeman',
 	3 => 'libperseus',
+	0 => 'hatchet',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
