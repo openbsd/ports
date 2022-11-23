@@ -4,6 +4,8 @@ MODGO_MODNAME = github.com/antonmedv/llama
 MODGO_VERSION = v1.2.0
 REVISION =	0
 
+DISTNAME =	llama-${MODGO_VERSION}
+
 CATEGORIES =	sysutils
 
 HOMEPAGE =	https://github.com/antonmedv/llama
