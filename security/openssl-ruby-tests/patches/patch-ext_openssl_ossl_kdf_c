@@ -1,5 +1,7 @@
 LibreSSL has hkdf via EVP since 3.6.0
 
+https://github.com/ruby/openssl/pull/569
+
 Index: ext/openssl/ossl_kdf.c
 --- ext/openssl/ossl_kdf.c.orig
 +++ ext/openssl/ossl_kdf.c
