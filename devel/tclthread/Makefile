@@ -1,8 +1,10 @@
 COMMENT =		thread extension for Tcl
 
 V =			2.8.8
+REVISION =		0
 
 DISTNAME =		thread${V}
+DISTFILES =		thread${V}-1{thread${V}}${EXTRACT_SUFX}
 PKGNAME =		tclthread-${V}
 SHARED_LIBS =		tclthread${VER} 0.0
 CATEGORIES =		devel
