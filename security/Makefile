@@ -109,7 +109,6 @@
      SUBDIR += libmodsecurity
      SUBDIR += libnettle
      SUBDIR += libotr
-     SUBDIR += libperseus
      SUBDIR += libpwquality
      SUBDIR += libscrypt
      SUBDIR += libsodium

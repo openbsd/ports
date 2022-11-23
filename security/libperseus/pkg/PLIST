@@ -1,3 +1,0 @@
-@bin bin/perseus_test
-include/perseus.h
-@lib lib/libperseus.so.${LIBperseus_VERSION}
