@@ -13,6 +13,10 @@ PKGNAME-main=		gtk+3-${GNOME_VERSION}
 PKGNAME-cups=		gtk+3-cups-${GNOME_VERSION}
 PKGNAME-guic=		gtk-update-icon-cache-${GNOME_VERSION}
 
+REVISION-main=		0
+REVISION-cups=		0
+REVISION-guic=		0
+
 CATEGORIES=		x11 devel
 
 SHARED_LIBS +=  gdk-3                2201.1   # 2404.31
@@ -26,12 +30,10 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += ffi gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += iconv intl jpeg m pcre2-8 pthread z
-
 MULTI_PACKAGES=		-main -cups -guic
 
 MODULES=		devel/dconf \
+			devel/meson \
 			x11/gnome
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
@@ -48,56 +50,45 @@ RUN_DEPENDS-main=	${RUN_DEPENDS} \
 # some apps needs the svg version of the icon (librsvg pulled in)
 RUN_DEPENDS-main +=	x11/gnome/adwaita-icon-theme
 
-WANTLIB-main += ${WANTLIB} ${COMPILER_LIBCXX} c epoxy fribidi Xau
-WANTLIB-main += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xdmcp
-WANTLIB-main += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
-WANTLIB-main += cairo cairo-gobject dbus-1 expat fontconfig freetype
-WANTLIB-main += graphite2 harfbuzz pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB-main += pixman-1 xcb xcb-render xcb-shm png execinfo
+WANTLIB-main += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB-main += Xrandr atk-1.0 atk-bridge-2.0 c cairo cairo-gobject
+WANTLIB-main += epoxy fontconfig fribidi gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB-main += gmodule-2.0 gobject-2.0 harfbuzz intl m pango-1.0 pangocairo-1.0
+WANTLIB-main += pangoft2-1.0
 
 LIB_DEPENDS-cups=	${LIB_DEPENDS} \
 			print/cups,-libs \
 			${BASE_PKGPATH},-main=${GNOME_VERSION}
 RUN_DEPENDS-cups=
 
-WANTLIB-cups += ${WANTLIB} ${COMPILER_LIBCXX}
-WANTLIB-cups += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB-cups += Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
-WANTLIB-cups += avahi-client avahi-common cairo cairo-gobject crypto
-WANTLIB-cups += cups dbus-1 epoxy execinfo expat fontconfig freetype
-WANTLIB-cups += fribidi gdk-3 graphite2 gtk-3 harfbuzz pango-1.0 pangocairo-1.0
-WANTLIB-cups += pangoft2-1.0 pixman-1 png ssl xcb xcb-render xcb-shm
+WANTLIB-cups += cairo cups gdk-3 gio-2.0 glib-2.0 gobject-2.0 gtk-3
 
 LIB_DEPENDS-guic=	graphics/gdk-pixbuf2
 RUN_DEPENDS-guic=	x11/hicolor-icon-theme
 
 # uses pledge()
-WANTLIB-guic += ${WANTLIB} c png
+WANTLIB-guic += c gdk_pixbuf-2.0 glib-2.0 intl
 
 MODGNOME_TOOLS=		docbook gobject-introspection gtk-update-icon-cache \
 			desktop-file-utils
 
 TEST_IS_INTERACTIVE=	x11
 
-SEPARATE_BUILD=		Yes
-
-CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS=		-Dprint_backends="cups,file,lpr" \
+			-Dman=true
 
 # explicitly decativate wayland
-CONFIGURE_ARGS+=	--disable-wayland-backend --enable-x11-backend
+CONFIGURE_ARGS +=	-Dwayland_backend=false
 
 .include <bsd.port.arch.mk>
 .if !${PROPERTIES:Mclang}
 CFLAGS +=	-std=gnu99
 .endif
 
-FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/gtk+3
-
-# configure will disable lpr in default gtk-print-backends if cups is found
-MAKE_FLAGS=		GTK_PRINT_BACKENDS="file,lpr,cups"
-
 post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gtk+3
+	mv ${WRKINST}${SYSCONFDIR}/gtk-3.0 ${PREFIX}/share/examples/gtk+3
+# own the directory
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/gtk-3.0/modules
-	rm ${PREFIX}/lib/gtk-3.0/3.0.0/{printbackends,immodules}/*.{a,la}
 
 .include <bsd.port.mk>

@@ -442,14 +442,8 @@ lib/gtk-3.0/3.0.0/printbackends/
 @so lib/gtk-3.0/3.0.0/printbackends/libprintbackend-file.so
 @so lib/gtk-3.0/3.0.0/printbackends/libprintbackend-lpr.so
 lib/gtk-3.0/modules/
-@static-lib lib/libgailutil-3.a
-lib/libgailutil-3.la
 @lib lib/libgailutil-3.so.${LIBgailutil-3_VERSION}
-@static-lib lib/libgdk-3.a
-lib/libgdk-3.la
 @lib lib/libgdk-3.so.${LIBgdk-3_VERSION}
-@static-lib lib/libgtk-3.a
-lib/libgtk-3.la
 @lib lib/libgtk-3.so.${LIBgtk-3_VERSION}
 lib/pkgconfig/gail-3.0.pc
 lib/pkgconfig/gdk-3.0.pc
@@ -457,7 +451,6 @@ lib/pkgconfig/gdk-x11-3.0.pc
 lib/pkgconfig/gtk+-3.0.pc
 lib/pkgconfig/gtk+-unix-print-3.0.pc
 lib/pkgconfig/gtk+-x11-3.0.pc
-@man man/man1/broadwayd.1
 @man man/man1/gtk-builder-tool.1
 @man man/man1/gtk-encode-symbolic-svg.1
 @man man/man1/gtk-launch.1
@@ -489,6 +482,11 @@ share/glib-2.0/schemas/org.gtk.Settings.EmojiChooser.gschema.xml
 share/glib-2.0/schemas/org.gtk.Settings.FileChooser.gschema.xml
 share/glib-2.0/schemas/org.gtk.exampleapp.gschema.xml
 share/gtk-3.0/
+share/gtk-3.0/emoji/
+share/gtk-3.0/emoji/de.gresource
+share/gtk-3.0/emoji/es.gresource
+share/gtk-3.0/emoji/fr.gresource
+share/gtk-3.0/emoji/zh.gresource
 share/gtk-3.0/gtkbuilder.rng
 share/gtk-3.0/valgrind/
 share/gtk-3.0/valgrind/gtk.supp
