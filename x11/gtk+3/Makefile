@@ -7,20 +7,16 @@ COMMENT-cups=		gtk+3 CUPS print backend
 COMMENT-guic=		gtk+ icon theme caching utility
 
 GNOME_PROJECT=		gtk+
-GNOME_VERSION=		3.24.34
+GNOME_VERSION=		3.24.35
 
 PKGNAME-main=		gtk+3-${GNOME_VERSION}
 PKGNAME-cups=		gtk+3-cups-${GNOME_VERSION}
 PKGNAME-guic=		gtk-update-icon-cache-${GNOME_VERSION}
 
-REVISION-main=		1
-REVISION-cups=		2
-REVISION-guic=		1
-
 CATEGORIES=		x11 devel
 
-SHARED_LIBS +=  gdk-3                2201.1   # 2404.30
-SHARED_LIBS +=  gtk-3                2201.0   # 2404.30
+SHARED_LIBS +=  gdk-3                2201.1   # 2404.31
+SHARED_LIBS +=  gtk-3                2201.0   # 2404.31
 SHARED_LIBS +=  gailutil-3           0.0      # 0.0
 
 HOMEPAGE=		http://www.gtk.org/
@@ -82,6 +78,8 @@ MODGNOME_TOOLS=		docbook gobject-introspection gtk-update-icon-cache \
 			desktop-file-utils
 
 TEST_IS_INTERACTIVE=	x11
+
+SEPARATE_BUILD=		Yes
 
 CONFIGURE_STYLE=	gnu
 
