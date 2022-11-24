@@ -50,7 +50,7 @@ PERMIT_PACKAGE =   https://www.ui.com/eula/
 PERMIT_DISTFILES = https://www.ui.com/eula/
 
 MODULES =	java
-MODJAVA_VER =	1.8
+MODJAVA_VER ?=	1.8
 
 # mongodb is amd64-only (and even if that weren't the case,
 # building snappy-java for i386 is even more of a pain than for amd64)
