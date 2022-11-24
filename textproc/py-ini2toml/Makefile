@@ -1,9 +1,8 @@
 COMMENT =		convert .ini/.cfg files to TOML equivalents
 
-MODPY_EGG_VERSION =	0.11
+MODPY_EGG_VERSION =	0.11.3
 DISTNAME =		ini2toml-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		textproc
 
@@ -17,7 +16,7 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools_scm
 
-# need more deps to enable tests
+# tests need validate-pyproject (not ported)
 NO_TEST =		Yes
 
 RUN_DEPENDS =		sysutils/py-packaging${MODPY_FLAVOR}
