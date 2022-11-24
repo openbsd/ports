@@ -1,5 +1,5 @@
 COMMENT =	client for Matrix chat
-VERSION =	22.06
+VERSION =	22.09
 DISTNAME =	neochat-${VERSION}
 
 CATEGORIES=	net
@@ -13,11 +13,10 @@ WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
 WANTLIB += KF5DBusAddons KF5I18n KF5JobWidgets KF5KIOCore KF5KIOGui
 WANTLIB += KF5KIOWidgets KF5Kirigami2 KF5Notifications KF5Service
-WANTLIB += KF5Solid KF5SonnetCore KF5WidgetsAddons KF5WindowSystem
-WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Multimedia
-WANTLIB += Qt5Network Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickControls2
-WANTLIB += Qt5Widgets Qt5Xml QtOlm Quotient X11 c cmark m olm
-WANTLIB += qt5keychain
+WANTLIB += KF5Solid KF5WidgetsAddons KF5WindowSystem Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Multimedia Qt5Network Qt5Qml
+WANTLIB += Qt5QmlModels Qt5Quick Qt5QuickControls2 Qt5Widgets
+WANTLIB += Qt5Xml QtOlm Quotient X11 c cmark m olm qt5keychain
 
 MODULES =	devel/kf5
 
