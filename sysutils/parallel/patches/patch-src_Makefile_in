@@ -1,7 +1,7 @@
 Index: src/Makefile.in
 --- src/Makefile.in.orig
 +++ src/Makefile.in
-@@ -505,7 +505,7 @@ distdir-am: $(DISTFILES)
+@@ -516,7 +516,7 @@ distdir-am: $(DISTFILES)
  	done
  check-am: all-am
  check: check-am
@@ -10,7 +10,7 @@ Index: src/Makefile.in
  installdirs:
  	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(man7dir)" "$(DESTDIR)$(docdir)"; do \
  	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
-@@ -561,7 +561,7 @@ info: info-am
+@@ -572,7 +572,7 @@ info: info-am
  
  info-am:
  

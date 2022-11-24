@@ -28,4 +28,11 @@ bin/sql
 @man man/man7/parallel_alternatives.7
 @man man/man7/parallel_book.7
 @man man/man7/parallel_design.7
+@man man/man7/parallel_examples.7
 @man man/man7/parallel_tutorial.7
+share/bash-completion/
+share/bash-completion/completions/
+share/bash-completion/completions/parallel
+share/zsh/
+share/zsh/site-functions/
+share/zsh/site-functions/_parallel

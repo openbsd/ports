@@ -1,6 +1,6 @@
 COMMENT =		execute jobs in parallel
 
-DISTNAME =		parallel-20210522
+DISTNAME =		parallel-20221122
 
 CATEGORIES =		sysutils
 
