@@ -1,10 +1,9 @@
 COMMENT=	small utility to convert a Python dictionary into an XML
 
-MODPY_EGG_VERSION=	1.7.1
+MODPY_EGG_VERSION=	1.7.2
 
 DISTNAME=	dict2xml-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
 
 CATEGORIES=	textproc
 
@@ -17,6 +16,8 @@ MODULES=	lang/python
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
+
+# tests require unported noseOfYeti
 NO_TEST=	Yes
 
 FLAVOR=		python3
