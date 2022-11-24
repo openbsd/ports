@@ -4,6 +4,7 @@ CATEGORIES =	devel x11
 V =		1.0.7
 DISTNAME =	xorg-cf-files-${V}
 PKGNAME =	imake-cf-${V}
+REVISION =	0
 MASTER_SITES =	${MASTER_SITE_XORG:=util/}
 
 PERMIT_PACKAGE =	Yes

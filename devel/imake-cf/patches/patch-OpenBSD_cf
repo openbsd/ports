@@ -33,7 +33,15 @@ Index: OpenBSD.cf
  #define BuildHtmlManPages	NO
  
  #endif
-@@ -172,6 +174,9 @@ XCOMM operating system:  OSName (OSMajorVersion./**/OS
+@@ -150,6 +152,7 @@ XCOMM operating system:  OSName (OSMajorVersion./**/OS
+ #define GccUsesGas		YES
+ #define UseGas			YES
+ #define GnuCpp			YES
++#define UseGccMakeDepend	YES
+ 
+ #define UseGnuMalloc		NO
+ 
+@@ -172,6 +175,9 @@ XCOMM operating system:  OSName (OSMajorVersion./**/OS
  #ifndef CcCmd
  #define CcCmd 			cc
  #endif
@@ -43,7 +51,7 @@ Index: OpenBSD.cf
  #ifndef AsCmd
  #define AsCmd			cc -c -x assembler
  #endif
-@@ -244,9 +249,22 @@ XCOMM operating system:  OSName (OSMajorVersion./**/OS
+@@ -244,9 +250,22 @@ XCOMM operating system:  OSName (OSMajorVersion./**/OS
  /*
   * Documentation formatting
   */
@@ -69,7 +77,7 @@ Index: OpenBSD.cf
  #define HasGroff		YES
  
  #ifndef HasCookieMaker
-@@ -262,77 +280,15 @@ XCOMM operating system:  OSName (OSMajorVersion./**/OS
+@@ -262,77 +281,15 @@ XCOMM operating system:  OSName (OSMajorVersion./**/OS
   */
  #define ManSuffix	1
  #define FileManSuffix	5
@@ -153,7 +161,7 @@ Index: OpenBSD.cf
  	done
  
  #define InstallManPageAliases(file,destdir,aliases)			@@\
-@@ -436,8 +392,6 @@ install:: fonts.alias							@@\
+@@ -436,8 +393,6 @@ install:: fonts.alias							@@\
  #ifdef AMD64Architecture
  
  # define HasWeakSymbols		YES
@@ -162,7 +170,7 @@ Index: OpenBSD.cf
  
  # define XorgServer		YES
  
-@@ -666,51 +620,26 @@ install:: fonts.alias							@@\
+@@ -666,51 +621,26 @@ install:: fonts.alias							@@\
  
  
  /*
