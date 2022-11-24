@@ -1,0 +1,17 @@
+From ae4a1dd01055a7a0664d30cb93be919ed753bf8c Mon Sep 17 00:00:00 2001
+From: Leo Famulari <leo@famulari.name>
+Date: Wed, 31 Mar 2021 19:19:20 -0400
+Subject: [PATCH] Adjust the "default" version string.
+
+Index: sonata/version.py
+--- sonata/version.py.orig
++++ sonata/version.py
+@@ -26,7 +26,7 @@ except ImportError:
+     build_ver = None
+ 
+ # Should be the most recent release
+-default_version = "v1.7b1"
++default_version = "v1.7.0"
+ 
+ def _version():
+     '''Get the version number of the sources
