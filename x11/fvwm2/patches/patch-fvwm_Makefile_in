@@ -10,7 +10,7 @@ Index: fvwm/Makefile.in
  subdir = fvwm
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
  am__aclocal_m4_deps = $(top_srcdir)/acinclude.m4 \
-@@ -576,7 +576,7 @@ uninstall-binPROGRAMS:
+@@ -577,7 +577,7 @@ uninstall-binPROGRAMS:
  clean-binPROGRAMS:
  	-test -z "$(bin_PROGRAMS)" || rm -f $(bin_PROGRAMS)
  

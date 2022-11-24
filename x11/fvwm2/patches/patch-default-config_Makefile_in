@@ -1,16 +1,16 @@
 Index: default-config/Makefile.in
 --- default-config/Makefile.in.orig
 +++ default-config/Makefile.in
-@@ -602,9 +602,9 @@ uninstall-am: uninstall-configDATA
+@@ -604,9 +604,9 @@ uninstall-am: uninstall-configDATA
  
  install-data-hook:
- 	cp -r $(srcdir)/images $(inst_location)
--	ln -sf default-config/FvwmScript-DateTime $(inst_location)/..
--	ln -sf default-config/FvwmScript-ConfirmQuit $(inst_location)/..
--	ln -sf default-config/FvwmScript-ConfirmCopyConfig $(inst_location)/..
-+	mv $(inst_location)/FvwmScript-DateTime $(inst_location)/..
-+	mv $(inst_location)/FvwmScript-ConfirmQuit $(inst_location)/..
-+	mv $(inst_location)/FvwmScript-ConfirmCopyConfig $(inst_location)/..
+ 	cp -r $(srcdir)/images $(inst_location)/default-config
+-	ln -sf default-config/FvwmScript-DateTime $(inst_location)
+-	ln -sf default-config/FvwmScript-ConfirmQuit $(inst_location)
+-	ln -sf default-config/FvwmScript-ConfirmCopyConfig $(inst_location)
++	mv $(inst_location)/default-config/FvwmScript-DateTime $(inst_location)
++	mv $(inst_location)/default-config/FvwmScript-ConfirmQuit $(inst_location)
++	mv $(inst_location)/default-config/FvwmScript-ConfirmCopyConfig $(inst_location)
  
  uninstall-hook:
  	rm -fr $(DESTDIR)/$(configdir)

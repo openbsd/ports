@@ -1,7 +1,6 @@
 COMMENT=	multiple virtual desktop window manager
 
-VERSION=	2.6.9
-REVISION=	1
+VERSION=	2.7.0
 DISTNAME=	fvwm-${VERSION}
 PKGNAME=	fvwm2-${VERSION}
 
@@ -18,7 +17,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ICE SM X11 Xcursor Xext Xft Xinerama Xpm Xrender
 WANTLIB += c cairo curses fontconfig freetype gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 iconv intl m png
-WANTLIB += readline rsvg-2 z
+WANTLIB += readline rsvg-2
 
 MASTER_SITES=	https://github.com/fvwmorg/fvwm/releases/download/${VERSION}/
 

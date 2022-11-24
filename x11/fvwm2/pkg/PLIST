@@ -1,8 +1,8 @@
+@conflict fvwm2+fvicons-*
+@conflict fvicons-*
 @pkgpath x11/fvwm2,-main
 @pkgpath x11/fvwm2,-fvicons
 @pkgpath x11/fvwm2,-fvwm2
-@conflict fvwm2+fvicons-*
-@conflict fvicons-*
 @bin bin/FvwmCommand
 bin/fvwm-bug
 bin/fvwm-config
@@ -23,8 +23,6 @@ libexec/fvwm/${VERSION}/FvwmAudio
 @bin libexec/fvwm/${VERSION}/FvwmBanner
 @bin libexec/fvwm/${VERSION}/FvwmButtons
 libexec/fvwm/${VERSION}/FvwmCascade
-libexec/fvwm/${VERSION}/FvwmCommand.pm
-libexec/fvwm/${VERSION}/FvwmCommand.sh
 @bin libexec/fvwm/${VERSION}/FvwmCommandS
 @bin libexec/fvwm/${VERSION}/FvwmConsole
 @bin libexec/fvwm/${VERSION}/FvwmConsoleC
@@ -132,6 +130,39 @@ share/fvwm/default-config/images/icons/terminal.png
 share/fvwm/default-config/images/icons/wallpaper.png
 share/fvwm/fvwm-menu-desktop-config.fpl
 share/fvwm/fvwm-script-ComExample.pl
+share/fvwm/locale/
+share/fvwm/locale/ar/
+share/fvwm/locale/ar/LC_MESSAGES/
+share/fvwm/locale/ar/LC_MESSAGES/FvwmScript.mo
+share/fvwm/locale/ar/LC_MESSAGES/fvwm.mo
+share/fvwm/locale/da/
+share/fvwm/locale/da/LC_MESSAGES/
+share/fvwm/locale/da/LC_MESSAGES/FvwmScript.mo
+share/fvwm/locale/da/LC_MESSAGES/fvwm.mo
+share/fvwm/locale/de/
+share/fvwm/locale/de/LC_MESSAGES/
+share/fvwm/locale/de/LC_MESSAGES/FvwmScript.mo
+share/fvwm/locale/de/LC_MESSAGES/fvwm.mo
+share/fvwm/locale/es/
+share/fvwm/locale/es/LC_MESSAGES/
+share/fvwm/locale/es/LC_MESSAGES/FvwmScript.mo
+share/fvwm/locale/es/LC_MESSAGES/fvwm.mo
+share/fvwm/locale/fr/
+share/fvwm/locale/fr/LC_MESSAGES/
+share/fvwm/locale/fr/LC_MESSAGES/FvwmScript.mo
+share/fvwm/locale/fr/LC_MESSAGES/fvwm.mo
+share/fvwm/locale/ru/
+share/fvwm/locale/ru/LC_MESSAGES/
+share/fvwm/locale/ru/LC_MESSAGES/FvwmScript.mo
+share/fvwm/locale/ru/LC_MESSAGES/fvwm.mo
+share/fvwm/locale/sv_SE/
+share/fvwm/locale/sv_SE/LC_MESSAGES/
+share/fvwm/locale/sv_SE/LC_MESSAGES/FvwmScript.mo
+share/fvwm/locale/sv_SE/LC_MESSAGES/fvwm.mo
+share/fvwm/locale/zh_CN/
+share/fvwm/locale/zh_CN/LC_MESSAGES/
+share/fvwm/locale/zh_CN/LC_MESSAGES/FvwmScript.mo
+share/fvwm/locale/zh_CN/LC_MESSAGES/fvwm.mo
 share/fvwm/perllib/
 share/fvwm/perllib/FVWM/
 share/fvwm/perllib/FVWM/Commands.pm
@@ -154,21 +185,3 @@ share/fvwm/perllib/FVWM/Tracker/WindowList.pm
 share/fvwm/perllib/General/
 share/fvwm/perllib/General/FileSystem.pm
 share/fvwm/perllib/General/Parse.pm
-share/locale/ar/LC_MESSAGES/FvwmScript.mo
-share/locale/ar/LC_MESSAGES/fvwm.mo
-share/locale/da/LC_MESSAGES/FvwmScript.mo
-share/locale/da/LC_MESSAGES/fvwm.mo
-share/locale/de/LC_MESSAGES/FvwmScript.mo
-share/locale/de/LC_MESSAGES/fvwm.mo
-share/locale/es/LC_MESSAGES/FvwmScript.mo
-share/locale/es/LC_MESSAGES/fvwm.mo
-share/locale/fr/LC_MESSAGES/FvwmScript.mo
-share/locale/fr/LC_MESSAGES/fvwm.mo
-share/locale/ru/LC_MESSAGES/FvwmScript.mo
-share/locale/ru/LC_MESSAGES/fvwm.mo
-share/locale/sv_SE/
-share/locale/sv_SE/LC_MESSAGES/
-share/locale/sv_SE/LC_MESSAGES/FvwmScript.mo
-share/locale/sv_SE/LC_MESSAGES/fvwm.mo
-share/locale/zh_CN/LC_MESSAGES/FvwmScript.mo
-share/locale/zh_CN/LC_MESSAGES/fvwm.mo
