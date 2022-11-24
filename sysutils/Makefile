@@ -283,6 +283,7 @@
      SUBDIR += pstree
      SUBDIR += pv
      SUBDIR += py-analyzemft
+     SUBDIR += py-ansible-compat,python3
      SUBDIR += py-augeas,python3
      SUBDIR += py-blessed,python3
      SUBDIR += py-command_runner,python3
@@ -314,6 +315,7 @@
      SUBDIR += py-pyperclip,python3
      SUBDIR += py-schedule,python3
      SUBDIR += py-statgrab,python3
+     SUBDIR += py-subprocess-tee,python3
      SUBDIR += py-threadpoolctl,python3
      SUBDIR += py-tsk,python3
      SUBDIR += py-userpath,python3
