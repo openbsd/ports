@@ -21,3 +21,12 @@ Index: lgrind.dtx
  % \title{The \LG{} package\thanks{This file
  %         has version number \fileversion, last
  %         revised \filedate.}}
+@@ -537,7 +537,7 @@
+ % The meta-symbols and their meanings are:
+ % \begin{description}
+ % \item[\$] The end of a line
+-% \item[\^] The beginning of a line
++% \item[\^{}] The beginning of a line
+ % \item[$\backslash$d] A delimiter (space, tab, newline, start of line)
+ % \item[$\backslash$a] Matches any string of symbols (like `.*' in lex)
+ % \item[$\backslash$p] Matches any identifier. In a procedure definition
