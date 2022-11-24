@@ -1,7 +1,12 @@
 Index: daily.sh
 --- daily.sh.orig
 +++ daily.sh
-@@ -27,12 +27,12 @@ COMPOSER="php ${LIBRENMS_DIR}/scripts/composer_wrapper
+@@ -23,16 +23,16 @@
+ # define DAILY_SCRIPT as the full path to this script and LIBRENMS_DIR as the directory this script is in
+ DAILY_SCRIPT=$(readlink -f "$0")
+ LIBRENMS_DIR=$(dirname "$DAILY_SCRIPT")
+-COMPOSER="php ${LIBRENMS_DIR}/scripts/composer_wrapper.php --no-interaction"
++COMPOSER="${MODPHP_BIN} ${LIBRENMS_DIR}/scripts/composer_wrapper.php --no-interaction"
  
  # set log_file, using librenms 'log_dir' config setting, if set
  # otherwise we default to <LibreNMS Install Directory>/logs
@@ -14,6 +19,33 @@ Index: daily.sh
 -LIBRENMS_USER="${LIBRENMS_USER:-librenms}"
 +LIBRENMS_USER="${LIBRENMS_USER:-_librenms}"
  LIBRENMS_USER_ID=$(id -u "$LIBRENMS_USER")
+ 
+ #######################################
+@@ -72,7 +72,7 @@ status_run() {
+     else
+         printf " \\033[0;31mFAIL\\033[0m\\n"
+         if [[ "${arg_option}" == "update" ]]; then
+-            php "${LIBRENMS_DIR}/daily.php" -f notify -o "${tmp}"
++            ${MODPHP_BIN} "${LIBRENMS_DIR}/daily.php" -f notify -o "${tmp}"
+         fi
+         if [[ -n "${tmp}" ]]; then
+             # print output in case of failure
+@@ -99,7 +99,7 @@ call_daily_php() {
+     args=("$@")
+ 
+     for arg in "${args[@]}"; do
+-        php "${LIBRENMS_DIR}/daily.php" -f "${arg}"
++        ${MODPHP_BIN} "${LIBRENMS_DIR}/daily.php" -f "${arg}"
+     done
+ }
+ 
+@@ -121,7 +121,7 @@ set_notifiable_result() {
+     arg_type=$1
+     arg_result=$2
+ 
+-    php "${LIBRENMS_DIR}/daily.php" -f handle_notifiable -t "${arg_type}" -r "${arg_result}"
++    ${MODPHP_BIN} "${LIBRENMS_DIR}/daily.php" -f handle_notifiable -t "${arg_type}" -r "${arg_result}"
+ }
  
  #######################################
 @@ -132,13 +132,13 @@ set_notifiable_result() {
@@ -35,3 +67,39 @@ Index: daily.sh
      python3=$(python3 -c "import sys;print(int(sys.version_info < (3, 4)))" 2> /dev/null)
      python_deps=$("${LIBRENMS_DIR}/scripts/check_requirements.py" > /dev/null 2>&1; echo $?)
      phpver="master"
+@@ -276,7 +276,7 @@ main () {
+     fi
+ 
+     if [[ -z "$arg" ]]; then
+-        up=$(php daily.php -f update >&2; echo $?)
++        up=$(${MODPHP_BIN} daily.php -f update >&2; echo $?)
+         if [[ "$up" == "0" ]]; then
+             "${DAILY_SCRIPT}" no-code-update
+             set_notifiable_result update 1  # make sure there are no update notifications if update is disabled
+@@ -287,7 +287,7 @@ main () {
+         php_ver_ret=$?
+ 
+         # Restore composer files if user installed plugins
+-        git checkout --quiet -- composer.json composer.lock
++        #git checkout --quiet -- composer.json composer.lock
+ 
+         update_res=0
+         if [[ "$up" == "1" ]] || [[ "$php_ver_ret" == "1" ]]; then
+@@ -339,7 +339,7 @@ main () {
+             no-code-update)
+                 # Updates of the code are disabled, just check for schema updates
+                 # and clean up the db.
+-                status_run 'Updating SQL-Schema' 'php includes/sql-schema/update.php'
++                status_run 'Updating SQL-Schema' '${MODPHP_BIN} includes/sql-schema/update.php'
+                 status_run 'Cleaning up DB' "'$DAILY_SCRIPT' cleanup"
+             ;;
+             post-pull)
+@@ -365,7 +365,7 @@ main () {
+                 fi
+ 
+                 # List all tasks to do after pull in the order of execution
+-                status_run 'Updating SQL-Schema' 'php includes/sql-schema/update.php'
++                status_run 'Updating SQL-Schema' '${MODPHP_BIN} includes/sql-schema/update.php'
+                 status_run 'Updating submodules' "$DAILY_SCRIPT submodules"
+                 status_run 'Cleaning up DB' "$DAILY_SCRIPT cleanup"
+                 status_run 'Fetching notifications' "$DAILY_SCRIPT notifications"

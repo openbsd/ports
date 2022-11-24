@@ -3,8 +3,7 @@ COMMENT=	auto-discovering network management/monitoring system
 # changelogs at https://github.com/librenms/librenms/releases
 GH_ACCOUNT=	librenms
 GH_PROJECT=	librenms
-GH_TAGNAME=	22.10.0
-REVISION=	1
+GH_TAGNAME=	22.11.0
 
 DISTFILES=	${GH_DISTFILE} \
 		${PKGNAME}-vendor.tar.xz:0
@@ -89,11 +88,18 @@ do-install:
 	mkdir -p ${INSTDIR}/{rrd,logs}
 	sed -i 's,%LNMS_VERSION%,${DISTNAME:S/librenms-//},' ${INSTDIR}/includes/common.php
 	cp /usr/share/snmp/mibs/OPENBSD-* ${INSTDIR}/mibs/
-	rm -rf ${INSTDIR}/tests
+	rm -rf ${INSTDIR}/tests \
+	    ${INSTDIR}/vendor/tecnickcom/tcpdf/examples \
+	    ${INSTDIR}/vendor/easybook/geshi/docs
 	find ${INSTDIR} -name '.git*' -exec rm -rf {} +
 	ln -s /var/www/librenms/lnms ${WRKINST}/${LOCALBASE}/bin/
 	${INSTALL_DATA} ${WRKSRC}/misc/lnms-completion.bash \
 	    ${WRKINST}/${LOCALBASE}/share/bash-completion/completions/
+
+COMPOSER=	${MODPHP_BIN} \
+		-d memory_limit=-1 -d allow_url_fopen=1 \
+		-d suhosin.executor.include.whitelist=phar \
+		/usr/local/libexec/composer.phar
 
 # maintainer convenience target
 dist: ${FULLDISTDIR}/${GH_DISTFILE}
@@ -103,7 +109,7 @@ dist: ${FULLDISTDIR}/${GH_DISTFILE}
 	tar xzf ${FULLDISTDIR}/${GH_DISTFILE:C,\{.*,,}; \
 	cd ${WRKDIST:C,^.*/,,}; \
 	sed -i 's,whereis -b ,whereis ,' LibreNMS/Config.php; \
-	composer install --no-dev; \
+	${COMPOSER} install --no-dev; \
 	echo tarring; tar cf - vendor | xz -T 0 > $$f; \
 	scp $$f naiad:mirrors/; \
 	cd -; rm -rf $$t
