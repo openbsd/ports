@@ -1,0 +1,2 @@
+ansible-compat is a Python package containing functions that facilitate
+working with various versions of Ansible 2.9 and newer.
