@@ -1,0 +1,17 @@
+Index: texmf-dist/doc/man/man1/texlogfilter.1
+--- texmf-dist/doc/man/man1/texlogfilter.1.orig
++++ texmf-dist/doc/man/man1/texlogfilter.1
+@@ -138,11 +138,9 @@
+ .\" way too many mistakes in technical documents.
+ .if n .ad l
+ .nh
+-.SH "texlogfilter"
++.SH NAME
++texlogfilter \(en filter latex engines output or log file
+ .IX Header "texlogfilter"
+-.SS "\s-1NAME\s0"
+-.IX Subsection "NAME"
+-texlogfilter \- filter latex engines output or log file
+ .SS "\s-1SYNOPSIS\s0"
+ .IX Subsection "SYNOPSIS"
+ .Vb 1

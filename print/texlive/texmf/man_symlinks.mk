@@ -55,4 +55,6 @@ MAN_SYMLINKS_CMD = \
 	ln -sf ../man1/ptftopl.1 uptftopl.1 && \
 	ln -sf ../man1/dvipdfmx.1 xdvipdfmx.1 && \
 	ln -sf ../man1/latex-dev.1 xelatex-dev.1 && \
-	ln -sf ../man1/latex.1 xelatex.1
+	ln -sf ../man1/latex.1 xelatex.1 && \
+	ln -sf ../man1/xetex-unsafe.1 xelatex-unsafe.1 && \
+	ln -sf ../man1/pbibtex.1 upbibtex.1

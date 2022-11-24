@@ -1,8 +1,8 @@
 @conflict teTeX_base-*
 @conflict pdfjam-*
 @conflict ht-<2
-@conflict texlive_texmf-buildset-<2021
-@conflict texlive_base-<2021
+@conflict texlive_texmf-buildset-<2022
+@conflict texlive_base-<2022
 @define-tag mktexlsr at-end %D/bin/mktexlsr >/dev/null 2>&1
 @define-tag mktexlsr-local at-end %D/bin/mktexlsr %D/share/texmf-local >/dev/null 2>&1
 @define-tag mktexlsr supersedes mktexlsr-local

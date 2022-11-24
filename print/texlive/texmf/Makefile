@@ -15,7 +15,7 @@ DISTNAME =		texlive-${DIST_V}-texmf
 MASTER_SITES0 =		http://theunixzoo.co.uk/distfiles/
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX} \
-			texlive-${DIST_V}-tlpdb-full.tar.gz \
+			texlive-20220325-tlpdb-full.tar.gz \
 			texmf-var-pregen-${V}${EXTRACT_SUFX}:0
 
 PKGNAME-main =		texlive_texmf-minimal-${V}
@@ -23,8 +23,6 @@ PKGNAME-full =		texlive_texmf-full-${V}
 PKGNAME-docs =		texlive_texmf-docs-${V}
 PKGNAME-context =	texlive_texmf-context-${V}
 PKGNAME-buildset =	texlive_texmf-buildset-${V}
-
-REVISION-context =	0
 
 NO_BUILD =		Yes
 NO_TEST =		Yes
@@ -34,7 +32,6 @@ BUILD_DEPENDS =		archivers/xz
 
 # We dont use auto module deps for these, as MODULES is not per SUBPACKAGE
 MODULES +=		lang/lua lang/ruby lang/python x11/tk perl
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODLUA_RUNDEP =		No
 MODLUA_BUILDDEP =	No
 MODRUBY_BUILDDEP =	No
@@ -177,6 +174,8 @@ post-install:
 
 # Generating PLISTs is special for TeX Live.
 update-plist: plist
+	@true
+
 plist: fake
 	env WRKINST=${WRKINST} TRUEPREFIX=${TRUEPREFIX} \
 		python${MODPY_DEFAULT_VERSION_3} \

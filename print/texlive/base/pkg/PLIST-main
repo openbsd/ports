@@ -1,7 +1,7 @@
 @conflict teTeX_base-*
 @conflict pdfjam-*
 @conflict ht-<2
-@conflict texlive_texmf-buildset-<2021
+@conflict texlive_texmf-buildset-<2022
 @pkgpath print/teTeX/base
 @pkgpath print/pdfjam
 @pkgpath print/teTeX/base,-fmt
@@ -13,6 +13,7 @@ bin/adhocfilelist
 bin/afm2afm
 @bin bin/afm2pl
 @bin bin/afm2tfm
+bin/albatross
 @bin bin/aleph
 bin/allcm
 bin/allec
@@ -55,6 +56,7 @@ bin/checklistings
 bin/chklref
 @bin bin/chktex
 bin/chkweb
+bin/citeproc
 bin/cjk-gs-integrate
 bin/cllualatex
 bin/cluttex
@@ -136,9 +138,13 @@ bin/getmapdl
 @bin bin/gftodvi
 @bin bin/gftopk
 @bin bin/gftype
+bin/git-latexdiff
 @bin bin/gregorio
 @bin bin/gsftopk
 @bin bin/hbf2gf
+@bin bin/hishrink
+@bin bin/histretch
+@bin bin/hitex
 bin/ht
 bin/htcontext
 bin/htlatex
@@ -147,6 +153,7 @@ bin/httex
 bin/httexi
 bin/htxelatex
 bin/htxetex
+bin/hyperxmp-add-bytecount
 bin/inimf
 bin/initex
 bin/installfont-tl
@@ -182,9 +189,11 @@ bin/lily-image-commands
 bin/lily-rebuild-pdfs
 bin/listbib
 bin/listings-ext.sh
+bin/llmk
 bin/ltx2crossrefxml
 bin/ltxfileinfo
 bin/ltximg
+bin/luafindfont
 @bin bin/luahbtex
 @comment bin/luajitlatex
 bin/lualatex
@@ -235,6 +244,7 @@ bin/musixtex
 bin/ofm2opl
 @bin bin/omfonts
 bin/opl2ofm
+bin/optexcount
 bin/ot2kpx
 @bin bin/otangle
 @bin bin/otp2ocp
@@ -302,6 +312,7 @@ bin/simpdftex
 @bin bin/sjisconv
 bin/sjislatex
 bin/sjispdflatex
+bin/spix
 bin/splitindex
 bin/srcredact
 bin/sty2dtx
@@ -328,6 +339,8 @@ bin/texhash
 bin/texlinks
 bin/texliveonfly
 bin/texloganalyser
+bin/texlogfilter
+bin/texlogsieve
 bin/texlua
 bin/texluac
 bin/texmfstart
@@ -338,6 +351,7 @@ bin/texplate
 @bin bin/tftopl
 bin/thumbpdf
 @bin bin/tie
+bin/tikztosvg
 bin/tlcockpit
 bin/tlshell
 bin/tpic2pdftex
@@ -346,6 +360,7 @@ bin/ttf2kotexfont
 @bin bin/ttf2pk
 @bin bin/ttf2tfm
 @bin bin/ttfdump
+@bin bin/twill
 bin/typeoutfileinfo
 bin/ulqda
 @bin bin/upbibtex
@@ -376,9 +391,12 @@ bin/webquiz
 bin/xdvi
 @bin bin/xdvi-xaw
 @bin bin/xdvipdfmx
+bin/xelatex-unsafe
 @bin bin/xetex
+bin/xetex-unsafe
 bin/xhlatex
 bin/xindex
+@bin bin/xml2pmx
 bin/yplan
 include/ptexenc/
 include/ptexenc/ptexenc.h

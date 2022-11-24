@@ -26,8 +26,8 @@ Index: texmf-dist/web2c/texmfcnf.lua
              -- only used for FONTCONFIG_PATH & TEXMFCACHE in TeX Live
  
 -            TEXMFSYSVAR     = "selfautoparent:texmf-var",
-+            TEXMFSYSVAR     = "${TEXMFROOT}/texmf-var",
-             TEXMFVAR        = "home:.texlive2021/texmf-var",
++	    TEXMFSYSVAR     = "${TEXMFROOT}/texmf-var",
+             TEXMFVAR        = "home:.texlive2022/texmf-var",
  
              -- We have only one cache path but there can be more. The first writable one
 @@ -61,13 +61,13 @@ return {

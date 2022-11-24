@@ -10,7 +10,7 @@ import os
 import sys
 import re
 
-YEAR = 2021
+YEAR = 2022
 THIS_DIR = os.path.abspath(os.path.dirname(__file__))
 PLIST_DIR = os.path.abspath(os.path.join(THIS_DIR, "..", "pkg"))
 PLISTS = "-buildset", "-main", "-context", "-full", "-docs"
@@ -77,7 +77,6 @@ BOTTOM_MATTER = {
     "-buildset": ["@tag mktexlsr"],
     "-main": ["@tag mktexlsr"],
     "-context": [
-        "@unexec rm -Rf %D/share/texmf-var/luatex-cache/",
         "@exec %D/bin/mtxrun --generate > /dev/null 2>&1",
         "@tag mktexlsr"
     ],

@@ -1,0 +1,12 @@
+Index: texmf-dist/doc/man/man1/bib2gls.1
+--- texmf-dist/doc/man/man1/bib2gls.1.orig
++++ texmf-dist/doc/man/man1/bib2gls.1
+@@ -134,6 +134,8 @@
+ .\"
+ .IX Title "BIB2GLS 1"
+ .TH BIB2GLS 1 "2021-11-06" "perl v5.32.1" "bib2gls"
++.SH NAME
++bib2gls \(en glossary tool
+ .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
+ .\" way too many mistakes in technical documents.
+ .if n .ad l
