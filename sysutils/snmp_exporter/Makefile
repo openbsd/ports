@@ -2,9 +2,8 @@ COMMENT=	Prometheus exporter for SNMP metrics
 
 # updating: bump V version, "make patch" (fix patches if needed),
 # "make mibs", update M version, "make makesum".
-V=		0.20.0
-M=		0.20.0
-REVISION=	1
+V=		0.21.0
+M=		0.21.0
 GH_ACCOUNT=	prometheus
 GH_PROJECT=	snmp_exporter
 GH_TAGNAME=	v$V
@@ -61,8 +60,8 @@ do-test:
 
 mibs: patch
 	${_PBUILD} ln -fs ${LOCALBASE}/bin/gtar ${WRKDIR}/bin/tar
-	cd ${WRKDIR}/snmp_exporter-$V; \
-	    ${_PBUILD} chmod ug=rwX,o=rX . generator go.mod go.sum; \
+	set -x; cd ${WRKDIR}/snmp_exporter-$V; \
+	    ${_PBUILD} chmod -R ug=rwX,o=rX .; \
 	    go mod tidy; \
 	    go mod vendor; \
 	    PATH=${WRKDIR}/bin:$$PATH gmake -C generator; \
@@ -70,7 +69,7 @@ mibs: patch
 	    tar cf - vendor generator/mibs | xz > $$mibs; \
 	    chmod 644 $$mibs; \
 	    scp $$mibs naiad:mirrors/snmp_exporter_mibs+vendor-$V.tar.xz; \
-	    rm $$mibs; chmod -R g=rwX generator/mibs
+	    rm $$mibs; chmod -R ug=rwX generator
 	${_PBUILD} rm -f ${WRKDIR}/bin/tar
 
 .include <bsd.port.mk>

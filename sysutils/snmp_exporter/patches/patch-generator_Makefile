@@ -2,22 +2,11 @@ We're not actually fetching in the port build; but this may be needed
 during port updates to generate a tar of common mibs, so it's useful to
 fix so it works if needed.
 
-Cisco's ftp server can be flaky so use a mirror.
-
 Index: generator/Makefile
 --- generator/Makefile.orig
 +++ generator/Makefile
-@@ -22,7 +22,7 @@ DOCKER_REPO       ?= prom
- 
- APC_URL           := 'https://download.schneider-electric.com/files?p_File_Name=powernet432.mib'
- ARISTA_URL        := https://www.arista.com/assets/data/docs/MIBS
--CISCO_URL         := 'ftp://ftp.cisco.com/pub/mibs/v2/v2.tar.gz'
-+CISCO_URL         := https://spacehopper.org/mirrors/cisco_v2.tar.gz
- IANA_CHARSET_URL  := https://www.iana.org/assignments/ianacharset-mib/ianacharset-mib
- IANA_IFTYPE_URL   := https://www.iana.org/assignments/ianaiftype-mib/ianaiftype-mib
- IANA_PRINTER_URL  := https://www.iana.org/assignments/ianaprinter-mib/ianaprinter-mib
-@@ -110,7 +110,7 @@ mibs: mib-dir \
-   $(MIBDIR)/LIEBERT_GP_PDU.MIB
+@@ -129,7 +129,7 @@ mibs: mib-dir \
+   $(MIBDIR)/EATON-OIDS.txt
  
  mib-dir:
 -	@mkdir -p -v $(MIBDIR)
