@@ -1,6 +1,6 @@
 BROKEN-sparc64=	No fibers support for sparc64
 
-PHP_VERSION=	8.1.12
+PHP_VERSION=	8.1.13
 PHP_PKGSPEC=	>=8.1,<8.2
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}

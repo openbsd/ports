@@ -5,7 +5,7 @@ and any settings in the php file, which results in bogus failures).
 Index: ext/openssl/openssl.c
 --- ext/openssl/openssl.c.orig
 +++ ext/openssl/openssl.c
-@@ -3767,7 +3767,7 @@ static int php_openssl_get_evp_pkey_type(int key_type)
+@@ -3779,7 +3779,7 @@ static int php_openssl_get_evp_pkey_type(int key_type)
  /* {{{ php_openssl_generate_private_key */
  static EVP_PKEY * php_openssl_generate_private_key(struct php_x509_request * req)
  {
