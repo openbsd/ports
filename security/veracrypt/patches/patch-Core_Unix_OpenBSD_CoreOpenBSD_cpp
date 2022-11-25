@@ -1,0 +1,14 @@
+The -c option is no more. https://github.com/veracrypt/VeraCrypt/pull/1002
+
+Index: Core/Unix/OpenBSD/CoreOpenBSD.cpp
+--- Core/Unix/OpenBSD/CoreOpenBSD.cpp.orig
++++ Core/Unix/OpenBSD/CoreOpenBSD.cpp
+@@ -69,8 +69,6 @@ namespace VeraCrypt
+ 		if (freeVnd == -1)
+ 			throw "couldn't find free vnd";
+ 
+-		args.push_back ("-c");
+-
+ 		stringstream freePath;
+ 		freePath << "vnd" << freeVnd;
+ 		args.push_back (freePath.str());

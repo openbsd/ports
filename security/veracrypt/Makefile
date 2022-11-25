@@ -5,6 +5,7 @@ DISTNAME=		VeraCrypt_${V}_Source
 PKGNAME=		veracrypt-${V}
 CATEGORIES=		security
 HOMEPAGE=		https://www.veracrypt.fr/
+REVISION=		0
 
 MAINTAINER=		Tietoturvamies <main@tietoturvamies.fi>
 
