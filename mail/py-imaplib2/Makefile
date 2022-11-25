@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	3.6
 
 DISTNAME =	imaplib2-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	mail
 
@@ -19,7 +19,7 @@ FLAVORS =		python3
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 NO_TEST =		Yes
 
