@@ -1,10 +1,9 @@
 COMMENT =		versioning library for Python projects
 
-MODPY_EGG_VERSION =	21.3.0
+MODPY_EGG_VERSION =	22.10.0
 
 DISTNAME =		incremental-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
 
 CATEGORIES =		devel
 

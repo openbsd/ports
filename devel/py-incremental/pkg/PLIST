@@ -16,6 +16,7 @@ lib/python${MODPY_VERSION}/site-packages/incremental/${MODPY_PYCACHE}_version.${
 lib/python${MODPY_VERSION}/site-packages/incremental/${MODPY_PYCACHE}update.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/incremental/${MODPY_PYCACHE}update.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/incremental/_version.py
+lib/python${MODPY_VERSION}/site-packages/incremental/py.typed
 lib/python${MODPY_VERSION}/site-packages/incremental/tests/
 lib/python${MODPY_VERSION}/site-packages/incremental/tests/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/incremental/tests/${MODPY_PYCACHE}/
