@@ -1,3 +1,9 @@
 JSON Matching Expressions.
-JMESPath (pronounced "james path") allows you to declaratively specify how to
-extract elements from a JSON document.
+
+JMESPath (pronounced "james path") allows you to declaratively
+specify how to extract elements from a JSON document.
+
+For example, given this document: {"foo": {"bar": "baz"}}
+The jmespath expression foo.bar will return "baz".
+
+JMESPath also supports referencing elements in a list.
