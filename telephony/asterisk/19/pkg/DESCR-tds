@@ -1,4 +1,0 @@
-FreeTDS functions for Asterisk. This includes:
-
-cdr_tds.so: Database-backed CDR logging
-cel_tds.so: Database-backed channel-event logging

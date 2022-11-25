@@ -1,4 +1,5 @@
 @option is-branch
+@pkgpath telephony/asterisk/19,-tds
 @so lib/asterisk/modules/cdr_tds.so
 @so lib/asterisk/modules/cel_tds.so
 share/examples/asterisk/default/cdr_tds.conf

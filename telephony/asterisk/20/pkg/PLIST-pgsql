@@ -1,4 +1,5 @@
 @option is-branch
+@pkgpath telephony/asterisk/19,-pgsql
 @so lib/asterisk/modules/cdr_pgsql.so
 @so lib/asterisk/modules/cel_pgsql.so
 @so lib/asterisk/modules/res_config_pgsql.so
