@@ -2,7 +2,7 @@ COMMENT =		GTK3 terminal emulator with split-window and tabs support
 
 VERSION =		1.92
 DISTNAME =		terminator-${VERSION}
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		x11
 
@@ -27,7 +27,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic \
 			x11/keybinder3
 
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 MODPY_SETUP_ARGS =	--without-icon-cache
 
 # --single-version-externally-managed option used by MODPY doesn't exist

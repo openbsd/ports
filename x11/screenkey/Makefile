@@ -2,7 +2,7 @@ COMMENT =		display keypresses on screen
 
 MODPY_EGG_VERSION =	1.4
 DISTNAME =		screenkey-${MODPY_EGG_VERSION}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		x11
 
@@ -19,7 +19,7 @@ WANTLIB =		X11 Xtst
 MASTER_SITES =		https://www.thregr.org/~wavexx/software/screenkey/releases/
 
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 BUILD_DEPENDS +=	devel/gettext,-tools \
 			devel/py-babel${MODPY_FLAVOR} \

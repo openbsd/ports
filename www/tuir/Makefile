@@ -3,7 +3,7 @@ COMMENT =		terminal UI for Reddit
 MODPY_EGG_VERSION =	1.29.0
 
 DISTNAME =		tuir-${MODPY_EGG_VERSION}
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		www
 
@@ -14,8 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =		devel/py-decorator${MODPY_FLAVOR} \
 			devel/py-kitchen${MODPY_FLAVOR} \

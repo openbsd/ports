@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	6.0.2
 DISTNAME =		multidict-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		www devel
-REVISION =		0
+REVISION =		1
 
 WANTLIB +=		pthread ${MODPY_WANTLIB}
 
@@ -14,8 +14,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 
 FLAVORS =		python3
 FLAVOR =		python3

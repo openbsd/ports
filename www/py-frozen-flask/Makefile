@@ -3,7 +3,7 @@ COMMENT =		freezes a Flask application into a set of static files
 MODPY_EGG_VERSION =	0.15
 DISTNAME =		Frozen-Flask-${MODPY_EGG_VERSION}
 PKGNAME =		py-frozen-flask-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		www
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 MODPY_PYTEST_ARGS =	flask_frozen/tests.py
 
 FLAVORS =		python3

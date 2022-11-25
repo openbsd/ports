@@ -2,7 +2,7 @@ COMMENT =	web outside of browsers
 
 MODPY_EGG_VERSION =	3.0
 DISTNAME =	woob-${MODPY_EGG_VERSION}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	www
 HOMEPAGE =	https://woob.tech/
@@ -14,8 +14,8 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 
-MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PI =	Yes
+MODPY_PYBUILD =	setuptools
 
 RUN_DEPENDS +=	converters/py-html2text${MODPY_FLAVOR} \
 		devel/py-babel${MODPY_FLAVOR} \

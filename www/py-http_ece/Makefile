@@ -3,7 +3,7 @@ COMMENT =		encrypted Content Encoding for HTTP
 DISTNAME =		http_ece-${MODPY_EGG_VERSION}
 PKGNAME =		py-http_ece-${MODPY_EGG_VERSION}
 CATEGORIES =		www
-REVISION =		4
+REVISION =		5
 
 HOMEPAGE =		https://github.com/martinthomson/encrypted-content-encoding
 MAINTAINER =		Pamela Mosiejczuk <pamela@openbsd.org>
@@ -12,7 +12,7 @@ MAINTAINER =		Pamela Mosiejczuk <pamela@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 MODPY_PI =		Yes
 
 FLAVORS =		python3

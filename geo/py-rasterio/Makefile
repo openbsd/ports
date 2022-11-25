@@ -3,7 +3,7 @@ COMMENT =	geospatial raster data API and CLI
 MODPY_EGG_VERSION =	1.3.2
 DISTNAME =	rasterio-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	geo
 
@@ -21,7 +21,7 @@ FLAVOR =	python3
 
 COMPILER =	base-clang ports-gcc
 
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =	setuptools
 MODPY_PI =	Yes
 
 LIB_DEPENDS =	geo/gdal

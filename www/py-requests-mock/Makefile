@@ -3,7 +3,7 @@ COMMENT =	mock out responses from py-requests
 DISTNAME =	requests-mock-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	www
-REVISION =	5
+REVISION =	6
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
@@ -11,8 +11,8 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
-MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PI =	Yes
+MODPY_PYBUILD =	setuptools
 
 FLAVORS =	python3
 FLAVOR =	python3

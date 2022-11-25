@@ -5,7 +5,7 @@ DISTNAME =	apertium-apy-${MODPY_EGG_VERSION}
 # XXX: distfile for version 0.11.6 on pypi is many commits
 #      behind the github distfile with the same version
 MODPY_EGG_VERSION =	0.11.6
-REVISION =		6
+REVISION =		7
 
 CATEGORIES =	www
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 BUILD_DEPENDS =		databases/sqlite3 \
 			www/py-tornado${MODPY_FLAVOR}
 RUN_DEPENDS =		textproc/apertium-lex-tools \

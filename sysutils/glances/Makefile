@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	3.2.6.4
 
 DISTNAME =		Glances-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:L}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		sysutils
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 RUN_DEPENDS =		devel/py-future${MODPY_FLAVOR} \
 			sysutils/py-psutil${MODPY_FLAVOR} \
 			textproc/py-defusedxml${MODPY_FLAVOR} \

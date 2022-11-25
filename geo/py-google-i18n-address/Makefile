@@ -4,7 +4,7 @@ MODPY_EGG_VERSION=	2.5.2
 
 DISTNAME=	google-i18n-address-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	geo
 
@@ -15,9 +15,9 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 
-MODPY_PI=		Yes
-MODPY_SETUPTOOLS=	Yes
-NO_TEST=		Yes
+MODPY_PI=	Yes
+MODPY_PYBUILD =	setuptools
+NO_TEST=	Yes
 
 FLAVOR=		python3
 FLAVORS=	python3

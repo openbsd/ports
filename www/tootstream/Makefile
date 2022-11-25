@@ -2,7 +2,7 @@ COMMENT =		CLI for interacting with Mastodon/fediverse instances
 
 MODPY_EGG_VERSION =	0.3.8.1
 DISTNAME =		tootstream-${MODPY_EGG_VERSION}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		www
 
@@ -14,7 +14,7 @@ MAINTAINER =		Kurt Mosiejczuk <kmos@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 MODPY_PI =		Yes
 
 RUN_DEPENDS =		www/py-mastodon.py${MODPY_FLAVOR} \

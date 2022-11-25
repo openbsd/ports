@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	0.2.0
 
 DISTNAME =		ffmpeg-progress-yield-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		multimedia
 
@@ -18,8 +18,7 @@ RUN_DEPENDS =		graphics/ffmpeg
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 MODPY_PYTEST_ARGS =	test/test.py
 
 FLAVORS =		python3

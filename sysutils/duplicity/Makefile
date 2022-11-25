@@ -1,7 +1,7 @@
 COMMENT =		encrypted backup using rsync algorithm
 
 MODPY_EGG_VERSION =	0.8.21
-REVISION =		1
+REVISION =		2
 DISTNAME =		duplicity-${MODPY_EGG_VERSION}
 
 CATEGORIES =		sysutils
@@ -17,10 +17,9 @@ MASTER_SITES =		${MASTER_SITE_SAVANNAH:=duplicity/}
 
 MODULES =		lang/python
 
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools_scm
 
-BUILD_DEPENDS =		devel/gettext,-tools \
-			devel/py-setuptools_scm${MODPY_FLAVOR}
+BUILD_DEPENDS =		devel/gettext,-tools
 
 LIB_DEPENDS =		net/librsync
 

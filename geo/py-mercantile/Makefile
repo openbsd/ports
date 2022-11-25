@@ -3,7 +3,7 @@ COMMENT =	spherical mercator coordinate and tile utilities
 MODPY_EGG_VERSION =	1.2.1
 DISTNAME =	mercantile-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	geo
 MAINTAINER =	Martin Reindl <martin@catai.org>
@@ -16,9 +16,8 @@ MODULES =	lang/python
 FLAVORS =	python3
 FLAVOR =	python3
 
-MODPY_SETUPTOOLS =	Yes
-MODPY_PI =		Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =	setuptools
+MODPY_PI =	Yes
 
 RUN_DEPENDS =	devel/py-click${MODPY_FLAVOR}
 

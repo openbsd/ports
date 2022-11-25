@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	21.0.0
 
 DISTNAME =		hyperlink-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		www
 
@@ -13,8 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 MODPY_PYTEST_ARGS =	lib/hyperlink/test
 
 TEST_DEPENDS =		net/py-idna${MODPY_FLAVOR}

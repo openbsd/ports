@@ -3,7 +3,7 @@ COMMENT=	web framework for python
 MODPY_EGG_VERSION=	0.61
 DISTNAME=	web.py-${MODPY_EGG_VERSION}
 PKGNAME=	py-webpy-${MODPY_EGG_VERSION}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	www
 
@@ -17,8 +17,7 @@ PERMIT_PACKAGE=	Yes
 MODULES=	lang/python
 
 MODPY_PI=	Yes
-MODPY_PYTEST=	Yes
-MODPY_SETUPTOOLS=	Yes
+MODPY_PYBUILD =	setuptools
 
 RUN_DEPENDS=	www/py-cheroot${MODPY_FLAVOR}
 

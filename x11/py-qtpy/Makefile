@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	2.1.0
 DISTNAME =		QtPy-${MODPY_EGG_VERSION}
 PKGNAME =		py-qtpy-${MODPY_EGG_VERSION}
 CATEGORIES =		x11
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://github.com/spyder-ide/qtpy
 
@@ -14,9 +14,8 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 # XXX fails with PORTS_PRIVSEP
-MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	qtpy/tests
 
 FLAVORS =		python3

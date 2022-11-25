@@ -3,7 +3,7 @@ COMMENT=		simple scripting language for web browsing
 MODPY_EGG_VERSION=	3.0.2
 DISTNAME=		twill-${MODPY_EGG_VERSION}
 CATEGORIES=		www
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		https://twill-tools.github.io/twill/
 
@@ -11,7 +11,7 @@ HOMEPAGE=		https://twill-tools.github.io/twill/
 PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
-MODPY_SETUPTOOLS=	Yes
+MODPY_PYBUILD =		setuptools
 MODPY_PI=		Yes
 
 # needs unported wsgi_intercept

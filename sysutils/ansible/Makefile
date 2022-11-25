@@ -2,6 +2,7 @@ COMMENT =		radically simple IT automation
 
 MODPY_EGG_VERSION =	7.0.0
 DISTNAME =		ansible-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		sysutils
 
@@ -15,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =		sysutils/ansible-core>=2.14.0
 

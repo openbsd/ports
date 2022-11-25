@@ -3,7 +3,7 @@ COMMENT =		yet another URL library
 MODPY_EGG_VERSION =	1.4.2
 DISTNAME =		yarl-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		www devel
 
@@ -21,8 +21,7 @@ FLAVORS =		python3
 FLAVOR =		python3
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =		net/py-idna${MODPY_FLAVOR}>=2.0 \
 			www/py-multidict${MODPY_FLAVOR}>=4.0

@@ -2,7 +2,7 @@ COMMENT =		static site generator written in Python
 
 MODPY_EGG_VERSION =	${GH_TAGNAME}
 DISTNAME =		pelican-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 GH_ACCOUNT =		getpelican
 GH_PROJECT =		pelican
@@ -17,7 +17,7 @@ MAINTAINER =		David Demelier <markand@malikania.fr>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =		devel/py-blinker${MODPY_FLAVOR} \
 			devel/py-dateutil${MODPY_FLAVOR} \

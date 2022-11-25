@@ -3,7 +3,7 @@ COMMENT =		VCR imitation for python-requests
 MODPY_EGG_VERSION =	0.8.1
 DISTNAME =		betamax-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		www devel
 
@@ -13,8 +13,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 
 FLAVORS =		python3
 FLAVOR =		python3

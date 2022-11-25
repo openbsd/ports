@@ -3,7 +3,7 @@ MODPY_EGG_VERSION =	0.5.2
 DISTNAME =		requests-cache-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		www
-REVISION =		2
+REVISION =		3
 
 HOMEPAGE =		https://github.com/reclosedev/requests-cache
 MAINTAINER =		Johan Huldtgren <jhuldtgren@gmail.com>
@@ -17,10 +17,9 @@ FLAVORS =		python3
 FLAVOR =		python3
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 # tests require network
-MODPY_PYTEST =		Yes
 
 RUN_DEPENDS =		www/py-requests${MODPY_FLAVOR}>=1.1.0
 

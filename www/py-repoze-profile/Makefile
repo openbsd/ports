@@ -3,7 +3,7 @@ COMMENT =	aggregate profiling for wsgi requests
 MODPY_EGG_VERSION = 2.3
 DISTNAME =	repoze.profile-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:S/./-/}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	www devel
 
@@ -18,7 +18,7 @@ FLAVORS =	python3
 FLAVOR =	python3
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 MODPY_PYTEST_ARGS =	repoze/profile/tests.py
 
 .include <bsd.port.mk>

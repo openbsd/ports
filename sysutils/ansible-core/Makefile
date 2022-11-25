@@ -2,7 +2,7 @@ COMMENT =		radically simple IT automation
 
 MODPY_EGG_VERSION =	2.14.0
 DISTNAME =		ansible-core-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		sysutils
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =              Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 BUILD_DEPENDS =		devel/py-resolvelib${MODPY_FLAVOR} \
 			devel/py-straight.plugin${MODPY_FLAVOR} \

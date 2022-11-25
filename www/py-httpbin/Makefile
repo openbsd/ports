@@ -3,7 +3,7 @@ COMMENT =		HTTP request and response service
 MODPY_EGG_VERSION =	0.5.0
 DISTNAME =		httpbin-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		6
+REVISION =		7
 
 CATEGORIES =		www
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =		devel/py-decorator${MODPY_FLAVOR} \
 			devel/py-six${MODPY_FLAVOR} \

@@ -2,7 +2,7 @@ GH_ACCOUNT =		aajanki
 GH_PROJECT =		yle-dl
 GH_TAGNAME =		20220704
 MODPY_EGG_VERSION =	${GH_TAGNAME}
-REVISION =		0
+REVISION =		1
 
 COMMENT =		download videos from YLE Areena
 
@@ -16,8 +16,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =		devel/py-attrs${MODPY_FLAVOR} \
 			devel/py-configargparse${MODPY_FLAVOR} \

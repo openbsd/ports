@@ -1,25 +1,25 @@
-COMMENT =		library for reading, modifying and creating LAS LiDAR files
+COMMENT=	library for reading, modifying and creating LAS LiDAR files
 
 MODPY_EGG_VERSION=	2.2.0
-DISTNAME=		laspy-${MODPY_EGG_VERSION}
-PKGNAME=		py-${DISTNAME}
-REVISION=		0
+DISTNAME=	laspy-${MODPY_EGG_VERSION}
+PKGNAME=	py-${DISTNAME}
+REVISION=	1
 
-CATEGORIES=		geo devel textproc
+CATEGORIES=	geo devel textproc
 
 # BSD
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES=		lang/python
+MODULES=	lang/python
 
-FLAVORS=		python3
-FLAVOR=			python3
+FLAVORS=	python3
+FLAVOR=		python3
 
-MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools
 
-BUILD_DEPENDS =	math/py-numpy,${FLAVOR}
-RUN_DEPENDS =	math/py-numpy,${FLAVOR} \
+BUILD_DEPENDS=	math/py-numpy,${FLAVOR}
+RUN_DEPENDS=	math/py-numpy,${FLAVOR} \
 		graphics/py-opengl,${FLAVOR}
 
 .include <bsd.port.mk>

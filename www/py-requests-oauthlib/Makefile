@@ -3,7 +3,7 @@ COMMENT =		OAuth library support for python-requests
 MODPY_EGG_VERSION =	1.3.1
 DISTNAME =		requests-oauthlib-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		www
 
@@ -21,9 +21,8 @@ TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR} \
 			www/py-requests-mock${MODPY_FLAVOR}
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 # the tests make connections to http://httpbin.org
-MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
 FLAVOR =		python3

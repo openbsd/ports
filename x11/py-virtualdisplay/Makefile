@@ -3,7 +3,7 @@ COMMENT =		Python wrapper for Xvfb, Xephyr and Xvnc
 MODPY_EGG_VERSION =	3.0
 DISTNAME =		PyVirtualDisplay-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:L:S/^py/py-/}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		x11
 
@@ -19,7 +19,7 @@ MODPY_PI =		Yes
 MODPY_PYTEST_ARGS =	--ignore tests/vagrant/vagrant_boxes.py \
 			--ignore tests/test_race.py \
 			--ignore tests/test_xvnc.py
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 FLAVORS =		python3
 FLAVOR =		python3

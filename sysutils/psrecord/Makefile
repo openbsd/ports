@@ -3,7 +3,7 @@ COMMENT =	record the CPU and memory activity of a process
 MODPY_EGG_VERSION =	1.2
 
 DISTNAME =	psrecord-${MODPY_EGG_VERSION}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	sysutils
 
@@ -15,8 +15,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 MODPY_TEST_DIR =	${WRKSRC}/psrecord
 
 RUN_DEPENDS =		sysutils/py-psutil${MODPY_FLAVOR}

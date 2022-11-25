@@ -3,7 +3,7 @@ COMMENT =	very small text templating language
 MODPY_EGG_VERSION = 0.5.2
 DISTNAME =	Tempita-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
-REVISION =	8
+REVISION =	9
 
 CATEGORIES =	www
 
@@ -19,7 +19,7 @@ MODULES =	lang/python
 FLAVORS =	python3
 FLAVOR =	python3
 
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =	setuptools
 
 TEST_DEPENDS = devel/py-nose${MODPY_FLAVOR}
 

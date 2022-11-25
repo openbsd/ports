@@ -3,7 +3,7 @@ COMMENT =		standalone version of Django's feedgenerator
 MODPY_EGG_VERSION =	1.9.1
 DISTNAME =		feedgenerator-${MODPY_EGG_VERSION}
 PKGNAME =		py-feedgenerator-${MODPY_EGG_VERSION}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		www textproc
 
@@ -15,8 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 MODPY_PYTEST_ARGS =	tests_feedgenerator/
 
 FLAVORS =		python3

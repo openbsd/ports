@@ -3,7 +3,7 @@ COMMENT =		identity management for flask
 MODPY_EGG_VERSION =	0.4.0
 DISTNAME =		Flask-Principal-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		www
 
@@ -18,7 +18,7 @@ FLAVORS =		python3
 FLAVOR  =		python3
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =		www/py-flask${MODPY_FLAVOR}
 

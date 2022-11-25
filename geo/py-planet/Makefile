@@ -3,7 +3,7 @@ COMMENT =	client library and CLI for Planet's public API
 MODPY_EGG_VERSION =	1.5.1
 DISTNAME =	planet-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	geo
 
@@ -12,13 +12,12 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 
-MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PI =	Yes
+MODPY_PYBUILD =	setuptools
 
-FLAVORS =		python3
-FLAVOR =		python3
+FLAVORS =	python3
+FLAVOR =	python3
 
-MODPY_PYTEST =	Yes
 RUN_DEPENDS +=	devel/py-click${MODPY_FLAVOR} \
 		www/py-requests${MODPY_FLAVOR} \
 		www/py-requests-futures${MODPY_FLAVOR}

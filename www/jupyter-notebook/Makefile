@@ -3,7 +3,7 @@ COMMENT =		web-based notebook for interactive computing
 MODPY_EGG_VERSION =	6.1.6
 DISTNAME =		notebook-${MODPY_EGG_VERSION}
 PKGNAME =		jupyter-notebook-${MODPY_EGG_VERSION}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		www devel
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =		devel/py-ipykernel${MODPY_FLAVOR} \
 			devel/py-ipython_genutils${MODPY_FLAVOR} \

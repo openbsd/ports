@@ -3,7 +3,7 @@ COMMENT =	high-level API and CLI on top of OGR
 MODPY_EGG_VERSION =	1.8.21
 DISTNAME =	Fiona-${MODPY_EGG_VERSION:S/post/pl/}
 PKGNAME =	${MODPY_PY_PREFIX}${DISTNAME:L}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	geo
 
@@ -14,14 +14,13 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 
-FLAVORS =		python3
-FLAVOR =		python3
+FLAVORS =	python3
+FLAVOR =	python3
 
 COMPILER =	base-clang ports-gcc
 
-MODPY_SETUPTOOLS =	Yes
-MODPY_PI =		Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =	setuptools
+MODPY_PI =	Yes
 MODPY_PYTEST_ARGS =	tests
 
 BUILD_DEPENDS +=${RUN_DEPENDS} \
@@ -43,6 +42,6 @@ TEST_DEPENDS =	devel/py-nose${MODPY_FLAVOR} \
 WANTLIB += ${COMPILER_LIBCXX} gdal m ${MODPY_WANTLIB}
 
 pre-test:
-	cp ${WRKSRC}/${MODPY_TEST_LIBDIR}/fiona/*.so ${WRKSRC}/fiona/
+	cp ${WRKSRC}/build/lib*/fiona/*.so ${WRKSRC}/fiona/
 
 .include <bsd.port.mk>

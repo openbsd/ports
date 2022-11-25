@@ -1,9 +1,10 @@
 bin/me_cleaner
-lib/python${MODPY_VERSION}/site-packages/me_cleaner-1.2-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/me_cleaner-1.2-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/me_cleaner-1.2-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/me_cleaner-1.2-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/me_cleaner-1.2-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/me_cleaner-1.2.dist-info/
+lib/python${MODPY_VERSION}/site-packages/me_cleaner-1.2.dist-info/COPYING
+lib/python${MODPY_VERSION}/site-packages/me_cleaner-1.2.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/me_cleaner-1.2.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/me_cleaner-1.2.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/me_cleaner-1.2.dist-info/top_level.txt
 @man man/man1/me_cleaner.1
 share/doc/me_cleaner/
 share/doc/me_cleaner/README.md

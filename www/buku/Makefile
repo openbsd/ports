@@ -2,7 +2,7 @@ COMMENT =	powerful command-line bookmark manager
 
 MODPY_EGG_VERSION =	4.7.1
 DISTNAME =	buku-${MODPY_EGG_VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	www
 
@@ -11,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 RUN_DEPENDS =		devel/py-certifi${MODPY_FLAVOR} \
 			devel/py-html5lib${MODPY_FLAVOR} \
 			security/py-cryptography${MODPY_FLAVOR} \

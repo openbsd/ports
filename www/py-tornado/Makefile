@@ -3,7 +3,7 @@ COMMENT =		scalable, non-blocking web server
 MODPY_EGG_VERSION =	6.2
 DISTNAME =		tornado-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		www
 
@@ -20,7 +20,7 @@ FLAVORS =		python3
 FLAVOR  =		python3
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 MODPY_PYTEST_ARGS =	tornado/test
 
 TEST_DEPENDS =		devel/py-twisted${MODPY_FLAVOR} \

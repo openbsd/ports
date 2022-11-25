@@ -2,7 +2,7 @@ MODPY_EGG_VERSION =	2.0.0
 COMMENT =	pipe video streams into a video player
 DISTNAME =	streamlink-${MODPY_EGG_VERSION}
 CATEGORIES =	multimedia net
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	https://streamlink.github.io/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 MODPY_PI =	Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =	setuptools
 
 RUN_DEPENDS =	devel/py-iso3166${MODPY_FLAVOR} \
 		devel/py-iso639${MODPY_FLAVOR} \

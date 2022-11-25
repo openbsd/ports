@@ -1,7 +1,7 @@
 COMMENT=	enhanced HTTPS support for httplib and urllib2
 
 MODPY_EGG_VERSION=	0.5.1
-REVISION=	2
+REVISION=	3
 MODPY_PI_DIR=	n/ndg-httpsclient
 DISTNAME=	ndg_httpsclient-${MODPY_EGG_VERSION}
 PKGNAME=	${MODPY_PY_PREFIX}ndg-httpsclient-${MODPY_EGG_VERSION}
@@ -12,7 +12,7 @@ CATEGORIES=	www
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-MODPY_SETUPTOOLS= Yes
+MODPY_PYBUILD =	setuptools
 MODPY_PI=	Yes
 
 FLAVORS=	python3

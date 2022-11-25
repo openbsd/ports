@@ -2,7 +2,7 @@ COMMENT =		simple, pythonic tool for remote execution and deployment
 
 MODPY_EGG_VERSION =	2.6.0
 DISTNAME =		fabric-${MODPY_EGG_VERSION}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		sysutils
 
@@ -16,8 +16,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =		security/py-paramiko${MODPY_FLAVOR} \
 			devel/py-invoke${MODPY_FLAVOR}

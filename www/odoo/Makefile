@@ -3,7 +3,7 @@ COMMENT=		all-in-one management software
 MV=			15.0
 SV=			20220427
 V=			${MV}.${SV}
-REVISION=		4
+REVISION=		5
 
 DISTNAME=		odoo_${V}
 
@@ -17,7 +17,7 @@ HOMEPAGE=		https://www.odoo.com
 MASTER_SITES=		https://nightly.odoocdn.com/${MV}/nightly/src/
 
 MODULES=		lang/python
-MODPY_SETUPTOOLS=	Yes
+MODPY_PYBUILD =		setuptools
 
 WRKDIST=		${WRKDIR}/odoo-${MV}.post${SV}
 

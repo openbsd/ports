@@ -3,7 +3,7 @@ COMMENT =		http client/server for asyncio
 MODPY_EGG_VERSION =	3.7.4
 DISTNAME =		aiohttp-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		www
 
@@ -17,9 +17,8 @@ FLAVOR =		python3
 FLAVORS =		python3
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 # XXX some tests fail as we don't have ports for re_assert and async_generator
-MODPY_PYTEST =		Yes
 
 RUN_DEPENDS =		devel/py-async-timeout${MODPY_FLAVOR} \
 			devel/py-attrs${MODPY_FLAVOR}>=17.3.0 \
@@ -30,6 +29,7 @@ RUN_DEPENDS =		devel/py-async-timeout${MODPY_FLAVOR} \
 
 TEST_DEPENDS =		devel/py-freezegun${MODPY_FLAVOR} \
 			devel/py-test${MODPY_FLAVOR} \
+			devel/py-test-cov${MODPY_FLAVOR} \
 			devel/py-test-timeout${MODPY_FLAVOR} \
 			devel/py-test-xdist${MODPY_FLAVOR} \
 			www/py-gunicorn${MODPY_FLAVOR}

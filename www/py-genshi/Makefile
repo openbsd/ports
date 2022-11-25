@@ -3,7 +3,7 @@ COMMENT=	toolkit for generation of output for the web
 MODPY_EGG_VERSION= 0.7.7
 DISTNAME=	Genshi-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME:L}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	www
 
@@ -18,7 +18,7 @@ COMPILER_LANGS=	c
 WANTLIB += pthread
 
 MODULES=	lang/python
-MODPY_SETUPTOOLS= Yes
+MODPY_PYBUILD=	setuptools
 MODPY_PI=	Yes
 MODPY_PYTEST_ARGS=	genshi/
 

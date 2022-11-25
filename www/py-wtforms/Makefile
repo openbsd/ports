@@ -4,25 +4,24 @@ MODPY_EGG_VERSION=3.0.1
 DISTNAME=	WTForms-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME:L}
 CATEGORIES=	www
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://wtforms.readthedocs.io/
 
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MODULES=		lang/python
+MODULES=	lang/python
 
-MODPY_PI=		Yes
+MODPY_PI=	Yes
 
-FLAVORS=		python3
-FLAVOR=			python3
+FLAVORS=	python3
+FLAVOR=		python3
 
-BUILD_DEPENDS=		devel/py-babel${MODPY_FLAVOR}
-RUN_DEPENDS=		devel/py-dateutil${MODPY_FLAVOR}
+BUILD_DEPENDS=	devel/py-babel${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/py-dateutil${MODPY_FLAVOR}
 
-MODPY_SETUPTOOLS=	Yes
-MODPY_PYTEST=		Yes
-USE_GMAKE=		Yes
+MODPY_PYBUILD=	setuptools
+USE_GMAKE=	Yes
 
 .include <bsd.port.mk>

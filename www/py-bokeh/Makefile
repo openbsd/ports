@@ -3,7 +3,7 @@ COMMENT=		statistical and novel interactive HTML plots for Python
 MODPY_EGG_VERSION=	2.4.3
 DISTNAME=		bokeh-${MODPY_EGG_VERSION}
 PKGNAME=		py-bokeh-${MODPY_EGG_VERSION}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		www graphics
 
@@ -18,8 +18,7 @@ FLAVORS=		python3
 FLAVOR=			python3
 
 MODPY_PI=		Yes
-MODPY_SETUPTOOLS=	Yes
-MODPY_PYTEST=		Yes
+MODPY_PYBUILD =		setuptools
 MODPY_PYTEST_ARGS=	tests
 
 RUN_DEPENDS=		devel/py-dateutil${MODPY_FLAVOR} \

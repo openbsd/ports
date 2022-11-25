@@ -1,19 +1,25 @@
 @conflict py-flask-wtf-*
 @pkgpath www/py-flask-wtf
-lib/python${MODPY_VERSION}/site-packages/Flask_WTF-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/Flask_WTF-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/Flask_WTF-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/Flask_WTF-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/Flask_WTF-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
-lib/python${MODPY_VERSION}/site-packages/Flask_WTF-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/Flask_WTF-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/Flask_WTF-${MODPY_EGG_VERSION}.dist-info/LICENSE.rst
+lib/python${MODPY_VERSION}/site-packages/Flask_WTF-${MODPY_EGG_VERSION}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/Flask_WTF-${MODPY_EGG_VERSION}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/Flask_WTF-${MODPY_EGG_VERSION}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/Flask_WTF-${MODPY_EGG_VERSION}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/flask_wtf/
 lib/python${MODPY_VERSION}/site-packages/flask_wtf/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/flask_wtf/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/flask_wtf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/flask_wtf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/flask_wtf/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/flask_wtf/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/flask_wtf/${MODPY_PYCACHE}csrf.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/flask_wtf/${MODPY_PYCACHE}csrf.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/flask_wtf/${MODPY_PYCACHE}file.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/flask_wtf/${MODPY_PYCACHE}file.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/flask_wtf/${MODPY_PYCACHE}form.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/flask_wtf/${MODPY_PYCACHE}form.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/flask_wtf/${MODPY_PYCACHE}i18n.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/flask_wtf/${MODPY_PYCACHE}i18n.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flask_wtf/_compat.py
 lib/python${MODPY_VERSION}/site-packages/flask_wtf/csrf.py
@@ -23,9 +29,13 @@ lib/python${MODPY_VERSION}/site-packages/flask_wtf/i18n.py
 lib/python${MODPY_VERSION}/site-packages/flask_wtf/recaptcha/
 lib/python${MODPY_VERSION}/site-packages/flask_wtf/recaptcha/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/flask_wtf/recaptcha/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/flask_wtf/recaptcha/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/flask_wtf/recaptcha/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/flask_wtf/recaptcha/${MODPY_PYCACHE}fields.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/flask_wtf/recaptcha/${MODPY_PYCACHE}fields.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/flask_wtf/recaptcha/${MODPY_PYCACHE}validators.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/flask_wtf/recaptcha/${MODPY_PYCACHE}validators.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/flask_wtf/recaptcha/${MODPY_PYCACHE}widgets.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/flask_wtf/recaptcha/${MODPY_PYCACHE}widgets.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flask_wtf/recaptcha/fields.py
 lib/python${MODPY_VERSION}/site-packages/flask_wtf/recaptcha/validators.py

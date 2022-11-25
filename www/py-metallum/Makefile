@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	1.1.0
 DISTNAME =		python-metallum-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/^python-/py-/}
 CATEGORIES =		www
-REVISION =		2
+REVISION =		3
 
 HOMEPAGE =		https://github.com/lcharlick/python-metallum
 MAINTAINER =		Johan Huldtgren <jhuldtgren@gmail.com>
@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS = 	Yes
+MODPY_PYBUILD =		setuptools
 
 FLAVORS =		python3
 FLAVOR =		python3

@@ -2,7 +2,7 @@ MODPY_EGG_VERSION =	223
 COMMENT =	in-depth comparison of files, archives, and directories
 DISTNAME =	diffoscope-${MODPY_EGG_VERSION}
 CATEGORIES =	sysutils devel
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://diffoscope.org/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -10,12 +10,11 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-MODULES =		lang/python
-MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODULES =	lang/python
+MODPY_PI =	Yes
+MODPY_PYBUILD =	setuptools
 
-PORTHOME =		${WRKDIST}
+PORTHOME =	${WRKDIST}
 
 RUN_DEPENDS =	archivers/py-libarchive-c${MODPY_FLAVOR} \
 		devel/py-magic${MODPY_FLAVOR}

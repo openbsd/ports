@@ -3,7 +3,7 @@ COMMENT =		helper to test wsgi applications
 MODPY_EGG_VERSION =	2.0.35
 DISTNAME =		WebTest-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		www devel
 
@@ -15,8 +15,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 MODPY_PYTEST_ARGS =	tests
 
 FLAVORS =		python3

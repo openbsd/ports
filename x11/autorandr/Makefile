@@ -6,15 +6,15 @@ GH_ACCOUNT=	phillipberndt
 GH_PROJECT=	autorandr
 GH_TAGNAME=	1.11
 MODPY_EGG_VERSION=	${GH_TAGNAME}.post1
-REVISION=		1
+REVISION=		2
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes
 
 MAINTAINER=	Ashton Fagg <ashton@fagg.id.au>
 
-MODULES=		lang/python
-MODPY_SETUPTOOLS=	Yes
+MODULES=	lang/python
+MODPY_PYBUILD =	setuptools
 
 # No tests provided by upstream.
 NO_TEST=	Yes

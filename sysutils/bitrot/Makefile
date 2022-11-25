@@ -2,7 +2,7 @@ COMMENT =		detects when files bit-rot
 
 MODPY_EGG_VERSION =	1.0.0
 DISTNAME =		bitrot-${MODPY_EGG_VERSION}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		sysutils
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
 MODULES =		lang/python
-MODPY_SETUPTOOLS=	Yes
+MODPY_PYBUILD =		setuptools
 
 NO_TEST =		Yes
 

@@ -3,7 +3,7 @@ COMMENT =		macaroon library for Python
 MODPY_EGG_VERSION =	0.13.0
 DISTNAME =		pymacaroons-${MODPY_EGG_VERSION}
 PKGNAME =		py-macaroons-${MODPY_EGG_VERSION}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		www
 
@@ -15,7 +15,7 @@ MAINTAINER =		Renaud Allard <renaud@allard.it>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 MODPY_PI =		Yes
 FLAVORS =		python3
 FLAVOR =		python3

@@ -3,7 +3,7 @@ COMMENT =		user session management for flask
 MODPY_EGG_VERSION =	0.5.0
 DISTNAME =		Flask-Login-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		www
 
@@ -18,7 +18,7 @@ FLAVORS =		python3
 FLAVOR  =		python3
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 MODPY_PYTEST_ARGS =	test*
 
 RUN_DEPENDS +=		www/py-flask${MODPY_FLAVOR}
