@@ -1,25 +1,25 @@
-COMMENT =	python library to work with countries and languages
+COMMENT=	Python library to work with countries and languages
 
-MODPY_EGG_VERSION =	0.6.0
+MODPY_EGG_VERSION=	0.6.0
 
-DISTNAME =	babelfish-${MODPY_EGG_VERSION}
-PKGNAME =	py-${DISTNAME}
-REVISION =	1
+DISTNAME=	babelfish-${MODPY_EGG_VERSION}
+PKGNAME=	py-${DISTNAME}
+REVISION=	2
 
-CATEGORIES =	misc
+CATEGORIES=	misc
 
-HOMEPAGE =	https://github.com/Diaoul/babelfish
+HOMEPAGE=	https://github.com/Diaoul/babelfish
 
 # BSD-3-Clause
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
+MODULES=	lang/python
 
-MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYEST =		Yes
+MODPY_PI=	Yes
+MODPY_PYBUILD=	poetry-core
+NO_TEST=	Yes
 
-FLAVORS =	python3
-FLAVOR =	python3
+FLAVORS=	python3
+FLAVOR=		python3
 
 .include <bsd.port.mk>

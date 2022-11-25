@@ -5,7 +5,7 @@ PORTROACH =	site:https://github.com/alberanid/imdbpy/releases/
 MODPY_EGG_VERSION = 2021.4.18
 DISTNAME =	IMDbPY-${MODPY_EGG_VERSION}
 PKGNAME =	py-imdb-${MODPY_EGG_VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	misc devel
 
@@ -20,8 +20,8 @@ WANTLIB += c pthread ${MODPY_WANTLIB}
 
 MODULES =	lang/python
 
-MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PI =	Yes
+MODPY_PYBUILD =	setuptools
 
 RUN_DEPENDS =	textproc/py-lxml${MODPY_FLAVOR} \
 		databases/py-sqlalchemy${MODPY_FLAVOR}

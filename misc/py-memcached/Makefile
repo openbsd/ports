@@ -4,9 +4,9 @@ MODPY_EGG_VERSION = 1.59
 DISTNAME =	python-memcached-${MODPY_EGG_VERSION}
 PKGNAME =	${DISTNAME:S/python-/py-/}
 CATEGORIES =	misc
-REVISION =	1
+REVISION =	2
 
-HOMEPAGE =	http://www.tummy.com/Community/software/python-memcached/
+HOMEPAGE =	https://github.com/linsomniac/python-memcached
 
 # Python
 PERMIT_PACKAGE =	Yes
@@ -17,8 +17,8 @@ FLAVOR =	python3
 MODULES =	lang/python
 
 MODPY_ADJ_FILES =	memcache.py
-MODPY_SETUPTOOLS =	Yes
-MODPY_PI =		Yes
+MODPY_PYBUILD =	setuptools
+MODPY_PI =	Yes
 
 NO_TEST =	Yes
 

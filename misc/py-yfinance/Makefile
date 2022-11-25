@@ -3,7 +3,7 @@ COMMENT=		fetching finanical market data with Python
 MODPY_EGG_VERSION=	0.1.72
 DISTNAME=		yfinance-${MODPY_EGG_VERSION}
 PKGNAME=		py-yfinance-${MODPY_EGG_VERSION}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		misc
 
@@ -19,7 +19,7 @@ MODULES=		lang/python
 FLAVORS=		python3
 FLAVOR=			python3
 
-MODPY_SETUPTOOLS=	Yes
+MODPY_PYBUILD=		setuptools
 MODPY_PI=		Yes
 
 # missing from pypi distfile

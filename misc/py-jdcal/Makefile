@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	1.4.1
 
 DISTNAME =	jdcal-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
+REVISION =	3
 
 CATEGORIES =	misc
 
@@ -13,10 +13,10 @@ HOMEPAGE =	https://github.com/phn/jdcal
 # BSD
 PERMIT_PACKAGE =	Yes
 
-MODULES =		lang/python
+MODULES =	lang/python
 
-MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PI =	Yes
+MODPY_PYBUILD =	setuptools
 
 FLAVORS =	python3
 FLAVOR =	python3
