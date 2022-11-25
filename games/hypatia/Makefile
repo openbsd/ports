@@ -5,14 +5,14 @@ SUBST_VARS +=	GH_TAGNAME
 GH_ACCOUNT =	hypatia-engine
 GH_PROJECT =	hypatia
 GH_TAGNAME =	0.3.6
-REVISION =	4
+REVISION =	5
 
 # MIT
 PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =	setuptools
 
 RUN_DEPENDS =	devel/pygame${MODPY_FLAVOR}>=1.9.1 \
 		graphics/py-Pillow${MODPY_FLAVOR}

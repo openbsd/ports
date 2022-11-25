@@ -5,14 +5,14 @@ DISTNAME =		steam-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		games
 HOMEPAGE =		https://github.com/ValvePython/steam
-REVISION =		0
+REVISION =		1
 
 # MIT
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =		converters/py-vdf${MODPY_FLAVOR} \
 			devel/py-cachetools${MODPY_FLAVOR} \
