@@ -288,7 +288,7 @@ MODPY_TEST_DIR ?=	${WRKSRC}
 MODPY_TEST_CMD = cd ${MODPY_TEST_DIR} && ${SETENV} ${ALL_TEST_ENV} ${MODPY_BIN}
 .if ${MODPY_PYTEST:L} == "yes"
 MODPY_TEST_CMD +=	-m pytest
-MODPY_TEST_LIBDIR ?=	build/lib.openbsd-${OSREV}-${ARCH}-cpython-${MODPY_MAJORMINOR}:lib.openbsd-${OSREV}-${ARCH}-${MODPY_VERSION}
+MODPY_TEST_LIBDIR ?=	${WRKSRC}/build/lib:${WRKSRC}/build/lib.openbsd-${OSREV}-${ARCH}-cpython-${MODPY_MAJORMINOR}:${WRKSRC}/lib.openbsd-${OSREV}-${ARCH}-${MODPY_VERSION}
 .else
 MODPY_TEST_CMD +=	./${MODPY_SETUP} ${MODPY_SETUP_ARGS}
 .endif
