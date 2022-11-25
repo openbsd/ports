@@ -1,7 +1,7 @@
 Index: src/twisted/internet/test/test_tcp.py
 --- src/twisted/internet/test/test_tcp.py.orig
 +++ src/twisted/internet/test/test_tcp.py
-@@ -2925,7 +2925,11 @@ class SimpleUtilityTests(TestCase):
+@@ -2953,7 +2953,11 @@ class SimpleUtilityTests(TestCase):
          accidentally block if it receives bad input.)
          """
          err = self.assertRaises(socket.gaierror, _resolveIPv6, "::1", "http")

@@ -1,10 +1,9 @@
 COMMENT =		asynchronous networking Python framework
 
-MODPY_EGG_VERSION =	22.4.0
+MODPY_EGG_VERSION =	22.10.0
 
 DISTNAME =		Twisted-${MODPY_EGG_VERSION}
 PKGNAME =		py-twisted-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		devel
 
@@ -18,7 +17,7 @@ WANTLIB +=		pthread
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 BUILD_DEPENDS =		devel/py-incremental${MODPY_FLAVOR}
 
