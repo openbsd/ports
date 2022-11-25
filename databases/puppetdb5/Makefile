@@ -5,7 +5,7 @@ V=		5.2.19
 DISTNAME=	puppetdb-$V
 PKGNAME-plugin= puppetdb-termini-$V
 CATEGORIES=	databases
-REVISION-main=	2
+REVISION-main=	3
 REVISION-plugin=4
 
 HOMEPAGE=	https://puppet.com/docs/puppetdb/
@@ -24,7 +24,9 @@ MODRUBY_REV =	2.7
 
 MULTI_PACKAGES= -main -plugin
 
-BUILD_DEPENDS =	sysutils/coreutils
+BUILD_DEPENDS =	archivers/unzip \
+		archivers/zip \
+		sysutils/coreutils
 RUN_DEPENDS-plugin=sysutils/ruby-puppet/5>=5.0.0,<4.0.0v0
 
 RUN_DEPENDS-main=${BASE_PKGPATH},-plugin=${V} \
@@ -41,6 +43,11 @@ MAKE_FLAGS +=	confdir="share/examples/puppetdb/" \
 NO_BUILD=	Yes
 NO_TEST=	Yes
 
+post-extract:
+	cd ${WRKSRC} && mkdir temp && cd temp && \
+		unzip ../puppetdb.jar \
+		puppetlabs/puppetdb/scf/storage.clj
+
 do-configure:
 	${SUBST_CMD} ${WRKSRC}/ext/bin/puppetdb \
 		${WRKSRC}/ext/cli/ssl-setup \
@@ -50,6 +57,9 @@ do-configure:
 		${WRKSRC}/ext/cli/*
 
 do-install:
+	cd ${WRKSRC}/temp && zip -f ../puppetdb.jar \
+		puppetlabs/puppetdb/scf/storage.clj && \
+		cd .. && rm -rf temp
 	cd ${WRKSRC} && ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} \
 		install-puppetdb install-puppetdb-termini
 	rm ${PREFIX}/share/puppetdb/ezbake*
