@@ -320,6 +320,13 @@ MODPYTHON_pre-configure += cd ${WRKSRC} && ${MODPY_BIN_ADJ} ${MODPY_ADJ_FILES}
 .endif
 
 .if ${MODPY_PYBUILD:L} != no
+.  if ! ${MODPY_PYBUILD:Msetuptools_scm}
+_MODPY_PRE_BUILD_STEPS += ; if [ -e ${WRKSRC}/pyproject.toml ]; then \
+	grep -q '^requires.*setuptools_scm' ${WRKSRC}/pyproject.toml && \
+	echo && sleep 1 && \
+	echo "*** Port appears to require setuptools_scm" && sleep 2; \
+	fi
+.  endif
 MODPY_BUILD_TARGET = ${_MODPY_PRE_BUILD_STEPS}; \
 	${_MODPY_RUNBIN} -sBm build -w --no-isolation
 MODPY_INSTALL_TARGET = \
