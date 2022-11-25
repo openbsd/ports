@@ -101,6 +101,11 @@ lib/python${MODPY_VERSION}/site-packages/hatchling/cli/dep/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hatchling/cli/dep/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hatchling/cli/dep/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hatchling/cli/dep/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/hatchling/cli/metadata/
+lib/python${MODPY_VERSION}/site-packages/hatchling/cli/metadata/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hatchling/cli/metadata/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hatchling/cli/metadata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/hatchling/cli/metadata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hatchling/cli/version/
 lib/python${MODPY_VERSION}/site-packages/hatchling/cli/version/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hatchling/cli/version/${MODPY_PYCACHE}/
@@ -223,9 +228,12 @@ lib/python${MODPY_VERSION}/site-packages/hatchling/version/source/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/hatchling/version/source/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hatchling/version/source/${MODPY_PYCACHE}code.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hatchling/version/source/${MODPY_PYCACHE}code.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/hatchling/version/source/${MODPY_PYCACHE}env.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/hatchling/version/source/${MODPY_PYCACHE}env.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hatchling/version/source/${MODPY_PYCACHE}regex.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hatchling/version/source/${MODPY_PYCACHE}regex.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hatchling/version/source/code.py
+lib/python${MODPY_VERSION}/site-packages/hatchling/version/source/env.py
 lib/python${MODPY_VERSION}/site-packages/hatchling/version/source/plugin/
 lib/python${MODPY_VERSION}/site-packages/hatchling/version/source/plugin/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hatchling/version/source/plugin/${MODPY_PYCACHE}/
