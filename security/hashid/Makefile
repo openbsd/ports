@@ -2,7 +2,7 @@ COMMENT =	Identify the different types of cryptographic hashes
 
 MODPY_EGG_VERSION = 3.1.4
 DISTNAME =	hashid-${MODPY_EGG_VERSION}
-REVISION =	1
+REVISION =	2
 
 GH_ACCOUNT =    psypanda
 GH_PROJECT =    hashID
@@ -18,6 +18,6 @@ MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =	setuptools
 
 .include <bsd.port.mk>

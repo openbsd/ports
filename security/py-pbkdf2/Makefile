@@ -1,7 +1,7 @@
 COMMENT =	Python implementation of PBKDF2
 
 MODPY_EGG_VERSION =	1.3
-REVISION =		9
+REVISION =		10
 DISTNAME =		pbkdf2-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		security devel
@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 MODPY_PI = 		Yes
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =	setuptools
 
 FLAVORS =		python3
 FLAVOR =		python3

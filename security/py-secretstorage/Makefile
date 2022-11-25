@@ -3,7 +3,7 @@ COMMENT=		secure storing of passwords using the SecretService DBus API
 MODPY_EGG_VERSION=	3.3.3
 DISTNAME=		SecretStorage-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME:L}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		security
 
@@ -13,10 +13,9 @@ PERMIT_PACKAGE=	Yes
 MODULES=		lang/python
 
 MODPY_PI=		Yes
-MODPY_SETUPTOOLS=	Yes
+MODPY_PYBUILD =	setuptools
 
 # there are various tests, but pretty much all need dbus
-#MODPY_PYTEST=		Yes
 NO_TEST=		Yes
 
 RUN_DEPENDS=		devel/py-jeepney${MODPY_FLAVOR} \

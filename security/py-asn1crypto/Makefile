@@ -5,7 +5,7 @@ GH_TAGNAME =	${MODPY_EGG_VERSION}
 GH_ACCOUNT =	wbond
 GH_PROJECT =	asn1crypto
 PKGNAME =	py-${DISTNAME}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	security
 
@@ -19,7 +19,7 @@ MODULES =	lang/python
 FLAVORS =	python3
 FLAVOR =	python3
 
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =	setuptools
 
 # pypi tarball has no tests
 

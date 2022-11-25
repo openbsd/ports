@@ -3,7 +3,7 @@ COMMENT =	Digital Forensics Virtual File System (dfVFS)
 MODPY_EGG_VERSION = 20200625
 DISTNAME =	dfvfs-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	security
 
@@ -21,7 +21,7 @@ MODULES =	lang/python
 FLAVORS =	python3
 FLAVOR =	python3
 
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =	setuptools
 RUN_DEPENDS +=	devel/py-construct${MODPY_FLAVOR} \
 		security/py-cryptography${MODPY_FLAVOR} \
 		security/py-dfdatetime${MODPY_FLAVOR} \

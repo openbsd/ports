@@ -3,7 +3,7 @@ COMMENT =		simple Python interface for Graphviz
 MODPY_EGG_VERSION =	0.14.1
 DISTNAME =		graphviz-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		math
 
@@ -14,8 +14,7 @@ EXTRACT_SUFX =		.zip
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =	setuptools
 
 FLAVORS =		python3
 FLAVOR =		python3

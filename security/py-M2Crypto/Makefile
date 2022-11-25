@@ -3,7 +3,7 @@ COMMENT =		crypto and ssl toolkit for python
 MODPY_EGG_VERSION =	0.38.0
 DISTNAME =		M2Crypto-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		security
 
@@ -17,7 +17,7 @@ WANTLIB +=		crypto pthread ssl ${MODPY_WANTLIB}
 MODPY_PI =		Yes
 
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =	setuptools
 
 FLAVORS =		python3
 FLAVOR =		python3

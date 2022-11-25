@@ -3,7 +3,7 @@ COMMENT =		Python client library for Hashicorp Vault
 MODPY_EGG_VERSION =	0.11.2
 DISTNAME =		hvac-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 MAINTAINER =		Mikolaj Kucharski <mikolaj@kucharski.name>
 
@@ -15,7 +15,7 @@ HOMEPAGE =		https://github.com/hvac/hvac
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =	setuptools
 MODPY_PI =		Yes
 
 RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR} \

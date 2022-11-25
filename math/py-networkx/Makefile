@@ -3,7 +3,7 @@ COMMENT =		module for creating and manipulating graphs and networks
 MODPY_EGG_VERSION =	2.6.2
 DISTNAME =		networkx-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		math
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =	setuptools
 
 FLAVORS =		python3
 FLAVOR =		python3

@@ -3,7 +3,7 @@ COMMENT=	time and date handling utility functions from netcdf4-python
 MODPY_EGG_VERSION= 	1.6.1
 DISTNAME=		cftime-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		math
 
@@ -17,9 +17,8 @@ PERMIT_PACKAGE=		Yes
 WANTLIB=		pthread
 
 MODULES=		lang/python
-MODPY_SETUPTOOLS=	Yes
+MODPY_PYBUILD =	setuptools
 MODPY_PI=		Yes
-MODPY_PYTEST=		Yes
 
 FLAVORS =		python3
 FLAVOR =		python3

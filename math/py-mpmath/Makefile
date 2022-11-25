@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	1.2.1
 DISTNAME =		mpmath-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		http://mpmath.org/
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =	setuptools
 MODPY_PYTEST_ARGS =	mpmath
 
 FLAVORS =		python3

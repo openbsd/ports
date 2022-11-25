@@ -3,7 +3,7 @@ COMMENT =	rop gadget finder and binary information tool
 MODPY_EGG_VERSION =	1.12.5
 DISTNAME =	ropper-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	security
 
@@ -15,7 +15,7 @@ MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
-MODPY_SETUPTOOLS = Yes
+MODPY_PYBUILD =	setuptools
 MODPY_PI =	Yes
 
 RUN_DEPENDS =	devel/py-filebytes${MODPY_FLAVOR} \

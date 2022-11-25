@@ -4,7 +4,7 @@ MODPY_EGG_VERSION=	1.6.1
 DISTNAME=		netCDF4-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME:L}
 CATEGORIES=		math
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		http://unidata.github.io/netcdf4-python/
 
@@ -14,7 +14,7 @@ MAINTAINER=		Martin Reindl <martin@catai.org>
 PERMIT_PACKAGE=		Yes
 
 MODULES=		lang/python
-MODPY_SETUPTOOLS=	Yes
+MODPY_PYBUILD =	setuptools
 MODPY_PI=		Yes
 
 WANTLIB+=		netcdf pthread

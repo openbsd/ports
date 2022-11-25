@@ -2,7 +2,7 @@ COMMENT =		service identity verification for pyOpenSSL/py-cryptography
 
 MODPY_EGG_VERSION =	21.1.0
 PKGNAME =		py-${DISTNAME:S/-/_/}
-REVISION =		0
+REVISION =		1
 
 # also on pypi, but no tests present
 GH_ACCOUNT =		pyca
@@ -15,8 +15,7 @@ CATEGORIES =		security
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =	setuptools
 
 RUN_DEPENDS =		devel/py-asn1${MODPY_FLAVOR} \
 			devel/py-asn1-modules${MODPY_FLAVOR} \

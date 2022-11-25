@@ -2,7 +2,7 @@ COMMENT =	web fuzzer
 
 MODPY_EGG_VERSION =	3.1.0
 DISTNAME =	wfuzz-${MODPY_EGG_VERSION}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	security www
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 MODPY_PI =		Yes
 
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =	setuptools
 
 RUN_DEPENDS =		devel/py-parsing${MODPY_FLAVOR} \
 			devel/py-six${MODPY_FLAVOR} \

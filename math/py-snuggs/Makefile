@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	1.4.7
 DISTNAME =		snuggs-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
-REVISION =		3
+REVISION =		4
 
 MAINTAINER =		Martin Reindl <martin@catai.org>
 
@@ -14,8 +14,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =	setuptools
 
 RUN_DEPENDS =		devel/py-parsing${MODPY_FLAVOR} \
 			devel/py-click${MODPY_FLAVOR} \

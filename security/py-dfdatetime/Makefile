@@ -3,7 +3,7 @@ COMMENT =	Digital Forensics date and time
 MODPY_EGG_VERSION = 20200824
 DISTNAME =	dfdatetime-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	security devel
 
@@ -17,7 +17,7 @@ MASTER_SITES =	https://github.com/log2timeline/dfdatetime/releases/download/${MO
 PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
-MODPY_SETUPTOOLS = Yes
+MODPY_PYBUILD =	setuptools
 
 FLAVORS =	python3
 FLAVOR =	python3

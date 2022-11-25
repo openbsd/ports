@@ -5,7 +5,7 @@ COMMENT =		ROP chain builder based off of angr
 
 MODPY_EGG_VERSION =	9.0.6642
 DISTNAME =		angrop-${MODPY_EGG_VERSION}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		security
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =	setuptools
 
 RUN_DEPENDS =		devel/angr/py-angr>=${MODPY_EGG_VERSION} \
 			devel/py-progressbar${MODPY_FLAVOR}

@@ -3,7 +3,7 @@ COMMENT=	Python module providing a password hashing framework
 MODPY_EGG_VERSION= 1.7.4
 DISTNAME=	passlib-${MODPY_EGG_VERSION}
 PKGNAME=	py-passlib-${MODPY_EGG_VERSION}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	security
 
@@ -14,8 +14,7 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 MODPY_PI=		Yes
-MODPY_SETUPTOOLS=	Yes
-MODPY_PYTEST=		Yes
+MODPY_PYBUILD =	setuptools
 MODPY_PYTEST_ARGS=	passlib
 
 PATCHORIG=	.orig.port

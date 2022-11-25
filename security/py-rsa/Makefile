@@ -5,7 +5,7 @@ COMMENT=		Python RSA implementation
 MODPY_EGG_VERSION=	4.7.2
 DISTNAME=		rsa-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		security
 
@@ -17,8 +17,7 @@ PERMIT_PACKAGE=	Yes
 MODULES=		lang/python
 
 MODPY_PI=		Yes
-MODPY_SETUPTOOLS=	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =	setuptools
 
 RUN_DEPENDS=		devel/py-asn1${MODPY_FLAVOR}
 

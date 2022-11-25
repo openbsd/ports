@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	3.7.0
 DISTNAME =		h5py-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://www.h5py.org/
 MAINTAINER =		Martin Reindl <martin@catai.org>
@@ -16,9 +16,8 @@ COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
 
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =	setuptools
 MODPY_PI =		Yes
-MODPY_PYTEST =		Yes
 
 FLAVORS =	python3
 FLAVOR =	python3

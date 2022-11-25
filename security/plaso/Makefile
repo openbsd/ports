@@ -1,7 +1,7 @@
 COMMENT =		engine and tools to automate creation of super timeline
 
 MODPY_EGG_VERSION =	20200717
-REVISION =		2
+REVISION =		3
 DISTNAME =		plaso-${MODPY_EGG_VERSION}
 
 CATEGORIES =		security
@@ -18,7 +18,7 @@ DISTNAME =	plaso-${MODPY_EGG_VERSION}
 MASTER_SITES =	https://github.com/log2timeline/plaso/releases/download/${MODPY_EGG_VERSION}/
 
 MODULES =		lang/python
-MODPY_SETUPTOOLS = Yes
+MODPY_PYBUILD =	setuptools
 
 RUN_DEPENDS +=	archivers/py-lz4${MODPY_FLAVOR} \
 		databases/py-redis${MODPY_FLAVOR} \

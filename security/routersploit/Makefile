@@ -4,7 +4,7 @@ MODPY_EGG_VERSION = 3.4.0
 GH_ACCOUNT =	threat9
 GH_PROJECT =	routersploit
 GH_TAGNAME =	v${MODPY_EGG_VERSION}
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	security net
 
@@ -14,7 +14,7 @@ MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =	setuptools
 RUN_DEPENDS =		devel/py-future${MODPY_FLAVOR} \
 			net/py-snmp${MODPY_FLAVOR} \
 			security/py-cryptodome${MODPY_FLAVOR} \

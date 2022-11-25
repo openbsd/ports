@@ -5,7 +5,7 @@ MODPY_EGG_VERSION =	4.0.3
 DISTNAME =	pykeepass-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	security
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://github.com/libkeepass/pykeepass
 
@@ -18,7 +18,7 @@ FLAVORS =	python3
 FLAVOR =	python3
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =	setuptools
 NO_TEST =		Yes
 # tests are not included in pypi tarballs; with a git checkout you can use
 #MODPY_PYTEST_ARGS =tests/tests.py

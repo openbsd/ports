@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	0.6.1
 DISTNAME =		osqp-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
-REVISION =		6
+REVISION =		7
 
 WANTLIB =  pthread
 MAINTAINER =		Paul Irofti <paul@irofti.net>
@@ -22,8 +22,7 @@ RUN_DEPENDS =		math/py-numpy${MODPY_FLAVOR}	\
 			devel/py-future${MODPY_FLAVOR}
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =	setuptools
 
 FLAVORS =		python3
 FLAVOR =		python3

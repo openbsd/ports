@@ -3,7 +3,7 @@ COMMENT =	subdomain scanner
 MODPY_EGG_VERSION =	5.3.0
 
 DISTNAME =	knockpy-${MODPY_EGG_VERSION}
-REVISION =	0
+REVISION =	1
 
 GH_ACCOUNT =	guelfoweb
 GH_PROJECT =	knock
@@ -18,7 +18,7 @@ PERMIT_PACKAGE=	Yes
 
 MODULES =		lang/python
 
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =	setuptools
 
 RUN_DEPENDS =		devel/py-colorama${MODPY_FLAVOR} \
 			graphics/py-matplotlib${MODPY_FLAVOR} \

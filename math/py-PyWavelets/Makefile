@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	1.1.1
 DISTNAME =		PyWavelets-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
-REVISION =		5
+REVISION =		6
 
 WANTLIB =  pthread
 MAINTAINER =		Paul Irofti <paul@irofti.net>
@@ -25,7 +25,6 @@ BUILD_DEPENDS =		lang/cython${MODPY_FLAVOR} \
 TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR}
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =	setuptools
 
 .include <bsd.port.mk>

@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	1.1.1
 
 DISTNAME =		requests-aws4auth-${MODPY_EGG_VERSION}
 PKGNAME =		${MODPY_PY_PREFIX}requests-aws4auth-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		security
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =	setuptools
 
 RUN_DEPENDS =		www/py-requests${MODPY_FLAVOR}
 BUILD_DEPENDS =		${RUN_DEPENDS}

@@ -3,7 +3,7 @@ COMMENT =	Digital Forensics Windows Registry (dfWinReg)
 MODPY_EGG_VERSION = 20200415
 DISTNAME =	dfwinreg-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	security
 
@@ -21,7 +21,7 @@ MODULES =	lang/python
 FLAVORS =	python3
 FLAVOR =	python3
 
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =	setuptools
 RUN_DEPENDS =		devel/py-construct${MODPY_FLAVOR} \
 			devel/py-dtfabric${MODPY_FLAVOR} \
 			devel/py-six${MODPY_FLAVOR} \

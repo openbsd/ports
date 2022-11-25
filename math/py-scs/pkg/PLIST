@@ -4,13 +4,13 @@
 @so lib/python${MODPY_VERSION}/site-packages/_scs_indirect.${MODPY_PYC_MAGIC_TAG}so
 @so lib/python${MODPY_VERSION}/site-packages/_scs_python.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scs/
-lib/python${MODPY_VERSION}/site-packages/scs-2.1.1.post2-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/scs-2.1.1.post2-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/scs-2.1.1.post2-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/scs-2.1.1.post2-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/scs-2.1.1.post2-py${MODPY_VERSION}.egg-info/not-zip-safe
-lib/python${MODPY_VERSION}/site-packages/scs-2.1.1.post2-py${MODPY_VERSION}.egg-info/requires.txt
-lib/python${MODPY_VERSION}/site-packages/scs-2.1.1.post2-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/scs-2.1.1.post2.dist-info/
+lib/python${MODPY_VERSION}/site-packages/scs-2.1.1.post2.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/scs-2.1.1.post2.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/scs-2.1.1.post2.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/scs-2.1.1.post2.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/scs-2.1.1.post2.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/scs/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/scs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/scs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc

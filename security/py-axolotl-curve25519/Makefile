@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	0.4.1
 POST =			2
 DISTNAME =		python-axolotl-curve25519-${MODPY_EGG_VERSION}.post${POST}
 PKGNAME =		py-axolotl-curve25519-${MODPY_EGG_VERSION}pl${POST}
-REVISION =		6
+REVISION =		7
 
 CATEGORIES =		security
 
@@ -18,7 +18,7 @@ WANTLIB += pthread ${MODPY_WANTLIB}
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PI_DIR =		p/python-axolotl-curve25519
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =	setuptools
 
 FLAVORS =		python3
 FLAVOR =	python3

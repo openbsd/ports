@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	1.0.10
 DISTNAME =	pycryptodome-test-vectors-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:S/py//}
 EXTRACT_SUFX =	.zip
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	security
 
@@ -20,7 +20,7 @@ FLAVORS =		python3
 FLAVOR =		python3
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =	setuptools
 NO_TEST =		Yes
 
 .include <bsd.port.mk>

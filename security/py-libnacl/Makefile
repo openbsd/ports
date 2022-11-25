@@ -3,7 +3,7 @@ COMMENT=		python bindings for libsodium/tweetnacl based on ctypes
 MODPY_EGG_VERSION=	1.6.1
 DISTNAME=		libnacl-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		6
+REVISION=		7
 
 CATEGORIES=		security
 
@@ -17,8 +17,7 @@ PERMIT_PACKAGE=	Yes
 MODULES=		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =	setuptools
 FLAVORS =		python3
 FLAVOR =		python3
 

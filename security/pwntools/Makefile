@@ -2,7 +2,7 @@ COMMENT =	Pwntools CTF framework and exploit development library
 
 MODPY_EGG_VERSION =	4.3.1
 DISTNAME =	pwntools-${MODPY_EGG_VERSION}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	security
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =	setuptools
 
 RUN_DEPENDS =		devel/capstone/python${MODPY_FLAVOR} \
 			devel/py-dateutil${MODPY_FLAVOR} \

@@ -5,7 +5,7 @@ GH_PROJECT=	yubikeyedup
 GH_COMMIT=	d5044d3fdc10cc59a5213efd53e0f80b2a1096f9
 DISTNAME=	yubikeyedup-0.20201226
 MODPY_EGG_VERSION=0.1
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	security www
 
@@ -15,7 +15,7 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-MODPY_SETUPTOOLS= Yes
+MODPY_PYBUILD =	setuptools
 
 RUN_DEPENDS=	security/py-cryptodome${MODPY_FLAVOR}
 

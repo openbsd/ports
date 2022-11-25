@@ -7,7 +7,7 @@ GH_PROJECT =	oauthlib
 GH_TAGNAME =	v${MODPY_EGG_VERSION}
 
 PKGNAME =	py-oauthlib-${MODPY_EGG_VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	security
 MAINTAINER =	Johan Huldtgren <jhuldtgren@gmail.com>
@@ -16,8 +16,7 @@ MAINTAINER =	Johan Huldtgren <jhuldtgren@gmail.com>
 PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
-MODPY_SETUPTOOLS = Yes
-MODPY_PYTEST =	Yes
+MODPY_PYBUILD =	setuptools
 
 RUN_DEPENDS =	devel/py-blinker${MODPY_FLAVOR} \
 		security/py-cryptography${MODPY_FLAVOR} \

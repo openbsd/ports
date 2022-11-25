@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	1.0.1
 DISTNAME =		python-potr-${MODPY_EGG_VERSION}
 PKGNAME =		py-potr-${MODPY_EGG_VERSION}
 CATEGORIES =		security net
-REVISION =		9
+REVISION =		10
 
 # LGPLv3
 PERMIT_PACKAGE =	Yes
@@ -14,7 +14,7 @@ EXTRACT_SUFX =		.zip
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =	setuptools
 
 FLAVORS =		python3
 FLAVOR =		python3

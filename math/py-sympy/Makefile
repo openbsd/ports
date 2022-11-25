@@ -3,7 +3,7 @@ COMMENT =		computer algebra system (CAS) in Python
 MODPY_EGG_VERSION =	1.7.1
 DISTNAME =		sympy-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		math
 
@@ -18,7 +18,7 @@ FLAVORS =		python3
 FLAVOR =		python3
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =	setuptools
 
 RUN_DEPENDS =		devel/ipython${MODPY_FLAVOR} \
 			math/py-mpmath${MODPY_FLAVOR}

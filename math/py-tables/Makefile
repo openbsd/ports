@@ -4,19 +4,19 @@ MODPY_EGG_VERSION=	3.7.0
 DISTNAME=		tables-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		math
-REVISION=		1
+REVISION=		2
 
-HOMEPAGE=		https://www.pytables.org/
-MAINTAINER=		Martin Reindl <martin@catai.org>
+HOMEPAGE=	https://www.pytables.org/
+MAINTAINER=	Martin Reindl <martin@catai.org>
 
 # BSD
 PERMIT_PACKAGE=	Yes
 
-COMPILER=		base-clang ports-gcc
+COMPILER=	base-clang ports-gcc
 
-MODULES=		lang/python
-MODPY_SETUPTOOLS=	Yes
-MODPY_PI=		Yes
+MODULES=	lang/python
+MODPY_PYBUILD =	setuptools
+MODPY_PI=	Yes
 
 WANTLIB=	pthread ${MODPY_WANTLIB} blosc bz2 hdf5 lzo2
 
@@ -28,6 +28,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 BUILD_DEPENDS+=	lang/cython${MODPY_FLAVOR} \
 		math/py-numpy${MODPY_FLAVOR} \
+		math/py-oldest-supported-numpy${MODPY_FLAVOR} \
 		sysutils/py-packaging${MODPY_FLAVOR}
 
 LIB_DEPENDS+=	archivers/lzo2 \
