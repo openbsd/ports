@@ -1,7 +1,7 @@
 COMMENT-main=	multimedia communication library (SIP, RTP, ICE, etc)
 COMMENT-pjsua=	lightweight sip client
 
-V=		2.12.1
+V=		2.13
 GH_ACCOUNT=	pjsip
 GH_PROJECT=	pjproject
 GH_TAGNAME=	$V
@@ -88,6 +88,7 @@ MODPY_RUNDEP=	No
 TEST_DEPENDS=	${MODPY_RUN_DEPENDS} \
 		pjsip-=$V:${BUILD_PKGPATH}
 ALL_TARGET=	dep all
+# some tests require network
 TEST_TARGET=	selftest
 
 # distributed with a wrapper script that runs the real autoconf script

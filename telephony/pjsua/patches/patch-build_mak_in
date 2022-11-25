@@ -1,11 +1,11 @@
 Index: build.mak.in
 --- build.mak.in.orig
 +++ build.mak.in
-@@ -328,7 +328,6 @@ export APP_LDLIBS := $(PJSUA_LIB_LDLIB) \
- 	$(PJLIB_LDLIB) \
- 	@LIBS@
+@@ -331,7 +331,6 @@ export APP_LDLIBS := $(PJSUA_LIB_LDLIB) \
+         $(PJLIB_LDLIB) \
+         @LIBS@
  export APP_LDXXLIBS := $(PJSUA2_LIB_LDLIB) \
--	-lstdc++ \
- 	$(APP_LDLIBS)
+-        -lstdc++ \
+         $(APP_LDLIBS)
  
  # Here are the variables to use if application is using the library
