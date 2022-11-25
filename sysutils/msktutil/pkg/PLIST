@@ -1,3 +1,2 @@
-@bin bin/msktutil
 @man man/man1/msktutil.1
-sbin/msktutil
+@bin sbin/msktutil
