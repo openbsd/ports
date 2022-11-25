@@ -2,7 +2,7 @@ COMMENT =	UNIX pager optimized for tabular data
 
 GH_ACCOUNT =	okbob
 GH_PROJECT =	pspg
-GH_TAGNAME =	5.5.12
+GH_TAGNAME =	5.5.13
 
 CATEGORIES =	databases
 
