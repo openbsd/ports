@@ -1,9 +1,8 @@
 COMMENT =		threading and multiprocessing eye-candy
 
-MODPY_EGG_VERSION =	4.6.3
+MODPY_EGG_VERSION =	5.0.3
 DISTNAME =		Pebble-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
-REVISION =		0
 
 CATEGORIES =		devel
 
@@ -18,7 +17,6 @@ FLAVORS =		python3
 FLAVOR =		python3
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 
 .include <bsd.port.mk>
