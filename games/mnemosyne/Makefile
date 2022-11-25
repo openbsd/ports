@@ -1,10 +1,9 @@
 COMMENT=	flash-card tool which optimises your learning process
 
-MODPY_EGG_VERSION = 2.8
+MODPY_EGG_VERSION = 2.9
 DISTNAME=	Mnemosyne-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=	games education
-REVISION=	1
 
 HOMEPAGE=	https://www.mnemosyne-proj.org/
 
@@ -18,9 +17,9 @@ MODULES=	lang/python
 # build needs some of the py-qt5 tools; pull them in via
 # py-qtwebengine so that build fails early on arches where
 # qtwebengine isn't available
-BUILD_DEPENDS =	www/py-qtwebengine${MODPY_FLAVOR}
+BUILD_DEPENDS=	www/py-qtwebengine${MODPY_FLAVOR}
 
-MODPY_SETUPTOOLS=yes
+MODPY_PYBUILD=	setuptools
 
 RUN_DEPENDS=	x11/py-qt5${MODPY_FLAVOR}>=5.6 \
 		www/py-qtwebengine${MODPY_FLAVOR} \
@@ -33,7 +32,7 @@ RUN_DEPENDS=	x11/py-qt5${MODPY_FLAVOR}>=5.6 \
 
 NO_TEST=	Yes
 
-MODPY_ADJ_FILES=	mnemosyne/pyqt_ui/mnemosyne
+MODPY_ADJ_FILES= mnemosyne/pyqt_ui/mnemosyne
 
 FIX_CRLF_FILES=	setup.py \
                 mnemosyne/libmnemosyne/__init__.py \
