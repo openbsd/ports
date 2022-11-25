@@ -1,31 +1,32 @@
-COMMENT = high-performance, pure-Python HTTP server used by CherryPy
+COMMENT=	high-performance, pure-Python HTTP server used by CherryPy
 
-MODPY_EGG_VERSION =	8.2.1
-DISTNAME =		cheroot-${MODPY_EGG_VERSION}
-PKGNAME =		py-${DISTNAME}
-REVISION =		6
+MODPY_EGG_VERSION=	9.0.0
+DISTNAME=	cheroot-${MODPY_EGG_VERSION}
+PKGNAME=	py-${DISTNAME}
 
-CATEGORIES =		www
+CATEGORIES=	www
 
-HOMEPAGE =		https://github.com/cherrypy/cheroot
+HOMEPAGE=	https://github.com/cherrypy/cheroot
 
 # custom, MIT-style
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-FLAVORS =		python3
-FLAVOR =		python3
+FLAVORS=	python3
+FLAVOR=		python3
 
-MODULES =		lang/python
+MODULES=	lang/python
 
-MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools_scm
 
-BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}>=1.15.0 \
-			devel/py-setuptools_scm_git_archive${MODPY_FLAVOR}>=1.0
-RUN_DEPENDS =		devel/py-jaraco-functools${MODPY_FLAVOR} \
-			devel/py-more-itertools${MODPY_FLAVOR}>=2.6 \
-			devel/py-six${MODPY_FLAVOR}>=1.11.0
-
-NO_TEST =		Yes
+BUILD_DEPENDS=	devel/py-setuptools_scm_git_archive${MODPY_FLAVOR}>=1.0
+RUN_DEPENDS=	devel/py-jaraco-functools${MODPY_FLAVOR} \
+		devel/py-more-itertools${MODPY_FLAVOR}>=2.6 \
+		devel/py-six${MODPY_FLAVOR}
+TEST_DEPENDS=	security/py-trustme${MODPY_FLAVOR} \
+		net/py-portend${MODPY_FLAVOR} \
+		www/py-requests-unixsocket${MODPY_FLAVOR}
+# devel/py-jaraco-context${MODPY_FLAVOR}
+# textproc/py-jaraco-text${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
