@@ -1,0 +1,17 @@
+From a2cd818c8c4d6a81d565099b01920b8815dea355 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Florian=20M=C3=BCllner?= <fmuellner@gnome.org>
+Date: Fri, 18 Nov 2022 22:40:31 +0100
+Subject: [PATCH] inhibitShorcutsDialog: Fix permission check
+
+Index: js/ui/inhibitShortcutsDialog.js
+--- js/ui/inhibitShortcutsDialog.js.orig
++++ js/ui/inhibitShortcutsDialog.js
+@@ -143,7 +143,7 @@ var InhibitShortcutsDialog = GObject.registerClass({
+ 
+                 if (permissions[appId] === undefined) // Not found
+                     this._dialog.open();
+-                else if (permissions[appId] === GRANTED)
++                else if (permissions[appId][0] === GRANTED)
+                     this._emitResponse(DialogResponse.ALLOW);
+                 else
+                     this._emitResponse(DialogResponse.DENY);
