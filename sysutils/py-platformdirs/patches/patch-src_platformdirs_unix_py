@@ -1,0 +1,12 @@
+Index: src/platformdirs/unix.py
+--- src/platformdirs/unix.py.orig
++++ src/platformdirs/unix.py
+@@ -7,7 +7,7 @@ from pathlib import Path
+ 
+ from .api import PlatformDirsABC
+ 
+-if sys.platform.startswith("linux"):  # pragma: no branch # no op check, only to please the type checker
++if sys.platform.startswith("linux") or sys.platform.startswith("openbsd"):  # pragma: no branch # no op check, only to please the type checker
+     from os import getuid
+ else:
+ 
