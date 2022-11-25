@@ -1,6 +1,6 @@
 COMMENT=	access a SQLite3 database from ruby
 
-DISTNAME=	sqlite3-1.4.2
+DISTNAME=	sqlite3-1.5.4
 CATEGORIES=	databases
 
 MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
@@ -14,8 +14,10 @@ MODULES=		lang/ruby
 
 WANTLIB=		sqlite3
 LIB_DEPENDS=		databases/sqlite3
+BUILD_DEPENDS=		devel/ruby-mini_portile2,${MODRUBY_FLAVOR}>=2.7.0,<3.0
 
 CONFIGURE_STYLE=	ruby gem ext
+CONFIGURE_ARGS=		--enable-system-libraries
 
 MODRUBY_TEST=	rake
 TEST_DEPENDS=	devel/ruby-mocha,${MODRUBY_FLAVOR} \

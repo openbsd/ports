@@ -1,0 +1,15 @@
+Make mini_portile2 a development dependency, as it is only needed
+for building.
+
+Index: .metadata
+--- .metadata.orig
++++ .metadata
+@@ -19,7 +19,7 @@ dependencies:
+     - - "~>"
+       - !ruby/object:Gem::Version
+         version: 2.8.0
+-  type: :runtime
++  type: :development
+   prerelease: false
+   version_requirements: !ruby/object:Gem::Requirement
+     requirements:
