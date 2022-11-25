@@ -29,6 +29,8 @@ ${GEM_LIB}/gems/${DISTNAME}/docs/restart.md
 ${GEM_LIB}/gems/${DISTNAME}/docs/signals.md
 ${GEM_LIB}/gems/${DISTNAME}/docs/stats.md
 ${GEM_LIB}/gems/${DISTNAME}/docs/systemd.md
+${GEM_LIB}/gems/${DISTNAME}/docs/testing_benchmarks_local_files.md
+${GEM_LIB}/gems/${DISTNAME}/docs/testing_test_rackup_ci_files.md
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma.rb
@@ -52,7 +54,10 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/puma/events.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/io_buffer.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/jruby_restart.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/json_serialization.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/puma/launcher/
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/launcher.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/puma/launcher/bundle_pruner.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/puma/log_writer.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/minissl/
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/minissl.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/minissl/context_builder.rb
@@ -61,7 +66,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/puma/plugin/
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/plugin.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/plugin/tmp_restart.rb
 @so ${GEM_LIB}/gems/${DISTNAME}/lib/puma/puma_http11.so
-${GEM_LIB}/gems/${DISTNAME}/lib/puma/queue_close.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/rack/
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/rack/builder.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/rack/urlmap.rb
