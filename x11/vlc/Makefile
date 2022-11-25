@@ -1,8 +1,7 @@
 COMMENT-main=	VideoLAN client; multimedia player
 COMMENT-jack=	JACK audio output module for VLC
 
-V=		3.0.17.3
-REVISION-main=	1
+V=		3.0.18
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-jack=	vlc-jack-${V}
@@ -27,7 +26,7 @@ WANTLIB-main=	EGL GL ICE Qt5Core Qt5Gui Qt5Svg Qt5Widgets Qt5X11Extras \
 		Xdamage Xdmcp Xext Xfixes Xi Xinerama Xpm Xrandr Xrender \
 		Xxf86vm aom archive ass atk-1.0 atk-bridge-2.0 avahi-client \
 		avahi-common avcodec avformat avutil b2 bluray brotlidec \
-		brotlienc bz2 c cairo cairo-gobject cddb charset crypto dav1d \
+		brotlienc bz2 c cairo cairo-gobject cddb crypto dav1d \
 		double-conversion drm dvbpsi dvdnav dvdread ebml epoxy execinfo \
 		expat ffi fontconfig freetype fribidi gbm gcrypt gdk-3 \
 		gdk_pixbuf-2.0 gio-2.0 glapi glib-2.0 gmodule-2.0 gmp gnutls \

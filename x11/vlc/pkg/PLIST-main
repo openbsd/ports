@@ -475,6 +475,7 @@ share/apps/solid/actions/vlc-openvcd.desktop
 share/doc/vlc/
 share/doc/vlc/fortunes.txt
 share/doc/vlc/libvlc/
+share/doc/vlc/libvlc/CMakeLists.txt
 share/doc/vlc/libvlc/QtPlayer/
 share/doc/vlc/libvlc/QtPlayer/LICENSE
 share/doc/vlc/libvlc/QtPlayer/QtVLC.pro
@@ -484,6 +485,7 @@ share/doc/vlc/libvlc/QtPlayer/player.h
 share/doc/vlc/libvlc/gtk_player.c
 share/doc/vlc/libvlc/libvlc_DVD_ripper.c
 share/doc/vlc/libvlc/vlc-thumb.c
+share/doc/vlc/libvlc/win_player.c
 share/doc/vlc/libvlc/wx_player.cpp
 share/icons/hicolor/128x128/apps/vlc-kb.png
 share/icons/hicolor/128x128/apps/vlc-xmas.png
