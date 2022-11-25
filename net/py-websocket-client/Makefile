@@ -1,15 +1,14 @@
 COMMENT =		WebSocket client for Python
 
-MODPY_EGG_VERSION =	0.37.0
-DISTNAME =		websocket_client-${MODPY_EGG_VERSION}
+MODPY_EGG_VERSION =	1.4.2
+DISTNAME =		websocket-client-${MODPY_EGG_VERSION}
 PKGNAME =		py-websocket-client-${MODPY_EGG_VERSION}
-REVISION =		9
 
 CATEGORIES =		net
 
-HOMEPAGE =		https://github.com/liris/websocket-client
+HOMEPAGE =		https://github.com/websocket-client/websocket-client/
 
-# LGPLv2.1+
+# Apache 2
 PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
@@ -20,6 +19,9 @@ MODULES =		lang/python
 FLAVORS =		python3
 FLAVOR =		python3
 
-RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR}
+# optional (also optional: wsaccel, not ported)
+RUN_DEPENDS =		net/py-socks${MODPY_FLAVOR}
+
+TEST_DEPENDS =		net/py-websockets${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
