@@ -2466,6 +2466,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-instance-cap
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-instance-credit-specification.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-instance-event-start-time.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-instance-event-window.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-instance-maintenance-options.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-instance-metadata-options.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-instance-placement.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-ipam-pool.rst
@@ -2651,6 +2652,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/describe-services.r
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/describe-task-definition.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/describe-task-sets.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/describe-tasks.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/execute-command.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/list-account-settings.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/list-attributes.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/list-clusters.rst
