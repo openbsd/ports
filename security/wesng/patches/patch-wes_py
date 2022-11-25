@@ -3,7 +3,7 @@
 Index: wes.py
 --- wes.py.orig
 +++ wes.py
-@@ -232,7 +232,7 @@ def main():
+@@ -354,7 +354,7 @@ def main():
  # Load definitions.zip containing a CSV with vulnerabilities collected by the WES collector module
  # and a file determining the minimum wes.py version the definitions are compatible with.
  def load_definitions(definitions):
@@ -12,7 +12,7 @@ Index: wes.py
          files = definitionszip.namelist()
  
          # Version_X.XX.txt
-@@ -684,7 +684,7 @@ def check_file_exists(value):
+@@ -865,7 +865,7 @@ def check_file_exists(value):
  
  # Validate file existence for definitions file
  def check_definitions_exists(value):
