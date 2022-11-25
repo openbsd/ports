@@ -27,7 +27,8 @@ WANTLIB =	pthread hdf5 hdf5_hl
 MAKE_ENV =	HDF5_DIR=${PREFIX}
 
 BUILD_DEPENDS = lang/cython${MODPY_FLAVOR} \
-                math/py-numpy${MODPY_FLAVOR} \
+		math/py-oldest-supported-numpy${MODPY_FLAVOR} \
+		math/py-numpy${MODPY_FLAVOR} \
 		devel/py-pkgconfig${MODPY_FLAVOR}
 
 LIB_DEPENDS =	math/hdf5

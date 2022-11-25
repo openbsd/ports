@@ -24,6 +24,7 @@ FLAVORS =		python3
 FLAVOR =		python3
 
 BUILD_DEPENDS=		lang/cython${MODPY_FLAVOR} \
+			math/py-oldest-supported-numpy${MODPY_FLAVOR} \
 			math/py-numpy${MODPY_FLAVOR}
 
 RUN_DEPENDS=		lang/cython${MODPY_FLAVOR} \
