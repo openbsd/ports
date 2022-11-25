@@ -5,7 +5,7 @@ GH_ACCOUNT =		robhagemans
 GH_PROJECT =		pcbasic
 GH_TAGNAME =		v${MODPY_EGG_VERSION}
 DISTNAME =		pcbasic-${MODPY_EGG_VERSION}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =	lang
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =	setuptools
 
 RUN_DEPENDS =	devel/py-parallel${MODPY_FLAVOR} \
 		devel/py-serial${MODPY_FLAVOR} \

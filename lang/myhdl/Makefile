@@ -3,18 +3,18 @@ COMMENT=	Python as a hardware description and verification language
 MODPY_EGG_VERSION=0.11
 DISTNAME=	myhdl-${MODPY_EGG_VERSION}
 CATEGORIES=	lang
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	http://www.myhdl.org/
 
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
-MODPY_PI =		Yes
+MODULES =	lang/python
+MODPY_PI =	Yes
+MODPY_PYBUILD =	setuptools
 
-MODPY_SETUPTOOLS =	Yes
-TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR}
+MODPY_TEST_DIR =	${WRKSRC}/myhdl/test/core
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/myhdl/test/core/test_Cosimulation.py \
@@ -24,10 +24,5 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/myhdl/
 	cd ${WRKSRC}/example/ && umask 022 && pax -rw . \
 		${PREFIX}/share/examples/myhdl/
-
-do-test: fake
-	cd ${WRKSRC}/myhdl/test/core && \
-		env PYTHONPATH="${WRKINST}${MODPY_LIBDIR}/site-packages/" \
-			${MAKE_PROGRAM}
 
 .include <bsd.port.mk>

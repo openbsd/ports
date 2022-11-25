@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	0.0.1.post7
 DISTNAME =	secularize-${MODPY_EGG_VERSION}
 PKGNAME =	${DISTNAME:S/post//}
 EPOCH =		0
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	lang
 
@@ -19,9 +19,11 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
+NO_TEST =		Yes
 
-TEST_DEPENDS =		devel/py-docopt${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-cparser${MODPY_FLAVOR} \
+			devel/py-docopt${MODPY_FLAVOR}
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/secularize/utils.py
