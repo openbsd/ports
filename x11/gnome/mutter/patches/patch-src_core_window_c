@@ -1,0 +1,24 @@
+From accf532a29ea9a1d70880dfaa1834050aa3ae7be Mon Sep 17 00:00:00 2001
+From: John Wudrick <prochronism@gmail.com>
+Date: Fri, 4 Nov 2022 02:35:12 +0000
+Subject: [PATCH] window: Update ongoing edge resistance flags with input
+
+Index: src/core/window.c
+--- src/core/window.c.orig
++++ src/core/window.c
+@@ -6021,6 +6021,7 @@ queue_update_move (MetaWindow              *window,
+   MetaCompositor *compositor;
+   MetaLaters *laters;
+ 
++  window->display->grab_last_edge_resistance_flags = flags;
+   window->display->grab_latest_motion_x = x;
+   window->display->grab_latest_motion_y = y;
+ 
+@@ -6166,6 +6167,7 @@ queue_update_resize (MetaWindow              *window,
+   MetaCompositor *compositor;
+   MetaLaters *laters;
+ 
++  window->display->grab_last_edge_resistance_flags = flags;
+   window->display->grab_latest_motion_x = x;
+   window->display->grab_latest_motion_y = y;
+ 
