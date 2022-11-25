@@ -1,12 +1,11 @@
 COMMENT=	lightweight caching DNS forwarder, DHCP and TFTP server
 
-DISTNAME=	dnsmasq-2.86
-REVISION=	1
+DISTNAME=	dnsmasq-2.87
 CATEGORIES=	net
-MASTER_SITES=	https://www.thekelleys.org.uk/dnsmasq/
+MASTER_SITES=	https://thekelleys.org.uk/dnsmasq/
 EXTRACT_SUFX=	.tar.xz
 
-HOMEPAGE=	https://www.thekelleys.org.uk/dnsmasq/doc.html
+HOMEPAGE=	https://dnsmasq.org/
 
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
