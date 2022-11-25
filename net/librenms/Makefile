@@ -1,5 +1,8 @@
 COMMENT=	auto-discovering network management/monitoring system
 
+# requires php 8.1, which is not available on sparc64 (no fibers support)
+NOT_FOR_ARCHS=	sparc64
+
 # changelogs at https://github.com/librenms/librenms/releases
 GH_ACCOUNT=	librenms
 GH_PROJECT=	librenms
