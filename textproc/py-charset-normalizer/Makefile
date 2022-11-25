@@ -1,10 +1,9 @@
 COMMENT =	character set detector library
 
-MODPY_EGG_VERSION =	2.0.12
+MODPY_EGG_VERSION =	3.0.1
 
 DISTNAME =	charset-normalizer-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
 
 CATEGORIES =	textproc
 
@@ -17,6 +16,9 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
+MAKE_ENV =		CHARSET_NORMALIZER_USE_MYPYC=1
+
+BUILD_DEPENDS =		devel/py-mypy${MODPY_FLAVOR}
 TEST_DEPENDS =		devel/py-test-cov${MODPY_FLAVOR}
 
 FLAVOR =		python3

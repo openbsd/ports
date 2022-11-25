@@ -44,7 +44,9 @@ lib/python${MODPY_VERSION}/site-packages/charset_normalizer/cli/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/charset_normalizer/cli/normalizer.py
 lib/python${MODPY_VERSION}/site-packages/charset_normalizer/constant.py
 lib/python${MODPY_VERSION}/site-packages/charset_normalizer/legacy.py
+@so lib/python${MODPY_VERSION}/site-packages/charset_normalizer/md.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/charset_normalizer/md.py
+@so lib/python${MODPY_VERSION}/site-packages/charset_normalizer/md__mypyc.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/charset_normalizer/models.py
 lib/python${MODPY_VERSION}/site-packages/charset_normalizer/py.typed
 lib/python${MODPY_VERSION}/site-packages/charset_normalizer/utils.py
