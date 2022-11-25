@@ -3,7 +3,6 @@
 # Makefile when editing this one (ESR versions not always the same).
 
 COMMENT =		modified version of Firefox ESR for browsing over Tor
-ONLY_FOR_ARCHS =	amd64
 
 MOZILLA_VERSION =	${TB_VERSION}
 MOZILLA_PROJECT =	${BROWSER_NAME}

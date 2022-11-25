@@ -6,6 +6,9 @@ BROWSER_NAME =		tor-browser
 TB_VERSION =		12.0a4
 TB_PREFIX =		tb
 
+# keep meta/tor-browser in sync
+ONLY_FOR_ARCHS ?=	amd64
+
 SUBST_VARS +=		BROWSER_NAME TB_VERSION
 
 ADDON_NAME ?=
