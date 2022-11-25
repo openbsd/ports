@@ -6,15 +6,7 @@ Package gsettings-desktop-schemas>=40.alpha was not found in the pkg-config sear
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -14,7 +14,6 @@ mutter_builddir = meson.current_build_dir()
- 
- # generic version requirements
- lcms2_req = '>= 2.6'
--colord_req = '>= 1.4.5'
- fribidi_req = '>= 1.0.0'
- glib_req = '>= 2.69.0'
- gi_req = '>= 0.9.5'
-@@ -25,7 +24,7 @@ uprof_req = '>= 0.3'
+@@ -25,7 +25,7 @@ uprof_req = '>= 0.3'
  pango_req = '>= 1.46.0'
  cairo_req = '>= 1.10.0'
  pangocairo_req = '>= 1.20'
@@ -23,11 +15,14 @@ Index: meson.build
  json_glib_req = '>= 0.12.0'
  xcomposite_req = '>= 0.4'
  xkbcommon_req = '>= 0.4.3'
-@@ -125,7 +124,6 @@ xkbcommon_dep = dependency('xkbcommon', version: xkbco
+@@ -125,8 +125,8 @@ xkbcommon_dep = dependency('xkbcommon', version: xkbco
  ice_dep = dependency('ice')
  atk_dep = dependency('atk', version: atk_req)
  dbus_dep = dependency('dbus-1')
 -colord_dep = dependency('colord', version: colord_req)
- lcms2_dep = dependency('lcms2', version: lcms2_req)
+-lcms2_dep = dependency('lcms2', version: lcms2_req)
++colord_dep = []
++lcms2_dep = []
  
  have_wayland = get_option('wayland')
+ # For now always require X11 support

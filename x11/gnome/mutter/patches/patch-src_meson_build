@@ -3,14 +3,6 @@ No colord (needs GUdev) on OpenBSD (XXX add HAVE_COLORD to meson_options.txt)
 Index: src/meson.build
 --- src/meson.build.orig
 +++ src/meson.build
-@@ -22,7 +22,6 @@ mutter_pkg_deps = [
- ]
- 
- mutter_pkg_private_deps = [
--  colord_dep,
-   lcms2_dep,
-   gmodule_no_export_dep,
-   gnome_settings_daemon_dep,
 @@ -188,15 +187,6 @@ mutter_sources = [
    'backends/meta-backend-private.h',
    'backends/meta-barrier.c',
