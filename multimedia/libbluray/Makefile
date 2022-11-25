@@ -1,6 +1,6 @@
 COMMENT =		library supporting Blu-ray playback
 
-V =			1.3.1
+V =			1.3.3
 DISTNAME =		libbluray-${V}
 CATEGORIES =		multimedia
 
@@ -22,11 +22,8 @@ LIB_DEPENDS =		converters/libiconv \
 			textproc/libxml
 BUILD_DEPENDS =		devel/bison
 
-AUTOCONF_VERSION =	2.69
-AUTOMAKE_VERSION =	1.16
-
 SEPARATE_BUILD =	Yes
-CONFIGURE_STYLE =	autoreconf
+CONFIGURE_STYLE =	gnu
 YACC =			${LOCALBASE}/bin/bison -y
 CONFIGURE_ARGS +=	--disable-bdjava-jar \
 			--disable-doxygen-doc \
