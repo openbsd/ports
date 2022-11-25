@@ -11,7 +11,7 @@ PKGNAME-utils=	poppler-utils-$V
 PKGNAME-qt5=	poppler-qt5-$V
 PKGNAME-qt6=	poppler-qt6-$V
 
-REVISION-main =	0
+REVISION-main =	1
 
 EXTRACT_SUFX=	.tar.xz
 
@@ -103,5 +103,9 @@ CONFIGURE_ARGS+=-DENABLE_UNSTABLE_API_ABI_HEADERS=True \
 		-DCMAKE_DISABLE_FIND_PACKAGE_NSS3=True \
 		-DOpenJPEG_DIR=${LOCALBASE}/lib/openjp2 \
 		-DX11BASE=${X11BASE}
+
+# if gperf is found at configure time then junked, it will triggers undefined
+# symbols
+CONFIGURE_ARGS +=	-DRUN_GPERF_IF_PRESENT=OFF
 
 .include <bsd.port.mk>
