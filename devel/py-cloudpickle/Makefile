@@ -3,7 +3,7 @@ MODPY_EGG_VERSION =	1.5.0
 DISTNAME =	cloudpickle-${MODPY_EGG_VERSION}
 PKGNAME =	py-cloudpickle-${MODPY_EGG_VERSION}
 CATEGORIES =	devel
-REVISION =	2
+REVISION =	3
 
 HOMEPAGE =	https://github.com/cloudpipe/cloudpickle
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -11,10 +11,9 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # BSD
 PERMIT_PACKAGE =	Yes
 
-MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
-MODPY_PI =		Yes
-MODPY_PYTEST =		Yes
+MODULES =	lang/python
+MODPY_PYBUILD =	setuptools
+MODPY_PI =	Yes
 
 FLAVORS =	python3
 FLAVOR =	python3
@@ -23,6 +22,6 @@ TEST_DEPENDS =	devel/py-mock${MODPY_FLAVOR} \
 		sysutils/py-psutil${MODPY_FLAVOR} \
 		www/py-tornado${MODPY_FLAVOR}
 
-TEST_ENV =	PYTHONPATH=".:tests:tests/cloudpickle_testpkg"
+MODPY_TEST_LIBDIR = ".:tests:tests/cloudpickle_testpkg"
 
 .include <bsd.port.mk>

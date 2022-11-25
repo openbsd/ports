@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	1.5.5
 DISTNAME =		pkgconfig-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://github.com/matze/pkgconfig
 
@@ -13,9 +13,9 @@ MAINTAINER =		Martin Reindl <martin@catai.org>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-MODULES =		lang/python
-MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODULES =	lang/python
+MODPY_PI =	Yes
+MODPY_PYBUILD =	poetry-core
 
 FLAVORS =	python3
 FLAVOR =	python3
