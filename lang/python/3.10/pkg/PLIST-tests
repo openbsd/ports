@@ -1,7 +1,7 @@
 @option no-default-conflict
 @option is-branch
 @conflict python-tests-${VERSION_SPEC}
-@conflict python-<3.10.4p2
+@conflict python->=3.10,<3.10.4p2
 lib/python3.10/ctypes/test/
 lib/python3.10/ctypes/test/__init__.py
 lib/python3.10/ctypes/test/__main__.py
