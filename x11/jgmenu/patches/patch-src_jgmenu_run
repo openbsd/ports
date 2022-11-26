@@ -1,7 +1,7 @@
 Index: src/jgmenu_run
 --- src/jgmenu_run.orig
 +++ src/jgmenu_run
-@@ -57,7 +57,7 @@ then
+@@ -58,7 +58,7 @@ then
  	if test -e ${JGMENU_LOCKFILE}
  	then
  		send_tint2_env_vars_to_jgmenu
