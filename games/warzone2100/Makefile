@@ -3,6 +3,7 @@ ONLY_FOR_ARCHS=	amd64 i386
 COMMENT=	3D realtime strategy on a future earth
 
 V=		4.3.2
+REVISION=	0
 DISTNAME=	warzone2100-$V
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/Warzone2100/warzone2100/releases/download/$V/
@@ -38,9 +39,11 @@ LIB_DEPENDS=	audio/libogg \
 		net/miniupnp/miniupnpc \
 		security/libsodium
 
-BUILD_DEPENDS=	archivers/unzip \
+BUILD_DEPENDS=	archivers/libzip \
+		archivers/unzip \
 		archivers/zip \
 		devel/gettext,-tools \
+		devel/sdl2 \
 		textproc/asciidoc \
 		textproc/asciidoctor
 RUN_DEPENDS=	devel/desktop-file-utils \
