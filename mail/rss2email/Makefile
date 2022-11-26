@@ -1,9 +1,8 @@
 COMMENT =	convert RSS/Atom newsfeeds to email
 
-MODPY_EGG_VERSION = 3.13.1
+MODPY_EGG_VERSION = 3.14
 DISTNAME =	rss2email-${MODPY_EGG_VERSION}
 CATEGORIES =	mail www
-REVISION =	3
 
 MAINTAINER =	Kaashif Hymabaccus <kaashif@kaashif.co.uk>
 
