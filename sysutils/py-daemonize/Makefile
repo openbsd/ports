@@ -3,7 +3,7 @@ COMMENT =		library to enable your code run as a daemon process
 MODPY_EGG_VERSION =	2.5.0
 DISTNAME =		daemonize-${MODPY_EGG_VERSION}
 PKGNAME =		py-daemonize-${MODPY_EGG_VERSION}
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		sysutils devel
 
@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 FLAVORS =		python3
 FLAVOR =	python3

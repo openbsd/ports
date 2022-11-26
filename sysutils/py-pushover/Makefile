@@ -1,7 +1,7 @@
 COMMENT =	send messages via Pushover
 
 MODPY_EGG_VERSION =	0.4
-REVISION =	3
+REVISION =	4
 
 EPOCH =		0
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 FLAVORS =	python3
 FLAVOR =	python3

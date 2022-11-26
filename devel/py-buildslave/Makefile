@@ -2,7 +2,7 @@ COMMENT=	buildworker for the buildbot CI system
 
 MODPY_EGG_VERSION=	3.6.1
 DISTNAME=	buildbot-worker-${MODPY_EGG_VERSION}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	devel
 
@@ -17,7 +17,7 @@ MODPY_PI =	Yes
 
 MODULES=	lang/python
 
-MODPY_SETUPTOOLS=	Yes
+MODPY_PYBUILD =	setuptools
 
 RUN_DEPENDS=	devel/py-twisted${MODPY_FLAVOR}>=17.9.0 \
 		devel/py-future${MODPY_FLAVOR} \

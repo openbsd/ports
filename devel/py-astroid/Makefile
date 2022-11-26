@@ -5,7 +5,7 @@ MODPY_EGG_VERSION =	2.5.2
 DISTNAME =		astroid-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		1
+REVISION =		2
 
 # LGPLv2.1+
 PERMIT_PACKAGE =	Yes
@@ -16,8 +16,7 @@ FLAVORS =		python3
 FLAVOR  =		python3
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 MODPY_PYTEST_ARGS =	tests/unittest*.py
 
 BUILD_DEPENDS =		devel/py-test-runner${MODPY_FLAVOR}

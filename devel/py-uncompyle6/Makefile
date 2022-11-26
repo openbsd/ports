@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	3.8.0
 DISTNAME =		uncompyle6-${MODPY_EGG_VERSION}
 PKGNAME =		py-uncompyle6-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://github.com/rocky/python-uncompyle6/
 
@@ -20,7 +20,7 @@ RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR} \
 			devel/py-xdis${MODPY_FLAVOR}
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 MODPY_PYTEST_ARGS =	pytest
 
 FLAVORS =		python3

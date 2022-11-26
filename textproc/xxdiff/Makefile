@@ -5,7 +5,7 @@ GH_PROJECT=	xxdiff
 GH_COMMIT=	f0d6fd44b3f31a852cbd765596b6db05a8e78276
 
 DISTNAME=	xxdiff-20220318
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	textproc x11
 
@@ -27,7 +27,7 @@ BUILD_DEPENDS=	devel/bison
 USE_GMAKE=	Yes
 MAKE_FLAGS=	MAKEDIR=${WRKDIST}
 MODPY_ADJ_FILES= ../bin/termdiff
-MODPY_SETUPTOOLS= Yes
+MODPY_PYBUILD=	setuptools
 NO_TEST=	Yes
 
 post-configure:

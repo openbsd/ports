@@ -1,7 +1,7 @@
 COMMENT=		terminal session recorder
 
 MODPY_EGG_VERSION=	2.2.0
-REVISION=		0
+REVISION=		1
 
 # MODPY_PI does not work
 GH_PROJECT=		asciinema
@@ -17,7 +17,6 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 
-MODPY_SETUPTOOLS=	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD=		setuptools
 
 .include <bsd.port.mk>

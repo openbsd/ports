@@ -7,7 +7,7 @@ GH_ACCOUNT =	robotframework
 GH_PROJECT =	robotframework
 GH_TAGNAME =	v${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	5
+REVISION =	6
 
 CATEGORIES =	devel
 
@@ -18,7 +18,7 @@ FLAVORS =               python3
 FLAVOR =	python3
 
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 TEST_DEPENDS =		${FULLPKGNAME}:${FULLPKGPATH}
 
 # There is also a suite of acceptance tests, but they are *very* slow and

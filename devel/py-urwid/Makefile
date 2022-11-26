@@ -5,7 +5,7 @@ DISTNAME =	urwid-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	devel
 EPOCH =		0
-REVISION =	5
+REVISION =	6
 
 HOMEPAGE =	http://urwid.org/
 
@@ -19,10 +19,9 @@ WANTLIB += pthread ${MODPY_WANTLIB}
 TEST_DEPENDS =	devel/py-gobject3${MODPY_FLAVOR}
 
 MODULES =	lang/python
-MODPY_SETUPTOOLS = Yes
+MODPY_PYBUILD =		setuptools
 MODPY_PI =	Yes
 
-MODPY_PYTEST =	Yes
 MODPY_PYTEST_ARGS = urwid/tests
 
 FLAVORS =	python3

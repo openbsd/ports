@@ -3,7 +3,7 @@ COMMENT =		job scheduling for humans
 MODPY_EGG_VERSION = 	1.1.0
 DISTNAME =		schedule-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		sysutils
 
@@ -13,9 +13,8 @@ MAINTAINER =		Martin Reindl <martin@catai.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 MODPY_PI =		Yes
-MODPY_PYTEST =		Yes
 
 TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR} \
 			devel/py-test${MODPY_FLAVOR}

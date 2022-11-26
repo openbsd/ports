@@ -3,7 +3,7 @@ COMMENT =		NetBox API client library
 MODPY_EGG_VERSION =	6.6.1
 DISTNAME =		pynetbox-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		sysutils net
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 MODPY_PI =		Yes
 MODPY_PYTEST_ARGS =	--ignore=tests/integration tests
 

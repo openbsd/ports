@@ -3,7 +3,7 @@ COMMENT =	Python AST that abstracts the underlying Python version
 MODPY_EGG_VERSION =	0.5.3
 DISTNAME =	gast-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 
@@ -18,7 +18,6 @@ FLAVORS =	python3
 FLAVOR  =	python3
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 
 .include <bsd.port.mk>

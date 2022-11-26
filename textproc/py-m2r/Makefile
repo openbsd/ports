@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	0.2.1
 
 DISTNAME =		m2r-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel textproc
 
@@ -15,8 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =		textproc/py-mistune${MODPY_FLAVOR} \
 			textproc/py-docutils${MODPY_FLAVOR}

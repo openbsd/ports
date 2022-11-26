@@ -3,7 +3,7 @@ COMMENT =		python client for the prometheus monitoring system
 MODPY_EGG_VERSION =	0.14.1
 DISTNAME =		prometheus_client-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		sysutils
 
@@ -14,8 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 
 FLAVORS =		python3
 FLAVOR =		python3

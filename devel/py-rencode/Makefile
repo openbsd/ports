@@ -3,7 +3,7 @@ COMMENT =		module for fast object serialization similar to bencode
 MODPY_EGG_VERSION =	1.0.6
 DISTNAME =		rencode-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		devel
 
@@ -17,8 +17,7 @@ FLAVOR =	python3
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 
 WANTLIB +=		pthread ${MODPY_WANTLIB}
 

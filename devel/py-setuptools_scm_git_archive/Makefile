@@ -3,7 +3,7 @@ COMMENT =	setuptools_scm plugin for git archives
 MODPY_EGG_VERSION =	1.4
 DISTNAME =	setuptools_scm_git_archive-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYTEST_ARGS =	tests.py
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}
 RUN_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}

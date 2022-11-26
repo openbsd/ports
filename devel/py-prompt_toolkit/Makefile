@@ -1,29 +1,28 @@
-COMMENT=		python library for building powerful interactive CLI
+COMMENT=	python library for building powerful interactive CLI
 
 # check ipython requirements; as of 2022/07, wants <3.1
 MODPY_EGG_VERSION=	3.0.30
-DISTNAME=		prompt_toolkit-${MODPY_EGG_VERSION}
-PKGNAME=		py-${DISTNAME}
-EPOCH=			1
-REVISION=		0
+DISTNAME=	prompt_toolkit-${MODPY_EGG_VERSION}
+PKGNAME=	py-${DISTNAME}
+EPOCH=		1
+REVISION=	1
 
-CATEGORIES=		devel
+CATEGORIES=	devel
 
-HOMEPAGE=		https://github.com/prompt-toolkit/python-prompt-toolkit
+HOMEPAGE=	https://github.com/prompt-toolkit/python-prompt-toolkit
 
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MODULES=		lang/python
-MODPY_PI=		Yes
-MODPY_SETUPTOOLS=	Yes
-MODPY_PYTEST=		Yes
-PORTHOME=		${WRKDIR}
+MODULES=	lang/python
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools
+PORTHOME=	${WRKDIR}
 
-RUN_DEPENDS=		devel/py-wcwidth${MODPY_FLAVOR} \
-			textproc/py-pygments${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/py-wcwidth${MODPY_FLAVOR} \
+		textproc/py-pygments${MODPY_FLAVOR}
 
-FLAVORS=		python3
-FLAVOR =		python3
+FLAVORS=	python3
+FLAVOR=		python3
 
 .include <bsd.port.mk>

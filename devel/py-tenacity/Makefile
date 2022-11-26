@@ -3,7 +3,7 @@ COMMENT =		Python module to retry code until it succeeds
 MODPY_EGG_VERSION =	8.0.1
 DISTNAME =		tenacity-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 MAINTAINER =		Mikolaj Kucharski <mikolaj@kucharski.name>
 
@@ -15,8 +15,7 @@ HOMEPAGE =		https://github.com/jd/tenacity
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 MODPY_PI =		Yes
 
 BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}

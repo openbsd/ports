@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	0.29
 DISTNAME =		pyelftools-${MODPY_EGG_VERSION}
 PKGNAME =		py-elftools-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://github.com/eliben/pyelftools
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -17,9 +17,8 @@ FLAVOR =		python3
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 # test.test_pubtypes.TestEmptyPubtypes is known failure to due missing files in distfile
-MODPY_PYTEST =		Yes
 
 EXAMPLEDIR =	${PREFIX}/share/examples/${MODPY_PY_PREFIX}elftools
 

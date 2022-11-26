@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	1.8.2
 
 DISTNAME =		pyperclip-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		sysutils
 HOMEPAGE =		https://github.com/asweigart/pyperclip
@@ -17,7 +17,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =		x11/xclip
 

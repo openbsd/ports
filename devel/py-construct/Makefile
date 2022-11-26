@@ -4,7 +4,7 @@ MODPY_EGG_VERSION = 2.10.68
 
 DISTNAME =	construct-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 EPOCH =		0
 
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 MODPY_PI =		Yes
 
 FLAVORS =		python3

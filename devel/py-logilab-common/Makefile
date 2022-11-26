@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	1.4.0
 DISTNAME=		logilab-common-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		devel
-REVISION=		7
+REVISION=		8
 
 HOMEPAGE=		https://www.logilab.org/project/logilab-common
 
@@ -18,7 +18,7 @@ TEST_DEPENDS =		${BASE_PKGPATH}=${MODPY_EGG_VERSION} \
 			devel/py-tz${MODPY_FLAVOR}
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 FLAVORS =		python3
 FLAVOR =		python3

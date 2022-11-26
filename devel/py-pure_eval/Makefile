@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	0.2.2
 
 DISTNAME =	pure_eval-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 
@@ -16,12 +16,9 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools_scm
 
 FLAVORS =		python3
 FLAVOR =		python3
-
-BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}
 
 .include <bsd.port.mk>

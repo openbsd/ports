@@ -16,7 +16,6 @@ MODPY_PI =	Yes
 RUN_DEPENDS =	devel/coccinelle
 NO_TEST =	Yes
 
-#MODPY_SETUPTOOLS = Yes
 MODPY_PYBUILD =	setuptools
 
 post-configure:

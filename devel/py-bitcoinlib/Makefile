@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	0.11.0
 
 DISTNAME =		python-bitcoinlib-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/^python-/py-/}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		devel
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE =	yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 FLAVORS =	python3
 FLAVOR =	python3

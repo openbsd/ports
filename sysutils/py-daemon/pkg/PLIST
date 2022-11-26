@@ -1,25 +1,28 @@
 @conflict py-daemon-*
 @pkgpath sysutils/py-daemon
-lib/python${MODPY_VERSION}/
-lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/daemon/
 lib/python${MODPY_VERSION}/site-packages/daemon/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/daemon/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/daemon/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/daemon/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/daemon/${MODPY_PYCACHE}_metadata.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/daemon/${MODPY_PYCACHE}_metadata.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/daemon/${MODPY_PYCACHE}daemon.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/daemon/${MODPY_PYCACHE}daemon.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/daemon/${MODPY_PYCACHE}pidfile.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/daemon/${MODPY_PYCACHE}pidfile.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/daemon/${MODPY_PYCACHE}runner.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/daemon/${MODPY_PYCACHE}runner.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/daemon/_metadata.py
 lib/python${MODPY_VERSION}/site-packages/daemon/daemon.py
 lib/python${MODPY_VERSION}/site-packages/daemon/pidfile.py
 lib/python${MODPY_VERSION}/site-packages/daemon/runner.py
-lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
-lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
-lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_EGG_VERSION}.dist-info/LICENSE.ASF-2
+lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_EGG_VERSION}.dist-info/LICENSE.GPL-3
+lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_EGG_VERSION}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_EGG_VERSION}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_EGG_VERSION}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_EGG_VERSION}.dist-info/top_level.txt
 share/doc/${MODPY_PY_PREFIX}daemon/
 share/doc/${MODPY_PY_PREFIX}daemon/FAQ

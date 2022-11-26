@@ -3,7 +3,7 @@ COMMENT =	parse, read and write Microsoft OLE2 files
 MODPY_EGG_VERSION = 0.46
 DISTNAME =	olefile-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	5
+REVISION =	6
 
 GH_ACCOUNT =	decalage2
 GH_PROJECT =	olefile
@@ -19,7 +19,7 @@ MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
-MODPY_SETUPTOOLS = Yes
+MODPY_PYBUILD =		setuptools
 
 FLAVORS =	python3
 FLAVOR =	python3

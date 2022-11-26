@@ -3,7 +3,7 @@ COMMENT=	provide information about the OS platform
 MODPY_EGG_VERSION=	1.7.0
 DISTNAME=	distro-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	sysutils
 
@@ -15,8 +15,7 @@ FLAVOR=			python3
 
 MODULES=		lang/python
 MODPY_PI=		Yes
-MODPY_SETUPTOOLS=	Yes
-MODPY_PYTEST=		Yes
+MODPY_PYBUILD=		setuptools
 
 TEST_DEPENDS=		devel/py-test-cov${MODPY_FLAVOR}
 

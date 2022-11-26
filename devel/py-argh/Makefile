@@ -5,7 +5,7 @@ DISTNAME =	argh-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	devel
 HOMEPAGE =	http://packages.python.org/argh
-REVISION =	6
+REVISION =	7
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes
@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 MODULES =	lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =		devel/py-argcomplete${MODPY_FLAVOR}
 

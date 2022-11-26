@@ -3,7 +3,7 @@ COMMENT =	simple VTXXX-compatible terminal emulator
 MODPY_EGG_VERSION = 0.8.1
 DISTNAME =	pyte-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =	lang/python
 
 MODPY_PI =	Yes
-MODPY_SETUPTOOLS = Yes
+MODPY_PYBUILD =		setuptools
 
 BUILD_DEPENDS =	devel/py-test-runner${MODPY_FLAVOR}
 

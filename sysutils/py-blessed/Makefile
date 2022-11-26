@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	1.19.0
 
 DISTNAME =	blessed-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	sysutils
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 # depends on some Windows things?
 NO_TEST =		Yes

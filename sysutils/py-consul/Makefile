@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	1.1.0
 
 DISTNAME =	python-consul-${MODPY_EGG_VERSION}
 PKGNAME =	py-consul-${MODPY_EGG_VERSION}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	sysutils
 
@@ -18,8 +18,7 @@ FLAVOR =	python3
 FLAVORS =	python3
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =	www/py-requests${MODPY_FLAVOR} \
 		devel/py-six${MODPY_FLAVOR}

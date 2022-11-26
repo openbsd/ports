@@ -9,7 +9,7 @@ DISTNAME =		distcc-${VERSION}
 EPOCH =			0
 CATEGORIES =		devel net
 
-REVISION =		4
+REVISION =		5
 
 HOMEPAGE =		https://distcc.github.io/
 
@@ -22,7 +22,7 @@ MULTI_PACKAGES =	-main -gtk -server
 
 MODULES =		lang/python
 MODPY_EGG_VERSION =	${VERSION}
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 # Only -main needs an RDEP
 MODPY_RUNDEP =		No

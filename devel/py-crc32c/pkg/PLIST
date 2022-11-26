@@ -1,6 +1,10 @@
-lib/python${MODPY_VERSION}/site-packages/crc32c-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/crc32c-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/crc32c-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/crc32c-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/crc32c-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/crc32c-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/crc32c-${MODPY_EGG_VERSION}.dist-info/AUTHORS.google-crc32c
+lib/python${MODPY_VERSION}/site-packages/crc32c-${MODPY_EGG_VERSION}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/crc32c-${MODPY_EGG_VERSION}.dist-info/LICENSE.google-crc32c
+lib/python${MODPY_VERSION}/site-packages/crc32c-${MODPY_EGG_VERSION}.dist-info/LICENSE.slice-by-8
+lib/python${MODPY_VERSION}/site-packages/crc32c-${MODPY_EGG_VERSION}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/crc32c-${MODPY_EGG_VERSION}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/crc32c-${MODPY_EGG_VERSION}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/crc32c-${MODPY_EGG_VERSION}.dist-info/top_level.txt
 @so lib/python${MODPY_VERSION}/site-packages/crc32c.${MODPY_PYC_MAGIC_TAG}so

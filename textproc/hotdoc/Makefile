@@ -3,7 +3,7 @@ COMMENT=		documentation tool micro-framework
 MODPY_EGG_VERSION=	0.13.7
 DISTNAME=		hotdoc-${MODPY_EGG_VERSION}
 #PKGNAME=		py-${DISTNAME}
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		textproc
 
@@ -20,7 +20,7 @@ WANTLIB += xml2
 MODULES=		lang/python
 
 MODPY_PI=		Yes
-MODPY_SETUPTOOLS=	Yes
+MODPY_PYBUILD=		setuptools
 
 BUILD_DEPENDS=		devel/cmake
 

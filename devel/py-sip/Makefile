@@ -8,7 +8,7 @@ MODPY_EGG_VERSION=	6.6.2
 DISTNAME=	sip-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 EPOCH=		0
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 
@@ -27,7 +27,7 @@ FLAVORS=	python3
 FLAVOR=		python3
 
 MODPY_PI=	Yes
-MODPY_SETUPTOOLS= Yes
+MODPY_PYBUILD=	setuptools
 
 RUN_DEPENDS=	sysutils/py-packaging${MODPY_FLAVOR} \
 		textproc/py-toml${MODPY_FLAVOR}

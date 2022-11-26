@@ -4,7 +4,7 @@ DISTNAME =		python-magic-${MODPY_EGG_VERSION}
 PKGNAME =		py-magic-${MODPY_EGG_VERSION}
 EPOCH =			0
 CATEGORIES =		devel
-REVISION =		5
+REVISION =		6
 
 MAINTAINER =		Brian Callahan <bcallah@openbsd.org>
 
@@ -16,7 +16,7 @@ FLAVOR =	python3
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 SUBST_VARS +=		MODPY_FLAVOR
 

@@ -1,30 +1,29 @@
-COMMENT=		platform-independent file locking for Python
+COMMENT=	platform-independent file locking for Python
 
 MODPY_EGG_VERSION=	0.12.2
-DISTNAME=		lockfile-${MODPY_EGG_VERSION}
-PKGNAME=		py-${DISTNAME}
-REVISION=		7
+DISTNAME=	lockfile-${MODPY_EGG_VERSION}
+PKGNAME=	py-${DISTNAME}
+REVISION=	8
 
-CATEGORIES=		sysutils
+CATEGORIES=	sysutils
 
-HOMEPAGE=		https://launchpad.net/pylockfile
+HOMEPAGE=	https://launchpad.net/pylockfile
 
 # MIT
 PERMIT_PACKAGE=	Yes
 
-MODULES=		lang/python
+MODULES=	lang/python
 
-BUILD_DEPENDS=		devel/py-pbr${MODPY_FLAVOR}
-RUN_DEPENDS=		devel/py-pbr${MODPY_FLAVOR}
+BUILD_DEPENDS=	devel/py-pbr${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/py-pbr${MODPY_FLAVOR}
 
-MODPY_PI=		Yes
-MODPY_SETUPTOOLS=	Yes
-MODPY_PYTEST=		Yes
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools
 
-FLAVORS=		python3
-FLAVOR =		python3
+FLAVORS=	python3
+FLAVOR=		python3
 
-TEST_DEPENDS=		textproc/py-sphinx${MODPY_FLAVOR}
+TEST_DEPENDS=	textproc/py-sphinx${MODPY_FLAVOR}
 
 pre-test:
 	sed -i "s,^sphinx.*,sphinx," ${WRKSRC}/test-requirements.txt

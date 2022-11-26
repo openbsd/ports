@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	0.4.0
 
 DISTNAME =		crayons-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 
@@ -18,7 +18,7 @@ MAINTAINER =		Wen Heping <wenheping2000@hotmail.com>
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =		devel/py-colorama${MODPY_FLAVOR}
 

@@ -3,7 +3,7 @@ COMMENT =		Jupyter core package
 MODPY_EGG_VERSION =	4.6.3
 DISTNAME =		jupyter_core-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		devel
 
@@ -14,8 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 MODPY_PYTEST_ARGS =	jupyter_core
 
 RUN_DEPENDS =		devel/py-traitlets${MODPY_FLAVOR}

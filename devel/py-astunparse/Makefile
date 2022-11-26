@@ -4,7 +4,7 @@ COMMENT=		AST unparser for Python
 MODPY_EGG_VERSION=	1.6.3
 DISTNAME=		astunparse-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		devel
 
@@ -21,9 +21,8 @@ FLAVOR=			python3
 MODULES=		lang/python
 
 MODPY_PI=		Yes
-MODPY_SETUPTOOLS=	Yes
+MODPY_PYBUILD=		setuptools
 
-MODPY_PYTEST=		Yes
 TEST_ENV=		PYTHONPATH="${WRKSRC}/lib"
 
 RUN_DEPENDS +=		devel/py-six${MODPY_FLAVOR} \

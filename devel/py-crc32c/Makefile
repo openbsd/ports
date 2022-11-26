@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	2.3
 
 DISTNAME =	crc32c-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 
@@ -18,8 +18,7 @@ MODULES =		lang/python
 WANTLIB =	pthread ${MODPY_WANTLIB}
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 
 FLAVORS =	python3
 FLAVOR =	python3

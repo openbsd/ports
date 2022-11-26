@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	2.3.0
 DISTNAME =		python-daemon-${MODPY_EGG_VERSION}
 PKGNAME =		py-daemon-${MODPY_EGG_VERSION}
 CATEGORIES =		sysutils
-REVISION =		1
+REVISION =		2
 
 MAINTAINER =		Martin Reindl <martin@catai.org>
 
@@ -18,8 +18,7 @@ FLAVOR =		python3
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 
 BUILD_DEPENDS = 	textproc/py-docutils${MODPY_FLAVOR}
 

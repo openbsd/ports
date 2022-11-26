@@ -3,7 +3,7 @@ COMMENT =	apertium stream format parser
 DISTNAME =	apertium-streamparser-${MODPY_EGG_VERSION}
 
 MODPY_EGG_VERSION =	5.0.2
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =	textproc
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 MAKE_ENV =		LC_CTYPE=en_US.UTF-8
 
