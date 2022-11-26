@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1465 2022/11/23 20:47:27 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.1466 2022/11/26 13:58:11 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -566,7 +566,6 @@ my $stem_extensions = {
 	'py-waitress' => 'py3-waitress',
 	'py-webencodings' => 'py3-webencodings',
 	'py-xmltodict' => 'py3-xmltodict',
-	'py-zc-lockfilezc.lockfile' => 'py3-zc-lockfilezc.lockfile',
 	'py-jaraco-functools' => 'py3-jaraco-functools',
 	'py-logilab-common' => 'py3-logilab-common',
 	'py-memcached' => 'py3-memcached',
@@ -752,6 +751,8 @@ my $stem_extensions = {
 	'dleyna-core' => 'dleyna',
 	'gnome-todo' => 'endeavour',
 	'go-ipfs' => 'kubo',
+	'py-zc-lockfilezc.lockfile' => 'py3-zc-lockfile',
+	'py3-zc-lockfilezc.lockfile' => 'py3-zc-lockfile',
 };
 
 my $obsolete_reason = {};
