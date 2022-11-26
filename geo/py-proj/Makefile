@@ -3,7 +3,7 @@ COMMENT =		Pyrex generated python interface to PROJ.4 library
 MODPY_EGG_VERSION =	3.3.1
 DISTNAME =		pyproj-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/:S/.post/pl/}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		geo
 
@@ -23,7 +23,7 @@ MODPY_TEST_DIR =	${WRKSRC}/test
 FLAVORS =		python3
 FLAVOR =		python3
 
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 BUILD_DEPENDS +=	${RUN_DEPENDS}
 TEST_DEPENDS =		${BUILD_PKGPATH} \
