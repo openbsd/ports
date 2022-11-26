@@ -174,15 +174,18 @@ _MODPY_PRE_BUILD_STEPS += ; if [ -e ${WRKSRC}/pyproject.toml ] && \
 .  if ${MODPY_PYBUILD:L} != "no"
 ERRORS +=		"Fatal: don't set both MODPY_PYBUILD and MODPY_SETUPTOOLS"
 .  endif
-# The setuptools module provides a package locator (site.py) that is
-# required at runtime for the pkg_resources stuff to work
+# For Python 2, setuptools provides a package locator that
+# is required at runtime for the pkg_resources stuff to work
+# For Python 3, normally importlib.metadata (in Python core
+# in newer versions) or importlib_metadata (external module)
+# are used in preference.
 .  if ${MODPY_MAJOR_VERSION} == 2
 MODPY_SETUPUTILS_DEPEND ?= devel/py2-setuptools
+MODPY_RUN_DEPENDS +=	${MODPY_SETUPUTILS_DEPEND}
 .  else
 MODPY_SETUPUTILS_DEPEND ?= devel/py-setuptools${MODPY_FLAVOR}
 .  endif
 
-MODPY_RUN_DEPENDS +=	${MODPY_SETUPUTILS_DEPEND}
 BUILD_DEPENDS +=	${MODPY_SETUPUTILS_DEPEND}
 MODPY_SETUPUTILS =	Yes
 
@@ -213,8 +216,6 @@ BUILD_DEPENDS +=	devel/py-hatchling${MODPY_FLAVOR}
 .  elif ${MODPY_PYBUILD} == poetry-core
 BUILD_DEPENDS +=	devel/py-poetry-core${MODPY_FLAVOR}
 .  elif ${MODPY_PYBUILD} == setuptools || ${MODPY_PYBUILD} == setuptools_scm
-#XXX trying without nojunk to see how it goes: may need to reinstate if there are issues
-#DPB_PROPERTIES +=	nojunk
 BUILD_DEPENDS +=	devel/py-setuptools${MODPY_FLAVOR} \
 			devel/py-wheel${MODPY_FLAVOR}
 .    if ${MODPY_PYBUILD} == setuptools_scm

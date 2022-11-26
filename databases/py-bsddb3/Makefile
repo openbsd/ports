@@ -3,7 +3,7 @@ COMMENT=		Python bindings for Oracle Berkeley DB
 MODPY_EGG_VERSION=	6.0.1
 DISTNAME=		bsddb3-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		7
+REVISION=		8
 
 CATEGORIES=		databases devel
 

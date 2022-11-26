@@ -3,7 +3,7 @@ COMMENT =		Python module to read and work with PE files
 MODPY_EGG_VERSION =	2018.8.8
 DISTNAME =		pefile-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		security
 

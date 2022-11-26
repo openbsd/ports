@@ -5,7 +5,7 @@ COMMENT =	pretty-print tabular data
 MODPY_EGG_VERSION =	0.8.10
 DISTNAME =	tabulate-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 

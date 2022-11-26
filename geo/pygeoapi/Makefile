@@ -2,7 +2,7 @@ COMMENT =		OGC API server implementation
 
 MODPY_EGG_VERSION =	0.12.0
 DISTNAME =		pygeoapi-${MODPY_EGG_VERSION}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		geo devel
 

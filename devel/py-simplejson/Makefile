@@ -3,6 +3,7 @@ COMMENT =		JSON encoder/decoder
 MODPY_EGG_VERSION =	3.18.0
 DISTNAME =		simplejson-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

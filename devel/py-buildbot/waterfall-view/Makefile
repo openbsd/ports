@@ -1,5 +1,5 @@
 COMMENT =	waterfall view web interface plugin for buildbot
-REVISION =	0
+REVISION =	1
 
 PART = waterfall-view
 BUILD_DEPENDS =	devel/py-buildbot/pkg

@@ -19,7 +19,7 @@ COMMENT =	flashcard learning system with spaced repetition
 #
 DISTNAME =	anki-2.1.16
 EXTRACT_SUFX =	-source.tgz
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	education
 

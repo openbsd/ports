@@ -3,7 +3,7 @@ COMMENT =	Python bindings for capstone
 MODPY_EGG_VERSION = ${GH_TAGNAME}
 
 PKGNAME =	py-${DISTNAME}
-REVISION =	3
+REVISION =	4
 
 MODULES =	lang/python
 USE_GMAKE =	Yes

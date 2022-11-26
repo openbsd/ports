@@ -1,5 +1,5 @@
 COMMENT =	console view web interface plugin for buildbot
-REVISION =	0
+REVISION =	1
 
 PART = console-view
 BUILD_DEPENDS =	devel/py-buildbot/pkg

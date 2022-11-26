@@ -3,7 +3,7 @@ COMMENT =	web-application vulnerability scanner
 MODPY_EGG_VERSION =	3.0.1
 DISTNAME =	wapiti3-${MODPY_EGG_VERSION}
 PKGNAME =	wapiti-${MODPY_EGG_VERSION}
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	security www
 

@@ -3,7 +3,7 @@ BROKEN =	needs updating for Python 3.10
 COMMENT =	Scientific PYthon Development EnviRonment
 
 MODPY_EGG_VERSION =	3.3.3
-REVISION =	8
+REVISION =	9
 DISTNAME =	spyder-${MODPY_EGG_VERSION}
 PKGNAME =	spyder3-${MODPY_EGG_VERSION}
 

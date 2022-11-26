@@ -2,7 +2,7 @@ COMMENT =		parse CSS3 Selectors and translates them to XPath 1.0
 
 MODPY_EGG_VERSION =	1.1.0
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 GH_ACCOUNT =		scrapy
 GH_PROJECT =		cssselect

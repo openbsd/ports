@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	1.2.1
 DISTNAME =		cvxpy-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
-REVISION =		0
+REVISION =		1
 
 MAINTAINER =		Paul Irofti <paul@irofti.net>
 

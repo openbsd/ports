@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	1.3.5
 DISTNAME =		Bottleneck-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
 CATEGORIES =		math
-REVISION =		0
+REVISION =		1
 
 MAINTAINER =		Martin Reindl <martin@catai.org>
 

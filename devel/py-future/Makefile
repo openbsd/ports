@@ -3,7 +3,7 @@ COMMENT =	compatibility layer between Python 2 and Python 3
 MODPY_EGG_VERSION =	0.18.2
 DISTNAME =	future-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 HOMEPAGE =	http://python-future.org/

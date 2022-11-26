@@ -1,7 +1,7 @@
 COMMENT =		library to retrieve system information and utilisation
 
 MODPY_EGG_VERSION =	5.8.0
-REVISION =		1
+REVISION =		2
 
 GH_ACCOUNT =		giampaolo
 GH_PROJECT =		psutil
