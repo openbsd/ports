@@ -1,16 +1,13 @@
 COMMENT-main =		like Prometheus, but for logs
 COMMENT-promtail =	tails log files and pushes them to Loki
-REVISION-main =		0
-REVISION-promtail =	0
 
 GH_ACCOUNT =	grafana
 GH_PROJECT =	loki
-GH_TAGNAME =	v2.6.1
+GH_TAGNAME =	v2.7.0
 
 CATEGORIES =	sysutils
 
 HOMEPAGE =	https://grafana.com/oss/loki/
-MASTER_SITES =	https://ports.lucasraab.me/
 
 MULTI_PACKAGES =	-main -promtail
 
