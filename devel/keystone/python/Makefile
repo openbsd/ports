@@ -4,23 +4,23 @@ COMMENT =	Python bindings for keystone
 
 MODPY_EGG_VERSION = ${GH_TAGNAME}
 
-PKGNAME =       py-${DISTNAME}
-REVISION =      2
+PKGNAME =	py-${DISTNAME}
+REVISION =	2
 
-MODULES =      devel/cmake \
-	       lang/python
+MODULES =	devel/cmake \
+		lang/python
 MODPY_SETUPTOOLS =Yes
 
 WANTLIB +=	${COMPILER_LIBCXX} m
 
-WRKDIST =       ${WRKDIR}/${DISTNAME}/bindings/python
+WRKDIST =	${WRKDIR}/${DISTNAME}/bindings/python
 
-FLAVORS =       python3
+FLAVORS =	python3
 FLAVOR ?=
 
 COMPILER =	base-clang ports-gcc
 
-RUN_DEPENDS =   devel/keystone/main
+RUN_DEPENDS =	devel/keystone/main
 
 NO_TEST =	Yes
 
