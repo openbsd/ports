@@ -33,6 +33,8 @@ lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}feedcore.${MODP
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}feedcore.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}jsonconfig.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}jsonconfig.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}libgpod_ctypes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}libgpod_ctypes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}log.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}log.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}minidb.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -167,6 +169,7 @@ lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/services.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/shownotes.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/widgets.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/jsonconfig.py
+lib/python${MODPY_VERSION}/site-packages/gpodder/libgpod_ctypes.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/log.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/minidb.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/model.py

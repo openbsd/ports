@@ -1,7 +1,6 @@
 COMMENT=		media aggregator and podcast client
 
-MODPY_EGG_VERSION=	3.10.21
-REVISION=		3
+MODPY_EGG_VERSION=	3.11.0
 
 GH_ACCOUNT=		gpodder
 GH_PROJECT=		gpodder
