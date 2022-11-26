@@ -1,8 +1,7 @@
 COMMENT =		CLAT configuration daemon for OpenBSD
-V =			1.3
+V =			1.4
 DISTNAME =		gelatod-${V}
 CATEGORIES =		net
-REVISION =		1
 
 # BSD 2-clause
 PERMIT_PACKAGE =	Yes
