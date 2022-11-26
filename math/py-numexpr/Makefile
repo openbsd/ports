@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	2.8.3
 DISTNAME =		numexpr-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
-REVISION =		0
+REVISION =		1
 
 # MIT
 PERMIT_PACKAGE =	Yes
@@ -23,7 +23,9 @@ MODPY_PYTEST_ARGS =	build/lib.openbsd-${OSREV}-${ARCH}-cpython-${MODPY_MAJORMINO
 
 FIX_CRLF_FILES =	pyproject.toml
 
-RUN_DEPENDS =		math/py-numpy${MODPY_FLAVOR}
-BUILD_DEPENDS =		${RUN_DEPENDS}
+RUN_DEPENDS =		math/py-numpy${MODPY_FLAVOR} \
+			sysutils/py-packaging${MODPY_FLAVOR}
+BUILD_DEPENDS =		${RUN_DEPENDS} \
+			math/py-oldest-supported-numpy${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
