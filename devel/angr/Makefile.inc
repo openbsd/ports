@@ -13,7 +13,7 @@ HOMEPAGE ?=		https://github.com/angr/${ANGR_PYTHON_MODULE}/
 
 MODULES ?=		lang/python
 MODPY_PI ?=		Yes
-MODPY_SETUPTOOLS ?=	Yes
+MODPY_PYBUILD ?=	setuptools
 
 MODPY_EGG_VERSION ?=	9.0.6642
 DISTNAME ?=		${ANGR_PYTHON_MODULE}-${MODPY_EGG_VERSION}

@@ -1,7 +1,7 @@
 COMMENT =	multi-architecture binary analysis toolkit
 
 ANGR_PYTHON_MODULE =	angr
-REVISION =		3
+REVISION =		4
 
 HOMEPAGE =	https://angr.io/
 
