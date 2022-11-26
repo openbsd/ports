@@ -1,0 +1,19 @@
+From c57f1f0ca10e61771b459c857182c23626607312 Mon Sep 17 00:00:00 2001
+From: deedy5 <65482418+deedy5@users.noreply.github.com>
+Date: Thu, 20 Oct 2022 18:26:18 +0000
+Subject: [PATCH] Allow charset normalizer >=2 and <4 (#6261)
+
+Index: requests/__init__.py
+--- requests/__init__.py.orig
++++ requests/__init__.py
+@@ -80,8 +80,8 @@ def check_compatibility(urllib3_version, chardet_versi
+     elif charset_normalizer_version:
+         major, minor, patch = charset_normalizer_version.split(".")[:3]
+         major, minor, patch = int(major), int(minor), int(patch)
+-        # charset_normalizer >= 2.0.0 < 3.0.0
+-        assert (2, 0, 0) <= (major, minor, patch) < (3, 0, 0)
++        # charset_normalizer >= 2.0.0 < 4.0.0
++        assert (2, 0, 0) <= (major, minor, patch) < (4, 0, 0)
+     else:
+         raise Exception("You need either charset_normalizer or chardet installed")
+ 
