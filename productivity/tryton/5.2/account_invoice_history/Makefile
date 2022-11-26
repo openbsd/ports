@@ -1,6 +1,6 @@
 MODPY_EGG_VERSION =	5.2.2
 TRYTON_MODULE =		account_invoice_history
-REVISION =		2
+REVISION =		3
 
 TRYTON_DEPENDS +=	account_invoice \
 			party

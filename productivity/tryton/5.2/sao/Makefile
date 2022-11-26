@@ -3,6 +3,7 @@ COMMENT =		tryton web client
 VERSION =		5.2.18
 DEPVERSION =		6
 DISTNAME =		tryton-sao-${VERSION}
+REVISION =		0
 
 EXTRACT_SUFX =		.tgz
 WRKDIST =		${WRKDIR}/package

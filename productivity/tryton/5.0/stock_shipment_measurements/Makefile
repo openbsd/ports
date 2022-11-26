@@ -1,6 +1,6 @@
 MODPY_EGG_VERSION =	5.0.4
 TRYTON_MODULE =		stock_shipment_measurements
-REVISION =		0
+REVISION =		1
 
 TRYTON_DEPENDS +=	product \
 			product_measurements \

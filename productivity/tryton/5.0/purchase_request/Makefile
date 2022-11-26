@@ -1,6 +1,6 @@
 MODPY_EGG_VERSION =	5.0.5
 TRYTON_MODULE =		purchase_request
-REVISION =		0
+REVISION =		1
 
 TRYTON_DEPENDS +=	purchase \
 			product

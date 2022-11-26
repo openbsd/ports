@@ -1,6 +1,6 @@
 MODPY_EGG_VERSION =	5.0.3
 TRYTON_MODULE =		account_credit_limit
-REVISION =		0
+REVISION =		1
 
 TRYTON_DEPENDS +=	account \
 			company \

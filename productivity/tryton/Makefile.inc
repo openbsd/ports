@@ -41,6 +41,6 @@ TEST_DEPENDS +=		productivity/tryton/${TRYTON_VERSION}/${_m}${TRYTON_VERSION_COM
 
 .if defined(TRYTON_PY) && ${TRYTON_PY:L} == "yes"
 MODULES +=		lang/python
-MODPY_SETUPTOOLS ?=	Yes
+MODPY_PYBUILD ?=	setuptools
 TEST_ENV +=		DB_NAME=:memory:
 .endif

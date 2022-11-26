@@ -1,6 +1,6 @@
 MODPY_EGG_VERSION =	5.0.9
 TRYTON_MODULE =		stock_supply
-REVISION =		0
+REVISION =		1
 
 TRYTON_DEPENDS +=	account \
 			party \
