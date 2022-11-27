@@ -2,7 +2,7 @@ ONLY_FOR_ARCHS =	amd64 i386
 
 GH_ACCOUNT =		dhewm
 GH_PROJECT =		dhewm3
-GH_TAGNAME =		1.5.1
+GH_TAGNAME =		1.5.2
 
 COMMENT =		open-source version of Doom 3
 
@@ -15,9 +15,7 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += SDL2 c curl jpeg m ogg openal pthread vorbis vorbisfile
-WANTLIB += z
-WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} SDL2 c curl m openal z
 
 MODULES =		devel/cmake
 
@@ -25,9 +23,7 @@ COMPILER =		base-clang ports-gcc
 
 LIB_DEPENDS =		devel/sdl2 \
 			audio/openal \
-			net/curl \
-			audio/libvorbis \
-			graphics/jpeg
+			net/curl
 
 NO_TEST =		Yes
 
