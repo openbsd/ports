@@ -26,6 +26,8 @@ lib/python${MODPY_VERSION}/site-packages/libnacl/${MODPY_PYCACHE}sealed.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/libnacl/${MODPY_PYCACHE}sealed.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libnacl/${MODPY_PYCACHE}secret.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/libnacl/${MODPY_PYCACHE}secret.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/libnacl/${MODPY_PYCACHE}secret_easy.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/libnacl/${MODPY_PYCACHE}secret_easy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libnacl/${MODPY_PYCACHE}sign.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/libnacl/${MODPY_PYCACHE}sign.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libnacl/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -40,6 +42,7 @@ lib/python${MODPY_VERSION}/site-packages/libnacl/encode.py
 lib/python${MODPY_VERSION}/site-packages/libnacl/public.py
 lib/python${MODPY_VERSION}/site-packages/libnacl/sealed.py
 lib/python${MODPY_VERSION}/site-packages/libnacl/secret.py
+lib/python${MODPY_VERSION}/site-packages/libnacl/secret_easy.py
 lib/python${MODPY_VERSION}/site-packages/libnacl/sign.py
 lib/python${MODPY_VERSION}/site-packages/libnacl/utils.py
 lib/python${MODPY_VERSION}/site-packages/libnacl/version.py
