@@ -37,7 +37,7 @@ SHA256 (cargo/heck-0.3.2.tar.gz) = h8v0VGA1a33uteNBW1VjMIwKmwV8heErBq1VH5jQpqw=
 SHA256 (cargo/hermit-abi-0.1.17.tar.gz) = WspVZfdg+1siDkmdcnEO0Vb9t05jFlnpk3fZ6/vROug=
 SHA256 (cargo/itoa-0.4.7.tar.gz) = 3SUDYCGw3oigr/a4UAUVY8ZRbQv1P4Y4k47bud5zJzY=
 SHA256 (cargo/lazy_static-1.4.0.tar.gz) = 4qutI/vEKzcA8vJ5hE3IMq2ysusGmy35GPRVxOGMxkY=
-SHA256 (cargo/libc-0.2.89.tar.gz) = U4wJLlWG9M3X3YB4xKeSIOPhaIgCGBJNy86GDw6pOMY=
+SHA256 (cargo/libc-0.2.137.tar.gz) = /H/MYgo7/3zdejZb4zdslxka6szCpgPmAJUeRSYVv4k=
 SHA256 (cargo/log-0.4.13.tar.gz) = /POAXUSAu1uGBw3P654ssuvBSK23U8XMpfiE0dZaQrI=
 SHA256 (cargo/memchr-2.3.4.tar.gz) = DuHEeqolbsq8rqNR6uSpsB7zntgQAE4pjSUR7ShLFSU=
 SHA256 (cargo/memmap-0.7.0.tar.gz) = ZYX9lee7UNbMMeINTPmvtOK6FsWEb8dnk/ESGNqcR1s=
@@ -147,7 +147,7 @@ SIZE (cargo/heck-0.3.2.tar.gz) = 54718
 SIZE (cargo/hermit-abi-0.1.17.tar.gz) = 10065
 SIZE (cargo/itoa-0.4.7.tar.gz) = 12099
 SIZE (cargo/lazy_static-1.4.0.tar.gz) = 10443
-SIZE (cargo/libc-0.2.89.tar.gz) = 515952
+SIZE (cargo/libc-0.2.137.tar.gz) = 606185
 SIZE (cargo/log-0.4.13.tar.gz) = 36015
 SIZE (cargo/memchr-2.3.4.tar.gz) = 23077
 SIZE (cargo/memmap-0.7.0.tar.gz) = 15214
