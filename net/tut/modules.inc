@@ -1,5 +1,5 @@
 MODGO_MODULES =	\
-	github.com/!rasmus!lindroth/go-mastodon	 v0.0.10 \
+	github.com/!rasmus!lindroth/go-mastodon	 v0.0.11 \
 	github.com/atotto/clipboard		 v0.1.4 \
 	github.com/aymerick/douceur		 v0.2.0 \
 	github.com/davecgh/go-spew		 v1.1.1 \

@@ -1,9 +1,9 @@
 COMMENT =	TUI for Mastodon with vim inspired keys
 
 MODGO_MODNAME =	github.com/RasmusLindroth/tut
-MODGO_VERSION =	v0.0.0-20221120184442-72ed90eafe00
+MODGO_VERSION =	v0.0.0-20221125152502-404e21ee1010
 
-DISTNAME =	tut-1.0.19
+DISTNAME =	tut-1.0.22
 
 CATEGORIES =	net
 
