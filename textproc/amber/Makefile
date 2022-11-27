@@ -2,10 +2,7 @@ COMMENT =		code search and replace tool
 
 GH_ACCOUNT =		dalance
 GH_PROJECT =		amber
-GH_TAGNAME =		v${V}
-
-V =			0.5.9
-PKGNAME =		amber-${V}
+GH_TAGNAME =		v0.5.9
 REVISION =		0
 
 CATEGORIES =		textproc sysutils
