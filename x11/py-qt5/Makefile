@@ -30,6 +30,7 @@ FLAVOR=		python3
 
 BUILD_DEPENDS=	devel/py-qt-builder${MODPY_FLAVOR} \
 		devel/py-ply${MODPY_FLAVOR} \
+		devel/py-setuptools${MODPY_FLAVOR} \
 		x11/dbus-python${MODPY_FLAVOR}
 
 RUN_DEPENDS=	devel/py-sip${MODPY_FLAVOR}>=5.5.0v0 \
