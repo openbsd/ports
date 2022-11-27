@@ -1,11 +1,10 @@
 COMMENT=	object interface infrastructure from Zope
 
-MODPY_EGG_VERSION=	5.5.0
+MODPY_EGG_VERSION=	5.5.2
 
 DISTNAME=	zope.interface-${MODPY_EGG_VERSION}
 PKGNAME=	py-zopeinterface-${MODPY_EGG_VERSION}
 CATEGORIES=	devel
-REVISION=	0
 
 # Zope Public License
 PERMIT_PACKAGE=	Yes
