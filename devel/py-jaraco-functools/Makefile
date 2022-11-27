@@ -20,8 +20,6 @@ FLAVORS =		python3
 FLAVOR =		python3
 
 RUN_DEPENDS =		devel/py-more-itertools${MODPY_FLAVOR}
-
-# XXX needs unported TEST_DEPENDS (jaraco.classes)
-NO_TEST =		Yes
+TEST_DEPENDS =		devel/py-jaraco-classes${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
