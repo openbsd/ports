@@ -1,9 +1,8 @@
-VERSION =		3.1.2
+VERSION =		3.1.3
 DISTNAME =		ruby-${VERSION}
 SHARED_LIBS =		ruby31	0.0
 NEXTVER =		3.2
 PKGSPEC-main ?=         ruby->=3.1.0,<${NEXTVER}
-REVISION-main =		1
 
 # Backport fix for fixnum*fixnum multiplication on octeon
 PATCHFILES =		ruby-octeon-fix{fe6245b4309c855e6aca5b786ad50a72d53d278a}.patch:0
