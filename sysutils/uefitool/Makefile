@@ -7,6 +7,7 @@ GH_ACCOUNT =		LongSoft
 GH_PROJECT =		UEFITool
 GH_TAGNAME =		A62
 PKGNAME =		${DISTNAME:S/A//}
+REVISION =		0
 
 CATEGORIES =		sysutils
 
@@ -21,17 +22,17 @@ PATCH_DIST_STRIP =	-p1
 # BSD
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =		${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Widgets c m
+WANTLIB =		${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Widgets c m
 
-MODULES =		devel/qmake \
-			x11/qt5
-
-MODQMAKE_RECURSIVE =	No
-MODQMAKE_PROJECTS =	${GH_PROJECT}/*.pro
+MODULES =		devel/cmake \
+			x11/qt6
 
 NO_TEST =		Yes
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKBUILD}/${GH_PROJECT}/${GH_PROJECT} ${PREFIX}/bin/
+	# open "cmake config does not generate an install target"
+	# https://github.com/LongSoft/UEFITool/issues/300
+	find ${WRKBUILD} -type f -name UEFI\* -perm -u=x \
+	    -exec ${INSTALL_PROGRAM} {} ${PREFIX}/bin/ \;
 
 .include <bsd.port.mk>

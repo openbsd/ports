@@ -1,1 +1,3 @@
+@bin bin/UEFIExtract
+@bin bin/UEFIFind
 @bin bin/UEFITool
