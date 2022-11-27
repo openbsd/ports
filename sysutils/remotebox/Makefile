@@ -1,6 +1,6 @@
 COMMENT=		VirtualBox client with remote management
 
-DISTNAME=		RemoteBox-3.1
+DISTNAME=		RemoteBox-3.2
 PKGNAME=		${DISTNAME:L}
 EXTRACT_SUFX=		.tar.bz2
 
@@ -22,6 +22,7 @@ PKG_ARCH=		*
 RUN_DEPENDS=		devel/desktop-file-utils \
 			devel/xdg-utils \
 			www/p5-SOAP-Lite \
+			www/p5-libwww \
 			x11/freerdp \
 			x11/p5-Gtk3
 
@@ -29,12 +30,14 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/remotebox
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/{applications,pixmaps}
+	${INSTALL_DATA_DIR} ${PREFIX}/share/{appdata,applications,pixmaps}
 	${INSTALL_SCRIPT} ${WRKSRC}/remotebox ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/packagers-readme/remotebox.desktop \
 		${PREFIX}/share/applications/
-	cd ${PREFIX}/share/pixmaps && \
-		ln -sf ${TRUEPREFIX}/share/remotebox/icons/remotebox.png
+	${INSTALL_DATA} ${WRKSRC}/packagers-readme/remotebox.appdata.xml \
+		${PREFIX}/share/appdata/
+	ln -sf ${TRUEPREFIX}/share/remotebox/icons/remotebox.png \
+		${PREFIX}/share/pixmaps/
 	cp -Rp ${WRKSRC}/share/remotebox ${PREFIX}/share
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/remotebox
 

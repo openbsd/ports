@@ -1,9 +1,11 @@
+See packagers-readme/README.TXT
+
 Index: remotebox
 --- remotebox.orig
 +++ remotebox
-@@ -7,11 +7,11 @@ use FindBin qw($Bin);
- use POSIX qw(ceil);
+@@ -9,11 +9,11 @@ use POSIX qw(ceil);
  use MIME::Base64;
+ use Glib ('TRUE','FALSE');
  # *** PACKAGERS MAY WISH TO PATCH THIS LOCATION ***
 -use lib "$Bin/share/remotebox";
 +use lib "${PREFIX}/share/remotebox";
