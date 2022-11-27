@@ -1,9 +1,9 @@
 COMMENT =		library set for simulations, games and visualizations
 
-DISTNAME =		simgear-2020.3.9
+DISTNAME =		simgear-2020.3.17
 
-SHARED_LIBS +=  SimGearCore               5.0 # 2.10
-SHARED_LIBS +=  SimGearScene              5.0 # 2.10
+SHARED_LIBS +=  SimGearCore               6.0 # 2.10
+SHARED_LIBS +=  SimGearScene              6.0 # 2.10
 
 CATEGORIES =		graphics
 
@@ -36,9 +36,5 @@ CFLAGS +=		-I${X11BASE}/include -pthread
 CXXFLAGS +=		-I${X11BASE}/include -pthread
 
 NO_TEST =		Yes
-
-# Keep C++ #include <version> from picking up this unrelated file
-post-extract:
-	mv ${WRKSRC}/version ${WRKSRC}/version.txt
 
 .include <bsd.port.mk>
