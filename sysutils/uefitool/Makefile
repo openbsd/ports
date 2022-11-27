@@ -1,12 +1,12 @@
-# ignore A* and t* (pre) releases
-PORTROACH =		limit:^[0-9]
+# ignore 0.* and t* (pre) releases
+PORTROACH =		limit:^A
 
-COMMENT =		parse, extract and modify UEFI firmware images
+COMMENT =		UEFI firmware image viewer and editor
 
 GH_ACCOUNT =		LongSoft
 GH_PROJECT =		UEFITool
-GH_TAGNAME =		0.28.0
-REVISION =		0
+GH_TAGNAME =		A60
+PKGNAME =		${DISTNAME:S/A//}
 
 CATEGORIES =		sysutils
 
@@ -20,14 +20,12 @@ WANTLIB =		${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Widgets c m
 MODULES =		devel/qmake \
 			x11/qt5
 
-MODQMAKE_PROJECTS =	. \
-			UEFIPatch \
-			UEFIReplace
+MODQMAKE_RECURSIVE =	No
+MODQMAKE_PROJECTS =	${GH_PROJECT}/*.pro
 
 NO_TEST =		Yes
 
 do-install:
-	find ${WRKBUILD} -type f -perm -u=x \
-	    -exec ${INSTALL_PROGRAM} {} ${PREFIX}/bin/ \;
+	${INSTALL_PROGRAM} ${WRKBUILD}/${GH_PROJECT}/${GH_PROJECT} ${PREFIX}/bin/
 
 .include <bsd.port.mk>
