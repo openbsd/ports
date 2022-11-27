@@ -1,9 +1,9 @@
 COMMENT =		lint-like code checker for Python code
 
-# XXX check/update py-astroid pkgspec in RUN_DEPENDS when updating
-MODPY_EGG_VERSION =	2.7.4
+# py-astroid and pylint usually need keeping in-sync
+MODPY_EGG_VERSION =	2.15.6
 DISTNAME=		pylint-${MODPY_EGG_VERSION}
-REVISION=		3
+PKGNAME =		pylint3-${MODPY_EGG_VERSION}
 
 CATEGORIES=		devel
 
@@ -15,22 +15,22 @@ PERMIT_PACKAGE=	Yes
 MODULES=		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
-TEST_ENV =		PY_IGNORE_IMPORTMISMATCH=1
+MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS =		devel/py-astroid${MODPY_FLAVOR}>=2.5.2,<2.7 \
-			devel/py-isort${MODPY_FLAVOR} \
-			devel/py-mccabe${MODPY_FLAVOR} \
-			devel/py-six${MODPY_FLAVOR} \
-			textproc/py-toml${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-dill${MODPY_FLAVOR} \
+			sysutils/py-platformdirs${MODPY_FLAVOR} \
+			devel/py-astroid${MODPY_FLAVOR}>=2.12.12,<=2.14.0 \
+			devel/py-isort${MODPY_FLAVOR}<6 \
+			devel/py-mccabe${MODPY_FLAVOR}<0.8 \
+			textproc/py-tomli${MODPY_FLAVOR} \
+			textproc/py-tomlkit${MODPY_FLAVOR}
 
-TEST_DEPENDS =		devel/py-logilab-common${MODPY_FLAVOR}>=1.3.0 \
-			devel/py-test-benchmark${MODPY_FLAVOR}
+# not in pypi distfile
+NO_TEST =		Yes
+#TEST_DEPENDS =		devel/py-logilab-common${MODPY_FLAVOR}>=1.3.0 \
+#			devel/py-test-benchmark${MODPY_FLAVOR}
 
 FLAVORS =		python3
 FLAVOR =		python3
-
-FULLPKGNAME =		${PKGNAME:S/pylint/pylint3/}
 
 .include <bsd.port.mk>
