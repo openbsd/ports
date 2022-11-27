@@ -1,0 +1,12 @@
+Index: src/osipparser2/osip_port.c
+--- src/osipparser2/osip_port.c.orig
++++ src/osipparser2/osip_port.c
+@@ -877,7 +877,7 @@ int __osip_port_gettimeofday(struct timeval *tp, void 
+   tp->tv_usec = timebuffer.millitm * 1000;
+   return OSIP_SUCCESS;
+ }
+-#elif defined(__linux)
++#elif defined(__linux) || defined(__OpenBSD__)
+ #include <sys/time.h>
+ #define __osip_port_gettimeofday gettimeofday
+ #elif defined(__APPLE__)

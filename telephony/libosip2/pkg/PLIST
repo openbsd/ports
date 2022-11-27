@@ -44,10 +44,10 @@ include/osipparser2/osip_parser.h
 include/osipparser2/osip_port.h
 include/osipparser2/osip_uri.h
 include/osipparser2/sdp_message.h
-lib/libosip2.a
+@static-lib lib/libosip2.a
 lib/libosip2.la
 @lib lib/libosip2.so.${LIBosip2_VERSION}
-lib/libosipparser2.a
+@static-lib lib/libosipparser2.a
 lib/libosipparser2.la
 @lib lib/libosipparser2.so.${LIBosipparser2_VERSION}
 lib/pkgconfig/libosip2.pc
