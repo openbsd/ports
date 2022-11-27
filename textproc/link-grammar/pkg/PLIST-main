@@ -11,7 +11,6 @@ include/link-grammar/link-includes.h
 lib/liblink-grammar.la
 @lib lib/liblink-grammar.so.${LIBlink-grammar_VERSION}
 lib/pkgconfig/link-grammar.pc
-lib/python${MODPY_VERSION}/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/clinkgrammar.pm
 @so libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/clinkgrammar.so

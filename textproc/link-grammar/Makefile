@@ -5,10 +5,8 @@ COMMENT-main =		syntactic parser of different languages
 COMMENT-java =		Java bindings for link-grammar
 COMMENT-python =	Python bindings for link-grammar
 
-VERSION =		5.11.0
+VERSION =		5.12.0
 DISTNAME =		link-grammar-${VERSION}
-REVISION-main =		0
-REVISION-python =	0
 
 PKGNAME-main =		${DISTNAME}
 PKGNAME-java =		link-grammar-java-${VERSION}
@@ -33,7 +31,8 @@ WANTLIB-java += ${WANTLIB} link-grammar pthread
 WANTLIB-python += ${WANTLIB} ${MODPY_WANTLIB}
 WANTLIB-python += iconv intl link-grammar pthread util
 
-MASTER_SITES =		https://www.abisource.com/downloads/link-grammar/${VERSION}/
+# XXX no https: TLS handshake failure: certificate verification failed: certificate has expired
+MASTER_SITES =		http://www.abisource.com/downloads/link-grammar/${VERSION}/
 
 MODULES =		lang/python
 
