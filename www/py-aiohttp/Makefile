@@ -1,5 +1,6 @@
 COMMENT =		http client/server for asyncio
 
+# 3.8.0 adds new deps on frozenlist, aiosignal
 MODPY_EGG_VERSION =	3.7.4
 DISTNAME =		aiohttp-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
