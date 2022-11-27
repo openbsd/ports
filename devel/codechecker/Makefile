@@ -41,6 +41,7 @@ RUN_DEPENDS =	databases/py-alembic${MODPY_FLAVOR} \
 		textproc/py-yaml${MODPY_FLAVOR}
 
 BUILD_DEPENDS =	devel/py-pip${MODPY_FLAVOR} \
+		devel/py-setuptools${MODPY_FLAVOR} \
 		devel/py-wheel${MODPY_FLAVOR}
 
 STATIC_DIR =	${WRKSRC}/tools/report-converter/codechecker_report_converter/report/output/html/static/vendor/codemirror
