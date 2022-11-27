@@ -28,7 +28,8 @@ LIB_DEPENDS =	geo/gdal
 WANTLIB +=	${COMPILER_LIBCXX} gdal m
 
 BUILD_DEPENDS +=	lang/cython${MODPY_FLAVOR} \
-			math/py-numpy${MODPY_FLAVOR}
+			math/py-numpy${MODPY_FLAVOR} \
+			math/py-oldest-supported-numpy${MODPY_FLAVOR}
 
 RUN_DEPENDS =	geo/py-cligj${MODPY_FLAVOR}>=0.5 \
 		net/py-boto3${MODPY_FLAVOR} \
