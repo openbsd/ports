@@ -1,10 +1,9 @@
 COMMENT =		official command-line client for RIPE Atlas
 
-MODPY_EGG_VERSION =	3.0.2
+MODPY_EGG_VERSION =	3.0.3
 GH_ACCOUNT =		RIPE-NCC
 GH_PROJECT =		ripe-atlas-tools
 GH_TAGNAME =		v${MODPY_EGG_VERSION}
-REVISION =		1
 
 PKGNAME =		ripe.atlas.tools-${MODPY_EGG_VERSION}
 
@@ -14,12 +13,8 @@ CATEGORIES =		net
 PERMIT_PACKAGE =	Yes
 
 MODPY_PYBUILD =		setuptools
-MODPY_PYTEST =		Yes
-MODPY_PYTEST_ARGS =	tests/test*.py tests/*/*.py
 
 MODULES =		lang/python
-
-PORTHOME =		${WRKDIST}
 
 RUN_DEPENDS =		devel/py-dateutil${MODPY_FLAVOR} \
 			devel/py-tzlocal${MODPY_FLAVOR} \
@@ -30,7 +25,10 @@ RUN_DEPENDS =		devel/py-dateutil${MODPY_FLAVOR} \
 			textproc/py-yaml${MODPY_FLAVOR} \
 			www/py-requests${MODPY_FLAVOR}
 
-TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR} \
+# some network tests
+PORTHOME =		${WRKDIST}
+TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH} \
+			devel/py-mock${MODPY_FLAVOR} \
 			textproc/py-sphinx${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
