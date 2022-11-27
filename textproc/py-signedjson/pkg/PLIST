@@ -16,5 +16,6 @@ lib/python${MODPY_VERSION}/site-packages/signedjson/${MODPY_PYCACHE}sign.${MODPY
 lib/python${MODPY_VERSION}/site-packages/signedjson/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/signedjson/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/signedjson/key.py
+lib/python${MODPY_VERSION}/site-packages/signedjson/py.typed
 lib/python${MODPY_VERSION}/site-packages/signedjson/sign.py
 lib/python${MODPY_VERSION}/site-packages/signedjson/types.py
