@@ -1,0 +1,12 @@
+Index: link-grammar/dict-common/regex-morph.c
+--- link-grammar/dict-common/regex-morph.c.orig
++++ link-grammar/dict-common/regex-morph.c
+@@ -10,7 +10,7 @@
+ /*                                                                       */
+ /*************************************************************************/
+ 
+-#include <threads.h>
++#include <pthread.h>
+ 
+ /**
+  * Support for the regular-expression based token matching system
