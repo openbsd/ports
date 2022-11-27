@@ -1568,6 +1568,7 @@
      SUBDIR += py-test-arraydiff,python3
      SUBDIR += py-test-astropy,python3
      SUBDIR += py-test-astropy-header,python3
+     SUBDIR += py-test-asyncio,python3
      SUBDIR += py-test-benchmark,python3
      SUBDIR += py-test-cov,python3
      SUBDIR += py-test-doctestplus,python3
