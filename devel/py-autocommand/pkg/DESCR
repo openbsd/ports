@@ -1,0 +1,4 @@
+Autocommand turns a function into a command-line program. It converts
+the function's parameter signature into command-line arguments, and
+automatically runs the function if the module was called as __main__.
+In effect, it lets you create a smart main function.
