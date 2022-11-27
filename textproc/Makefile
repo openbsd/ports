@@ -406,9 +406,11 @@
      SUBDIR += py-humanfriendly,python3
      SUBDIR += py-humanize,python3
      SUBDIR += py-ijson,python3
+     SUBDIR += py-inflect,python3
      SUBDIR += py-iniconfig,python3
      SUBDIR += py-ini2toml,python3
      SUBDIR += py-iso8601,python3
+     SUBDIR += py-jaraco-text,python3
      SUBDIR += py-jellyfish,python3
      SUBDIR += py-jsonpatch,python3
      SUBDIR += py-jsonpointer,python3

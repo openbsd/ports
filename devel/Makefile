@@ -1319,6 +1319,7 @@
      SUBDIR += py-async-timeout,python3
      SUBDIR += py-atomicwrites,python3
      SUBDIR += py-attrs,python3
+     SUBDIR += py-autocommand,python3
      SUBDIR += py-automat,python3
      SUBDIR += py-babel,python3
      SUBDIR += py-backcall,python3
@@ -1429,6 +1430,9 @@
      SUBDIR += py-iso639,python3
      SUBDIR += py-isodate,python3
      SUBDIR += py-isort,python3
+     SUBDIR += py-jaraco-classes,python3
+     SUBDIR += py-jaraco-collections,python3
+     SUBDIR += py-jaraco-context,python3
      SUBDIR += py-jaraco-envs,python3
      SUBDIR += py-jaraco-functools,python3
      SUBDIR += py-jaraco-path,python3
