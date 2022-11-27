@@ -3409,14 +3409,17 @@ share/ri/${REV}/system/Bundler/with_unbundled_env-c.ri
 share/ri/${REV}/system/CGI/
 share/ri/${REV}/system/CGI/Cookie/
 share/ri/${REV}/system/CGI/Cookie/cdesc-Cookie.ri
+share/ri/${REV}/system/CGI/Cookie/domain%3d-i.ri
 share/ri/${REV}/system/CGI/Cookie/domain-i.ri
 share/ri/${REV}/system/CGI/Cookie/expires-i.ri
 share/ri/${REV}/system/CGI/Cookie/httponly%3d-i.ri
 share/ri/${REV}/system/CGI/Cookie/httponly-i.ri
 share/ri/${REV}/system/CGI/Cookie/inspect-i.ri
+share/ri/${REV}/system/CGI/Cookie/name%3d-i.ri
 share/ri/${REV}/system/CGI/Cookie/name-i.ri
 share/ri/${REV}/system/CGI/Cookie/new-c.ri
 share/ri/${REV}/system/CGI/Cookie/parse-c.ri
+share/ri/${REV}/system/CGI/Cookie/path%3d-i.ri
 share/ri/${REV}/system/CGI/Cookie/path-i.ri
 share/ri/${REV}/system/CGI/Cookie/secure%3d-i.ri
 share/ri/${REV}/system/CGI/Cookie/secure-i.ri
@@ -3530,6 +3533,7 @@ share/ri/${REV}/system/CGI/Util/unescapeElement-i.ri
 share/ri/${REV}/system/CGI/Util/unescapeHTML-i.ri
 share/ri/${REV}/system/CGI/Util/unescape_element-i.ri
 share/ri/${REV}/system/CGI/Util/unescape_html-i.ri
+share/ri/${REV}/system/CGI/_no_crlf_check-i.ri
 share/ri/${REV}/system/CGI/accept_charset%3d-c.ri
 share/ri/${REV}/system/CGI/accept_charset-c.ri
 share/ri/${REV}/system/CGI/accept_charset-i.ri
