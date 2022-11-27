@@ -5,7 +5,7 @@ and any settings in the php file, which results in bogus failures).
 Index: ext/openssl/openssl.c
 --- ext/openssl/openssl.c.orig
 +++ ext/openssl/openssl.c
-@@ -3763,7 +3763,7 @@ static EVP_PKEY * php_openssl_generate_private_key(str
+@@ -3775,7 +3775,7 @@ static EVP_PKEY * php_openssl_generate_private_key(str
  	int egdsocket, seeded;
  	EVP_PKEY * return_val = NULL;
  
