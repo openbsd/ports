@@ -1,37 +1,32 @@
 COMMENT=	convert files between character sets and usages
 
-DISTNAME=	recode-3.6
-REVISION =	12
-SHARED_LIBS +=	recode               0.0      # .0.0
+V=		3.7.12
+DISTNAME=	recode-$V
+SHARED_LIBS +=	recode               1.0      # 10.12
 
 CATEGORIES=	converters textproc
 
-HOMEPAGE=	http://recode.progiciels-bpi.ca
-
-MODULES=	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
+HOMEPAGE=	https://github.com/rrthomas/recode
 
 # (L)GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=  c iconv intl
+WANTLIB=	c iconv intl
 
-# moved to https://github.com/pinard/Recode/
-MASTER_SITES=	${MASTER_SITE_GNU:=recode/}
+MASTER_SITES=	https://github.com/rrthomas/recode/releases/download/v$V/
 
+MODULES=	lang/python
 MODPY_RUNDEP=	No
 
 LIB_DEPENDS=	devel/gettext,-runtime
+TEST_DEPENDS=	lang/cython${MODPY_FLAVOR}
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--without-included-gettext
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		CYTHON=cython
+TEST_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-
-post-extract:
-	@cd ${WRKSRC}/lib && cp -p error.c ../src
-
-post-test:
-	@cd ${WRKBUILD}/tests && ${MAKE_PROGRAM} PYTHON=${MODPY_BIN} bigtest
 
 .include <bsd.port.mk>
