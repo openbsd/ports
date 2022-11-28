@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1466 2022/11/26 13:58:11 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1467 2022/11/28 20:23:07 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -753,6 +753,8 @@ my $stem_extensions = {
 	'go-ipfs' => 'kubo',
 	'py-zc-lockfilezc.lockfile' => 'py3-zc-lockfile',
 	'py3-zc-lockfilezc.lockfile' => 'py3-zc-lockfile',
+	'py-elfesteem' => 'py3-miasm', # merged
+	'py-miasm' => 'py3-miasm',
 };
 
 my $obsolete_reason = {};
