@@ -1,7 +1,7 @@
 Index: sal/osl/unx/uunxapi.cxx
 --- sal/osl/unx/uunxapi.cxx.orig
 +++ sal/osl/unx/uunxapi.cxx
-@@ -639,8 +639,10 @@ std::string UnixErrnoString(int nErrno)
+@@ -640,8 +640,10 @@ std::string UnixErrnoString(int nErrno)
  #endif
          case EPROTO:
              return "EPROTO";
