@@ -1,32 +1,30 @@
 COMMENT=	distributed command execution
 
-DISTNAME=	tentakel-357
-REVISION =	5
-CATEGORIES=	sysutils
-HOMEPAGE=	http://tentakel.biskalar.de/
+MODPY_EGG_VERSION = 3.1.3
+# this _might_ be the actual release, not entirely sure, if not then
+# it's fairly close. pypi distfiles don't include the manual/sample conf.
+# use a pre tag in the version just in case.
+GH_ACCOUNT=	sfermigier
+GH_PROJECT=	tentakel
+GH_COMMIT=	5d7662a00dfd6bf61b0773b596bbf255a9cbafe3
 
-MODPY_EGG_VERSION = 2.2.1
+DISTNAME=	tentakel-${MODPY_EGG_VERSION}pre20220719
+CATEGORIES=	sysutils
+
+HOMEPAGE=	https://github.com/sfermigier/tentakel
+
+EPOCH=		0
 
 # BSD + LGPL
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://spacehopper.org/mirrors/
-
 MODULES=	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
+MODPY_PYBUILD=	poetry-core
 
-WRKSRC=		${WRKDIST}/py
-
-TEST_IS_INTERACTIVE=	yes
-
-do-configure:
-	@perl -pi -e 's,/etc,${SYSCONFDIR},g' \
-		${WRKDIST}/tentakel.1 \
-		${WRKDIST}/py/tentakel
-
-do-test:
-	@cd ${WRKSRC}/lekatnet && ${MODPY_BIN} ./config.py
-	@cd ${WRKSRC}/lekatnet && ${MODPY_BIN} ./remote.py
-
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/doc/tentakel.1 ${PREFIX}/man/man1
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/tentakel
+	${INSTALL_DATA} ${WRKSRC}/doc/tentakel.conf.example \
+	    ${PREFIX}/share/examples/tentakel
 
 .include <bsd.port.mk>
