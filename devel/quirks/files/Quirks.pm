@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1469 2022/11/28 21:16:56 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.1470 2022/11/28 21:54:37 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -756,6 +756,7 @@ my $stem_extensions = {
 	'py-elfesteem' => 'py3-miasm', # merged
 	'py-miasm' => 'py3-miasm',
 	'py-cssselect' => 'py3-cssselect',
+	'py-cparser' => 'py3-cparser',
 };
 
 my $obsolete_reason = {};

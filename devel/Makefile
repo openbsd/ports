@@ -1357,7 +1357,6 @@
      SUBDIR += py-country,python3
      SUBDIR += py-coverage,python3
      SUBDIR += py-coveralls,python3
-     SUBDIR += py-cparser
      SUBDIR += py-cparser,python3
      SUBDIR += py-cppy,python3
      SUBDIR += py-crayons,python3

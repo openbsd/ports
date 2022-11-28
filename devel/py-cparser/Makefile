@@ -1,21 +1,21 @@
-COMMENT=		C parser in pure Python
+COMMENT=	C parser in pure Python
 
-MODPY_EGG_VERSION=	2.19
-DISTNAME=		pycparser-${MODPY_EGG_VERSION}
-PKGNAME=		${DISTNAME:S/py/py-/}
-CATEGORIES=		devel textproc
-REVISION=		3
+MODPY_EGG_VERSION=	2.21
+DISTNAME=	pycparser-${MODPY_EGG_VERSION}
+PKGNAME=	${DISTNAME:S/py/py-/}
+CATEGORIES=	devel textproc
 
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MODPY_PI =		Yes
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools
 
-MODULES=		lang/python
-FLAVORS=		python3
-FLAVOR?=
+MODULES=	lang/python
+FLAVORS=	python3
+FLAVOR=		python3
 
-do-test:
+xdo-test:
 	cd ${WRKSRC} && ${MODPY_BIN} tests/all_tests.py
 
 .include <bsd.port.mk>
