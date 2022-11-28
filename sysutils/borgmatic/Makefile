@@ -1,8 +1,7 @@
 COMMENT =		wrapper for Borg to create and prune backups
 
-MODPY_EGG_VERSION =	1.7.4
+MODPY_EGG_VERSION =	1.7.5
 DISTNAME =		borgmatic-${MODPY_EGG_VERSION}
-REVISION =		0
 
 MAINTAINER =		Stuart Henderson <stu.ports@spacehopper.org>
 
