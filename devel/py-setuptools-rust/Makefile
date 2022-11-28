@@ -3,7 +3,7 @@ COMMENT=		setuptools Rust extension plugin
 MODPY_EGG_VERSION=	1.5.2
 DISTNAME=		setuptools-rust-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		devel
 
@@ -22,9 +22,8 @@ FLAVORS=		python3
 FLAVOR =		python3
 
 RUN_DEPENDS=		devel/py-semantic-version${MODPY_FLAVOR} \
-			devel/py-typing-extensions${MODPY_FLAVOR} \
-			devel/py-wheel${MODPY_FLAVOR} \
-			textproc/py-toml${MODPY_FLAVOR}
+			devel/py-setuptools${MODPY_FLAVOR} \
+			devel/py-typing-extensions${MODPY_FLAVOR}
 
 .include <bsd.port.arch.mk>
 .if ${PROPERTIES:Mrust}
