@@ -1,5 +1,5 @@
 MODGO_MODULES =	\
-	github.com/!rasmus!lindroth/go-mastodon	 v0.0.11 \
+	github.com/!rasmus!lindroth/go-mastodon	 v0.0.14 \
 	github.com/atotto/clipboard		 v0.1.4 \
 	github.com/aymerick/douceur		 v0.2.0 \
 	github.com/davecgh/go-spew		 v1.1.1 \
@@ -20,6 +20,7 @@ MODGO_MODULES =	\
 	github.com/pmezard/go-difflib		 v1.0.0 \
 	github.com/rivo/tview			 v0.0.0-20221117065207-09f052e6ca98 \
 	github.com/rivo/uniseg			 v0.4.3 \
+	github.com/spf13/pflag			 v1.0.5 \
 	github.com/stretchr/objx		 v0.5.0 \
 	github.com/stretchr/testify		 v1.8.1 \
 	github.com/tadvi/systray		 v0.0.0-20190226123456-11a2b8fa57af \
