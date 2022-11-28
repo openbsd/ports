@@ -1,6 +1,6 @@
 COMMENT=	lightweight feed reader for text terminals
 
-DISTNAME=	newsraft-0.11
+DISTNAME=	newsraft-0.12
 WRKDIST=	${WRKDIR}/newsraft
 
 CATEGORIES=	www
@@ -26,5 +26,7 @@ MAKE_FILE=	makefile
 MAKE_FLAGS=	CC="${CC}" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+FAKE_FLAGS=	MANDIR=${PREFIX}/man \
+		EXAMPLES_DIR=${PREFIX}/share/examples/newsraft
 
 .include <bsd.port.mk>
