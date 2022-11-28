@@ -1,0 +1,14 @@
+https://github.com/pyparsing/pyparsing/issues/327
+
+Index: miasm/core/cpu.py
+--- miasm/core/cpu.py.orig
++++ miasm/core/cpu.py
+@@ -393,7 +393,7 @@ variable = pyparsing.Word(pyparsing.alphas + "_$.", py
+ variable.setParseAction(cb_parse_id)
+ operand = str_int | variable
+ 
+-base_expr = pyparsing.operatorPrecedence(operand,
++base_expr = pyparsing.infix_notation(operand,
+                                [(notop,   1, pyparsing.opAssoc.RIGHT, cb_op_not),
+                                 (andop, 2, pyparsing.opAssoc.RIGHT, cb_op_and),
+                                 (xorop, 2, pyparsing.opAssoc.RIGHT, cb_op_xor),

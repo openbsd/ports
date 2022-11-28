@@ -278,7 +278,6 @@
      SUBDIR += py-duo_client,python3
      SUBDIR += py-duo_universal,python3
      SUBDIR += py-ecdsa,python3
-     SUBDIR += py-elfesteem
      SUBDIR += py-fastecdsa,python3
      SUBDIR += py-fickling,python3
      SUBDIR += py-fido2,python3
@@ -289,7 +288,7 @@
      SUBDIR += py-josepy,python3
      SUBDIR += py-keyring,python3
      SUBDIR += py-libnacl,python3
-     SUBDIR += py-miasm
+     SUBDIR += py-miasm,python3
      SUBDIR += py-oauthlib,python3
      SUBDIR += py-openssl,python3
      SUBDIR += py-paramiko,python3

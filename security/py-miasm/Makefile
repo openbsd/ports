@@ -1,15 +1,14 @@
 BROKEN-i386 =	uint128_t
-BROKEN =	Needs to be updated for py-llvmlite-0.39.0
 
 COMMENT =	reverse engineering framework in Python
 
-MODPY_EGG_VERSION = 2.0.1.1
-DISTNAME =	miasm-${MODPY_EGG_VERSION}
+DISTNAME =	miasm-0.1.3pl20221105
 PKGNAME =	py-${DISTNAME}
+EPOCH =		0
 
 GH_ACCOUNT =	cea-sec
 GH_PROJECT =	miasm
-GH_COMMIT =	f7157afaccd897fb00eeb97817d124790f0ede67
+GH_COMMIT =	d82c9ef57fa48eb254e2547f8a128bbc75b7e966
 
 CATEGORIES =	security devel
 
@@ -20,25 +19,25 @@ MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-MODULES =	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
-
 WANTLIB += pthread ${MODPY_WANTLIB}
 
-RUN_DEPENDS =	security/py-elfesteem \
-		devel/py-llvmlite \
-		devel/py2-parsing
+MODULES =	lang/python
+MODPY_PYBUILD =	setuptools
 
-TEST_DEPENDS =	devel/py-cparser
+FLAVORS =	python3
+FLAVOR =	python3
 
-post-build:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${WRKSRC}/example
+RUN_DEPENDS =	devel/py-llvmlite${MODPY_FLAVOR} \
+		devel/py-parsing${MODPY_FLAVOR}
+
+TEST_DEPENDS =	devel/py-cparser${MODPY_FLAVOR} \
+		devel/py-parameterized${MODPY_FLAVOR}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/${MODPY_PY_PREFIX}miasm
 	cp -r ${WRKSRC}/example ${PREFIX}/share/${MODPY_PY_PREFIX}miasm/
 
 do-test:
-	cd ${WRKSRC}/test && ${MODPY_BIN} ./test_all.py -m
+	cd ${WRKSRC}/test && PYTHONPATH=${WRKSRC} ${MODPY_BIN} ./test_all.py -m
 
 .include <bsd.port.mk>
