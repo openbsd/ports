@@ -61,8 +61,11 @@ LIB_DEPENDS +=	archivers/snappy \
 TEST_DEPENDS +=	databases/py-mongo${MODPY_FLAVOR}
 
 # - can't cope with OpenBSD's nameser.h with ancient defines, plus uses
-# res_ninit/res_nclose which are not supported by the libc resolver
-BUILD_DEPENDS += devel/py-cheetah${MODPY_FLAVOR} \
+# res_ninit/res_nclose which are not supported by the libc resolver,
+# so use libbind
+BUILD_DEPENDS += \
+		devel/py-cheetah${MODPY_FLAVOR} \
+		devel/py-setuptools${MODPY_FLAVOR} \
 		net/libbind \
 		textproc/py-yaml${MODPY_FLAVOR}
 
