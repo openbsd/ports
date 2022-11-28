@@ -1,10 +1,9 @@
 COMMENT =		cffi-based cairo bindings for Python
 
-MODPY_EGG_VERSION =	0.8.0
+MODPY_EGG_VERSION =	1.4.0
 DISTNAME =		cairocffi-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		7
 
 HOMEPAGE =		https://github.com/Kozea/cairocffi
 
@@ -18,9 +17,11 @@ BUILD_DEPENDS =		${RUN_DEPENDS}
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
-MODPY_PYTEST_ARGS =	lib/cairocffi
+MODPY_TEST_DIR =	${WRKSRC}/cairocffi
+TEST_DEPENDS =		math/py-numpy${MODPY_FLAVOR} \
+			print/py-pikepdf${MODPY_FLAVOR}
 
 FLAVORS =		python3
-FLAVOR =	python3
+FLAVOR =		python3
 
 .include <bsd.port.mk>
