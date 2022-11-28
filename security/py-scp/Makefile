@@ -1,9 +1,8 @@
 COMMENT =		scp module for Paramiko
 
-MODPY_EGG_VERSION =	0.13.6
+MODPY_EGG_VERSION =	0.14.4
 DISTNAME =		scp-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
 
 CATEGORIES =		security
 
@@ -15,7 +14,11 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_PYBUILD =	setuptools
+MODPY_PYBUILD =		setuptools
+
+# there are tests in test.py, but you'll need to be able to connect and
+# write files etc.
+NO_TEST =		Yes
 
 FLAVORS =		python3
 FLAVOR =		python3
