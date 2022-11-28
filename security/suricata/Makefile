@@ -27,7 +27,8 @@ WANTLIB +=  smime3 ssl3 yaml-0 z
 
 MODULES =	lang/python
 
-BUILD_DEPENDS =	textproc/py-sphinx${MODPY_FLAVOR} \
+BUILD_DEPENDS =	devel/py-setuptools${MODPY_FLAVOR} \
+		textproc/py-sphinx${MODPY_FLAVOR} \
 		textproc/py-yaml${MODPY_FLAVOR} \
 		lang/rust
 
