@@ -1,7 +1,6 @@
 COMMENT =	pretty-print tabular data
 
-# py2 still needed for security/floss
-
+# 0.9 drops py2 support, still needed for security/floss
 MODPY_EGG_VERSION =	0.8.10
 DISTNAME =	tabulate-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
