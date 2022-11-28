@@ -1,8 +1,7 @@
 COMMENT=		simple encrypted backup tool for GNOME
 
-GNOME_VERSION=		43.4
+GNOME_VERSION=		44.0
 GNOME_PROJECT=		deja-dup
-REVISION=		1
 
 # override gnome MODULE
 MASTER_SITES=		https://gitlab.gnome.org/World/deja-dup/-/archive/${GNOME_VERSION}/
@@ -25,7 +24,8 @@ MODULES=		devel/meson \
 
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache vala yelp
 
-RUN_DEPENDS=		sysutils/duplicity \
+RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
+			sysutils/duplicity \
 			x11/gnome/gvfs
 
 LIB_DEPENDS=		devel/json-glib \
