@@ -28,7 +28,6 @@ MODPY_PYTEST_ARGS =	flit_core/tests
 # not installed at build time.
 #
 # Notes in  https://github.com/pypa/flit/blob/main/doc/bootstrap.rst
-BUILD_DEPENDS =	devel/py-installer${MODPY_FLAVOR}
 
 TEST_DEPENDS =	devel/py-testpath${MODPY_FLAVOR}
 
