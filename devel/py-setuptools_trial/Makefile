@@ -1,9 +1,9 @@
-COMMENT=	setuptools plugin for unit tests with trial
+COMMENT=	setuptools plugin for unit tests with Twisted's trial
 
 MODPY_EGG_VERSION=	0.6.0
 DISTNAME=	setuptools_trial-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
-REVISION=	7
+REVISION=	8
 
 CATEGORIES=	devel
 
@@ -14,6 +14,8 @@ MODULES=	lang/python
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
+
+RUN_DEPENDS =	devel/py-setuptools${MODPY_FLAVOR}
 
 # lots of pytest modules
 NO_TEST=	Yes
