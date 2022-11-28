@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	0.5.1
 
 DISTNAME =	installer-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 
@@ -21,6 +21,17 @@ MODPY_PYTEST =	Yes
 FLAVOR =	python3
 FLAVORS =	python3
 
-# This port must have no/minimal deps.
+# This port is a BDEP of most py-* ports so must have minimal deps and
+# cannot use MODPY_PYBUILD. flit_core is OK because it has its own
+# bootstrap method to install from the wheel.
+BUILD_DEPENDS =	devel/py-flit_core${MODPY_FLAVOR}
+
+do-build:
+	cd ${WRKSRC} && ${MODPY_BIN} -m flit_core.wheel
+
+do-install:
+	${INSTALL_DATA_DIR} ${WRKINST}${MODPY_LIBDIR}
+	PYTHONPATH=${WRKSRC}/src ${MODPY_BIN} -m installer \
+	    -d ${WRKINST} ${WRKSRC}/dist/*.whl
 
 .include <bsd.port.mk>

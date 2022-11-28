@@ -1,30 +1,44 @@
 lib/python${MODPY_VERSION}/site-packages/installer/
-lib/python${MODPY_VERSION}/site-packages/installer-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/installer-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/installer-${MODPY_EGG_VERSION}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/installer-${MODPY_EGG_VERSION}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/installer-${MODPY_EGG_VERSION}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/installer-${MODPY_EGG_VERSION}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/installer/__init__.py
 lib/python${MODPY_VERSION}/site-packages/installer/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/installer/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/installer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/installer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/installer/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/installer/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/installer/${MODPY_PYCACHE}_core.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/installer/${MODPY_PYCACHE}_core.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/installer/${MODPY_PYCACHE}destinations.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/installer/${MODPY_PYCACHE}destinations.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/installer/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/installer/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/installer/${MODPY_PYCACHE}records.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/installer/${MODPY_PYCACHE}records.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/installer/${MODPY_PYCACHE}scripts.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/installer/${MODPY_PYCACHE}scripts.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/installer/${MODPY_PYCACHE}sources.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/installer/${MODPY_PYCACHE}sources.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/installer/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/installer/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/installer/_core.py
 lib/python${MODPY_VERSION}/site-packages/installer/_scripts/
 lib/python${MODPY_VERSION}/site-packages/installer/_scripts/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/installer/_scripts/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/installer/_scripts/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/installer/_scripts/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/installer/_scripts/t32.exe
-lib/python${MODPY_VERSION}/site-packages/installer/_scripts/t64-arm.exe
-lib/python${MODPY_VERSION}/site-packages/installer/_scripts/t64.exe
-lib/python${MODPY_VERSION}/site-packages/installer/_scripts/t_arm.exe
-lib/python${MODPY_VERSION}/site-packages/installer/_scripts/w32.exe
-lib/python${MODPY_VERSION}/site-packages/installer/_scripts/w64-arm.exe
-lib/python${MODPY_VERSION}/site-packages/installer/_scripts/w64.exe
-lib/python${MODPY_VERSION}/site-packages/installer/_scripts/w_arm.exe
+@comment lib/python${MODPY_VERSION}/site-packages/installer/_scripts/t32.exe
+@comment lib/python${MODPY_VERSION}/site-packages/installer/_scripts/t64-arm.exe
+@comment lib/python${MODPY_VERSION}/site-packages/installer/_scripts/t64.exe
+@comment lib/python${MODPY_VERSION}/site-packages/installer/_scripts/t_arm.exe
+@comment lib/python${MODPY_VERSION}/site-packages/installer/_scripts/w32.exe
+@comment lib/python${MODPY_VERSION}/site-packages/installer/_scripts/w64-arm.exe
+@comment lib/python${MODPY_VERSION}/site-packages/installer/_scripts/w64.exe
+@comment lib/python${MODPY_VERSION}/site-packages/installer/_scripts/w_arm.exe
 lib/python${MODPY_VERSION}/site-packages/installer/destinations.py
 lib/python${MODPY_VERSION}/site-packages/installer/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/installer/records.py
