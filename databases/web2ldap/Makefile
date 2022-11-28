@@ -1,6 +1,6 @@
 COMMENT =	full-featured LDAP client running as web application
 
-MODPY_EGG_VERSION =	1.8.0
+MODPY_EGG_VERSION =	1.8.1
 DISTNAME =	web2ldap-${MODPY_EGG_VERSION}
 
 CATEGORIES =	databases www sysutils
