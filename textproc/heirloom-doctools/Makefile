@@ -2,7 +2,7 @@ COMMENT =		modernized troff implementation
 
 V =			191015
 DISTNAME =		heirloom-doctools-$V
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		textproc print
 
@@ -20,6 +20,8 @@ COMPILER =		base-clang ports-gcc base-gcc
 MASTER_SITES =		https://github.com/n-t-roff/heirloom-doctools/releases/download/$V/
 EXTRACT_SUFX =		.tar.bz2
 
+FAKE_FLAGS =		ROOT=${DESTDIR}
+
 MAKE_FLAGS =		CC="${CC}" \
 			CXX="${CXX}" \
 			CCC="${CXX}" \
@@ -27,7 +29,6 @@ MAKE_FLAGS =		CC="${CC}" \
 			RANLIB=ranlib \
 			INSTALL=install \
 			STRIP=true \
-			ROOT=${DESTDIR} \
 			BINDIR=${PREFIX}/heirloom-doctools/bin \
 			MANDIR=${PREFIX}/heirloom-doctools/man \
 			LIBDIR=${PREFIX}/libexec/heirloom-doctools \
