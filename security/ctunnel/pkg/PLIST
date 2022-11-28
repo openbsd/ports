@@ -1,4 +1,0 @@
-@bin bin/ctunnel
-@man man/man1/ctunnel.1
-share/doc/ctunnel/
-share/doc/ctunnel/README

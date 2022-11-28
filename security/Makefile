@@ -27,7 +27,6 @@
      SUBDIR += corkscrew
      SUBDIR += cracklib
      SUBDIR += cryptcat
-     SUBDIR += ctunnel
      SUBDIR += cvechecker
      SUBDIR += cyrus-sasl-xoauth2
      SUBDIR += cyrus-sasl2
