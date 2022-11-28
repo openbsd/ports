@@ -1,10 +1,9 @@
 COMMENT =	Python module to handle audio metadata
 
-MODPY_EGG_VERSION = 1.45.1
+MODPY_EGG_VERSION = 1.46.0
 DISTNAME =	mutagen-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 PORTROACH =	skipv:release-${MODPY_EGG_VERSION}
-REVISION =	2
 
 CATEGORIES =	audio
 
