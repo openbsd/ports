@@ -2,9 +2,8 @@ COMMENT =	py.test xdist plugin for distributed testing
 
 DISTNAME =		pytest-xdist-${MODPY_EGG_VERSION}
 PKGNAME =		py-test-xdist-${MODPY_EGG_VERSION}
-MODPY_EGG_VERSION =	2.5.0
+MODPY_EGG_VERSION =	3.0.2
 MODPY_PI =		Yes
-REVISION =		1
 
 CATEGORIES =	devel
 
@@ -23,7 +22,9 @@ MODPY_PYTEST_ARGS =	testing
 RUN_DEPENDS =		devel/py-execnet${MODPY_FLAVOR} \
 			devel/py-test${MODPY_FLAVOR} \
 			devel/py-apipkg${MODPY_FLAVOR}
-# wants filelock
-TEST_DEPENDS =		${FULLPKGNAME}:${FULLPKGPATH}
+# uses its own pytest extension in test
+TEST_DEPENDS =		${FULLPKGNAME}:${FULLPKGPATH} \
+			devel/py-pexpect${MODPY_FLAVOR} \
+			sysutils/py-filelock${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
