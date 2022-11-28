@@ -1,10 +1,9 @@
 COMMENT =	pytest plugin for managing processes across test runs
 
-MODPY_EGG_VERSION =	0.20.0
+MODPY_EGG_VERSION =	0.21.0
 
 DISTNAME =	pytest-xprocess-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:S/py//}
-REVISION =	0
 
 CATEGORIES =	devel
 
