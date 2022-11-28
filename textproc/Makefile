@@ -387,7 +387,6 @@
      SUBDIR += py-confuse,python3
      SUBDIR += py-cson,python3
      SUBDIR += py-css-parser,python3
-     SUBDIR += py-cssselect
      SUBDIR += py-cssselect,python3
      SUBDIR += py-cssselect2,python3
      SUBDIR += py-cssutils,python3
