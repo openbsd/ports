@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	3.8.0
 
 DISTNAME =	flit_core-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 
@@ -26,6 +26,8 @@ MODPY_PYTEST_ARGS =	flit_core/tests
 # a bdep on itself :) The do-build target uses flit_core.wheel
 # from flit_core distribution and must still work if flit_core is
 # not installed at build time.
+#
+# Notes in  https://github.com/pypa/flit/blob/main/doc/bootstrap.rst
 BUILD_DEPENDS =	devel/py-installer${MODPY_FLAVOR}
 
 TEST_DEPENDS =	devel/py-testpath${MODPY_FLAVOR}
@@ -34,8 +36,11 @@ do-build:
 	cd ${WRKSRC} && ${MODPY_BIN} -m flit_core.wheel
 
 do-install:
-	${INSTALL_DATA_DIR} ${WRKINST}${MODPY_LIBDIR}
-	${MODPY_BIN} -m installer -d ${WRKINST} ${WRKSRC}/dist/*.whl
+	cd ${WRKSRC}; ${MODPY_BIN} bootstrap_install.py \
+	    --installdir ${WRKINST}${MODPY_LIBDIR}/site-packages \
+	    dist/*.whl
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+	    ${WRKINST}${MODPY_LIBDIR}
 
 post-install:
 	rm -rf ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/flit_core/tests
