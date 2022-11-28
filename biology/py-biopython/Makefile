@@ -41,4 +41,9 @@ do-test:
 		PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
 		${MODPY_BIN} ./run_tests.py --offline
 
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+CFLAGS +=	-std=gnu99
+.endif
+
 .include <bsd.port.mk>
