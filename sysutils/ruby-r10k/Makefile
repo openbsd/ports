@@ -4,6 +4,7 @@ DISTNAME =	r10k-3.14.2
 CATEGORIES =	sysutils
 HOMEPAGE =	https://github.com/puppetlabs/r10k
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
+REVISION =	0
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes

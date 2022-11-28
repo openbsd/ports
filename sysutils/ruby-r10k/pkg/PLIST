@@ -394,9 +394,9 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_one/manage
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_one/managed_subdir_1/subdir_expected_1
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_one/managed_subdir_1/subdir_unmanaged_1
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_one/managed_subdir_1/unmanaged_symlink_dir
-${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_one/managed_symlink_dir
+@comment ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_one/managed_symlink_dir
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_one/unmanaged_1
-${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_one/unmanaged_symlink_file
+@comment ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_one/unmanaged_symlink_file
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_two/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_two/.hidden/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_two/.hidden/unmanaged_3
