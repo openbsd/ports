@@ -234,7 +234,7 @@ _MODPY_PRE_BUILD_STEPS +=	\
 	;exec 3>&1 \
 	;exec >${_MODPY_SETUPUTILS_FAKE_DIR}/__init__.py \
 	;echo 'def setup(*args, **kwargs):' \
-	;echo '    msg = "OpenBSD ports: MODPY_SETUPTOOLS = Yes is required"' \
+	;echo '    msg = "OpenBSD ports: MODPY_PYBUILD or MODPY_SETUPTOOLS is required"' \
 	;echo '    raise Exception(msg)' \
 	;echo 'Extension = Feature = find_packages = setup' \
 	;exec 1>&3
