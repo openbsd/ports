@@ -1,9 +1,7 @@
 ONLY_FOR_ARCHS=	${GCC4_ARCHS} ${CLANG_ARCHS}
 
 COMMENT=	Device Tree Blobs
-# 5.15 breaks cpsw(4) on bbb
-VERSION=	5.14
-REVISION=	1
+VERSION=	6.0.10
 
 # XXX Updating this port has a high chance of breaking drivers as breaking
 # XXX changes are frequently made to device trees in linux. See commit log
@@ -17,7 +15,7 @@ HOMEPAGE=	https://www.devicetree.org
 # dual GPL/BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://cdn.kernel.org/pub/linux/kernel/v5.x/
+MASTER_SITES=	https://cdn.kernel.org/pub/linux/kernel/v6.x/
 EXTRACT_SUFX=	.tar.xz
 #MASTER_SITES=	https://git.kernel.org/torvalds/t/
 PKG_ARCH=	*

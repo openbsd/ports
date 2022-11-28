@@ -1,8 +1,8 @@
 Index: arch/arm64/boot/dts/rockchip/rk3399-firefly.dts
 --- arch/arm64/boot/dts/rockchip/rk3399-firefly.dts.orig
 +++ arch/arm64/boot/dts/rockchip/rk3399-firefly.dts
-@@ -14,7 +14,7 @@
- 	compatible = "firefly,firefly-rk3399", "rockchip,rk3399";
+@@ -22,7 +22,7 @@
+ 	};
  
  	chosen {
 -		stdout-path = "serial2:1500000n8";

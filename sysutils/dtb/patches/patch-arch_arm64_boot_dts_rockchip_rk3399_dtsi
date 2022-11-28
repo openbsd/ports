@@ -1,7 +1,7 @@
 Index: arch/arm64/boot/dts/rockchip/rk3399.dtsi
 --- arch/arm64/boot/dts/rockchip/rk3399.dtsi.orig
 +++ arch/arm64/boot/dts/rockchip/rk3399.dtsi
-@@ -857,6 +857,11 @@
+@@ -894,6 +894,11 @@
  		status = "disabled";
  	};
  
@@ -11,5 +11,5 @@ Index: arch/arm64/boot/dts/rockchip/rk3399.dtsi
 +	};
 +
  	qos_emmc: qos@ffa58000 {
- 		compatible = "syscon";
+ 		compatible = "rockchip,rk3399-qos", "syscon";
  		reg = <0x0 0xffa58000 0x0 0x20>;
