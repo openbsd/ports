@@ -1,10 +1,9 @@
 COMMENT =		cross-platform curses-based monitoring tool
 
-MODPY_EGG_VERSION =	3.2.6.4
+MODPY_EGG_VERSION =	3.3.0.4
 
 DISTNAME =		Glances-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:L}
-REVISION =		1
 
 CATEGORIES =		sysutils
 
