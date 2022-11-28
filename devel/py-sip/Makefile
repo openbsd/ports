@@ -8,7 +8,7 @@ MODPY_EGG_VERSION=	6.6.2
 DISTNAME=	sip-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 EPOCH=		0
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	devel
 
@@ -30,6 +30,8 @@ MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
 RUN_DEPENDS=	sysutils/py-packaging${MODPY_FLAVOR} \
+		devel/py-setuptools${MODPY_FLAVOR} \
+		devel/py-ply${MODPY_FLAVOR} \
 		textproc/py-toml${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
