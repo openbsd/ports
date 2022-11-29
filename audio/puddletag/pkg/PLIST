@@ -190,10 +190,13 @@ lib/python${MODPY_VERSION}/site-packages/puddlestuff/shortcutsettings.py
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagmodel.py
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/CDDB.py
+lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/TagSource.py
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/${MODPY_PYCACHE}CDDB.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/${MODPY_PYCACHE}CDDB.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/${MODPY_PYCACHE}TagSource.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/${MODPY_PYCACHE}TagSource.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/${MODPY_PYCACHE}_acoustid.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -248,8 +251,6 @@ lib/python${MODPY_VERSION}/site-packages/puddletag-${MODPY_EGG_VERSION}.dist-inf
 lib/python${MODPY_VERSION}/site-packages/puddletag-${MODPY_EGG_VERSION}.dist-info/top_level.txt
 @man man/man1/puddletag.1
 share/applications/puddletag.desktop
-@comment share/man/
-@comment share/man/man1/
 share/pixmaps/
 share/pixmaps/puddletag.png
 @tag update-desktop-database
