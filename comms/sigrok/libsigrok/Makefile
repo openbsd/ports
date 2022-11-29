@@ -21,6 +21,7 @@ MODULES =		lang/python
 BUILD_DEPENDS =		devel/check \
 			devel/doxygen \
 			devel/py-gobject3${MODPY_FLAVOR} \
+			devel/py-setuptools${MODPY_FLAVOR} \
 			devel/swig \
 			math/py-numpy${MODPY_FLAVOR}
 
