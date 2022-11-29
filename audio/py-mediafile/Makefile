@@ -1,10 +1,9 @@
 COMMENT =	read and write audio files' tags in Python
 
-MODPY_EGG_VERSION =	0.9.0
+MODPY_EGG_VERSION =	0.10.1
 
 DISTNAME =	mediafile-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
 
 CATEGORIES =	audio
 
@@ -16,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		flit_core
 
 FLAVOR =		python3
 FLAVORS =		python3
