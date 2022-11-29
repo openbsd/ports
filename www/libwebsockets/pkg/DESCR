@@ -1,2 +1,4 @@
-Libwebsockets is a lightweight pure C library built to use minimal CPU and
-memory resources, and provide fast throughput in both directions.
+Libwebsockets is a simple-to-use, MIT-license, pure C library
+providing client and server for http/1, http/2, websockets, MQTT
+and other protocols in a security-minded, lightweight,
+configurable, scalable and flexible way.
