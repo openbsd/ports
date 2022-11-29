@@ -1,0 +1,64 @@
+# clamav 1.0.0 mostly uses cl_error_t (aka unsigned int) for
+# returning error values, change type to match
+#
+# ...except cl_statchkdir, which returns cl_error_t type values
+# but is still an int, so bodge around that
+
+Index: havp/scanners/clamlibscanner.cpp
+--- havp/scanners/clamlibscanner.cpp.orig
++++ havp/scanners/clamlibscanner.cpp
+@@ -22,7 +22,7 @@ extern int LL;
+ bool ClamLibScanner::InitDatabase()
+ {
+     unsigned int sigs = 0;
+-    int ret;
++    cl_error_t ret;
+     if (LL>2) cl_debug();
+ 
+ #ifdef CL_INIT_DEFAULT
+@@ -118,9 +118,10 @@ bool ClamLibScanner::InitDatabase()
+ 
+ int ClamLibScanner::ReloadDatabase()
+ {
+-    int ret = cl_statchkdir(&dbstat);
++    cl_error_t ret;
++    int reti = cl_statchkdir(&dbstat);
+ 
+-    if ( ret == 1 )
++    if ( reti == 1 )
+     {
+         unsigned int sigs = 0;
+         struct cl_settings *settings = NULL;
+@@ -191,9 +192,9 @@ int ClamLibScanner::ReloadDatabase()
+ 
+         return 1;
+     }
+-    else if ( ret != 0 )
++    else if ( reti != 0 )
+     {
+-        LogFile::ErrorMessage("ClamAV: Error on database check: %s\n", cl_strerror(ret));
++        LogFile::ErrorMessage("ClamAV: Error on database check\n");
+     }
+ 
+     return 0;
+@@ -203,9 +204,9 @@ int ClamLibScanner::ReloadDatabase()
+ string ClamLibScanner::Scan( const char *FileName )
+ {
+ #ifdef CL_INIT_DEFAULT
+-    int ret = cl_scanfile(FileName, &virname, NULL, engine, &cl_options);
++    cl_error_t ret = cl_scanfile(FileName, &virname, NULL, engine, &cl_options);
+ #else
+-    int ret = cl_scanfile(FileName, &virname, NULL, engine, &limits, scanopts);
++    cl_error_t ret = cl_scanfile(FileName, &virname, NULL, engine, &limits, scanopts);
+ #endif
+ 
+     //Clean?
+@@ -240,7 +241,7 @@ string ClamLibScanner::Scan( const char *FileName )
+ void ClamLibScanner::FreeDatabase()
+ {
+ #ifdef CL_INIT_DEFAULT
+-    int ret = cl_engine_free(engine);
++    cl_error_t ret = cl_engine_free(engine);
+     if ( ret != CL_SUCCESS )
+     {
+         LogFile::ErrorMessage("ClamAV: cl_engine_free() failed: %s\n", cl_strerror(ret));

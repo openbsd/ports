@@ -1,6 +1,7 @@
 #!/bin/ksh
 
 daemon="${TRUEPREFIX}/sbin/havp"
+daemon_timeout="75"
 
 . /etc/rc.d/rc.subr
 
