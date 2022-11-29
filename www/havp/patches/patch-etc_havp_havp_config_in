@@ -1,6 +1,7 @@
---- etc/havp/havp.config.in.orig	Fri Apr  2 15:33:34 2010
-+++ etc/havp/havp.config.in	Wed May 16 19:41:48 2012
-@@ -24,8 +24,8 @@ REMOVETHISLINE deleteme
+Index: etc/havp/havp.config.in
+--- etc/havp/havp.config.in.orig
++++ etc/havp/havp.config.in
+@@ -24,8 +24,8 @@
  # used by any other program.
  #
  # Default:
@@ -11,11 +12,11 @@
  
  # If this is true HAVP is running as daemon in background.
  # For testing you may run HAVP at your text console.
-@@ -479,7 +479,7 @@ ENABLECLAMD false
+@@ -484,7 +484,7 @@ ENABLECLAMD false
  # Path to clamd socket
  #
  # Default:
--# CLAMDSOCKET /tmp/clamd
+-# CLAMDSOCKET /var/run/clamav/clamd.ctl
 +# CLAMDSOCKET /tmp/clamd.socket
  
  # ..OR if you use clamd TCP socket, uncomment to enable use

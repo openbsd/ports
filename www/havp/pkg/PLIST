@@ -1,5 +1,10 @@
 @newgroup _havp:602
 @newuser _havp:602:_havp::Havp Account:/nonexistent:/sbin/nologin
+@owner _havp
+@group _havp
+@rcscript ${RCDIR}/havp
+@owner
+@group
 @bin sbin/havp
 share/doc/havp/
 share/doc/havp/COPYING
@@ -142,4 +147,4 @@ share/examples/havp/whitelist
 @owner _havp
 @group _havp
 @sample /var/log/havp/
-@rcscript ${RCDIR}/havp
+@sample /var/spool/havp/

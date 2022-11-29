@@ -1,25 +1,24 @@
 COMMENT=	web proxy with antivirus filter
 
-DISTNAME=	havp-0.92a
+DISTNAME=	havp-0.93
 CATEGORIES=	www
 MASTER_SITES=	${HOMEPAGE}/download/
 
-REVISION=	10
-
-HOMEPAGE=	http://www.server-side.de/
+# https://github.com/HaveSec/HAVP
+HOMEPAGE=	https://www.havp.org/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=		c m pthread ${COMPILER_LIBCXX} clamav
+WANTLIB=	c m pthread ${COMPILER_LIBCXX} clamav
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc
 
-LIB_DEPENDS=		security/clamav
+LIB_DEPENDS=	security/clamav
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=		--disable-locking \
-			--disable-trophie
+CONFIGURE_ARGS=	--disable-locking \
+		--disable-trophie
 CONFIGURE_ENV=	LDFLAGS="-pthread"
 USE_GMAKE=	Yes
 NO_TEST=	Yes
@@ -29,12 +28,3 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/INSTALL ${WRKSRC}/COPYING ${PREFIX}/share/doc/havp
 
 .include <bsd.port.mk>
-
-# old gcc doesn't give a shit about push_back...
-# but formally: 
-# void push_back( const T& value );
-# void push_back( T&& value );  (in C++11)
-# so we need T&& with clang
-.if ${PROPERTIES:Mclang}
-CFLAGS +=	-std=c++11
-.endif
