@@ -1,7 +1,7 @@
 Index: libclamav/bytecode_vm.c
 --- libclamav/bytecode_vm.c.orig
 +++ libclamav/bytecode_vm.c
-@@ -1298,8 +1298,8 @@ int cli_vm_execute(const struct cli_bc *bc, struct cli
+@@ -1298,8 +1298,8 @@ cl_error_t cli_vm_execute(const struct cli_bc *bc, str
          gettimeofday(&tv1, NULL);
          tv1.tv_sec -= tv0.tv_sec;
          tv1.tv_usec -= tv0.tv_usec;

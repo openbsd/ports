@@ -1,14 +1,12 @@
 COMMENT=	virus scanner
-DISTNAME=	clamav-0.105.1-3
-PKGNAME=	clamav-0.105.1pl3
-WRKDIST=	${WRKDIR}/clamav-0.105.1
+DISTNAME=	clamav-1.0.0
 
 CATEGORIES=	security
 
-SHARED_LIBS +=	clamav               26.0
+SHARED_LIBS +=	clamav               27.0
 SHARED_LIBS +=	clamunrar            6.0
 SHARED_LIBS +=	clamunrar_iface      5.0
-SHARED_LIBS +=  freshclam            1.0
+SHARED_LIBS +=	freshclam            2.0
 
 HOMEPAGE=	https://www.clamav.net/
 

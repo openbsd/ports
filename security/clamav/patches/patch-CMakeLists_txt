@@ -3,7 +3,7 @@ https://github.com/Cisco-Talos/clamav/issues/340
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -632,10 +632,12 @@ else()
+@@ -648,10 +648,12 @@ else()
      if(APPLE)
          set(BIND_8_COMPAT 1)
      endif()
