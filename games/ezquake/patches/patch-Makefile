@@ -13,7 +13,7 @@ Index: Makefile
  LIBS ?=
  
  #Temporarily disable tree vectorization optimization enabled at O3 due to gcc bug
-@@ -567,7 +567,7 @@ endif
+@@ -575,7 +575,7 @@ endif
  ifdef CONFIG_WINDOWS
      TARG_c := ezquake$(EZ_POSTFIX).exe
  else

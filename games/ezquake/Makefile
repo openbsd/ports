@@ -1,5 +1,5 @@
 N =		ezquake
-V =		3.6.0
+V =		3.6.1
 COMMENT =	modern QuakeWorld client
 
 PKGNAME =	${N}-${V}
