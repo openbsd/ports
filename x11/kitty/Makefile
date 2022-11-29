@@ -8,7 +8,7 @@ DISTNAME =		kitty-${MODPY_EGG_VERSION}
 CATEGORIES =		x11
 HOMEPAGE =		https://sw.kovidgoyal.net/kitty/
 MAINTAINER =		Thomas Frohwein <thfr@openbsd.org>
-REVISION =		2
+REVISION =		3
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
@@ -23,6 +23,8 @@ EXTRACT_SUFX =		.tar.xz
 
 # C11
 COMPILER =		base-clang ports-gcc
+
+CFLAGS +=		"-DOPENSSL_clear_free=freezero"
 
 MODULES =		lang/python
 MODPY_DISTUTILS_BUILD =	linux-package
