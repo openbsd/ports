@@ -36,6 +36,11 @@ MODULES=		devel/dconf \
 			devel/meson \
 			x11/gnome
 
+# XXX gtk/gtkfontchooserwidget.c:1678: error:
+# type qualifiers ignored on function return type
+COMPILER=		base-clang ports-gcc
+COMPILER_LANGS=		c
+
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
