@@ -20,4 +20,5 @@ lib/python${MODPY_VERSION}/site-packages/executing/${MODPY_PYCACHE}version.${MOD
 lib/python${MODPY_VERSION}/site-packages/executing/_exceptions.py
 lib/python${MODPY_VERSION}/site-packages/executing/_position_node_finder.py
 lib/python${MODPY_VERSION}/site-packages/executing/executing.py
+lib/python${MODPY_VERSION}/site-packages/executing/py.typed
 lib/python${MODPY_VERSION}/site-packages/executing/version.py
