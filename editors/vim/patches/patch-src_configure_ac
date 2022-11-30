@@ -1,7 +1,7 @@
 Index: src/configure.ac
 --- src/configure.ac.orig
 +++ src/configure.ac
-@@ -665,10 +665,10 @@ if test "$enable_luainterp" = "yes" -o "$enable_luaint
+@@ -669,10 +669,10 @@ if test "$enable_luainterp" = "yes" -o "$enable_luaint
  	AC_MSG_RESULT(yes)
        else
  	AC_MSG_RESULT(no)
@@ -15,7 +15,7 @@ Index: src/configure.ac
  	else
  	  AC_MSG_RESULT(no)
  
-@@ -712,9 +712,9 @@ if test "$enable_luainterp" = "yes" -o "$enable_luaint
+@@ -716,9 +716,9 @@ if test "$enable_luainterp" = "yes" -o "$enable_luaint
      else
        if test "X$LUA_INC" != "X"; then
  	dnl Test alternate location using version

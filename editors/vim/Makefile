@@ -1,12 +1,11 @@
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
 
-# if updating, regen plists with a gui flavour so -lang isn't messed up
-V=		9.0.0192
+# careful with PLISTs if updating
+V=		9.0.0976
 GH_ACCOUNT=	vim
 GH_PROJECT=	vim
 GH_TAGNAME=	v$V
-REVISION-main=	0
 
 MASTER_SITES0=	https://github.com/vim/colorschemes/archive/
 DISTFILES=	${GH_DISTFILE} \

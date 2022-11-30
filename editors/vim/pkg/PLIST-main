@@ -34,6 +34,7 @@ share/vim/${P}/autoload/dist/
 share/vim/${P}/autoload/dist/ft.vim
 share/vim/${P}/autoload/dist/man.vim
 share/vim/${P}/autoload/dist/script.vim
+share/vim/${P}/autoload/dist/vimindent.vim
 share/vim/${P}/autoload/freebasic.vim
 share/vim/${P}/autoload/getscript.vim
 share/vim/${P}/autoload/gnat.vim
@@ -58,6 +59,7 @@ share/vim/${P}/autoload/sqlcomplete.vim
 share/vim/${P}/autoload/syntaxcomplete.vim
 share/vim/${P}/autoload/tar.vim
 share/vim/${P}/autoload/tohtml.vim
+share/vim/${P}/autoload/typeset.vim
 share/vim/${P}/autoload/vimball.vim
 share/vim/${P}/autoload/xml/
 share/vim/${P}/autoload/xml/html32.vim
@@ -111,6 +113,7 @@ share/vim/${P}/colors/legacy/zellner.vim
 share/vim/${P}/colors/lists/
 share/vim/${P}/colors/lists/csscolors.vim
 share/vim/${P}/colors/lists/default.vim
+share/vim/${P}/colors/lunaperche.vim
 share/vim/${P}/colors/morning.vim
 share/vim/${P}/colors/murphy.vim
 share/vim/${P}/colors/pablo.vim
@@ -163,6 +166,7 @@ share/vim/${P}/compiler/gjs.vim
 share/vim/${P}/compiler/gnat.vim
 share/vim/${P}/compiler/go.vim
 share/vim/${P}/compiler/haml.vim
+share/vim/${P}/compiler/hare.vim
 share/vim/${P}/compiler/hp_acc.vim
 share/vim/${P}/compiler/icc.vim
 share/vim/${P}/compiler/icon.vim
@@ -194,6 +198,10 @@ share/vim/${P}/compiler/podchecker.vim
 share/vim/${P}/compiler/powershell.vim
 share/vim/${P}/compiler/pylint.vim
 share/vim/${P}/compiler/pyunit.vim
+share/vim/${P}/compiler/raco.vim
+share/vim/${P}/compiler/racomake.vim
+share/vim/${P}/compiler/racosetup.vim
+share/vim/${P}/compiler/racotest.vim
 share/vim/${P}/compiler/rake.vim
 share/vim/${P}/compiler/rhino.vim
 share/vim/${P}/compiler/rspec.vim
@@ -244,6 +252,8 @@ share/vim/${P}/doc/farsi.txt
 share/vim/${P}/doc/filetype.txt
 share/vim/${P}/doc/fold.txt
 share/vim/${P}/doc/ft_ada.txt
+share/vim/${P}/doc/ft_context.txt
+share/vim/${P}/doc/ft_mp.txt
 share/vim/${P}/doc/ft_ps1.txt
 share/vim/${P}/doc/ft_raku.txt
 share/vim/${P}/doc/ft_rust.txt
@@ -327,6 +337,7 @@ share/vim/${P}/doc/tips.txt
 share/vim/${P}/doc/todo.txt
 share/vim/${P}/doc/uganda.txt
 share/vim/${P}/doc/undo.txt
+share/vim/${P}/doc/userfunc.txt
 share/vim/${P}/doc/usr_01.txt
 share/vim/${P}/doc/usr_02.txt
 share/vim/${P}/doc/usr_03.txt
@@ -390,6 +401,7 @@ share/vim/${P}/ftplugin/abaqus.vim
 share/vim/${P}/ftplugin/ada.vim
 share/vim/${P}/ftplugin/alsaconf.vim
 share/vim/${P}/ftplugin/ant.vim
+share/vim/${P}/ftplugin/apache.vim
 share/vim/${P}/ftplugin/arch.vim
 share/vim/${P}/ftplugin/art.vim
 share/vim/${P}/ftplugin/asm.vim
@@ -409,6 +421,7 @@ share/vim/${P}/ftplugin/cdrdaoconf.vim
 share/vim/${P}/ftplugin/cfg.vim
 share/vim/${P}/ftplugin/ch.vim
 share/vim/${P}/ftplugin/changelog.vim
+share/vim/${P}/ftplugin/chatito.vim
 share/vim/${P}/ftplugin/chicken.vim
 share/vim/${P}/ftplugin/clojure.vim
 share/vim/${P}/ftplugin/cmake.vim
@@ -419,6 +432,7 @@ share/vim/${P}/ftplugin/confini.vim
 share/vim/${P}/ftplugin/context.vim
 share/vim/${P}/ftplugin/cpp.vim
 share/vim/${P}/ftplugin/crm.vim
+share/vim/${P}/ftplugin/crontab.vim
 share/vim/${P}/ftplugin/cs.vim
 share/vim/${P}/ftplugin/csc.vim
 share/vim/${P}/ftplugin/csh.vim
@@ -459,8 +473,12 @@ share/vim/${P}/ftplugin/freebasic.vim
 share/vim/${P}/ftplugin/fstab.vim
 share/vim/${P}/ftplugin/fvwm.vim
 share/vim/${P}/ftplugin/gdb.vim
+share/vim/${P}/ftplugin/gdscript.vim
+share/vim/${P}/ftplugin/gdshader.vim
+share/vim/${P}/ftplugin/gitattributes.vim
 share/vim/${P}/ftplugin/gitcommit.vim
 share/vim/${P}/ftplugin/gitconfig.vim
+share/vim/${P}/ftplugin/gitignore.vim
 share/vim/${P}/ftplugin/gitrebase.vim
 share/vim/${P}/ftplugin/gitsendemail.vim
 share/vim/${P}/ftplugin/go.vim
@@ -469,9 +487,12 @@ share/vim/${P}/ftplugin/gprof.vim
 share/vim/${P}/ftplugin/groovy.vim
 share/vim/${P}/ftplugin/group.vim
 share/vim/${P}/ftplugin/grub.vim
+share/vim/${P}/ftplugin/gyp.vim
 share/vim/${P}/ftplugin/haml.vim
 share/vim/${P}/ftplugin/hamster.vim
+share/vim/${P}/ftplugin/hare.vim
 share/vim/${P}/ftplugin/haskell.vim
+share/vim/${P}/ftplugin/heex.vim
 share/vim/${P}/ftplugin/help.vim
 share/vim/${P}/ftplugin/hgcommit.vim
 share/vim/${P}/ftplugin/hog.vim
@@ -491,6 +512,7 @@ share/vim/${P}/ftplugin/javascriptreact.vim
 share/vim/${P}/ftplugin/jproperties.vim
 share/vim/${P}/ftplugin/json.vim
 share/vim/${P}/ftplugin/jsonc.vim
+share/vim/${P}/ftplugin/jsonnet.vim
 share/vim/${P}/ftplugin/jsp.vim
 share/vim/${P}/ftplugin/julia.vim
 share/vim/${P}/ftplugin/kconfig.vim
@@ -509,6 +531,7 @@ share/vim/${P}/ftplugin/logtalk.dict
 share/vim/${P}/ftplugin/logtalk.vim
 share/vim/${P}/ftplugin/lprolog.vim
 share/vim/${P}/ftplugin/lua.vim
+share/vim/${P}/ftplugin/lynx.vim
 share/vim/${P}/ftplugin/m3build.vim
 share/vim/${P}/ftplugin/m3quake.vim
 share/vim/${P}/ftplugin/m4.vim
@@ -521,6 +544,7 @@ share/vim/${P}/ftplugin/manconf.vim
 share/vim/${P}/ftplugin/markdown.vim
 share/vim/${P}/ftplugin/masm.vim
 share/vim/${P}/ftplugin/matlab.vim
+share/vim/${P}/ftplugin/mermaid.vim
 share/vim/${P}/ftplugin/meson.vim
 share/vim/${P}/ftplugin/mf.vim
 share/vim/${P}/ftplugin/mma.vim
@@ -539,9 +563,11 @@ share/vim/${P}/ftplugin/nginx.vim
 share/vim/${P}/ftplugin/nroff.vim
 share/vim/${P}/ftplugin/nsis.vim
 share/vim/${P}/ftplugin/objc.vim
+share/vim/${P}/ftplugin/obse.vim
 share/vim/${P}/ftplugin/ocaml.vim
 share/vim/${P}/ftplugin/occam.vim
 share/vim/${P}/ftplugin/octave.vim
+share/vim/${P}/ftplugin/openvpn.vim
 share/vim/${P}/ftplugin/pamconf.vim
 share/vim/${P}/ftplugin/pascal.vim
 share/vim/${P}/ftplugin/passwd.vim
@@ -552,6 +578,7 @@ share/vim/${P}/ftplugin/php.vim
 share/vim/${P}/ftplugin/pinfo.vim
 share/vim/${P}/ftplugin/plaintex.vim
 share/vim/${P}/ftplugin/pod.vim
+share/vim/${P}/ftplugin/poefilter.vim
 share/vim/${P}/ftplugin/poke.vim
 share/vim/${P}/ftplugin/postscr.vim
 share/vim/${P}/ftplugin/procmail.vim
@@ -566,6 +593,7 @@ share/vim/${P}/ftplugin/qf.vim
 share/vim/${P}/ftplugin/quake.vim
 share/vim/${P}/ftplugin/r.vim
 share/vim/${P}/ftplugin/racc.vim
+share/vim/${P}/ftplugin/racket.vim
 share/vim/${P}/ftplugin/raku.vim
 share/vim/${P}/ftplugin/readline.vim
 share/vim/${P}/ftplugin/registry.vim
@@ -600,6 +628,7 @@ share/vim/${P}/ftplugin/slpspi.vim
 share/vim/${P}/ftplugin/solution.vim
 share/vim/${P}/ftplugin/spec.vim
 share/vim/${P}/ftplugin/sql.vim
+share/vim/${P}/ftplugin/ssa.vim
 share/vim/${P}/ftplugin/sshconfig.vim
 share/vim/${P}/ftplugin/sudoers.vim
 share/vim/${P}/ftplugin/svg.vim
@@ -627,6 +656,7 @@ share/vim/${P}/ftplugin/udevperm.vim
 share/vim/${P}/ftplugin/udevrules.vim
 share/vim/${P}/ftplugin/updatedb.vim
 share/vim/${P}/ftplugin/vb.vim
+share/vim/${P}/ftplugin/vdf.vim
 share/vim/${P}/ftplugin/verilog.vim
 share/vim/${P}/ftplugin/vhdl.vim
 share/vim/${P}/ftplugin/vim.vim
@@ -671,6 +701,7 @@ share/vim/${P}/indent/cdl.vim
 share/vim/${P}/indent/ch.vim
 share/vim/${P}/indent/chaiscript.vim
 share/vim/${P}/indent/changelog.vim
+share/vim/${P}/indent/chatito.vim
 share/vim/${P}/indent/clojure.vim
 share/vim/${P}/indent/cmake.vim
 share/vim/${P}/indent/cobol.vim
@@ -701,11 +732,14 @@ share/vim/${P}/indent/fennel.vim
 share/vim/${P}/indent/fortran.vim
 share/vim/${P}/indent/framescript.vim
 share/vim/${P}/indent/freebasic.vim
+share/vim/${P}/indent/gdscript.vim
 share/vim/${P}/indent/gitconfig.vim
 share/vim/${P}/indent/gitolite.vim
 share/vim/${P}/indent/go.vim
+share/vim/${P}/indent/gyp.vim
 share/vim/${P}/indent/haml.vim
 share/vim/${P}/indent/hamster.vim
+share/vim/${P}/indent/hare.vim
 share/vim/${P}/indent/hog.vim
 share/vim/${P}/indent/html.vim
 share/vim/${P}/indent/htmldjango.vim
@@ -737,6 +771,7 @@ share/vim/${P}/indent/mp.vim
 share/vim/${P}/indent/nginx.vim
 share/vim/${P}/indent/nsis.vim
 share/vim/${P}/indent/objc.vim
+share/vim/${P}/indent/obse.vim
 share/vim/${P}/indent/ocaml.vim
 share/vim/${P}/indent/occam.vim
 share/vim/${P}/indent/pascal.vim
@@ -750,6 +785,7 @@ share/vim/${P}/indent/pyrex.vim
 share/vim/${P}/indent/python.vim
 share/vim/${P}/indent/qb64.vim
 share/vim/${P}/indent/r.vim
+share/vim/${P}/indent/racket.vim
 share/vim/${P}/indent/raku.vim
 share/vim/${P}/indent/raml.vim
 share/vim/${P}/indent/readline.vim
@@ -769,6 +805,7 @@ share/vim/${P}/indent/scss.vim
 share/vim/${P}/indent/sdl.vim
 share/vim/${P}/indent/sh.vim
 share/vim/${P}/indent/sml.vim
+share/vim/${P}/indent/solidity.vim
 share/vim/${P}/indent/sql.vim
 share/vim/${P}/indent/sqlanywhere.vim
 share/vim/${P}/indent/sshconfig.vim
@@ -786,6 +823,7 @@ share/vim/${P}/indent/verilog.vim
 share/vim/${P}/indent/vhdl.vim
 share/vim/${P}/indent/vim.vim
 share/vim/${P}/indent/vroom.vim
+share/vim/${P}/indent/vue.vim
 share/vim/${P}/indent/wast.vim
 share/vim/${P}/indent/xf86conf.vim
 share/vim/${P}/indent/xhtml.vim
@@ -1092,6 +1130,7 @@ share/vim/${P}/syntax/chaiscript.vim
 share/vim/${P}/syntax/change.vim
 share/vim/${P}/syntax/changelog.vim
 share/vim/${P}/syntax/chaskell.vim
+share/vim/${P}/syntax/chatito.vim
 share/vim/${P}/syntax/cheetah.vim
 share/vim/${P}/syntax/chicken.vim
 share/vim/${P}/syntax/chill.vim
@@ -1211,12 +1250,17 @@ share/vim/${P}/syntax/fvwm.vim
 share/vim/${P}/syntax/fvwm2m4.vim
 share/vim/${P}/syntax/gdb.vim
 share/vim/${P}/syntax/gdmo.vim
+share/vim/${P}/syntax/gdresource.vim
+share/vim/${P}/syntax/gdscript.vim
+share/vim/${P}/syntax/gdshader.vim
 share/vim/${P}/syntax/gedcom.vim
 share/vim/${P}/syntax/gemtext.vim
 share/vim/${P}/syntax/gift.vim
 share/vim/${P}/syntax/git.vim
+share/vim/${P}/syntax/gitattributes.vim
 share/vim/${P}/syntax/gitcommit.vim
 share/vim/${P}/syntax/gitconfig.vim
+share/vim/${P}/syntax/gitignore.vim
 share/vim/${P}/syntax/gitolite.vim
 share/vim/${P}/syntax/gitrebase.vim
 share/vim/${P}/syntax/gitsendemail.vim
@@ -1237,8 +1281,10 @@ share/vim/${P}/syntax/grub.vim
 share/vim/${P}/syntax/gsp.vim
 share/vim/${P}/syntax/gtkrc.vim
 share/vim/${P}/syntax/gvpr.vim
+share/vim/${P}/syntax/gyp.vim
 share/vim/${P}/syntax/haml.vim
 share/vim/${P}/syntax/hamster.vim
+share/vim/${P}/syntax/hare.vim
 share/vim/${P}/syntax/haskell.vim
 share/vim/${P}/syntax/haste.vim
 share/vim/${P}/syntax/hastepreproc.vim
@@ -1249,6 +1295,7 @@ share/vim/${P}/syntax/hercules.vim
 share/vim/${P}/syntax/hex.vim
 share/vim/${P}/syntax/hgcommit.vim
 share/vim/${P}/syntax/hitest.vim
+share/vim/${P}/syntax/hlsplaylist.vim
 share/vim/${P}/syntax/hog.vim
 share/vim/${P}/syntax/hollywood.vim
 share/vim/${P}/syntax/hostconf.vim
@@ -1325,6 +1372,7 @@ share/vim/${P}/syntax/lsl.vim
 share/vim/${P}/syntax/lss.vim
 share/vim/${P}/syntax/lua.vim
 share/vim/${P}/syntax/lynx.vim
+share/vim/${P}/syntax/lyrics.vim
 share/vim/${P}/syntax/m3build.vim
 share/vim/${P}/syntax/m3quake.vim
 share/vim/${P}/syntax/m4.vim
@@ -1344,6 +1392,7 @@ share/vim/${P}/syntax/master.vim
 share/vim/${P}/syntax/matlab.vim
 share/vim/${P}/syntax/maxima.vim
 share/vim/${P}/syntax/mel.vim
+share/vim/${P}/syntax/mermaid.vim
 share/vim/${P}/syntax/meson.vim
 share/vim/${P}/syntax/messages.vim
 share/vim/${P}/syntax/mf.vim
@@ -1391,12 +1440,14 @@ share/vim/${P}/syntax/nsis.vim
 share/vim/${P}/syntax/obj.vim
 share/vim/${P}/syntax/objc.vim
 share/vim/${P}/syntax/objcpp.vim
+share/vim/${P}/syntax/obse.vim
 share/vim/${P}/syntax/ocaml.vim
 share/vim/${P}/syntax/occam.vim
 share/vim/${P}/syntax/omnimark.vim
 share/vim/${P}/syntax/opam.vim
 share/vim/${P}/syntax/openroad.vim
 share/vim/${P}/syntax/openscad.vim
+share/vim/${P}/syntax/openvpn.vim
 share/vim/${P}/syntax/opl.vim
 share/vim/${P}/syntax/ora.vim
 share/vim/${P}/syntax/pamconf.vim
@@ -1425,6 +1476,7 @@ share/vim/${P}/syntax/plp.vim
 share/vim/${P}/syntax/plsql.vim
 share/vim/${P}/syntax/po.vim
 share/vim/${P}/syntax/pod.vim
+share/vim/${P}/syntax/poefilter.vim
 share/vim/${P}/syntax/poke.vim
 share/vim/${P}/syntax/postscr.vim
 share/vim/${P}/syntax/pov.vim
@@ -1452,6 +1504,7 @@ share/vim/${P}/syntax/qf.vim
 share/vim/${P}/syntax/quake.vim
 share/vim/${P}/syntax/r.vim
 share/vim/${P}/syntax/racc.vim
+share/vim/${P}/syntax/racket.vim
 share/vim/${P}/syntax/radiance.vim
 share/vim/${P}/syntax/raku.vim
 share/vim/${P}/syntax/raml.vim
@@ -1507,6 +1560,13 @@ share/vim/${P}/syntax/sgml.vim
 share/vim/${P}/syntax/sgmldecl.vim
 share/vim/${P}/syntax/sgmllnx.vim
 share/vim/${P}/syntax/sh.vim
+share/vim/${P}/syntax/shared/
+share/vim/${P}/syntax/shared/README.txt
+share/vim/${P}/syntax/shared/context-data-context.vim
+share/vim/${P}/syntax/shared/context-data-interfaces.vim
+share/vim/${P}/syntax/shared/context-data-metafun.vim
+share/vim/${P}/syntax/shared/context-data-tex.vim
+share/vim/${P}/syntax/shared/typescriptcommon.vim
 share/vim/${P}/syntax/sicad.vim
 share/vim/${P}/syntax/sieve.vim
 share/vim/${P}/syntax/sil.vim
@@ -1534,6 +1594,7 @@ share/vim/${P}/syntax/snnsnet.vim
 share/vim/${P}/syntax/snnspat.vim
 share/vim/${P}/syntax/snnsres.vim
 share/vim/${P}/syntax/snobol4.vim
+share/vim/${P}/syntax/solidity.vim
 share/vim/${P}/syntax/spec.vim
 share/vim/${P}/syntax/specman.vim
 share/vim/${P}/syntax/spice.vim
@@ -1551,6 +1612,8 @@ share/vim/${P}/syntax/sqr.vim
 share/vim/${P}/syntax/squid.vim
 share/vim/${P}/syntax/squirrel.vim
 share/vim/${P}/syntax/srec.vim
+share/vim/${P}/syntax/srt.vim
+share/vim/${P}/syntax/ssa.vim
 share/vim/${P}/syntax/sshconfig.vim
 share/vim/${P}/syntax/sshdconfig.vim
 share/vim/${P}/syntax/st.vim
@@ -1606,7 +1669,6 @@ share/vim/${P}/syntax/tt2.vim
 share/vim/${P}/syntax/tt2html.vim
 share/vim/${P}/syntax/tt2js.vim
 share/vim/${P}/syntax/typescript.vim
-share/vim/${P}/syntax/typescriptcommon.vim
 share/vim/${P}/syntax/typescriptreact.vim
 share/vim/${P}/syntax/uc.vim
 share/vim/${P}/syntax/udevconf.vim
@@ -1623,6 +1685,7 @@ share/vim/${P}/syntax/usserverlog.vim
 share/vim/${P}/syntax/usw2kagtlog.vim
 share/vim/${P}/syntax/valgrind.vim
 share/vim/${P}/syntax/vb.vim
+share/vim/${P}/syntax/vdf.vim
 share/vim/${P}/syntax/vera.vim
 share/vim/${P}/syntax/verilog.vim
 share/vim/${P}/syntax/verilogams.vim
