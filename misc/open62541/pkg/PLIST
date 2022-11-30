@@ -40,7 +40,6 @@ include/open62541/util.h
 @comment include/ziptree.h
 lib/cmake/
 lib/cmake/open62541/
-lib/cmake/open62541/FindMbedTLS.cmake
 lib/cmake/open62541/open62541Config.cmake
 lib/cmake/open62541/open62541ConfigVersion.cmake
 lib/cmake/open62541/open62541Macros.cmake

@@ -1,10 +1,11 @@
 COMMENT =	library implementation of OPC UA
 
 VERSION =	1.3.4
+REVISION =	0
 DISTNAME =	open62541-${VERSION}
 PKGNAME =	open62541-${VERSION}
 
-SHARED_LIBS =	open62541	2.1
+SHARED_LIBS =	open62541	3.0
 
 CATEGORIES =	misc
 
@@ -15,7 +16,7 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 # Mozilla Public License v2.0
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =		c m mbedcrypto mbedtls mbedx509 pthread
+WANTLIB =		c crypto m pthread ssl tls
 
 MASTER_SITES =		https://github.com/open62541/open62541/
 MASTER_SITES0 =		https://github.com/OPCFoundation/UA-Nodeset/archive/
@@ -32,13 +33,11 @@ BUILD_DEPENDS =		devel/check \
 			print/texlive/texmf,-full \
 			textproc/py-sphinx,python3 \
 			textproc/py-sphinx_rtd_theme,python3
-# needed to build with encryption
-LIB_DEPENDS =		security/polarssl
 
 CONFIGURE_ARGS =	-DCMAKE_BUILD_TYPE=RelWithDebInfo \
 			-DOPEN62541_VERSION=v${VERSION} \
 			-DBUILD_SHARED_LIBS=ON \
-			-DUA_ENABLE_ENCRYPTION=ON \
+			-DUA_ENABLE_ENCRYPTION=LIBRESSL \
 			-DUA_ENABLE_AMALGAMATION=OFF \
 			-DUA_PACK_DEBIAN=ON \
 			-DUA_BUILD_TOOLS=ON \

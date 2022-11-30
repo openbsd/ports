@@ -1,0 +1,21 @@
+Index: plugins/crypto/openssl/ua_openssl_version_abstraction.h
+--- plugins/crypto/openssl/ua_openssl_version_abstraction.h.orig
++++ plugins/crypto/openssl/ua_openssl_version_abstraction.h
+@@ -17,15 +17,11 @@
+ #error "OPENSSL_VERSION_NUMBER is not defined."
+ #endif
+ 
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
+ #define X509_STORE_CTX_set0_trusted_stack(STORE_CTX, CTX_SKTRUSTED) X509_STORE_CTX_trusted_stack(STORE_CTX, CTX_SKTRUSTED)
+ #endif
+ 
+-#if OPENSSL_VERSION_NUMBER < 0x1010000fL || defined(LIBRESSL_VERSION_NUMBER)
+-#define X509_STORE_CTX_get_check_issued(STORE_CTX) STORE_CTX->check_issued
+-#endif
+-
+-#if OPENSSL_VERSION_NUMBER < 0x1010000fL || defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER < 0x1010000fL
+ #define get_pkey_rsa(evp) ((evp)->pkey.rsa)
+ #else
+ #define get_pkey_rsa(evp) EVP_PKEY_get0_RSA(evp)
