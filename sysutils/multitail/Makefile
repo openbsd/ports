@@ -2,9 +2,10 @@ COMMENT=	multi-window tail(1) utility
 
 DISTNAME=	multitail-6.4.2
 CATEGORIES=	sysutils
-REVISION=	0
+REVISION=	1
 
-HOMEPAGE=	http://www.vanheusden.com/multitail/
+HOMEPAGE=	https://www.vanheusden.com/multitail/
+PORTROACH=	site:https://github.com/folkertvanheusden/multitail/releases/
 
 MAINTAINER=	Adam Wolk <awolk@openbsd.org>
 
