@@ -1,10 +1,9 @@
 COMMENT =	annotate Python ASTs with source text and token information
 
-MODPY_EGG_VERSION =	2.0.8
+MODPY_EGG_VERSION =	2.2.0
 
 DISTNAME =	asttokens-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
 
 CATEGORIES =	devel
 
