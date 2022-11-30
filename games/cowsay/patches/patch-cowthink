@@ -1,0 +1,12 @@
+Index: cowthink
+--- cowthink.orig
++++ cowthink
+@@ -16,7 +16,7 @@ use Getopt::Std;
+ 
+ my $VERSION = "4.0";
+ my $progname = basename($0);
+-my $cowpath = $ENV{'COWPATH'} || ".";
++my $cowpath = $ENV{'COWPATH'} || "/usr/local/share/cows";
+ 
+ ## One of these days, we'll get it ported to Windows.  Yeah, right.
+ 

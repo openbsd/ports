@@ -4,12 +4,7 @@ DISTNAME=	Acme-Cow-0.2
 MODULES=	cpan
 PKGNAME=	cowsay-0.2
 EPOCH=		0
-
-#GH_ACCOUNT=	tnalpgge
-#GH_PROJECT=	rank-amateur-cowsay
-#GH_COMMIT=	d66b866cf136502054e081b8714b09f7e43cd39f
-
-#DISTNAME=	cowsay-3.04
+REVISION=	0
 
 CATEGORIES=	games
 
