@@ -1,25 +1,29 @@
+bin/cowpm
 bin/cowsay
 bin/cowthink
+${P5SITE}/Acme/
+${P5SITE}/Acme/Cow/
+${P5SITE}/Acme/Cow.pm
+${P5SITE}/Acme/Cow/DragonAndCow.pm
+${P5SITE}/Acme/Cow/Example.pm
+${P5SITE}/Acme/Cow/Frogs.pm
+${P5SITE}/Acme/Cow/MechAndCow.pm
+${P5SITE}/Acme/Cow/Stegosaurus.pm
+${P5SITE}/Acme/Cow/TextBalloon.pm
+${P5SITE}/Acme/Cow/TuxStab.pm
+@man man/man1/cowpm.1
 @man man/man1/cowsay.1
 @man man/man1/cowthink.1
+@man man/man3p/Acme::Cow.3p
+@man man/man3p/Acme::Cow::Example.3p
+@man man/man3p/Acme::Cow::TextBalloon.3p
 share/cows/
-share/cows/DragonAndCow.pm
-share/cows/Example.pm
-share/cows/Frogs.pm
-share/cows/MechAndCow.pm
-share/cows/Stegosaurus.pm
-share/cows/TextBalloon.pm
-share/cows/TuxStab.pm
-share/cows/beavis.zen.cow
-share/cows/blowfish.cow
 share/cows/bong.cow
-share/cows/bud-frogs.cow
 share/cows/bunny.cow
 share/cows/cheese.cow
 share/cows/cower.cow
 share/cows/daemon.cow
 share/cows/default.cow
-share/cows/dragon-and-cow.cow
 share/cows/dragon.cow
 share/cows/elephant-in-snake.cow
 share/cows/elephant.cow
@@ -28,13 +32,12 @@ share/cows/flaming-sheep.cow
 share/cows/ghostbusters.cow
 share/cows/head-in.cow
 share/cows/hellokitty.cow
+share/cows/jkh.cow
 share/cows/kiss.cow
 share/cows/kitty.cow
 share/cows/koala.cow
 share/cows/kosh.cow
 share/cows/luke-koala.cow
-share/cows/mech-and-cow
-@comment share/cows/mech-and-cow.orig
 share/cows/meow.cow
 share/cows/milk.cow
 share/cows/moofasa.cow
@@ -46,7 +49,6 @@ share/cows/sheep.cow
 share/cows/skeleton.cow
 share/cows/small.cow
 share/cows/sodomized.cow
-share/cows/stegosaurus.cow
 share/cows/stimpy.cow
 share/cows/supermilker.cow
 share/cows/surgery.cow
@@ -59,3 +61,4 @@ share/cows/udder.cow
 share/cows/vader-koala.cow
 share/cows/vader.cow
 share/cows/www.cow
+share/cows/zen-beavis.cow
