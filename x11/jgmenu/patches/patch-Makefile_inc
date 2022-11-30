@@ -1,4 +1,7 @@
 Index: Makefile.inc
+
+Take out -g and -Os
+
 --- Makefile.inc.orig
 +++ Makefile.inc
 @@ -15,7 +15,7 @@ else
@@ -6,7 +9,7 @@ Index: Makefile.inc
  endif
  
 -CFLAGS  += -g -Wall -Os -std=gnu99
-+CFLAGS  += -Wall -std=gnu89
++CFLAGS  += -Wall -std=gnu99
  CFLAGS  += -Wextra -Wdeclaration-after-statement -Wno-format-zero-length \
  	   -Wold-style-definition -Woverflow -Wpointer-arith \
  	   -Wstrict-prototypes -Wunused -Wvla -Wunused-result
