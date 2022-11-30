@@ -1,10 +1,9 @@
 COMMENT =	extract data from Python stack frames and tracebacks
 
-MODPY_EGG_VERSION =	0.5.1
+MODPY_EGG_VERSION =	0.6.2
 
 DISTNAME =	stack_data-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
 
 CATEGORIES =	devel
 
@@ -28,6 +27,7 @@ RUN_DEPENDS =	devel/py-asttokens${MODPY_FLAVOR} \
 PORTHOME =	${WRKDIR}
 TEST_DEPENDS =	textproc/py-pygments${MODPY_FLAVOR} \
 		devel/py-littleutils${MODPY_FLAVOR} \
-		devel/py-typeguard${MODPY_FLAVOR}
+		devel/py-typeguard${MODPY_FLAVOR} \
+		lang/cython${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
