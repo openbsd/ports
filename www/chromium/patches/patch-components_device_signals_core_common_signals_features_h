@@ -7,6 +7,6 @@ Index: components/device_signals/core/common/signals_features.h
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
- extern const base::Feature kDeviceSignalsPromoAfterSigninIntercept;
+ BASE_DECLARE_FEATURE(kDeviceSignalsPromoAfterSigninIntercept);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC)
  

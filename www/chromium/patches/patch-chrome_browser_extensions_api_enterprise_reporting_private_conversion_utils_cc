@@ -1,7 +1,7 @@
 Index: chrome/browser/extensions/api/enterprise_reporting_private/conversion_utils.cc
 --- chrome/browser/extensions/api/enterprise_reporting_private/conversion_utils.cc.orig
 +++ chrome/browser/extensions/api/enterprise_reporting_private/conversion_utils.cc
-@@ -6,7 +6,7 @@
+@@ -8,7 +8,7 @@
  
  #include "build/build_config.h"
  

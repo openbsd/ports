@@ -10,7 +10,7 @@ Index: chrome/browser/enterprise/signals/device_info_fetcher.cc
  #include "chrome/browser/enterprise/signals/device_info_fetcher_linux.h"
  #endif
  
-@@ -70,7 +70,7 @@ std::unique_ptr<DeviceInfoFetcher> DeviceInfoFetcher::
+@@ -71,7 +71,7 @@ std::unique_ptr<DeviceInfoFetcher> DeviceInfoFetcher::
    return std::make_unique<DeviceInfoFetcherMac>();
  #elif BUILDFLAG(IS_WIN)
    return std::make_unique<DeviceInfoFetcherWin>();

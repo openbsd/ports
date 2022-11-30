@@ -10,7 +10,7 @@ Index: chrome/browser/safe_browsing/download_protection/file_analyzer.cc
  #include "chrome/browser/safe_browsing/download_protection/document_analysis_service.h"
  #endif
  
-@@ -102,7 +102,7 @@ void FileAnalyzer::Start(const base::FilePath& target_
+@@ -100,7 +100,7 @@ void FileAnalyzer::Start(const base::FilePath& target_
    } else if (inspection_type == DownloadFileType::DMG) {
      StartExtractDmgFeatures();
  #endif
@@ -19,7 +19,7 @@ Index: chrome/browser/safe_browsing/download_protection/file_analyzer.cc
    } else if (inspection_type == DownloadFileType::OFFICE_DOCUMENT) {
      StartExtractDocumentFeatures();
  #endif
-@@ -325,7 +325,7 @@ void FileAnalyzer::OnDmgAnalysisFinished(
+@@ -326,7 +326,7 @@ void FileAnalyzer::OnDmgAnalysisFinished(
  }
  #endif  // BUILDFLAG(IS_MAC)
  

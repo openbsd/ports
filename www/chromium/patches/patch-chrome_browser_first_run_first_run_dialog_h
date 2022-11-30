@@ -8,5 +8,5 @@ Index: chrome/browser/first_run/first_run_dialog.h
 -#if BUILDFLAG(IS_MAC) || (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
 +#if BUILDFLAG(IS_MAC) || (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || BUILDFLAG(IS_BSD)
  
- class Profile;
+ namespace first_run {
  

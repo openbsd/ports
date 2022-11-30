@@ -1,9 +1,9 @@
 Index: net/dns/host_resolver_proc.cc
 --- net/dns/host_resolver_proc.cc.orig
 +++ net/dns/host_resolver_proc.cc
-@@ -19,10 +19,6 @@
- #include "net/dns/dns_util.h"
- #include "net/dns/host_resolver.h"
+@@ -15,10 +15,6 @@
+ #include "net/base/net_errors.h"
+ #include "net/dns/host_resolver_system_task.h"
  
 -#if BUILDFLAG(IS_OPENBSD)
 -#define AI_ADDRCONFIG 0
@@ -12,12 +12,3 @@ Index: net/dns/host_resolver_proc.cc
  namespace net {
  
  HostResolverProc* HostResolverProc::default_proc_ = nullptr;
-@@ -193,7 +189,7 @@ int SystemHostResolverCall(const std::string& host,
-                                                 base::BlockingType::WILL_BLOCK);
- 
- #if BUILDFLAG(IS_POSIX) && \
--    !(BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_OPENBSD) || BUILDFLAG(IS_ANDROID))
-+    !(BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_BSD) || BUILDFLAG(IS_ANDROID))
-   DnsReloaderMaybeReload();
- #endif
-   auto [ai, err, os_error] = AddressInfo::Get(host, hints, nullptr, network);

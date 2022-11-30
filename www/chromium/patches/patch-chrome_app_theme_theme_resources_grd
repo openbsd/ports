@@ -1,7 +1,7 @@
 Index: chrome/app/theme/theme_resources.grd
 --- chrome/app/theme/theme_resources.grd.orig
 +++ chrome/app/theme/theme_resources.grd
-@@ -131,7 +131,7 @@
+@@ -135,7 +135,7 @@
        </if>
        <if expr="_google_chrome">
          <then>
@@ -10,7 +10,7 @@ Index: chrome/app/theme/theme_resources.grd
              <then>
                <if expr="_google_chrome_for_testing">
                  <then>
-@@ -148,7 +148,7 @@
+@@ -152,7 +152,7 @@
                  </else>
                </if> <!-- _google_chrome_for_testing -->
              </then>
@@ -19,7 +19,7 @@ Index: chrome/app/theme/theme_resources.grd
                <if expr="not is_android">
                  <if expr="_google_chrome_for_testing">
                    <then>
-@@ -172,7 +172,7 @@
+@@ -176,7 +176,7 @@
                  </else>
                </if> <!-- _google_chrome_for_testing -->
              </else>
@@ -28,7 +28,7 @@ Index: chrome/app/theme/theme_resources.grd
            <structure type="chrome_scaled_image" name="IDR_PRODUCT_LOGO_32_CANARY" file="google_chrome/product_logo_32_canary.png" />
            <if expr="not is_android">
              <structure type="chrome_scaled_image" name="IDR_PRODUCT_LOGO_NAME_22" file="google_chrome/product_logo_name_22.png" />
-@@ -182,7 +182,7 @@
+@@ -186,7 +186,7 @@
            <structure type="chrome_scaled_image" name="IDR_PRODUCT_LOGO_ENTERPRISE_WHITE" file="google_chrome/product_logo_enterprise_white.png" />
          </then>
          <else> <!-- not _google_chrome -->
@@ -37,7 +37,7 @@ Index: chrome/app/theme/theme_resources.grd
              <then>
                <structure type="chrome_scaled_image" name="IDR_PRODUCT_LOGO_16" file="chromium/linux/product_logo_16.png" />
                <structure type="chrome_scaled_image" name="IDR_PRODUCT_LOGO_32" file="chromium/linux/product_logo_32.png" />
-@@ -191,7 +191,7 @@
+@@ -195,7 +195,7 @@
                <structure type="chrome_scaled_image" name="IDR_PRODUCT_LOGO_16" file="chromium/product_logo_16.png" />
                <structure type="chrome_scaled_image" name="IDR_PRODUCT_LOGO_32" file="chromium/product_logo_32.png" />
              </else>
