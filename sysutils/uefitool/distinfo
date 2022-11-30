@@ -1,4 +1,4 @@
 SHA256 (UEFITool-A62.tar.gz) = +jm+KRIUH32VzXM6zy9J6Uwd88+7Bpu4Vtbpuuhv+Ls=
-SHA256 (UEFITool-fix-build-use-swap16-d6fbc91.patch) = /Jd+lLB3U2MTGMjSVXFX7WI3Nuk5VoetSrmFWsLvKt0=
+SHA256 (UEFITool-fix-build-use-swap16-6e7b46d.patch) = OiV1Qc+Nrt2jFpTrGiKMcRsl+34Sif1NIScuDUyxLAA=
 SIZE (UEFITool-A62.tar.gz) = 1358253
-SIZE (UEFITool-fix-build-use-swap16-d6fbc91.patch) = 1125
+SIZE (UEFITool-fix-build-use-swap16-6e7b46d.patch) = 1125
