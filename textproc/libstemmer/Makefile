@@ -3,7 +3,7 @@ COMMENT=	stemming algorithms for text processing
 # distfile at https://snowballstem.org/dist/ doesn't have mkalgorithms.pl
 GH_ACCOUNT=	snowballstem
 GH_PROJECT=	snowball
-GH_TAGNAME=	v2.1.0
+GH_TAGNAME=	v2.2.0
 PKGNAME=	${DISTNAME:S/snowball/libstemmer/}
 
 SHARED_LIBS=	stemmer	0.0
