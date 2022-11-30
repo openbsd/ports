@@ -404,12 +404,12 @@ Index: arch/arm64/boot/dts/qcom/sc8280xp-lenovo-thinkpad-x13s.dts
  	};
  };
  
-@@ -203,24 +535,52 @@
+@@ -203,24 +535,44 @@
  	clock-frequency = <400000>;
  
  	pinctrl-names = "default";
 -	pinctrl-0 = <&qup2_i2c5_default>, <&kybd_default>, <&tpad_default>;
-+	pinctrl-0 = <&qup2_i2c5_default>;
++	pinctrl-0 = <&qup2_i2c5_default>, <&tpad_default>;
  
  	status = "okay";
  
@@ -421,12 +421,7 @@ Index: arch/arm64/boot/dts/qcom/sc8280xp-lenovo-thinkpad-x13s.dts
 +		interrupts-extended = <&tlmm 182 IRQ_TYPE_LEVEL_LOW>;
 +		vdd-supply = <&vreg_misc_3p3>;
 +
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&tpad_default>;
-+
 +		wakeup-source;
-+
-+		status = "disabled";
 +	};
 +
  	touchpad@2c {
@@ -436,9 +431,6 @@ Index: arch/arm64/boot/dts/qcom/sc8280xp-lenovo-thinkpad-x13s.dts
  		hid-descr-addr = <0x20>;
  		interrupts-extended = <&tlmm 182 IRQ_TYPE_LEVEL_LOW>;
  		vdd-supply = <&vreg_misc_3p3>;
-+
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&tpad_default>;
 +
 +		wakeup-source;
  	};
@@ -458,7 +450,7 @@ Index: arch/arm64/boot/dts/qcom/sc8280xp-lenovo-thinkpad-x13s.dts
  	};
  };
  
-@@ -307,6 +667,13 @@
+@@ -307,6 +659,13 @@
  	};
  };
  
@@ -472,7 +464,7 @@ Index: arch/arm64/boot/dts/qcom/sc8280xp-lenovo-thinkpad-x13s.dts
  &pmc8280c_gpios {
  	edp_bl_pwm: edp-bl-pwm-state {
  		pins = "gpio8";
-@@ -314,29 +681,119 @@
+@@ -314,29 +673,119 @@
  	};
  };
  
@@ -595,7 +587,7 @@ Index: arch/arm64/boot/dts/qcom/sc8280xp-lenovo-thinkpad-x13s.dts
  	qup0_i2c4_default: qup0-i2c4-default-state {
  		pins = "gpio171", "gpio172";
  		function = "qup4";
-@@ -352,7 +809,7 @@
+@@ -352,7 +801,7 @@
  	};
  
  	tpad_default: tpad-default-state {
@@ -604,7 +596,7 @@ Index: arch/arm64/boot/dts/qcom/sc8280xp-lenovo-thinkpad-x13s.dts
  			pins = "gpio182";
  			function = "gpio";
  			bias-disable;
-@@ -360,13 +817,13 @@
+@@ -360,13 +809,13 @@
  	};
  
  	ts0_default: ts0-default-state {
