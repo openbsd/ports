@@ -1,6 +1,6 @@
 COMMENT =	ipv4 and ipv6 validation methods
 
-DISTNAME =	Data-Validate-IP-0.30
+DISTNAME =	Data-Validate-IP-0.31
 
 CATEGORIES =	devel
 
