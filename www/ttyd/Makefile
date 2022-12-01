@@ -2,7 +2,7 @@ COMMENT =	share your terminal over the web
 
 GH_ACCOUNT =	tsl0922
 GH_PROJECT =	ttyd
-GH_TAGNAME =	1.5.2
+GH_TAGNAME =	1.7.2
 
 CATEGORIES =	www
 
