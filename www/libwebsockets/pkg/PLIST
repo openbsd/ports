@@ -94,6 +94,7 @@ lib/cmake/libwebsockets/LibwebsocketsTargets.cmake
 lib/cmake/libwebsockets/LwsCheckRequirements.cmake
 lib/cmake/libwebsockets/libwebsockets-config-version.cmake
 lib/cmake/libwebsockets/libwebsockets-config.cmake
+@so lib/libwebsockets-evlib_uv.so
 @static-lib lib/libwebsockets.a
 @lib lib/libwebsockets.so.${LIBwebsockets_VERSION}
 lib/pkgconfig/libwebsockets.pc
