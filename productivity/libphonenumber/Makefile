@@ -41,6 +41,7 @@ CONFIGURE_ARGS =	-DUSE_STD_MAP=ON \
 
 WRKSRC =		${WRKDIST}/cpp
 
-TEST_TARGET =		tests
+do-test:
+	${WRKBUILD}/libphonenumber_test
 
 .include <bsd.port.mk>
