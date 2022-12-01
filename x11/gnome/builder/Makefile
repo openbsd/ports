@@ -4,7 +4,7 @@
 COMMENT=		IDE for GNOME
 
 GNOME_PROJECT=		gnome-builder
-GNOME_VERSION=		43.3
+GNOME_VERSION=		43.4
 
 CATEGORIES=		devel
 

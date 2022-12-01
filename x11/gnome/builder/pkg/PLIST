@@ -213,6 +213,7 @@ include/gnome-builder-43/libide/io/ide-recursive-file-monitor.h
 include/gnome-builder-43/libide/io/ide-shell.h
 include/gnome-builder-43/libide/io/ide-task-cache.h
 include/gnome-builder-43/libide/io/libide-io.h
+include/gnome-builder-43/libide/libide-webkit-api.h
 include/gnome-builder-43/libide/lsp/
 include/gnome-builder-43/libide/lsp/ide-lsp-client.h
 include/gnome-builder-43/libide/lsp/ide-lsp-code-action-provider.h
@@ -353,7 +354,7 @@ include/gnome-builder-43/libide/webkit/libide-webkit.h
 lib/gnome-builder/
 lib/gnome-builder/girepository-1.0/
 lib/gnome-builder/girepository-1.0/Ide-43.typelib
-lib/pkgconfig/gnome-builder-43.3.pc
+lib/pkgconfig/gnome-builder-43.4.pc
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/Ide.py
 @bin libexec/gnome-builder-clang
 @bin libexec/gnome-builder-git
