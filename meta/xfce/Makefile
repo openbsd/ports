@@ -3,6 +3,7 @@ COMMENT-extras =	Xfce desktop meta-package (full installation)
 
 V =		4.16
 PKGNAME=	xfce-${V}
+REVISION =	0
 
 PKGNAME-main =		xfce-${V}
 PKGNAME-extras =	xfce-extras-${V}

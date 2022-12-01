@@ -73,7 +73,7 @@ to your .xinitrc/.xsession before startxfce4:
 export LC_MESSAGES=fr_FR.UTF-8
 
 where 'fr_FR' is your language tag.
-See https://www.openbsd.org/faq/faq8.html#locales for more information
+See https://www.openbsd.org/faq/faq10.html#locales for more information
 on that topic.
 
 More generally, https://docs.xfce.org and https://docs.xfce.org/faq
