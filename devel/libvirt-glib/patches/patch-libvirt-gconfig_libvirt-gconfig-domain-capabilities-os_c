@@ -1,0 +1,17 @@
+From e0bfc34682744a74b850fa217e9c206a9eb80612 Mon Sep 17 00:00:00 2001
+From: Markus Volk <f_l_k@t-online.de>
+Date: Wed, 23 Nov 2022 16:47:52 +0100
+Subject: [PATCH] libvirt-gconfig-domain-capabilities-os.c: fix pointer-sign  issue
+
+Index: libvirt-gconfig/libvirt-gconfig-domain-capabilities-os.c
+--- libvirt-gconfig/libvirt-gconfig-domain-capabilities-os.c.orig
++++ libvirt-gconfig/libvirt-gconfig-domain-capabilities-os.c
+@@ -67,7 +67,7 @@ static gboolean search_firmwares(xmlNodePtr node, gpoi
+ {
+     const gchar *content;
+ 
+-    if (!g_str_equal(node->name, "enum"))
++    if (!g_str_equal((const gchar *)node->name, "enum"))
+         return TRUE;
+ 
+     content = gvir_config_xml_get_attribute_content(node, "name");

@@ -2,6 +2,7 @@ COMMENT=		libvirt wrapper suited for GObject-based applications
 
 DISTNAME=		libvirt-glib-4.0.0
 EXTRACT_SUFX=		.tar.xz
+REVISION=		0
 
 CATEGORIES=		devel sysutils
 
