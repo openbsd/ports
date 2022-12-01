@@ -1,12 +1,14 @@
 Index: lib/the_Foundation/Depends.cmake
 --- lib/the_Foundation/Depends.cmake.orig
 +++ lib/the_Foundation/Depends.cmake
-@@ -10,10 +10,7 @@ if (NOT IOS AND NOT ANDROID)
+@@ -12,12 +12,7 @@ if (NOT IOS AND NOT ANDROID)
          set (iHaveCurl NO)
      endif ()
      if (TFDN_ENABLE_TLSREQUEST)
 -        pkg_check_modules (OPENSSL eopenssl11)  # BSD
--        if (NOT OPENSSL_FOUND)
+-        if (OPENSSL_FOUND)
+-           set (EOPENSSL_FOUND YES)
+-        else ()
 -            pkg_check_modules (OPENSSL openssl)
 -        endif ()
 +        pkg_check_modules (OPENSSL openssl)

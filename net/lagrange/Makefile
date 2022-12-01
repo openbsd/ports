@@ -1,5 +1,5 @@
 COMMENT =	SDL multi protocol navigator
-VERSION =	1.13.8
+VERSION =	1.14.1
 
 DISTNAME =	lagrange-${VERSION}
 
@@ -12,7 +12,7 @@ HOMEPAGE =	https://gmi.skyjake.fi/lagrange/
 # BSD 2-Clause
 PERMIT_PACKAGE =Yes
 
-WANTLIB +=	SDL2 mpg123 pcre unistring fribidi harfbuzz
+WANTLIB +=	SDL2 mpg123 pcre2-8 unistring fribidi harfbuzz
 WANTLIB +=	c crypto m ssl z pthread webp
 
 DEBUG_PACKAGES =${BUILD_PACKAGES}
@@ -33,7 +33,7 @@ LIB_DEPENDS =	audio/mpg123 \
 		converters/libunistring \
 		devel/fribidi \
 		devel/harfbuzz \
-		devel/pcre \
+		devel/pcre2 \
 		devel/sdl2 \
 		graphics/libwebp
 
