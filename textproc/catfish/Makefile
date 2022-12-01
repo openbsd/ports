@@ -28,7 +28,8 @@ RUN_DEPENDS =	devel/py-gobject3${MODPY_FLAVOR} \
 
 BUILD_DEPENDS +=	${_MODPY_BUILD_DEPENDS} \
 		devel/gettext,-tools \
-		devel/py-distutils-extra${MODPY_FLAVOR}
+		devel/py-distutils-extra${MODPY_FLAVOR} \
+		devel/py-setuptools${MODPY_FLAVOR}
 
 # pygobject GTK3 introspection (not provided by indirect dependencies)
 RUN_DEPENDS +=	x11/gtk+3
