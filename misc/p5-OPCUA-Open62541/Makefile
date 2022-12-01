@@ -1,6 +1,7 @@
 COMMENT =	Perl XS wrapper for open62541 OPC UA library
 
 DISTNAME =	OPCUA-Open62541-1.05
+REVISION =	0
 CPAN_AUTHOR =	BLUHM
 
 CATEGORIES =	misc
@@ -10,7 +11,7 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 # Perl
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =		c m mbedcrypto mbedtls mbedx509 open62541 perl pthread
+WANTLIB =		c m open62541 perl pthread
 
 MODULES =		cpan
 
