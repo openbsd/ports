@@ -10,7 +10,7 @@ Index: pdf/pdfium/pdfium_engine.cc
  #include "pdf/pdfium/pdfium_font_linux.h"
  #endif
  
-@@ -516,7 +516,7 @@ void InitializeSDK(bool enable_v8, FontMappingMode fon
+@@ -520,7 +520,7 @@ void InitializeSDK(bool enable_v8, FontMappingMode fon
  
    FPDF_InitLibraryWithConfig(&config);
  

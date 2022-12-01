@@ -85,10 +85,10 @@ Index: base/base_paths_posix.cc
 +        kvm_close(kd);
 +      if (!ret) {
 +#endif
-+        if ((cpath = getenv("CHROME_EXE_PATH")) != NULL)
++        if ((cpath = getenv("IRIDIUM_EXE_PATH")) != NULL)
 +          *result = FilePath(cpath);
 +        else
-+          *result = FilePath("/usr/local/chrome/chrome");
++          *result = FilePath("/usr/local/iridium/iridium");
 +        return true;
 +#if !BUILDFLAG(IS_AIX)
 +      }

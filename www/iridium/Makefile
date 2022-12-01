@@ -10,12 +10,11 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Iridium browser
 
-V=			2022.10.106.1
+V=			2022.11.107
 
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
-REVISION=		2
 
 PATCHFILES=		disable-privacy-sandbox.patch:0
 PATCH_DIST_STRIP=	-p1
@@ -145,7 +144,7 @@ GN_ARGS=	enable_nacl=false \
 		fatal_linker_warnings=false \
 		use_custom_libcxx=false \
 		chrome_pgo_phase=0 \
-		use_udev=false
+		use_udev=true
 
 # notyet
 GN_ARGS+=	use_vaapi=false

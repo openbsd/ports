@@ -13,15 +13,6 @@ Index: chrome/browser/themes/theme_service.cc
 @@ -314,7 +314,7 @@ CustomThemeSupplier* ThemeService::GetThemeSupplier() 
  }
  
- bool ThemeService::ShouldUseSystemTheme() const {
--#if BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   return profile_->GetPrefs()->GetBoolean(prefs::kUsesSystemTheme);
- #else
-   return false;
-@@ -322,7 +322,7 @@ bool ThemeService::ShouldUseSystemTheme() const {
- }
- 
  bool ThemeService::ShouldUseCustomFrame() const {
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
