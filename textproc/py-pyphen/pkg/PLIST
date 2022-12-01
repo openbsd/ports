@@ -52,6 +52,7 @@ lib/python${MODPY_VERSION}/site-packages/pyphen/dictionaries/hyph_sr.dic
 lib/python${MODPY_VERSION}/site-packages/pyphen/dictionaries/hyph_sr_Latn.dic
 lib/python${MODPY_VERSION}/site-packages/pyphen/dictionaries/hyph_sv.dic
 lib/python${MODPY_VERSION}/site-packages/pyphen/dictionaries/hyph_te_IN.dic
+lib/python${MODPY_VERSION}/site-packages/pyphen/dictionaries/hyph_th_TH.dic
 lib/python${MODPY_VERSION}/site-packages/pyphen/dictionaries/hyph_uk_UA.dic
 lib/python${MODPY_VERSION}/site-packages/pyphen/dictionaries/hyph_zu_ZA.dic
 lib/python${MODPY_VERSION}/site-packages/pyphen/dictionaries/update.sh
