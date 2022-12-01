@@ -1,0 +1,18 @@
+Index: requirements.txt
+--- requirements.txt.orig
++++ requirements.txt
+@@ -3,10 +3,10 @@ lxml >= 4.3.0
+ pyVmomi >= 6.7
+ six (>=1.12)
+ 
+-requests (==2.27.1)
+-pyOpenSSL (==22.0.0)
+-cryptography (==36.0.0)
+-setuptools (==62.0.0)
++requests (>=2.27.1)
++pyOpenSSL (>=22.0.0)
++cryptography (>=36.0.0)
++setuptools (>=62.0.0)
+ ###### SDK requirements ######
+ vapi-client-bindings == 4.0.0
+ vmc-client-bindings
