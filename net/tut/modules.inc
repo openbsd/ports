@@ -18,7 +18,7 @@ MODGO_MODULES =	\
 	github.com/nu7hatch/gouuid		 v0.0.0-20131221200532-179d4d0c4d8d \
 	github.com/pelletier/go-toml/v2		 v2.0.6 \
 	github.com/pmezard/go-difflib		 v1.0.0 \
-	github.com/rivo/tview			 v0.0.0-20221117065207-09f052e6ca98 \
+	github.com/rivo/tview			 v0.0.0-20221128165837-db36428c92d9 \
 	github.com/rivo/uniseg			 v0.4.3 \
 	github.com/spf13/pflag			 v1.0.5 \
 	github.com/stretchr/objx		 v0.5.0 \

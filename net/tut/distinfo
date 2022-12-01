@@ -39,8 +39,8 @@ SHA256 (go_modules/github.com/pelletier/go-toml/v2/@v/v2.0.6.mod) = nnkRjVzXHeJo
 SHA256 (go_modules/github.com/pelletier/go-toml/v2/@v/v2.0.6.zip) = AZ5KAXOefKNwHV97SvVxesXrTW1JIbiEJdf0DK2xvX0=
 SHA256 (go_modules/github.com/pmezard/go-difflib/@v/v1.0.0.mod) = dLLnZushU3eGTVh7rfV+lVIfaS0qeGCzx3WQk/nJvsI=
 SHA256 (go_modules/github.com/pmezard/go-difflib/@v/v1.0.0.zip) = 3gTOzBpLjVPkNXBRAmeUvLxU8uaiYM+sUIzmnV1kV6A=
-SHA256 (go_modules/github.com/rivo/tview/@v/v0.0.0-20221117065207-09f052e6ca98.mod) = K0ONg96UbqXSHzYuPSlh3qYMRKBSgfpbhDPBxh1fyHw=
-SHA256 (go_modules/github.com/rivo/tview/@v/v0.0.0-20221117065207-09f052e6ca98.zip) = E8LCEtJQExVi8QkRu4sEO5ca/k/pjOE0t6hd6Tgx4gY=
+SHA256 (go_modules/github.com/rivo/tview/@v/v0.0.0-20221128165837-db36428c92d9.mod) = K0ONg96UbqXSHzYuPSlh3qYMRKBSgfpbhDPBxh1fyHw=
+SHA256 (go_modules/github.com/rivo/tview/@v/v0.0.0-20221128165837-db36428c92d9.zip) = 3Ne2NiY7o4Zim9P2IMMkwmTiNzTn61tjTLq2wFipz3k=
 SHA256 (go_modules/github.com/rivo/uniseg/@v/v0.2.0.mod) = bHMYonqNVHOo62YedfsAUoF24O/FkxDtJ3yhO9EqU/E=
 SHA256 (go_modules/github.com/rivo/uniseg/@v/v0.4.2.mod) = oeF0iQ/J8lJFAhH63rU3VvnPWrexlpd2X5+yVfgeqJg=
 SHA256 (go_modules/github.com/rivo/uniseg/@v/v0.4.3.mod) = oeF0iQ/J8lJFAhH63rU3VvnPWrexlpd2X5+yVfgeqJg=
@@ -89,7 +89,7 @@ SHA256 (go_modules/gopkg.in/ini.v1/@v/v1.67.0.zip) = vYRd/HYqh6VuWjKgd3Dcg+hpdtt
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
-SHA256 (tut-1.0.23.zip) = ifOJItel0YHuEQBJwm+p5dG+SQn1RPZgC6xHZg1r0lc=
+SHA256 (tut-1.0.24.zip) = KpsnYKtgkGMEIEG0WatSw8THGfkfkn5JmC5pcIirYaY=
 SIZE (go_modules/github.com/!rasmus!lindroth/go-mastodon/@v/v0.0.14.mod) = 172
 SIZE (go_modules/github.com/!rasmus!lindroth/go-mastodon/@v/v0.0.14.zip) = 52165
 SIZE (go_modules/github.com/atotto/clipboard/@v/v0.1.4.mod) = 35
@@ -131,8 +131,8 @@ SIZE (go_modules/github.com/pelletier/go-toml/v2/@v/v2.0.6.mod) = 92
 SIZE (go_modules/github.com/pelletier/go-toml/v2/@v/v2.0.6.zip) = 921034
 SIZE (go_modules/github.com/pmezard/go-difflib/@v/v1.0.0.mod) = 37
 SIZE (go_modules/github.com/pmezard/go-difflib/@v/v1.0.0.zip) = 12433
-SIZE (go_modules/github.com/rivo/tview/@v/v0.0.0-20221117065207-09f052e6ca98.mod) = 460
-SIZE (go_modules/github.com/rivo/tview/@v/v0.0.0-20221117065207-09f052e6ca98.zip) = 3148914
+SIZE (go_modules/github.com/rivo/tview/@v/v0.0.0-20221128165837-db36428c92d9.mod) = 460
+SIZE (go_modules/github.com/rivo/tview/@v/v0.0.0-20221128165837-db36428c92d9.zip) = 1930389
 SIZE (go_modules/github.com/rivo/uniseg/@v/v0.2.0.mod) = 39
 SIZE (go_modules/github.com/rivo/uniseg/@v/v0.4.2.mod) = 39
 SIZE (go_modules/github.com/rivo/uniseg/@v/v0.4.3.mod) = 39
@@ -181,4 +181,4 @@ SIZE (go_modules/gopkg.in/ini.v1/@v/v1.67.0.zip) = 71817
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = 104623
-SIZE (tut-1.0.23.zip) = 229469
+SIZE (tut-1.0.24.zip) = 229719
