@@ -3,6 +3,7 @@ COMMENT-update=	lightweight update-only tool for rrdtool
 COMMENT-ruby=	ruby interface to librrd
 
 V=		1.8.0
+REVISION=	0
 DISTNAME=	rrdtool-$V
 PKGNAME-main=	${DISTNAME}
 PKGNAME-update=	rrdupdate-$V
@@ -50,13 +51,10 @@ MODRUBY_BUILDDEP= No
 MODRUBY_RUNDEP=   No
 .endif
 
-# needs checking before enabling mmap; is it safe without UBC?
-CONFIGURE_ARGS+= --disable-mmap
-
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
-# autoconf insists on these, but the docs are pre-formatted in the distfile,
-# so they aren't needed.
+# autoconf insists on these, but the docs are pre-formatted in the
+# distfile, so they aren't really needed at build time.
 CONFIGURE_ENV+=	NROFF="/usr/bin/true" \
 		TROFF="/usr/bin/true"
 
@@ -95,6 +93,7 @@ pre-test:
 	find ${WRKSRC}/tests -type f -perm -0111 \
 	    -exec sed -i '1s,#!.*bash,#!${LOCALBASE}/bin/bash,' {} +
 	ln -fs ${LOCALBASE}/bin/gseq ${WRKDIR}/bin/seq
+	mkdir ${WRKSRC}/tests/cached
 
 post-install:
 	cd ${WRKSRC}; ${INSTALL_DATA} CHANGES COPYRIGHT \
@@ -103,5 +102,10 @@ post-install:
 	${SUBST_PROGRAM} ${FILESDIR}/rrdtool-chroot.sh \
 	    ${PREFIX}/share/examples/rrdtool/rrdtool-chroot
 	rm -rf ${PREFIX}/share/doc/rrdtool/html
+
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mlld} && ${MACHINE_ARCH} != "arm" && ${MACHINE_ARCH} != "powerpc"
+CFLAGS+= -flto
+.endif
 
 .include <bsd.port.mk>
