@@ -5,8 +5,7 @@ GH_PROJECT =	binaryen
 GH_TAGNAME =	version_111
 
 PKGNAME =	${DISTNAME:L:S/version_//}
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
+REVISION =	0
 
 CATEGORIES =	lang
 
