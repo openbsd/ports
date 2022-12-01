@@ -1,9 +1,8 @@
 COMMENT =		US-ASCII transliterations of Unicode text
 
-MODPY_EGG_VERSION =	1.3.5
+MODPY_EGG_VERSION =	1.3.6
 DISTNAME =		Unidecode-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
-REVISION =		0
 
 CATEGORIES =		textproc devel
 
