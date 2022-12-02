@@ -5,6 +5,7 @@
 bin/virt-pki-validate
 bin/virt-qemu-qmp-proxy
 @bin bin/virt-qemu-run
+bin/virt-qemu-sev-validate
 @bin bin/virt-ssh-helper
 bin/virt-xml-validate
 include/libvirt/
@@ -56,6 +57,7 @@ libexec/libvirt-guests.sh
 @man man/man1/virt-pki-validate.1
 @man man/man1/virt-qemu-qmp-proxy.1
 @man man/man1/virt-qemu-run.1
+@man man/man1/virt-qemu-sev-validate.1
 @man man/man1/virt-xml-validate.1
 @man man/man7/virkeycode-atset1.7
 @man man/man7/virkeycode-atset2.7
@@ -255,12 +257,7 @@ share/doc/libvirt/html/governance.html
 share/doc/libvirt/html/hacking.html
 share/doc/libvirt/html/hooks.html
 share/doc/libvirt/html/html/
-share/doc/libvirt/html/html/home.png
-share/doc/libvirt/html/html/index-admin.html
-share/doc/libvirt/html/html/index-lxc.html
-share/doc/libvirt/html/html/index-qemu.html
 share/doc/libvirt/html/html/index.html
-share/doc/libvirt/html/html/left.png
 share/doc/libvirt/html/html/libvirt-libvirt-admin.html
 share/doc/libvirt/html/html/libvirt-libvirt-common.html
 share/doc/libvirt/html/html/libvirt-libvirt-domain-checkpoint.html
@@ -278,8 +275,6 @@ share/doc/libvirt/html/html/libvirt-libvirt-secret.html
 share/doc/libvirt/html/html/libvirt-libvirt-storage.html
 share/doc/libvirt/html/html/libvirt-libvirt-stream.html
 share/doc/libvirt/html/html/libvirt-virterror.html
-share/doc/libvirt/html/html/right.png
-share/doc/libvirt/html/html/up.png
 share/doc/libvirt/html/hvsupport.html
 share/doc/libvirt/html/images/
 share/doc/libvirt/html/images/event_loop_simple.png
@@ -381,6 +376,7 @@ share/doc/libvirt/html/manpages/virt-pki-query-dn.html
 share/doc/libvirt/html/manpages/virt-pki-validate.html
 share/doc/libvirt/html/manpages/virt-qemu-qmp-proxy.html
 share/doc/libvirt/html/manpages/virt-qemu-run.html
+share/doc/libvirt/html/manpages/virt-qemu-sev-validate.html
 share/doc/libvirt/html/manpages/virt-sanlock-cleanup.html
 share/doc/libvirt/html/manpages/virt-ssh-helper.html
 share/doc/libvirt/html/manpages/virt-xml-validate.html
@@ -572,6 +568,7 @@ share/libvirt/schemas/nodedev.rng
 share/libvirt/schemas/nwfilter.rng
 share/libvirt/schemas/nwfilter_params.rng
 share/libvirt/schemas/nwfilterbinding.rng
+share/libvirt/schemas/privatedata.rng
 share/libvirt/schemas/secret.rng
 share/libvirt/schemas/storagecommon.rng
 share/libvirt/schemas/storagepool.rng
