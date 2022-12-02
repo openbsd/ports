@@ -1,6 +1,7 @@
 @conflict py-frozen-flask-*
 @pkgpath www/py-frozen-flask
 lib/python${MODPY_VERSION}/site-packages/Frozen_Flask-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/Frozen_Flask-${MODPY_EGG_VERSION}.dist-info/AUTHORS
 lib/python${MODPY_VERSION}/site-packages/Frozen_Flask-${MODPY_EGG_VERSION}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/Frozen_Flask-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/Frozen_Flask-${MODPY_EGG_VERSION}.dist-info/RECORD
