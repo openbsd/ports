@@ -35,4 +35,9 @@ MODGNOME_TOOLS+= desktop-file-utils \
 
 NO_TEST=	Yes
 
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+CFLAGS +=	-std=gnu99
+.endif
+
 .include <bsd.port.mk>
