@@ -5,7 +5,7 @@ COMMENT =	alternative private front-end to Reddit
 
 GH_ACCOUNT =	libreddit
 GH_PROJECT =	libreddit
-GH_TAGNAME =	v0.24.0
+GH_TAGNAME =	v0.24.2
 
 CATEGORIES =	www
 

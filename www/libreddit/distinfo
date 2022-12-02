@@ -175,7 +175,7 @@ SHA256 (cargo/windows_x86_64_gnu-0.42.0.tar.gz) = v3sbIbU2LLwxj2hhUOW86nXs7cdN0V
 SHA256 (cargo/windows_x86_64_gnullvm-0.42.0.tar.gz) = CdUl0row7rMpdmW9Q0pUKX5BcMfxpEytTvWAlbTNICg=
 SHA256 (cargo/windows_x86_64_msvc-0.36.1.tar.gz) = yBHKSoyFPvQgq9hZK6U927rJBBD6tpA7PnmXKmMfdoA=
 SHA256 (cargo/windows_x86_64_msvc-0.42.0.tar.gz) = 9AAJ2FdZclo02m2JqU5j173FCoYqzw28fI5Ijx7ctvU=
-SHA256 (libreddit-0.24.0.tar.gz) = QZ/9/CQlmH7uWmBA5LYdNTA+IpFTvNiDUgOX5FQ5cSU=
+SHA256 (libreddit-0.24.2.tar.gz) = eyrUvAO5zwSDCqM3daAjRtwV34w/ilWCe2uG0FILKmI=
 SIZE (cargo/adler32-1.2.0.tar.gz) = 6411
 SIZE (cargo/aho-corasick-0.7.19.tar.gz) = 113070
 SIZE (cargo/alloc-no-stdlib-2.0.4.tar.gz) = 10105
@@ -353,4 +353,4 @@ SIZE (cargo/windows_x86_64_gnu-0.42.0.tar.gz) = 692493
 SIZE (cargo/windows_x86_64_gnullvm-0.42.0.tar.gz) = 357906
 SIZE (cargo/windows_x86_64_msvc-0.36.1.tar.gz) = 661999
 SIZE (cargo/windows_x86_64_msvc-0.42.0.tar.gz) = 659377
-SIZE (libreddit-0.24.0.tar.gz) = 518306
+SIZE (libreddit-0.24.2.tar.gz) = 518779
