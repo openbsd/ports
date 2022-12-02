@@ -25,6 +25,8 @@ lib/python${MODPY_VERSION}/site-packages/chardet/${MODPY_PYCACHE}charsetprober.$
 lib/python${MODPY_VERSION}/site-packages/chardet/${MODPY_PYCACHE}charsetprober.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chardet/${MODPY_PYCACHE}codingstatemachine.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/chardet/${MODPY_PYCACHE}codingstatemachine.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/chardet/${MODPY_PYCACHE}codingstatemachinedict.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/chardet/${MODPY_PYCACHE}codingstatemachinedict.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chardet/${MODPY_PYCACHE}cp949prober.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/chardet/${MODPY_PYCACHE}cp949prober.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chardet/${MODPY_PYCACHE}enums.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -73,12 +75,16 @@ lib/python${MODPY_VERSION}/site-packages/chardet/${MODPY_PYCACHE}langturkishmode
 lib/python${MODPY_VERSION}/site-packages/chardet/${MODPY_PYCACHE}langturkishmodel.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chardet/${MODPY_PYCACHE}latin1prober.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/chardet/${MODPY_PYCACHE}latin1prober.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/chardet/${MODPY_PYCACHE}macromanprober.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/chardet/${MODPY_PYCACHE}macromanprober.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chardet/${MODPY_PYCACHE}mbcharsetprober.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/chardet/${MODPY_PYCACHE}mbcharsetprober.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chardet/${MODPY_PYCACHE}mbcsgroupprober.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/chardet/${MODPY_PYCACHE}mbcsgroupprober.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chardet/${MODPY_PYCACHE}mbcssm.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/chardet/${MODPY_PYCACHE}mbcssm.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/chardet/${MODPY_PYCACHE}resultdict.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/chardet/${MODPY_PYCACHE}resultdict.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chardet/${MODPY_PYCACHE}sbcharsetprober.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/chardet/${MODPY_PYCACHE}sbcharsetprober.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chardet/${MODPY_PYCACHE}sbcsgroupprober.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -107,6 +113,7 @@ lib/python${MODPY_VERSION}/site-packages/chardet/cli/${MODPY_PYCACHE}chardetect.
 lib/python${MODPY_VERSION}/site-packages/chardet/cli/${MODPY_PYCACHE}chardetect.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chardet/cli/chardetect.py
 lib/python${MODPY_VERSION}/site-packages/chardet/codingstatemachine.py
+lib/python${MODPY_VERSION}/site-packages/chardet/codingstatemachinedict.py
 lib/python${MODPY_VERSION}/site-packages/chardet/cp949prober.py
 lib/python${MODPY_VERSION}/site-packages/chardet/enums.py
 lib/python${MODPY_VERSION}/site-packages/chardet/escprober.py
@@ -131,6 +138,7 @@ lib/python${MODPY_VERSION}/site-packages/chardet/langrussianmodel.py
 lib/python${MODPY_VERSION}/site-packages/chardet/langthaimodel.py
 lib/python${MODPY_VERSION}/site-packages/chardet/langturkishmodel.py
 lib/python${MODPY_VERSION}/site-packages/chardet/latin1prober.py
+lib/python${MODPY_VERSION}/site-packages/chardet/macromanprober.py
 lib/python${MODPY_VERSION}/site-packages/chardet/mbcharsetprober.py
 lib/python${MODPY_VERSION}/site-packages/chardet/mbcsgroupprober.py
 lib/python${MODPY_VERSION}/site-packages/chardet/mbcssm.py
@@ -142,6 +150,8 @@ lib/python${MODPY_VERSION}/site-packages/chardet/metadata/${MODPY_PYCACHE}__init
 lib/python${MODPY_VERSION}/site-packages/chardet/metadata/${MODPY_PYCACHE}languages.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/chardet/metadata/${MODPY_PYCACHE}languages.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chardet/metadata/languages.py
+lib/python${MODPY_VERSION}/site-packages/chardet/py.typed
+lib/python${MODPY_VERSION}/site-packages/chardet/resultdict.py
 lib/python${MODPY_VERSION}/site-packages/chardet/sbcharsetprober.py
 lib/python${MODPY_VERSION}/site-packages/chardet/sbcsgroupprober.py
 lib/python${MODPY_VERSION}/site-packages/chardet/sjisprober.py
