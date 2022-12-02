@@ -192,6 +192,14 @@ lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/edit_on_github/${MODP
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/edit_on_github/${MODPY_PYCACHE}edit_on_github_extension.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/edit_on_github/${MODPY_PYCACHE}edit_on_github_extension.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/edit_on_github/edit_on_github_extension.py
+lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/feedgen/
+lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/feedgen/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/feedgen/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/feedgen/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/feedgen/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/feedgen/${MODPY_PYCACHE}feedgen_extension.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/feedgen/${MODPY_PYCACHE}feedgen_extension.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/feedgen/feedgen_extension.py
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/gi/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/gi/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/gi/${MODPY_PYCACHE}/

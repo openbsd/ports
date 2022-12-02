@@ -1,9 +1,7 @@
 COMMENT=		documentation tool micro-framework
 
-MODPY_EGG_VERSION=	0.13.7
+MODPY_EGG_VERSION=	0.14.0
 DISTNAME=		hotdoc-${MODPY_EGG_VERSION}
-#PKGNAME=		py-${DISTNAME}
-REVISION=		3
 
 CATEGORIES=		textproc
 
@@ -14,8 +12,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2.1+
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += gio-2.0 glib-2.0 gobject-2.0 intl json-glib-1.0 pthread
-WANTLIB += xml2
+WANTLIB += gio-2.0 glib-2.0 gobject-2.0 intl json-glib-1.0 xml2
 
 MODULES=		lang/python
 
