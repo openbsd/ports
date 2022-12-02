@@ -958,6 +958,7 @@ share/sqlmap/tamper/${MODPY_PYCACHE}commalesslimit.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}commalessmid.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}commentbeforeparentheses.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}concat2concatws.${MODPY_PYC_MAGIC_TAG}pyc
+share/sqlmap/tamper/${MODPY_PYCACHE}decentities.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}dunion.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}equaltolike.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}equaltorlike.${MODPY_PYC_MAGIC_TAG}pyc
@@ -965,6 +966,7 @@ share/sqlmap/tamper/${MODPY_PYCACHE}escapequotes.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}greatest.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}halfversionedmorekeywords.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}hex2char.${MODPY_PYC_MAGIC_TAG}pyc
+share/sqlmap/tamper/${MODPY_PYCACHE}hexentities.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}htmlencode.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}ifnull2casewhenisnull.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}ifnull2ifisnull.${MODPY_PYC_MAGIC_TAG}pyc
@@ -985,6 +987,7 @@ share/sqlmap/tamper/${MODPY_PYCACHE}plus2fnconcat.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}randomcase.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}randomcomments.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}schemasplit.${MODPY_PYC_MAGIC_TAG}pyc
+share/sqlmap/tamper/${MODPY_PYCACHE}scientific.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}sleep2getlock.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}sp_password.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}space2comment.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1022,6 +1025,7 @@ share/sqlmap/tamper/commalesslimit.py
 share/sqlmap/tamper/commalessmid.py
 share/sqlmap/tamper/commentbeforeparentheses.py
 share/sqlmap/tamper/concat2concatws.py
+share/sqlmap/tamper/decentities.py
 share/sqlmap/tamper/dunion.py
 share/sqlmap/tamper/equaltolike.py
 share/sqlmap/tamper/equaltorlike.py
@@ -1029,6 +1033,7 @@ share/sqlmap/tamper/escapequotes.py
 share/sqlmap/tamper/greatest.py
 share/sqlmap/tamper/halfversionedmorekeywords.py
 share/sqlmap/tamper/hex2char.py
+share/sqlmap/tamper/hexentities.py
 share/sqlmap/tamper/htmlencode.py
 share/sqlmap/tamper/ifnull2casewhenisnull.py
 share/sqlmap/tamper/ifnull2ifisnull.py
@@ -1049,6 +1054,7 @@ share/sqlmap/tamper/plus2fnconcat.py
 share/sqlmap/tamper/randomcase.py
 share/sqlmap/tamper/randomcomments.py
 share/sqlmap/tamper/schemasplit.py
+share/sqlmap/tamper/scientific.py
 share/sqlmap/tamper/sleep2getlock.py
 share/sqlmap/tamper/sp_password.py
 share/sqlmap/tamper/space2comment.py
