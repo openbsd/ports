@@ -13,6 +13,8 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		crypto lz4 xxhash zstd
 
+COMPILER =		base-clang ports-gcc
+
 MODULES =		lang/python
 MODPY_PYBUILD =		setuptools_scm
 MODPY_PI =		Yes
