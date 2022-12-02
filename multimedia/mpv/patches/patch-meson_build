@@ -1,0 +1,30 @@
+- meson: unbreak dl check on BSDs without libdl
+  04f765da6fb407c7ebe1833403a6049e2c9df6ce
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -327,7 +327,7 @@ endif
+ features += {'ta-leak-report': get_option('ta-leak-report')}
+ 
+ libdl_dep = cc.find_library('dl', required: false)
+-features += {'libdl': libdl_dep.found() and cc.has_function('dlopen', dependencies: libdl_dep, prefix: '#include <dlfcn.h>')}
++features += {'libdl': cc.has_function('dlopen', dependencies: libdl_dep, prefix: '#include <dlfcn.h>')}
+ if features['libdl']
+     dependencies += libdl_dep
+ endif
+@@ -716,10 +716,11 @@ if features['sdl2-gamepad']
+     sources += files('input/sdl_gamepad.c')
+ endif
+ 
+-stdatomic = cc.find_library('atomic', required: get_option('stdatomic'))
+-features += {'stdatomic': stdatomic.found()}
++stdatomic_dep = cc.find_library('atomic', required: false)
++features += {'stdatomic': cc.has_header_symbol('stdatomic.h', 'atomic_int', dependencies: stdatomic_dep,
++                                               required: get_option('stdatomic'))}
+ if features['stdatomic']
+-    dependencies += stdatomic
++    dependencies += stdatomic_dep
+ endif
+ 
+ uchardet_opt = get_option('uchardet').require(

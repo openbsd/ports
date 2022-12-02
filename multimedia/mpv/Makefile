@@ -3,7 +3,7 @@ COMMENT =		movie player based on MPlayer/mplayer2
 GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
 GH_TAGNAME =		v0.35.0
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=		mpv		1.0 # 2.0
 
@@ -11,28 +11,22 @@ CATEGORIES =		multimedia x11
 
 HOMEPAGE =		https://mpv.io/
 
-WAF =			${WRKSRC}/waf-2.0.24
-MASTER_SITES0 =		https://waf.io/
-DISTFILES =		${GH_DISTFILE} ${WAF:T}:0
-EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
-
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += EGL GL SDL2 X11 X11-xcb Xau Xdmcp Xext Xfixes Xinerama Xpresent
-WANTLIB += Xrandr Xrender Xss Xv Xxf86vm archive ass avcodec avdevice
-WANTLIB += avfilter avformat avresample avutil bluray c cdio cdio_cdda
-WANTLIB += cdio_paranoia drm dvdnav dvdread epoxy expat fontconfig
-WANTLIB += freetype fribidi gbm glib-2.0 graphite2 harfbuzz iconv
-WANTLIB += intl jpeg lcms2 ${MODLUA_WANTLIB} m pcre2-8 placebo postproc
-WANTLIB += pthread sndio swresample swscale udfread xcb xcb-dri2
-WANTLIB += xcb-glx xml2 z
+WANTLIB += EGL SDL2 X11 Xext Xinerama Xpresent Xrandr Xss Xv archive
+WANTLIB += ass avcodec avdevice avfilter avformat avutil bluray
+WANTLIB += c cdio cdio_cdda cdio_paranoia dvdnav iconv jpeg lcms2
+WANTLIB += ${MODLUA_WANTLIB} m placebo pthread sndio swresample
+WANTLIB += swscale z zimg
 
-MODULES =		lang/lua \
+MODULES =		devel/meson \
+			lang/lua \
 			lang/python
 
 COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
+
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 BUILD_DEPENDS =		audio/ladspa \
@@ -43,10 +37,11 @@ LIB_DEPENDS =		archivers/libarchive \
 			audio/libcdio-paranoia \
 			converters/libiconv \
 			devel/sdl2 \
-			graphics/ffmpeg>=4.1.1 \
+			graphics/ffmpeg \
 			graphics/jpeg \
 			graphics/lcms2 \
 			graphics/libplacebo \
+			graphics/zimg \
 			multimedia/libass \
 			multimedia/libbluray \
 			multimedia/libdvdnav
@@ -57,69 +52,84 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
 
 SEPARATE_BUILD =	Yes
-CONFIGURE_ARGS =	--confloaddir=${SYSCONFDIR}/mpv \
-			--confdir=${LOCALBASE}/share/examples/mpv \
-			--mandir=${LOCALBASE}/man \
-			--docdir=${LOCALBASE}/share/examples/mpv \
-			--lua="${MODLUA_DEP_VERSION}obsd" \
-			--enable-cdda \
-			--enable-dvdnav \
-			--enable-libmpv-shared \
-			--enable-sdl2 \
-			--enable-sndio \
-			--disable-alsa \
-			--disable-caca \
-			--disable-cuda-hwaccel \
-			--disable-egl-drm \
-			--disable-gl-wayland \
-			--disable-jack \
-			--disable-rubberband \
-			--disable-openal \
-			--disable-optimize \
-			--disable-pipewire \
-			--disable-pulse \
-			--disable-sixel \
-			--disable-sdl2-audio \
-			--disable-uchardet \
-			--disable-vaapi \
-			--disable-vaapi-drm \
-			--disable-vaapi-x-egl \
-			--disable-vaapi-x11 \
-			--disable-vaapi-wayland \
-			--disable-vapoursynth \
-			--disable-vdpau \
-			--disable-vdpau-gl-x11 \
-			--disable-videotoolbox-gl \
-			--disable-vulkan \
-			--disable-wayland
 
-MAKE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-			LIBmpv_VERSION=${LIBmpv_VERSION}
-MAKE_FLAGS =		-o "${WRKBUILD}" -t "${WRKSRC}" --destdir="${DESTDIR}"
+CONFIGURE_ARGS =	-Dlua=lua${MODLUA_DEP_VERSION} \
+			-Dcdda=enabled \
+			-Ddvdnav=enabled \
+			-Dlibmpv=true \
+			-Dsdl2=enabled \
+			-Dsndio=enabled \
+			-Dalsa=disabled \
+			-Dandroid-media-ndk=disabled \
+			-Daudiounit=disabled \
+			-Dcaca=disabled \
+			-Dcocoa=disabled \
+			-Dcoreaudio=disabled \
+			-Dcuda-hwaccel=disabled \
+			-Dcuda-interop=disabled \
+			-Dd3d9-hwaccel=disabled \
+			-Dd3d11=disabled \
+			-Dd3d-hwaccel=disabled \
+			-Ddirect3d=disabled \
+			-Degl-android=disabled \
+			-Degl-angle=disabled  \
+			-Degl-angle-lib=disabled \
+			-Degl-angle-win32=disabled \
+			-Degl-drm=disabled \
+			-Degl-wayland=disabled \
+			-Dgl-cocoa=disabled \
+			-Dgl-dxinterop=disabled \
+			-Dgl-dxinterop-d3d9=disabled \
+			-Dgl-win32=disabled \
+			-Dios-gl=disabled \
+			-Djack=disabled \
+			-Djavascript=disabled \
+			-Dmacos-10-11-features=disabled \
+			-Dmacos-10-12-2-features=disabled \
+			-Dmacos-10-14-features=disabled \
+			-Dmacos-cocoa-cb=disabled \
+			-Dmacos-media-player=disabled \
+			-Dmacos-touchbar=disabled \
+			-Dopenal=disabled \
+			-Dopensles=disabled \
+			-Doss-audio=disabled \
+			-Dpipewire=disabled \
+			-Dpulse=disabled \
+			-Drpi-mmal=disabled \
+			-Drubberband=disabled \
+			-Dshaderc=disabled \
+			-Dsixel=disabled \
+			-Dswift-build=disabled \
+			-Dsdl2-audio=disabled \
+			-Dspirv-cross=disabled \
+			-Duchardet=disabled \
+			-Dvaapi=disabled \
+			-Dvaapi-drm=disabled \
+			-Dvaapi-x-egl=disabled \
+			-Dvaapi-x11=disabled \
+			-Dvaapi-wayland=disabled \
+			-Dvapoursynth=disabled \
+			-Dvdpau=disabled \
+			-Dvdpau-gl-x11=disabled \
+			-Dvideotoolbox-gl=disabled \
+			-Dvulkan=disabled \
+			-Dwayland=disabled \
+			-Dwin32-internal-pthreads=disabled \
+			-Dwasapi=disabled
+
+CFLAGS +=		-I${LOCALBASE}/include
+LDFLAGS +=		-L${LOCALBASE}/lib
+
+MODMESON_CONFIGURE_ENV +=	LDFLAGS="${LDFLAGS}"
 
 NO_TEST =		Yes
 
-DO_WAF =		cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MODPY_BIN} \
-				${WAF} ${MAKE_FLAGS}
-
-SUBST_VARS +=		LIBmpv_VERSION
-
-post-patch:
-	cp ${DISTDIR}/${WAF:T} ${WAF}
-	${SUBST_CMD} ${WRKSRC}/wscript_build.py
-
-do-configure:
-	${DO_WAF} configure ${CONFIGURE_ARGS}
-
-do-build:
-	${DO_WAF} build -v
-
-do-install:
-	${DO_WAF} install
+post-install:
+	mv -f ${PREFIX}/share/doc/mpv ${PREFIX}/share/examples
 	${INSTALL_DATA} ${WRKDIST}/TOOLS/mpv_identify.sh \
 		${WRKDIST}/TOOLS/umpv ${PREFIX}/share/examples/mpv
 	${MODPY_BIN_ADJ} ${PREFIX}/share/examples/mpv/umpv
+	mv -f ${WRKINST}${SYSCONFDIR}/mpv/* ${PREFIX}/share/examples/mpv
 	sed -Ei 's,(/dev/dvd|/dev/cdrom),/dev/rcd0c,g' ${PREFIX}/man/man1/mpv.1
 
 .include <bsd.port.mk>
