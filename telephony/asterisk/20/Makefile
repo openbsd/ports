@@ -1,5 +1,4 @@
-VER=		20.0.0
-REVISION=	1
+VER=		20.0.1
 
 PJ_V=		2.12.1
 SHLIB_V=	0.0
