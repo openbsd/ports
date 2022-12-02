@@ -9,6 +9,9 @@ CATEGORIES =	www
 # MIT
 PERMIT_PACKAGE =	Yes
 
+COMPILER =	base-clang ports-gcc
+COMPILER_LANGS =	c
+
 WANTLIB += c crypto json-c m pthread ssl util websockets z
 
 MODULES =		devel/cmake
