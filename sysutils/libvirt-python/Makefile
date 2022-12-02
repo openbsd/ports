@@ -1,9 +1,8 @@
 COMMENT =		libvirt virtualization API python bindings
 
-MODPY_EGG_VERSION =	8.9.0
+MODPY_EGG_VERSION =	8.10.0
 DISTNAME =		libvirt-python-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:S/-python-/-/}
-REVISION =		0
 
 CATEGORIES =		sysutils
 
@@ -20,7 +19,7 @@ MASTER_SITES =		https://libvirt.org/sources/python/
 
 MODULES =		lang/python
 
-MODPY_PYBUILD=		setuptools
+MODPY_PYBUILD =		setuptools
 
 LIB_DEPENDS =		sysutils/libvirt
 
