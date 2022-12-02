@@ -11,6 +11,7 @@ DPB_PROPERTIES+=	lonesome
 COMMENT=		Iridium browser
 
 V=			2022.11.107
+REVISION=		0
 
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
@@ -38,7 +39,8 @@ MASTER_SITES=		https://downloads.iridiumbrowser.de/source/ \
 			http://nerd.hu/distfiles/
 MASTER_SITES0=		https://raw.githubusercontent.com/ungoogled-software/ungoogled-chromium/master/patches/core/ungoogled-chromium/
 
-MODULES=	lang/python
+MODULES=	lang/python x11/qt5
+MODQT5_DEPS=	No
 
 COMPILER =	base-clang ports-clang ports-gcc
 
@@ -74,6 +76,7 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		sysutils/pciutils \
 		devel/ninja \
 		x11/py-xcbgen${MODPY_FLAVOR} \
+		x11/qt5/qtbase,-main \
 		${MODGCC4_CPPDEP} \
 		${RUN_DEPENDS}
 LIB_DEPENDS=	archivers/snappy \
