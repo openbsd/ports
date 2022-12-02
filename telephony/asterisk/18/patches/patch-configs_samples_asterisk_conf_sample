@@ -12,17 +12,7 @@ Index: configs/samples/asterisk.conf.sample
  ;lightbackground = yes		; If your terminal is set for a light-colored
  				; background.
  ;forceblackbackground = yes     ; Force the background of the terminal to be
-@@ -94,7 +94,8 @@ documentation_language = en_US	; Set the language you 
- 				; gosub - Invoke the stdexten using a gosub as
- 				;         documented in extensions.conf.sample.
- 				; Default gosub.
--;live_dangerously = no		; Enable the execution of 'dangerous' dialplan
-+live_dangerously = no
-+;live_dangerously = yes		; Enable the execution of 'dangerous' dialplan
- 				; functions from external sources (AMI,
- 				; etc.) These functions (such as SHELL) are
- 				; considered dangerous because they can allow
-@@ -127,8 +128,8 @@ documentation_language = en_US	; Set the language you 
+@@ -130,8 +130,8 @@ documentation_language = en_US	; Set the language you 
                  ; when the Digium Phone Module for Asterisk is in use.
  
  ; Changing the following lines may compromise your security.
