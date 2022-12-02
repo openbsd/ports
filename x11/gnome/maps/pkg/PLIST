@@ -117,7 +117,7 @@ share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-slightleft-symbolic.svg
 share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-slightright-symbolic.svg
 share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-u-turn-left-symbolic.svg
 share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-u-turn-right-symbolic.svg
-share/gnome-maps/icons/hicolor/32x32/apps/mark-location.png
+share/gnome-maps/icons/hicolor/32x32/apps/maps-mark-location.png
 share/gnome-maps/maps-service.json
 share/gnome-maps/org.gnome.Maps
 share/gnome-maps/org.gnome.Maps.data.gresource
@@ -129,6 +129,7 @@ share/locale/af/LC_MESSAGES/gnome-maps.mo
 share/locale/an/LC_MESSAGES/gnome-maps.mo
 share/locale/ar/LC_MESSAGES/gnome-maps.mo
 share/locale/as/LC_MESSAGES/gnome-maps.mo
+share/locale/be/LC_MESSAGES/gnome-maps.mo
 share/locale/bg/LC_MESSAGES/gnome-maps.mo
 share/locale/bs/LC_MESSAGES/gnome-maps.mo
 share/locale/ca/LC_MESSAGES/gnome-maps.mo
