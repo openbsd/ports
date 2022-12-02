@@ -19,7 +19,7 @@ Index: third_party/libusb/BUILD.gn
      sources += [
        "src/libusb/os/linux_usbfs.c",
        "src/libusb/os/linux_usbfs.h",
-@@ -127,6 +127,16 @@ static_library("libusb") {
+@@ -127,11 +127,21 @@ static_library("libusb") {
      ]
    }
  
@@ -36,6 +36,12 @@ Index: third_party/libusb/BUILD.gn
    if (is_chromeos_ash) {
      defines += [ "USBI_TIMERFD_AVAILABLE" ]
    }
+ 
+-  if (use_udev) {
++  if (use_udev && !is_bsd) {
+     sources += [ "src/libusb/os/linux_udev.cc" ]
+     defines += [
+       "HAVE_LIBUDEV=1",
 @@ -140,7 +150,7 @@ static_library("libusb") {
      deps += [ "//build/linux/libudev" ]
    }

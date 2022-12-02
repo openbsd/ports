@@ -7,8 +7,8 @@ DPB_PROPERTIES=		parallel parallel2
 
 COMMENT=		Chromium browser sans integration with Google
 
-V=			107.0.5304.121
-UGV=			107.0.5304.110-1
+V=			108.0.5359.71
+UGV=			${V}-1
 
 DISTNAME=		ungoogled-chromium-${V}
 
@@ -160,7 +160,7 @@ GN_ARGS=	is_official_build=true \
 		extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\" \
 		fatal_linker_warnings=false \
 		use_custom_libcxx=false \
-		use_udev=false
+		use_udev=true
 
 # notyet
 GN_ARGS+=	use_vaapi=false
@@ -240,6 +240,7 @@ pre-patch:
 
 pre-configure:
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
+	@ln -sf ${MODQT5_MOC} ${WRKDIR}/bin/moc
 .for _arch in x64 ia32 arm64
 .  for _dir in avcodec avformat avutil
 	@cp -pR ${WRKSRC}/third_party/ffmpeg/chromium/config/Chrome/linux/${_arch}/lib${_dir} \

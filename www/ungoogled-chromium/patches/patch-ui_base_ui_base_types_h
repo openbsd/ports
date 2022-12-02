@@ -1,7 +1,7 @@
 Index: ui/base/ui_base_types.h
 --- ui/base/ui_base_types.h.orig
 +++ ui/base/ui_base_types.h
-@@ -37,7 +37,7 @@ enum WindowShowState {
+@@ -32,7 +32,7 @@ enum WindowShowState {
    SHOW_STATE_END = 6  // The end of show state enum.
  };
  

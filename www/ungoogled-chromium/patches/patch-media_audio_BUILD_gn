@@ -1,7 +1,7 @@
 Index: media/audio/BUILD.gn
 --- media/audio/BUILD.gn.orig
 +++ media/audio/BUILD.gn
-@@ -250,9 +250,20 @@ source_set("audio") {
+@@ -259,9 +259,20 @@ source_set("audio") {
      ]
    }
  

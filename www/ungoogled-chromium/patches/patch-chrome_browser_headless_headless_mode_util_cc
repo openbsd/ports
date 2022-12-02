@@ -16,10 +16,10 @@ Index: chrome/browser/headless/headless_mode_util.cc
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ #include "ui/gl/gl_switches.h"
  #include "ui/ozone/public/ozone_switches.h"
  #endif  // BUILDFLAG(IS_LINUX)
- 
-@@ -51,7 +51,7 @@ void SetUpCommandLine(const base::CommandLine* command
+@@ -52,7 +52,7 @@ void SetUpCommandLine(const base::CommandLine* command
      base::CommandLine::ForCurrentProcess()->AppendSwitch(
          ::switches::kNoErrorDialogs);
    }

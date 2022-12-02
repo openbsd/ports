@@ -1,9 +1,9 @@
 Index: components/gwp_asan/BUILD.gn
 --- components/gwp_asan/BUILD.gn.orig
 +++ components/gwp_asan/BUILD.gn
-@@ -14,7 +14,7 @@ test("gwp_asan_unittests") {
-     "//components/gwp_asan/common:unit_tests",
+@@ -15,7 +15,7 @@ test("gwp_asan_unittests") {
      "//testing/gtest",
+     "//third_party/boringssl",
    ]
 -  if (is_win || is_mac || is_linux || is_chromeos || is_android) {
 +  if ((is_win || is_mac || is_linux || is_chromeos || is_android) && !is_bsd) {

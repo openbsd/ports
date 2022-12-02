@@ -1,7 +1,7 @@
 Index: chrome/browser/web_applications/os_integration/web_app_file_handler_registration.h
 --- chrome/browser/web_applications/os_integration/web_app_file_handler_registration.h.orig
 +++ chrome/browser/web_applications/os_integration/web_app_file_handler_registration.h
-@@ -44,7 +44,7 @@ void UnregisterFileHandlersWithOs(const AppId& app_id,
+@@ -45,7 +45,7 @@ void UnregisterFileHandlersWithOs(const AppId& app_id,
                                    Profile* profile,
                                    ResultCallback callback);
  

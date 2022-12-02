@@ -10,8 +10,8 @@ Index: chrome/app/chromium_strings.grd
          <message name="IDS_FIRST_RUN_DIALOG_WINDOW_TITLE" desc="Window title of First Run dialog on Mac and Linux, displayed in title bar">
            Welcome to Chromium
          </message>
-@@ -410,7 +410,7 @@ If you update this file, be sure also to update google
-           Chromium may not function correctly because it is no longer supported on Windows XP or Windows Vista
+@@ -425,7 +425,7 @@ If you update this file, be sure also to update google
+                     To get future Chromium updates, you'll need Windows 10 or later. This computer is using Windows 8.1.
          </message>
        </if>
 -      <if expr="is_linux">
