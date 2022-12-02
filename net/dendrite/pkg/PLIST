@@ -13,8 +13,8 @@
 @comment bin/dendritejs
 @comment bin/federation-api-proxy
 @comment bin/goose
-@comment bin/dendrite-upgrade-tests
 @comment bin/dendritejs-pinecone
+@comment bin/dendrite-upgrade-tests
 @comment bin/furl
 @comment bin/resolve-state
 share/dendrite/
