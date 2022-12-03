@@ -1,7 +1,7 @@
 COMMENT =	XML parser written in Vala
 DISTNAME =	libxmlbird-1.2.0
 CATEGORIES =	textproc
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=	xmlbird 0.0			# 1.0.6
 
@@ -19,6 +19,7 @@ EXTRACT_SUFX =		.tar.xz
 
 
 MODULES =		lang/python
+MODPY_RUNDEP =		No
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_ADJ_FILES =       configure install.py
 
