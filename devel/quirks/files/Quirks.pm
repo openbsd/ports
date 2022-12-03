@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1470 2022/11/28 21:54:37 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1471 2022/12/03 17:47:45 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1758,6 +1758,7 @@ setup_obsolete_reason(
 	3 => 'libperseus',
 	0 => 'hatchet',
 	51 => 'ctunnel',
+	3 => 'py-libpcap',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually

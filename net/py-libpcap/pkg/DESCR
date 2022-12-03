@@ -1,4 +1,0 @@
-libpcap is a packet capturing library. It is used by all sorts of
-networking diagnostic programs (like tcpdump and nmap).
-
-py-libpcap is an interface to this library for Python.

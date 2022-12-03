@@ -572,7 +572,6 @@
      SUBDIR += py-junos-eznc,python3
      SUBDIR += py-libcloud,python3
      SUBDIR += py-libknot,python3
-     SUBDIR += py-libpcap
      SUBDIR += py-minimalmodbus,python3
      SUBDIR += py-msgpack,python3
      SUBDIR += py-nbxmpp,python3
