@@ -1,6 +1,6 @@
 COMMENT =		BASIC converter to C translator for Unix system
 
-DISTNAME =		bacon-4.1
+DISTNAME =		bacon-4.6
 
 CATEGORIES =		lang
 
@@ -19,21 +19,22 @@ COMPILER =		base-clang ports-gcc base-gcc
 MASTER_SITES =		https://www.basic-converter.org/stable/ \
 			https://www.basic-converter.org/museum/
 
-BUILD_DEPENDS =		shells/bash
+BUILD_DEPENDS =		shells/zsh
 RUN_DEPENDS =		devel/desktop-file-utils \
-			shells/bash
+			shells/bash \
+			x11/gtk+3,-guic
 LIB_DEPENDS =		x11/fltk
 
 PORTHOME =		${WRKDIR}
 
 CONFIGURE_STYLE =	gnu
 # Disable the gtk bacongui. It doesn't works on OpenBSD.
-CONFIGURE_ARGS =	--with-bash \
+CONFIGURE_ARGS =	--with-zsh \
 			--enable-gui-fltk \
 			--disable-gui-gtk
 CONFIGURE_ENV =		CPPFLAGS="`fltk-config --cxxflags`" \
 			CFLAGS="`fltk-config --cflags` ${CFLAGS}" \
-			CXXFLAGS="`fltk-config --cxxflags` -Wno-deprecated ${CXXFLAGS}" \
+			CXXFLAGS="`fltk-config --cxxflags` -Wno-deprecated -Wno-non-c-typedef-for-linkage ${CXXFLAGS}" \
 			LDFLAGS="-L. `fltk-config --ldflags`" \
 			CC=${CC} CXX=${CXX}
 

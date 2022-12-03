@@ -10,7 +10,26 @@ Index: Makefile.in
  STRIP           = @STRIP@
  CC              = @CC@
  CXX             = @CXX@
-@@ -66,11 +66,11 @@ install :
+@@ -52,14 +52,10 @@ install :
+ 		echo $(INSTALL) build/bacongui-gtk $(DESTDIR)$(BINDIR); \
+ 		$(INSTALL) -m 644 bacongui-gtk.desktop $(DESTDIR)$(DATADIR)/applications; \
+ 		echo $(INSTALL) -m 644 bacongui-gtk.desktop $(DESTDIR)$(DATADIR)/applications; \
+-		mkdir -p $(DESTDIR)/usr/share/icons/hicolor/scalable/apps; \
+-		echo mkdir -p $(DESTDIR)/usr/share/icons/hicolor/scalable/apps; \
+-		$(INSTALL) -m 644 icons/BaCon.png $(DESTDIR)/usr/share/icons/hicolor/scalable/apps/bacon.png; \
+-		echo $(INSTALL) -m 644 icons/BaCon.png $(DESTDIR)/usr/share/icons/hicolor/scalable/apps/bacon.png; \
+-		gtk-update-icon-cache; \
+-		echo gtk-update-icon-cache; \
+-		update-icon-caches /usr/share/icons/hicolor/* 2>/dev/null; \
+-		echo 'update-icon-caches /usr/share/icons/hicolor/*'; \
++		mkdir -p $(DESTDIR)$(DATADIR)/icons/hicolor/scalable/apps; \
++		echo mkdir -p $(DESTDIR)$(DATADIR)/icons/hicolor/scalable/apps; \
++		$(INSTALL) -m 644 icons/BaCon.png $(DESTDIR)$(DATADIR)/icons/hicolor/scalable/apps/bacon.png; \
++		echo $(INSTALL) -m 644 icons/BaCon.png $(DESTDIR)$(DATADIR)/icons/hicolor/scalable/apps/bacon.png; \
+ 	fi;
+ 	@if [ $(FLTK) = "true" -a -n "$(CXX)" ]; then \
+ 		$(INSTALL) build-cpp/bacongui-fltk $(DESTDIR)$(BINDIR); \
+@@ -74,11 +70,11 @@ install :
  	$(INSTALL) -m 644 icons/BaCon.xbm $(DESTDIR)$(DATADIR)/pixmaps
  	$(INSTALL) -m 644 icons/BaCon24.png $(DESTDIR)$(DATADIR)/pixmaps
  	$(INSTALL) -m 644 icons/BaConEyes.png $(DESTDIR)$(DATADIR)/pixmaps
@@ -26,4 +45,4 @@ Index: Makefile.in
 +		echo $(INSTALL) -m 644 syntax/bacon.st $(DESTDIR)$(DATADIR)/enscript/hl; \
  	fi;
  	mkdir -p $(DESTDIR)$(DATADIR)/BaCon
- 	$(INSTALL) -m 644 syntax/lower.m4 $(DESTDIR)$(DATADIR)/BaCon
+ 	$(INSTALL) -m 644 LICENSE $(DESTDIR)$(DATADIR)/BaCon
