@@ -12,7 +12,8 @@ share/aclocal/mm-module.m4
 share/aclocal/mm-pkg.m4
 share/aclocal/mm-warnings.m4
 share/doc/mm-common/
-share/doc/mm-common/README
+share/doc/mm-common/OVERVIEW.md
+share/doc/mm-common/README.md
 share/doc/mm-common/skeletonmm.tar.xz
 share/mm-common/
 share/mm-common/build/

@@ -3,8 +3,7 @@ PKG_PARCH=		*
 COMMENT=		common build utilities for GNOME C++ binding libraries
 
 GNOME_PROJECT=		mm-common
-GNOME_VERSION=		1.0.4
-REVISION=		0
+GNOME_VERSION=		1.0.5
 
 CATEGORIES=		devel
 
