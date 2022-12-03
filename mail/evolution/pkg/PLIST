@@ -197,6 +197,7 @@ include/evolution/e-util/e-filter-part.h
 include/evolution/e-util/e-filter-rule.h
 include/evolution/e-util/e-focus-tracker.h
 include/evolution/e-util/e-headerbar-button.h
+include/evolution/e-util/e-headerbar.h
 include/evolution/e-util/e-html-editor-actions.h
 include/evolution/e-util/e-html-editor-cell-dialog.h
 include/evolution/e-util/e-html-editor-dialog.h
@@ -541,8 +542,6 @@ include/evolution/shell/e-shell-window-actions.h
 include/evolution/shell/e-shell-window.h
 include/evolution/shell/e-shell.h
 lib/evolution/
-lib/evolution-data-server/
-lib/evolution-data-server/camel-providers/
 @so lib/evolution-data-server/camel-providers/libcamelrss.so
 lib/evolution-data-server/camel-providers/libcamelrss.urls
 lib/evolution-data-server/ui-modules/
@@ -1693,8 +1692,6 @@ share/glib-2.0/schemas/org.gnome.evolution.plugin.templates.gschema.xml
 share/glib-2.0/schemas/org.gnome.evolution.shell.gschema.xml
 share/glib-2.0/schemas/org.gnome.evolution.spamassassin.gschema.xml
 share/glib-2.0/schemas/org.gnome.evolution.text-highlight.gschema.xml
-share/help/
-share/help/C/
 share/help/C/evolution/
 share/help/C/evolution/backup-restore.page
 share/help/C/evolution/calendar-alarms-and-reminders.page
@@ -1927,7 +1924,6 @@ share/help/C/evolution/tasks-webdav.page
 share/help/C/evolution/using-categories.page
 share/help/C/evolution/xinclude-filter-vfolder-conditions.xml
 share/help/C/evolution/xinclude-searching.xml
-share/help/ca/
 share/help/ca/evolution/
 share/help/ca/evolution/backup-restore.page
 share/help/ca/evolution/calendar-alarms-and-reminders.page
@@ -2160,7 +2156,6 @@ share/help/ca/evolution/tasks-webdav.page
 share/help/ca/evolution/using-categories.page
 share/help/ca/evolution/xinclude-filter-vfolder-conditions.xml
 share/help/ca/evolution/xinclude-searching.xml
-share/help/cs/
 share/help/cs/evolution/
 share/help/cs/evolution/backup-restore.page
 share/help/cs/evolution/calendar-alarms-and-reminders.page
@@ -2393,7 +2388,6 @@ share/help/cs/evolution/tasks-webdav.page
 share/help/cs/evolution/using-categories.page
 share/help/cs/evolution/xinclude-filter-vfolder-conditions.xml
 share/help/cs/evolution/xinclude-searching.xml
-share/help/de/
 share/help/de/evolution/
 share/help/de/evolution/backup-restore.page
 share/help/de/evolution/calendar-alarms-and-reminders.page
@@ -2626,7 +2620,6 @@ share/help/de/evolution/tasks-webdav.page
 share/help/de/evolution/using-categories.page
 share/help/de/evolution/xinclude-filter-vfolder-conditions.xml
 share/help/de/evolution/xinclude-searching.xml
-share/help/el/
 share/help/el/evolution/
 share/help/el/evolution/backup-restore.page
 share/help/el/evolution/calendar-alarms-and-reminders.page
@@ -3092,7 +3085,6 @@ share/help/en_GB/evolution/tasks-webdav.page
 share/help/en_GB/evolution/using-categories.page
 share/help/en_GB/evolution/xinclude-filter-vfolder-conditions.xml
 share/help/en_GB/evolution/xinclude-searching.xml
-share/help/es/
 share/help/es/evolution/
 share/help/es/evolution/backup-restore.page
 share/help/es/evolution/calendar-alarms-and-reminders.page
@@ -3325,7 +3317,6 @@ share/help/es/evolution/tasks-webdav.page
 share/help/es/evolution/using-categories.page
 share/help/es/evolution/xinclude-filter-vfolder-conditions.xml
 share/help/es/evolution/xinclude-searching.xml
-share/help/eu/
 share/help/eu/evolution/
 share/help/eu/evolution/backup-restore.page
 share/help/eu/evolution/calendar-alarms-and-reminders.page
@@ -3558,7 +3549,6 @@ share/help/eu/evolution/tasks-webdav.page
 share/help/eu/evolution/using-categories.page
 share/help/eu/evolution/xinclude-filter-vfolder-conditions.xml
 share/help/eu/evolution/xinclude-searching.xml
-share/help/fr/
 share/help/fr/evolution/
 share/help/fr/evolution/backup-restore.page
 share/help/fr/evolution/calendar-alarms-and-reminders.page
@@ -3791,7 +3781,6 @@ share/help/fr/evolution/tasks-webdav.page
 share/help/fr/evolution/using-categories.page
 share/help/fr/evolution/xinclude-filter-vfolder-conditions.xml
 share/help/fr/evolution/xinclude-searching.xml
-share/help/gl/
 share/help/gl/evolution/
 share/help/gl/evolution/backup-restore.page
 share/help/gl/evolution/calendar-alarms-and-reminders.page
@@ -4024,7 +4013,6 @@ share/help/gl/evolution/tasks-webdav.page
 share/help/gl/evolution/using-categories.page
 share/help/gl/evolution/xinclude-filter-vfolder-conditions.xml
 share/help/gl/evolution/xinclude-searching.xml
-share/help/hu/
 share/help/hu/evolution/
 share/help/hu/evolution/backup-restore.page
 share/help/hu/evolution/calendar-alarms-and-reminders.page
@@ -4723,7 +4711,6 @@ share/help/mk/evolution/tasks-webdav.page
 share/help/mk/evolution/using-categories.page
 share/help/mk/evolution/xinclude-filter-vfolder-conditions.xml
 share/help/mk/evolution/xinclude-searching.xml
-share/help/oc/
 share/help/oc/evolution/
 share/help/oc/evolution/backup-restore.page
 share/help/oc/evolution/calendar-alarms-and-reminders.page
@@ -4956,7 +4943,6 @@ share/help/oc/evolution/tasks-webdav.page
 share/help/oc/evolution/using-categories.page
 share/help/oc/evolution/xinclude-filter-vfolder-conditions.xml
 share/help/oc/evolution/xinclude-searching.xml
-share/help/pt_BR/
 share/help/pt_BR/evolution/
 share/help/pt_BR/evolution/backup-restore.page
 share/help/pt_BR/evolution/calendar-alarms-and-reminders.page
@@ -5422,7 +5408,6 @@ share/help/ru/evolution/tasks-webdav.page
 share/help/ru/evolution/using-categories.page
 share/help/ru/evolution/xinclude-filter-vfolder-conditions.xml
 share/help/ru/evolution/xinclude-searching.xml
-share/help/sl/
 share/help/sl/evolution/
 share/help/sl/evolution/backup-restore.page
 share/help/sl/evolution/calendar-alarms-and-reminders.page
@@ -5655,7 +5640,6 @@ share/help/sl/evolution/tasks-webdav.page
 share/help/sl/evolution/using-categories.page
 share/help/sl/evolution/xinclude-filter-vfolder-conditions.xml
 share/help/sl/evolution/xinclude-searching.xml
-share/help/sv/
 share/help/sv/evolution/
 share/help/sv/evolution/backup-restore.page
 share/help/sv/evolution/calendar-alarms-and-reminders.page
@@ -6121,7 +6105,6 @@ share/help/te/evolution/tasks-webdav.page
 share/help/te/evolution/using-categories.page
 share/help/te/evolution/xinclude-filter-vfolder-conditions.xml
 share/help/te/evolution/xinclude-searching.xml
-share/help/uk/
 share/help/uk/evolution/
 share/help/uk/evolution/backup-restore.page
 share/help/uk/evolution/calendar-alarms-and-reminders.page
@@ -6354,7 +6337,6 @@ share/help/uk/evolution/tasks-webdav.page
 share/help/uk/evolution/using-categories.page
 share/help/uk/evolution/xinclude-filter-vfolder-conditions.xml
 share/help/uk/evolution/xinclude-searching.xml
-share/help/zh_CN/
 share/help/zh_CN/evolution/
 share/help/zh_CN/evolution/backup-restore.page
 share/help/zh_CN/evolution/calendar-alarms-and-reminders.page
