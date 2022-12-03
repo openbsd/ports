@@ -679,7 +679,6 @@
      SUBDIR += sslh
      SUBDIR += sslsniffer
      SUBDIR += strongswan
-     SUBDIR += supybot
      SUBDIR += swirc
      SUBDIR += synapse
      SUBDIR += syncthing
