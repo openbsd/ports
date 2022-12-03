@@ -1,7 +1,6 @@
 COMMENT =		Dragon and CoCo emulator
 
-DISTNAME =		xroar-1.0.9
-REVISION =		0
+DISTNAME =		xroar-1.2
 
 CATEGORIES =		emulators
 
