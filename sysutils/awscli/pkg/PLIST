@@ -5206,11 +5206,13 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3control/describe-job.
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3control/get-access-point-policy-status.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3control/get-access-point-policy.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3control/get-access-point.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3control/get-multi-region-access-point-routes.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3control/get-public-access-block.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3control/list-access-points.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3control/list-jobs.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3control/put-access-point-policy.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3control/put-public-access-block.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3control/submit-multi-region-access-point-routes.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3control/update-job-priority.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3control/update-job-status.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/

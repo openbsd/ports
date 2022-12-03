@@ -1,6 +1,6 @@
 COMMENT=		universal command line environment for AWS
 
-MODPY_EGG_VERSION=	1.27.19
+MODPY_EGG_VERSION=	1.27.22
 DISTNAME=		awscli-${MODPY_EGG_VERSION}
 
 CATEGORIES=		sysutils
