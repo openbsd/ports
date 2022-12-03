@@ -5,8 +5,7 @@ ONLY_FOR_ARCHS =	aarch64 amd64 arm i386 mips64el powerpc powerpc64 sparc64
 
 COMMENT =		multi-paradigm programming language
 
-V =			8.6
-REVISION =		4
+V =			8.7
 PKGNAME =		racket-minimal-$V
 DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX} \
 			racket-openbsd-2${EXTRACT_SUFX}

@@ -303,6 +303,8 @@ lib/racket/compiled/usr/local/share/racket/collects/openssl/private/
 lib/racket/compiled/usr/local/share/racket/collects/openssl/private/compiled/
 lib/racket/compiled/usr/local/share/racket/collects/openssl/private/compiled/add-cert_rkt.dep
 lib/racket/compiled/usr/local/share/racket/collects/openssl/private/compiled/add-cert_rkt.zo
+lib/racket/compiled/usr/local/share/racket/collects/openssl/private/compiled/ffi_rkt.dep
+lib/racket/compiled/usr/local/share/racket/collects/openssl/private/compiled/ffi_rkt.zo
 lib/racket/compiled/usr/local/share/racket/collects/openssl/private/compiled/macosx_rkt.dep
 lib/racket/compiled/usr/local/share/racket/collects/openssl/private/compiled/macosx_rkt.zo
 lib/racket/compiled/usr/local/share/racket/collects/openssl/private/compiled/win32_rkt.dep
@@ -825,6 +827,8 @@ lib/racket/compiled/usr/local/share/racket/collects/racket/private/compiled/cert
 lib/racket/compiled/usr/local/share/racket/collects/racket/private/compiled/cert_rkt.zo
 lib/racket/compiled/usr/local/share/racket/collects/racket/private/compiled/check_rkt.dep
 lib/racket/compiled/usr/local/share/racket/collects/racket/private/compiled/check_rkt.zo
+lib/racket/compiled/usr/local/share/racket/collects/racket/private/compiled/choose-file-to-load_rkt.dep
+lib/racket/compiled/usr/local/share/racket/collects/racket/private/compiled/choose-file-to-load_rkt.zo
 lib/racket/compiled/usr/local/share/racket/collects/racket/private/compiled/class-c-new_rkt.dep
 lib/racket/compiled/usr/local/share/racket/collects/racket/private/compiled/class-c-new_rkt.zo
 lib/racket/compiled/usr/local/share/racket/collects/racket/private/compiled/class-c-old_rkt.dep
@@ -1578,6 +1582,7 @@ share/racket/collects/openssl/mzssl.rkt
 share/racket/collects/openssl/openssl.rkt
 share/racket/collects/openssl/private/
 share/racket/collects/openssl/private/add-cert.rkt
+share/racket/collects/openssl/private/ffi.rkt
 share/racket/collects/openssl/private/macosx.rkt
 share/racket/collects/openssl/private/win32.rkt
 share/racket/collects/openssl/sha1.rkt
@@ -1810,6 +1815,7 @@ share/racket/collects/racket/private/base.rkt
 share/racket/collects/racket/private/case.rkt
 share/racket/collects/racket/private/cert.rkt
 share/racket/collects/racket/private/check.rkt
+share/racket/collects/racket/private/choose-file-to-load.rkt
 share/racket/collects/racket/private/class-c-new.rkt
 share/racket/collects/racket/private/class-c-old.rkt
 share/racket/collects/racket/private/class-internal.rkt
