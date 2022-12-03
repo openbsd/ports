@@ -102,7 +102,7 @@ postgresql:
     - hostssl   all             all             all                     scram-sha-256
 
 watchdog:
-  mode: off
+  mode: "off"
 
 tags:
   nofailover: false

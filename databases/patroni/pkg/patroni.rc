@@ -11,4 +11,9 @@ rc_bg=YES
 
 pexp="${MODPY_BIN} ${daemon} ${daemon_flags}"
 
+rc_configtest() {
+	# use rc_exec here to validate under daemon_user
+	rc_exec "${daemon} --validate-config ${daemon_flags}"
+}
+
 rc_cmd $1

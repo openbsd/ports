@@ -1,0 +1,35 @@
+* socket.getaddrinfo with "" passed as port on OpenBSD returns error:
+    [Errno -8] service not supported for ai_socktype
+
+* Add Optional flag where appropriate
+
+Index: patroni/validator.py
+--- patroni/validator.py.orig
++++ patroni/validator.py
+@@ -42,7 +42,7 @@ def validate_host_port(host_port, listen=False, multip
+                 raise ConfigParseError("expecting '*' alone")
+             hosts = [p[-1][0] for p in socket.getaddrinfo(None, port, 0, socket.SOCK_STREAM, 0, socket.AI_PASSIVE)]
+         for host in hosts:
+-            proto = socket.getaddrinfo(host, "", 0, socket.SOCK_STREAM, 0, socket.AI_PASSIVE)
++            proto = socket.getaddrinfo(host, port, 0, socket.SOCK_STREAM, 0, socket.AI_PASSIVE)
+             s = socket.socket(proto[0][0], socket.SOCK_STREAM)
+             try:
+                 if s.connect_ex((host, port)) == 0:
+@@ -331,7 +331,7 @@ schema = Schema({
+         Optional("retry_timeout"): int,
+         Optional("maximum_lag_on_failover"): int
+         },
+-    "pg_hba": [str],
++    Optional("pg_hba"): [str],
+     "initdb": [Or(str, dict)]
+   },
+   Or(*available_dcs): Case({
+@@ -370,7 +370,7 @@ schema = Schema({
+   "postgresql": {
+     "listen": validate_host_port_listen_multiple_hosts,
+     "connect_address": validate_connect_address,
+-    "proxy_address": validate_connect_address,
++    Optional("proxy_address"): validate_connect_address,
+     "authentication": {
+       "replication": userattributes,
+       "superuser": userattributes,
