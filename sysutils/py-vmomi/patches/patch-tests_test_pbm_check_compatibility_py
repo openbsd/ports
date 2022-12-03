@@ -1,0 +1,15 @@
+connect.ConnectNoSSL() and connect.SmartConnectNoSSL() were removed in v8.0.0.1,
+but tests were not updated.
+
+Index: tests/test_pbm_check_compatibility.py
+--- tests/test_pbm_check_compatibility.py.orig
++++ tests/test_pbm_check_compatibility.py
+@@ -18,7 +18,7 @@ import unittest
+ import tests
+ 
+ from pyVmomi import pbm, VmomiSupport, SoapStubAdapter
+-from pyVim.connect import SmartConnectNoSSL
++#from pyVim.connect import SmartConnectNoSSL
+ 
+ 
+ class PBMTests(tests.VCRTestBase):
