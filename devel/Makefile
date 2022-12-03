@@ -124,7 +124,6 @@
      SUBDIR += dfu-programmer
      SUBDIR += difftastic
      SUBDIR += diffutiltcl
-     SUBDIR += dissy
      SUBDIR += distcc
      SUBDIR += dlib
      SUBDIR += dnspy

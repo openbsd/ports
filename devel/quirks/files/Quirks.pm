@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1472 2022/12/03 17:50:02 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.1473 2022/12/03 19:38:29 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1760,6 +1760,7 @@ setup_obsolete_reason(
 	51 => 'ctunnel',
 	3 => 'py-libpcap',
 	3 => 'supybot',
+	3 => 'dissy',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
