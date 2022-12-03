@@ -6,6 +6,7 @@ bin/patroni_wale_restore
 bin/patronictl
 lib/python${MODPY_VERSION}/site-packages/patroni/
 lib/python${MODPY_VERSION}/site-packages/patroni-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/patroni-${MODPY_EGG_VERSION}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/patroni-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/patroni-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/patroni-${MODPY_EGG_VERSION}.dist-info/WHEEL
