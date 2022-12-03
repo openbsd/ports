@@ -53,6 +53,7 @@ share/cmake/Help/command/add_link_options.rst
 share/cmake/Help/command/add_subdirectory.rst
 share/cmake/Help/command/add_test.rst
 share/cmake/Help/command/aux_source_directory.rst
+share/cmake/Help/command/block.rst
 share/cmake/Help/command/break.rst
 share/cmake/Help/command/build_command.rst
 share/cmake/Help/command/build_name.rst
@@ -83,6 +84,7 @@ share/cmake/Help/command/else.rst
 share/cmake/Help/command/elseif.rst
 share/cmake/Help/command/enable_language.rst
 share/cmake/Help/command/enable_testing.rst
+share/cmake/Help/command/endblock.rst
 share/cmake/Help/command/endforeach.rst
 share/cmake/Help/command/endfunction.rst
 share/cmake/Help/command/endif.rst
@@ -228,6 +230,7 @@ share/cmake/Help/envvar/HIPCXX.rst
 share/cmake/Help/envvar/HIPFLAGS.rst
 share/cmake/Help/envvar/ISPC.rst
 share/cmake/Help/envvar/ISPCFLAGS.rst
+share/cmake/Help/envvar/LANG_FLAGS.txt
 share/cmake/Help/envvar/LDFLAGS.rst
 share/cmake/Help/envvar/MACOSX_DEPLOYMENT_TARGET.rst
 share/cmake/Help/envvar/OBJC.rst
@@ -235,6 +238,8 @@ share/cmake/Help/envvar/OBJCXX.rst
 share/cmake/Help/envvar/PackageName_ROOT.rst
 share/cmake/Help/envvar/RC.rst
 share/cmake/Help/envvar/RCFLAGS.rst
+share/cmake/Help/envvar/SSL_CERT_DIR.rst
+share/cmake/Help/envvar/SSL_CERT_FILE.rst
 share/cmake/Help/envvar/SWIFTC.rst
 share/cmake/Help/envvar/VERBOSE.rst
 share/cmake/Help/generator/
@@ -471,6 +476,7 @@ share/cmake/Help/module/FindOpenAL.rst
 share/cmake/Help/module/FindOpenCL.rst
 share/cmake/Help/module/FindOpenGL.rst
 share/cmake/Help/module/FindOpenMP.rst
+share/cmake/Help/module/FindOpenSP.rst
 share/cmake/Help/module/FindOpenSSL.rst
 share/cmake/Help/module/FindOpenSceneGraph.rst
 share/cmake/Help/module/FindOpenThreads.rst
@@ -499,6 +505,7 @@ share/cmake/Help/module/FindQuickTime.rst
 share/cmake/Help/module/FindRTI.rst
 share/cmake/Help/module/FindRuby.rst
 share/cmake/Help/module/FindSDL.rst
+share/cmake/Help/module/FindSDL_gfx.rst
 share/cmake/Help/module/FindSDL_image.rst
 share/cmake/Help/module/FindSDL_mixer.rst
 share/cmake/Help/module/FindSDL_net.rst
@@ -714,6 +721,9 @@ share/cmake/Help/policy/CMP0136.rst
 share/cmake/Help/policy/CMP0137.rst
 share/cmake/Help/policy/CMP0138.rst
 share/cmake/Help/policy/CMP0139.rst
+share/cmake/Help/policy/CMP0140.rst
+share/cmake/Help/policy/CMP0141.rst
+share/cmake/Help/policy/CMP0142.rst
 share/cmake/Help/policy/DEPRECATED.txt
 share/cmake/Help/policy/DISALLOWED_COMMAND.txt
 share/cmake/Help/prop_cache/
@@ -753,6 +763,7 @@ share/cmake/Help/prop_dir/RULE_LAUNCH_CUSTOM.rst
 share/cmake/Help/prop_dir/RULE_LAUNCH_LINK.rst
 share/cmake/Help/prop_dir/SOURCE_DIR.rst
 share/cmake/Help/prop_dir/SUBDIRECTORIES.rst
+share/cmake/Help/prop_dir/SYSTEM.rst
 share/cmake/Help/prop_dir/TESTS.rst
 share/cmake/Help/prop_dir/TEST_INCLUDE_FILE.rst
 share/cmake/Help/prop_dir/TEST_INCLUDE_FILES.rst
@@ -968,6 +979,16 @@ share/cmake/Help/prop_tgt/CUDA_SEPARABLE_COMPILATION.rst
 share/cmake/Help/prop_tgt/CUDA_STANDARD.rst
 share/cmake/Help/prop_tgt/CUDA_STANDARD_REQUIRED.rst
 share/cmake/Help/prop_tgt/CXX_EXTENSIONS.rst
+share/cmake/Help/prop_tgt/CXX_MODULE_DIRS.rst
+share/cmake/Help/prop_tgt/CXX_MODULE_DIRS_NAME.rst
+share/cmake/Help/prop_tgt/CXX_MODULE_HEADER_UNIT_DIRS.rst
+share/cmake/Help/prop_tgt/CXX_MODULE_HEADER_UNIT_DIRS_NAME.rst
+share/cmake/Help/prop_tgt/CXX_MODULE_HEADER_UNIT_SET.rst
+share/cmake/Help/prop_tgt/CXX_MODULE_HEADER_UNIT_SETS.rst
+share/cmake/Help/prop_tgt/CXX_MODULE_HEADER_UNIT_SET_NAME.rst
+share/cmake/Help/prop_tgt/CXX_MODULE_SET.rst
+share/cmake/Help/prop_tgt/CXX_MODULE_SETS.rst
+share/cmake/Help/prop_tgt/CXX_MODULE_SET_NAME.rst
 share/cmake/Help/prop_tgt/CXX_STANDARD.rst
 share/cmake/Help/prop_tgt/CXX_STANDARD_REQUIRED.rst
 share/cmake/Help/prop_tgt/C_EXTENSIONS.rst
@@ -988,6 +1009,7 @@ share/cmake/Help/prop_tgt/EXCLUDE_FROM_DEFAULT_BUILD.rst
 share/cmake/Help/prop_tgt/EXCLUDE_FROM_DEFAULT_BUILD_CONFIG.rst
 share/cmake/Help/prop_tgt/EXPORT_COMPILE_COMMANDS.rst
 share/cmake/Help/prop_tgt/EXPORT_NAME.rst
+share/cmake/Help/prop_tgt/EXPORT_NO_SYSTEM.rst
 share/cmake/Help/prop_tgt/EXPORT_PROPERTIES.rst
 share/cmake/Help/prop_tgt/EchoString.rst
 share/cmake/Help/prop_tgt/FOLDER.rst
@@ -1050,6 +1072,8 @@ share/cmake/Help/prop_tgt/INTERFACE_BUILD_PROPERTY.txt
 share/cmake/Help/prop_tgt/INTERFACE_COMPILE_DEFINITIONS.rst
 share/cmake/Help/prop_tgt/INTERFACE_COMPILE_FEATURES.rst
 share/cmake/Help/prop_tgt/INTERFACE_COMPILE_OPTIONS.rst
+share/cmake/Help/prop_tgt/INTERFACE_CXX_MODULE_HEADER_UNIT_SETS.rst
+share/cmake/Help/prop_tgt/INTERFACE_CXX_MODULE_SETS.rst
 share/cmake/Help/prop_tgt/INTERFACE_HEADER_SETS.rst
 share/cmake/Help/prop_tgt/INTERFACE_HEADER_SETS_TO_VERIFY.rst
 share/cmake/Help/prop_tgt/INTERFACE_INCLUDE_DIRECTORIES.rst
@@ -1117,6 +1141,8 @@ share/cmake/Help/prop_tgt/MACOSX_FRAMEWORK_INFO_PLIST.rst
 share/cmake/Help/prop_tgt/MACOSX_RPATH.rst
 share/cmake/Help/prop_tgt/MANUALLY_ADDED_DEPENDENCIES.rst
 share/cmake/Help/prop_tgt/MAP_IMPORTED_CONFIG_CONFIG.rst
+share/cmake/Help/prop_tgt/MSVC_DEBUG_INFORMATION_FORMAT-VALUES.txt
+share/cmake/Help/prop_tgt/MSVC_DEBUG_INFORMATION_FORMAT.rst
 share/cmake/Help/prop_tgt/MSVC_RUNTIME_LIBRARY-VALUES.txt
 share/cmake/Help/prop_tgt/MSVC_RUNTIME_LIBRARY.rst
 share/cmake/Help/prop_tgt/NAME.rst
@@ -1165,6 +1191,7 @@ share/cmake/Help/prop_tgt/STATIC_LIBRARY_FLAGS.rst
 share/cmake/Help/prop_tgt/STATIC_LIBRARY_FLAGS_CONFIG.rst
 share/cmake/Help/prop_tgt/STATIC_LIBRARY_OPTIONS.rst
 share/cmake/Help/prop_tgt/SUFFIX.rst
+share/cmake/Help/prop_tgt/SYSTEM.rst
 share/cmake/Help/prop_tgt/Swift_DEPENDENCIES_FILE.rst
 share/cmake/Help/prop_tgt/Swift_LANGUAGE_VERSION.rst
 share/cmake/Help/prop_tgt/Swift_MODULE_DIRECTORY.rst
@@ -1242,10 +1269,14 @@ share/cmake/Help/prop_tgt/XCODE_SCHEME_DEBUG_DOCUMENT_VERSIONING.rst
 share/cmake/Help/prop_tgt/XCODE_SCHEME_DISABLE_MAIN_THREAD_CHECKER.rst
 share/cmake/Help/prop_tgt/XCODE_SCHEME_DYNAMIC_LIBRARY_LOADS.rst
 share/cmake/Help/prop_tgt/XCODE_SCHEME_DYNAMIC_LINKER_API_USAGE.rst
+share/cmake/Help/prop_tgt/XCODE_SCHEME_ENABLE_GPU_API_VALIDATION.rst
 share/cmake/Help/prop_tgt/XCODE_SCHEME_ENABLE_GPU_FRAME_CAPTURE_MODE.rst
+share/cmake/Help/prop_tgt/XCODE_SCHEME_ENABLE_GPU_SHADER_VALIDATION.rst
 share/cmake/Help/prop_tgt/XCODE_SCHEME_ENVIRONMENT.rst
 share/cmake/Help/prop_tgt/XCODE_SCHEME_EXECUTABLE.rst
 share/cmake/Help/prop_tgt/XCODE_SCHEME_GUARD_MALLOC.rst
+share/cmake/Help/prop_tgt/XCODE_SCHEME_LAUNCH_CONFIGURATION.rst
+share/cmake/Help/prop_tgt/XCODE_SCHEME_LAUNCH_MODE.rst
 share/cmake/Help/prop_tgt/XCODE_SCHEME_MAIN_THREAD_CHECKER_STOP.rst
 share/cmake/Help/prop_tgt/XCODE_SCHEME_MALLOC_GUARD_EDGES.rst
 share/cmake/Help/prop_tgt/XCODE_SCHEME_MALLOC_SCRIBBLE.rst
@@ -1279,6 +1310,7 @@ share/cmake/Help/release/3.21.rst
 share/cmake/Help/release/3.22.rst
 share/cmake/Help/release/3.23.rst
 share/cmake/Help/release/3.24.rst
+share/cmake/Help/release/3.25.rst
 share/cmake/Help/release/3.3.rst
 share/cmake/Help/release/3.4.rst
 share/cmake/Help/release/3.5.rst
@@ -1292,6 +1324,7 @@ share/cmake/Help/variable/
 share/cmake/Help/variable/ANDROID.rst
 share/cmake/Help/variable/APPLE.rst
 share/cmake/Help/variable/BORLAND.rst
+share/cmake/Help/variable/BSD.rst
 share/cmake/Help/variable/BUILD_SHARED_LIBS.rst
 share/cmake/Help/variable/CACHE.rst
 share/cmake/Help/variable/CMAKE_ABSOLUTE_DESTINATION_FILES.rst
@@ -1501,6 +1534,8 @@ share/cmake/Help/variable/CMAKE_HIP_STANDARD.rst
 share/cmake/Help/variable/CMAKE_HIP_STANDARD_REQUIRED.rst
 share/cmake/Help/variable/CMAKE_HOME_DIRECTORY.rst
 share/cmake/Help/variable/CMAKE_HOST_APPLE.rst
+share/cmake/Help/variable/CMAKE_HOST_BSD.rst
+share/cmake/Help/variable/CMAKE_HOST_LINUX.rst
 share/cmake/Help/variable/CMAKE_HOST_SOLARIS.rst
 share/cmake/Help/variable/CMAKE_HOST_SYSTEM.rst
 share/cmake/Help/variable/CMAKE_HOST_SYSTEM_NAME.rst
@@ -1657,6 +1692,7 @@ share/cmake/Help/variable/CMAKE_MODULE_LINKER_FLAGS_CONFIG_INIT.rst
 share/cmake/Help/variable/CMAKE_MODULE_LINKER_FLAGS_INIT.rst
 share/cmake/Help/variable/CMAKE_MODULE_PATH.rst
 share/cmake/Help/variable/CMAKE_MSVCIDE_RUN_PATH.rst
+share/cmake/Help/variable/CMAKE_MSVC_DEBUG_INFORMATION_FORMAT.rst
 share/cmake/Help/variable/CMAKE_MSVC_RUNTIME_LIBRARY.rst
 share/cmake/Help/variable/CMAKE_NETRC.rst
 share/cmake/Help/variable/CMAKE_NETRC_FILE.rst
@@ -1751,6 +1787,7 @@ share/cmake/Help/variable/CMAKE_SYSTEM_VERSION.rst
 share/cmake/Help/variable/CMAKE_Swift_LANGUAGE_VERSION.rst
 share/cmake/Help/variable/CMAKE_Swift_MODULE_DIRECTORY.rst
 share/cmake/Help/variable/CMAKE_Swift_NUM_THREADS.rst
+share/cmake/Help/variable/CMAKE_TASKING_TOOLSET.rst
 share/cmake/Help/variable/CMAKE_TLS_CAINFO.rst
 share/cmake/Help/variable/CMAKE_TLS_VERIFY.rst
 share/cmake/Help/variable/CMAKE_TOOLCHAIN_FILE.rst
@@ -1816,9 +1853,13 @@ share/cmake/Help/variable/CMAKE_XCODE_SCHEME_DEBUG_DOCUMENT_VERSIONING.rst
 share/cmake/Help/variable/CMAKE_XCODE_SCHEME_DISABLE_MAIN_THREAD_CHECKER.rst
 share/cmake/Help/variable/CMAKE_XCODE_SCHEME_DYNAMIC_LIBRARY_LOADS.rst
 share/cmake/Help/variable/CMAKE_XCODE_SCHEME_DYNAMIC_LINKER_API_USAGE.rst
+share/cmake/Help/variable/CMAKE_XCODE_SCHEME_ENABLE_GPU_API_VALIDATION.rst
 share/cmake/Help/variable/CMAKE_XCODE_SCHEME_ENABLE_GPU_FRAME_CAPTURE_MODE.rst
+share/cmake/Help/variable/CMAKE_XCODE_SCHEME_ENABLE_GPU_SHADER_VALIDATION.rst
 share/cmake/Help/variable/CMAKE_XCODE_SCHEME_ENVIRONMENT.rst
 share/cmake/Help/variable/CMAKE_XCODE_SCHEME_GUARD_MALLOC.rst
+share/cmake/Help/variable/CMAKE_XCODE_SCHEME_LAUNCH_CONFIGURATION.rst
+share/cmake/Help/variable/CMAKE_XCODE_SCHEME_LAUNCH_MODE.rst
 share/cmake/Help/variable/CMAKE_XCODE_SCHEME_MAIN_THREAD_CHECKER_STOP.rst
 share/cmake/Help/variable/CMAKE_XCODE_SCHEME_MALLOC_GUARD_EDGES.rst
 share/cmake/Help/variable/CMAKE_XCODE_SCHEME_MALLOC_SCRIBBLE.rst
@@ -1929,6 +1970,7 @@ share/cmake/Help/variable/IOS.rst
 share/cmake/Help/variable/LIBRARY_OUTPUT_PATH.rst
 share/cmake/Help/variable/LINK_GROUP_PREDEFINED_FEATURES.txt
 share/cmake/Help/variable/LINK_LIBRARY_PREDEFINED_FEATURES.txt
+share/cmake/Help/variable/LINUX.rst
 share/cmake/Help/variable/MINGW.rst
 share/cmake/Help/variable/MSVC.rst
 share/cmake/Help/variable/MSVC10.rst
@@ -2311,6 +2353,7 @@ share/cmake/Modules/Compiler/IntelLLVM-ASM.cmake
 share/cmake/Modules/Compiler/IntelLLVM-C.cmake
 share/cmake/Modules/Compiler/IntelLLVM-CXX.cmake
 share/cmake/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake
+share/cmake/Modules/Compiler/IntelLLVM-FindBinUtils.cmake
 share/cmake/Modules/Compiler/IntelLLVM-Fortran.cmake
 share/cmake/Modules/Compiler/IntelLLVM.cmake
 share/cmake/Modules/Compiler/LCC-C-DetermineCompiler.cmake
@@ -2377,6 +2420,12 @@ share/cmake/Modules/Compiler/TI-C.cmake
 share/cmake/Modules/Compiler/TI-CXX.cmake
 share/cmake/Modules/Compiler/TI-DetermineCompiler.cmake
 share/cmake/Modules/Compiler/TI.cmake
+share/cmake/Modules/Compiler/Tasking-ASM.cmake
+share/cmake/Modules/Compiler/Tasking-C.cmake
+share/cmake/Modules/Compiler/Tasking-CXX.cmake
+share/cmake/Modules/Compiler/Tasking-DetermineCompiler.cmake
+share/cmake/Modules/Compiler/Tasking-FindBinUtils.cmake
+share/cmake/Modules/Compiler/Tasking.cmake
 share/cmake/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake
 share/cmake/Modules/Compiler/TinyCC-C.cmake
 share/cmake/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake
@@ -2533,6 +2582,7 @@ share/cmake/Modules/FindOpenAL.cmake
 share/cmake/Modules/FindOpenCL.cmake
 share/cmake/Modules/FindOpenGL.cmake
 share/cmake/Modules/FindOpenMP.cmake
+share/cmake/Modules/FindOpenSP.cmake
 share/cmake/Modules/FindOpenSSL.cmake
 share/cmake/Modules/FindOpenSceneGraph.cmake
 share/cmake/Modules/FindOpenThreads.cmake
@@ -2563,6 +2613,7 @@ share/cmake/Modules/FindQuickTime.cmake
 share/cmake/Modules/FindRTI.cmake
 share/cmake/Modules/FindRuby.cmake
 share/cmake/Modules/FindSDL.cmake
+share/cmake/Modules/FindSDL_gfx.cmake
 share/cmake/Modules/FindSDL_image.cmake
 share/cmake/Modules/FindSDL_mixer.cmake
 share/cmake/Modules/FindSDL_net.cmake
@@ -2958,6 +3009,14 @@ share/cmake/Modules/Platform/QNX.cmake
 share/cmake/Modules/Platform/RISCos.cmake
 share/cmake/Modules/Platform/SCO_SV.cmake
 share/cmake/Modules/Platform/SINIX.cmake
+share/cmake/Modules/Platform/SerenityOS-Clang-ASM.cmake
+share/cmake/Modules/Platform/SerenityOS-Clang-C.cmake
+share/cmake/Modules/Platform/SerenityOS-Clang-CXX.cmake
+share/cmake/Modules/Platform/SerenityOS-GNU-ASM.cmake
+share/cmake/Modules/Platform/SerenityOS-GNU-C.cmake
+share/cmake/Modules/Platform/SerenityOS-GNU-CXX.cmake
+share/cmake/Modules/Platform/SerenityOS-GNU.cmake
+share/cmake/Modules/Platform/SerenityOS.cmake
 share/cmake/Modules/Platform/SunOS-Clang-C.cmake
 share/cmake/Modules/Platform/SunOS-Clang-CXX.cmake
 share/cmake/Modules/Platform/SunOS-GNU-C.cmake
@@ -2980,6 +3039,7 @@ share/cmake/Modules/Platform/Windows-Borland-CXX.cmake
 share/cmake/Modules/Platform/Windows-Clang-ASM.cmake
 share/cmake/Modules/Platform/Windows-Clang-C.cmake
 share/cmake/Modules/Platform/Windows-Clang-CXX.cmake
+share/cmake/Modules/Platform/Windows-Clang-HIP.cmake
 share/cmake/Modules/Platform/Windows-Clang.cmake
 share/cmake/Modules/Platform/Windows-Determine-CXX.cmake
 share/cmake/Modules/Platform/Windows-Embarcadero-C.cmake
@@ -3192,6 +3252,7 @@ share/doc/cmake/html/_sources/command/add_link_options.rst.txt
 share/doc/cmake/html/_sources/command/add_subdirectory.rst.txt
 share/doc/cmake/html/_sources/command/add_test.rst.txt
 share/doc/cmake/html/_sources/command/aux_source_directory.rst.txt
+share/doc/cmake/html/_sources/command/block.rst.txt
 share/doc/cmake/html/_sources/command/break.rst.txt
 share/doc/cmake/html/_sources/command/build_command.rst.txt
 share/doc/cmake/html/_sources/command/build_name.rst.txt
@@ -3222,6 +3283,7 @@ share/doc/cmake/html/_sources/command/else.rst.txt
 share/doc/cmake/html/_sources/command/elseif.rst.txt
 share/doc/cmake/html/_sources/command/enable_language.rst.txt
 share/doc/cmake/html/_sources/command/enable_testing.rst.txt
+share/doc/cmake/html/_sources/command/endblock.rst.txt
 share/doc/cmake/html/_sources/command/endforeach.rst.txt
 share/doc/cmake/html/_sources/command/endfunction.rst.txt
 share/doc/cmake/html/_sources/command/endif.rst.txt
@@ -3373,6 +3435,8 @@ share/doc/cmake/html/_sources/envvar/OBJCXX.rst.txt
 share/doc/cmake/html/_sources/envvar/PackageName_ROOT.rst.txt
 share/doc/cmake/html/_sources/envvar/RC.rst.txt
 share/doc/cmake/html/_sources/envvar/RCFLAGS.rst.txt
+share/doc/cmake/html/_sources/envvar/SSL_CERT_DIR.rst.txt
+share/doc/cmake/html/_sources/envvar/SSL_CERT_FILE.rst.txt
 share/doc/cmake/html/_sources/envvar/SWIFTC.rst.txt
 share/doc/cmake/html/_sources/envvar/VERBOSE.rst.txt
 share/doc/cmake/html/_sources/generator/
@@ -3619,6 +3683,7 @@ share/doc/cmake/html/_sources/module/FindOpenAL.rst.txt
 share/doc/cmake/html/_sources/module/FindOpenCL.rst.txt
 share/doc/cmake/html/_sources/module/FindOpenGL.rst.txt
 share/doc/cmake/html/_sources/module/FindOpenMP.rst.txt
+share/doc/cmake/html/_sources/module/FindOpenSP.rst.txt
 share/doc/cmake/html/_sources/module/FindOpenSSL.rst.txt
 share/doc/cmake/html/_sources/module/FindOpenSceneGraph.rst.txt
 share/doc/cmake/html/_sources/module/FindOpenThreads.rst.txt
@@ -3647,6 +3712,7 @@ share/doc/cmake/html/_sources/module/FindQuickTime.rst.txt
 share/doc/cmake/html/_sources/module/FindRTI.rst.txt
 share/doc/cmake/html/_sources/module/FindRuby.rst.txt
 share/doc/cmake/html/_sources/module/FindSDL.rst.txt
+share/doc/cmake/html/_sources/module/FindSDL_gfx.rst.txt
 share/doc/cmake/html/_sources/module/FindSDL_image.rst.txt
 share/doc/cmake/html/_sources/module/FindSDL_mixer.rst.txt
 share/doc/cmake/html/_sources/module/FindSDL_net.rst.txt
@@ -3862,6 +3928,9 @@ share/doc/cmake/html/_sources/policy/CMP0136.rst.txt
 share/doc/cmake/html/_sources/policy/CMP0137.rst.txt
 share/doc/cmake/html/_sources/policy/CMP0138.rst.txt
 share/doc/cmake/html/_sources/policy/CMP0139.rst.txt
+share/doc/cmake/html/_sources/policy/CMP0140.rst.txt
+share/doc/cmake/html/_sources/policy/CMP0141.rst.txt
+share/doc/cmake/html/_sources/policy/CMP0142.rst.txt
 share/doc/cmake/html/_sources/prop_cache/
 share/doc/cmake/html/_sources/prop_cache/ADVANCED.rst.txt
 share/doc/cmake/html/_sources/prop_cache/HELPSTRING.rst.txt
@@ -3899,6 +3968,7 @@ share/doc/cmake/html/_sources/prop_dir/RULE_LAUNCH_CUSTOM.rst.txt
 share/doc/cmake/html/_sources/prop_dir/RULE_LAUNCH_LINK.rst.txt
 share/doc/cmake/html/_sources/prop_dir/SOURCE_DIR.rst.txt
 share/doc/cmake/html/_sources/prop_dir/SUBDIRECTORIES.rst.txt
+share/doc/cmake/html/_sources/prop_dir/SYSTEM.rst.txt
 share/doc/cmake/html/_sources/prop_dir/TESTS.rst.txt
 share/doc/cmake/html/_sources/prop_dir/TEST_INCLUDE_FILE.rst.txt
 share/doc/cmake/html/_sources/prop_dir/TEST_INCLUDE_FILES.rst.txt
@@ -4111,6 +4181,16 @@ share/doc/cmake/html/_sources/prop_tgt/CUDA_SEPARABLE_COMPILATION.rst.txt
 share/doc/cmake/html/_sources/prop_tgt/CUDA_STANDARD.rst.txt
 share/doc/cmake/html/_sources/prop_tgt/CUDA_STANDARD_REQUIRED.rst.txt
 share/doc/cmake/html/_sources/prop_tgt/CXX_EXTENSIONS.rst.txt
+share/doc/cmake/html/_sources/prop_tgt/CXX_MODULE_DIRS.rst.txt
+share/doc/cmake/html/_sources/prop_tgt/CXX_MODULE_DIRS_NAME.rst.txt
+share/doc/cmake/html/_sources/prop_tgt/CXX_MODULE_HEADER_UNIT_DIRS.rst.txt
+share/doc/cmake/html/_sources/prop_tgt/CXX_MODULE_HEADER_UNIT_DIRS_NAME.rst.txt
+share/doc/cmake/html/_sources/prop_tgt/CXX_MODULE_HEADER_UNIT_SET.rst.txt
+share/doc/cmake/html/_sources/prop_tgt/CXX_MODULE_HEADER_UNIT_SETS.rst.txt
+share/doc/cmake/html/_sources/prop_tgt/CXX_MODULE_HEADER_UNIT_SET_NAME.rst.txt
+share/doc/cmake/html/_sources/prop_tgt/CXX_MODULE_SET.rst.txt
+share/doc/cmake/html/_sources/prop_tgt/CXX_MODULE_SETS.rst.txt
+share/doc/cmake/html/_sources/prop_tgt/CXX_MODULE_SET_NAME.rst.txt
 share/doc/cmake/html/_sources/prop_tgt/CXX_STANDARD.rst.txt
 share/doc/cmake/html/_sources/prop_tgt/CXX_STANDARD_REQUIRED.rst.txt
 share/doc/cmake/html/_sources/prop_tgt/C_EXTENSIONS.rst.txt
@@ -4131,6 +4211,7 @@ share/doc/cmake/html/_sources/prop_tgt/EXCLUDE_FROM_DEFAULT_BUILD.rst.txt
 share/doc/cmake/html/_sources/prop_tgt/EXCLUDE_FROM_DEFAULT_BUILD_CONFIG.rst.txt
 share/doc/cmake/html/_sources/prop_tgt/EXPORT_COMPILE_COMMANDS.rst.txt
 share/doc/cmake/html/_sources/prop_tgt/EXPORT_NAME.rst.txt
+share/doc/cmake/html/_sources/prop_tgt/EXPORT_NO_SYSTEM.rst.txt
 share/doc/cmake/html/_sources/prop_tgt/EXPORT_PROPERTIES.rst.txt
 share/doc/cmake/html/_sources/prop_tgt/EchoString.rst.txt
 share/doc/cmake/html/_sources/prop_tgt/FOLDER.rst.txt
@@ -4192,6 +4273,8 @@ share/doc/cmake/html/_sources/prop_tgt/INTERFACE_AUTOUIC_OPTIONS.rst.txt
 share/doc/cmake/html/_sources/prop_tgt/INTERFACE_COMPILE_DEFINITIONS.rst.txt
 share/doc/cmake/html/_sources/prop_tgt/INTERFACE_COMPILE_FEATURES.rst.txt
 share/doc/cmake/html/_sources/prop_tgt/INTERFACE_COMPILE_OPTIONS.rst.txt
+share/doc/cmake/html/_sources/prop_tgt/INTERFACE_CXX_MODULE_HEADER_UNIT_SETS.rst.txt
+share/doc/cmake/html/_sources/prop_tgt/INTERFACE_CXX_MODULE_SETS.rst.txt
 share/doc/cmake/html/_sources/prop_tgt/INTERFACE_HEADER_SETS.rst.txt
 share/doc/cmake/html/_sources/prop_tgt/INTERFACE_HEADER_SETS_TO_VERIFY.rst.txt
 share/doc/cmake/html/_sources/prop_tgt/INTERFACE_INCLUDE_DIRECTORIES.rst.txt
@@ -4257,6 +4340,7 @@ share/doc/cmake/html/_sources/prop_tgt/MACOSX_FRAMEWORK_INFO_PLIST.rst.txt
 share/doc/cmake/html/_sources/prop_tgt/MACOSX_RPATH.rst.txt
 share/doc/cmake/html/_sources/prop_tgt/MANUALLY_ADDED_DEPENDENCIES.rst.txt
 share/doc/cmake/html/_sources/prop_tgt/MAP_IMPORTED_CONFIG_CONFIG.rst.txt
+share/doc/cmake/html/_sources/prop_tgt/MSVC_DEBUG_INFORMATION_FORMAT.rst.txt
 share/doc/cmake/html/_sources/prop_tgt/MSVC_RUNTIME_LIBRARY.rst.txt
 share/doc/cmake/html/_sources/prop_tgt/NAME.rst.txt
 share/doc/cmake/html/_sources/prop_tgt/NO_SONAME.rst.txt
@@ -4303,6 +4387,7 @@ share/doc/cmake/html/_sources/prop_tgt/STATIC_LIBRARY_FLAGS.rst.txt
 share/doc/cmake/html/_sources/prop_tgt/STATIC_LIBRARY_FLAGS_CONFIG.rst.txt
 share/doc/cmake/html/_sources/prop_tgt/STATIC_LIBRARY_OPTIONS.rst.txt
 share/doc/cmake/html/_sources/prop_tgt/SUFFIX.rst.txt
+share/doc/cmake/html/_sources/prop_tgt/SYSTEM.rst.txt
 share/doc/cmake/html/_sources/prop_tgt/Swift_DEPENDENCIES_FILE.rst.txt
 share/doc/cmake/html/_sources/prop_tgt/Swift_LANGUAGE_VERSION.rst.txt
 share/doc/cmake/html/_sources/prop_tgt/Swift_MODULE_DIRECTORY.rst.txt
@@ -4379,10 +4464,14 @@ share/doc/cmake/html/_sources/prop_tgt/XCODE_SCHEME_DEBUG_DOCUMENT_VERSIONING.rs
 share/doc/cmake/html/_sources/prop_tgt/XCODE_SCHEME_DISABLE_MAIN_THREAD_CHECKER.rst.txt
 share/doc/cmake/html/_sources/prop_tgt/XCODE_SCHEME_DYNAMIC_LIBRARY_LOADS.rst.txt
 share/doc/cmake/html/_sources/prop_tgt/XCODE_SCHEME_DYNAMIC_LINKER_API_USAGE.rst.txt
+share/doc/cmake/html/_sources/prop_tgt/XCODE_SCHEME_ENABLE_GPU_API_VALIDATION.rst.txt
 share/doc/cmake/html/_sources/prop_tgt/XCODE_SCHEME_ENABLE_GPU_FRAME_CAPTURE_MODE.rst.txt
+share/doc/cmake/html/_sources/prop_tgt/XCODE_SCHEME_ENABLE_GPU_SHADER_VALIDATION.rst.txt
 share/doc/cmake/html/_sources/prop_tgt/XCODE_SCHEME_ENVIRONMENT.rst.txt
 share/doc/cmake/html/_sources/prop_tgt/XCODE_SCHEME_EXECUTABLE.rst.txt
 share/doc/cmake/html/_sources/prop_tgt/XCODE_SCHEME_GUARD_MALLOC.rst.txt
+share/doc/cmake/html/_sources/prop_tgt/XCODE_SCHEME_LAUNCH_CONFIGURATION.rst.txt
+share/doc/cmake/html/_sources/prop_tgt/XCODE_SCHEME_LAUNCH_MODE.rst.txt
 share/doc/cmake/html/_sources/prop_tgt/XCODE_SCHEME_MAIN_THREAD_CHECKER_STOP.rst.txt
 share/doc/cmake/html/_sources/prop_tgt/XCODE_SCHEME_MALLOC_GUARD_EDGES.rst.txt
 share/doc/cmake/html/_sources/prop_tgt/XCODE_SCHEME_MALLOC_SCRIBBLE.rst.txt
@@ -4414,6 +4503,7 @@ share/doc/cmake/html/_sources/release/3.21.rst.txt
 share/doc/cmake/html/_sources/release/3.22.rst.txt
 share/doc/cmake/html/_sources/release/3.23.rst.txt
 share/doc/cmake/html/_sources/release/3.24.rst.txt
+share/doc/cmake/html/_sources/release/3.25.rst.txt
 share/doc/cmake/html/_sources/release/3.3.rst.txt
 share/doc/cmake/html/_sources/release/3.4.rst.txt
 share/doc/cmake/html/_sources/release/3.5.rst.txt
@@ -4426,6 +4516,7 @@ share/doc/cmake/html/_sources/variable/
 share/doc/cmake/html/_sources/variable/ANDROID.rst.txt
 share/doc/cmake/html/_sources/variable/APPLE.rst.txt
 share/doc/cmake/html/_sources/variable/BORLAND.rst.txt
+share/doc/cmake/html/_sources/variable/BSD.rst.txt
 share/doc/cmake/html/_sources/variable/BUILD_SHARED_LIBS.rst.txt
 share/doc/cmake/html/_sources/variable/CACHE.rst.txt
 share/doc/cmake/html/_sources/variable/CMAKE_ABSOLUTE_DESTINATION_FILES.rst.txt
@@ -4634,6 +4725,8 @@ share/doc/cmake/html/_sources/variable/CMAKE_HIP_STANDARD.rst.txt
 share/doc/cmake/html/_sources/variable/CMAKE_HIP_STANDARD_REQUIRED.rst.txt
 share/doc/cmake/html/_sources/variable/CMAKE_HOME_DIRECTORY.rst.txt
 share/doc/cmake/html/_sources/variable/CMAKE_HOST_APPLE.rst.txt
+share/doc/cmake/html/_sources/variable/CMAKE_HOST_BSD.rst.txt
+share/doc/cmake/html/_sources/variable/CMAKE_HOST_LINUX.rst.txt
 share/doc/cmake/html/_sources/variable/CMAKE_HOST_SOLARIS.rst.txt
 share/doc/cmake/html/_sources/variable/CMAKE_HOST_SYSTEM.rst.txt
 share/doc/cmake/html/_sources/variable/CMAKE_HOST_SYSTEM_NAME.rst.txt
@@ -4788,6 +4881,7 @@ share/doc/cmake/html/_sources/variable/CMAKE_MODULE_LINKER_FLAGS_CONFIG_INIT.rst
 share/doc/cmake/html/_sources/variable/CMAKE_MODULE_LINKER_FLAGS_INIT.rst.txt
 share/doc/cmake/html/_sources/variable/CMAKE_MODULE_PATH.rst.txt
 share/doc/cmake/html/_sources/variable/CMAKE_MSVCIDE_RUN_PATH.rst.txt
+share/doc/cmake/html/_sources/variable/CMAKE_MSVC_DEBUG_INFORMATION_FORMAT.rst.txt
 share/doc/cmake/html/_sources/variable/CMAKE_MSVC_RUNTIME_LIBRARY.rst.txt
 share/doc/cmake/html/_sources/variable/CMAKE_NETRC.rst.txt
 share/doc/cmake/html/_sources/variable/CMAKE_NETRC_FILE.rst.txt
@@ -4881,6 +4975,7 @@ share/doc/cmake/html/_sources/variable/CMAKE_SYSTEM_VERSION.rst.txt
 share/doc/cmake/html/_sources/variable/CMAKE_Swift_LANGUAGE_VERSION.rst.txt
 share/doc/cmake/html/_sources/variable/CMAKE_Swift_MODULE_DIRECTORY.rst.txt
 share/doc/cmake/html/_sources/variable/CMAKE_Swift_NUM_THREADS.rst.txt
+share/doc/cmake/html/_sources/variable/CMAKE_TASKING_TOOLSET.rst.txt
 share/doc/cmake/html/_sources/variable/CMAKE_TLS_CAINFO.rst.txt
 share/doc/cmake/html/_sources/variable/CMAKE_TLS_VERIFY.rst.txt
 share/doc/cmake/html/_sources/variable/CMAKE_TOOLCHAIN_FILE.rst.txt
@@ -4946,9 +5041,13 @@ share/doc/cmake/html/_sources/variable/CMAKE_XCODE_SCHEME_DEBUG_DOCUMENT_VERSION
 share/doc/cmake/html/_sources/variable/CMAKE_XCODE_SCHEME_DISABLE_MAIN_THREAD_CHECKER.rst.txt
 share/doc/cmake/html/_sources/variable/CMAKE_XCODE_SCHEME_DYNAMIC_LIBRARY_LOADS.rst.txt
 share/doc/cmake/html/_sources/variable/CMAKE_XCODE_SCHEME_DYNAMIC_LINKER_API_USAGE.rst.txt
+share/doc/cmake/html/_sources/variable/CMAKE_XCODE_SCHEME_ENABLE_GPU_API_VALIDATION.rst.txt
 share/doc/cmake/html/_sources/variable/CMAKE_XCODE_SCHEME_ENABLE_GPU_FRAME_CAPTURE_MODE.rst.txt
+share/doc/cmake/html/_sources/variable/CMAKE_XCODE_SCHEME_ENABLE_GPU_SHADER_VALIDATION.rst.txt
 share/doc/cmake/html/_sources/variable/CMAKE_XCODE_SCHEME_ENVIRONMENT.rst.txt
 share/doc/cmake/html/_sources/variable/CMAKE_XCODE_SCHEME_GUARD_MALLOC.rst.txt
+share/doc/cmake/html/_sources/variable/CMAKE_XCODE_SCHEME_LAUNCH_CONFIGURATION.rst.txt
+share/doc/cmake/html/_sources/variable/CMAKE_XCODE_SCHEME_LAUNCH_MODE.rst.txt
 share/doc/cmake/html/_sources/variable/CMAKE_XCODE_SCHEME_MAIN_THREAD_CHECKER_STOP.rst.txt
 share/doc/cmake/html/_sources/variable/CMAKE_XCODE_SCHEME_MALLOC_GUARD_EDGES.rst.txt
 share/doc/cmake/html/_sources/variable/CMAKE_XCODE_SCHEME_MALLOC_SCRIBBLE.rst.txt
@@ -5051,6 +5150,7 @@ share/doc/cmake/html/_sources/variable/EXECUTABLE_OUTPUT_PATH.rst.txt
 share/doc/cmake/html/_sources/variable/GHSMULTI.rst.txt
 share/doc/cmake/html/_sources/variable/IOS.rst.txt
 share/doc/cmake/html/_sources/variable/LIBRARY_OUTPUT_PATH.rst.txt
+share/doc/cmake/html/_sources/variable/LINUX.rst.txt
 share/doc/cmake/html/_sources/variable/MINGW.rst.txt
 share/doc/cmake/html/_sources/variable/MSVC.rst.txt
 share/doc/cmake/html/_sources/variable/MSVC10.rst.txt
@@ -5114,6 +5214,7 @@ share/doc/cmake/html/_static/plus.png
 share/doc/cmake/html/_static/pygments.css
 share/doc/cmake/html/_static/searchtools.js
 share/doc/cmake/html/_static/sidebar.js
+share/doc/cmake/html/_static/sphinx_highlight.js
 share/doc/cmake/html/_static/underscore-1.13.1.js
 share/doc/cmake/html/_static/underscore.js
 share/doc/cmake/html/command/
@@ -5129,6 +5230,7 @@ share/doc/cmake/html/command/add_link_options.html
 share/doc/cmake/html/command/add_subdirectory.html
 share/doc/cmake/html/command/add_test.html
 share/doc/cmake/html/command/aux_source_directory.html
+share/doc/cmake/html/command/block.html
 share/doc/cmake/html/command/break.html
 share/doc/cmake/html/command/build_command.html
 share/doc/cmake/html/command/build_name.html
@@ -5159,6 +5261,7 @@ share/doc/cmake/html/command/else.html
 share/doc/cmake/html/command/elseif.html
 share/doc/cmake/html/command/enable_language.html
 share/doc/cmake/html/command/enable_testing.html
+share/doc/cmake/html/command/endblock.html
 share/doc/cmake/html/command/endforeach.html
 share/doc/cmake/html/command/endfunction.html
 share/doc/cmake/html/command/endif.html
@@ -5310,6 +5413,8 @@ share/doc/cmake/html/envvar/OBJCXX.html
 share/doc/cmake/html/envvar/PackageName_ROOT.html
 share/doc/cmake/html/envvar/RC.html
 share/doc/cmake/html/envvar/RCFLAGS.html
+share/doc/cmake/html/envvar/SSL_CERT_DIR.html
+share/doc/cmake/html/envvar/SSL_CERT_FILE.html
 share/doc/cmake/html/envvar/SWIFTC.html
 share/doc/cmake/html/envvar/VERBOSE.html
 share/doc/cmake/html/generator/
@@ -5557,6 +5662,7 @@ share/doc/cmake/html/module/FindOpenAL.html
 share/doc/cmake/html/module/FindOpenCL.html
 share/doc/cmake/html/module/FindOpenGL.html
 share/doc/cmake/html/module/FindOpenMP.html
+share/doc/cmake/html/module/FindOpenSP.html
 share/doc/cmake/html/module/FindOpenSSL.html
 share/doc/cmake/html/module/FindOpenSceneGraph.html
 share/doc/cmake/html/module/FindOpenThreads.html
@@ -5585,6 +5691,7 @@ share/doc/cmake/html/module/FindQuickTime.html
 share/doc/cmake/html/module/FindRTI.html
 share/doc/cmake/html/module/FindRuby.html
 share/doc/cmake/html/module/FindSDL.html
+share/doc/cmake/html/module/FindSDL_gfx.html
 share/doc/cmake/html/module/FindSDL_image.html
 share/doc/cmake/html/module/FindSDL_mixer.html
 share/doc/cmake/html/module/FindSDL_net.html
@@ -5801,6 +5908,9 @@ share/doc/cmake/html/policy/CMP0136.html
 share/doc/cmake/html/policy/CMP0137.html
 share/doc/cmake/html/policy/CMP0138.html
 share/doc/cmake/html/policy/CMP0139.html
+share/doc/cmake/html/policy/CMP0140.html
+share/doc/cmake/html/policy/CMP0141.html
+share/doc/cmake/html/policy/CMP0142.html
 share/doc/cmake/html/prop_cache/
 share/doc/cmake/html/prop_cache/ADVANCED.html
 share/doc/cmake/html/prop_cache/HELPSTRING.html
@@ -5838,6 +5948,7 @@ share/doc/cmake/html/prop_dir/RULE_LAUNCH_CUSTOM.html
 share/doc/cmake/html/prop_dir/RULE_LAUNCH_LINK.html
 share/doc/cmake/html/prop_dir/SOURCE_DIR.html
 share/doc/cmake/html/prop_dir/SUBDIRECTORIES.html
+share/doc/cmake/html/prop_dir/SYSTEM.html
 share/doc/cmake/html/prop_dir/TESTS.html
 share/doc/cmake/html/prop_dir/TEST_INCLUDE_FILE.html
 share/doc/cmake/html/prop_dir/TEST_INCLUDE_FILES.html
@@ -6050,6 +6161,16 @@ share/doc/cmake/html/prop_tgt/CUDA_SEPARABLE_COMPILATION.html
 share/doc/cmake/html/prop_tgt/CUDA_STANDARD.html
 share/doc/cmake/html/prop_tgt/CUDA_STANDARD_REQUIRED.html
 share/doc/cmake/html/prop_tgt/CXX_EXTENSIONS.html
+share/doc/cmake/html/prop_tgt/CXX_MODULE_DIRS.html
+share/doc/cmake/html/prop_tgt/CXX_MODULE_DIRS_NAME.html
+share/doc/cmake/html/prop_tgt/CXX_MODULE_HEADER_UNIT_DIRS.html
+share/doc/cmake/html/prop_tgt/CXX_MODULE_HEADER_UNIT_DIRS_NAME.html
+share/doc/cmake/html/prop_tgt/CXX_MODULE_HEADER_UNIT_SET.html
+share/doc/cmake/html/prop_tgt/CXX_MODULE_HEADER_UNIT_SETS.html
+share/doc/cmake/html/prop_tgt/CXX_MODULE_HEADER_UNIT_SET_NAME.html
+share/doc/cmake/html/prop_tgt/CXX_MODULE_SET.html
+share/doc/cmake/html/prop_tgt/CXX_MODULE_SETS.html
+share/doc/cmake/html/prop_tgt/CXX_MODULE_SET_NAME.html
 share/doc/cmake/html/prop_tgt/CXX_STANDARD.html
 share/doc/cmake/html/prop_tgt/CXX_STANDARD_REQUIRED.html
 share/doc/cmake/html/prop_tgt/C_EXTENSIONS.html
@@ -6070,6 +6191,7 @@ share/doc/cmake/html/prop_tgt/EXCLUDE_FROM_DEFAULT_BUILD.html
 share/doc/cmake/html/prop_tgt/EXCLUDE_FROM_DEFAULT_BUILD_CONFIG.html
 share/doc/cmake/html/prop_tgt/EXPORT_COMPILE_COMMANDS.html
 share/doc/cmake/html/prop_tgt/EXPORT_NAME.html
+share/doc/cmake/html/prop_tgt/EXPORT_NO_SYSTEM.html
 share/doc/cmake/html/prop_tgt/EXPORT_PROPERTIES.html
 share/doc/cmake/html/prop_tgt/EchoString.html
 share/doc/cmake/html/prop_tgt/FOLDER.html
@@ -6131,6 +6253,8 @@ share/doc/cmake/html/prop_tgt/INTERFACE_AUTOUIC_OPTIONS.html
 share/doc/cmake/html/prop_tgt/INTERFACE_COMPILE_DEFINITIONS.html
 share/doc/cmake/html/prop_tgt/INTERFACE_COMPILE_FEATURES.html
 share/doc/cmake/html/prop_tgt/INTERFACE_COMPILE_OPTIONS.html
+share/doc/cmake/html/prop_tgt/INTERFACE_CXX_MODULE_HEADER_UNIT_SETS.html
+share/doc/cmake/html/prop_tgt/INTERFACE_CXX_MODULE_SETS.html
 share/doc/cmake/html/prop_tgt/INTERFACE_HEADER_SETS.html
 share/doc/cmake/html/prop_tgt/INTERFACE_HEADER_SETS_TO_VERIFY.html
 share/doc/cmake/html/prop_tgt/INTERFACE_INCLUDE_DIRECTORIES.html
@@ -6196,6 +6320,7 @@ share/doc/cmake/html/prop_tgt/MACOSX_FRAMEWORK_INFO_PLIST.html
 share/doc/cmake/html/prop_tgt/MACOSX_RPATH.html
 share/doc/cmake/html/prop_tgt/MANUALLY_ADDED_DEPENDENCIES.html
 share/doc/cmake/html/prop_tgt/MAP_IMPORTED_CONFIG_CONFIG.html
+share/doc/cmake/html/prop_tgt/MSVC_DEBUG_INFORMATION_FORMAT.html
 share/doc/cmake/html/prop_tgt/MSVC_RUNTIME_LIBRARY.html
 share/doc/cmake/html/prop_tgt/NAME.html
 share/doc/cmake/html/prop_tgt/NO_SONAME.html
@@ -6242,6 +6367,7 @@ share/doc/cmake/html/prop_tgt/STATIC_LIBRARY_FLAGS.html
 share/doc/cmake/html/prop_tgt/STATIC_LIBRARY_FLAGS_CONFIG.html
 share/doc/cmake/html/prop_tgt/STATIC_LIBRARY_OPTIONS.html
 share/doc/cmake/html/prop_tgt/SUFFIX.html
+share/doc/cmake/html/prop_tgt/SYSTEM.html
 share/doc/cmake/html/prop_tgt/Swift_DEPENDENCIES_FILE.html
 share/doc/cmake/html/prop_tgt/Swift_LANGUAGE_VERSION.html
 share/doc/cmake/html/prop_tgt/Swift_MODULE_DIRECTORY.html
@@ -6318,10 +6444,14 @@ share/doc/cmake/html/prop_tgt/XCODE_SCHEME_DEBUG_DOCUMENT_VERSIONING.html
 share/doc/cmake/html/prop_tgt/XCODE_SCHEME_DISABLE_MAIN_THREAD_CHECKER.html
 share/doc/cmake/html/prop_tgt/XCODE_SCHEME_DYNAMIC_LIBRARY_LOADS.html
 share/doc/cmake/html/prop_tgt/XCODE_SCHEME_DYNAMIC_LINKER_API_USAGE.html
+share/doc/cmake/html/prop_tgt/XCODE_SCHEME_ENABLE_GPU_API_VALIDATION.html
 share/doc/cmake/html/prop_tgt/XCODE_SCHEME_ENABLE_GPU_FRAME_CAPTURE_MODE.html
+share/doc/cmake/html/prop_tgt/XCODE_SCHEME_ENABLE_GPU_SHADER_VALIDATION.html
 share/doc/cmake/html/prop_tgt/XCODE_SCHEME_ENVIRONMENT.html
 share/doc/cmake/html/prop_tgt/XCODE_SCHEME_EXECUTABLE.html
 share/doc/cmake/html/prop_tgt/XCODE_SCHEME_GUARD_MALLOC.html
+share/doc/cmake/html/prop_tgt/XCODE_SCHEME_LAUNCH_CONFIGURATION.html
+share/doc/cmake/html/prop_tgt/XCODE_SCHEME_LAUNCH_MODE.html
 share/doc/cmake/html/prop_tgt/XCODE_SCHEME_MAIN_THREAD_CHECKER_STOP.html
 share/doc/cmake/html/prop_tgt/XCODE_SCHEME_MALLOC_GUARD_EDGES.html
 share/doc/cmake/html/prop_tgt/XCODE_SCHEME_MALLOC_SCRIBBLE.html
@@ -6337,7 +6467,7 @@ share/doc/cmake/html/prop_tgt/XCTEST.html
 share/doc/cmake/html/release/
 share/doc/cmake/html/release/3.0.html
 share/doc/cmake/html/release/3.1.html
-share/doc/cmake/html/release/3.10.html
+share/doc/cmake/html/release/${MODPY_VERSION}.html
 share/doc/cmake/html/release/3.11.html
 share/doc/cmake/html/release/3.12.html
 share/doc/cmake/html/release/3.13.html
@@ -6353,6 +6483,7 @@ share/doc/cmake/html/release/3.21.html
 share/doc/cmake/html/release/3.22.html
 share/doc/cmake/html/release/3.23.html
 share/doc/cmake/html/release/3.24.html
+share/doc/cmake/html/release/3.25.html
 share/doc/cmake/html/release/3.3.html
 share/doc/cmake/html/release/3.4.html
 share/doc/cmake/html/release/3.5.html
@@ -6367,6 +6498,7 @@ share/doc/cmake/html/variable/
 share/doc/cmake/html/variable/ANDROID.html
 share/doc/cmake/html/variable/APPLE.html
 share/doc/cmake/html/variable/BORLAND.html
+share/doc/cmake/html/variable/BSD.html
 share/doc/cmake/html/variable/BUILD_SHARED_LIBS.html
 share/doc/cmake/html/variable/CACHE.html
 share/doc/cmake/html/variable/CMAKE_ABSOLUTE_DESTINATION_FILES.html
@@ -6575,6 +6707,8 @@ share/doc/cmake/html/variable/CMAKE_HIP_STANDARD.html
 share/doc/cmake/html/variable/CMAKE_HIP_STANDARD_REQUIRED.html
 share/doc/cmake/html/variable/CMAKE_HOME_DIRECTORY.html
 share/doc/cmake/html/variable/CMAKE_HOST_APPLE.html
+share/doc/cmake/html/variable/CMAKE_HOST_BSD.html
+share/doc/cmake/html/variable/CMAKE_HOST_LINUX.html
 share/doc/cmake/html/variable/CMAKE_HOST_SOLARIS.html
 share/doc/cmake/html/variable/CMAKE_HOST_SYSTEM.html
 share/doc/cmake/html/variable/CMAKE_HOST_SYSTEM_NAME.html
@@ -6729,6 +6863,7 @@ share/doc/cmake/html/variable/CMAKE_MODULE_LINKER_FLAGS_CONFIG_INIT.html
 share/doc/cmake/html/variable/CMAKE_MODULE_LINKER_FLAGS_INIT.html
 share/doc/cmake/html/variable/CMAKE_MODULE_PATH.html
 share/doc/cmake/html/variable/CMAKE_MSVCIDE_RUN_PATH.html
+share/doc/cmake/html/variable/CMAKE_MSVC_DEBUG_INFORMATION_FORMAT.html
 share/doc/cmake/html/variable/CMAKE_MSVC_RUNTIME_LIBRARY.html
 share/doc/cmake/html/variable/CMAKE_NETRC.html
 share/doc/cmake/html/variable/CMAKE_NETRC_FILE.html
@@ -6822,6 +6957,7 @@ share/doc/cmake/html/variable/CMAKE_SYSTEM_VERSION.html
 share/doc/cmake/html/variable/CMAKE_Swift_LANGUAGE_VERSION.html
 share/doc/cmake/html/variable/CMAKE_Swift_MODULE_DIRECTORY.html
 share/doc/cmake/html/variable/CMAKE_Swift_NUM_THREADS.html
+share/doc/cmake/html/variable/CMAKE_TASKING_TOOLSET.html
 share/doc/cmake/html/variable/CMAKE_TLS_CAINFO.html
 share/doc/cmake/html/variable/CMAKE_TLS_VERIFY.html
 share/doc/cmake/html/variable/CMAKE_TOOLCHAIN_FILE.html
@@ -6887,9 +7023,13 @@ share/doc/cmake/html/variable/CMAKE_XCODE_SCHEME_DEBUG_DOCUMENT_VERSIONING.html
 share/doc/cmake/html/variable/CMAKE_XCODE_SCHEME_DISABLE_MAIN_THREAD_CHECKER.html
 share/doc/cmake/html/variable/CMAKE_XCODE_SCHEME_DYNAMIC_LIBRARY_LOADS.html
 share/doc/cmake/html/variable/CMAKE_XCODE_SCHEME_DYNAMIC_LINKER_API_USAGE.html
+share/doc/cmake/html/variable/CMAKE_XCODE_SCHEME_ENABLE_GPU_API_VALIDATION.html
 share/doc/cmake/html/variable/CMAKE_XCODE_SCHEME_ENABLE_GPU_FRAME_CAPTURE_MODE.html
+share/doc/cmake/html/variable/CMAKE_XCODE_SCHEME_ENABLE_GPU_SHADER_VALIDATION.html
 share/doc/cmake/html/variable/CMAKE_XCODE_SCHEME_ENVIRONMENT.html
 share/doc/cmake/html/variable/CMAKE_XCODE_SCHEME_GUARD_MALLOC.html
+share/doc/cmake/html/variable/CMAKE_XCODE_SCHEME_LAUNCH_CONFIGURATION.html
+share/doc/cmake/html/variable/CMAKE_XCODE_SCHEME_LAUNCH_MODE.html
 share/doc/cmake/html/variable/CMAKE_XCODE_SCHEME_MAIN_THREAD_CHECKER_STOP.html
 share/doc/cmake/html/variable/CMAKE_XCODE_SCHEME_MALLOC_GUARD_EDGES.html
 share/doc/cmake/html/variable/CMAKE_XCODE_SCHEME_MALLOC_SCRIBBLE.html
@@ -6992,6 +7132,7 @@ share/doc/cmake/html/variable/EXECUTABLE_OUTPUT_PATH.html
 share/doc/cmake/html/variable/GHSMULTI.html
 share/doc/cmake/html/variable/IOS.html
 share/doc/cmake/html/variable/LIBRARY_OUTPUT_PATH.html
+share/doc/cmake/html/variable/LINUX.html
 share/doc/cmake/html/variable/MINGW.html
 share/doc/cmake/html/variable/MSVC.html
 share/doc/cmake/html/variable/MSVC10.html

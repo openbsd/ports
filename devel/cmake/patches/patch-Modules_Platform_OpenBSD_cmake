@@ -1,7 +1,7 @@
 Index: Modules/Platform/OpenBSD.cmake
 --- Modules/Platform/OpenBSD.cmake.orig
 +++ Modules/Platform/OpenBSD.cmake
-@@ -41,3 +41,4 @@ else()
+@@ -42,3 +42,4 @@ else()
  endif()
  
  list(APPEND CMAKE_SYSTEM_PREFIX_PATH ${OPENBSD_LOCALBASE})

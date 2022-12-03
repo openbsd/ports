@@ -1,7 +1,7 @@
 Index: Source/cmInstallCommand.cxx
 --- Source/cmInstallCommand.cxx.orig
 +++ Source/cmInstallCommand.cxx
-@@ -640,6 +640,9 @@ bool HandleTargetsMode(std::vector<std::string> const&
+@@ -665,6 +665,9 @@ bool HandleTargetsMode(std::vector<std::string> const&
    }
  
    // Select the mode for installing symlinks to versioned shared libraries.
@@ -11,7 +11,7 @@ Index: Source/cmInstallCommand.cxx
    cmInstallTargetGenerator::NamelinkModeType namelinkMode =
      cmInstallTargetGenerator::NamelinkModeNone;
    if (libraryArgs.GetNamelinkOnly()) {
-@@ -647,6 +650,10 @@ bool HandleTargetsMode(std::vector<std::string> const&
+@@ -672,6 +675,10 @@ bool HandleTargetsMode(std::vector<std::string> const&
    } else if (libraryArgs.GetNamelinkSkip()) {
      namelinkMode = cmInstallTargetGenerator::NamelinkModeSkip;
    }
