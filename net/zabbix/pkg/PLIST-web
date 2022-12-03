@@ -898,7 +898,6 @@ zabbix/include/classes/html/CSelect.php
 zabbix/include/classes/html/CSelectOption.php
 zabbix/include/classes/html/CSelectOptionGroup.php
 zabbix/include/classes/html/CSeverity.php
-zabbix/include/classes/html/CSeverityCheckBoxList.php
 zabbix/include/classes/html/CSimpleButton.php
 zabbix/include/classes/html/CSortable.php
 zabbix/include/classes/html/CSpan.php
