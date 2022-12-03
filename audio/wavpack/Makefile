@@ -1,6 +1,6 @@
 COMMENT =		audio codec for lossless, lossy and hybrid compression
 
-VERSION =		5.5.0
+VERSION =		5.6.0
 DISTNAME =		wavpack-${VERSION}
 CATEGORIES =		audio
 
