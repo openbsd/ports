@@ -513,6 +513,7 @@ share/glib-2.0/schemas/org.gnome.evolution-data-server.calendar.gschema.xml
 share/glib-2.0/schemas/org.gnome.evolution-data-server.gschema.xml
 share/glib-2.0/schemas/org.gnome.evolution.eds-shell.gschema.xml
 share/glib-2.0/schemas/org.gnome.evolution.shell.network-config.gschema.xml
+share/locale/ab/LC_MESSAGES/evolution-data-server.mo
 share/locale/am/LC_MESSAGES/evolution-data-server.mo
 share/locale/ar/LC_MESSAGES/evolution-data-server.mo
 share/locale/as/LC_MESSAGES/evolution-data-server.mo
