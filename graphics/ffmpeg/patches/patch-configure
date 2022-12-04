@@ -1,6 +1,6 @@
 - configure: use pkg-config for sndio
 - configure: add initial RISC-V support
-- configure: extend SDL check to accept all 2.x versions
+- Fix broken libatomic test
 
 Index: configure
 --- configure.orig
@@ -60,16 +60,16 @@ Index: configure
  
  enable_weak_pic() {
      disabled pic && return
-@@ -6555,7 +6562,7 @@ fi
- 
- if enabled sdl2; then
-     SDL2_CONFIG="${cross_prefix}sdl2-config"
--    test_pkg_config sdl2 "sdl2 >= 2.0.1 sdl2 < 2.1.0" SDL_events.h SDL_PollEvent
-+    test_pkg_config sdl2 "sdl2 >= 2.0.1 sdl2 < 3.0.0" SDL_events.h SDL_PollEvent
-     if disabled sdl2 && "${SDL2_CONFIG}" --version > /dev/null 2>&1; then
-         sdl2_cflags=$("${SDL2_CONFIG}" --cflags)
-         sdl2_extralibs=$("${SDL2_CONFIG}" --libs)
-@@ -6650,7 +6657,8 @@ enabled alsa && { check_pkg_config alsa alsa "alsa/aso
+@@ -6189,7 +6196,7 @@ check_headers asm/types.h
+ #
+ # some configurations also require linking to libatomic, so try
+ # both with -latomic and without
+-for LATOMIC in "-latomic" ""; do
++for LATOMIC in "" "-latomic"; do
+     check_builtin stdatomic stdatomic.h                                                 \
+         "atomic_int foo, bar = ATOMIC_VAR_INIT(-1); atomic_store(&foo, 0); foo += bar"  \
+         $LATOMIC && eval stdatomic_extralibs="\$LATOMIC" && break
+@@ -6657,7 +6664,8 @@ enabled alsa && { check_pkg_config alsa alsa "alsa/aso
  enabled libjack &&
      require_pkg_config libjack jack jack/jack.h jack_port_get_latency_range
  

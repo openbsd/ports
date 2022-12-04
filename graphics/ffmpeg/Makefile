@@ -1,8 +1,7 @@
 COMMENT=	audio/video converter and streamer
 
-V=		4.4.2
+V=		4.4.3
 DISTNAME=	ffmpeg-${V}
-REVISION=	3
 EPOCH=		1
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	https://ffmpeg.org/releases/
@@ -90,8 +89,6 @@ CONFIGURE_ARGS+=--enable-shared \
 		--cc=${CC} \
 		--disable-debug \
 		--disable-indev=jack \
-		--disable-indev=oss \
-		--disable-outdev=oss \
 		--disable-outdev=sdl2 \
 		--enable-avresample \
 		--enable-fontconfig \
