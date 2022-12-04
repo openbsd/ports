@@ -1,7 +1,7 @@
 COMMENT = 	web based groupware server
 
 VERSION =	5.7.1
-REVISION =	1
+REVISION =	2
 DISTNAME =	SOGo-${VERSION}
 PKGNAME =	sogo-${VERSION}
 
@@ -35,7 +35,8 @@ LIB_DEPENDS +=		archivers/libzip \
 			security/oath-toolkit \
 			www/sope>=${VERSION}
 RUN_DEPENDS +=		sope-postgres-*|sope-mysql-*:www/sope,-postgres \
-			archivers/zip
+			archivers/zip \
+			shells/bash
 
 CONFIGURE_STYLE =	simple dest
 CONFIGURE_ARGS +=	--gsmake=`gnustep-config --variable=GNUSTEP_MAKEFILES` \
@@ -49,17 +50,14 @@ MAKE_FLAGS +=		libGDLContentStore_INTERFACE_VERSION=${LIBGDLContentStore_VERSION
 SOGOLIBDIR =	lib/GNUstep/Frameworks/SOGo.framework/Versions/${LIBSOGo_VERSION}
 SUBST_VARS +=	SOGOLIBDIR VARBASE
 
-SCRIPTS = 	cas-proxy-validate.py sql-update-2.2.17_to_2.3.0.sh \
-		sql-update-3.2.10_to_4.0.0.sh sql-update-2.2.17_to_2.3.0-mysql.sh \
-		sql-update-3.2.10_to_4.0.0-mysql.sh sql-update-3.0.0-to-combined.sh \
-		sql-update-3.0.0-to-combined-mysql.sh updates.php
-
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/sogo
-.for _s in ${SCRIPTS}
-	${INSTALL_SCRIPT} -c -o ${SHAREOWN} -g ${SHAREGRP} \
-		${WRKSRC}/Scripts/${_s} ${PREFIX}/share/doc/sogo/${_s}
-.endfor
+	cd ${WRKSRC}/Scripts; ${INSTALL_SCRIPT} \
+	    -c -o ${SHAREOWN} -g ${SHAREGRP} \
+	    cas-proxy-validate.py updates.php sql-update*.sh \
+	    ${PREFIX}/share/doc/sogo/
+	sed -i 's,#!/bin/bash,#!${LOCALBASE}/bin/bash,'	\
+	    ${PREFIX}/share/doc/sogo/sql-update*.sh
 
 do-test:
 	cd ${WRKSRC}/Tests/Integration && ${MAKE_PROGRAM} && ./teststrings.sh
