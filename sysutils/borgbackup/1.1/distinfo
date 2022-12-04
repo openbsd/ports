@@ -1,2 +1,4 @@
 SHA256 (borgbackup-1.1.18.tar.gz) = XLpf59tNCJRLRn7BHvwBdoelErDZjM8K0aqcQylmUnU=
+SHA256 (borgbackup-msgpack-fix-big-endian-7181.patch) = li9NhN0ARAsKffKO7Umhe+MKoo4uVcBcQOaAj+hpLo0=
 SIZE (borgbackup-1.1.18.tar.gz) = 3854385
+SIZE (borgbackup-msgpack-fix-big-endian-7181.patch) = 5633
