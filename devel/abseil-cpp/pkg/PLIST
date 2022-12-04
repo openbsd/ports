@@ -28,6 +28,7 @@ include/absl/base/internal/invoke.h
 include/absl/base/internal/low_level_alloc.h
 include/absl/base/internal/low_level_scheduling.h
 include/absl/base/internal/per_thread_tls.h
+include/absl/base/internal/prefetch.h
 include/absl/base/internal/pretty_function.h
 include/absl/base/internal/raw_logging.h
 include/absl/base/internal/scheduling_mode.h
@@ -79,10 +80,9 @@ include/absl/container/internal/hash_policy_traits.h
 include/absl/container/internal/hashtable_debug.h
 include/absl/container/internal/hashtable_debug_hooks.h
 include/absl/container/internal/hashtablez_sampler.h
-include/absl/container/internal/have_sse.h
 include/absl/container/internal/inlined_vector.h
 include/absl/container/internal/layout.h
-include/absl/container/internal/node_hash_policy.h
+include/absl/container/internal/node_slot_policy.h
 include/absl/container/internal/raw_hash_map.h
 include/absl/container/internal/raw_hash_set.h
 include/absl/container/internal/test_instance_tracker.h
@@ -147,9 +147,11 @@ include/absl/flags/reflection.h
 include/absl/flags/usage.h
 include/absl/flags/usage_config.h
 include/absl/functional/
+include/absl/functional/any_invocable.h
 include/absl/functional/bind_front.h
 include/absl/functional/function_ref.h
 include/absl/functional/internal/
+include/absl/functional/internal/any_invocable.h
 include/absl/functional/internal/front_binder.h
 include/absl/functional/internal/function_ref.h
 include/absl/hash/
@@ -234,6 +236,8 @@ include/absl/strings/
 include/absl/strings/ascii.h
 include/absl/strings/charconv.h
 include/absl/strings/cord.h
+include/absl/strings/cord_analysis.h
+include/absl/strings/cord_buffer.h
 include/absl/strings/cord_test_helpers.h
 include/absl/strings/cordz_test_helpers.h
 include/absl/strings/escaping.h
@@ -241,11 +245,13 @@ include/absl/strings/internal/
 include/absl/strings/internal/char_map.h
 include/absl/strings/internal/charconv_bigint.h
 include/absl/strings/internal/charconv_parse.h
+include/absl/strings/internal/cord_data_edge.h
 include/absl/strings/internal/cord_internal.h
 include/absl/strings/internal/cord_rep_btree.h
 include/absl/strings/internal/cord_rep_btree_navigator.h
 include/absl/strings/internal/cord_rep_btree_reader.h
 include/absl/strings/internal/cord_rep_consume.h
+include/absl/strings/internal/cord_rep_crc.h
 include/absl/strings/internal/cord_rep_flat.h
 include/absl/strings/internal/cord_rep_ring.h
 include/absl/strings/internal/cord_rep_ring_reader.h
@@ -385,8 +391,6 @@ lib/cmake/absl/abslTargets.cmake
 @lib lib/libabsl_hash.so.${LIBabsl_hash_VERSION}
 @lib lib/libabsl_hashtablez_sampler.so.${LIBabsl_hashtablez_sampler_VERSION}
 @lib lib/libabsl_int128.so.${LIBabsl_int128_VERSION}
-@lib lib/libabsl_leak_check.so.${LIBabsl_leak_check_VERSION}
-@lib lib/libabsl_leak_check_disable.so.${LIBabsl_leak_check_disable_VERSION}
 @lib lib/libabsl_log_severity.so.${LIBabsl_log_severity_VERSION}
 @lib lib/libabsl_low_level_hash.so.${LIBabsl_low_level_hash_VERSION}
 @lib lib/libabsl_malloc_internal.so.${LIBabsl_malloc_internal_VERSION}
@@ -421,6 +425,7 @@ lib/cmake/absl/abslTargets.cmake
 lib/pkgconfig/absl_algorithm.pc
 lib/pkgconfig/absl_algorithm_container.pc
 lib/pkgconfig/absl_any.pc
+lib/pkgconfig/absl_any_invocable.pc
 lib/pkgconfig/absl_atomic_hook.pc
 lib/pkgconfig/absl_bad_any_cast.pc
 lib/pkgconfig/absl_bad_any_cast_impl.pc
@@ -451,7 +456,6 @@ lib/pkgconfig/absl_cordz_update_scope.pc
 lib/pkgconfig/absl_cordz_update_tracker.pc
 lib/pkgconfig/absl_core_headers.pc
 lib/pkgconfig/absl_counting_allocator.pc
-lib/pkgconfig/absl_debugging.pc
 lib/pkgconfig/absl_debugging_internal.pc
 lib/pkgconfig/absl_demangle_internal.pc
 lib/pkgconfig/absl_dynamic_annotations.pc
@@ -485,26 +489,24 @@ lib/pkgconfig/absl_hash_policy_traits.pc
 lib/pkgconfig/absl_hashtable_debug.pc
 lib/pkgconfig/absl_hashtable_debug_hooks.pc
 lib/pkgconfig/absl_hashtablez_sampler.pc
-lib/pkgconfig/absl_have_sse.pc
 lib/pkgconfig/absl_inlined_vector.pc
 lib/pkgconfig/absl_inlined_vector_internal.pc
 lib/pkgconfig/absl_int128.pc
 lib/pkgconfig/absl_kernel_timeout_internal.pc
 lib/pkgconfig/absl_layout.pc
-lib/pkgconfig/absl_leak_check.pc
-lib/pkgconfig/absl_leak_check_disable.pc
 lib/pkgconfig/absl_log_severity.pc
 lib/pkgconfig/absl_low_level_hash.pc
 lib/pkgconfig/absl_malloc_internal.pc
 lib/pkgconfig/absl_memory.pc
 lib/pkgconfig/absl_meta.pc
 lib/pkgconfig/absl_node_hash_map.pc
-lib/pkgconfig/absl_node_hash_policy.pc
 lib/pkgconfig/absl_node_hash_set.pc
+lib/pkgconfig/absl_node_slot_policy.pc
 lib/pkgconfig/absl_numeric.pc
 lib/pkgconfig/absl_numeric_representation.pc
 lib/pkgconfig/absl_optional.pc
 lib/pkgconfig/absl_periodic_sampler.pc
+lib/pkgconfig/absl_prefetch.pc
 lib/pkgconfig/absl_pretty_function.pc
 lib/pkgconfig/absl_random_bit_gen_ref.pc
 lib/pkgconfig/absl_random_distributions.pc
