@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1475 2022/12/04 12:20:04 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.1476 2022/12/04 12:21:48 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1763,6 +1763,7 @@ setup_obsolete_reason(
 	3 => 'dissy',
 	1 => 'stm32loader',
 	3 => 'tmda',
+	3 => 'spambayes',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually

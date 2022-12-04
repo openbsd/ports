@@ -230,7 +230,6 @@
      SUBDIR += smtpclient
      SUBDIR += solid-pop3d
      SUBDIR += solid-pop3d,apop
-     SUBDIR += spambayes
      SUBDIR += spampd
      SUBDIR += sqlgrey
      SUBDIR += stalwart
