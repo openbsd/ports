@@ -1,10 +1,9 @@
-Needs wpath pledge. Tahen from https://github.com/conformal/spectrwm/pull/425
 Let spectrwm quit when X dies. Taken from https://github.com/conformal/spectrwm/pull/478
 
 Index: spectrwm.c
 --- spectrwm.c.orig
 +++ spectrwm.c
-@@ -310,7 +310,7 @@ uint32_t		swm_debug = 0
+@@ -332,7 +332,7 @@ uint32_t		swm_debug = 0
  #define SWM_CONF_KEYMAPPING	(1)
  
  #ifndef SWM_LIB
@@ -13,34 +12,7 @@ Index: spectrwm.c
  #endif
  
  char			**start_argv;
-@@ -13605,7 +13605,7 @@ main(int argc, char *argv[])
- 	if (setlocale(LC_CTYPE, "") == NULL || setlocale(LC_TIME, "") == NULL)
- 		warnx("no locale support");
- 
--	if (pledge("stdio proc exec rpath getpw dns inet unix", NULL) == -1)
-+	if (pledge("stdio proc exec rpath getpw dns inet unix wpath", NULL) == -1)
- 		err(1, "pledge");
- 
- 	/* handle some signals */
-@@ -13625,7 +13625,7 @@ main(int argc, char *argv[])
- 	if ((display = XOpenDisplay(0)) == NULL)
- 		errx(1, "unable to open display");
- 
--	if (pledge("stdio proc exec rpath getpw", NULL) == -1)
-+	if (pledge("stdio proc exec rpath getpw wpath", NULL) == -1)
- 		err(1, "pledge");
- 
- 	conn = XGetXCBConnection(display);
-@@ -13680,7 +13680,7 @@ main(int argc, char *argv[])
- 	else
- 		scan_config();
- 
--	if (pledge("stdio proc exec rpath", NULL) == -1)
-+	if (pledge("stdio proc exec rpath wpath", NULL) == -1)
- 		err(1, "pledge");
- 
- 	validate_spawns();
-@@ -13762,6 +13762,9 @@ main(int argc, char *argv[])
+@@ -13931,6 +13931,9 @@ main(int argc, char *argv[])
  			restart(NULL, NULL, NULL);
  
  		if (!running)

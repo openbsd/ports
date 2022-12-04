@@ -1,7 +1,7 @@
 Index: spectrwm.1
 --- spectrwm.1.orig
 +++ spectrwm.1
-@@ -144,7 +144,7 @@ For example, starting
+@@ -149,7 +149,7 @@ For example, starting
  via
  .Xr xinit 1 :
  .Bd -literal -offset indent

@@ -1,12 +1,9 @@
 COMMENT=		small tiling window manager
 
-V=			3.4.1
 GH_ACCOUNT=		conformal
 GH_PROJECT=		spectrwm
-GH_TAGNAME=		SPECTRWM_${V:S/./_/g}
-DISTNAME=		${GH_PROJECT}-${V}
-
-REVISION=		2
+GH_COMMIT=		5b7298872e00aa23ba9fe7eb9a219296a98760ac
+DISTNAME=		${GH_PROJECT}-3.4.1.20211013
 
 SHARED_LIBS=		swmhack 1.0
 
