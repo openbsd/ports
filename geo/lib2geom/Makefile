@@ -1,11 +1,11 @@
 COMMENT =	easy to use 2D geometry library in C++
 
-V =		1.2
+V =		1.2.2
 DISTNAME =	lib2geom-${V}
 
 CATEGORIES =	geo graphics
 
-SHARED_LIBS +=  2geom 1.0 #1.1
+SHARED_LIBS +=  2geom 2.0 #1.2.0
 
 HOMEPAGE =	https://gitlab.com/inkscape/lib2geom
 
@@ -28,8 +28,6 @@ MODPY_RUNDEP =	no
 # c++17
 COMPILER =	base-clang ports-gcc
 
-MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
-
 BUILD_DEPENDS =	devel/boost \
 		devel/gtest \
 		lang/cython${MODPY_FLAVOR} \
@@ -43,5 +41,7 @@ LIB_DEPENDS =	math/double-conversion \
 
 CONFIGURE_ARGS =	-D2GEOM_BOOST_PYTHON=NO \
 			-D2GEOM_BUILD_SHARED=YES
+
+MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
