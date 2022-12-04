@@ -3,9 +3,17 @@
 @pkgpath net/nmap
 @pkgpath net/nmap,no_x11
 @bin bin/ncat
+bin/ndiff
 @bin bin/nmap
 @bin bin/nping
+@comment bin/uninstall_ndiff
+lib/python${MODPY_VERSION}/
+lib/python${MODPY_VERSION}/site-packages/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}ndiff.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ndiff.py
 @man man/man1/ncat.1
+@man man/man1/ndiff.1
 @man man/man1/nmap.1
 @man man/man1/nping.1
 @comment share/applications/

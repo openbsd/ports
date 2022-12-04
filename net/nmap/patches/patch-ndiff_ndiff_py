@@ -1,0 +1,36 @@
+Index: ndiff/ndiff.py
+--- ndiff/ndiff.py.orig
++++ ndiff/ndiff.py
+@@ -32,6 +32,8 @@ verbose = False
+ 
+ NDIFF_XML_VERSION = "1"
+ 
++def cmp(x, y):
++    return (x > y) - (x < y)
+ 
+ class OverrideEntityResolver(xml.sax.handler.EntityResolver):
+     """This class overrides the default behavior of xml.sax to download
+@@ -160,11 +162,11 @@ class Host(object):
+         return state is None or state in self.extraports
+ 
+     def extraports_string(self):
+-        list = [(count, state) for (state, count) in list(self.extraports.items())]
++        mylist = [(count, state) for (state, count) in list(self.extraports.items())]
+         # Reverse-sort by count.
+-        list.sort(reverse=True)
++        mylist.sort(reverse=True)
+         return ", ".join(
+-                ["%d %s ports" % (count, state) for (count, state) in list])
++                ["%d %s ports" % (count, state) for (count, state) in mylist])
+ 
+     def state_to_dom_fragment(self, document):
+         frag = document.createDocumentFragment()
+@@ -183,7 +185,7 @@ class Host(object):
+ 
+     def extraports_to_dom_fragment(self, document):
+         frag = document.createDocumentFragment()
+-        for state, count in list(self.extraports.items()):
++        for state, count in mylist(self.extraports.items()):
+             elem = document.createElement("extraports")
+             elem.setAttribute("state", state)
+             elem.setAttribute("count", str(count))

@@ -1,0 +1,12 @@
+Index: ndiff/setup.py
+--- ndiff/setup.py.orig
++++ ndiff/setup.py
+@@ -306,7 +306,7 @@ class my_uninstall(distutils.cmd.Command):
+ 
+ distutils.core.setup(name="ndiff", scripts=["scripts/ndiff"],
+     py_modules=["ndiff"],
+-    data_files=[("share/man/man1", ["docs/ndiff.1"])],
++    data_files=[("man/man1", ["docs/ndiff.1"])],
+     cmdclass={
+         "install_egg_info": null_command,
+         "install": checked_install,

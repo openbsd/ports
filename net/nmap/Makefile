@@ -1,8 +1,9 @@
 COMMENT-main=	scan ports and fingerprint stack of network hosts
 
-DISTNAME=		nmap-7.91
+MODPY_EGG_VERSION=	7.91
+DISTNAME=		nmap-${MODPY_EGG_VERSION}
 PKGNAME-main=		${DISTNAME}
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=	net security
 MASTER_SITES=	${HOMEPAGE}/dist/
@@ -24,7 +25,8 @@ COMPILER=	base-clang ports-gcc base-gcc
 USE_GMAKE=	Yes
 MODLUA_SA=	Yes
 MODLUA_VERSION=	5.3
-MODULES=	lang/lua
+MODULES=	lang/python \
+		lang/lua
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 CONFIGURE_STYLE=autoconf
@@ -43,7 +45,6 @@ CONFIGURE_ARGS=	--with-libpcap=included \
 		--with-libpcre=${LOCALBASE} \
 		--with-mandir=${LOCALBASE}/man \
 		--without-nmap-update \
-		--without-ndiff \
 		--without-zenmap \
 		--disable-nls
 
@@ -53,10 +54,12 @@ LIB_DEPENDS-main= ${MODLUA_LIB_DEPENDS} \
 		devel/pcre \
 		security/libssh2
 
-BUILD_DEPENDS=		devel/bison
+BUILD_DEPENDS=	devel/bison
 
 post-extract:
 	@cd ${WRKSRC} && rm -rf liblua/ libpcre/
+	2to3 --fix=all --no-diffs --nobackups --verbose --write \
+		${WRKSRC}/ndiff/*py ${WRKSRC}/ndiff/scripts/ndiff
 
 pre-configure:
 	@cd ${WRKSRC}/nping ; env PATH=${PORTPATH} \
