@@ -1,0 +1,15 @@
+build: fix CMake version detection
+5cca0f013508b482cbdd2e2fa96b201fe3924d95
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -287,7 +287,7 @@ endmacro()
+ 
+ option(SVT_AV1_LTO "Attempt to enable Link Time Optimization if available" OFF)
+ if(SVT_AV1_LTO)
+-    if(CMAKE_VERSION GREATER_EQUAL 3.9)
++    if(CMAKE_VERSION VERSION_GREATER_EQUAL 3.9)
+         include(CheckIPOSupported)
+         check_ipo_supported(RESULT svt_av1_ipo_supported)
+         if(svt_av1_ipo_supported AND NOT DEFINED CMAKE_INTERPROCEDURAL_OPTIMIZATION)

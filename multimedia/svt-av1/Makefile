@@ -2,7 +2,7 @@ ONLY_FOR_ARCHS=	${LP64_ARCHS} i386
 
 COMMENT=	scalable AV1 encoder/decoder
 
-VER=		1.3.0
+VER=		1.4.0
 DISTNAME=	SVT-AV1-v${VER}
 PKGNAME=	svt-av1-${VER}
 CATEGORIES=	multimedia
@@ -28,6 +28,8 @@ MODULES=	devel/cmake
 .if ${MACHINE_ARCH} == "amd64"
 BUILD_DEPENDS+=	devel/yasm
 .endif
+
+CONFIGURE_ARGS+=-DSVT_AV1_LTO=ON
 
 NO_TEST=	Yes
 
