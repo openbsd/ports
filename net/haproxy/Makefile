@@ -1,10 +1,9 @@
 COMMENT =	reliable, high performance TCP/HTTP load balancer
 
-DISTNAME =	haproxy-2.6.6
+DISTNAME =	haproxy-2.6.7
 CATEGORIES =	net www
 HOMEPAGE =	https://www.haproxy.org/
 MAINTAINER =	Daniel Jakots <obsd@chown.me>
-REVISION =	0
 
 # GPLv2
 PERMIT_PACKAGE =		Yes
