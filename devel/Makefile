@@ -1804,7 +1804,6 @@
      SUBDIR += srecord
      SUBDIR += startup-notification
      SUBDIR += stfl
-     SUBDIR += stm32loader
      SUBDIR += stp
      SUBDIR += subversion
      SUBDIR += swig
