@@ -1,4 +1,4 @@
 xcursorgen  - create an X cursor file from a collection of PNG images
 
-Used by the xcursor-themes port to build the xcursor data file 
+Used by the xcursor-themes port to build the xcursor data file
 from PNG images.

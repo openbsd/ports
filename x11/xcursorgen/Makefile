@@ -1,5 +1,5 @@
 COMMENT =	X11 Cursors themes generator
-DISTNAME =	xcursorgen-1.0.7
+DISTNAME =	xcursorgen-1.0.8
 CATEGORIES =	x11
 EPOCH =	0
 
@@ -12,7 +12,7 @@ LIB_DEPENDS =	graphics/png
 # X11
 PERMIT_PACKAGE =		Yes
 
-WANTLIB =		Xcursor X11 c png z
+WANTLIB += X11 Xcursor c png
 
 MASTER_SITES =	${MASTER_SITE_XORG:=app/}
 
