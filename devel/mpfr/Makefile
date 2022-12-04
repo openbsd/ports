@@ -1,7 +1,7 @@
 COMMENT=	library for multiple-precision floating-point computations
 
-DISTNAME=	mpfr-4.1.0
-SHARED_LIBS=	mpfr		2.1	# 7.0
+DISTNAME=	mpfr-4.1.1
+SHARED_LIBS=	mpfr		2.1	# 7.1
 CATEGORIES=	devel math
 HOMEPAGE=	https://www.mpfr.org/
 
