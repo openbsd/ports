@@ -1,6 +1,6 @@
 COMMENT=	burgertime clone for X
 
-DISTNAME =	burgerspace-1.9.4
+DISTNAME =	burgerspace-1.9.5
 
 CATEGORIES=	games
 

@@ -19,6 +19,11 @@ share/burgerspace/sounds/level-finished.wav
 share/burgerspace/sounds/new-game-starts.wav
 share/burgerspace/sounds/treat-appears.wav
 share/burgerspace/sounds/treat-disappears.wav
+share/doc/burgerspace/
+share/doc/burgerspace/AUTHORS
+share/doc/burgerspace/NEWS
+share/doc/burgerspace/README
+share/doc/burgerspace/THANKS
 share/pixmaps/
 share/pixmaps/burgerspace.png
 @tag update-desktop-database
