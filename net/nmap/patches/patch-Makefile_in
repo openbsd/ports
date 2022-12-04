@@ -10,14 +10,3 @@ Index: Makefile.in
  CFLAGS = @CFLAGS@ $(DBGFLAGS) $(CCOPT)
  STATIC =
  LDFLAGS = @LDFLAGS@ $(DBGFLAGS) $(STATIC)
-@@ -348,8 +348,8 @@ $(NPINGDIR)/nping.h: nmap.h
- 	mv -f $@.tmp $@
- 
- # Update the version number used by Zenmap.
--$(ZENMAPDIR)/zenmapCore/Version.py $(ZENMAPDIR)/share/zenmap/config/zenmap_version: nmap.h
--	cd $(ZENMAPDIR) && $(PYTHON) install_scripts/utils/version_update.py "$(NMAP_VERSION)"
-+#$(ZENMAPDIR)/zenmapCore/Version.py $(ZENMAPDIR)/share/zenmap/config/zenmap_version: nmap.h
-+#	cd $(ZENMAPDIR) && $(PYTHON) install_scripts/utils/version_update.py "$(NMAP_VERSION)"
- 
- tests/check_dns: $(OBJS)
- 	 $(CXX) -o $@ $(CPPFLAGS) $(CXXFLAGS) $(LDFLAGS) $^ $(LIBS) tests/nmap_dns_test.cc

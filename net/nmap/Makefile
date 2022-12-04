@@ -1,11 +1,8 @@
 COMMENT-main=	scan ports and fingerprint stack of network hosts
-COMMENT-zenmap=	graphical frontend for nmap
 
-MODPY_EGG_VERSION=	7.91
-DISTNAME=		nmap-${MODPY_EGG_VERSION}
+DISTNAME=		nmap-7.91
 PKGNAME-main=		${DISTNAME}
-PKGNAME-zenmap=		nmap-zenmap-${MODPY_EGG_VERSION}
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=	net security
 MASTER_SITES=	${HOMEPAGE}/dist/
@@ -20,17 +17,14 @@ MAINTAINER=	JR Aquino <tanawts@gmail.com>
 # XXX license needs checking over before updating beyond 7.92
 PERMIT_PACKAGE=	Yes
 
-MULTI_PACKAGES=	-main -zenmap
+MULTI_PACKAGES=	-main
 
 COMPILER=	base-clang ports-gcc base-gcc
 
 USE_GMAKE=	Yes
 MODLUA_SA=	Yes
 MODLUA_VERSION=	5.3
-MODPY_RUNDEP=	No
-MODULES=	lang/python \
-		lang/lua
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_2}
+MODULES=	lang/lua
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 CONFIGURE_STYLE=autoconf
@@ -49,6 +43,8 @@ CONFIGURE_ARGS=	--with-libpcap=included \
 		--with-libpcre=${LOCALBASE} \
 		--with-mandir=${LOCALBASE}/man \
 		--without-nmap-update \
+		--without-ndiff \
+		--without-zenmap \
 		--disable-nls
 
 WANTLIB-main=	${COMPILER_LIBCXX} ${MODLUA_WANTLIB} \
@@ -57,21 +53,12 @@ LIB_DEPENDS-main= ${MODLUA_LIB_DEPENDS} \
 		devel/pcre \
 		security/libssh2
 
-RUN_DEPENDS-zenmap=	${MODPY_RUN_DEPENDS} \
-			x11/py-gtk2 \
-			databases/py-sqlite2 \
-			devel/desktop-file-utils \
-			net/nmap
-
 BUILD_DEPENDS=		devel/bison
 
 post-extract:
 	@cd ${WRKSRC} && rm -rf liblua/ libpcre/
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/zenmap/install_scripts/unix/su-to-zenmap.sh \
-		${WRKSRC}/zenmap/install_scripts/unix/zenmap.desktop \
-		${WRKSRC}/zenmap/install_scripts/unix/zenmap-root.desktop
 	@cd ${WRKSRC}/nping ; env PATH=${PORTPATH} \
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} autoconf
 
