@@ -1,6 +1,6 @@
 COMMENT =		library supporting Blu-ray playback
 
-V =			1.3.3
+V =			1.3.4
 DISTNAME =		libbluray-${V}
 CATEGORIES =		multimedia
 
