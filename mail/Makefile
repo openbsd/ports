@@ -239,7 +239,6 @@
      SUBDIR += sympa
      SUBDIR += t-prot
      SUBDIR += thunderbird-i18n
-     SUBDIR += tmda
      SUBDIR += tnef
      SUBDIR += trojita
      SUBDIR += vrfy
