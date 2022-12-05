@@ -1,26 +1,27 @@
-COMMENT = 	incremental backup
+COMMENT =	incremental backup
 
-MODPY_EGG_VERSION =	1.2.8
+MODPY_EGG_VERSION =	2.0.5
 DISTNAME =	rdiff-backup-${MODPY_EGG_VERSION}
-REVISION =	8
+
 CATEGORIES =	sysutils
 
-HOMEPAGE = 	http://www.nongnu.org/rdiff-backup/
+HOMEPAGE =	https://rdiff-backup.net/
 
-MAINTAINER = 	Pierre-Emmanuel Andre <pea@openbsd.org>
+MAINTAINER =	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		rsync pthread ${MODPY_WANTLIB}
 
-LIB_DEPENDS += 		net/librsync
+LIB_DEPENDS +=		net/librsync
 
-MASTER_SITES = 		${MASTER_SITE_SAVANNAH:=rdiff-backup/}
+MODULES	=		lang/python
+MODPY_PI =		Yes
+MODPY_PYBUILD =		setuptools_scm
+CFLAGS +=		-I${LOCALBASE}/include
 
-MODULES	= 		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
-
-NO_TEST = 		Yes
+# tests are present but are intended to run via Tox in a Docker container
+NO_TEST =		Yes
 
 .include <bsd.port.mk>
