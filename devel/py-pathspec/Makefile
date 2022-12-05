@@ -1,9 +1,8 @@
 COMMENT =	utility for gitignore style pattern matching of file paths
 
-MODPY_EGG_VERSION = 0.10.1
+MODPY_EGG_VERSION = 0.10.2
 DISTNAME =	pathspec-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
 
 CATEGORIES =	devel
 
