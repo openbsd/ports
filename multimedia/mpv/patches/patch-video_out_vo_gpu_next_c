@@ -1,0 +1,61 @@
+- vo_gpu_next: fix undefined behavior on alpha-first formats
+  8327ac3e6d1686dd753b0ee23f135ebaa13af1b6
+- vo_gpu_next: don't flush cache on OSD update
+  e97e0e4d9214ac232581cd77712e5988637ceb36
+
+Index: video/out/vo_gpu_next.c
+--- video/out/vo_gpu_next.c.orig
++++ video/out/vo_gpu_next.c
+@@ -344,7 +344,9 @@ static int plane_data_from_imgfmt(struct pl_plane_data
+     if ((desc.flags & MP_IMGFLAG_TYPE_FLOAT) && (desc.flags & MP_IMGFLAG_YUV))
+         return 0; // Floating-point YUV (currently) unsupported
+ 
++    bool has_bits = false;
+     bool any_padded = false;
++
+     for (int p = 0; p < desc.num_planes; p++) {
+         struct pl_plane_data *data = &out_data[p];
+         struct mp_imgfmt_comp_desc sorted[MP_NUM_COMPONENTS];
+@@ -390,8 +392,9 @@ static int plane_data_from_imgfmt(struct pl_plane_data
+                 .bit_shift = MPMAX(sorted[c].pad, 0),
+             };
+ 
+-            if (p == 0 && c == 0) {
++            if (!has_bits) {
+                 *out_bits = bits;
++                has_bits = true;
+             } else {
+                 if (!pl_bit_encoding_equal(out_bits, &bits)) {
+                     // Bit encoding differs between components/planes,
+@@ -979,6 +982,15 @@ static void draw_frame(struct vo *vo, struct vo_frame 
+                 image->num_overlays = 0;
+                 fp->osd_sync = 0;
+             }
++
++            // Update the frame signature to include the current OSD sync
++            // value, in order to disambiguate between identical frames with
++            // modified OSD. Shift the OSD sync value by a lot to avoid
++            // collisions with low signature values.
++            //
++            // This is safe to do because `pl_frame_mix.signature` lives in
++            // temporary memory that is only valid for this `pl_queue_update`.
++            ((uint64_t *) mix.signatures)[i] ^= fp->osd_sync << 48;
+         }
+     }
+ 
+@@ -1060,7 +1072,6 @@ static void resize(struct vo *vo)
+         osd_res_equals(p->osd_res, osd))
+         return;
+ 
+-    pl_renderer_flush_cache(p->rr);
+     p->osd_sync++;
+     p->osd_res = osd;
+     p->src = src;
+@@ -1241,7 +1252,6 @@ static int control(struct vo *vo, uint32_t request, vo
+         return VO_TRUE;
+ 
+     case VOCTRL_OSD_CHANGED:
+-        pl_renderer_flush_cache(p->rr);
+         p->osd_sync++;
+         return VO_TRUE;
+ 

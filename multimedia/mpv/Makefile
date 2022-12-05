@@ -3,7 +3,7 @@ COMMENT =		movie player based on MPlayer/mplayer2
 GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
 GH_TAGNAME =		v0.35.0
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS +=		mpv		1.0 # 2.0
 
@@ -50,8 +50,6 @@ MODPY_RUNDEP =		No
 RUN_DEPENDS =		devel/desktop-file-utils \
 			www/yt-dlp \
 			x11/gtk+3,-guic
-
-SEPARATE_BUILD =	Yes
 
 CONFIGURE_ARGS =	-Dlua=lua${MODLUA_DEP_VERSION} \
 			-Dcdda=enabled \
