@@ -740,7 +740,6 @@
      SUBDIR += usockets
      SUBDIR += utox
      SUBDIR += uucp
-     SUBDIR += uucpd
      SUBDIR += validns
      SUBDIR += vf1
      SUBDIR += vger
