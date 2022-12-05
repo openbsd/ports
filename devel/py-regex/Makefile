@@ -1,10 +1,9 @@
 COMMENT=	alternative regular expression module to replace re
 
-MODPY_EGG_VERSION=	2022.6.2
+MODPY_EGG_VERSION=	2022.10.31
 DISTNAME=	regex-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
-REVISION=	1
 
 HOMEPAGE=	https://github.com/mrabarnett/mrab-regex
 
@@ -20,6 +19,8 @@ FLAVOR=		python3
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
-MODPY_PYTEST_ARGS=	-v regex_3
+
+do-test:
+	cd ${WRKSRC}; ${MODPY_BIN} -m unittest -v regex_3.test_regex
 
 .include <bsd.port.mk>
