@@ -1,24 +1,25 @@
-COMMENT =	persistent/functional/immutable data structures
+COMMENT=	persistent/functional/immutable data structures
 
-MODPY_EGG_VERSION =	0.18.0
+MODPY_EGG_VERSION=	0.19.2
 
-DISTNAME =	pyrsistent-${MODPY_EGG_VERSION}
-PKGNAME =	py-${DISTNAME}
-REVISION =	3
+DISTNAME=	pyrsistent-${MODPY_EGG_VERSION}
+PKGNAME=	py-${DISTNAME}
 
-WANTLIB =  pthread
-CATEGORIES =	devel
+CATEGORIES=	devel
 
-HOMEPAGE =	http://github.com/tobgu/pyrsistent/
+HOMEPAGE=	https://github.com/tobgu/pyrsistent/
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
+WANTLIB += pthread
 
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
-FLAVORS =		python3
-FLAVOR =		python3
+MODULES=	lang/python
+
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools
+
+FLAVORS=	python3
+FLAVOR=		python3
 
 .include <bsd.port.mk>
