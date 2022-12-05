@@ -3,6 +3,7 @@ ${P5SITE}/Commandable.pm
 ${P5SITE}/Commandable/Command.pm
 ${P5SITE}/Commandable/Finder/
 ${P5SITE}/Commandable/Finder.pm
+${P5SITE}/Commandable/Finder/MethodAttributes.pm
 ${P5SITE}/Commandable/Finder/Packages.pm
 ${P5SITE}/Commandable/Finder/SubAttributes/
 ${P5SITE}/Commandable/Finder/SubAttributes.pm
@@ -12,6 +13,7 @@ ${P5SITE}/Commandable/Output.pm
 @man man/man3p/Commandable.3p
 @man man/man3p/Commandable::Command.3p
 @man man/man3p/Commandable::Finder.3p
+@man man/man3p/Commandable::Finder::MethodAttributes.3p
 @man man/man3p/Commandable::Finder::Packages.3p
 @man man/man3p/Commandable::Finder::SubAttributes.3p
 @man man/man3p/Commandable::Invocation.3p

@@ -1,6 +1,6 @@
 COMMENT =	utilities for commandline-based programs
 
-DISTNAME =	Commandable-0.08
+DISTNAME =	Commandable-0.09
 CPAN_AUTHOR =	PEVANS
 
 CATEGORIES =	devel
