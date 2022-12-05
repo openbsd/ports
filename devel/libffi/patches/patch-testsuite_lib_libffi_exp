@@ -3,7 +3,7 @@ cc1: error: unrecognized command line option "-Wno-psabi"
 Index: testsuite/lib/libffi.exp
 --- testsuite/lib/libffi.exp.orig
 +++ testsuite/lib/libffi.exp
-@@ -491,7 +491,7 @@ proc run-many-tests { testcases extra_flags } {
+@@ -500,7 +500,7 @@ proc run-many-tests { testcases extra_flags } {
          }
        }
        "gnu" {
@@ -11,4 +11,4 @@ Index: testsuite/lib/libffi.exp
 +        set common "-W -Wall"
          if [info exists env(LIBFFI_TEST_OPTIMIZATION)] {
  	  set optimizations [ list $env(LIBFFI_TEST_OPTIMIZATION) ]
-         } else { 
+         } else {

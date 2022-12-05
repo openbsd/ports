@@ -1,19 +1,19 @@
 Index: src/closures.c
 --- src/closures.c.orig
 +++ src/closures.c
-@@ -878,6 +878,7 @@ dlmmap (void *start, size_t length, int prot,
+@@ -904,6 +904,7 @@ dlmmap (void *start, size_t length, int prot,
        return ptr;
      }
  
 +#if 0
-   if (execfd == -1 && is_emutramp_enabled ())
-     {
-       ptr = mmap (start, length, prot & ~PROT_EXEC, flags, fd, offset);
-@@ -896,6 +897,7 @@ dlmmap (void *start, size_t length, int prot,
+   /* -1 != execfd hints that we already decided to use dlmmap_locked
+      last time.  */
+   if (execfd == -1 && is_mprotect_enabled ())
+@@ -932,6 +933,7 @@ dlmmap (void *start, size_t length, int prot,
  	 with ((prot & ~PROT_WRITE) | PROT_EXEC) and mremap with
  	 MREMAP_DUP and prot at this point.  */
      }
 +#endif
  
-   if (execsize == 0 || execfd == -1)
-     {
+   pthread_mutex_lock (&open_temp_exec_file_mutex);
+   ptr = dlmmap_locked (start, length, prot, flags, offset);

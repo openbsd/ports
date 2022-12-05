@@ -3,8 +3,8 @@ https://svnweb.freebsd.org/ports/head/devel/libffi/files/patch-src__arm__ffi.c?r
 Index: src/arm/ffi.c
 --- src/arm/ffi.c.orig
 +++ src/arm/ffi.c
-@@ -64,6 +64,11 @@ extern unsigned char ffi_arm_trampoline[12] FFI_HIDDEN
- #include <machine/sysarch.h>
+@@ -68,6 +68,11 @@ extern unsigned char ffi_arm_trampoline[12] FFI_HIDDEN
+ #include <sys/mman.h>
  #endif
  
 +#ifdef __arm__
@@ -15,7 +15,7 @@ Index: src/arm/ffi.c
  /* Forward declares. */
  static int vfp_type_p (const ffi_type *);
  static void layout_vfp_args (ffi_cif *);
-@@ -621,6 +626,16 @@ ffi_prep_closure_loc (ffi_closure * closure,
+@@ -625,6 +630,16 @@ ffi_prep_closure_loc (ffi_closure * closure,
    config[0] = closure;
    config[1] = closure_func;
  #else
@@ -30,5 +30,5 @@ Index: src/arm/ffi.c
 +	} while (0);
 +#endif
  
- #if defined(FFI_EXEC_STATIC_TRAMP)
+ # if defined(FFI_EXEC_STATIC_TRAMP)
    if (ffi_tramp_is_present(closure))

@@ -1,18 +1,28 @@
+- Use our own libtool
 - Link with libc++abi on arm (to access unwind symbols)
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -18650,6 +18650,12 @@ $as_echo "#define SYMBOL_UNDERSCORE 1" >>confdefs.h
+@@ -9940,7 +9940,7 @@ esac
+ LIBTOOL_DEPS=$ltmain
+ 
+ # Always use our own libtool.
+-LIBTOOL='$(SHELL) $(top_builddir)/libtool'
++#LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+ 
+ 
+ 
+@@ -19725,6 +19725,12 @@ if test "x$sys_symbol_underscore" = xyes; then
+ printf "%s\n" "#define SYMBOL_UNDERSCORE 1" >>confdefs.h
  
  fi
- 
++
 +case "$target" in
 +    arm-*-openbsd*)
 +      LDFLAGS="-lc++abi $LDFLAGS"
 +    ;;
 +esac
-+
+ 
  FFI_EXEC_TRAMPOLINE_TABLE=0
  case "$target" in
-      *arm*-apple-* | aarch64-apple-*)

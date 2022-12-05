@@ -1,8 +1,8 @@
 COMMENT=		Foreign Function Interface
 
-V=			3.4.2
+V=			3.4.4
 DISTNAME=		libffi-$V
-SHARED_LIBS +=  ffi                  2.0      # 9.0
+SHARED_LIBS +=  ffi                  2.0      # 9.2
 CATEGORIES=		devel
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -17,14 +17,18 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += c++abi
 .endif
 
-MASTER_SITES= https://github.com/libffi/libffi/releases/download/v$V/
+MASTER_SITES=		https://github.com/libffi/libffi/releases/download/v$V/
 
-DEBUG_PACKAGES =	${BUILD_PACKAGES}
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
+
+USE_GMAKE=		Yes
 
 TEST_DEPENDS=		devel/dejagnu
 
 CONFIGURE_STYLE=	gnu
 
-FAKE_FLAGS+=		includesdir="${PREFIX}/include"
+CONFIGURE_ARGS=		--disable-multi-os-directory
+
+FAKE_FLAGS=		includesdir="${PREFIX}/include"
 
 .include <bsd.port.mk>
