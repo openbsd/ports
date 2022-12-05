@@ -397,6 +397,7 @@
      SUBDIR += xkeycaps
      SUBDIR += xli
      SUBDIR += xloadimage
+     SUBDIR += xmem
      SUBDIR += xmenu
      SUBDIR += xmobar
      SUBDIR += xmonad
