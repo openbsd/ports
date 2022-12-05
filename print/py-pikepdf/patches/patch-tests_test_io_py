@@ -1,7 +1,7 @@
 Index: tests/test_io.py
 --- tests/test_io.py.orig
 +++ tests/test_io.py
-@@ -115,7 +115,7 @@ def _file_descriptor_is_open(
+@@ -116,7 +116,7 @@ def _file_descriptor_is_open(
  
  
  def _skip_file_descriptor_checks_if_not_supported():
