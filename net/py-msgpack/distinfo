@@ -1,2 +1,6 @@
 SHA256 (msgpack-1.0.4.tar.gz) = 9dhpwY8DAgLrQS8Iso0q/upVPWYTruieIA16yn7wH18=
+SHA256 (py3-msgpack-fallback-byte-order-513.patch) = GjRxKmf7lHx3ECyJ7dlMb7toXHn9JYt22IJZdZ/oAZ0=
+SHA256 (py3-msgpack-fix-ntohs-514.patch) = qLf2uPaIcccB/8NrA4il8WDQjqlvEeaxit9IWiY6nW0=
 SIZE (msgpack-1.0.4.tar.gz) = 128053
+SIZE (py3-msgpack-fallback-byte-order-513.patch) = 2775
+SIZE (py3-msgpack-fix-ntohs-514.patch) = 1383
