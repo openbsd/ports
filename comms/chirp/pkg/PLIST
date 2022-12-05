@@ -49,8 +49,10 @@ lib/python${MODPY_VERSION}/site-packages/chirp/drivers/baofeng_uv3r.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/baofeng_uv3r.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/baofeng_wp970i.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/baofeng_wp970i.pyc
-lib/python${MODPY_VERSION}/site-packages/chirp/drivers/bf-t1.py
-lib/python${MODPY_VERSION}/site-packages/chirp/drivers/bf-t1.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/bf_t1.py
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/bf_t1.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/bf_t8.py
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/bf_t8.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/bj9900.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/bj9900.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/bjuv55.py
@@ -97,6 +99,8 @@ lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ft857.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ft857.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ft90.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ft90.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ftlx011.py
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ftlx011.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ftm3200d.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ftm3200d.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ftm350.py
@@ -111,8 +115,12 @@ lib/python${MODPY_VERSION}/site-packages/chirp/drivers/generic_tpe.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/generic_tpe.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/gmrsuv1.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/gmrsuv1.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/gmrsv2.py
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/gmrsv2.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/h777.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/h777.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/hg_uv98.py
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/hg_uv98.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/hobbypcb.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/hobbypcb.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ic208.py
@@ -165,6 +173,8 @@ lib/python${MODPY_VERSION}/site-packages/chirp/drivers/id31.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/id31.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/id51.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/id51.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/id5100.py
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/id5100.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/id51plus.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/id51plus.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/id800.py
@@ -173,18 +183,24 @@ lib/python${MODPY_VERSION}/site-packages/chirp/drivers/id880.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/id880.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/idrp.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/idrp.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/iradio_uv_5118.py
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/iradio_uv_5118.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/kenwood_hmk.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/kenwood_hmk.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/kenwood_itm.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/kenwood_itm.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/kenwood_live.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/kenwood_live.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/kg935g.py
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/kg935g.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/kguv8d.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/kguv8d.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/kguv8dplus.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/kguv8dplus.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/kguv8e.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/kguv8e.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/kguv920pa.py
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/kguv920pa.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/kguv9dplus.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/kguv9dplus.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/kyd.py
@@ -207,6 +223,10 @@ lib/python${MODPY_VERSION}/site-packages/chirp/drivers/radtel_t18.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/radtel_t18.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/repeaterbook.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/repeaterbook.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/retevis_rb15.py
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/retevis_rb15.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/retevis_rb17p.py
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/retevis_rb17p.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/retevis_rt1.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/retevis_rt1.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/retevis_rt21.py
@@ -217,6 +237,12 @@ lib/python${MODPY_VERSION}/site-packages/chirp/drivers/retevis_rt23.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/retevis_rt23.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/retevis_rt26.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/retevis_rt26.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/retevis_rt76p.py
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/retevis_rt76p.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/retevis_rt87.py
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/retevis_rt87.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/retevis_rt98.py
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/retevis_rt98.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/rfinder.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/rfinder.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/rh5r_v2.py
@@ -225,6 +251,8 @@ lib/python${MODPY_VERSION}/site-packages/chirp/drivers/tdxone_tdq8a.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/tdxone_tdq8a.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/template.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/template.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/tg_uv2p.py
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/tg_uv2p.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/th350.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/th350.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/th7800.py
@@ -245,6 +273,8 @@ lib/python${MODPY_VERSION}/site-packages/chirp/drivers/th_uvf8d.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/th_uvf8d.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/thd72.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/thd72.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/thd74.py
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/thd74.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/thuv1f.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/thuv1f.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/tk270.py
@@ -366,14 +396,9 @@ lib/python${MODPY_VERSION}/site-packages/chirp/ui/shiftdialog.py
 lib/python${MODPY_VERSION}/site-packages/chirp/ui/shiftdialog.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/util.py
 lib/python${MODPY_VERSION}/site-packages/chirp/util.pyc
-lib/python${MODPY_VERSION}/site-packages/chirp/xml_ll.py
-lib/python${MODPY_VERSION}/site-packages/chirp/xml_ll.pyc
 @man man/man1/chirpw.1
 share/applications/chirp.desktop
 share/chirp/
-share/chirp/chirp.xsd
-share/chirp/chirp_banks.xsd
-share/chirp/chirp_memory.xsd
 share/chirp/images/
 share/chirp/locale/
 share/chirp/locale/de/
@@ -406,15 +431,22 @@ share/chirp/locale/pt_BR/LC_MESSAGES/CHIRP.mo
 share/chirp/locale/ru/
 share/chirp/locale/ru/LC_MESSAGES/
 share/chirp/locale/ru/LC_MESSAGES/CHIRP.mo
+share/chirp/locale/tr_TR/
+share/chirp/locale/tr_TR/LC_MESSAGES/
+share/chirp/locale/tr_TR/LC_MESSAGES/CHIRP.mo
 share/chirp/locale/uk_UA/
 share/chirp/locale/uk_UA/LC_MESSAGES/
 share/chirp/locale/uk_UA/LC_MESSAGES/CHIRP.mo
+share/chirp/locale/zh_CN/
+share/chirp/locale/zh_CN/LC_MESSAGES/
+share/chirp/locale/zh_CN/LC_MESSAGES/CHIRP.mo
 share/chirp/stock_configs/
 share/chirp/stock_configs/DE Freenet Frequencies.csv
 share/chirp/stock_configs/EU LPD and PMR Channels.csv
 share/chirp/stock_configs/FR Marine VHF Channels.csv
 share/chirp/stock_configs/KDR444.csv
 share/chirp/stock_configs/NOAA Weather Alert.csv
+share/chirp/stock_configs/SE Jaktradio 155MHz.csv
 share/chirp/stock_configs/UK Business Radio Simple Light Frequencies.csv
 share/chirp/stock_configs/US 60 meter channels (Center).csv
 share/chirp/stock_configs/US 60 meter channels (Dial).csv
