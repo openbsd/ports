@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1478 2022/12/05 00:13:40 jca Exp $
+# $OpenBSD: Quirks.pm,v 1.1479 2022/12/05 12:00:36 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1766,6 +1766,7 @@ setup_obsolete_reason(
 	3 => 'spambayes',
 	31 => 'nmap-zenmap',
 	0 => 'uucpd',
+	6 => 'py-sqlite2',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually

@@ -183,7 +183,6 @@
      SUBDIR += py-redis,python3
      SUBDIR += py-sql,python3
      SUBDIR += py-sqlalchemy,python3
-     SUBDIR += py-sqlite2
      SUBDIR += py-sqlobject,python3
      SUBDIR += py-sqlparse,python3
      SUBDIR += py-whisper,python3
