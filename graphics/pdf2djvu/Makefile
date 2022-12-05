@@ -1,7 +1,6 @@
 COMMENT =		creates DjVu files from PDF files
 
-V =			0.9.18.2
-REVISION =		0
+V =			0.9.19
 DISTNAME =		pdf2djvu-${V}
 
 CATEGORIES =		graphics
@@ -14,9 +13,9 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += GraphicsMagick GraphicsMagick++ c djvulibre exiv2 iconv intl m
 WANTLIB += poppler pthread ${LIBCXX}
 
-MASTER_SITES =		https://github.com/jwilk/pdf2djvu/releases/download/${V}/ \
-			https://download.tuxfamily.org/jod/graphics/pdf2djvu/ \
-			ftp://download.tuxfamily.org/jod/graphics/pdf2djvu/
+MASTER_SITES =	https://github.com/jwilk/pdf2djvu/releases/download/${V}/ \
+		https://download.tuxfamily.org/jod/graphics/pdf2djvu/ \
+		ftp://download.tuxfamily.org/jod/graphics/pdf2djvu/
 
 EXTRACT_SUFX =		.tar.xz
 
@@ -27,7 +26,16 @@ LIB_DEPENDS =		devel/gettext,-runtime\
 			graphics/exiv2 \
 			graphics/GraphicsMagick \
 			print/poppler
-TEST_DEPENDS =		devel/py-nose${MODPY_FLAVOR}
+
+# as of 0.9.19, tests still require python 2.7
+NO_TEST =		Yes
+#MODULES =		lang/python
+#MODPY_BUILDDEP =	No
+#MODPY_RUNDEP =		No
+#TEST_DEPENDS =		devel/py-nose${MODPY_FLAVOR} \
+#			${MODPY_RUN_DEPENDS}
+#TEST_FLAGS =		PYTHON=${MODPY_BIN}
+#TEST_TARGET =		test
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
@@ -36,9 +44,5 @@ CONFIGURE_ARGS +=	--disable-openmp \
 			--without-pstreams
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
-
-TEST_TARGET = test
-
-WRKDIST =		${WRKDIR}/${PKGNAME}
 
 .include <bsd.port.mk>
