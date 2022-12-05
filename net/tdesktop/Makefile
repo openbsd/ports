@@ -9,6 +9,7 @@ V =			4.2.4
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
+REVISION =		0
 
 DPB_PROPERTIES =	parallel
 
@@ -79,6 +80,11 @@ CONFIGURE_ARGS +=	-DDESKTOP_APP_DISABLE_JEMALLOC=ON \
 
 # match standard version with abseil
 CONFIGURE_ARGS +=	-DCMAKE_CXX_STANDARD=17
+
+# Since cmake 3.25.1, BSDs are no longer recognised as Linux (in this port).
+# Upstream should probably become BSD aware, but until that happens,
+# pretend we're Linux to keep building...
+CONFIGURE_ARGS +=	-DLINUX=true
 
 NO_TEST =		Yes
 
