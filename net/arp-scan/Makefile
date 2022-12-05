@@ -1,12 +1,12 @@
 GH_ACCOUNT =	royhills
 GH_PROJECT =	arp-scan
-GH_COMMIT =	995c1cc37df8c5f8491a45e814f42c3b0cd683f3
-DISTNAME =	arp-scan-1.9.9pre20221011
+GH_COMMIT =	62cb057c4a852242886788f1df6386a91202e4f2
+DISTNAME =	arp-scan-1.9.9pre20221130
 
 COMMENT-main =	ARP scanning and fingerprinting tool
 PKGNAME-main =	${DISTNAME}
 
-M =		20221011
+M =		20221205
 COMMENT-mac =	MAC address vendor list
 PKGNAME-mac =	mac-vendor-$M
 
@@ -35,21 +35,20 @@ AUTOMAKE_VERSION =	1.16
 # for local format-ma script
 BUILD_DEPENDS =		textproc/p5-Text-CSV
 
-pre-configure:
+post-patch:
+	mv ${WRKSRC}/ieee-oui.txt ${WRKSRC}/ieee-oui.txt.upstream
 	cd ${WRKSRC}; cat ${WRKDIR}/oui-iab/ma-{s,m,l}.csv \
-	    ${FILESDIR}/unofficial.csv ${WRKDIR}/oui-iab/iab.csv | \
-	    perl ${FILESDIR}/format-ma
+	     ${WRKDIR}/oui-iab/iab.csv | perl ${FILESDIR}/format-ma
 
 post-install:
-	cd ${PREFIX}/share/arp-scan; \
-	    mv mac-vendor.txt mac-vendor.txt.dist
+	mv ${WRKINST}/etc/arp-scan/mac-vendor.txt \
+	    ${PREFIX}/share/arp-scan/mac-vendor.txt.dist
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/arpwatch/
 	${INSTALL_DATA} ${WRKSRC}/ethercodes.dat \
 	    ${PREFIX}/share/examples/arpwatch/ethercodes.dat
 	${INSTALL_DATA_DIR} ${PREFIX}/share/mac-vendor/
-	${INSTALL_DATA} ${WRKDIR}/oui-iab/*csv \
-	    ${WRKSRC}/aircrack-oui.txt ${FILESDIR}/unofficial.csv \
-	    ${PREFIX}/share/mac-vendor/
+	${INSTALL_DATA} ${WRKDIR}/oui-iab/*csv ${FILESDIR}/unofficial.csv \
+	    ${WRKSRC}/aircrack-oui.txt ${PREFIX}/share/mac-vendor/
 
 # maintainer convenience target to update mac-vendor file from the databases
 # http://standards.ieee.org/develop/regauth/oui/

@@ -2,7 +2,7 @@ Index: link-bpf.c
 --- link-bpf.c.orig
 +++ link-bpf.c
 @@ -91,6 +91,10 @@ get_hardware_address(const char *if_name, unsigned cha
-  */
+     */
     for (p = buf; p < buf + len; p += ifm->ifm_msglen) {
        ifm = (struct if_msghdr *)p;
 +

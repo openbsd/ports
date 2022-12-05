@@ -6,7 +6,7 @@ use Text::CSV;
 
 binmode STDIN, ':utf8';
 
-my ($errno, $lineno, $entry, $registry, $mac, $vendor, $address);
+my ($lineno, $entry, $registry, $mac, $vendor, $address);
 
 my $csv = Text::CSV->new({
 	allow_loose_quotes => 1,
@@ -16,7 +16,6 @@ my $csv = Text::CSV->new({
 });
 
 open OUI, ">:encoding(utf8)", "ieee-oui.txt" || die "Could not open ieee-oui.txt for writing";
-open IAB, ">:encoding(utf8)", "ieee-iab.txt" || die "Could not open ieee-iab.txt for writing";
 open DAT, ">:encoding(utf8)", "ethercodes.dat" || die "Could not open ethercodes.dat for writing";
 open AIR, ">:encoding(utf8)", "aircrack-oui.txt" || die "Could not open oui.txt for writing";
 
@@ -26,14 +25,7 @@ while ($csv->getline(*STDIN)) {
 	$lineno++;
 	next if ($mac eq 'Assignment');
 	$entry++;
-	if ($registry =~ /^MA-(S|M|L|0)$/) {
-		print OUI "$mac\t$vendor\n";
-	} elsif ($registry =~ /^IAB$/) {
-		print IAB "$mac\t$vendor\n";
-	} else {
-		print STDERR "Unknown registry on line $lineno\n";
-		$errno++;
-	}
+	print OUI "$mac\t$vendor\n";
 
 	# skip >24-bit vendors for aircrack-ng and arpwatch
 	next if (length($mac) ne 6);
@@ -52,7 +44,6 @@ while ($csv->getline(*STDIN)) {
 }
 
 close OUI;
-close IAB;
 close DAT;
 close AIR;
 print STDERR "$entry entries\n";

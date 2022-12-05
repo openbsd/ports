@@ -1,7 +1,6 @@
 @conflict arp-scan-<=1.9p10
 @conflict arpwatch-<=2.1a15p12
 share/arp-scan/
-share/arp-scan/ieee-iab.txt
 share/arp-scan/ieee-oui.txt
 share/arp-scan/mac-vendor.txt.dist
 @sample share/arp-scan/mac-vendor.txt

@@ -1,17 +1,16 @@
 Index: mac-vendor.txt
 --- mac-vendor.txt.orig
 +++ mac-vendor.txt
-@@ -44,8 +44,11 @@
- 525400	QEMU
- B0C420	Bochs
+@@ -42,7 +42,11 @@
+ b0:c4:20	Bochs
  
--# From RFC 2338: 00-00-5E-00-01-{VRID}
--00005E0001	VRRP (last octet is VRID)
-+# La Dee Dee, 1, 2, 3, VRRP ain't free.
-+00005E0001	CARP/VRRP (last octet is VHID/VRID)
+ # From RFC 2338: 00-00-5E-00-01-{VRID}
+-00:00:5e:00:01	VRRP (last octet is VRID)
++00:00:5e:00:01	CARP/VRRP (last octet is VHID/VRID)
++00:00:5e:00:02	IPv6 VRRPv3 (last octet is VRID)
 +
 +# ether_fakeaddr()
-+FEE1BAD		OpenBSD randomly generated MAC address
++fe:e1:ba:d	OpenBSD randomly generated MAC address
  
  # Microsoft WLBS (Windows NT Load Balancing Service)
  # http://www.microsoft.com/technet/prodtechnol/acs/reskit/acrkappb.mspx

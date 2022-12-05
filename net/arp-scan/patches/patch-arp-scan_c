@@ -1,26 +1,26 @@
 Index: arp-scan.c
 --- arp-scan.c.orig
 +++ arp-scan.c
-@@ -144,6 +144,10 @@ main(int argc, char *argv[]) {
-  *      Process options.
-  */
+@@ -137,6 +137,10 @@ main(int argc, char *argv[]) {
+     * Process options.
+     */
     process_options(argc, argv);
 +   if (getuid() != 0) {
 +      fprintf(stderr, "ERROR: arp-scan must be started with root privileges.\n");
 +      exit(1);
 +   }
- /*
-  *      Get program start time for statistics displayed on completion.
-  */
-@@ -466,6 +470,11 @@ main(int argc, char *argv[]) {
+    /*
+     * If we're not reading from a file, and --localnet was not specified, then
+     * die if no hosts were given as command line arguments.
+@@ -453,6 +457,11 @@ main(int argc, char *argv[]) {
        if (write_pkt_to_file == -1)
           err_sys("open %s", pkt_filename);
     }
-+/*
-+ *      setup is done at this point, so it's a natural point to pledge()
-+ */
++   /*
++    * Setup is done at this point, so it's a natural point to pledge().
++    */
 +   if (pledge("stdio dns bpf", NULL) == -1)
 +      err_sys("pledge");
- /*
-  *      Create and initialise array of pointers to host entries.
-  */
+    /*
+     * Create and initialise array of pointers to host entries.
+     */
