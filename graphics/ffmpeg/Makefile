@@ -2,6 +2,7 @@ COMMENT=	audio/video converter and streamer
 
 V=		4.4.3
 DISTNAME=	ffmpeg-${V}
+REVISION=	0
 EPOCH=		1
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	https://ffmpeg.org/releases/
@@ -28,7 +29,7 @@ WANTLIB+=	SDL2 X11 Xext Xv aom ass bz2 c crypto dav1d fontconfig
 WANTLIB+=	freetype fribidi gsm iconv lzma m mp3lame opus
 WANTLIB+=	pthread sndio speex ssl theoradec theoraenc v4l2
 WANTLIB+=	vorbis vorbisenc vpx x264 x265 xcb xcb-shape xcb-shm
-WANTLIB+=	xcb-xfixes xml2 xvidcore vidstab z
+WANTLIB+=	xcb-xfixes xml2 xvidcore vidstab z zimg
 
 COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
@@ -48,6 +49,7 @@ LIB_DEPENDS=	archivers/bzip2 \
 		audio/gsm \
 		converters/libiconv \
 		devel/sdl2 \
+		graphics/zimg \
 		multimedia/aom \
 		multimedia/dav1d \
 		multimedia/libass \
@@ -63,7 +65,7 @@ LIB_DEPENDS=	archivers/bzip2 \
 # inter-library dependencies for the current configuration
 LIBavcodec_EXTRALIBS=-L${LOCALBASE}/lib -laom -ldav1d -lgsm -liconv -llzma -lmp3lame -lopus -lspeex -ltheoradec -ltheoraenc -lvorbis -lvorbisenc -lvpx -lx264 -lx265 -lxvidcore -lm -lz -pthread
 LIBavdevice_EXTRALIBS=-L${LOCALBASE}/lib -L${X11BASE}/lib -lX11 -lXext -lXv -lxcb-shape -lxcb-shm -lxcb-xfixes -lxcb -lsndio -lv4l2 -lm
-LIBavfilter_EXTRALIBS=-L${LOCALBASE}/lib -L${X11BASE}/lib -lass -lfontconfig -lfreetype -lfribidi -lvidstab -lm -lz -pthread
+LIBavfilter_EXTRALIBS=-L${LOCALBASE}/lib -L${X11BASE}/lib -lass -lfontconfig -lfreetype -lfribidi -lvidstab -lm -lz -lzimg -pthread
 LIBavformat_EXTRALIBS=-L${LOCALBASE}/lib -lbz2 -lxml2 -lssl -lcrypto -lm -lz
 LIBavresample_EXTRALIBS=-lm
 LIBavutil_EXTRALIBS=-lm -pthread
@@ -112,6 +114,7 @@ CONFIGURE_ARGS+=--enable-shared \
 		--enable-libx265 \
 		--enable-libxml2 \
 		--enable-libxvid \
+		--enable-libzimg \
 		--enable-nonfree \
 		--enable-openssl \
 		--enable-libvidstab \
