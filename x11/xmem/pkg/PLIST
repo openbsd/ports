@@ -1,0 +1,6 @@
+@bin bin/xmem
+lib/X11/app-defaults/XMem
+@man man/man1/xmem.1
+share/xmem/
+share/xmem/copyright
+share/xmem/xmem.bit
