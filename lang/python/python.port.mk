@@ -213,6 +213,8 @@ BUILD_DEPENDS +=	devel/py-flit_core${MODPY_FLAVOR}
 BUILD_DEPENDS +=	devel/py-flit${MODPY_FLAVOR}
 .  elif ${MODPY_PYBUILD} == hatchling
 BUILD_DEPENDS +=	devel/py-hatchling${MODPY_FLAVOR}
+.  elif ${MODPY_PYBUILD} == hatch-vcs
+BUILD_DEPENDS +=	devel/py-hatch-vcs${MODPY_FLAVOR}
 .  elif ${MODPY_PYBUILD} == poetry-core
 BUILD_DEPENDS +=	devel/py-poetry-core${MODPY_FLAVOR}
 .  elif ${MODPY_PYBUILD} == setuptools || ${MODPY_PYBUILD} == setuptools_scm
@@ -222,7 +224,8 @@ BUILD_DEPENDS +=	devel/py-setuptools${MODPY_FLAVOR} \
 BUILD_DEPENDS +=	devel/py-setuptools_scm${MODPY_FLAVOR}
 .    endif
 .  elif !${MODPY_PYBUILD:L:Myes}
-ERRORS +=		"Fatal: unknown MODPY_PYBUILD value (flit_core, flit, hatchling, poetry-core, setuptools, setuptools_scm)"
+ERRORS +=		"Fatal: unknown MODPY_PYBUILD value (flit_core, flit,
+hatchling, hatch-vcs, poetry-core, setuptools, setuptools_scm)"
 .  endif
 .else
 # Try to detect the case where a port will build regardless of setuptools
