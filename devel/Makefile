@@ -1467,7 +1467,6 @@
      SUBDIR += py-nbconvert,python3
      SUBDIR += py-nbformat,python3
      SUBDIR += py-nbval,python3
-     SUBDIR += py-nose
      SUBDIR += py-nose,python3
      SUBDIR += py-nose-warnings-filters,python3
      SUBDIR += py-nosexcover,python3
@@ -1617,7 +1616,6 @@
      SUBDIR += py-wheezy.template,python3
      SUBDIR += py-wrapt,python3
      SUBDIR += py-wurlitzer,python3
-     SUBDIR += py-xdg
      SUBDIR += py-xdg,python3
      SUBDIR += py-xdis,python3
      SUBDIR += py-xlsxwriter,python3
