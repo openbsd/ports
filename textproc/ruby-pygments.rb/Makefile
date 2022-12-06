@@ -13,6 +13,8 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/ruby \
 		lang/python
+# includes vendored (old) copy of pygments; current versions of
+# pygments.rb are up-to-date and do support python 3
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_BUILDDEP=	No
