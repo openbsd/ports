@@ -1,3 +1,5 @@
+# if updated, sysutils/firmware/arm64-qcom-dtb must be updated too
+
 ONLY_FOR_ARCHS=	${GCC4_ARCHS} ${CLANG_ARCHS}
 
 COMMENT=	Device Tree Blobs
