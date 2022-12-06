@@ -9,7 +9,7 @@ V =			4.2.4
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
-REVISION =		0
+REVISION =		1
 
 DPB_PROPERTIES =	parallel
 
@@ -33,7 +33,7 @@ WANTLIB += m openal qrcodegencpp rnnoise sigc-2.0 swresample swscale
 WANTLIB += tg_owt xcb xcb-keysyms xcb-record xcb-screensaver xxhash
 WANTLIB += z
 
-# C++17 set below
+# C++20
 COMPILER =		base-clang ports-gcc
 
 # precompiled headers need this to be cached, see ccache(1) PRECOMPILED HEADERS
@@ -77,9 +77,6 @@ CONFIGURE_ARGS +=	-DTDESKTOP_API_ID=611335 \
 # disable unported/unwanted components
 CONFIGURE_ARGS +=	-DDESKTOP_APP_DISABLE_JEMALLOC=ON \
 			-DDESKTOP_APP_DISABLE_WAYLAND_INTEGRATION=ON
-
-# match standard version with abseil
-CONFIGURE_ARGS +=	-DCMAKE_CXX_STANDARD=17
 
 # Since cmake 3.25.1, BSDs are no longer recognised as Linux (in this port).
 # Upstream should probably become BSD aware, but until that happens,
