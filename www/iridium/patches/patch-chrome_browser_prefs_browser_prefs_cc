@@ -1,7 +1,7 @@
 Index: chrome/browser/prefs/browser_prefs.cc
 --- chrome/browser/prefs/browser_prefs.cc.orig
 +++ chrome/browser/prefs/browser_prefs.cc
-@@ -441,14 +441,14 @@
+@@ -446,14 +446,14 @@
  #include "components/os_crypt/os_crypt.h"
  #endif
  
@@ -18,7 +18,7 @@ Index: chrome/browser/prefs/browser_prefs.cc
      (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
  #include "chrome/browser/browser_switcher/browser_switcher_prefs.h"
  #endif
-@@ -476,7 +476,7 @@
+@@ -481,7 +481,7 @@
  #include "chrome/browser/sessions/session_service_log.h"
  #endif
  
@@ -27,7 +27,7 @@ Index: chrome/browser/prefs/browser_prefs.cc
  #include "ui/color/system_theme.h"
  #endif
  
-@@ -1010,7 +1010,7 @@ void RegisterProfilePrefsForMigration(
+@@ -978,7 +978,7 @@ void RegisterProfilePrefsForMigration(
    registry->RegisterIntegerPref(kProfileAvatarTutorialShown, 0);
  #endif
  
@@ -36,7 +36,7 @@ Index: chrome/browser/prefs/browser_prefs.cc
    // Deprecated 08/2022.
    registry->RegisterBooleanPref(prefs::kUsesSystemThemeDeprecated, false);
  #endif
-@@ -1241,7 +1241,7 @@ void RegisterLocalState(PrefRegistrySimple* registry) 
+@@ -1212,7 +1212,7 @@ void RegisterLocalState(PrefRegistrySimple* registry) 
  #endif  // BUILDFLAG(GOOGLE_CHROME_BRANDING)
  #endif  // BUILDFLAG(IS_WIN)
  
@@ -45,7 +45,7 @@ Index: chrome/browser/prefs/browser_prefs.cc
    web_app::url_handler_prefs::RegisterLocalStatePrefs(registry);
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
-@@ -1561,13 +1561,13 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
+@@ -1537,11 +1537,11 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
    safe_browsing::PostCleanupSettingsResetter::RegisterProfilePrefs(registry);
  #endif
  
@@ -54,14 +54,12 @@ Index: chrome/browser/prefs/browser_prefs.cc
    device_signals::RegisterProfilePrefs(registry);
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
- // of lacros-chrome is complete.
--#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || \
-+#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD) || \
-     (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    browser_switcher::BrowserSwitcherPrefs::RegisterProfilePrefs(registry);
  #endif
-@@ -1981,7 +1981,7 @@ void MigrateObsoleteProfilePrefs(Profile* profile) {
+ 
+@@ -1938,7 +1938,7 @@ void MigrateObsoleteProfilePrefs(Profile* profile) {
    profile_prefs->ClearPref(kProfileAvatarTutorialShown);
  #endif
  

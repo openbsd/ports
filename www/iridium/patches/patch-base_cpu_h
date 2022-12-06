@@ -1,7 +1,7 @@
 Index: base/cpu.h
 --- base/cpu.h.orig
 +++ base/cpu.h
-@@ -108,7 +108,7 @@ class BASE_EXPORT CPU final {
+@@ -115,7 +115,7 @@ class BASE_EXPORT CPU final {
    const std::string& cpu_brand() const { return cpu_brand_; }
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || \

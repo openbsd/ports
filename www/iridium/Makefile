@@ -10,14 +10,13 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Iridium browser
 
-V=			2022.11.107
-REVISION=		0
+V=			2022.12.108.1
 
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
 
-PATCHFILES=		disable-privacy-sandbox.patch:0
+PATCHFILES=		disable-privacy-sandbox-352a8844b01a05a786ba76da599d106487f1533f.patch
 PATCH_DIST_STRIP=	-p1
 
 CATEGORIES=		www
@@ -202,6 +201,7 @@ GN_ARGS+=	use_thin_lto=false \
 
 pre-configure:
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
+	@ln -sf ${MODQT5_MOC} ${WRKDIR}/bin/moc
 .for _arch in x64 ia32 arm64
 .  for _dir in avcodec avformat avutil
 	@cp -pR ${WRKSRC}/third_party/ffmpeg/chromium/config/Chrome/linux/${_arch}/lib${_dir} \

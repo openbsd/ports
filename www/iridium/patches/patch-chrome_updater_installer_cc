@@ -1,7 +1,7 @@
 Index: chrome/updater/installer.cc
 --- chrome/updater/installer.cc.orig
 +++ chrome/updater/installer.cc
-@@ -242,7 +242,7 @@ absl::optional<base::FilePath> Installer::GetCurrentIn
+@@ -250,7 +250,7 @@ absl::optional<base::FilePath> Installer::GetCurrentIn
    return path->AppendASCII(pv_.GetString());
  }
  

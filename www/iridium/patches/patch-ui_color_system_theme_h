@@ -9,4 +9,4 @@ Index: ui/color/system_theme.h
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    kGtk = 1,
    kQt = 2,
- #endif
+   kMaxValue = kQt,

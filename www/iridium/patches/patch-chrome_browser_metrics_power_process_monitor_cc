@@ -19,7 +19,7 @@ Index: chrome/browser/metrics/power/process_monitor.cc
    metrics->idle_wakeups *= factor;
  #endif
  
-@@ -147,7 +147,7 @@ ProcessMonitor::Metrics& operator+=(ProcessMonitor::Me
+@@ -168,7 +168,7 @@ ProcessMonitor::Metrics& operator+=(ProcessMonitor::Me
    lhs.cpu_usage += rhs.cpu_usage;
  
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \

@@ -1,7 +1,7 @@
 Index: ui/platform_window/platform_window_delegate.cc
 --- ui/platform_window/platform_window_delegate.cc.orig
 +++ ui/platform_window/platform_window_delegate.cc
-@@ -15,7 +15,7 @@ PlatformWindowDelegate::PlatformWindowDelegate() = def
+@@ -16,7 +16,7 @@ PlatformWindowDelegate::PlatformWindowDelegate() = def
  
  PlatformWindowDelegate::~PlatformWindowDelegate() = default;
  

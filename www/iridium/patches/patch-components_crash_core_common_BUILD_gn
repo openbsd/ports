@@ -10,12 +10,3 @@ Index: components/crash/core/common/BUILD.gn
  }
  
  group("common") {
-@@ -190,7 +190,7 @@ source_set("unit_tests") {
-     sources += [ "crash_key_breakpad_ios_unittest.cc" ]
-     deps += [ "//third_party/breakpad:client" ]
-     include_dirs = [ "//third_party/breakpad/breakpad/src/" ]
--  } else if (!is_mac && !is_win && !is_fuchsia && !is_android) {
-+  } else if (!is_mac && !is_win && !is_fuchsia && !is_android && !is_bsd) {
-     include_dirs = [ "//third_party/breakpad/breakpad/src/" ]
-     sources += [ "crash_key_breakpad_unittest.cc" ]
-   }

@@ -13,7 +13,7 @@ Index: content/ppapi_plugin/ppapi_plugin_main.cc
  #if BUILDFLAG(IS_POSIX) && !BUILDFLAG(IS_ANDROID)
  #include <stdlib.h>
  #endif
-@@ -136,7 +141,7 @@ int PpapiPluginMain(MainFunctionParams parameters) {
+@@ -146,7 +151,7 @@ int PpapiPluginMain(MainFunctionParams parameters) {
    gin::V8Initializer::LoadV8Snapshot();
  #endif
  

@@ -8,5 +8,5 @@ Index: mojo/core/embedder/features.h
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_BSD)
  COMPONENT_EXPORT(MOJO_CORE_EMBEDDER_FEATURES)
- extern const base::Feature kMojoLinuxChannelSharedMem;
+ BASE_DECLARE_FEATURE(kMojoLinuxChannelSharedMem);
  

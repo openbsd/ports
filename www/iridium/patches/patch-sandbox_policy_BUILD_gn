@@ -1,7 +1,7 @@
 Index: sandbox/policy/BUILD.gn
 --- sandbox/policy/BUILD.gn.orig
 +++ sandbox/policy/BUILD.gn
-@@ -36,7 +36,7 @@ component("policy") {
+@@ -35,7 +35,7 @@ component("policy") {
      "//sandbox/policy/mojom",
    ]
    public_deps = [ "//sandbox:common" ]
@@ -10,7 +10,7 @@ Index: sandbox/policy/BUILD.gn
      sources += [
        "linux/bpf_audio_policy_linux.cc",
        "linux/bpf_audio_policy_linux.h",
-@@ -95,6 +95,27 @@ component("policy") {
+@@ -94,6 +94,27 @@ component("policy") {
        "//sandbox/linux:sandbox_services",
        "//sandbox/linux:seccomp_bpf",
        "//sandbox/linux:suid_sandbox_client",

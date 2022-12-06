@@ -10,8 +10,8 @@ Index: content/browser/renderer_host/render_message_filter.cc
  #include "base/linux_util.h"
  #include "base/threading/platform_thread.h"
  #endif
-@@ -128,7 +128,7 @@ void RenderMessageFilter::GenerateFrameRoutingID(
-   std::move(callback).Run(routing_id, frame_token, devtools_frame_token);
+@@ -130,7 +130,7 @@ void RenderMessageFilter::GenerateFrameRoutingID(
+                           document_token);
  }
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
@@ -19,7 +19,7 @@ Index: content/browser/renderer_host/render_message_filter.cc
  void RenderMessageFilter::SetThreadTypeOnWorkerThread(
      base::PlatformThreadId ns_tid,
      base::ThreadType thread_type) {
-@@ -149,7 +149,7 @@ void RenderMessageFilter::SetThreadTypeOnWorkerThread(
+@@ -151,7 +151,7 @@ void RenderMessageFilter::SetThreadTypeOnWorkerThread(
  }
  #endif
  
