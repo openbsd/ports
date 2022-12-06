@@ -1,12 +1,11 @@
 COMMENT=	Sender-Policy-Framework queries in Python
 
-MODPY_EGG_VERSION=2.0.12
+MODPY_EGG_VERSION= 2.0.14
 DISTNAME=	pyspf-${MODPY_EGG_VERSION}
-REVISION=	1
 PKGNAME=	py-spf-${MODPY_EGG_VERSION}
 CATEGORIES=	mail
 
-HOMEPAGE=	http://bmsi.com/python/milter.html
+HOMEPAGE=	https://github.com/sdgathman/pyspf/
 
 # Python
 PERMIT_PACKAGE=	Yes
@@ -14,18 +13,19 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pymilter/}
 
 MODULES=        lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools
+MODPY_PYTEST_ARGS= test/testspf.py
 
-BUILD_DEPENDS=	net/py-dns
+FLAVORS=	python3
+FLAVOR=		python3
 
-RUN_DEPENDS=	mail/py-authres \
-		net/py-dns
+RUN_DEPENDS=	mail/py-authres${MODPY_FLAVOR} \
+		net/py-dnspython${MODPY_FLAVOR}
 
-TEST_DEPENDS=${FULLPKGNAME}:${BUILD_PKGPATH} \
-		textproc/py-yaml \
-		net/py-ipaddr
+TEST_DEPENDS=	textproc/py-yaml${MODPY_FLAVOR}
 
 do-test:
-	@cd ${WRKSRC}/test && ${MODPY_BIN} testspf.py
+	cd ${WRKSRC}/test && PYTHONPATH=.. ${MODPY_BIN} testspf.py
 
 .include <bsd.port.mk>

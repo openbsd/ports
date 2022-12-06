@@ -1,6 +1,7 @@
---- setup.py.orig	Sun Jul 22 03:24:58 2012
-+++ setup.py	Mon Nov 12 10:53:33 2012
-@@ -13,11 +13,13 @@ setup(name='python-policyd-spf',
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -13,11 +13,13 @@ setup(name='pypolicyd-spf',
        py_modules=['policydspfsupp', 'policydspfuser'],
        keywords = ['Postfix','spf','email'],
        scripts = ['policyd-spf'],

@@ -1,11 +1,12 @@
---- policyd-spf.1.orig	Sun Nov 28 04:58:03 2010
-+++ policyd-spf.1	Wed Aug 24 16:04:09 2011
-@@ -254,7 +254,7 @@ followed by a empty line:
+Index: policyd-spf.1
+--- policyd-spf.1.orig
++++ policyd-spf.1
+@@ -256,7 +256,7 @@ followed by a empty line:
   1. Add the following to /etc/postfix/master.cf:
  
          policyd-spf  unix  -       n       n       -       0       spawn
 -            user=nobody argv=/usr/bin/policyd-spf
 +            user=nobody argv=${PREFIX}/bin/policyd-spf
  
-     NOTE: Check the path to both the installed Python interpreter and
+     NOTE: Check the path to both the installed Python 3 interpreter and
            policyd-spf.  These vary from system to system.  To use non-default

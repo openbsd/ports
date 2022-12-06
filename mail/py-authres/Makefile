@@ -1,6 +1,6 @@
 COMMENT =	module for RFC 5451 Authentication-Results Headers
 
-MODPY_EGG_VERSION = 0.800
+MODPY_EGG_VERSION = 1.2.0
 DISTNAME =	authres-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	mail
@@ -10,15 +10,12 @@ HOMEPAGE =	https://launchpad.net/authentication-results-python
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
 
-MODPY_PI =	Yes
-
 MODULES	=	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
-
+MODPY_PI =	Yes
+MODPY_PYBUILD =	setuptools
 NO_TEST =	Yes
 
-post-install:
-	${INSTALL_DATA} ${WRKSRC}/authres/tests \
-		${PREFIX}/lib/python${MODPY_VERSION}/site-packages/authres/tests
+FLAVOR =	python3
+FLAVORS =	python3
 
 .include <bsd.port.mk>

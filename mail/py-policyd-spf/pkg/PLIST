@@ -1,16 +1,25 @@
+@conflict py-policyd-spf-*
+@pkgpath mail/py-policyd-spf
 bin/policyd-spf
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}policydspfsupp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}policydspfsupp.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}policydspfuser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}policydspfuser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/policydspfsupp.py
-lib/python${MODPY_VERSION}/site-packages/policydspfsupp.pyc
 lib/python${MODPY_VERSION}/site-packages/policydspfuser.py
-lib/python${MODPY_VERSION}/site-packages/policydspfuser.pyc
-lib/python${MODPY_VERSION}/site-packages/pypolicyd_spf-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/pypolicyd_spf-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/pypolicyd_spf-${MODPY_EGG_VERSION}.dist-info/COPYING
+lib/python${MODPY_VERSION}/site-packages/pypolicyd_spf-${MODPY_EGG_VERSION}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/pypolicyd_spf-${MODPY_EGG_VERSION}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/pypolicyd_spf-${MODPY_EGG_VERSION}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/pypolicyd_spf-${MODPY_EGG_VERSION}.dist-info/top_level.txt
 @man man/man1/policyd-spf.1
 @man man/man5/policyd-spf.conf.5
 @man man/man5/policyd-spf.peruser.5
+share/doc/py-policyd-spf/
+share/doc/py-policyd-spf/README.per_user_whitelisting
+share/examples/py-policyd-spf/
 @sample ${SYSCONFDIR}/python-policyd-spf/
-share/doc/${MODPY_PY_PREFIX}policyd-spf/
-share/doc/${MODPY_PY_PREFIX}policyd-spf/README.per_user_whitelisting
-share/examples/${MODPY_PY_PREFIX}policyd-spf/
-share/examples/${MODPY_PY_PREFIX}policyd-spf/policyd-spf.conf
+share/examples/py-policyd-spf/policyd-spf.conf
 @sample ${SYSCONFDIR}/python-policyd-spf/policyd-spf.conf
-share/examples/${MODPY_PY_PREFIX}policyd-spf/policyd-spf.conf.commented
+share/examples/py-policyd-spf/policyd-spf.conf.commented
