@@ -1,5 +1,5 @@
 COMMENT =	interactive system for VLSI circuit layouts
-DISTNAME =	magic-8.3.316
+DISTNAME =	magic-8.3.340
 EXTRACT_SUFX =	.tgz
 
 CATEGORIES =	cad
@@ -29,6 +29,10 @@ RUN_DEPENDS =	shells/bash
 WRKCONF =	${WRKSRC}/scripts
 
 USE_GMAKE=	Yes
+# see scripts/defs.mak.in; if not overridden this calls git, which is very
+# noisy in a non-git checkout if git is installed
+MAKE_FLAGS=	MAGIC_COMMIT=
+
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--enable-cairo-offscreen \
 			--with-distdir=${PREFIX} \
