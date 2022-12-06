@@ -40,16 +40,12 @@ gotosocial/web/assets/default_avatars/GoToSocial_icon6.png
 gotosocial/web/assets/default_header.png
 gotosocial/web/assets/dist/
 gotosocial/web/assets/dist/_colors.css
-gotosocial/web/assets/dist/admin-panel.js
 gotosocial/web/assets/dist/base.css
-gotosocial/web/assets/dist/bundle.js
 gotosocial/web/assets/dist/frontend.js
-gotosocial/web/assets/dist/panels-admin-style.css
-gotosocial/web/assets/dist/panels-base.css
-gotosocial/web/assets/dist/panels-user-style.css
 gotosocial/web/assets/dist/profile.css
+gotosocial/web/assets/dist/settings-style.css
+gotosocial/web/assets/dist/settings.js
 gotosocial/web/assets/dist/status.css
-gotosocial/web/assets/dist/user-panel.js
 gotosocial/web/assets/logo.png
 gotosocial/web/assets/mastodon.svg
 gotosocial/web/assets/swagger.yaml
@@ -67,6 +63,7 @@ gotosocial/web/template/footer.tmpl
 gotosocial/web/template/frontend.tmpl
 gotosocial/web/template/header.tmpl
 gotosocial/web/template/index.tmpl
+gotosocial/web/template/oob.tmpl
 gotosocial/web/template/profile.tmpl
 gotosocial/web/template/sign-in.tmpl
 gotosocial/web/template/status.tmpl
