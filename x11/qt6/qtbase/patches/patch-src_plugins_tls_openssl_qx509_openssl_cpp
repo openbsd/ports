@@ -1,7 +1,7 @@
 Index: src/plugins/tls/openssl/qx509_openssl.cpp
 --- src/plugins/tls/openssl/qx509_openssl.cpp.orig
 +++ src/plugins/tls/openssl/qx509_openssl.cpp
-@@ -97,7 +97,11 @@ QMultiMap<QByteArray, QString> mapFromX509Name(X509_NA
+@@ -63,7 +63,11 @@ QMultiMap<QByteArray, QString> mapFromX509Name(X509_NA
          unsigned char *data = nullptr;
          int size = q_ASN1_STRING_to_UTF8(&data, q_X509_NAME_ENTRY_get_data(e));
          info.insert(name, QString::fromUtf8((char*)data, size));
@@ -14,7 +14,7 @@ Index: src/plugins/tls/openssl/qx509_openssl.cpp
      }
  
      return info;
-@@ -107,12 +111,27 @@ QDateTime dateTimeFromASN1(const ASN1_TIME *aTime)
+@@ -73,12 +77,27 @@ QDateTime dateTimeFromASN1(const ASN1_TIME *aTime)
  {
      QDateTime result;
      tm lTime;
@@ -42,7 +42,7 @@ Index: src/plugins/tls/openssl/qx509_openssl.cpp
  
      return result;
  }
-@@ -223,7 +242,7 @@ QVariant x509UnknownExtensionToValue(X509_EXTENSION *e
+@@ -189,7 +208,7 @@ QVariant x509UnknownExtensionToValue(X509_EXTENSION *e
          QVariantList list;
          bool isMap = false;
  
@@ -51,7 +51,7 @@ Index: src/plugins/tls/openssl/qx509_openssl.cpp
              CONF_VALUE *nval = q_SKM_sk_value(CONF_VALUE, val, j);
              if (nval->name && nval->value) {
                  isMap = true;
-@@ -319,7 +338,7 @@ QVariant x509ExtensionToValue(X509_EXTENSION *ext)
+@@ -285,7 +304,7 @@ QVariant x509ExtensionToValue(X509_EXTENSION *ext)
              if (!info)
                  return {};
              QVariantMap result;

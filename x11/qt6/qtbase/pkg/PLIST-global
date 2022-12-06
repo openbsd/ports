@@ -59,6 +59,8 @@ share/doc/qt6/global/includes/
 share/doc/qt6/global/includes-online/
 share/doc/qt6/global/includes-online/search.qdoc
 share/doc/qt6/global/includes/cli-build-cmake.qdocinc
+share/doc/qt6/global/includes/corelib/
+share/doc/qt6/global/includes/corelib/port-from-qregexp.qdocinc
 share/doc/qt6/global/includes/examples-run.qdocinc
 share/doc/qt6/global/includes/module-use.qdocinc
 share/doc/qt6/global/includes/standardpath/
@@ -74,6 +76,9 @@ share/doc/qt6/global/qt-module-defaults-offline.qdocconf
 share/doc/qt6/global/qt-module-defaults-online-commercial.qdocconf
 share/doc/qt6/global/qt-module-defaults-online.qdocconf
 share/doc/qt6/global/qt-module-defaults.qdocconf
+share/doc/qt6/global/snippets/
+share/doc/qt6/global/snippets/code/
+share/doc/qt6/global/snippets/code/doc_src_port_from_qregexp.cpp
 share/doc/qt6/global/template/
 share/doc/qt6/global/template/images/
 share/doc/qt6/global/template/images/Qt-dark_gradient.png

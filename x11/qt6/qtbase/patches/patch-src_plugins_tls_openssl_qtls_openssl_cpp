@@ -1,7 +1,7 @@
 Index: src/plugins/tls/openssl/qtls_openssl.cpp
 --- src/plugins/tls/openssl/qtls_openssl.cpp.orig
 +++ src/plugins/tls/openssl/qtls_openssl.cpp
-@@ -1472,13 +1472,13 @@ bool TlsCryptographOpenSSL::initSslContext()
+@@ -1438,13 +1438,13 @@ bool TlsCryptographOpenSSL::initSslContext()
      else if (mode == QSslSocket::SslServerMode)
          q_SSL_set_psk_server_callback(ssl, &q_ssl_psk_server_callback);
  

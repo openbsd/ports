@@ -1,7 +1,7 @@
 Index: qmake/generators/unix/unixmake.cpp
 --- qmake/generators/unix/unixmake.cpp.orig
 +++ qmake/generators/unix/unixmake.cpp
-@@ -34,8 +34,50 @@
+@@ -9,8 +9,50 @@
  #include <time.h>
  #include <qdebug.h>
  
@@ -52,7 +52,7 @@ Index: qmake/generators/unix/unixmake.cpp
  ProStringList UnixMakefileGenerator::libdirToFlags(const ProKey &key)
  {
      ProStringList results;
-@@ -107,6 +149,13 @@ UnixMakefileGenerator::init()
+@@ -82,6 +124,13 @@ UnixMakefileGenerator::init()
      project->values("QMAKE_RPATHLINKDIR") += project->values("QMAKE_RPATHLINKDIR_POST");
      if(!project->isEmpty("QMAKE_INCDIR"))
          project->values("INCLUDEPATH") += project->values("QMAKE_INCDIR");
@@ -66,7 +66,7 @@ Index: qmake/generators/unix/unixmake.cpp
      // The order of the next two lines is relevant due to side effect on QMAKE_LFLAGS.
      ProStringList ldadd = project->values("QMAKE_LIBDIR_FLAGS") + libdirToFlags("QMAKE_LIBDIR");
      ProStringList ldaddpost = libdirToFlags("QMAKE_LIBDIR_POST");
-@@ -119,7 +168,12 @@ UnixMakefileGenerator::init()
+@@ -94,7 +143,12 @@ UnixMakefileGenerator::init()
          ldadd += project->values("QMAKE_FRAMEWORKPATH_FLAGS");
      }
      ProStringList &qmklibs = project->values("LIBS");
@@ -80,7 +80,7 @@ Index: qmake/generators/unix/unixmake.cpp
      ProStringList &qmklibspost = project->values("QMAKE_LIBS");
      qmklibspost = ldaddpost + qmklibspost;
      if (!project->isEmpty("QMAKE_RPATHDIR") && !project->isEmpty("QMAKE_LFLAGS_RPATH")) {
-@@ -147,7 +201,10 @@ UnixMakefileGenerator::init()
+@@ -122,7 +176,10 @@ UnixMakefileGenerator::init()
          }
      }
      if (!project->isEmpty("QMAKE_RPATHLINKDIR")) {
@@ -92,7 +92,7 @@ Index: qmake/generators/unix/unixmake.cpp
          for (int i = 0; i < rpathdirs.size(); ++i) {
              if (!project->isEmpty("QMAKE_LFLAGS_RPATHLINK"))
                  project->values("QMAKE_LFLAGS") += var("QMAKE_LFLAGS_RPATHLINK") + escapeFilePath(QFileInfo(rpathdirs[i].toQString()).absoluteFilePath());
-@@ -403,6 +460,9 @@ UnixMakefileGenerator::findLibraries(bool linkPrl, boo
+@@ -378,6 +435,9 @@ UnixMakefileGenerator::findLibraries(bool linkPrl, boo
                                             "QMAKE_LIBS", "QMAKE_LIBS_PRIVATE", nullptr };
      for (int i = 0; lflags[i]; i++) {
          ProStringList &l = project->values(lflags[i]);
@@ -102,7 +102,7 @@ Index: qmake/generators/unix/unixmake.cpp
          for (ProStringList::Iterator it = l.begin(); it != l.end(); ) {
              QString opt = (*it).toQString();
              if(opt.startsWith("-")) {
-@@ -546,6 +606,13 @@ UnixMakefileGenerator::findLibraries(bool linkPrl, boo
+@@ -521,6 +581,13 @@ UnixMakefileGenerator::findLibraries(bool linkPrl, boo
              }
          }
      }
@@ -116,7 +116,7 @@ Index: qmake/generators/unix/unixmake.cpp
      return false;
  }
  
-@@ -708,7 +775,7 @@ UnixMakefileGenerator::defaultInstall(const QString &t
+@@ -683,7 +750,7 @@ UnixMakefileGenerator::defaultInstall(const QString &t
                  uninst.append("-$(DEL_FILE) " + dst);
              }
          }

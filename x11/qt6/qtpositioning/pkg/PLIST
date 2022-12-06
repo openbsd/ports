@@ -99,6 +99,7 @@ lib/cmake/Qt6Positioning/Qt6PositioningConfig.cmake
 lib/cmake/Qt6Positioning/Qt6PositioningConfigVersion.cmake
 lib/cmake/Qt6Positioning/Qt6PositioningConfigVersionImpl.cmake
 lib/cmake/Qt6Positioning/Qt6PositioningDependencies.cmake
+lib/cmake/Qt6Positioning/Qt6PositioningPlugins.cmake
 lib/cmake/Qt6Positioning/Qt6PositioningTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Positioning/Qt6PositioningTargets.cmake
 lib/cmake/Qt6Positioning/Qt6PositioningVersionlessTargets.cmake

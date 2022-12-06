@@ -1,7 +1,7 @@
 Index: src/network/kernel/qnetworkinterface_unix.cpp
 --- src/network/kernel/qnetworkinterface_unix.cpp.orig
 +++ src/network/kernel/qnetworkinterface_unix.cpp
-@@ -68,6 +68,9 @@
+@@ -32,6 +32,9 @@
  #  endif
  #endif // QT_LINUXBASE
  
@@ -11,7 +11,7 @@ Index: src/network/kernel/qnetworkinterface_unix.cpp
  #include <qplatformdefs.h>
  
  QT_BEGIN_NAMESPACE
-@@ -460,7 +463,9 @@ static QNetworkInterface::InterfaceType probeIfType(in
+@@ -421,7 +424,9 @@ static QNetworkInterface::InterfaceType probeIfType(in
          return QNetworkInterface::Ieee1394;
  
      case IFT_GIF:

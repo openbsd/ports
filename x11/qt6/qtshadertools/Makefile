@@ -1,16 +1,13 @@
-QT6NAME =		QtShaderTools
+QT6NAME =	QtShaderTools
+COMMENT =	Qt6 shader tools module
+PKGSPEC =	qt6-qtshadertools-${QT6_PKGSPEC}
 
-COMMENT =		Qt6 shader tools module
-REVISION =		0
-
-PKGSPEC =		qt6-qtshadertools-${QT6_PKGSPEC}
-
-SHARED_LIBS =  Qt6ShaderTools              0.0 # 6.0
+SHARED_LIBS =  Qt6ShaderTools              1.0 # 6.4
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui c m xkbcommon
 
-BUILD_DEPENDS =		graphics/vulkan-loader
+BUILD_DEPENDS =	graphics/vulkan-loader
 
-LIB_DEPENDS =		x11/xkbcommon
+LIB_DEPENDS =	x11/xkbcommon
 
 .include <bsd.port.mk>

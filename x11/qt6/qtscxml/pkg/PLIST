@@ -146,6 +146,7 @@ lib/cmake/Qt6Scxml/Qt6ScxmlConfigVersion.cmake
 lib/cmake/Qt6Scxml/Qt6ScxmlConfigVersionImpl.cmake
 lib/cmake/Qt6Scxml/Qt6ScxmlDependencies.cmake
 lib/cmake/Qt6Scxml/Qt6ScxmlMacros.cmake
+lib/cmake/Qt6Scxml/Qt6ScxmlPlugins.cmake
 lib/cmake/Qt6Scxml/Qt6ScxmlTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Scxml/Qt6ScxmlTargets.cmake
 lib/cmake/Qt6Scxml/Qt6ScxmlVersionlessTargets.cmake

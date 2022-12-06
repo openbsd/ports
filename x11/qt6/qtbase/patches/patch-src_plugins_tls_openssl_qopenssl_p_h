@@ -1,7 +1,7 @@
 Index: src/plugins/tls/openssl/qopenssl_p.h
 --- src/plugins/tls/openssl/qopenssl_p.h.orig
 +++ src/plugins/tls/openssl/qopenssl_p.h
-@@ -106,6 +106,13 @@
+@@ -70,6 +70,13 @@
  
  QT_BEGIN_NAMESPACE
  

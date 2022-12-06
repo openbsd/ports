@@ -1,12 +1,12 @@
 Index: cmake/QtRpathHelpers.cmake
 --- cmake/QtRpathHelpers.cmake.orig
 +++ cmake/QtRpathHelpers.cmake
-@@ -27,7 +27,7 @@ function(qt_compute_relative_rpath_base rpath install_
-     # needed in the .prf files, but for CMake we need to prepend them ourselves.
+@@ -3,7 +3,7 @@
+ function(qt_internal_get_relative_rpath_base_token out_var)
      if(APPLE)
          set(rpath_rel_base "@loader_path")
--    elseif(LINUX OR SOLARIS OR FREEBSD)
-+    elseif(LINUX OR SOLARIS OR FREEBSD OR OPENBSD)
+-    elseif(LINUX OR SOLARIS OR FREEBSD OR HURD)
++    elseif(LINUX OR SOLARIS OR FREEBSD OR HURD OR OPENBSD)
          set(rpath_rel_base "$ORIGIN")
      else()
-         message(WARNING "No known RPATH_REL_BASE for target platform.")
+         set(rpath_rel_base "NO_KNOWN_RPATH_REL_BASE")

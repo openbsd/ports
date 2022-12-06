@@ -1,7 +1,7 @@
 Index: cmake/QtCompilerOptimization.cmake
 --- cmake/QtCompilerOptimization.cmake.orig
 +++ cmake/QtCompilerOptimization.cmake
-@@ -94,7 +94,7 @@ endif()
+@@ -73,7 +73,7 @@ endif()
  # gcc and clang base
  if(GCC OR CLANG AND NOT WASM)
      set(QT_CFLAGS_OPTIMIZE "-O2")
@@ -10,7 +10,7 @@ Index: cmake/QtCompilerOptimization.cmake
      set(QT_CFLAGS_OPTIMIZE_DEBUG "-Og")
      set(QT_CFLAGS_OPTIMIZE_SIZE "-Os")
  
-@@ -105,7 +105,7 @@ endif()
+@@ -84,7 +84,7 @@ endif()
  
  # Flags that CMake might set, aka flags the compiler would see as valid values.
  if(GCC OR CLANG OR QCC)

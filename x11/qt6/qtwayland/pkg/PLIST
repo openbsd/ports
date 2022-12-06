@@ -12,6 +12,7 @@ include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-qt-w
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-server-buffer-extension.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-surface-extension.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-tablet-unstable-v2.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-text-input-unstable-v1.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-text-input-unstable-v2.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-text-input-unstable-v4-wip.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-touch-extension.h
@@ -63,6 +64,7 @@ include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandsubsu
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandsurface_p.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandtabletv2_p.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandtextinputinterface_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandtextinputv1_p.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandtextinputv2_p.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandtextinputv4_p.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandtouch_p.h
@@ -78,6 +80,7 @@ include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-qt-wi
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-server-buffer-extension-client-protocol.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-surface-extension-client-protocol.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-tablet-unstable-v2-client-protocol.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-text-input-unstable-v1-client-protocol.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-text-input-unstable-v2-client-protocol.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-text-input-unstable-v4-wip-client-protocol.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-touch-extension-client-protocol.h
@@ -375,7 +378,6 @@ lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorQtShellAdditionalTargetInfo.cmak
 lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorQtShellConfig.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorQtShellConfigVersion.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorQtShellConfigVersionImpl.cmake
-lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorQtShellDependencies.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorQtShellTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorQtShellTargets.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorWLShellAdditionalTargetInfo.cmake
@@ -469,6 +471,7 @@ lib/cmake/Qt6WaylandClient/Qt6WaylandClientConfigVersion.cmake
 lib/cmake/Qt6WaylandClient/Qt6WaylandClientConfigVersionImpl.cmake
 lib/cmake/Qt6WaylandClient/Qt6WaylandClientDependencies.cmake
 lib/cmake/Qt6WaylandClient/Qt6WaylandClientMacros.cmake
+lib/cmake/Qt6WaylandClient/Qt6WaylandClientPlugins.cmake
 lib/cmake/Qt6WaylandClient/Qt6WaylandClientTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6WaylandClient/Qt6WaylandClientTargets.cmake
 lib/cmake/Qt6WaylandClient/Qt6WaylandClientVersionlessTargets.cmake
@@ -503,6 +506,7 @@ lib/cmake/Qt6WaylandCompositor/Qt6WaylandCompositorConfigVersion.cmake
 lib/cmake/Qt6WaylandCompositor/Qt6WaylandCompositorConfigVersionImpl.cmake
 lib/cmake/Qt6WaylandCompositor/Qt6WaylandCompositorDependencies.cmake
 lib/cmake/Qt6WaylandCompositor/Qt6WaylandCompositorMacros.cmake
+lib/cmake/Qt6WaylandCompositor/Qt6WaylandCompositorPlugins.cmake
 lib/cmake/Qt6WaylandCompositor/Qt6WaylandCompositorTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6WaylandCompositor/Qt6WaylandCompositorTargets.cmake
 lib/cmake/Qt6WaylandCompositor/Qt6WaylandCompositorVersionlessTargets.cmake

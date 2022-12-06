@@ -1,7 +1,7 @@
 Index: qmake/generators/unix/unixmake.h
 --- qmake/generators/unix/unixmake.h.orig
 +++ qmake/generators/unix/unixmake.h
-@@ -61,6 +61,7 @@ class UnixMakefileGenerator : public MakefileGenerator
+@@ -36,6 +36,7 @@ class UnixMakefileGenerator : public MakefileGenerator
      bool writeObjectsPart(QTextStream &, bool do_incremental);
  private:
      void init2();

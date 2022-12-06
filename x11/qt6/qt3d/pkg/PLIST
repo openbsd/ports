@@ -1247,6 +1247,7 @@ lib/cmake/Qt63DRender/Qt63DRenderConfig.cmake
 lib/cmake/Qt63DRender/Qt63DRenderConfigVersion.cmake
 lib/cmake/Qt63DRender/Qt63DRenderConfigVersionImpl.cmake
 lib/cmake/Qt63DRender/Qt63DRenderDependencies.cmake
+lib/cmake/Qt63DRender/Qt63DRenderPlugins.cmake
 lib/cmake/Qt63DRender/Qt63DRenderTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt63DRender/Qt63DRenderTargets.cmake
 lib/cmake/Qt63DRender/Qt63DRenderVersionlessTargets.cmake

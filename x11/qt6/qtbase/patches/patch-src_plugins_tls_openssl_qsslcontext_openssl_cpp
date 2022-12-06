@@ -1,7 +1,7 @@
 Index: src/plugins/tls/openssl/qsslcontext_openssl.cpp
 --- src/plugins/tls/openssl/qsslcontext_openssl.cpp.orig
 +++ src/plugins/tls/openssl/qsslcontext_openssl.cpp
-@@ -85,9 +85,9 @@ extern "C" int q_verify_cookie_callback(SSL *ssl, cons
+@@ -49,9 +49,9 @@ extern "C" int q_verify_cookie_callback(SSL *ssl, cons
  }
  #endif // dtls
  
@@ -13,7 +13,7 @@ Index: src/plugins/tls/openssl/qsslcontext_openssl.cpp
  
  static inline QString msgErrorSettingBackendConfig(const QString &why)
  {
-@@ -406,9 +406,11 @@ QT_WARNING_POP
+@@ -370,9 +370,11 @@ QT_WARNING_POP
          return;
      }
  
@@ -25,7 +25,7 @@ Index: src/plugins/tls/openssl/qsslcontext_openssl.cpp
  
      const long anyVersion =
  #if QT_CONFIG(dtls)
-@@ -699,14 +701,14 @@ QT_WARNING_POP
+@@ -663,14 +665,14 @@ QT_WARNING_POP
          q_SSL_CTX_set_verify(sslContext->ctx, verificationMode, verificationCallback);
      }
  
@@ -42,7 +42,7 @@ Index: src/plugins/tls/openssl/qsslcontext_openssl.cpp
  
  #if QT_CONFIG(dtls)
      // DTLS cookies:
-@@ -794,6 +796,7 @@ void QSslContext::applyBackendConfig(QSslContext *sslC
+@@ -758,6 +760,7 @@ void QSslContext::applyBackendConfig(QSslContext *sslC
      }
  #endif // ocsp
  
@@ -50,7 +50,7 @@ Index: src/plugins/tls/openssl/qsslcontext_openssl.cpp
      QSharedPointer<SSL_CONF_CTX> cctx(q_SSL_CONF_CTX_new(), &q_SSL_CONF_CTX_free);
      if (cctx) {
          q_SSL_CONF_CTX_set_ssl_ctx(cctx.data(), sslContext->ctx);
-@@ -840,7 +843,9 @@ void QSslContext::applyBackendConfig(QSslContext *sslC
+@@ -804,7 +807,9 @@ void QSslContext::applyBackendConfig(QSslContext *sslC
              sslContext->errorStr = msgErrorSettingBackendConfig(QSslSocket::tr("SSL_CONF_finish() failed"));
              sslContext->errorCode = QSslError::UnspecifiedError;
          }

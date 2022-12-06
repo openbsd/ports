@@ -280,6 +280,7 @@ lib/cmake/Qt6Designer/Qt6DesignerConfig.cmake
 lib/cmake/Qt6Designer/Qt6DesignerConfigVersion.cmake
 lib/cmake/Qt6Designer/Qt6DesignerConfigVersionImpl.cmake
 lib/cmake/Qt6Designer/Qt6DesignerDependencies.cmake
+lib/cmake/Qt6Designer/Qt6DesignerPlugins.cmake
 lib/cmake/Qt6Designer/Qt6DesignerTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Designer/Qt6DesignerTargets.cmake
 lib/cmake/Qt6Designer/Qt6DesignerVersionlessTargets.cmake
