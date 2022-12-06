@@ -6,7 +6,7 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	KDE digital photo and video management utility
 
-V =		7.8.0
+V =		7.9.0
 PKGNAME =	digikam-${V}
 DISTNAME =	digiKam-${V}
 CATEGORIES =	graphics
@@ -134,3 +134,7 @@ TEST_IS_INTERACTIVE =	X11
 MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
+
+.if ${USE_CCACHE:L} == "yes"
+CONFIGURE_ARGS +=	-DBUILD_WITH_CCACHE=0N
+.endif
