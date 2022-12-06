@@ -21,13 +21,13 @@ MODPY_SETUPTOOLS = Yes
 
 MODPY_ADJ_FILES = scripts/git-cvs
 
-BUILD_DEPENDS =	devel/py-nose
 RUN_DEPENDS=	devel/git \
-		devel/py-rcsparse
-TEST_DEPENDS=	${BUILD_DEPENDS}
+		devel/py-rcsparse${MODPY_FLAVOR}
+NO_TEST=	Yes
 
 # for regression tests:
 # cvs(1) insists on doing a chdir(2) to HOME before checkout
-PORTHOME =	${WRKDIR}
+#TEST_DEPENDS=	devel/py-nose${MODPY_FLAVOR}
+#PORTHOME =	${WRKDIR}
 
 .include <bsd.port.mk>

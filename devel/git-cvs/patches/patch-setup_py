@@ -1,0 +1,10 @@
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -17,5 +17,4 @@ setup(name='git-cvs',
+       # XXX: a fairly recent version is required, but rcsparse
+       # doesn't maintain a package version
+       requires=['rcsparse'],
+-      test_suite='nose.collector',
+-      setup_requires=['nose>=1.0'])
++      test_suite='nose.collector')
