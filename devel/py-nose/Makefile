@@ -1,36 +1,28 @@
-COMMENT=		discovery-based unittest extension
+COMMENT=	discovery-based unittest extension
 
 MODPY_EGG_VERSION=	1.3.7
-DISTNAME=		nose-${MODPY_EGG_VERSION}
-PKGNAME=		py-${DISTNAME}
-CATEGORIES=		devel
-REVISION=		13
+DISTNAME=	nose-${MODPY_EGG_VERSION}
+PKGNAME=	py-${DISTNAME}
+CATEGORIES=	devel
+REVISION=	14
 
-HOMEPAGE=		https://nose.readthedocs.io/en/latest/
+HOMEPAGE=	https://nose.readthedocs.io/en/latest/
 
 # LGPL
 PERMIT_PACKAGE=	Yes
 
-MODPY_PI =		Yes
+MODULES=	lang/python
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools
 
-MODULES=		lang/python
+FLAVORS=	python3
+FLAVOR=		python3
 
-FLAVORS=		python3
-FLAVOR?=
+# tests not ported to python 3
+NO_TEST=	Yes
 
-.if ${FLAVOR:Mpython3}
-TEST_DEPENDS=		${FULLPKGNAME}:devel/py-nose${MODPY_FLAVOR} \
-			devel/py-coverage${MODPY_FLAVOR}
-.else
-NO_TEST=		Yes
-.endif
-
-MODPY_SETUPTOOLS=	Yes
-
-.if ${FLAVOR:Mpython3}
 post-patch:
 	cd ${WRKSRC} && 2to3 --no-diffs -w nose
-.endif
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${MODPY_PY_PREFIX}nose
@@ -45,10 +37,5 @@ post-install:
 		${PREFIX}/bin/nosetests${MODPY_BIN_SUFFIX}
 	mv ${PREFIX}/man/man1/nosetests.1 \
 		${PREFIX}/man/man1/nosetests${MODPY_BIN_SUFFIX}.1
-
-
-do-test:
-	cd ${WRKSRC}/functional_tests && nosetests -v
-	cd ${WRKSRC}/unit_tests && nosetests -v
 
 .include <bsd.port.mk>
