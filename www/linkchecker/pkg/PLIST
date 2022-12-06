@@ -1,15 +1,12 @@
 @pkgpath www/linkchecker
 bin/linkchecker
 lib/python${MODPY_VERSION}/site-packages/LinkChecker-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/LinkChecker-${MODPY_EGG_VERSION}.dist-info/COPYING
 lib/python${MODPY_VERSION}/site-packages/LinkChecker-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/LinkChecker-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/LinkChecker-${MODPY_EGG_VERSION}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/LinkChecker-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/LinkChecker-${MODPY_EGG_VERSION}.dist-info/top_level.txt
-lib/python${MODPY_VERSION}/site-packages/_LinkChecker_configdata.py
-lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}_LinkChecker_configdata.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}_LinkChecker_configdata.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/LinkChecker-${MODPY_EGG_VERSION}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/LinkChecker-${MODPY_EGG_VERSION}.dist-info/licenses/COPYING
 lib/python${MODPY_VERSION}/site-packages/linkcheck/
 lib/python${MODPY_VERSION}/site-packages/linkcheck/__init__.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/__main__.py
@@ -18,6 +15,8 @@ lib/python${MODPY_VERSION}/site-packages/linkcheck/${MODPY_PYCACHE}__init__.${MO
 lib/python${MODPY_VERSION}/site-packages/linkcheck/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/linkcheck/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/linkcheck/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/linkcheck/${MODPY_PYCACHE}_release.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/linkcheck/${MODPY_PYCACHE}_release.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/linkcheck/${MODPY_PYCACHE}ansicolor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/linkcheck/${MODPY_PYCACHE}ansicolor.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/linkcheck/${MODPY_PYCACHE}better_exchook2.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -68,6 +67,7 @@ lib/python${MODPY_VERSION}/site-packages/linkcheck/${MODPY_PYCACHE}trace.${MODPY
 lib/python${MODPY_VERSION}/site-packages/linkcheck/${MODPY_PYCACHE}trace.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/linkcheck/${MODPY_PYCACHE}url.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/linkcheck/${MODPY_PYCACHE}url.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/linkcheck/_release.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/ansicolor.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/better_exchook2.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/bookmarks/
@@ -171,6 +171,25 @@ lib/python${MODPY_VERSION}/site-packages/linkcheck/configuration/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/linkcheck/configuration/confparse.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/containers.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/cookies.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/data/
+lib/python${MODPY_VERSION}/site-packages/linkcheck/data/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/linkcheck/data/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/linkcheck/data/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/linkcheck/data/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/linkcheck/data/linkcheckerrc
+lib/python${MODPY_VERSION}/site-packages/linkcheck/data/locale/
+lib/python${MODPY_VERSION}/site-packages/linkcheck/data/locale/de/
+lib/python${MODPY_VERSION}/site-packages/linkcheck/data/locale/de/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/linkcheck/data/locale/de/LC_MESSAGES/linkchecker.mo
+lib/python${MODPY_VERSION}/site-packages/linkcheck/data/locale/es/
+lib/python${MODPY_VERSION}/site-packages/linkcheck/data/locale/es/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/linkcheck/data/locale/es/LC_MESSAGES/linkchecker.mo
+lib/python${MODPY_VERSION}/site-packages/linkcheck/data/locale/fr/
+lib/python${MODPY_VERSION}/site-packages/linkcheck/data/locale/fr/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/linkcheck/data/locale/fr/LC_MESSAGES/linkchecker.mo
+lib/python${MODPY_VERSION}/site-packages/linkcheck/data/locale/nl_NL/
+lib/python${MODPY_VERSION}/site-packages/linkcheck/data/locale/nl_NL/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/linkcheck/data/locale/nl_NL/LC_MESSAGES/linkchecker.mo
 lib/python${MODPY_VERSION}/site-packages/linkcheck/decorators.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/director/
 lib/python${MODPY_VERSION}/site-packages/linkcheck/director/__init__.py
@@ -212,9 +231,12 @@ lib/python${MODPY_VERSION}/site-packages/linkcheck/htmlutil/${MODPY_PYCACHE}link
 lib/python${MODPY_VERSION}/site-packages/linkcheck/htmlutil/${MODPY_PYCACHE}linkparse.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/linkcheck/htmlutil/${MODPY_PYCACHE}loginformsearch.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/linkcheck/htmlutil/${MODPY_PYCACHE}loginformsearch.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/linkcheck/htmlutil/${MODPY_PYCACHE}srcsetparse.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/linkcheck/htmlutil/${MODPY_PYCACHE}srcsetparse.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/linkcheck/htmlutil/htmlsoup.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/htmlutil/linkparse.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/htmlutil/loginformsearch.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/htmlutil/srcsetparse.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/httputil.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/i18n.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/lc_cgi.py
@@ -325,23 +347,29 @@ lib/python${MODPY_VERSION}/site-packages/linkcheck/strformat.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/threader.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/trace.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/url.py
+man/de/
+man/de/man1/
+@man man/de/man1/linkchecker.1
+man/de/man5/
+@man man/de/man5/linkcheckerrc.5
 @man man/man1/linkchecker.1
 @man man/man5/linkcheckerrc.5
 @comment share/applications/
 @comment share/applications/linkchecker.desktop
 share/examples/linkchecker/
+share/examples/linkchecker/cgi-bin/
+share/examples/linkchecker/cgi-bin/lc.wsgi
+share/examples/linkchecker/cgi-bin/lconline/
+share/examples/linkchecker/cgi-bin/lconline/check.js
+share/examples/linkchecker/cgi-bin/lconline/index.html
+share/examples/linkchecker/cgi-bin/lconline/lc_cgi.html.de
+share/examples/linkchecker/cgi-bin/lconline/lc_cgi.html.en
+share/examples/linkchecker/cgi-bin/lconline/leer.html.de
+share/examples/linkchecker/cgi-bin/lconline/leer.html.en
 share/examples/linkchecker/check_failures.sh
 share/examples/linkchecker/check_for_x_errors.sh
 share/examples/linkchecker/check_urls.sh
-share/examples/linkchecker/linkchecker-completion
-share/linkchecker/
-share/linkchecker/examples/
-share/linkchecker/examples/check.js
-share/linkchecker/examples/index.html
-share/linkchecker/examples/lc.wsgi
-share/linkchecker/examples/lc_cgi.html.de
-share/linkchecker/examples/lc_cgi.html.en
-share/linkchecker/examples/leer.html.de
-share/linkchecker/examples/leer.html.en
-share/linkchecker/examples/linkchecker.apache2.conf
-share/linkchecker/linkcheckerrc
+share/examples/linkchecker/config/
+share/examples/linkchecker/config/create.sql
+share/examples/linkchecker/config/linkchecker-completion
+share/examples/linkchecker/config/linkchecker.apache2.conf
