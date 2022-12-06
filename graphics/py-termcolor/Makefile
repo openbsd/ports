@@ -18,10 +18,8 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_PYBUILD =		hatchling
+MODPY_PYBUILD =		hatch-vcs
 FLAVOR =		python3
 FLAVORS =		python3
-
-BUILD_DEPENDS =		devel/py-hatch-vcs${MODPY_FLAVOR}
 
 .include <bsd.port.mk>

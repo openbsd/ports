@@ -17,9 +17,7 @@ FLAVORS =		python3
 FLAVOR =		python3
 
 MODULES =		lang/python
-MODPY_PYBUILD =		hatchling
+MODPY_PYBUILD =		hatch-vcs
 NO_TEST =		Yes
-
-BUILD_DEPENDS =		devel/py-hatch-vcs${MODPY_FLAVOR}
 
 .include <bsd.port.mk>

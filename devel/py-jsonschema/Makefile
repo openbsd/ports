@@ -14,15 +14,14 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_PYBUILD =		hatchling
+MODPY_PYBUILD =		hatch-vcs
 MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	jsonschema
 
 FLAVORS =		python3
 FLAVOR =		python3
 
-BUILD_DEPENDS =		devel/py-hatch-vcs${MODPY_FLAVOR} \
-			devel/py-hatch-fancy-pypi-readme${MODPY_FLAVOR}
+BUILD_DEPENDS =		devel/py-hatch-fancy-pypi-readme${MODPY_FLAVOR}
 
 RUN_DEPENDS =		devel/py-attrs${MODPY_FLAVOR} \
 			devel/py-pyrsistent${MODPY_FLAVOR}

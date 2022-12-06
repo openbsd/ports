@@ -15,10 +15,9 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 MODPY_PI=	Yes
-MODPY_PYBUILD=	hatchling
+MODPY_PYBUILD=	hatch-vcs
 
-BUILD_DEPENDS=	devel/py-hatch-fancy-pypi-readme${MODPY_FLAVOR} \
-		devel/py-hatch-vcs${MODPY_FLAVOR}
+BUILD_DEPENDS=	devel/py-hatch-fancy-pypi-readme${MODPY_FLAVOR}
 
 RUN_DEPENDS=	devel/py-click${MODPY_FLAVOR} \
 		devel/py-mypy-extensions${MODPY_FLAVOR} \
