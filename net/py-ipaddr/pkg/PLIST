@@ -1,3 +1,0 @@
-lib/python${MODPY_VERSION}/site-packages/ipaddr-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
-lib/python${MODPY_VERSION}/site-packages/ipaddr.py
-lib/python${MODPY_VERSION}/site-packages/ipaddr.pyc

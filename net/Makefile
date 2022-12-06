@@ -567,7 +567,6 @@
      SUBDIR += py-idna,python3
      SUBDIR += py-ifaddr,python3
      SUBDIR += py-impacket,python3
-     SUBDIR += py-ipaddr
      SUBDIR += py-irclib,python3
      SUBDIR += py-junos-eznc,python3
      SUBDIR += py-libcloud,python3
