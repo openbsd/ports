@@ -55,14 +55,14 @@ DEBUG_PACKAGES ?=	-main -gdbm -tkinter
 .endif
 
 COMPILER =		base-clang ports-gcc base-gcc
+COMPILER_LANGS =	c
 
 # All subpackages depend on the main python package.
 
 RUN_DEPENDS =		${FULLPKGNAME-main}:lang/python/${VERSION},-main
 LIB_DEPENDS =
 
-LIB_DEPENDS-main +=	${MODGCC4_CPPLIBDEP} \
-			archivers/bzip2 \
+LIB_DEPENDS-main +=	archivers/bzip2 \
 			databases/sqlite3 \
 			devel/libffi \
 			devel/gettext,-runtime

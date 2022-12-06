@@ -8,6 +8,7 @@ SHARED_LIBS =		python3.10 0.0
 VERSION_SPEC =		>=3.10,<3.11
 PORTROACH =		limit:^3\.10
 REVISION =		3
+REVISION-main =		4
 REVISION-tests =	4
 
 # -tkinter in 7.2-stable must be kept a higher version than 7.1-stable

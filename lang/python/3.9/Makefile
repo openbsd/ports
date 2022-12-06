@@ -7,7 +7,7 @@ FULL_VERSION =		3.9.15
 SHARED_LIBS =		python3.9 0.0
 VERSION_SPEC =		>=3.9,<3.10
 PORTROACH =		limit:^3\.9
-REVISION-main =		3
+REVISION-main =		4
 REVISION-idle =		0
 
 # -tkinter in 7.2-stable must be kept a higher version than 7.1-stable
