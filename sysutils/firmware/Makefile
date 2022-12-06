@@ -15,6 +15,7 @@
      SUBDIR += acx
      SUBDIR += amdgpu
      SUBDIR += apple-boot
+     SUBDIR += arm64-qcom-dtb
      SUBDIR += athn
      SUBDIR += bwfm
      SUBDIR += bwi
