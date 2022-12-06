@@ -1,3 +1,5 @@
+BROKEN-sparc64 = SIGBUS due to unaligned access when running tests
+
 COMMENT =	journaling archiver for incremental backup, fork of ZPAQ
 
 GH_ACCOUNT =	fcorbelli
@@ -18,7 +20,7 @@ USE_WXNEEDED =	Yes
 
 do-build:
 	cd ${WRKSRC} && ${SET_ENV} ${MAKE_ENV} \
-		${CXX} ${CXXFLAGS} -Dunix -o zpaqfranz zpaqfranz.cpp -lm
+	    ${CXX} ${CXXFLAGS} -Dunix -o zpaqfranz zpaqfranz.cpp -lm -lpthread
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/zpaqfranz ${PREFIX}/bin/
