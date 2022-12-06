@@ -32,6 +32,9 @@ MODULES=		devel/meson \
 
 MODGNOME_TOOLS=		docbook
 
+# Tests in cpp.cxx now require C++11
+COMPILER=		base-clang ports-gcc
+
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 # meson: have_bash, needed to install bash-completion snippets
