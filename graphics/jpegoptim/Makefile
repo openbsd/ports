@@ -1,17 +1,15 @@
 COMMENT =	utility to optimize jpeg files
 
-DISTNAME =	jpegoptim-1.4.6
+GH_ACCOUNT =	tjko
+GH_PROJECT =	jpegoptim
+GH_TAGNAME =	v1.5.0
 
 CATEGORIES =	graphics
-
-HOMEPAGE =	https://www.kokkonen.net/tjko/projects.html
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c jpeg m
-
-MASTER_SITES =		https://www.kokkonen.net/tjko/src/
 
 LIB_DEPENDS =		graphics/jpeg
 
