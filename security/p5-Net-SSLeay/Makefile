@@ -1,7 +1,7 @@
 COMMENT =	Perl bindings for OpenSSL and LibreSSL
 
 DISTNAME =	Net-SSLeay-1.92
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	security
 

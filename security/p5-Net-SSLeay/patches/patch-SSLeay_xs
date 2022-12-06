@@ -1,3 +1,4 @@
+https://github.com/radiator-software/p5-net-ssleay/pull/406
 https://github.com/radiator-software/p5-net-ssleay/commit/3dd2f101b8e15a59f66e22525b8d001d5ad6ce7d
 https://github.com/radiator-software/p5-net-ssleay/commit/4a886e06c1cac80e7fb3f8d52146a27ce557ba8c
 https://github.com/radiator-software/p5-net-ssleay/commit/88c3bbc45399c8ef2c8879aada8bfa91d8bc6c10
@@ -14,7 +15,47 @@ Index: SSLeay.xs
  {
      return p_bn != NULL
          ? sv_2mortal(newSViv((IV) BN_dup(p_bn)))
-@@ -6283,9 +6283,29 @@ RSA_generate_key(bits,e,perl_cb=&PL_sv_undef,perl_data
+@@ -4157,6 +4157,7 @@ P_X509_get_crl_distribution_points(cert)
+                 */
+             }
+         }
++        sk_DIST_POINT_pop_free(points, DIST_POINT_free);
+ 
+ void
+ P_X509_get_ocsp_uri(cert)
+@@ -4178,6 +4179,7 @@ P_X509_get_ocsp_uri(cert)
+ 		if (GIMME == G_SCALAR) break; /* get only first */
+ 	    }
+ 	}
++	AUTHORITY_INFO_ACCESS_free(info);
+ 
+ 
+ void
+@@ -4204,6 +4206,7 @@ P_X509_get_ext_key_usage(cert,format=0)
+            else if(format==3 && nid>0)
+                XPUSHs(sv_2mortal(newSVpv(OBJ_nid2ln(nid),0))); /* format 3: longname */
+         }
++        EXTENDED_KEY_USAGE_free(extusage);
+ 
+ #endif
+ 
+@@ -4224,6 +4227,7 @@ P_X509_get_key_usage(cert)
+             if (ASN1_BIT_STRING_get_bit(u,6)) XPUSHs(sv_2mortal(newSVpv("cRLSign",0)));
+             if (ASN1_BIT_STRING_get_bit(u,7)) XPUSHs(sv_2mortal(newSVpv("encipherOnly",0)));
+             if (ASN1_BIT_STRING_get_bit(u,8)) XPUSHs(sv_2mortal(newSVpv("decipherOnly",0)));
++            ASN1_BIT_STRING_free(u);
+         }
+ 
+ void
+@@ -4242,6 +4246,7 @@ P_X509_get_netscape_cert_type(cert)
+             if (ASN1_BIT_STRING_get_bit(u,5)) XPUSHs(sv_2mortal(newSVpv("sslCA",0)));
+             if (ASN1_BIT_STRING_get_bit(u,6)) XPUSHs(sv_2mortal(newSVpv("emailCA",0)));
+             if (ASN1_BIT_STRING_get_bit(u,7)) XPUSHs(sv_2mortal(newSVpv("objCA",0)));
++            ASN1_BIT_STRING_free(u);
+         }
+ 
+ int
+@@ -6283,9 +6288,29 @@ RSA_generate_key(bits,e,perl_cb=&PL_sv_undef,perl_data
  void
  RSA_get_key_parameters(rsa)
  	    RSA * rsa
@@ -44,7 +85,7 @@ Index: SSLeay.xs
      XPUSHs(bn2sv(rsa->n));
      XPUSHs(bn2sv(rsa->e));
      XPUSHs(bn2sv(rsa->d));
-@@ -6294,9 +6314,10 @@ PPCODE:
+@@ -6294,9 +6319,10 @@ PPCODE:
      XPUSHs(bn2sv(rsa->dmp1));
      XPUSHs(bn2sv(rsa->dmq1));
      XPUSHs(bn2sv(rsa->iqmp));
@@ -56,7 +97,7 @@ Index: SSLeay.xs
  
  void
  RSA_free(r)
-@@ -7197,7 +7218,7 @@ ASN1_OBJECT *
+@@ -7197,7 +7223,7 @@ ASN1_OBJECT *
  P_X509_get_signature_alg(x)
          X509 * x
      CODE:
@@ -65,7 +106,7 @@ Index: SSLeay.xs
          RETVAL = (X509_get0_tbs_sigalg(x)->algorithm);
  #else
          RETVAL = (x->cert_info->signature->algorithm);
-@@ -7690,7 +7711,7 @@ OCSP_response_results(rsp,...)
+@@ -7690,7 +7716,7 @@ OCSP_response_results(rsp,...)
  		if (!idsv) {
  		    /* getall: create new SV with OCSP_CERTID */
  		    unsigned char *pi,*pc;
@@ -74,7 +115,7 @@ Index: SSLeay.xs
  		    int len = i2d_OCSP_CERTID((OCSP_CERTID *)OCSP_SINGLERESP_get0_id(sir),NULL);
  #else
  		    int len = i2d_OCSP_CERTID(sir->certId,NULL);
-@@ -7699,7 +7720,7 @@ OCSP_response_results(rsp,...)
+@@ -7699,7 +7725,7 @@ OCSP_response_results(rsp,...)
  		    Newx(pc,len,unsigned char);
  		    if (!pc) croak("out of memory");
  		    pi = pc;
