@@ -3,50 +3,15 @@ DISTNAME=	automake-${VERSION}.6
 REVISION=	12
 PKGSPEC=	automake->=${VERSION},<1.10
 
-MODULES=		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
-
-MODPY_BUILDDEP=		No
-MODPY_RUNDEP=		No
+MODPY_VERSION=	${MODPY_DEFAULT_VERSION_2}
 
 AUTOCONF_VERSION=	2.59
 
-BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS}
-
-CONFIGURE_STYLE=	gnu
-MAKE_ENV +=		AUTOCONF_VERSION=${AUTOCONF_VERSION}
-CONFIGURE_ENV +=	AUTOCONF_VERSION=${AUTOCONF_VERSION}
-
-CONFIGURE_ARGS=		--infodir=${PREFIX}/info
-MAKE_FLAGS+=		pkgvdatadir=${PREFIX}/share/automake${SUFFIX} \
-			APIVERSION=${VERSION}
-
-TEST_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
-			${MODPY_RUN_DEPENDS} \
-			devel/libtool \
-			devel/gmake \
-			archivers/bzip2 \
-			devel/bison \
-			emacs->=24:editors/emacs \
-			print/texlive/base \
-			devel/dejagnu
-
-TEST_ENV=		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-			MAKE=${GMAKE}
+# XXX why was this listed for 1.9 but not other versions?
+TEST_DEPENDS=	print/texlive/base
 
 post-patch:
 	cd ${WRKSRC}; touch aclocal.m4 Makefile.in configure
-
-do-test:
-	    ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
-	    @cd ${WRKBUILD} && \
-	    	exec ${SETENV} ${MAKE_ENV} ${TEST_ENV} \
-		    ${MAKE_PROGRAM} ${ALL_TEST_FLAGS} -f ${MAKE_FILE} \
-		    ${TEST_TARGET}
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/doc/automake.texi
 
 post-install:
 	cd ${PREFIX}/info && mv automake.info automake${SUFFIX}.info

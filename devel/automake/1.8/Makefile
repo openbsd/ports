@@ -5,22 +5,11 @@ PKGSPEC=	automake->=${VERSION},<1.9
 
 AUTOCONF_VERSION=	2.59
 
-BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS}
+SUFFIX=		-${VERSION}
+MAKE_FLAGS +=	MAKEINFO="makeinfo --no-split"
 
-SUFFIX=			-${VERSION}
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV +=	AUTOCONF_VERSION=${AUTOCONF_VERSION}
-MAKE_FLAGS+=		MAKEINFO="makeinfo --no-split" \
-			pkgvdatadir=${PREFIX}/share/automake${SUFFIX} \
-			APIVERSION=${VERSION}
-
-TEST_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
-			devel/libtool
-TEST_FLAGS=		AUTOCONF_VERSION=${AUTOCONF_VERSION}
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/doc/automake.texi
+TEST_DEPENDS=	devel/libtool
+TEST_FLAGS=	AUTOCONF_VERSION=${AUTOCONF_VERSION}
 
 post-install:
 	cd ${PREFIX}/info && mv automake.info automake${SUFFIX}.info
