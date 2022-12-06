@@ -11,6 +11,6 @@ REVISION-main =		1
 
 CONFIGURE_ENV +=	ac_cv_working_openssl_hashlib=yes \
 	TCLTK_CFLAGS="-I${MODTCL_INCDIR} -I${MODTK_INCDIR} -I${X11BASE}/include" \
-	TCLTK_LIBS="-L${X11BASE}/lib -l${MODTCL_LIB} -l${MODTK_LIB}"
+	TCLTK_LIBS="-L${X11BASE}/lib -l${MODTCL_LIB} -l${MODTK_LIB} -lpthread"
 
 .include <bsd.port.mk>
