@@ -224,8 +224,7 @@ BUILD_DEPENDS +=	devel/py-setuptools${MODPY_FLAVOR} \
 BUILD_DEPENDS +=	devel/py-setuptools_scm${MODPY_FLAVOR}
 .    endif
 .  elif !${MODPY_PYBUILD:L:Myes}
-ERRORS +=		"Fatal: unknown MODPY_PYBUILD value (flit_core, flit,
-hatchling, hatch-vcs, poetry-core, setuptools, setuptools_scm)"
+ERRORS +=		"Fatal: unknown MODPY_PYBUILD value (flit_core, flit, hatchling, hatch-vcs, poetry-core, setuptools, setuptools_scm)"
 .  endif
 .else
 # Try to detect the case where a port will build regardless of setuptools
