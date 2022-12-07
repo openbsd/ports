@@ -1,0 +1,55 @@
+Index: Telegram/SourceFiles/platform/linux/notifications_manager_linux.cpp
+--- Telegram/SourceFiles/platform/linux/notifications_manager_linux.cpp.orig
++++ Telegram/SourceFiles/platform/linux/notifications_manager_linux.cpp
+@@ -67,12 +67,17 @@ std::unique_ptr<base::Platform::DBus::ServiceWatcher> 
+ 	try {
+ 		const auto connection = Gio::DBus::Connection::get_sync(
+ 			Gio::DBus::BusType::SESSION);
++		const auto GlibNames =
++			base::Platform::DBus::ListActivatableNames(connection);
++		const std::vector<std::string> StringNames(
++			GlibNames.begin(), GlibNames.end()
++		);
+ 
+ 		const auto activatable = [&] {
+ 			try {
+ 				return ranges::contains(
+-					base::Platform::DBus::ListActivatableNames(connection),
+-					Glib::ustring(std::string(kService)));
++					StringNames,
++					std::string(kService));
+ 			} catch (...) {
+ 				// avoid service restart loop in sandboxed environments
+ 				return true;
+@@ -121,7 +126,7 @@ void StartServiceAsync(Fn<void()> callback) {
+ 						};
+ 
+ 						const auto errorName =
+-							Gio::DBus::ErrorUtils::get_remote_error(e);
++							Gio::DBus::ErrorUtils::get_remote_error(e).raw();
+ 
+ 						if (!ranges::contains(NotSupportedErrors, errorName)) {
+ 							throw e;
+@@ -143,6 +148,11 @@ bool GetServiceRegistered() {
+ 	try {
+ 		const auto connection = Gio::DBus::Connection::get_sync(
+ 			Gio::DBus::BusType::SESSION);
++		const auto GlibNames =
++			base::Platform::DBus::ListActivatableNames(connection);
++		const std::vector<std::string> StringNames(
++			GlibNames.begin(), GlibNames.end()
++		);
+ 
+ 		const auto hasOwner = [&] {
+ 			try {
+@@ -157,8 +167,8 @@ bool GetServiceRegistered() {
+ 		static const auto activatable = [&] {
+ 			try {
+ 				return ranges::contains(
+-					DBus::ListActivatableNames(connection),
+-					Glib::ustring(std::string(kService)));
++					StringNames,
++					std::string(kService));
+ 			} catch (...) {
+ 				return false;
+ 			}

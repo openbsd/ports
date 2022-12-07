@@ -5,11 +5,10 @@ NOT_FOR_ARCHS =		${BE_ARCHS} i386
 
 COMMENT =		Telegram Desktop messenger
 PORTROACH =		limit:-full$$
-V =			4.2.4
+V =			4.3.1
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
-REVISION =		1
 
 DPB_PROPERTIES =	parallel
 
@@ -27,9 +26,9 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt6Core Qt6Core5Compat Qt6DBus Qt6Gui Qt6Network
 WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6Svg Qt6Widgets absl_strings
-WANTLIB += avcodec avformat avutil c crypto dispatch gio-2.0 giomm-2.4
-WANTLIB += glib-2.0 glibmm-2.4 gobject-2.0 hunspell-1.7 jpeg lz4
-WANTLIB += m openal qrcodegencpp rnnoise sigc-2.0 swresample swscale
+WANTLIB += avcodec avformat avutil c crypto dispatch gio-2.0 giomm-2.68
+WANTLIB += glib-2.0 glibmm-2.68 gobject-2.0 hunspell-1.7 jpeg lz4
+WANTLIB += m openal qrcodegencpp rnnoise sigc-3.0 swresample swscale
 WANTLIB += tg_owt xcb xcb-keysyms xcb-record xcb-screensaver xxhash
 WANTLIB += z
 
@@ -52,9 +51,9 @@ LIB_DEPENDS =		archivers/lz4 \
 			audio/openal \
 			devel/abseil-cpp \
 			devel/glib2 \
-			devel/glib2mm \
+			devel/glibmm268 \
 			devel/libdispatch \
-			devel/libsigc++-2 \
+			devel/libsigc++30 \
 			graphics/ffmpeg \
 			graphics/qr-code-generator>=1.7.0p1 \
 			net/tg_owt>=0.0.0.20220909 \
