@@ -1,29 +1,27 @@
-COMMENT =	quality TLS certs while you wait, for the discerning
+COMMENT=	quality TLS certs while you wait, for the discerning
 
-MODPY_EGG_VERSION =	0.7.0
+MODPY_EGG_VERSION=	0.9.0
 
-DISTNAME =	trustme-${MODPY_EGG_VERSION}
-PKGNAME =	py-${DISTNAME}
-REVISION =	2
+DISTNAME=	trustme-${MODPY_EGG_VERSION}
+PKGNAME=	py-${DISTNAME}
 
-CATEGORIES =	security devel
+CATEGORIES=	security devel
 
-HOMEPAGE =	https://github.com/python-trio/trustme
+HOMEPAGE=	https://github.com/python-trio/trustme
 
 # Either MIT or Apache License 2.0
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
+MODULES=	lang/python
 
-MODPY_PI =		Yes
-MODPY_PYBUILD =	setuptools
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools
 
-FLAVORS =	python3
-FLAVOR =	python3
+FLAVORS=	python3
+FLAVOR=		python3
 
-RUN_DEPENDS =	net/py-idna${MODPY_FLAVOR} \
+RUN_DEPENDS=	net/py-idna${MODPY_FLAVOR} \
 		security/py-cryptography${MODPY_FLAVOR} \
-		security/py-openssl${MODPY_FLAVOR} \
-		security/py-service_identity${MODPY_FLAVOR}
+		security/py-openssl${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
