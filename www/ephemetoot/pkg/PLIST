@@ -1,5 +1,5 @@
 bin/ephemetoot
-lib/python${MODPY_VERSION}/site-packages/LICENSE
+@comment lib/python${MODPY_VERSION}/site-packages/LICENSE
 lib/python${MODPY_VERSION}/site-packages/ephemetoot/
 lib/python${MODPY_VERSION}/site-packages/ephemetoot-${MODPY_EGG_VERSION}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/ephemetoot-${MODPY_EGG_VERSION}.dist-info/LICENSE
