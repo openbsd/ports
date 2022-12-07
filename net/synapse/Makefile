@@ -1,7 +1,6 @@
 COMMENT =	open network for secure, decentralized communication
 
-MODPY_EGG_VERSION =	1.70.1
-REVISION =	3
+MODPY_EGG_VERSION =	1.73.0
 
 GH_ACCOUNT =	matrix-org
 GH_PROJECT =	synapse
