@@ -1,9 +1,8 @@
 COMMENT =		platform independent file lock
 
-MODPY_EGG_VERSION =	3.8.0
+MODPY_EGG_VERSION =	3.8.2
 DISTNAME =		filelock-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		sysutils
 
@@ -18,7 +17,8 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools_scm
 MODPY_PYTEST =		Yes
 
-TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH} \
+#TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH} 
+TEST_DEPENDS =		\
 			devel/py-test-cov${MODPY_FLAVOR} \
 			devel/py-test-timeout${MODPY_FLAVOR}
 
