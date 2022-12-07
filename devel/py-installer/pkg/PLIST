@@ -41,6 +41,7 @@ lib/python${MODPY_VERSION}/site-packages/installer/_scripts/${MODPY_PYCACHE}__in
 @comment lib/python${MODPY_VERSION}/site-packages/installer/_scripts/w_arm.exe
 lib/python${MODPY_VERSION}/site-packages/installer/destinations.py
 lib/python${MODPY_VERSION}/site-packages/installer/exceptions.py
+lib/python${MODPY_VERSION}/site-packages/installer/py.typed
 lib/python${MODPY_VERSION}/site-packages/installer/records.py
 lib/python${MODPY_VERSION}/site-packages/installer/scripts.py
 lib/python${MODPY_VERSION}/site-packages/installer/sources.py

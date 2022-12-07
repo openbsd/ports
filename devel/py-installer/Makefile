@@ -1,10 +1,9 @@
 COMMENT =	low-level library to install Python wheel distributions
 
-MODPY_EGG_VERSION =	0.5.1
+MODPY_EGG_VERSION =	0.6.0
 
 DISTNAME =	installer-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
 
 CATEGORIES =	devel
 
