@@ -7,6 +7,8 @@ GH_TAGNAME=	upstream/$V
 DISTNAME=	uacme-$V
 WRKDIST=	${WRKDIR}/uacme-upstream-$V
 
+REVISION=	0
+
 CATEGORIES=	security www
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>

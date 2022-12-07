@@ -1,0 +1,48 @@
+Don't use process-shared semaphores unless multiple workers are used;
+OpenBSD's implementation doesn't support them.
+
+Default to using a single worker, so that extra flags aren't needed
+to make this work.
+
+Index: ualpn.c
+--- ualpn.c.orig
++++ ualpn.c
+@@ -328,7 +328,11 @@ static struct globs {
+     .logfile = NULL,
+     .family = AF_UNSPEC,
+     .proxy = 1,
++#ifdef __OpenBSD__
++    .num_workers = 1,
++#else
+     .num_workers = 2,
++#endif
+     .max_auths = 100,
+     .progname = NULL,
+     .chroot = NULL,
+@@ -4072,6 +4076,7 @@ int main(int argc, char **argv)
+     mode_t mask;
+     struct rlimit rl;
+     bool server_mode = false;
++    int needs_pshared = 0;
+ 
+     g.argv = argv;
+ 
+@@ -4696,12 +4701,16 @@ int main(int argc, char **argv)
+     memset(g_shm, 0, g_shm_size);
+     for (size_t n = 0; n < g.max_auths; n++)
+         SGLIB_DL_LIST_ADD(auth_t, g_shm->avail, g_shm->pool + n, left, right);
+-    if (sem_init(&g_shm->sem, 1, 1)) {
++
++    if (g.num_workers > 1)
++        needs_pshared = 1;
++
++    if (sem_init(&g_shm->sem, needs_pshared, 1)) {
+         err("sem_init failed");
+         cleanup_and_exit(2, EXIT_FAILURE);
+     }
+ 
+-    if (sem_init(&g_shm->logsem, 1, 1)) {
++    if (sem_init(&g_shm->logsem, needs_pshared, 1)) {
+         err("sem_init failed");
+         cleanup_and_exit(3, EXIT_FAILURE);
+     }
