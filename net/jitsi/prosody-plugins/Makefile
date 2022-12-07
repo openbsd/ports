@@ -2,11 +2,11 @@ COMMENT =	prosody modules for Jitsi Meet
 
 CATEGORIES =	net
 
-PKGNAME =	jitsi-prosody-plugins-2.0.7882
+PKGNAME =	jitsi-prosody-plugins-2.0.8044
 
 GH_ACCOUNT =	jitsi
 GH_PROJECT =	jitsi-meet
-GH_TAGNAME =	jitsi-meet_7882
+GH_TAGNAME =	jitsi-meet_8044
 
 MAINTAINER =	Philipp Buehler <pb-openbsd@sysfive.com>, \
 		Aisha Tammy <openbsd@aisha.cc>
