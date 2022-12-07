@@ -1,6 +1,6 @@
 COMMENT =		library providing an API for accessing packages metadata
 
-MODPY_EGG_VERSION =	5.0.0
+MODPY_EGG_VERSION =	5.1.0
 DISTNAME =		importlib_metadata-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
