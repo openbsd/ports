@@ -92,7 +92,7 @@ NO_TEST =		Yes
 NEEDED_BUNDLES +=	minizip
 # fix Telegram/ThirdParty/minizip/ioapi.c build: off_t is always 64 bit,
 # no need for ftello64()
-# see upstream "Avoid f*64() on BSDs" https://github.com/madler/zlib/pull/678
+# fixed in zlib 1.2.13 (40c5a9bc06c5b0746aab270971c8cc546e3d5fc7)
 CFLAGS +=		-DIOAPI_NO_64
 
 # unported and required
