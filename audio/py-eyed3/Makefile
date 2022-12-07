@@ -1,19 +1,17 @@
 COMMENT=	module and program for processing ID3 tags
 
 # standalone software - intentionally no py-* prefix/FLAVOR.
-MODPY_EGG_VERSION=	0.9.6
+MODPY_EGG_VERSION=	0.9.7
 DISTNAME=	eyeD3-${MODPY_EGG_VERSION}
 CATEGORIES=	audio
-REVISION=	5
 
 HOMEPAGE=	https://eyed3.readthedocs.io/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${HOMEPAGE}releases/
-
 MODULES=	lang/python
+MODPY_PI=	Yes
 MODPY_PYBUILD=	poetry-core
 RUN_DEPENDS=	devel/py-deprecation${MODPY_FLAVOR} \
 		devel/py-filetype${MODPY_FLAVOR}

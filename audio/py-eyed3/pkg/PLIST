@@ -56,14 +56,10 @@ lib/python${MODPY_VERSION}/site-packages/eyed3/plugins/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/eyed3/plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/eyed3/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/eyed3/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/eyed3/plugins/${MODPY_PYCACHE}_display_parser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/eyed3/plugins/${MODPY_PYCACHE}_display_parser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/eyed3/plugins/${MODPY_PYCACHE}art.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/eyed3/plugins/${MODPY_PYCACHE}art.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/eyed3/plugins/${MODPY_PYCACHE}classic.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/eyed3/plugins/${MODPY_PYCACHE}classic.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/eyed3/plugins/${MODPY_PYCACHE}display.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/eyed3/plugins/${MODPY_PYCACHE}display.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/eyed3/plugins/${MODPY_PYCACHE}extract.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/eyed3/plugins/${MODPY_PYCACHE}extract.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/eyed3/plugins/${MODPY_PYCACHE}fixup.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -90,10 +86,8 @@ lib/python${MODPY_VERSION}/site-packages/eyed3/plugins/${MODPY_PYCACHE}xep_118.$
 lib/python${MODPY_VERSION}/site-packages/eyed3/plugins/${MODPY_PYCACHE}xep_118.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/eyed3/plugins/${MODPY_PYCACHE}yamltag.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/eyed3/plugins/${MODPY_PYCACHE}yamltag.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/eyed3/plugins/_display_parser.py
 lib/python${MODPY_VERSION}/site-packages/eyed3/plugins/art.py
 lib/python${MODPY_VERSION}/site-packages/eyed3/plugins/classic.py
-lib/python${MODPY_VERSION}/site-packages/eyed3/plugins/display.py
 lib/python${MODPY_VERSION}/site-packages/eyed3/plugins/extract.py
 lib/python${MODPY_VERSION}/site-packages/eyed3/plugins/fixup.py
 lib/python${MODPY_VERSION}/site-packages/eyed3/plugins/genres.py
