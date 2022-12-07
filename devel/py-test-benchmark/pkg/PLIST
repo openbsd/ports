@@ -32,8 +32,6 @@ lib/python${MODPY_VERSION}/site-packages/pytest_benchmark/${MODPY_PYCACHE}hooksp
 lib/python${MODPY_VERSION}/site-packages/pytest_benchmark/${MODPY_PYCACHE}hookspec.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pytest_benchmark/${MODPY_PYCACHE}logger.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pytest_benchmark/${MODPY_PYCACHE}logger.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pytest_benchmark/${MODPY_PYCACHE}pep418.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/pytest_benchmark/${MODPY_PYCACHE}pep418.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pytest_benchmark/${MODPY_PYCACHE}plugin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pytest_benchmark/${MODPY_PYCACHE}plugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pytest_benchmark/${MODPY_PYCACHE}session.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -53,7 +51,6 @@ lib/python${MODPY_VERSION}/site-packages/pytest_benchmark/fixture.py
 lib/python${MODPY_VERSION}/site-packages/pytest_benchmark/histogram.py
 lib/python${MODPY_VERSION}/site-packages/pytest_benchmark/hookspec.py
 lib/python${MODPY_VERSION}/site-packages/pytest_benchmark/logger.py
-lib/python${MODPY_VERSION}/site-packages/pytest_benchmark/pep418.py
 lib/python${MODPY_VERSION}/site-packages/pytest_benchmark/plugin.py
 lib/python${MODPY_VERSION}/site-packages/pytest_benchmark/session.py
 lib/python${MODPY_VERSION}/site-packages/pytest_benchmark/stats.py
