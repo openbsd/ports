@@ -22,6 +22,7 @@ share/homebank/datas/hb-categories-sk.csv
 share/homebank/help/
 share/homebank/help/00-intro.html
 share/homebank/help/00-lexicon.html
+share/homebank/help/00-previously.html
 share/homebank/help/00-whatsnew.html
 share/homebank/help/dlg-acco.html
 share/homebank/help/dlg-arch.html
@@ -58,6 +59,9 @@ share/homebank/help/images/50stackbudget.png
 share/homebank/help/images/50txnstatus.png
 share/homebank/help/images/53txntype.png
 share/homebank/help/images/54txnpopmenu.png
+share/homebank/help/images/56datrang.png
+share/homebank/help/images/56filter.png
+share/homebank/help/images/56stack.png
 share/homebank/help/images/6.png
 share/homebank/help/images/7.png
 share/homebank/help/images/8.png
@@ -69,6 +73,7 @@ share/homebank/help/images/dlg-account1.png
 share/homebank/help/images/dlg-account2.png
 share/homebank/help/images/dlg-account3.png
 share/homebank/help/images/dlg-assign1.png
+share/homebank/help/images/dlg-assign2.png
 share/homebank/help/images/dlg-budget1.png
 share/homebank/help/images/dlg-budget2.png
 share/homebank/help/images/dlg-category1.png
@@ -154,6 +159,7 @@ share/homebank/help/images/win-carcost1.png
 share/homebank/help/images/win-main1.png
 share/homebank/help/images/win-statistics1.png
 share/homebank/help/images/win-statistics2.png
+share/homebank/help/images/win-statistics3.png
 share/homebank/help/images/win-trendtime1.png
 share/homebank/help/images/win-trendtime2.png
 share/homebank/help/index.html
@@ -179,9 +185,6 @@ share/homebank/icons/
 share/homebank/icons/hicolor/
 share/homebank/icons/hicolor/16x16/
 share/homebank/icons/hicolor/16x16/status/
-share/homebank/icons/hicolor/16x16/status/flt-exclude.png
-share/homebank/icons/hicolor/16x16/status/flt-inactive.png
-share/homebank/icons/hicolor/16x16/status/flt-include.png
 share/homebank/icons/hicolor/16x16/status/hb-ope-auto.png
 share/homebank/icons/hicolor/16x16/status/hb-ope-budget.png
 share/homebank/icons/hicolor/16x16/status/hb-ope-cleared.png
@@ -268,10 +271,15 @@ share/homebank/icons/hicolor/48x48/status/prf-locale.png
 share/homebank/icons/hicolor/48x48/status/prf-report.png
 share/homebank/icons/hicolor/scalable/
 share/homebank/icons/hicolor/scalable/actions/
+share/homebank/icons/hicolor/scalable/actions/data-usage-symbolic.svg
 share/homebank/icons/hicolor/scalable/actions/edit-split-symbolic.svg
+share/homebank/icons/hicolor/scalable/actions/eye-not-looking-symbolic.svg
+share/homebank/icons/hicolor/scalable/actions/hb-go-down-symbolic.svg
+share/homebank/icons/hicolor/scalable/actions/hb-go-up-symbolic.svg
 share/homebank/icons/hicolor/scalable/actions/list-collapse-all-symbolic.svg
 share/homebank/icons/hicolor/scalable/actions/list-expand-all-symbolic.svg
 share/homebank/icons/hicolor/scalable/actions/list-merge-symbolic.svg
+share/homebank/icons/hicolor/scalable/actions/list-move-after-symbolic.svg
 share/homebank/icons/hicolor/scalable/actions/text-casesensitive-symbolic.svg
 share/homebank/icons/hicolor/scalable/actions/text-regularexpression-symbolic.svg
 share/homebank/icons/hicolor/scalable/actions/toggle-sign-symbolic.svg
@@ -301,6 +309,7 @@ share/locale/en_AU/LC_MESSAGES/
 share/locale/en_AU/LC_MESSAGES/homebank.mo
 share/locale/en_CA/LC_MESSAGES/homebank.mo
 share/locale/en_GB/LC_MESSAGES/homebank.mo
+share/locale/eo/LC_MESSAGES/homebank.mo
 share/locale/es/LC_MESSAGES/homebank.mo
 share/locale/et/LC_MESSAGES/homebank.mo
 share/locale/eu/LC_MESSAGES/homebank.mo
@@ -339,8 +348,10 @@ share/locale/sk/LC_MESSAGES/homebank.mo
 share/locale/sl/LC_MESSAGES/homebank.mo
 share/locale/sr/LC_MESSAGES/homebank.mo
 share/locale/sv/LC_MESSAGES/homebank.mo
+share/locale/ta/LC_MESSAGES/homebank.mo
 share/locale/tr/LC_MESSAGES/homebank.mo
 share/locale/uk/LC_MESSAGES/homebank.mo
+share/locale/uz/LC_MESSAGES/homebank.mo
 share/locale/vi/LC_MESSAGES/homebank.mo
 share/locale/zh_CN/LC_MESSAGES/homebank.mo
 share/locale/zh_TW/LC_MESSAGES/homebank.mo
