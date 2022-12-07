@@ -1,7 +1,12 @@
 @bin bin/libdeflate-gunzip
 @bin bin/libdeflate-gzip
 include/libdeflate.h
+lib/cmake/
+lib/cmake/libdeflate/
+lib/cmake/libdeflate/libdeflate-config-version.cmake
+lib/cmake/libdeflate/libdeflate-config.cmake
+lib/cmake/libdeflate/libdeflate-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/libdeflate/libdeflate-targets.cmake
 @static-lib lib/libdeflate.a
-@comment @so lib/libdeflate.so
 @lib lib/libdeflate.so.${LIBdeflate_VERSION}
 lib/pkgconfig/libdeflate.pc
