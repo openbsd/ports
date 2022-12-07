@@ -39,7 +39,8 @@ COMPILER =		base-clang ports-gcc
 # CCACHE_ENV +=		CCACHE_SLOPPINESS=pch_defines,time_macros
 
 MODULES =		devel/cmake \
-			lang/python
+			lang/python \
+			x11/qt6
 MODPY_RUNDEP =		No
 
 BUILD_DEPENDS =		devel/microsoft-gsl \
@@ -58,10 +59,13 @@ LIB_DEPENDS =		archivers/lz4 \
 			graphics/qr-code-generator>=1.7.0p1 \
 			net/tg_owt>=0.0.0.20220909 \
 			sysutils/xxhash \
-			textproc/hunspell
+			textproc/hunspell \
+			x11/qt6/qt5compat \
+			x11/qt6/qtsvg
 
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+3,-guic \
+			x11/qt6/qtimageformats
 
 # look for system libraries and build a shared library, despite upstream
 # treating it as "community effort" with less support
@@ -96,11 +100,6 @@ NEEDED_BUNDLES +=	rlottie tgcalls
 
 # devel/kf5/kcoreaddons is Qt5 only, tdesktop uses Qt6
 NEEDED_BUNDLES +=	kcoreaddons
-
-MODULES +=		x11/qt6
-LIB_DEPENDS +=		x11/qt6/qt5compat \
-			x11/qt6/qtsvg
-RUN_DEPENDS +=		x11/qt6/qtimageformats
 
 post-patch:
 	# XXX fix the following on every source file
