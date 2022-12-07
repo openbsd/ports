@@ -599,6 +599,8 @@ netbeans/ergonomics/config/Modules/org-netbeans-modules-form.xml
 netbeans/ergonomics/config/Modules/org-netbeans-modules-glassfish-common.xml
 netbeans/ergonomics/config/Modules/org-netbeans-modules-glassfish-javaee.xml
 netbeans/ergonomics/config/Modules/org-netbeans-modules-glassfish-tooling.xml
+netbeans/ergonomics/config/Modules/org-netbeans-modules-gradle-dists.xml
+netbeans/ergonomics/config/Modules/org-netbeans-modules-gradle-editor.xml
 netbeans/ergonomics/config/Modules/org-netbeans-modules-gradle-kit.xml
 netbeans/ergonomics/config/Modules/org-netbeans-modules-groovy-antproject.xml
 netbeans/ergonomics/config/Modules/org-netbeans-modules-groovy-debug.xml
@@ -696,6 +698,7 @@ netbeans/ergonomics/config/Modules/org-netbeans-modules-javascript2-requirejs.xm
 netbeans/ergonomics/config/Modules/org-netbeans-modules-javascript2-sdoc.xml
 netbeans/ergonomics/config/Modules/org-netbeans-modules-javawebstart.xml
 netbeans/ergonomics/config/Modules/org-netbeans-modules-kotlin-editor.xml
+netbeans/ergonomics/config/Modules/org-netbeans-modules-languages-antlr.xml
 netbeans/ergonomics/config/Modules/org-netbeans-modules-languages-apacheconf.xml
 netbeans/ergonomics/config/Modules/org-netbeans-modules-languages-ini.xml
 netbeans/ergonomics/config/Modules/org-netbeans-modules-libs-gradle.xml
@@ -873,6 +876,7 @@ netbeans/extide/config/
 netbeans/extide/config/Modules/
 netbeans/extide/config/Modules/org-apache-tools-ant-module.xml
 netbeans/extide/config/Modules/org-netbeans-modules-gradle-dists.xml
+netbeans/extide/config/Modules/org-netbeans-modules-gradle-editor.xml
 netbeans/extide/config/Modules/org-netbeans-modules-gradle.xml
 netbeans/extide/config/Modules/org-netbeans-modules-libs-gradle.xml
 netbeans/extide/config/Modules/org-netbeans-modules-options-java.xml
@@ -886,12 +890,14 @@ netbeans/extide/modules/gradle/nb-tooling.gradle
 netbeans/extide/modules/gradle/netbeans-gradle-tooling.jar
 netbeans/extide/modules/org-apache-tools-ant-module.jar
 netbeans/extide/modules/org-netbeans-modules-gradle-dists.jar
+netbeans/extide/modules/org-netbeans-modules-gradle-editor.jar
 netbeans/extide/modules/org-netbeans-modules-gradle.jar
 netbeans/extide/modules/org-netbeans-modules-libs-gradle.jar
 netbeans/extide/modules/org-netbeans-modules-options-java.jar
 netbeans/extide/update_tracking/
 netbeans/extide/update_tracking/org-apache-tools-ant-module.xml
 netbeans/extide/update_tracking/org-netbeans-modules-gradle-dists.xml
+netbeans/extide/update_tracking/org-netbeans-modules-gradle-editor.xml
 netbeans/extide/update_tracking/org-netbeans-modules-gradle.xml
 netbeans/extide/update_tracking/org-netbeans-modules-libs-gradle.xml
 netbeans/extide/update_tracking/org-netbeans-modules-options-java.xml
@@ -1178,6 +1184,7 @@ netbeans/ide/config/Modules/org-netbeans-libs-lucene.xml
 netbeans/ide/config/Modules/org-netbeans-libs-snakeyaml_engine.xml
 netbeans/ide/config/Modules/org-netbeans-libs-svnClientAdapter-javahl.xml
 netbeans/ide/config/Modules/org-netbeans-libs-svnClientAdapter.xml
+netbeans/ide/config/Modules/org-netbeans-libs-tomlj.xml
 netbeans/ide/config/Modules/org-netbeans-libs-truffleapi.xml
 netbeans/ide/config/Modules/org-netbeans-libs-xerces.xml
 netbeans/ide/config/Modules/org-netbeans-modules-bugtracking-bridge.xml
@@ -1277,6 +1284,7 @@ netbeans/ide/config/Modules/org-netbeans-modules-jellytools-ide.xml
 netbeans/ide/config/Modules/org-netbeans-modules-jumpto.xml
 netbeans/ide/config/Modules/org-netbeans-modules-languages-diff.xml
 netbeans/ide/config/Modules/org-netbeans-modules-languages-manifest.xml
+netbeans/ide/config/Modules/org-netbeans-modules-languages-toml.xml
 netbeans/ide/config/Modules/org-netbeans-modules-languages-yaml.xml
 netbeans/ide/config/Modules/org-netbeans-modules-languages.xml
 netbeans/ide/config/Modules/org-netbeans-modules-lexer-nbbridge.xml
@@ -1470,6 +1478,7 @@ netbeans/ide/modules/ext/resolver-1.2.jar
 netbeans/ide/modules/ext/salvation.jar
 netbeans/ide/modules/ext/servlet-2.2.jar
 netbeans/ide/modules/ext/snakeyaml-engine.jar
+netbeans/ide/modules/ext/tomlj.jar
 netbeans/ide/modules/ext/truffle-api-20.3.0.jar
 netbeans/ide/modules/ext/validator.jar
 netbeans/ide/modules/ext/webserver.jar
@@ -1542,6 +1551,7 @@ netbeans/ide/modules/org-netbeans-libs-lucene.jar
 netbeans/ide/modules/org-netbeans-libs-snakeyaml_engine.jar
 netbeans/ide/modules/org-netbeans-libs-svnClientAdapter-javahl.jar
 netbeans/ide/modules/org-netbeans-libs-svnClientAdapter.jar
+netbeans/ide/modules/org-netbeans-libs-tomlj.jar
 netbeans/ide/modules/org-netbeans-libs-truffleapi.jar
 netbeans/ide/modules/org-netbeans-libs-xerces.jar
 netbeans/ide/modules/org-netbeans-modules-bugtracking-bridge.jar
@@ -1641,6 +1651,7 @@ netbeans/ide/modules/org-netbeans-modules-jellytools-ide.jar
 netbeans/ide/modules/org-netbeans-modules-jumpto.jar
 netbeans/ide/modules/org-netbeans-modules-languages-diff.jar
 netbeans/ide/modules/org-netbeans-modules-languages-manifest.jar
+netbeans/ide/modules/org-netbeans-modules-languages-toml.jar
 netbeans/ide/modules/org-netbeans-modules-languages-yaml.jar
 netbeans/ide/modules/org-netbeans-modules-languages.jar
 netbeans/ide/modules/org-netbeans-modules-lexer-nbbridge.jar
@@ -1810,6 +1821,7 @@ netbeans/ide/update_tracking/org-netbeans-libs-lucene.xml
 netbeans/ide/update_tracking/org-netbeans-libs-snakeyaml_engine.xml
 netbeans/ide/update_tracking/org-netbeans-libs-svnClientAdapter-javahl.xml
 netbeans/ide/update_tracking/org-netbeans-libs-svnClientAdapter.xml
+netbeans/ide/update_tracking/org-netbeans-libs-tomlj.xml
 netbeans/ide/update_tracking/org-netbeans-libs-truffleapi.xml
 netbeans/ide/update_tracking/org-netbeans-libs-xerces.xml
 netbeans/ide/update_tracking/org-netbeans-modules-bugtracking-bridge.xml
@@ -1909,6 +1921,7 @@ netbeans/ide/update_tracking/org-netbeans-modules-jellytools-ide.xml
 netbeans/ide/update_tracking/org-netbeans-modules-jumpto.xml
 netbeans/ide/update_tracking/org-netbeans-modules-languages-diff.xml
 netbeans/ide/update_tracking/org-netbeans-modules-languages-manifest.xml
+netbeans/ide/update_tracking/org-netbeans-modules-languages-toml.xml
 netbeans/ide/update_tracking/org-netbeans-modules-languages-yaml.xml
 netbeans/ide/update_tracking/org-netbeans-modules-languages.xml
 netbeans/ide/update_tracking/org-netbeans-modules-lexer-nbbridge.xml
@@ -2150,6 +2163,7 @@ netbeans/java/config/Modules/org-netbeans-modules-junit-ui.xml
 netbeans/java/config/Modules/org-netbeans-modules-junit.xml
 netbeans/java/config/Modules/org-netbeans-modules-ko4j-debugging.xml
 netbeans/java/config/Modules/org-netbeans-modules-kotlin-editor.xml
+netbeans/java/config/Modules/org-netbeans-modules-languages-antlr.xml
 netbeans/java/config/Modules/org-netbeans-modules-libs-corba-omgapi.xml
 netbeans/java/config/Modules/org-netbeans-modules-maven-checkstyle.xml
 netbeans/java/config/Modules/org-netbeans-modules-maven-coverage.xml
@@ -2327,8 +2341,8 @@ netbeans/java/modules/ext/maven/maven-dependency-tree-2.2.jar
 netbeans/java/modules/ext/maven/rootpackage/
 netbeans/java/modules/ext/maven/rootpackage/default-report.xml
 netbeans/java/modules/ext/nb-custom-jshell-probe.jar
-netbeans/java/modules/ext/nb-javac-jdk-18-api.jar
-netbeans/java/modules/ext/nb-javac-jdk-18.jar
+netbeans/java/modules/ext/nb-javac-jdk-19-api.jar
+netbeans/java/modules/ext/nb-javac-jdk-19.jar
 netbeans/java/modules/ext/nb-mod-jshell-probe.jar
 netbeans/java/modules/ext/org-netbeans-modules-java-j2seembedded-probe.jar
 netbeans/java/modules/ext/org.eclipse.lsp4j-0.13.0.jar
@@ -2520,6 +2534,7 @@ netbeans/java/modules/org-netbeans-modules-junit-ui.jar
 netbeans/java/modules/org-netbeans-modules-junit.jar
 netbeans/java/modules/org-netbeans-modules-ko4j-debugging.jar
 netbeans/java/modules/org-netbeans-modules-kotlin-editor.jar
+netbeans/java/modules/org-netbeans-modules-languages-antlr.jar
 netbeans/java/modules/org-netbeans-modules-libs-corba-omgapi.jar
 netbeans/java/modules/org-netbeans-modules-maven-checkstyle.jar
 netbeans/java/modules/org-netbeans-modules-maven-coverage.jar
@@ -2693,6 +2708,7 @@ netbeans/java/update_tracking/org-netbeans-modules-junit-ui.xml
 netbeans/java/update_tracking/org-netbeans-modules-junit.xml
 netbeans/java/update_tracking/org-netbeans-modules-ko4j-debugging.xml
 netbeans/java/update_tracking/org-netbeans-modules-kotlin-editor.xml
+netbeans/java/update_tracking/org-netbeans-modules-languages-antlr.xml
 netbeans/java/update_tracking/org-netbeans-modules-libs-corba-omgapi.xml
 netbeans/java/update_tracking/org-netbeans-modules-maven-checkstyle.xml
 netbeans/java/update_tracking/org-netbeans-modules-maven-coverage.xml
@@ -2779,8 +2795,10 @@ netbeans/licenses/Apache-2.0-typescript2
 netbeans/licenses/BSD-INRIA
 netbeans/licenses/BSD-JDOM
 netbeans/licenses/BSD-SCOWL
+netbeans/licenses/BSD-antlr-icons
 netbeans/licenses/BSD-antlr-runtime3
 netbeans/licenses/BSD-antlr-runtime4
+netbeans/licenses/BSD-antlr4-grammar
 netbeans/licenses/BSD-css3-grammar
 netbeans/licenses/BSD-flexmark
 netbeans/licenses/BSD-hamcrest
@@ -3203,7 +3221,7 @@ netbeans/platform/modules/ext/batik-script-1.14.jar
 netbeans/platform/modules/ext/batik-svg-dom-1.14.jar
 netbeans/platform/modules/ext/batik-util-1.14.jar
 netbeans/platform/modules/ext/batik-xml-1.14.jar
-netbeans/platform/modules/ext/flatlaf-2.4.jar
+netbeans/platform/modules/ext/flatlaf-2.6.jar
 netbeans/platform/modules/ext/hamcrest-core-1.3.jar
 netbeans/platform/modules/ext/jcommander-1.78.jar
 netbeans/platform/modules/ext/jna-5.12.1.jar
@@ -3226,6 +3244,7 @@ netbeans/platform/modules/lib/aarch64/
 netbeans/platform/modules/lib/aarch64/libjnidispatch-nb.jnilib
 netbeans/platform/modules/lib/aarch64/linux/
 netbeans/platform/modules/lib/aarch64/linux/libjnidispatch-nb.so
+netbeans/platform/modules/lib/libflatlaf-linux-x86_64.so
 netbeans/platform/modules/lib/riscv64/
 netbeans/platform/modules/lib/riscv64/linux/
 netbeans/platform/modules/lib/riscv64/linux/libjnidispatch-nb.so
