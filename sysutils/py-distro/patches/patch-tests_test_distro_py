@@ -1,0 +1,12 @@
+Index: tests/test_distro.py
+--- tests/test_distro.py.orig
++++ tests/test_distro.py
+@@ -31,7 +31,7 @@ SPECIAL = os.path.join(RESOURCES, "special")
+ DISTROS = [dist for dist in os.listdir(DISTROS_DIR) if dist != "__shared__"]
+ 
+ 
+-IS_LINUX = sys.platform.startswith("linux")
++IS_LINUX = sys.platform.startswith("linux") or sys.platform.startswith("openbsd")
+ if IS_LINUX:
+     from distro import distro
+ 
