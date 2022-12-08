@@ -6,7 +6,7 @@ https://github.com/telegramdesktop/tdesktop/pull/25527
 Index: Telegram/SourceFiles/platform/linux/specific_linux.cpp
 --- Telegram/SourceFiles/platform/linux/specific_linux.cpp.orig
 +++ Telegram/SourceFiles/platform/linux/specific_linux.cpp
-@@ -243,12 +243,16 @@ void LaunchGApplication() {
+@@ -244,12 +244,16 @@ void LaunchGApplication() {
  	const auto activatableNames = [&] {
  		try {
  			if (connection) {
@@ -25,7 +25,7 @@ Index: Telegram/SourceFiles/platform/linux/specific_linux.cpp
  	}();
  
  	const auto freedesktopNotifications = [&] {
-@@ -346,9 +350,10 @@ void LaunchGApplication() {
+@@ -357,9 +361,10 @@ void LaunchGApplication() {
  
  			using Window::Notifications::Manager;
  			using NotificationId = Manager::NotificationId;

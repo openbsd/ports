@@ -3,7 +3,7 @@ XXX bring glibmm268's Glib::ustring and range-v3 together
 Index: Telegram/SourceFiles/platform/linux/notifications_manager_linux.cpp
 --- Telegram/SourceFiles/platform/linux/notifications_manager_linux.cpp.orig
 +++ Telegram/SourceFiles/platform/linux/notifications_manager_linux.cpp
-@@ -72,12 +72,17 @@ std::unique_ptr<base::Platform::DBus::ServiceWatcher> 
+@@ -75,12 +75,17 @@ std::unique_ptr<base::Platform::DBus::ServiceWatcher> 
  	try {
  		const auto connection = Gio::DBus::Connection::get_sync(
  			Gio::DBus::BusType::SESSION);
@@ -23,7 +23,7 @@ Index: Telegram/SourceFiles/platform/linux/notifications_manager_linux.cpp
  			} catch (...) {
  				// avoid service restart loop in sandboxed environments
  				return true;
-@@ -126,7 +131,7 @@ void StartServiceAsync(Fn<void()> callback) {
+@@ -129,7 +134,7 @@ void StartServiceAsync(Fn<void()> callback) {
  						};
  
  						const auto errorName =
@@ -32,7 +32,7 @@ Index: Telegram/SourceFiles/platform/linux/notifications_manager_linux.cpp
  
  						if (!ranges::contains(NotSupportedErrors, errorName)) {
  							throw e;
-@@ -148,6 +153,11 @@ bool GetServiceRegistered() {
+@@ -151,6 +156,11 @@ bool GetServiceRegistered() {
  	try {
  		const auto connection = Gio::DBus::Connection::get_sync(
  			Gio::DBus::BusType::SESSION);
@@ -44,7 +44,7 @@ Index: Telegram/SourceFiles/platform/linux/notifications_manager_linux.cpp
  
  		const auto hasOwner = [&] {
  			try {
-@@ -162,8 +172,8 @@ bool GetServiceRegistered() {
+@@ -165,8 +175,8 @@ bool GetServiceRegistered() {
  		static const auto activatable = [&] {
  			try {
  				return ranges::contains(
