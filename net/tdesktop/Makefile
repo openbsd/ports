@@ -97,7 +97,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic \
 			x11/qt6/qtimageformats
 
-# look for system libraries and build a shared library, despite upstream
+# look for system libraries and link them dynamically, despite upstream
 # treating it as "community effort" with less support
 CONFIGURE_ARGS +=	-DDESKTOP_APP_USE_PACKAGED=ON
 
