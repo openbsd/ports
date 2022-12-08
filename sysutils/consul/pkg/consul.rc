@@ -9,4 +9,9 @@ daemon_user="_consul"
 rc_bg=YES
 rc_stop_signal=INT
 
+rc_configtest() {
+	# use rc_exec here to validate under daemon_user
+	rc_exec "${TRUEPREFIX}/bin/consul validate ${SYSCONFDIR}/consul.d"
+}
+
 rc_cmd $1
