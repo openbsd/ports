@@ -1,22 +1,31 @@
-backport pending "Do actual check for long type size for Glib::Variant<(u)int64>"
-https://github.com/desktop-app/lib_base/pull/148
+backport merged "Use std::conditional_t for Glib::Variant<(u)int64> rather than LONG_TYPE_SIZE"
+https://github.com/desktop-app/lib_base/pull/149
 
 Index: Telegram/lib_base/base/platform/linux/base_linux_glibmm_helper.h
 --- Telegram/lib_base/base/platform/linux/base_linux_glibmm_helper.h.orig
 +++ Telegram/lib_base/base/platform/linux/base_linux_glibmm_helper.h
-@@ -10,6 +10,7 @@
+@@ -12,8 +12,14 @@
  
- #include <glibmm/variant.h>
- 
-+#if LONG_TYPE_SIZE == 64
  namespace Glib {
  
++struct Int64Helper0 {};
++using Int64Helper = std::conditional_t<std::is_same_v<gint64, int64>, Int64Helper0, int64>;
++
++struct UInt64Helper0 {};
++using UInt64Helper = std::conditional_t<std::is_same_v<guint64, uint64>, UInt64Helper0, uint64>;
++
  template <>
-@@ -103,6 +104,7 @@ class Variant<uint64> : public VariantBase (public)
+-class Variant<int64> : public VariantBase
++class Variant<Int64Helper> : public VariantBase
+ {
+ public:
+ 	using CType = gint64;
+@@ -58,7 +64,7 @@ class Variant<int64> : public VariantBase (public)
  };
  
- } // namespace Glib
-+#endif LONG_TYPE_SIZE == 64
- 
- namespace base {
- namespace Platform {
+ template <>
+-class Variant<uint64> : public VariantBase
++class Variant<UInt64Helper> : public VariantBase
+ {
+ public:
+ 	using CType = guint64;

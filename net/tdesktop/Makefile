@@ -5,7 +5,7 @@ NOT_FOR_ARCHS =		${BE_ARCHS} i386
 
 COMMENT =		Telegram Desktop messenger
 PORTROACH =		limit:-full$$
-V =			4.3.3
+V =			4.3.4
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
@@ -16,6 +16,17 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 HOMEPAGE =		https://desktop.telegram.org
 MASTER_SITES =		https://github.com/telegramdesktop/tdesktop/releases/download/v${V}/
+
+DIST_SUBDIR =		tdesktop
+MASTER_SITES0 =		https://github.com/desktop-app/
+
+# merged "Fix tdesktop 4.3.4 cld3 bundle build with system protobuf"
+# https://github.com/desktop-app/cmake_helpers/pull/246
+PATCHFILES +=		cmake-fix-cld3-protobuf-{cmake_helpers/pull/}246.patch:0
+PATCH_CASES +=		cmake-*.patch) ${PATCH} ${PATCH_DIST_ARGS} \
+			    -d ${WRKSRC}/cmake/ <$$patchfile ;;
+
+PATCH_DIST_STRIP =	-p1
 
 MAINTAINER =		Andrew Krasavin <noiseless-ak@yandex.ru>, \
 			Klemens Nanni <kn@openbsd.org>
@@ -28,7 +39,7 @@ WANTLIB += ${COMPILER_LIBCXX} Qt6Core Qt6Core5Compat Qt6DBus Qt6Gui Qt6Network
 WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6Svg Qt6Widgets absl_strings
 WANTLIB += avcodec avformat avutil c crypto dispatch gio-2.0 giomm-2.68
 WANTLIB += glib-2.0 glibmm-2.68 gobject-2.0 hunspell-1.7 jpeg lz4
-WANTLIB += m openal qrcodegencpp rnnoise sigc-3.0 swresample swscale
+WANTLIB += m openal protobuf-lite qrcodegencpp rnnoise sigc-3.0 swresample swscale
 WANTLIB += tg_owt xcb xcb-keysyms xcb-record xcb-screensaver xxhash
 WANTLIB += z
 
@@ -55,6 +66,7 @@ LIB_DEPENDS =		archivers/lz4 \
 			devel/glibmm268 \
 			devel/libdispatch \
 			devel/libsigc++30 \
+			devel/protobuf \
 			graphics/ffmpeg \
 			graphics/qr-code-generator>=1.7.0p1 \
 			net/tg_owt>=0.0.0.20220909 \
@@ -96,10 +108,10 @@ NEEDED_BUNDLES +=	minizip
 CFLAGS +=		-DIOAPI_NO_64
 
 # unported and required
-NEEDED_BUNDLES +=	rlottie tgcalls
+NEEDED_BUNDLES +=	cld3 rlottie tgcalls
 
 # exist under Qt5-only devel/kf5/
-NEEDED_BUNDLES +=	kcoreaddons sonnet
+NEEDED_BUNDLES +=	kcoreaddons
 
 post-patch:
 	# XXX fix the following on every source file

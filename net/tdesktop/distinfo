@@ -1,2 +1,4 @@
-SHA256 (tdesktop-4.3.3-full.tar.gz) = ZzD0I/hWlM5Gnjm4V36/IKeMr1PwlwcnPSw0ip0pq8A=
-SIZE (tdesktop-4.3.3-full.tar.gz) = 55287695
+SHA256 (tdesktop/cmake-fix-cld3-protobuf-246.patch) = daq13+7bPsFAHF+1moqtJuRKVfmn7K57incP1ntWC9o=
+SHA256 (tdesktop/tdesktop-4.3.4-full.tar.gz) = qhHFL3gSxumlzPLjox1Sah21ViwbvLVxqnDWgcqQm5M=
+SIZE (tdesktop/cmake-fix-cld3-protobuf-246.patch) = 942
+SIZE (tdesktop/tdesktop-4.3.4-full.tar.gz) = 50030732
