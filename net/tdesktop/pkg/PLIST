@@ -1,6 +1,6 @@
 @pkgpath net/tdesktop,qt6
 @bin bin/telegram-desktop
-share/applications/telegramdesktop.desktop
+share/applications/org.telegram.desktop.desktop
 share/icons/hicolor/128x128/apps/telegram.png
 share/icons/hicolor/16x16/apps/telegram.png
 share/icons/hicolor/256x256/apps/telegram.png
@@ -11,4 +11,4 @@ share/icons/hicolor/64x64/apps/telegram.png
 share/metainfo/
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
-share/metainfo/telegramdesktop.metainfo.xml
+share/metainfo/org.telegram.desktop.metainfo.xml

@@ -5,7 +5,7 @@ NOT_FOR_ARCHS =		${BE_ARCHS} i386
 
 COMMENT =		Telegram Desktop messenger
 PORTROACH =		limit:-full$$
-V =			4.3.1
+V =			4.3.3
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
@@ -98,8 +98,8 @@ CFLAGS +=		-DIOAPI_NO_64
 # unported and required
 NEEDED_BUNDLES +=	rlottie tgcalls
 
-# devel/kf5/kcoreaddons is Qt5 only, tdesktop uses Qt6
-NEEDED_BUNDLES +=	kcoreaddons
+# exist under Qt5-only devel/kf5/
+NEEDED_BUNDLES +=	kcoreaddons sonnet
 
 post-patch:
 	# XXX fix the following on every source file

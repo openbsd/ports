@@ -1,0 +1,22 @@
+backport pending "Do actual check for long type size for Glib::Variant<(u)int64>"
+https://github.com/desktop-app/lib_base/pull/148
+
+Index: Telegram/lib_base/base/platform/linux/base_linux_glibmm_helper.h
+--- Telegram/lib_base/base/platform/linux/base_linux_glibmm_helper.h.orig
++++ Telegram/lib_base/base/platform/linux/base_linux_glibmm_helper.h
+@@ -10,6 +10,7 @@
+ 
+ #include <glibmm/variant.h>
+ 
++#if LONG_TYPE_SIZE == 64
+ namespace Glib {
+ 
+ template <>
+@@ -103,6 +104,7 @@ class Variant<uint64> : public VariantBase (public)
+ };
+ 
+ } // namespace Glib
++#endif LONG_TYPE_SIZE == 64
+ 
+ namespace base {
+ namespace Platform {
