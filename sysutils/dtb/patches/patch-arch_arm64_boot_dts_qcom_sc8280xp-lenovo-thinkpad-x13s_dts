@@ -191,14 +191,14 @@ Index: arch/arm64/boot/dts/qcom/sc8280xp-lenovo-thinkpad-x13s.dts
 +	pinctrl-names = "default";
 +	pinctrl-0 = <&pcie3a_default>;
 +
-+	status = "okay";
++	status = "disabled";
 +};
 +
 +&pcie3a_phy {
 +	vdda-phy-supply = <&vreg_l6d>;
 +	vdda-pll-supply = <&vreg_l4d>;
 +
-+	status = "okay";
++	status = "disabled";
 +};
 +
 +&pcie4 {
