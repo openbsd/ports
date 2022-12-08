@@ -1,8 +1,7 @@
 COMMENT=	CAD drawing program for X11
 
 # print/transfig usually needs to be in-sync
-DISTNAME=	xfig-3.2.7b
-REVISION=	0
+DISTNAME=	xfig-3.2.8b
 CATEGORIES=	graphics x11
 
 HOMEPAGE=	http://mcj.sourceforge.net/
