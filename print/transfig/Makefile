@@ -1,8 +1,7 @@
 COMMENT=	tools to convert Xfig's .fig files  #'
 
-VERSION=	3.2.7b
+VERSION=	3.2.8b
 DISTNAME=	fig2dev-${VERSION}
-REVISION=	1
 EXTRACT_SUFX =	.tar.xz
 PKGNAME=	transfig-${VERSION}
 CATEGORIES=	print
