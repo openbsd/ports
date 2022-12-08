@@ -57,6 +57,8 @@ lib/python${MODPY_VERSION}/site-packages/vorta/assets/UI/scheduletab.ui
 lib/python${MODPY_VERSION}/site-packages/vorta/assets/UI/sourcetab.ui
 lib/python${MODPY_VERSION}/site-packages/vorta/assets/UI/sshadd.ui
 lib/python${MODPY_VERSION}/site-packages/vorta/assets/icons/
+lib/python${MODPY_VERSION}/site-packages/vorta/assets/icons/angle-down-solid.svg
+lib/python${MODPY_VERSION}/site-packages/vorta/assets/icons/angle-up-solid.svg
 lib/python${MODPY_VERSION}/site-packages/vorta/assets/icons/broom-solid.svg
 lib/python${MODPY_VERSION}/site-packages/vorta/assets/icons/check-circle.svg
 lib/python${MODPY_VERSION}/site-packages/vorta/assets/icons/clock-o.svg
@@ -70,6 +72,7 @@ lib/python${MODPY_VERSION}/site-packages/vorta/assets/icons/eye-slash.svg
 lib/python${MODPY_VERSION}/site-packages/vorta/assets/icons/eye.svg
 lib/python${MODPY_VERSION}/site-packages/vorta/assets/icons/file-import-solid.svg
 lib/python${MODPY_VERSION}/site-packages/vorta/assets/icons/file.svg
+lib/python${MODPY_VERSION}/site-packages/vorta/assets/icons/folder-on-top.svg
 lib/python${MODPY_VERSION}/site-packages/vorta/assets/icons/folder-open.svg
 lib/python${MODPY_VERSION}/site-packages/vorta/assets/icons/folder.svg
 lib/python${MODPY_VERSION}/site-packages/vorta/assets/icons/globe.svg
@@ -87,6 +90,8 @@ lib/python${MODPY_VERSION}/site-packages/vorta/assets/icons/tasks.svg
 lib/python${MODPY_VERSION}/site-packages/vorta/assets/icons/terminal.svg
 lib/python${MODPY_VERSION}/site-packages/vorta/assets/icons/trash.svg
 lib/python${MODPY_VERSION}/site-packages/vorta/assets/icons/unlink.svg
+lib/python${MODPY_VERSION}/site-packages/vorta/assets/icons/view-list-details.svg
+lib/python${MODPY_VERSION}/site-packages/vorta/assets/icons/view-list-tree.svg
 lib/python${MODPY_VERSION}/site-packages/vorta/assets/icons/wifi.svg
 lib/python${MODPY_VERSION}/site-packages/vorta/assets/icons/window-restore.svg
 lib/python${MODPY_VERSION}/site-packages/vorta/assets/metadata/
@@ -301,10 +306,10 @@ lib/python${MODPY_VERSION}/site-packages/vorta/views/partials/${MODPY_PYCACHE}__
 lib/python${MODPY_VERSION}/site-packages/vorta/views/partials/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/vorta/views/partials/${MODPY_PYCACHE}loading_button.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/vorta/views/partials/${MODPY_PYCACHE}loading_button.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/vorta/views/partials/${MODPY_PYCACHE}tree_view.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/vorta/views/partials/${MODPY_PYCACHE}tree_view.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/vorta/views/partials/${MODPY_PYCACHE}treemodel.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/vorta/views/partials/${MODPY_PYCACHE}treemodel.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/vorta/views/partials/loading_button.py
-lib/python${MODPY_VERSION}/site-packages/vorta/views/partials/tree_view.py
+lib/python${MODPY_VERSION}/site-packages/vorta/views/partials/treemodel.py
 lib/python${MODPY_VERSION}/site-packages/vorta/views/profile_add_edit_dialog.py
 lib/python${MODPY_VERSION}/site-packages/vorta/views/repo_add_dialog.py
 lib/python${MODPY_VERSION}/site-packages/vorta/views/repo_tab.py
