@@ -1,0 +1,24 @@
+Index: examples/loadables/finfo.c
+--- examples/loadables/finfo.c.orig
++++ examples/loadables/finfo.c
+@@ -328,17 +328,17 @@ int	flags;
+ 		if (flags & OPT_ASCII)
+ 			printf("%s", ctime(&st->st_atime));
+ 		else
+-			printf("%ld\n", st->st_atime);
++			printf("%lld\n", (long long)st->st_atime);
+ 	} else if (flags & OPT_MTIME) {
+ 		if (flags & OPT_ASCII)
+ 			printf("%s", ctime(&st->st_mtime));
+ 		else
+-			printf("%ld\n", st->st_mtime);
++			printf("%lld\n", (long long)st->st_mtime);
+ 	} else if (flags & OPT_CTIME) {
+ 		if (flags & OPT_ASCII)
+ 			printf("%s", ctime(&st->st_ctime));
+ 		else
+-			printf("%ld\n", st->st_ctime);
++			printf("%lld\n", (long long)st->st_ctime);
+ 	} else if (flags & OPT_DEV)
+ 		printf("%lu\n", (unsigned long)st->st_dev);
+ 	else if (flags & OPT_INO)

@@ -2,6 +2,7 @@ COMMENT=	GNU Bourne Again Shell
 
 DISTNAME=	bash-5.2.9
 PKGNAME=	bash-5.2.12
+REVISION=	0
 CATEGORIES=	shells
 HOMEPAGE=	https://www.gnu.org/software/bash/
 

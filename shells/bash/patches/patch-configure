@@ -1,0 +1,11 @@
+Index: configure
+--- configure.orig
++++ configure
+@@ -21753,6 +21753,7 @@ freebsd[3-9]*)
+ 		fi ;;
+ freebsdelf*)	LOCAL_LDFLAGS=-rdynamic ;;	# allow dynamic loading
+ dragonfly*)	LOCAL_LDFLAGS=-rdynamic ;;	# allow dynamic loading
++openbsd*)	LOCAL_LDFLAGS=-rdynamic ;;	# allow dynamic loading
+ midnightbsd*)	LOCAL_LDFLAGS=-rdynamic ;;	# allow dynamic loading
+ esac
+ 
