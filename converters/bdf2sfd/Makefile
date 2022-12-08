@@ -2,12 +2,11 @@ COMMENT =	BDF to SFD converter
 
 V =		1.1.7
 DISTNAME =	bdf2sfd-$V
+REVISION =	0
 
 CATEGORIES =	converters
 
 HOMEPAGE =	https://github.com/fcambus/bdf2sfd
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

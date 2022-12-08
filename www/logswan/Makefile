@@ -2,12 +2,11 @@ COMMENT =	fast web log analyzer using probabilistic data structures
 
 V =		2.1.13
 DISTNAME =	logswan-$V
+REVISION =	0
 
 CATEGORIES =	www
 
 HOMEPAGE =	https://www.logswan.org/
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

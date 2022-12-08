@@ -2,12 +2,11 @@ COMMENT =	weather in terminal, with ANSI colors and Unicode symbols
 
 V =		1.18.0
 DISTNAME =	ansiweather-$V
+REVISION =	0
 
 CATEGORIES =	astro
 
 HOMEPAGE =	https://github.com/fcambus/ansiweather
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

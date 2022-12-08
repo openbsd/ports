@@ -2,12 +2,11 @@ COMMENT =	ansi and ascii art to png converter
 
 V =		4.1.6
 DISTNAME =	ansilove-$V
+REVISION =	0
 
 CATEGORIES =	graphics
 
 HOMEPAGE =	https://www.ansilove.org/
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes
