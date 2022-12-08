@@ -3,7 +3,7 @@ No colord (needs GUdev) on OpenBSD (XXX add HAVE_COLORD to meson_options.txt)
 Index: src/meson.build
 --- src/meson.build.orig
 +++ src/meson.build
-@@ -188,15 +187,6 @@ mutter_sources = [
+@@ -188,15 +188,6 @@ mutter_sources = [
    'backends/meta-backend-private.h',
    'backends/meta-barrier.c',
    'backends/meta-barrier-private.h',
@@ -19,7 +19,7 @@ Index: src/meson.build
    'backends/meta-crtc-mode.c',
    'backends/meta-crtc-mode.h',
    'backends/meta-crtc.c',
-@@ -392,8 +382,6 @@ if have_x11
+@@ -392,8 +383,6 @@ if have_x11
      'backends/x11/meta-barrier-x11.h',
      'backends/x11/meta-clutter-backend-x11.c',
      'backends/x11/meta-clutter-backend-x11.h',

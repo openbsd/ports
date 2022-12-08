@@ -11,7 +11,7 @@ Index: src/backends/meta-backend-private.h
    MetaCursorRenderer * (* get_cursor_renderer) (MetaBackend        *backend,
                                                  ClutterInputDevice *device);
    MetaCursorTracker * (* create_cursor_tracker) (MetaBackend *backend);
-@@ -127,9 +126,6 @@ MetaIdleMonitor * meta_backend_get_idle_monitor (MetaB
+@@ -125,9 +124,6 @@ MetaIdleMonitor * meta_backend_get_idle_monitor (MetaB
                                                   ClutterInputDevice *device);
  
  MetaIdleManager * meta_backend_get_idle_manager (MetaBackend *backend);

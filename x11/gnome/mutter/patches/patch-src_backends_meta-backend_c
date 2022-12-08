@@ -19,7 +19,7 @@ Index: src/backends/meta-backend.c
    g_clear_object (&priv->monitor_manager);
    g_clear_object (&priv->orientation_manager);
  #ifdef HAVE_REMOTE_DESKTOP
-@@ -950,12 +948,6 @@ meta_backend_create_monitor_manager (MetaBackend *back
+@@ -960,12 +958,6 @@ meta_backend_create_monitor_manager (MetaBackend *back
                                                                     error);
  }
  
@@ -32,7 +32,7 @@ Index: src/backends/meta-backend.c
  static MetaRenderer *
  meta_backend_create_renderer (MetaBackend *backend,
                                GError     **error)
-@@ -1191,8 +1183,6 @@ meta_backend_initable_init (GInitable     *initable,
+@@ -1201,8 +1193,6 @@ meta_backend_initable_init (GInitable     *initable,
    if (!priv->monitor_manager)
      return FALSE;
  
@@ -41,7 +41,7 @@ Index: src/backends/meta-backend.c
    priv->renderer = meta_backend_create_renderer (backend, error);
    if (!priv->renderer)
      return FALSE;
-@@ -1276,17 +1266,6 @@ meta_backend_get_monitor_manager (MetaBackend *backend
+@@ -1286,17 +1276,6 @@ meta_backend_get_monitor_manager (MetaBackend *backend
    MetaBackendPrivate *priv = meta_backend_get_instance_private (backend);
  
    return priv->monitor_manager;
