@@ -2,13 +2,13 @@ COMMENT-main=		GNOME desktop meta-package (core installation)
 COMMENT-extras=		GNOME desktop meta-package (world installation)
 
 # sync with x11/gnome/shell GNOME_VERSION
-V=			43.1
+V=			43.2
 PKGNAME=		gnome-${V}
 
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
-REVISION-main=		1
+REVISION-main=		2
 REVISION-extras=	5
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
