@@ -1,7 +1,6 @@
 COMMENT =	libtorrent settings modification plugin for deluge
 
-MODPY_EGG_VERSION =	0.3.1
-REVISION =	0
+MODPY_EGG_VERSION =	2.0.0
 
 GH_ACCOUNT =	ratanakvlun
 GH_PROJECT =	deluge-ltconfig
@@ -13,7 +12,6 @@ CATEGORIES =	net
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_SETUPTOOLS =	Yes
 RUN_DEPENDS =		net/deluge
 
