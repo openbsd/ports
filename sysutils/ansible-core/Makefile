@@ -1,8 +1,7 @@
 COMMENT =		radically simple IT automation
 
-MODPY_EGG_VERSION =	2.14.0
+MODPY_EGG_VERSION =	2.14.1
 DISTNAME =		ansible-core-${MODPY_EGG_VERSION}
-REVISION =		1
 
 CATEGORIES =		sysutils
 
