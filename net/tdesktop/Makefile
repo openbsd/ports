@@ -5,7 +5,7 @@ NOT_FOR_ARCHS =		${BE_ARCHS} i386
 
 COMMENT =		Telegram Desktop messenger
 PORTROACH =		limit:-full$$
-V =			4.4.0
+V =			4.4.1
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
@@ -19,12 +19,26 @@ MASTER_SITES =		https://github.com/telegramdesktop/tdesktop/releases/download/v$
 
 DIST_SUBDIR =		tdesktop
 MASTER_SITES0 =		https://github.com/desktop-app/
+MASTER_SITES1 =		https://github.com/telegramdesktop/
+
+# pending "Use std::invoke_result_t not ::result_of to fix C++20 tdesktop 4.3.4"
+# https://github.com/telegramdesktop/tdesktop/pull/25527
+PATCHFILES +=		fix-c++20-build-{tdesktop/pull/}25527.patch:1
 
 # merged "Fix tdesktop 4.3.4 cld3 bundle build with system protobuf"
 # https://github.com/desktop-app/cmake_helpers/pull/246
 PATCHFILES +=		cmake-fix-cld3-protobuf-{cmake_helpers/pull/}246.patch:0
 PATCH_CASES +=		cmake-*.patch) ${PATCH} ${PATCH_DIST_ARGS} \
 			    -d ${WRKSRC}/cmake/ <$$patchfile ;;
+
+# merged "Do actual check for long type size for Glib::Variant<(u)int64>"
+# https://github.com/desktop-app/lib_base/pull/148
+PATCHFILES +=		base-glib-check-long-type-{lib_base/pull/}148.patch:0
+# merged "Use std::conditional_t for Glib::Variant<(u)int64> rather than LONG_TYPE_SIZE"
+# https://github.com/desktop-app/lib_base/pull/149
+PATCHFILES +=		base-glib-use-conditional-{lib_base/pull/}149.patch:0
+PATCH_CASES +=		base-*.patch) ${PATCH} ${PATCH_DIST_ARGS} \
+			    -d ${WRKSRC}/Telegram/lib_base/ <$$patchfile ;;
 
 PATCH_DIST_STRIP =	-p1
 

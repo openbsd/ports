@@ -1,8 +1,5 @@
 XXX bring glibmm268's Glib::ustring and range-v3 together
 
-backport pending "Use std::invoke_result_t not ::result_of to fix C++20 tdesktop 4.3.4"
-https://github.com/telegramdesktop/tdesktop/pull/25527
-
 Index: Telegram/SourceFiles/platform/linux/specific_linux.cpp
 --- Telegram/SourceFiles/platform/linux/specific_linux.cpp.orig
 +++ Telegram/SourceFiles/platform/linux/specific_linux.cpp
@@ -25,17 +22,3 @@ Index: Telegram/SourceFiles/platform/linux/specific_linux.cpp
  	}();
  
  	const auto freedesktopNotifications = [&] {
-@@ -357,9 +361,10 @@ void LaunchGApplication() {
- 
- 			using Window::Notifications::Manager;
- 			using NotificationId = Manager::NotificationId;
--			using NotificationIdTuple = std::result_of<
--				decltype(&NotificationId::toTuple)(NotificationId*)
--			>::type;
-+			using NotificationIdTuple = std::invoke_result_t<
-+				decltype(&NotificationId::toTuple),
-+				NotificationId*
-+			>;
- 
- 			const auto notificationIdVariantType = [] {
- 				try {
