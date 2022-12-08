@@ -36,12 +36,11 @@ do-build:
 
 do-install:
 	cd ${WRKSRC}; ${MODPY_BIN} bootstrap_install.py \
-	    --installdir ${WRKINST}${MODPY_LIBDIR}/site-packages \
-	    dist/*.whl
+	    --installdir ${WRKINST}${MODPY_SITEPKG} dist/*.whl
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-	    ${WRKINST}${MODPY_LIBDIR}
+	    ${WRKINST}${MODPY_SITEPKG}
 
 post-install:
-	rm -rf ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/flit_core/tests
+	rm -rf ${WRKINST}/${MODPY_SITEPKG}/flit_core/tests
 
 .include <bsd.port.mk>
