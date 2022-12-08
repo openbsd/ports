@@ -45,8 +45,12 @@ PATCH_DIST_STRIP =	-p1
 MAINTAINER =		Andrew Krasavin <noiseless-ak@yandex.ru>, \
 			Klemens Nanni <kn@openbsd.org>
 
-# tdesktop: GPLv3 with OpenSSL exception; minizip: zlib; tgcalls: LGPL 3
-# rlottie: LGPL 2.1 with freetype, LGPL, MIT, BSD dependencies
+# tdesktop:	GPLv3 with OpenSSL exception
+# minizip:	zlib
+# tgcalls:	LGPL 3
+# rlottie:	LGPL 2.1 with freetype, LGPL, MIT, BSD dependencies
+# cld3:		Apache 2.0
+# kcoreaddon:	LGPLv2.1+, GPLv2+
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt6Core Qt6Core5Compat Qt6DBus Qt6Gui Qt6Network
