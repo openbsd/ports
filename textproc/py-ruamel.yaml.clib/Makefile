@@ -1,7 +1,6 @@
 COMMENT =		C based reader/scanner and emitter for ruamel.yaml
 
-MODPY_EGG_VERSION =	0.2.6
-REVISION =		3
+MODPY_EGG_VERSION =	0.2.7
 DISTNAME =		ruamel.yaml.clib-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
