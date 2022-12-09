@@ -24,9 +24,11 @@ BUILD_DEPENDS=	devel/bison \
 		devel/dtc \
 		devel/swig
 
+# for pkg_resources used in tools/binman/control.py
+BUILD_DEPENDS+=	devel/py-setuptools${MODPY_FLAVOR}
+
 MODULES=	lang/python
 MODPY_RUNDEP=	No
-MODPY_SETUPTOOLS=Yes
 
 MODPY_ADJ_FILES=\
 	arch/arm/mach-rockchip/make_fit_atf.py
@@ -36,7 +38,7 @@ MAKE_ENV=	KBUILD_VERBOSE=1 \
 
 .if "${FLAVOR}" == "aarch64"
 BUILD_DEPENDS+=	devel/arm-none-eabi/gcc-linaro,aarch64 \
-		devel/py-elftools \
+		devel/py-elftools${MODPY_FLAVOR} \
 		sysutils/arm-trusted-firmware>=2.2p0v0
 MAKE_ENV+=	CROSS_COMPILE="aarch64-none-elf-"
 RK3328_BL31=	"${LOCALBASE}/share/arm-trusted-firmware/rk3328-bl31.elf"
