@@ -1,4 +1,4 @@
-# $OpenBSD: mk.conf.template,v 1.32 2022/08/31 08:55:54 jca Exp $
+# $OpenBSD: mk.conf.template,v 1.33 2022/12/09 16:23:05 sthen Exp $
 
 # This file contains some mk.conf entries suitable for ports work.
 #
@@ -32,6 +32,7 @@
 .poison MODGNOME_ICON_CACHE
 .poison MODGNOME_MIME_FILE
 .poison MODPY_ADJFILES
+.poison MODPY_BUILD
 .poison MODPY_BUILDEP
 .poison MODPY_BUILD_DEP
 .poison MODPY_PYPI
