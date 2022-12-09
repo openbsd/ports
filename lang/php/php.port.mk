@@ -1,5 +1,6 @@
 CATEGORIES+=		lang/php
 
+# 8.1 loses sparc64 support
 MODPHP_VERSION?=	8.0
 
 .if ${MODPHP_VERSION} == 7.4
@@ -11,6 +12,9 @@ MODPHP_VSPEC = >=8.0,<8.1
 .elif ${MODPHP_VERSION} == 8.1
 MODPHP_FLAVOR = ,php81
 MODPHP_VSPEC = >=8.1,<8.2
+.elif ${MODPHP_VERSION} == 8.2
+MODPHP_FLAVOR = ,php82
+MODPHP_VSPEC = >=8.2,<8.3
 .endif
 MODPHPSPEC = php-${MODPHP_VSPEC}
 

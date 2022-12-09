@@ -1,0 +1,10 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/sbin/php-fpm-${PV}"
+
+. /etc/rc.d/rc.subr
+
+pexp="php-fpm-${PV}: master process .*"
+rc_reload=NO
+
+rc_cmd $1

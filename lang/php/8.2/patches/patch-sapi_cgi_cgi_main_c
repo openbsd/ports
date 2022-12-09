@@ -1,0 +1,25 @@
+Index: sapi/cgi/cgi_main.c
+--- sapi/cgi/cgi_main.c.orig
++++ sapi/cgi/cgi_main.c
+@@ -1726,6 +1726,7 @@ int main(int argc, char *argv[])
+ 	char *orig_optarg = php_optarg;
+ 	char *script_file = NULL;
+ 	struct php_ini_builder ini_builder;
++	char *ini;
+ 	/* end of temporary locals */
+ 
+ 	int max_requests = 500;
+@@ -1775,7 +1776,12 @@ int main(int argc, char *argv[])
+ 
+ 	sapi_startup(&cgi_sapi_module);
+ 	fastcgi = fcgi_is_fastcgi();
+-	cgi_sapi_module.php_ini_path_override = NULL;
++
++	if ((ini = getenv("PHP_INI_PATH"))) {
++		cgi_sapi_module.php_ini_path_override = ini;
++	} else {
++		cgi_sapi_module.php_ini_path_override = NULL;
++	}
+ 
+ #ifdef PHP_WIN32
+ 	_fmode = _O_BINARY; /* sets default for file streams to binary */
