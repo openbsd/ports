@@ -1,0 +1,43 @@
+# Fix for use on OpenBSD and ignore Directories in folder
+
+Index: getmails
+--- getmails.orig
++++ getmails
+@@ -28,7 +28,7 @@ BASE1=${1##*/}
+ [ "$BASE1" != "${BASE1#$2}" ] && return 0 || return 1
+ }
+ UID_BY_ID=$(id -u)
+-PID_GETMAILS=$(pgrep -U $UID_BY_ID '^getmails$')
++PID_GETMAILS=$(pgrep -f -U $UID_BY_ID '^/bin/sh /usr/local/bin/getmails$')
+ if [ "x$PID_GETMAILS" != "x$$" ]; then
+ 	echo "The getmails script is already running as PID=\"$PID_GETMAILS\" ." >&2
+ 	exit 1
+@@ -44,7 +44,7 @@ if [ -f $getmailrcdir/stop ]; then
+ 	echo "Do not run getmail ... (if not, remove $getmailrcdir/stop)" >&2
+ 	exit 1
+ fi
+-rcfiles="/usr/bin/getmail"
++rcfiles="/usr/local/bin/getmail"
+ # Address concerns raised by #863856
+ #  emacs backup files:   foo~ foo#
+ #  vim backup files:     foo~ foo.swp
+@@ -57,7 +57,8 @@ if $para ; then
+            ! endwith "$file" '#' && \
+            ! startswith "$file" 'oldmail-' && \
+            ! endwith "$file" '.swp' && \
+-           ! endwith "$file" '.bak' ; then
++           ! endwith "$file" '.bak' && \
++           [ -f "$file" ]; then
+ 	    $rcfiles --rcfile "$file" "$@" &
+ 	    pids="$pids $!"
+         fi
+@@ -79,7 +80,8 @@ else
+            ! endwith "$file" '#' && \
+            ! startswith "$file" 'oldmail-' && \
+            ! endwith "$file" '.swp' && \
+-           ! endwith "$file" '.bak' ; then
++           ! endwith "$file" '.bak' && \
++           [ -f "$file" ]; then
+     	rcfiles="$rcfiles --rcfile \"$file\""
+         fi
+     done

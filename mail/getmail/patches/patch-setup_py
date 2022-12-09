@@ -1,25 +1,16 @@
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -39,12 +39,11 @@ GETMAILDOCDIR = os.path.join(
-     datadir or prefix,
-     'share',
-     'doc',
--    'getmail-%s' % __version__
-+    'getmail'
- )
+@@ -36,10 +36,10 @@ for (pos, arg) in enumerate(args):
+         # hack hack hack hack hack hack hack
+         datadir = args[pos + 1]
  
- GETMAILMANDIR = os.path.join(
-     datadir or prefix,
--    'share',
-     'man',
-     'man1'
- )
-@@ -101,7 +100,6 @@ setup(
-     data_files=[
-         (GETMAILDOCDIR, [
-             './README',
--            './getmail.spec',
-             'docs/BUGS',
-             'docs/COPYING',
-             'docs/CHANGELOG',
+-DOCDIR = os.path.join('share','doc','getmail-%s' % __version__)
++DOCDIR = os.path.join('share','doc','getmail')
+ GETMAILDOCDIR = os.path.join(datadir or prefix, DOCDIR)
+ 
+-MANDIR = os.path.join('share','man','man1')
++MANDIR = os.path.join('man','man1')
+ GETMAILMANDIR = os.path.join( datadir or prefix, MANDIR)
+ 
+ if '--show-default-install-dirs' in args:

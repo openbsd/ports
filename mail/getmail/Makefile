@@ -1,24 +1,22 @@
 COMMENT=	IMAP/POP3/SDPS mail retriever
 
-MODPY_EGG_VERSION=	5.16
-DISTNAME=	getmail-${MODPY_EGG_VERSION}
+MODPY_EGG_VERSION=	6.18.10
+GH_ACCOUNT=	getmail6
+GH_PROJECT=	getmail6
+GH_TAGNAME=	v${MODPY_EGG_VERSION}
+PKGNAME=	getmail-${MODPY_EGG_VERSION}
 CATEGORIES=	mail
 
-HOMEPAGE=	http://pyropus.ca/software/getmail/
+# https://github.com/getmail6/getmail6
+HOMEPAGE=	https://getmail6.org/
 
 MAINTAINER=	Martin Ziemer <horrad@horrad.de>
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${HOMEPAGE}/old-versions/
-
 MODULES=	lang/python
-
-# No Python 3 support as of 5.16
-# https://pyropus.ca/software/getmail/documentation.html#python3
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
-
+MODPY_PYBUILD=	setuptools
 NO_TEST=	Yes
 
 EXDIR=		${PREFIX}/share/examples/getmail
