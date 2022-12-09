@@ -3,18 +3,15 @@ NOT_FOR_ARCHS=	${GCC3_ARCHS}
 
 COMMENT=	MPEG-2 and MPEG-4 AAC decoder
 
-V=		2.7
-DISTNAME=	faad2-${V}
+V=		2.10.1
+GH_ACCOUNT=	knik0
+GH_PROJECT=	faad2
+GH_TAGNAME=	${V}
 PKGNAME=	faad-${V}
-REVISION=	2
 CATEGORIES=    	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=faac/}
-EXTRACT_SUFX=	.tar.bz2
 
-SHARED_LIBS=	faad	3.0 \
-		mp4ff	2.0
-
-HOMEPAGE=	http://www.audiocoding.com/
+SHARED_LIBS=	faad		4.0 \
+		faad_drm	0.0
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
@@ -26,17 +23,9 @@ BUILD_DEPENDS+=	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS} \
 		devel/libtool
 
-USE_GMAKE=	Yes
-CONFIGURE_STYLE= gnu
-AUTOCONF_VERSION= 2.61
-AUTOMAKE_VERSION= 1.9
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-
-post-extract:
-	@mv ${WRKSRC}/frontend/faad.man ${WRKSRC}/frontend/faad.1
-
-post-patch:
-	@cd ${WRKSRC} && ${AUTOCONF_ENV} sh bootstrap
+AUTOCONF_VERSION= 2.71
+AUTOMAKE_VERSION= 1.16
+AUTORECONF=	./bootstrap
+CONFIGURE_STYLE= autoreconf
 
 .include <bsd.port.mk>
