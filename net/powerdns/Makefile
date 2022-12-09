@@ -3,7 +3,7 @@ COMMENT-mysql=		MySQL database access module for PowerDNS
 COMMENT-pgsql=		PostgreSQL database access module for PowerDNS
 COMMENT-ldap=		LDAP database access module for PowerDNS
 
-V=			4.7.2
+V=			4.7.3
 DISTNAME=		pdns-${V}
 EXTRACT_SUFX =		.tar.bz2
 PKGNAME-main=		powerdns-${V}
@@ -15,10 +15,6 @@ PKGNAME-ldap=		powerdns-ldap-${V}
 #REVISION-mysql=		0
 #REVISION-pgsql=		0
 #REVISION-ldap=		0
-REVISION-ldap=		0
-REVISION-main=		0
-REVISION-mysql=		0
-REVISION-pgsql=		0
 
 CATEGORIES=		net
 
