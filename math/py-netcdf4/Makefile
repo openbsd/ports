@@ -1,10 +1,9 @@
 COMMENT=	Python interface to the netCDF C library
 
-MODPY_EGG_VERSION=	1.6.1
+MODPY_EGG_VERSION=	1.6.2
 DISTNAME=		netCDF4-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME:L}
 CATEGORIES=		math
-REVISION=		1
 
 HOMEPAGE=		http://unidata.github.io/netcdf4-python/
 
