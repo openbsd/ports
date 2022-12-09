@@ -13,7 +13,7 @@ MAINTAINER=		Martin Reindl <martin@catai.org>
 PERMIT_PACKAGE=		Yes
 
 MODULES=		lang/python
-MODPY_PYBUILD =	setuptools
+MODPY_PYBUILD=		setuptools
 MODPY_PI=		Yes
 
 WANTLIB+=		netcdf pthread
@@ -23,6 +23,7 @@ LIB_DEPENDS=		math/netcdf
 BUILD_DEPENDS+=		lang/cython${MODPY_FLAVOR} \
 			math/hdf5 \
 			math/netcdf \
+			math/py-oldest-supported-numpy${MODPY_FLAVOR} \
 			math/py-numpy${MODPY_FLAVOR}
 
 RUN_DEPENDS+=		lang/cython${MODPY_FLAVOR} \
