@@ -70,7 +70,6 @@
      SUBDIR += hashid
      SUBDIR += hcxtools
      SUBDIR += heimdal
-     SUBDIR += hlfl
      SUBDIR += hydra
      SUBDIR += integrit
      SUBDIR += ipguard
