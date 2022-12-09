@@ -3,8 +3,6 @@ DISTNAME=	automake-${VERSION}.5
 PKGSPEC=	automake->=${VERSION},<1.17
 EXTRACT_SUFX=	.tar.xz
 
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_2}
-
 AUTOCONF_VERSION=	2.69
 
 post-install:
