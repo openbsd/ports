@@ -11,4 +11,6 @@ lib/python${MODPY_VERSION}/site-packages/cftime/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cftime/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cftime/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cftime/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cftime/${MODPY_PYCACHE}_strptime.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/python${MODPY_VERSION}/site-packages/cftime/_cftime.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/cftime/_strptime.py
