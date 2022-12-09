@@ -1,9 +1,9 @@
 COMMENT=	universal charset detection library and tool
 
-DISTNAME=	uchardet-0.0.7
+DISTNAME=	uchardet-0.0.8
 EXTRACT_SUFX=	.tar.xz
 
-SHARED_LIBS +=	uchardet                  0.0 # 0.0
+SHARED_LIBS +=	uchardet                  0.1
 
 CATEGORIES=	textproc
 

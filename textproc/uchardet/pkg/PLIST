@@ -1,6 +1,12 @@
 @bin bin/uchardet
 include/uchardet/
 include/uchardet/uchardet.h
+lib/cmake/
+lib/cmake/uchardet/
+lib/cmake/uchardet/uchardet-config-version.cmake
+lib/cmake/uchardet/uchardet-config.cmake
+lib/cmake/uchardet/uchardet-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/uchardet/uchardet-targets.cmake
 @static-lib lib/libuchardet.a
 @lib lib/libuchardet.so.${LIBuchardet_VERSION}
 lib/pkgconfig/uchardet.pc
