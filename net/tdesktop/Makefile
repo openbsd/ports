@@ -9,6 +9,7 @@ V =			4.4.1
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
+REVISION =		0
 
 DPB_PROPERTIES =	parallel
 
@@ -21,7 +22,10 @@ DIST_SUBDIR =		tdesktop
 MASTER_SITES0 =		https://github.com/desktop-app/
 MASTER_SITES1 =		https://github.com/telegramdesktop/
 
-# pending "Use std::invoke_result_t not ::result_of to fix C++20 tdesktop 4.3.4"
+# merged "Update to minizip 1.2.13"
+# https://github.com/telegramdesktop/tdesktop/pull/25537
+PATCHFILES +=		upgrade-minizip-{tdesktop/pull/}25537.patch:1
+# merged "Use std::invoke_result_t not ::result_of to fix C++20 tdesktop 4.3.4"
 # https://github.com/telegramdesktop/tdesktop/pull/25527
 PATCHFILES +=		fix-c++20-build-{tdesktop/pull/}25527.patch:1
 
@@ -120,10 +124,6 @@ NO_TEST =		Yes
 
 # archivers/minizip is minizip-ng, telegram requires incompatible original zlib
 NEEDED_BUNDLES +=	minizip
-# fix Telegram/ThirdParty/minizip/ioapi.c build: off_t is always 64 bit,
-# no need for ftello64()
-# fixed in zlib 1.2.13 (40c5a9bc06c5b0746aab270971c8cc546e3d5fc7)
-CFLAGS +=		-DIOAPI_NO_64
 
 # unported and required
 NEEDED_BUNDLES +=	cld3 rlottie tgcalls
