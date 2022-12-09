@@ -1,5 +1,6 @@
-BROKEN-sparc64=	No fibers support for sparc64
+BROKEN-sparc64=	fibers requires either ucontext or asm code (not present for sparc64)
 
+PORTROACH=	limit:^8\.1
 PHP_VERSION=	8.1.13
 PHP_PKGSPEC=	>=8.1,<8.2
 
