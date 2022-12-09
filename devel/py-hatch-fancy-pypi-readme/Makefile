@@ -4,7 +4,7 @@ MODPY_EGG_VERSION=	22.8.0
 
 DISTNAME=	hatch_fancy_pypi_readme-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 
@@ -14,6 +14,8 @@ PERMIT_PACKAGE=	Yes
 MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	hatchling
+
+RUN_DEPENDS=	devel/py-hatchling${MODPY_FLAVOR}
 
 # some tests use the network
 MODPY_PYTEST=	Yes
