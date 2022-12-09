@@ -1,6 +1,6 @@
 COMMENT =	try/catch/finally syntax for perl
 
-DISTNAME =	Syntax-Keyword-Try-0.27
+DISTNAME =	Syntax-Keyword-Try-0.28
 
 CATEGORIES =	devel
 
