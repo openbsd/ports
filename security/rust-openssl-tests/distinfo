@@ -52,8 +52,8 @@ SHA256 (cargo/rustc-hash-1.1.0.tar.gz) = CNQ/eqawjUnzgs3mp5ggR8NCbblJsUJLxLfsmuE
 SHA256 (cargo/rustc_version-0.4.0.tar.gz) = v6D1hSJtLmgJfU+V0ROxW4OoLoGaslcX7AWQ2VhO82Y=
 SHA256 (cargo/ryu-1.0.11.tar.gz) = RQGr3/OugqHBtHehclLrac7p5m65FcGrqk9E2HPfnwk=
 SHA256 (cargo/semver-1.0.14.tar.gz) = 4l36xGPXeONT21viRJ0czom9b9I8nx6iExDOblobKcQ=
-SHA256 (cargo/serde-1.0.148.tar.gz) = 5T9ku0ugGR1tBnbhsUHKVQR9g7dPVgfm2OuIEmxSwtw=
-SHA256 (cargo/serde_derive-1.0.148.tar.gz) = pVSSQlqlNSG6v2E3MJ59NMILv7v8/ix/OgR/0fa5LAw=
+SHA256 (cargo/serde-1.0.149.tar.gz) = JWuZMjIMWQ5we5RXbjzB98kCTQ7mYS37zxyxBsvo4FU=
+SHA256 (cargo/serde_derive-1.0.149.tar.gz) = tOrpsEy//f1VDrRi7TO8ahtoyTUSfQCLJ0RNCDgPlOQ=
 SHA256 (cargo/serde_json-1.0.89.tar.gz) = Ag/yLHVcLtP4zxYtu0GnJo2TRwLz7TYxZW6ll+CPw9s=
 SHA256 (cargo/shlex-1.1.0.tar.gz) = Q7KFOk0J8hXCTMVInJks5GBS01m1EJNDy6+/Jrxi+KM=
 SHA256 (cargo/strsim-0.10.0.tar.gz) = c0c8Dlnm1YEsXf4qBkpkRJSfCJ4g7smi5VBllklORiM=
@@ -72,7 +72,7 @@ SHA256 (cargo/winapi-0.3.9.tar.gz) = XIOaZ0/NepiVLlkyQupACr6TmSdGdh44ZBQF0osA9Bk
 SHA256 (cargo/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = rDuHxjYgQm3ZuZHlzgMp7/VFvMu7NPO+Cf9vtqtRt7Y=
 SHA256 (cargo/winapi-util-0.1.5.tar.gz) = cOxs6FuxWBUcrl5ch/lajpfSwMSwASI/M6M0485d4Xg=
 SHA256 (cargo/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = cS4ieEHQV8HuHNL7Ivp+WlRhro5I+iynnsQs/BkxGD8=
-SHA256 (rust-openssl-tests-20221204-54d4496e.tar.gz) = yN7Eq2f377P9hpvfslkllGf8S3oFCysmP9mBUA83Vq0=
+SHA256 (rust-openssl-tests-20221209-eaee3834.tar.gz) = rb+hk4CeRADGXFb7u6wtoSClOmVoUaIAew1mO6DdkEg=
 SIZE (cargo/aho-corasick-0.7.20.tar.gz) = 111440
 SIZE (cargo/atty-0.2.14.tar.gz) = 5470
 SIZE (cargo/autocfg-1.1.0.tar.gz) = 13272
@@ -127,8 +127,8 @@ SIZE (cargo/rustc-hash-1.1.0.tar.gz) = 9331
 SIZE (cargo/rustc_version-0.4.0.tar.gz) = 12175
 SIZE (cargo/ryu-1.0.11.tar.gz) = 47007
 SIZE (cargo/semver-1.0.14.tar.gz) = 29813
-SIZE (cargo/serde-1.0.148.tar.gz) = 76637
-SIZE (cargo/serde_derive-1.0.148.tar.gz) = 55562
+SIZE (cargo/serde-1.0.149.tar.gz) = 76702
+SIZE (cargo/serde_derive-1.0.149.tar.gz) = 55561
 SIZE (cargo/serde_json-1.0.89.tar.gz) = 144638
 SIZE (cargo/shlex-1.1.0.tar.gz) = 5199
 SIZE (cargo/strsim-0.10.0.tar.gz) = 11355
@@ -147,4 +147,4 @@ SIZE (cargo/winapi-0.3.9.tar.gz) = 1200382
 SIZE (cargo/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = 2918815
 SIZE (cargo/winapi-util-0.1.5.tar.gz) = 10164
 SIZE (cargo/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 2947998
-SIZE (rust-openssl-tests-20221204-54d4496e.tar.gz) = 314169
+SIZE (rust-openssl-tests-20221209-eaee3834.tar.gz) = 314327
