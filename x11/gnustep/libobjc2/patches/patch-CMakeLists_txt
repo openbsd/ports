@@ -1,4 +1,5 @@
 Do not use CMAKE_THREAD_LIBS_INIT as linker flag
+Don't pick up libdispatch if available.
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
@@ -35,7 +36,20 @@ Index: CMakeLists.txt
  
  # Explicitly link the C++ runtime and libgc if we are compiling with gc support.
  target_link_libraries(objc ${CXX_RUNTIME})
-@@ -285,6 +283,11 @@ if (APPLE)
+@@ -272,12 +270,6 @@ if (LIBGC)
+ 	target_link_libraries(objc ${LIBGC})
+ endif ()
+ 
+-# Link libdispatch if available (we'll miss symbols for toydispatch otherwise)
+-find_library(LIBDISPATCH dispatch)
+-if (LIBDISPATCH)
+-	target_link_libraries(objc ${LIBDISPATCH})
+-endif ()
+-
+ # Make weak symbols work on OS X
+ if (APPLE)
+ 	set(CMAKE_SHARED_LIBRARY_CREATE_C_FLAGS
+@@ -285,6 +277,11 @@ if (APPLE)
  	set(CMAKE_C_LINK_FLAGS "${CMAKE_C_LINK_FLAGS} -Wl,-undefined,dynamic_lookup")
  	set(CMAKE_CXX_LINK_FLAGS "${CMAKE_CXX_LINK_FLAGS} -Wl,-undefined,dynamic_lookup")
  endif ()
