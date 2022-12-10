@@ -1,0 +1,19 @@
+Index: src/signond/signond.pro
+--- src/signond/signond.pro.orig
++++ src/signond/signond.pro
+@@ -95,7 +95,6 @@ DEFINES += "SIGNOND_EXTENSIONS_DIR=$${SIGNOND_EXTENSIO
+ #Trace defines can be overruled by signond's configuration file `LoggingLevel`
+ DEFINES += SIGNOND_TRACE
+ LIBS += \
+-    -lrt \
+     -lsignon-plugins-common \
+     -lsignon-extension
+ 
+@@ -107,6 +106,6 @@ OTHER_FILES += \
+     setupstorage.sh
+ 
+ conf_file.files = $$OTHER_FILES
+-conf_file.path = /etc/
++conf_file.path = $${INSTALL_PREFIX}/share/examples/signond/
+ 
+ INSTALLS += conf_file
