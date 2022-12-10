@@ -34,8 +34,7 @@ TEST_TARGET =		check
 TEST_IS_INTERACTIVE =	Yes
 
 pre-configure:
-	@ln -sf ${LOCALBASE}/lib/qt5/bin/qcollectiongenerator ${WRKDIR}/bin/qcollectiongenerator
-	@ln -sf ${LOCALBASE}/lib/qt5/bin/qhelpgenerator ${WRKDIR}/bin/qhelpgenerator
+	ln -sf ${LOCALBASE}/lib/qt5/bin/q{collection,help}generator ${WRKDIR}/bin/
 	${SUBST_CMD} ${WRKSRC}/Accounts/AccountsQt5Config.cmake.in
 
 .include <bsd.port.mk>
