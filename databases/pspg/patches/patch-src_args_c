@@ -3,7 +3,7 @@ gcc: error: '__SIZEOF_WCHAR_T__' undeclared
 Index: src/args.c
 --- src/args.c.orig
 +++ src/args.c
-@@ -291,7 +291,7 @@ print_info(void)
+@@ -294,7 +294,7 @@ print_info(void)
  
  #endif
  
