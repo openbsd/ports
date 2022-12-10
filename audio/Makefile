@@ -30,6 +30,7 @@
      SUBDIR += cplay
      SUBDIR += cuetools
      SUBDIR += curseradio
+     SUBDIR += d11amp
      SUBDIR += deadbeef
      SUBDIR += disc-cover
      SUBDIR += dumb
