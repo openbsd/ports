@@ -2,7 +2,7 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	desktop sync client for Nextcloud
 
-V =		3.6.2
+V =		3.6.4
 DISTNAME =	nextcloudclient-${V}
 
 GH_ACCOUNT =	nextcloud
@@ -13,7 +13,7 @@ CATEGORIES =	net
 
 HOMEPAGE =	https://nextcloud.com
 
-SHARED_LIBS +=  nextcloudsync             7.0 # 3.6.2
+SHARED_LIBS +=  nextcloudsync             8.0 # 3.6.4
 SHARED_LIBS +=  nextcloud_csync           2.2 # 3.6.0
 SHARED_LIBS +=  nextcloudsync_vfs_suffix  0.0 # 3.5.3
 
@@ -39,7 +39,7 @@ BUILD_DEPENDS =		devel/gettext,-tools \
 BUILD_DEPENDS +=	x11/gnome/librsvg
 
 # for tests, but detected during configure
-BUILD_DEPENDS +=	devel/cmocka \
+BUILD_DEPENDS +=	devel/cmocka
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			misc/shared-mime-info \
