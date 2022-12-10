@@ -1,7 +1,6 @@
 COMMENT=	Python code formatter
 
-# newer vers require click>=8
-MODPY_EGG_VERSION=	22.10.0
+MODPY_EGG_VERSION=	22.12.0
 DISTNAME=	black-${MODPY_EGG_VERSION}
 PKGNAME=	py-black-${MODPY_EGG_VERSION:S/b/beta/}
 
