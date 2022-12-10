@@ -1,6 +1,7 @@
 COMMENT =		wrapper for Borg to create and prune backups
 
 MODPY_EGG_VERSION =	1.7.5
+REVISION =		0
 DISTNAME =		borgmatic-${MODPY_EGG_VERSION}
 
 MAINTAINER =		Stuart Henderson <stu.ports@spacehopper.org>
@@ -19,6 +20,7 @@ MODPY_PYBUILD =		setuptools
 RUN_DEPENDS =		devel/py-colorama${MODPY_FLAVOR}-<0.5 \
 			borgbackup-*:sysutils/borgbackup/1.1 \
 			devel/py-jsonschema${MODPY_FLAVOR} \
+			devel/py-setuptools${MODPY_FLAVOR} \
 			textproc/py-ruamel.yaml${MODPY_FLAVOR}>=0.15.0,<0.18.0 \
 			www/py-requests${MODPY_FLAVOR}
 TEST_DEPENDS =		devel/py-flexmock${MODPY_FLAVOR} \
