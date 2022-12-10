@@ -8,8 +8,7 @@ DPB_PROPERTIES =	parallel
 # ghc hardcodes ${WRKDIR}/bin/gcc when the package is compiled with ccache
 NO_CCACHE =		Yes
 
-GHC_VERSION =		9.2.4
-REVISION =		3
+GHC_VERSION =		9.2.5
 DISTNAME =		ghc-${GHC_VERSION}
 CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/
@@ -61,7 +60,7 @@ SUPDISTFILES +=		${BINDISTFILE-$m}
 GHC_ITEMS = \
 	CABAL			3.6.3.0		 \
 	ARRAY			0.5.4.0		 \
-	BASE			4.16.3.0	 \
+	BASE			4.16.4.0	 \
 	BINARY			0.8.9.0		 \
 	BYTESTRING		0.11.3.1	 \
 	CONTAINERS		0.6.5.1		 \
@@ -69,7 +68,7 @@ GHC_ITEMS = \
 	DIRECTORY		1.3.6.2		 \
 	EXCEPTIONS		0.10.4		 \
 	FILEPATH		1.4.2.2		 \
-	GHC			9.2.4		 \
+	GHC			9.2.5		 \
 	GHC_BIGNUM		1.2		 \
 	GHC_COMPACT		0.1.0.0		 \
 	GHC_PRIM		0.8.0		 \
@@ -79,7 +78,7 @@ GHC_ITEMS = \
 	MTL			2.2.2		 \
 	PARSEC			3.1.15.0	 \
 	PRETTY			1.1.3.6		 \
-	PROCESS			1.6.13.2	 \
+	PROCESS			1.6.16.0	 \
 	STM			2.5.0.2		 \
 	TEMPLATE-HASKELL	2.18.0.0	 \
 	TERMINFO		0.4.1.5		 \

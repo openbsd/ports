@@ -3341,6 +3341,9 @@ lib/ghc/ghc-${GHC_VER}/GHC/StgToCmm/Hpc.p_hi
 lib/ghc/ghc-${GHC_VER}/GHC/StgToCmm/Layout.dyn_hi
 lib/ghc/ghc-${GHC_VER}/GHC/StgToCmm/Layout.hi
 lib/ghc/ghc-${GHC_VER}/GHC/StgToCmm/Layout.p_hi
+lib/ghc/ghc-${GHC_VER}/GHC/StgToCmm/Lit.dyn_hi
+lib/ghc/ghc-${GHC_VER}/GHC/StgToCmm/Lit.hi
+lib/ghc/ghc-${GHC_VER}/GHC/StgToCmm/Lit.p_hi
 lib/ghc/ghc-${GHC_VER}/GHC/StgToCmm/Monad.dyn_hi
 lib/ghc/ghc-${GHC_VER}/GHC/StgToCmm/Monad.hi
 lib/ghc/ghc-${GHC_VER}/GHC/StgToCmm/Monad.p_hi
@@ -6731,6 +6734,7 @@ share/doc/ghc/html/libraries/ghc-${GHC_VER}/GHC-StgToCmm-Foreign.html
 share/doc/ghc/html/libraries/ghc-${GHC_VER}/GHC-StgToCmm-Heap.html
 share/doc/ghc/html/libraries/ghc-${GHC_VER}/GHC-StgToCmm-Hpc.html
 share/doc/ghc/html/libraries/ghc-${GHC_VER}/GHC-StgToCmm-Layout.html
+share/doc/ghc/html/libraries/ghc-${GHC_VER}/GHC-StgToCmm-Lit.html
 share/doc/ghc/html/libraries/ghc-${GHC_VER}/GHC-StgToCmm-Monad.html
 share/doc/ghc/html/libraries/ghc-${GHC_VER}/GHC-StgToCmm-Prim.html
 share/doc/ghc/html/libraries/ghc-${GHC_VER}/GHC-StgToCmm-Prof.html
@@ -7872,6 +7876,7 @@ share/doc/ghc/html/users_guide/.buildinfo
 share/doc/ghc/html/users_guide/9.2.1-notes.html
 share/doc/ghc/html/users_guide/9.2.2-notes.html
 share/doc/ghc/html/users_guide/9.2.3-notes.html
+share/doc/ghc/html/users_guide/9.2.4-notes.html
 share/doc/ghc/html/users_guide/${GHC_VER}-notes.html
 share/doc/ghc/html/users_guide/_images/
 share/doc/ghc/html/users_guide/_images/prof_scc.svg
@@ -7879,6 +7884,7 @@ share/doc/ghc/html/users_guide/_sources/
 share/doc/ghc/html/users_guide/_sources/9.2.1-notes.rst.txt
 share/doc/ghc/html/users_guide/_sources/9.2.2-notes.rst.txt
 share/doc/ghc/html/users_guide/_sources/9.2.3-notes.rst.txt
+share/doc/ghc/html/users_guide/_sources/9.2.4-notes.rst.txt
 share/doc/ghc/html/users_guide/_sources/${GHC_VER}-notes.rst.txt
 share/doc/ghc/html/users_guide/_sources/bugs.rst.txt
 share/doc/ghc/html/users_guide/_sources/codegens.rst.txt
