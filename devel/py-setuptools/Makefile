@@ -32,7 +32,9 @@ FLAVORS=		python3
 FLAVOR=			python3
 
 TEST_DEPENDS=		devel/py-mock${MODPY_FLAVOR} \
+			devel/py-jaraco-envs${MODPY_FLAVOR} \
 			devel/py-jaraco-path${MODPY_FLAVOR} \
+			devel/py-path${MODPY_FLAVOR} \
 			devel/py-pip${MODPY_FLAVOR} \
 			devel/py-test-cov${MODPY_FLAVOR} \
 			devel/py-test-xdist${MODPY_FLAVOR} \
