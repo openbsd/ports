@@ -259,6 +259,7 @@
      SUBDIR += libcoap
      SUBDIR += libconfig
      SUBDIR += libconfuse
+     SUBDIR += libcrossguid
      SUBDIR += libdaemon
      SUBDIR += libdisorder
      SUBDIR += libdispatch
