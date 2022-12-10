@@ -1,10 +1,9 @@
 COMMENT =		virtual Python environment builder
 
-MODPY_EGG_VERSION =	20.16.7
+MODPY_EGG_VERSION =	20.17.1
 DISTNAME =		virtualenv-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		0
 
 HOMEPAGE =		https://virtualenv.pypa.io/
 
@@ -14,8 +13,6 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_PYTEST =		Yes
-MODPY_PYTEST_ARGS =	tests
 MODPY_PYBUILD =		setuptools_scm
 
 # messes up naming of packaged wheels
@@ -29,9 +26,12 @@ RUN_DEPENDS =		sysutils/py-distlib${MODPY_FLAVOR} \
 			sysutils/py-platformdirs${MODPY_FLAVOR}
 TEST_DEPENDS =		devel/py-coverage${MODPY_FLAVOR} \
 			devel/py-flaky${MODPY_FLAVOR} \
-			devel/py-mock${MODPY_FLAVOR} \
+			sysutils/py-packaging${MODPY_FLAVOR} \
 			devel/py-test-mock${MODPY_FLAVOR} \
-			devel/py-test-timeout${MODPY_FLAVOR} \
-			sysutils/py-packaging${MODPY_FLAVOR}
+			devel/py-test-timeout${MODPY_FLAVOR}
+
+# i think this shouldn't be needed as it seems like it should use the
+# vendored copy, but pytest infrastructure in ports isn't finding it
+TEST_DEPENDS +=		devel/py-pip${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
