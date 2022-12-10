@@ -1,6 +1,6 @@
 COMMENT =		test asyncio code with pytest
 
-MODPY_EGG_VERSION =	0.20.2
+MODPY_EGG_VERSION =	0.20.3
 DISTNAME =		pytest-asyncio-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
 CATEGORIES =		devel
