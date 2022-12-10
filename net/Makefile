@@ -203,6 +203,8 @@
      SUBDIR += lagrange
      SUBDIR += ldns
      SUBDIR += lftp
+     SUBDIR += libaccounts-glib
+     SUBDIR += libaccounts-qt
      SUBDIR += libbgpdump
      SUBDIR += libbind
      SUBDIR += libcares
@@ -657,6 +659,7 @@
      SUBDIR += serf
      SUBDIR += si
      SUBDIR += sic
+     SUBDIR += signond
      SUBDIR += silc-client
      SUBDIR += silc-server
      SUBDIR += silc-server,operops
