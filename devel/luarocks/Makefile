@@ -1,13 +1,13 @@
 COMMENT =	package manager for lua ${MODLUA_VERSION}
 
-V =		3.9.1
+V =		3.9.2
 DISTNAME =	luarocks-${V}
 FULLPKGNAME =	luarocks-${FLAVOR}-${V}
 CATEGORIES =	devel
 
 HOMEPAGE =	https://luarocks.org/
 
-MAINTAINER =	Omar Polo <op@omarpolo.com>
+MAINTAINER =	Omar Polo <op@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes
