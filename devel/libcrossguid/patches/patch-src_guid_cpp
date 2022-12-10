@@ -1,0 +1,32 @@
+Index: src/guid.cpp
+--- src/guid.cpp.orig
++++ src/guid.cpp
+@@ -42,6 +42,10 @@ THE SOFTWARE.
+ #include <cassert>
+ #endif
+ 
++#ifdef GUID_DCE
++#include <uuid.h>
++#endif
++
+ BEGIN_XG_NAMESPACE
+ 
+ #ifdef GUID_ANDROID
+@@ -275,6 +279,17 @@ Guid newGuid()
+ 	std::array<unsigned char, 16> data;
+ 	static_assert(std::is_same<unsigned char[16], uuid_t>::value, "Wrong type!");
+ 	uuid_generate(data.data());
++	return Guid{std::move(data)};
++}
++#endif
++
++#ifdef GUID_DCE
++Guid newGuid()
++{
++	uuid_t uuid;
++	std::array<unsigned char, 16> data;
++	uuid_create(&uuid, NULL);
++	uuid_enc_be(&data, &uuid);
+ 	return Guid{std::move(data)};
+ }
+ #endif

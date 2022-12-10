@@ -1,0 +1,11 @@
+include/crossguid/
+include/crossguid/guid.hpp
+lib/cmake/
+lib/cmake/crossguid/
+lib/cmake/crossguid/crossguid-config${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/crossguid/crossguid-config.cmake
+@lib lib/libcrossguid.so.${LIBcrossguid_VERSION}
+lib/pkgconfig/crossguid.pc
+share/doc/crossguid/
+share/doc/crossguid/LICENSE
+share/doc/crossguid/README.md

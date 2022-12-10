@@ -1,0 +1,23 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -22,6 +22,8 @@ target_include_directories(crossguid PUBLIC
+ 
+ if(WIN32)
+     target_compile_definitions(crossguid PRIVATE GUID_WINDOWS)
++elseif(CMAKE_HOST_SYSTEM_NAME MATCHES "OpenBSD")
++    target_compile_definitions(crossguid PRIVATE GUID_DCE)
+ elseif(APPLE)
+     find_library(CFLIB CoreFoundation)
+     target_link_libraries(crossguid ${CFLIB})
+@@ -64,8 +66,8 @@ if (${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURC
+ 	set(CROSSGUID_ARCHIVE_INSTALL_DIR "${CMAKE_INSTALL_LIBDIR}")
+ 	set(CROSSGUID_FRAMEWORK_INSTALL_DIR "${CMAKE_INSTALL_LIBDIR}")
+ 
+-	set(CROSSGUID_CMAKE_CONFIG_INSTALL_DIR "${CMAKE_INSTALL_DATADIR}/crossguid/cmake")
+-	set(CROSSGUID_ADDITIONAL_FILES_INSTALL_DIR "${CMAKE_INSTALL_DATADIR}/crossguid")
++	set(CROSSGUID_CMAKE_CONFIG_INSTALL_DIR "${CMAKE_INSTALL_LIBDIR}/cmake/crossguid")
++	set(CROSSGUID_ADDITIONAL_FILES_INSTALL_DIR "${CMAKE_INSTALL_DATADIR}/doc/crossguid")
+ 
+ 	# Install target
+ 	install(TARGETS crossguid EXPORT crossguidTargets
