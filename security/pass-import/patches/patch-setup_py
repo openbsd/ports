@@ -1,27 +1,7 @@
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -12,14 +12,17 @@ except ImportError:
-     PANDOC = False
- from pathlib import Path
- 
--from share import makedoc
-+try:
-+    from share import makedoc
-+except ImportError:
-+    PANDOC = False
- from setuptools import setup
- 
- 
--makedoc()
- if not PANDOC:
-     print("Warning: 'pypandoc' is required to generate the manual pages.")
- else:
-+    makedoc()
-     try:
-         for name in ['pass-import', 'pimport']:
-             pypandoc.convert_file(f"share/man/man1/{name}.md", 'man',
-@@ -31,7 +34,7 @@ else:
+@@ -12,7 +12,7 @@ from setuptools import setup
  
  share = Path(sys.prefix, 'share')
  base = '/usr'
@@ -30,7 +10,7 @@ Index: setup.py
      base = '/usr/local'
  lib = Path(base, 'lib', 'password-store', 'extensions')
  
-@@ -47,7 +50,7 @@ if '--user' in sys.argv:
+@@ -28,7 +28,7 @@ if '--user' in sys.argv:
  
  setup(
      data_files=[

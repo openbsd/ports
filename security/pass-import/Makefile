@@ -1,7 +1,6 @@
 COMMENT=	importer for pass (passwordstore)
 
-MODPY_EGG_VERSION= 3.3
-REVISION=	2
+MODPY_EGG_VERSION= 3.4
 DISTNAME=	pass-import-${MODPY_EGG_VERSION}
 
 CATEGORIES=	security
