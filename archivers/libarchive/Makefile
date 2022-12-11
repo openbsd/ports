@@ -1,8 +1,7 @@
 COMMENT=	multi-format archive and compression library
 
-DISTNAME=	libarchive-3.6.1
-REVISION=	0
-SHARED_LIBS=	archive		12.0	# 19.1
+DISTNAME=	libarchive-3.6.2
+SHARED_LIBS=	archive		13.0	# 19.2
 CATEGORIES=	archivers
 HOMEPAGE=	https://www.libarchive.org/
 
@@ -14,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=	https://www.libarchive.org/downloads/
 EXTRACT_SUFX=	.tar.xz
 
-WANTLIB=	b2 bz2 c charset crypto expat iconv lz4 lzma pthread z zstd
+WANTLIB=	b2 bz2 c crypto expat iconv lz4 lzma pthread z zstd
 LIB_DEPENDS=	archivers/bzip2 \
 		archivers/lz4 \
 		archivers/xz \
