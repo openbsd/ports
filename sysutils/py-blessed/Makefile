@@ -1,10 +1,9 @@
 COMMENT =	easy, practical library for making terminal apps
 
-MODPY_EGG_VERSION =	1.19.0
+MODPY_EGG_VERSION =	1.19.1
 
 DISTNAME =	blessed-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
 
 CATEGORIES =	sysutils
 
