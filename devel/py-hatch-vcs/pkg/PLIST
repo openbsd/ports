@@ -17,8 +17,14 @@ lib/python${MODPY_VERSION}/site-packages/hatch_vcs/${MODPY_PYCACHE}build_hook.${
 lib/python${MODPY_VERSION}/site-packages/hatch_vcs/${MODPY_PYCACHE}build_hook.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hatch_vcs/${MODPY_PYCACHE}hooks.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hatch_vcs/${MODPY_PYCACHE}hooks.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/hatch_vcs/${MODPY_PYCACHE}metadata_hook.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/hatch_vcs/${MODPY_PYCACHE}metadata_hook.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/hatch_vcs/${MODPY_PYCACHE}vcs_utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/hatch_vcs/${MODPY_PYCACHE}vcs_utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hatch_vcs/${MODPY_PYCACHE}version_source.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hatch_vcs/${MODPY_PYCACHE}version_source.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hatch_vcs/build_hook.py
 lib/python${MODPY_VERSION}/site-packages/hatch_vcs/hooks.py
+lib/python${MODPY_VERSION}/site-packages/hatch_vcs/metadata_hook.py
+lib/python${MODPY_VERSION}/site-packages/hatch_vcs/vcs_utils.py
 lib/python${MODPY_VERSION}/site-packages/hatch_vcs/version_source.py
