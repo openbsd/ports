@@ -1,10 +1,9 @@
 COMMENT =		markdown to reStructuredText converter
 
-MODPY_EGG_VERSION =	0.2.1
+MODPY_EGG_VERSION =	0.3.1
 
 DISTNAME =		m2r-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
 
 CATEGORIES =		devel textproc
 
