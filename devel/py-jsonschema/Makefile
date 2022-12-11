@@ -1,9 +1,8 @@
 COMMENT =		implementation of JSON Schema validation for Python
 
-MODPY_EGG_VERSION =	4.16.0
+MODPY_EGG_VERSION =	4.17.3
 DISTNAME =		jsonschema-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		devel
 
