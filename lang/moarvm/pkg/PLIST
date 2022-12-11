@@ -72,7 +72,6 @@ include/moar/core/continuation.h
 include/moar/core/dll.h
 include/moar/core/exceptions.h
 include/moar/core/ext.h
-include/moar/core/fixedsizealloc.h
 include/moar/core/fixkey_hash_table.h
 include/moar/core/fixkey_hash_table_funcs.h
 include/moar/core/frame.h
