@@ -1,0 +1,12 @@
+Index: build/Makefile.in
+--- build/Makefile.in.orig
++++ build/Makefile.in
+@@ -611,7 +611,7 @@ clangcheck gcccheck:
+ 
+ moar@exe@: $(MAIN_OBJECTS) @moar@
+ 	$(MSG) linking $@
+-	$(CMD)$(LD) @ldout@$@ $(LDFLAGS) $(MINGW_UNICODE) $(MAIN_OBJECTS) $(MAIN_LIBS)
++	$(CMD)$(LD) @ldout@$@ $(MAIN_LIBS) $(LDFLAGS) $(MINGW_UNICODE) $(MAIN_OBJECTS)
+ 
+ @moarlib@: $(OBJECTS) $(THIRDPARTY)
+ 	$(MSG) linking $@
