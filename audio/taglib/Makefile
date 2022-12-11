@@ -1,10 +1,10 @@
 COMMENT=	managing meta-data of audio formats
-DISTNAME=	taglib-1.12
+DISTNAME=	taglib-1.13
 
 CATEGORIES=	audio devel
 
-SHARED_LIBS +=	tag	13.0
-SHARED_LIBS +=	tag_c	3.0
+SHARED_LIBS +=	tag	13.1
+SHARED_LIBS +=	tag_c	3.1
 
 HOMEPAGE=	https://taglib.github.io/
 
@@ -22,7 +22,7 @@ BUILD_DEPENDS=	devel/boost \
 		devel/cppunit
 
 CONFIGURE_ARGS=	-DBUILD_SHARED_LIBS=ON \
-		-DBUILD_TESTS=ON
+		-DBUILD_TESTING=ON
 
 TEST_TARGET=	check
 
