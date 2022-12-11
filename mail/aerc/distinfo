@@ -1,4 +1,4 @@
-SHA256 (aerc-0.13.0.zip) = IbscULse7msY7PSjGwPJqIjlpzq2HRyrMKcTcAreJzw=
+SHA256 (aerc-0.13.0pl20221025.zip) = myM9sQGMfQ4mTC+FivVJb9shjVxwUSrZvMUBT8ZqPVE=
 SHA256 (go_modules/4d63.com/gochecknoglobals/@v/v0.1.0.mod) = CoiCfB7g1EMsWIt68xomcx8db1/KEFaNOnjdCKsq+sc=
 SHA256 (go_modules/4d63.com/gochecknoglobals/@v/v0.1.0.zip) = 9pEmszxXw/fffUClxOF+ny60YpSOF+EKe6VEKxSsBvk=
 SHA256 (go_modules/bitbucket.org/creachadair/shell/@v/v0.0.6.mod) = jrU1IxbKOpVIw7+aTsm0X55+XJLMrJ/mN2yuoWyj364=
@@ -1902,7 +1902,7 @@ SHA256 (go_modules/rsc.io/sampler/@v/v1.3.0.zip) = 2iArDagDqyZhq5imgLuk9kEjoyblQ
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = JC1yDRxq7+SjBcM0GoBXXhmlRRelO2IPjOKMKW5R06o=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.mod) = 8ikTVRI4fWZj4fCZmkkiq3CN7UvcgExxzpPj1gK6ld0=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.zip) = Ve0Ixd9EigM79+LCkS1NqoW4VqBchUsMh8zIXH8/v8c=
-SIZE (aerc-0.13.0.zip) = 430963
+SIZE (aerc-0.13.0pl20221025.zip) = 430808
 SIZE (go_modules/4d63.com/gochecknoglobals/@v/v0.1.0.mod) = 105
 SIZE (go_modules/4d63.com/gochecknoglobals/@v/v0.1.0.zip) = 13354
 SIZE (go_modules/bitbucket.org/creachadair/shell/@v/v0.0.6.mod) = 48
