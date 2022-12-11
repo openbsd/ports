@@ -1,9 +1,8 @@
 COMMENT=		Python bindings to TagLib audio file tag library
 
-MODPY_EGG_VERSION =	2013.1
+MODPY_EGG_VERSION =	2018.1.1
 DISTNAME =		tagpy-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		18
 
 CATEGORIES =		audio devel
 
@@ -13,7 +12,7 @@ HOMEPAGE =		https://mathema.tician.de/software/tagpy
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} boost_python${MODPY_VERSION:C/\.//g}-mt m
-WANTLIB += ${MODPY_WANTLIB} tag
+WANTLIB += tag
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -25,8 +24,7 @@ MODPY_PYBUILD =		setuptools
 FLAVORS =		python3
 FLAVOR =		python3
 
-LIB_DEPENDS =		lang/python/${MODPY_VERSION} \
-			audio/taglib \
+LIB_DEPENDS =		audio/taglib \
 			devel/boost
 
 CONFIGURE_ARGS +=	--boost-compiler=gcc42 \

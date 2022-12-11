@@ -1,0 +1,19 @@
+From 6e95c5eaba2286e2837dfe172d03f938550e03df Mon Sep 17 00:00:00 2001
+From: Andreas Kloeckner <inform@tiker.net>
+Date: Sat, 6 Jul 2019 12:30:42 -0500
+Subject: [PATCH] Remove compilation-breaking line, according to Github comment
+
+Index: src/wrapper/id3.cpp
+--- src/wrapper/id3.cpp.orig
++++ src/wrapper/id3.cpp
+@@ -221,7 +221,9 @@ void exposeID3()
+       .DEF_SIMPLE_METHOD(removeFrames)
+ 
+       #if (TAGPY_TAGLIB_HEX_VERSION >= 0x10800)
+-        .DEF_OVERLOADED_METHOD(render, ByteVector (cl::*)() const)
++        // Commented out following comment at:
++        // https://github.com/inducer/tagpy/commit/fb6d9a95f8ed1b0f347a82569a13e60a75c7e6d6
++        // .DEF_OVERLOADED_METHOD(render, ByteVector (cl::*)() const)
+         .DEF_OVERLOADED_METHOD(render, ByteVector (cl::*)(int) const)
+       #else
+         .def("render", (ByteVector (cl::*)() const) &cl::render)
