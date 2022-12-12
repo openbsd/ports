@@ -24,7 +24,6 @@ lib/python${MODPY_VERSION}/site-packages/gi/overrides/Accounts.py
 share/dbus-1/
 share/dbus-1/interfaces/
 share/dbus-1/interfaces/com.google.code.AccountsSSO.Accounts.Manager.xml
-share/gettext/its/
 share/gettext/its/accounts-application.its
 share/gettext/its/accounts-application.loc
 share/gettext/its/accounts-provider.its
@@ -35,8 +34,6 @@ share/gettext/its/accounts-service.its
 share/gettext/its/accounts-service.loc
 share/gir-1.0/
 share/gir-1.0/Accounts-1.0.gir
-share/gtk-doc/
-share/gtk-doc/html/
 share/gtk-doc/html/libaccounts-glib/
 share/gtk-doc/html/libaccounts-glib/AgAccount.html
 share/gtk-doc/html/libaccounts-glib/AgAccountService.html

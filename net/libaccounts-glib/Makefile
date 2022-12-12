@@ -4,6 +4,7 @@ CATEGORIES =	net
 
 V =		1.26
 DISTNAME =	libaccounts-glib-${V}
+REVISION =	0
 
 SHARED_LIBS +=  accounts-glib             0.0 # 0.0
 
@@ -23,6 +24,7 @@ CONFIGURE_STYLE = meson
 
 BUILD_DEPENDS =	lang/vala \
 		devel/check \
+		devel/gobject-introspection \
 		textproc/gtk-doc
 
 LIB_DEPENDS =	databases/sqlite3 \
