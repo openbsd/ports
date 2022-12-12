@@ -2,6 +2,7 @@ COMMENT=		Text Editor Product Line
 
 GNOME_PROJECT=		tepl
 GNOME_VERSION=		6.2.0
+REVISION=		0
 
 CATEGORIES=		devel
 
@@ -20,7 +21,10 @@ MODULES=		devel/meson \
 
 MODGNOME_TOOLS= 	gobject-introspection
 
-BUILD_DEPENDS=		textproc/gtk-doc
+BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
+			textproc/gtk-doc
+
+RUN_DEPENDS=		devel/gsettings-desktop-schemas
 
 LIB_DEPENDS=		textproc/icu4c \
 			x11/gnome/amtk \
