@@ -1,0 +1,12 @@
+Drop Requires.private field from pkgconfig file.  Some failures
+will otherwise result in dependent ports since we do not have a
+pkg-config file for iconv.
+
+Index: build/pkgconfig/libarchive.pc.in
+--- build/pkgconfig/libarchive.pc.in.orig
++++ build/pkgconfig/libarchive.pc.in
+@@ -10,4 +10,3 @@ Cflags: -I${includedir}
+ Cflags.private: -DLIBARCHIVE_STATIC
+ Libs: -L${libdir} -larchive
+ Libs.private: @LIBS@
+-Requires.private: @LIBSREQUIRED@

@@ -1,6 +1,7 @@
 COMMENT=	multi-format archive and compression library
 
 DISTNAME=	libarchive-3.6.2
+REVISION=	0
 SHARED_LIBS=	archive		13.0	# 19.2
 CATEGORIES=	archivers
 HOMEPAGE=	https://www.libarchive.org/
