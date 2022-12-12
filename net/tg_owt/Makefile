@@ -15,6 +15,7 @@ GH_COMMIT =		621f3da55331733bf0d1b223786b96b68c03dca1
 DISTNAME =		${GH_PROJECT}-0.0.0.20220909
 DISTFILES =		${GH_DISTFILE}
 CATEGORIES =		net
+REVISION =		0
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
@@ -72,7 +73,7 @@ WANTLIB += absl_symbolize absl_synchronization absl_throw_delegate
 WANTLIB += absl_time absl_time_zone avcodec avformat avutil crypto
 WANTLIB += jpeg m openh264 opus protobuf ssl swresample swscale vpx
 
-# C++17 set below, some components use -std=gnu++20
+# C++20
 COMPILER =		base-clang ports-gcc
 
 # precompiled headers need this to be cached, see ccache(1) PRECOMPILED HEADERS
@@ -100,9 +101,6 @@ CONFIGURE_ARGS +=	-DTG_OWT_PACKAGED_BUILD=ON \
 # Pending "Do not use PipeWire on OpenBSD"
 # https://github.com/desktop-app/tg_owt/pull/103
 CONFIGURE_ARGS +=	-DTG_OWT_USE_PIPEWIRE=OFF
-
-# match standard version with abseil
-CONFIGURE_ARGS +=	-DCMAKE_CXX_STANDARD=17
 
 .if ${MACHINE_ARCH} == arm
 CONFIGURE_ARGS +=	-DTG_OWT_ARCH_ARMV7_USE_NEON=OFF
