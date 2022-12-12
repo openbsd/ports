@@ -14,6 +14,7 @@ HOMEPAGE=	https://squirrelmail.org/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
+# uses pledge() and unveil()
 WANTLIB=	c crypto curses pthread ssl
 
 CONFIGURE_STYLE= gnu
