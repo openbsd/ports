@@ -1,8 +1,9 @@
 COMMENT=	connection-caching IMAP proxy for webmail clients etc.
 
 DISTNAME=	squirrelmail-20221212_0200-SVN.imap_proxy
-# date of last commit:
-PKGNAME=	imapproxy-1.2.8pre20220524
+# from date of last commit; XXX pkg_add sort order is strange and imapproxy-1.2.8pre2021.02p2
+# sorts later than imapproxy-1.2.8pre20220524
+PKGNAME=	imapproxy-1.2.8pre2022.05
 WRKDIST=	${WRKDIR}/squirrelmail.imap_proxy
 
 CATEGORIES=	mail
