@@ -16,7 +16,30 @@ Index: src/main.c
      SSL_load_error_strings();
  
      /* 
-@@ -1574,9 +1566,9 @@ static int verify_callback(int ok, X509_STORE_CTX * ct
+@@ -681,6 +673,22 @@ int main( int argc, char *argv[] )
+     if ( BecomeNonRoot() )
+ 	exit( 1 );
+ 
++    /*
++     * Optional dir accessed at runtime if it exists, but allow unveil() to fail
++     * so the daemon can still run if the dir does not exist.
++     */
++    unveil("/etc/ssl/certs", "r");
++    if ( unveil(NULL, NULL) != 0 )
++    {
++	syslog(LOG_ERR, "%s: unveil() failed: [%d]\n", fn, rc);
++	exit( 1 );
++    }
++    if ( pledge("stdio inet dns rpath", NULL) != 0 )
++    {
++	syslog(LOG_ERR, "%s: pledge() failed: [%d]\n", fn, rc);
++	exit( 1 );
++    }
++
+     /* some misc thread setup */
+     rc = pthread_attr_init( &attr );
+     if ( rc )
+@@ -1574,9 +1582,9 @@ static int verify_callback(int ok, X509_STORE_CTX * ct
  	    verify_error = X509_V_ERR_CERT_CHAIN_TOO_LONG;
  	}
      }

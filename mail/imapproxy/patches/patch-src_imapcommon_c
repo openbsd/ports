@@ -53,7 +53,7 @@ Index: src/imapcommon.c
      
      /* see if we have a reusable connection available */
      ICC_Active = NULL;
-@@ -1277,6 +1294,7 @@ extern ICD_Struct *Get_Server_conn( char *Username, 
+@@ -1362,6 +1379,7 @@ extern ICD_Struct *Get_Server_conn( char *Username, 
  	SSL_free( Server.conn->tls );
      }
  #endif

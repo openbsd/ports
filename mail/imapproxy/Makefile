@@ -1,16 +1,15 @@
-COMMENT=	caching IMAP proxy to be used with webmail clients
+COMMENT=	connection-caching IMAP proxy for webmail clients etc.
 
-DISTNAME=	squirrelmail-20210316_0200-SVN.imap_proxy
-PKGNAME=	imapproxy-1.2.8pre2021.02
-REVISION=	5
+DISTNAME=	squirrelmail-20221212_0200-SVN.imap_proxy
+# date of last commit:
+PKGNAME=	imapproxy-1.2.8pre20220524
 WRKDIST=	${WRKDIR}/squirrelmail.imap_proxy
 
 CATEGORIES=	mail
-# old svn tgz are removed
-#MASTER_SITES=	http://snapshots.squirrelmail.org/
+PORTROACH=	site:https://snapshots.squirrelmail.org/
 MASTER_SITES=	https://spacehopper.org/mirrors/
 
-HOMEPAGE=	http://www.imapproxy.org/
+HOMEPAGE=	https://squirrelmail.org/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
@@ -23,7 +22,7 @@ DEBUG_PACKAGES=	${BUILD_PACKAGES}
 NO_TEST=	Yes
 
 pre-build:
-	@${SUBST_CMD} ${WRKSRC}/include/imapproxy.h
+	${SUBST_CMD} ${WRKSRC}/include/imapproxy.h
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/imapproxy
