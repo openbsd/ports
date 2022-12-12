@@ -9,3 +9,14 @@ Index: ngrep.c
  #endif
  
  #if defined(OSF1)
+@@ -494,6 +495,10 @@ int setup_pcap_source(void) {
+ 
+         case DLT_PPP:
+             link_offset = PPPHDR_SIZE;
++            break;
++
++        case DLT_PPP_ETHER:
++            link_offset = 8;
+             break;
+ 
+ #if HAVE_DLT_LOOP
