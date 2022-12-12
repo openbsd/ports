@@ -1,3 +1,9 @@
+#1:
+ENGINE_cleanup() is used in a block gated by OPENSSL_VERSION_NUMBER <
+0x10100000L || defined(LIBRESSL_VERSION_NUMBER), so make sure that the
+header defining this is gated by the same ifdef.
+
+#2:
 This check doesn't make sense for EC keys. (Also it ignores the default
 key size compiled into libcrypto, only looks at default_bits in openssl.cnf
 and any settings in the php file, which results in bogus failures).
@@ -5,6 +11,15 @@ and any settings in the php file, which results in bogus failures).
 Index: ext/openssl/openssl.c
 --- ext/openssl/openssl.c.orig
 +++ ext/openssl/openssl.c
+@@ -61,7 +61,7 @@
+ #include <openssl/param_build.h>
+ #endif
+ 
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L && !defined(OPENSSL_NO_ENGINE)
++#if (OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)) && !defined(OPENSSL_NO_ENGINE)
+ #include <openssl/engine.h>
+ #endif
+ 
 @@ -3662,7 +3662,7 @@ static int php_openssl_get_evp_pkey_type(int key_type)
  /* {{{ php_openssl_generate_private_key */
  static EVP_PKEY * php_openssl_generate_private_key(struct php_x509_request * req)

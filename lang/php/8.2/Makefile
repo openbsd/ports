@@ -2,6 +2,7 @@ BROKEN-sparc64= fibers requires either ucontext or asm code (not present for spa
 
 PHP_VERSION=	8.2.0
 PHP_PKGSPEC=	>=8.2,<8.3
+REVISION-main=	0
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
