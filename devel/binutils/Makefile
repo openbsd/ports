@@ -1,6 +1,7 @@
 COMMENT =	GNU binary utilities
 
 DISTNAME =	binutils-2.39
+REVISION =	0
 
 CATEGORIES =	devel
 
