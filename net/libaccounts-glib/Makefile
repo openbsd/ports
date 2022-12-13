@@ -25,10 +25,12 @@ CONFIGURE_STYLE = meson
 BUILD_DEPENDS =	lang/vala \
 		devel/check \
 		devel/gobject-introspection \
+		devel/py-gobject3${MODPY_FLAVOR} \
 		textproc/gtk-doc
 
 LIB_DEPENDS =	databases/sqlite3 \
 		devel/glib2 \
+		devel/py-gobject3${MODPY_FLAVOR} \
 		textproc/libxml
 
 .include <bsd.port.mk>
