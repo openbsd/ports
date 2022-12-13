@@ -7,13 +7,14 @@ DPB_PROPERTIES=		parallel parallel2
 COMMENT=		Chromium browser
 
 V=			108.0.5359.98
-REVISION=		0
+REVISION=		1
 
 DISTNAME=		chromium-${V}
 
 DISTFILES+=		${CHROMIUM_DISTFILES} \
 			${PROFILE_DISTFILES}:0 \
-			${REGRESS_DISTFILES}
+			${REGRESS_DISTFILES} \
+			libudev-openbsd-20221108-c3330efd.tar.gz:0
 
 CHROMIUM_DISTFILES+=	chromium-${V}${EXTRACT_SUFX}
 PROFILE_DISTFILES+=	chrome-linux-${V}-llvm13.profdata${EXTRACT_SUFX}
@@ -92,6 +93,8 @@ LIB_DEPENDS=	archivers/snappy \
 		x11/xkbcommon \
 		print/cups,-libs \
 		${MODGCC4_CPPLIBDEP}
+
+BUILD_DEPENDS+=	sysutils/libudev-openbsd:build
 
 .include <bsd.own.mk>
 
@@ -302,6 +305,8 @@ do-install:
     unveil.utility_network unveil.utility_video
 	${INSTALL_DATA} ${FILESDIR}/${f} ${PREFIX}/share/examples/chromium
 .endfor
+	${INSTALL_DATA} ${WRKDIR}/sysutils/libudev-openbsd/build-${MACHINE_ARCH}/libudev.so.0.0 \
+		${PREFIX}/${DIST_TARGET_DIR}/libudev.so.0
 
 pre-test:
 .for _d in ${REGRESS_DISTFILES:C/:[0-9]$//}
