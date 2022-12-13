@@ -36,6 +36,8 @@ TINSTDIR=		${TRUEPREFIX}/nextcloud
 VR=			${V:R}
 MAJOR=			${VR:R}
 SUBST_VARS=		INSTDIR TINSTDIR VR MAJOR
+# we only need MAJOR for pkg-readme, don't replace it in PLISTs
+UPDATE_PLIST_ARGS+=	-i MAJOR
 DESCR=			${.CURDIR}/../pkg/DESCR
 UNMESSAGE=		${.CURDIR}/../pkg/UNMESSAGE
 FILESDIR=		${.CURDIR}/../files
