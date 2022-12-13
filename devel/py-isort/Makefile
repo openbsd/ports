@@ -1,9 +1,8 @@
 COMMENT=	Python utility / library to sort Python imports
 
-MODPY_EGG_VERSION=	5.10.1
+MODPY_EGG_VERSION=	5.11.1
 DISTNAME=	isort-${MODPY_EGG_VERSION}
 PKGNAME=	py-isort-${MODPY_EGG_VERSION}
-REVISION=	0
 
 CATEGORIES=	devel
 
@@ -24,9 +23,9 @@ MODPY_PYTEST_ARGS= \
 FLAVORS=	python3
 FLAVOR=		python3
 
-# at least some black tests are failing, possibly due to our old
-# version of black.
 TEST_DEPENDS=	devel/py-test-mock${MODPY_FLAVOR} \
-		textproc/py-black${MODPY_FLAVOR}
+		devel/py-hypothesis${MODPY_FLAVOR} \
+		textproc/py-black${MODPY_FLAVOR} \
+		textproc/py-toml${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
