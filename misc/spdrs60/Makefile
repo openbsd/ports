@@ -1,6 +1,6 @@
 COMMENT =	graphical SRCP client to control a digital model railway
 
-DISTNAME =	spdrs60-0.6.4
+DISTNAME =	spdrs60-0.6.5
 CATEGORIES =	misc x11
 
 HOMEPAGE =	http://spdrs60.sourceforge.net/
