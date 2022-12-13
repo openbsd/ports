@@ -1,6 +1,6 @@
 COMMENT =		CLI and TUI tool to interacting with Mastodon instances
 
-MODPY_EGG_VERSION =	0.31.0
+MODPY_EGG_VERSION =	0.32.1
 DISTNAME =		toot-${MODPY_EGG_VERSION}
 
 CATEGORIES =		net

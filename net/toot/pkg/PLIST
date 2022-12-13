@@ -29,8 +29,6 @@ lib/python${MODPY_VERSION}/site-packages/toot/${MODPY_PYCACHE}logging.${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/toot/${MODPY_PYCACHE}logging.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/toot/${MODPY_PYCACHE}output.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/toot/${MODPY_PYCACHE}output.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/toot/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/toot/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/toot/${MODPY_PYCACHE}wcstring.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/toot/${MODPY_PYCACHE}wcstring.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/toot/api.py
@@ -71,5 +69,12 @@ lib/python${MODPY_VERSION}/site-packages/toot/tui/overlays.py
 lib/python${MODPY_VERSION}/site-packages/toot/tui/timeline.py
 lib/python${MODPY_VERSION}/site-packages/toot/tui/utils.py
 lib/python${MODPY_VERSION}/site-packages/toot/tui/widgets.py
-lib/python${MODPY_VERSION}/site-packages/toot/utils.py
+lib/python${MODPY_VERSION}/site-packages/toot/utils/
+lib/python${MODPY_VERSION}/site-packages/toot/utils/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/toot/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/toot/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/toot/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/toot/utils/${MODPY_PYCACHE}language.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/toot/utils/${MODPY_PYCACHE}language.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/toot/utils/language.py
 lib/python${MODPY_VERSION}/site-packages/toot/wcstring.py
