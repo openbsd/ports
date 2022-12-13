@@ -138,7 +138,12 @@ MODMOZ_WANTLIB +=	cairo-gobject gdk-3 gtk-3
 PORTHOME =	${WRKSRC}
 
 # from browser/config/mozconfig
+.if ${MOZILLA_CODENAME:Mcomm*}
 CONFIGURE_ARGS +=--enable-application=${MOZILLA_CODENAME}
+.else
+#1801738
+CONFIGURE_ARGS +=--enable-project=${MOZILLA_CODENAME}
+.endif
 
 WRKDIST ?=	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION}
 
