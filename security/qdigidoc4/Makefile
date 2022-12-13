@@ -1,7 +1,7 @@
 COMMENT =		DigiDoc4 GUI client for signing and encrypting documents
 
 V =			4.2.12
-REVISION =		1
+REVISION =		2
 DISTNAME =		qdigidoc4-${V}
 CATEGORIES =		security x11
 
