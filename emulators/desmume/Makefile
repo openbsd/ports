@@ -3,7 +3,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	Nintendo DS emulator
 
 DISTNAME =	desmume-0.9.11
-REVISION =	10
+REVISION =	11
 
 CATEGORIES =	emulators
 
@@ -44,6 +44,7 @@ COMPILER =	base-clang ports-gcc
 CONFIGURE_STYLE =	gnu
 FIX_CRLF_FILES =	src/MMU_timing.h \
 			src/path.h \
+			src/arm_jit.cpp \
 			src/utils/AsmJit/core/stringbuilder.h
 
 .include <bsd.port.mk>

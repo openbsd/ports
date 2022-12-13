@@ -1,0 +1,18 @@
+BSS is immutable so mark it as mutable so that mprotect RWX works
+
+see: mimmutable(1)
+https://github.com/google/syzkaller/commit/bc009f82ea71c399f19eef28f115ff5cda7be4ba
+
+Index: src/arm_jit.cpp
+--- src/arm_jit.cpp.orig
++++ src/arm_jit.cpp
+@@ -198,7 +198,8 @@ static u8 recompile_counts[(1<<26)/16];
+ // Reduces memory needed for function pointers.
+ // FIXME win64 needs this too, x86_32 doesn't
+ 
+-DS_ALIGN(4096) static u8 scratchpad[1<<25];
++DS_ALIGN(4096) static u8 scratchpad[1<<25]
++	__attribute__((section(".openbsd.mutable")));
+ static u8 *scratchptr;
+ 
+ struct ASMJIT_API StaticCodeGenerator : public Context
