@@ -14,14 +14,14 @@ COMMENT-rustfmt =	Rust code formatter
 V =			1.65.0
 DISTNAME =		rustc-${V}-src
 
-REVISION-gdb =		0
+REVISION =		1
 
 # rustc bootstrap version
 BV-aarch64 =		1.65.0-20221103
 BV-amd64 =		1.65.0-20221101
 BV-i386 =		1.65.0-20221101
 BV-powerpc64 =		1.64.0-20221011
-BV-riscv64 =		1.65.0-20221117
+BV-riscv64 =		1.65.0-20221212
 BV-sparc64 =		1.65.0-20221108
 BV =			${BV-${MACHINE_ARCH}}
 
@@ -75,7 +75,7 @@ TRIPLE_ARCH-aarch64 =	aarch64-unknown-openbsd
 TRIPLE_ARCH-amd64 =	x86_64-unknown-openbsd
 TRIPLE_ARCH-i386 =	i686-unknown-openbsd
 TRIPLE_ARCH-powerpc64 =	powerpc64-unknown-openbsd
-TRIPLE_ARCH-riscv64 =	riscv64-unknown-openbsd
+TRIPLE_ARCH-riscv64 =	riscv64gc-unknown-openbsd
 TRIPLE_ARCH-sparc64 =	sparc64-unknown-openbsd
 TRIPLE_ARCH =	${TRIPLE_ARCH-${MACHINE_ARCH}}
 
