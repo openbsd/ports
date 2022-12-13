@@ -1,0 +1,35 @@
+use arch-independent output location
+remove -m{32,64} optimizations
+
+Index: build/linux/Makefile
+--- build/linux/Makefile.orig
++++ build/linux/Makefile
+@@ -1,16 +1,14 @@
+ STEAM_RUNTIME_TARGET_ARCH := $(shell uname -m)
+ ifeq ($(STEAM_RUNTIME_TARGET_ARCH), i686)
+-	ARCH := -m32
+ 	LINKERSEARCHPATH := ../../redistributable_bin/linux32
+ else
+-	ARCH := -m64
+ 	LINKERSEARCHPATH := ../../redistributable_bin/linux64
+ endif
+ CXX := g++
+ INCLUDES := -I"../../src" -I"../../steam" -I"../../wrapper"
+-CPPFLAGS := -fPIC $(ARCH) $(INCLUDES) -DGNUC -DCSTEAMWORKS_DLLEXPORT -Wall
+-OBJDIR := $(STEAM_RUNTIME_TARGET_ARCH)/obj
+-OUTFILE := $(STEAM_RUNTIME_TARGET_ARCH)/libCSteamworks.so
++CPPFLAGS := ${CXXFLAGS} -I$(LOCALBASE)/include/goldberg_emulator/sdk_includes -fPIC $(ARCH) $(INCLUDES) -DGNUC -DCSTEAMWORKS_DLLEXPORT -Wall
++OBJDIR := obj
++OUTFILE := libCSteamworks.so
+ 
+ CPP_FILES := ../../src/steam_api.cpp
+ OBJ_FILES := $(OBJDIR)/steam_api.o
+@@ -21,7 +19,7 @@ $(OBJDIR)/%.o:  $(CPP_FILES)
+ 	@echo "Compiling $<"
+ 
+ all: $(OBJ_FILES)
+-	$(CXX) $(CPPFLAGS) -Wl,-z,origin '-Wl,-rpath,$$ORIGIN' -L$(LINKERSEARCHPATH) -shared $^ -lsteam_api -o $(OUTFILE)
++	$(CXX) $(CPPFLAGS) -Wl,-z,origin '-Wl,-rpath,$$ORIGIN' -L$(LINKERSEARCHPATH) -L$(LOCALBASE)/lib -shared $^ -lsteam_api -o $(OUTFILE)
+ 
+ clean:
+ 	rm -rf ./$(STEAM_RUNTIME_TARGET_ARCH)/

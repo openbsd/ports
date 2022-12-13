@@ -1,0 +1,179 @@
+disable the Unity bits
+supply InitSafe method as an alternative name for Init
+supply ISteamUser_GetSteamID
+... and more ...
+Stubs: FindOrCreateLeaderboard, FileExists, SetStat
+
+Index: src/steam_api.cpp
+--- src/steam_api.cpp.orig
++++ src/steam_api.cpp
+@@ -15,6 +15,14 @@ SB_API bool S_CALLTYPE Init() {
+ 	return SteamAPI_Init();
+ }
+ 
++SB_API bool S_CALLTYPE Steam_Init() {
++	return SteamAPI_Init();
++}
++
++SB_API bool S_CALLTYPE InitSafe() {
++	return SteamAPI_Init();
++}
++
+ SB_API void S_CALLTYPE Shutdown() {
+ 	SteamAPI_Shutdown();
+ }
+@@ -23,6 +31,10 @@ SB_API bool S_CALLTYPE RestartAppIfNecessary(uint32 un
+ 	return SteamAPI_RestartAppIfNecessary(unOwnAppID);
+ }
+ 
++SB_API bool S_CALLTYPE Steam_RestartAppIfNecessary(uint32 unOwnAppID) {
++	return SteamAPI_RestartAppIfNecessary(unOwnAppID);
++}
++
+ SB_API void S_CALLTYPE ReleaseCurrentThreadMemory() {
+ 	SteamAPI_ReleaseCurrentThreadMemory();
+ }
+@@ -204,4 +216,142 @@ SB_API const uint8 *GetUserVariableData(uint8 *rgubTic
+ }
+ #endif // 0
+ 
+-#include "unitybuild.cpp"
++// port-added API
++
++SB_API uint64 S_CALLTYPE ISteamUser_GetSteamID(ISteamUser* self) { return SteamAPI_ISteamUser_GetSteamID(self); }
++SB_API bool S_CALLTYPE ISteamUserStats_RequestCurrentStats(ISteamUserStats* self) { return SteamAPI_ISteamUserStats_RequestCurrentStats(self); }
++SB_API int S_CALLTYPE ISteamUserStats_FindOrCreateLeaderboard(ISteamUserStats* self, const char * pchLeaderboardName, ELeaderboardSortMethod eLeaderboardSortMethod, ELeaderboardDisplayType eLeaderboardDisplayType) { return 0; }
++SB_API void *ISteamUserStats_FindLeaderboard(ISteamUserStats* self, const char * pchLeaderboardName) { return nullptr; }
++SB_API const char *ISteamFriends_GetPersonaName() { return ""; }
++SB_API bool ISteamFriends_SetRichPresence(const char *pchKey, const char *pchValue) { return 0; }
++SB_API void *ISteamUserStats_RequestUserStats(CSteamID steamIDUser) { return nullptr; }
++SB_API uint32 ISteamUtils_GetServerRealTime() { return 0; }
++SB_API bool ISteamRemoteStorage_IsCloudEnabledForAccount() { return 0; }
++SB_API bool ISteamApps_GetCurrentBetaName(char *pchName, int cchNameBufferSize) { return 0; }
++SB_API int ISteamFriends_GetLargeFriendAvatar(CSteamID steamIDFriend) { return 0; }
++SB_API bool ISteamUtils_GetImageSize(int iImage, uint32 *pnWidth, uint32 *pnHeight) { return 0; }
++SB_API bool ISteamUtils_IsSteamRunningOnSteamDeck() { return 0; }
++SB_API bool ISteamHTMLSurface_Init() { return 0; }
++SB_API void ISteamHTMLSurface_SetSize(HHTMLBrowser unBrowserHandle, uint32 unWidth, uint32 unHeight) { }
++SB_API void *ISteamHTMLSurface_CreateBrowser(const char *pchUserAgent, const char *pchUserCSS) { return nullptr; }
++SB_API void *ISteamMatchmaking_CreateLobby(ELobbyType eLobbyType, int cMaxMembers) { return nullptr; }
++SB_API bool ISteamApps_BIsDlcInstalled(AppId_t appID) { return 0; }
++SB_API bool ISteamRemoteStorage_IsCloudEnabledForApp() { return 1; }
++SB_API char *ISteamApps_GetCurrentGameLanguage() { return "en"; }
++SB_API bool ISteamNetworking_IsP2PPacketAvailable() { return 0; }
++SB_API int32 ISteamRemoteStorage_GetFileSize(const char *pchFile) { return 0; }
++SB_API bool ISteamUtils_IsOverlayEnabled() { return false; }
++SB_API int Steam_SetCallback_GameLobbyJoinRequested() { return 0; }
++SB_API int Steam_SetCallback_GameOverlayActivated() { return 0; }
++SB_API int Steam_SetCallback_GameRichPresenceJoinRequested() { return 0; }
++SB_API int Steam_SetCallback_LobbyChatMsg() { return 0; }
++SB_API int Steam_SetCallback_LobbyChatUpdate() { return 0; }
++SB_API int Steam_SetCallback_LobbyDataUpdate() { return 0; }
++SB_API int Steam_SetCallback_PersonaStateChange() { return 0; }
++SB_API int Steam_SetCallback_SteamServersConnected() { return 0; }
++SB_API int Steam_SetCallback_SteamServersDisconnected() { return 0; }
++SB_API int Steam_SetCallback_UserAchievementStored() { return 0; }
++SB_API int Steam_SetCallback_UserStatsReceived() { return 0; }
++
++// from v1.21
++
++typedef bool (__cdecl * BGetCallback_t)(HSteamPipe, CallbackMsg_t *);
++SB_API bool __cdecl Steam_BGetCallback2(HSteamPipe hSteamPipe, CallbackMsg_t *pCallbackMsg) {
++	return false;
++	/*
++	static BGetCallback_t _Steam_BGetCallback = NULL;
++	if(!_Steam_BGetCallback) {
++		HMODULE hSteamClient = GetModuleHandleA(s_SteamClientDLLName);
++		if(hSteamClient) {
++			_Steam_BGetCallback = reinterpret_cast<BGetCallback_t>(GetProcAddress(hSteamClient, "Steam_BGetCallback"));
++
++			if(!_Steam_BGetCallback) {
++				fprintf(stderr, "[CSteamworks] GetProcAddress failed to find Steam_BGetCallback\n");
++				return false;
++			}
++		}
++		else {
++			fprintf(stderr, "[CSteamworks] GetModuleHandleA failed opening steamclient.dll\n");
++			return false;
++		}
++	}
++	
++	return _Steam_BGetCallback(hSteamPipe, pCallbackMsg);
++	*/
++}
++
++SB_API void S_CALLTYPE ISteamUtils_RunFrame() {
++	SteamAPI_RunCallbacks();
++}
++
++SB_API void ISteamController_RunFrame(ISteamController* self) {
++	SteamAPI_ISteamController_RunFrame(self);
++}
++
++SB_API uint32 ISteamUtils_GetAppID(ISteamUtils* self) {
++	return SteamAPI_ISteamUtils_GetAppID(self);
++}
++
++SB_API bool ISteamRemoteStorage_FileExists(ISteamRemoteStorage* self, const char * pchFile) {
++    	// while Goldberg Emulator backend is defective, just return false
++	//return SteamAPI_ISteamRemoteStorage_FileExists(self, pchFile);
++	return false;
++}
++
++SB_API int32 ISteamRemoteStorage_FileRead(ISteamRemoteStorage* self, const char * pchFile, void * pvData, int32 cubDataToRead) {
++	return SteamAPI_ISteamRemoteStorage_FileRead(self, pchFile, pvData, cubDataToRead);
++}
++
++/*
++SB_API SteamAPICall_t ISteamUserStats_FindLeaderboard(ISteamUserStats* self, const char * pchLeaderboardName) {
++	return SteamAPI_ISteamUserStats_FindLeaderboard(self, pchLeaderboardName);
++}
++*/
++
++SB_API bool ISteamRemoteStorage_FileWrite(ISteamRemoteStorage* self, const char * pchFile, const void * pvData, int32 cubData) {
++    	// while Goldberg Emulator backend is defective, just return false
++	//return SteamAPI_ISteamRemoteStorage_FileWrite(self, pchFile, pvData, cubData);
++	return false;
++}
++
++SB_API bool ISteamUserStats_StoreStats(ISteamUserStats* self) {
++	return SteamAPI_ISteamUserStats_StoreStats(self);
++}
++
++SB_API bool ISteamUserStats_GetStat(ISteamUserStats* self, const char * pchName, int32 * pData){
++	return SteamAPI_ISteamUserStats_GetStatInt32(self, pchName, pData);
++}
++
++SB_API bool ISteamUserStats_SetStat(ISteamUserStats* self, const char * pchName, int32 nData){
++	//return SteamAPI_ISteamUserStats_SetStatInt32(self, pchName, nData);
++	return false;
++}
++
++SB_API bool ISteamUserStats_GetAchievement(ISteamUserStats* self, const char * pchName, bool * pbAchieved) {
++	return SteamAPI_ISteamUserStats_GetAchievement(self, pchName, pbAchieved);
++}
++
++SB_API SteamAPICall_t ISteamUserStats_UploadLeaderboardScore(ISteamUserStats* self, SteamLeaderboard_t hSteamLeaderboard, ELeaderboardUploadScoreMethod eLeaderboardUploadScoreMethod, int32 nScore, const int32 * pScoreDetails, int cScoreDetailsCount) {
++	return SteamAPI_ISteamUserStats_UploadLeaderboardScore(self, hSteamLeaderboard, eLeaderboardUploadScoreMethod, nScore, pScoreDetails, cScoreDetailsCount);
++}
++
++SB_API void ISteamClient_SetWarningMessageHook(ISteamClient* self, SteamAPIWarningMessageHook_t pFunction) {
++	SteamAPI_ISteamClient_SetWarningMessageHook(self, pFunction);
++}
++
++SB_API void SteamUtils_SetWarningMessageHook(ISteamClient* self, SteamAPIWarningMessageHook_t pFunction) {
++	SteamAPI_ISteamClient_SetWarningMessageHook(self, pFunction);
++}
++
++SB_API SteamAPICall_t ISteamUserStats_RequestGlobalStats(ISteamUserStats* self, int nHistoryDays) {
++	return SteamAPI_ISteamUserStats_RequestGlobalStats(self, nHistoryDays);
++}
++
++SB_API bool ISteamUserStats_SetAchievement(ISteamUserStats* self, const char * pchName) {
++	//return SteamAPI_ISteamUserStats_SetAchievement(self, pchName);
++	return false;
++}
++
++SB_API bool ISteamUser_BLoggedOn(ISteamUser* self) {
++	return SteamAPI_ISteamUser_BLoggedOn(self);
++}
