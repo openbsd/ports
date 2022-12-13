@@ -7,13 +7,12 @@ COMMENT =		modified version of Firefox ESR for browsing over Tor
 MOZILLA_VERSION =	${TB_VERSION}
 MOZILLA_PROJECT =	${BROWSER_NAME}
 MOZILLA_CODENAME =	browser
-REVISION =		0
 
 EXTRACT_SUFX =		.tar.xz
 PATCHORIG =		.pat.orig
 
 PKGNAME =		${TB_PREFIX}-browser-${TB_VERSION:S/a/alpha/}
-DISTNAME =		src-firefox-tor-browser-102.5.0esr-12.0-1-build4
+DISTNAME =		src-firefox-tor-browser-102.5.0esr-12.0-2-build1
 
 FIX_EXTRACT_PERMISSIONS	= Yes
 DISTFILES +=		${DISTNAME}.tar.xz \
@@ -75,7 +74,7 @@ MAKE_ENV +=		BUILD_OPT=1 \
 			NSS_ENABLE_ECC=1 \
 			XCFLAGS="-I${LOCALBASE}/include ${CFLAGS}"
 
-RUN_DEPENDS +=		net/tor>=0.4.7.11
+RUN_DEPENDS +=		net/tor>=0.4.7.12
 
 CONFIGURE_ARGS +=	--enable-release #1386371
 CONFIGURE_ARGS +=	--enable-sandbox
