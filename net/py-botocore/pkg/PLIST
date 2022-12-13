@@ -1953,6 +1953,11 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/sagemaker-geospatial/2020
 lib/python${MODPY_VERSION}/site-packages/botocore/data/sagemaker-geospatial/2020-05-27/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/sagemaker-geospatial/2020-05-27/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/sagemaker-geospatial/2020-05-27/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/sagemaker-metrics/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/sagemaker-metrics/2022-09-30/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/sagemaker-metrics/2022-09-30/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/sagemaker-metrics/2022-09-30/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/sagemaker-metrics/2022-09-30/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/sagemaker-runtime/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/sagemaker-runtime/2017-05-13/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/sagemaker-runtime/2017-05-13/endpoint-rule-set-1.json
