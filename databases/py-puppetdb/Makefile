@@ -1,10 +1,9 @@
 COMMENT=		library for working with the PuppetDB API
 
-MODPY_EGG_VERSION=	3.0.0
+MODPY_EGG_VERSION=	3.1.0
 DISTNAME=		pypuppetdb-${MODPY_EGG_VERSION}
 PKGNAME=		py-puppetdb-${MODPY_EGG_VERSION}
 CATEGORIES=		databases www
-REVISION=		1
 
 MAINTAINER=		Sebastian Reitenbach <sebastia@openbsd.org>
 
