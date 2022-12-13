@@ -501,6 +501,7 @@ share/help/zh_CN/cheese/pref-resolution.page
 share/help/zh_CN/cheese/video-record.page
 share/icons/hicolor/scalable/apps/org.gnome.Cheese.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Cheese-symbolic.svg
+share/locale/ab/LC_MESSAGES/cheese.mo
 share/locale/af/LC_MESSAGES/cheese.mo
 share/locale/an/LC_MESSAGES/cheese.mo
 share/locale/ar/LC_MESSAGES/cheese.mo
@@ -538,6 +539,9 @@ share/locale/hi/LC_MESSAGES/cheese.mo
 share/locale/hr/LC_MESSAGES/cheese.mo
 share/locale/hu/LC_MESSAGES/cheese.mo
 share/locale/id/LC_MESSAGES/cheese.mo
+share/locale/ie/
+share/locale/ie/LC_MESSAGES/
+share/locale/ie/LC_MESSAGES/cheese.mo
 share/locale/is/LC_MESSAGES/cheese.mo
 share/locale/it/LC_MESSAGES/cheese.mo
 share/locale/ja/LC_MESSAGES/cheese.mo
