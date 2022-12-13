@@ -2,7 +2,7 @@ COMMENT-main=		vSphere CLI built on top of govmomi
 COMMENT-vcsim=		vCenter and ESXi API based simulator
 
 MODGO_MODNAME=		github.com/vmware/govmomi
-MODGO_VERSION=		v0.29.0
+MODGO_VERSION=		v0.30.0
 DISTNAME=		govmomi-${MODGO_VERSION}
 
 WRKDIST=		${WRKDIR}/github.com/vmware/govmomi@${MODGO_VERSION}
@@ -23,7 +23,6 @@ MODULES=		lang/go
 MULTI_PACKAGES=		-main -vcsim
 
 pre-patch:
-	cp ${WRKDIR}/${MODGO_MODNAME}@${MODGO_VERSION}/toolbox/hgfs/hgfs_{darwin,openbsd}.go
 	cp ${WRKDIR}/${MODGO_MODNAME}@${MODGO_VERSION}/toolbox/toolbox_{darwin,openbsd}.go
 
 do-build:
