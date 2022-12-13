@@ -5,7 +5,7 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=1640982
 Index: config/makefiles/rust.mk
 --- config/makefiles/rust.mk.orig
 +++ config/makefiles/rust.mk
-@@ -94,7 +94,8 @@ ifndef rustflags_sancov
+@@ -92,7 +92,8 @@ ifndef rustflags_sancov
  # Never enable when coverage is enabled to work around https://github.com/rust-lang/rust/issues/90045.
  ifndef MOZ_CODE_COVERAGE
  ifeq (,$(findstring gkrust_gtest,$(RUST_LIBRARY_FILE)))
