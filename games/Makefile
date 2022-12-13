@@ -172,6 +172,7 @@
      SUBDIR += late
      SUBDIR += lbreakout2
      SUBDIR += lgeneral
+     SUBDIR += libcsteamworks
      SUBDIR += liberalcrimesquad
      SUBDIR += libgdx
      SUBDIR += liblcf
