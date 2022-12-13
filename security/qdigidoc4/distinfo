@@ -6,6 +6,7 @@ SHA256 (qdigidoc4/eu-lotl-pivot-300.xml) = DSmCpZOMKFf1lEcM4XkKac7R65hkcovZZw/ex
 SHA256 (qdigidoc4/qdigidoc4-4.2.12.tar.gz) = 6bso1qvhVhbBfrcTq4S+aHtHli7X2A926N4r45ztq4E=
 SHA256 (qdigidoc4/qt-common-fix-i386-124.patch) = xABbKTV6LEv/9pjs17mVz+p3zkka2uiijDVT++SJZqU=
 SHA256 (qdigidoc4/qt-common-pcsc-lite-121.patch) = 6mZNDCrZszL/7CdD7b12zcC5klsi0+GDLxoZ3S3U+OM=
+SHA256 (qdigidoc4/qt6-1082.patch) = JG851k9p1xESrlQy9DrpA+lnARrKdkb1kUMzBLJAMUQ=
 SIZE (qdigidoc4/bsd-1072.patch) = 5862
 SIZE (qdigidoc4/config.json) = 67182
 SIZE (qdigidoc4/config.pub) = 426
@@ -14,3 +15,4 @@ SIZE (qdigidoc4/eu-lotl-pivot-300.xml) = 424989
 SIZE (qdigidoc4/qdigidoc4-4.2.12.tar.gz) = 4179889
 SIZE (qdigidoc4/qt-common-fix-i386-124.patch) = 1416
 SIZE (qdigidoc4/qt-common-pcsc-lite-121.patch) = 2040
+SIZE (qdigidoc4/qt6-1082.patch) = 6673

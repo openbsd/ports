@@ -1,7 +1,7 @@
 COMMENT =		DigiDoc4 GUI client for signing and encrypting documents
 
 V =			4.2.12
-REVISION =		0
+REVISION =		1
 DISTNAME =		qdigidoc4-${V}
 CATEGORIES =		security x11
 
@@ -31,6 +31,7 @@ CONFIGURE_ENV +=	TSL_URL=file://${FULLDISTDIR}/eu-lotl-pivot-300.xml
 MASTER_SITES2 =		https://github.com/open-eid/DigiDoc4-Client/
 # merged but after 4.2.12 release
 PATCHFILES +=		bsd-{pull/}1072.patch:2
+PATCHFILES +=		qt6-{pull/}1082.patch:2
 
 MASTER_SITES3 =		https://github.com/open-eid/qt-common/
 # merged but after 4.2.12 release
@@ -44,23 +45,25 @@ PATCH_DIST_STRIP =	-p1
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
-WANTLIB +=		${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB +=		Qt5Svg Qt5Widgets c crypto digidocpp lber ldap m pcsclite ssl
+WANTLIB +=		${COMPILER_LIBCXX} GL Qt6Core Qt6Core5Compat Qt6Gui
+WANTLIB +=		Qt6Network Qt6PrintSupport Qt6Svg Qt6SvgWidgets Qt6Widgets
+WANTLIB += 		c crypto digidocpp lber ldap m pcsclite ssl
 
 MODULES =		devel/cmake \
-			x11/qt5
+			x11/qt6
 
 BUILD_DEPENDS =		devel/gettext,-tools \
-			x11/qt5/qttools
+			x11/qt6/qttools
 
 LIB_DEPENDS =		databases/openldap,-main \
 			security/libdigidocpp>=3.14.10 \
 			security/pcsc-lite \
-			x11/qt5/qtsvg
+			x11/qt6/qt5compat \
+			x11/qt6/qtsvg
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			misc/shared-mime-info \
-			x11/qt5/qttranslations \
+			x11/qt6/qttranslations \
 			x11/gtk+3,-guic
 
 CONFIGURE_ENV +=	LDFLAGS=${LDFLAGS:Q}
