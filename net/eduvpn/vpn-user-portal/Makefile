@@ -1,14 +1,10 @@
 COMMENT=	user and admin portal for Let's Connect/eduVPN
 
 V=		3.1.7
-MASTER_SITES=	https://git.sr.ht/~fkooman/vpn-user-portal/refs/download/$V/
 MASTER_SITES0=	https://spacehopper.org/mirrors/
 DISTNAME=	vpn-user-portal-$V
 DISTFILES=	${DISTNAME}.tar.xz ${DISTNAME}-vendor.tar.xz:0
-EXTRACT_SUFX=	.tar.xz
-
 # Debian packaging in https://git.sr.ht/~fkooman/vpn-user-portal.deb/tree
-HOMEPAGE=	https://git.sr.ht/~fkooman/vpn-user-portal
 
 # AGPL-3.0
 PERMIT_PACKAGE=	Yes

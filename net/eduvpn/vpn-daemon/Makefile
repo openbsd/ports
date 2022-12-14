@@ -1,11 +1,7 @@
 COMMENT=	OpenVPN and WireGuard Management Daemon
 
 V=		3.0.2
-MASTER_SITES=	https://git.sr.ht/~fkooman/vpn-daemon/refs/download/$V/
 DISTNAME=	vpn-daemon-$V
-EXTRACT_SUFX=	.tar.xz
-
-HOMEPAGE=	https://git.sr.ht/~fkooman/vpn-daemon
 
 # MIT
 PERMIT_PACKAGE=	Yes

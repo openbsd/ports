@@ -1,13 +1,7 @@
 COMMENT=	Let's Connect! artwork for vpn-user-portal
 
 V=		3.0.0
-MASTER_SITES=	https://git.sr.ht/~fkooman/vpn-portal-artwork-LC/refs/download/$V/
 DISTNAME=	vpn-portal-artwork-LC-$V
-PKGNAME=	${DISTNAME:L}
-EXTRACT_SUFX=	.tar.xz
-
-# Debian packaging in https://git.sr.ht/~fkooman/vpn-portal-artwork-LC.deb/tree
-HOMEPAGE=	https://git.sr.ht/~fkooman/vpn-portal-artwork-LC
 
 # AGPL-3.0
 PERMIT_PACKAGE=	Yes

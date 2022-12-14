@@ -1,12 +1,8 @@
 COMMENT=	VPN management server node
 
 V=		3.0.2
-MASTER_SITES=	https://git.sr.ht/~fkooman/vpn-server-node/refs/download/$V/
 DISTNAME=	vpn-server-node-$V
-EXTRACT_SUFX=	.tar.xz
-
 # Debian packaging in https://git.sr.ht/~fkooman/vpn-server-node.deb/tree
-HOMEPAGE=	https://git.sr.ht/~fkooman/vpn-server-node
 
 # AGPL-3.0
 PERMIT_PACKAGE=	Yes

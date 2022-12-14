@@ -1,12 +1,7 @@
 COMMENT=	simple CA to manage server and client certificates
 
 V=		4.0.1
-MASTER_SITES=	https://git.sr.ht/~fkooman/vpn-ca/refs/download/$V/
 DISTNAME=	vpn-ca-$V
-EXTRACT_SUFX=	.tar.xz
-
-# Debian packaging in https://git.sr.ht/~fkooman/vpn-ca.deb/tree
-HOMEPAGE=	https://git.sr.ht/~fkooman/vpn-ca
 
 # MIT
 PERMIT_PACKAGE=	Yes

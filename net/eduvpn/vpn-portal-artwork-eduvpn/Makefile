@@ -1,13 +1,7 @@
 COMMENT=	eduVPN artwork for vpn-user-portal
 
 V=		3.0.0
-MASTER_SITES=	https://git.sr.ht/~fkooman/vpn-portal-artwork-eduVPN/refs/download/$V/
 DISTNAME=	vpn-portal-artwork-eduVPN-$V
-PKGNAME=	${DISTNAME:L}
-EXTRACT_SUFX=	.tar.xz
-
-# Debian packaging in https://git.sr.ht/~fkooman/vpn-portal-artwork-eduVPN.deb/tree
-HOMEPAGE=	https://git.sr.ht/~fkooman/vpn-portal-artwork-eduVPN
 
 # AGPL-3.0
 PERMIT_PACKAGE=	Yes
