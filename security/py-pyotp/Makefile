@@ -1,10 +1,9 @@
 COMMENT=	Python library for one-time passwords
 
-MODPY_EGG_VERSION=	2.7.0
+MODPY_EGG_VERSION=	2.8.0
 
 DISTNAME=	pyotp-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	security
 
