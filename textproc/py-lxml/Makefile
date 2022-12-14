@@ -4,8 +4,7 @@ COMMENT=	Python binding for the libxml2 and libxslt libraries
 FLAVORS=	python3
 FLAVOR?=
 
-MODPY_EGG_VERSION=	4.9.1
-REVISION=	2
+MODPY_EGG_VERSION=	4.9.2
 DISTNAME=	lxml-${MODPY_EGG_VERSION}
 PKGNAME=	py-lxml-${MODPY_EGG_VERSION}
 

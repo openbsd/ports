@@ -20,13 +20,21 @@ lib/python${MODPY_VERSION}/site-packages/lxml/${MODPY_PYCACHE}sax.${MODPY_PYC_MA
 lib/python${MODPY_VERSION}/site-packages/lxml/${MODPY_PYCACHE}usedoctest.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/python${MODPY_VERSION}/site-packages/lxml/_elementpath.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/lxml/_elementpath.py
+lib/python${MODPY_VERSION}/site-packages/lxml/apihelpers.pxi
 @so lib/python${MODPY_VERSION}/site-packages/lxml/builder.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/lxml/builder.py
+lib/python${MODPY_VERSION}/site-packages/lxml/classlookup.pxi
+lib/python${MODPY_VERSION}/site-packages/lxml/cleanup.pxi
 lib/python${MODPY_VERSION}/site-packages/lxml/cssselect.py
+lib/python${MODPY_VERSION}/site-packages/lxml/debug.pxi
+lib/python${MODPY_VERSION}/site-packages/lxml/docloader.pxi
 lib/python${MODPY_VERSION}/site-packages/lxml/doctestcompare.py
+lib/python${MODPY_VERSION}/site-packages/lxml/dtd.pxi
 @so lib/python${MODPY_VERSION}/site-packages/lxml/etree.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/lxml/etree.h
+lib/python${MODPY_VERSION}/site-packages/lxml/etree.pyx
 lib/python${MODPY_VERSION}/site-packages/lxml/etree_api.h
+lib/python${MODPY_VERSION}/site-packages/lxml/extensions.pxi
 lib/python${MODPY_VERSION}/site-packages/lxml/html/
 lib/python${MODPY_VERSION}/site-packages/lxml/html/ElementSoup.py
 lib/python${MODPY_VERSION}/site-packages/lxml/html/__init__.py
@@ -96,13 +104,33 @@ lib/python${MODPY_VERSION}/site-packages/lxml/isoschematron/resources/xsl/iso-sc
 lib/python${MODPY_VERSION}/site-packages/lxml/isoschematron/resources/xsl/iso-schematron-xslt1/iso_schematron_skeleton_for_xslt1.xsl
 lib/python${MODPY_VERSION}/site-packages/lxml/isoschematron/resources/xsl/iso-schematron-xslt1/iso_svrl_for_xslt1.xsl
 lib/python${MODPY_VERSION}/site-packages/lxml/isoschematron/resources/xsl/iso-schematron-xslt1/readme.txt
+lib/python${MODPY_VERSION}/site-packages/lxml/iterparse.pxi
 lib/python${MODPY_VERSION}/site-packages/lxml/lxml.etree.h
 lib/python${MODPY_VERSION}/site-packages/lxml/lxml.etree_api.h
+lib/python${MODPY_VERSION}/site-packages/lxml/nsclasses.pxi
 @so lib/python${MODPY_VERSION}/site-packages/lxml/objectify.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/lxml/objectify.pyx
+lib/python${MODPY_VERSION}/site-packages/lxml/objectpath.pxi
+lib/python${MODPY_VERSION}/site-packages/lxml/parser.pxi
+lib/python${MODPY_VERSION}/site-packages/lxml/parsertarget.pxi
+lib/python${MODPY_VERSION}/site-packages/lxml/proxy.pxi
+lib/python${MODPY_VERSION}/site-packages/lxml/public-api.pxi
 lib/python${MODPY_VERSION}/site-packages/lxml/pyclasslookup.py
+lib/python${MODPY_VERSION}/site-packages/lxml/readonlytree.pxi
+lib/python${MODPY_VERSION}/site-packages/lxml/relaxng.pxi
 @so lib/python${MODPY_VERSION}/site-packages/lxml/sax.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/lxml/sax.py
+lib/python${MODPY_VERSION}/site-packages/lxml/saxparser.pxi
+lib/python${MODPY_VERSION}/site-packages/lxml/schematron.pxi
+lib/python${MODPY_VERSION}/site-packages/lxml/serializer.pxi
 lib/python${MODPY_VERSION}/site-packages/lxml/usedoctest.py
+lib/python${MODPY_VERSION}/site-packages/lxml/xinclude.pxi
+lib/python${MODPY_VERSION}/site-packages/lxml/xmlerror.pxi
+lib/python${MODPY_VERSION}/site-packages/lxml/xmlid.pxi
+lib/python${MODPY_VERSION}/site-packages/lxml/xmlschema.pxi
+lib/python${MODPY_VERSION}/site-packages/lxml/xpath.pxi
+lib/python${MODPY_VERSION}/site-packages/lxml/xslt.pxi
+lib/python${MODPY_VERSION}/site-packages/lxml/xsltext.pxi
 share/doc/${MODPY_PY_PREFIX}lxml/
 share/doc/${MODPY_PY_PREFIX}lxml/FAQ.txt
 share/doc/${MODPY_PY_PREFIX}lxml/api/
@@ -161,11 +189,30 @@ share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/_sources/lxml.objectify.rst.txt
 share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/_sources/lxml.rst.txt
 share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/_sources/lxml.sax.rst.txt
 share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/_static/
+share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/_static/_sphinx_javascript_frameworks_compat.js
 share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/_static/basic.css
 share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/_static/css/
 share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/_static/css/badge_only.css
 share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/_static/css/theme.css
+share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/_static/doctools.js
+share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/_static/documentation_options.js
+share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/_static/file.png
+share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/_static/jquery-3.6.0.js
+share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/_static/jquery.js
+share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/_static/js/
+share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/_static/js/badge_only.js
+share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/_static/js/html5shiv-printshiv.min.js
+share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/_static/js/html5shiv.min.js
+share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/_static/js/theme.js
+share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/_static/language_data.js
+share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/_static/minus.png
+share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/_static/plus.png
 share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/_static/pygments.css
+share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/_static/python-xml.png
+share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/_static/searchtools.js
+share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/_static/sphinx_highlight.js
+share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/_static/underscore-1.13.1.js
+share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/_static/underscore.js
 share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/genindex.html
 share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/index.html
 share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/lxml.ElementInclude.html
@@ -189,8 +236,10 @@ share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/lxml.html.soupparser.html
 share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/lxml.isoschematron.html
 share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/lxml.objectify.html
 share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/lxml.sax.html
+share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/objects.inv
 share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/py-modindex.html
 share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/search.html
+share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/searchindex.js
 share/doc/${MODPY_PY_PREFIX}lxml/html/build.html
 share/doc/${MODPY_PY_PREFIX}lxml/html/capi.html
 share/doc/${MODPY_PY_PREFIX}lxml/html/changes-${MODPY_EGG_VERSION}.html
