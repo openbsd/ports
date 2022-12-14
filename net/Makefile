@@ -86,6 +86,7 @@
      SUBDIR += dt
      SUBDIR += dxpc
      SUBDIR += echoping
+     SUBDIR += eduvpn
      SUBDIR += ekg
      SUBDIR += enet
      SUBDIR += epic4
