@@ -12,7 +12,7 @@ HOMEPAGE =		https://www.id.ee/
 # LGPL 2.1+
 PERMIT_PACKAGE =	Yes
 
-DIST_SUBDIR =		qdigidoc4
+DIST_SUBDIR =		qdigidoc4-0
 MASTER_SITES =		https://github.com/open-eid/DigiDoc4-Client/releases/download/v${V}/
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
@@ -36,7 +36,7 @@ PATCHFILES +=		qt6-{pull/}1082.patch:2
 MASTER_SITES3 =		https://github.com/open-eid/qt-common/
 # merged but after 4.2.12 release
 PATCHFILES +=		qt-common-fix-i386-{pull/}124.patch:3
-PATCHFILES +=		qt-common-pcsc-lite-0-{pull/}121.patch:3
+PATCHFILES +=		qt-common-pcsc-lite-{pull/}121.patch:3
 PATCH_CASES +=		qt-common-*.patch) \
 				${PATCH} ${PATCH_DIST_ARGS} < $$patchfile \
 				    -d${WRKSRC}/common ;;
