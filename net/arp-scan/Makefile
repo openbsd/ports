@@ -1,4 +1,5 @@
 V=		1.10.0
+REVISION=	0
 DISTNAME=	arp-scan-$V
 
 COMMENT-main=	ARP scanning and fingerprinting tool

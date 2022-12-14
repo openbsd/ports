@@ -1,7 +1,7 @@
 @pkgpath net/arp-scan
 bin/arp-fingerprint
 @bin bin/arp-scan
-bin/get-iab
+@comment bin/get-iab
 bin/get-oui
 @man man/man1/arp-fingerprint.1
 @man man/man1/arp-scan.1
