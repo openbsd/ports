@@ -1,0 +1,3 @@
+Collection of CRC32C implementations that dispatches to one suitable to
+the hardware. CRC32C is the cyclic redundancy check that uses the iSCSI
+polynomial specified in RFC 3720.

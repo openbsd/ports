@@ -1,0 +1,9 @@
+include/crc32c/
+include/crc32c/crc32c.h
+lib/cmake/
+lib/cmake/Crc32c/
+lib/cmake/Crc32c/Crc32cConfig.cmake
+lib/cmake/Crc32c/Crc32cConfigVersion.cmake
+lib/cmake/Crc32c/Crc32cTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Crc32c/Crc32cTargets.cmake
+@lib lib/libcrc32c.so.${LIBcrc32c_VERSION}
