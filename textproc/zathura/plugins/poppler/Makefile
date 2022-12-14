@@ -1,7 +1,7 @@
 V =		0.3.0
+REVISION =	0
 COMMENT =	poppler pdf plugin for zathura
 PROJECT =	zathura-pdf-poppler
-
 
 LIB_DEPENDS +=	print/poppler
 

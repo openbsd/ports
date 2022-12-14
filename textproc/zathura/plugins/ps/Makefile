@@ -1,4 +1,5 @@
 V =		0.2.7
+REVISION =	0
 COMMENT =	spectre postscript plugin for zathura
 PROJECT =	zathura-ps
 

@@ -1,4 +1,5 @@
 V =		0.2.9
+REVISION =	0
 COMMENT =	djvu plugin for zathura
 PROJECT =	zathura-djvu
 
