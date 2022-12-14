@@ -39,6 +39,14 @@ lib/python${MODPY_VERSION}/site-packages/sphinx_rtd_theme/locale/fr/
 lib/python${MODPY_VERSION}/site-packages/sphinx_rtd_theme/locale/fr/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/sphinx_rtd_theme/locale/fr/LC_MESSAGES/sphinx.mo
 lib/python${MODPY_VERSION}/site-packages/sphinx_rtd_theme/locale/fr/LC_MESSAGES/sphinx.po
+lib/python${MODPY_VERSION}/site-packages/sphinx_rtd_theme/locale/hr/
+lib/python${MODPY_VERSION}/site-packages/sphinx_rtd_theme/locale/hr/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/sphinx_rtd_theme/locale/hr/LC_MESSAGES/sphinx.mo
+lib/python${MODPY_VERSION}/site-packages/sphinx_rtd_theme/locale/hr/LC_MESSAGES/sphinx.po
+lib/python${MODPY_VERSION}/site-packages/sphinx_rtd_theme/locale/hu/
+lib/python${MODPY_VERSION}/site-packages/sphinx_rtd_theme/locale/hu/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/sphinx_rtd_theme/locale/hu/LC_MESSAGES/sphinx.mo
+lib/python${MODPY_VERSION}/site-packages/sphinx_rtd_theme/locale/hu/LC_MESSAGES/sphinx.po
 lib/python${MODPY_VERSION}/site-packages/sphinx_rtd_theme/locale/it/
 lib/python${MODPY_VERSION}/site-packages/sphinx_rtd_theme/locale/it/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/sphinx_rtd_theme/locale/it/LC_MESSAGES/sphinx.mo
