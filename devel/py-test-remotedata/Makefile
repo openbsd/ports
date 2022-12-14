@@ -1,10 +1,9 @@
 COMMENT =	pytest plugin for controlling remote data access
 
-MODPY_EGG_VERSION =	0.3.3
+MODPY_EGG_VERSION =	0.4.0
 
 DISTNAME =	pytest-remotedata-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:S/py//}
-REVISION =	1
 
 CATEGORIES =	devel
 
