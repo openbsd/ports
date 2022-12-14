@@ -36,7 +36,7 @@ PATCHFILES +=		qt6-{pull/}1082.patch:2
 MASTER_SITES3 =		https://github.com/open-eid/qt-common/
 # merged but after 4.2.12 release
 PATCHFILES +=		qt-common-fix-i386-{pull/}124.patch:3
-PATCHFILES +=		qt-common-pcsc-lite-{pull/}121.patch:3
+PATCHFILES +=		qt-common-pcsc-lite-0-{pull/}121.patch:3
 PATCH_CASES +=		qt-common-*.patch) \
 				${PATCH} ${PATCH_DIST_ARGS} < $$patchfile \
 				    -d${WRKSRC}/common ;;
