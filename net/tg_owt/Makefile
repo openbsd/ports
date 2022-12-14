@@ -15,7 +15,7 @@ GH_COMMIT =		621f3da55331733bf0d1b223786b96b68c03dca1
 DISTNAME =		${GH_PROJECT}-0.0.0.20220909
 DISTFILES =		${GH_DISTFILE}
 CATEGORIES =		net
-REVISION =		0
+REVISION =		1
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
@@ -31,15 +31,14 @@ MASTER_SITES0 =		https://github.com/noiseless/libyuv/archive/
 LIBYUV_COMMIT =		3e38ce50589d9319badc0501f96d6c5b2b177472
 DISTFILES +=		libyuv-20220817-{}${LIBYUV_COMMIT}${EXTRACT_SUFX}:0
 
-# no releases but old tags, use latest HEAD
-MASTER_SITES2 =		https://github.com/google/crc32c/archive/
-CRC32C_COMMIT =		21fc8ef30415a635e7351ffa0e5d5367943d4a94
-DISTFILES +=		crc32c-20220208-{}${CRC32C_COMMIT}${EXTRACT_SUFX}:2
-
 MASTER_SITES1 =		https://github.com/desktop-app/tg_owt/commit/
+# merged "Unbundle crc32c"
+# https://github.com/desktop-app/tg_owt/pull/109
+PATCHFILES +=		unbundle-crc32c-{}bd1f6ce.patch:1
+PATCHFILES +=		unbundle-crc32c-{}0c49138.patch:1
 # Pending "Defer third-party source handling to when it is needed"
 # https://github.com/desktop-app/tg_owt/pull/85
-PATCHFILES +=		defer-third-party-sources-{}f95ce167.patch:1
+PATCHFILES +=		defer-third-party-sources-{}a264c33.patch:1
 # Pending "libabsl: Use system include directories"
 # https://github.com/desktop-app/tg_owt/pull/87
 PATCHFILES +=		libabsl-use-includes-{}fb12b4bd.patch:1
@@ -52,7 +51,7 @@ PATCH_DIST_STRIP =	-p1
 MAINTAINER =		Andrew Krasavin <noiseless-ak@yandex.ru>, \
 			Klemens Nanni <kn@openbsd.org>
 
-# tg_owt, libsrtp, libyuv, rnnoise, crc32c: BSD 3-clause;  pffft: FFTPACKv5
+# tg_owt, libsrtp, libyuv, rnnoise: BSD 3-clause;  pffft: FFTPACKv5
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} X11 Xcomposite Xdamage Xext Xfixes
@@ -70,7 +69,7 @@ WANTLIB += absl_low_level_hash absl_malloc_internal absl_raw_hash_set
 WANTLIB += absl_raw_logging_internal absl_spinlock_wait absl_stacktrace
 WANTLIB += absl_str_format_internal absl_strings absl_strings_internal
 WANTLIB += absl_symbolize absl_synchronization absl_throw_delegate
-WANTLIB += absl_time absl_time_zone avcodec avformat avutil crypto
+WANTLIB += absl_time absl_time_zone avcodec avformat avutil crc32c crypto
 WANTLIB += jpeg m openh264 opus protobuf ssl swresample swscale vpx
 
 # C++20
@@ -87,6 +86,7 @@ BUILD_DEPENDS =		devel/yasm
 
 LIB_DEPENDS =		audio/opus \
 			devel/abseil-cpp \
+			devel/crc32c \
 			devel/protobuf \
 			graphics/ffmpeg \
 			graphics/jpeg \
@@ -98,8 +98,6 @@ LIB_DEPENDS =		audio/opus \
 CONFIGURE_ARGS +=	-DTG_OWT_PACKAGED_BUILD=ON \
 			-DBUILD_SHARED_LIBS=ON
 
-# Pending "Do not use PipeWire on OpenBSD"
-# https://github.com/desktop-app/tg_owt/pull/103
 CONFIGURE_ARGS +=	-DTG_OWT_USE_PIPEWIRE=OFF
 
 .if ${MACHINE_ARCH} == arm
@@ -113,14 +111,13 @@ NEEDED_BUNDLES +=	rnnoise
 # security/libsrtp is too new and tg_owt does not support it as system library
 NEEDED_BUNDLES +=	libsrtp
 # unported and required
-NEEDED_BUNDLES +=	libyuv pffft crc32c
+NEEDED_BUNDLES +=	libyuv pffft
 
 THIRD_SRC =		${WRKSRC}/src/third_party
 
 post-extract:
 	# hook up prefetched submodules
-	rmdir ${THIRD_SRC}/{crc32c/src,libyuv}
-	mv ${WRKDIR}/crc32c-${CRC32C_COMMIT} ${THIRD_SRC}/crc32c/src
+	rmdir ${THIRD_SRC}/libyuv
 	mv ${WRKDIR}/libyuv-${LIBYUV_COMMIT} ${THIRD_SRC}/libyuv
 	# All bundles:
 	@cd ${THIRD_SRC}/ && ls -x
@@ -146,7 +143,7 @@ post-configure:
 post-install:
 	# remove bundled sources not needed to build tdesktop
 	cd ${PREFIX}/include/tg_owt/ && rm -r -- \
-	    third_party/{libsrtp,rnnoise,pffft,crc32c}
+	    third_party/{libsrtp,rnnoise,pffft}
 	find ${PREFIX}/include/tg_owt/ -type d -name test -exec rm -r -- {} +
 
 .include <bsd.port.mk>
