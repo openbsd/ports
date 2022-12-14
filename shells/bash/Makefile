@@ -1,8 +1,6 @@
 COMMENT=	GNU Bourne Again Shell
 
-DISTNAME=	bash-5.2.9
-PKGNAME=	bash-5.2.12
-REVISION=	0
+DISTNAME=	bash-5.2.15
 CATEGORIES=	shells
 HOMEPAGE=	https://www.gnu.org/software/bash/
 
@@ -14,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=	${MASTER_SITE_GNU:=bash/}
 MASTER_SITES0=	${MASTER_SITE_GNU:=bash/bash-5.2-patches/}
 DIST_SUBDIR=	bash
-.for i in 010 011 012
+.for i in
 PATCHFILES+=	bash52-$i:0
 .endfor
 
