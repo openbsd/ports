@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.412 2022/11/18 16:32:15 kn Exp $
+$OpenBSD: user.list,v 1.413 2022/12/14 12:09:05 sthen Exp $
 
 This file lists all users and groups that are created by ports. All
 ports' users/groups have to start with an underscore and have to use
@@ -394,3 +394,4 @@ id  user		group		port
 883 _step-ca		_step-ca	security/step-ca
 884 _iblock		_iblock		net/iblock
 885 _mycorrhiza		_mycorrhiza	www/mycorrhiza
+886 _eduvpn		_eduvpn		net/eduvpn
