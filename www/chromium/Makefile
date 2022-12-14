@@ -6,8 +6,7 @@ DPB_PROPERTIES=		parallel parallel2
 
 COMMENT=		Chromium browser
 
-V=			108.0.5359.98
-REVISION=		1
+V=			108.0.5359.124
 
 DISTNAME=		chromium-${V}
 
@@ -104,7 +103,8 @@ BUILDTYPE=	Release
 SUBST_VARS+=	WRKSRC WRKDIR DEBUGFLAG
 
 ALL_TARGET=		chrome chromedriver
-TEST_TARGET=		base_unittests \
+TEST_TARGET=		gpu_tests
+TTEST_TARGET=		base_unittests \
 			blink_unittests \
 			chromedriver_unittests \
 			components_unittests \
