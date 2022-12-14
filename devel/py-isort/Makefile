@@ -1,6 +1,6 @@
 COMMENT=	Python utility / library to sort Python imports
 
-MODPY_EGG_VERSION=	5.11.1
+MODPY_EGG_VERSION=	5.11.2
 DISTNAME=	isort-${MODPY_EGG_VERSION}
 PKGNAME=	py-isort-${MODPY_EGG_VERSION}
 
