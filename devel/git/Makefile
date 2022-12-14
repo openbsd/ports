@@ -2,7 +2,7 @@ COMMENT-main =	distributed version control system
 COMMENT-svn =	subversion interoperability tools
 COMMENT-x11 =	graphical tools
 
-V =		2.38.2
+V =		2.39.0
 DISTNAME =	git-${V}
 CATEGORIES =	devel
 
@@ -35,8 +35,10 @@ BUILD_DEPENDS =		devel/gettext,-tools \
 
 MULTI_PACKAGES =	-main -svn -x11
 
-WANTLIB-main =		c charset crypto curl expat iconv intl nghttp2 pthread \
-			ssl z
+WANTLIB-main =		c crypto curl expat iconv intl pthread ssl z
+# for curl
+WANTLIB-main +=		nghttp2
+
 
 RUN_DEPENDS-main =	devel/cvsps \
 			devel/p5-Error \

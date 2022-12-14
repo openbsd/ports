@@ -3,7 +3,7 @@ Replace sysctl HW_PHYSMEM/MEMSIZE/whatever madness with sysconf.
 Index: builtin/gc.c
 --- builtin/gc.c.orig
 +++ builtin/gc.c
-@@ -256,20 +256,13 @@ static uint64_t total_ram(void)
+@@ -258,20 +258,13 @@ static uint64_t total_ram(void)
  
  	if (!sysinfo(&si))
  		return si.totalram;
