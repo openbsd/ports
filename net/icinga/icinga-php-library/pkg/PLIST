@@ -2,10 +2,6 @@
 @pkgpath net/icinga/web2-module-ipl
 icinga-php/
 icinga-php/ipl/
-icinga-php/ipl/.github/
-icinga-php/ipl/.github/workflows/
-icinga-php/ipl/.github/workflows/create-snapshot.yml
-icinga-php/ipl/.gitignore
 icinga-php/ipl/AssetLoader.php
 icinga-php/ipl/LICENSE
 icinga-php/ipl/README.md
@@ -79,9 +75,6 @@ icinga-php/ipl/asset/static/font/awesome/fa-v4compatibility.woff2
 icinga-php/ipl/asset/static/img/
 icinga-php/ipl/asset/static/img/select-icon-text-color.svg
 icinga-php/ipl/asset/static/img/select-icon.svg
-icinga-php/ipl/bin/
-icinga-php/ipl/bin/make-release.sh
-icinga-php/ipl/bin/make-snapshot.sh
 icinga-php/ipl/composer.json
 icinga-php/ipl/composer.lock
 icinga-php/ipl/vendor/
