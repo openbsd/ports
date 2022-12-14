@@ -1,18 +1,7 @@
 Index: arp-scan.c
 --- arp-scan.c.orig
 +++ arp-scan.c
-@@ -137,6 +137,10 @@ main(int argc, char *argv[]) {
-     * Process options.
-     */
-    process_options(argc, argv);
-+   if (getuid() != 0) {
-+      fprintf(stderr, "ERROR: arp-scan must be started with root privileges.\n");
-+      exit(1);
-+   }
-    /*
-     * If we're not reading from a file, and --localnet was not specified, then
-     * die if no hosts were given as command line arguments.
-@@ -453,6 +457,11 @@ main(int argc, char *argv[]) {
+@@ -453,6 +453,11 @@ main(int argc, char *argv[]) {
        if (write_pkt_to_file == -1)
           err_sys("open %s", pkt_filename);
     }

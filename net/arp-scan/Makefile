@@ -1,39 +1,36 @@
-GH_ACCOUNT =	royhills
-GH_PROJECT =	arp-scan
-GH_COMMIT =	62cb057c4a852242886788f1df6386a91202e4f2
-DISTNAME =	arp-scan-1.9.9pre20221130
+V=		1.10.0
+DISTNAME=	arp-scan-$V
 
-COMMENT-main =	ARP scanning and fingerprinting tool
-PKGNAME-main =	${DISTNAME}
+COMMENT-main=	ARP scanning and fingerprinting tool
+PKGNAME-main=	${DISTNAME}
 
-M =		20221205
-COMMENT-mac =	MAC address vendor list
-PKGNAME-mac =	mac-vendor-$M
+M=		20221214
+COMMENT-mac=	MAC address vendor list
+PKGNAME-mac=	mac-vendor-$M
 
-CATEGORIES =	net
+CATEGORIES=	net
 
-MAINTAINER =	Stuart Henderson <stu.ports@spacehopper.org>
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
-MASTER_SITES0 =	https://spacehopper.org/mirrors/
+MASTER_SITES=	https://github.com/royhills/arp-scan/releases/download/$V/
+MASTER_SITES0=	https://spacehopper.org/mirrors/
 
-DISTFILES =	${GH_DISTFILE} \
+DISTFILES=	${DISTNAME}.tar.gz \
 		oui-iab-$M.tar.xz:0
 
 # GPLv3+
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
 # uses pledge()
-WANTLIB-main =		c pcap
-RUN_DEPENDS-main =	${BASE_PKGPATH},-mac
+WANTLIB-main=		c pcap
+RUN_DEPENDS-main=	${BASE_PKGPATH},-mac
 
-MULTI_PACKAGES =	-main -mac
+MULTI_PACKAGES=		-main -mac
 
-CONFIGURE_STYLE =	autoreconf
-AUTOCONF_VERSION =	2.71
-AUTOMAKE_VERSION =	1.16
+CONFIGURE_STYLE=	gnu
 
 # for local format-ma script
-BUILD_DEPENDS =		textproc/p5-Text-CSV
+BUILD_DEPENDS=		textproc/p5-Text-CSV
 
 post-patch:
 	mv ${WRKSRC}/ieee-oui.txt ${WRKSRC}/ieee-oui.txt.upstream

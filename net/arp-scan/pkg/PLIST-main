@@ -1,6 +1,4 @@
 @pkgpath net/arp-scan
-@extra share/arp-scan/ieee-iab.txt.bak
-@extra share/arp-scan/ieee-oui.txt.bak
 bin/arp-fingerprint
 @bin bin/arp-scan
 bin/get-iab

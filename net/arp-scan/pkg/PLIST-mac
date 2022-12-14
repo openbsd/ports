@@ -3,7 +3,8 @@
 share/arp-scan/
 share/arp-scan/ieee-oui.txt
 share/arp-scan/mac-vendor.txt.dist
-@sample share/arp-scan/mac-vendor.txt
+@sample ${SYSCONFDIR}/arp-scan/
+@sample ${SYSCONFDIR}/arp-scan/mac-vendor.txt
 share/examples/arpwatch/
 share/examples/arpwatch/ethercodes.dat
 @sample /var/arpwatch/
