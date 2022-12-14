@@ -1,0 +1,12 @@
+Index: src/QrCode.php
+--- src/QrCode.php.orig
++++ src/QrCode.php
+@@ -15,7 +15,7 @@ use Vpn\Portal\Exception\QrCodeException;
+ 
+ class QrCode
+ {
+-    private const QR_ENCODE_PATH = '/usr/bin/qrencode';
++    private const QR_ENCODE_PATH = '/usr/local/bin/qrencode';
+ 
+     public static function generate(string $qrText): string
+     {

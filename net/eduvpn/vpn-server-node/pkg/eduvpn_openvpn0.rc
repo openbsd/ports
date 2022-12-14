@@ -1,0 +1,12 @@
+#!/bin/ksh
+
+daemon="${LOCALBASE}/sbin/openvpn --daemon"
+daemon_flags="--config ${SYSCONFDIR}/vpn-server-node/openvpn/default-0.conf --user _eduvpn"
+
+. /etc/rc.d/rc.subr
+
+rc_pre() {
+        install -d -o _eduvpn -m 750 -d /var/run/openvpn-server
+}
+
+rc_cmd $1

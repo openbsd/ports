@@ -1,0 +1,63 @@
+@newgroup _eduvpn:886
+@newuser _eduvpn:886:_eduvpn::eduvpn user:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/eduvpn_openvpn0
+@rcscript ${RCDIR}/eduvpn_openvpn1
+vpn-server-node/
+vpn-server-node/config
+vpn-server-node/openvpn-config
+vpn-server-node/src/
+vpn-server-node/src/Base64.php
+vpn-server-node/src/Config.php
+vpn-server-node/src/ConfigTrait.php
+vpn-server-node/src/ConfigWriter.php
+vpn-server-node/src/Connection.php
+vpn-server-node/src/Exception/
+vpn-server-node/src/Exception/ConfigException.php
+vpn-server-node/src/Exception/ConnectionException.php
+vpn-server-node/src/FileIO.php
+vpn-server-node/src/HttpClient/
+vpn-server-node/src/HttpClient/CurlHttpClient.php
+vpn-server-node/src/HttpClient/Exception/
+vpn-server-node/src/HttpClient/Exception/HttpClientException.php
+vpn-server-node/src/HttpClient/HttpClientInterface.php
+vpn-server-node/src/HttpClient/HttpClientRequest.php
+vpn-server-node/src/HttpClient/HttpClientResponse.php
+vpn-server-node/src/Json.php
+vpn-server-node/src/KeyPair.php
+vpn-server-node/src/LogInterface.php
+vpn-server-node/src/Syslog.php
+vpn-server-node/src/Utils.php
+vpn-server-node/vendor/
+vpn-server-node/vendor/autoload.php
+vpn-server-node/vendor/composer/
+vpn-server-node/vendor/composer/ClassLoader.php
+vpn-server-node/vendor/composer/LICENSE
+vpn-server-node/vendor/composer/autoload_classmap.php
+vpn-server-node/vendor/composer/autoload_namespaces.php
+vpn-server-node/vendor/composer/autoload_psr4.php
+vpn-server-node/vendor/composer/autoload_real.php
+vpn-server-node/vendor/composer/autoload_static.php
+vpn-server-node/vendor/composer/platform_check.php
+vpn-server-node/wg-config
+@cwd ${LOCALBASE}
+libexec/vpn-server-node/
+libexec/vpn-server-node/client-connect
+libexec/vpn-server-node/client-disconnect
+libexec/vpn-server-node/generate-secrets
+libexec/vpn-server-node/server-config
+@sample ${SYSCONFDIR}/vpn-server-node/
+@mode 750
+@owner _eduvpn
+@sample ${SYSCONFDIR}/vpn-server-node/keys/
+@sample ${SYSCONFDIR}/vpn-server-node/openvpn/
+@sample ${SYSCONFDIR}/vpn-server-node/wireguard/
+@mode
+@owner
+share/doc/vpn-server-node/
+share/doc/vpn-server-node/CHANGES.md
+share/doc/vpn-server-node/CONFIG_CHANGES.md
+share/doc/vpn-server-node/LICENSE
+share/doc/vpn-server-node/README.md
+share/examples/vpn-server-node/
+share/examples/vpn-server-node/config.php.example
+@sample ${SYSCONFDIR}/vpn-server-node/config.php

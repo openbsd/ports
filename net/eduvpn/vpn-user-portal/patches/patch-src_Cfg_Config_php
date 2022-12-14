@@ -1,0 +1,12 @@
+Index: src/Cfg/Config.php
+--- src/Cfg/Config.php.orig
++++ src/Cfg/Config.php
+@@ -58,7 +58,7 @@ class Config
+ 
+     public function vpnCaPath(): string
+     {
+-        return $this->requireString('vpnCaPath', '/usr/bin/vpn-ca');
++        return $this->requireString('vpnCaPath', '/usr/local/bin/vpn-ca');
+     }
+ 
+     public function authModule(): string

@@ -1,0 +1,9 @@
+@newgroup _eduvpn:886
+@newuser _eduvpn:886:_eduvpn::eduvpn user:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/vpn_daemon
+@bin bin/vpn-daemon
+share/doc/vpn-daemon/
+share/doc/vpn-daemon/AUTHORS.md
+share/doc/vpn-daemon/CHANGES.md
+share/doc/vpn-daemon/LICENSE
+share/doc/vpn-daemon/README.md

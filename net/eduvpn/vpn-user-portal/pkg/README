@@ -1,0 +1,143 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Introduction
+------------
+
+eduVPN consists of several parts which work together to provide a VPN
+configuration with flexible web-based authentication. User-friendly
+clients for various platforms are provided under two different
+brandings: eduVPN is intended for academic users and the client
+software is preconfigured to allow choosing from registered
+institutions; Let's Connect! is a more generic branding and allows
+direct entry of the VPN server hostname.
+
+"vpn-server-node" runs on one or more machines to actually provide
+the VPN endpoints (the software supports using OpenVPN or WireGuard as
+a backend; at this point the port maintainer has only tested with
+OpenVPN; it's possible that WireGuard will work, however to configure
+wg(4) on OpenBSD vpn-daemon will need to run as root).
+
+"vpn-user-portal" handles logins and communicates with "vpn-server-node"
+via an API. It is written in PHP and the provided configuration examples
+are suitable for use with Apache httpd ("pkg_add apache-httpd") using
+php-fpm. They should also work with Apache httpd and mod_php with only
+minor changes.
+
+Both vpn-server-node and vpn-user-portal can be installed on the same
+machine, and in most non-complex cases usually are.
+
+Basic configuration
+-------------------
+
+- Install the required packages (others are pulled in via dependencies):
+# pkg_add vpn-server-node vpn-user-portal apache-httpd
+
+- Run the vpn-user-portal command to generate secrets:
+$ doas -u _eduvpn /usr/local/libexec/vpn-user-portal/generate-secrets
+
+- Copy the node key generated in the previous step to the location
+for the server node:
+$ doas -u _eduvpn cp /etc/vpn-user-portal/keys/node.0.key \
+    /etc/vpn-server-node/keys/node.key
+
+- Run the vpn-server-node command to generate secrets:
+$ doas -u _eduvpn /usr/local/libexec/vpn-server-node/generate-secrets
+
+- Create an initial user account:
+$ doas -u _eduvpn vpn-user-portal-account --add $username
+
+- Add that account to adminUserIdList and review other configuration
+(the branding is controlled by "styleName" and in most cases you will
+want "LC"; you will also need to configure at least the default profile
+in ProfileList).
+# vi /etc/vpn-user-portal/config.php
+
+- Add a configuration section to php-fpm to handle eduVPN requests,
+for example:   (Note that this PHP instance is run as the _eduvpn user,
+and that chroot is not used here).
+
+# cat >> /etc/php-fpm.conf << EOF
+[eduvpn]
+user = _eduvpn
+group = _eduvpn
+listen = 127.0.0.1:32184
+pm = dynamic
+pm.max_children = 50
+pm.start_servers = 5
+pm.min_spare_servers = 5
+pm.max_spare_servers = 35
+EOF
+# rcctl enable ${PHPFPM}
+# rcctl restart ${PHPFPM}
+
+- Enable proxy_module, proxy_fcgi_module, ssl_module and rewrite_module
+in /etc/apache2/httpd.conf.
+
+- Symlink Apache config files from modules.sample into the "live" directory:
+# ln -s ../modules.sample/localhost.conf /var/www/conf/modules/
+# ln -s ../modules.sample/vpn-user-portal.conf /var/www/conf/modules/
+# ln -s ../modules.sample/vpn.host.conf /var/www/conf/modules/
+
+- Update hostnames (replace "vpn.example" with your chosen name)
+and certificate paths in /var/www/conf/modules/vpn.host.conf.
+
+You will need a signed certificate for your chosen hostname. If you
+don't already have one, you can use acme-client or an alternative
+client. This guide will not go into full details for this.
+
+If using ACME with the common HTTP-01 authentication type, you'll need
+to arrange to serve the challenge file from the correct directory.
+You may need to comment-out parts of the TLS configuration to get the
+server running sufficiently to do this (alternatively use a simpler
+webserver while getting set up initially).
+
+Make sure you are still able to renew the certificate after you've got
+the system running; the example vpn.host.conf includes an http->https
+redirect with an exemption for the challenge dir; unless wider changes
+are made to your Apache httpd configuration this will serve the files
+from /var/www/htdocs/.well-known/acme-challenge.
+
+- Start (or restart) Apache httpd, it will probably be helpful to use
+the -d flag to rcctl to show output in case you have any errors to fix:
+# rcctl enable apache2
+# rcctl -d restart apache2
+
+- Generate OpenVPN config files: this will make a call to the API URL
+defined in vpn-server-node configuration, typically to localhost.
+$ doas -u _eduvpn /usr/local/libexec/vpn-server-node/server-config
+
+If you encounter authentication errors, make sure the request is
+handled by the expected configuration section that's in the example
+/var/www/conf/modules.sample/localhost.conf and that the keys match
+between vpn-user-portal and vpn-server-node.
+
+- Start OpenVPN using the rc scripts provided by vpn-server-node:
+# rcctl enable eduvpn_openvpn0 eduvpn_openvpn1
+# rcctl start eduvpn_openvpn0 eduvpn_openvpn1
+
+- At this point, you should be able to login to the user interface
+from a browser using the admin user you created earlier, or login
+to the VPN using one of the client applications. You can also
+connect to the web interface and download an OpenVPN configuration
+file for manual use.
+
+- Maintenance scripts for various tasks are provided, you can add
+them to /etc/crontab:
+
+@daily      _eduvpn  /usr/local/libexec/vpn-user-portal/housekeeping
+*/5 * * * * _eduvpn  /usr/local/libexec/vpn-user-portal/daemon-sync
+*/5 * * * * _eduvpn  /usr/local/libexec/vpn-user-portal/stats
+@hourly     _eduvpn  /usr/local/libexec/vpn-user-portal/fetch-server-list
+
+
+Feedback welcome
+----------------
+
+If you have suggestions to improve this quick-start documentation,
+please contact the port maintainer.
+
+For ease of reference, upstream's documentation is available in the
+eduvpn-documentation package. It is understandably Linux-centric
+however you may still find it useful.

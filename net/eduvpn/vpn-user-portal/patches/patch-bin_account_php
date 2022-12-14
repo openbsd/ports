@@ -1,0 +1,19 @@
+Index: bin/account.php
+--- bin/account.php.orig
++++ bin/account.php
+@@ -1,3 +1,4 @@
++#!/usr/local/bin/php
+ <?php
+ 
+ declare(strict_types=1);
+@@ -9,8 +10,8 @@ declare(strict_types=1);
+  * SPDX-License-Identifier: AGPL-3.0+
+  */
+ 
+-require_once dirname(__DIR__).'/vendor/autoload.php';
+-$baseDir = dirname(__DIR__);
++require_once '/var/www/vpn-user-portal/vendor/autoload.php';
++$baseDir = '/var/www/vpn-user-portal';
+ 
+ use fkooman\OAuth\Server\PdoStorage as OAuthStorage;
+ use Vpn\Portal\Cfg\Config;

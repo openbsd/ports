@@ -1,0 +1,7 @@
+@bin bin/vpn-ca
+@man man/man1/vpn-ca.1
+share/doc/vpn-ca/
+share/doc/vpn-ca/AUTHORS.md
+share/doc/vpn-ca/CHANGES.md
+share/doc/vpn-ca/LICENSE
+share/doc/vpn-ca/README.md

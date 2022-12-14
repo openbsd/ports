@@ -1,0 +1,12 @@
+Index: src/Cfg/DbConfig.php
+--- src/Cfg/DbConfig.php.orig
++++ src/Cfg/DbConfig.php
+@@ -29,7 +29,7 @@ class DbConfig
+ 
+     public function schemaDir(): string
+     {
+-        return $this->baseDir().'/schema';
++        return '/var/www/vpn-user-portal/schema';
+     }
+ 
+     public function dbDsn(): string
