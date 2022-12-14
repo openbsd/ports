@@ -1,0 +1,12 @@
+Index: src/OpenVpn/CA/VpnCa.php
+--- src/OpenVpn/CA/VpnCa.php.orig
++++ src/OpenVpn/CA/VpnCa.php
+@@ -106,7 +106,7 @@ class VpnCa implements CaInterface
+ 
+     private function execVpnCa(string $cmdArgs): void
+     {
+-        self::exec(sprintf('CA_DIR=%s CA_KEY_TYPE=EdDSA %s %s', $this->caDir, $this->vpnCaPath, $cmdArgs));
++        self::exec(sprintf('CA_DIR=%s CA_KEY_TYPE=ECDSA %s %s', $this->caDir, $this->vpnCaPath, $cmdArgs));
+     }
+ 
+     private static function exec(string $execCmd): void
