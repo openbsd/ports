@@ -1,4 +1,4 @@
-COMMENT=	documentation repo for EduVPN
+COMMENT=	documentation repo for eduVPN
 
 GH_ACCOUNT=	eduvpn
 GH_PROJECT=	documentation
