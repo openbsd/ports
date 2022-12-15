@@ -1,6 +1,6 @@
 COMMENT =	parse directory listing
 
-DISTNAME =	File-Listing-6.14
+DISTNAME =	File-Listing-6.15
 CATEGORIES =	devel
 
 MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
