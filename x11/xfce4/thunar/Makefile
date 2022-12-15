@@ -1,10 +1,8 @@
 COMMENT=	Xfce4 file manager
 
 XFCE_PROJECT=	thunar
-XFCE_VERSION=	4.16.11
-REVISION=	1
 
-SHARED_LIBS=	thunarx-3	0.0
+SHARED_LIBS=	thunarx-3	0.1
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -14,10 +12,10 @@ WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 c cairo cairo-gobject
 WANTLIB += execinfo exif epoxy exo-2 expat ffi fontconfig freetype fribidi gdk-3
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz iconv intl jpeg m
-WANTLIB += notify pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += notify pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1
 WANTLIB += png pthread startup-notification-1 xcb xcb-render xcb-shm
 WANTLIB += xcb-util xfce4kbd-private-3 xfce4ui-2 xfce4util xfconf-0 z
-WANTLIB += Xau Xdmcp pcre2-8
+WANTLIB += Xau Xdmcp pcre2-8 atspi dbus-1
 WANTLIB += ${COMPILER_LIBCXX}
 
 MODULES=	x11/xfce4
@@ -34,11 +32,11 @@ FAKE_FLAGS=	defaultsdir=${PREFIX}/share/examples/Thunar
 
 BUILD_DEPENDS =	textproc/gtk-doc
 
-LIB_DEPENDS=	x11/xfce4/exo>=0.10.0 \
-		x11/xfce4/libxfce4ui>=4.15.3 \
+LIB_DEPENDS=	x11/xfce4/exo>=4.17.0 \
+		x11/xfce4/libxfce4ui>=4.17.6 \
 		x11/xfce4/xfce4-panel \
 		devel/libnotify \
-		devel/pcre \
+		devel/pcre2 \
 		graphics/libexif
 
 RUN_DEPENDS=	x11/gnome/gvfs
