@@ -1,11 +1,9 @@
 COMMENT=	Xfce4 widget library
 
 XFCE_PROJECT=	libxfce4ui
-XFCE_VERSION=	4.16.1
-REVISION=	2
 
-SHARED_LIBS=	xfce4ui-2		0.2	\
-		xfce4kbd-private-3	0.0	# 0.0
+SHARED_LIBS=	xfce4ui-2		0.3	\
+		xfce4kbd-private-3	0.1	# 0.0
 
 # LGPLv2
 PERMIT_PACKAGE=	Yes
@@ -29,7 +27,7 @@ WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0
 WANTLIB += c cairo cairo-gobject epoxy expat ffi fontconfig freetype
 WANTLIB += fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0 gladeui-2
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
-WANTLIB += gtk-3 harfbuzz iconv intl lzma m pango-1.0
+WANTLIB += gtk-3 harfbuzz iconv intl lzma m pango-1.0 atspi dbus-1
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png pthread
 WANTLIB += startup-notification-1 xcb xcb-render xcb-shm xcb-util
 WANTLIB += xfce4util xfconf-0 xml2 z Xau gtop-2.0 kvm execinfo jpeg
