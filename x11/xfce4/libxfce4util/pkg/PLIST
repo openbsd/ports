@@ -6,6 +6,7 @@ include/xfce4/libxfce4util/libxfce4util.h
 include/xfce4/libxfce4util/xfce-debug.h
 include/xfce4/libxfce4util/xfce-fileutils.h
 include/xfce4/libxfce4util/xfce-generics.h
+include/xfce4/libxfce4util/xfce-gio-extensions.h
 include/xfce4/libxfce4util/xfce-i18n.h
 include/xfce4/libxfce4util/xfce-kiosk.h
 include/xfce4/libxfce4util/xfce-license.h
@@ -13,6 +14,7 @@ include/xfce4/libxfce4util/xfce-miscutils.h
 include/xfce4/libxfce4util/xfce-posix-signal-handler.h
 include/xfce4/libxfce4util/xfce-rc.h
 include/xfce4/libxfce4util/xfce-resource.h
+include/xfce4/libxfce4util/xfce-string.h
 include/xfce4/libxfce4util/xfce-utf8.h
 lib/girepository-1.0/
 lib/girepository-1.0/Libxfce4util-1.0.typelib
@@ -26,11 +28,17 @@ share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/libxfce4util/
 share/gtk-doc/html/libxfce4util/annotation-glossary.html
+share/gtk-doc/html/libxfce4util/api-index-4-18.html
+share/gtk-doc/html/libxfce4util/api-index-4-2.html
+share/gtk-doc/html/libxfce4util/api-index-4-4.html
+share/gtk-doc/html/libxfce4util/api-index-deprecated.html
+share/gtk-doc/html/libxfce4util/api-index-full.html
 share/gtk-doc/html/libxfce4util/home.png
 share/gtk-doc/html/libxfce4util/index.html
 share/gtk-doc/html/libxfce4util/left-insensitive.png
 share/gtk-doc/html/libxfce4util/left.png
 share/gtk-doc/html/libxfce4util/libxfce4util-File-Utilities.html
+share/gtk-doc/html/libxfce4util/libxfce4util-GIO-Extensions.html
 share/gtk-doc/html/libxfce4util/libxfce4util-Internationalisation.html
 share/gtk-doc/html/libxfce4util/libxfce4util-Miscellaneous-Utilities.html
 share/gtk-doc/html/libxfce4util/libxfce4util-POSIX-Signal-Handling.html
@@ -41,6 +49,7 @@ share/gtk-doc/html/libxfce4util/libxfce4util-Unicode-Support-Functions.html
 share/gtk-doc/html/libxfce4util/libxfce4util-Version-Information.html
 share/gtk-doc/html/libxfce4util/libxfce4util-Xfce-Generics.html
 share/gtk-doc/html/libxfce4util/libxfce4util-Xfce-Kiosk-functions.html
+share/gtk-doc/html/libxfce4util/libxfce4util-Xfce-String-Functions.html
 share/gtk-doc/html/libxfce4util/libxfce4util-core.html
 share/gtk-doc/html/libxfce4util/libxfce4util-datatypes.html
 share/gtk-doc/html/libxfce4util/libxfce4util-fundamentals.html
@@ -55,6 +64,7 @@ share/gtk-doc/html/libxfce4util/up.png
 share/locale/am/LC_MESSAGES/libxfce4util.mo
 share/locale/ar/LC_MESSAGES/libxfce4util.mo
 share/locale/ast/LC_MESSAGES/libxfce4util.mo
+share/locale/az/LC_MESSAGES/libxfce4util.mo
 share/locale/be/LC_MESSAGES/libxfce4util.mo
 share/locale/bg/LC_MESSAGES/libxfce4util.mo
 share/locale/bn/LC_MESSAGES/libxfce4util.mo
@@ -92,6 +102,7 @@ share/locale/ie/LC_MESSAGES/libxfce4util.mo
 share/locale/is/LC_MESSAGES/libxfce4util.mo
 share/locale/it/LC_MESSAGES/libxfce4util.mo
 share/locale/ja/LC_MESSAGES/libxfce4util.mo
+share/locale/ka/LC_MESSAGES/libxfce4util.mo
 share/locale/kk/LC_MESSAGES/libxfce4util.mo
 share/locale/ko/LC_MESSAGES/libxfce4util.mo
 share/locale/lt/LC_MESSAGES/libxfce4util.mo
