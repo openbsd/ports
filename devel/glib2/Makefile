@@ -3,7 +3,7 @@ COMMENT=		general-purpose utility library
 GNOME_PROJECT=		glib
 GNOME_VERSION=		2.74.3
 PKGNAME=		${DISTNAME:S/glib/glib2/}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		devel
 
@@ -14,7 +14,8 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # https://gitlab.gnome.org/GNOME/glib/-/merge_requests/3125
 MASTER_SITES0=		https://gitlab.gnome.org/GNOME/glib/-/commit/
 PATCH_DIST_STRIP=	-p1
-PATCHFILES=		e16fb83755e08a4c2da2b0a8ea0fc2e27b1154bf.patch:0
+PATCHFILES=		e16fb83755e08a4c2da2b0a8ea0fc2e27b1154bf.patch:0 \
+			31ec4dd01ada306ef1419badb5f701832ad5ad8e.patch:0
 
 # according to upstream, there should never be a need to bump major; doing so
 # would trigger an abort():
