@@ -1,7 +1,7 @@
 Index: third_party/libxml/linux/config.h
 --- third_party/libxml/linux/config.h.orig
 +++ third_party/libxml/linux/config.h
-@@ -81,6 +81,9 @@
+@@ -72,6 +72,9 @@
  /* Define to 1 if you have the `putenv' function. */
  #define HAVE_PUTENV 1
  
