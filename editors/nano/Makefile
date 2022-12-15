@@ -1,6 +1,6 @@
 COMMENT=	simple editor, inspired by Pico
 
-DISTNAME=	nano-7.0
+DISTNAME=	nano-7.1
 CATEGORIES=	editors
 HOMEPAGE=	https://www.nano-editor.org/
 
