@@ -1,4 +1,4 @@
-MODPY_EGG_VERSION ?=	3.6.1
+MODPY_EGG_VERSION ?=	3.7.0
 DISTNAME ?=	buildbot-${PART}-${MODPY_EGG_VERSION}
 PKGNAME ?=	py-${DISTNAME:S/post/pl/}
 
@@ -13,5 +13,5 @@ MODPY_PI =	Yes
 
 MODULES =	lang/python
 
-MODPY_SETUPTOOLS = Yes
+MODPY_PYBUILD =	setuptools
 

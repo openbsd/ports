@@ -1,5 +1,4 @@
 COMMENT =	web interface for buildbot
-REVISION =	1
 
 PART = www
 

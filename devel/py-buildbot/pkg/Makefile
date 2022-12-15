@@ -1,5 +1,4 @@
 COMMENT =	packaging tools for buildbot
-REVISION =	1
 
 PART =	pkg
 
