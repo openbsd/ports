@@ -1,0 +1,54 @@
+Index: panel-plugin/network.cc
+--- panel-plugin/network.cc.orig
++++ panel-plugin/network.cc
+@@ -39,17 +39,19 @@
+ #include <glibtop/netload.h>
+ 
+ static gint
+-read_netload_libgtop (gulong *bytes)
++read_netload_libgtop (guint64 *bytes)
+ {
+     glibtop_netlist netlist;
+-    char **interfaces = glibtop_get_netlist (&netlist);
++    glibtop_netload netload;
++    char **interfaces;
++    glibtop_get_netload (&netload, "lo0");
++    interfaces = glibtop_get_netlist (&netlist);
+     if (!interfaces)
+         return -1;
+ 
+     *bytes = 0;
+     for (char **i = interfaces; *i != NULL; i++)
+     {
+-        glibtop_netload netload;
+         glibtop_get_netload (&netload, *i);
+         *bytes += netload.bytes_total;
+     }
+@@ -67,6 +69,7 @@ read_netload_libgtop (gulong *bytes)
+ 
+ #endif
+ 
++#if 0
+ static const char *const PROC_NET_NETSTAT = "/proc/net/netstat";
+ 
+ static gint
+@@ -110,6 +113,7 @@ read_netload_proc (gulong *bytes)
+     *bytes = in_octets + out_octets;
+     return 0;
+ }
++#endif
+ 
+ gint
+ read_netload (gulong *net, gulong *NTotal)
+@@ -122,9 +126,8 @@ read_netload (gulong *net, gulong *NTotal)
+ 
+     time[1] = g_get_monotonic_time ();
+ 
+-    if (read_netload_proc (&bytes[1]) != 0)
+-        if (read_netload_libgtop (&bytes[1]) != 0)
+-            return -1;
++    if (read_netload_libgtop (&bytes[1]) != 0)
++        return -1;
+ 
+     if (time[0] != 0 && G_LIKELY (time[1] > time[0]) && G_LIKELY (bytes[1] >= bytes[0]))
+     {
