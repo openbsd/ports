@@ -1,7 +1,7 @@
 # Module for Xfce related ports, divided into five categories:
 # core, goodie, artwork, thunar plugins, panel plugins.
 
-XFCE_DESKTOP_VERSION=	4.16.0
+XFCE_DESKTOP_VERSION=	4.18.0
 CATEGORIES+=	x11/xfce4
 
 USE_GMAKE?=	Yes
