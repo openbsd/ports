@@ -1,8 +1,6 @@
 COMMENT=	Xfce4 desktop manager
 
 XFCE_PROJECT=	xfdesktop
-XFCE_VERSION=	4.16.1
-REVISION=	0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -24,7 +22,7 @@ LIB_DEPENDS=	x11/xfce4/libxfce4ui>=4.13.0 \
 
 WANTLIB += ICE SM X11 X11-xcb XRes Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender fribidi
-WANTLIB += atk-1.0 c cairo exo-2 expat
+WANTLIB += atk-1.0 atspi c cairo dbus-1 exo-2 expat
 WANTLIB += ffi fontconfig freetype garcon-1 garcon-gtk3-1 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += m notify pango-1.0 pangocairo-1.0 pangoft2-1.0

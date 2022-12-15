@@ -5,6 +5,9 @@ share/applications/xfce-backdrop-settings.desktop
 share/backgrounds/
 share/backgrounds/xfce/
 share/backgrounds/xfce/xfce-blue.jpg
+share/backgrounds/xfce/xfce-flower.svg
+share/backgrounds/xfce/xfce-leaves.svg
+share/backgrounds/xfce/xfce-shapes.svg
 share/backgrounds/xfce/xfce-stripes.png
 share/backgrounds/xfce/xfce-teal.jpg
 share/backgrounds/xfce/xfce-verticals.png
