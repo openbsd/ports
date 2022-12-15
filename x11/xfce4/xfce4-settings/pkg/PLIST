@@ -152,6 +152,7 @@ share/locale/ie/LC_MESSAGES/xfce4-settings.mo
 share/locale/is/LC_MESSAGES/xfce4-settings.mo
 share/locale/it/LC_MESSAGES/xfce4-settings.mo
 share/locale/ja/LC_MESSAGES/xfce4-settings.mo
+share/locale/ka/LC_MESSAGES/xfce4-settings.mo
 share/locale/kab/LC_MESSAGES/xfce4-settings.mo
 share/locale/kk/LC_MESSAGES/xfce4-settings.mo
 share/locale/ko/LC_MESSAGES/xfce4-settings.mo
@@ -188,6 +189,7 @@ share/locale/zh_TW/LC_MESSAGES/xfce4-settings.mo
 @tag update-desktop-database
 share/xfce4/
 share/xfce4/helpers/
+share/xfce4/helpers/alacritty.desktop
 share/xfce4/helpers/aterm.desktop
 share/xfce4/helpers/balsa.desktop
 share/xfce4/helpers/brave.desktop
@@ -209,6 +211,7 @@ share/xfce4/helpers/icecat.desktop
 share/xfce4/helpers/icedove.desktop
 share/xfce4/helpers/iceweasel.desktop
 share/xfce4/helpers/jumanji.desktop
+share/xfce4/helpers/kitty.desktop
 share/xfce4/helpers/kmail.desktop
 share/xfce4/helpers/konqueror.desktop
 share/xfce4/helpers/links.desktop
