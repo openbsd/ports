@@ -2,6 +2,7 @@ COMMENT=	Xfce4 places panel plugin
 
 XFCE_VERSION=	1.8.3
 XFCE_PLUGIN=	places
+REVISION=	0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -20,7 +21,7 @@ WANTLIB += harfbuzz iconv intl m notify pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre2-8 pixman-1 png pthread startup-notification-1
 WANTLIB += xcb xcb-render xcb-shm xcb-util xfce4ui-2
 WANTLIB += xfce4util xfconf-0 z
-WANTLIB += Xau Xdmcp execinfo jpeg
+WANTLIB += Xau Xdmcp execinfo jpeg atspi dbus-1
 WANTLIB += ${COMPILER_LIBCXX}
 
 .include <bsd.port.mk>

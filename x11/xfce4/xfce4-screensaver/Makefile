@@ -1,7 +1,8 @@
 COMMENT =	Xfce4 screensaver
 
 XFCE_GOODIE =	xfce4-screensaver
-REVISION =	3
+XFCE_VERSION =	4.16.0
+REVISION =	4
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
@@ -18,7 +19,7 @@ LIB_DEPENDS =	x11/xfce4/garcon>=0.5.0 \
 
 WANTLIB += GL ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender XRes Xss Xxf86vm atk-1.0
-WANTLIB += atk-bridge-2.0 c cairo cairo-gobject dbus-1 drm
+WANTLIB += atk-bridge-2.0 atspi c cairo cairo-gobject dbus-1 drm
 WANTLIB += epoxy expat ffi fontconfig freetype fribidi garcon-1
 WANTLIB += garcon-gtk3-1 gdk-3 gdk_pixbuf-2.0 gio-2.0 glapi glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3

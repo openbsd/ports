@@ -2,7 +2,7 @@ COMMENT=	Xfce4 simple text editor
 
 XFCE_VERSION=	0.5.10
 XFCE_GOODIE=	mousepad
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=	mousepad	0.0 # 0.0
 
@@ -26,6 +26,6 @@ WANTLIB += aspell enchant-2 gspell-1 jpeg gtk-3 gtksourceview-4 harfbuzz iconv
 WANTLIB += icudata icuuc intl lzma m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8
 WANTLIB += pixman-1 png pthread xcb xcb-render xcb-shm
 WANTLIB += xml2 z ${COMPILER_LIBCXX}
-WANTLIB += Xau Xdmcp execinfo
+WANTLIB += Xau Xdmcp execinfo atspi dbus-1
 
 .include <bsd.port.mk>

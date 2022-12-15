@@ -3,7 +3,7 @@ COMMENT=	Xfce4 volume mixer
 XFCE_GOODIE=	xfce4-mixer
 XFCE_VERSION=	4.15.0pre0
 XFCE_COMMIT=	ef93525c188aa8eac9b7edc933ebf5ca61e0f56d
-REVISION=	2
+REVISION=	3
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -14,7 +14,7 @@ MODXFCE_PURGE_LA =	lib/xfce4/panel/plugins
 
 WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 X11-xcb Xcomposite Xcursor
 WANTLIB += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0
-WANTLIB += atk-bridge-2.0 c cairo cairo-gobject
+WANTLIB += atk-bridge-2.0 atspi c cairo cairo-gobject dbus-1
 WANTLIB += epoxy expat ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gstreamer-1.0 sndio gthread-2.0 gtk-3 harfbuzz iconv intl

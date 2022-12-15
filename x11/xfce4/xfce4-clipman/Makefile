@@ -2,7 +2,7 @@ COMMENT=	Xfce4 clipboard history panel plugin
 
 XFCE_VERSION=	1.6.2
 XFCE_PLUGIN=	clipman
-REVISION=	2
+REVISION=	3
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -18,9 +18,9 @@ LIB_DEPENDS+=	x11/xfce4/xfconf \
 FAKE_FLAGS =	autostartdir=${PREFIX}/share/examples/xfce4-clipman \
 		actionsdir=${PREFIX}/share/examples/xfce4-clipman
 
-WANTLIB =	ICE SM X11 Xcomposite Xcursor Xdamage Xext \
-		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo \
-		expat fontconfig freetype fribidi \
+WANTLIB =	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
+		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 atspi c cairo \
+		dbus-1 execinfo expat fontconfig freetype fribidi \
 		gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 \
 		gobject-2.0 m pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pcre2-8 pixman-1 png pthread startup-notification-1 \
@@ -28,6 +28,5 @@ WANTLIB =	ICE SM X11 Xcomposite Xcursor Xdamage Xext \
 		X11-xcb ffi xcb-util xfconf-0 qrencode jpeg \
 		atk-bridge-2.0 cairo-gobject epoxy gdk-3 gtk-3 xfce4panel-2.0 \
 		gthread-2.0 xcb-render xcb-shm harfbuzz graphite2 iconv intl
-WANTLIB += Xau Xdmcp execinfo
 
 .include <bsd.port.mk>

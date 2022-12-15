@@ -2,7 +2,7 @@ COMMENT=	Xfce4 pulseaudio control line panel plugin
 
 XFCE_VERSION=	0.4.5
 XFCE_PLUGIN=	pulseaudio
-REVISION=	0
+REVISION=	1
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -19,7 +19,7 @@ LIB_DEPENDS+=	x11/xfce4/exo \
 
 WANTLIB += FLAC ICE SM X11 X11-xcb XRes Xcomposite Xcursor Xdamage Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0
-WANTLIB += cairo cairo-gobject dbus-1 epoxy execinfo exo-2 expat
+WANTLIB += atspi cairo cairo-gobject dbus-1 epoxy execinfo exo-2 expat
 WANTLIB += ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3
 WANTLIB += harfbuzz iconv intl m notify ogg pango-1.0 pangocairo-1.0

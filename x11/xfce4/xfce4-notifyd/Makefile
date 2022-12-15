@@ -2,7 +2,7 @@ COMMENT=	Xfce4 notification daemon
 
 XFCE_VERSION=	0.6.4
 XFCE_GOODIE=	xfce4-notifyd
-REVISION=	0
+REVISION=	1
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -19,7 +19,7 @@ CONFIGURE_ARGS =	--enable-dbus-start-daemon
 
 WANTLIB += ICE SM X11 X11-xcb Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender
-WANTLIB += atk-1.0 c cairo execinfo expat ffi fontconfig
+WANTLIB += atk-1.0 atspi c cairo dbus-1 execinfo expat ffi fontconfig
 WANTLIB += freetype gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 jpeg m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png pthread

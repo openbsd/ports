@@ -1,8 +1,8 @@
-COMMENT=	Xfce4 vte-based terminal
+COMMENT=	Xfce4 terminal
 
 XFCE_VERSION=	1.0.4
 XFCE_GOODIE=	xfce4-terminal
-REVISION=	1
+REVISION=	2
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -25,6 +25,6 @@ WANTLIB += idn2 intl m nettle p11-kit pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre2-8 pixman-1 png startup-notification-1
 WANTLIB += tasn1 unistring vte-2.91 xcb xcb-render xcb-shm xcb-util
 WANTLIB += xfce4kbd-private-3 xfce4ui-2 xfce4util xfconf-0 z execinfo jpeg
-WANTLIB += brotlidec brotlienc zstd
+WANTLIB += brotlidec brotlienc zstd atspi dbus-1
 
 .include <bsd.port.mk>

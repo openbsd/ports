@@ -2,7 +2,7 @@ COMMENT=	Xfce4 wireless interface monitor panel plugin
 
 XFCE_VERSION=	0.6.3
 XFCE_PLUGIN=	wavelan
-REVISION=	1
+REVISION=	2
 
 # BSD
 PERMIT_PACKAGE=	Yes
@@ -17,7 +17,7 @@ WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gtk-3 harfbuzz
 WANTLIB += iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8
 WANTLIB += pixman-1 png pthread startup-notification-1 xcb xcb-render
 WANTLIB += xcb-shm xcb-util xfce4ui-2 xfce4util z
-WANTLIB += Xau Xdmcp execinfo jpeg
+WANTLIB += Xau Xdmcp execinfo jpeg atspi dbus-1
 WANTLIB += ${COMPILER_LIBCXX}
 
 .include <bsd.port.mk>
