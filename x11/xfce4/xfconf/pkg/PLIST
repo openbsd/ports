@@ -20,6 +20,7 @@ share/dbus-1/services/
 share/dbus-1/services/org.xfce.Xfconf.service
 share/gir-1.0/Xfconf-0.gir
 share/gtk-doc/html/xfconf/
+share/gtk-doc/html/xfconf/annotation-glossary.html
 share/gtk-doc/html/xfconf/ch01.html
 share/gtk-doc/html/xfconf/ch02.html
 share/gtk-doc/html/xfconf/ch03.html
@@ -59,6 +60,7 @@ share/locale/fi/LC_MESSAGES/xfconf.mo
 share/locale/fr/LC_MESSAGES/xfconf.mo
 share/locale/gl/LC_MESSAGES/xfconf.mo
 share/locale/he/LC_MESSAGES/xfconf.mo
+share/locale/hi/LC_MESSAGES/xfconf.mo
 share/locale/hr/LC_MESSAGES/xfconf.mo
 share/locale/hu/LC_MESSAGES/xfconf.mo
 share/locale/hy_AM/LC_MESSAGES/xfconf.mo
@@ -67,6 +69,9 @@ share/locale/id/LC_MESSAGES/xfconf.mo
 share/locale/is/LC_MESSAGES/xfconf.mo
 share/locale/it/LC_MESSAGES/xfconf.mo
 share/locale/ja/LC_MESSAGES/xfconf.mo
+share/locale/kab/
+share/locale/kab/LC_MESSAGES/
+share/locale/kab/LC_MESSAGES/xfconf.mo
 share/locale/kk/LC_MESSAGES/xfconf.mo
 share/locale/ko/LC_MESSAGES/xfconf.mo
 share/locale/lt/LC_MESSAGES/xfconf.mo

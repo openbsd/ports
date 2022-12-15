@@ -1,5 +1,4 @@
 COMMENT=	Xfce4 settings daemon
-REVISION=	0
 
 XFCE_PROJECT=	xfconf
 SHARED_LIBS =	xfconf-0 1.0 # 2.0
