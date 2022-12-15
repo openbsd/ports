@@ -13,15 +13,15 @@ COMMENT =	continuation and extension of Vim
 
 GH_ACCOUNT =	neovim
 GH_PROJECT =	neovim
-GH_TAGNAME =	v0.8.0
+GH_TAGNAME =	v0.8.1
 
 CATEGORIES =	editors devel
 HOMEPAGE =	https://neovim.io
 MAINTAINER =	Edd Barrett <edd@openbsd.org>
 
-# The versions listed here must match those in third-party/CMakeLists.txt.
-LUV_VER =	1.43.0-0
-LUAJIT_VER =	91bc6b8ad1f373c1ce9003dc024b2e21fad0e444
+# The versions listed here must match those in cmake.deps/CMakeLists.txt.
+LUV_VER =	1.44.2-1
+LUAJIT_VER =	633f265f67f322cbe2c5fd11d3e46d968ac220f7
 
 MASTER_SITES0 =	https://github.com/luvit/luv/releases/download/${LUV_VER}/
 MASTER_SITES1 = https://github.com/LuaJIT/LuaJIT/archive/
@@ -76,7 +76,7 @@ RUN_DEPENDS +=		devel/libmpack/lua \
 SEPARATE_BUILD =	Yes
 CONFIGURE_ARGS +=	-DUSE_BUNDLED=OFF \
 			-DLIBLUV_INCLUDE_DIR=${STATIC_DEPS_INST}/include \
-			-DLIBLUV_LIBRARY=${STATIC_DEPS_INST}/lib/libluv_a.a
+			-DLIBLUV_LIBRARY=${STATIC_DEPS_INST}/lib/libluv.a
 .if ${EMBED_LUAJIT} == "Yes"
 CONFIGURE_ARGS +=	-DLUA_PRG=${STATIC_DEPS_INST}/bin/luajit-2.1.0-beta3 \
 			-DLUAJIT_INCLUDE_DIR=${STATIC_DEPS_INST}/include/luajit-2.1 \
