@@ -7,7 +7,6 @@ include/tumbler-1/tumbler/tumbler-config.h
 include/tumbler-1/tumbler/tumbler-enum-types.h
 include/tumbler-1/tumbler/tumbler-error.h
 include/tumbler-1/tumbler/tumbler-file-info.h
-include/tumbler-1/tumbler/tumbler-glib-extensions.h
 include/tumbler-1/tumbler/tumbler-marshal.h
 include/tumbler-1/tumbler/tumbler-provider-factory.h
 include/tumbler-1/tumbler/tumbler-provider-plugin.h
@@ -20,6 +19,9 @@ include/tumbler-1/tumbler/tumbler.h
 lib/libtumbler-1.la
 @lib lib/libtumbler-1.so.${LIBtumbler-1_VERSION}
 lib/pkgconfig/tumbler-1.pc
+lib/systemd/
+lib/systemd/user/
+lib/systemd/user/tumblerd.service
 lib/tumbler-1/
 lib/tumbler-1/plugins/
 lib/tumbler-1/plugins/cache/
@@ -47,10 +49,13 @@ share/examples/tumbler/tumbler.rc
 share/gtk-doc/html/tumbler/
 share/gtk-doc/html/tumbler/TumblerAbstractThumbnailer.html
 share/gtk-doc/html/tumbler/TumblerCache.html
+share/gtk-doc/html/tumbler/TumblerCachePlugin.html
 share/gtk-doc/html/tumbler/TumblerFileInfo.html
 share/gtk-doc/html/tumbler/TumblerProviderFactory.html
 share/gtk-doc/html/tumbler/TumblerProviderPlugin.html
 share/gtk-doc/html/tumbler/TumblerThumbnail.html
+share/gtk-doc/html/tumbler/TumblerThumbnailFlavor.html
+share/gtk-doc/html/tumbler/TumblerThumbnailer.html
 share/gtk-doc/html/tumbler/TumblerThumbnailerProvider.html
 share/gtk-doc/html/tumbler/api-index-full.html
 share/gtk-doc/html/tumbler/extension-api.html
@@ -69,6 +74,8 @@ share/gtk-doc/html/tumbler/thumbnails.html
 share/gtk-doc/html/tumbler/tumbler-Error-Domain-and-Types.html
 share/gtk-doc/html/tumbler/tumbler-Various-Enumeration-Types.html
 share/gtk-doc/html/tumbler/tumbler-Version-Information-and-Compatibility-Checks.html
+share/gtk-doc/html/tumbler/tumbler-tumbler-marshal.html
+share/gtk-doc/html/tumbler/tumbler-tumbler-util.html
 share/gtk-doc/html/tumbler/tumbler.devhelp2
 share/gtk-doc/html/tumbler/up-insensitive.png
 share/gtk-doc/html/tumbler/up.png
@@ -83,8 +90,6 @@ share/locale/cs/LC_MESSAGES/tumbler.mo
 share/locale/da/LC_MESSAGES/tumbler.mo
 share/locale/de/LC_MESSAGES/tumbler.mo
 share/locale/el/LC_MESSAGES/tumbler.mo
-share/locale/en_AU/
-share/locale/en_AU/LC_MESSAGES/
 share/locale/en_AU/LC_MESSAGES/tumbler.mo
 share/locale/en_GB/LC_MESSAGES/tumbler.mo
 share/locale/es/LC_MESSAGES/tumbler.mo
@@ -97,16 +102,15 @@ share/locale/he/LC_MESSAGES/tumbler.mo
 share/locale/hi/LC_MESSAGES/tumbler.mo
 share/locale/hr/LC_MESSAGES/tumbler.mo
 share/locale/hu/LC_MESSAGES/tumbler.mo
-share/locale/hy_AM/
-share/locale/hy_AM/LC_MESSAGES/
 share/locale/hy_AM/LC_MESSAGES/tumbler.mo
-share/locale/hye/
-share/locale/hye/LC_MESSAGES/
 share/locale/hye/LC_MESSAGES/tumbler.mo
 share/locale/id/LC_MESSAGES/tumbler.mo
 share/locale/is/LC_MESSAGES/tumbler.mo
 share/locale/it/LC_MESSAGES/tumbler.mo
 share/locale/ja/LC_MESSAGES/tumbler.mo
+share/locale/kab/
+share/locale/kab/LC_MESSAGES/
+share/locale/kab/LC_MESSAGES/tumbler.mo
 share/locale/kk/LC_MESSAGES/tumbler.mo
 share/locale/ko/LC_MESSAGES/tumbler.mo
 share/locale/lt/LC_MESSAGES/tumbler.mo

@@ -1,10 +1,8 @@
 COMMENT=	D-Bus thumbnailing service
 
 XFCE_PROJECT=	tumbler
-XFCE_VERSION=	4.16.1
-REVISION=	0
 
-SHARED_LIBS+=	tumbler-1 0.0
+SHARED_LIBS+=	tumbler-1 1.0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -18,8 +16,8 @@ WANTLIB += poppler-glib pthread ssl swscale tiff harfbuzz
 WANTLIB += vorbis xcb xcb-render xcb-shm xml2 z iconv intl
 WANTLIB += ${COMPILER_LIBCXX} ass avfilter avresample fribidi
 WANTLIB += gsm mp3lame opus postproc speex swresample vorbisenc
-WANTLIB += vpx x264 x265 xvidcore theoradec theoraenc zstd
-WANTLIB += Xau Xdmcp vidstab
+WANTLIB += vpx x264 x265 xfce4util xvidcore theoradec theoraenc zstd
+WANTLIB += Xau Xdmcp vidstab nghttp3 ngtcp2 ngtcp2_crypto_openssl zimg
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -35,7 +33,8 @@ CONFIGURE_ARGS =	--disable-raw-thumbnailer \
 CONFIGURE_ENV +=	LIBS='-liconv'
 FAKE_FLAGS =	confdir=${PREFIX}/share/examples/tumbler
 
-LIB_DEPENDS +=	devel/libgsf \
+LIB_DEPENDS +=	x11/xfce4/libxfce4util>=4.17.1 \
+		devel/libgsf \
 		net/curl \
 		print/poppler \
 		graphics/png \
