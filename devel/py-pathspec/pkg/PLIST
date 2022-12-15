@@ -32,4 +32,5 @@ lib/python${MODPY_VERSION}/site-packages/pathspec/patterns/${MODPY_PYCACHE}__ini
 lib/python${MODPY_VERSION}/site-packages/pathspec/patterns/${MODPY_PYCACHE}gitwildmatch.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pathspec/patterns/${MODPY_PYCACHE}gitwildmatch.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pathspec/patterns/gitwildmatch.py
+lib/python${MODPY_VERSION}/site-packages/pathspec/py.typed
 lib/python${MODPY_VERSION}/site-packages/pathspec/util.py
