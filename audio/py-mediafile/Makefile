@@ -1,6 +1,6 @@
 COMMENT =	read and write audio files' tags in Python
 
-MODPY_EGG_VERSION =	0.10.1
+MODPY_EGG_VERSION =	0.11.0
 
 DISTNAME =	mediafile-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
