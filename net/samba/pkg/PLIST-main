@@ -1072,6 +1072,8 @@ lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5/${MODPY_PYCACHE}as_req
 lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5/${MODPY_PYCACHE}as_req_tests.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5/${MODPY_PYCACHE}compatability_tests.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5/${MODPY_PYCACHE}compatability_tests.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5/${MODPY_PYCACHE}etype_tests.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5/${MODPY_PYCACHE}etype_tests.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5/${MODPY_PYCACHE}fast_tests.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5/${MODPY_PYCACHE}fast_tests.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5/${MODPY_PYCACHE}kcrypto.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1128,6 +1130,7 @@ lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5/alias_tests.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5/as_canonicalization_tests.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5/as_req_tests.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5/compatability_tests.py
+lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5/etype_tests.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5/fast_tests.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5/kcrypto.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5/kdc_base_test.py

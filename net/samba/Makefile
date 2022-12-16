@@ -1,4 +1,4 @@
-VERSION =		4.17.3
+VERSION =		4.17.4
 DISTNAME =		samba-${VERSION}
 EPOCH =			0
 
@@ -22,12 +22,12 @@ SHARED_LIBS =		dcerpc			1.1 \
 			netapi			3.2 \
 			samba-credentials	1.2 \
 			samba-errors		2.1 \
-			samba-hostconfig	10.0 \
+			samba-hostconfig	11.0 \
 			samba-passdb		3.0 \
 			samba-util		8.0 \
 			samdb			2.1 \
 			smbclient		6.1 \
-			smbconf			12.1 \
+			smbconf			12.2 \
 			smbldap			1.0 \
 			tevent			2.1 \
 			tevent-util		2.0 \
