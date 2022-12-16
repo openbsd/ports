@@ -1,9 +1,8 @@
 COMMENT =		simple SQLite3 store for Python objects
 
-MODPY_EGG_VERSION =	2.0.6
+MODPY_EGG_VERSION =	2.0.7
 DISTNAME =		minidb-${MODPY_EGG_VERSION}
 PKGNAME =		py-minidb-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		databases
 
@@ -14,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 
 FLAVORS =		python3
 FLAVOR =		python3
