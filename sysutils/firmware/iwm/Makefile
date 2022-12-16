@@ -1,4 +1,4 @@
-V=		2022-01-11
+V=		2022-11-08
 FW_DRIVER=	iwm
 FW_VER=		${V:S/-//g}
 DISTNAME=	linux-firmware-iwlwifi-fw-$V
@@ -13,13 +13,9 @@ FW+=	3160	17 \
 	7265	17 \
 	7265D	29 \
 	3168	29 \
-	8265	34 \
 	8265	36 \
-	8000C	34 \
 	8000C	36 \
-	9000-pu-b0-jf-b0	34 \
 	9000-pu-b0-jf-b0	46 \
-	9260-th-b0-jf-b0	34 \
 	9260-th-b0-jf-b0	46
 
 do-install:
