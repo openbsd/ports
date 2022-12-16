@@ -46,6 +46,8 @@ vpn-user-portal/src/Cfg/WireGuardConfig.php
 vpn-user-portal/src/ClientConfigInterface.php
 vpn-user-portal/src/ConfigCheck.php
 vpn-user-portal/src/ConnectionHookInterface.php
+vpn-user-portal/src/ConnectionHooks.php
+vpn-user-portal/src/ConnectionLogHook.php
 vpn-user-portal/src/ConnectionManager.php
 vpn-user-portal/src/Crypto/
 vpn-user-portal/src/Crypto/Exception/
@@ -59,6 +61,7 @@ vpn-user-portal/src/Crypto/Minisign/PublicKey.php
 vpn-user-portal/src/Crypto/Minisign/Signature.php
 vpn-user-portal/src/Crypto/Minisign/Verifier.php
 vpn-user-portal/src/Crypto/VerifierInterface.php
+vpn-user-portal/src/DnsZoneGenerator.php
 vpn-user-portal/src/Dt.php
 vpn-user-portal/src/Environment.php
 vpn-user-portal/src/Exception/
@@ -132,6 +135,7 @@ vpn-user-portal/src/Http/Service.php
 vpn-user-portal/src/Http/ServiceInterface.php
 vpn-user-portal/src/Http/ServiceModuleInterface.php
 vpn-user-portal/src/Http/SessionInterface.php
+vpn-user-portal/src/Http/StaticPermissionHook.php
 vpn-user-portal/src/Http/UpdateUserInfoHook.php
 vpn-user-portal/src/Http/UserInfo.php
 vpn-user-portal/src/Http/VpnApiThreeModule.php
@@ -351,7 +355,7 @@ libexec/vpn-user-portal/fetch-server-list
 libexec/vpn-user-portal/generate-secrets
 libexec/vpn-user-portal/housekeeping
 libexec/vpn-user-portal/stats
-share/doc/pkg-readmes/vpn-user-portal
+share/doc/pkg-readmes/${PKGSTEM}
 share/doc/vpn-user-portal/
 share/doc/vpn-user-portal/CHANGES.md
 share/doc/vpn-user-portal/CONFIG_CHANGES.md
