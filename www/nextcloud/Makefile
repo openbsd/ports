@@ -1,5 +1,4 @@
     SUBDIR =
-    SUBDIR += 22
     SUBDIR += 23
     SUBDIR += 24
     SUBDIR += 25
