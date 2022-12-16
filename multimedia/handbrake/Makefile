@@ -2,7 +2,7 @@ V = 		1.3.3
 COMMENT =	open source video transcoder
 DISTNAME =	HandBrake-${V}-source
 PKGNAME =	handbrake-${V}
-REVISION =	3
+REVISION =	4
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	multimedia x11
 
@@ -12,20 +12,20 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # GPLv2 only
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} X11 Xcomposite Xcursor Xdamage Xext
-WANTLIB += Xfixes Xi Xinerama Xrandr Xrender aom ass atk-1.0 atk-bridge-2.0
-WANTLIB += avcodec avfilter avformat avresample avutil bluray
-WANTLIB += bz2 c cairo cairo-gobject crypto dav1d dvdnav dvdread
-WANTLIB += epoxy expat ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
+WANTLIB += ${COMPILER_LIBCXX} X11 Xau Xcomposite Xcursor Xdamage
+WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender aom ass
+WANTLIB += atk-1.0 atk-bridge-2.0 atspi avcodec avfilter avformat
+WANTLIB += avresample avutil bluray bz2 c cairo cairo-gobject
+WANTLIB += crypto dav1d dbus-1 dvdnav dvdread epoxy execinfo expat
+WANTLIB += ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gsm gstaudio-1.0 gstbase-1.0 gstpbutils-1.0 gstreamer-1.0
 WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz
-WANTLIB += iconv intl jansson lzma m mp3lame ogg opus orc-0.4
+WANTLIB += iconv intl jansson jpeg lzma m mp3lame ogg opus orc-0.4
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1
 WANTLIB += png postproc speex ssl swresample swscale theoradec
-WANTLIB += theoraenc vorbis vorbisenc vpx x264 x265 xcb xcb-render
-WANTLIB += xcb-shm xml2 xvidcore z
-WANTLIB += Xau Xdmcp execinfo jpeg udfread vidstab
+WANTLIB += theoraenc udfread vidstab vorbis vorbisenc vpx x264
+WANTLIB += x265 xcb xcb-render xcb-shm xml2 xvidcore z
 
 MASTER_SITES =	https://github.com/HandBrake/HandBrake/releases/download/${V}/
 
@@ -54,6 +54,7 @@ LIB_DEPENDS =	devel/jansson \
 		x11/gtk+3
 
 RUN_DEPENDS =	devel/desktop-file-utils \
+		graphics/zimg \
 		x11/gtk+3,-guic
 
 SEPARATE_BUILD =	Yes
