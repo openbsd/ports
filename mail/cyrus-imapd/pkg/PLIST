@@ -101,12 +101,14 @@ cyrus/sbin/
 @bin cyrus/sbin/cvt_cyrusdb
 @bin cyrus/sbin/cvt_xlist_specialuse
 @bin cyrus/sbin/cyr_buildinfo
+cyrus/sbin/cyr_cd.sh
 @bin cyrus/sbin/cyr_dbtool
 @bin cyrus/sbin/cyr_deny
 @bin cyrus/sbin/cyr_df
 @bin cyrus/sbin/cyr_expire
 @bin cyrus/sbin/cyr_info
-@bin cyrus/sbin/cyr_sequence
+@bin cyrus/sbin/cyr_ls
+@bin cyrus/sbin/cyr_pwd
 @bin cyrus/sbin/cyr_synclog
 @bin cyrus/sbin/cyr_userseen
 @bin cyrus/sbin/cyr_virusscan
@@ -118,6 +120,7 @@ cyrus/sbin/
 @bin cyrus/sbin/mbtool
 @bin cyrus/sbin/quota
 @bin cyrus/sbin/reconstruct
+@bin cyrus/sbin/relocate_by_id
 @bin cyrus/sbin/sievec
 @bin cyrus/sbin/sieved
 @bin cyrus/sbin/squatter
@@ -140,6 +143,7 @@ include/cyrus/crc32.h
 include/cyrus/cyr_lock.h
 include/cyrus/cyr_qsort_r.h
 include/cyrus/cyrusdb.h
+include/cyrus/dynarray.h
 include/cyrus/glob.h
 include/cyrus/gmtoff.h
 include/cyrus/hash.h
@@ -163,10 +167,12 @@ include/cyrus/parseaddr.h
 include/cyrus/procinfo.h
 include/cyrus/retry.h
 include/cyrus/rfc822tok.h
+include/cyrus/seqset.h
 include/cyrus/sieve/
 include/cyrus/sieve/sieve_err.h
 include/cyrus/sieve/sieve_interface.h
 include/cyrus/signals.h
+include/cyrus/smallarrayu64.h
 include/cyrus/sqldb.h
 include/cyrus/strarray.h
 include/cyrus/strhash.h
@@ -202,7 +208,6 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Cyrus/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Cyrus/IMAP/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Cyrus/IMAP.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Cyrus/IMAP/Admin.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Cyrus/IMAP/IMSP.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Cyrus/IMAP/Shell.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Cyrus/SIEVE/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Cyrus/SIEVE/managesieve.pm
@@ -218,7 +223,6 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Cyrus/SIEVE/managesieve/
 @man man/man3p/Cyrus::Annotator::Message.3p
 @man man/man3p/Cyrus::IMAP.3p
 @man man/man3p/Cyrus::IMAP::Admin.3p
-@man man/man3p/Cyrus::IMAP::IMSP.3p
 @man man/man3p/Cyrus::IMAP::Shell.3p
 @man man/man3p/Cyrus::SIEVE::managesieve.3p
 share/doc/cyrus-imapd/
@@ -514,6 +518,21 @@ share/doc/cyrus-imapd/html/imap/download/release-notes/3.4/x/3.4.3.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.4/x/3.4.4.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.5/
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.5/index.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.5/x/
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.5/x/3.5.0-alpha0.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.6/
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.6/index.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.6/x/
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.6/x/3.6.0-beta1.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.6/x/3.6.0-beta2.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.6/x/3.6.0-beta3.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.6/x/3.6.0-rc1.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.6/x/3.6.0-rc2.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.6/x/3.6.0.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.7/
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.7/index.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.7/x/
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.7/x/3.7.0-alpha0.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/index.html
 share/doc/cyrus-imapd/html/imap/download/upgrade.html
 share/doc/cyrus-imapd/html/imap/installing.html
@@ -608,11 +627,11 @@ share/doc/cyrus-imapd/html/imap/reference/faqs/r-pop3-logging.html
 share/doc/cyrus-imapd/html/imap/reference/faqs/r-publicssharedfolders.html
 share/doc/cyrus-imapd/html/imap/reference/faqs/r-subfolders.html
 share/doc/cyrus-imapd/html/imap/reference/manpages/
-share/doc/cyrus-imapd/html/imap/reference/manpages/commands.html
 share/doc/cyrus-imapd/html/imap/reference/manpages/configs/
 share/doc/cyrus-imapd/html/imap/reference/manpages/configs/cyrus.conf.html
 share/doc/cyrus-imapd/html/imap/reference/manpages/configs/imapd.conf.html
 share/doc/cyrus-imapd/html/imap/reference/manpages/configs/krb.equiv.html
+share/doc/cyrus-imapd/html/imap/reference/manpages/index.html
 share/doc/cyrus-imapd/html/imap/reference/manpages/systemcommands/
 share/doc/cyrus-imapd/html/imap/reference/manpages/systemcommands/arbitron.html
 share/doc/cyrus-imapd/html/imap/reference/manpages/systemcommands/backupd.html
@@ -632,7 +651,7 @@ share/doc/cyrus-imapd/html/imap/reference/manpages/systemcommands/cyr_deny.html
 share/doc/cyrus-imapd/html/imap/reference/manpages/systemcommands/cyr_df.html
 share/doc/cyrus-imapd/html/imap/reference/manpages/systemcommands/cyr_expire.html
 share/doc/cyrus-imapd/html/imap/reference/manpages/systemcommands/cyr_info.html
-share/doc/cyrus-imapd/html/imap/reference/manpages/systemcommands/cyr_sequence.html
+share/doc/cyrus-imapd/html/imap/reference/manpages/systemcommands/cyr_ls.html
 share/doc/cyrus-imapd/html/imap/reference/manpages/systemcommands/cyr_synclog.html
 share/doc/cyrus-imapd/html/imap/reference/manpages/systemcommands/cyr_userseen.html
 share/doc/cyrus-imapd/html/imap/reference/manpages/systemcommands/cyr_virusscan.html
@@ -667,6 +686,7 @@ share/doc/cyrus-imapd/html/imap/reference/manpages/systemcommands/ptloader.html
 share/doc/cyrus-imapd/html/imap/reference/manpages/systemcommands/quota.html
 share/doc/cyrus-imapd/html/imap/reference/manpages/systemcommands/reconstruct.html
 share/doc/cyrus-imapd/html/imap/reference/manpages/systemcommands/rehash.html
+share/doc/cyrus-imapd/html/imap/reference/manpages/systemcommands/relocate_by_id.html
 share/doc/cyrus-imapd/html/imap/reference/manpages/systemcommands/restore.html
 share/doc/cyrus-imapd/html/imap/reference/manpages/systemcommands/sievec.html
 share/doc/cyrus-imapd/html/imap/reference/manpages/systemcommands/sieved.html
