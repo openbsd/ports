@@ -19,8 +19,5 @@ compiler as passed to ports builds is /usr/bin/cc.
 6.  Use closefrom(2) instead of looping through all the file descriptors
 and calling close(2) on them.
 
-7.  Fix broken keccak implementation by pulling in the applicable part
-of the fix of CVE-2022-37454. 
-
 These changes are available in the OpenBSD CVS repository
 <http://www.openbsd.org/anoncvs.html> in ports/lang/python/3.10.

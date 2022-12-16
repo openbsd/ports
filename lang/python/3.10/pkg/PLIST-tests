@@ -845,9 +845,6 @@ lib/python3.10/test/__pycache__/test_calendar.cpython-310.pyc
 lib/python3.10/test/__pycache__/test_call.cpython-310.opt-1.pyc
 lib/python3.10/test/__pycache__/test_call.cpython-310.opt-2.pyc
 lib/python3.10/test/__pycache__/test_call.cpython-310.pyc
-lib/python3.10/test/__pycache__/test_capi.cpython-310.opt-1.pyc
-lib/python3.10/test/__pycache__/test_capi.cpython-310.opt-2.pyc
-lib/python3.10/test/__pycache__/test_capi.cpython-310.pyc
 lib/python3.10/test/__pycache__/test_cgi.cpython-310.opt-1.pyc
 lib/python3.10/test/__pycache__/test_cgi.cpython-310.opt-2.pyc
 lib/python3.10/test/__pycache__/test_cgi.cpython-310.pyc
@@ -1199,9 +1196,6 @@ lib/python3.10/test/__pycache__/test_genericpath.cpython-310.pyc
 lib/python3.10/test/__pycache__/test_genexps.cpython-310.opt-1.pyc
 lib/python3.10/test/__pycache__/test_genexps.cpython-310.opt-2.pyc
 lib/python3.10/test/__pycache__/test_genexps.cpython-310.pyc
-lib/python3.10/test/__pycache__/test_getargs2.cpython-310.opt-1.pyc
-lib/python3.10/test/__pycache__/test_getargs2.cpython-310.opt-2.pyc
-lib/python3.10/test/__pycache__/test_getargs2.cpython-310.pyc
 lib/python3.10/test/__pycache__/test_getopt.cpython-310.opt-1.pyc
 lib/python3.10/test/__pycache__/test_getopt.cpython-310.opt-2.pyc
 lib/python3.10/test/__pycache__/test_getopt.cpython-310.pyc
@@ -1694,9 +1688,6 @@ lib/python3.10/test/__pycache__/test_strtod.cpython-310.pyc
 lib/python3.10/test/__pycache__/test_struct.cpython-310.opt-1.pyc
 lib/python3.10/test/__pycache__/test_struct.cpython-310.opt-2.pyc
 lib/python3.10/test/__pycache__/test_struct.cpython-310.pyc
-lib/python3.10/test/__pycache__/test_structmembers.cpython-310.opt-1.pyc
-lib/python3.10/test/__pycache__/test_structmembers.cpython-310.opt-2.pyc
-lib/python3.10/test/__pycache__/test_structmembers.cpython-310.pyc
 lib/python3.10/test/__pycache__/test_structseq.cpython-310.opt-1.pyc
 lib/python3.10/test/__pycache__/test_structseq.cpython-310.opt-2.pyc
 lib/python3.10/test/__pycache__/test_structseq.cpython-310.pyc
@@ -2687,7 +2678,6 @@ lib/python3.10/test/test_bz2.py
 lib/python3.10/test/test_c_locale_coercion.py
 lib/python3.10/test/test_calendar.py
 lib/python3.10/test/test_call.py
-lib/python3.10/test/test_capi.py
 lib/python3.10/test/test_cgi.py
 lib/python3.10/test/test_cgitb.py
 lib/python3.10/test/test_charmapcodec.py
@@ -2930,7 +2920,6 @@ lib/python3.10/test/test_genericalias.py
 lib/python3.10/test/test_genericclass.py
 lib/python3.10/test/test_genericpath.py
 lib/python3.10/test/test_genexps.py
-lib/python3.10/test/test_getargs2.py
 lib/python3.10/test/test_getopt.py
 lib/python3.10/test/test_getpass.py
 lib/python3.10/test/test_gettext.py
@@ -3716,7 +3705,6 @@ lib/python3.10/test/test_stringprep.py
 lib/python3.10/test/test_strptime.py
 lib/python3.10/test/test_strtod.py
 lib/python3.10/test/test_struct.py
-lib/python3.10/test/test_structmembers.py
 lib/python3.10/test/test_structseq.py
 lib/python3.10/test/test_subclassinit.py
 lib/python3.10/test/test_subprocess.py
