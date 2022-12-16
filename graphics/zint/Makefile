@@ -1,12 +1,10 @@
 COMMENT-main =		library for encoding data in several barcode variants
 COMMENT-x11 = 		graphical interface for the zint barcode generator
 
-V = 			2.11.1
+V = 			2.12.0
 DISTNAME =		zint-${V}-src
 PKGNAME-main = 		zint-${V}
 PKGNAME-x11 = 		zint-gui-${V}
-REVISION-main =         0
-REVISION-x11 =          0
 
 SHARED_LIBS += 		zint	5.0
 

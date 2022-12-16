@@ -6,3 +6,7 @@ include/zint.h
 share/cmake/
 share/cmake/Modules/
 share/cmake/Modules/FindZint.cmake
+share/zint/
+share/zint/zint-config.cmake
+share/zint/zint-targets${MODCMAKE_BUILD_SUFFIX}
+share/zint/zint-targets.cmake
