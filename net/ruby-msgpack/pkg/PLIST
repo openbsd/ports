@@ -1,4 +1,5 @@
 ${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_EXTENSIONS_DIR}/msgpack/
 @so ${GEM_EXTENSIONS_DIR}/msgpack/msgpack.so
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.github/
@@ -14,6 +15,8 @@ ${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/appveyor.yml
 ${GEM_LIB}/gems/${DISTNAME}/bench/
 ${GEM_LIB}/gems/${DISTNAME}/bench/bench.rb
+${GEM_LIB}/gems/${DISTNAME}/bin/
+${GEM_LIB}/gems/${DISTNAME}/bin/console
 ${GEM_LIB}/gems/${DISTNAME}/doclib/
 ${GEM_LIB}/gems/${DISTNAME}/doclib/msgpack/
 ${GEM_LIB}/gems/${DISTNAME}/doclib/msgpack.rb
