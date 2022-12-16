@@ -1,5 +1,9 @@
 @option is-branch
 @conflict nextcloud-*
+@pkgpath www/nextcloud
+@pkgpath www/nextcloud/20
+@pkgpath www/nextcloud/21
+@pkgpath www/nextcloud/22
 conf/modules.sample/
 conf/modules.sample/apache-nextcloud.conf.dist
 @sample conf/modules.sample/apache-nextcloud.conf
@@ -5334,6 +5338,29 @@ nextcloud/3rdparty/microsoft/azure-storage-common/src/Common/Models/ServicePrope
 nextcloud/3rdparty/microsoft/azure-storage-common/src/Common/Models/SignedIdentifier.php
 nextcloud/3rdparty/microsoft/azure-storage-common/src/Common/Models/TransactionalMD5Trait.php
 nextcloud/3rdparty/microsoft/azure-storage-common/src/Common/SharedAccessSignatureHelper.php
+nextcloud/3rdparty/mlocati/
+nextcloud/3rdparty/mlocati/ip-lib/
+nextcloud/3rdparty/mlocati/ip-lib/LICENSE.txt
+nextcloud/3rdparty/mlocati/ip-lib/src/
+nextcloud/3rdparty/mlocati/ip-lib/src/Address/
+nextcloud/3rdparty/mlocati/ip-lib/src/Address/AddressInterface.php
+nextcloud/3rdparty/mlocati/ip-lib/src/Address/AssignedRange.php
+nextcloud/3rdparty/mlocati/ip-lib/src/Address/IPv4.php
+nextcloud/3rdparty/mlocati/ip-lib/src/Address/IPv6.php
+nextcloud/3rdparty/mlocati/ip-lib/src/Address/Type.php
+nextcloud/3rdparty/mlocati/ip-lib/src/Factory.php
+nextcloud/3rdparty/mlocati/ip-lib/src/ParseStringFlag.php
+nextcloud/3rdparty/mlocati/ip-lib/src/Range/
+nextcloud/3rdparty/mlocati/ip-lib/src/Range/AbstractRange.php
+nextcloud/3rdparty/mlocati/ip-lib/src/Range/Pattern.php
+nextcloud/3rdparty/mlocati/ip-lib/src/Range/RangeInterface.php
+nextcloud/3rdparty/mlocati/ip-lib/src/Range/Single.php
+nextcloud/3rdparty/mlocati/ip-lib/src/Range/Subnet.php
+nextcloud/3rdparty/mlocati/ip-lib/src/Range/Type.php
+nextcloud/3rdparty/mlocati/ip-lib/src/Service/
+nextcloud/3rdparty/mlocati/ip-lib/src/Service/BinaryMath.php
+nextcloud/3rdparty/mlocati/ip-lib/src/Service/RangesFromBoundaryCalculator.php
+nextcloud/3rdparty/mlocati/ip-lib/src/Service/UnsignedIntegerMath.php
 nextcloud/3rdparty/mtdowling/
 nextcloud/3rdparty/mtdowling/jmespath.php/
 nextcloud/3rdparty/mtdowling/jmespath.php/LICENSE
@@ -10307,6 +10334,8 @@ nextcloud/apps/dashboard/l10n/de_DE.js
 nextcloud/apps/dashboard/l10n/de_DE.json
 nextcloud/apps/dashboard/l10n/el.js
 nextcloud/apps/dashboard/l10n/el.json
+nextcloud/apps/dashboard/l10n/en_GB.js
+nextcloud/apps/dashboard/l10n/en_GB.json
 nextcloud/apps/dashboard/l10n/es.js
 nextcloud/apps/dashboard/l10n/es.json
 nextcloud/apps/dashboard/l10n/eu.js
@@ -15636,12 +15665,18 @@ nextcloud/apps/photos/js/photos-src_assets_Illustrations_images_svg.js.map
 nextcloud/apps/photos/js/photos-src_mixins_GridConfig_js-src_utils_CancelableRequest_js-src_components_EmptyContent_vue-src_c-45f6cf.js
 nextcloud/apps/photos/js/photos-src_mixins_GridConfig_js-src_utils_CancelableRequest_js-src_components_EmptyContent_vue-src_c-45f6cf.js.LICENSE.txt
 nextcloud/apps/photos/js/photos-src_mixins_GridConfig_js-src_utils_CancelableRequest_js-src_components_EmptyContent_vue-src_c-45f6cf.js.map
+nextcloud/apps/photos/js/photos-src_patchedRequest_js-node_modules_moment_locale_sync_recursive_-src_views_Timeline_vue.js
+nextcloud/apps/photos/js/photos-src_patchedRequest_js-node_modules_moment_locale_sync_recursive_-src_views_Timeline_vue.js.LICENSE.txt
+nextcloud/apps/photos/js/photos-src_patchedRequest_js-node_modules_moment_locale_sync_recursive_-src_views_Timeline_vue.js.map
 nextcloud/apps/photos/js/photos-src_patchedRequest_js-src_views_Tags_vue.js
 nextcloud/apps/photos/js/photos-src_patchedRequest_js-src_views_Tags_vue.js.LICENSE.txt
 nextcloud/apps/photos/js/photos-src_patchedRequest_js-src_views_Tags_vue.js.map
 nextcloud/apps/photos/js/photos-src_views_Albums_vue.js
 nextcloud/apps/photos/js/photos-src_views_Albums_vue.js.LICENSE.txt
 nextcloud/apps/photos/js/photos-src_views_Albums_vue.js.map
+nextcloud/apps/photos/js/photos-vendors-node_modules_nextcloud_moment_dist_index_js-node_modules_moment_locale_af_js-node_mod-100548.js
+nextcloud/apps/photos/js/photos-vendors-node_modules_nextcloud_moment_dist_index_js-node_modules_moment_locale_af_js-node_mod-100548.js.LICENSE.txt
+nextcloud/apps/photos/js/photos-vendors-node_modules_nextcloud_moment_dist_index_js-node_modules_moment_locale_af_js-node_mod-100548.js.map
 nextcloud/apps/photos/js/photos-vendors-node_modules_nextcloud_moment_dist_index_js-node_modules_nextcloud_moment_node_module-ca085a.js
 nextcloud/apps/photos/js/photos-vendors-node_modules_nextcloud_moment_dist_index_js-node_modules_nextcloud_moment_node_module-ca085a.js.LICENSE.txt
 nextcloud/apps/photos/js/photos-vendors-node_modules_nextcloud_moment_dist_index_js-node_modules_nextcloud_moment_node_module-ca085a.js.map
@@ -16023,6 +16058,8 @@ nextcloud/apps/provisioning_api/l10n/de_DE.js
 nextcloud/apps/provisioning_api/l10n/de_DE.json
 nextcloud/apps/provisioning_api/l10n/el.js
 nextcloud/apps/provisioning_api/l10n/el.json
+nextcloud/apps/provisioning_api/l10n/en_GB.js
+nextcloud/apps/provisioning_api/l10n/en_GB.json
 nextcloud/apps/provisioning_api/l10n/es.js
 nextcloud/apps/provisioning_api/l10n/es.json
 nextcloud/apps/provisioning_api/l10n/eu.js
@@ -16121,6 +16158,8 @@ nextcloud/apps/recommendations/l10n/de_DE.js
 nextcloud/apps/recommendations/l10n/de_DE.json
 nextcloud/apps/recommendations/l10n/el.js
 nextcloud/apps/recommendations/l10n/el.json
+nextcloud/apps/recommendations/l10n/en_GB.js
+nextcloud/apps/recommendations/l10n/en_GB.json
 nextcloud/apps/recommendations/l10n/es.js
 nextcloud/apps/recommendations/l10n/es.json
 nextcloud/apps/recommendations/l10n/eu.js
@@ -18050,8 +18089,6 @@ nextcloud/apps/text/l10n/ja.js
 nextcloud/apps/text/l10n/ja.json
 nextcloud/apps/text/l10n/ka_GE.js
 nextcloud/apps/text/l10n/ka_GE.json
-nextcloud/apps/text/l10n/kn.js
-nextcloud/apps/text/l10n/kn.json
 nextcloud/apps/text/l10n/ko.js
 nextcloud/apps/text/l10n/ko.json
 nextcloud/apps/text/l10n/lb.js
@@ -18062,8 +18099,6 @@ nextcloud/apps/text/l10n/lv.js
 nextcloud/apps/text/l10n/lv.json
 nextcloud/apps/text/l10n/mk.js
 nextcloud/apps/text/l10n/mk.json
-nextcloud/apps/text/l10n/mn.js
-nextcloud/apps/text/l10n/mn.json
 nextcloud/apps/text/l10n/nb.js
 nextcloud/apps/text/l10n/nb.json
 nextcloud/apps/text/l10n/nl.js
@@ -18084,8 +18119,6 @@ nextcloud/apps/text/l10n/ru.js
 nextcloud/apps/text/l10n/ru.json
 nextcloud/apps/text/l10n/sc.js
 nextcloud/apps/text/l10n/sc.json
-nextcloud/apps/text/l10n/si.js
-nextcloud/apps/text/l10n/si.json
 nextcloud/apps/text/l10n/sk.js
 nextcloud/apps/text/l10n/sk.json
 nextcloud/apps/text/l10n/sl.js
@@ -18247,6 +18280,8 @@ nextcloud/apps/theming/l10n/et_EE.js
 nextcloud/apps/theming/l10n/et_EE.json
 nextcloud/apps/theming/l10n/eu.js
 nextcloud/apps/theming/l10n/eu.json
+nextcloud/apps/theming/l10n/fa.js
+nextcloud/apps/theming/l10n/fa.json
 nextcloud/apps/theming/l10n/fi.js
 nextcloud/apps/theming/l10n/fi.json
 nextcloud/apps/theming/l10n/fr.js
@@ -19601,6 +19636,8 @@ nextcloud/apps/weather_status/l10n/de_DE.js
 nextcloud/apps/weather_status/l10n/de_DE.json
 nextcloud/apps/weather_status/l10n/el.js
 nextcloud/apps/weather_status/l10n/el.json
+nextcloud/apps/weather_status/l10n/en_GB.js
+nextcloud/apps/weather_status/l10n/en_GB.json
 nextcloud/apps/weather_status/l10n/eo.js
 nextcloud/apps/weather_status/l10n/eo.json
 nextcloud/apps/weather_status/l10n/es.js
@@ -19986,6 +20023,7 @@ nextcloud/core/Command/Maintenance/Mimetype/UpdateDB.php
 nextcloud/core/Command/Maintenance/Mimetype/UpdateJS.php
 nextcloud/core/Command/Maintenance/Mode.php
 nextcloud/core/Command/Maintenance/Repair.php
+nextcloud/core/Command/Maintenance/RepairShareOwnership.php
 nextcloud/core/Command/Maintenance/UpdateHtaccess.php
 nextcloud/core/Command/Maintenance/UpdateTheme.php
 nextcloud/core/Command/Preview/
@@ -21187,6 +21225,8 @@ nextcloud/core/l10n/es_SV.js
 nextcloud/core/l10n/es_SV.json
 nextcloud/core/l10n/es_UY.js
 nextcloud/core/l10n/es_UY.json
+nextcloud/core/l10n/et_EE.js
+nextcloud/core/l10n/et_EE.json
 nextcloud/core/l10n/eu.js
 nextcloud/core/l10n/eu.json
 nextcloud/core/l10n/fa.js
