@@ -1,6 +1,6 @@
 COMMENT =	configure systems using any scripting language
 
-DISTNAME =	rset-2.4
+DISTNAME =	rset-2.5
 
 CATEGORIES =	sysutils
 
@@ -25,8 +25,6 @@ TEST_DEPENDS =		${MODRUBY_BUILD_DEPENDS} \
 CONFIGURE_STYLE =	simple
 
 FAKE_FLAGS =		DESTDIR=''
-
-pre-test:
-	ln -sf ${RUBY} ${WRKDIR}/bin/ruby
+TEST_FLAGS =		RUBY=${RUBY}
 
 .include <bsd.port.mk>
