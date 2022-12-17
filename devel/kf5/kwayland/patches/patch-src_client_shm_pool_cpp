@@ -1,0 +1,12 @@
+Index: src/client/shm_pool.cpp
+--- src/client/shm_pool.cpp.orig
++++ src/client/shm_pool.cpp
+@@ -116,7 +116,7 @@ EventQueue *ShmPool::eventQueue()
+ 
+ bool ShmPool::Private::createPool()
+ {
+-#if HAVE_MEMFD
++#if defined(HAVE_MEMFD) && !defined(__OpenBSD__)
+     fd = memfd_create("kwayland-shared", MFD_CLOEXEC | MFD_ALLOW_SEALING);
+     if (fd >= 0) {
+         fcntl(fd, F_ADD_SEALS, F_SEAL_SHRINK | F_SEAL_SEAL);

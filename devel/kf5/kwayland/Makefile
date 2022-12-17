@@ -1,7 +1,7 @@
 COMMENT =	Qt API to interact with the wayland-client and -server
 DISTNAME =	kwayland-${VERSION}
 
-SHARED_LIBS +=  KF5WaylandClient   0.2
+SHARED_LIBS +=  KF5WaylandClient   0.3
 SHARED_LIBS +=  KF5WaylandServer   0.0
 
 WANTLIB += ${COMPILER_LIBCXX} EGL GL Qt5Concurrent Qt5Core Qt5Gui

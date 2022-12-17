@@ -1,6 +1,5 @@
 COMMENT =	KDE configuration system
 DISTNAME =	kconfig-${VERSION}
-VERSION =	5.100.1
 
 SHARED_LIBS =	KF5ConfigCore		7.1
 SHARED_LIBS +=	KF5ConfigGui		7.2
