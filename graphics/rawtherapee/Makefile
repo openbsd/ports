@@ -3,8 +3,7 @@ ONLY_FOR_ARCHS = 	amd64
 
 COMMENT =		RAW image processing application
 
-DISTNAME =		rawtherapee-5.8
-REVISION =		1
+DISTNAME =		rawtherapee-5.9
 
 CATEGORIES =		graphics
 

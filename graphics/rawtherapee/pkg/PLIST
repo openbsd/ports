@@ -6,13 +6,16 @@ share/doc/pkg-readmes/${PKGSTEM}
 share/doc/rawtherapee/
 share/doc/rawtherapee/AUTHORS.txt
 share/doc/rawtherapee/AboutThisBuild.txt
-share/doc/rawtherapee/LICENSE.txt
+share/doc/rawtherapee/LICENSE
 share/doc/rawtherapee/RELEASE_NOTES.txt
 share/icons/hicolor/128x128/apps/rawtherapee.png
 share/icons/hicolor/16x16/apps/rawtherapee.png
 share/icons/hicolor/24x24/apps/rawtherapee.png
 share/icons/hicolor/256x256/apps/rawtherapee.png
+share/icons/hicolor/32x32/apps/rawtherapee.png
 share/icons/hicolor/48x48/apps/rawtherapee.png
+share/icons/hicolor/64x64/apps/rawtherapee.png
+share/icons/hicolor/scalable/apps/rawtherapee.svg
 share/metainfo/
 share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 share/rawtherapee/
@@ -26,7 +29,9 @@ share/rawtherapee/dcpprofiles/Canon EOS 40D.dcp
 share/rawtherapee/dcpprofiles/Canon EOS 450D.dcp
 share/rawtherapee/dcpprofiles/Canon EOS 50D.dcp
 share/rawtherapee/dcpprofiles/Canon EOS 550D.dcp
+share/rawtherapee/dcpprofiles/Canon EOS 5D Mark II.dcp
 share/rawtherapee/dcpprofiles/Canon EOS 5D Mark III.dcp
+share/rawtherapee/dcpprofiles/Canon EOS 5D Mark IV.dcp
 share/rawtherapee/dcpprofiles/Canon EOS 5D.dcp
 share/rawtherapee/dcpprofiles/Canon EOS 600D.dcp
 share/rawtherapee/dcpprofiles/Canon EOS 60D.dcp
@@ -35,22 +40,36 @@ share/rawtherapee/dcpprofiles/Canon EOS 6D Mark II.dcp
 share/rawtherapee/dcpprofiles/Canon EOS 6D.dcp
 share/rawtherapee/dcpprofiles/Canon EOS 7D Mark II.dcp
 share/rawtherapee/dcpprofiles/Canon EOS 7D.dcp
+share/rawtherapee/dcpprofiles/Canon EOS 90D.dcp
 share/rawtherapee/dcpprofiles/Canon EOS D60.dcp
+share/rawtherapee/dcpprofiles/Canon EOS M6 Mark II.dcp
+share/rawtherapee/dcpprofiles/Canon EOS R.dcp
+share/rawtherapee/dcpprofiles/Canon EOS R5.dcp
+share/rawtherapee/dcpprofiles/Canon EOS R6.dcp
 share/rawtherapee/dcpprofiles/Canon EOS RP.dcp
 share/rawtherapee/dcpprofiles/Canon EOS-1D Mark III.dcp
+share/rawtherapee/dcpprofiles/Canon EOS-1D X Mark III.dcp
+share/rawtherapee/dcpprofiles/Canon EOS-1Ds Mark II.dcp
+share/rawtherapee/dcpprofiles/Canon PowerShot G1 X Mark II.dcp
 share/rawtherapee/dcpprofiles/Canon PowerShot G10.dcp
 share/rawtherapee/dcpprofiles/Canon PowerShot G12.dcp
 share/rawtherapee/dcpprofiles/Canon PowerShot G7 X.dcp
 share/rawtherapee/dcpprofiles/Canon PowerShot S110.dcp
+share/rawtherapee/dcpprofiles/Canon PowerShot S120.dcp
 share/rawtherapee/dcpprofiles/FUJIFILM FinePix F600EXR.dcp
 share/rawtherapee/dcpprofiles/FUJIFILM GFX 50R.dcp
+share/rawtherapee/dcpprofiles/FUJIFILM X-A5.dcp
+share/rawtherapee/dcpprofiles/FUJIFILM X-H1.dcp
 share/rawtherapee/dcpprofiles/FUJIFILM X-Pro2.dcp
+share/rawtherapee/dcpprofiles/FUJIFILM X-Pro3.dcp
 share/rawtherapee/dcpprofiles/FUJIFILM X-S1.dcp
 share/rawtherapee/dcpprofiles/FUJIFILM X-T1.dcp
 share/rawtherapee/dcpprofiles/FUJIFILM X-T10.dcp
 share/rawtherapee/dcpprofiles/FUJIFILM X-T2.dcp
 share/rawtherapee/dcpprofiles/FUJIFILM X-T20.dcp
+share/rawtherapee/dcpprofiles/FUJIFILM X-T3.dcp
 share/rawtherapee/dcpprofiles/FUJIFILM X-T30.dcp
+share/rawtherapee/dcpprofiles/FUJIFILM X-T4.dcp
 share/rawtherapee/dcpprofiles/FUJIFILM X100S.dcp
 share/rawtherapee/dcpprofiles/FUJIFILM X100T.dcp
 share/rawtherapee/dcpprofiles/Fujifilm FinePix S9500.dcp
@@ -62,16 +81,26 @@ share/rawtherapee/dcpprofiles/MINOLTA DYNAX 7D.dcp
 share/rawtherapee/dcpprofiles/NIKON COOLPIX P7800.dcp
 share/rawtherapee/dcpprofiles/NIKON D300.dcp
 share/rawtherapee/dcpprofiles/NIKON D50.dcp
+share/rawtherapee/dcpprofiles/NIKON D500.dcp
 share/rawtherapee/dcpprofiles/NIKON D5000.dcp
+share/rawtherapee/dcpprofiles/NIKON D5300.dcp
 share/rawtherapee/dcpprofiles/NIKON D5600.dcp
 share/rawtherapee/dcpprofiles/NIKON D600.dcp
+share/rawtherapee/dcpprofiles/NIKON D610.dcp
 share/rawtherapee/dcpprofiles/NIKON D700.dcp
 share/rawtherapee/dcpprofiles/NIKON D70s.dcp
+share/rawtherapee/dcpprofiles/NIKON D7100.dcp
 share/rawtherapee/dcpprofiles/NIKON D7200.dcp
 share/rawtherapee/dcpprofiles/NIKON D750.dcp
+share/rawtherapee/dcpprofiles/NIKON D7500.dcp
 share/rawtherapee/dcpprofiles/NIKON D80.dcp
+share/rawtherapee/dcpprofiles/NIKON D800.dcp
 share/rawtherapee/dcpprofiles/NIKON D800E.dcp
 share/rawtherapee/dcpprofiles/NIKON D810.dcp
+share/rawtherapee/dcpprofiles/NIKON D850.dcp
+share/rawtherapee/dcpprofiles/NIKON Z 50.dcp
+share/rawtherapee/dcpprofiles/NIKON Z 6.dcp
+share/rawtherapee/dcpprofiles/NIKON Z 7.dcp
 share/rawtherapee/dcpprofiles/Nikon D200.dcp
 share/rawtherapee/dcpprofiles/Nikon D3000.dcp
 share/rawtherapee/dcpprofiles/Nikon D3100.dcp
@@ -81,6 +110,7 @@ share/rawtherapee/dcpprofiles/Nikon D7000.dcp
 share/rawtherapee/dcpprofiles/OLYMPUS E-510.dcp
 share/rawtherapee/dcpprofiles/OLYMPUS E-M10.dcp
 share/rawtherapee/dcpprofiles/OLYMPUS E-M1MarkII.dcp
+share/rawtherapee/dcpprofiles/OLYMPUS E-M5MarkII.dcp
 share/rawtherapee/dcpprofiles/Olympus E-1.dcp
 share/rawtherapee/dcpprofiles/Olympus E-520.dcp
 share/rawtherapee/dcpprofiles/Olympus E-M5.dcp
@@ -88,10 +118,12 @@ share/rawtherapee/dcpprofiles/Olympus E-P2.dcp
 share/rawtherapee/dcpprofiles/Olympus XZ-1.dcp
 share/rawtherapee/dcpprofiles/PENTAX K-5 II.dcp
 share/rawtherapee/dcpprofiles/PENTAX K-5.dcp
+share/rawtherapee/dcpprofiles/PENTAX K-50.dcp
 share/rawtherapee/dcpprofiles/PENTAX K10D.dcp
 share/rawtherapee/dcpprofiles/Panasonic DC-G9.dcp
 share/rawtherapee/dcpprofiles/Panasonic DC-GX9.dcp
 share/rawtherapee/dcpprofiles/Panasonic DC-S1.dcp
+share/rawtherapee/dcpprofiles/Panasonic DC-S5.dcp
 share/rawtherapee/dcpprofiles/Panasonic DC-TZ91.dcp
 share/rawtherapee/dcpprofiles/Panasonic DMC-FZ1000.dcp
 share/rawtherapee/dcpprofiles/Panasonic DMC-FZ150.dcp
@@ -112,10 +144,15 @@ share/rawtherapee/dcpprofiles/RICOH PENTAX K-3.dcp
 share/rawtherapee/dcpprofiles/SONY DSLR-A580.dcp
 share/rawtherapee/dcpprofiles/SONY ILCE-6000.dcp
 share/rawtherapee/dcpprofiles/SONY ILCE-6300.dcp
+share/rawtherapee/dcpprofiles/SONY ILCE-6400.dcp
 share/rawtherapee/dcpprofiles/SONY ILCE-6500.dcp
+share/rawtherapee/dcpprofiles/SONY ILCE-6600.dcp
 share/rawtherapee/dcpprofiles/SONY ILCE-7M2.dcp
 share/rawtherapee/dcpprofiles/SONY ILCE-7M3.dcp
+share/rawtherapee/dcpprofiles/SONY ILCE-7M4.dcp
 share/rawtherapee/dcpprofiles/SONY ILCE-7RM3.dcp
+share/rawtherapee/dcpprofiles/SONY ILCE-7RM4.dcp
+share/rawtherapee/dcpprofiles/SONY ILCE-9.dcp
 share/rawtherapee/dcpprofiles/SONY SLT-A99V.dcp
 share/rawtherapee/dcpprofiles/Sony DSLR-A700.dcp
 share/rawtherapee/dcpprofiles/Sony DSLR-A900.dcp
@@ -123,6 +160,7 @@ share/rawtherapee/dcpprofiles/Sony NEX-5N.dcp
 share/rawtherapee/dcpprofiles/Sony SLT-A55V.dcp
 share/rawtherapee/dcpprofiles/YI TECHNOLOGY M1.dcp
 share/rawtherapee/dcpprofiles/camera_model_aliases.json
+share/rawtherapee/dcpprofiles/samsung SM-G930V.dcp
 share/rawtherapee/iccprofiles/
 share/rawtherapee/iccprofiles/input/
 share/rawtherapee/iccprofiles/input/Canon EOS 20D.icc
@@ -197,6 +235,10 @@ share/rawtherapee/images/arrow2-right.svg
 share/rawtherapee/images/atom.svg
 share/rawtherapee/images/bayer.svg
 share/rawtherapee/images/beforeafter.svg
+share/rawtherapee/images/bidirectional-arrow-horizontal-hicontrast.svg
+share/rawtherapee/images/bidirectional-arrow-horizontal-prelight.svg
+share/rawtherapee/images/bidirectional-arrow-vertical-hicontrast.svg
+share/rawtherapee/images/bidirectional-arrow-vertical-prelight.svg
 share/rawtherapee/images/cancel-small.svg
 share/rawtherapee/images/cancel.svg
 share/rawtherapee/images/circle-black-small.svg
@@ -279,6 +321,7 @@ share/rawtherapee/images/distortion-barrel-small.svg
 share/rawtherapee/images/distortion-barrel.svg
 share/rawtherapee/images/distortion-pincushion-small.svg
 share/rawtherapee/images/distortion-pincushion.svg
+share/rawtherapee/images/draw.svg
 share/rawtherapee/images/edit-point.svg
 share/rawtherapee/images/empty.png
 share/rawtherapee/images/equilizer-narrow.svg
@@ -324,10 +367,9 @@ share/rawtherapee/images/hand-open-hicontrast.svg
 share/rawtherapee/images/hand-open.svg
 share/rawtherapee/images/histogram-bar-off-small.svg
 share/rawtherapee/images/histogram-bar-on-small.svg
-share/rawtherapee/images/histogram-bayer-off-small.svg
-share/rawtherapee/images/histogram-bayer-on-small.svg
 share/rawtherapee/images/histogram-blue-off-small.svg
 share/rawtherapee/images/histogram-blue-on-small.svg
+share/rawtherapee/images/histogram-ellipsis-small.svg
 share/rawtherapee/images/histogram-gold-off-small.svg
 share/rawtherapee/images/histogram-gold-on-small.svg
 share/rawtherapee/images/histogram-green-off-small.svg
@@ -339,6 +381,12 @@ share/rawtherapee/images/histogram-red-off-small.svg
 share/rawtherapee/images/histogram-red-on-small.svg
 share/rawtherapee/images/histogram-silver-off-small.svg
 share/rawtherapee/images/histogram-silver-on-small.svg
+share/rawtherapee/images/histogram-type-histogram-raw-small.svg
+share/rawtherapee/images/histogram-type-histogram-small.svg
+share/rawtherapee/images/histogram-type-parade-small.svg
+share/rawtherapee/images/histogram-type-vectorscope-hc-small.svg
+share/rawtherapee/images/histogram-type-vectorscope-hs-small.svg
+share/rawtherapee/images/histogram-type-waveform-small.svg
 share/rawtherapee/images/info.svg
 share/rawtherapee/images/intent-absolute.svg
 share/rawtherapee/images/intent-perceptual.svg
@@ -373,6 +421,7 @@ share/rawtherapee/images/perspective-horizontal-left-small.svg
 share/rawtherapee/images/perspective-horizontal-left.svg
 share/rawtherapee/images/perspective-horizontal-right-small.svg
 share/rawtherapee/images/perspective-horizontal-right.svg
+share/rawtherapee/images/perspective-horizontal-vertical.svg
 share/rawtherapee/images/perspective-vertical-bottom-small.svg
 share/rawtherapee/images/perspective-vertical-bottom.svg
 share/rawtherapee/images/perspective-vertical-top-small.svg
@@ -392,7 +441,6 @@ share/rawtherapee/images/rawtherapee-logo-32.png
 share/rawtherapee/images/rawtherapee-logo-48.png
 share/rawtherapee/images/rawtherapee-logo-64.png
 share/rawtherapee/images/rawtherapee.ico
-share/rawtherapee/images/rawtherapee_ico.xcf
 share/rawtherapee/images/redo-all.svg
 share/rawtherapee/images/redo-small.svg
 share/rawtherapee/images/redo.svg
@@ -411,6 +459,8 @@ share/rawtherapee/images/rotate-right-small.svg
 share/rawtherapee/images/rotate-right.svg
 share/rawtherapee/images/rotate-straighten-small.svg
 share/rawtherapee/images/rotate-straighten.svg
+share/rawtherapee/images/rt-logo-text-black.svg
+share/rawtherapee/images/rt-logo-text-white.svg
 share/rawtherapee/images/rt-logo.svg
 share/rawtherapee/images/save-small.svg
 share/rawtherapee/images/save.svg
@@ -418,6 +468,9 @@ share/rawtherapee/images/saved-no-small.svg
 share/rawtherapee/images/saved-yes-small.svg
 share/rawtherapee/images/splash.svg
 share/rawtherapee/images/splash_template.svg
+share/rawtherapee/images/spot-active.svg
+share/rawtherapee/images/spot-normal.svg
+share/rawtherapee/images/spot-prelight.svg
 share/rawtherapee/images/square-toggle-black-off-narrow.svg
 share/rawtherapee/images/square-toggle-black-on-narrow.svg
 share/rawtherapee/images/square-toggle-blue-off-narrow.svg
@@ -499,10 +552,12 @@ share/rawtherapee/languages/
 share/rawtherapee/languages/Catala
 share/rawtherapee/languages/Chinese (Simplified)
 share/rawtherapee/languages/Czech
+share/rawtherapee/languages/Dansk
 share/rawtherapee/languages/Deutsch
 share/rawtherapee/languages/English (UK)
 share/rawtherapee/languages/English (US)
-share/rawtherapee/languages/Espanol
+share/rawtherapee/languages/Espanol (Castellano)
+share/rawtherapee/languages/Espanol (Latin America)
 share/rawtherapee/languages/Francais
 share/rawtherapee/languages/Italiano
 share/rawtherapee/languages/Japanese
@@ -523,6 +578,8 @@ share/rawtherapee/profiles/
 share/rawtherapee/profiles/Auto-Matched Curve - ISO High.pp3
 share/rawtherapee/profiles/Auto-Matched Curve - ISO Low.pp3
 share/rawtherapee/profiles/Auto-Matched Curve - ISO Medium.pp3
+share/rawtherapee/profiles/Film Negative - Black and White.pp3
+share/rawtherapee/profiles/Film Negative.pp3
 share/rawtherapee/profiles/Non-raw/
 share/rawtherapee/profiles/Non-raw/Brighten.pp3
 share/rawtherapee/profiles/Pixel Shift/
@@ -544,6 +601,7 @@ share/rawtherapee/sounds/BatchComplete.wav
 share/rawtherapee/sounds/Empty.wav
 share/rawtherapee/sounds/ProcessComplete.wav
 share/rawtherapee/themes/
+share/rawtherapee/themes/RawTherapee - Legacy-GTK3-20_.css
 share/rawtherapee/themes/RawTherapee-GTK3-20_.css
 share/rawtherapee/themes/RawTherapee-GTK3-_19.css
 share/rawtherapee/themes/TooWaBlue - Bright-GTK3-20_.css
@@ -582,6 +640,7 @@ share/rawtherapee/themes/images/twb/radio-inconsistent-disabled.png
 share/rawtherapee/themes/images/twb/radio-inconsistent.png
 share/rawtherapee/themes/images/twb/radio-unchecked-disabled.png
 share/rawtherapee/themes/images/twb/radio-unchecked.png
+share/rawtherapee/themes/size - Legacy.css
 share/rawtherapee/themes/size.css
 share/rawtherapee/themes/system.iconset
 @tag update-desktop-database

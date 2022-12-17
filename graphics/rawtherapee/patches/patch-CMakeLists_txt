@@ -1,12 +1,12 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -530,7 +530,7 @@ install(FILES RELEASE_NOTES.txt DESTINATION "${CREDITS
- if(BUILD_BUNDLE)
-     install(FILES "${PROJECT_SOURCE_DIR}/doc/manpage/rawtherapee.1" DESTINATION "${DATADIR}/share/man/man1")
+@@ -767,7 +767,7 @@ if(BUILD_BUNDLE)
+     endif()
  else()
--    install(FILES "${PROJECT_SOURCE_DIR}/doc/manpage/rawtherapee.1" DESTINATION "${CMAKE_INSTALL_PREFIX}/share/man/man1")
-+    install(FILES "${PROJECT_SOURCE_DIR}/doc/manpage/rawtherapee.1" DESTINATION "${CMAKE_INSTALL_PREFIX}/man/man1")
+     install(FILES "${PROJECT_SOURCE_DIR}/doc/manpage/rawtherapee.1"
+-            DESTINATION "${CMAKE_INSTALL_PREFIX}/share/man/man1")
++            DESTINATION "${CMAKE_INSTALL_PREFIX}/man/man1")
  endif()
  
  if(WIN32)
