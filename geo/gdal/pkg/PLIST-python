@@ -37,6 +37,7 @@ lib/python${MODPY_VERSION}/site-packages/osgeo/${MODPY_PYCACHE}gnm.${MODPY_PYC_M
 lib/python${MODPY_VERSION}/site-packages/osgeo/${MODPY_PYCACHE}ogr.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo/${MODPY_PYCACHE}osr.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/python${MODPY_VERSION}/site-packages/osgeo/_gdal.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/osgeo/_gdal_array.${MODPY_PYC_MAGIC_TAG}so
 @so lib/python${MODPY_VERSION}/site-packages/osgeo/_gdalconst.${MODPY_PYC_MAGIC_TAG}so
 @so lib/python${MODPY_VERSION}/site-packages/osgeo/_gnm.${MODPY_PYC_MAGIC_TAG}so
 @so lib/python${MODPY_VERSION}/site-packages/osgeo/_ogr.${MODPY_PYC_MAGIC_TAG}so
