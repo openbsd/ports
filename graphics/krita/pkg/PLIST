@@ -164,6 +164,7 @@ lib/kritaplugins/
 @lib lib/libkritacolor.so.${LIBkritacolor_VERSION}
 @lib lib/libkritacolord.so.${LIBkritacolord_VERSION}
 @lib lib/libkritacommand.so.${LIBkritacommand_VERSION}
+@lib lib/libkritaexifcommon.so.${LIBkritaexifcommon_VERSION}
 @lib lib/libkritaflake.so.${LIBkritaflake_VERSION}
 @lib lib/libkritaglobal.so.${LIBkritaglobal_VERSION}
 @lib lib/libkritaimage.so.${LIBkritaimage_VERSION}
@@ -1103,9 +1104,6 @@ share/locale/uz/LC_MESSAGES/krita.mo
 share/locale/uz@cyrillic/LC_MESSAGES/krita.mo
 share/locale/vi/LC_MESSAGES/krita.mo
 share/locale/wa/LC_MESSAGES/krita.mo
-share/locale/x-test/
-share/locale/x-test/LC_MESSAGES/
-share/locale/x-test/LC_MESSAGES/krita.mo
 share/locale/xh/LC_MESSAGES/krita.mo
 share/locale/zh_CN/LC_MESSAGES/krita.mo
 share/locale/zh_TW/LC_MESSAGES/krita.mo
