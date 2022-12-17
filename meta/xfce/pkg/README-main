@@ -11,6 +11,7 @@ Startup
 Xfce desktop environment is launched through the 'startxfce4' script.
 Simply add '${LOCALBASE}/bin/startxfce4' to your .xinitrc/.xsession
 script if you use startx, xenodm or slim.
+
 If you use gdm or kdm, have a look at
 https://wiki.xfce.org/faq#starting_xfce. An xfce4.desktop file is
 provided for use by gdm.
@@ -21,15 +22,12 @@ If your installation supports complete shutdown, clicking on the logout
 button on panel will permit you to either logout, rebooting or halt
 the computer.
 
-If your user is part of the operator group (and thus can execute
-/sbin/shutdown), you should be able to shutdown/logout without further
-configuration.
-Otherwise, halting and rebooting require consolekit2 and polkit: you'll need to
-run a systemwide D-BUS service (enable messagebus using rcctl) and pass
---with-ck-launch argument to startxfce4.
+If your user is part of the operator group and thus can execute shutdown(8),
+you should be able to shutdown/logout without further configuration.
 
-If you run a systemwide D-BUS service, have consolekit2/polkit installed and
-don't use --with-ck-launch you will not be able to shutdown/reboot.
+Otherwise, halting/rebooting requires consolekit2 and polkit to be installed,
+a systemwide D-BUS service ('rcctl enable messagebus') and a '--with-ck-launch'
+argument to startxfce4.
 
 Screen compositor
 =================
@@ -37,13 +35,13 @@ If you're using the modesetting X driver and experience window flickering when
 the compositor is enabled, you should force the window manager to use the
 XPresent method for vblank:
 
-$xfwm4 --vblank=xpresent --replace &
+    $ xfwm4 --vblank=xpresent --replace &
 
 This is documented upstream at https://git.xfce.org/xfce/xfwm4/tree/COMPOSITOR#n114
 
 Power management
 ================
-If you use Xfce on a laptop, you can install xfce4-power-manager
+If you use Xfce on a laptop, you can install the xfce4-power-manager
 package, which will provide battery levels/information, and will allow
 to configure actions upon low battery level or AC plugging. For proper
 function, it requires messagebus and upowerd running. If using consolekit2 and
@@ -53,12 +51,12 @@ Screensaver management
 ======================
 xflock4 can make use of xfce4-screensaver, xscreensaver or gnome-screensaver.
 If installed, a 'Screensaver' icon will appear in settings manager/menu.
-Otherwise, xflock4 defaults to call xlock.
+Otherwise, xflock4 defaults to call xlock(1).
 
 Thunar file manager tips
 ========================
-If you want to browse samba shares using GVfs, you'll need to install
-gvfs-smb package. You can also try gigolo package, which is a GUI to
+If you want to browse samba shares using GVfs, you'll need to install the
+gvfs-smb package. You can also try the gigolo package, which is a GUI to
 configure GVfs mounts.
 
 Terminal, special characters and localized applications
@@ -70,7 +68,7 @@ properly configure the default encoding in terminal properties.
 Similarly, if you want localized graphical applications, add this line
 to your .xinitrc/.xsession before startxfce4:
 
-export LC_MESSAGES=fr_FR.UTF-8
+    export LC_MESSAGES=fr_FR.UTF-8
 
 where 'fr_FR' is your language tag.
 See https://www.openbsd.org/faq/faq10.html#locales for more information
