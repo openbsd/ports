@@ -8,8 +8,12 @@ share/wayland-protocols/stable/viewporter/viewporter.xml
 share/wayland-protocols/stable/xdg-shell/
 share/wayland-protocols/stable/xdg-shell/xdg-shell.xml
 share/wayland-protocols/staging/
+share/wayland-protocols/staging/content-type/
+share/wayland-protocols/staging/content-type/content-type-v1.xml
 share/wayland-protocols/staging/drm-lease/
 share/wayland-protocols/staging/drm-lease/drm-lease-v1.xml
+share/wayland-protocols/staging/ext-idle-notify/
+share/wayland-protocols/staging/ext-idle-notify/ext-idle-notify-v1.xml
 share/wayland-protocols/staging/ext-session-lock/
 share/wayland-protocols/staging/ext-session-lock/ext-session-lock-v1.xml
 share/wayland-protocols/staging/single-pixel-buffer/

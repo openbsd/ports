@@ -1,6 +1,7 @@
 COMMENT =	Wayland protocols
 
-DISTNAME =	wayland-protocols-1.26
+V =		1.27
+DISTNAME =	wayland-protocols-${V}
 
 CATEGORIES =	wayland
 
@@ -9,7 +10,7 @@ HOMEPAGE =	https://wayland.freedesktop.org/
 # MIT
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://wayland.freedesktop.org/releases/
+MASTER_SITES =		https://gitlab.freedesktop.org/wayland/wayland-protocols/-/releases/${V}/downloads/
 EXTRACT_SUFX =		.tar.xz
 
 MODULES =		devel/meson
