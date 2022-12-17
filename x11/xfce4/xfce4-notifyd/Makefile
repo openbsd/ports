@@ -1,8 +1,7 @@
 COMMENT=	Xfce4 notification daemon
 
-XFCE_VERSION=	0.6.4
+XFCE_VERSION=	0.6.5
 XFCE_GOODIE=	xfce4-notifyd
-REVISION=	1
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
