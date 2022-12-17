@@ -132,6 +132,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}i
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}iot.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}iot_data.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}iot_data.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}kinesis.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}kinesis.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}kms.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}kms.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}mturk.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -559,6 +561,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/history/show.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/iamvirtmfa.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/iot.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/iot_data.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/kinesis.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/kms.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/mturk.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/opsworks.py
