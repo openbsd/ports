@@ -1,8 +1,8 @@
 Qt is a cross-platform toolkit for developing applications,
 mainly GUI-based.
 
-There are some user documentation files in ${QT_DOC}, but
-the main documentation is in the qt5-html package.
+There are some user documentation files in ${PREFIX}/share/doc/qt5,
+but the main documentation is in the qt5-html package.
 
 There is also a qt5-examples package, that contains tutorial, demos
 simple example programs (source + binaries).
@@ -11,9 +11,9 @@ There's a debug version of the libraries: qt5-debug.
 
 There are database plugins: qt5-mysql, qt5-postgresql and qt5-tds.
 
-People who want to use Qt5 to compile applications outside the ports tree
-should note that Qt5's installation conforms to OpenBSD habits, not
-upstream recommendations. Accordingly:
+People who want to use Qt5 to compile applications outside the ports
+tree should note that Qt5's installation conforms to OpenBSD habits,
+not upstream recommendations. Accordingly:
 
 - libs are separated from includes.
 - moc is installed as ${PREFIX}/bin/moc-qt5, in order not to conflict
