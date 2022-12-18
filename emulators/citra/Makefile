@@ -14,8 +14,6 @@ REVISION =	5
 
 CATEGORIES =	emulators
 
-MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
-
 # GPLv2, BSD-2-clause (fmt), LGPL (getopt), MIT (httplib, json, lurlparser),
 # "New BSD license" (inih), unlicense/public domain (microprofile),
 # BSD-3-clause (nihstro), LGPLv2.1 (soundtouch), BSD-style (xbyak)

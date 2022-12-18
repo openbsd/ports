@@ -19,7 +19,6 @@ GH_PROJECT =		dolphin
 GH_COMMIT =		981925a831e28d3967104e1a64dd8fa9b382660a
 
 CATEGORIES =		emulators
-MAINTAINER =		Thomas Frohwein <thfr@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
