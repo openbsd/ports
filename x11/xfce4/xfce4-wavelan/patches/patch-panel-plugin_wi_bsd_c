@@ -1,4 +1,4 @@
-https://gitlab.xfce.org/landry/xfce4-wavelan-plugin/-/merge_requests/1
+rewrite rate calculation to use IFM_BAUDRATE_DESCRIPTIONS from net/if_media.h
 
 Index: panel-plugin/wi_bsd.c
 --- panel-plugin/wi_bsd.c.orig
