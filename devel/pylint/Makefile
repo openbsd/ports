@@ -1,7 +1,7 @@
 COMMENT =		lint-like code checker for Python code
 
 # py-astroid and pylint usually need keeping in-sync
-MODPY_EGG_VERSION =	2.15.6
+MODPY_EGG_VERSION =	2.15.9
 DISTNAME=		pylint-${MODPY_EGG_VERSION}
 PKGNAME =		pylint3-${MODPY_EGG_VERSION}
 
