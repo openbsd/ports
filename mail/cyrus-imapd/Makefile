@@ -28,6 +28,11 @@ MASTER_SITES=		https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-
 COMPILER=		base-clang ports-gcc base-gcc
 USE_GMAKE=		Yes
 
+# XXX shouldn't be needed because we build with --disable-http
+# imap/caldav_alarm.h:51:10: fatal error: 'libical/ical.h' file not found
+# #include <libical/ical.h>
+BUILD_DEPENDS +=	textproc/libical
+
 LIB_DEPENDS=		databases/sqlite3 \
 			devel/jansson \
 			devel/pcre \
