@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	0.15.0
 
 DISTNAME =	python-telegram-${MODPY_EGG_VERSION}
 PKGNAME =	${DISTNAME:S/^python-/py-/}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	net
 
@@ -20,7 +20,8 @@ MODPY_PI =		Yes
 FLAVORS =		python3
 FLAVOR =		python3
 
-RUN_DEPENDS =		net/tdlib
+RUN_DEPENDS =		devel/py-setuptools${MODPY_FLAVOR} \
+			net/tdlib
 MODPY_PYTEST =		No
 
 # remove bundled binaries
