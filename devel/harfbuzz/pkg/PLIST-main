@@ -13,6 +13,7 @@ include/harfbuzz/hb-cplusplus.hh
 include/harfbuzz/hb-deprecated.h
 include/harfbuzz/hb-draw.h
 include/harfbuzz/hb-face.h
+include/harfbuzz/hb-features.h
 include/harfbuzz/hb-font.h
 include/harfbuzz/hb-ft.h
 include/harfbuzz/hb-glib.h
