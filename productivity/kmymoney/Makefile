@@ -1,14 +1,14 @@
 USE_WXNEEDED =	Yes
 
-COMMENT =		accounting for KDE 5
+COMMENT =	accounting for KDE 5
 
-VERSION =		5.1.3
-DISTNAME =		kmymoney-${VERSION}
-REVISION =		0
+V =		5.1.3
+DISTNAME =	kmymoney-${V}
+REVISION =	1
 
-CATEGORIES =		productivity x11
+CATEGORIES =	productivity x11
 
-HOMEPAGE =		https://kmymoney.org
+HOMEPAGE =	https://kmymoney.org
 
 SHARED_LIBS +=  kmm_csvimportercore       0.0 # 5.1.2
 SHARED_LIBS +=  kmm_icons                 0.0 # 5.1.2
@@ -21,12 +21,12 @@ SHARED_LIBS +=  kmm_printer               0.0 # 5.1.2
 SHARED_LIBS +=  kmm_settings              0.0 # 5.1.2
 SHARED_LIBS +=  kmm_widgets               1.0 # 5.1.2
 
-MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
+MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${MASTER_SITE_KDE:=stable/kmymoney/${VERSION}/src/}
+MASTER_SITES =		${MASTER_SITE_KDE:=stable/kmymoney/${V}/src/}
 
 WANTLIB += ${COMPILER_LIBCXX} KChart KF5Activities KF5AkonadiCore
 WANTLIB += KF5Archive KF5Auth KF5AuthCore KF5Bookmarks KF5Codecs
@@ -40,8 +40,9 @@ WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Qml
 WANTLIB += Qt5QmlModels Qt5Quick Qt5QuickWidgets Qt5Sql Qt5WebKit
 WANTLIB += Qt5WebKitWidgets Qt5Widgets Qt5Xml X11 alkimia5 aqbanking
-WANTLIB += c db db_cxx gmp gpgmepp gwengui-cpp gwengui-qt5 gwenhywfar
-WANTLIB += ical icalss icalvcal icui18n icuuc m ofx ${MODPY_WANTLIB}
+WANTLIB += assuan c db db_cxx gmp gpgme gpgmepp gwengui-cpp gwengui-qt5
+WANTLIB += gwenhywfar ical icalss icalvcal icui18n icuuc m ofx
+WANTLIB += ${MODPY_WANTLIB}
 
 
 MODULES =		lang/python \
@@ -108,11 +109,6 @@ LIB_DEPENDS =		devel/gwenhywfar \
 CONFIGURE_ARGS =	-DUSE_QT_DESIGNER=OFF \
 			-DENABLE_WEBENGINE=OFF \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON
-
-CFLAGS +=	-I${LOCALBASE}/include/KF5 -I${LOCALBASE}/include/QGpgME -I${LOCALBASE}/include/gpgme++
-CXXFLAGS +=	-I${LOCALBASE}/include/KF5 -I${LOCALBASE}/include/QGpgME -I${LOCALBASE}/include/gpgme++
-
-MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
 
 TEST_IS_INTERACTIVE =	X11
 

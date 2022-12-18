@@ -1,19 +1,9 @@
-- Remove weboob support, depends on python2
 - Remove linker, compiler  flags
-- Fix gpgmepp
+- fix libofx detection
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -105,7 +105,7 @@ if (Gpgmepp_FOUND)
-   set(GPG_FOUND TRUE)
- else()
-   set(GPG_FOUND FALSE)
--  list(APPEND OPT_KF5_COMPONENTS Gpgmepp)
-+  list(APPEND OPT_KF5_COMPONENTS gpgmepp)
- endif()
- 
- if (PkgConfig_FOUND)
 @@ -114,7 +114,7 @@ if (PkgConfig_FOUND)
  endif()
  
@@ -32,57 +22,29 @@ Index: CMakeLists.txt
    endif()
  
    if (LIBOFX_HAVE_CLIENTUID)
-@@ -398,38 +398,7 @@ The default value is: 'RelWithDebInfo'" FORCE)
- include(KDECompilerSettings)
- kde_enable_exceptions()
+@@ -402,12 +402,13 @@ kde_enable_exceptions()
  
--# Set linker flags
- 
--# There is no way to detect linker in cmake (see https://gitlab.kitware.com/cmake/cmake/issues/17596)
--# and linkers aren't compatible with each other, so we need to assume something
+ # There is no way to detect linker in cmake (see https://gitlab.kitware.com/cmake/cmake/issues/17596)
+ # and linkers aren't compatible with each other, so we need to assume something
 -if(CMAKE_CXX_COMPILER_ID MATCHES "AppleClang")
--  set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} -Wl,-dead_strip -Wl,-undefined,error")
--  set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,-dead_strip -Wl,-undefined,error -Wl,-mark_dead_strippable_dylib")
--  set(CMAKE_EXE_LINKER_FLAGS    "${CMAKE_EXE_LINKER_FLAGS}    -Wl,-dead_strip -Wl,-undefined,error")
--
++if(CMAKE_CXX_COMPILER_ID MATCHES "AppleClang" AND NOT CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
+   set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} -Wl,-dead_strip -Wl,-undefined,error")
+   set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,-dead_strip -Wl,-undefined,error -Wl,-mark_dead_strippable_dylib")
+   set(CMAKE_EXE_LINKER_FLAGS    "${CMAKE_EXE_LINKER_FLAGS}    -Wl,-dead_strip -Wl,-undefined,error")
+ 
 -elseif(CMAKE_CXX_COMPILER_ID MATCHES "GNU" OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
--  set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} -Wl,--as-needed")
--  set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,--as-needed")
--  # TODO: remove multiple definitions of payeeIdentifierLoader::createPayeeIdentifierFromSqlDatabase
--  set(CMAKE_EXE_LINKER_FLAGS    "${CMAKE_EXE_LINKER_FLAGS} -Wl,--as-needed -Wl,--allow-multiple-definition")
--  # CI builds are crashing on FreeBSD with --no-undefined. Probably because -DECM_ENABLE_SANITIZERS='address'
--  # more can be read on the following site https://bugs.freedesktop.org/show_bug.cgi?id=100120
--  if(NOT CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
--    set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} -Wl,--no-undefined")
--    set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,--no-undefined")
--    set(CMAKE_EXE_LINKER_FLAGS    "${CMAKE_EXE_LINKER_FLAGS}    -Wl,--no-undefined")
--  endif()
--
--  # TODO: remove multiple definitions of payeeIdentifierLoader::hasItemEditDelegate
--  if(CMAKE_SYSTEM_NAME MATCHES "Windows")
--    set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} -Wl,--allow-multiple-definition")
--    set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,--allow-multiple-definition")
--  endif()
--
--elseif(CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
--  set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /FORCE:Multiple")
--endif()
--
- # Set compiler flags
- if(CMAKE_CXX_COMPILER_ID MATCHES "GNU")
-   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wlogical-op -Wno-null-dereference -Wshadow -Wunused -Wno-misleading-indentation -Wsuggest-override -Wcast-qual -Wformat=2 -fno-common")
-@@ -446,14 +415,6 @@ endif()
++elseif((CMAKE_CXX_COMPILER_ID MATCHES "GNU" OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
++       AND NOT CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
+   set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} -Wl,--as-needed")
+   set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,--as-needed")
+   # TODO: remove multiple definitions of payeeIdentifierLoader::createPayeeIdentifierFromSqlDatabase
+@@ -445,7 +446,8 @@ endif()
+ # IDEA: Set on a per target base
  set(CMAKE_POSITION_INDEPENDENT_CODE ON)
  
- if(CMAKE_CXX_COMPILER_ID MATCHES "GNU" OR CMAKE_CXX_COMPILER_ID MATCHES "Clang" OR CMAKE_CXX_COMPILER_ID MATCHES "AppleClang")
--  # DebugKMM, Debugfull, Profile
--  set(CMAKE_CXX_FLAGS_DEBUGKMM
--      "-g -O2 -fno-reorder-blocks -fno-schedule-insns -fno-inline")
--  set(CMAKE_CXX_FLAGS_DEBUGFULL
--      "-g3 -fno-inline")
--  set(CMAKE_CXX_FLAGS_PROFILE
--      "-g3 -fno-inline -ftest-coverage -fprofile-arcs")
--
-   # preprocessor definitions in case this is a debug build
-   set(CMAKE_CXX_FLAGS_DEBUGFULL "${CMAKE_CXX_FLAGS_DEBUGFULL} -DQT_STRICT_ITERATORS -DKMM_DEBUG -DQT_FORCE_ASSERTS")
-   set(CMAKE_CXX_FLAGS_DEBUGKMM  "${CMAKE_CXX_FLAGS_DEBUGFULL} -DKMM_DEBUG -DQT_FORCE_ASSERTS")
+-if(CMAKE_CXX_COMPILER_ID MATCHES "GNU" OR CMAKE_CXX_COMPILER_ID MATCHES "Clang" OR CMAKE_CXX_COMPILER_ID MATCHES "AppleClang")
++if((CMAKE_CXX_COMPILER_ID MATCHES "GNU" OR CMAKE_CXX_COMPILER_ID MATCHES "Clang" OR CMAKE_CXX_COMPILER_ID MATCHES "AppleClang")
++    AND NOT CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
+   # DebugKMM, Debugfull, Profile
+   set(CMAKE_CXX_FLAGS_DEBUGKMM
+       "-g -O2 -fno-reorder-blocks -fno-schedule-insns -fno-inline")
