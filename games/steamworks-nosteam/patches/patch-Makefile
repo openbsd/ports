@@ -1,0 +1,22 @@
+remove build of Steamworks.NET.dll
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -1,6 +1,6 @@
+ PREFIX ?=	/usr/local
+ 
+-all: Steamworks.NET/bin/Steamworks.NET.dll native wrapper cestub hlsteam
++all: native wrapper cestub hlsteam
+ 
+ Steamworks.NET/bin/Steamworks.NET.dll:	Steamworks.NET/*.cs \
+ 				Steamworks.NET/*.csproj \
+@@ -29,8 +29,6 @@ Steamworks.NET/bin/Steamworks.NET.dll:	Steamworks.NET/
+ 
+ install: all
+ 	install -d $(PREFIX)/lib/steamworks-nosteam/
+-	install Steamworks.NET/bin/Steamworks.NET.dll \
+-		$(PREFIX)/lib/steamworks-nosteam/
+ 	install native/libSteamworksNative.so.* \
+ 		$(PREFIX)/lib/steamworks-nosteam/
+ 	install wrapper/libsteamwrapper.so.* \
