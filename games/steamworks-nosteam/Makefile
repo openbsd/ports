@@ -3,7 +3,7 @@ COMMENT =	Steamworks stub libraries
 V =		0.4.1
 DISTNAME =	Steamworks-nosteam-v${V}
 PKGNAME =	steamworks-nosteam-${V}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  cestub			0.0	# 0.4.1
 
@@ -12,6 +12,8 @@ HOMEPAGE =	https://github.com/rfht/Steamworks-nosteam
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 
 WANTLIB += ${COMPILER_LIBCXX} hl m
+
+FIX_EXTRACT_PERMISSIONS =	Yes
 
 # MIT (Steamworks.NET), zlib (libSteamworksNative)
 PERMIT_PACKAGE =	Yes

@@ -1,5 +1,4 @@
 lib/steamworks-nosteam/
-lib/steamworks-nosteam/Steamworks.NET.dll
 lib/steamworks-nosteam/libSteamworksNative.so.0.0
 @lib lib/steamworks-nosteam/libcestub.so.${LIBcestub_VERSION}
 lib/steamworks-nosteam/libsteamwrapper.so.0.0
