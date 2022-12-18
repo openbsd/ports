@@ -161,6 +161,7 @@ share/locale/hu/LC_MESSAGES/libkimap5.mo
 share/locale/ia/LC_MESSAGES/libkimap5.mo
 share/locale/it/LC_MESSAGES/libkimap5.mo
 share/locale/ja/LC_MESSAGES/libkimap5.mo
+share/locale/ka/LC_MESSAGES/libkimap5.mo
 share/locale/kk/LC_MESSAGES/libkimap5.mo
 share/locale/km/LC_MESSAGES/libkimap5.mo
 share/locale/ko/LC_MESSAGES/libkimap5.mo
@@ -181,6 +182,9 @@ share/locale/sk/LC_MESSAGES/libkimap5.mo
 share/locale/sl/LC_MESSAGES/libkimap5.mo
 share/locale/sq/LC_MESSAGES/libkimap5.mo
 share/locale/sr/LC_MESSAGES/libkimap5.mo
+share/locale/sr@ijekavian/LC_MESSAGES/libkimap5.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/libkimap5.mo
+share/locale/sr@latin/LC_MESSAGES/libkimap5.mo
 share/locale/sv/LC_MESSAGES/libkimap5.mo
 share/locale/tr/LC_MESSAGES/libkimap5.mo
 share/locale/ug/LC_MESSAGES/libkimap5.mo

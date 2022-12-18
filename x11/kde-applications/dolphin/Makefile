@@ -3,7 +3,7 @@ DISTNAME =	dolphin-${VERSION}
 PKGNAME =	dolphin-kf5-${VERSION}
 CATEGORIES =	x11
 
-SHARED_LIBS +=  dolphinprivate            7.0 # 5.0
+SHARED_LIBS +=  dolphinprivate            8.0 # 5.0
 SHARED_LIBS +=  dolphinvcs                2.1 # 5.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Activities KF5Attica KF5Auth

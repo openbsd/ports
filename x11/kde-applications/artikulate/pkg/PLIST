@@ -4,9 +4,6 @@
 @lib lib/libartikulatecore.so.${LIBartikulatecore_VERSION}
 @lib lib/libartikulatelearnerprofile.so.${LIBartikulatelearnerprofile_VERSION}
 @lib lib/libartikulatesound.so.${LIBartikulatesound_VERSION}
-lib/qt5/plugins/artikulate/
-lib/qt5/plugins/artikulate/libsound/
-@so lib/qt5/plugins/artikulate/libsound/qtmultimediabackend.so
 share/applications/org.kde.artikulate.desktop
 share/config.kcfg/
 share/config.kcfg/artikulate.kcfg
@@ -103,6 +100,7 @@ share/locale/hu/LC_MESSAGES/artikulate.mo
 share/locale/ia/LC_MESSAGES/artikulate.mo
 share/locale/it/LC_MESSAGES/artikulate.mo
 share/locale/ja/LC_MESSAGES/artikulate.mo
+share/locale/ka/LC_MESSAGES/artikulate.mo
 share/locale/ko/LC_MESSAGES/artikulate.mo
 share/locale/lt/LC_MESSAGES/artikulate.mo
 share/locale/ml/LC_MESSAGES/artikulate.mo

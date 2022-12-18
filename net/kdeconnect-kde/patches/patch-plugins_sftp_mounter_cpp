@@ -10,7 +10,7 @@ https://git.archlinux.org/svntogit/packages.git/plain/trunk/kdeconnect-openssh-8
 Index: plugins/sftp/mounter.cpp
 --- plugins/sftp/mounter.cpp.orig
 +++ plugins/sftp/mounter.cpp
-@@ -99,7 +99,7 @@ void Mounter::onPackageReceived(const NetworkPacket& n
+@@ -96,7 +96,7 @@ void Mounter::onPackageReceived(const NetworkPacket &n
  
      QDir().mkpath(m_mountPoint);
  
@@ -18,33 +18,35 @@ Index: plugins/sftp/mounter.cpp
 +    const QString program = QStringLiteral("/usr/bin/doas");
  
      QString path;
-     if (np.has(QStringLiteral("multiPaths"))) path = QStringLiteral("/");
-@@ -117,6 +117,7 @@ void Mounter::onPackageReceived(const NetworkPacket& n
+     if (np.has(QStringLiteral("multiPaths")))
+@@ -116,7 +116,7 @@ void Mounter::onPackageReceived(const NetworkPacket &n
      }
  
-     const QStringList arguments = QStringList()
-+        << QStringLiteral("${LOCALBASE}/bin/sshfs")
-         << QStringLiteral("%1@%2:%3").arg(
-             np.get<QString>(QStringLiteral("user")),
-             ip,
-@@ -134,7 +135,10 @@ void Mounter::onPackageReceived(const NetworkPacket& n
-         << QStringLiteral("-o") << QStringLiteral("gid=") + QString::number(getgid())
-         << QStringLiteral("-o") << QStringLiteral("reconnect")
-         << QStringLiteral("-o") << QStringLiteral("ServerAliveInterval=30")
--        << QStringLiteral("-o") << QStringLiteral("password_stdin")
-+        << QStringLiteral("-o") << QStringLiteral("KexAlgorithms=+diffie-hellman-group14-sha1")
-+        << QStringLiteral("-o") << QStringLiteral("allow_other")
-+        << QStringLiteral("-o") << QStringLiteral("umask=0022")
-+        << QStringLiteral("-o") << QStringLiteral("ssh_command=${LOCALBASE}/bin/sshpass -p %1 %2").arg(np.get<QString>(QStringLiteral("password")), QStringLiteral("/usr/bin/ssh"))
-         ;
+     const QStringList arguments =
+-        QStringList() << QStringLiteral("%1@%2:%3")
++        QStringList() << QStringLiteral("${LOCALBASE}/bin/sshfs") << QStringLiteral("%1@%2:%3")
+                              .arg(np.get<QString>(QStringLiteral("user")),
+                                   ip,
+                                   path)
+@@ -129,7 +129,9 @@ void Mounter::onPackageReceived(const NetworkPacket &n
+                       << QStringLiteral("-o") << QStringLiteral("HostKeyAlgorithms=+ssh-dss\\,ssh-rsa") // https://bugs.kde.org/show_bug.cgi?id=351725
+                       << QStringLiteral("-o") << QStringLiteral("uid=") + QString::number(getuid()) << QStringLiteral("-o")
+                       << QStringLiteral("gid=") + QString::number(getgid()) << QStringLiteral("-o") << QStringLiteral("reconnect") << QStringLiteral("-o")
+-                      << QStringLiteral("ServerAliveInterval=30") << QStringLiteral("-o") << QStringLiteral("password_stdin");
++                      << QStringLiteral("ServerAliveInterval=30") << QStringLiteral("-o") << QStringLiteral("-o") << QStringLiteral("KexAlgorithms=+diffie-hellman-group14-sha1")
++                      << QStringLiteral("-o") << QStringLiteral("allow_other") << QStringLiteral("-o") << QStringLiteral("umask=0022")
++                      << QStringLiteral("-o") << QStringLiteral("ssh_command=${LOCALBASE}/bin/sshpass -p %1 %2").arg(np.get<QString>(QStringLiteral("password")), QStringLiteral("/usr/bin/ssh"));
  
      m_proc->setProgram(program, arguments);
-@@ -143,8 +147,6 @@ void Mounter::onPackageReceived(const NetworkPacket& n
+ 
+@@ -137,8 +139,8 @@ void Mounter::onPackageReceived(const NetworkPacket &n
      m_proc->start();
  
-     //qCDebug(KDECONNECT_PLUGIN_SFTP) << "Passing password: " << np.get<QString>("password").toLatin1();
+     // qCDebug(KDECONNECT_PLUGIN_SFTP) << "Passing password: " << np.get<QString>("password").toLatin1();
 -    m_proc->write(np.get<QString>(QStringLiteral("password")).toLatin1());
 -    m_proc->write("\n");
- 
++    //m_proc->write(np.get<QString>(QStringLiteral("password")).toLatin1());
++    //m_proc->write("\n");
  }
  
+ void Mounter::onStarted()

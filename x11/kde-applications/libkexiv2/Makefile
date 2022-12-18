@@ -3,7 +3,7 @@ DISTNAME =	libkexiv2-${VERSION}
 PKGNAME =	libkexiv2-kf5-${VERSION}
 CATEGORIES =	graphics devel
 
-SHARED_LIBS +=  KF5KExiv2                 1.0 # 5.0
+SHARED_LIBS +=  KF5KExiv2                 1.1 # 5.0
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui exiv2 m
 

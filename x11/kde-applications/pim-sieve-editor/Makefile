@@ -8,10 +8,10 @@ WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Bookmarks
 WANTLIB += KF5Codecs KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
 WANTLIB += KF5CoreAddons KF5Crash KF5DBusAddons KF5I18n KF5KIOCore
 WANTLIB += KF5KManageSieve KF5KSieve KF5KSieveUi KF5MailTransport
-WANTLIB += KF5PimCommon KF5PimTextEdit KF5Service KF5Wallet KF5WidgetsAddons
-WANTLIB += KF5XmlGui KUserFeedbackCore KUserFeedbackWidgets Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
-WANTLIB += c m qt5keychain
+WANTLIB += KF5PimCommon KF5PimCommonAutoCorrection KF5PimTextEdit
+WANTLIB += KF5Service KF5Wallet KF5WidgetsAddons KF5XmlGui KUserFeedbackCore
+WANTLIB += KUserFeedbackWidgets Qt5Concurrent Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5Xml c m qt5keychain
 
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DESKTOP_FILE = yes

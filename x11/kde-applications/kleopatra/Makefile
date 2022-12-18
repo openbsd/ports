@@ -54,5 +54,7 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		x11/kde-applications/kmime \
 		x11/kde-applications/libkleo
 
+CXXFLAGS +=	-I${LOCALBASE}/include/KF5/Libkleo/
+CFLAGS +=	-I${LOCALBASE}/include/KF5/Libkleo/
 
 .include <bsd.port.mk>

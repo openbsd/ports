@@ -20,9 +20,6 @@ LIB_DEPENDS =	devel/boost \
 		devel/kf5/ki18n \
 		x11/qt5/qtdeclarative
 
-CFLAGS +=	-I${LOCALBASE}/include
-CXXFLAGS +=	-I${LOCALBASE}/include
-
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
 		${WRKINST}/${MODPY_SITEPKG}/PyKOpeningHours/

@@ -6,9 +6,10 @@ SHARED_LIBS +=  KF5Gravatar      1.0 # 5.13.3
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5I18n
-WANTLIB += KF5KIOCore KF5PimCommon KF5PimTextEdit KF5Service KF5SonnetUi
-WANTLIB += KF5TextWidgets KF5WidgetsAddons Qt5Concurrent Qt5Core
-WANTLIB += Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml m
+WANTLIB += KF5KIOCore KF5PimCommon KF5PimCommonAutoCorrection
+WANTLIB += KF5PimTextEdit KF5Service KF5SonnetUi KF5TextWidgets
+WANTLIB += KF5WidgetsAddons Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
+WANTLIB += Qt5Network Qt5Widgets Qt5Xml m
 
 MODKDE5_TRANSLATIONS = yes
 

@@ -593,9 +593,11 @@ share/locale/hu/LC_MESSAGES/kajongg.mo
 share/locale/is/LC_MESSAGES/kajongg.mo
 share/locale/it/LC_MESSAGES/kajongg.mo
 share/locale/ja/LC_MESSAGES/kajongg.mo
+share/locale/ka/LC_MESSAGES/kajongg.mo
 share/locale/kk/LC_MESSAGES/kajongg.mo
 share/locale/km/LC_MESSAGES/kajongg.mo
 share/locale/lt/LC_MESSAGES/kajongg.mo
+share/locale/mai/LC_MESSAGES/kajongg.mo
 share/locale/ml/LC_MESSAGES/kajongg.mo
 share/locale/mr/LC_MESSAGES/kajongg.mo
 share/locale/nb/LC_MESSAGES/kajongg.mo
@@ -610,6 +612,9 @@ share/locale/ru/LC_MESSAGES/kajongg.mo
 share/locale/sk/LC_MESSAGES/kajongg.mo
 share/locale/sl/LC_MESSAGES/kajongg.mo
 share/locale/sr/LC_MESSAGES/kajongg.mo
+share/locale/sr@ijekavian/LC_MESSAGES/kajongg.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/kajongg.mo
+share/locale/sr@latin/LC_MESSAGES/kajongg.mo
 share/locale/sv/LC_MESSAGES/kajongg.mo
 share/locale/tr/LC_MESSAGES/kajongg.mo
 share/locale/ug/LC_MESSAGES/kajongg.mo

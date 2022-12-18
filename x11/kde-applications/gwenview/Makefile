@@ -2,7 +2,7 @@ COMMENT =	KDE image viewer
 DISTNAME =	gwenview-${VERSION}
 CATEGORIES =	graphics x11
 
-SHARED_LIBS +=  gwenviewlib               59.1 # 4.97
+SHARED_LIBS +=  gwenviewlib               59.2 # 4.97
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Activities KF5Auth KF5AuthCore
 WANTLIB += KF5Baloo KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore

@@ -2,7 +2,7 @@ COMMENT =	personal alarm message, command and email scheduler
 DISTNAME =	kalarm-${VERSION}
 CATEGORIES =	productivity
 
-SHARED_LIBS +=  kalarmcalendar           1.0 # 0.0
+SHARED_LIBS +=  kalarmcalendar           1.1 # 0.0
 SHARED_LIBS +=  kalarmplugin             1.0 # 0.0
 
 MODKDE5_DESKTOP_FILE = yes
@@ -74,12 +74,5 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		x11/kde-applications/kmailtransport \
 		x11/kde-applications/kpimtextedit \
 		x11/qt5/qtx11extras
-
-CFLAGS +=	-I${LOCALBASE}/include -I${LOCALBASE}/include/qgpgme
-CXXFLAGS +=	-I${LOCALBASE}/include -I${LOCALBASE}/include/gpgme++
-
-pre-configure:
-	find ${WRKSRC} -type f \( -name \*.cpp -o -name \*.h \) -exec \
-		sed -i -e 's,#include <phonon,#include <phonon4qt5/phonon,g' {} +
 
 .include <bsd.port.mk>

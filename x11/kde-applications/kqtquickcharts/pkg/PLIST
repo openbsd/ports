@@ -2,6 +2,7 @@
 include/KF5/
 include/KF5/kqtquickcharts_version.h
 lib/cmake/KQtQuickCharts/
+lib/cmake/KQtQuickCharts/KQtQuickChartsConfig.cmake
 lib/cmake/KQtQuickCharts/KQtQuickChartsVersion.cmake
 lib/qt5/qml/org/
 lib/qt5/qml/org/kde/

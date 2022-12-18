@@ -387,6 +387,8 @@ share/icons/hicolor/32x32/apps/akonadi.png
 share/icons/hicolor/48x48/apps/akonadi.png
 share/icons/hicolor/64x64/apps/akonadi.png
 share/icons/hicolor/scalable/apps/akonadi.svgz
+share/kdevappwizard/templates/akonadiresource.tar.bz2
+share/kdevappwizard/templates/akonadiserializer.tar.bz2
 share/kf5/akonadi/
 share/kf5/akonadi/akonadi-xml.xsd
 share/kf5/akonadi/kcfg2dbus.xsl
@@ -435,6 +437,7 @@ share/locale/ga/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/ga/LC_MESSAGES/libakonadi5.mo
 share/locale/gl/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/gl/LC_MESSAGES/libakonadi5.mo
+share/locale/hsb/LC_MESSAGES/libakonadi5.mo
 share/locale/hu/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/hu/LC_MESSAGES/libakonadi5.mo
 share/locale/ia/LC_MESSAGES/akonadi_knut_resource.mo
@@ -445,6 +448,8 @@ share/locale/it/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/it/LC_MESSAGES/libakonadi5.mo
 share/locale/ja/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/ja/LC_MESSAGES/libakonadi5.mo
+share/locale/ka/LC_MESSAGES/akonadi_knut_resource.mo
+share/locale/ka/LC_MESSAGES/libakonadi5.mo
 share/locale/kk/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/kk/LC_MESSAGES/libakonadi5.mo
 share/locale/km/LC_MESSAGES/akonadi_knut_resource.mo
@@ -455,8 +460,11 @@ share/locale/lt/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/lt/LC_MESSAGES/libakonadi5.mo
 share/locale/lv/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/lv/LC_MESSAGES/libakonadi5.mo
+share/locale/mai/LC_MESSAGES/libakonadi5.mo
 share/locale/mr/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/mr/LC_MESSAGES/libakonadi5.mo
+share/locale/my/LC_MESSAGES/akonadi_knut_resource.mo
+share/locale/my/LC_MESSAGES/libakonadi5.mo
 share/locale/nb/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/nb/LC_MESSAGES/libakonadi5.mo
 share/locale/nds/LC_MESSAGES/akonadi_knut_resource.mo
@@ -485,10 +493,17 @@ share/locale/sl/LC_MESSAGES/libakonadi5.mo
 share/locale/sq/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/sr/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/sr/LC_MESSAGES/libakonadi5.mo
+share/locale/sr@ijekavian/LC_MESSAGES/akonadi_knut_resource.mo
+share/locale/sr@ijekavian/LC_MESSAGES/libakonadi5.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/akonadi_knut_resource.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/libakonadi5.mo
+share/locale/sr@latin/LC_MESSAGES/akonadi_knut_resource.mo
+share/locale/sr@latin/LC_MESSAGES/libakonadi5.mo
 share/locale/sv/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/sv/LC_MESSAGES/libakonadi5.mo
 share/locale/tg/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/tg/LC_MESSAGES/libakonadi5.mo
+share/locale/th/LC_MESSAGES/libakonadi5.mo
 share/locale/tr/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/tr/LC_MESSAGES/libakonadi5.mo
 share/locale/ug/LC_MESSAGES/akonadi_knut_resource.mo

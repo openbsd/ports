@@ -13,12 +13,13 @@ WANTLIB += KF5ConfigWidgets KF5Contacts KF5CoreAddons KF5Crash
 WANTLIB += KF5DBusAddons KF5GrantleeTheme KF5I18n KF5IdentityManagement
 WANTLIB += KF5ItemModels KF5ItemViews KF5KIOCore KF5Libkdepim
 WANTLIB += KF5Libkleo KF5MessageCore KF5MessageViewer KF5Mime
-WANTLIB += KF5MimeTreeParser KF5PimCommon KF5PimTextEdit KF5Service
-WANTLIB += KF5SonnetUi KF5TextWidgets KF5WidgetsAddons KF5XmlGui
-WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Sql Qt5Widgets Qt5Xml assuan c gpgme gpgmepp m qgpgme
-WANTLIB += xapian
+WANTLIB += KF5MimeTreeParser KF5PimCommon KF5PimCommonAutoCorrection
+WANTLIB += KF5PimTextEdit KF5Service KF5SonnetUi KF5TextWidgets
+WANTLIB += KF5WidgetsAddons KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Network Qt5PrintSupport Qt5Sql Qt5Widgets
+WANTLIB += Qt5Xml assuan c gpgme gpgmepp m qgpgme xapian
 
+WANTLIB += lib/inotify/inotify
 
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DESKTOP_FILE = yes
@@ -56,5 +57,7 @@ LIB_DEPENDS =	databases/xapian-core \
 		x11/kde-applications/pimcommon
 
 TEST_IS_INTERACTIVE =	X11
+
+CXXFLAGS +=	-I${LOCALBASE}/include/KF5/MessageViewer
 
 .include <bsd.port.mk>

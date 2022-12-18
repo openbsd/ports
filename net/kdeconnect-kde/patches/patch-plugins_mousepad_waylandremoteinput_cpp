@@ -2,8 +2,8 @@ Index: plugins/mousepad/waylandremoteinput.cpp
 --- plugins/mousepad/waylandremoteinput.cpp.orig
 +++ plugins/mousepad/waylandremoteinput.cpp
 @@ -14,7 +14,7 @@
- #include <QtWaylandClient/qwaylandclientextension.h>
  #include "qwayland-fake-input.h"
+ #include <QtWaylandClient/qwaylandclientextension.h>
  
 -#include <linux/input.h>
 +enum mouse_button { BTN_LEFT, BTN_RIGHT, BTN_MIDDLE, BTN_TOUCH };

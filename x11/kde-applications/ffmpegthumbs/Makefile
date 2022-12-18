@@ -8,7 +8,7 @@ WANTLIB += KF5CoreAddons KF5I18n KF5JobWidgets KF5KIOCore KF5KIOGui
 WANTLIB += KF5KIOWidgets KF5Service KF5Solid KF5WidgetsAddons
 WANTLIB += KF5WindowSystem Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
 WANTLIB += Qt5Network Qt5Widgets Qt5Xml X11 avcodec avfilter avformat
-WANTLIB += avutil m swscale tag
+WANTLIB += avutil m swscale
 
 # build depends but there are no translations
 MODKDE5_TRANSLATIONS = yes

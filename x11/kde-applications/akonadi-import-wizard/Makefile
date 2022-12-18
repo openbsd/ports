@@ -14,10 +14,12 @@ WANTLIB += KF5ItemModels KF5KIOCore KF5Libkdepim KF5Libkleo KF5MailCommon
 WANTLIB += KF5MailImporter KF5MailImporterAkonadi KF5MailTransport
 WANTLIB += KF5MessageComposer KF5MessageCore KF5MessageViewer
 WANTLIB += KF5Mime KF5MimeTreeParser KF5PimCommon KF5PimCommonAkonadi
-WANTLIB += KF5PimTextEdit KF5Service KF5Wallet KF5WidgetsAddons
-WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Widgets Qt5Xml assuan c gpgme gpgmepp m qgpgme qt5keychain
+WANTLIB += KF5PimCommonAutoCorrection KF5PimTextEdit KF5Service
+WANTLIB += KF5Wallet KF5WidgetsAddons KF5XmlGui Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
+WANTLIB += assuan c gpgme gpgmepp m qgpgme qt5keychain
 
+#WANTLIB += lib/inotify/inotify
 
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_ICON_CACHE = yes
@@ -54,5 +56,7 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		x11/kde-applications/messagelib \
 		x11/kde-applications/pimcommon \
 		x11/kde-applications/mailcommon
+
+CXXFLAGS +=	-I${LOCALBASE}/include/KF5/MessageViewer
 
 .include <bsd.port.mk>

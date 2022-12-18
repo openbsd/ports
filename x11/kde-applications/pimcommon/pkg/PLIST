@@ -2,9 +2,6 @@ include/KF5/PimCommon/
 include/KF5/PimCommon/PimCommon/
 include/KF5/PimCommon/PimCommon/AbstractGenericPlugin
 include/KF5/PimCommon/PimCommon/AbstractGenericPluginInterface
-include/KF5/PimCommon/PimCommon/AutoCorrection
-include/KF5/PimCommon/PimCommon/AutoCorrectionLanguage
-include/KF5/PimCommon/PimCommon/AutoCorrectionWidget
 include/KF5/PimCommon/PimCommon/BroadcastStatus
 include/KF5/PimCommon/PimCommon/ConfigureImmutableWidgetUtils
 include/KF5/PimCommon/PimCommon/ConfigurePluginDialog
@@ -25,24 +22,20 @@ include/KF5/PimCommon/PimCommon/LineEditWithCompleterNg
 include/KF5/PimCommon/PimCommon/MigrateApplicationFiles
 include/KF5/PimCommon/PimCommon/MigrateFileInfo
 include/KF5/PimCommon/PimCommon/NetworkManager
-include/KF5/PimCommon/PimCommon/PimCommonSettings
 include/KF5/PimCommon/PimCommon/PimUtil
 include/KF5/PimCommon/PimCommon/PluginUtil
 include/KF5/PimCommon/PimCommon/PurposeMenuWidget
 include/KF5/PimCommon/PimCommon/RenameFileDialog
-include/KF5/PimCommon/PimCommon/RichTexteditWithAutoCorrection
 include/KF5/PimCommon/PimCommon/ShareServiceUrlManager
 include/KF5/PimCommon/PimCommon/SimpleStringListEditor
 include/KF5/PimCommon/PimCommon/SpellCheckLineEdit
 include/KF5/PimCommon/PimCommon/TemplateListWidget
 include/KF5/PimCommon/PimCommon/TemplateManager
+include/KF5/PimCommon/PimCommon/TranslatorConfigureDialog
 include/KF5/PimCommon/PimCommon/TranslatorWidget
 include/KF5/PimCommon/pimcommon/
 include/KF5/PimCommon/pimcommon/abstractgenericplugin.h
 include/KF5/PimCommon/pimcommon/abstractgenericplugininterface.h
-include/KF5/PimCommon/pimcommon/autocorrection.h
-include/KF5/PimCommon/pimcommon/autocorrectionlanguage.h
-include/KF5/PimCommon/pimcommon/autocorrectionwidget.h
 include/KF5/PimCommon/pimcommon/broadcaststatus.h
 include/KF5/PimCommon/pimcommon/configureimmutablewidgetutils.h
 include/KF5/PimCommon/pimcommon/configureplugindialog.h
@@ -65,18 +58,16 @@ include/KF5/PimCommon/pimcommon/migrateapplicationfiles.h
 include/KF5/PimCommon/pimcommon/migratefileinfo.h
 include/KF5/PimCommon/pimcommon/networkmanager.h
 include/KF5/PimCommon/pimcommon/pimcommon_export.h
-include/KF5/PimCommon/pimcommon/pimcommonsetting_base.h
-include/KF5/PimCommon/pimcommon/pimcommonsettings.h
 include/KF5/PimCommon/pimcommon/pimutil.h
 include/KF5/PimCommon/pimcommon/pluginutil.h
 include/KF5/PimCommon/pimcommon/purposemenuwidget.h
 include/KF5/PimCommon/pimcommon/renamefiledialog.h
-include/KF5/PimCommon/pimcommon/richtexteditwithautocorrection.h
 include/KF5/PimCommon/pimcommon/shareserviceurlmanager.h
 include/KF5/PimCommon/pimcommon/simplestringlisteditor.h
 include/KF5/PimCommon/pimcommon/spellchecklineedit.h
 include/KF5/PimCommon/pimcommon/templatelistwidget.h
 include/KF5/PimCommon/pimcommon/templatemanager.h
+include/KF5/PimCommon/pimcommon/translatorconfiguredialog.h
 include/KF5/PimCommon/pimcommon/translatorwidget.h
 include/KF5/PimCommon/pimcommon_version.h
 include/KF5/PimCommonAkonadi/
@@ -126,6 +117,28 @@ include/KF5/PimCommonAkonadi/pimcommonakonadi/progressmanagerakonadi.h
 include/KF5/PimCommonAkonadi/pimcommonakonadi/recentaddresses.h
 include/KF5/PimCommonAkonadi/pimcommonakonadi/selectmulticollectiondialog.h
 include/KF5/PimCommonAkonadi/pimcommonakonadi_version.h
+include/KF5/PimCommonAutoCorrection/
+include/KF5/PimCommonAutoCorrection/PimCommonAutoCorrection/
+include/KF5/PimCommonAutoCorrection/PimCommonAutoCorrection/AutoCorrection
+include/KF5/PimCommonAutoCorrection/PimCommonAutoCorrection/AutoCorrectionLanguage
+include/KF5/PimCommonAutoCorrection/PimCommonAutoCorrection/AutoCorrectionSettings
+include/KF5/PimCommonAutoCorrection/PimCommonAutoCorrection/AutoCorrectionTextEdit
+include/KF5/PimCommonAutoCorrection/PimCommonAutoCorrection/AutoCorrectionUtils
+include/KF5/PimCommonAutoCorrection/PimCommonAutoCorrection/AutoCorrectionWidget
+include/KF5/PimCommonAutoCorrection/PimCommonAutoCorrection/PimCommonAutoCorrectionSettings
+include/KF5/PimCommonAutoCorrection/PimCommonAutoCorrection/SelectSpecialCharDialog
+include/KF5/PimCommonAutoCorrection/pimcommonautocorrection/
+include/KF5/PimCommonAutoCorrection/pimcommonautocorrection/autocorrection.h
+include/KF5/PimCommonAutoCorrection/pimcommonautocorrection/autocorrectionlanguage.h
+include/KF5/PimCommonAutoCorrection/pimcommonautocorrection/autocorrectionsettings.h
+include/KF5/PimCommonAutoCorrection/pimcommonautocorrection/autocorrectiontextedit.h
+include/KF5/PimCommonAutoCorrection/pimcommonautocorrection/autocorrectionutils.h
+include/KF5/PimCommonAutoCorrection/pimcommonautocorrection/autocorrectionwidget.h
+include/KF5/PimCommonAutoCorrection/pimcommonautocorrection/pimcommonautocorrection_export.h
+include/KF5/PimCommonAutoCorrection/pimcommonautocorrection/pimcommonautocorrectionsetting_base.h
+include/KF5/PimCommonAutoCorrection/pimcommonautocorrection/pimcommonautocorrectionsettings.h
+include/KF5/PimCommonAutoCorrection/pimcommonautocorrection/selectspecialchardialog.h
+include/KF5/PimCommonAutoCorrection/pimcommonautocorrection_version.h
 lib/cmake/KF5PimCommon/
 lib/cmake/KF5PimCommon/KF5PimCommonConfig.cmake
 lib/cmake/KF5PimCommon/KF5PimCommonConfigVersion.cmake
@@ -136,12 +149,19 @@ lib/cmake/KF5PimCommonAkonadi/KF5PimCommonAkonadiConfig.cmake
 lib/cmake/KF5PimCommonAkonadi/KF5PimCommonAkonadiConfigVersion.cmake
 lib/cmake/KF5PimCommonAkonadi/KF5PimCommonAkonadiTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5PimCommonAkonadi/KF5PimCommonAkonadiTargets.cmake
+lib/cmake/KF5PimCommonAutoCorrection/
+lib/cmake/KF5PimCommonAutoCorrection/KF5PimCommonAutoCorrectionConfig.cmake
+lib/cmake/KF5PimCommonAutoCorrection/KF5PimCommonAutoCorrectionConfigVersion.cmake
+lib/cmake/KF5PimCommonAutoCorrection/KF5PimCommonAutoCorrectionTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/KF5PimCommonAutoCorrection/KF5PimCommonAutoCorrectionTargets.cmake
 @lib lib/libKF5PimCommon.so.${LIBKF5PimCommon_VERSION}
 @lib lib/libKF5PimCommonAkonadi.so.${LIBKF5PimCommonAkonadi_VERSION}
+@lib lib/libKF5PimCommonAutoCorrection.so.${LIBKF5PimCommonAutoCorrection_VERSION}
 @so lib/qt5/plugins/designer/pimcommonakonadiwidgets.so
 @so lib/qt5/plugins/designer/pimcommonwidgets.so
 share/kf5/mkspecs/qt_PimCommon.pri
 share/kf5/mkspecs/qt_PimCommonAkonadi.pri
+share/kf5/mkspecs/qt_PimCommonAutoCorrection.pri
 share/locale/ar/LC_MESSAGES/libpimcommon.mo
 share/locale/bs/LC_MESSAGES/libpimcommon.mo
 share/locale/ca/LC_MESSAGES/libpimcommon.mo
@@ -162,6 +182,7 @@ share/locale/hu/LC_MESSAGES/libpimcommon.mo
 share/locale/ia/LC_MESSAGES/libpimcommon.mo
 share/locale/it/LC_MESSAGES/libpimcommon.mo
 share/locale/ja/LC_MESSAGES/libpimcommon.mo
+share/locale/ka/LC_MESSAGES/libpimcommon.mo
 share/locale/kk/LC_MESSAGES/libpimcommon.mo
 share/locale/ko/LC_MESSAGES/libpimcommon.mo
 share/locale/lt/LC_MESSAGES/libpimcommon.mo
@@ -177,6 +198,9 @@ share/locale/ru/LC_MESSAGES/libpimcommon.mo
 share/locale/sk/LC_MESSAGES/libpimcommon.mo
 share/locale/sl/LC_MESSAGES/libpimcommon.mo
 share/locale/sr/LC_MESSAGES/libpimcommon.mo
+share/locale/sr@ijekavian/LC_MESSAGES/libpimcommon.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/libpimcommon.mo
+share/locale/sr@latin/LC_MESSAGES/libpimcommon.mo
 share/locale/sv/LC_MESSAGES/libpimcommon.mo
 share/locale/tr/LC_MESSAGES/libpimcommon.mo
 share/locale/ug/LC_MESSAGES/libpimcommon.mo

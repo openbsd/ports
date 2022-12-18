@@ -115,10 +115,12 @@ share/locale/id/LC_MESSAGES/klickety.mo
 share/locale/is/LC_MESSAGES/klickety.mo
 share/locale/it/LC_MESSAGES/klickety.mo
 share/locale/ja/LC_MESSAGES/klickety.mo
+share/locale/ka/LC_MESSAGES/klickety.mo
 share/locale/kk/LC_MESSAGES/klickety.mo
 share/locale/ko/LC_MESSAGES/klickety.mo
 share/locale/lt/LC_MESSAGES/klickety.mo
 share/locale/lv/LC_MESSAGES/klickety.mo
+share/locale/mai/LC_MESSAGES/klickety.mo
 share/locale/ml/LC_MESSAGES/klickety.mo
 share/locale/mr/LC_MESSAGES/klickety.mo
 share/locale/nb/LC_MESSAGES/klickety.mo
@@ -133,6 +135,9 @@ share/locale/ru/LC_MESSAGES/klickety.mo
 share/locale/sk/LC_MESSAGES/klickety.mo
 share/locale/sl/LC_MESSAGES/klickety.mo
 share/locale/sr/LC_MESSAGES/klickety.mo
+share/locale/sr@ijekavian/LC_MESSAGES/klickety.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/klickety.mo
+share/locale/sr@latin/LC_MESSAGES/klickety.mo
 share/locale/sv/LC_MESSAGES/klickety.mo
 share/locale/tr/LC_MESSAGES/klickety.mo
 share/locale/ug/LC_MESSAGES/klickety.mo

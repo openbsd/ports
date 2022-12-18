@@ -8,12 +8,11 @@ SHARED_LIBS +=  KF5KDEGamesPrivate        3.0 # 1.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Attica KF5Auth KF5AuthCore
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
-WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5DNSSD KF5Declarative
-WANTLIB += KF5GuiAddons KF5I18n KF5IconThemes KF5NewStuff KF5NewStuffCore
-WANTLIB += KF5NewStuffWidgets KF5Package KF5Service KF5WidgetsAddons
-WANTLIB += KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml
-WANTLIB += Qt5QmlModels Qt5Quick Qt5QuickWidgets Qt5Svg Qt5Widgets
-WANTLIB += Qt5Xml m openal sndfile
+WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5DNSSD KF5GuiAddons
+WANTLIB += KF5I18n KF5IconThemes KF5NewStuff KF5NewStuffCore KF5NewStuffWidgets
+WANTLIB += KF5Service KF5WidgetsAddons KF5XmlGui Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Network Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickWidgets
+WANTLIB += Qt5Svg Qt5Widgets Qt5Xml m openal sndfile
 
 MODKDE5_TRANSLATIONS = yes
 

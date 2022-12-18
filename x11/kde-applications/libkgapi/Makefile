@@ -3,7 +3,7 @@ DISTNAME =	libkgapi-${VERSION}
 CATEGORIES =	www devel
 
 SHARED_LIBS +=  KPimGAPIBlogger       3.0 # 5.13.3
-SHARED_LIBS +=  KPimGAPICalendar      2.1 # 5.13.3
+SHARED_LIBS +=  KPimGAPICalendar      2.2 # 5.13.3
 SHARED_LIBS +=  KPimGAPIContacts      2.1 # 5.13.3
 SHARED_LIBS +=  KPimGAPICore          2.0 # 5.13.3
 SHARED_LIBS +=  KPimGAPIDrive         2.0 # 5.13.3

@@ -11,7 +11,7 @@ WANTLIB += KF5KIOCore KF5KIOGui KF5KIOWidgets KF5NewStuff KF5NewStuffCore
 WANTLIB += KF5NewStuffWidgets KF5Plotting KF5Service KF5Solid
 WANTLIB += KF5SonnetUi KF5TextWidgets KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5OpenGL Qt5Widgets Qt5Xml X11 c gsl gslcblas m qalculate
+WANTLIB += Qt5Widgets Qt5Xml X11 c gsl gslcblas m qalculate
 
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes

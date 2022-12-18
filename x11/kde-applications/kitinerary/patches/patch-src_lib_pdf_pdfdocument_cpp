@@ -1,0 +1,12 @@
+Index: src/lib/pdf/pdfdocument.cpp
+--- src/lib/pdf/pdfdocument.cpp.orig
++++ src/lib/pdf/pdfdocument.cpp
+@@ -298,7 +298,7 @@ QDateTime PdfDocument::modificationTime() const
+ }
+ 
+ 
+-QString gooStringToUnicode(const std::unique_ptr<GooString> &s)
++QString gooStringToUnicode(const GooString* s)
+ {
+     if (!s) {
+         return {};

@@ -2,7 +2,7 @@ COMMENT =	KDE PIM common mail library
 DISTNAME =	mailcommon-${VERSION}
 CATEGORIES =	devel mail
 
-SHARED_LIBS +=  KF5MailCommon       4.0 # 5.13.2
+SHARED_LIBS +=  KF5MailCommon       4.1 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiContact
 WANTLIB += KF5AkonadiCore KF5AkonadiMime KF5AkonadiWidgets KF5Archive
@@ -14,13 +14,12 @@ WANTLIB += KF5ItemModels KF5ItemViews KF5JobWidgets KF5KIOCore
 WANTLIB += KF5KIOGui KF5KIOWidgets KF5Libkdepim KF5Libkleo KF5MailImporter
 WANTLIB += KF5MailTransport KF5MessageComposer KF5MessageCore
 WANTLIB += KF5MessageList KF5MessageViewer KF5Mime KF5MimeTreeParser
-WANTLIB += KF5PimCommon KF5PimCommonAkonadi KF5PimTextEdit KF5Service
-WANTLIB += KF5Solid KF5SonnetUi KF5SyntaxHighlighting KF5TemplateParser
-WANTLIB += KF5TextWidgets KF5Wallet KF5WidgetsAddons KF5WindowSystem
-WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Widgets Qt5Xml X11 assuan gpgme gpgmepp m phonon4qt5
-WANTLIB += qgpgme
-
+WANTLIB += KF5PimCommon KF5PimCommonAkonadi KF5PimCommonAutoCorrection
+WANTLIB += KF5PimTextEdit KF5Service KF5Solid KF5SonnetUi KF5SyntaxHighlighting
+WANTLIB += KF5TemplateParser KF5TextWidgets KF5Wallet KF5WidgetsAddons
+WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5Xml X11 assuan gpgme
+WANTLIB += gpgmepp m phonon4qt5 qgpgme
 
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
@@ -62,5 +61,7 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		multimedia/phonon
 
 TEST_IS_INTERACTIVE =	X11
+
+CXXFLAGS +=	-I${LOCALBASE}/include/KF5/MessageViewer
 
 .include <bsd.port.mk>

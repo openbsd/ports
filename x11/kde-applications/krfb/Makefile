@@ -2,7 +2,7 @@ COMMENT =	desktop sharing
 DISTNAME =	krfb-${VERSION}
 CATEGORIES =	net x11
 
-SHARED_LIBS +=  krfbprivate               2.1 # 5.0
+SHARED_LIBS +=  krfbprivate               3.0 # 5.0
 
 HOMEPAGE =	https://kde.org/applications/internet/org.kde.krfb
 
@@ -37,8 +37,6 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		net/libvncserver \
 		x11/qt5/qtx11extras
 
-CFLAGS +=	-I${LOCALBASE}/include
 CXXFLAGS +=	-I${LOCALBASE}/include
-MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

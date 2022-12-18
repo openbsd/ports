@@ -2,9 +2,9 @@ COMMENT =	archiving Tool
 DISTNAME =	ark-${VERSION}
 CATEGORIES =	archivers
 
-SHARED_LIBS +=  kerfuffle                 9.0 # 17.08
+SHARED_LIBS +=  kerfuffle                 9.1 # 17.08
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5AuthCore KF5Bookmarks
+WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Bookmarks
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5Crash KF5DBusAddons
 WANTLIB += KF5I18n KF5ItemModels KF5ItemViews KF5JobWidgets KF5KIOCore

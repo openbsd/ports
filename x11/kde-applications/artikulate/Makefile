@@ -4,7 +4,7 @@ CATEGORIES =	education
 
 SHARED_LIBS +=  artikulatecore            3.0 # 0.0
 SHARED_LIBS +=  artikulatelearnerprofile  2.0 # 0.0
-SHARED_LIBS +=  artikulatesound           3.0 # 0.0
+SHARED_LIBS +=  artikulatesound           3.1 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Attica KF5Auth KF5AuthCore
 WANTLIB += KF5Codecs KF5ConfigCore KF5ConfigGui KF5ConfigWidgets

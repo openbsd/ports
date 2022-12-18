@@ -2,7 +2,7 @@ COMMENT =	addressbook viewer/frontend for KDE
 DISTNAME =	kaddressbook-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  kaddressbookprivate         3.0 # 5.13.2
+SHARED_LIBS +=  kaddressbookprivate         4.0 # 5.13.2
 SHARED_LIBS +=  KPimAddressbookImportExport 0.1 # 5.16.1
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiContact
@@ -12,11 +12,12 @@ WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5Contacts KF5CoreAddons
 WANTLIB += KF5Crash KF5GrantleeTheme KF5I18n KF5IMAP KF5ItemModels
 WANTLIB += KF5JobWidgets KF5KCMUtils KF5KIOCore KF5KIOGui KF5KIOWidgets
 WANTLIB += KF5KontactInterface KF5Libkdepim KF5Mime KF5Parts KF5PimCommon
-WANTLIB += KF5PimCommonAkonadi KF5PimTextEdit KF5Prison KF5Service
-WANTLIB += KF5Solid KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KF5XmlGui KUserFeedbackCore KUserFeedbackWidgets
-WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Widgets Qt5Xml X11 c m
+WANTLIB += KF5PimCommonAkonadi KF5PimCommonAutoCorrection KF5PimTextEdit
+WANTLIB += KF5Prison KF5Service KF5Solid KF5SonnetUi KF5TextWidgets
+WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui KUserFeedbackCore
+WANTLIB += KUserFeedbackWidgets Qt5Concurrent Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets Qt5Xml
+WANTLIB += X11 c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -58,10 +59,6 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		x11/kde-applications/kontactinterface \
 		x11/kde-applications/libkdepim \
 		x11/kde-applications/pimcommon
-
-pre-configure:
-	sed -i -e "s,QGpgme,qgpgme,g" -e "s,Gpgmepp,gpgmepp,g" \
-		${WRKSRC}/src/CMakeLists.txt
 
 TEST_IS_INTERACTIVE =	X11
 

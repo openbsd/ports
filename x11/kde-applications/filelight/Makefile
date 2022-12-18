@@ -6,11 +6,11 @@ HOMEPAGE =	https://apps.kde.org/filelight
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
-WANTLIB += KF5Declarative KF5I18n KF5JobWidgets KF5KIOCore KF5KIOGui
-WANTLIB += KF5KIOWidgets KF5Package KF5Service KF5Solid KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickControls2
-WANTLIB += Qt5Svg Qt5Widgets Qt5Xml X11 c m
+WANTLIB += KF5I18n KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets
+WANTLIB += KF5Service KF5Solid KF5WidgetsAddons KF5WindowSystem
+WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
+WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickControls2 Qt5Svg
+WANTLIB += Qt5Widgets Qt5Xml X11 c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

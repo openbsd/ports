@@ -2,7 +2,7 @@ COMMENT =	KDE terminal emulator
 DISTNAME =	konsole-${VERSION}
 CATEGORIES =	editors x11
 
-SHARED_LIBS +=  konsoleprivate            8.0 # 17.08
+SHARED_LIBS +=  konsoleprivate            9.0 # 17.08
 SHARED_LIBS +=  konsoleapp                2.0 # 21
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Attica KF5Auth KF5AuthCore KF5Bookmarks
@@ -14,7 +14,7 @@ WANTLIB += KF5NewStuffWidgets KF5Notifications KF5NotifyConfig
 WANTLIB += KF5Parts KF5Pty KF5Service KF5Solid KF5SonnetUi KF5TextWidgets
 WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets
-WANTLIB += Qt5Xml X11 c m z
+WANTLIB += Qt5Xml X11 c icui18n icuuc m z
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_TRANSLATIONS = yes

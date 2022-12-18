@@ -12,7 +12,6 @@ MODULES +=	lang/ruby
 
 LIB_DEPENDS =	devel/kf5/kross \
 		x11/qt5/qtscript
-CONFIGURE_ENV =	CXXFLAGS="${CXXFLAGS} -fdeclspec"
 
 TEST_IS_INTERACTIVE =	X11
 

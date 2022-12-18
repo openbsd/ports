@@ -4,7 +4,7 @@ CATEGORIES =	games education
 
 HOMEPAGE =	https://www.kde.org/applications/education/rocs/
 
-SHARED_LIBS +=  rocsgraphtheory        4.1 # 0.0
+SHARED_LIBS +=  rocsgraphtheory        5.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Archive KF5Auth
 WANTLIB += KF5AuthCore KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui

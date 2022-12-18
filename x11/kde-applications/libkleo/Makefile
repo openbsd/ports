@@ -2,7 +2,7 @@ COMMENT =	certificate manager for KDE
 DISTNAME =	libkleo-${VERSION}
 CATEGORIES =	security devel
 
-SHARED_LIBS +=  KF5Libkleo                9.0 # 5.10
+SHARED_LIBS +=  KF5Libkleo                10.0 # 5.10
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
@@ -24,7 +24,5 @@ LIB_DEPENDS =	devel/kf5/kcodecs \
 		devel/kf5/kwidgetsaddons \
 		security/gpgme,-qt \
 		x11/kde-applications/kpimtextedit
-
-CONFIGURE_ARGS =	-DBUILD_TESTING=OFF
 
 .include <bsd.port.mk>

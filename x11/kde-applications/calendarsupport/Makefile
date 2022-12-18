@@ -2,7 +2,7 @@ COMMENT =	PIM calendar support library
 DISTNAME =	calendarsupport-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  KF5CalendarSupport       4.0 # 5.13.2
+SHARED_LIBS +=  KF5CalendarSupport       5.0 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiCalendar KF5AkonadiCore
 WANTLIB += KF5AkonadiNotes KF5AkonadiWidgets KF5Auth KF5AuthCore

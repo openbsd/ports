@@ -3,7 +3,7 @@ COMMENT =	user-friendly TeX/LaTeX editor for KDE
 CATEGORIES =	editors
 
 DISTNAME =	kile-2.9.93
-REVISION =	3
+REVISION =	4
 
 HOMEPAGE =	https://kile.sourceforge.io
 
@@ -20,9 +20,6 @@ WANTLIB += KF5SonnetUi KF5SyntaxHighlighting KF5TextEditor KF5TextWidgets
 WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Script Qt5Widgets
 WANTLIB += Qt5Xml X11 c m poppler poppler-qt5
-
-# dlopen(3)
-WANTLIB += Okular5Core
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=kile/}
 EXTRACT_SUFX =	.tar.bz2
@@ -65,7 +62,9 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kxmlgui \
 		devel/kf5/sonnet \
 		print/poppler,-qt5 \
-		x11/kde-applications/okular \
 		x11/qt5/qtscript
+
+# dlopen(3)
+LIB_DEPENDS +=	x11/kde-applications/okular
 
 .include <bsd.port.mk>

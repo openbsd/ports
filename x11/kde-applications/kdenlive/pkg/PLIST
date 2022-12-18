@@ -1,6 +1,7 @@
 @pkgpath multimedia/kdenlive
 @bin bin/kdenlive
 @bin bin/kdenlive_render
+@so lib/qt5/plugins/designer/kdenlivewidgets.so
 @so lib/qt5/plugins/mltpreview.so
 @man man/man1/kdenlive.1
 @man man/man1/kdenlive_render.1
@@ -120,6 +121,7 @@ share/doc/Kdenlive/
 share/doc/Kdenlive/AUTHORS
 share/doc/Kdenlive/LICENSES/
 share/doc/Kdenlive/LICENSES/BSD-3-Clause.txt
+share/doc/Kdenlive/LICENSES/CC0-1.0.txt
 share/doc/Kdenlive/LICENSES/GPL-2.0-only.txt
 share/doc/Kdenlive/LICENSES/GPL-2.0-or-later.txt
 share/doc/Kdenlive/LICENSES/GPL-3.0-only.txt
@@ -458,7 +460,6 @@ share/kdenlive/effects/qtblend.xml
 share/kdenlive/effects/qtcrop.xml
 share/kdenlive/effects/rboctaveshift.xml
 share/kdenlive/effects/rbpitchscale.xml
-share/kdenlive/effects/region.xml
 share/kdenlive/effects/rotation.xml
 share/kdenlive/effects/rotation_keyframable.xml
 share/kdenlive/effects/rotoscoping.xml
@@ -580,13 +581,41 @@ share/kdenlive/transitions/
 share/kdenlive/transitions/affine.xml
 share/kdenlive/transitions/composite.xml
 share/kdenlive/transitions/dissolve.xml
+share/kdenlive/transitions/frei0r_addition.xml
+share/kdenlive/transitions/frei0r_addition_alpha.xml
+share/kdenlive/transitions/frei0r_alphaatop.xml
+share/kdenlive/transitions/frei0r_alphain.xml
+share/kdenlive/transitions/frei0r_alphaout.xml
+share/kdenlive/transitions/frei0r_alphaover.xml
+share/kdenlive/transitions/frei0r_alphaxor.xml
+share/kdenlive/transitions/frei0r_burn.xml
 share/kdenlive/transitions/frei0r_cairoaffineblend.xml
 share/kdenlive/transitions/frei0r_cairoblend.xml
+share/kdenlive/transitions/frei0r_color_only.xml
+share/kdenlive/transitions/frei0r_darken.xml
+share/kdenlive/transitions/frei0r_difference.xml
+share/kdenlive/transitions/frei0r_divide.xml
+share/kdenlive/transitions/frei0r_dodge.xml
+share/kdenlive/transitions/frei0r_grain_extract.xml
+share/kdenlive/transitions/frei0r_grain_merge.xml
+share/kdenlive/transitions/frei0r_hardlight.xml
+share/kdenlive/transitions/frei0r_hue.xml
+share/kdenlive/transitions/frei0r_lighten.xml
+share/kdenlive/transitions/frei0r_multiply.xml
+share/kdenlive/transitions/frei0r_overlay.xml
+share/kdenlive/transitions/frei0r_saturation.xml
+share/kdenlive/transitions/frei0r_screen.xml
+share/kdenlive/transitions/frei0r_softlight.xml
+share/kdenlive/transitions/frei0r_subtract.xml
+share/kdenlive/transitions/frei0r_uvmap.xml
+share/kdenlive/transitions/frei0r_value.xml
 share/kdenlive/transitions/luma.xml
+share/kdenlive/transitions/matte.xml
 share/kdenlive/transitions/mix.xml
 share/kdenlive/transitions/qtblend.xml
 share/kdenlive/transitions/region.xml
 share/kdenlive/transitions/slide.xml
+share/kdenlive/transitions/vqm.xml
 share/kdenlive/transitions/wipe.xml
 share/knotifications5/kdenlive.notifyrc
 share/knsrcfiles/
@@ -601,7 +630,6 @@ share/kxmlgui5/
 share/kxmlgui5/kdenlive/
 share/kxmlgui5/kdenlive/kdenliveui.rc
 share/locale/ar/LC_MESSAGES/kdenlive.mo
-share/locale/ast/LC_MESSAGES/kdenlive.mo
 share/locale/az/LC_MESSAGES/kdenlive.mo
 share/locale/bs/LC_MESSAGES/kdenlive.mo
 share/locale/ca/LC_MESSAGES/kdenlive.mo
@@ -624,6 +652,7 @@ share/locale/hu/LC_MESSAGES/kdenlive.mo
 share/locale/id/LC_MESSAGES/kdenlive.mo
 share/locale/it/LC_MESSAGES/kdenlive.mo
 share/locale/ja/LC_MESSAGES/kdenlive.mo
+share/locale/ka/LC_MESSAGES/kdenlive.mo
 share/locale/ko/LC_MESSAGES/kdenlive.mo
 share/locale/lt/LC_MESSAGES/kdenlive.mo
 share/locale/mr/LC_MESSAGES/kdenlive.mo

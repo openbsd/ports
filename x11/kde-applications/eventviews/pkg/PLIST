@@ -46,7 +46,6 @@ lib/cmake/KF5EventViews/KF5EventViewsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5EventViews/KF5EventViewsTargets.cmake
 @lib lib/libKF5EventViews.so.${LIBKF5EventViews_VERSION}
 share/kf5/mkspecs/qt_EventViews.pri
-share/kservicetypes5/calendardecoration.desktop
 share/locale/ar/LC_MESSAGES/libeventviews.mo
 share/locale/bg/LC_MESSAGES/libeventviews.mo
 share/locale/bs/LC_MESSAGES/libeventviews.mo
@@ -69,6 +68,7 @@ share/locale/hu/LC_MESSAGES/libeventviews.mo
 share/locale/ia/LC_MESSAGES/libeventviews.mo
 share/locale/it/LC_MESSAGES/libeventviews.mo
 share/locale/ja/LC_MESSAGES/libeventviews.mo
+share/locale/ka/LC_MESSAGES/libeventviews.mo
 share/locale/kk/LC_MESSAGES/libeventviews.mo
 share/locale/ko/LC_MESSAGES/libeventviews.mo
 share/locale/lt/LC_MESSAGES/libeventviews.mo

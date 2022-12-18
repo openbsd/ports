@@ -1,26 +1,24 @@
-USE_WXNEEDED =	Yes
-
 COMMENT =	KDE PIM mail related libraries
 DISTNAME =	kdepim-addons-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  adblocklibprivate                        1.0 # 5.13.2
-SHARED_LIBS +=  coisceim_widget                          1.0 # 5.13.2
-SHARED_LIBS +=  dkimverifyconfigure                      2.0 # 5.13.2
-SHARED_LIBS +=  grammarcommon                            1.2 # 5.13.2
-SHARED_LIBS +=  kaddressbookimportexportlibprivate       1.0 # 5.13.2
-SHARED_LIBS +=  kaddressbookmergelibprivate              1.0 # 5.13.2
-SHARED_LIBS +=  kmailgrammalecte                         1.0 # 5.13.2
-SHARED_LIBS +=  kmaillanguagetool                        4.1 # 5.13.2
-SHARED_LIBS +=  kmailmarkdown                            1.0 # 5.13.2
-SHARED_LIBS +=  kmailquicktextpluginprivate              1.1 # 5.13.2
-SHARED_LIBS +=  shorturlpluginprivate                    1.1 # 5.13.2
-SHARED_LIBS +=  expireaccounttrashfolderconfig           0.0 # 5.16.1
-SHARED_LIBS +=  folderconfiguresettings                  0.2 # 5.16.1
-SHARED_LIBS +=  kmailconfirmbeforedeleting               1.2 # 5.18.3
-SHARED_LIBS +=  scamconfiguresettings                    0.0 # 5.19.0
-SHARED_LIBS +=  openurlwithconfigure                     0.1 # 5.19.0
-SHARED_LIBS +=  akonadidatasetools                       0.0 # 0.0
+SHARED_LIBS +=  adblocklibprivate                        2.0 # 5.13.2
+SHARED_LIBS +=  coisceim_widget                          2.0 # 5.13.2
+SHARED_LIBS +=  dkimverifyconfigure                      3.0 # 5.13.2
+SHARED_LIBS +=  grammarcommon                            2.0 # 5.13.2
+SHARED_LIBS +=  kaddressbookimportexportlibprivate       2.0 # 5.13.2
+SHARED_LIBS +=  kaddressbookmergelibprivate              2.0 # 5.13.2
+SHARED_LIBS +=  kmailgrammalecte                         2.0 # 5.13.2
+SHARED_LIBS +=  kmaillanguagetool                        5.0 # 5.13.2
+SHARED_LIBS +=  kmailmarkdown                            2.0 # 5.13.2
+SHARED_LIBS +=  kmailquicktextpluginprivate              2.0 # 5.13.2
+SHARED_LIBS +=  shorturlpluginprivate                    2.0 # 5.13.2
+SHARED_LIBS +=  expireaccounttrashfolderconfig           1.0 # 5.16.1
+SHARED_LIBS +=  folderconfiguresettings                  1.0 # 5.16.1
+SHARED_LIBS +=  kmailconfirmbeforedeleting               2.0 # 5.18.3
+SHARED_LIBS +=  scamconfiguresettings                    1.0 # 5.19.0
+SHARED_LIBS +=  openurlwithconfigure                     1.0 # 5.19.0
+SHARED_LIBS +=  akonadidatasetools                       1.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiCalendar
 WANTLIB += KF5AkonadiContact KF5AkonadiCore KF5AkonadiMime KF5AkonadiNotes
@@ -122,13 +120,7 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		x11/qt5/qtwebengine
 
 TEST_IS_INTERACTIVE =	X11
-CXXFLAGS +=	-I${LOCALBASE}/include -I${LOCALBASE}/include/QGpgME -I${LOCALBASE}/include/gpgme++
-MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
 
-pre-configure:
-	sed -i -e "s,QGpgme,qgpgme,g" -e "s,Gpgmepp,gpgmepp,g" \
-		${WRKSRC}/kaddressbook/editorpages/CMakeLists.txt \
-		${WRKSRC}/plugins/messageviewer/bodypartformatter/gnupgwks/CMakeLists.txt \
-		${WRKSRC}/kaddressbook/importexportplugins/vcards/CMakeLists.txt
+CXXFLAGS +=	-I${LOCALBASE}/include/KF5/MessageViewer
 
 .include <bsd.port.mk>

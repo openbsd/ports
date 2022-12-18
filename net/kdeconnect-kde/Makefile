@@ -3,7 +3,7 @@ COMMENT =	KDE app that allows your devices to communicate
 DISTNAME =	kdeconnect-kde-${MODKDE_VERSION}
 
 SHARED_LIBS +=	kdeconnectcore		3.0 # 1.4
-SHARED_LIBS +=	kdeconnectinterfaces	3.0 # 1.4
+SHARED_LIBS +=	kdeconnectinterfaces	3.1 # 1.4
 SHARED_LIBS +=	kdeconnectpluginkcm	0.0 # 1.4
 
 CATEGORIES =	net
@@ -35,7 +35,8 @@ MODULES =	x11/kde-applications \
 
 BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/kf5/qqc2-desktop-style \
-		devel/kf5/kirigami2
+		devel/kf5/kirigami2 \
+		wayland/plasma-wayland-protocols
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/kf5/breeze-icons \
@@ -71,8 +72,7 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		x11/libfakekey \
 		x11/qt5/qtdeclarative \
 		x11/qt5/qtquickcontrols2 \
-		x11/qt5/qtx11extras \
-		wayland/plasma-wayland-protocols
+		x11/qt5/qtx11extras
 
 MODPY_ADJ_FILES =	nautilus-extension/kdeconnect-share.py
 

@@ -6,13 +6,13 @@ SHARED_LIBS +=  krdccore               2.1 # 5.0
 
 HOMEPAGE =	https://kde.org/applications/internet/org.kde.krdc
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Bookmarks
-WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
-WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5DNSSD KF5I18n KF5IconThemes
-WANTLIB += KF5KCMUtils KF5Notifications KF5NotifyConfig KF5Service
-WANTLIB += KF5Wallet KF5WidgetsAddons KF5WindowSystem KF5XmlGui
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
-WANTLIB += X11 c m ssh vncclient
+WANTLIB += ${COMPILER_LIBCXX} KF5Activities KF5Auth KF5AuthCore
+WANTLIB += KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
+WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5DNSSD
+WANTLIB += KF5I18n KF5IconThemes KF5KCMUtils KF5Notifications
+WANTLIB += KF5NotifyConfig KF5Service KF5Wallet KF5WidgetsAddons
+WANTLIB += KF5WindowSystem KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network
+WANTLIB += Qt5Widgets Qt5Xml X11 c m ssh vncclient
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_TRANSLATIONS = yes
@@ -40,6 +40,7 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kwallet \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kxmlgui \
+		devel/kf5/kactivities \
 		net/libvncserver \
 		security/libssh
 

@@ -97,6 +97,7 @@ share/locale/fi/LC_MESSAGES/kapman.mo
 share/locale/fr/LC_MESSAGES/kapman.mo
 share/locale/ga/LC_MESSAGES/kapman.mo
 share/locale/gl/LC_MESSAGES/kapman.mo
+share/locale/gu/LC_MESSAGES/kapman.mo
 share/locale/hi/LC_MESSAGES/kapman.mo
 share/locale/hr/LC_MESSAGES/kapman.mo
 share/locale/hu/LC_MESSAGES/kapman.mo
@@ -104,13 +105,16 @@ share/locale/id/LC_MESSAGES/kapman.mo
 share/locale/is/LC_MESSAGES/kapman.mo
 share/locale/it/LC_MESSAGES/kapman.mo
 share/locale/ja/LC_MESSAGES/kapman.mo
+share/locale/ka/LC_MESSAGES/kapman.mo
 share/locale/kk/LC_MESSAGES/kapman.mo
 share/locale/km/LC_MESSAGES/kapman.mo
 share/locale/ko/LC_MESSAGES/kapman.mo
 share/locale/lt/LC_MESSAGES/kapman.mo
 share/locale/lv/LC_MESSAGES/kapman.mo
+share/locale/mai/LC_MESSAGES/kapman.mo
 share/locale/ml/LC_MESSAGES/kapman.mo
 share/locale/mr/LC_MESSAGES/kapman.mo
+share/locale/ms/LC_MESSAGES/kapman.mo
 share/locale/nb/LC_MESSAGES/kapman.mo
 share/locale/nds/LC_MESSAGES/kapman.mo
 share/locale/nl/LC_MESSAGES/kapman.mo
@@ -124,7 +128,11 @@ share/locale/sk/LC_MESSAGES/kapman.mo
 share/locale/sl/LC_MESSAGES/kapman.mo
 share/locale/sq/LC_MESSAGES/kapman.mo
 share/locale/sr/LC_MESSAGES/kapman.mo
+share/locale/sr@ijekavian/LC_MESSAGES/kapman.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/kapman.mo
+share/locale/sr@latin/LC_MESSAGES/kapman.mo
 share/locale/sv/LC_MESSAGES/kapman.mo
+share/locale/th/LC_MESSAGES/kapman.mo
 share/locale/tr/LC_MESSAGES/kapman.mo
 share/locale/ug/LC_MESSAGES/kapman.mo
 share/locale/uk/LC_MESSAGES/kapman.mo

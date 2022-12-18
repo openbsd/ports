@@ -2,7 +2,7 @@ COMMENT =	PIM Akonadi calendar support library
 DISTNAME =	akonadi-calendar-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  KF5AkonadiCalendar     3.0 # 5.6
+SHARED_LIBS +=  KF5AkonadiCalendar     4.0 # 5.6
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiContact
 WANTLIB += KF5AkonadiCore KF5AkonadiMime KF5AkonadiWidgets KF5Auth

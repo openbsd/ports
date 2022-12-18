@@ -2,7 +2,7 @@ COMMENT =	KDE PIM incidence editor
 DISTNAME =	incidenceeditor-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  KF5IncidenceEditor    2.1 # 5.13.2
+SHARED_LIBS +=  KF5IncidenceEditor    3.0 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiCalendar
 WANTLIB += KF5AkonadiContact KF5AkonadiCore KF5AkonadiMime KF5AkonadiWidgets
@@ -12,10 +12,10 @@ WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5Contacts KF5CoreAddons
 WANTLIB += KF5EventViews KF5GrantleeTheme KF5I18n KF5IMAP KF5IconThemes
 WANTLIB += KF5IdentityManagement KF5ItemModels KF5JobWidgets KF5KIOCore
 WANTLIB += KF5KIOGui KF5KIOWidgets KF5Ldap KF5Libkdepim KF5MailTransportAkonadi
-WANTLIB += KF5Mime KF5PimCommon KF5PimCommonAkonadi KF5PimTextEdit
-WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KF5XmlGui KGantt Qt5Concurrent Qt5Core
-WANTLIB += Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets
+WANTLIB += KF5Mime KF5PimCommon KF5PimCommonAkonadi KF5PimCommonAutoCorrection
+WANTLIB += KF5PimTextEdit KF5Service KF5Solid KF5SonnetUi KF5TextWidgets
+WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui KGantt Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets
 WANTLIB += Qt5Xml X11 c m
 
 MODKDE5_TRANSLATIONS = yes

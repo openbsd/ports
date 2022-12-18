@@ -1,5 +1,27 @@
 @bin bin/kontrast
 share/applications/org.kde.kontrast.desktop
+share/doc/HTML/
+share/doc/HTML/ca/
+share/doc/HTML/ca/kontrast/
+share/doc/HTML/ca/kontrast/index.cache.bz2
+share/doc/HTML/ca/kontrast/index.docbook
+share/doc/HTML/en/
+share/doc/HTML/en/kontrast/
+share/doc/HTML/en/kontrast/index.cache.bz2
+share/doc/HTML/en/kontrast/index.docbook
+share/doc/HTML/en/kontrast/main.png
+share/doc/HTML/es/
+share/doc/HTML/es/kontrast/
+share/doc/HTML/es/kontrast/index.cache.bz2
+share/doc/HTML/es/kontrast/index.docbook
+share/doc/HTML/nl/
+share/doc/HTML/nl/kontrast/
+share/doc/HTML/nl/kontrast/index.cache.bz2
+share/doc/HTML/nl/kontrast/index.docbook
+share/doc/HTML/uk/
+share/doc/HTML/uk/kontrast/
+share/doc/HTML/uk/kontrast/index.cache.bz2
+share/doc/HTML/uk/kontrast/index.docbook
 share/icons/hicolor/scalable/apps/org.kde.kontrast.svg
 share/locale/ca/LC_MESSAGES/kontrast.mo
 share/locale/ca@valencia/LC_MESSAGES/kontrast.mo
@@ -14,6 +36,7 @@ share/locale/fi/LC_MESSAGES/kontrast.mo
 share/locale/fr/LC_MESSAGES/kontrast.mo
 share/locale/it/LC_MESSAGES/kontrast.mo
 share/locale/ja/LC_MESSAGES/kontrast.mo
+share/locale/ka/LC_MESSAGES/kontrast.mo
 share/locale/ko/LC_MESSAGES/kontrast.mo
 share/locale/lt/LC_MESSAGES/kontrast.mo
 share/locale/nl/LC_MESSAGES/kontrast.mo

@@ -3,6 +3,9 @@
 lib/qt5/plugins/kf5/parts/
 @so lib/qt5/plugins/kf5/parts/dragonpart.so
 @man man/man1/dragon.1
+man/sr@latin/
+man/sr@latin/man1/
+@man man/sr@latin/man1/dragon.1
 share/applications/org.kde.dragonplayer.desktop
 share/doc/HTML/ca/dragonplayer/
 share/doc/HTML/ca/dragonplayer/index.cache.bz2
@@ -58,6 +61,9 @@ share/doc/HTML/ru/dragonplayer/index.docbook
 share/doc/HTML/sr/dragonplayer/
 share/doc/HTML/sr/dragonplayer/index.cache.bz2
 share/doc/HTML/sr/dragonplayer/index.docbook
+share/doc/HTML/sr@latin/dragonplayer/
+share/doc/HTML/sr@latin/dragonplayer/index.cache.bz2
+share/doc/HTML/sr@latin/dragonplayer/index.docbook
 share/doc/HTML/sv/dragonplayer/
 share/doc/HTML/sv/dragonplayer/index.cache.bz2
 share/doc/HTML/sv/dragonplayer/index.docbook
@@ -127,9 +133,11 @@ share/locale/id/LC_MESSAGES/dragonplayer.mo
 share/locale/is/LC_MESSAGES/dragonplayer.mo
 share/locale/it/LC_MESSAGES/dragonplayer.mo
 share/locale/ja/LC_MESSAGES/dragonplayer.mo
+share/locale/ka/LC_MESSAGES/dragonplayer.mo
 share/locale/kk/LC_MESSAGES/dragonplayer.mo
 share/locale/km/LC_MESSAGES/dragonplayer.mo
 share/locale/ko/LC_MESSAGES/dragonplayer.mo
+share/locale/ku/LC_MESSAGES/dragonplayer.mo
 share/locale/lt/LC_MESSAGES/dragonplayer.mo
 share/locale/lv/LC_MESSAGES/dragonplayer.mo
 share/locale/mr/LC_MESSAGES/dragonplayer.mo
@@ -137,6 +145,7 @@ share/locale/nb/LC_MESSAGES/dragonplayer.mo
 share/locale/nds/LC_MESSAGES/dragonplayer.mo
 share/locale/nl/LC_MESSAGES/dragonplayer.mo
 share/locale/nn/LC_MESSAGES/dragonplayer.mo
+share/locale/oc/LC_MESSAGES/dragonplayer.mo
 share/locale/pa/LC_MESSAGES/dragonplayer.mo
 share/locale/pl/LC_MESSAGES/dragonplayer.mo
 share/locale/pt/LC_MESSAGES/dragonplayer.mo
@@ -147,7 +156,11 @@ share/locale/sk/LC_MESSAGES/dragonplayer.mo
 share/locale/sl/LC_MESSAGES/dragonplayer.mo
 share/locale/sq/LC_MESSAGES/dragonplayer.mo
 share/locale/sr/LC_MESSAGES/dragonplayer.mo
+share/locale/sr@ijekavian/LC_MESSAGES/dragonplayer.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/dragonplayer.mo
+share/locale/sr@latin/LC_MESSAGES/dragonplayer.mo
 share/locale/sv/LC_MESSAGES/dragonplayer.mo
+share/locale/th/LC_MESSAGES/dragonplayer.mo
 share/locale/tr/LC_MESSAGES/dragonplayer.mo
 share/locale/ug/LC_MESSAGES/dragonplayer.mo
 share/locale/uk/LC_MESSAGES/dragonplayer.mo

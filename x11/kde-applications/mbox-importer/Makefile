@@ -11,10 +11,12 @@ WANTLIB += KF5IdentityManagementWidgets KF5ItemModels KF5KIOCore
 WANTLIB += KF5Libkdepim KF5Libkleo KF5MailCommon KF5MailImporter
 WANTLIB += KF5MailImporterAkonadi KF5MessageComposer KF5MessageCore
 WANTLIB += KF5MessageViewer KF5Mime KF5MimeTreeParser KF5PimCommon
-WANTLIB += KF5PimCommonAkonadi KF5PimTextEdit KF5Service KF5WidgetsAddons
-WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets
-WANTLIB += Qt5Xml assuan c gpgme gpgmepp m qgpgme
+WANTLIB += KF5PimCommonAkonadi KF5PimCommonAutoCorrection KF5PimTextEdit
+WANTLIB += KF5Service KF5WidgetsAddons Qt5Concurrent Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5Xml assuan c gpgme
+WANTLIB += gpgmepp m qgpgme
 
+WANTLIB += lib/inotify/inotify
 
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
@@ -47,5 +49,7 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		x11/kde-applications/messagelib
 
 TEST_IS_INTERACTIVE =	X11
+
+CXXFLAGS +=	-I${LOCALBASE}/include/KF5/MessageViewer
 
 .include <bsd.port.mk>

@@ -4,7 +4,7 @@ CATEGORIES =	audio education
 
 HOMEPAGE =	https://minuet.kde.org/
 
-SHARED_LIBS +=  minuetinterfaces          3.0 # 0.3
+SHARED_LIBS +=  minuetinterfaces          3.1 # 0.3
 
 WANTLIB += ${COMPILER_LIBCXX} KF5CoreAddons KF5Crash KF5I18n Qt5Core
 WANTLIB += Qt5Gui Qt5Network Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickControls2

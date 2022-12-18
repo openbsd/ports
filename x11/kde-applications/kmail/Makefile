@@ -21,13 +21,13 @@ WANTLIB += KF5Ldap KF5Libkdepim KF5Libkleo KF5MailCommon KF5MailTransport
 WANTLIB += KF5MailTransportAkonadi KF5MessageComposer KF5MessageCore
 WANTLIB += KF5MessageList KF5MessageViewer KF5Mime KF5MimeTreeParser
 WANTLIB += KF5Notifications KF5NotifyConfig KF5Parts KF5PimCommon
-WANTLIB += KF5PimCommonAkonadi KF5PimTextEdit KF5Service KF5Solid
-WANTLIB += KF5SonnetUi KF5SyntaxHighlighting KF5TemplateParser
-WANTLIB += KF5TextWidgets KF5Tnef KF5Wallet KF5WebEngineViewer
-WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui KUserFeedbackCore
-WANTLIB += KUserFeedbackWidgets Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport Qt5Qml
-WANTLIB += Qt5QmlModels Qt5Quick Qt5WebChannel Qt5WebEngineCore
+WANTLIB += KF5PimCommonAkonadi KF5PimCommonAutoCorrection KF5PimTextEdit
+WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5SyntaxHighlighting
+WANTLIB += KF5TemplateParser KF5TextWidgets KF5Tnef KF5Wallet
+WANTLIB += KF5WebEngineViewer KF5WidgetsAddons KF5WindowSystem
+WANTLIB += KF5XmlGui KUserFeedbackCore KUserFeedbackWidgets Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport
+WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5WebChannel Qt5WebEngineCore
 WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml X11 assuan c
 WANTLIB += gpgme gpgmepp m qgpgme qt5keychain
 
@@ -109,5 +109,7 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		x11/qt5/qtwebengine
 
 TEST_IS_INTERACTIVE =	X11
+
+CXXFLAGS +=	-I${LOCALBASE}/include/KF5/MessageViewer
 
 .include <bsd.port.mk>

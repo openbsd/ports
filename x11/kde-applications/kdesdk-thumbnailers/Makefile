@@ -25,8 +25,4 @@ LIB_DEPENDS =	devel/gettext,-tools \
 		devel/kf5/kservice \
 		devel/kf5/kwidgetsaddons
 
-CFLAGS +=	-I${LOCALBASE}/include
-CXXFLAGS +=	-I${LOCALBASE}/include
-MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
-
 .include <bsd.port.mk>

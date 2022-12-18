@@ -2,7 +2,7 @@ COMMENT =	KDE PIM messaging library
 DISTNAME =	messagelib-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  KF5MessageComposer       11.0 # 5.13.2
+SHARED_LIBS +=  KF5MessageComposer       12.0 # 5.13.2
 SHARED_LIBS +=  KF5MessageCore           3.1 # 5.13.2
 SHARED_LIBS +=  KF5MessageList           6.0 # 5.13.2
 SHARED_LIBS +=  KF5MessageViewer         6.3 # 5.13.2
@@ -21,13 +21,14 @@ WANTLIB += KF5ItemModels KF5ItemViews KF5JobWidgets KF5KIOCore
 WANTLIB += KF5KIOFileWidgets KF5KIOGui KF5KIOWidgets KF5Libkdepim
 WANTLIB += KF5Libkleo KF5MailTransport KF5MailTransportAkonadi
 WANTLIB += KF5Mbox KF5Mime KF5Notifications KF5PimCommon KF5PimCommonAkonadi
-WANTLIB += KF5PimTextEdit KF5Service KF5Solid KF5SonnetCore KF5SonnetUi
-WANTLIB += KF5SyntaxHighlighting KF5TextWidgets KF5Wallet KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport Qt5Qml
-WANTLIB += Qt5QmlModels Qt5Quick Qt5WebChannel Qt5WebEngineCore
-WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml X11 assuan gpgme
-WANTLIB += gpgmepp m qca-qt5 qgpgme
+WANTLIB += KF5PimCommonAutoCorrection KF5PimTextEdit KF5Service
+WANTLIB += KF5Solid KF5SonnetCore KF5SonnetUi KF5SyntaxHighlighting
+WANTLIB += KF5TextWidgets KF5Wallet KF5WidgetsAddons KF5WindowSystem
+WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
+WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels
+WANTLIB += Qt5Quick Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
+WANTLIB += Qt5Widgets Qt5Xml X11 assuan gpgme gpgmepp m qca-qt5
+WANTLIB += qgpgme
 
 WANTLIB += lib/inotify/inotify
 
@@ -82,16 +83,5 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		x11/qt5/qtwebengine
 
 TEST_IS_INTERACTIVE =	X11
-
-CXXFLAGS +=	-I${LOCALBASE}/include -I${LOCALBASE}/include/QGpgME -I${LOCALBASE}/include/gpgme++
-MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
-
-# XXX fix me
-#CONFIGURE_ARGS +=	-DKDEPIM_RUN_AKONADI_TEST=OFF
-
-pre-configure:
-	find ${WRKSRC}/{messagecomposer,templateparser,mimetreeparser,messageviewer} \
-		-type f -name *.txt -exec sed -i \
-		-e "s,QGpgme,qgpgme,g" -e "s,Gpgmepp,gpgmepp,g" {} +
 
 .include <bsd.port.mk>

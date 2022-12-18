@@ -11,11 +11,12 @@ WANTLIB += KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
 WANTLIB += KF5DBusAddons KF5GlobalAccel KF5I18n KF5IdleTime KF5ItemViews
 WANTLIB += KF5JobWidgets KF5KIOCore KF5KIOFileWidgets KF5KIOGui
-WANTLIB += KF5KIOWidgets KF5NewStuff KF5NewStuffCore KF5Notifications
-WANTLIB += KF5NotifyConfig KF5Parts KF5Service KF5Solid KF5SonnetUi
-WANTLIB += KF5TextWidgets KF5Wallet KF5WidgetsAddons KF5WindowSystem
-WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Multimedia
-WANTLIB += Qt5Network Qt5Widgets Qt5Xml X11 c m qca-qt5
+WANTLIB += KF5KIOWidgets KF5NewStuff KF5NewStuffCore KF5NewStuffWidgets
+WANTLIB += KF5Notifications KF5NotifyConfig KF5Parts KF5Service
+WANTLIB += KF5Solid KF5SonnetUi KF5TextWidgets KF5Wallet KF5WidgetsAddons
+WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Multimedia Qt5Network Qt5Widgets Qt5Xml X11
+WANTLIB += c m qca-qt5
 
 # usual KDE rules:
 # LGPLv2.1+, GPLv2+, GPLv3

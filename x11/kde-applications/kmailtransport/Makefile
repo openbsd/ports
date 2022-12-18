@@ -2,7 +2,7 @@ COMMENT =	mail transport service
 DISTNAME =	kmailtransport-${VERSION}
 CATEGORIES =	mail devel
 
-SHARED_LIBS +=  KF5MailTransport             2.1 # 5.13.3
+SHARED_LIBS +=  KF5MailTransport             3.0 # 5.13.3
 SHARED_LIBS +=  KF5MailTransportAkonadi      2.0 # 5.13.3
 
 WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiCore KF5AkonadiMime KF5AkonadiWidgets

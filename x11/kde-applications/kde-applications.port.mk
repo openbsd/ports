@@ -1,4 +1,4 @@
-MODKDE_VERSION ?=		22.08.3
+MODKDE_VERSION ?=		22.12.0
 
 # Set to 'yes' if there are .desktop files under share/release-service/.
 .if defined(MODKDE5_DESKTOP_FILE) && ${MODKDE5_DESKTOP_FILE:L} == "yes"

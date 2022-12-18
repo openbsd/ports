@@ -4,7 +4,7 @@ CATEGORIES =	sysutils print
 
 HOMEPAGE =	https://kde.org/applications/utilities/org.kde.print-manager
 
-SHARED_LIBS +=  kcupslib          62.0 # 18.18.0
+SHARED_LIBS +=  kcupslib          63.0 # 18.18.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons

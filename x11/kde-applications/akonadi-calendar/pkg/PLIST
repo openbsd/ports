@@ -54,6 +54,7 @@ share/examples/akonadi-calendar/xdg/autostart/
 share/examples/akonadi-calendar/xdg/autostart/org.kde.kalendarac.desktop
 share/kf5/mkspecs/qt_AkonadiCalendar.pri
 share/knotifications5/kalendarac.notifyrc
+share/locale/ar/LC_MESSAGES/kalendarac.mo
 share/locale/ar/LC_MESSAGES/libakonadi-calendar5-serializer.mo
 share/locale/ar/LC_MESSAGES/libakonadi-calendar5.mo
 share/locale/az/LC_MESSAGES/kalendarac.mo
@@ -115,6 +116,9 @@ share/locale/it/LC_MESSAGES/libakonadi-calendar5.mo
 share/locale/ja/LC_MESSAGES/kalendarac.mo
 share/locale/ja/LC_MESSAGES/libakonadi-calendar5-serializer.mo
 share/locale/ja/LC_MESSAGES/libakonadi-calendar5.mo
+share/locale/ka/LC_MESSAGES/kalendarac.mo
+share/locale/ka/LC_MESSAGES/libakonadi-calendar5-serializer.mo
+share/locale/ka/LC_MESSAGES/libakonadi-calendar5.mo
 share/locale/kk/LC_MESSAGES/libakonadi-calendar5-serializer.mo
 share/locale/kk/LC_MESSAGES/libakonadi-calendar5.mo
 share/locale/km/LC_MESSAGES/libakonadi-calendar5-serializer.mo
@@ -125,6 +129,7 @@ share/locale/ko/LC_MESSAGES/libakonadi-calendar5.mo
 share/locale/lt/LC_MESSAGES/libakonadi-calendar5-serializer.mo
 share/locale/lt/LC_MESSAGES/libakonadi-calendar5.mo
 share/locale/lv/LC_MESSAGES/libakonadi-calendar5-serializer.mo
+share/locale/mai/LC_MESSAGES/libakonadi-calendar5.mo
 share/locale/mr/LC_MESSAGES/libakonadi-calendar5-serializer.mo
 share/locale/mr/LC_MESSAGES/libakonadi-calendar5.mo
 share/locale/nb/LC_MESSAGES/libakonadi-calendar5-serializer.mo
@@ -157,6 +162,12 @@ share/locale/sl/LC_MESSAGES/libakonadi-calendar5-serializer.mo
 share/locale/sl/LC_MESSAGES/libakonadi-calendar5.mo
 share/locale/sr/LC_MESSAGES/libakonadi-calendar5-serializer.mo
 share/locale/sr/LC_MESSAGES/libakonadi-calendar5.mo
+share/locale/sr@ijekavian/LC_MESSAGES/libakonadi-calendar5-serializer.mo
+share/locale/sr@ijekavian/LC_MESSAGES/libakonadi-calendar5.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/libakonadi-calendar5-serializer.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/libakonadi-calendar5.mo
+share/locale/sr@latin/LC_MESSAGES/libakonadi-calendar5-serializer.mo
+share/locale/sr@latin/LC_MESSAGES/libakonadi-calendar5.mo
 share/locale/sv/LC_MESSAGES/kalendarac.mo
 share/locale/sv/LC_MESSAGES/libakonadi-calendar5-serializer.mo
 share/locale/sv/LC_MESSAGES/libakonadi-calendar5.mo

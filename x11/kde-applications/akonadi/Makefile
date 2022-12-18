@@ -62,7 +62,6 @@ LIB_DEPENDS =		databases/sqlite3 \
 CONFIGURE_ARGS =	-DDATABASE_BACKEND=SQLITE
 
 TEST_IS_INTERACTIVE =	X11
-CXXFLAGS +=         -std=c++17
 
 post-extract:
 	@ln -sf ${LOCALBASE}/bin/gtar ${WRKDIR}/bin/tar

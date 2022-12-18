@@ -73,9 +73,6 @@ share/kubrick/p333X2.kbk
 share/kubrick/p333X6.kbk
 share/kubrick/themes/
 share/kubrick/themes/default.svgz
-share/kxmlgui5/
-share/kxmlgui5/kubrick/
-share/kxmlgui5/kubrick/kubrickui.rc
 share/locale/bg/LC_MESSAGES/kubrick.mo
 share/locale/bs/LC_MESSAGES/kubrick.mo
 share/locale/ca/LC_MESSAGES/kubrick.mo
@@ -99,11 +96,13 @@ share/locale/id/LC_MESSAGES/kubrick.mo
 share/locale/is/LC_MESSAGES/kubrick.mo
 share/locale/it/LC_MESSAGES/kubrick.mo
 share/locale/ja/LC_MESSAGES/kubrick.mo
+share/locale/ka/LC_MESSAGES/kubrick.mo
 share/locale/kk/LC_MESSAGES/kubrick.mo
 share/locale/km/LC_MESSAGES/kubrick.mo
 share/locale/ko/LC_MESSAGES/kubrick.mo
 share/locale/lt/LC_MESSAGES/kubrick.mo
 share/locale/lv/LC_MESSAGES/kubrick.mo
+share/locale/mai/LC_MESSAGES/kubrick.mo
 share/locale/ml/LC_MESSAGES/kubrick.mo
 share/locale/mr/LC_MESSAGES/kubrick.mo
 share/locale/nb/LC_MESSAGES/kubrick.mo
@@ -118,6 +117,9 @@ share/locale/ru/LC_MESSAGES/kubrick.mo
 share/locale/sk/LC_MESSAGES/kubrick.mo
 share/locale/sl/LC_MESSAGES/kubrick.mo
 share/locale/sr/LC_MESSAGES/kubrick.mo
+share/locale/sr@ijekavian/LC_MESSAGES/kubrick.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/kubrick.mo
+share/locale/sr@latin/LC_MESSAGES/kubrick.mo
 share/locale/sv/LC_MESSAGES/kubrick.mo
 share/locale/tr/LC_MESSAGES/kubrick.mo
 share/locale/ug/LC_MESSAGES/kubrick.mo

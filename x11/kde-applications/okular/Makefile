@@ -4,7 +4,7 @@ CATEGORIES =	textproc
 
 HOMEPAGE =	https://okular.kde.org/
 
-SHARED_LIBS +=  Okular5Core               4.0 # 9.0
+SHARED_LIBS +=  Okular5Core               4.1 # 9.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Activities KF5Archive KF5Auth
 WANTLIB += KF5AuthCore KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore

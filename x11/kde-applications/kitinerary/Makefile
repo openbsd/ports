@@ -2,7 +2,7 @@ COMMENT =	KDE itinerary data model and itinerary extraction library
 DISTNAME =	kitinerary-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  KPimItinerary       5.0 # 5.13.2
+SHARED_LIBS +=  KPimItinerary       6.0 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5CalendarCore KF5Codecs
 WANTLIB += KF5Contacts KF5I18n KF5I18nLocaleData KF5Mime KPimPkPass
