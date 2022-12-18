@@ -2,7 +2,7 @@ COMMENT=		GObject Introspection
 
 GNOME_VERSION=		1.74.0
 GNOME_PROJECT=		gobject-introspection
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		devel
 
@@ -30,6 +30,15 @@ BUILD_DEPENDS=		devel/bison \
 RUN_DEPENDS=		graphics/cairo \
 			textproc/py-markdown${MODPY_FLAVOR} \
 			www/py-mako${MODPY_FLAVOR}
+
+# g-ir-scanner uses distutils functions. these are overridden by setuptools
+# if setuptools is present (see site-packages/distutils-precedence.pth);
+# enforce a dependency to avoid the case where setuptools might be removed
+# mid-run, causing g-ir-scanner to fail.
+#
+# could be removed if/when gobject-introspection stops using distutils;
+# see https://gitlab.gnome.org/GNOME/gobject-introspection/-/issues/395
+RUN_DEPENDS+=		devel/py-setuptools${MODPY_FLAVOR}
 
 # XXX: tests/scanner/test_transformer.py fails otherwise
 TEST_DEPENDS+=		textproc/gsed
