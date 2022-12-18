@@ -4,7 +4,7 @@ commit 61be4ae30e52a5ffcfa9212b9b81d4e06225c2ea
 Index: libs/uv/uv.c
 --- libs/uv/uv.c.orig
 +++ libs/uv/uv.c
-@@ -94,6 +94,46 @@ static void on_write( uv_write_t *wr, int status ) {
+@@ -96,6 +96,46 @@ static void on_write( uv_write_t *wr, int status ) {
  	on_close((uv_handle_t*)wr);
  }
  

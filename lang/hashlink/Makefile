@@ -3,13 +3,11 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	virtual machine for Haxe
 
-DISTNAME =	hashlink-1.11pl0
-REVISION =	0
 GH_ACCOUNT =	HaxeFoundation
 GH_PROJECT =	hashlink
-GH_COMMIT =	e31db78d8e0a07e2be6816fbd8f63ad28afc8ff1
+GH_TAGNAME =	1.12
 
-SHARED_LIBS =	hl	0.1	# 1.11
+SHARED_LIBS =	hl	1.0	# 1.12
 
 CATEGORIES =	lang
 HOMEPAGE =	https://hashlink.haxe.org/
@@ -19,7 +17,7 @@ MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += SDL2 c m mbedcrypto mbedtls mbedx509 openal png pthread
-WANTLIB += turbojpeg uv vorbisfile z
+WANTLIB += sqlite3 turbojpeg uv vorbisfile z
 
 # C11
 COMPILER =		base-clang ports-gcc
@@ -27,6 +25,7 @@ COMPILER_LANGS =	c
 
 LIB_DEPENDS =	audio/libvorbis \
 		audio/openal \
+		databases/sqlite3 \
 		devel/libuv \
 		devel/sdl2 \
 		graphics/jpeg \

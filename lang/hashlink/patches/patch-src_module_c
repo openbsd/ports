@@ -3,7 +3,7 @@ ignore non-matching function signature
 Index: src/module.c
 --- src/module.c.orig
 +++ src/module.c
-@@ -490,8 +490,10 @@ static void hl_module_init_natives( hl_module *m ) {
+@@ -509,8 +509,10 @@ static void hl_module_init_natives( hl_module *m ) {
  		p = tmp;
  		append_type(&p,n->t);
  		*p++ = 0;

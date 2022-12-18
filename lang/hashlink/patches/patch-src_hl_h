@@ -1,12 +1,9 @@
-add OpenBSD to ifdef
-don't typedef char{16,32}_t in clang with C++
-
-Use uint16_t for uchar otherwise. char16_t doesn't exist
+work around not having uchar.h
 
 Index: src/hl.h
 --- src/hl.h.orig
 +++ src/hl.h
-@@ -234,15 +234,17 @@ typedef uint16_t uchar;
+@@ -234,7 +234,7 @@ typedef uint16_t uchar;
  #	define USTR(str)	u##str
  #else
  #	include <stdarg.h>
@@ -14,15 +11,4 @@ Index: src/hl.h
 +#if defined(HL_IOS) || defined(HL_TVOS) || defined(HL_MAC) || defined(__OpenBSD__)
  #include <stddef.h>
  #include <stdint.h>
-+#if defined(__clang__) && !defined(__cplusplus)
- typedef uint16_t char16_t;
- typedef uint32_t char32_t;
-+#endif
- #else
- #	include <uchar.h>
- #endif
--typedef char16_t uchar;
-+typedef uint16_t uchar;
- #	undef USTR
- #	define USTR(str)	u##str
- #endif
+ #if !defined(__cplusplus) || __cplusplus < 201103L

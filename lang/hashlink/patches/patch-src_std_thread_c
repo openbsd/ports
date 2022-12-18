@@ -3,7 +3,7 @@ enable hl_thread_id for OpenBSD using getthrid(2)
 Index: src/std/thread.c
 --- src/std/thread.c.orig
 +++ src/std/thread.c
-@@ -483,6 +483,8 @@ HL_PRIM int hl_thread_id() {
+@@ -772,6 +772,8 @@ HL_PRIM int hl_thread_id() {
  	uint64_t tid64;
  	pthread_threadid_np(NULL, &tid64);
  	return (pid_t)tid64;

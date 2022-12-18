@@ -16,12 +16,12 @@ Index: Makefile
  INSTALL_BIN_DIR ?= $(PREFIX)/bin
 @@ -9,12 +7,12 @@ INSTALL_INCLUDE_DIR ?= $(PREFIX)/include
  
- LIBS=fmt sdl ssl openal ui uv mysql
+ LIBS=fmt sdl ssl openal ui uv mysql sqlite
  
--CFLAGS = -Wall -O3 -I src -msse2 -mfpmath=sse -std=c11 -I include -I include/pcre -I include/mikktspace -I include/minimp3 -D LIBHL_EXPORTS
+-CFLAGS = -Wall -O3 -I src -msse2 -mfpmath=sse -std=c11 -D LIBHL_EXPORTS
 -LFLAGS = -L. -lhl
 +CFLAGS = ${CFLAGS} -I src -I${LOCALBASE}/include -I${X11BASE}/include -std=c11 -I include -I include/pcre -I include/mikktspace -I include/minimp3 -D LIBHL_EXPORTS
-+LFLAGS = -L. -L${LOCALBASE}/lib -lhl
++LFLAGS = -L. -L${LOCALBASE} -lhl
  EXTRA_LFLAGS ?=
 -LIBFLAGS =
 -HLFLAGS = -ldl
@@ -31,14 +31,14 @@ Index: Makefile
 +LIBEXT = so.${LIBhl_VERSION}
  LIBTURBOJPEG = -lturbojpeg
  
- PCRE = include/pcre/pcre_chartables.o include/pcre/pcre_compile.o include/pcre/pcre_dfa_exec.o \
-@@ -88,16 +86,9 @@ LIB += ${HL_DEBUG}
+ PCRE_INCLUDE = -I include/pcre
+@@ -96,16 +94,9 @@ LIB += ${HL_DEBUG}
  else
  
  # Linux
 -CFLAGS += -m$(MARCH) -fPIC -pthread -fno-omit-frame-pointer
 +CFLAGS += -fPIC -pthread -fno-omit-frame-pointer
- LFLAGS += -lm -Wl,-rpath,. -Wl,--export-dynamic -Wl,--no-undefined
+ LFLAGS += -lm -Wl,-rpath,.:'$$ORIGIN':$(INSTALL_LIB_DIR) -Wl,--export-dynamic -Wl,--no-undefined
  
 -ifeq ($(MARCH),32)
 -CFLAGS += -I /usr/include/i386-linux-gnu
@@ -50,7 +50,7 @@ Index: Makefile
  LIBOPENAL = -lopenal
  RELEASE_NAME = linux
  
-@@ -115,7 +106,6 @@ endif
+@@ -123,7 +114,6 @@ endif
  all: libhl hl libs
  
  install:
@@ -58,16 +58,68 @@ Index: Makefile
  	mkdir -p $(INSTALL_BIN_DIR)
  	cp hl $(INSTALL_BIN_DIR)
  	mkdir -p $(INSTALL_LIB_DIR)
-@@ -131,7 +121,7 @@ uninstall:
+@@ -139,46 +129,46 @@ uninstall:
  libs: $(LIBS)
+ 
+ ./include/pcre/%.o: include/pcre/%.c
+-	${CC} ${CFLAGS} -o $@ -c $< ${PCRE_FLAGS}
++	${CC} $(CFLAGS) -o $@ -c $< ${PCRE_FLAGS}
+ 
+ src/std/regexp.o: src/std/regexp.c
+-	${CC} ${CFLAGS} -o $@ -c $< ${PCRE_FLAGS}
++	${CC} $(CFLAGS) -o $@ -c $< ${PCRE_FLAGS}
  
  libhl: ${LIB}
 -	${CC} -o libhl.$(LIBEXT) -m${MARCH} ${LIBFLAGS} -shared ${LIB} -lpthread -lm
 +	${CC} -o libhl.$(LIBEXT) ${LIBFLAGS} -shared ${LIB} -lpthread -lm
  
  hlc: ${BOOT}
- 	${CC} ${CFLAGS} -o hlc ${BOOT} ${LFLAGS} ${EXTRA_LFLAGS}
-@@ -221,7 +211,7 @@ codesign_osx:
+-	${CC} ${CFLAGS} -o hlc ${BOOT} ${LFLAGS} ${EXTRA_LFLAGS}
++	${CC} $(CFLAGS) -o hlc ${BOOT} ${LFLAGS} ${EXTRA_LFLAGS}
+ 
+ hl: ${HL} libhl
+-	${CC} ${CFLAGS} -o hl ${HL} ${LFLAGS} ${EXTRA_LFLAGS} ${HLFLAGS}
++	${CC} $(CFLAGS) -o hl ${HL} ${LFLAGS} ${EXTRA_LFLAGS} ${HLFLAGS}
+ 
+ libs/fmt/%.o: libs/fmt/%.c
+-	${CC} ${CFLAGS} -o $@ -c $< ${FMT_INCLUDE}
++	${CC} $(CFLAGS) -o $@ -c $< ${FMT_INCLUDE}
+ 
+ fmt: ${FMT} libhl
+-	${CC} ${CFLAGS} -shared -o fmt.hdll ${FMT} ${LIBFLAGS} -L. -lhl -lpng $(LIBTURBOJPEG) -lz -lvorbisfile
++	${CC} $(CFLAGS) -shared -o fmt.hdll ${FMT} ${LIBFLAGS} -L. -lhl -lpng $(LIBTURBOJPEG) -lz -lvorbisfile
+ 
+ sdl: ${SDL} libhl
+-	${CC} ${CFLAGS} -shared -o sdl.hdll ${SDL} ${LIBFLAGS} -L. -lhl -lSDL2 $(LIBOPENGL)
++	${CC} $(CFLAGS) -shared -o sdl.hdll ${SDL} ${LIBFLAGS} -L. -lhl -lSDL2 $(LIBOPENGL)
+ 
+ openal: ${OPENAL} libhl
+-	${CC} ${CFLAGS} -shared -o openal.hdll ${OPENAL} ${LIBFLAGS} -L. -lhl $(LIBOPENAL)
++	${CC} $(CFLAGS) -shared -o openal.hdll ${OPENAL} ${LIBFLAGS} -L. -lhl $(LIBOPENAL)
+ 
+ ssl: ${SSL} libhl
+-	${CC} ${CFLAGS} -shared -o ssl.hdll ${SSL} ${LIBFLAGS} -L. -lhl -lmbedtls -lmbedx509 -lmbedcrypto $(LIBSSL)
++	${CC} $(CFLAGS) -shared -o ssl.hdll ${SSL} ${LIBFLAGS} -L. -lhl -lmbedtls -lmbedx509 -lmbedcrypto $(LIBSSL)
+ 
+ ui: ${UI} libhl
+-	${CC} ${CFLAGS} -shared -o ui.hdll ${UI} ${LIBFLAGS} -L. -lhl
++	${CC} $(CFLAGS) -shared -o ui.hdll ${UI} ${LIBFLAGS} -L. -lhl
+ 
+ uv: ${UV} libhl
+-	${CC} ${CFLAGS} -shared -o uv.hdll ${UV} ${LIBFLAGS} -L. -lhl -luv
++	${CC} $(CFLAGS) -shared -o uv.hdll ${UV} ${LIBFLAGS} -L. -lhl -luv
+ 
+ mysql: ${MYSQL} libhl
+-	${CC} ${CFLAGS} -shared -o mysql.hdll ${MYSQL} ${LIBFLAGS} -L. -lhl
++	${CC} $(CFLAGS) -shared -o mysql.hdll ${MYSQL} ${LIBFLAGS} -L. -lhl
+ 
+ sqlite: ${SQLITE} libhl
+-	${CC} ${CFLAGS} -shared -o sqlite.hdll ${SQLITE} ${LIBFLAGS} -L. -lhl -lsqlite3
++	${CC} $(CFLAGS) -shared -o sqlite.hdll ${SQLITE} ${LIBFLAGS} -L. -lhl -lsqlite3
+ 
+ mesa:
+ 	(cd libs/mesa && make)
+@@ -241,7 +231,7 @@ codesign_osx:
  .SUFFIXES : .c .o
  
  .c.o :
@@ -75,4 +127,4 @@ Index: Makefile
 +	${CC} $(CFLAGS) -o $@ -c $<
  
  clean_o:
- 	rm -f ${STD} ${BOOT} ${RUNTIME} ${PCRE} ${HL} ${FMT} ${SDL} ${SSL} ${OPENAL} ${UI} ${UV} ${HL_DEBUG}
+ 	rm -f ${STD} ${BOOT} ${RUNTIME} ${PCRE} ${HL} ${FMT} ${SDL} ${SSL} ${OPENAL} ${UI} ${UV} ${MYSQL} ${SQLITE} ${HL_DEBUG}
