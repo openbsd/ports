@@ -1,13 +1,11 @@
 # Don't bother on non-mono archs.
 ONLY_FOR_ARCHS =	${MONO_ARCHS}
 
-V =		3.0
+V =		3.1
 COMMENT =	run FNA/XNA games on OpenBSD
 DISTNAME =	fnaify-${V}
 CATEGORIES =	games
-REVISION =	0
 
-HOMEPAGE =	https://www.PlayOnBSD.com
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 
 # ISC
