@@ -1,18 +1,8 @@
-- Remove compiler flags
-- Build and install docs by default
+Build and install docs by default
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -56,7 +56,7 @@ file(GLOB PROJECT_SOURCES *.c)
- 
- set(PROJECT_DEFINITIONS "_GNU_SOURCE")
- 
--set(PROJECT_FLAGS "-std=gnu99 -pedantic -Wall -Wextra -Wno-language-extension-token")
-+set(PROJECT_FLAGS "-std=gnu99 -pedantic -Wall -Wextra")
- if(APPLE)
-   set(PROJECT_FLAGS "${PROJECT_FLAGS} -Wno-deprecated-declarations")
- endif()
 @@ -77,8 +77,9 @@ if (CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
    target_link_libraries(${PROJECT_NAME} "-lkvm")
  endif (CMAKE_SYSTEM_NAME MATCHES "OpenBSD")

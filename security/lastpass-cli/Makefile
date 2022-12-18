@@ -1,8 +1,7 @@
 COMMENT =	LastPass command line interface tool
 
-V =		1.3.3
+V =		1.3.4
 DISTNAME =	lastpass-cli-${V}
-REVISION =	3
 
 CATEGORIES =	security
 
@@ -18,16 +17,13 @@ WANTLIB =	c crypto curl kvm ssl xml2
 MASTER_SITES =	${HOMEPAGE}/releases/download/v${V}/
 
 MODULES =	devel/cmake
+
 BUILD_DEPENDS =	shells/bash-completion \
 		textproc/asciidoc
 LIB_DEPENDS =	net/curl \
 		textproc/libxml
 TEST_DEPENDS =	${BUILD_DEPENDS} \
 		shells/bash
-
-do-extract:
-	mkdir ${WRKSRC} && \
-		tar -C ${WRKSRC} -zxf ${FULLDISTDIR}/${DISTNAME}.tar.gz
 
 do-test:
 	cd ${WRKSRC}/test && sed -i 's,#!/bin/bash,#!${LOCALBASE}/bin/bash,' *
