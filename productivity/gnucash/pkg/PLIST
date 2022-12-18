@@ -195,6 +195,7 @@ include/gnucash/qof-string-cache.h
 include/gnucash/qof.h
 include/gnucash/qofbackend.h
 include/gnucash/qofbook.h
+include/gnucash/qofbook.hpp
 include/gnucash/qofbookslots.h
 include/gnucash/qofchoice.h
 include/gnucash/qofclass.h
@@ -1501,6 +1502,7 @@ share/locale/ks/LC_MESSAGES/gnucash.mo
 share/locale/lt/LC_MESSAGES/gnucash.mo
 share/locale/lv/LC_MESSAGES/gnucash.mo
 share/locale/mai/LC_MESSAGES/gnucash.mo
+share/locale/mk/LC_MESSAGES/gnucash.mo
 share/locale/mni/
 share/locale/mni/LC_MESSAGES/
 share/locale/mni/LC_MESSAGES/gnucash.mo
