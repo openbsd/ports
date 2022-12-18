@@ -1,4 +1,4 @@
-V=		4.5.0
+V=		4.5.1
 COMMENT=	motion detection software for video
 
 GH_ACCOUNT=	Motion-Project
