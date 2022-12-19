@@ -1,7 +1,7 @@
 Index: websockify/websockifyserver.py
 --- websockify/websockifyserver.py.orig
 +++ websockify/websockifyserver.py
-@@ -469,15 +469,6 @@ class WebSockifyServer(object):
+@@ -451,15 +451,6 @@ class WebSockifyServer():
  
              if  tcp_keepalive:
                  sock.setsockopt(socket.SOL_SOCKET, socket.SO_KEEPALIVE, 1)
