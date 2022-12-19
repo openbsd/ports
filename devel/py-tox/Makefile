@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	3.25.1
 DISTNAME =	tox-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	devel
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://tox.readthedocs.io/en/latest/
 
@@ -21,6 +21,7 @@ RUN_DEPENDS =	devel/py-py${MODPY_FLAVOR} \
 		devel/py-pluggy${MODPY_FLAVOR} \
 		devel/py-six${MODPY_FLAVOR} \
 		devel/py-virtualenv${MODPY_FLAVOR} \
+		textproc/py-toml${MODPY_FLAVOR} \
 		sysutils/py-filelock${MODPY_FLAVOR} \
 		sysutils/py-packaging${MODPY_FLAVOR}
 TEST_DEPENDS =	devel/py-flaky${MODPY_FLAVOR} \
