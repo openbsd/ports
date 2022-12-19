@@ -1,11 +1,10 @@
 # using bundled c-ares which is patched for TTL support
 COMMENT =		python interface for c-ares
 
-MODPY_EGG_VERSION =	4.2.2
+MODPY_EGG_VERSION =	4.3.0
 DISTNAME =		pycares-${MODPY_EGG_VERSION}
 PKGNAME =		py-cares-${MODPY_EGG_VERSION}
 CATEGORIES =		net
-REVISION =		1
 
 # MIT
 PERMIT_PACKAGE =	Yes
@@ -16,7 +15,7 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
-MODPY_PYTEST_ARGS =	tests/tests.py
+# some tests need network
 
 USE_GMAKE =		Yes
 
