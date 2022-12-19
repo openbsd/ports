@@ -1,0 +1,22 @@
+tiff 4.5 removed private symbols/function that hylafax was never supposed to
+used anyway - copy them from tiff 4.4 source.
+
+https://gitlab.com/libtiff/libtiff/-/issues/504
+Index: faxd/tif_fax3.h
+--- faxd/tif_fax3.h.orig
++++ faxd/tif_fax3.h
+@@ -57,13 +57,7 @@ typedef	void (*TIFFFaxFillFunc)(unsigned char*, tiff_r
+ /*
+  * The default run filler; made external for other decoders.
+  */
+-#if defined(__cplusplus)
+-extern "C" {
+-#endif
+-extern	void _TIFFFax3fillruns(unsigned char*, tiff_runlen_t*, tiff_runlen_t*, tiff_runlen_t);
+-#if defined(__cplusplus)
+-}
+-#endif
++void shopliftedfrom_TIFFFax3fillruns(unsigned char*, tiff_runlen_t*, tiff_runlen_t*, tiff_runlen_t);
+ 
+ 
+ /* finite state machine codes */
