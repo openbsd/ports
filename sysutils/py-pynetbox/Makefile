@@ -14,14 +14,13 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-MODPY_PYBUILD =		setuptools
+MODPY_PYBUILD =		setuptools_scm
 MODPY_PI =		Yes
 MODPY_PYTEST_ARGS =	--ignore=tests/integration tests
 
 FLAVORS =		python3
 FLAVOR =		python3
 
-BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}
 RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR} \
 			www/py-requests${MODPY_FLAVOR}
 

@@ -15,10 +15,8 @@ HOMEPAGE =		https://github.com/jd/tenacity
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_PYBUILD =		setuptools
+MODPY_PYBUILD =		setuptools_scm
 MODPY_PI =		Yes
-
-BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}
 
 # one test fails if typeguard is missing (currently not in ports)
 TEST_DEPENDS =		www/py-tornado${MODPY_FLAVOR}

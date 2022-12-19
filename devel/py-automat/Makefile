@@ -15,12 +15,10 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+MODPY_PYBUILD =		setuptools_scm
 MODPY_PYTEST_ARGS =	lib/automat/_test/
 
-BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR} \
-			textproc/py-m2r${MODPY_FLAVOR}
-
+BUILD_DEPENDS =		textproc/py-m2r${MODPY_FLAVOR}
 RUN_DEPENDS =		devel/py-attrs${MODPY_FLAVOR} \
 			devel/py-six${MODPY_FLAVOR}
 

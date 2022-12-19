@@ -1,4 +1,4 @@
-COMMENT =	 	X11 library for Python
+COMMENT =		X11 library for Python
 
 GH_ACCOUNT =		python-xlib
 GH_PROJECT =		python-xlib
@@ -13,14 +13,13 @@ PERMIT_PACKAGE =	Yes
 
 MODULES=		lang/python
 
-BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR} \
-			devel/py-six${MODPY_FLAVOR}
+BUILD_DEPENDS =		devel/py-six${MODPY_FLAVOR}
 RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR}
 TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR}
 
 TEST_IS_INTERACTIVE =	x11
 
-MODPY_PYBUILD =		setuptools
+MODPY_PYBUILD =		setuptools_scm
 
 FLAVORS =		python3
 FLAVOR =		python3

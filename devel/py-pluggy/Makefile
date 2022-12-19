@@ -16,9 +16,7 @@ FLAVORS =		python3
 FLAVOR =		python3
 
 MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
-
-BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}
+MODPY_PYBUILD =		setuptools_scm
 
 TEST_DEPENDS =		devel/py-atomicwrites${MODPY_FLAVOR} \
 			devel/py-test-benchmark${MODPY_FLAVOR}
