@@ -1,0 +1,8 @@
+PyGeoIf provides a GeoJSON-like protocol for geo-spatial (GIS) vector data.
+
+You may think of pygeoif as a shapely ultralight which lets you
+construct geometries and perform very basic operations like reading and
+writing geometries from/to WKT, constructing line strings out of points,
+polygons from linear rings, multi polygons from polygons, etc. It was
+inspired by shapely and implements the geometries in a way that when you
+are familiar with shapely you feel right at home with pygeoif.
