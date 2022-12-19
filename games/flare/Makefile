@@ -1,7 +1,7 @@
 COMMENT-main =		free/libre action roleplaying engine
 COMMENT-data =		free/libre action roleplaying engine data
 
-V = 			1.13.04
+V = 			1.14
 DISTNAME = 		flare.${V}
 PKGNAME =		flare-${V}
 

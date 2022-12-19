@@ -24,6 +24,7 @@ share/flare/mods/default/engine/languages.txt
 share/flare/mods/default/engine/misc.txt
 share/flare/mods/default/engine/primary_stats.txt
 share/flare/mods/default/engine/resolutions.txt
+share/flare/mods/default/engine/resource_stats.txt
 share/flare/mods/default/engine/tileset_config.txt
 share/flare/mods/default/engine/tooltips.txt
 share/flare/mods/default/fonts/
@@ -133,6 +134,8 @@ share/flare/mods/default/menus/gameload.txt
 share/flare/mods/default/menus/gamenew.txt
 share/flare/mods/default/menus/gametitle.txt
 share/flare/mods/default/menus/movement_type.txt
+share/flare/mods/empyrean_campaign/powers/base/items/fireball_scroll.txt
+share/flare/mods/empyrean_campaign/powers/base/items/icebolt_scroll.txt
 share/flare/mods/gcw0_defaults/
 share/flare/mods/gcw0_defaults/engine/
 share/flare/mods/gcw0_defaults/engine/default_keybindings.txt
