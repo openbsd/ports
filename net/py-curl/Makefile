@@ -1,10 +1,9 @@
 COMMENT=	Python interface to cURL library
 
-MODPY_EGG_VERSION=	7.45.1
+MODPY_EGG_VERSION=	7.45.2
 DISTNAME=	pycurl-${MODPY_EGG_VERSION}
 PKGNAME=	py-curl-${MODPY_EGG_VERSION}
 CATEGORIES=	net
-REVISION=	1
 
 HOMEPAGE=	http://pycurl.io/
 
