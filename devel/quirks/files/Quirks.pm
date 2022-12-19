@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1483 2022/12/09 06:48:48 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.1484 2022/12/19 15:03:25 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1774,6 +1774,7 @@ setup_obsolete_reason(
 	6 => 'py-sqlite2',
 	31 => 'py-ipaddr',
 	3 => 'hlfl',
+	6 => 'caribou',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
