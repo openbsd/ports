@@ -26,7 +26,6 @@ TEST_DEPENDS =		devel/py-attrs${MODPY_FLAVOR} \
 			devel/py-freezegun${MODPY_FLAVOR} \
 			devel/py-py${MODPY_FLAVOR} \
 			devel/py-test-benchmark${MODPY_FLAVOR} \
-			devel/py-test-cov${MODPY_FLAVOR} \
-			devel/py-tox${MODPY_FLAVOR}
+			devel/py-test-cov${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
