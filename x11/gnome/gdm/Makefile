@@ -2,7 +2,7 @@ COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		43.0
-REVISION=		2
+REVISION=		3
 
 GH_ACCOUNT=		rnagy
 GH_PROJECT=		gdm
@@ -51,9 +51,6 @@ BUILD_DEPENDS +=	devel/dconf
 # cyclic dependency
 # gnome-initial-setup is an opt-in handled in meta/gnome
 #RUN_DEPENDS +=		x11/gnome/initial-setup
-
-# caribou-autostart.desktop
-RUN_DEPENDS +=		x11/gnome/caribou
 
 # orca-autostart.desktop
 RUN_DEPENDS +=		x11/gnome/orca

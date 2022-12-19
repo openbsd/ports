@@ -7,6 +7,7 @@ COMMENT=		next generation GNOME shell
 GNOME_PROJECT=		gnome-shell
 # sync with meta/gnome "V" variable
 GNOME_VERSION=		43.2
+REVISION=		0
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
@@ -59,10 +60,6 @@ RUN_DEPENDS +=		fonts/adobe-fonts/source-code-pro \
 # system.js, backgroundMenu.js, network.js, remoteSearch.js
 BUILD_DEPENDS +=	x11/gnome/control-center
 RUN_DEPENDS +=		x11/gnome/control-center
-
-# onscreen keyboard
-BUILD_DEPENDS +=	x11/gnome/caribou
-RUN_DEPENDS +=		x11/gnome/caribou
 
 # polkit(8) almost always needs to know the "active" session
 RUN_DEPENDS +=		sysutils/consolekit
