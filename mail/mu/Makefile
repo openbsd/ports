@@ -1,10 +1,9 @@
 COMMENT=	maildir indexer and searcher with emacs frontend
 
-V=		1.8.11
+V=		1.8.13
 GUILE_V=	3.0
 
 DISTNAME=	mu-$V
-REVISION=	0
 
 FLAVORS=	guile
 FLAVOR ?=

@@ -1,7 +1,7 @@
 Index: lib/utils/mu-utils-format.hh
 --- lib/utils/mu-utils-format.hh.orig
 +++ lib/utils/mu-utils-format.hh
-@@ -49,7 +49,7 @@ std::string format(const char* frm, ...) __attribute__
+@@ -52,7 +52,7 @@ std::string format(const char* frm, ...) __attribute__
   *
   * @return a formatted string
   */
