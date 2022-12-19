@@ -7,7 +7,7 @@ COMMENT=		next generation GNOME shell
 GNOME_PROJECT=		gnome-shell
 # sync with meta/gnome "V" variable
 GNOME_VERSION=		43.2
-REVISION=		0
+REVISION=		1
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
@@ -79,7 +79,8 @@ RUN_DEPENDS +=		sysutils/accountsservice
 # dateMenu.js
 RUN_DEPENDS +=		x11/gnome/clocks
 
-# telepathyClient.js
+# js/ui/components/telepathyClient.js
+RUN_DEPENDS +=		net/telepathy/telepathy-glib
 RUN_DEPENDS +=		net/telepathy/telepathy-logger
 
 # weather.js
