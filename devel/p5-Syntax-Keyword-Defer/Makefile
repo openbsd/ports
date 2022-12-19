@@ -1,6 +1,6 @@
 COMMENT =	execute code when leaving a block
 
-DISTNAME =	Syntax-Keyword-Defer-0.07
+DISTNAME =	Syntax-Keyword-Defer-0.08
 
 CATEGORIES =	devel
 
