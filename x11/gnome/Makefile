@@ -11,7 +11,6 @@
      SUBDIR += builder
      SUBDIR += calculator
      SUBDIR += calendar
-     SUBDIR += caribou
      SUBDIR += characters
      SUBDIR += cheese
      SUBDIR += clocks
