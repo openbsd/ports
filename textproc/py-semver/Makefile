@@ -17,9 +17,7 @@ MODPY_PYBUILD =		setuptools
 MODPY_PI =		Yes
 MODPY_PYTEST_ARGS =	test_semver.py
 
-TEST_DEPENDS =		devel/py-test-cov${MODPY_FLAVOR} \
-			devel/py-tox${MODPY_FLAVOR} \
-			devel/py-virtualenv${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-test-cov${MODPY_FLAVOR}
 
 FLAVORS =	python3
 FLAVOR =	python3
