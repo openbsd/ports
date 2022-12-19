@@ -2,6 +2,7 @@ COMMENT=		IRC Client for GNOME
 
 GNOME_PROJECT=		polari
 GNOME_VERSION=		43.0
+REVISION=		0
 
 CATEGORIES=		net
 
@@ -27,5 +28,10 @@ LIB_DEPENDS=		net/telepathy/telepathy-glib \
 
 BUILD_DEPENDS=		x11/gnome/libadwaita # to pull up x11/gtk+3,-guic
 RUN_DEPENDS=		x11/gnome/libadwaita
+
+# src/application.js
+RUN_DEPENDS +=		net/telepathy/telepathy-idle \
+			net/telepathy/telepathy-logger \
+			net/telepathy/telepathy-mission-control
 
 .include <bsd.port.mk>
