@@ -1,0 +1,5 @@
+Parsing of several filter encoding standards:
+* CQL as defined in CSW 2.0
+* CQL JSON as defined in OGC API - Features - Part 3: Filtering and
+  the Common Query Language (CQL)
+* JSON Filter Expressions (JFE)
