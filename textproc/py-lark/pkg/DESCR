@@ -1,0 +1,6 @@
+Lark is a modern parsing library for Python. Lark can parse any context-free grammar.
+Lark provides:
+* Advanced grammar language, based on EBNF
+* Three parsing algorithms to choose from: Earley, LALR(1) and CYK
+* Automatic tree construction, inferred from your grammar
+* Fast unicode lexer with regexp support, and automatic line-counting
