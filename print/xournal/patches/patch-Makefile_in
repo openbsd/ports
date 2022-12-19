@@ -1,6 +1,7 @@
---- Makefile.in.orig	Sun Jun 29 07:53:20 2014
-+++ Makefile.in	Tue Jul  8 16:24:52 2014
-@@ -820,7 +820,7 @@ desktop-install:
+endex: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -840,7 +840,7 @@ desktop-install:
  	$(mkinstalldirs) $(DESTDIR)$$desktopdir/icons/hicolor/scalable/mimetypes; \
  	$(mkinstalldirs) $(DESTDIR)$$desktopdir/mime/packages; \
  	$(mkinstalldirs) $(DESTDIR)$$desktopdir/applications; \
@@ -9,7 +10,7 @@
  	$(INSTALL_DATA) $(srcdir)/pixmaps/xournal.svg $(DESTDIR)$$desktopdir/icons/hicolor/scalable/apps; \
  	$(INSTALL_DATA) $(srcdir)/pixmaps/xoj.svg $(DESTDIR)$$desktopdir/icons/hicolor/scalable/mimetypes; \
  	if test ! -e $(DESTDIR)$$desktopdir/icons/hicolor/scalable/mimetypes/gnome-mime-application-x-xoj.svg; then \
-@@ -828,7 +828,7 @@ desktop-install:
+@@ -851,7 +851,7 @@ desktop-install:
  	fi; \
  	$(INSTALL_DATA) $(srcdir)/xournal.xml $(DESTDIR)$$desktopdir/mime/packages; \
  	$(INSTALL_DATA) $(srcdir)/xournal.desktop $(DESTDIR)$$desktopdir/applications; \

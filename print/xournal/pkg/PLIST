@@ -5,6 +5,7 @@ share/doc/xournal/manual.html
 share/doc/xournal/pixmaps
 share/doc/xournal/screenshot.png
 share/icons/hicolor/scalable/apps/xournal.svg
+share/icons/hicolor/scalable/mimetypes/application-x-xoj.svg
 share/icons/hicolor/scalable/mimetypes/gnome-mime-application-x-xoj.svg
 share/icons/hicolor/scalable/mimetypes/xoj.svg
 share/locale/ca/LC_MESSAGES/xournal.mo
