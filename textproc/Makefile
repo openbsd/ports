@@ -390,6 +390,7 @@
      SUBDIR += py-cssselect,python3
      SUBDIR += py-cssselect2,python3
      SUBDIR += py-cssutils,python3
+     SUBDIR += py-dateparser,python3
      SUBDIR += py-defusedxml,python3
      SUBDIR += py-demjson,python3
      SUBDIR += py-dict2xml,python3
@@ -413,6 +414,7 @@
      SUBDIR += py-jellyfish,python3
      SUBDIR += py-jsonpatch,python3
      SUBDIR += py-jsonpointer,python3
+     SUBDIR += py-lark,python3
      SUBDIR += py-lxml
      SUBDIR += py-lxml,python3
      SUBDIR += py-markdown,python3
