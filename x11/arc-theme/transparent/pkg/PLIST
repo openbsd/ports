@@ -189,10 +189,12 @@ share/themes/Arc-Dark/gtk-2.0/menubar-toolbar/menubar_button-dark.png
 share/themes/Arc-Dark/gtk-2.0/panel.rc
 share/themes/Arc-Dark/gtk-2.0/xfce-notify.rc
 share/themes/Arc-Dark/gtk-3.0/
+share/themes/Arc-Dark/gtk-3.0/gtk-dark.css
 share/themes/Arc-Dark/gtk-3.0/gtk.css
 share/themes/Arc-Dark/gtk-3.0/gtk.gresource
 share/themes/Arc-Dark/gtk-3.0/thumbnail.png
 share/themes/Arc-Dark/gtk-4.0/
+share/themes/Arc-Dark/gtk-4.0/gtk-dark.css
 share/themes/Arc-Dark/gtk-4.0/gtk.css
 share/themes/Arc-Dark/gtk-4.0/gtk.gresource
 share/themes/Arc-Dark/index.theme

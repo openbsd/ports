@@ -1,9 +1,8 @@
 COMMENT=		flat theme for GTK and GNOME shell (${ARC_TYPE})
 
-V=			20220405
+V=			20221218
 DISTNAME=		arc-theme-${V}
 PKGNAME=		arc-theme-${ARC_TYPE}-${V}
-REVISION=		0
 
 CATEGORIES=		x11
 
