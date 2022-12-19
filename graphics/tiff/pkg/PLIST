@@ -33,6 +33,8 @@ lib/pkgconfig/libtiff-4.pc
 @man man/man1/pal2rgb.1
 @man man/man1/ppm2tiff.1
 @man man/man1/raw2tiff.1
+@man man/man1/rgb2ycbcr.1
+@man man/man1/thumbnail.1
 @man man/man1/tiff2bw.1
 @man man/man1/tiff2pdf.1
 @man man/man1/tiff2ps.1
@@ -47,23 +49,33 @@ lib/pkgconfig/libtiff-4.pc
 @man man/man1/tiffmedian.1
 @man man/man1/tiffset.1
 @man man/man1/tiffsplit.1
+@man man/man3/TIFFAccessTagMethods.3
+@man man/man3/TIFFClientInfo.3
 @man man/man3/TIFFClose.3
+@man man/man3/TIFFCreateDirectory.3
+@man man/man3/TIFFCustomDirectory.3
+@man man/man3/TIFFCustomTagList.3
 @man man/man3/TIFFDataWidth.3
+@man man/man3/TIFFDeferStrileArrayWriting.3
 @man man/man3/TIFFError.3
 @man man/man3/TIFFFieldDataType.3
 @man man/man3/TIFFFieldName.3
 @man man/man3/TIFFFieldPassCount.3
+@man man/man3/TIFFFieldQuery.3
 @man man/man3/TIFFFieldReadCount.3
 @man man/man3/TIFFFieldTag.3
 @man man/man3/TIFFFieldWriteCount.3
 @man man/man3/TIFFFlush.3
 @man man/man3/TIFFGetField.3
+@man man/man3/TIFFMergeFieldInfo.3
 @man man/man3/TIFFOpen.3
 @man man/man3/TIFFPrintDirectory.3
+@man man/man3/TIFFProcFunctions.3
 @man man/man3/TIFFRGBAImage.3
 @man man/man3/TIFFReadDirectory.3
 @man man/man3/TIFFReadEncodedStrip.3
 @man man/man3/TIFFReadEncodedTile.3
+@man man/man3/TIFFReadFromUserBuffer.3
 @man man/man3/TIFFReadRGBAImage.3
 @man man/man3/TIFFReadRGBAStrip.3
 @man man/man3/TIFFReadRGBATile.3
@@ -73,6 +85,8 @@ lib/pkgconfig/libtiff-4.pc
 @man man/man3/TIFFReadTile.3
 @man man/man3/TIFFSetDirectory.3
 @man man/man3/TIFFSetField.3
+@man man/man3/TIFFSetTagExtender.3
+@man man/man3/TIFFStrileQuery.3
 @man man/man3/TIFFWarning.3
 @man man/man3/TIFFWriteDirectory.3
 @man man/man3/TIFFWriteEncodedStrip.3
@@ -90,157 +104,380 @@ lib/pkgconfig/libtiff-4.pc
 @man man/man3/TIFFstrip.3
 @man man/man3/TIFFswab.3
 @man man/man3/TIFFtile.3
+@man man/man3/_TIFFRewriteField.3
+@man man/man3/_TIFFauxiliary.3
 @man man/man3/libtiff.3
 share/doc/tiff/
-share/doc/tiff/COPYRIGHT
 share/doc/tiff/ChangeLog
+share/doc/tiff/LICENSE.md
 share/doc/tiff/README.md
 share/doc/tiff/RELEASE-DATE
-share/doc/tiff/TIFFTechNote2.html
 share/doc/tiff/TODO
 share/doc/tiff/VERSION
-share/doc/tiff/addingtags.html
-share/doc/tiff/bugs.html
-share/doc/tiff/build.html
-share/doc/tiff/contrib.html
-share/doc/tiff/document.html
-share/doc/tiff/images/
-share/doc/tiff/images.html
-share/doc/tiff/images/back.gif
-share/doc/tiff/images/bali.jpg
-share/doc/tiff/images/cat.gif
-share/doc/tiff/images/cover.jpg
-share/doc/tiff/images/cramps.gif
-share/doc/tiff/images/dave.gif
-share/doc/tiff/images/info.gif
-share/doc/tiff/images/jello.jpg
-share/doc/tiff/images/jim.gif
-share/doc/tiff/images/note.gif
-share/doc/tiff/images/oxford.gif
-share/doc/tiff/images/quad.jpg
-share/doc/tiff/images/ring.gif
-share/doc/tiff/images/smallliz.jpg
-share/doc/tiff/images/strike.gif
-share/doc/tiff/images/warning.gif
-share/doc/tiff/index.html
-share/doc/tiff/internals.html
-share/doc/tiff/intro.html
-share/doc/tiff/libtiff.html
-share/doc/tiff/man/
-share/doc/tiff/man/TIFFClose.3tiff.html
-share/doc/tiff/man/TIFFDataWidth.3tiff.html
-share/doc/tiff/man/TIFFError.3tiff.html
-share/doc/tiff/man/TIFFFieldDataType.3tiff.html
-share/doc/tiff/man/TIFFFieldName.3tiff.html
-share/doc/tiff/man/TIFFFieldPassCount.3tiff.html
-share/doc/tiff/man/TIFFFieldReadCount.3tiff.html
-share/doc/tiff/man/TIFFFieldTag.3tiff.html
-share/doc/tiff/man/TIFFFieldWriteCount.3tiff.html
-share/doc/tiff/man/TIFFFlush.3tiff.html
-share/doc/tiff/man/TIFFGetField.3tiff.html
-share/doc/tiff/man/TIFFOpen.3tiff.html
-share/doc/tiff/man/TIFFPrintDirectory.3tiff.html
-share/doc/tiff/man/TIFFRGBAImage.3tiff.html
-share/doc/tiff/man/TIFFReadDirectory.3tiff.html
-share/doc/tiff/man/TIFFReadEncodedStrip.3tiff.html
-share/doc/tiff/man/TIFFReadEncodedTile.3tiff.html
-share/doc/tiff/man/TIFFReadRGBAImage.3tiff.html
-share/doc/tiff/man/TIFFReadRGBAStrip.3tiff.html
-share/doc/tiff/man/TIFFReadRGBATile.3tiff.html
-share/doc/tiff/man/TIFFReadRawStrip.3tiff.html
-share/doc/tiff/man/TIFFReadRawTile.3tiff.html
-share/doc/tiff/man/TIFFReadScanline.3tiff.html
-share/doc/tiff/man/TIFFReadTile.3tiff.html
-share/doc/tiff/man/TIFFSetDirectory.3tiff.html
-share/doc/tiff/man/TIFFSetField.3tiff.html
-share/doc/tiff/man/TIFFWarning.3tiff.html
-share/doc/tiff/man/TIFFWriteDirectory.3tiff.html
-share/doc/tiff/man/TIFFWriteEncodedStrip.3tiff.html
-share/doc/tiff/man/TIFFWriteEncodedTile.3tiff.html
-share/doc/tiff/man/TIFFWriteRawStrip.3tiff.html
-share/doc/tiff/man/TIFFWriteRawTile.3tiff.html
-share/doc/tiff/man/TIFFWriteScanline.3tiff.html
-share/doc/tiff/man/TIFFWriteTile.3tiff.html
-share/doc/tiff/man/TIFFbuffer.3tiff.html
-share/doc/tiff/man/TIFFcodec.3tiff.html
-share/doc/tiff/man/TIFFcolor.3tiff.html
-share/doc/tiff/man/TIFFmemory.3tiff.html
-share/doc/tiff/man/TIFFquery.3tiff.html
-share/doc/tiff/man/TIFFsize.3tiff.html
-share/doc/tiff/man/TIFFstrip.3tiff.html
-share/doc/tiff/man/TIFFswab.3tiff.html
-share/doc/tiff/man/TIFFtile.3tiff.html
-share/doc/tiff/man/fax2ps.1.html
-share/doc/tiff/man/fax2tiff.1.html
-share/doc/tiff/man/index.html
-share/doc/tiff/man/libtiff.3tiff.html
-share/doc/tiff/man/pal2rgb.1.html
-share/doc/tiff/man/ppm2tiff.1.html
-share/doc/tiff/man/raw2tiff.1.html
-share/doc/tiff/man/tiff2bw.1.html
-share/doc/tiff/man/tiff2pdf.1.html
-share/doc/tiff/man/tiff2ps.1.html
-share/doc/tiff/man/tiff2rgba.1.html
-share/doc/tiff/man/tiffcmp.1.html
-share/doc/tiff/man/tiffcp.1.html
-share/doc/tiff/man/tiffcrop.1.html
-share/doc/tiff/man/tiffdither.1.html
-share/doc/tiff/man/tiffdump.1.html
-share/doc/tiff/man/tiffgt.1.html
-share/doc/tiff/man/tiffinfo.1.html
-share/doc/tiff/man/tiffmedian.1.html
-share/doc/tiff/man/tiffset.1.html
-share/doc/tiff/man/tiffsplit.1.html
-share/doc/tiff/misc.html
-share/doc/tiff/support.html
-share/doc/tiff/tools.html
-share/doc/tiff/v3.4beta007.html
-share/doc/tiff/v3.4beta016.html
-share/doc/tiff/v3.4beta018.html
-share/doc/tiff/v3.4beta024.html
-share/doc/tiff/v3.4beta028.html
-share/doc/tiff/v3.4beta029.html
-share/doc/tiff/v3.4beta031.html
-share/doc/tiff/v3.4beta032.html
-share/doc/tiff/v3.4beta033.html
-share/doc/tiff/v3.4beta034.html
-share/doc/tiff/v3.4beta035.html
-share/doc/tiff/v3.4beta036.html
-share/doc/tiff/v3.5.1.html
-share/doc/tiff/v3.5.2.html
-share/doc/tiff/v3.5.3.html
-share/doc/tiff/v3.5.4.html
-share/doc/tiff/v3.5.5.html
-share/doc/tiff/v3.5.6-beta.html
-share/doc/tiff/v3.5.7.html
-share/doc/tiff/v3.6.0.html
-share/doc/tiff/v3.6.1.html
-share/doc/tiff/v3.7.0.html
-share/doc/tiff/v3.7.0alpha.html
-share/doc/tiff/v3.7.0beta.html
-share/doc/tiff/v3.7.0beta2.html
-share/doc/tiff/v3.7.1.html
-share/doc/tiff/v3.7.2.html
-share/doc/tiff/v3.7.3.html
-share/doc/tiff/v3.7.4.html
-share/doc/tiff/v3.8.0.html
-share/doc/tiff/v3.8.1.html
-share/doc/tiff/v3.8.2.html
-share/doc/tiff/v3.9.0beta.html
-share/doc/tiff/v3.9.1.html
-share/doc/tiff/v3.9.2.html
-share/doc/tiff/v4.0.0.html
-share/doc/tiff/v4.0.1.html
-share/doc/tiff/v4.0.10.html
-share/doc/tiff/v4.0.2.html
-share/doc/tiff/v4.0.3.html
-share/doc/tiff/v4.0.4.html
-share/doc/tiff/v4.0.4beta.html
-share/doc/tiff/v4.0.5.html
-share/doc/tiff/v4.0.6.html
-share/doc/tiff/v4.0.7.html
-share/doc/tiff/v4.0.8.html
-share/doc/tiff/v4.0.9.html
-share/doc/tiff/v4.1.0.html
-share/doc/tiff/v4.2.0.html
-share/doc/tiff/v4.3.0.html
+share/doc/tiff/manual/
+share/doc/tiff/manual/.buildinfo
+share/doc/tiff/manual/_images/
+share/doc/tiff/manual/_images/bali.jpg
+share/doc/tiff/manual/_images/cat.gif
+share/doc/tiff/manual/_images/cover.jpg
+share/doc/tiff/manual/_images/cramps.gif
+share/doc/tiff/manual/_images/dave.gif
+share/doc/tiff/manual/_images/esri.png
+share/doc/tiff/manual/_images/jim.gif
+share/doc/tiff/manual/_images/leica.png
+share/doc/tiff/manual/_images/quad.jpg
+share/doc/tiff/manual/_images/ring.gif
+share/doc/tiff/manual/_images/safe.png
+share/doc/tiff/manual/_images/smallliz.jpg
+share/doc/tiff/manual/_images/strike.gif
+share/doc/tiff/manual/_images/weogeo.png
+share/doc/tiff/manual/_sources/
+share/doc/tiff/manual/_sources/addingtags.rst.txt
+share/doc/tiff/manual/_sources/build.rst.txt
+share/doc/tiff/manual/_sources/contrib.rst.txt
+share/doc/tiff/manual/_sources/functions/
+share/doc/tiff/manual/_sources/functions.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFAccessTagMethods.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFClientInfo.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFClose.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFCreateDirectory.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFCustomDirectory.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFCustomTagList.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFDataWidth.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFDeferStrileArrayWriting.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFError.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFFieldDataType.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFFieldName.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFFieldPassCount.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFFieldQuery.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFFieldReadCount.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFFieldTag.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFFieldWriteCount.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFFlush.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFGetField.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFMergeFieldInfo.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFOpen.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFOpenOptions.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFPrintDirectory.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFProcFunctions.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFRGBAImage.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFReadDirectory.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFReadEncodedStrip.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFReadEncodedTile.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFReadFromUserBuffer.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFReadRGBAImage.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFReadRGBAStrip.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFReadRGBATile.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFReadRawStrip.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFReadRawTile.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFReadScanline.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFReadTile.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFSetDirectory.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFSetField.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFSetTagExtender.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFStrileQuery.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFWarning.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFWriteDirectory.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFWriteEncodedStrip.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFWriteEncodedTile.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFWriteRawStrip.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFWriteRawTile.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFWriteScanline.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFWriteTile.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFbuffer.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFcodec.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFcolor.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFmemory.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFquery.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFsize.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFstrip.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFswab.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFtile.rst.txt
+share/doc/tiff/manual/_sources/functions/_TIFFRewriteField.rst.txt
+share/doc/tiff/manual/_sources/functions/_TIFFauxiliary.rst.txt
+share/doc/tiff/manual/_sources/functions/libtiff.rst.txt
+share/doc/tiff/manual/_sources/images.rst.txt
+share/doc/tiff/manual/_sources/index.rst.txt
+share/doc/tiff/manual/_sources/internals.rst.txt
+share/doc/tiff/manual/_sources/libtiff.rst.txt
+share/doc/tiff/manual/_sources/project/
+share/doc/tiff/manual/_sources/project/acknowledgements.rst.txt
+share/doc/tiff/manual/_sources/project/bugs.rst.txt
+share/doc/tiff/manual/_sources/project/index.rst.txt
+share/doc/tiff/manual/_sources/project/license.rst.txt
+share/doc/tiff/manual/_sources/project/mailinglist.rst.txt
+share/doc/tiff/manual/_sources/releases/
+share/doc/tiff/manual/_sources/releases/historical.rst.txt
+share/doc/tiff/manual/_sources/releases/index.rst.txt
+share/doc/tiff/manual/_sources/releases/v3.4beta007.rst.txt
+share/doc/tiff/manual/_sources/releases/v3.4beta016.rst.txt
+share/doc/tiff/manual/_sources/releases/v3.4beta018.rst.txt
+share/doc/tiff/manual/_sources/releases/v3.4beta024.rst.txt
+share/doc/tiff/manual/_sources/releases/v3.4beta028.rst.txt
+share/doc/tiff/manual/_sources/releases/v3.4beta029.rst.txt
+share/doc/tiff/manual/_sources/releases/v3.4beta031.rst.txt
+share/doc/tiff/manual/_sources/releases/v3.4beta032.rst.txt
+share/doc/tiff/manual/_sources/releases/v3.4beta033.rst.txt
+share/doc/tiff/manual/_sources/releases/v3.4beta034.rst.txt
+share/doc/tiff/manual/_sources/releases/v3.4beta035.rst.txt
+share/doc/tiff/manual/_sources/releases/v3.4beta036.rst.txt
+share/doc/tiff/manual/_sources/releases/v3.5.1.rst.txt
+share/doc/tiff/manual/_sources/releases/v3.5.2.rst.txt
+share/doc/tiff/manual/_sources/releases/v3.5.3.rst.txt
+share/doc/tiff/manual/_sources/releases/v3.5.4.rst.txt
+share/doc/tiff/manual/_sources/releases/v3.5.5.rst.txt
+share/doc/tiff/manual/_sources/releases/v3.5.6beta.rst.txt
+share/doc/tiff/manual/_sources/releases/v3.5.7.rst.txt
+share/doc/tiff/manual/_sources/releases/v3.6.0.rst.txt
+share/doc/tiff/manual/_sources/releases/v3.6.1.rst.txt
+share/doc/tiff/manual/_sources/releases/v3.7.0.rst.txt
+share/doc/tiff/manual/_sources/releases/v3.7.0alpha.rst.txt
+share/doc/tiff/manual/_sources/releases/v3.7.0beta.rst.txt
+share/doc/tiff/manual/_sources/releases/v3.7.0beta2.rst.txt
+share/doc/tiff/manual/_sources/releases/v3.7.1.rst.txt
+share/doc/tiff/manual/_sources/releases/v3.7.2.rst.txt
+share/doc/tiff/manual/_sources/releases/v3.7.3.rst.txt
+share/doc/tiff/manual/_sources/releases/v3.7.4.rst.txt
+share/doc/tiff/manual/_sources/releases/v3.8.0.rst.txt
+share/doc/tiff/manual/_sources/releases/v3.8.1.rst.txt
+share/doc/tiff/manual/_sources/releases/v3.8.2.rst.txt
+share/doc/tiff/manual/_sources/releases/v3.9.0.rst.txt
+share/doc/tiff/manual/_sources/releases/v3.9.0beta.rst.txt
+share/doc/tiff/manual/_sources/releases/v3.9.1.rst.txt
+share/doc/tiff/manual/_sources/releases/v3.9.2.rst.txt
+share/doc/tiff/manual/_sources/releases/v3.9.3.rst.txt
+share/doc/tiff/manual/_sources/releases/v3.9.4.rst.txt
+share/doc/tiff/manual/_sources/releases/v3.9.5.rst.txt
+share/doc/tiff/manual/_sources/releases/v4.0.0.rst.txt
+share/doc/tiff/manual/_sources/releases/v4.0.1.rst.txt
+share/doc/tiff/manual/_sources/releases/v4.0.10.rst.txt
+share/doc/tiff/manual/_sources/releases/v4.0.2.rst.txt
+share/doc/tiff/manual/_sources/releases/v4.0.3.rst.txt
+share/doc/tiff/manual/_sources/releases/v4.0.4.rst.txt
+share/doc/tiff/manual/_sources/releases/v4.0.4beta.rst.txt
+share/doc/tiff/manual/_sources/releases/v4.0.5.rst.txt
+share/doc/tiff/manual/_sources/releases/v4.0.6.rst.txt
+share/doc/tiff/manual/_sources/releases/v4.0.7.rst.txt
+share/doc/tiff/manual/_sources/releases/v4.0.8.rst.txt
+share/doc/tiff/manual/_sources/releases/v4.0.9.rst.txt
+share/doc/tiff/manual/_sources/releases/v4.1.0.rst.txt
+share/doc/tiff/manual/_sources/releases/v4.2.0.rst.txt
+share/doc/tiff/manual/_sources/releases/v4.3.0.rst.txt
+share/doc/tiff/manual/_sources/releases/v4.4.0.rst.txt
+share/doc/tiff/manual/_sources/releases/v4.5.0.rst.txt
+share/doc/tiff/manual/_sources/specification/
+share/doc/tiff/manual/_sources/specification/bigtiff.rst.txt
+share/doc/tiff/manual/_sources/specification/coverage-bigtiff.rst.txt
+share/doc/tiff/manual/_sources/specification/coverage.rst.txt
+share/doc/tiff/manual/_sources/specification/index.rst.txt
+share/doc/tiff/manual/_sources/specification/technote2.rst.txt
+share/doc/tiff/manual/_sources/terms.rst.txt
+share/doc/tiff/manual/_sources/tools/
+share/doc/tiff/manual/_sources/tools.rst.txt
+share/doc/tiff/manual/_sources/tools/fax2ps.rst.txt
+share/doc/tiff/manual/_sources/tools/fax2tiff.rst.txt
+share/doc/tiff/manual/_sources/tools/pal2rgb.rst.txt
+share/doc/tiff/manual/_sources/tools/ppm2tiff.rst.txt
+share/doc/tiff/manual/_sources/tools/raw2tiff.rst.txt
+share/doc/tiff/manual/_sources/tools/rgb2ycbcr.rst.txt
+share/doc/tiff/manual/_sources/tools/thumbnail.rst.txt
+share/doc/tiff/manual/_sources/tools/tiff2bw.rst.txt
+share/doc/tiff/manual/_sources/tools/tiff2pdf.rst.txt
+share/doc/tiff/manual/_sources/tools/tiff2ps.rst.txt
+share/doc/tiff/manual/_sources/tools/tiff2rgba.rst.txt
+share/doc/tiff/manual/_sources/tools/tiffcmp.rst.txt
+share/doc/tiff/manual/_sources/tools/tiffcp.rst.txt
+share/doc/tiff/manual/_sources/tools/tiffcrop.rst.txt
+share/doc/tiff/manual/_sources/tools/tiffdither.rst.txt
+share/doc/tiff/manual/_sources/tools/tiffdump.rst.txt
+share/doc/tiff/manual/_sources/tools/tiffgt.rst.txt
+share/doc/tiff/manual/_sources/tools/tiffinfo.rst.txt
+share/doc/tiff/manual/_sources/tools/tiffmedian.rst.txt
+share/doc/tiff/manual/_sources/tools/tiffset.rst.txt
+share/doc/tiff/manual/_sources/tools/tiffsplit.rst.txt
+share/doc/tiff/manual/_static/
+share/doc/tiff/manual/_static/_sphinx_javascript_frameworks_compat.js
+share/doc/tiff/manual/_static/basic.css
+share/doc/tiff/manual/_static/contents.png
+share/doc/tiff/manual/_static/doctools.js
+share/doc/tiff/manual/_static/documentation_options.js
+share/doc/tiff/manual/_static/file.png
+share/doc/tiff/manual/_static/jquery-3.6.0.js
+share/doc/tiff/manual/_static/jquery.js
+share/doc/tiff/manual/_static/language_data.js
+share/doc/tiff/manual/_static/minus.png
+share/doc/tiff/manual/_static/navigation.png
+share/doc/tiff/manual/_static/plus.png
+share/doc/tiff/manual/_static/pygments.css
+share/doc/tiff/manual/_static/searchtools.js
+share/doc/tiff/manual/_static/sphinx_highlight.js
+share/doc/tiff/manual/_static/sphinxdoc.css
+share/doc/tiff/manual/_static/underscore-1.13.1.js
+share/doc/tiff/manual/_static/underscore.js
+share/doc/tiff/manual/addingtags.html
+share/doc/tiff/manual/build.html
+share/doc/tiff/manual/contrib.html
+share/doc/tiff/manual/functions/
+share/doc/tiff/manual/functions.html
+share/doc/tiff/manual/functions/TIFFAccessTagMethods.html
+share/doc/tiff/manual/functions/TIFFClientInfo.html
+share/doc/tiff/manual/functions/TIFFClose.html
+share/doc/tiff/manual/functions/TIFFCreateDirectory.html
+share/doc/tiff/manual/functions/TIFFCustomDirectory.html
+share/doc/tiff/manual/functions/TIFFCustomTagList.html
+share/doc/tiff/manual/functions/TIFFDataWidth.html
+share/doc/tiff/manual/functions/TIFFDeferStrileArrayWriting.html
+share/doc/tiff/manual/functions/TIFFError.html
+share/doc/tiff/manual/functions/TIFFFieldDataType.html
+share/doc/tiff/manual/functions/TIFFFieldName.html
+share/doc/tiff/manual/functions/TIFFFieldPassCount.html
+share/doc/tiff/manual/functions/TIFFFieldQuery.html
+share/doc/tiff/manual/functions/TIFFFieldReadCount.html
+share/doc/tiff/manual/functions/TIFFFieldTag.html
+share/doc/tiff/manual/functions/TIFFFieldWriteCount.html
+share/doc/tiff/manual/functions/TIFFFlush.html
+share/doc/tiff/manual/functions/TIFFGetField.html
+share/doc/tiff/manual/functions/TIFFMergeFieldInfo.html
+share/doc/tiff/manual/functions/TIFFOpen.html
+share/doc/tiff/manual/functions/TIFFOpenOptions.html
+share/doc/tiff/manual/functions/TIFFPrintDirectory.html
+share/doc/tiff/manual/functions/TIFFProcFunctions.html
+share/doc/tiff/manual/functions/TIFFRGBAImage.html
+share/doc/tiff/manual/functions/TIFFReadDirectory.html
+share/doc/tiff/manual/functions/TIFFReadEncodedStrip.html
+share/doc/tiff/manual/functions/TIFFReadEncodedTile.html
+share/doc/tiff/manual/functions/TIFFReadFromUserBuffer.html
+share/doc/tiff/manual/functions/TIFFReadRGBAImage.html
+share/doc/tiff/manual/functions/TIFFReadRGBAStrip.html
+share/doc/tiff/manual/functions/TIFFReadRGBATile.html
+share/doc/tiff/manual/functions/TIFFReadRawStrip.html
+share/doc/tiff/manual/functions/TIFFReadRawTile.html
+share/doc/tiff/manual/functions/TIFFReadScanline.html
+share/doc/tiff/manual/functions/TIFFReadTile.html
+share/doc/tiff/manual/functions/TIFFSetDirectory.html
+share/doc/tiff/manual/functions/TIFFSetField.html
+share/doc/tiff/manual/functions/TIFFSetTagExtender.html
+share/doc/tiff/manual/functions/TIFFStrileQuery.html
+share/doc/tiff/manual/functions/TIFFWarning.html
+share/doc/tiff/manual/functions/TIFFWriteDirectory.html
+share/doc/tiff/manual/functions/TIFFWriteEncodedStrip.html
+share/doc/tiff/manual/functions/TIFFWriteEncodedTile.html
+share/doc/tiff/manual/functions/TIFFWriteRawStrip.html
+share/doc/tiff/manual/functions/TIFFWriteRawTile.html
+share/doc/tiff/manual/functions/TIFFWriteScanline.html
+share/doc/tiff/manual/functions/TIFFWriteTile.html
+share/doc/tiff/manual/functions/TIFFbuffer.html
+share/doc/tiff/manual/functions/TIFFcodec.html
+share/doc/tiff/manual/functions/TIFFcolor.html
+share/doc/tiff/manual/functions/TIFFmemory.html
+share/doc/tiff/manual/functions/TIFFquery.html
+share/doc/tiff/manual/functions/TIFFsize.html
+share/doc/tiff/manual/functions/TIFFstrip.html
+share/doc/tiff/manual/functions/TIFFswab.html
+share/doc/tiff/manual/functions/TIFFtile.html
+share/doc/tiff/manual/functions/_TIFFRewriteField.html
+share/doc/tiff/manual/functions/_TIFFauxiliary.html
+share/doc/tiff/manual/functions/libtiff.html
+share/doc/tiff/manual/genindex.html
+share/doc/tiff/manual/images.html
+share/doc/tiff/manual/index.html
+share/doc/tiff/manual/internals.html
+share/doc/tiff/manual/libtiff.html
+share/doc/tiff/manual/objects.inv
+share/doc/tiff/manual/project/
+share/doc/tiff/manual/project/acknowledgements.html
+share/doc/tiff/manual/project/bugs.html
+share/doc/tiff/manual/project/index.html
+share/doc/tiff/manual/project/license.html
+share/doc/tiff/manual/project/mailinglist.html
+share/doc/tiff/manual/releases/
+share/doc/tiff/manual/releases/historical.html
+share/doc/tiff/manual/releases/index.html
+share/doc/tiff/manual/releases/v3.4beta007.html
+share/doc/tiff/manual/releases/v3.4beta016.html
+share/doc/tiff/manual/releases/v3.4beta018.html
+share/doc/tiff/manual/releases/v3.4beta024.html
+share/doc/tiff/manual/releases/v3.4beta028.html
+share/doc/tiff/manual/releases/v3.4beta029.html
+share/doc/tiff/manual/releases/v3.4beta031.html
+share/doc/tiff/manual/releases/v3.4beta032.html
+share/doc/tiff/manual/releases/v3.4beta033.html
+share/doc/tiff/manual/releases/v3.4beta034.html
+share/doc/tiff/manual/releases/v3.4beta035.html
+share/doc/tiff/manual/releases/v3.4beta036.html
+share/doc/tiff/manual/releases/v3.5.1.html
+share/doc/tiff/manual/releases/v3.5.2.html
+share/doc/tiff/manual/releases/v3.5.3.html
+share/doc/tiff/manual/releases/v3.5.4.html
+share/doc/tiff/manual/releases/v3.5.5.html
+share/doc/tiff/manual/releases/v3.5.6beta.html
+share/doc/tiff/manual/releases/v3.5.7.html
+share/doc/tiff/manual/releases/v3.6.0.html
+share/doc/tiff/manual/releases/v3.6.1.html
+share/doc/tiff/manual/releases/v3.7.0.html
+share/doc/tiff/manual/releases/v3.7.0alpha.html
+share/doc/tiff/manual/releases/v3.7.0beta.html
+share/doc/tiff/manual/releases/v3.7.0beta2.html
+share/doc/tiff/manual/releases/v3.7.1.html
+share/doc/tiff/manual/releases/v3.7.2.html
+share/doc/tiff/manual/releases/v3.7.3.html
+share/doc/tiff/manual/releases/v3.7.4.html
+share/doc/tiff/manual/releases/v3.8.0.html
+share/doc/tiff/manual/releases/v3.8.1.html
+share/doc/tiff/manual/releases/v3.8.2.html
+share/doc/tiff/manual/releases/v3.9.0.html
+share/doc/tiff/manual/releases/v3.9.0beta.html
+share/doc/tiff/manual/releases/v3.9.1.html
+share/doc/tiff/manual/releases/v3.9.2.html
+share/doc/tiff/manual/releases/v3.9.3.html
+share/doc/tiff/manual/releases/v3.9.4.html
+share/doc/tiff/manual/releases/v3.9.5.html
+share/doc/tiff/manual/releases/v4.0.0.html
+share/doc/tiff/manual/releases/v4.0.1.html
+share/doc/tiff/manual/releases/v4.0.10.html
+share/doc/tiff/manual/releases/v4.0.2.html
+share/doc/tiff/manual/releases/v4.0.3.html
+share/doc/tiff/manual/releases/v4.0.4.html
+share/doc/tiff/manual/releases/v4.0.4beta.html
+share/doc/tiff/manual/releases/v4.0.5.html
+share/doc/tiff/manual/releases/v4.0.6.html
+share/doc/tiff/manual/releases/v4.0.7.html
+share/doc/tiff/manual/releases/v4.0.8.html
+share/doc/tiff/manual/releases/v4.0.9.html
+share/doc/tiff/manual/releases/v4.1.0.html
+share/doc/tiff/manual/releases/v4.2.0.html
+share/doc/tiff/manual/releases/v4.3.0.html
+share/doc/tiff/manual/releases/v4.4.0.html
+share/doc/tiff/manual/releases/v4.5.0.html
+share/doc/tiff/manual/search.html
+share/doc/tiff/manual/searchindex.js
+share/doc/tiff/manual/specification/
+share/doc/tiff/manual/specification/bigtiff.html
+share/doc/tiff/manual/specification/coverage-bigtiff.html
+share/doc/tiff/manual/specification/coverage.html
+share/doc/tiff/manual/specification/index.html
+share/doc/tiff/manual/specification/technote2.html
+share/doc/tiff/manual/terms.html
+share/doc/tiff/manual/tools/
+share/doc/tiff/manual/tools.html
+share/doc/tiff/manual/tools/fax2ps.html
+share/doc/tiff/manual/tools/fax2tiff.html
+share/doc/tiff/manual/tools/pal2rgb.html
+share/doc/tiff/manual/tools/ppm2tiff.html
+share/doc/tiff/manual/tools/raw2tiff.html
+share/doc/tiff/manual/tools/rgb2ycbcr.html
+share/doc/tiff/manual/tools/thumbnail.html
+share/doc/tiff/manual/tools/tiff2bw.html
+share/doc/tiff/manual/tools/tiff2pdf.html
+share/doc/tiff/manual/tools/tiff2ps.html
+share/doc/tiff/manual/tools/tiff2rgba.html
+share/doc/tiff/manual/tools/tiffcmp.html
+share/doc/tiff/manual/tools/tiffcp.html
+share/doc/tiff/manual/tools/tiffcrop.html
+share/doc/tiff/manual/tools/tiffdither.html
+share/doc/tiff/manual/tools/tiffdump.html
+share/doc/tiff/manual/tools/tiffgt.html
+share/doc/tiff/manual/tools/tiffinfo.html
+share/doc/tiff/manual/tools/tiffmedian.html
+share/doc/tiff/manual/tools/tiffset.html
+share/doc/tiff/manual/tools/tiffsplit.html

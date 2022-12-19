@@ -1,9 +1,7 @@
-Replace .3tiff man page suffix with standard .3
-
-Index: man/Makefile.in
---- man/Makefile.in.orig
-+++ man/Makefile.in
-@@ -500,7 +500,7 @@ install-man3: $(dist_man3_MANS)
+Index: doc/Makefile.in
+--- doc/Makefile.in.orig
++++ doc/Makefile.in
+@@ -609,7 +609,7 @@ install-man3: $(man3_MANS)
  	  if test -f $$p; then d=; else d="$(srcdir)/"; fi; \
  	  echo "$$d$$p"; echo "$$p"; \
  	done | \

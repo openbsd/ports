@@ -1,12 +1,12 @@
 Index: libtiff/tif_luv.c
 --- libtiff/tif_luv.c.orig
 +++ libtiff/tif_luv.c
-@@ -733,7 +733,7 @@ static int tiff_itrunc(double x, int m)
+@@ -776,7 +776,7 @@ static int tiff_itrunc(double x, int m)
          return (int)x;
      /* Silence CoverityScan warning about bad crypto function */
      /* coverity[dont_call] */
--    return (int)(x + rand()*(1./RAND_MAX) - .5);
-+    return (int)(x + arc4random()*(1./UINT_MAX) - .5);
+-    return (int)(x + rand() * (1. / RAND_MAX) - .5);
++    return (int)(x + arc4random() * (1. / RAND_MAX) - .5);
  }
  
  #if !LOGLUV_PUBLIC
