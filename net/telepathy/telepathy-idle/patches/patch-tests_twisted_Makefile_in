@@ -1,0 +1,14 @@
+https://bugs.freedesktop.org/show_bug.cgi?id=65979
+
+Index: tests/twisted/Makefile.in
+--- tests/twisted/Makefile.in.orig
++++ tests/twisted/Makefile.in
+@@ -267,7 +267,7 @@ SHELL = @SHELL@
+ STRIP = @STRIP@
+ TELEPATHY_CFLAGS = @TELEPATHY_CFLAGS@
+ TELEPATHY_LIBS = @TELEPATHY_LIBS@
+-TEST_PYTHON = @TEST_PYTHON@
++TEST_PYTHON = @PYTHON@
+ VERSION = @VERSION@
+ XSLTPROC = @XSLTPROC@
+ abs_builddir = @abs_builddir@
