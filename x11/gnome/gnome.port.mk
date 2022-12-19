@@ -1,4 +1,4 @@
-# Module for GNOME ports; see gnome-module(5)
+# Module for GNOME and MATE ports; see gnome-module(5)
 
 .if (defined(GNOME_PROJECT) && defined(GNOME_VERSION)) || \
     (defined(MATE_PROJECT) && defined(MATE_VERSION))
@@ -7,11 +7,9 @@ EXTRACT_SUFX ?=		.tar.xz
 DISTNAME=		${GNOME_PROJECT}-${GNOME_VERSION}
 VERSION=		${GNOME_VERSION}
 HOMEPAGE ?=		https://wiki.gnome.org/
-# XXX make it more generic
 # XXX add support for fetching DISTFILES from gitlab
-.    if ${GNOME_VERSION:R:R:R} == "40" || ${GNOME_VERSION:R:R:R} == "41" || \
-        ${GNOME_VERSION:R:R:R} == "42" || ${GNOME_VERSION:R:R:R} == "43"
-MASTER_SITES ?=		${MASTER_SITE_GNOME:=sources/${GNOME_PROJECT}/${GNOME_VERSION:R:R:R}/}
+.    if ${GNOME_VERSION:C/^([0-9]+).*/\1/:M[4-9]?}
+MASTER_SITES ?=		${MASTER_SITE_GNOME:=sources/${GNOME_PROJECT}/${GNOME_VERSION:C/^([0-9]+).*/\1/}/}
 .    else
 PORTROACH +=		limitw:1,even
 MASTER_SITES ?=		${MASTER_SITE_GNOME:=sources/${GNOME_PROJECT}/${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/}
