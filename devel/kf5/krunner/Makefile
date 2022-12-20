@@ -1,5 +1,6 @@
 COMMENT =	KDE framework for Plasma runners
 DISTNAME =	krunner-${VERSION}
+REVISION =	0
 
 SHARED_LIBS =		KF5Runner		8.3
 
@@ -12,7 +13,8 @@ WANTLIB += m
 BUILD_DEPENDS =	devel/gettext,-tools \
 		archivers/gtar
 
-LIB_DEPENDS =	devel/kf5/kconfig>=${MODKF5_VERSION} \
+LIB_DEPENDS =	devel/kf5/kactivities>=${MODKF5_VERSION} \
+		devel/kf5/kconfig>=${MODKF5_VERSION} \
 		devel/kf5/kcoreaddons>=${MODKF5_VERSION} \
 		devel/kf5/ki18n>=${MODKF5_VERSION} \
 		devel/kf5/kio>=${MODKF5_VERSION} \
