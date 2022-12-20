@@ -16,7 +16,7 @@ Index: configure.ac
  
  # The later definition of _XOPEN_SOURCE and _POSIX_C_SOURCE disables
  # certain features on NetBSD, so we need _NETBSD_SOURCE to re-enable
-@@ -1086,6 +1086,7 @@ AC_MSG_CHECKING([for multiarch])
+@@ -1096,6 +1096,7 @@ AC_MSG_CHECKING([for multiarch])
  AS_CASE([$ac_sys_system],
    [Darwin*], [MULTIARCH=""],
    [FreeBSD*], [MULTIARCH=""],
@@ -24,21 +24,23 @@ Index: configure.ac
    [MULTIARCH=$($CC --print-multiarch 2>/dev/null)]
  )
  AC_SUBST([MULTIARCH])
-@@ -1799,11 +1800,11 @@ esac
+@@ -1835,13 +1836,13 @@ esac
  [AC_MSG_RESULT(no)])
  if test "$Py_LTO" = 'true' ; then
    case $CC in
 -    *clang*)
 +    *clang*|cc)
-       dnl flag to disable lto during linking
        LDFLAGS_NOLTO="-fno-lto"
+       dnl Clang linker requires -flto in order to link objects with LTO information.
+       dnl Thin LTO is faster and works for object files with full LTO information, too.
+       AX_CHECK_COMPILE_FLAG([-flto=thin],[LDFLAGS_NOLTO="-flto=thin"],[LDFLAGS_NOLTO="-flto"])
        AC_SUBST(LLVM_AR)
 -      AC_PATH_TOOL(LLVM_AR, llvm-ar, '', ${llvm_path})
 +      AC_PATH_TOOL(LLVM_AR, ar, '', ${llvm_path})
        AC_SUBST(LLVM_AR_FOUND)
        if test -n "${LLVM_AR}" -a -x "${LLVM_AR}"
        then
-@@ -1918,7 +1919,7 @@ then
+@@ -1956,7 +1957,7 @@ then
  fi
  LLVM_PROF_ERR=no
  case $CC in
@@ -47,7 +49,7 @@ Index: configure.ac
      # Any changes made here should be reflected in the GCC+Darwin case below
      PGO_PROF_GEN_FLAG="-fprofile-instr-generate"
      PGO_PROF_USE_FLAG="-fprofile-instr-use=code.profclangd"
-@@ -3838,11 +3839,7 @@ dnl Detect Tcl/Tk. Use pkg-config if available.
+@@ -3876,11 +3877,7 @@ dnl Detect Tcl/Tk. Use pkg-config if available.
  dnl
  found_tcltk=no
  for _QUERY in \
