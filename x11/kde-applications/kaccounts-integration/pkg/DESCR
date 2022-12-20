@@ -1,0 +1,9 @@
+Integration library and QML module for Accounts-SSO and SignOn-SSO.
+
+KAccounts Integration provides a way to share accounts data such as login
+tokens and general user information (like usernames and such) between various
+applications.
+
+The KAccounts library is a KDE Frameworks style abstraction layer on top of the
+Accounts-SSO and SignOnD libraries, which uses a combination of models and jobs
+to expose the functionality of those.
