@@ -10,7 +10,7 @@ COMMENT =	nintendo 3DS emulator
 V =		729
 DISTNAME =	citra-nightly-${V}
 PKGNAME =	citra-0.0.0.${V}
-REVISION =	5
+REVISION =	6
 
 CATEGORIES =	emulators
 
