@@ -12,4 +12,6 @@ LIB_DEPENDS =	devel/kf5/kcoreaddons>=${MODKF5_VERSION} \
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
+CONFIGURE_ARGS =	-DBUILD_TESTING=ON
+
 .include <bsd.port.mk>
