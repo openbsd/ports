@@ -7,8 +7,8 @@ COMMENT-nogui =		Nintendo GameCube and Wii emulator
 V =			5.0.0.20190621
 DISTNAME =		dolphin-emu-${V}
 PKGNAME =		dolphin-${V}
-REVISION-main =		1
-REVISION-nogui =	1
+REVISION-main =		2
+REVISION-nogui =	2
 
 MULTI_PACKAGES =	-main -nogui
 
