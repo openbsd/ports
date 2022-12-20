@@ -34,7 +34,6 @@ WANTLIB += m qgpgme
 
 WANTLIB += lib/inotify/inotify
 
-
 MODULES =	x11/kde-applications \
 		devel/kf5
 
