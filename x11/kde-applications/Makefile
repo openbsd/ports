@@ -195,8 +195,8 @@
      SUBDIR += baloo-widgets
      SUBDIR += grantleetheme
      SUBDIR += incidenceeditor
-     #SUBDIR += kaccounts-integration
-     #SUBDIR += kaccounts-providers
+     SUBDIR += kaccounts-integration
+     SUBDIR += kaccounts-providers
      SUBDIR += kcalutils
      SUBDIR += kdeedu-data
      SUBDIR += kidentitymanagement
@@ -237,7 +237,7 @@
      SUBDIR += pim-sieve-editor
      SUBDIR += pimcommon
      SUBDIR += ksanecore
-     #SUBDIR += signon-kwallet-extension
+     SUBDIR += signon-kwallet-extension
 
      # Former projects under the hat of KDE Applications
      SUBDIR += okteta
