@@ -25,7 +25,7 @@ Index: man/hiawatha.1.in
  .TP
  .B KickOnBan = yes|no
  Close all other connections that originate from the same IP in case of a ban.
-@@ -308,7 +308,7 @@ Example: RequestLimitMask = deny 192.168.0.1
+@@ -300,7 +300,7 @@ Example: RequestLimitMask = deny 192.168.0.1
  .B ServerId = <userid>|<userid>:<groupid>[, <groupid>, ...]
  The userid and groupid(s) the server will change to. If only a userid is specified, the groupid(s) will be looked up in /etc/passwd and /etc/group. The userid en groupid of user root are not allowed here. The userid or groupid can also be a name.
  .br
@@ -34,7 +34,7 @@ Index: man/hiawatha.1.in
  .TP
  .B ServerString = <text>
  The text behind 'Server:' in the HTTP header of a response. Use 'none' to completely remove the Server string from the HTTP header.
-@@ -675,7 +675,7 @@ Example: ScriptAlias = /script.cgi:/usr/lib/script.cgi
+@@ -661,7 +661,7 @@ Example: ScriptAlias = /script.cgi:/usr/lib/script.cgi
  .B ShowIndex = yes|no|<XSLT file with full path>|xml
  Return a directory listing in HTML format for a directory request when the startfile does not exist. If you want to change the index layout completely, specify the path of a XSLT file. If the XSLT file is not found or 'xml' is used, Hiawatha will output the XML of the directory index. An example of the XML output can be found in extra/index.xml inside the source package.
  .br
@@ -43,7 +43,7 @@ Index: man/hiawatha.1.in
  .br
  
  (requires that Hiawatha was not compiled with -DENABLE_XSLT=off)
-@@ -1066,7 +1066,7 @@ and
+@@ -1052,7 +1052,7 @@ and
  (only valid in the root directory of a website)
  
  .SH MIMETYPES
@@ -52,7 +52,7 @@ Index: man/hiawatha.1.in
  .TP
  .B <mimetype> <extension> [<extension> ...]
  Example: image/jpeg jpg jpeg jpe
-@@ -1086,13 +1086,13 @@ Unban all IP addresses.
+@@ -1072,13 +1072,13 @@ Unban all IP addresses.
  Clear the internal cache (requires that Hiawatha was not compiled with -DENABLE_CACHE=off).
  
  .SH FILES

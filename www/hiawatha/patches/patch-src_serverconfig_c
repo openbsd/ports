@@ -10,7 +10,7 @@ Index: src/serverconfig.c
  #define MAX_LENGTH_CONFIGLINE  1024
  #define MAX_CACHE_SIZE         1024
  #define MAX_UPLOAD_SIZE        2047
-@@ -298,8 +298,8 @@ t_config *default_config(void) {
+@@ -291,8 +291,8 @@ t_config *default_config(void) {
  	config->tomahawk_port      = NULL;
  #endif
  

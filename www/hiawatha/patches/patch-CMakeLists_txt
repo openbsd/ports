@@ -4,7 +4,7 @@ in base, and several alternatives in ports.
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -192,15 +192,15 @@ endforeach()
+@@ -170,15 +170,15 @@ endforeach()
  
  install(FILES extra/index.html DESTINATION ${WEBROOT_DIR})
  

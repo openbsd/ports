@@ -1,6 +1,5 @@
 COMMENT =		secure webserver
-DISTNAME =		hiawatha-10.11
-REVISION =		1
+DISTNAME =		hiawatha-11.2
 CATEGORIES =		www net
 
 HOMEPAGE =		https://www.hiawatha-webserver.org/
@@ -10,12 +9,11 @@ PERMIT_PACKAGE =	mbedtls Apache 2 license incompatible with GPLv2
 
 MASTER_SITES =		${HOMEPAGE}files/
 
+WANTLIB += c pthread xml2 xslt z
+
 MODULES =		devel/cmake
 
-WANTLIB += c mbedcrypto mbedtls mbedx509 pthread xml2 xslt z
-
-LIB_DEPENDS =		security/polarssl>=2.8.0 \
-			textproc/libxslt
+LIB_DEPENDS =		textproc/libxslt
 
 CONFIGURE_ARGS =	-DWEBROOT_DIR="/var/hiawatha" \
 			-DWORK_DIR="/var/db/hiawatha" \
@@ -24,7 +22,8 @@ CONFIGURE_ARGS =	-DWEBROOT_DIR="/var/hiawatha" \
 			-DCMAKE_INSTALL_MANDIR="${PREFIX}/man" \
 			-DENABLE_XSLT=ON \
 			-DPID_DIR="/var/run" \
-			-DUSE_SYSTEM_MBEDTLS=ON
+			-DUSE_SHARED_MBEDTLS_LIBRARY=OFF \
+			-DUSE_STATIC_MBEDTLS_LIBRARY=ON
 
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${WRKBUILD}/mbedtls/library -L${LOCALBASE}/lib"
@@ -39,6 +38,8 @@ pre-configure:
 post-install:
 	mv ${WRKINST}${SYSCONFDIR}/hiawatha ${PREFIX}/share/examples/hiawatha
 	mv ${WRKINST}/var/hiawatha/index.html ${PREFIX}/share/examples/hiawatha/
-	rm -r ${WRKINST}/var
+	rm -r ${WRKINST}/var \
+		${PREFIX}/lib/hiawatha \
+		${PREFIX}/include/{psa,mbedtls}
 
 .include <bsd.port.mk>

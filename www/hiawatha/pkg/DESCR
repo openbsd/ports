@@ -9,3 +9,8 @@ who try such exploits and many other features make it an interesting
 webserver for those who need more security than what others are
 offering (please note that while the author claims it's secure, this
 software has not been audited by the OpenBSD team).
+
+Note: The project website says: "Due to lack of interest in this
+project, I no longer actively support and promote Hiawatha. I still use
+Hiawatha a lot myself, so development will continue, but likely very
+slow. New versions will still be released via this website."
