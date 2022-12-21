@@ -1,6 +1,6 @@
 COMMENT =		sorted associative collection
 
-DISTNAME =		rbtree-0.4.5
+DISTNAME =		rbtree-0.4.6
 
 CATEGORIES =		devel
 
