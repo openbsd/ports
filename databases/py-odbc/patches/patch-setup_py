@@ -1,7 +1,7 @@
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -237,7 +237,7 @@ def get_compiler_settings(version_str):
+@@ -242,7 +242,7 @@ def get_compiler_settings(version_str):
  #            settings['define_macros'].append(('SQL_WCHART_CONVERT', '1'))
  
          # What is the proper way to detect iODBC, MyODBC, unixODBC, etc.?
