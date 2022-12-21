@@ -143,6 +143,7 @@ share/doc/libgusb/method.Device.get_string_descriptor_bytes.html
 share/doc/libgusb/method.Device.get_string_descriptor_bytes_full.html
 share/doc/libgusb/method.Device.get_vid.html
 share/doc/libgusb/method.Device.get_vid_as_str.html
+share/doc/libgusb/method.Device.has_tag.html
 share/doc/libgusb/method.Device.interrupt_transfer.html
 share/doc/libgusb/method.Device.interrupt_transfer_async.html
 share/doc/libgusb/method.Device.interrupt_transfer_finish.html
