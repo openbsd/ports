@@ -3,9 +3,8 @@ COMMENT-gui=	X user interface to recoll
 
 MULTI_PACKAGES=	-main -gui
 
-V=		1.33.1
+V=		1.33.4
 DISTNAME=	recoll-${V}
-REVISION-main=	0
 
 CATEGORIES=	databases sysutils
 

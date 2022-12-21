@@ -24,10 +24,8 @@ lib/recoll/
 @static-lib lib/recoll/librecoll.a
 lib/recoll/librecoll.la
 @so lib/recoll/librecoll.so
-@man man/man1/rclgrep.1
 @man man/man1/recollindex.1
 @man man/man1/recollq.1
-@man man/man1/xadump.1
 @man man/man5/recoll.conf.5
 share/recoll/
 share/recoll/examples/
@@ -125,6 +123,7 @@ share/recoll/filters/rclzip.py
 share/recoll/filters/recoll-we-move-files.py
 share/recoll/filters/recollepub.zip
 share/recoll/filters/svg.xsl
+share/recoll/filters/thunderbird-open-message.sh
 share/recoll/filters/xls-dump.py
 share/recoll/filters/xlsxmltocsv.py
 share/recoll/filters/xml.xsl
