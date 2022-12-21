@@ -2,7 +2,7 @@ COMMENT =		extension to horizontally scale PostgreSQL
 
 GH_ACCOUNT =		citusdata
 GH_PROJECT =		citus
-GH_TAGNAME =		v11.1.4
+GH_TAGNAME =		v11.1.5
 
 CATEGORIES =		databases
 HOMEPAGE =		https://www.citusdata.com/
