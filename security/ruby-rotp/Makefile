@@ -1,7 +1,7 @@
 
 COMMENT =	Ruby library for generating and verifying one time passwords
 
-DISTNAME =		rotp-6.2.1
+DISTNAME =		rotp-6.2.2
 
 CATEGORIES =		security
 
