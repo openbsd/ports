@@ -16,6 +16,9 @@ RUN_DEPENDS=	print/ghostscript/gnu \
 # MIT-like
 PERMIT_PACKAGE=	Yes
 
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 WANTLIB=	Xpm c m png>=2 iconv
 
 MAKE_FLAGS=	CC="${CC}"
