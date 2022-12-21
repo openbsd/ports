@@ -1,6 +1,6 @@
 COMMENT =	virtualenv-based automation of test activities
 
-MODPY_EGG_VERSION =	4.0.14
+MODPY_EGG_VERSION =	4.0.16
 DISTNAME =	tox-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	devel
