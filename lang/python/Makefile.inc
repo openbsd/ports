@@ -198,9 +198,6 @@ post-install:
 .else
 	rm -f ${PREFIX}/bin/pip3 # in devel/py-pip for default Python version
 .endif
-.if ${VERSION} == "3.11"
-	rm ${PREFIX}/bin/pip3.10 # https://github.com/python/cpython/issues/98682
-.endif
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/python${VERSION}
 	${INSTALL_DATA} ${FILESDIR}/CHANGES.OpenBSD \
 		${PREFIX}/share/doc/python${VERSION}/CHANGES.OpenBSD
