@@ -10,7 +10,7 @@ Index: src/default.h
  XIV(bool, taskBarShowApmAuto,                   true)
  XIV(bool, taskBarShowApmTime,                   true)
  XIV(bool, taskBarShowApmGraph,                  true)
-@@ -175,10 +175,10 @@ XIV(int, netWorkAreaBehaviour,                  0)
+@@ -176,10 +176,10 @@ XIV(int, netWorkAreaBehaviour,                  0)
  
  XSV(const char *, acpiIgnoreBatteries,          0)
  XSV(const char *, mailBoxPath,                  0)
@@ -24,7 +24,7 @@ Index: src/default.h
  XSV(const char *, clockCommand,                 "xclock -name icewm -title Clock")
  XSV(const char *, clockClassHint,               "icewm.XClock")
  XSV(const char *, runDlgCommand,                0)
-@@ -207,7 +207,7 @@ XIV(bool, cpuCombine,                           true)
+@@ -208,7 +208,7 @@ XIV(bool, cpuCombine,                           true)
  XSV(const char *, netCommand,                   TERM " -name 'ss' -title 'Socket Statistics' -hold -e sh -c 'which ss > /dev/null && watch -t ss -putswl || netstat -c'")
  XSV(const char *, netClassHint,                 "ss.XTerm")
  #else

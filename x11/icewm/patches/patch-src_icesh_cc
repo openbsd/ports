@@ -3,7 +3,7 @@ Don't do this GNU extension stuff.
 Index: src/icesh.cc
 --- src/icesh.cc.orig
 +++ src/icesh.cc
-@@ -2431,6 +2431,8 @@ void IceSh::doSync()
+@@ -2494,6 +2494,8 @@ void IceSh::doSync()
  
  bool IceSh::colormaps()
  {
@@ -12,7 +12,7 @@ Index: src/icesh.cc
      if ( !isAction("colormaps", 0))
          return false;
  
-@@ -2439,7 +2441,7 @@ bool IceSh::colormaps()
+@@ -2502,7 +2504,7 @@ bool IceSh::colormaps()
  
      tlog("colormaps");
      running = true;
@@ -21,7 +21,7 @@ Index: src/icesh.cc
      while (running) {
          int n = 0;
          Colormap* map = XListInstalledColormaps(display, root, &n);
-@@ -2586,11 +2588,13 @@ void IceSh::monitors()
+@@ -2655,11 +2657,13 @@ void IceSh::monitors()
  
  bool IceSh::guiEvents()
  {

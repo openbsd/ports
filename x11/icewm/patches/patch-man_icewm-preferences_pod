@@ -1,7 +1,7 @@
 Index: man/icewm-preferences.pod
 --- man/icewm-preferences.pod.orig
 +++ man/icewm-preferences.pod
-@@ -1042,7 +1042,7 @@ B<WM_CLASS> to allow B<runonce> for B<CPUStatusCommand
+@@ -1050,7 +1050,7 @@ B<WM_CLASS> to allow B<runonce> for B<CPUStatusCommand
  
  Combine all CPUs to one.
  

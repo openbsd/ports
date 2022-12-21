@@ -1,13 +1,11 @@
 # unconditionally uses machine/apmvar.h and related structures/defines
 ONLY_FOR_ARCHS=	${APM_ARCHS}
 
-V=		3.0.1
+V=		3.3.0
 COMMENT=	small and fast window manager
 DISTNAME=	icewm-${V}
 EXTRACT_SUFX=	.tar.lz
 CATEGORIES=	x11
-
-REVISION=	0
 
 HOMEPAGE=	https://ice-wm.org/
 
