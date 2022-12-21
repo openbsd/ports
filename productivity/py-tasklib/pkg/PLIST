@@ -1,5 +1,6 @@
 lib/python${MODPY_VERSION}/site-packages/tasklib/
 lib/python${MODPY_VERSION}/site-packages/tasklib-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/tasklib-${MODPY_EGG_VERSION}.dist-info/AUTHORS
 lib/python${MODPY_VERSION}/site-packages/tasklib-${MODPY_EGG_VERSION}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/tasklib-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/tasklib-${MODPY_EGG_VERSION}.dist-info/RECORD
