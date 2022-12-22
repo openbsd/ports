@@ -1,7 +1,6 @@
 COMMENT =		DigiDoc4 GUI client for signing and encrypting documents
 
-V =			4.2.12
-REVISION =		2
+V =			4.2.14
 DISTNAME =		qdigidoc4-${V}
 CATEGORIES =		security x11
 
@@ -28,21 +27,6 @@ MASTER_SITES1 =		https://ec.europa.eu/tools/lotl/
 DISTFILES +=		eu-lotl-pivot-300.xml:1
 CONFIGURE_ENV +=	TSL_URL=file://${FULLDISTDIR}/eu-lotl-pivot-300.xml
 
-MASTER_SITES2 =		https://github.com/open-eid/DigiDoc4-Client/
-# merged but after 4.2.12 release
-PATCHFILES +=		bsd-{pull/}1072.patch:2
-PATCHFILES +=		qt6-{pull/}1082.patch:2
-
-MASTER_SITES3 =		https://github.com/open-eid/qt-common/
-# merged but after 4.2.12 release
-PATCHFILES +=		qt-common-fix-i386-{pull/}124.patch:3
-PATCHFILES +=		qt-common-pcsc-lite-{pull/}121.patch:3
-PATCH_CASES +=		qt-common-*.patch) \
-				${PATCH} ${PATCH_DIST_ARGS} < $$patchfile \
-				    -d${WRKSRC}/common ;;
-
-PATCH_DIST_STRIP =	-p1
-
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 WANTLIB +=		${COMPILER_LIBCXX} GL Qt6Core Qt6Core5Compat Qt6Gui
@@ -56,7 +40,7 @@ BUILD_DEPENDS =		devel/gettext,-tools \
 			x11/qt6/qttools
 
 LIB_DEPENDS =		databases/openldap,-main \
-			security/libdigidocpp>=3.14.10 \
+			security/libdigidocpp>=3.14.11 \
 			security/pcsc-lite \
 			x11/qt6/qt5compat \
 			x11/qt6/qtsvg
@@ -75,12 +59,5 @@ CONFIGURE_ARGS +=	-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS} \
 			    -Wl,-rpath,/usr/local/lib/pkcs11"
 
 NO_TEST =		Yes
-
-# merged but after 4.2.12 release "Update plugin for KDE Plasma"
-# https://github.com/open-eid/digidoc-extensions/pull/21
-post-install:
-	# fix program name in KDE extension
-	sed -i -E s/qdigidoc-?client/qdigidoc4/ \
-	    ${PREFIX}/share/kservices5/qdigidoc-signer.desktop
 
 .include <bsd.port.mk>

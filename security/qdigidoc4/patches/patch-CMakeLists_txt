@@ -1,0 +1,17 @@
+XXX revert breaking "Fix LTO linking"
+https://github.com/open-eid/DigiDoc4-Client/pull/1110
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -22,10 +22,6 @@ set_env( TSL_INCLUDE "EE" CACHE STRING "TSL list inclu
+ set_env( MOBILEID_URL "https://dd-mid.ria.ee/mid-api" CACHE STRING "URL for Mobile-ID" )
+ set_env( SMARTID_URL "https://dd-sid.ria.ee/v1" CACHE STRING "URL for Smart-ID" )
+ set(CMAKE_INTERPROCEDURAL_OPTIMIZATION YES)
+-if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+-    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,-object_path_lto,lto.o")
+-    set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,-object_path_lto,lto.o")
+-endif()
+ set(CPACK_PACKAGE_VERSION ${VERSION})
+ set(CPACK_GENERATOR RPM)
+ set(CPACK_PACKAGE_CONTACT "RIA <info@ria.ee>")
