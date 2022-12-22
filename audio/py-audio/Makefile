@@ -21,6 +21,9 @@ MODULES =	lang/python
 MODPY_PI =	Yes
 MODPY_PYBUILD =	setuptools
 
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	tests/*
+
 LIB_DEPENDS =	audio/portaudio-svn
 
 .include <bsd.port.mk>
