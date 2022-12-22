@@ -354,8 +354,8 @@ share/bash-completion/completions/gresource
 share/bash-completion/completions/gsettings
 share/doc/pkg-readmes/${PKGSTEM}
 share/gdb/auto-load/usr/local/lib/
-share/gdb/auto-load/usr/local/lib/libglib-2.0.so.0.7400.3-gdb.py
-share/gdb/auto-load/usr/local/lib/libgobject-2.0.so.0.7400.3-gdb.py
+share/gdb/auto-load/usr/local/lib/libglib-2.0.so.0.7400.4-gdb.py
+share/gdb/auto-load/usr/local/lib/libgobject-2.0.so.0.7400.4-gdb.py
 share/gettext/its/
 share/gettext/its/gschema.its
 share/gettext/its/gschema.loc
@@ -469,6 +469,9 @@ share/locale/hy/
 share/locale/hy/LC_MESSAGES/
 share/locale/hy/LC_MESSAGES/glib20.mo
 share/locale/id/LC_MESSAGES/glib20.mo
+share/locale/ie/
+share/locale/ie/LC_MESSAGES/
+share/locale/ie/LC_MESSAGES/glib20.mo
 share/locale/is/
 share/locale/is/LC_MESSAGES/
 share/locale/is/LC_MESSAGES/glib20.mo
