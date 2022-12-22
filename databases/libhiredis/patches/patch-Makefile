@@ -1,9 +1,9 @@
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -15,10 +15,10 @@ PKGCONFNAME=hiredis.pc
- SSL_LIBNAME=libhiredis_ssl
- SSL_PKGCONFNAME=hiredis_ssl.pc
+@@ -9,10 +9,10 @@ TESTS=hiredis-test
+ LIBNAME=libhiredis
+ PKGCONFNAME=hiredis.pc
  
 -HIREDIS_MAJOR=$(shell grep HIREDIS_MAJOR hiredis.h | awk '{print $$3}')
 -HIREDIS_MINOR=$(shell grep HIREDIS_MINOR hiredis.h | awk '{print $$3}')
@@ -16,12 +16,12 @@ Index: Makefile
  
  # Installation related variables and target
  PREFIX?=/usr/local
-@@ -239,7 +239,7 @@ $(PKGCONFNAME): hiredis.h
+@@ -280,7 +280,7 @@ $(PKGCONFNAME): hiredis.h
  	@echo >> $@
  	@echo Name: hiredis >> $@
  	@echo Description: Minimalistic C client library for Redis. >> $@
 -	@echo Version: $(HIREDIS_MAJOR).$(HIREDIS_MINOR).$(HIREDIS_PATCH) >> $@
 +	@echo Version: $(_HIREDIS_MAJOR).$(_HIREDIS_MINOR).$(HIREDIS_PATCH) >> $@
  	@echo Libs: -L\$${libdir} -lhiredis >> $@
- 	@echo Cflags: -I\$${includedir} -D_FILE_OFFSET_BITS=64 >> $@
+ 	@echo Cflags: -I\$${pkgincludedir} -I\$${includedir} -D_FILE_OFFSET_BITS=64 >> $@
  
