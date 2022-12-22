@@ -1,6 +1,6 @@
 COMMENT =	framework to create integrate services and actions
 DISTNAME =	purpose-${VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  KF5Purpose                2.1
 SHARED_LIBS +=  KF5PurposeWidgets         2.0
@@ -16,6 +16,7 @@ WANTLIB += c kaccounts m
 
 
 BUILD_DEPENDS =	devel/gettext,-tools \
+		textproc/intltool \
 		devel/kf5/kirigami2>=${MODKF5_VERSION} \
 		x11/qt5/qtquickcontrols
 
@@ -35,6 +36,9 @@ LIB_DEPENDS =	devel/kf5/kcompletion>=${MODKF5_VERSION} \
 		x11/qt5/qtdeclarative
 
 LIB_DEPENDS +=	x11/kde-applications/kaccounts-integration
+
+# Special case, KAccounts depends on intltool-merge
+BUILD_DEPENDS +=	textproc/intltool
 
 # sucks
 TEST_IS_INTERACTIVE =	X11
