@@ -7,7 +7,7 @@ PKGNAME=	xfce-${V}
 PKGNAME-main =		xfce-${V}
 PKGNAME-extras =	xfce-extras-${V}
 REVISION-extras =	0
-REVISION-main =		0
+REVISION-main =		1
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 

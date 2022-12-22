@@ -9,8 +9,8 @@ The Xfce desktop is composed of 2 meta-packages:
 Startup
 =======
 Xfce desktop environment is launched through the 'startxfce4' script.
-Simply add '${LOCALBASE}/bin/startxfce4' to your .xinitrc/.xsession
-script if you use startx, xenodm or slim.
+Simply add '${LOCALBASE}/bin/startxfce4' to your .xinitrc .xsession
+script if you use startx(1) or xenodm(1), respectively.
 
 If you use gdm or kdm, have a look at
 https://wiki.xfce.org/faq#starting_xfce. An xfce4.desktop file is
