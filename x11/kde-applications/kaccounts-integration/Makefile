@@ -1,6 +1,7 @@
 COMMENT =	library and QML module for Accounts-SSO and SignOn-SSO
 
 DISTNAME =	kaccounts-integration-${VERSION}
+REVISION =	0
 
 CATEGORIES =	net devel
 
@@ -14,6 +15,8 @@ WANTLIB += KF5I18n KF5KIOCore KF5QuickAddons KF5Service KF5Wallet
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml
 WANTLIB += Qt5QmlModels Qt5Quick Qt5Widgets Qt5Xml accounts-qt5
 WANTLIB += m signon-qt5
+
+BUILD_DEPENDS +=	devel/kf5/kcmutils
 
 LIB_DEPENDS =	devel/kf5/kconfig \
 		devel/kf5/kcoreaddons \
