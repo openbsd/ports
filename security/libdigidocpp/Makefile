@@ -1,11 +1,10 @@
 COMMENT =		library for creating DigiDoc signature files
 
-V =			3.14.10
+V =			3.14.11
 DISTNAME =		libdigidocpp-${V}
 CATEGORIES =		security
-REVISION =		3
 
-SHARED_LIBS =		digidocpp	0.0	# 0.0
+SHARED_LIBS =		digidocpp	1.0	# 0.0
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
@@ -18,12 +17,9 @@ MASTER_SITES =		https://github.com/open-eid/libdigidocpp/releases/download/v${V}
 
 DIST_SUBDIR =		libdigidocpp
 MASTER_SITES0 =		https://github.com/open-eid/libdigidocpp/
-# merged but after 3.14.10 release
-PATCHFILES +=		pkcs11-path-{pull/}473.patch:0
-PATCHFILES +=		libressl-{pull/}482.patch:0
-PATCHFILES +=		minizip--{pull/}485.patch:0
 # still pending (but approved)
 PATCHFILES +=		iconv-{pull/}470.patch:0
+PATCHFILES +=		update-minzip-{pull/}515.patch:0
 
 PATCH_DIST_STRIP =	-p1
 
@@ -73,10 +69,5 @@ RUN_DEPENDS +=		security/opensc
 # alternative to https://github.com/open-eid/cmake/pull/35
 CONFIGURE_ARGS +=	-DCMAKE_SHARED_LINKER_FLAGS="${LDFLAGS} \
 			    -Wl,-rpath,/usr/local/lib/pkcs11"
-
-# fix src/minizip/ioapi.c warnings: off_t is always 64 bit,
-# no need for ftello64()
-# fixed in zlib 1.2.13 (40c5a9bc06c5b0746aab270971c8cc546e3d5fc7)
-CFLAGS +=		-DIOAPI_NO_64
 
 .include <bsd.port.mk>
