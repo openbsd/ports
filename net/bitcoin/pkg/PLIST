@@ -35,8 +35,6 @@ lib/pkgconfig/libsecp256k1.pc
 @man man/man1/bitcoin-util.1
 @man man/man1/bitcoin-wallet.1
 @man man/man1/bitcoind.1
-share/bash-completion/
-share/bash-completion/completions/
 share/bash-completion/completions/bitcoin/
 share/bash-completion/completions/bitcoin/bitcoin-cli.bash-completion
 share/bash-completion/completions/bitcoin/bitcoin-tx.bash-completion
