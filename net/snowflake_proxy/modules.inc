@@ -1,6 +1,6 @@
 MODGO_MODULES =	\
 	cloud.google.com/go						 v0.34.0 \
-	git.torproject.org/pluggable-transports/goptlib.git		 v1.1.0 \
+	git.torproject.org/pluggable-transports/goptlib.git		 v1.3.0 \
 	github.com/!burnt!sushi/toml					 v0.3.1 \
 	github.com/!knetic/govaluate					 v3.0.1-0.20171022003610-9aa49832a739+incompatible \
 	github.com/!shopify/sarama					 v1.19.0 \
@@ -67,7 +67,7 @@ MODGO_MODULES =	\
 	github.com/gopherjs/gopherjs					 v0.0.0-20181017120253-0766667cb4d1 \
 	github.com/gorilla/context					 v1.1.1 \
 	github.com/gorilla/mux						 v1.7.3 \
-	github.com/gorilla/websocket					 v1.4.1 \
+	github.com/gorilla/websocket					 v1.5.0 \
 	github.com/grpc-ecosystem/go-grpc-middleware			 v1.0.1-0.20190118093823-f849b5445de4 \
 	github.com/grpc-ecosystem/go-grpc-prometheus			 v1.2.0 \
 	github.com/grpc-ecosystem/grpc-gateway				 v1.9.5 \
