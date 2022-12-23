@@ -1,7 +1,8 @@
-COMMENT=	proxy providing Tor access to others with censored net
+COMMENT=	anti-censorship proxy and pluggable transports for Tor
 
 MODGO_MODNAME=	git.torproject.org/pluggable-transports/snowflake.git/v2
 V=		2.3.1
+REVISION=	0
 MODGO_VERSION=	v$V
 
 DISTNAME=	snowflake.git-${MODGO_VERSION}
@@ -17,7 +18,7 @@ PERMIT_PACKAGE= Yes
 WANTLIB += c pthread
 
 MODULES=	lang/go
-ALL_TARGET=	 ./proxy/
+ALL_TARGET=	./proxy/ ./client/ ./server/
 
 # done as a sed instead of patch because the path includes the version number
 post-extract:
@@ -25,7 +26,9 @@ post-extract:
 	    ${WRKSRC}/proxy/lib/pt_event_logger.go
 
 post-install:
-	cd ${PREFIX}/bin && mv proxy snowflake_proxy
+.for i in proxy client server
+	mv ${PREFIX}/bin/$i ${PREFIX}/bin/snowflake_$i
+.endfor
 
 .include "modules.inc"
 .include <bsd.port.mk>

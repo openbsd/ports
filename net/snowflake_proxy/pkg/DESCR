@@ -12,5 +12,6 @@ e.g. by configuring it in Tor Browser.
 Technical information is in
 https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/wikis/Technical%20Overview
 
-This package provides a proxy, for those who would like to use their
-internet connection to provide access to others via this protocol.
+This package provides a standalone proxy, for those who would like to use
+their internet connection to provide access to others via this protocol,
+and pluggable transports for Tor to allow using snowflake proxies. 
