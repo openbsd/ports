@@ -1,8 +1,4 @@
-@ask-update kc-<2.4 Make sure all your existing kc databases are safely *dumped* ('dump' command) then read the Changelog in ${PREFIX}/share/doc/kc after installation
 @bin bin/kc
 @man man/man1/kc.1
 share/doc/kc/
-share/doc/kc/Changelog
-share/doc/pkg-readmes/${PKGSTEM}
-share/kc/
-share/kc/pwsafe_to_kc.pl
+share/doc/kc/Changelog.md
