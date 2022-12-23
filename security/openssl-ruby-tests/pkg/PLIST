@@ -86,6 +86,8 @@ share/openssl-ruby-tests/test/openssl/fixtures/pkey/empty.pem
 share/openssl-ruby-tests/test/openssl/fixtures/pkey/fullchain.pem
 share/openssl-ruby-tests/test/openssl/fixtures/pkey/garbage.txt
 share/openssl-ruby-tests/test/openssl/fixtures/pkey/p256.pem
+share/openssl-ruby-tests/test/openssl/fixtures/pkey/p256_too_large.pem
+share/openssl-ruby-tests/test/openssl/fixtures/pkey/p384_invalid.pem
 share/openssl-ruby-tests/test/openssl/fixtures/pkey/rsa-1.pem
 share/openssl-ruby-tests/test/openssl/fixtures/pkey/rsa-2.pem
 share/openssl-ruby-tests/test/openssl/fixtures/pkey/rsa-3.pem
