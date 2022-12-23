@@ -1,6 +1,7 @@
 COMMENT=	library and CLI tool (ykman) for configuring a YubiKey
 
 MODPY_EGG_VERSION=	5.0.0
+REVISION =	0
 
 DISTNAME=	yubikey_manager-${MODPY_EGG_VERSION}
 PKGNAME=	yubikey-manager-${MODPY_EGG_VERSION}
@@ -16,6 +17,7 @@ RUN_DEPENDS=	devel/py-click${MODPY_FLAVOR}>=8,<9 \
 		security/pcsc-lite \
 		security/py-cryptography${MODPY_FLAVOR}<39 \
 		security/py-fido2${MODPY_FLAVOR}>=0.9,<2.0 \
+		security/py-keyring${MODPY_FLAVOR}<24 \
 		security/py-openssl${MODPY_FLAVOR} \
 		security/py-pyscard${MODPY_FLAVOR}<3.0
 
