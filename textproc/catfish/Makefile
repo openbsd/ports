@@ -27,6 +27,7 @@ RUN_DEPENDS =	devel/py-gobject3${MODPY_FLAVOR} \
 		x11/xfce4/xfconf
 
 BUILD_DEPENDS +=	${_MODPY_BUILD_DEPENDS} \
+		devel/py-pexpect${MODPY_FLAVOR} \
 		devel/gettext,-tools \
 		devel/py-distutils-extra${MODPY_FLAVOR} \
 		devel/py-setuptools${MODPY_FLAVOR}
