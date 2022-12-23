@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# Copyright (c) 2021 Klemens Nanni <kn@openbsd.org>
+# Copyright (c) 2021-2022 Klemens Nanni <kn@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
 # purpose with or without fee is hereby granted, provided that the above
@@ -13,6 +13,12 @@
 # WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+# no, do not prefer braces around variables
+#	shellcheck disable=SC2250
+
+# ksh does not implicitly disable errexit in command substitution
+#	shellcheck disable=SC2311
 
 set -Cefu -o pipefail
 
@@ -68,7 +74,7 @@ done
 shift $((OPTIND - 1))
 $pflag && ! $Uflag && ! $mflag && usage
 $uflag && [[ $url != @(file|ftp|http|https)://* ]] && err 'invalid url'
-[ $# -eq 0 ] || usage
+(($# == 0)) || usage
 
 if $Uflag || $mflag
 then
@@ -91,12 +97,13 @@ then
 
 		# `show_ports()' always yields at least one port unless `-p'
 		# fails to match any of their PKGPATHs
-		if [ -n "$ports" ]
+		if [[ -n $ports ]]
 		then
-			printf '\n===>\t%s\n' "$match"
-			printf '%s\t%s\t%s\t%s\n%s' BASE_PKGPATH VERSION NEW \
-			    HOMEPAGE/COMMENT "$ports" |
+			printf '===>\t%s\n' "$match"
+			printf 'BASE_PKGPATH\tVERSION\tNEW\tHOMEPAGE/COMMENT\n'
+			printf '%s' "$ports" |
 				column -tc4 -s'	'
+			printf '\n'
 		fi
 	done
 else
