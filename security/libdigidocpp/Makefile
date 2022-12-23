@@ -3,6 +3,7 @@ COMMENT =		library for creating DigiDoc signature files
 V =			3.14.11
 DISTNAME =		libdigidocpp-${V}
 CATEGORIES =		security
+REVISION =		0
 
 SHARED_LIBS =		digidocpp	1.0	# 0.0
 
@@ -20,6 +21,7 @@ MASTER_SITES0 =		https://github.com/open-eid/libdigidocpp/
 # still pending (but approved)
 PATCHFILES +=		iconv-{pull/}470.patch:0
 PATCHFILES +=		update-minzip-{pull/}515.patch:0
+PATCHFILES +=		libressl-{pull/}516.patch:0
 
 PATCH_DIST_STRIP =	-p1
 
