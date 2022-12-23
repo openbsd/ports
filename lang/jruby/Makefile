@@ -3,12 +3,12 @@ ONLY_FOR_ARCHS = amd64
 
 COMMENT =	pure-Java implementation of the Ruby language
 
-V =		9.3.9.0
+V =		9.4.0.0
 DISTNAME =	jruby-dist-${V}-bin
 PKGNAME =	jruby-${V}
 CATEGORIES =	lang lang/ruby
 DISTFILES =	${DISTNAME}.tar.gz \
-		jffi-1.3.5.tar.gz:0 \
+		jffi-1.3.10.tar.gz:0 \
 		${JRUBY_LAUNCHER_GEM}:1
 
 HOMEPAGE =	http://www.jruby.org/
@@ -23,7 +23,7 @@ MASTER_SITES0 =	https://github.com/jnr/jffi/archive/refs/tags/
 MASTER_SITES1 =	${MASTER_SITE_RUBYGEMS}
 
 MODULES =	java
-MODJAVA_VER =	1.8+
+MODJAVA_VER =	17+
 MODJAVA_BUILD =	ant
 USE_GMAKE =	Yes
 
@@ -42,6 +42,7 @@ JFFI_HOME =	${WRKDIST}/jffi
 JFFI_ARCH =	${MACHINE_ARCH:S/amd64/x86_64/}-OpenBSD
 FFI_ARCH =	${JFFI_ARCH:L}
 JRUBY_LAUNCHER_GEM = jruby-launcher-1.1.19-java.gem
+JRUBY_RUBY_VERSION =	3.1
 SUBST_VARS =	JRUBY_HOME JFFI_ARCH FFI_ARCH RAKE_V RDOC_V JAVA_HOME
 
 MODJAVA_BUILD_DIR = ${JFFI_HOME}
@@ -77,13 +78,13 @@ do-install:
 	ln -s ${TRUEPREFIX}/jruby/bin/jruby ${PREFIX}/bin/jruby
 	${INSTALL_DATA_DIR} ${JRUBY_HOME}
 	${INSTALL_DATA_DIR} ${JRUBY_HOME}/bin
-	for file in ast bundle bundler gem jgem jirb jirb_swing jruby jrubyc racc rake rdoc ri; \
+	for file in ast bundle bundler erb irb gem jgem jirb jirb_swing jruby jrubyc racc rake rdoc ri; \
 	  do ${INSTALL_SCRIPT} ${WRKBUILD}/bin/$$file ${JRUBY_HOME}/bin/$$file; \
 	done
 	${INSTALL_DATA_DIR} ${JRUBY_HOME}/lib
 	cd ${WRKBUILD}/lib && tar -cf - * | \
 		tar -C ${JRUBY_HOME}/lib -xf -
-	mkdir -p ${JRUBY_HOME}/lib/ruby/{1.8,1.9,2.0}/site_ruby
+	mkdir -p ${JRUBY_HOME}/lib/ruby/${JRUBY_RUBY_VERSION}/site_ruby
 	find ${JRUBY_HOME}/lib \( -name '*.orig' -o -name '*.beforesubst' \) \
 		-delete
 	mv ${JRUBY_HOME}/lib/ruby/gems/{shared,1.8}

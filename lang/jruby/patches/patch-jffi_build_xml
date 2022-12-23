@@ -3,7 +3,7 @@ Work with Java 10+.
 Index: jffi/build.xml
 --- jffi/build.xml.orig
 +++ jffi/build.xml
-@@ -146,8 +146,9 @@
+@@ -151,8 +151,9 @@
  
    <target name="-do-compile" depends="-init">
      <mkdir dir="${build.classes.dir}"/>
@@ -14,7 +14,7 @@ Index: jffi/build.xml
    </target>
  
    <target name="-compile-java" depends="-do-compile"/>
-@@ -315,27 +316,10 @@
+@@ -320,27 +321,10 @@
  
  
    <target name="-generate-version" depends="-init,-init-vars,-generate-version-source">
