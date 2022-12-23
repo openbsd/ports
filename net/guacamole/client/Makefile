@@ -1,6 +1,7 @@
 MASTER_SITES=	${MASTER_SITE_APACHE:=guacamole/$V/binary/}
 DISTNAME=	guacamole-$V
 DISTFILES=	guacamole-$V.war
+REVISION-main=	0
 
 COMMENT-main=	clientless remote desktop gateway, web application
 COMMENT-duo=	Guacamole extension for Duo authentication

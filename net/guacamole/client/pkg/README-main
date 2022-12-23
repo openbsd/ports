@@ -73,8 +73,8 @@ For the JDBC extensions, as well as the extension itself, the relevant
 JDBC connector for the database is required as you are using; versions
 which should be suitable are available in /usr/local/share/guacamole/lib.
 
-You can either symlink the entire installed extensions (and lib, if
-needed) directories from the package into place:
+You can either symlink the entire installed extensions directory (and lib,
+if present; not used by all extensions) from the package into place:
 
 # ln -s /usr/local/share/guacamole/extensions /etc/guacamole/
 # ln -s /usr/local/share/guacamole/lib /etc/guacamole/
