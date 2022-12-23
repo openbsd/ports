@@ -4,11 +4,11 @@ Index: Makefile
 @@ -261,7 +261,7 @@ example: example$(EXE)
  endif
  
- x264$(EXE): $(GENERATED) .depend $(OBJCLI) $(CLI_LIBX264)
+ x264$(EXE): $(OBJCLI) $(CLI_LIBX264)
 -	$(LD)$@ $(OBJCLI) $(CLI_LIBX264) $(LDFLAGSCLI) $(LDFLAGS)
 +	$(LD)$@ $(OBJCLI) -L. -lx264 $(LDFLAGSCLI) $(LDFLAGS)
  
- checkasm8$(EXE): $(GENERATED) .depend $(OBJCHK) $(OBJCHK_8) $(LIBX264)
+ checkasm8$(EXE): $(OBJCHK) $(OBJCHK_8) $(LIBX264)
  	$(LD)$@ $(OBJCHK) $(OBJCHK_8) $(LIBX264) $(LDFLAGS)
 @@ -408,7 +408,6 @@ ifneq ($(IMPLIBNAME),)
  	$(INSTALL) -m 755 $(SONAME) $(DESTDIR)$(bindir)
