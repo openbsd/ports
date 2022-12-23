@@ -6,6 +6,8 @@ CATEGORIES =	net devel
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Wallet Qt5Core Qt5Gui m signon-extension
 
+MODULES +=	textproc/intltool
+
 RUN_DEPENDS =	x11/kde-applications/kaccounts-providers
 
 LIB_DEPENDS =	devel/kf5/kwallet \

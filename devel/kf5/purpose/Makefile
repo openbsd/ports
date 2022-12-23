@@ -14,6 +14,8 @@ WANTLIB += KF5WindowSystem Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
 WANTLIB += Qt5Network Qt5Qml Qt5Widgets Qt5Xml X11 accounts-qt5
 WANTLIB += c kaccounts m
 
+# Special case, KAccounts depends on intltool-merge
+MODULES +=	textproc/intltool
 
 BUILD_DEPENDS =	devel/gettext,-tools \
 		textproc/intltool \
@@ -36,9 +38,6 @@ LIB_DEPENDS =	devel/kf5/kcompletion>=${MODKF5_VERSION} \
 		x11/qt5/qtdeclarative
 
 LIB_DEPENDS +=	x11/kde-applications/kaccounts-integration
-
-# Special case, KAccounts depends on intltool-merge
-BUILD_DEPENDS +=	textproc/intltool
 
 # sucks
 TEST_IS_INTERACTIVE =	X11

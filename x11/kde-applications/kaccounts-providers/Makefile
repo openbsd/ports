@@ -14,6 +14,8 @@ WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Positioning Qt5Qml
 WANTLIB += Qt5QmlModels Qt5Quick Qt5WebChannel Qt5WebEngine Qt5WebEngineCore
 WANTLIB += Qt5Xml accounts-qt5 kaccounts m
 
+MODULES +=	textproc/intltool
+
 LIB_DEPENDS =	devel/kf5/kconfig \
 		devel/kf5/kcoreaddons \
 		devel/kf5/kdeclarative \
