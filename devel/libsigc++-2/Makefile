@@ -2,13 +2,12 @@ PORTROACH=		limit:^2
 
 COMMENT=		callback framework for C++
 
-GNOME_VERSION=		2.10.8
+GNOME_VERSION=		2.12.0
 GNOME_PROJECT=		libsigc++
-REVISION=		0
 
 CATEGORIES=		devel
 
-SHARED_LIBS += sigc-2.0                  4.2 # 0.0.0
+SHARED_LIBS += sigc-2.0                  4.3 # 0.0.0
 
 API_V=			2.0
 SUBST_VARS=		API_V
