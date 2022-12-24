@@ -119,6 +119,7 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/CURLOPT_CAINFO.3
 @man man/man3/CURLOPT_CAINFO_BLOB.3
 @man man/man3/CURLOPT_CAPATH.3
+@man man/man3/CURLOPT_CA_CACHE_TIMEOUT.3
 @man man/man3/CURLOPT_CERTINFO.3
 @man man/man3/CURLOPT_CHUNK_BGN_FUNCTION.3
 @man man/man3/CURLOPT_CHUNK_DATA.3
