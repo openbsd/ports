@@ -12,9 +12,8 @@ Xfce desktop environment is launched through the 'startxfce4' script.
 Simply add '${LOCALBASE}/bin/startxfce4' to your .xinitrc .xsession
 script if you use startx(1) or xenodm(1), respectively.
 
-If you use gdm or kdm, have a look at
-https://wiki.xfce.org/faq#starting_xfce. An xfce4.desktop file is
-provided for use by gdm.
+If you use gdm, have a look at https://wiki.xfce.org/faq#starting_xfce
+which provides an xfce4.desktop for it.
 
 Logging out and shutting down the computer
 ==========================================
