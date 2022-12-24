@@ -1315,6 +1315,11 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/kinesis-video-signaling/2
 lib/python${MODPY_VERSION}/site-packages/botocore/data/kinesis-video-signaling/2019-12-04/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/kinesis-video-signaling/2019-12-04/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/kinesis-video-signaling/2019-12-04/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/kinesis-video-webrtc-storage/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/kinesis-video-webrtc-storage/2018-05-10/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/kinesis-video-webrtc-storage/2018-05-10/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/kinesis-video-webrtc-storage/2018-05-10/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/kinesis-video-webrtc-storage/2018-05-10/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/kinesis/2013-12-02/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/kinesis/2013-12-02/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/kinesis/2013-12-02/examples-1.json
@@ -1388,6 +1393,11 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/lexv2-runtime/2020-08-07/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/lexv2-runtime/2020-08-07/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/lexv2-runtime/2020-08-07/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/license-manager/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/license-manager-linux-subscriptions/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/license-manager-linux-subscriptions/2018-05-10/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/license-manager-linux-subscriptions/2018-05-10/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/license-manager-linux-subscriptions/2018-05-10/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/license-manager-linux-subscriptions/2018-05-10/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/license-manager-user-subscriptions/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/license-manager-user-subscriptions/2018-05-10/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/license-manager-user-subscriptions/2018-05-10/endpoint-rule-set-1.json
