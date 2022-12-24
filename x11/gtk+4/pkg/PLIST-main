@@ -462,6 +462,9 @@ share/locale/hu/LC_MESSAGES/gtk40.mo
 share/locale/hy/LC_MESSAGES/gtk40.mo
 share/locale/ia/LC_MESSAGES/gtk40.mo
 share/locale/id/LC_MESSAGES/gtk40.mo
+share/locale/ie/
+share/locale/ie/LC_MESSAGES/
+share/locale/ie/LC_MESSAGES/gtk40.mo
 share/locale/io/LC_MESSAGES/gtk40.mo
 share/locale/is/LC_MESSAGES/gtk40.mo
 share/locale/it/LC_MESSAGES/gtk40.mo
