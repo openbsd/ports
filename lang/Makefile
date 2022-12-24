@@ -29,6 +29,9 @@
      SUBDIR += eltclsh
      SUBDIR += erlang
      SUBDIR += expect
+     SUBDIR += fennel,lua51
+     SUBDIR += fennel,lua52
+     SUBDIR += fennel,lua53
      SUBDIR += flang
      SUBDIR += fpc
      SUBDIR += freebasic
