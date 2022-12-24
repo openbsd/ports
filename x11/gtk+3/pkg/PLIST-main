@@ -514,6 +514,7 @@ share/icons/hicolor/48x48/apps/gtk3-demo-symbolic.symbolic.png
 share/icons/hicolor/48x48/apps/gtk3-demo.png
 share/icons/hicolor/48x48/apps/gtk3-widget-factory-symbolic.symbolic.png
 share/icons/hicolor/48x48/apps/gtk3-widget-factory.png
+share/locale/ab/LC_MESSAGES/gtk30-properties.mo
 share/locale/ab/LC_MESSAGES/gtk30.mo
 share/locale/af/LC_MESSAGES/gtk30-properties.mo
 share/locale/af/LC_MESSAGES/gtk30.mo
@@ -615,6 +616,10 @@ share/locale/ia/LC_MESSAGES/gtk30-properties.mo
 share/locale/ia/LC_MESSAGES/gtk30.mo
 share/locale/id/LC_MESSAGES/gtk30-properties.mo
 share/locale/id/LC_MESSAGES/gtk30.mo
+share/locale/ie/
+share/locale/ie/LC_MESSAGES/
+share/locale/ie/LC_MESSAGES/gtk30-properties.mo
+share/locale/ie/LC_MESSAGES/gtk30.mo
 share/locale/io/LC_MESSAGES/gtk30-properties.mo
 share/locale/io/LC_MESSAGES/gtk30.mo
 share/locale/is/LC_MESSAGES/gtk30-properties.mo
