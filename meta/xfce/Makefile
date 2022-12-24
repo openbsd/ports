@@ -6,8 +6,8 @@ PKGNAME=	xfce-${V}
 
 PKGNAME-main =		xfce-${V}
 PKGNAME-extras =	xfce-extras-${V}
-REVISION-extras =	0
-REVISION-main =		1
+REVISION-extras =	1
+REVISION-main =		2
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
@@ -46,6 +46,7 @@ RUN_DEPENDS-extras += \
 		STEM-=${V}:${BASE_PKGPATH},-main \
 		textproc/catfish \
 		x11/gigolo \
+		x11/xfce4/orage \
 		x11/xfce4/xfdashboard \
 		x11/xfce4/xfmpc \
 		x11/xfce4/parole

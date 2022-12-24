@@ -1,5 +1,6 @@
 The Xfce Desktop Environment, full installation. Contains base Xfce plus:
  * a media player (parole)
  * an mpc client (xfmpc)
+ * a calendar (orage)
  * a lot of panel plugins
  * thunar plugins (archive, media-tags, thumbnailers and vcs)
