@@ -1,6 +1,6 @@
 COMMENT =	userland implementation of the UDF filesystem
 
-V =		0.8.12
+V =		0.8.20
 DISTNAME =	UDFclient.${V}
 PKGNAME =	udfclient-${V}
 CATEGORIES =	sysutils
