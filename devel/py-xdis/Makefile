@@ -1,10 +1,9 @@
 COMMENT =		cross-version byte-code disassembler and marshal routines
 
-MODPY_EGG_VERSION =	6.0.4
+MODPY_EGG_VERSION =	6.0.5
 DISTNAME =		xdis-${MODPY_EGG_VERSION}
 PKGNAME =		py-xdis-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
-REVISION =		1
 
 HOMEPAGE =		https://github.com/rocky/python-xdis/
 
