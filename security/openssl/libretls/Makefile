@@ -1,9 +1,8 @@
 COMMENT =	libtls library used with OpenSSL 1.1 for testing
 
-V =		3.5.2
+V =		3.7.0
 DISTNAME =	libretls-$V
 PKGNAME =	libretls-$V
-REVISION =	0
 
 SHARED_LIBS =	tls 1.0
 
