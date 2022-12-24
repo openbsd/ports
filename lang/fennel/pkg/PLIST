@@ -1,0 +1,3 @@
+bin/fennel-${MODLUA_VERSION}
+lib/lua/${MODLUA_VERSION}/fennel.lua
+@man man/man1/fennel-${MODLUA_VERSION}.1
