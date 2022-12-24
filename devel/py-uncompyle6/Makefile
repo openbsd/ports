@@ -1,12 +1,11 @@
-BROKEN = doesn't handle python 3.9.10 yet
+zBROKEN = doesn't handle python 3.9.10 yet
 
 COMMENT =		Python cross-version byte-code deparser
 
-MODPY_EGG_VERSION =	3.8.0
+MODPY_EGG_VERSION =	3.9.0
 DISTNAME =		uncompyle6-${MODPY_EGG_VERSION}
 PKGNAME =		py-uncompyle6-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
-REVISION =		1
 
 HOMEPAGE =		https://github.com/rocky/python-uncompyle6/
 
@@ -15,9 +14,11 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR} \
-			devel/py-spark-parser${MODPY_FLAVOR} \
+RUN_DEPENDS =		devel/py-spark-parser${MODPY_FLAVOR} \
 			devel/py-xdis${MODPY_FLAVOR}
+
+TEST_DEPENDS =		devel/py-six${MODPY_FLAVOR} \
+			devel/py-hypothesis${MODPY_FLAVOR}
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
