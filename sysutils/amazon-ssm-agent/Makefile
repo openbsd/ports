@@ -3,7 +3,7 @@ ONLY_FOR_ARCHS=		amd64
 
 COMMENT=		AWS SSM agent
 
-GH_TAGNAME=		3.2.286.0
+GH_TAGNAME=		3.2.419.0
 GH_ACCOUNT=		aws
 GH_PROJECT=		amazon-ssm-agent
 
@@ -33,8 +33,7 @@ MAKE_ENV=		GOPATH=${PORTHOME}
 pre-configure:
 	rmdir ${WRKSRC}
 	mv ${WRKDIR}/${DISTNAME} ${WRKSRC}
-	${SUBST_CMD} ${WRKSRC}/agent/appconfig/constants_unix.go \
-		${WRKSRC}/agent/log/log_unix.go
+	${SUBST_CMD} ${WRKSRC}/agent/appconfig/constants_unix.go
 
 do-install:
 # INSTALL_SCRIPT: don't strip(1) go binaries
