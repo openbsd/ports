@@ -1,5 +1,3 @@
-zBROKEN = doesn't handle python 3.9.10 yet
-
 COMMENT =		Python cross-version byte-code deparser
 
 MODPY_EGG_VERSION =	3.9.0
