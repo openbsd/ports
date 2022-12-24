@@ -2,7 +2,7 @@ COMMENT =	management tool for password and sensitive data
 
 V =		2.7.4
 DISTNAME =	keepassxc-${V}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	security
 

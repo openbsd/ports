@@ -2,7 +2,7 @@
 | Running ${PKGSTEM} on OpenBSD
 +-------------------------------------------------------------------------------
 
-In order to use browser integration you need to add following unveil rule:
+In order to use browser integration you need to add the following unveil rules:
 
 # for using the KeePassXC-Browser addon with the keepassxc--browser package
 ${LOCALBASE}/bin r
