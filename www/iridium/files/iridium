@@ -53,4 +53,7 @@ export LD_LIBRARY_PATH
 [ -f ~/.config/user-dirs.dirs ] || \
 	echo 'XDG_DOWNLOAD_DIR="$HOME/Downloads"' > ~/.config/user-dirs.dirs
 
-LANG=${_l} exec "/usr/local/iridium/iridium" --disable-features=WebAssembly,AsmJsToWebAssembly,WebAssemblyStreaming --js-flags=--noexpose-wasm "${@}"
+[ -z ${ENABLE_WASM} ] && \
+	_NOWASM="--disable-features=WebAssembly,AsmJsToWebAssembly,WebAssemblyStreaming --js-flags=--noexpose-wasm"
+
+LANG=${_l} exec "/usr/local/iridium/iridium" ${_NOWASM} "${@}"
