@@ -9,5 +9,6 @@ VERSION_SPEC =		>=3.9,<3.10
 PORTROACH =		limit:^3\.9
 
 REVISION =		0
+REVISION-main =		1
 
 .include <bsd.port.mk>

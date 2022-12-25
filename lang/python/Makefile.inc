@@ -197,6 +197,9 @@ post-install:
 		${PREFIX}/bin/python${VERSION}-2to3
 .else
 	rm -f ${PREFIX}/bin/pip3 # in devel/py-pip for default Python version
+	perl -pi -e \
+		's@#!/usr/local/bin/python@#!${PREFIX}/bin/python${VERSION}@' \
+		${PREFIX}/bin/pip${VERSION}
 .endif
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/python${VERSION}
 	${INSTALL_DATA} ${FILESDIR}/CHANGES.OpenBSD \
