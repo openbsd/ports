@@ -1,6 +1,6 @@
 COMMENT =	modal text editor
 
-VER =		22.08.1
+VER =		22.12
 DISTNAME =	helix-${VER}
 
 CATEGORIES =	editors
@@ -12,7 +12,7 @@ MAINTAINER =	Laurent Cheylus <foxy@free.fr>
 # MPL-2.0
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=	${MODCARGO_WANTLIB} m
+WANTLIB +=	${MODCARGO_WANTLIB} ${COMPILER_LIBCXX} m
 
 MASTER_SITES =	https://github.com/helix-editor/helix/releases/download/${VER}/
 
@@ -23,6 +23,8 @@ DISTFILES +=	${DISTNAME}-source${EXTRACT_SUFX}
 EXTRACT_CASES= *.tar.xz) \
 	xz -dc ${FULLDISTDIR}/$$archive | ${TAR} xf - -C ${WRKDIST};;
 
+COMPILER =	base-clang ports-gcc
+
 MODULES =	devel/cargo
 
 CONFIGURE_STYLE =       cargo
@@ -32,7 +34,7 @@ pre-extract:
 	@mkdir -p ${WRKDIST}
 
 post-patch:
-	grep -F -Rl '%%DATADIR%%' ${WRKSRC} | xargs sed -i \
+	grep -F -Rls '%%DATADIR%%' ${WRKSRC} | xargs sed -i \
 		's,%%DATADIR%%,${PREFIX}/share/helix,'
 
 do-install:
@@ -50,8 +52,7 @@ do-install:
 	find ${WRKSRC}/runtime/grammars/ -type f -name '*.so' -exec \
 		cp -a {} ${PREFIX}/share/helix/runtime/grammars \;
 
-	${INSTALL_DATA} ${WRKSRC}/runtime/tutor.txt \
-		${PREFIX}/share/helix/runtime
+	${INSTALL_DATA} ${WRKSRC}/runtime/tutor ${PREFIX}/share/helix/runtime
 	${INSTALL_DATA} ${WRKSRC}/languages.toml ${PREFIX}/share/helix
 
 .include "crates.inc"

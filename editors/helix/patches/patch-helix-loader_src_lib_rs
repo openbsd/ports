@@ -11,5 +11,5 @@ Index: helix-loader/src/lib.rs
 +    }
 +
      // fallback to location of the executable being run
+     // canonicalize the path in case the executable is symlinked
      std::env::current_exe()
-         .ok()

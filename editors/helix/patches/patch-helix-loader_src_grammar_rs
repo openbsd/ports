@@ -9,7 +9,7 @@ Index: helix-loader/src/grammar.rs
  
  #[cfg(target_arch = "wasm32")]
  pub fn get_language(name: &str) -> Result<Language> {
-@@ -89,60 +88,8 @@ pub fn fetch_grammars() -> Result<()> {
+@@ -88,60 +87,8 @@ pub fn fetch_grammars() -> Result<()> {
      let mut grammars = get_grammar_configs()?;
      grammars.retain(|grammar| !matches!(grammar.source, GrammarSource::Local { .. }));
  
@@ -64,14 +64,14 @@ Index: helix-loader/src/grammar.rs
 -        let len = errors.len();
 -        println!("{} grammars failed to fetch", len);
 -        for (i, error) in errors.into_iter().enumerate() {
--            println!("\tFailure {}/{}: {}", i, len, error);
+-            println!("\tFailure {}/{}: {}", i + 1, len, error);
 -        }
 -    }
 -
      Ok(())
  }
  
-@@ -235,111 +182,6 @@ where
+@@ -234,111 +181,6 @@ where
      drop(tx);
  
      rx.iter().collect()
