@@ -15,6 +15,8 @@ FLAVOR ?=		# empty
 MODLUA_VERSION =		5.2
 .elif ${FLAVOR:Mlua53}
 MODLUA_VERSION =		5.3
+.elif ${FLAVOR:Mlua54}
+MODLUA_VERSION =		5.4
 .else
 MODLUA_VERSION ?=		${MODLUA_DEFAULT_VERSION}
 .endif
@@ -28,6 +30,9 @@ MODLUA_FLAVOR =		lua52
 .elif "${MODLUA_VERSION}" == "5.3"
 _MODLUA_PKG_PREFIX =	lua53
 MODLUA_FLAVOR =		lua53
+.elif "${MODLUA_VERSION}" == "5.4"
+_MODLUA_PKG_PREFIX =	lua54
+MODLUA_FLAVOR =		lua54
 .else
 ERRORS +=		"Invalid MODLUA_VERSION set: ${MODLUA_VERSION}."
 .endif
