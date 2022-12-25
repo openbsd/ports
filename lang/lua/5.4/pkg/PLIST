@@ -1,0 +1,20 @@
+@option no-default-conflict
+@option is-branch
+@conflict lua->=5.4,<5.5
+@bin bin/lua54
+@bin bin/luac54
+include/lua-5.4/
+include/lua-5.4/lauxlib.h
+include/lua-5.4/lua.h
+include/lua-5.4/lua.hpp
+include/lua-5.4/luaconf.h
+include/lua-5.4/lualib.h
+@static-lib lib/liblua5.4.a
+@lib lib/liblua5.4.so.${LIBlua5.4_VERSION}
+lib/lua/
+lib/lua/5.4/
+lib/pkgconfig/lua54.pc
+@man man/man1/lua54.1
+@man man/man1/luac54.1
+share/lua/
+share/lua/5.4/
