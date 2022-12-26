@@ -3,7 +3,7 @@ CATEGORIES =	sysutils
 
 GH_ACCOUNT =	Genivia
 GH_PROJECT =	ugrep
-GH_TAGNAME =	v3.7.9
+GH_TAGNAME =	v3.9.2
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
