@@ -19,7 +19,7 @@ DISTFILES =	fennel-{}$V${EXTRACT_SUFX}
 
 MODULES =	lang/lua
 
-FLAVORS =	lua51 lua52 lua53
+FLAVORS =	lua51 lua52 lua53 lua54
 FLAVOR ?=	lua51
 
 PKG_ARCH =	*
