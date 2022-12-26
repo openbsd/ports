@@ -2,7 +2,7 @@ COMMENT =	fast, efficient and secure backup program
 
 MODGO_MODNAME =	github.com/restic/restic
 MODGO_VERSION =	v0.14.0
-REVISION =	1
+REVISION =	2
 
 DISTNAME =	restic-${MODGO_VERSION}
 
@@ -19,7 +19,14 @@ WANTLIB += c pthread
 
 MODULES =	lang/go
 
+MODGO_FLAGS +=	-tags '!selfupdate'
+
 NO_TEST =	Yes
+
+post-extract:
+	# pending https://github.com/restic/restic/pull/4100
+	# "Reinstate selfupdate tag to make builds without self-update work"
+	sed -i s/' xbuild'/go:build/ ${WRKSRC}/cmd/restic/cmd_self_update.go
 
 do-install:
 	${MODGO_INSTALL_TARGET}
