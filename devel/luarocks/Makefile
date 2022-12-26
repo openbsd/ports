@@ -37,7 +37,7 @@ NO_TEST =		Yes
 
 PKG_ARCH =		*
 
-FLAVORS =		lua51 lua52 lua53
+FLAVORS =		lua51 lua52 lua53 lua54
 FLAVOR ?=		lua51
 
 post-configure:
