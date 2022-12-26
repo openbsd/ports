@@ -30,7 +30,7 @@ CONFIGURE_STYLE ?=	gnu
 CONFIGURE_ARGS +=	--enable-shared \
 			--program-suffix=${BINREV} \
 			--with-soname=ruby${BINREV} \
-			--with-ruby-version=minor \
+			--with-ruby-version=${REV} \
 			--with-mantype=doc \
 			--with-setjmp-type=_setjmp \
 			--enable-pthread \
