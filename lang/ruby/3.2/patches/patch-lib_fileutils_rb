@@ -1,0 +1,16 @@
+Make FileUtils.mkdir_p act more like mkdir(1) -p, by not attempting
+to create directories that already exist.  This fixes systrace
+warnings when building ports.
+
+Index: lib/fileutils.rb
+--- lib/fileutils.rb.orig
++++ lib/fileutils.rb
+@@ -381,7 +381,7 @@ module FileUtils
+       end
+       stack.reverse_each do |dir|
+         begin
+-          fu_mkdir dir, mode
++          fu_mkdir dir, mode unless File.directory?(dir)
+         rescue SystemCallError
+           raise unless File.directory?(dir)
+         end

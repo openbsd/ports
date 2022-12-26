@@ -1,0 +1,39 @@
+Support arm64 coroutines.
+
+Set correct shared library name.
+
+Override the arch setting to remove OpenBSD version from it,
+so ports don't have to be bumped when OpenBSD version changes.
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -29474,6 +29474,10 @@ esac
+ 
+             coroutine_type=x86
+          ;; #(
++  aarch64-openbsd*) :
++
++            coroutine_type=arm64
++         ;; #(
+   *-openbsd*) :
+ 
+             coroutine_type=pthread
+@@ -31683,7 +31687,7 @@ fi
+ 	 ;; #(
+   openbsd*|mirbsd*) :
+ 
+-	LIBRUBY_SO='lib$(RUBY_SO_NAME).$(SOEXT).$(MAJOR).'`expr ${MINOR} \* 10 + ${TEENY}`
++	LIBRUBY_SO='lib$(RUBY_SO_NAME).so.'${LIBruby32_VERSION}
+ 	 ;; #(
+   solaris*) :
+ 
+@@ -33674,7 +33678,7 @@ then :
+ 
+ else $as_nop
+ 
+-        arch="${target_cpu}-${target_os}"
++        arch="${target_cpu}-openbsd"
+ 
+ fi
+     printf "%s\n" "#define RUBY_PLATFORM \"$arch\"" >>confdefs.h

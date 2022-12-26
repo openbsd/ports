@@ -1,0 +1,14 @@
+base-gcc doesn't support __thread
+
+Index: thread_pthread.h
+--- thread_pthread.h.orig
++++ thread_pthread.h
+@@ -93,7 +93,7 @@ struct rb_thread_sched {
+ #ifndef RB_THREAD_LOCAL_SPECIFIER_IS_UNSUPPORTED
+ # if __STDC_VERSION__ >= 201112
+ #   define RB_THREAD_LOCAL_SPECIFIER _Thread_local
+-# elif defined(__GNUC__)
++# elif defined(__clang__)
+   /* note that ICC (linux) and Clang are covered by __GNUC__ */
+ #   define RB_THREAD_LOCAL_SPECIFIER __thread
+ # endif
