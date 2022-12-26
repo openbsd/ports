@@ -140,6 +140,7 @@
      SUBDIR += opmsg
      SUBDIR += origami
      SUBDIR += ossec-hids
+     SUBDIR += osv-scanner
      SUBDIR += otpcalc
      SUBDIR += outguess
      SUBDIR += p0f
