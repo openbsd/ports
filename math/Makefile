@@ -125,6 +125,7 @@
      SUBDIR += py-affine,python3
      SUBDIR += py-bottleneck,python3
      SUBDIR += py-cftime,python3
+     SUBDIR += py-contourpy,python3
      SUBDIR += py-cvxopt,python3
      SUBDIR += py-cvxpy,python3
      SUBDIR += py-datedelta,python3
