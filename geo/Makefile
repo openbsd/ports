@@ -65,6 +65,7 @@
      SUBDIR += py-rio-cogeo,python3
      SUBDIR += py-shapely,python3
      SUBDIR += py-supermercado,python3
+     SUBDIR += py-xyzservices,python3
      SUBDIR += pygeoapi
      SUBDIR += qgis
      SUBDIR += qmapshack
