@@ -406,6 +406,7 @@
      SUBDIR += luarocks
      SUBDIR += luarocks,lua52
      SUBDIR += luarocks,lua53
+     SUBDIR += luarocks,lua54
      SUBDIR += luassert
      SUBDIR += luassert,lua52
      SUBDIR += luassert,lua53
