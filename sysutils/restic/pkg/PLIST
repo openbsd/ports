@@ -19,10 +19,19 @@
 @man man/man1/restic-rebuild-index.1
 @man man/man1/restic-recover.1
 @man man/man1/restic-restore.1
-@man man/man1/restic-self-update.1
+@comment @man man/man1/restic-self-update.1
 @man man/man1/restic-snapshots.1
 @man man/man1/restic-stats.1
 @man man/man1/restic-tag.1
 @man man/man1/restic-unlock.1
 @man man/man1/restic-version.1
 @man man/man1/restic.1
+share/bash-completion/
+share/bash-completion/completions/
+share/bash-completion/completions/restic
+share/fish/
+share/fish/vendor_completions.d/
+share/fish/vendor_completions.d/restic.fish
+share/zsh/
+share/zsh/site-functions/
+share/zsh/site-functions/restic

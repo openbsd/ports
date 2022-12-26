@@ -1,12 +1,17 @@
-Restic is a program that does backups right and was designed with the following
-principles in mind:
-  - Easy
-  - Fast
-  - Verifiable
-  - Secure
-  - Efficient
+Restic is a modern backup program that can back up your files:
+  - from Linux, BSD, Mac and Windows
+  - to many different storage types, including self-hosted and online
+    services
+  - easily, being a single executable that you can run without a server
+    or complex setup
+  - effectively, only transferring the parts that actually changed in
+    the files you back up
+  - securely, by careful use of cryptography in every part of the process
+  - verifiably, enabling you to make sure that your files can be restored
+    when needed
+  - freely - restic is entirely free to use and completely open source
 
-It supports the following backends:
+Supported backends include:
   - Local directory
   - sftp server (via SSH)
   - HTTP REST server (protocol rest-server)

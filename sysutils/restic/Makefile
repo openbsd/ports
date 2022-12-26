@@ -1,35 +1,37 @@
-COMMENT =	fast, efficient and secure backup program
+COMMENT=	fast, efficient and secure backup program
 
-MODGO_MODNAME =	github.com/restic/restic
-MODGO_VERSION =	v0.14.0
-REVISION =	3
+MODGO_MODNAME=	github.com/restic/restic
+MODGO_VERSION=	v0.14.0
+REVISION=	4
 
-DISTNAME =	restic-${MODGO_VERSION}
+DISTNAME=	restic-${MODGO_VERSION}
 
-CATEGORIES =	sysutils
+CATEGORIES=	sysutils
 
-HOMEPAGE =	https://restic.net/
+HOMEPAGE=	https://restic.net/
 
-MAINTAINER =	Stuart Henderson <stu.ports@spacehopper.org>
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 # BSD
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c pthread
 
-MODULES =	lang/go
-
-NO_TEST =	Yes
-
-post-extract:
-	# pending https://github.com/restic/restic/pull/4100
-	# "Reinstate selfupdate tag to make builds without self-update work"
-	sed -i s/' xbuild'/go:build/ ${WRKSRC}/cmd/restic/cmd_self_update.go
+MODULES=	lang/go
+WRKDIST=	${WRKSRC}
+NO_TEST=	Yes
 
 do-install:
 	${MODGO_INSTALL_TARGET}
-	${INSTALL_DATA_DIR} ${PREFIX}/man/man1
+	${INSTALL_DATA_DIR} ${PREFIX}/man/man1 \
+	    ${PREFIX}/share/bash-completion/completions \
+	    ${PREFIX}/share/fish/vendor_completions.d \
+	    ${PREFIX}/share/zsh/site-functions
 	${INSTALL_MAN} ${WRKSRC}/doc/man/*.1 ${PREFIX}/man/man1
+	cd ${PREFIX}; bin/restic generate \
+	    --bash-completion share/bash-completion/completions/restic \
+	    --fish-completion share/fish/vendor_completions.d/restic.fish \
+	    --zsh-completion share/zsh/site-functions/restic
 
 .include "modules.inc"
 
