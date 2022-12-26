@@ -20961,5 +20961,5 @@ librenms/vendor/webmozart/assert/src/Mixin.php
 librenms/webpack.mix.js
 @cwd ${LOCALBASE}
 bin/lnms
-share/bash-completion/completions/lnms-completion.bash
+share/bash-completion/completions/lnms
 share/doc/pkg-readmes/${PKGSTEM}

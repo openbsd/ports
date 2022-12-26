@@ -7,6 +7,7 @@ NOT_FOR_ARCHS=	sparc64
 GH_ACCOUNT=	librenms
 GH_PROJECT=	librenms
 GH_TAGNAME=	22.11.0
+REVISION=	0
 
 DISTFILES=	${GH_DISTFILE} \
 		${PKGNAME}-vendor.tar.xz:0
@@ -97,7 +98,7 @@ do-install:
 	find ${INSTDIR} -name '.git*' -exec rm -rf {} +
 	ln -s /var/www/librenms/lnms ${WRKINST}/${LOCALBASE}/bin/
 	${INSTALL_DATA} ${WRKSRC}/misc/lnms-completion.bash \
-	    ${WRKINST}/${LOCALBASE}/share/bash-completion/completions/
+	    ${WRKINST}/${LOCALBASE}/share/bash-completion/completions/lnms
 
 COMPOSER=	${MODPHP_BIN} \
 		-d memory_limit=-1 -d allow_url_fopen=1 \
