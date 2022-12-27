@@ -1,12 +1,12 @@
 COMMENT =	TLS-only IRC logger
 
-DISTNAME =	litterbox-1.8
+DISTNAME =	litterbox-1.9
 
 CATEGORIES =	net
 
 HOMEPAGE =	https://git.causal.agency/litterbox/about/
 
-MAINTAINER =	Omar Polo <op@omarpolo.com>
+MAINTAINER =	Omar Polo <op@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
