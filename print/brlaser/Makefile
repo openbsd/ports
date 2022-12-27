@@ -2,7 +2,7 @@ COMMENT=	CUPS printer driver for some Brother laser printers
 
 GH_ACCOUNT=	QORTEC
 GH_PROJECT=	brlaser
-GH_TAGNAME=	v6.1
+GH_TAGNAME=	v6.2
 
 CATEGORIES=	print
 
