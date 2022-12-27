@@ -88,8 +88,10 @@ SUBDIR += khtml
 SUBDIR += kmediaplayer
 SUBDIR += kdesignerplugin
 SUBDIR += kross
-SUBDIR += kdewebkit
 SUBDIR += kdelibs4support
+
+# XXX disable for now, remove later
+#SUBDIR += kdewebkit
 
 # tier 4
 SUBDIR += frameworkintegration
