@@ -1039,6 +1039,7 @@ go/pkg${GOCFG}/internal/poll.a
 go/pkg${GOCFG}/internal/profile.a
 go/pkg${GOCFG}/internal/race.a
 go/pkg${GOCFG}/internal/reflectlite.a
+go/pkg${GOCFG}/internal/safefilepath.a
 go/pkg${GOCFG}/internal/singleflight.a
 go/pkg${GOCFG}/internal/syscall/
 go/pkg${GOCFG}/internal/syscall/execenv.a
@@ -1906,6 +1907,7 @@ go/src/cmd/compile/internal/test/issue50182_test.go
 go/src/cmd/compile/internal/test/lang_test.go
 go/src/cmd/compile/internal/test/logic_test.go
 go/src/cmd/compile/internal/test/mulconst_test.go
+go/src/cmd/compile/internal/test/race.go
 go/src/cmd/compile/internal/test/reproduciblebuilds_test.go
 go/src/cmd/compile/internal/test/shift_test.go
 go/src/cmd/compile/internal/test/ssa_test.go
@@ -7302,6 +7304,11 @@ go/src/internal/reflectlite/swapper.go
 go/src/internal/reflectlite/tostring_test.go
 go/src/internal/reflectlite/type.go
 go/src/internal/reflectlite/value.go
+go/src/internal/safefilepath/
+go/src/internal/safefilepath/path.go
+go/src/internal/safefilepath/path_other.go
+go/src/internal/safefilepath/path_test.go
+go/src/internal/safefilepath/path_windows.go
 go/src/internal/singleflight/
 go/src/internal/singleflight/singleflight.go
 go/src/internal/singleflight/singleflight_test.go
@@ -12532,13 +12539,16 @@ go/test/fixedbugs/issue55122.go
 go/test/fixedbugs/issue55122b.go
 go/test/fixedbugs/issue5515.go
 go/test/fixedbugs/issue5581.go
+go/test/fixedbugs/issue55889.go
 go/test/fixedbugs/issue5607.go
 go/test/fixedbugs/issue5609.go
+go/test/fixedbugs/issue56105.go
 go/test/fixedbugs/issue5614.dir/
 go/test/fixedbugs/issue5614.dir/rethinkgo.go
 go/test/fixedbugs/issue5614.dir/x.go
 go/test/fixedbugs/issue5614.dir/y.go
 go/test/fixedbugs/issue5614.go
+go/test/fixedbugs/issue56141.go
 go/test/fixedbugs/issue5698.go
 go/test/fixedbugs/issue5704.go
 go/test/fixedbugs/issue5753.go

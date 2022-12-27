@@ -10,7 +10,7 @@ Index: src/runtime/sys_openbsd2.go
  
  package runtime
  
-@@ -39,6 +39,8 @@ func raiseproc_trampoline()
+@@ -40,6 +40,8 @@ func raiseproc_trampoline()
  //go:nosplit
  //go:cgo_unsafe_args
  func thrkill(tid int32, sig int) {

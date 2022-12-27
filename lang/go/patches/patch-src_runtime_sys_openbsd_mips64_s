@@ -35,7 +35,7 @@ Index: src/runtime/sys_openbsd_mips64.s
 +	// R4 points to the m.
 +	// We are already on m's g0 stack.
  
--// func exitThread(wait *uint32)
+-// func exitThread(wait *atomic.Uint32)
 -TEXT runtime·exitThread(SB),NOSPLIT,$0
 -	MOVV	wait+0(FP), R4		// arg 1 - notdead
 -	MOVV	$302, R2		// sys___threxit
