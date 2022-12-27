@@ -3,7 +3,7 @@ HOMEPAGE =	https://www.calligra.org
 VERSION =	3.2.1
 DISTNAME =	calligra-${VERSION}
 CATEGORIES =	editors
-REVISION =	8
+REVISION =	9
 
 SHARED_LIBS =   RtfReader                 51.0 # 0.0
 SHARED_LIBS +=  basicflakes               50.0 # 0.0
@@ -46,8 +46,10 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # GPLv2+, LGPLv2+ and GNU FDLv1.2
 PERMIT_PACKAGE =	Yes
+
 DPB_PROPERTIES =	parallel
 
+WANTLIB += ${COMPILER_LIBCXX} ICE Imath-3_1 KChart KF5Activities
 WANTLIB += KF5Archive KF5Auth KF5AuthCore KF5Bookmarks KF5Codecs
 WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
 WANTLIB += KF5CoreAddons KF5Crash KF5DBusAddons KF5GuiAddons KF5I18n
@@ -64,9 +66,6 @@ WANTLIB += fontconfig freetype iconv lcms2 m phonon4qt5 phonon4qt5experimental
 WANTLIB += poppler poppler-qt5 qca-qt5 z
 
 MODULES =	devel/kf5
-
-# c++-17
-COMPILER =	base-clang ports-gcc
 
 BUILD_DEPENDS =	devel/boost \
 		devel/gettext,-tools \
@@ -136,9 +135,5 @@ CONFIGURE_ARGS +=	-DWITH_Cauchy=OFF \
 
 # Running D-Bus daemon is required
 TEST_IS_INTERACTIVE =	X11
-
-pre-configure:
-	find ${WRKSRC} -type f \( -name \*.cpp -o -name \*.h \) -exec \
-		sed -i -e 's,#include <phonon,#include <phonon4qt5/phonon,g' {} +
 
 .include <bsd.port.mk>
