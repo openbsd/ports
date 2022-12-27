@@ -2,7 +2,7 @@ USE_WXNEEDED=		Yes
 
 COMMENT=		free open source planetarium
 
-V=			1.1.1
+V=			1.2
 DISTNAME=		stellarium-${V}
 
 CATEGORIES=		astro x11
@@ -20,8 +20,7 @@ WANTLIB += Qt5OpenGL Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels
 WANTLIB += Qt5Quick Qt5Script Qt5SerialPort Qt5WebChannel Qt5WebEngineCore
 WANTLIB += Qt5WebEngineWidgets Qt5Widgets c gps m z
 
-MASTER_SITES=		https://github.com/Stellarium/stellarium/releases/download/v${V:R}/
-WRKDIST=		${WRKDIR}/stellarium-${V:R}
+MASTER_SITES=		https://github.com/Stellarium/stellarium/releases/download/v${V}/
 
 MODULES=		devel/cmake \
 			lang/python \
@@ -61,8 +60,5 @@ CFLAGS +=		-I${LOCALBASE}/include -I${X11BASE}/include
 CXXFLAGS +=		-I${LOCALBASE}/include -I${X11BASE}/include
 
 NO_TEST=		Yes
-
-pre-configure:
-	sed -i 's,/usr/local,${LOCALBASE},g' ${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>
