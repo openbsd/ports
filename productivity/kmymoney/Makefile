@@ -4,7 +4,7 @@ COMMENT =	accounting for KDE 5
 
 V =		5.1.3
 DISTNAME =	kmymoney-${V}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	productivity x11
 
@@ -35,15 +35,15 @@ WANTLIB += KF5Contacts KF5CoreAddons KF5Holidays KF5I18n KF5IconThemes
 WANTLIB += KF5IdentityManagement KF5ItemModels KF5ItemViews KF5JobWidgets
 WANTLIB += KF5KCMUtils KF5KIOCore KF5KIOFileWidgets KF5KIOGui
 WANTLIB += KF5KIONTLM KF5KIOWidgets KF5Notifications KF5Service
-WANTLIB += KF5Solid KF5SonnetUi KF5TextWidgets KF5Wallet KF5WebKit
-WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Qml
-WANTLIB += Qt5QmlModels Qt5Quick Qt5QuickWidgets Qt5Sql Qt5WebKit
-WANTLIB += Qt5WebKitWidgets Qt5Widgets Qt5Xml X11 alkimia5 aqbanking
-WANTLIB += assuan c db db_cxx gmp gpgme gpgmepp gwengui-cpp gwengui-qt5
-WANTLIB += gwenhywfar ical icalss icalvcal icui18n icuuc m ofx
-WANTLIB += ${MODPY_WANTLIB}
-
+WANTLIB += KF5Solid KF5SonnetUi KF5TextWidgets KF5Wallet KF5WidgetsAddons
+WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport Qt5Qml
+WANTLIB += Qt5QmlModels Qt5Quick Qt5QuickWidgets Qt5Sql Qt5WebChannel
+WANTLIB += Qt5WebEngineCore Qt5WebEngineWidgets Qt5WebKit Qt5WebKitWidgets
+WANTLIB += Qt5Widgets Qt5Xml X11 alkimia5 aqbanking assuan c db
+WANTLIB += db_cxx gmp gpgme gpgmepp gwengui-cpp gwengui-qt5 gwenhywfar
+WANTLIB += ical icalss icalvcal icui18n icuuc m ofx
+#WANTLIB += ${MODPY_WANTLIB}
 
 MODULES =		lang/python \
 			devel/kf5
@@ -77,10 +77,7 @@ LIB_DEPENDS =		devel/gwenhywfar \
 			devel/kf5/kcompletion \
 			devel/kf5/kconfig \
 			devel/kf5/kcontacts \
-			devel/kf5/kcontacts \
 			devel/kf5/kcoreaddons \
-			devel/kf5/kdewebkit \
-			devel/kf5/kholidays \
 			devel/kf5/kholidays \
 			devel/kf5/kio \
 			devel/kf5/kitemmodels \
@@ -91,7 +88,6 @@ LIB_DEPENDS =		devel/gwenhywfar \
 			devel/kf5/ktextwidgets \
 			devel/kf5/kwallet \
 			devel/kf5/kwidgetsaddons  \
-			devel/kf5/kdewebkit  \
 			devel/kf5/kxmlgui \
 			devel/kf5/solid \
 			devel/kf5/sonnet \
@@ -104,10 +100,10 @@ LIB_DEPENDS =		devel/gwenhywfar \
 			x11/kde-applications/akonadi \
 			x11/kde-applications/kidentitymanagement \
 			x11/qt5/qtdeclarative \
-			x11/qt5/qtwebkit
+			x11/qt5/qtwebengine
 
 CONFIGURE_ARGS =	-DUSE_QT_DESIGNER=OFF \
-			-DENABLE_WEBENGINE=OFF \
+			-DENABLE_WEBENGINE=ON \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON
 
 TEST_IS_INTERACTIVE =	X11
