@@ -1,4 +1,3 @@
-BROKEN = Depends on mlt 7.12
 # Qt5WebEngine
 USE_WXNEEDED =	Yes
 
