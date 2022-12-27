@@ -32,6 +32,8 @@ CONFIGURE_ARGS =	--localstatedir='${LOCALSTATEDIR}'
 CONFIGURE_ENV =		TURN_NO_MONGO=1 \
 			TURN_NO_PROMETHEUS=1 \
 			TURN_NO_SYSTEMD=1
+# Don't pick up devel/pkgconf
+CONFIGURE_ENV +=	PKGCONFIG="pkg-config"
 
 post-install:
 	rm -rf ${PREFIX}/etc
