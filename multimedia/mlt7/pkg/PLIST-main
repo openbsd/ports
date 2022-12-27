@@ -417,6 +417,8 @@ share/mlt-7/profiles/vcd_ntsc
 share/mlt-7/profiles/vcd_pal
 share/mlt-7/profiles/vertical_hd_30
 share/mlt-7/profiles/vertical_hd_60
+share/mlt-7/qt/filter_gpsgraphic.yml
+share/mlt-7/qt/filter_gpstext.yml
 share/mlt-7/sdl/
 share/mlt-7/sdl/consumer_sdl.yml
 share/mlt-7/sdl/consumer_sdl_audio.yml
@@ -432,7 +434,6 @@ share/mlt-7/vorbis/
 share/mlt-7/vorbis/producer_vorbis.yml
 share/mlt-7/xml/
 share/mlt-7/xml/consumer_xml.yml
-share/mlt-7/xml/filter_gpstext.yml
 share/mlt-7/xml/mlt-xml.dtd
 share/mlt-7/xml/producer_xml-nogl.yml
 share/mlt-7/xml/producer_xml-string.yml

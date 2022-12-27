@@ -1,11 +1,9 @@
 COMMENT-main =		multimedia transformations framework
 COMMENT-gpl2 =		GPLv2-licensed modules for mlt
-VERSION =		7.8.0
+VERSION =		7.12.0
 DISTNAME =		mlt-${VERSION}
 PKGNAME-main =		mlt7-${VERSION}
 PKGNAME-gpl2 =		mlt7-gpl2-${VERSION}
-REVISION-gpl2 =		0
-REVISION-main =		0
 
 CATEGORIES =		multimedia devel
 
@@ -17,8 +15,8 @@ MASTER_SITES =		\
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 # XXX versions should be kept in sync together
-SHARED_LIBS =		mlt-7		3.0
-SHARED_LIBS +=		mlt++-7		3.0
+SHARED_LIBS =		mlt-7		4.0
+SHARED_LIBS +=		mlt++-7		4.0
 
 # GPLv2+, LGPLv2.1+
 # Actually, qimage module could be under GPLv3+ if one more object

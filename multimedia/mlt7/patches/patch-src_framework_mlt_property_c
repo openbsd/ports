@@ -6,7 +6,7 @@ locale functions from dumping core!
 Index: src/framework/mlt_property.c
 --- src/framework/mlt_property.c.orig
 +++ src/framework/mlt_property.c
-@@ -320,7 +320,7 @@ static int time_clock_to_frames( mlt_property self, co
+@@ -321,7 +321,7 @@ static int time_clock_to_frames( mlt_property self, co
  	s = copy;
  	pos = strrchr( s, ':' );
  
@@ -15,7 +15,7 @@ Index: src/framework/mlt_property.c
  	char *orig_localename = NULL;
  	if ( locale )
  	{
-@@ -336,7 +336,7 @@ static int time_clock_to_frames( mlt_property self, co
+@@ -337,7 +337,7 @@ static int time_clock_to_frames( mlt_property self, co
  #endif
  
  	if ( pos ) {
@@ -24,7 +24,7 @@ Index: src/framework/mlt_property.c
  		if ( locale )
  			seconds = strtod_l( pos + 1, NULL, locale );
  		else
-@@ -354,7 +354,7 @@ static int time_clock_to_frames( mlt_property self, co
+@@ -355,7 +355,7 @@ static int time_clock_to_frames( mlt_property self, co
  		}
  	}
  	else {
@@ -33,7 +33,7 @@ Index: src/framework/mlt_property.c
  		if ( locale )
  			seconds = strtod_l( s, NULL, locale );
  		else
-@@ -362,7 +362,7 @@ static int time_clock_to_frames( mlt_property self, co
+@@ -363,7 +363,7 @@ static int time_clock_to_frames( mlt_property self, co
  			seconds = strtod( s, NULL );
  	}
  
@@ -42,7 +42,7 @@ Index: src/framework/mlt_property.c
  	if ( locale ) {
  		// Restore the current locale
  		setlocale( LC_NUMERIC, orig_localename );
-@@ -539,11 +539,11 @@ static double mlt_property_atof( mlt_property self, do
+@@ -540,11 +540,11 @@ static double mlt_property_atof( mlt_property self, do
  		char *end = NULL;
  		double result;
  
@@ -56,7 +56,7 @@ Index: src/framework/mlt_property.c
  		char *orig_localename = NULL;
  		if ( locale ) {
  			// Protect damaging the global locale from a temporary locale on another thread.
-@@ -561,7 +561,7 @@ static double mlt_property_atof( mlt_property self, do
+@@ -562,7 +562,7 @@ static double mlt_property_atof( mlt_property self, do
  		if ( end && end[0] == '%' )
  			result /= 100.0;
  
@@ -65,7 +65,7 @@ Index: src/framework/mlt_property.c
  		if ( locale ) {
  			// Restore the current locale
  			setlocale( LC_NUMERIC, orig_localename );
-@@ -804,7 +804,7 @@ char *mlt_property_get_string_l_tf( mlt_property self,
+@@ -812,7 +812,7 @@ char *mlt_property_get_string_l_tf( mlt_property self,
  	}
  	else if ( ! ( self->types & mlt_prop_string ) )
  	{
@@ -74,7 +74,7 @@ Index: src/framework/mlt_property.c
  		// TODO: when glibc gets sprintf_l, start using it! For now, hack on setlocale.
  		// Save the current locale
  #if defined(__APPLE__)
-@@ -850,7 +850,7 @@ char *mlt_property_get_string_l_tf( mlt_property self,
+@@ -865,7 +865,7 @@ char *mlt_property_get_string_l_tf( mlt_property self,
  			self->types |= mlt_prop_string;
  			self->prop_string = self->serialiser( self->data, self->length );
  		}
@@ -83,7 +83,7 @@ Index: src/framework/mlt_property.c
  		// Restore the current locale
  		setlocale( LC_NUMERIC, orig_localename );
  		free( orig_localename );
-@@ -1062,7 +1062,7 @@ static void time_clock_from_frames( int frames, double
+@@ -1103,7 +1103,7 @@ static void time_clock_from_frames( int frames, double
  
  char *mlt_property_get_time( mlt_property self, mlt_time_format format, double fps, locale_t locale )
  {
@@ -92,7 +92,7 @@ Index: src/framework/mlt_property.c
  	char *orig_localename = NULL;
  #endif
  	int frames = 0;
-@@ -1075,7 +1075,7 @@ char *mlt_property_get_time( mlt_property self, mlt_ti
+@@ -1116,7 +1116,7 @@ char *mlt_property_get_time( mlt_property self, mlt_ti
  	if ( format == mlt_time_frames )
  		return mlt_property_get_string_l( self, locale );
  
@@ -101,7 +101,7 @@ Index: src/framework/mlt_property.c
  	// Use the specified locale
  	if ( locale )
  	{
-@@ -1134,7 +1134,7 @@ char *mlt_property_get_time( mlt_property self, mlt_ti
+@@ -1175,7 +1175,7 @@ char *mlt_property_get_time( mlt_property self, mlt_ti
  	else // Use smpte drop frame by default
  		time_smpte_from_frames( frames, fps, self->prop_string, 1 );
  
@@ -110,7 +110,7 @@ Index: src/framework/mlt_property.c
  	// Restore the current locale
  	if ( locale )
  	{
-@@ -1174,11 +1174,11 @@ static int is_property_numeric( mlt_property self, loc
+@@ -1216,11 +1216,11 @@ static int is_property_numeric( mlt_property self, loc
  	{
  		char *p = NULL;
  
@@ -124,7 +124,7 @@ Index: src/framework/mlt_property.c
  		char *orig_localename = NULL;
  		if ( locale ) {
  			// Protect damaging the global locale from a temporary locale on another thread.
-@@ -1194,7 +1194,7 @@ static int is_property_numeric( mlt_property self, loc
+@@ -1236,7 +1236,7 @@ static int is_property_numeric( mlt_property self, loc
  
  		strtod( self->prop_string, &p );
  
@@ -133,7 +133,7 @@ Index: src/framework/mlt_property.c
  		if ( locale ) {
  			// Restore the current locale
  			setlocale( LC_NUMERIC, orig_localename );
-@@ -1688,7 +1688,7 @@ mlt_rect mlt_property_get_rect( mlt_property self, loc
+@@ -1930,7 +1930,7 @@ mlt_rect mlt_property_get_rect( mlt_property self, loc
  		char *p = NULL;
  		int count = 0;
  
@@ -142,7 +142,7 @@ Index: src/framework/mlt_property.c
  		char *orig_localename = NULL;
  		if ( locale ) {
  			// Protect damaging the global locale from a temporary locale on another thread.
-@@ -1705,7 +1705,7 @@ mlt_rect mlt_property_get_rect( mlt_property self, loc
+@@ -1947,7 +1947,7 @@ mlt_rect mlt_property_get_rect( mlt_property self, loc
  		while ( *value )
  		{
  			double temp;
@@ -150,8 +150,8 @@ Index: src/framework/mlt_property.c
 +#if defined(__GLIBC__) || defined(__APPLE__) || defined(HAVE_STRTOD_L) && !defined(__OpenBSD__)
  			if ( locale )
  				temp = strtod_l( value, &p, locale );
-             else
-@@ -1740,7 +1740,7 @@ mlt_rect mlt_property_get_rect( mlt_property self, loc
+ 			else
+@@ -1982,7 +1982,7 @@ mlt_rect mlt_property_get_rect( mlt_property self, loc
  			count ++;
  		}
  

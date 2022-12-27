@@ -1,7 +1,7 @@
 Index: src/modules/plusgpl/CMakeLists.txt
 --- src/modules/plusgpl/CMakeLists.txt.orig
 +++ src/modules/plusgpl/CMakeLists.txt
-@@ -16,7 +16,7 @@ target_link_libraries(mltplusgpl PRIVATE mlt m Threads
+@@ -21,7 +21,7 @@ target_link_libraries(mltplusgpl PRIVATE mlt m Threads
  
  if(WIN32)
    target_link_libraries(mltplusgpl PRIVATE ws2_32)
