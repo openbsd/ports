@@ -35,6 +35,7 @@ WANTLIB +=	${COMPILER_LIBCXX} bz2 expat lz4 m z
 # doesn't work with MODULES=devel/cmake
 BUILD_DEPENDS +=	devel/boost \
 			devel/cmake \
+			devel/llvm \
 			geo/libosmium \
 			devel/protozero \
 			devel/py-pybind11${MODPY_FLAVOR}
