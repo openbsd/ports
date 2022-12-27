@@ -4,7 +4,7 @@ of the nick changes with each restart of Pidgin.
 Index: pidgin/gtkconv.c
 --- pidgin/gtkconv.c.orig
 +++ pidgin/gtkconv.c
-@@ -10274,7 +10274,7 @@ generate_nick_colors(guint *color_count, GdkColor back
+@@ -10410,7 +10410,7 @@ generate_nick_colors(guint *color_count, GdkColor back
  	pidgin_style_adjust_contrast(NULL, &nick_highlight);
  	pidgin_style_adjust_contrast(NULL, &send_color);
  

@@ -110,6 +110,8 @@ share/locale/da/LC_MESSAGES/pidgin.mo
 share/locale/de/LC_MESSAGES/pidgin.mo
 share/locale/dz/LC_MESSAGES/pidgin.mo
 share/locale/el/LC_MESSAGES/pidgin.mo
+share/locale/en_AU/
+share/locale/en_AU/LC_MESSAGES/
 share/locale/en_AU/LC_MESSAGES/pidgin.mo
 share/locale/en_CA/LC_MESSAGES/pidgin.mo
 share/locale/en_GB/LC_MESSAGES/pidgin.mo
@@ -148,6 +150,8 @@ share/locale/ku_IQ/LC_MESSAGES/pidgin.mo
 share/locale/lt/LC_MESSAGES/pidgin.mo
 share/locale/lv/LC_MESSAGES/pidgin.mo
 share/locale/mai/LC_MESSAGES/pidgin.mo
+share/locale/mhr/
+share/locale/mhr/LC_MESSAGES/
 share/locale/mhr/LC_MESSAGES/pidgin.mo
 share/locale/mk/LC_MESSAGES/pidgin.mo
 share/locale/ml/LC_MESSAGES/pidgin.mo
@@ -172,6 +176,8 @@ share/locale/pt/LC_MESSAGES/pidgin.mo
 share/locale/pt_BR/LC_MESSAGES/pidgin.mo
 share/locale/ro/LC_MESSAGES/pidgin.mo
 share/locale/ru/LC_MESSAGES/pidgin.mo
+share/locale/sd/
+share/locale/sd/LC_MESSAGES/
 share/locale/sd/LC_MESSAGES/pidgin.mo
 share/locale/si/LC_MESSAGES/pidgin.mo
 share/locale/sk/LC_MESSAGES/pidgin.mo
@@ -180,6 +186,8 @@ share/locale/sq/LC_MESSAGES/pidgin.mo
 share/locale/sr/LC_MESSAGES/pidgin.mo
 share/locale/sr@latin/LC_MESSAGES/pidgin.mo
 share/locale/sv/LC_MESSAGES/pidgin.mo
+share/locale/sw/
+share/locale/sw/LC_MESSAGES/
 share/locale/sw/LC_MESSAGES/pidgin.mo
 share/locale/ta/LC_MESSAGES/pidgin.mo
 share/locale/te/LC_MESSAGES/pidgin.mo
@@ -538,6 +546,7 @@ share/pixmaps/pidgin/emotes/small/excited.png
 share/pixmaps/pidgin/emotes/small/excruciating.png
 share/pixmaps/pidgin/emotes/small/eyeroll.png
 share/pixmaps/pidgin/emotes/small/girl.png
+share/pixmaps/pidgin/emotes/small/glasses-cool.png
 share/pixmaps/pidgin/emotes/small/grumpy.png
 share/pixmaps/pidgin/emotes/small/happy.png
 share/pixmaps/pidgin/emotes/small/hot.png
@@ -566,6 +575,7 @@ share/pixmaps/pidgin/emotes/small/question.png
 share/pixmaps/pidgin/emotes/small/restroom.png
 share/pixmaps/pidgin/emotes/small/rose.png
 share/pixmaps/pidgin/emotes/small/sad.png
+share/pixmaps/pidgin/emotes/small/sarcastic.png
 share/pixmaps/pidgin/emotes/small/search.png
 share/pixmaps/pidgin/emotes/small/shame.png
 share/pixmaps/pidgin/emotes/small/shocked.png
