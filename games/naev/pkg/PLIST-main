@@ -13,9 +13,6 @@ share/icons/hicolor/32x32/apps/org.naev.Naev.png
 share/icons/hicolor/64x64/apps/org.naev.Naev.png
 share/metainfo/
 share/metainfo/org.naev.Naev.metainfo.xml
-share/naev/
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
-share/naev/dat/gettext/es/
-share/naev/dat/gettext/es/LC_MESSAGES/
-share/naev/dat/gettext/es/LC_MESSAGES/naev.mo
+@comment share/naev/
