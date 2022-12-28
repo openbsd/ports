@@ -1,10 +1,9 @@
 COMMENT=		diary and journal application
 
-MODPY_EGG_VERSION=	2.24
+MODPY_EGG_VERSION=	2.27.2
 GH_TAGNAME=		v${MODPY_EGG_VERSION}
 GH_ACCOUNT=		jendrikseipp
 GH_PROJECT=		rednotebook
-REVISION=		1
 
 CATEGORIES=		productivity
 
@@ -23,7 +22,7 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 			textproc/py-yaml${MODPY_FLAVOR} \
 			www/webkitgtk4 \
 			x11/gtk+3,-guic \
-			x11/gtksourceview3
+			x11/gtksourceview4
 
 NO_TEST=		Yes
 
