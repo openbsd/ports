@@ -2,6 +2,7 @@ COMMENT=		simple Text Editor for GNOME
 
 GNOME_PROJECT=		gnome-text-editor
 GNOME_VERSION=		43.1
+REVISION=		0
 
 CATEGORIES=		editors
 
@@ -26,5 +27,7 @@ LIB_DEPENDS=		editors/editorconfig-core-c \
 			textproc/icu4c \
 			x11/gnome/libadwaita \
 			x11/gtksourceview5
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 .include <bsd.port.mk>

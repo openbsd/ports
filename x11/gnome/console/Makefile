@@ -2,7 +2,7 @@ COMMENT=		user-friendly terminal emulator for GNOME
 
 GNOME_PROJECT=		gnome-console
 GNOME_VERSION=		43.0
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		x11
 
@@ -34,5 +34,7 @@ LIB_DEPENDS=		devel/libgtop2 \
 
 # org.gnome.system.proxy
 RUN_DEPENDS +=		devel/gsettings-desktop-schemas
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
