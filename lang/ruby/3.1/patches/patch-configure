@@ -1,3 +1,5 @@
+Support arm64 coroutines.
+
 Set correct shared library name.
 
 Override the arch setting to remove OpenBSD version from it,
@@ -6,7 +8,18 @@ so ports don't have to be bumped when OpenBSD version changes.
 Index: configure
 --- configure.orig
 +++ configure
-@@ -31793,7 +31793,7 @@ fi
+@@ -29533,6 +29533,10 @@ esac
+ 
+             coroutine_type=x86
+          ;; #(
++  aarch64-openbsd*) :
++
++            coroutine_type=arm64
++         ;; #(
+   *-openbsd*) :
+ 
+             coroutine_type=pthread
+@@ -31793,7 +31797,7 @@ fi
  	 ;; #(
    openbsd*|mirbsd*) :
  
@@ -15,7 +28,7 @@ Index: configure
  	 ;; #(
    solaris*) :
  
-@@ -33495,7 +33495,7 @@ then :
+@@ -33495,7 +33499,7 @@ then :
  
  else $as_nop
  
