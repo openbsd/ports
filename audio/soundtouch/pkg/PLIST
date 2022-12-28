@@ -6,12 +6,11 @@ include/soundtouch/FIFOSamplePipe.h
 include/soundtouch/STTypes.h
 include/soundtouch/SoundTouch.h
 include/soundtouch/soundtouch_config.h
-@static-lib lib/libSoundTouch.a
-lib/libSoundTouch.la
+lib/cmake/
+lib/cmake/SoundTouch/
+lib/cmake/SoundTouch/SoundTouchConfig.cmake
+lib/cmake/SoundTouch/SoundTouchConfigVersion.cmake
+lib/cmake/SoundTouch/SoundTouchTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/SoundTouch/SoundTouchTargets.cmake
 @lib lib/libSoundTouch.so.${LIBSoundTouch_VERSION}
 lib/pkgconfig/soundtouch.pc
-share/aclocal/
-share/aclocal/soundtouch.m4
-share/doc/soundtouch/
-share/doc/soundtouch/COPYING.TXT
-share/doc/soundtouch/README.html
