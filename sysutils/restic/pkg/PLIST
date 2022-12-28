@@ -14,12 +14,10 @@
 @man man/man1/restic-list.1
 @man man/man1/restic-ls.1
 @man man/man1/restic-migrate.1
-@man man/man1/restic-mount.1
 @man man/man1/restic-prune.1
 @man man/man1/restic-rebuild-index.1
 @man man/man1/restic-recover.1
 @man man/man1/restic-restore.1
-@comment @man man/man1/restic-self-update.1
 @man man/man1/restic-snapshots.1
 @man man/man1/restic-stats.1
 @man man/man1/restic-tag.1

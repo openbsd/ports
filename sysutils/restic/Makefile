@@ -2,7 +2,7 @@ COMMENT=	fast, efficient and secure backup program
 
 MODGO_MODNAME=	github.com/restic/restic
 MODGO_VERSION=	v0.14.0
-REVISION=	4
+REVISION=	5
 
 DISTNAME=	restic-${MODGO_VERSION}
 
@@ -27,8 +27,8 @@ do-install:
 	    ${PREFIX}/share/bash-completion/completions \
 	    ${PREFIX}/share/fish/vendor_completions.d \
 	    ${PREFIX}/share/zsh/site-functions
-	${INSTALL_MAN} ${WRKSRC}/doc/man/*.1 ${PREFIX}/man/man1
 	cd ${PREFIX}; bin/restic generate \
+	    --man man/man1 \
 	    --bash-completion share/bash-completion/completions/restic \
 	    --fish-completion share/fish/vendor_completions.d/restic.fish \
 	    --zsh-completion share/zsh/site-functions/restic
