@@ -2,7 +2,7 @@ COMMENT=		remote filesystem snapshot utility
 
 GH_ACCOUNT=		rsnapshot
 GH_PROJECT=		rsnapshot
-GH_TAGNAME=		1.4.4
+GH_TAGNAME=		1.4.5
 
 CATEGORIES=		net sysutils
 
@@ -27,6 +27,10 @@ AUTORECONF=		./autogen.sh
 
 SAMPLES_DIR=		${PREFIX}/share/examples/rsnapshot
 FAKE_FLAGS=		sysconfdir=${SAMPLES_DIR}
+
+# needed for tests
+USE_GMAKE=		Yes
+TEST_TARGET=		test
 
 post-configure:
 	sed -i "s,/etc/rsnapshot.conf,${SYSCONFDIR}/rsnapshot.conf,g" \
