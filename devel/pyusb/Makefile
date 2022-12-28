@@ -1,12 +1,8 @@
 COMMENT=	python interface to libusb
 
-GH_PROJECT=	pyusb
-GH_ACCOUNT=	pyusb
-GH_COMMIT=	bf88211d65caf01b903005efae7f0915a53a8c4e
-MODPY_EGG_VERSION=	1.0.2
+MODPY_EGG_VERSION=	1.2.1
 DISTNAME=	pyusb-${MODPY_EGG_VERSION}
 PKGNAME=	${MODPY_PY_PREFIX}${DISTNAME}
-REVISION=	7
 
 CATEGORIES=	devel
 
@@ -15,14 +11,14 @@ HOMEPAGE=	https://pyusb.github.io/pyusb/
 # BSD 3-clause
 PERMIT_PACKAGE=	Yes
 
+MASTER_SITES=	https://github.com/pyusb/pyusb/releases/download/v${MODPY_EGG_VERSION}/
+
 MODULES=	lang/python
-MODPY_PYBUILD=	setuptools
+MODPY_PYBUILD=	setuptools_scm
 
 FLAVORS=	python3
 FLAVOR=		python3
 
 RUN_DEPENDS=	devel/libusb1
-
-NO_TEST=	Yes
 
 .include <bsd.port.mk>
