@@ -1,6 +1,5 @@
 QT5NAME =	QtTranslations
 COMMENT =	unofficial Qt5 translations
-REVISION =	1
 
 RUN_DEPENDS =	x11/qt5/qtbase>=${QT5_VERSION},<${QT5_NEXT_VERSION}
 BUILD_DEPENDS =	x11/qt5/qtbase>=${QT5_VERSION},<${QT5_NEXT_VERSION} \

@@ -12,8 +12,6 @@ PKGNAME-global =	qt5-global-${VERSION}
 PKGNAME-psql =		qt5-postgresql-${VERSION}
 PKGNAME-tds =		qt5-tds-${VERSION}
 
-REVISION-main =		2
-
 PKG_ARCH-global =	*
 PKG_ARCH-examples =	*
 

@@ -1,5 +1,3 @@
-https://github.com/gentoo/libressl/blob/master/dev-qt/qtnetwork/files/qtnetwork-5.15.2-libressl.patch
-
 Index: src/network/ssl/qsslsocket_openssl_symbols_p.h
 --- src/network/ssl/qsslsocket_openssl_symbols_p.h.orig
 +++ src/network/ssl/qsslsocket_openssl_symbols_p.h
@@ -17,8 +15,8 @@ Index: src/network/ssl/qsslsocket_openssl_symbols_p.h
  #if !defined QT_LINKED_OPENSSL
  // **************** Shared declarations ******************
  // ret func(arg)
-@@ -233,17 +240,36 @@ Q_AUTOTEST_EXPORT const BIO_METHOD *q_BIO_s_mem();
- int q_DSA_bits(DSA *a);
+@@ -234,17 +241,36 @@ int q_DSA_bits(DSA *a);
+ void q_AUTHORITY_INFO_ACCESS_free(AUTHORITY_INFO_ACCESS *a);
  int q_EVP_CIPHER_CTX_reset(EVP_CIPHER_CTX *c);
  Q_AUTOTEST_EXPORT int q_EVP_PKEY_up_ref(EVP_PKEY *a);
 +#ifdef OPENSSL_NO_DEPRECATED_3_0
@@ -54,19 +52,7 @@ Index: src/network/ssl/qsslsocket_openssl_symbols_p.h
  int q_SSL_session_reused(SSL *a);
  unsigned long q_SSL_CTX_set_options(SSL_CTX *ctx, unsigned long op);
  int q_OPENSSL_init_ssl(uint64_t opts, const OPENSSL_INIT_SETTINGS *settings);
-@@ -279,7 +305,11 @@ int q_DH_bits(DH *dh);
-                                                                     | OPENSSL_INIT_ADD_ALL_DIGESTS, NULL)
- 
- int q_OPENSSL_init_crypto(uint64_t opts, const OPENSSL_INIT_SETTINGS *settings);
-+#ifndef LIBRESSL_VERSION_NUMBER
- void q_CRYPTO_free(void *str, const char *file, int line);
-+#else
-+void q_CRYPTO_free(void *a);
-+#endif
- 
- long q_OpenSSL_version_num();
- const char *q_OpenSSL_version(int type);
-@@ -497,12 +527,14 @@ int q_SSL_CTX_use_PrivateKey(SSL_CTX *a, EVP_PKEY *b);
+@@ -498,12 +524,14 @@ int q_SSL_CTX_use_PrivateKey(SSL_CTX *a, EVP_PKEY *b);
  int q_SSL_CTX_use_RSAPrivateKey(SSL_CTX *a, RSA *b);
  int q_SSL_CTX_use_PrivateKey_file(SSL_CTX *a, const char *b, int c);
  X509_STORE *q_SSL_CTX_get_cert_store(const SSL_CTX *a);
@@ -81,3 +67,17 @@ Index: src/network/ssl/qsslsocket_openssl_symbols_p.h
  void q_SSL_free(SSL *a);
  STACK_OF(SSL_CIPHER) *q_SSL_get_ciphers(const SSL *a);
  const SSL_CIPHER *q_SSL_get_current_cipher(SSL *a);
+@@ -748,8 +776,13 @@ int q_OCSP_id_cmp(OCSP_CERTID *a, OCSP_CERTID *b);
+ 
+ void *q_CRYPTO_malloc(size_t num, const char *file, int line);
+ #define q_OPENSSL_malloc(num) q_CRYPTO_malloc(num, "", 0)
++#ifndef LIBRESSL_VERSION_NUMBER
+ void q_CRYPTO_free(void *str, const char *file, int line);
+ #define q_OPENSSL_free(addr) q_CRYPTO_free(addr, "", 0)
++#else
++void q_CRYPTO_free(void *a);
++#define q_OPENSSL_free(addr) q_CRYPTO_free(addr)
++#endif
+ 
+ int q_SSL_CTX_get_security_level(const SSL_CTX *ctx);
+ void q_SSL_CTX_set_security_level(SSL_CTX *ctx, int level);

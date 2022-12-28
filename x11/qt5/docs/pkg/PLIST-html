@@ -1405,6 +1405,7 @@ share/doc/qt5/qtdoc/qtquick-deployment.html
 share/doc/qt5/qtdoc/qtquick-internationalization.html
 share/doc/qt5/qtdoc/qtquick-performance.html
 share/doc/qt5/qtdoc/qtquick-porting-qt5.html
+share/doc/qt5/qtdoc/qtquick-qml-runtime.html
 share/doc/qt5/qtdoc/qtquick-qmlscene.html
 share/doc/qt5/qtdoc/qtquick-usecase-animations.html
 share/doc/qt5/qtdoc/qtquick-usecase-integratingjs.html
@@ -2123,6 +2124,7 @@ share/doc/qt5/qtmultimedia/qml-qtmultimedia-cameraexposure.html
 share/doc/qt5/qtmultimedia/qml-qtmultimedia-cameraflash-members.html
 share/doc/qt5/qtmultimedia/qml-qtmultimedia-cameraflash.html
 share/doc/qt5/qtmultimedia/qml-qtmultimedia-camerafocus-members.html
+share/doc/qt5/qtmultimedia/qml-qtmultimedia-camerafocus-obsolete.html
 share/doc/qt5/qtmultimedia/qml-qtmultimedia-camerafocus.html
 share/doc/qt5/qtmultimedia/qml-qtmultimedia-cameraimageprocessing-members.html
 share/doc/qt5/qtmultimedia/qml-qtmultimedia-cameraimageprocessing.html
