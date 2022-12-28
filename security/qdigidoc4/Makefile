@@ -3,6 +3,7 @@ COMMENT =		DigiDoc4 GUI client for signing and encrypting documents
 V =			4.2.14
 DISTNAME =		qdigidoc4-${V}
 CATEGORIES =		security x11
+REVISION =		0
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
