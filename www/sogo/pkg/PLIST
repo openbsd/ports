@@ -68,6 +68,7 @@ ${SOGOLIBDIR}/Headers/DOMNode+SOGo.h
 ${SOGOLIBDIR}/Headers/EOBitmaskQualifier.h
 ${SOGOLIBDIR}/Headers/EOQualifier+SOGoCacheObject.h
 ${SOGOLIBDIR}/Headers/GCSSpecialQueries+SOGoCacheObject.h
+${SOGOLIBDIR}/Headers/JWT.h
 ${SOGOLIBDIR}/Headers/LDAPSource.h
 ${SOGOLIBDIR}/Headers/LDAPSourceSchema.h
 ${SOGOLIBDIR}/Headers/NSArray+DAV.h
@@ -100,6 +101,7 @@ ${SOGOLIBDIR}/Headers/SOGoDAVAuthenticator.h
 ${SOGOLIBDIR}/Headers/SOGoDateFormatter.h
 ${SOGOLIBDIR}/Headers/SOGoDefaultsSource.h
 ${SOGOLIBDIR}/Headers/SOGoDomainDefaults.h
+${SOGOLIBDIR}/Headers/SOGoEmptyAuthenticator.h
 ${SOGOLIBDIR}/Headers/SOGoFolder.h
 ${SOGOLIBDIR}/Headers/SOGoGCSFolder.h
 ${SOGOLIBDIR}/Headers/SOGoLDAPDefaults.h
@@ -2570,6 +2572,7 @@ lib/GNUstep/SOGo/WebServerResources/js/Common/sgPlaceholder.directive.js
 lib/GNUstep/SOGo/WebServerResources/js/Common/sgQrCode.directive.js
 lib/GNUstep/SOGo/WebServerResources/js/Common/sgResetOnDisabled.directive.js
 lib/GNUstep/SOGo/WebServerResources/js/Common/sgRippleClick.directive.js
+lib/GNUstep/SOGo/WebServerResources/js/Common/sgRippleClick.service.js
 lib/GNUstep/SOGo/WebServerResources/js/Common/sgSearch.directive.js
 lib/GNUstep/SOGo/WebServerResources/js/Common/sgSelectOnly.directive.js
 lib/GNUstep/SOGo/WebServerResources/js/Common/sgSubscribe.directive.js
