@@ -207,9 +207,9 @@ lib/python${MODPY_VERSION}/site-packages/Xlib/xobject/drawable.py
 lib/python${MODPY_VERSION}/site-packages/Xlib/xobject/fontable.py
 lib/python${MODPY_VERSION}/site-packages/Xlib/xobject/icccm.py
 lib/python${MODPY_VERSION}/site-packages/Xlib/xobject/resource.py
-lib/python${MODPY_VERSION}/site-packages/python_xlib-0.32.dist-info/
-lib/python${MODPY_VERSION}/site-packages/python_xlib-0.32.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/python_xlib-0.32.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/python_xlib-0.32.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/python_xlib-0.32.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/python_xlib-0.32.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/python_xlib-0.33.dist-info/
+lib/python${MODPY_VERSION}/site-packages/python_xlib-0.33.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/python_xlib-0.33.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/python_xlib-0.33.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/python_xlib-0.33.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/python_xlib-0.33.dist-info/top_level.txt

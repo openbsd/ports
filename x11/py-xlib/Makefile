@@ -2,9 +2,8 @@ COMMENT =		X11 library for Python
 
 GH_ACCOUNT =		python-xlib
 GH_PROJECT =		python-xlib
-GH_TAGNAME =		0.32
+GH_TAGNAME =		0.33
 PKGNAME =		py-xlib-${GH_TAGNAME}
-REVISION =		0
 
 CATEGORIES =		x11
 
