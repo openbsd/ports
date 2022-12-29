@@ -92,9 +92,9 @@ Index: daily.sh
 -                status_run 'Updating SQL-Schema' 'php includes/sql-schema/update.php'
 +                status_run 'Updating SQL-Schema' '${MODPHP_BIN} includes/sql-schema/update.php'
                  status_run 'Cleaning up DB' "'$DAILY_SCRIPT' cleanup"
+                 status_run 'Caching Mac OUI data' "$DAILY_SCRIPT mac_oui"
              ;;
-             post-pull)
-@@ -365,7 +365,7 @@ main () {
+@@ -366,7 +366,7 @@ main () {
                  fi
  
                  # List all tasks to do after pull in the order of execution
