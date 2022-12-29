@@ -1,3 +1,9 @@
+# LP64 archs with Go:
+ONLY_FOR_ARCHS = aarch64 amd64 mips64 riscv64
+# # github.com/spdx/gordf/rdfloader/xmlreader
+# ../../../go/pkg/mod/github.com/spdx/gordf@v0.0.0-20201111095634-7098f93598fb/rdfloader/xmlreader/xmlreader.go:213:
+# 27: WHITESPACE (untyped int constant 4294977024) overflows int
+
 COMMENT =	scan your project's dependencies for vulnerabilities
 
 V =		1.0.1
