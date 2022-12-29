@@ -1,8 +1,8 @@
-COMMENT =		an inductance coil calculator
+COMMENT =		inductance coil calculator
 
 GH_ACCOUNT =		radioacoustick
 GH_PROJECT =		Coil64
-GH_TAGNAME =		v2.1.25
+GH_TAGNAME =		v2.1.26
 
 CATEGORIES =		cad
 
