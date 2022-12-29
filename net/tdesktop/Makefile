@@ -5,7 +5,7 @@ NOT_FOR_ARCHS =		${BE_ARCHS} i386
 
 COMMENT =		Telegram Desktop messenger
 PORTROACH =		limit:-full$$
-V =			4.4.2
+V =			4.4.3
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
@@ -16,21 +16,6 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 HOMEPAGE =		https://desktop.telegram.org
 MASTER_SITES =		https://github.com/telegramdesktop/tdesktop/releases/download/v${V}/
-
-DIST_SUBDIR =		tdesktop
-MASTER_SITES0 =		https://github.com/desktop-app/
-MASTER_SITES1 =		https://github.com/telegramdesktop/
-
-# merged (after 4.4.2) "audio: Build on OpenBSD"
-# https://github.com/desktop-app/libtgvoip/pull/36
-PATCHFILES +=		tgvoip-audio-{libtgvoip/pull/}36.patch:1
-# merged (after 4.4.2) "Support OpenBSD"
-# https://github.com/desktop-app/libtgvoip/pull/37
-PATCHFILES +=		tgvoip-openbsd-{libtgvoip/pull/}37.patch:1
-PATCH_CASES +=		tgvoip-*.patch) ${PATCH} ${PATCH_DIST_ARGS} \
-			    -d ${WRKSRC}/Telegram/ThirdParty/libtgvoip/ <$$patchfile ;;
-
-PATCH_DIST_STRIP =	-p1
 
 MAINTAINER =		Andrew Krasavin <noiseless-ak@yandex.ru>, \
 			Klemens Nanni <kn@openbsd.org>
