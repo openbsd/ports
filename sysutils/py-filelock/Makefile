@@ -1,6 +1,6 @@
 COMMENT =		platform independent file lock
 
-MODPY_EGG_VERSION =	3.8.2
+MODPY_EGG_VERSION =	3.9.0
 DISTNAME =		filelock-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -14,12 +14,9 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools_scm
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		hatchling
 
-#TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH} 
-TEST_DEPENDS =		\
-			devel/py-test-cov${MODPY_FLAVOR} \
+TEST_DEPENDS =		devel/py-test-cov${MODPY_FLAVOR} \
 			devel/py-test-timeout${MODPY_FLAVOR}
 
 FLAVORS =		python3
