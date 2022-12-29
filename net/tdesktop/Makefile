@@ -5,11 +5,10 @@ NOT_FOR_ARCHS =		${BE_ARCHS} i386
 
 COMMENT =		Telegram Desktop messenger
 PORTROACH =		limit:-full$$
-V =			4.4.1
+V =			4.4.2
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
-REVISION =		1
 
 DPB_PROPERTIES =	parallel
 
@@ -30,28 +29,6 @@ PATCHFILES +=		tgvoip-audio-{libtgvoip/pull/}36.patch:1
 PATCHFILES +=		tgvoip-openbsd-{libtgvoip/pull/}37.patch:1
 PATCH_CASES +=		tgvoip-*.patch) ${PATCH} ${PATCH_DIST_ARGS} \
 			    -d ${WRKSRC}/Telegram/ThirdParty/libtgvoip/ <$$patchfile ;;
-
-# merged "Update to minizip 1.2.13"
-# https://github.com/telegramdesktop/tdesktop/pull/25537
-PATCHFILES +=		upgrade-minizip-{tdesktop/pull/}25537.patch:1
-# merged "Use std::invoke_result_t not ::result_of to fix C++20 tdesktop 4.3.4"
-# https://github.com/telegramdesktop/tdesktop/pull/25527
-PATCHFILES +=		fix-c++20-build-{tdesktop/pull/}25527.patch:1
-
-# merged "Fix tdesktop 4.3.4 cld3 bundle build with system protobuf"
-# https://github.com/desktop-app/cmake_helpers/pull/246
-PATCHFILES +=		cmake-fix-cld3-protobuf-{cmake_helpers/pull/}246.patch:0
-PATCH_CASES +=		cmake-*.patch) ${PATCH} ${PATCH_DIST_ARGS} \
-			    -d ${WRKSRC}/cmake/ <$$patchfile ;;
-
-# merged "Do actual check for long type size for Glib::Variant<(u)int64>"
-# https://github.com/desktop-app/lib_base/pull/148
-PATCHFILES +=		base-glib-check-long-type-{lib_base/pull/}148.patch:0
-# merged "Use std::conditional_t for Glib::Variant<(u)int64> rather than LONG_TYPE_SIZE"
-# https://github.com/desktop-app/lib_base/pull/149
-PATCHFILES +=		base-glib-use-conditional-{lib_base/pull/}149.patch:0
-PATCH_CASES +=		base-*.patch) ${PATCH} ${PATCH_DIST_ARGS} \
-			    -d ${WRKSRC}/Telegram/lib_base/ <$$patchfile ;;
 
 PATCH_DIST_STRIP =	-p1
 
@@ -103,7 +80,7 @@ LIB_DEPENDS =		archivers/lz4 \
 			devel/protobuf \
 			graphics/ffmpeg \
 			graphics/qr-code-generator>=1.7.0p1 \
-			net/tg_owt>=0.0.0.20220909 \
+			net/tg_owt>=0.0.0.20221215 \
 			sysutils/xxhash \
 			textproc/hunspell \
 			x11/qt6/qt5compat \
