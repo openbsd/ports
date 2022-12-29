@@ -9,7 +9,7 @@ V =			4.4.1
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
-REVISION =		0
+REVISION =		1
 
 DPB_PROPERTIES =	parallel
 
@@ -21,6 +21,15 @@ MASTER_SITES =		https://github.com/telegramdesktop/tdesktop/releases/download/v$
 DIST_SUBDIR =		tdesktop
 MASTER_SITES0 =		https://github.com/desktop-app/
 MASTER_SITES1 =		https://github.com/telegramdesktop/
+
+# merged (after 4.4.2) "audio: Build on OpenBSD"
+# https://github.com/desktop-app/libtgvoip/pull/36
+PATCHFILES +=		tgvoip-audio-{libtgvoip/pull/}36.patch:1
+# merged (after 4.4.2) "Support OpenBSD"
+# https://github.com/desktop-app/libtgvoip/pull/37
+PATCHFILES +=		tgvoip-openbsd-{libtgvoip/pull/}37.patch:1
+PATCH_CASES +=		tgvoip-*.patch) ${PATCH} ${PATCH_DIST_ARGS} \
+			    -d ${WRKSRC}/Telegram/ThirdParty/libtgvoip/ <$$patchfile ;;
 
 # merged "Update to minizip 1.2.13"
 # https://github.com/telegramdesktop/tdesktop/pull/25537
@@ -52,6 +61,7 @@ MAINTAINER =		Andrew Krasavin <noiseless-ak@yandex.ru>, \
 # tdesktop:	GPLv3 with OpenSSL exception
 # minizip:	zlib
 # tgcalls:	LGPL 3
+# libtgvoip:	unlicense/public domain
 # rlottie:	LGPL 2.1 with freetype, LGPL, MIT, BSD dependencies
 # cld3:		Apache 2.0
 # kcoreaddon:	LGPLv2.1+, GPLv2+
@@ -61,9 +71,9 @@ WANTLIB += ${COMPILER_LIBCXX} Qt6Core Qt6Core5Compat Qt6DBus Qt6Gui Qt6Network
 WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6Svg Qt6Widgets absl_strings
 WANTLIB += avcodec avformat avutil c crypto dispatch gio-2.0 giomm-2.68
 WANTLIB += glib-2.0 glibmm-2.68 gobject-2.0 hunspell-1.7 jpeg lz4
-WANTLIB += m openal protobuf-lite qrcodegencpp rnnoise sigc-3.0 swresample swscale
-WANTLIB += tg_owt xcb xcb-keysyms xcb-record xcb-screensaver xxhash
-WANTLIB += z
+WANTLIB += m openal opus pulse protobuf-lite qrcodegencpp rnnoise sigc-3.0
+WANTLIB += swresample swscale tg_owt xcb xcb-keysyms xcb-record xcb-screensaver
+WANTLIB += xxhash z
 
 # C++20
 COMPILER =		base-clang ports-gcc
@@ -83,6 +93,8 @@ BUILD_DEPENDS =		devel/microsoft-gsl \
 LIB_DEPENDS =		archivers/lz4 \
 			audio/rnnoise \
 			audio/openal \
+			audio/opus \
+			audio/pulseaudio \
 			devel/abseil-cpp \
 			devel/glib2 \
 			devel/glibmm268 \
@@ -113,7 +125,8 @@ CONFIGURE_ARGS +=	-DTDESKTOP_API_ID=611335 \
 
 # disable unported/unwanted components
 CONFIGURE_ARGS +=	-DDESKTOP_APP_DISABLE_JEMALLOC=ON \
-			-DDESKTOP_APP_DISABLE_WAYLAND_INTEGRATION=ON
+			-DDESKTOP_APP_DISABLE_WAYLAND_INTEGRATION=ON \
+			-DLIBTGVOIP_DISABLE_ALSA=ON
 
 # Since cmake 3.25.1, BSDs are no longer recognised as Linux (in this port).
 # Upstream should probably become BSD aware, but until that happens,
@@ -126,7 +139,7 @@ NO_TEST =		Yes
 NEEDED_BUNDLES +=	minizip
 
 # unported and required
-NEEDED_BUNDLES +=	cld3 rlottie tgcalls
+NEEDED_BUNDLES +=	cld3 rlottie tgcalls libtgvoip
 
 # exist under Qt5-only devel/kf5/
 NEEDED_BUNDLES +=	kcoreaddons

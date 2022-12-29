@@ -3,10 +3,14 @@ SHA256 (tdesktop/base-glib-use-conditional-149.patch) = yTMiRrdiOd5R/M8GovJ81sDJ
 SHA256 (tdesktop/cmake-fix-cld3-protobuf-246.patch) = daq13+7bPsFAHF+1moqtJuRKVfmn7K57incP1ntWC9o=
 SHA256 (tdesktop/fix-c++20-build-25527.patch) = j8Kj2lJ8JJtnfK4bseva2OGKgTtqB1SwdiEDEDaUrJQ=
 SHA256 (tdesktop/tdesktop-4.4.1-full.tar.gz) = dpgeMlQcQrMhJCfpq7TbKm9VoU6roxs9etfT1e2ACLE=
+SHA256 (tdesktop/tgvoip-audio-36.patch) = sP/Q3qTEIyqKZg3/nc7WiHcZYDID3Q6dMduswppiedU=
+SHA256 (tdesktop/tgvoip-openbsd-37.patch) = 04Blbt+Wqx2IXWCxonMTrX/7Z+A7znuyzpEltgCEBUg=
 SHA256 (tdesktop/upgrade-minizip-25537.patch) = Qzy7uVT1SPIk0Cg9cSU/bLj/CU//+CzBUGJMrKfOXOA=
 SIZE (tdesktop/base-glib-check-long-type-148.patch) = 893
 SIZE (tdesktop/base-glib-use-conditional-149.patch) = 1480
 SIZE (tdesktop/cmake-fix-cld3-protobuf-246.patch) = 942
 SIZE (tdesktop/fix-c++20-build-25527.patch) = 1266
 SIZE (tdesktop/tdesktop-4.4.1-full.tar.gz) = 50077498
+SIZE (tdesktop/tgvoip-audio-36.patch) = 4068
+SIZE (tdesktop/tgvoip-openbsd-37.patch) = 2043
 SIZE (tdesktop/upgrade-minizip-25537.patch) = 28313
