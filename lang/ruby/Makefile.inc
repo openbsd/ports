@@ -35,6 +35,7 @@ CONFIGURE_ARGS +=	--enable-shared \
 			--with-setjmp-type=_setjmp \
 			--enable-pthread \
 			--enable-ipv6 \
+			--without-baseruby \
 			--without-bundled-libffi \
 			--disable-option-checking
 
