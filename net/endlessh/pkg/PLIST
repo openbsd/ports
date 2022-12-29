@@ -1,0 +1,10 @@
+@rcscript ${RCDIR}/endlessh
+@rcscript ${RCDIR}/endlessh6
+@bin bin/endlessh
+@man man/man1/endlessh.1
+share/examples/endlessh/
+share/examples/endlessh/config
+share/examples/login.conf.d/endlessh
+@sample ${SYSCONFDIR}/login.conf.d/endlessh
+share/examples/login.conf.d/endlessh6
+@sample ${SYSCONFDIR}/login.conf.d/endlessh6

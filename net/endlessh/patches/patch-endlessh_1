@@ -1,0 +1,16 @@
+Index: endlessh.1
+--- endlessh.1.orig
++++ endlessh.1
+@@ -2,10 +2,10 @@
+ .Dt ENDLESSH 1
+ .Os
+ .Sh NAME
+-.Nm endless
++.Nm endlessh
+ .Nd An SSH tarpit
+ .Sh SYNOPSIS
+-.Nm endless
++.Nm endlessh
+ .Op Fl 46chsvV
+ .Op Fl d Ar delay
+ .Op Fl f Ar config

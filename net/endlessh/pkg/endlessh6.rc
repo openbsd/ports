@@ -1,0 +1,10 @@
+#!/bin/ksh
+
+daemon="${LOCALBASE}/bin/endlessh"
+daemon_flags=-s -6
+daemon_user=_endlessh
+rc_bg=YES
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1
