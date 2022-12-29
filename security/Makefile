@@ -3,6 +3,7 @@
      SUBDIR += ROPgadget
      SUBDIR += aescrypt
      SUBDIR += age
+     SUBDIR += age-plugin-yubikey
      SUBDIR += aide
      SUBDIR += aircrack-ng
      SUBDIR += amap
