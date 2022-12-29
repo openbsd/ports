@@ -1,0 +1,15 @@
+Index: rtengine/procparams.cc
+
+https://github.com/Beep6581/RawTherapee/issues/6452
+
+--- rtengine/procparams.cc.orig
++++ rtengine/procparams.cc
+@@ -7606,7 +7606,7 @@ int ProcParams::save(const Glib::ustring& fname, const
+ 
+ int ProcParams::load(const Glib::ustring& fname, ParamsEdited* pedited)
+ {
+-    setlocale(LC_NUMERIC, "C");  // to set decimal point to "."
++    //setlocale(LC_NUMERIC, "C");  // to set decimal point to "."
+ 
+     if (fname.empty()) {
+         return 1;

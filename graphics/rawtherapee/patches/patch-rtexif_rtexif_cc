@@ -1,0 +1,15 @@
+Index: rtexif/rtexif.cc
+
+https://github.com/Beep6581/RawTherapee/issues/6452
+
+--- rtexif/rtexif.cc.orig
++++ rtexif/rtexif.cc
+@@ -2814,7 +2814,7 @@ void ExifManager::parse (bool isRaw, bool skipIgnored,
+         #endif
+         return;
+     }
+-    setlocale (LC_NUMERIC, "C"); // to set decimal point in sscanf
++    //setlocale (LC_NUMERIC, "C"); // to set decimal point in sscanf
+ 
+     if (order == ByteOrder::UNKNOWN) {
+         // read tiff header

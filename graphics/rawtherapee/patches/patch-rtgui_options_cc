@@ -1,0 +1,15 @@
+Index: rtgui/options.cc
+
+https://github.com/Beep6581/RawTherapee/issues/6452
+
+--- rtgui/options.cc.orig
++++ rtgui/options.cc
+@@ -712,7 +712,7 @@ void Options::filterOutParsedExtensions()
+ 
+ void Options::readFromFile(Glib::ustring fname)
+ {
+-    setlocale(LC_NUMERIC, "C");  // to set decimal point to "."
++    //setlocale(LC_NUMERIC, "C");  // to set decimal point to "."
+ 
+     Glib::KeyFile keyFile;
+ 

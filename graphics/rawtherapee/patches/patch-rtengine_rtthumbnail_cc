@@ -1,0 +1,15 @@
+Index: rtengine/rtthumbnail.cc
+
+https://github.com/Beep6581/RawTherapee/issues/6452
+
+--- rtengine/rtthumbnail.cc.orig
++++ rtengine/rtthumbnail.cc
+@@ -2057,7 +2057,7 @@ bool Thumbnail::readImage (const Glib::ustring& fname)
+ 
+ bool Thumbnail::readData  (const Glib::ustring& fname)
+ {
+-    setlocale (LC_NUMERIC, "C"); // to set decimal point to "."
++    //setlocale (LC_NUMERIC, "C"); // to set decimal point to "."
+     Glib::KeyFile keyFile;
+ 
+     try {

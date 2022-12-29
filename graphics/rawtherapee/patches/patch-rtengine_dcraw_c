@@ -1,0 +1,17 @@
+Index: rtengine/dcraw.c
+
+https://github.com/Beep6581/RawTherapee/issues/6452
+
+--- rtengine/dcraw.c.orig
++++ rtengine/dcraw.c
+@@ -9853,8 +9853,8 @@ int CLASS main (int argc, const char **argv)
+   putenv ((char *) "TZ=UTC");
+ #endif
+ #ifdef LOCALEDIR
+-  setlocale (LC_CTYPE, "");
+-  setlocale (LC_MESSAGES, "");
++  //setlocale (LC_CTYPE, "");
++  //setlocale (LC_MESSAGES, "");
+   bindtextdomain ("dcraw", LOCALEDIR);
+   textdomain ("dcraw");
+ #endif

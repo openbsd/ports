@@ -1,0 +1,15 @@
+Index: rtgui/cacheimagedata.cc
+
+https://github.com/Beep6581/RawTherapee/issues/6452
+
+--- rtgui/cacheimagedata.cc.orig
++++ rtgui/cacheimagedata.cc
+@@ -65,7 +65,7 @@ CacheImageData::CacheImageData() :
+  */
+ int CacheImageData::load (const Glib::ustring& fname)
+ {
+-    setlocale(LC_NUMERIC, "C"); // to set decimal point to "."
++    //setlocale(LC_NUMERIC, "C"); // to set decimal point to "."
+ 
+     Glib::KeyFile keyFile;
+ 
