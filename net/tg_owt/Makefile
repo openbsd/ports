@@ -11,40 +11,32 @@ COMMENT =		WebRTC build for Telegram
 GH_ACCOUNT =		desktop-app
 GH_PROJECT =		tg_owt
 # no releases or tags, use latest master
-GH_COMMIT =		621f3da55331733bf0d1b223786b96b68c03dca1
-DISTNAME =		${GH_PROJECT}-0.0.0.20220909
+GH_COMMIT =		1512ef693a7469d7dbc61191ecc0b487bc7f594f
+DISTNAME =		${GH_PROJECT}-0.0.0.20221215
 DISTFILES =		${GH_DISTFILE}
 CATEGORIES =		net
-REVISION =		1
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-SHARED_LIBS =		tg_owt	4.0	# 0.0.0
+SHARED_LIBS =		tg_owt	5.0	# 0.0.0
 
 DIST_SUBDIR =		tg_owt
 # Fetch bundles/submodules missing from the tarball, see ${WRKSRC}/.gitmodules
 #
 # https://chromium.googlesource.com/libyuv/libyuv clone, no releases or tags
 # main/master/stable/<commit> tarballs are *not reproducible*
-# use Andrew's mirror to get stable tarballs for latest master
-MASTER_SITES0 =		https://github.com/noiseless/libyuv/archive/
-LIBYUV_COMMIT =		3e38ce50589d9319badc0501f96d6c5b2b177472
-DISTFILES +=		libyuv-20220817-{}${LIBYUV_COMMIT}${EXTRACT_SUFX}:0
+# use a mirror to get stable tarballs for latest master
+MASTER_SITES0 =		https://github.com/klemensn/libyuv/archive/
+LIBYUV_COMMIT =		610e0cdead3fcd3288693d18eab8c7323805ad9e
+DISTFILES +=		libyuv-20221205-{}${LIBYUV_COMMIT}${EXTRACT_SUFX}:0
 
 MASTER_SITES1 =		https://github.com/desktop-app/tg_owt/commit/
-# merged "Unbundle crc32c"
-# https://github.com/desktop-app/tg_owt/pull/109
-PATCHFILES +=		unbundle-crc32c-{}bd1f6ce.patch:1
-PATCHFILES +=		unbundle-crc32c-{}0c49138.patch:1
 # Pending "Defer third-party source handling to when it is needed"
 # https://github.com/desktop-app/tg_owt/pull/85
 PATCHFILES +=		defer-third-party-sources-{}a264c33.patch:1
 # Pending "libabsl: Use system include directories"
 # https://github.com/desktop-app/tg_owt/pull/87
 PATCHFILES +=		libabsl-use-includes-{}fb12b4bd.patch:1
-# Pending "libsrtp: Merge upstream LibreSSL fix"
-# https://github.com/desktop-app/tg_owt/pull/93
-PATCHFILES +=		libsrtp-libressl-fix-{}531dd25e.patch:1
 
 PATCH_DIST_STRIP =	-p1
 
