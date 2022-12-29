@@ -4,7 +4,7 @@ https://github.com/desktop-app/tg_owt/pull/94
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -803,8 +803,6 @@ PRIVATE
+@@ -807,8 +807,6 @@ PRIVATE
      media/engine/webrtc_media_engine_defaults.cc
      media/engine/webrtc_video_engine.cc
      media/engine/webrtc_voice_engine.cc
