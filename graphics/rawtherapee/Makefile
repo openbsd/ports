@@ -1,9 +1,10 @@
 # http://rawpedia.rawtherapee.com/The_Floating_Point_Engine
-ONLY_FOR_ARCHS = 	amd64
+ONLY_FOR_ARCHS =	amd64
 
 COMMENT =		RAW image processing application
 
 DISTNAME =		rawtherapee-5.9
+REVISION =		0
 
 CATEGORIES =		graphics
 
