@@ -15,6 +15,7 @@ GH_COMMIT =		1512ef693a7469d7dbc61191ecc0b487bc7f594f
 DISTNAME =		${GH_PROJECT}-0.0.0.20221215
 DISTFILES =		${GH_DISTFILE}
 CATEGORIES =		net
+REVISION =		0
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
@@ -27,8 +28,8 @@ DIST_SUBDIR =		tg_owt
 # main/master/stable/<commit> tarballs are *not reproducible*
 # use a mirror to get stable tarballs for latest master
 MASTER_SITES0 =		https://github.com/klemensn/libyuv/archive/
-LIBYUV_COMMIT =		610e0cdead3fcd3288693d18eab8c7323805ad9e
-DISTFILES +=		libyuv-20221205-{}${LIBYUV_COMMIT}${EXTRACT_SUFX}:0
+LIBYUV_COMMIT =		3abd6f36b6e4f5a2e0ce236580a8bc1da3c7cf7e
+DISTFILES +=		libyuv-20221215-{}${LIBYUV_COMMIT}${EXTRACT_SUFX}:0
 
 MASTER_SITES1 =		https://github.com/desktop-app/tg_owt/commit/
 # Pending "Defer third-party source handling to when it is needed"
