@@ -1,0 +1,3 @@
+@bin bin/age-plugin-yubikey
+share/doc/age-plugin-yubikey/
+share/doc/age-plugin-yubikey/README.md
