@@ -1,34 +1,14 @@
 Index: node.gyp
 --- node.gyp.orig
 +++ node.gyp
-@@ -405,7 +405,7 @@
-         '<(SHARED_INTERMEDIATE_DIR)' # for node_natives.h
-       ],
-       'dependencies': [
--        'deps/googletest/googletest.gyp:gtest_prod',
-+        # 'deps/googletest/googletest.gyp:gtest_prod',
-         'deps/histogram/histogram.gyp:histogram',
-         'deps/uvwasi/uvwasi.gyp:uvwasi',
-       ],
-@@ -1132,8 +1132,8 @@
- 
-       'dependencies': [
-         '<(node_lib_target_name)',
--        'deps/googletest/googletest.gyp:gtest',
--        'deps/googletest/googletest.gyp:gtest_main',
-+        #'deps/googletest/googletest.gyp:gtest',
-+        #'deps/googletest/googletest.gyp:gtest_main',
-         'deps/histogram/histogram.gyp:histogram',
-         'deps/uvwasi/uvwasi.gyp:uvwasi',
-         'node_dtrace_header',
-@@ -1207,6 +1207,10 @@
-         }],
+@@ -1270,6 +1270,10 @@
          ['OS=="solaris"', {
            'ldflags': [ '-I<(SHARED_INTERMEDIATE_DIR)' ]
-+        }],
+         }],
 +        # Skip cctest while building for OpenBSD
 +        [ 'OS=="openbsd"', {
 +          'type': 'none',
-         }],
++        }],
          # Skip cctest while building shared lib node for Windows
          [ 'OS=="win" and node_shared=="true"', {
+           'type': 'none',

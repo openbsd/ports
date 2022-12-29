@@ -1,0 +1,30 @@
+class CPUInfo should only be used on Linux to read /proc/cpuinfo contents.
+OpenBSD/riscv64 always uses floating-point support.
+
+Index: deps/v8/src/base/cpu.cc
+--- deps/v8/src/base/cpu.cc.orig
++++ deps/v8/src/base/cpu.cc
+@@ -871,6 +871,8 @@ CPU::CPU()
+ #endif  // !USE_SIMULATOR
+ 
+ #elif V8_HOST_ARCH_RISCV64
++
++#if V8_OS_LINUX
+   CPUInfo cpu_info;
+   char* features = cpu_info.ExtractField("isa");
+ 
+@@ -881,6 +883,14 @@ CPU::CPU()
+     has_fpu_ = true;
+     has_rvv_ = true;
+   }
++
++#elif V8_OS_OPENBSD
++
++  // OpenBSD requires and defaults to FP support.
++  has_fpu_ = true;
++
++#endif  // V8_OS_OPENBSD
++
+ #endif  // V8_HOST_ARCH_RISCV64
+ }
+ 

@@ -1,5 +1,6 @@
---- deps/v8/src/base/platform/platform-openbsd.cc.orig	Sat Jan  1 17:10:10 2022
-+++ deps/v8/src/base/platform/platform-openbsd.cc	Sat Jan  1 17:10:10 2022
+Index: deps/v8/src/base/platform/platform-openbsd.cc
+--- deps/v8/src/base/platform/platform-openbsd.cc.orig
++++ deps/v8/src/base/platform/platform-openbsd.cc
 @@ -6,6 +6,7 @@
  // POSIX-compatible parts, the implementation is in platform-posix.cc.
  
@@ -24,5 +25,5 @@
 +  return reinterpret_cast<uint8_t*>(base) + ss.ss_size;
 +}
  
- }  // namespace base
- }  // namespace v8
+ std::vector<OS::MemoryRange> OS::GetFreeMemoryRangesWithin(
+     OS::Address boundary_start, OS::Address boundary_end, size_t minimum_size,

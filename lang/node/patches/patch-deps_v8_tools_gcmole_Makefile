@@ -1,0 +1,12 @@
+Index: deps/v8/tools/gcmole/Makefile
+--- deps/v8/tools/gcmole/Makefile.orig
++++ deps/v8/tools/gcmole/Makefile
+@@ -32,7 +32,7 @@ LLVM_BUILD_INCLUDE:=$(BUILD_ROOT)/include
+ CLANG_SRC_INCLUDE:=$(CLANG_SRC_ROOT)/include
+ CLANG_BUILD_INCLUDE:=$(BUILD_ROOT)/tools/clang/include
+ 
+-CXXFLAGS = -O3 -g3
++CXXFLAGS = -g3
+ all: libgcmole.so
+ Release: libgcmole.so
+ 

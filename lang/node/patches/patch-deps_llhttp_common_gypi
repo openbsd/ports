@@ -1,0 +1,12 @@
+Index: deps/llhttp/common.gypi
+--- deps/llhttp/common.gypi.orig
++++ deps/llhttp/common.gypi
+@@ -15,7 +15,7 @@
+       },
+       'Release': {
+         'defines': [ 'NDEBUG' ],
+-        'cflags': [ '-Wall', '-Wextra', '-O3' ],
++        'cflags': [ '-Wall', '-Wextra', '-O2' ],
+         'msvs_settings': {
+           'VCCLCompilerTool': {
+             'RuntimeLibrary': 0, # static release

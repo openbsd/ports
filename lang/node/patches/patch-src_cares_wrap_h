@@ -1,6 +1,7 @@
---- src/cares_wrap.h.orig	Fri Jan  7 14:55:32 2022
-+++ src/cares_wrap.h	Fri Jan  7 15:58:22 2022
-@@ -520,4 +520,109 @@ using GetHostByAddrWrap = QueryWrap<ReverseTraits>;
+Index: src/cares_wrap.h
+--- src/cares_wrap.h.orig
++++ src/cares_wrap.h
+@@ -521,4 +521,109 @@ using GetHostByAddrWrap = QueryWrap<ReverseTraits>;
  
  #endif  // defined(NODE_WANT_INTERNALS) && NODE_WANT_INTERNALS
  

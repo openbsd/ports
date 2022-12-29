@@ -20,10 +20,53 @@ include/node/node_api_types.h
 include/node/node_buffer.h
 include/node/node_object_wrap.h
 include/node/node_version.h
+include/node/v8-array-buffer.h
+include/node/v8-callbacks.h
+include/node/v8-container.h
+include/node/v8-context.h
+include/node/v8-data.h
+include/node/v8-date.h
+include/node/v8-debug.h
+include/node/v8-embedder-heap.h
+include/node/v8-embedder-state-scope.h
+include/node/v8-exception.h
+include/node/v8-extension.h
+include/node/v8-external.h
+include/node/v8-forward.h
+include/node/v8-function-callback.h
+include/node/v8-function.h
+include/node/v8-initialization.h
 include/node/v8-internal.h
+include/node/v8-isolate.h
+include/node/v8-json.h
+include/node/v8-local-handle.h
+include/node/v8-locker.h
+include/node/v8-maybe.h
+include/node/v8-memory-span.h
+include/node/v8-message.h
+include/node/v8-microtask-queue.h
+include/node/v8-microtask.h
+include/node/v8-object.h
+include/node/v8-persistent-handle.h
 include/node/v8-platform.h
+include/node/v8-primitive-object.h
+include/node/v8-primitive.h
 include/node/v8-profiler.h
+include/node/v8-promise.h
+include/node/v8-proxy.h
+include/node/v8-regexp.h
+include/node/v8-script.h
+include/node/v8-snapshot.h
+include/node/v8-statistics.h
+include/node/v8-template.h
+include/node/v8-traced-handle.h
+include/node/v8-typed-array.h
+include/node/v8-unwinder.h
+include/node/v8-value-serializer.h
+include/node/v8-value.h
 include/node/v8-version.h
+include/node/v8-wasm.h
+include/node/v8-weak-callback-info.h
 include/node/v8.h
 include/node/v8config.h
 lib/node_modules/
@@ -121,6 +164,7 @@ lib/node_modules/@npmcli/arborist/lib/override-set.js
 lib/node_modules/@npmcli/arborist/lib/peer-entry-sets.js
 lib/node_modules/@npmcli/arborist/lib/place-dep.js
 lib/node_modules/@npmcli/arborist/lib/printable.js
+lib/node_modules/@npmcli/arborist/lib/query-selector-all.js
 lib/node_modules/@npmcli/arborist/lib/realpath.js
 lib/node_modules/@npmcli/arborist/lib/relpath.js
 lib/node_modules/@npmcli/arborist/lib/reset-dep-flags.js
@@ -161,9 +205,6 @@ lib/node_modules/@npmcli/fs/
 lib/node_modules/@npmcli/fs/LICENSE.md
 lib/node_modules/@npmcli/fs/lib/
 lib/node_modules/@npmcli/fs/lib/common/
-lib/node_modules/@npmcli/fs/lib/common/file-url-to-path/
-lib/node_modules/@npmcli/fs/lib/common/file-url-to-path/index.js
-lib/node_modules/@npmcli/fs/lib/common/file-url-to-path/polyfill.js
 lib/node_modules/@npmcli/fs/lib/common/get-options.js
 lib/node_modules/@npmcli/fs/lib/common/node.js
 lib/node_modules/@npmcli/fs/lib/common/owner-sync.js
@@ -176,9 +217,7 @@ lib/node_modules/@npmcli/fs/lib/cp/polyfill.js
 lib/node_modules/@npmcli/fs/lib/errors.js
 lib/node_modules/@npmcli/fs/lib/fs.js
 lib/node_modules/@npmcli/fs/lib/index.js
-lib/node_modules/@npmcli/fs/lib/mkdir/
-lib/node_modules/@npmcli/fs/lib/mkdir/index.js
-lib/node_modules/@npmcli/fs/lib/mkdir/polyfill.js
+lib/node_modules/@npmcli/fs/lib/mkdir.js
 lib/node_modules/@npmcli/fs/lib/mkdtemp.js
 lib/node_modules/@npmcli/fs/lib/rm/
 lib/node_modules/@npmcli/fs/lib/rm/index.js
@@ -209,6 +248,11 @@ lib/node_modules/@npmcli/installed-package-contents/
 lib/node_modules/@npmcli/installed-package-contents/LICENSE
 lib/node_modules/@npmcli/installed-package-contents/README.md
 lib/node_modules/@npmcli/installed-package-contents/index.js
+lib/node_modules/@npmcli/installed-package-contents/node_modules/
+lib/node_modules/@npmcli/installed-package-contents/node_modules/npm-bundled/
+lib/node_modules/@npmcli/installed-package-contents/node_modules/npm-bundled/LICENSE
+lib/node_modules/@npmcli/installed-package-contents/node_modules/npm-bundled/index.js
+lib/node_modules/@npmcli/installed-package-contents/node_modules/npm-bundled/package.json
 lib/node_modules/@npmcli/installed-package-contents/package.json
 lib/node_modules/@npmcli/map-workspaces/
 lib/node_modules/@npmcli/map-workspaces/LICENSE.md
@@ -249,6 +293,11 @@ lib/node_modules/@npmcli/promise-spawn/LICENSE
 lib/node_modules/@npmcli/promise-spawn/lib/
 lib/node_modules/@npmcli/promise-spawn/lib/index.js
 lib/node_modules/@npmcli/promise-spawn/package.json
+lib/node_modules/@npmcli/query/
+lib/node_modules/@npmcli/query/LICENSE
+lib/node_modules/@npmcli/query/lib/
+lib/node_modules/@npmcli/query/lib/index.js
+lib/node_modules/@npmcli/query/package.json
 lib/node_modules/@npmcli/run-script/
 lib/node_modules/@npmcli/run-script/LICENSE
 lib/node_modules/@npmcli/run-script/lib/
@@ -376,6 +425,12 @@ lib/node_modules/bin-links/lib/link-gently.js
 lib/node_modules/bin-links/lib/link-mans.js
 lib/node_modules/bin-links/lib/man-target.js
 lib/node_modules/bin-links/lib/shim-bin.js
+lib/node_modules/bin-links/node_modules/
+lib/node_modules/bin-links/node_modules/npm-normalize-package-bin/
+lib/node_modules/bin-links/node_modules/npm-normalize-package-bin/LICENSE
+lib/node_modules/bin-links/node_modules/npm-normalize-package-bin/lib/
+lib/node_modules/bin-links/node_modules/npm-normalize-package-bin/lib/index.js
+lib/node_modules/bin-links/node_modules/npm-normalize-package-bin/package.json
 lib/node_modules/bin-links/package.json
 lib/node_modules/binary-extensions/
 lib/node_modules/binary-extensions/binary-extensions.json
@@ -566,6 +621,15 @@ lib/node_modules/corepack/shims/yarn.ps1
 lib/node_modules/corepack/shims/yarnpkg
 lib/node_modules/corepack/shims/yarnpkg.cmd
 lib/node_modules/corepack/shims/yarnpkg.ps1
+lib/node_modules/cssesc/
+lib/node_modules/cssesc/LICENSE-MIT.txt
+lib/node_modules/cssesc/README.md
+lib/node_modules/cssesc/bin/
+lib/node_modules/cssesc/bin/cssesc
+lib/node_modules/cssesc/cssesc.js
+lib/node_modules/cssesc/man/
+lib/node_modules/cssesc/man/cssesc.1
+lib/node_modules/cssesc/package.json
 lib/node_modules/debug/
 lib/node_modules/debug/LICENSE
 lib/node_modules/debug/node_modules/
@@ -618,6 +682,7 @@ lib/node_modules/diff/CONTRIBUTING.md
 lib/node_modules/diff/LICENSE
 lib/node_modules/diff/dist/
 lib/node_modules/diff/dist/diff.js
+lib/node_modules/diff/dist/diff.min.js
 lib/node_modules/diff/lib/
 lib/node_modules/diff/lib/convert/
 lib/node_modules/diff/lib/convert/dmp.js
@@ -934,7 +999,6 @@ lib/node_modules/libnpmexec/
 lib/node_modules/libnpmexec/LICENSE
 lib/node_modules/libnpmexec/README.md
 lib/node_modules/libnpmexec/lib/
-lib/node_modules/libnpmexec/lib/cache-install-dir.js
 lib/node_modules/libnpmexec/lib/file-exists.js
 lib/node_modules/libnpmexec/lib/get-bin-from-manifest.js
 lib/node_modules/libnpmexec/lib/index.js
@@ -1305,6 +1369,15 @@ lib/node_modules/node-gyp/node_modules/minimatch/
 lib/node_modules/node-gyp/node_modules/minimatch/LICENSE
 lib/node_modules/node-gyp/node_modules/minimatch/minimatch.js
 lib/node_modules/node-gyp/node_modules/minimatch/package.json
+lib/node_modules/node-gyp/node_modules/nopt/
+lib/node_modules/node-gyp/node_modules/nopt/CHANGELOG.md
+lib/node_modules/node-gyp/node_modules/nopt/LICENSE
+lib/node_modules/node-gyp/node_modules/nopt/README.md
+lib/node_modules/node-gyp/node_modules/nopt/bin/
+lib/node_modules/node-gyp/node_modules/nopt/bin/nopt.js
+lib/node_modules/node-gyp/node_modules/nopt/lib/
+lib/node_modules/node-gyp/node_modules/nopt/lib/nopt.js
+lib/node_modules/node-gyp/node_modules/nopt/package.json
 lib/node_modules/node-gyp/package.json
 lib/node_modules/node-gyp/src/
 lib/node_modules/node-gyp/src/win_delay_load_hook.cc
@@ -1330,7 +1403,6 @@ lib/node_modules/node-pledge/pledge_10x.cc
 lib/node_modules/node-pledge/test.js
 lib/node_modules/node-pledge/version.js
 lib/node_modules/nopt/
-lib/node_modules/nopt/CHANGELOG.md
 lib/node_modules/nopt/LICENSE
 lib/node_modules/nopt/README.md
 lib/node_modules/nopt/bin/
@@ -1364,7 +1436,14 @@ lib/node_modules/npm-audit-report/lib/reporters/quiet.js
 lib/node_modules/npm-audit-report/package.json
 lib/node_modules/npm-bundled/
 lib/node_modules/npm-bundled/LICENSE
-lib/node_modules/npm-bundled/index.js
+lib/node_modules/npm-bundled/lib/
+lib/node_modules/npm-bundled/lib/index.js
+lib/node_modules/npm-bundled/node_modules/
+lib/node_modules/npm-bundled/node_modules/npm-normalize-package-bin/
+lib/node_modules/npm-bundled/node_modules/npm-normalize-package-bin/LICENSE
+lib/node_modules/npm-bundled/node_modules/npm-normalize-package-bin/lib/
+lib/node_modules/npm-bundled/node_modules/npm-normalize-package-bin/lib/index.js
+lib/node_modules/npm-bundled/node_modules/npm-normalize-package-bin/package.json
 lib/node_modules/npm-bundled/package.json
 lib/node_modules/npm-install-checks/
 lib/node_modules/npm-install-checks/LICENSE
@@ -1388,11 +1467,23 @@ lib/node_modules/npm-packlist/bin/
 lib/node_modules/npm-packlist/bin/index.js
 lib/node_modules/npm-packlist/lib/
 lib/node_modules/npm-packlist/lib/index.js
+lib/node_modules/npm-packlist/node_modules/
+lib/node_modules/npm-packlist/node_modules/npm-normalize-package-bin/
+lib/node_modules/npm-packlist/node_modules/npm-normalize-package-bin/LICENSE
+lib/node_modules/npm-packlist/node_modules/npm-normalize-package-bin/lib/
+lib/node_modules/npm-packlist/node_modules/npm-normalize-package-bin/lib/index.js
+lib/node_modules/npm-packlist/node_modules/npm-normalize-package-bin/package.json
 lib/node_modules/npm-packlist/package.json
 lib/node_modules/npm-pick-manifest/
 lib/node_modules/npm-pick-manifest/LICENSE.md
 lib/node_modules/npm-pick-manifest/lib/
 lib/node_modules/npm-pick-manifest/lib/index.js
+lib/node_modules/npm-pick-manifest/node_modules/
+lib/node_modules/npm-pick-manifest/node_modules/npm-normalize-package-bin/
+lib/node_modules/npm-pick-manifest/node_modules/npm-normalize-package-bin/LICENSE
+lib/node_modules/npm-pick-manifest/node_modules/npm-normalize-package-bin/lib/
+lib/node_modules/npm-pick-manifest/node_modules/npm-normalize-package-bin/lib/index.js
+lib/node_modules/npm-pick-manifest/node_modules/npm-normalize-package-bin/package.json
 lib/node_modules/npm-pick-manifest/package.json
 lib/node_modules/npm-profile/
 lib/node_modules/npm-profile/LICENSE.md
@@ -1470,6 +1561,7 @@ lib/node_modules/npm/docs/content/commands/npm-prefix.md
 lib/node_modules/npm/docs/content/commands/npm-profile.md
 lib/node_modules/npm/docs/content/commands/npm-prune.md
 lib/node_modules/npm/docs/content/commands/npm-publish.md
+lib/node_modules/npm/docs/content/commands/npm-query.md
 lib/node_modules/npm/docs/content/commands/npm-rebuild.md
 lib/node_modules/npm/docs/content/commands/npm-repo.md
 lib/node_modules/npm/docs/content/commands/npm-restart.md
@@ -1503,6 +1595,7 @@ lib/node_modules/npm/docs/content/configuring-npm/package-json.md
 lib/node_modules/npm/docs/content/configuring-npm/package-lock-json.md
 lib/node_modules/npm/docs/content/using-npm/
 lib/node_modules/npm/docs/content/using-npm/config.md
+lib/node_modules/npm/docs/content/using-npm/dependency-selectors.md
 lib/node_modules/npm/docs/content/using-npm/developers.md
 lib/node_modules/npm/docs/content/using-npm/logging.md
 lib/node_modules/npm/docs/content/using-npm/orgs.md
@@ -1555,6 +1648,7 @@ lib/node_modules/npm/docs/output/commands/npm-prefix.html
 lib/node_modules/npm/docs/output/commands/npm-profile.html
 lib/node_modules/npm/docs/output/commands/npm-prune.html
 lib/node_modules/npm/docs/output/commands/npm-publish.html
+lib/node_modules/npm/docs/output/commands/npm-query.html
 lib/node_modules/npm/docs/output/commands/npm-rebuild.html
 lib/node_modules/npm/docs/output/commands/npm-repo.html
 lib/node_modules/npm/docs/output/commands/npm-restart.html
@@ -1588,6 +1682,7 @@ lib/node_modules/npm/docs/output/configuring-npm/package-json.html
 lib/node_modules/npm/docs/output/configuring-npm/package-lock-json.html
 lib/node_modules/npm/docs/output/using-npm/
 lib/node_modules/npm/docs/output/using-npm/config.html
+lib/node_modules/npm/docs/output/using-npm/dependency-selectors.html
 lib/node_modules/npm/docs/output/using-npm/developers.html
 lib/node_modules/npm/docs/output/using-npm/logging.html
 lib/node_modules/npm/docs/output/using-npm/orgs.html
@@ -1652,6 +1747,7 @@ lib/node_modules/npm/lib/commands/prefix.js
 lib/node_modules/npm/lib/commands/profile.js
 lib/node_modules/npm/lib/commands/prune.js
 lib/node_modules/npm/lib/commands/publish.js
+lib/node_modules/npm/lib/commands/query.js
 lib/node_modules/npm/lib/commands/rebuild.js
 lib/node_modules/npm/lib/commands/repo.js
 lib/node_modules/npm/lib/commands/restart.js
@@ -1675,8 +1771,6 @@ lib/node_modules/npm/lib/commands/update.js
 lib/node_modules/npm/lib/commands/version.js
 lib/node_modules/npm/lib/commands/view.js
 lib/node_modules/npm/lib/commands/whoami.js
-lib/node_modules/npm/lib/exec/
-lib/node_modules/npm/lib/exec/get-workspace-location-msg.js
 lib/node_modules/npm/lib/lifecycle-cmd.js
 lib/node_modules/npm/lib/npm.js
 lib/node_modules/npm/lib/package-url-cmd.js
@@ -1768,6 +1862,7 @@ lib/node_modules/npm/man/man1/
 @man lib/node_modules/npm/man/man1/npm-profile.1
 @man lib/node_modules/npm/man/man1/npm-prune.1
 @man lib/node_modules/npm/man/man1/npm-publish.1
+@man lib/node_modules/npm/man/man1/npm-query.1
 @man lib/node_modules/npm/man/man1/npm-rebuild.1
 @man lib/node_modules/npm/man/man1/npm-repo.1
 @man lib/node_modules/npm/man/man1/npm-restart.1
@@ -1801,6 +1896,7 @@ lib/node_modules/npm/man/man5/
 @man lib/node_modules/npm/man/man5/package-lock-json.5
 lib/node_modules/npm/man/man7/
 @man lib/node_modules/npm/man/man7/config.7
+@man lib/node_modules/npm/man/man7/dependency-selectors.7
 @man lib/node_modules/npm/man/man7/developers.7
 @man lib/node_modules/npm/man/man7/logging.7
 @man lib/node_modules/npm/man/man7/orgs.7
@@ -1847,6 +1943,7 @@ lib/node_modules/npm/node_modules/columnify
 lib/node_modules/npm/node_modules/common-ancestor-path
 lib/node_modules/npm/node_modules/concat-map
 lib/node_modules/npm/node_modules/console-control-strings
+lib/node_modules/npm/node_modules/cssesc
 lib/node_modules/npm/node_modules/debug
 lib/node_modules/npm/node_modules/debuglog
 lib/node_modules/npm/node_modules/defaults
@@ -1942,6 +2039,7 @@ lib/node_modules/npm/node_modules/p-map
 lib/node_modules/npm/node_modules/pacote
 lib/node_modules/npm/node_modules/parse-conflict-json
 lib/node_modules/npm/node_modules/path-is-absolute
+lib/node_modules/npm/node_modules/postcss-selector-parser
 lib/node_modules/npm/node_modules/proc-log
 lib/node_modules/npm/node_modules/promise-all-reject-late
 lib/node_modules/npm/node_modules/promise-call-limit
@@ -2044,6 +2142,44 @@ lib/node_modules/path-is-absolute/index.js
 lib/node_modules/path-is-absolute/license
 lib/node_modules/path-is-absolute/package.json
 lib/node_modules/path-is-absolute/readme.md
+lib/node_modules/postcss-selector-parser/
+lib/node_modules/postcss-selector-parser/API.md
+lib/node_modules/postcss-selector-parser/LICENSE-MIT
+lib/node_modules/postcss-selector-parser/dist/
+lib/node_modules/postcss-selector-parser/dist/index.js
+lib/node_modules/postcss-selector-parser/dist/parser.js
+lib/node_modules/postcss-selector-parser/dist/processor.js
+lib/node_modules/postcss-selector-parser/dist/selectors/
+lib/node_modules/postcss-selector-parser/dist/selectors/attribute.js
+lib/node_modules/postcss-selector-parser/dist/selectors/className.js
+lib/node_modules/postcss-selector-parser/dist/selectors/combinator.js
+lib/node_modules/postcss-selector-parser/dist/selectors/comment.js
+lib/node_modules/postcss-selector-parser/dist/selectors/constructors.js
+lib/node_modules/postcss-selector-parser/dist/selectors/container.js
+lib/node_modules/postcss-selector-parser/dist/selectors/guards.js
+lib/node_modules/postcss-selector-parser/dist/selectors/id.js
+lib/node_modules/postcss-selector-parser/dist/selectors/index.js
+lib/node_modules/postcss-selector-parser/dist/selectors/namespace.js
+lib/node_modules/postcss-selector-parser/dist/selectors/nesting.js
+lib/node_modules/postcss-selector-parser/dist/selectors/node.js
+lib/node_modules/postcss-selector-parser/dist/selectors/pseudo.js
+lib/node_modules/postcss-selector-parser/dist/selectors/root.js
+lib/node_modules/postcss-selector-parser/dist/selectors/selector.js
+lib/node_modules/postcss-selector-parser/dist/selectors/string.js
+lib/node_modules/postcss-selector-parser/dist/selectors/tag.js
+lib/node_modules/postcss-selector-parser/dist/selectors/types.js
+lib/node_modules/postcss-selector-parser/dist/selectors/universal.js
+lib/node_modules/postcss-selector-parser/dist/sortAscending.js
+lib/node_modules/postcss-selector-parser/dist/tokenTypes.js
+lib/node_modules/postcss-selector-parser/dist/tokenize.js
+lib/node_modules/postcss-selector-parser/dist/util/
+lib/node_modules/postcss-selector-parser/dist/util/ensureObject.js
+lib/node_modules/postcss-selector-parser/dist/util/getProp.js
+lib/node_modules/postcss-selector-parser/dist/util/index.js
+lib/node_modules/postcss-selector-parser/dist/util/stripComments.js
+lib/node_modules/postcss-selector-parser/dist/util/unesc.js
+lib/node_modules/postcss-selector-parser/package.json
+lib/node_modules/postcss-selector-parser/postcss-selector-parser.d.ts
 lib/node_modules/proc-log/
 lib/node_modules/proc-log/LICENSE
 lib/node_modules/proc-log/lib/
@@ -2118,6 +2254,12 @@ lib/node_modules/read-package-json-fast/package.json
 lib/node_modules/read-package-json/LICENSE
 lib/node_modules/read-package-json/lib/
 lib/node_modules/read-package-json/lib/read-json.js
+lib/node_modules/read-package-json/node_modules/
+lib/node_modules/read-package-json/node_modules/npm-normalize-package-bin/
+lib/node_modules/read-package-json/node_modules/npm-normalize-package-bin/LICENSE
+lib/node_modules/read-package-json/node_modules/npm-normalize-package-bin/lib/
+lib/node_modules/read-package-json/node_modules/npm-normalize-package-bin/lib/index.js
+lib/node_modules/read-package-json/node_modules/npm-normalize-package-bin/package.json
 lib/node_modules/read-package-json/package.json
 lib/node_modules/read/LICENSE
 lib/node_modules/read/lib/
@@ -2444,21 +2586,13 @@ lib/node_modules/treeverse/lib/index.js
 lib/node_modules/treeverse/package.json
 lib/node_modules/unique-filename/
 lib/node_modules/unique-filename/LICENSE
-lib/node_modules/unique-filename/coverage/
-lib/node_modules/unique-filename/coverage/__root__/
-lib/node_modules/unique-filename/coverage/__root__/index.html
-lib/node_modules/unique-filename/coverage/__root__/index.js.html
-lib/node_modules/unique-filename/coverage/base.css
-lib/node_modules/unique-filename/coverage/index.html
-lib/node_modules/unique-filename/coverage/prettify.css
-lib/node_modules/unique-filename/coverage/prettify.js
-lib/node_modules/unique-filename/coverage/sort-arrow-sprite.png
-lib/node_modules/unique-filename/coverage/sorter.js
-lib/node_modules/unique-filename/index.js
+lib/node_modules/unique-filename/lib/
+lib/node_modules/unique-filename/lib/index.js
 lib/node_modules/unique-filename/package.json
 lib/node_modules/unique-slug/
 lib/node_modules/unique-slug/LICENSE
-lib/node_modules/unique-slug/index.js
+lib/node_modules/unique-slug/lib/
+lib/node_modules/unique-slug/lib/index.js
 lib/node_modules/unique-slug/package.json
 lib/node_modules/util-deprecate/
 lib/node_modules/util-deprecate/History.md

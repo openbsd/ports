@@ -1,5 +1,6 @@
---- deps/v8/src/trap-handler/handler-inside-posix.h.orig	Fri Jan  7 17:53:40 2022
-+++ deps/v8/src/trap-handler/handler-inside-posix.h	Sat Jan  1 17:10:11 2022
+Index: deps/v8/src/trap-handler/handler-inside-posix.h
+--- deps/v8/src/trap-handler/handler-inside-posix.h.orig
++++ deps/v8/src/trap-handler/handler-inside-posix.h
 @@ -13,7 +13,7 @@ namespace v8 {
  namespace internal {
  namespace trap_handler {
@@ -7,5 +8,5 @@
 -#if V8_OS_LINUX || V8_OS_FREEBSD
 +#if V8_OS_LINUX || V8_OS_FREEBSD || V8_OS_OPENBSD
  constexpr int kOobSignal = SIGSEGV;
- #elif V8_OS_MACOSX
+ #elif V8_OS_DARWIN
  constexpr int kOobSignal = SIGBUS;

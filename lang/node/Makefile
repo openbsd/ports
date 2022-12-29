@@ -5,12 +5,11 @@ USE_WXNEEDED =		Yes
 
 COMMENT = JavaScript runtime built on Chrome's V8 JavaScript engine
 
-NODE_VERSION =		v16.17.1
-PLEDGE_VER =		1.1.2
+NODE_VERSION =		v18.12.1
+PLEDGE_VER =		1.1.3
 DISTFILES =		node-pledge-{}${PLEDGE_VER}.tar.gz:0 \
 			${DISTNAME}-headers.tar.gz \
 			${DISTNAME}.tar.xz
-REVISION =		2
 
 DISTNAME =		node-${NODE_VERSION}
 PKGNAME =		${DISTNAME:S/v//g}
@@ -34,7 +33,7 @@ MODULES =		lang/python
 WANTLIB += c execinfo m pthread ${COMPILER_LIBCXX}
 WANTLIB += z brotlienc brotlidec
 WANTLIB += icudata icui18n icuuc cares nghttp2 uv
-WANTLIB += lib/eopenssl11/ssl lib/eopenssl11/crypto
+WANTLIB += lib/eopenssl30/ssl lib/eopenssl30/crypto
 
 COMPILER =		base-clang ports-gcc
 
@@ -71,16 +70,16 @@ SUBST_VARS +=		WRKDIST
 SUBST_VARS +=		NODE_VERSION
 SUBST_VARS +=		EOPENSSL_LIB
 
-# OpenSSL used: {X,Ed}25519 via EVP, SSL_CIPHER_standard_name and 5-10 other missing symbols/defines.
+# uses a wide range of OpenSSL API and only really supports boring/openssl
 LIB_DEPENDS +=		archivers/brotli \
 			devel/libuv \
 			net/libcares \
 			textproc/icu4c \
 			www/nghttp2 \
-			security/openssl/1.1
+			security/openssl/3.0
 
-EOPENSSL_LIB =		${LOCALBASE}/lib/eopenssl11
-EOPENSSL_INC =		${LOCALBASE}/include/eopenssl11
+EOPENSSL_LIB =		${LOCALBASE}/lib/eopenssl30
+EOPENSSL_INC =		${LOCALBASE}/include/eopenssl30
 
 post-extract:
 	mv ${WRKDIR}/node-pledge-${PLEDGE_VER} \
@@ -100,8 +99,9 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/node
 	${INSTALL_DATA} ${FULLDISTDIR}/${DISTNAME}-headers.tar.gz \
 		${PREFIX}/share/node/${DISTNAME}-headers.tar.gz
-	ln -s ${TRUEPREFIX}/lib/node_modules/npm/bin/node-gyp-bin/node-gyp \
+	ln -fs ${TRUEPREFIX}/lib/node_modules/npm/bin/node-gyp-bin/node-gyp \
 		${PREFIX}/bin/node-gyp;
+	rm -r ${PREFIX}/lib/node_modules/npm/node_modules/node-pledge/build/node_gyp_bins
 	cd ${PREFIX}/lib/node_modules/npm/node_modules && for x in *; do \
 		mv $$x ../..; \
 		ln -s ../../$$x $$x; \

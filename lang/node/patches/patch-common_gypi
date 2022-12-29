@@ -1,7 +1,15 @@
 Index: common.gypi
 --- common.gypi.orig
 +++ common.gypi
-@@ -416,7 +416,9 @@
+@@ -180,7 +180,6 @@
+             }],
+           ],
+         },
+-        'cflags': [ '-O3' ],
+         'conditions': [
+           ['enable_lto=="true"', {
+             'cflags': ['<(lto)'],
+@@ -413,7 +412,9 @@
            }],
            ['OS=="openbsd"', {
              'cflags': [ '-I/usr/local/include' ],

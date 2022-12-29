@@ -3,7 +3,7 @@ Force picking up the correct RecordEntry function.
 Index: deps/v8/src/codegen/riscv64/macro-assembler-riscv64.cc
 --- deps/v8/src/codegen/riscv64/macro-assembler-riscv64.cc.orig
 +++ deps/v8/src/codegen/riscv64/macro-assembler-riscv64.cc
-@@ -3996,7 +3996,7 @@ void MacroAssembler::JumpToInstructionStream(Address e
+@@ -4182,7 +4182,7 @@ void MacroAssembler::JumpToOffHeapInstructionStream(Ad
    if (!FLAG_riscv_constant_pool) {
      li(kOffHeapTrampolineRegister, Operand(entry, RelocInfo::OFF_HEAP_TARGET));
    } else {
