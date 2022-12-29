@@ -2,7 +2,7 @@ COMMENT =		diff tool that compares files based on their syntax
 
 GH_ACCOUNT =		Wilfred
 GH_PROJECT =		difftastic
-GH_TAGNAME =		0.37.0
+GH_TAGNAME =		0.40.0
 
 HOMEPAGE =		https://difftastic.wilfred.me.uk/
 
@@ -13,14 +13,11 @@ CATEGORIES =		devel
 # MIT
 PERMIT_PACKAGE =	Yes
 
-# as devel/cargo MODULES adds DISTFILES, GH_* didn't
-DISTFILES +=		${DISTNAME}${EXTRACT_SUFX}
+DISTFILES +=		${GH_DISTFILE}
 MODULES =		devel/cargo
 BUILD_DEPENDS = 	textproc/mdbook
-
-WANTLIB += 		c c++ c++abi m pthread
-
-.include "crates.inc"
+COMPILER =		base-clang ports-gcc
+WANTLIB += 		${MODCARGO_WANTLIB} ${COMPILER_LIBCXX} m
 
 CONFIGURE_STYLE =	cargo
 
@@ -41,4 +38,5 @@ post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}
 	cp -r ${WRKSRC}/html_manual/* ${DOCDIR}
 
+.include "crates.inc"
 .include <bsd.port.mk>
