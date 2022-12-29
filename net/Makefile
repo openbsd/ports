@@ -88,6 +88,7 @@
      SUBDIR += echoping
      SUBDIR += eduvpn
      SUBDIR += ekg
+     SUBDIR += endlessh
      SUBDIR += enet
      SUBDIR += epic4
      SUBDIR += epic5
