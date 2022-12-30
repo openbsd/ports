@@ -1,3 +1,5 @@
+@newgroup _endlessh:887
+@newuser _endlessh:887:887::endlessh user:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/endlessh
 @rcscript ${RCDIR}/endlessh6
 @bin bin/endlessh
