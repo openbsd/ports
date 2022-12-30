@@ -1,0 +1,4 @@
+lchat (line chat) is a line oriented front end for ii-like chat
+programs. It handles the input from keyboard and output file in
+parallel. Thus, you are able to type messages while new chat lines
+are arriving. Its main focus is on usability and simplicity.
