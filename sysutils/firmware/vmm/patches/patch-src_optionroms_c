@@ -1,25 +1,15 @@
 - Needed for SGABIOS option ROM for VMM. Normally these are setup based on
   the QEMU fw_cfg interface (or coreboot CBFS on hardware).
-- Turn off screen-and-debug to prevent double printing of chars.
 
 Index: src/optionroms.c
 --- src/optionroms.c.orig
 +++ src/optionroms.c
 @@ -387,7 +387,7 @@ optionrom_setup(void)
- 
+
      // All option roms found and deployed - now build BEV/BCV vectors.
- 
+
 -    u32 pos = post_vga;
 +    u32 pos = BUILD_BIOS_ADDR - BUILD_ROM_START;
      while (pos < rom_get_last()) {
          struct rom_header *rom = (void*)pos;
          if (! is_valid_rom(rom)) {
-@@ -461,7 +461,7 @@ vgarom_setup(void)
-     EnforceChecksum = romfile_loadint("etc/optionroms-checksum", 1);
-     S3ResumeVga = romfile_loadint("etc/s3-resume-vga-init", CONFIG_QEMU);
-     RunPCIroms = romfile_loadint("etc/pci-optionrom-exec", 2);
--    ScreenAndDebug = romfile_loadint("etc/screen-and-debug", 1);
-+    ScreenAndDebug = romfile_loadint("etc/screen-and-debug", 0);
- 
-     // Clear option rom memory
-     memset((void*)BUILD_ROM_START, 0, rom_get_max() - BUILD_ROM_START);
