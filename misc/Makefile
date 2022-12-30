@@ -40,6 +40,7 @@
      SUBDIR += ietf-cli
      SUBDIR += impress
      SUBDIR += insult
+     SUBDIR += lchat
      SUBDIR += lfm
      SUBDIR += libdivecomputer
      SUBDIR += libstubborn
