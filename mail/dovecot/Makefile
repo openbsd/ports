@@ -9,13 +9,8 @@ COMMENT-postgresql= PostgreSQL authentication / dictionary support for Dovecot
 # (dovecot-fts-xapian, dovecot-fts-flatcurve, dovecot-pigeonhole if
 # not updated anyway)
 V_MAJOR=	2.3
-V_DOVECOT=	2.3.19.1
+V_DOVECOT=	2.3.20
 EPOCH=		0
-
-REVISION-server= 2
-REVISION-ldap=	0
-REVISION-mysql=	0
-REVISION-postgresql=0
 
 DISTNAME=	dovecot-${V_DOVECOT}
 PKGNAME=	dovecot-${V_DOVECOT}

@@ -1,8 +1,7 @@
 COMMENT=	Sieve mail filtering for Dovecot
 
-V_SIEVE=	0.5.19
+V_SIEVE=	0.5.20
 V_DOVECOT=	2.3
-REVISION=	0
 
 DISTNAME=	dovecot-${V_DOVECOT}-pigeonhole-${V_SIEVE}
 PKGNAME=	dovecot-pigeonhole-${V_SIEVE}
@@ -27,7 +26,7 @@ WANTLIB=	lib/dovecot/dovecot lib/dovecot/dovecot-lda \
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 LIB_DEPENDS=	converters/libiconv \
-		mail/dovecot>=2.3.17.1v0
+		mail/dovecot>=2.3.20v0
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--docdir=${PREFIX}/share/doc
