@@ -1,14 +1,6 @@
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -177,6 +177,7 @@ if buildExec.disabled() == false
-       naev_deps += cc.find_library('amd', required: true)
-       naev_deps += cc.find_library('ccolamd', required: false)
-       naev_deps += cc.find_library('colamd', required: true)
-+      naev_deps += cc.find_library('cxsparse', required: true)
-       naev_deps += cc.find_library('lapack', required: false)
-       naev_deps += cc.find_library('metis', required: false)
-       naev_deps += cc.find_library('suitesparseconfig', required: true)
 @@ -195,17 +196,6 @@ if buildExec.disabled() == false
     naev_deps += blas
  

@@ -7,6 +7,7 @@ COMMENT-data =		naev game data
 V = 			0.10.0
 DISTNAME =		naev-${V}-source
 PKGNAME = 		naev-${V}
+REVISION-main =		0
 
 CATEGORIES = 		games x11
 
@@ -21,8 +22,8 @@ MASTER_SITES =          https://github.com/naev/naev/releases/download/v${V}/
 EXTRACT_SUFX = 		.tar.xz
 
 WANTLIB-main += SDL2 SDL2_image c cblas cholmod cxsparse freetype glpk
-WANTLIB-main += m openal physfs unibreak vorbis vorbisfile xml2
-WANTLIB-main += ${MODLUA_WANTLIB}
+WANTLIB-main += m openal physfs unibreak vorbis vorbisfile xml2 pcre2-8
+WANTLIB-main += enet ${MODLUA_WANTLIB}
 WANTLIB-data =
 
 MODULES =		devel/meson lang/lua\
@@ -36,6 +37,7 @@ LIB_DEPENDS-main =	audio/libvorbis \
 			devel/physfs \
 			math/cblas \
 			math/suitesparse \
+			net/enet \
 			textproc/libunibreak \
 			textproc/libxml \
 			${MODLUA_LIB_DEPENDS}
