@@ -39,9 +39,6 @@ include/libavformat/
 include/libavformat/avformat.h
 include/libavformat/avio.h
 include/libavformat/version.h
-include/libavresample/
-include/libavresample/avresample.h
-include/libavresample/version.h
 include/libavutil/
 include/libavutil/adler32.h
 include/libavutil/aes.h
@@ -147,8 +144,6 @@ include/libswscale/version.h
 @lib lib/libavfilter.so.${LIBavfilter_VERSION}
 @static-lib lib/libavformat.a
 @lib lib/libavformat.so.${LIBavformat_VERSION}
-@static-lib lib/libavresample.a
-@lib lib/libavresample.so.${LIBavresample_VERSION}
 @static-lib lib/libavutil.a
 @lib lib/libavutil.so.${LIBavutil_VERSION}
 @static-lib lib/libpostproc.a
@@ -161,7 +156,6 @@ lib/pkgconfig/libavcodec.pc
 lib/pkgconfig/libavdevice.pc
 lib/pkgconfig/libavfilter.pc
 lib/pkgconfig/libavformat.pc
-lib/pkgconfig/libavresample.pc
 lib/pkgconfig/libavutil.pc
 lib/pkgconfig/libpostproc.pc
 lib/pkgconfig/libswresample.pc

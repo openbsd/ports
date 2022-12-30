@@ -2,7 +2,7 @@ COMMENT=	audio/video converter and streamer
 
 V=		4.4.3
 DISTNAME=	ffmpeg-${V}
-REVISION=	0
+REVISION=	1
 EPOCH=		1
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	https://ffmpeg.org/releases/
@@ -12,7 +12,6 @@ SHARED_LIBS=	avcodec		25.0 \
 		avdevice	13.0 \
 		avfilter	11.0 \
 		avformat	22.0 \
-		avresample	2.0 \
 		avutil		15.0 \
 		postproc	19.0 \
 		swresample	4.0 \
@@ -67,7 +66,6 @@ LIBavcodec_EXTRALIBS=-L${LOCALBASE}/lib -laom -ldav1d -lgsm -liconv -llzma -lmp3
 LIBavdevice_EXTRALIBS=-L${LOCALBASE}/lib -L${X11BASE}/lib -lX11 -lXext -lXv -lxcb-shape -lxcb-shm -lxcb-xfixes -lxcb -lsndio -lv4l2 -lm
 LIBavfilter_EXTRALIBS=-L${LOCALBASE}/lib -L${X11BASE}/lib -lass -lfontconfig -lfreetype -lfribidi -lvidstab -lm -lz -lzimg -pthread
 LIBavformat_EXTRALIBS=-L${LOCALBASE}/lib -lbz2 -lxml2 -lssl -lcrypto -lm -lz
-LIBavresample_EXTRALIBS=-lm
 LIBavutil_EXTRALIBS=-lm -pthread
 LIBpostproc_EXTRALIBS=-lm
 LIBswresample_EXTRALIBS=-lm
@@ -92,7 +90,6 @@ CONFIGURE_ARGS+=--enable-shared \
 		--disable-debug \
 		--disable-indev=jack \
 		--disable-outdev=sdl2 \
-		--enable-avresample \
 		--enable-fontconfig \
 		--enable-frei0r \
 		--enable-gpl \
@@ -147,7 +144,6 @@ MAKE_ENV+=	V=1 \
 		libavdevice_extralibs="${LIBavdevice_EXTRALIBS}" \
 		libavfilter_extralibs="${LIBavfilter_EXTRALIBS}" \
 		libavformat_extralibs="${LIBavformat_EXTRALIBS}" \
-		libavresample_extralibs="${LIBavresample_EXTRALIBS}" \
 		libavutil_extralibs="${LIBavutil_EXTRALIBS}" \
 		libpostproc_extralibs="${LIBpostproc_EXTRALIBS}" \
 		libswresample_extralibs="${LIBswresample_EXTRALIBS}" \
@@ -156,16 +152,14 @@ MAKE_ENV+=	V=1 \
 		libavdevice_linkflags="-Wl,-rpath-link,${LOCALBASE}/lib:${X11BASE}/lib" \
 		libavfilter_linkflags="-Wl,-rpath-link,${LOCALBASE}/lib:${X11BASE}/lib" \
 		libavformat_linkflags="-Wl,-rpath-link,${LOCALBASE}/lib" \
-		libavresample_linkflags="" \
 		libavutil_linkflags="" \
 		libpostproc_linkflags="" \
 		libswresample_linkflags="" \
 		libswscale_linkflags="" \
 		libavcodec_requires="libswresample libavutil" \
-		libavdevice_requires="libavfilter libswscale libpostproc libavformat libavcodec libswresample libavresample libavutil" \
-		libavfilter_requires="libswscale libpostproc libavformat libavcodec libswresample libavresample libavutil" \
+		libavdevice_requires="libavfilter libswscale libpostproc libavformat libavcodec libswresample libavutil" \
+		libavfilter_requires="libswscale libpostproc libavformat libavcodec libswresample libavutil" \
 		libavformat_requires="libavcodec libswresample libavutil" \
-		libavresample_requires="libavutil" \
 		libavutil_requires="" \
 		libpostproc_requires="libavutil" \
 		libswresample_requires="libavutil" \
@@ -175,7 +169,6 @@ VERSION_FLAGS=	libavcodec_VERSION=${LIBavcodec_VERSION} \
 		libavdevice_VERSION=${LIBavdevice_VERSION} \
 		libavfilter_VERSION=${LIBavfilter_VERSION} \
 		libavformat_VERSION=${LIBavformat_VERSION} \
-		libavresample_VERSION=${LIBavresample_VERSION} \
 		libavutil_VERSION=${LIBavutil_VERSION} \
 		libpostproc_VERSION=${LIBpostproc_VERSION} \
 		libswresample_VERSION=${LIBswresample_VERSION} \
@@ -183,10 +176,9 @@ VERSION_FLAGS=	libavcodec_VERSION=${LIBavcodec_VERSION} \
 
 MAKE_FLAGS=	${VERSION_FLAGS} \
 		LIBavcodec_EXTRALIBS="-lswresample -lavutil ${LIBavcodec_EXTRALIBS}" \
-		LIBavdevice_EXTRALIBS="-lavfilter -lswscale -lpostproc -lavformat -lavcodec -lswresample -lavresample -lavutil ${LIBavdevice_EXTRALIBS}" \
-		LIBavfilter_EXTRALIBS="-lswscale -lpostproc -lavformat -lavcodec -lswresample -lavresample -lavutil ${LIBavfilter_EXTRALIBS}" \
+		LIBavdevice_EXTRALIBS="-lavfilter -lswscale -lpostproc -lavformat -lavcodec -lswresample -lavutil ${LIBavdevice_EXTRALIBS}" \
+		LIBavfilter_EXTRALIBS="-lswscale -lpostproc -lavformat -lavcodec -lswresample -lavutil ${LIBavfilter_EXTRALIBS}" \
 		LIBavformat_EXTRALIBS="-lavcodec -lswresample -lavutil ${LIBavformat_EXTRALIBS}" \
-		LIBavresample_EXTRALIBS="-lavutil ${LIBavresample_EXTRALIBS}" \
 		LIBavutil_EXTRALIBS="${LIBavutil_EXTRALIBS}" \
 		LIBpostproc_EXTRALIBS="-lavutil ${LIBpostproc_EXTRALIBS}" \
 		LIBswresample_EXTRALIBS="-lavutil ${LIBswresample_EXTRALIBS}" \

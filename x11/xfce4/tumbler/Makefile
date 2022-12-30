@@ -1,6 +1,7 @@
 COMMENT=	D-Bus thumbnailing service
 
 XFCE_PROJECT=	tumbler
+REVISION=	0
 
 SHARED_LIBS+=	tumbler-1 1.0
 
@@ -14,7 +15,7 @@ WANTLIB += gmodule-2.0 gobject-2.0 gsf-1 gthread-2.0 jpeg
 WANTLIB += lcms2 lzma m nghttp2 ogg openjp2 pcre2-8 pixman-1 png poppler
 WANTLIB += poppler-glib pthread ssl swscale tiff harfbuzz
 WANTLIB += vorbis xcb xcb-render xcb-shm xml2 z iconv intl
-WANTLIB += ${COMPILER_LIBCXX} ass avfilter avresample fribidi
+WANTLIB += ${COMPILER_LIBCXX} ass avfilter fribidi
 WANTLIB += gsm mp3lame opus postproc speex swresample vorbisenc
 WANTLIB += vpx x264 x265 xfce4util xvidcore theoradec theoraenc zstd
 WANTLIB += Xau Xdmcp vidstab nghttp3 ngtcp2 ngtcp2_crypto_openssl zimg

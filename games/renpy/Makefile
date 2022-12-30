@@ -4,7 +4,7 @@ V =			7.3.5
 MODPY_EGG_VERSION =	${V}.606
 DISTNAME =		renpy-${V}-source
 PKGNAME =		renpy-${V}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		games
 
@@ -13,7 +13,7 @@ HOMEPAGE =		https://www.renpy.org/
 # mostly MIT, some files LGPLv2.1+
 PERMIT_PACKAGE =		Yes
 
-WANTLIB += GLEW SDL2 avcodec avformat avresample avutil freetype
+WANTLIB += GLEW SDL2 avcodec avformat avutil freetype
 WANTLIB += m png pthread swresample swscale z ${MODPY_WANTLIB}
 
 MASTER_SITES =		https://www.renpy.org/dl/${V}/

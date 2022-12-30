@@ -3,7 +3,7 @@ COMMENT =	FFmpeg-based Qt multimedia framework
 GH_ACCOUNT =	wang-bin
 GH_PROJECT =	QtAV
 GH_TAGNAME =	v1.12.0
-REVISION =	8
+REVISION =	9
 
 PKGNAME =	${DISTNAME:L}
 
@@ -20,7 +20,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5OpenGL
 WANTLIB += Qt5Qml Qt5Quick Qt5Widgets X11 Xext Xv ass avcodec
-WANTLIB += avdevice avfilter avformat avresample avutil m openal
+WANTLIB += avdevice avfilter avformat avutil m openal
 WANTLIB += pulse swresample swscale uchardet Qt5QmlModels
 
 MODULES =		devel/qmake \
