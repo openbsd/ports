@@ -15,11 +15,11 @@ GH_COMMIT =		1512ef693a7469d7dbc61191ecc0b487bc7f594f
 DISTNAME =		${GH_PROJECT}-0.0.0.20221215
 DISTFILES =		${GH_DISTFILE}
 CATEGORIES =		net
-REVISION =		0
+REVISION =		1
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-SHARED_LIBS =		tg_owt	5.0	# 0.0.0
+SHARED_LIBS =		tg_owt	5.1	# upstream is static only
 
 DIST_SUBDIR =		tg_owt
 # Fetch bundles/submodules missing from the tarball, see ${WRKSRC}/.gitmodules
