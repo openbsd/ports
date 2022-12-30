@@ -1,5 +1,7 @@
-SHA256 (go_modules/github.com/!rasmus!lindroth/go-mastodon/@v/v0.0.16.mod) = 3RZ5H6txBYq5DzVoTxA0DGIxbViSK76RAHb3TJEb4fs=
-SHA256 (go_modules/github.com/!rasmus!lindroth/go-mastodon/@v/v0.0.16.zip) = 2Om/fWlCWpZqJlfDz5k1CGL0LWKKEErrVk2tavbfu+4=
+SHA256 (go_modules/github.com/!rasmus!lindroth/go-mastodon/@v/v0.0.17.mod) = 3RZ5H6txBYq5DzVoTxA0DGIxbViSK76RAHb3TJEb4fs=
+SHA256 (go_modules/github.com/!rasmus!lindroth/go-mastodon/@v/v0.0.17.zip) = zinQOuZ1WrodPWRDl+GoAZKmQZjGX+Krn/8T3X+p2EU=
+SHA256 (go_modules/github.com/adrg/xdg/@v/v0.4.0.mod) = vuWDIMBO/dcWinzh734g5r6Y1DwL5YbpeXwFaWF24/0=
+SHA256 (go_modules/github.com/adrg/xdg/@v/v0.4.0.zip) = s53Bt+l+9Zs/m4lfq8BuRFGB43l5/OEdVxM3FbP/5UY=
 SHA256 (go_modules/github.com/atotto/clipboard/@v/v0.1.4.mod) = hxgiy8ffN5L3ihAIhrf0mfc1VZOOM2uRhoIRlojqitA=
 SHA256 (go_modules/github.com/atotto/clipboard/@v/v0.1.4.zip) = 1nssNsZidRMJ/S7DUd82UVhL6oQL0nvpqQcCw6I4tD8=
 SHA256 (go_modules/github.com/aymerick/douceur/@v/v0.2.0.mod) = XgRUJBwle0xPnb3chOeOmeKcUnWzz67or9K7R25ySJc=
@@ -9,7 +11,6 @@ SHA256 (go_modules/github.com/davecgh/go-spew/@v/v1.1.1.mod) = vLKTkyUSN7eaF7bBm
 SHA256 (go_modules/github.com/davecgh/go-spew/@v/v1.1.1.zip) = a0SoQ5UfNxtwEMdU7MPKvv6BXVztHFuUCfstaX6KiQ0=
 SHA256 (go_modules/github.com/gdamore/encoding/@v/v1.0.0.mod) = pJgRJVFfDy3yU8LeOjrBlwx0Q+W2adlH6HTnezaBtuU=
 SHA256 (go_modules/github.com/gdamore/encoding/@v/v1.0.0.zip) = Y4qYMuL2LRGNfFEdhr2uFiKlHzMd5IoB2Sn9JOvmoqY=
-SHA256 (go_modules/github.com/gdamore/tcell/v2/@v/v2.4.1-0.20210905002822-f057f0a857a1.mod) = w+/U+wrczX2bcBOfDqVbdaLgRNEAfd23+7MMauxllhY=
 SHA256 (go_modules/github.com/gdamore/tcell/v2/@v/v2.5.3.mod) = JlVpbQ0HAS2x5kpMtli+W+9P8KLVR4V1QqKu/6qySn8=
 SHA256 (go_modules/github.com/gdamore/tcell/v2/@v/v2.5.3.zip) = 62+TeJEgY6dd3D5gEYJ7WH/M2vIKR/sF6Exuuob8uqM=
 SHA256 (go_modules/github.com/gen2brain/beeep/@v/v0.0.0-20220909211152-5a9ec94374f6.mod) = KvpyDboFomlJH8gkEsxKPpdwpcDWU21XjpqoMzxPzeM=
@@ -41,8 +42,8 @@ SHA256 (go_modules/github.com/pelletier/go-toml/v2/@v/v2.0.6.mod) = nnkRjVzXHeJo
 SHA256 (go_modules/github.com/pelletier/go-toml/v2/@v/v2.0.6.zip) = AZ5KAXOefKNwHV97SvVxesXrTW1JIbiEJdf0DK2xvX0=
 SHA256 (go_modules/github.com/pmezard/go-difflib/@v/v1.0.0.mod) = dLLnZushU3eGTVh7rfV+lVIfaS0qeGCzx3WQk/nJvsI=
 SHA256 (go_modules/github.com/pmezard/go-difflib/@v/v1.0.0.zip) = 3gTOzBpLjVPkNXBRAmeUvLxU8uaiYM+sUIzmnV1kV6A=
-SHA256 (go_modules/github.com/rivo/tview/@v/v0.0.0-20221212150847-19d943d59543.mod) = K0ONg96UbqXSHzYuPSlh3qYMRKBSgfpbhDPBxh1fyHw=
-SHA256 (go_modules/github.com/rivo/tview/@v/v0.0.0-20221212150847-19d943d59543.zip) = VsoNMT7gPUvR+9VQiCu73c/at5ii9dDxK2OZVW9D+vY=
+SHA256 (go_modules/github.com/rivo/tview/@v/v0.0.0-20221221172820-02e38ea9604c.mod) = Un856te0OZgWNCUL+oKLyMJtPWg516KRXxkPTVSncqQ=
+SHA256 (go_modules/github.com/rivo/tview/@v/v0.0.0-20221221172820-02e38ea9604c.zip) = D9eqq2XmywWqAE9haz2qHdvE7Qt6JNUor3hguR3ehQM=
 SHA256 (go_modules/github.com/rivo/uniseg/@v/v0.2.0.mod) = bHMYonqNVHOo62YedfsAUoF24O/FkxDtJ3yhO9EqU/E=
 SHA256 (go_modules/github.com/rivo/uniseg/@v/v0.4.2.mod) = oeF0iQ/J8lJFAhH63rU3VvnPWrexlpd2X5+yVfgeqJg=
 SHA256 (go_modules/github.com/rivo/uniseg/@v/v0.4.3.mod) = oeF0iQ/J8lJFAhH63rU3VvnPWrexlpd2X5+yVfgeqJg=
@@ -53,6 +54,7 @@ SHA256 (go_modules/github.com/stretchr/objx/@v/v0.1.0.mod) = E1A1TVLSKHpiM27MDVY
 SHA256 (go_modules/github.com/stretchr/objx/@v/v0.4.0.mod) = MbL9ze6HDw9hv/r6+5YiCWflvKCKdqkg1XQhb8H5E1U=
 SHA256 (go_modules/github.com/stretchr/objx/@v/v0.5.0.mod) = yzJlQO/LEnSm5Olw1/yd4ugGLwigWPwpbYWQJeYugHo=
 SHA256 (go_modules/github.com/stretchr/objx/@v/v0.5.0.zip) = GgCzu1rUHLcmNKzga36334V0BNd6fKtOQBp8cpVh/kw=
+SHA256 (go_modules/github.com/stretchr/testify/@v/v1.7.0.mod) = //gWjZjmoHFWxFShtuklUJ8xd+lsFVUW1/lrQHnMo78=
 SHA256 (go_modules/github.com/stretchr/testify/@v/v1.7.1.mod) = //gWjZjmoHFWxFShtuklUJ8xd+lsFVUW1/lrQHnMo78=
 SHA256 (go_modules/github.com/stretchr/testify/@v/v1.8.0.mod) = 4HYHTBVgrR3amLiwD+pjCMS2zNBt3QiNIttGJu1o9zg=
 SHA256 (go_modules/github.com/stretchr/testify/@v/v1.8.1.mod) = rxpdyzMazno/n8G11+7pwLyCtKKhgv5M7CrdIX4oU9Y=
@@ -61,8 +63,8 @@ SHA256 (go_modules/github.com/tadvi/systray/@v/v0.0.0-20190226123456-11a2b8fa57a
 SHA256 (go_modules/github.com/tadvi/systray/@v/v0.0.0-20190226123456-11a2b8fa57af.zip) = dSjqDc20tvqO0ssx1lpqU9B0Qz91w7GJ0510ILpJTxM=
 SHA256 (go_modules/github.com/tomnomnom/linkheader/@v/v0.0.0-20180905144013-02ca5825eb80.mod) = jO/EMgM2fjR00kXW7wAZ3CatnL1Aa4yxC8O/K2ns5YQ=
 SHA256 (go_modules/github.com/tomnomnom/linkheader/@v/v0.0.0-20180905144013-02ca5825eb80.zip) = VYUE6pbUMSvg/l+qbeE/tqvY8bKsFUEjxntiOl8hnNs=
-SHA256 (go_modules/golang.org/x/exp/@v/v0.0.0-20221212164502-fae10dda9338.mod) = AWlyQUC24fWTQogGuQZg3GxMER20/hXZIWJCRvypaug=
-SHA256 (go_modules/golang.org/x/exp/@v/v0.0.0-20221212164502-fae10dda9338.zip) = Me1mJoei/5JyjIGzefYZ6UB87H+oQTPYGZFXEU9HrKE=
+SHA256 (go_modules/golang.org/x/exp/@v/v0.0.0-20221227203929-1b447090c38c.mod) = AWlyQUC24fWTQogGuQZg3GxMER20/hXZIWJCRvypaug=
+SHA256 (go_modules/golang.org/x/exp/@v/v0.0.0-20221227203929-1b447090c38c.zip) = lvkpNr9o9nTwK884+ThCwJTyq787cOX+h90QCvmxVU8=
 SHA256 (go_modules/golang.org/x/mod/@v/v0.6.0-dev.0.20220419223038-86c51ed26bb4.mod) = QtGQI/+PLq5wC8VJXzcezZmKItGbqYXQr19pkAslQIM=
 SHA256 (go_modules/golang.org/x/mod/@v/v0.6.0.mod) = mfQKUOjWDCWZrEXGzix21VSoQorNE8LGikk/ymGbT6g=
 SHA256 (go_modules/golang.org/x/mod/@v/v0.6.0.zip) = P0XE/ZkuVfCHSEYyy2vxn1u6aOUb0YovPhDIh3Huwmg=
@@ -70,7 +72,7 @@ SHA256 (go_modules/golang.org/x/net/@v/v0.0.0-20221002022538-bcab6841153b.mod) =
 SHA256 (go_modules/golang.org/x/net/@v/v0.4.0.mod) = PDYKM2jCXws5pktjD+dO2ZjfAOar7pP9SfVv/nWQoTE=
 SHA256 (go_modules/golang.org/x/net/@v/v0.4.0.zip) = V+7Gs/ErVa6GvQaQ8+aP+GJlhpNdF7rUZjXq+NM2rqo=
 SHA256 (go_modules/golang.org/x/sys/@v/v0.0.0-20201119102817-f84b799fce68.mod) = GBl56L1X0tngZBgtqGyaYRGqaXVeiI8IQx7OR0Kuw0M=
-SHA256 (go_modules/golang.org/x/sys/@v/v0.0.0-20210309074719-68d13333faf2.mod) = GBl56L1X0tngZBgtqGyaYRGqaXVeiI8IQx7OR0Kuw0M=
+SHA256 (go_modules/golang.org/x/sys/@v/v0.0.0-20211025201205-69cdffdb9359.mod) = 8DMzMJb+GY8xUd7tk/LeunTlC7/nc5E0BFvDt85KUCQ=
 SHA256 (go_modules/golang.org/x/sys/@v/v0.0.0-20220318055525-2edf467146b5.mod) = 8DMzMJb+GY8xUd7tk/LeunTlC7/nc5E0BFvDt85KUCQ=
 SHA256 (go_modules/golang.org/x/sys/@v/v0.0.0-20220319134239-a9b59b0215f8.mod) = 8DMzMJb+GY8xUd7tk/LeunTlC7/nc5E0BFvDt85KUCQ=
 SHA256 (go_modules/golang.org/x/sys/@v/v0.0.0-20220722155257-8c9f86f7a55f.mod) = 8DMzMJb+GY8xUd7tk/LeunTlC7/nc5E0BFvDt85KUCQ=
@@ -96,9 +98,11 @@ SHA256 (go_modules/gopkg.in/ini.v1/@v/v1.67.0.zip) = vYRd/HYqh6VuWjKgd3Dcg+hpdtt
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
-SHA256 (tut-1.0.26.zip) = cN9A5L5dIVbM+RfUoNXKkhVVu/wJsx2j+nS4VHqkPsM=
-SIZE (go_modules/github.com/!rasmus!lindroth/go-mastodon/@v/v0.0.16.mod) = 172
-SIZE (go_modules/github.com/!rasmus!lindroth/go-mastodon/@v/v0.0.16.zip) = 52344
+SHA256 (tut-1.0.31.zip) = jxAkvnJx3WV2CRLcD5YR5vM9w8zF0fnIJoF3VZMqwtA=
+SIZE (go_modules/github.com/!rasmus!lindroth/go-mastodon/@v/v0.0.17.mod) = 172
+SIZE (go_modules/github.com/!rasmus!lindroth/go-mastodon/@v/v0.0.17.zip) = 52472
+SIZE (go_modules/github.com/adrg/xdg/@v/v0.4.0.mod) = 138
+SIZE (go_modules/github.com/adrg/xdg/@v/v0.4.0.zip) = 32947
 SIZE (go_modules/github.com/atotto/clipboard/@v/v0.1.4.mod) = 35
 SIZE (go_modules/github.com/atotto/clipboard/@v/v0.1.4.zip) = 8606
 SIZE (go_modules/github.com/aymerick/douceur/@v/v0.2.0.mod) = 35
@@ -108,7 +112,6 @@ SIZE (go_modules/github.com/davecgh/go-spew/@v/v1.1.1.mod) = 34
 SIZE (go_modules/github.com/davecgh/go-spew/@v/v1.1.1.zip) = 60320
 SIZE (go_modules/github.com/gdamore/encoding/@v/v1.0.0.mod) = 77
 SIZE (go_modules/github.com/gdamore/encoding/@v/v1.0.0.zip) = 19867
-SIZE (go_modules/github.com/gdamore/tcell/v2/@v/v2.4.1-0.20210905002822-f057f0a857a1.mod) = 308
 SIZE (go_modules/github.com/gdamore/tcell/v2/@v/v2.5.3.mod) = 308
 SIZE (go_modules/github.com/gdamore/tcell/v2/@v/v2.5.3.zip) = 239019
 SIZE (go_modules/github.com/gen2brain/beeep/@v/v0.0.0-20220909211152-5a9ec94374f6.mod) = 349
@@ -140,8 +143,8 @@ SIZE (go_modules/github.com/pelletier/go-toml/v2/@v/v2.0.6.mod) = 92
 SIZE (go_modules/github.com/pelletier/go-toml/v2/@v/v2.0.6.zip) = 921034
 SIZE (go_modules/github.com/pmezard/go-difflib/@v/v1.0.0.mod) = 37
 SIZE (go_modules/github.com/pmezard/go-difflib/@v/v1.0.0.zip) = 12433
-SIZE (go_modules/github.com/rivo/tview/@v/v0.0.0-20221212150847-19d943d59543.mod) = 460
-SIZE (go_modules/github.com/rivo/tview/@v/v0.0.0-20221212150847-19d943d59543.zip) = 1936791
+SIZE (go_modules/github.com/rivo/tview/@v/v0.0.0-20221221172820-02e38ea9604c.mod) = 430
+SIZE (go_modules/github.com/rivo/tview/@v/v0.0.0-20221221172820-02e38ea9604c.zip) = 1937611
 SIZE (go_modules/github.com/rivo/uniseg/@v/v0.2.0.mod) = 39
 SIZE (go_modules/github.com/rivo/uniseg/@v/v0.4.2.mod) = 39
 SIZE (go_modules/github.com/rivo/uniseg/@v/v0.4.3.mod) = 39
@@ -152,6 +155,7 @@ SIZE (go_modules/github.com/stretchr/objx/@v/v0.1.0.mod) = 32
 SIZE (go_modules/github.com/stretchr/objx/@v/v0.4.0.mod) = 137
 SIZE (go_modules/github.com/stretchr/objx/@v/v0.5.0.mod) = 85
 SIZE (go_modules/github.com/stretchr/objx/@v/v0.5.0.zip) = 44362
+SIZE (go_modules/github.com/stretchr/testify/@v/v1.7.0.mod) = 216
 SIZE (go_modules/github.com/stretchr/testify/@v/v1.7.1.mod) = 216
 SIZE (go_modules/github.com/stretchr/testify/@v/v1.8.0.mod) = 188
 SIZE (go_modules/github.com/stretchr/testify/@v/v1.8.1.mod) = 188
@@ -160,8 +164,8 @@ SIZE (go_modules/github.com/tadvi/systray/@v/v0.0.0-20190226123456-11a2b8fa57af.
 SIZE (go_modules/github.com/tadvi/systray/@v/v0.0.0-20190226123456-11a2b8fa57af.zip) = 29546
 SIZE (go_modules/github.com/tomnomnom/linkheader/@v/v0.0.0-20180905144013-02ca5825eb80.mod) = 39
 SIZE (go_modules/github.com/tomnomnom/linkheader/@v/v0.0.0-20180905144013-02ca5825eb80.zip) = 7607
-SIZE (go_modules/golang.org/x/exp/@v/v0.0.0-20221212164502-fae10dda9338.mod) = 176
-SIZE (go_modules/golang.org/x/exp/@v/v0.0.0-20221212164502-fae10dda9338.zip) = 431866
+SIZE (go_modules/golang.org/x/exp/@v/v0.0.0-20221227203929-1b447090c38c.mod) = 176
+SIZE (go_modules/golang.org/x/exp/@v/v0.0.0-20221227203929-1b447090c38c.zip) = 433678
 SIZE (go_modules/golang.org/x/mod/@v/v0.6.0-dev.0.20220419223038-86c51ed26bb4.mod) = 157
 SIZE (go_modules/golang.org/x/mod/@v/v0.6.0.mod) = 117
 SIZE (go_modules/golang.org/x/mod/@v/v0.6.0.zip) = 161965
@@ -169,7 +173,7 @@ SIZE (go_modules/golang.org/x/net/@v/v0.0.0-20221002022538-bcab6841153b.mod) = 1
 SIZE (go_modules/golang.org/x/net/@v/v0.4.0.mod) = 123
 SIZE (go_modules/golang.org/x/net/@v/v0.4.0.zip) = 1553054
 SIZE (go_modules/golang.org/x/sys/@v/v0.0.0-20201119102817-f84b799fce68.mod) = 33
-SIZE (go_modules/golang.org/x/sys/@v/v0.0.0-20210309074719-68d13333faf2.mod) = 33
+SIZE (go_modules/golang.org/x/sys/@v/v0.0.0-20211025201205-69cdffdb9359.mod) = 33
 SIZE (go_modules/golang.org/x/sys/@v/v0.0.0-20220318055525-2edf467146b5.mod) = 33
 SIZE (go_modules/golang.org/x/sys/@v/v0.0.0-20220319134239-a9b59b0215f8.mod) = 33
 SIZE (go_modules/golang.org/x/sys/@v/v0.0.0-20220722155257-8c9f86f7a55f.mod) = 33
@@ -195,4 +199,4 @@ SIZE (go_modules/gopkg.in/ini.v1/@v/v1.67.0.zip) = 71817
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = 104623
-SIZE (tut-1.0.26.zip) = 231623
+SIZE (tut-1.0.31.zip) = 259058

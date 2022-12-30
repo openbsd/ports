@@ -1,4 +1,7 @@
 @bin bin/tut
+@man man/man1/tut.1
+@man man/man5/tut.5
+@man man/man7/tut.7
 share/doc/tut/
 share/doc/tut/README.md
 share/examples/tut/
