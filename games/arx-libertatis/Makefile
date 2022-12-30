@@ -7,6 +7,7 @@ PKGNAME =	arx-libertatis-${GH_TAGNAME}
 GH_ACCOUNT =	arx
 GH_PROJECT =	ArxLibertatis
 GH_TAGNAME =	1.2.1
+REVISION =	0
 
 SHARED_LIBS +=	ArxIO                     0.0 # 1.2
 
@@ -38,12 +39,6 @@ CONFIGURE_ARGS =	-DBUILD_CRASHHANDLER=OFF \
 			-DCMAKE_INSTALL_MANDIR=${LOCALBASE}/man \
 			-DCMAKE_INSTALL_PREFIX=${LOCALBASE}/share/arx \
 			-DUNITY_BUILD=OFF
-
-# ld: error: linking module flags 'SmallDataLimit': IDs have conflicting values in
-# 'CMakeFiles/common.dir/src/io/log/ConsoleLogger.cpp.o' and 'ld-temp.o'
-.if ${MACHINE_ARCH} == "riscv64"
-CONFIGURE_ARGS +=	-DUSE_LTO=OFF
-.endif
 
 MODCMAKE_LDFLAGS =		-lpthread
 
