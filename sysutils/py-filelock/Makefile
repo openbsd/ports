@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_PYBUILD =		hatchling
+MODPY_PYBUILD =		hatch-vcs
 
 TEST_DEPENDS =		devel/py-test-cov${MODPY_FLAVOR} \
 			devel/py-test-timeout${MODPY_FLAVOR}
