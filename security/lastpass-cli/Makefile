@@ -1,13 +1,12 @@
 COMMENT =	LastPass command line interface tool
 
 V =		1.3.4
+REVISION =	0
 DISTNAME =	lastpass-cli-${V}
 
 CATEGORIES =	security
 
 HOMEPAGE =	https://github.com/lastpass/lastpass-cli
-
-MAINTAINER =	Bjorn Ketelaars <bket@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
