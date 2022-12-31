@@ -1,9 +1,8 @@
 COMMENT=		Python bindings to wrap the libsmbclient API
 
-MODPY_EGG_VERSION=	1.0.23
+MODPY_EGG_VERSION=	1.0.24
 DISTNAME=		pysmbc-${MODPY_EGG_VERSION}
 PKGNAME=		py-smbc-${MODPY_EGG_VERSION}
-REVISION=		4
 
 CATEGORIES=		net devel
 
@@ -14,7 +13,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += smbclient pthread
+WANTLIB += smbclient
 
 MODULES=		lang/python
 
