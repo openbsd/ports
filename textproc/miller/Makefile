@@ -2,7 +2,7 @@ COMMENT =	name-indexed data processing tool
 
 GH_ACCOUNT =	johnkerl
 GH_PROJECT =	miller
-GH_TAGNAME =	v5.10.3
+GH_TAGNAME =	v5.10.4
 
 CATEGORIES =	textproc
 
