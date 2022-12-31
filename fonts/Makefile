@@ -72,6 +72,7 @@
      SUBDIR += msctfonts
      SUBDIR += msttcorefonts
      SUBDIR += msttcorefonts,no_comic
+     SUBDIR += nerd-fonts
      SUBDIR += noto
      SUBDIR += opendyslexic
      SUBDIR += overpass
