@@ -1,0 +1,28 @@
+Index: pyproject.toml
+--- pyproject.toml.orig
++++ pyproject.toml
+@@ -1,10 +1,10 @@
+ [build-system]
+-requires = ["setuptools>=64", "setuptools-git-versioning", "colorama"]
++requires = ["setuptools>=64"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+ name = "bokeh"
+-dynamic = ["version"]
++version = "3.0.3"
+ description = "Interactive plots and applications in the browser from Python"
+ readme = "README.md"
+ requires-python = ">=3.8"
+@@ -65,11 +65,6 @@ bokeh = "bokeh.__main__:main"
+ 
+ [tool.setuptools.packages.find]
+ where = ["src"]
+-
+-[tool.setuptools-git-versioning]
+-enabled = true
+-dev_template = "{tag}+{ccount}.g{sha}"
+-dirty_template = "{tag}+{ccount}.g{sha}.dirty"
+ 
+ [tool.pytest.ini_options]
+ asyncio_mode = "strict"

@@ -1,9 +1,8 @@
 COMMENT=		statistical and novel interactive HTML plots for Python
 
-MODPY_EGG_VERSION=	2.4.3
+MODPY_EGG_VERSION=	3.0.3
 DISTNAME=		bokeh-${MODPY_EGG_VERSION}
 PKGNAME=		py-bokeh-${MODPY_EGG_VERSION}
-REVISION=		1
 
 CATEGORIES=		www graphics
 
@@ -17,14 +16,17 @@ MODULES=		lang/python
 FLAVORS=		python3
 FLAVOR=			python3
 
-MODPY_PI=		Yes
-MODPY_PYBUILD =		setuptools
-MODPY_PYTEST_ARGS=	tests
+MODPY_PI =		Yes
+MODPY_PYBUILD =	setuptools
+# tests not shipped in pypi distfile
+NO_TEST =		Yes
 
-RUN_DEPENDS=		devel/py-dateutil${MODPY_FLAVOR} \
-			devel/py-typing-extensions${MODPY_FLAVOR}>=3.10.0.0 \
+RUN_DEPENDS=		devel/py-typing-extensions${MODPY_FLAVOR}>=3.10.0.0 \
+			geo/py-xyzservices${MODPY_FLAVOR} \
 			graphics/py-Pillow${MODPY_FLAVOR} \
+			math/py-contourpy${MODPY_FLAVOR} \
 			math/py-numpy${MODPY_FLAVOR} \
+			math/py-pandas${MODPY_FLAVOR} \
 			sysutils/py-packaging${MODPY_FLAVOR} \
 			textproc/py-yaml${MODPY_FLAVOR} \
 			www/py-jinja2${MODPY_FLAVOR} \
