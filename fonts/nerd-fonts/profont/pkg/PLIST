@@ -1,0 +1,14 @@
+share/doc/nerd-fonts/
+share/doc/nerd-fonts/profont/
+share/doc/nerd-fonts/profont/LICENSE
+share/fonts/
+share/fonts/nerd-fonts/
+@fontdir share/fonts/nerd-fonts/profont/
+share/fonts/nerd-fonts/profont/ProFont IIx Nerd Font Complete Mono Windows Compatible.ttf
+share/fonts/nerd-fonts/profont/ProFont IIx Nerd Font Complete Mono.ttf
+share/fonts/nerd-fonts/profont/ProFont IIx Nerd Font Complete Windows Compatible.ttf
+share/fonts/nerd-fonts/profont/ProFont IIx Nerd Font Complete.ttf
+share/fonts/nerd-fonts/profont/ProFontWindows Nerd Font Complete Mono Windows Compatible.ttf
+share/fonts/nerd-fonts/profont/ProFontWindows Nerd Font Complete Mono.ttf
+share/fonts/nerd-fonts/profont/ProFontWindows Nerd Font Complete Windows Compatible.ttf
+share/fonts/nerd-fonts/profont/ProFontWindows Nerd Font Complete.ttf
