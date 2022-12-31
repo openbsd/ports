@@ -22,4 +22,8 @@ MODULES=	devel/cmake
 
 CONFIGURE_ARGS=	-DBUILD_SHARED_LIBS=ON
 
+.if ${MACHINE_ARCH} == "i386"
+CXXFLAGS +=	-DSOUNDTOUCH_DISABLE_X86_OPTIMIZATIONS
+.endif
+
 .include <bsd.port.mk>
