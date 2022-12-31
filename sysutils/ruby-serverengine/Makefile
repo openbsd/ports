@@ -1,7 +1,7 @@
 
 COMMENT =		multiprocess server framework for Ruby
 
-DISTNAME =		serverengine-2.3.0
+DISTNAME =		serverengine-2.3.1
 
 CATEGORIES =		sysutils
 
