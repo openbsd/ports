@@ -19,15 +19,34 @@ MASTER_SITES =		https://github.com/andrewchambers/bupstash/releases/download/v${
 DISTFILES =		${DISTNAME}-man${EXTRACT_SUFX} \
 			${DISTNAME}-src+deps${EXTRACT_SUFX}
 
-MODULES =		devel/cargo
+MODULES =		devel/cargo \
+			lang/python
+
 MODCARGO_RUSTFLAGS =	-C debuginfo=0
 
+MODPY_RUNDEP =		No
+MODPY_BUILDDEP =	No
+MODPY_ADJ_FILES =	cli-tests/mk-random-dir.py
+
 LIB_DEPENDS =		security/libsodium
-TEST_DEPENDS =		devel/bats
+TEST_DEPENDS =		devel/bats \
+			sysutils/coreutils \
+			sysutils/truncate \
+			textproc/gdiff \
+			textproc/jq
 
 SEPARATE_BUILD =	Yes
 
 WRKDIST =		${WRKDIR}
+
+do-test:
+	${MODCARGO_TEST_TARGET}
+	# GNU `head -c', `cmp --silent', `truncate'
+.for prog in head cmp truncate
+	ln -sf /usr/local/bin/g${prog} ${WRKDIR}/bin/${prog}
+.endfor
+	env PATH=${WRKBUILD}/target/release:${PORTPATH} \
+		bats --timing ${WRKSRC}/cli-tests/
 
 post-install:
 .for m in 1 7
