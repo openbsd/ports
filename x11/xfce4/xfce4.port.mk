@@ -79,7 +79,6 @@ PORTROACH+=	limitw:1,even
 .if defined(XFCE_COMMIT)
 DISTNAME =	${DISTNAME_GIT}
 MASTER_SITES =	${MASTER_SITES_GIT}
-CONFIGURE_ARGS +=	--enable-maintainer-mode --enable-debug
 AUTOMAKE_VERSION =	1.14
 AUTOCONF_VERSION =	2.69
 MODXFCE4_gen =	cd ${WRKSRC} && env NOCONFIGURE=yes \
@@ -89,6 +88,10 @@ BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
 			x11/xfce4/xfce4-dev-tools
 
+.endif
+
+.if defined(DEBUG)
+CONFIGURE_ARGS +=	--enable-maintainer-mode --enable-debug
 .endif
 
 # remove useless .la file
