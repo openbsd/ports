@@ -1,5 +1,5 @@
 COMMENT =	minimalistic command-line ICB client
-VERSION =	1.3.0
+VERSION =	1.3.1
 DISTNAME =	oicb-${VERSION}
 CATEGORIES =	net
 MAINTAINER =	Vadim Zhukov <zhuk@openbsd.org>
