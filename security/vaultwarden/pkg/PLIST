@@ -4,9 +4,9 @@
 @bin bin/vaultwarden
 share/doc/vaultwarden/
 share/doc/vaultwarden/.env.template
+@mode 640
 @owner _vaultwarden
 @group _vaultwarden
-@mode 640
-@sample /var/vaultwarden/.env
+@sample ${VARBASE}/vaultwarden/.env
 @mode 750
-@sample /var/vaultwarden/data/
+@sample ${VARBASE}/vaultwarden/data/
