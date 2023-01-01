@@ -1,5 +1,5 @@
 MODGO_MODULES =	\
-	github.com/!rasmus!lindroth/go-mastodon	 v0.0.17 \
+	github.com/!rasmus!lindroth/go-mastodon	 v0.0.21 \
 	github.com/adrg/xdg			 v0.4.0 \
 	github.com/atotto/clipboard		 v0.1.4 \
 	github.com/aymerick/douceur		 v0.2.0 \
@@ -14,29 +14,37 @@ MODGO_MODULES =	\
 	github.com/gorilla/css			 v1.0.0 \
 	github.com/gorilla/websocket		 v1.5.0 \
 	github.com/icza/gox			 v0.0.0-20221026131554-a08a8cdc726a \
+	github.com/kr/pretty			 v0.1.0 \
+	github.com/kr/pty			 v1.1.1 \
+	github.com/kr/text			 v0.1.0 \
 	github.com/lucasb-eyer/go-colorful	 v1.2.0 \
 	github.com/mattn/go-runewidth		 v0.0.14 \
 	github.com/microcosm-cc/bluemonday	 v1.0.21 \
 	github.com/nu7hatch/gouuid		 v0.0.0-20131221200532-179d4d0c4d8d \
 	github.com/pelletier/go-toml/v2		 v2.0.6 \
+	github.com/pkg/diff			 v0.0.0-20210226163009-20ebb0f2a09e \
 	github.com/pmezard/go-difflib		 v1.0.0 \
-	github.com/rivo/tview			 v0.0.0-20221221172820-02e38ea9604c \
+	github.com/rivo/tview			 v0.0.0-20221221172851-9c04916f4eaa \
 	github.com/rivo/uniseg			 v0.4.3 \
+	github.com/rogpeppe/go-internal		 v1.8.1 \
 	github.com/spf13/pflag			 v1.0.5 \
 	github.com/stretchr/objx		 v0.5.0 \
 	github.com/stretchr/testify		 v1.8.1 \
 	github.com/tadvi/systray		 v0.0.0-20190226123456-11a2b8fa57af \
 	github.com/tomnomnom/linkheader		 v0.0.0-20180905144013-02ca5825eb80 \
-	golang.org/x/exp			 v0.0.0-20221227203929-1b447090c38c \
+	golang.org/x/exp			 v0.0.0-20221230185412-738e83a70c30 \
 	golang.org/x/mod			 v0.6.0 \
 	golang.org/x/net			 v0.4.0 \
+	golang.org/x/sync			 v0.0.0-20210220032951-036812b2e83c \
 	golang.org/x/sys			 v0.3.0 \
 	golang.org/x/term			 v0.3.0 \
 	golang.org/x/text			 v0.5.0 \
 	golang.org/x/tools			 v0.2.0 \
-	gopkg.in/check.v1			 v0.0.0-20161208181325-20d25e280405 \
+	gopkg.in/check.v1			 v1.0.0-20180628173108-788fd7840127 \
+	gopkg.in/errgo.v2			 v2.1.0 \
 	gopkg.in/ini.v1				 v1.67.0 \
-	gopkg.in/yaml.v3			 v3.0.1
+	gopkg.in/yaml.v3			 v3.0.1 \
+	mvdan.cc/xurls/v2			 v2.4.0
 
 MODGO_MODFILES =	\
 	github.com/davecgh/go-spew	 v1.1.0 \
@@ -62,5 +70,6 @@ MODGO_MODFILES =	\
 	golang.org/x/text		 v0.3.7 \
 	golang.org/x/tools		 v0.0.0-20180917221912-90fa682c2a6e \
 	golang.org/x/tools		 v0.1.12 \
+	gopkg.in/check.v1		 v0.0.0-20161208181325-20d25e280405 \
 	gopkg.in/yaml.v3		 v3.0.0-20200313102051-9f266ea9e77c
 
