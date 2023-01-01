@@ -2,7 +2,7 @@ COMMENT =		encrypted and deduplicated backup tool
 
 V =			0.12.0
 DISTNAME =		bupstash-v${V}
-PKGNAME =		bupstash-${V}
+PKGNAME =		bupstash-${V}pl1
 
 CATEGORIES =		sysutils
 
@@ -15,9 +15,22 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		${MODCARGO_WANTLIB} m sodium
 
+MODCARGO_DIST_SUBDIR =	cargo
+DIST_SUBDIR =		bupstash
 MASTER_SITES =		https://github.com/andrewchambers/bupstash/releases/download/v${V}/
 DISTFILES =		${DISTNAME}-man${EXTRACT_SUFX} \
 			${DISTNAME}-src+deps${EXTRACT_SUFX}
+
+MASTER_SITES0 =		https://github.com/andrewchambers/bupstash/
+PATCH_DIST_STRIP =	-p1
+# backport "Fix index paths during put of paths in '/'." fix for
+#  "Paths broken when adding multiple subdirs of /"
+#  https://github.com/andrewchambers/bupstash/issues/359
+PATCHFILES +=		trim-{commit/}a73fd83.patch:0
+# pending "Honour --ignore-permission-errors for all path elements"
+# https://github.com/andrewchambers/bupstash/pull/363
+PATCHFILES +=		ignore-eacces-{commit/}8bf5bd1.patch:0
+PATCHFILES +=		ignore-eacces-test-{commit/}290768c.patch:0
 
 MODULES =		devel/cargo \
 			lang/python
