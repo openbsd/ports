@@ -21,6 +21,7 @@ MODGO_MODULES =	\
 	golang.org/x/term			 v0.0.0-20210927222741-03fcf44c2211 \
 	golang.org/x/text			 v0.3.7 \
 	golang.org/x/tools			 v0.0.0-20180917221912-90fa682c2a6e
+
 MODGO_MODFILES =	\
 	github.com/charmbracelet/bubbletea	 v0.21.0 \
 	github.com/charmbracelet/lipgloss	 v0.5.0 \
@@ -38,3 +39,4 @@ MODGO_MODFILES =	\
 	golang.org/x/sys			 v0.0.0-20210630005230-0f9fa26af87c \
 	golang.org/x/sys			 v0.0.0-20220204135822-1c1b9b1eba6a \
 	golang.org/x/sys			 v0.0.0-20220209214540-3681064d5158
+
