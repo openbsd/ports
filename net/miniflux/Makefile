@@ -1,12 +1,11 @@
 COMMENT =	minimalist and opinionated feed reader
 
 MODGO_MODNAME =	miniflux.app
-MODGO_VERSION =	v0.0.0-20220813191517-1ca35e9364b1
+MODGO_VERSION =	v0.0.0-20221210184534-e12c263fc9a6
 
 DISTNAME =	miniflux.app-${MODGO_VERSION}
-V =		2.0.38.20220813
+V =		2.0.41.20221012
 PKGNAME =	miniflux-${V}
-REVISION =	0
 
 CATEGORIES =	net www
 
