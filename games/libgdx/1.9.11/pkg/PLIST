@@ -279,6 +279,11 @@ share/libgdx/1.9.11/com/badlogic/gdx/controllers/desktop/ois/OisListener.class
 share/libgdx/1.9.11/com/badlogic/gdx/controllers/desktop/ois/OisTest$1$1.class
 share/libgdx/1.9.11/com/badlogic/gdx/controllers/desktop/ois/OisTest$1.class
 share/libgdx/1.9.11/com/badlogic/gdx/controllers/desktop/ois/OisTest.class
+share/libgdx/1.9.11/com/badlogic/gdx/controllers/lwjgl3/
+share/libgdx/1.9.11/com/badlogic/gdx/controllers/lwjgl3/Lwjgl3Controller.class
+share/libgdx/1.9.11/com/badlogic/gdx/controllers/lwjgl3/Lwjgl3ControllerManager$1.class
+share/libgdx/1.9.11/com/badlogic/gdx/controllers/lwjgl3/Lwjgl3ControllerManager.class
+share/libgdx/1.9.11/com/badlogic/gdx/controllers/lwjgl3/Lwjgl3Controllers.class
 share/libgdx/1.9.11/com/badlogic/gdx/controllers/mappings/
 share/libgdx/1.9.11/com/badlogic/gdx/controllers/mappings/Ouya.class
 share/libgdx/1.9.11/com/badlogic/gdx/controllers/mappings/Xbox.class

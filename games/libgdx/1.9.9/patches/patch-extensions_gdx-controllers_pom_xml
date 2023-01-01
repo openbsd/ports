@@ -7,9 +7,10 @@ Index: extensions/gdx-controllers/pom.xml
    <modules>
      <module>gdx-controllers</module>
      <module>gdx-controllers-desktop</module>
-+    <!--
-     <module>gdx-controllers-desktop/jni/maven</module>
+-    <module>gdx-controllers-desktop/jni/maven</module>
      <module>gdx-controllers-lwjgl3</module>
++    <!--
++    <module>gdx-controllers-desktop/jni/maven</module>
      <module>gdx-controllers-android</module>
      <module>gdx-controllers-gwt</module>
 +    -->

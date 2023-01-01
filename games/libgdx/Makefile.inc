@@ -82,9 +82,7 @@ do-build:
 		&& env -i ${MAKE_ENV} ${MVN}
 	cd ${WRKSRC}/extensions/gdx-freetype \
 		&& env -i ${MAKE_ENV} ${MVN}
-	cd ${WRKSRC}/extensions/gdx-controllers/gdx-controllers \
-		&& env -i ${MAKE_ENV} ${MVN}
-	cd ${WRKSRC}/extensions/gdx-controllers/gdx-controllers-desktop \
+	cd ${WRKSRC}/extensions/gdx-controllers \
 		&& env -i ${MAKE_ENV} ${MVN}
 	cd ${WRKSRC}/extensions/gdx-box2d/gdx-box2d \
 		&& env -i ${MAKE_ENV} ${MVN}
@@ -108,7 +106,7 @@ do-install:
 		${WRKBUILD}/backends/gdx-backend-lwjgl/target/classes/com \
 		${WRKBUILD}/backends/gdx-backend-lwjgl3/target/classes/com \
 		${WRKBUILD}/extensions/gdx-freetype/target/classes/com \
-		${WRKBUILD}/extensions/gdx-controllers/gdx-controllers{,-desktop}/target/classes/com \
+		${WRKBUILD}/extensions/gdx-controllers/gdx-controllers{,-desktop,-lwjgl3}/target/classes/com \
 		${WRKBUILD}/extensions/gdx-box2d/gdx-box2d/target/classes/com \
 		${WRKBUILD}/extensions/gdx-tools/target/classes/com \
 		${PREFIX}/share/libgdx/${VERSION}/
