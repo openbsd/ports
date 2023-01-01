@@ -3,7 +3,7 @@ By default, check "Do Not Send Flowed Text".
 Index: pith/conf.c
 --- pith/conf.c.orig
 +++ pith/conf.c
-@@ -2972,7 +2972,7 @@ feature_list(int index)
+@@ -2974,7 +2974,7 @@ feature_list(int index)
  	{"use-sender-not-x-sender", "Use Sender Instead of X-X-Sender",
  	 F_USE_SENDER_NOT_X, h_config_use_sender_not_x, PREF_SEND, 0},
  	{"quell-flowed-text", "Do Not Send Flowed Text",

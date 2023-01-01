@@ -1,6 +1,7 @@
---- alpine/pine-use.c.orig	Mon Feb  6 01:06:22 2017
-+++ alpine/pine-use.c	Tue Apr 25 11:10:08 2017
-@@ -24,7 +24,7 @@ static char rcsid[] = "$Id: pine-use.c 761 2007-10-23 
+Index: alpine/pine-use.c
+--- alpine/pine-use.c.orig
++++ alpine/pine-use.c
+@@ -20,7 +20,7 @@
  #include <sys/stat.h>
  
  #ifndef MAILSPOOLPCTS

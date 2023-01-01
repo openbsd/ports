@@ -13,6 +13,7 @@ include/c-client/flocksim.h
 include/c-client/flstring.h
 include/c-client/fs.h
 include/c-client/ftl.h
+include/c-client/hash.h
 include/c-client/http.h
 include/c-client/imap4r1.h
 include/c-client/json.h
@@ -28,6 +29,8 @@ include/c-client/oauth2_aux.h
 include/c-client/osdep.h
 include/c-client/pseudo.h
 include/c-client/rfc822.h
+include/c-client/sha-private.h
+include/c-client/sha.h
 include/c-client/smtp.h
 include/c-client/sslio.h
 include/c-client/tcp.h

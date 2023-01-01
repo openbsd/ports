@@ -6,23 +6,19 @@ COMMENT-pico=		UW text editor
 COMMENT-pilot=		UW file system navigator
 FIX_EXTRACT_PERMISSIONS =	Yes
 
-V=			2.25
+V=			2.26
 DISTNAME=		alpine-${V}
 EXTRACT_SUFX=		.tar.xz
 
-SHARED_LIBS=		c-client 9.0
+SHARED_LIBS=		c-client 10.0
 
 # grep "PICO version" ${WRKSRC}/pico/pico.h
 PICO_V=			5.09
 # grep PILOT_VERSION ${WRKSRC}/pico/pilot.c
 PILOT_V=		2.99
 
-REVISION-main=		3
 REVISION-pico=		26
 REVISION-pilot=		26
-REVISION-c-client=	4
-REVISION-mailutil=	2
-REVISION-imap=		2
 
 PKGNAME-main=		alpine-${V}
 PKGNAME-c-client=	c-client-${V}

@@ -1,7 +1,7 @@
 Index: pico/osdep/terminal.c
 --- pico/osdep/terminal.c.orig
 +++ pico/osdep/terminal.c
-@@ -192,6 +192,12 @@ setup_dflt_esc_seq(void)
+@@ -188,6 +188,12 @@ setup_dflt_esc_seq(void)
      kpinsert("\033[H", KEY_HOME, 1);
      kpinsert("\033[F", KEY_END, 1);
  

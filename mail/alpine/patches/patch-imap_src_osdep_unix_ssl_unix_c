@@ -11,7 +11,7 @@ Index: imap/src/osdep/unix/ssl_unix.c
 +  int ssl_err;
    unsigned long sl,tl;
    int minv, maxv;
-   int masklow, maskhigh;
+   long masklow, maskhigh;
 @@ -465,7 +466,13 @@ static char *ssl_start_work (SSLSTREAM *stream,char *h
    SSL_set_connect_state (stream->con);
    if (SSL_in_init (stream->con)) SSL_total_renegotiations (stream->con);
