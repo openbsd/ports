@@ -13136,6 +13136,7 @@ share/qcad/ts/qcadcore_sl.qm
 share/qcad/ts/qcadcore_sv.qm
 share/qcad/ts/qcadcore_th.qm
 share/qcad/ts/qcadcore_tr.qm
+share/qcad/ts/qcadcore_uk.qm
 share/qcad/ts/qcadcore_zh_CN.qm
 share/qcad/ts/qcadcore_zh_TW.qm
 share/qcad/ts/qcadentity_bg.qm
@@ -13165,6 +13166,7 @@ share/qcad/ts/qcadentity_sl.qm
 share/qcad/ts/qcadentity_sv.qm
 share/qcad/ts/qcadentity_th.qm
 share/qcad/ts/qcadentity_tr.qm
+share/qcad/ts/qcadentity_uk.qm
 share/qcad/ts/qcadentity_zh_CN.qm
 share/qcad/ts/qcadentity_zh_TW.qm
 share/qcad/ts/qcadgui_bg.qm
@@ -13194,6 +13196,7 @@ share/qcad/ts/qcadgui_sl.qm
 share/qcad/ts/qcadgui_sv.qm
 share/qcad/ts/qcadgui_th.qm
 share/qcad/ts/qcadgui_tr.qm
+share/qcad/ts/qcadgui_uk.qm
 share/qcad/ts/qcadgui_zh_CN.qm
 share/qcad/ts/qcadgui_zh_TW.qm
 share/qcad/ts/qmlviewer_ar.qm

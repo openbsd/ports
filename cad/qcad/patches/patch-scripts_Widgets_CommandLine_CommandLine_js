@@ -10,4 +10,4 @@ Index: scripts/Widgets/CommandLine/CommandLine.js
 +        break;
      }
      EAction.handleUserMessage(
-                 "%1 %2 / %3 %4"
+                 "%1 %2 / Qt %3 / %4 %5"

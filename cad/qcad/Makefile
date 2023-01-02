@@ -2,7 +2,7 @@ COMMENT =	Qt-based 2D CAD system
 
 GH_ACCOUNT =	qcad
 GH_PROJECT =	qcad
-GH_TAGNAME =	v3.27.8.0
+GH_TAGNAME =	v3.27.8.7
 
 SO_VERSION =	2.0
 QCAD_LIBS =	qcadcore \
@@ -36,7 +36,8 @@ WANTLIB += Qt5XmlPatterns c cups jpeg m sqlite3 stemmer tiff z
 MODULES =	devel/qmake \
 		x11/qt5
 
-BUILD_DEPENDS =	x11/qt5/qtimageformats
+BUILD_DEPENDS =	sysutils/e2fsprogs \
+		x11/qt5/qtimageformats
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/qt5/qtwebengine
