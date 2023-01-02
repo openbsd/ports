@@ -1,12 +1,11 @@
 COMMENT=		Text Editor Product Line
 
 GNOME_PROJECT=		tepl
-GNOME_VERSION=		6.2.0
-REVISION=		0
+GNOME_VERSION=		6.4.0
 
 CATEGORIES=		devel
 
-SHARED_LIBS += tepl-6                    0.1 # 0.0.0
+SHARED_LIBS += tepl-6                    1.0 # 2
 
 # LGPLv2.1
 PERMIT_PACKAGE=		Yes
