@@ -1,6 +1,7 @@
 COMMENT =	KDE app that allows your devices to communicate
 
 DISTNAME =	kdeconnect-kde-${MODKDE_VERSION}
+REVISION =	0
 
 SHARED_LIBS +=	kdeconnectcore		3.0 # 1.4
 SHARED_LIBS +=	kdeconnectinterfaces	3.1 # 1.4
@@ -32,6 +33,8 @@ MASTER_SITES =	${MASTER_SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
 MODULES =	x11/kde-applications \
 		devel/kf5 \
 		lang/python
+
+MODPY_RUNDEP =	No
 
 BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/kf5/qqc2-desktop-style \
