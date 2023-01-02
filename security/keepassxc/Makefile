@@ -2,7 +2,7 @@ COMMENT =	management tool for password and sensitive data
 
 V =		2.7.4
 DISTNAME =	keepassxc-${V}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	security
 
@@ -20,6 +20,12 @@ WANTLIB += argon2 botan-2 c m minizip qrencode readline z
 MASTER_SITES =	\
 	https://github.com/keepassxreboot/keepassxc/releases/download/${V}/
 EXTRACT_SUFX =	-src.tar.xz
+
+MASTER_SITES0 =	https://github.com/keepassxreboot/keepassxc/
+# pending "Set password hint on BSD, fill selection on macOS again"
+# https://github.com/keepassxreboot/keepassxc/pull/8949
+PATCHFILES =	keepassxc-set-password-hint-{commit/}27e92da.patch:0
+PATCH_DIST_STRIP =	-p1
 
 MODULES =	x11/qt5 \
 		devel/cmake

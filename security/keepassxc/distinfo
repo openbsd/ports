@@ -1,2 +1,4 @@
 SHA256 (keepassxc-2.7.4-src.tar.xz) = VgBSlh2gOJMn51kXH2YCMN+k4PTh+rYTlgD7hcbl3s4=
+SHA256 (keepassxc-set-password-hint-27e92da.patch) = kz8OTY8h786C/EXlYXwe72zU23owI4gm9JlFqhWcGXQ=
 SIZE (keepassxc-2.7.4-src.tar.xz) = 8957372
+SIZE (keepassxc-set-password-hint-27e92da.patch) = 1102
