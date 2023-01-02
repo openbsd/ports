@@ -9,6 +9,7 @@ V =			4.5.1
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
+REVISION =		0
 
 DPB_PROPERTIES =	parallel
 
@@ -33,7 +34,7 @@ WANTLIB += ${COMPILER_LIBCXX} Qt6Core Qt6Core5Compat Qt6DBus Qt6Gui Qt6Network
 WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6Svg Qt6Widgets absl_strings
 WANTLIB += avcodec avformat avutil c crypto dispatch gio-2.0 giomm-2.68
 WANTLIB += glib-2.0 glibmm-2.68 gobject-2.0 hunspell-1.7 jpeg lz4
-WANTLIB += m openal opus pulse protobuf-lite qrcodegencpp rnnoise sigc-3.0
+WANTLIB += m openal opus protobuf-lite qrcodegencpp rnnoise sigc-3.0
 WANTLIB += swresample swscale tg_owt xcb xcb-keysyms xcb-record xcb-screensaver
 WANTLIB += xxhash z
 
@@ -52,11 +53,17 @@ BUILD_DEPENDS =		devel/microsoft-gsl \
 			devel/range-v3>=0.11.0p0 \
 			devel/tl-expected
 
+# libtgvoip expects either ALSA or PulseAudio to be present, we build against
+# PulseAudio, but nothing in tdesktop then actually links against it.
+#
+# This should probably be patched out upstream so that libtgvoip builds with
+# OpenAL alone...
+BUILD_DEPENDS +=	audio/pulseaudio
+
 LIB_DEPENDS =		archivers/lz4 \
 			audio/rnnoise \
 			audio/openal \
 			audio/opus \
-			audio/pulseaudio \
 			devel/abseil-cpp \
 			devel/glib2 \
 			devel/glibmm268 \
