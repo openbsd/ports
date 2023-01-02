@@ -1,7 +1,7 @@
 COMMENT=		lightweight GNOME text editor
 
 GNOME_PROJECT=		gedit
-GNOME_VERSION=		43.2
+GNOME_VERSION=		44.0
 
 CATEGORIES=		editors
 
@@ -37,7 +37,7 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 # MODPY_LIBDIR/gi/overrides/
 RUN_DEPENDS +=		devel/py-gobject3${MODPY_FLAVOR}
 
-MODGNOME_TOOLS += 	desktop-file-utils gobject-introspection \
+MODGNOME_TOOLS= 	desktop-file-utils gobject-introspection \
 			gtk-update-icon-cache vala yelp
 
 TEST_IS_INTERACTIVE=	X11
