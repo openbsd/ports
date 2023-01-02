@@ -68,10 +68,15 @@ FIX_CRLF_FILES =	src/keeshare/ShareExport.cpp
 
 MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
 
+# - MainWindow.cpp has one minor key binding behind Q_OS_* no other BSD seems
+#   to patch... drop or upstream?  rest got fixed 2018.
+# - browser/BrowserSettingsWidget.cpp has a visibility fix no other BSD seems
+#   to patch... drop or upstream?
+# - browser/NativeMessageInstaller.cpp got fixed in nov 2022, drop on update
+#   https://github.com/keepassxreboot/keepassxc/pull/8835
 post-patch:
 	cd ${WRKSRC}/src/; sed -i -e 's/Q_OS_LINUX/Q_OS_UNIX/g' \
 		gui/MainWindow.cpp \
-		main.cpp \
 		browser/BrowserSettingsWidget.cpp \
 		browser/NativeMessageInstaller.cpp
 
