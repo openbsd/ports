@@ -1,0 +1,36 @@
+Pledge
+
+Index: main.c
+--- main.c.orig
++++ main.c
+@@ -658,6 +658,30 @@ main
+     }
+   }
+ 
++#ifdef USE_SASL
++  {
++    int ret;
++    if ((ret = mutt_sasl_start()) != SASL_OK) {
++      fprintf(stderr, "%s: mutt_sasl_start: %d\n", argv[0], ret);
++      exit(1);
++    }
++  }
++#endif
++
++#ifdef CRYPT_BACKEND_GPGME
++  if (pledge("stdio rpath wpath cpath flock fattr getpw tty inet dns "
++	    "proc exec sendfd recvfd", NULL) == -1) {
++    fprintf(stderr, "%s: pledge: %s\n", argv[0], strerror(errno));
++    exit(1);
++  }
++#else
++  if (pledge("stdio rpath wpath cpath flock fattr getpw tty inet dns "
++	    "proc exec", NULL) == -1) {
++    fprintf(stderr, "%s: pledge: %s\n", argv[0], strerror(errno));
++    exit(1);
++  }
++#endif /* CRYPT_BACKEND_GPGME */
++
+   /* collapse remaining argv */
+   while (optind < argc)
+     argv[nargc++] = argv[optind++];
