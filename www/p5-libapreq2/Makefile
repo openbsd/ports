@@ -1,6 +1,6 @@
 COMMENT=	apache HTTP server request library
 
-DISTNAME=	libapreq2-2.16
+DISTNAME=	libapreq2-2.17
 # can't use perl module with autoconf; p5- prefix added manually here
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	www
@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += apr-1 aprutil-1 c db expat iconv perl pthread
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../by-authors/id/S/SH/SHAY/}
+MASTER_SITES=	${MASTER_SITE_APACHE:=httpd/libapreq/}
 
 MODPERL_REGEN_PPPORT =	glue/perl/xsbuilder/ppport.h
 
