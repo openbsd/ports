@@ -1,6 +1,6 @@
 COMMENT =		best practices checker for ansible
 
-MODPY_EGG_VERSION =	6.9.0
+MODPY_EGG_VERSION =	6.10.2
 DISTNAME =		ansible-lint-${MODPY_EGG_VERSION}
 
 CATEGORIES =		sysutils
@@ -15,7 +15,8 @@ MODPY_PI =		Yes
 
 BUILD_DEPENDS =		devel/py-setuptools_scm_git_archive${MODPY_FLAVOR}
 
-RUN_DEPENDS =		sysutils/ansible-core \
+RUN_DEPENDS =		devel/git \
+			sysutils/ansible-core \
 			sysutils/py-ansible-compat${MODPY_FLAVOR} \
 			textproc/py-black${MODPY_FLAVOR} \
 			sysutils/py-filelock${MODPY_FLAVOR} \

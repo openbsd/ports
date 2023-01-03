@@ -1,7 +1,5 @@
 bin/ansible-lint
 lib/python${MODPY_VERSION}/site-packages/ansible_lint-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/ansible_lint-${MODPY_EGG_VERSION}.dist-info/COPYING
-lib/python${MODPY_VERSION}/site-packages/ansible_lint-${MODPY_EGG_VERSION}.dist-info/LICENSE.mit.txt
 lib/python${MODPY_VERSION}/site-packages/ansible_lint-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/ansible_lint-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/ansible_lint-${MODPY_EGG_VERSION}.dist-info/WHEEL
@@ -90,6 +88,8 @@ lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}args.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}args.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}avoid_implicit.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}avoid_implicit.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}command_instead_of_module.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -132,6 +132,8 @@ lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}meta_
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}meta_no_info.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}meta_no_tags.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}meta_no_tags.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}meta_unsupported_ansible.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}meta_unsupported_ansible.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}meta_video_links.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}meta_video_links.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}name.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -180,6 +182,8 @@ lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}var_n
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}var_naming.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}yaml_rule.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}yaml_rule.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/args.md
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/args.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/avoid_implicit.md
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/avoid_implicit.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/command_instead_of_module.md
@@ -226,6 +230,8 @@ lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/meta_no_info.md
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/meta_no_info.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/meta_no_tags.md
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/meta_no_tags.py
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/meta_unsupported_ansible.md
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/meta_unsupported_ansible.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/meta_video_links.md
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/meta_video_links.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/name.md
@@ -276,6 +282,7 @@ lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/yaml.md
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/yaml_rule.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/runner.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/schemas/
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/schemas/README.md
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/schemas/__init__.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/schemas/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansiblelint/schemas/${MODPY_PYCACHE}/
@@ -288,13 +295,17 @@ lib/python${MODPY_VERSION}/site-packages/ansiblelint/schemas/${MODPY_PYCACHE}mai
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/schemas/__store__.json
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/schemas/ansible-lint-config.json
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/schemas/ansible-navigator-config.json
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/schemas/ansible-navigator.json
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/schemas/ansible.json
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/schemas/arg_specs.json
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/schemas/changelog.json
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/schemas/execution-environment.json
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/schemas/galaxy.json
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/schemas/inventory.json
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/schemas/main.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/schemas/meta-runtime.json
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/schemas/meta.json
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/schemas/molecule.json
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/schemas/playbook.json
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/schemas/requirements.json
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/schemas/tasks.json
