@@ -1,8 +1,9 @@
---- ATR_analysis.orig	Sat Jul  2 17:24:38 2016
-+++ ATR_analysis	Sat Jul 30 22:12:56 2016
-@@ -241,14 +241,7 @@ sub update_smartcard_list($$)
- 	{
- 		print "Updating $file using $url\n";
+Index: ATR_analysis
+--- ATR_analysis.orig
++++ ATR_analysis
+@@ -247,14 +247,7 @@ sub update_smartcard_list($$)
+ 			system("mkdir -p $Cache");
+ 		}
  
 -		if ($^O =~ "darwin")
 -		{
