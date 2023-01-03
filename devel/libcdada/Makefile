@@ -2,10 +2,9 @@ COMMENT=	basic data structures in C (libstdc++ wrapper)
 
 GH_ACCOUNT=	msune
 GH_PROJECT=	libcdada
-GH_TAGNAME=	v0.3.5
-REVISION=	0
+GH_TAGNAME=	v0.4.0
 
-SHARED_LIBS +=	cdada                     0.0 # 0.0
+SHARED_LIBS=	cdada 1.0
 
 CATEGORIES=	devel
 
