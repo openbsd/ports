@@ -178,6 +178,8 @@ lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}archety
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}archetype.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}arrow.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}arrow.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}arturo.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}arturo.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}asc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}asc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}asm.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -264,6 +266,8 @@ lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}fantom.
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}fantom.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}felix.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}felix.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}fift.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}fift.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}floscript.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}floscript.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}forth.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -274,6 +278,8 @@ lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}foxpro.
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}foxpro.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}freefem.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}freefem.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}func.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}func.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}functional.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}functional.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}futhark.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -324,6 +330,8 @@ lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}jmespat
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}jmespath.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}jslt.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}jslt.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}jsonnet.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}jsonnet.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}julia.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}julia.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}jvm.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -346,12 +354,14 @@ lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}matlab.
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}matlab.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}maxima.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}maxima.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}mcfunction.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}mcfunction.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}meson.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}meson.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}mime.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}mime.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}minecraft.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}minecraft.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}mips.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}mips.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}ml.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}ml.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}modeling.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -388,6 +398,8 @@ lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}pawn.${
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}pawn.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}perl.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}perl.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}phix.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}phix.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}php.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}php.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}pointless.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -494,6 +506,8 @@ lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}theorem
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}theorem.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}thingsdb.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}thingsdb.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}tlb.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}tlb.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}tnt.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}tnt.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}trafficscript.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -522,6 +536,10 @@ lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}webmisc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}webmisc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}whiley.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}whiley.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}wowtoc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}wowtoc.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}wren.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}wren.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}x10.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}x10.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}xorg.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -567,6 +585,7 @@ lib/python${MODPY_VERSION}/site-packages/pygments/lexers/apdlexer.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/apl.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/archetype.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/arrow.py
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/arturo.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/asc.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/asm.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/automation.py
@@ -610,11 +629,13 @@ lib/python${MODPY_VERSION}/site-packages/pygments/lexers/ezhil.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/factor.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/fantom.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/felix.py
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/fift.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/floscript.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/forth.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/fortran.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/foxpro.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/freefem.py
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/func.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/functional.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/futhark.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/gcodelexer.py
@@ -640,6 +661,7 @@ lib/python${MODPY_VERSION}/site-packages/pygments/lexers/j.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/javascript.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/jmespath.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/jslt.py
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/jsonnet.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/julia.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/jvm.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/kuin.py
@@ -651,9 +673,10 @@ lib/python${MODPY_VERSION}/site-packages/pygments/lexers/markup.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/math.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/matlab.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/maxima.py
-lib/python${MODPY_VERSION}/site-packages/pygments/lexers/mcfunction.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/meson.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/mime.py
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/minecraft.py
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/mips.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/ml.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/modeling.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/modula2.py
@@ -672,6 +695,7 @@ lib/python${MODPY_VERSION}/site-packages/pygments/lexers/parsers.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/pascal.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/pawn.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/perl.py
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/phix.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/php.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/pointless.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/pony.py
@@ -725,6 +749,7 @@ lib/python${MODPY_VERSION}/site-packages/pygments/lexers/textedit.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/textfmts.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/theorem.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/thingsdb.py
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/tlb.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/tnt.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/trafficscript.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/typoscript.py
@@ -739,6 +764,8 @@ lib/python${MODPY_VERSION}/site-packages/pygments/lexers/webassembly.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/webidl.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/webmisc.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/whiley.py
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/wowtoc.py
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/wren.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/x10.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/xorg.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/yang.py

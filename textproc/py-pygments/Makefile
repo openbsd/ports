@@ -1,11 +1,10 @@
 COMMENT=	Python syntax highlighter
 
-MODPY_EGG_VERSION = 2.13.0
+MODPY_EGG_VERSION = 2.14.0
 
 DISTNAME=	Pygments-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:L:S/^/py-/}
 CATEGORIES=	textproc devel
-REVISION=	1
 
 HOMEPAGE=	https://pygments.org/
 
