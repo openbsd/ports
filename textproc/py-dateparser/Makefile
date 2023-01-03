@@ -1,6 +1,6 @@
-COMMENT =		Date parsing library designed to parse dates from HTML pages
+COMMENT =		parse dates from HTML pages
 
-MODPY_EGG_VERSION =	1.1.4
+MODPY_EGG_VERSION =	1.1.5
 DISTNAME =		dateparser-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		textproc
@@ -20,5 +20,11 @@ RUN_DEPENDS =		devel/py-tzlocal${MODPY_FLAVOR} \
 			devel/py-tz${MODPY_FLAVOR} \
 			devel/py-regex${MODPY_FLAVOR} \
 			devel/py-dateutil${MODPY_FLAVOR}
+
+TEST_DEPENDS =		devel/py-parameterized${MODPY_FLAVOR}
+MODPY_PYTEST_ARGS =	--ignore tests/test_dateparser_data_integrity.py \
+			--ignore tests/test_hijri.py \
+			--ignore tests/test_jalali.py \
+			--ignore tests/test_language_detect.py
 
 .include <bsd.port.mk>
