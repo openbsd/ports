@@ -5,11 +5,10 @@ NOT_FOR_ARCHS =		${BE_ARCHS} i386
 
 COMMENT =		Telegram Desktop messenger
 PORTROACH =		limit:-full$$
-V =			4.5.1
+V =			4.5.2
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
-REVISION =		0
 
 DPB_PROPERTIES =	parallel
 
@@ -61,9 +60,9 @@ BUILD_DEPENDS =		devel/microsoft-gsl \
 BUILD_DEPENDS +=	audio/pulseaudio
 
 LIB_DEPENDS =		archivers/lz4 \
-			audio/rnnoise \
 			audio/openal \
 			audio/opus \
+			audio/rnnoise \
 			devel/abseil-cpp \
 			devel/glib2 \
 			devel/glibmm268 \
