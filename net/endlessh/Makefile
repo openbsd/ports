@@ -28,4 +28,9 @@ post-install:
 	perl -pi -e 's,Port 22,Port 2222,;s,BindFamily 0,BindFamily 4,' \
 		${PREFIX}/share/examples/endlessh/config
 
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+CFLAGS +=	-std=gnu99
+.endif
+
 .include <bsd.port.mk>
