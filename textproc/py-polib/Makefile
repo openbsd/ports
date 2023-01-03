@@ -1,9 +1,8 @@
 COMMENT=	Python library to manipulate gettext files
 
-MODPY_EGG_VERSION =	1.1.0
+MODPY_EGG_VERSION =	1.1.1
 DISTNAME =	polib-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	6
 
 CATEGORIES=	textproc devel
 
