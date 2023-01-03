@@ -56,9 +56,7 @@ share/pmacct/FAQS
 share/pmacct/QUICKSTART
 share/pmacct/UPGRADE
 share/pmacct/sql/
-share/pmacct/sql/README.64bit
 share/pmacct/sql/README.GeoIP
-share/pmacct/sql/README.IPv6
 share/pmacct/sql/README.cos
 share/pmacct/sql/README.custom_primitives
 share/pmacct/sql/README.etype

@@ -1,7 +1,7 @@
 Index: src/isis/isis.c
 --- src/isis/isis.c.orig
 +++ src/isis/isis.c
-@@ -808,7 +808,7 @@ void igp_daemon_map_initialize(char *filename, struct 
+@@ -807,7 +807,7 @@ void igp_daemon_map_initialize(char *filename, struct 
    pcap_t *p;
  
    if (config.debug && config.igp_daemon_map_msglog) {

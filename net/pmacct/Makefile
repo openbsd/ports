@@ -1,6 +1,6 @@
 COMMENT=	passive IP network monitoring tools: traffic accounting, etc
 
-DISTNAME=	pmacct-1.7.7
+DISTNAME=	pmacct-1.7.8
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.pmacct.net/
@@ -52,10 +52,6 @@ WANTLIB+=	mariadb
 CONFIGURE_ARGS+= --enable-mysql
 .else
 CONFIGURE_ARGS+= --disable-mysql
-.endif
-
-.ifdef DEBUG
-MAKE_ARGS+=	DEBUG=1
 .endif
 
 post-install:
