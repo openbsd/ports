@@ -1,7 +1,7 @@
 Index: src/bindings.c
 --- src/bindings.c.orig
 +++ src/bindings.c
-@@ -851,7 +851,7 @@ CommandResult *run_binding(Binding *bind, Con *con) {
+@@ -855,7 +855,7 @@ CommandResult *run_binding(Binding *bind, Con *con) {
  
      if (result->parse_error) {
          char *pageraction;

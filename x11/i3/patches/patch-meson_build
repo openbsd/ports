@@ -13,7 +13,7 @@ Index: meson.build
  # Instead of generating config.h directly, make vcs_tag generate it so that
  # @VCS_TAG@ is replaced.
  config_h_in = configure_file(
-@@ -608,7 +610,7 @@ install_headers(
+@@ -610,7 +612,7 @@ install_headers(
  # because configure_file strips the backslash in e.g. \@display,
  # resulting in @display, breaking our Perl code:
  # https://github.com/mesonbuild/meson/issues/7165

@@ -1,6 +1,6 @@
 COMMENT=	improved dynamic tiling window manager
 
-DISTNAME=	i3-4.21.1
+DISTNAME=	i3-4.22
 
 CATEGORIES=	x11
 
