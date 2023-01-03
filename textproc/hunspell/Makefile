@@ -1,13 +1,13 @@
 COMMENT =	spelling, stemming, morphological analysis and generation
 
-GH_ACCOUNT =	hunspell
-GH_PROJECT =	hunspell
-GH_TAGNAME =	v1.7.0
+V =		1.7.2
+DISTNAME =	hunspell-$V
 
-SHARED_LIBS =	hunspell-1.7	0.0 # 0.0
+SHARED_LIBS =	hunspell-1.7	1.0 # 0.0
 
 CATEGORIES =	textproc
 
+MASTER_SITES =	https://github.com/hunspell/hunspell/releases/download/v$V/
 HOMEPAGE =	https://hunspell.github.io/
 
 # GPL/LGPL/MPL
@@ -19,13 +19,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 LIB_DEPENDS =		converters/libiconv
 
-AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.15
-
-# gettext-tools needed for aclocal/extern-inline.m4
-BUILD_DEPENDS =	devel/gettext,-tools
-
-CONFIGURE_STYLE =	autoreconf
+CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${WRKBUILD}/src/hunspell/.libs"
 CONFIGURE_ARGS =	--with-ui \
