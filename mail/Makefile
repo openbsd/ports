@@ -210,6 +210,7 @@
      SUBDIR += rspamd
      SUBDIR += rspamd,hyperscan
      SUBDIR += rss2email
+     SUBDIR += rssgoemail
      SUBDIR += ruby-mail
      SUBDIR += ruby-mime
      SUBDIR += ruby-mime-types
