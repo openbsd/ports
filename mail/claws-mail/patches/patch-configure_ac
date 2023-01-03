@@ -23,7 +23,7 @@ Index: configure.ac
  	AC_SUBST(ENCHANT_CFLAGS)
  	AC_SUBST(ENCHANT_LIBS)
  fi
-@@ -835,6 +827,7 @@ if test x"$enable_alternate_addressbook" = xno; then
+@@ -833,6 +825,7 @@ if test x"$enable_alternate_addressbook" = xno; then
  		AC_CHECK_LIB(resolv, res_query, LDAP_LIBS="$LDAP_LIBS -lresolv")
  		AC_CHECK_LIB(socket, bind, LDAP_LIBS="$LDAP_LIBS -lsocket")
  		AC_CHECK_LIB(nsl, gethostbyaddr, LDAP_LIBS="$LDAP_LIBS -lnsl")
@@ -31,7 +31,7 @@ Index: configure.ac
  		AC_CHECK_LIB(lber, ber_get_tag, LDAP_LIBS="$LDAP_LIBS -llber",,
  				 $LDAP_LIBS)
  
-@@ -907,7 +900,7 @@ if test x"$enable_alternate_addressbook" = xno; then
+@@ -905,7 +898,7 @@ if test x"$enable_alternate_addressbook" = xno; then
  					   AC_DEFINE(USE_JPILOT, 1, Define if you want JPilot support in addressbook.) ])
  		fi
  
