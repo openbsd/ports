@@ -1,10 +1,9 @@
 COMMENT=		Python Imaging Library (friendly fork of PIL)
 
-MODPY_EGG_VERSION=	9.3.0
+MODPY_EGG_VERSION=	9.4.0
 DISTNAME=		Pillow-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		graphics
-REVISION=		0
 
 HOMEPAGE=		https://python-pillow.org/
 
@@ -30,6 +29,7 @@ LIB_DEPENDS=		graphics/lcms2 \
 			graphics/libimagequant \
 			graphics/libwebp
 TEST_DEPENDS=		${FULLPKGNAME}:${BUILD_PKGPATH} \
+			devel/py-test-timeout${MODPY_FLAVOR} \
 			sysutils/py-packaging${MODPY_FLAVOR}
 
 SUBST_VARS+=		INCL_DIR MODPY_FLAVOR
