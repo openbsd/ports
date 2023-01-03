@@ -1,10 +1,9 @@
 COMMENT =		Python wrapper for pandoc
 
-MODPY_EGG_VERSION =	1.8
+MODPY_EGG_VERSION =	1.10
 
 DISTNAME =		pypandoc-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		textproc
 

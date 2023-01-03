@@ -3,7 +3,7 @@ Tests aren't allowed to make remote connection
 Index: tests.py
 --- tests.py.orig
 +++ tests.py
-@@ -226,7 +226,7 @@ class TestPypandoc(unittest.TestCase):
+@@ -228,7 +228,7 @@ class TestPypandoc(unittest.TestCase):
              self.assertEqualExceptForNewlineEnd(expected, received)
  
      def test_basic_conversion_from_http_url(self):
