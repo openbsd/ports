@@ -79,6 +79,8 @@ PORTROACH+=	limitw:1,even
 .if defined(XFCE_COMMIT)
 DISTNAME =	${DISTNAME_GIT}
 MASTER_SITES =	${MASTER_SITES_GIT}
+# makes sure some code is generated from .ui files
+CONFIGURE_ARGS +=	--enable-maintainer-mode
 AUTOMAKE_VERSION =	1.14
 AUTOCONF_VERSION =	2.69
 MODXFCE4_gen =	cd ${WRKSRC} && env NOCONFIGURE=yes \
@@ -91,7 +93,7 @@ BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
 .endif
 
 .if defined(DEBUG)
-CONFIGURE_ARGS +=	--enable-maintainer-mode --enable-debug
+CONFIGURE_ARGS +=	--enable-debug
 .endif
 
 # remove useless .la file
