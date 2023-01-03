@@ -1,7 +1,7 @@
 Index: man/dnsmasq.8
 --- man/dnsmasq.8.orig
 +++ man/dnsmasq.8
-@@ -155,13 +155,12 @@ Specify an alternate path for dnsmasq to record its pr
+@@ -166,13 +166,12 @@ Specify an alternate path for dnsmasq to record its pr
  .TP
  .B \-u, --user=<username>
  Specify the userid to which dnsmasq will change after startup. Dnsmasq must normally be started as root, but it will drop root 
@@ -17,7 +17,7 @@ Index: man/dnsmasq.8
  .TP
  .B \-v, --version
  Print the version number.
-@@ -2178,7 +2177,7 @@ and /share/ads-domains.gz containing a compressed
+@@ -2217,7 +2216,7 @@ and /share/ads-domains.gz containing a compressed
  list of ad server domains will save disk space with large ad-server blocklists.
  .SH CONFIG FILE
  At startup, dnsmasq reads
@@ -26,7 +26,7 @@ Index: man/dnsmasq.8
  if it exists. (On
  FreeBSD, the file is 
  .I /usr/local/etc/dnsmasq.conf
-@@ -2637,7 +2636,7 @@ dnsmasq has no direct way of determining the charset i
+@@ -2676,7 +2675,7 @@ dnsmasq has no direct way of determining the charset i
  assume that it is the system default. 
   
  .SH FILES
