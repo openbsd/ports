@@ -1,10 +1,9 @@
 COMMENT =		lz4 bindings for Python
 
-MODPY_EGG_VERSION =	4.0.2
+MODPY_EGG_VERSION =	4.3.2
 
 DISTNAME =		lz4-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
 
 CATEGORIES =		archivers
 
