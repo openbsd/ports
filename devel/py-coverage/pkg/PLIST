@@ -84,6 +84,8 @@ lib/python${MODPY_VERSION}/site-packages/coverage/${MODPY_PYCACHE}templite.${MOD
 lib/python${MODPY_VERSION}/site-packages/coverage/${MODPY_PYCACHE}templite.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/coverage/${MODPY_PYCACHE}tomlconfig.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/coverage/${MODPY_PYCACHE}tomlconfig.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/coverage/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/coverage/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/coverage/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/coverage/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/coverage/${MODPY_PYCACHE}xmlreport.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -136,5 +138,6 @@ lib/python${MODPY_VERSION}/site-packages/coverage/summary.py
 lib/python${MODPY_VERSION}/site-packages/coverage/templite.py
 lib/python${MODPY_VERSION}/site-packages/coverage/tomlconfig.py
 @so lib/python${MODPY_VERSION}/site-packages/coverage/tracer.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/coverage/types.py
 lib/python${MODPY_VERSION}/site-packages/coverage/version.py
 lib/python${MODPY_VERSION}/site-packages/coverage/xmlreport.py
