@@ -1,0 +1,4 @@
+Rssgoemail is a command line tool that let you read your favourite feeds
+from your mailbox.  It is designed to work in cooperation with the
+system mailer, as it will send all the items of every given feed using
+sendmail(8).
