@@ -1,7 +1,6 @@
 COMMENT=		library to handle keyboard descriptions
 
-DISTNAME=		libxkbcommon-1.4.1
-REVISION=		0
+DISTNAME=		libxkbcommon-1.5.0
 
 SHARED_LIBS += xkbcommon                 1.6 # 0.0.0
 SHARED_LIBS += xkbcommon-x11             1.2 # 0.0.0
