@@ -128,7 +128,6 @@
      SUBDIR += hsetroot
      SUBDIR += human-icon-theme
      SUBDIR += i3
-     SUBDIR += i3-gaps
      SUBDIR += i3lock
      SUBDIR += i3status
      SUBDIR += icewm

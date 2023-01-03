@@ -1,5 +1,6 @@
 @conflict i3-gaps-*
 @conflict i3-mousedrag-*
+@pkgpath x11/i3-gaps
 @pkgpath x11/i3-mousedrag
 @bin bin/i3
 @bin bin/i3-config-wizard
