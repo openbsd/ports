@@ -3,6 +3,7 @@ COMMENT-mysql =	MySQL support for icinga2
 COMMENT-pgsql =	PostgreSQL support for icinga2
 
 V =		2.13.6
+REVISION-main =	0
 
 GH_PROJECT =	icinga2
 GH_TAGNAME =	v$V

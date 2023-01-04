@@ -1,3 +1,5 @@
+Committed :-
+
 From df9008bfc4aba3715044f88fe3ae9ee441b0143b Mon Sep 17 00:00:00 2001
 From: "Alexander A. Klimov" <alexander.klimov@icinga.com>
 Date: Wed, 7 Sep 2022 11:46:46 +0200
@@ -18,6 +20,13 @@ From 61f7e029cbad5fc2ddeafffa59e7f487b5b64f9a Mon Sep 17 00:00:00 2001
 From: "Alexander A. Klimov" <alexander.klimov@icinga.com>
 Date: Fri, 7 Oct 2022 15:14:33 +0200
 Subject: [PATCH 4/4] Replace two-variants enum with bool
+
+From https://github.com/Icinga/icinga2/pull/9622 :-
+
+From d059885d9bcb254c9b3673cb5ee223df8faea510 Mon Sep 17 00:00:00 2001
+From: "Alexander A. Klimov" <alexander.klimov@icinga.com>
+Date: Tue, 3 Jan 2023 18:29:31 +0100
+Subject: [PATCH] Main process: ignore SIGHUP
 
 Index: lib/cli/daemoncommand.cpp
 --- lib/cli/daemoncommand.cpp.orig
@@ -85,15 +94,23 @@ Index: lib/cli/daemoncommand.cpp
  	 */
  	(void)sigprocmask(SIG_BLOCK, &l_UnixWorkerSignals, nullptr);
  
-@@ -513,7 +495,6 @@ static pid_t StartUnixWorker(const std::vector<std::st
+@@ -513,8 +495,14 @@ static pid_t StartUnixWorker(const std::vector<std::st
  
  					sa.sa_handler = SIG_DFL;
  
 -					(void)sigaction(SIGCHLD, &sa, nullptr);
  					(void)sigaction(SIGUSR1, &sa, nullptr);
++				}
++
++				{
++					struct sigaction sa;
++					memset(&sa, 0, sizeof(sa));
++					sa.sa_handler = SIG_IGN;
++
  					(void)sigaction(SIGHUP, &sa, nullptr);
  				}
-@@ -570,33 +551,26 @@ static pid_t StartUnixWorker(const std::vector<std::st
+ 
+@@ -570,33 +558,26 @@ static pid_t StartUnixWorker(const std::vector<std::st
  				NotifyWatchdog();
  #endif /* HAVE_SYSTEMD */
  
@@ -140,7 +157,7 @@ Index: lib/cli/daemoncommand.cpp
  
  			try {
  				Application::InitializeBase();
-@@ -734,7 +708,6 @@ int DaemonCommand::Run(const po::variables_map& vm, co
+@@ -734,7 +715,6 @@ int DaemonCommand::Run(const po::variables_map& vm, co
  		sa.sa_sigaction = &UmbrellaSignalHandler;
  		sa.sa_flags = SA_NOCLDSTOP | SA_RESTART | SA_SIGINFO;
  
