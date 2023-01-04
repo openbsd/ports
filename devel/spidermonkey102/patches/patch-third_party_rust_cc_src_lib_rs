@@ -1,4 +1,4 @@
-Support riscv64-unknown-openbsd
+Support riscv64gc-unknown-openbsd
 
 Index: third_party/rust/cc/src/lib.rs
 --- third_party/rust/cc/src/lib.rs.orig
