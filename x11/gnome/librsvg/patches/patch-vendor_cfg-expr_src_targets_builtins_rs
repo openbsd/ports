@@ -1,4 +1,4 @@
-Support powerpc64-unknown-openbsd and riscv64-unknown-openbsd
+Support powerpc64-unknown-openbsd and riscv64gc-unknown-openbsd
 
 Index: vendor/cfg-expr/src/targets/builtins.rs
 --- vendor/cfg-expr/src/targets/builtins.rs.orig
@@ -28,7 +28,7 @@ Index: vendor/cfg-expr/src/targets/builtins.rs
          panic: Panic::abort,
 +    },
 +    TargetInfo {
-+        triple: Triple::new_const("riscv64-unknown-openbsd"),
++        triple: Triple::new_const("riscv64gc-unknown-openbsd"),
 +        os: Some(Os::openbsd),
 +        arch: Arch::riscv64,
 +        env: None,
