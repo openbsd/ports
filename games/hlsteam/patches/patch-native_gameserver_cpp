@@ -1,6 +1,5 @@
-stub EnableHeartbeats; changing function names and anyway not
-	implemented in goldberg_emulator
 GetPublicIP returns a struct; return its IPv4 member as int cast
+EnableHeartbeats is now the same function with the name SetAdvertiseServerActive
 
 Index: native/gameserver.cpp
 --- native/gameserver.cpp.orig
@@ -10,7 +9,7 @@ Index: native/gameserver.cpp
  
  void HL_NAME(gameserver_enable_heartbeats)( bool b ) {
 -	SteamGameServer()->EnableHeartbeats(b);
-+	/* empty; not implemented in goldberg_emulator anyway */
++	SteamGameServer()->SetAdvertiseServerActive(b);
  }
  
  void HL_NAME(gameserver_config)( char *modDir, char *product, char *desc ) {

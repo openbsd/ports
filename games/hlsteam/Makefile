@@ -1,36 +1,30 @@
 COMMENT =	Steam API wrapper for Hashlink
 
-V =		1.0pl0
-DISTNAME =	hlsteam-${V}
+DISTNAME =	hlsteam-1.0pl1
 GH_ACCOUNT =	HeapsIO
 GH_PROJECT =	hlsteam
-GH_COMMIT =	24265f62c0499a0c4f37d42b33548c24061c2bd7
-REVISION =	0
+# checkout from 2022-03-22
+GH_COMMIT =	f774d8ea2b7255a3067254fde8d18063455dec24
 CATEGORIES =	games
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes
 
-COMPILER =	base-clang ports-gcc
-COMPILER_LANGS =	c
+WANTLIB += ${COMPILER_LIBCXX} hl m steam_api
 
-WANTLIB += hl steam_api
+FIX_CRLF_FILES =	Makefile native/gameserver.cpp
 
-FIX_CRLF_FILES =	Makefile \
-			native/gameserver.cpp \
-			native/steamwrap.h
-
+COMPILER =		base-clang ports-gcc
 LIB_DEPENDS =		games/goldberg_emulator \
 			lang/hashlink
 USE_GMAKE =		Yes
 NO_TEST =		Yes
 
-CFLAGS +=		-I${LOCALBASE}/include/goldberg_emulator
-SUBST_VARS +=		CFLAGS LDFLAGS
-
-do-gen:
-	${SUBST_CMD} ${WRKSRC}/Makefile
+MAKE_ENV =		LDFLAGS="-L${LOCALBASE}/lib" \
+			CXX="${CXX}"
+CFLAGS +=		-I${LOCALBASE}/include \
+			-I${LOCALBASE}/include/goldberg_emulator
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/steam.hdll ${PREFIX}/lib/
