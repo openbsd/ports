@@ -2,4 +2,3 @@ lib/steamworks-nosteam/
 lib/steamworks-nosteam/libSteamworksNative.so.0.0
 @lib lib/steamworks-nosteam/libcestub.so.${LIBcestub_VERSION}
 lib/steamworks-nosteam/libsteamwrapper.so.0.0
-@bin lib/steamworks-nosteam/steam.hdll
