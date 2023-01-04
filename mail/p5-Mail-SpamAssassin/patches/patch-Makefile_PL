@@ -1,7 +1,7 @@
 Index: Makefile.PL
 --- Makefile.PL.orig
 +++ Makefile.PL
-@@ -857,7 +857,7 @@ sub MY::install {
+@@ -886,7 +886,7 @@ sub MY::install {
  
    foreach (@code) {
      # Add our install targets as a dependency to all top-level install targets

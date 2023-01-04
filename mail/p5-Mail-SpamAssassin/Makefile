@@ -1,11 +1,10 @@
 COMMENT=		mailfilter to identify and mark spam
 
-VER=			3.4.6
+VER=			4.0.0
 DISTNAME=		Mail-SpamAssassin-${VER}
 PKGNAME=		p5-${DISTNAME}
-RULESNAME=		Mail-SpamAssassin-rules-${VER}.r1888502.tgz
+RULESNAME=		Mail-SpamAssassin-rules-${VER}.r1905950.tgz
 CATEGORIES=		mail perl5
-REVISION=		0
 
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} ${RULESNAME}
 EXTRACT_SUFX=		.tar.bz2
@@ -24,6 +23,8 @@ MASTER_SITES=		${MASTER_SITE_APACHE:=spamassassin/source/}
 
 COMMON_DEPENDS=		www/p5-HTML-Parser>=3.31 \
 			mail/p5-Mail-DKIM>=0.31 \
+			mail/p5-Email-Address-XS \
+			mail/p5-Mail-DMARC \
 			net/p5-Net-DNS>=0.34 \
 			net/p5-NetAddr-IP \
 			security/p5-IO-Socket-SSL
@@ -36,7 +37,7 @@ RUN_DEPENDS=		${COMMON_DEPENDS} \
 			devel/p5-IO-String \
 			p5-Mail-SPF-*|p5-Mail-SPF-Query-*:mail/p5-Mail-SPF \
 			p5-GeoIP2-*|p5-IP-Country-DB_File-*|p5-IP-Country-*:net/p5-GeoIP2 \
-			net/p5-Net-LibIDN \
+			net/p5-Net-LibIDN2 \
 			net/p5-Net-Patricia \
 			security/gnupg \
 			textproc/p5-Encode-Detect \

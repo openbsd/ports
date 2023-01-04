@@ -1,9 +1,9 @@
 Index: t/sa_compile.t
 --- t/sa_compile.t.orig
 +++ t/sa_compile.t
-@@ -12,8 +12,7 @@ use Config;
- use File::Basename;
- use File::Path qw/mkpath/;
+@@ -10,8 +10,7 @@ use SATest; sa_t_init("sa_compile");
+ 
+ use Config;
  
 -my $temp_binpath = $Config{sitebinexp};
 -$temp_binpath =~ s|^\Q$Config{siteprefixexp}\E/||;
