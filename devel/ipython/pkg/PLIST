@@ -67,6 +67,8 @@ lib/python${MODPY_VERSION}/site-packages/IPython/core/${MODPY_PYCACHE}formatters
 lib/python${MODPY_VERSION}/site-packages/IPython/core/${MODPY_PYCACHE}formatters.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/core/${MODPY_PYCACHE}getipython.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/IPython/core/${MODPY_PYCACHE}getipython.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/IPython/core/${MODPY_PYCACHE}guarded_eval.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/IPython/core/${MODPY_PYCACHE}guarded_eval.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/core/${MODPY_PYCACHE}history.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/IPython/core/${MODPY_PYCACHE}history.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/core/${MODPY_PYCACHE}historyapp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -140,6 +142,7 @@ lib/python${MODPY_VERSION}/site-packages/IPython/core/excolors.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/extensions.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/formatters.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/getipython.py
+lib/python${MODPY_VERSION}/site-packages/IPython/core/guarded_eval.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/history.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/historyapp.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/hooks.py
@@ -260,6 +263,8 @@ lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/${MODPY_PYCACHE}test
 lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/${MODPY_PYCACHE}test_extension.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/${MODPY_PYCACHE}test_formatters.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/${MODPY_PYCACHE}test_formatters.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/${MODPY_PYCACHE}test_guarded_eval.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/${MODPY_PYCACHE}test_guarded_eval.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/${MODPY_PYCACHE}test_handlers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/${MODPY_PYCACHE}test_handlers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/${MODPY_PYCACHE}test_history.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -335,6 +340,7 @@ lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/test_displayhook.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/test_events.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/test_extension.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/test_formatters.py
+lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/test_guarded_eval.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/test_handlers.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/test_history.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/test_hooks.py
@@ -462,6 +468,8 @@ lib/python${MODPY_VERSION}/site-packages/IPython/lib/tests/${MODPY_PYCACHE}test_
 lib/python${MODPY_VERSION}/site-packages/IPython/lib/tests/${MODPY_PYCACHE}test_lexers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/lib/tests/${MODPY_PYCACHE}test_pretty.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/IPython/lib/tests/${MODPY_PYCACHE}test_pretty.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/IPython/lib/tests/${MODPY_PYCACHE}test_pygments.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/IPython/lib/tests/${MODPY_PYCACHE}test_pygments.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/lib/tests/test.wav
 lib/python${MODPY_VERSION}/site-packages/IPython/lib/tests/test_backgroundjobs.py
 lib/python${MODPY_VERSION}/site-packages/IPython/lib/tests/test_clipboard.py
@@ -472,7 +480,9 @@ lib/python${MODPY_VERSION}/site-packages/IPython/lib/tests/test_imports.py
 lib/python${MODPY_VERSION}/site-packages/IPython/lib/tests/test_latextools.py
 lib/python${MODPY_VERSION}/site-packages/IPython/lib/tests/test_lexers.py
 lib/python${MODPY_VERSION}/site-packages/IPython/lib/tests/test_pretty.py
+lib/python${MODPY_VERSION}/site-packages/IPython/lib/tests/test_pygments.py
 lib/python${MODPY_VERSION}/site-packages/IPython/paths.py
+lib/python${MODPY_VERSION}/site-packages/IPython/py.typed
 lib/python${MODPY_VERSION}/site-packages/IPython/sphinxext/
 lib/python${MODPY_VERSION}/site-packages/IPython/sphinxext/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/IPython/sphinxext/${MODPY_PYCACHE}/
@@ -674,6 +684,8 @@ lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}decorator
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}decorators.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}dir2.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}dir2.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}docs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}docs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}encoding.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}encoding.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}eventful.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -750,6 +762,7 @@ lib/python${MODPY_VERSION}/site-packages/IPython/utils/daemonize.py
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/data.py
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/decorators.py
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/dir2.py
+lib/python${MODPY_VERSION}/site-packages/IPython/utils/docs.py
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/encoding.py
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/eventful.py
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/frame.py

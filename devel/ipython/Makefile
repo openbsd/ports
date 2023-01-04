@@ -1,9 +1,8 @@
 COMMENT =		enhanced interactive Python shell
 
-MODPY_EGG_VERSION =	8.4.0
+MODPY_EGG_VERSION =	8.8.0
 DISTNAME =		ipython-${MODPY_EGG_VERSION}
 PKGNAME =		ipython${MODPY_MAJOR_VERSION}-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		devel
 
@@ -15,8 +14,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 MODPY_PYBUILD =		setuptools
 MODPY_PI =		Yes
-MODPY_PYTEST =		Yes
-MODPY_PYTEST_ARGS =	IPython
+#MODPY_PYTEST_ARGS =	IPython
 
 # Optional dependency which gets picked up if it happens to be installed, thus
 # causing race conditions under dpb. Pull it in to avoid this possibility.
