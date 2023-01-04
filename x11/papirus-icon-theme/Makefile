@@ -2,7 +2,7 @@ COMMENT=	papirus icon theme
 
 GH_ACCOUNT=	PapirusDevelopmentTeam
 GH_PROJECT=	papirus-icon-theme
-GH_TAGNAME=	20220302
+GH_TAGNAME=	20221201
 
 CATEGORIES=	x11
 
