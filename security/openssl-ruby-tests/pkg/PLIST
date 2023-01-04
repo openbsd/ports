@@ -71,8 +71,11 @@ share/openssl-ruby-tests/lib/openssl/ssl.rb
 share/openssl-ruby-tests/lib/openssl/version.rb
 share/openssl-ruby-tests/lib/openssl/x509.rb
 share/openssl-ruby-tests/test/
+share/openssl-ruby-tests/test/lib/
+share/openssl-ruby-tests/test/lib/core_assertions.rb
+share/openssl-ruby-tests/test/lib/envutil.rb
+share/openssl-ruby-tests/test/lib/find_executable.rb
 share/openssl-ruby-tests/test/openssl/
-share/openssl-ruby-tests/test/openssl/envutil.rb
 share/openssl-ruby-tests/test/openssl/fixtures/
 share/openssl-ruby-tests/test/openssl/fixtures/pkey/
 share/openssl-ruby-tests/test/openssl/fixtures/pkey/certificate.der
