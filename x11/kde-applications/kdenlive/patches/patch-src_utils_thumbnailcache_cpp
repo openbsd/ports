@@ -1,0 +1,17 @@
+Resolve use-after-free in thumbnailcache
+
+https://bugs.kde.org/show_bug.cgi?id=463764
+
+Index: src/utils/thumbnailcache.cpp
+--- src/utils/thumbnailcache.cpp.orig
++++ src/utils/thumbnailcache.cpp
+@@ -33,8 +33,8 @@ class ThumbnailCache::Cache_t (public)
+         }
+         auto it = m_cache.at(key);
+         m_currentCost -= (*it).second.second;
+-        m_data.erase(it);
+         m_cache.erase(key);
++        m_data.erase(it);
+     }
+ 
+     void insert(const QString &key, const QImage &img, int cost)
