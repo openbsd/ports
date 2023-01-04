@@ -1,0 +1,15 @@
+Disable threads kio_file support for now. It's totally broken on OpenBSD
+https://bugs.kde.org/show_bug.cgi?id=463796
+
+Index: src/core/slave.cpp
+--- src/core/slave.cpp.orig
++++ src/core/slave.cpp
+@@ -447,7 +447,7 @@ Slave *Slave::createSlave(const QString &protocol, con
+     const auto useThreads = []() {
+         return qgetenv("KIO_ENABLE_WORKER_THREADS") != "0";
+     };
+-    static bool bUseThreads = useThreads();
++    static bool bUseThreads = false; // useThreads();
+ 
+     // Threads have performance benefits, but degrade robustness
+     // (a worker crashing kills the app). So let's only enable the feature for kio_file, for now.
