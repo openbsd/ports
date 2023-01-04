@@ -1,0 +1,16 @@
+Index: qga/commands-bsd.c
+--- qga/commands-bsd.c.orig
++++ qga/commands-bsd.c
+@@ -21,7 +21,12 @@
+ #include <sys/ucred.h>
+ #include <sys/mount.h>
+ #include <net/if_dl.h>
++#ifdef __OpenBSD__
++#include <net/if_arp.h>
++#include <netinet/if_ether.h>
++#else
+ #include <net/ethernet.h>
++#endif
+ #include <paths.h>
+ 
+ #if defined(CONFIG_FSFREEZE) || defined(CONFIG_FSTRIM)

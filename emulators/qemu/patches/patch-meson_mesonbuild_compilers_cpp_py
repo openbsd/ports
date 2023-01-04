@@ -1,19 +1,19 @@
 Index: meson/mesonbuild/compilers/cpp.py
 --- meson/mesonbuild/compilers/cpp.py.orig
 +++ meson/mesonbuild/compilers/cpp.py
-@@ -247,7 +247,7 @@ class ClangCPPCompiler(ClangCompiler, CPPCompiler):
-         return []
- 
-     def language_stdlib_only_link_flags(self) -> T.List[str]:
--        return ['-lstdc++']
-+        return ['-lc++']
+@@ -254,7 +254,7 @@ class ClangCPPCompiler(ClangCompiler, CPPCompiler):
+         search_dirs: T.List[str] = []
+         for d in self.get_compiler_dirs(env, 'libraries'):
+             search_dirs.append(f'-L{d}')
+-        return search_dirs + ['-lstdc++']
++        return search_dirs + ['-lc++']
  
  
  class AppleClangCPPCompiler(ClangCPPCompiler):
-@@ -397,7 +397,7 @@ class GnuCPPCompiler(GnuCompiler, CPPCompiler):
-         return ['-fpch-preprocess', '-include', os.path.basename(header)]
- 
-     def language_stdlib_only_link_flags(self) -> T.List[str]:
+@@ -418,7 +418,7 @@ class GnuCPPCompiler(GnuCompiler, CPPCompiler):
+         search_dirs: T.List[str] = []
+         for d in self.get_compiler_dirs(env, 'libraries'):
+             search_dirs.append(f'-L{d}')
 -        return ['-lstdc++']
 +        return ['-lestdc++']
  

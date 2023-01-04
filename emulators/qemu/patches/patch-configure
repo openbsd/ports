@@ -6,15 +6,15 @@ Revert..
 Index: configure
 --- configure.orig
 +++ configure
-@@ -79,6 +79,7 @@ TMPO="${TMPDIR1}/${TMPB}.o"
- TMPCXX="${TMPDIR1}/${TMPB}.cxx"
+@@ -77,6 +77,7 @@ TMPC="${TMPDIR1}/${TMPB}.c"
+ TMPO="${TMPDIR1}/${TMPB}.o"
  TMPM="${TMPDIR1}/${TMPB}.m"
  TMPE="${TMPDIR1}/${TMPB}.exe"
 +TMPTXT="${TMPDIR1}/${TMPB}.txt"
  
  rm -f config.log
  
-@@ -1354,7 +1355,6 @@ if test "$static" = "yes" ; then
+@@ -1314,7 +1315,6 @@ if test "$static" = "yes" ; then
      plugins="no"
    fi
  fi
@@ -22,7 +22,7 @@ Index: configure
  
  cat > $TMPC << EOF
  
-@@ -1511,6 +1511,56 @@ if ! has "$pkg_config_exe"; then
+@@ -1459,6 +1459,56 @@ if ! has "$pkg_config_exe"; then
  fi
  
  ##########################################
@@ -79,7 +79,7 @@ Index: configure
  # glib support probe
  
  # When bumping glib_req_ver, please check also whether we should increase
-@@ -2481,6 +2531,15 @@ fi
+@@ -2390,6 +2440,15 @@ fi
  
  if test "$plugins" = "yes" ; then
      echo "CONFIG_PLUGIN=y" >> $config_host_mak

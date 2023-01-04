@@ -1,4 +1,3 @@
-- sndio module
 - localstatedir does not belong under prefix
 - Remove hardcoding of optimization
 
@@ -9,41 +8,12 @@ Index: meson.build
    .allowed()
  have_ga = get_option('guest_agent') \
    .disable_auto_if(not have_system and not have_tools) \
--  .require(targetos in ['sunos', 'linux', 'windows'],
-+  .require(targetos in ['sunos', 'linux', 'openbsd', 'windows'],
+-  .require(targetos in ['sunos', 'linux', 'windows', 'freebsd'],
++  .require(targetos in ['sunos', 'linux', 'windows', 'freebsd', 'openbsd'],
             error_message: 'unsupported OS for QEMU guest agent') \
    .allowed()
  have_block = have_system or have_tools
-@@ -681,6 +681,11 @@ if not get_option('jack').auto() or have_system
-   jack = dependency('jack', required: get_option('jack'),
-                     method: 'pkg-config', kwargs: static_kwargs)
- endif
-+sndio = not_found
-+if not get_option('sndio').auto() or have_system
-+  sndio = dependency('sndio', required: get_option('sndio'),
-+                    method: 'pkg-config', kwargs: static_kwargs)
-+endif
- 
- spice_protocol = not_found
- if not get_option('spice_protocol').auto() or have_system
-@@ -1597,6 +1602,7 @@ if have_system
-     'oss': oss.found(),
-     'pa': pulse.found(),
-     'sdl': sdl.found(),
-+    'sndio': sndio.found(),
-   }
-   foreach k, v: audio_drivers_available
-     config_host_data.set('CONFIG_AUDIO_' + k.to_upper(), v)
-@@ -1604,7 +1610,7 @@ if have_system
- 
-   # Default to native drivers first, OSS second, SDL third
-   audio_drivers_priority = \
--    [ 'pa', 'coreaudio', 'dsound', 'oss' ] + \
-+    [ 'pa', 'coreaudio', 'dsound', 'sndio', 'oss' ] + \
-     (targetos == 'linux' ? [] : [ 'sdl' ])
-   audio_drivers_default = []
-   foreach k: audio_drivers_priority
-@@ -1729,7 +1735,7 @@ config_host_data.set('CONFIG_QEMU_FIRMWAREPATH', qemu_
+@@ -1790,7 +1790,7 @@ config_host_data.set('CONFIG_QEMU_FIRMWAREPATH', qemu_
  config_host_data.set_quoted('CONFIG_QEMU_HELPERDIR', get_option('prefix') / get_option('libexecdir'))
  config_host_data.set_quoted('CONFIG_QEMU_ICONDIR', get_option('prefix') / qemu_icondir)
  config_host_data.set_quoted('CONFIG_QEMU_LOCALEDIR', get_option('prefix') / get_option('localedir'))
@@ -52,7 +22,7 @@ Index: meson.build
  config_host_data.set_quoted('CONFIG_QEMU_MODDIR', get_option('prefix') / qemu_moddir)
  config_host_data.set_quoted('CONFIG_SYSCONFDIR', get_option('prefix') / get_option('sysconfdir'))
  
-@@ -3767,11 +3773,9 @@ if targetos == 'darwin'
+@@ -3756,11 +3756,9 @@ if targetos == 'darwin'
    summary_info += {'Objective-C compiler': ' '.join(meson.get_compiler('objc').cmd_array())}
  endif
  summary_info += {'CFLAGS':            ' '.join(get_option('c_args')
@@ -64,11 +34,3 @@ Index: meson.build
                                                 + (get_option('debug') ? ['-g'] : []))}
  endif
  if targetos == 'darwin'
-@@ -3927,6 +3931,7 @@ if vnc.found()
- endif
- if targetos not in ['darwin', 'haiku', 'windows']
-   summary_info += {'OSS support':     oss}
-+  summary_info += {'sndio support':   sndio}
- elif targetos == 'darwin'
-   summary_info += {'CoreAudio support': coreaudio}
- elif targetos == 'windows'

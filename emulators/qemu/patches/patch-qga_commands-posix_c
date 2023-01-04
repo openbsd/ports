@@ -11,21 +11,23 @@ Setting user password is not supported on OpenBSD.
 Index: qga/commands-posix.c
 --- qga/commands-posix.c.orig
 +++ qga/commands-posix.c
-@@ -57,11 +57,20 @@
+@@ -45,13 +45,23 @@
+ #include <arpa/inet.h>
+ #include <sys/socket.h>
  #include <net/if.h>
- #include <sys/types.h>
- #include <ifaddrs.h>
--#ifdef CONFIG_SOLARIS
-+#if defined(__OpenBSD__)
-+#include <net/if_dl.h>
-+#include <net/if_types.h>
++#ifdef __OpenBSD__
++#include <net/if_arp.h>
 +#include <netinet/if_ether.h>
-+#elif defined CONFIG_SOLARIS
++#else
+ #include <net/ethernet.h>
++#endif
+ #include <sys/types.h>
+ #ifdef CONFIG_SOLARIS
  #include <sys/sockio.h>
  #endif
  #endif
  
-+#ifdef CONFIG_BSD
++#ifdef __OpenBSD__
 +#include <sys/sysctl.h>
 +#include <sys/statvfs.h>
 +#endif
@@ -33,120 +35,17 @@ Index: qga/commands-posix.c
  static void ga_wait_child(pid_t pid, int *status, Error **errp)
  {
      pid_t rpid;
-@@ -88,7 +97,11 @@ void qmp_guest_shutdown(bool has_mode, const char *mod
-     pid_t pid;
-     int status;
- 
--#ifdef CONFIG_SOLARIS
-+#ifdef CONFIG_BSD
-+    const char *powerdown_flag = "-p";
-+    const char *halt_flag = "-h";
-+    const char *reboot_flag = "-r";
-+#elif defined (CONFIG_SOLARIS)
-     const char *powerdown_flag = "-i5";
-     const char *halt_flag = "-i0";
-     const char *reboot_flag = "-i6";
-@@ -154,9 +167,11 @@ void qmp_guest_shutdown(bool has_mode, const char *mod
- void qmp_guest_set_time(bool has_time, int64_t time_ns, Error **errp)
- {
-     int ret;
-+#ifndef CONFIG_BSD
-     int status;
-     pid_t pid;
-     Error *local_err = NULL;
-+#endif
-     struct timeval tv;
-     static const char hwclock_path[] = "/sbin/hwclock";
-     static int hwclock_available = -1;
-@@ -195,6 +210,7 @@ void qmp_guest_set_time(bool has_time, int64_t time_ns
-         }
+@@ -2232,12 +2242,118 @@ out:
+         close(datafd[1]);
      }
- 
-+#ifndef CONFIG_BSD
-     /* Now, if user has passed a time to set and the system time is set, we
-      * just need to synchronize the hardware clock. However, if no time was
-      * passed, user is requesting the opposite: set the system time from the
-@@ -230,6 +246,7 @@ void qmp_guest_set_time(bool has_time, int64_t time_ns
-         error_setg(errp, "hwclock failed to set hardware clock to system time");
-         return;
-     }
-+#endif
  }
- 
- typedef enum {
-@@ -2985,7 +3002,7 @@ GuestCpuStatsList *qmp_guest_get_cpustats(Error **errp
-     return head;
- }
- 
--#else /* defined(__linux__) */
-+#elif defined(CONFIG_BSD)
- 
- void qmp_guest_suspend_disk(Error **errp)
+-#else /* __linux__ || __FreeBSD__ */
++#elif defined(__OpenBSD__) /* __linux__ || __FreeBSD__ */
+ void qmp_guest_set_user_password(const char *username,
+                                  const char *password,
+                                  bool crypted,
+                                  Error **errp)
  {
-@@ -3004,10 +3021,209 @@ void qmp_guest_suspend_hybrid(Error **errp)
- 
- GuestLogicalProcessorList *qmp_guest_get_vcpus(Error **errp)
- {
-+    int64_t current;
-+    GuestLogicalProcessorList *head, **link;
-+    long sc_max;
-+    Error *local_err = NULL;
-+    int Query[2];
-+    int NumCpu = 0;
-+    size_t Length = sizeof(NumCpu);
-+
-+    Query[0] = CTL_HW;
-+#ifdef HW_NCPUONLINE
-+    Query[1] = HW_NCPUONLINE;
-+#else
-+    Query[1] = HW_NCPU;
-+#endif
-+
-+    current = 0;
-+    head = NULL;
-+    link = &head;
-+    if (sysctl(Query, 2, &NumCpu, &Length, NULL, 0) == -1) {
-+        error_setg(errp, "sysctl get CTL_HW.HW_NCPU failed");
-+    }
-+    sc_max = NumCpu;
-+
-+    while (local_err == NULL && current < sc_max) {
-+        GuestLogicalProcessor *vcpu;
-+        GuestLogicalProcessorList *entry;
-+        int64_t id = current++;
-+        vcpu = g_malloc0(sizeof *vcpu);
-+        vcpu->logical_id = id;
-+        vcpu->has_can_offline = false; /* lolspeak ftw */
-+        vcpu->online = true;
-+        vcpu->can_offline = false;
-+        entry = g_malloc0(sizeof *entry);
-+        entry->value = vcpu;
-+        *link = entry;
-+        link = &entry->next;
-+    }
-+
-+    if (local_err == NULL) {
-+        /* there's no guest with zero VCPUs */
-+        g_assert(head != NULL);
-+        return head;
-+    }
-+
-+    qapi_free_GuestLogicalProcessorList(head);
-+    error_propagate(errp, local_err);
-+    return NULL;
-+}
-+
-+int64_t qmp_guest_set_vcpus(GuestLogicalProcessorList *vcpus, Error **errp)
-+{
-     error_setg(errp, QERR_UNSUPPORTED);
-+    return -1;
-+}
-+
-+void qmp_guest_set_user_password(const char *username,
-+                                 const char *password,
-+                                 bool crypted,
-+                                 Error **errp)
-+{
 +    Error *local_err = NULL;
 +    char *pw_path = NULL;
 +    pid_t pid;
@@ -247,6 +146,82 @@ Index: qga/commands-posix.c
 +        close(datafd[1]);
 +    }
 +}
++#else /* __OpenBSD__ */
++void qmp_guest_set_user_password(const char *username,
++                                 const char *password,
++                                 bool crypted,
++                                 Error **errp)
++{
+     error_setg(errp, QERR_UNSUPPORTED);
+ }
+ #endif /* __linux__ || __FreeBSD__ */
+@@ -2750,7 +2866,7 @@ GuestCpuStatsList *qmp_guest_get_cpustats(Error **errp
+     return head;
+ }
+ 
+-#else /* defined(__linux__) */
++#elif defined(CONFIG_BSD)
+ 
+ void qmp_guest_suspend_disk(Error **errp)
+ {
+@@ -2769,10 +2885,103 @@ void qmp_guest_suspend_hybrid(Error **errp)
+ 
+ GuestLogicalProcessorList *qmp_guest_get_vcpus(Error **errp)
+ {
++    int64_t current;
++    GuestLogicalProcessorList *head, **link;
++    long sc_max;
++    Error *local_err = NULL;
++    int Query[2];
++    int NumCpu = 0;
++    size_t Length = sizeof(NumCpu);
++
++    Query[0] = CTL_HW;
++#ifdef HW_NCPUONLINE
++    Query[1] = HW_NCPUONLINE;
++#else
++    Query[1] = HW_NCPU;
++#endif
++
++    current = 0;
++    head = NULL;
++    link = &head;
++    if (sysctl(Query, 2, &NumCpu, &Length, NULL, 0) == -1) {
++        error_setg(errp, "sysctl get CTL_HW.HW_NCPU failed");
++    }
++    sc_max = NumCpu;
++
++    while (local_err == NULL && current < sc_max) {
++        GuestLogicalProcessor *vcpu;
++        GuestLogicalProcessorList *entry;
++        int64_t id = current++;
++        vcpu = g_malloc0(sizeof *vcpu);
++        vcpu->logical_id = id;
++        vcpu->has_can_offline = false; /* lolspeak ftw */
++        vcpu->online = true;
++        vcpu->can_offline = false;
++        entry = g_malloc0(sizeof *entry);
++        entry->value = vcpu;
++        *link = entry;
++        link = &entry->next;
++    }
++
++    if (local_err == NULL) {
++        /* there's no guest with zero VCPUs */
++        g_assert(head != NULL);
++        return head;
++    }
++
++    qapi_free_GuestLogicalProcessorList(head);
++    error_propagate(errp, local_err);
++    return NULL;
++}
++
++int64_t qmp_guest_set_vcpus(GuestLogicalProcessorList *vcpus, Error **errp)
++{
+     error_setg(errp, QERR_UNSUPPORTED);
++    return -1;
++}
 +
 +GuestMemoryBlockList *qmp_guest_get_memory_blocks(Error **errp)
 +{
@@ -293,51 +268,25 @@ Index: qga/commands-posix.c
  int64_t qmp_guest_set_vcpus(GuestLogicalProcessorList *vcpus, Error **errp)
  {
      error_setg(errp, QERR_UNSUPPORTED);
-@@ -3144,9 +3360,11 @@ GuestNetworkInterfaceList *qmp_guest_network_get_inter
-         GuestNetworkInterfaceStat *interface_stat = NULL;
-         char addr4[INET_ADDRSTRLEN];
-         char addr6[INET6_ADDRSTRLEN];
-+#ifndef __OpenBSD__
-         int sock;
-         struct ifreq ifr;
-         unsigned char *mac_addr;
-+#endif
-         void *p;
+@@ -2881,7 +3090,7 @@ static int guest_get_network_stats(const char *name,
+     return -1;
+ }
  
-         g_debug("Processing %s interface", ifa->ifa_name);
-@@ -3162,6 +3380,23 @@ GuestNetworkInterfaceList *qmp_guest_network_get_inter
+-#ifndef __FreeBSD__
++#ifndef CONFIG_BSD
+ /*
+  * Fill "buf" with MAC address by ifaddrs. Pointer buf must point to a
+  * buffer with ETHER_ADDR_LEN length at least.
+@@ -2930,7 +3139,7 @@ bool guest_get_hw_addr(struct ifaddrs *ifa, unsigned c
+     close(sock);
+     return true;
+ }
+-#endif /* __FreeBSD__ */
++#endif /* CONFIG_BSD */
  
-         if (!info->has_hardware_address) {
-             /* we haven't obtained HW address yet */
-+#ifdef __OpenBSD__
-+            if (ifa->ifa_addr != NULL &&
-+                ifa->ifa_addr->sa_family == AF_LINK) {
-+                struct sockaddr_dl *sdl =
-+                                (struct sockaddr_dl *)ifa->ifa_addr;
-+
-+                if (sdl->sdl_alen == ETHER_ADDR_LEN &&
-+                    (sdl->sdl_type == IFT_ETHER ||
-+                    sdl->sdl_type == IFT_CARP)) {
-+                        info->hardware_address =
-+                            g_strdup_printf("%s",
-+                                            ether_ntoa((struct ether_addr *)LLADDR(sdl)));
-+
-+                        info->has_hardware_address = true;
-+                }
-+            }
-+#else
-             sock = socket(PF_INET, SOCK_STREAM, 0);
-             if (sock == -1) {
-                 error_setg_errno(errp, errno, "failed to create socket");
-@@ -3200,6 +3435,7 @@ GuestNetworkInterfaceList *qmp_guest_network_get_inter
-                 info->has_hardware_address = true;
-             }
-             close(sock);
-+#endif
-         }
- 
-         if (ifa->ifa_addr &&
-@@ -3291,11 +3527,245 @@ GuestNetworkInterfaceList *qmp_guest_network_get_inter
+ /*
+  * Build information about guest interfaces
+@@ -3070,11 +3279,245 @@ GuestNetworkInterfaceList *qmp_guest_network_get_inter
  
  #if !defined(CONFIG_FSFREEZE)
  
@@ -583,7 +532,7 @@ Index: qga/commands-posix.c
  
  GuestFsfreezeStatus qmp_guest_fsfreeze_status(Error **errp)
  {
-@@ -3361,12 +3831,21 @@ GList *ga_command_blacklist_init(GList *blacklist)
+@@ -3140,12 +3583,21 @@ GList *ga_command_init_blockedrpcs(GList *blockedrpcs)
  {
  #if !defined(__linux__)
      {
@@ -605,7 +554,7 @@ Index: qga/commands-posix.c
          char **p = (char **)list;
  
          while (*p) {
-@@ -3382,11 +3861,19 @@ GList *ga_command_blacklist_init(GList *blacklist)
+@@ -3161,11 +3613,19 @@ GList *ga_command_init_blockedrpcs(GList *blockedrpcs)
  
  #if !defined(CONFIG_FSFREEZE)
      {
