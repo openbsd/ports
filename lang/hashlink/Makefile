@@ -3,9 +3,11 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	virtual machine for Haxe
 
+DISTNAME =	hashlink-1.12pl0
 GH_ACCOUNT =	HaxeFoundation
 GH_PROJECT =	hashlink
-GH_TAGNAME =	1.12
+# checkout from 2023-01-03
+GH_COMMIT =	76ca98fee1ace39a3e5843724c226ee809d5928e
 
 SHARED_LIBS =	hl	1.0	# 1.12
 
@@ -16,7 +18,7 @@ MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += SDL2 c m mbedcrypto mbedtls mbedx509 openal png pthread
+WANTLIB += GL SDL2 c m mbedcrypto mbedtls mbedx509 openal png pthread
 WANTLIB += sqlite3 turbojpeg uv vorbisfile z
 
 # C11
@@ -39,6 +41,8 @@ FIX_CRLF_FILES = libs/uv/uv.c \
 		src/hl.h \
 		src/std/socket.c \
 		src/std/thread.c
+
+NO_TEST =	Yes
 
 post-extract:
 	rm -rf ${WRKSRC}/include/{fmt,turbojpeg}

@@ -3,7 +3,7 @@ work around not having uchar.h
 Index: src/hl.h
 --- src/hl.h.orig
 +++ src/hl.h
-@@ -234,7 +234,7 @@ typedef uint16_t uchar;
+@@ -246,7 +246,7 @@ typedef uint16_t uchar;
  #	define USTR(str)	u##str
  #else
  #	include <stdarg.h>

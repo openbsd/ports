@@ -1,9 +1,10 @@
 enable hl_thread_id for OpenBSD using getthrid(2)
+pthread_setname_np -> pthread_set_name_np
 
 Index: src/std/thread.c
 --- src/std/thread.c.orig
 +++ src/std/thread.c
-@@ -772,6 +772,8 @@ HL_PRIM int hl_thread_id() {
+@@ -809,6 +809,8 @@ HL_PRIM int hl_thread_id() {
  	uint64_t tid64;
  	pthread_threadid_np(NULL, &tid64);
  	return (pid_t)tid64;
@@ -12,3 +13,12 @@ Index: src/std/thread.c
  #elif defined(SYS_gettid) && !defined(HL_TVOS)
  	return syscall(SYS_gettid);
  #else
+@@ -940,7 +942,7 @@ HL_PRIM void hl_thread_set_name( hl_thread *t, const c
+ #elif defined(HL_MAC)
+ 	// pthread_setname_np only possible for current thread
+ #else
+-	pthread_setname_np((pthread_t)t,name);
++	pthread_set_name_np((pthread_t)t,name);
+ #endif
+ #ifdef HL_THREADS
+ 	hl_threads_info *threads = hl_gc_threads_info();

@@ -31,8 +31,8 @@ Index: Makefile
 +LIBEXT = so.${LIBhl_VERSION}
  LIBTURBOJPEG = -lturbojpeg
  
- PCRE_INCLUDE = -I include/pcre
-@@ -96,16 +94,9 @@ LIB += ${HL_DEBUG}
+ PCRE_FLAGS = -I include/pcre
+@@ -105,16 +103,9 @@ LIB += ${HL_DEBUG}
  else
  
  # Linux
@@ -48,17 +48,17 @@ Index: Makefile
 -endif
 -
  LIBOPENAL = -lopenal
+ LIBOPENGL = -lGL
  RELEASE_NAME = linux
- 
-@@ -123,7 +114,6 @@ endif
+@@ -133,7 +124,6 @@ endif
  all: libhl hl libs
  
  install:
--	$(UNAME)==Darwin && make uninstall
+-	$(UNAME)==Darwin && ${MAKE} uninstall
  	mkdir -p $(INSTALL_BIN_DIR)
  	cp hl $(INSTALL_BIN_DIR)
  	mkdir -p $(INSTALL_LIB_DIR)
-@@ -139,46 +129,46 @@ uninstall:
+@@ -149,46 +139,46 @@ uninstall:
  libs: $(LIBS)
  
  ./include/pcre/%.o: include/pcre/%.c
@@ -118,8 +118,8 @@ Index: Makefile
 +	${CC} $(CFLAGS) -shared -o sqlite.hdll ${SQLITE} ${LIBFLAGS} -L. -lhl -lsqlite3
  
  mesa:
- 	(cd libs/mesa && make)
-@@ -241,7 +231,7 @@ codesign_osx:
+ 	(cd libs/mesa && ${MAKE})
+@@ -249,7 +239,7 @@ codesign_osx:
  .SUFFIXES : .c .o
  
  .c.o :
