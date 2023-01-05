@@ -3,6 +3,7 @@ COMMENT =		the missing terminal file browser for X
 V =			4.7
 DISTNAME =		nnn-v${V}
 PKGNAME =		nnn-${V}
+REVISION =		0
 
 CATEGORIES =		sysutils
 
@@ -26,6 +27,13 @@ RUN_DEPENDS =		textproc/gsed
 MAKE_FLAGS =		CFLAGS_OPTIMIZATION=
 FAKE_FLAGS =		MANPREFIX="$(PREFIX)/man" \
 			PREFIX="${PREFIX}"
+
+FLAVORS =		nerd
+FLAVOR ?=
+
+.if ${FLAVOR:Mnerd}
+MAKE_FLAGS +=		O_NERD=1
+.endif
 
 USE_GMAKE =		Yes
 NO_TEST =		Yes

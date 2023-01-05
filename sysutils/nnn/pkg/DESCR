@@ -18,3 +18,8 @@ Cool things you can do with nnn:
 - pin a directory you may need to revisit and jump to it anytime
 - lock the current terminal after a specified idle time
 - change directory on exit
+
+Flavor: nerd
+    build with support for Nerd Fonts, requires a terminal emulator
+    configured to use a font from one of the *-nerd-fonts packages,
+    e.g. noto-nerd-fonts or others.
