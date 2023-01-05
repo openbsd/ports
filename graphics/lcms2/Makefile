@@ -1,10 +1,10 @@
 COMMENT =		color management library
 
-DISTNAME =		lcms2-2.12
+DISTNAME =		lcms2-2.14
 CATEGORIES =		graphics
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=lcms/}
 
-SHARED_LIBS +=  lcms2                1.4      # 2.12
+SHARED_LIBS +=  lcms2                1.5      # 2.14
 
 HOMEPAGE =		https://www.littlecms.com/
 
