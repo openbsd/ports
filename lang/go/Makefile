@@ -9,7 +9,7 @@ VERSION =		1.19.4
 DISTNAME =		go${VERSION}.src
 PKGNAME =		go-${VERSION}
 PKGSPEC =		${FULLPKGNAME:S/go-/go-=/}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		lang
 

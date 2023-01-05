@@ -22,3 +22,11 @@ Index: src/cmd/link/internal/ld/lib.go
  	GenSymsLate func(*Link, *loader.Loader)
  
  	// TLSIEtoLE converts a TLS Initial Executable relocation to
+@@ -1339,6 +1342,7 @@ func (ctxt *Link) hostlink() {
+ 		}
+ 	case objabi.Hopenbsd:
+ 		argv = append(argv, "-Wl,-nopie")
++		argv = append(argv, "-Wl,--no-execute-only")
+ 		argv = append(argv, "-pthread")
+ 	case objabi.Hwindows:
+ 		if windowsgui {
