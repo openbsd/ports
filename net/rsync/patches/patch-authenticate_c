@@ -1,12 +1,12 @@
 Index: authenticate.c
 --- authenticate.c.orig
 +++ authenticate.c
-@@ -349,7 +349,7 @@ void auth_client(int fd, const char *user, const char 
+@@ -351,7 +351,7 @@ void auth_client(int fd, const char *user, const char 
  	char pass2[MAX_DIGEST_LEN*2];
  
  	if (!user || !*user)
 -		user = "nobody";
 +		user = "_rsync";
+ 	negotiate_daemon_auth(-1, 1);
  
  	if (!(pass = getpassf(password_file))
- 	 && !(pass = getenv("RSYNC_PASSWORD"))) {

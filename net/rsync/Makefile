@@ -1,13 +1,6 @@
 COMMENT =	mirroring/synchronization over low bandwidth links
 
-DISTNAME =	rsync-3.2.5
-
-# distfile was rerolled under the same name; remove PKGNAME/DISTFILES
-# when updating
-PKGNAME =	rsync-3.2.5pl0
-DISTFILES =	rsync-3.2.5pl0{rsync-3.2.5}${EXTRACT_SUFX}
-REVISION =	0
-
+DISTNAME =	rsync-3.2.7
 CATEGORIES =	net
 HOMEPAGE =	https://rsync.samba.org/
 
