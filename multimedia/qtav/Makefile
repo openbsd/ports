@@ -3,7 +3,7 @@ COMMENT =	FFmpeg-based Qt multimedia framework
 GH_ACCOUNT =	wang-bin
 GH_PROJECT =	QtAV
 GH_TAGNAME =	v1.12.0
-REVISION =	9
+REVISION =	10
 
 PKGNAME =	${DISTNAME:L}
 
