@@ -13,7 +13,7 @@ HOMEPAGE =		https://libtorrent.org/
 # BSD3
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} boost_python${MODPY_VERSION:C/\.//g}
+WANTLIB += ${COMPILER_LIBCXX} boost_python${MODPY_MAJORMINOR}
 WANTLIB += boost_system boost_system-mt crypto iconv m ssl
 
 MASTER_SITES =		https://github.com/arvidn/libtorrent/releases/download/v${MODPY_EGG_VERSION}/
@@ -36,7 +36,7 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--enable-python-binding \
 			--enable-tests \
 			--with-boost-system=boost_system-mt \
-			--with-boost-python=boost_python${MODPY_VERSION:C/\.//g}-mt \
+			--with-boost-python=boost_python${MODPY_MAJORMINOR}-mt \
 			--with-libiconv
 
 # https://github.com/arvidn/libtorrent/issues/6468
