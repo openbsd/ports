@@ -11,7 +11,7 @@ MODGO_MODULES =	\
 	cloud.google.com/go/storage				 v1.14.0 \
 	contrib.go.opencensus.io/exporter/stackdriver		 v0.13.4 \
 	dmitri.shuralyov.com/gpu/mtl				 v0.0.0-20190408044501-666a987793e9 \
-	git.sr.ht/~rockorager/tcell-term			 v0.3.0 \
+	git.sr.ht/~rockorager/tcell-term			 v0.4.0 \
 	git.sr.ht/~sircmpwn/getopt				 v1.0.0 \
 	github.com/!antonboom/errname				 v0.1.7 \
 	github.com/!antonboom/nilnil				 v0.1.1 \
@@ -105,7 +105,7 @@ MODGO_MODULES =	\
 	github.com/fsnotify/fsnotify				 v1.5.4 \
 	github.com/fullstorydev/grpcurl				 v1.6.0 \
 	github.com/fzipp/gocyclo				 v0.6.0 \
-	github.com/gatherstars-com/jwz				 v1.3.0 \
+	github.com/gatherstars-com/jwz				 v1.3.2-0.20221104050604-3da8c59aef0a \
 	github.com/gdamore/encoding				 v1.0.0 \
 	github.com/gdamore/tcell/v2				 v2.5.3 \
 	github.com/ghodss/yaml					 v1.0.0 \

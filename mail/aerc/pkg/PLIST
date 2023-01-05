@@ -1,6 +1,8 @@
 @bin bin/aerc
 @man man/man1/aerc-search.1
 @man man/man1/aerc.1
+@man man/man5/aerc-accounts.5
+@man man/man5/aerc-binds.5
 @man man/man5/aerc-config.5
 @man man/man5/aerc-imap.5
 @man man/man5/aerc-maildir.5
@@ -22,8 +24,13 @@ share/aerc/filters/html
 share/aerc/filters/html-unsafe
 share/aerc/filters/plaintext
 share/aerc/filters/show-ics-details.py
+@bin share/aerc/filters/wrap
 share/aerc/stylesets/
+share/aerc/stylesets/blue
 share/aerc/stylesets/default
+share/aerc/stylesets/dracula
+share/aerc/stylesets/nord
+share/aerc/stylesets/pink
 share/aerc/templates/
 share/aerc/templates/forward_as_body
 share/aerc/templates/new_message
