@@ -221,6 +221,7 @@
      SUBDIR += ncdu
      SUBDIR += neofetch
      SUBDIR += nnn
+     SUBDIR += nnn,nerd
      SUBDIR += node_exporter
      SUBDIR += noice
      SUBDIR += nomad
