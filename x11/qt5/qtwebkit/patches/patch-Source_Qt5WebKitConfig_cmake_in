@@ -1,8 +1,7 @@
-Index: Source/Qt5WebKitConfig.cmake.in
-
 Fix build of ports using cmake/QtWebKit with cmake >= 3.23. Borrowed from
 http://cvsweb.netbsd.org/bsdweb.cgi/pkgsrc/x11/qt5-qtwebkit/patches/patch-Source_Qt5WebKitConfig.cmake.in?rev=1.1&content-type=text/x-cvsweb-markup&only_with_tag=MAIN
 
+Index: Source/Qt5WebKitConfig.cmake.in
 --- Source/Qt5WebKitConfig.cmake.in.orig
 +++ Source/Qt5WebKitConfig.cmake.in
 @@ -4,6 +4,10 @@

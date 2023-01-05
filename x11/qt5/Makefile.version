@@ -1,9 +1,9 @@
 # Common source for Qt5 version
 
 # DO NOT FORGET TO BUMP multimedia/qtav
-QT5_VERSION =		5.15.7
+QT5_VERSION =		5.15.8
 QT5_WEBENGINE_VERSION =		5.15.2
-QT5_DIST_VERSION =	5.15.7
+QT5_DIST_VERSION =	5.15.8
 
 # This one is used for building dependencies for examples and documentation,
 # which obviously should be in sync with core packages.
