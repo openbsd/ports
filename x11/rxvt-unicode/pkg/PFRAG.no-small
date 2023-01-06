@@ -3,6 +3,7 @@ lib/urxvt/perl/
 lib/urxvt/perl/background
 lib/urxvt/perl/bell-command
 lib/urxvt/perl/block-graphics-to-ascii
+lib/urxvt/perl/clickthrough
 lib/urxvt/perl/clipboard-osc
 lib/urxvt/perl/confirm-paste
 lib/urxvt/perl/digital-clock
@@ -28,6 +29,7 @@ lib/urxvt/urxvt.pm
 @man man/man1/urxvt-background.1
 @man man/man1/urxvt-bell-command.1
 @man man/man1/urxvt-block-graphics-to-ascii.1
+@man man/man1/urxvt-clickthrough.1
 @man man/man1/urxvt-clipboard-osc.1
 @man man/man1/urxvt-confirm-paste.1
 @man man/man1/urxvt-digital-clock.1
