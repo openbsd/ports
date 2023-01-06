@@ -2,7 +2,7 @@ ONLY_FOR_ARCHS =	aarch64
 
 COMMENT =	Arm compute library
 
-V = 		22.08
+V = 		22.11
 PKGNAME =	arm-compute-library-${V}
 
 GH_ACCOUNT =	ARM-software
@@ -17,7 +17,7 @@ MAINTAINER = 	Kevin Lo <kevlo@openbsd.org>
 
 CORE_SO_V =	2.0
 GRAPH_SO_V =	2.1
-COMPUTE_SO_V =	3.1
+COMPUTE_SO_V =	3.2
 
 SHARED_LIBS +=	arm_compute ${COMPUTE_SO_V}
 SHARED_LIBS +=	arm_compute_core ${CORE_SO_V}
@@ -32,7 +32,7 @@ COMPILER =	base-clang ports-gcc
 
 # "build=native" here just means "not cross-compiled"
 MODSCONS_FLAGS =	Werror=0 neon=1 opencl=0 embed_kernels=0 examples=0 \
-			os=openbsd arch=arm64-v8a build=native
+			os=openbsd arch=armv8a build=native
 
 MODULES =	devel/scons
 

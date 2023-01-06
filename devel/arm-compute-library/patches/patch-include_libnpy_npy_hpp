@@ -1,0 +1,12 @@
+Index: include/libnpy/npy.hpp
+--- include/libnpy/npy.hpp.orig
++++ include/libnpy/npy.hpp
+@@ -103,7 +103,7 @@ struct Typestring {
+     inline std::string str() {
+       const size_t max_buflen = 16;
+       char buf[max_buflen];
+-      std::sprintf(buf, "%c%c%u", c_endian, c_type, len);
++      std::snprintf(buf, sizeof(buf), "%c%c%u", c_endian, c_type, len);
+       return std::string(buf);
+     }
+ 

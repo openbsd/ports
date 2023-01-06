@@ -1,7 +1,7 @@
 Index: SConstruct
 --- SConstruct.orig
 +++ SConstruct
-@@ -244,17 +244,8 @@ c_compiler = os.environ.get('CC', default_c_compiler)
+@@ -245,17 +245,8 @@ c_compiler = os.environ.get('CC', default_c_compiler)
  if env['os'] == 'android' and ( 'clang++' not in cpp_compiler or 'clang' not in c_compiler ):
      print( "WARNING: Only clang is officially supported to build the Compute Library for Android")
  
@@ -20,7 +20,7 @@ Index: SConstruct
  if env['cppthreads']:
      env.Append(CPPDEFINES = [('ARM_COMPUTE_CPP_SCHEDULER', 1)])
  
-@@ -406,25 +397,6 @@ if not GetOption("help"):
+@@ -407,25 +398,6 @@ if not GetOption("help"):
      except OSError:
          print("ERROR: Compiler '%s' not found" % env['CXX'])
          Exit(1)
