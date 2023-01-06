@@ -242,6 +242,7 @@
      SUBDIR += pecl-mcrypt,php74
      SUBDIR += pecl-mcrypt,php80
      SUBDIR += pecl-mcrypt,php81
+     SUBDIR += pecl-mcrypt,php82
      SUBDIR += pgp5
      SUBDIR += pgpdump
      SUBDIR += pidgin-otr

@@ -132,6 +132,7 @@
      SUBDIR += pecl-redis,php74
      SUBDIR += pecl-redis,php80
      SUBDIR += pecl-redis,php81
+     SUBDIR += pecl-redis,php82
      SUBDIR += percona-toolkit
      SUBDIR += pg-toolbox
      SUBDIR += pg_sqlite_fdw

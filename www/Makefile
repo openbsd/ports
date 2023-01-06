@@ -385,11 +385,13 @@
      SUBDIR += pecl-memcached,php74
      SUBDIR += pecl-memcached,php80
      SUBDIR += pecl-memcached,php81
+     SUBDIR += pecl-memcached,php82
      SUBDIR += pecl-pecl_http,php74
 #    SUBDIR += pecl-pecl_http,php80 not yet, and not until pecl-propro has php80
      SUBDIR += pecl-pledge,php74
      SUBDIR += pecl-pledge,php80
      SUBDIR += pecl-pledge,php81
+     SUBDIR += pecl-pledge,php82
      SUBDIR += pecl-proctitle,php74
 #    SUBDIR += pecl-proctitle,php80 not yet
      SUBDIR += pecl-propro,php74
@@ -397,9 +399,11 @@
      SUBDIR += pecl-raphf,php74
      SUBDIR += pecl-raphf,php80
      SUBDIR += pecl-raphf,php81
+     SUBDIR += pecl-raphf,php82
      SUBDIR += pecl-ssh2,php74
      SUBDIR += pecl-ssh2,php80
      SUBDIR += pecl-ssh2,php81
+     SUBDIR += pecl-ssh2,php82
      SUBDIR += pelican
      SUBDIR += perlbal
      SUBDIR += phpldapadmin
