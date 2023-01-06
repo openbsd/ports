@@ -2,7 +2,7 @@ COMMENT =	simple perl web app framework
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Dancer-1.3513
+DISTNAME =	Dancer-1.3520
 CATEGORIES =	www
 
 # perl
@@ -23,6 +23,7 @@ TEST_DEPENDS =	converters/p5-JSON>=2.90 \
 		devel/p5-Data-Dump \
 		devel/p5-Devel-Hide \
 		devel/p5-Test-CPAN-Meta \
+		devel/p5-Test-LongString \
 		devel/p5-Test-NoWarnings \
 		devel/p5-Test-Output \
 		devel/p5-YAML \
