@@ -1,8 +1,9 @@
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
 
-# careful with PLISTs if updating
-V=		9.0.0976
+# careful with PLISTs if updating; it usually works best if you use
+# a gui flavour rather than no_x11
+V=		9.0.1151
 GH_ACCOUNT=	vim
 GH_PROJECT=	vim
 GH_TAGNAME=	v$V
@@ -67,7 +68,7 @@ MAKE_FLAGS+= STRIP=:
 
 .if ${FLAVOR:Mlua}
 MODULES+=	lang/lua
-MODLUA_VERSION=	5.1
+MODLUA_VERSION=	5.3
 CONFIGURE_ENV+=	vi_cv_path_plain_lua=${MODLUA_BIN}
 CONFIGURE_ARGS+= --enable-luainterp \
 		--with-lua-prefix=${LOCALBASE}
@@ -82,11 +83,9 @@ WANTLIB+=	perl
 
 .if ${FLAVOR:Mpython3}
 MODULES+=	lang/python
-MODPY_MAJOR_VERSION = 3
 CONFIGURE_ENV+=	vi_cv_path_python3=${MODPY_BIN}
 CONFIGURE_ARGS+= --enable-python3interp=yes \
-		--enable-pythoninterp=no \
-		--with-python3-config-dir=${MODPY_LIBDIR}/config-${MODPY_VERSION}m
+		--enable-pythoninterp=no
 LIB_DEPENDS+=	${MODPY_LIB_DEPENDS}
 WANTLIB+=	${MODPY_WANTLIB}
 .endif

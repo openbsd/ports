@@ -147,6 +147,7 @@ share/vim/${P}/compiler/dartdoc.vim
 share/vim/${P}/compiler/dartfmt.vim
 share/vim/${P}/compiler/decada.vim
 share/vim/${P}/compiler/dot.vim
+share/vim/${P}/compiler/dotnet.vim
 share/vim/${P}/compiler/erlang.vim
 share/vim/${P}/compiler/eruby.vim
 share/vim/${P}/compiler/eslint.vim
@@ -231,6 +232,10 @@ share/vim/${P}/compiler/xmllint.vim
 share/vim/${P}/compiler/xmlwf.vim
 share/vim/${P}/compiler/xo.vim
 share/vim/${P}/compiler/yamllint.vim
+share/vim/${P}/compiler/zig.vim
+share/vim/${P}/compiler/zig_build.vim
+share/vim/${P}/compiler/zig_build_exe.vim
+share/vim/${P}/compiler/zig_test.vim
 share/vim/${P}/compiler/zsh.vim
 share/vim/${P}/defaults.vim
 share/vim/${P}/delmenu.vim
@@ -384,6 +389,7 @@ share/vim/${P}/doc/version9.txt
 share/vim/${P}/doc/vi_diff.txt
 share/vim/${P}/doc/vim2html.pl
 share/vim/${P}/doc/vim9.txt
+share/vim/${P}/doc/vim9class.txt
 share/vim/${P}/doc/visual.txt
 share/vim/${P}/doc/windows.txt
 share/vim/${P}/doc/workshop.txt
@@ -675,6 +681,7 @@ share/vim/${P}/ftplugin/xs.vim
 share/vim/${P}/ftplugin/xsd.vim
 share/vim/${P}/ftplugin/xslt.vim
 share/vim/${P}/ftplugin/yaml.vim
+share/vim/${P}/ftplugin/zig.vim
 share/vim/${P}/ftplugin/zimbu.vim
 share/vim/${P}/ftplugin/zsh.vim
 share/vim/${P}/ftplugof.vim
@@ -833,6 +840,7 @@ share/vim/${P}/indent/xsd.vim
 share/vim/${P}/indent/xslt.vim
 share/vim/${P}/indent/yacc.vim
 share/vim/${P}/indent/yaml.vim
+share/vim/${P}/indent/zig.vim
 share/vim/${P}/indent/zimbu.vim
 share/vim/${P}/indent/zsh.vim
 share/vim/${P}/indoff.vim
@@ -1433,6 +1441,7 @@ share/vim/${P}/syntax/netrc.vim
 share/vim/${P}/syntax/netrw.vim
 share/vim/${P}/syntax/nginx.vim
 share/vim/${P}/syntax/ninja.vim
+share/vim/${P}/syntax/nix.vim
 share/vim/${P}/syntax/nosyntax.vim
 share/vim/${P}/syntax/nqc.vim
 share/vim/${P}/syntax/nroff.vim
@@ -1566,6 +1575,7 @@ share/vim/${P}/syntax/shared/context-data-context.vim
 share/vim/${P}/syntax/shared/context-data-interfaces.vim
 share/vim/${P}/syntax/shared/context-data-metafun.vim
 share/vim/${P}/syntax/shared/context-data-tex.vim
+share/vim/${P}/syntax/shared/hgcommitDiff.vim
 share/vim/${P}/syntax/shared/typescriptcommon.vim
 share/vim/${P}/syntax/sicad.vim
 share/vim/${P}/syntax/sieve.vim
@@ -1702,6 +1712,7 @@ share/vim/${P}/syntax/vsejcl.vim
 share/vim/${P}/syntax/vue.vim
 share/vim/${P}/syntax/wast.vim
 share/vim/${P}/syntax/wdiff.vim
+share/vim/${P}/syntax/wdl.vim
 share/vim/${P}/syntax/web.vim
 share/vim/${P}/syntax/webmacro.vim
 share/vim/${P}/syntax/wget.vim
@@ -1731,7 +1742,9 @@ share/vim/${P}/syntax/xxd.vim
 share/vim/${P}/syntax/yacc.vim
 share/vim/${P}/syntax/yaml.vim
 share/vim/${P}/syntax/z8a.vim
+share/vim/${P}/syntax/zig.vim
 share/vim/${P}/syntax/zimbu.vim
+share/vim/${P}/syntax/zir.vim
 share/vim/${P}/syntax/zsh.vim
 share/vim/${P}/tools/
 share/vim/${P}/tools/README.txt

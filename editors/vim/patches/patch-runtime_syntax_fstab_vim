@@ -1,12 +1,26 @@
+recognise wxallowed as a keyword
+
+don't highlight device-node errors, the fsDeviceError regex trips on
+our duid format in /etc/fstab
+
 Index: runtime/syntax/fstab.vim
 --- runtime/syntax/fstab.vim.orig
 +++ runtime/syntax/fstab.vim
-@@ -141,7 +141,7 @@ syn match fsOptionsKeywords contained /\<\%(dir\|file\
- syn match fsOptionsKeywords contained /\<\%(session\|part\)=/ nextgroup=fsOptionsNumber
+@@ -34,7 +34,7 @@ syn match fsOperator /[,=:#]/
+ 
+ " Device
+ syn cluster fsDeviceCluster contains=fsOperator,fsDeviceKeyword,fsDeviceError
+-syn match fsDeviceError /\%([^a-zA-Z0-9_\/#@:\.-]\|^\w\{-}\ze\W\)/ contained
++"syn match fsDeviceError /\%([^a-zA-Z0-9_\/#@:\.-]\|^\w\{-}\ze\W\)/ contained
+ syn keyword fsDeviceKeyword contained none proc linproc tmpfs devpts devtmpfs sysfs usbfs
+ syn keyword fsDeviceKeyword contained LABEL nextgroup=fsDeviceLabel
+ syn keyword fsDeviceKeyword contained UUID nextgroup=fsDeviceUUID
+@@ -221,7 +221,7 @@ syn match fsOptionsKeywords contained /\<\%(prjjquota\
+ syn keyword fsOptionsKeyWords contained gc_merge nogc_merge disable_roll_forward no_heap disable_ext_identify inline_xattr noinline_xattr inline_data noinline_data inline_dentry noinline_dentry flush_merge fastboot extent_cache noextent_cache data_flush offusrjquota offgrpjquota offprjjquota test_dummy_encryption checkpoint_merge nocheckpoint_merge compress_chksum compress_cache inlinecrypt atgc
  
  " Options: ffs
 -syn keyword fsOptionsKeyWords contained noperm softdep
 +syn keyword fsOptionsKeyWords contained noperm softdep wxallowed
  
- " Options: hpfs
- syn match fsOptionsKeywords contained /\<case=/ nextgroup=fsOptionsHpfsCase
+ " Options: gfs2
+ syn match fsOptionsKeywords contained /\<\%(lockproto\|locktable\)=/ nextgroup=fsOptionsString
