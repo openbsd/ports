@@ -2,8 +2,7 @@ COMMENT=	debug and development tools for PHP
 
 GH_ACCOUNT=	xdebug
 GH_PROJECT=	xdebug
-GH_TAGNAME=	3.1.3
-REVISION=	0
+GH_TAGNAME=	3.2.0
 
 CATEGORIES=	devel
 
@@ -15,10 +14,10 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=	m z
 
 COMPILER=	base-clang ports-gcc
-
-MODULES=	lang/php/pecl
 CONFIGURE_STYLE= gnu
 
+MODULES=	lang/php/pecl
+FLAVORS=	php80 php81 php82
 MODPHP_DO_SAMPLE=
 PV=		${MODPHP_VERSION}
 MODULE_NAME=	xdebug
