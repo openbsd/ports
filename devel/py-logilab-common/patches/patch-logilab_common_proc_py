@@ -1,7 +1,8 @@
 OpenBSD doesn't support RLIMIT_AS
 
---- logilab/common/proc.py.orig	Mon Oct 12 20:39:18 2015
-+++ logilab/common/proc.py	Sun Oct 18 17:05:28 2015
+Index: logilab/common/proc.py
+--- logilab/common/proc.py.orig
++++ logilab/common/proc.py
 @@ -30,7 +30,7 @@ __docformat__ = "restructuredtext en"
  
  import os
@@ -11,21 +12,20 @@ OpenBSD doesn't support RLIMIT_AS
  from signal import signal, SIGXCPU, SIGKILL, SIGUSR2, SIGUSR1
  from threading import Timer, currentThread, Thread, Event
  from time import time
-@@ -251,10 +251,10 @@ class ResourceController:
+@@ -253,10 +253,10 @@ class ResourceController:
                  setrlimit(RLIMIT_CPU, cpu_limit)
              if self.max_memory is not None:
-                 self._msentinel = MemorySentinel(1, int(self.max_memory) )
+                 self._msentinel = MemorySentinel(1, int(self.max_memory))
 -                self._old_max_memory = getrlimit(RLIMIT_AS)
 +                self._old_max_memory = getrlimit(RLIMIT_DATA)
                  self._old_usr1_hdlr = signal(SIGUSR1, self._hangle_sig_memory)
--                as_limit = (int(self.max_memory), self._old_max_memory[1])
+                 as_limit = (int(self.max_memory), self._old_max_memory[1])
 -                setrlimit(RLIMIT_AS, as_limit)
-+                data_limit = (int(self.max_memory), self._old_max_memory[1])
-+                setrlimit(RLIMIT_DATA, data_limit)
++                setrlimit(RLIMIT_DATA, as_limit)
                  self._msentinel.start()
          self._limit_set += 1
  
-@@ -272,6 +272,6 @@ class ResourceController:
+@@ -274,6 +274,6 @@ class ResourceController:
              if self.max_memory is not None:
                  self._msentinel.stop()
                  self._msentinel = None
