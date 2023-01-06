@@ -4,7 +4,7 @@ https://git.slackware.nl/current/diff/source/n/php/php.imap.api.diff?id=4f9273af
 Index: ext/imap/php_imap.c
 --- ext/imap/php_imap.c.orig
 +++ ext/imap/php_imap.c
-@@ -4484,7 +4484,7 @@ PHP_IMAP_EXPORT void mm_dlog(char *str)
+@@ -4502,7 +4502,7 @@ PHP_IMAP_EXPORT void mm_dlog(char *str)
  	   php debugger? */
  }
  
@@ -13,7 +13,7 @@ Index: ext/imap/php_imap.c
  {
  
  	if (*mb->user) {
-@@ -4492,7 +4492,13 @@ PHP_IMAP_EXPORT void mm_login(NETMBX *mb, char *user, 
+@@ -4510,7 +4510,13 @@ PHP_IMAP_EXPORT void mm_login(NETMBX *mb, char *user, 
  	} else {
  		strlcpy (user, IMAPG(imap_user), MAILTMPLEN);
  	}

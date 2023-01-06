@@ -20,7 +20,7 @@ Index: ext/openssl/openssl.c
  #include <openssl/engine.h>
  #endif
  
-@@ -3662,7 +3662,7 @@ static int php_openssl_get_evp_pkey_type(int key_type)
+@@ -3663,7 +3663,7 @@ static int php_openssl_get_evp_pkey_type(int key_type)
  /* {{{ php_openssl_generate_private_key */
  static EVP_PKEY * php_openssl_generate_private_key(struct php_x509_request * req)
  {

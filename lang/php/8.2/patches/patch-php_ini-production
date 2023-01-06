@@ -40,7 +40,7 @@ Index: php.ini-production
  
  ; Whether to allow include/require to open URLs (like https:// or ftp://) as files.
  ; https://php.net/allow-url-include
-@@ -966,7 +964,7 @@ cli_server.color = On
+@@ -971,7 +969,7 @@ cli_server.color = On
  [Date]
  ; Defines the default timezone used by the date functions
  ; https://php.net/date.timezone
