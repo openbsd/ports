@@ -2,7 +2,7 @@
 
 MODULES +=	lang/php
 
-FLAVORS ?= php74 php80 php81
+FLAVORS ?= php74 php80 php81 php82
 FLAVOR ?= php80
 
 # MODPECL_DEFAULTV is used in PLISTs so that @pkgpath markers are only
