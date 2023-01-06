@@ -123,6 +123,19 @@ PSEUDO_FLAVORS=		${PHP_EXTENSIONS:C/-(pdo_)?mysqli?//:C/-(pcntl|shmop)//:C/-/no_
 PSEUDO_FLAVORS+=	embed
 FLAVOR ?=
 
+.if ${PV} != 7.4 && ${PV} != 8.0
+# BDEP needed as well as LIB_DEPENDS-main because -main is knocked
+# out for "embed" builds.
+# xxhash is used as a header-only library here; the file is included in
+# the PHP distribution in a subdir but /usr/local/include is ahead in the
+# -I path so that gets picked up in preference. make it explicit by
+# adding the dep.
+BUILD_DEPENDS+=		devel/capstone/main \
+			sysutils/xxhash
+LIB_DEPENDS-main+=	devel/capstone/main
+WANTLIB-main+=		capstone
+.endif
+
 # where the main php module is stored (outside the chroot)
 .if ${FLAVOR:Membed}
 MULTI_PACKAGES=	-main -embed
@@ -141,6 +154,8 @@ BUILD_PACKAGES:=	-embed
 .if ${BUILD_PACKAGES:M-apache}
 BUILD_PACKAGES := ${BUILD_PACKAGES:N-embed}
 .endif
+
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 .if ${BUILD_PACKAGES:M-main}
 CONFIGURE_ARGS+=	--enable-cli \
@@ -215,7 +230,8 @@ CONFIGURE_ARGS+=	--with-bz2=shared,${LOCALBASE}
 COMMENT-curl=		curl URL library extensions for php
 HOMEPAGE-curl=		https://www.php.net/curl
 LIB_DEPENDS-curl=	net/curl
-WANTLIB-curl=		crypto curl nghttp2 pthread ssl z
+WANTLIB-curl=		crypto curl nghttp2 nghttp3 ngtcp2 \
+			ngtcp2_crypto_openssl pthread ssl z
 .if ${BUILD_PACKAGES:M-curl}
 CONFIGURE_ARGS+=	--with-curl=shared,${LOCALBASE}
 .endif
