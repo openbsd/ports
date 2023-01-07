@@ -2,13 +2,12 @@ ONLY_FOR_ARCHS =	aarch64 amd64 i386 powerpc
 
 COMMENT =		high assurance C compiler
 
-V =			3.10
+V =			3.12
 GH_ACCOUNT =		AbsInt
 GH_PROJECT =		CompCert
 GH_TAGNAME =		v${V}
 DISTNAME =		${GH_PROJECT}-${V}
 PKGNAME =		${DISTNAME:L}
-REVISION =		1
 
 HOMEPAGE =		https://compcert.org/
 
@@ -26,6 +25,7 @@ USE_GMAKE	= Yes
 CONFIGURE_STYLE = simple
 CONFIGURE_ARGS  = -mandir ${PREFIX}/man \
 		  -libdir ${PREFIX}/lib \
+		  -sharedir ${PREFIX}/share/compcert \
 		  -toolprefix e \
 		  -no-standard-headers \
 		  ${MACHINE_ARCH}-bsd
