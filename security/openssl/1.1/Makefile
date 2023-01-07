@@ -3,7 +3,7 @@ PORTROACH=	limit:^1\.1\.[0-9][a-z] skipb:0 skipv:1.1.1
 V=		1.1.1s
 PKGSPEC=	openssl->=1.1.0v0,<1.2v0
 EPOCH=		0
-REVISION=	0
+REVISION=	1
 
 SHLIBVER=	11.6
 SHARED_LIBS=	crypto ${SHLIBVER} \
@@ -39,7 +39,7 @@ INSTALL_TARGET+=	install_man_docs
 # picked up by configure scripts without explicitly CPPFLAGS/LDFLAGS.
 # common names like lib/openssl, openssl/lib, etc, *do* get picked up.
 MAKE_FLAGS+=	CC="${CC}" \
-		LDFLAGS="${LDFLAGS}" \
+		LDFLAGS="${LDFLAGS} -Wl,--no-execute-only" \
 		LIBDIR="lib/eopenssl11" \
 		MANDIR=${PREFIX}/lib/eopenssl11/man \
 		SHLIB_VERSION_NUMBER=${SHLIBVER} \
