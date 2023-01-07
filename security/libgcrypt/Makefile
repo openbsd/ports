@@ -1,7 +1,7 @@
 COMMENT=		crypto library based on code used in GnuPG
 
 DISTNAME=		libgcrypt-1.10.1
-REVISION=		0
+REVISION=		1
 CATEGORIES=		security
 
 SHARED_LIBS +=  gcrypt               21.0     # 24.1
@@ -22,6 +22,8 @@ LIB_DEPENDS=		security/libgpg-error
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-static \
 			--disable-drng-support
+
+CONFIGURE_ENV=		LDFLAGS="${LDFLAGS} -Wl,--no-execute-only"
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
