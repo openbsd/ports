@@ -1,5 +1,6 @@
 COMMENT=	regular expressions library
 
+# bump www/h2o,mruby if updating; it pulls in the static library
 V=		6.9.8
 DISTNAME=	onig-$V
 PKGNAME=	oniguruma-$V
