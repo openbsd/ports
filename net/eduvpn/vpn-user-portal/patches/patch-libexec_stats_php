@@ -16,4 +16,4 @@ Index: libexec/stats.php
 +$baseDir = '/var/www/vpn-user-portal';
  
  use Vpn\Portal\Cfg\Config;
- use Vpn\Portal\ConnectionManager;
+ use Vpn\Portal\ConnectionHooks;

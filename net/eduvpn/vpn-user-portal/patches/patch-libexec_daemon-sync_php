@@ -16,4 +16,4 @@ Index: libexec/daemon-sync.php
 +$baseDir = '/var/www/vpn-user-portal';
  
  use Vpn\Portal\Cfg\Config;
- use Vpn\Portal\HttpClient\CurlHttpClient;
+ use Vpn\Portal\ConnectionHooks;
