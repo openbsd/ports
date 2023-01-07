@@ -648,6 +648,15 @@ lib/qt6/qml/QtQuick3D/Helpers/designer/images/dummy@2x.png
 lib/qt6/qml/QtQuick3D/Helpers/designer/images/gridgeometry.png
 lib/qt6/qml/QtQuick3D/Helpers/designer/images/gridgeometry16.png
 lib/qt6/qml/QtQuick3D/Helpers/designer/images/gridgeometry@2x.png
+lib/qt6/qml/QtQuick3D/Helpers/designer/images/heightfieldgeometry.png
+lib/qt6/qml/QtQuick3D/Helpers/designer/images/heightfieldgeometry16.png
+lib/qt6/qml/QtQuick3D/Helpers/designer/images/heightfieldgeometry@2x.png
+lib/qt6/qml/QtQuick3D/Helpers/designer/images/instancemodel.png
+lib/qt6/qml/QtQuick3D/Helpers/designer/images/instancemodel16.png
+lib/qt6/qml/QtQuick3D/Helpers/designer/images/instancemodel@2x.png
+lib/qt6/qml/QtQuick3D/Helpers/designer/images/instancerepeater.png
+lib/qt6/qml/QtQuick3D/Helpers/designer/images/instancerepeater16.png
+lib/qt6/qml/QtQuick3D/Helpers/designer/images/instancerepeater@2x.png
 lib/qt6/qml/QtQuick3D/Helpers/designer/images/lookatnode.png
 lib/qt6/qml/QtQuick3D/Helpers/designer/images/lookatnode16.png
 lib/qt6/qml/QtQuick3D/Helpers/designer/images/lookatnode@2x.png
@@ -771,6 +780,9 @@ lib/qt6/qml/QtQuick3D/Particles3D/designer/images/model-particle-24px@2x.png
 lib/qt6/qml/QtQuick3D/Particles3D/designer/images/model-shape-16px.png
 lib/qt6/qml/QtQuick3D/Particles3D/designer/images/model-shape-24px.png
 lib/qt6/qml/QtQuick3D/Particles3D/designer/images/model-shape-24px@2x.png
+lib/qt6/qml/QtQuick3D/Particles3D/designer/images/particle-custom-shape-16px.png
+lib/qt6/qml/QtQuick3D/Particles3D/designer/images/particle-custom-shape-24px.png
+lib/qt6/qml/QtQuick3D/Particles3D/designer/images/particle-custom-shape-24px@2x.png
 lib/qt6/qml/QtQuick3D/Particles3D/designer/images/particle-shape-16px.png
 lib/qt6/qml/QtQuick3D/Particles3D/designer/images/particle-shape-24px.png
 lib/qt6/qml/QtQuick3D/Particles3D/designer/images/particle-shape-24px@2x.png
@@ -897,6 +909,9 @@ lib/qt6/qml/QtQuick3D/designer/images/cone@2x.png
 lib/qt6/qml/QtQuick3D/designer/images/cube.png
 lib/qt6/qml/QtQuick3D/designer/images/cube16.png
 lib/qt6/qml/QtQuick3D/designer/images/cube@2x.png
+lib/qt6/qml/QtQuick3D/designer/images/cubemaptexture.png
+lib/qt6/qml/QtQuick3D/designer/images/cubemaptexture16.png
+lib/qt6/qml/QtQuick3D/designer/images/cubemaptexture@2x.png
 lib/qt6/qml/QtQuick3D/designer/images/custommaterial.png
 lib/qt6/qml/QtQuick3D/designer/images/custommaterial16.png
 lib/qt6/qml/QtQuick3D/designer/images/custommaterial@2x.png

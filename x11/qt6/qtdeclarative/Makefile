@@ -5,7 +5,7 @@ QT6NAME =	QtDeclarative
 COMMENT =	Qt6 Quick and QML components
 PKGSPEC =	qt6-qtdeclarative-${QT6_PKGSPEC}
 
-SHARED_LIBS =   Qt6Qml                    2.0 # 6.4
+SHARED_LIBS =   Qt6Qml                    2.1 # 6.4
 SHARED_LIBS +=  Qt6Quick                  2.0 # 6.4
 SHARED_LIBS +=  Qt6QuickParticles         0.1 # 6.4
 SHARED_LIBS +=  Qt6QuickTest              0.2 # 6.4
