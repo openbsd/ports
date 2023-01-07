@@ -91,6 +91,8 @@
      SUBDIR += lighttpd,ldap
      SUBDIR += lighttpd,ldap,mysql
      SUBDIR += lighttpd,mysql
+     SUBDIR += lighttpd,ldap,pgsql
+     SUBDIR += lighttpd,pgsql
      SUBDIR += linkchecker
      SUBDIR += links
      SUBDIR += links+
