@@ -1,0 +1,63 @@
+- [cmake] remove -I/usr/include/mysql for mysql.h (#3181)
+  6ea696d1113e38ac2639074ba50b72e6a0180959
+- [cmake] add -DWITH_LUA_VERSION= to specify lua ver (#3181)
+  84b4ccf89bdfa5817f1ec6328550cc7e3f52cbac
+- [cmake] use mysql_config cflags and ldflags (#3181)
+  cc0bb8aa00c321d86a75a7f8138b4f783bac1bf3
+
+Index: src/CMakeLists.txt
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -37,6 +37,7 @@ option(WITH_KRB5 "with Kerberos5-support for mod_auth 
+ option(WITH_LDAP "with LDAP-support for mod_auth mod_vhostdb_ldap [default: off]")
+ option(WITH_PAM "with PAM-support for mod_auth [default: off]")
+ option(WITH_LUA "with lua for mod_magnet [default: off]")
++option(WITH_LUA_VERSION "specify lua version for mod_magnet")
+ # option(WITH_VALGRIND "with internal support for valgrind [default: off]")
+ option(WITH_FAM "fam/gamin for reducing number of stat() calls [default: off]")
+ option(WITH_LIBDEFLATE "with libdeflate-support for mod_deflate [default: off]")
+@@ -333,15 +334,10 @@ endif()
+ 
+ if(WITH_MYSQL)
+ 	xconfig(mysql_config MYSQL_LDFLAGS MYSQL_CFLAGS)
+-
+-	set(CMAKE_REQUIRED_INCLUDES /usr/include/mysql)
+-	check_include_files(mysql.h HAVE_MYSQL_H)
+-	set(CMAKE_REQUIRED_INCLUDES)
+-	if(HAVE_MYSQL_H)
+-		check_library_exists(mysqlclient mysql_real_connect "" HAVE_MYSQL)
++	if(MYSQL_LDFLAGS)
++		set(HAVE_MYSQL TRUE)
+ 	endif()
+ else()
+-	unset(HAVE_MYSQL_H)
+ 	unset(HAVE_MYSQL)
+ endif()
+ 
+@@ -764,7 +760,11 @@ else()
+ endif()
+ 
+ if(WITH_LUA)
+-	pkg_search_module(LUA REQUIRED lua5.4 lua-5.4 lua5.3 lua-5.3 lua5.2 lua-5.2 lua5.1 lua-5.1 lua)
++       if(WITH_LUA_VERSION)
++               pkg_search_module(LUA REQUIRED ${WITH_LUA_VERSION})
++       else()
++               pkg_search_module(LUA REQUIRED lua5.4 lua-5.4 lua5.3 lua-5.3 lua5.2 lua-5.2 lua5.1 lua-5.1 lua)
++       endif()
+ 	message(STATUS "found lua at: INCDIR: ${LUA_INCLUDE_DIRS} LIBDIR: ${LUA_LIBRARY_DIRS} LDFLAGS: ${LUA_LDFLAGS} CFLAGS: ${LUA_CFLAGS}")
+ 	set(HAVE_LUA_H  1 "Have liblua header")
+ else()
+@@ -1003,10 +1003,10 @@ if(WITH_MAXMINDDB)
+ 	target_link_libraries(mod_maxminddb maxminddb)
+ endif()
+ 
+-if(HAVE_MYSQL_H AND HAVE_MYSQL)
++if(HAVE_MYSQL)
+ 	add_and_install_library(mod_vhostdb_mysql "mod_vhostdb_mysql.c")
+-	target_link_libraries(mod_vhostdb_mysql mysqlclient)
+-	include_directories(/usr/include/mysql)
++	target_link_libraries(mod_vhostdb_mysql ${MYSQL_LDFLAGS})
++	add_target_properties(mod_vhostdb_mysql COMPILE_FLAGS ${MYSQL_CFLAGS})
+ endif()
+ 
+ if(HAVE_PGSQL)

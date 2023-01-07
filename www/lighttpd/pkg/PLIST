@@ -11,7 +11,6 @@ lib/lighttpd/
 @so lib/lighttpd/mod_cgi.so
 @so lib/lighttpd/mod_deflate.so
 @so lib/lighttpd/mod_dirlisting.so
-@so lib/lighttpd/mod_evasive.so
 @so lib/lighttpd/mod_evhost.so
 @so lib/lighttpd/mod_expire.so
 @so lib/lighttpd/mod_extforward.so
@@ -24,21 +23,19 @@ lib/lighttpd/
 @so lib/lighttpd/mod_rewrite.so
 @so lib/lighttpd/mod_rrdtool.so
 @so lib/lighttpd/mod_scgi.so
-@so lib/lighttpd/mod_secdownload.so
 @so lib/lighttpd/mod_setenv.so
 @so lib/lighttpd/mod_simple_vhost.so
 @so lib/lighttpd/mod_sockproxy.so
 @so lib/lighttpd/mod_ssi.so
 @so lib/lighttpd/mod_staticfile.so
 @so lib/lighttpd/mod_status.so
-@so lib/lighttpd/mod_uploadprogress.so
 @so lib/lighttpd/mod_userdir.so
-@so lib/lighttpd/mod_usertrack.so
 @so lib/lighttpd/mod_vhostdb.so
 @so lib/lighttpd/mod_webdav.so
 @so lib/lighttpd/mod_wstunnel.so
 %%ldap%%
 %%mysql%%
+%%pgsql%%
 @man man/man8/lighttpd-angel.8
 @man man/man8/lighttpd.8
 @bin sbin/lighttpd

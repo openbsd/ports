@@ -1,10 +1,9 @@
 COMMENT=	secure, fast, compliant, and very flexible web-server
 
-DISTNAME=	lighttpd-1.4.67
+DISTNAME=	lighttpd-1.4.68
 CATEGORIES=	www net
 MASTER_SITES=	https://download.lighttpd.net/lighttpd/releases-1.4.x/
 EXTRACT_SUFX=	.tar.xz
-REVISION=	0
 
 HOMEPAGE=	https://www.lighttpd.net/
 
@@ -15,41 +14,43 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c crypto m pcre2-8 ssl z ${MODLUA_WANTLIB}
 
-COMPILER=	base-clang ports-gcc base-gcc
+COMPILER=	base-clang ports-gcc
 
-MODULES=	lang/lua
+MODULES=	devel/cmake \
+		lang/lua
 MODLUA_SA=	Yes
 
 LIB_DEPENDS+=	devel/pcre2 \
 		${MODLUA_LIB_DEPENDS}
 RUN_DEPENDS+=	www/spawn-fcgi
 
-LIBTOOL_FLAGS=	--tag=disable-static
-CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= --libdir="${PREFIX}/lib/lighttpd" \
-		 --with-lua \
-		 --with-openssl
-CONFIGURE_ENV+=	CC_FOR_BUILD="${CC}" \
-		CFLAGS_FOR_BUILD="${CFLAGS}" \
-		CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		LUA_CFLAGS="`pkg-config --cflags ${MODLUA_DEP}`" \
-		LUA_LIBS="`pkg-config --libs ${MODLUA_DEP}`"
+CONFIGURE_ARGS+=-DWITH_LUA=ON \
+		-DWITH_LUA_VERSION=${MODLUA_DEP} \
+		-DWITH_OPENSSL=ON
 
-FLAVORS=	ldap mysql
+FLAVORS=	ldap mysql pgsql
 FLAVOR?=
 
 .if ${FLAVOR:Mldap}
-CONFIGURE_ARGS+= --with-ldap
+CONFIGURE_ARGS+= -DWITH_LDAP=ON
 LIB_DEPENDS+=	databases/openldap
-WANTLIB+=	lber ldap sasl2
+WANTLIB+=	lber ldap
 .endif
 
 .if ${FLAVOR:Mmysql}
-CONFIGURE_ARGS+= --with-mysql
+CONFIGURE_ARGS+= -DWITH_MYSQL=ON
 LIB_DEPENDS+=	databases/mariadb
-WANTLIB+=	mariadb pthread
+WANTLIB+=	mariadb
 .endif
+
+.if ${FLAVOR:Mpgsql}
+CONFIGURE_ARGS+= -DWITH_PGSQL=ON
+LIB_DEPENDS+=	databases/postgresql
+WANTLIB+=	pq
+.endif
+
+CFLAGS+=		-I${LOCALBASE}/include
+MODCMAKE_LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-extract:
 	@cp -f ${FILESDIR}/lighttpd.conf ${WRKSRC}/doc
@@ -70,6 +71,5 @@ post-install:
 	    ${PREFIX}/share/examples/lighttpd/access.log
 	${INSTALL_DATA} /dev/null \
 	    ${PREFIX}/share/examples/lighttpd/error.log
-	rm -f ${PREFIX}/lib/lighttpd/*.la
 
 .include <bsd.port.mk>

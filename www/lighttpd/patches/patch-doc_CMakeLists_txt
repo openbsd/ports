@@ -1,0 +1,11 @@
+[cmake] add doc/CMakeLists.txt to dist tar ball (#3181)
+da8abbfad414f2f8078e0b50302d691f8b21bbe0
+
+Index: doc/CMakeLists.txt
+--- doc/CMakeLists.txt.orig
++++ doc/CMakeLists.txt
+@@ -0,0 +1,4 @@
++install(FILES
++	lighttpd.8
++	lighttpd-angel.8
++	DESTINATION ${CMAKE_INSTALL_MANDIR}/man8)

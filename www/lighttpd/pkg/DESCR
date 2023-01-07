@@ -10,3 +10,5 @@ Flavors:
          ldap - Enable LDAP support for authentication.
         mysql - Enable MySQL support for authentication and virtual
                 hosting.
+        pgsql - Enable PostgreSQL support for authentication and
+                virtual hosting.
