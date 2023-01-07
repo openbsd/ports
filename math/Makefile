@@ -47,6 +47,7 @@
      SUBDIR += isl
      SUBDIR += jacal
      SUBDIR += kst
+     SUBDIR += labplot
      SUBDIR += lapack
      SUBDIR += lean
      SUBDIR += libcerf
