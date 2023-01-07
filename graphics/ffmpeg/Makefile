@@ -2,7 +2,7 @@ COMMENT=	audio/video converter and streamer
 
 V=		4.4.3
 DISTNAME=	ffmpeg-${V}
-REVISION=	1
+REVISION=	2
 EPOCH=		1
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	https://ffmpeg.org/releases/
@@ -32,6 +32,8 @@ WANTLIB+=	xcb-xfixes xml2 xvidcore vidstab z zimg
 
 COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
+
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 BUILD_DEPENDS=	audio/ladspa \
 		textproc/texi2html \
@@ -87,7 +89,8 @@ CONFIGURE_STYLE= simple
 CONFIGURE_ARGS+=--enable-shared \
 		--arch=${MACHINE_ARCH} \
 		--cc=${CC} \
-		--disable-debug \
+		--enable-debug \
+		--disable-stripping \
 		--disable-indev=jack \
 		--disable-outdev=sdl2 \
 		--enable-fontconfig \
@@ -137,7 +140,8 @@ CONFIGURE_ARGS+=--disable-mipsdsp \
 .endif
 
 CONFIGURE_ENV+=	TERM=${TERM} \
-		TMPDIR=${WRKBUILD}
+		TMPDIR=${WRKBUILD} \
+		X86ASMFLAGS="${DEBUG}"
 
 MAKE_ENV+=	V=1 \
 		libavcodec_extralibs="${LIBavcodec_EXTRALIBS}" \
@@ -185,10 +189,6 @@ MAKE_FLAGS=	${VERSION_FLAGS} \
 		LIBswscale_EXTRALIBS="-lavutil ${LIBswscale_EXTRALIBS}"
 FAKE_FLAGS=	${VERSION_FLAGS} \
 		LDCONFIG=true
-
-.ifdef DEBUG
-CONFIGURE_ARGS+=--disable-stripping
-.endif
 
 ALL_TARGET=	all tools/qt-faststart
 TEST_TARGET=	check

@@ -4,6 +4,7 @@ DISTNAME=	x264-20221028
 GH_ACCOUNT=	mirror
 GH_PROJECT=	x264
 GH_COMMIT=	416e3eb2b52abb0a67e57599aba4f8be3003b36d
+REVISION=	0
 CATEGORIES=	multimedia
 
 SHARED_LIBS=	x264	24.0
@@ -25,10 +26,13 @@ COMPILER_LANGS=	c
 BUILD_DEPENDS+=	devel/nasm
 .endif
 
+DEBUG_PACKAGES= ${BUILD_PACKAGES}
+
 SEPARATE_BUILD=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= simple
-CONFIGURE_ENV=	API=${LIBx264_VERSION}
+CONFIGURE_ENV=	API=${LIBx264_VERSION} \
+		AS="nasm ${DEBUG}"
 CONFIGURE_ARGS+=--prefix=${PREFIX} \
 		--bashcompletionsdir=${LOCALBASE}/share/bash-completion/completions \
 		--enable-bashcompletion \
