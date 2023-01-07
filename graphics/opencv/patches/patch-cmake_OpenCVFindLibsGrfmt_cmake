@@ -1,7 +1,7 @@
 Index: cmake/OpenCVFindLibsGrfmt.cmake
 --- cmake/OpenCVFindLibsGrfmt.cmake.orig
 +++ cmake/OpenCVFindLibsGrfmt.cmake
-@@ -230,12 +230,7 @@ if(WITH_PNG)
+@@ -243,12 +243,7 @@ if(NOT HAVE_SPNG AND WITH_PNG)
      include(FindPNG)
      if(PNG_FOUND)
        include(CheckIncludeFile)

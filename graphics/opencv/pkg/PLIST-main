@@ -79,10 +79,12 @@ include/opencv4/opencv2/core/hal/intrin_avx.hpp
 include/opencv4/opencv2/core/hal/intrin_avx512.hpp
 include/opencv4/opencv2/core/hal/intrin_cpp.hpp
 include/opencv4/opencv2/core/hal/intrin_forward.hpp
+include/opencv4/opencv2/core/hal/intrin_lasx.hpp
 include/opencv4/opencv2/core/hal/intrin_msa.hpp
 include/opencv4/opencv2/core/hal/intrin_neon.hpp
 include/opencv4/opencv2/core/hal/intrin_rvv.hpp
 include/opencv4/opencv2/core/hal/intrin_rvv071.hpp
+include/opencv4/opencv2/core/hal/intrin_rvv_scalable.hpp
 include/opencv4/opencv2/core/hal/intrin_sse.hpp
 include/opencv4/opencv2/core/hal/intrin_sse_em.hpp
 include/opencv4/opencv2/core/hal/intrin_vsx.hpp
@@ -237,6 +239,10 @@ include/opencv4/opencv2/ml/ml.hpp
 include/opencv4/opencv2/ml/ml.inl.hpp
 include/opencv4/opencv2/objdetect/
 include/opencv4/opencv2/objdetect.hpp
+include/opencv4/opencv2/objdetect/aruco_board.hpp
+include/opencv4/opencv2/objdetect/aruco_detector.hpp
+include/opencv4/opencv2/objdetect/aruco_dictionary.hpp
+include/opencv4/opencv2/objdetect/charuco_detector.hpp
 include/opencv4/opencv2/objdetect/detection_based_tracker.hpp
 include/opencv4/opencv2/objdetect/face.hpp
 include/opencv4/opencv2/objdetect/objdetect.hpp
@@ -347,7 +353,7 @@ share/opencv4/haarcascades/haarcascade_frontalface_alt_tree.xml
 share/opencv4/haarcascades/haarcascade_frontalface_default.xml
 share/opencv4/haarcascades/haarcascade_fullbody.xml
 share/opencv4/haarcascades/haarcascade_lefteye_2splits.xml
-share/opencv4/haarcascades/haarcascade_licence_plate_rus_16stages.xml
+share/opencv4/haarcascades/haarcascade_license_plate_rus_16stages.xml
 share/opencv4/haarcascades/haarcascade_lowerbody.xml
 share/opencv4/haarcascades/haarcascade_profileface.xml
 share/opencv4/haarcascades/haarcascade_righteye_2splits.xml

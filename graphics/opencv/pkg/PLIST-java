@@ -1,4 +1,4 @@
 share/java/
 share/java/opencv4/
-@so share/java/opencv4/libopencv_java460.so
-share/java/opencv4/opencv-460.jar
+@so share/java/opencv4/libopencv_java470.so
+share/java/opencv4/opencv-470.jar
