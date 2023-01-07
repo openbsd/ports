@@ -1,0 +1,13 @@
+https://gitlab.gnome.org/GNOME/gthumb/-/commit/da0d3f22a5c3a141211d943e7d963d14090011ec
+Index: extensions/raw_files/gth-metadata-provider-raw.c
+--- extensions/raw_files/gth-metadata-provider-raw.c.orig
++++ extensions/raw_files/gth-metadata-provider-raw.c
+@@ -62,7 +62,7 @@ gth_metadata_provider_raw_read (GthMetadataProvider *s
+ 	if (!_g_mime_type_is_raw (gth_file_data_get_mime_type (file_data)))
+ 		return;
+ 
+-	raw_data = libraw_init (LIBRAW_OPIONS_NO_MEMERR_CALLBACK | LIBRAW_OPIONS_NO_DATAERR_CALLBACK);
++	raw_data = libraw_init (GTH_LIBRAW_INIT_OPTIONS);
+ 	if (raw_data == NULL)
+ 		goto fatal_error;
+ 
