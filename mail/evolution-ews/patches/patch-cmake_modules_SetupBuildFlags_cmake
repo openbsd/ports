@@ -1,5 +1,5 @@
 XXX push upstream
-See patch-cmake_modules_SetupBuildFlags_cmake in databases/evolution
+See patch-cmake_modules_SetupBuildFlags_cmake in databases/evolution-data-server
 
 Index: cmake/modules/SetupBuildFlags.cmake
 --- cmake/modules/SetupBuildFlags.cmake.orig
