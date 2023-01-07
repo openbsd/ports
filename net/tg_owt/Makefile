@@ -11,15 +11,14 @@ COMMENT =		WebRTC build for Telegram
 GH_ACCOUNT =		desktop-app
 GH_PROJECT =		tg_owt
 # no releases or tags, use latest master
-GH_COMMIT =		1512ef693a7469d7dbc61191ecc0b487bc7f594f
-DISTNAME =		${GH_PROJECT}-0.0.0.20221215
+GH_COMMIT =		5098730b9eb6173f0b52068fe2555b7c1015123a
+DISTNAME =		${GH_PROJECT}-0.0.0.20230105
 DISTFILES =		${GH_DISTFILE}
 CATEGORIES =		net
-REVISION =		1
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-SHARED_LIBS =		tg_owt	5.1	# upstream is static only
+SHARED_LIBS =		tg_owt	5.2	# upstream is static only
 
 DIST_SUBDIR =		tg_owt
 # Fetch bundles/submodules missing from the tarball, see ${WRKSRC}/.gitmodules
@@ -28,8 +27,8 @@ DIST_SUBDIR =		tg_owt
 # main/master/stable/<commit> tarballs are *not reproducible*
 # use a mirror to get stable tarballs for latest master
 MASTER_SITES0 =		https://github.com/klemensn/libyuv/archive/
-LIBYUV_COMMIT =		3abd6f36b6e4f5a2e0ce236580a8bc1da3c7cf7e
-DISTFILES +=		libyuv-20221215-{}${LIBYUV_COMMIT}${EXTRACT_SUFX}:0
+LIBYUV_COMMIT =		6e4b0acb4b3d5858c77a044aad46132998ac4a76
+DISTFILES +=		libyuv-20230104-{}${LIBYUV_COMMIT}${EXTRACT_SUFX}:0
 
 MASTER_SITES1 =		https://github.com/desktop-app/tg_owt/commit/
 # Pending "Defer third-party source handling to when it is needed"
