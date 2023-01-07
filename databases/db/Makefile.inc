@@ -35,7 +35,10 @@ MULTI_PACKAGES += -main -tcl
 LIB_DEPENDS-main?=
 RUN_DEPENDS-main?=
 #ONLY_FOR_ARCHS = ${ALL_ARCHS}
-ONLY_FOR_ARCHS-java = aarch64 amd64 i386
+
+ONLY_FOR_ARCHS-java = amd64 i386
+# XXX aarch64 disabled until --execute-only situation can be resolved in jdk
+# ONLY_FOR_ARCHS-java = aarch64 amd64 i386
 
 .include <bsd.port.arch.mk>
 
