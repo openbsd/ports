@@ -1,0 +1,15 @@
+help2man is built without NLS support (changing this would require adjusting
+flags in help2man and adding an RDEP on p5-Locale-gettext)
+
+Index: src/Makefile.in
+--- src/Makefile.in.orig
++++ src/Makefile.in
+@@ -2379,7 +2379,7 @@ merged.c: mergelex.py $(L_STEPS)
+ # which can fail.
+ recode.1: main.c $(top_srcdir)/configure.ac recode$(EXEEXT)
+ 	$(AM_V_GEN)if ( touch $@.w && rm -f $@.w; ) >/dev/null 2>&1; then \
+-	  $(top_srcdir)/build-aux/missing --run $(HELP2MAN) --locale=en_US.UTF-8 \
++	  $(top_srcdir)/build-aux/missing --run $(HELP2MAN) \
+ 		--name="converts files between character sets" \
+ 		--output=$@ ./recode; \
+ 	fi
