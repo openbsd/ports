@@ -3,10 +3,11 @@ Do not hardcode -lstdc++ (symbol mismatch with libc++abi and libestdc++).
 Index: libraw.pc.in
 --- libraw.pc.in.orig
 +++ libraw.pc.in
-@@ -7,5 +7,5 @@ Name: libraw
+@@ -7,6 +7,6 @@ Name: libraw
  Description: Raw image decoder library (non-thread-safe)
  Requires: @PACKAGE_REQUIRES@
  Version: @PACKAGE_VERSION@
 -Libs: -L${libdir} -lraw -lstdc++@PC_OPENMP@
 +Libs: -L${libdir} -lraw@PC_OPENMP@
+ Libs.private: @PACKAGE_LIBS_PRIVATE@
  Cflags: -I${includedir}/libraw -I${includedir}
