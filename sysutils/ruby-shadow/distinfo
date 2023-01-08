@@ -1,2 +1,6 @@
 SHA256 (ruby-shadow-2.5.0.gem) = xegv77AxaRl6ZT/+rlM/gemUYtE7kO5+V4Yoei4hlKE=
+SHA256 (ruby-shadow-config-fix.patch) = MID93EFejdutWfQmqT7GPi1dnklzZzD80kHAmSUASSI=
+SHA256 (ruby-shadow-taint-fix.patch) = HlgmbzgSN4/lwxOuLs0dPYxPxLjOwZl3EEBwRXyUBio=
 SIZE (ruby-shadow-2.5.0.gem) = 11264
+SIZE (ruby-shadow-config-fix.patch) = 1151
+SIZE (ruby-shadow-taint-fix.patch) = 2265
