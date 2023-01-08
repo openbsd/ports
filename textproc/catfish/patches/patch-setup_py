@@ -1,7 +1,7 @@
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -258,7 +258,7 @@ DistUtilsExtra.auto.setup(
+@@ -270,7 +270,7 @@ DistUtilsExtra.auto.setup(
                       'needs by using several command line options.',
      url=__url__,
      data_files=[

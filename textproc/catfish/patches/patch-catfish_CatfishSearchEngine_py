@@ -2,7 +2,7 @@ silence locate --help call that will always fail for us
 Index: catfish/CatfishSearchEngine.py
 --- catfish/CatfishSearchEngine.py.orig
 +++ catfish/CatfishSearchEngine.py
-@@ -718,7 +718,7 @@ class CatfishSearchMethod_Locate(CatfishSearchMethodEx
+@@ -805,7 +805,7 @@ class CatfishSearchMethod_Locate(CatfishSearchMethodEx
              "regex": False
          }
          try:
