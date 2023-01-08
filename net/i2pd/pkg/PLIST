@@ -7,7 +7,6 @@ include/i2pd/AddressBook.h
 include/i2pd/BOB.h
 include/i2pd/Base.h
 include/i2pd/Blinding.h
-include/i2pd/BloomFilter.h
 include/i2pd/CPU.h
 include/i2pd/ChaCha20.h
 include/i2pd/ClientContext.h
@@ -46,11 +45,8 @@ include/i2pd/RouterContext.h
 include/i2pd/RouterInfo.h
 include/i2pd/SAM.h
 include/i2pd/SOCKS.h
-include/i2pd/SSU.h
 include/i2pd/SSU2.h
 include/i2pd/SSU2Session.h
-include/i2pd/SSUData.h
-include/i2pd/SSUSession.h
 include/i2pd/Signature.h
 include/i2pd/Siphash.h
 include/i2pd/Streaming.h
@@ -65,6 +61,7 @@ include/i2pd/TunnelConfig.h
 include/i2pd/TunnelEndpoint.h
 include/i2pd/TunnelGateway.h
 include/i2pd/TunnelPool.h
+include/i2pd/UDPTunnel.h
 include/i2pd/api.h
 include/i2pd/util.h
 include/i2pd/version.h
