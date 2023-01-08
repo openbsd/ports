@@ -6,7 +6,7 @@ GH_ACCOUNT=	NetworkConfiguration
 GH_PROJECT=	dhcpcd
 GH_TAGNAME=	dhcpcd-9.4.1
 DISTNAME=	${GH_TAGNAME}
-REVISION=	0
+REVISION=	1
 
 EPOCH=		0
 

@@ -15,6 +15,7 @@ pppoe0 interface and assigning it to multiple local networks.
 Also ensure that pf.conf(5) allows DHCPv6 traffic to pass, for example:
 
   pass in quick on pppoe0 proto udp from fe80::/10 port dhcpv6-server to fe80::/10 port dhcpv6-client
+  pass out quick on pppoe0 proto udp from fe80::/10 port dhcpv6-client to ff02::1:2 port dhcpv6-server
 
 As usual with IPv6, you will also need to allow address resolution
 (with IPv6 this is done "in band" using icmp6 packets which must be allowed
