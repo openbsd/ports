@@ -27,7 +27,6 @@ WANTLIB += soup-2.4 sqlite3 webkit2gtk-4.0
 
 # luajit archs
 .if ${MACHINE_ARCH} == "arm" \
- || ${MACHINE_ARCH} == "aarch64" \
  || ${MACHINE_ARCH} == "amd64" \
  || ${MACHINE_ARCH} == "i386" \
  || ${MACHINE_ARCH} == "powerpc"
