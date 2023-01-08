@@ -4,6 +4,7 @@ GH_ACCOUNT =	luakit
 GH_PROJECT =	luakit
 # used in MAKE_FLAGS
 GH_TAGNAME =	2.3.3
+REVISION =	0
 
 EPOCH =		1
 
@@ -34,7 +35,7 @@ WANTLIB +=	luajit-5.1
 LIB_DEPENDS +=	lang/luajit
 MAKE_FLAGS +=	USE_LUAJIT=1
 .else
-WANTLIB +=	${MODLLUA_WANTLIB}
+WANTLIB +=	${MODLUA_WANTLIB}
 MAKE_FLAGS +=	USE_LUAJIT=0
 .endif
 
