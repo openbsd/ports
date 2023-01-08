@@ -18,13 +18,12 @@ FLAVOR =		python3
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		flit_core
+MODPY_PYTEST =		Yes
 
 RUN_DEPENDS =		graphics/py-matplotlib${MODPY_FLAVOR}>=3.1 \
 			math/py-numpy${MODPY_FLAVOR}>=1.17.0 \
 			math/py-pandas${MODPY_FLAVOR}>=0.25.0 \
 			math/py-scipy${MODPY_FLAVOR}>=1.3.0
-
-TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR}
 
 TEST_IS_INTERACTIVE =	x11
 
