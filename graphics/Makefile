@@ -285,9 +285,9 @@
      SUBDIR += ruby-gruff
      SUBDIR += ruby-rmagick,ruby30
      SUBDIR += ruby-rmagick,ruby31
+     SUBDIR += ruby-rmagick,ruby32
      SUBDIR += ruby-rqrcode
-     SUBDIR += ruby-rqrcode-core,ruby30
-     SUBDIR += ruby-rqrcode-core,ruby31
+     SUBDIR += ruby-rqrcode-core
      SUBDIR += s10sh
      SUBDIR += sane-backends
      SUBDIR += sane-backends,escl
