@@ -1,7 +1,7 @@
 COMMENT-main =	translator library for geospatial data formats
 COMMENT-python =python bindings and utilities for GDAL
 
-V =		3.6.1
+V =		3.6.2
 DISTNAME =	gdal-${V}
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		gdalautotest-${V}${EXTRACT_SUFX}
