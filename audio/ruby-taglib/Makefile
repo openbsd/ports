@@ -1,6 +1,6 @@
 COMMENT =	reads and writes metadata/tags for many audio formats
 
-VERSION =	1.1.2
+VERSION =	1.1.3
 DISTNAME =	taglib-ruby-${VERSION}
 PKGNAME =	taglib-${VERSION}
 CATEGORIES =	audio

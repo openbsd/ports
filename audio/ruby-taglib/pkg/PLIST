@@ -1,5 +1,7 @@
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/.github/
+${GEM_LIB}/gems/${DISTNAME}/.github/FUNDING.yml
 ${GEM_LIB}/gems/${DISTNAME}/.rubocop.yml
 ${GEM_LIB}/gems/${DISTNAME}/.yardopts
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
