@@ -1,8 +1,8 @@
 COMMENT =		C++ library implementing a BitTorrent client
 
-MODPY_EGG_VERSION =	1.2.17
-DISTNAME =		libtorrent-rasterbar-${MODPY_EGG_VERSION}
-REVISION =		1
+V =			1.2.17
+DISTNAME =		libtorrent-rasterbar-${V}
+REVISION =		2
 
 SHARED_LIBS +=  	torrent-rasterbar 6.0	# 10.0.0
 
@@ -13,15 +13,14 @@ HOMEPAGE =		https://libtorrent.org/
 # BSD3
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} boost_python${MODPY_MAJORMINOR}
-WANTLIB += boost_system boost_system-mt crypto iconv m ssl
+WANTLIB += ${COMPILER_LIBCXX} boost_python${MODPY_MAJORMINOR}-mt crypto iconv
+WANTLIB += m ssl
 
-MASTER_SITES =		https://github.com/arvidn/libtorrent/releases/download/v${MODPY_EGG_VERSION}/
+MASTER_SITES =		https://github.com/arvidn/libtorrent/releases/download/v${V}/
 
-MODULES =		lang/python
-
-MODPY_PYBUILD =		setuptools
-MODPY_PYTEST =		No
+# cmake must come first for correct do-* targets
+MODULES =		devel/cmake \
+			lang/python
 
 BUILD_DEPENDS =		devel/libtool
 
@@ -31,33 +30,10 @@ LIB_DEPENDS =		converters/libiconv \
 # boost
 COMPILER =		base-clang ports-gcc
 
-CONFIGURE_STYLE =	gnu
-
-CONFIGURE_ARGS =	--enable-python-binding \
-			--enable-tests \
-			--with-boost-system=boost_system-mt \
-			--with-boost-python=boost_python${MODPY_MAJORMINOR}-mt \
-			--with-libiconv
+CONFIGURE_ARGS =	-Dpython-bindings=ON \
+			-Dbuild_tests=ON
 
 # https://github.com/arvidn/libtorrent/issues/6468
-CONFIGURE_ARGS +=	--with-cxx-standard=17
-
-.ifdef DEBUG
-CONFIGURE_ARGS +=	--enable-debug
-.endif
-
-post-patch:
-	${SUBST_CMD} ${WRKSRC}/Jamfile
-
-pre-configure:
-	sed -i 's,-Os,,g' ${WRKSRC}/configure
-
-pre-test:
-	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
-
-EGG =	${PREFIX}/lib/python${MODPY_VERSION}/site-packages/libtorrent-*.egg
-post-install:
-	mv ${EGG}/libtorrent.${MODPY_PYC_MAGIC_TAG}so ${EGG}/..
-	rm -rf ${EGG}
+CONFIGURE_ARGS +=	-DCMAKE_CXX_STANDARD=17
 
 .include <bsd.port.mk>

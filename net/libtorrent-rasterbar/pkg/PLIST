@@ -249,8 +249,12 @@ include/libtorrent/web_connection_base.hpp
 include/libtorrent/web_peer_connection.hpp
 include/libtorrent/write_resume_data.hpp
 include/libtorrent/xml_parse.hpp
-@static-lib lib/libtorrent-rasterbar.a
-lib/libtorrent-rasterbar.la
+lib/cmake/
+lib/cmake/LibtorrentRasterbar/
+lib/cmake/LibtorrentRasterbar/LibtorrentRasterbarConfig.cmake
+lib/cmake/LibtorrentRasterbar/LibtorrentRasterbarConfigVersion.cmake
+lib/cmake/LibtorrentRasterbar/LibtorrentRasterbarTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/LibtorrentRasterbar/LibtorrentRasterbarTargets.cmake
 @lib lib/libtorrent-rasterbar.so.${LIBtorrent-rasterbar_VERSION}
 lib/pkgconfig/libtorrent-rasterbar.pc
 @so lib/python${MODPY_VERSION}/site-packages/libtorrent.${MODPY_PYC_MAGIC_TAG}so
