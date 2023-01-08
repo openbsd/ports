@@ -1,9 +1,8 @@
 COMMENT =		web-based notebook for interactive computing
 
-MODPY_EGG_VERSION =	6.1.6
+MODPY_EGG_VERSION =	6.2.0
 DISTNAME =		notebook-${MODPY_EGG_VERSION}
 PKGNAME =		jupyter-notebook-${MODPY_EGG_VERSION}
-REVISION =		2
 
 CATEGORIES =		www devel
 
@@ -23,14 +22,14 @@ RUN_DEPENDS =		devel/py-ipykernel${MODPY_FLAVOR} \
 			devel/py-jupyter_core${MODPY_FLAVOR}>=4.6.1 \
 			devel/py-nbconvert${MODPY_FLAVOR} \
 			devel/py-nbformat${MODPY_FLAVOR} \
-			devel/py-send2trash${MODPY_FLAVOR} \
+			devel/py-send2trash${MODPY_FLAVOR}>=1.5.0 \
 			devel/py-traitlets${MODPY_FLAVOR}>=4.2.1 \
 			net/py-zmq${MODPY_FLAVOR}>=17 \
 			security/py-argon2-cffi${MODPY_FLAVOR} \
 			sysutils/py-prometheus_client${MODPY_FLAVOR} \
 			www/py-jinja2${MODPY_FLAVOR} \
 			www/py-terminado${MODPY_FLAVOR}>=0.8.3 \
-			www/py-tornado${MODPY_FLAVOR}>=5.0
+			www/py-tornado${MODPY_FLAVOR}>=6.1
 
 TEST_DEPENDS =		devel/py-coverage${MODPY_FLAVOR} \
 			devel/py-nose${MODPY_FLAVOR} \

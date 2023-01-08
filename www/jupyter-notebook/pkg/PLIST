@@ -1926,6 +1926,7 @@ lib/python${MODPY_VERSION}/site-packages/notebook/static/notebook/js/main.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/notebook/js/main.min.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/notebook/js/main.min.js.map
 lib/python${MODPY_VERSION}/site-packages/notebook/static/notebook/js/maintoolbar.js
+lib/python${MODPY_VERSION}/site-packages/notebook/static/notebook/js/mathjaxutils.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/notebook/js/menubar.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/notebook/js/notebook.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/notebook/js/notificationarea.js
