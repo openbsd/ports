@@ -50,6 +50,8 @@ share/siril/pixmaps/cm.svg
 share/siril/pixmaps/curve.svg
 share/siril/pixmaps/export.svg
 share/siril/pixmaps/export_dark.svg
+share/siril/pixmaps/eyedropper.svg
+share/siril/pixmaps/eyedropper_dark.svg
 share/siril/pixmaps/g.svg
 share/siril/pixmaps/grid.svg
 share/siril/pixmaps/histo.svg

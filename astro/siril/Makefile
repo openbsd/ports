@@ -1,6 +1,6 @@
 COMMENT = 	astronomical image processing tool
 
-DISTNAME = 	siril-1.0.3
+DISTNAME = 	siril-1.0.6
 CATEGORIES = 	astro
 HOMEPAGE = 	https://siril.org/
 
