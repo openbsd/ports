@@ -3,6 +3,7 @@ COMMENT =		compact self-hosted Git service
 VERSION =		1.17.4
 DISTNAME =		gitea-src-${VERSION}
 PKGNAME =		gitea-${VERSION}
+REVISION =		0
 
 MASTER_SITES =		https://github.com/go-gitea/gitea/releases/download/v${VERSION}/
 
@@ -27,7 +28,8 @@ MODGO_LDFLAGS += -X code.gitea.io/gitea/modules/setting.StaticRootPath=${LOCALBA
 MODGO_LDFLAGS += -X main.Version=${VERSION}
 MODGO_LDFLAGS += -X 'main.Tags=${GO_TAGS}'
 
-RUN_DEPENDS =		devel/git
+RUN_DEPENDS =		devel/git \
+			shells/bash
 
 ALL_TARGET =		code.gitea.io/gitea
 WRKSRC =		${MODGO_WORKSPACE}/src/${ALL_TARGET}
