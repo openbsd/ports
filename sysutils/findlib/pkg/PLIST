@@ -13,18 +13,27 @@ lib/ocaml/dynlink/META
 lib/ocaml/findlib/
 lib/ocaml/findlib/META
 lib/ocaml/findlib/Makefile.config
+lib/ocaml/findlib/Makefile.packages
 lib/ocaml/findlib/findlib.cma
 lib/ocaml/findlib/findlib.cmi
 lib/ocaml/findlib/findlib.mli
+lib/ocaml/findlib/findlib_config.cmi
+lib/ocaml/findlib/findlib_config.ml
 lib/ocaml/findlib/findlib_dynload.cma
 lib/ocaml/findlib/findlib_top.cma
+lib/ocaml/findlib/fl_args.cmi
 lib/ocaml/findlib/fl_dynload.cmi
 lib/ocaml/findlib/fl_dynload.mli
+lib/ocaml/findlib/fl_lint.cmi
+lib/ocaml/findlib/fl_meta.cmi
 lib/ocaml/findlib/fl_metascanner.cmi
 lib/ocaml/findlib/fl_metascanner.mli
 lib/ocaml/findlib/fl_metatoken.cmi
 lib/ocaml/findlib/fl_package_base.cmi
 lib/ocaml/findlib/fl_package_base.mli
+lib/ocaml/findlib/fl_split.cmi
+lib/ocaml/findlib/fl_topo.cmi
+lib/ocaml/findlib/ocaml_args.cmi
 lib/ocaml/findlib/topfind.cmi
 lib/ocaml/findlib/topfind.mli
 @comment will be installed by graphics/ocaml-graphics

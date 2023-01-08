@@ -1,7 +1,6 @@
 COMMENT=	OCaml package manager
 CATEGORIES=	sysutils
-DISTNAME=	findlib-1.8.1
-REVISION=	4
+DISTNAME=	findlib-1.9.6
 
 MASTER_SITES=	http://download.camlcity.org/download/
 
@@ -23,7 +22,6 @@ CONFIGURE_ARGS= -no-custom \
 		-config ${SYSCONFDIR}/findlib.conf
 
 USE_GMAKE=	Yes
-FAKE_FLAGS=	prefix=${DESTDIR}
 NO_TEST=	Yes
 
 .include <bsd.port.arch.mk>
