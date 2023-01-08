@@ -1,0 +1,14 @@
+Pull in an upstream fix for a failing testcase with erlang >= 21
+https://github.com/processone/tsung/commit/e53a59d16df5a2d3781ef9d4f0171ad0ca5bc931
+Index: src/test/ts_test_utils.erl
+--- src/test/ts_test_utils.erl.orig
++++ src/test/ts_test_utils.erl
+@@ -48,7 +48,7 @@ mkey1search_string_test()->
+     ?assertEqual(["bar","caps"],ts_utils:mkey1search(Data,"foo")).
+ 
+ datestr_test()->
+-    ?assertEqual(["2013","10","17",45,"19","41"],ts_utils:datestr({{2013,10,17},{19,41,29}})).
++    ?assertEqual("20131017-1941",lists:flatten(ts_utils:datestr({{2013,10,17},{19,41,29}}))).
+ 
+ export_text_test()->
+     ?assertEqual("foo",ts_utils:export_text("foo")).

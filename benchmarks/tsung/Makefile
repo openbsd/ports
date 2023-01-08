@@ -2,7 +2,7 @@ COMMENT=	multi-protocol distributed load testing tool
 
 V=		1.7.0
 DISTNAME=	tsung-$V
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	benchmarks net
 
@@ -15,7 +15,7 @@ MASTER_SITES=		http://tsung.erlang-projects.org/dist/
 
 MODULES=		lang/erlang \
 			lang/python
-MODERL_VERSION=		21
+MODERL_VERSION=		25
 MODPY_BUILDDEP= 	No
 
 RUN_DEPENDS=		graphics/py-matplotlib${MODPY_FLAVOR} \
