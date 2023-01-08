@@ -1,0 +1,14 @@
+Remove use of File.exists?, removed in Ruby 3.2
+
+Index: src/ruby_supportlib/phusion_passenger/platform_info/operating_system.rb
+--- src/ruby_supportlib/phusion_passenger/platform_info/operating_system.rb.orig
++++ src/ruby_supportlib/phusion_passenger/platform_info/operating_system.rb
+@@ -236,7 +236,7 @@ module PhusionPassenger
+     memoize :supports_lfence_instruction?, true
+ 
+     def self.requires_no_tls_direct_seg_refs?
+-      return File.exists?("/proc/xen/capabilities") && cpu_architectures[0] == "x86"
++      return File.exist?("/proc/xen/capabilities") && cpu_architectures[0] == "x86"
+     end
+     memoize :requires_no_tls_direct_seg_refs?, true
+   end

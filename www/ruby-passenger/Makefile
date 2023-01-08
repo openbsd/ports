@@ -5,6 +5,7 @@ BROKEN-hppa =		rake fails when linking PassengerHelperAgent
 PASS_VERSION =		6.0.4
 NGINX_VERSION =		1.16.1
 DISTNAME =		passenger-${PASS_VERSION}
+REVISION =		0
 
 ONLY_FOR_ARCHS =	aarch64 amd64 arm i386
 
