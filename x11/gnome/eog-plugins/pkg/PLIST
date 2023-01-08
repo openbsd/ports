@@ -36,6 +36,7 @@ share/glib-2.0/schemas/org.gnome.eog.plugins.fullscreenbg.gschema.xml
 share/glib-2.0/schemas/org.gnome.eog.plugins.pythonconsole.gschema.xml
 share/locale/ar/LC_MESSAGES/eog-plugins.mo
 share/locale/as/LC_MESSAGES/eog-plugins.mo
+share/locale/be/LC_MESSAGES/eog-plugins.mo
 share/locale/be@latin/LC_MESSAGES/eog-plugins.mo
 share/locale/bg/LC_MESSAGES/eog-plugins.mo
 share/locale/bn_IN/LC_MESSAGES/eog-plugins.mo
@@ -61,6 +62,7 @@ share/locale/id/LC_MESSAGES/eog-plugins.mo
 share/locale/is/LC_MESSAGES/eog-plugins.mo
 share/locale/it/LC_MESSAGES/eog-plugins.mo
 share/locale/ja/LC_MESSAGES/eog-plugins.mo
+share/locale/ka/LC_MESSAGES/eog-plugins.mo
 share/locale/kn/LC_MESSAGES/eog-plugins.mo
 share/locale/ko/LC_MESSAGES/eog-plugins.mo
 share/locale/lt/LC_MESSAGES/eog-plugins.mo
