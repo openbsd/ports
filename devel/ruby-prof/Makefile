@@ -1,7 +1,7 @@
 COMMENT =	fast code profiler for Ruby
 
 DISTNAME =	ruby-${PKGNAME}
-PKGNAME =	prof-1.0.0
+PKGNAME =	prof-1.4.5
 CATEGORIES =	devel
 
 HOMEPAGE =	https://github.com/ruby-prof/ruby-prof
