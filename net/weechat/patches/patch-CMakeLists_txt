@@ -18,7 +18,7 @@ Index: CMakeLists.txt
  
  # version
  execute_process(COMMAND ${CMAKE_SOURCE_DIR}/version.sh devel-major OUTPUT_VARIABLE VERSION_MAJOR)
-@@ -225,7 +223,7 @@ if(DL_LIBRARY)
+@@ -224,7 +222,7 @@ if(DL_LIBRARY)
    list(APPEND EXTRA_LIBS dl)
  endif()
  
