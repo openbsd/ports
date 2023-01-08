@@ -191,7 +191,6 @@
      SUBDIR += recoll
      SUBDIR += redis
      SUBDIR += repmgr
-     SUBDIR += riak
      SUBDIR += ruby-amalgalite,ruby30
      SUBDIR += ruby-amalgalite,ruby31
      SUBDIR += ruby-amalgalite,ruby32
