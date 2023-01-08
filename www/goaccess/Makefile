@@ -1,6 +1,6 @@
 COMMENT =		realtime console web log analyzer
 
-DISTNAME =		goaccess-1.6.5
+DISTNAME =		goaccess-1.7
 
 CATEGORIES =		www
 

@@ -18,7 +18,7 @@ Index: config/goaccess.conf
  ######################################
  # Date Format Options (required)
  ######################################
-@@ -733,7 +743,10 @@ static-file .zst
+@@ -737,7 +747,10 @@ static-file .zst
  # Download the GeoLite2-Country.mmdb.gz
  # gunzip GeoLite2-Country.mmdb.gz
  #
