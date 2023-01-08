@@ -8,6 +8,7 @@ GH_PROJECT =		CompCert
 GH_TAGNAME =		v${V}
 DISTNAME =		${GH_PROJECT}-${V}
 PKGNAME =		${DISTNAME:L}
+REVISION =		0
 
 HOMEPAGE =		https://compcert.org/
 
@@ -31,7 +32,7 @@ CONFIGURE_ARGS  = -mandir ${PREFIX}/man \
 		  ${MACHINE_ARCH}-bsd
 
 BUILD_DEPENDS =	lang/ocaml>=4.05 \
-		math/coq>=8.8.0 \
+		math/coq>=8.12.0 \
 		sysutils/findlib \
 		devel/ocaml-menhir>=20190626
 
@@ -42,7 +43,5 @@ RUN_DEPENDS =	lang/gcc/${MODGCC4_VERSION}
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/share/compcert
-	sed -i -e "s,^stdlib_path=.*,stdlib_path=${TRUEPREFIX}/lib," \
-		${PREFIX}/share/compcert/compcert.ini
 
 .include <bsd.port.mk>
