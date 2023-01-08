@@ -36,4 +36,15 @@ CONFIGURE_ARGS =	-Dpython-bindings=ON \
 # https://github.com/arvidn/libtorrent/issues/6468
 CONFIGURE_ARGS +=	-DCMAKE_CXX_STANDARD=17
 
+ALL_TARGET =		torrent-rasterbar \
+			python-libtorrent
+
+# build shared library and python module/bindings only to defer test compilation
+do-build:
+	@${MODCMAKE_BUILD_TARGET} -t ${ALL_TARGET}
+
+# build whatever is left (+200 test files)
+pre-test:
+	@${MODCMAKE_BUILD_TARGET}
+
 .include <bsd.port.mk>
