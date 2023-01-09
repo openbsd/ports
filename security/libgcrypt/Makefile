@@ -23,7 +23,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-static \
 			--disable-drng-support
 
-CONFIGURE_ENV=		LDFLAGS="${LDFLAGS} -Wl,--no-execute-only"
+USE_NOEXECONLY=		Yes
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 

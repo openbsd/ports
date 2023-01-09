@@ -35,11 +35,12 @@ MAN_PREFIX=		@man lib/eopenssl11/man
 INSTALL_TARGET+=	install_man_docs
 .endif
 
+USE_NOEXECONLY=		Yes
+
 # install to unusual directory name - this port is *not* intended to be
 # picked up by configure scripts without explicitly CPPFLAGS/LDFLAGS.
 # common names like lib/openssl, openssl/lib, etc, *do* get picked up.
 MAKE_FLAGS+=	CC="${CC}" \
-		LDFLAGS="${LDFLAGS} -Wl,--no-execute-only" \
 		LIBDIR="lib/eopenssl11" \
 		MANDIR=${PREFIX}/lib/eopenssl11/man \
 		SHLIB_VERSION_NUMBER=${SHLIBVER} \
