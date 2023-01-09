@@ -1,6 +1,6 @@
 COMMENT =	personal accounting application
 
-DISTNAME =	homebank-5.6
+DISTNAME =	homebank-5.6.1
 
 CATEGORIES =	productivity x11
 
@@ -16,7 +16,7 @@ WANTLIB += atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gtk-3 harfbuzz
 WANTLIB += intl m ofx pango-1.0 pangocairo-1.0 pthread soup-2.4
 
-MASTER_SITES =	http://homebank.free.fr/public/
+MASTER_SITES =	http://homebank.free.fr/public/sources/
 
 MODULES =	textproc/intltool
 
