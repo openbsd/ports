@@ -291,6 +291,7 @@ share/nvim/runtime/doc/intro.txt
 share/nvim/runtime/doc/job_control.txt
 share/nvim/runtime/doc/lsp-extension.txt
 share/nvim/runtime/doc/lsp.txt
+share/nvim/runtime/doc/lua-guide.txt
 share/nvim/runtime/doc/lua.txt
 share/nvim/runtime/doc/luaref.txt
 share/nvim/runtime/doc/luvref.txt
@@ -1041,6 +1042,7 @@ share/nvim/runtime/queries/c/highlights.scm
 share/nvim/runtime/queries/c/injections.scm
 share/nvim/runtime/queries/help/
 share/nvim/runtime/queries/help/highlights.scm
+share/nvim/runtime/queries/help/injections.scm
 share/nvim/runtime/queries/lua/
 share/nvim/runtime/queries/lua/highlights.scm
 share/nvim/runtime/queries/lua/injections.scm
