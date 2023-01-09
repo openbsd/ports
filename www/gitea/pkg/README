@@ -55,6 +55,9 @@ Relevant configuration directives in ${SYSCONFDIR}/gitea/app.ini:
 	HTTP_ADDR              = /var/www/run/gitea/gitea.sock
 	LOCAL_ROOT_URL         = %(ROOT_URL)s
 
+Create the directory for gitea socket with the following command:
+	# install -d -o _gitea /var/www/run/gitea
+
 Customizing gitea
 =================
 For custom public files, templates, gitignores, labels, licenses and READMEs,
