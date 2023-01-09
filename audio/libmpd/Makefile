@@ -4,7 +4,7 @@ VERSION=		11.8.17
 DISTNAME=		libmpd-${VERSION}
 SHARED_LIBS=		mpd	3.2	#.3.0
 CATEGORIES=		audio
-REVISION =		6
+REVISION =		7
 
 MAINTAINER=		Landry Breuil <landry@openbsd.org>
 

@@ -1,0 +1,14 @@
+Fix return value, invalid pointer to integer conversion with clang 15.
+
+Index: src/libmpd-playlist.c
+--- src/libmpd-playlist.c.orig
++++ src/libmpd-playlist.c
+@@ -780,7 +780,7 @@ int mpd_playlist_load(MpdObj *mi, const char *path)
+ 	if(mpd_lock_conn(mi))
+ 	{
+ 		debug_printf(DEBUG_ERROR,"lock failed\n");
+-		return NULL;
++		return MPD_LOCK_FAILED;
+ 	}
+     mpd_sendLoadCommand(mi->connection,path);
+ 	mpd_finishCommand(mi->connection);
