@@ -1,5 +1,6 @@
 - localstatedir does not belong under prefix
 - Remove hardcoding of optimization
+- thread-posix: add support for setting threads name on OpenBSD
 
 Index: meson.build
 --- meson.build.orig
@@ -22,7 +23,26 @@ Index: meson.build
  config_host_data.set_quoted('CONFIG_QEMU_MODDIR', get_option('prefix') / qemu_moddir)
  config_host_data.set_quoted('CONFIG_SYSCONFDIR', get_option('prefix') / get_option('sysconfdir'))
  
-@@ -3756,11 +3756,9 @@ if targetos == 'darwin'
+@@ -2123,6 +2123,18 @@ config_host_data.set('CONFIG_PTHREAD_SETNAME_NP_WO_TID
+     pthread_create(&thread, 0, f, 0);
+     return 0;
+   }''', dependencies: threads))
++config_host_data.set('CONFIG_PTHREAD_SET_NAME_NP', cc.links(gnu_source_prefix + '''
++  #include <pthread.h>
++  #include <pthread_np.h>
++
++  static void *f(void *p) { return NULL; }
++  int main(void)
++  {
++    pthread_t thread;
++    pthread_create(&thread, 0, f, 0);
++    pthread_set_name_np(thread, "QEMU");
++    return 0;
++  }''', dependencies: threads))
+ config_host_data.set('CONFIG_PTHREAD_CONDATTR_SETCLOCK', cc.links(gnu_source_prefix + '''
+   #include <pthread.h>
+   #include <time.h>
+@@ -3756,11 +3768,9 @@ if targetos == 'darwin'
    summary_info += {'Objective-C compiler': ' '.join(meson.get_compiler('objc').cmd_array())}
  endif
  summary_info += {'CFLAGS':            ' '.join(get_option('c_args')
