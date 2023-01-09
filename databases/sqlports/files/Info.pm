@@ -1,4 +1,4 @@
-# $OpenBSD: Info.pm,v 1.35 2021/02/25 23:26:30 espie Exp $
+# $OpenBSD: Info.pm,v 1.36 2023/01/09 17:09:55 sthen Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -100,6 +100,7 @@ our $vars = {
     USE_GMAKE => 'YesNoVar',
     USE_GROFF => 'YesNoVar',
     USE_LIBTOOL => 'YesNoGnuVar',
+    USE_NOEXECONLY => 'YesNoVar',
     USE_WXNEEDED => 'YesNoSpecialVar',
     COMPILER => 'DefinedVar',
     COMPILER_LANGS => 'DefinedVar',

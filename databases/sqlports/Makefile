@@ -1,13 +1,11 @@
 CATEGORIES =		databases
-V =			7.36
+V =			7.37
 DISTNAME =		sqlports-$V
 DISTFILES =
 COMMENT-main =		sqlite database of ports
 COMMENT-list =		full list of pkgpaths in ports
 MAINTAINER =		Marc Espie <espie@openbsd.org>
 PKGNAME-list =		portslist-$V
-
-REVISION-main =		0
 
 PERMIT_PACKAGE =	Yes
 MULTI_PACKAGES =	-main -list
