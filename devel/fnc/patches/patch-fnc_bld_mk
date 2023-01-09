@@ -1,0 +1,29 @@
+drop -Werror
+
+Index: fnc.bld.mk
+--- fnc.bld.mk.orig
++++ fnc.bld.mk
+@@ -11,7 +11,7 @@ HASH !=		cut -f 1 manifest.uuid
+ DATE !=		sed '2q;d' manifest | cut -d ' ' -f 2 | tr T ' '
+ 
+ # FLAGS NEEDED TO BUILD SQLITE3
+-SQLITE_CFLAGS =	${CFLAGS} -Wall -Werror -Wno-sign-compare -pedantic -std=c99 \
++SQLITE_CFLAGS =	${CFLAGS} -Wall -Wno-sign-compare -pedantic -std=c99 \
+ 		-DNDEBUG=1 \
+ 		-DSQLITE_DQS=0 \
+ 		-DSQLITE_DEFAULT_MEMSTATUS=0 \
+@@ -37,12 +37,12 @@ SQLITE_CFLAGS =	${CFLAGS} -Wall -Werror -Wno-sign-comp
+ 		-DSQLITE_TRUSTED_SCHEMA=0
+ 
+ # FLAGS NEEDED TO BUILD LIBFOSSIL
+-FOSSIL_CFLAGS =	${CFLAGS} -Wall -Werror -Wsign-compare -pedantic -std=c99
++FOSSIL_CFLAGS =	${CFLAGS} -Wall -Wsign-compare -pedantic -std=c99
+ 
+ # On SOME Linux (e.g., Ubuntu 18.04.6), we have to include wchar curses from
+ # I/.../ncursesw, but linking to -lncursesw (w/ no special -L path) works fine.
+ # FLAGS NEEDED TO BUILD FNC
+-FNC_CFLAGS =	${CFLAGS} -Wall -Werror -Wsign-compare -pedantic -std=c99 \
++FNC_CFLAGS =	${CFLAGS} -Wall -Wsign-compare -pedantic -std=c99 \
+ 		-I./lib -I./include -I/usr/include/ncursesw \
+ 		-D_XOPEN_SOURCE_EXTENDED -DVERSION=${VERSION} -DHASH=${HASH} \
+ 		-DDATE="${DATE}"
