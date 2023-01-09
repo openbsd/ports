@@ -1,4 +1,7 @@
-OSC commands returning the colour sequence must be terminated by ST (^[\) or BEL
+OSC commands returning the colour sequence must be terminated by either
+of ST ^[\ or BEL. rxvt-unicode tries to use the same type of termination
+as was in the query but doesn't correctly handle the multiple-char sequence
+used for 7-bit queries. Force to using BEL instead for now.
 
 Index: src/command.C
 --- src/command.C.orig
