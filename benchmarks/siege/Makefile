@@ -1,6 +1,6 @@
 COMMENT =		multi-threaded HTTP benchmark and regression tester
 
-DISTNAME =		siege-4.1.5
+DISTNAME =		siege-4.1.6
 
 CATEGORIES =		benchmarks www
 
