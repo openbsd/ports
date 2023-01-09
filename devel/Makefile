@@ -1732,9 +1732,6 @@
      SUBDIR += ruby-puppet_forge
      SUBDIR += ruby-rake-compiler
      SUBDIR += ruby-rake-remote_task
-     SUBDIR += ruby-rb-gsl,ruby30
-     SUBDIR += ruby-rb-gsl,ruby31
-     SUBDIR += ruby-rb-gsl,ruby32
      SUBDIR += ruby-rbtree,ruby30
      SUBDIR += ruby-rbtree,ruby31
      SUBDIR += ruby-rbtree,ruby32
