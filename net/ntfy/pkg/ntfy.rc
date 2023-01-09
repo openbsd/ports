@@ -1,0 +1,13 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/bin/ntfy"
+daemon_logger="daemon.info"
+daemon_user="_ntfy"
+daemon_flags="serve --listen-http :8080"
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+rc_reload=NO
+
+rc_cmd $1

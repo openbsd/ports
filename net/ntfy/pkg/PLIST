@@ -1,0 +1,15 @@
+@newgroup _ntfy:775
+@newuser _ntfy:775:775::ntfy user:/var/empty:/sbin/nologin
+@rcscript ${RCDIR}/ntfy
+@bin bin/ntfy
+share/examples/ntfy/
+share/examples/ntfy/example-sse.html
+share/examples/ntfy/main.go
+share/examples/ntfy/notify-desktop.sh
+share/examples/ntfy/ntfy-ssh-login.sh
+share/examples/ntfy/pam_sshd
+share/examples/ntfy/publish.php
+share/examples/ntfy/publish.py
+share/examples/ntfy/server.yml
+share/examples/ntfy/subscribe.php
+share/examples/ntfy/subscribe.py
