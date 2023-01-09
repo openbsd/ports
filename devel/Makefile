@@ -1724,6 +1724,7 @@
      SUBDIR += ruby-open4
      SUBDIR += ruby-opt_parse_validator
      SUBDIR += ruby-optimist
+     SUBDIR += ruby-pkg-config
      SUBDIR += ruby-polyglot
      SUBDIR += ruby-prof,ruby30
      SUBDIR += ruby-prof,ruby31
