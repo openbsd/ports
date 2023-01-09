@@ -18,6 +18,7 @@ MASTER_SITES=	https://github.com/rrthomas/recode/releases/download/v$V/
 MODULES=	lang/python
 MODPY_RUNDEP=	No
 
+BUILD_DEPENDS=	devel/help2man
 LIB_DEPENDS=	devel/gettext,-runtime
 TEST_DEPENDS=	lang/cython${MODPY_FLAVOR}
 
