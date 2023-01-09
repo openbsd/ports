@@ -6,6 +6,7 @@ include/nice/agent.h
 include/nice/candidate.h
 include/nice/debug.h
 include/nice/interfaces.h
+include/nice/nice-version.h
 include/nice/nice.h
 include/nice/pseudotcp.h
 include/stun/
