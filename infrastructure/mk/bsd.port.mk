@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1581 2022/11/16 17:42:18 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1582 2023/01/09 17:08:50 sthen Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -137,7 +137,7 @@ _ALL_VARIABLES += BROKEN COMES_WITH \
 	SHARED_LIBS TARGETS PSEUDO_FLAVOR \
 	AUTOCONF_VERSION AUTOMAKE_VERSION CONFIGURE_ARGS \
 	GH_ACCOUNT GH_COMMIT GH_PROJECT GH_TAGNAME \
-	MAKEFILE_LIST USE_LLD USE_WXNEEDED COMPILER \
+	MAKEFILE_LIST USE_LLD USE_NOEXECONLY USE_WXNEEDED COMPILER \
 	COMPILER_LANGS COMPILER_LINKS SUBST_VARS UPDATE_PLIST_ARGS \
 	PKGPATHS DEBUG_PACKAGES DEBUG_CONFIGURE_ARGS \
 	FIX_CRLF_FILES
@@ -403,9 +403,14 @@ BASELOCALSTATEDIR ?= ${VARBASE}
 LOCALSTATEDIR ?= ${BASELOCALSTATEDIR}
 
 RCDIR ?= /etc/rc.d
+USE_NOEXECONLY ?= No
+_LINKER_FLAGS ?=
+.if ${USE_NOEXECONLY:L} == "yes"
+_LINKER_FLAGS += --no-execute-only
+.endif
 USE_WXNEEDED ?= No
 .if ${USE_WXNEEDED:L} == "yes"
-_WXNEEDED_FLAGS = -z wxneeded
+_LINKER_FLAGS += -z wxneeded
 .endif
 USE_GMAKE ?= No
 .if ${USE_GMAKE:L} == "yes"
@@ -2857,8 +2862,8 @@ _post-patch-finalize:
 		false; \
 	fi
 .endif
-.if ${USE_WXNEEDED:L} == "yes" || ${_NONDEFAULT_LD:L} == "yes"
-	@printf '#!/bin/sh\nexec ${_LD_PROGRAM} ${_WXNEEDED_FLAGS} "$$@"\n' >${WRKDIR}/bin/ld
+.if !empty(_LINKER_FLAGS) || ${_NONDEFAULT_LD:L} == "yes"
+	@printf '#!/bin/sh\nexec ${_LD_PROGRAM} ${_LINKER_FLAGS} "$$@"\n' >${WRKDIR}/bin/ld
 	@chmod 555 ${WRKDIR}/bin/ld
 .endif
 .for _wrap _comp in ${COMPILER_LINKS}
