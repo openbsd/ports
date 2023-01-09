@@ -1,6 +1,6 @@
 COMMENT =		set temporary X11 hotkeys
 
-DISTNAME =		hk-0.2.0
+DISTNAME =		hk-0.3.0
 CATEGORIES =		x11
 
 HOMEPAGE =		https://tratt.net/laurie/src/hk/
