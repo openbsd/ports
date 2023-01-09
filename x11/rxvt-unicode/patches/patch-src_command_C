@@ -1,0 +1,13 @@
+OSC commands returning the colour sequence must be terminated by ST (^[\) or BEL
+
+Index: src/command.C
+--- src/command.C.orig
++++ src/command.C
+@@ -3417,6 +3417,7 @@ rxvt_term::process_color_seq (int report, int color, c
+       rgba c;
+       pix_colors_focused[color].get (c);
+       char rgba_str[32];
++      resp = '\007';
+ 
+ #if XFT
+       if (c.a != rgba::MAX_CC)
