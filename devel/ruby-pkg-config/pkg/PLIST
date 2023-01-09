@@ -1,0 +1,15 @@
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/Gemfile
+${GEM_LIB}/gems/${DISTNAME}/LGPL-2.1
+${GEM_LIB}/gems/${DISTNAME}/NEWS
+${GEM_LIB}/gems/${DISTNAME}/README.rdoc
+${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/pkg-config/
+${GEM_LIB}/gems/${DISTNAME}/lib/pkg-config.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/pkg-config/version.rb
+${GEM_LIB}/gems/${DISTNAME}/test/
+${GEM_LIB}/gems/${DISTNAME}/test/run-test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test-pkg-config.rb
+${GEM_LIB}/specifications/${DISTNAME}.gemspec
