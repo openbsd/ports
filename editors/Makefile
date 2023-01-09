@@ -6,6 +6,7 @@
      SUBDIR += beav
      SUBDIR += bvi
      SUBDIR += calligra
+     SUBDIR += calligraplan
      SUBDIR += cooledit
      SUBDIR += cooledit,python
      SUBDIR += dhex
