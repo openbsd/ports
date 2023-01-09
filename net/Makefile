@@ -329,6 +329,7 @@
      SUBDIR += nslint
      SUBDIR += nsping
      SUBDIR += nssl
+     SUBDIR += ntfy
      SUBDIR += ntopng
      SUBDIR += ntp
      SUBDIR += nylon
