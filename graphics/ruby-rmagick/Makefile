@@ -1,7 +1,6 @@
 COMMENT =	Ruby interface to ImageMagick
 
-DISTNAME =	rmagick-2.16.0
-REVISION =	1
+DISTNAME =	rmagick-5.1.0
 CATEGORIES =	graphics
 
 HOMEPAGE =	https://github.com/rmagick/rmagick
@@ -13,11 +12,9 @@ MODULES =	lang/ruby
 
 WANTLIB += MagickCore-6.Q16 MagickWand-6.Q16
 
+BUILD_DEPENDS =	devel/ruby-pkg-config,${MODRUBY_FLAVOR}>=1.4,<2
 LIB_DEPENDS =	graphics/ImageMagick
 
 CONFIGURE_STYLE = ruby gem ext
-
-TEST_DEPENDS =	${BASE_PKGPATH}
-MODRUBY_TEST =	rspec3
 
 .include <bsd.port.mk>
