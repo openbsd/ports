@@ -1,0 +1,23 @@
+Indirect Object Syntax
+
+Outside of the file handle case, use of this syntax is discouraged as it
+can confuse the Perl interpreter. See below for more details.
+
+Index: EV/EV.pm
+--- EV/EV.pm.orig
++++ EV/EV.pm
+@@ -66,12 +66,12 @@ BEGIN {
+    XSLoader::load __PACKAGE__, $VERSION;
+ }
+ 
+-our $IDLE = new Coro sub {
++our $IDLE = Coro->new( sub {
+    while () {
+       &_loop_oneshot;
+       Coro::schedule if Coro::nready;
+    }
+-};
++} );
+ $IDLE->{desc} = "[EV idle thread]";
+ 
+ $Coro::idle = $IDLE;

@@ -1,30 +1,30 @@
 COMMENT =	coroutines for perl
 
-MODULES =	cpan
-DISTNAME =	Coro-6.511
-CATEGORIES =	devel
-REVISION =	0
+DISTNAME =	Coro-6.57
+PKGNAME =	p5-Coro-6.570
 
-# perl
+CATEGORIES =	devel
+
+# Perl
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c perl pthread
+WANTLIB =		c perl
 
-BUILD_DEPENDS = ${RUN_DEPENDS} \
-		devel/p5-Canary-Stability
-RUN_DEPENDS = 	devel/p5-Event>=0.89 \
-		devel/p5-AnyEvent>=5.00 \
-		devel/p5-EV>=4.0 \
-		devel/p5-common-sense \
-		devel/p5-Guard>=0.5
+MODULES =		cpan
 
-# will use hand-made assembler on i386/amd64
-# can force it to use sjlj like on other platforms, to
-# check things work.
+BUILD_DEPENDS = 	${RUN_DEPENDS} \
+			devel/p5-Canary-Stability
+RUN_DEPENDS =		devel/p5-AnyEvent>=5.00 \
+			devel/p5-EV>=4.0 \
+			devel/p5-Event>=1.08 \
+			devel/p5-Guard>=0.5 \
+			devel/p5-common-sense
 
-# CONFIGURE_ENV = CORO_INTERFACE=s
+# The hand-made assembler on i386/amd64 fails due to MAP_STACK.
+# Force to use setjmp/longjmp/sigaltstack like on other platforms.
+CONFIGURE_ENV +=	CORO_INTERFACE=s
 
 # The Coro JIT violates W^X, so we can't use it.
-CONFIGURE_ENV += CORO_JIT=n
+CONFIGURE_ENV +=	CORO_JIT=n
 
 .include <bsd.port.mk>

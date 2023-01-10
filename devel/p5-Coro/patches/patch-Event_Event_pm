@@ -1,0 +1,23 @@
+Indirect Object Syntax
+
+Outside of the file handle case, use of this syntax is discouraged as it
+can confuse the Perl interpreter. See below for more details.
+
+Index: Event/Event.pm
+--- Event/Event.pm.orig
++++ Event/Event.pm
+@@ -190,12 +190,12 @@ sub sweep {
+ }
+ 
+ # very inefficient
+-our $IDLE = new Coro sub {
++our $IDLE = Coro->new( sub {
+    while () {
+       Event::one_event;
+       Coro::schedule if Coro::nready;
+    }
+-};
++} );
+ $IDLE->{desc} = "[Event idle thread]";
+ 
+ $Coro::idle = $IDLE;

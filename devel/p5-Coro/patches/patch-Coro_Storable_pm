@@ -1,0 +1,17 @@
+Indirect Object Syntax
+
+Outside of the file handle case, use of this syntax is discouraged as it
+can confuse the Perl interpreter. See below for more details.
+
+Index: Coro/Storable.pm
+--- Coro/Storable.pm.orig
++++ Coro/Storable.pm
+@@ -89,7 +89,7 @@ our @EXPORT = qw(thaw freeze nfreeze blocking_thaw blo
+ 
+ our $GRANULARITY = 0.01;
+ 
+-my $lock = new Coro::Semaphore;
++my $lock = Coro::Semaphore->new();
+ 
+ sub guard {
+    $lock->guard

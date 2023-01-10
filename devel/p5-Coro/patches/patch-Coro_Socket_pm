@@ -1,0 +1,17 @@
+Indirect Object Syntax
+
+Outside of the file handle case, use of this syntax is discouraged as it
+can confuse the Perl interpreter. See below for more details.
+
+Index: Coro/Socket.pm
+--- Coro/Socket.pm.orig
++++ Coro/Socket.pm
+@@ -194,7 +194,7 @@ sub configure {
+          $! = 0;
+ 
+          if ($self->connect ($_)) {
+-            next unless writable $self;
++            next unless $self->writable();
+             $! = unpack "i", $self->getsockopt (SOL_SOCKET, SO_ERROR);
+          }
+ 

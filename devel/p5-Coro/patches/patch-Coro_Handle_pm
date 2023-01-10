@@ -1,0 +1,17 @@
+Indirect Object Syntax
+
+Outside of the file handle case, use of this syntax is discouraged as it
+can confuse the Perl interpreter. See below for more details.
+
+Index: Coro/Handle.pm
+--- Coro/Handle.pm.orig
++++ Coro/Handle.pm
+@@ -77,7 +77,7 @@ non-(coroutine-)blocking equivalent.
+ =cut
+ 
+ sub unblock($) {
+-   new_from_fh Coro::Handle $_[0]
++   Coro::Handle->new_from_fh( $_[0] )
+ }
+ 
+ =item $fh->writable, $fh->readable

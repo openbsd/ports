@@ -1,0 +1,65 @@
+Indirect Object Syntax
+
+Outside of the file handle case, use of this syntax is discouraged as it
+can confuse the Perl interpreter. See below for more details.
+
+Index: Coro.pm
+--- Coro.pm.orig
++++ Coro.pm
+@@ -18,7 +18,7 @@ Coro - the only real threads in perl
+   cede; # and again
+   
+   # use locking
+-  my $lock = new Coro::Semaphore;
++  my $lock = Coro::Semaphore->new();
+   my $locked;
+   
+   $lock->down;
+@@ -426,25 +426,25 @@ See L<Coro::EV> or L<Coro::AnyEvent> for examples of u
+ =cut
+ 
+ # ||= because other modules could have provided their own by now
+-$idle ||= new Coro sub {
++$idle ||= Coro->new( sub {
+    require Coro::Debug;
+    die "FATAL: deadlock detected.\n"
+        . Coro::Debug::ps_listing ();
+-};
++} );
+ 
+ # this coro is necessary because a coro
+ # cannot destroy itself.
+ our @destroy;
+ our $manager;
+ 
+-$manager = new Coro sub {
++$manager = Coro->new( sub {
+    while () {
+       _destroy shift @destroy
+          while @destroy;
+ 
+       &schedule;
+    }
+-};
++} );
+ $manager->{desc} = "[coro manager]";
+ $manager->prio (PRIO_MAX);
+ 
+@@ -1057,7 +1057,7 @@ our @unblock_queue;
+ # to reduce pressure on the coro pool (because most callbacks
+ # return immediately and can be reused) and because we cannot cede
+ # inside an event callback.
+-our $unblock_scheduler = new Coro sub {
++our $unblock_scheduler = Coro->new( sub {
+    while () {
+       while (my $cb = pop @unblock_queue) {
+          &async_pool (@$cb);
+@@ -1069,7 +1069,7 @@ our $unblock_scheduler = new Coro sub {
+       }
+       schedule; # sleep well
+    }
+-};
++} );
+ $unblock_scheduler->{desc} = "[unblock_sub scheduler]";
+ 
+ sub unblock_sub(&) {

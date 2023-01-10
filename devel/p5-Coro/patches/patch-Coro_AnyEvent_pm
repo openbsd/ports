@@ -1,0 +1,26 @@
+Indirect Object Syntax
+
+Outside of the file handle case, use of this syntax is discouraged as it
+can confuse the Perl interpreter. See below for more details.
+
+Index: Coro/AnyEvent.pm
+--- Coro/AnyEvent.pm.orig
++++ Coro/AnyEvent.pm
+@@ -217,7 +217,7 @@ AnyEvent::post_detect {
+       # do the inefficient thing ourselves
+       Coro::_set_readyhook \&_activity;
+ 
+-      $IDLE = new Coro sub {
++      $IDLE = Coro->new( sub {
+          my $_poll = AnyEvent->can ("_poll")
+                   || AnyEvent->can ("one_event"); # AnyEvent < 6.0
+ 
+@@ -225,7 +225,7 @@ AnyEvent::post_detect {
+             $_poll->();
+             Coro::schedule if Coro::nready;
+          }
+-      };
++      } );
+       $IDLE->{desc} = "[AnyEvent idle process]";
+ 
+       $Coro::idle = $IDLE;

@@ -1,0 +1,17 @@
+Indirect Object Syntax
+
+Outside of the file handle case, use of this syntax is discouraged as it
+can confuse the Perl interpreter. See below for more details.
+
+Index: Coro/Util.pm
+--- Coro/Util.pm.orig
++++ Coro/Util.pm
+@@ -45,7 +45,7 @@ our $VERSION = 6.57;
+ 
+ our $MAXPARALLEL = 16; # max. number of parallel jobs
+ 
+-my $jobs = new Coro::Semaphore $MAXPARALLEL;
++my $jobs = Coro::Semaphore->new( $MAXPARALLEL );
+ 
+ sub _do_asy(&;@) {
+    my $sub = shift;

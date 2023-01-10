@@ -27,11 +27,11 @@ ${P5ARCH}/Coro/jit-amd64-unix.pl
 ${P5ARCH}/Coro/jit-x86-unix.pl
 ${P5ARCH}/auto/Coro/
 ${P5ARCH}/auto/Coro/EV/
-${P5ARCH}/auto/Coro/EV/EV.so
+@so ${P5ARCH}/auto/Coro/EV/EV.so
 ${P5ARCH}/auto/Coro/Event/
-${P5ARCH}/auto/Coro/Event/Event.so
+@so ${P5ARCH}/auto/Coro/Event/Event.so
 ${P5ARCH}/auto/Coro/State/
-${P5ARCH}/auto/Coro/State/State.so
+@so ${P5ARCH}/auto/Coro/State/State.so
 @man man/man3p/Coro.3p
 @man man/man3p/Coro::AIO.3p
 @man man/man3p/Coro::AnyEvent.3p
