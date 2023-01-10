@@ -1,7 +1,7 @@
 COMMENT =		IBM's corporate type family
 
 CATEGORIES =		fonts
-V =			6.0.0
+V =			6.1.1
 PKGNAME =		ibm-plex-$V
 
 # SIL OFL 1.1
