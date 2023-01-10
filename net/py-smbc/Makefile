@@ -1,6 +1,6 @@
 COMMENT=		Python bindings to wrap the libsmbclient API
 
-MODPY_EGG_VERSION=	1.0.24
+MODPY_EGG_VERSION=	1.0.25.1
 DISTNAME=		pysmbc-${MODPY_EGG_VERSION}
 PKGNAME=		py-smbc-${MODPY_EGG_VERSION}
 
