@@ -22,6 +22,8 @@ LIB_DEPENDS =		devel/gettext,-runtime
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--program-prefix=g \
 			--without-libgmp
+# supply result to skip a test that will abort configure if run as root
+CONFIGURE_ENV +=	gl_cv_func_mknod_works=no
 
 # Fixes a spurrious test failure
 PORTHOME =		${WRKDIR}
