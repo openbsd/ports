@@ -1,7 +1,7 @@
 COMMENT=		configuration editing tool and API
 
 DISTNAME=		augeas-1.12.0
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		sysutils devel
 
