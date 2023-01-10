@@ -1,6 +1,6 @@
 COMMENT =	Perl extension to parse PKCS \#10 certificate requests
 
-DISTNAME =	Crypt-PKCS10-2.004
+DISTNAME =	Crypt-PKCS10-2.005
 
 CATEGORIES =	security
 
