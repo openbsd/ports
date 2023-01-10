@@ -10,13 +10,13 @@ Index: py-rcsparse.c
 +#define PyString_CheckExact		PyUnicode_CheckExact
 +#define PyString_FromString		PyUnicode_FromString
 +#define PyString_FromStringAndSize	PyUnicode_FromStringAndSize
-+#endif
 +
 +static void
 +_PyUnicode_AsUTF8AndSize(PyObject *obj, char **strp, Py_ssize_t *sizep)
 +{
 +	*strp = PyUnicode_AsUTF8AndSize(obj, sizep);
 +}
++#endif
 +
  static PyObject *
  rcstoken2pystr(struct rcstoken *tok)
