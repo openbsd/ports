@@ -1,12 +1,11 @@
 COMMENT =		console vCard address book
 
-MODPY_EGG_VERSION =	0.17.0
+MODPY_EGG_VERSION =	0.18.0
 DISTNAME =		khard-${MODPY_EGG_VERSION}
-REVISION =		3
 
 CATEGORIES =		productivity
 
-HOMEPAGE =		https://github.com/scheibler/khard
+HOMEPAGE =		https://github.com/lucc/khard
 MAINTAINER =		Paco Esteban <paco@openbsd.org>
 
 # GPLv3

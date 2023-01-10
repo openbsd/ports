@@ -26,12 +26,8 @@ lib/python${MODPY_VERSION}/site-packages/khard/${MODPY_PYCACHE}config.${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/khard/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/khard/${MODPY_PYCACHE}formatter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/khard/${MODPY_PYCACHE}formatter.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/khard/${MODPY_PYCACHE}helpers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/khard/${MODPY_PYCACHE}helpers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/khard/${MODPY_PYCACHE}khard.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/khard/${MODPY_PYCACHE}khard.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/khard/${MODPY_PYCACHE}object_type.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/khard/${MODPY_PYCACHE}object_type.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/khard/${MODPY_PYCACHE}query.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/khard/${MODPY_PYCACHE}query.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/khard/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -45,9 +41,18 @@ lib/python${MODPY_VERSION}/site-packages/khard/data/
 lib/python${MODPY_VERSION}/site-packages/khard/data/config.spec
 lib/python${MODPY_VERSION}/site-packages/khard/data/template.yaml
 lib/python${MODPY_VERSION}/site-packages/khard/formatter.py
-lib/python${MODPY_VERSION}/site-packages/khard/helpers.py
+lib/python${MODPY_VERSION}/site-packages/khard/helpers/
+lib/python${MODPY_VERSION}/site-packages/khard/helpers/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/khard/helpers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/khard/helpers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/khard/helpers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/khard/helpers/${MODPY_PYCACHE}interactive.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/khard/helpers/${MODPY_PYCACHE}interactive.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/khard/helpers/${MODPY_PYCACHE}typing.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/khard/helpers/${MODPY_PYCACHE}typing.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/khard/helpers/interactive.py
+lib/python${MODPY_VERSION}/site-packages/khard/helpers/typing.py
 lib/python${MODPY_VERSION}/site-packages/khard/khard.py
-lib/python${MODPY_VERSION}/site-packages/khard/object_type.py
 lib/python${MODPY_VERSION}/site-packages/khard/query.py
 lib/python${MODPY_VERSION}/site-packages/khard/version.py
 @man man/man1/khard.1
