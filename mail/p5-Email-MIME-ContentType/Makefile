@@ -2,7 +2,7 @@ COMMENT=	parse MIME Content-Type or Content-Disposition headers
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME=	Email-MIME-ContentType-1.024
+DISTNAME=	Email-MIME-ContentType-1.028
 CATEGORIES=	mail
 
 # GPL
