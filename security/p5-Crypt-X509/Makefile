@@ -1,6 +1,6 @@
 COMMENT =	parse an X.509 certificate
 
-DISTNAME =	Crypt-X509-0.54
+DISTNAME =	Crypt-X509-0.55
 
 CATEGORIES =	security
 
