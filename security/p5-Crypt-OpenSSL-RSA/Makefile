@@ -1,6 +1,6 @@
 COMMENT =	RSA encoding and decoding using OpenSSL
 
-DISTNAME =	Crypt-OpenSSL-RSA-0.32
+DISTNAME =	Crypt-OpenSSL-RSA-0.33
 
 CATEGORIES =	security
 
