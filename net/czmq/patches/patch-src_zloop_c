@@ -1,0 +1,12 @@
+Index: src/zloop.c
+--- src/zloop.c.orig
++++ src/zloop.c
+@@ -582,7 +582,7 @@ zloop_timer_end (zloop_t *self, int timer_id)
+         //  from inside the poll loop. So, we hold the arg on the zombie
+         //  list, and process that list when we're done executing timers.
+         //  This hack lets us store an integer timer ID as a pointer
+-        zlistx_add_end (self->zombies, (byte *) NULL + timer_id);
++        zlistx_add_end (self->zombies, (void *)(uintptr_t)timer_id);
+ 
+     if (self->verbose)
+         zsys_debug ("zloop: cancel timer id=%d", timer_id);
