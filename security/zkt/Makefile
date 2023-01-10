@@ -1,8 +1,7 @@
 COMMENT=	DNSsec Zone Key Tool
 
-DISTNAME=	zkt-1.1.4
+DISTNAME=	zkt-1.1.6
 CATEGORIES=	security
-REVISION=	4
 
 # also https://github.com/hzuleger/ZKT http://www.zonekeytool.de/
 HOMEPAGE=	https://www.hznet.de/dns/zkt/
