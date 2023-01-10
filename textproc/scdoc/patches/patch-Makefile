@@ -1,12 +1,15 @@
 In OpenBSD, we do not compile programs statically when it isn't necessary.
+Drop -Werror
 
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -1,6 +1,5 @@
- VERSION=1.10.1
- CFLAGS+=-g -DVERSION='"$(VERSION)"' -Wall -Wextra -Werror -Wno-unused-parameter
+@@ -1,7 +1,6 @@
+ VERSION=1.11.2
+ CFLAGS?=-g
+-MAINFLAGS:=-DVERSION='"$(VERSION)"' -Wall -Wextra -Werror -Wno-unused-parameter
 -LDFLAGS+=-static
++MAINFLAGS:=-DVERSION='"$(VERSION)"' -Wall -Wextra -Wno-unused-parameter
  INCLUDE+=-Iinclude
  PREFIX?=/usr/local
- _INSTDIR=$(DESTDIR)$(PREFIX)
+ BINDIR?=$(PREFIX)/bin

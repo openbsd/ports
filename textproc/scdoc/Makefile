@@ -1,5 +1,5 @@
 COMMENT =		convert scdoc text files to man(7) pages
-VERSION =		1.11.1
+VERSION =		1.11.2
 DISTNAME =		scdoc-${VERSION}
 CATEGORIES =		textproc
 HOMEPAGE =		https://git.sr.ht/~sircmpwn/scdoc
