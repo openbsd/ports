@@ -206,7 +206,6 @@
      SUBDIR += rcube-yubikey-plugin
      SUBDIR += relaydb
      SUBDIR += rmail
-     SUBDIR += rmilter
      SUBDIR += roundcubemail
      SUBDIR += rspamd
      SUBDIR += rspamd,hyperscan

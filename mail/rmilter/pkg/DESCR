@@ -1,8 +1,0 @@
-Obsolete software to integrate rspamd with any milter-compatible MTA, for
-example postfix or sendmail.
-
-Do not use rmilter in new projects. You should work to move existing
-installations across to rspamd's integrated milter support.
-
-This package is being maintained in the short time to ease transition,
-but will be removed.

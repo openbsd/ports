@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1486 2023/01/03 11:40:27 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1487 2023/01/10 19:07:55 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1810,6 +1810,7 @@ my $obsolete_message = {
 	12 => "replace with IMAPSieve, see https://wiki.dovecot.org/HowTo/AntispamWithSieve",
 	13 => "has a dependency on obsolete software",
 	14 => "no longer maintained upstream and has security issues, consider remmina or tigervnc's vncviewer as an alternative",
+	15 => "use rspamd's internal milter support instead",
 	17 => "old GeoIP databases end-of-life, see alternative using geoip2/libmaxminddb",
 	20 => "merged into IETF Opus codec, obsolete, audio/mumble uses bundled version now",
 	21 => "upstream recommends to use composer to build a drupal site",
