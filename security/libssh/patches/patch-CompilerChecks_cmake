@@ -1,0 +1,12 @@
+Drop -Werror flag fatal with clang 15.
+Index: CompilerChecks.cmake
+--- CompilerChecks.cmake.orig
++++ CompilerChecks.cmake
+@@ -25,7 +25,6 @@ if (UNIX)
+     #add_c_compiler_flag("-Wcast-qual" SUPPORTED_COMPILER_FLAGS)
+     add_c_compiler_flag("-Werror=address" SUPPORTED_COMPILER_FLAGS)
+     add_c_compiler_flag("-Wstrict-prototypes" SUPPORTED_COMPILER_FLAGS)
+-    add_c_compiler_flag("-Werror=strict-prototypes" SUPPORTED_COMPILER_FLAGS)
+     add_c_compiler_flag("-Wwrite-strings" SUPPORTED_COMPILER_FLAGS)
+     add_c_compiler_flag("-Werror=write-strings" SUPPORTED_COMPILER_FLAGS)
+     add_c_compiler_flag("-Werror-implicit-function-declaration" SUPPORTED_COMPILER_FLAGS)
