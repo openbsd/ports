@@ -3,7 +3,7 @@ COMMENT =		library to deal with Japanese kana-to-kanji conversion
 V =			1.0.5
 DISTNAME =		libskk-${V}
 EXTRACT_SUFX =		.tar.xz
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=  skk                  0.1      # 0.0
 
