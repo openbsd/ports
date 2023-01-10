@@ -2,15 +2,13 @@ COMMENT =	parser generator tool and incremental parsing library
 
 GH_ACCOUNT =		tree-sitter
 GH_PROJECT =		tree-sitter
-GH_TAGNAME =		v0.20.6
-REVISION =		2
+GH_TAGNAME =		v0.20.7
 
-SHARED_LIBS +=		tree-sitter	2.0 # 0.20.6
+SHARED_LIBS +=		tree-sitter	2.1 # 0.20.7
 
 SUBST_VARS +=		LIBtree-sitter_VERSION
 
 CATEGORIES =		textproc
-MAINTAINER =		Paco Esteban <paco@openbsd.org>
 
 # Unlicense/MIT
 PERMIT_PACKAGE =	Yes
