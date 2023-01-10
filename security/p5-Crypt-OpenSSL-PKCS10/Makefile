@@ -2,7 +2,7 @@ COMMENT =	Perl extension to OpenSSL's PKCS10 API
 
 MODULES =	cpan
 
-DISTNAME =	Crypt-OpenSSL-PKCS10-0.18
+DISTNAME =	Crypt-OpenSSL-PKCS10-0.19
 CATEGORIES =	security
 
 # Perl

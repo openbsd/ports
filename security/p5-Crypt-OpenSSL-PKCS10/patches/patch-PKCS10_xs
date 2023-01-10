@@ -1,0 +1,16 @@
+Index: PKCS10.xs
+--- PKCS10.xs.orig
++++ PKCS10.xs
+@@ -12,10 +12,10 @@
+ 
+ #include "ppport.h"
+ 
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined LIBRESSL_VERSION_NUMBER
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
+ #define EVP_PKEY_get0_RSA(pkey) ((pkey)->pkey.rsa)
+ #define EVP_PKEY_get0_DSA(pkey) ((pkey)->pkey.dsa)
+-#ifndef OPENSSL_NO_EC || defined LIBRESSL_VERSION_NUMBER
++#ifndef OPENSSL_NO_EC
+ #define EVP_PKEY_get0_EC_KEY(pkey) ((pkey)->pkey.ec)
+ #endif
+ #endif
