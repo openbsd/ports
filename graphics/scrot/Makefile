@@ -1,6 +1,6 @@
 COMMENT=		commandline screen capture util
 
-V=			1.7
+V=			1.8
 DISTNAME=		scrot-${V}
 
 CATEGORIES=		graphics
@@ -8,7 +8,7 @@ CATEGORIES=		graphics
 # BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += Imlib2 X11 Xcomposite Xext Xfixes c
+WANTLIB += Imlib2 X11 Xcomposite Xext Xfixes Xinerama c
 
 MASTER_SITES=		https://github.com/resurrecting-open-source-projects/scrot/releases/download/${V}/
 
