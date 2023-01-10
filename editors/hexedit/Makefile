@@ -2,8 +2,7 @@ COMMENT=	view and edit files in hexadecimal or ASCII
 
 GH_ACCOUNT=	pixel
 GH_PROJECT=	hexedit
-GH_TAGNAME=	1.5
-REVISION=	0
+GH_TAGNAME=	1.6
 
 CATEGORIES=	editors
 
