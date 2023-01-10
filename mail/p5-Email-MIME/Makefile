@@ -2,12 +2,13 @@ COMMENT=	easy MIME message handling
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME=	Email-MIME-1.949
+DISTNAME=	Email-MIME-1.953
 CATEGORIES=	mail
-EPOCH=		0
 
 # Same as Perl
 PERMIT_PACKAGE=	Yes
+
+EPOCH=		0
 
 RUN_DEPENDS=	devel/p5-Module-Runtime \
 		mail/p5-Email-Address-XS \
