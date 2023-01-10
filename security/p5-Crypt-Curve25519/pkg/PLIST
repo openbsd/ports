@@ -4,5 +4,5 @@ ${P5ARCH}/Crypt/Curve25519.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Crypt/
 ${P5ARCH}/auto/Crypt/Curve25519/
-${P5ARCH}/auto/Crypt/Curve25519/Curve25519.so
+@so ${P5ARCH}/auto/Crypt/Curve25519/Curve25519.so
 @man man/man3p/Crypt::Curve25519.3p
