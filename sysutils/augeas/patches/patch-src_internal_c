@@ -1,0 +1,17 @@
+
+Avoid unportable Linux-specific path triggered by gnulib/lib/regex.h
+defining __USE_GNU.  POSIX specifies that strerror_r returns an int, and
+that's what we provide.
+
+Index: src/internal.c
+--- src/internal.c.orig
++++ src/internal.c
+@@ -431,7 +431,7 @@ char *cleanpath(char *path) {
+ 
+ const char *xstrerror(int errnum, char *buf, size_t len) {
+ #ifdef HAVE_STRERROR_R
+-# ifdef __USE_GNU
++# if 0
+     /* Annoying linux specific API contract */
+     return strerror_r(errnum, buf, len);
+ # else
