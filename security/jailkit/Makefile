@@ -1,6 +1,7 @@
 COMMENT=		utilities for jailing a user or process
 
 DISTNAME=		jailkit-2.19
+REVISION=		0
 CATEGORIES=		security sysutils
 
 HOMEPAGE=		http://olivier.sessink.nl/jailkit/

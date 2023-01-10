@@ -1,0 +1,13 @@
+Proper include to access local compat functions.
+
+Index: src/jk_procmailwrapper.c
+--- src/jk_procmailwrapper.c.orig
++++ src/jk_procmailwrapper.c
+@@ -49,6 +49,7 @@ POSSIBILITY OF SUCH DAMAGE.
+ #include <errno.h>
+ #include <grp.h>
+ 
++#include "utils.h"
+ #include "jk_lib.h"
+ 
+ #define PROGRAMNAME "jk_procmailwrapper"
