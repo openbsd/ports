@@ -1,9 +1,8 @@
 COMMENT =		library for creating DigiDoc signature files
 
-V =			3.14.11
+V =			3.14.12
 DISTNAME =		libdigidocpp-${V}
 CATEGORIES =		security
-REVISION =		0
 
 SHARED_LIBS =		digidocpp	1.0	# 0.0
 
@@ -20,7 +19,11 @@ DIST_SUBDIR =		libdigidocpp
 MASTER_SITES0 =		https://github.com/open-eid/libdigidocpp/
 # still pending (but approved)
 PATCHFILES +=		iconv-{pull/}470.patch:0
+# merged "Update to minizip 1.2.13"
+# https://github.com/open-eid/libdigidocpp/pull/515
 PATCHFILES +=		update-minzip-{pull/}515.patch:0
+# merged "LibreSSL: opaque TS structs, 3.6.0 provides TS accessors"
+# https://github.com/open-eid/libdigidocpp/pull/516
 PATCHFILES +=		libressl-{pull/}516.patch:0
 
 PATCH_DIST_STRIP =	-p1
