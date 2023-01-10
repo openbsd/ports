@@ -1,0 +1,15 @@
+Forcefully disable stack scanning, unportable and completely broken when
+built by clang 15.
+
+Index: scsilib/include/mconfig.h
+--- scsilib/include/mconfig.h.orig
++++ scsilib/include/mconfig.h
+@@ -137,6 +137,8 @@ extern "C" {
+ #endif
+ #endif
+ 
++#undef	HAVE_SCANSTACK
++
+ /*
+  * Allow to overwrite the defines in the makefiles by calling
+  *
