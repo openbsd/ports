@@ -1,0 +1,11 @@
+Index: gck/meson.build
+--- gck/meson.build.orig
++++ gck/meson.build
+@@ -78,6 +78,7 @@ gck_cflags = [
+   '-DP11_KIT_API_SUBJECT_TO_CHANGE',
+   '-DPKCS11_REGISTRY_DIR="@0@"'.format(get_option('prefix') / get_option('libdir') / 'pkcs11'),
+   '-D_XOPEN_SOURCE',   # Needed for strptime()
++  '-D_XOPEN_VERSION=4',   # Needed for strptime()
+   '-D_DEFAULT_SOURCE', # Needed for timegm
+ ]
+ 
