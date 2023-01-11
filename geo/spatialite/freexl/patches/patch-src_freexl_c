@@ -1,28 +1,21 @@
---- src/freexl.c.orig	Tue Jul 14 09:45:23 2015
-+++ src/freexl.c	Fri Jul 24 15:51:11 2015
+Avoid conflict with swap16/swap32 defines from endian.h
+
+Index: src/freexl.c
+--- src/freexl.c.orig
++++ src/freexl.c
 @@ -108,6 +108,7 @@ lround (double num)
  }
  #endif
  
-+#ifndef swap16
++#undef swap16
  static void
  swap16 (biff_word16 * word)
  {
-@@ -116,7 +117,9 @@ swap16 (biff_word16 * word)
-     word->bytes[0] = word->bytes[1];
+@@ -117,6 +118,7 @@ swap16 (biff_word16 * word)
      word->bytes[1] = save;
  }
-+#endif
  
-+#ifndef swap32
++#undef swap32
  static void
  swap32 (biff_word32 * word)
  {
-@@ -129,6 +132,7 @@ swap32 (biff_word32 * word)
-     word->bytes[2] = save1;
-     word->bytes[3] = save0;
- }
-+#endif
- 
- static void
- swap_float (biff_float * word)
