@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1487 2023/01/10 19:07:55 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1488 2023/01/11 02:05:10 gnezdo Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1775,6 +1775,7 @@ setup_obsolete_reason(
 	31 => 'py-ipaddr',
 	3 => 'hlfl',
 	6 => 'caribou',
+	5 => 'riak',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
