@@ -265,6 +265,7 @@ share/help/zh_CN/gnome-text-editor/media/search-recent.png
 share/icons/hicolor/scalable/apps/org.gnome.TextEditor.svg
 share/icons/hicolor/symbolic/apps/org.gnome.TextEditor-symbolic.svg
 share/locale/ab/LC_MESSAGES/gnome-text-editor.mo
+share/locale/be/LC_MESSAGES/gnome-text-editor.mo
 share/locale/bg/LC_MESSAGES/gnome-text-editor.mo
 share/locale/ca/LC_MESSAGES/gnome-text-editor.mo
 share/locale/cs/LC_MESSAGES/gnome-text-editor.mo
@@ -283,6 +284,7 @@ share/locale/he/LC_MESSAGES/gnome-text-editor.mo
 share/locale/hr/LC_MESSAGES/gnome-text-editor.mo
 share/locale/hu/LC_MESSAGES/gnome-text-editor.mo
 share/locale/id/LC_MESSAGES/gnome-text-editor.mo
+share/locale/ie/LC_MESSAGES/gnome-text-editor.mo
 share/locale/is/LC_MESSAGES/gnome-text-editor.mo
 share/locale/it/LC_MESSAGES/gnome-text-editor.mo
 share/locale/ja/LC_MESSAGES/gnome-text-editor.mo
