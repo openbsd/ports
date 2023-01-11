@@ -131,6 +131,7 @@
      SUBDIR += py-cvxpy,python3
      SUBDIR += py-datedelta,python3
      SUBDIR += py-ecos,python3
+     SUBDIR += py-gmpy2,python3
      SUBDIR += py-graphviz,python3
      SUBDIR += py-h5py,python3
      SUBDIR += py-mpmath,python3
