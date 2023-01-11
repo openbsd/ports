@@ -3,7 +3,7 @@ COMMENT=		fast array and numeric programming library for Python
 MODPY_EGG_VERSION=	1.23.5
 DISTNAME=		numpy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		math devel
 
@@ -35,8 +35,7 @@ TEST_DEPENDS=		${FULLPKGNAME}:${FULLPKGPATH} \
 			devel/py-tz${MODPY_FLAVOR}
 
 .include <bsd.port.arch.mk>
-# XXX - disable on aarch64 until fortran compiler is fixed
-.if ${PROPERTIES:Mgcc49} && ${MACHINE_ARCH} != aarch64
+.if ${PROPERTIES:Mgcc49}
 MODULES+=		fortran
 BUILD_DEPENDS+=		${MODFORTRAN_BUILD_DEPENDS}
 LIB_DEPENDS+=		${MODFORTRAN_LIB_DEPENDS} \
