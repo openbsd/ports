@@ -13,11 +13,12 @@ USE_LLD = No
 
 DPB_PROPERTIES = parallel
 
+USE_NOEXECONLY = Yes
+
 V = 8.4.0
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
-REVISION = 12
-REVISION-main = 13
+REVISION = 14
 
 ADASTRAP-amd64 = adastrap-amd64-$V-1.tar.xz
 ADASTRAP-arm = adastrap-arm-4.9.4-0.tar.xz
