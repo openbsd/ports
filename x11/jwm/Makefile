@@ -1,6 +1,7 @@
 COMMENT=		Joe's Window Manager
 
-DISTNAME=		jwm-2.4.1
+V=			2.4.3
+DISTNAME=		jwm-${V}
 
 CATEGORIES=		x11
 
@@ -12,9 +13,9 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += X11 Xext Xft Xinerama Xmu Xpm Xrender c cairo fontconfig
 WANTLIB += freetype gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += harfbuzz iconv intl jpeg m pango-1.0 pangoft2-1.0 pangoxft-1.0
-WANTLIB += png rsvg-2 z
+WANTLIB += png rsvg-2
 
-MASTER_SITES=		https://www.joewing.net/projects/jwm/releases/
+MASTER_SITES=		https://github.com/joewing/jwm/releases/download/v${V}/
 EXTRACT_SUFX=		.tar.xz
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
