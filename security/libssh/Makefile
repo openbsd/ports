@@ -25,6 +25,7 @@ WRKBUILD =		${WRKDIST}/build
 BUILD_DEPENDS =		devel/cmocka \
 			devel/argp-standalone
 
-CONFIGURE_ARGS +=	-DUNIT_TESTING=ON
+CONFIGURE_ARGS +=	-DUNIT_TESTING=ON \
+			-DWITH_EXAMPLES=OFF
 
 .include <bsd.port.mk>
