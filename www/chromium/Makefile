@@ -6,7 +6,7 @@ DPB_PROPERTIES=		parallel parallel2
 
 COMMENT=		Chromium browser
 
-V=			108.0.5359.124
+V=			109.0.5414.74
 
 DISTNAME=		chromium-${V}
 
@@ -103,8 +103,7 @@ BUILDTYPE=	Release
 SUBST_VARS+=	WRKSRC WRKDIR DEBUGFLAG
 
 ALL_TARGET=		chrome chromedriver
-TEST_TARGET=		gpu_tests
-TTEST_TARGET=		base_unittests \
+TEST_TARGET=		base_unittests \
 			blink_unittests \
 			chromedriver_unittests \
 			components_unittests \
@@ -161,8 +160,10 @@ GN_ARGS=	enable_nacl=false \
 		use_sysroot=false \
 		treat_warnings_as_errors=false \
 		clang_use_chrome_plugins=false \
-		use_allocator=\"none\" \
 		use_allocator_shim=false \
+		use_partition_alloc=true \
+		use_partition_alloc_as_malloc=false \
+		enable_backup_ref_ptr_support=false \
 		disable_fieldtrial_testing_config=true \
 		extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\" \
 		fatal_linker_warnings=false \

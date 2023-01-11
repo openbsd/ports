@@ -19,7 +19,7 @@ Index: chrome/browser/ui/views/frame/browser_frame.h
    // Returns which edges of the frame are tiled.
    const ui::WindowTiledEdges& tiled_edges() const { return tiled_edges_; }
    void set_tiled_edges(ui::WindowTiledEdges tiled_edges) {
-@@ -206,7 +206,7 @@ class BrowserFrame : public views::Widget, public view
+@@ -210,7 +210,7 @@ class BrowserFrame : public views::Widget, public view
    // contents for smoother dragging.
    TabDragKind tab_drag_kind_ = TabDragKind::kNone;
  

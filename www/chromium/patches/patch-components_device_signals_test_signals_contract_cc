@@ -1,8 +1,8 @@
 Index: components/device_signals/test/signals_contract.cc
 --- components/device_signals/test/signals_contract.cc.orig
 +++ components/device_signals/test/signals_contract.cc
-@@ -164,7 +164,7 @@ GetSignalsContract() {
-       base::BindRepeating(VerifyUnset, names::kSecureBootEnabled);
+@@ -190,7 +190,7 @@ GetSignalsContract() {
+       base::BindRepeating(VerifyUnset, names::kCrowdStrike);
  #endif
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)

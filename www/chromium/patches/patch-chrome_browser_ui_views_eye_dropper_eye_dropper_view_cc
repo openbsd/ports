@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/views/eye_dropper/eye_dropper_view.cc
 --- chrome/browser/ui/views/eye_dropper/eye_dropper_view.cc.orig
 +++ chrome/browser/ui/views/eye_dropper/eye_dropper_view.cc
-@@ -157,7 +157,7 @@ EyeDropperView::EyeDropperView(content::RenderFrameHos
+@@ -159,7 +159,7 @@ EyeDropperView::EyeDropperView(content::RenderFrameHos
    // EyeDropper/WidgetDelegate.
    set_owned_by_client();
    SetPreferredSize(GetSize());

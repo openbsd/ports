@@ -1,7 +1,7 @@
 Index: third_party/nasm/BUILD.gn
 --- third_party/nasm/BUILD.gn.orig
 +++ third_party/nasm/BUILD.gn
-@@ -59,6 +59,13 @@ config("nasm_config") {
+@@ -63,6 +63,13 @@ config("nasm_config") {
  
    defines = [ "HAVE_CONFIG_H" ]
  

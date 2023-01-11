@@ -1,7 +1,7 @@
 Index: components/viz/test/mock_display_client.h
 --- components/viz/test/mock_display_client.h.orig
 +++ components/viz/test/mock_display_client.h
-@@ -44,7 +44,7 @@ class MockDisplayClient : public mojom::DisplayClient 
+@@ -45,7 +45,7 @@ class MockDisplayClient : public mojom::DisplayClient 
  #endif
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

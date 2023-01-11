@@ -1,7 +1,7 @@
-Index: extensions/browser/browser_context_keyed_service_factories.cc
---- extensions/browser/browser_context_keyed_service_factories.cc.orig
-+++ extensions/browser/browser_context_keyed_service_factories.cc
-@@ -89,7 +89,7 @@ void EnsureBrowserContextKeyedServiceFactoriesBuilt() 
+Index: extensions/browser/api/api_browser_context_keyed_service_factories.cc
+--- extensions/browser/api/api_browser_context_keyed_service_factories.cc.orig
++++ extensions/browser/api/api_browser_context_keyed_service_factories.cc
+@@ -71,7 +71,7 @@ void EnsureApiBrowserContextKeyedServiceFactoriesBuilt
    IdleManagerFactory::GetInstance();
    ManagementAPI::GetFactoryInstance();
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) || \
