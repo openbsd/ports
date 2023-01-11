@@ -1,0 +1,16 @@
+lib/python${MODPY_VERSION}/site-packages/gmpy2/
+lib/python${MODPY_VERSION}/site-packages/gmpy2-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/gmpy2-${MODPY_EGG_VERSION}.dist-info/COPYING
+lib/python${MODPY_VERSION}/site-packages/gmpy2-${MODPY_EGG_VERSION}.dist-info/COPYING.LESSER
+lib/python${MODPY_VERSION}/site-packages/gmpy2-${MODPY_EGG_VERSION}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/gmpy2-${MODPY_EGG_VERSION}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/gmpy2-${MODPY_EGG_VERSION}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/gmpy2-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/gmpy2/__init__.pxd
+lib/python${MODPY_VERSION}/site-packages/gmpy2/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gmpy2/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gmpy2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gmpy2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+@so lib/python${MODPY_VERSION}/site-packages/gmpy2/gmpy2.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/gmpy2/gmpy2.h
+lib/python${MODPY_VERSION}/site-packages/gmpy2/gmpy2.pxd

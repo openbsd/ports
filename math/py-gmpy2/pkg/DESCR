@@ -1,0 +1,6 @@
+gmpy2 is an optimized, C-coded Python extension module that supports
+fast multiple-precision arithmetic.
+
+gmpy2 is based on the original gmpy module but adds support for
+correctly rounded multiple-precision real arithmetic (using the MPFR
+library) and complex arithmetic (using the MPC library).
