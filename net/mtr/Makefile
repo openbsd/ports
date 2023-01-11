@@ -2,7 +2,7 @@ COMMENT=	network diagnostic tool, similar to ping and traceroute
 
 GH_ACCOUNT=	traviscross
 GH_PROJECT=	mtr
-GH_TAGNAME=	v0.94
+GH_TAGNAME=	v0.95
 EPOCH=		0
 
 CATEGORIES=	net
