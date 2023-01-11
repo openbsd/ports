@@ -17,7 +17,7 @@ EXTRACT_SUFX =		.tar.bz2
 
 MAKE_FLAGS =		ARCHLINKS_FREEBSD=arch/OpenBSD \
 			CC="${CC}" \
-			OTHER_FLAGS="-pedantic -Wall -Werror ${CFLAGS}"
+			OTHER_FLAGS="-pedantic -Wall ${CFLAGS}"
 
 NO_TEST =		Yes
 
