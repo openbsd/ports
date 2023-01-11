@@ -1,13 +1,16 @@
+Drop -Werror
 Unbreak separate build
 
 Index: Makefile.am
 --- Makefile.am.orig
 +++ Makefile.am
-@@ -60,7 +60,7 @@ endif
+@@ -59,8 +59,8 @@ endif
+ 
  libinotify_la_SOURCES += compat/tree.h
  
- libinotify_la_CFLAGS = -I. @DEBUG_CFLAGS@ @PTHREAD_CFLAGS@ -Wall -Werror
+-libinotify_la_CFLAGS = -I. @DEBUG_CFLAGS@ @PTHREAD_CFLAGS@ -Wall -Werror
 -libinotify_la_LDFLAGS = @PTHREAD_LIBS@ -export-symbols libinotify.sym
++libinotify_la_CFLAGS = -I. @DEBUG_CFLAGS@ @PTHREAD_CFLAGS@ -Wall
 +libinotify_la_LDFLAGS = @PTHREAD_LIBS@ -export-symbols $(top_srcdir)/libinotify.sym
  endif
  
