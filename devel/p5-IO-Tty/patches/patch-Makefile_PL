@@ -1,0 +1,14 @@
+Avoid invalid char to pointer conversion, fatal with clang 15.
+
+Index: Makefile.PL
+--- Makefile.PL.orig
++++ Makefile.PL
+@@ -163,7 +163,7 @@ main ()
+ #if defined (__stub_$f) || defined (__stub___$f)
+ choke me
+ #else
+-f = $f ();
++f = $f;
+ #endif
+ 
+   ;
