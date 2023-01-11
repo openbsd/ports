@@ -1,11 +1,12 @@
 COMMENT=	library to handle various audio file formats
 
-GH_ACCOUNT=	libsndfile
-GH_PROJECT=	libsndfile
-GH_TAGNAME=	1.1.0
+V=		1.2.0
+DISTNAME=	libsndfile-${V}
+EXTRACT_SUFX=	.tar.xz
 CATEGORIES=	audio
 
 HOMEPAGE=	https://libsndfile.github.io/libsndfile/
+MASTER_SITES=	https://github.com/libsndfile/libsndfile/releases/download/${V}/
 
 MAINTAINER=	Jan Stary <hans@stare.cz>
 
