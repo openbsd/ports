@@ -11,6 +11,7 @@
      SUBDIR += apg
      SUBDIR += argon2
      SUBDIR += arirang
+     SUBDIR += badkeys
      SUBDIR += bfbtester
      SUBDIR += boofuzz
      SUBDIR += botan
