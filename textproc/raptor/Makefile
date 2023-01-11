@@ -2,7 +2,7 @@ COMMENT=		RDF Parser Toolkit for Redland
 DISTNAME=		raptor2-2.0.15
 PKGNAME=		${DISTNAME:C/raptor2/raptor/}
 CATEGORIES=		textproc
-REVISION=		4
+REVISION=		5
 
 SHARED_LIBS +=  raptor2              0.0      # 0.0
 

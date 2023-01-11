@@ -1,0 +1,12 @@
+Index: src/raptor_parse.c
+--- src/raptor_parse.c.orig
++++ src/raptor_parse.c
+@@ -257,7 +257,7 @@ raptor_world_get_parser_factory(raptor_world *world, c
+ int
+ raptor_world_get_parsers_count(raptor_world* world)
+ {
+-  RAPTOR_ASSERT_OBJECT_POINTER_RETURN_VALUE(world, raptor_world, NULL);
++  RAPTOR_ASSERT_OBJECT_POINTER_RETURN_VALUE(world, raptor_world, 0);
+ 
+   raptor_world_open(world);
+ 
