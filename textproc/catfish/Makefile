@@ -17,6 +17,8 @@ MODULES=	lang/python \
 		x11/xfce4
 MODPY_ADJ_FILES=bin/catfish
 NO_BUILD=	Yes
+# NO_BUILD=Yes defaults this to No, but configure and fake need it
+MODPY_BUILDDEP=	Yes
 
 RUN_DEPENDS =	devel/py-gobject3${MODPY_FLAVOR} \
 		devel/desktop-file-utils \
