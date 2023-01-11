@@ -1,0 +1,3 @@
+badkeys checks public keys in a variety of formats (including X.509
+certificates, Certificate Signing Requests, SSH public keys and others)
+for known vulnerabilities.
