@@ -1,6 +1,6 @@
 COMMENT=		front-end to external cd audio rippers and mp3 encoders
 
-DISTNAME=		grip-4.2.3
+DISTNAME=		grip-4.2.4
 
 CATEGORIES=		audio
 
