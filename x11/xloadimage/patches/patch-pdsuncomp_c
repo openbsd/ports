@@ -1,0 +1,14 @@
+Index: pdsuncomp.c
+--- pdsuncomp.c.orig
++++ pdsuncomp.c
+@@ -417,8 +417,8 @@ int pdsRead(zf, buf, size)
+   static char obuf[2048];
+   char ibuf[2048];
+   int left;
+-  int in_length;
+-  static int out_length= 2048, out_ptr= 0;
++  long int in_length;
++  static long int out_length= 2048, out_ptr= 0;
+ 
+   if (Decompressing) {
+     left= size;

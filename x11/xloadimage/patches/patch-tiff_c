@@ -1,0 +1,12 @@
+Index: tiff.c
+--- tiff.c.orig
++++ tiff.c
+@@ -227,6 +227,8 @@ static void babble(name, info)
+ }
+ 
+ int tiffIdent(fullname, name)
++     char *fullname;
++     char *name;
+ {
+   TIFF *tiff;
+   struct tiff_info info;

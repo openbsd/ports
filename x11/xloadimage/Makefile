@@ -2,11 +2,10 @@ COMMENT=	graphics file viewer for X11
 
 VERSION=	4.1
 # Debian
-REV=		22
+REV=		25
 
 DISTNAME=	xloadimage.${VERSION}
 PKGNAME=	xloadimage-${VERSION}.${REV}
-REVISION=	0
 EPOCH=		0
 CATEGORIES=	x11 graphics
 
@@ -19,7 +18,7 @@ MASTER_SITES=	${MASTER_SITE_R5CONTRIB}
 MASTER_SITES0=	${MASTER_SITE_DEBIAN:=main/x/xloadimage/}
 
 DISTFILES=	${DISTNAME}.tar.gz \
-		xloadimage_${VERSION}-${REV}.debian.tar.gz:0
+		xloadimage_${VERSION}-${REV}.debian.tar.xz:0
 
 LIB_DEPENDS=	graphics/png \
 		graphics/tiff
@@ -31,10 +30,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 NO_TEST=	Yes
 
 PATCH_DIST_STRIP= -p1
-
-# superseded by 30_libtiff5.patch
-pre-patch:
-	rm ${WRKDIR}/debian/patches/24_libtiff5.patch
 
 do-distpatch:
 	@for p in ${WRKDIR}/debian/patches/*.patch; do \

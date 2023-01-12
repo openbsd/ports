@@ -1,0 +1,12 @@
+Index: vicar.c
+--- vicar.c.orig
++++ vicar.c
+@@ -115,7 +115,7 @@ Image *vicarLoad(fullname, name, verbose)
+   byte         *mapred,*mapgreen,*mapblue;
+   ZFILE        *zf;
+  
+-  if ( vicarIdent(fullname,name,verbose) == 0 )
++  if ( vicarIdent(fullname,name) == 0 )
+     return(0);
+ 
+   /* define the image structure */

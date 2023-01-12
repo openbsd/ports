@@ -1,5 +1,6 @@
---- cmuwmraster.c.orig	Wed Jul 16 16:22:59 2008
-+++ cmuwmraster.c	Wed Jul 16 16:23:21 2008
+Index: cmuwmraster.c
+--- cmuwmraster.c.orig
++++ cmuwmraster.c
 @@ -22,9 +22,9 @@ struct cmuwm_header *headerp;
  {
      printf("%s is a %ldx%ld %ld plane CMU WM raster\n",
@@ -38,7 +39,8 @@
 -    if (memToVal(header.depth, sizeof(short)) != 1)
 +    if (memToVal(header.depth, 2) != 1)
        {
- 	  fprintf(stderr,"CMU WM raster %s is of depth %d, must be 1",
+-	  fprintf(stderr,"CMU WM raster %s is of depth %d, must be 1",
++	  fprintf(stderr,"CMU WM raster %s is of depth %lu, must be 1",
  		  name,
 -		  (int) header.depth);
 +		  memToVal(header.depth, 2));

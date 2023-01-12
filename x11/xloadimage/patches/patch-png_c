@@ -1,0 +1,12 @@
+Index: png.c
+--- png.c.orig
++++ png.c
+@@ -135,7 +135,7 @@ static void pngInfo( png_uint_32 width, png_uint_32 he
+ 		     int bit_depth, int color_type, int interlace_type,
+ 		     double file_gamma)
+ {
+-  printf("%s is %ldx%ld PNG image, color type %s, %d bit",
++  printf("%s is %ux%u PNG image, color type %s, %d bit",
+ 	 filename, width, height, pngColor(color_type), bit_depth);
+   if( interlace_type != PNG_INTERLACE_NONE)
+     printf(", interlace %s", pngInterlace(interlace_type));
