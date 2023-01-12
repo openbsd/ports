@@ -1,0 +1,32 @@
+_pbuild user is blocked from accessing the Internet
+
+Index: tests/integration/test_urllib2.py
+--- tests/integration/test_urllib2.py.orig
++++ tests/integration/test_urllib2.py
+@@ -56,16 +56,16 @@ def test_response_headers(httpbin_both, tmpdir):
+         assert sorted(open1) == sorted(open2)
+ 
+ 
+-def test_effective_url(tmpdir):
+-    """Ensure that the effective_url is captured"""
+-    url = "http://mockbin.org/redirect/301"
+-
+-    with vcr.use_cassette(str(tmpdir.join("headers.yaml"))):
+-        effective_url = urlopen_with_cafile(url).geturl()
+-        assert effective_url == "http://mockbin.org/redirect/301/0"
+-
+-    with vcr.use_cassette(str(tmpdir.join("headers.yaml"))):
+-        assert effective_url == urlopen_with_cafile(url).geturl()
++#def test_effective_url(tmpdir):
++#    """Ensure that the effective_url is captured"""
++#    url = "http://mockbin.org/redirect/301"
++#
++#    with vcr.use_cassette(str(tmpdir.join("headers.yaml"))):
++#        effective_url = urlopen_with_cafile(url).geturl()
++#        assert effective_url == "http://mockbin.org/redirect/301/0"
++#
++#    with vcr.use_cassette(str(tmpdir.join("headers.yaml"))):
++#        assert effective_url == urlopen_with_cafile(url).geturl()
+ 
+ 
+ def test_multiple_requests(httpbin_both, tmpdir):

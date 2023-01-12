@@ -1,9 +1,8 @@
 COMMENT =		automatically mock HTTP interactions to speed testing
 
-MODPY_EGG_VERSION =	2.1.1
+MODPY_EGG_VERSION =	4.2.1
 DISTNAME =		vcrpy-${MODPY_EGG_VERSION}
 PKGNAME =		py-vcrpy-${MODPY_EGG_VERSION}
-REVISION =		5
 
 CATEGORIES =		www
 
