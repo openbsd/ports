@@ -29,6 +29,7 @@ CFLAGS +=		"-DOPENSSL_clear_free=freezero"
 MODULES =		lang/python
 MODPY_DISTUTILS_BUILD =	linux-package
 MODPY_SETUP_ARGS +=	--verbose \
+			--ignore-compiler-warnings \
 			--extra-include-dirs=${LOCALBASE}/include \
 			--extra-library-dirs=${LOCALBASE}/lib
 # this disables checking upstream for updates
