@@ -1,4 +1,4 @@
 @bin bin/scdoc
-lib/pkgconfig/scdoc.pc
 @man man/man1/scdoc.1
 @man man/man5/scdoc.5
+share/pkgconfig/scdoc.pc
