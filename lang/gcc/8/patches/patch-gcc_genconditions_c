@@ -6,7 +6,7 @@ Index: gcc/genconditions.c
     in a generator program.  As a defensive measure, don't do so when the\n\
     table isn't going to have anything in it.  */\n\
 -#if GCC_VERSION >= 3001\n\
-+#if GCC_VERSION >= 3001 && __clang_major__ != 13\n\
++#if GCC_VERSION >= 3001 && !defined(__clang_major__)\n\
  \n\
  /* Do not allow checking to confuse the issue.  */\n\
  #undef CHECKING_P\n\
@@ -15,7 +15,7 @@ Index: gcc/genconditions.c
     optimizing.  */\n\
  \n\
 -#if GCC_VERSION >= 3001\n\
-+#if GCC_VERSION >= 3001 && __clang_major__ != 13\n\
++#if GCC_VERSION >= 3001 && !defined(__clang_major__)\n\
  static const struct c_test insn_conditions[] = {\n");
  
    traverse_c_tests (write_one_condition, 0);
@@ -24,7 +24,7 @@ Index: gcc/genconditions.c
          "  const char *p;\n"
          "  puts (\"(define_conditions [\");\n"
 -	"#if GCC_VERSION >= 3001\n"
-+	"#if GCC_VERSION >= 3001 && __clang_major__ != 13\n"
++	"#if GCC_VERSION >= 3001 && !defined(__clang_major__)\n"
  	"  for (i = 0; i < ARRAY_SIZE (insn_conditions); i++)\n"
  	"    {\n"
  	"      printf (\"  (%d \\\"\", insn_conditions[i].value);\n"
