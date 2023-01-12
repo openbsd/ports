@@ -1,1 +1,5 @@
 st is a simple virtual terminal emulator for X which sucks less.
+
+Flavour:
+	scrollback - allows scrolling through terminal output with
+			shift+pgup/pgdn

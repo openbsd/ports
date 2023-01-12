@@ -288,6 +288,7 @@
      SUBDIR += spice-gtk
      SUBDIR += sselp
      SUBDIR += st
+     SUBDIR += st,scrollback
      SUBDIR += stalonetray
      SUBDIR += stumpwm
      SUBDIR += swarp
