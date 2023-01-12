@@ -284,6 +284,7 @@ lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/${MODPY_PYCACHE}test_a
 lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/${MODPY_PYCACHE}test_array_interface.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/${MODPY_PYCACHE}test_arraymethod.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/${MODPY_PYCACHE}test_arrayprint.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/${MODPY_PYCACHE}test_casting_floatingpoint_errors.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/${MODPY_PYCACHE}test_casting_unittests.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/${MODPY_PYCACHE}test_conversion_utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/${MODPY_PYCACHE}test_cpu_dispatcher.${MODPY_PYC_MAGIC_TAG}pyc
@@ -313,6 +314,7 @@ lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/${MODPY_PYCACHE}test_m
 lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/${MODPY_PYCACHE}test_memmap.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/${MODPY_PYCACHE}test_multiarray.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/${MODPY_PYCACHE}test_nditer.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/${MODPY_PYCACHE}test_nep50_promotions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/${MODPY_PYCACHE}test_numeric.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/${MODPY_PYCACHE}test_numerictypes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/${MODPY_PYCACHE}test_overrides.${MODPY_PYC_MAGIC_TAG}pyc
@@ -329,6 +331,7 @@ lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/${MODPY_PYCACHE}test_s
 lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/${MODPY_PYCACHE}test_shape_base.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/${MODPY_PYCACHE}test_simd.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/${MODPY_PYCACHE}test_simd_module.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/${MODPY_PYCACHE}test_strings.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/${MODPY_PYCACHE}test_ufunc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/${MODPY_PYCACHE}test_umath.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/${MODPY_PYCACHE}test_umath_accuracy.${MODPY_PYC_MAGIC_TAG}pyc
@@ -375,6 +378,7 @@ lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/test_array_coercion.py
 lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/test_array_interface.py
 lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/test_arraymethod.py
 lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/test_arrayprint.py
+lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/test_casting_floatingpoint_errors.py
 lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/test_casting_unittests.py
 lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/test_conversion_utils.py
 lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/test_cpu_dispatcher.py
@@ -404,6 +408,7 @@ lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/test_mem_policy.py
 lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/test_memmap.py
 lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/test_multiarray.py
 lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/test_nditer.py
+lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/test_nep50_promotions.py
 lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/test_numeric.py
 lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/test_numerictypes.py
 lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/test_overrides.py
@@ -420,6 +425,7 @@ lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/test_scalarprint.py
 lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/test_shape_base.py
 lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/test_simd.py
 lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/test_simd_module.py
+lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/test_strings.py
 lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/test_ufunc.py
 lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/test_umath.py
 lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/test_umath_accuracy.py
@@ -700,9 +706,11 @@ lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/${MODPY_PYCACHE}test_a
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/${MODPY_PYCACHE}test_assumed_shape.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/${MODPY_PYCACHE}test_block_docstring.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/${MODPY_PYCACHE}test_callback.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/${MODPY_PYCACHE}test_character.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/${MODPY_PYCACHE}test_common.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/${MODPY_PYCACHE}test_compile_function.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/${MODPY_PYCACHE}test_crackfortran.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/${MODPY_PYCACHE}test_docs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/${MODPY_PYCACHE}test_f2cmap.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/${MODPY_PYCACHE}test_f2py2e.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/${MODPY_PYCACHE}test_kind.${MODPY_PYC_MAGIC_TAG}pyc
@@ -720,6 +728,7 @@ lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/${MODPY_PYCACHE}test_s
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/${MODPY_PYCACHE}test_size.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/${MODPY_PYCACHE}test_string.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/${MODPY_PYCACHE}test_symbolic.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/${MODPY_PYCACHE}test_value_attrspec.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/src/
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/src/abstract_interface/
@@ -753,6 +762,7 @@ lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/src/crackfortran/gh284
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/src/crackfortran/operators.f90
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/src/crackfortran/privatemod.f90
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/src/crackfortran/publicmod.f90
+lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/src/crackfortran/pubprivmod.f90
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/src/f2cmap/
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/src/f2cmap/.f2py_f2cmap
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/src/f2cmap/isoFortranEnvMap.f90
@@ -798,14 +808,18 @@ lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/src/string/
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/src/string/char.f90
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/src/string/fixed_string.f90
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/src/string/string.f
+lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/src/value_attrspec/
+lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/src/value_attrspec/gh21665.f90
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/test_abstract_interface.py
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/test_array_from_pyobj.py
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/test_assumed_shape.py
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/test_block_docstring.py
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/test_callback.py
+lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/test_character.py
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/test_common.py
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/test_compile_function.py
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/test_crackfortran.py
+lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/test_docs.py
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/test_f2cmap.py
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/test_f2py2e.py
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/test_kind.py
@@ -823,6 +837,7 @@ lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/test_semicolon_split.p
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/test_size.py
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/test_string.py
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/test_symbolic.py
+lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/test_value_attrspec.py
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/util.py
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/use_rules.py
 lib/python${MODPY_VERSION}/site-packages/numpy/fft/
@@ -1115,6 +1130,7 @@ lib/python${MODPY_VERSION}/site-packages/numpy/polynomial/tests/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/numpy/polynomial/tests/${MODPY_PYCACHE}test_polynomial.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/polynomial/tests/${MODPY_PYCACHE}test_polyutils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/polynomial/tests/${MODPY_PYCACHE}test_printing.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/numpy/polynomial/tests/${MODPY_PYCACHE}test_symbol.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/polynomial/tests/test_chebyshev.py
 lib/python${MODPY_VERSION}/site-packages/numpy/polynomial/tests/test_classes.py
 lib/python${MODPY_VERSION}/site-packages/numpy/polynomial/tests/test_hermite.py
@@ -1124,6 +1140,7 @@ lib/python${MODPY_VERSION}/site-packages/numpy/polynomial/tests/test_legendre.py
 lib/python${MODPY_VERSION}/site-packages/numpy/polynomial/tests/test_polynomial.py
 lib/python${MODPY_VERSION}/site-packages/numpy/polynomial/tests/test_polyutils.py
 lib/python${MODPY_VERSION}/site-packages/numpy/polynomial/tests/test_printing.py
+lib/python${MODPY_VERSION}/site-packages/numpy/polynomial/tests/test_symbol.py
 lib/python${MODPY_VERSION}/site-packages/numpy/py.typed
 lib/python${MODPY_VERSION}/site-packages/numpy/random/
 lib/python${MODPY_VERSION}/site-packages/numpy/random/__init__.pxd
@@ -1247,6 +1264,7 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/numpy/tests/${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/numpy/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/tests/${MODPY_PYCACHE}test__all__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/tests/${MODPY_PYCACHE}test_ctypeslib.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/numpy/tests/${MODPY_PYCACHE}test_lazyloading.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/tests/${MODPY_PYCACHE}test_matlib.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/tests/${MODPY_PYCACHE}test_numpy_version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/tests/${MODPY_PYCACHE}test_public_api.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1255,6 +1273,7 @@ lib/python${MODPY_VERSION}/site-packages/numpy/tests/${MODPY_PYCACHE}test_script
 lib/python${MODPY_VERSION}/site-packages/numpy/tests/${MODPY_PYCACHE}test_warnings.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/tests/test__all__.py
 lib/python${MODPY_VERSION}/site-packages/numpy/tests/test_ctypeslib.py
+lib/python${MODPY_VERSION}/site-packages/numpy/tests/test_lazyloading.py
 lib/python${MODPY_VERSION}/site-packages/numpy/tests/test_matlib.py
 lib/python${MODPY_VERSION}/site-packages/numpy/tests/test_numpy_version.py
 lib/python${MODPY_VERSION}/site-packages/numpy/tests/test_public_api.py

@@ -1,9 +1,8 @@
 COMMENT=		fast array and numeric programming library for Python
 
-MODPY_EGG_VERSION=	1.23.5
+MODPY_EGG_VERSION=	1.24.0
 DISTNAME=		numpy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		1
 
 CATEGORIES=		math devel
 
@@ -50,7 +49,7 @@ MODPY_DISTUTILS_BUILDARGS+= --fcompiler=gnu95
 # tests, and in other programs using numpy (e.g. building makehuman).
 # tests look good on amd64 arm64 riscv64 as-is.
 # numpy's regressions tests result in segv on powerpc (and also did in
-# 1.19.5) but at lesat some normal runtime seems ok (makehuman builds).
+# 1.19.5) but at least some normal runtime seems ok (makehuman builds).
 # https://github.com/numpy/numpy/issues/20799
 .if ${MACHINE_ARCH} == i386
 MODPY_DISTUTILS_BUILDARGS+= --disable-optimization
