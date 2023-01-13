@@ -32,7 +32,8 @@ SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}" \
-			PYTHON="${MODPY_BIN}"
+			PYTHON="${MODPY_BIN}" \
+			ax_cv_check_cflags___Werror=no
 CONFIGURE_ARGS =	--docdir=${PREFIX}/share/examples/varnish \
 			--mandir=${PREFIX}/man \
 			--localstatedir=${LOCALSTATEDIR}
