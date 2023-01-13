@@ -402,6 +402,7 @@
      SUBDIR += xmenu
      SUBDIR += xmobar
      SUBDIR += xmonad
+     SUBDIR += xnotify
      SUBDIR += xosd
      SUBDIR += xpad
      SUBDIR += xplanet
