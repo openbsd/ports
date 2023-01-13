@@ -31,7 +31,10 @@ BUILD_DEPENDS=		devel/gas \
 TEST_DEPENDS=		${FULLPKGNAME}:${FULLPKGPATH} \
 			devel/py-hypothesis${MODPY_FLAVOR} \
 			devel/py-test${MODPY_FLAVOR} \
-			devel/py-tz${MODPY_FLAVOR}
+			devel/py-test-cov${MODPY_FLAVOR} \
+			devel/py-typing-extensions${MODPY_FLAVOR} \
+			devel/py-tz${MODPY_FLAVOR} \
+			devel/py-wheel${MODPY_FLAVOR}
 
 .include <bsd.port.arch.mk>
 .if ${PROPERTIES:Mgcc49}
