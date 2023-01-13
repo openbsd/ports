@@ -1,7 +1,7 @@
 Index: mojo/public/tools/bindings/mojom.gni
 --- mojo/public/tools/bindings/mojom.gni.orig
 +++ mojo/public/tools/bindings/mojom.gni
-@@ -694,6 +694,16 @@ template("mojom") {
+@@ -699,6 +699,16 @@ template("mojom") {
        enabled_features += [ "is_win" ]
      }
  
@@ -17,4 +17,4 @@ Index: mojo/public/tools/bindings/mojom.gni
 +
      action(parser_target_name) {
        script = mojom_parser_script
-       inputs = mojom_parser_sources + [ build_metadata_filename ]
+       inputs = mojom_parser_sources + ply_sources + [ build_metadata_filename ]

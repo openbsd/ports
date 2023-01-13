@@ -10,7 +10,7 @@ Index: net/BUILD.gn
    net_configs += [ "//build/config/linux:libresolv" ]
  }
  
-@@ -1209,6 +1209,15 @@ component("net") {
+@@ -1211,6 +1211,15 @@ component("net") {
      deps += [ "//third_party/xdg_shared_mime_info" ]
    }
  
@@ -44,7 +44,7 @@ Index: net/BUILD.gn
      sources += [
        "base/network_interfaces_getifaddrs.cc",
        "base/network_interfaces_getifaddrs.h",
-@@ -4388,7 +4397,7 @@ test("net_unittests") {
+@@ -4644,7 +4653,7 @@ test("net_unittests") {
      ]
    }
  
@@ -53,7 +53,7 @@ Index: net/BUILD.gn
      sources += [
        "base/address_tracker_linux_unittest.cc",
        "base/network_interfaces_linux_unittest.cc",
-@@ -4464,6 +4473,10 @@ test("net_unittests") {
+@@ -4719,6 +4728,10 @@ test("net_unittests") {
      "//url:buildflags",
    ]
  
@@ -64,7 +64,7 @@ Index: net/BUILD.gn
    if (enable_websockets) {
      deps += [ "//net/server:tests" ]
    }
-@@ -4531,7 +4544,7 @@ test("net_unittests") {
+@@ -4786,7 +4799,7 @@ test("net_unittests") {
      ]
    }
  
@@ -73,7 +73,7 @@ Index: net/BUILD.gn
      sources += [ "tools/quic/quic_simple_server_test.cc" ]
    }
  
-@@ -4671,7 +4684,7 @@ test("net_unittests") {
+@@ -4908,7 +4921,7 @@ test("net_unittests") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux.

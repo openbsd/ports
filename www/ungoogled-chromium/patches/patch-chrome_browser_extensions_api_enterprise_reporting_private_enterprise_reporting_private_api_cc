@@ -1,7 +1,7 @@
 Index: chrome/browser/extensions/api/enterprise_reporting_private/enterprise_reporting_private_api.cc
 --- chrome/browser/extensions/api/enterprise_reporting_private/enterprise_reporting_private_api.cc.orig
 +++ chrome/browser/extensions/api/enterprise_reporting_private/enterprise_reporting_private_api.cc
-@@ -32,7 +32,7 @@
+@@ -31,7 +31,7 @@
  #include "components/reporting/util/statusor.h"
  #endif
  
@@ -28,7 +28,7 @@ Index: chrome/browser/extensions/api/enterprise_reporting_private/enterprise_rep
  
  EnterpriseReportingPrivateGetPersistentSecretFunction::
      EnterpriseReportingPrivateGetPersistentSecretFunction() = default;
-@@ -590,7 +590,7 @@ void EnterpriseReportingPrivateEnqueueRecordFunction::
+@@ -592,7 +592,7 @@ void EnterpriseReportingPrivateEnqueueRecordFunction::
  }
  #endif
  

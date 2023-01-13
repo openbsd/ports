@@ -10,7 +10,7 @@ Index: chrome/browser/resources/settings/appearance_page/appearance_browser_prox
    useGtkTheme(): void;
    useQtTheme(): void;
    // </if>
-@@ -45,7 +45,7 @@ export class AppearanceBrowserProxyImpl implements App
+@@ -41,7 +41,7 @@ export class AppearanceBrowserProxyImpl implements App
      chrome.send('useDefaultTheme');
    }
  

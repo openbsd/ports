@@ -7,14 +7,15 @@ DPB_PROPERTIES=		parallel parallel2
 
 COMMENT=		Chromium browser sans integration with Google
 
-V=			108.0.5359.124
+V=			109.0.5414.74
 UGV=			${V}-1
 
 DISTNAME=		ungoogled-chromium-${V}
 
 DISTFILES+=		${CHROMIUM_DISTFILES} \
 			${UGOOGLE_DISTFILES}:0 \
-			${REGRESS_DISTFILES}
+			${REGRESS_DISTFILES} \
+			libudev-openbsd-20221108-c3330efd.tar.gz:0
 
 CHROMIUM_DISTFILES+=	chromium-${V}${EXTRACT_SUFX}
 UGOOGLE_DISTFILES+=	ungoogled-chromium-${UGV}.tar.gz
@@ -95,6 +96,8 @@ LIB_DEPENDS=	archivers/snappy \
 		print/cups,-libs \
 		${MODGCC4_CPPLIBDEP}
 
+BUILD_DEPENDS+=	sysutils/libudev-openbsd:build
+
 .include <bsd.own.mk>
 
 # Set BUILDTYPE to Release
@@ -155,8 +158,10 @@ GN_ARGS=	is_official_build=true \
 		icu_use_data_file=false \
 		is_clang=true \
 		use_sysroot=false \
-		use_allocator=\"none\" \
 		use_allocator_shim=false \
+		use_partition_alloc=true \
+		use_partition_alloc_as_malloc=false \
+		enable_backup_ref_ptr_support=false \
 		extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\" \
 		fatal_linker_warnings=false \
 		use_custom_libcxx=false \
@@ -323,6 +328,8 @@ do-install:
     unveil.utility_network unveil.utility_video
 	${INSTALL_DATA} ${FILESDIR}/${f} ${PREFIX}/share/examples/ungoogled-chromium
 .endfor
+	${INSTALL_DATA} ${WRKDIR}/sysutils/libudev-openbsd/build-${MACHINE_ARCH}/libudev.so.0.0 \
+		${PREFIX}/${DIST_TARGET_DIR}/libudev.so.0
 
 pre-test:
 .for _d in ${REGRESS_DISTFILES:C/:[0-9]$//}

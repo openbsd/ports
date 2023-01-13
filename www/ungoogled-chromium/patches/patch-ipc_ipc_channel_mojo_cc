@@ -1,7 +1,7 @@
 Index: ipc/ipc_channel_mojo.cc
 --- ipc/ipc_channel_mojo.cc.orig
 +++ ipc/ipc_channel_mojo.cc
-@@ -112,7 +112,7 @@ class ThreadSafeChannelProxy : public mojo::ThreadSafe
+@@ -113,7 +113,7 @@ class ThreadSafeChannelProxy : public mojo::ThreadSafe
  };
  
  base::ProcessId GetSelfPID() {

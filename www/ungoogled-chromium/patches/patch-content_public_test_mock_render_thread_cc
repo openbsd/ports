@@ -1,7 +1,7 @@
 Index: content/public/test/mock_render_thread.cc
 --- content/public/test/mock_render_thread.cc.orig
 +++ content/public/test/mock_render_thread.cc
-@@ -64,7 +64,7 @@ class MockRenderMessageFilterImpl : public mojom::Rend
+@@ -65,7 +65,7 @@ class MockRenderMessageFilterImpl : public mojom::Rend
      std::move(callback).Run(false);
    }
  

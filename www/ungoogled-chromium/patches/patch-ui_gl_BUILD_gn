@@ -18,15 +18,15 @@ Index: ui/gl/BUILD.gn
      "//ui/events/platform",
      "//ui/gfx",
      "//ui/gfx/geometry",
-@@ -416,7 +413,6 @@ component("gl") {
+@@ -419,7 +416,6 @@ component("gl") {
+     data_deps += [
+       "//third_party/angle:libEGL",
+       "//third_party/angle:libGLESv2",
+-      "//third_party/mesa_headers",
+     ]
+     if (enable_swiftshader) {
        data_deps += [
-         "//third_party/angle:libEGL",
-         "//third_party/angle:libGLESv2",
--        "//third_party/mesa_headers",
-       ]
-       if (enable_swiftshader) {
-         data_deps += [
-@@ -638,7 +634,6 @@ test("gl_unittests") {
+@@ -639,7 +635,6 @@ test("gl_unittests") {
  
    data_deps = [
      "//testing/buildbot/filters:gl_unittests_filters",

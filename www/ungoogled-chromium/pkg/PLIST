@@ -10,6 +10,7 @@ ungoogled-chromium/headless_lib_strings.pak
 @so ungoogled-chromium/libGLESv2.so
 %%component%%
 @so ungoogled-chromium/libVkICD_mock_icd.so
+ungoogled-chromium/libudev.so.0
 @so ungoogled-chromium/libvulkan.so
 ungoogled-chromium/locales/
 ungoogled-chromium/locales/af.pak

@@ -28,12 +28,12 @@ Index: chrome/browser/ui/views/accelerator_table.cc
       IDC_SHOW_AVATAR_MENU},
  
  // Platform-specific key maps.
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
      {ui::VKEY_BROWSER_BACK, ui::EF_NONE, IDC_BACK},
      {ui::VKEY_BROWSER_FORWARD, ui::EF_NONE, IDC_FORWARD},
      {ui::VKEY_BROWSER_HOME, ui::EF_NONE, IDC_HOME},
-@@ -236,7 +236,7 @@ const AcceleratorMapping kAcceleratorMap[] = {
+@@ -237,7 +237,7 @@ const AcceleratorMapping kAcceleratorMap[] = {
      {ui::VKEY_SPACE, ui::EF_CONTROL_DOWN, IDC_TOGGLE_QUICK_COMMANDS},
  #endif  // !BUILDFLAG(IS_CHROMEOS)
  #endif  // !BUILDFLAG(IS_MAC)

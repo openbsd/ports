@@ -1,8 +1,8 @@
 Index: content/public/common/content_features.h
 --- content/public/common/content_features.h.orig
 +++ content/public/common/content_features.h
-@@ -272,7 +272,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE(kV8VmFuture);
- CONTENT_EXPORT BASE_DECLARE_FEATURE(kWebAppWindowControlsOverlay);
+@@ -272,7 +272,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE(kVideoPlaybackQual
+ CONTENT_EXPORT BASE_DECLARE_FEATURE(kV8VmFuture);
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kWebAssemblyBaseline);
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kWebAssemblyCodeProtection);
 -#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)) && defined(ARCH_CPU_X86_64)
