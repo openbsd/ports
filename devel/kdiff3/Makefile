@@ -1,6 +1,6 @@
 COMMENT =	compares and merges multiple files or directories
 
-DISTNAME =	kdiff3-1.9.6
+DISTNAME =	kdiff3-1.10.0
 
 CATEGORIES =	devel
 
@@ -22,33 +22,33 @@ WANTLIB += KF5TextWidgets KF5WidgetsAddons KF5WindowSystem KF5XmlGui
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
 WANTLIB += Qt5Widgets Qt5Xml X11 c m
 
-MODULES =		devel/kf5
+MODULES =	devel/kf5
 
-BUILD_DEPENDS =		devel/boost \
-			devel/gettext,-tools \
-			devel/kf5/kbookmarks \
-			devel/kf5/kdoctools
+BUILD_DEPENDS =	devel/boost \
+		devel/gettext,-tools \
+		devel/kf5/kbookmarks \
+		devel/kf5/kdoctools
 
-RUN_DEPENDS =		devel/desktop-file-utils \
-			devel/kf5/kbookmarks \
-			devel/kf5/kdoctools \
-			x11/gtk+3,-guic
+RUN_DEPENDS =	devel/desktop-file-utils \
+		devel/kf5/kbookmarks \
+		devel/kf5/kdoctools \
+		x11/gtk+3,-guic
 
-LIB_DEPENDS =		devel/kf5/kauth \
-			devel/kf5/kcodecs \
-			devel/kf5/kcompletion \
-			devel/kf5/kconfig \
-			devel/kf5/kconfigwidgets \
-			devel/kf5/kcoreaddons \
-			devel/kf5/kcrash \
-			devel/kf5/ki18n \
-			devel/kf5/kio \
-			devel/kf5/kparts \
-			devel/kf5/kservice \
-			devel/kf5/ktextwidgets \
-			devel/kf5/kwidgetsaddons \
-			devel/kf5/kxmlgui \
-			devel/kf5/solid \
-			devel/kf5/sonnet
+LIB_DEPENDS =	devel/kf5/kauth \
+		devel/kf5/kcodecs \
+		devel/kf5/kcompletion \
+		devel/kf5/kconfig \
+		devel/kf5/kconfigwidgets \
+		devel/kf5/kcoreaddons \
+		devel/kf5/kcrash \
+		devel/kf5/ki18n \
+		devel/kf5/kio \
+		devel/kf5/kparts \
+		devel/kf5/kservice \
+		devel/kf5/ktextwidgets \
+		devel/kf5/kwidgetsaddons \
+		devel/kf5/kxmlgui \
+		devel/kf5/solid \
+		devel/kf5/sonnet
 
 .include <bsd.port.mk>
