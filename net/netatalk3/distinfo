@@ -1,4 +1,2 @@
-SHA256 (netatalk-3.1.13.tar.bz2) = ia2mvP4bOa2U9YwjZlTR2UTyZFw+femLM3TgvTfV4F0=
-SHA256 (netatalk_add_entry.patch) = y98S2iNpKAFZZ645Qx0PXOhG2bb/wOOA2vrJBdbxiGE=
-SIZE (netatalk-3.1.13.tar.bz2) = 1218394
-SIZE (netatalk_add_entry.patch) = 34415
+SHA256 (netatalk-3.1.14.tar.gz) = J8wEwGvFmohj3sDeLtwbdDjV3ZgQMbqIv1+lZzT884c=
+SIZE (netatalk-3.1.14.tar.gz) = 1800211

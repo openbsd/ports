@@ -3,7 +3,7 @@ Pick-up libevent2 from LOCALBASE.
 Index: etc/netatalk/Makefile.in
 --- etc/netatalk/Makefile.in.orig
 +++ etc/netatalk/Makefile.in
-@@ -433,7 +433,7 @@ netatalk_LDADD = \
+@@ -431,7 +431,7 @@ netatalk_LDADD = \
  	@ZEROCONF_LIBS@ \
  	$(top_builddir)/libatalk/libatalk.la
  

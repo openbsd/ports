@@ -1,17 +1,9 @@
 COMMENT=		AFP file and print services for IP networks
 
-V=			3.1.13
+V=			3.1.14
 DISTNAME=		netatalk-${V}
-EXTRACT_SUFX=		.tar.bz2
 PKGSPEC=		netatalk->=3,<4
 EPOCH=			0
-
-REVISION=		2
-
-# https://github.com/Netatalk/Netatalk/pull/174
-MASTER_SITES0=		https://src.fedoraproject.org/rpms/netatalk/raw/rawhide/f/
-PATCHFILES=		netatalk_add_entry.patch:0
-PATCH_DIST_STRIP=	-p1
 
 SHARED_LIBS +=  atalk                16.0     # 18.0
 
@@ -29,7 +21,7 @@ WANTLIB += event_core event_extra ffi gcrypt gio-2.0 glib-2.0
 WANTLIB += gobject-2.0 gpg-error gthread-2.0 iconv intl pcre2-8 pthread
 WANTLIB += tdb execinfo
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=netatalk/}
+MASTER_SITES=		https://github.com/Netatalk/Netatalk/releases/download/netatalk-${V:S/./-/g}/
 
 MODULES=		lang/python
 
