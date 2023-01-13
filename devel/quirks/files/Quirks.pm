@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1488 2023/01/11 02:05:10 gnezdo Exp $
+# $OpenBSD: Quirks.pm,v 1.1489 2023/01/13 04:40:28 bket Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1776,6 +1776,7 @@ setup_obsolete_reason(
 	3 => 'hlfl',
 	6 => 'caribou',
 	5 => 'riak',
+	15 => 'rmilter',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
