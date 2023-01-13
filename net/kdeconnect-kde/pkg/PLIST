@@ -104,6 +104,7 @@ share/doc/HTML/sv/kdeconnect-kde/index.docbook
 share/doc/HTML/uk/kdeconnect-kde/
 share/doc/HTML/uk/kdeconnect-kde/index.cache.bz2
 share/doc/HTML/uk/kdeconnect-kde/index.docbook
+share/doc/HTML/zh_CN/
 share/doc/HTML/zh_CN/kdeconnect-kde/
 share/doc/HTML/zh_CN/kdeconnect-kde/index.cache.bz2
 share/doc/HTML/zh_CN/kdeconnect-kde/index.docbook
@@ -513,6 +514,7 @@ share/locale/ka/LC_MESSAGES/kdeconnect-kded.mo
 share/locale/ka/LC_MESSAGES/kdeconnect-kio.mo
 share/locale/ka/LC_MESSAGES/kdeconnect-nautilus-extension.mo
 share/locale/ka/LC_MESSAGES/kdeconnect-plugins.mo
+share/locale/ka/LC_MESSAGES/kdeconnect-settings.mo
 share/locale/ka/LC_MESSAGES/kdeconnect-sms.mo
 share/locale/ka/LC_MESSAGES/kdeconnect-urlhandler.mo
 share/locale/ka/LC_MESSAGES/plasma_applet_org.kde.kdeconnect.mo
