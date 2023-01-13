@@ -1,0 +1,2 @@
+@bin bin/xnotify
+@man man/man1/xnotify.1
