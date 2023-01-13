@@ -1,9 +1,8 @@
 COMMENT =	subdomain scanner
 
-MODPY_EGG_VERSION =	5.3.0
+MODPY_EGG_VERSION =	5.4.0
 
 DISTNAME =	knockpy-${MODPY_EGG_VERSION}
-REVISION =	1
 
 GH_ACCOUNT =	guelfoweb
 GH_PROJECT =	knock
