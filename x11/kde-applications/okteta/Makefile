@@ -1,17 +1,17 @@
 COMMENT =	Hex Editor
-VERSION =	0.26.9
+VERSION =	0.26.10
 DISTNAME =	okteta-${VERSION}
 CATEGORIES =	editors
 EPOCH =		0
 
-SHARED_LIBS +=  Kasten4Controllers        0.3 # 0.4
-SHARED_LIBS +=  Kasten4Core               0.0 # 0.4
-SHARED_LIBS +=  Kasten4Gui                0.2 # 0.4
-SHARED_LIBS +=  Kasten4Okteta2Controllers 0.2 # 0.4
-SHARED_LIBS +=  Kasten4Okteta2Core        0.0 # 0.4
-SHARED_LIBS +=  Kasten4Okteta2Gui         0.2 # 0.4
-SHARED_LIBS +=  Okteta3Core               0.0 # 0.10
-SHARED_LIBS +=  Okteta3Gui                0.2 # 0.10
+SHARED_LIBS +=  Kasten4Controllers        0.4 # 0.4
+SHARED_LIBS +=  Kasten4Core               0.1 # 0.4
+SHARED_LIBS +=  Kasten4Gui                0.3 # 0.4
+SHARED_LIBS +=  Kasten4Okteta2Controllers 0.3 # 0.4
+SHARED_LIBS +=  Kasten4Okteta2Core        0.1 # 0.4
+SHARED_LIBS +=  Kasten4Okteta2Gui         0.3 # 0.4
+SHARED_LIBS +=  Okteta3Core               0.1 # 0.10
+SHARED_LIBS +=  Okteta3Gui                0.3 # 0.10
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Attica KF5Auth KF5AuthCore KF5Bookmarks
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
