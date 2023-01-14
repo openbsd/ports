@@ -385,18 +385,18 @@ MODGO_MODULES =	\
 	go.uber.org/atomic					 v1.3.2 \
 	go.uber.org/multierr					 v1.1.0 \
 	go.uber.org/zap						 v1.10.0 \
-	golang.org/x/crypto					 v0.0.0-20220517005047-85d78b3ac167 \
+	golang.org/x/crypto					 v0.5.0 \
 	golang.org/x/exp					 v0.0.0-20220722155223-a9213eeb770e \
 	golang.org/x/image					 v0.0.0-20190802002840-cff245a6509b \
 	golang.org/x/lint					 v0.0.0-20210508222113-6edffad5e616 \
 	golang.org/x/mobile					 v0.0.0-20190719004257-d2bd2a29d028 \
 	golang.org/x/mod					 v0.6.0-dev.0.20220419223038-86c51ed26bb4 \
-	golang.org/x/net					 v0.1.0 \
+	golang.org/x/net					 v0.5.0 \
 	golang.org/x/oauth2					 v0.0.0-20210819190943-2bc19b11175f \
 	golang.org/x/sync					 v0.0.0-20220722155255-886fb9371eb4 \
-	golang.org/x/sys					 v0.1.0 \
-	golang.org/x/term					 v0.1.0 \
-	golang.org/x/text					 v0.4.0 \
+	golang.org/x/sys					 v0.4.0 \
+	golang.org/x/term					 v0.4.0 \
+	golang.org/x/text					 v0.6.0 \
 	golang.org/x/time					 v0.0.0-20200630173020-3af7569d3a1e \
 	golang.org/x/tools					 v0.1.12 \
 	golang.org/x/xerrors					 v0.0.0-20200804184101-5ec99f83aff1 \
@@ -933,6 +933,7 @@ MODGO_MODFILES =	\
 	golang.org/x/crypto					 v0.0.0-20210322153248-0c34fe9e7dc2 \
 	golang.org/x/crypto					 v0.0.0-20210421170649-83a5a9bb288b \
 	golang.org/x/crypto					 v0.0.0-20211108221036-ceb1ce70b4fa \
+	golang.org/x/crypto					 v0.0.0-20220517005047-85d78b3ac167 \
 	golang.org/x/exp					 v0.0.0-20190121172915-509febef88a4 \
 	golang.org/x/exp					 v0.0.0-20190125153040-c74c464bbbf2 \
 	golang.org/x/exp					 v0.0.0-20190306152737-a1d7652674e8 \
@@ -1022,7 +1023,6 @@ MODGO_MODFILES =	\
 	golang.org/x/net					 v0.0.0-20210316092652-d523dce5a7f4 \
 	golang.org/x/net					 v0.0.0-20210405180319-a5a99cb37ef4 \
 	golang.org/x/net					 v0.0.0-20210503060351-7fd8e65b6420 \
-	golang.org/x/net					 v0.0.0-20211112202133-69e39bad7dc2 \
 	golang.org/x/net					 v0.0.0-20211216030914-fe4d6282115f \
 	golang.org/x/net					 v0.0.0-20220722155237-a158d28d115b \
 	golang.org/x/oauth2					 v0.0.0-20180821212333-d2e6202438be \
@@ -1152,6 +1152,7 @@ MODGO_MODFILES =	\
 	golang.org/x/text					 v0.3.5 \
 	golang.org/x/text					 v0.3.6 \
 	golang.org/x/text					 v0.3.7 \
+	golang.org/x/text					 v0.4.0 \
 	golang.org/x/time					 v0.0.0-20180412165947-fbb02b2291d2 \
 	golang.org/x/time					 v0.0.0-20181108054448-85acf8d2951c \
 	golang.org/x/time					 v0.0.0-20190308202827-9d24e82272b4 \
