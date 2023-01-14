@@ -67,7 +67,9 @@ MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lsasl2
 .endif
 
 .if ${NEEDS_OPENSSL:L:Myes}
+. if ${MACHINE_ARCH} != aarch64
 USE_NOEXECONLY=	Yes
+. endif
 BUILD_DEPENDS+=	security/openssl/3.0
 MAKE_CCARGS+=	-I${LOCALBASE}/include/eopenssl30
 MAKE_AUXLIBS+=	${LOCALBASE}/lib/eopenssl30/libssl.a \
