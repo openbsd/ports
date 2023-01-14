@@ -1,0 +1,16 @@
+Append -o flag explicitely, otherwise hash.o and blocks.o are generated
+in ${WRKSRC} instead of ${WRKSRC}/sha256 and linking fails.
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -54,6 +54,9 @@ DISTNAME  = $(PKGNAME)-$(Version)
+ 
+ OBJS = $(PKGNAME).o misc.o @GNUGETOPT@ md5.o sha256/hash.o sha256/blocks.o
+ 
++.c.o:
++	$(CC) $(CFLAGS) -o $@ -c $<
++
+ $(PKGNAME):	$(OBJS) 
+ 	$(CC) $(CFLAGS) -o $(PKGNAME) $(OBJS) $(LDFLAGS) $(LIBS) 
+ 

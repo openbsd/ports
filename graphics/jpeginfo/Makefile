@@ -1,6 +1,6 @@
 COMMENT =	prints information and tests integrity of JPEG files
 
-DISTNAME =	jpeginfo-1.6.1
+DISTNAME =	jpeginfo-1.6.2
 
 CATEGORIES =	graphics
 
