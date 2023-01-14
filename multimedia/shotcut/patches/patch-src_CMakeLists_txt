@@ -1,7 +1,7 @@
 Index: src/CMakeLists.txt
 --- src/CMakeLists.txt.orig
 +++ src/CMakeLists.txt
-@@ -300,5 +300,5 @@ if(UNIX AND NOT APPLE)
+@@ -314,5 +314,5 @@ if(UNIX AND NOT APPLE)
    install(FILES ${CMAKE_SOURCE_DIR}/packaging/linux/icons/128x128/org.shotcut.Shotcut.png
      DESTINATION ${CMAKE_INSTALL_DATADIR}/icons/hicolor/128x128/apps/)
    install(FILES ${CMAKE_SOURCE_DIR}/packaging/linux/shotcut.1

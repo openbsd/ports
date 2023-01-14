@@ -4,7 +4,7 @@ COMMENT =	video editor
 
 GH_ACCOUNT =	mltframework
 GH_PROJECT =	shotcut
-GH_TAGNAME =	v22.06.23
+GH_TAGNAME =	v22.12.21
 
 CATEGORIES =	multimedia
 
@@ -18,9 +18,6 @@ WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Multimedia Qt5Network
 WANTLIB += Qt5OpenGL Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickControls2
 WANTLIB += Qt5QuickWidgets Qt5Sql Qt5WebSockets Qt5Widgets Qt5Xml
 WANTLIB += c fftw3 m mlt++-7 mlt-7
-
-
-COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =		devel/cmake \
 			x11/qt5
@@ -37,7 +34,8 @@ RUN_DEPENDS =		audio/jack \
 			x11/qt5/qtgraphicaleffects \
 			x11/qt5/qtquickcontrols
 
-LIB_DEPENDS =		multimedia/mlt7 \
+LIB_DEPENDS =		math/fftw3 \
+			multimedia/mlt7 \
 			x11/qt5/qtmultimedia \
 			x11/qt5/qtwebsockets \
 			x11/qt5/qtquickcontrols2
