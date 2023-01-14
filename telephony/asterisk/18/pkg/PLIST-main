@@ -283,6 +283,7 @@ lib/asterisk/modules/
 @so lib/asterisk/modules/app_forkcdr.so
 @so lib/asterisk/modules/app_getcpeid.so
 @so lib/asterisk/modules/app_ices.so
+@so lib/asterisk/modules/app_if.so
 @so lib/asterisk/modules/app_image.so
 @so lib/asterisk/modules/app_mf.so
 @so lib/asterisk/modules/app_milliwatt.so
@@ -394,6 +395,7 @@ lib/asterisk/modules/
 @so lib/asterisk/modules/func_enum.so
 @so lib/asterisk/modules/func_env.so
 @so lib/asterisk/modules/func_evalexten.so
+@so lib/asterisk/modules/func_export.so
 @so lib/asterisk/modules/func_extstate.so
 @so lib/asterisk/modules/func_frame_drop.so
 @so lib/asterisk/modules/func_frame_trace.so
@@ -492,6 +494,7 @@ lib/asterisk/modules/
 @so lib/asterisk/modules/res_pjproject.so
 @so lib/asterisk/modules/res_pjsip.so
 @so lib/asterisk/modules/res_pjsip_acl.so
+@so lib/asterisk/modules/res_pjsip_aoc.so
 @so lib/asterisk/modules/res_pjsip_authenticator_digest.so
 @so lib/asterisk/modules/res_pjsip_caller_id.so
 @so lib/asterisk/modules/res_pjsip_config_wizard.so
@@ -527,6 +530,7 @@ lib/asterisk/modules/
 @so lib/asterisk/modules/res_pjsip_refer.so
 @so lib/asterisk/modules/res_pjsip_registrar.so
 @so lib/asterisk/modules/res_pjsip_rfc3326.so
+@so lib/asterisk/modules/res_pjsip_rfc3329.so
 @so lib/asterisk/modules/res_pjsip_sdp_rtp.so
 @so lib/asterisk/modules/res_pjsip_send_to_voicemail.so
 @so lib/asterisk/modules/res_pjsip_session.so
