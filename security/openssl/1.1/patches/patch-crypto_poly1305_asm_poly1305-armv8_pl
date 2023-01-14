@@ -1,0 +1,52 @@
+Index: crypto/poly1305/asm/poly1305-armv8.pl
+--- crypto/poly1305/asm/poly1305-armv8.pl.orig
++++ crypto/poly1305/asm/poly1305-armv8.pl
+@@ -75,17 +75,12 @@ poly1305_init:
+ 	csel	x0,xzr,x0,eq
+ 	b.eq	.Lno_key
+ 
+-#ifdef	__ILP32__
+-	ldrsw	$t1,.LOPENSSL_armcap_P
+-#else
+-	ldr	$t1,.LOPENSSL_armcap_P
+-#endif
+-	adr	$t0,.LOPENSSL_armcap_P
++	adrp	x17,OPENSSL_armcap_P
++	ldr	w17,[x17,#:lo12:OPENSSL_armcap_P]
+ 
+ 	ldp	$r0,$r1,[$inp]		// load key
+ 	mov	$s1,#0xfffffffc0fffffff
+ 	movk	$s1,#0x0fff,lsl#48
+-	ldr	w17,[$t0,$t1]
+ #ifdef	__ARMEB__
+ 	rev	$r0,$r0			// flip bytes
+ 	rev	$r1,$r1
+@@ -430,7 +425,8 @@ poly1305_blocks_neon:
+ 	ldr	x30,[sp,#8]
+ 
+ 	add	$in2,$inp,#32
+-	adr	$zeros,.Lzeros
++	adrp	$zeros,.Lzeros
++	add	$zeros,$zeros,:lo12:.Lzeros
+ 	subs	$len,$len,#64
+ 	csel	$in2,$zeros,$in2,lo
+ 
+@@ -442,7 +438,8 @@ poly1305_blocks_neon:
+ .align	4
+ .Leven_neon:
+ 	add	$in2,$inp,#32
+-	adr	$zeros,.Lzeros
++	adrp	$zeros,.Lzeros
++	add	$zeros,$zeros,:lo12:.Lzeros
+ 	subs	$len,$len,#64
+ 	csel	$in2,$zeros,$in2,lo
+ 
+@@ -920,6 +917,8 @@ poly1305_emit_neon:
+ 
+ 	ret
+ .size	poly1305_emit_neon,.-poly1305_emit_neon
++
++.rodata
+ 
+ .align	5
+ .Lzeros:

@@ -3,7 +3,7 @@ PORTROACH=	limit:^1\.1\.[0-9][a-z] skipb:0 skipv:1.1.1
 V=		1.1.1s
 PKGSPEC=	openssl->=1.1.0v0,<1.2v0
 EPOCH=		0
-REVISION=	1
+REVISION=	2
 
 SHLIBVER=	11.6
 SHARED_LIBS=	crypto ${SHLIBVER} \
@@ -35,7 +35,9 @@ MAN_PREFIX=		@man lib/eopenssl11/man
 INSTALL_TARGET+=	install_man_docs
 .endif
 
+.if ${MACHINE_ARCH} != aarch64
 USE_NOEXECONLY=		Yes
+.endif
 
 # install to unusual directory name - this port is *not* intended to be
 # picked up by configure scripts without explicitly CPPFLAGS/LDFLAGS.
