@@ -18,6 +18,7 @@
 @man man/man1/restic-rebuild-index.1
 @man man/man1/restic-recover.1
 @man man/man1/restic-restore.1
+@man man/man1/restic-rewrite.1
 @man man/man1/restic-snapshots.1
 @man man/man1/restic-stats.1
 @man man/man1/restic-tag.1
