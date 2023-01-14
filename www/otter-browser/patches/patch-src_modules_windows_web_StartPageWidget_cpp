@@ -8,4 +8,4 @@ Index: src/modules/windows/web/StartPageWidget.cpp
 +#include <QtGui/QPainterPath>
  #include <QtGui/QMouseEvent>
  #include <QtGui/QPainter>
- #include <QtGui/QPixmapCache>
+ #include <QtGui/QPainterPath>

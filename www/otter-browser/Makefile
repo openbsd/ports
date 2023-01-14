@@ -2,8 +2,7 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	browser aiming to recreate classic Opera (12.x) UI using Qt5
 
-DISTNAME =	otter-browser-1.0.02
-REVISION =	0
+DISTNAME =	otter-browser-1.0.03
 
 CATEGORIES =	www
 
