@@ -14,6 +14,7 @@ PKGNAME-larry=	rcube-skin-larry-${VS}
 
 REVISION-classic= 0
 REVISION-larry= 0
+REVISION-main= 0
 
 FIX_EXTRACT_PERMISSIONS= Yes
 
