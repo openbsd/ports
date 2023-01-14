@@ -1,11 +1,13 @@
 COMMENT=	SSL/TLS scanner (identify version, ciphers, etc)
 
+.if ${MACHINE_ARCH} != aarch64
 USE_NOEXECONLY=	Yes
+.endif
 
 GH_ACCOUNT=	rbsec
 GH_PROJECT=	sslscan
 GH_TAGNAME=	2.0.15
-REVISION=	4
+REVISION=	5
 
 CATEGORIES=	security net
 
