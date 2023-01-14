@@ -1,0 +1,14 @@
+Don't require pkg-config gem at runtime, as it is only used for building.
+
+Index: .metadata
+--- .metadata.orig
++++ .metadata
+@@ -20,7 +20,7 @@ dependencies:
+     - - "~>"
+       - !ruby/object:Gem::Version
+         version: '1.4'
+-  type: :runtime
++  type: :development
+   prerelease: false
+   version_requirements: !ruby/object:Gem::Requirement
+     requirements:
