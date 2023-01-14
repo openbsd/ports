@@ -1,16 +1,9 @@
-Remove optional xalan-c dependency, upstream is dead
+pending "Treat dead Xalan-C as optional"
+https://github.com/open-eid/cmake/pull/38
 
 Index: cmake/modules/FindXmlSecurityC.cmake
 --- cmake/modules/FindXmlSecurityC.cmake.orig
 +++ cmake/modules/FindXmlSecurityC.cmake
-@@ -11,7 +11,6 @@ if(XmlSecurityC_FIND_REQUIRED)
- endif()
- find_package(XercesC ${XmlSecurityC_REQUIRED})
- find_package(OpenSSL ${XmlSecurityC_REQUIRED})
--find_package(XalanC)
- unset(XmlSecurityC_REQUIRED)
- 
- find_path(XmlSecurityC_INCLUDE_DIR xsec/framework/XSECVersion.hpp)
 @@ -22,7 +21,7 @@ select_library_configurations(XmlSecurityC)
  mark_as_advanced(XmlSecurityC_INCLUDE_DIR XmlSecurityC_LIBRARY_RELEASE XmlSecurityC_LIBRARY_DEBUG)
  

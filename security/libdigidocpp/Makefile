@@ -55,6 +55,10 @@ RUN_DEPENDS =		# empty
 # move DIGIDOCPP_CONFIG_DIR out of /usr/local/ into /etc/ (PLIST @sample)
 CONFIGURE_ARGS =	-DCMAKE_INSTALL_SYSCONFDIR=share/examples
 
+# pending "Treat dead Xalan-C as optional"
+# https://github.com/open-eid/cmake/pull/38
+CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_XalanC=ON
+
 # skip documentation and heavy dependency (for now)
 CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON
 
