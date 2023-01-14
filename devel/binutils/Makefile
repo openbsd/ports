@@ -1,7 +1,7 @@
 COMMENT =	GNU binary utilities
 
-DISTNAME =	binutils-2.39
-REVISION =	0
+DISTNAME =	binutils-2.40
+EXTRACT_SUFX =	.tar.bz2
 
 CATEGORIES =	devel
 
@@ -12,7 +12,9 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c z
+WANTLIB += c z zstd
+
+LIB_DEPENDS +=	archivers/zstd
 
 MASTER_SITES =	${MASTER_SITE_GNU:=binutils/}
 

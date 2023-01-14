@@ -11,6 +11,7 @@
 @bin bin/gstrings
 @bin bin/gstrip
 @info info/binutils.info
+@info info/sframe-spec.info
 @man man/man1/gaddr2line.1
 @man man/man1/gar.1
 @man man/man1/gc++filt.1
