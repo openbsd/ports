@@ -17,8 +17,9 @@ MASTER_SITES =		https://github.com/open-eid/libdigidocpp/releases/download/v${V}
 
 DIST_SUBDIR =		libdigidocpp
 MASTER_SITES0 =		https://github.com/open-eid/libdigidocpp/
-# still pending (but approved)
-PATCHFILES +=		iconv-{pull/}470.patch:0
+# still pending (but approved) "Link against Iconv"
+# https://github.com/open-eid/libdigidocpp/pull/470
+PATCHFILES +=		iconv-{commit/}e41615c.patch:0
 # merged "Update to minizip 1.2.13"
 # https://github.com/open-eid/libdigidocpp/pull/515
 PATCHFILES +=		update-minzip-{pull/}515.patch:0
