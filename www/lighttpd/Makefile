@@ -1,6 +1,7 @@
 COMMENT=	secure, fast, compliant, and very flexible web-server
 
 DISTNAME=	lighttpd-1.4.68
+REVISION=	0
 CATEGORIES=	www net
 MASTER_SITES=	https://download.lighttpd.net/lighttpd/releases-1.4.x/
 EXTRACT_SUFX=	.tar.xz
@@ -27,6 +28,10 @@ RUN_DEPENDS+=	www/spawn-fcgi
 CONFIGURE_ARGS+=-DWITH_LUA=ON \
 		-DWITH_LUA_VERSION=${MODLUA_DEP} \
 		-DWITH_OPENSSL=ON
+
+# XXX: cmake is busted, if not defined will set it to
+# ${TRUEPREFIX}/lib/lighttpd and then prefix ${TRUEPREFIX} again.
+CONFIGURE_ARGS+=-DLIGHTTPD_MODULES_DIR="lib/lighttpd"
 
 FLAVORS=	ldap mysql pgsql
 FLAVOR?=
