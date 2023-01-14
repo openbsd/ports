@@ -1,6 +1,7 @@
-SHA256 (prometheus-2.37.4.tar.gz) = gIP1R9TjewtfeusIL9ScOyRegGSqzG6g667+bRWKpNI=
-SHA256 (prometheus-vendor-2.37.4.tar.gz) = UCoi3XIpdjwmUVrAb9wWzvDpMYj41vOXirbrIBPxk0E=
-SHA256 (prometheus-web-ui-2.37.4.tar.gz) = TA/pT8Q0b46eVUrqrgG4omZ84EKZm5vEG/7VKd2nzDQ=
-SIZE (prometheus-2.37.4.tar.gz) = 6048871
-SIZE (prometheus-vendor-2.37.4.tar.gz) = 11625254
-SIZE (prometheus-web-ui-2.37.4.tar.gz) = 4332951
+SHA256 (prometheus-2.37.5.tar.gz) = aCh6OeQy/3QP55KYg7WAsgp1SUgopX1FVxmfUNDXJDw=
+
+SHA256 (prometheus-vendor-2.37.5.tar.gz) = wd+Sdfp/EPvTRbdtqNqLC/zYTV49Vu+uJKaXW8efrwE=
+SHA256 (prometheus-web-ui-2.37.5.tar.gz) = G/zuXX/m4xuPLV1xBHMkKk8sDq6+uUYiYL5fCskspVY=
+SIZE (prometheus-2.37.5.tar.gz) = 6048663
+SIZE (prometheus-vendor-2.37.5.tar.gz) = 11745105
+SIZE (prometheus-web-ui-2.37.5.tar.gz) = 4331652
