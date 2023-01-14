@@ -1,0 +1,51 @@
+Index: crypto/chacha/asm/chacha-armv8.pl
+--- crypto/chacha/asm/chacha-armv8.pl.orig
++++ crypto/chacha/asm/chacha-armv8.pl
+@@ -138,7 +138,7 @@ $code.=<<___;
+ .hidden	OPENSSL_armcap_P
+ #endif
+ 
+-.text
++.rodata
+ 
+ .align	5
+ .Lsigma:
+@@ -149,6 +149,8 @@ $code.=<<___;
+ .long	0x02010003,0x06050407,0x0a09080b,0x0e0d0c0f
+ .asciz	"ChaCha20 for ARMv8, CRYPTOGAMS by \@dot-asm"
+ 
++.text
++
+ .globl	ChaCha20_ctr32
+ .type	ChaCha20_ctr32,%function
+ .align	5
+@@ -169,7 +171,8 @@ ChaCha20_ctr32:
+ 	stp	x29,x30,[sp,#-96]!
+ 	add	x29,sp,#0
+ 
+-	adr	@x[0],.Lsigma
++	adrp	@x[0],.Lsigma
++	add	@x[0],@x[0],:lo12:.Lsigma
+ 	stp	x19,x20,[sp,#16]
+ 	stp	x21,x22,[sp,#32]
+ 	stp	x23,x24,[sp,#48]
+@@ -437,7 +440,8 @@ ChaCha20_neon:
+ 	stp	x29,x30,[sp,#-96]!
+ 	add	x29,sp,#0
+ 
+-	adr	@x[0],.Lsigma
++	adrp	@x[0],.Lsigma
++	add	@x[0],@x[0],:lo12:.Lsigma
+ 	stp	x19,x20,[sp,#16]
+ 	stp	x21,x22,[sp,#32]
+ 	stp	x23,x24,[sp,#48]
+@@ -848,7 +852,8 @@ ChaCha20_512_neon:
+ 	stp	x29,x30,[sp,#-96]!
+ 	add	x29,sp,#0
+ 
+-	adr	@x[0],.Lsigma
++	adrp	@x[0],.Lsigma
++	add	@x[0],@x[0],:lo12:.Lsigma
+ 	stp	x19,x20,[sp,#16]
+ 	stp	x21,x22,[sp,#32]
+ 	stp	x23,x24,[sp,#48]
