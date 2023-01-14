@@ -361,6 +361,12 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/chime/2018-05-01/endpoint
 lib/python${MODPY_VERSION}/site-packages/botocore/data/chime/2018-05-01/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/chime/2018-05-01/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/chime/2018-05-01/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/cleanrooms/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/cleanrooms/2022-02-17/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/cleanrooms/2022-02-17/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/cleanrooms/2022-02-17/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/cleanrooms/2022-02-17/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/cleanrooms/2022-02-17/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloud9/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloud9/2017-09-23/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloud9/2017-09-23/endpoint-rule-set-1.json
@@ -1284,6 +1290,11 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/kafkaconnect/2021-09-14/e
 lib/python${MODPY_VERSION}/site-packages/botocore/data/kafkaconnect/2021-09-14/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/kafkaconnect/2021-09-14/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/kendra/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/kendra-ranking/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/kendra-ranking/2022-10-19/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/kendra-ranking/2022-10-19/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/kendra-ranking/2022-10-19/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/kendra-ranking/2022-10-19/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/kendra/2019-02-03/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/kendra/2019-02-03/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/kendra/2019-02-03/examples-1.json
