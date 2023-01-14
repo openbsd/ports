@@ -24,7 +24,7 @@ SHARED_LIBS +=  wpg-0.3-lo                3.3 # 3.3
 SHARED_LIBS +=  wps-0.4-lo                4.12 # 4.12
 
 BV=		7.4
-VERSION=	${BV}.3.2
+VERSION=	${BV}.4.2
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 CATEGORIES=	editors productivity
@@ -96,7 +96,7 @@ DISTFILES += alef-1.001.tar.gz:0
 DISTFILES += commons-logging-1.2-src.tar.gz:0
 DISTFILES += cppunit-1.15.1.tar.gz:0
 DISTFILES += culmus-0.133.tar.gz:0
-DISTFILES += dragonbox-1.1.0.tar.gz:0
+DISTFILES += dragonbox-1.1.3.tar.gz:0
 DISTFILES += dtoa-20180411.tgz:0
 DISTFILES += language-subtag-registry-2022-08-08.tar.bz2:0
 DISTFILES += libabw-0.1.3.tar.xz:0
@@ -132,7 +132,7 @@ DISTFILES += skia-m103-b301ff025004c9cd82816c86c547588e6c24b466.tar.xz:0
 DISTFILES += source-serif-pro-3.000R.tar.gz:0
 DISTFILES += ttf-kacst_2.01+mry.tar.gz:0
 DISTFILES += xmlsec1-1.2.34.tar.gz:0
-DISTFILES += libnumbertext-1.0.10.tar.xz:0
+DISTFILES += libnumbertext-1.0.11.tar.xz:0
 DISTFILES += box2d-2.4.1.tar.gz:0
 DISTFILES += zxing-cpp-1.2.0.tar.gz:0
 
