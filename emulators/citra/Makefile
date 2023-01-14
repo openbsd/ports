@@ -10,7 +10,7 @@ COMMENT =	nintendo 3DS emulator
 V =		729
 DISTNAME =	citra-nightly-${V}
 PKGNAME =	citra-0.0.0.${V}
-REVISION =	7
+REVISION =	8
 
 CATEGORIES =	emulators
 
@@ -27,8 +27,11 @@ EXTRACT_SUFX =	.tar.xz
 
 MODULES =	devel/cmake \
 		x11/qt5
-BUILD_DEPENDS =	devel/catch2 \
-		devel/boost
+
+# XXX Enable with the next update
+#BUILD_DEPENDS =	devel/catch2
+
+BUILD_DEPENDS =	devel/boost
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
 		x11/gtk+3,-guic
