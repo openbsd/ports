@@ -1,13 +1,14 @@
 COMMENT =	file system library for the lua language
 
-GH_ACCOUNT =	keplerproject
+GH_ACCOUNT =	lunarmodules
 GH_PROJECT =	luafilesystem
 GH_TAGNAME =	v1_8_0
 PKGNAME =	luafs-1.8.0
+REVISION =	0
 
 CATEGORIES =	devel
 
-HOMEPAGE =	http://keplerproject.github.io/luafilesystem/
+HOMEPAGE =	https://lunarmodules.github.io/luafilesystem/
 
 # MIT
 PERMIT_PACKAGE =	Yes
