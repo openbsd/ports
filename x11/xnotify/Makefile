@@ -2,7 +2,7 @@ COMMENT =	display notifications read from standard input
 
 GH_ACCOUNT =	phillbush
 GH_PROJECT =	xnotify
-GH_TAGNAME =	v0.9.1
+GH_TAGNAME =	v0.9.3
 
 CATEGORIES =	x11
 
