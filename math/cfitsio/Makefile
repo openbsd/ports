@@ -3,10 +3,9 @@ CATEGORIES=	math astro graphics devel
 
 HOMEPAGE=	https://heasarc.gsfc.nasa.gov/fitsio/fitsio.html
 
-DISTNAME=	cfitsio-4.1.0
-REVISION=	0
+DISTNAME=	cfitsio-4.2.0
 
-SHARED_LIBS +=  cfitsio                   2.0 # 0.0
+SHARED_LIBS +=  cfitsio                   3.0 # 0.0
 
 MASTER_SITES=	https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/ \
 		https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/oldvers/
