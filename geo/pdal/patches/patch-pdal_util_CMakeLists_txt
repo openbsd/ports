@@ -8,6 +8,6 @@ Index: pdal/util/CMakeLists.txt
 -include(${PDAL_CMAKE_DIR}/execinfo.cmake)
  include(${PDAL_CMAKE_DIR}/threads.cmake)
 -include(${PDAL_CMAKE_DIR}/unwind.cmake)
+ include(${PDAL_CMAKE_DIR}/utfcpp.cmake)
  
  if(LIBUNWIND_FOUND)
-     set(BACKTRACE_SOURCE BacktraceUnwind.cpp)

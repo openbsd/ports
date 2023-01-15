@@ -74,9 +74,11 @@ include/pdal/filters/DividerFilter.hpp
 include/pdal/filters/ELMFilter.hpp
 include/pdal/filters/EigenvaluesFilter.hpp
 include/pdal/filters/EstimateRankFilter.hpp
+include/pdal/filters/ExpressionFilter.hpp
 include/pdal/filters/FaceRasterFilter.hpp
 include/pdal/filters/FarthestPointSamplingFilter.hpp
 include/pdal/filters/FerryFilter.hpp
+include/pdal/filters/GeomDistanceFilter.hpp
 include/pdal/filters/GpsTimeConvert.hpp
 include/pdal/filters/GreedyProjection.hpp
 include/pdal/filters/GroupByFilter.hpp
@@ -179,6 +181,9 @@ include/pdal/io/CopcWriter.hpp
 include/pdal/io/EptAddonWriter.hpp
 include/pdal/io/EptReader.hpp
 include/pdal/io/FauxReader.hpp
+include/pdal/io/FbiHeader.hpp
+include/pdal/io/FbiReader.hpp
+include/pdal/io/FbiWriter.hpp
 include/pdal/io/GDALReader.hpp
 include/pdal/io/GDALWriter.hpp
 include/pdal/io/GltfWriter.hpp
@@ -202,12 +207,14 @@ include/pdal/io/PcdWriter.hpp
 include/pdal/io/PlyReader.hpp
 include/pdal/io/PlyWriter.hpp
 include/pdal/io/PtsReader.hpp
+include/pdal/io/PtxReader.hpp
 include/pdal/io/QfitReader.hpp
 include/pdal/io/RasterWriter.hpp
 include/pdal/io/SbetCommon.hpp
 include/pdal/io/SbetReader.hpp
 include/pdal/io/SbetSmrmsgReader.hpp
 include/pdal/io/SbetWriter.hpp
+include/pdal/io/StacReader.hpp
 include/pdal/io/TIndexReader.hpp
 include/pdal/io/TerrasolidReader.hpp
 include/pdal/io/TextReader.hpp
