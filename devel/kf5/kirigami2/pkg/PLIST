@@ -161,7 +161,7 @@ lib/qt5/qml/org/kde/kirigami.2/templates/private/ForwardButton.qml
 lib/qt5/qml/org/kde/kirigami.2/templates/private/GenericDrawerIcon.qml
 lib/qt5/qml/org/kde/kirigami.2/templates/private/IconPropertiesGroup.qml
 lib/qt5/qml/org/kde/kirigami.2/templates/private/MenuIcon.qml
-lib/qt5/qml/org/kde/kirigami.2/templates/private/PassiveNotification.qml
+lib/qt5/qml/org/kde/kirigami.2/templates/private/PassiveNotificationsManager.qml
 lib/qt5/qml/org/kde/kirigami.2/templates/qmldir
 share/kdevappwizard/
 share/kdevappwizard/templates/

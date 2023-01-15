@@ -2,7 +2,7 @@ COMMENT =	integration of QML and KDE workspaces
 DISTNAME =	kdeclarative-${VERSION}
 
 SHARED_LIBS =	KF5Declarative		7.1 # 5.17
-SHARED_LIBS +=	KF5CalendarEvents	7.1 # 5.17
+SHARED_LIBS +=	KF5CalendarEvents	7.2 # 5.17
 SHARED_LIBS +=	KF5QuickAddons		7.2 # 5.17
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Completion KF5ConfigCore KF5ConfigGui

@@ -1,6 +1,5 @@
 COMMENT =	KDE framework for Plasma runners
 DISTNAME =	krunner-${VERSION}
-REVISION =	0
 
 SHARED_LIBS =		KF5Runner		8.3
 

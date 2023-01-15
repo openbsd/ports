@@ -57,6 +57,7 @@ share/kf5/mkspecs/qt_KPeople.pri
 share/kf5/mkspecs/qt_KPeopleWidgets.pri
 share/locale/ar/LC_MESSAGES/kpeople5.mo
 share/locale/az/LC_MESSAGES/kpeople5.mo
+share/locale/bg/LC_MESSAGES/kpeople5.mo
 share/locale/bs/LC_MESSAGES/kpeople5.mo
 share/locale/ca/LC_MESSAGES/kpeople5.mo
 share/locale/ca@valencia/LC_MESSAGES/kpeople5.mo
