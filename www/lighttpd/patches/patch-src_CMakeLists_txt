@@ -4,6 +4,8 @@
   84b4ccf89bdfa5817f1ec6328550cc7e3f52cbac
 - [cmake] use mysql_config cflags and ldflags (#3181)
   cc0bb8aa00c321d86a75a7f8138b4f783bac1bf3
+- [cmake] use LIGHTTPD_MODULES_DIR as relative path (fixes #3185)
+  5bb8cbdc110ce9f8c4617c2130234dad206eceab
 
 Index: src/CMakeLists.txt
 --- src/CMakeLists.txt.orig
@@ -47,7 +49,22 @@ Index: src/CMakeLists.txt
  	message(STATUS "found lua at: INCDIR: ${LUA_INCLUDE_DIRS} LIBDIR: ${LUA_LIBRARY_DIRS} LDFLAGS: ${LUA_LDFLAGS} CFLAGS: ${LUA_CFLAGS}")
  	set(HAVE_LUA_H  1 "Have liblua header")
  else()
-@@ -1003,10 +1003,10 @@ if(WITH_MAXMINDDB)
+@@ -805,11 +805,10 @@ set(LIGHTTPD_VERSION_ID 0x104${PROJECT_VERSION_PATCH})
+ set(PACKAGE_NAME "${CMAKE_PROJECT_NAME}")
+ set(PACKAGE_VERSION "${PROJECT_VERSION}")
+ 
+-if(NOT LIGHTTPD_MODULES_DIR)
+-	set(LIGHTTPD_MODULES_DIR "${CMAKE_INSTALL_FULL_LIBDIR}/lighttpd")
+-endif()
+-
+ if(NOT WIN32)
++	if(NOT LIGHTTPD_MODULES_DIR)
++		set(LIGHTTPD_MODULES_DIR "${CMAKE_INSTALL_LIBDIR}/lighttpd")
++	endif()
+ 	set(LIGHTTPD_LIBRARY_DIR "${CMAKE_INSTALL_PREFIX}/${LIGHTTPD_MODULES_DIR}")
+ else()
+ 	## We use relative path in windows
+@@ -1003,10 +1002,10 @@ if(WITH_MAXMINDDB)
  	target_link_libraries(mod_maxminddb maxminddb)
  endif()
  
@@ -61,3 +78,14 @@ Index: src/CMakeLists.txt
  endif()
  
  if(HAVE_PGSQL)
+@@ -1218,8 +1217,8 @@ endif()
+ if(NOT WIN32)
+ install(TARGETS ${L_INSTALL_TARGETS}
+ 	RUNTIME DESTINATION ${CMAKE_INSTALL_SBINDIR}
+-	LIBRARY DESTINATION ${LIGHTTPD_MODULES_DIR}
+-	ARCHIVE DESTINATION ${LIGHTTPD_MODULES_DIR}/static)
++	LIBRARY DESTINATION ${LIGHTTPD_LIBRARY_DIR}
++	ARCHIVE DESTINATION ${LIGHTTPD_LIBRARY_DIR}/static)
+ else()
+ ## HACK to make win32 to install our libraries in desired directory..
+ install(TARGETS lighttpd
