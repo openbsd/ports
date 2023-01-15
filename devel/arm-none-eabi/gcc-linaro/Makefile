@@ -6,7 +6,9 @@ VERSION=	7.4-2019.02
 DISTNAME=	gcc-linaro-${VERSION}
 EXTRACT_SUFX=	.tar.xz
 PKGNAME=	${CONFIG}-gcc-linaro-${VERSION:S/-/./g}
-REVISION=	0
+REVISION=	1
+
+USE_NOEXECONLY=Yes
 
 FLAVORS=	aarch64 arm
 FLAVOR?=	arm

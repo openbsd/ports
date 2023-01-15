@@ -3,7 +3,9 @@ COMMENT=	Atmel AVR 8-bit RISC microcontrollers' XGCC #'
 V=		8.5.0
 DISTNAME =	gcc-$V
 PKGNAME=	avr-gcc-${V}
-REVISION=	0
+REVISION=	1
+
+USE_NOEXECONLY=Yes
 
 # GPLv3
 PERMIT_PACKAGE=	Yes
