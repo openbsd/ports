@@ -59,6 +59,15 @@ Index: gcc/common.opt
  Process #ident directives.
  
  fif-conversion
+@@ -1941,7 +1949,7 @@ Common Var(flag_ivopts) Init(1) Optimization
+ Optimize induction variables on trees.
+ 
+ fjump-tables
+-Common Var(flag_jump_tables) Init(1) Optimization
++Common Var(flag_jump_tables) Init(0) Optimization
+ Use jump tables for sufficiently large switch statements.
+ 
+ fbit-tests
 @@ -2627,7 +2635,7 @@ Common RejectNegative Joined Var(common_deferred_optio
  -fstack-limit-symbol=<name>	Trap if the stack goes past symbol <name>.
  

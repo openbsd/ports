@@ -13,11 +13,12 @@ ONLY_FOR_ARCHS-dlang = aarch64 amd64 arm i386 powerpc powerpc64
 
 DPB_PROPERTIES = parallel
 
+USE_NOEXECONLY = Yes
+
 V = 11.2.0
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
-REVISION = 3
-REVISION-dlang = 4
+REVISION = 5
 
 ADASTRAP-amd64 = adastrap-amd64-$V-2.tar.xz
 ADASTRAP-arm = adastrap-arm-4.9.4-0.tar.xz
