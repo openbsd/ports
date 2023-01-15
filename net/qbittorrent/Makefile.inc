@@ -17,11 +17,9 @@ PERMIT_PACKAGE =	Yes
 
 MASTER_SITES ?=	${MASTER_SITE_SOURCEFORGE:=qbittorrent/}
 
-MODULES +=	x11/qt5
+MODULES +=	devel/cmake \
+		x11/qt5
 
-USE_GMAKE =		Yes
-
-CONFIGURE_STYLE =       autoreconf
-AUTORECONF =            ${WRKSRC}/bootstrap.sh
-AUTOCONF_VERSION =      2.69
-AUTOMAKE_VERSION =      1.16
+CONFIGURE_STYLE =	cmake
+# for automatic stacktraces on crash:  autoconf links it, cmake does not
+CONFIGURE_ARGS +=	-DCMAKE_EXE_LINKER_FLAGS='${LDFLAGS} -lexecinfo'

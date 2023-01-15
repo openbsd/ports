@@ -1,8 +1,8 @@
 COMMENT =		BitTorrent client with Qt interface
-REVISION =		1
+REVISION =		2
 
-WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Sql Qt5Svg Qt5Widgets Qt5Xml boost_system-mt c crypto
+WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Gui Qt5Network
+WANTLIB += Qt5Sql Qt5Widgets Qt5Xml boost_system-mt c crypto
 WANTLIB += execinfo m ssl torrent-rasterbar z
 
 MODULES =		lang/python
@@ -10,19 +10,14 @@ MODULES =		lang/python
 MODPY_BUILDDEP =	No
 MODPY_TESTDEP =		No
 
+BUILD_DEPENDS +=	x11/qt5/qtsvg
+
 LIB_DEPENDS +=		net/libtorrent-rasterbar \
-			devel/boost \
-			x11/qt5/qtsvg
+			devel/boost
 
 RUN_DEPENDS +=		x11/gtk+3,-guic \
 			devel/desktop-file-utils
 
-# remove include directives which cause incorrect gmake behavior
-pre-build:
-	@cd ${WRKBUILD}/src && \
-		sed -ie "/^\-include/d" Makefile
-
-pre-install:
-	${SUBST_CMD} ${WRKSRC}/conf.pri
+CONFIGURE_ARGS +=	-DDBUS=ON
 
 .include <bsd.port.mk>
