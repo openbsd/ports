@@ -1,0 +1,11 @@
+Index: cipher/camellia-aarch64.S
+--- cipher/camellia-aarch64.S.orig
++++ cipher/camellia-aarch64.S
+@@ -313,6 +313,7 @@ _gcry_camellia_arm_decrypt_block:
+ .ltorg
+ ELF(.size _gcry_camellia_arm_decrypt_block,.-_gcry_camellia_arm_decrypt_block;)
+ 
++.rodata
+ /* Encryption/Decryption tables */
+ ELF(.type  _gcry_camellia_arm_tables,@object;)
+ .balign 32
