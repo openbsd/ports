@@ -56,6 +56,11 @@ TEST_IS_INTERACTIVE =	X11
 FLAVORS =	browser yubikey
 FLAVOR ?=
 
+# everything (executables, modules, docs) except tests
+ALL_TARGET =	keepassxc keepassxc-cli \
+		keepassxc-autotype-xcb \
+		docs manpages
+
 .if ${FLAVOR:Myubikey}
 WANTLIB += pcsclite usb-1.0
 LIB_DEPENDS +=		devel/libusb1 \
@@ -68,6 +73,8 @@ CONFIGURE_ARGS +=	-DWITH_XC_YUBIKEY=ON
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
 CONFIGURE_ARGS +=	-DWITH_XC_BROWSER=ON \
 			-DWITH_XC_NETWORKING=ON
+# helper executable
+ALL_TARGET +=		keepassxc-proxy
 .endif
 
 FIX_CRLF_FILES =	src/keeshare/ShareExport.cpp
@@ -85,5 +92,12 @@ post-patch:
 		gui/MainWindow.cpp \
 		browser/BrowserSettingsWidget.cpp \
 		browser/NativeMessageInstaller.cpp
+
+do-build:
+	@${MODCMAKE_BUILD_TARGET} -t ${ALL_TARGET}
+
+# build whatever is left (ca. 200 GUI test files)
+pre-test:
+	@${MODCMAKE_BUILD_TARGET}
 
 .include <bsd.port.mk>
