@@ -1,0 +1,12 @@
+Index: sources/tools/gcc/common.opt
+--- sources/tools/gcc/common.opt.orig
++++ sources/tools/gcc/common.opt
+@@ -1468,7 +1468,7 @@ Common Report Var(flag_ivopts) Init(1) Optimization
+ Optimize induction variables on trees
+ 
+ fjump-tables
+-Common Var(flag_jump_tables) Init(1) Optimization
++Common Var(flag_jump_tables) Init(0) Optimization
+ Use jump tables for sufficiently large switch statements
+ 
+ fkeep-inline-functions
