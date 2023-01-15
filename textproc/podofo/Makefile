@@ -1,8 +1,8 @@
 COMMENT=	library and tools to modify and parse PDF documents
 
-DISTNAME=	podofo-0.9.7
+DISTNAME=	podofo-0.9.8
 
-SHARED_LIBS +=	podofo                    3.0 # 0.9
+SHARED_LIBS +=	podofo                    4.0 # 0.9.8
 
 CATEGORIES=	textproc
 
@@ -16,8 +16,9 @@ WANTLIB += jpeg m png ssl tiff unistring z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=podofo/}
 
-MODULES=	devel/cmake 
+MODULES=	devel/cmake
 
+# C++
 COMPILER =	base-clang ports-gcc
 
 LIB_DEPENDS=	converters/libunistring \
@@ -25,6 +26,9 @@ LIB_DEPENDS=	converters/libunistring \
 		graphics/jpeg \
 		graphics/png \
 		graphics/tiff
+
+# only for tests
+BUILD_DEPENDS=	devel/cppunit
 
 CXXFLAGS =	-I${X11BASE}/include
 MODCMAKE_LDFLAGS =	-L${X11BASE}/lib
@@ -36,7 +40,6 @@ CONFIGURE_ARGS+=	-DFREETYPE_INCLUDE_DIR=${X11BASE}/include/freetype2 \
 post-extract:
 	rm ${WRKSRC}/cmake/modules/FindZLIB.cmake
 
-BUILD_DEPENDS=	devel/cppunit
 do-test:
 	${WRKBUILD}/test/unit/podofo-test
 
