@@ -5,22 +5,25 @@
 @pkgpath net/owncloudclient,-qt5
 @bin bin/owncloud
 @bin bin/owncloudcmd
-include/owncloudsync/
-include/owncloudsync/creds/
-include/owncloudsync/creds/abstractcredentials.h
-include/owncloudsync/creds/httpcredentials.h
-include/owncloudsync/mirall/
-include/owncloudsync/mirall/account.h
-include/owncloudsync/mirall/configfile.h
-include/owncloudsync/mirall/networkjobs.h
-include/owncloudsync/mirall/progressdispatcher.h
-include/owncloudsync/mirall/syncengine.h
-include/owncloudsync/mirall/syncfileitem.h
-include/owncloudsync/mirall/syncresult.h
+include/ownCloud/
+include/ownCloud/common/
+include/ownCloud/common/filesystembase.h
+include/ownCloud/common/ocsynclib.h
+include/ownCloud/common/utility.h
+include/ownCloud/libsync/
+include/ownCloud/libsync/accessmanager.h
+include/ownCloud/libsync/logger.h
+include/ownCloud/libsync/owncloudlib.h
+lib/cmake/ownCloud/
+lib/cmake/ownCloud/ownCloudConfig${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/ownCloud/ownCloudConfig.cmake
+lib/cmake/ownCloud/ownCloudConfigVersion.cmake
+@lib lib/libowncloudResources.so.${LIBowncloudResources_VERSION}
 @lib lib/libowncloud_csync.so.${LIBowncloud_csync_VERSION}
 @lib lib/libowncloudsync.so.${LIBowncloudsync_VERSION}
 lib/ownCloud/
 lib/ownCloud/plugins/
+@so lib/ownCloud/plugins/owncloudsync_vfs_off.so
 @so lib/ownCloud/plugins/owncloudsync_vfs_suffix.so
 share/applications/owncloud.desktop
 share/caja-python/

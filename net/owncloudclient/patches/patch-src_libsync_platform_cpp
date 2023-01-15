@@ -1,0 +1,12 @@
+Index: src/libsync/platform.cpp
+--- src/libsync/platform.cpp.orig
++++ src/libsync/platform.cpp
+@@ -44,7 +44,7 @@ std::unique_ptr<Platform> Platform::create()
+ 
+ #if defined(Q_OS_WIN)
+     return std::make_unique<WinPlatform>();
+-#elif defined(Q_OS_LINUX)
++#elif defined(Q_OS_UNIX)
+     return std::make_unique<UnixPlatform>();
+ #elif defined(Q_OS_MAC)
+     return std::make_unique<MacPlatform>();

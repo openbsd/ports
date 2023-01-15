@@ -1,0 +1,16 @@
+Upstream commit 2d6b2d3c036f44a5c2a9e58321364c210401ff12
+
+Index: src/common/utility.h
+--- src/common/utility.h.orig
++++ src/common/utility.h
+@@ -381,10 +381,8 @@ OCSYNC_EXPORT Q_DECLARE_LOGGING_CATEGORY(lcUtility)
+     }
+ 
+ 
+-#ifdef Q_OS_LINUX
+     OCSYNC_EXPORT QString appImageLocation();
+     OCSYNC_EXPORT bool runningInAppImage();
+-#endif
+ } // Utility namespace
+ /** @} */ // \addtogroup
+ 

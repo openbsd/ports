@@ -1,11 +1,12 @@
 COMMENT =		owncloud sync client
 
-V = 			2.11.1.8946
+V = 			3.0.0.9215
 DISTNAME =		ownCloud-${V}
 PKGNAME =  		owncloudclient-${V}
 
-SHARED_LIBS +=		owncloudsync	7.2
-SHARED_LIBS +=		owncloud_csync	1.1
+SHARED_LIBS +=		owncloudsync		8.0
+SHARED_LIBS +=		owncloud_csync		2.0
+SHARED_LIBS +=		owncloudResources	0.0
 
 CATEGORIES =		net
 
@@ -39,7 +40,9 @@ CONFIGURE_ARGS +=	-Wno-dev \
 			-DKDE_INSTALL_PLUGINDIR=${PREFIX}/lib/ownCloud/plugins/ \
 			-DCMAKE_DISABLE_FIND_PACKAGE_KF5=TRUE \
 			-DCMAKE_DISABLE_FIND_PACKAGE_CMocka=TRUE \
-			-DCSYNC_REQUIRED_LIBRARIES=c
+			-DCSYNC_REQUIRED_LIBRARIES=c \
+			-DWITH_AUTO_UPDATER=FALSE \
+			-DWITH_LIBCLOUDPROVIDERS=FALSE
 
 CFLAGS +=	-I${LOCALBASE}/include -I${LOCALBASE}/include/qtkeychain
 CXXFLAGS +=	-I${LOCALBASE}/include -I${LOCALBASE}/include/qtkeychain
