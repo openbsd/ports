@@ -162,6 +162,7 @@
      SUBDIR += kteatime
      SUBDIR += ktimer
      SUBDIR += kwalletmanager
+     SUBDIR += markdownpart
      SUBDIR += print-manager
      SUBDIR += sweeper
 
@@ -257,7 +258,6 @@
      # kosmindoormap
      # kpmcore
      # kpublictransport
-     # markdownpart
      # partitionmanager
 
 
