@@ -1,5 +1,7 @@
+@conflict gas-*
 @bin bin/gaddr2line
 @bin bin/gar
+@bin bin/gas
 @bin bin/gc++filt
 @bin bin/gelfedit
 @bin bin/gnm
@@ -10,10 +12,12 @@
 @bin bin/gsize
 @bin bin/gstrings
 @bin bin/gstrip
+@info info/as.info
 @info info/binutils.info
 @info info/sframe-spec.info
 @man man/man1/gaddr2line.1
 @man man/man1/gar.1
+@man man/man1/gas.1
 @man man/man1/gc++filt.1
 @comment @man man/man1/gdlltool.1
 @man man/man1/gelfedit.1

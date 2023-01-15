@@ -2,6 +2,7 @@ COMMENT =	GNU binary utilities
 
 DISTNAME =	binutils-2.40
 EXTRACT_SUFX =	.tar.bz2
+REVISION =	0
 
 CATEGORIES =	devel
 
@@ -20,8 +21,7 @@ MASTER_SITES =	${MASTER_SITE_GNU:=binutils/}
 
 CONFIGURE_STYLE =	gnu
 
-CONFIGURE_ARGS +=	--disable-gas \
-			--disable-gprof \
+CONFIGURE_ARGS +=	--disable-gprof \
 			--disable-ld \
 			--disable-libctf \
 			--disable-nls \
