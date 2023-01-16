@@ -22,7 +22,7 @@ WANTLIB=	c m pthread
 COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
 
-.if ${MACHINE_ARCH} == "amd64"
+.if ${MACHINE_ARCH} == "aarch64" || ${MACHINE_ARCH} == "amd64"
 BUILD_DEPENDS+=	devel/nasm
 .endif
 
