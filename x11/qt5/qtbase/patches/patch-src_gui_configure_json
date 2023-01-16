@@ -1,0 +1,27 @@
+EGL_NO_X11 has been replaced with USE_X11, thus breaking all existing
+code out there, including Qt:
+https://github.com/KhronosGroup/EGL-Registry/pull/130
+
+Fix this by defining USE_X11 whenever we do not define EGL_NO_X11.
+
+Fixes: QTBUG-96392
+Pick-to: 6.2
+Change-Id: If8b68caa8c9022477d87169ca2e2a0121a9313e0
+Reviewed-by: default avatarAndy Nichols <andy.nichols@qt.io>
+(cherry picked from commit 4cc54285)
+
+https://invent.kde.org/qt/qt/qtbase/-/commit/7a44796c813ab9661a68d42a67c18759d0a3f9ed
+
+Index: src/gui/configure.json
+--- src/gui/configure.json.orig
++++ src/gui/configure.json
+@@ -834,7 +834,8 @@
+                     "// embedded devices, are not intended to be used together with X. EGL support",
+                     "// has to be disabled in plugins like xcb in this case since the native display,",
+                     "// window and pixmap types will be different than what an X-based platform",
+-                    "// plugin would expect."
++                    "// plugin would expect.",
++                    "#define USE_X11"
+                 ],
+                 "include": [ "EGL/egl.h", "X11/Xlib.h" ],
+                 "main": [
