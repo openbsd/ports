@@ -10,8 +10,8 @@ PKGNAME=	erlang-$V
 PKGNAME-main=	erlang-$V
 PKGNAME-wx=	erlang-wx-$V
 
-#REVISION-main=
-#REVISION-wx=
+REVISION-main=	0
+REVISION-wx=	0
 
 VERSION_SPEC=	>=25,<26
 PKGSPEC-main=	erlang-${VERSION_SPEC}

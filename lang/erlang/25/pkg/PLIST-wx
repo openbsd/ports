@@ -1,5 +1,6 @@
 @option no-default-conflict
 @option is-branch
+@pkgpath lang/erlang/21,-wx
 lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/
 lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/doc/
 lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/doc/chunks/

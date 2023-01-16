@@ -20,36 +20,21 @@ FLAVOR?=		# empty
 
 # When no flavor is explicitly set, assume MODERL_DEFAULT_VERSION
 .if ${FLAVOR:Merlang21}
-MODERL_VERSION =	21
-_MODERL_FLAVOR =	${FLAVOR}
+ERRORS +=		"Invalid FLAVOR set: ${FLAVOR}."
 .else
 MODERL_VERSION ?=	${MODERL_DEFAULT_VERSION}
 _MODERL_FLAVOR ?=	# empty
 .endif
 
-.if ${MODERL_VERSION} == 21
-_MODERL_FLAVOR =	erlang21
-.elif ${MODERL_VERSION} == 25
+.if ${MODERL_VERSION} == 25
 _MODERL_FLAVOR =	erlang25
 .else
 ERRORS +=		"Invalid MODERL_VERSION set: ${MODERL_VERSION}."
 .endif
 
-# If no configure style is set, then assume "rebar"
-.if ${CONFIGURE_STYLE} == "" && ${MODERL_VERSION} == 21
-CONFIGURE_STYLE =	rebar
-.endif
-
-.if ${CONFIGURE_STYLE} == "" && ${MODERL_VERSION} >= 25
+# If no configure style is set, then assume "rebar3"
+.if ${CONFIGURE_STYLE} == ""
 CONFIGURE_STYLE =	rebar3
-.endif
-
-.if ${CONFIGURE_STYLE} == "rebar"
-MODERL_BUILD_DEPENDS +=	devel/rebar
-REBAR_BIN ?=		${LOCALBASE}/bin/rebar${MODERL_VERSION}
-# Make sure rebar gets called as 'rebar', otherwise escript tries to call the
-# binary name (e.g. rebar21) as the script entrypoint.
-_MODERL_LINKS +=	rebar${MODERL_VERSION} rebar
 .endif
 
 .if ${CONFIGURE_STYLE} == "rebar3"

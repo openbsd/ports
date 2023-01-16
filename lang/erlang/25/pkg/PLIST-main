@@ -1,6 +1,7 @@
 @option no-default-conflict
 @option is-branch
 @conflict erlang-wx->=25,<25.1.2
+@pkgpath lang/erlang/21,-main
 bin/ct_run25
 bin/dialyzer25
 bin/epmd25
