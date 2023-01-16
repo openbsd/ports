@@ -2,10 +2,9 @@ COMMENT =		OCaml source-based package manager
 
 CATEGORIES =		sysutils devel
 
-V =			2.0.8
+V =			2.0.10
 PKGNAME =		opam-${V}
 DISTNAME =		opam-full-${V}
-REVISION =		1
 
 MASTER_SITES =		https://github.com/ocaml/opam/releases/download/${V}/
 
