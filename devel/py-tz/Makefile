@@ -1,6 +1,6 @@
 COMMENT =		Python API for dealing with timezones
 
-MODPY_EGG_VERSION =	2022.7
+MODPY_EGG_VERSION =	2022.7.1
 DISTNAME =		pytz-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/^py/py-/}
 CATEGORIES =		devel
