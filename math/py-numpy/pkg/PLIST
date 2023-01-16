@@ -763,6 +763,7 @@ lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/src/crackfortran/opera
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/src/crackfortran/privatemod.f90
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/src/crackfortran/publicmod.f90
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/src/crackfortran/pubprivmod.f90
+lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/src/crackfortran/unicode_comment.f90
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/src/f2cmap/
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/src/f2cmap/.f2py_f2cmap
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/tests/src/f2cmap/isoFortranEnvMap.f90

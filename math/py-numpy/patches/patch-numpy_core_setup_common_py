@@ -5,7 +5,7 @@ with unresolved symbols.
 Index: numpy/core/setup_common.py
 --- numpy/core/setup_common.py.orig
 +++ numpy/core/setup_common.py
-@@ -138,7 +138,7 @@ MANDATORY_FUNCS = [
+@@ -137,7 +137,7 @@ MANDATORY_FUNCS = [
  
  OPTIONAL_LOCALE_FUNCS = ["strtold_l"]
  OPTIONAL_FILE_FUNCS = ["ftello", "fseeko", "fallocate"]

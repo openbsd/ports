@@ -1,6 +1,6 @@
 COMMENT=		fast array and numeric programming library for Python
 
-MODPY_EGG_VERSION=	1.24.0
+MODPY_EGG_VERSION=	1.24.1
 DISTNAME=		numpy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
