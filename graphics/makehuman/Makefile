@@ -1,3 +1,5 @@
+BROKEN=		old deprecation is now a failure with newer numpy, see https://github.com/makehumancommunity/makehuman/issues/217
+
 COMMENT=	parametrical modeling of 3D humanoid characters
 
 GH_ACCOUNT=	makehumancommunity
