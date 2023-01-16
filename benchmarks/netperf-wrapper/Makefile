@@ -1,11 +1,8 @@
 COMMENT-main=	test network latency under load via netperf
 COMMENT-gui=	GUI for flent (test network latency under load via netperf)
-REVISION-gui=	3
-REVISION-main=	3
 
-MODPY_EGG_VERSION= 2.0.1
+MODPY_EGG_VERSION= 2.1.1
 DISTNAME=	flent-${MODPY_EGG_VERSION}
-REVISION=	3
 
 CATEGORIES=	benchmarks net
 

@@ -42,6 +42,8 @@ lib/python${MODPY_VERSION}/site-packages/flent/${MODPY_PYCACHE}runners.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/flent/${MODPY_PYCACHE}runners.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flent/${MODPY_PYCACHE}settings.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/flent/${MODPY_PYCACHE}settings.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/flent/${MODPY_PYCACHE}tcp_info.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/flent/${MODPY_PYCACHE}tcp_info.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flent/${MODPY_PYCACHE}testenv.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/flent/${MODPY_PYCACHE}testenv.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flent/${MODPY_PYCACHE}transformers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -69,6 +71,7 @@ lib/python${MODPY_VERSION}/site-packages/flent/scripts/stat_iterate.sh
 lib/python${MODPY_VERSION}/site-packages/flent/scripts/tc_iterate.sh
 lib/python${MODPY_VERSION}/site-packages/flent/scripts/wifistats_iterate.sh
 lib/python${MODPY_VERSION}/site-packages/flent/settings.py
+lib/python${MODPY_VERSION}/site-packages/flent/tcp_info.py
 lib/python${MODPY_VERSION}/site-packages/flent/testenv.py
 lib/python${MODPY_VERSION}/site-packages/flent/tests/
 lib/python${MODPY_VERSION}/site-packages/flent/tests/bursts.conf

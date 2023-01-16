@@ -4,6 +4,6 @@ Index: flent/build_info.py
 @@ -2,4 +2,4 @@
  
  import os
- VERSION='2.0.1'
+ VERSION='2.1.1'
 -DATA_DIR=os.path.dirname(__file__)
 +DATA_DIR='/usr/local/share/flent'
