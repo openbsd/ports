@@ -1,3 +1,0 @@
-@option no-default-conflict
-@conflict rebar-<2.5.1p2
-bin/rebar${ERL_VERSION}
