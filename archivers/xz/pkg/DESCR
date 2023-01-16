@@ -1,8 +1,6 @@
-LZMA is a general-purpose compression algorithm designed by Igor
-Pavlov as part of 7-Zip. It provides high compression ratio while
-keeping the decompression speed fast.
-
-XZ Utils are an attempt to make LZMA compression easy to use on
-free (as in freedom) operating systems. This is achieved by providing
-tools and libraries which are similar to use than the equivalents
-of the most popular existing compression algorithms.
+XZ Utils provide a general purpose data compression library and
+command line tools. The native file format is the .xz format, but
+also the legacy .lzma format is supported. The .xz format supports
+multiple compression algorithms, of which LZMA2 is currently the
+primary algorithm. With typical files, XZ Utils create about 30 %
+smaller files than gzip.
