@@ -1,6 +1,6 @@
 COMMENT=	IMAP/POP3/SDPS mail retriever
 
-MODPY_EGG_VERSION=	6.18.10
+MODPY_EGG_VERSION=	6.18.11
 GH_ACCOUNT=	getmail6
 GH_PROJECT=	getmail6
 GH_TAGNAME=	v${MODPY_EGG_VERSION}
@@ -18,6 +18,8 @@ PERMIT_PACKAGE=	Yes
 MODULES=	lang/python
 MODPY_PYBUILD=	setuptools
 NO_TEST=	Yes
+
+RUN_DEPENDS=	shells/bash
 
 EXDIR=		${PREFIX}/share/examples/getmail
 
