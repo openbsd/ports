@@ -52,7 +52,7 @@ Index: arch/arm64/boot/dts/qcom/sc8280xp-pmics.dtsi
  &spmi_bus {
  	pmk8280: pmic@0 {
  		compatible = "qcom,pmk8350", "qcom,spmi-pmic";
-@@ -20,11 +64,37 @@
+@@ -20,11 +64,45 @@
  
  			pmk8280_pon_pwrkey: pwrkey {
  				compatible = "qcom,pmk8350-pwrkey";
@@ -88,10 +88,18 @@ Index: arch/arm64/boot/dts/qcom/sc8280xp-pmics.dtsi
 +			#thermal-sensor-cells = <1>;
 +			status = "disabled";
 +		};
++
++		pmk8280_rtc: rtc@6100 {
++			compatible = "qcom,pmk8350-rtc";
++			reg = <0x6100>, <0x6200>;
++			reg-names = "rtc", "alarm";
++			interrupts-extended = <&spmi_bus 0 0x62 0x1 IRQ_TYPE_EDGE_RISING>;
++			status = "disabled";
++		};
  	};
  
  	pmc8280_1: pmic@1 {
-@@ -33,6 +103,13 @@
+@@ -33,6 +111,13 @@
  		#address-cells = <1>;
  		#size-cells = <0>;
  
@@ -105,7 +113,7 @@ Index: arch/arm64/boot/dts/qcom/sc8280xp-pmics.dtsi
  		pmc8280_1_gpios: gpio@8800 {
  			compatible = "qcom,pm8350-gpio", "qcom,spmi-gpio";
  			reg = <0x8800>;
-@@ -77,6 +154,13 @@
+@@ -77,6 +162,13 @@
  		reg = <0x3 SPMI_USID>;
  		#address-cells = <1>;
  		#size-cells = <0>;
