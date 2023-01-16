@@ -1,11 +1,19 @@
 Index: setupext.py
 --- setupext.py.orig
 +++ setupext.py
-@@ -807,6 +807,7 @@ class BackendTkAgg(OptionalBackendPackage):
-             ]
- 
-         ext = Extension('matplotlib.backends._tkagg', sources)
-+        ext.include_dirs.extend(['${X11BASE}/include'])
-         self.add_flags(ext)
+@@ -435,6 +435,7 @@ class Matplotlib(SetupPackage):
+         ext = Extension(
+             "matplotlib._qhull", ["src/_qhull_wrapper.cpp"],
+             define_macros=[("MPL_DEVNULL", os.devnull)])
++        ext.include_dirs.extend(['${PREFIX}/include'])
          add_numpy_flags(ext)
-         LibAgg().add_flags(ext, add_sources=False)
+         Qhull.add_flags(ext)
+         yield ext
+@@ -448,6 +449,7 @@ class Matplotlib(SetupPackage):
+             libraries={"linux": ["dl"], "win32": ["comctl32", "psapi"],
+                        "cygwin": ["comctl32", "psapi"]}.get(sys.platform, []),
+             extra_link_args={"win32": ["-mwindows"]}.get(sys.platform, []))
++        ext.include_dirs.extend(['${X11BASE}/include'])
+         add_numpy_flags(ext)
+         add_libagg_flags(ext)
+         yield ext
