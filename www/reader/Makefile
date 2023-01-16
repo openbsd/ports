@@ -1,6 +1,6 @@
 COMMENT =	lightweight tool offering better readability of web pages
 
-V =		0.3.0
+V =		0.4.0
 MODGO_MODNAME =	github.com/mrusme/reader
 MODGO_VERSION =	v${V}
 
