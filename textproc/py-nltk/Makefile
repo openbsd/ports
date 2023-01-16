@@ -1,10 +1,10 @@
 COMMENT=		Natural Language ToolKit
 
-MODPY_EGG_VERSION =	3.2.4
+MODPY_EGG_VERSION =	3.8.1
 DISTNAME=		nltk-${MODPY_EGG_VERSION}
+EXTRACT_SUFX=		.zip
 PKGNAME=		py-nltk-${MODPY_EGG_VERSION}
 CATEGORIES=		textproc
-REVISION=		6
 
 EPOCH =			0
 
@@ -18,12 +18,16 @@ MODULES=		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS=		devel/py-six${MODPY_FLAVOR} \
+RUN_DEPENDS=		devel/py-click${MODPY_FLAVOR} \
+			devel/py-parsing${MODPY_FLAVOR} \
+			devel/py-regex${MODPY_FLAVOR} \
+			devel/py-tqdm${MODPY_FLAVOR} \
 			graphics/py-matplotlib${MODPY_FLAVOR} \
 			math/prover9/p9m4 \
+			sysutils/py-joblib${MODPY_FLAVOR} \
 			textproc/py-yaml${MODPY_FLAVOR}
-TEST_DEPENDS=		devel/py-nose${MODPY_FLAVOR} \
-			devel/py-parsing${MODPY_FLAVOR}
+
+TEST_DEPENDS=		devel/pylint${MODPY_FLAVOR}
 
 FLAVORS =		python3
 FLAVOR =		python3
