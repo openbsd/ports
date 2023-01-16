@@ -24,6 +24,7 @@ COMPILER_LANGS=	c
 
 .if ${MACHINE_ARCH} == "amd64"
 BUILD_DEPENDS+=	devel/nasm
+CONFIGURE_ENV+=	AS="nasm ${DEBUG}"
 .endif
 
 DEBUG_PACKAGES= ${BUILD_PACKAGES}
@@ -31,8 +32,7 @@ DEBUG_PACKAGES= ${BUILD_PACKAGES}
 SEPARATE_BUILD=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= simple
-CONFIGURE_ENV=	API=${LIBx264_VERSION} \
-		AS="nasm ${DEBUG}"
+CONFIGURE_ENV+=	API=${LIBx264_VERSION}
 CONFIGURE_ARGS+=--prefix=${PREFIX} \
 		--bashcompletionsdir=${LOCALBASE}/share/bash-completion/completions \
 		--enable-bashcompletion \
