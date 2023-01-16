@@ -1,10 +1,9 @@
 COMMENT =	highly reliable Enterprise Messaging System
 
-V =		3.10.7
+V =		3.10.13
 DISTNAME =	rabbitmq-server-$V
 PKGNAME =	rabbitmq-$V
 CATEGORIES =	net
-REVISION =	1
 
 HOMEPAGE =	https://www.rabbitmq.com/
 
@@ -49,6 +48,40 @@ NO_TEST =	Yes
 
 ALL_TARGET =	all manpages
 INSTALL_TARGET = install install-bin
+
+PLUGIN_VERSIONS= \
+ACCEPT_VSN	0.3.5 \
+ATEN_VSN	0.5.8 \
+BASE64URL_VSN	1.0.1 \
+COWBOY_VSN	2.8.0 \
+COWLIB_VSN	2.9.1 \
+CREDENTIALS_OBFUSCATION_VSN	3.2.0 \
+CUTTLEFISH_VSN	3.1.0 \
+EETCD_VSN	0.3.6 \
+ENOUGH_VSN	0.1.0 \
+GEN_BATCH_SERVER_VSN	0.8.8 \
+GETOPT_VSN	1.0.2 \
+GUN_VSN		1.3.3 \
+JOSE_VSN	1.11.1 \
+JSX_VSN		3.1.0 \
+OBSERVER_CLI_VSN	1.7.3 \
+OSIRIS_VSN	1.3.3 \
+PROMETHEUS_VSN	4.9.1 \
+QUANTILE_ESTIMATOR_VSN	0.2.1 \
+RA_VSN		2.4.5 \
+RANCH_VSN	2.1.0 \
+RECON_VSN	2.5.2 \
+SESHAT_VSN	0.4.0 \
+STDOUT_FORMATTER_VSN	0.2.4 \
+SYSLOG_VSN	4.0.0 \
+SYSMON_HANDLER_VSN	1.3.0 \
+SYSTEMD_VSN	0.6.1
+
+.for _n _v in ${PLUGIN_VERSIONS}
+${_n} =		${_v}
+RABBIT_${_n:S/_VSN//} = ${_n:S/_VSN//:L}-${_v}
+SUBST_VARS +=	RABBIT_${_n:S/_VSN//}
+.endfor
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/deps/rabbit/scripts/rabbitmq-{server,env}

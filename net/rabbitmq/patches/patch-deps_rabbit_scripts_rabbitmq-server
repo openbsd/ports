@@ -1,7 +1,7 @@
 Index: deps/rabbit/scripts/rabbitmq-server
 --- deps/rabbit/scripts/rabbitmq-server.orig
 +++ deps/rabbit/scripts/rabbitmq-server
-@@ -70,7 +70,7 @@ start_rabbitmq_server() {
+@@ -65,7 +65,7 @@ start_rabbitmq_server() {
  
      check_start_params
  

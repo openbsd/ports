@@ -5,15 +5,12 @@ daemon_user="_rabbitmq"
 
 . /etc/rc.d/rc.subr
 
+pexp="${TRUEPREFIX}/lib/erlang${MODERL_VERSION}/erts.*bin/beam.*-s rabbit boot.*"
 rc_reload=NO
 rc_usercheck=NO
 
 rc_pre() {
 	install -d -o ${daemon_user} /var/run/rabbitmq
-}
-
-rc_check() {
-	${TRUEPREFIX}/bin/rabbitmqctl status
 }
 
 rc_stop() {
