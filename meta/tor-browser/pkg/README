@@ -33,11 +33,9 @@ editing your torrc yourself.  Make sure Tor Browser is not running
 before doing so if you use this method; if Tor Browser is running it
 might overwrite your torrc.
 
-NOTE: The OpenBSD Tor Browser ports do not yet include Pluggable
-Transports (PT).  This means that not all features are yet available,
-such as using obfsproxy to get to Tor.  A future update will include
-ports for PT components.  Pluggable Transports have a web page
-worth reading:
+NOTE: on OpenBSD, the only Pluggable Transports that are available
+for now are meek-azure, obfs4 and snowflake.  Pluggable Transports have
+a web page worth reading:
   https://2019.www.torproject.org/docs/pluggable-transports.html.en
 
 For more information about Tor Browser and the Tor anonymity network

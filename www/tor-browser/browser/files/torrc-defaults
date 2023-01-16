@@ -12,22 +12,8 @@ CookieAuthentication 1
 GeoIPFile ${LOCALBASE}/share/tor/geoip
 GeoIPv6File ${LOCALBASE}/share/tor/geoip6
 
-##
-## N.B. PT not yet done on OpenBSD: 2015-07-21
-##
-
-## fteproxy configuration
-#ClientTransportPlugin fte exec fteproxy --managed
-
 ## obfs4proxy configuration
-#ClientTransportPlugin obfs2,obfs3,obfs4,scramblesuit exec obfs4proxy
+ClientTransportPlugin meek_lite,obfs2,obfs3,obfs4,scramblesuit exec /usr/local/bin/obfs4proxy
 
-## flash proxy configuration
-#
-# Change the second number here (9000) to the number of a port that can
-# receive connections from the Internet (the port for which you
-# configured port forwarding).
-#ClientTransportPlugin flashproxy exec flashproxy-client --register :0 :9000
-
-## meek configuration
-#ClientTransportPlugin meek exec meek-client-torbrowser -- meek-client
+## snowflake configuration
+ClientTransportPlugin snowflake exec /usr/local/bin/snowflake_client

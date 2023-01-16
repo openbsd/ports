@@ -13,10 +13,12 @@ PATCHORIG =		.pat.orig
 
 PKGNAME =		${TB_PREFIX}-browser-${TB_VERSION:S/a/alpha/}
 DISTNAME =		src-firefox-tor-browser-102.6.0esr-12.0-1-build2
+REVISION =		0
 
 FIX_EXTRACT_PERMISSIONS	= Yes
 DISTFILES +=		${DISTNAME}.tar.xz \
-			tor-browser-linux64-${TB_VERSION}_ALL.tar.xz
+			tor-browser-linux64-${TB_VERSION}_ALL.tar.xz \
+			tor-expert-bundle-${TB_VERSION}-linux-x86_64.tar.gz
 
 SO_VERSION =		8.0
 MOZILLA_LIBS =		xul clearkey lgpllibs mozavcodec mozavutil mozgtk
@@ -74,7 +76,9 @@ MAKE_ENV +=		BUILD_OPT=1 \
 			NSS_ENABLE_ECC=1 \
 			XCFLAGS="-I${LOCALBASE}/include ${CFLAGS}"
 
-RUN_DEPENDS +=		net/tor>=0.4.7.12
+RUN_DEPENDS +=		net/obfs4proxy>=0.0.14 \
+			net/snowflake_proxy>=2.4.1 \
+			net/tor>=0.4.7.12
 
 CONFIGURE_ARGS +=	--enable-release #1386371
 CONFIGURE_ARGS +=	--enable-sandbox
@@ -103,7 +107,16 @@ post-patch:
 	# Not using a patch for this; patch context would contain UTF-8
 	sed -i 's/#ifdef XP_LINUX/#if defined(XP_LINUX) || defined(XP_OPENBSD)/' \
 	    ${WRKSRC}/browser/app/profile/000-tor-browser.js
-	ln -s ${WRKSRC}/mozconfig-linux-x86_64 ${WRKSRC}/.mozconfig
+	ln -fs ${WRKSRC}/mozconfig-linux-x86_64 ${WRKSRC}/.mozconfig
+
+	# add default bridges for Pluggable Transports that we support
+.for pt in meek-azure obfs4 snowflake
+	I=1; \
+	cat ${WRKDIR}/tor/pluggable_transports/bridges_list.${pt}.txt | while read -r line ; do \
+		echo "pref(\"extensions.torlauncher.default_bridge.${pt}.$$I\", \"$$line\");" >>${WRKSRC}/browser/app/profile/000-tor-browser.js; \
+		I=$$((I + 1)); \
+	done
+.endfor
 
 	${SUBST_CMD} ${WRKSRC}/xpcom/build/BinaryPath.h
 
