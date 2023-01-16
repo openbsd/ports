@@ -1,8 +1,7 @@
 COMMENT =		friendly interactive shell
 
-V =			3.5.1
+V =			3.6.0
 DISTNAME =		fish-$V
-REVISION =		1
 
 CATEGORIES =		shells
 
@@ -44,6 +43,9 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 PORTHOME =		${WRKDIR}
+
+do-test:
+	${MODCMAKE_BUILD_TARGET} -t ${TEST_TARGET}
 
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
