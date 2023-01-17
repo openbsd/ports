@@ -26,7 +26,7 @@ Index: meson.build
  
  libvirt_no_indirect = cc.get_supported_link_arguments([
    '-Wl,--no-copy-dt-needed-entries',
-@@ -855,7 +849,7 @@ if not get_option('driver_remote').disabled()
+@@ -812,7 +806,7 @@ if not get_option('driver_remote').disabled()
      xdr_dep = cc.find_library('portablexdr', required: get_option('driver_remote'))
    elif host_machine.system() == 'linux'
      xdr_dep = dependency('libtirpc', required: get_option('driver_remote'))
@@ -35,7 +35,7 @@ Index: meson.build
      xdr_dep = cc.find_library('c', required: get_option('driver_remote'))
    else
      xdr_dep = dependency('', required: false)
-@@ -938,15 +932,18 @@ if devmapper_dep.found()
+@@ -895,15 +889,18 @@ if devmapper_dep.found()
    conf.set('WITH_DEVMAPPER', 1)
  endif
  
@@ -62,7 +62,7 @@ Index: meson.build
  fuse_version = '3.1.0'
  fuse_dep = dependency('fuse3', version: '>=' + fuse_version, required: false)
  if fuse_dep.found()
-@@ -1941,7 +1938,7 @@ endif
+@@ -1874,7 +1871,7 @@ endif
  
  driver_modules_flags = []
  if conf.has('WITH_LIBVIRTD')
@@ -71,7 +71,7 @@ Index: meson.build
      error('You must have dlfcn.h / dlopen() support to build driver modules')
    endif
    driver_modules_flags = libvirt_export_dynamic
-@@ -2255,7 +2252,7 @@ libs_summary = {
+@@ -2188,7 +2185,7 @@ libs_summary = {
    'capng': capng_dep.found(),
    'curl': curl_dep.found(),
    'devmapper': devmapper_dep.found(),

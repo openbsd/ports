@@ -138,6 +138,7 @@ share/doc/libvirt/examples/polkit/libvirt-acl.rules
 share/doc/libvirt/examples/sh/
 share/doc/libvirt/examples/sh/virt-lxc-convert
 share/doc/libvirt/examples/systemtap/
+share/doc/libvirt/examples/systemtap/amd-sev-es-vmsa.stp
 share/doc/libvirt/examples/systemtap/events.stp
 share/doc/libvirt/examples/systemtap/lock-debug.stp
 share/doc/libvirt/examples/systemtap/qemu-monitor.stp
