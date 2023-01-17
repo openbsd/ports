@@ -1,0 +1,19 @@
+Index: arch/arm/dts/t8103-j293.dts
+--- arch/arm/dts/t8103-j293.dts.orig
++++ arch/arm/dts/t8103-j293.dts
+@@ -138,15 +138,6 @@
+ 		model = "MacBook Pro J293 integrated audio";
+ 
+ 		dai-link@0 {
+-			/*
+-			 * DANGER ZONE: You can blow your speakers!
+-			 *
+-			 * The drivers are not ready, and unless you are careful
+-			 * to attenuate the audio stream, you run the risk of
+-			 * blowing your speakers.
+-			 */
+-			status = "disabled";
+-
+ 			link-name = "Speakers";
+ 			mclk-fs = <64>;
+ 

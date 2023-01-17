@@ -1,6 +1,6 @@
 FW_DRIVER=	apple-boot
 FW_VER=		1.0
-REVISION=	0
+REVISION=	1
 
 WRKDIST=	${WRKDIR}
 DISTFILES=
@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	  firmware
 PERMIT_DISTFILES= Yes
 
 BUILD_DEPENDS=	m1n1-=1.1.6p1:sysutils/m1n1 \
-		u-boot-asahi-=2022.07.3p1:sysutils/u-boot-asahi
+		u-boot-asahi-=2022.07.3p2:sysutils/u-boot-asahi
 
 do-install:
 	cat ${LOCALBASE}/share/m1n1/m1n1.bin \
