@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.415 2023/01/09 12:22:17 martin Exp $
+$OpenBSD: user.list,v 1.416 2023/01/17 15:52:13 stsp Exp $
 
 This file lists all users and groups that are created by ports. All
 ports' users/groups have to start with an underscore and have to use
@@ -9,7 +9,7 @@ empty. If only a group is created, leave the user entry empty.
 id  user		group		port
 ----------------------------------------------------
 500 _opennap		_opennap	audio/opennap
-#501 _gnats				databases/gnats
+501 _gotd		_gotd		devel/got,-server
 502 _mysql		_mysql		databases/mariadb,-server
 503 _postgresql		_postgresql	databases/postgresql,-server
 504 _mailman		_mailman	mail/mailman
