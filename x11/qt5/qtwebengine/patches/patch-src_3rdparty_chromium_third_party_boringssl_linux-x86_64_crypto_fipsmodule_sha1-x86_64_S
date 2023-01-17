@@ -1,0 +1,11 @@
+Index: src/3rdparty/chromium/third_party/boringssl/linux-x86_64/crypto/fipsmodule/sha1-x86_64.S
+--- src/3rdparty/chromium/third_party/boringssl/linux-x86_64/crypto/fipsmodule/sha1-x86_64.S.orig
++++ src/3rdparty/chromium/third_party/boringssl/linux-x86_64/crypto/fipsmodule/sha1-x86_64.S
+@@ -3582,6 +3582,7 @@ _avx_shortcut:
+ 	.byte	0xf3,0xc3
+ .cfi_endproc	
+ .size	sha1_block_data_order_avx,.-sha1_block_data_order_avx
++.rodata
+ .align	64
+ K_XX_XX:
+ .long	0x5a827999,0x5a827999,0x5a827999,0x5a827999

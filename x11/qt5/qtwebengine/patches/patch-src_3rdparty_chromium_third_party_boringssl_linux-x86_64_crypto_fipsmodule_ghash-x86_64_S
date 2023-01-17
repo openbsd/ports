@@ -1,0 +1,11 @@
+Index: src/3rdparty/chromium/third_party/boringssl/linux-x86_64/crypto/fipsmodule/ghash-x86_64.S
+--- src/3rdparty/chromium/third_party/boringssl/linux-x86_64/crypto/fipsmodule/ghash-x86_64.S.orig
++++ src/3rdparty/chromium/third_party/boringssl/linux-x86_64/crypto/fipsmodule/ghash-x86_64.S
+@@ -1112,6 +1112,7 @@ gcm_ghash_avx:
+ 	.byte	0xf3,0xc3
+ .cfi_endproc	
+ .size	gcm_ghash_avx,.-gcm_ghash_avx
++.rodata
+ .align	64
+ .Lbswap_mask:
+ .byte	15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0

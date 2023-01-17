@@ -1,0 +1,12 @@
+Index: src/3rdparty/chromium/third_party/boringssl/linux-x86_64/crypto/fipsmodule/ghash-ssse3-x86_64.S
+--- src/3rdparty/chromium/third_party/boringssl/linux-x86_64/crypto/fipsmodule/ghash-ssse3-x86_64.S.orig
++++ src/3rdparty/chromium/third_party/boringssl/linux-x86_64/crypto/fipsmodule/ghash-ssse3-x86_64.S
+@@ -417,7 +417,7 @@ gcm_ghash_ssse3:
+ 
+ .align	16
+ 
+-
++.rodata
+ .Lreverse_bytes:
+ .byte	15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0
+ 
