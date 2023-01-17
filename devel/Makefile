@@ -1513,6 +1513,7 @@
      SUBDIR += py-pyinotify,python3
      SUBDIR += py-pyprof2calltree,python3
      SUBDIR += py-pyproject-api,python3
+     SUBDIR += py-pyproject_hooks,python3
      SUBDIR += py-pyrsistent,python3
      SUBDIR += py-pyte,python3
      SUBDIR += py-qt-builder,python3
