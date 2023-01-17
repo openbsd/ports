@@ -2,7 +2,7 @@ COMMENT=	binutils for xtensa-elf cross-development
 
 V=		2.27
 DISTNAME=	binutils-$V
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://www.gnu.org/software/binutils/
 

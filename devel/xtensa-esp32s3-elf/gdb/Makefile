@@ -2,6 +2,7 @@ COMMENT =	gdb for ${CONFIG} cross-development
 
 VERSION =	2.35.1.2021.2
 PKGNAME =	${CONFIG}-gdb-${VERSION}
+REVISION =	0
 
 GH_ACCOUNT =	espressif
 GH_PROJECT =	binutils-gdb

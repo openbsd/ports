@@ -10,6 +10,8 @@ PERMIT_PACKAGE=	Yes
 # XXX at least gmkdir gets picked up if present
 BUILD_DEPENDS +=	sysutils/coreutils
 
+USE_NOEXECONLY =	Yes
+
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--target=xtensa-elf    \
 		--disable-shared    \

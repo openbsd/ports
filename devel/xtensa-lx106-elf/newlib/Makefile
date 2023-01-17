@@ -3,6 +3,7 @@ COMMENT =	newlib for ${CONFIG} cross-development
 VERSION =	4.0.0
 DISTNAME =	newlib-${VERSION}
 PKGNAME =	${CONFIG}-newlib-${VERSION}
+REVISION =	0
 
 GH_ACCOUNT =	earlephilhower
 GH_PROJECT =	newlib-xtensa

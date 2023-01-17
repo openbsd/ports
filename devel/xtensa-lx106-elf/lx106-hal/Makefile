@@ -1,6 +1,6 @@
 COMMENT =		hardware abstraction library for xtensa lx106
 VERSION	=		1.0
-REVISION =		0
+REVISION =		1
 
 DISTNAME =		lx106-hal
 PKGNAME =		xtensa-${DISTNAME}-${VERSION}

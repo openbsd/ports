@@ -5,7 +5,7 @@ COMMENT=	gcc for xtensa-elf cross-development
 VERSION=	6.3.0
 DISTNAME=	gcc-${VERSION}
 PKGNAME=	${CONFIG}-gcc-${VERSION}
-REVISION=	1
+REVISION=	2
 
 SUBST_VARS+=	VERSION
 

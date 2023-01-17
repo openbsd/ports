@@ -17,6 +17,7 @@ BUILD_DEPENDS +=	devel/bison \
 			sysutils/coreutils \
 			textproc/gsed
 
+USE_NOEXECONLY =	Yes
 SEPARATE_BUILD =	Yes
 USE_GMAKE =		Yes
 YACC =			bison -y
