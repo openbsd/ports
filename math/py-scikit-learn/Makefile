@@ -1,9 +1,8 @@
 COMMENT =	set of python modules for machine learning and data mining
 
-MODPY_EGG_VERSION =	1.0.2
+MODPY_EGG_VERSION =	1.2.0
 DISTNAME =		scikit-learn-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
 
 CATEGORIES =		math
 
@@ -33,9 +32,9 @@ BUILD_DEPENDS =		lang/cython${MODPY_FLAVOR} \
 			math/py-numpy${MODPY_FLAVOR} \
 			math/py-scipy${MODPY_FLAVOR}
 
-RUN_DEPENDS =		math/py-numpy${MODPY_FLAVOR}>=1.14.6 \
-			math/py-scipy${MODPY_FLAVOR}>=1.1.0 \
-			sysutils/py-joblib${MODPY_FLAVOR}>=0.11 \
+RUN_DEPENDS =		math/py-numpy${MODPY_FLAVOR}>=1.17.3 \
+			math/py-scipy${MODPY_FLAVOR}>=1.3.2 \
+			sysutils/py-joblib${MODPY_FLAVOR}>=1.1.1 \
 			sysutils/py-threadpoolctl${MODPY_FLAVOR}>=2.0.0
 
 TEST_DEPENDS =		math/py-pandas${MODPY_FLAVOR}
