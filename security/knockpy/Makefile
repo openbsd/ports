@@ -1,6 +1,6 @@
 COMMENT =	subdomain scanner
 
-MODPY_EGG_VERSION =	5.4.0
+MODPY_EGG_VERSION =	6.0.0
 
 DISTNAME =	knockpy-${MODPY_EGG_VERSION}
 
