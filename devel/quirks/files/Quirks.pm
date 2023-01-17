@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1490 2023/01/16 18:21:24 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1491 2023/01/17 16:01:28 stsp Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1778,6 +1778,7 @@ setup_obsolete_reason(
 	6 => 'caribou',
 	5 => 'riak',
 	15 => 'rmilter',
+	3 => 'gotweb',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
@@ -1794,6 +1795,7 @@ my $obsolete_suggestion = {
 	'keepassx' => 'keepassxc',
 	'lives' => [qw(kdenlive shotcut)],
 	'pdfshuffler' => 'pdfarranger',
+	'gotweb' => 'gotwebd',
 };
 
 # reasons for obsolete packages
