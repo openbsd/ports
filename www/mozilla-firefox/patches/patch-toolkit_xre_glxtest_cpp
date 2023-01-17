@@ -3,7 +3,7 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=1776713
 Index: toolkit/xre/glxtest.cpp
 --- toolkit/xre/glxtest.cpp.orig
 +++ toolkit/xre/glxtest.cpp
-@@ -270,6 +270,9 @@ static void close_logging() {
+@@ -276,6 +276,9 @@ static void close_logging() {
  #define PCI_BASE_CLASS_DISPLAY 0x03
  
  static void get_pci_status() {

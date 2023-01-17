@@ -2,7 +2,7 @@ Focus the 'add exception' button in the unknown ssl cert warning window
 Index: security/manager/pki/resources/content/exceptionDialog.js
 --- security/manager/pki/resources/content/exceptionDialog.js.orig
 +++ security/manager/pki/resources/content/exceptionDialog.js
-@@ -226,6 +226,7 @@ function updateCertStatus() {
+@@ -216,6 +216,7 @@ function updateCertStatus() {
        }
        // In these cases, we do want to enable the "Add Exception" button
        gDialog.getButton("extra1").disabled = false;
