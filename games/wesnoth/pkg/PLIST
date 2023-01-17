@@ -4129,6 +4129,8 @@ share/wesnoth/data/core/images/maps/l10n/sr@ijekavianlatin/
 share/wesnoth/data/core/images/maps/l10n/sr@ijekavianlatin/wesnoth--overlay.png
 share/wesnoth/data/core/images/maps/l10n/sr@latin/
 share/wesnoth/data/core/images/maps/l10n/sr@latin/wesnoth--overlay.png
+share/wesnoth/data/core/images/maps/l10n/tr/
+share/wesnoth/data/core/images/maps/l10n/tr/titlescreen--overlay.png
 share/wesnoth/data/core/images/maps/l10n/zh_CN/
 share/wesnoth/data/core/images/maps/l10n/zh_CN/titlescreen--overlay.png
 share/wesnoth/data/core/images/maps/l10n/zh_CN/wesnoth--overlay.png
@@ -17029,6 +17031,9 @@ share/wesnoth/data/test/scenarios/sighted_events.cfg
 share/wesnoth/data/test/scenarios/simple_find_path.cfg
 share/wesnoth/data/test/scenarios/simulate_combat_clone_adjacent.cfg
 share/wesnoth/data/test/scenarios/simulate_combat_occupied.cfg
+share/wesnoth/data/test/scenarios/special_calculations.cfg
+share/wesnoth/data/test/scenarios/special_note_from_movetype.cfg
+share/wesnoth/data/test/scenarios/special_note_individual_unit.cfg
 share/wesnoth/data/test/scenarios/store_locations.cfg
 share/wesnoth/data/test/scenarios/store_reachable_locations_vision.cfg
 share/wesnoth/data/test/scenarios/store_unit_defense.cfg
@@ -17073,6 +17078,7 @@ share/wesnoth/data/test/scenarios/test_resistances.cfg
 share/wesnoth/data/test/scenarios/test_return.cfg
 share/wesnoth/data/test/scenarios/test_role_types.cfg
 share/wesnoth/data/test/scenarios/test_scoped_vars.cfg
+share/wesnoth/data/test/scenarios/test_synced_side_number.cfg
 share/wesnoth/data/test/scenarios/test_synced_state.cfg
 share/wesnoth/data/test/scenarios/test_terrain_mask.cfg
 share/wesnoth/data/test/scenarios/test_unit_map.cfg
