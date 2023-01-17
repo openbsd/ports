@@ -2,7 +2,7 @@ Index: content/gpu/gpu_sandbox_hook_linux.cc
 --- content/gpu/gpu_sandbox_hook_linux.cc.orig
 +++ content/gpu/gpu_sandbox_hook_linux.cc
 @@ -126,6 +126,7 @@ void AddStandardChromeOsPermissions(
-   permissions->push_back(BrokerFilePermission::ReadOnly(kAngleGlesPath));
+   }
  }
  
 +#if !defined(OS_BSD)

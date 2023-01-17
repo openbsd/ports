@@ -9,4 +9,4 @@ Index: extensions/browser/pref_names.cc
 +    BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
  extern const char kChromeAppsEnabled[] = "extensions.chrome_apps_enabled";
  #endif
- const char kU2fSecurityKeyApiEnabled[] =
+ 

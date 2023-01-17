@@ -10,14 +10,13 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Iridium browser
 
-V=			2022.12.108.1
-REVISION=		1
+V=			2023.01.109
 
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
 
-PATCHFILES=		disable-privacy-sandbox-352a8844b01a05a786ba76da599d106487f1533f.patch
+PATCHFILES=		disable-privacy-sandbox-7f49edb924b6d2b38fcc9a2c76d4e5e1f857e7b9.patch
 PATCH_DIST_STRIP=	-p1
 
 CATEGORIES=		www
@@ -140,8 +139,10 @@ GN_ARGS=	enable_nacl=false \
 		use_sysroot=false \
 		treat_warnings_as_errors=false \
 		clang_use_chrome_plugins=false \
-		use_allocator=\"none\" \
 		use_allocator_shim=false \
+		use_partition_alloc=true \
+		use_partition_alloc_as_malloc=false \
+		enable_backup_ref_ptr_support=false \
 		disable_fieldtrial_testing_config=true \
 		extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\" \
 		fatal_linker_warnings=false \

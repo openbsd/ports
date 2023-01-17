@@ -12,7 +12,7 @@ Index: chrome/browser/profiles/profile_impl.cc
  using bookmarks::BookmarkModel;
  using content::BrowserThread;
  using content::DownloadManagerDelegate;
-@@ -839,7 +843,17 @@ void ProfileImpl::DoFinalInit(CreateMode create_mode) 
+@@ -846,7 +850,17 @@ void ProfileImpl::DoFinalInit(CreateMode create_mode) 
  }
  
  base::FilePath ProfileImpl::last_selected_directory() {

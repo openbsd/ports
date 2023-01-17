@@ -1,7 +1,7 @@
 Index: ui/color/color_provider_utils.cc
 --- ui/color/color_provider_utils.cc.orig
 +++ ui/color/color_provider_utils.cc
-@@ -88,7 +88,7 @@ base::StringPiece SystemThemeName(ui::SystemTheme syst
+@@ -103,7 +103,7 @@ base::StringPiece SystemThemeName(ui::SystemTheme syst
    switch (system_theme) {
      case ui::SystemTheme::kDefault:
        return "kDefault";
