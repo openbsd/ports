@@ -1,30 +1,30 @@
-COMMENT =	simple, correct PEP 517 build frontend
+COMMENT=	simple, correct PEP 517 build frontend
 
-MODPY_EGG_VERSION =	0.9.0
+MODPY_EGG_VERSION=	0.10.0
 
-DISTNAME =	build-${MODPY_EGG_VERSION}
-PKGNAME =	py-${DISTNAME}
+DISTNAME=	build-${MODPY_EGG_VERSION}
+PKGNAME=	py-${DISTNAME}
 
-CATEGORIES =	devel
+CATEGORIES=	devel
 
-HOMEPAGE =	https://pypa-build.readthedocs.io/en/latest/
+HOMEPAGE=	https://pypa-build.readthedocs.io/en/latest/
 
-# BSD
-PERMIT_PACKAGE =	Yes
+# MIT
+PERMIT_PACKAGE=	Yes
 
-MODULES =	lang/python
-MODPY_PI =	Yes
-NO_TEST =	Yes
+MODULES=	lang/python
+MODPY_PI=	Yes
+NO_TEST=	Yes
 
-FLAVOR =	python3
-FLAVORS =	python3
+FLAVORS=	python3
+FLAVOR=		python3
 
-BUILD_DEPENDS =	devel/py-installer${MODPY_FLAVOR} \
-		devel/py-setuptools${MODPY_FLAVOR} \
+BUILD_DEPENDS=	devel/py-installer${MODPY_FLAVOR} \
+		devel/py-flit_core${MODPY_FLAVOR} \
 		devel/py-wheel${MODPY_FLAVOR} \
 		${RUN_DEPENDS}
 
-RUN_DEPENDS =	devel/py-pep517${MODPY_FLAVOR} \
+RUN_DEPENDS=	devel/py-pyproject_hooks${MODPY_FLAVOR} \
 		sysutils/py-packaging${MODPY_FLAVOR} \
 		textproc/py-tomli${MODPY_FLAVOR}
 
