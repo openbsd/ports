@@ -1,0 +1,8 @@
+gotd(8) is the Game of Trees Git repository server.
+
+gotd(8) makes Git repositories reachable over the network via ssh(1).
+The plaintext git:// and HTTP/HTTPS protocols are intentionally not
+supported.
+
+Documentation is provided in manual pages installed by this package:
+gotsh(1), gotd.conf(5), gotd(8), gotctl(8)

@@ -1,8 +1,10 @@
 #!/bin/ksh
 
-daemon="${TRUEPREFIX}/sbin/gotwebd"
+daemon="${TRUEPREFIX}/sbin/gotd"
 
 . /etc/rc.d/rc.subr
+
+pexp="gotd: parent"
 
 rc_configtest() {
 	${daemon} -n ${daemon_flags}
