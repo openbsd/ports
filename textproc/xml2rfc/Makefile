@@ -2,6 +2,7 @@ COMMENT=	convert memos written in XML to the RFC format
 
 MODPY_EGG_VERSION=	3.15.3
 DISTNAME=	xml2rfc-${MODPY_EGG_VERSION}
+REVISION=	0
 
 CATEGORIES=	textproc
 
@@ -21,6 +22,7 @@ RUN_DEPENDS=	devel/py-appdirs${MODPY_FLAVOR} \
 		devel/py-intervaltree${MODPY_FLAVOR} \
 		devel/py-kitchen${MODPY_FLAVOR} \
 		devel/py-six${MODPY_FLAVOR} \
+		devel/py-wcwidth${MODPY_FLAVOR} \
 		devel/pyflakes${MODPY_FLAVOR} \
 		geo/py-google-i18n-address${MODPY_FLAVOR} \
 		textproc/py-MarkupSafe${MODPY_FLAVOR} \
