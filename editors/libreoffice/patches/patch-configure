@@ -11,7 +11,7 @@ Index: configure
      using_x11=yes
      PTHREAD_CFLAGS="-D_THREAD_SAFE"
      PTHREAD_LIBS="-pthread"
-@@ -14203,6 +14206,11 @@ solaris*)
+@@ -14179,6 +14182,11 @@ openbsd*)
      P_SEP=:
  
      case "$host_cpu" in
