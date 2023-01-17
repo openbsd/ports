@@ -1,11 +1,16 @@
 # bump mail/postfix/stable and mail/postfix/snapshots if updating
 # (static linked)
+
+.if ${MACHINE_ARCH} != aarch64 && ${MACHINE_ARCH} != riscv64
+USE_NOEXECONLY =	Yes
+.endif
+
 PORTROACH=	limit:^3
 V=		3.0.7
 PKGNAME=	openssl-${V}
 PKGSPEC=	openssl->=3v0,<3.1v0
 EPOCH=		0
-REVISION=	3
+REVISION=	4
 
 SHLIBVER=	12.2
 SHARED_LIBS=	crypto ${SHLIBVER} \
@@ -36,10 +41,6 @@ MAN_PREFIX=		"@comment "
 .else
 MAN_PREFIX=		@man lib/eopenssl30/man
 INSTALL_TARGET+=	install_man_docs
-.endif
-
-.if ${MACHINE_ARCH} != aarch64
-USE_NOEXECONLY =	Yes
 .endif
 
 # install to unusual directory name - this port is *not* intended to be
