@@ -3,7 +3,7 @@ Disable cython/libidn optional dep.
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -61,7 +61,7 @@ HAS_PYTHON_HEADERS = check_include('python3', 'Python.
+@@ -63,7 +63,7 @@ HAS_PYTHON_HEADERS = check_include('python3', 'Python.
  HAS_STRINGPREP_HEADERS = check_include('libidn', 'stringprep.h')
  
  ext_modules = None
