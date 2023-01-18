@@ -1,6 +1,6 @@
 COMMENT=		functional language for building scalable applications
 
-V=			1.14.2
+V=			1.14.3
 GH_ACCOUNT=		elixir-lang
 GH_PROJECT=		elixir
 GH_TAGNAME=		v$V
@@ -32,6 +32,6 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/bin/elixir
 
 pre-install:
-	-rm ${WRKSRC}/bin/*.{beforesubst,orig}
+	-rm ${WRKSRC}/bin/*{.beforesubst,${PATCHORIG}}
 
 .include <bsd.port.mk>
