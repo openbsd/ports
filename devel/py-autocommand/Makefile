@@ -1,6 +1,6 @@
 COMMENT=	autogenerate argparse parsers from function signatures
 
-MODPY_EGG_VERSION=	2.2.1
+MODPY_EGG_VERSION=	2.2.2
 DISTNAME=	autocommand-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 
@@ -15,7 +15,6 @@ MODULES=	lang/python
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
-NO_TEST=	broken
 
 FLAVORS=	python3
 FLAVOR=		python3
