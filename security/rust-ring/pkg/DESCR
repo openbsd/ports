@@ -1,0 +1,2 @@
+Bundles the source of the ring crate patched to work with OpenBSD's
+execute only policy.
