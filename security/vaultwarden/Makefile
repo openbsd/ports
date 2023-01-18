@@ -8,6 +8,7 @@ COMMENT =		unofficial bitwarden compatible server
 GH_ACCOUNT =		dani-garcia
 GH_PROJECT =		vaultwarden
 GH_TAGNAME =		1.27.0
+REVISION =		0
 
 CATEGORIES =		security
 
@@ -32,6 +33,8 @@ MODULES =		devel/cargo
 CONFIGURE_STYLE =	cargo
 
 SEPARATE_BUILD =	Yes
+
+BUILD_DEPENDS =		security/rust-ring
 
 RUN_DEPENDS =		www/vaultwarden-web
 

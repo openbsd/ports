@@ -11,7 +11,7 @@ COMMENT =		update notifications for nextcloud clients
 GH_ACCOUNT =		nextcloud
 GH_PROJECT =		notify_push
 GH_TAGNAME =		v0.5.0
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		www
 
@@ -35,5 +35,7 @@ WANTLIB += c c++abi m pthread
 
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
+
+BUILD_DEPENDS +=	security/rust-ring
 
 .include <bsd.port.mk>

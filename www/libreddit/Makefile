@@ -6,6 +6,7 @@ COMMENT =	alternative private front-end to Reddit
 GH_ACCOUNT =	libreddit
 GH_PROJECT =	libreddit
 GH_TAGNAME =	v0.25.1
+REVISION =	0
 
 CATEGORIES =	www
 
@@ -17,7 +18,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB =	${MODCARGO_WANTLIB} m
 
 MODULES =	devel/cargo
-BUILD_DEPENDS =	lang/rust
+BUILD_DEPENDS =	security/rust-ring
 
 SEPARATE_BUILD =	Yes
 NO_TEST =	Yes

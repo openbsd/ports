@@ -21,5 +21,7 @@ MODULES =		devel/cargo
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
 
+BUILD_DEPENDS +=	security/rust-ring
+
 # crates ship with Cargo.toml.orig...
 PATCHORIG =	.ports.orig

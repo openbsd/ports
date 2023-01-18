@@ -29,6 +29,8 @@ MODCARGO_FEATURES +=	jmap
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
 
+BUILD_DEPENDS +=	security/rust-ring
+
 LIB_DEPENDS =	devel/pcre2 \
 		net/curl \
 		databases/sqlite3

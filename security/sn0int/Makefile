@@ -8,7 +8,7 @@ COMMENT =	semi-automatic OSINT framework and package manager
 GH_ACCOUNT =	kpcyrd
 GH_PROJECT =	sn0int
 GH_TAGNAME =	v0.24.1
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	security
 
@@ -27,7 +27,7 @@ MODLUA_SA =		Yes
 
 MODULES =		devel/cargo \
 			lang/lua
-BUILD_DEPENDS =		lang/rust>=1.34 \
+BUILD_DEPENDS =		security/rust-ring \
 			textproc/py-sphinx,python3
 RUN_DEPENDS =		net/libmaxminddb,-asn \
 			net/libmaxminddb,-city

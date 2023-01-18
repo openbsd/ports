@@ -1,7 +1,7 @@
 COMMENT =		JMAP server
 
 GH_PROJECT =		jmap-server
-REVISION =		0
+REVISION =		1
 
 .include "crates.inc"
 

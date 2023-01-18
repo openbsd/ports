@@ -8,6 +8,7 @@ COMMENT =		ncurses Spotify client
 GH_ACCOUNT =		hrkfdn
 GH_PROJECT =		ncspot
 GH_TAGNAME =		v0.12.0
+REVISION =		0
 
 CATEGORIES =		audio
 
@@ -19,7 +20,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB +=		${MODCARGO_WANTLIB} crypto curses dbus-1 m portaudio ssl	
 
 MODULES =		devel/cargo
-BUILD_DEPENDS =		lang/rust>=1.30
+BUILD_DEPENDS =		security/rust-ring
 LIB_DEPENDS=		audio/portaudio-svn \
 			x11/dbus,-main
 

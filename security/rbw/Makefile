@@ -4,7 +4,7 @@ NOT_FOR_ARCHS =	powerpc64 riscv64 sparc64
 COMMENT =	command line BitWarden client
 
 DISTNAME =	rbw-1.4.3
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	security
 
@@ -23,5 +23,7 @@ MODULES =		devel/cargo
 
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
+
+BUILD_DEPENDS =		security/rust-ring
 
 .include <bsd.port.mk>
