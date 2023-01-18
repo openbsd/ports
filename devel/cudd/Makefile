@@ -5,7 +5,7 @@ GH_ACCOUNT =	ivmai
 GH_PROJECT =	cudd
 GH_TAGNAME =	cudd-$V
 DISTNAME =	cudd-$V
-REVISION=	0
+REVISION=	1
 
 CATEGORIES =	devel
 

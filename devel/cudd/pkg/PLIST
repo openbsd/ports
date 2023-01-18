@@ -1,5 +1,5 @@
 include/cudd.h
-lib/libcudd.a
+@static-lib lib/libcudd.a
 lib/libcudd.la
 @lib lib/libcudd.so.${LIBcudd_VERSION}
 share/doc/cudd/
