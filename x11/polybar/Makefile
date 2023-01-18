@@ -1,8 +1,7 @@
 COMMENT =	fast and easy-to-use status bar
-V =		3.5.7
+V =		3.6.3
 DISTNAME =	polybar-$V
 CATEGORIES =	x11
-REVISION =	3
 
 HOMEPAGE =	https://polybar.github.io/
 MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -13,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} lib/inotify/inotify
 WANTLIB += c cairo curl fontconfig freetype intl m mpdclient
 WANTLIB += pulse xcb xcb-composite xcb-cursor xcb-ewmh xcb-icccm
-WANTLIB += xcb-image xcb-randr xcb-util xcb-xkb xcb-xrm z jsoncpp
+WANTLIB += xcb-image xcb-randr xcb-util xcb-xkb xcb-xrm z jsoncpp uv
 
 MASTER_SITES =	https://github.com/polybar/polybar/releases/download/$V/
 EXTRACT_SUFX =	.tar.gz
@@ -35,28 +34,23 @@ LIB_DEPENDS =	audio/libmpdclient \
 		devel/jsoncpp \
 		devel/libinotify \
 		graphics/cairo \
-		net/curl
+		net/curl \
+		devel/libuv
 
 RUN_DEPENDS =	x11/py-xcbgen${MODPY_FLAVOR} \
 		fonts/siji \
 		fonts/unifont
 
-MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib -lintl -L${LOCALBASE}/lib/inotify -linotify -Wl,-rpath,${LOCALBASE}/lib/inotify
+MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib -lintl \
+			-L${LOCALBASE}/lib/inotify -linotify \
+			-Wl,-rpath,${LOCALBASE}/lib/inotify
 
 CONFIGURE_ARGS =	-DENABLE_CCACHE=OFF \
 			-DENABLE_I3=ON
 
 NO_TEST =	Yes
 
-WRKDIST =	${WRKDIR}/polybar-$V
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/cmake/02-opts.cmake \
-		${WRKSRC}/doc/CMakeLists.txt \
-		${WRKSRC}/lib/i3ipcpp/CMakeLists.txt
-
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/polybar
-	${INSTALL_DATA} ${WRKSRC}/config ${PREFIX}/share/examples/polybar
+	mv ${PREFIX}/share/doc/polybar/examples ${PREFIX}/share/examples/polybar
 
 .include <bsd.port.mk>

@@ -1,25 +1,29 @@
 @bin bin/polybar
 @bin bin/polybar-msg
+@man man/man1/polybar-msg.1
 @man man/man1/polybar.1
 @man man/man5/polybar.5
 share/bash-completion/completions/polybar
 share/doc/polybar/
-share/doc/polybar/.buildinfo
+share/doc/polybar/CHANGELOG.md
 share/doc/polybar/_sources/
 share/doc/polybar/_sources/dev/
 share/doc/polybar/_sources/dev/packaging.rst.txt
 share/doc/polybar/_sources/dev/release-workflow.rst.txt
 share/doc/polybar/_sources/index.rst.txt
 share/doc/polybar/_sources/man/
+share/doc/polybar/_sources/man/polybar-msg.1.rst.txt
 share/doc/polybar/_sources/man/polybar.1.rst.txt
 share/doc/polybar/_sources/man/polybar.5.rst.txt
 share/doc/polybar/_sources/user/
 share/doc/polybar/_sources/user/actions.rst.txt
+share/doc/polybar/_sources/user/ipc.rst.txt
 share/doc/polybar/_static/
 share/doc/polybar/_static/_sphinx_javascript_frameworks_compat.js
 share/doc/polybar/_static/alabaster.css
 share/doc/polybar/_static/basic.css
 share/doc/polybar/_static/custom.css
+share/doc/polybar/_static/default.png
 share/doc/polybar/_static/doctools.js
 share/doc/polybar/_static/documentation_options.js
 share/doc/polybar/_static/file.png
@@ -33,13 +37,13 @@ share/doc/polybar/_static/searchtools.js
 share/doc/polybar/_static/sphinx_highlight.js
 share/doc/polybar/_static/underscore-1.13.1.js
 share/doc/polybar/_static/underscore.js
-share/doc/polybar/config
 share/doc/polybar/dev/
 share/doc/polybar/dev/packaging.html
 share/doc/polybar/dev/release-workflow.html
 share/doc/polybar/genindex.html
 share/doc/polybar/index.html
 share/doc/polybar/man/
+share/doc/polybar/man/polybar-msg.1.html
 share/doc/polybar/man/polybar.1.html
 share/doc/polybar/man/polybar.5.html
 share/doc/polybar/objects.inv
@@ -47,7 +51,10 @@ share/doc/polybar/search.html
 share/doc/polybar/searchindex.js
 share/doc/polybar/user/
 share/doc/polybar/user/actions.html
+share/doc/polybar/user/ipc.html
 share/examples/polybar/
-share/examples/polybar/config
+share/examples/polybar/config.ini
+@sample ${SYSCONFDIR}/polybar/
+@sample ${SYSCONFDIR}/polybar/config.ini
 share/zsh/site-functions/_polybar
 share/zsh/site-functions/_polybar_msg

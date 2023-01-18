@@ -1,7 +1,7 @@
 Index: src/modules/cpu.cpp
 --- src/modules/cpu.cpp.orig
 +++ src/modules/cpu.cpp
-@@ -1,6 +1,12 @@
+@@ -3,6 +3,12 @@
  #include <fstream>
  #include <istream>
  
@@ -11,10 +11,10 @@ Index: src/modules/cpu.cpp
 +#include <sys/sysctl.h>
 +#endif /* __OpenBSD__ */
 +
- #include "modules/cpu.hpp"
- 
  #include "drawtypes/label.hpp"
-@@ -106,6 +112,35 @@ namespace modules {
+ #include "drawtypes/progressbar.hpp"
+ #include "drawtypes/ramp.hpp"
+@@ -127,6 +133,35 @@ namespace modules {
      m_cputimes_prev.swap(m_cputimes);
      m_cputimes.clear();
  
@@ -50,7 +50,7 @@ Index: src/modules/cpu.cpp
      try {
        std::ifstream in(PATH_CPU_INFO);
        string str;
-@@ -130,7 +165,7 @@ namespace modules {
+@@ -151,7 +186,7 @@ namespace modules {
      } catch (const std::ios_base::failure& e) {
        m_log.err("Failed to read CPU values (what: %s)", e.what());
      }

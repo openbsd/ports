@@ -84,6 +84,6 @@ Index: src/modules/temperature.cpp
 +#endif
 +
 +    temp_f = floor(((1.8 * m_temp) + 32) + 0.5);
-     m_perc = math_util::unbounded_percentage(m_temp, m_tempbase, m_tempwarn);
  
      string temp_c_string = to_string(m_temp);
+     string temp_f_string = to_string(temp_f);
