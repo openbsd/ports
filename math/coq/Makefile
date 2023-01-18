@@ -11,6 +11,8 @@ HOMEPAGE=		https://coq.inria.fr/
 
 MAINTAINER=		Yozo Toda <yozo@v007.vaio.ne.jp>
 
+USE_NOEXECONLY =	Yes
+
 # LGPL 2.1
 PERMIT_PACKAGE=	Yes
 
