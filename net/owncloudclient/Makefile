@@ -1,8 +1,11 @@
 COMMENT =		owncloud sync client
 
 V = 			3.0.0.9215
+GRAPHAPI_V = 		0.13.2
 DISTNAME =		ownCloud-${V}
 PKGNAME =  		owncloudclient-${V}
+DISTFILES += 		ownCloud-${V}.tar.xz \
+			libre-graph-api-cpp-qt-client-{}v${GRAPHAPI_V}.tar.gz:0
 
 SHARED_LIBS +=		owncloudsync		8.0
 SHARED_LIBS +=		owncloud_csync		2.0
@@ -23,7 +26,7 @@ WANTLIB += ${COMPILER_LIBCXX} lib/inotify/inotify
 
 MASTER_SITES =		https://download.owncloud.com/desktop/ownCloud/stable/latest/source/ \
 			https://download.owncloud.com/desktop/ownCloud/stable/${V}/source/
-EXTRACT_SUFX =		.tar.xz
+MASTER_SITES0 = 	https://github.com/owncloud/libre-graph-api-cpp-qt-client/archive/refs/tags/
 
 MODULES =		devel/cmake x11/qt5
 
@@ -50,6 +53,9 @@ MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
 
 NO_TEST =		Yes
 
+post-extract:
+	cp -r ${WRKDIR}/libre-graph-api-cpp-qt-client-${GRAPHAPI_V} \
+		${WRKDIST}/src/libsync/libregraphapisrc-src
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ownCloud/
 	mv ${WRKINST}/etc/ownCloud ${PREFIX}/share/examples/
