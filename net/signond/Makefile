@@ -6,6 +6,7 @@ HOMEPAGE =	https://accounts-sso.gitlab.io/
 
 V =		VERSION_8.61
 DISTNAME =	signond-${V:S/VERSION_//}
+REVISION =	0
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
