@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1582 2023/01/09 17:08:50 sthen Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1583 2023/01/18 15:14:52 naddy Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1366,20 +1366,11 @@ EXTRACT_CASES += *.zip) \
 .endif
 
 .if !empty(_LIST_EXTRACTED:M*.xz) || \
-	!empty(_LIST_EXTRACTED:M*.lzma)
-BUILD_DEPENDS += archivers/xz
-EXTRACT_CASES += *.tar.xz) \
-	xzdec <${FULLDISTDIR}/$$archive | ${TAR} -xf - -- ${EXTRACT_FILES};;
-EXTRACT_CASES += *.tar.lzma) \
-	lzmadec <${FULLDISTDIR}/$$archive | ${TAR} -xf - -- ${EXTRACT_FILES};;
-.endif
-
-.if !empty(_LIST_EXTRACTED:M*.tar.lz)
-BUILD_DEPENDS += archivers/lzip/lunzip
-EXTRACT_CASES += *.tar.lz) \
-	lunzip <${FULLDISTDIR}/$$archive | ${TAR} -xf - -- ${EXTRACT_FILES};;
-PATCH_CASES += *.lz) \
-	lunzip <$$patchfile | ${PATCH} ${PATCH_DIST_ARGS};;
+	!empty(_LIST_EXTRACTED:M*.lzma) || \
+	!empty(_LIST_EXTRACTED:M*.tar.lz)
+BUILD_DEPENDS += archivers/xz>=5.4.0
+EXTRACT_CASES += *.tar.xz|*.tar.lzma|*.tar.lz) \
+	xz -T${MAKE_JOBS} -d <${FULLDISTDIR}/$$archive | ${TAR} -xf - -- ${EXTRACT_FILES};;
 .endif
 
 .if !empty(_LIST_EXTRACTED:M*.bz2) || \
