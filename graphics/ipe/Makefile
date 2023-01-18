@@ -4,7 +4,7 @@ V =			7.2.24
 SUBST_VARS +=		V
 DISTNAME =		ipe-${V}-src
 PKGNAME =		ipe-${V}
-REVISION =		0
+REVISION =		1
 
 # Upstream libraries would be installed as libxxx.so.${V}
 SHLIB_VERSION =	4.0
