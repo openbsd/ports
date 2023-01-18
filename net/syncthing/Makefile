@@ -1,11 +1,8 @@
 COMMENT =	open decentralized synchronization utility
 
-# Using a release candidate until there's a release that supports go-1.19.
-V =		1.21.0-rc.1
-PKGNAME =	syncthing-1.21.0rc1
+V =		1.23.0
 DISTNAME =	syncthing-${V}
 DISTFILES =	syncthing-source-v${V}${EXTRACT_SUFX}
-REVISION =	0
 
 CATEGORIES =	net
 HOMEPAGE =	https://syncthing.net/
