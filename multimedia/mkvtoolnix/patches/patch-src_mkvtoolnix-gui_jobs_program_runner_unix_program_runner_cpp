@@ -1,7 +1,7 @@
 Index: src/mkvtoolnix-gui/jobs/program_runner/unix_program_runner.cpp
 --- src/mkvtoolnix-gui/jobs/program_runner/unix_program_runner.cpp.orig
 +++ src/mkvtoolnix-gui/jobs/program_runner/unix_program_runner.cpp
-@@ -9,20 +9,20 @@
+@@ -15,20 +15,20 @@
  #include "common/list_utils.h"
  #include "common/path.h"
  #include "common/qt.h"
@@ -26,7 +26,7 @@ Index: src/mkvtoolnix-gui/jobs/program_runner/unix_program_runner.cpp
    if (ProgramRunner::isRunProgramTypeSupported(type))
      return true;
  
-@@ -33,8 +33,8 @@ LinuxProgramRunner::isRunProgramTypeSupported(Util::Se
+@@ -47,8 +47,8 @@ LinuxProgramRunner::isRunProgramTypeSupported(Util::Se
  }
  
  void
@@ -37,7 +37,7 @@ Index: src/mkvtoolnix-gui/jobs/program_runner/unix_program_runner.cpp
  
    auto args   = QStringList{} << action;
    auto result = QProcess::execute(Q("systemctl"), args);
-@@ -42,21 +42,21 @@ LinuxProgramRunner::systemctlAction(QString const &act
+@@ -56,26 +56,26 @@ LinuxProgramRunner::systemctlAction(QString const &act
    if (result == 0)
      return;
  
@@ -61,5 +61,35 @@ Index: src/mkvtoolnix-gui/jobs/program_runner/unix_program_runner.cpp
 -LinuxProgramRunner::sleepComputer(Util::Settings::RunProgramConfig &) {
 +UnixProgramRunner::sleepComputer(Util::Settings::RunProgramConfig &) {
    systemctlAction(Q("suspend"));
+ }
+ 
+ void
+-LinuxProgramRunner::showDesktopNotification([[maybe_unused]] Util::Settings::RunProgramForEvent const forEvent,
++UnixProgramRunner::showDesktopNotification([[maybe_unused]] Util::Settings::RunProgramForEvent const forEvent,
+                                             [[maybe_unused]] VariableMap const &variables) {
+ #if defined(HAVE_QTDBUS)
+   QString message;
+@@ -102,12 +102,12 @@ LinuxProgramRunner::showDesktopNotification([[maybe_un
+   hints[Q("desktop-entry")] = Q("org.bunkus.mkvtoolnix-gui");
+   hints[Q("urgency")]       = 0u; // low
+ 
+-  qDebug() << "LinuxProgramRunner::showDesktopNotification: about to notify; message & hints:" << message << hints;
++  qDebug() << "UnixProgramRunner::showDesktopNotification: about to notify; message & hints:" << message << hints;
+ 
+   auto bus = QDBusConnection::sessionBus();
+ 
+   if (!bus.isConnected()) {
+-    qDebug() << "LinuxProgramRunner::showDesktopNotification: error: D-Bus session bus is not connected";
++    qDebug() << "UnixProgramRunner::showDesktopNotification: error: D-Bus session bus is not connected";
+     return;
+   }
+ 
+@@ -125,7 +125,7 @@ LinuxProgramRunner::showDesktopNotification([[maybe_un
+   };
+ 
+   if (!reply.isValid())
+-    qDebug() << "LinuxProgramRunner::showDesktopNotification: notification failed:" << reply.error();
++    qDebug() << "UnixProgramRunner::showDesktopNotification: notification failed:" << reply.error();
+ #endif  // HAVE_QTDBUS
  }
  
