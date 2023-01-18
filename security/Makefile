@@ -351,6 +351,7 @@
      SUBDIR += ruby-rbnacl
      SUBDIR += ruby-rotp
      SUBDIR += rust-openssl-tests
+     SUBDIR += rust-ring
      SUBDIR += scanlogd
      SUBDIR += scanssh
      SUBDIR += scrypt
