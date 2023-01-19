@@ -1,7 +1,7 @@
 COMMENT=		crypto library based on code used in GnuPG
 
 DISTNAME=		libgcrypt-1.10.1
-REVISION=		2
+REVISION=		3
 CATEGORIES=		security
 
 SHARED_LIBS +=  gcrypt               21.0     # 24.1
