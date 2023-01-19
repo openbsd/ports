@@ -1,7 +1,6 @@
 COMMENT=		maths, science and engineering modules for Python
 
-MODPY_EGG_VERSION=	1.5.3
-REVISION=		4
+MODPY_EGG_VERSION=	1.6.3
 DISTNAME=		scipy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
@@ -31,10 +30,12 @@ MODPY_DISTUTILS_BUILDARGS = --fcompiler=gnu95
 BUILD_DEPENDS=		${RUN_DEPENDS} \
 			${MODFORTRAN_BUILD_DEPENDS} \
 			devel/py-pybind11${MODPY_FLAVOR}>=2.4.3
+
 LIB_DEPENDS=		${MODFORTRAN_LIB_DEPENDS} \
 			math/cblas \
 			math/lapack
-RUN_DEPENDS=		math/py-numpy${MODPY_FLAVOR}>=1.14.5 \
+
+RUN_DEPENDS=		math/py-numpy${MODPY_FLAVOR}>=1.16.5 \
 			devel/swig
 
 TEST_DEPENDS=		devel/py-test${MODPY_FLAVOR}
@@ -46,7 +47,7 @@ post-install:
 	${MODPY_BIN} -m compileall ${WRKINST}/${MODPY_SITEPKG}/scipy
 
 do-test: fake
-	cd ${WRKDIR} && ${MAKE_ENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG} ${MODPY_BIN} -c \
-		'import scipy ; scipy.test("full")'
+	cd ${WRKDIR} && ${MAKE_ENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
+		${MODPY_BIN} -c 'import scipy ; scipy.test("full")'
 
 .include <bsd.port.mk>
