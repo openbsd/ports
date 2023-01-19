@@ -1,0 +1,12 @@
+Index: UUlib.pm
+--- UUlib.pm.orig
++++ UUlib.pm
+@@ -47,7 +47,7 @@ our @EXPORT = @_consts;
+ our @EXPORT_OK = @_funcs;
+ our %EXPORT_TAGS = (all => [@_consts,@_funcs], constants => \@_consts);
+ 
+-bootstrap Convert::UUlib $VERSION;
++Convert::UUlib->bootstrap($VERSION);
+ 
+ # dummy function for compatiiblity with pre-1.7 versions
+ sub Initialize { }

@@ -1,1 +1,3 @@
-Perl interface to the uulib library (a.k.a. uudeview/uuenview).
+This module started as an interface to the uulib/uudeview library
+by Frank Pilhofer that can be used to decode all kinds of usenet
+(and other) binary messages.
