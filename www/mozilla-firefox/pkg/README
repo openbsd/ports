@@ -22,7 +22,7 @@ downloading files, or when viewing local files as file:// URLs.  You can edit
 the following files to change the pledge promises, unveil paths, and associated
 permissions:
 
-${SYSCONFDIR}/${MOZILLA_PROJECT}/{unveil,pledge}.{main,content,gpu,rdd,socket,utility-audioDecoder}
+${SYSCONFDIR}/${MOZILLA_PROJECT}/{unveil,pledge}.{content,gpu,main,rdd,socket,utility}
 
 As unveil() can't show non-existing dirs, it is recommended to manually
 create ~/Downloads for files to be properly saved in this directory.
