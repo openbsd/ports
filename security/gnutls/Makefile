@@ -3,6 +3,7 @@ COMMENT=		GNU Transport Layer Security library
 V=			3.7.8
 DISTNAME=		gnutls-${V}
 EXTRACT_SUFX=		.tar.xz
+REVISION=		0
 
 CATEGORIES=		security
 

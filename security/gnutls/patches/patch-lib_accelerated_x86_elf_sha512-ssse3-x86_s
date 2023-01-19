@@ -1,0 +1,11 @@
+Index: lib/accelerated/x86/elf/sha512-ssse3-x86.s
+--- lib/accelerated/x86/elf/sha512-ssse3-x86.s.orig
++++ lib/accelerated/x86/elf/sha512-ssse3-x86.s
+@@ -511,6 +511,7 @@ sha512_block_data_order:
+ 	popl	%ebx
+ 	popl	%ebp
+ 	ret
++.rodata
+ .align	64
+ .L001K512:
+ .long	3609767458,1116352408

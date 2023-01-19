@@ -1,0 +1,11 @@
+Index: lib/accelerated/x86/elf/aesni-x86.s
+--- lib/accelerated/x86/elf/aesni-x86.s.orig
++++ lib/accelerated/x86/elf/aesni-x86.s
+@@ -3263,6 +3263,7 @@ aesni_set_decrypt_key:
+ .L134dec_key_ret:
+ 	ret
+ .size	aesni_set_decrypt_key,.-.L_aesni_set_decrypt_key_begin
++.rodata
+ .align	64
+ .Lkey_const:
+ .long	202313229,202313229,202313229,202313229

@@ -1,0 +1,11 @@
+Index: lib/accelerated/x86/elf/sha1-ssse3-x86_64.s
+--- lib/accelerated/x86/elf/sha1-ssse3-x86_64.s.orig
++++ lib/accelerated/x86/elf/sha1-ssse3-x86_64.s
+@@ -5472,6 +5472,7 @@ _avx2_shortcut:
+ 	.byte	0xf3,0xc3
+ .cfi_endproc	
+ .size	sha1_block_data_order_avx2,.-sha1_block_data_order_avx2
++.rodata
+ .align	64
+ K_XX_XX:
+ .long	0x5a827999,0x5a827999,0x5a827999,0x5a827999

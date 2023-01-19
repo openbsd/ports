@@ -1,0 +1,11 @@
+Index: lib/accelerated/x86/elf/aesni-x86_64.s
+--- lib/accelerated/x86/elf/aesni-x86_64.s.orig
++++ lib/accelerated/x86/elf/aesni-x86_64.s
+@@ -4489,6 +4489,7 @@ __aesni_set_encrypt_key:
+ .cfi_endproc	
+ .size	aesni_set_encrypt_key,.-aesni_set_encrypt_key
+ .size	__aesni_set_encrypt_key,.-__aesni_set_encrypt_key
++.rodata
+ .align	64
+ .Lbswap_mask:
+ .byte	15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0

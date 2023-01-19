@@ -1,0 +1,20 @@
+Index: lib/accelerated/x86/elf/aes-ssse3-x86.s
+--- lib/accelerated/x86/elf/aes-ssse3-x86.s.orig
++++ lib/accelerated/x86/elf/aes-ssse3-x86.s
+@@ -10,7 +10,7 @@
+ #
+ # *** This file is auto-generated ***
+ #
+-.text
++.rodata
+ .align	64
+ .L_vpaes_consts:
+ .long	218628480,235210255,168496130,67568393
+@@ -67,6 +67,7 @@
+ .byte	83,83,69,51,44,32,77,105,107,101,32,72,97,109,98,117
+ .byte	114,103,32,40,83,116,97,110,102,111,114,100,32,85,110,105
+ .byte	118,101,114,115,105,116,121,41,0
++.previous
+ .align	64
+ .type	_vpaes_preheat,@function
+ .align	16
