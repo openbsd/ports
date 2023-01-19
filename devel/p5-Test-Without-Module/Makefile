@@ -1,13 +1,14 @@
 COMMENT =	test fallback behaviour in absence of modules
 
-DISTNAME =	Test-Without-Module-0.20
+DISTNAME =	Test-Without-Module-0.21
+
 CATEGORIES =	devel
-REVISION =	0
 
 # Perl
-PERMIT_PACKAGE = Yes
+PERMIT_PACKAGE =	Yes
 
-MODULES =	cpan
-PKG_ARCH =	*
+MODULES =		cpan
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
