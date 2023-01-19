@@ -12,6 +12,8 @@ COMMENT=		Iridium browser
 
 V=			2023.01.109
 
+REVISION=		0
+
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
