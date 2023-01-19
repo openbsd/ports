@@ -1,0 +1,11 @@
+Index: arm64/chacha-4core.asm
+--- arm64/chacha-4core.asm.orig
++++ arm64/chacha-4core.asm
+@@ -230,6 +230,7 @@ PROLOGUE(_nettle_chacha_4core32)
+ 	b		.Lshared_entry
+ EPILOGUE(_nettle_chacha_4core32)
+ 
++.rodata
+ .align	4
+ .Lcnts: .long	0,1,2,3		C increments
+ .Lrot24: .long	0x02010003,0x06050407,0x0a09080b,0x0e0d0c0f

@@ -1,0 +1,10 @@
+Index: arm64/chacha-core-internal.asm
+--- arm64/chacha-core-internal.asm.orig
++++ arm64/chacha-core-internal.asm
+@@ -122,5 +122,6 @@ PROLOGUE(_nettle_chacha_core)
+ 	ret
+ EPILOGUE(_nettle_chacha_core)
+ 
++.rodata
+ .align	4
+ .Lrot24: .long	0x02010003,0x06050407,0x0a09080b,0x0e0d0c0f
