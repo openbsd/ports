@@ -1,7 +1,17 @@
 Index: arm64/chacha-2core.asm
 --- arm64/chacha-2core.asm.orig
 +++ arm64/chacha-2core.asm
-@@ -227,5 +227,6 @@ PROLOGUE(_nettle_chacha_2core32)
+@@ -79,7 +79,8 @@ PROLOGUE(_nettle_chacha_2core)
+ 	orr		Y3.16b, Y3.16b, X1.16b
+ 
+ .Lshared_entry:
+-	adr		x3, .Lrot24
++	adrp		x3, .Lrot24
++	add		x3, x3, :lo12:.Lrot24
+ 	ld1		{ROT24.4s},[x3]
+ 
+ 	add     Y3.4s, Y3.4s, X3.4s
+@@ -227,5 +228,6 @@ PROLOGUE(_nettle_chacha_2core32)
  	b		.Lshared_entry
  EPILOGUE(_nettle_chacha_2core32)
  
