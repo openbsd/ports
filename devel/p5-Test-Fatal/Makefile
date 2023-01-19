@@ -1,13 +1,16 @@
 COMMENT =	incredibly simple helpers for testing code with exceptions
 
-MODULES =	cpan
-PKG_ARCH =	*
-DISTNAME =	Test-Fatal-0.016
+DISTNAME =	Test-Fatal-0.017
+
 CATEGORIES =	devel
 
 # Perl
-PERMIT_PACKAGE =		Yes
+PERMIT_PACKAGE =	Yes
 
-RUN_DEPENDS = devel/p5-Try-Tiny>=0.07
+MODULES =		cpan
+
+RUN_DEPENDS =		devel/p5-Try-Tiny>=0.07
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
