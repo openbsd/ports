@@ -1,14 +1,6 @@
 bin/gcompris
 @bin bin/gcompris-qt
 share/applications/org.kde.gcompris.desktop
-share/doc/HTML/
-share/doc/HTML/en/
-share/doc/HTML/en/gcompris-qt/
-share/doc/HTML/en/gcompris-qt/activity-config.png
-share/doc/HTML/en/gcompris-qt/dataset.png
-share/doc/HTML/en/gcompris-qt/gcompris-main-menu.png
-share/doc/HTML/en/gcompris-qt/index.cache.bz2
-share/doc/HTML/en/gcompris-qt/index.docbook
 share/gcompris-qt/
 share/gcompris-qt/rcc/
 share/gcompris-qt/rcc/activities.rcc
@@ -52,6 +44,7 @@ share/gcompris-qt/rcc/clockgame.rcc
 share/gcompris-qt/rcc/color_mix.rcc
 share/gcompris-qt/rcc/color_mix_light.rcc
 share/gcompris-qt/rcc/colors.rcc
+share/gcompris-qt/rcc/comparator.rcc
 share/gcompris-qt/rcc/core.rcc
 share/gcompris-qt/rcc/crane.rcc
 share/gcompris-qt/rcc/details.rcc
@@ -72,6 +65,8 @@ share/gcompris-qt/rcc/fifteen.rcc
 share/gcompris-qt/rcc/find_the_day.rcc
 share/gcompris-qt/rcc/followline.rcc
 share/gcompris-qt/rcc/football.rcc
+share/gcompris-qt/rcc/fractions_create.rcc
+share/gcompris-qt/rcc/fractions_find.rcc
 share/gcompris-qt/rcc/geo-country.rcc
 share/gcompris-qt/rcc/geography.rcc
 share/gcompris-qt/rcc/gletters.rcc
@@ -99,6 +94,7 @@ share/gcompris-qt/rcc/learn_decimals_subtractions.rcc
 share/gcompris-qt/rcc/learn_digits.rcc
 share/gcompris-qt/rcc/learn_quantities.rcc
 share/gcompris-qt/rcc/learn_subtractions.rcc
+share/gcompris-qt/rcc/left_right_click.rcc
 share/gcompris-qt/rcc/leftright.rcc
 share/gcompris-qt/rcc/letter-in-word.rcc
 share/gcompris-qt/rcc/lightsoff.rcc
@@ -138,6 +134,7 @@ share/gcompris-qt/rcc/money.rcc
 share/gcompris-qt/rcc/money_back.rcc
 share/gcompris-qt/rcc/money_back_cents.rcc
 share/gcompris-qt/rcc/money_cents.rcc
+share/gcompris-qt/rcc/morse_code.rcc
 share/gcompris-qt/rcc/mosaic.rcc
 share/gcompris-qt/rcc/nine_men_morris.rcc
 share/gcompris-qt/rcc/nine_men_morris_2players.rcc
@@ -184,6 +181,9 @@ share/gcompris-qt/rcc/sudoku.rcc
 share/gcompris-qt/rcc/superbrain.rcc
 share/gcompris-qt/rcc/tangram.rcc
 share/gcompris-qt/rcc/target.rcc
+share/gcompris-qt/rcc/tens_complement_find.rcc
+share/gcompris-qt/rcc/tens_complement_swap.rcc
+share/gcompris-qt/rcc/tens_complement_use.rcc
 share/gcompris-qt/rcc/tic_tac_toe.rcc
 share/gcompris-qt/rcc/tic_tac_toe_2players.rcc
 share/gcompris-qt/rcc/traffic.rcc
@@ -206,6 +206,7 @@ share/gcompris-qt/translations/gcompris_eu.qm
 share/gcompris-qt/translations/gcompris_fi.qm
 share/gcompris-qt/translations/gcompris_fr.qm
 share/gcompris-qt/translations/gcompris_he.qm
+share/gcompris-qt/translations/gcompris_hr.qm
 share/gcompris-qt/translations/gcompris_hu.qm
 share/gcompris-qt/translations/gcompris_id.qm
 share/gcompris-qt/translations/gcompris_it.qm
@@ -219,6 +220,7 @@ share/gcompris-qt/translations/gcompris_pt.qm
 share/gcompris-qt/translations/gcompris_pt_BR.qm
 share/gcompris-qt/translations/gcompris_ro.qm
 share/gcompris-qt/translations/gcompris_ru.qm
+share/gcompris-qt/translations/gcompris_sk.qm
 share/gcompris-qt/translations/gcompris_sl.qm
 share/gcompris-qt/translations/gcompris_sq.qm
 share/gcompris-qt/translations/gcompris_sv.qm
