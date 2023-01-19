@@ -2,11 +2,10 @@ COMMENT=	image metadata manipulation
 
 CATEGORIES=	graphics devel
 
-DISTNAME=	exiv2-0.27.5-Source
-PKGNAME=	${DISTNAME:S/-Source//}
+GH_ACCOUNT=	Exiv2
+GH_PROJECT=	exiv2
+GH_TAGNAME=	v0.27.6
 EPOCH=		0
-
-REVISION=	1
 
 SHARED_LIBS +=  exiv2                12.1      # 14.0
 
@@ -18,8 +17,6 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c expat iconv intl m z
-
-MASTER_SITES =		https://www.exiv2.org/builds/
 
 COMPILER =		base-clang ports-gcc base-gcc
 
