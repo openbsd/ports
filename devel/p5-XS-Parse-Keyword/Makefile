@@ -1,6 +1,6 @@
 COMMENT =	XS functions to assist in parsing keyword syntax
 
-DISTNAME =	XS-Parse-Keyword-0.31
+DISTNAME =	XS-Parse-Keyword-0.32
 CPAN_AUTHOR =	PEVANS
 
 CATEGORIES =	devel
