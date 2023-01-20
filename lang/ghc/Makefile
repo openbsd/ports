@@ -8,7 +8,11 @@ DPB_PROPERTIES =	parallel
 # ghc hardcodes ${WRKDIR}/bin/gcc when the package is compiled with ccache
 NO_CCACHE =		Yes
 
+# Upstream bug: https://gitlab.haskell.org/ghc/ghc/-/issues/22782
+USE_NOEXECONLY =	Yes
+
 GHC_VERSION =		9.2.5
+REVISION =		0
 DISTNAME =		ghc-${GHC_VERSION}
 CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/
@@ -109,6 +113,12 @@ CONFIGURE_ARGS +=	--with-ffi-includes=${LOCALBASE}/include \
 			CC="${CC}"
 
 CONFIGURE_ENV += SPHINXBUILD=${LOCALBASE}/bin/sphinx-build${MODPY_BIN_SUFFIX}
+
+GHC_CC_OPTS =		-Wl,--no-execute-only
+CONFIGURE_ENV +=	CONF_GCC_LINKER_OPTS_STAGE0="${GHC_CC_OPTS}" \
+			CONF_GCC_LINKER_OPTS_STAGE1="${GHC_CC_OPTS}" \
+			CONF_GCC_LINKER_OPTS_STAGE2="${GHC_CC_OPTS}" \
+			CONF_CC_OPTS_STAGE2="${GHC_CC_OPTS}"
 
 # Do not pick up gpatch
 CONFIGURE_ENV +=	ac_cv_path_PatchCmd=/usr/bin/patch
