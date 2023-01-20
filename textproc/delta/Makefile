@@ -2,24 +2,25 @@ COMMENT =		viewer for git and diff output
 
 GH_ACCOUNT =		dandavison
 GH_PROJECT =		delta
-GH_TAGNAME =		0.14.0
-REVISION =		2
+GH_TAGNAME =		0.15.1
 
 CATEGORIES =		textproc
+
+MAINTAINER =		Laurent Cheylus <foxy@free.fr>
 
 HOMEPAGE =		https://github.com/dandavison/delta
 
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=		c c++abi git2 m onig pthread
+DISTFILES +=		${GH_DISTFILE}
 
-# as devel/cargo MODULES adds DISTFILES, GH_* didn't
-DISTFILES +=		${DISTNAME}${EXTRACT_SUFX}
+COMPILER =		base-clang ports-gcc
+WANTLIB +=		${MODCARGO_WANTLIB} m git2 onig
 
 MODULES =		devel/cargo
-# for riscv64 and powerpc64, please keep: cc >= 1.0.73 and libc >= 0.2.113
-MODCARGO_CRATES_UPDATE =	cc libc
+# for riscv64 and powerpc64, please keep: cc >= 1.0.73
+MODCARGO_CRATES_UPDATE =	cc
 
 LIB_DEPENDS +=		devel/libgit2/libgit2 \
 			textproc/oniguruma

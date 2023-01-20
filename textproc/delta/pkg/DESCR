@@ -17,3 +17,5 @@ Delta's main features are:
 * Support for Git's --color-moved feature.
 * Code can be copied directly from the diff (-/+ markers are removed by
   default).
+
+User manual: https://dandavison.github.io/delta
