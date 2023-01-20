@@ -1,6 +1,6 @@
 PORTROACH=	limit:^1\.0\.
 V=		1.0.2u
-REVISION=	6
+REVISION=	7
 PKGSPEC=	openssl-<1.1.0v0
 
 SHLIBVER=	6.2

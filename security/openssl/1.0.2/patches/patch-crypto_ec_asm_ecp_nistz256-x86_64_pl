@@ -1,0 +1,19 @@
+Index: crypto/ec/asm/ecp_nistz256-x86_64.pl
+--- crypto/ec/asm/ecp_nistz256-x86_64.pl.orig
++++ crypto/ec/asm/ecp_nistz256-x86_64.pl
+@@ -92,6 +92,7 @@ $code.=<<___;
+ .extern	OPENSSL_ia32cap_P
+ 
+ # The polynomial
++.rodata
+ .align 64
+ .Lpoly:
+ .quad 0xffffffffffffffff, 0x00000000ffffffff, 0x0000000000000000, 0xffffffff00000001
+@@ -108,6 +109,7 @@ $code.=<<___;
+ .long 3,3,3,3,3,3,3,3
+ .LONE_mont:
+ .quad 0x0000000000000001, 0xffffffff00000000, 0xffffffffffffffff, 0x00000000fffffffe
++.previous
+ ___
+ 
+ {
