@@ -1,10 +1,9 @@
 Workaround for sparc64: bootstrap segfaults without -O3
-Backport of https://github.com/rust-lang/rust/pull/101835
 
 Index: src/bootstrap/bootstrap.py
 --- src/bootstrap/bootstrap.py.orig
 +++ src/bootstrap/bootstrap.py
-@@ -750,6 +750,9 @@ class RustBuild(object):
+@@ -757,6 +757,9 @@ class RustBuild(object):
          if self.get_toml("deny-warnings", "rust") != "false":
              env["RUSTFLAGS"] += " -Dwarnings"
  
@@ -14,13 +13,3 @@ Index: src/bootstrap/bootstrap.py
          env["PATH"] = os.path.join(self.bin_root(), "bin") + \
              os.pathsep + env["PATH"]
          if not os.path.isfile(self.cargo()):
-@@ -771,7 +774,8 @@ class RustBuild(object):
-         elif color == "never":
-             args.append("--color=never")
- 
--        run(args, env=env, verbose=self.verbose)
-+        # Run this from the source directory so cargo finds .cargo/config
-+        run(args, env=env, verbose=self.verbose, cwd=self.rust_root)
- 
-     def build_triple(self):
-         """Build triple as in LLVM

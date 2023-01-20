@@ -11,15 +11,13 @@ COMMENT-gdb =		Rust debugger through gdb
 COMMENT-clippy =	Rust linter
 COMMENT-rustfmt =	Rust code formatter
 
-V =			1.65.0
+V =			1.66.1
 DISTNAME =		rustc-${V}-src
-
-REVISION =		1
 
 # rustc bootstrap version
 BV-aarch64 =		1.65.0-20221103
-BV-amd64 =		1.65.0-20221101
-BV-i386 =		1.65.0-20221101
+BV-amd64 =		1.66.0-20230108
+BV-i386 =		1.66.0-20230108
 BV-powerpc64 =		1.65.0-20221213
 BV-riscv64 =		1.65.0-20230101
 BV-sparc64 =		1.65.0-20221108
@@ -86,42 +84,37 @@ SUBST_VARS +=		TRIPLE_ARCH \
 			V
 
 # list of libraries with a hash in plist
-# the last field is used to have a different hash for each library
-LIBRUST_HASHES =	\
-	addr2line		01 \
-	adler			02 \
-	alloc			03 \
-	cfg_if			04 \
-	compiler_builtins	05 \
-	core			06 \
-	getopts			07 \
-	gimli			08 \
-	hashbrown		09 \
-	libc			0a \
-	memchr			0b \
-	miniz_oxide		0c \
-	object			0d \
-	panic_abort		0e \
-	panic_unwind		0f \
-	proc_macro		10 \
-	rustc_demangle		11 \
-	rustc_driver		12 \
-	rustc_std_workspace_alloc	13 \
-	rustc_std_workspace_core 	14 \
-	rustc_std_workspace_std 	15 \
-	std 			16 \
-	std_detect		17 \
-	test 			18 \
-	unicode_width 		19 \
-	unwind			20
+LIBRUST_REHASH +=	addr2line
+LIBRUST_REHASH +=	adler
+LIBRUST_REHASH +=	alloc
+LIBRUST_REHASH +=	cfg_if
+LIBRUST_REHASH +=	cfg_if
+LIBRUST_REHASH +=	compiler_builtins
+LIBRUST_REHASH +=	core
+LIBRUST_REHASH +=	getopts
+LIBRUST_REHASH +=	gimli
+LIBRUST_REHASH +=	hashbrown
+LIBRUST_REHASH +=	libc
+LIBRUST_REHASH +=	memchr
+LIBRUST_REHASH +=	miniz_oxide
+LIBRUST_REHASH +=	object
+LIBRUST_REHASH +=	panic_abort
+LIBRUST_REHASH +=	panic_unwind
+LIBRUST_REHASH +=	proc_macro
+LIBRUST_REHASH +=	rustc_demangle
+LIBRUST_REHASH +=	rustc_driver
+LIBRUST_REHASH +=	rustc_std_workspace_alloc
+LIBRUST_REHASH +=	rustc_std_workspace_core
+LIBRUST_REHASH +=	rustc_std_workspace_std
+LIBRUST_REHASH +=	std
+LIBRUST_REHASH +=	std_detect
+LIBRUST_REHASH +=	test
+LIBRUST_REHASH +=	unicode_width
+LIBRUST_REHASH +=	unwind
 
 # generate a stable hash and pass it to build environment
-LIBRUST_HASH !=	echo '${FULLPKGNAME}:${TRIPLE_ARCH}' | sha1 | cut -c1-14
-.for _name _number in ${LIBRUST_HASHES}
-SUBST_VARS +=	LIBR_METADATA_${_name}
-LIBR_METADATA_${_name} =	${LIBRUST_HASH}${_number}
-LIBRUST_ARGS +=	${_name}=${LIBRUST_HASH}${_number}
-.endfor
+LIBRUST_HASH !=	echo '${PKGNAME}:${REVISION}:${TRIPLE_ARCH}' | sha1 | cut -c1-14
+SUBST_VARS +=	LIBRUST_HASH
 
 # on arches where the base compiler is clang: base-clang or ports-clang should be fine,
 # as we need devel/llvm only for libs.
@@ -151,7 +144,8 @@ RUN_DEPENDS-gdb +=	lang/rust,-main \
 RUN_DEPENDS-clippy +=	lang/rust,-main
 RUN_DEPENDS-rustfmt +=	lang/rust,-main
 
-MAKE_ENV +=	CARGO_HOME=${WRKBUILD}/cargo-home \
+MAKE_ENV +=	LD_LIBRARY_PATH="${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${BV}/lib" \
+		CARGO_HOME=${WRKBUILD}/cargo-home \
 		TMPDIR=${WRKBUILD} \
 		LIBSSH2_SYS_USE_PKG_CONFIG=1
 
@@ -268,7 +262,10 @@ do-install:
 		${PREFIX}/lib/rustlib/components \
 		${PREFIX}/lib/rustlib/manifest-*
 	# rehash libraries to have stables filenames
-	cd ${PREFIX} && /bin/sh "${.CURDIR}/files/rehash.sh" ${TRIPLE_ARCH} ${LIBRUST_ARGS}
+	cd ${PREFIX} && ${MODPY_BIN} "${.CURDIR}/files/rehash.py" \
+		${TRIPLE_ARCH} \
+		${LIBRUST_HASH} \
+		${LIBRUST_REHASH}
 	# replace libraries by link
 	for lib in ${PREFIX}/lib/lib*.* ; do \
 		libname=$${lib##*/} ; \
