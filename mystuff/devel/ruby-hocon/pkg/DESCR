@@ -1,0 +1,9 @@
+This is a port of the Typesafe Config library to Ruby.
+
+The library provides Ruby support for the HOCON configuration file
+format.
+
+At present, it supports parsing and modification of existing HOCON/JSON
+files via the ConfigFactory class and the ConfigValueFactory class, and
+rendering parsed config objects back to a String. It also supports the
+parsing and modification of HOCON/JSON files via ConfigDocumentFactory.
