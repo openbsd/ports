@@ -1695,6 +1695,7 @@
      SUBDIR += ruby-gettext-setup
      SUBDIR += ruby-git
      SUBDIR += ruby-highline
+     SUBDIR += ruby-hocon
      SUBDIR += ruby-hoe
      SUBDIR += ruby-i18n
      SUBDIR += ruby-indentation
