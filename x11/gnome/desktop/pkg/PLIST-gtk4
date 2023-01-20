@@ -10,13 +10,13 @@ include/gnome-desktop-4.0/gnome-rr/gnome-rr-types.h
 include/gnome-desktop-4.0/gnome-rr/gnome-rr.h
 include/gnome-desktop-4.0/libgnome-desktop/
 include/gnome-desktop-4.0/libgnome-desktop/gnome-desktop-thumbnail.h
+include/gnome-desktop-4.0/libgnome-desktop/gnome-desktop-version.h
 include/gnome-desktop-4.0/libgnome-desktop/gnome-idle-monitor.h
 include/gnome-desktop-4.0/libgnome-desktop/gnome-languages.h
 include/gnome-desktop-4.0/libgnome-desktop/gnome-pnp-ids.h
 include/gnome-desktop-4.0/libgnome-desktop/gnome-systemd.h
 include/gnome-desktop-4.0/libgnome-desktop/gnome-wall-clock.h
 include/gnome-desktop-4.0/libgnome-desktop/gnome-xkb-info.h
-include/gnome-desktop-4.0/libgnome-desktop/gnome-desktop-version.h
 lib/girepository-1.0/GnomeBG-4.0.typelib
 lib/girepository-1.0/GnomeDesktop-4.0.typelib
 lib/girepository-1.0/GnomeRR-4.0.typelib
