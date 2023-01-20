@@ -1731,6 +1731,7 @@
      SUBDIR += ruby-prof,ruby31
      SUBDIR += ruby-prof,ruby32
      SUBDIR += ruby-puppet_forge
+     SUBDIR += ruby-puppet-resource_api
      SUBDIR += ruby-rake-compiler
      SUBDIR += ruby-rake-remote_task
      SUBDIR += ruby-rbtree,ruby30
@@ -1746,6 +1747,7 @@
      SUBDIR += ruby-ruby_parser
      SUBDIR += ruby-rubyinline
      SUBDIR += ruby-safe_yaml
+     SUBDIR += ruby-scanf
      SUBDIR += ruby-semantic_puppet
      SUBDIR += ruby-sexp_processor
      SUBDIR += ruby-shims
