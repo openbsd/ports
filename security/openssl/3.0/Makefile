@@ -1,7 +1,7 @@
 # bump mail/postfix/stable and mail/postfix/snapshots if updating
 # (static linked)
 
-.if ${MACHINE_ARCH} != aarch64 && ${MACHINE_ARCH} != riscv64
+.if ${MACHINE_ARCH} != aarch64 && ${MACHINE_ARCH} != amd64 && ${MACHINE_ARCH} != riscv64
 USE_NOEXECONLY =	Yes
 .endif
 
@@ -10,7 +10,7 @@ V=		3.0.7
 PKGNAME=	openssl-${V}
 PKGSPEC=	openssl->=3v0,<3.1v0
 EPOCH=		0
-REVISION=	4
+REVISION=	5
 
 SHLIBVER=	12.2
 SHARED_LIBS=	crypto ${SHLIBVER} \
