@@ -1,13 +1,13 @@
 COMMENT=	SSL/TLS scanner (identify version, ciphers, etc)
 
-.if ${MACHINE_ARCH} != aarch64 && ${MACHINE_ARCH} != riscv64
+.if ${MACHINE_ARCH} != aarch64 && ${MACHINE_ARCH} != amd64 && ${MACHINE_ARCH} != riscv64
 USE_NOEXECONLY=	Yes
 .endif
 
 GH_ACCOUNT=	rbsec
 GH_PROJECT=	sslscan
 GH_TAGNAME=	2.0.15
-REVISION=	6
+REVISION=	7
 
 CATEGORIES=	security net
 
