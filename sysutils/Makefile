@@ -353,6 +353,7 @@
      SUBDIR += ruby-augeas,ruby32
      SUBDIR += ruby-capistrano
      SUBDIR += ruby-directory_watcher
+     SUBDIR += ruby-facter
      SUBDIR += ruby-libvirt,ruby30
      SUBDIR += ruby-libvirt,ruby31
      SUBDIR += ruby-libvirt,ruby32
