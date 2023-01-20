@@ -1,0 +1,14 @@
+Our install(1) does not support the `-t' option.
+
+Index: introspection/Makefile.in
+--- introspection/Makefile.in.orig
++++ introspection/Makefile.in
+@@ -568,7 +568,7 @@ uninstall-am: uninstall-local
+ 
+ 
+ @HAVE_INTROSPECTION_TRUE@@HAVE_PYTHON_GI_TRUE@install-data-local:
+-@HAVE_INTROSPECTION_TRUE@@HAVE_PYTHON_GI_TRUE@	install -D -m 0444 -t $(DESTDIR)@GIOVERRIDESDIR@ gi/overrides/Gnm.py
++@HAVE_INTROSPECTION_TRUE@@HAVE_PYTHON_GI_TRUE@	install -D -m 0444 gi/overrides/Gnm.py $(DESTDIR)@GIOVERRIDESDIR@/Gnm.py
+ 
+ @HAVE_INTROSPECTION_TRUE@@HAVE_PYTHON_GI_TRUE@uninstall-local:
+ @HAVE_INTROSPECTION_TRUE@@HAVE_PYTHON_GI_TRUE@	rm -f $(DESTDIR)@GIOVERRIDESDIR@/Gnm.py

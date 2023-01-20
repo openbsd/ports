@@ -265,6 +265,10 @@ lib/gnumeric/${GNOME_VERSION}/plugins/fn-tsa/plugin.xml
 lib/gnumeric/${GNOME_VERSION}/plugins/glpk/
 @so lib/gnumeric/${GNOME_VERSION}/plugins/glpk/glpk.so
 lib/gnumeric/${GNOME_VERSION}/plugins/glpk/plugin.xml
+lib/gnumeric/${GNOME_VERSION}/plugins/gnome-glossary/
+lib/gnumeric/${GNOME_VERSION}/plugins/gnome-glossary/glossary-po-header
+lib/gnumeric/${GNOME_VERSION}/plugins/gnome-glossary/gnome_glossary.py
+lib/gnumeric/${GNOME_VERSION}/plugins/gnome-glossary/plugin.xml
 lib/gnumeric/${GNOME_VERSION}/plugins/html/
 @so lib/gnumeric/${GNOME_VERSION}/plugins/html/html.so
 lib/gnumeric/${GNOME_VERSION}/plugins/html/plugin.xml
@@ -295,6 +299,13 @@ lib/gnumeric/${GNOME_VERSION}/plugins/perl-loader/plugin.xml
 lib/gnumeric/${GNOME_VERSION}/plugins/plan_perfect/
 @so lib/gnumeric/${GNOME_VERSION}/plugins/plan_perfect/plan_perfect.so
 lib/gnumeric/${GNOME_VERSION}/plugins/plan_perfect/plugin.xml
+lib/gnumeric/${GNOME_VERSION}/plugins/py-func/
+lib/gnumeric/${GNOME_VERSION}/plugins/py-func/plugin.xml
+lib/gnumeric/${GNOME_VERSION}/plugins/py-func/py_func.py
+lib/gnumeric/${GNOME_VERSION}/plugins/python-loader/
+lib/gnumeric/${GNOME_VERSION}/plugins/python-loader/plugin.xml
+@so lib/gnumeric/${GNOME_VERSION}/plugins/python-loader/python_loader.so
+lib/gnumeric/${GNOME_VERSION}/plugins/python-loader/ui-console-menu.xml
 lib/gnumeric/${GNOME_VERSION}/plugins/qpro/
 lib/gnumeric/${GNOME_VERSION}/plugins/qpro/plugin.xml
 @so lib/gnumeric/${GNOME_VERSION}/plugins/qpro/qpro.so
@@ -324,6 +335,9 @@ lib/goffice/${GOFFICE_API_VERSION}/plugins/gnumeric/plugin.xml
 lib/libspreadsheet.la
 @so lib/libspreadsheet.so
 lib/pkgconfig/libspreadsheet-${GNUMERIC_API_VERSION}.pc
+lib/python${MODPY_VERSION}/site-packages/gi/
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/Gnm.py
 @man man/man1/gnumeric.1
 @man man/man1/ssconvert.1
 @man man/man1/ssdiff.1
