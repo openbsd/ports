@@ -1,0 +1,14 @@
+Use the locally installed gem command with explicit ruby version.
+
+Index: lib/puppet/provider/package/gem.rb
+--- lib/puppet/provider/package/gem.rb.orig
++++ lib/puppet/provider/package/gem.rb
+@@ -46,7 +46,7 @@ Puppet::Type.type(:package).provide :gem, :parent => P
+   # Define the default provider package command as optional when the provider is targetable.
+   # Doing do defers the evaluation of provider suitability until all commands are evaluated.
+ 
+-  has_command(:gemcmd, 'gem') do
++  has_command(:gemcmd, 'gem${MODRUBY_BINREV}') do
+     is_optional
+   end
+ 

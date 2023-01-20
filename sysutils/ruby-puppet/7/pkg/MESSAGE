@@ -1,0 +1,11 @@
+Starting with Puppet 6, some common functionality has been moved from
+puppet into modules managed by puppetlabs.
+
+This includes providers for
+- cron
+- host
+- mount
+- scheduled_task
+- sshkeys
+
+These can be installed from the Puppet Forge, see puppet-module(8).
