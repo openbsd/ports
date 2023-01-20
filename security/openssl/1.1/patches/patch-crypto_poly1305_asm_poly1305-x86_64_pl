@@ -1,0 +1,19 @@
+Index: crypto/poly1305/asm/poly1305-x86_64.pl
+--- crypto/poly1305/asm/poly1305-x86_64.pl.orig
++++ crypto/poly1305/asm/poly1305-x86_64.pl
+@@ -3774,6 +3774,7 @@ poly1305_emit_base2_44:
+ ___
+ }	}	}
+ $code.=<<___;
++.rodata
+ .align	64
+ .Lconst:
+ .Lmask24:
+@@ -3810,6 +3811,7 @@ ___
+ $code.=<<___;
+ .asciz	"Poly1305 for x86_64, CRYPTOGAMS by <appro\@openssl.org>"
+ .align	16
++.previous
+ ___
+ 
+ {	# chacha20-poly1305 helpers

@@ -1,0 +1,19 @@
+Index: crypto/aes/asm/vpaes-x86_64.pl
+--- crypto/aes/asm/vpaes-x86_64.pl.orig
++++ crypto/aes/asm/vpaes-x86_64.pl
+@@ -998,6 +998,7 @@ _vpaes_preheat:
+ ##                     Constants                      ##
+ ##                                                    ##
+ ########################################################
++.rodata
+ .type	_vpaes_consts,\@object
+ .align	64
+ _vpaes_consts:
+@@ -1097,6 +1098,7 @@ _vpaes_consts:
+ .asciz	"Vector Permutation AES for x86_64/SSSE3, Mike Hamburg (Stanford University)"
+ .align	64
+ .size	_vpaes_consts,.-_vpaes_consts
++.previous
+ ___
+ 
+ if ($win64) {
