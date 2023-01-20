@@ -10417,6 +10417,9 @@ nextcloud/apps/dav/composer/composer/installed.json
 nextcloud/apps/dav/composer/composer/installed.php
 nextcloud/apps/dav/css/
 nextcloud/apps/dav/css/schedule-response.css
+nextcloud/apps/dav/img/
+nextcloud/apps/dav/img/LICENSES.md
+nextcloud/apps/dav/img/schedule.svg
 nextcloud/apps/dav/l10n/
 nextcloud/apps/dav/l10n/bg.js
 nextcloud/apps/dav/l10n/bg.json
@@ -11103,6 +11106,7 @@ nextcloud/apps/encryption/lib/Command/
 nextcloud/apps/encryption/lib/Command/DisableMasterKey.php
 nextcloud/apps/encryption/lib/Command/EnableMasterKey.php
 nextcloud/apps/encryption/lib/Command/FixEncryptedVersion.php
+nextcloud/apps/encryption/lib/Command/FixKeyLocation.php
 nextcloud/apps/encryption/lib/Command/RecoverUser.php
 nextcloud/apps/encryption/lib/Command/ScanLegacyFormat.php
 nextcloud/apps/encryption/lib/Controller/
@@ -16062,6 +16066,8 @@ nextcloud/apps/serverinfo/l10n/fo.js
 nextcloud/apps/serverinfo/l10n/fo.json
 nextcloud/apps/serverinfo/l10n/fr.js
 nextcloud/apps/serverinfo/l10n/fr.json
+nextcloud/apps/serverinfo/l10n/gd.js
+nextcloud/apps/serverinfo/l10n/gd.json
 nextcloud/apps/serverinfo/l10n/gl.js
 nextcloud/apps/serverinfo/l10n/gl.json
 nextcloud/apps/serverinfo/l10n/he.js
@@ -16110,6 +16116,8 @@ nextcloud/apps/serverinfo/l10n/my.js
 nextcloud/apps/serverinfo/l10n/my.json
 nextcloud/apps/serverinfo/l10n/nb.js
 nextcloud/apps/serverinfo/l10n/nb.json
+nextcloud/apps/serverinfo/l10n/ne.js
+nextcloud/apps/serverinfo/l10n/ne.json
 nextcloud/apps/serverinfo/l10n/nl.js
 nextcloud/apps/serverinfo/l10n/nl.json
 nextcloud/apps/serverinfo/l10n/nn_NO.js
@@ -17777,8 +17785,6 @@ nextcloud/apps/text/l10n/sr@latin.js
 nextcloud/apps/text/l10n/sr@latin.json
 nextcloud/apps/text/l10n/sv.js
 nextcloud/apps/text/l10n/sv.json
-nextcloud/apps/text/l10n/ta.js
-nextcloud/apps/text/l10n/ta.json
 nextcloud/apps/text/l10n/th.js
 nextcloud/apps/text/l10n/th.json
 nextcloud/apps/text/l10n/tr.js
@@ -18145,6 +18151,8 @@ nextcloud/apps/twofactor_backupcodes/l10n/pl.js
 nextcloud/apps/twofactor_backupcodes/l10n/pl.json
 nextcloud/apps/twofactor_backupcodes/l10n/pt_BR.js
 nextcloud/apps/twofactor_backupcodes/l10n/pt_BR.json
+nextcloud/apps/twofactor_backupcodes/l10n/pt_PT.js
+nextcloud/apps/twofactor_backupcodes/l10n/pt_PT.json
 nextcloud/apps/twofactor_backupcodes/l10n/ru.js
 nextcloud/apps/twofactor_backupcodes/l10n/ru.json
 nextcloud/apps/twofactor_backupcodes/l10n/sc.js
@@ -19245,6 +19253,8 @@ nextcloud/apps/weather_status/l10n/lt_LT.js
 nextcloud/apps/weather_status/l10n/lt_LT.json
 nextcloud/apps/weather_status/l10n/mk.js
 nextcloud/apps/weather_status/l10n/mk.json
+nextcloud/apps/weather_status/l10n/nb.js
+nextcloud/apps/weather_status/l10n/nb.json
 nextcloud/apps/weather_status/l10n/nl.js
 nextcloud/apps/weather_status/l10n/nl.json
 nextcloud/apps/weather_status/l10n/pl.js
@@ -20829,6 +20839,8 @@ nextcloud/core/l10n/sk.js
 nextcloud/core/l10n/sk.json
 nextcloud/core/l10n/sl.js
 nextcloud/core/l10n/sl.json
+nextcloud/core/l10n/sq.js
+nextcloud/core/l10n/sq.json
 nextcloud/core/l10n/sr.js
 nextcloud/core/l10n/sr.json
 nextcloud/core/l10n/sv.js
@@ -22326,6 +22338,8 @@ nextcloud/lib/public/Authentication/IApacheBackend.php
 nextcloud/lib/public/Authentication/LoginCredentials/
 nextcloud/lib/public/Authentication/LoginCredentials/ICredentials.php
 nextcloud/lib/public/Authentication/LoginCredentials/IStore.php
+nextcloud/lib/public/Authentication/Token/
+nextcloud/lib/public/Authentication/Token/IProvider.php
 nextcloud/lib/public/Authentication/TwoFactorAuth/
 nextcloud/lib/public/Authentication/TwoFactorAuth/ALoginSetupController.php
 nextcloud/lib/public/Authentication/TwoFactorAuth/IActivatableAtLogin.php
@@ -22351,6 +22365,7 @@ nextcloud/lib/public/BackgroundJob/IJobList.php
 nextcloud/lib/public/BackgroundJob/Job.php
 nextcloud/lib/public/BackgroundJob/QueuedJob.php
 nextcloud/lib/public/BackgroundJob/TimedJob.php
+nextcloud/lib/public/BeforeSabrePubliclyLoadedEvent.php
 nextcloud/lib/public/Broadcast/
 nextcloud/lib/public/Broadcast/Events/
 nextcloud/lib/public/Broadcast/Events/IBroadcastEvent.php
