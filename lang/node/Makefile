@@ -2,6 +2,9 @@ ONLY_FOR_ARCHS =	amd64 aarch64 i386 powerpc64 riscv64
 DPB_PROPERTIES =	parallel
 
 USE_WXNEEDED =		Yes
+.if ${MACHINE_ARCH} == amd64
+USE_NOEXECONLY =	Yes
+.endif
 
 COMMENT = JavaScript runtime built on Chrome's V8 JavaScript engine
 
