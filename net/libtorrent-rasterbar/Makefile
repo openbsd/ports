@@ -17,7 +17,6 @@ WANTLIB += m ssl
 
 MASTER_SITES =		https://github.com/arvidn/libtorrent/releases/download/v${V}/
 
-# cmake must come first for correct do-* targets
 MODULES =		devel/cmake \
 			lang/python
 
@@ -29,6 +28,7 @@ LIB_DEPENDS =		converters/libiconv \
 # boost
 COMPILER =		base-clang ports-gcc
 
+CONFIGURE_STYLE =	cmake
 CONFIGURE_ARGS =	-Dpython-bindings=ON \
 			-Dbuild_tests=ON
 
