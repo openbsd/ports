@@ -19,6 +19,10 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
+
+# don't pick up gmake
+CONFIGURE_ENV +=	ac_cv_path_GMAKE=no
+
 CONFIGURE_ARGS=	--enable-dynamic \
 		--with-pthread \
 		--without-libjpeg \
