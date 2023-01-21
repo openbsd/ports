@@ -1,0 +1,12 @@
+Index: src/libcryptobox/macro.S
+--- src/libcryptobox/macro.S.orig
++++ src/libcryptobox/macro.S
+@@ -79,7 +79,7 @@
+ 	.endm
+ 
+ 	.macro SECTION_RODATA
+-		.text
++		.rodata
+ 	.endm
+ #endif
+ 
