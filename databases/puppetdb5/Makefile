@@ -1,3 +1,4 @@
+BROKEN=		No longer builds after removal of Puppet 5
 COMMENT-main=	fast, scalable, and reliable data warehouse for Puppet
 COMMENT-plugin= PuppetDB terminus plugin
 
