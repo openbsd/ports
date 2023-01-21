@@ -1,4 +1,7 @@
 USE_WXNEEDED =		Yes
+.if ${MACHINE_ARCH} != i386
+USE_NOEXECONLY =	Yes
+.endif
 
 ONLY_FOR_ARCHS =	amd64 aarch64 i386
 
