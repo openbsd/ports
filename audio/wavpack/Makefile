@@ -3,6 +3,7 @@ COMMENT =		audio codec for lossless, lossy and hybrid compression
 VERSION =		5.6.0
 DISTNAME =		wavpack-${VERSION}
 CATEGORIES =		audio
+REVISION =		0
 
 HOMEPAGE =		http://www.wavpack.com/
 
