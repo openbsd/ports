@@ -1,12 +1,12 @@
 COMMENT =		BitTorrent client with web interface
 PKGNAME =		qbittorrent-nox-${VER}
-REVISION =		0
+REVISION =		1
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Network Qt5Sql Qt5Xml
 WANTLIB += c crypto execinfo m ssl torrent-rasterbar z
 
-LIB_DEPENDS +=		net/libtorrent-rasterbar \
-			devel/boost
+BUILD_DEPENDS +=	devel/boost
+LIB_DEPENDS +=		net/libtorrent-rasterbar
 
 CONFIGURE_ARGS +=	-DGUI=OFF
 
