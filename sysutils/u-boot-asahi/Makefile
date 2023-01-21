@@ -6,7 +6,7 @@ VERSION=	2022.07-3
 GH_ACCOUNT=	AsahiLinux
 GH_PROJECT=	u-boot
 GH_TAGNAME=	asahi-v${VERSION}
-REVISION=	2
+REVISION=	3
 
 PKGNAME=	u-boot-asahi-${VERSION:S/-/./g}
 
@@ -30,7 +30,8 @@ FILES=\
 	u-boot \
 	u-boot.bin \
 	u-boot-nodtb.bin \
-	u-boot.dtb
+	u-boot.dtb \
+	LICENSE
 
 LICENSE_FILES= \
 	Licenses/*.txt \
@@ -44,13 +45,12 @@ do-build:
 	cd ${WRKSRC} && \
 	    ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} \
 	         O="build/" -f ${MAKE_FILE} ${ALL_TARGET}
+	cd ${WRKSRC} && head -99999 ${LICENSE_FILES} > build/LICENSE
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/u-boot/apple_m1/dts
 	cd ${WRKSRC}/build && \
 	    ${INSTALL_DATA} ${FILES} ${PREFIX}/share/u-boot/apple_m1/ && \
 	    ${INSTALL_DATA} arch/arm/dts/*.dtb ${PREFIX}/share/u-boot/apple_m1/dts/
-	cd ${WRKSRC} && for f in ${LICENSE_FILES}; do \
-	    (cat "$${f}"; echo) >> ${PREFIX}/share/u-boot/apple_m1/LICENSE; done
 
 .include <bsd.port.mk>
