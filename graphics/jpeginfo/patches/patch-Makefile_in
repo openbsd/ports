@@ -4,13 +4,28 @@ in ${WRKSRC} instead of ${WRKSRC}/sha256 and linking fails.
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -54,6 +54,9 @@ DISTNAME  = $(PKGNAME)-$(Version)
+@@ -32,11 +32,11 @@ mandir = $(prefix)/share/man
+ CC        = @CC@
+ XCPPFLAGS = @CPPFLAGS@
+ CFLAGS    = @CFLAGS@ $(XCPPFLAGS) $(DEFS)
+-ifeq ($(CC),gcc)
+-CFLAGS	 += -Wall -Wformat -Werror=format-security
++#ifeq ($(CC),gcc)
++#CFLAGS	 += -Wall -Wformat -Werror=format-security
+ #CFLAGS	 += -fno-omit-frame-pointer -D_FORTIFY_SOURCE=2
+ #CFLAGS	 += -fstack-protector --param=ssp-buffer-size=4 -fsanitize=address,undefined
+-endif
++#endif
+ LDFLAGS   = @LDFLAGS@
+ LIBS      = @LIBS@
+ STRIP     = strip
+@@ -56,6 +56,9 @@ DISTNAME := $(PKGNAME)-$(Version)
  
- OBJS = $(PKGNAME).o misc.o @GNUGETOPT@ md5.o sha256/hash.o sha256/blocks.o
- 
+ OBJS = $(PKGNAME).o jpegmarker.o misc.o @GNUGETOPT@ md5.o sha256/hash.o sha256/blocks.o \
+ 	sha512/hash.o sha512/blocks.o
++
 +.c.o:
 +	$(CC) $(CFLAGS) -o $@ -c $<
-+
- $(PKGNAME):	$(OBJS) 
- 	$(CC) $(CFLAGS) -o $(PKGNAME) $(OBJS) $(LDFLAGS) $(LIBS) 
  
+ $(PKGNAME):	$(OBJS)
+ 	$(CC) $(CFLAGS) -o $(PKGNAME) $(OBJS) $(LDFLAGS) $(LIBS)
