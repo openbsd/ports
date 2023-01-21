@@ -1099,6 +1099,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/groundstation/2019-05-23/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/groundstation/2019-05-23/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/groundstation/2019-05-23/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/groundstation/2019-05-23/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/groundstation/2019-05-23/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/guardduty/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/guardduty/2017-11-28/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/guardduty/2017-11-28/endpoint-rule-set-1.json
