@@ -1,10 +1,9 @@
 COMMENT =	Python bindings for libknot
 
-MODPY_EGG_VERSION =	3.2.3
+MODPY_EGG_VERSION =	3.2.4
 
 DISTNAME =	libknot-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
 
 CATEGORIES =	net
 
