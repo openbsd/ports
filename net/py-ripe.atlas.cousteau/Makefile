@@ -1,10 +1,9 @@
 COMMENT =	Python bindings for the RIPE Atlas API
 
-MODPY_EGG_VERSION =	1.5.1
+MODPY_EGG_VERSION =	2.0.0
 GH_ACCOUNT =	RIPE-NCC
 GH_PROJECT =	ripe-atlas-cousteau
 GH_TAGNAME =	v${MODPY_EGG_VERSION}
-REVISION =	1
 
 PKGNAME =	py-ripe.atlas.cousteau-${MODPY_EGG_VERSION}
 
