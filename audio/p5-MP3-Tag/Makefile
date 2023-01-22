@@ -1,6 +1,6 @@
 COMMENT =		read tags of MP3 audio files
 
-DISTNAME =		MP3-Tag-1.15
+DISTNAME =		MP3-Tag-1.16
 EXTRACT_SUFX =		.zip
 
 CATEGORIES =		audio
