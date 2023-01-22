@@ -7,10 +7,9 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	nintendo 3DS emulator
 
-V =		729
-DISTNAME =	citra-nightly-${V}
+DISTNAME =	citra-unified-source-20230110-ad2cbe2
+V =		1827
 PKGNAME =	citra-0.0.0.${V}
-REVISION =	8
 
 CATEGORIES =	emulators
 
@@ -19,35 +18,50 @@ CATEGORIES =	emulators
 # BSD-3-clause (nihstro), LGPLv2.1 (soundtouch), BSD-style (xbyak)
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Multimedia Qt5Network Qt5OpenGL
-WANTLIB += Qt5Widgets SDL2 c cryptopp enet iconv m
+WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Multimedia Qt5Widgets
+WANTLIB += SDL2 avcodec avformat avutil boost_serialization-mt
+WANTLIB += c cryptopp enet fmt m swresample swscale usb-1.0
 
-MASTER_SITES =	https://spacehopper.org/mirrors/
+MASTER_SITES =	https://github.com/citra-emu/citra-nightly/releases/download/nightly-${V}/
 EXTRACT_SUFX =	.tar.xz
 
 MODULES =	devel/cmake \
 		x11/qt5
 
-# XXX Enable with the next update
-#BUILD_DEPENDS =	devel/catch2
+# C++20
+COMPILER =	base-clang ports-clang
 
-BUILD_DEPENDS =	devel/boost
+BUILD_DEPENDS =	devel/catch2 \
+		devel/robin-map
+
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
 		x11/gtk+3,-guic
-LIB_DEPENDS =	devel/cryptopp \
+
+LIB_DEPENDS =	devel/boost \
+		devel/cryptopp \
+		graphics/ffmpeg \
+		devel/fmt \
 		devel/sdl2 \
 		net/enet \
 		x11/qt5/qtmultimedia
 
 CONFIGURE_ARGS =	-DENABLE_CUBEB=OFF \
-			-DENABLE_WEB_SERVICE=OFF
-
-CXXFLAGS +=		-I${LOCALBASE}/include -I${LOCALBASE}/lib/qt5/cmake/Qt5/
+			-DENABLE_WEB_SERVICE=OFF \
+			-DENABLE_WEB_SERVICE=OFF \
+			-DUSE_SYSTEM_BOOST=ON \
+			-DUSE_SYSTEM_SDL2=ON \
+			-DENABLE_FFMPEG_AUDIO_DECODER=ON \
+			-DENABLE_FFMPEG_VIDEO_DUMPER=ON \
+			-DCITRA_USE_PRECOMPILED_HEADERS=OFF
 MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
 
-do-test:
-	cd ${WRKBUILD}/src/tests && ./tests
+WRKDIST =		${WRKDIR}/${DISTNAME}
+
+CXXFLAGS +=	-I${LOCALBASE}/include -I${LOCALBASE}/lib/qt5/cmake/Qt5/
+
+post-extract:
+	rm -rf ${WRKSRC}/externals/{sdl2,catch2,fmt,boost,cryptopp}
 
 .include <bsd.port.arch.mk>
 
