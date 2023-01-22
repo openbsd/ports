@@ -2,7 +2,7 @@ COMMENT =	Qt-based 2D CAD system
 
 GH_ACCOUNT =	qcad
 GH_PROJECT =	qcad
-GH_TAGNAME =	v3.27.8.7
+GH_TAGNAME =	v3.27.9.0
 
 SO_VERSION =	2.0
 QCAD_LIBS =	qcadcore \

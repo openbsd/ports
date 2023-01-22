@@ -8032,6 +8032,7 @@ share/qcad/scripts/Misc/MiscDevelopment/RunScript/RunScript.js
 share/qcad/scripts/Misc/MiscDevelopment/RunScript/RunScript.svg
 share/qcad/scripts/Misc/MiscDevelopment/RunScript/RunScriptDialog.ui
 share/qcad/scripts/Misc/MiscDevelopment/RunScript/RunScriptInit.js
+share/qcad/scripts/Misc/MiscDevelopment/RunScript/demo.js
 share/qcad/scripts/Misc/MiscDevelopment/RunScript/doc/
 share/qcad/scripts/Misc/MiscDevelopment/RunScript/doc/RunScript.png
 share/qcad/scripts/Misc/MiscDevelopment/dir/
