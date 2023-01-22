@@ -2,7 +2,7 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	organizer for book/dvd/music collections
 
-DISTNAME =	tellico-3.4.5
+DISTNAME =	tellico-3.4.6
 
 CATEGORIES =	x11
 
