@@ -1,6 +1,6 @@
 COMMENT =	Puppet module management
 
-DISTNAME =	facter-4.2.13
+DISTNAME =	facter-4.2.14
 CATEGORIES =	sysutils
 HOMEPAGE =	https://github.com/puppetlabs/facter
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
