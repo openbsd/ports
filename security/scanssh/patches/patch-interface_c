@@ -1,7 +1,7 @@
 Index: interface.c
 --- interface.c.orig
 +++ interface.c
-@@ -224,8 +224,8 @@ interface_init(char *dev, int naddresses, char **addre
+@@ -225,8 +225,8 @@ interface_init(char *dev, int naddresses, char **addre
  		struct timeval tv = SS_POLL_INTERVAL;
  
  		syslog(LOG_INFO, "switching to polling mode");
@@ -12,7 +12,7 @@ Index: interface.c
  	}
  }
  
-@@ -354,7 +354,7 @@ interface_poll_recv(int fd, short type, void *arg)
+@@ -355,7 +355,7 @@ interface_poll_recv(int fd, short type, void *arg)
  	struct interface *inter = arg;
  	struct timeval tv = SS_POLL_INTERVAL;
  
