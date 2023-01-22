@@ -77,7 +77,6 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		devel/gpatch \
 		devel/gperf \
 		devel/bison \
-		lang/go \
 		lang/node \
 		shells/bash \
 		sysutils/flock \

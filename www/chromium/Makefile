@@ -73,7 +73,6 @@ RUN_DEPENDS=	devel/xdg-utils \
 BUILD_DEPENDS=	archivers/bzip2 \
 		devel/gperf \
 		devel/bison \
-		lang/go \
 		lang/node \
 		shells/bash \
 		sysutils/flock \
