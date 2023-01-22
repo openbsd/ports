@@ -95,7 +95,6 @@
      SUBDIR += exoscale-cli
      SUBDIR += fabric
      SUBDIR += facette
-     SUBDIR += facter
      SUBDIR += faubackup
      SUBDIR += fd
      SUBDIR += fdupes
