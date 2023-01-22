@@ -8,7 +8,7 @@ Index: lib/facter/framework/detector/os_detector.rb
                     detect_distro
                   when /freebsd/
                     :freebsd
-+                 when /openbsd/
++                 when /openbsd/i
 +                   :openbsd
                   when /bsd/
                     :bsd
