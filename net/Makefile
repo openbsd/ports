@@ -640,7 +640,6 @@
      SUBDIR += ruby-eventmachine,ruby32
      SUBDIR += ruby-macaddr
      SUBDIR += ruby-mfi
-     SUBDIR += ruby-msgpack,ruby27
      SUBDIR += ruby-msgpack,ruby30
      SUBDIR += ruby-msgpack,ruby31
      SUBDIR += ruby-msgpack,ruby32
