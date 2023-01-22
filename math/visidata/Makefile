@@ -1,8 +1,7 @@
 COMMENT=	console-based multitool to explore and arrange tabular data
 
-MODPY_EGG_VERSION=	2.10.2
+MODPY_EGG_VERSION=	2.11
 DISTNAME=	visidata-${MODPY_EGG_VERSION}
-REVISION=	0
 
 CATEGORIES=	math textproc
 
