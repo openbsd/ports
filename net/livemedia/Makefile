@@ -1,6 +1,6 @@
 COMMENT=	LIVE555 streaming media library
 
-VERSION=	2022.10.01
+VERSION=	2023.01.19
 DISTNAME=	live.${VERSION}
 PKGNAME=	liveMedia-${VERSION:S/.//g}
 CATEGORIES=	net devel
