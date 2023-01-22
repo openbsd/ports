@@ -201,8 +201,6 @@
      SUBDIR += m1n1
      SUBDIR += mac-robber
      SUBDIR += mangl
-     SUBDIR += mcollective
-     SUBDIR += mcollective-plugins
      SUBDIR += mdprint
      SUBDIR += me_cleaner
      SUBDIR += memtester
