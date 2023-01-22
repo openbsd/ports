@@ -1,23 +1,23 @@
-COMMENT =	HTTP library for Python
+COMMENT=	HTTP library for Python
 
-MODPY_EGG_VERSION = 1.26.13
-DISTNAME =	urllib3-${MODPY_EGG_VERSION}
-PKGNAME =	py-urllib3-${MODPY_EGG_VERSION}
+MODPY_EGG_VERSION= 1.26.14
+DISTNAME=	urllib3-${MODPY_EGG_VERSION}
+PKGNAME=	py-urllib3-${MODPY_EGG_VERSION}
 
-CATEGORIES =	www
+CATEGORIES=	www
 
 # MIT
-PERMIT_PACKAGE = Yes
+PERMIT_PACKAGE= Yes
 
-MODULES =	lang/python
+MODULES=	lang/python
 
-FLAVORS =	python3
-FLAVOR =	python3
+FLAVORS=	python3
+FLAVOR=		python3
 
-MODPY_PI =	Yes
-MODPY_PYBUILD =	setuptools
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools
 
-TEST_DEPENDS =	devel/py-mock${MODPY_FLAVOR} \
+TEST_DEPENDS=	devel/py-mock${MODPY_FLAVOR} \
 		net/py-socks${MODPY_FLAVOR} \
 		sysutils/py-psutil${MODPY_FLAVOR} \
 		security/py-trustme${MODPY_FLAVOR} \
