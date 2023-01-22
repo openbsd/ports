@@ -5,8 +5,9 @@ lib/python${MODPY_VERSION}/site-packages/PyAudio-${MODPY_EGG_VERSION}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/PyAudio-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/PyAudio-${MODPY_EGG_VERSION}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/PyAudio-${MODPY_EGG_VERSION}.dist-info/top_level.txt
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}pyaudio.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}pyaudio.${MODPY_PYC_MAGIC_TAG}pyc
-@so lib/python${MODPY_VERSION}/site-packages/_portaudio.${MODPY_PYC_MAGIC_TAG}so
-lib/python${MODPY_VERSION}/site-packages/pyaudio.py
+lib/python${MODPY_VERSION}/site-packages/pyaudio/
+lib/python${MODPY_VERSION}/site-packages/pyaudio/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyaudio/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pyaudio/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pyaudio/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+@so lib/python${MODPY_VERSION}/site-packages/pyaudio/_portaudio.${MODPY_PYC_MAGIC_TAG}so
