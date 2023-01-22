@@ -5,7 +5,7 @@ COMMENT=	Bootloader for Apple Silicon
 GH_ACCOUNT=	AsahiLinux
 GH_PROJECT=	m1n1
 GH_TAGNAME=	v1.1.6
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	sysutils
 HOMEPAGE=	https://github.com/AsahiLinux/m1n1
@@ -18,7 +18,8 @@ BUILD_DEPENDS+=	archivers/zopfli \
 		devel/arm-none-eabi/gcc-linaro,aarch64 \
 		graphics/ImageMagick
 
-MAKE_ENV+=	CROSS_COMPILE="aarch64-none-elf-"
+MAKE_ENV+=	CROSS_COMPILE="aarch64-none-elf-" \
+		BUILD_TAG="${GH_TAGNAME:S/v//}"
 
 USE_GMAKE=	Yes
 NO_TEST=	Yes
@@ -27,7 +28,8 @@ FILES=\
 	m1n1-raw.elf \
 	m1n1.bin \
 	m1n1.macho \
-	m1n1.elf
+	m1n1.elf \
+	m1n1.LICENSE
 
 LICENSE_FILES=\
 	LICENSE \
@@ -45,11 +47,10 @@ do-build:
 	    ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} \
 		RELEASE=1 ARCH=aarch64-none-elf- \
 	        -f ${MAKE_FILE} ${ALL_TARGET}
+	cd ${WRKSRC} && head -99999 ${LICENSE_FILES} > build/m1n1.LICENSE
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/m1n1
 	cd ${WRKSRC}/build && cp ${FILES} ${PREFIX}/share/m1n1/
-	cd ${WRKSRC} && for f in ${LICENSE_FILES}; do \
-	    (cat "$${f}"; echo) >> ${PREFIX}/share/m1n1/m1n1.LICENSE; done
 
 .include <bsd.port.mk>
