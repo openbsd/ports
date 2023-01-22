@@ -67,12 +67,12 @@ SHA256 (cargo/unicode-ident-1.0.6.tar.gz) = hKIrnyGLQGFK3LP0/wi3A3c61E+pQj5ODTRt
 SHA256 (cargo/unicode-xid-0.2.4.tar.gz) = +WLfdMjAWmZ7Xui88WKZMTTBBOlkQLZjyNqhdtx3LYw=
 SHA256 (cargo/vcpkg-0.2.15.tar.gz) = rM1Opi97t6gv4jBm+wlX1I72d/buuCFfNy9S5IuzJCY=
 SHA256 (cargo/wasi-0.11.0+wasi-snapshot-preview1.tar.gz) = nI2H5ytko7TbKNEc4pI3wkYYj09RBX1lp+q2O3mH5CM=
-SHA256 (cargo/which-4.3.0.tar.gz) = HIMfu+6eEpqM+T53R6gtqdlbqOFmIcrmDsLNyEm6y3s=
+SHA256 (cargo/which-4.4.0.tar.gz) = JEHHhMUrKJoFS3IB/JMlPiiPCU4vS+kFg0MSfEImomk=
 SHA256 (cargo/winapi-0.3.9.tar.gz) = XIOaZ0/NepiVLlkyQupACr6TmSdGdh44ZBQF0osA9Bk=
 SHA256 (cargo/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = rDuHxjYgQm3ZuZHlzgMp7/VFvMu7NPO+Cf9vtqtRt7Y=
 SHA256 (cargo/winapi-util-0.1.5.tar.gz) = cOxs6FuxWBUcrl5ch/lajpfSwMSwASI/M6M0485d4Xg=
 SHA256 (cargo/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = cS4ieEHQV8HuHNL7Ivp+WlRhro5I+iynnsQs/BkxGD8=
-SHA256 (rust-openssl-tests-20230118-09f672f9.tar.gz) = nKK+f0lzFnk3NLzUtYeo5ZYGNVZxjfkZ8TY+O4J0TAY=
+SHA256 (rust-openssl-tests-20230122-78c241f2.tar.gz) = ZaSmTEE4WOg/UpCW9CsjoyuJt7IC3qxyDmCp5H0hYK8=
 SIZE (cargo/aho-corasick-0.7.20.tar.gz) = 111440
 SIZE (cargo/atty-0.2.14.tar.gz) = 5470
 SIZE (cargo/autocfg-1.1.0.tar.gz) = 13272
@@ -142,9 +142,9 @@ SIZE (cargo/unicode-ident-1.0.6.tar.gz) = 42158
 SIZE (cargo/unicode-xid-0.2.4.tar.gz) = 15352
 SIZE (cargo/vcpkg-0.2.15.tar.gz) = 228735
 SIZE (cargo/wasi-0.11.0+wasi-snapshot-preview1.tar.gz) = 28131
-SIZE (cargo/which-4.3.0.tar.gz) = 9635
+SIZE (cargo/which-4.4.0.tar.gz) = 10889
 SIZE (cargo/winapi-0.3.9.tar.gz) = 1200382
 SIZE (cargo/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = 2918815
 SIZE (cargo/winapi-util-0.1.5.tar.gz) = 10164
 SIZE (cargo/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 2947998
-SIZE (rust-openssl-tests-20230118-09f672f9.tar.gz) = 318963
+SIZE (rust-openssl-tests-20230122-78c241f2.tar.gz) = 319406
