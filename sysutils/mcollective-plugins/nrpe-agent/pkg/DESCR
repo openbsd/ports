@@ -1,2 +1,0 @@
-MCollective Agent to query the Nagios Remote Plugin Executor (NRPE), and
-trigger off checks.

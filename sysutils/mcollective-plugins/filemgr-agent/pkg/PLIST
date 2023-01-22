@@ -1,6 +1,0 @@
-libexec/mcollective/mcollective/
-libexec/mcollective/mcollective/agent/
-libexec/mcollective/mcollective/agent/filemgr.ddl
-libexec/mcollective/mcollective/agent/filemgr.rb
-libexec/mcollective/mcollective/application/
-libexec/mcollective/mcollective/application/filemgr.rb
