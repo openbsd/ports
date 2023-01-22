@@ -1,6 +1,5 @@
 bin/FvwmCommand3
 @bin bin/fvwm3
-bin/fvwm3-config
 bin/fvwm3-convert-2.6
 bin/fvwm3-menu-desktop
 bin/fvwm3-menu-directory
@@ -64,7 +63,6 @@ share/fvwm3/FvwmScript-ScreenDump
 share/fvwm3/FvwmScript-ScreenSetup
 share/fvwm3/FvwmScript-WidgetDemo
 share/fvwm3/default-config/
-share/fvwm3/default-config/.stalonetrayrc
 share/fvwm3/default-config/config
 share/fvwm3/default-config/images/
 share/fvwm3/default-config/images/background/
@@ -105,6 +103,7 @@ share/fvwm3/default-config/images/icons/win/stays.png
 share/fvwm3/default-config/images/icons/win/sticky.png
 share/fvwm3/default-config/images/icons/win/title.png
 share/fvwm3/default-config/images/icons/win/top.png
+share/fvwm3/default-config/stalonetrayrc
 share/fvwm3/fvwm-menu-desktop-config.fpl
 share/fvwm3/fvwm-script-ComExample.pl
 share/fvwm3/locale/

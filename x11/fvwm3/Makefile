@@ -1,8 +1,7 @@
 COMMENT=	multiple virtual desktop window manager
 
-VERSION=	1.0.5
+VERSION=	1.0.6a
 DISTNAME=	fvwm3-${VERSION}
-REVISION=	1
 
 CATEGORIES=     x11
 
@@ -17,7 +16,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ICE SM X11 Xcursor Xext Xft Xrandr Xpm Xrender
 WANTLIB += c cairo curses fontconfig freetype gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 iconv intl m png
-WANTLIB += readline rsvg-2 z event_core event_extra
+WANTLIB += readline rsvg-2 event_core event_extra
 
 MASTER_SITES=	https://github.com/fvwmorg/fvwm3/releases/download/${VERSION}/
 
