@@ -2,7 +2,7 @@ DPB_PROPERTIES =	parallel
 
 COMMENT =	portable build system
 
-VER =		3.25.1
+VER =		3.25.2
 EPOCH =		0
 DISTNAME =	cmake-${VER}
 CATEGORIES =	devel
