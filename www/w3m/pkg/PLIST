@@ -28,11 +28,14 @@ share/doc/w3m/FAQ.html
 share/doc/w3m/HISTORY
 share/doc/w3m/MANUAL.html
 share/doc/w3m/README
+share/doc/w3m/README.SSL
 share/doc/w3m/README.cookie
 share/doc/w3m/README.dict
 share/doc/w3m/README.func
 !%%image%%
+share/doc/w3m/README.keymap
 share/doc/w3m/README.m17n
+share/doc/w3m/README.menu
 share/doc/w3m/README.mouse
 share/doc/w3m/README.passwd
 share/doc/w3m/README.pre_form
