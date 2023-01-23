@@ -1,7 +1,7 @@
 COMMENT=	Xfce4 file manager
 
 XFCE_PROJECT=	thunar
-XFCE_VERSION=	4.18.2
+XFCE_VERSION=	4.18.3
 
 SHARED_LIBS=	thunarx-3	0.1
 
