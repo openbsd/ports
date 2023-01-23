@@ -5,6 +5,7 @@ COMMENT=		spreadsheet application for GNOME
 
 GNOME_PROJECT=		gnumeric
 GNOME_VERSION=		1.12.54
+REVISION=		0
 
 GNUMERIC_API_VERSION=	${GNOME_VERSION:R}
 SUBST_VARS=		GNOME_VERSION GOFFICE_GNOME_VERSION GOFFICE_API_VERSION GNUMERIC_API_VERSION
@@ -35,11 +36,15 @@ MODULES=		devel/dconf \
 			lang/python \
 			x11/gnome
 
+MODGNOME_TOOLS += desktop-file-utils gobject-introspection gtk-update-icon-cache
+MODGNOME_TOOLS += yelp
+
+BUILD_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
+
 LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
 			devel/goffice=${GOFFICE_VERSION}
 
-MODGNOME_TOOLS += desktop-file-utils gobject-introspection gtk-update-icon-cache
-MODGNOME_TOOLS += yelp
+RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--without-gda \
