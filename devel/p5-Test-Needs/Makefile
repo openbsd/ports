@@ -1,6 +1,6 @@
 COMMENT =	skip tests when modules not available
 
-DISTNAME =	Test-Needs-0.002009
+DISTNAME =	Test-Needs-0.002010
 
 CATEGORIES =	devel
 
