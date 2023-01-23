@@ -1,0 +1,8 @@
+share/doc/hyperlegible/
+share/doc/hyperlegible/Atkinson-Hyperlegible-Font-License-${VPDF}.pdf
+share/fonts/
+@fontdir share/fonts/Atkinson-Hyperlegible/
+share/fonts/Atkinson-Hyperlegible/Atkinson-Hyperlegible-Bold-102.ttf
+share/fonts/Atkinson-Hyperlegible/Atkinson-Hyperlegible-BoldItalic-102.ttf
+share/fonts/Atkinson-Hyperlegible/Atkinson-Hyperlegible-Italic-102.ttf
+share/fonts/Atkinson-Hyperlegible/Atkinson-Hyperlegible-Regular-102.ttf
