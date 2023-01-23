@@ -2,7 +2,7 @@ ONLY_FOR_ARCHS =	amd64 aarch64 i386 powerpc64 riscv64
 DPB_PROPERTIES =	parallel
 
 USE_WXNEEDED =		Yes
-.if ${MACHINE_ARCH} == amd64
+.if ${MACHINE_ARCH} == amd64 || ${MACHINE_ARCH} == riscv64
 USE_NOEXECONLY =	Yes
 .endif
 
@@ -13,7 +13,7 @@ PLEDGE_VER =		1.1.3
 DISTFILES =		node-pledge-{}${PLEDGE_VER}.tar.gz:0 \
 			${DISTNAME}-headers.tar.gz \
 			${DISTNAME}.tar.xz
-REVISION =		0
+REVISION =		1
 
 DISTNAME =		node-${NODE_VERSION}
 PKGNAME =		${DISTNAME:S/v//g}
