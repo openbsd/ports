@@ -10,6 +10,7 @@
      SUBDIR += arabeyes-ttf
      SUBDIR += aref-ruqaa
      SUBDIR += artwiz-aleczapka
+     SUBDIR += atkinson-hyperlegible
      SUBDIR += b612-font
      SUBDIR += blockzone
      SUBDIR += cantarell-fonts
