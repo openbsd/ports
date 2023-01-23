@@ -1,11 +1,11 @@
 @newgroup _headscale:869
-@newuser _headscale:869:_headscale::headscale user:/nonexistent:/sbin/nologin
+@newuser _headscale:869:_headscale::headscale user:${LOCALSTATEDIR}/db/headscale:/sbin/nologin
 @rcscript ${RCDIR}/headscale
 @mode 770
 @group _headscale
 @sample ${SYSCONFDIR}/headscale/
 @owner _headscale
-@sample ${VARBASE}/headscale/
+@sample ${LOCALSTATEDIR}/db/headscale/
 @mode
 @owner
 @group
