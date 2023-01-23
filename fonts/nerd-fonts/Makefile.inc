@@ -20,7 +20,6 @@ MODULES =		font
 
 NO_BUILD =		Yes
 NO_TEST =		Yes
-PKG_ARCH =		*
 
 TYPEFACE =		${NF_FONT:L}
 FONTDIR =		${PREFIX}/share/fonts/${NF_PROJECT}/${NF_FONT:L}

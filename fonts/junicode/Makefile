@@ -16,7 +16,6 @@ MODULES =		font
 
 NO_BUILD =		Yes
 NO_TEST =		Yes
-PKG_ARCH =		*
 
 WRKSRC =		${WRKDIST}/legacy
 

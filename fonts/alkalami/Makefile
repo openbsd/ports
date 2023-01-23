@@ -17,7 +17,6 @@ MODULES =		font
 
 NO_BUILD =		Yes
 NO_TEST =		Yes
-PKG_ARCH =		*
 
 FONTDIR =		${PREFIX}/share/fonts/alkalami
 DOCDIR =		${PREFIX}/share/doc/alkalami

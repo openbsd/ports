@@ -13,8 +13,6 @@ WRKDIST =	${WRKDIR}
 
 MODULES =	font
 
-PKG_ARCH =	*
-
 NO_BUILD =	Yes
 NO_TEST =	Yes
 
