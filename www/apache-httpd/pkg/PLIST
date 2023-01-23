@@ -47,6 +47,7 @@ include/apache2/mod_cgi.h
 include/apache2/mod_core.h
 include/apache2/mod_dav.h
 include/apache2/mod_dbd.h
+include/apache2/mod_http2.h
 include/apache2/mod_include.h
 include/apache2/mod_log_config.h
 include/apache2/mod_proxy.h
