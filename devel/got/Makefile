@@ -2,7 +2,7 @@ COMMENT-main =		game of trees version control system
 COMMENT-server =	game of trees repository server
 COMMENT-webd =		game of trees repository fast-cgi server
 
-V =			0.81
+V =			0.82
 DISTNAME =		got-${V}
 PKGNAME-server =	gotd-${V}
 PKGNAME-webd =		gotwebd-${V}
