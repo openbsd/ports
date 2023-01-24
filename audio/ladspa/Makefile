@@ -1,10 +1,12 @@
 COMMENT=	Linux Audio Developer's Simple Plugin API
 
 V=		1.17
+REVISION=	0
 DISTNAME=	ladspa_sdk_${V}
 PKGNAME=	ladspa-${V}
 CATEGORIES=	audio devel
-MASTER_SITES=	${HOMEPAGE:=download/}
+MASTER_SITES=	${HOMEPAGE:=download/} \
+		https://spacehopper.org/mirrors/
 EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=       https://www.ladspa.org/
