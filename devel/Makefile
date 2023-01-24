@@ -1668,6 +1668,7 @@
      SUBDIR += rlog
      SUBDIR += robin-hood-hashing
      SUBDIR += robin-map
+     SUBDIR += robsd
      SUBDIR += rttr
      SUBDIR += ruby-abstract
      SUBDIR += ruby-activesupport
