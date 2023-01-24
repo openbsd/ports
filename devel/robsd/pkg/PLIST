@@ -1,0 +1,76 @@
+libexec/robsd/
+libexec/robsd/robsd-base.sh
+libexec/robsd/robsd-checkflist.sh
+@bin libexec/robsd/robsd-config
+libexec/robsd/robsd-cross-dirs.sh
+libexec/robsd/robsd-cross-distrib.sh
+@bin libexec/robsd/robsd-cross-exec
+libexec/robsd/robsd-cross-tools.sh
+libexec/robsd/robsd-cvs.sh
+libexec/robsd/robsd-distrib.sh
+libexec/robsd/robsd-dmesg.sh
+libexec/robsd/robsd-env.sh
+@bin libexec/robsd/robsd-exec
+libexec/robsd/robsd-hash.sh
+@bin libexec/robsd/robsd-hook
+libexec/robsd/robsd-image.sh
+libexec/robsd/robsd-kernel.sh
+@bin libexec/robsd/robsd-ls
+libexec/robsd/robsd-patch.sh
+libexec/robsd/robsd-ports-clean.sh
+libexec/robsd/robsd-ports-distrib.sh
+libexec/robsd/robsd-ports-dpb.sh
+@bin libexec/robsd/robsd-ports-exec
+libexec/robsd/robsd-ports-proot.sh
+libexec/robsd/robsd-reboot.sh
+@bin libexec/robsd/robsd-regress-exec
+libexec/robsd/robsd-regress-exec.sh
+@bin libexec/robsd/robsd-regress-log
+libexec/robsd/robsd-regress-mount.sh
+libexec/robsd/robsd-regress-obj.sh
+libexec/robsd/robsd-regress-pkg-add.sh
+libexec/robsd/robsd-regress-pkg-del.sh
+libexec/robsd/robsd-regress-umount.sh
+libexec/robsd/robsd-release.sh
+libexec/robsd/robsd-revert.sh
+@bin libexec/robsd/robsd-stat
+@bin libexec/robsd/robsd-step
+libexec/robsd/robsd-xbase.sh
+libexec/robsd/robsd-xrelease.sh
+libexec/robsd/util-cross.sh
+libexec/robsd/util-ports.sh
+libexec/robsd/util-regress.sh
+libexec/robsd/util.sh
+@man man/man5/robsd-cross.conf.5
+@man man/man5/robsd-hook.5
+@man man/man5/robsd-ports.conf.5
+@man man/man5/robsd-regress.conf.5
+@man man/man5/robsd.conf.5
+@man man/man8/robsd-clean.8
+@man man/man8/robsd-config.8
+@man man/man8/robsd-cross.8
+@man man/man8/robsd-crossenv.8
+@man man/man8/robsd-kill.8
+@man man/man8/robsd-ports.8
+@man man/man8/robsd-regress-html.8
+@man man/man8/robsd-regress.8
+@man man/man8/robsd-rescue.8
+@man man/man8/robsd-stat.8
+@man man/man8/robsd-step.8
+@man man/man8/robsd.8
+sbin/robsd
+sbin/robsd-clean
+sbin/robsd-cross
+sbin/robsd-cross-clean
+sbin/robsd-cross-kill
+sbin/robsd-crossenv
+sbin/robsd-kill
+sbin/robsd-ports
+sbin/robsd-ports-clean
+sbin/robsd-ports-kill
+sbin/robsd-ports-rescue
+sbin/robsd-regress
+sbin/robsd-regress-clean
+@bin sbin/robsd-regress-html
+sbin/robsd-regress-kill
+sbin/robsd-rescue
