@@ -1,6 +1,6 @@
 COMMENT=	Linux Audio Developer's Simple Plugin API
 
-V=		1.15
+V=		1.17
 DISTNAME=	ladspa_sdk_${V}
 PKGNAME=	ladspa-${V}
 CATEGORIES=	audio devel
@@ -12,11 +12,13 @@ HOMEPAGE=       https://www.ladspa.org/
 # LGPL
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	c m ${COMPILER_LIBCXX}
+WANTLIB=	c m sndfile ${COMPILER_LIBCXX}
 
 COMPILER=	base-clang ports-gcc base-gcc
 
 WRKBUILD=	${WRKDIST}/src
+
+LIB_DEPENDS=	audio/libsndfile
 
 USE_GMAKE=	Yes
 

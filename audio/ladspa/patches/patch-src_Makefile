@@ -1,14 +1,25 @@
 Index: src/Makefile
 --- src/Makefile.orig
 +++ src/Makefile
-@@ -14,8 +14,8 @@ INSTALL_BINARY_DIR	=	/usr/bin/
+@@ -4,7 +4,7 @@
+ #
+ # Change these if you want to install somewhere else.
+ 
+-INSTALL_PLUGINS_DIR	=	/usr/lib/ladspa/
++INSTALL_PLUGINS_DIR	=	$(PREFIX)/lib/ladspa/
+ INSTALL_INCLUDE_DIR	=	/usr/include/
+ INSTALL_BINARY_DIR	=	/usr/bin/
+ 
+@@ -13,9 +13,9 @@ INSTALL_BINARY_DIR	=	/usr/bin/
+ # GENERAL
  #
  
- INCLUDES	=	-I.
--LIBRARIES	=	-ldl -lm
+-INCLUDES	=	-I.
+-LIBRARIES	=	-ldl -lm -lsndfile
 -CFLAGS		=	$(INCLUDES) -Wall -Werror -O2 -fPIC 		\
-+LIBRARIES	=	-lm
-+CFLAGS		+=	$(INCLUDES) -Wall -Werror -fPIC 		\
++INCLUDES	=	-I. -I$(LOCALBASE)/include
++LIBRARIES	=	-L$(LOCALBASE)/lib -lm -lsndfile
++CFLAGS		=	$(INCLUDES) -Wall -Werror -fPIC 		\
  			-DDEFAULT_LADSPA_PATH=$(INSTALL_PLUGINS_DIR)
  BINFLAGS	=	-fPIE -pie
  CXXFLAGS	=	$(CFLAGS)
