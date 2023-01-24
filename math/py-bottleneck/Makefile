@@ -1,10 +1,9 @@
 COMMENT =		fast NumPy array functions written in C
 
-MODPY_EGG_VERSION =	1.3.5
+MODPY_EGG_VERSION =	1.3.6
 DISTNAME =		Bottleneck-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
 CATEGORIES =		math
-REVISION =		1
 
 MAINTAINER =		Martin Reindl <martin@catai.org>
 
