@@ -49,3 +49,7 @@ CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
+
+.if ${CHOSEN_COMPILER} == "base-clang"
+CFLAGS+=		-Wno-error=int-conversion
+.endif
