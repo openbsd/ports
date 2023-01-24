@@ -193,6 +193,11 @@ FAKE_FLAGS=	${VERSION_FLAGS} \
 ALL_TARGET=	all tools/qt-faststart
 TEST_TARGET=	check
 
+.for _l in avutil avfilter avcodec avformat avdevice swscale swresample postproc
+TEST_LIB_PATH:=	${TEST_LIB_PATH}:${WRKBUILD}/lib${_l}
+.endfor
+TEST_ENV+=	LD_LIBRARY_PATH=${TEST_LIB_PATH:C/^://}
+
 HTML_DOCS=	developer faq ffmpeg ffplay ffprobe general libavfilter
 
 post-install:
