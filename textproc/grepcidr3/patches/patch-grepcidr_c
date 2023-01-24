@@ -1,0 +1,43 @@
+--- grepcidr.c.orig	Tue Jan 24 18:23:44 2023
++++ grepcidr.c	Tue Jan 24 18:25:23 2023
+@@ -1,6 +1,6 @@
+ /*
+ 
+-  grepcidr 3.0 - Filter IP addresses matching IPv4 and IPv6 CIDR specification
++  grepcidr3 3.0 - Filter IP addresses matching IPv4 and IPv6 CIDR specification
+   Parts copyright (C) 2004, 2005  Jem E. Berkes <jberkes@pc-tools.net>
+   	www.sysdesign.ca
+   Somewhat rewritten by John Levine <johnl@standcore.com>
+@@ -12,6 +12,8 @@
+ #include <string.h>
+ #include <getopt.h>
+ #include <ctype.h>
++#include <unistd.h>
++#include <err.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <sys/mman.h>
+@@ -21,10 +23,10 @@
+ #define EXIT_NOMATCH	1
+ #define EXIT_ERROR	2
+ 
+-#define TXT_VERSION	"grepcidr 3.0\nParts copyright (C) 2004, 2005  Jem E. Berkes <jberkes@pc-tools.net>\n"
++#define TXT_VERSION	"grepcidr3 3.0\nParts copyright (C) 2004, 2005  Jem E. Berkes <jberkes@pc-tools.net>\n"
+ #define TXT_USAGE	"Usage:\n" \
+-			"\tgrepcidr [-V] [-cCDvhais] PATTERN [FILE...]\n" \
+-			"\tgrepcidr [-V] [-cCDvhais] [-e PATTERN | -f FILE] [FILE...]\n"
++			"\tgrepcidr3 [-V] [-cCDvhais] PATTERN [FILE...]\n" \
++			"\tgrepcidr3 [-V] [-cCDvhais] [-e PATTERN | -f FILE] [FILE...]\n"
+ #define MAXFIELD	512
+ #define TOKEN_SEPS	"\t,\r\n"	/* so user can specify multiple patterns on command line */
+ #define INIT_NETWORKS	8192
+@@ -608,6 +610,9 @@
+ 	char* pat_filename = NULL;		/* filename containing patterns */
+ 	char* pat_strings = NULL;		/* pattern strings on command line */
+ 	int foundopt;
++
++	if (pledge("stdio rpath", NULL) == -1)
++		err(1, "pledge");
+ 
+ 	if (argc == 1)
+ 	{

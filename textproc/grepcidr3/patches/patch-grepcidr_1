@@ -1,0 +1,80 @@
+--- grepcidr.1.orig	Tue Jan 24 18:23:40 2023
++++ grepcidr.1	Tue Jan 24 18:24:33 2023
+@@ -1,16 +1,16 @@
+-.TH "GREPCIDR" "1" 
++.TH "GREPCIDR3" "1" 
+ .SH "NAME" 
+-grepcidr \(em Filter IP addresses matching IPv4 and IPv6 address specifications
++grepcidr3 \(em Filter IP addresses matching IPv4 and IPv6 address specifications
+ .SH "SYNOPSIS" 
+ .PP 
+-\fBgrepcidr\fR [\fB-V\fP]  [\fB-cCDvahisq\fP]  \fIPATTERN\fP [\fIFILE ...\fP]  
++\fBgrepcidr3\fR [\fB-V\fP]  [\fB-cCDvahisq\fP]  \fIPATTERN\fP [\fIFILE ...\fP]  
+ .PP 
+-\fBgrepcidr\fR [\fB-V\fP]  [\fB-cCDvahisq\fP] [\fB-e \fIPATTERN\fR\fP | \fB-f \fIFILE\fP]  [\fIFILE ...\fP]
++\fBgrepcidr3\fR [\fB-V\fP]  [\fB-cCDvahisq\fP] [\fB-e \fIPATTERN\fR\fP | \fB-f \fIFILE\fP]  [\fIFILE ...\fP]
+ .SH "DESCRIPTION" 
+ .PP 
+-\fBgrepcidr\fR can be used to filter a list of IP addresses and ranges against one or more 
++\fBgrepcidr3\fR can be used to filter a list of IP addresses and ranges against one or more 
+ IPv4 and IPv6 address ranges.  As with grep, there are options to invert 
+-matching and load patterns from a file.  grepcidr is designed to scale well,
++matching and load patterns from a file.  grepcidr3 is designed to scale well,
+ and handle large numbers of patterns and large input files efficiently.
+ This version uses a completely rewritten parser that is typically two or three times
+ faster than previous versions.
+@@ -67,7 +67,7 @@
+ Complaints about misaligned CIDRs can be suppressed with \fB-s\fP.
+ .SH COMPATIBILITY
+ .PP 
+-In version 2.9 \fBgrepcidr\fR normally searches for IP addresses anywhere 
++In version 2.9 \fBgrepcidr3\fR normally searches for IP addresses anywhere 
+ on the input line.
+ It uses a reasonable but ad-hoc parser to look for the beginning of an address.
+ This can cause unexpected results in some cases, e.g. ab:c12.34.56.78 will not
+@@ -76,11 +76,11 @@
+ Addresses written as IPv6 embedded IPv4 addresses will match either the IPv4
+ or IPv6 address pattern, e.g. ::ffff:12.34.56.78 will match both ::ffff:0/96 and 12.34.0.0/16.
+ .PP
+-Even though :: is a valid way to write a zero IPv6 address, grepcidr won't match it.
++Even though :: is a valid way to write a zero IPv6 address, grepcidr3 won't match it.
+ (If that's what you want, use regular grep.)
+ It will match 0:: or ::0.0.0.0 or 0::0 or or any other form.
+ .PP
+-Normally grepcidr will match every string that looks like
++Normally grepcidr3 will match every string that looks like
+ an IPv4 address, so in 1.2.3.4.5.6.7.8 it will match
+ both 1.2.3.4 and 5.6.7.8.
+ The \fB-q\fP option ignores addresses preceded or followed by a dot,
+@@ -97,25 +97,25 @@
+ is preceded by the file name unless the \fR-h\fP flag is set.
+ .SH "EXAMPLES" 
+ .PP 
+-\fI\fBgrepcidr\fR \-f ournetworks blocklist > abuse.log\fP 
++\fI\fBgrepcidr3\fR \-f ournetworks blocklist > abuse.log\fP 
+ .PP 
+ Find customers (CIDR ranges in file) that appear in blocklist 
+ .PP 
+-\fI\fBgrepcidr\fR 127.0.0.0/8,::1 iplog\fP 
++\fI\fBgrepcidr3\fR 127.0.0.0/8,::1 iplog\fP 
+ .PP 
+ Searches for any localnet IP addresses inside the iplog file 
+ .PP 
+-\fI\fBgrepcidr\fR "192.168.0.1-192.168.10.13" iplog\fP
++\fI\fBgrepcidr3\fR "192.168.0.1-192.168.10.13" iplog\fP
+ .br
+-\fI\fBgrepcidr\fR "2001:3def:1234::/48" iplog\fP 
++\fI\fBgrepcidr3\fR "2001:3def:1234::/48" iplog\fP 
+ .PP 
+ Searches for IPs matching indicated range in the iplog file 
+ .PP 
+-\fI\fBscript\fR | \fBgrepcidr\fR \-vf whitelist > blocklist\fP 
++\fI\fBscript\fR | \fBgrepcidr3\fR \-vf whitelist > blocklist\fP 
+ .PP 
+ Create a blocklist, with whitelisted networks removed (inverse) 
+ .PP 
+-\fI\fBgrepcidr\fR \-f list1 list2\fP 
++\fI\fBgrepcidr3\fR \-f list1 list2\fP 
+ .PP 
+ Cross-reference two lists, outputs IPs common to both lists 
+ .SH "EXIT STATUS" 
