@@ -5,6 +5,6 @@
 share/doc/tut/
 share/doc/tut/README.md
 share/examples/tut/
-share/examples/tut/config.example.ini
+share/examples/tut/config.example.toml
 share/examples/tut/toot.tmpl
 share/examples/tut/user.tmpl
