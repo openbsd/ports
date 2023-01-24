@@ -4,6 +4,7 @@ FIX_EXTRACT_PERMISSIONS=Yes
 
 V =		1.9.0
 JV =		1
+REVISION =	0
 EXTRACT_SUFX =	.tar.xz
 
 DISTNAME =	john-$V-jumbo-${JV}
