@@ -1,6 +1,7 @@
---- scsi.c.orig	Thu Jun 17 08:48:03 1999
-+++ scsi.c	Mon Feb  5 08:13:43 2001
-@@ -202,9 +202,9 @@ wm_scsi_get_drive_type( struct wm_drive 
+Index: scsi.c
+--- scsi.c.orig
++++ scsi.c
+@@ -202,9 +202,9 @@ wm_scsi_get_drive_type( struct wm_drive *d, char *vend
  	wm_lib_message(WM_MSG_LEVEL_INFO|WM_MSG_CLASS, "Sending SCSI inquiry command...");
  	if (sendscsi(d, buf, sizeof(buf), 1, SCMD_INQUIRY, 0, 0, 0, sizeof(buf), 0,0,0,0,0,0,0))
  	  {

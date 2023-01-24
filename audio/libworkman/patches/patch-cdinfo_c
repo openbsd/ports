@@ -1,5 +1,6 @@
---- cdinfo.c.orig	Thu May 27 08:54:50 1999
-+++ cdinfo.c	Mon Feb  5 08:24:02 2001
+Index: cdinfo.c
+--- cdinfo.c.orig
++++ cdinfo.c
 @@ -304,32 +304,32 @@ listentry( int num )
  	        {
      			if (cd->trk[num].section > 9) 
@@ -39,7 +40,7 @@
  				cd->trk[num].length / 60,
  				cd->trk[num].length % 60, name);
                  }
-@@ -544,11 +544,11 @@ stash_cdinfo(char *artist, char *cdname,
+@@ -544,11 +544,11 @@ stash_cdinfo(char *artist, char *cdname, int autoplay,
  	{
  		if (strcmp(cd->artist, artist))
  			info_modified = 1;

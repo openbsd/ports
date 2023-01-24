@@ -1,5 +1,6 @@
---- cdrom.c.orig	Wed May  5 18:34:19 1999
-+++ cdrom.c	Mon Feb  5 08:23:21 2001
+Index: cdrom.c
+--- cdrom.c.orig
++++ cdrom.c
 @@ -132,9 +132,9 @@ char *wm_drive_revision( void )
  
  void wm_drive_settype( char *vendor, char *model, char *revision )
@@ -13,7 +14,7 @@
  }
  
  /*
-@@ -154,9 +154,9 @@ find_drive_struct(char *vendor, char *mo
+@@ -154,9 +154,9 @@ find_drive_struct(char *vendor, char *model, char *rev
  			continue;
  		
  		if (d->proto->vendor[0] == '\0')

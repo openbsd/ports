@@ -1,6 +1,7 @@
---- index.c.orig	Sun Feb 14 10:50:42 1999
-+++ index.c	Mon Feb  5 08:28:36 2001
-@@ -117,7 +117,7 @@ idx_find_entry( char *file, int ntracks,
+Index: index.c
+--- index.c.orig
++++ index.c
+@@ -117,7 +117,7 @@ idx_find_entry( char *file, int ntracks, int *tracks,
  	/*
  	 * Search for the first matching entry.
  	 */
@@ -9,7 +10,7 @@
  	key.data = keyval;
  	key.size = 7;
  	if (c = (index->seq)(index, &key, &data, R_CURSOR))
-@@ -249,7 +249,7 @@ idx_delete_entry(char *file, int track, 
+@@ -249,7 +249,7 @@ idx_delete_entry(char *file, int track, int fuzz, unsi
  	/*
  	 * Search for the first matching entry.
  	 */
@@ -18,7 +19,7 @@
  	key.data = keyval;
  	key.size = 7;
  	if (c = (index->seq)(index, &key, &data, R_CURSOR))
-@@ -354,7 +354,7 @@ idx_write_entry( char *file, int track, 
+@@ -354,7 +354,7 @@ idx_write_entry( char *file, int track, unsigned long 
  	key.data = keyval;
  	key.size = 7;
  

@@ -1,6 +1,7 @@
---- wm_helpers.c.orig	Sun Mar  7 09:36:41 1999
-+++ wm_helpers.c	Mon Feb  5 14:52:48 2001
-@@ -30,7 +30,7 @@ static char wm_helpers_id[] = "$Id: wm_h
+Index: wm_helpers.c
+--- wm_helpers.c.orig
++++ wm_helpers.c
+@@ -30,7 +30,7 @@ static char wm_helpers_id[] = "$Id: wm_helpers.c,v 1.7
  
  #include <stdio.h>
  #include <string.h>

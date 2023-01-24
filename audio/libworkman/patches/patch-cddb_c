@@ -1,6 +1,15 @@
---- cddb.c.orig	Thu May 27 08:37:10 1999
-+++ cddb.c	Mon Feb  5 08:54:06 2001
-@@ -73,10 +73,10 @@ void
+Index: cddb.c
+--- cddb.c.orig
++++ cddb.c
+@@ -33,6 +33,7 @@ static char cddb_id[] = "$Id: cddb.c,v 1.2 1999/02/14 
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <string.h>
+ #include <strings.h>
+ #include <unistd.h>
+ #include <sys/types.h>
+@@ -73,10 +74,10 @@ void
  cddb_cur2struct(void)
  {
  	cddb.protocol = cur_cddb_protocol;
@@ -15,7 +24,7 @@
  } /* cddb_cur2struct() */
  
  /*
-@@ -104,7 +104,7 @@ cddb_sum(int n)
+@@ -104,7 +105,7 @@ cddb_sum(int n)
  	int	ret = 0;
  
  	/* For backward compatibility this algorithm must not change */
@@ -24,7 +33,7 @@
  	for (p = buf; *p != '\0'; p++)
  	  ret += (*p - '0');
  
-@@ -175,10 +175,10 @@ string_makehello(char *line,char delim)
+@@ -175,10 +176,10 @@ string_makehello(char *line,char delim)
  {
  	char mail[84],*host;
  	
@@ -37,7 +46,7 @@
  		delim == ' ' ? "cddb " : "&",
  		delim == ' ' ? ' ' : '=',
  		mail,delim,
-@@ -226,7 +226,7 @@ connect_open(void)
+@@ -226,7 +227,7 @@ connect_open(void)
  			printf("unknown host: %s\n", host);
  			return (-1);
  		}
@@ -46,7 +55,7 @@
  		def.h_name = namebuf;
  		def.h_addr_list = alist, def.h_addr = (char *)&defaddr;
  		def.h_length = sizeof (struct in_addr);
-@@ -317,14 +317,14 @@ connect_read_entry(void)
+@@ -317,14 +318,14 @@ connect_read_entry(void)
  					t2 = t;
  				if(*t2 == ' ')
  				  t2++;
@@ -63,7 +72,7 @@
  			}
  			
  			if('T' == type)
-@@ -359,7 +359,7 @@ void
+@@ -359,7 +360,7 @@ void
  cddbp_read(char *category, unsigned int id)
  {
  	char tempbuf[84];
@@ -72,7 +81,7 @@
  	cddbp_send(tempbuf);
  } /* cddbp_read() */
  
-@@ -400,7 +400,7 @@ void
+@@ -400,7 +401,7 @@ void
  http_read(char *category, unsigned int id)
  {
  	char tempbuf[84];
@@ -81,7 +90,7 @@
  	http_send(tempbuf);
  } /* http_read() */
  
-@@ -411,7 +411,7 @@ void
+@@ -411,7 +412,7 @@ void
  cddb_request(void)
  {
  	int i;
@@ -90,7 +99,7 @@
  	extern int cur_ntracks;
  	
  	int status;
-@@ -447,12 +447,14 @@ cddb_request(void)
+@@ -447,12 +448,14 @@ cddb_request(void)
  		printf("[%s]\n",tempbuf);
  		
  		printf("query\n");
@@ -110,7 +119,7 @@
  		printf(">%s<\n",tempbuf);
  		cddbp_send(tempbuf);
  		connect_getline(tempbuf);
-@@ -491,12 +493,14 @@ cddb_request(void)
+@@ -491,12 +494,14 @@ cddb_request(void)
  		printf("USING HTTP%s\n",
  		       (cddb.protocol == 3) ? " WITH PROXY" : "");
  		printf("query\n");

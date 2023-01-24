@@ -1,5 +1,6 @@
---- database.c.orig	Fri May 28 05:35:54 1999
-+++ database.c	Mon Feb  5 08:58:29 2001
+Index: database.c
+--- database.c.orig
++++ database.c
 @@ -121,8 +121,8 @@ nomem:
  				exit(1);
  			}
@@ -22,7 +23,7 @@
  			databases[0] = wmdb;
  			databases[1] = NULL;
  		}
-@@ -214,27 +214,31 @@ print_cdinfo(struct wm_cdinfo *cd, int p
+@@ -214,27 +214,31 @@ print_cdinfo(struct wm_cdinfo *cd, int prefs)
  {
  	int		i;
  	char		tempbuf[2000];	/* XXX - is this always big enough? */
@@ -64,7 +65,7 @@
  
  		wm_strmcat(&cdibuf, tempbuf);
  	}
-@@ -257,11 +261,11 @@ print_cdinfo(struct wm_cdinfo *cd, int p
+@@ -257,11 +261,11 @@ print_cdinfo(struct wm_cdinfo *cd, int prefs)
  			{
  				for (i = 0; l->list[i]; i++)
  					;
@@ -78,7 +79,7 @@
  					wm_strmcat(&cdibuf, tempbuf);
  				}
  				wm_strmcat(&cdibuf, "\n");
-@@ -276,24 +280,24 @@ print_cdinfo(struct wm_cdinfo *cd, int p
+@@ -276,24 +280,24 @@ print_cdinfo(struct wm_cdinfo *cd, int prefs)
  			 * Have to maintain compatibility with old versions,
  			 * where volume was 0-32.
  			 */
@@ -107,7 +108,7 @@
  			wm_strmcat(&cdibuf, tempbuf);
  		}
  
-@@ -304,12 +308,12 @@ print_cdinfo(struct wm_cdinfo *cd, int p
+@@ -304,12 +308,12 @@ print_cdinfo(struct wm_cdinfo *cd, int prefs)
  		{
  			if (cd->trk[i].avoid)
  			{
