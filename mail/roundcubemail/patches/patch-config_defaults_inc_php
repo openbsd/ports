@@ -1,7 +1,7 @@
 Index: config/defaults.inc.php
 --- config/defaults.inc.php.orig
 +++ config/defaults.inc.php
-@@ -925,10 +925,10 @@ $config['spellcheck_dictionary'] = false;
+@@ -935,10 +935,10 @@ $config['spellcheck_dictionary'] = false;
  // - 'pspell'  - requires the PHP Pspell module and aspell installed
  // - 'enchant' - requires the PHP Enchant module
  // - 'atd'     - install your own After the Deadline server or check with the people at http://www.afterthedeadline.com before using their API

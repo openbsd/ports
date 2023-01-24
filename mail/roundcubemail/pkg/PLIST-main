@@ -38,6 +38,7 @@ roundcubemail/SQL/mssql/2020091000.sql
 roundcubemail/SQL/mssql/2020122900.sql
 roundcubemail/SQL/mssql/2021081000.sql
 roundcubemail/SQL/mssql/2021100300.sql
+roundcubemail/SQL/mssql/2022081200.sql
 roundcubemail/SQL/mysql/
 roundcubemail/SQL/mysql.initial.sql
 roundcubemail/SQL/mysql/2008030300.sql
@@ -72,6 +73,7 @@ roundcubemail/SQL/mysql/2020091000.sql
 roundcubemail/SQL/mysql/2020122900.sql
 roundcubemail/SQL/mysql/2021081000.sql
 roundcubemail/SQL/mysql/2021100300.sql
+roundcubemail/SQL/mysql/2022081200.sql
 roundcubemail/SQL/oracle/
 roundcubemail/SQL/oracle.initial.sql
 roundcubemail/SQL/oracle/2015030800.sql
@@ -88,6 +90,7 @@ roundcubemail/SQL/oracle/2020091000.sql
 roundcubemail/SQL/oracle/2020122900.sql
 roundcubemail/SQL/oracle/2021081000.sql
 roundcubemail/SQL/oracle/2021100300.sql
+roundcubemail/SQL/oracle/2022081200.sql
 roundcubemail/SQL/postgres/
 roundcubemail/SQL/postgres.initial.sql
 roundcubemail/SQL/postgres/2008030300.sql
@@ -121,6 +124,7 @@ roundcubemail/SQL/postgres/2020091000.sql
 roundcubemail/SQL/postgres/2020122900.sql
 roundcubemail/SQL/postgres/2021081000.sql
 roundcubemail/SQL/postgres/2021100300.sql
+roundcubemail/SQL/postgres/2022081200.sql
 roundcubemail/SQL/sqlite/
 roundcubemail/SQL/sqlite.initial.sql
 roundcubemail/SQL/sqlite/2008030300.sql
@@ -155,6 +159,7 @@ roundcubemail/SQL/sqlite/2020091000.sql
 roundcubemail/SQL/sqlite/2020122900.sql
 roundcubemail/SQL/sqlite/2021081000.sql
 roundcubemail/SQL/sqlite/2021100300.sql
+roundcubemail/SQL/sqlite/2022081200.sql
 roundcubemail/UPGRADING
 @mode 750
 @owner root
@@ -2813,7 +2818,6 @@ roundcubemail/vendor/guzzlehttp/guzzle/src/functions_include.php
 roundcubemail/vendor/guzzlehttp/promises/
 roundcubemail/vendor/guzzlehttp/promises/CHANGELOG.md
 roundcubemail/vendor/guzzlehttp/promises/LICENSE
-roundcubemail/vendor/guzzlehttp/promises/Makefile
 roundcubemail/vendor/guzzlehttp/promises/README.md
 roundcubemail/vendor/guzzlehttp/promises/composer.json
 roundcubemail/vendor/guzzlehttp/promises/src/
@@ -3029,7 +3033,6 @@ roundcubemail/vendor/pear/net_ldap2/package.xml
 roundcubemail/vendor/pear/net_sieve/
 roundcubemail/vendor/pear/net_sieve/Sieve.php
 roundcubemail/vendor/pear/net_sieve/composer.json
-roundcubemail/vendor/pear/net_sieve/package.xml
 roundcubemail/vendor/pear/net_smtp/
 roundcubemail/vendor/pear/net_smtp/LICENSE
 roundcubemail/vendor/pear/net_smtp/Net/
