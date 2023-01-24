@@ -52,7 +52,8 @@ USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS +=	--without-libiberty \
+CONFIGURE_ARGS +=	--disable-Werror \
+			--without-libiberty \
 			--without-avahi \
 			--with-gtk
 
