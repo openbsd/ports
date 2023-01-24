@@ -1,0 +1,14 @@
+Fix with clang 15: use a cast to allow invalid pointer to integer conversion.
+
+Index: database/DBpaint.c
+--- database/DBpaint.c.orig
++++ database/DBpaint.c
+@@ -1539,7 +1539,7 @@ DBNMPaintPlane0(plane, exacttype, area, resultTbl, und
+ 		}
+ 
+ 		oldType = TiGetTypeExact(tile);
+-		newType = DBDiagonalProc(oldType, &dinfo);
++		newType = DBDiagonalProc(oldType, (uintptr_t)&dinfo);
+ 
+ 		/* Ignore tiles that don't change type.	*/
+ 

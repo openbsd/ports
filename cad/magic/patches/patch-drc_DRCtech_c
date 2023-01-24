@@ -1,0 +1,15 @@
+Fix with clang 15: fix invalid pointer to integer conversion.
+
+Index: drc/DRCtech.c
+--- drc/DRCtech.c.orig
++++ drc/DRCtech.c
+@@ -1968,7 +1968,8 @@ drcMaskSpacing(set1, set2, pmask1, pmask2, wwidth, dis
+     TileTypeBitMask *set1, *set2;
+     PlaneMask pmask1, pmask2;
+     int wwidth, distance;
+-    char *adjacency, *why;
++    char *adjacency;
++    int why;
+     bool widerule;
+     int runlength;
+     bool multiplane;

@@ -1,5 +1,6 @@
 COMMENT =	interactive system for VLSI circuit layouts
 DISTNAME =	magic-8.3.340
+REVISION =	0
 EXTRACT_SUFX =	.tgz
 
 CATEGORIES =	cad
