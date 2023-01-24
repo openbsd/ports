@@ -6,7 +6,7 @@ COMMENT =	parallel implementation of gzip utilizing multiple cores
 DISTNAME =	pigz-2.7
 CATEGORIES =	archivers
 HOMEPAGE =	https://zlib.net/pigz/
-REVISION =	0
+REVISION =	1
 
 MAINTAINER =	Klemens Nanni <kn@openbsd.org>
 
