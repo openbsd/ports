@@ -1,0 +1,58 @@
+Index: external/boringssl/crypto/chacha/asm/chacha-armv8.pl
+--- external/boringssl/crypto/chacha/asm/chacha-armv8.pl.orig
++++ external/boringssl/crypto/chacha/asm/chacha-armv8.pl
+@@ -117,6 +117,7 @@ $code.=<<___;
+ 
+ .extern	OPENSSL_armcap_P
+ 
++.rodata
+ .align	5
+ .Lsigma:
+ .quad	0x3320646e61707865,0x6b20657479622d32		// endian-neutral
+@@ -130,12 +131,15 @@ $code.=<<___;
+ #endif
+ .asciz	"ChaCha20 for ARMv8, CRYPTOGAMS by <appro\@openssl.org>"
+ 
++.text
++
+ .globl	ChaCha20_ctr32
+ .type	ChaCha20_ctr32,%function
+ .align	5
+ ChaCha20_ctr32:
+ 	cbz	$len,.Labort
+-	adr	@x[0],.LOPENSSL_armcap_P
++	adrp	@x[0],.LOPENSSL_armcap_P
++	add	@x[0],@x[0],:lo12:.LOPENSSL_armcap_P
+ 	cmp	$len,#192
+ 	b.lo	.Lshort
+ #ifdef	__ILP32__
+@@ -151,7 +155,8 @@ ChaCha20_ctr32:
+ 	stp	x29,x30,[sp,#-96]!
+ 	add	x29,sp,#0
+ 
+-	adr	@x[0],.Lsigma
++	adrp	@x[0],.Lsigma
++	add	@x[0],@x[0],:lo12:.Lsigma
+ 	stp	x19,x20,[sp,#16]
+ 	stp	x21,x22,[sp,#32]
+ 	stp	x23,x24,[sp,#48]
+@@ -371,7 +376,8 @@ ChaCha20_neon:
+ 	stp	x29,x30,[sp,#-96]!
+ 	add	x29,sp,#0
+ 
+-	adr	@x[0],.Lsigma
++	adrp	@x[0],.Lsigma
++	add	@x[0],@x[0],:lo12:.Lsigma
+ 	stp	x19,x20,[sp,#16]
+ 	stp	x21,x22,[sp,#32]
+ 	stp	x23,x24,[sp,#48]
+@@ -690,7 +696,8 @@ ChaCha20_512_neon:
+ 	stp	x29,x30,[sp,#-96]!
+ 	add	x29,sp,#0
+ 
+-	adr	@x[0],.Lsigma
++	adrp	@x[0],.Lsigma
++	add	@x[0],@x[0],:lo12:.Lsigma
+ 	stp	x19,x20,[sp,#16]
+ 	stp	x21,x22,[sp,#32]
+ 	stp	x23,x24,[sp,#48]

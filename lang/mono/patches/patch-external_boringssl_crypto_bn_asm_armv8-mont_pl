@@ -1,0 +1,11 @@
+Index: external/boringssl/crypto/bn/asm/armv8-mont.pl
+--- external/boringssl/crypto/bn/asm/armv8-mont.pl.orig
++++ external/boringssl/crypto/bn/asm/armv8-mont.pl
+@@ -1494,6 +1494,7 @@ __bn_mul4x_mont:
+ ___
+ }
+ $code.=<<___;
++.rodata
+ .asciz	"Montgomery Multiplication for ARMv8, CRYPTOGAMS by <appro\@openssl.org>"
+ .align	4
+ ___

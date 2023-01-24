@@ -1,0 +1,19 @@
+Index: external/boringssl/crypto/aes/asm/aes-x86_64.pl
+--- external/boringssl/crypto/aes/asm/aes-x86_64.pl.orig
++++ external/boringssl/crypto/aes/asm/aes-x86_64.pl
+@@ -2098,6 +2098,7 @@ ___
+ }
+ 
+ $code.=<<___;
++.rodata
+ .align	64
+ .LAES_Te:
+ ___
+@@ -2520,6 +2521,7 @@ $code.=<<___;
+ 	.long	0x1b1b1b1b, 0x1b1b1b1b, 0, 0
+ .asciz  "AES for x86_64, CRYPTOGAMS by <appro\@openssl.org>"
+ .align	64
++.previous
+ ___
+ 
+ # EXCEPTION_DISPOSITION handler (EXCEPTION_RECORD *rec,ULONG64 frame,

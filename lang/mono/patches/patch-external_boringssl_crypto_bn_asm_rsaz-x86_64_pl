@@ -1,0 +1,16 @@
+Index: external/boringssl/crypto/bn/asm/rsaz-x86_64.pl
+--- external/boringssl/crypto/bn/asm/rsaz-x86_64.pl.orig
++++ external/boringssl/crypto/bn/asm/rsaz-x86_64.pl
+@@ -2153,10 +2153,12 @@ $code.=<<___;
+ .LSEH_end_rsaz_512_gather4:
+ .size	rsaz_512_gather4,.-rsaz_512_gather4
+ 
++.rodata
+ .align	64
+ .Linc:
+ 	.long	0,0, 1,1
+ 	.long	2,2, 2,2
++.previous
+ ___
+ }
+ 

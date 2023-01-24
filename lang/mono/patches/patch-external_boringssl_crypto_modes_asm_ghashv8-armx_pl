@@ -1,0 +1,11 @@
+Index: external/boringssl/crypto/modes/asm/ghashv8-armx.pl
+--- external/boringssl/crypto/modes/asm/ghashv8-armx.pl.orig
++++ external/boringssl/crypto/modes/asm/ghashv8-armx.pl
+@@ -339,6 +339,7 @@ $code.=<<___;
+ ___
+ }
+ $code.=<<___;
++.rodata
+ .asciz  "GHASH for ARMv8, CRYPTOGAMS by <appro\@openssl.org>"
+ .align  2
+ ___

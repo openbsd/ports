@@ -1,0 +1,11 @@
+Index: external/boringssl/crypto/aes/asm/bsaes-x86_64.pl
+--- external/boringssl/crypto/aes/asm/bsaes-x86_64.pl.orig
++++ external/boringssl/crypto/aes/asm/bsaes-x86_64.pl
+@@ -2877,6 +2877,7 @@ ___
+ }
+ $code.=<<___;
+ .type	_bsaes_const,\@object
++.rodata
+ .align	64
+ _bsaes_const:
+ .LM0ISR:	# InvShiftRows constants

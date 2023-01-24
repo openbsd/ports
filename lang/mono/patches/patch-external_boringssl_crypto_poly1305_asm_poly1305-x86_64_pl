@@ -1,0 +1,19 @@
+Index: external/boringssl/crypto/poly1305/asm/poly1305-x86_64.pl
+--- external/boringssl/crypto/poly1305/asm/poly1305-x86_64.pl.orig
++++ external/boringssl/crypto/poly1305/asm/poly1305-x86_64.pl
+@@ -1965,6 +1965,7 @@ $code.=<<___;
+ ___
+ }
+ $code.=<<___;
++.rodata
+ .align	64
+ .Lconst:
+ .Lmask24:
+@@ -1981,6 +1982,7 @@ ___
+ $code.=<<___;
+ .asciz	"Poly1305 for x86_64, CRYPTOGAMS by <appro\@openssl.org>"
+ .align	16
++.previous
+ ___
+ 
+ # EXCEPTION_DISPOSITION handler (EXCEPTION_RECORD *rec,ULONG64 frame,

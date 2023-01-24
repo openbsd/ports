@@ -1,0 +1,19 @@
+Index: external/boringssl/crypto/ec/asm/p256-x86_64-asm.pl
+--- external/boringssl/crypto/ec/asm/p256-x86_64-asm.pl.orig
++++ external/boringssl/crypto/ec/asm/p256-x86_64-asm.pl
+@@ -63,6 +63,7 @@ $code.=<<___;
+ .extern	OPENSSL_ia32cap_P
+ 
+ # The polynomial
++.rodata
+ .align 64
+ .Lpoly:
+ .quad 0xffffffffffffffff, 0x00000000ffffffff, 0x0000000000000000, 0xffffffff00000001
+@@ -75,6 +76,7 @@ $code.=<<___;
+ .long 3,3,3,3,3,3,3,3
+ .LONE_mont:
+ .quad 0x0000000000000001, 0xffffffff00000000, 0xffffffffffffffff, 0x00000000fffffffe
++.previous
+ ___
+ 
+ {

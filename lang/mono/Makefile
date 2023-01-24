@@ -5,7 +5,7 @@ COMMENT=	cross platform, open source .NET developement framework
 V=		6.12.0.182
 
 DISTNAME=	mono-${V}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	lang devel
 

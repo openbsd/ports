@@ -1,0 +1,54 @@
+Index: external/boringssl/crypto/sha/asm/sha512-armv8.pl
+--- external/boringssl/crypto/sha/asm/sha512-armv8.pl.orig
++++ external/boringssl/crypto/sha/asm/sha512-armv8.pl
+@@ -175,10 +175,8 @@ $code.=<<___;
+ $func:
+ ___
+ $code.=<<___	if ($SZ==4);
+-	ldr	x16,.LOPENSSL_armcap_P
+-	adr	x17,.LOPENSSL_armcap_P
+-	add	x16,x16,x17
+-	ldr	w16,[x16]
++	adrp	x16,OPENSSL_armcap_P
++	ldr	w16,[x16,#:lo12:OPENSSL_armcap_P]
+ 	tst	w16,#ARMV8_SHA256
+ 	b.ne	.Lv8_entry
+ ___
+@@ -198,7 +196,8 @@ $code.=<<___;
+ 	ldp	$E,$F,[$ctx,#4*$SZ]
+ 	add	$num,$inp,$num,lsl#`log(16*$SZ)/log(2)`	// end of input
+ 	ldp	$G,$H,[$ctx,#6*$SZ]
+-	adr	$Ktbl,.LK$BITS
++	adrp	$Ktbl,.LK$BITS
++	add	$Ktbl,$Ktbl,:lo12:.LK$BITS
+ 	stp	$ctx,$num,[x29,#96]
+ 
+ .Loop:
+@@ -247,6 +246,8 @@ $code.=<<___;
+ 	ret
+ .size	$func,.-$func
+ 
++.rodata
++
+ .align	6
+ .type	.LK$BITS,%object
+ .LK$BITS:
+@@ -320,6 +321,8 @@ $code.=<<___;
+ 	.quad	OPENSSL_armcap_P-.
+ .asciz	"SHA$BITS block transform for ARMv8, CRYPTOGAMS by <appro\@openssl.org>"
+ .align	2
++
++.text
+ ___
+ 
+ if ($SZ==4) {
+@@ -339,7 +342,8 @@ sha256_block_armv8:
+ 	add		x29,sp,#0
+ 
+ 	ld1.32		{$ABCD,$EFGH},[$ctx]
+-	adr		$Ktbl,.LK256
++	adrp		$Ktbl,.LK256
++	add		$Ktbl,$Ktbl,:lo12:.LK256
+ 
+ .Loop_hw:
+ 	ld1		{@MSG[0]-@MSG[3]},[$inp],#64

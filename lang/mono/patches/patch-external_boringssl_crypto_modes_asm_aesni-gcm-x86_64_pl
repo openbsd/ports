@@ -1,0 +1,19 @@
+Index: external/boringssl/crypto/modes/asm/aesni-gcm-x86_64.pl
+--- external/boringssl/crypto/modes/asm/aesni-gcm-x86_64.pl.orig
++++ external/boringssl/crypto/modes/asm/aesni-gcm-x86_64.pl
+@@ -925,6 +925,7 @@ $code.=<<___;
+ ___
+ 
+ $code.=<<___;
++.rodata
+ .align	64
+ .Lbswap_mask:
+ 	.byte	15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0
+@@ -938,6 +939,7 @@ $code.=<<___;
+ 	.byte	1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+ .asciz	"AES-NI GCM module for x86_64, CRYPTOGAMS by <appro\@openssl.org>"
+ .align	64
++.previous
+ ___
+ if ($win64) {
+ $rec="%rcx";
