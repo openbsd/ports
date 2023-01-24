@@ -22,9 +22,9 @@ Index: vendor/cfg-expr/src/targets/builtins.rs
          triple: Triple::new_const("powerpc64-wrs-vxworks"),
          os: Some(Os::vxworks),
          arch: Arch::powerpc64,
-@@ -1464,6 +1476,18 @@ pub const ALL_BUILTINS: &[TargetInfo] = &[
+@@ -1512,6 +1524,18 @@ pub const ALL_BUILTINS: &[TargetInfo] = &[
          endian: Endian::little,
-         has_atomics: HasAtomics::new_const(&[]),
+         has_atomics: HasAtomics::atomic_8_16_32_64_ptr,
          panic: Panic::abort,
 +    },
 +    TargetInfo {
@@ -40,4 +40,4 @@ Index: vendor/cfg-expr/src/targets/builtins.rs
 +        panic: Panic::unwind,
      },
      TargetInfo {
-         triple: Triple::new_const("riscv64gc-unknown-freebsd"),
+         triple: Triple::new_const("riscv64imac-unknown-none-elf"),
