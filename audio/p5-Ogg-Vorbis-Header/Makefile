@@ -2,6 +2,7 @@ COMMENT=	object-oriented interface to Ogg Vorbis information
 
 MODULES=	cpan
 DISTNAME =	Ogg-Vorbis-Header-0.11
+REVISION =	0
 CATEGORIES=	audio
 
 # perl
