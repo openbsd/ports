@@ -1,4 +1,5 @@
 Don't clobber LDFLAGS - ensures configure finds libobjc2.
+Properly pass -export-dynamic to the linker.
 
 Index: platform.m4
 --- platform.m4.orig
@@ -8,7 +9,7 @@ Index: platform.m4
  	    PLUGIN_LD_FLAGS=""
  	    PLUGIN_SUFFIX=".so"
 -	    LDFLAGS="-export-dynamic"
-+	    LDFLAGS="-export-dynamic ${LDFLAGS}"
++	    LDFLAGS="-Wl,-export-dynamic ${LDFLAGS}"
  	    ;;
      esac
  
