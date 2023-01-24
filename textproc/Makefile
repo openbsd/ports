@@ -63,6 +63,7 @@
      SUBDIR += go-text
      SUBDIR += gpresent
      SUBDIR += grepcidr
+     SUBDIR += grepcidr3
      SUBDIR += groff
      SUBDIR += gron
      SUBDIR += gsed
