@@ -1,0 +1,33 @@
+Index: grepcidr.c
+--- grepcidr.c.orig
++++ grepcidr.c
+@@ -580,6 +580,12 @@ int main(int argc, char* argv[])
+ 	char* pat_strings = NULL;		/* pattern strings on command line */
+ 	int foundopt;
+ 	
++	if (pledge("stdio rpath", NULL) == -1)
++	{
++		fprintf(stderr, "grepcidr: pledge()");
++		return EXIT_ERROR;
++	}
++
+ 	if ((CHAR_BIT != 8) || (sizeof(unsigned int) < 4) ||
+ 		(sizeof(struct in_addr) != 4) || (sizeof(struct in6_addr) != 16))
+ 	{
+@@ -660,8 +666,15 @@ int main(int argc, char* argv[])
+ 	{	/* Search each specified file name, or just stdin */
+ 		const char* curfilename = NULL;
+ 		FILE* inp_stream;
+-		if (optind >= argc)
++		if (optind >= argc) {
+ 			inp_stream = stdin;
++
++			if (pledge("stdio", NULL) == -1)
++			{
++				fprintf(stderr, "grepcidr: pledge()");
++				return EXIT_ERROR;
++			}
++		}
+ 		else
+ 		{
+ 			/* One or more file names are specified on the command line */

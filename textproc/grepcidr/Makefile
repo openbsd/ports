@@ -3,7 +3,7 @@ COMMENT=	filter files for IP address matches
 # note there's also a "grepcidr-2" fork; this port is for the original
 # version which is still developed by the original author.
 DISTNAME=	grepcidr-2.0
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	textproc net
 
