@@ -3,6 +3,7 @@ include/libfilezilla/aio/
 include/libfilezilla/aio/aio.hpp
 include/libfilezilla/aio/reader.hpp
 include/libfilezilla/aio/writer.hpp
+include/libfilezilla/aio/xml_writer.hpp
 include/libfilezilla/apply.hpp
 include/libfilezilla/ascii_layer.hpp
 include/libfilezilla/buffer.hpp
@@ -54,6 +55,7 @@ include/libfilezilla/uri.hpp
 include/libfilezilla/util.hpp
 include/libfilezilla/version.hpp
 include/libfilezilla/visibility_helper.hpp
+include/libfilezilla/xml.hpp
 @static-lib lib/libfilezilla.a
 lib/libfilezilla.la
 @lib lib/libfilezilla.so.${LIBfilezilla_VERSION}
