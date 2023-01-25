@@ -1,0 +1,15 @@
+Provide decl for pango_font_metrics_new(), not declared in a public header
+any more.
+
+Index: pango.override
+--- pango.override.orig
++++ pango.override
+@@ -27,6 +27,8 @@ headers
+ #include <pygobject.h>
+ #include <pango/pango.h>
+ 
++PangoFontMetrics *pango_font_metrics_new(void);
++
+ typedef struct {
+     PyObject *func, *data;
+ } PyGtkCustomNotify;

@@ -3,6 +3,8 @@ From: Jordan Petridis <jpetridis@gnome.org>
 Date: Thu, 24 Oct 2019 22:58:36 +0200
 Subject: [PATCH] Drop the PangoFont find_shaper virtual method
 
+Hunk #2: drop get_shape_engine_type, not exported any more.
+
 Index: pango.defs
 --- pango.defs.orig
 +++ pango.defs
@@ -22,3 +24,16 @@ Index: pango.defs
  (define-virtual get_glyph_extents
    (of-object "PangoFont")
    (return-type "none")
+@@ -1465,12 +1456,6 @@
+     '("PangoFontFamily***" "families")
+     '("int*" "n_families")
+   )
+-)
+-
+-(define-method get_shape_engine_type
+-  (of-object "PangoFontMap")
+-  (c-name "pango_font_map_get_shape_engine_type")
+-  (return-type "const-char*")
+ )
+ 
+ (define-method create_context
