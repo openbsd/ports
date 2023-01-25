@@ -2,6 +2,7 @@ BROKEN-powerpc64 =	Check failed: false. OS architecture not handled. (powerpc64)
 BROKEN-riscv64 =	Unknown current CPU: riscv64
 
 USE_WXNEEDED=		Yes
+USE_NOEXECONLY=		Yes
 
 DPB_PROPERTIES=		parallel parallel2
 
@@ -10,7 +11,7 @@ COMMENT=		Chromium browser sans integration with Google
 V=			109.0.5414.74
 UGV=			${V}-1
 
-REVISION=		2
+REVISION=		3
 
 DISTNAME=		ungoogled-chromium-${V}
 

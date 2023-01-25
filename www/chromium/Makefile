@@ -1,13 +1,14 @@
 BROKEN-powerpc64 =	Check failed: false. OS architecture not handled. (powerpc64)
 
 USE_WXNEEDED=		Yes
+USE_NOEXECONLY=		Yes
 
 DPB_PROPERTIES=		parallel parallel2
 
 COMMENT=		Chromium browser
 
 V=			109.0.5414.74
-REVISION=		2
+REVISION=		3
 
 DISTNAME=		chromium-${V}
 
