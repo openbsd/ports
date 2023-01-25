@@ -45,7 +45,7 @@ EXTRACT_SUFX=	.tar.bz2
 
 PSEUDO_FLAVORS=	no_bindings no_ap2 no_perl no_python no_ruby no_gnome-keyring
 FLAVORS=	maintainer_mode
-FLAVOR?=
+FLAVOR?=	no_ruby
 .if ${FLAVOR:Mno_bindings}
 FLAVOR += no_perl no_python no_ruby
 .endif
@@ -163,6 +163,8 @@ CONFIGURE_ARGS+=--without-swig
 .if ${BUILD_PACKAGES:M-ruby}
 MODULES+=	lang/ruby
 CONFIGURE_ENV+=	RUBY=ruby${MODRUBY_BINREV} RDOC=rdoc${MODRUBY_BINREV}
+.else
+CONFIGURE_ENV+=	RUBY=false RDOC=false
 .endif
 
 .if ${BUILD_PACKAGES:M-ap2}
@@ -191,9 +193,11 @@ pre-patch:
 post-patch:
 	@${SUBST_CMD} ${WRKSRC}/Makefile.in \
 		${WRKSRC}/subversion/libsvn_subr/auth.c
+.if ${BUILD_PACKAGES:M-ruby}
 	mv ${WRKSRC}/subversion/bindings/swig/ruby/libsvn_swig_ruby{,${MODRUBY_BINREV}}
 	sed -i 's/libsvn_swig_ruby/libsvn_swig_ruby${MODRUBY_BINREV}/g' \
 		`fgrep -lr libsvn_swig_ruby ${WRKSRC}`
+.endif
 
 .if ${BUILD_PACKAGES:M-python}
 TEST_DEPENDS+=	${FULLPKGNAME-python}:${BUILD_PKGPATH},-python
