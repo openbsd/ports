@@ -1,3 +1,13 @@
+BROKEN-i386 =	fails "build fpm (stage1) using the bootstrap (stage0)"
+# build  --profile release  --verbose
+# *get_anyarray_l* bad logical expression for verbose=RELEASE
+# *get_anyarray_l* bad logical expression for list=RELEASE
+# *get_anyarray_l* bad logical expression for show-model=RELEASE
+# *get_anyarray_l* bad logical expression for tests=RELEASE
+# *get_anyarray_l* bad logical expression for no-prune=RELEASE
+# [Error] Failed to change directory to 'release'
+# STOP 1
+
 COMMENT =	Fortran Package Manager
 
 V =		0.7.0
