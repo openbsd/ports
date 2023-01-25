@@ -13496,6 +13496,12 @@ google-cloud-sdk/lib/surface/blockchain_node_engine/
 google-cloud-sdk/lib/surface/blockchain_node_engine/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/surface/blockchain_node_engine/${MODPY_PYCACHE}/
 google-cloud-sdk/lib/surface/blockchain_node_engine/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/blockchain_node_engine/locations/
+google-cloud-sdk/lib/surface/blockchain_node_engine/locations/__init__.py
+${MODPY_COMMENT}google-cloud-sdk/lib/surface/blockchain_node_engine/locations/${MODPY_PYCACHE}/
+google-cloud-sdk/lib/surface/blockchain_node_engine/locations/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/blockchain_node_engine/locations/describe.yaml
+google-cloud-sdk/lib/surface/blockchain_node_engine/locations/list.yaml
 google-cloud-sdk/lib/surface/blockchain_node_engine/nodes/
 google-cloud-sdk/lib/surface/blockchain_node_engine/nodes/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/surface/blockchain_node_engine/nodes/${MODPY_PYCACHE}/
@@ -17923,11 +17929,15 @@ ${MODPY_COMMENT}google-cloud-sdk/lib/surface/deploy/rollouts/${MODPY_PYCACHE}/
 google-cloud-sdk/lib/surface/deploy/rollouts/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/deploy/rollouts/${MODPY_PYCACHE}advance.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/deploy/rollouts/${MODPY_PYCACHE}approve.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/deploy/rollouts/${MODPY_PYCACHE}cancel.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/deploy/rollouts/${MODPY_PYCACHE}ignore_job.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/deploy/rollouts/${MODPY_PYCACHE}reject.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/deploy/rollouts/${MODPY_PYCACHE}retry_job.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/deploy/rollouts/advance.py
 google-cloud-sdk/lib/surface/deploy/rollouts/approve.py
+google-cloud-sdk/lib/surface/deploy/rollouts/cancel.py
 google-cloud-sdk/lib/surface/deploy/rollouts/describe.yaml
+google-cloud-sdk/lib/surface/deploy/rollouts/ignore_job.py
 google-cloud-sdk/lib/surface/deploy/rollouts/list.yaml
 google-cloud-sdk/lib/surface/deploy/rollouts/reject.py
 google-cloud-sdk/lib/surface/deploy/rollouts/retry_job.py
@@ -20270,6 +20280,7 @@ google-cloud-sdk/lib/surface/looker/instances/create.yaml
 google-cloud-sdk/lib/surface/looker/instances/delete.yaml
 google-cloud-sdk/lib/surface/looker/instances/describe.yaml
 google-cloud-sdk/lib/surface/looker/instances/list.yaml
+google-cloud-sdk/lib/surface/looker/instances/restart.yaml
 google-cloud-sdk/lib/surface/looker/instances/update.yaml
 google-cloud-sdk/lib/surface/looker/operations/
 google-cloud-sdk/lib/surface/looker/operations/__init__.py
