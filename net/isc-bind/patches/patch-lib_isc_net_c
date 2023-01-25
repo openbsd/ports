@@ -3,7 +3,7 @@ Patch to use pledge on OpenBSD.
 Index: lib/isc/net.c
 --- lib/isc/net.c.orig
 +++ lib/isc/net.c
-@@ -218,6 +218,13 @@ isc_net_probeunix(void) {
+@@ -216,6 +216,13 @@ isc_net_probeunix(void) {
  
  static void
  try_ipv6only(void) {
@@ -17,12 +17,3 @@ Index: lib/isc/net.c
  #ifdef IPV6_V6ONLY
  	int s, on;
  #endif /* ifdef IPV6_V6ONLY */
-@@ -647,7 +654,7 @@ try_dscp_v6(void) {
- 		dscp_result |= ISC_NET_DSCPSETV6;
- 	}
- 
--#ifdef IPV6_RECVTCLASS
-+#if 0 /* pledge doesn't allow setsockopt IPV6_RECVTCLASS */
- 	on = 1;
- 	if (setsockopt(s, IPPROTO_IPV6, IPV6_RECVTCLASS, &on, sizeof(on)) == 0)
- 	{
