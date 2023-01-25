@@ -1,14 +1,13 @@
 COMMENT =		library for creating a custom Minecraft launcher
 
-MODPY_EGG_VERSION =	5.2
+MODPY_EGG_VERSION =	5.3
 
 DISTNAME =		minecraft-launcher-lib-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		games
 
-HOMEPAGE =		https://gitlab.com/JakobDev/minecraft-launcher-lib
+HOMEPAGE =		https://codeberg.org/JakobDev/minecraft-launcher-lib
 
 MAINTAINER =		Kurt Mosiejczuk <kmos@openbsd.org>
 

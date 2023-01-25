@@ -1,16 +1,16 @@
 Index: minecraft_launcher_lib/runtime.py
 --- minecraft_launcher_lib/runtime.py.orig
 +++ minecraft_launcher_lib/runtime.py
-@@ -26,6 +26,8 @@ def _get_jvm_platform_string() -> str:
-             return "linux"
-     elif platform.system() == "Darwin":
-         return "mac-os"
+@@ -29,6 +29,8 @@ def _get_jvm_platform_string() -> str:
+             return "mac-os-arm64"
+         else:
+             return "mac-os"
 +    elif platform.system() == "OpenBSD":
-+        return "openbsd"
++            return "openbsd-" + platform.machine()
+     else:
+         return "gamecore"
  
- 
- def get_jvm_runtimes() -> List[str]:
-@@ -104,7 +106,13 @@ def get_executable_path(jvm_version: str, minecraft_di
+@@ -109,7 +111,13 @@ def get_executable_path(jvm_version: str, minecraft_di
      """
      Returns the path to the executable. Returns None if none is found.
      """
