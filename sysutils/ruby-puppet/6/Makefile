@@ -1,9 +1,10 @@
 PORTROACH=		limit:^6
 
 VERSION=		6.28.0
-REVISION=		2
+REVISION=		3
 
-RUN_DEPENDS+=		databases/ruby-hiera3,${MODRUBY_FLAVOR} \
+RUN_DEPENDS+=		converters/ruby-multi_json,${MODRUBY_FLAVOR}>=1.10,<2 \
+			databases/ruby-hiera3,${MODRUBY_FLAVOR} \
 			devel/ruby-gettext-setup,${MODRUBY_FLAVOR}>=0.28,<1 \
 			devel/ruby-locale,${MODRUBY_FLAVOR}>=2.1,<3 \
 			devel/ruby-rgen,${MODRUBY_FLAVOR} \
