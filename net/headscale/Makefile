@@ -1,6 +1,6 @@
-ONLY_FOR_ARCHS =	amd64 i386 arm64
-# this depends on modernc.org/libc; version v1.21.5 supports amd64, i386 and
-# arm64 only on OpenBSD.
+ONLY_FOR_ARCHS =	amd64 arm64
+# modernc.org/libc has limited arch support
+# 1.21.5 fails on i386 (../../../go/pkg/mod/modernc.org/sqlite@v1.20.0/lib/mutex.go:220:7)
 
 COMMENT =	open source implementation of the Tailscale control server
 
