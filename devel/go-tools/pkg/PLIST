@@ -14,7 +14,6 @@
 @bin bin/godoc
 @bin bin/goimports
 @bin bin/gomvpkg
-@bin bin/gopls
 @bin bin/gorename
 @bin bin/gotype
 @bin bin/goyacc

@@ -1,11 +1,13 @@
 COMMENT =		various tools for the Go programming language
-GH_ACCOUNT =		golang
-GH_PROJECT =		tools
-GH_COMMIT =		f727befe758c04ce68d52abc6e69ad111e2c6797
-DISTNAME =		go-tools-1.12.20190226
+
+MODGO_MODNAME =		golang.org/x/tools
+MODGO_VERSION =		v0.5.0
+
+DISTNAME =		go-tools-${MODGO_VERSION}
+EPOCH =			0
+
 CATEGORIES =		devel
-HOMEPAGE =		https://godoc.org/golang.org/x/tools
-REVISION =		2
+HOMEPAGE =		https://pkg.go.dev/golang.org/x/tools
 
 # 3-clause BSD
 PERMIT_PACKAGE =	Yes
@@ -13,14 +15,9 @@ PERMIT_PACKAGE =	Yes
 WANTLIB +=		c pthread
 
 MODULES =		lang/go
-MODGO_TYPE =		bin
 
-BUILD_DEPENDS =		net/go-net
 RUN_DEPENDS =		${MODGO_RUN_DEPENDS}
 
-GODOC_TARGET =		golang.org/x/tools/cmd/godoc
-
-_MAIN =			golang.org/x/tools
 _SUBPKGS =		benchcmp \
 			bundle \
 			callgraph \
@@ -30,9 +27,9 @@ _SUBPKGS =		benchcmp \
 			fiximports \
 			go-contrib-init \
 			godex \
+			godoc \
 			goimports \
 			gomvpkg \
-			gopls \
 			gorename \
 			gotype \
 			goyacc \
@@ -44,18 +41,13 @@ _SUBPKGS =		benchcmp \
 			stringer \
 			toolstash
 
-ALL_TARGET =		${_SUBPKGS:%=${_MAIN}/cmd/%}
-WRKSRC =		${MODGO_WORKSPACE}/src/${_MAIN}
+ALL_TARGET =		${_SUBPKGS:%=golang.org/x/tools/cmd/%}
+WRKDIST =		${WRKSRC}
 
-post-extract:
-	mkdir -p ${MODGO_WORKSPACE}/pkg
-
-# godoc needs special handling - prior to Go 1.2, godoc was part of the base
-# distribution and there is a remaining mapping that causes 'go install' to
-# install godoc in $GOROOT/bin instead of $GOPATH/bin (golang.org/issue/6654).
+# default do-build set by go.port.mk would build everything under
+# cmd/... regardless of ALL_TARGET.
 do-build:
-	${MODGO_BUILD_TARGET}
-	${MODGO_CMD} build ${MODGO_FLAGS} -o ${MODGO_WORKSPACE}/bin/godoc \
-		${GODOC_TARGET}
+	cd ${WRKSRC} && ${MODGO_BUILD_TARGET}
 
+.include "modules.inc"
 .include <bsd.port.mk>
