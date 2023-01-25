@@ -1,0 +1,25 @@
+@conflict go-tools-<=1.12.20190226p2
+@bin bin/gopls
+share/doc/gopls/
+share/doc/gopls/README.md
+share/doc/gopls/doc/
+share/doc/gopls/doc/advanced.md
+share/doc/gopls/doc/analyzers.md
+share/doc/gopls/doc/command-line.md
+share/doc/gopls/doc/commands.md
+share/doc/gopls/doc/contributing.md
+share/doc/gopls/doc/daemon.md
+share/doc/gopls/doc/design/
+share/doc/gopls/doc/design/design.md
+share/doc/gopls/doc/design/implementation.md
+share/doc/gopls/doc/design/integrating.md
+share/doc/gopls/doc/emacs.md
+share/doc/gopls/doc/features.md
+share/doc/gopls/doc/inlayHints.md
+share/doc/gopls/doc/releases.md
+share/doc/gopls/doc/semantictokens.md
+share/doc/gopls/doc/settings.md
+share/doc/gopls/doc/subl.md
+share/doc/gopls/doc/troubleshooting.md
+share/doc/gopls/doc/vim.md
+share/doc/gopls/doc/workspace.md
