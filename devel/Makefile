@@ -194,6 +194,7 @@
      SUBDIR += gobject-introspection
      SUBDIR += goffice
      SUBDIR += goopy
+     SUBDIR += gopls
      SUBDIR += goreleaser
      SUBDIR += got
      SUBDIR += gpatch
