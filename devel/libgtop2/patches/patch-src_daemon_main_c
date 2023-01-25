@@ -1,0 +1,17 @@
+Pass correct parameter
+https://gitlab.gnome.org/GNOME/libgtop/-/commit/df6393ac0cd785727329a97f731a4067334c0ace
+
+Index: src/daemon/main.c
+--- src/daemon/main.c.orig
++++ src/daemon/main.c
+@@ -222,8 +222,9 @@ handle_parent_connection (int s)
+ 		       0, NULL);
+ 	    break;
+     case GLIBTOP_CMND_PROC_IO:
++	    memcpy (&pid, parameter, sizeof (pid_t));
+ 	    glibtop_get_proc_io_l
+-		(server, &resp->u.data.proc_io, parameter);
++		(server, &resp->u.data.proc_io, pid);
+ 	    do_output (s, resp, _offset_data (proc_io),
+ 		       0, NULL);
+ 	    break;
