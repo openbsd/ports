@@ -1,15 +1,23 @@
---- CMakeLists.txt.orig	Tue Sep 20 07:49:53 2016
-+++ CMakeLists.txt	Tue Sep 20 07:50:36 2016
-@@ -32,10 +32,11 @@ endif()
- add_definitions("-DTIXML_USE_STL")
- find_package(Irrlicht 1.8 REQUIRED)
- find_package(Threads REQUIRED)
--#find_package(sqlite REQUIRED)
-+find_package(Sqlite REQUIRED)
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -132,7 +132,7 @@ if(EXISTS "${PROJECT_SOURCE_DIR}/assets/source/process
+ 		list(APPEND DATA_SCRIPTS "${SCRIPT_OUTPUT}")
+ 		add_custom_command(
+ 			OUTPUT "${SCRIPT_OUTPUT}"
+-			COMMAND luac "${STRIP_LUA}" -o "${SCRIPT_OUTPUT}" "${SCRIPT_PATH}"
++			COMMAND luac${MODLUA_DEP_VERSION} "${STRIP_LUA}" -o "${SCRIPT_OUTPUT}" "${SCRIPT_PATH}"
+ 			DEPENDS "${SCRIPT_PATH}"
+ 		)
+ 	endforeach()
+@@ -172,8 +172,8 @@ if(WIN32)
+ else()
  
- # set include directories
- include_directories("src")
-+include_directories(${SQLITE_INCLUDE_DIR})
- include_directories(${IRRLICHT_INCLUDE_DIRS})
- 
- # add source files
+ 	# linux installation
+-	install(TARGETS ${CMAKE_PROJECT_NAME} RUNTIME DESTINATION share/games/${CMAKE_PROJECT_NAME})
+-	install(DIRECTORY ${PROJECT_SOURCE_DIR}/working/ DESTINATION share/games/${CMAKE_PROJECT_NAME} PATTERN "working/choria" EXCLUDE PATTERN "working/*")
++	install(TARGETS ${CMAKE_PROJECT_NAME} RUNTIME DESTINATION share/${CMAKE_PROJECT_NAME})
++	install(DIRECTORY ${PROJECT_SOURCE_DIR}/working/ DESTINATION share/${CMAKE_PROJECT_NAME} PATTERN "working/choria" EXCLUDE PATTERN "working/*")
+ 	install(FILES ${PROJECT_SOURCE_DIR}/deployment/${CMAKE_PROJECT_NAME}.png DESTINATION share/pixmaps)
+ 	install(FILES ${PROJECT_SOURCE_DIR}/deployment/${CMAKE_PROJECT_NAME}.desktop DESTINATION share/applications)
+ 	install(FILES ${PROJECT_SOURCE_DIR}/CHANGELOG DESTINATION share/doc/${CMAKE_PROJECT_NAME})
