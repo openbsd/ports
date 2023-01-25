@@ -80,6 +80,8 @@ include/gstreamer-${API}/gst/uridownloader/uridownloader-prelude.h
 include/gstreamer-${API}/gst/webrtc/
 include/gstreamer-${API}/gst/webrtc/datachannel.h
 include/gstreamer-${API}/gst/webrtc/dtlstransport.h
+include/gstreamer-${API}/gst/webrtc/ice.h
+include/gstreamer-${API}/gst/webrtc/icestream.h
 include/gstreamer-${API}/gst/webrtc/icetransport.h
 include/gstreamer-${API}/gst/webrtc/rtcsessiondescription.h
 include/gstreamer-${API}/gst/webrtc/rtpreceiver.h
@@ -116,6 +118,7 @@ lib/girepository-${API}/GstWebRTC-${API}.typelib
 @so lib/gstreamer-${API}/libgstcamerabin.so
 @so lib/gstreamer-${API}/libgstclosedcaption.so
 @so lib/gstreamer-${API}/libgstcodecalpha.so
+@so lib/gstreamer-${API}/libgstcodectimestamper.so
 @so lib/gstreamer-${API}/libgstcoloreffects.so
 @so lib/gstreamer-${API}/libgstcolormanagement.so
 @so lib/gstreamer-${API}/libgstdash.so
@@ -146,7 +149,6 @@ lib/girepository-${API}/GstWebRTC-${API}.typelib
 @so lib/gstreamer-${API}/libgstmpegtsmux.so
 @so lib/gstreamer-${API}/libgstmxf.so
 @so lib/gstreamer-${API}/libgstnetsim.so
-@so lib/gstreamer-${API}/libgstnvcodec.so
 @so lib/gstreamer-${API}/libgstopusparse.so
 @so lib/gstreamer-${API}/libgstpcapparse.so
 @so lib/gstreamer-${API}/libgstpnm.so
@@ -167,7 +169,6 @@ lib/girepository-${API}/GstWebRTC-${API}.typelib
 @so lib/gstreamer-${API}/libgstspeed.so
 @so lib/gstreamer-${API}/libgstsubenc.so
 @so lib/gstreamer-${API}/libgstswitchbin.so
-@so lib/gstreamer-${API}/libgsttimecode.so
 @so lib/gstreamer-${API}/libgsttranscode.so
 @so lib/gstreamer-${API}/libgstttmlsubs.so
 @so lib/gstreamer-${API}/libgstvideofiltersbad.so
@@ -249,6 +250,7 @@ share/locale/hu/LC_MESSAGES/gst-plugins-bad-${API}.mo
 share/locale/id/LC_MESSAGES/gst-plugins-bad-${API}.mo
 share/locale/it/LC_MESSAGES/gst-plugins-bad-${API}.mo
 share/locale/ja/LC_MESSAGES/gst-plugins-bad-${API}.mo
+share/locale/ka/LC_MESSAGES/gst-plugins-bad-${API}.mo
 share/locale/ky/LC_MESSAGES/gst-plugins-bad-${API}.mo
 share/locale/lt/LC_MESSAGES/gst-plugins-bad-${API}.mo
 share/locale/lv/LC_MESSAGES/gst-plugins-bad-${API}.mo

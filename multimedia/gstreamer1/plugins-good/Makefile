@@ -21,8 +21,8 @@ WANTLIB-main += ${COMPILER_LIBCXX} FLAC X11 Xdamage Xext Xfixes bz2
 WANTLIB-main += cairo cairo-gobject gdk-3 gdk_pixbuf-2.0 gio-2.0 gmodule-2.0
 WANTLIB-main += gstallocators-1.0 gstfft-1.0 gstgl-1.0 gstnet-1.0 gstpbutils-1.0
 WANTLIB-main += gstriff-1.0 gstrtp-1.0 gstrtsp-1.0 gstsdp-1.0 gsttag-1.0
-WANTLIB-main += gstvideo-1.0 gtk-3 jpeg m mp3lame orc-0.4 png shout
-WANTLIB-main += speex tag twolame v4l2 vpx wavpack z
+WANTLIB-main += gstvideo-1.0 gtk-3 jpeg m mp3lame nettle orc-0.4 png
+WANTLIB-main += shout speex tag twolame v4l2 vpx wavpack xml2 z
 
 WANTLIB-pulse += ${WANTLIB} pulse
 
@@ -65,6 +65,7 @@ CONFIGURE_ARGS=		-Daalib=disabled \
 			-Dosxaudio=disabled \
 			-Dosxvideo=disabled \
 			-Dqt5=disabled \
+			-Dqt6=disabled \
 			-Dwaveform=disabled \
 			-Dv4l2-gudev=disabled \
 			-Drpicamsrc=disabled

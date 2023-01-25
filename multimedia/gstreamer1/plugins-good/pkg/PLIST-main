@@ -1,5 +1,6 @@
 @conflict gstreamer1-plugins-bad-<1.14.0
-@conflict gstreamer1-plugins-ugly-<1.14.0
+@conflict gstreamer1-plugins-ugly-<1.22.0
+@so lib/gstreamer-${API}/libgstadaptivedemux2.so
 @so lib/gstreamer-${API}/libgstalaw.so
 @so lib/gstreamer-${API}/libgstalpha.so
 @so lib/gstreamer-${API}/libgstalphacolor.so
@@ -61,6 +62,7 @@
 @so lib/gstreamer-${API}/libgstwavpack.so
 @so lib/gstreamer-${API}/libgstwavparse.so
 @so lib/gstreamer-${API}/libgstximagesrc.so
+@so lib/gstreamer-${API}/libgstxingmux.so
 @so lib/gstreamer-${API}/libgsty4menc.so
 share/gstreamer-${API}/presets/
 share/gstreamer-${API}/presets/GstIirEqualizer10Bands.prs
@@ -88,6 +90,7 @@ share/locale/hu/LC_MESSAGES/gst-plugins-good-${API}.mo
 share/locale/id/LC_MESSAGES/gst-plugins-good-${API}.mo
 share/locale/it/LC_MESSAGES/gst-plugins-good-${API}.mo
 share/locale/ja/LC_MESSAGES/gst-plugins-good-${API}.mo
+share/locale/ka/LC_MESSAGES/gst-plugins-good-${API}.mo
 share/locale/ky/LC_MESSAGES/gst-plugins-good-${API}.mo
 share/locale/lt/LC_MESSAGES/gst-plugins-good-${API}.mo
 share/locale/lv/LC_MESSAGES/gst-plugins-good-${API}.mo

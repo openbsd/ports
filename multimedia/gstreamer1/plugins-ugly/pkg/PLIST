@@ -5,7 +5,6 @@
 @so lib/gstreamer-${API}/libgstdvdsub.so
 @so lib/gstreamer-${API}/libgstrealmedia.so
 @so lib/gstreamer-${API}/libgstx264.so
-@so lib/gstreamer-${API}/libgstxingmux.so
 share/gstreamer-${API}/presets/
 share/gstreamer-${API}/presets/GstX264Enc.prs
 share/locale/af/LC_MESSAGES/gst-plugins-ugly-${API}.mo
@@ -30,6 +29,7 @@ share/locale/hu/LC_MESSAGES/gst-plugins-ugly-${API}.mo
 share/locale/id/LC_MESSAGES/gst-plugins-ugly-${API}.mo
 share/locale/it/LC_MESSAGES/gst-plugins-ugly-${API}.mo
 share/locale/ja/LC_MESSAGES/gst-plugins-ugly-${API}.mo
+share/locale/ka/LC_MESSAGES/gst-plugins-ugly-${API}.mo
 share/locale/lt/LC_MESSAGES/gst-plugins-ugly-${API}.mo
 share/locale/lv/LC_MESSAGES/gst-plugins-ugly-${API}.mo
 share/locale/ms/LC_MESSAGES/gst-plugins-ugly-${API}.mo

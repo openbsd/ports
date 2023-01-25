@@ -202,6 +202,7 @@ include/gstreamer-${API}/gst/video/video-overlay-composition.h
 include/gstreamer-${API}/gst/video/video-prelude.h
 include/gstreamer-${API}/gst/video/video-resampler.h
 include/gstreamer-${API}/gst/video/video-scaler.h
+include/gstreamer-${API}/gst/video/video-sei.h
 include/gstreamer-${API}/gst/video/video-tile.h
 include/gstreamer-${API}/gst/video/video.h
 include/gstreamer-${API}/gst/video/videodirection.h
@@ -247,9 +248,8 @@ lib/gstreamer-${API}/include/gst/gl/gstglconfig.h
 @so lib/gstreamer-${API}/libgsttcp.so
 @so lib/gstreamer-${API}/libgsttheora.so
 @so lib/gstreamer-${API}/libgsttypefindfunctions.so
-@so lib/gstreamer-${API}/libgstvideoconvert.so
+@so lib/gstreamer-${API}/libgstvideoconvertscale.so
 @so lib/gstreamer-${API}/libgstvideorate.so
-@so lib/gstreamer-${API}/libgstvideoscale.so
 @so lib/gstreamer-${API}/libgstvideotestsrc.so
 @so lib/gstreamer-${API}/libgstvolume.so
 @so lib/gstreamer-${API}/libgstvorbis.so
@@ -322,6 +322,7 @@ share/locale/hu/LC_MESSAGES/gst-plugins-base-${API}.mo
 share/locale/id/LC_MESSAGES/gst-plugins-base-${API}.mo
 share/locale/it/LC_MESSAGES/gst-plugins-base-${API}.mo
 share/locale/ja/LC_MESSAGES/gst-plugins-base-${API}.mo
+share/locale/ka/LC_MESSAGES/gst-plugins-base-${API}.mo
 share/locale/lt/LC_MESSAGES/gst-plugins-base-${API}.mo
 share/locale/lv/LC_MESSAGES/gst-plugins-base-${API}.mo
 share/locale/nb/LC_MESSAGES/gst-plugins-base-${API}.mo
