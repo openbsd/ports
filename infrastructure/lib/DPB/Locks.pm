@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Locks.pm,v 1.52 2019/07/01 08:59:41 espie Exp $
+# $OpenBSD: Locks.pm,v 1.53 2023/01/25 13:53:48 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -109,7 +109,7 @@ sub parse_file
 	while(<$fh>) {
 		chomp;
 		if (m/^dpb\=(\d+)\s+on\s+(\S+)$/) {
-			if (defined $i->{dpb_pib}) {
+			if (defined $i->{dpb_pid}) {
 				$i->set_bad("duplicate dpb field");
 				next;
 			}
