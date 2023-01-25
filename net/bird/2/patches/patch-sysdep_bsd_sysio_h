@@ -1,7 +1,7 @@
 Index: sysdep/bsd/sysio.h
 --- sysdep/bsd/sysio.h.orig
 +++ sysdep/bsd/sysio.h
-@@ -204,7 +204,7 @@ sk_prepare_ip_header(sock *s, void *hdr, int dlen)
+@@ -236,7 +236,7 @@ sk_prepare_ip_header(sock *s, void *hdr, int dlen)
  #define TCP_SIG_SPI 0x1000
  #endif
  

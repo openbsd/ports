@@ -1,4 +1,4 @@
-DISTNAME=	bird-2.0.11
+DISTNAME=	bird-2.0.12
 
 COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
@@ -8,8 +8,6 @@ WANTLIB=	c curses pthread readline ssh
 LIB_DEPENDS=	security/libssh
 
 MAKE_FLAGS=	VERBOSE=1
-CFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+= --enable-pthreads \
 		--enable-ssh
 
