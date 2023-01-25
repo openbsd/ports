@@ -19,4 +19,3 @@ the GNU Gatekeeper. The main PTLib development branch makes substantial API
 changes with every version, while this branch keeps the API stable and only
 makes compatible changes wherever possible.
 This fork is actively maintained to fix bugs and security issues.
-

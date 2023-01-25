@@ -2,6 +2,7 @@ COMMENT =	tool for annotating images
 
 V =		0.6.0
 PKGNAME =	kimageannotator-${V}
+REVISION =	0
 
 GH_ACCOUNT =	ksnip
 GH_PROJECT =	kImageAnnotator

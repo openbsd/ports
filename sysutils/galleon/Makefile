@@ -4,6 +4,7 @@ V =			4.2.8
 PKGNAME =		galleon-${V}
 DISTNAME =		${PKGNAME}.Final
 PKG_ARCH =		*
+REVISION =		0
 
 MASTER_SITES =		https://github.com/wildfly/galleon/releases/download/${V}.Final/
 EXTRACT_SUFX =		.zip

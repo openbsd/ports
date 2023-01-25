@@ -6,4 +6,3 @@ and Syndication. It supports asynchronous sending and fetching of posts and, if
 supported on the server, multimedia files. Almost every modern blogging web
 application that provides an XML data interface supports one of the APIs
 mentioned above.
-

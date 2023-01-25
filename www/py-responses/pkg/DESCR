@@ -1,3 +1,2 @@
 Responses is a utility for mocking out the Python Requests library.
 It also provides a pytest fixture.
-

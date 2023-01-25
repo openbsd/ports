@@ -4,6 +4,7 @@ MODGO_MODNAME =	github.com/vultr/vultr-cli/v2
 MODGO_VERSION =	v2.15.0
 
 DISTNAME =	vultr-cli-${MODGO_VERSION}
+REVISION =	0
 
 CATEGORIES =	sysutils
 

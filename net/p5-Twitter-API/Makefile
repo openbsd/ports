@@ -2,6 +2,7 @@ COMMENT =	Twitter REST API library for Perl
 DISTNAME =	Twitter-API-1.0006
 CATEGORIES =	net
 PKG_ARCH =	*
+REVISION =	0
 
 MAINTAINER =	Andrew Hewus Fresh <afresh1@openbsd.org>
 

@@ -7,4 +7,3 @@ What sets FlatBuffers apart is that it represents hierarchical data in
 a flat binary buffer in such a way that it can still be accessed
 directly without parsing/unpacking, while also still supporting data
 structure evolution (forwards/backwards compatibility).
-

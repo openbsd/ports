@@ -24,4 +24,3 @@ If you receive errors starting after an upgrade, try the following:
   c. ${HOME}/.config/JetBrains
 3. Relaunch intellij
 4. Reinstall the removed plugins
-

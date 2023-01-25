@@ -1,6 +1,6 @@
 MODPY_EGG_VERSION =	5.2.1
 TRYTON_MODULE =		sale_promotion
-REVISION =		3
+REVISION =		4
 
 TRYTON_DEPENDS +=	company \
 			product \

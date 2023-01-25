@@ -4,7 +4,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Text-RecordParser-1.6.5
 CATEGORIES=	textproc devel
-REVISION=	0
+REVISION=	1
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

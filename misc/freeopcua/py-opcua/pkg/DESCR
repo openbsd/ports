@@ -5,4 +5,3 @@ both a low level interface to send and receive all UA defined
 structures and high level classes allowing to write a server or a
 client in a few lines.  It is easy to mix high level objects and
 low level UA calls in one application.
-

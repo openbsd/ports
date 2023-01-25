@@ -4,6 +4,7 @@ V=			2022.2.3
 DISTNAME=		ideaIC-${V}-no-jbr
 PKGNAME=		intellij-${V}
 CATEGORIES=		devel
+REVISION=		0
 
 HOMEPAGE=		https://www.jetbrains.com/idea/
 MAINTAINER=		Lucas Raab <tuftedocelot@fastmail.fm>

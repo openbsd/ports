@@ -33,4 +33,3 @@ Two scripts are also included and installed by default:
              to see all the options.
  * factor.pl operates similar to the GNU factor program.
              It supports bigint and expression inputs.
-

@@ -21,4 +21,3 @@ Alacritty looks for a configuration file in the following paths:
 If none of these paths exist, then the following file is created on first run:
 
 	`$XDG_CONFIG_HOME/alacritty/alacritty.yml`
-

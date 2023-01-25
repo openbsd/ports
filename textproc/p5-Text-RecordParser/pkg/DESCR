@@ -11,5 +11,3 @@ This module also includes three tools:
   p5-Text-TabularDisplay)
 - tabmerge: unify delimited files on common fields (requires
   p5-Text-TabularDisplay)
-
-

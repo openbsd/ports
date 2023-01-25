@@ -55,4 +55,3 @@ adding this to config.php usually solves the issue:
   array (
     0 => 'server.public.ip'
   ),
-

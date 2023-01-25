@@ -1,6 +1,7 @@
 COMMENT =	Devel::StackTrace + PadWalker
 
 DISTNAME =	Devel-StackTrace-WithLexicals-2.01
+REVISION =	0
 
 CATEGORIES =	devel
 
