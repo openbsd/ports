@@ -6,7 +6,7 @@ NOT_FOR_ARCHS=	sparc64
 # changelogs at https://github.com/librenms/librenms/releases
 GH_ACCOUNT=	librenms
 GH_PROJECT=	librenms
-GH_TAGNAME=	22.12.0
+GH_TAGNAME=	23.1.0
 
 DISTFILES=	${GH_DISTFILE} \
 		${PKGNAME}-vendor.tar.xz:0
@@ -94,7 +94,8 @@ do-install:
 	rm -rf ${INSTDIR}/tests \
 	    ${INSTDIR}/vendor/tecnickcom/tcpdf/examples \
 	    ${INSTDIR}/vendor/easybook/geshi/docs
-	find ${INSTDIR} -name '.git*' -exec rm -rf {} +
+	find ${INSTDIR} -type f -and \( -name '.git*' -or -name '*.beforesubst' \) -delete
+	find ${INSTDIR} -type d -and -name '.github' -exec rm -rf {} +
 	ln -s /var/www/librenms/lnms ${WRKINST}/${LOCALBASE}/bin/
 	${INSTALL_DATA} ${WRKSRC}/misc/lnms-completion.bash \
 	    ${WRKINST}/${LOCALBASE}/share/bash-completion/completions/lnms

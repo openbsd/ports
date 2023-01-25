@@ -331,6 +331,7 @@ librenms/LibreNMS/OS/Asyncos.php
 librenms/LibreNMS/OS/AviatWtm.php
 librenms/LibreNMS/OS/Avocent.php
 librenms/LibreNMS/OS/Awplus.php
+librenms/LibreNMS/OS/Axos.php
 librenms/LibreNMS/OS/Barracudangfirewall.php
 librenms/LibreNMS/OS/Bats.php
 librenms/LibreNMS/OS/Beagleboard.php
@@ -2227,6 +2228,7 @@ librenms/html/images/os/linksys.png
 librenms/html/images/os/linux.svg
 librenms/html/images/os/linuxmint.svg
 librenms/html/images/os/logmaster.png
+librenms/html/images/os/loop-telecom.svg
 librenms/html/images/os/maipu.png
 librenms/html/images/os/mandrake.png
 librenms/html/images/os/marathonups.png
@@ -2806,6 +2808,7 @@ librenms/includes/definitions/discovery/avtech.yaml
 librenms/includes/definitions/discovery/awplus.yaml
 librenms/includes/definitions/discovery/axisaudio.yaml
 librenms/includes/definitions/discovery/axiscam.yaml
+librenms/includes/definitions/discovery/axos.yaml
 librenms/includes/definitions/discovery/barracudaspamfirewall.yaml
 librenms/includes/definitions/discovery/barracudawafirewall.yaml
 librenms/includes/definitions/discovery/bats.yaml
@@ -3055,6 +3058,7 @@ librenms/includes/definitions/discovery/ligoos.yaml
 librenms/includes/definitions/discovery/linksys-ss.yaml
 librenms/includes/definitions/discovery/linux.yaml
 librenms/includes/definitions/discovery/logmaster.yaml
+librenms/includes/definitions/discovery/loop-telecom.yaml
 librenms/includes/definitions/discovery/luminato.yaml
 librenms/includes/definitions/discovery/mbg-ltos6.yaml
 librenms/includes/definitions/discovery/mcafeewebgateway.yaml
@@ -3492,6 +3496,7 @@ librenms/includes/definitions/ligoos.yaml
 librenms/includes/definitions/linksys-ss.yaml
 librenms/includes/definitions/linux.yaml
 librenms/includes/definitions/logmaster.yaml
+librenms/includes/definitions/loop-telecom.yaml
 librenms/includes/definitions/luminato.yaml
 librenms/includes/definitions/macosx.yaml
 librenms/includes/definitions/magnum.yaml
@@ -3806,6 +3811,7 @@ librenms/includes/discovery/discovery-arp.inc.php
 librenms/includes/discovery/discovery-protocols.inc.php
 librenms/includes/discovery/entity-physical/
 librenms/includes/discovery/entity-physical.inc.php
+librenms/includes/discovery/entity-physical/axos.inc.php
 librenms/includes/discovery/entity-physical/ciena-sds.inc.php
 librenms/includes/discovery/entity-physical/cimc.inc.php
 librenms/includes/discovery/entity-physical/eltex-mes23xx.inc.php
@@ -3856,6 +3862,7 @@ librenms/includes/discovery/ports/airos-af-ltu.inc.php
 librenms/includes/discovery/ports/brocade.inc.php
 librenms/includes/discovery/ports/edgeosolt.inc.php
 librenms/includes/discovery/ports/ekinops.inc.php
+librenms/includes/discovery/ports/loop-telecom.inc.php
 librenms/includes/discovery/ports/luminato.inc.php
 librenms/includes/discovery/ports/moxa-etherdevice.inc.php
 librenms/includes/discovery/ports/zynos.inc.php
@@ -4136,6 +4143,7 @@ librenms/includes/discovery/sensors/state/infinera-groove.inc.php
 librenms/includes/discovery/sensors/state/innovaphone.inc.php
 librenms/includes/discovery/sensors/state/juniper-mss.inc.php
 librenms/includes/discovery/sensors/state/linux.inc.php
+librenms/includes/discovery/sensors/state/loop-telecom.inc.php
 librenms/includes/discovery/sensors/state/netagent2.inc.php
 librenms/includes/discovery/sensors/state/nokia-isam.inc.php
 librenms/includes/discovery/sensors/state/nxos.inc.php
@@ -6110,6 +6118,7 @@ librenms/includes/polling/ports/os/ekinops.inc.php
 librenms/includes/polling/ports/os/fabos.inc.php
 librenms/includes/polling/ports/os/infinera-groove.inc.php
 librenms/includes/polling/ports/os/junos.inc.php
+librenms/includes/polling/ports/os/loop-telecom.inc.php
 librenms/includes/polling/ports/os/luminato.inc.php
 librenms/includes/polling/ports/os/moxa-etherdevice.inc.php
 librenms/includes/polling/ports/os/nokia-isam.inc.php
@@ -7017,6 +7026,11 @@ librenms/mibs/calix/AE-ALARM-TABLE-MIB
 librenms/mibs/calix/AE-PM-TABLE-MIB
 librenms/mibs/calix/AE-TC
 librenms/mibs/calix/AE-VOICE-STATS-MIB
+librenms/mibs/calix/AXOS-ALARM-MIB
+librenms/mibs/calix/Axos-Card-MIB
+librenms/mibs/calix/Axos-Ont-MIB
+librenms/mibs/calix/Axos-System-MIB
+librenms/mibs/calix/Axos-Trap-MIB
 librenms/mibs/calix/CALIX-PRODUCT-MIB
 librenms/mibs/calix/CALIX-SMI
 librenms/mibs/calix/CALIX-SOAM-EXT-MIB
@@ -9555,6 +9569,8 @@ librenms/mibs/linksys/LINKSYS-vlan-MIB
 librenms/mibs/linksys/LINKSYS-vlanVoice-MIB
 librenms/mibs/logmaster/
 librenms/mibs/logmaster/UPSMATE-MIB
+librenms/mibs/loop-telecom/
+librenms/mibs/loop-telecom/L-AM3440-A-Private
 librenms/mibs/maipu/
 librenms/mibs/maipu/MAIPU-SMI
 librenms/mibs/maipu/MPIOS-MIB
@@ -11093,6 +11109,7 @@ librenms/resources/lang/zh-TW/settings.php
 librenms/resources/lang/zh-TW/smokeping.php
 librenms/resources/lang/zh-TW/syslog.php
 librenms/resources/lang/zh-TW/validation.php
+librenms/resources/lang/zh-TW/widgets.php
 librenms/resources/lang/zh-TW/wireless.php
 librenms/resources/sass/
 librenms/resources/sass/_variables.scss
