@@ -4,10 +4,9 @@ DISTNAME=	suite3270-4.0ga10-src
 PKGNAME=	c3270-4.0.10
 EXTRACT_SUFX=	.tgz
 CATEGORIES=	comms
+REVISION=	0
 
 HOMEPAGE=	http://x3270.bgp.nu/
-
-MAINTAINER=	Jeremy Evans <jeremy@openbsd.org>
 
 # BSD-like
 PERMIT_PACKAGE=	Yes
