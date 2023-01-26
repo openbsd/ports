@@ -1,0 +1,15 @@
+#!/bin/ksh
+
+daemon="${LOCALBASE}/bin/stayrtr"
+daemon_user="_stayrtr"
+daemon_logger="daemon.info"
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+
+rc_start() {
+        rc_exec "${daemon} ${daemon_flags}"
+}
+
+rc_cmd $1
