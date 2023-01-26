@@ -1,6 +1,10 @@
+.if ${MACHINE_ARCH} != aarch64 && ${MACHINE_ARCH} != amd64 && ${MACHINE_ARCH} != riscv64
+USE_NOEXECONLY=		Yes
+.endif
+
 PORTROACH=	limit:^1\.0\.
 V=		1.0.2u
-REVISION=	7
+REVISION=	8
 PKGSPEC=	openssl-<1.1.0v0
 
 SHLIBVER=	6.2
