@@ -1,0 +1,55 @@
+Index: js/src/ctypes/libffi/src/x86/unix64.S
+--- js/src/ctypes/libffi/src/x86/unix64.S.orig
++++ js/src/ctypes/libffi/src/x86/unix64.S
+@@ -85,12 +85,16 @@ ffi_call_unix64:
+ 
+ 	/* The first byte of the flags contains the FFI_TYPE.  */
+ 	movzbl	%cl, %r10d
+-	leaq	.Lstore_table(%rip), %r11
++	leaq	.Lstore_offsets(%rip), %r11
+ 	movslq	(%r11, %r10, 4), %r10
++	leaq	.Lstore_table(%rip), %r11
+ 	addq	%r11, %r10
+ 	jmp	*%r10
+ 
+ .Lstore_table:
++
++	.section .rodata
++.Lstore_offsets:
+ 	.long	.Lst_void-.Lstore_table		/* FFI_TYPE_VOID */
+ 	.long	.Lst_sint32-.Lstore_table	/* FFI_TYPE_INT */
+ 	.long	.Lst_float-.Lstore_table	/* FFI_TYPE_FLOAT */
+@@ -106,6 +110,7 @@ ffi_call_unix64:
+ 	.long	.Lst_int64-.Lstore_table	/* FFI_TYPE_SINT64 */
+ 	.long	.Lst_struct-.Lstore_table	/* FFI_TYPE_STRUCT */
+ 	.long	.Lst_int64-.Lstore_table	/* FFI_TYPE_POINTER */
++	.previous
+ 
+ 	.align 2
+ .Lst_void:
+@@ -234,12 +239,16 @@ ffi_closure_unix64:
+ 
+ 	/* The first byte of the return value contains the FFI_TYPE.  */
+ 	movzbl	%al, %r10d
+-	leaq	.Lload_table(%rip), %r11
++	leaq	.Lload_offsets(%rip), %r11
+ 	movslq	(%r11, %r10, 4), %r10
++	leaq	.Lload_table(%rip), %r11
+ 	addq	%r11, %r10
+ 	jmp	*%r10
+ 
+ .Lload_table:
++
++	.section .rodata
++.Lload_offsets:
+ 	.long	.Lld_void-.Lload_table		/* FFI_TYPE_VOID */
+ 	.long	.Lld_int32-.Lload_table		/* FFI_TYPE_INT */
+ 	.long	.Lld_float-.Lload_table		/* FFI_TYPE_FLOAT */
+@@ -255,6 +264,7 @@ ffi_closure_unix64:
+ 	.long	.Lld_int64-.Lload_table		/* FFI_TYPE_SINT64 */
+ 	.long	.Lld_struct-.Lload_table	/* FFI_TYPE_STRUCT */
+ 	.long	.Lld_int64-.Lload_table		/* FFI_TYPE_POINTER */
++	.previous
+ 
+ 	.align 2
+ .Lld_void:
