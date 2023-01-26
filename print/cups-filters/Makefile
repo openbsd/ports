@@ -3,8 +3,8 @@ BROKEN-hppa=	ICE on filter/pdftopdf/qpdf_pdftopdf.cc:147
 
 COMMENT=	OpenPrinting CUPS filters
 
-DISTNAME=	cups-filters-1.28.16
-REVISION=	0
+V=		1.28.17
+DISTNAME=	cups-filters-${V}
 
 CATEGORIES=	print
 
@@ -25,7 +25,7 @@ WANTLIB += gmp gnutls gobject-2.0 hogweed iconv idn2 intl jpeg
 WANTLIB += lcms2 lzma m nettle openjp2 p11-kit pcre2-8 png poppler
 WANTLIB += poppler-cpp qpdf ssl tasn1 tiff unistring z zstd
 
-MASTER_SITES=	https://www.openprinting.org/download/cups-filters/
+MASTER_SITES=	https://github.com/OpenPrinting/cups-filters/releases/download/${V}/
 
 # cc1plus: error: unrecognized command line option "-std=c++0x"
 COMPILER=	base-clang ports-gcc
