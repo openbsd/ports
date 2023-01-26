@@ -2,14 +2,15 @@ COMMENT=	stack-based interpreter for terminal applications
 
 DISTNAME=	slang-2.3.3
 PKGNAME=	lib${DISTNAME}
+REVISION=	0
 EXTRACT_SUFX=	.tar.bz2
 SHARED_LIBS=	slang 17.0
 
 CATEGORIES=	devel
-MASTER_SITES=	http://www.jedsoft.org/releases/slang/ \
-		http://www.jedsoft.org/releases/slang/old/
+MASTER_SITES=	https://www.jedsoft.org/releases/slang/ \
+		https://www.jedsoft.org/releases/slang/old/
 
-HOMEPAGE=	http://jedsoft.org/slang/
+HOMEPAGE=	https://jedsoft.org/slang/
 
 # Artistic
 PERMIT_PACKAGE=	Yes
@@ -21,6 +22,7 @@ LIB_DEPENDS=		converters/libiconv \
 			graphics/png \
 			textproc/oniguruma
 
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 AUTOCONF_VERSION=	2.69
 CONFIGURE_STYLE=	autoconf no-autoheader
 AUTOCONF_DIR=		${WRKSRC}/autoconf
