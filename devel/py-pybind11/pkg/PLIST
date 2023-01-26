@@ -38,7 +38,10 @@ lib/python${MODPY_VERSION}/site-packages/pybind11/include/pybind11/detail/init.h
 lib/python${MODPY_VERSION}/site-packages/pybind11/include/pybind11/detail/internals.h
 lib/python${MODPY_VERSION}/site-packages/pybind11/include/pybind11/detail/type_caster_base.h
 lib/python${MODPY_VERSION}/site-packages/pybind11/include/pybind11/detail/typeid.h
+lib/python${MODPY_VERSION}/site-packages/pybind11/include/pybind11/eigen/
 lib/python${MODPY_VERSION}/site-packages/pybind11/include/pybind11/eigen.h
+lib/python${MODPY_VERSION}/site-packages/pybind11/include/pybind11/eigen/matrix.h
+lib/python${MODPY_VERSION}/site-packages/pybind11/include/pybind11/eigen/tensor.h
 lib/python${MODPY_VERSION}/site-packages/pybind11/include/pybind11/embed.h
 lib/python${MODPY_VERSION}/site-packages/pybind11/include/pybind11/eval.h
 lib/python${MODPY_VERSION}/site-packages/pybind11/include/pybind11/functional.h
