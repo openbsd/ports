@@ -1,0 +1,14 @@
+https://bugzilla.mozilla.org/show_bug.cgi?id=1812604
+
+Index: ipc/chromium/src/third_party/libevent/bsd/event2/event-config.h
+--- ipc/chromium/src/third_party/libevent/bsd/event2/event-config.h.orig
++++ ipc/chromium/src/third_party/libevent/bsd/event2/event-config.h
+@@ -512,7 +512,7 @@
+ #endif
+ 
+ /* The size of `time_t', as computed by sizeof. */
+-#ifdef __LP64__
++#if defined(__LP64__) || defined (__OpenBSD__)
+ #define EVENT__SIZEOF_TIME_T 8
+ #else
+ #define EVENT__SIZEOF_TIME_T 4
