@@ -23,6 +23,8 @@ vpn-user-portal/locale/sv-SE.php
 vpn-user-portal/locale/uk-UA.php
 vpn-user-portal/schema/
 vpn-user-portal/schema/2022022201.schema
+vpn-user-portal/schema/2022022201_2023011801.migration
+vpn-user-portal/schema/2023011801.schema
 vpn-user-portal/src/
 vpn-user-portal/src/Base64.php
 vpn-user-portal/src/Base64UrlSafe.php
@@ -156,8 +158,8 @@ vpn-user-portal/src/LoggerInterface.php
 vpn-user-portal/src/Migration.php
 vpn-user-portal/src/NullLogger.php
 vpn-user-portal/src/OAuth/
-vpn-user-portal/src/OAuth/ClientDb.php
 vpn-user-portal/src/OAuth/NullAccessTokenVerifier.php
+vpn-user-portal/src/OAuth/VpnClientDb.php
 vpn-user-portal/src/OAuth/VpnOAuthServer.php
 vpn-user-portal/src/OpenVpn/
 vpn-user-portal/src/OpenVpn/CA/
@@ -222,7 +224,6 @@ vpn-user-portal/vendor/fkooman/oauth2-server/example/generate_key.php
 vpn-user-portal/vendor/fkooman/oauth2-server/example/revoke.php
 vpn-user-portal/vendor/fkooman/oauth2-server/example/token.php
 vpn-user-portal/vendor/fkooman/oauth2-server/phpstan.neon
-vpn-user-portal/vendor/fkooman/oauth2-server/phpunit.xml.dist
 vpn-user-portal/vendor/fkooman/oauth2-server/psalm.xml.dist
 vpn-user-portal/vendor/fkooman/oauth2-server/src/
 vpn-user-portal/vendor/fkooman/oauth2-server/src/AccessToken.php
