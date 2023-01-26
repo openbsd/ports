@@ -1,6 +1,6 @@
 COMMENT =	utility for gitignore style pattern matching of file paths
 
-MODPY_EGG_VERSION = 0.10.3
+MODPY_EGG_VERSION = 0.11.0
 DISTNAME =	pathspec-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 
@@ -11,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+MODPY_PYBUILD =		flit_core
 
 FLAVORS =		python3
 FLAVOR =		python3
