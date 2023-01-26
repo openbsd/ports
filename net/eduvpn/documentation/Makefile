@@ -2,8 +2,8 @@ COMMENT=	documentation repo for eduVPN
 
 GH_ACCOUNT=	eduvpn
 GH_PROJECT=	documentation
-GH_COMMIT=	e369beb450323255839205bd880415287333d517
-DISTNAME=	eduvpn-documentation-3.20221130
+GH_COMMIT=	35b54464479b428a7c596f671d092d39e24a2e60
+DISTNAME=	eduvpn-documentation-3.20230123
 
 # CC-BY-SA
 PERMIT_PACKAGE=	Yes

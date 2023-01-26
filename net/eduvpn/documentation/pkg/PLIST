@@ -77,6 +77,8 @@ share/doc/eduvpn/development_setup.sh
 share/doc/eduvpn/img/
 share/doc/eduvpn/img/ARCH.png
 share/doc/eduvpn/img/port_usage_nl.eduvpn.org_20200420.png
+share/doc/eduvpn/img/vpn-user-portal_stats.png
+share/doc/eduvpn/img/vpn-user-portal_stats_aggregated.png
 share/doc/eduvpn/lets_encrypt_debian.sh
 share/doc/eduvpn/lets_encrypt_fedora.sh
 share/doc/eduvpn/repo_backup.sh
