@@ -8,4 +8,4 @@ To use your local RPKI cache, add to the root's crontab:
 
 And run:
 
-	# rcctl set stayrtr flags -cache ${VARBASE}/db/rpki-client/json
+	# rcctl set stayrtr flags -cache /var/db/rpki-client/json

@@ -124,7 +124,6 @@
      SUBDIR += gomuks
      SUBDIR += gopher
      SUBDIR += gophernicus
-     SUBDIR += gortr
      SUBDIR += gotthard
      SUBDIR += gpodder
      SUBDIR += grake
