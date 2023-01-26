@@ -10,7 +10,7 @@ V=		3.0.7
 PKGNAME=	openssl-${V}
 PKGSPEC=	openssl->=3v0,<3.1v0
 EPOCH=		0
-REVISION=	5
+REVISION=	6
 
 SHLIBVER=	12.2
 SHARED_LIBS=	crypto ${SHLIBVER} \
@@ -47,6 +47,7 @@ INSTALL_TARGET+=	install_man_docs
 # picked up by configure scripts without explicitly CPPFLAGS/LDFLAGS.
 # common names like lib/openssl, openssl/lib, etc, *do* get picked up.
 MAKE_FLAGS+=	CC="${CC}" \
+		LDFLAGS="${LDFLAGS}" \
 		LIBDIR="lib/eopenssl30" \
 		MANDIR=${PREFIX}/lib/eopenssl30/man \
 		MANSUFFIX=
