@@ -899,6 +899,7 @@ share/help/zh_CN/zenity/scale.page
 share/help/zh_CN/zenity/text.page
 share/help/zh_CN/zenity/usage.page
 share/help/zh_CN/zenity/warning.page
+share/locale/ab/LC_MESSAGES/zenity.mo
 share/locale/af/LC_MESSAGES/zenity.mo
 share/locale/am/LC_MESSAGES/zenity.mo
 share/locale/ar/LC_MESSAGES/zenity.mo
