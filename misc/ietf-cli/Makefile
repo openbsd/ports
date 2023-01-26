@@ -2,12 +2,12 @@ COMMENT=	command-line tools to work with RFCs and Internet Drafts
 
 GH_ACCOUNT=	paulehoffman
 GH_PROJECT=	ietf-cli
-GH_TAGNAME=	1.18
-REVISION=	1
+#GH_TAGNAME=	1.23
+# "Didn't check syntax" fix, parent commit is tagged 1.23
+GH_COMMIT=	3d61e38094fccb92f0e197932b49dcdfab5db228
+DISTNAME=	ietf-cli-1.23
 
 CATEGORIES=	misc net books
-
-HOMEPAGE=	https://trac.tools.ietf.org/tools/ietf-cli/
 
 MAINTAINER=	Klemens Nanni <kn@openbsd.org>
 
@@ -15,6 +15,7 @@ MAINTAINER=	Klemens Nanni <kn@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
+MODPY_BUILDDEP=	Yes
 
 NO_BUILD=	Yes
 NO_TEST=	Yes

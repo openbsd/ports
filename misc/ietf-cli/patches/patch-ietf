@@ -3,7 +3,7 @@ Adjust ConfigPlaces.
 Index: ietf
 --- ietf.orig
 +++ ietf
-@@ -92,7 +92,7 @@ __license__ = "https://en.wikipedia.org/wiki/WTFPL"
+@@ -103,7 +103,7 @@ __license__ = "https://en.wikipedia.org/wiki/WTFPL"
  
  KnownCmds = ("auth48", "author", "bcp", "bcponly", "charter", "conflict", "diff", "draft", "draftreport", \
  	 "iesg", "mirror", "rfc", "rfcextra", "rfcinfo", "rg", "std", "stdonly", "tools", "tracker", "foo")
