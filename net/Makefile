@@ -685,6 +685,7 @@
      SUBDIR += ssldump
      SUBDIR += sslh
      SUBDIR += sslsniffer
+     SUBDIR += stayrtr
      SUBDIR += strongswan
      SUBDIR += swirc
      SUBDIR += synapse
