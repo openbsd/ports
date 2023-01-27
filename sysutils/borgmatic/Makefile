@@ -1,7 +1,6 @@
 COMMENT =		wrapper for Borg to create and prune backups
 
-MODPY_EGG_VERSION =	1.7.5
-REVISION =		1
+MODPY_EGG_VERSION =	1.7.6
 DISTNAME =		borgmatic-${MODPY_EGG_VERSION}
 
 MAINTAINER =		Stuart Henderson <stu.ports@spacehopper.org>
@@ -28,7 +27,8 @@ TEST_DEPENDS =		devel/py-flexmock${MODPY_FLAVOR} \
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/borgmatic/
-	${INSTALL_DATA} ${FILESDIR}/config.yaml.dist \
-		${PREFIX}/share/examples/borgmatic/
+	PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
+	    ${PREFIX}/bin/generate-borgmatic-config \
+	    --destination ${PREFIX}/share/examples/borgmatic/config.yaml.dist
 
 .include <bsd.port.mk>
