@@ -1,5 +1,6 @@
 Hunk #1: When decoding, the status display has Y2K problem.
-Hunk #2: fix an infinite loop on unsigned char archs (powerpc and arm*)
+Hunk #2: NUL vs NULL mismatch
+Hunk #3: fix an infinite loop on unsigned char archs (powerpc and arm*)
 
 Index: decode.c
 --- decode.c.orig
@@ -15,6 +16,15 @@ Index: decode.c
  #ifdef __TURBOC__
  	memcpy( &timep[0], head->time, 4);
  	timep[1] = timep[0];
+@@ -344,7 +344,7 @@ decish()
+ 		fprintf(stderr, "file name change '%s'", name);
+ 		strcpy(buff, name);
+ 		if((p = (unsigned char *)index(name, '.')) != NULL)
+-		    *p = NULL;
++		    *p = '\0';
+ 		do {
+ 		    sprintf(buff, "%s.%03d", name, i++);
+ 		} while(access(buff,0) == 0);
 @@ -675,8 +675,7 @@ FILE    *ipath;
  int     maxlen;
  char    *buff;
