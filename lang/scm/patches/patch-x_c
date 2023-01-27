@@ -1,0 +1,30 @@
+Index: x.c
+--- x.c.orig
++++ x.c
+@@ -39,6 +39,8 @@
+ #include <X11/Xutil.h>
+ #include <X11/Xatom.h>
+ 
++#include <stdint.h>
++
+ #include "scm.h"
+ 
+ /* These structs are mallocated for use in SMOBS. */
+@@ -334,7 +336,7 @@ SCM make_xcolormap(sdpy, cmp)
+   xcm->display = sdpy;
+   xcm->dpy = DISPLAY(xcm->display)->dpy;
+   xcm->cm = cmp;
+-  XSaveContext(XDISPLAY(sdpy), (XID)cmp, xtc_cmp, z);
++  XSaveContext(XDISPLAY(sdpy), (XID)cmp, xtc_cmp, (void *)(uintptr_t)z);
+   ALLOW_INTS;
+   return z;
+ }
+@@ -582,7 +584,7 @@ SCM CCC2SCM(ccc)
+     DEFER_INTS;
+     CAR(s_ccc) = tc16_xccc;
+     SETCDR(s_ccc, ccc);
+-    XSaveContext(ccc->dpy, (XID)ccc, xtc_ccc, s_ccc);
++    XSaveContext(ccc->dpy, (XID)ccc, xtc_ccc, (void *)(uintptr_t)s_ccc);
+     ALLOW_INTS;
+   }
+   return s_ccc;

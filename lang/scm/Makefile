@@ -5,7 +5,7 @@ BROKEN-$m =	segfaults in longjump return while testing continuations
 .endfor
 
 COMMENT =	scheme r5 interpreter
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	lang
 
