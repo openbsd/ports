@@ -1,0 +1,12 @@
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -80,7 +80,7 @@ functionality while keeping current with the Soulseek 
+         data_files=[
+             ("share/applications", ["data/%s.desktop" % config.application_id]),
+             ("share/metainfo", ["data/%s.appdata.xml" % config.application_id]),
+-            ("share/man/man1", ["data/nicotine.1"]),
++            ("man/man1", ["data/nicotine.1"]),
+             ("share/icons/hicolor/16x16/apps",
+                 ["pynicotine/gtkgui/icons/hicolor/16x16/apps/%s.png" % config.application_id]),
+             ("share/icons/hicolor/24x24/apps",
