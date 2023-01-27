@@ -1,9 +1,8 @@
 COMMENT =		ORM (Object Relational Manager) for Python
 
-MODPY_EGG_VERSION =	3.10.0
+MODPY_EGG_VERSION =	3.10.1
 DISTNAME =		SQLObject-${MODPY_EGG_VERSION}
 PKGNAME =		py-sqlobject-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		databases
 
@@ -17,7 +16,6 @@ FLAVOR =		python3
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
-MODPY_PYTEST_ARGS =	sqlobject/tests
 
 MODULES =		lang/python
 RUN_DEPENDS =		www/py-formencode${MODPY_FLAVOR} \
