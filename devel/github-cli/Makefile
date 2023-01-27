@@ -18,8 +18,6 @@ WANTLIB +=	c pthread
 MODULES =	lang/go
 MODGO_LDFLAGS +=	-X "github.com/cli/cli/v${V:R:R}/internal/build.Version=$V"
 
-SEPARATE_BUILD =	Yes
-
 do-test:
 	cd ${WRKSRC} && ${MODGO_TEST_CMD} ./...
 
