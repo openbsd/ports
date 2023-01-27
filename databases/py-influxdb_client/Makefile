@@ -1,9 +1,8 @@
 COMMENT =	Python client library for InfluxDB 1.8/2.0+/Cloud
 
-MODPY_EGG_VERSION =	1.33.0
+MODPY_EGG_VERSION =	1.36.0
 DISTNAME =	influxdb_client-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
 
 CATEGORIES =	databases
 

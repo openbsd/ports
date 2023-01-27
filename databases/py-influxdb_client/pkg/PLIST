@@ -228,6 +228,10 @@ lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/${MODPY_PYCACHE}check_view_properties.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/${MODPY_PYCACHE}checks.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/${MODPY_PYCACHE}checks.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/${MODPY_PYCACHE}column_data_type.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/${MODPY_PYCACHE}column_data_type.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/${MODPY_PYCACHE}column_semantic_type.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/${MODPY_PYCACHE}column_semantic_type.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/${MODPY_PYCACHE}conditional_expression.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/${MODPY_PYCACHE}conditional_expression.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -362,6 +366,16 @@ lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/${MODPY_PYCACHE}map_variable_properties.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/${MODPY_PYCACHE}markdown_view_properties.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/${MODPY_PYCACHE}markdown_view_properties.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/${MODPY_PYCACHE}measurement_schema.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/${MODPY_PYCACHE}measurement_schema.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/${MODPY_PYCACHE}measurement_schema_column.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/${MODPY_PYCACHE}measurement_schema_column.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/${MODPY_PYCACHE}measurement_schema_create_request.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/${MODPY_PYCACHE}measurement_schema_create_request.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/${MODPY_PYCACHE}measurement_schema_list.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/${MODPY_PYCACHE}measurement_schema_list.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/${MODPY_PYCACHE}measurement_schema_update_request.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/${MODPY_PYCACHE}measurement_schema_update_request.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/${MODPY_PYCACHE}member_assignment.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/${MODPY_PYCACHE}member_assignment.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/${MODPY_PYCACHE}member_expression.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -810,6 +824,8 @@ lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/check_patch.py
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/check_status_level.py
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/check_view_properties.py
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/checks.py
+lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/column_data_type.py
+lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/column_semantic_type.py
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/conditional_expression.py
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/config.py
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/constant_variable_properties.py
@@ -877,6 +893,11 @@ lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/logical_expressi
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/logs.py
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/map_variable_properties.py
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/markdown_view_properties.py
+lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/measurement_schema.py
+lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/measurement_schema_column.py
+lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/measurement_schema_create_request.py
+lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/measurement_schema_list.py
+lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/measurement_schema_update_request.py
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/member_assignment.py
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/member_expression.py
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/metadata_backup.py
@@ -1093,6 +1114,8 @@ lib/python${MODPY_VERSION}/site-packages/influxdb_client/service/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/service/${MODPY_PYCACHE}authorizations_service.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/service/${MODPY_PYCACHE}backup_service.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/service/${MODPY_PYCACHE}backup_service.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/influxdb_client/service/${MODPY_PYCACHE}bucket_schemas_service.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/influxdb_client/service/${MODPY_PYCACHE}bucket_schemas_service.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/service/${MODPY_PYCACHE}buckets_service.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/service/${MODPY_PYCACHE}buckets_service.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/service/${MODPY_PYCACHE}cells_service.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1172,6 +1195,7 @@ lib/python${MODPY_VERSION}/site-packages/influxdb_client/service/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/service/_base_service.py
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/service/authorizations_service.py
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/service/backup_service.py
+lib/python${MODPY_VERSION}/site-packages/influxdb_client/service/bucket_schemas_service.py
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/service/buckets_service.py
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/service/cells_service.py
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/service/checks_service.py
