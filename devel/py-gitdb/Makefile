@@ -1,10 +1,9 @@
 COMMENT=		Git object database
 
-MODPY_EGG_VERSION=	4.0.9
+MODPY_EGG_VERSION=	4.0.10
 DISTNAME=		gitdb-${MODPY_EGG_VERSION}
 PKGNAME=		py-gitdb-${MODPY_EGG_VERSION}
 CATEGORIES=		devel
-REVISION=		1
 
 # BSD
 PERMIT_PACKAGE=	Yes
@@ -16,12 +15,11 @@ MODULES=		lang/python
 MODPY_PYBUILD =		setuptools
 MODPY_PI =		Yes
 
-# some tests only work in a git checkout of gitdb (require .git files)
-MODPY_PYTEST_ARGS =	gitdb
-
 FLAVORS =		python3
 FLAVOR =		python3
 
 RUN_DEPENDS=		devel/py-smmap${MODPY_FLAVOR}<6.0
+
+# some tests only work in a git checkout of gitdb (require .git files)
 
 .include <bsd.port.mk>
