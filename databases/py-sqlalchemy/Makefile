@@ -1,6 +1,6 @@
 COMMENT=	database toolkit for Python
 
-MODPY_EGG_VERSION=	1.4.45
+MODPY_EGG_VERSION=	1.4.46
 DISTNAME=	SQLAlchemy-${MODPY_EGG_VERSION}
 PKGNAME=	py-sqlalchemy-${MODPY_EGG_VERSION}
 
