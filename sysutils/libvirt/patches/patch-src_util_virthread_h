@@ -1,0 +1,14 @@
+Work around bogus clang -Wint-conversion warning.
+
+Index: src/util/virthread.h
+--- src/util/virthread.h.orig
++++ src/util/virthread.h
+@@ -212,7 +212,7 @@ int virThreadLocalSet(virThreadLocal *l, void*) G_GNUC
+ 
+ #define VIR_WITH_MUTEX_LOCK_GUARD_(m, name) \
+     for (g_auto(virLockGuard) name = virLockGuardLock(m); name.mutex; \
+-        name.mutex = (virLockGuardUnlock(&name), NULL))
++        virLockGuardUnlock(&name), name.mutex = NULL)
+ /**
+  * VIR_WITH_MUTEX_LOCK_GUARD:
+  *

@@ -1,0 +1,14 @@
+Work around bogus clang -Wint-conversion warning.
+
+Index: src/util/virobject.h
+--- src/util/virobject.h.orig
++++ src/util/virobject.h
+@@ -145,7 +145,7 @@ virObjectListFreeCount(void *list,
+ 
+ #define VIR_WITH_OBJECT_LOCK_GUARD_(o, name) \
+     for (g_auto(virLockGuard) name = virObjectLockGuard(o); name.mutex; \
+-         name.mutex = (virLockGuardUnlock(&name), NULL))
++         virLockGuardUnlock(&name), name.mutex = NULL)
+ 
+ /**
+  * VIR_WITH_OBJECT_LOCK_GUARD:

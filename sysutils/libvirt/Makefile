@@ -1,6 +1,7 @@
 COMMENT=		tool/library for managing platform virtualization
 
 DISTNAME=		libvirt-9.0.0
+REVISION=		0
 
 CATEGORIES=		sysutils devel emulators
 
