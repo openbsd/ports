@@ -1,5 +1,5 @@
 COMMENT =		secure webserver
-DISTNAME =		hiawatha-11.2
+DISTNAME =		hiawatha-11.3
 CATEGORIES =		www net
 
 HOMEPAGE =		https://www.hiawatha-webserver.org/

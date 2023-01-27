@@ -1,5 +1,6 @@
---- config/hiawatha.conf.in.orig	Thu Oct  6 16:59:29 2016
-+++ config/hiawatha.conf.in	Fri Oct  7 03:24:03 2016
+Index: config/hiawatha.conf.in
+--- config/hiawatha.conf.in.orig
++++ config/hiawatha.conf.in
 @@ -12,6 +12,7 @@
  # GENERAL SETTINGS
  #
@@ -25,4 +26,4 @@
 +#CGIwrapper = ${LOCALBASE}/sbin/cgi-wrapper
  #
  #FastCGIserver {
- #	FastCGIid = PHP7
+ #	FastCGIid = PHP8
