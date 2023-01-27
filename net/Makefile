@@ -320,6 +320,7 @@
      SUBDIR += ngircd
      SUBDIR += ngrep
      SUBDIR += ngtcp2
+     SUBDIR += nicotine-plus
      SUBDIR += nload
      SUBDIR += nmap
      SUBDIR += no-ip
