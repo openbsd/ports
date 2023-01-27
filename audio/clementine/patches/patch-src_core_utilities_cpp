@@ -3,7 +3,7 @@
 Index: src/core/utilities.cpp
 --- src/core/utilities.cpp.orig
 +++ src/core/utilities.cpp
-@@ -67,6 +67,14 @@
+@@ -71,6 +71,14 @@
  #ifdef Q_OS_DARWIN
  #include <sys/resource.h>
  #endif
@@ -18,7 +18,7 @@ Index: src/core/utilities.cpp
  
  #ifdef Q_OS_DARWIN
  #include <QProcess>
-@@ -697,9 +705,25 @@ bool IsLaptop() {
+@@ -705,9 +713,25 @@ bool IsLaptop() {
      }
    }
    return false;

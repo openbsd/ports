@@ -1,7 +1,7 @@
 Index: src/ripper/ripper.h
 --- src/ripper/ripper.h.orig
 +++ src/ripper/ripper.h
-@@ -18,10 +18,10 @@
+@@ -18,11 +18,11 @@
  #ifndef SRC_RIPPER_RIPPER_H_
  #define SRC_RIPPER_RIPPER_H_
  
@@ -9,6 +9,7 @@ Index: src/ripper/ripper.h
 -
  #include <QMutex>
  #include <QObject>
+ #include <QTimer>
 +
 +#include <cdio/cdio.h>
  

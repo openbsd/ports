@@ -13,7 +13,7 @@ Index: ext/libclementine-common/CMakeLists.txt
  
  set(SOURCES
    core/closure.cpp
-@@ -39,3 +39,11 @@ target_link_libraries(libclementine-common
+@@ -39,6 +39,14 @@ target_link_libraries(libclementine-common
    ${TAGLIB_LIBRARIES}
    ${CMAKE_THREAD_LIBS_INIT}
  )
@@ -25,3 +25,6 @@ Index: ext/libclementine-common/CMakeLists.txt
 +  include_directories(${Backtrace_INCLUDE_DIRS})
 +  target_link_libraries(libclementine-common ${Backtrace_LIBRARIES})
 +endif(Backtrace_FOUND)
+ 
+ find_package(Backtrace)
+ configure_file(core/conf_backtrace.h.in conf_backtrace.h)

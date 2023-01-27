@@ -2,9 +2,9 @@ COMMENT =	music player
 
 GH_ACCOUNT =	clementine-player
 GH_PROJECT =	Clementine
-GH_TAGNAME =	1.4.0rc1-550-g72c1f91c0
-REVISION =	2
-PKGNAME =	clementine-${GH_TAGNAME:C/-550.*/pl550/}
+GH_TAGNAME =	1.4.0rc2
+EPOCH      =	0
+PKGNAME    =	clementine-${GH_TAGNAME}
 
 CATEGORIES =	audio x11
 

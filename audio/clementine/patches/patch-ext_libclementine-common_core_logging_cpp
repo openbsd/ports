@@ -2,31 +2,7 @@ Use shiny CMake FindBacktrace module.
 Index: ext/libclementine-common/core/logging.cpp
 --- ext/libclementine-common/core/logging.cpp.orig
 +++ ext/libclementine-common/core/logging.cpp
-@@ -18,12 +18,11 @@
- // it is used by the Spotify blob which links against libspotify and is not GPL
- // compatible.
- 
-+#include <config.h>
-+
- #include <cxxabi.h>
- 
- #include <QtGlobal>
--#ifdef Q_OS_UNIX
--#include <execinfo.h>
--#endif
- 
- #include <glib.h>
- 
-@@ -315,7 +314,7 @@ QString DemangleSymbol(const QString& symbol) {
- }
- 
- void DumpStackTrace() {
--#ifdef Q_OS_UNIX
-+#if Backtrace_FOUND
-   void* callstack[128];
-   int callstack_size =
-       backtrace(reinterpret_cast<void**>(&callstack), sizeof(callstack));
-@@ -328,7 +327,7 @@ void DumpStackTrace() {
+@@ -336,7 +336,7 @@ void DumpStackTrace() {
    }
    free(symbols);
  #else

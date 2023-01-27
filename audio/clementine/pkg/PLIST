@@ -1,6 +1,6 @@
 @bin bin/clementine
 @bin bin/clementine-tagreader
-share/applications/clementine.desktop
+share/applications/org.clementine_player.Clementine.desktop
 share/clementine/
 share/clementine/projectm-presets/
 share/clementine/projectm-presets/Aderrasi - Agitator.milk
@@ -574,15 +574,15 @@ share/clementine/projectm-presets/nil - Vortex of Vortices.milk
 share/clementine/projectm-presets/project.tga
 share/clementine/projectm-presets/shifter - escape the worm - Eo.S. + Phat - Before_It_Eats_Your_Brain_Mix_v2.milk
 share/clementine/projectm-presets/shifter - escape the worm - Eo.S. + Phat 5362.milk
-share/icons/hicolor/128x128/apps/clementine.png
-share/icons/hicolor/64x64/apps/clementine.png
-share/icons/hicolor/scalable/apps/clementine.svg
+share/icons/hicolor/128x128/apps/org.clementine_player.Clementine.png
+share/icons/hicolor/64x64/apps/org.clementine_player.Clementine.png
+share/icons/hicolor/scalable/apps/org.clementine_player.Clementine.svg
 share/kservices5/
 share/kservices5/clementine-feed.protocol
 share/kservices5/clementine-itms.protocol
 share/kservices5/clementine-itpc.protocol
 share/kservices5/clementine-zune.protocol
 share/metainfo/
-share/metainfo/clementine.appdata.xml
+share/metainfo/org.clementine_player.Clementine.appdata.xml
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
