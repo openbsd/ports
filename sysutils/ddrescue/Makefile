@@ -1,6 +1,6 @@
 COMMENT =		data recovery tool
 
-DISTNAME =		ddrescue-1.26
+DISTNAME =		ddrescue-1.27
 
 CATEGORIES =		sysutils
 
