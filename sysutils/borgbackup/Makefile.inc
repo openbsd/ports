@@ -11,7 +11,7 @@ MAINTAINER =		Bjorn Ketelaars <bket@openbsd.org>
 # BSD-3
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=		crypto lz4 xxhash zstd
+WANTLIB +=		lz4 xxhash zstd
 
 COMPILER =		base-clang ports-gcc
 

@@ -3,7 +3,7 @@ PORTROACH =		limit:^1\.1\.
 MODPY_EGG_VERSION =	1.1.18
 REVISION =		3
 
-WANTLIB =		${COMPILER_LIBCXX} b2 m
+WANTLIB =		${COMPILER_LIBCXX} b2 crypto m
 
 LIB_DEPENDS =		security/libb2
 

@@ -1,5 +1,7 @@
 MODPY_EGG_VERSION =	1.2.3
 
+WANTLIB =		crypto
+
 COMPILER_LANGS =	c
 
 BUILD_DEPENDS =		devel/py-pkgconfig${MODPY_FLAVOR} \
