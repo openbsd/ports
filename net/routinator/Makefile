@@ -12,7 +12,8 @@ ROUTINATOR_UI_URL =	https://github.com/NLnetLabs/routinator-ui/releases/download
 ROUTINATOR_UI_VERSION =	0.3.4
 
 MASTER_SITES0 =	${ROUTINATOR_UI_URL}/v${ROUTINATOR_UI_VERSION}/
-DISTFILES +=	routinator-ui-${ROUTINATOR_UI_VERSION}{routinator-ui-build}.tar.gz:0
+DISTFILES +=	${GH_DISTFILE} \
+		routinator-ui-${ROUTINATOR_UI_VERSION}{routinator-ui-build}.tar.gz:0
 
 # The routinator-ui crate expects its Vue.js parts to be in ../dist
 EXTRACT_CASES +=	routinator-ui-*.tar.gz) \
@@ -42,7 +43,6 @@ RUN_DEPENDS =		net/rsync
 SEPARATE_BUILD =	Yes
 
 FIX_EXTRACT_PERMISSIONS = Yes
-DISTFILES +=		${DISTNAME}{${GH_TAGNAME}}${EXTRACT_SUFX}
 
 .include "crates.inc"
 
