@@ -1,7 +1,7 @@
 COMMENT =	command-line access to github pull requests, issues and more
 
 V =	2.21.1
-MODGO_MODNAME =	github.com/cli/cli/v2
+MODGO_MODNAME =	github.com/cli/cli/v${V:R:R}
 MODGO_VERSION =	v${V}
 
 DISTNAME =	cli-${MODGO_VERSION}
@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB +=	c pthread
 
 MODULES =	lang/go
-MODGO_LDFLAGS +=	-X "github.com/cli/cli/v${V:R:R}/internal/build.Version=$V"
+MODGO_LDFLAGS +=	-X "${MODGO_MODNAME}/internal/build.Version=$V"
 
 do-test:
 	cd ${WRKSRC} && ${MODGO_TEST_CMD} ./...
