@@ -1,6 +1,11 @@
---- decode.c.orig	Mon Jul 21 21:47:54 2003
-+++ decode.c	Tue Dec 11 10:47:55 2012
-@@ -28,10 +28,11 @@
+Index: decode.c
+--- decode.c.orig
++++ decode.c
+@@ -25,17 +25,20 @@
+  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
+  * SOFTWARE.  */
+ 
++#include <err.h>
  #include <stdio.h>
  #include <string.h>
  #include <ctype.h>
@@ -13,7 +18,12 @@
  
  extern char *os_idtodir(char *id);
  extern FILE *os_newtypedfile(char *fname, char *contentType, int flags, params contentParams);
-@@ -545,8 +546,8 @@ getDispositionFilename(char *disposition)
+ extern FILE *os_createnewfile(char *fname);
++extern FILE *os_resetfile(char *fname);
+ extern char *md5contextTo64(MD5_CTX *context);
+ 
+ /* The possible content transfer encodings */
+@@ -545,8 +548,8 @@ getDispositionFilename(char *disposition)
  	SkipWhitespace(&disposition);
  	if (!disposition) return 0;
  
@@ -24,7 +34,7 @@
      }
  
      SkipWhitespace(&disposition);
-@@ -632,7 +633,7 @@ int handlePartial(struct part *inpart, char *headers, 
+@@ -632,7 +635,7 @@ int handlePartial(struct part *inpart, char *headers, 
  	}
  	/* Store number of parts in reassembly directory */
  	sprintf(buf, "%sCT", dir);

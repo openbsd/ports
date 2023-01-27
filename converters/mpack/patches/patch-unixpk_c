@@ -1,11 +1,15 @@
---- unixpk.c.orig	Mon Jul 21 21:50:41 2003
-+++ unixpk.c	Tue Dec 11 10:52:18 2012
-@@ -25,6 +25,8 @@
+Index: unixpk.c
+--- unixpk.c.orig
++++ unixpk.c
+@@ -22,9 +22,11 @@
+  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
+  * SOFTWARE.
+  */
++#include <sys/wait.h>
  #include <stdio.h>
  #include <string.h>
  #include <errno.h>
 +#include <stdlib.h>
-+#include <unistd.h>
  #include "common.h"
  #include "version.h"
  #include "xmalloc.h"

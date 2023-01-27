@@ -1,16 +1,23 @@
 Fixes from Sebastian Pipping/gentoo.
 
---- unixos.c.orig	Mon Jul 21 21:54:05 2003
-+++ unixos.c	Tue Dec 11 10:52:04 2012
-@@ -30,6 +30,7 @@
+Index: unixos.c
+--- unixos.c.orig
++++ unixos.c
+@@ -26,10 +26,13 @@
+ #include <ctype.h>
+ #include <string.h>
+ #include <errno.h>
++#include <err.h>
+ #include <sys/types.h>
  #include <sys/param.h>
++#include <sys/stat.h>
  #include <netdb.h>
  #include <fcntl.h>
 +#include <stdlib.h>
  #include "xmalloc.h"
  #include "common.h"
  #include "part.h"
-@@ -38,10 +39,6 @@
+@@ -38,10 +41,6 @@
  #define MAXHOSTNAMELEN 64
  #endif
  
@@ -21,7 +28,16 @@ Fixes from Sebastian Pipping/gentoo.
  int overwrite_files = 0;
  int didchat;
  
-@@ -90,7 +87,7 @@ char *os_idtodir(char *id)
+@@ -76,7 +75,7 @@ char *os_genid(void)
+     }
+ 
+     result = malloc(25+strlen(hostname));
+-    sprintf(result, "%d.%d@%s", pid, curtime++, hostname);
++    sprintf(result, "%d.%lld@%s", pid, (long long)curtime++, hostname);
+     return result;
+ }
+ 
+@@ -90,7 +89,7 @@ char *os_idtodir(char *id)
  	strcpy(buf, getenv("TMPDIR"));
      }
      else {
@@ -30,7 +46,7 @@ Fixes from Sebastian Pipping/gentoo.
      }
      strcat(buf, "/m-prts-");
      p = getenv("USER");
-@@ -136,11 +133,7 @@ FILE *os_createnewfile(char *fname)
+@@ -136,11 +135,7 @@ FILE *os_createnewfile(char *fname)
      int fd;
      FILE *ret;
       
@@ -43,7 +59,7 @@ Fixes from Sebastian Pipping/gentoo.
  
      if (fd == -1)
          return NULL;
-@@ -149,7 +142,19 @@ FILE *os_createnewfile(char *fname)
+@@ -149,7 +144,19 @@ FILE *os_createnewfile(char *fname)
      return ret;
  }
  

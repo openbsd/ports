@@ -1,0 +1,12 @@
+Index: common.h
+--- common.h.orig
++++ common.h
+@@ -29,6 +29,8 @@
+ #define TEMPFILENAME "tempdesc.txt"
+ #endif
+ 
++#include <unistd.h>
++
+ #if defined(unix) && !defined(remove)
+ #define remove unlink
+ #endif

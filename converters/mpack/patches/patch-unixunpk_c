@@ -1,14 +1,16 @@
---- unixunpk.c.orig	Mon Jul 21 21:51:55 2003
-+++ unixunpk.c	Sun Jan  8 00:04:32 2012
-@@ -23,6 +23,7 @@
+Index: unixunpk.c
+--- unixunpk.c.orig
++++ unixunpk.c
+@@ -23,6 +23,8 @@
   * SOFTWARE.
   */
  #include <stdio.h>
 +#include <stdlib.h>
++#include <unistd.h>
  #include "version.h"
  #include "part.h"
  
-@@ -100,7 +101,7 @@ int main(int argc, char **argv)
+@@ -100,7 +102,7 @@ int main(int argc, char **argv)
  
  void usage(void) {
      fprintf(stderr, "munpack version %s\n", MPACK_VERSION);
