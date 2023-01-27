@@ -1,0 +1,9 @@
+Index: bin/icingacli
+--- bin/icingacli.orig
++++ bin/icingacli
+@@ -4,4 +4,4 @@
+ 
+ require_once dirname(__DIR__) . '/library/Icinga/Application/Cli.php';
+ 
+-Icinga\Application\Cli::start()->dispatch();
++Icinga\Application\Cli::start('/var/www/icinga-web2')->dispatch();

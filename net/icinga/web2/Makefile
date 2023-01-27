@@ -2,7 +2,7 @@ COMMENT =	next-generation web UI for icinga
 
 GH_ACCOUNT =	Icinga
 GH_PROJECT =	icingaweb2
-GH_TAGNAME =	v2.11.3
+GH_TAGNAME =	v2.11.4
 PKGNAME =	icinga-web2-${GH_TAGNAME:S/v//}
 
 MODULES=	lang/php
@@ -25,14 +25,12 @@ do-configure:
 	    ${WRKSRC}/bin/icingacli
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/icinga-web2 \
-	    ${PREFIX}/conf/modules.sample
+	${INSTALL_DATA_DIR} ${PREFIX}/icinga-web2 ${PREFIX}/conf/modules.sample
+	${SUBST_DATA} \
+		${FILESDIR}/icingaweb2.conf ${PREFIX}/conf/modules.sample/icingaweb2.conf.dist \
+		${FILESDIR}/icingaweb2.fpm.conf ${PREFIX}/conf/modules.sample/icingaweb2.fpm.conf.dist
 	cd ${WRKSRC}; pax -rw ./ ${PREFIX}/icinga-web2/
-	rm -r ${PREFIX}/icinga-web2/test
-	${SUBST_CMD} ${PREFIX}/icinga-web2/packages/files/apache/*conf
-	find ${PREFIX}/icinga-web2 \( -name '*${PATCHORIG}' \
-	    -or -name '*.beforesubst' \) -delete
-	ln -s ${TRUEPREFIX}/icinga-web2/bin/icingacli \
-	    ${WRKINST}/usr/local/bin/
+	find ${PREFIX}/icinga-web2 \( -name '*${PATCHORIG}' -or -name '*.beforesubst' \) -delete
+	ln -s ${TRUEPREFIX}/icinga-web2/bin/icingacli ${WRKINST}/usr/local/bin/
 
 .include <bsd.port.mk>

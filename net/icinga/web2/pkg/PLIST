@@ -3,14 +3,16 @@
 @extraunexec rm -rf %D/etc/icingaweb2/*
 @extraunexec rm -rf %D/icinga-web2/tmp/*
 conf/modules.sample/
+conf/modules.sample/icingaweb2.conf.dist
+@sample conf/modules.sample/icingaweb2.conf
+conf/modules.sample/icingaweb2.fpm.conf.dist
+@sample conf/modules.sample/icingaweb2.fpm.conf
 icinga-web2/
 icinga-web2/.mailmap
 icinga-web2/AUTHORS
 icinga-web2/CHANGELOG.md
-icinga-web2/CONTRIBUTING.md
-icinga-web2/COPYING
+icinga-web2/LICENSE
 icinga-web2/README.md
-icinga-web2/RELEASE.md
 icinga-web2/VERSION
 icinga-web2/application/
 icinga-web2/application/VERSION
@@ -260,21 +262,6 @@ icinga-web2/etc/bash_completion.d/
 @sample ${SYSCONFDIR}/bash_completion.d/
 icinga-web2/etc/bash_completion.d/icingacli
 @sample ${SYSCONFDIR}/bash_completion.d/icingacli
-icinga-web2/etc/schema/
-icinga-web2/etc/schema/mysql-upgrades/
-icinga-web2/etc/schema/mysql-upgrades/2.0.0beta3-2.0.0rc1.sql
-icinga-web2/etc/schema/mysql-upgrades/2.11.0.sql
-icinga-web2/etc/schema/mysql-upgrades/2.5.0.sql
-icinga-web2/etc/schema/mysql-upgrades/2.9.0.sql
-icinga-web2/etc/schema/mysql-upgrades/2.9.1.sql
-icinga-web2/etc/schema/mysql.schema.sql
-icinga-web2/etc/schema/pgsql-upgrades/
-icinga-web2/etc/schema/pgsql-upgrades/2.0.0beta3-2.0.0rc1.sql
-icinga-web2/etc/schema/pgsql-upgrades/2.11.0.sql
-icinga-web2/etc/schema/pgsql-upgrades/2.5.0.sql
-icinga-web2/etc/schema/pgsql-upgrades/2.9.0.sql
-icinga-web2/etc/schema/pgsql-upgrades/2.9.1.sql
-icinga-web2/etc/schema/pgsql.schema.sql
 icinga-web2/icingaweb2.ruleset.xml
 icinga-web2/library/
 icinga-web2/library/Icinga/
@@ -1980,7 +1967,6 @@ icinga-web2/library/vendor/dompdf/vendor/masterminds/html5/
 icinga-web2/library/vendor/dompdf/vendor/masterminds/html5/CREDITS
 icinga-web2/library/vendor/dompdf/vendor/masterminds/html5/LICENSE.txt
 icinga-web2/library/vendor/dompdf/vendor/masterminds/html5/README.md
-icinga-web2/library/vendor/dompdf/vendor/masterminds/html5/RELEASE.md
 icinga-web2/library/vendor/dompdf/vendor/masterminds/html5/UPGRADING.md
 icinga-web2/library/vendor/dompdf/vendor/masterminds/html5/bin/
 icinga-web2/library/vendor/dompdf/vendor/masterminds/html5/bin/entities.php
@@ -2758,29 +2744,6 @@ icinga-web2/modules/monitoring/public/css/tables.less
 icinga-web2/modules/monitoring/public/js/
 icinga-web2/modules/monitoring/public/js/module.js
 icinga-web2/modules/monitoring/run.php
-icinga-web2/modules/monitoring/test/
-icinga-web2/modules/monitoring/test/php/
-icinga-web2/modules/monitoring/test/php/application/
-icinga-web2/modules/monitoring/test/php/application/views/
-icinga-web2/modules/monitoring/test/php/application/views/helpers/
-icinga-web2/modules/monitoring/test/php/application/views/helpers/MonitoringFlagsTest.php
-icinga-web2/modules/monitoring/test/php/application/views/helpers/PluginOutputTest.php
-icinga-web2/modules/monitoring/test/php/library/
-icinga-web2/modules/monitoring/test/php/library/Monitoring/
-icinga-web2/modules/monitoring/test/php/library/Monitoring/Object/
-icinga-web2/modules/monitoring/test/php/library/Monitoring/Object/MacroTest.php
-icinga-web2/modules/monitoring/test/php/library/Monitoring/Plugin/
-icinga-web2/modules/monitoring/test/php/library/Monitoring/Plugin/PerfdataSetTest.php
-icinga-web2/modules/monitoring/test/php/library/Monitoring/Plugin/PerfdataTest.php
-icinga-web2/modules/monitoring/test/php/library/Monitoring/Plugin/ThresholdRangeTest.php
-icinga-web2/modules/monitoring/test/php/library/Monitoring/Web/
-icinga-web2/modules/monitoring/test/php/library/Monitoring/Web/Rest/
-icinga-web2/modules/monitoring/test/php/library/Monitoring/Web/Rest/RestRequestTest.php
-icinga-web2/modules/monitoring/test/php/regression/
-icinga-web2/modules/monitoring/test/php/regression/Bug11728Test.php
-icinga-web2/modules/monitoring/test/php/regression/Bug11796Test.php
-icinga-web2/modules/monitoring/test/php/regression/Bug6088Test.php
-icinga-web2/modules/monitoring/test/php/regression/Bug7043Test.php
 icinga-web2/modules/setup/
 icinga-web2/modules/setup/application/
 icinga-web2/modules/setup/application/clicommands/
@@ -2854,17 +2817,6 @@ icinga-web2/modules/setup/library/Setup/Webserver.php
 icinga-web2/modules/setup/library/Setup/Webserver/Apache.php
 icinga-web2/modules/setup/library/Setup/Webserver/Nginx.php
 icinga-web2/modules/setup/module.info
-icinga-web2/modules/setup/test/
-icinga-web2/modules/setup/test/php/
-icinga-web2/modules/setup/test/php/library/
-icinga-web2/modules/setup/test/php/library/Setup/
-icinga-web2/modules/setup/test/php/library/Setup/RequirementSetTest.php
-icinga-web2/modules/test/
-icinga-web2/modules/test/application/
-icinga-web2/modules/test/application/clicommands/
-icinga-web2/modules/test/application/clicommands/PhpCommand.php
-icinga-web2/modules/test/module.info
-icinga-web2/modules/test/phpunit.xml
 icinga-web2/modules/translation/
 icinga-web2/modules/translation/application/
 icinga-web2/modules/translation/application/clicommands/
@@ -2889,32 +2841,6 @@ icinga-web2/modules/translation/library/Translation/Cli/TranslationCommand.php
 icinga-web2/modules/translation/library/Translation/Util/
 icinga-web2/modules/translation/library/Translation/Util/GettextTranslationHelper.php
 icinga-web2/modules/translation/module.info
-icinga-web2/packages/
-icinga-web2/packages/RPM.md
-icinga-web2/packages/files/
-icinga-web2/packages/files/apache/
-icinga-web2/packages/files/apache/icingaweb2.conf
-@sample conf/modules.sample/icingaweb2.conf
-icinga-web2/packages/files/apache/icingaweb2.fpm.conf
-@sample conf/modules.sample/icingaweb2.fpm.conf
-icinga-web2/packages/files/bin/
-icinga-web2/packages/files/bin/icingacli
-icinga-web2/packages/files/config/
-icinga-web2/packages/files/config/modules/
-icinga-web2/packages/files/config/modules/doc/
-icinga-web2/packages/files/config/modules/doc/config.ini
-icinga-web2/packages/files/config/modules/setup/
-icinga-web2/packages/files/config/modules/setup/config.ini
-icinga-web2/packages/files/config/modules/translation/
-icinga-web2/packages/files/config/modules/translation/config.ini
-icinga-web2/packages/files/public/
-icinga-web2/packages/files/public/index.php
-icinga-web2/packages/selinux/
-icinga-web2/packages/selinux/icingaweb2.fc
-icinga-web2/packages/selinux/icingaweb2.if
-icinga-web2/packages/selinux/icingaweb2.sh
-icinga-web2/packages/selinux/icingaweb2.te
-icinga-web2/phpcs.xml
 icinga-web2/public/
 icinga-web2/public/css/
 icinga-web2/public/css/icinga/
@@ -3125,6 +3051,21 @@ icinga-web2/public/js/icinga/timer.js
 icinga-web2/public/js/icinga/timezone.js
 icinga-web2/public/js/icinga/ui.js
 icinga-web2/public/js/icinga/utils.js
+icinga-web2/schema/
+icinga-web2/schema/mysql-upgrades/
+icinga-web2/schema/mysql-upgrades/2.0.0beta3-2.0.0rc1.sql
+icinga-web2/schema/mysql-upgrades/2.11.0.sql
+icinga-web2/schema/mysql-upgrades/2.5.0.sql
+icinga-web2/schema/mysql-upgrades/2.9.0.sql
+icinga-web2/schema/mysql-upgrades/2.9.1.sql
+icinga-web2/schema/mysql.schema.sql
+icinga-web2/schema/pgsql-upgrades/
+icinga-web2/schema/pgsql-upgrades/2.0.0beta3-2.0.0rc1.sql
+icinga-web2/schema/pgsql-upgrades/2.11.0.sql
+icinga-web2/schema/pgsql-upgrades/2.5.0.sql
+icinga-web2/schema/pgsql-upgrades/2.9.0.sql
+icinga-web2/schema/pgsql-upgrades/2.9.1.sql
+icinga-web2/schema/pgsql.schema.sql
 @mode 700
 @owner _icingaweb2
 @group _icingaweb2

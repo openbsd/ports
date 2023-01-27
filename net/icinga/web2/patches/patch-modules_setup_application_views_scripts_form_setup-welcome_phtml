@@ -15,9 +15,9 @@ Index: modules/setup/application/views/scripts/form/setup-welcome.phtml
 +$cliPath = '/var/www/icinga-web2/bin/icingacli';
  
  $groupadd = null;
- if (! (false === ($distro = Platform::getLinuxDistro(1)) || $distro === 'linux')) {
-@@ -81,11 +81,11 @@ if (! (false === ($distro = Platform::getLinuxDistro(1
-       ); ?></p>
+ $docker = getenv('ICINGAWEB_OFFICIAL_DOCKER_IMAGE');
+@@ -84,11 +84,11 @@ if (! (false === ($distro = Platform::getLinuxDistro(1
+       <?php if (! $docker): ?>
        <p><?= $this->translate('In any case, make sure that all of the following applies to your environment:'); ?></p>
        <ul>
 -        <li><?= $this->translate('A system group called "icingaweb2" exists'); ?></li>
@@ -31,18 +31,20 @@ Index: modules/setup/application/views/scripts/form/setup-welcome.phtml
          <?php endif ?>
        </ul>
        <?php if (! ($groupadd === null || $usermod === null)) { ?>
-@@ -96,12 +96,12 @@ if (! (false === ($distro = Platform::getLinuxDistro(1
-       <?php } ?>
-       <p><?= $this->translate('If you\'ve got the IcingaCLI installed you can do the following:'); ?></p>
+@@ -101,14 +101,14 @@ if (! (false === ($distro = Platform::getLinuxDistro(1
+       <?php endif; ?>
        <div class="code">
+         <?php if (! $docker): ?>
 -        <span><?= $cliPath ? $cliPath : 'icingacli'; ?> setup config directory --group icingaweb2<?= $configDir !== '/etc/icingaweb2' ? ' --config ' . $configDir : ''; ?>;</span>
 +        <span><?= $cliPath ? $cliPath : 'icingacli'; ?> setup config directory --group _icingaweb2<?= $configDir !== '/etc/icingaweb2' ? ' --config ' . $configDir : ''; ?>;</span>
+         <?php endif; ?>
          <span><?= $cliPath ? $cliPath : 'icingacli'; ?> setup token create;</span>
        </div>
+       <?php if (! $docker): ?>
        <p><?= $this->translate('In case the IcingaCLI is missing you can create the token manually:'); ?></p>
        <div class="code">
 -        <span>su <?= $phpUser ?: $this->translate('<your-webserver-user>'); ?> -s /bin/sh -c "mkdir -m 2770 <?= dirname($setupTokenPath); ?>; chgrp icingaweb2 <?= dirname($setupTokenPath); ?>; head -c 12 /dev/urandom | base64 | tee <?= $setupTokenPath; ?>; chmod 0660 <?= $setupTokenPath; ?>;";</span>
 +        <span>su <?= $phpUser ?: $this->translate('<your-webserver-user>'); ?> -s /bin/sh -c "mkdir -m 2770 <?= dirname($setupTokenPath); ?>; chgrp _icingaweb2 <?= dirname($setupTokenPath); ?>; openssl rand -base64 12 | tee <?= $setupTokenPath; ?>; chmod 0660 <?= $setupTokenPath; ?>;";</span>
        </div>
+       <?php endif; ?>
        <p><?= sprintf(
-         $this->translate('Please see the %s for an extensive description on how to access and use this wizard.'),
