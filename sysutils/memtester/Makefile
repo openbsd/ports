@@ -1,6 +1,6 @@
 COMMENT=	utility to test for memory faults
 
-DISTNAME=	memtester-4.5.1
+DISTNAME=	memtester-4.6.0
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://pyropus.ca/software/memtester/

@@ -1,6 +1,7 @@
---- memtester.c.orig	Sat Jun  9 23:45:22 2012
-+++ memtester.c	Fri Aug 26 23:32:43 2016
-@@ -342,7 +342,7 @@ int main(int argc, char **argv) {
+Index: memtester.c
+--- memtester.c.orig
++++ memtester.c
+@@ -343,7 +343,7 @@ int main(int argc, char **argv) {
                          wantbytes = wantbytes_orig;
                          break;
                      default:
