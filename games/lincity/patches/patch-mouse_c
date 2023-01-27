@@ -1,0 +1,14 @@
+Drop pointless inline that leads to undefined symbol when built with clang 15.
+
+Index: mouse.c
+--- mouse.c.orig
++++ mouse.c
+@@ -1128,7 +1128,7 @@ mt_temp(int x, int y)
+     return 0;
+ }
+ 
+-inline int
++int
+ mt_perm(int x, int y)
+ {
+     /* By now, it has already been mt_erase()'d */
