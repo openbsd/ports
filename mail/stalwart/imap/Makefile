@@ -1,7 +1,7 @@
 COMMENT =		IMAP4-to-JMAP proxy
 
 GH_PROJECT =		imap-server
-REVISION =		1
+REVISION =		2
 
 HOMEPAGE =	https://imap.stalw.art/
 

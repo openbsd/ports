@@ -5,7 +5,7 @@ GH_PROJECT =		meli
 GH_COMMIT =		3697b7d960cc9dbe602fa84f861cea854b600b73
 DISTNAME =	meli-0.7.2.20221017-3697b7d{3697b7d960cc9dbe602fa84f861cea854b600b73}
 PKGNAME =	meli-0.7.2pl20221017
-REVISION =		1
+REVISION =		2
 
 # ring-v0.16.20 does not support those archs
 NOT_FOR_ARCHS =	powerpc64 riscv64 sparc64

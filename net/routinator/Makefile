@@ -6,7 +6,7 @@ COMMENT =		RPKI "relying party" software
 GH_ACCOUNT =		NLnetLabs
 GH_PROJECT =		routinator
 GH_TAGNAME =		v0.12.1
-REVISION =		0
+REVISION =		1
 
 ROUTINATOR_UI_URL =	https://github.com/NLnetLabs/routinator-ui/releases/download/
 ROUTINATOR_UI_VERSION =	0.3.4

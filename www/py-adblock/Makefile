@@ -13,7 +13,7 @@ GH_PROJECT =	python-adblock
 GH_TAGNAME =	0.5.1
 DISTNAME =	py-adblock-${GH_TAGNAME}
 MODPY_EGG_VERSION = ${GH_TAGNAME}
-REVISION =          3
+REVISION =          4
 
 CATEGORIES =	www
 
