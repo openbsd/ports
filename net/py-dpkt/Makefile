@@ -1,22 +1,20 @@
-COMMENT =		python network packet manipulation library
+COMMENT =		Python network packet manipulation library
 
-MODPY_EGG_VERSION =	1.9.1
+MODPY_EGG_VERSION =	1.9.8
 DISTNAME =		dpkt-${MODPY_EGG_VERSION}
-PKGNAME =		py-${DISTNAME}
-REVISION =		3
+PKGNAME =		py-dpkt-${MODPY_EGG_VERSION}
 
 CATEGORIES =		net
 
 HOMEPAGE =		https://github.com/kbandla/dpkt
 
-GH_ACCOUNT =   kbandla
-GH_PROJECT =   dpkt
-GH_TAGNAME =   v${MODPY_EGG_VERSION}
-
 MAINTAINER =		Thanasoulas Spiros <dsp@2f30.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes
+
+MODPY_PI =		Yes
+MODPY_PYBUILD =		setuptools
 
 MODULES =		lang/python
 
