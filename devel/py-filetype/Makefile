@@ -1,28 +1,25 @@
-COMMENT =		infer file type and MIME type
+COMMENT=	infer file type and MIME type
 
-MODPY_EGG_VERSION =	1.1.0
+MODPY_EGG_VERSION=	1.2.0
+DISTNAME=	filetype-${MODPY_EGG_VERSION}
+PKGNAME=	py-${DISTNAME}
 
-DISTNAME =		filetype-${MODPY_EGG_VERSION}
-PKGNAME =		py-${DISTNAME}
-REVISION =		0
+CATEGORIES=	devel
 
-CATEGORIES =		devel
-
-HOMEPAGE =		https://github.com/h2non/filetype.py
+HOMEPAGE=	https://github.com/h2non/filetype.py
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
+MODULES=	lang/python
 
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools
 
-# some tests fail as the distfile doesn't include files they need
-TEST_DEPENDS =		devel/flake8 \
-			devel/py-test-benchmark${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/flake8 \
+		devel/py-test-benchmark${MODPY_FLAVOR}
 
-FLAVORS =		python3
-FLAVOR =		python3
+FLAVORS=	python3
+FLAVOR=		python3
 
 .include <bsd.port.mk>
