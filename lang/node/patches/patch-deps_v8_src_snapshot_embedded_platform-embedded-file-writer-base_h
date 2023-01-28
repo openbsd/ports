@@ -1,0 +1,11 @@
+Index: deps/v8/src/snapshot/embedded/platform-embedded-file-writer-base.h
+--- deps/v8/src/snapshot/embedded/platform-embedded-file-writer-base.h.orig
++++ deps/v8/src/snapshot/embedded/platform-embedded-file-writer-base.h
+@@ -33,6 +33,7 @@ enum class EmbeddedTargetOs {
+   kMac,
+   kWin,
+   kStarboard,
++  kOpenBSD,
+   kGeneric,  // Everything not covered above falls in here.
+ };
+ 

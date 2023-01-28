@@ -2,9 +2,6 @@ ONLY_FOR_ARCHS =	amd64 aarch64 i386 powerpc64 riscv64
 DPB_PROPERTIES =	parallel
 
 USE_WXNEEDED =		Yes
-.if ${MACHINE_ARCH} == amd64 || ${MACHINE_ARCH} == riscv64
-USE_NOEXECONLY =	Yes
-.endif
 
 COMMENT = JavaScript runtime built on Chrome's V8 JavaScript engine
 
@@ -13,7 +10,7 @@ PLEDGE_VER =		1.1.3
 DISTFILES =		node-pledge-{}${PLEDGE_VER}.tar.gz:0 \
 			${DISTNAME}-headers.tar.gz \
 			${DISTNAME}.tar.xz
-REVISION =		1
+REVISION =		2
 
 DISTNAME =		node-${NODE_VERSION}
 PKGNAME =		${DISTNAME:S/v//g}
