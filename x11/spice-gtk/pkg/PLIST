@@ -113,6 +113,7 @@ share/locale/cs/LC_MESSAGES/spice-gtk.mo
 share/locale/de/LC_MESSAGES/spice-gtk.mo
 share/locale/fr/LC_MESSAGES/spice-gtk.mo
 share/locale/it/LC_MESSAGES/spice-gtk.mo
+share/locale/ka/LC_MESSAGES/spice-gtk.mo
 share/locale/ru/LC_MESSAGES/spice-gtk.mo
 share/vala/vapi/spice-client-glib-2.0.deps
 share/vala/vapi/spice-client-glib-2.0.vapi

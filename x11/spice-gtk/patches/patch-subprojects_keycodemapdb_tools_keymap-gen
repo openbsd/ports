@@ -1,0 +1,9 @@
+Index: subprojects/keycodemapdb/tools/keymap-gen
+--- subprojects/keycodemapdb/tools/keymap-gen.orig
++++ subprojects/keycodemapdb/tools/keymap-gen
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python3
++#!/usr/bin/env python3
+ # -*- python -*-
+ #
+ # Keycode Map Generator

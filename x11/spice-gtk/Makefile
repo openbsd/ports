@@ -1,12 +1,12 @@
 COMMENT=		GTK client and libraries for SPICE remote desktop servers
 
-DISTNAME=		spice-gtk-0.41
+DISTNAME=		spice-gtk-0.42
 EXTRACT_SUFX=		.tar.xz
 
 CATEGORIES=		x11 net
 
-SHARED_LIBS += spice-client-glib-2.0     6.2 # 8.8.1
-SHARED_LIBS += spice-client-gtk-3.0      4.2 # 5.1.0
+SHARED_LIBS += spice-client-glib-2.0     6.2 # 8.8.2
+SHARED_LIBS += spice-client-gtk-3.0      4.2 # 5.1.1
 
 HOMEPAGE=		http://www.spice-space.org/page/Spice-Gtk
 
@@ -20,7 +20,7 @@ WANTLIB += glib-2.0 gobject-2.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0
 WANTLIB += gstreamer-1.0 gstvideo-1.0 gtk-3 intl jpeg json-glib-1.0
 WANTLIB += lz4 m opus pixman-1 sasl2 ssl z
 
-MASTER_SITES=		http://www.spice-space.org/download/gtk/
+MASTER_SITES=		https://gitlab.freedesktop.org/spice/spice-gtk/uploads/e41347144c5d2f9947e215c894969f0e/
 
 COMPILER=		base-clang ports-gcc ports-clang
 COMPILER_LANGS=		c
