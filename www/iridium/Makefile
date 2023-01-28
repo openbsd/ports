@@ -2,7 +2,6 @@ BROKEN-powerpc64 =	Check failed: false. OS architecture not handled. (powerpc64)
 BROKEN-riscv64 =	Unknown current CPU: riscv64
 
 USE_WXNEEDED=		Yes
-USE_NOEXECONLY=		Yes
 
 DPB_PROPERTIES=		parallel parallel2
 .if ${MACHINE_ARCH} == "i386"
@@ -13,7 +12,7 @@ COMMENT=		Iridium browser
 
 V=			2023.01.109
 
-REVISION=		4
+REVISION=		5
 
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}

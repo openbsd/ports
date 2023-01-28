@@ -1,7 +1,4 @@
 USE_WXNEEDED =		Yes
-.if ${MACHINE_ARCH} != i386
-USE_NOEXECONLY =	Yes
-.endif
 
 ONLY_FOR_ARCHS =	amd64 aarch64 i386
 
@@ -18,7 +15,7 @@ VERSION =		${QT5_WEBENGINE_VERSION}
 DIST_VERSION =		${QT5_WEBENGINE_VERSION}
 DISTNAME =		${QT5NAME:L}-everywhere-src-${DIST_VERSION}
 PKGNAME ?=		${DISTNAME:C/-everywhere-src//:C/-${DIST_VERSION}/-${VERSION}/}
-REVISION =		9
+REVISION =		10
 
 MASTER_SITES ?=		https://download.qt.io/official_releases/qt/${QT5_WEBENGINE_VERSION:R}/${QT5_WEBENGINE_VERSION}/submodules/ \
 			https://mirrors.ocf.berkeley.edu/qt/official_releases/qt/${QT5_WEBENGINE_VERSION:R}/${QT5_WEBENGINE_VERSION}/submodules/

@@ -1,0 +1,19 @@
+Index: src/3rdparty/chromium/v8/src/snapshot/embedded/platform-embedded-file-writer-base.h
+--- src/3rdparty/chromium/v8/src/snapshot/embedded/platform-embedded-file-writer-base.h.orig
++++ src/3rdparty/chromium/v8/src/snapshot/embedded/platform-embedded-file-writer-base.h
+@@ -30,6 +30,7 @@ enum class EmbeddedTargetOs {
+   kFuchsia,
+   kMac,
+   kWin,
++  kOpenBSD,
+   kGeneric,  // Everything not covered above falls in here.
+ };
+ 
+@@ -55,6 +56,7 @@ class PlatformEmbeddedFileWriterBase {
+   virtual void SectionRoData() = 0;
+ 
+   virtual void AlignToCodeAlignment() = 0;
++  virtual void AlignToPageSizeIfNeeded() {}
+   virtual void AlignToDataAlignment() = 0;
+ 
+   virtual void DeclareUint32(const char* name, uint32_t value) = 0;

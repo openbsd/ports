@@ -1,0 +1,41 @@
+Index: src/3rdparty/chromium/v8/src/snapshot/embedded/platform-embedded-file-writer-generic.cc
+--- src/3rdparty/chromium/v8/src/snapshot/embedded/platform-embedded-file-writer-generic.cc.orig
++++ src/3rdparty/chromium/v8/src/snapshot/embedded/platform-embedded-file-writer-generic.cc
+@@ -9,6 +9,10 @@
+ 
+ #include "src/common/globals.h"
+ 
++#if V8_OS_OPENBSD
++#include <sys/param.h>
++#endif
++
+ namespace v8 {
+ namespace internal {
+ 
+@@ -35,6 +39,8 @@ const char* DirectiveAsString(DataDirective directive)
+ void PlatformEmbeddedFileWriterGeneric::SectionText() {
+   if (target_os_ == EmbeddedTargetOs::kChromeOS) {
+     fprintf(fp_, ".section .text.hot.embedded\n");
++  } else if (target_os_ == EmbeddedTargetOs::kOpenBSD) {
++    fprintf(fp_, ".section .openbsd.mutable,\"a\"\n");
+   } else {
+     fprintf(fp_, ".section .text\n");
+   }
+@@ -70,7 +76,17 @@ void PlatformEmbeddedFileWriterGeneric::DeclareSymbolG
+ }
+ 
+ void PlatformEmbeddedFileWriterGeneric::AlignToCodeAlignment() {
++#if V8_OS_OPENBSD
++  fprintf(fp_, ".balign %d\n", PAGE_SIZE);
++#else
+   fprintf(fp_, ".balign 32\n");
++#endif
++}
++
++void PlatformEmbeddedFileWriterGeneric::AlignToPageSizeIfNeeded() {
++#if V8_OS_OPENBSD
++  fprintf(fp_, ".balign %d\n", PAGE_SIZE);
++#endif
+ }
+ 
+ void PlatformEmbeddedFileWriterGeneric::AlignToDataAlignment() {

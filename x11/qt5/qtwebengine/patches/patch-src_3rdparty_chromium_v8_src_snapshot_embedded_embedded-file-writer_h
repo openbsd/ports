@@ -1,0 +1,11 @@
+Index: src/3rdparty/chromium/v8/src/snapshot/embedded/embedded-file-writer.h
+--- src/3rdparty/chromium/v8/src/snapshot/embedded/embedded-file-writer.h.orig
++++ src/3rdparty/chromium/v8/src/snapshot/embedded/embedded-file-writer.h
+@@ -171,6 +171,7 @@ class EmbeddedFileWriter : public EmbeddedFileWriterIn
+ 
+       WriteBuiltin(w, blob, i);
+     }
++    w->AlignToPageSizeIfNeeded();
+     w->Newline();
+   }
+ 

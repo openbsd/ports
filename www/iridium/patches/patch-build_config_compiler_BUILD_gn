@@ -29,19 +29,18 @@ Index: build/config/compiler/BUILD.gn
      ":compiler_codegen",
      ":compiler_deterministic",
    ]
-@@ -452,6 +457,11 @@ config("compiler") {
+@@ -452,6 +457,10 @@ config("compiler") {
      }
    }
  
 +  if (is_openbsd) {
 +    ldflags += [ "-Wl,-z,wxneeded" ]
-+    ldflags += [ "-Wl,--no-execute-only" ]
 +  }
 +
    # Linux-specific compiler flags setup.
    # ------------------------------------
    if (use_gold) {
-@@ -912,7 +922,7 @@ config("compiler_cpu_abi") {
+@@ -912,7 +921,7 @@ config("compiler_cpu_abi") {
          ]
        }
      } else if (current_cpu == "arm") {
@@ -50,7 +49,7 @@ Index: build/config/compiler/BUILD.gn
            !(is_chromeos_lacros && is_chromeos_device)) {
          cflags += [ "--target=arm-linux-gnueabihf" ]
          ldflags += [ "--target=arm-linux-gnueabihf" ]
-@@ -927,7 +937,7 @@ config("compiler_cpu_abi") {
+@@ -927,7 +936,7 @@ config("compiler_cpu_abi") {
          cflags += [ "-mtune=$arm_tune" ]
        }
      } else if (current_cpu == "arm64") {
@@ -59,7 +58,7 @@ Index: build/config/compiler/BUILD.gn
            !(is_chromeos_lacros && is_chromeos_device)) {
          cflags += [ "--target=aarch64-linux-gnu" ]
          ldflags += [ "--target=aarch64-linux-gnu" ]
-@@ -1272,6 +1282,27 @@ config("compiler_deterministic") {
+@@ -1272,6 +1281,27 @@ config("compiler_deterministic") {
    }
  }
  
@@ -87,7 +86,7 @@ Index: build/config/compiler/BUILD.gn
  config("rustc_revision") {
    if (enable_rust && defined(rustc_version)) {
      # Similar to the above config, this is here so that all files get
-@@ -1493,7 +1524,7 @@ config("default_warnings") {
+@@ -1493,7 +1523,7 @@ config("default_warnings") {
          "-Wno-ignored-pragma-optimize",
        ]
  
@@ -96,7 +95,7 @@ Index: build/config/compiler/BUILD.gn
          cflags += [
            # TODO(crbug.com/1343975) Evaluate and possibly enable.
            "-Wno-deprecated-builtins",
-@@ -1658,7 +1689,7 @@ config("no_chromium_code") {
+@@ -1658,7 +1688,7 @@ config("no_chromium_code") {
        # third-party libraries.
        "-Wno-c++11-narrowing",
      ]
@@ -105,7 +104,7 @@ Index: build/config/compiler/BUILD.gn
        cflags += [
          # Disabled for similar reasons as -Wunused-variable.
          "-Wno-unused-but-set-variable",
-@@ -1970,8 +2001,7 @@ config("default_stack_frames") {
+@@ -1970,8 +2000,7 @@ config("default_stack_frames") {
  }
  
  # Default "optimization on" config.
@@ -115,7 +114,7 @@ Index: build/config/compiler/BUILD.gn
    if (is_win) {
      if (chrome_pgo_phase != 2) {
        # Favor size over speed, /O1 must be before the common flags.
-@@ -2016,8 +2046,7 @@ config("xoptimize") {
+@@ -2016,8 +2045,7 @@ config("xoptimize") {
  }
  
  # Turn off optimizations.
@@ -125,7 +124,7 @@ Index: build/config/compiler/BUILD.gn
    if (is_win) {
      cflags = [
        "/Od",  # Disable optimization.
-@@ -2057,8 +2086,7 @@ config("xno_optimize") {
+@@ -2057,8 +2085,7 @@ config("xno_optimize") {
  # Turns up the optimization level. On Windows, this implies whole program
  # optimization and link-time code generation which is very expensive and should
  # be used sparingly.
@@ -135,7 +134,7 @@ Index: build/config/compiler/BUILD.gn
    if (is_nacl && is_nacl_irt) {
      # The NaCl IRT is a special case and always wants its own config.
      # Various components do:
-@@ -2091,8 +2119,7 @@ config("xoptimize_max") {
+@@ -2091,8 +2118,7 @@ config("xoptimize_max") {
  #
  # TODO(crbug.com/621335) - rework how all of these configs are related
  # so that we don't need this disclaimer.
@@ -145,7 +144,7 @@ Index: build/config/compiler/BUILD.gn
    if (is_nacl && is_nacl_irt) {
      # The NaCl IRT is a special case and always wants its own config.
      # Various components do:
-@@ -2118,8 +2145,7 @@ config("xoptimize_speed") {
+@@ -2118,8 +2144,7 @@ config("xoptimize_speed") {
    }
  }
  
@@ -155,7 +154,7 @@ Index: build/config/compiler/BUILD.gn
    cflags = [ "-O1" ] + common_optimize_on_cflags
    rustflags = [ "-Copt-level=1" ]
    ldflags = common_optimize_on_ldflags
-@@ -2185,7 +2211,7 @@ config("afdo_optimize_size") {
+@@ -2185,7 +2210,7 @@ config("afdo_optimize_size") {
  # There are some targeted places that AFDO regresses, so we provide a separate
  # config to allow AFDO to be disabled per-target.
  config("afdo") {
@@ -164,7 +163,7 @@ Index: build/config/compiler/BUILD.gn
      cflags = []
      if (clang_emit_debug_info_for_profiling) {
        # Add the following flags to generate debug info for profiling.
-@@ -2201,7 +2227,7 @@ config("afdo") {
+@@ -2201,7 +2226,7 @@ config("afdo") {
        cflags += [ "-fprofile-sample-use=${rebased_clang_sample_profile}" ]
        inputs = [ _clang_sample_profile ]
      }
@@ -173,7 +172,7 @@ Index: build/config/compiler/BUILD.gn
      cflags = [ "-fauto-profile=${auto_profile_path}" ]
      inputs = [ auto_profile_path ]
    }
-@@ -2239,8 +2265,7 @@ config("win_pdbaltpath") {
+@@ -2239,8 +2264,7 @@ config("win_pdbaltpath") {
  }
  
  # Full symbols.
@@ -183,7 +182,7 @@ Index: build/config/compiler/BUILD.gn
    if (is_win) {
      if (is_clang) {
        cflags = [ "/Z7" ]  # Debug information in the .obj files.
-@@ -2349,7 +2374,8 @@ config("xsymbols") {
+@@ -2349,7 +2373,8 @@ config("xsymbols") {
      configs += [ "//build/config:compress_debug_sections" ]
    }
  
@@ -193,7 +192,7 @@ Index: build/config/compiler/BUILD.gn
      if (is_apple) {
        # TODO(https://crbug.com/1050118): Investigate missing debug info on mac.
        # Make sure we don't use constructor homing on mac.
-@@ -2372,8 +2398,7 @@ config("xsymbols") {
+@@ -2372,8 +2397,7 @@ config("xsymbols") {
  # Minimal symbols.
  # This config guarantees to hold symbol for stack trace which are shown to user
  # when crash happens in unittests running on buildbot.
@@ -203,7 +202,7 @@ Index: build/config/compiler/BUILD.gn
    if (is_win) {
      # Functions, files, and line tables only.
      cflags = []
-@@ -2446,8 +2471,7 @@ config("xminimal_symbols") {
+@@ -2446,8 +2470,7 @@ config("xminimal_symbols") {
  # This configuration contains function names only. That is, the compiler is
  # told to not generate debug information and the linker then just puts function
  # names in the final debug information.

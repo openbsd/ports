@@ -1,0 +1,11 @@
+Index: src/3rdparty/chromium/v8/src/snapshot/embedded/platform-embedded-file-writer-generic.h
+--- src/3rdparty/chromium/v8/src/snapshot/embedded/platform-embedded-file-writer-generic.h.orig
++++ src/3rdparty/chromium/v8/src/snapshot/embedded/platform-embedded-file-writer-generic.h
+@@ -28,6 +28,7 @@ class PlatformEmbeddedFileWriterGeneric
+   void SectionRoData() override;
+ 
+   void AlignToCodeAlignment() override;
++  void AlignToPageSizeIfNeeded() override;
+   void AlignToDataAlignment() override;
+ 
+   void DeclareUint32(const char* name, uint32_t value) override;
