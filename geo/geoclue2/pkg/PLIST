@@ -39,6 +39,8 @@ share/examples/geoclue2/dbus-1/system.d/org.freedesktop.GeoClue2.conf
 @sample ${SYSCONFDIR}/dbus-1/system.d/org.freedesktop.GeoClue2.conf
 share/examples/geoclue2/geoclue/
 @sample ${SYSCONFDIR}/geoclue/
+share/examples/geoclue2/geoclue/conf.d/
+@sample ${SYSCONFDIR}/geoclue/conf.d/
 share/examples/geoclue2/geoclue/geoclue.conf
 @sample ${SYSCONFDIR}/geoclue/geoclue.conf
 share/examples/geoclue2/xdg/

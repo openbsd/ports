@@ -1,9 +1,8 @@
 COMMENT=		modular geoinformation service on top of D-Bus
 
-VERSION=		2.6.0
+VERSION=		2.7.0
 DISTNAME=		geoclue-${VERSION}
 PKGNAME=		geoclue2-${VERSION}
-REVISION=		4
 
 CATEGORIES=		geo devel
 
@@ -18,14 +17,14 @@ MASTER_SITES=		https://gitlab.freedesktop.org/geoclue/geoclue/-/archive/${VERSIO
 EXTRACT_SUFX=		.tar.bz2
 
 WANTLIB += avahi-client avahi-common avahi-glib c gio-2.0 glib-2.0
-WANTLIB += gobject-2.0 intl json-glib-1.0 m notify soup-2.4
+WANTLIB += gobject-2.0 intl json-glib-1.0 m notify soup-3.0
 
 MODULES=		devel/meson \
 			x11/gnome
 
 BUILD_DEPENDS=		devel/gettext,-tools
 
-LIB_DEPENDS=		devel/libsoup \
+LIB_DEPENDS=		devel/libsoup3 \
 			devel/libnotify \
 			devel/json-glib \
 			net/avahi,-glib
