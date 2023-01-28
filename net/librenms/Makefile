@@ -6,7 +6,7 @@ NOT_FOR_ARCHS=	sparc64
 # changelogs at https://github.com/librenms/librenms/releases
 GH_ACCOUNT=	librenms
 GH_PROJECT=	librenms
-GH_TAGNAME=	23.1.0
+GH_TAGNAME=	23.1.1
 
 DISTFILES=	${GH_DISTFILE} \
 		${PKGNAME}-vendor.tar.xz:0
