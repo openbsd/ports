@@ -79,8 +79,8 @@ SHA256 (go_modules/github.com/yuin/goldmark/@v/v1.4.13.zip) = u0GmArF0NF/aOSyK2D
 SHA256 (go_modules/golang.org/x/crypto/@v/v0.0.0-20190308221718-c2843e01d9a2.mod) = M+0HClpm4JYGhaxThkQOG1mJnnTYo4oRgGhecqIZXe0=
 SHA256 (go_modules/golang.org/x/crypto/@v/v0.0.0-20210921155107-089bfa567519.mod) = zWMRYSoqpNDX4DxBs6ofvC1fiVqz9hCJ+rgL/p+PVIU=
 SHA256 (go_modules/golang.org/x/crypto/@v/v0.0.0-20210921155107-089bfa567519.zip) = 6yQmp4kZFSE8xdodp7b8bp4s8lPVGNjhaeA44of0FOM=
-SHA256 (go_modules/golang.org/x/exp/@v/v0.0.0-20230118134722-a68e582fa157.mod) = AWlyQUC24fWTQogGuQZg3GxMER20/hXZIWJCRvypaug=
-SHA256 (go_modules/golang.org/x/exp/@v/v0.0.0-20230118134722-a68e582fa157.zip) = DOxEqaSZRbCkUY9/bhgDkqHF3niR/MfQumZuvsKHJ+g=
+SHA256 (go_modules/golang.org/x/exp/@v/v0.0.0-20230125214544-b3c2aaf6208d.mod) = AWlyQUC24fWTQogGuQZg3GxMER20/hXZIWJCRvypaug=
+SHA256 (go_modules/golang.org/x/exp/@v/v0.0.0-20230125214544-b3c2aaf6208d.zip) = AXoEJUY40QQFTLWIiOsxBudt5wveWP3BFXrDl6PHi6c=
 SHA256 (go_modules/golang.org/x/mod/@v/v0.6.0-dev.0.20220419223038-86c51ed26bb4.mod) = QtGQI/+PLq5wC8VJXzcezZmKItGbqYXQr19pkAslQIM=
 SHA256 (go_modules/golang.org/x/mod/@v/v0.6.0.mod) = mfQKUOjWDCWZrEXGzix21VSoQorNE8LGikk/ymGbT6g=
 SHA256 (go_modules/golang.org/x/mod/@v/v0.6.0.zip) = P0XE/ZkuVfCHSEYyy2vxn1u6aOUb0YovPhDIh3Huwmg=
@@ -133,7 +133,7 @@ SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHd
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
 SHA256 (go_modules/mvdan.cc/xurls/v2/@v/v2.4.0.mod) = UQLzum/3TOYMtDaLimDy1rPJH7u+3kQQNDoSKykQK90=
 SHA256 (go_modules/mvdan.cc/xurls/v2/@v/v2.4.0.zip) = +bXkr4rF+WibYqbLweRgrHQoI2xJFcLT0IzRdVPA0To=
-SHA256 (tut-2.0.0.zip) = fnAIlFh2wytsXoAN3CjhMdZLV+4EC2iX+Ucm/ASwOm8=
+SHA256 (tut-2.0.1.zip) = te+Oxd3AZQhqfCmDWGO8SU4WzpLFcwPDBgAddfxq/tw=
 SIZE (go_modules/github.com/!rasmus!lindroth/go-mastodon/@v/v0.0.21.mod) = 172
 SIZE (go_modules/github.com/!rasmus!lindroth/go-mastodon/@v/v0.0.21.zip) = 55963
 SIZE (go_modules/github.com/adrg/xdg/@v/v0.4.0.mod) = 138
@@ -215,8 +215,8 @@ SIZE (go_modules/github.com/yuin/goldmark/@v/v1.4.13.zip) = 229017
 SIZE (go_modules/golang.org/x/crypto/@v/v0.0.0-20190308221718-c2843e01d9a2.mod) = 88
 SIZE (go_modules/golang.org/x/crypto/@v/v0.0.0-20210921155107-089bfa567519.mod) = 247
 SIZE (go_modules/golang.org/x/crypto/@v/v0.0.0-20210921155107-089bfa567519.zip) = 1878482
-SIZE (go_modules/golang.org/x/exp/@v/v0.0.0-20230118134722-a68e582fa157.mod) = 176
-SIZE (go_modules/golang.org/x/exp/@v/v0.0.0-20230118134722-a68e582fa157.zip) = 437976
+SIZE (go_modules/golang.org/x/exp/@v/v0.0.0-20230125214544-b3c2aaf6208d.mod) = 176
+SIZE (go_modules/golang.org/x/exp/@v/v0.0.0-20230125214544-b3c2aaf6208d.zip) = 438205
 SIZE (go_modules/golang.org/x/mod/@v/v0.6.0-dev.0.20220419223038-86c51ed26bb4.mod) = 157
 SIZE (go_modules/golang.org/x/mod/@v/v0.6.0.mod) = 117
 SIZE (go_modules/golang.org/x/mod/@v/v0.6.0.zip) = 161965
@@ -269,4 +269,4 @@ SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = 104623
 SIZE (go_modules/mvdan.cc/xurls/v2/@v/v2.4.0.mod) = 141
 SIZE (go_modules/mvdan.cc/xurls/v2/@v/v2.4.0.zip) = 32261
-SIZE (tut-2.0.0.zip) = 270235
+SIZE (tut-2.0.1.zip) = 271044
