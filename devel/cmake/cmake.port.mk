@@ -33,22 +33,6 @@ MODCMAKE_INSTALL_TARGET = cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
 MODCMAKE_TEST_TARGET = cd ${WRKBUILD} && exec ${SETENV} ${ALL_TEST_ENV} \
 	ctest ${_MAKE_VERBOSE} -j ${MAKE_JOBS}
 
-# Default targets are only known after configure, see cmake-buildsystem(7) and
-# cmake-properties(7) BUILDSYSTEM_TARGETS.
-# Overrule bsd.port.mk defaults.
-ALL_TARGET ?=		# empty
-INSTALL_TARGET ?=	# empty
-
-# Only pass explicitly set targets.
-# Do not quote, cmake(1) -t takes multiple target arguments.
-.if !empty(ALL_TARGET)
-MODCMAKE_BUILD_TARGET +=	-t ${ALL_TARGET}
-.endif
-
-.if !empty(INSTALL_TARGET)
-MODCMAKE_INSTALL_TARGET +=	-t ${INSTALL_TARGET}
-.endif
-
 .if !target(do-build)
 do-build:
 	@${MODCMAKE_BUILD_TARGET}
