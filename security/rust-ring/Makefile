@@ -1,3 +1,4 @@
+# If this port is changed, its consumers need to be bumped (static linking)
 COMMENT =		ring crate source patched for x-only assembly
 
 VERSION =		0.16.20
