@@ -115,6 +115,7 @@
      SUBDIR += galleon
      SUBDIR += gdmap
      SUBDIR += ggrep
+     SUBDIR += gitlab-cli
      SUBDIR += gitlab-runner
      SUBDIR += gitmux
      SUBDIR += gitolite
