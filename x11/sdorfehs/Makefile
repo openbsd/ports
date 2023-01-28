@@ -1,6 +1,6 @@
 COMMENT=	tiling window manager with a weird name
 
-GH_TAGNAME=	v1.4
+GH_TAGNAME=	v1.5
 GH_ACCOUNT=	jcs
 GH_PROJECT=	sdorfehs
 
@@ -11,7 +11,7 @@ MAINTAINER=	joshua stein <jcs@jcs.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	c X11 Xft Xrandr Xtst
+WANTLIB=	c X11 Xft Xrandr XRes Xtst
 
 FAKE_FLAGS=	DESTDIR=
 
