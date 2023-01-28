@@ -1,0 +1,11 @@
+Index: src/3rdparty/chromium/third_party/boringssl/linux-x86_64/crypto/fipsmodule/rsaz-avx2.S
+--- src/3rdparty/chromium/third_party/boringssl/linux-x86_64/crypto/fipsmodule/rsaz-avx2.S.orig
++++ src/3rdparty/chromium/third_party/boringssl/linux-x86_64/crypto/fipsmodule/rsaz-avx2.S
+@@ -1733,6 +1733,7 @@ rsaz_1024_gather5_avx2:
+ .cfi_endproc	
+ .LSEH_end_rsaz_1024_gather5:
+ .size	rsaz_1024_gather5_avx2,.-rsaz_1024_gather5_avx2
++.rodata
+ .align	64
+ .Land_mask:
+ .quad	0x1fffffff,0x1fffffff,0x1fffffff,0x1fffffff

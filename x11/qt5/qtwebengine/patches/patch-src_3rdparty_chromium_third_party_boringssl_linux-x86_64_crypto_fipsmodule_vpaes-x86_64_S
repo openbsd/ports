@@ -1,0 +1,11 @@
+Index: src/3rdparty/chromium/third_party/boringssl/linux-x86_64/crypto/fipsmodule/vpaes-x86_64.S
+--- src/3rdparty/chromium/third_party/boringssl/linux-x86_64/crypto/fipsmodule/vpaes-x86_64.S.orig
++++ src/3rdparty/chromium/third_party/boringssl/linux-x86_64/crypto/fipsmodule/vpaes-x86_64.S
+@@ -1020,6 +1020,7 @@ _vpaes_preheat:
+ 
+ 
+ .type	_vpaes_consts,@object
++.rodata
+ .align	64
+ _vpaes_consts:
+ .Lk_inv:
