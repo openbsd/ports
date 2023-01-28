@@ -2202,6 +2202,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-managed-pref
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-nat-gateway.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-network-acl-entry.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-network-acl.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-network-insights-access-scope-analysis.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-network-insights-access-scope.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-network-insights-analysis.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-network-insights-path.rst
@@ -2405,6 +2406,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-fast-launch.
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-fast-snapshot-restores.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-image-deprecation.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-ipam-organization-admin-account.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-reachability-analyzer-organization-sharing.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-serial-console-access.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-transit-gateway-route-table-propagation.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-vgw-route-propagation.rst
@@ -2426,6 +2428,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-flow-logs-integ
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-groups-for-capacity-reservation.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-host-reservation-purchase-preview.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-instance-types-from-instance-requirements.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-instance-uefi-data.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-ipam-address-history.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-ipam-pool-allocations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-ipam-pool-cidrs.rst
@@ -2445,6 +2448,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-transit-gateway
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-transit-gateway-prefix-list-references.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-transit-gateway-route-table-associations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-transit-gateway-route-table-propagations.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-vpn-connection-device-sample-configuration.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-vpn-connection-device-types.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/import-client-vpn-client-certificate-revocation-list.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/import-image.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/import-key-pair.rst
@@ -2495,6 +2500,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-volume.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-vpc-attribute.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-vpc-endpoint-connection-notification.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-vpc-endpoint-service-configuration.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-vpc-endpoint-service-payer-responsibility.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-vpc-endpoint-service-permissions.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-vpc-endpoint.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-vpc-peering-connection-options.rst
@@ -2557,6 +2563,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/send-diagnostic-int
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/start-instances.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/start-network-insights-access-scope-analysis.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/start-network-insights-analysis.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/start-vpc-endpoint-service-private-dns-verification.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/stop-instances.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/terminate-client-vpn-connections.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/terminate-instances.rst
@@ -4808,6 +4815,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/copy-db-cluster-sna
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/copy-db-parameter-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/copy-db-snapshot.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/copy-option-group.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/create-blue-green-deployment.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/create-db-cluster-endpoint.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/create-db-cluster-parameter-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/create-db-cluster-snapshot.rst
@@ -4821,6 +4829,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/create-db-subnet-gr
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/create-event-subscription.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/create-global-cluster.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/create-option-group.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/delete-blue-green-deployment.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/delete-db-cluster-endpoint.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/delete-db-cluster-parameter-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/delete-db-cluster-snapshot.rst
@@ -4835,6 +4844,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/delete-event-subscr
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/delete-global-cluster.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/delete-option-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/describe-account-attributes.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/describe-blue-green-deployments.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/describe-certificates.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/describe-db-cluster-backtracks.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/describe-db-cluster-endpoints.rst
@@ -4914,6 +4924,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/stop-activity-strea
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/stop-db-cluster.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/stop-db-instance-automated-backups-replication.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/stop-db-instance.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/switchover-blue-green-deployment.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/redshift/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/redshift/accept-reserved-node-exchange.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/redshift/authorize-cluster-security-group-ingress.rst
