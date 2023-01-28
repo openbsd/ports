@@ -22,6 +22,7 @@ RUN_DEPENDS =		devel/py-colorama${MODPY_FLAVOR}-<0.5 \
 			devel/py-setuptools${MODPY_FLAVOR} \
 			textproc/py-ruamel.yaml${MODPY_FLAVOR}>=0.15.0,<0.18.0 \
 			www/py-requests${MODPY_FLAVOR}
+BUILD_DEPENDS =		${RUN_DEPENDS}
 TEST_DEPENDS =		devel/py-flexmock${MODPY_FLAVOR} \
 			devel/py-test-cov${MODPY_FLAVOR}
 
