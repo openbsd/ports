@@ -1,7 +1,12 @@
+# Assembly implementations of crypto primitives. 
+.if ${MACHINE_ARCH} != aarch64 && ${MACHINE_ARCH} != amd64
+USE_NOEXECONLY=		Yes
+.endif
+
 COMMENT=		crypto library based on code used in GnuPG
 
 DISTNAME=		libgcrypt-1.10.1
-REVISION=		4
+REVISION=		5
 CATEGORIES=		security
 
 SHARED_LIBS +=  gcrypt               21.0     # 24.1
@@ -22,10 +27,6 @@ LIB_DEPENDS=		security/libgpg-error
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-static \
 			--disable-drng-support
-
-.if ${MACHINE_ARCH} != aarch64
-USE_NOEXECONLY=		Yes
-.endif
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
