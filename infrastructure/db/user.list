@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.418 2023/01/26 13:51:53 job Exp $
+$OpenBSD: user.list,v 1.419 2023/01/29 22:21:48 aisha Exp $
 
 This file lists all users and groups that are created by ports. All
 ports' users/groups have to start with an underscore and have to use
@@ -396,3 +396,4 @@ id  user		group		port
 885 _mycorrhiza		_mycorrhiza	www/mycorrhiza
 886 _eduvpn		_eduvpn		net/eduvpn
 887 _endlessh		_endlessh	net/endlessh
+888 _erlang		_erlang		lang/erlang/25
