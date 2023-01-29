@@ -17,7 +17,6 @@ share/doc/openvpn/COPYING
 share/doc/openvpn/COPYRIGHT.GPL
 share/doc/openvpn/Changes.rst
 share/doc/openvpn/README
-share/doc/openvpn/README.IPv6
 share/doc/openvpn/README.down-root
 share/doc/openvpn/README.mbedtls
 share/doc/openvpn/gui-notes.txt
@@ -39,8 +38,6 @@ share/examples/openvpn/sample-config-files/openvpn-startup.sh
 share/examples/openvpn/sample-config-files/server.conf
 share/examples/openvpn/sample-config-files/tls-home.conf
 share/examples/openvpn/sample-config-files/tls-office.conf
-share/examples/openvpn/sample-config-files/xinetd-client-config
-share/examples/openvpn/sample-config-files/xinetd-server-config
 share/examples/openvpn/sample-keys/
 share/examples/openvpn/sample-keys/README
 share/examples/openvpn/sample-keys/ca.crt
@@ -63,5 +60,6 @@ share/examples/openvpn/sample-scripts/
 share/examples/openvpn/sample-scripts/auth-pam.pl
 share/examples/openvpn/sample-scripts/bridge-start
 share/examples/openvpn/sample-scripts/bridge-stop
+share/examples/openvpn/sample-scripts/totpauth.py
 share/examples/openvpn/sample-scripts/ucn.pl
 share/examples/openvpn/sample-scripts/verify-cn

@@ -5,7 +5,7 @@
 Index: src/openvpn/route.c
 --- src/openvpn/route.c.orig
 +++ src/openvpn/route.c
-@@ -1809,12 +1809,17 @@ add_route(struct route_ipv4 *r,
+@@ -1815,12 +1815,17 @@ add_route(struct route_ipv4 *r,
      }
  #endif
  
@@ -25,8 +25,8 @@ Index: src/openvpn/route.c
 +        argv_printf_cat (&argv, "%s", gateway);
  
      argv_msg(D_ROUTE, &argv);
-     status = openvpn_execve_check(&argv, es, 0, "ERROR: OpenBSD/NetBSD route add command failed");
-@@ -3482,7 +3487,7 @@ get_default_gateway(struct route_gateway_info *rgi, op
+     bool ret = openvpn_execve_check(&argv, es, 0,
+@@ -3507,7 +3512,7 @@ get_default_gateway(struct route_gateway_info *rgi, op
      /* setup data to send to routing socket */
      pid = getpid();
      seq = 0;
@@ -35,7 +35,7 @@ Index: src/openvpn/route.c
  
      bzero(&m_rtmsg, sizeof(m_rtmsg));
      bzero(&so_dst, sizeof(so_dst));
-@@ -3700,7 +3705,7 @@ get_default_gateway_ipv6(struct route_ipv6_gateway_inf
+@@ -3725,7 +3730,7 @@ get_default_gateway_ipv6(struct route_ipv6_gateway_inf
      /* setup data to send to routing socket */
      pid = getpid();
      seq = 0;

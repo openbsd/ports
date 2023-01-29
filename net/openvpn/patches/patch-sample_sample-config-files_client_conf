@@ -1,11 +1,12 @@
---- sample/sample-config-files/client.conf.orig	Mon Sep 10 17:01:08 2012
-+++ sample/sample-config-files/client.conf	Thu Mar  7 14:02:35 2013
+Index: sample/sample-config-files/client.conf
+--- sample/sample-config-files/client.conf.orig
++++ sample/sample-config-files/client.conf
 @@ -58,8 +58,8 @@ resolv-retry infinite
  nobind
  
  # Downgrade privileges after initialization (non-Windows only)
--;user nobody
--;group nobody
+-;user openvpn
+-;group openvpn
 +user _openvpn
 +group _openvpn
  

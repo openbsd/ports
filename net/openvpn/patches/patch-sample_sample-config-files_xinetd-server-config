@@ -1,9 +1,0 @@
---- sample/sample-config-files/xinetd-server-config.orig	Mon Sep 10 17:01:08 2012
-+++ sample/sample-config-files/xinetd-server-config	Thu Mar  7 14:02:35 2013
-@@ -21,5 +21,5 @@ service openvpn_1
-         wait            = yes
-         user            = root
-         server          = /root/openvpn/openvpn
--        server_args     = --inetd --dev tun --ifconfig 10.4.0.2 10.4.0.1 --secret /root/openvpn/key --inactive 600 --user nobody
-+        server_args     = --inetd --dev tun --ifconfig 10.4.0.2 10.4.0.1 --secret /root/openvpn/key --inactive 600 --user _openvpn
- }

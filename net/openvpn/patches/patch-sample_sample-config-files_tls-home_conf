@@ -1,15 +1,12 @@
 Index: sample/sample-config-files/tls-home.conf
 --- sample/sample-config-files/tls-home.conf.orig
 +++ sample/sample-config-files/tls-home.conf
-@@ -48,10 +48,10 @@ cipher AES-256-GCM
- ; port 1194
- 
- # Downgrade UID and GID to
--# "nobody" after initialization
-+# "_openvpn" after initialization
+@@ -50,8 +50,8 @@ cipher AES-256-GCM
+ # Downgrade UID and GID to an
+ # unpriviledged user after initialization
  # for extra security.
--; user nobody
--; group nobody
+-; user openvpn
+-; group openvpn
 +user _openvpn
 +group _openvpn
  

@@ -1,11 +1,12 @@
---- sample/sample-config-files/server.conf.orig	Thu Nov  3 09:52:28 2016
-+++ sample/sample-config-files/server.conf	Fri Nov 18 17:49:59 2016
+Index: sample/sample-config-files/server.conf
+--- sample/sample-config-files/server.conf.orig
++++ sample/sample-config-files/server.conf
 @@ -271,8 +271,8 @@ cipher AES-256-CBC
  #
- # You can uncomment this out on
- # non-Windows systems.
--;user nobody
--;group nobody
+ # You can uncomment this on non-Windows
+ # systems after creating a dedicated user.
+-;user openvpn
+-;group openvpn
 +user _openvpn
 +group _openvpn
  
