@@ -1,4 +1,4 @@
-# Assembly implementations of crypto primitives. 
+# Assembly implementations of crypto primitives.
 .if ${MACHINE_ARCH} != aarch64 && ${MACHINE_ARCH} != amd64
 USE_NOEXECONLY=		Yes
 .endif
