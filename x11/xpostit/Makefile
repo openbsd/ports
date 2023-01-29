@@ -2,7 +2,7 @@ COMMENT=	PostIt (R) messages onto your X11 screen
 
 DISTNAME=	xpostit3.3.1
 PKGNAME=	xpostit-3.3.1
-REVISION=	2
+REVISION=	3
 CATEGORIES=	x11
 
 MASTER_SITES=	${MASTER_SITE_R5CONTRIB}

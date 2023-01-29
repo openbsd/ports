@@ -1,0 +1,25 @@
+Index: xpostit.h
+--- xpostit.h.orig
++++ xpostit.h
+@@ -162,8 +162,10 @@ extern	Widget plaidwidget;
+  * Function declarations.
+  */
+ char	*SafeAlloc();
++char	*GetNoteTitle();
+ 
+ void	ByeBye();
++void	SetNoteDir();
+ void	ConfirmIt();
+ void	MakeNewNote();
+ void	ClearConfirm();
+@@ -173,8 +175,10 @@ void	ShowAllNotes();
+ void	RaiseAllNotes();
+ void	LowerAllNotes();
+ void	CreateNewNote();
++void	LoadSavedNotes();
+ void	CreateMenuWidget();
+ void	CreatePlaidWidget();
++void	ClearTitle();
+ 
+ #if defined(USG) || defined(SYSV) || defined(SVR4)
+ #define rindex		strrchr

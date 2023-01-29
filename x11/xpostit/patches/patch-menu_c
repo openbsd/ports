@@ -1,0 +1,12 @@
+Index: menu.c
+--- menu.c.orig
++++ menu.c
+@@ -120,7 +120,7 @@ CreateMenuWidget()
+ 					      smeBSBObjectClass, menuwidget,
+ 					      NULL, 0);
+ 
+-		XtAddCallback(entry, XtNcallback, HandleMenuSelection, i);
++		XtAddCallback(entry, XtNcallback, HandleMenuSelection, (XtPointer)i);
+ 	}
+ 		
+ 	XawSimpleMenuAddGlobalActions(appcontext);

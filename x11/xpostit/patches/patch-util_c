@@ -1,0 +1,31 @@
+Index: util.c
+--- util.c.orig
++++ util.c
+@@ -44,8 +44,10 @@ static char	*RCSid = "$Header: /home/harbor/davy/stuff
+ #include <X11/StringDefs.h>
+ #include <X11/Intrinsic.h>
+ #include <sys/param.h>
+-#include <stdio.h>
+ #include <pwd.h>
++#include <stdio.h>
++#include <stdlib.h>
++#include <unistd.h>
+ 
+ #include "xpostit.h"
+ 
+@@ -72,7 +74,6 @@ ByeBye()
+ void
+ SetNoteDir()
+ {
+-	char *getenv();
+ 	char *home, *s;
+ 	struct passwd *pwd;
+ 	char fname[MAXPATHLEN];
+@@ -129,7 +130,6 @@ char *
+ SafeAlloc(nbytes)
+ register int nbytes;
+ {
+-	char *malloc();
+ 	register char *s;
+ 
+ 	if ((s = malloc(nbytes)) == NULL) {
