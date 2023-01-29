@@ -65,14 +65,14 @@ Index: sandbox/policy/freebsd/sandbox_freebsd.cc
 +
 +#define MAXTOKENS	3
 +
-+#define _UNVEIL_MAIN		"/etc/chromium/unveil.main";
-+#define _UNVEIL_RENDERER	"/etc/chromium/unveil.renderer";
-+#define _UNVEIL_GPU		"/etc/chromium/unveil.gpu";
-+#define _UNVEIL_PLUGIN		"/etc/chromium/unveil.plugin";
-+#define _UNVEIL_UTILITY		"/etc/chromium/unveil.utility";
-+#define _UNVEIL_UTILITY_NETWORK	"/etc/chromium/unveil.utility_network";
-+#define _UNVEIL_UTILITY_AUDIO	"/etc/chromium/unveil.utility_audio";
-+#define _UNVEIL_UTILITY_VIDEO	"/etc/chromium/unveil.utility_video";
++#define _UNVEIL_MAIN		"/etc/iridium/unveil.main";
++#define _UNVEIL_RENDERER	"/etc/iridium/unveil.renderer";
++#define _UNVEIL_GPU		"/etc/iridium/unveil.gpu";
++#define _UNVEIL_PLUGIN		"/etc/iridium/unveil.plugin";
++#define _UNVEIL_UTILITY		"/etc/iridium/unveil.utility";
++#define _UNVEIL_UTILITY_NETWORK	"/etc/iridium/unveil.utility_network";
++#define _UNVEIL_UTILITY_AUDIO	"/etc/iridium/unveil.utility_audio";
++#define _UNVEIL_UTILITY_VIDEO	"/etc/iridium/unveil.utility_video";
 +
 +namespace sandbox {
 +namespace policy {
@@ -129,7 +129,7 @@ Index: sandbox/policy/freebsd/sandbox_freebsd.cc
 +    base::PathService::Get(base::DIR_CACHE, &cache_directory);
 +    base::PathService::Get(base::DIR_HOME, &local_directory);   
 +
-+    cache_directory = cache_directory.AppendASCII("chromium");
++    cache_directory = cache_directory.AppendASCII("iridium");
 +    local_directory = local_directory.AppendASCII(".local").AppendASCII("share").AppendASCII("applications");
 +
 +    if (!base::CreateDirectory(cache_directory)) {
