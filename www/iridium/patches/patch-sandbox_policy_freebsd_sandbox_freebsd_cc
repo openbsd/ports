@@ -1,7 +1,7 @@
 Index: sandbox/policy/freebsd/sandbox_freebsd.cc
 --- sandbox/policy/freebsd/sandbox_freebsd.cc.orig
 +++ sandbox/policy/freebsd/sandbox_freebsd.cc
-@@ -0,0 +1,253 @@
+@@ -0,0 +1,241 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -61,21 +61,18 @@ Index: sandbox/policy/freebsd/sandbox_freebsd.cc
 +#include "crypto/nss_util.h"
 +#endif
 +
-+#include "ui/gfx/x/connection.h"
 +#include "ui/gfx/font_util.h"
-+
-+#include <X11/Xlib.h>
 +
 +#define MAXTOKENS	3
 +
-+#define _UNVEIL_MAIN		"/etc/iridium/unveil.main";
-+#define _UNVEIL_RENDERER	"/etc/iridium/unveil.renderer";
-+#define _UNVEIL_GPU		"/etc/iridium/unveil.gpu";
-+#define _UNVEIL_PLUGIN		"/etc/iridium/unveil.plugin";
-+#define _UNVEIL_UTILITY		"/etc/iridium/unveil.utility";
-+#define _UNVEIL_UTILITY_NETWORK	"/etc/iridium/unveil.utility_network";
-+#define _UNVEIL_UTILITY_AUDIO	"/etc/iridium/unveil.utility_audio";
-+#define _UNVEIL_UTILITY_VIDEO	"/etc/iridium/unveil.utility_video";
++#define _UNVEIL_MAIN		"/etc/chromium/unveil.main";
++#define _UNVEIL_RENDERER	"/etc/chromium/unveil.renderer";
++#define _UNVEIL_GPU		"/etc/chromium/unveil.gpu";
++#define _UNVEIL_PLUGIN		"/etc/chromium/unveil.plugin";
++#define _UNVEIL_UTILITY		"/etc/chromium/unveil.utility";
++#define _UNVEIL_UTILITY_NETWORK	"/etc/chromium/unveil.utility_network";
++#define _UNVEIL_UTILITY_AUDIO	"/etc/chromium/unveil.utility_audio";
++#define _UNVEIL_UTILITY_VIDEO	"/etc/chromium/unveil.utility_video";
 +
 +namespace sandbox {
 +namespace policy {
@@ -126,22 +123,13 @@ Index: sandbox/policy/freebsd/sandbox_freebsd.cc
 +    crypto::EnsureNSSInit();
 +#endif
 +
-+  // cache the XErrorDB by forcing a read on it
-+  {
-+    auto* connection = x11::Connection::Get();
-+    auto* display = connection->GetXlibDisplay().display();
-+
-+    char buf[1];
-+    XGetErrorDatabaseText(display, "XProtoError", "0", "",  buf, std::size(buf));
-+  }
-+
 +  if (process_type.empty()) {
 +    base::FilePath cache_directory, local_directory;
 +
 +    base::PathService::Get(base::DIR_CACHE, &cache_directory);
 +    base::PathService::Get(base::DIR_HOME, &local_directory);   
 +
-+    cache_directory = cache_directory.AppendASCII("iridium");
++    cache_directory = cache_directory.AppendASCII("chromium");
 +    local_directory = local_directory.AppendASCII(".local").AppendASCII("share").AppendASCII("applications");
 +
 +    if (!base::CreateDirectory(cache_directory)) {
