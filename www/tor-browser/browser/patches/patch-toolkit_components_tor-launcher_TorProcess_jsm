@@ -4,7 +4,7 @@ the new getTorFile() deal with it.
 Index: toolkit/components/tor-launcher/TorProcess.jsm
 --- toolkit/components/tor-launcher/TorProcess.jsm.orig
 +++ toolkit/components/tor-launcher/TorProcess.jsm
-@@ -253,6 +253,8 @@ class TorProcess {
+@@ -264,6 +264,8 @@ class TorProcess {
      const torrcFile = TorLauncherUtil.getTorFile("torrc", true);
      this._dataDir = TorLauncherUtil.getTorFile("tordatadir", true);
      const onionAuthDir = TorLauncherUtil.getTorFile("toronionauthdir", true);
@@ -13,7 +13,7 @@ Index: toolkit/components/tor-launcher/TorProcess.jsm
      const hashedPassword = TorProtocolService.torGetPassword(true);
      let detailsKey;
      if (!this._exeFile) {
-@@ -281,17 +283,13 @@ class TorProcess {
+@@ -292,17 +294,13 @@ class TorProcess {
        "torrc-defaults",
        false
      );

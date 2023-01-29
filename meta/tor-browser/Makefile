@@ -2,12 +2,11 @@ COMMENT=	Tor Browser meta package
 
 MAINTAINER=	Caspar Schutijser <caspar@schutijser.com>
 
-PKGNAME=	tor-browser-12.0.1
+PKGNAME=	tor-browser-12.0.2
 ONLY_FOR_ARCHS =	amd64
-REVISION=	0
 
-RUN_DEPENDS=	www/tor-browser/browser>=12.0.1 \
-		www/tor-browser/noscript>=11.4.13 \
-		net/tor>=0.4.7.12
+RUN_DEPENDS=	www/tor-browser/browser>=12.0.2 \
+		www/tor-browser/noscript>=11.4.14 \
+		net/tor>=0.4.7.13
 
 .include <bsd.port.mk>

@@ -12,8 +12,7 @@ EXTRACT_SUFX =		.tar.xz
 PATCHORIG =		.pat.orig
 
 PKGNAME =		${TB_PREFIX}-browser-${TB_VERSION:S/a/alpha/}
-DISTNAME =		src-firefox-tor-browser-102.6.0esr-12.0-1-build2
-REVISION =		1
+DISTNAME =		src-firefox-tor-browser-102.7.0esr-12.0-1-build1
 
 FIX_EXTRACT_PERMISSIONS	= Yes
 DISTFILES +=		${DISTNAME}.tar.xz \
@@ -78,7 +77,7 @@ MAKE_ENV +=		BUILD_OPT=1 \
 
 RUN_DEPENDS +=		net/obfs4proxy>=0.0.14 \
 			net/snowflake_proxy>=2.4.1 \
-			net/tor>=0.4.7.12
+			net/tor>=0.4.7.13
 
 CONFIGURE_ARGS +=	--enable-release #1386371
 CONFIGURE_ARGS +=	--enable-sandbox
