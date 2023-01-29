@@ -1,3 +1,6 @@
+@newgroup _erlang:888
+@newuser _erlang:888:_erlang::Erlang Account:/var/empty:/sbin/nologin
+@rcscript ${RCDIR}/epmd
 @option no-default-conflict
 @option is-branch
 @conflict erlang-wx->=25,<25.1.2

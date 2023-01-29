@@ -11,7 +11,7 @@ PKGNAME-main=	erlang-$V
 PKGNAME-wx=	erlang-wx-$V
 EPOCH=		0
 
-REVISION-main=	1
+REVISION-main=	2
 REVISION-wx=	1
 
 VERSION_SPEC=	>=25v0,<26v0
