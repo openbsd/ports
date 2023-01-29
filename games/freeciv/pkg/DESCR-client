@@ -1,4 +1,7 @@
-This package contains the client for Freeciv.
+Freeciv is a turn-based strategy game, in which each player becomes
+the leader of a civilization, fighting to obtain the ultimate goal:
+the extinction of all other civilizations.  Freeciv aims to be
+mostly rule-compatible with Civilization II, published by Sid Meier
+and Microprose.
 
-Freeciv comes without sound sets.  You can get them from:
-        http://download.gna.org/freeciv/contrib/audio/
+This package contains the client for Freeciv.

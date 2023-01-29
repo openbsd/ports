@@ -1,0 +1,9 @@
+Index: bootstrap/generate_metainfo.sh
+--- bootstrap/generate_metainfo.sh.orig
++++ bootstrap/generate_metainfo.sh
+@@ -1,4 +1,4 @@
+-#!/bin/bash -e
++#!/bin/ksh
+ #/***********************************************************************
+ # Freeciv - Copyright (C) 2022 The Freeciv project
+ #   This program is free software; you can redistribute it and/or modify

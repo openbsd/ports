@@ -7,9 +7,6 @@
 @man man/man6/freeciv-modpack.6
 @man man/man6/freeciv-ruledit.6
 @man man/man6/freeciv.6
-share/appdata/
-share/appdata/freeciv-gtk3.appdata.xml
-share/appdata/freeciv-mp-gtk3.appdata.xml
 share/applications/org.freeciv.gtk3.desktop
 share/applications/org.freeciv.mp.gtk3.desktop
 share/freeciv/amplio2/
@@ -2488,7 +2485,6 @@ share/freeciv/misc/intro.png
 share/freeciv/misc/mpicon.png
 share/freeciv/misc/overlays.png
 share/freeciv/misc/overlays.spec
-share/freeciv/misc/radar.png
 share/freeciv/misc/shields-large.spec
 share/freeciv/misc/shields.spec
 share/freeciv/misc/small.png
@@ -2530,12 +2526,12 @@ share/freeciv/stdsounds/wakeup.ogg
 share/freeciv/stdsounds/wall01.ogg
 share/freeciv/stdsounds/woodbrk.ogg
 share/freeciv/themes/
-share/freeciv/themes/gui-gtk-3.0/
-share/freeciv/themes/gui-gtk-3.0/Freeciv/
-share/freeciv/themes/gui-gtk-3.0/Freeciv/gtk-3.0/
-share/freeciv/themes/gui-gtk-3.0/Freeciv/gtk-3.0/bg.png
-share/freeciv/themes/gui-gtk-3.0/Freeciv/gtk-3.0/gtk.css
-share/freeciv/themes/gui-gtk-3.0/Freeciv/gtk-3.0/menubar.css
+share/freeciv/themes/gtk3/
+share/freeciv/themes/gtk3/Freeciv/
+share/freeciv/themes/gtk3/Freeciv/gtk-3.0/
+share/freeciv/themes/gtk3/Freeciv/gtk-3.0/bg.png
+share/freeciv/themes/gtk3/Freeciv/gtk-3.0/gtk.css
+share/freeciv/themes/gtk3/Freeciv/gtk-3.0/menubar.css
 share/freeciv/toonhex.tilespec
 share/freeciv/trident/
 share/freeciv/trident.tilespec
@@ -2637,6 +2633,9 @@ share/locale/tr/LC_MESSAGES/freeciv-ruledit.mo
 share/locale/uk/LC_MESSAGES/freeciv-ruledit.mo
 share/locale/zh_CN/LC_MESSAGES/freeciv-ruledit.mo
 share/locale/zh_TW/LC_MESSAGES/freeciv-ruledit.mo
+share/metainfo/
+share/metainfo/org.freeciv.gtk3.appdata.xml
+share/metainfo/org.freeciv.mp.gtk3.appdata.xml
 share/pixmaps/
 share/pixmaps/freeciv-client.png
 @tag gtk-update-icon-cache %D/share/icons/hicolor

@@ -2,32 +2,32 @@ COMMENT-main=	Civilization clone for X11; multiplayer; game server
 COMMENT-client=	Freeciv client
 COMMENT-share=	shared data files for Freeciv
 
-VERSION=	2.6.7
+VERSION=	3.0.5
 DISTNAME=	freeciv-${VERSION}
 PKGNAME-main=	freeciv-server-${VERSION}
 
 CATEGORIES=	games
 
-HOMEPAGE=	http://www.freeciv.org/
+HOMEPAGE=	https://www.freeciv.org/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=freeciv/}
-EXTRACT_SUFX=	.tar.bz2
+EXTRACT_SUFX=	.tar.xz
 
-cWANTLIB += bz2 c charset crypto curl execinfo iconv intl lzma m
-cWANTLIB += nghttp2 pthread sqlite3 ssl z ${MODLUA_WANTLIB}
+cWANTLIB += bz2 c crypto curl execinfo iconv icudata icuuc intl
+cWANTLIB += lzma m nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_openssl
+cWANTLIB += pthread sqlite3 ssl z ${MODLUA_WANTLIB}
 
 WANTLIB-main += readline ${cWANTLIB}
 
 WANTLIB-client += ${cWANTLIB}
-WANTLIB-client += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB-client += Xrandr Xrender atk-1.0 atk-bridge-2.0 cairo cairo-gobject
-WANTLIB-client += epoxy expat fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
-WANTLIB-client += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB-client += gtk-3 harfbuzz pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB-client += xcb
+WANTLIB-client += FLAC SDL2 SDL2_mixer X11 Xcursor Xext Xfixes Xi Xrandr
+WANTLIB-client += Xrender Xss atk-1.0 cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
+WANTLIB-client += gio-2.0 glib-2.0 gobject-2.0 gthread-2.0 gtk-3 harfbuzz
+WANTLIB-client += mikmod modplug mpg123 ogg opus opusfile pango-1.0 pangocairo-1.0
+WANTLIB-client += samplerate sndio usbhid vorbis vorbisfile xcb
 
 WANTLIB-share=
 
@@ -37,10 +37,13 @@ MODLUA_VERSION = 5.3
 BUILD_DEPENDS=	devel/gettext,-tools
 LIB_DEPENDS-main=	archivers/xz \
 			databases/sqlite3 \
-			net/curl
+			net/curl \
+			textproc/icu4c
 LIB_DEPENDS-client=	archivers/xz \
 			databases/sqlite3 \
+			devel/sdl2-mixer \
 			net/curl \
+			textproc/icu4c \
 			x11/gtk+3
 
 LIB_DEPENDS-share=
@@ -77,8 +80,8 @@ FLAVOR?=
 .if !${FLAVOR:Mno_x11}
 MULTI_PACKAGES+= -client
 CONFIGURE_ARGS+= --enable-client=gtk3 \
-		 --enable-fcmp=gtk3 \
-		 --disable-sdl-mixer
+		--enable-fcmp=gtk3 \
+		--enable-sdl-mixer=sdl2
 .else
 CONFIGURE_ARGS+= --enable-client=no
 .endif
@@ -88,7 +91,7 @@ PKG_ARCH-share=	*
 post-install:
 	mv ${WRKINST}/etc/freeciv ${PREFIX}/share/examples/
 	cd ${PREFIX}/man/man6 && \
-	    rm freeciv-{gtk2,gtk3*,mp-cli,mp-gtk*,mp-qt,qt,sdl*,xaw}.6
+	    rm freeciv-{gtk2,gtk3*,mp-cli,mp-gtk*,mp-qt,qt,sdl*}.6
 	rm ${PREFIX}/lib/*.{a,la}
 
 .include <bsd.port.mk>

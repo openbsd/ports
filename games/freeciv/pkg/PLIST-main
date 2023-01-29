@@ -1,11 +1,11 @@
 @conflict freeciv-client-<2.4.4
 @pkgpath games/freeciv
 @bin bin/freeciv-manual
+@bin bin/freeciv-ruleup
 @bin bin/freeciv-server
 @man man/man6/freeciv-manual.6
+@man man/man6/freeciv-ruleup.6
 @man man/man6/freeciv-server.6
-share/appdata/
-share/appdata/freeciv-server.appdata.xml
 share/applications/org.freeciv.server.desktop
 share/doc/freeciv/
 share/doc/freeciv/ABOUT-NLS
@@ -20,13 +20,14 @@ share/doc/freeciv/HOWTOPLAY
 share/doc/freeciv/INSTALL
 share/doc/freeciv/INSTALL.Cygwin
 share/doc/freeciv/NEWS
-share/doc/freeciv/NEWS-2.6
+share/doc/freeciv/NEWS-3.0
 share/doc/freeciv/README.AI
 share/doc/freeciv/README.AI_modules
 share/doc/freeciv/README.achievements
 share/doc/freeciv/README.actions
 share/doc/freeciv/README.agents
 share/doc/freeciv/README.attributes
+share/doc/freeciv/README.crosser
 share/doc/freeciv/README.delta
 share/doc/freeciv/README.effects
 share/doc/freeciv/README.fcdb
@@ -37,6 +38,7 @@ share/doc/freeciv/README.msys2
 share/doc/freeciv/README.nations
 share/doc/freeciv/README.packaging
 share/doc/freeciv/README.rulesets
+share/doc/freeciv/README.scenarios
 share/doc/freeciv/README.scorelog
 share/doc/freeciv/README.sound
 share/doc/freeciv/README.tilesets
@@ -50,43 +52,7 @@ share/icons/hicolor/16x16/apps/freeciv-server.png
 share/icons/hicolor/32x32/apps/freeciv-server.png
 share/icons/hicolor/48x48/apps/freeciv-server.png
 share/icons/hicolor/64x64/apps/freeciv-server.png
-share/locale/bg/LC_MESSAGES/freeciv-nations.mo
-share/locale/bg/LC_MESSAGES/freeciv.mo
-share/locale/ca/LC_MESSAGES/freeciv-nations.mo
-share/locale/cs/LC_MESSAGES/freeciv-nations.mo
-share/locale/da/LC_MESSAGES/freeciv-nations.mo
-share/locale/de/LC_MESSAGES/freeciv-nations.mo
-share/locale/el/LC_MESSAGES/freeciv-nations.mo
-share/locale/eo/LC_MESSAGES/freeciv-nations.mo
-share/locale/es/LC_MESSAGES/freeciv-nations.mo
-share/locale/et/LC_MESSAGES/freeciv-nations.mo
-share/locale/fi/LC_MESSAGES/freeciv-nations.mo
-share/locale/fr/LC_MESSAGES/freeciv-nations.mo
-share/locale/ga/LC_MESSAGES/freeciv-nations.mo
-share/locale/ga/LC_MESSAGES/freeciv.mo
-share/locale/gd/LC_MESSAGES/freeciv-nations.mo
-share/locale/gd/LC_MESSAGES/freeciv.mo
-share/locale/he/LC_MESSAGES/freeciv-nations.mo
-share/locale/hu/LC_MESSAGES/freeciv-nations.mo
-share/locale/id/LC_MESSAGES/freeciv-nations.mo
-share/locale/id/LC_MESSAGES/freeciv.mo
-share/locale/it/LC_MESSAGES/freeciv-nations.mo
-share/locale/ja/LC_MESSAGES/freeciv-nations.mo
-share/locale/ko/LC_MESSAGES/freeciv-nations.mo
-share/locale/nb/LC_MESSAGES/freeciv-nations.mo
-share/locale/nl/LC_MESSAGES/freeciv-nations.mo
-share/locale/pl/LC_MESSAGES/freeciv-nations.mo
-share/locale/pt/LC_MESSAGES/freeciv-nations.mo
-share/locale/pt_BR/LC_MESSAGES/freeciv-nations.mo
-share/locale/ro/LC_MESSAGES/freeciv-nations.mo
-share/locale/ru/LC_MESSAGES/freeciv-nations.mo
-share/locale/sr/LC_MESSAGES/freeciv-nations.mo
-share/locale/sr/LC_MESSAGES/freeciv.mo
-share/locale/sv/LC_MESSAGES/freeciv-nations.mo
-share/locale/tr/LC_MESSAGES/freeciv-nations.mo
-share/locale/uk/LC_MESSAGES/freeciv-nations.mo
-share/locale/zh_CN/LC_MESSAGES/freeciv-nations.mo
-share/locale/zh_TW/LC_MESSAGES/freeciv-nations.mo
-share/locale/zh_TW/LC_MESSAGES/freeciv.mo
+share/metainfo/org.freeciv.server.appdata.xml
+share/pixmaps/freeciv-modpack.png
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

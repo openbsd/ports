@@ -4,5 +4,4 @@ the extinction of all other civilizations.  Freeciv aims to be
 mostly rule-compatible with Civilization II, published by Sid Meier
 and Microprose.
 
-Flavors:
-        * no_x11 - don't build UI subpackage
+This package contains the server for Freeciv.
