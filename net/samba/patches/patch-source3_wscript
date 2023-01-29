@@ -22,7 +22,7 @@ Index: source3/wscript
          conf.ADD_LDFLAGS("-Wl,--export-dynamic", testflags=True)
  
      # We crash without vfs_default
-@@ -1672,6 +1673,7 @@ main() {
+@@ -1673,6 +1674,7 @@ int main() {
  
      conf.CHECK_CODE('void seekdir(DIR *d, long loc) { return; }',
                      'SEEKDIR_RETURNS_VOID',
@@ -30,7 +30,7 @@ Index: source3/wscript
                      headers='sys/types.h dirent.h',
                      msg='Checking whether seekdir returns void')
  
-@@ -1802,7 +1804,7 @@ main() {
+@@ -1803,7 +1805,7 @@ int main() {
          else:
              conf.fatal('AFS headers not available, but --with-fake-kaserver was specified')
  
