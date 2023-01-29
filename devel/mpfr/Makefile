@@ -1,8 +1,7 @@
 COMMENT=	library for multiple-precision floating-point computations
 
-DISTNAME=	mpfr-4.1.1
-PKGNAME=	mpfr-4.1.1pl1
-SHARED_LIBS=	mpfr		2.1	# 7.1
+DISTNAME=	mpfr-4.2.0
+SHARED_LIBS=	mpfr		2.2	# 8.0
 CATEGORIES=	devel math
 HOMEPAGE=	https://www.mpfr.org/
 
@@ -13,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${HOMEPAGE}${DISTNAME}/
 DIST_SUBDIR=	${DISTNAME}
-.for i in 01
+.for i in
 PATCHFILES+=	patch$i
 .endfor
 PATCH_DIST_STRIP=-p1
