@@ -14,7 +14,7 @@ SUBST_VARS=		V
 REVISION-common=	0
 REVISION-gui=		0
 REVISION-hpaio=		0
-REVISION-main=		0
+REVISION-main=		1
 
 # https://bugs.launchpad.net/ubuntu/+source/hplip/+bug/1745383
 MASTER_SITES0=		https://src.fedoraproject.org/rpms/hplip/raw/rawhide/f/

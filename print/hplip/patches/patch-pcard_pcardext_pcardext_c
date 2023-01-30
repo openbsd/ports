@@ -1,0 +1,21 @@
+Force-disable outdated python module which doesn't build with python3 and
+clang 15.
+
+Index: pcard/pcardext/pcardext.c
+--- pcard/pcardext/pcardext.c.orig
++++ pcard/pcardext/pcardext.c
+@@ -24,6 +24,8 @@ Author: Don Welch
+ 
+ \*****************************************************************************/
+ 
++#if 0
++
+ #define PY_SSIZE_T_CLEAN
+ 
+ 
+@@ -246,4 +248,4 @@ void initpcardext( void )
+       return;
+ }
+ 
+-
++#endif

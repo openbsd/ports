@@ -24,7 +24,7 @@ bin/hp-unload
 bin/hp-upgrade
 @so lib/python${MODPY_VERSION}/site-packages/cupsext.so
 @so lib/python${MODPY_VERSION}/site-packages/hpmudext.so
-@so lib/python${MODPY_VERSION}/site-packages/pcardext.so
+@comment @so lib/python${MODPY_VERSION}/site-packages/pcardext.so
 share/doc/hplip/
 share/doc/hplip/COPYING
 share/doc/hplip/README_LIBJPG
