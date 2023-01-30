@@ -81,6 +81,7 @@ include/vmime/net/imap/IMAPMessagePartContentHandler.hpp
 include/vmime/net/imap/IMAPMessageStructure.hpp
 include/vmime/net/imap/IMAPParser.hpp
 include/vmime/net/imap/IMAPSStore.hpp
+include/vmime/net/imap/IMAPSearchAttributes.hpp
 include/vmime/net/imap/IMAPServiceInfos.hpp
 include/vmime/net/imap/IMAPStore.hpp
 include/vmime/net/imap/IMAPTag.hpp
@@ -124,6 +125,7 @@ include/vmime/net/serviceFactory.hpp
 include/vmime/net/serviceInfos.hpp
 include/vmime/net/session.hpp
 include/vmime/net/smtp/
+include/vmime/net/smtp/DSNAttributes.hpp
 include/vmime/net/smtp/SMTPChunkingOutputStreamAdapter.hpp
 include/vmime/net/smtp/SMTPCommand.hpp
 include/vmime/net/smtp/SMTPCommandSet.hpp
@@ -131,6 +133,7 @@ include/vmime/net/smtp/SMTPConnection.hpp
 include/vmime/net/smtp/SMTPExceptions.hpp
 include/vmime/net/smtp/SMTPResponse.hpp
 include/vmime/net/smtp/SMTPSTransport.hpp
+include/vmime/net/smtp/SMTPSendOptions.hpp
 include/vmime/net/smtp/SMTPServiceInfos.hpp
 include/vmime/net/smtp/SMTPTransport.hpp
 include/vmime/net/smtp/smtp.hpp
@@ -264,6 +267,12 @@ include/vmime/utility/urlUtils.hpp
 include/vmime/vmime.hpp
 include/vmime/word.hpp
 include/vmime/wordEncoder.hpp
-lib/libvmime.a
+lib/cmake/
+lib/cmake/vmime/
+lib/cmake/vmime/vmime-config${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/vmime/vmime-config.cmake
+lib/cmake/vmime/vmime-static-config${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/vmime/vmime-static-config.cmake
+@static-lib lib/libvmime.a
 @lib lib/libvmime.so.${LIBvmime_VERSION}
 lib/pkgconfig/vmime.pc

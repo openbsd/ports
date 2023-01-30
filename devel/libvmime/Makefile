@@ -2,10 +2,10 @@ COMMENT=	C++ class library for working with Internet mail
 
 GH_ACCOUNT=     kisli
 GH_PROJECT=     vmime
-GH_COMMIT=     	e2fc1911f17374ae5343c28ec52493f1dfdf09ab
+GH_COMMIT=     	fc69321d5304c73be685c890f3b30528aadcfeaf
 
 DISTNAME=	vmime
-PKGNAME=	libvmime-0.9.5
+PKGNAME=	libvmime-20230130
 
 SHARED_LIBS+=	vmime	4.0	# 0.0
 
