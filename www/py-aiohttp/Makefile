@@ -1,10 +1,8 @@
 COMMENT =		http client/server for asyncio
 
-# 3.8.0 adds new deps on frozenlist, aiosignal
-MODPY_EGG_VERSION =	3.7.4
+MODPY_EGG_VERSION =	3.8.3
 DISTNAME =		aiohttp-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
 
 CATEGORIES =		www
 
@@ -19,23 +17,36 @@ FLAVORS =		python3
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
-# XXX some tests fail as we don't have ports for re_assert and async_generator
+# disable tests using "proxy" and "re_assert" modules which aren't in ports
+MODPY_PYTEST_ARGS =	--ignore tests/test_proxy_functional.py \
+			--ignore tests/test_client_session.py \
+			--ignore tests/test_streams.py \
+			--ignore tests/test_urldispatch.py \
+			--ignore tests/test_web_response.py
 
-RUN_DEPENDS =		devel/py-async-timeout${MODPY_FLAVOR} \
-			devel/py-attrs${MODPY_FLAVOR}>=17.3.0 \
-			devel/py-typing-extensions${MODPY_FLAVOR}>=3.6.5 \
-			textproc/py-chardet${MODPY_FLAVOR}>=2.0 \
-			www/py-multidict${MODPY_FLAVOR}>=4.5 \
-			www/py-yarl${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-attrs${MODPY_FLAVOR}>=17.3.0 \
+			textproc/py-charset-normalizer${MODPY_FLAVOR} \
+			www/py-multidict${MODPY_FLAVOR}<7 \
+			devel/py-async-timeout${MODPY_FLAVOR}<5 \
+			www/py-yarl${MODPY_FLAVOR}<2 \
+			devel/py-frozenlist${MODPY_FLAVOR} \
+			devel/py-aiosignal${MODPY_FLAVOR}
+# optional, but let's avoid different behaviour depending on whether
+# they're installed
+RUN_DEPENDS +=		archivers/py-brotli${MODPY_FLAVOR} \
+			net/py-aiodns${MODPY_FLAVOR}
 
 TEST_DEPENDS =		devel/py-freezegun${MODPY_FLAVOR} \
 			devel/py-test${MODPY_FLAVOR} \
 			devel/py-test-cov${MODPY_FLAVOR} \
+			devel/py-test-mock${MODPY_FLAVOR} \
 			devel/py-test-timeout${MODPY_FLAVOR} \
 			devel/py-test-xdist${MODPY_FLAVOR} \
+			security/py-trustme${MODPY_FLAVOR} \
 			www/py-gunicorn${MODPY_FLAVOR}
 
-# junk piles seen in pypi distribution of 3.7.3, 3.7.4
+# cython files relating to upstream's build environment; unsure
+# exactly what they're for but don't seem useful to package
 post-extract:
 	rm -rf ${WRKSRC}/aiohttp/.hash
 

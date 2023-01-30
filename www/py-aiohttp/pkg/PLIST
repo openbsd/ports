@@ -30,8 +30,6 @@ lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}cookiejar.${MOD
 lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}cookiejar.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}formdata.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}formdata.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}frozenlist.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}frozenlist.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}hdrs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}hdrs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}helpers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -60,8 +58,6 @@ lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}pytest_plugin.$
 lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}pytest_plugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}resolver.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}resolver.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}signals.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}signals.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}streams.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}streams.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}tcp_helpers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -103,24 +99,15 @@ lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}web_ws.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}worker.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}worker.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/aiohttp/_cparser.pxd
-lib/python${MODPY_VERSION}/site-packages/aiohttp/_find_header.c
-lib/python${MODPY_VERSION}/site-packages/aiohttp/_find_header.h
 lib/python${MODPY_VERSION}/site-packages/aiohttp/_find_header.pxd
-lib/python${MODPY_VERSION}/site-packages/aiohttp/_frozenlist.c
-@so lib/python${MODPY_VERSION}/site-packages/aiohttp/_frozenlist.${MODPY_PYC_MAGIC_TAG}so
-lib/python${MODPY_VERSION}/site-packages/aiohttp/_frozenlist.pyx
 lib/python${MODPY_VERSION}/site-packages/aiohttp/_headers.pxi
-lib/python${MODPY_VERSION}/site-packages/aiohttp/_helpers.c
 @so lib/python${MODPY_VERSION}/site-packages/aiohttp/_helpers.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/aiohttp/_helpers.pyi
 lib/python${MODPY_VERSION}/site-packages/aiohttp/_helpers.pyx
-lib/python${MODPY_VERSION}/site-packages/aiohttp/_http_parser.c
 @so lib/python${MODPY_VERSION}/site-packages/aiohttp/_http_parser.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/aiohttp/_http_parser.pyx
-lib/python${MODPY_VERSION}/site-packages/aiohttp/_http_writer.c
 @so lib/python${MODPY_VERSION}/site-packages/aiohttp/_http_writer.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/aiohttp/_http_writer.pyx
-lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket.c
 @so lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket.pyx
 lib/python${MODPY_VERSION}/site-packages/aiohttp/abc.py
@@ -133,8 +120,6 @@ lib/python${MODPY_VERSION}/site-packages/aiohttp/client_ws.py
 lib/python${MODPY_VERSION}/site-packages/aiohttp/connector.py
 lib/python${MODPY_VERSION}/site-packages/aiohttp/cookiejar.py
 lib/python${MODPY_VERSION}/site-packages/aiohttp/formdata.py
-lib/python${MODPY_VERSION}/site-packages/aiohttp/frozenlist.py
-lib/python${MODPY_VERSION}/site-packages/aiohttp/frozenlist.pyi
 lib/python${MODPY_VERSION}/site-packages/aiohttp/hdrs.py
 lib/python${MODPY_VERSION}/site-packages/aiohttp/helpers.py
 lib/python${MODPY_VERSION}/site-packages/aiohttp/http.py
@@ -150,8 +135,6 @@ lib/python${MODPY_VERSION}/site-packages/aiohttp/payload_streamer.py
 lib/python${MODPY_VERSION}/site-packages/aiohttp/py.typed
 lib/python${MODPY_VERSION}/site-packages/aiohttp/pytest_plugin.py
 lib/python${MODPY_VERSION}/site-packages/aiohttp/resolver.py
-lib/python${MODPY_VERSION}/site-packages/aiohttp/signals.py
-lib/python${MODPY_VERSION}/site-packages/aiohttp/signals.pyi
 lib/python${MODPY_VERSION}/site-packages/aiohttp/streams.py
 lib/python${MODPY_VERSION}/site-packages/aiohttp/tcp_helpers.py
 lib/python${MODPY_VERSION}/site-packages/aiohttp/test_utils.py
