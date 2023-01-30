@@ -19,4 +19,9 @@ CONFIGURE_STYLE = 	autoreconf
 AUTOMAKE_VERSION =	1.15
 AUTOCONF_VERSION =	2.69
 
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+CFLAGS +=	-std=gnu99
+.endif
+
 .include <bsd.port.mk>
