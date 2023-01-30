@@ -4,7 +4,7 @@ COMMENT =	journaling archiver for incremental backup, fork of ZPAQ
 
 GH_ACCOUNT =	fcorbelli
 GH_PROJECT =	zpaqfranz
-GH_TAGNAME =	57.1
+GH_TAGNAME =	57.2
 
 CATEGORIES =	archivers
 MAINTAINER =	tux0r <tux0r@rosaelefanten.org>
