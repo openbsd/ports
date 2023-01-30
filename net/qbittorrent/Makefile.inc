@@ -20,6 +20,8 @@ MASTER_SITES ?=	${MASTER_SITE_SOURCEFORGE:=qbittorrent/}
 MODULES +=	devel/cmake \
 		x11/qt6
 
+BUILD_DEPENDS +=	x11/qt6/qttools
+
 CONFIGURE_STYLE =	cmake
 CONFIGURE_ARGS +=	-DQT6=ON
 # for automatic stacktraces on crash:  autoconf links it, cmake does not
