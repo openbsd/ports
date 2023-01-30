@@ -3,6 +3,10 @@ COMMENT =		movie player based on MPlayer/mplayer2
 GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
 GH_TAGNAME =		v0.35.1
+
+# gz distfile was generated but no content change after gunzip
+DISTNAME =		mpv-v0.35.1-1
+PKGNAME =		mpv-0.35.1
 REVISION =		0
 
 SHARED_LIBS +=		mpv		1.0 # 2.0
