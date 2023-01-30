@@ -60,7 +60,7 @@ SHA256 (cargo/url-2.2.1.tar.gz) = nM2WQRNiLI6TIs+sGesQBKB+Y2xUXzJdoIXVzd5vH4s=
 SHA256 (cargo/winapi-0.3.9.tar.gz) = XIOaZ0/NepiVLlkyQupACr6TmSdGdh44ZBQF0osA9Bk=
 SHA256 (cargo/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = rDuHxjYgQm3ZuZHlzgMp7/VFvMu7NPO+Cf9vtqtRt7Y=
 SHA256 (cargo/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = cS4ieEHQV8HuHNL7Ivp+WlRhro5I+iynnsQs/BkxGD8=
-SHA256 (py-adblock-0.5.1.tar.gz) = 0k70LIUyyrKXDRw68RbuTQ+lleI/vquzug9d+gpn6uE=
+SHA256 (python-adblock-0.5.1.tar.gz) = 0k70LIUyyrKXDRw68RbuTQ+lleI/vquzug9d+gpn6uE=
 SIZE (cargo/adblock-0.3.13.tar.gz) = 7691310
 SIZE (cargo/addr-0.14.0.tar.gz) = 90210
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
@@ -123,4 +123,4 @@ SIZE (cargo/url-2.2.1.tar.gz) = 65434
 SIZE (cargo/winapi-0.3.9.tar.gz) = 1200382
 SIZE (cargo/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = 2918815
 SIZE (cargo/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 2947998
-SIZE (py-adblock-0.5.1.tar.gz) = 22899
+SIZE (python-adblock-0.5.1.tar.gz) = 22899

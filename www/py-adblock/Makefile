@@ -24,8 +24,6 @@ PERMIT_PACKAGE =Yes
 
 WANTLIB += c c++abi pthread
 
-DISTFILES =	${DISTNAME}${EXTRACT_SUFX}
-
 MODULES =	devel/cargo \
 		lang/python
 
