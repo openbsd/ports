@@ -3,8 +3,8 @@ COMMENT =		terminal mail client
 GH_ACCOUNT =		meli
 GH_PROJECT =		meli
 GH_COMMIT =		3697b7d960cc9dbe602fa84f861cea854b600b73
-DISTNAME =	meli-0.7.2.20221017-3697b7d{3697b7d960cc9dbe602fa84f861cea854b600b73}
-PKGNAME =	meli-0.7.2pl20221017
+DISTNAME =		meli-0.7.2.20221017
+PKGNAME =		meli-0.7.2pl20221017
 REVISION =		2
 
 # ring-v0.16.20 does not support those archs
@@ -17,9 +17,6 @@ CATEGORIES =		mail
 HOMEPAGE =	https://meli.delivery/
 # GPLv3
 PERMIT_PACKAGE =	Yes
-
-# as devel/cargo MODULES adds DISTFILES, GH_* didn't
-DISTFILES +=		${DISTNAME}${EXTRACT_SUFX}
 
 MODULES =		devel/cargo
 MODCARGO_FEATURES +=	jmap
