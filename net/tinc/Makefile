@@ -9,6 +9,9 @@ HOMEPAGE =		https://www.tinc-vpn.org/
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 WANTLIB +=		c crypto curses lzo2 m readline z
 
 MASTER_SITES =		https://www.tinc-vpn.org/packages/
