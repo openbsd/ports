@@ -20,7 +20,10 @@ MASTER_SITES ?=	${MASTER_SITE_SOURCEFORGE:=qbittorrent/}
 MODULES +=	devel/cmake \
 		x11/qt6
 
-BUILD_DEPENDS +=	x11/qt6/qttools
+BUILD_DEPENDS +=	devel/boost \
+			x11/qt6/qttools
+
+LIB_DEPENDS +=		net/libtorrent-rasterbar
 
 CONFIGURE_STYLE =	cmake
 CONFIGURE_ARGS +=	-DQT6=ON

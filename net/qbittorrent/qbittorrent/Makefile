@@ -10,10 +10,7 @@ MODULES =		lang/python
 MODPY_BUILDDEP =	No
 MODPY_TESTDEP =		No
 
-BUILD_DEPENDS +=	devel/boost \
-			x11/qt6/qtsvg
-
-LIB_DEPENDS +=		net/libtorrent-rasterbar
+BUILD_DEPENDS +=	x11/qt6/qtsvg
 
 RUN_DEPENDS +=		x11/gtk+3,-guic \
 			devel/desktop-file-utils
