@@ -5,8 +5,8 @@ Index: package.json
      "url": "https://github.com/opensearch-project/opensearch-dashboards.git"
    },
    "engines": {
--    "node": "14.20.0"
-+    "node": "16.16.0"
+-    "node": "14.20.1"
++    "node": "18.12.1"
    }
 -}
 \ No newline at end of file
