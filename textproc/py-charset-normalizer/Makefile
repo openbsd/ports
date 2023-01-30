@@ -12,6 +12,9 @@ HOMEPAGE =	https://github.com/ousret/charset_normalizer
 # MIT
 PERMIT_PACKAGE =	Yes
 
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 MODULES =		lang/python
 
 MODPY_PI =		Yes
