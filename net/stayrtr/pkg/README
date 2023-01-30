@@ -2,10 +2,14 @@
 | Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
-To use your local RPKI cache, add to the root's crontab:
+To use your own local RPKI cache, first enable rpki-client with JSON
+output in the root user's crontab:
 
+	# crontab -l | grep rpki-client
 	~      *       *       *       *       -ns rpki-client -j
 
-And run:
+Then point ${PKGSTEM} to your local cache:
 
+	# rcctl enable stayrtr
 	# rcctl set stayrtr flags -cache /var/db/rpki-client/json
+	# rcctl start stayrtr
