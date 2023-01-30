@@ -1,6 +1,6 @@
 COMMENT=	interpreter for Magnetic Scrolls games
 
-V=		0.35
+V=		0.36
 DISTNAME=	dMagnetic_${V}
 PKGNAME=	dmagnetic-${V}
 EXTRACT_SUFX=	.tar.bz2
