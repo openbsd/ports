@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.72 2021/10/06 13:56:50 espie Exp $
+# $OpenBSD: proot,v 1.73 2023/01/30 14:20:27 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -360,9 +360,12 @@ sub handle_options
 			$state->say("#1: #2", $i, $state->{$i}{user});
 		}
 	}
-	for my $i (qw(PORTSDIR DISTDIR WRKOBJDIR LOCKDIR LOGDIR 
+	for my $i (qw(chroot srcroot 
+	    PORTSDIR DISTDIR WRKOBJDIR LOCKDIR LOGDIR 
 	    PACKAGE_REPOSITORY PLIST_REPOSITORY)) {
-		$state->say("#1=#2", $i, $state->{$i});
+		if (defined $state->{$i}) {
+			$state->say("#1=#2", $i, $state->{$i});
+		}
 	}
 }
 
