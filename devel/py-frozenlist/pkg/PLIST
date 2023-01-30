@@ -1,0 +1,15 @@
+lib/python${MODPY_VERSION}/site-packages/frozenlist/
+lib/python${MODPY_VERSION}/site-packages/frozenlist-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/frozenlist-${MODPY_EGG_VERSION}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/frozenlist-${MODPY_EGG_VERSION}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/frozenlist-${MODPY_EGG_VERSION}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/frozenlist-${MODPY_EGG_VERSION}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/frozenlist-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/frozenlist/__init__.py
+lib/python${MODPY_VERSION}/site-packages/frozenlist/__init__.pyi
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/frozenlist/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/frozenlist/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/frozenlist/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+@so lib/python${MODPY_VERSION}/site-packages/frozenlist/_frozenlist.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/frozenlist/_frozenlist.pyx
+lib/python${MODPY_VERSION}/site-packages/frozenlist/py.typed
