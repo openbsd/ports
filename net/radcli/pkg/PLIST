@@ -44,6 +44,9 @@ lib/pkgconfig/radcli.pc
 @man man/man3/rc_config_free.3
 @man man/man3/rc_config_init.3
 @man man/man3/rc_destroy.3
+@man man/man3/rc_dict_addattr.3
+@man man/man3/rc_dict_addval.3
+@man man/man3/rc_dict_addvend.3
 @man man/man3/rc_dict_findattr.3
 @man man/man3/rc_dict_findval.3
 @man man/man3/rc_dict_findvend.3

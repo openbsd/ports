@@ -2,8 +2,7 @@ COMMENT=	simple RADIUS client library
 
 SHARED_LIBS +=	radcli               1.0      # 8.0
 
-V=		1.3.0
-REVISION=	0
+V=		1.3.1
 DISTNAME=	radcli-$V
 
 CATEGORIES=	net
@@ -24,9 +23,7 @@ FAKE_FLAGS=	pkgsysconfdir=${PREFIX}/share/examples/radcli
 
 CONFIGURE_STYLE=	gnu
 
-# most tests need a running local RADIUS server; they talk about a
-# run-server.sh script to run this but it's not actually included.
-
-#SEPARATE_BUILD=		Yes	# breaks avpair test
+# most tests need a running local RADIUS server; the script (ns.sh)
+# provided to run this only supports Linux with netns.
 
 .include <bsd.port.mk>
