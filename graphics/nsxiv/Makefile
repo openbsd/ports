@@ -2,7 +2,7 @@ COMMENT =	neo simple X Image Viewer
 
 GH_PROJECT =	nsxiv
 GH_ACCOUNT =	nsxiv
-GH_TAGNAME =	v30
+GH_TAGNAME =	v31
 
 CATEGORIES =	graphics x11
 
@@ -47,7 +47,7 @@ FAKE_TARGET =	install-all
 NO_TEST =	Yes
 
 post-patch:
-	${SUBST_CMD} ${WRKSRC}/nsxiv.1
+	${SUBST_CMD} ${WRKSRC}/etc/nsxiv.1
 
 # Git errors break version.h build; this makes it fall back to a
 # hardcoded value
@@ -55,8 +55,6 @@ pre-build:
 	ln -sf /usr/bin/true ${WRKDIR}/bin/git
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/nsxiv.desktop ${PREFIX}/share/applications
 	cd ${PREFIX}/bin && ln -s nsxiv sxiv
 
 .include <bsd.port.mk>

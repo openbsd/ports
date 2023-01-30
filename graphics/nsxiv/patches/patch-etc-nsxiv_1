@@ -1,8 +1,8 @@
 Corrects the path of keysymdef.h.
 
 Index: nsxiv.1
---- nsxiv.1.orig
-+++ nsxiv.1
+--- etc/nsxiv.1.orig
++++ etc/nsxiv.1
 @@ -499,7 +499,7 @@ By default nsxiv(1) will send one image per-line to st
  
  The key combo argument has the following form: "[C-][M-][S-]KEY",
