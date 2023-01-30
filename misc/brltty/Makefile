@@ -9,6 +9,9 @@ MASTER_SITES=	${HOMEPAGE}/releases/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 WANTLIB=		c curses pthread sndio
 
 RUN_DEPENDS=	screen-*-shm:misc/screen-shm
