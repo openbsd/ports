@@ -13,8 +13,6 @@ HOMEPAGE =		https://github.com/dandavison/delta
 # MIT
 PERMIT_PACKAGE =	Yes
 
-DISTFILES +=		${GH_DISTFILE}
-
 COMPILER =		base-clang ports-gcc
 WANTLIB +=		${MODCARGO_WANTLIB} m git2 onig
 

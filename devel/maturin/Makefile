@@ -17,8 +17,6 @@ PERMIT_PACKAGE =Yes
 
 WANTLIB += bz2 c c++abi m pthread
 
-DISTFILES +=	${DISTNAME}${EXTRACT_SUFX}
-
 MODULES =	devel/cargo
 
 CONFIGURE_STYLE =cargo

@@ -118,7 +118,7 @@ SHA256 (cargo/windows_x86_64_gnu-0.42.0.tar.gz) = v3sbIbU2LLwxj2hhUOW86nXs7cdN0V
 SHA256 (cargo/windows_x86_64_gnullvm-0.42.0.tar.gz) = CdUl0row7rMpdmW9Q0pUKX5BcMfxpEytTvWAlbTNICg=
 SHA256 (cargo/windows_x86_64_msvc-0.36.1.tar.gz) = yBHKSoyFPvQgq9hZK6U927rJBBD6tpA7PnmXKmMfdoA=
 SHA256 (cargo/windows_x86_64_msvc-0.42.0.tar.gz) = 9AAJ2FdZclo02m2JqU5j173FCoYqzw28fI5Ijx7ctvU=
-SHA256 (fd-8.5.3.tar.gz) = h3AHfrcLOYnBmQ1WoQGcu+onQhz1cbnvfjMPmJzVZCE=
+SHA256 (fd-8.5.3.tar.gz) = RaZETPW7/PTuSDbZov8hBtMeZ9p3NBGDOSIlutyHzTU=
 SIZE (cargo/aho-corasick-0.7.19.tar.gz) = 113070
 SIZE (cargo/android_system_properties-0.1.5.tar.gz) = 5243
 SIZE (cargo/ansi_term-0.12.1.tar.gz) = 24838
@@ -239,4 +239,4 @@ SIZE (cargo/windows_x86_64_gnu-0.42.0.tar.gz) = 692493
 SIZE (cargo/windows_x86_64_gnullvm-0.42.0.tar.gz) = 357906
 SIZE (cargo/windows_x86_64_msvc-0.36.1.tar.gz) = 661999
 SIZE (cargo/windows_x86_64_msvc-0.42.0.tar.gz) = 659377
-SIZE (fd-8.5.3.tar.gz) = 113931
+SIZE (fd-8.5.3.tar.gz) = 114097

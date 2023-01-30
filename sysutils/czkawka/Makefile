@@ -18,7 +18,6 @@ PERMIT_PACKAGE =	Yes
 
 MULTI_PACKAGES =	-main -gui
 
-DISTFILES +=            ${DISTNAME}${EXTRACT_SUFX}
 MODULES =		devel/cargo
 
 CONFIGURE_STYLE =	cargo

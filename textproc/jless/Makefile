@@ -16,7 +16,6 @@ HOMEPAGE =		https://jless.io/
 
 MODULES =		devel/cargo \
 			lang/python
-DISTFILES +=		${GH_DISTFILE}
 
 CONFIGURE_STYLE =	cargo
 # for riscv64 and powerpc64, please keep: cc >= 1.0.73 and libc >= 0.2.113

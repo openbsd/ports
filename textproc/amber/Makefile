@@ -13,9 +13,6 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		c c++abi pthread
 
-# as devel/cargo MODULES adds DISTFILES, GH_* didn't
-DISTFILES +=		${DISTNAME}${EXTRACT_SUFX}
-
 MODULES =		devel/cargo
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes

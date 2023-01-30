@@ -9,9 +9,6 @@ CATEGORIES =		sysutils
 # Apache/MIT
 PERMIT_PACKAGE =	Yes
 
-# as devel/cargo MODULES adds DISTFILES, GH_* didn't
-DISTFILES +=		${DISTNAME}${EXTRACT_SUFX}
-
 MODULES =		devel/cargo
 # for riscv64 and powerpc64, please keep: cc >= 1.0.73 and libc >= 0.2.113
 MODCARGO_CRATES_UPDATE =	cc

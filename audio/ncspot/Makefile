@@ -34,8 +34,6 @@ MODCARGO_FEATURES =	cursive/termion-backend \
 			mpris \
 			portaudio_backend
 
-DISTFILES +=		${DISTNAME}${EXTRACT_SUFX}
-
 .include "crates.inc"
 
 DOCDIR =	${PREFIX}/share/doc/ncspot/

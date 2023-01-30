@@ -11,9 +11,6 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		${MODCARGO_WANTLIB} pthread
 
-# as devel/cargo MODULES adds DISTFILES, GH_* didn't
-DISTFILES +=		${DISTNAME}${EXTRACT_SUFX}
-
 MODULES =		devel/cargo
 
 CONFIGURE_STYLE =	cargo

@@ -13,9 +13,8 @@ CATEGORIES =		devel
 # MIT
 PERMIT_PACKAGE =	Yes
 
-DISTFILES +=		${GH_DISTFILE}
 MODULES =		devel/cargo
-BUILD_DEPENDS = 	textproc/mdbook
+BUILD_DEPENDS =		textproc/mdbook
 COMPILER =		base-clang ports-gcc
 WANTLIB += 		${MODCARGO_WANTLIB} ${COMPILER_LIBCXX} m
 

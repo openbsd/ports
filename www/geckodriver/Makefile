@@ -10,8 +10,6 @@ CATEGORIES =	www
 # mozilla public license
 PERMIT_PACKAGE =	Yes
 
-DISTFILES +=		${DISTNAME}${EXTRACT_SUFX}
-
 MODULES =		devel/cargo
 
 CONFIGURE_STYLE =	cargo

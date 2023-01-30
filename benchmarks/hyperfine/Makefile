@@ -14,8 +14,6 @@ WANTLIB +=		c c++abi m pthread
 
 MODULES =		devel/cargo
 
-DISTFILES +=		${DISTNAME}${EXTRACT_SUFX}
-
 CONFIGURE_STYLE =	cargo
 
 .include "crates.inc"

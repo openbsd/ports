@@ -23,8 +23,6 @@ MODULES =		devel/cargo \
 
 MODPY_RUNDEP =		No
 
-DISTFILES +=		${DISTNAME}${EXTRACT_SUFX}
-
 .include "crates.inc"
 
 CONFIGURE_STYLE =	cargo

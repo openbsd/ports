@@ -14,9 +14,6 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c c++abi m pthread
 
-# as devel/cargo MODULES adds DISTFILES, GH_* didn't
-DISTFILES +=		${DISTNAME}${EXTRACT_SUFX}
-
 MODULES =		devel/cargo
 
 # for riscv64 and powerpc64, please keep: libc >= 0.2.113

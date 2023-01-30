@@ -11,7 +11,6 @@ MAINTAINER=		Volker Schlecht <openbsd-ports@schlecht.dev>
 # MIT or Apache 2.0
 PERMIT_PACKAGE=		Yes
 WANTLIB+=		${MODCARGO_WANTLIB} m pcsclite
-DISTFILES+=		${GH_DISTFILE}
 
 MODULES=		devel/cargo
 

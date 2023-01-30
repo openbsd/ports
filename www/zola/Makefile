@@ -10,8 +10,6 @@ REVISION =	3
 
 HOMEPAGE =	https://www.getzola.org
 
-DISTFILES +=	${DISTNAME}${EXTRACT_SUFX}
-
 CATEGORIES =	www
 
 MAINTAINER =	Peter H. Ezetta <protocall7@gmail.com>

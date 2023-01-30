@@ -8,8 +8,6 @@ GH_ACCOUNT =		sfackler
 GH_PROJECT =		rust-openssl
 GH_COMMIT =		78c241f2716320f509f284261ce04812c3751b4f
 
-DISTFILES +=		${GH_DISTFILE}
-
 CATEGORIES =		security devel
 
 MAINTAINER =		Theo Buehler <tb@openbsd.org>

@@ -27,8 +27,6 @@ MODCARGO_TEST =		No
 
 MAKE_ENV +=		${MODCARGO_ENV}
 
-DISTFILES =	${DISTNAME}${EXTRACT_SUFX}
-
 BUILD_DEPENDS += devel/py-setuptools-rust${MODPY_FLAVOR}>=1.3.0
 
 # in same order as in pyproject.toml: mandatory section

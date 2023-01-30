@@ -10,9 +10,6 @@ CATEGORIES =		devel
 # MPL-2.0
 PERMIT_PACKAGE =	Yes
 
-# as devel/cargo MODULES adds DISTFILES, GH_* didn't
-DISTFILES +=		${DISTNAME}${EXTRACT_SUFX}
-
 COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cargo

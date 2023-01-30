@@ -10,9 +10,6 @@ CATEGORIES =		sysutils
 # Unlicense/MIT
 PERMIT_PACKAGE =	Yes
 
-# as devel/cargo MODULES adds DISTFILES, GH_* didn't
-DISTFILES +=		${DISTNAME}${EXTRACT_SUFX}
-
 MODULES =		devel/cargo
 
 .include "crates.inc"

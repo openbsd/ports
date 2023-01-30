@@ -1,6 +1,4 @@
 COMMENT =	cross-platform, GPU-accelerated terminal emulator
-# devel/cargo MODULES adds DISTFILES, GH_* didn't
-DISTFILES +=	${DISTNAME}${EXTRACT_SUFX}
 CATEGORIES =	x11
 
 MAINTAINER =	Eric Auge <eau+obsd@unix4fun.net>

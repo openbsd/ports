@@ -9,9 +9,6 @@ CATEGORIES =		shells
 # MIT
 PERMIT_PACKAGE =	Yes
 
-# as devel/cargo MODULES adds DISTFILES, GH_* didn't
-DISTFILES +=		${DISTNAME}${EXTRACT_SUFX}
-
 MODULES =		devel/cargo
 MODCARGO_CRATES_KEEP +=	libsqlite3-sys
 

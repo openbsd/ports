@@ -22,7 +22,6 @@ BUILD_DEPENDS =	security/rust-ring
 
 SEPARATE_BUILD =	Yes
 NO_TEST =	Yes
-DISTFILES +=	${DISTNAME}${EXTRACT_SUFX}
 
 CONFIGURE_STYLE =	cargo
 

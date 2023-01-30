@@ -25,9 +25,6 @@ WANTLIB +=		c c++abi crypto m pthread ssl
 MASTER_SITES7 =		https://files.bsd.ac/openbsd-distfiles/
 DISTFILES +=		vaultwarden-deps-${GH_TAGNAME}.tgz:7
 
-# as devel/cargo MODULES adds DISTFILES, GH_* didn't
-DISTFILES +=		${DISTNAME}${EXTRACT_SUFX}
-
 MODULES =		devel/cargo
 
 CONFIGURE_STYLE =	cargo

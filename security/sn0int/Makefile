@@ -19,9 +19,6 @@ PERMIT_PACKAGE =	Yes
 LIB_DEPENDS =		databases/sqlite3 security/libsodium ${MODLUA_LIB_DEPENDS}
 WANTLIB +=		c c++abi m pthread sqlite3 sodium ${MODLUA_WANTLIB}
 
-# as devel/cargo MODULES adds DISTFILES, GH_* didn't
-DISTFILES +=		${DISTNAME}${EXTRACT_SUFX}
-
 MODLUA_VERSION =	5.2
 MODLUA_SA =		Yes
 

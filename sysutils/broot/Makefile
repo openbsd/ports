@@ -13,9 +13,6 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c c++abi m onig pthread z
 
-# as devel/cargo MODULES adds DISTFILES, GH_* didn't
-DISTFILES +=		${DISTNAME}${EXTRACT_SUFX}
-
 MODULES =		devel/cargo
 MODCARGO_CRATES_KEEP += libgit2-sys
 
