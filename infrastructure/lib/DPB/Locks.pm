@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Locks.pm,v 1.53 2023/01/25 13:53:48 espie Exp $
+# $OpenBSD: Locks.pm,v 1.54 2023/01/30 18:18:41 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -290,7 +290,7 @@ sub build_lockname
 {
 	my ($self, $f) = @_;
 	$f =~ tr|/|.|;
-	return "$self->{lockdir}/$f";
+	return "$self->{lockdir}/$f.lock";
 }
 
 sub lockname
