@@ -10,7 +10,7 @@ CATEGORIES ?=	net
 
 HOMEPAGE ?=	https://www.qbittorrent.org
 
-MAINTAINER =	Elias M. Mariani <marianielias@gmail.com>
+MAINTAINER =	Klemens Nanni <kn@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
