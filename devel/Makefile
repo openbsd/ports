@@ -1304,6 +1304,7 @@
      SUBDIR += pth
      SUBDIR += ptlib
      SUBDIR += pudb,python3
+     SUBDIR += py-aiosignal,python3
      SUBDIR += py-algorithm-munkres,python3
      SUBDIR += py-altgraph
      SUBDIR += py-altgraph,python3
@@ -1400,6 +1401,7 @@
      SUBDIR += py-flit_core,python3
      SUBDIR += py-freezegun,python3
      SUBDIR += py-frozendict,python3
+     SUBDIR += py-frozenlist,python3
      SUBDIR += py-funcy
      SUBDIR += py-funcy,python3
      SUBDIR += py-future
