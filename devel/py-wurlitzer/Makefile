@@ -3,13 +3,11 @@ COMMENT =		capture c-level output in context managers
 MODPY_EGG_VERSION =	2.0.1
 DISTNAME =		wurlitzer-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		devel
 
 HOMEPAGE =		https://github.com/minrk/wurlitzer
-
-MAINTAINER =		Elias M. Mariani <marianielias@gmail.com>
 
 # MIT
 PERMIT_PACKAGE =	Yes

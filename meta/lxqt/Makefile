@@ -5,9 +5,9 @@ V =		1.0.0
 PKGNAME =	lxqt-${V}
 
 PKGNAME-main =		lxqt-${V}
+REVISION-main =		0
 PKGNAME-extras =	lxqt-extras-${V}
-
-MAINTAINER =		Elias M. Mariani <marianielias@gmail.com>
+REVISION-extras =	0
 
 MULTI_PACKAGES =	-main -extras
 

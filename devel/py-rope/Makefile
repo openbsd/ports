@@ -3,13 +3,11 @@ COMMENT =		refactoring library
 MODPY_EGG_VERSION =	0.18.0
 DISTNAME =		rope-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		devel
 
 HOMEPAGE =		https://github.com/python-rope/rope
-
-MAINTAINER =		Elias M. Mariani <marianielias@gmail.com>
 
 # LGPLv3+
 PERMIT_PACKAGE =	Yes

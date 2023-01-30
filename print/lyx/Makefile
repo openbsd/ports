@@ -3,13 +3,11 @@ PORTROACH=	skipv:2.3.x
 COMMENT=	graphical frontend for LaTeX (nearly WYSIWYG)
 
 DISTNAME=	lyx-2.3.6.1
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	print editors
 
 HOMEPAGE=	https://www.lyx.org/
-
-MAINTAINER=	Elias M. Mariani <marianielias@gmail.com>
 
 MASTER_SITES=	https://ftp.lip6.fr/pub/lyx/stable/2.3.x/ \
 		http://ftp.icm.edu.pl/packages/lyx/stable/ \
