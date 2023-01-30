@@ -57,7 +57,7 @@ WANTLIB=	expat iconv intl lz4 m pthread z
 BUILD_DEPENDS=	devel/gettext,-tools \
 		devel/py3c
 
-MULTI_PACKAGES = -main -ap2 -perl -python -ruby -gnome-keyring
+MULTI_PACKAGES = -main -ap2 -perl -python -gnome-keyring
 
 MAINSPEC =	${PKGNAME}:devel/subversion,-main
 LIB_DEPENDS-main = ${LIB_DEPENDS} \
