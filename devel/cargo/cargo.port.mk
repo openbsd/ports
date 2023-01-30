@@ -60,6 +60,10 @@ MASTER_SITES${MODCARGO_MASTER_SITESN} ?= ${MASTER_SITES_CRATESIO}
 # allow override default configuration, and keep all files
 MODCARGO_CRATES_KEEP ?=
 
+.if !empty(GH_ACCOUNT) && !empty(GH_PROJECT)
+DISTFILES +=	${GH_DISTFILE}
+.endif
+
 # Generated list of DISTFILES.
 .for _cratename _cratever in ${MODCARGO_CRATES}
 DISTFILES +=	${_MODCARGO_DIST_SUBDIR}${_cratename}-${_cratever}.tar.gz{${_cratename}/${_cratever}/download}:${MODCARGO_MASTER_SITESN}
