@@ -2,13 +2,14 @@ COMMENT =	visualization tool for data in OpenSearch
 
 V =		2.5.0
 DISTNAME =	opensearch-dashboards-$V-linux-x64
+REVISION =	0
 PKGNAME =	opensearch-dashboards-$V
 
 CATEGORIES =	www
 
 HOMEPAGE =	https://www.opensearch.org/
 
-MAINTAINER =	Omar Polo <op@openbsd.org>, \
+MAINTAINER =	Omar Polo <op@openbsd.org>,\
 		Pavel Korovin <pvk@openbsd.org>
 
 MASTER_SITES =	https://artifacts.opensearch.org/releases/bundle/opensearch-dashboards/$V/

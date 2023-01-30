@@ -2,13 +2,14 @@ COMMENT =	distributed and RESTful search engine
 
 V =		2.5.0
 DISTNAME =	opensearch-$V-linux-x64
+REVISION =	0
 PKGNAME =	opensearch-$V
 
 CATEGORIES =	textproc devel
 
 HOMEPAGE =	https://www.opensearch.org/
 
-MAINTAINER =	Omar Polo <op@openbsd.org>, \
+MAINTAINER =	Omar Polo <op@openbsd.org>,\
 		Pavel Korovin <pvk@openbsd.org>
 
 MASTER_SITES =	https://artifacts.opensearch.org/releases/bundle/opensearch/$V/
