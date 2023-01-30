@@ -11,6 +11,10 @@ MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
 # MIT
 PERMIT_PACKAGE =		Yes
 
+# C11
+COMPILER =	base-clang ports-gcc
+COMPILER_LANGS =	c
+
 MODULES =	lang/ruby
 
 CONFIGURE_STYLE = ruby gem ext
