@@ -1,7 +1,7 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -23099,9 +23099,9 @@ See \`config.log' for more details" "$LINENO" 5; }
+@@ -22926,9 +22926,9 @@ $as_echo X"$file" |
  #define  JOEDOG_PATH_H
  
  #define SIEGE_HOME     "$prefix"
