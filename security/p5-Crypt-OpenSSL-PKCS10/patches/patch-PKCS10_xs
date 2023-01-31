@@ -14,3 +14,12 @@ Index: PKCS10.xs
  #define EVP_PKEY_get0_EC_KEY(pkey) ((pkey)->pkey.ec)
  #endif
  #endif
+@@ -684,7 +684,7 @@ add_ext_final(pkcs10)
+ 	if(pkcs10->exts)
+ 		sk_X509_EXTENSION_pop_free(pkcs10->exts, X509_EXTENSION_free);
+ 	} else {
+-		RETVAL = NULL;
++		RETVAL = 0;
+ 	}
+ 
+ 	OUTPUT:
