@@ -2,7 +2,7 @@ COMMENT =		diff tool that compares files based on their syntax
 
 GH_ACCOUNT =		Wilfred
 GH_PROJECT =		difftastic
-GH_TAGNAME =		0.40.0
+GH_TAGNAME =		0.42.0
 
 HOMEPAGE =		https://difftastic.wilfred.me.uk/
 
@@ -21,6 +21,8 @@ WANTLIB += 		${MODCARGO_WANTLIB} ${COMPILER_LIBCXX} m
 CONFIGURE_STYLE =	cargo
 
 DOCDIR =		${PREFIX}/share/doc/difftastic
+
+PATCHORIG = 		.orig.port
 
 # Prepare directory for HTML manual
 post-extract:
