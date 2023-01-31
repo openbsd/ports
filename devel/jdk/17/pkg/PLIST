@@ -223,7 +223,6 @@ jdk-17/include/jvmticmlr.h
 jdk-17/include/openbsd/
 jdk-17/include/openbsd/jawt_md.h
 jdk-17/include/openbsd/jni_md.h
-jdk-17/include/sizecalc.h
 jdk-17/jmods/
 jdk-17/jmods/java.base.jmod
 jdk-17/jmods/java.compiler.jmod

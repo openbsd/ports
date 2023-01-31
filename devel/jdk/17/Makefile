@@ -1,25 +1,23 @@
 ONLY_FOR_ARCHS=	i386 amd64 aarch64
 USE_WXNEEDED=	Yes
+USE_NOEXECONLY=	Yes
 DPB_PROPERTIES=	parallel
 
 COMMENT=	OpenJDK Software Development Kit v${VERSION_STR}
-BASE_VER=	17.0.5
-PATCH_VER=	8
+BASE_VER=	17.0.6
+PATCH_VER=	10
 BSD_PORT_REL=	1
 VERSION_STR=	${BASE_VER}+${PATCH_VER}-${BSD_PORT_REL}
 PACKAGE_VER=	${BASE_VER}.${PATCH_VER}.${BSD_PORT_REL}
 PKGNAME=	jdk-${PACKAGE_VER}
 PKGSTEM=	jdk-17
 EPOCH=		0
-REVISION=	1
-
-USE_NOEXECONLY=Yes
 
 DIST_SUBDIR=	jdk
 DISTNAME=	jdk-${VERSION_STR}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 WRKDIST=	${WRKDIR}/jdk17u-jdk-${BASE_VER}-${PATCH_VER}-${BSD_PORT_REL}
-BOOTJDK_DATE=	20220806
+BOOTJDK_DATE=	20230123
 
 CATEGORIES=	devel/jdk java
 
@@ -145,8 +143,6 @@ WRKTMP=		${WRKDIR}/tmp
 post-extract:
 	sed -i "s|#!/bin/bash|#!\${LOCALBASE}/bin/bash|" ${WRKDIST}/configure
 	chmod +x ${WRKDIST}/configure
-	chmod 644 ${WRKDIR}/bootjdk-libs/lib*.so* # XXX
-	cp /usr/lib/libc.so.96.* ${WRKDIR}/bootjdk-libs/ # XXX
 
 .if ${PROPERTIES:Mdebuginfo}
 post-build:
