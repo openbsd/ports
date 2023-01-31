@@ -1,9 +1,20 @@
 Don't install Let's Encrypt script, which relies on PHP. We have acme-client(1)
 in base, and several alternatives in ports.
 
+Remove hardcoded dwarf-4 debug format that ld.bfd doesn't handle
+
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
+@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.0)
+ project(Hiawatha VERSION 11.3 LANGUAGES C)
+ 
+ # Compiler
+-set(CMAKE_C_FLAGS "-O2 -Wall -Wextra ${CMAKE_C_FLAGS} -gdwarf-4")
++set(CMAKE_C_FLAGS "-O2 -Wall -Wextra ${CMAKE_C_FLAGS} -g")
+ set(CMAKE_BUILD_TYPE "RelWithDebInfo")
+ 
+ # Options
 @@ -171,15 +171,15 @@ endforeach()
  
  install(FILES extra/index.html DESTINATION ${WEBROOT_DIR})
