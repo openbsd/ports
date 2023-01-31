@@ -14,6 +14,9 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 WANTLIB += c com_err curses ext2fs iconv jpeg ntfs-3g uuid z
 
 SUBST_VARS +=		VERSION
