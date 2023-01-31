@@ -1,23 +1,21 @@
 ONLY_FOR_ARCHS=	i386 amd64 aarch64 sparc64
 USE_WXNEEDED=	Yes
+USE_NOEXECONLY=	Yes
 DPB_PROPERTIES=	parallel
 
 COMMENT=	OpenJDK Software Development Kit v${V}
 BASE_VER=	1.8.0
-UPDATE_VER=	352
-BUILD_VER=	b08
+UPDATE_VER=	362
+BUILD_VER=	b09
 BSD_PORT_REL=	1
 V=		${BASE_VER}.${UPDATE_VER}.${BUILD_VER}.${BSD_PORT_REL}
 PKGNAME=	jdk-${V}
 PKGSTEM=	jdk-${BASE_VER}
 EPOCH=		0
-REVISION=	1
-
-USE_NOEXECONLY=Yes
 
 DIST_SUBDIR=	jdk
 DISTNAME=	jdk8u${UPDATE_VER}-${BUILD_VER}.${BSD_PORT_REL}
-BOOTJDK_DATE=	20220805
+BOOTJDK_DATE=	20230122
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 WRKDIST=	${WRKDIR}/jdk8u-jdk8u${UPDATE_VER}-${BUILD_VER}.${BSD_PORT_REL}
 
@@ -131,8 +129,6 @@ SUBST_VARS=	JDKHOME LIBARCH
 
 post-extract:
 	chmod +x ${WRKDIST}/configure
-	chmod 644 ${WRKDIR}/bootjdk-libs/lib*.so* # XXX
-	cp /usr/lib/libc.so.96.* ${WRKDIR}/bootjdk-libs/ # XXX
 
 post-build:
 	@rm -rf ${JDKIMAGEDIR}/man/ja ${JDKIMAGEDIR}/man/ja_JP.UTF-8
