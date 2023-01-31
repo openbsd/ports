@@ -8,7 +8,7 @@ COMMENT =		multi-paradigm programming language
 V =			8.7
 PKGNAME =		racket-minimal-$V
 DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX} \
-			racket-openbsd-2${EXTRACT_SUFX}
+			racket-openbsd-2${EXTRACT_SUFX}:0
 
 CATEGORIES =		lang
 HOMEPAGE =		https://racket-lang.org/
@@ -30,6 +30,9 @@ MASTER_SITES =		https://mirror.racket-lang.org/installers/${V}/ \
 			ftp://download.tuxfamily.org/jod/lang/racket/ \
 			https://www.cs.utah.edu/plt/snapshots/current/installers/ \
 			http://plt.eecs.northwestern.edu/snapshots/current/installers/
+
+MASTER_SITES0 =		https://download.tuxfamily.org/jod/lang/racket/ \
+			ftp://download.tuxfamily.org/jod/lang/racket/
 EXTRACT_SUFX =		.tgz
 
 LIB_DEPENDS =		archivers/lz4 \
