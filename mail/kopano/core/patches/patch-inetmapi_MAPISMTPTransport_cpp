@@ -1,0 +1,13 @@
+Index: inetmapi/MAPISMTPTransport.cpp
+--- inetmapi/MAPISMTPTransport.cpp.orig
++++ inetmapi/MAPISMTPTransport.cpp
+@@ -442,7 +442,8 @@ void MAPISMTPTransport::noop()
+ //
+ void MAPISMTPTransport::send(const mailbox &expeditor,
+     const mailboxList &recipients, utility::inputStream &is, size_t size,
+-    utility::progressListener *progress, const mailbox &sender)
++    utility::progressListener *progress, const mailbox &sender,
++    const sendOptions &options)
+ {
+ 	if (!isConnected())
+ 		throw exceptions::not_connected();

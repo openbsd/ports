@@ -1,0 +1,12 @@
+Index: inetmapi/MAPISMTPTransport.h
+--- inetmapi/MAPISMTPTransport.h.orig
++++ inetmapi/MAPISMTPTransport.h
+@@ -55,7 +55,7 @@ class MAPISMTPTransport final : public vmime::net::tra
+ 	bool isConnected() const;
+ 	void disconnect();
+ 	void noop();
+-	void send(const vmime::mailbox &expeditor, const vmime::mailboxList &recipients, vmime::utility::inputStream &, size_t, vmime::utility::progressListener * = nullptr, const vmime::mailbox &sender = {});
++	void send(const vmime::mailbox &expeditor, const vmime::mailboxList &recipients, vmime::utility::inputStream &, const size_t, vmime::utility::progressListener * = nullptr, const vmime::mailbox &sender = {}, const transport::sendOptions &options = {});
+ 	bool isSecuredConnection() const { return m_secured; }
+ 	vmime::shared_ptr<vmime::net::connectionInfos> getConnectionInfos() const { return m_cntInfos; }
+ 
