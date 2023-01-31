@@ -19,7 +19,7 @@ Index: absl/debugging/CMakeLists.txt
      absl::strings
      GTest::gmock
  )
-+endif
++endif()
  
  # Internal-only target, do not depend on directly.
  absl_cc_library(
