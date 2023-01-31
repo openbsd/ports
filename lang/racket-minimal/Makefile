@@ -9,6 +9,7 @@ V =			8.7
 PKGNAME =		racket-minimal-$V
 DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX} \
 			racket-openbsd-2${EXTRACT_SUFX}:0
+REVISION =		0
 
 CATEGORIES =		lang
 HOMEPAGE =		https://racket-lang.org/
@@ -73,6 +74,12 @@ CONFIGURE_ARGS +=	--disable-docs \
 
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${LDFLAGS_WXNEEDED}" \
 			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
+
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mlld}
+# LLVM strip removes too much (at least as of 13.x and 15.x).
+CONFIGURE_ENV +=	ac_cv_prog_STRIP="strip --keep-section=.rackboot"
+.endif
 
 FLAVORS =		pb
 FLAVOR ?=
