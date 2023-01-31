@@ -226,7 +226,6 @@ jdk-11/include/jvmticmlr.h
 jdk-11/include/openbsd/
 jdk-11/include/openbsd/jawt_md.h
 jdk-11/include/openbsd/jni_md.h
-jdk-11/include/sizecalc.h
 jdk-11/jmods/
 jdk-11/jmods/java.base.jmod
 jdk-11/jmods/java.compiler.jmod
