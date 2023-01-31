@@ -13,71 +13,26 @@ MAINTAINER =	Andrew Krasavin <noiseless-ak@yandex.ru>, \
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
 
-SHARED_LIBS +=	absl_bad_any_cast_impl				1.0 # 2206.0.0
-SHARED_LIBS +=	absl_bad_optional_access			1.0 # 2206.0.0
-SHARED_LIBS +=	absl_bad_variant_access				1.0 # 2206.0.0
-SHARED_LIBS +=	absl_base					1.0 # 2206.0.0
-SHARED_LIBS +=	absl_city					1.0 # 2206.0.0
-SHARED_LIBS +=	absl_civil_time					1.0 # 2206.0.0
-SHARED_LIBS +=	absl_cord					1.0 # 2206.0.0
-SHARED_LIBS +=	absl_cord_internal				1.0 # 2206.0.0
-SHARED_LIBS +=	absl_cordz_functions				1.0 # 2206.0.0
-SHARED_LIBS +=	absl_cordz_handle				1.0 # 2206.0.0
-SHARED_LIBS +=	absl_cordz_info					1.0 # 2206.0.0
-SHARED_LIBS +=	absl_cordz_sample_token				1.0 # 2206.0.0
-SHARED_LIBS +=	absl_debugging_internal				1.0 # 2206.0.0
-SHARED_LIBS +=	absl_demangle_internal				1.0 # 2206.0.0
-SHARED_LIBS +=	absl_examine_stack				1.0 # 2206.0.0
-SHARED_LIBS +=	absl_exponential_biased				1.0 # 2206.0.0
-SHARED_LIBS +=	absl_failure_signal_handler			1.0 # 2206.0.0
-SHARED_LIBS +=	absl_flags					1.0 # 2206.0.0
-SHARED_LIBS +=	absl_flags_commandlineflag			1.0 # 2206.0.0
-SHARED_LIBS +=	absl_flags_commandlineflag_internal		1.0 # 2206.0.0
-SHARED_LIBS +=	absl_flags_config				1.0 # 2206.0.0
-SHARED_LIBS +=	absl_flags_internal				1.0 # 2206.0.0
-SHARED_LIBS +=	absl_flags_marshalling				1.0 # 2206.0.0
-SHARED_LIBS +=	absl_flags_parse				1.0 # 2206.0.0
-SHARED_LIBS +=	absl_flags_private_handle_accessor		1.0 # 2206.0.0
-SHARED_LIBS +=	absl_flags_program_name				1.0 # 2206.0.0
-SHARED_LIBS +=	absl_flags_reflection				1.0 # 2206.0.0
-SHARED_LIBS +=	absl_flags_usage				1.0 # 2206.0.0
-SHARED_LIBS +=	absl_flags_usage_internal			1.0 # 2206.0.0
-SHARED_LIBS +=	absl_graphcycles_internal			1.0 # 2206.0.0
-SHARED_LIBS +=	absl_hash					1.0 # 2206.0.0
-SHARED_LIBS +=	absl_hashtablez_sampler				1.0 # 2206.0.0
-SHARED_LIBS +=	absl_int128					1.0 # 2206.0.0
-SHARED_LIBS +=	absl_log_severity				1.0 # 2206.0.0
-SHARED_LIBS +=	absl_low_level_hash				1.0 # 2206.0.0
-SHARED_LIBS +=	absl_malloc_internal				1.0 # 2206.0.0
-SHARED_LIBS +=	absl_periodic_sampler				1.0 # 2206.0.0
-SHARED_LIBS +=	absl_random_distributions			1.0 # 2206.0.0
-SHARED_LIBS +=	absl_random_internal_distribution_test_util	1.0 # 2206.0.0
-SHARED_LIBS +=	absl_random_internal_platform			1.0 # 2206.0.0
-SHARED_LIBS +=	absl_random_internal_pool_urbg			1.0 # 2206.0.0
-SHARED_LIBS +=	absl_random_internal_randen			1.0 # 2206.0.0
-SHARED_LIBS +=	absl_random_internal_randen_hwaes		1.0 # 2206.0.0
-SHARED_LIBS +=	absl_random_internal_randen_hwaes_impl		1.0 # 2206.0.0
-SHARED_LIBS +=	absl_random_internal_randen_slow		1.0 # 2206.0.0
-SHARED_LIBS +=	absl_random_internal_seed_material		1.0 # 2206.0.0
-SHARED_LIBS +=	absl_random_seed_gen_exception			1.0 # 2206.0.0
-SHARED_LIBS +=	absl_random_seed_sequences			1.0 # 2206.0.0
-SHARED_LIBS +=	absl_raw_hash_set				1.0 # 2206.0.0
-SHARED_LIBS +=	absl_raw_logging_internal			1.0 # 2206.0.0
-SHARED_LIBS +=	absl_scoped_set_env				1.0 # 2206.0.0
-SHARED_LIBS +=	absl_spinlock_wait				1.0 # 2206.0.0
-SHARED_LIBS +=	absl_stacktrace					1.0 # 2206.0.0
-SHARED_LIBS +=	absl_status					1.0 # 2206.0.0
-SHARED_LIBS +=	absl_statusor					1.0 # 2206.0.0
-SHARED_LIBS +=	absl_str_format_internal			1.0 # 2206.0.0
-SHARED_LIBS +=	absl_strerror					1.0 # 2206.0.0
-SHARED_LIBS +=	absl_strings					1.0 # 2206.0.0
-SHARED_LIBS +=	absl_strings_internal				1.0 # 2206.0.0
-SHARED_LIBS +=	absl_symbolize					1.0 # 2206.0.0
-SHARED_LIBS +=	absl_synchronization				1.0 # 2206.0.0
-SHARED_LIBS +=	absl_throw_delegate				1.0 # 2206.0.0
-SHARED_LIBS +=	absl_time					1.0 # 2206.0.0
-SHARED_LIBS +=	absl_time_zone					1.0 # 2206.0.0
-SHARED_LIBS +=	absl_wyhash					1.0 # 2206.0.0
+.for _lib in \
+    bad_any_cast_impl bad_optional_access bad_variant_access base city \
+    civil_time cord cord_internal cordz_functions cordz_handle cordz_info \
+    cordz_sample_token debugging_internal demangle_internal examine_stack \
+    exponential_biased failure_signal_handler flags flags_commandlineflag \
+    flags_commandlineflag_internal flags_config flags_internal \
+    flags_marshalling flags_parse flags_private_handle_accessor \
+    flags_program_name flags_reflection flags_usage flags_usage_internal \
+    graphcycles_internal hash hashtablez_sampler int128 log_severity \
+    low_level_hash malloc_internal periodic_sampler random_distributions \
+    random_internal_distribution_test_util random_internal_platform \
+    random_internal_pool_urbg random_internal_randen \
+    random_internal_randen_hwaes random_internal_randen_hwaes_impl \
+    random_internal_randen_slow random_internal_seed_material \
+    random_seed_gen_exception random_seed_sequences raw_hash_set \
+    raw_logging_internal scoped_set_env spinlock_wait stacktrace status \
+    statusor str_format_internal strerror strings strings_internal symbolize \
+    synchronization throw_delegate time time_zone wyhash
+SHARED_LIBS +=		absl_${_lib}	1.0	# 2206.0.0
+.endfor
 
 # C++17
 COMPILER =		base-clang ports-gcc
