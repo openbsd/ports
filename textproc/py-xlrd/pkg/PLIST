@@ -30,8 +30,6 @@ lib/python${MODPY_VERSION}/site-packages/xlrd/${MODPY_PYCACHE}timemachine.${MODP
 lib/python${MODPY_VERSION}/site-packages/xlrd/${MODPY_PYCACHE}timemachine.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xlrd/${MODPY_PYCACHE}xldate.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/xlrd/${MODPY_PYCACHE}xldate.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/xlrd/${MODPY_PYCACHE}xlsx.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/xlrd/${MODPY_PYCACHE}xlsx.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xlrd/biffh.py
 lib/python${MODPY_VERSION}/site-packages/xlrd/book.py
 lib/python${MODPY_VERSION}/site-packages/xlrd/compdoc.py
@@ -41,4 +39,3 @@ lib/python${MODPY_VERSION}/site-packages/xlrd/info.py
 lib/python${MODPY_VERSION}/site-packages/xlrd/sheet.py
 lib/python${MODPY_VERSION}/site-packages/xlrd/timemachine.py
 lib/python${MODPY_VERSION}/site-packages/xlrd/xldate.py
-lib/python${MODPY_VERSION}/site-packages/xlrd/xlsx.py
