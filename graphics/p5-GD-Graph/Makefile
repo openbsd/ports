@@ -1,10 +1,9 @@
 COMMENT =	module for graph plotting
 
-VERSION =	1.54
+VERSION =	1.56
 DISTNAME =	GDGraph-${VERSION}
 PKGNAME =	p5-GD-Graph-${VERSION}
 CATEGORIES =	graphics
-REVISION =	0
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
