@@ -5084,6 +5084,7 @@ plan9/postscript/troff/H
 plan9/postscript/troff/HB
 plan9/postscript/troff/HI
 plan9/postscript/troff/HL
+plan9/postscript/troff/HX
 plan9/postscript/troff/Helvetica-Narrow-BoldOblique
 plan9/postscript/troff/I
 plan9/postscript/troff/Jp
@@ -7038,7 +7039,6 @@ plan9/src/lib9/write.c
 plan9/src/lib9/zoneinfo.c
 plan9/src/lib9/zoneinfo.h
 plan9/src/lib9p/
-plan9/src/lib9p/_post.c
 plan9/src/lib9p/dirread.c
 plan9/src/lib9p/fid.c
 plan9/src/lib9p/file.c
@@ -7048,8 +7048,6 @@ plan9/src/lib9p/mem.c
 plan9/src/lib9p/mkfile
 plan9/src/lib9p/parse.c
 plan9/src/lib9p/portdate
-plan9/src/lib9p/post.c
-plan9/src/lib9p/post.h
 plan9/src/lib9p/ramfs.c
 plan9/src/lib9p/req.c
 plan9/src/lib9p/srv.c

@@ -2,11 +2,11 @@ ONLY_FOR_ARCHS =	amd64 i386 powerpc powerpc64
 
 COMMENT =		Plan 9 from user space
 
-DISTNAME =		plan9port-20210323
+DISTNAME =		plan9port-20230123
 
 GH_ACCOUNT =		9fans
 GH_PROJECT =		plan9port
-GH_COMMIT =		88a87fadae6629932d9c160f53ad5d79775f8f94
+GH_COMMIT =		e2a141ae0952c2d28a9f500bb9da6dc72e57be3c
 
 CATEGORIES =		plan9
 
@@ -32,18 +32,17 @@ UPDATE_PLIST_ARGS += -i CC
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/INSTALL ${WRKSRC}/bin/{9c,9l}
 	cd ${WRKSRC} && sed -i 's,#!/bin/bash,#!/bin/sh,' \
-		bin/{macedit,wintext}
+		bin/macedit
 
 do-build:
 	cd ${WRKSRC} && env CC9="${CC}" CCFLAGS="${CFLAGS}" ./INSTALL -b
 
 do-install:
-.for l in .cvsignore .hg .hgignore .hgtags .gitignore .gitkeep *.orig *.beforesubst .travis.yml
-	find ${WRKSRC} -name "$l" -delete
-.endfor
+	rm -f ${WRKSRC}/.travis.yml
 	cd ${WRKSRC} && sed -i 's#/usr/local#${TRUEPREFIX}#' \
 		`cat lib/moveplan9.files`
-
+	find ${WRKSRC} \( -name .gitignore -o -name .gitkeep -o \
+		-name \*.orig -o -name \*.beforesubst \) -delete
 	${INSTALL_DATA_DIR} ${PLAN9}
 	cd ${WRKSRC} && pax -rw . ${PLAN9}
 	cd ${PREFIX} && ln -s ../plan9/bin/9 bin/9

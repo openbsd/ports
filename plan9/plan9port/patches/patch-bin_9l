@@ -1,7 +1,7 @@
 Index: bin/9l
 --- bin/9l.orig
 +++ bin/9l
-@@ -12,7 +12,7 @@ extralibs="-lm"
+@@ -14,7 +14,7 @@ extralibs="-lm"
  tag="${SYSNAME:-`uname`}"
  case "$tag" in
  *DragonFly*|*BSD*)
