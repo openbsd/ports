@@ -6,7 +6,7 @@ USE_NOEXECONLY=		Yes
 COMMENT=		crypto library based on code used in GnuPG
 
 DISTNAME=		libgcrypt-1.10.1
-REVISION=		5
+REVISION=		6
 CATEGORIES=		security
 
 SHARED_LIBS +=  gcrypt               21.0     # 24.1
