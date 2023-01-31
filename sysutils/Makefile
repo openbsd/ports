@@ -12,6 +12,7 @@
      SUBDIR += apcupsd
      SUBDIR += appmanager
      SUBDIR += arm-trusted-firmware
+     SUBDIR += artty
      SUBDIR += augeas
      SUBDIR += autossh
      SUBDIR += awscli
