@@ -8,6 +8,9 @@ CATEGORIES=		graphics
 # BSD
 PERMIT_PACKAGE=	Yes
 
+COMPILER=		base-clang ports-gcc
+COMPILER_LANGS=		c
+
 WANTLIB += Imlib2 X11 Xcomposite Xext Xfixes Xinerama c
 
 MASTER_SITES=		https://github.com/resurrecting-open-source-projects/scrot/releases/download/${V}/
@@ -17,11 +20,6 @@ LIB_DEPENDS=		graphics/imlib2
 CONFIGURE_STYLE=	gnu
 
 FAKE_FLAGS+=		docsdir=${PREFIX}/share/doc/scrot/
-
-.include <bsd.port.arch.mk>
-.if !${PROPERTIES:Mclang}
-CFLAGS+=	-std=gnu99
-.endif
 
 SEPARATE_BUILD=		Yes
 
