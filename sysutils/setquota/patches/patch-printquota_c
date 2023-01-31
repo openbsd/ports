@@ -1,6 +1,21 @@
---- printquota.c.orig	2004-01-04 19:46:53.000000000 +0100
-+++ printquota.c	2004-01-04 19:46:57.000000000 +0100
-@@ -109,7 +109,7 @@ timeprt(seconds)
+Fix unsigned long/uint32_t and int/time_t type mismatches in formatting
+Fix bogus #ifdef 0
+
+Index: printquota.c
+--- printquota.c.orig
++++ printquota.c
+@@ -86,8 +86,8 @@ print_quota(qm)
+ 			, timeprt(qm->dq_dqb.dqb_btime));
+ 		printf("%8lu%7lu%8lu %8s\n"
+  			, (u_long) qm->dq_dqb.dqb_curinodes
+-			, qm->dq_dqb.dqb_isoftlimit
+-			, qm->dq_dqb.dqb_ihardlimit
++			, (unsigned long)qm->dq_dqb.dqb_isoftlimit
++			, (unsigned long)qm->dq_dqb.dqb_ihardlimit
+ 			, timeprt(qm->dq_dqb.dqb_itime));
+ 
+ 		qm = qm->next;
+@@ -109,29 +109,29 @@ timeprt(seconds)
  
  	if (now == 0)
  		time(&now);
@@ -9,3 +24,30 @@
  	if (now > seconds)
  		return("none");
  	seconds -= now;
+ #endif
+-	sprintf(buf, "%d", seconds);
++	sprintf(buf, "%lld", (long long)seconds);
+ 	return(buf);
+ 	minutes = (seconds + 30) / 60;
+ 	hours = (minutes + 30) / 60;
+ 
+ 
+ 	if (hours >= 8760) {
+-		sprintf(buf, "%dyears", (hours + 12) / 24 / 365);
++		sprintf(buf, "%lldyears", (long long)(hours + 12) / 24 / 365);
+ 		return(buf);
+ 	}
+ 	if (hours >= 36) {
+-		sprintf(buf, "%lddays", (hours + 12) / 24);
++		sprintf(buf, "%llddays", (long long)(hours + 12) / 24);
+ 		return (buf);
+ 	}
+ 	if (minutes >= 60) {
+-		sprintf(buf, "%2d:%d", minutes / 60, minutes % 60);
++		sprintf(buf, "%2lld:%lld", (long long)minutes / 60, (long long)minutes % 60);
+ 		return (buf);
+ 	}
+-	sprintf(buf, "%2d", minutes);
++	sprintf(buf, "%2lld", (long long)minutes);
+ 	return (buf);
+ }

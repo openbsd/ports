@@ -1,11 +1,67 @@
---- quotatool.c.orig	Fri Dec 23 23:48:13 2005
-+++ quotatool.c	Fri Dec 23 23:48:22 2005
-@@ -49,7 +49,7 @@ static const char rcsid[] =
+Use appropriate includes
+Fix char vs pointer type mismatch
+Use more parenthesis to silence warnings about correct code
+
+Index: quotatool.c
+--- quotatool.c.orig
++++ quotatool.c
+@@ -49,7 +49,8 @@ static const char rcsid[] =
  #include <stdlib.h>
  #include <string.h>
  #include <sys/param.h>
 -#include <sys/errno.h>
 +#include <errno.h>
++#include <unistd.h>
  #include <ufs/ufs/quota.h>
  #include <pwd.h>
  #include <grp.h>
+@@ -235,10 +236,10 @@ do_test()
+ 	printf("    f_ig %d\n", f_ig);
+ 	printf("    v_bh %lu\n", v_bh);
+ 	printf("    v_bs %lu\n", v_bs);
+-	printf("    v_bg %lu\n", v_bg);
++	printf("    v_bg %lld\n", (long long)v_bg);
+ 	printf("    v_ih %lu\n", v_ih);
+ 	printf("    v_is %lu\n", v_is);
+-	printf("    v_ig %lu\n", v_ig);
++	printf("    v_ig %lld\n", (long long)v_ig);
+ 
+ 	return;
+ }
+@@ -267,11 +268,11 @@ convert_block(p_block)
+ 	char	*p_block;
+ {
+ 	u_long	value = 0;
+-	char	unit = NULL;
++	char	unit = '\0';
+ 	u_long	r_blocks;
+ 
+ 	if (sscanf(p_block, "%lu%c", &value, &unit) != 2) {
+-		if (unit == NULL)
++		if (unit == '\0')
+ 			unit = 'k';
+ 	}
+ 
+@@ -299,11 +300,11 @@ convert_time(p_time)
+ 	char	*p_time;
+ {
+ 	u_long	value = 0;
+-	char	unit = NULL;
++	char	unit = '\0';
+ 	time_t	r_time;
+ 
+ 	if (sscanf(p_time, "%ld%c", &value, &unit) != 2) {
+-		if (unit == NULL)
++		if (unit == '\0')
+ 			unit = 'd';
+ 	}
+ 
+@@ -350,7 +351,7 @@ valid_fs(fsname)
+ {
+ 	struct fstab *fs;
+ 	
+-	if (fs = getfsfile(fsname)) {
++	if ((fs = getfsfile(fsname))) {
+ 		if (!strstr(fs->fs_mntops, m_qtype[f_group])) {
+ 			fprintf(stderr, "%s : %s does not have quotas enabled.\n", m_proc[f_mode], fsname);
+ 			exit(1);
