@@ -50,3 +50,10 @@ RUN_DEPENDS +=		security/gnupg
 CFLAGS +=		-Wno-return-type
 
 .include <bsd.port.mk>
+
+# XXX ssh/libseahorse-ssh.a.p/operation.c:536:2: error: incompatible pointer
+# to integer conversion returning 'void *' from a function with result type
+# 'gboolean' (aka 'int') [-Wint-conversion]
+.if ${CHOSEN_COMPILER} == base-clang
+CFLAGS +=		-Wno-int-conversion
+.endif
