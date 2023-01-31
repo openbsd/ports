@@ -30,7 +30,7 @@ ABSL_LIBS = \
     random_seed_gen_exception random_seed_sequences raw_hash_set \
     raw_logging_internal scoped_set_env spinlock_wait stacktrace status \
     statusor str_format_internal strerror strings strings_internal symbolize \
-    synchronization throw_delegate time time_zone wyhash
+    synchronization throw_delegate time time_zone
 .for _lib in ${ABSL_LIBS}
 SHARED_LIBS +=		absl_${_lib}	1.0	# 2206.0.0
 .endfor
@@ -38,8 +38,7 @@ SHARED_LIBS +=		absl_${_lib}	1.0	# 2206.0.0
 # on updates, build with `ALL_TARGET=all' once to pick up new libraries
 #
 # everything (shared libraries) except tests
-# XXX wyhash is not a target, but a library built by another target
-ALL_TARGET =		${ABSL_LIBS:Nwyhash}
+ALL_TARGET =		${ABSL_LIBS}
 
 # C++17
 COMPILER =		base-clang ports-gcc
