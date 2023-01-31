@@ -13,7 +13,7 @@ MAINTAINER =	Andrew Krasavin <noiseless-ak@yandex.ru>, \
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
 
-.for _lib in \
+ABSL_LIBS = \
     bad_any_cast_impl bad_optional_access bad_variant_access base city \
     civil_time cord cord_internal cordz_functions cordz_handle cordz_info \
     cordz_sample_token debugging_internal demangle_internal examine_stack \
@@ -31,6 +31,7 @@ PERMIT_PACKAGE =	Yes
     raw_logging_internal scoped_set_env spinlock_wait stacktrace status \
     statusor str_format_internal strerror strings strings_internal symbolize \
     synchronization throw_delegate time time_zone wyhash
+.for _lib in ${ABSL_LIBS}
 SHARED_LIBS +=		absl_${_lib}	1.0	# 2206.0.0
 .endfor
 
@@ -67,12 +68,21 @@ TEST_DEPENDS +=		devel/gtest>=1.11.0pl20220208
 # use TEST_TMPDIR instead of /tmp for tests temp data (like in bazel build)
 TEST_ENV +=		TEST_TMPDIR=${WRKBUILD}/test_tmp \
 			LD_LIBRARY_PATH=/usr/lib:${WRKBUILD}/test_lib
+.endif
 
+# everything (shared libraries) except tests
+# XXX wyhash is not a target, but a library built by another target
+ALL_TARGET =		${ABSL_LIBS:Nwyhash}
+
+do-build:
+	@${MODCMAKE_BUILD_TARGET} -t ${ALL_TARGET}
+
+# build whatever is left (ca. 400 test files)
 pre-test:
+	@${MODCMAKE_BUILD_TARGET}
 	@mkdir -p ${WRKBUILD}/test_tmp
 	@mkdir -p ${WRKBUILD}/test_lib
 	cd ${WRKBUILD}/test_lib && \
 		 find ${WRKBUILD} -name "*\.so\.*\.*" | xargs -I {} ln -s {} .
-.endif
 
 .include <bsd.port.mk>
