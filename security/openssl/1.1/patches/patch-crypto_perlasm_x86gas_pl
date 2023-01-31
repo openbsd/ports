@@ -1,0 +1,21 @@
+Port of lib/libcrypto/perlasm/x86gas.pl r1.5.
+
+Avoids build failure for sysutils/borgbackup/2.0 on i386:
+ld.lld: error: relocation R_386_PC32 cannot be used against symbol OPENSSL_ia32cap_P; recompile with -fPIC
+
+Index: crypto/perlasm/x86gas.pl
+--- crypto/perlasm/x86gas.pl.orig
++++ crypto/perlasm/x86gas.pl
+@@ -166,10 +166,8 @@ sub ::file_end
+ 	}
+     }
+     if (grep {/\b${nmdecor}OPENSSL_ia32cap_P\b/i} @out) {
+-	my $tmp=".comm\t${nmdecor}OPENSSL_ia32cap_P,16";
+-	if ($::macosx)	{ push (@out,"$tmp,2\n"); }
+-	elsif ($::elf)	{ push (@out,"$tmp,4\n"); }
+-	else		{ push (@out,"$tmp\n"); }
++	push (@out, ".extern\t${nmdecor}OPENSSL_ia32cap_P\n");
++	push (@out, ".hidden\t${nmdecor}OPENSSL_ia32cap_P\n");
+     }
+     push(@out,$initseg) if ($initseg);
+ }
