@@ -1,5 +1,5 @@
-@newgroup _erlang:888
-@newuser _erlang:888:_erlang::Erlang Account:/var/empty:/sbin/nologin
+@newgroup _epmd:888
+@newuser _epmd:888:_epmd::Erlang EPMD Account:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/epmd
 @option no-default-conflict
 @option is-branch
