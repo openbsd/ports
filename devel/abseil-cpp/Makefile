@@ -35,6 +35,12 @@ ABSL_LIBS = \
 SHARED_LIBS +=		absl_${_lib}	1.0	# 2206.0.0
 .endfor
 
+# on updates, build with `ALL_TARGET=all' once to pick up new libraries
+#
+# everything (shared libraries) except tests
+# XXX wyhash is not a target, but a library built by another target
+ALL_TARGET =		${ABSL_LIBS:Nwyhash}
+
 # C++17
 COMPILER =		base-clang ports-gcc
 COMPILER_LANGS=		c++
@@ -69,10 +75,6 @@ TEST_DEPENDS +=		devel/gtest>=1.11.0pl20220208
 TEST_ENV +=		TEST_TMPDIR=${WRKBUILD}/test_tmp \
 			LD_LIBRARY_PATH=/usr/lib:${WRKBUILD}/test_lib
 .endif
-
-# everything (shared libraries) except tests
-# XXX wyhash is not a target, but a library built by another target
-ALL_TARGET =		${ABSL_LIBS:Nwyhash}
 
 do-build:
 	@${MODCMAKE_BUILD_TARGET} -t ${ALL_TARGET}
