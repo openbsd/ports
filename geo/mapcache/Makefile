@@ -1,8 +1,7 @@
 COMMENT=	GIS WMTS/TMS tile caching server
 
-DISTNAME =	mapcache-1.12.1
-SHARED_LIBS +=	mapcache 3.2
-REVISION =	0
+DISTNAME =	mapcache-1.14.0
+SHARED_LIBS +=	mapcache 3.3
 
 CATEGORIES=	geo www
 
