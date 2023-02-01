@@ -1,9 +1,9 @@
 COMMENT=	companion library to APR
 
-V=		1.6.1
-REVISION=	4
+V=		1.6.2
 DISTNAME=	apr-util-$V
-SHARED_LIBS +=	aprutil-1          6.1     # .6.0
+SHARED_LIBS +=	aprutil-1          6.2     # .6.0
+WRKDIST =       ${WRKDIR}/${DISTNAME}-rc3
 
 CATEGORIES=	devel
 
