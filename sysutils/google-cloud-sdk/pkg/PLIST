@@ -6379,7 +6379,6 @@ google-cloud-sdk/lib/googlecloudsdk/core/${MODPY_PYCACHE}requests.${MODPY_PYC_MA
 google-cloud-sdk/lib/googlecloudsdk/core/${MODPY_PYCACHE}resources.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/core/${MODPY_PYCACHE}transport.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/core/${MODPY_PYCACHE}transports.${MODPY_PYC_MAGIC_TAG}pyc
-google-cloud-sdk/lib/googlecloudsdk/core/${MODPY_PYCACHE}url_opener.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/core/${MODPY_PYCACHE}yaml.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/core/${MODPY_PYCACHE}yaml_location_value.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/core/${MODPY_PYCACHE}yaml_validator.${MODPY_PYC_MAGIC_TAG}pyc
@@ -6649,7 +6648,6 @@ google-cloud-sdk/lib/googlecloudsdk/core/updater/schemas.py
 google-cloud-sdk/lib/googlecloudsdk/core/updater/snapshots.py
 google-cloud-sdk/lib/googlecloudsdk/core/updater/update_check.py
 google-cloud-sdk/lib/googlecloudsdk/core/updater/update_manager.py
-google-cloud-sdk/lib/googlecloudsdk/core/url_opener.py
 google-cloud-sdk/lib/googlecloudsdk/core/util/
 google-cloud-sdk/lib/googlecloudsdk/core/util/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/googlecloudsdk/core/util/${MODPY_PYCACHE}/
@@ -12960,7 +12958,9 @@ google-cloud-sdk/lib/surface/artifacts/generic/
 google-cloud-sdk/lib/surface/artifacts/generic/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/surface/artifacts/generic/${MODPY_PYCACHE}/
 google-cloud-sdk/lib/surface/artifacts/generic/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/artifacts/generic/${MODPY_PYCACHE}download.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/artifacts/generic/${MODPY_PYCACHE}upload.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/artifacts/generic/download.py
 google-cloud-sdk/lib/surface/artifacts/generic/upload.py
 google-cloud-sdk/lib/surface/artifacts/go/
 google-cloud-sdk/lib/surface/artifacts/go/__init__.py
@@ -13506,6 +13506,7 @@ google-cloud-sdk/lib/surface/blockchain_node_engine/nodes/
 google-cloud-sdk/lib/surface/blockchain_node_engine/nodes/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/surface/blockchain_node_engine/nodes/${MODPY_PYCACHE}/
 google-cloud-sdk/lib/surface/blockchain_node_engine/nodes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/blockchain_node_engine/nodes/describe.yaml
 google-cloud-sdk/lib/surface/blockchain_node_engine/nodes/list.yaml
 google-cloud-sdk/lib/surface/blueprints/
 google-cloud-sdk/lib/surface/blueprints/__init__.py
@@ -21780,6 +21781,7 @@ google-cloud-sdk/lib/surface/redis/clusters/${MODPY_PYCACHE}__init__.${MODPY_PYC
 google-cloud-sdk/lib/surface/redis/clusters/create.yaml
 google-cloud-sdk/lib/surface/redis/clusters/delete.yaml
 google-cloud-sdk/lib/surface/redis/clusters/describe.yaml
+google-cloud-sdk/lib/surface/redis/clusters/get_cluster_certificate_authority.yaml
 google-cloud-sdk/lib/surface/redis/clusters/list.yaml
 google-cloud-sdk/lib/surface/redis/clusters/update.yaml
 google-cloud-sdk/lib/surface/redis/instances/
@@ -22101,6 +22103,14 @@ google-cloud-sdk/lib/surface/run/jobs/executions/cancel.py
 google-cloud-sdk/lib/surface/run/jobs/executions/delete.py
 google-cloud-sdk/lib/surface/run/jobs/executions/describe.py
 google-cloud-sdk/lib/surface/run/jobs/executions/list.py
+google-cloud-sdk/lib/surface/run/jobs/executions/logs/
+google-cloud-sdk/lib/surface/run/jobs/executions/logs/__init__.py
+${MODPY_COMMENT}google-cloud-sdk/lib/surface/run/jobs/executions/logs/${MODPY_PYCACHE}/
+google-cloud-sdk/lib/surface/run/jobs/executions/logs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/run/jobs/executions/logs/${MODPY_PYCACHE}read.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/run/jobs/executions/logs/${MODPY_PYCACHE}tail.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/run/jobs/executions/logs/read.py
+google-cloud-sdk/lib/surface/run/jobs/executions/logs/tail.py
 google-cloud-sdk/lib/surface/run/jobs/executions/tasks/
 google-cloud-sdk/lib/surface/run/jobs/executions/tasks/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/surface/run/jobs/executions/tasks/${MODPY_PYCACHE}/
@@ -23111,10 +23121,12 @@ ${MODPY_COMMENT}google-cloud-sdk/lib/surface/storage/hmac/${MODPY_PYCACHE}/
 google-cloud-sdk/lib/surface/storage/hmac/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/storage/hmac/${MODPY_PYCACHE}create.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/storage/hmac/${MODPY_PYCACHE}delete.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/storage/hmac/${MODPY_PYCACHE}describe.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/storage/hmac/${MODPY_PYCACHE}list.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/storage/hmac/${MODPY_PYCACHE}update.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/storage/hmac/create.py
 google-cloud-sdk/lib/surface/storage/hmac/delete.py
+google-cloud-sdk/lib/surface/storage/hmac/describe.py
 google-cloud-sdk/lib/surface/storage/hmac/list.py
 google-cloud-sdk/lib/surface/storage/hmac/update.py
 google-cloud-sdk/lib/surface/storage/insights/
