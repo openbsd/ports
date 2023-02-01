@@ -13,7 +13,7 @@ Index: memory/unix/apr_pools.c
       */
      apr_size_t        max_free_index;
      /**
-@@ -170,7 +170,7 @@ APR_DECLARE(apr_status_t) apr_allocator_create(apr_all
+@@ -188,7 +188,7 @@ APR_DECLARE(apr_status_t) apr_allocator_create(apr_all
          return APR_ENOMEM;
  
      memset(new_allocator, 0, SIZEOF_ALLOCATOR_T);
@@ -22,7 +22,7 @@ Index: memory/unix/apr_pools.c
  
      *allocator = new_allocator;
  
-@@ -226,6 +226,7 @@ APR_DECLARE(apr_pool_t *) apr_allocator_owner_get(apr_
+@@ -244,6 +244,7 @@ APR_DECLARE(apr_pool_t *) apr_allocator_owner_get(apr_
  APR_DECLARE(void) apr_allocator_max_free_set(apr_allocator_t *allocator,
                                               apr_size_t in_size)
  {
@@ -30,15 +30,15 @@ Index: memory/unix/apr_pools.c
      apr_size_t max_free_index;
      apr_size_t size = in_size;
  
-@@ -248,6 +249,7 @@ APR_DECLARE(void) apr_allocator_max_free_set(apr_alloc
-     if (mutex != NULL)
-         apr_thread_mutex_unlock(mutex);
- #endif
-+#endif
+@@ -257,6 +258,7 @@ APR_DECLARE(void) apr_allocator_max_free_set(apr_alloc
+         allocator->current_free_index = max_free_index;
+ 
+     allocator_unlock(allocator);
++#endif // __OpenBSD__
  }
  
  static APR_INLINE
-@@ -1180,7 +1182,7 @@ APR_DECLARE(apr_status_t) apr_pool_create_unmanaged_ex
+@@ -1155,7 +1157,7 @@ APR_DECLARE(apr_status_t) apr_pool_create_unmanaged_ex
              return APR_ENOMEM;
          }
          memset(pool_allocator, 0, SIZEOF_ALLOCATOR_T);

@@ -1,12 +1,14 @@
 Index: apr-config.in
 --- apr-config.in.orig
 +++ apr-config.in
-@@ -223,11 +223,7 @@ while test $# -gt 0; do
+@@ -243,13 +243,7 @@ while test $# -gt 0; do
      exit 0
      ;;
      --apr-libtool)
 -    if test "$location" = "installed"; then
 -        echo "${installbuilddir}/libtool"
+-    elif test "$location" = "crosscompile"; then
+-        echo "$APR_TARGET_DIR/${installbuilddir}/libtool"
 -    else
 -        echo "$APR_BUILD_DIR/libtool"
 -    fi

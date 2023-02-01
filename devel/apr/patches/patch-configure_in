@@ -1,7 +1,7 @@
 Index: configure.in
 --- configure.in.orig
 +++ configure.in
-@@ -1461,6 +1461,10 @@ case $host in
+@@ -1585,6 +1585,10 @@ case $host in
      *)
          AC_CHECK_FUNCS(mkstemp)
          ;;
@@ -12,7 +12,7 @@ Index: configure.in
  esac
  
  AC_SUBST(fork)
-@@ -1971,6 +1975,14 @@ elif test "$ac_cv_type_off_t" = "yes"; then
+@@ -2098,6 +2102,14 @@ elif test "$ac_cv_type_off_t" = "yes"; then
      *)
          AC_ERROR([could not determine the size of off_t])
          ;;
@@ -27,7 +27,7 @@ Index: configure.in
      esac
      ])])])])
  else
-@@ -2336,7 +2348,7 @@ APR_IFALLYES(header:semaphore.h func:sem_open func:sem
+@@ -2466,7 +2478,7 @@ APR_IFALLYES(header:semaphore.h func:sem_open func:sem
               func:sem_unlink func:sem_post func:sem_wait,
               hasposixser="1", hasposixser="0")
  APR_IFALLYES(func:semget func:semctl func:semop define:SEM_UNDO,

@@ -1,8 +1,9 @@
 COMMENT=	Apache Portable Runtime
 
-V=		1.7.0
+V=		1.7.1
 DISTNAME=	apr-$V
 SHARED_LIBS +=	apr-1             7.1     # .6.2
+WRKDIST =	${WRKDIR}/${DISTNAME}-rc2
 
 CATEGORIES=	devel
 
