@@ -1,6 +1,6 @@
 COMMENT=		diary and journal application
 
-MODPY_EGG_VERSION=	2.27.2
+MODPY_EGG_VERSION=	2.29.3
 GH_TAGNAME=		v${MODPY_EGG_VERSION}
 GH_ACCOUNT=		jendrikseipp
 GH_PROJECT=		rednotebook
@@ -11,6 +11,8 @@ CATEGORIES=		productivity
 PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
+
+MODPY_PYBUILD=		setuptools
 
 # msgfmt(1)
 BUILD_DEPENDS=		devel/gettext,-tools
