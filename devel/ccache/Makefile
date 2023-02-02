@@ -32,4 +32,14 @@ PORTHOME =		${WRKDIR}
 TEST_DEPENDS =		shells/bash
 TEST_ENV =		CC="${CC}"
 
+# evertyhing except tests
+ALL_TARGET =		ccache doc
+
+do-build:
+	@${MODCMAKE_BUILD_TARGET} -t ${ALL_TARGET}
+
+# build whatever is left (ca. 35 C++ test files)
+pre-test:
+	@${MODCMAKE_BUILD_TARGET}
+
 .include <bsd.port.mk>
