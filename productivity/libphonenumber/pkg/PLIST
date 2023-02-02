@@ -37,6 +37,11 @@ include/phonenumbers/shortnumberinfo.h
 include/phonenumbers/unicodestring.h
 include/phonenumbers/utf/
 include/phonenumbers/utf/unicodetext.h
+lib/cmake/libphonenumber/
+lib/cmake/libphonenumber/libphonenumber-config-version.cmake
+lib/cmake/libphonenumber/libphonenumber-config.cmake
+lib/cmake/libphonenumber/libphonenumber-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/libphonenumber/libphonenumber-targets.cmake
 @static-lib lib/libgeocoding.a
 @lib lib/libgeocoding.so.${LIBgeocoding_VERSION}
 @static-lib lib/libphonenumber.a
