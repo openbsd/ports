@@ -120,7 +120,6 @@
      SUBDIR += gmudix
      SUBDIR += gnugk
      SUBDIR += go-ipfs
-     SUBDIR += go-net
      SUBDIR += gomuks
      SUBDIR += gopher
      SUBDIR += gophernicus
