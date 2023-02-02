@@ -354,7 +354,7 @@ include/gnome-builder-43/libide/webkit/libide-webkit.h
 lib/gnome-builder/
 lib/gnome-builder/girepository-1.0/
 lib/gnome-builder/girepository-1.0/Ide-43.typelib
-lib/pkgconfig/gnome-builder-43.4.pc
+lib/pkgconfig/gnome-builder-43.5.pc
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/Ide.py
 @bin libexec/gnome-builder-clang
 @bin libexec/gnome-builder-git
