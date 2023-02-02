@@ -3,7 +3,7 @@
 Index: feedio.c
 --- feedio.c.orig
 +++ feedio.c
-@@ -300,7 +300,7 @@ static void WriteFeedCache (const struct feed* feed)
+@@ -313,7 +313,7 @@ static void WriteFeedCache (const struct feed* feed)
  	"\txmlns:snow=\"http://snownews.kcore.de/ns/1.0/\">\n\n", cache);
  
      if (feed->lastmodified)

@@ -3,8 +3,7 @@ CATEGORIES=	www
 
 GH_ACCOUNT=	msharov
 GH_PROJECT=	snownews
-GH_TAGNAME=	v1.8
-REVISION=	0
+GH_TAGNAME=	v1.9
 
 # GPLv3 only
 PERMIT_PACKAGE=	Yes
@@ -12,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 # C11
 COMPILER=	base-clang ports-gcc
 
-WANTLIB += c crypto curl curses iconv intl xml2
+WANTLIB += c crypto curl curses intl xml2
 
 NO_TEST=	Yes
 
@@ -32,5 +31,7 @@ CFLAGS+=	-D_XOPEN_SOURCE_EXTENDED
 # Fix linking errors due to upstream build system
 # not being able to find proper LDFLAGS for ncurses
 LDFLAGS+=	-lncursesw
+# ld: error: undefined symbol: libintl_gettext
+LDFLAGS+=	-lintl
 
 .include <bsd.port.mk>

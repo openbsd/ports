@@ -12,7 +12,7 @@ Index: Config.mk.in
  ################ Compiler options ####################################
  
  #debug		:= 1
- libs		:= @pkg_libs@ -liconv -lintl
+ libs		:= @pkg_libs@
 -ifdef debug
 -    cflags	:= -O0 -ggdb3
 -    ldflags	:= -g -rdynamic
