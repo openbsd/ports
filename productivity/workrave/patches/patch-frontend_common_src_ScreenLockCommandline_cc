@@ -4,7 +4,7 @@ Index: frontend/common/src/ScreenLockCommandline.cc
 --- frontend/common/src/ScreenLockCommandline.cc.orig
 +++ frontend/common/src/ScreenLockCommandline.cc
 @@ -27,6 +27,8 @@
- #include <glib.h>
+ #  include <glib.h>
  #endif
  
 +#include <sys/wait.h>

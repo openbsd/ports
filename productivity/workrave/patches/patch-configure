@@ -3,7 +3,7 @@ Fix bashism.
 Index: configure
 --- configure.orig
 +++ configure
-@@ -21001,7 +21001,7 @@ then
+@@ -21361,7 +21361,7 @@ then
  
      loop=${enable_monitors},
  
