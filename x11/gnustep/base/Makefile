@@ -1,7 +1,7 @@
 COMMENT=	GNUstep base library
 
 DISTNAME=	gnustep-base-1.28.0
-REVISION=	4
+REVISION=	5
 
 SHARED_LIBS=	gnustep-base 10.5
 CATEGORIES=	devel
