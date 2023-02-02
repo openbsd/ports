@@ -37,17 +37,17 @@ include/apr-1/apu_errno.h
 include/apr-1/apu_version.h
 include/apr-1/apu_want.h
 lib/apr-util-1/
-lib/apr-util-1/apr_crypto_openssl-1.so
+@so lib/apr-util-1/apr_crypto_openssl-1.so
 lib/apr-util-1/apr_crypto_openssl.a
 lib/apr-util-1/apr_crypto_openssl.la
-lib/apr-util-1/apr_crypto_openssl.so
-lib/apr-util-1/apr_dbm_db-1.so
+@so lib/apr-util-1/apr_crypto_openssl.so
+@so lib/apr-util-1/apr_dbm_db-1.so
 lib/apr-util-1/apr_dbm_db.a
 lib/apr-util-1/apr_dbm_db.la
-lib/apr-util-1/apr_dbm_db.so
+@so lib/apr-util-1/apr_dbm_db.so
 %%ldap%%
 @comment lib/aprutil.exp
-lib/libaprutil-1.a
+@static-lib lib/libaprutil-1.a
 lib/libaprutil-1.la
 @lib lib/libaprutil-1.so.${LIBaprutil-1_VERSION}
 lib/pkgconfig/apr-util-1.pc

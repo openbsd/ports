@@ -1,9 +1,8 @@
 COMMENT=	Apache Portable Runtime
 
-V=		1.7.1
+V=		1.7.2
 DISTNAME=	apr-$V
 SHARED_LIBS +=	apr-1             7.1     # .6.2
-WRKDIST =	${WRKDIR}/${DISTNAME}-rc2
 
 CATEGORIES=	devel
 
@@ -18,7 +17,7 @@ WANTLIB += pthread
 
 MASTER_SITES=	${MASTER_SITE_APACHE:=apr/}
 
-AUTOCONF_VERSION=2.69
+AUTOCONF_VERSION=2.71
 CONFIGURE_STYLE=autoconf autoheader
 # Prevent APR pools from re-using dynamic memory allocations:
 CFLAGS +=	"-DAPR_ALLOCATOR_MAX_FREE_DEFAULT=1"
