@@ -93,8 +93,18 @@ CONFIGURE_ARGS +=	-Dtests=ON
 SERVER_CONFIG_FILE =	${WRKSRC}/scripts/murmur.ini
 SERVER_EXAMPLES_DIR =	${PREFIX}/share/examples/murmur
 
+# everything except tests
+ALL_TARGET =			mumble mumble-server
+
 pre-configure:
 	${SUBST_CMD} ${SERVER_CONFIG_FILE}
+
+do-build:
+	@${MODCMAKE_BUILD_TARGET} -t ${ALL_TARGET}
+
+# build whatever is left (ca. 63 C++ test files)
+pre-test:
+	@${MODCMAKE_BUILD_TARGET}
 
 post-install:
 	${INSTALL_DATA_DIR} ${SERVER_EXAMPLES_DIR}
