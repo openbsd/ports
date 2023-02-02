@@ -1,0 +1,12 @@
+Index: plugins/check_radius.c
+--- plugins/check_radius.c.orig
++++ plugins/check_radius.c
+@@ -155,7 +155,7 @@ main (int argc, char **argv)
+ {
+ 	struct sockaddr_storage ss;
+ 	char name[HOST_NAME_MAX];
+-	char msg[BUFFER_LEN];
++	char msg[RC_BUFFER_LEN];
+ 	SEND_DATA data;
+ 	int result = STATE_UNKNOWN;
+ 	uint32_t client_id, service;
