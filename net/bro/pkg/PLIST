@@ -1203,6 +1203,9 @@ share/btest/data/pcaps/ftp/bruteforce.pcap
 share/btest/data/pcaps/ftp/cwd-navigation.pcap
 share/btest/data/pcaps/ftp/fake-long-commands.pcap
 share/btest/data/pcaps/ftp/fake-server-delays-all.pcap
+share/btest/data/pcaps/ftp/ftp-invalid-reply-code.pcap
+share/btest/data/pcaps/ftp/ftp-missing-reply-code.pcap
+share/btest/data/pcaps/ftp/ftp-missing-space-after-reply-code.pcap
 share/btest/data/pcaps/ftp/ftp-with-numbers-in-filename.pcap
 share/btest/data/pcaps/ftp/ipv4.trace
 share/btest/data/pcaps/ftp/ipv6.trace
@@ -1217,6 +1220,7 @@ share/btest/data/pcaps/http/206_example_c.pcap
 share/btest/data/pcaps/http/bro.org-filtered.pcap
 share/btest/data/pcaps/http/bro.org.pcap
 share/btest/data/pcaps/http/byteranges.trace
+share/btest/data/pcaps/http/concurrent-range-requests-complete.pcap
 share/btest/data/pcaps/http/connect-with-header.trace
 share/btest/data/pcaps/http/connect-with-smtp.trace
 share/btest/data/pcaps/http/content-range-gap-skip.trace
@@ -1230,6 +1234,7 @@ share/btest/data/pcaps/http/flash-version.trace
 share/btest/data/pcaps/http/get-gzip.trace
 share/btest/data/pcaps/http/get.trace
 share/btest/data/pcaps/http/get_nosyn.trace
+share/btest/data/pcaps/http/http-11-request-then-cruft.pcap
 share/btest/data/pcaps/http/http-bad-request-with-version.trace
 share/btest/data/pcaps/http/http-filename.pcap
 share/btest/data/pcaps/http/http-post-large.pcap
@@ -1246,6 +1251,8 @@ share/btest/data/pcaps/http/percent-end-of-line.pcap
 share/btest/data/pcaps/http/pipelined-requests.trace
 share/btest/data/pcaps/http/post.trace
 share/btest/data/pcaps/http/proxy.pcap
+share/btest/data/pcaps/http/putty-upload.pcap
+share/btest/data/pcaps/http/version-mismatch.pcap
 share/btest/data/pcaps/http/websocket.pcap
 share/btest/data/pcaps/http/x-gzip.pcap
 share/btest/data/pcaps/http/zero-length-bodies-with-drops.pcap
@@ -1377,6 +1384,7 @@ share/btest/data/pcaps/smb/
 share/btest/data/pcaps/smb/SMBGhost.pcap
 share/btest/data/pcaps/smb/dssetup_DsRoleGetPrimaryDomainInformation_standalone_workstation.cap
 share/btest/data/pcaps/smb/raw_ntlm_in_smb.pcap
+share/btest/data/pcaps/smb/smb1-OSS-fuzz-54883.pcap
 share/btest/data/pcaps/smb/smb1.pcap
 share/btest/data/pcaps/smb/smb1_transaction2_request.pcap
 share/btest/data/pcaps/smb/smb1_transaction2_secondary_request.pcap
@@ -1384,6 +1392,7 @@ share/btest/data/pcaps/smb/smb1_transaction_request.pcap
 share/btest/data/pcaps/smb/smb1_transaction_response.pcap
 share/btest/data/pcaps/smb/smb1_transaction_secondary_request.pcap
 share/btest/data/pcaps/smb/smb2.pcap
+share/btest/data/pcaps/smb/smb2_fscontrol.pcap
 share/btest/data/pcaps/smb/smb2readwrite.pcap
 share/btest/data/pcaps/smb/smb3.pcap
 share/btest/data/pcaps/smb/smb311.pcap
