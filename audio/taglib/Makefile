@@ -26,4 +26,14 @@ CONFIGURE_ARGS=	-DBUILD_SHARED_LIBS=ON \
 
 TEST_TARGET=	check
 
+# evertyhing except tests
+ALL_TARGET=	tag tag_c
+
+do-build:
+	@${MODCMAKE_BUILD_TARGET} -t ${ALL_TARGET}
+
+# build whatever is left (ca. 40 C++ test files)
+pre-test:
+	@${MODCMAKE_BUILD_TARGET}
+
 .include <bsd.port.mk>
