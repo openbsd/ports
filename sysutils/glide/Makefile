@@ -1,10 +1,9 @@
 COMMENT =	package manager for Go
 
-VERSION =	0.13.2
+VERSION =	0.13.3
 GH_ACCOUNT =	Masterminds
 GH_PROJECT =	glide
 GH_TAGNAME =	v${VERSION}
-REVISION =	1
 
 CATEGORIES =	sysutils
 
