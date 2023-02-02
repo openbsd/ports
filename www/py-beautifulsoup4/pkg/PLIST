@@ -1,6 +1,5 @@
 @pkgpath www/py-beautifulsoup4
 lib/python${MODPY_VERSION}/site-packages/beautifulsoup4-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/beautifulsoup4-${MODPY_EGG_VERSION}.dist-info/COPYING.txt
 lib/python${MODPY_VERSION}/site-packages/beautifulsoup4-${MODPY_EGG_VERSION}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/beautifulsoup4-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/beautifulsoup4-${MODPY_EGG_VERSION}.dist-info/RECORD
