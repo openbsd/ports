@@ -17,6 +17,7 @@ share/ibus-typing-booster/data/annotations/ast.xml
 share/ibus-typing-booster/data/annotations/az.xml
 share/ibus-typing-booster/data/annotations/be.xml
 share/ibus-typing-booster/data/annotations/bg.xml
+share/ibus-typing-booster/data/annotations/bgn.xml
 share/ibus-typing-booster/data/annotations/bn.xml
 share/ibus-typing-booster/data/annotations/br.xml
 share/ibus-typing-booster/data/annotations/bs.xml
@@ -84,6 +85,7 @@ share/ibus-typing-booster/data/annotations/kok.xml
 share/ibus-typing-booster/data/annotations/ku.xml
 share/ibus-typing-booster/data/annotations/ky.xml
 share/ibus-typing-booster/data/annotations/lb.xml
+share/ibus-typing-booster/data/annotations/lij.xml
 share/ibus-typing-booster/data/annotations/lo.xml
 share/ibus-typing-booster/data/annotations/lt.xml
 share/ibus-typing-booster/data/annotations/lv.xml
@@ -102,6 +104,7 @@ share/ibus-typing-booster/data/annotations/ne.xml
 share/ibus-typing-booster/data/annotations/nl.xml
 share/ibus-typing-booster/data/annotations/nn.xml
 share/ibus-typing-booster/data/annotations/no.xml
+share/ibus-typing-booster/data/annotations/nso.xml
 share/ibus-typing-booster/data/annotations/oc.xml
 share/ibus-typing-booster/data/annotations/or.xml
 share/ibus-typing-booster/data/annotations/pa.xml
@@ -112,6 +115,7 @@ share/ibus-typing-booster/data/annotations/ps.xml
 share/ibus-typing-booster/data/annotations/pt.xml
 share/ibus-typing-booster/data/annotations/pt_PT.xml
 share/ibus-typing-booster/data/annotations/qu.xml
+share/ibus-typing-booster/data/annotations/quc.xml
 share/ibus-typing-booster/data/annotations/rm.xml
 share/ibus-typing-booster/data/annotations/ro.xml
 share/ibus-typing-booster/data/annotations/root.xml
@@ -141,6 +145,7 @@ share/ibus-typing-booster/data/annotations/tg.xml
 share/ibus-typing-booster/data/annotations/th.xml
 share/ibus-typing-booster/data/annotations/ti.xml
 share/ibus-typing-booster/data/annotations/tk.xml
+share/ibus-typing-booster/data/annotations/tn.xml
 share/ibus-typing-booster/data/annotations/to.xml
 share/ibus-typing-booster/data/annotations/tr.xml
 share/ibus-typing-booster/data/annotations/tt.xml
