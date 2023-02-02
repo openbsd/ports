@@ -188,7 +188,6 @@
      SUBDIR += glpk
      SUBDIR += gmake
      SUBDIR += gmp
-     SUBDIR += go-goptlib
      SUBDIR += go-sys
      SUBDIR += go-tools
      SUBDIR += gobject-introspection
