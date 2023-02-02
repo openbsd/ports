@@ -2,7 +2,7 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	stand-alone photo geotagging program
 
-V =		1.3.1
+V =		1.4.0
 DISTNAME =	kgeotag-${V}
 CATEGORIES =	geo x11
 
