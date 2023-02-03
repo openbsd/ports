@@ -22,4 +22,14 @@ LIB_DEPENDS =		devel/gflags
 
 CONFIGURE_ARGS +=	-DBUILD_SHARED_LIBS=ON
 
+# evertyhing except tests
+ALL_TARGET =		glog
+
+do-build:
+	@${MODCMAKE_BUILD_TARGET} -t ${ALL_TARGET}
+
+# build whatever is left (ca. 10 C++ test files)
+pre-test:
+	@${MODCMAKE_BUILD_TARGET}
+
 .include <bsd.port.mk>
