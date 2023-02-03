@@ -3,7 +3,7 @@ Always enable full template instantiation.
 Index: similar/main/mglobal.cpp
 --- similar/main/mglobal.cpp.orig
 +++ similar/main/mglobal.cpp
-@@ -160,7 +160,7 @@ void reset_globals_for_new_game()
+@@ -179,7 +179,7 @@ void reset_globals_for_new_game()
  #if (defined(__NO_INLINE__) && __NO_INLINE__ > 0) || defined(__SANITIZE_ADDRESS__)
  #define DXX_VALPTRIDX_ENABLE_FULL_TEMPLATE_INSTANTIATION	1
  #else
