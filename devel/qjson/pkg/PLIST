@@ -5,7 +5,6 @@ include/qjson-qt5/qjson_export.h
 include/qjson-qt5/qobjecthelper.h
 include/qjson-qt5/serializer.h
 include/qjson-qt5/serializerrunnable.h
-lib/cmake/
 lib/cmake/qjson-qt5/
 lib/cmake/qjson-qt5/QJSON-qt5Config.cmake
 lib/cmake/qjson-qt5/QJSON-qt5ConfigVersion.cmake

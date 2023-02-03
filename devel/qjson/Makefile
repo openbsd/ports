@@ -3,7 +3,7 @@ COMMENT=	Qt-based library that maps JSON data to QVariant objects
 GH_ACCOUNT =	flavio
 GH_PROJECT =	qjson
 GH_TAGNAME =	0.9.0
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	devel
 
