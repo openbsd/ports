@@ -24,4 +24,14 @@ CONFIGURE_ARGS=	-DFLATBUFFERS_BUILD_SHAREDLIB=on \
 		-DFLATBUFFERS_BUILD_TESTS=on \
 		-DFLATBUFFERS_BUILD_FLATLIB=off
 
+# evertyhing except tests
+ALL_TARGET =	flatbuffers_shared flatc
+
+do-build:
+	@${MODCMAKE_BUILD_TARGET} -t ${ALL_TARGET}
+
+# build whatever is left (ca. 40 C++ test files)
+pre-test:
+	@${MODCMAKE_BUILD_TARGET}
+
 .include <bsd.port.mk>
