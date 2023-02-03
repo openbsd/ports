@@ -12,10 +12,10 @@ WANTLIB=	X11 Xext Xpm c
 CONFIGURE_STYLE=imake
 NO_TEST=	Yes
 
-XTUFLAGS=	"-DUSE_XPM ${CFLAGS} -I${X11BASE}/include"
 WANTLIB+=	Xpm
 
 MAKE_FLAGS+=	CC=${CC} CDEBUGFLAGS= \
-		CFLAGS="-DUSE_XPM ${CFLAGS} -I${X11BASE}/include"
+		CFLAGS="-DUSE_XPM -DNeedFunctionProtoTypes ${CFLAGS} \
+		    -I${X11BASE}/include"
 
 .include <bsd.port.mk>

@@ -1,0 +1,39 @@
+Index: TolleUhr.c
+--- TolleUhr.c.orig
++++ TolleUhr.c
+@@ -571,7 +571,7 @@ GetPixmap()
+ 		{
+ 			if(!ws.pmok[AR_BG])
+ 				ws.pixmaps[AR_BG] = ReallyGetPixmap(st.pixmaps[AR_BG]);
+-			if(ws.pixmaps[AR_BG] == NULL)
++			if(ws.pixmaps[AR_BG] == 0)
+ 			{
+ 				if(st.pixmaps[AR_BG] != NULL)
+ 					free(st.pixmaps[AR_BG]);
+@@ -611,7 +611,7 @@ GetPixmap()
+ Pixmap
+ ReallyGetPixmap(char *filename)
+ {
+-	Pixmap tmp_pixmap = NULL;
++	Pixmap tmp_pixmap = 0;
+ #ifdef USE_XPM
+ 	int    err;
+ 
+@@ -2046,7 +2046,7 @@ SetColorsAndDC()
+ 	{
+ 		if(!ws.pmok[AR_HOUR])
+ 			ws.pixmaps[AR_HOUR] = ReallyGetPixmap(st.pixmaps[AR_HOUR]);
+-		if(ws.pixmaps[AR_HOUR] == NULL)
++		if(ws.pixmaps[AR_HOUR] == 0)
+ 		{
+ 			if(st.pixmaps[AR_HOUR] != NULL)
+ 				free(st.pixmaps[AR_HOUR]);
+@@ -2063,7 +2063,7 @@ SetColorsAndDC()
+ 	{
+ 		if(!ws.pmok[AR_MIN])
+ 			ws.pixmaps[AR_MIN] = ReallyGetPixmap(st.pixmaps[AR_MIN]);
+-		if(ws.pixmaps[AR_MIN] == NULL)
++		if(ws.pixmaps[AR_MIN] == 0)
+ 		{
+ 			if(st.pixmaps[AR_MIN] != NULL)
+ 				free(st.pixmaps[AR_MIN]);
