@@ -5,7 +5,7 @@ GH_PROJECT =		expected
 GH_TAGNAME =		v1.0.0
 PKGNAME =		tl-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		0
+REVISION =		1
 
 # cmake file for build and install;  no release or tags, use latest master
 ADD_TL_COMMIT =		284c6a3f0f61823cc3871b0f193e8df699e2c4ce
@@ -30,9 +30,6 @@ MODULES =		devel/cmake
 # avoid network and point at prefetched DISTFILES
 CONFIGURE_ARGS +=	-DFETCHCONTENT_FULLY_DISCONNECTED=ON \
 			-DFETCHCONTENT_SOURCE_DIR_TL_CMAKE=${FULLDISTDIR}
-
-# just header files
-PKG_ARCH =		*
 
 # only tests are built, defer compilation to running tests
 NO_BUILD =		Yes
