@@ -51,8 +51,8 @@ lib/CppUTest/cmake/CppUTestConfig.cmake
 lib/CppUTest/cmake/CppUTestConfigVersion.cmake
 lib/CppUTest/cmake/CppUTestTargets${MODCMAKE_BUILD_SUFFIX}
 lib/CppUTest/cmake/CppUTestTargets.cmake
-lib/libCppUTest.a
-lib/libCppUTestExt.a
+@static-lib lib/libCppUTest.a
+@static-lib lib/libCppUTestExt.a
 lib/pkgconfig/cpputest.pc
 share/doc/cpputest/
 share/doc/cpputest/README.md

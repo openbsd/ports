@@ -2,6 +2,7 @@ COMMENT =	unit testing and mocking framework for C/C++
 
 V =		3.8
 DISTNAME =	cpputest-${V}
+REVISION =	0
 
 CATEGORIES =	devel
 
