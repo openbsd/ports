@@ -20,4 +20,15 @@ MODULES =		devel/cmake
 
 CONFIGURE_ARGS +=	-DUNIT_TESTING=ON
 
+# evertyhing except tests
+ALL_TARGET =		cmocka
+
+do-build:
+	@${MODCMAKE_BUILD_TARGET} -t ${ALL_TARGET}
+
+# build whatever is left (ca. 64 C test files)
+pre-test:
+	@${MODCMAKE_BUILD_TARGET}
+
 .include <bsd.port.mk>
+
