@@ -27,7 +27,7 @@ COMPILER_LANGS =	c++
 
 MODULES =		devel/cmake
 
-# avoid network and point at prefetched SUPDISTFILES
+# avoid network and point at prefetched DISTFILES
 CONFIGURE_ARGS +=	-DFETCHCONTENT_FULLY_DISCONNECTED=ON \
 			-DFETCHCONTENT_SOURCE_DIR_TL_CMAKE=${FULLDISTDIR}
 
@@ -37,6 +37,9 @@ PKG_ARCH =		*
 # only tests are built, defer compilation to running tests
 NO_BUILD =		Yes
 TEST_TARGET =		tests
+
+pre-test:
+	@${MODCMAKE_BUILD_TARGET}
 
 post-test:
 	# actually run tests
