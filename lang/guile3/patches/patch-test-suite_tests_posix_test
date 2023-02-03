@@ -1,0 +1,55 @@
+ - wc pads the result with blanks, trim its output
+ - use "seq 3" rather than assuming /proc is available
+ - fix nonsensical crypt invocation, use examples from manpage
+
+Index: test-suite/tests/posix.test
+--- test-suite/tests/posix.test.orig
++++ test-suite/tests/posix.test
+@@ -411,7 +411,7 @@
+       (display "Hello world.\n" (cdr a+b))
+       (close-port (cdr a+b))
+ 
+-      (let ((str (get-string-all (car c+d))))
++      (let ((str (string-trim (get-string-all (car c+d)))))
+         (close-port (car c+d))
+         (waitpid pid)
+         str)))
+@@ -428,18 +428,16 @@
+         (waitpid pid)
+         str)))
+ 
+-  (pass-if-equal "ls /proc/self/fd"
+-      "0\n1\n2\n3\n"                     ;fourth FD is for /proc/self/fd
+-    (if (file-exists? "/proc/self/fd")   ;Linux
+-        (let* ((input+output (pipe))
+-               (pid (spawn "ls" '("ls" "/proc/self/fd")
+-                           #:output (cdr input+output))))
+-          (close-port (cdr input+output))
+-          (let ((str (get-string-all (car input+output))))
+-            (close-port (car input+output))
+-            (waitpid pid)
+-            str))
+-        (throw 'unresolved)))
++  (pass-if-equal "seq 3"
++      "1\n2\n3\n"
++    (let* ((input+output (pipe))
++           (pid (spawn "seq" '("seq" "3")
++                       #:output (cdr input+output))))
++      (close-port (cdr input+output))
++      (let ((str (get-string-all (car input+output))))
++        (close-port (car input+output))
++        (waitpid pid)
++        str)))
+ 
+   (pass-if-equal "file not found"
+       ENOENT
+@@ -459,7 +457,8 @@
+   (pass-if "basic usage"
+     (if (not (defined? 'crypt))
+         (throw 'unsupported)
+-        (string? (crypt "pass" "abcdefg"))))
++        (string? (crypt "OrpheanBeholderScryDoubt"
++                        "$2b$12$FPWWO2RJ3CK4FINTw0Hi8OiPKJcX653gzSS.jqltHFMxyDmmQ0Hqq"))))
+ 
+   (pass-if "crypt invalid salt on glibc"
+     (begin

@@ -1,0 +1,29 @@
+fix close_inherited_fds_slow
+
+The intent of close_inherited_fds_slow is to mimick closefrom() in the
+posix_spawn API, i.e. schedule the closing of all fds >= 3 after fork().
+
+However, the way this is implemented in non-linux OSes is to schedule
+the closing of 3..1023.  This fails due to EBADF in posix_spawn after
+the fork() and makes it exit(127).
+
+see: https://debbugs.gnu.org/cgi/bugreport.cgi?bug=61095
+
+Index: libguile/posix.c
+--- libguile/posix.c.orig
++++ libguile/posix.c
+@@ -1325,8 +1325,12 @@ SCM_DEFINE (scm_fork, "primitive-fork", 0, 0, 0,
+ static void
+ close_inherited_fds_slow (posix_spawn_file_actions_t *actions, int max_fd)
+ {
+-  while (--max_fd > 2)
+-    posix_spawn_file_actions_addclose (actions, max_fd);
++  struct stat sb;
++  max_fd = getdtablecount();
++  while (--max_fd > 2) {
++    if (fstat(max_fd, &sb) != -1)
++      posix_spawn_file_actions_addclose (actions, max_fd);
++  }
+ }
+ 
+ static void

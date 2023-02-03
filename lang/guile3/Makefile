@@ -3,10 +3,9 @@ BROKEN-powerpc = stage0 abort trap, bad prebuilt/32-bit-big-endian
 
 COMMENT=	GNU's Ubiquitous Intelligent Language for Extension
 
-VERSION=	3.0.8
+VERSION=	3.0.9
 DISTNAME=	guile-${VERSION}
 PKGNAME=	guile3-${VERSION}
-REVISION=	0
 V=		${VERSION:R}
 SUBST_VARS=	V
 

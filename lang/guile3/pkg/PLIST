@@ -328,7 +328,9 @@ lib/guile/${V}/ccache/rnrs/arithmetic/bitwise.go
 lib/guile/${V}/ccache/rnrs/arithmetic/fixnums.go
 lib/guile/${V}/ccache/rnrs/arithmetic/flonums.go
 lib/guile/${V}/ccache/rnrs/base.go
+lib/guile/${V}/ccache/rnrs/bytevectors/
 lib/guile/${V}/ccache/rnrs/bytevectors.go
+lib/guile/${V}/ccache/rnrs/bytevectors/gnu.go
 lib/guile/${V}/ccache/rnrs/conditions.go
 lib/guile/${V}/ccache/rnrs/control.go
 lib/guile/${V}/ccache/rnrs/enums.go
@@ -714,7 +716,9 @@ share/guile/${V}/rnrs/arithmetic/bitwise.scm
 share/guile/${V}/rnrs/arithmetic/fixnums.scm
 share/guile/${V}/rnrs/arithmetic/flonums.scm
 share/guile/${V}/rnrs/base.scm
+share/guile/${V}/rnrs/bytevectors/
 share/guile/${V}/rnrs/bytevectors.scm
+share/guile/${V}/rnrs/bytevectors/gnu.scm
 share/guile/${V}/rnrs/conditions.scm
 share/guile/${V}/rnrs/control.scm
 share/guile/${V}/rnrs/enums.scm
