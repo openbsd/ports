@@ -33,7 +33,6 @@ CONFIGURE_ARGS +=	-DFETCHCONTENT_FULLY_DISCONNECTED=ON \
 
 # only tests are built, defer compilation to running tests
 NO_BUILD =		Yes
-TEST_TARGET =		tests
 
 pre-test:
 	@${MODCMAKE_BUILD_TARGET}
