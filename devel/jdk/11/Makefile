@@ -1,6 +1,5 @@
 ONLY_FOR_ARCHS=	i386 amd64 aarch64
 USE_WXNEEDED=	Yes
-USE_NOEXECONLY=	Yes
 DPB_PROPERTIES=	parallel
 
 COMMENT=	OpenJDK Software Development Kit v${VERSION_STR}
@@ -12,6 +11,7 @@ PACKAGE_VER=	${BASE_VER}.${PATCH_VER}.${BSD_PORT_REL}
 PKGNAME=	jdk-${PACKAGE_VER}
 PKGSTEM=	jdk-11
 EPOCH=		0
+REVISION=	0
 
 DIST_SUBDIR=	jdk
 DISTNAME=	jdk-${VERSION_STR}
@@ -116,6 +116,8 @@ CONFIGURE_ARGS=	MAKE=${GMAKE} \
 
 .if ${PROPERTIES:Mclang}
 CONFIGURE_ARGS+=--with-toolchain-type=clang
+# for clang15+
+CONFIGURE_ARGS+=--disable-warnings-as-errors
 .else
 CONFIGURE_ARGS+=--with-toolchain-type=gcc
 .endif
