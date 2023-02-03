@@ -1,7 +1,7 @@
 Index: pkg/cmd/grafana-cli/commands/commands.go
 --- pkg/cmd/grafana-cli/commands/commands.go.orig
 +++ pkg/cmd/grafana-cli/commands/commands.go
-@@ -98,7 +98,7 @@ func runPluginCommand(command func(commandLine utils.C
+@@ -99,7 +99,7 @@ func runPluginCommand(command func(commandLine utils.C
  			return err
  		}
  
