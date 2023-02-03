@@ -22,6 +22,16 @@ COMPILER=	base-clang ports-gcc
 
 CONFIGURE_ARGS+=-DBUILD_SHARED_LIBS=On
 
+# evertyhing except tests
+ALL_TARGET =		crossguid
+
+do-build:
+	@${MODCMAKE_BUILD_TARGET} -t ${ALL_TARGET}
+
+# build whatever is left (ca. 3 C++ test files)
+pre-test:
+	@${MODCMAKE_BUILD_TARGET}
+
 do-test:
 	${WRKBUILD}/crossguid-test
 
