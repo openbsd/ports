@@ -335,8 +335,6 @@ lib/goffice/${GOFFICE_API_VERSION}/plugins/gnumeric/plugin.xml
 lib/libspreadsheet.la
 @so lib/libspreadsheet.so
 lib/pkgconfig/libspreadsheet-${GNUMERIC_API_VERSION}.pc
-lib/python${MODPY_VERSION}/site-packages/gi/
-lib/python${MODPY_VERSION}/site-packages/gi/overrides/
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/Gnm.py
 @man man/man1/gnumeric.1
 @man man/man1/ssconvert.1

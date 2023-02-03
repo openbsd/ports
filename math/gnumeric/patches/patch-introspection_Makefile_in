@@ -3,7 +3,7 @@ Our install(1) does not support the `-t' option.
 Index: introspection/Makefile.in
 --- introspection/Makefile.in.orig
 +++ introspection/Makefile.in
-@@ -568,7 +568,7 @@ uninstall-am: uninstall-local
+@@ -573,7 +573,7 @@ uninstall-am: uninstall-local
  
  
  @HAVE_INTROSPECTION_TRUE@@HAVE_PYTHON_GI_TRUE@install-data-local:
