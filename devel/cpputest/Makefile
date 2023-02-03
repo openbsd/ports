@@ -25,6 +25,16 @@ CXXFLAGS +=		-Wno-zero-as-null-pointer-constant \
 # Many tests fails with enabled leak detection
 CONFIGURE_ARGS +=	-DMEMORY_LEAK_DETECTION=OFF
 
+# evertyhing except tests
+ALL_TARGET =		CppUTest CppUTestExt
+
+do-build:
+	@${MODCMAKE_BUILD_TARGET} -t ${ALL_TARGET}
+
+# build whatever is left (ca. 35 C++ test files)
+pre-test:
+	@${MODCMAKE_BUILD_TARGET}
+
 pre-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/cpputest
 	${INSTALL_DATA} ${WRKSRC}/README.md ${PREFIX}/share/doc/cpputest
