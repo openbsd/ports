@@ -1,7 +1,7 @@
 COMMENT=	document centric objects and utilities
 
 GNOME_PROJECT=	goffice
-GNOME_VERSION=	0.10.54
+GNOME_VERSION=	0.10.55
 
 # NOTE: when GNOME_VERSION changes, increment GOFFICE_VERSION and
 # GOFFICE_API_VERSION accordingly and bump:
@@ -9,7 +9,7 @@ GNOME_VERSION=	0.10.54
 GOFFICE_API_VERSION=	${GNOME_VERSION:R}
 SUBST_VARS=		GNOME_VERSION GOFFICE_API_VERSION
 
-SHARED_LIBS +=  goffice-0.10         0.3      # 10.54
+SHARED_LIBS +=  goffice-0.10         0.3      # 10.55
 
 CATEGORIES=	devel
 
