@@ -532,6 +532,11 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudsearchdomain/2013-01
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudsearchdomain/2013-01-01/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudsearchdomain/2013-01-01/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudtrail/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudtrail-data/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudtrail-data/2021-08-11/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudtrail-data/2021-08-11/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudtrail-data/2021-08-11/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudtrail-data/2021-08-11/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudtrail/2013-11-01/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudtrail/2013-11-01/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudtrail/2013-11-01/examples-1.json
