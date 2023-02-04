@@ -21,6 +21,15 @@ Index: Makefile
      -minline-all-stringops -fomit-frame-pointer \
      -freg-struct-return -ffreestanding -fno-delete-null-pointer-checks \
      -ffunction-sections -fdata-sections -fno-common -fno-merge-constants
+@@ -129,7 +137,7 @@ endef
+ 
+ %.noexec.o: %.o
+ 	@echo "  Stripping $@"
+-	$(Q)$(STRIP) $< -o $<.strip.o
++	$(Q)$(STRIP) --regex --keep-section=\.fixedaddr\.0x[[:xdigit:]]{4} $< -o $<.strip.o
+ 	$(Q)$(PYTHON) ./scripts/ldnoexec.py $<.strip.o $@
+ 
+ $(OUT)%.s: %.c
 @@ -274,7 +282,10 @@ $(Q)mkdir -p $(addprefix $(OUT), $(DIRS))
  $(Q)$(MAKE) -C $(OUT) -f $(CURDIR)/scripts/kconfig/Makefile srctree=$(CURDIR) src=scripts/kconfig obj=scripts/kconfig Q=$(Q) Kconfig=$(CURDIR)/src/Kconfig $1
  endef
