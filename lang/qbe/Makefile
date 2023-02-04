@@ -2,7 +2,7 @@
 ONLY_FOR_ARCHS =	amd64 arm64 riscv64
 
 COMMENT =	small, quick compiler backend
-DISTNAME =	qbe-1.0
+DISTNAME =	qbe-1.1
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	lang devel
 
