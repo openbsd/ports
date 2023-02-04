@@ -1,4 +1,3 @@
-@bin bin/cairo-sphinx
 bin/cairo-trace
 include/cairo/
 include/cairo/cairo-deprecated.h
@@ -10,15 +9,12 @@ include/cairo/cairo-ps.h
 include/cairo/cairo-script-interpreter.h
 include/cairo/cairo-script.h
 include/cairo/cairo-svg.h
-include/cairo/cairo-tee.h
 include/cairo/cairo-version.h
 include/cairo/cairo-xcb.h
 include/cairo/cairo-xlib-xrender.h
 include/cairo/cairo-xlib.h
 include/cairo/cairo.h
 lib/cairo/
-@so lib/cairo/libcairo-fdr.so
-@so lib/cairo/libcairo-sphinx.so
 @so lib/cairo/libcairo-trace.so
 @lib lib/libcairo-gobject.so.${LIBcairo-gobject_VERSION}
 @lib lib/libcairo-script-interpreter.so.${LIBcairo-script-interpreter_VERSION}
@@ -32,7 +28,6 @@ lib/pkgconfig/cairo-ps.pc
 lib/pkgconfig/cairo-script-interpreter.pc
 lib/pkgconfig/cairo-script.pc
 lib/pkgconfig/cairo-svg.pc
-lib/pkgconfig/cairo-tee.pc
 lib/pkgconfig/cairo-xcb-shm.pc
 lib/pkgconfig/cairo-xcb.pc
 lib/pkgconfig/cairo-xlib-xrender.pc

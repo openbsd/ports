@@ -3,7 +3,7 @@ LD_PRELOAD is supported on OpenBSD
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -890,7 +890,7 @@ if not ['x86', 'x86_64'].contains(host_machine.cpu_fam
+@@ -780,7 +780,7 @@ if not ['x86', 'x86_64'].contains(host_machine.cpu_fam
    conf.set('ATOMIC_OP_NEEDS_MEMORY_BARRIER', 1)
  endif
  

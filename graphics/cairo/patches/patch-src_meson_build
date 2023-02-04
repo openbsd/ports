@@ -3,7 +3,7 @@ Properly find X libs are runtime
 Index: src/meson.build
 --- src/meson.build.orig
 +++ src/meson.build
-@@ -287,6 +287,7 @@ libcairo_dep = declare_dependency(link_with: libcairo,
+@@ -267,6 +267,7 @@ libcairo_dep = declare_dependency(link_with: libcairo,
  pkgmod.generate(libcairo,
    description: 'Multi-platform 2D graphics library',
    subdirs: [meson.project_name()],
