@@ -4,7 +4,7 @@ COMMENT=	tool to check the quality of a DNS zone
 
 MODULES=	cpan
 CPAN_AUTHOR=	ZNMSTR
-V=		4.4.0
+V=		4.6.1
 DISTNAME=	Zonemaster-Engine-v$V
 PKGNAME=	p5-Zonemaster-engine-$V
 CATEGORIES=	net
@@ -32,7 +32,7 @@ RUN_DEPENDS=	converters/p5-JSON>=2.53 \
 		devel/p5-Readonly \
 		mail/p5-Email-Valid \
 		net/p5-IO-Socket-INET6>=2.69 \
-		net/p5-Net-IP \
+		net/p5-Net-IP-XS \
 		net/p5-Zonemaster/ldns \
 		textproc/p5-Text-CSV
 

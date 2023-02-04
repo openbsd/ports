@@ -14,6 +14,9 @@ ${P5SITE}/Zonemaster/Engine/Nameserver.pm
 ${P5SITE}/Zonemaster/Engine/Nameserver/Cache.pm
 ${P5SITE}/Zonemaster/Engine/Net/
 ${P5SITE}/Zonemaster/Engine/Net/IP.pm
+${P5SITE}/Zonemaster/Engine/Normalization/
+${P5SITE}/Zonemaster/Engine/Normalization.pm
+${P5SITE}/Zonemaster/Engine/Normalization/Error.pm
 ${P5SITE}/Zonemaster/Engine/Overview.pod
 ${P5SITE}/Zonemaster/Engine/Packet.pm
 ${P5SITE}/Zonemaster/Engine/Profile.pm
@@ -57,8 +60,9 @@ ${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/sv/
 ${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/sv/LC_MESSAGES/
 ${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/sv/LC_MESSAGES/Zonemaster-Engine.mo
 ${P5SITE}/auto/share/dist/Zonemaster-Engine/modules.txt
+${P5SITE}/auto/share/dist/Zonemaster-Engine/named.root
 ${P5SITE}/auto/share/dist/Zonemaster-Engine/profile.json
-${P5SITE}/auto/share/dist/Zonemaster-Engine/profile_example.json
+${P5SITE}/auto/share/dist/Zonemaster-Engine/profile_additional_properties.json
 @man man/man3p/Zonemaster::Engine.3p
 @man man/man3p/Zonemaster::Engine::ASNLookup.3p
 @man man/man3p/Zonemaster::Engine::Constants.3p
@@ -70,6 +74,8 @@ ${P5SITE}/auto/share/dist/Zonemaster-Engine/profile_example.json
 @man man/man3p/Zonemaster::Engine::Nameserver.3p
 @man man/man3p/Zonemaster::Engine::Nameserver::Cache.3p
 @man man/man3p/Zonemaster::Engine::Net::IP.3p
+@man man/man3p/Zonemaster::Engine::Normalization.3p
+@man man/man3p/Zonemaster::Engine::Normalization::Error.3p
 @man man/man3p/Zonemaster::Engine::Overview.3p
 @man man/man3p/Zonemaster::Engine::Packet.3p
 @man man/man3p/Zonemaster::Engine::Profile.3p
