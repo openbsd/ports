@@ -1,0 +1,12 @@
+Index: Ext/iconman.c
+--- Ext/iconman.c.orig
++++ Ext/iconman.c
+@@ -179,7 +179,7 @@ public void ExecuteIconProgram(w, prog, call_data)
+     pgm = strtok(pgm, " ");
+ 
+     if (pgm) execute(NULL, pgm, cmd, False, prog);
+-    setCursor(NULL);
++    setCursor((Cursor)NULL);
+     XtFree(cmd);
+     XtFree(pgm);
+     XtFree(tmpl);

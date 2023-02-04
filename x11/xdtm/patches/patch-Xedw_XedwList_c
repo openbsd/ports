@@ -1,0 +1,12 @@
+Index: Xedw/XedwList.c
+--- Xedw/XedwList.c.orig
++++ Xedw/XedwList.c
+@@ -455,7 +455,7 @@ Cardinal *num_args;
+         dpy,
+ 	rootWindow,
+ 	default_bits, default_width, default_height);
+-  defaultIconPixmapMask = NULL;
++  defaultIconPixmapMask = (Pixmap) NULL;
+ #endif
+ } /* Initialize */
+ 
