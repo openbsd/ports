@@ -3,7 +3,7 @@
 Index: src/fw/paravirt.c
 --- src/fw/paravirt.c.orig
 +++ src/fw/paravirt.c
-@@ -310,6 +310,8 @@ qemu_cfg_read(void *buf, int len)
+@@ -310,7 +310,9 @@ qemu_cfg_read(void *buf, int len)
      if (qemu_cfg_dma_enabled()) {
          qemu_cfg_dma_transfer(buf, len, QEMU_CFG_DMA_CTL_READ);
      } else {
@@ -13,3 +13,4 @@ Index: src/fw/paravirt.c
 +		*d++ = inb(PORT_QEMU_CFG_DATA);
      }
  }
+ 

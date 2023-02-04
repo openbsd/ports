@@ -5,9 +5,9 @@ Index: src/optionroms.c
 --- src/optionroms.c.orig
 +++ src/optionroms.c
 @@ -387,7 +387,7 @@ optionrom_setup(void)
-
+ 
      // All option roms found and deployed - now build BEV/BCV vectors.
-
+ 
 -    u32 pos = post_vga;
 +    u32 pos = BUILD_BIOS_ADDR - BUILD_ROM_START;
      while (pos < rom_get_last()) {
