@@ -15,9 +15,9 @@ Index: Makefile
  	install $(PERLSCRIPTS) $(DESTDIR)$(PREFIX)/bin
  
 -	mkdir -p $(DESTDIR)$(PREFIX)/share/man/man1
--	install $(MANS) $(DESTDIR)$(PREFIX)/share/man/man1
+-	install -m 644 $(MANS) $(DESTDIR)$(PREFIX)/share/man/man1
 +	mkdir -p $(DESTDIR)$(PREFIX)/man/man1
-+	install $(MANS) $(DESTDIR)$(PREFIX)/man/man1
++	install -m 644 $(MANS) $(DESTDIR)$(PREFIX)/man/man1
  
- check: isutf8
- 	./is_utf8/test.sh
+ uninstall:
+ 	for i in $(BINS) $(PERLSCRIPTS); do rm -f $(DESTDIR)$(PREFIX)/bin/$$i; done
