@@ -2,8 +2,7 @@ COMMENT =	flexible DNS proxy with support for encrypted DNS protocols
 
 GH_ACCOUNT =	jedisct1
 GH_PROJECT =	dnscrypt-proxy
-GH_TAGNAME =	2.1.2
-REVISION =	0
+GH_TAGNAME =	2.1.3
 
 CATEGORIES =	net
 
