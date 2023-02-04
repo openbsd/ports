@@ -1,9 +1,8 @@
 COMMENT=	full-text search engine based on Lucene
 
-V=		8.11.2
+V=		9.1.1
 DISTNAME=	solr-$V
 EXTRACT_SUFX=	.tgz
-REVISION=	0
 
 PKG_ARCH=	*
 
@@ -16,7 +15,7 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 # Apache 2.0
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_APACHE:=lucene/solr/$V/}
+MASTER_SITES=	${MASTER_SITE_APACHE:=solr/solr/$V/}
 
 MODULES=	java
 MODJAVA_VER=	1.8+
