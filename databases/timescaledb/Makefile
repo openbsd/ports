@@ -1,9 +1,8 @@
-BROKEN =	TimescaleDB does not yet support PostgreSQL 15
 COMMENT =	database designed to make SQL scalable for time-series data
 
 GH_ACCOUNT =	timescale
 GH_PROJECT =	timescaledb
-GH_TAGNAME =	2.7.1
+GH_TAGNAME =	2.9.2
 
 CATEGORIES =	databases
 HOMEPAGE =	https://www.timescale.com/
