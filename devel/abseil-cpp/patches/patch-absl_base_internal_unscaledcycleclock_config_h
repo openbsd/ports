@@ -2,10 +2,10 @@ Disable the PowerPC counter, because UnscaledCycleClock::Frequency()
 is not implemented on OpenBSD.  Avoids error in unscaledcycleclock.cc,
 #error Must implement UnscaledCycleClock::Frequency()
 
-Index: absl/base/internal/unscaledcycleclock.h
---- absl/base/internal/unscaledcycleclock.h.orig
-+++ absl/base/internal/unscaledcycleclock.h
-@@ -46,7 +46,7 @@
+Index: absl/base/internal/unscaledcycleclock_config.h
+--- absl/base/internal/unscaledcycleclock_config.h.orig
++++ absl/base/internal/unscaledcycleclock_config.h
+@@ -21,7 +21,7 @@
  
  // The following platforms have an implementation of a hardware counter.
  #if defined(__i386__) || defined(__x86_64__) || defined(__aarch64__) || \

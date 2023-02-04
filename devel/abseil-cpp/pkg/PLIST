@@ -13,6 +13,7 @@ include/absl/base/internal/
 include/absl/base/internal/atomic_hook.h
 include/absl/base/internal/atomic_hook_test_helper.h
 include/absl/base/internal/cycleclock.h
+include/absl/base/internal/cycleclock_config.h
 include/absl/base/internal/direct_mmap.h
 include/absl/base/internal/dynamic_annotations.h
 include/absl/base/internal/endian.h
@@ -47,6 +48,7 @@ include/absl/base/internal/throw_delegate.h
 include/absl/base/internal/tsan_mutex_interface.h
 include/absl/base/internal/unaligned_access.h
 include/absl/base/internal/unscaledcycleclock.h
+include/absl/base/internal/unscaledcycleclock_config.h
 include/absl/base/log_severity.h
 include/absl/base/macros.h
 include/absl/base/optimization.h
@@ -70,6 +72,7 @@ include/absl/container/internal/
 include/absl/container/internal/btree.h
 include/absl/container/internal/btree_container.h
 include/absl/container/internal/common.h
+include/absl/container/internal/common_policy_traits.h
 include/absl/container/internal/compressed_tuple.h
 include/absl/container/internal/container_memory.h
 include/absl/container/internal/counting_allocator.h
@@ -97,6 +100,19 @@ include/absl/container/internal/unordered_set_members_test.h
 include/absl/container/internal/unordered_set_modifiers_test.h
 include/absl/container/node_hash_map.h
 include/absl/container/node_hash_set.h
+include/absl/crc/
+include/absl/crc/crc32c.h
+include/absl/crc/internal/
+include/absl/crc/internal/cpu_detect.h
+include/absl/crc/internal/crc.h
+include/absl/crc/internal/crc32_x86_arm_combined_simd.h
+include/absl/crc/internal/crc32c.h
+include/absl/crc/internal/crc32c_inline.h
+include/absl/crc/internal/crc_cord_state.h
+include/absl/crc/internal/crc_internal.h
+include/absl/crc/internal/crc_memcpy.h
+include/absl/crc/internal/non_temporal_arm_intrinsics.h
+include/absl/crc/internal/non_temporal_memcpy.h
 include/absl/debugging/
 include/absl/debugging/failure_signal_handler.h
 include/absl/debugging/internal/
@@ -162,6 +178,44 @@ include/absl/hash/internal/city.h
 include/absl/hash/internal/hash.h
 include/absl/hash/internal/low_level_hash.h
 include/absl/hash/internal/spy_hash_state.h
+include/absl/log/
+include/absl/log/absl_check.h
+include/absl/log/absl_log.h
+include/absl/log/check.h
+include/absl/log/check_test_impl.h
+include/absl/log/die_if_null.h
+include/absl/log/flags.h
+include/absl/log/globals.h
+include/absl/log/initialize.h
+include/absl/log/internal/
+include/absl/log/internal/append_truncated.h
+include/absl/log/internal/check_impl.h
+include/absl/log/internal/check_op.h
+include/absl/log/internal/conditions.h
+include/absl/log/internal/config.h
+include/absl/log/internal/flags.h
+include/absl/log/internal/globals.h
+include/absl/log/internal/log_format.h
+include/absl/log/internal/log_impl.h
+include/absl/log/internal/log_message.h
+include/absl/log/internal/log_sink_set.h
+include/absl/log/internal/nullguard.h
+include/absl/log/internal/nullstream.h
+include/absl/log/internal/proto.h
+include/absl/log/internal/strip.h
+include/absl/log/internal/structured.h
+include/absl/log/internal/test_actions.h
+include/absl/log/internal/test_helpers.h
+include/absl/log/internal/test_matchers.h
+include/absl/log/internal/voidify.h
+include/absl/log/log.h
+include/absl/log/log_basic_test_impl.h
+include/absl/log/log_entry.h
+include/absl/log/log_sink.h
+include/absl/log/log_sink_registry.h
+include/absl/log/log_streamer.h
+include/absl/log/scoped_mock_log.h
+include/absl/log/structured.h
 include/absl/memory/
 include/absl/memory/memory.h
 include/absl/meta/
@@ -263,8 +317,10 @@ include/absl/strings/internal/cordz_sample_token.h
 include/absl/strings/internal/cordz_statistics.h
 include/absl/strings/internal/cordz_update_scope.h
 include/absl/strings/internal/cordz_update_tracker.h
+include/absl/strings/internal/damerau_levenshtein_distance.h
 include/absl/strings/internal/escaping.h
 include/absl/strings/internal/escaping_test_common.h
+include/absl/strings/internal/has_absl_stringify.h
 include/absl/strings/internal/memutil.h
 include/absl/strings/internal/numbers_test_common.h
 include/absl/strings/internal/ostringstream.h
@@ -275,6 +331,7 @@ include/absl/strings/internal/str_format/
 include/absl/strings/internal/str_format/arg.h
 include/absl/strings/internal/str_format/bind.h
 include/absl/strings/internal/str_format/checker.h
+include/absl/strings/internal/str_format/constexpr_parser.h
 include/absl/strings/internal/str_format/extension.h
 include/absl/strings/internal/str_format/float_conversion.h
 include/absl/strings/internal/str_format/output.h
@@ -282,6 +339,7 @@ include/absl/strings/internal/str_format/parser.h
 include/absl/strings/internal/str_join_internal.h
 include/absl/strings/internal/str_split_internal.h
 include/absl/strings/internal/string_constant.h
+include/absl/strings/internal/stringify_sink.h
 include/absl/strings/internal/utf8.h
 include/absl/strings/match.h
 include/absl/strings/numbers.h
@@ -328,7 +386,6 @@ include/absl/time/internal/cctz/src/tzfile.h
 include/absl/time/internal/get_current_time_chrono.inc
 include/absl/time/internal/get_current_time_posix.inc
 include/absl/time/internal/test_util.h
-include/absl/time/internal/zoneinfo.inc
 include/absl/time/time.h
 include/absl/types/
 include/absl/types/any.h
@@ -370,8 +427,13 @@ lib/cmake/absl/abslTargets.cmake
 @lib lib/libabsl_cordz_handle.so.${LIBabsl_cordz_handle_VERSION}
 @lib lib/libabsl_cordz_info.so.${LIBabsl_cordz_info_VERSION}
 @lib lib/libabsl_cordz_sample_token.so.${LIBabsl_cordz_sample_token_VERSION}
+@lib lib/libabsl_crc32c.so.${LIBabsl_crc32c_VERSION}
+@lib lib/libabsl_crc_cord_state.so.${LIBabsl_crc_cord_state_VERSION}
+@lib lib/libabsl_crc_cpu_detect.so.${LIBabsl_crc_cpu_detect_VERSION}
+@lib lib/libabsl_crc_internal.so.${LIBabsl_crc_internal_VERSION}
 @lib lib/libabsl_debugging_internal.so.${LIBabsl_debugging_internal_VERSION}
 @lib lib/libabsl_demangle_internal.so.${LIBabsl_demangle_internal_VERSION}
+@lib lib/libabsl_die_if_null.so.${LIBabsl_die_if_null_VERSION}
 @lib lib/libabsl_examine_stack.so.${LIBabsl_examine_stack_VERSION}
 @lib lib/libabsl_exponential_biased.so.${LIBabsl_exponential_biased_VERSION}
 @lib lib/libabsl_failure_signal_handler.so.${LIBabsl_failure_signal_handler_VERSION}
@@ -391,7 +453,20 @@ lib/cmake/absl/abslTargets.cmake
 @lib lib/libabsl_hash.so.${LIBabsl_hash_VERSION}
 @lib lib/libabsl_hashtablez_sampler.so.${LIBabsl_hashtablez_sampler_VERSION}
 @lib lib/libabsl_int128.so.${LIBabsl_int128_VERSION}
+@lib lib/libabsl_log_entry.so.${LIBabsl_log_entry_VERSION}
+@lib lib/libabsl_log_flags.so.${LIBabsl_log_flags_VERSION}
+@lib lib/libabsl_log_globals.so.${LIBabsl_log_globals_VERSION}
+@lib lib/libabsl_log_initialize.so.${LIBabsl_log_initialize_VERSION}
+@lib lib/libabsl_log_internal_check_op.so.${LIBabsl_log_internal_check_op_VERSION}
+@lib lib/libabsl_log_internal_conditions.so.${LIBabsl_log_internal_conditions_VERSION}
+@lib lib/libabsl_log_internal_format.so.${LIBabsl_log_internal_format_VERSION}
+@lib lib/libabsl_log_internal_globals.so.${LIBabsl_log_internal_globals_VERSION}
+@lib lib/libabsl_log_internal_log_sink_set.so.${LIBabsl_log_internal_log_sink_set_VERSION}
+@lib lib/libabsl_log_internal_message.so.${LIBabsl_log_internal_message_VERSION}
+@lib lib/libabsl_log_internal_nullguard.so.${LIBabsl_log_internal_nullguard_VERSION}
+@lib lib/libabsl_log_internal_proto.so.${LIBabsl_log_internal_proto_VERSION}
 @lib lib/libabsl_log_severity.so.${LIBabsl_log_severity_VERSION}
+@lib lib/libabsl_log_sink.so.${LIBabsl_log_sink_VERSION}
 @lib lib/libabsl_low_level_hash.so.${LIBabsl_low_level_hash_VERSION}
 @lib lib/libabsl_malloc_internal.so.${LIBabsl_malloc_internal_VERSION}
 @lib lib/libabsl_periodic_sampler.so.${LIBabsl_periodic_sampler_VERSION}
@@ -422,6 +497,8 @@ lib/cmake/absl/abslTargets.cmake
 @lib lib/libabsl_throw_delegate.so.${LIBabsl_throw_delegate_VERSION}
 @lib lib/libabsl_time.so.${LIBabsl_time_VERSION}
 @lib lib/libabsl_time_zone.so.${LIBabsl_time_zone_VERSION}
+lib/pkgconfig/absl_absl_check.pc
+lib/pkgconfig/absl_absl_log.pc
 lib/pkgconfig/absl_algorithm.pc
 lib/pkgconfig/absl_algorithm_container.pc
 lib/pkgconfig/absl_any.pc
@@ -436,10 +513,12 @@ lib/pkgconfig/absl_base_internal.pc
 lib/pkgconfig/absl_bind_front.pc
 lib/pkgconfig/absl_bits.pc
 lib/pkgconfig/absl_btree.pc
+lib/pkgconfig/absl_check.pc
 lib/pkgconfig/absl_city.pc
 lib/pkgconfig/absl_civil_time.pc
 lib/pkgconfig/absl_cleanup.pc
 lib/pkgconfig/absl_cleanup_internal.pc
+lib/pkgconfig/absl_common_policy_traits.pc
 lib/pkgconfig/absl_compare.pc
 lib/pkgconfig/absl_compressed_tuple.pc
 lib/pkgconfig/absl_config.pc
@@ -456,8 +535,13 @@ lib/pkgconfig/absl_cordz_update_scope.pc
 lib/pkgconfig/absl_cordz_update_tracker.pc
 lib/pkgconfig/absl_core_headers.pc
 lib/pkgconfig/absl_counting_allocator.pc
+lib/pkgconfig/absl_crc32c.pc
+lib/pkgconfig/absl_crc_cord_state.pc
+lib/pkgconfig/absl_crc_cpu_detect.pc
+lib/pkgconfig/absl_crc_internal.pc
 lib/pkgconfig/absl_debugging_internal.pc
 lib/pkgconfig/absl_demangle_internal.pc
+lib/pkgconfig/absl_die_if_null.pc
 lib/pkgconfig/absl_dynamic_annotations.pc
 lib/pkgconfig/absl_endian.pc
 lib/pkgconfig/absl_errno_saver.pc
@@ -494,7 +578,33 @@ lib/pkgconfig/absl_inlined_vector_internal.pc
 lib/pkgconfig/absl_int128.pc
 lib/pkgconfig/absl_kernel_timeout_internal.pc
 lib/pkgconfig/absl_layout.pc
+lib/pkgconfig/absl_log.pc
+lib/pkgconfig/absl_log_entry.pc
+lib/pkgconfig/absl_log_flags.pc
+lib/pkgconfig/absl_log_globals.pc
+lib/pkgconfig/absl_log_initialize.pc
+lib/pkgconfig/absl_log_internal_append_truncated.pc
+lib/pkgconfig/absl_log_internal_check_impl.pc
+lib/pkgconfig/absl_log_internal_check_op.pc
+lib/pkgconfig/absl_log_internal_conditions.pc
+lib/pkgconfig/absl_log_internal_config.pc
+lib/pkgconfig/absl_log_internal_flags.pc
+lib/pkgconfig/absl_log_internal_format.pc
+lib/pkgconfig/absl_log_internal_globals.pc
+lib/pkgconfig/absl_log_internal_log_impl.pc
+lib/pkgconfig/absl_log_internal_log_sink_set.pc
+lib/pkgconfig/absl_log_internal_message.pc
+lib/pkgconfig/absl_log_internal_nullguard.pc
+lib/pkgconfig/absl_log_internal_nullstream.pc
+lib/pkgconfig/absl_log_internal_proto.pc
+lib/pkgconfig/absl_log_internal_strip.pc
+lib/pkgconfig/absl_log_internal_structured.pc
+lib/pkgconfig/absl_log_internal_voidify.pc
 lib/pkgconfig/absl_log_severity.pc
+lib/pkgconfig/absl_log_sink.pc
+lib/pkgconfig/absl_log_sink_registry.pc
+lib/pkgconfig/absl_log_streamer.pc
+lib/pkgconfig/absl_log_structured.pc
 lib/pkgconfig/absl_low_level_hash.pc
 lib/pkgconfig/absl_malloc_internal.pc
 lib/pkgconfig/absl_memory.pc
@@ -502,6 +612,8 @@ lib/pkgconfig/absl_meta.pc
 lib/pkgconfig/absl_node_hash_map.pc
 lib/pkgconfig/absl_node_hash_set.pc
 lib/pkgconfig/absl_node_slot_policy.pc
+lib/pkgconfig/absl_non_temporal_arm_intrinsics.pc
+lib/pkgconfig/absl_non_temporal_memcpy.pc
 lib/pkgconfig/absl_numeric.pc
 lib/pkgconfig/absl_numeric_representation.pc
 lib/pkgconfig/absl_optional.pc
