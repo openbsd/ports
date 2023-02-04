@@ -1,20 +1,20 @@
 Index: external/pdfium/pdfium-openbsd.patch
 --- external/pdfium/pdfium-openbsd.patch.orig
 +++ external/pdfium/pdfium-openbsd.patch
-@@ -0,0 +1,45 @@
-+--- ./core/fxcrt/cfx_datetime.cpp.orig	Sun Aug 28 11:53:08 2022
-++++ ./core/fxcrt/cfx_datetime.cpp	Sun Aug 28 11:53:16 2022
-+@@ -11,7 +11,7 @@
-+ #include "third_party/base/check.h"
+@@ -0,0 +1,22 @@
++--- core/fxge/cfx_fontmapper.cpp.orig	Fri Feb  3 17:41:17 2023
+++++ core/fxge/cfx_fontmapper.cpp	Fri Feb  3 17:41:30 2023
++@@ -157,7 +157,7 @@
++     {"ForteMT", "Forte"},
++ };
 + 
-+ #if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
-+-    BUILDFLAG(IS_APPLE) || defined(OS_ASMJS)
-++    BUILDFLAG(IS_APPLE) || defined(OS_ASMJS) || BUILDFLAG(IS_OPENBSD)
-+ #include <sys/time.h>
-+ #include <time.h>
-+ #endif
-+--- ./core/fxge/linux/fx_linux_impl.cpp.orig	Sun Aug 28 11:51:38 2022
-++++ ./core/fxge/linux/fx_linux_impl.cpp	Sun Aug 28 11:52:59 2022
++-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || defined(OS_ASMJS)
+++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || defined(OS_ASMJS) || BUILDFLAG(IS_OPENBSD)
++ const char kNarrowFamily[] = "LiberationSansNarrow";
++ #elif BUILDFLAG(IS_ANDROID)
++ const char kNarrowFamily[] = "RobotoCondensed";
++--- core/fxge/linux/fx_linux_impl.cpp.orig	Fri Feb  3 17:41:36 2023
+++++ core/fxge/linux/fx_linux_impl.cpp	Fri Feb  3 17:41:50 2023
 +@@ -18,7 +18,7 @@
 + #include "third_party/base/check.h"
 + 
@@ -24,26 +24,3 @@ Index: external/pdfium/pdfium-openbsd.patch
 + #error "Included on the wrong platform"
 + #endif
 + 
-+@@ -166,9 +166,8 @@
-+   std::unique_ptr<SystemFontInfoIface> CreateDefaultSystemFontInfo() override {
-+     auto pInfo = std::make_unique<CFX_LinuxFontInfo>();
-+     if (!pInfo->ParseFontCfg(CFX_GEModule::Get()->GetUserFontPaths())) {
-+-      pInfo->AddPath("/usr/share/fonts");
-+-      pInfo->AddPath("/usr/share/X11/fonts/Type1");
-+-      pInfo->AddPath("/usr/share/X11/fonts/TTF");
-++      pInfo->AddPath("/usr/X11R6/lib/X11/fonts/Type1");
-++      pInfo->AddPath("/usr/X11R6/lib/X11/fonts/TTF");
-+       pInfo->AddPath("/usr/local/share/fonts");
-+     }
-+     return pInfo;
-+--- ./core/fxge/cfx_fontmapper.cpp.orig	Sun Aug 28 11:52:09 2022
-++++ ./core/fxge/cfx_fontmapper.cpp	Sun Aug 28 11:52:27 2022
-+@@ -155,7 +155,7 @@
-+     {"ForteMT", "Forte"},
-+ };
-+ 
-+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || defined(OS_ASMJS)
-++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || defined(OS_ASMJS) || BUILDFLAG(IS_OPENBSD)
-+ const char kNarrowFamily[] = "LiberationSansNarrow";
-+ #elif BUILDFLAG(IS_ANDROID)
-+ const char kNarrowFamily[] = "RobotoCondensed";

@@ -1,7 +1,7 @@
 Index: vcl/Library_vclplug_gen.mk
 --- vcl/Library_vclplug_gen.mk.orig
 +++ vcl/Library_vclplug_gen.mk
-@@ -152,10 +152,10 @@ $(eval $(call gb_Library_add_libs,vclplug_gen,\
+@@ -153,10 +153,10 @@ $(eval $(call gb_Library_add_libs,vclplug_gen,\
  endif
  endif # USE_XINERAMA
  

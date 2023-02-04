@@ -8,5 +8,5 @@ Index: shell/source/unix/exec/shellexec.cxx
 -#ifdef LINUX
 +#if defined(LINUX) || defined(__OpenBSD__)
          // avoid blocking (call it in background)
-         "( " + aBuffer.makeStringAndClear() +  " ) &";
+         "( " + aBuffer +  " ) &";
  #else

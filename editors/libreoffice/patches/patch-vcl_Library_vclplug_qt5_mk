@@ -1,8 +1,8 @@
 Index: vcl/Library_vclplug_qt5.mk
 --- vcl/Library_vclplug_qt5.mk.orig
 +++ vcl/Library_vclplug_qt5.mk
-@@ -108,10 +108,10 @@ $(eval $(call gb_Library_add_exception_objects,vclplug
-     vcl/qt5/QtXAccessible \
+@@ -112,10 +112,10 @@ $(eval $(call gb_Library_add_exception_objects,vclplug
+     ) \
  ))
  
 -ifeq ($(OS),LINUX)

@@ -1,7 +1,7 @@
 Index: vcl/Library_vclplug_gtk3_kde5.mk
 --- vcl/Library_vclplug_gtk3_kde5.mk.orig
 +++ vcl/Library_vclplug_gtk3_kde5.mk
-@@ -120,10 +120,10 @@ $(eval $(call gb_Library_add_exception_objects,vclplug
+@@ -121,10 +121,10 @@ $(eval $(call gb_Library_add_exception_objects,vclplug
  	vcl/unx/gtk3_kde5/gtk3_kde5_hudawareness \
  ))
  

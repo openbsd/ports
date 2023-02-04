@@ -10,7 +10,7 @@ Index: external/liborcus/ExternalProject_liborcus.mk
  else
  liborcus_LIBS+=-L$(gb_StaticLibrary_WORKDIR) -lboost_system -lboost_iostreams -lboost_filesystem
  endif
-@@ -51,6 +51,9 @@ liborcus_CPPCLAGS=$(CPPFLAGS)
+@@ -51,6 +51,9 @@ liborcus_CPPFLAGS=$(CPPFLAGS)
  ifeq ($(SYSTEM_ZLIB),)
  liborcus_CPPFLAGS+=$(ZLIB_CFLAGS)
  endif

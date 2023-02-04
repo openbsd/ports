@@ -1,7 +1,7 @@
 Index: solenv/gbuild/platform/unxgcc.mk
 --- solenv/gbuild/platform/unxgcc.mk.orig
 +++ solenv/gbuild/platform/unxgcc.mk
-@@ -171,8 +171,7 @@ $(call gb_Helper_abbreviate_dirs,\
+@@ -174,8 +174,7 @@ $(call gb_Helper_abbreviate_dirs,\
  
  $(if $(filter Library,$(TARGETTYPE)), $(call gb_Helper_abbreviate_dirs,\
      $(READELF) -d $(1) | grep SONAME > $(WORKDIR)/LinkTarget/$(2).exports.tmp; \
@@ -11,7 +11,7 @@ Index: solenv/gbuild/platform/unxgcc.mk
      $(call gb_Helper_replace_if_different_and_touch,$(WORKDIR)/LinkTarget/$(2).exports.tmp, \
          $(WORKDIR)/LinkTarget/$(2).exports,$(1))))
  $(if $(and $(filter CppunitTest Executable,$(TARGETTYPE)),$(filter EMSCRIPTEN,$(OS)),$(filter TRUE,$(ENABLE_QT5))), \
-@@ -222,7 +221,7 @@ gb_Library_DLLEXT := .a
+@@ -226,7 +225,7 @@ gb_Library_DLLEXT := .a
  else
  
  gb_Library_TARGETTYPEFLAGS := -shared -Wl,-z,noexecstack

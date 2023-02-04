@@ -100,6 +100,7 @@ lib/libreoffice/help/el/text/sbasic/shared/03/sf_basic.html
 lib/libreoffice/help/el/text/sbasic/shared/03/sf_calc.html
 lib/libreoffice/help/el/text/sbasic/shared/03/sf_chart.html
 lib/libreoffice/help/el/text/sbasic/shared/03/sf_database.html
+lib/libreoffice/help/el/text/sbasic/shared/03/sf_datasheet.html
 lib/libreoffice/help/el/text/sbasic/shared/03/sf_dialog.html
 lib/libreoffice/help/el/text/sbasic/shared/03/sf_dialogcontrol.html
 lib/libreoffice/help/el/text/sbasic/shared/03/sf_dictionary.html
@@ -406,6 +407,7 @@ lib/libreoffice/help/el/text/sbasic/shared/03170010.html
 lib/libreoffice/help/el/text/sbasic/shared/05060700.html
 lib/libreoffice/help/el/text/sbasic/shared/CallByName.html
 lib/libreoffice/help/el/text/sbasic/shared/Compiler_options.html
+lib/libreoffice/help/el/text/sbasic/shared/CreateUnoSvcWithArgs.html
 lib/libreoffice/help/el/text/sbasic/shared/ErrVBA.html
 lib/libreoffice/help/el/text/sbasic/shared/GetPathSeparator.html
 lib/libreoffice/help/el/text/sbasic/shared/Resume.html
@@ -416,6 +418,7 @@ lib/libreoffice/help/el/text/sbasic/shared/collection.html
 lib/libreoffice/help/el/text/sbasic/shared/compatibilitymode.html
 lib/libreoffice/help/el/text/sbasic/shared/compatible.html
 lib/libreoffice/help/el/text/sbasic/shared/conventions.html
+lib/libreoffice/help/el/text/sbasic/shared/doEvents.html
 lib/libreoffice/help/el/text/sbasic/shared/enum.html
 lib/libreoffice/help/el/text/sbasic/shared/fragments.html
 lib/libreoffice/help/el/text/sbasic/shared/is_keyword.html
@@ -533,6 +536,11 @@ lib/libreoffice/help/el/text/scalc/01/05080400.html
 lib/libreoffice/help/el/text/scalc/01/05100000.html
 lib/libreoffice/help/el/text/scalc/01/05110000.html
 lib/libreoffice/help/el/text/scalc/01/05120000.html
+lib/libreoffice/help/el/text/scalc/01/05120100.html
+lib/libreoffice/help/el/text/scalc/01/05120200.html
+lib/libreoffice/help/el/text/scalc/01/05120300.html
+lib/libreoffice/help/el/text/scalc/01/05120400.html
+lib/libreoffice/help/el/text/scalc/01/05120500.html
 lib/libreoffice/help/el/text/scalc/01/06020000.html
 lib/libreoffice/help/el/text/scalc/01/06030000.html
 lib/libreoffice/help/el/text/scalc/01/06030100.html
@@ -898,6 +906,7 @@ lib/libreoffice/help/el/text/schart/01/05070000.html
 lib/libreoffice/help/el/text/schart/01/05080000.html
 lib/libreoffice/help/el/text/schart/01/05120000.html
 lib/libreoffice/help/el/text/schart/01/choose_chart_type.html
+lib/libreoffice/help/el/text/schart/01/data_table.html
 lib/libreoffice/help/el/text/schart/01/smooth_line_properties.html
 lib/libreoffice/help/el/text/schart/01/stepped_line_properties.html
 lib/libreoffice/help/el/text/schart/01/three_d_view.html
@@ -966,6 +975,7 @@ lib/libreoffice/help/el/text/sdatabase/dabawiz01.html
 lib/libreoffice/help/el/text/sdatabase/dabawiz02.html
 lib/libreoffice/help/el/text/sdatabase/dabawiz02access.html
 lib/libreoffice/help/el/text/sdatabase/dabawiz02ado.html
+lib/libreoffice/help/el/text/sdatabase/dabawiz02connection.html
 lib/libreoffice/help/el/text/sdatabase/dabawiz02dbase.html
 lib/libreoffice/help/el/text/sdatabase/dabawiz02jdbc.html
 lib/libreoffice/help/el/text/sdatabase/dabawiz02mysql.html
@@ -1021,7 +1031,6 @@ lib/libreoffice/help/el/text/sdraw/01/consolidatetext.html
 lib/libreoffice/help/el/text/sdraw/01/delete_page.html
 lib/libreoffice/help/el/text/sdraw/01/duplicate_page.html
 lib/libreoffice/help/el/text/sdraw/01/insert_layer.html
-lib/libreoffice/help/el/text/sdraw/01/modify_layer.html
 lib/libreoffice/help/el/text/sdraw/01/navigate_page.html
 lib/libreoffice/help/el/text/sdraw/01/new_page.html
 lib/libreoffice/help/el/text/sdraw/01/page_properties.html
@@ -1385,6 +1394,8 @@ lib/libreoffice/help/el/text/shared/01/image_compression.html
 lib/libreoffice/help/el/text/shared/01/mediaplayer.html
 lib/libreoffice/help/el/text/shared/01/menu_edit_find.html
 lib/libreoffice/help/el/text/shared/01/menu_view_sidebar.html
+lib/libreoffice/help/el/text/shared/01/minimal_column_width.html
+lib/libreoffice/help/el/text/shared/01/minimal_row_height.html
 lib/libreoffice/help/el/text/shared/01/moviesound.html
 lib/libreoffice/help/el/text/shared/01/nav_rename.html
 lib/libreoffice/help/el/text/shared/01/notebook_bar.html
@@ -1584,9 +1595,11 @@ lib/libreoffice/help/el/text/shared/06/
 lib/libreoffice/help/el/text/shared/06/filter_screenshots.html
 lib/libreoffice/help/el/text/shared/06/optionen_screenshots.html
 lib/libreoffice/help/el/text/shared/06/sc_screenshots.html
+lib/libreoffice/help/el/text/shared/06/sd_screenshots.html
 lib/libreoffice/help/el/text/shared/06/shared_cui_screenshots.html
 lib/libreoffice/help/el/text/shared/06/simpress_screenshots.html
 lib/libreoffice/help/el/text/shared/06/svx_screenshots.html
+lib/libreoffice/help/el/text/shared/06/sw_screenshots.html
 lib/libreoffice/help/el/text/shared/06/youtubevideos.html
 lib/libreoffice/help/el/text/shared/07/
 lib/libreoffice/help/el/text/shared/07/09000000.html
@@ -1821,6 +1834,7 @@ lib/libreoffice/help/el/text/shared/main0400.html
 lib/libreoffice/help/el/text/shared/main0500.html
 lib/libreoffice/help/el/text/shared/main0650.html
 lib/libreoffice/help/el/text/shared/main0800.html
+lib/libreoffice/help/el/text/shared/mediaplay_toolbar.html
 lib/libreoffice/help/el/text/shared/menu/
 lib/libreoffice/help/el/text/shared/menu/forms.html
 lib/libreoffice/help/el/text/shared/menu/insert_chart.html
@@ -1934,8 +1948,6 @@ lib/libreoffice/help/el/text/simpress/00/00000413.html
 lib/libreoffice/help/el/text/simpress/00/slide_menu.html
 lib/libreoffice/help/el/text/simpress/01/
 lib/libreoffice/help/el/text/simpress/01/01170000.html
-lib/libreoffice/help/el/text/simpress/01/01180001.html
-lib/libreoffice/help/el/text/simpress/01/01180002.html
 lib/libreoffice/help/el/text/simpress/01/02110000.html
 lib/libreoffice/help/el/text/simpress/01/02120000.html
 lib/libreoffice/help/el/text/simpress/01/02130000.html
@@ -2374,6 +2386,8 @@ lib/libreoffice/help/el/text/swriter/01/06210000.html
 lib/libreoffice/help/el/text/swriter/01/06220000.html
 lib/libreoffice/help/el/text/swriter/01/06990000.html
 lib/libreoffice/help/el/text/swriter/01/accessibility_check.html
+lib/libreoffice/help/el/text/swriter/01/contentcontrol00.html
+lib/libreoffice/help/el/text/swriter/01/contentcontrol01.html
 lib/libreoffice/help/el/text/swriter/01/edit_reference_submenu.html
 lib/libreoffice/help/el/text/swriter/01/format_object.html
 lib/libreoffice/help/el/text/swriter/01/legacynumbering.html
@@ -2625,8 +2639,10 @@ lib/libreoffice/help/el/text/swriter/menu/insert_footnote_endnote.html
 lib/libreoffice/help/el/text/swriter/menu/insert_frame.html
 lib/libreoffice/help/el/text/swriter/menu/insert_header_footer.html
 lib/libreoffice/help/el/text/swriter/menu/submenu_more_breaks.html
+lib/libreoffice/help/el/text/swriter/navigate_toolbar.html
 lib/libreoffice/help/el/text/swriter/track_changes_toolbar.html
 lib/libreoffice/help/media/files/scalc/el/
+lib/libreoffice/help/media/files/scalc/el/conditionalformatting.ods
 lib/libreoffice/help/media/files/scalc/el/function_fourier.ods
 lib/libreoffice/help/media/files/scalc/el/functions_ifs.ods
 lib/libreoffice/help/media/files/scalc/el/imtrigon.ods
@@ -2684,12 +2700,18 @@ lib/libreoffice/help/media/screenshots/filter/ui/pdfuserinterfacepage/el/
 lib/libreoffice/help/media/screenshots/filter/ui/pdfuserinterfacepage/el/PdfUserInterfacePage.png
 lib/libreoffice/help/media/screenshots/filter/ui/pdfviewpage/el/
 lib/libreoffice/help/media/screenshots/filter/ui/pdfviewpage/el/PdfViewPage.png
-lib/libreoffice/help/media/screenshots/miscellaneous/impressremote/ui/image01/el/
-lib/libreoffice/help/media/screenshots/miscellaneous/impressremote/ui/image01/el/impress_remote01.png
-lib/libreoffice/help/media/screenshots/miscellaneous/impressremote/ui/image02/el/
-lib/libreoffice/help/media/screenshots/miscellaneous/impressremote/ui/image02/el/impress_remote02.png
 lib/libreoffice/help/media/screenshots/modules/scalc/ui/xmlsourcedialog/el/
 lib/libreoffice/help/media/screenshots/modules/scalc/ui/xmlsourcedialog/el/XMLSourceDialog.png
+lib/libreoffice/help/media/screenshots/modules/sdraw/ui/copydlg/el/
+lib/libreoffice/help/media/screenshots/modules/sdraw/ui/copydlg/el/DuplicateDialog.png
+lib/libreoffice/help/media/screenshots/modules/sdraw/ui/dlgsnap/el/
+lib/libreoffice/help/media/screenshots/modules/sdraw/ui/dlgsnap/el/SnapObjectDialog.png
+lib/libreoffice/help/media/screenshots/modules/sdraw/ui/insertlayer/el/
+lib/libreoffice/help/media/screenshots/modules/sdraw/ui/insertlayer/el/InsertLayerDialog.png
+lib/libreoffice/help/media/screenshots/modules/sdraw/ui/insertslidesdialog/el/
+lib/libreoffice/help/media/screenshots/modules/sdraw/ui/insertslidesdialog/el/InsertSlidesDialog.png
+lib/libreoffice/help/media/screenshots/modules/sdraw/ui/vectorize/el/
+lib/libreoffice/help/media/screenshots/modules/sdraw/ui/vectorize/el/VectorizeDialog.png
 lib/libreoffice/help/media/screenshots/modules/simpress/ui/customanimationeffecttab/el/
 lib/libreoffice/help/media/screenshots/modules/simpress/ui/customanimationeffecttab/el/EffectTab.png
 lib/libreoffice/help/media/screenshots/modules/simpress/ui/customanimationtexttab/el/
@@ -2728,6 +2750,10 @@ lib/libreoffice/help/media/screenshots/modules/smath/ui/savedefaultsdialog/el/
 lib/libreoffice/help/media/screenshots/modules/smath/ui/savedefaultsdialog/el/SaveDefaultsDialog.png
 lib/libreoffice/help/media/screenshots/modules/smath/ui/spacingdialog/el/
 lib/libreoffice/help/media/screenshots/modules/smath/ui/spacingdialog/el/SpacingDialog.png
+lib/libreoffice/help/media/screenshots/modules/swriter/ui/indexentry/el/
+lib/libreoffice/help/media/screenshots/modules/swriter/ui/indexentry/el/IndexEntryDialog.png
+lib/libreoffice/help/media/screenshots/modules/swriter/ui/watermarkdialog/el/
+lib/libreoffice/help/media/screenshots/modules/swriter/ui/watermarkdialog/el/WatermarkDialog.png
 lib/libreoffice/help/media/screenshots/svx/ui/compressgraphicdialog/el/
 lib/libreoffice/help/media/screenshots/svx/ui/compressgraphicdialog/el/CompressGraphicDialog.png
 lib/libreoffice/help/media/screenshots/writerperfect/ui/exportepub/el/
