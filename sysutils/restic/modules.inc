@@ -104,7 +104,7 @@ MODGO_MODULES =	\
 	cloud.google.com/go/shell					 v1.4.0 \
 	cloud.google.com/go/spanner					 v1.41.0 \
 	cloud.google.com/go/speech					 v1.9.0 \
-	cloud.google.com/go/storage					 v1.28.1 \
+	cloud.google.com/go/storage					 v1.29.0 \
 	cloud.google.com/go/storagetransfer				 v1.6.0 \
 	cloud.google.com/go/talent					 v1.4.0 \
 	cloud.google.com/go/texttospeech				 v1.5.0 \
@@ -165,13 +165,13 @@ MODGO_MODULES =	\
 	github.com/inconshreveable/mousetrap				 v1.1.0 \
 	github.com/json-iterator/go					 v1.1.12 \
 	github.com/juju/ratelimit					 v1.0.2 \
-	github.com/klauspost/compress					 v1.15.14 \
+	github.com/klauspost/compress					 v1.15.15 \
 	github.com/klauspost/cpuid/v2					 v2.2.3 \
 	github.com/kr/fs						 v0.1.0 \
-	github.com/kurin/blazer						 v0.5.4-0.20211030221322-ba894c124ac6 \
+	github.com/kurin/blazer						 v0.5.4-0.20230113224640-3887e1ec64b5 \
 	github.com/kylelemons/godebug					 v1.1.0 \
 	github.com/minio/md5-simd					 v1.1.2 \
-	github.com/minio/minio-go/v7					 v7.0.46 \
+	github.com/minio/minio-go/v7					 v7.0.47 \
 	github.com/minio/sha256-simd					 v1.0.0 \
 	github.com/modern-go/concurrent					 v0.0.0-20180306012644-bacd9c7ef1dd \
 	github.com/modern-go/reflect2					 v1.0.2 \
@@ -209,7 +209,7 @@ MODGO_MODULES =	\
 	golang.org/x/text						 v0.6.0 \
 	golang.org/x/tools						 v0.1.12 \
 	golang.org/x/xerrors						 v0.0.0-20220907171357-04be3eba64a2 \
-	google.golang.org/api						 v0.106.0 \
+	google.golang.org/api						 v0.108.0 \
 	google.golang.org/appengine					 v1.6.7 \
 	google.golang.org/genproto					 v0.0.0-20230110181048-76db0878b65f \
 	google.golang.org/grpc						 v1.52.0 \
@@ -232,6 +232,7 @@ MODGO_MODFILES =	\
 	cloud.google.com/go/compute/metadata			 v0.2.2 \
 	cloud.google.com/go/iam					 v0.7.0 \
 	cloud.google.com/go/iam					 v0.8.0 \
+	cloud.google.com/go/storage				 v1.28.1 \
 	github.com/!azure/azure-sdk-for-go/sdk/azcore		 v1.1.4 \
 	github.com/!azure/azure-sdk-for-go/sdk/internal		 v1.0.1 \
 	github.com/!azure/azure-sdk-for-go/sdk/internal		 v1.1.1 \
@@ -348,6 +349,7 @@ MODGO_MODFILES =	\
 	golang.org/x/xerrors					 v0.0.0-20191204190536-9bdfabe68543 \
 	google.golang.org/api					 v0.102.0 \
 	google.golang.org/api					 v0.103.0 \
+	google.golang.org/api					 v0.106.0 \
 	google.golang.org/appengine				 v1.1.0 \
 	google.golang.org/appengine				 v1.4.0 \
 	google.golang.org/genproto				 v0.0.0-20180817151627-c66870c02cf8 \
@@ -355,7 +357,6 @@ MODGO_MODFILES =	\
 	google.golang.org/genproto				 v0.0.0-20200526211855-cb27e3aa2013 \
 	google.golang.org/genproto				 v0.0.0-20221024183307-1bc688fe9f3e \
 	google.golang.org/genproto				 v0.0.0-20221118155620-16455021b5e6 \
-	google.golang.org/genproto				 v0.0.0-20221201164419-0e50fba7f41c \
 	google.golang.org/genproto				 v0.0.0-20221201204527-e3fa12d562f3 \
 	google.golang.org/genproto				 v0.0.0-20221202195650-67e5cbc046fd \
 	google.golang.org/genproto				 v0.0.0-20221205194025-8222ab48f5fc \
