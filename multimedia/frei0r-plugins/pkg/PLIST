@@ -8,6 +8,7 @@ lib/frei0r-1/
 @so lib/frei0r-1/RGB.so
 @so lib/frei0r-1/addition.so
 @so lib/frei0r-1/addition_alpha.so
+@so lib/frei0r-1/aech0r.so
 @so lib/frei0r-1/alpha0ps.so
 @so lib/frei0r-1/alphaatop.so
 @so lib/frei0r-1/alphagrad.so
@@ -56,6 +57,8 @@ lib/frei0r-1/
 @so lib/frei0r-1/elastic_scale.so
 @so lib/frei0r-1/emboss.so
 @so lib/frei0r-1/equaliz0r.so
+@so lib/frei0r-1/facebl0r.so
+@so lib/frei0r-1/facedetect.so
 @so lib/frei0r-1/flippo.so
 @so lib/frei0r-1/gamma.so
 @so lib/frei0r-1/glitch0r.so
