@@ -1,12 +1,11 @@
 COMMENT =	downloader for GOG.com games and bonus collections
 
-MODPY_EGG_VERSION =	0.3apl20190727
+MODPY_EGG_VERSION =	0.3apl20230204
 DISTNAME =		gogrepo-${MODPY_EGG_VERSION}
-REVISION =		2
 
 GH_ACCOUNT =		eddie3
 GH_PROJECT =		gogrepo
-GH_COMMIT =		2cd3ac4a77d3e5104662fcfb4d96e7129a758bfe
+GH_COMMIT =		2cc5da4b00d69c8ab4d2482a5544398a63c35198
 
 CATEGORIES =		games
 MAINTAINER =		Thomas Frohwein <thfr@openbsd.org>
