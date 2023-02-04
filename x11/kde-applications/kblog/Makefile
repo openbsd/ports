@@ -2,7 +2,7 @@ COMMENT =	KDE PIM blogging library
 VERSION =	20.04.3
 DISTNAME =	kblog-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  KF5Blog       1.0 # 5.13.2
 
