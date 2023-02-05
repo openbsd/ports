@@ -1,0 +1,28 @@
+Fix build with llvm-15
+https://github.com/KDE/clazy/commit/20fca52da739ebefa47e35f6b338bb99a0da3cfe
+
+Index: src/SourceCompatibilityHelpers.h
+--- src/SourceCompatibilityHelpers.h.orig
++++ src/SourceCompatibilityHelpers.h
+@@ -144,6 +144,21 @@ inline bool contains_lower(clang::StringRef haystack, 
+ #endif
+ }
+ 
++#if LLVM_VERSION_MAJOR >= 15
++using OptionalFileEntryRef = clang::Optional<clang::FileEntryRef>;
++#else
++using OptionalFileEntryRef = const clang::FileEntry*;
++#endif
++
++inline bool isAscii(clang::StringLiteral *lt)
++{
++#if LLVM_VERSION_MAJOR >= 15
++    return lt->isOrdinary();
++#else
++    return lt->isAscii();
++#endif
++}
++
+ }
+ 
+ #endif
