@@ -1,0 +1,34 @@
+Fix build with clang-15
+https://github.com/Unidata/netcdf4-python/commit/43fcce18f8c937b0ee3690b2e7331a3c0e260cb4
+
+Index: src/netCDF4/_netCDF4.pyx
+--- src/netCDF4/_netCDF4.pyx.orig
++++ src/netCDF4/_netCDF4.pyx
+@@ -1236,6 +1236,7 @@ __version__ = "1.6.2"
+ import posixpath
+ from cftime import date2num, num2date, date2index
+ import numpy
++cimport numpy
+ import weakref
+ import warnings
+ import subprocess
+@@ -1245,7 +1246,7 @@ from glob import glob
+ from numpy import ma
+ from libc.string cimport memcpy, memset
+ from libc.stdlib cimport malloc, free
+-import_array()
++numpy.import_array()
+ include "constants.pyx"
+ include "membuf.pyx"
+ include "netCDF4.pxi"
+@@ -1471,8 +1472,8 @@ default_fillvals = {#'S1':NC_FILL_CHAR,
+                      'f8':NC_FILL_DOUBLE}
+ 
+ # logical for native endian type.
+-is_native_little = numpy.dtype('<f4').byteorder == '='
+-is_native_big = numpy.dtype('>f4').byteorder == '='
++is_native_little = numpy.dtype('<f4').byteorder == c'='
++is_native_big = numpy.dtype('>f4').byteorder == c'='
+ 
+ # hard code these here, instead of importing from netcdf.h
+ # so it will compile with versions <= 4.2.
