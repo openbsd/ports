@@ -1,7 +1,15 @@
 Index: src/ngircd/ngircd.c
 --- src/ngircd/ngircd.c.orig
 +++ src/ngircd/ngircd.c
-@@ -261,6 +261,16 @@ main(int argc, const char *argv[])
+@@ -30,6 +30,7 @@
+ #include <fcntl.h>
+ #include <pwd.h>
+ #include <grp.h>
++#include <err.h>
+ 
+ #if defined(DEBUG) && defined(HAVE_MTRACE)
+ #include <mcheck.h>
+@@ -261,6 +262,16 @@ main(int argc, const char *argv[])
  			exit(1);
  		}
  
@@ -18,7 +26,7 @@ Index: src/ngircd/ngircd.c
  		if (!io_library_init(CONNECTION_POOL)) {
  			Log(LOG_ALERT,
  			    "Fatal: Could not initialize IO routines: %s",
-@@ -563,7 +573,7 @@ Setup_FDStreams(int fd)
+@@ -563,7 +574,7 @@ Setup_FDStreams(int fd)
  #if !defined(SINGLE_USER_OS)
  
  /**
@@ -27,7 +35,7 @@ Index: src/ngircd/ngircd.c
   *
   * @param uid	User ID
   * @param gid	Group ID
-@@ -587,7 +597,7 @@ NGIRCd_getNobodyID(uid_t *uid, gid_t *gid )
+@@ -587,7 +598,7 @@ NGIRCd_getNobodyID(uid_t *uid, gid_t *gid )
  	}
  #endif
  
@@ -36,7 +44,7 @@ Index: src/ngircd/ngircd.c
  	if (!pwd)
  		return false;
  
-@@ -703,11 +713,11 @@ NGIRCd_Init(bool NGIRCd_NoDaemon)
+@@ -703,11 +714,11 @@ NGIRCd_Init(bool NGIRCd_NoDaemon)
  	if (Conf_UID == 0) {
  		pwd = getpwuid(0);
  		Log(LOG_INFO,

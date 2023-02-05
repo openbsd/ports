@@ -1,7 +1,7 @@
 Index: doc/Makefile.in
 --- doc/Makefile.in.orig
 +++ doc/Makefile.in
-@@ -648,16 +648,13 @@ maintainer-clean-local:
+@@ -617,16 +617,13 @@ maintainer-clean-local:
  all: $(generated_docs)
  
  install-data-hook: $(static_docs) $(toplevel_docs) $(generated_docs)

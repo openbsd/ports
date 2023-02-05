@@ -1,7 +1,15 @@
 Index: src/ngircd/proc.c
 --- src/ngircd/proc.c.orig
 +++ src/ngircd/proc.c
-@@ -76,6 +76,9 @@ Proc_Fork(PROC_STAT *proc, int *pipefds, void (*cbfunc
+@@ -24,6 +24,7 @@
+ #include <sys/types.h>
+ #include <unistd.h>
+ #include <time.h>
++#include <err.h>
+ 
+ #include "log.h"
+ #include "io.h"
+@@ -76,6 +77,9 @@ Proc_Fork(PROC_STAT *proc, int *pipefds, void (*cbfunc
  		return -1;
  	case 0:
  		/* New child process: */
