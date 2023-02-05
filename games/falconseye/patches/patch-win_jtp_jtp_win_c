@@ -1,7 +1,8 @@
 Add missing header for toupper()/tolower().
 
---- win/jtp/jtp_win.c.orig	Mon Jul  2 08:59:00 2001
-+++ win/jtp/jtp_win.c	Tue Nov 18 05:36:56 2014
+Index: win/jtp/jtp_win.c
+--- win/jtp/jtp_win.c.orig
++++ win/jtp/jtp_win.c
 @@ -7,6 +7,7 @@
  #include <math.h>
  #include <unistd.h>
@@ -10,7 +11,18 @@ Add missing header for toupper()/tolower().
  #include "jtp_gen.h"
  #include "jtp_gra.h"
  #include "jtp_mou.h"
-@@ -7811,6 +7812,7 @@ jtp_init_filenames()
+@@ -30,6 +31,10 @@
+ #include "display.h"
+ #include "patchlevel.h"
+ 
++#ifdef JTP_GRAPHICS
++struct permonst *jtp_do_lookat(int x, int y, char *buf, char *monbuf);
++#endif /* JTP_GRAPHICS */
++
+ /*----------------------------------------------------------------
+   Defines (constants)
+ -----------------------------------------------------------------*/
+@@ -7811,6 +7816,7 @@ jtp_init_filenames()
  {
    int gplength;
    int i;
@@ -18,7 +30,7 @@ Add missing header for toupper()/tolower().
  
    /* Get starting directory, and save it for reference */
    getcwd(jtp_game_path, JTP_MAX_FILENAME_LENGTH);
-@@ -7835,16 +7837,26 @@ jtp_init_filenames()
+@@ -7835,16 +7841,26 @@ jtp_init_filenames()
    }
  
    /* Data filenames */
