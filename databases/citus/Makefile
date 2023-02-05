@@ -12,6 +12,9 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c crypto execinfo m pq ssl xml2
 
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 LIB_DEPENDS =		databases/postgresql
 BUILD_DEPENDS =		databases/postgresql,-server
 RUN_DEPENDS =		databases/postgresql,-server
