@@ -14,8 +14,4 @@ NO_TEST=	Yes
 
 WANTLIB+=	Xpm
 
-MAKE_FLAGS+=	CC=${CC} CDEBUGFLAGS= \
-		CFLAGS="-DUSE_XPM -DNeedFunctionProtoTypes ${CFLAGS} \
-		    -I${X11BASE}/include"
-
 .include <bsd.port.mk>

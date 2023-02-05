@@ -1,11 +1,15 @@
---- Imakefile.orig	Sun Jan 15 20:39:00 2006
-+++ Imakefile	Sat Apr 22 20:29:10 2006
-@@ -7,7 +7,9 @@ OBJS = TolleUhr.o XCC.o
- CDEBUGFLAGS = -O2 -g -Wall
+Index: Imakefile
+--- Imakefile.orig
++++ Imakefile
+@@ -4,10 +4,12 @@ LOCAL_LIBRARIES = -lXpm -lX11 -lXext
+ SRCS = TolleUhr.c XCC.c
+ OBJS = TolleUhr.o XCC.o
+ 
+-CDEBUGFLAGS = -O2 -g -Wall
++XCOMM CDEBUGFLAGS = -O2 -g -Wall
  
  XCOMM CCOPTIONS= -DUSE_IMLIB
--CCOPTIONS= -DUSE_XPM
-+XCOMM CCOPTIONS= -DUSE_XPM
+ CCOPTIONS= -DUSE_XPM
 +
 +MANSRCSUFFIX = 1
  
