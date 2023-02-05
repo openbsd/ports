@@ -3,7 +3,7 @@ BROKEN-sparc64=	SIGILL on src/cgalutils.cc with CGAL-4.6.3
 
 V =			2021.01
 DISTNAME =		openscad-${V}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		cad
 
@@ -18,7 +18,7 @@ WANTLIB += Qt5PrintSupport Qt5Widgets X11 boost_filesystem-mt
 WANTLIB += boost_program_options-mt boost_regex-mt boost_system-mt
 WANTLIB += boost_thread-mt c cairo double-conversion fontconfig
 WANTLIB += freetype glib-2.0 gmp harfbuzz intl m mpfr opencsg
-WANTLIB += qscintilla2_qt5 xml2 z zip
+WANTLIB += qscintilla2_qt5 xml2 zip
 
 MASTER_SITES =		https://files.openscad.org/
 EXTRACT_SUFX =		.src.tar.gz
