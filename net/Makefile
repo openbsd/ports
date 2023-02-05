@@ -317,6 +317,7 @@
      SUBDIR += nfdump
      SUBDIR += nfsen
      SUBDIR += ngircd
+     SUBDIR += ngircd,ident
      SUBDIR += ngrep
      SUBDIR += ngtcp2
      SUBDIR += nicotine-plus
