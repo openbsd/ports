@@ -5,7 +5,7 @@ COMMENT =		P2P payment system
 GH_ACCOUNT =		litecoin-project
 GH_PROJECT =		litecoin
 GH_TAGNAME =		v0.18.1
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS +=  bitcoinconsensus          2.0 # 0.0
 SHARED_LIBS +=  secp256k1                 0.0 # 0.0
@@ -62,13 +62,14 @@ WANTLIB += X11 X11-xcb Xau Xdmcp Xext Xfixes Xxf86vm boost_chrono-mt
 WANTLIB += boost_unit_test_framework-mt dbus-1 double-conversion
 WANTLIB += drm execinfo expat freetype glapi glib-2.0 graphite2
 WANTLIB += gthread-2.0 harfbuzz iconv icudata icui18n icuuc intl
-WANTLIB += miniupnpc pcre pcre2-16 png qrencode xcb xcb-dri2 xcb-dri3
+WANTLIB += miniupnpc pcre2-8 pcre2-16 png qrencode xcb xcb-dri2 xcb-dri3
 WANTLIB += xcb-glx xcb-present xcb-shm xcb-sync xcb-xfixes xshmfence
 WANTLIB += z
 
 MODULES +=		x11/qt5
 
-LIB_DEPENDS +=		graphics/libqrencode \
+LIB_DEPENDS +=		devel/pcre2 \
+			graphics/libqrencode \
 			math/double-conversion \
 			net/miniupnp/miniupnpc
 
