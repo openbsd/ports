@@ -1,0 +1,19 @@
+Index: arch/arm/dts/t6002-j375d.dts
+--- arch/arm/dts/t6002-j375d.dts.orig
++++ arch/arm/dts/t6002-j375d.dts
+@@ -352,15 +352,6 @@
+ 		compatible = "apple,j375-macaudio", "apple,macaudio";
+ 		model = "Mac Studio J375 integrated audio";
+ 
+-		/*
+-		 * DANGER ZONE: You can blow your speakers!
+-		 *
+-		 * The drivers are not ready, and unless you are careful
+-		 * to attenuate the audio stream, you run the risk of
+-		 * blowing your speakers.
+-		 */
+-		status = "disabled";
+-
+ 		dai-link@0 {
+ 			link-name = "Speaker";
+ 			mclk-fs = <64>;

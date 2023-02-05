@@ -1,0 +1,19 @@
+Index: arch/arm/dts/t600x-j314-j316.dtsi
+--- arch/arm/dts/t600x-j314-j316.dtsi.orig
++++ arch/arm/dts/t600x-j314-j316.dtsi
+@@ -313,15 +313,6 @@
+ 		compatible = "apple,j314-macaudio", "apple,macaudio";
+ 		model = "MacBook Pro J314/6 integrated audio";
+ 
+-		/*
+-		 * DANGER ZONE: You can blow your speakers!
+-		 *
+-		 * The drivers are not ready, and unless you are careful
+-		 * to attenuate the audio stream, you run the risk of
+-		 * blowing your speakers.
+-		 */
+-		status = "disabled";
+-
+ 		dai-link@0 {
+ 			link-name = "Speakers";
+ 			mclk-fs = <256>;

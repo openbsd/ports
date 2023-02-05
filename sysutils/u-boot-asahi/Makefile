@@ -6,7 +6,7 @@ VERSION=	2022.07-3
 GH_ACCOUNT=	AsahiLinux
 GH_PROJECT=	u-boot
 GH_TAGNAME=	asahi-v${VERSION}
-REVISION=	4
+REVISION=	5
 
 PKGNAME=	u-boot-asahi-${VERSION:S/-/./g}
 
