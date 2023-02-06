@@ -4,6 +4,7 @@ COMMENT=		free open source planetarium
 
 V=			1.2
 DISTNAME=		stellarium-${V}
+REVISION=		0
 
 CATEGORIES=		astro x11
 
@@ -14,7 +15,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += ${COMPILER_LIBCXX} QXlsx Qt5Charts Qt5Concurrent Qt5Core
+WANTLIB += ${COMPILER_LIBCXX} QXlsxQt5 Qt5Charts Qt5Concurrent Qt5Core
 WANTLIB += Qt5Gui Qt5Multimedia Qt5MultimediaWidgets Qt5Network
 WANTLIB += Qt5OpenGL Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels
 WANTLIB += Qt5Quick Qt5Script Qt5SerialPort Qt5WebChannel Qt5WebEngineCore
