@@ -18,9 +18,9 @@ include/QXlsx/xlsxglobal.h
 include/QXlsx/xlsxrichstring.h
 include/QXlsx/xlsxworkbook.h
 include/QXlsx/xlsxworksheet.h
-lib/cmake/QXlsx/
-lib/cmake/QXlsx/QXlsxConfig.cmake
-lib/cmake/QXlsx/QXlsxConfigVersion.cmake
-lib/cmake/QXlsx/QXlsxTargets${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/QXlsx/QXlsxTargets.cmake
-@lib lib/libQXlsx.so.${LIBQXlsx_VERSION}
+lib/cmake/QXlsxQt5/
+lib/cmake/QXlsxQt5/QXlsxQt5Config.cmake
+lib/cmake/QXlsxQt5/QXlsxQt5ConfigVersion.cmake
+lib/cmake/QXlsxQt5/QXlsxQt5Targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/QXlsxQt5/QXlsxQt5Targets.cmake
+@lib lib/libQXlsxQt5.so.${LIBQXlsxQt5_VERSION}
