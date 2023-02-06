@@ -31,6 +31,7 @@ RUN_DEPENDS =	devel/py-gobject3${MODPY_FLAVOR} \
 BUILD_DEPENDS +=	${_MODPY_BUILD_DEPENDS} \
 		devel/py-pexpect${MODPY_FLAVOR} \
 		devel/gettext,-tools \
+		x11/dbus-python${MODPY_FLAVOR} \
 		devel/py-distutils-extra${MODPY_FLAVOR} \
 		devel/py-setuptools${MODPY_FLAVOR}
 
