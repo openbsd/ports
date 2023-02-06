@@ -1,11 +1,20 @@
-Hunk #1: When decoding, the status display has Y2K problem.
-Hunk #2: NUL vs NULL mismatch
-Hunk #3: fix an infinite loop on unsigned char archs (powerpc and arm*)
+Hunk #1: Provide prototype to appease clang 15
+Hunk #2: When decoding, the status display has Y2K problem.
+Hunks #3 & #4: NUL vs NULL mismatch
+Hunk #5: fix an infinite loop on unsigned char archs (powerpc and arm*)
 
 Index: decode.c
 --- decode.c.orig
 +++ decode.c
-@@ -273,8 +273,8 @@ ish_head *head;
+@@ -35,6 +35,7 @@
+ #define isleapyear(y)   (((y)%4 == 0 && (y)%100 != 0 || (y)%400 == 0))
+ 
+ void hedprn();
++int readln2(FILE *ipath, char *buff, int maxlen);
+ 
+ struct tm tm;
+ time_t timep[2], seconds();
+@@ -273,8 +274,8 @@ ish_head *head;
  	tm.tm_min = (p[1]&0x07)<<3;
  	tm.tm_min += p[0]>>5;
  	tm.tm_sec = (p[0]&0x1f)<<1;
@@ -16,7 +25,7 @@ Index: decode.c
  #ifdef __TURBOC__
  	memcpy( &timep[0], head->time, 4);
  	timep[1] = timep[0];
-@@ -344,7 +344,7 @@ decish()
+@@ -344,7 +345,7 @@ decish()
  		fprintf(stderr, "file name change '%s'", name);
  		strcpy(buff, name);
  		if((p = (unsigned char *)index(name, '.')) != NULL)
@@ -25,7 +34,16 @@ Index: decode.c
  		do {
  		    sprintf(buff, "%s.%03d", name, i++);
  		} while(access(buff,0) == 0);
-@@ -675,8 +675,7 @@ FILE    *ipath;
+@@ -665,7 +666,7 @@ char *buff;
+ 	    break;
+     }
+ 
+-    buff[i] = NULL;
++    buff[i] = '\0';
+ 
+     return i;
+ }
+@@ -675,8 +676,7 @@ FILE    *ipath;
  int     maxlen;
  char    *buff;
  {
