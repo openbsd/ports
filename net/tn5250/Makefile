@@ -1,13 +1,13 @@
 COMMENT=	5250 telnet protocol and terminal
 
 DISTNAME=	tn5250-0.17.4
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS=	5250	0.0
 
 CATEGORIES=	net
 
-HOMEPAGE=	http://tn5250.sourceforge.net/
+HOMEPAGE=	https://tn5250.sourceforge.net/
 
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes

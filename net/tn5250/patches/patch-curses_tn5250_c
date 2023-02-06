@@ -1,0 +1,12 @@
+Index: curses/tn5250.c
+--- curses/tn5250.c.orig
++++ curses/tn5250.c
+@@ -46,6 +46,8 @@ static struct valid_term {
+    { NULL, NULL }
+ };
+ 
++#include "cursesterm.h"
++
+ static void syntax(void);
+ 
+ int main(int argc, char *argv[])
