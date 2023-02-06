@@ -15,15 +15,9 @@
 @bin bin/step-yubikey-init
 share/doc/pkg-readmes/${PKGSTEM}
 share/doc/step-ca/
+share/doc/step-ca/CHANGELOG.md
 share/doc/step-ca/CONTRIBUTING.md
-share/doc/step-ca/GETTING_STARTED.md
 share/doc/step-ca/README.md
-share/doc/step-ca/acme.md
-share/doc/step-ca/cas.md
-share/doc/step-ca/database.md
-share/doc/step-ca/defaults.md
-share/doc/step-ca/docker.md
-share/doc/step-ca/kms.md
-share/doc/step-ca/provisioners.md
-share/doc/step-ca/questions.md
-share/doc/step-ca/revocation.md
+share/doc/step-ca/SECURITY.md
+share/examples/login.conf.d/step_ca
+@sample ${SYSCONFDIR}/login.conf.d/step_ca

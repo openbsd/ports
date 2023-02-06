@@ -3,7 +3,7 @@ BROKEN-armv7 = github.com/go-piv/piv-go@v1.10.0/piv/pcsc_openbsd.go:29:15: 0x801
 
 COMMENT =	private certificate authority and ACME server
 
-V =		0.22.0
+V =		0.23.1
 MODGO_MODNAME =	github.com/smallstep/certificates
 MODGO_VERSION =	v${V}
 DISTNAME =	step-ca-${V}
@@ -34,7 +34,7 @@ do-build:
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/step-ca
-	${INSTALL_DATA} ${WRKSRC}/docs/*.md ${PREFIX}/share/doc/step-ca
+	${INSTALL_DATA} ${WRKSRC}/*.md ${PREFIX}/share/doc/step-ca
 
 .include "modules.inc"
 .include <bsd.port.mk>

@@ -5,24 +5,18 @@
 Initialization
 ==============
 
-Step CA needs to be initialized by the _step-ca user in the
-directory ${LOCALSTATEDIR}/step-ca via
+The step-cli package is required and must be used to initialize Step CA.
+Execute the following command as user _step-ca to initialize Step CA.
 
-# su _step-ca -c "env STEPPATH=${LOCALSTATEDIR}/step-ca step ca init"
+# su -s /bin/sh _step-ca -c "env STEPPATH=${LOCALSTATEDIR}/step-ca step ca init"
 
-Running the service
-===================
-
-Step CA needs to be told which config file to load when starting the rcctl
-service script by setting the appropriate flags
-
-# rcctl enable step_ca
-# rcctl set step_ca flags --config config/ca.json
+Step CA cannot bind to privileged ports. During initialization select a port
+above 1024.
 
 Add the CA cert to system store
 ===============================
 
-The default certificate for Step CA is stored in ${LOCALSTATEDIR}/step-ca/certs/root_ca.crt
+The root certificate for step-ca is stored in ${LOCALSTATEDIR}/step-ca/certs/root_ca.crt
 which should be added to the system by appending it to ${SYSCONFDIR}/ssl/cert.pem
 
 # cat ${LOCALSTATEDIR}/step-ca/certs/root_ca.crt >> ${SYSCONFDIR}/ssl/cert.pem
