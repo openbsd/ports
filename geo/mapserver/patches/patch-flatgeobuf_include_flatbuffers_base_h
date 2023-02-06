@@ -1,0 +1,22 @@
+make sure abseil-cpp isnt picked up if present, fails the build
+
+https://github.com/MapServer/MapServer/issues/6822
+
+Index: flatgeobuf/include/flatbuffers/base.h
+--- flatgeobuf/include/flatbuffers/base.h.orig
++++ flatgeobuf/include/flatbuffers/base.h
+@@ -235,14 +235,6 @@ namespace flatbuffers {
+         typedef std::experimental::string_view string_view;
+       } }
+       #define FLATBUFFERS_HAS_STRING_VIEW 1
+-    // Check for absl::string_view
+-    #elif __has_include("absl/strings/string_view.h")
+-      #include "absl/strings/string_view.h"
+-      namespace mapserver {
+-namespace flatbuffers {
+-        typedef absl::string_view string_view;
+-      } }
+-      #define FLATBUFFERS_HAS_STRING_VIEW 1
+     #endif
+   #endif // __has_include
+ #endif // !FLATBUFFERS_HAS_STRING_VIEW
