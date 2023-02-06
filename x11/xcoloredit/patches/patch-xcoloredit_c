@@ -1,5 +1,6 @@
---- xcoloredit.c.orig	Sun Jan 26 03:00:21 1992
-+++ xcoloredit.c	Sat Apr 22 18:22:13 2017
+Index: xcoloredit.c
+--- xcoloredit.c.orig
++++ xcoloredit.c
 @@ -38,6 +38,7 @@ static char sccsid[] = "@(#)xcoloredit.c	1.2 (UKC) 25/
   */
  
@@ -22,3 +23,12 @@
  {
  	Status ok;
  	unsigned long plane_masks;
+@@ -350,7 +351,7 @@ char **argv;
+ 	unboxedGC = XtGetGC(mixingForm, GCForeground | GCLineWidth, &values);
+ 
+ 	original_background = values.foreground;
+-	bars_locked = NULL;
++	bars_locked = 0;
+ 
+ 	XtAddCallback(redScroll, XtNjumpProc, Thumbed, (XtPointer)RED);
+ 	XtAddCallback(greenScroll, XtNjumpProc, Thumbed, (XtPointer)GREEN);
