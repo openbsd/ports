@@ -141,7 +141,8 @@ LIBTOOL_FLAGS =	--tag=disable-static
 CONFIGURE_ARGS +=--with-librrd=${LOCALBASE} \
 		--with-libstatgrab=${LOCALBASE} \
 		--with-libnetsnmp=${LOCALBASE} \
-		--enable-all-plugins=no
+		--enable-all-plugins=no \
+		--disable-werror
 
 # no, varnishapi.h not in our varnish package
 #		--with-libvarnish=${LOCALBASE}
