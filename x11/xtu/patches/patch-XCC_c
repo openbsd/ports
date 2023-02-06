@@ -1,0 +1,14 @@
+Index: XCC.c
+--- XCC.c.orig
++++ XCC.c
+@@ -39,6 +39,10 @@
+ 
+ #define NUMBER(a) ((int)(sizeof(a)/sizeof(a[0])))
+ 
++#ifdef NeedFunctionPrototypes
++#define NeedFunctionProtoTypes NeedFunctionPrototypes
++#endif
++
+ #if NeedFunctionProtoTypes
+ static int _pixelSort(const void *_arg1, const void *_arg2)
+ #else
