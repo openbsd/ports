@@ -37,4 +37,7 @@ MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/cmake/modules/FindGTest.cmake
 
+do-test:
+	${WRKBUILD}/tests/all_tests
+
 .include <bsd.port.mk>
