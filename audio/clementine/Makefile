@@ -60,6 +60,10 @@ CONFIGURE_ARGS +=	-DBUILD_WERROR=ON
 # is missing. To be investigated.
 CONFIGURE_ARGS +=	-DBUNDLE_PROJECTM_PRESETS=ON
 
+# prevent picking up ccache:
+# ccache: error: Failed to create directory /clementine-1.4.0rc2_writes_to_HOME/.cache/ccache/tmp: Permission denied
+CONFIGURE_ARGS +=	-DCCACHE_EXECUTABLE:BOOL=OFF
+
 MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
 
 post-extract:
