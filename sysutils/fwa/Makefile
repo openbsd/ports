@@ -1,8 +1,7 @@
 COMMENT =	simple file watcher utility for OpenBSD
 DISTNAME =	fwa-0.1
 CATEGORIES =	sysutils
-
-HOMEPAGE =	http://github.com/peterhajdu/fwa
+REVISION =	0
 
 MAINTAINER =	Peter Hajdu <peter.ferenc.hajdu@gmail.com>
 

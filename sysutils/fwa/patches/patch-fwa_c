@@ -1,0 +1,49 @@
+Fix build with clang 15
+https://github.com/PeterHajdu/fwa/pull/2
+
+Index: fwa.c
+--- fwa.c.orig
++++ fwa.c
+@@ -34,12 +34,12 @@
+ #include <string.h>
+ #include <time.h>
+ 
+-void usage();
+-int create_queue();
++void usage(void);
++int create_queue(void);
+ size_t parse_options(int, char*[]);
+ struct kevent* allocate_event_memory(size_t);
+ size_t set_up_events_to_watch(int, struct kevent *, size_t, char*[]);
+-void set_output_buffer();
++void set_output_buffer(void);
+ void handle_events(int, struct kevent*, size_t);
+ 
+ int main(int argc, char **argv) {
+@@ -59,7 +59,7 @@ int main(int argc, char **argv) {
+ 	return 0;
+ }
+ 
+-void usage() {
++void usage(void) {
+ 	printf(
+ 		"usage: fwa [options] <list of files to watch>\n"
+ 		"\noptions:\n"
+@@ -160,7 +160,7 @@ size_t set_up_events_to_watch(
+ 	return event_slot;
+ }
+ 
+-void set_output_buffer() {
++void set_output_buffer(void) {
+   static char line_buffer[512];
+   setvbuf(stdout, line_buffer, _IOLBF, sizeof(line_buffer));
+ }
+@@ -214,7 +214,7 @@ void report_and_cleanup_events(
+ 	}
+ }
+ 
+-int create_queue() {
++int create_queue(void) {
+ 	const int queue = kqueue();
+ 	if (queue < 0)
+ 		err(1, "Unable to create kernel queue." );
