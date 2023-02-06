@@ -1,2 +1,2 @@
 @man man/man8/tircproxy.8
-sbin/tircproxy
+@bin sbin/tircproxy

@@ -1,7 +1,7 @@
 COMMENT=	transparent IRC proxy
 
 DISTNAME=	tircproxy-0.4.5
-REVISION=	1
+REVISION=	2
 CATEGORIES=     net
 
 PERMIT_PACKAGE=	Yes
