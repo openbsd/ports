@@ -1,0 +1,15 @@
+Index: fileio/wrfileopt.h
+--- fileio/wrfileopt.h.orig
++++ fileio/wrfileopt.h
+@@ -1,6 +1,6 @@
+-extern int wrfileopt();
+-extern void give_wrfileopt();
+-extern void set_wrfileopt();
+-extern void set_s_wrfileopt();
+-extern char *get_wrfileopt();
++extern int wrfileopt(char);
++extern void give_wrfileopt(void);
++extern void set_wrfileopt(int);
++extern void set_s_wrfileopt(int);
++extern char *get_wrfileopt(void);
+ 

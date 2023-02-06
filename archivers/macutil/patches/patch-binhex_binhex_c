@@ -1,0 +1,11 @@
+Index: binhex/binhex.c
+--- binhex/binhex.c.orig
++++ binhex/binhex.c
+@@ -1,6 +1,7 @@
+ #include <stdio.h>
+ #include "../fileio/machdr.h"
+ #include "../fileio/rdfile.h"
++#include "../fileio/rdfileopt.h"
+ #include "../util/patchlevel.h"
+ 
+ extern char *malloc();

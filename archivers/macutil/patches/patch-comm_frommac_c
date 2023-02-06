@@ -1,0 +1,11 @@
+Index: comm/frommac.c
+--- comm/frommac.c.orig
++++ comm/frommac.c
+@@ -5,6 +5,7 @@
+ #include "globals.h"
+ #include "../fileio/fileglob.h"
+ #include "../fileio/wrfile.h"
++#include "../fileio/wrfileopt.h"
+ 
+ #ifndef DEBUG
+ #define LOCALOPT	"lmMxXyYzoTVH"

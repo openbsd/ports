@@ -1,0 +1,11 @@
+Index: comm/tomac.c
+--- comm/tomac.c.orig
++++ comm/tomac.c
+@@ -2,6 +2,7 @@
+ #include "comm.h"
+ #include "../fileio/machdr.h"
+ #include "../fileio/rdfile.h"
++#include "../fileio/rdfileopt.h"
+ #include "../util/patchlevel.h"
+ #include "globals.h"
+ 

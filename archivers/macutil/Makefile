@@ -7,7 +7,7 @@ CATEGORIES=		archivers
 PERMIT_PACKAGE=		No
 PERMIT_DISTFILES=	No
 
-REVISION =	3
+REVISION =	4
 WANTLIB=		c
 
 MASTER_SITES=	https://spacehopper.org/mirrors/ \
