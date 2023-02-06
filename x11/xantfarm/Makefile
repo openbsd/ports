@@ -2,7 +2,7 @@ COMMENT=	ant hill simulation on X11 root window
 
 DISTNAME=	xantfarm
 PKGNAME=	xantfarm-1.16
-REVISION=	2
+REVISION=	3
 CATEGORIES=	x11
 
 HOMEPAGE=	http://www.acme.com/software/xantfarm/

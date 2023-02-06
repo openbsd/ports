@@ -1,64 +1,49 @@
---- xantfarm.c.orig	Sun Nov 12 04:15:15 1995
-+++ xantfarm.c	Fri Oct 26 22:39:40 2007
-@@ -117,12 +117,13 @@ typedef struct falling_sand_struct {
+Index: xantfarm.c
+--- xantfarm.c.orig
++++ xantfarm.c
+@@ -25,13 +25,11 @@
+ */
+ 
+ #include <stdio.h>
+-#ifdef SYSV
++#include <stdlib.h>
+ #include <string.h>
+-#include <sys/termio.h>
+-#else /*SYSV*/
+-#include <strings.h>
+-#endif /*SYSV*/
+ #include <pwd.h>
++#include <fcntl.h>
++#include <unistd.h>
+ #include <sys/types.h>
+ #include <sys/ioctl.h>
+ #include <sys/time.h>
+@@ -116,15 +114,6 @@ typedef struct falling_sand_struct {
  
  
- /* Externals. */
+ 
+-/* Externals. */
 -
-+#ifndef __OpenBSD__
- extern char* getenv();
- extern char* malloc();
- extern long random();
- extern char* realloc();
- extern long time();
-+#endif
- 
- 
+-extern char* getenv();
+-extern char* malloc();
+-extern long random();
+-extern char* realloc();
+-extern long time();
+-
+-
  /* Forward routines. */
-@@ -404,7 +405,11 @@ usage:
- 	}
  
-     /* Initialize the random number generator. */
-+#ifndef __OpenBSD__
-     srandom( (int) ( time( (long*) 0 ) ^ getpid() ) );
-+#else
-+    srandom( (int) ( time( (time_t*) 0 ) ^ getpid() ) );
-+#endif
+ static void x_init();
+@@ -340,7 +329,7 @@ static falling_sand* falling_sands;
  
-     /* Create the ant world. */
-     ant_init();
-@@ -626,18 +631,18 @@ x_init_rdb( argcP, argv )
- 	char buf[500];
+ /* Routines. */
  
- 	cp = getenv( "HOME" );
--	if ( cp != (char*) 0 )
-+	if ( cp != NULL )
- 	    (void) strcpy( buf, cp );
- 	else
- 	    {
- 	    struct passwd* pw;
- 
- 	    cp = getenv( "USER" );
--	    if ( cp != (char*) 0 )
-+	    if ( cp != NULL )
- 		pw = getpwnam( cp );
- 	    else
- 		pw = getpwuid( getuid() );
--	    if ( pw != (struct passwd*) 0 )
-+	    if ( pw != NULL )
- 		(void) strcpy( buf, pw->pw_dir );
- 	    else
- 		(void) strcpy( buf, "." );	/* best we can do */
-@@ -648,7 +653,7 @@ x_init_rdb( argcP, argv )
- 
-     /* Merge in XENVIRONMENT, if any. */
-     xenv = getenv( "XENVIRONMENT" );
--    if ( xenv != (char*) 0 )
-+    if ( xenv != NULL )
- 	{
- 	XrmDatabase tdb;
- 
-@@ -1539,7 +1544,7 @@ read_world( cf )
+-void
++int
+ main( argc, argv )
+     int argc;
+     char* argv[];
+@@ -1539,7 +1528,7 @@ read_world( cf )
      char* cf;
      {
      FILE* cfP;
