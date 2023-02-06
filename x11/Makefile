@@ -373,7 +373,6 @@
      SUBDIR += xcb
      SUBDIR += xchm
      SUBDIR += xclip
-     SUBDIR += xco
      SUBDIR += xcolor
      SUBDIR += xcoloredit
      SUBDIR += xcolors
