@@ -1,7 +1,7 @@
 COMMENT=	DNS ping
 
 DISTNAME=	nsping-0.8
-REVISION=	0
+REVISION=	1
 DISTFILES=	nsping.tar.gz
 CATEGORIES=	net
 

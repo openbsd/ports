@@ -1,0 +1,22 @@
+Index: dns-lib.c
+--- dns-lib.c.orig
++++ dns-lib.c
+@@ -1,6 +1,9 @@
+ /* !!! Lobotomized for public release */
+ 
++#include <string.h>
++
+ #include "dns-lib.h"
++#include "dns-rr.h"
+ 
+ /* create a comple C_IN DNS query packet, suitable for output directly from sendto(),
+  * returns the length of the packet and the actual packet (static data) via the "cp" arg
+@@ -19,7 +22,7 @@ int dns_query(char *name, int type, int recurse, u_cha
+ 	if(!id) {
+ 		id = getpid();
+ 
+-		memset(h, 0, sizeof(h));
++		memset(h, 0, sizeof(*h));
+ 	    
+ 		h->rd = recurse ? 1 : 0;
+ 

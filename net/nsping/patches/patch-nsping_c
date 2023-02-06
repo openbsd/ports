@@ -1,6 +1,15 @@
---- nsping.c.orig	Wed Nov 26 01:11:39 1997
-+++ nsping.c	Sat Feb 23 17:23:27 2002
-@@ -57,8 +57,7 @@ int main(int argc, char **argv) {
+Index: nsping.c
+--- nsping.c.orig
++++ nsping.c
+@@ -12,6 +12,7 @@ int snprintf(char *, int, char *, ...);
+ 
+ #include "nsping.h"
+ #include <stdarg.h>
++#include <stdlib.h>
+ #include <assert.h>
+ 
+ /* store state on sent queries */
+@@ -57,8 +58,7 @@ int main(int argc, char **argv) {
  	u_int32_t address = INADDR_ANY;
  	u_int32_t port = getpid() + 1024;
  	char *timearg = NULL;
@@ -10,7 +19,7 @@
  
  	for(i = 0; i < QUERY_BACKLOG; i++) {
  		Queries[i].id = -1;
-@@ -67,7 +66,7 @@ int main(int argc, char **argv) {
+@@ -67,7 +67,7 @@ int main(int argc, char **argv) {
  
  #define OPTS "z:h:t:p:dP:a:c:T:rR"
  
@@ -19,7 +28,7 @@
  		switch(c) {
  		case 'c':
  			Max_Sends = atoi(optarg);
-@@ -189,10 +188,14 @@ int main(int argc, char **argv) {
+@@ -189,10 +189,14 @@ int main(int argc, char **argv) {
  
  int guess_zone() {
  	char lhn[MAXDNAME];
@@ -34,7 +43,16 @@
  
  	cp = strchr(lhn, '.');
  	if(!cp || !(*(++cp)))
-@@ -679,9 +682,7 @@ char *xstrdup(char *v) {
+@@ -336,7 +340,7 @@ int dns_packet(u_char **qp, int id) {
+ 		if(!seed) 
+ 			seed = getpid() ^ time(0);
+ 		
+-		snprintf(hname, MAXDNAME, "%d.%s", random(), Zone);
++		snprintf(hname, MAXDNAME, "%ld.%s", random(), Zone);
+ 		name = hname;
+ 	}
+ 	
+@@ -679,9 +683,7 @@ char *xstrdup(char *v) {
  /* -------------------------------------------------------------------------- */
  
   void usage() {
