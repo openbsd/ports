@@ -1,0 +1,12 @@
+Index: examples/tests/leak2.c
+--- examples/tests/leak2.c.orig
++++ examples/tests/leak2.c
+@@ -20,7 +20,7 @@ AppRes	appres;
+ 
+ XtResource	resources[] = {
+ 	{ "numIter", "NumIter", XtRInt, sizeof(int),
+-		XtOffsetOf(AppRes, numIter), XtRImmediate, 1000 },
++		XtOffsetOf(AppRes, numIter), XtRImmediate, (XtPointer)1000 },
+ };
+ 
+ int
