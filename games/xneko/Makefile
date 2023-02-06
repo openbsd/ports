@@ -2,7 +2,7 @@ COMMENT=	classic BSD4.4 cat-and-mouse
 
 DISTNAME=	xneko
 PKGNAME=	xneko-4.4
-REVISION =	2
+REVISION =	3
 CATEGORIES=	x11 games
 EXTRACT_SUFX=	.tar
 

@@ -1,10 +1,21 @@
---- xneko.c.orig	Sat Jan 18 01:34:37 2003
-+++ xneko.c	Sat Jan 18 01:35:01 2003
-@@ -140,6 +140,7 @@ static char sccsid[] = "@(#)xneko.c	8.1 
+Index: xneko.c
+--- xneko.c.orig
++++ xneko.c
+@@ -140,6 +140,8 @@ static char sccsid[] = "@(#)xneko.c	8.1 (Berkeley) 5/3
  #include <stdio.h>
  
  #include <signal.h>
++#include <stdlib.h>
 +#include <string.h>
  #include <math.h>
  #include <sys/time.h>
  
+@@ -494,7 +496,7 @@ BitmapGCData	BitmapGCDataTable[] =
+       &RightTogi1Xbm, rtogi1_bits, rtogi1_width, rtogi1_height },
+     { &RightTogi2GC,
+       &RightTogi2Xbm, rtogi2_bits, rtogi2_width, rtogi2_height },
+-    { NULL, NULL, NULL, NULL, NULL }
++    { NULL, NULL, NULL, 0, 0 }
+ };
+ 
+ typedef struct {
