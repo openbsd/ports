@@ -31,6 +31,8 @@ LIB_DEPENDS =	archivers/zziplib \
 
 CONFIGURE_ARGS = -DCMAKE_INSTALL_DOCDIR=${PREFIX}/share/doc/milkytracker
 
+NO_TEST =	Yes
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/resources/milkytracker.desktop \
