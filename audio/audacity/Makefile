@@ -80,6 +80,10 @@ CONFIGURE_ARGS +=	-Daudacity_use_portmixer:STRING=off
 # requires gtk+2
 CONFIGURE_ARGS +=	-Daudacity_use_lv2:STRING=off
 
+# prevent picking up ccache:
+# ccache: error: Failed to create directory /audacity-2.4.2_writes_to_HOME/.cache/ccache/tmp: Permission denied
+CONFIGURE_ARGS +=	-DCCACHE_PROGRAM:BOOL=OFF
+
 .if ${MACHINE_ARCH} != "amd64" && ${MACHINE_ARCH} != "i386"
 CONFIGURE_ARGS +=	-DHAVE_MMX:BOOL=OFF
 CONFIGURE_ARGS +=	-DHAVE_SSE:BOOL=OFF
