@@ -1,0 +1,14 @@
+Index: src/repint.h
+--- src/repint.h.orig
++++ src/repint.h
+@@ -244,8 +244,8 @@ typedef struct rep_cons_block_struct {
+    call when the heap needs to grow. */
+ 
+ #if defined __GNUC__ && defined __OPTIMIZE__
+-extern __inline__ repv inline_Fcons (repv x, repv y);
+-extern __inline__ repv
++static __inline__ repv inline_Fcons (repv x, repv y);
++static __inline__ repv
+ inline_Fcons (repv x, repv y)
+ {
+     rep_cons *c = rep_cons_freelist;

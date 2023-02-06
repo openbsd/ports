@@ -2,7 +2,7 @@ COMMENT=	Emacs Lisp-like runtime library
 
 VERSION=	0.92.3
 DISTNAME=	librep-${VERSION}
-REVISION=	3
+REVISION=	4
 
 SHARED_LIBS +=  rep                  14.0     # .16.0
 
