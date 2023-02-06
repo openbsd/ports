@@ -3,13 +3,13 @@ BROKEN-arm=	libm functions (cabs etc) not detected, fallback code is broken
 COMMENT=		image processing tools
 
 VER=			6.9.12
-DASHVER=		68
+DASHVER=		76
 DISTNAME=		ImageMagick-${VER}-${DASHVER}
 PKGNAME=		ImageMagick-${VER}.${DASHVER}
 PORTROACH=		site:https://imagemagick.org/archive/releases/ limit:6.*
 EXTRACT_SUFX=		.tar.xz
 
-SHARED_LIBS +=	MagickCore-6.Q16     8.1      # 7.0
+SHARED_LIBS +=	MagickCore-6.Q16     8.2      # 7.0
 SHARED_LIBS +=	MagickWand-6.Q16     4.2      # 7.0
 SHARED_LIBS +=	Magick++-6.Q16       5.2      # 9.0
 
