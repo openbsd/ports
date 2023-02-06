@@ -1,8 +1,7 @@
 COMMENT=	wysiwyw (what you see is what you want) editing platform
 
-DISTNAME=	TeXmacs-2.1.1-src
+DISTNAME=	TeXmacs-2.1.2-src
 PKGNAME=	${DISTNAME:S/-src//}
-REVISION=	0
 
 CATEGORIES=	editors print x11
 

@@ -8,7 +8,7 @@ Plug-ins
 Many plug-ins for external software exist for GNU TeXmacs. Install the
 corresponding packages to use these plug-ins (e.g., `pkg_add gnuplot').
 
-dratex: texlive_base
+dratex: texlive_texmf-full
 gnuplot: gnuplot
 graphviz: graphviz
 lisp: clisp
