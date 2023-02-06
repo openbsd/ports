@@ -372,6 +372,7 @@
      SUBDIR += ruby-vlad
      SUBDIR += rundeck
      SUBDIR += runit
+     SUBDIR += rustic
      SUBDIR += rw
      SUBDIR += safecat
      SUBDIR += salt
