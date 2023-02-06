@@ -1,5 +1,6 @@
 @newgroup _owampd:678
 @newuser _owampd:678:_owampd::owampd user:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/owampd
 @bin bin/aespasswd
 @bin bin/owampd
 bin/owfetch
@@ -29,8 +30,8 @@ include/I2util/sha1.h
 include/I2util/sha1P.h
 include/I2util/table.h
 include/I2util/util.h
-lib/libI2util.a
-lib/libowamp.a
+@static-lib lib/libI2util.a
+@static-lib lib/libowamp.a
 @man man/man1/aespasswd.1
 @man man/man1/owfetch.1
 @man man/man1/owping.1
@@ -53,4 +54,3 @@ share/examples/owampd/owampd.conf
 @sample ${SYSCONFDIR}/owampd/owampd.conf
 share/examples/owampd/owampd.limits
 @sample ${SYSCONFDIR}/owampd/owampd.limits
-@rcscript ${RCDIR}/owampd

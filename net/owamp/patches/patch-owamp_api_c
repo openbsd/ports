@@ -1,0 +1,12 @@
+Index: owamp/api.c
+--- owamp/api.c.orig
++++ owamp/api.c
+@@ -2313,7 +2313,7 @@ GetSessionFinishedType(
+     phdr->finished = GetSessionFinishedType(ctx,ntohl(finished));
+ 
+     if(phdr->version < 3){
+-        phdr->oset_skiprecs = NULL;
++        phdr->oset_skiprecs = 0;
+         phdr->num_skiprecs = 0;
+         phdr->oset_datarecs = phdr->hdr_len;
+         phdr->num_datarecs = (phdr->sbuf.st_size - phdr->hdr_len)/
