@@ -2,6 +2,8 @@ COMMENT-main=	multimedia communication library (SIP, RTP, ICE, etc)
 COMMENT-pjsua=	lightweight sip client
 
 V=		2.13
+REVISION=	0
+
 GH_ACCOUNT=	pjsip
 GH_PROJECT=	pjproject
 GH_TAGNAME=	$V
@@ -65,7 +67,7 @@ CONFIGURE_STYLE= gnu no-autoheader
 CONFIGURE_ARGS=	--enable-shared \
 		--disable-libwebrtc \
 		--disable-openh264 \
-		--disable-oss \
+		--disable-upnp \
 		--disable-video \
 		--with-external-gsm \
 		--with-external-pa \
