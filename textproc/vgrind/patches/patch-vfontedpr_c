@@ -1,0 +1,39 @@
+Index: vfontedpr.c
+--- vfontedpr.c.orig
++++ vfontedpr.c
+@@ -233,7 +233,7 @@ main(int argc, char *argv[])
+ 	    cpp = l_keywds;
+ 	    while (*cp) {
+ 		while (*cp == ' ' || *cp =='\t')
+-		    *cp++ = NULL;
++		    *cp++ = '\0';
+ 		if (*cp)
+ 		    *cpp++ = cp;
+ 		while (*cp != ' ' && *cp  != '\t' && *cp)
+@@ -275,7 +275,7 @@ main(int argc, char *argv[])
+ 	x_escaped = FALSE;
+ 	blklevel = 0;
+ 	for (psptr=0; psptr<PSMAX; psptr++) {
+-	    pstack[psptr][0] = NULL;
++	    pstack[psptr][0] = '\0';
+ 	    plstack[psptr] = 0;
+ 	}
+ 	psptr = -1;
+@@ -358,7 +358,7 @@ putScp(char *os)
+ 	if (psptr < PSMAX) {
+ 	    ++psptr;
+ 	    strncpy (pstack[psptr], pname, PNAMELEN);
+-	    pstack[psptr][PNAMELEN] = NULL;
++	    pstack[psptr][PNAMELEN] = '\0';
+ 	    plstack[psptr] = blklevel;
+ 	}
+     } 
+@@ -656,7 +656,7 @@ putcp(int c)
+ static boolean
+ isproc(char *s)
+ {
+-    pname[0] = NULL;
++    pname[0] = '\0';
+     if (!l_toplex || blklevel == 0)
+ 	if (expmatch (s, l_prcbeg, pname) != NIL) {
+ 	    return (TRUE);
