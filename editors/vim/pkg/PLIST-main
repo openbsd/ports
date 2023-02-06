@@ -1221,6 +1221,7 @@ share/vim/${P}/syntax/dylanintr.vim
 share/vim/${P}/syntax/dylanlid.vim
 share/vim/${P}/syntax/ecd.vim
 share/vim/${P}/syntax/edif.vim
+share/vim/${P}/syntax/editorconfig.vim
 share/vim/${P}/syntax/eiffel.vim
 share/vim/${P}/syntax/elf.vim
 share/vim/${P}/syntax/elinks.vim
@@ -1353,6 +1354,7 @@ share/vim/${P}/syntax/kscript.vim
 share/vim/${P}/syntax/kwt.vim
 share/vim/${P}/syntax/lace.vim
 share/vim/${P}/syntax/latte.vim
+share/vim/${P}/syntax/lc.vim
 share/vim/${P}/syntax/ld.vim
 share/vim/${P}/syntax/ldapconf.vim
 share/vim/${P}/syntax/ldif.vim
