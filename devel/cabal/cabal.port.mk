@@ -85,6 +85,10 @@ MODCABAL_post-extract += \
 	&& echo "packages: ${WRKDIR}/${_package}-${_version}/${_package}.cabal" >> ${WRKSRC}/cabal.project.local
 .endfor  # MODCABAL_MANIFEST
 
+MODCABAL_post-extract += \
+	&& echo "package *\n ghc-options: -split-sections\n" >> ${WRKSRC}/cabal.project.local \
+	&& echo "package ${MODCABAL_STEM}\n ld-options: -Wl,--gc-sections,--build-id" >> ${WRKSRC}/cabal.project.local
+
 # Automatically copies the cabal.project file if any.
 MODCABAL_post-extract += \
 	&& (test -f ${FILESDIR}/cabal.project \
