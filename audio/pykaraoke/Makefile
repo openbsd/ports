@@ -3,7 +3,7 @@ COMMENT =		free karaoke player
 MODPY_EGG_VERSION =	0.7.5
 DISTNAME =		pykaraoke-${MODPY_EGG_VERSION}
 CATEGORIES =		audio
-REVISION =		4
+REVISION =		5
 
 HOMEPAGE =		http://kibosh.org/pykaraoke/
 
