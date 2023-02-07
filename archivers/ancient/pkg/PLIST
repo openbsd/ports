@@ -1,0 +1,10 @@
+@bin bin/ancient
+include/ancient/
+include/ancient/ancient.hpp
+@static-lib lib/libancient.a
+lib/libancient.la
+@lib lib/libancient.so.${LIBancient_VERSION}
+lib/pkgconfig/libancient.pc
+share/doc/ancient/
+share/doc/ancient/LICENSE
+share/doc/ancient/README.md
