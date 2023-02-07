@@ -2,3 +2,9 @@ This library implements a deserializer for an efficient, compact-output,
 and feature-rich binary protocol called Sereal.
 
 Its sister module p5-Sereal-Encoder implements an encoder for this format.
+
+Always upgrade the Decoder before the Encoder. The latest version of
+the decoder (this package) should be able to handle the output from
+any earlier or equivalent version of the encoder. Ignoring this advice
+may result in data loss in an environment where you cannot upgrade the
+encoder simultaneously on all machines using the package.
