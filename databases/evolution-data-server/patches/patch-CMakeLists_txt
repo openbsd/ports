@@ -1,0 +1,14 @@
+Crank to C++17 to match libphonenumber and abseil-cpp.
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -6,7 +6,7 @@ cmake_policy(VERSION 3.1)
+ project(evolution-data-server
+ 	VERSION 3.46.3
+ 	LANGUAGES C CXX)
+-set(CMAKE_CXX_STANDARD 14)
++set(CMAKE_CXX_STANDARD 17)
+ set(PROJECT_BUGREPORT "https://gitlab.gnome.org/GNOME/evolution-data-server/issues/")
+ 
+ # Base Version: This is for API/version tracking for things like

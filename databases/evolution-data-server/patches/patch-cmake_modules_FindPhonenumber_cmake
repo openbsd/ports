@@ -1,0 +1,25 @@
+abseil-cpp>=20230115.0 used by libphonenumber fails unless C++17 is used,
+but CMAKE_CXX_STANDARD has no effect on CheckCXXSourceCompiles().
+
+CMAKE_REQUIRED_FLAGS must not be passed globally as it effects all targets,
+including C files.
+
+Index: cmake/modules/FindPhonenumber.cmake
+--- cmake/modules/FindPhonenumber.cmake.orig
++++ cmake/modules/FindPhonenumber.cmake
+@@ -53,6 +53,7 @@ unset(optupper)
+ set(CMAKE_REQUIRED_DEFINITIONS ${PHONENUMBER_DEFINITIONS})
+ set(CMAKE_REQUIRED_INCLUDES ${PHONENUMBER_INCLUDE_DIRS})
+ 
++set(CMAKE_REQUIRED_FLAGS "-std=gnu++${CMAKE_CXX_STANDARD}")
+ foreach(lib boost_thread-mt boost_thread)
+ 	set(CMAKE_REQUIRED_LIBRARIES ${PHONENUMBER_LDFLAGS} -l${lib})
+ 	CHECK_CXX_SOURCE_COMPILES("#include <phonenumbers/phonenumberutil.h>
+@@ -67,6 +68,7 @@ foreach(lib boost_thread-mt boost_thread)
+ 		break()
+ 	endif(phone_number_with_${lib})
+ endforeach(lib)
++unset(CMAKE_REQUIRED_FLAGS)
+ 
+ if(NOT ENABLE_PHONENUMBER)
+ 	message(FATAL_ERROR "libphonenumber cannot be used. Use -DWITH_PHONENUMBER=PATH to specify the library prefix, or -DWITH_PHONENUMBER=OFF to disable it.")
