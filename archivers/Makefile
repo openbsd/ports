@@ -1,4 +1,5 @@
      SUBDIR =
+     SUBDIR += ancient
      SUBDIR += arc
      SUBDIR += blosc
      SUBDIR += brotli
