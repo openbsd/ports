@@ -434,6 +434,7 @@
      SUBDIR += tray-app
      SUBDIR += tree
      SUBDIR += truncate
+     SUBDIR += try_import
      SUBDIR += ttyload
      SUBDIR += ttyplot
      SUBDIR += u-boot
