@@ -1,10 +1,10 @@
+@option no-default-conflict
+@option is-branch
+@conflict erlang-wx->=25,<25.2.2
+@pkgpath lang/erlang/21,-main
 @newgroup _epmd:888
 @newuser _epmd:888:_epmd::Erlang EPMD Account:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/epmd
-@option no-default-conflict
-@option is-branch
-@conflict erlang-wx->=25,<25.1.2
-@pkgpath lang/erlang/21,-main
 bin/ct_run25
 bin/dialyzer25
 bin/epmd25
