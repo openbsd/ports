@@ -1,0 +1,12 @@
+Index: xlock_check.c
+--- xlock_check.c.orig
++++ xlock_check.c
+@@ -25,8 +25,6 @@
+ #include "idled.h"
+ #undef user             /* need user from <sys/user.h> instead */
+ 
+-extern void   logfile();
+-
+ #ifndef DEBUG
+ #  define DEBUG 0
+ #endif

@@ -1,0 +1,20 @@
+Index: idled.h
+--- idled.h.orig
++++ idled.h
+@@ -1,5 +1,7 @@
+ #include <sys/types.h>
++#include <stdarg.h>
+ #include <stdio.h>
++#include <string.h>
+ #include <sys/param.h>
+ #include <utmp.h>
+ 
+@@ -197,7 +199,7 @@ extern	int	warn_flags;	/* what warnings to make */
+ extern	int	mult_per_user;  /* number of multiple logins allowed per user */
+ extern	int	ioidle;         /* True=use i&o as idle time ; False=i only */
+ 
+-extern	void	logfile();
++extern	void	logfile(const char *s, ...);
+ 
+ /* This is used for trapping errors caused by the utmp file getting
+  * out of touch with reality and telling idled that a user is logged

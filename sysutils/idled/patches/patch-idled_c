@@ -1,0 +1,44 @@
+Index: idled.c
+--- idled.c.orig
++++ idled.c
+@@ -93,8 +93,7 @@ void	chk_idle(),
+         console_zap (),
+ 	finish(),
+ 	core_time(),
+-	getgroups_func(),
+-	logfile();
++	getgroups_func();
+ 
+ int	comp(),
+ 	chk_session(),
+@@ -1288,25 +1287,17 @@ int comp(h1, h2)
+ /* process a log message */
+ 
+ /* VARARGS */
+-void logfile(s, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10)
+-   char *s;
+-   char *a1;
+-   char *a2;
+-   char *a3;
+-   char *a4;
+-   char *a5;
+-   char *a6;
+-   char *a7;
+-   char *a8;
+-   char *a9;
+-   char *a10;
++void logfile(const char *s, ...)
+ {
+    FILE *logfd;
++   va_list ap;
+ 
+    if ((logfd = fopen (LOGFILE, "a")) == (FILE *) NULL)
+       return;
+ 
+-   (void) fprintf (logfd, s, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10);
++   va_start(ap, s);
++   vfprintf(logfd, s, ap);
++   va_end(ap);
+    (void) putc ('\n', logfd);
+    (void) fclose (logfd);
+ }

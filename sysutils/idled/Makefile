@@ -1,7 +1,7 @@
 COMMENT=	log out idle users and those hogging resources
 
 DISTNAME=	idled-1.16
-REVISION=	1
+REVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.netsw.org/system/tools/process/
 
