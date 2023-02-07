@@ -24,4 +24,14 @@ MODULES =	devel/cmake
 # uses C++11, cf https://trac.osgeo.org/geos/wiki/RFC5
 COMPILER =	base-clang ports-gcc
 
+# evertyhing except tests
+ALL_TARGET =	geosop
+
+do-build:
+	@${MODCMAKE_BUILD_TARGET} -t ${ALL_TARGET}
+
+# build whatever is left (ca. 277 C++ test files)
+pre-test:
+	@${MODCMAKE_BUILD_TARGET}
+
 .include <bsd.port.mk>
