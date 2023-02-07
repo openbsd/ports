@@ -457,14 +457,21 @@ ${MAN_PREFIX}/man3/BIO_callback_fn_ex.3
 ${MAN_PREFIX}/man3/BIO_closesocket.3
 ${MAN_PREFIX}/man3/BIO_connect.3
 ${MAN_PREFIX}/man3/BIO_ctrl.3
+${MAN_PREFIX}/man3/BIO_ctrl_dgram_connect.3
 ${MAN_PREFIX}/man3/BIO_ctrl_get_read_request.3
 ${MAN_PREFIX}/man3/BIO_ctrl_get_write_guarantee.3
 ${MAN_PREFIX}/man3/BIO_ctrl_pending.3
 ${MAN_PREFIX}/man3/BIO_ctrl_reset_read_request.3
+${MAN_PREFIX}/man3/BIO_ctrl_set_connected.3
 ${MAN_PREFIX}/man3/BIO_ctrl_wpending.3
 ${MAN_PREFIX}/man3/BIO_debug_callback.3
 ${MAN_PREFIX}/man3/BIO_debug_callback_ex.3
 ${MAN_PREFIX}/man3/BIO_destroy_bio_pair.3
+${MAN_PREFIX}/man3/BIO_dgram_get_mtu_overhead.3
+${MAN_PREFIX}/man3/BIO_dgram_get_peer.3
+${MAN_PREFIX}/man3/BIO_dgram_recv_timedout.3
+${MAN_PREFIX}/man3/BIO_dgram_send_timedout.3
+${MAN_PREFIX}/man3/BIO_dgram_set_peer.3
 ${MAN_PREFIX}/man3/BIO_do_accept.3
 ${MAN_PREFIX}/man3/BIO_do_connect.3
 ${MAN_PREFIX}/man3/BIO_do_connect_retry.3
@@ -562,6 +569,7 @@ ${MAN_PREFIX}/man3/BIO_new_accept.3
 ${MAN_PREFIX}/man3/BIO_new_bio_pair.3
 ${MAN_PREFIX}/man3/BIO_new_buffer_ssl_connect.3
 ${MAN_PREFIX}/man3/BIO_new_connect.3
+${MAN_PREFIX}/man3/BIO_new_dgram.3
 ${MAN_PREFIX}/man3/BIO_new_ex.3
 ${MAN_PREFIX}/man3/BIO_new_fd.3
 ${MAN_PREFIX}/man3/BIO_new_file.3
@@ -589,6 +597,7 @@ ${MAN_PREFIX}/man3/BIO_s_accept.3
 ${MAN_PREFIX}/man3/BIO_s_bio.3
 ${MAN_PREFIX}/man3/BIO_s_connect.3
 ${MAN_PREFIX}/man3/BIO_s_core.3
+${MAN_PREFIX}/man3/BIO_s_datagram.3
 ${MAN_PREFIX}/man3/BIO_s_fd.3
 ${MAN_PREFIX}/man3/BIO_s_file.3
 ${MAN_PREFIX}/man3/BIO_s_mem.3
@@ -1819,6 +1828,8 @@ ${MAN_PREFIX}/man3/EVP_PKEY_CTX_get0_dh_kdf_oid.3
 ${MAN_PREFIX}/man3/EVP_PKEY_CTX_get0_dh_kdf_ukm.3
 ${MAN_PREFIX}/man3/EVP_PKEY_CTX_get0_ecdh_kdf_ukm.3
 ${MAN_PREFIX}/man3/EVP_PKEY_CTX_get0_libctx.3
+${MAN_PREFIX}/man3/EVP_PKEY_CTX_get0_peerkey.3
+${MAN_PREFIX}/man3/EVP_PKEY_CTX_get0_pkey.3
 ${MAN_PREFIX}/man3/EVP_PKEY_CTX_get0_propq.3
 ${MAN_PREFIX}/man3/EVP_PKEY_CTX_get0_provider.3
 ${MAN_PREFIX}/man3/EVP_PKEY_CTX_get0_rsa_oaep_label.3
@@ -2691,6 +2702,8 @@ ${MAN_PREFIX}/man3/OPENSSL_version_minor.3
 ${MAN_PREFIX}/man3/OPENSSL_version_patch.3
 ${MAN_PREFIX}/man3/OPENSSL_version_pre_release.3
 ${MAN_PREFIX}/man3/OPENSSL_zalloc.3
+${MAN_PREFIX}/man3/OSSL_ALGORITHM.3
+${MAN_PREFIX}/man3/OSSL_CALLBACK.3
 ${MAN_PREFIX}/man3/OSSL_CMP_CR.3
 ${MAN_PREFIX}/man3/OSSL_CMP_CTX_build_cert_chain.3
 ${MAN_PREFIX}/man3/OSSL_CMP_CTX_free.3
@@ -2716,6 +2729,7 @@ ${MAN_PREFIX}/man3/OSSL_CMP_CTX_push0_policy.3
 ${MAN_PREFIX}/man3/OSSL_CMP_CTX_push1_subjectAltName.3
 ${MAN_PREFIX}/man3/OSSL_CMP_CTX_reinit.3
 ${MAN_PREFIX}/man3/OSSL_CMP_CTX_reqExtensions_have_SAN.3
+${MAN_PREFIX}/man3/OSSL_CMP_CTX_reset_geninfo_ITAVs.3
 ${MAN_PREFIX}/man3/OSSL_CMP_CTX_server_perform.3
 ${MAN_PREFIX}/man3/OSSL_CMP_CTX_set0_newPkey.3
 ${MAN_PREFIX}/man3/OSSL_CMP_CTX_set0_reqExtensions.3
@@ -2935,6 +2949,7 @@ ${MAN_PREFIX}/man3/OSSL_DECODER_is_a.3
 ${MAN_PREFIX}/man3/OSSL_DECODER_names_do_all.3
 ${MAN_PREFIX}/man3/OSSL_DECODER_settable_ctx_params.3
 ${MAN_PREFIX}/man3/OSSL_DECODER_up_ref.3
+${MAN_PREFIX}/man3/OSSL_DISPATCH.3
 ${MAN_PREFIX}/man3/OSSL_EC_curve_nid2name.3
 ${MAN_PREFIX}/man3/OSSL_ENCODER.3
 ${MAN_PREFIX}/man3/OSSL_ENCODER_CLEANUP.3
@@ -3006,6 +3021,7 @@ ${MAN_PREFIX}/man3/OSSL_HTTP_parse_url.3
 ${MAN_PREFIX}/man3/OSSL_HTTP_proxy_connect.3
 ${MAN_PREFIX}/man3/OSSL_HTTP_set1_request.3
 ${MAN_PREFIX}/man3/OSSL_HTTP_transfer.3
+${MAN_PREFIX}/man3/OSSL_ITEM.3
 ${MAN_PREFIX}/man3/OSSL_LIB_CTX.3
 ${MAN_PREFIX}/man3/OSSL_LIB_CTX_free.3
 ${MAN_PREFIX}/man3/OSSL_LIB_CTX_get0_global_default.3
@@ -3114,6 +3130,7 @@ ${MAN_PREFIX}/man3/OSSL_PARAM_uint64.3
 ${MAN_PREFIX}/man3/OSSL_PARAM_ulong.3
 ${MAN_PREFIX}/man3/OSSL_PARAM_utf8_ptr.3
 ${MAN_PREFIX}/man3/OSSL_PARAM_utf8_string.3
+${MAN_PREFIX}/man3/OSSL_PASSPHRASE_CALLBACK.3
 ${MAN_PREFIX}/man3/OSSL_PROVIDER.3
 ${MAN_PREFIX}/man3/OSSL_PROVIDER_add_builtin.3
 ${MAN_PREFIX}/man3/OSSL_PROVIDER_available.3
@@ -5503,6 +5520,7 @@ ${MAN_PREFIX}/man5/config.5
 ${MAN_PREFIX}/man5/fips_config.5
 ${MAN_PREFIX}/man5/x509v3_config.5
 lib/eopenssl30/man/man7/
+${MAN_PREFIX}/man7/EVP_ASYM_CIPHER-RSA.7
 ${MAN_PREFIX}/man7/EVP_ASYM_CIPHER-SM2.7
 ${MAN_PREFIX}/man7/EVP_CIPHER-AES.7
 ${MAN_PREFIX}/man7/EVP_CIPHER-ARIA.7
