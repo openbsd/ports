@@ -1,9 +1,8 @@
 COMMENT =		timeout context manager for asyncio programs
 
-MODPY_EGG_VERSION =	3.0.0
+MODPY_EGG_VERSION =	4.0.2
 DISTNAME =		async-timeout-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		5
 
 CATEGORIES =		devel
 
@@ -16,9 +15,6 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
-
-# requires py-test-aiohttp
-NO_TEST =		Yes
 
 FLAVORS =	python3
 FLAVOR =	python3
