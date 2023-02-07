@@ -1,25 +1,26 @@
 COMMENT =	interactive, extensible binary editor
 
-DISTNAME =	poke-2.4
+DISTNAME =	poke-3.0
 
-SHARED_LIBS +=  poke                      0.0 # 0.0
+SHARED_LIBS +=  poke                      1.0 # 0.0
 
 CATEGORIES =	editors
 
 HOMEPAGE =	https://www.jemarch.net/poke
 
+MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
+
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c curses gc iconv intl json-c m pthread readline textstyle
+WANTLIB += c curses gc iconv intl m pthread readline textstyle
 
 MASTER_SITES =		${MASTER_SITE_GNU:=poke/}
 
 BUILD_DEPENDS =		devel/dejagnu
 LIB_DEPENDS =		devel/boehm-gc \
 			devel/gettext,-runtime \
-			devel/gettext,-textstyle \
-			devel/json-c
+			devel/gettext,-textstyle
 TEST_DEPENDS =		devel/dejagnu
 
 CONFIGURE_STYLE =	gnu
