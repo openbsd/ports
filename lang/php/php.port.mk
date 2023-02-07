@@ -3,6 +3,14 @@ CATEGORIES+=		lang/php
 # 8.1 loses sparc64 support
 MODPHP_VERSION?=	8.0
 
+# for ports which force a newer MODPHP_VERSION, disable on sparc64,
+# there is non-optional "fibers" code which requires either MD code
+# (which PHP doesn't have for sparc64) or ucontext, which OpenBSD
+# doesn't have.
+.if (${MODPHP_VERSION} == 8.1 || ${MODPHP_VERSION} == 8.2)
+NOT_FOR_ARCHS+=		sparc64
+.endif
+
 .if ${MODPHP_VERSION} == 7.4
 MODPHP_FLAVOR = ,php74
 MODPHP_VSPEC = >=7.4,<7.5
