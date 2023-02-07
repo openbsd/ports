@@ -1,0 +1,18 @@
+Index: src/ftp.c
+--- src/ftp.c.orig
++++ src/ftp.c
+@@ -151,13 +151,9 @@ ftp_stor(CONN *C, URL U) 
+ {
+   size_t  len;
+   char    *file;
+-  size_t  id = pthread_self();
++  pthread_t  id = pthread_self();
+   int     num = 2;
+   char    **parts;
+- 
+-  if (id < 0.0) {
+-    id = -id;
+-  }
+  
+   len   = strlen(url_get_file(U))+17; 
+   parts = split('.', url_get_file(U), &num);

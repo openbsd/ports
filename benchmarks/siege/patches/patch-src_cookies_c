@@ -1,0 +1,30 @@
+Index: src/cookies.c
+--- src/cookies.c.orig
++++ src/cookies.c
+@@ -15,7 +15,7 @@
+ #include <cookies.h>
+ 
+ typedef struct NODE {
+-  size_t threadID;
++  pthread_t threadID;
+   COOKIE cookie;
+   struct NODE *next;
+ } NODE;
+@@ -66,7 +66,7 @@ cookies_destroy(COOKIES this) 
+ BOOLEAN
+ cookies_add(COOKIES this, char *str, char *host)
+ {
+-  size_t  id    = pthread_self();
++  pthread_t  id    = pthread_self();
+   //int     hlen  = 0;
+   //int     dlen  = 0;
+   NODE   *cur   = NULL; 
+@@ -169,7 +169,7 @@ cookies_header(COOKIES this, char *host, char *newton)
+   time_t now;
+   struct tm tm;
+   char   oreo[MAX_COOKIES_SIZE];
+-  size_t id = pthread_self();
++  pthread_t id = pthread_self();
+ 
+   memset(oreo, '\0', sizeof oreo);
+ 

@@ -14,6 +14,7 @@ WANTLIB += c crypto pthread ssl z
 MASTER_SITES =		http://download.joedog.org/siege/
 
 MAKE_FLAGS =		localstatedir=${LOCALSTATEDIR}
+CFLAGS +=		-DHAVE_STRCASECMP -DHAVE_STRNCASECMP
 
 LOCALSTATEDIR =		${BASELOCALSTATEDIR}/log/siege
 
