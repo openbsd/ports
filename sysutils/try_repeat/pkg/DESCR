@@ -1,0 +1,3 @@
+try_repeat tries to run a command n times, exiting early if the command exits
+with a non-zero exit code. This is useful when trying to find intermittent
+failures in a command.
