@@ -1,0 +1,21 @@
+Index: uitoolkit/fb/ui_font.c
+--- uitoolkit/fb/ui_font.c.orig
++++ uitoolkit/fb/ui_font.c
+@@ -708,7 +708,7 @@ face_found:
+     goto error;
+   }
+ 
+-  face->generic.data = ((int)face->generic.data) + 1; /* ref_count */
++  face->generic.data = (void *)(((int)face->generic.data) + 1); /* ref_count */
+ 
+   xfont->width_full =
+       (face->max_advance_width * face->size->metrics.x_ppem + face->units_per_EM - 1) /
+@@ -810,7 +810,7 @@ static void unload_ft(XFontStruct *xfont) {
+   free(xfont->file);
+ 
+   face = xfont->face;
+-  face->generic.data = ((int)face->generic.data) - 1;
++  face->generic.data = (void *)((int)face->generic.data - 1);
+   if (!face->generic.data) {
+     FT_Done_Face(xfont->face);
+   }

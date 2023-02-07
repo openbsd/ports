@@ -1,0 +1,34 @@
+Index: uitoolkit/libtype/ui_window_cairo.c
+--- uitoolkit/libtype/ui_window_cairo.c.orig
++++ uitoolkit/libtype/ui_window_cairo.c
+@@ -54,12 +54,12 @@ static int show_text(cairo_t *cr, cairo_scaled_font_t 
+ #endif
+ 
+ #if CAIRO_VERSION_ENCODE(1, 4, 0) <= CAIRO_VERSION
+-  if (cairo_get_user_data(cr, 1) != xfont)
++  if (cairo_get_user_data(cr, (cairo_user_data_key_t *)1) != xfont)
+ #endif
+   {
+     cairo_set_scaled_font(cr, xfont);
+ #if CAIRO_VERSION_ENCODE(1, 4, 0) <= CAIRO_VERSION
+-    cairo_set_user_data(cr, 1, xfont, NULL);
++    cairo_set_user_data(cr, (cairo_user_data_key_t *)1, xfont, NULL);
+ #endif
+   }
+ 
+@@ -69,13 +69,13 @@ static int show_text(cairo_t *cr, cairo_scaled_font_t 
+    * default one
+    * (black == 0).
+    */
+-  if ((u_long)cairo_get_user_data(cr, 2) != fg_color->pixel)
++  if ((u_long)cairo_get_user_data(cr, (cairo_user_data_key_t *)2) != fg_color->pixel)
+ #endif
+   {
+     cairo_set_source_rgba(cr, (double)fg_color->red / 255.0, (double)fg_color->green / 255.0,
+                           (double)fg_color->blue / 255.0, (double)fg_color->alpha / 255.0);
+ #if CAIRO_VERSION_ENCODE(1, 4, 0) <= CAIRO_VERSION
+-    cairo_set_user_data(cr, 2, fg_color->pixel, NULL);
++    cairo_set_user_data(cr, (cairo_user_data_key_t *)2, (void *)fg_color->pixel, NULL);
+ #endif
+   }
+ 

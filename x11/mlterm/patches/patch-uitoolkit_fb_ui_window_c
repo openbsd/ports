@@ -1,0 +1,14 @@
+Index: uitoolkit/fb/ui_window.c
+--- uitoolkit/fb/ui_window.c.orig
++++ uitoolkit/fb/ui_window.c
+@@ -23,8 +23,8 @@
+ static ui_color_t black = {TP_COLOR, 0, 0, 0, 0};
+ #endif
+ 
+-#define ParentRelative (1L)
+-#define DummyPixmap (2L)
++#define ParentRelative ((Pixmap)1L)
++#define DummyPixmap ((Pixmap)2L)
+ 
+ /* XXX Check if win is input method window or not. */
+ #define IS_IM_WINDOW(win) ((win)->disp->num_of_roots >= 2 && (win) == (win)->disp->roots[1])

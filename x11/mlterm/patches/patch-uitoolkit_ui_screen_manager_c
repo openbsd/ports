@@ -1,0 +1,12 @@
+Index: uitoolkit/ui_screen_manager.c
+--- uitoolkit/ui_screen_manager.c.orig
++++ uitoolkit/ui_screen_manager.c
+@@ -593,7 +593,7 @@ static ui_screen_t *open_screen_intern(char *disp_name
+     }
+ 
+     if (!ui_display_show_root(disp, root, main_config.x, main_config.y, main_config.geom_hint,
+-                              main_config.app_name, main_config.parent_window)) {
++                              main_config.app_name, (Window)main_config.parent_window)) {
+ #ifdef DEBUG
+       bl_warn_printf(BL_DEBUG_TAG " ui_display_show_root() failed.\n");
+ #endif
