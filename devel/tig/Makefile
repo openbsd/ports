@@ -1,6 +1,6 @@
 COMMENT =	ncurses Git repository browser
 
-V =		2.5.7
+V =		2.5.8
 DISTNAME =	tig-$V
 
 CATEGORIES =	devel
