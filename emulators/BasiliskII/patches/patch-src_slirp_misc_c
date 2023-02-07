@@ -1,0 +1,13 @@
+Prototype for strdup() to avoid triggering -Wint-conversion with clang 15
+
+Index: src/slirp/misc.c
+--- src/slirp/misc.c.orig
++++ src/slirp/misc.c
+@@ -7,6 +7,7 @@
+ 
+ #define WANT_SYS_IOCTL_H
+ #include <slirp.h>
++#include <string.h>
+ 
+ u_int curtime, time_fasttimo, last_slowtimo, detach_time;
+ u_int detach_wait = 600000;	/* 10 minutes */

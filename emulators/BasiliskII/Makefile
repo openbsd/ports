@@ -4,10 +4,10 @@ COMMENT=		open source 68k Macintosh emulator
 
 DISTNAME=		BasiliskII_src_01052006
 PKGNAME=		BasiliskII-1.0
-REVISION=		12
+REVISION=		13
 CATEGORIES=		emulators
 
-HOMEPAGE=		http://basilisk.cebix.net/
+HOMEPAGE=		https://basilisk.cebix.net/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
