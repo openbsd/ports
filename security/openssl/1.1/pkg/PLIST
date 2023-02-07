@@ -1,8 +1,8 @@
 @option no-default-conflict
 @option is-branch
-@pkgpath security/openssl/1.0.2
 @conflict openssl->=1.1.0,<1.2
 @conflict openssl->=1.1.0v0,<1.2v0
+@pkgpath security/openssl/1.0.2
 bin/c_rehash11
 @bin bin/eopenssl11
 include/eopenssl11/
