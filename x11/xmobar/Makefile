@@ -1,4 +1,5 @@
 COMMENT =		minimalistic text based status bar
+REVISION =		0
 
 MODCABAL_STEM =		xmobar
 MODCABAL_VERSION =	0.43

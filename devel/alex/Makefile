@@ -1,4 +1,5 @@
 COMMENT =	lexical analyser generator for Haskell
+REVISION =	0
 
 MODCABAL_STEM 		= alex
 MODCABAL_VERSION	= 3.2.7.1

@@ -2,7 +2,7 @@ COMMENT =	ctags-like tool for Haskell sources
 
 MODCABAL_STEM =		hasktags
 MODCABAL_VERSION =	0.72.0
-REVISION =		0
+REVISION =		1
 CATEGORIES =	devel
 
 MAINTAINER =	Matthias Kilian <kili@openbsd.org>

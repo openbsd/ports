@@ -3,7 +3,7 @@ COMMENT =		advanced revision control system written in Haskell
 MODCABAL_STEM =		darcs
 MODCABAL_VERSION =	2.16.5
 CATEGORIES =		devel
-REVISION =		0
+REVISION =		1
 HOMEPAGE =		http://www.darcs.net/
 
 WANTLIB =		c charset curl>=2 curses ffi gmp iconv m \

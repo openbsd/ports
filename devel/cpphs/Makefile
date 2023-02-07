@@ -4,7 +4,7 @@ MODCABAL_STEM =		cpphs
 MODCABAL_VERSION	= 1.20.9.1
 MODCABAL_REVISION	= 1
 MODCABAL_MANIFEST	= polyparse	1.13	4
-REVISION =		1
+REVISION =		2
 CATEGORIES =		devel
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
 

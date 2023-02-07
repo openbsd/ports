@@ -5,7 +5,7 @@ V =		0.1.20210825
 GH_ACCOUNT = 	phadej
 GH_COMMIT =	bb82ebb7fdaa939c27762e10cb4cad49249b553f
 GH_PROJECT =	cabal-extras
-REVISION =	0
+REVISION =	1
 
 # Overrides cabal.port.mk which would otherwise preempt bsd.port.mk
 DISTNAME =	${GH_PROJECT}-${V}

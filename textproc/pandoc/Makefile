@@ -1,5 +1,6 @@
 
 COMMENT =	convert between markup and document formats
+REVISION =	0
 
 CATEGORIES =	converters textproc
 

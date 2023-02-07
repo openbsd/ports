@@ -1,4 +1,5 @@
 COMMENT =	use git to manage files without checking them in
+REVISION =	0
 
 CATEGORIES =	devel
 HOMEPAGE =	https://git-annex.branchable.com/
