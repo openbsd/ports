@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.420 2023/01/31 02:00:03 aisha Exp $
+$OpenBSD: user.list,v 1.421 2023/02/07 12:06:08 robert Exp $
 
 This file lists all users and groups that are created by ports. All
 ports' users/groups have to start with an underscore and have to use
@@ -397,3 +397,5 @@ id  user		group		port
 886 _eduvpn		_eduvpn		net/eduvpn
 887 _endlessh		_endlessh	net/endlessh
 888 _epmd		_epmd		lang/erlang/25
+889 _gromox		_gromox		mail/grommunio/gromox
+890 _grommunio		_grommunio	mail/grommunio/grommunio-admin-api
