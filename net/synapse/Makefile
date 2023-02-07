@@ -1,6 +1,6 @@
 COMMENT =	open network for secure, decentralized communication
 
-MODPY_EGG_VERSION =	1.75.0
+MODPY_EGG_VERSION =	1.76.0
 
 GH_ACCOUNT =	matrix-org
 GH_PROJECT =	synapse
@@ -59,6 +59,9 @@ RUN_DEPENDS =	devel/py-jsonschema${MODPY_FLAVOR}>=3.0.0 \
 		textproc/py-ijson${MODPY_FLAVOR} \
 		devel/py-matrix-common${MODPY_FLAVOR}>=1.3.0,<2.0.0 \
 		sysutils/py-packaging${MODPY_FLAVOR}
+# still relying on pkg_resources, see comments in
+# https://github.com/matrix-org/synapse/pull/12542
+RUN_DEPENDS +=	devel/py-setuptools${MODPY_FLAVOR}
 # optional section
 RUN_DEPENDS +=	textproc/py-lxml${MODPY_FLAVOR}
 # not listed but used in some scripts/ files

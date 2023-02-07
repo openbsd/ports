@@ -31,7 +31,7 @@ SHA256 (cargo/pyo3-macros-backend-0.17.3.tar.gz) = yN+b6Xii0vDN66uwMgbtc7ETFHAaW
 SHA256 (cargo/pythonize-0.17.0.tar.gz) = D38ME29fvAGGgYXu9GKADkllnrI6zKg7nohDZ6AGrLY=
 SHA256 (cargo/quote-1.0.21.tar.gz) = u+RI83en1pYeMPWVX5uNEGw/XkSdST7hsSXB1DwrUXk=
 SHA256 (cargo/redox_syscall-0.2.16.tar.gz) = +1pYwYVbS2gZ1ZASFVYD8LIq0wytdSYAqt/LaVJlUZo=
-SHA256 (cargo/regex-1.7.0.tar.gz) = 4HZVnvjiQfKuNHnjb5e9V0HAMwaJ4hetUc4sdoCLhoo=
+SHA256 (cargo/regex-1.7.1.tar.gz) = SKqldIulcfuVzSyFwJ9ikhXTpuzpQrqhAJUK8Do09zM=
 SHA256 (cargo/regex-syntax-0.6.27.tar.gz) = o/h7c84RsWGaPGMy9FNB4ARxc3cei4tz+Hv+77e1YkQ=
 SHA256 (cargo/ryu-1.0.11.tar.gz) = RQGr3/OugqHBtHehclLrac7p5m65FcGrqk9E2HPfnwk=
 SHA256 (cargo/scopeguard-1.1.0.tar.gz) = 0pqwxtP8Dukv5m4tmfcA6rF6jVfRwdO3SDgPsguqeM0=
@@ -52,7 +52,7 @@ SHA256 (cargo/windows_i686_gnu-0.36.1.tar.gz) = GA5szwHa9MQmuEbfxm2x/FGPB0uqeTqn
 SHA256 (cargo/windows_i686_msvc-0.36.1.tar.gz) = 4ueRcUiygS0e6vrrIql+SBPfpgo/j3jr4gS8yI8S8CQ=
 SHA256 (cargo/windows_x86_64_gnu-0.36.1.tar.gz) = Tc0XG4d2xBuXUh5doSei2GrSgBFIB9Cyqx5GK8dk2eE=
 SHA256 (cargo/windows_x86_64_msvc-0.36.1.tar.gz) = yBHKSoyFPvQgq9hZK6U927rJBBD6tpA7PnmXKmMfdoA=
-SHA256 (synapse-1.75.0.tar.gz) = i2ams2ydm56VLWsGFpJTQ959cxNpmYQgLP5pKHuYX7c=
+SHA256 (synapse-1.76.0.tar.gz) = xyMghQRVtVTAoJFXe8Ev6c/jNt/RN9LL9DQhRvtkQrM=
 SIZE (cargo/aho-corasick-0.7.19.tar.gz) = 113070
 SIZE (cargo/anyhow-1.0.68.tar.gz) = 43882
 SIZE (cargo/arc-swap-1.5.1.tar.gz) = 66157
@@ -86,7 +86,7 @@ SIZE (cargo/pyo3-macros-backend-0.17.3.tar.gz) = 49992
 SIZE (cargo/pythonize-0.17.0.tar.gz) = 10949
 SIZE (cargo/quote-1.0.21.tar.gz) = 28030
 SIZE (cargo/redox_syscall-0.2.16.tar.gz) = 24012
-SIZE (cargo/regex-1.7.0.tar.gz) = 239421
+SIZE (cargo/regex-1.7.1.tar.gz) = 239648
 SIZE (cargo/regex-syntax-0.6.27.tar.gz) = 297300
 SIZE (cargo/ryu-1.0.11.tar.gz) = 47007
 SIZE (cargo/scopeguard-1.1.0.tar.gz) = 11470
@@ -107,4 +107,4 @@ SIZE (cargo/windows_i686_gnu-0.36.1.tar.gz) = 818115
 SIZE (cargo/windows_i686_msvc-0.36.1.tar.gz) = 724575
 SIZE (cargo/windows_x86_64_gnu-0.36.1.tar.gz) = 790934
 SIZE (cargo/windows_x86_64_msvc-0.36.1.tar.gz) = 661999
-SIZE (synapse-1.75.0.tar.gz) = 8136760
+SIZE (synapse-1.76.0.tar.gz) = 8159151

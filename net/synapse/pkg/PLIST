@@ -1917,6 +1917,8 @@ lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/73/22
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/73/22_un_partial_stated_event_stream.sql
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/73/23_fix_thread_index.sql
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/73/23_un_partial_stated_room_stream_seq.sql.postgres
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/73/24_events_jump_to_date_index.sql
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/73/25drop_presence.sql
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/73/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/73/${MODPY_PYCACHE}10_update_sqlite_fts4_tokenizer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/73/${MODPY_PYCACHE}10_update_sqlite_fts4_tokenizer.${MODPY_PYC_MAGIC_TAG}pyc
