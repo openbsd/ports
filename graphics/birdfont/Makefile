@@ -1,7 +1,7 @@
 COMMENT =	free font editor for TTF, EOT, and SVG fonts
 
 DISTNAME =	birdfont-2.29.4
-REVISION =	5
+REVISION =	6
 CATEGORIES =	graphics print
 
 SHARED_LIBS +=	birdfont			17.0 # 2.11.7

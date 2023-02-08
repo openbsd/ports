@@ -1,0 +1,24 @@
+Fix incorrect return value. Fixed upstream as part of this:
+https://github.com/johanmattssonm/birdfont/commit/5ef2185b5a7d1e52b6d2a25973cd798d9615c5a7
+
+Index: libbirdfont/OpenFontFormat/load_font.c
+--- libbirdfont/OpenFontFormat/load_font.c.orig
++++ libbirdfont/OpenFontFormat/load_font.c
+@@ -1250,7 +1250,7 @@ gboolean get_freetype_font_is_regular (const char* fil
+ 	
+ 	if (error != OK) {
+ 		g_warning ("Freetype init error %d.\n", error);
+-		return NULL;
++		return FALSE;
+ 	}
+ 
+ 	gchar* short_path = calloc ((2048 + 1), sizeof(gchar));
+@@ -1267,7 +1267,7 @@ gboolean get_freetype_font_is_regular (const char* fil
+ 		g_warning ("Can't open file %s",  file);
+ 		g_warning ("Short path: %s",  short_path);
+ 		
+-		return NULL;
++		return FALSE;
+ 	}
+ 	
+ 	if (font == NULL || font->face == NULL || font->library == NULL) {
