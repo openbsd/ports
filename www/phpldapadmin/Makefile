@@ -6,6 +6,7 @@ GH_ACCOUNT=	leenooks
 GH_TAGNAME=	1.2.6.4
 GH_PROJECT=	phpLDAPadmin
 DISTNAME=	phpldapadmin-${GH_TAGNAME}
+REVISION=	0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

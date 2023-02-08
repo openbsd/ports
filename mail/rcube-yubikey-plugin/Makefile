@@ -4,7 +4,7 @@ GH_ACCOUNT=	northox
 GH_PROJECT=	roundcube-yubikey-plugin
 GH_TAGNAME=	1.4
 PKGNAME=	${DISTNAME:S/roundcube/rcube/}
-REVISION=	6
+REVISION=	7
 
 CATEGORIES=	mail www
 

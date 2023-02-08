@@ -4,7 +4,7 @@ COMMENT-utils=	utilities for managing pear extensions
 # XXX beware! update-plist will try to get rid of a required .lock file!
 
 VERSION=	1.10.19
-REVISION=	2
+REVISION=	3
 DISTNAME=	go-pear-${VERSION}
 PKGNAME=	pear-${VERSION}
 DISTFILES=	go-pear-${VERSION}{go-pear}.phar

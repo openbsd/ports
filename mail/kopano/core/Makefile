@@ -10,6 +10,7 @@ EPOCH=		0
 
 REVISION=	2
 REVISION-main=	4
+REVISION-mapi=	3
 
 CATEGORIES=	mail www productivity
 

@@ -2,7 +2,7 @@ COMMENT =	CalDAV/CardDav calendar/contacts server
 
 DISTNAME =	davical_1.1.10.orig
 PKGNAME =	davical-1.1.10
-REVISION =	0
+REVISION =	1
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	productivity net
 

@@ -4,7 +4,7 @@ GH_ACCOUNT=	brenard
 GH_PROJECT=	ldapAliasSync
 GH_COMMIT=	73f9644eb181f39aa98ca5e173d3b2e74155bf7b
 DISTNAME=	rcube-ldapAliasSync-20170701
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	mail www
 

@@ -4,6 +4,7 @@ COMMENT=	auto-discovering network management/monitoring system
 GH_ACCOUNT=	librenms
 GH_PROJECT=	librenms
 GH_TAGNAME=	23.1.1
+REVISION=	0
 
 DISTFILES=	${GH_DISTFILE} \
 		${PKGNAME}-vendor.tar.xz:0
@@ -23,6 +24,8 @@ MASTER_SITES0=	https://spacehopper.org/mirrors/
 MODULES=	lang/php \
 		lang/python
 MODPY_BUILDDEP= No
+# requires 8.1+; sparc64 is 8.0-only so setting MODPHP_VERSION
+# here makes sure this is knocked out on sparc64
 MODPHP_VERSION=	8.1
 
 RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-curl \

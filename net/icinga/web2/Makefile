@@ -4,6 +4,7 @@ GH_ACCOUNT =	Icinga
 GH_PROJECT =	icingaweb2
 GH_TAGNAME =	v2.11.4
 PKGNAME =	icinga-web2-${GH_TAGNAME:S/v//}
+REVISION =	0
 
 MODULES=	lang/php
 

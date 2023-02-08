@@ -3,6 +3,7 @@ COMMENT=	VPN management server node
 V=		3.0.2
 DISTNAME=	vpn-server-node-$V
 # Debian packaging in https://git.sr.ht/~fkooman/vpn-server-node.deb/tree
+REVISION=	0
 
 # AGPL-3.0
 PERMIT_PACKAGE=	Yes

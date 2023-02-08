@@ -5,6 +5,7 @@ MASTER_SITES0=	https://spacehopper.org/mirrors/
 DISTNAME=	vpn-user-portal-$V
 DISTFILES=	${DISTNAME}.tar.xz ${DISTNAME}-vendor.tar.xz:0
 # Debian packaging in https://git.sr.ht/~fkooman/vpn-user-portal.deb/tree
+REVISION=	0
 
 # AGPL-3.0
 PERMIT_PACKAGE=	Yes
