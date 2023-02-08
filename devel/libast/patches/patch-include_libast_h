@@ -1,0 +1,15 @@
+Index: include/libast.h
+--- include/libast.h.orig
++++ include/libast.h
+@@ -315,9 +315,9 @@ extern int re_exec();
+ #ifndef NAN
+ #  ifdef MAX_FLOAT
+ #    define NAN MAX_FLOAT
+-#  elsif defined(MAXFLOAT)
++#  elif defined(MAXFLOAT)
+ #    define NAN MAX_FLOAT
+-#  elsif defined(HUGE)
++#  elif defined(HUGE)
+ #    define NAN HUGE
+ #  else
+ /* FIXME:  This could be dangerous...anyone have a better idea? */

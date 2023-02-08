@@ -2,7 +2,7 @@ COMMENT=		library of assorted spiffy things
 
 DISTNAME=		libast-0.7
 PKGNAME=		${DISTNAME}
-REVISION =		8
+REVISION =		9
 SHARED_LIBS +=	ast                  3.0      # .2.1
 CATEGORIES=		devel
 
