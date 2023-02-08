@@ -1,0 +1,23 @@
+64bit time_t
+
+Index: backend/u12.c
+--- backend/u12.c.orig
++++ backend/u12.c
+@@ -202,7 +202,7 @@ static SANE_Status drvClose( U12_Device *dev )
+ 	    DBG( _DBG_INFO, "drvClose()\n" );
+ 
+ 		if( 0 != tsecs ) {
+-			DBG( _DBG_INFO, "TIME END 1: %lus\n", time(NULL)-tsecs);
++			DBG( _DBG_INFO, "TIME END 1: %llds\n", time(NULL)-tsecs);
+ 		}
+ 
+ 		/* don't check the return values, simply do it */
+@@ -437,7 +437,7 @@ static SANE_Status do_cancel( U12_Scanner *scanner, SA
+ 	drvClose( scanner->hw );
+ 
+ 	if( tsecs != 0 ) {
+-		DBG( _DBG_INFO, "TIME END 2: %lus\n", time(NULL)-tsecs);
++		DBG( _DBG_INFO, "TIME END 2: %llds\n", time(NULL)-tsecs);
+ 		tsecs = 0;
+ 	}
+ 

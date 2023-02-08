@@ -35,7 +35,7 @@ Index: backend/canon-sane.c
  
  	      if (dtime < rt)
  		{
-@@ -2163,7 +2165,7 @@ sane_read (SANE_Handle handle, SANE_Byte *buf, SANE_In
+@@ -2142,7 +2144,7 @@ sane_read (SANE_Handle handle, SANE_Byte *buf, SANE_In
    else
      time (&(s->time0));
  

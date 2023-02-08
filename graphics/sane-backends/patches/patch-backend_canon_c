@@ -3,7 +3,7 @@
 Index: backend/canon.c
 --- backend/canon.c.orig
 +++ backend/canon.c
-@@ -1086,7 +1086,7 @@ do_cancel (CANON_Scanner * s)
+@@ -1102,7 +1102,7 @@ do_cancel (CANON_Scanner * s)
  	  s->reset_flag = 0;
  	  DBG (21, "do_cancel: reset_flag = %d\n", s->reset_flag);
  	  s->time0 = -1;

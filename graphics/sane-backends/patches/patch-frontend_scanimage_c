@@ -1,11 +1,12 @@
 Index: frontend/scanimage.c
 --- frontend/scanimage.c.orig
 +++ frontend/scanimage.c
-@@ -39,6 +39,7 @@
- #include <string.h>
+@@ -40,7 +40,7 @@
  #include <unistd.h>
  #include <stdarg.h>
-+#include <libgen.h> /* basename(3) */
  
- #include <sys/types.h>
- #include <sys/stat.h>
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ #include <libgen.h>
+ #endif
+ 

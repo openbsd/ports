@@ -252,9 +252,6 @@ share/doc/sane-backends/niash/
 share/doc/sane-backends/niash/niash.TODO
 share/doc/sane-backends/plustek/
 share/doc/sane-backends/plustek/FAQ
-share/doc/sane-backends/plustek/MakeModule.sh
-share/doc/sane-backends/plustek/Makefile.kernel24
-share/doc/sane-backends/plustek/Makefile.kernel26
 share/doc/sane-backends/plustek/Plustek-PARPORT-TODO.txt
 share/doc/sane-backends/plustek/Plustek-PARPORT.changes
 share/doc/sane-backends/plustek/Plustek-PARPORT.txt
