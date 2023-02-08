@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1495 2023/02/06 16:49:12 tb Exp $
+# $OpenBSD: Quirks.pm,v 1.1496 2023/02/08 16:40:19 op Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1783,6 +1783,11 @@ setup_obsolete_reason(
 	6 => 'go-net',
 	6 => 'go-goptlib',
 	0 => 'xco',
+	6 => 'go-sys',
+	6 => 'go-crypto',
+	6 => 'go-ed25519',
+	6 => 'go-siphash',
+	6 => 'go-text',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
