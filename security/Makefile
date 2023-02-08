@@ -59,9 +59,6 @@
      SUBDIR += ghidra
      SUBDIR += gnupg
      SUBDIR += gnutls
-     SUBDIR += go-crypto
-     SUBDIR += go-ed25519
-     SUBDIR += go-siphash
      SUBDIR += gobuster
      SUBDIR += gopass
      SUBDIR += gosec
