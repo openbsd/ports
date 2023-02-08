@@ -1,7 +1,7 @@
 Index: gcc/Makefile.in
 --- gcc/Makefile.in.orig
 +++ gcc/Makefile.in
-@@ -3630,13 +3630,7 @@ install-driver: installdirs xgcc$(exeext)
+@@ -3784,13 +3784,7 @@ install-driver: installdirs xgcc$(exeext)
  # Install the info files.
  # $(INSTALL_DATA) might be a relative pathname, so we can't cd into srcdir
  # to do the install.
@@ -16,15 +16,15 @@ Index: gcc/Makefile.in
  
  $(DESTDIR)$(infodir)/%.info: doc/%.info installdirs
  	rm -f $@
-@@ -3690,10 +3684,7 @@ install-man: lang.install-man \
- 	$(DESTDIR)$(man1dir)/$(CPP_INSTALL_NAME)$(man1ext) \
+@@ -3857,10 +3851,7 @@ install-man: lang.install-man \
  	$(DESTDIR)$(man1dir)/$(GCOV_INSTALL_NAME)$(man1ext) \
  	$(DESTDIR)$(man1dir)/$(GCOV_TOOL_INSTALL_NAME)$(man1ext) \
--	$(DESTDIR)$(man1dir)/$(GCOV_DUMP_INSTALL_NAME)$(man1ext) \
+ 	$(DESTDIR)$(man1dir)/$(GCOV_DUMP_INSTALL_NAME)$(man1ext) \
+-	$(if $(filter yes,@enable_lto@),$(DESTDIR)$(man1dir)/$(LTO_DUMP_INSTALL_NAME)$(man1ext)) \
 -	$(DESTDIR)$(man7dir)/fsf-funding$(man7ext) \
 -	$(DESTDIR)$(man7dir)/gfdl$(man7ext) \
 -	$(DESTDIR)$(man7dir)/gpl$(man7ext)
-+	$(DESTDIR)$(man1dir)/$(GCOV_DUMP_INSTALL_NAME)$(man1ext)
++	$(if $(filter yes,@enable_lto@),$(DESTDIR)$(man1dir)/$(LTO_DUMP_INSTALL_NAME)$(man1ext))
  
  $(DESTDIR)$(man7dir)/%$(man7ext): doc/%.7 installdirs
  	-rm -f $@
