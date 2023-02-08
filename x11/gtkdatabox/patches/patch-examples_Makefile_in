@@ -1,9 +1,15 @@
 XXX make it compile with gtk+2 2.22 (*_DISABLE_DEPRECATED)
 basics.c:116: error: lvalue required as left operand of assignment
 
---- examples/Makefile.in.orig	Thu Sep 30 07:43:59 2010
-+++ examples/Makefile.in	Thu Sep 30 07:44:05 2010
-@@ -285,7 +285,6 @@ AM_CFLAGS = \
+Index: examples/Makefile.in
+--- examples/Makefile.in.orig
++++ examples/Makefile.in
+@@ -280,12 +280,10 @@ INCLUDES = \
+ 			-I$(top_srcdir)/gtk
+ 
+ AM_CFLAGS = \
+-			-O2\
+ 			-W -Wall -pedantic\
  			-DG_DISABLE_DEPRECATED\
  			-DGDK_DISABLE_DEPRECATED\
  			-DGDK_PIXBUF_DISABLE_DEPRECATED\

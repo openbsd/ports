@@ -1,5 +1,6 @@
---- gtk/Makefile.in.orig	Mon May 11 02:57:46 2009
-+++ gtk/Makefile.in	Wed Apr 28 16:47:29 2010
+Index: gtk/Makefile.in
+--- gtk/Makefile.in.orig
++++ gtk/Makefile.in
 @@ -231,7 +231,6 @@ libgtkdatabox_la_SOURCES = \
  
  libgtkdatabox_la_LDFLAGS = \
@@ -8,9 +9,14 @@
  			@GTK_LIBS@
  
  include_HEADERS = \
-@@ -260,7 +259,6 @@ AM_CFLAGS = \
+@@ -255,12 +254,9 @@ INCLUDES = \
+ 			-I$(top_srcdir)
+ 
+ AM_CFLAGS = \
+-			-O2\
+ 			-W -Wall -pedantic\
  			-DG_DISABLE_DEPRECATED\
- 			-DGDK_DISABLE_DEPRECATED\
+-			-DGDK_DISABLE_DEPRECATED\
  			-DGDK_PIXBUF_DISABLE_DEPRECATED\
 -			-DGTK_DISABLE_DEPRECATED\
  			-DGTK_MULTIHEAD_SAFE=1\
