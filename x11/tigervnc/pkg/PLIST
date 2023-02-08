@@ -18,11 +18,13 @@ share/doc/tigervnc/
 share/doc/tigervnc/HOWTO.md
 share/doc/tigervnc/LICENCE.TXT
 share/doc/tigervnc/README.rst
+share/icons/hicolor/128x128/apps/tigervnc.png
 share/icons/hicolor/16x16/apps/tigervnc.png
 share/icons/hicolor/22x22/apps/tigervnc.png
 share/icons/hicolor/24x24/apps/tigervnc.png
 share/icons/hicolor/32x32/apps/tigervnc.png
 share/icons/hicolor/48x48/apps/tigervnc.png
+share/icons/hicolor/64x64/apps/tigervnc.png
 share/icons/hicolor/scalable/apps/tigervnc.svg
 share/locale/bg/LC_MESSAGES/tigervnc.mo
 share/locale/cs/LC_MESSAGES/tigervnc.mo
@@ -38,10 +40,12 @@ share/locale/he/LC_MESSAGES/tigervnc.mo
 share/locale/hu/LC_MESSAGES/tigervnc.mo
 share/locale/id/LC_MESSAGES/tigervnc.mo
 share/locale/it/LC_MESSAGES/tigervnc.mo
+share/locale/ka/LC_MESSAGES/tigervnc.mo
 share/locale/ko/LC_MESSAGES/tigervnc.mo
 share/locale/nl/LC_MESSAGES/tigervnc.mo
 share/locale/pl/LC_MESSAGES/tigervnc.mo
 share/locale/pt_BR/LC_MESSAGES/tigervnc.mo
+share/locale/ro/LC_MESSAGES/tigervnc.mo
 share/locale/ru/LC_MESSAGES/tigervnc.mo
 share/locale/sk/LC_MESSAGES/tigervnc.mo
 share/locale/sr/LC_MESSAGES/tigervnc.mo
@@ -51,5 +55,7 @@ share/locale/uk/LC_MESSAGES/tigervnc.mo
 share/locale/vi/LC_MESSAGES/tigervnc.mo
 share/locale/zh_CN/LC_MESSAGES/tigervnc.mo
 share/locale/zh_TW/LC_MESSAGES/tigervnc.mo
+share/metainfo/
+share/metainfo/org.tigervnc.vncviewer.metainfo.xml
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor

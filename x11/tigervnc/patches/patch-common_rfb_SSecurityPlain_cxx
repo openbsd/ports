@@ -10,7 +10,7 @@ Index: common/rfb/SSecurityPlain.cxx
  #include <rfb/UnixPasswordValidator.h>
  #endif
  #ifdef WIN32
-@@ -64,7 +64,7 @@ SSecurityPlain::SSecurityPlain(SConnection* sc) : SSec
+@@ -68,7 +68,7 @@ SSecurityPlain::SSecurityPlain(SConnection* sc) : SSec
  {
  #ifdef WIN32
    valid = new WinPasswdValidator();

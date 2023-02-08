@@ -2,13 +2,11 @@ COMMENT=	high performance, multi-platform VNC client and server
 
 GH_ACCOUNT=	TigerVNC
 GH_PROJECT=	tigervnc
-GH_TAGNAME=	v1.12.0
-REVISION=	1
+GH_TAGNAME=	v1.13.0
 
 # update the post-patch target if moving to a new major branch of xorg-server
-# there's no patchset in tigervnc for xorg-server-21.1.1.tar.xz:0 yet
 DISTFILES=	${GH_DISTFILE} \
-		xorg-server-1.20.13.tar.xz:0
+		xorg-server-21.1.1.tar.xz:0
 
 CATEGORIES=	x11 net
 EPOCH=		0
@@ -22,10 +20,12 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += GL ICE SM X11 Xau Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xfont2 Xft Xi Xinerama Xrandr Xrender Xtst brotlidec
-WANTLIB += brotlienc c fltk fltk_images fontconfig fontenc freetype
-WANTLIB += gmp gnutls hogweed iconv idn2 intl jpeg kvm m nettle
-WANTLIB += p11-kit pixman-1 tasn1 unistring xcb xshmfence z zstd
+WANTLIB += Xfont2 Xft Xi Xinerama Xrandr Xrender Xtst avcodec
+WANTLIB += avutil brotlidec brotlienc c fltk fltk_images
+WANTLIB += fontconfig fontenc freetype gmp gnutls hogweed
+WANTLIB += iconv idn2 intl jpeg kvm m nettle p11-kit
+WANTLIB += pixman-1 swscale tasn1 unistring xcb xshmfence
+WANTLIB += z zstd
 
 MASTER_SITES0=	https://www.x.org/releases/individual/xserver/
 
@@ -33,7 +33,7 @@ MASTER_SITES0=	https://www.x.org/releases/individual/xserver/
 # dependencies) so fetch an old working one from the v1.10.1 tag.
 SCRIPTV=	1.10.1
 MASTER_SITES1=	https://raw.githubusercontent.com/TigerVNC/tigervnc/v${SCRIPTV}/unix/
-EXTRACT_ONLY=	${GH_DISTFILE} xorg-server-1.20.13.tar.xz
+EXTRACT_ONLY=	${GH_DISTFILE} xorg-server-21.1.1.tar.xz
 DISTFILES+=	tigervnc-vncserver-${SCRIPTV}.pl{vncserver}:1 \
 		tigervnc-vncserver-${SCRIPTV}.man{vncserver.man}:1
 
@@ -49,6 +49,9 @@ CONFIGURE_ARGS=	-DMAN_DIR="${TRUEPREFIX}/man" \
 		-DDOC_DIR="${TRUEPREFIX}/share/doc/tigervnc" \
 		-DCMAKE_INSTALL_FULL_SYSCONFDIR="${TRUEPREFIX}/share/examples/tigervnc" \
 		-DINSTALL_SYSTEMD_UNITS=OFF
+# ld: error: undefined symbol: vtable for rfb::UnixPasswordValidator
+# might need something more to enable nettle (sha/aes support) while pam is disabled?
+CONFIGURE_ARGS+= -DENABLE_NETTLE=OFF
 CFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
 CXXFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
 NO_TEST=	Yes
@@ -56,6 +59,7 @@ DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 BUILD_DEPENDS=	devel/gettext,-tools
 LIB_DEPENDS=	devel/gettext,-runtime \
+		graphics/ffmpeg \
 		security/gnutls \
 		x11/fltk
 RUN_DEPENDS=	devel/desktop-file-utils \
@@ -129,7 +133,7 @@ post-extract:
 	cp ${FULLDISTDIR}/tigervnc-vncserver-${SCRIPTV}.man ${WRKSRC}/vncserver.man
 
 post-patch:
-	patch -d ${WRKDIST}/unix/xserver/ -p1 < ${WRKDIST}/unix/xserver120.patch
+	patch -d ${WRKDIST}/unix/xserver/ -p1 < ${WRKDIST}/unix/xserver21.1.1.patch
 	cd ${WRKDIST}/unix/xserver; ${AUTOCONF_ENV} autoreconf -fiv -I ${X11BASE}/share/aclocal
 
 post-configure:

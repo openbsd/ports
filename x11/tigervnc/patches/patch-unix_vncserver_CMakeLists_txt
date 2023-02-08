@@ -6,7 +6,7 @@ Index: unix/vncserver/CMakeLists.txt
 @@ -1,3 +1,4 @@
 +if(HAVE_PAM_H)
  add_executable(vncsession vncsession.c)
- target_link_libraries(vncsession ${PAM_LIBS})
+ target_link_libraries(vncsession ${PAM_LIBS} ${SELINUX_LIBS})
  
 @@ -14,6 +15,7 @@ install(FILES vncserver.man DESTINATION ${CMAKE_INSTAL
  install(FILES vncserver-config-defaults vncserver-config-mandatory DESTINATION ${CMAKE_INSTALL_FULL_SYSCONFDIR}/tigervnc)

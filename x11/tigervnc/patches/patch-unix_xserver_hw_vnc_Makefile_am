@@ -1,12 +1,12 @@
 Index: unix/xserver/hw/vnc/Makefile.am
 --- unix/xserver/hw/vnc/Makefile.am.orig
 +++ unix/xserver/hw/vnc/Makefile.am
-@@ -45,7 +45,7 @@ Xvnc_CPPFLAGS = $(XVNC_CPPFLAGS) -DTIGERVNC -DNO_MODUL
- 	-I$(top_srcdir)/include ${XSERVERLIBS_CFLAGS}
+@@ -51,7 +51,7 @@ LOCAL_LIBS = \
+ 	$(COMMON_LIBS)
  
- Xvnc_LDADD = $(XVNC_LIBS) libvnccommon.la $(COMMON_LIBS) \
--	$(XSERVER_LIBS) $(XSERVER_SYS_LIBS) $(XVNC_SYS_LIBS) -lX11
-+	$(XSERVER_LIBS) $(XSERVER_SYS_LIBS) $(XVNC_SYS_LIBS) -lX11 -lgnutls -ljpeg
+ Xvnc_DEPENDENCIES = $(LOCAL_LIBS)
+-Xvnc_LDADD = $(LOCAL_LIBS) $(XSERVER_SYS_LIBS) $(XVNC_SYS_LIBS) -lX11
++Xvnc_LDADD = $(LOCAL_LIBS) $(XSERVER_SYS_LIBS) $(XVNC_SYS_LIBS) -lX11 -lgnutls -ljpeg
  
  Xvnc_LDFLAGS = $(LD_EXPORT_SYMBOLS_FLAG)
  

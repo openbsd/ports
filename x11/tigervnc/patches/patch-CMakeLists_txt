@@ -1,7 +1,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -276,7 +276,7 @@ if(ENABLE_GNUTLS)
+@@ -284,7 +284,7 @@ if (ENABLE_NETTLE)
  endif()
  
  # Check for PAM library
