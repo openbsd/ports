@@ -4,15 +4,15 @@ COMMENT=	RISC-V Supervisor Binary Interface
 
 GH_ACCOUNT=	riscv
 GH_PROJECT=	opensbi
-GH_TAGNAME=	v0.9
-REVISION=	0
+GH_TAGNAME=	v1.2
 
 CATEGORIES=	sysutils
 
 # BSD
 PERMIT_PACKAGE=	Yes
 
-BUILD_DEPENDS+= devel/riscv-elf/gcc
+BUILD_DEPENDS+=	devel/riscv-elf/gcc \
+		shells/bash
 
 MAKE_ENV+= CROSS_COMPILE="riscv64-unknown-elf-"
 
