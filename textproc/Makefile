@@ -60,7 +60,6 @@
      SUBDIR += fzy
      SUBDIR += gdiff
      SUBDIR += gi-docgen
-     SUBDIR += go-text
      SUBDIR += gpresent
      SUBDIR += grepcidr
      SUBDIR += grepcidr3
