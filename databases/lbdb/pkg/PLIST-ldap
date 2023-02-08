@@ -1,6 +1,6 @@
 @conflict lbdb-0.35.1-ldap
+bin/mutt_ldap_query
 lib/lbdb/m_ldap
-lib/lbdb/mutt_ldap_query
 @man man/man1/mutt_ldap_query.1
 share/examples/lbdb/lbdb_ldap.rc
 @sample ${SYSCONFDIR}/lbdb_ldap.rc

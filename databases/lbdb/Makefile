@@ -1,14 +1,11 @@
 COMMENT-main =		"little brother's database", email address query tools
 COMMENT-ldap =		LDAP support for lbdb
 
-VERSION =		0.40
-REVISION =		0
-
-DISTNAME =		lbdb_${VERSION}
-PKGNAME =		lbdb-${VERSION}
+DISTNAME =		lbdb-0.51.1
 
 CATEGORIES =		databases mail
 
+# https://github.com/RolandRosenfeld/lbdb
 HOMEPAGE =		https://www.spinnaker.de/lbdb/
 
 MULTI_PACKAGES =	-main -ldap
@@ -22,7 +19,9 @@ MASTER_SITES =		https://www.spinnaker.de/lbdb/download/
 
 BUILD_DEPENDS =		${RUN_DEPENDS-main}
 LIB_DEPENDS-main =	converters/libiconv
-RUN_DEPENDS-main =	mail/abook
+RUN_DEPENDS-main =	mail/abook \
+			sysutils/ggrep \
+			textproc/gsed
 RUN_DEPENDS-ldap =	databases/p5-ldap \
 			databases/lbdb
 
@@ -50,6 +49,9 @@ CONFIGURE_ENV =		ac_cv_path_BASH=NONE \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 WRKDIST =		${WRKDIR}/${DISTNAME:S/_/-/}
+
+post-extract:
+	sed -i -e 's,grep,ggrep,g' -e 's,sed,gsed,g' ${WRKSRC}/*.sh.in
 
 post-install:
 	${INSTALL_DATA_DIR} ${WRKINST}/${TRUEPREFIX}/share/examples/lbdb

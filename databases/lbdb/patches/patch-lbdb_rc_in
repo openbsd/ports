@@ -1,6 +1,7 @@
---- lbdb.rc.in.orig	Tue Mar 11 22:51:52 2008
-+++ lbdb.rc.in	Tue Mar 11 22:52:05 2008
-@@ -51,8 +51,8 @@ METHODS="m_inmail m_passwd m_finger"
+Index: lbdb.rc.in
+--- lbdb.rc.in.orig
++++ lbdb.rc.in
+@@ -57,8 +57,8 @@ METHODS="m_inmail m_passwd m_finger"
  
  #
  # If it isn't possible to find out the correct mail domain name of

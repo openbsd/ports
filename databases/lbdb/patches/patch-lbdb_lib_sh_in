@@ -1,28 +1,12 @@
---- lbdb_lib.sh.in.orig	Sun Aug 13 10:53:21 2006
-+++ lbdb_lib.sh.in	Sat Oct 10 03:10:21 2009
-@@ -57,24 +57,7 @@ lbdb_hostname()
+Index: lbdb_lib.sh.in
+--- lbdb_lib.sh.in.orig
++++ lbdb_lib.sh.in
+@@ -53,6 +53,8 @@ lbdb_hostname()
+ 		hn=$MAIL_DOMAIN_NAME
  	elif test -f /etc/mailname; then
- 		hn=`cat /etc/mailname`
+ 		hn=$(cat /etc/mailname)
++	elif true; then
++		hn=$(hostname)
  	else
--		hn=""
--		if test -r /etc/resolv.conf ; then
--			hn="`sed -n -e 's/^[ 	]*domain[ 	]\{1,\}\([^ ]*\)/\1/p' /etc/resolv.conf`"
--			if test "x$hn" = "x" ; then
--				hn="`sed -n -e 's/^[ 	]*search[ 	]\{1,\}\([^ ]*\)/\1/p' /etc/resolv.conf`"
--			fi
--		fi
--		if test "x$hn" = "x" ; then
--			hn=`lbdb_hn_sendmail`
--			if test "x$hn" = "xNONE" ; then
--				for i in /etc/HOSTNAME /etc/hostname ; do
--					if test -f $i ; then
--						hn="`cat $i`"
--						break;
--					fi
--				done
--			fi
--		fi
-+		hn=`hostname`
- 	fi
- 	echo "$hn"
- }
+ 		hn=""
+ 		if test -r /etc/resolv.conf ; then

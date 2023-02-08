@@ -21,7 +21,6 @@ lib/lbdb/m_pine
 lib/lbdb/m_wanderlust
 lib/lbdb/m_yppasswd
 lib/lbdb/munge
-lib/lbdb/munge-keeporder
 lib/lbdb/palm_lsaddr
 @bin lib/lbdb/qpto8bit
 lib/lbdb/tac
