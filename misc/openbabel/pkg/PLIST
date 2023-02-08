@@ -1,363 +1,324 @@
-@bin bin/babel
-@bin bin/obchiral
+@bin bin/obabel
 @bin bin/obconformer
 @bin bin/obenergy
 @bin bin/obfit
+@bin bin/obfitall
 @bin bin/obgen
 @bin bin/obgrep
 @bin bin/obminimize
+@bin bin/obmm
 @bin bin/obprobe
 @bin bin/obprop
 @bin bin/obrotamer
 @bin bin/obrotate
+@bin bin/obspectrophore
+@bin bin/obsym
+@bin bin/obtautomer
+@bin bin/obthermo
 @bin bin/roundtrip
-include/inchi102/
-include/inchi102/inchi_api.h
-include/openbabel-2.0/
-include/openbabel-2.0/openbabel/
-include/openbabel-2.0/openbabel/alias.h
-include/openbabel-2.0/openbabel/atom.h
-include/openbabel-2.0/openbabel/atomclass.h
-include/openbabel-2.0/openbabel/babelconfig.h
-include/openbabel-2.0/openbabel/base.h
-include/openbabel-2.0/openbabel/bitvec.h
-include/openbabel-2.0/openbabel/bond.h
-include/openbabel-2.0/openbabel/bondtyper.h
-include/openbabel-2.0/openbabel/builder.h
-include/openbabel-2.0/openbabel/canon.h
-include/openbabel-2.0/openbabel/chains.h
-include/openbabel-2.0/openbabel/chemdrawcdx.h
-include/openbabel-2.0/openbabel/chiral.h
-include/openbabel-2.0/openbabel/data.h
-include/openbabel-2.0/openbabel/descriptor.h
-include/openbabel-2.0/openbabel/dlhandler.h
-include/openbabel-2.0/openbabel/fingerprint.h
-include/openbabel-2.0/openbabel/forcefield.h
-include/openbabel-2.0/openbabel/format.h
-include/openbabel-2.0/openbabel/generic.h
-include/openbabel-2.0/openbabel/grid.h
-include/openbabel-2.0/openbabel/griddata.h
-include/openbabel-2.0/openbabel/groupcontrib.h
-include/openbabel-2.0/openbabel/internalcoord.h
-include/openbabel-2.0/openbabel/kinetics.h
-include/openbabel-2.0/openbabel/lineend.h
-include/openbabel-2.0/openbabel/locale.h
-include/openbabel-2.0/openbabel/math/
-include/openbabel-2.0/openbabel/math/matrix3x3.h
-include/openbabel-2.0/openbabel/math/spacegroup.h
-include/openbabel-2.0/openbabel/math/transform3d.h
-include/openbabel-2.0/openbabel/math/vector3.h
-include/openbabel-2.0/openbabel/matrix.h
-include/openbabel-2.0/openbabel/mol.h
-include/openbabel-2.0/openbabel/molchrg.h
-include/openbabel-2.0/openbabel/obconversion.h
-include/openbabel-2.0/openbabel/oberror.h
-include/openbabel-2.0/openbabel/obiter.h
-include/openbabel-2.0/openbabel/obmolecformat.h
-include/openbabel-2.0/openbabel/obutil.h
-include/openbabel-2.0/openbabel/op.h
-include/openbabel-2.0/openbabel/optransform.h
-include/openbabel-2.0/openbabel/parsmart.h
-include/openbabel-2.0/openbabel/patty.h
-include/openbabel-2.0/openbabel/phmodel.h
-include/openbabel-2.0/openbabel/plugin.h
-include/openbabel-2.0/openbabel/pointgroup.h
-include/openbabel-2.0/openbabel/rand.h
-include/openbabel-2.0/openbabel/reaction.h
-include/openbabel-2.0/openbabel/residue.h
-include/openbabel-2.0/openbabel/ring.h
-include/openbabel-2.0/openbabel/rotamer.h
-include/openbabel-2.0/openbabel/rotor.h
-include/openbabel-2.0/openbabel/tokenst.h
-include/openbabel-2.0/openbabel/typer.h
-include/openbabel-2.0/openbabel/xml.h
-lib/libopenbabel.a
-lib/libopenbabel.la
+include/coordgen/
+include/coordgen/CoordgenConfig.hpp
+include/coordgen/CoordgenFragmentBuilder.h
+include/coordgen/CoordgenFragmenter.h
+include/coordgen/CoordgenMacrocycleBuilder.h
+include/coordgen/CoordgenMinimizer.h
+include/coordgen/sketcherMinimizer.h
+include/coordgen/sketcherMinimizerAtom.h
+include/coordgen/sketcherMinimizerBendInteraction.h
+include/coordgen/sketcherMinimizerBond.h
+include/coordgen/sketcherMinimizerClashInteraction.h
+include/coordgen/sketcherMinimizerEZConstrainInteraction.h
+include/coordgen/sketcherMinimizerFragment.h
+include/coordgen/sketcherMinimizerInteraction.h
+include/coordgen/sketcherMinimizerMarchingSquares.h
+include/coordgen/sketcherMinimizerMaths.h
+include/coordgen/sketcherMinimizerMolecule.h
+include/coordgen/sketcherMinimizerResidue.h
+include/coordgen/sketcherMinimizerResidueInteraction.h
+include/coordgen/sketcherMinimizerRing.h
+include/coordgen/sketcherMinimizerStretchInteraction.h
+include/inchi/
+include/inchi/inchi_api.h
+include/maeparser/
+include/maeparser/Buffer.hpp
+include/maeparser/MaeBlock.hpp
+include/maeparser/MaeConstants.hpp
+include/maeparser/MaeParser.hpp
+include/maeparser/MaeParserConfig.hpp
+include/maeparser/Reader.hpp
+include/maeparser/Writer.hpp
+include/openbabel3/
+include/openbabel3/openbabel/
+include/openbabel3/openbabel/alias.h
+include/openbabel3/openbabel/atom.h
+include/openbabel3/openbabel/babelconfig.h
+include/openbabel3/openbabel/base.h
+include/openbabel3/openbabel/bitvec.h
+include/openbabel3/openbabel/bond.h
+include/openbabel3/openbabel/bondtyper.h
+include/openbabel3/openbabel/builder.h
+include/openbabel3/openbabel/canon.h
+include/openbabel3/openbabel/chains.h
+include/openbabel3/openbabel/chargemodel.h
+include/openbabel3/openbabel/chemdrawcdx.h
+include/openbabel3/openbabel/conformersearch.h
+include/openbabel3/openbabel/data.h
+include/openbabel3/openbabel/data_utilities.h
+include/openbabel3/openbabel/depict/
+include/openbabel3/openbabel/depict/asciipainter.h
+include/openbabel3/openbabel/depict/cairopainter.h
+include/openbabel3/openbabel/depict/commandpainter.h
+include/openbabel3/openbabel/depict/depict.h
+include/openbabel3/openbabel/depict/painter.h
+include/openbabel3/openbabel/depict/svgpainter.h
+include/openbabel3/openbabel/descriptor.h
+include/openbabel3/openbabel/distgeom.h
+include/openbabel3/openbabel/dlhandler.h
+include/openbabel3/openbabel/elements.h
+include/openbabel3/openbabel/fingerprint.h
+include/openbabel3/openbabel/forcefield.h
+include/openbabel3/openbabel/format.h
+include/openbabel3/openbabel/generic.h
+include/openbabel3/openbabel/graphsym.h
+include/openbabel3/openbabel/grid.h
+include/openbabel3/openbabel/griddata.h
+include/openbabel3/openbabel/groupcontrib.h
+include/openbabel3/openbabel/inchiformat.h
+include/openbabel3/openbabel/internalcoord.h
+include/openbabel3/openbabel/isomorphism.h
+include/openbabel3/openbabel/json.h
+include/openbabel3/openbabel/kekulize.h
+include/openbabel3/openbabel/kinetics.h
+include/openbabel3/openbabel/lineend.h
+include/openbabel3/openbabel/locale.h
+include/openbabel3/openbabel/math/
+include/openbabel3/openbabel/math/align.h
+include/openbabel3/openbabel/math/erf.h
+include/openbabel3/openbabel/math/matrix3x3.h
+include/openbabel3/openbabel/math/spacegroup.h
+include/openbabel3/openbabel/math/transform3d.h
+include/openbabel3/openbabel/math/vector3.h
+include/openbabel3/openbabel/matrix.h
+include/openbabel3/openbabel/mcdlutil.h
+include/openbabel3/openbabel/mol.h
+include/openbabel3/openbabel/molchrg.h
+include/openbabel3/openbabel/obconversion.h
+include/openbabel3/openbabel/oberror.h
+include/openbabel3/openbabel/obfunctions.h
+include/openbabel3/openbabel/obiter.h
+include/openbabel3/openbabel/obmolecformat.h
+include/openbabel3/openbabel/obutil.h
+include/openbabel3/openbabel/op.h
+include/openbabel3/openbabel/optransform.h
+include/openbabel3/openbabel/parsmart.h
+include/openbabel3/openbabel/patty.h
+include/openbabel3/openbabel/phmodel.h
+include/openbabel3/openbabel/plugin.h
+include/openbabel3/openbabel/pointgroup.h
+include/openbabel3/openbabel/query.h
+include/openbabel3/openbabel/reaction.h
+include/openbabel3/openbabel/reactionfacade.h
+include/openbabel3/openbabel/residue.h
+include/openbabel3/openbabel/ring.h
+include/openbabel3/openbabel/rotamer.h
+include/openbabel3/openbabel/rotor.h
+include/openbabel3/openbabel/shared_ptr.h
+include/openbabel3/openbabel/spectrophore.h
+include/openbabel3/openbabel/stereo/
+include/openbabel3/openbabel/stereo/bindings.h
+include/openbabel3/openbabel/stereo/cistrans.h
+include/openbabel3/openbabel/stereo/squareplanar.h
+include/openbabel3/openbabel/stereo/stereo.h
+include/openbabel3/openbabel/stereo/tetrahedral.h
+include/openbabel3/openbabel/stereo/tetranonplanar.h
+include/openbabel3/openbabel/stereo/tetraplanar.h
+include/openbabel3/openbabel/tautomer.h
+include/openbabel3/openbabel/text.h
+include/openbabel3/openbabel/tokenst.h
+include/openbabel3/openbabel/typer.h
+include/openbabel3/openbabel/xml.h
+lib/cmake/coordgen-config${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/coordgen-config.cmake
+lib/cmake/maeparser-config${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/maeparser-config.cmake
+lib/cmake/openbabel3/
+lib/cmake/openbabel3/OpenBabel3Config.cmake
+lib/cmake/openbabel3/OpenBabel3ConfigVersion.cmake
+lib/cmake/openbabel3/OpenBabel3_EXPORTS${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/openbabel3/OpenBabel3_EXPORTS.cmake
+@lib lib/libcoordgen.so.${LIBcoordgen_VERSION}
+@lib lib/libinchi.so.${LIBinchi_VERSION}
+@lib lib/libmaeparser.so.${LIBmaeparser_VERSION}
 @lib lib/libopenbabel.so.${LIBopenbabel_VERSION}
 lib/openbabel/
 lib/openbabel/${V}/
-lib/openbabel/${V}/APIInterface.a
-lib/openbabel/${V}/APIInterface.la
-lib/openbabel/${V}/APIInterface.so
-lib/openbabel/${V}/CSRformat.a
-lib/openbabel/${V}/CSRformat.la
-lib/openbabel/${V}/CSRformat.so
-lib/openbabel/${V}/MCDLformat.a
-lib/openbabel/${V}/MCDLformat.la
-lib/openbabel/${V}/MCDLformat.so
-lib/openbabel/${V}/PQSformat.a
-lib/openbabel/${V}/PQSformat.la
-lib/openbabel/${V}/PQSformat.so
-lib/openbabel/${V}/acrformat.a
-lib/openbabel/${V}/acrformat.la
-lib/openbabel/${V}/acrformat.so
-lib/openbabel/${V}/adfformat.a
-lib/openbabel/${V}/adfformat.la
-lib/openbabel/${V}/adfformat.so
-lib/openbabel/${V}/alchemyformat.a
-lib/openbabel/${V}/alchemyformat.la
-lib/openbabel/${V}/alchemyformat.so
-lib/openbabel/${V}/amberformat.a
-lib/openbabel/${V}/amberformat.la
-lib/openbabel/${V}/amberformat.so
-lib/openbabel/${V}/balstformat.a
-lib/openbabel/${V}/balstformat.la
-lib/openbabel/${V}/balstformat.so
-lib/openbabel/${V}/bgfformat.a
-lib/openbabel/${V}/bgfformat.la
-lib/openbabel/${V}/bgfformat.so
-lib/openbabel/${V}/boxformat.a
-lib/openbabel/${V}/boxformat.la
-lib/openbabel/${V}/boxformat.so
-lib/openbabel/${V}/cacaoformat.a
-lib/openbabel/${V}/cacaoformat.la
-lib/openbabel/${V}/cacaoformat.so
-lib/openbabel/${V}/cacheformat.a
-lib/openbabel/${V}/cacheformat.la
-lib/openbabel/${V}/cacheformat.so
-lib/openbabel/${V}/carformat.a
-lib/openbabel/${V}/carformat.la
-lib/openbabel/${V}/carformat.so
-lib/openbabel/${V}/cccformat.a
-lib/openbabel/${V}/cccformat.la
-lib/openbabel/${V}/cccformat.so
-lib/openbabel/${V}/cdxmlformat.a
-lib/openbabel/${V}/cdxmlformat.la
-lib/openbabel/${V}/cdxmlformat.so
-lib/openbabel/${V}/chem3dformat.a
-lib/openbabel/${V}/chem3dformat.la
-lib/openbabel/${V}/chem3dformat.so
-lib/openbabel/${V}/chemdrawcdxformat.a
-lib/openbabel/${V}/chemdrawcdxformat.la
-lib/openbabel/${V}/chemdrawcdxformat.so
-lib/openbabel/${V}/chemdrawctformat.a
-lib/openbabel/${V}/chemdrawctformat.la
-lib/openbabel/${V}/chemdrawctformat.so
-lib/openbabel/${V}/chemkinformat.a
-lib/openbabel/${V}/chemkinformat.la
-lib/openbabel/${V}/chemkinformat.so
-lib/openbabel/${V}/chemtoolformat.a
-lib/openbabel/${V}/chemtoolformat.la
-lib/openbabel/${V}/chemtoolformat.so
-lib/openbabel/${V}/cifformat.a
-lib/openbabel/${V}/cifformat.la
-lib/openbabel/${V}/cifformat.so
-lib/openbabel/${V}/cmlformat.a
-lib/openbabel/${V}/cmlformat.la
-lib/openbabel/${V}/cmlformat.so
-lib/openbabel/${V}/cmlreactformat.a
-lib/openbabel/${V}/cmlreactformat.la
-lib/openbabel/${V}/cmlreactformat.so
-lib/openbabel/${V}/copyformat.a
-lib/openbabel/${V}/copyformat.la
-lib/openbabel/${V}/copyformat.so
-lib/openbabel/${V}/crkformat.a
-lib/openbabel/${V}/crkformat.la
-lib/openbabel/${V}/crkformat.so
-lib/openbabel/${V}/cssrformat.a
-lib/openbabel/${V}/cssrformat.la
-lib/openbabel/${V}/cssrformat.so
-lib/openbabel/${V}/dmolformat.a
-lib/openbabel/${V}/dmolformat.la
-lib/openbabel/${V}/dmolformat.so
-lib/openbabel/${V}/fastaformat.a
-lib/openbabel/${V}/fastaformat.la
-lib/openbabel/${V}/fastaformat.so
-lib/openbabel/${V}/fastsearchformat.a
-lib/openbabel/${V}/fastsearchformat.la
-lib/openbabel/${V}/fastsearchformat.so
-lib/openbabel/${V}/fchkformat.a
-lib/openbabel/${V}/fchkformat.la
-lib/openbabel/${V}/fchkformat.so
-lib/openbabel/${V}/featformat.a
-lib/openbabel/${V}/featformat.la
-lib/openbabel/${V}/featformat.so
-lib/openbabel/${V}/fhformat.a
-lib/openbabel/${V}/fhformat.la
-lib/openbabel/${V}/fhformat.so
-lib/openbabel/${V}/fingerprintformat.a
-lib/openbabel/${V}/fingerprintformat.la
-lib/openbabel/${V}/fingerprintformat.so
-lib/openbabel/${V}/freefracformat.a
-lib/openbabel/${V}/freefracformat.la
-lib/openbabel/${V}/freefracformat.so
-lib/openbabel/${V}/gamessformat.a
-lib/openbabel/${V}/gamessformat.la
-lib/openbabel/${V}/gamessformat.so
-lib/openbabel/${V}/gamessukformat.a
-lib/openbabel/${V}/gamessukformat.la
-lib/openbabel/${V}/gamessukformat.so
-lib/openbabel/${V}/gausscubeformat.a
-lib/openbabel/${V}/gausscubeformat.la
-lib/openbabel/${V}/gausscubeformat.so
-lib/openbabel/${V}/gaussformat.a
-lib/openbabel/${V}/gaussformat.la
-lib/openbabel/${V}/gaussformat.so
-lib/openbabel/${V}/gausszmatformat.a
-lib/openbabel/${V}/gausszmatformat.la
-lib/openbabel/${V}/gausszmatformat.so
-lib/openbabel/${V}/ghemicalformat.a
-lib/openbabel/${V}/ghemicalformat.la
-lib/openbabel/${V}/ghemicalformat.so
-lib/openbabel/${V}/gromos96format.a
-lib/openbabel/${V}/gromos96format.la
-lib/openbabel/${V}/gromos96format.so
-lib/openbabel/${V}/hinformat.a
-lib/openbabel/${V}/hinformat.la
-lib/openbabel/${V}/hinformat.so
-lib/openbabel/${V}/inchiformat.a
-lib/openbabel/${V}/inchiformat.la
-lib/openbabel/${V}/inchiformat.so
-lib/openbabel/${V}/jaguarformat.a
-lib/openbabel/${V}/jaguarformat.la
-lib/openbabel/${V}/jaguarformat.so
-lib/openbabel/${V}/mdlformat.a
-lib/openbabel/${V}/mdlformat.la
-lib/openbabel/${V}/mdlformat.so
-lib/openbabel/${V}/mmcifformat.a
-lib/openbabel/${V}/mmcifformat.la
-lib/openbabel/${V}/mmcifformat.so
-lib/openbabel/${V}/mmodformat.a
-lib/openbabel/${V}/mmodformat.la
-lib/openbabel/${V}/mmodformat.so
-lib/openbabel/${V}/mol2format.a
-lib/openbabel/${V}/mol2format.la
-lib/openbabel/${V}/mol2format.so
-lib/openbabel/${V}/moldenformat.a
-lib/openbabel/${V}/moldenformat.la
-lib/openbabel/${V}/moldenformat.so
-lib/openbabel/${V}/molproformat.a
-lib/openbabel/${V}/molproformat.la
-lib/openbabel/${V}/molproformat.so
-lib/openbabel/${V}/molreportformat.a
-lib/openbabel/${V}/molreportformat.la
-lib/openbabel/${V}/molreportformat.so
-lib/openbabel/${V}/mopacformat.a
-lib/openbabel/${V}/mopacformat.la
-lib/openbabel/${V}/mopacformat.so
-lib/openbabel/${V}/mpdformat.a
-lib/openbabel/${V}/mpdformat.la
-lib/openbabel/${V}/mpdformat.so
-lib/openbabel/${V}/mpqcformat.a
-lib/openbabel/${V}/mpqcformat.la
-lib/openbabel/${V}/mpqcformat.so
-lib/openbabel/${V}/msiformat.a
-lib/openbabel/${V}/msiformat.la
-lib/openbabel/${V}/msiformat.so
-lib/openbabel/${V}/msmsformat.a
-lib/openbabel/${V}/msmsformat.la
-lib/openbabel/${V}/msmsformat.so
-lib/openbabel/${V}/nwchemformat.a
-lib/openbabel/${V}/nwchemformat.la
-lib/openbabel/${V}/nwchemformat.so
-lib/openbabel/${V}/opendxformat.a
-lib/openbabel/${V}/opendxformat.la
-lib/openbabel/${V}/opendxformat.so
-lib/openbabel/${V}/outformat.a
-lib/openbabel/${V}/outformat.la
-lib/openbabel/${V}/outformat.so
-lib/openbabel/${V}/pcmodelformat.a
-lib/openbabel/${V}/pcmodelformat.la
-lib/openbabel/${V}/pcmodelformat.so
-lib/openbabel/${V}/pdbformat.a
-lib/openbabel/${V}/pdbformat.la
-lib/openbabel/${V}/pdbformat.so
-lib/openbabel/${V}/pngformat.a
-lib/openbabel/${V}/pngformat.la
-lib/openbabel/${V}/pngformat.so
-lib/openbabel/${V}/povrayformat.a
-lib/openbabel/${V}/povrayformat.la
-lib/openbabel/${V}/povrayformat.so
-lib/openbabel/${V}/pqrformat.a
-lib/openbabel/${V}/pqrformat.la
-lib/openbabel/${V}/pqrformat.so
-lib/openbabel/${V}/pubchem.a
-lib/openbabel/${V}/pubchem.la
-lib/openbabel/${V}/pubchem.so
-lib/openbabel/${V}/qchemformat.a
-lib/openbabel/${V}/qchemformat.la
-lib/openbabel/${V}/qchemformat.so
-lib/openbabel/${V}/reportformat.a
-lib/openbabel/${V}/reportformat.la
-lib/openbabel/${V}/reportformat.so
-lib/openbabel/${V}/rsmiformat.a
-lib/openbabel/${V}/rsmiformat.la
-lib/openbabel/${V}/rsmiformat.so
-lib/openbabel/${V}/rxnformat.a
-lib/openbabel/${V}/rxnformat.la
-lib/openbabel/${V}/rxnformat.so
-lib/openbabel/${V}/shelxformat.a
-lib/openbabel/${V}/shelxformat.la
-lib/openbabel/${V}/shelxformat.so
-lib/openbabel/${V}/smilesformat.a
-lib/openbabel/${V}/smilesformat.la
-lib/openbabel/${V}/smilesformat.so
-lib/openbabel/${V}/thermoformat.a
-lib/openbabel/${V}/thermoformat.la
-lib/openbabel/${V}/thermoformat.so
-lib/openbabel/${V}/tinkerformat.a
-lib/openbabel/${V}/tinkerformat.la
-lib/openbabel/${V}/tinkerformat.so
-lib/openbabel/${V}/titleformat.a
-lib/openbabel/${V}/titleformat.la
-lib/openbabel/${V}/titleformat.so
-lib/openbabel/${V}/turbomoleformat.a
-lib/openbabel/${V}/turbomoleformat.la
-lib/openbabel/${V}/turbomoleformat.so
-lib/openbabel/${V}/unichemformat.a
-lib/openbabel/${V}/unichemformat.la
-lib/openbabel/${V}/unichemformat.so
-lib/openbabel/${V}/vaspformat.a
-lib/openbabel/${V}/vaspformat.la
-lib/openbabel/${V}/vaspformat.so
-lib/openbabel/${V}/viewmolformat.a
-lib/openbabel/${V}/viewmolformat.la
-lib/openbabel/${V}/viewmolformat.so
-lib/openbabel/${V}/xedformat.a
-lib/openbabel/${V}/xedformat.la
-lib/openbabel/${V}/xedformat.so
-lib/openbabel/${V}/xmlformat.a
-lib/openbabel/${V}/xmlformat.la
-lib/openbabel/${V}/xmlformat.so
-lib/openbabel/${V}/xtcformat.a
-lib/openbabel/${V}/xtcformat.la
-lib/openbabel/${V}/xtcformat.so
-lib/openbabel/${V}/xyzformat.a
-lib/openbabel/${V}/xyzformat.la
-lib/openbabel/${V}/xyzformat.so
-lib/openbabel/${V}/yasaraformat.a
-lib/openbabel/${V}/yasaraformat.la
-lib/openbabel/${V}/yasaraformat.so
-lib/openbabel/${V}/zindoformat.a
-lib/openbabel/${V}/zindoformat.la
-lib/openbabel/${V}/zindoformat.so
-lib/pkgconfig/openbabel-2.0.pc
-@man man/man1/babel.1
+@so lib/openbabel/${V}/APIInterface.so
+@so lib/openbabel/${V}/CSRformat.so
+@so lib/openbabel/${V}/MCDLformat.so
+@so lib/openbabel/${V}/MNAformat.so
+@so lib/openbabel/${V}/PQSformat.so
+@so lib/openbabel/${V}/abinitformat.so
+@so lib/openbabel/${V}/acesformat.so
+@so lib/openbabel/${V}/acrformat.so
+@so lib/openbabel/${V}/adfformat.so
+@so lib/openbabel/${V}/alchemyformat.so
+@so lib/openbabel/${V}/amberformat.so
+@so lib/openbabel/${V}/aoforceformat.so
+@so lib/openbabel/${V}/asciiformat.so
+@so lib/openbabel/${V}/balstformat.so
+@so lib/openbabel/${V}/bgfformat.so
+@so lib/openbabel/${V}/boxformat.so
+@so lib/openbabel/${V}/cacaoformat.so
+@so lib/openbabel/${V}/cacheformat.so
+@so lib/openbabel/${V}/carformat.so
+@so lib/openbabel/${V}/castepformat.so
+@so lib/openbabel/${V}/cccformat.so
+@so lib/openbabel/${V}/cdxmlformat.so
+@so lib/openbabel/${V}/chem3dformat.so
+@so lib/openbabel/${V}/chemdoodlejsonformat.so
+@so lib/openbabel/${V}/chemdrawcdx.so
+@so lib/openbabel/${V}/chemdrawct.so
+@so lib/openbabel/${V}/chemkinformat.so
+@so lib/openbabel/${V}/chemtoolformat.so
+@so lib/openbabel/${V}/cifformat.so
+@so lib/openbabel/${V}/cmlformat.so
+@so lib/openbabel/${V}/cmlreactformat.so
+@so lib/openbabel/${V}/cofformat.so
+@so lib/openbabel/${V}/copyformat.so
+@so lib/openbabel/${V}/crkformat.so
+@so lib/openbabel/${V}/crystal09format.so
+@so lib/openbabel/${V}/cssrformat.so
+@so lib/openbabel/${V}/daltonformat.so
+@so lib/openbabel/${V}/dlpolyformat.so
+@so lib/openbabel/${V}/dmolformat.so
+@so lib/openbabel/${V}/exyzformat.so
+@so lib/openbabel/${V}/fastaformat.so
+@so lib/openbabel/${V}/fastsearchformat.so
+@so lib/openbabel/${V}/fchkformat.so
+@so lib/openbabel/${V}/featformat.so
+@so lib/openbabel/${V}/fhformat.so
+@so lib/openbabel/${V}/fhiaimsformat.so
+@so lib/openbabel/${V}/fingerprintformat.so
+@so lib/openbabel/${V}/fpsformat.so
+@so lib/openbabel/${V}/freefracformat.so
+@so lib/openbabel/${V}/gamessformat.so
+@so lib/openbabel/${V}/gamessukformat.so
+@so lib/openbabel/${V}/gausscubeformat.so
+@so lib/openbabel/${V}/gaussformat.so
+@so lib/openbabel/${V}/gausszmatformat.so
+@so lib/openbabel/${V}/ghemicalformat.so
+@so lib/openbabel/${V}/groformat.so
+@so lib/openbabel/${V}/gromos96format.so
+@so lib/openbabel/${V}/gulpformat.so
+@so lib/openbabel/${V}/hinformat.so
+@so lib/openbabel/${V}/inchiformat.so
+@so lib/openbabel/${V}/jaguarformat.so
+@so lib/openbabel/${V}/lmpdatformat.so
+@so lib/openbabel/${V}/lpmdformat.so
+@so lib/openbabel/${V}/maeformat.so
+@so lib/openbabel/${V}/mdffformat.so
+@so lib/openbabel/${V}/mdlformat.so
+@so lib/openbabel/${V}/mmcifformat.so
+@so lib/openbabel/${V}/mmodformat.so
+@so lib/openbabel/${V}/mol2format.so
+@so lib/openbabel/${V}/moldenformat.so
+@so lib/openbabel/${V}/molproformat.so
+@so lib/openbabel/${V}/molreport.so
+@so lib/openbabel/${V}/mopacformat.so
+@so lib/openbabel/${V}/mpdformat.so
+@so lib/openbabel/${V}/mpqcformat.so
+@so lib/openbabel/${V}/msiformat.so
+@so lib/openbabel/${V}/msmsformat.so
+@so lib/openbabel/${V}/nulformat.so
+@so lib/openbabel/${V}/nwchemformat.so
+@so lib/openbabel/${V}/opendxformat.so
+@so lib/openbabel/${V}/orcaformat.so
+@so lib/openbabel/${V}/outformat.so
+@so lib/openbabel/${V}/painterformat.so
+@so lib/openbabel/${V}/pcmodelformat.so
+@so lib/openbabel/${V}/pdbformat.so
+@so lib/openbabel/${V}/pdbqtformat.so
+@so lib/openbabel/${V}/plugin_charges.so
+@so lib/openbabel/${V}/plugin_descriptors.so
+@so lib/openbabel/${V}/plugin_fingerprints.so
+@so lib/openbabel/${V}/plugin_forcefields.so
+@so lib/openbabel/${V}/plugin_ops.so
+@so lib/openbabel/${V}/png2format.so
+@so lib/openbabel/${V}/pngformat.so
+@so lib/openbabel/${V}/pointcloudformat.so
+@so lib/openbabel/${V}/posformat.so
+@so lib/openbabel/${V}/povrayformat.so
+@so lib/openbabel/${V}/pqrformat.so
+@so lib/openbabel/${V}/pubchem.so
+@so lib/openbabel/${V}/pubchemjsonformat.so
+@so lib/openbabel/${V}/pwscfformat.so
+@so lib/openbabel/${V}/qchemformat.so
+@so lib/openbabel/${V}/reportformat.so
+@so lib/openbabel/${V}/rinchiformat.so
+@so lib/openbabel/${V}/rsmiformat.so
+@so lib/openbabel/${V}/rxnformat.so
+@so lib/openbabel/${V}/shelxformat.so
+@so lib/openbabel/${V}/siestaformat.so
+@so lib/openbabel/${V}/smilesformat.so
+@so lib/openbabel/${V}/smileyformat.so
+@so lib/openbabel/${V}/stlformat.so
+@so lib/openbabel/${V}/svgformat.so
+@so lib/openbabel/${V}/textformat.so
+@so lib/openbabel/${V}/thermoformat.so
+@so lib/openbabel/${V}/tinkerformat.so
+@so lib/openbabel/${V}/titleformat.so
+@so lib/openbabel/${V}/turbomoleformat.so
+@so lib/openbabel/${V}/unichemformat.so
+@so lib/openbabel/${V}/vaspformat.so
+@so lib/openbabel/${V}/viewmolformat.so
+@so lib/openbabel/${V}/wlnformat.so
+@so lib/openbabel/${V}/xedformat.so
+@so lib/openbabel/${V}/xmlformat.so
+@so lib/openbabel/${V}/xsfformat.so
+@so lib/openbabel/${V}/xyzformat.so
+@so lib/openbabel/${V}/yasaraformat.so
+@so lib/openbabel/${V}/zindoformat.so
+lib/pkgconfig/openbabel-3.pc
+@man man/man1/obabel.1
 @man man/man1/obchiral.1
 @man man/man1/obconformer.1
+@man man/man1/obdistgen.1
 @man man/man1/obenergy.1
 @man man/man1/obfit.1
 @man man/man1/obgen.1
 @man man/man1/obgrep.1
+@man man/man1/obgui.1
 @man man/man1/obminimize.1
 @man man/man1/obprobe.1
 @man man/man1/obprop.1
+@man man/man1/obrms.1
 @man man/man1/obrotamer.1
 @man man/man1/obrotate.1
+@man man/man1/obspectrophore.1
+@man man/man1/obsym.1
+@man man/man1/obtautomer.1
+@man man/man1/obthermo.1
 @man man/man1/roundtrip.1
 share/openbabel/
 share/openbabel/${V}/
 share/openbabel/${V}/MACCS.txt
 share/openbabel/${V}/SMARTS_InteLigand.txt
 share/openbabel/${V}/UFF.prm
-share/openbabel/${V}/aromatic.txt
+share/openbabel/${V}/atomization-energies.txt
 share/openbabel/${V}/atomtyp.txt
+share/openbabel/${V}/babel_povray3.inc
 share/openbabel/${V}/bondtyp.txt
-share/openbabel/${V}/element.txt
-share/openbabel/${V}/fragments.txt
+share/openbabel/${V}/eem.txt
+share/openbabel/${V}/eem2015ba.txt
+share/openbabel/${V}/eem2015bm.txt
+share/openbabel/${V}/eem2015bn.txt
+share/openbabel/${V}/eem2015ha.txt
+share/openbabel/${V}/eem2015hm.txt
+share/openbabel/${V}/eem2015hn.txt
+share/openbabel/${V}/eqeqIonizations.txt
+share/openbabel/${V}/gaff.dat
+share/openbabel/${V}/gaff.prm
 share/openbabel/${V}/ghemical.prm
-share/openbabel/${V}/isotope-small.txt
-share/openbabel/${V}/isotope.txt
 share/openbabel/${V}/logp.txt
 share/openbabel/${V}/mmff94.ff
 share/openbabel/${V}/mmff94s.ff
@@ -375,13 +336,23 @@ share/openbabel/${V}/mmffs_tor.par
 share/openbabel/${V}/mmffstbn.par
 share/openbabel/${V}/mmfftor.par
 share/openbabel/${V}/mmffvdw.par
+share/openbabel/${V}/mpC.txt
 share/openbabel/${V}/mr.txt
 share/openbabel/${V}/patterns.txt
 share/openbabel/${V}/phmodel.txt
 share/openbabel/${V}/plugindefines.txt
 share/openbabel/${V}/psa.txt
+share/openbabel/${V}/qeq.txt
 share/openbabel/${V}/resdata.txt
+share/openbabel/${V}/rigid-fragments-index.txt
+share/openbabel/${V}/rigid-fragments.txt
+share/openbabel/${V}/ring-fragments.txt
 share/openbabel/${V}/ringtyp.txt
 share/openbabel/${V}/space-groups.txt
+share/openbabel/${V}/splash.png
+share/openbabel/${V}/superatom.txt
+share/openbabel/${V}/svgformat.script
+share/openbabel/${V}/templates.sdf
 share/openbabel/${V}/torlib.txt
+share/openbabel/${V}/torsion.txt
 share/openbabel/${V}/types.txt

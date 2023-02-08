@@ -1,36 +1,43 @@
 COMMENT=	chemistry file translation program
 
-V=		2.2.3
+V=		3.1.1
 DISTNAME=	openbabel-${V}
-REVISION=	8
+
 CATEGORIES=	misc
 
-SUBST_VARS=	V
+SHARED_LIBS +=	coordgen	0.0 \
+		inchi		0.0 \
+		maeparser	0.0 \
+		openbabel	6.0
 
-SHARED_LIBS+=	openbabel	5.0	# .3.0
+HOMEPAGE=	https://openbabel.org
 
-HOMEPAGE=	http://openbabel.sourceforge.net/
+MAINTAINER=	Bjorn Ketelaars <bket@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c iconv lzma m pthread ${COMPILER_LIBCXX} xml2 z
+WANTLIB+=	${COMPILER_LIBCXX} boost_iostreams-mt boost_regex-mt
+WANTLIB+=	c cairo m xml2 z
 
-COMPILER =		base-clang ports-gcc base-gcc
+MASTER_SITES=	https://github.com/openbabel/openbabel/releases/download/openbabel-${V:S/./-/g}/
+EXTRACT_SUFX=	-source.tar.bz2
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=openbabel/}
+COMPILER=	base-clang ports-gcc
 
-BUILD_DEPENDS=	devel/boost
-LIB_DEPENDS=	converters/libiconv \
+MODULES=	devel/cmake \
+		lang/python
+MODPY_RUNDEP=	No
+MODPY_BUILDDEP=	No
+
+LIB_DEPENDS=	devel/boost \
+		graphics/cairo \
 		textproc/libxml
-TEST_DEPENDS=${BUILD_PKGPATH}
 
-CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		ac_cv_path_DOXYGEN=""
-CONFIGURE_ARGS=	--disable-inchi \
-		--disable-wx-gui \
-		--with-boost=${LOCALBASE}
+CONFIGURE_ARGS=	-DBUILD_GUI=OFF
+
+SEPARATE_BUILD=	No
+
+SUBST_VARS=	V
 
 .include <bsd.port.mk>
