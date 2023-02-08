@@ -57,6 +57,16 @@ CFLAGS +=		-I${X11BASE}/include
 CXXFLAGS +=		-I${X11BASE}/include
 MODCMAKE_LDFLAGS =		-L${X11BASE}/lib
 
+# evertyhing except tests
+ALL_TARGET =		${SHARED_LIBS:N*.*} clsocket
+
+do-build:
+	@${MODCMAKE_BUILD_TARGET} -t ${ALL_TARGET}
+
+# build whatever is left (ca. 476 C++ test files)
+pre-test:
+	@${MODCMAKE_BUILD_TARGET}
+
 post-install:
 	rm -rf ${PREFIX}/include/bullet/pybullet
 
