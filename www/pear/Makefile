@@ -52,7 +52,7 @@ do-install:
 	perl -pi -e "s,OPENBSD_PEAR_ROOT,'${PREFIX-main}/pear',g" \
 		${WRKINST}${PREFIX-main}/pear/lib/PEAR/Config.php
 	touch ${WRKINST}${PREFIX-main}/pear/{lib/,}.lock
-	rm ${PREFIX}/bin/{pear,peardev,pecl}{.beforesubst,${PATCHORIG}}*
+	rm ${PREFIX}/bin/{pear,peardev,pecl}.{beforesubst,orig}* # _not_ PATCHORIG
 	rmdir ${WRKINST}${PREFIX-main}/pear/{cfg,htdocs}
 	@printf "\\n*** beware if running 'make plist', the lock file should not be removed!\\n\\n"
 
