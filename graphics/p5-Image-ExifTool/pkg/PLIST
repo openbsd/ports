@@ -92,6 +92,7 @@ ${P5SITE}/Image/ExifTool/HP.pm
 ${P5SITE}/Image/ExifTool/HTML.pm
 ${P5SITE}/Image/ExifTool/HtmlDump.pm
 ${P5SITE}/Image/ExifTool/ICC_Profile.pm
+${P5SITE}/Image/ExifTool/ICO.pm
 ${P5SITE}/Image/ExifTool/ID3.pm
 ${P5SITE}/Image/ExifTool/IPTC.pm
 ${P5SITE}/Image/ExifTool/ISO.pm
@@ -131,6 +132,7 @@ ${P5SITE}/Image/ExifTool/M2TS.pm
 ${P5SITE}/Image/ExifTool/MIE.pm
 ${P5SITE}/Image/ExifTool/MIEUnits.pod
 ${P5SITE}/Image/ExifTool/MIFF.pm
+${P5SITE}/Image/ExifTool/MISB.pm
 ${P5SITE}/Image/ExifTool/MNG.pm
 ${P5SITE}/Image/ExifTool/MOI.pm
 ${P5SITE}/Image/ExifTool/MPC.pm
@@ -219,6 +221,7 @@ ${P5SITE}/Image/ExifTool/WritePNG.pl
 ${P5SITE}/Image/ExifTool/WritePhotoshop.pl
 ${P5SITE}/Image/ExifTool/WritePostScript.pl
 ${P5SITE}/Image/ExifTool/WriteQuickTime.pl
+${P5SITE}/Image/ExifTool/WriteRIFF.pl
 ${P5SITE}/Image/ExifTool/WriteXMP.pl
 ${P5SITE}/Image/ExifTool/Writer.pl
 ${P5SITE}/Image/ExifTool/XMP.pm
@@ -282,6 +285,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::HTML.3p
 @man man/man3p/Image::ExifTool::HtmlDump.3p
 @man man/man3p/Image::ExifTool::ICC_Profile.3p
+@man man/man3p/Image::ExifTool::ICO.3p
 @man man/man3p/Image::ExifTool::ID3.3p
 @man man/man3p/Image::ExifTool::IPTC.3p
 @man man/man3p/Image::ExifTool::ISO.3p
@@ -320,6 +324,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::MIE.3p
 @man man/man3p/Image::ExifTool::MIEUnits.3p
 @man man/man3p/Image::ExifTool::MIFF.3p
+@man man/man3p/Image::ExifTool::MISB.3p
 @man man/man3p/Image::ExifTool::MNG.3p
 @man man/man3p/Image::ExifTool::MOI.3p
 @man man/man3p/Image::ExifTool::MPC.3p
@@ -407,6 +412,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::WritePhotoshop.3p
 @man man/man3p/Image::ExifTool::WritePostScript.3p
 @man man/man3p/Image::ExifTool::WriteQuickTime.3p
+@man man/man3p/Image::ExifTool::WriteRIFF.3p
 @man man/man3p/Image::ExifTool::WriteXMP.3p
 @man man/man3p/Image::ExifTool::Writer.3p
 @man man/man3p/Image::ExifTool::XMP.3p
