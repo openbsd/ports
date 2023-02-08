@@ -1,6 +1,6 @@
 COMMENT =		official command-line client for RIPE Atlas
 
-MODPY_EGG_VERSION =	3.0.3
+MODPY_EGG_VERSION =	3.1.0
 GH_ACCOUNT =		RIPE-NCC
 GH_PROJECT =		ripe-atlas-tools
 GH_TAGNAME =		v${MODPY_EGG_VERSION}

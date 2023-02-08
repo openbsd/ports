@@ -119,6 +119,8 @@ lib/python${MODPY_VERSION}/site-packages/ripe/atlas/tools/helpers/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/tools/helpers/${MODPY_PYCACHE}colours.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/tools/helpers/${MODPY_PYCACHE}sanitisers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/tools/helpers/${MODPY_PYCACHE}sanitisers.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ripe/atlas/tools/helpers/${MODPY_PYCACHE}tabular.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ripe/atlas/tools/helpers/${MODPY_PYCACHE}tabular.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/tools/helpers/${MODPY_PYCACHE}validators.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/tools/helpers/${MODPY_PYCACHE}validators.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/tools/helpers/${MODPY_PYCACHE}xdg.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -126,6 +128,7 @@ lib/python${MODPY_VERSION}/site-packages/ripe/atlas/tools/helpers/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/tools/helpers/actions.py
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/tools/helpers/colours.py
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/tools/helpers/sanitisers.py
+lib/python${MODPY_VERSION}/site-packages/ripe/atlas/tools/helpers/tabular.py
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/tools/helpers/validators.py
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/tools/helpers/xdg.py
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/tools/ipdetails.py
