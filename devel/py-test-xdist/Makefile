@@ -1,30 +1,30 @@
-COMMENT =	py.test xdist plugin for distributed testing
+COMMENT=	py.test xdist plugin for distributed testing
 
-DISTNAME =		pytest-xdist-${MODPY_EGG_VERSION}
-PKGNAME =		py-test-xdist-${MODPY_EGG_VERSION}
-MODPY_EGG_VERSION =	3.1.0
+DISTNAME=	pytest-xdist-${MODPY_EGG_VERSION}
+PKGNAME=	py-test-xdist-${MODPY_EGG_VERSION}
+MODPY_EGG_VERSION=	3.2.0
 
-CATEGORIES =	devel
+CATEGORIES=	devel
 
-HOMEPAGE =	https://github.com/pytest-dev/pytest-xdist
+HOMEPAGE=	https://github.com/pytest-dev/pytest-xdist
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-FLAVORS =		python3
-FLAVOR =		python3
+FLAVORS=	python3
+FLAVOR=		python3
 
-MODULES =		lang/python
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools_scm
-MODPY_PYTEST_ARGS =	testing
+MODULES=	lang/python
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools_scm
+MODPY_PYTEST_ARGS=	testing
 
-RUN_DEPENDS =		devel/py-execnet${MODPY_FLAVOR} \
-			devel/py-test${MODPY_FLAVOR} \
-			devel/py-apipkg${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/py-execnet${MODPY_FLAVOR} \
+		devel/py-test${MODPY_FLAVOR} \
+		devel/py-apipkg${MODPY_FLAVOR}
 # uses its own pytest extension in test
-TEST_DEPENDS =		${FULLPKGNAME}:${FULLPKGPATH} \
-			devel/py-pexpect${MODPY_FLAVOR} \
-			sysutils/py-filelock${MODPY_FLAVOR}
+TEST_DEPENDS=	${FULLPKGNAME}:${FULLPKGPATH} \
+		devel/py-pexpect${MODPY_FLAVOR} \
+		sysutils/py-filelock${MODPY_FLAVOR}
 
 .include <bsd.port.mk>

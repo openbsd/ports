@@ -52,9 +52,12 @@ lib/python${MODPY_VERSION}/site-packages/xdist/scheduler/${MODPY_PYCACHE}loadgro
 lib/python${MODPY_VERSION}/site-packages/xdist/scheduler/${MODPY_PYCACHE}loadgroup.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xdist/scheduler/${MODPY_PYCACHE}loadscope.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/xdist/scheduler/${MODPY_PYCACHE}loadscope.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/xdist/scheduler/${MODPY_PYCACHE}worksteal.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/xdist/scheduler/${MODPY_PYCACHE}worksteal.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xdist/scheduler/each.py
 lib/python${MODPY_VERSION}/site-packages/xdist/scheduler/load.py
 lib/python${MODPY_VERSION}/site-packages/xdist/scheduler/loadfile.py
 lib/python${MODPY_VERSION}/site-packages/xdist/scheduler/loadgroup.py
 lib/python${MODPY_VERSION}/site-packages/xdist/scheduler/loadscope.py
+lib/python${MODPY_VERSION}/site-packages/xdist/scheduler/worksteal.py
 lib/python${MODPY_VERSION}/site-packages/xdist/workermanage.py
