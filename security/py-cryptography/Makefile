@@ -1,6 +1,6 @@
 COMMENT=	cryptographic recipes and primitives for Python
 
-MODPY_EGG_VERSION=	38.0.4
+MODPY_EGG_VERSION=	39.0.1
 DISTNAME=	cryptography-${MODPY_EGG_VERSION}
 DISTFILES=	cryptography-${MODPY_EGG_VERSION}${EXTRACT_SUFX}
 PKGNAME=	${MODPY_PY_PREFIX}${DISTNAME}
@@ -29,6 +29,9 @@ MODULES=	devel/cargo \
 
 MODPY_PYBUILD=	setuptools
 MODPY_PI=	Yes
+
+# avoid picking up test_dist_lto_opt.py in modcargo-crates/cxx
+MODPY_PYTEST_ARGS= tests
 
 MODCARGO_CARGOTOML= ${WRKSRC}/src/rust/Cargo.toml
 MODCARGO_INSTALL= No

@@ -76,8 +76,6 @@ lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/${
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/${MODPY_PYCACHE}x25519.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/${MODPY_PYCACHE}x448.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/${MODPY_PYCACHE}x448.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/${MODPY_PYCACHE}x509.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/${MODPY_PYCACHE}x509.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/aead.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/backend.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/ciphers.py
@@ -95,7 +93,6 @@ lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/rs
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/utils.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/x25519.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/x448.py
-lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/x509.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/${MODPY_PYCACHE}/
@@ -108,6 +105,7 @@ lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/__init__.pyi
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/asn1.pyi
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/ocsp.pyi
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/pkcs7.pyi
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/x509.pyi
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/openssl/
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/openssl/__init__.py

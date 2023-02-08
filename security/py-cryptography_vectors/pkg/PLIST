@@ -2282,6 +2282,7 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/bigoid.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/cryptography-scts-tbs-precert.der
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/cryptography-scts.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/cryptography.io.chain.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/cryptography.io.chain_with_garbage.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/cryptography.io.old_header.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/cryptography.io.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/cryptography.io.precert.pem
