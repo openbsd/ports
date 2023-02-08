@@ -1,0 +1,12 @@
+Index: bfd/Makefile.in
+--- bfd/Makefile.in.orig
++++ bfd/Makefile.in
+@@ -266,7 +266,7 @@ am__v_texidevnull_ = $(am__v_texidevnull_@AM_DEFAULT_V
+ am__v_texidevnull_0 = > /dev/null
+ am__v_texidevnull_1 = 
+ am__dirstamp = $(am__leading_dot)dirstamp
+-INFO_DEPS = doc/bfd.info
++INFO_DEPS =
+ am__TEXINFO_TEX_DIR = $(srcdir)
+ DVIS = doc/bfd.dvi
+ PDFS = doc/bfd.pdf

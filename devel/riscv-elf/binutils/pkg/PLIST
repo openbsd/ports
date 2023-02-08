@@ -14,6 +14,10 @@
 @bin bin/${CONFIG}-size
 @bin bin/${CONFIG}-strings
 @bin bin/${CONFIG}-strip
+@info info/ctf-spec.info
+@info info/sframe-spec.info
+lib/bfd-plugins/
+@static-lib lib/bfd-plugins/libdep.a
 @man man/man1/${CONFIG}-addr2line.1
 @man man/man1/${CONFIG}-ar.1
 @man man/man1/${CONFIG}-as.1
@@ -46,6 +50,28 @@ ${CONFIG}/bin/
 @bin ${CONFIG}/bin/strip
 ${CONFIG}/lib/
 ${CONFIG}/lib/ldscripts/
+${CONFIG}/lib/ldscripts/elf32briscv.x
+${CONFIG}/lib/ldscripts/elf32briscv.xbn
+${CONFIG}/lib/ldscripts/elf32briscv.xc
+${CONFIG}/lib/ldscripts/elf32briscv.xce
+${CONFIG}/lib/ldscripts/elf32briscv.xd
+${CONFIG}/lib/ldscripts/elf32briscv.xdc
+${CONFIG}/lib/ldscripts/elf32briscv.xdce
+${CONFIG}/lib/ldscripts/elf32briscv.xde
+${CONFIG}/lib/ldscripts/elf32briscv.xdw
+${CONFIG}/lib/ldscripts/elf32briscv.xdwe
+${CONFIG}/lib/ldscripts/elf32briscv.xe
+${CONFIG}/lib/ldscripts/elf32briscv.xn
+${CONFIG}/lib/ldscripts/elf32briscv.xr
+${CONFIG}/lib/ldscripts/elf32briscv.xs
+${CONFIG}/lib/ldscripts/elf32briscv.xsc
+${CONFIG}/lib/ldscripts/elf32briscv.xsce
+${CONFIG}/lib/ldscripts/elf32briscv.xse
+${CONFIG}/lib/ldscripts/elf32briscv.xsw
+${CONFIG}/lib/ldscripts/elf32briscv.xswe
+${CONFIG}/lib/ldscripts/elf32briscv.xu
+${CONFIG}/lib/ldscripts/elf32briscv.xw
+${CONFIG}/lib/ldscripts/elf32briscv.xwe
 ${CONFIG}/lib/ldscripts/elf32lriscv.x
 ${CONFIG}/lib/ldscripts/elf32lriscv.xbn
 ${CONFIG}/lib/ldscripts/elf32lriscv.xc
@@ -68,6 +94,28 @@ ${CONFIG}/lib/ldscripts/elf32lriscv.xswe
 ${CONFIG}/lib/ldscripts/elf32lriscv.xu
 ${CONFIG}/lib/ldscripts/elf32lriscv.xw
 ${CONFIG}/lib/ldscripts/elf32lriscv.xwe
+${CONFIG}/lib/ldscripts/elf64briscv.x
+${CONFIG}/lib/ldscripts/elf64briscv.xbn
+${CONFIG}/lib/ldscripts/elf64briscv.xc
+${CONFIG}/lib/ldscripts/elf64briscv.xce
+${CONFIG}/lib/ldscripts/elf64briscv.xd
+${CONFIG}/lib/ldscripts/elf64briscv.xdc
+${CONFIG}/lib/ldscripts/elf64briscv.xdce
+${CONFIG}/lib/ldscripts/elf64briscv.xde
+${CONFIG}/lib/ldscripts/elf64briscv.xdw
+${CONFIG}/lib/ldscripts/elf64briscv.xdwe
+${CONFIG}/lib/ldscripts/elf64briscv.xe
+${CONFIG}/lib/ldscripts/elf64briscv.xn
+${CONFIG}/lib/ldscripts/elf64briscv.xr
+${CONFIG}/lib/ldscripts/elf64briscv.xs
+${CONFIG}/lib/ldscripts/elf64briscv.xsc
+${CONFIG}/lib/ldscripts/elf64briscv.xsce
+${CONFIG}/lib/ldscripts/elf64briscv.xse
+${CONFIG}/lib/ldscripts/elf64briscv.xsw
+${CONFIG}/lib/ldscripts/elf64briscv.xswe
+${CONFIG}/lib/ldscripts/elf64briscv.xu
+${CONFIG}/lib/ldscripts/elf64briscv.xw
+${CONFIG}/lib/ldscripts/elf64briscv.xwe
 ${CONFIG}/lib/ldscripts/elf64lriscv.x
 ${CONFIG}/lib/ldscripts/elf64lriscv.xbn
 ${CONFIG}/lib/ldscripts/elf64lriscv.xc

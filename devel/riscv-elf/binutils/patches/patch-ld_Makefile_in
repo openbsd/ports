@@ -1,7 +1,7 @@
 Index: ld/Makefile.in
 --- ld/Makefile.in.orig
 +++ ld/Makefile.in
-@@ -273,7 +273,7 @@ AM_V_texidevnull = $(am__v_texidevnull_@AM_V@)
+@@ -301,7 +301,7 @@ AM_V_texidevnull = $(am__v_texidevnull_@AM_V@)
  am__v_texidevnull_ = $(am__v_texidevnull_@AM_DEFAULT_V@)
  am__v_texidevnull_0 = > /dev/null
  am__v_texidevnull_1 = 
