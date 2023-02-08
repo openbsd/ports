@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.147 2022/04/14 19:39:37 espie Exp $
+# $OpenBSD: Engine.pm,v 1.148 2023/02/08 09:57:43 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -179,7 +179,7 @@ sub flush_log
 # XXX side-effect: changes the heuristics based
 # on actual Q number, e.g., tries harder to
 # fetch if the queue is "low" (30, not tweakable)
-# and doesn't really caret otherwise
+# and doesn't really care otherwise
 sub fetchcount
 {
 	my ($self, $q)= @_;
