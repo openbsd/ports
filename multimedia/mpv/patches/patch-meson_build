@@ -1,0 +1,27 @@
+- fix over-zealous detection of libatomic (it was picked up at configure
+time if present at all, rather than only if needed)
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -716,7 +716,19 @@ if features['sdl2-gamepad']
+     sources += files('input/sdl_gamepad.c')
+ endif
+ 
+-stdatomic_dep = cc.find_library('atomic', required: false)
++if cc.links('''
++#include <stdint.h>
++int main(void) {
++  uint32_t x32 = 0;
++  uint64_t x64 = 0;
++  __atomic_load_n(&x32, __ATOMIC_SEQ_CST);
++  __atomic_load_n(&x64, __ATOMIC_SEQ_CST);
++  return 0;
++}''', name : 'built-in atomics')
++    stdatomic_dep = dependency('', required : false)
++else
++    stdatomic_dep = cc.find_library('atomic')
++endif
+ features += {'stdatomic': cc.has_header_symbol('stdatomic.h', 'atomic_int', dependencies: stdatomic_dep,
+                                                required: get_option('stdatomic'))}
+ if features['stdatomic']
