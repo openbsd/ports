@@ -1,6 +1,6 @@
 COMMENT=	simple MP3 player
 
-V=		0.59
+V=		0.61
 DISTNAME=	d11amp_${V}
 PKGNAME=	d11amp-${V}
 EXTRACT_SUFX=	.tar.bz2
@@ -24,10 +24,11 @@ LIB_DEPENDS=	graphics/gdk-pixbuf2	\
 		audio/mpg123		\
 		audio/portaudio-svn
 
-FAKE_FLAGS=	INSTALLMAN="${WRKINST}${PREFIX}/man"
+MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}"
+FAKE_FLAGS=	INSTALLMAN="${WRKINST}${PREFIX}/man" \
+		DESTDIR=
+
 TEST_ENV=	SHA256_CMD=sha256 TMP_DIR=/tmp/d11amp/
 TEST_TARGET=	check
 
 .include <bsd.port.mk>
-
-
