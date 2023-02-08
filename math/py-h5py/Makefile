@@ -1,10 +1,9 @@
 COMMENT =	pythonic interface to the HDF5 binary data format
 
-MODPY_EGG_VERSION =	3.7.0
+MODPY_EGG_VERSION =	3.8.0
 DISTNAME =		h5py-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
-REVISION =		1
 
 HOMEPAGE =		https://www.h5py.org/
 MAINTAINER =		Martin Reindl <martin@catai.org>
