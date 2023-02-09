@@ -6,8 +6,8 @@ jruby/bin/bundle
 jruby/bin/bundler
 jruby/bin/erb
 jruby/bin/gem
-jruby/bin/jgem
 jruby/bin/irb
+jruby/bin/jgem
 jruby/bin/jirb
 jruby/bin/jirb_swing
 @bin jruby/bin/jruby
@@ -532,7 +532,7 @@ jruby/lib/ruby/gems/1.8/specifications/default/abbrev-0.1.0.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/base64-0.1.1.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/benchmark-0.2.0.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/bundler-2.3.25.gemspec
-jruby/lib/ruby/gems/1.8/specifications/default/cgi-0.3.3-java.gemspec
+jruby/lib/ruby/gems/1.8/specifications/default/cgi-0.3.5-java.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/csv-3.2.5.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/debug-0.2.1.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/delegate-0.2.0.gemspec
@@ -568,7 +568,7 @@ jruby/lib/ruby/gems/1.8/specifications/default/ostruct-0.5.5.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/pp-0.3.0.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/prettyprint-0.1.1.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/pstore-0.1.1.gemspec
-jruby/lib/ruby/gems/1.8/specifications/default/psych-4.0.6-java.gemspec
+jruby/lib/ruby/gems/1.8/specifications/default/psych-5.1.0-java.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/racc-1.6.0-java.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/rake-ant-1.0.6.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/rdoc-6.4.0.gemspec
@@ -580,7 +580,7 @@ jruby/lib/ruby/gems/1.8/specifications/default/rubygems-update-3.3.25.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/securerandom-0.2.0.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/shellwords-0.1.0.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/singleton-0.1.1.gemspec
-jruby/lib/ruby/gems/1.8/specifications/default/stringio-3.0.2-java.gemspec
+jruby/lib/ruby/gems/1.8/specifications/default/stringio-3.0.4-java.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/strscan-3.0.4-java.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/subspawn-0.1.1.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/subspawn-posix-0.1.1.gemspec
@@ -608,7 +608,6 @@ jruby/lib/ruby/include/
 jruby/lib/ruby/include/ruby.h
 jruby/lib/ruby/stdlib/
 jruby/lib/ruby/stdlib/English.rb
-jruby/lib/ruby/stdlib/Win32API.rb
 jruby/lib/ruby/stdlib/abbrev.rb
 jruby/lib/ruby/stdlib/ant.rb
 jruby/lib/ruby/stdlib/base64.rb
@@ -1407,11 +1406,11 @@ jruby/lib/ruby/stdlib/org/bouncycastle/bctls-jdk18on/1.71/bctls-jdk18on-1.71.jar
 jruby/lib/ruby/stdlib/org/bouncycastle/bcutil-jdk18on/
 jruby/lib/ruby/stdlib/org/bouncycastle/bcutil-jdk18on/1.71/
 jruby/lib/ruby/stdlib/org/bouncycastle/bcutil-jdk18on/1.71/bcutil-jdk18on-1.71.jar
-jruby/lib/ruby/stdlib/org/yaml/
-jruby/lib/ruby/stdlib/org/yaml/snakeyaml/
-jruby/lib/ruby/stdlib/org/yaml/snakeyaml/1.33/
-jruby/lib/ruby/stdlib/org/yaml/snakeyaml/1.33/snakeyaml-1.33.jar
-jruby/lib/ruby/stdlib/org/yaml/snakeyaml/maven-metadata-local.xml
+jruby/lib/ruby/stdlib/org/snakeyaml/
+jruby/lib/ruby/stdlib/org/snakeyaml/snakeyaml-engine/
+jruby/lib/ruby/stdlib/org/snakeyaml/snakeyaml-engine/2.6/
+jruby/lib/ruby/stdlib/org/snakeyaml/snakeyaml-engine/2.6/snakeyaml-engine-2.6.jar
+jruby/lib/ruby/stdlib/org/snakeyaml/snakeyaml-engine/maven-metadata-local.xml
 jruby/lib/ruby/stdlib/ostruct.rb
 jruby/lib/ruby/stdlib/pathname.rb
 jruby/lib/ruby/stdlib/pp.rb
@@ -2021,6 +2020,7 @@ jruby/lib/ruby/stdlib/win32/importer.rb
 jruby/lib/ruby/stdlib/win32/registry.rb
 jruby/lib/ruby/stdlib/win32/resolv.rb
 jruby/lib/ruby/stdlib/win32/sspi.rb
+jruby/lib/ruby/stdlib/win32api.rb
 jruby/lib/ruby/stdlib/win32ole.rb
 jruby/lib/ruby/stdlib/yaml/
 jruby/lib/ruby/stdlib/yaml.rb
