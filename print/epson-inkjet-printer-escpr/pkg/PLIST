@@ -40,6 +40,7 @@ share/ppd/epson-inkjet-printer-escpr/Epson-EC-C110_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-EP-10VA_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-EP-306_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-EP-30VA_Series-epson-escpr-en.ppd
+share/ppd/epson-inkjet-printer-escpr/Epson-EP-315_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-EP-4004-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-EP-702A-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-EP-703A-epson-escpr-en.ppd
@@ -260,11 +261,13 @@ share/ppd/epson-inkjet-printer-escpr/Epson-PX-M840FX-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-PX-M860F-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-PX-S05_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-PX-S06_Series-epson-escpr-en.ppd
+share/ppd/epson-inkjet-printer-escpr/Epson-PX-S155_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-PX-S160T_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-PX-S170T_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-PX-S170UT_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-PX-S350-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-PX-S5040-epson-escpr-en.ppd
+share/ppd/epson-inkjet-printer-escpr/Epson-PX-S505_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-PX-S7050PS-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-PX-S7050X-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-PX-S7050_Series-epson-escpr-en.ppd
