@@ -1,13 +1,13 @@
 COMMENT =		commander keen clone
 DISTNAME =		clonekeen-src-84
 PKGNAME =		clonekeen-8.4
-REVISION =		5
+REVISION =		6
 CATEGORIES =		games
 
 WRKDIST = 		${WRKDIR}/keen
 WRKBUILD =		${WRKDIST}/src
 
-HOMEPAGE =		http://clonekeen.sourceforge.net/
+HOMEPAGE =		https://clonekeen.sourceforge.net/
 
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
@@ -27,6 +27,7 @@ NO_TEST =		Yes
 # LDFLAGS only used at link time
 CPPFLAGS = 	-I${LOCALBASE}/include
 LDFLAGS =	-L${LOCALBASE}/lib -pthread -lm
+CFLAGS =	-Wno-int-conversion
 MAKE_ENV =	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" CFLAGS="${CFLAGS}"
 
 do-install:
