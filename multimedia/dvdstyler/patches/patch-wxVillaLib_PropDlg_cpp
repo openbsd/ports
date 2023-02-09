@@ -1,0 +1,13 @@
+Fix build with older wxWidgets.
+
+Index: wxVillaLib/PropDlg.cpp
+--- wxVillaLib/PropDlg.cpp.orig
++++ wxVillaLib/PropDlg.cpp
+@@ -760,7 +760,6 @@ void wxPropDlg::OnSelectColour(wxCommandEvent& event) 
+ 	((wxButton*) event.GetEventObject())->GetName().Mid(12).ToLong(&index);
+ 	ColourPanel* panel = ((ColourPanel*) m_controls[index]);
+ 	m_colourData.SetColour(panel->GetColour());
+-	m_colourData.SetChooseAlpha(true);
+ #ifdef __WXMSW__
+ 	wxGenericColourDialog dialog(propWindow, &m_colourData);
+ #else

@@ -1,6 +1,6 @@
 COMMENT=		DVD authoring application
 
-DISTNAME=		DVDStyler-3.1
+DISTNAME=		DVDStyler-3.2
 PKGNAME=		${DISTNAME:L}
 CATEGORIES=		multimedia
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=dvdstyler/}
@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${COMPILER_LIBCXX} avcodec avfilter avformat avutil
 WANTLIB += c dbus-1 exif fontconfig freetype jpeg m swscale wx_baseu-3.0
 WANTLIB += wx_baseu_net-3.0 wx_gtk3u_adv-3.0 wx_gtk3u_core-3.0
-WANTLIB += wx_gtk3u_html-3.0 wx_gtk3u_media-3.0 wxsvg z
+WANTLIB += wx_gtk3u_html-3.0 wx_gtk3u_media-3.0 wxsvg
 
 COMPILER=		base-clang ports-gcc base-gcc
 
