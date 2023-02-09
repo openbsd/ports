@@ -1,5 +1,6 @@
 @pkgpath x11/kde4/okteta
 @bin bin/neochat
+@man man/man1/neochat.1
 share/applications/org.kde.neochat.desktop
 share/icons/hicolor/scalable/apps/org.kde.neochat.svg
 share/icons/hicolor/scalable/apps/org.kde.neochat.tray.svg
@@ -14,6 +15,7 @@ share/locale/ca@valencia/LC_MESSAGES/neochat.mo
 share/locale/cs/LC_MESSAGES/neochat.mo
 share/locale/da/LC_MESSAGES/neochat.mo
 share/locale/de/LC_MESSAGES/neochat.mo
+share/locale/el/LC_MESSAGES/neochat.mo
 share/locale/en_GB/LC_MESSAGES/neochat.mo
 share/locale/es/LC_MESSAGES/neochat.mo
 share/locale/eu/LC_MESSAGES/neochat.mo
@@ -22,8 +24,9 @@ share/locale/fr/LC_MESSAGES/neochat.mo
 share/locale/hu/LC_MESSAGES/neochat.mo
 share/locale/ia/LC_MESSAGES/neochat.mo
 share/locale/id/LC_MESSAGES/neochat.mo
+share/locale/ie/LC_MESSAGES/neochat.mo
 share/locale/it/LC_MESSAGES/neochat.mo
-share/locale/ja/LC_MESSAGES/neochat.mo
+share/locale/ka/LC_MESSAGES/neochat.mo
 share/locale/ko/LC_MESSAGES/neochat.mo
 share/locale/nl/LC_MESSAGES/neochat.mo
 share/locale/nn/LC_MESSAGES/neochat.mo
