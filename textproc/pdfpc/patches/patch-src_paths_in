@@ -3,7 +3,7 @@ Index: src/paths.in
 +++ src/paths.in
 @@ -1,6 +1,6 @@
  namespace pdfpc.Paths {
-     public const string ICON_PATH = "@CMAKE_INSTALL_PREFIX@/share/pixmaps/pdfpc/";
+     public const string SHARE_PATH = "@CMAKE_INSTALL_PREFIX@/share/pdfpc";
      public const string SOURCE_PATH = "@CMAKE_SOURCE_DIR@";
 -    public const string CONF_PATH = "@CMAKE_INSTALL_FULL_SYSCONFDIR@";
 +    public const string CONF_PATH = "${SYSCONFDIR}";
