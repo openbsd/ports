@@ -19,6 +19,7 @@ include/xfce4/libxfce4ui-2/libxfce4ui/xfce-dialogs.h
 include/xfce4/libxfce4ui-2/libxfce4ui/xfce-filename-input.h
 include/xfce4/libxfce4ui-2/libxfce4ui/xfce-gdk-extensions.h
 include/xfce4/libxfce4ui-2/libxfce4ui/xfce-gtk-extensions.h
+include/xfce4/libxfce4ui-2/libxfce4ui/xfce-screensaver.h
 include/xfce4/libxfce4ui-2/libxfce4ui/xfce-sm-client.h
 include/xfce4/libxfce4ui-2/libxfce4ui/xfce-spawn.h
 include/xfce4/libxfce4ui-2/libxfce4ui/xfce-titled-dialog.h
@@ -45,6 +46,7 @@ share/glade/pixmaps/hicolor/22x22/actions/widget-libxfce4ui-xfce-titled-dialog.p
 share/gtk-doc/html/libxfce4ui/
 share/gtk-doc/html/libxfce4ui/XfceFilenameInput.html
 share/gtk-doc/html/libxfce4ui/XfceSMClient.html
+share/gtk-doc/html/libxfce4ui/XfceScreensaver.html
 share/gtk-doc/html/libxfce4ui/XfceTitledDialog.html
 share/gtk-doc/html/libxfce4ui/annotation-glossary.html
 share/gtk-doc/html/libxfce4ui/api-index-4-10.html
