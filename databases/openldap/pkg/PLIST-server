@@ -53,6 +53,9 @@ libexec/openldap/pcache.la
 @so libexec/openldap/pcache.so
 libexec/openldap/ppolicy.la
 @so libexec/openldap/ppolicy.so
+@comment libexec/openldap/pw-totp.a
+libexec/openldap/pw-totp.la
+@so libexec/openldap/pw-totp.so
 libexec/openldap/refint.la
 @so libexec/openldap/refint.so
 libexec/openldap/remoteauth.la
@@ -116,6 +119,7 @@ libexec/openldap/valsort.la
 @man man/man5/slapo-sock.5
 @man man/man5/slapo-sssvlv.5
 @man man/man5/slapo-syncprov.5
+@man man/man5/slapo-totp.5
 @man man/man5/slapo-translucent.5
 @man man/man5/slapo-unique.5
 @man man/man5/slapo-valsort.5

@@ -2,7 +2,7 @@ COMMENT-main =	  LDAP client library and tools
 COMMENT-server =  LDAP directory server
 
 DISTNAME =	  openldap-2.6.3
-REVISION-server = 1
+REVISION-server = 2
 REVISION-main =	  0
 
 MULTI_PACKAGES =  -main -server
@@ -37,7 +37,6 @@ COMPILER =		base-clang ports-gcc
 DPB_PROPERTIES =	parallel
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-SEPARATE_BUILD =	Yes
 AUTOCONF_VERSION =	2.69
 CONFIGURE_STYLE =	autoconf
 MODGNU_CONFIG_GUESS_DIRS = ${WRKSRC} ${WRKSRC}/build
@@ -117,11 +116,20 @@ SUBST_VARS +=		LDAP_SYSCONF
 post-extract:
 	${INSTALL_SCRIPT} ${FILESDIR}/soelim.awk ${WRKDIR}/bin/soelim
 
+post-build:
+	cd ${WRKSRC}/contrib/slapd-modules/passwd/totp; \
+	${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} \
+	CC="${CC}" OPT="${CFLAGS}"
+
 # mv config files rather than overriding in FAKE_FLAGS; the filenames
 # are merged into manpages during fake-install
 post-install:
 	mv ${WRKINST}${SYSCONFDIR}/openldap ${PREFIX}/share/examples/
 	rm ${PREFIX}/share/examples/openldap/*.default
+
+	cd ${WRKSRC}/contrib/slapd-modules/passwd/totp; \
+	${SETENV} ${MAKE_ENV} ${FAKE_SETUP} ${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} \
+	mandir=${TRUEPREFIX}/man install
 
 TEST_TARGET =		test
 TEST_DEPENDS =		shells/bash \
