@@ -1,7 +1,7 @@
 COMMENT =		GTK based file manager with two-pane design
 
 DISTNAME =		emelfm2-0.9.1
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		x11
 HOMEPAGE =		http://emelfm.sourceforge.net/

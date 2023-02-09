@@ -1,0 +1,12 @@
+Index: plugins/e2p_copy.c
+--- plugins/e2p_copy.c.orig
++++ plugins/e2p_copy.c
+@@ -244,7 +244,7 @@ _e2p_cpbar_exec (VPATH *slocal, VPATH *dlocal, E2_File
+ #ifdef E2_VFS
+ 	VPATH tempdata = { templocal, dlocal->spacedata };
+ #endif
+-	key_t key = ftok (templocal, pthread_self ());
++	key_t key = ftok (templocal, (int)pthread_self ());
+ 	gint shmid = shmget (key, 2*sizeof(gboolean), 0600 | IPC_CREAT);
+ //	gboolean *results = NULL;
+ //	pthread_cleanup_push ((gpointer)_e2p_cpbar_abort_clean_memory, &results); FIXME

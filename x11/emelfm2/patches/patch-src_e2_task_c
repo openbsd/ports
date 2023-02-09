@@ -1,0 +1,27 @@
+Index: src/e2_task.c
+--- src/e2_task.c.orig
++++ src/e2_task.c
+@@ -36,7 +36,7 @@ some functions do not need TreeRowReferences
+ #endif
+ 
+ //a thread id that will not be assigned by the system
+-#define UNUSED_THREADID -1
++#define UNUSED_THREADID (pthread_t)-1
+ 
+ GList *open_history = NULL;  //history list for open-with dialog
+ 
+@@ -960,10 +960,11 @@ static gpointer _e2_task_processnow (E2_TaskRuntime *r
+ {
+ 	e2_utils_block_thread_signals ();	//block all allowed signals to this thread
+ 
+-	rt->pid = (glong) pthread_self ();
+-	pthread_detach (rt->pid);	//cleanup at end of joinable thread
++	pthread_t thisID = pthread_self ();
++	rt->pid = (glong) thisID;
++	pthread_detach (thisID);	//cleanup at end of joinable thread
+ 
+-	rt->pidstr = g_strdup_printf ("%lu", (gulong)rt->pid);
++	rt->pidstr = g_strdup_printf ("%lu", (gulong)thisID);
+ 	E2_ActionTaskData *qed = &rt->ex.action;
+ 	gboolean (*actionfunc) (E2_ActionTaskData *) = qed->taskfunc;
+ 
