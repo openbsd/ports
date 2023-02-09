@@ -1,5 +1,6 @@
 @bin bin/simple_web_server
 @bin bin/smplayer
+@man man/man1/smplayer.1
 share/applications/smplayer.desktop
 share/applications/smplayer_enqueue.desktop
 share/doc/smplayer/
@@ -44,9 +45,6 @@ share/icons/hicolor/32x32/apps/smplayer.png
 share/icons/hicolor/512x512/apps/smplayer.png
 share/icons/hicolor/64x64/apps/smplayer.png
 share/icons/hicolor/scalable/apps/smplayer.svg
-@mandir share/man/
-share/man/man1/
-share/metainfo/
 share/metainfo/smplayer.appdata.xml
 share/smplayer/
 share/smplayer/input.conf

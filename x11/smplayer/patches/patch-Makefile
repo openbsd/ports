@@ -34,3 +34,15 @@ Index: Makefile
  
  	-install -d $(DESTDIR)$(SHORTCUTS_PATH)
  	cp src/shortcuts/* $(DESTDIR)$(SHORTCUTS_PATH)
+@@ -83,9 +75,8 @@ install: all
+ 	-install -d $(DESTDIR)$(METAINFO_DIR)
+ 	./install_appdata.sh $(DESTDIR)$(METAINFO_DIR)/smplayer.appdata.xml
+ 
+-	-install -d $(DESTDIR)$(PREFIX)/share/man/man1/
+-	install -m 644 man/smplayer.1 $(DESTDIR)$(PREFIX)/share/man/man1/
+-	gzip -9 -f $(DESTDIR)$(PREFIX)/share/man/man1/smplayer.1
++	-install -d $(DESTDIR)$(PREFIX)/man/man1/
++	install -m 644 man/smplayer.1 $(DESTDIR)$(PREFIX)/man/man1/
+ 
+ uninstall:
+ 	-rm -f $(PREFIX)/bin/smplayer

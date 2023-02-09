@@ -1,6 +1,6 @@
 COMMENT =		complete front-end for MPlayer and MPV
 
-DISTNAME =		smplayer-22.2.0
+DISTNAME =		smplayer-22.7.0
 CATEGORIES =		multimedia x11
 
 HOMEPAGE =		https://www.smplayer.info/
