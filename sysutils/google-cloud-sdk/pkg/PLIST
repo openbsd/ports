@@ -1008,12 +1008,14 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/database_migration/${MODPY_PYCACHE}_
 google-cloud-sdk/lib/googlecloudsdk/api_lib/database_migration/${MODPY_PYCACHE}api_util.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/database_migration/${MODPY_PYCACHE}connection_profiles.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/database_migration/${MODPY_PYCACHE}conversion_workspaces.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/database_migration/${MODPY_PYCACHE}filter_rewrite.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/database_migration/${MODPY_PYCACHE}migration_jobs.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/database_migration/${MODPY_PYCACHE}private_connections.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/database_migration/${MODPY_PYCACHE}resource_args.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/database_migration/api_util.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/database_migration/connection_profiles.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/database_migration/conversion_workspaces.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/database_migration/filter_rewrite.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/database_migration/migration_jobs.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/database_migration/private_connections.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/database_migration/resource_args.py
@@ -13508,6 +13510,12 @@ ${MODPY_COMMENT}google-cloud-sdk/lib/surface/blockchain_node_engine/nodes/${MODP
 google-cloud-sdk/lib/surface/blockchain_node_engine/nodes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/blockchain_node_engine/nodes/describe.yaml
 google-cloud-sdk/lib/surface/blockchain_node_engine/nodes/list.yaml
+google-cloud-sdk/lib/surface/blockchain_node_engine/operations/
+google-cloud-sdk/lib/surface/blockchain_node_engine/operations/__init__.py
+${MODPY_COMMENT}google-cloud-sdk/lib/surface/blockchain_node_engine/operations/${MODPY_PYCACHE}/
+google-cloud-sdk/lib/surface/blockchain_node_engine/operations/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/blockchain_node_engine/operations/describe.yaml
+google-cloud-sdk/lib/surface/blockchain_node_engine/operations/list.yaml
 google-cloud-sdk/lib/surface/blueprints/
 google-cloud-sdk/lib/surface/blueprints/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/surface/blueprints/${MODPY_PYCACHE}/
@@ -17148,6 +17156,7 @@ google-cloud-sdk/lib/surface/database_migration/conversion_workspaces/${MODPY_PY
 google-cloud-sdk/lib/surface/database_migration/conversion_workspaces/${MODPY_PYCACHE}convert.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/database_migration/conversion_workspaces/${MODPY_PYCACHE}create.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/database_migration/conversion_workspaces/${MODPY_PYCACHE}delete.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/database_migration/conversion_workspaces/${MODPY_PYCACHE}describe_entities.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/database_migration/conversion_workspaces/${MODPY_PYCACHE}rollback.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/database_migration/conversion_workspaces/${MODPY_PYCACHE}seed.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/database_migration/conversion_workspaces/${MODPY_PYCACHE}update.${MODPY_PYC_MAGIC_TAG}pyc
@@ -17157,7 +17166,7 @@ google-cloud-sdk/lib/surface/database_migration/conversion_workspaces/convert.py
 google-cloud-sdk/lib/surface/database_migration/conversion_workspaces/create.py
 google-cloud-sdk/lib/surface/database_migration/conversion_workspaces/delete.py
 google-cloud-sdk/lib/surface/database_migration/conversion_workspaces/describe.yaml
-google-cloud-sdk/lib/surface/database_migration/conversion_workspaces/describe_entities.yaml
+google-cloud-sdk/lib/surface/database_migration/conversion_workspaces/describe_entities.py
 google-cloud-sdk/lib/surface/database_migration/conversion_workspaces/list.yaml
 google-cloud-sdk/lib/surface/database_migration/conversion_workspaces/list_background_jobs.yaml
 google-cloud-sdk/lib/surface/database_migration/conversion_workspaces/rollback.py
@@ -23603,8 +23612,10 @@ ${MODPY_COMMENT}google-cloud-sdk/lib/surface/vmware/private_clouds/subnets/${MOD
 google-cloud-sdk/lib/surface/vmware/private_clouds/subnets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/vmware/private_clouds/subnets/${MODPY_PYCACHE}describe.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/vmware/private_clouds/subnets/${MODPY_PYCACHE}list.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/vmware/private_clouds/subnets/${MODPY_PYCACHE}update.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/vmware/private_clouds/subnets/describe.py
 google-cloud-sdk/lib/surface/vmware/private_clouds/subnets/list.py
+google-cloud-sdk/lib/surface/vmware/private_clouds/subnets/update.py
 google-cloud-sdk/lib/surface/vmware/private_clouds/undelete.py
 google-cloud-sdk/lib/surface/vmware/private_clouds/update.py
 google-cloud-sdk/lib/surface/vmware/private_clouds/vcenter/
@@ -32772,6 +32783,7 @@ google-cloud-sdk/platform/ext-runtime/ruby/test/runtime_test.py
 google-cloud-sdk/platform/gcloud-crc32c_licenses/
 google-cloud-sdk/platform/gcloud-crc32c_licenses/LICENSES.txt
 google-cloud-sdk/platform/gsutil/
+google-cloud-sdk/platform/gsutil.textproto
 google-cloud-sdk/platform/gsutil/CHANGES.md
 google-cloud-sdk/platform/gsutil/CHECKSUM
 google-cloud-sdk/platform/gsutil/CONTRIBUTING.md
