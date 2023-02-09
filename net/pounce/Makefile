@@ -1,7 +1,6 @@
 COMMENT =	multi-client, TLS-only IRC bouncer
 
-DISTNAME =	pounce-3.0
-REVISION =	0
+DISTNAME =	pounce-3.1
 
 CATEGORIES =	net
 
