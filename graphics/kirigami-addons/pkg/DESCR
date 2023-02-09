@@ -1,0 +1,4 @@
+A set of "widgets" i.e visual end user components along with a code to support
+them. Components are usable by both touch and desktop experiences providing a
+native experience on both, and look native with any QQC2 style
+(qqc2-desktop-theme, Material or Plasma).
