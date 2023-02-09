@@ -121,6 +121,7 @@
      SUBDIR += kcolorpicker
      SUBDIR += kdiagram
      SUBDIR += kimageannotator
+     SUBDIR += kirigami-addons
      SUBDIR += kplot
      SUBDIR += kquickimageeditor
      SUBDIR += krita
