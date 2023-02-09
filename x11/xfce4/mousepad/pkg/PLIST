@@ -3,6 +3,7 @@
 lib/mousepad/
 lib/mousepad/plugins/
 @so lib/mousepad/plugins/libmousepad-plugin-gspell.so
+@so lib/mousepad/plugins/libmousepad-plugin-shortcuts.so
 share/applications/org.xfce.mousepad-settings.desktop
 share/applications/org.xfce.mousepad.desktop
 share/glib-2.0/schemas/org.xfce.mousepad.gschema.xml
@@ -20,8 +21,6 @@ share/locale/cs/LC_MESSAGES/mousepad.mo
 share/locale/da/LC_MESSAGES/mousepad.mo
 share/locale/de/LC_MESSAGES/mousepad.mo
 share/locale/el/LC_MESSAGES/mousepad.mo
-share/locale/en_AU/
-share/locale/en_AU/LC_MESSAGES/
 share/locale/en_AU/LC_MESSAGES/mousepad.mo
 share/locale/en_GB/LC_MESSAGES/mousepad.mo
 share/locale/es/LC_MESSAGES/mousepad.mo
@@ -36,15 +35,9 @@ share/locale/gl/LC_MESSAGES/mousepad.mo
 share/locale/he/LC_MESSAGES/mousepad.mo
 share/locale/hr/LC_MESSAGES/mousepad.mo
 share/locale/hu/LC_MESSAGES/mousepad.mo
-share/locale/hy_AM/
-share/locale/hy_AM/LC_MESSAGES/
 share/locale/hy_AM/LC_MESSAGES/mousepad.mo
-share/locale/hye/
-share/locale/hye/LC_MESSAGES/
 share/locale/hye/LC_MESSAGES/mousepad.mo
 share/locale/id/LC_MESSAGES/mousepad.mo
-share/locale/ie/
-share/locale/ie/LC_MESSAGES/
 share/locale/ie/LC_MESSAGES/mousepad.mo
 share/locale/is/LC_MESSAGES/mousepad.mo
 share/locale/it/LC_MESSAGES/mousepad.mo
@@ -74,7 +67,6 @@ share/locale/ug/LC_MESSAGES/mousepad.mo
 share/locale/uk/LC_MESSAGES/mousepad.mo
 share/locale/zh_CN/LC_MESSAGES/mousepad.mo
 share/locale/zh_TW/LC_MESSAGES/mousepad.mo
-share/metainfo/
 share/metainfo/org.xfce.mousepad.appdata.xml
 share/polkit-1/
 share/polkit-1/actions/

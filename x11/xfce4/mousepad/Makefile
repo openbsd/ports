@@ -1,10 +1,9 @@
 COMMENT=	Xfce4 simple text editor
 
-XFCE_VERSION=	0.5.10
+XFCE_VERSION=	0.6.0
 XFCE_GOODIE=	mousepad
-REVISION=	1
 
-SHARED_LIBS +=	mousepad	0.0 # 0.0
+SHARED_LIBS +=	mousepad	1.0 # 0.0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -15,6 +14,7 @@ MODXFCE_ICON_CACHE=	Yes
 MODXFCE_PURGE_LA=	lib lib/mousepad/plugins
 
 LIB_DEPENDS=	textproc/gspell \
+		x11/xfce4/libxfce4ui \
 		x11/gtksourceview4
 CONFIGURE_ARGS =	--enable-gspell
 
@@ -27,5 +27,7 @@ WANTLIB += icudata icuuc intl lzma m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2
 WANTLIB += pixman-1 png pthread xcb xcb-render xcb-shm
 WANTLIB += xml2 z ${COMPILER_LIBCXX}
 WANTLIB += Xau Xdmcp execinfo atspi dbus-1
+WANTLIB += ICE SM X11-xcb gthread-2.0 startup-notification-1 xcb-util
+WANTLIB += xfce4kbd-private-3 xfce4ui-2 xfce4util xfconf-0
 
 .include <bsd.port.mk>
