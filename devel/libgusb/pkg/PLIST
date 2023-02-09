@@ -122,6 +122,7 @@ share/doc/libgusb/method.Device.get_bus.html
 share/doc/libgusb/method.Device.get_children.html
 share/doc/libgusb/method.Device.get_configuration.html
 share/doc/libgusb/method.Device.get_configuration_index.html
+share/doc/libgusb/method.Device.get_created.html
 share/doc/libgusb/method.Device.get_custom_index.html
 share/doc/libgusb/method.Device.get_device_class.html
 share/doc/libgusb/method.Device.get_device_protocol.html
@@ -159,6 +160,7 @@ share/doc/libgusb/method.Device.set_configuration.html
 share/doc/libgusb/method.Device.set_interface_alt.html
 share/doc/libgusb/method.DeviceEvent.get_bytes.html
 share/doc/libgusb/method.DeviceEvent.get_id.html
+share/doc/libgusb/method.DeviceEvent.get_rc.html
 share/doc/libgusb/method.DeviceEvent.get_status.html
 share/doc/libgusb/method.DeviceEvent.set_bytes.html
 share/doc/libgusb/method.DeviceList.coldplug.html
@@ -193,6 +195,7 @@ share/doc/libgusb/property.Device.platform-id.html
 share/doc/libgusb/property.DeviceList.context.html
 share/doc/libgusb/search.js
 share/doc/libgusb/signal.Context.device-added.html
+share/doc/libgusb/signal.Context.device-changed.html
 share/doc/libgusb/signal.Context.device-removed.html
 share/doc/libgusb/signal.DeviceList.device-added.html
 share/doc/libgusb/signal.DeviceList.device-removed.html
@@ -205,6 +208,7 @@ share/doc/libgusb/type_func.Device.error_quark.html
 share/doc/libgusb/type_func.Source.error_quark.html
 share/doc/libgusb/urlmap_libgusb.js
 share/doc/libgusb/vfunc.Context.device_added.html
+share/doc/libgusb/vfunc.Context.device_changed.html
 share/doc/libgusb/vfunc.Context.device_removed.html
 share/doc/libgusb/vfunc.DeviceList.device_added.html
 share/doc/libgusb/vfunc.DeviceList.device_removed.html
