@@ -1,7 +1,7 @@
 Index: third_party/webrtc/rtc_base/network.cc
 --- third_party/webrtc/rtc_base/network.cc.orig
 +++ third_party/webrtc/rtc_base/network.cc
-@@ -286,7 +286,12 @@ AdapterType GetAdapterTypeFromName(absl::string_view n
+@@ -288,7 +288,12 @@ AdapterType GetAdapterTypeFromName(absl::string_view n
    }
  #endif
  

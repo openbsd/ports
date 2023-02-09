@@ -1,7 +1,7 @@
 Index: remoting/protocol/webrtc_video_stream.cc
 --- remoting/protocol/webrtc_video_stream.cc.orig
 +++ remoting/protocol/webrtc_video_stream.cc
-@@ -219,7 +219,7 @@ WebrtcVideoStream::WebrtcVideoStream(const std::string
+@@ -242,7 +242,7 @@ WebrtcVideoStream::WebrtcVideoStream(const std::string
      : stream_name_(stream_name), session_options_(session_options) {
  // TODO(joedow): Dig into the threading model on other platforms to see if they
  // can also be updated to run on a dedicated thread.

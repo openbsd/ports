@@ -1,7 +1,7 @@
 Index: chrome/browser/prefs/browser_prefs.cc
 --- chrome/browser/prefs/browser_prefs.cc.orig
 +++ chrome/browser/prefs/browser_prefs.cc
-@@ -449,14 +449,14 @@
+@@ -455,14 +455,14 @@
  #include "components/os_crypt/os_crypt.h"
  #endif
  
@@ -18,7 +18,7 @@ Index: chrome/browser/prefs/browser_prefs.cc
      (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
  #include "chrome/browser/browser_switcher/browser_switcher_prefs.h"
  #endif
-@@ -489,7 +489,7 @@
+@@ -495,7 +495,7 @@
  #include "chrome/browser/sessions/session_service_log.h"
  #endif
  
@@ -27,7 +27,7 @@ Index: chrome/browser/prefs/browser_prefs.cc
  #include "ui/color/system_theme.h"
  #endif
  
-@@ -1008,7 +1008,7 @@ void RegisterProfilePrefsForMigration(
+@@ -1033,7 +1033,7 @@ void RegisterProfilePrefsForMigration(
    registry->RegisterIntegerPref(kProfileAvatarTutorialShown, 0);
  #endif
  
@@ -36,7 +36,7 @@ Index: chrome/browser/prefs/browser_prefs.cc
    // Deprecated 08/2022.
    registry->RegisterBooleanPref(prefs::kUsesSystemThemeDeprecated, false);
  #endif
-@@ -1259,7 +1259,7 @@ void RegisterLocalState(PrefRegistrySimple* registry) 
+@@ -1292,7 +1292,7 @@ void RegisterLocalState(PrefRegistrySimple* registry) 
  #endif  // BUILDFLAG(GOOGLE_CHROME_BRANDING)
  #endif  // BUILDFLAG(IS_WIN)
  
@@ -45,7 +45,7 @@ Index: chrome/browser/prefs/browser_prefs.cc
    web_app::url_handler_prefs::RegisterLocalStatePrefs(registry);
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
-@@ -1586,11 +1586,11 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
+@@ -1627,11 +1627,11 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
    safe_browsing::PostCleanupSettingsResetter::RegisterProfilePrefs(registry);
  #endif
  
@@ -59,7 +59,7 @@ Index: chrome/browser/prefs/browser_prefs.cc
    browser_switcher::BrowserSwitcherPrefs::RegisterProfilePrefs(registry);
  #endif
  
-@@ -1974,7 +1974,7 @@ void MigrateObsoleteProfilePrefs(Profile* profile) {
+@@ -2015,7 +2015,7 @@ void MigrateObsoleteProfilePrefs(Profile* profile) {
    profile_prefs->ClearPref(kProfileAvatarTutorialShown);
  #endif
  

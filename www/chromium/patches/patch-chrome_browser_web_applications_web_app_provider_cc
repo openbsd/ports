@@ -1,7 +1,7 @@
 Index: chrome/browser/web_applications/web_app_provider.cc
 --- chrome/browser/web_applications/web_app_provider.cc.orig
 +++ chrome/browser/web_applications/web_app_provider.cc
-@@ -283,7 +283,7 @@ void WebAppProvider::CreateSubsystems(Profile* profile
+@@ -295,7 +295,7 @@ void WebAppProvider::CreateSubsystems(Profile* profile
          protocol_handler_manager.get());
  
      std::unique_ptr<UrlHandlerManager> url_handler_manager;

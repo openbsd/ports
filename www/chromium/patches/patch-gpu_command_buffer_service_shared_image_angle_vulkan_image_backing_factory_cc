@@ -1,7 +1,7 @@
 Index: gpu/command_buffer/service/shared_image/angle_vulkan_image_backing_factory.cc
 --- gpu/command_buffer/service/shared_image/angle_vulkan_image_backing_factory.cc.orig
 +++ gpu/command_buffer/service/shared_image/angle_vulkan_image_backing_factory.cc
-@@ -94,7 +94,7 @@ bool AngleVulkanImageBackingFactory::CanUseAngleVulkan
+@@ -123,7 +123,7 @@ bool AngleVulkanImageBackingFactory::CanUseAngleVulkan
    // TODO(penghuang): verify the scanout is the right usage for video playback.
    // crbug.com/1280798
    constexpr auto kSupportedUsages =

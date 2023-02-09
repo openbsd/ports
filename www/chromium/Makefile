@@ -6,8 +6,7 @@ DPB_PROPERTIES=		parallel parallel2
 
 COMMENT=		Chromium browser
 
-V=			109.0.5414.119
-REVISION=		2
+V=			110.0.5481.77
 
 DISTNAME=		chromium-${V}
 
@@ -116,10 +115,13 @@ TEST_TARGET=		base_unittests \
 			media_unittests \
 			mojo_unittests \
 			net_unittests \
+			pdf_unittests \
 			printing_unittests \
 			skia_unittests \
 			url_unittests \
 			wm_unittests
+
+TEST_ENV+=	FONTCONFIG_SYSROOT=${WRKSRC}/third_party/test_fonts
 
 DIST_TARGET_DIR=	chrome
 

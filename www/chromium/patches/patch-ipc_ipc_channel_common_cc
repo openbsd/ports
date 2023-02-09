@@ -1,7 +1,7 @@
 Index: ipc/ipc_channel_common.cc
 --- ipc/ipc_channel_common.cc.orig
 +++ ipc/ipc_channel_common.cc
-@@ -11,7 +11,7 @@
+@@ -10,7 +10,7 @@
  
  namespace IPC {
  

@@ -1,7 +1,7 @@
 Index: mojo/public/tools/bindings/mojom.gni
 --- mojo/public/tools/bindings/mojom.gni.orig
 +++ mojo/public/tools/bindings/mojom.gni
-@@ -699,6 +699,16 @@ template("mojom") {
+@@ -696,6 +696,16 @@ template("mojom") {
        enabled_features += [ "is_win" ]
      }
  

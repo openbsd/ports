@@ -1,8 +1,8 @@
 Index: third_party/pdfium/pdfium.gni
 --- third_party/pdfium/pdfium.gni.orig
 +++ third_party/pdfium/pdfium.gni
-@@ -37,7 +37,7 @@ declare_args() {
-   pdf_enable_xfa_tiff = true
+@@ -42,7 +42,7 @@ declare_args() {
+   pdf_use_cxx20 = is_win && is_component_build
  
    # Build PDFium with PartitionAlloc as the memory allocator.
 -  pdf_use_partition_alloc = pdf_use_partition_alloc_override

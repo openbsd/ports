@@ -1,7 +1,7 @@
 Index: base/system/sys_info.cc
 --- base/system/sys_info.cc.orig
 +++ base/system/sys_info.cc
-@@ -101,7 +101,7 @@ std::string SysInfo::HardwareModelName() {
+@@ -107,7 +107,7 @@ std::string SysInfo::HardwareModelName() {
  #endif
  
  void SysInfo::GetHardwareInfo(base::OnceCallback<void(HardwareInfo)> callback) {

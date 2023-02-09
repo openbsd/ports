@@ -1,7 +1,7 @@
 Index: content/app/content_main.cc
 --- content/app/content_main.cc.orig
 +++ content/app/content_main.cc
-@@ -226,7 +226,7 @@ RunContentProcess(ContentMainParams params,
+@@ -228,7 +228,7 @@ RunContentProcess(ContentMainParams params,
  #endif
      base::EnableTerminationOnOutOfMemory();
  

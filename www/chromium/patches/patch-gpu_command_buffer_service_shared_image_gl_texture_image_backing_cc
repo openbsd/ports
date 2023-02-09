@@ -1,7 +1,7 @@
 Index: gpu/command_buffer/service/shared_image/gl_texture_image_backing.cc
 --- gpu/command_buffer/service/shared_image/gl_texture_image_backing.cc.orig
 +++ gpu/command_buffer/service/shared_image/gl_texture_image_backing.cc
-@@ -346,7 +346,7 @@ void GLTextureImageBacking::InitializeGLTexture(
+@@ -465,7 +465,7 @@ void GLTextureImageBacking::InitializeGLTexture(
  }
  
  void GLTextureImageBacking::CreateEGLImage() {
