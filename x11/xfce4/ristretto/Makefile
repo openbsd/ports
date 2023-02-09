@@ -1,6 +1,6 @@
 COMMENT=	Xfce4 lightweight image-viewer
 
-XFCE_VERSION=	0.12.4
+XFCE_VERSION=	0.13.0
 XFCE_GOODIE=	ristretto
 
 # GPLv2
