@@ -39,10 +39,10 @@ lib/cmake/Grantlee5/GrantleeMacros.cmake
 lib/cmake/Grantlee5/GrantleeTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Grantlee5/GrantleeTargets.cmake
 lib/grantlee/
-lib/grantlee/5.2/
-@so lib/grantlee/5.2/grantlee_defaultfilters.so
-@so lib/grantlee/5.2/grantlee_defaulttags.so
-@so lib/grantlee/5.2/grantlee_i18ntags.so
-@so lib/grantlee/5.2/grantlee_loadertags.so
+lib/grantlee/${V_GRANTLEE}/
+@so lib/grantlee/${V_GRANTLEE}/grantlee_defaultfilters.so
+@so lib/grantlee/${V_GRANTLEE}/grantlee_defaulttags.so
+@so lib/grantlee/${V_GRANTLEE}/grantlee_i18ntags.so
+@so lib/grantlee/${V_GRANTLEE}/grantlee_loadertags.so
 @lib lib/libGrantlee_Templates.so.${LIBGrantlee_Templates_VERSION}
 @lib lib/libGrantlee_TextDocument.so.${LIBGrantlee_TextDocument_VERSION}

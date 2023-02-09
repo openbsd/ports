@@ -26,7 +26,7 @@ lib/cmake/KF5GrantleeTheme/KF5GrantleeThemeConfig.cmake
 lib/cmake/KF5GrantleeTheme/KF5GrantleeThemeConfigVersion.cmake
 lib/cmake/KF5GrantleeTheme/KF5GrantleeThemeTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5GrantleeTheme/KF5GrantleeThemeTargets.cmake
-@so lib/grantlee/5.2/kde_grantlee_plugin.so
+@so lib/grantlee/5.3/kde_grantlee_plugin.so
 @lib lib/libKF5GrantleeTheme.so.${LIBKF5GrantleeTheme_VERSION}
 share/kf5/mkspecs/qt_GrantleeTheme.pri
 share/locale/ar/LC_MESSAGES/libgrantleetheme.mo

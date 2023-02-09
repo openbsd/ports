@@ -24,7 +24,7 @@ lib/cmake/KF5CalendarUtils/KF5CalendarUtilsConfig.cmake
 lib/cmake/KF5CalendarUtils/KF5CalendarUtilsConfigVersion.cmake
 lib/cmake/KF5CalendarUtils/KF5CalendarUtilsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5CalendarUtils/KF5CalendarUtilsTargets.cmake
-@so lib/grantlee/5.2/kcalendar_grantlee_plugin.so
+@so lib/grantlee/5.3/kcalendar_grantlee_plugin.so
 @lib lib/libKF5CalendarUtils.so.${LIBKF5CalendarUtils_VERSION}
 share/kf5/mkspecs/qt_KCalUtils.pri
 share/locale/ar/LC_MESSAGES/libkcalutils5.mo

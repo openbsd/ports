@@ -1,6 +1,7 @@
 COMMENT =	grantlee theme library
 DISTNAME =	grantleetheme-${VERSION}
 CATEGORIES =	devel x11
+REVISION =	0
 
 SHARED_LIBS +=  KF5GrantleeTheme          2.0 # 5.9
 
@@ -28,7 +29,7 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kservice \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kxmlgui \
-		x11/grantlee-qt5>=5.2
+		x11/grantlee-qt5>=5.3
 
 TEST_IS_INTERACTIVE =	X11
 
