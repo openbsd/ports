@@ -27,8 +27,6 @@ CONFIGURE_STYLE =	gnu
 
 # test failures due to missing hyperlink support in libtextstyle
 CONFIGURE_ARGS +=	--disable-hserver
-# upstream recommends against packaging gui as it's just a tool for testing
-CONFIGURE_ARGS +=	--disable-gui
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
