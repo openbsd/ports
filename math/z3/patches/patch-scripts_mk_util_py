@@ -1,7 +1,7 @@
 Index: scripts/mk_util.py
 --- scripts/mk_util.py.orig
 +++ scripts/mk_util.py
-@@ -2580,7 +2580,6 @@ def mk_config():
+@@ -2607,7 +2607,6 @@ def mk_config():
              EXAMP_DEBUG_FLAG = '-g'
              CPPFLAGS     = '%s -DZ3DEBUG -D_DEBUG' % CPPFLAGS
          else:
@@ -9,24 +9,24 @@ Index: scripts/mk_util.py
              if GPROF:
                  CXXFLAGS     += '-fomit-frame-pointer'
              CPPFLAGS     = '%s -DNDEBUG -D_EXTERNAL_RELEASE' % CPPFLAGS
-@@ -2593,7 +2592,7 @@ def mk_config():
-         elif sysname == 'Linux':
-             CXXFLAGS       = '%s -D_LINUX_' % CXXFLAGS
-             OS_DEFINES     = '-D_LINUX_'
+@@ -2632,7 +2631,7 @@ def mk_config():
+             SO_EXT         = '.so'
+             SLIBFLAGS      = '-shared'
+         elif sysname == 'OpenBSD':
 -            SO_EXT         = '.so'
 +            SO_EXT         = '.so.${LIBz3_VERSION}'
              SLIBFLAGS      = '-shared'
-             SLIBEXTRAFLAGS = '%s -Wl,-soname,libz3.so' % SLIBEXTRAFLAGS
-         elif sysname == 'GNU':
-@@ -2637,9 +2636,9 @@ def mk_config():
+         elif sysname  == 'SunOS':
+             SO_EXT         = '.so'
+@@ -2648,9 +2647,8 @@ def mk_config():
              LIB_EXT        = '.lib'
          else:
              raise MKException('Unsupported platform: %s' % sysname)
-+        if not sysname.startswith('CYGWIN') and not sysname.startswith('MSYS') and not sysname.startswith('MINGW'):
-+            CXXFLAGS     = '%s -fPIC' % CXXFLAGS
-         if is64():
+-        if is64():
 -            if not sysname.startswith('CYGWIN') and not sysname.startswith('MSYS') and not sysname.startswith('MINGW'):
 -                CXXFLAGS     = '%s -fPIC' % CXXFLAGS
-             if sysname == 'Linux' or sysname == 'FreeBSD':
-                 CPPFLAGS = '%s -D_USE_THREAD_LOCAL' % CPPFLAGS
++        if not sysname.startswith('CYGWIN') and not sysname.startswith('MSYS') and not sysname.startswith('MINGW'):
++            CXXFLAGS     = '%s -fPIC' % CXXFLAGS
          elif not LINUX_X64:
+             CXXFLAGS     = '%s -m32' % CXXFLAGS
+             LDFLAGS      = '%s -m32' % LDFLAGS
