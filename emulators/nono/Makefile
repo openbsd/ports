@@ -2,7 +2,7 @@ BROKEN-i386=		requires __m128i and similar types; may work if SSE is disabled
 
 COMMENT=		OMRON LUNA-I and LUNA-88K emulator
 
-DISTNAME=		nono-0.4.4
+DISTNAME=		nono-0.5.0
 CATEGORIES=		emulators
 
 MAINTAINER=		Gonzalo L. R. <gonzalo@openbsd.org>
