@@ -17,6 +17,9 @@ CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+=	--enable-curses=yes \
 			--disable-versioned-doc
 
+CFLAGS +=		-Wno-deprecated-non-prototype \
+			-Wno-unknown-warning-option	# for clang 13
+
 USE_GMAKE=		Yes
 
 BUILD_DEPENDS=		${RUN_DEPENDS} \
