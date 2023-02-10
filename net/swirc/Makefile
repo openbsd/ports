@@ -1,5 +1,5 @@
 COMMENT =	curses icb and irc client
-DISTNAME =	swirc-3.3.9
+DISTNAME =	swirc-3.4.0
 CATEGORIES =	net
 HOMEPAGE =	https://www.nifty-networks.net/swirc/
 
@@ -9,8 +9,8 @@ MAINTAINER =		Markus Uhlin <markus.uhlin@bredband.net>
 PERMIT_PACKAGE =	Yes
 
 # uses pledge()
-WANTLIB =		${COMPILER_LIBCXX} c crypto curl curses iconv idn intl \
-			m panel pthread ssl
+WANTLIB =		${COMPILER_LIBCXX} c crypto curl curses hunspell-1.7 \
+			iconv idn intl m panel pthread ssl
 
 MASTER_SITES =		https://www.nifty-networks.net/swirc/releases/
 EXTRACT_SUFX =		.tgz
@@ -21,7 +21,8 @@ COMPILER =		base-clang ports-gcc
 BUILD_DEPENDS =		devel/gettext,-tools
 LIB_DEPENDS =		devel/gettext,-runtime \
 			devel/libidn \
-			net/curl
+			net/curl \
+			textproc/hunspell
 
 CFLAGS +=		-I${LOCALBASE}/include
 LDFLAGS +=		-L${LOCALBASE}/lib
