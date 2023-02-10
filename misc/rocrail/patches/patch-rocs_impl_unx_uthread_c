@@ -9,3 +9,39 @@ Index: rocs/impl/unx/uthread.c
  
  #include <pthread.h>
  #include <sched.h>
+@@ -38,7 +39,7 @@
+ static void* rocs_thread_wrapper( void* inst ) {
+ #ifdef __ROCS_THREAD__
+   iOThreadData o = Data(inst);
+-  o->id = pthread_self();
++  o->id = ( unsigned long )pthread_self();
+   o->run( inst );
+ #endif
+ }
+@@ -90,7 +91,7 @@ void rocs_thread_sleep( const int ms ) {
+ 
+ unsigned long rocs_thread_id(void) {
+ #ifdef __ROCS_THREAD__
+-  return pthread_self();
++  return ( unsigned long )pthread_self();
+ #else
+   return 0;
+ #endif
+@@ -100,7 +101,7 @@ void rocs_thread_kill( iOThread inst ) {
+ #ifdef __ROCS_THREAD__
+   iOThreadData o = Data(inst);
+   /*pthread_kill( o->handle, SIGABRT );*/
+-  pthread_cancel( o->handle );
++  pthread_cancel( ( pthread_t )o->handle );
+ #endif
+ }
+ 
+@@ -144,7 +145,7 @@ Boolean rocs_thread_join( iOThread inst ) {
+   iOThreadData o = Data(inst);
+   int rc = 0;
+   if( o != NULL && o->handle != 0 )
+-    rc = pthread_join( o->handle, NULL );
++    rc = pthread_join( ( pthread_t )o->handle, NULL );
+   if( rc == ESRCH )
+     TraceOp.trc( name, TRCLEVEL_DEBUG, __LINE__, 9999, "pthread_join rc=%d", rc );
+   else if( rc != 0 )
