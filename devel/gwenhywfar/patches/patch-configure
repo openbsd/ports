@@ -1,14 +1,14 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -23308,8 +23308,8 @@ percent.commands = @echo -n "\$(\$(@))\ "
+@@ -25223,8 +25223,8 @@ percent.commands = @echo -n "\$(\$(@))\ "
  QMAKE_EXTRA_TARGETS += percent
  EOF
      $QT_QMAKE $am_have_qt_pro -o $am_have_qt_makefile
--    QT_CXXFLAGS=`make -s -f $am_have_qt_makefile CXXFLAGS INCPATH`
--    QT_LIBS=`make -s -f $am_have_qt_makefile LIBS`
+-    QT_CXXFLAGS=`cd $am_have_qt_dir; make -s -f $am_have_qt_makefile CXXFLAGS INCPATH`
+-    QT_LIBS=`cd $am_have_qt_dir; make -s -f $am_have_qt_makefile LIBS`
 +    QT_CXXFLAGS=`make -s -f $am_have_qt_makefile -VCXXFLAGS -VINCPATH | tr '\n' ' '`
 +    QT_LIBS=`make -s -f $am_have_qt_makefile -VLIBS | tr '\n' ' '`
      rm $am_have_qt_pro $am_have_qt_makefile
+     rmdir $am_have_qt_dir
  
-     # Look for specific tools in $PATH
