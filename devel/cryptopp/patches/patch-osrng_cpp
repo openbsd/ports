@@ -1,15 +1,15 @@
 Index: osrng.cpp
 --- osrng.cpp.orig
 +++ osrng.cpp
-@@ -214,11 +214,7 @@ void NonblockingRng::GenerateBlock(byte *output, size_
+@@ -248,11 +248,7 @@ void NonblockingRng::GenerateBlock(byte *output, size_
  #ifdef BLOCKING_RNG_AVAILABLE
  
  #ifndef CRYPTOPP_BLOCKING_RNG_FILENAME
--#ifdef __OpenBSD__
--#define CRYPTOPP_BLOCKING_RNG_FILENAME "/dev/srandom"
--#else
- #define CRYPTOPP_BLOCKING_RNG_FILENAME "/dev/random"
--#endif
+-# ifdef __OpenBSD__
+-#  define CRYPTOPP_BLOCKING_RNG_FILENAME "/dev/srandom"
+-# else
+ #  define CRYPTOPP_BLOCKING_RNG_FILENAME "/dev/random"
+-# endif
  #endif
  
  BlockingRng::BlockingRng()
