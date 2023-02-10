@@ -1,0 +1,11 @@
+Openapi-core is a Python library that adds client-side and server-side
+support for the OpenAPI v3.0 and OpenAPI v3.1 specification.
+
+Key features:
+
+Validation of requests and responses
+Schema casting and unmarshalling
+Media type and parameters deserialization
+Security providers (API keys, Cookie, Basic and Bearer HTTP authentications)
+Custom deserializers and formats
+Integration with libraries and frameworks
