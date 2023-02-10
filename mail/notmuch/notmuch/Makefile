@@ -23,8 +23,13 @@ RUN_DEPENDS-emacs =	devel/desktop-file-utils \
 			editors/emacs \
 			${FULLPKGNAME-main}:${FULLPKGPATH-main}
 
+# this builds, though does not currently install, cffi-based Python
+# bindings using its own Makefile rather than the standard ports
+# Python build infra. (there is also ../py-notmuch which packages
+# the non-cffi-based Python bindings).
 BUILD_DEPENDS =		devel/doxygen \
 			devel/py-cffi${MODPY_FLAVOR} \
+			devel/py-setuptools${MODPY_FLAVOR} \
 			editors/emacs,gtk3 \
 			security/gnupg>=2.2.23p1 \
 			shells/bash \
