@@ -1,5 +1,6 @@
---- action.c.orig	Sun Nov 13 08:21:54 2011
-+++ action.c	Sun Nov 13 08:22:18 2011
+Index: action.c
+--- action.c.orig
++++ action.c
 @@ -178,7 +178,7 @@ catch_child()
  {
          int     	pid;
@@ -9,3 +10,13 @@
  
  
          /*
+@@ -192,7 +192,8 @@ catch_child()
+ 				i++;
+ 		if(ci_ptr[i].child_id == pid)
+ 		{
+-			XtAppAddTimeOut(app_context,50,ResetButton,pid);
++			XtAppAddTimeOut(app_context,50,ResetButton,
++				(XtPointer)pid);
+ 		}
+ 	}
+         return;
