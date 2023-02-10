@@ -25,6 +25,7 @@ RUN_DEPENDS=	databases/py-ldap3${MODPY_FLAVOR} \
 		www/py-flask${MODPY_FLAVOR} \
 		www/py-jwt${MODPY_FLAVOR} \
 		www/py-multidict${MODPY_FLAVOR} \
+		www/py-openapi-core${MODPY_FLAVOR} \
 		www/py-requests${MODPY_FLAVOR}
 
 CONFIGURE_ARGS+=	-DCMAKE_INSTALL_LIBDIR=${PREFIX}/lib \
