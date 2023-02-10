@@ -7,7 +7,7 @@ GH_PROJECT =	barman
 GH_TAGNAME =	release/${MODPY_EGG_VERSION}
 DISTNAME =	barman-${MODPY_EGG_VERSION}
 WRKDIST =	${WRKDIR}/barman-release-${MODPY_EGG_VERSION}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	databases
 HOMEPAGE =	https://www.pgbarman.org/
@@ -24,7 +24,7 @@ RUN_DEPENDS =	databases/py-psycopg2${MODPY_FLAVOR} \
 		databases/postgresql \
 		net/rsync \
 		devel/py-dateutil${MODPY_FLAVOR} \
-		devel/py-argh${MODPY_FLAVOR}
+		devel/py-argcomplete${MODPY_FLAVOR}
 
 TEST_DEPENDS =	devel/py-test-timeout${MODPY_FLAVOR} \
 		devel/py-test-runner${MODPY_FLAVOR}
