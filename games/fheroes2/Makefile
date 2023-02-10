@@ -2,7 +2,7 @@ COMMENT =	engine recreation for Heroes of Might and Magic 2
 
 GH_ACCOUNT =	ihhub
 GH_PROJECT =	fheroes2
-GH_TAGNAME =	0.9.21
+GH_TAGNAME =	1.0.0
 CATEGORIES =	games
 HOMEPAGE =	https://ihhub.github.io/fheroes2/
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
