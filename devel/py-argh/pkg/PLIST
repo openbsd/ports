@@ -1,6 +1,9 @@
 @pkgpath devel/py-argh
 lib/python${MODPY_VERSION}/site-packages/argh/
 lib/python${MODPY_VERSION}/site-packages/argh-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/argh-${MODPY_EGG_VERSION}.dist-info/AUTHORS
+lib/python${MODPY_VERSION}/site-packages/argh-${MODPY_EGG_VERSION}.dist-info/COPYING
+lib/python${MODPY_VERSION}/site-packages/argh-${MODPY_EGG_VERSION}.dist-info/COPYING.LESSER
 lib/python${MODPY_VERSION}/site-packages/argh-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/argh-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/argh-${MODPY_EGG_VERSION}.dist-info/WHEEL
