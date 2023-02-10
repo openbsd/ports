@@ -3,6 +3,7 @@ COMMENT =	framework for analysis of layer 2 network protocols
 GH_ACCOUNT = tomac
 GH_PROJECT = yersinia
 GH_TAGNAME = v0.8.2
+REVISION =   0
 
 CATEGORIES =	net security
 
@@ -23,7 +24,7 @@ CONFIGURE_ARGS =	--disable-gtk \
 			--with-libnet-includes=${LOCALBASE}/include/libnet-1.1
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib" \
 			LIBNET_CONFIG=${LOCALBASE}/bin/libnet-config-1.1 \
-			CPPFLAGS="${CPPFLAGS} -DLBL_ALIGN"
+			CPPFLAGS="${CPPFLAGS}"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/yersinia
