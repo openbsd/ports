@@ -16,4 +16,4 @@ Index: bin/status.php
 +$baseDir = '/var/www/vpn-user-portal';
  
  use Vpn\Portal\Cfg\Config;
- use Vpn\Portal\Cfg\ProfileConfig;
+ use Vpn\Portal\ConnectionHooks;

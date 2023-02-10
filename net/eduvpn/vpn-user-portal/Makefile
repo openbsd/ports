@@ -1,11 +1,10 @@
 COMMENT=	user and admin portal for Let's Connect/eduVPN
 
-V=		3.3.0
+V=		3.3.1
 MASTER_SITES0=	https://spacehopper.org/mirrors/
 DISTNAME=	vpn-user-portal-$V
 DISTFILES=	${DISTNAME}.tar.xz ${DISTNAME}-vendor.tar.xz:0
 # Debian packaging in https://git.sr.ht/~fkooman/vpn-user-portal.deb/tree
-REVISION=	0
 
 # AGPL-3.0
 PERMIT_PACKAGE=	Yes
@@ -60,8 +59,9 @@ do-install:
 
 	cd ${WRKSRC}; pax -rw * ${PREFIX}/vpn-user-portal/
 	cd ${PREFIX}/vpn-user-portal; \
-	rm -rf vendor/fkooman/*/.git *.md LICENSE* Makefile \
-	    composer* dev phpstan* psalm* testing tests bin config libexec; \
+	rm -rf vendor/fkooman/*/.git* *.md LICENSE* Makefile \
+	    composer* dev phpstan* psalm* testing {,vendor/*/*/}tests \
+	    vendor/*/*/example bin config libexec; \
 	find . -name '*${PATCHORIG}' -delete
 
 	cd ${PREFIX}/vpn-user-portal; \
