@@ -1,12 +1,14 @@
 Index: xmltest.cpp
 --- xmltest.cpp.orig
 +++ xmltest.cpp
-@@ -690,7 +690,7 @@ int main( int argc, const char ** argv )
+@@ -807,8 +807,8 @@ int main( int argc, const char ** argv )
  
  	// ---------- Attributes ---------
  	{
 -		static const int64_t BIG = -123456789012345678;
+-        static const uint64_t BIG_POS = 123456789012345678;
 +		static const int64_t BIG = -123456789012345678LL;
++        static const uint64_t BIG_POS = 123456789012345678LL;
  		XMLDocument doc;
  		XMLElement* element = doc.NewElement("element");
  		doc.InsertFirstChild(element);

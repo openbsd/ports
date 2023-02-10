@@ -1,3 +1,9 @@
 include/tinyxml2.h
+lib/cmake/
+lib/cmake/tinyxml2/
+lib/cmake/tinyxml2/tinyxml2-config-version.cmake
+lib/cmake/tinyxml2/tinyxml2-config.cmake
+lib/cmake/tinyxml2/tinyxml2-shared-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/tinyxml2/tinyxml2-shared-targets.cmake
 @lib lib/libtinyxml2.so.${LIBtinyxml2_VERSION}
 lib/pkgconfig/tinyxml2.pc

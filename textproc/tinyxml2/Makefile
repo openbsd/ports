@@ -2,10 +2,9 @@ COMMENT =		simple, small and efficient C++ XML parser
 
 GH_ACCOUNT =		leethomason
 GH_PROJECT =		tinyxml2
-GH_TAGNAME =		4.0.1
-REVISION =		2
+GH_TAGNAME =		9.0.0
 
-SHARED_LIBS +=		tinyxml2	1.0 # 3.0
+SHARED_LIBS +=		tinyxml2	9.0 # 9.0
 
 CATEGORIES =		textproc
 
@@ -20,7 +19,9 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =		devel/cmake
 
-FIX_CRLF_FILES =	xmltest.cpp
+CONFIGURE_ARGS +=	-DBUILD_SHARED_LIBS=ON
+
+FIX_CRLF_FILES =	xmltest.cpp tinyxml2.cpp
 
 do-test:
 	cd ${WRKSRC} && ${CXX} xmltest.cpp tinyxml2.cpp tinyxml2.h && ./a.out
