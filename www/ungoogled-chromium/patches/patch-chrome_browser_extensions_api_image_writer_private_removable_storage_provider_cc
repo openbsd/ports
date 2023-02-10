@@ -7,7 +7,7 @@ Index: chrome/browser/extensions/api/image_writer_private/removable_storage_prov
    DCHECK_CURRENTLY_ON(content::BrowserThread::UI);
 +#if !defined(OS_BSD)
    if (g_test_device_list.Get().get() != nullptr) {
-     base::ThreadTaskRunnerHandle::Get()->PostTask(
+     base::SingleThreadTaskRunner::GetCurrentDefault()->PostTask(
          FROM_HERE,
 @@ -33,6 +34,9 @@ void RemovableStorageProvider::GetAllDevices(DeviceLis
         base::TaskShutdownBehavior::SKIP_ON_SHUTDOWN},

@@ -1,7 +1,7 @@
 Index: components/paint_preview/player/player_compositor_delegate.cc
 --- components/paint_preview/player/player_compositor_delegate.cc.orig
 +++ components/paint_preview/player/player_compositor_delegate.cc
-@@ -444,8 +444,8 @@ void PlayerCompositorDelegate::ValidateProtoAndLoadAXT
+@@ -445,8 +445,8 @@ void PlayerCompositorDelegate::ValidateProtoAndLoadAXT
    // use the AXTreeUpdate.
    auto chrome_version = capture_result_->proto.metadata().chrome_version();
    if (capture_result_->proto.metadata().has_chrome_version() &&

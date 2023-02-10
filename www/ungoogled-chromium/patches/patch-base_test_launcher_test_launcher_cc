@@ -1,7 +1,7 @@
 Index: base/test/launcher/test_launcher.cc
 --- base/test/launcher/test_launcher.cc.orig
 +++ base/test/launcher/test_launcher.cc
-@@ -67,6 +67,7 @@
+@@ -66,6 +66,7 @@
  #include "third_party/libxml/chromium/libxml_utils.h"
  
  #if BUILDFLAG(IS_POSIX)

@@ -19,7 +19,7 @@ Index: media/base/user_input_monitor_unittest.cc
    base::test::TaskEnvironment task_environment(
        base::test::TaskEnvironment::MainThreadType::IO);
  #else
-@@ -71,7 +71,7 @@ TEST_F(UserInputMonitorTest, CreatePlatformSpecific) {
+@@ -72,7 +72,7 @@ TEST_F(UserInputMonitorTest, CreatePlatformSpecific) {
  }
  
  TEST_F(UserInputMonitorTest, CreatePlatformSpecificWithMapping) {

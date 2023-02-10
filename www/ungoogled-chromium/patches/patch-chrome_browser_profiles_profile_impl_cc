@@ -1,7 +1,7 @@
 Index: chrome/browser/profiles/profile_impl.cc
 --- chrome/browser/profiles/profile_impl.cc.orig
 +++ chrome/browser/profiles/profile_impl.cc
-@@ -256,6 +256,10 @@
+@@ -255,6 +255,10 @@
  #include "chrome/browser/spellchecker/spellcheck_service.h"
  #endif
  
@@ -12,7 +12,7 @@ Index: chrome/browser/profiles/profile_impl.cc
  using bookmarks::BookmarkModel;
  using content::BrowserThread;
  using content::DownloadManagerDelegate;
-@@ -833,7 +837,17 @@ void ProfileImpl::DoFinalInit(CreateMode create_mode) 
+@@ -848,7 +852,17 @@ void ProfileImpl::DoFinalInit(CreateMode create_mode) 
  }
  
  base::FilePath ProfileImpl::last_selected_directory() {

@@ -1,7 +1,7 @@
 Index: base/allocator/partition_allocator/partition_address_space.cc
 --- base/allocator/partition_allocator/partition_address_space.cc.orig
 +++ base/allocator/partition_allocator/partition_address_space.cc
-@@ -432,7 +432,7 @@ void PartitionAddressSpace::UninitPkeyPoolForTesting()
+@@ -440,7 +440,7 @@ void PartitionAddressSpace::UninitPkeyPoolForTesting()
  }
  #endif
  

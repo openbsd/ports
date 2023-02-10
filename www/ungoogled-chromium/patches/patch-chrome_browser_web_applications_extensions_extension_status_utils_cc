@@ -7,10 +7,10 @@ Index: chrome/browser/web_applications/extensions/extension_status_utils.cc
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_FUCHSIA)
 +    BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
- const char kMobilityPrintExtensionId[] = "alhngdkjgnedakdlnamimgfihgkmenbh";
+ const char kMobilityPrintAndDirectPrintIoExtensionIds[] =
+     "alhngdkjgnedakdlnamimgfihgkmenbh,gnddkmpjjjcimefninepfmmddpgaaado";
  
- BASE_FEATURE(kChromeAppsDeprecationExcludeForceInstalls,
-@@ -108,7 +108,7 @@ bool ClearExternalExtensionUninstalled(content::Browse
+@@ -110,7 +110,7 @@ bool ClearExternalExtensionUninstalled(content::Browse
  }
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

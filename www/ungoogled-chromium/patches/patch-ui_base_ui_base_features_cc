@@ -10,7 +10,7 @@ Index: ui/base/ui_base_features.cc
      (BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS_ASH) && \
       !BUILDFLAG(IS_CHROMEOS_LACROS))
               base::FEATURE_ENABLED_BY_DEFAULT
-@@ -307,7 +307,7 @@ bool IsForcedColorsEnabled() {
+@@ -311,7 +311,7 @@ bool IsForcedColorsEnabled() {
  // milestones.
  BASE_FEATURE(kEyeDropper,
               "EyeDropper",

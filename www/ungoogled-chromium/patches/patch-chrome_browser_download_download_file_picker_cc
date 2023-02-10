@@ -10,7 +10,7 @@ Index: chrome/browser/download/download_file_picker.cc
  #include "chrome/browser/ui/browser_list.h"
  #include "chrome/browser/ui/browser_window.h"
  #include "ui/aura/window.h"
-@@ -86,7 +86,7 @@ DownloadFilePicker::DownloadFilePicker(download::Downl
+@@ -82,7 +82,7 @@ DownloadFilePicker::DownloadFilePicker(download::Downl
    // dialog in Linux (See SelectFileImpl() in select_file_dialog_linux_gtk.cc).
    // and windows.Here we make owning_window host to browser current active
    // window if it is null. https://crbug.com/1301898

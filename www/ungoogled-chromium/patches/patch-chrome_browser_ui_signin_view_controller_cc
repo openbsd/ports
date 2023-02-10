@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/signin_view_controller.cc
 --- chrome/browser/ui/signin_view_controller.cc.orig
 +++ chrome/browser/ui/signin_view_controller.cc
-@@ -273,7 +273,7 @@ void SigninViewController::ShowModalEnterpriseConfirma
+@@ -275,7 +275,7 @@ void SigninViewController::ShowModalEnterpriseConfirma
      SkColor profile_color,
      signin::SigninChoiceCallback callback) {
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

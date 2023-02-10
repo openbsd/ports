@@ -1,7 +1,7 @@
 Index: pdf/pdfium/pdfium_engine.cc
 --- pdf/pdfium/pdfium_engine.cc.orig
 +++ pdf/pdfium/pdfium_engine.cc
-@@ -82,7 +82,7 @@
+@@ -84,7 +84,7 @@
  #include "gin/public/cppgc.h"
  #endif
  
@@ -10,7 +10,7 @@ Index: pdf/pdfium/pdfium_engine.cc
  #include "pdf/pdfium/pdfium_font_linux.h"
  #endif
  
-@@ -521,7 +521,7 @@ void InitializeSDK(bool enable_v8, FontMappingMode fon
+@@ -528,7 +528,7 @@ void InitializeSDK(bool enable_v8, FontMappingMode fon
  
    FPDF_InitLibraryWithConfig(&config);
  

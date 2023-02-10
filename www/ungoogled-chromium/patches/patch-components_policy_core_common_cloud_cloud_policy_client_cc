@@ -1,7 +1,7 @@
 Index: components/policy/core/common/cloud/cloud_policy_client.cc
 --- components/policy/core/common/cloud/cloud_policy_client.cc.orig
 +++ components/policy/core/common/cloud/cloud_policy_client.cc
-@@ -448,7 +448,7 @@ void CloudPolicyClient::FetchPolicy() {
+@@ -432,7 +432,7 @@ void CloudPolicyClient::FetchPolicy() {
          fetch_request->set_invalidation_payload(invalidation_payload_);
        }
      }

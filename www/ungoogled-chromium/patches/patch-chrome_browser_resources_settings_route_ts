@@ -1,7 +1,7 @@
 Index: chrome/browser/resources/settings/route.ts
 --- chrome/browser/resources/settings/route.ts.orig
 +++ chrome/browser/resources/settings/route.ts
-@@ -202,7 +202,7 @@ function createBrowserSettingsRoutes(): Partial<Settin
+@@ -215,7 +215,7 @@ function createBrowserSettingsRoutes(): SettingsRoutes
      r.ACCESSIBILITY = r.ADVANCED.createSection(
          '/accessibility', 'a11y', loadTimeData.getString('a11yPageTitle'));
  

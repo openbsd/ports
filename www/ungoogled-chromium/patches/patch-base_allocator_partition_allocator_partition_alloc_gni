@@ -1,8 +1,8 @@
 Index: base/allocator/partition_allocator/partition_alloc.gni
 --- base/allocator/partition_allocator/partition_alloc.gni.orig
 +++ base/allocator/partition_allocator/partition_alloc.gni
-@@ -121,7 +121,7 @@ assert(
-     "Missing dangling pointer checks feature for its performance experiment")
+@@ -200,7 +200,7 @@ assert(!use_asan_unowned_ptr || is_asan,
+        "AsanUnownedPtr requires AddressSanitizer")
  
  declare_args() {
 -  enable_pkeys = is_linux && target_cpu == "x64"

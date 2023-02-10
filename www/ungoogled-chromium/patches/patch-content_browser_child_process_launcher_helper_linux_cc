@@ -78,4 +78,4 @@ Index: content/browser/child_process_launcher_helper_linux.cc
 +#endif
  }
  
- void ChildProcessLauncherHelper::SetProcessPriorityOnLauncherThread(
+ void ChildProcessLauncherHelper::SetProcessBackgroundedOnLauncherThread(

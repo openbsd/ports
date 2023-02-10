@@ -10,7 +10,7 @@ Index: weblayer/browser/content_browser_client_impl.cc
  #include "content/public/common/content_descriptors.h"
  #endif
  
-@@ -1004,7 +1004,7 @@ SafeBrowsingService* ContentBrowserClientImpl::GetSafe
+@@ -1006,7 +1006,7 @@ SafeBrowsingService* ContentBrowserClientImpl::GetSafe
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || \

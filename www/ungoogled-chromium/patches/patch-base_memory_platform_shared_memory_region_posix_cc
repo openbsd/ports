@@ -10,7 +10,7 @@ Index: base/memory/platform_shared_memory_region_posix.cc
  // static
  ScopedFD PlatformSharedMemoryRegion::ExecutableRegion::CreateFD(size_t size) {
    PlatformSharedMemoryRegion region =
-@@ -171,7 +171,7 @@ bool PlatformSharedMemoryRegion::ConvertToUnsafe() {
+@@ -168,7 +168,7 @@ bool PlatformSharedMemoryRegion::ConvertToUnsafe() {
  // static
  PlatformSharedMemoryRegion PlatformSharedMemoryRegion::Create(Mode mode,
                                                                size_t size
@@ -19,7 +19,7 @@ Index: base/memory/platform_shared_memory_region_posix.cc
                                                                ,
                                                                bool executable
  #endif
-@@ -200,7 +200,7 @@ PlatformSharedMemoryRegion PlatformSharedMemoryRegion:
+@@ -197,7 +197,7 @@ PlatformSharedMemoryRegion PlatformSharedMemoryRegion:
    // flag.
    FilePath directory;
    if (!GetShmemTempDir(

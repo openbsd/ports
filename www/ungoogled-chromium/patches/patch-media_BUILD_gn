@@ -1,7 +1,7 @@
 Index: media/BUILD.gn
 --- media/BUILD.gn.orig
 +++ media/BUILD.gn
-@@ -88,6 +88,9 @@ config("media_config") {
+@@ -87,6 +87,9 @@ config("media_config") {
        defines += [ "DLOPEN_PULSEAUDIO" ]
      }
    }

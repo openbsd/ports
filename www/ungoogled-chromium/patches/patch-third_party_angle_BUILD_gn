@@ -1,7 +1,7 @@
 Index: third_party/angle/BUILD.gn
 --- third_party/angle/BUILD.gn.orig
 +++ third_party/angle/BUILD.gn
-@@ -276,7 +276,6 @@ config("extra_warnings") {
+@@ -279,7 +279,6 @@ config("extra_warnings") {
        "-Wtautological-type-limit-compare",
        "-Wundefined-reinterpret-cast",
        "-Wunneeded-internal-declaration",
@@ -9,7 +9,7 @@ Index: third_party/angle/BUILD.gn
        "-Wsuggest-destructor-override",
        "-Wsuggest-override",
  
-@@ -459,7 +458,7 @@ angle_static_library("angle_common") {
+@@ -465,7 +464,7 @@ angle_static_library("angle_common") {
      all_dependent_configs = [ ":angle_disable_pool_alloc" ]
    }
  
@@ -18,7 +18,7 @@ Index: third_party/angle/BUILD.gn
      libs = [ "dl" ]
    }
  
-@@ -601,6 +600,9 @@ angle_static_library("angle_gpu_info_util") {
+@@ -607,6 +606,9 @@ angle_static_library("angle_gpu_info_util") {
          "Xi",
          "Xext",
        ]
@@ -28,7 +28,7 @@ Index: third_party/angle/BUILD.gn
      }
  
      if (angle_use_wayland && angle_has_build) {
-@@ -1104,12 +1106,12 @@ if (angle_use_wayland) {
+@@ -1092,12 +1094,12 @@ if (angle_use_wayland) {
          "wayland-client",
          "wayland-egl",
        ]

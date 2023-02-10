@@ -11,3 +11,12 @@ Index: content/common/BUILD.gn
    }
  }
  
+@@ -481,7 +484,7 @@ mojom("mojo_bindings") {
+   if (enable_ipc_logging) {
+     enabled_features += [ "ipc_logging" ]
+   }
+-  if (is_linux || is_chromeos) {
++  if (!is_bsd && (is_linux || is_chromeos)) {
+     enabled_features += [ "supports_thread_types" ]
+   }
+   if (use_clang_profiling_inside_sandbox) {

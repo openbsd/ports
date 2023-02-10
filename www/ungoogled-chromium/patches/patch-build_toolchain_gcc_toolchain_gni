@@ -15,7 +15,7 @@ Index: build/toolchain/gcc_toolchain.gni
  # This template defines a toolchain for something that works like gcc
  # (including clang).
  #
-@@ -799,22 +806,12 @@ template("gcc_toolchain") {
+@@ -803,22 +810,12 @@ template("gcc_toolchain") {
  # use_gold too.
  template("clang_toolchain") {
    gcc_toolchain(target_name) {
