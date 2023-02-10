@@ -1,0 +1,6 @@
+JSONSchema Spec with object-oriented paths.
+
+Key features:
+
+Traverse elements like paths
+Access spec on demand with separate dereferencing accessor layer
