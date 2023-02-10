@@ -132,11 +132,11 @@ include/libAfterStep/screen.h
 include/libAfterStep/session.h
 include/libAfterStep/shape.h
 include/libAfterStep/wmprops.h
-lib/libASGTK.a
-lib/libAfterBase.a
-lib/libAfterConf.a
-lib/libAfterImage.a
-lib/libAfterStep.a
+@static-lib lib/libASGTK.a
+@static-lib lib/libAfterBase.a
+@static-lib lib/libAfterConf.a
+@static-lib lib/libAfterImage.a
+@static-lib lib/libAfterStep.a
 @man man/man1/ASDatabase.1x
 @man man/man1/ASDatabaseEntry.1x
 @man man/man1/AfterStep.1x
