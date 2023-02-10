@@ -72,7 +72,7 @@ MODGO_MODULES =	\
 	github.com/cpuguy83/go-md2man				 v1.0.10 \
 	github.com/creack/pty					 v1.1.11 \
 	github.com/davecgh/go-spew				 v1.1.1 \
-	github.com/dgraph-io/ristretto				 v0.1.1-0.20220403145359-8e850b710d6d \
+	github.com/dgraph-io/ristretto				 v0.1.1 \
 	github.com/dgryski/go-farm				 v0.0.0-20190423205320-6a90982ecee2 \
 	github.com/docker/distribution				 v2.8.1+incompatible \
 	github.com/docker/docker				 v20.10.19+incompatible \
@@ -185,8 +185,8 @@ MODGO_MODULES =	\
 	github.com/matrix-org/dugong				 v0.0.0-20210921133753-66e6b1c67e2e \
 	github.com/matrix-org/go-sqlite3-js			 v0.0.0-20220419092513-28aa791a1c91 \
 	github.com/matrix-org/gomatrix				 v0.0.0-20220926102614-ceba4d9f7530 \
-	github.com/matrix-org/gomatrixserverlib			 v0.0.0-20221101165746-0e4a8bb6db7e \
-	github.com/matrix-org/pinecone				 v0.0.0-20221103125849-37f2e9b9ba37 \
+	github.com/matrix-org/gomatrixserverlib			 v0.0.0-20230119151039-d8748f6d5dc8 \
+	github.com/matrix-org/pinecone				 v0.0.0-20221118192051-fef26631b847 \
 	github.com/matrix-org/util				 v0.0.0-20200807132607-55161520e1d4 \
 	github.com/mattn/go-colorable				 v0.1.13 \
 	github.com/mattn/go-isatty				 v0.0.16 \
@@ -205,8 +205,8 @@ MODGO_MODULES =	\
 	github.com/mschoch/smat					 v0.2.0 \
 	github.com/mwitkow/go-conntrack				 v0.0.0-20190716064945-2f068394615f \
 	github.com/nats-io/jwt/v2				 v2.3.0 \
-	github.com/nats-io/nats-server/v2			 v2.9.4 \
-	github.com/nats-io/nats.go				 v1.19.0 \
+	github.com/nats-io/nats-server/v2			 v2.9.8 \
+	github.com/nats-io/nats.go				 v1.20.0 \
 	github.com/nats-io/nkeys				 v0.3.0 \
 	github.com/nats-io/nuid					 v1.0.1 \
 	github.com/neilalexander/utp				 v0.1.1-0.20210727203401-54ae7b1cd5f9 \
@@ -476,6 +476,7 @@ MODGO_MODFILES =	\
 	github.com/modern-go/reflect2				 v1.0.1 \
 	github.com/mschoch/smat					 v0.0.0-20160514031455-90eadee771ae \
 	github.com/mwitkow/go-conntrack				 v0.0.0-20161129095857-cc309e4a2223 \
+	github.com/nats-io/nats.go				 v1.19.0 \
 	github.com/onsi/ginkgo					 v1.6.0 \
 	github.com/onsi/ginkgo/v2				 v2.2.0 \
 	github.com/onsi/gomega					 v1.20.1 \
@@ -704,6 +705,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sys					 v0.0.0-20220811171246-fbc7d0a398ab \
 	golang.org/x/sys					 v0.0.0-20220919091848-fb04ddd9f9c8 \
 	golang.org/x/sys					 v0.0.0-20220928140112-f11e5e49a4ec \
+	golang.org/x/sys					 v0.0.0-20221010170243-090e33056c14 \
 	golang.org/x/sys					 v0.0.0-20221013171732-95e765b1cc43 \
 	golang.org/x/term					 v0.0.0-20201126162022-7de9c90e9dd1 \
 	golang.org/x/term					 v0.0.0-20210927222741-03fcf44c2211 \

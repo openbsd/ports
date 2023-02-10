@@ -1,7 +1,7 @@
 COMMENT =	matrix homeserver written in Go
 
 MODGO_MODNAME =	github.com/matrix-org/dendrite
-MODGO_VERSION =	v0.10.7
+MODGO_VERSION =	v0.11.0
 
 DISTNAME =	dendrite-${MODGO_VERSION}
 
@@ -30,7 +30,6 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/dendrite/
 	${INSTALL_DATA} ${WRKSRC}/dendrite-sample.monolith.yaml \
 		${PREFIX}/share/dendrite/dendrite.yaml
-
 
 .include "modules.inc"
 
