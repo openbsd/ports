@@ -1,0 +1,15 @@
+Index: kanjips/sub.c
+--- kanjips/sub.c.orig
++++ kanjips/sub.c
+@@ -12,9 +12,9 @@ warn(s,a,b,c) char *s,*a,*b,*c;
+ {
+ 	fprintf(stderr,s,a,b,c);
+ }
+-Malloc(size) int size;
++void *Malloc(size) int size;
+ {
+-	int i;
++	void *i;
+ 	if((i = malloc(size)) == NULL)
+ 		fatal("malloc fail\n");
+ 	return i;
