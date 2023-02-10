@@ -1,7 +1,7 @@
 COMMENT=	video stream processing tools
 
 DISTNAME=	transcode-1.1.7
-REVISION=	20
+REVISION=	21
 CATEGORIES=	multimedia
 
 HOMEPAGE=	https://bitbucket.org/achurch_/transcode/

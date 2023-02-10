@@ -1,1 +1,1 @@
-lib/transcode/filter_tomsmocomp.so
+@so lib/transcode/filter_tomsmocomp.so

@@ -20,104 +20,103 @@
 @bin bin/tcyait
 @bin bin/transcode
 lib/transcode/
-lib/transcode/a52_decore.so
-lib/transcode/export_ac3.so
+@so lib/transcode/a52_decore.so
+@so lib/transcode/export_ac3.so
 @comment lib/transcode/export_divx5.so
-lib/transcode/export_dv.so
-lib/transcode/export_dvraw.so
-lib/transcode/export_ffmpeg.so
-lib/transcode/export_jpg.so
-lib/transcode/export_lame.so
-lib/transcode/export_mov.so
-lib/transcode/export_mp2.so
-lib/transcode/export_null.so
-lib/transcode/export_ogg.so
-lib/transcode/export_pcm.so
-lib/transcode/export_ppm.so
-lib/transcode/export_pvn.so
-lib/transcode/export_raw.so
-lib/transcode/export_tcaud.so
-lib/transcode/export_toolame.so
-lib/transcode/export_wav.so
-lib/transcode/export_xvid.so
-lib/transcode/export_xvid4.so
-lib/transcode/filter_29to23.so
-lib/transcode/filter_32detect.so
-lib/transcode/filter_32drop.so
-lib/transcode/filter_aclip.so
-lib/transcode/filter_ascii.so
-lib/transcode/filter_astat.so
-lib/transcode/filter_control.so
-lib/transcode/filter_cpaudio.so
-lib/transcode/filter_decimate.so
-lib/transcode/filter_denoise3d.so
-lib/transcode/filter_detectclipping.so
-lib/transcode/filter_detectsilence.so
-lib/transcode/filter_divxkey.so
-lib/transcode/filter_dnr.so
-lib/transcode/filter_doublefps.so
-lib/transcode/filter_extsub.so
-lib/transcode/filter_extsub2.so
-lib/transcode/filter_facemask.so
-lib/transcode/filter_fieldanalysis.so
-lib/transcode/filter_fields.so
-lib/transcode/filter_fps.so
-lib/transcode/filter_hqdn3d.so
-lib/transcode/filter_invert.so
-lib/transcode/filter_ivtc.so
-lib/transcode/filter_levels.so
+@so lib/transcode/export_dv.so
+@so lib/transcode/export_dvraw.so
+@so lib/transcode/export_ffmpeg.so
+@so lib/transcode/export_jpg.so
+@so lib/transcode/export_lame.so
+@so lib/transcode/export_mov.so
+@so lib/transcode/export_mp2.so
+@so lib/transcode/export_null.so
+@so lib/transcode/export_ogg.so
+@so lib/transcode/export_pcm.so
+@so lib/transcode/export_ppm.so
+@so lib/transcode/export_pvn.so
+@so lib/transcode/export_raw.so
+@so lib/transcode/export_tcaud.so
+@so lib/transcode/export_toolame.so
+@so lib/transcode/export_wav.so
+@so lib/transcode/export_xvid.so
+@so lib/transcode/export_xvid4.so
+@so lib/transcode/filter_29to23.so
+@so lib/transcode/filter_32detect.so
+@so lib/transcode/filter_32drop.so
+@so lib/transcode/filter_aclip.so
+@so lib/transcode/filter_ascii.so
+@so lib/transcode/filter_astat.so
+@so lib/transcode/filter_control.so
+@so lib/transcode/filter_cpaudio.so
+@so lib/transcode/filter_decimate.so
+@so lib/transcode/filter_denoise3d.so
+@so lib/transcode/filter_detectclipping.so
+@so lib/transcode/filter_detectsilence.so
+@so lib/transcode/filter_divxkey.so
+@so lib/transcode/filter_dnr.so
+@so lib/transcode/filter_doublefps.so
+@so lib/transcode/filter_extsub.so
+@so lib/transcode/filter_extsub2.so
+@so lib/transcode/filter_facemask.so
+@so lib/transcode/filter_fieldanalysis.so
+@so lib/transcode/filter_fields.so
+@so lib/transcode/filter_fps.so
+@so lib/transcode/filter_hqdn3d.so
+@so lib/transcode/filter_invert.so
+@so lib/transcode/filter_ivtc.so
+@so lib/transcode/filter_levels.so
 lib/transcode/filter_list.awk
-lib/transcode/filter_lowpass.so
-lib/transcode/filter_mask.so
-lib/transcode/filter_modfps.so
-lib/transcode/filter_msharpen.so
-lib/transcode/filter_normalize.so
-lib/transcode/filter_null.so
-lib/transcode/filter_pp.so
-lib/transcode/filter_preview.so
-lib/transcode/filter_pv.so
-lib/transcode/filter_resample.so
-lib/transcode/filter_sdlview.so
-lib/transcode/filter_skip.so
-lib/transcode/filter_slowmo.so
-lib/transcode/filter_smartbob.so
-lib/transcode/filter_smartdeinter.so
-lib/transcode/filter_smartyuv.so
-lib/transcode/filter_smooth.so
-lib/transcode/filter_stabilize.so
-lib/transcode/filter_subtitler.so
-lib/transcode/filter_testframe.so
-lib/transcode/filter_text.so
-lib/transcode/filter_transform.so
-lib/transcode/filter_unsharp.so
-lib/transcode/filter_whitebalance.so
-lib/transcode/filter_xsharpen.so
-lib/transcode/filter_yait.so
-lib/transcode/filter_yuvdenoise.so
-lib/transcode/filter_yuvmedian.so
-lib/transcode/import_ac3.so
-lib/transcode/import_avi.so
-lib/transcode/import_bktr.so
-lib/transcode/import_bsdav.so
-lib/transcode/import_dv.so
-lib/transcode/import_dvd.so
-lib/transcode/import_ffmpeg.so
-lib/transcode/import_framegen.so
-lib/transcode/import_mov.so
-lib/transcode/import_mp3.so
-lib/transcode/import_mpeg2.so
-lib/transcode/import_mplayer.so
-lib/transcode/import_null.so
-lib/transcode/import_ogg.so
-lib/transcode/import_pvn.so
-lib/transcode/import_raw.so
-lib/transcode/import_sndio.so
-lib/transcode/import_vag.so
-lib/transcode/import_vnc.so
-lib/transcode/import_vob.so
-lib/transcode/import_x11.so
-lib/transcode/import_xml.so
-lib/transcode/import_xvid.so
+@so lib/transcode/filter_lowpass.so
+@so lib/transcode/filter_mask.so
+@so lib/transcode/filter_modfps.so
+@so lib/transcode/filter_msharpen.so
+@so lib/transcode/filter_normalize.so
+@so lib/transcode/filter_null.so
+@so lib/transcode/filter_pp.so
+@so lib/transcode/filter_preview.so
+@so lib/transcode/filter_pv.so
+@so lib/transcode/filter_sdlview.so
+@so lib/transcode/filter_skip.so
+@so lib/transcode/filter_slowmo.so
+@so lib/transcode/filter_smartbob.so
+@so lib/transcode/filter_smartdeinter.so
+@so lib/transcode/filter_smartyuv.so
+@so lib/transcode/filter_smooth.so
+@so lib/transcode/filter_stabilize.so
+@so lib/transcode/filter_subtitler.so
+@so lib/transcode/filter_testframe.so
+@so lib/transcode/filter_text.so
+@so lib/transcode/filter_transform.so
+@so lib/transcode/filter_unsharp.so
+@so lib/transcode/filter_whitebalance.so
+@so lib/transcode/filter_xsharpen.so
+@so lib/transcode/filter_yait.so
+@so lib/transcode/filter_yuvdenoise.so
+@so lib/transcode/filter_yuvmedian.so
+@so lib/transcode/import_ac3.so
+@so lib/transcode/import_avi.so
+@so lib/transcode/import_bktr.so
+@so lib/transcode/import_bsdav.so
+@so lib/transcode/import_dv.so
+@so lib/transcode/import_dvd.so
+@so lib/transcode/import_ffmpeg.so
+@so lib/transcode/import_framegen.so
+@so lib/transcode/import_mov.so
+@so lib/transcode/import_mp3.so
+@so lib/transcode/import_mpeg2.so
+@so lib/transcode/import_mplayer.so
+@so lib/transcode/import_null.so
+@so lib/transcode/import_ogg.so
+@so lib/transcode/import_pvn.so
+@so lib/transcode/import_raw.so
+@so lib/transcode/import_sndio.so
+@so lib/transcode/import_vag.so
+@so lib/transcode/import_vnc.so
+@so lib/transcode/import_vob.so
+@so lib/transcode/import_x11.so
+@so lib/transcode/import_xml.so
+@so lib/transcode/import_xvid.so
 lib/transcode/parse_csv.awk
 lib/transcode/xvid4.cfg
 @man man/man1/avifix.1
