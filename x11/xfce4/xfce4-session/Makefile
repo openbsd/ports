@@ -1,6 +1,7 @@
 COMMENT=	Xfce4 session manager
 
 XFCE_PROJECT=	xfce4-session
+XFCE_VERSION=	4.18.1
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -17,7 +18,7 @@ CONFIGURE_ARGS=	--disable-linker-opts \
 #CONFIGURE_ARGS+= --enable-session-screenshots
 #XXX session-screenshots broken?
 # http://bugzilla.xfce.org/show_bug.cgi?id=6885
-LIB_DEPENDS=	x11/xfce4/libxfce4ui>=4.12.1 \
+LIB_DEPENDS=	x11/xfce4/libxfce4ui>=4.18.2 \
 		x11/xfce4/xfconf>=4.9.0 \
 		sysutils/polkit \
 		devel/libwnck3
