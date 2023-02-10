@@ -5,6 +5,7 @@ ${P5ARCH}/OPCUA/Open62541.pm
 ${P5ARCH}/OPCUA/Open62541/Constant.pm
 ${P5ARCH}/OPCUA/Open62541/Constant.pod
 ${P5ARCH}/OPCUA/Open62541/Test/
+${P5ARCH}/OPCUA/Open62541/Test/CA.pm
 ${P5ARCH}/OPCUA/Open62541/Test/Client.pm
 ${P5ARCH}/OPCUA/Open62541/Test/Logger.pm
 ${P5ARCH}/OPCUA/Open62541/Test/Server.pm
@@ -14,6 +15,7 @@ ${P5ARCH}/auto/OPCUA/Open62541/
 @so ${P5ARCH}/auto/OPCUA/Open62541/Open62541.so
 @man man/man3p/OPCUA::Open62541.3p
 @man man/man3p/OPCUA::Open62541::Constant.3p
+@man man/man3p/OPCUA::Open62541::Test::CA.3p
 @man man/man3p/OPCUA::Open62541::Test::Client.3p
 @man man/man3p/OPCUA::Open62541::Test::Logger.3p
 @man man/man3p/OPCUA::Open62541::Test::Server.3p
