@@ -4,7 +4,7 @@ COMMENT =		free and open-source launcher for Minecraft
 V =			0.6.14.1
 DISTNAME =		blockgame-${V}
 MASTER_SITES =		https://github.com/yukiisbored/Launcher/releases/download/${V}-bgl/
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		games
 

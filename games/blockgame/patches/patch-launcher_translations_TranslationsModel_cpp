@@ -1,0 +1,21 @@
+appease clang 15 -Wunused-but-set-variable
+
+Index: launcher/translations/TranslationsModel.cpp
+--- launcher/translations/TranslationsModel.cpp.orig
++++ launcher/translations/TranslationsModel.cpp
+@@ -190,7 +190,6 @@ void readIndex(const QString & path, QMap<QString, Lan
+         return;
+     }
+ 
+-    int index = 1;
+     try
+     {
+         auto toplevel_doc = Json::requireDocument(data);
+@@ -223,7 +222,6 @@ void readIndex(const QString & path, QMap<QString, Lan
+             lang.file_size = Json::requireInteger(langObj, "size");
+ 
+             languages.insert(lang.key, lang);
+-            index++;
+         }
+     }
+     catch (Json::JsonException & e)
