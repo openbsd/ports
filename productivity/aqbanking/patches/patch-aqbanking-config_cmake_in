@@ -1,7 +1,7 @@
 Index: aqbanking-config.cmake.in
 --- aqbanking-config.cmake.in.orig
 +++ aqbanking-config.cmake.in
-@@ -27,7 +27,7 @@ if(WIN32)
+@@ -28,7 +28,7 @@ if(WIN32)
  elseif(APPLE)
      set_and_check(AQBANKING_LIBRARIES "@libdir@/libaqbanking.@AQBANKING_SO_EFFECTIVE@.dylib")
  else()

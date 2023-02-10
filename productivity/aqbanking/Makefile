@@ -1,9 +1,8 @@
 COMMENT=	online banking interface and financial data framework
 
-DISTNAME=	aqbanking-6.2.2
-REVISION=	0
+DISTNAME=	aqbanking-6.5.3
 
-SHARED_LIBS +=  aqbanking            3.0      # .46.2
+SHARED_LIBS +=  aqbanking            4.0      # .46.2
 
 CATEGORIES=	productivity
 
@@ -16,7 +15,7 @@ WANTLIB =  brotlidec brotlienc c ffi gcrypt gmp gnutls gpg-error
 WANTLIB += gwenhywfar hogweed iconv idn2 intl ltdl lzma m nettle p11-kit
 WANTLIB += pthread tasn1 unistring xml2 xmlsec1 xslt z zstd
 
-MASTER_SITES=	https://www.aquamaniac.de/rdm/attachments/download/334/
+MASTER_SITES=	https://www.aquamaniac.de/rdm/attachments/download/467/
 
 BUILD_DEPENDS=		devel/gettext,-tools
 LIB_DEPENDS=		devel/gmp \

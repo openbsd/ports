@@ -25,6 +25,7 @@ include/aqbanking6/aqbanking/types/document.h
 include/aqbanking6/aqbanking/types/imexporter_accountinfo.h
 include/aqbanking6/aqbanking/types/imexporter_context.h
 include/aqbanking6/aqbanking/types/message.h
+include/aqbanking6/aqbanking/types/refaccount.h
 include/aqbanking6/aqbanking/types/security.h
 include/aqbanking6/aqbanking/types/transaction.h
 include/aqbanking6/aqbanking/types/transactionlimits.h
@@ -59,9 +60,9 @@ lib/aqbanking/plugins/44/providers/aqhbci.xml
 lib/aqbanking/plugins/44/providers/aqnone.xml
 lib/aqbanking/plugins/44/providers/aqofxconnect.xml
 lib/aqbanking/plugins/44/providers/aqpaypal.xml
-lib/cmake/aqbanking-6.2/
-lib/cmake/aqbanking-6.2/aqbanking-config-version.cmake
-lib/cmake/aqbanking-6.2/aqbanking-config.cmake
+lib/cmake/aqbanking-6.5/
+lib/cmake/aqbanking-6.5/aqbanking-config-version.cmake
+lib/cmake/aqbanking-6.5/aqbanking-config.cmake
 @static-lib lib/libaqbanking.a
 lib/libaqbanking.la
 @lib lib/libaqbanking.so.${LIBaqbanking_VERSION}
@@ -156,6 +157,9 @@ share/aqbanking/imexporters/csv/profiles/hypovereinsbank.conf
 share/aqbanking/imexporters/csv/profiles/lbbberlin.conf
 share/aqbanking/imexporters/csv/profiles/mijnpostbank.conf
 share/aqbanking/imexporters/csv/profiles/oko.conf
+share/aqbanking/imexporters/csv/profiles/onvista-account.conf
+share/aqbanking/imexporters/csv/profiles/onvista-prices.conf
+share/aqbanking/imexporters/csv/profiles/onvista-trans.conf
 share/aqbanking/imexporters/csv/profiles/postbankffm.conf
 share/aqbanking/imexporters/csv/profiles/psk.conf
 share/aqbanking/imexporters/csv/profiles/sepadebitnotes.conf
@@ -198,6 +202,8 @@ share/aqbanking/imexporters/swift/
 share/aqbanking/imexporters/swift/profiles/
 share/aqbanking/imexporters/swift/profiles/amro940.conf
 share/aqbanking/imexporters/swift/profiles/amro942.conf
+share/aqbanking/imexporters/swift/profiles/fints940.conf
+share/aqbanking/imexporters/swift/profiles/fints942.conf
 share/aqbanking/imexporters/swift/profiles/swiftmt535.conf
 share/aqbanking/imexporters/swift/profiles/swiftmt940.conf
 share/aqbanking/imexporters/swift/profiles/swiftmt942.conf
@@ -205,6 +211,7 @@ share/aqbanking/imexporters/xml/
 share/aqbanking/imexporters/xml/data/
 share/aqbanking/imexporters/xml/data/camt_052_001_02.xml
 share/aqbanking/imexporters/xml/data/camt_053_001_04.xml
+share/aqbanking/imexporters/xml/data/ofx1.xml
 share/aqbanking/imexporters/xml/data/ofx2.xml
 share/aqbanking/imexporters/xml/data/pain_001_001_03.xml
 share/aqbanking/imexporters/xml/data/pain_001_003_03.xml
@@ -214,6 +221,7 @@ share/aqbanking/imexporters/xml/profiles/
 share/aqbanking/imexporters/xml/profiles/camt_052_001_02.conf
 share/aqbanking/imexporters/xml/profiles/camt_053_001_04.conf
 share/aqbanking/imexporters/xml/profiles/default.conf
+share/aqbanking/imexporters/xml/profiles/ofx1.conf
 share/aqbanking/imexporters/xml/profiles/ofx2.conf
 share/aqbanking/imexporters/xml/profiles/pain_001_001_03.conf
 share/aqbanking/imexporters/xml/profiles/pain_001_003_03.conf
@@ -261,9 +269,14 @@ share/aqbanking/typemaker2/c/ab_message_list2.tm2
 share/aqbanking/typemaker2/c/ab_providerqueue.tm2
 share/aqbanking/typemaker2/c/ab_providerqueue_list.tm2
 share/aqbanking/typemaker2/c/ab_queue.tm2
+share/aqbanking/typemaker2/c/ab_reference_account.tm2
+share/aqbanking/typemaker2/c/ab_reference_account_list.tm2
+share/aqbanking/typemaker2/c/ab_reference_account_list2.tm2
 share/aqbanking/typemaker2/c/ab_security.tm2
 share/aqbanking/typemaker2/c/ab_security_list.tm2
 share/aqbanking/typemaker2/c/ab_security_list2.tm2
+share/aqbanking/typemaker2/c/ab_swift_descr.tm2
+share/aqbanking/typemaker2/c/ab_swift_descr_list.tm2
 share/aqbanking/typemaker2/c/ab_transaction.tm2
 share/aqbanking/typemaker2/c/ab_transaction_limits.tm2
 share/aqbanking/typemaker2/c/ab_transaction_limits_list.tm2
