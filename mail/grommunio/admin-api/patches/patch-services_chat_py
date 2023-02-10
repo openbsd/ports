@@ -1,0 +1,14 @@
+Index: services/chat.py
+--- services/chat.py.orig
++++ services/chat.py
+@@ -4,8 +4,8 @@
+ 
+ from . import ServiceHub, ServiceUnavailableError
+ 
+-from mattermostdriver import Driver
+-from mattermostdriver.exceptions import InvalidOrMissingParameters, ResourceNotFound, ContentTooLarge
++#from mattermostdriver import Driver
++#from mattermostdriver.exceptions import InvalidOrMissingParameters, ResourceNotFound, ContentTooLarge
+ from requests.exceptions import ConnectionError, HTTPError
+ 
+ import hashlib

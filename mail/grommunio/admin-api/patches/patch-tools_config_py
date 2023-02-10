@@ -1,0 +1,29 @@
+Index: tools/config.py
+--- tools/config.py.orig
++++ tools/config.py
+@@ -65,11 +65,11 @@ def _defaultConfig():
+         "options": {
+             "antispamUrl": "http://localhost:11334",
+             "disableDB": False,
+-            "dataPath": "/usr/share/grommunio-admin-common",
++            "dataPath": "/usr/local/share/grommunio-admin-common",
+             "portrait": "portrait.jpg",
+             "domainStoreRatio": 10,
+-            "domainPrefix": "/var/lib/gromox/domain/",
+-            "userPrefix": "/var/lib/gromox/user/",
++            "domainPrefix": "/var/db/gromox/domain/",
++            "userPrefix": "/var/db/gromox/user/",
+             "exmdbHost": "::1",
+             "exmdbPort": "5000",
+             "domainStorageLevels": 1,
+@@ -82,8 +82,8 @@ def _defaultConfig():
+             "serverPolicy": "round-robin"
+             },
+         "security": {
+-            "jwtPrivateKeyFile": "/var/lib/grommunio-admin-api/auth-private.pem",
+-            "jwtPublicKeyFile": "/var/lib/grommunio-admin-api/auth-public.pem",
++            "jwtPrivateKeyFile": "/var/db/grommunio-admin-api/auth-private.pem",
++            "jwtPublicKeyFile": "/var/db/grommunio-admin-api/auth-public.pem",
+             "rsaKeySize": 4096,
+             },
+         "mconf": {

@@ -1,0 +1,21 @@
+Index: config.php.dist
+--- config.php.dist.orig
++++ config.php.dist
+@@ -49,7 +49,7 @@
+ 
+ 	// Defines the temp path (absolute). Here uploaded attachments will be saved.
+ 	// The web client doesn't work without this directory.
+-	define("TMP_PATH", "/var/lib/grommunio-web/tmp");
++	define("TMP_PATH", "/tmp");
+ 
+ 	// Define the path to the plugin directory (No slash at the end)
+ 	define("PATH_PLUGIN_DIR", "plugins");
+@@ -67,7 +67,7 @@
+ 	define("APPDATA_DIR", "appdata");
+ 
+ 	// Path used for full text index of every user
+-	define("SQLITE_INDEX_PATH", "/var/lib/grommunio-web/sqlite-index");
++	define("SQLITE_INDEX_PATH", "/cache/sqlite-index");
+ 
+ 	// General grommunio Web theme. This will be loaded by default for every user
+ 	// (if the theme is installed as a plugin)

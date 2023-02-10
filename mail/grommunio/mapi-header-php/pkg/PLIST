@@ -1,0 +1,15 @@
+grommunio-mapi-header-php/
+grommunio-mapi-header-php/LICENSE.txt
+grommunio-mapi-header-php/README.rst
+grommunio-mapi-header-php/class.baseexception.php
+grommunio-mapi-header-php/class.baserecurrence.php
+grommunio-mapi-header-php/class.freebusy.php
+grommunio-mapi-header-php/class.mapiexception.php
+grommunio-mapi-header-php/class.meetingrequest.php
+grommunio-mapi-header-php/class.recurrence.php
+grommunio-mapi-header-php/class.taskrecurrence.php
+grommunio-mapi-header-php/class.taskrequest.php
+grommunio-mapi-header-php/mapi.util.php
+grommunio-mapi-header-php/mapidefs.php
+grommunio-mapi-header-php/mapiguid.php
+grommunio-mapi-header-php/mapitags.php

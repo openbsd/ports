@@ -1,0 +1,12 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -3,6 +3,8 @@ project(libexmdbpp VERSION 1.10)
+ 
+ include(GNUInstallDirs)
+ 
++list(APPEND CMAKE_PREFIX_PATH "${MODPY_LIBDIR}/site-packages/pybind11/share/cmake/")
++
+ find_package(Python3 COMPONENTS Interpreter Development)
+ find_package(pybind11 CONFIG)
+ 

@@ -1,0 +1,18 @@
+include/exmdbpp/
+include/exmdbpp/ExmdbClient.h
+include/exmdbpp/IOBuffer.h
+include/exmdbpp/IOBufferImpl.h
+include/exmdbpp/constants.h
+include/exmdbpp/exceptions.h
+include/exmdbpp/queries.h
+include/exmdbpp/requests.h
+include/exmdbpp/structures.h
+include/exmdbpp/util.h
+@lib lib/libexmdbpp.so.${LIBexmdbpp_VERSION}
+@so lib/python${MODPY_VERSION}/site-packages/pyexmdb.${MODPY_PYC_MAGIC_TAG}so
+share/exmdbpp/
+share/exmdbpp/cmake/
+share/exmdbpp/cmake/exmdbppConfig.cmake
+share/exmdbpp/cmake/exmdbppConfigVersion.cmake
+share/exmdbpp/cmake/exmdbppTargets${MODCMAKE_BUILD_SUFFIX}
+share/exmdbpp/cmake/exmdbppTargets.cmake

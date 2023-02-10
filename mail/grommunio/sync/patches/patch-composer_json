@@ -1,0 +1,11 @@
+Index: composer.json
+--- composer.json.orig
++++ composer.json
+@@ -1,6 +1,6 @@
+ {
+     "autoload": {
+-        "classmap": ["/usr/share/php-mapi/", "lib/"],
++        "classmap": ["/var/www/grommunio-mapi-header-php/", "lib/"],
+         "files": ["version.php", "lib/core/gsyncdefs.php", "lib/utils/compat.php"]
+     }
+ }

@@ -1,0 +1,18 @@
+Index: data/config.yaml
+--- data/config.yaml.orig
++++ data/config.yaml
+@@ -4,11 +4,11 @@ logging:
+     mi-default:
+       format: '[%(asctime)s] [%(levelname)s] (%(module)s): "%(message)s"'
+ options:
+-  systemAdminDir: '/usr/share/grommunio-admin-common'
++  systemAdminDir: '/usr/local/share/grommunio-admin-common'
+   licenseFile: '/etc/grommunio-admin-common/license/license.crt'
+   filePermissions: 0o660
+-  fileUid: 'grommunio'
+-  fileGid: 'gromox'
++  fileUid: '_grommunio'
++  fileGid: '_gromox'
+   vhosts:
+     local: 'http://localhost:8080/statusmonitor'
+   dashboard:

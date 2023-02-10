@@ -1,0 +1,8 @@
+Index: data/exmdb_list.txt
+--- data/exmdb_list.txt.orig
++++ data/exmdb_list.txt
+@@ -1,2 +1,2 @@
+-/var/lib/gromox/user/ private ::1 5000
+-/var/lib/gromox/domain/ public ::1 5000
++/var/db/gromox/user/ private ::1 5000
++/var/db/gromox/domain/ public ::1 5000

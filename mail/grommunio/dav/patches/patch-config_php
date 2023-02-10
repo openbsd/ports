@@ -1,0 +1,19 @@
+Index: config.php
+--- config.php.orig
++++ config.php
+@@ -16,7 +16,7 @@ define('SABRE_AUTH_REALM', 'grommunio dav');
+ define('DAV_ROOT_URI', '/dav/');
+ 
+ // Location of the sync database (PDO syntax)
+-define('SYNC_DB', 'sqlite:/var/lib/grommunio-dav/syncstate.db');
++define('SYNC_DB', 'sqlite:/var/db/grommunio-dav/syncstate.db');
+ 
+ // Number of items to send in one request.
+ define('MAX_SYNC_ITEMS', 1000);
+@@ -24,4 +24,4 @@ define('MAX_SYNC_ITEMS', 1000);
+ // Developer mode: verifies log messages
+ define('DEVELOPER_MODE', true);
+ 
+-// Logging: adjust in log4php.xml
+\ No newline at end of file
++// Logging: adjust in log4php.xml

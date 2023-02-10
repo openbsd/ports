@@ -1,0 +1,18 @@
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+Grommunio web is installed under
+    ${INSTDIR}
+
+Configuration is done in the file
+    ${INSTDIR}/config.php
+
+You need to enable the PHP mapi module using the following command:
+    # ln -fs ${SYSCONFDIR}/php-${MODPHP_VERSION}.sample/mapi.ini \
+        ${SYSCONFDIR}/php-${MODPHP_VERSION}/mapi.ini
+
+(the PHP mapi module is provided by the "gromox-mapi" package)
+
+Grommunio web will be accessible from
+    http://<hostname>/web/

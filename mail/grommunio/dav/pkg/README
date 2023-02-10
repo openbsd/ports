@@ -1,0 +1,13 @@
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+Grommunio dav is installed under
+    ${INSTDIR}
+
+Configuration is done in the file
+    ${INSTDIR}/config.php
+
+You need to enable the PHP mapi module using the following command:
+    # ln -fs ${SYSCONFDIR}/php-${MODPHP_VERSION}.sample/mapi.ini \
+        ${SYSCONFDIR}/php-${MODPHP_VERSION}/mapi.ini

@@ -1,0 +1,38 @@
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+*** Upgrading users: refer to the grommunio documentation on the web to check
+*** if any particular step is required after upgrading to a new version.
+
+Kopano -> Grommunio migration upgrade
+=====================================
+
+See https://docs.grommunio.com/migration/
+
+Post-install/update instructions for Gromox
+===========================================
+
+Before starting gromox for the first time
+-----------------------------------------
+Configure SQL connection settings in /etc/gromox/mysql_adaptor.cfg.
+
+Create the database schema.
+    # gromox-dbop -C
+
+After gromox was started for the first time
+-------------------------------------------
+Setting up the password for the admin user.
+    # grommunio-admin passwd
+
+Mail delivery agent configuration
+=================================
+
+See the following URL for other MTA integration:
+    https://docs.grommunio.com/admin/manual_core.html#loopback-mail
+
+Documentation and help
+======================
+
+Some documentation is also available at:
+    https://docs.grommunio.com/

@@ -1,0 +1,18 @@
+Index: exch/php/lib/conf.php
+--- exch/php/lib/conf.php.orig
++++ exch/php/lib/conf.php
+@@ -44,10 +44,10 @@ function get_app_config()
+ 	$a["default"]["timezone"] ??= "Europe/Vienna";
+ 
+ 	$a["http-proxy"] ??= [];
+-	$a["http-proxy"]["/var/lib/gromox/user/"] ??= $a["exchange"]["hostname"];
+-	$a["http-proxy"]["/var/lib/gromox/domain/"] ??= $a["exchange"]["hostname"];
++	$a["http-proxy"]["/var/db/gromox/user/"] ??= $a["exchange"]["hostname"];
++	$a["http-proxy"]["/var/db/gromox/domain/"] ??= $a["exchange"]["hostname"];
+ 
+ 	return $a;
+ }
+ 
+-?>
+\ No newline at end of file
++?>

@@ -1,0 +1,3 @@
+libexmdbpp is a C++ implementation of the exmdb wire protocol for use
+with grommunio. libexmdbpp also provides bindings for python via pybind11
+allowing usage for example by grommunio admin api.

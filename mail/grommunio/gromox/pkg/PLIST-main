@@ -1,0 +1,775 @@
+@newgroup _gromox:889
+@newuser _gromox:889:_gromox::Gromox Account:/var/empty:/sbin/nologin
+@rcscript ${RCDIR}/gromox
+@rcscript ${RCDIR}/gromox_delivery
+@rcscript ${RCDIR}/gromox_delivery_queue
+@rcscript ${RCDIR}/gromox_event
+@rcscript ${RCDIR}/gromox_http
+@rcscript ${RCDIR}/gromox_imap
+@rcscript ${RCDIR}/gromox_midb
+@rcscript ${RCDIR}/gromox_pop3
+@rcscript ${RCDIR}/gromox_timer
+@rcscript ${RCDIR}/gromox_zcore
+@extraunexec rm -rf /var/db/gromox/*
+@extraunexec rm -rf /var/log/gromox/*
+lib/gromox/
+@static-lib lib/gromox/libgxh_ews.a
+lib/gromox/libgxh_ews.la
+@so lib/gromox/libgxh_ews.so
+@static-lib lib/gromox/libgxh_mh_emsmdb.a
+lib/gromox/libgxh_mh_emsmdb.la
+@so lib/gromox/libgxh_mh_emsmdb.so
+@static-lib lib/gromox/libgxh_mh_nsp.a
+lib/gromox/libgxh_mh_nsp.la
+@so lib/gromox/libgxh_mh_nsp.so
+@static-lib lib/gromox/libgxh_oab.a
+lib/gromox/libgxh_oab.la
+@so lib/gromox/libgxh_oab.so
+@static-lib lib/gromox/libgxh_oxdisco.a
+lib/gromox/libgxh_oxdisco.la
+@so lib/gromox/libgxh_oxdisco.so
+@static-lib lib/gromox/libgxm_alias_resolve.a
+lib/gromox/libgxm_alias_resolve.la
+@so lib/gromox/libgxm_alias_resolve.so
+@static-lib lib/gromox/libgxm_exmdb_local.a
+lib/gromox/libgxm_exmdb_local.la
+@so lib/gromox/libgxm_exmdb_local.so
+@static-lib lib/gromox/libgxm_mlist_expand.a
+lib/gromox/libgxm_mlist_expand.la
+@so lib/gromox/libgxm_mlist_expand.so
+@static-lib lib/gromox/libgxm_remote_delivery.a
+lib/gromox/libgxm_remote_delivery.la
+@so lib/gromox/libgxm_remote_delivery.so
+@static-lib lib/gromox/libgxp_exchange_emsmdb.a
+lib/gromox/libgxp_exchange_emsmdb.la
+@so lib/gromox/libgxp_exchange_emsmdb.so
+@static-lib lib/gromox/libgxp_exchange_nsp.a
+lib/gromox/libgxp_exchange_nsp.la
+@so lib/gromox/libgxp_exchange_nsp.so
+@static-lib lib/gromox/libgxp_exchange_rfr.a
+lib/gromox/libgxp_exchange_rfr.la
+@so lib/gromox/libgxp_exchange_rfr.so
+@static-lib lib/gromox/libgxs_authmgr.a
+lib/gromox/libgxs_authmgr.la
+@so lib/gromox/libgxs_authmgr.so
+@static-lib lib/gromox/libgxs_event_proxy.a
+lib/gromox/libgxs_event_proxy.la
+@so lib/gromox/libgxs_event_proxy.so
+@static-lib lib/gromox/libgxs_event_stub.a
+lib/gromox/libgxs_event_stub.la
+@so lib/gromox/libgxs_event_stub.so
+@static-lib lib/gromox/libgxs_exmdb_provider.a
+lib/gromox/libgxs_exmdb_provider.la
+@so lib/gromox/libgxs_exmdb_provider.so
+@static-lib lib/gromox/libgxs_ip6_container.a
+lib/gromox/libgxs_ip6_container.la
+@so lib/gromox/libgxs_ip6_container.so
+@static-lib lib/gromox/libgxs_ip6_filter.a
+lib/gromox/libgxs_ip6_filter.la
+@so lib/gromox/libgxs_ip6_filter.so
+@static-lib lib/gromox/libgxs_ldap_adaptor.a
+lib/gromox/libgxs_ldap_adaptor.la
+@so lib/gromox/libgxs_ldap_adaptor.so
+@static-lib lib/gromox/libgxs_midb_agent.a
+lib/gromox/libgxs_midb_agent.la
+@so lib/gromox/libgxs_midb_agent.so
+@static-lib lib/gromox/libgxs_mysql_adaptor.a
+lib/gromox/libgxs_mysql_adaptor.la
+@so lib/gromox/libgxs_mysql_adaptor.so
+@static-lib lib/gromox/libgxs_timer_agent.a
+lib/gromox/libgxs_timer_agent.la
+@so lib/gromox/libgxs_timer_agent.so
+@static-lib lib/gromox/libgxs_user_filter.a
+lib/gromox/libgxs_user_filter.la
+@so lib/gromox/libgxs_user_filter.so
+@static-lib lib/libgromox_common.a
+lib/libgromox_common.la
+@lib lib/libgromox_common.so.${LIBgromox_common_VERSION}
+@static-lib lib/libgromox_cplus.a
+lib/libgromox_cplus.la
+@lib lib/libgromox_cplus.so.${LIBgromox_cplus_VERSION}
+@static-lib lib/libgromox_dbop.a
+lib/libgromox_dbop.la
+@lib lib/libgromox_dbop.so.${LIBgromox_dbop_VERSION}
+@static-lib lib/libgromox_email.a
+lib/libgromox_email.la
+@lib lib/libgromox_email.so.${LIBgromox_email_VERSION}
+@static-lib lib/libgromox_epoll.a
+lib/libgromox_epoll.la
+@lib lib/libgromox_epoll.so.${LIBgromox_epoll_VERSION}
+@static-lib lib/libgromox_exrpc.a
+lib/libgromox_exrpc.la
+@lib lib/libgromox_exrpc.so.${LIBgromox_exrpc_VERSION}
+@static-lib lib/libgromox_mapi.a
+lib/libgromox_mapi.la
+@lib lib/libgromox_mapi.so.${LIBgromox_mapi_VERSION}
+@static-lib lib/libgromox_rpc.a
+lib/libgromox_rpc.la
+@lib lib/libgromox_rpc.so.${LIBgromox_rpc_VERSION}
+lib/systemd/
+lib/systemd/system/
+lib/systemd/system/gromox-delivery-queue.service
+lib/systemd/system/gromox-delivery.service
+lib/systemd/system/gromox-event.service
+lib/systemd/system/gromox-http.service
+lib/systemd/system/gromox-imap.service
+lib/systemd/system/gromox-midb.service
+lib/systemd/system/gromox-pop3.service
+lib/systemd/system/gromox-snapshot.service
+lib/systemd/system/gromox-snapshot.timer
+lib/systemd/system/gromox-timer.service
+lib/systemd/system/gromox-zcore.service
+lib/sysusers.d/
+lib/sysusers.d/sysusers-gromox.conf
+lib/tmpfiles.d/
+lib/tmpfiles.d/tmpfiles-gromox.conf
+libexec/gromox/
+@bin libexec/gromox/cgkrepair
+@bin libexec/gromox/cleaner
+libexec/gromox/create_queue.sh
+@bin libexec/gromox/delivery
+@bin libexec/gromox/delivery-queue
+@bin libexec/gromox/event
+@bin libexec/gromox/freebusy
+libexec/gromox/gromox-snapshot
+@bin libexec/gromox/http
+@bin libexec/gromox/imap
+libexec/gromox/kdb-uidextract
+libexec/gromox/kdb-uidextract-limited
+@bin libexec/gromox/midb
+@bin libexec/gromox/pop3
+@bin libexec/gromox/rtf2html
+@bin libexec/gromox/timer
+@bin libexec/gromox/zcore
+man/man1/rtf2html.1gx
+man/man4/alias_resolve.4gx
+man/man4/authmgr.4gx
+man/man4/autodiscover.4gx
+man/man4/event_proxy.4gx
+man/man4/event_stub.4gx
+man/man4/exchange_emsmdb.4gx
+man/man4/exchange_nsp.4gx
+man/man4/exchange_rfr.4gx
+man/man4/exmdb_local.4gx
+man/man4/exmdb_provider.4gx
+man/man4/ip6_container.4gx
+man/man4/ldap_adaptor.4gx
+man/man4/mapi.4gx
+man/man4/mh_emsmdb.4gx
+man/man4/mh_nsp.4gx
+man/man4/midb_agent.4gx
+man/man4/mod_cache.4gx
+man/man4/mod_fastcgi.4gx
+man/man4/mod_rewrite.4gx
+man/man4/mysql_adaptor.4gx
+man/man4/pam_gromox.4gx
+man/man4/timer_agent.4gx
+man/man4/user_filter.4gx
+@man man/man7/gromox.7
+man/man7/mapi.7gx
+man/man8/cgkrepair.8gx
+man/man8/cleaner.8gx
+man/man8/delivery-queue.8gx
+man/man8/delivery.8gx
+man/man8/event.8gx
+man/man8/freebusy.8gx
+@man man/man8/gromox-abktconv.8
+@man man/man8/gromox-abktpull.8
+@man man/man8/gromox-compress.8
+@man man/man8/gromox-dbop.8
+@man man/man8/gromox-dscli.8
+@man man/man8/gromox-eml2mbox.8
+@man man/man8/gromox-eml2mt.8
+@man man/man8/gromox-exm2eml.8
+@man man/man8/gromox-kdb2mt.8
+@man man/man8/gromox-mailq.8
+@man man/man8/gromox-mbop.8
+@man man/man8/gromox-mkmidb.8
+@man man/man8/gromox-mkprivate.8
+@man man/man8/gromox-mkpublic.8
+@man man/man8/gromox-mt2exm.8
+man/man8/http.8gx
+man/man8/imap.8gx
+@man man/man8/kdb-uidextract-limited.8
+@man man/man8/kdb-uidextract.8
+man/man8/midb.8gx
+man/man8/pop3.8gx
+man/man8/timer.8gx
+man/man8/zcore.8gx
+@bin sbin/gromox-abktconv
+sbin/gromox-abktpull
+@bin sbin/gromox-compress
+@bin sbin/gromox-dbop
+@bin sbin/gromox-dscli
+@bin sbin/gromox-e2ghelper
+@bin sbin/gromox-eml2mbox
+@bin sbin/gromox-eml2mt
+@bin sbin/gromox-exm2eml
+sbin/gromox-ical2mt
+@bin sbin/gromox-kdb2mt
+@bin sbin/gromox-mailq
+@bin sbin/gromox-mbop
+@bin sbin/gromox-mkmidb
+@bin sbin/gromox-mkprivate
+@bin sbin/gromox-mkpublic
+@bin sbin/gromox-mt2exm
+sbin/gromox-vcf2mt
+share/doc/pkg-readmes/${PKGSTEM}
+share/gromox/
+share/gromox/(GMT_+01:00).tzd
+share/gromox/AUS_Central.tzd
+share/gromox/AUS_Eastern.tzd
+share/gromox/Afghanistan.tzd
+share/gromox/Alaskan.tzd
+share/gromox/Aleutian.tzd
+share/gromox/Altai.tzd
+share/gromox/Arab.tzd
+share/gromox/Arabian.tzd
+share/gromox/Arabic.tzd
+share/gromox/Argentina.tzd
+share/gromox/Astrakhan.tzd
+share/gromox/Atlantic.tzd
+share/gromox/Aus_Central_W..tzd
+share/gromox/Azerbaijan.tzd
+share/gromox/Azores.tzd
+share/gromox/Bahia.tzd
+share/gromox/Bangladesh.tzd
+share/gromox/Belarus.tzd
+share/gromox/Bougainville.tzd
+share/gromox/Canada_Central.tzd
+share/gromox/Cape_Verde.tzd
+share/gromox/Caucasus.tzd
+share/gromox/Cen._Australia.tzd
+share/gromox/Central.tzd
+share/gromox/Central_(Mexico).tzd
+share/gromox/Central_America.tzd
+share/gromox/Central_Asia.tzd
+share/gromox/Central_Brazilian.tzd
+share/gromox/Central_Europe.tzd
+share/gromox/Central_European.tzd
+share/gromox/Central_Pacific.tzd
+share/gromox/Chatham_Islands.tzd
+share/gromox/China.tzd
+share/gromox/Cuba.tzd
+share/gromox/Dateline.tzd
+share/gromox/E._Africa.tzd
+share/gromox/E._Australia.tzd
+share/gromox/E._Europe.tzd
+share/gromox/E._South_America.tzd
+share/gromox/Easter_Island.tzd
+share/gromox/Eastern.tzd
+share/gromox/Eastern_(Mexico).tzd
+share/gromox/Egypt.tzd
+share/gromox/Ekaterinburg.tzd
+share/gromox/FLE.tzd
+share/gromox/Fiji.tzd
+share/gromox/GMT.tzd
+share/gromox/GTB.tzd
+share/gromox/Georgian.tzd
+share/gromox/Greenland.tzd
+share/gromox/Greenwich.tzd
+share/gromox/Haiti.tzd
+share/gromox/Hawaiian.tzd
+share/gromox/India.tzd
+share/gromox/Iran.tzd
+share/gromox/Israel.tzd
+share/gromox/Jordan.tzd
+share/gromox/Kaliningrad.tzd
+share/gromox/Korea.tzd
+share/gromox/Libya.tzd
+share/gromox/Line_Islands.tzd
+share/gromox/Lord_Howe.tzd
+share/gromox/Magadan.tzd
+share/gromox/Magallanes.tzd
+share/gromox/Marquesas.tzd
+share/gromox/Mauritius.tzd
+share/gromox/Middle_East.tzd
+share/gromox/Montevideo.tzd
+share/gromox/Morocco.tzd
+share/gromox/Mountain.tzd
+share/gromox/Mountain_(Mexico).tzd
+share/gromox/Myanmar.tzd
+share/gromox/N._Central_Asia.tzd
+share/gromox/Namibia.tzd
+share/gromox/Nepal.tzd
+share/gromox/New_Zealand.tzd
+share/gromox/Newfoundland.tzd
+share/gromox/Norfolk.tzd
+share/gromox/North_Asia.tzd
+share/gromox/North_Asia_East.tzd
+share/gromox/North_Korea.tzd
+share/gromox/Omsk.tzd
+share/gromox/Pacific.tzd
+share/gromox/Pacific_(Mexico).tzd
+share/gromox/Pacific_SA.tzd
+share/gromox/Pakistan.tzd
+share/gromox/Paraguay.tzd
+share/gromox/Qyzylorda.tzd
+share/gromox/Romance.tzd
+share/gromox/Russia_Time_Zone_10.tzd
+share/gromox/Russia_Time_Zone_11.tzd
+share/gromox/Russia_Time_Zone_3.tzd
+share/gromox/Russian.tzd
+share/gromox/SA_Eastern.tzd
+share/gromox/SA_Pacific.tzd
+share/gromox/SA_Western.tzd
+share/gromox/SE_Asia.tzd
+share/gromox/Saint_Pierre.tzd
+share/gromox/Sakhalin.tzd
+share/gromox/Samoa.tzd
+share/gromox/Sao_Tome.tzd
+share/gromox/Saratov.tzd
+share/gromox/Singapore.tzd
+share/gromox/South_Africa.tzd
+share/gromox/South_Sudan.tzd
+share/gromox/Sri_Lanka.tzd
+share/gromox/Sudan.tzd
+share/gromox/Syria.tzd
+share/gromox/Taipei.tzd
+share/gromox/Tasmania.tzd
+share/gromox/Tocantins.tzd
+share/gromox/Tokyo.tzd
+share/gromox/Tomsk.tzd
+share/gromox/Tonga.tzd
+share/gromox/Transbaikal.tzd
+share/gromox/Turkey.tzd
+share/gromox/Turks_And_Caicos.tzd
+share/gromox/US_Eastern.tzd
+share/gromox/US_Mountain.tzd
+share/gromox/UTC+12.tzd
+share/gromox/UTC+13.tzd
+share/gromox/UTC-02.tzd
+share/gromox/UTC-08.tzd
+share/gromox/UTC-09.tzd
+share/gromox/UTC-11.tzd
+share/gromox/UTC.tzd
+share/gromox/Ulaanbaatar.tzd
+share/gromox/Venezuela.tzd
+share/gromox/Vladivostok.tzd
+share/gromox/Volgograd.tzd
+share/gromox/W._Australia.tzd
+share/gromox/W._Central_Africa.tzd
+share/gromox/W._Europe.tzd
+share/gromox/W._Mongolia.tzd
+share/gromox/West_Asia.tzd
+share/gromox/West_Bank.tzd
+share/gromox/West_Pacific.tzd
+share/gromox/Yakutsk.tzd
+share/gromox/Yukon.tzd
+share/gromox/codepage_lang.json
+share/gromox/cpid.txt
+share/gromox/displayTable-401-0.abkt
+share/gromox/displayTable-401-1.abkt
+share/gromox/displayTable-401-2.abkt
+share/gromox/displayTable-401-200.abkt
+share/gromox/displayTable-401-3.abkt
+share/gromox/displayTable-401-6.abkt
+share/gromox/displayTable-402-0.abkt
+share/gromox/displayTable-402-1.abkt
+share/gromox/displayTable-402-2.abkt
+share/gromox/displayTable-402-200.abkt
+share/gromox/displayTable-402-3.abkt
+share/gromox/displayTable-402-6.abkt
+share/gromox/displayTable-403-0.abkt
+share/gromox/displayTable-403-1.abkt
+share/gromox/displayTable-403-2.abkt
+share/gromox/displayTable-403-200.abkt
+share/gromox/displayTable-403-3.abkt
+share/gromox/displayTable-403-6.abkt
+share/gromox/displayTable-404-0.abkt
+share/gromox/displayTable-404-1.abkt
+share/gromox/displayTable-404-2.abkt
+share/gromox/displayTable-404-200.abkt
+share/gromox/displayTable-404-3.abkt
+share/gromox/displayTable-404-6.abkt
+share/gromox/displayTable-405-0.abkt
+share/gromox/displayTable-405-1.abkt
+share/gromox/displayTable-405-2.abkt
+share/gromox/displayTable-405-200.abkt
+share/gromox/displayTable-405-3.abkt
+share/gromox/displayTable-405-6.abkt
+share/gromox/displayTable-406-0.abkt
+share/gromox/displayTable-406-1.abkt
+share/gromox/displayTable-406-2.abkt
+share/gromox/displayTable-406-200.abkt
+share/gromox/displayTable-406-3.abkt
+share/gromox/displayTable-406-6.abkt
+share/gromox/displayTable-407-0.abkt
+share/gromox/displayTable-407-1.abkt
+share/gromox/displayTable-407-2.abkt
+share/gromox/displayTable-407-200.abkt
+share/gromox/displayTable-407-3.abkt
+share/gromox/displayTable-407-6.abkt
+share/gromox/displayTable-408-0.abkt
+share/gromox/displayTable-408-1.abkt
+share/gromox/displayTable-408-2.abkt
+share/gromox/displayTable-408-200.abkt
+share/gromox/displayTable-408-3.abkt
+share/gromox/displayTable-408-6.abkt
+share/gromox/displayTable-409-0.abkt
+share/gromox/displayTable-409-1.abkt
+share/gromox/displayTable-409-2.abkt
+share/gromox/displayTable-409-200.abkt
+share/gromox/displayTable-409-3.abkt
+share/gromox/displayTable-409-6.abkt
+share/gromox/displayTable-40B-0.abkt
+share/gromox/displayTable-40B-1.abkt
+share/gromox/displayTable-40B-2.abkt
+share/gromox/displayTable-40B-200.abkt
+share/gromox/displayTable-40B-3.abkt
+share/gromox/displayTable-40B-6.abkt
+share/gromox/displayTable-40C-0.abkt
+share/gromox/displayTable-40C-1.abkt
+share/gromox/displayTable-40C-2.abkt
+share/gromox/displayTable-40C-200.abkt
+share/gromox/displayTable-40C-3.abkt
+share/gromox/displayTable-40C-6.abkt
+share/gromox/displayTable-40D-0.abkt
+share/gromox/displayTable-40D-1.abkt
+share/gromox/displayTable-40D-2.abkt
+share/gromox/displayTable-40D-200.abkt
+share/gromox/displayTable-40D-3.abkt
+share/gromox/displayTable-40D-6.abkt
+share/gromox/displayTable-40E-0.abkt
+share/gromox/displayTable-40E-1.abkt
+share/gromox/displayTable-40E-2.abkt
+share/gromox/displayTable-40E-200.abkt
+share/gromox/displayTable-40E-3.abkt
+share/gromox/displayTable-40E-6.abkt
+share/gromox/displayTable-40F-0.abkt
+share/gromox/displayTable-40F-1.abkt
+share/gromox/displayTable-40F-2.abkt
+share/gromox/displayTable-40F-200.abkt
+share/gromox/displayTable-40F-3.abkt
+share/gromox/displayTable-40F-6.abkt
+share/gromox/displayTable-410-0.abkt
+share/gromox/displayTable-410-1.abkt
+share/gromox/displayTable-410-2.abkt
+share/gromox/displayTable-410-200.abkt
+share/gromox/displayTable-410-3.abkt
+share/gromox/displayTable-410-6.abkt
+share/gromox/displayTable-411-0.abkt
+share/gromox/displayTable-411-1.abkt
+share/gromox/displayTable-411-2.abkt
+share/gromox/displayTable-411-200.abkt
+share/gromox/displayTable-411-3.abkt
+share/gromox/displayTable-411-6.abkt
+share/gromox/displayTable-412-0.abkt
+share/gromox/displayTable-412-1.abkt
+share/gromox/displayTable-412-2.abkt
+share/gromox/displayTable-412-200.abkt
+share/gromox/displayTable-412-3.abkt
+share/gromox/displayTable-412-6.abkt
+share/gromox/displayTable-413-0.abkt
+share/gromox/displayTable-413-1.abkt
+share/gromox/displayTable-413-2.abkt
+share/gromox/displayTable-413-200.abkt
+share/gromox/displayTable-413-3.abkt
+share/gromox/displayTable-413-6.abkt
+share/gromox/displayTable-414-0.abkt
+share/gromox/displayTable-414-1.abkt
+share/gromox/displayTable-414-2.abkt
+share/gromox/displayTable-414-200.abkt
+share/gromox/displayTable-414-3.abkt
+share/gromox/displayTable-414-6.abkt
+share/gromox/displayTable-415-0.abkt
+share/gromox/displayTable-415-1.abkt
+share/gromox/displayTable-415-2.abkt
+share/gromox/displayTable-415-200.abkt
+share/gromox/displayTable-415-3.abkt
+share/gromox/displayTable-415-6.abkt
+share/gromox/displayTable-416-0.abkt
+share/gromox/displayTable-416-1.abkt
+share/gromox/displayTable-416-2.abkt
+share/gromox/displayTable-416-200.abkt
+share/gromox/displayTable-416-3.abkt
+share/gromox/displayTable-416-6.abkt
+share/gromox/displayTable-418-0.abkt
+share/gromox/displayTable-418-1.abkt
+share/gromox/displayTable-418-2.abkt
+share/gromox/displayTable-418-200.abkt
+share/gromox/displayTable-418-3.abkt
+share/gromox/displayTable-418-6.abkt
+share/gromox/displayTable-419-0.abkt
+share/gromox/displayTable-419-1.abkt
+share/gromox/displayTable-419-2.abkt
+share/gromox/displayTable-419-200.abkt
+share/gromox/displayTable-419-3.abkt
+share/gromox/displayTable-419-6.abkt
+share/gromox/displayTable-41A-0.abkt
+share/gromox/displayTable-41A-1.abkt
+share/gromox/displayTable-41A-2.abkt
+share/gromox/displayTable-41A-200.abkt
+share/gromox/displayTable-41A-3.abkt
+share/gromox/displayTable-41A-6.abkt
+share/gromox/displayTable-41B-0.abkt
+share/gromox/displayTable-41B-1.abkt
+share/gromox/displayTable-41B-2.abkt
+share/gromox/displayTable-41B-200.abkt
+share/gromox/displayTable-41B-3.abkt
+share/gromox/displayTable-41B-6.abkt
+share/gromox/displayTable-41D-0.abkt
+share/gromox/displayTable-41D-1.abkt
+share/gromox/displayTable-41D-2.abkt
+share/gromox/displayTable-41D-200.abkt
+share/gromox/displayTable-41D-3.abkt
+share/gromox/displayTable-41D-6.abkt
+share/gromox/displayTable-41E-0.abkt
+share/gromox/displayTable-41E-1.abkt
+share/gromox/displayTable-41E-2.abkt
+share/gromox/displayTable-41E-200.abkt
+share/gromox/displayTable-41E-3.abkt
+share/gromox/displayTable-41E-6.abkt
+share/gromox/displayTable-41F-0.abkt
+share/gromox/displayTable-41F-1.abkt
+share/gromox/displayTable-41F-2.abkt
+share/gromox/displayTable-41F-200.abkt
+share/gromox/displayTable-41F-3.abkt
+share/gromox/displayTable-41F-6.abkt
+share/gromox/displayTable-420-0.abkt
+share/gromox/displayTable-420-1.abkt
+share/gromox/displayTable-420-2.abkt
+share/gromox/displayTable-420-200.abkt
+share/gromox/displayTable-420-3.abkt
+share/gromox/displayTable-420-6.abkt
+share/gromox/displayTable-421-0.abkt
+share/gromox/displayTable-421-1.abkt
+share/gromox/displayTable-421-2.abkt
+share/gromox/displayTable-421-200.abkt
+share/gromox/displayTable-421-3.abkt
+share/gromox/displayTable-421-6.abkt
+share/gromox/displayTable-422-0.abkt
+share/gromox/displayTable-422-1.abkt
+share/gromox/displayTable-422-2.abkt
+share/gromox/displayTable-422-200.abkt
+share/gromox/displayTable-422-3.abkt
+share/gromox/displayTable-422-6.abkt
+share/gromox/displayTable-424-0.abkt
+share/gromox/displayTable-424-1.abkt
+share/gromox/displayTable-424-2.abkt
+share/gromox/displayTable-424-200.abkt
+share/gromox/displayTable-424-3.abkt
+share/gromox/displayTable-424-6.abkt
+share/gromox/displayTable-425-0.abkt
+share/gromox/displayTable-425-1.abkt
+share/gromox/displayTable-425-2.abkt
+share/gromox/displayTable-425-200.abkt
+share/gromox/displayTable-425-3.abkt
+share/gromox/displayTable-425-6.abkt
+share/gromox/displayTable-426-0.abkt
+share/gromox/displayTable-426-1.abkt
+share/gromox/displayTable-426-2.abkt
+share/gromox/displayTable-426-200.abkt
+share/gromox/displayTable-426-3.abkt
+share/gromox/displayTable-426-6.abkt
+share/gromox/displayTable-427-0.abkt
+share/gromox/displayTable-427-1.abkt
+share/gromox/displayTable-427-2.abkt
+share/gromox/displayTable-427-200.abkt
+share/gromox/displayTable-427-3.abkt
+share/gromox/displayTable-427-6.abkt
+share/gromox/displayTable-429-0.abkt
+share/gromox/displayTable-429-1.abkt
+share/gromox/displayTable-429-2.abkt
+share/gromox/displayTable-429-200.abkt
+share/gromox/displayTable-429-3.abkt
+share/gromox/displayTable-429-6.abkt
+share/gromox/displayTable-42A-0.abkt
+share/gromox/displayTable-42A-1.abkt
+share/gromox/displayTable-42A-2.abkt
+share/gromox/displayTable-42A-200.abkt
+share/gromox/displayTable-42A-3.abkt
+share/gromox/displayTable-42A-6.abkt
+share/gromox/displayTable-42D-0.abkt
+share/gromox/displayTable-42D-1.abkt
+share/gromox/displayTable-42D-2.abkt
+share/gromox/displayTable-42D-200.abkt
+share/gromox/displayTable-42D-3.abkt
+share/gromox/displayTable-42D-6.abkt
+share/gromox/displayTable-439-0.abkt
+share/gromox/displayTable-439-1.abkt
+share/gromox/displayTable-439-2.abkt
+share/gromox/displayTable-439-200.abkt
+share/gromox/displayTable-439-3.abkt
+share/gromox/displayTable-439-6.abkt
+share/gromox/displayTable-43E-0.abkt
+share/gromox/displayTable-43E-1.abkt
+share/gromox/displayTable-43E-2.abkt
+share/gromox/displayTable-43E-200.abkt
+share/gromox/displayTable-43E-3.abkt
+share/gromox/displayTable-43E-6.abkt
+share/gromox/displayTable-43F-0.abkt
+share/gromox/displayTable-43F-1.abkt
+share/gromox/displayTable-43F-2.abkt
+share/gromox/displayTable-43F-200.abkt
+share/gromox/displayTable-43F-3.abkt
+share/gromox/displayTable-43F-6.abkt
+share/gromox/displayTable-456-0.abkt
+share/gromox/displayTable-456-1.abkt
+share/gromox/displayTable-456-2.abkt
+share/gromox/displayTable-456-200.abkt
+share/gromox/displayTable-456-3.abkt
+share/gromox/displayTable-456-6.abkt
+share/gromox/displayTable-464-0.abkt
+share/gromox/displayTable-464-1.abkt
+share/gromox/displayTable-464-2.abkt
+share/gromox/displayTable-464-200.abkt
+share/gromox/displayTable-464-3.abkt
+share/gromox/displayTable-464-6.abkt
+share/gromox/displayTable-804-0.abkt
+share/gromox/displayTable-804-1.abkt
+share/gromox/displayTable-804-2.abkt
+share/gromox/displayTable-804-200.abkt
+share/gromox/displayTable-804-3.abkt
+share/gromox/displayTable-804-6.abkt
+share/gromox/displayTable-816-0.abkt
+share/gromox/displayTable-816-1.abkt
+share/gromox/displayTable-816-2.abkt
+share/gromox/displayTable-816-200.abkt
+share/gromox/displayTable-816-3.abkt
+share/gromox/displayTable-816-6.abkt
+share/gromox/displayTable-81A-0.abkt
+share/gromox/displayTable-81A-1.abkt
+share/gromox/displayTable-81A-2.abkt
+share/gromox/displayTable-81A-200.abkt
+share/gromox/displayTable-81A-3.abkt
+share/gromox/displayTable-81A-6.abkt
+share/gromox/displayTable-8411-0.abkt
+share/gromox/displayTable-8411-1.abkt
+share/gromox/displayTable-8411-2.abkt
+share/gromox/displayTable-8411-200.abkt
+share/gromox/displayTable-8411-3.abkt
+share/gromox/displayTable-8411-6.abkt
+share/gromox/displayTable-C04-0.abkt
+share/gromox/displayTable-C04-1.abkt
+share/gromox/displayTable-C04-2.abkt
+share/gromox/displayTable-C04-200.abkt
+share/gromox/displayTable-C04-3.abkt
+share/gromox/displayTable-C04-6.abkt
+share/gromox/displayTable-C0A-0.abkt
+share/gromox/displayTable-C0A-1.abkt
+share/gromox/displayTable-C0A-2.abkt
+share/gromox/displayTable-C0A-200.abkt
+share/gromox/displayTable-C0A-3.abkt
+share/gromox/displayTable-C0A-6.abkt
+share/gromox/displayTable-C1A-0.abkt
+share/gromox/displayTable-C1A-1.abkt
+share/gromox/displayTable-C1A-2.abkt
+share/gromox/displayTable-C1A-200.abkt
+share/gromox/displayTable-C1A-3.abkt
+share/gromox/displayTable-C1A-6.abkt
+share/gromox/exmdb_list.txt
+share/gromox/folder_names.txt
+share/gromox/fpm-gromox.conf.sample
+share/gromox/gdbinit
+share/gromox/gromox.ldif
+share/gromox/http/
+share/gromox/http/php/
+share/gromox/http/php/ews/
+share/gromox/http/php/ews/exchange.php
+share/gromox/http/php/ews/thumbnail.php
+share/gromox/http/php/lib/
+share/gromox/http/php/lib/conf.php
+share/gromox/http/php/lib/db.php
+share/gromox/http/php/lib/util.php
+share/gromox/imap_lang.txt
+share/gromox/lang_charset.txt
+share/gromox/lcid.txt
+share/gromox/local_bounce/
+share/gromox/local_bounce/ascii/
+share/gromox/local_bounce/ascii/BOUNCE_MAILBOX_FULL
+share/gromox/local_bounce/ascii/BOUNCE_MAIL_DELIVERED
+share/gromox/local_bounce/ascii/BOUNCE_NO_USER
+share/gromox/local_bounce/ascii/BOUNCE_OPERATION_ERROR
+share/gromox/local_bounce/big5/
+share/gromox/local_bounce/big5/BOUNCE_MAILBOX_FULL
+share/gromox/local_bounce/big5/BOUNCE_MAIL_DELIVERED
+share/gromox/local_bounce/big5/BOUNCE_NO_USER
+share/gromox/local_bounce/big5/BOUNCE_OPERATION_ERROR
+share/gromox/local_bounce/euc-jp/
+share/gromox/local_bounce/euc-jp/BOUNCE_MAILBOX_FULL
+share/gromox/local_bounce/euc-jp/BOUNCE_MAIL_DELIVERED
+share/gromox/local_bounce/euc-jp/BOUNCE_NO_USER
+share/gromox/local_bounce/euc-jp/BOUNCE_OPERATION_ERROR
+share/gromox/local_bounce/gb2312/
+share/gromox/local_bounce/gb2312/BOUNCE_MAILBOX_FULL
+share/gromox/local_bounce/gb2312/BOUNCE_MAIL_DELIVERED
+share/gromox/local_bounce/gb2312/BOUNCE_NO_USER
+share/gromox/local_bounce/gb2312/BOUNCE_OPERATION_ERROR
+share/gromox/local_bounce/gbk/
+share/gromox/local_bounce/gbk/BOUNCE_MAILBOX_FULL
+share/gromox/local_bounce/gbk/BOUNCE_MAIL_DELIVERED
+share/gromox/local_bounce/gbk/BOUNCE_NO_USER
+share/gromox/local_bounce/gbk/BOUNCE_OPERATION_ERROR
+share/gromox/local_bounce/shift-jis/
+share/gromox/local_bounce/shift-jis/BOUNCE_MAILBOX_FULL
+share/gromox/local_bounce/shift-jis/BOUNCE_MAIL_DELIVERED
+share/gromox/local_bounce/shift-jis/BOUNCE_NO_USER
+share/gromox/local_bounce/shift-jis/BOUNCE_OPERATION_ERROR
+share/gromox/mail_bounce/
+share/gromox/mail_bounce/ascii/
+share/gromox/mail_bounce/ascii/BOUNCE_AUTO_RESPONSE
+share/gromox/mail_bounce/ascii/BOUNCE_CANNOT_DISPLAY
+share/gromox/mail_bounce/ascii/BOUNCE_GENERIC_ERROR
+share/gromox/mail_bounce/ascii/BOUNCE_MAIL_TOO_LARGE
+share/gromox/mail_bounce/big5/
+share/gromox/mail_bounce/big5/BOUNCE_AUTO_RESPONSE
+share/gromox/mail_bounce/big5/BOUNCE_CANNOT_DISPLAY
+share/gromox/mail_bounce/big5/BOUNCE_GENERIC_ERROR
+share/gromox/mail_bounce/big5/BOUNCE_MAIL_TOO_LARGE
+share/gromox/mail_bounce/gb2312/
+share/gromox/mail_bounce/gb2312/BOUNCE_AUTO_RESPONSE
+share/gromox/mail_bounce/gb2312/BOUNCE_CANNOT_DISPLAY
+share/gromox/mail_bounce/gb2312/BOUNCE_GENERIC_ERROR
+share/gromox/mail_bounce/gb2312/BOUNCE_MAIL_TOO_LARGE
+share/gromox/mail_bounce/gbk/
+share/gromox/mail_bounce/gbk/BOUNCE_AUTO_RESPONSE
+share/gromox/mail_bounce/gbk/BOUNCE_GENERIC_ERROR
+share/gromox/mail_bounce/gbk/BOUNCE_MAIL_CANNOT_DISPLAY
+share/gromox/mail_bounce/gbk/BOUNCE_MAIL_TOO_LARGE
+share/gromox/mime_extension.txt
+share/gromox/mlist_bounce/
+share/gromox/mlist_bounce/ascii/
+share/gromox/mlist_bounce/ascii/BOUNCE_MLIST_DOMAIN
+share/gromox/mlist_bounce/ascii/BOUNCE_MLIST_INTERNAL
+share/gromox/mlist_bounce/ascii/BOUNCE_MLIST_SPECIFIED
+share/gromox/mlist_bounce/big5/
+share/gromox/mlist_bounce/big5/BOUNCE_MLIST_DOMAIN
+share/gromox/mlist_bounce/big5/BOUNCE_MLIST_INTERNAL
+share/gromox/mlist_bounce/big5/BOUNCE_MLIST_SPECIFIED
+share/gromox/mlist_bounce/euc-jp/
+share/gromox/mlist_bounce/euc-jp/BOUNCE_MLIST_DOMAIN
+share/gromox/mlist_bounce/euc-jp/BOUNCE_MLIST_INTERNAL
+share/gromox/mlist_bounce/euc-jp/BOUNCE_MLIST_SPECIFIED
+share/gromox/mlist_bounce/gb2312/
+share/gromox/mlist_bounce/gb2312/BOUNCE_MLIST_DOMAIN
+share/gromox/mlist_bounce/gb2312/BOUNCE_MLIST_INTERNAL
+share/gromox/mlist_bounce/gb2312/BOUNCE_MLIST_SPECIFIED
+share/gromox/mlist_bounce/gbk/
+share/gromox/mlist_bounce/gbk/BOUNCE_MLIST_DOMAIN
+share/gromox/mlist_bounce/gbk/BOUNCE_MLIST_INTERNAL
+share/gromox/mlist_bounce/gbk/BOUNCE_MLIST_SPECIFIED
+share/gromox/mlist_bounce/shift-jis/
+share/gromox/mlist_bounce/shift-jis/BOUNCE_MLIST_DOMAIN
+share/gromox/mlist_bounce/shift-jis/BOUNCE_MLIST_INTERNAL
+share/gromox/mlist_bounce/shift-jis/BOUNCE_MLIST_SPECIFIED
+share/gromox/msgchg_grouping/
+share/gromox/msgchg_grouping/0x1.txt
+share/gromox/notify_bounce/
+share/gromox/notify_bounce/ascii/
+share/gromox/notify_bounce/ascii/BOUNCE_NOTIFY_NON_READ
+share/gromox/notify_bounce/ascii/BOUNCE_NOTIFY_READ
+share/gromox/notify_bounce/big5/
+share/gromox/notify_bounce/big5/BOUNCE_NOTIFY_NON_READ
+share/gromox/notify_bounce/big5/BOUNCE_NOTIFY_READ
+share/gromox/notify_bounce/gb2312/
+share/gromox/notify_bounce/gb2312/BOUNCE_NOTIFY_NON_READ
+share/gromox/notify_bounce/gb2312/BOUNCE_NOTIFY_READ
+share/gromox/notify_bounce/gbk/
+share/gromox/notify_bounce/gbk/BOUNCE_NOTIFY_NON_READ
+share/gromox/notify_bounce/gbk/BOUNCE_NOTIFY_READ
+share/gromox/propnames.txt
+share/gromox/sa/
+share/gromox/sa/submit.php
+share/gromox/sqliterc
+share/gromox/windowsZones.xml

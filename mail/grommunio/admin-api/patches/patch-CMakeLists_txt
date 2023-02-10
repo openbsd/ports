@@ -1,0 +1,33 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -5,9 +5,9 @@ include(GNUInstallDirs)
+ 
+ find_package(PkgConfig REQUIRED)
+ 
+-set(COMMONCONFDIR ${CMAKE_INSTALL_FULL_SYSCONFDIR}/grommunio-admin-common)
++#set(COMMONCONFDIR ${CMAKE_INSTALL_FULL_SYSCONFDIR}/grommunio-admin-common)
+ set(COMMONDIR ${CMAKE_INSTALL_FULL_DATADIR}/grommunio-admin-common)
+-set(CONFDIR ${CMAKE_INSTALL_FULL_SYSCONFDIR}/grommunio-admin-api)
++#set(CONFDIR ${CMAKE_INSTALL_FULL_SYSCONFDIR}/grommunio-admin-api)
+ set(INSTALLDIR ${CMAKE_INSTALL_FULL_DATADIR}/grommunio-admin-api)
+ set(NGINXDIR ${COMMONDIR}/nginx.d)
+ pkg_get_variable(TMPFILESDIR systemd tmpfilesdir)
+@@ -32,13 +32,13 @@ install(FILES data/api-config.ini data/config.yaml DES
+ install(FILES data/polkit-10-grommunio.rules DESTINATION ${CMAKE_INSTALL_FULL_DATADIR}/polkit-1/rules.d RENAME 10-grommunio.rules)
+ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/grommunio-admin TYPE SBIN)
+ 
+-install(DIRECTORY DESTINATION ${CMAKE_INSTALL_FULL_LOCALSTATEDIR}/lib/grommunio-admin-api DIRECTORY_PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE)
++#install(DIRECTORY DESTINATION ${CMAKE_INSTALL_FULL_LOCALSTATEDIR}/lib/grommunio-admin-api DIRECTORY_PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE)
+ install(DIRECTORY DESTINATION ${CONFDIR}/conf.d)
+ install(DIRECTORY DESTINATION ${COMMONCONFDIR}/license)
+ install(FILES data/api.conf DESTINATION ${NGINXDIR})
+ 
+ install(FILES data/autocomplete.sh DESTINATION ${CMAKE_INSTALL_FULL_DATADIR}/bash-completion/completions RENAME grommunio-admin)
+-install(FILES data/grommunio-admin-api.service data/grommunio-admin-api.socket DESTINATION ${UNITDIR})
++#install(FILES data/grommunio-admin-api.service data/grommunio-admin-api.socket DESTINATION ${UNITDIR})
+ install(FILES data/portrait.jpg DESTINATION ${COMMONDIR})
+-install(FILES data/tmpfiles-grommunio-admin-api.conf DESTINATION ${TMPFILESDIR} RENAME grommunio-admin-api.conf)
+-install(FILES data/grommunio-sudo DESTINATION ${CMAKE_INSTALL_FULL_SYSCONFDIR}/sudoers.d)
++#install(FILES data/tmpfiles-grommunio-admin-api.conf DESTINATION ${TMPFILESDIR} RENAME grommunio-admin-api.conf)
++install(FILES data/grommunio-sudo DESTINATION ${CONFDIR}/sudoers.d)

@@ -1,0 +1,4 @@
+grommunio Admin API is the central API component of grommunio managing 
+appliance(s), domain(s), users(s) and more. grommunio API orchestrates any 
+components and architectures required to operate and manage the entire 
+grommunio stack.

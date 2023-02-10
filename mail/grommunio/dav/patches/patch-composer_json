@@ -1,0 +1,14 @@
+Index: composer.json
+--- composer.json.orig
++++ composer.json
+@@ -21,8 +21,8 @@
+         "psr-4": {
+             "grommunio\\DAV\\" : "lib/"
+         },
+-        "classmap"          : ["/usr/share/php-mapi/"],
+-        "files"             : ["config.php", "version.php", "/usr/share/php-mapi/mapi.util.php", "/usr/share/php-mapi/mapidefs.php", "/usr/share/php-mapi/mapiguid.php", "/usr/share/php-mapi/mapitags.php"]
++        "classmap"          : ["/var/www/grommunio-mapi-header-php/"],
++        "files"             : ["config.php", "version.php", "/var/www/grommunio-mapi-header-php/mapi.util.php", "/var/www/grommunio-mapi-header-php/mapidefs.php", "/var/www/grommunio-mapi-header-php/mapiguid.php", "/var/www/grommunio-mapi-header-php/mapitags.php"]
+     },
+     "minimum-stability"     : "stable"
+ }
