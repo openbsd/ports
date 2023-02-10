@@ -1,0 +1,24 @@
+Appease clang 15's -Wstrict-prototype
+https://github.com/BelledonneCommunications/liblinphone/pull/225
+
+Index: console/linphonec.c
+--- console/linphonec.c.orig
++++ console/linphonec.c
+@@ -965,7 +965,7 @@ static void lpc_apply_video_params(void){
+  *
+  */
+ static int
+-linphonec_idle_call ()
++linphonec_idle_call (void)
+ {
+ 	LinphoneCore *opm=linphonec;
+ 
+@@ -1274,7 +1274,7 @@ linphonec_parse_cmdline(int argc, char **argv)
+  *	-1 on error
+  */
+ static int
+-handle_configfile_migration()
++handle_configfile_migration(void)
+ {
+ #if !defined(_WIN32_WCE)
+ 	char *old_cfg_gui;

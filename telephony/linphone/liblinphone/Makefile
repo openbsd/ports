@@ -3,7 +3,7 @@ COMMENT =	SIP library supporting voice/video calls and text messaging
 MODULE =	liblinphone
 V =		5.1.56
 KV =		5.1.55
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=	linphone	1.0 \
 		linphone++	1.0 # 10
