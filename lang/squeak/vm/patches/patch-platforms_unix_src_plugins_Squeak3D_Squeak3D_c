@@ -1,0 +1,14 @@
+Index: platforms/unix/src/plugins/Squeak3D/Squeak3D.c
+--- platforms/unix/src/plugins/Squeak3D/Squeak3D.c.orig
++++ platforms/unix/src/plugins/Squeak3D/Squeak3D.c
+@@ -1750,8 +1750,8 @@ static sqInt halt(void) {
+ }
+ 
+ EXPORT(sqInt) initialiseModule(void) {
+-	loadBBFn = interpreterProxy->ioLoadFunctionFrom("loadBitBltFrom", bbPluginName);
+-	copyBitsFn = interpreterProxy->ioLoadFunctionFrom("copyBitsFromtoat", bbPluginName);
++	loadBBFn = (sqInt)interpreterProxy->ioLoadFunctionFrom("loadBitBltFrom", bbPluginName);
++	copyBitsFn = (sqInt)interpreterProxy->ioLoadFunctionFrom("copyBitsFromtoat", bbPluginName);
+ 	return (loadBBFn != 0) && (copyBitsFn != 0);
+ }
+ 

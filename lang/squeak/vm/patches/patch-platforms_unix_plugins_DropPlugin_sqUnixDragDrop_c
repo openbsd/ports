@@ -1,0 +1,12 @@
+Index: platforms/unix/plugins/DropPlugin/sqUnixDragDrop.c
+--- platforms/unix/plugins/DropPlugin/sqUnixDragDrop.c.orig
++++ platforms/unix/plugins/DropPlugin/sqUnixDragDrop.c
+@@ -72,7 +72,7 @@ int dropRequestFileHandle(int dropIndex)
+     {
+       // you cannot be serious?
+       int handle= instantiateClassindexableSize(classByteArray(), fileRecordSize());
+-      sqFileOpen((SQFile *)fileValueOf(handle), (int)path, strlen(path), 0);
++      sqFileOpen((SQFile *)fileValueOf(handle), path, strlen(path), 0);
+       return handle;
+     }  
+   return interpreterProxy->nilObject();

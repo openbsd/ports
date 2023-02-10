@@ -1,0 +1,21 @@
+Index: platforms/unix/src/plugins/UnixOSProcessPlugin/UnixOSProcessPlugin.c
+--- platforms/unix/src/plugins/UnixOSProcessPlugin/UnixOSProcessPlugin.c.orig
++++ platforms/unix/src/plugins/UnixOSProcessPlugin/UnixOSProcessPlugin.c
+@@ -933,7 +933,7 @@ static sqInt newPthreadTypeByteArray(sqInt aPthreadTyp
+ 	len = sizeof(pthread_t);
+ 	byteArray = interpreterProxy->instantiateClassindexableSize(interpreterProxy->classByteArray(), len);
+ 	ptr = interpreterProxy->arrayValueOf(byteArray);
+-	*ptr = aPthreadType;
++	*ptr = (pthread_t)aPthreadType;
+ 	return byteArray;
+ }
+ 
+@@ -1889,7 +1889,7 @@ EXPORT(sqInt) primitiveGetStdOutHandleWithSessionIdent
+ 	containing the value in machine-dependent byte order. */
+ 
+ EXPORT(sqInt) primitiveGetThreadID(void) {
+-	interpreterProxy->popthenPush(1, newPthreadTypeByteArray(vmThread));
++	interpreterProxy->popthenPush(1, newPthreadTypeByteArray((sqInt)vmThread));
+ }
+ 
+ 

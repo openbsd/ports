@@ -4,7 +4,7 @@ SRCV =		1
 DISTFILES =	Squeak-$V-${SRCV}.src.tar.gz
 
 PKGNAME =	squeak-vm-$V.${SRCV}
-REVISION =	11
+REVISION =	12
 
 WRKDIST =	${WRKDIR}/Squeak-$V-${SRCV}
 WRKSRC =	${WRKDIST}/platforms/unix/config
@@ -49,6 +49,8 @@ CFLAGS +=		-fgnu89-inline
 # not quite the same as FIX_CRLF_FILES
 pre-patch:
 	@perl -pi -e s,\\r,\\n,g ${WRKDIST}/platforms/unix/src/vm/intplugins/SoundPlugin/*.c
+	@perl -pi -e s,\\r,\\n,g ${WRKDIST}/platforms/unix/src/plugins/Squeak3D/Squeak3D.c
+	@perl -pi -e s,\\r,\\n,g ${WRKDIST}/platforms/unix/src/plugins/UnixOSProcessPlugin/*.c
 
 pre-build:
 	@perl -pi -e s,dprintf,debugprintf, ${WRKDIST}/platforms/unix/vm/*.c
