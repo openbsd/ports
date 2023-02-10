@@ -1442,6 +1442,7 @@
      SUBDIR += py-jeepney,python3
      SUBDIR += py-jmespath,python3
      SUBDIR += py-jsonschema,python3
+     SUBDIR += py-jsonschema-spec,python3
      SUBDIR += py-jupyter_client,python3
      SUBDIR += py-jupyter_core,python3
      SUBDIR += py-kitchen,python3
@@ -1477,14 +1478,18 @@
      SUBDIR += py-objgraph,python3
      SUBDIR += py-olefile,python3
      SUBDIR += py-ordered-set,python3
+     SUBDIR += py-openapi-schema-validator,python3
+     SUBDIR += py-openapi-spec-validator,python3
      SUBDIR += py-parallel,python3
      SUBDIR += py-parameterized,python3
+     SUBDIR += py-parse,python3
      SUBDIR += py-parsedatetime,python3
      SUBDIR += py2-parsing
      SUBDIR += py-parsing,python3
      SUBDIR += py-parso,python3
      SUBDIR += py-path,python3
      SUBDIR += py-path.py,python3
+     SUBDIR += py-pathable,python3
      SUBDIR += py-pathspec,python3
      SUBDIR += py-pbr,python3
      SUBDIR += py-pebble,python3
@@ -1525,6 +1530,7 @@
      SUBDIR += py-regex,python3
      SUBDIR += py-rencode,python3
      SUBDIR += py-resolvelib,python3
+     SUBDIR += py-rfc3339-validator,python3
      SUBDIR += py-rfc6555,python3
      SUBDIR += py-rich,python3
      SUBDIR += py-robotframework,python3
