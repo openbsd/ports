@@ -1,6 +1,6 @@
 COMMENT=	generates simple manual pages from program output
 
-DISTNAME=	help2man-1.49.2
+DISTNAME=	help2man-1.49.3
 EXTRACT_SUFX=	.tar.xz
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=help2man/}
