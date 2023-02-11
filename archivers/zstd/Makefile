@@ -38,13 +38,13 @@ ALL_TARGET =		default
 TEST_TARGET =		check
 
 # keep WRKDIR tidy
-TMPDIR =		${WRKDIR}/tmp
-TEST_ENV =		TMPDIR=${TMPDIR}
+TESTTMP =		${WRKDIR}/tmp
+TEST_ENV =		TMPDIR=${TESTTMP}
 
 pre-build:
 	ln -fs ${LOCALBASE}/bin/ggrep ${WRKDIR}/bin/grep
 
 pre-test:
-	mkdir -p ${TMPDIR}
+	mkdir -p ${TESTTMP}
 
 .include <bsd.port.mk>
