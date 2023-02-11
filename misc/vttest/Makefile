@@ -1,6 +1,6 @@
 COMMENT=	test VT100-type terminal
 
-DISTNAME=	vttest-20221229
+DISTNAME=	vttest-20230201
 CATEGORIES=	misc
 HOMEPAGE=	https://invisible-island.net/vttest/vttest.html
 
