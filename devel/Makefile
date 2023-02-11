@@ -1277,6 +1277,7 @@
      SUBDIR += pangomm
      SUBDIR += pangomm248
      SUBDIR += pasmo
+     SUBDIR += pax-utils
      SUBDIR += pccts
      SUBDIR += pcre
      SUBDIR += pcre++
