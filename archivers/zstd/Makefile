@@ -37,7 +37,14 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 ALL_TARGET =		default
 TEST_TARGET =		check
 
+# keep WRKDIR tidy
+TMPDIR =		${WRKDIR}/tmp
+TEST_ENV =		TMPDIR=${TMPDIR}
+
 pre-build:
 	ln -fs ${LOCALBASE}/bin/ggrep ${WRKDIR}/bin/grep
+
+pre-test:
+	mkdir -p ${TMPDIR}
 
 .include <bsd.port.mk>
