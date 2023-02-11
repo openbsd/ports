@@ -9,10 +9,9 @@ share/dbus-1/services/org.xfce.xfce4-notifyd.Notifications.service
 share/icons/hicolor/16x16/apps/org.xfce.notification.png
 share/icons/hicolor/48x48/apps/org.xfce.notification.png
 share/icons/hicolor/scalable/apps/org.xfce.notification.svg
-share/icons/hicolor/scalable/status/notification-disabled-new-symbolic.svg
 share/icons/hicolor/scalable/status/notification-disabled-symbolic.svg
-share/icons/hicolor/scalable/status/notification-new-symbolic.svg
 share/icons/hicolor/scalable/status/notification-symbolic.svg
+share/icons/hicolor/scalable/status/org.xfce.notification.unread-emblem-symbolic.svg
 share/locale/ar/LC_MESSAGES/xfce4-notifyd.mo
 share/locale/ast/LC_MESSAGES/xfce4-notifyd.mo
 share/locale/be/LC_MESSAGES/xfce4-notifyd.mo
