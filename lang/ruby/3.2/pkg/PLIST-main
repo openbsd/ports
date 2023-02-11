@@ -221,7 +221,7 @@ include/ruby-${REV}/ruby/util.h
 include/ruby-${REV}/ruby/version.h
 include/ruby-${REV}/ruby/vm.h
 include/ruby-${REV}/${SUB}/
-include/ruby-${REV}/${SUB}/rb_mjit_min_header-3.2.0.h
+include/ruby-${REV}/${SUB}/rb_mjit_min_header-3.2.1.h
 include/ruby-${REV}/${SUB}/ruby/
 include/ruby-${REV}/${SUB}/ruby/config.h
 @so lib/libruby32.so
@@ -809,8 +809,6 @@ lib/ruby/${REV}/logger/log_device.rb
 lib/ruby/${REV}/logger/period.rb
 lib/ruby/${REV}/logger/severity.rb
 lib/ruby/${REV}/logger/version.rb
-lib/ruby/${REV}/mjit/
-lib/ruby/${REV}/mjit/instruction.rb
 lib/ruby/${REV}/mkmf.rb
 lib/ruby/${REV}/monitor.rb
 lib/ruby/${REV}/mutex_m.rb
@@ -1591,10 +1589,10 @@ lib/ruby/gems/${REV}/gems/abbrev-0.1.1/
 lib/ruby/gems/${REV}/gems/base64-0.1.1/
 lib/ruby/gems/${REV}/gems/benchmark-0.2.1/
 lib/ruby/gems/${REV}/gems/bigdecimal-3.1.3/
-lib/ruby/gems/${REV}/gems/bundler-2.4.1/
-lib/ruby/gems/${REV}/gems/bundler-2.4.1/libexec/
-lib/ruby/gems/${REV}/gems/bundler-2.4.1/libexec/bundle
-lib/ruby/gems/${REV}/gems/bundler-2.4.1/libexec/bundler
+lib/ruby/gems/${REV}/gems/bundler-2.4.6/
+lib/ruby/gems/${REV}/gems/bundler-2.4.6/libexec/
+lib/ruby/gems/${REV}/gems/bundler-2.4.6/libexec/bundle
+lib/ruby/gems/${REV}/gems/bundler-2.4.6/libexec/bundler
 lib/ruby/gems/${REV}/gems/cgi-0.3.6/
 lib/ruby/gems/${REV}/gems/csv-3.2.6/
 lib/ruby/gems/${REV}/gems/date-3.3.3/
@@ -2734,7 +2732,7 @@ lib/ruby/gems/${REV}/specifications/default/abbrev-0.1.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/base64-0.1.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/benchmark-0.2.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/bigdecimal-3.1.3.gemspec
-lib/ruby/gems/${REV}/specifications/default/bundler-2.4.1.gemspec
+lib/ruby/gems/${REV}/specifications/default/bundler-2.4.6.gemspec
 lib/ruby/gems/${REV}/specifications/default/cgi-0.3.6.gemspec
 lib/ruby/gems/${REV}/specifications/default/csv-3.2.6.gemspec
 lib/ruby/gems/${REV}/specifications/default/date-3.3.3.gemspec

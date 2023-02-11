@@ -1,0 +1,25 @@
+Disable the use of `gem update --system`, which is not supported when using
+OpenBSD packages.  Also avoids printing the nagging update message:
+
+  A new release of RubyGems is available: 3.4.1 - 3.4.2!
+  Run `gem update --system 3.4.2` to update your installation.
+
+The ENV usage is to skip this logic during tests, to avoid test failures.
+
+Index: lib/rubygems.rb
+--- lib/rubygems.rb.orig
++++ lib/rubygems.rb
+@@ -1168,6 +1168,13 @@ An Array (#{env.inspect}) was passed in from #{caller[
+ 
+     attr_accessor :disable_system_update_message
+ 
++    unless ENV['RUBYGEMS_SYSTEM_UPDATE_MESSAGE'] == 'enable'
++      Gem.disable_system_update_message = <<EOF
++Ruby was installed using an OpenBSD package, and using `gem update --system`
++is not supported.
++EOF
++    end
++
+     ##
+     # Whether RubyGems should enhance builtin `require` to automatically
+     # check whether the path required is present in installed gems, and
