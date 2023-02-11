@@ -11,7 +11,7 @@ Index: rijndael.hpp
  #ifdef USE_SSE
      void blockEncryptSSE(const byte *input,size_t numBlocks,byte *outBuffer);
      void blockDecryptSSE(const byte *input, size_t numBlocks, byte *outBuffer);
-@@ -21,6 +24,7 @@ class Rijndael
+@@ -31,6 +34,7 @@ class Rijndael
      void keySched(byte key[_MAX_KEY_COLUMNS][4]);
      void keyEncToDec();
      void GenerateTables();
@@ -19,7 +19,7 @@ Index: rijndael.hpp
  
      // RAR always uses CBC, but we may need to turn it off when calling
      // this code from other archive formats with CTR and other modes.
-@@ -31,6 +35,9 @@ class Rijndael
+@@ -41,6 +45,9 @@ class Rijndael
      byte     m_expandedKey[_MAX_ROUNDS+1][4][4];
    public:
      Rijndael();

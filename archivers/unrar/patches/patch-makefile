@@ -15,12 +15,3 @@ Index: makefile
  
  # Linux using LCC
  #CXX=lcc
-@@ -127,6 +128,8 @@ OBJECTS=rar.o strlist.o strfn.o pathfn.o smallfn.o glo
- 	resource.o match.o timefn.o rdwrfn.o consio.o options.o errhnd.o rarvm.o secpassword.o \
- 	rijndael.o getbits.o sha1.o sha256.o blake2s.o hash.o extinfo.o extract.o volume.o \
-   list.o find.o unpack.o headers.o threadpool.o rs16.o cmddata.o ui.o
-+
-+.SUFFIXES: .cpp
- 
- .cpp.o:
- 	$(COMPILE) -D$(WHAT) -c $<
