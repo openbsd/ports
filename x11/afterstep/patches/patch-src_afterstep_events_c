@@ -1,0 +1,11 @@
+Index: src/afterstep/events.c
+--- src/afterstep/events.c.orig
++++ src/afterstep/events.c
+@@ -46,6 +46,7 @@
+ #include "../../libAfterStep/moveresize.h"
+ 
+ #include <X11/keysym.h>
++#include <X11/XKBlib.h>
+ #ifdef XSHMIMAGE
+ # include <sys/ipc.h>
+ # include <sys/shm.h>

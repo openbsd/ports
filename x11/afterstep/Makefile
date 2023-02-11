@@ -1,7 +1,7 @@
 COMMENT=	window manager, continuation of the Bowman NeXTSTEP clone
 
 V=		2.2.12
-REVISION=	7
+REVISION=	8
 DISTNAME=	AfterStep-${V}
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=     x11

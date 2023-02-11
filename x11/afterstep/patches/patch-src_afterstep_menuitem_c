@@ -1,0 +1,12 @@
+Index: src/afterstep/menuitem.c
+--- src/afterstep/menuitem.c.orig
++++ src/afterstep/menuitem.c
+@@ -53,6 +53,8 @@
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ 
++#include <X11/XKBlib.h>
++
+ #include "dirtree.h"
+ 
+ /***************************************************************************/

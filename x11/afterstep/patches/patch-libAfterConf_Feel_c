@@ -1,0 +1,12 @@
+Index: libAfterConf/Feel.c
+--- libAfterConf/Feel.c.orig
++++ libAfterConf/Feel.c
+@@ -29,6 +29,8 @@
+ 
+ #include "afterconf.h"
+ 
++#include <X11/XKBlib.h>
++
+ 
+ flag_options_xref WindowBoxFlagsXref[] = {
+ 	{ASA_Virtual, WINDOWBOX_Virtual_ID, 0}

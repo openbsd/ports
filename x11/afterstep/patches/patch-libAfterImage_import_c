@@ -1,0 +1,11 @@
+Index: libAfterImage/import.c
+--- libAfterImage/import.c.orig
++++ libAfterImage/import.c
+@@ -51,7 +51,6 @@
+ #endif
+ #ifdef HAVE_JPEG
+ /* Include file for users of png library. */
+-# undef HAVE_STDLIB_H
+ # ifndef X_DISPLAY_MISSING
+ #  include <X11/Xmd.h>
+ # endif
