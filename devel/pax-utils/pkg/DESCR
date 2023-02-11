@@ -1,0 +1,10 @@
+pax-utils is a small set of utilities for peforming Q/A (mostly security)
+checks on systems (most notably, `scanelf`).  It is focused on the ELF
+format, but does include a Mach-O helper too for OS X systems.
+
+While heavily integrated into Gentoo's build system, it can be used on any
+distro as it is a generic toolset.
+
+Originally focused only on PaX, it has been expanded to be generally
+security focused.  It still has a good number of PaX helpers for people
+interested in that.

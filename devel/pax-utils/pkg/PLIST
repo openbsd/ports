@@ -1,0 +1,8 @@
+@bin bin/dumpelf
+bin/lddtree
+@bin bin/scanelf
+@bin bin/scanmacho
+bin/symtree
+@man man/man1/dumpelf.1
+@man man/man1/scanelf.1
+@man man/man1/scanmacho.1
