@@ -5,6 +5,7 @@ COMMENT =	IDE for C, C++, Python, QML/JavaScript and PHP
 CATEGORIES =	devel x11
 
 DISTNAME =	kdevelop-${MODKDE_VERSION}
+REVISION =	0
 
 HOMEPAGE =	https://www.kdevelop.org/
 
@@ -102,7 +103,7 @@ LIB_DEPENDS =	devel/kf5/kconfig \
 		devel/kf5/threadweaver \
 		devel/llvm \
 		devel/subversion \
-		x11/grantlee-qt5>=5.2 \
+		x11/grantlee-qt5>=5.3 \
 		x11/kde-applications/libkomparediff2 \
 		x11/kde-applications/okteta>=0.26.1v0 \
 		x11/qt5/qtdeclarative \

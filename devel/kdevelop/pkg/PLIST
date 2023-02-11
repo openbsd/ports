@@ -465,8 +465,8 @@ lib/cmake/KDevelop/KDevelopTargets.cmake
 @lib lib/libKDevPlatformVcs.so.${LIBKDevPlatformVcs_VERSION}
 @so lib/libKDevelopSessionsWatch.so
 lib/qt5/plugins/grantlee/
-lib/qt5/plugins/grantlee/5.2/
-@so lib/qt5/plugins/grantlee/5.2/kdev_filters.so
+lib/qt5/plugins/grantlee/5.3/
+@so lib/qt5/plugins/grantlee/5.3/kdev_filters.so
 lib/qt5/plugins/kdevplatform/
 lib/qt5/plugins/kdevplatform/510/
 @so lib/qt5/plugins/kdevplatform/510/kdevandroid.so
