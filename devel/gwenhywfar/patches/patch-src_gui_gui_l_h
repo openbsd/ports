@@ -1,0 +1,15 @@
+Export GWEN_Gui_ReadString to unbreak tests.
+XXX report upstream
+
+Index: src/gui/gui_l.h
+--- src/gui/gui_l.h.orig
++++ src/gui/gui_l.h
+@@ -29,7 +29,7 @@
+ #include <gwenhywfar/gui_be.h>
+ 
+ 
+-int GWEN_Gui_ReadString(const char *text, GWEN_BUFFER *tbuf);
++GWENHYWFAR_API int GWEN_Gui_ReadString(const char *text, GWEN_BUFFER *tbuf);
+ 
+ int GWEN_Gui_ModuleInit();
+ void GWEN_Gui_ModuleFini();

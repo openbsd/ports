@@ -1,8 +1,9 @@
 COMMENT=	helper library for networking and security applications
 
 DISTNAME=	gwenhywfar-5.10.1
+REVISION=	0
 
-SHARED_LIBS +=  gwenhywfar           2.2      # 83.0
+SHARED_LIBS +=  gwenhywfar           2.3      # 83.0
 SHARED_LIBS +=  gwengui-cpp          1.0      # 83.0
 SHARED_LIBS +=  gwengui-gtk3         0.0      # 83.0
 SHARED_LIBS +=  gwengui-qt5          0.0      # 83.0
