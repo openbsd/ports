@@ -200,6 +200,8 @@ MODGO_MODULES =	\
 	github.com/tmc/grpc-websocket-proxy				 v0.0.0-20170815181823-89b8d40f7ca8 \
 	github.com/urfave/cli						 v1.22.1 \
 	github.com/xiang90/probing					 v0.0.0-20190116061207-43a291ad63a2 \
+	github.com/xiaokangwang/dtls/v2					 v2.0.0-20230118142434-16e5cc8ce01c \
+	github.com/xiaokangwang/webrtc/v3				 v3.0.0-20230118142924-be9162e2b526 \
 	github.com/xtaci/kcp-go/v5					 v5.6.1 \
 	github.com/xtaci/lossyconn					 v0.0.0-20190602105132-8df528c0c9ae \
 	github.com/xtaci/smux						 v1.5.15 \
