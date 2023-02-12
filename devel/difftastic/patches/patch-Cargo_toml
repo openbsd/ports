@@ -1,9 +1,9 @@
-Revert upstream patch to tree_magic_mini. We cannot pull from github during build.
+Revert to published version of tree_magic_mini. We cannot pull from github during build.
 https://github.com/Wilfred/difftastic/commit/b662a2220b9e9eae5f69ecbc31195bcfcc5216e1
 Index: Cargo.toml
 --- Cargo.toml.orig
 +++ Cargo.toml
-@@ -51,7 +51,7 @@ const_format = "0.2.22"
+@@ -49,7 +49,7 @@ const_format = "0.2.22"
  owo-colors = "3.3.0"
  wu-diff = "0.1.2"
  rayon = "1.6.1"
@@ -11,8 +11,8 @@ Index: Cargo.toml
 +tree_magic_mini = "3.0.3"
  bumpalo = "3.11.1"
  unicode-width = "0.1.9"
- term_size = "0.3.2"
-@@ -73,6 +73,3 @@ path = "src/main.rs"
+ crossterm = { version = "0.25.0", features = [] }
+@@ -71,6 +71,3 @@ path = "src/main.rs"
  
  [features]
  

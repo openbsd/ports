@@ -1,9 +1,9 @@
-Revert upstream patch to tree_magic_mini. We cannot pull from github during build.
+Revert to use published version of tree_magic_mini.
 https://github.com/Wilfred/difftastic/commit/b662a2220b9e9eae5f69ecbc31195bcfcc5216e1
 Index: Cargo.lock
 --- Cargo.lock.orig
 +++ Cargo.lock
-@@ -635,8 +635,9 @@ dependencies = [
+@@ -681,8 +681,9 @@ dependencies = [
  
  [[package]]
  name = "tree_magic_mini"
