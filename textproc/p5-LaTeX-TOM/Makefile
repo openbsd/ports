@@ -1,11 +1,12 @@
 COMMENT =		parse, analyze and manipulate LaTeX documents
 
-DISTNAME =		LaTeX-TOM-1.03
+DISTNAME =		LaTeX-TOM-1.05
 CATEGORIES =		textproc
-REVISION =		0
 
 MODULES =		cpan
 PKG_ARCH =		*
+
+CONFIGURE_STYLE =	modbuild
 
 # perl
 PERMIT_PACKAGE =	Yes
