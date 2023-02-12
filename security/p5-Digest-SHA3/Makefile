@@ -1,6 +1,6 @@
 COMMENT =	Perl extension for SHA-3
 
-DISTNAME =	Digest-SHA3-1.04
+DISTNAME =	Digest-SHA3-1.05
 
 CATEGORIES =	security
 
