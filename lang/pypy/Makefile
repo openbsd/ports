@@ -1,4 +1,5 @@
 ONLY_FOR_ARCHS =	aarch64 amd64
+BROKEN-aarch64 = needs a new bootstrap
 BROKEN-amd64 = build segfaults also with USE_NOEXECONLY
 
 COMMENT =		fast implementation of the Python language
