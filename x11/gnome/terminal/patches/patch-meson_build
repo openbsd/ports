@@ -4,7 +4,7 @@ In file included from ../gnome-terminal-3.46.4/src/terminal-screen.cc:36:
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -162,7 +162,7 @@ config_h.set('ENABLE_SEARCH_PROVIDER', get_option('sea
+@@ -163,7 +163,7 @@ config_h.set('ENABLE_SEARCH_PROVIDER', get_option('sea
  # Enable libc features
  
  libc_feature_defines = [
