@@ -4,8 +4,6 @@ lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/locales/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/locales/.tx/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/locales/.tx/config
@@ -230,12 +228,9 @@ lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/templates/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/templates/project.hhc
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/templates/project.hhp
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/templates/project.stp
-lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/version.py
-lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_htmlhelp-${MODPY_EGG_VERSION}-py${MODPY_VERSION}-nspkg.pth
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_htmlhelp-${MODPY_EGG_VERSION}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_htmlhelp-${MODPY_EGG_VERSION}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_htmlhelp-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_htmlhelp-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_htmlhelp-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_htmlhelp-${MODPY_EGG_VERSION}.dist-info/namespace_packages.txt
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_htmlhelp-${MODPY_EGG_VERSION}.dist-info/top_level.txt
