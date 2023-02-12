@@ -1,3 +1,5 @@
+@conflict libdmapsharing-*
+@pkgpath x11/gnome/libdmapsharing
 include/libdmapsharing-4.0/
 include/libdmapsharing-4.0/libdmapsharing/
 include/libdmapsharing-4.0/libdmapsharing/dmap-av-connection.h
