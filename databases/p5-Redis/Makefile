@@ -1,6 +1,6 @@
 COMMENT =	perl binding for Redis database
 
-DISTNAME =	Redis-1.999
+DISTNAME =	Redis-2.000
 CATEGORIES =	databases
 
 EPOCH =		0
