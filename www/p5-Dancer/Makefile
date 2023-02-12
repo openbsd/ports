@@ -2,7 +2,7 @@ COMMENT =	simple perl web app framework
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Dancer-1.3520
+DISTNAME =	Dancer-1.3521
 CATEGORIES =	www
 
 # perl
