@@ -106,9 +106,6 @@ lib/rhythmbox/plugins/audiocd/audiocd.plugin
 lib/rhythmbox/plugins/audioscrobbler/
 lib/rhythmbox/plugins/audioscrobbler/audioscrobbler.plugin
 @so lib/rhythmbox/plugins/audioscrobbler/libaudioscrobbler.so
-lib/rhythmbox/plugins/daap/
-lib/rhythmbox/plugins/daap/daap.plugin
-@so lib/rhythmbox/plugins/daap/libdaap.so
 lib/rhythmbox/plugins/dbus-media-server/
 lib/rhythmbox/plugins/dbus-media-server/dbus-media-server.plugin
 @so lib/rhythmbox/plugins/dbus-media-server/libdbus-media-server.so

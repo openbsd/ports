@@ -1,8 +1,9 @@
 COMMENT=		integrated music management application for GNOME
 
+# XXX re-enable dmapsharing4 support once rhythmbox supports libsoup3
 GNOME_PROJECT=		rhythmbox
 GNOME_VERSION=		3.4.6
-REVISION=		2
+REVISION=		3
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # 7.0
 
@@ -13,12 +14,11 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2 with exception clause
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += X11 atk-1.0 c cairo dmapsharing-4.0 gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 girepository-1.0 glib-2.0 gobject-2.0 grilo-0.3
-WANTLIB += gstaudio-1.0 gstbase-1.0 gstcontroller-1.0 gstpbutils-1.0
-WANTLIB += gstreamer-1.0 gsttag-1.0 gtk-3 intl json-glib-1.0 m
-WANTLIB += notify pango-1.0 pangocairo-1.0 peas-1.0 peas-gtk-1.0
-WANTLIB += secret-1 soup-2.4 tdb totem-plparser xml2
+WANTLIB += X11 atk-1.0 c cairo gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0
+WANTLIB += glib-2.0 gobject-2.0 grilo-0.3 gstaudio-1.0 gstbase-1.0
+WANTLIB += gstcontroller-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0
+WANTLIB += gtk-3 intl json-glib-1.0 m notify pango-1.0 pangocairo-1.0
+WANTLIB += peas-1.0 peas-gtk-1.0 soup-2.4 tdb totem-plparser xml2
 
 MODULES=		devel/dconf \
 			devel/meson \
@@ -35,9 +35,9 @@ LIB_DEPENDS=		databases/tdb \
 			devel/json-glib \
 			devel/libnotify \
 			devel/libpeas \
+			devel/libsoup \
 			multimedia/gstreamer1/plugins-base \
 			x11/gnome/grilo \
-			x11/gnome/libdmapsharing4 \
 			x11/gnome/totem-pl-parser
 
 # context plugin
@@ -60,6 +60,9 @@ CONFIGURE_ARGS=		-Dbrasero=disabled \
 			-Dgudev=disabled \
 			-Dipod=disabled \
 			-Dlirc=disabled
+
+# XXX see top of Makefile
+CONFIGURE_ARGS +=	-Ddaap=disabled
 
 # XXX requires udev|gvfs-mtp
 CONFIGURE_ARGS +=	-Dmtp=disabled
