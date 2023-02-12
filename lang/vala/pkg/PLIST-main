@@ -239,6 +239,7 @@ share/vala-${API_V}/vapi/hildon-fm-2.vapi
 share/vala-${API_V}/vapi/javascriptcoregtk-4.0.vapi
 share/vala-${API_V}/vapi/javascriptcoregtk-4.1.vapi
 share/vala-${API_V}/vapi/javascriptcoregtk-5.0.vapi
+share/vala-${API_V}/vapi/javascriptcoregtk-6.0.vapi
 share/vala-${API_V}/vapi/json-glib-1.0.deps
 share/vala-${API_V}/vapi/json-glib-1.0.vapi
 share/vala-${API_V}/vapi/libarchive.deps
@@ -361,6 +362,10 @@ share/vala-${API_V}/vapi/webkit2gtk-web-extension-4.1.deps
 share/vala-${API_V}/vapi/webkit2gtk-web-extension-4.1.vapi
 share/vala-${API_V}/vapi/webkit2gtk-web-extension-5.0.deps
 share/vala-${API_V}/vapi/webkit2gtk-web-extension-5.0.vapi
+share/vala-${API_V}/vapi/webkitgtk-6.0.deps
+share/vala-${API_V}/vapi/webkitgtk-6.0.vapi
+share/vala-${API_V}/vapi/webkitgtk-web-extension-6.0.deps
+share/vala-${API_V}/vapi/webkitgtk-web-extension-6.0.vapi
 share/vala-${API_V}/vapi/x11.vapi
 share/vala-${API_V}/vapi/xcb-icccm.deps
 share/vala-${API_V}/vapi/xcb-icccm.vapi
