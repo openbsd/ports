@@ -27,6 +27,7 @@ share/remind/ansitext.rem
 share/remind/holidays/
 share/remind/holidays/ca.rem
 share/remind/holidays/fr.rem
+share/remind/holidays/gr.rem
 share/remind/holidays/jewish.rem
 share/remind/holidays/us.rem
 share/remind/lang/
@@ -37,6 +38,7 @@ share/remind/lang/en.rem
 share/remind/lang/es.rem
 share/remind/lang/fi.rem
 share/remind/lang/fr.rem
+share/remind/lang/gr.rem
 share/remind/lang/is.rem
 share/remind/lang/it.rem
 share/remind/lang/nl.rem
