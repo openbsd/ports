@@ -2,13 +2,14 @@ COMMENT =		protocol, service, network, host and ether info for Tcl
 
 DISTNAME =		netinfo-0.6
 CATEGORIES =		net
-HOMEPAGE =		http://www3.bell.net/stwo/
+HOMEPAGE =		https://chiselapp.com/user/stwo/repository/netinfo/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
+REVISION =		0
 
 # ISC
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${HOMEPAGE:=software/}
+MASTER_SITES =		${HOMEPAGE:=uv/}
 MODULES =		lang/tcl
 RUN_DEPENDS =		${MODTCL_RUN_DEPENDS}
 TEST_DEPENDS =		${MODTCL_BUILD_DEPENDS}
