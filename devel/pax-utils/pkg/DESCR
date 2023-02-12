@@ -1,4 +1,4 @@
-pax-utils is a small set of utilities for peforming Q/A (mostly security)
+pax-utils is a small set of utilities for performing Q/A (mostly security)
 checks on systems (most notably, `scanelf`).  It is focused on the ELF
 format, but does include a Mach-O helper too for OS X systems.
 
