@@ -5,7 +5,7 @@ COMMENT=	framework for making media discovery and browsing easy
 GNOME_PROJECT=	grilo
 GNOME_VERSION=	0.3.15
 API=		0.3
-REVISION=	0
+REVISION=	1
 
 SUBST_VARS=	API
 
@@ -19,14 +19,14 @@ CATEGORIES+=	multimedia
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += c gdk-3 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gtk-3
-WANTLIB += intl oauth soup-2.4 totem-plparser
+WANTLIB += intl oauth soup-3.0 totem-plparser
 
 MODULES=	devel/meson \
 		x11/gnome
 
 DEBUG_PACKAGES =${BUILD_PACKAGES}
 
-LIB_DEPENDS=	devel/libsoup \
+LIB_DEPENDS=	devel/libsoup3 \
 		net/liboauth \
 		x11/gnome/totem-pl-parser \
 		x11/gtk+3
@@ -34,11 +34,6 @@ LIB_DEPENDS=	devel/libsoup \
 MODGNOME_TOOLS=	gobject-introspection vala
 
 CONFIGURE_ARGS=	-Denable-gtk-doc=false
-
-# XXX this allows building the opensubtitles and youtube plugins in
-# x11/gnome/grilo-plugins and prevents issues when apps are using both libsoup2
-# and libsoup3
-CONFIGURE_ARGS +=	-Dsoup3=false
 
 # Own the grilo plugins directory to prevent warnings that this
 # directory does not exist when no plugin is installed.
