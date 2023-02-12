@@ -1,9 +1,10 @@
 Taken from ports LLVM.
+Need -lexecinfo for Backtrace symbols.
 
 Index: driver/linker-gcc.cpp
 --- driver/linker-gcc.cpp.orig
 +++ driver/linker-gcc.cpp
-@@ -422,7 +422,6 @@ void ArgsBuilder::addCppStdlibLinkFlags(const llvm::Tr
+@@ -414,7 +414,6 @@ void ArgsBuilder::addCppStdlibLinkFlags(const llvm::Tr
      break;
    case llvm::Triple::Solaris:
    case llvm::Triple::NetBSD:
@@ -11,7 +12,7 @@ Index: driver/linker-gcc.cpp
    case llvm::Triple::DragonFly:
      args.push_back("-lstdc++");
      break;
-@@ -432,6 +431,7 @@ void ArgsBuilder::addCppStdlibLinkFlags(const llvm::Tr
+@@ -424,6 +423,7 @@ void ArgsBuilder::addCppStdlibLinkFlags(const llvm::Tr
    case llvm::Triple::WatchOS:
    case llvm::Triple::TvOS:
    case llvm::Triple::FreeBSD:
@@ -19,11 +20,12 @@ Index: driver/linker-gcc.cpp
      args.push_back("-lc++");
      break;
    default:
-@@ -663,11 +663,13 @@ void ArgsBuilder::addDefaultPlatformLibs() {
+@@ -665,11 +665,14 @@ void ArgsBuilder::addDefaultPlatformLibs() {
      args.push_back("-lrt");
      args.push_back("-ldl");
    // fallthrough
 +  case llvm::Triple::OpenBSD:
++    args.push_back("-lexecinfo");
 +    args.push_back("-lc++abi");
 +  // fallthrough
    case llvm::Triple::Darwin:

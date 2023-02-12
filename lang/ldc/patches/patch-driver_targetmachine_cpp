@@ -3,7 +3,7 @@ Taken from ports LLVM.
 Index: driver/targetmachine.cpp
 --- driver/targetmachine.cpp.orig
 +++ driver/targetmachine.cpp
-@@ -432,6 +432,8 @@ createTargetMachine(const std::string targetTriple, co
+@@ -444,6 +444,8 @@ createTargetMachine(const std::string targetTriple, co
        // these OSes.
        // On Android, PIC is default as well.
        relocModel = llvm::Reloc::PIC_;

@@ -2,12 +2,11 @@
 # Can use GDC to create said bootstrap compiler.
 ONLY_FOR_ARCHS =	amd64
 
-V =		1.28.0
+V =		1.31.0
 COMMENT =	LLVM D Compiler
 DISTFILES =	ldc-${V}-src.tar.gz:0 \
 		ldc-${V}-bootstrap.tar.gz:1
 PKGNAME =	ldc-${V}
-REVISION =	0
 CATEGORIES =	lang
 
 HOMEPAGE =	https://wiki.dlang.org/LDC
@@ -18,7 +17,7 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # Misc: Apache 2.0 with LLVM exceptions
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c m z
+WANTLIB += ${COMPILER_LIBCXX} c execinfo m z
 
 MASTER_SITES0 =	https://github.com/ldc-developers/ldc/releases/download/v${V}/
 MASTER_SITES1 =	https://github.com/ibara/ldc/releases/download/bootstrap-${V}/
@@ -54,15 +53,19 @@ post-patch:
 	sed -i 's#"/usr/local/lib",#"/usr/local/lib","${WRKDIR}/ldc-${V}-bootstrap/${MACHINE_ARCH}",#g' \
 		${WRKDIR}/ldc-${V}-bootstrap/${MACHINE_ARCH}/ldc2.conf
 	chmod 644 ${WRKDIR}/ldc-${V}-bootstrap/${MACHINE_ARCH}/lib*.so* # XXX
-	cp /usr/lib/libc.so.96.* ${WRKDIR}/ldc-${V}-bootstrap/${MACHINE_ARCH}/ # XXX
+	cp /usr/lib/libc.so.97.* ${WRKDIR}/ldc-${V}-bootstrap/${MACHINE_ARCH}/ # XXX
 
 # Same trick as with flang:
 #   Replace the shared LLVM.so library with the static libraries.
 #   Fixes runtime warnings about symbol size mismatches.
 #   Revisit on occasion (maybe these warning go away someday?)
+#   We're using LLVM 13 now, but LLVM 15 is coming.
 post-configure:
 	sed -i \
-	's,-lLLVM-11,`${LOCALBASE}/bin/llvm-config --libs all --link-static --ignore-libllvm` -lz,g' \
+	's,-lLLVM-13,`${LOCALBASE}/bin/llvm-config --libs all --link-static --ignore-libllvm` -lz,g' \
+	${WRKBUILD}/build.ninja
+	sed -i \
+	's,-lLLVM-15,`${LOCALBASE}/bin/llvm-config --libs all --link-static --ignore-libllvm` -lz,g' \
 	${WRKBUILD}/build.ninja
 
 # Move the default ldc2.conf to its proper packaging location.
