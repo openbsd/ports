@@ -1,8 +1,7 @@
 COMMENT=		transform LaTeX source files to POD
 
-DISTNAME=		LaTeX-Pod-0.21
+DISTNAME =		LaTeX-Pod-0.22
 CATEGORIES=		textproc
-REVISION=		0
 
 MODULES=		cpan
 PKG_ARCH=		*
