@@ -1,6 +1,6 @@
 COMMENT =	check what OS we are running on
 
-DISTNAME =	Devel-CheckOS-1.95
+DISTNAME =	Devel-CheckOS-1.96
 
 CATEGORIES =	devel
 
