@@ -1,6 +1,6 @@
 COMMENT=		commandline screen capture util
 
-V=			1.8
+V=			1.8.1
 DISTNAME=		scrot-${V}
 
 CATEGORIES=		graphics
