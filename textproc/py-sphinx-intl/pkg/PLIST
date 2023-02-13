@@ -4,6 +4,7 @@ bin/sphinx-intl
 lib/python${MODPY_VERSION}/site-packages/sphinx_intl/
 lib/python${MODPY_VERSION}/site-packages/sphinx_intl-${MODPY_EGG_VERSION}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/sphinx_intl-${MODPY_EGG_VERSION}.dist-info/AUTHORS.rst
+lib/python${MODPY_VERSION}/site-packages/sphinx_intl-${MODPY_EGG_VERSION}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/sphinx_intl-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/sphinx_intl-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/sphinx_intl-${MODPY_EGG_VERSION}.dist-info/WHEEL

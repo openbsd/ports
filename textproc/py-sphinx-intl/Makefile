@@ -1,9 +1,8 @@
 COMMENT =		internationalization helper for Sphinx
 
-MODPY_EGG_VERSION =	2.0.1
+MODPY_EGG_VERSION =	2.1.0
 PKGNAME =		py-sphinx-intl-${MODPY_EGG_VERSION}
 DISTNAME =		sphinx-intl-${MODPY_EGG_VERSION}
-REVISION =		3
 
 CATEGORIES =		textproc
 
