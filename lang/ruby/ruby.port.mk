@@ -202,6 +202,11 @@ EXTRACT_SUFX=	.gem
 
 # Pure ruby gem ports without C extensions are arch-independent.
 .  if ${CONFIGURE_STYLE:L:Mext}
+# Use ports-gcc for ruby32 extensions
+.    if ${FLAVOR:Mruby32}
+COMPILER ?= 	base-clang ports-gcc
+COMPILER_LANGS ?= c
+.    endif
 # Add build complete file to package so rubygems doesn't complain
 # or build extensions at runtime
 GEM_EXTENSIONS_DIR ?= ${GEM_LIB}/extensions/${MODRUBY_ARCH:S/i386/x86/}/${MODRUBY_REV}/${DISTNAME}
