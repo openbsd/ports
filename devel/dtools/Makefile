@@ -8,7 +8,7 @@ CATEGORIES =	devel
 # Keep GH_TAGNAME in sync with lang/dmd
 GH_ACCOUNT =	dlang
 GH_PROJECT =	tools
-GH_TAGNAME =	v2.100.0
+GH_TAGNAME =	v2.102.0
 
 HOMEPAGE =	https://dlang.org/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
