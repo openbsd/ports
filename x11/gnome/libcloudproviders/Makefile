@@ -2,12 +2,9 @@ COMMENT=		library for integration of cloud storage providers
 
 GNOME_PROJECT=		libcloudproviders
 GNOME_VERSION=		0.3.1
+REVISION=		0
 
 SHARED_LIBS += cloudproviders            0.0 # 0.3.1
-
-# override gnome MODULE
-MASTER_SITES=		https://gitlab.gnome.org/World/${GNOME_PROJECT}/-/archive/${GNOME_VERSION}/
-EXTRACT_SUFX=		.tar.gz
 
 # LGPLv3
 PERMIT_PACKAGE=		Yes
