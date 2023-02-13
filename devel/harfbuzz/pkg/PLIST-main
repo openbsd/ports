@@ -1,4 +1,5 @@
 @pkgpath devel/harfbuzz
+@bin bin/hb-info
 @bin bin/hb-ot-shape-closure
 @bin bin/hb-shape
 @bin bin/hb-subset
@@ -8,6 +9,7 @@ include/harfbuzz/hb-aat-layout.h
 include/harfbuzz/hb-aat.h
 include/harfbuzz/hb-blob.h
 include/harfbuzz/hb-buffer.h
+include/harfbuzz/hb-cairo.h
 include/harfbuzz/hb-common.h
 include/harfbuzz/hb-cplusplus.hh
 include/harfbuzz/hb-deprecated.h
@@ -33,6 +35,7 @@ include/harfbuzz/hb-ot-name.h
 include/harfbuzz/hb-ot-shape.h
 include/harfbuzz/hb-ot-var.h
 include/harfbuzz/hb-ot.h
+include/harfbuzz/hb-paint.h
 include/harfbuzz/hb-set.h
 include/harfbuzz/hb-shape-plan.h
 include/harfbuzz/hb-shape.h
@@ -47,9 +50,11 @@ lib/cmake/harfbuzz/
 lib/cmake/harfbuzz/harfbuzz-config.cmake
 lib/girepository-1.0/
 lib/girepository-1.0/HarfBuzz-0.0.typelib
+@lib lib/libharfbuzz-cairo.so.${LIBharfbuzz-cairo_VERSION}
 @lib lib/libharfbuzz-gobject.so.${LIBharfbuzz-gobject_VERSION}
 @lib lib/libharfbuzz-subset.so.${LIBharfbuzz-subset_VERSION}
 @lib lib/libharfbuzz.so.${LIBharfbuzz_VERSION}
+lib/pkgconfig/harfbuzz-cairo.pc
 lib/pkgconfig/harfbuzz-gobject.pc
 lib/pkgconfig/harfbuzz-subset.pc
 lib/pkgconfig/harfbuzz.pc
