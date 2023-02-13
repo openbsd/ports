@@ -1,18 +1,18 @@
 COMMENT=	XMPP desktop client
-VERSION=	0.3.1
+VERSION=	0.4.0
 DISTNAME=	dino-${VERSION}
 CATEGORIES=	net x11
 
 SHARED_LIBS +=	crypto-vala               0.0 # 0.0
-SHARED_LIBS +=	dino                      1.0 # 0.0
+SHARED_LIBS +=	dino                      2.0 # 0.0
 SHARED_LIBS +=	qlite                     0.0 # 0.1
-SHARED_LIBS +=	xmpp-vala                 1.0 # 0.1
+SHARED_LIBS +=	xmpp-vala                 2.0 # 0.1
 
 HOMEPAGE=	https://dino.im/
 
 MASTER_SITES=	https://github.com/dino/dino/releases/download/v${VERSION}/
 
-MAINTAINER=	Paco Esteban <paco@openbsd.org>
+MAINTAINER=	Klemens Nanni <kn@openbsd.org>
 
 # GPLv3 only
 PERMIT_PACKAGE=	Yes
@@ -21,8 +21,9 @@ MODULES=	devel/cmake
 BUILD_DEPENDS=	devel/gettext,-tools \
 		lang/vala
 RUN_DEPENDS=	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 LIB_DEPENDS=	devel/libgee \
+		devel/libsoup3 \
 		graphics/libqrencode \
 		multimedia/gstreamer1/plugins-base \
 		net/libnice \
@@ -31,21 +32,21 @@ LIB_DEPENDS=	devel/libgee \
 		security/gpgme \
 		security/libgcrypt \
 		security/libsrtp \
-		textproc/gspell \
 		textproc/icu4c \
-		x11/gtk+3
+		x11/gtk+4
 
-# dino's http-files plugin dlopen()s libsoup3
-LIB_DEPENDS +=	devel/libsoup3
+# dlopen()ed
+LIB_DEPENDS +=	x11/gnome/libadwaita
+
 # links against plugins-base, dlopen()s plugins-good
 LIB_DEPENDS +=	multimedia/gstreamer1/plugins-good
 
-WANTLIB += atk-1.0 c cairo cairo-gobject enchant-2 gcrypt gdk-3
-WANTLIB += gdk_pixbuf-2.0 gee-0.8 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gnutls gobject-2.0 gpgme gspell-1 gstapp-1.0 gstaudio-1.0
-WANTLIB += gstbase-1.0 gstreamer-1.0 gstrtp-1.0 gtk-3 harfbuzz
-WANTLIB += icudata icuuc intl m nice pango-1.0 pangocairo-1.0
-WANTLIB += qrencode signal-protocol-c soup-3.0 sqlite3 srtp2
+WANTLIB += c cairo cairo-gobject gcrypt gdk_pixbuf-2.0 gee-0.8
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnutls gobject-2.0 gpgme
+WANTLIB += graphene-1.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstreamer-1.0
+WANTLIB += gstrtp-1.0 gstvideo-1.0 gtk-4 harfbuzz icudata icuuc
+WANTLIB += intl m nice pango-1.0 pangocairo-1.0 qrencode signal-protocol-c
+WANTLIB += soup-3.0 sqlite3 srtp2
 
 CONFIGURE_ARGS =	-DBUILD_TESTS=ON -DUSE_SOUP3=yes
 

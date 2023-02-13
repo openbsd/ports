@@ -3,7 +3,7 @@ Fix crash on startup, see https://github.com/dino/dino/issues/438
 Index: main/CMakeLists.txt
 --- main/CMakeLists.txt.orig
 +++ main/CMakeLists.txt
-@@ -217,6 +217,7 @@ add_executable(dino ${MAIN_VALA_C} ${MAIN_GRESOURCES_T
+@@ -232,6 +232,7 @@ add_executable(dino ${MAIN_VALA_C} ${MAIN_GRESOURCES_T
  add_dependencies(dino ${GETTEXT_PACKAGE}-translations)
  target_include_directories(dino PRIVATE src)
  target_link_libraries(dino libdino ${MAIN_PACKAGES})
