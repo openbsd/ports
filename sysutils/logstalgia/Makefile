@@ -1,6 +1,6 @@
 COMMENT =	website access log visualization
 
-DISTNAME =	logstalgia-1.1.3
+DISTNAME =	logstalgia-1.1.4
 CATEGORIES =	sysutils graphics
 HOMEPAGE =	https://logstalgia.io/
 
@@ -12,7 +12,8 @@ PERMIT_PACKAGE =	Yes
 MASTER_SITES =	https://github.com/acaudwell/Logstalgia/releases/download/${DISTNAME}/
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLEW GLU SDL2 SDL2_image X11
-WANTLIB += Xext Xi Xmu c freetype m pcre2-8 png z
+WANTLIB += Xext Xi Xmu boost_filesystem boost_system c freetype
+WANTLIB += m pcre2-8 png
 
 CONFIGURE_STYLE =gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
@@ -21,10 +22,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 # -std=gnu++0x
 COMPILER =	base-clang ports-gcc base-gcc
 
-BUILD_DEPENDS =	graphics/glm \
-		devel/boost
+BUILD_DEPENDS =	graphics/glm
 
 LIB_DEPENDS =	graphics/glew \
+		devel/boost \
 		devel/pcre2 \
 		devel/sdl2-image
 
