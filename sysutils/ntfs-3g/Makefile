@@ -1,6 +1,7 @@
 COMMENT =	FUSE NTFS driver with read/write support
 
 V =		2022.5.17
+REVISION =	0
 DISTNAME =	ntfs-3g_ntfsprogs-${V}
 PKGNAME =	ntfs_3g-${V}
 SHARED_LIBS +=	ntfs-3g		1.0	# 89.0

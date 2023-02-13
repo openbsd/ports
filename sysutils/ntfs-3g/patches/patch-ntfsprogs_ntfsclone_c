@@ -1,21 +1,16 @@
+As noted in the comment our struct statvfs doesn't have f_type so the checks
+performed are meaningless on OpenBSD.  They're comparisons against hardcoded
+magic values anyway.  While here, fix the | vs || mismatch.
+
 Index: ntfsprogs/ntfsclone.c
 --- ntfsprogs/ntfsclone.c.orig
 +++ ntfsprogs/ntfsclone.c
-@@ -852,7 +852,7 @@ static void copy_cluster(int rescue, u64 rescue_lcn, u
- #ifndef NO_STATFS
- 		int err = errno;
- 		perr_printf("Write failed");
--		if (err == EIO && opt.stfs.f_type == 0x517b)
-+		if (err == EIO && opt.stfs.f_fstypename == 0x517b)
- 			Printf("Apparently you tried to clone to a remote "
- 			       "Windows computer but they don't\nhave "
- 			       "efficient sparse file handling by default. "
-@@ -2312,7 +2312,7 @@ static void set_filesize(s64 filesize)
- 		Printf("WARNING: Couldn't get filesystem type: "
- 		       "%s\n", strerror(errno));
- 	else
--		fs_type = opt.stfs.f_type;
-+		fs_type = opt.stfs.f_fstypename;
+@@ -105,7 +105,7 @@
+ #undef HAVE_WINDOWS_H
+ #endif
  
- 	if (fs_type == 0x52654973)
- 		Printf("WARNING: You're using ReiserFS, it has very poor "
+-#if defined(__sun) | defined(HAVE_WINDOWS_H)
++#if defined(__sun) || defined(HAVE_WINDOWS_H) || defined(__OpenBSD__)
+ #define NO_STATFS 1	/* statfs(2) and f_type are not universal */
+ #endif
+ 
