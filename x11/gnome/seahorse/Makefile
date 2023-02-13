@@ -2,12 +2,9 @@ COMMENT=		GNOME encryption interface
 
 GNOME_PROJECT=		seahorse
 GNOME_VERSION=		43.0
+REVISION=		0
 
 CATEGORIES=		security
-
-# override gnome MODULE
-MASTER_SITES=		https://gitlab.gnome.org/GNOME/${GNOME_PROJECT}/-/archive/${GNOME_VERSION}/
-EXTRACT_SUFX=		.tar.gz
 
 # GPLv2/GFDLv1.1
 PERMIT_PACKAGE=		Yes
