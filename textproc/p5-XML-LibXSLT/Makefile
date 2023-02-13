@@ -1,6 +1,6 @@
 COMMENT =	interface to the GNOME libxslt library
 
-DISTNAME =	XML-LibXSLT-2.002000
+DISTNAME =	XML-LibXSLT-2.002001
 
 CATEGORIES =	textproc
 
