@@ -1,4 +1,4 @@
-SHA256 (clidle-v0.0.0-20220208035357-5e4a725489f9.zip) = DCwyROeQ9UxZw0JJQzkP12GhSK+JkPexrgWH8R03C2c=
+SHA256 (clidle-v0.0.0-20220525120743-fe27556c1147.zip) = uNnVAg+XbI4paq2fb80S87u4dVCCj9Hy6Rx+ZGnLiEs=
 SHA256 (go_modules/github.com/!microsoft/go-winio/@v/v0.4.14.mod) = jUXZD8V+bfc5N+o6J4grGaPp+6rz6XB+7SGNXQ/QZwY=
 SHA256 (go_modules/github.com/!microsoft/go-winio/@v/v0.4.16.mod) = paSKsdlZ4yXKUzR6zkAZiBFOSR0haR/lLN8+ZPr8X04=
 SHA256 (go_modules/github.com/!microsoft/go-winio/@v/v0.4.16.zip) = 6plC2ccd61SClH1b/EKb5F2ldDJmDEd4h9jqeFc17F0=
@@ -159,7 +159,7 @@ SHA256 (go_modules/gopkg.in/yaml.v2/@v/v2.3.0.mod) = iNl50vCT0jl/dWvIbvosoD9zpg1
 SHA256 (go_modules/gopkg.in/yaml.v2/@v/v2.3.0.zip) = mOBPKTAZypu2r/Ax837KVVpIsPwLi3zAgyGbwT6GVbs=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.zip) = rPGcy0/KmDsjSjnvAy+vmrcOdZaAZzuz3/B353/uIP4=
-SIZE (clidle-v0.0.0-20220208035357-5e4a725489f9.zip) = 114468
+SIZE (clidle-v0.0.0-20220525120743-fe27556c1147.zip) = 114473
 SIZE (go_modules/github.com/!microsoft/go-winio/@v/v0.4.14.mod) = 177
 SIZE (go_modules/github.com/!microsoft/go-winio/@v/v0.4.16.mod) = 177
 SIZE (go_modules/github.com/!microsoft/go-winio/@v/v0.4.16.zip) = 111695
