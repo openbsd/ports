@@ -968,6 +968,7 @@ share/sqlmap/tamper/${MODPY_PYCACHE}halfversionedmorekeywords.${MODPY_PYC_MAGIC_
 share/sqlmap/tamper/${MODPY_PYCACHE}hex2char.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}hexentities.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}htmlencode.${MODPY_PYC_MAGIC_TAG}pyc
+share/sqlmap/tamper/${MODPY_PYCACHE}if2case.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}ifnull2casewhenisnull.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}ifnull2ifisnull.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}informationschemacomment.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1035,6 +1036,7 @@ share/sqlmap/tamper/halfversionedmorekeywords.py
 share/sqlmap/tamper/hex2char.py
 share/sqlmap/tamper/hexentities.py
 share/sqlmap/tamper/htmlencode.py
+share/sqlmap/tamper/if2case.py
 share/sqlmap/tamper/ifnull2casewhenisnull.py
 share/sqlmap/tamper/ifnull2ifisnull.py
 share/sqlmap/tamper/informationschemacomment.py
