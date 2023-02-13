@@ -2,11 +2,6 @@ USE_WXNEEDED=	Yes
 
 ONLY_FOR_ARCHS= amd64 i386 aarch64
 
-# /pobj/libreoffice-7.5.0.3/libreoffice-7.5.0.3/vcl/unx/generic/window/salframe.cxx:650:42: error: non-constant-expression cannot be narrowed from type 'unsigned int' to 'tools::Long' (aka 'long') in initializer list [-Wc++11-narrowing]
-#     maGeometry.setPosSize({ x, y }, { w, h });
-# also in line 1639, 3635
-BROKEN-i386=	c++11-narrowing in cl/unx/generic/window/salframe.cxx:650
-
 COMMENT-main=	multi-platform productivity suite
 COMMENT-kde=	optional integration of LibreOffice to the KDE environment
 COMMENT-java=	optional integration of LibreOffice java features
