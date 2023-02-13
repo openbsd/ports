@@ -4,7 +4,7 @@ Index: cc/cc/Makefile.in
 @@ -46,7 +46,7 @@ MDIR=$(top_srcdir)/arch/$(TARGMACHDIR)
  COMMONDIR=$(top_srcdir)/common
  
- DEST=cc$(EXEEXT)
+ DEST=$(BINPREFIX)cc$(EXEEXT)
 -DRIVERS=pcc pcpp p++
 +DRIVERS=pcc pcpp
  

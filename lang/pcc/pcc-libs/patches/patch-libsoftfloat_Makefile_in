@@ -1,7 +1,7 @@
 Index: libsoftfloat/Makefile.in
 --- libsoftfloat/Makefile.in.orig
 +++ libsoftfloat/Makefile.in
-@@ -42,10 +42,10 @@ $(DEST): $(OBJS)
+@@ -43,10 +43,10 @@ $(DEST): $(OBJS)
  	$(RANLIB) $@
  
  softfloat.o : bits64/softfloat.c

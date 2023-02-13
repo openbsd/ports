@@ -46,7 +46,7 @@ Index: arch/powerpc/local.c
  	}
  	sp->sclass = STATIC;
  	sp->stype = p->n_sp->stype;
-@@ -626,7 +630,7 @@ fixnames(NODE *p, void *arg)
+@@ -624,7 +628,7 @@ fixnames(NODE *p, void *arg)
  #if defined(ELFABI)
  
  		if ((ap2 = attr_find(sp->sap, ATTR_SONAME)) == NULL ||

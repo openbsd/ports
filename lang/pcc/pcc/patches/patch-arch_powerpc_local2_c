@@ -1,3 +1,7 @@
+Change asm comments from ";" to COM, which is "#".  Don't save the
+previous stack pointer more than once.  Move the link register from
+offset 4 to p2framesize + 4, as ELF requires.
+
 Emit code for the secure PLT, where r30 must point to the global
 offset table.
 
@@ -8,17 +12,71 @@ string literals in PIC.
 Index: arch/powerpc/local2.c
 --- arch/powerpc/local2.c.orig
 +++ arch/powerpc/local2.c
-@@ -143,8 +143,21 @@ prologue(struct interpass_prolog *ipp)
+@@ -122,7 +122,7 @@ int i, addto = 0;
+ 			ipp->ip_tmpnum,
+ 			ipp->ip_lblnum);
+ 
+-	printf("; p2framesize = %d, p2calls = %d\n", p2framesize, p2calls);
++	printf(COM "p2framesize = %d, p2calls = %d\n", p2framesize, p2calls);
+ #endif
+ 
+ 	if (p2framesize == 0)
+@@ -131,43 +131,55 @@ int i, addto = 0;
+ 	addto = p2framesize;
+ 	
+ #ifdef FPREG
+-	printf("\tmr %s,%s	; preserve FPREG\n", rnames[R0], rnames[FPREG]);
+-	printf("\tmr %s,%s	; establish frame pointer\n", rnames[FPREG], rnames[R1]);
++	printf("\tmr %s,%s" COM "preserve FPREG\n", rnames[R0], rnames[FPREG]);
++	printf("\tmr %s,%s" COM "establish frame pointer\n", rnames[FPREG], rnames[R1]);
+ #else
+-	printf("\tmr %s,%s	; preserve previous stack pointer\n", rnames[R0], rnames[R1]);
++	printf("\tmr %s,%s" COM "preserve previous stack pointer\n", rnames[R0], rnames[R1]);
+ #endif
+ 
+ 	/* create the new stack frame */
+ 	if (addto > 32767) {
+-		printf("\tlis %s,%d	; stack frame ? 32767\n", rnames[R0], (-addto) >> 16);
++		printf("\tlis %s,%d" COM "stack frame ? 32767\n", rnames[R0], (-addto) >> 16);
+ 		printf("\tori %s,%s,%d\n", rnames[R0],
+ 		    rnames[R0], (-addto) & 0xffff);
+-		printf("\tstwux %s,%s,%s	; move the stack pointer\n", rnames[SPREG],
++		printf("\tstwux %s,%s,%s" COM "move the stack pointer\n", rnames[SPREG],
+ 		    rnames[R1], rnames[R0]);
+ 	} else {
+-		printf("\tstwu %s,-%d(%s)	; move the stack pointer\n", rnames[R1], addto, rnames[SPREG]);
++		printf("\tstwu %s,-%d(%s)" COM "move the stack pointer\n", rnames[R1], addto, rnames[SPREG]);
+ 	}
+ 
+ 	if (p2calls != 0 || kflag) {
+ 		/* save the previous stack location */
+ #ifdef FPREG
+-		printf("\tstw %s,-4(%s)	; save FPREG relative to frame pointer\n", rnames[R0], rnames[FPREG]);
+-		printf("\tstw %s,0(%s)	; save previous stack pointer\n", rnames[FPREG], rnames[SPREG]);
+-#else
+-		printf("\tstw %s,0(%s)	; save previous stack pointer\n", rnames[R0], rnames[SPREG]);
++		printf("\tstw %s,-4(%s)" COM "save FPREG relative to frame pointer\n", rnames[R0], rnames[FPREG]);
+ #endif
+ 		/* get return address (not required for leaf function) */
+ 		printf("\tmflr %s\n", rnames[R0]);
+-		printf("\tstw %s,4(%s)\n", rnames[R0], rnames[R1]);
++		printf("\tstw %s,%d(%s)\n", rnames[R0], addto + 4, rnames[R1]);
+ 	}
+ 
  
  	if (kflag) {
  #if defined(ELFABI)
 +#if 0 /* BSS PLT */
+ 	/* save registers R30 and R31 */
+ 		printf("\tstmw %s,-8(%s)	; save GOTREG\n", rnames[GOTREG], rnames[FPREG]);
  		printf("\tbl _GLOBAL_OFFSET_TABLE_@local-4\n");
  		printf("\tmflr %s\n", rnames[GOTREG]);
 +#else /* secure PLT */
 +		const char *gotreg = rnames[GOTREG];
 +		int lab = getlab2();
 +
++		printf("\tstw %s,-8(%s)" COM "save GOTREG\n",
++		    gotreg, rnames[FPREG]);
 +		printf("\tbcl 20,31," LABFMT "\n", lab);
 +		deflab(lab);
 +		printf("\tmflr %s\n", gotreg);
@@ -30,7 +88,32 @@ Index: arch/powerpc/local2.c
  #elif defined(MACHOABI)
  		printf("\tbcl 20,31,L%s$pb\n", ipp->ipp_name + 1);
  		printf("L%s$pb:\n", ipp->ipp_name + 1);
-@@ -1473,6 +1486,12 @@ special(NODE *p, int shape)
+@@ -201,19 +213,19 @@ eoftn(struct interpass_prolog *ipp)
+ 	/* unwind stack frame */
+ 	if (kflag) {
+ #if defined(ELFABI)
+-	printf("\tlwz %s,-8(%s)	; restore GOTREG\n", rnames[GOTREG], rnames[FPREG]);
++	printf("\tlwz %s,-8(%s)" COM "restore GOTREG\n", rnames[GOTREG], rnames[FPREG]);
+ #elif defined(MACHOABI)
+ 
+ #endif
+ 	}
+ 	
+ #if defined(FPREG)
+-	printf("\tlwz %s,-4(%s)	; restore FPREG\n", rnames[FPREG], rnames[FPREG]);
++	printf("\tlwz %s,-4(%s)" COM "restore FPREG\n", rnames[FPREG], rnames[FPREG]);
+ #endif
+ 	
+-	printf("\tlwz %s,4(%s)	; reload stack pointer\n", rnames[R0], rnames[SPREG]);
+-	printf("\tmtlr %s		; restore link register\n", rnames[R0]);
+-	printf("\tlwz %s,0(%s)	; restore stack pointer\n", rnames[SPREG], rnames[SPREG]);
++	printf("\tlwz %s,%d(%s)\n", rnames[R0], p2framesize + 4, rnames[SPREG]);
++	printf("\tmtlr %s" COM "restore link register\n", rnames[R0]);
++	printf("\tlwz %s,0(%s)" COM "restore stack pointer\n", rnames[SPREG], rnames[SPREG]);
+ 	
+ noframe:	
+ 	printf("\tblr\n");
+@@ -1567,6 +1579,12 @@ special(NODE *p, int shape)
  	case SPCON:
  		if (o == ICON && p->n_name[0] == 0 && (getlval(p) & ~0x7fff) == 0)
  			return SRDIR;

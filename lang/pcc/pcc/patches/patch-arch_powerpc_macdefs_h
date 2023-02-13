@@ -10,7 +10,7 @@ string literals in PIC.
 Index: arch/powerpc/macdefs.h
 --- arch/powerpc/macdefs.h.orig
 +++ arch/powerpc/macdefs.h
-@@ -229,10 +229,16 @@ typedef long long OFFSZ;
+@@ -232,10 +232,16 @@ typedef long long OFFSZ;
  #define NUMCLASS 3
  #define	MAXREGS	64		/* XXX cannot have more than 64 */
  
@@ -21,14 +21,14 @@ Index: arch/powerpc/macdefs.h
 +#endif
 +
  #define RSTATUS 				\
- 	0,			/* R0 */	\
- 	0,			/* R1 */	\
--	SAREG|TEMPREG,		/* R2 */	\
-+	RSTATUS_R2,		/* R2 */	\
+ 	SAREG|TEMPREG,		/* R0 */	\
+ 	0,					/* R1 */	\
+-	0,					/* R2 */	\
++	RSTATUS_R2,				/* R2 */	\
  	SAREG|TEMPREG,		/* R3 */	\
  	SAREG|TEMPREG,		/* R4 */	\
  	SAREG|TEMPREG,		/* R5 */	\
-@@ -337,8 +343,14 @@ typedef long long OFFSZ;
+@@ -340,8 +346,14 @@ typedef long long OFFSZ;
   * capable of running in this manner, and expects a frame pointer.
   */
  #define SPREG   R1	/* stack pointer */
@@ -42,8 +42,8 @@ Index: arch/powerpc/macdefs.h
 +#endif
  
  #ifdef FPREG
- #define ARGINIT		(24*8)	/* # bits above fp where arguments start */
-@@ -364,6 +376,7 @@ int retreg(int ty);
+ #define ARGINIT		(8*8)	/* # bits above sp where arguments start */
+@@ -368,6 +380,7 @@ int retreg(int ty);
  #define	SHSTR		(MAXSPECIAL+1)	/* short struct */
  #define	SFUNCALL	(MAXSPECIAL+2)	/* struct assign after function call */
  #define SPCON		(MAXSPECIAL+3)  /* positive constant */
