@@ -5,3 +5,4 @@ ${P5SITE}/String/Tagged/Terminal/Win32Console.pm
 @man man/man3p/String::Tagged::Terminal::Win32Console.3p
 share/examples/p5-String-Tagged-Terminal/
 share/examples/p5-String-Tagged-Terminal/ex.pl
+share/examples/p5-String-Tagged-Terminal/random.pl
