@@ -2,7 +2,7 @@ COMMENT =		digital photo organizer
 
 GNOME_VERSION =		0.30.17
 GNOME_PROJECT =		shotwell
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS += shotwell-plugin-dev-1.0   0.0 # 0.30.16
 SHARED_LIBS += shotwell-plugin-common    0.0 # 0.30.16
@@ -38,8 +38,16 @@ LIB_DEPENDS =		devel/libgdata \
 			www/webkitgtk4
 
 CONFIGURE_ARGS =	-Dface-detection=false \
-			-Dudev=false
+			-Dudev=false \
+			-Dinstall-apport-hook=false
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
+
+# XXX unbreak with new vala
+# src/shotwell.p/camera/GPhoto.c:18:10: fatal error: 'camera/GPhoto.h' file not found
+# #include <camera/GPhoto.h>
+post-configure:
+	install -d ${WRKBUILD}/src/shotwell.p/camera/
+	touch ${WRKBUILD}/src/shotwell.p/camera/GPhoto.h
 
 .include <bsd.port.mk>

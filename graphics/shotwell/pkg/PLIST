@@ -14,9 +14,6 @@ libexec/shotwell/shotwell-settings-migrator
 @man man/man1/shotwell.1
 share/applications/shotwell-viewer.desktop
 share/applications/shotwell.desktop
-share/apport/
-share/apport/package-hooks/
-share/apport/package-hooks/shotwell.py
 share/glib-2.0/schemas/org.yorba.shotwell-extras.gschema.xml
 share/glib-2.0/schemas/org.yorba.shotwell.gschema.xml
 share/help/
