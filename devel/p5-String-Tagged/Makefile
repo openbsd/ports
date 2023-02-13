@@ -1,6 +1,6 @@
 COMMENT =	string buffers with value tags on extents
 
-DISTNAME =	String-Tagged-0.18
+DISTNAME =	String-Tagged-0.19
 
 CATEGORIES =	devel
 
@@ -11,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 
-TEST_DEPENDS =		devel/p5-Test-Identity
+TEST_DEPENDS =		devel/p5-Test2-Suite
 
 CONFIGURE_STYLE =	modbuild
 
