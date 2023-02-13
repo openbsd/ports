@@ -4,9 +4,9 @@ GH_ACCOUNT =		aryler
 GH_PROJECT =		Jimarc4random
 GH_TAGNAME =		0.3
 DISTNAME =		jimarc4random-${GH_TAGNAME}
+REVISION =		0
 
 CATEGORIES =		devel
-HOMEPAGE =		http://www3.bell.net/stwo/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 
 # ISC
