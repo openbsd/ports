@@ -1,6 +1,6 @@
 COMMENT =	high-performance, dynamic web site authoring system
 
-DISTNAME =	HTML-Mason-1.59
+DISTNAME =	HTML-Mason-1.60
 
 CATEGORIES =	www
 
@@ -21,8 +21,7 @@ RUN_DEPENDS =		devel/p5-Cache-Cache>=1.00 \
 			www/p5-CGI>=2.46 \
 			www/p5-HTML-Parser \
 			www/p5-libapreq2
-TEST_DEPENDS =		devel/p5-Test-Deep \
-			devel/p5-Test-Memory-Cycle
+TEST_DEPENDS =		devel/p5-Test-Memory-Cycle
 
 MAKE_ENV =		TEST_POD=Yes
 
