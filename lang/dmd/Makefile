@@ -1,12 +1,11 @@
 # i386 forthcoming
 ONLY_FOR_ARCHS =	amd64
 
-V =		2.100.1
+V =		2.102.0
 COMMENT =	reference compiler for the D programming language
 DISTFILES =	dmd-${V}{v${V}}.tar.gz:1 \
 		dmd-${V}-bootstrap.tar.gz:0 \
-		druntime-${V}{v${V}}.tar.gz:2 \
-		phobos-${V}{v${V}}.tar.gz:3
+		phobos-${V}{v${V}}.tar.gz:2
 PKGNAME =	dmd-${V}
 CATEGORIES =	lang
 
@@ -20,8 +19,7 @@ WANTLIB += c c++abi execinfo m pthread
 
 MASTER_SITES0 =	https://github.com/ibara/dmd/releases/download/bootstrap-${V}/
 MASTER_SITES1 =	https://github.com/dlang/dmd/archive/refs/tags/
-MASTER_SITES2 =	https://github.com/dlang/druntime/archive/refs/tags/
-MASTER_SITES3 =	https://github.com/dlang/phobos/archive/refs/tags/
+MASTER_SITES2 =	https://github.com/dlang/phobos/archive/refs/tags/
 
 USE_GMAKE =	Yes
 MAKE_ENV =	HOST_CXX="${CXX}" \
@@ -41,10 +39,9 @@ MODEL = 32
 # Prevent churn.
 post-extract:
 	mv ${WRKSRC}/dmd-${V} ${WRKSRC}/dmd
-	mv ${WRKSRC}/druntime-${V} ${WRKSRC}/druntime
 	mv ${WRKSRC}/phobos-${V} ${WRKSRC}/phobos
 	chmod 644 ${WRKDIR}/dmd-bootstrap/openbsd/bin64/lib*.so* # XXX
-	cp /usr/lib/libc.so.96.* ${WRKDIR}/dmd-bootstrap/openbsd/bin64/ # XXX
+	cp /usr/lib/libc.so.97.* ${WRKDIR}/dmd-bootstrap/openbsd/bin64/ # XXX
 
 # We need to do this manually.
 # Yes, this is all really correct.
@@ -52,7 +49,7 @@ do-build:
 	cd ${WRKDIR}/phobos && \
 		${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} -f ${MAKE_FILE} && \
 			${SETENV} ${MAKE_PROGRAM} -f ${MAKE_FILE} install
-	cd ${WRKDIR}/druntime && \
+	cd ${WRKDIR}/dmd/druntime && \
 		${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} -f ${MAKE_FILE} && \
 			${SETENV} ${MAKE_PROGRAM} -f ${MAKE_FILE} install
 	mkdir ${WRKDIR}/install/openbsd/bin${MODEL}
@@ -66,7 +63,7 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/install/openbsd/lib${MODEL}/libphobos2.a \
 		${PREFIX}/lib
 	${INSTALL_MAN} ${WRKDIR}/dmd-bootstrap/dmd.1 ${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKDIR}/dmd/docs/man/man5/dmd.conf.5 \
+	${INSTALL_MAN} ${WRKDIR}/dmd/compiler/docs/man/man5/dmd.conf.5 \
 		${PREFIX}/man/man5
 	${INSTALL_DATA_DIR} ${PREFIX}/include/dmd
 	cp -R ${WRKDIR}/install/src/{druntime,phobos} ${PREFIX}/include/dmd
@@ -74,7 +71,7 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/install/phobos-LICENSE.txt \
 		${PREFIX}/share/doc/dmd/LICENSE.txt
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/dmd
-	cp -R ${WRKDIR}/dmd/samples/* ${PREFIX}/share/examples/dmd
+	cp -R ${WRKDIR}/dmd/compiler/samples/* ${PREFIX}/share/examples/dmd
 	${INSTALL_DATA_DIR} ${PREFIX}/share/dmd
 	${SUBST_CMD} -c -m 444 ${FILESDIR}/dmd.conf \
 		${PREFIX}/share/dmd/dmd.conf

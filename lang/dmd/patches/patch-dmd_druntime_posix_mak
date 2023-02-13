@@ -1,6 +1,6 @@
-Index: druntime/posix.mak
---- druntime/posix.mak.orig
-+++ druntime/posix.mak
+Index: dmd/druntime/posix.mak
+--- dmd/druntime/posix.mak.orig
++++ dmd/druntime/posix.mak
 @@ -65,11 +65,9 @@ MAKEFILE = $(firstword $(MAKEFILE_LIST))
  DDOCFLAGS=-conf= -c -w -o- -Isrc -Iimport -version=CoreDdoc
  
@@ -14,16 +14,7 @@ Index: druntime/posix.mak
  endif
  ifeq (solaris,$(OS))
  	CFLAGS+=-D_REENTRANT  # for thread-safe errno
-@@ -350,7 +348,7 @@ $(IMPDIR)/%.h : src/%.h
- ######################## Build DMD if non-existent ##############################
- 
- $(DMD):
--	$(MAKE) -C $(DMD_DIR)/src -f posix.mak BUILD=$(BUILD) OS=$(OS) MODEL=$(MODEL)
-+	$(MAKE) -C $(DMD_DIR) -f posix.mak BUILD=$(BUILD) OS=$(OS) MODEL=$(MODEL)
- 
- ################### C/ASM Targets ############################
- 
-@@ -469,7 +467,6 @@ benchmark-compile-only: $(ROOT)/benchmark $(DMD)
+@@ -470,7 +468,6 @@ benchmark-compile-only: $(ROOT)/benchmark $(DMD)
  	DMD=$(DMD) $< --repeat=0 --dflags="$(PHOBOS_DFLAGS) -de"
  
  #################### test for undesired white spaces ##########################

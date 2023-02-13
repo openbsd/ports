@@ -21,11 +21,13 @@ include/dmd/druntime/import/core/internal/
 include/dmd/druntime/import/core/internal/abort.d
 include/dmd/druntime/import/core/internal/array/
 include/dmd/druntime/import/core/internal/array/appending.d
+include/dmd/druntime/import/core/internal/array/arrayassign.d
 include/dmd/druntime/import/core/internal/array/capacity.d
 include/dmd/druntime/import/core/internal/array/casting.d
 include/dmd/druntime/import/core/internal/array/comparison.d
 include/dmd/druntime/import/core/internal/array/concatenation.d
 include/dmd/druntime/import/core/internal/array/construction.d
+include/dmd/druntime/import/core/internal/array/duplication.d
 include/dmd/druntime/import/core/internal/array/equality.d
 include/dmd/druntime/import/core/internal/array/operations.d
 include/dmd/druntime/import/core/internal/array/utils.d
@@ -122,14 +124,14 @@ include/dmd/druntime/import/core/stdcpp/utility.d
 include/dmd/druntime/import/core/stdcpp/vector.d
 include/dmd/druntime/import/core/stdcpp/xutility.d
 include/dmd/druntime/import/core/sync/
-include/dmd/druntime/import/core/sync/barrier.di
-include/dmd/druntime/import/core/sync/condition.di
-include/dmd/druntime/import/core/sync/config.di
+include/dmd/druntime/import/core/sync/barrier.d
+include/dmd/druntime/import/core/sync/condition.d
+include/dmd/druntime/import/core/sync/config.d
 include/dmd/druntime/import/core/sync/event.d
-include/dmd/druntime/import/core/sync/exception.di
-include/dmd/druntime/import/core/sync/mutex.di
-include/dmd/druntime/import/core/sync/rwmutex.di
-include/dmd/druntime/import/core/sync/semaphore.di
+include/dmd/druntime/import/core/sync/exception.d
+include/dmd/druntime/import/core/sync/mutex.d
+include/dmd/druntime/import/core/sync/rwmutex.d
+include/dmd/druntime/import/core/sync/semaphore.d
 include/dmd/druntime/import/core/sys/
 include/dmd/druntime/import/core/sys/bionic/
 include/dmd/druntime/import/core/sys/bionic/err.d
@@ -187,6 +189,8 @@ include/dmd/druntime/import/core/sys/dragonflybsd/sys/mman.d
 include/dmd/druntime/import/core/sys/dragonflybsd/sys/socket.d
 include/dmd/druntime/import/core/sys/dragonflybsd/sys/sysctl.d
 include/dmd/druntime/import/core/sys/dragonflybsd/time.d
+include/dmd/druntime/import/core/sys/elf/
+include/dmd/druntime/import/core/sys/elf/package.d
 include/dmd/druntime/import/core/sys/freebsd/
 include/dmd/druntime/import/core/sys/freebsd/config.d
 include/dmd/druntime/import/core/sys/freebsd/dlfcn.d
@@ -641,7 +645,6 @@ include/dmd/phobos/std/datetime/timezone.d
 include/dmd/phobos/std/demangle.d
 include/dmd/phobos/std/digest/
 include/dmd/phobos/std/digest/crc.d
-include/dmd/phobos/std/digest/digest.d
 include/dmd/phobos/std/digest/hmac.d
 include/dmd/phobos/std/digest/md.d
 include/dmd/phobos/std/digest/murmurhash.d
@@ -685,7 +688,6 @@ include/dmd/phobos/std/experimental/logger/multilogger.d
 include/dmd/phobos/std/experimental/logger/nulllogger.d
 include/dmd/phobos/std/experimental/logger/package.d
 include/dmd/phobos/std/experimental/note.md
-include/dmd/phobos/std/experimental/typecons.d
 include/dmd/phobos/std/file.d
 include/dmd/phobos/std/format/
 include/dmd/phobos/std/format/internal/
@@ -724,6 +726,12 @@ include/dmd/phobos/std/internal/unicode_tables.d
 include/dmd/phobos/std/internal/windows/
 include/dmd/phobos/std/internal/windows/advapi32.d
 include/dmd/phobos/std/json.d
+include/dmd/phobos/std/logger/
+include/dmd/phobos/std/logger/core.d
+include/dmd/phobos/std/logger/filelogger.d
+include/dmd/phobos/std/logger/multilogger.d
+include/dmd/phobos/std/logger/nulllogger.d
+include/dmd/phobos/std/logger/package.d
 include/dmd/phobos/std/math/
 include/dmd/phobos/std/math/algebraic.d
 include/dmd/phobos/std/math/constants.d
@@ -783,7 +791,6 @@ include/dmd/phobos/std/windows/
 include/dmd/phobos/std/windows/charset.d
 include/dmd/phobos/std/windows/registry.d
 include/dmd/phobos/std/windows/syserror.d
-include/dmd/phobos/std/xml.d
 include/dmd/phobos/std/zip.d
 include/dmd/phobos/std/zlib.d
 @static-lib lib/libphobos2.a
