@@ -379,8 +379,6 @@ share/polari/
 share/polari/gir-1.0/
 share/polari/gir-1.0/Polari-1.0.gir
 share/polari/thumbnailer.js
-share/telepathy/
-share/telepathy/clients/
 share/telepathy/clients/Polari.client
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag glib-compile-schemas
