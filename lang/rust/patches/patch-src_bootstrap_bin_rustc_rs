@@ -5,7 +5,7 @@ try to reduce memory usage on aarch64 and i386:
 Index: src/bootstrap/bin/rustc.rs
 --- src/bootstrap/bin/rustc.rs.orig
 +++ src/bootstrap/bin/rustc.rs
-@@ -115,6 +115,19 @@ fn main() {
+@@ -109,6 +109,19 @@ fn main() {
          {
              cmd.arg("-Ztls-model=initial-exec");
          }

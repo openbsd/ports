@@ -1,5 +1,7 @@
 ONLY_FOR_ARCHS =	${RUST_ARCHS}
 
+BROKEN-powerpc64 =	needs new bootstrap
+
 .if "${MACHINE_ARCH}" == "i386"
 DPB_PROPERTIES =	lonesome
 .else
@@ -11,16 +13,16 @@ COMMENT-gdb =		Rust debugger through gdb
 COMMENT-clippy =	Rust linter
 COMMENT-rustfmt =	Rust code formatter
 
-V =			1.66.1
+V =			1.67.1
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
-BV-aarch64 =		1.65.0-20221103
-BV-amd64 =		1.66.0-20230108
-BV-i386 =		1.66.0-20230108
+BV-aarch64 =		1.67.0-20230126
+BV-amd64 =		1.67.0-20230125
+BV-i386 =		1.67.0-20230125
 BV-powerpc64 =		1.65.0-20221213
-BV-riscv64 =		1.65.0-20230101
-BV-sparc64 =		1.65.0-20221108
+BV-riscv64 =		1.66.1-20230207
+BV-sparc64 =		1.66.1-20230204
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
@@ -33,7 +35,7 @@ MULTI_PACKAGES =	-main -gdb -clippy -rustfmt
 
 CATEGORIES =		lang
 
-HOMEPAGE =		http://www.rust-lang.org/
+HOMEPAGE =		https://www.rust-lang.org/
 MAINTAINER =		Sebastien Marie <semarie@online.fr>
 
 # both MIT and Apache2.0
@@ -77,8 +79,16 @@ TRIPLE_ARCH-riscv64 =	riscv64gc-unknown-openbsd
 TRIPLE_ARCH-sparc64 =	sparc64-unknown-openbsd
 TRIPLE_ARCH =	${TRIPLE_ARCH-${MACHINE_ARCH}}
 
-USE_EMB_LLVM-riscv64 =	Yes
-USE_EMB_LLVM =		${USE_EMB_LLVM-${MACHINE_ARCH}}
+USE_EMB_LLVM =		Yes
+
+# flags to use when building LLVM
+LLVMCXXFLAGS-aarch64 =	-fno-ret-protector
+LLVMCXXFLAGS-amd64 =	-fno-ret-protector -mno-retpoline
+LLVMCXXFLAGS-i386 =	-fno-ret-protector -mno-retpoline
+LLVMCXXFLAGS-mips64 =	-fno-ret-protector -fomit-frame-pointer
+LLVMCXXFLAGS-mips64el =	-fno-ret-protector -fomit-frame-pointer
+LLVMCXXFLAGS-powerpc =	-fno-ret-protector
+LLVMCXXFLAGS =		${LLVMCXXFLAGS-${MACHINE_ARCH}}
 
 SUBST_VARS +=		TRIPLE_ARCH \
 			V
@@ -87,7 +97,6 @@ SUBST_VARS +=		TRIPLE_ARCH \
 LIBRUST_REHASH +=	addr2line
 LIBRUST_REHASH +=	adler
 LIBRUST_REHASH +=	alloc
-LIBRUST_REHASH +=	cfg_if
 LIBRUST_REHASH +=	cfg_if
 LIBRUST_REHASH +=	compiler_builtins
 LIBRUST_REHASH +=	core
@@ -165,18 +174,11 @@ TEST_DEPENDS +=		devel/git \
 
 # - disable vendor checksum checks
 # - SUBSTR cargo testsuite
-# - remove src/llvm-project or patch it
 SUBST_VARS +=	WRKBUILD
 post-patch:
 	sed -i 's/"files":{[^}]*}/"files":{}/' \
 		${WRKSRC}/vendor/*/.cargo-checksum.json
 	${SUBST_CMD} ${WRKSRC}/src/tools/cargo/crates/cargo-test-support/src/paths.rs
-.if !${USE_EMB_LLVM:L:Myes}
-	rm -rf -- ${WRKSRC}/src/llvm-project/
-.else
-	sed -i 's/set(suffixes $${CMAKE_FIND_LIBRARY_SUFFIXES})/set(suffixes $${CMAKE_FIND_LIBRARY_SUFFIXES} ".so.[0-9]+.[0-9]+")/' \
-		${WRKSRC}/src/llvm-project/llvm/cmake/modules/GetLibraryName.cmake
-.endif
 
 # - check datasize limit before configuring (and building)
 pre-configure:
@@ -225,6 +227,8 @@ do-configure:
 	echo '[llvm]' >>${WRKBUILD}/config.toml
 	echo 'static-libstdcpp = false' >>${WRKBUILD}/config.toml
 	echo 'ninja = true' >>${WRKBUILD}/config.toml
+	echo 'cxxflags = "${CXXFLAGS} ${LLVMCXXFLAGS}"' \
+		>>${WRKBUILD}/config.toml
 
 	echo '[target.${TRIPLE_ARCH}]' >>${WRKBUILD}/config.toml
 .if !${USE_EMB_LLVM:L:Myes}

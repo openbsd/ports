@@ -3,9 +3,9 @@
 @bin bin/cargo
 @bin bin/rustc
 @bin bin/rustdoc
-@so lib/librustc_driver-${LIBRUST_HASH}12.so
-@so lib/libstd-${LIBRUST_HASH}16.so
-@so lib/libtest-${LIBRUST_HASH}18.so
+@so lib/librustc_driver-${LIBRUST_HASH}11.so
+@so lib/libstd-${LIBRUST_HASH}15.so
+@so lib/libtest-${LIBRUST_HASH}17.so
 lib/rustlib/
 lib/rustlib/${TRIPLE_ARCH}/
 lib/rustlib/${TRIPLE_ARCH}/lib/
@@ -13,30 +13,29 @@ lib/rustlib/${TRIPLE_ARCH}/lib/libaddr2line-${LIBRUST_HASH}00.rlib
 lib/rustlib/${TRIPLE_ARCH}/lib/libadler-${LIBRUST_HASH}01.rlib
 lib/rustlib/${TRIPLE_ARCH}/lib/liballoc-${LIBRUST_HASH}02.rlib
 lib/rustlib/${TRIPLE_ARCH}/lib/libcfg_if-${LIBRUST_HASH}03.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/libcfg_if-${LIBRUST_HASH}04.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/libcompiler_builtins-${LIBRUST_HASH}05.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/libcore-${LIBRUST_HASH}06.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/libgetopts-${LIBRUST_HASH}07.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/libgimli-${LIBRUST_HASH}08.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/libhashbrown-${LIBRUST_HASH}09.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/liblibc-${LIBRUST_HASH}0a.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/libmemchr-${LIBRUST_HASH}0b.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/libminiz_oxide-${LIBRUST_HASH}0c.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/libobject-${LIBRUST_HASH}0d.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/libpanic_abort-${LIBRUST_HASH}0e.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/libpanic_unwind-${LIBRUST_HASH}0f.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/libproc_macro-${LIBRUST_HASH}10.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/librustc_demangle-${LIBRUST_HASH}11.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/librustc_std_workspace_alloc-${LIBRUST_HASH}13.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/librustc_std_workspace_core-${LIBRUST_HASH}14.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/librustc_std_workspace_std-${LIBRUST_HASH}15.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/libstd-${LIBRUST_HASH}16.rlib
-@so lib/rustlib/${TRIPLE_ARCH}/lib/libstd-${LIBRUST_HASH}16.so
-lib/rustlib/${TRIPLE_ARCH}/lib/libstd_detect-${LIBRUST_HASH}17.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/libtest-${LIBRUST_HASH}18.rlib
-@so lib/rustlib/${TRIPLE_ARCH}/lib/libtest-${LIBRUST_HASH}18.so
-lib/rustlib/${TRIPLE_ARCH}/lib/libunicode_width-${LIBRUST_HASH}19.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/libunwind-${LIBRUST_HASH}1a.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libcompiler_builtins-${LIBRUST_HASH}04.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libcore-${LIBRUST_HASH}05.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libgetopts-${LIBRUST_HASH}06.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libgimli-${LIBRUST_HASH}07.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libhashbrown-${LIBRUST_HASH}08.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/liblibc-${LIBRUST_HASH}09.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libmemchr-${LIBRUST_HASH}0a.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libminiz_oxide-${LIBRUST_HASH}0b.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libobject-${LIBRUST_HASH}0c.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libpanic_abort-${LIBRUST_HASH}0d.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libpanic_unwind-${LIBRUST_HASH}0e.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libproc_macro-${LIBRUST_HASH}0f.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/librustc_demangle-${LIBRUST_HASH}10.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/librustc_std_workspace_alloc-${LIBRUST_HASH}12.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/librustc_std_workspace_core-${LIBRUST_HASH}13.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/librustc_std_workspace_std-${LIBRUST_HASH}14.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libstd-${LIBRUST_HASH}15.rlib
+@so lib/rustlib/${TRIPLE_ARCH}/lib/libstd-${LIBRUST_HASH}15.so
+lib/rustlib/${TRIPLE_ARCH}/lib/libstd_detect-${LIBRUST_HASH}16.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libtest-${LIBRUST_HASH}17.rlib
+@so lib/rustlib/${TRIPLE_ARCH}/lib/libtest-${LIBRUST_HASH}17.so
+lib/rustlib/${TRIPLE_ARCH}/lib/libunicode_width-${LIBRUST_HASH}18.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libunwind-${LIBRUST_HASH}19.rlib
 @bin libexec/cargo-credential-1password
 @bin libexec/rust-analyzer-proc-macro-srv
 @man man/man1/cargo-add.1
