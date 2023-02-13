@@ -1,6 +1,6 @@
 COMMENT =	DKIM and DomainKeys message-signing implementation
 
-DISTNAME =	Mail-DKIM-1.20200907
+DISTNAME =	Mail-DKIM-1.20230212
 
 CATEGORIES =	mail
 
@@ -9,7 +9,8 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 
-RUN_DEPENDS =		mail/p5-Mail-AuthenticationResults \
+RUN_DEPENDS =		devel/p5-Getopt-Long-Descriptive \
+			mail/p5-Mail-AuthenticationResults \
 			mail/p5-Mail-Tools \
 			net/p5-Net-DNS \
 			security/p5-Crypt-OpenSSL-RSA
