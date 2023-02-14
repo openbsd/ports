@@ -2,6 +2,7 @@
 ONLY_FOR_ARCHS =	amd64
 
 COMMENT =	commandline FreeDesktop trash bin utility
+REVISION =	0
 CATEGORIES =	sysutils
 
 GH_ACCOUNT =	rushsteve1

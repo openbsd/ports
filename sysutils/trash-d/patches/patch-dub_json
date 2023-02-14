@@ -1,0 +1,13 @@
+Index: dub.json
+--- dub.json.orig
++++ dub.json
+@@ -2,7 +2,8 @@
+ 	"authors": ["Steven vanZyl <rushsteve1@rushsteve1.us>"],
+ 	"copyright": "Copyright © 2022, Steven vanZyl",
+ 	"description": "A near drop-in replacement for rm that uses the trash bin",
+-	"version": "18",
++	"version": "18.0.0",
++	"shortVersion": "18",
+ 	"versionName": "M. Bison",
+ 	"license": "MIT",
+ 	"name": "trash-d",

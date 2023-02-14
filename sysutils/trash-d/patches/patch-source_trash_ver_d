@@ -1,0 +1,12 @@
+Index: source/trash/ver.d
+--- source/trash/ver.d.orig
++++ source/trash/ver.d
+@@ -25,7 +25,7 @@ const string VER_TEXT = format("trash-d version %s '%s
+ const string COPY_TEXT = copy_text_from_json();
+ 
+ private int version_from_json() {
+-	return DUB_JSON.parseJSON()["version"].str.to!int;
++	return DUB_JSON.parseJSON()["shortVersion"].str.to!int;
+ }
+ 
+ private string version_name_from_json() {
