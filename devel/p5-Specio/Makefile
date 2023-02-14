@@ -1,6 +1,6 @@
 COMMENT =	type constraints and coercions for Perl
 
-DISTNAME =	Specio-0.47
+DISTNAME =	Specio-0.48
 CPAN_AUTHOR =	DROLSKY
 
 CATEGORIES =	devel
