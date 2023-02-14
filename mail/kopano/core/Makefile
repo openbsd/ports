@@ -8,8 +8,7 @@ PKGNAME-main=	kopano-core-${V}
 PKGNAME-mapi=	kopano-mapi-${V}
 EPOCH=		0
 
-REVISION=	2
-REVISION-main=	4
+REVISION-main=	5
 REVISION-mapi=	3
 
 CATEGORIES=	mail www productivity

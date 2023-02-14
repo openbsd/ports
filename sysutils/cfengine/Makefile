@@ -3,7 +3,7 @@ BROKEN =	pkg_add fails: problem with symlinks
 COMMENT =	GNU system administration tool for networks
 
 DISTNAME =	cfengine-3.7.2
-REVISION =	3
+REVISION =	4
 
 SHARED_LIBS +=  promises	0.0 # 1.0
 CATEGORIES =	sysutils

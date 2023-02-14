@@ -5,15 +5,16 @@ COMMENT-xml=	driver for monitoring UPS via XML/HTTP
 
 V=		2.8.0
 DISTNAME=	nut-${V}
-REVISION-cgi=	1
 
 PKGNAME-main=	${PKGNAME}
 PKGNAME-cgi=	${PKGNAME:S/-/-cgi-/}
 PKGNAME-snmp=	${PKGNAME:S/-/-snmp-/}
 PKGNAME-xml=	${PKGNAME:S/-/-xml-/}
-REVISION-main=	0
+
+REVISION-main=	1
 REVISION-snmp=	0
 REVISION-xml=	0
+REVISION-cgi=	1
 
 SHARED_LIBS +=	upsclient            4.0      # .4.0
 SHARED_LIBS +=	nutclient            0.0      # .0.0

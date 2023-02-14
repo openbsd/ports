@@ -3,7 +3,7 @@ PORTROACH=	limit:^2
 COMMENT=	AFP file and print services for IP networks
 
 DISTNAME=	netatalk-2.2.6
-REVISION=	3
+REVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=netatalk/}
 EXTRACT_SUFX=	.tar.bz2
