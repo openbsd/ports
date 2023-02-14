@@ -106,6 +106,8 @@ lib/libgromox_mapi.la
 @static-lib lib/libgromox_rpc.a
 lib/libgromox_rpc.la
 @lib lib/libgromox_rpc.so.${LIBgromox_rpc_VERSION}
+@comment lib/php-${MODPHP_VERSION}/
+@comment lib/php-${MODPHP_VERSION}/modules/
 lib/systemd/
 lib/systemd/system/
 lib/systemd/system/gromox-delivery-queue.service

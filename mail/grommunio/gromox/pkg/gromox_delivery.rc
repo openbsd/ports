@@ -1,6 +1,7 @@
 #!/bin/ksh
 
 daemon="${TRUEPREFIX}/libexec/gromox/delivery"
+daemon_logger="mail.info"
 
 . /etc/rc.d/rc.subr
 

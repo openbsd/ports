@@ -1,8 +1,6 @@
 @extra ${SYSCONFDIR}/php-${MODPHP_VERSION}/mapi.ini
-lib/php-${MODPHP_VERSION}/
-lib/php-${MODPHP_VERSION}/modules/
-lib/php-${MODPHP_VERSION}/modules/${MODULE_NAME}.a
-lib/php-${MODPHP_VERSION}/modules/mapi.la
+@comment lib/php-${MODPHP_VERSION}/modules/${MODULE_NAME}.a
+@comment lib/php-${MODPHP_VERSION}/modules/${MODULE_NAME}.la
 @so lib/php-${MODPHP_VERSION}/modules/${MODULE_NAME}.so
 share/examples/php-${MODPHP_VERSION}/${MODULE_NAME}.ini
 @sample ${SYSCONFDIR}/php-${MODPHP_VERSION}.sample/${MODULE_NAME}.ini

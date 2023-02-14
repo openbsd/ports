@@ -12,7 +12,7 @@ PKGNAME-mapi=	gromox-mapi-${V}
 
 GH_ACCOUNT=	grommunio
 GH_PROJECT=	gromox
-GH_COMMIT=	b26cc56fda11f2ea815f663b4dad876eb885ddd9
+GH_COMMIT=	a0b4b6546e487c73a85f458d65af519d5f1e3f26
 
 CATEGORIES=	mail www productivity
 
@@ -34,8 +34,6 @@ MODULES=	lang/php
 
 MODPHP_DO_SAMPLE=mapi
 MODPHP_BUILDDEP=Yes
-MESSAGE-main=	# empty
-UNMESSAGE-main=	# empty
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
@@ -44,11 +42,11 @@ BUILD_DEPENDS=	devel/cppunit \
 		shells/bash \
 		sysutils/coreutils
 
-WANTLIB += HX iconv jsoncpp m tinyxml2 vmime zstd
+WANTLIB += HX iconv jsoncpp m pthread tinyxml2 vmime zstd
 
 WANTLIB-main += ${LIBCXX} ${WANTLIB} c crypto curl fmt gumbo icudata icuuc lber
 WANTLIB-main += ldap mariadb nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_openssl 
-WANTLIB-main += pthread sasl2 sqlite3 ssl ssl z
+WANTLIB-main += sasl2 sqlite3 ssl ssl z
 
 # Do not substitute MODULE_NAME
 UPDATE_PLIST_ARGS+=	-i MODULE_NAME
@@ -87,11 +85,9 @@ CONFIGURE_STYLE=	autoreconf
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.16
 
-CONFIGURE_ENV=	CPPFLAGS="-I/usr/local/include" PHP_SYSCONF_DIR="${SYSCONFDIR}/php-${MODPHP_VERSION}" \
-		ac_cv_lib_pam_pam_start=no
 CONFIGURE_ARGS=	--disable-static
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples \
-		phpsysconfdir=${PREFIX}/share/examples/php-${MODPHP_VERSION}
+		phpinidir=${PREFIX}/share/examples/php-${MODPHP_VERSION}
 
 .include <bsd.port.mk>
