@@ -2,7 +2,7 @@ COMMENT =	extend File::ShareDir to local libraries
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	File-Share-0.26
+DISTNAME =	File-Share-0.27
 CATEGORIES =	devel
 
 MAINTAINER =	Wen Heping <wenheping2000@hotmail.com>
