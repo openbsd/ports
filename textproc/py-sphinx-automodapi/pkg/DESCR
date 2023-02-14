@@ -1,0 +1,2 @@
+This is a Sphinx extension to automatically generate API pages for whole
+modules. Originally developed for the Astropy project.
