@@ -1,9 +1,10 @@
 COMMENT=	emacs-based mail client
 
 DISTNAME=	mew-6.9
-REVISION=	0
+REVISION=	1
 CATEGORIES=	mail
 HOMEPAGE=	http://www.mew.org/
+DISTFILES=	mew-6.9a.tar.gz
 
 MAINTAINER=	YASUOKA Masahiko <yasuoka@yasuoka.net>
 
