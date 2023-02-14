@@ -452,6 +452,7 @@
      SUBDIR += py-spdx,python3
      SUBDIR += py-spdx-lookup,python3
      SUBDIR += py-sphinx,python3
+     SUBDIR += py-sphinx-automodapi,python3
      SUBDIR += py-sphinx-intl,python3
      SUBDIR += py-sphinx-notfound-page,python3
      SUBDIR += py-sphinx_guzzle_theme,python3
