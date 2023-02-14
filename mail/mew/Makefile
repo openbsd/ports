@@ -1,7 +1,6 @@
 COMMENT=	emacs-based mail client
 
-DISTNAME=	mew-6.8
-REVISION=	4
+DISTNAME=	mew-6.9
 CATEGORIES=	mail
 HOMEPAGE=	http://www.mew.org/
 
@@ -28,15 +27,19 @@ CONFIGURE_ARGS+=	elispdir=${PREFIX}/share/emacs/site-lisp \
 			etcdir=${PREFIX}/share/emacs/site-lisp/etc \
 			infodir=${PREFIX}/info \
 			mandir=${PREFIX}/man
+FAKE_FLAGS+=  		elispdir=${PREFIX}/share/emacs/site-lisp
 
 NO_TEST=		Yes
 
-MEWDOCFILES=		00*
-MEWDOTFILES=		dot.*
+MEWDOCFILES=		*.md
+MEWCHANGES=		CHANGES/*.md
+MEWDOTFILES=		conf/dot.*
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mew
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mew/CHANGES
 	cd ${WRKSRC}; ${INSTALL_DATA} ${MEWDOCFILES} ${PREFIX}/share/doc/mew
 	cd ${WRKSRC}; ${INSTALL_DATA} ${MEWDOTFILES} ${PREFIX}/share/doc/mew
+	cd ${WRKSRC}; ${INSTALL_DATA} ${MEWCHANGES} ${PREFIX}/share/doc/mew/CHANGES
 
 .include <bsd.port.mk>

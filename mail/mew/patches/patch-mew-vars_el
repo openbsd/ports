@@ -1,6 +1,7 @@
---- mew-vars.el.orig	Tue Aug  4 14:05:37 2015
-+++ mew-vars.el	Tue Sep 29 11:23:46 2015
-@@ -3103,8 +3103,8 @@ your public key as well as receivers' one."
+Index: elisp/mew-vars.el
+--- elisp/mew-vars.el.orig
++++ elisp/mew-vars.el
+@@ -3114,8 +3114,8 @@ your public key as well as receivers' one."
    :group 'mew-privacy
    :type 'string)
  
