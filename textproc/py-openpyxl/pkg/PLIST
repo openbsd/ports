@@ -23,11 +23,14 @@ lib/python${MODPY_VERSION}/site-packages/openpyxl/cell/${MODPY_PYCACHE}cell.${MO
 lib/python${MODPY_VERSION}/site-packages/openpyxl/cell/${MODPY_PYCACHE}cell.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/openpyxl/cell/${MODPY_PYCACHE}read_only.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/openpyxl/cell/${MODPY_PYCACHE}read_only.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/openpyxl/cell/${MODPY_PYCACHE}rich_text.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/openpyxl/cell/${MODPY_PYCACHE}rich_text.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/openpyxl/cell/${MODPY_PYCACHE}text.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/openpyxl/cell/${MODPY_PYCACHE}text.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/openpyxl/cell/_writer.py
 lib/python${MODPY_VERSION}/site-packages/openpyxl/cell/cell.py
 lib/python${MODPY_VERSION}/site-packages/openpyxl/cell/read_only.py
+lib/python${MODPY_VERSION}/site-packages/openpyxl/cell/rich_text.py
 lib/python${MODPY_VERSION}/site-packages/openpyxl/cell/text.py
 lib/python${MODPY_VERSION}/site-packages/openpyxl/chart/
 lib/python${MODPY_VERSION}/site-packages/openpyxl/chart/_3d.py
@@ -301,6 +304,8 @@ lib/python${MODPY_VERSION}/site-packages/openpyxl/packaging/${MODPY_PYCACHE}__in
 lib/python${MODPY_VERSION}/site-packages/openpyxl/packaging/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/openpyxl/packaging/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/openpyxl/packaging/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/openpyxl/packaging/${MODPY_PYCACHE}custom.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/openpyxl/packaging/${MODPY_PYCACHE}custom.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/openpyxl/packaging/${MODPY_PYCACHE}extended.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/openpyxl/packaging/${MODPY_PYCACHE}extended.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/openpyxl/packaging/${MODPY_PYCACHE}interface.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -312,6 +317,7 @@ lib/python${MODPY_VERSION}/site-packages/openpyxl/packaging/${MODPY_PYCACHE}rela
 lib/python${MODPY_VERSION}/site-packages/openpyxl/packaging/${MODPY_PYCACHE}workbook.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/openpyxl/packaging/${MODPY_PYCACHE}workbook.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/openpyxl/packaging/core.py
+lib/python${MODPY_VERSION}/site-packages/openpyxl/packaging/custom.py
 lib/python${MODPY_VERSION}/site-packages/openpyxl/packaging/extended.py
 lib/python${MODPY_VERSION}/site-packages/openpyxl/packaging/interface.py
 lib/python${MODPY_VERSION}/site-packages/openpyxl/packaging/manifest.py
@@ -518,6 +524,8 @@ lib/python${MODPY_VERSION}/site-packages/openpyxl/worksheet/${MODPY_PYCACHE}erro
 lib/python${MODPY_VERSION}/site-packages/openpyxl/worksheet/${MODPY_PYCACHE}errors.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/openpyxl/worksheet/${MODPY_PYCACHE}filters.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/openpyxl/worksheet/${MODPY_PYCACHE}filters.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/openpyxl/worksheet/${MODPY_PYCACHE}formula.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/openpyxl/worksheet/${MODPY_PYCACHE}formula.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/openpyxl/worksheet/${MODPY_PYCACHE}header_footer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/openpyxl/worksheet/${MODPY_PYCACHE}header_footer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/openpyxl/worksheet/${MODPY_PYCACHE}hyperlink.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -532,6 +540,8 @@ lib/python${MODPY_VERSION}/site-packages/openpyxl/worksheet/${MODPY_PYCACHE}page
 lib/python${MODPY_VERSION}/site-packages/openpyxl/worksheet/${MODPY_PYCACHE}pagebreak.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/openpyxl/worksheet/${MODPY_PYCACHE}picture.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/openpyxl/worksheet/${MODPY_PYCACHE}picture.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/openpyxl/worksheet/${MODPY_PYCACHE}print_settings.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/openpyxl/worksheet/${MODPY_PYCACHE}print_settings.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/openpyxl/worksheet/${MODPY_PYCACHE}properties.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/openpyxl/worksheet/${MODPY_PYCACHE}properties.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/openpyxl/worksheet/${MODPY_PYCACHE}protection.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -562,6 +572,7 @@ lib/python${MODPY_VERSION}/site-packages/openpyxl/worksheet/dimensions.py
 lib/python${MODPY_VERSION}/site-packages/openpyxl/worksheet/drawing.py
 lib/python${MODPY_VERSION}/site-packages/openpyxl/worksheet/errors.py
 lib/python${MODPY_VERSION}/site-packages/openpyxl/worksheet/filters.py
+lib/python${MODPY_VERSION}/site-packages/openpyxl/worksheet/formula.py
 lib/python${MODPY_VERSION}/site-packages/openpyxl/worksheet/header_footer.py
 lib/python${MODPY_VERSION}/site-packages/openpyxl/worksheet/hyperlink.py
 lib/python${MODPY_VERSION}/site-packages/openpyxl/worksheet/merge.py
@@ -569,6 +580,7 @@ lib/python${MODPY_VERSION}/site-packages/openpyxl/worksheet/ole.py
 lib/python${MODPY_VERSION}/site-packages/openpyxl/worksheet/page.py
 lib/python${MODPY_VERSION}/site-packages/openpyxl/worksheet/pagebreak.py
 lib/python${MODPY_VERSION}/site-packages/openpyxl/worksheet/picture.py
+lib/python${MODPY_VERSION}/site-packages/openpyxl/worksheet/print_settings.py
 lib/python${MODPY_VERSION}/site-packages/openpyxl/worksheet/properties.py
 lib/python${MODPY_VERSION}/site-packages/openpyxl/worksheet/protection.py
 lib/python${MODPY_VERSION}/site-packages/openpyxl/worksheet/related.py

@@ -1,10 +1,9 @@
 COMMENT=	Python library to read/write Excel 2010 xlsx/xlsm files
 
-MODPY_EGG_VERSION=	3.0.10
+MODPY_EGG_VERSION=	3.1.1
 
 DISTNAME=	openpyxl-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
 
 CATEGORIES=	textproc
 
