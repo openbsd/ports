@@ -3,7 +3,7 @@ COMMENT=	UCB/LBNL Network Animator
 V=		1.15
 DISTNAME=	nam-src-$V
 PKGNAME=	nam-$V
-REVISION =	3
+REVISION =	4
 CATEGORIES=	net
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 

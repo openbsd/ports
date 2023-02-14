@@ -1,0 +1,14 @@
+Fix off-by-one.
+
+Index: rng.cc
+--- rng.cc.orig
++++ rng.cc
+@@ -817,7 +817,7 @@ RNG::RNG (const char *s) 
+ { 
+ 	if (strlen (s) > 99) {
+ 		strncpy (name_, s, 99);
+-		name_[100] = 0;
++		name_[99] = 0;
+ 	}
+ 	else 
+ 		strcpy (name_, s);

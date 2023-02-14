@@ -1,5 +1,19 @@
---- configure.orig	Fri Nov  4 13:18:42 2011
-+++ configure	Wed Apr 25 15:25:37 2012
+Add OpenBSD paths.
+Explicitly set compiler flags.
+
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -5041,7 +5041,7 @@ if test "$enable_debug" = "yes" ; then
+ 		V_DEFINE="$V_DEFINE -fsigned-char -fno-inline"
+ 	fi
+ else
+-	V_CCOPT="$OonS"
++	V_CCOPT="$CXXFLAGS"
+ 	V_DEFINE="$V_DEFINE -DNDEBUG"
+ 	if test "$CC" = gcc ; then
+ 		V_CCOPT="$V_CCOPT -Wall -Wno-write-strings"
 @@ -5664,6 +5664,7 @@ TCL_OLD_VERS=8.4
  TCL_OLD_ALT_VERS=`echo $TCL_OLD_VERS | sed 's/\.//'`
  

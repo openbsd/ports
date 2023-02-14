@@ -1,0 +1,14 @@
+Add missing function parameter declaration.
+
+
+Index: xwd.c
+--- xwd.c.orig
++++ xwd.c
+@@ -137,6 +137,7 @@ Image_Size(image)
+ 
+ static int
+ ReadColors(tk,cmap,colors)
++	Tk_Window tk ;
+ 	Colormap cmap ;
+ 	XColor **colors ;
+ {
