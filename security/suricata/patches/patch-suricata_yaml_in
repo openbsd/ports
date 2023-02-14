@@ -96,7 +96,7 @@ Index: suricata.yaml.in
        facility: local5
        format: "[%i] <%d> -- "
        # type: json
-@@ -1002,9 +1011,9 @@ asn1-max-frames: 256
+@@ -1010,9 +1019,9 @@ asn1-max-frames: 256
  ##
  
  # Run Suricata with a specific user-id and group-id:
@@ -109,7 +109,7 @@ Index: suricata.yaml.in
  
  # Some logging modules will use that name in event as identifier. The default
  # value is the hostname
-@@ -1013,7 +1022,7 @@ asn1-max-frames: 256
+@@ -1021,7 +1030,7 @@ asn1-max-frames: 256
  # Default location of the pid file. The pid file is only used in
  # daemon mode (start Suricata with -D). If not running in daemon mode
  # the --pidfile command line option must be used to create a pid file.
@@ -118,7 +118,7 @@ Index: suricata.yaml.in
  
  # Daemon working directory
  # Suricata will change directory to this one if provided
-@@ -1885,14 +1894,38 @@ napatech:
+@@ -1912,14 +1921,38 @@ napatech:
      #
      hashmode: hash5tuplesorted
  

@@ -3,15 +3,14 @@ NOT_FOR_ARCHS =	powerpc64 riscv64
 
 COMMENT =	high performance network IDS, IPS and security monitoring
 
-SURICATA_V =	6.0.6
-SUPDATE_V =	1.2.4
+SURICATA_V =	6.0.10
+SUPDATE_V =	1.2.6
 
 DISTNAME =	suricata-${SURICATA_V}
 CATEGORIES =	security
-SHARED_LIBS +=	htp                       0.0 # 2.0
-REVISION =	2
+SHARED_LIBS +=	htp                       0.1 # 2.0
 
-HOMEPAGE =	https://suricata-ids.org/
+HOMEPAGE =	https://suricata.io/
 
 MAINTAINER =	Gonzalo L. R. <gonzalo@openbsd.org>
 
@@ -82,6 +81,8 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/suricata
 	${INSTALL_DATA} ${WRKSRC}/*.config ${PREFIX}/share/examples/suricata
 	${INSTALL_DATA} ${WRKSRC}/suricata.yaml ${PREFIX}/share/examples/suricata
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+		${PREFIX}/lib/suricata/python/
 	# nothing particularly useful in there as of 6.0.1
 	rm -r ${PREFIX}/share/doc/suricata
 
