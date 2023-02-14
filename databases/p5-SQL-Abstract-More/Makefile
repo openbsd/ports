@@ -1,6 +1,6 @@
 COMMENT =	extension of SQL::Abstract with more constructs
 
-DISTNAME =	SQL-Abstract-More-1.37
+DISTNAME =	SQL-Abstract-More-1.39
 
 CATEGORIES =	databases
 
@@ -11,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 
-RUN_DEPENDS =		databases/p5-SQL-Abstract>=1.84 \
+RUN_DEPENDS =		databases/p5-SQL-Abstract-Classic>=0 \
 			devel/p5-MRO-Compat \
 			devel/p5-Params-Validate \
 			devel/p5-namespace-clean
