@@ -1,6 +1,7 @@
 COMMENT=	emacs-based mail client
 
 DISTNAME=	mew-6.9
+REVISION=	0
 CATEGORIES=	mail
 HOMEPAGE=	http://www.mew.org/
 
@@ -27,7 +28,6 @@ CONFIGURE_ARGS+=	elispdir=${PREFIX}/share/emacs/site-lisp \
 			etcdir=${PREFIX}/share/emacs/site-lisp/etc \
 			infodir=${PREFIX}/info \
 			mandir=${PREFIX}/man
-FAKE_FLAGS+=  		elispdir=${PREFIX}/share/emacs/site-lisp
 
 NO_TEST=		Yes
 
