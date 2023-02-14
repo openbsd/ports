@@ -1,7 +1,6 @@
 COMMENT =	build an optimized subroutine parameter validator
 
-DISTNAME =	Params-ValidationCompiler-0.30
-REVISION =	0
+DISTNAME =	Params-ValidationCompiler-0.31
 
 CATEGORIES =	devel
 
