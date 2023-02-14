@@ -6871,10 +6871,12 @@ share/rust-openssl-tests/openssl/src/x509/verify.rs
 share/rust-openssl-tests/openssl/test/
 share/rust-openssl-tests/openssl/test/aia_test_cert.pem
 share/rust-openssl-tests/openssl/test/alt_name_cert.pem
+share/rust-openssl-tests/openssl/test/ca.crt
 share/rust-openssl-tests/openssl/test/cert.pem
 share/rust-openssl-tests/openssl/test/certs.pem
 share/rust-openssl-tests/openssl/test/cms.p12
 share/rust-openssl-tests/openssl/test/cms_pubkey.der
+share/rust-openssl-tests/openssl/test/crl-ca.crt
 share/rust-openssl-tests/openssl/test/csr.pem
 share/rust-openssl-tests/openssl/test/dhparams.pem
 share/rust-openssl-tests/openssl/test/dsa.pem
@@ -6899,6 +6901,8 @@ share/rust-openssl-tests/openssl/test/root-ca.pem
 share/rust-openssl-tests/openssl/test/rsa-encrypted.pem
 share/rust-openssl-tests/openssl/test/rsa.pem
 share/rust-openssl-tests/openssl/test/rsa.pem.pub
+share/rust-openssl-tests/openssl/test/subca.crt
+share/rust-openssl-tests/openssl/test/test.crl
 share/rust-openssl-tests/systest/
 share/rust-openssl-tests/systest/Cargo.toml
 share/rust-openssl-tests/systest/build.rs
