@@ -1,6 +1,6 @@
 COMMENT =	modern perl interactive shell
 
-DISTNAME =	Devel-REPL-1.003028
+DISTNAME =	Devel-REPL-1.003029
 
 CATEGORIES =	devel
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		cpan
 
 RUN_DEPENDS =		devel/p5-B-Keywords \
-			devel/p5-Data-Dump-Streamer \
+			devel/p5-Data-Dump-Streamer>=2.39 \
 			devel/p5-Data-Dumper-Concise \
 			devel/p5-File-HomeDir \
 			devel/p5-File-Next \
