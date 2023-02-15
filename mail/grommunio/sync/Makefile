@@ -19,7 +19,7 @@ MODULES=	lang/php
 MODPHP_BUILDDEP=No
 MODPHP_RUNDEP=	No
 
-RUN_DEPENDS=	databases/pecl-redis \
+RUN_DEPENDS=	databases/pecl-redis,php${MODPHP_VERSION:S/.//} \
 		lang/php/${MODPHP_VERSION},-curl \
 		lang/php/${MODPHP_VERSION},-pdo_sqlite \
 		mail/grommunio/gromox,-mapi \
