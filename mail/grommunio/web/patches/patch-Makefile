@@ -12,6 +12,15 @@ Index: Makefile
  
  # Javascript compiler
  
+@@ -102,7 +104,7 @@ js: $(JSDEPLOY)/fingerprint.js $(JSDEPLOY)/resize.js $
+ 	# TODO use separate targets
+ 
+ $(DESTDIR)/%.php: %.php
+-	php -l $<
++	$(PHP) -l $<
+ 	mkdir -p $$(dirname $@)
+ 	cp $< $@
+ 
 @@ -288,11 +290,11 @@ tokenizr: node_modules
  
  .PHONY: plugins
