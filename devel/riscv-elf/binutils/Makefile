@@ -1,6 +1,7 @@
 COMMENT=	binutils for riscv-elf cross-development
 
 V=		2.40
+REVISION=	0
 DISTNAME=	binutils-${V}
 
 HOMEPAGE=	https://www.gnu.org/software/binutils/
@@ -15,7 +16,8 @@ USE_LIBTOOL=	No
 
 CONFIGURE_ARGS+=--enable-commonbfdlib=no \
 		--enable-interwork	 \
-		--enable-multilib
+		--enable-multilib	\
+		--without-zstd
 
 SUBST_VARS +=	CONFIG
 
