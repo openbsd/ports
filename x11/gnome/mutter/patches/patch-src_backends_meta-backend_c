@@ -32,7 +32,7 @@ Index: src/backends/meta-backend.c
  static MetaRenderer *
  meta_backend_create_renderer (MetaBackend *backend,
                                GError     **error)
-@@ -1201,8 +1193,6 @@ meta_backend_initable_init (GInitable     *initable,
+@@ -1198,8 +1190,6 @@ meta_backend_initable_init (GInitable     *initable,
    if (!priv->monitor_manager)
      return FALSE;
  
@@ -41,7 +41,7 @@ Index: src/backends/meta-backend.c
    priv->renderer = meta_backend_create_renderer (backend, error);
    if (!priv->renderer)
      return FALSE;
-@@ -1286,17 +1276,6 @@ meta_backend_get_monitor_manager (MetaBackend *backend
+@@ -1283,17 +1273,6 @@ meta_backend_get_monitor_manager (MetaBackend *backend
    MetaBackendPrivate *priv = meta_backend_get_instance_private (backend);
  
    return priv->monitor_manager;
