@@ -11,6 +11,8 @@ CATEGORIES=	sysutils
 # BSD
 PERMIT_PACKAGE=	Yes
 
+MODULES=	lang/python
+MODPY_RUNDEP=	No
 BUILD_DEPENDS+=	devel/riscv-elf/gcc \
 		shells/bash
 
