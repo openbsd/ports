@@ -31,6 +31,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/bsl
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/c
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/ceylon
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/cfscript
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/cisco_ios
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/clean
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/clojure
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/cmake
@@ -275,6 +276,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/bsl.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/c.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/ceylon.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/cfscript.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/cisco_ios.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/clean.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/clojure.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/cmake.rb
