@@ -17,20 +17,19 @@ Index: media/ffvpx/libavcodec/x86/fft.asm
      call r2
  %endmacro ; FFT_DISPATCH
  
-@@ -731,12 +727,6 @@ DECL_PASS pass_interleave_3dnow, PASS_BIG 0
+@@ -731,11 +727,7 @@ DECL_PASS pass_interleave_3dnow, PASS_BIG 0
  %define pass_interleave_3dnowext pass_interleave_3dnow
  %endif
  
 -%ifdef PIC
 -%define SECTION_REL - $$
 -%else
--%define SECTION_REL
+ %define SECTION_REL
 -%endif
--
+ 
  %macro DECL_FFT 1-2 ; nbits, suffix
  %ifidn %0, 1
- %xdefine fullsuffix SUFFIX
-@@ -773,8 +763,10 @@ fft %+ n %+ fullsuffix:
+@@ -773,8 +765,10 @@ fft %+ n %+ fullsuffix:
  %endrep
  %undef n
  
