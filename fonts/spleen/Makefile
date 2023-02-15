@@ -1,8 +1,7 @@
 COMMENT =	monospaced bitmap fonts for consoles and terminals
 
-V =		1.9.1
+V =		1.9.2
 DISTNAME =	spleen-${V}
-REVISION =	0
 
 CATEGORIES =	fonts
 
