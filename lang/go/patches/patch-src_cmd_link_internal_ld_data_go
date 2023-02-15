@@ -1,7 +1,7 @@
 Index: src/cmd/link/internal/ld/data.go
 --- src/cmd/link/internal/ld/data.go.orig
 +++ src/cmd/link/internal/ld/data.go
-@@ -269,6 +269,7 @@ func (st *relocSymState) relocsym(s loader.Sym, P []by
+@@ -270,6 +270,7 @@ func (st *relocSymState) relocsym(s loader.Sym, P []by
  		}
  
  		var o int64
@@ -9,7 +9,7 @@ Index: src/cmd/link/internal/ld/data.go
  		switch rt {
  		default:
  			switch siz {
-@@ -283,6 +284,7 @@ func (st *relocSymState) relocsym(s loader.Sym, P []by
+@@ -284,6 +285,7 @@ func (st *relocSymState) relocsym(s loader.Sym, P []by
  			case 8:
  				o = int64(target.Arch.ByteOrder.Uint64(P[off:]))
  			}
@@ -17,7 +17,7 @@ Index: src/cmd/link/internal/ld/data.go
  			out, n, ok := thearch.Archreloc(target, ldr, syms, r, s, o)
  			if target.IsExternal() {
  				nExtReloc += n
-@@ -562,17 +564,17 @@ func (st *relocSymState) relocsym(s loader.Sym, P []by
+@@ -563,17 +565,17 @@ func (st *relocSymState) relocsym(s loader.Sym, P []by
  		case 1:
  			P[off] = byte(int8(o))
  		case 2:

@@ -1,7 +1,7 @@
 Index: src/cmd/link/internal/ld/main.go
 --- src/cmd/link/internal/ld/main.go.orig
 +++ src/cmd/link/internal/ld/main.go
-@@ -341,6 +341,12 @@ func Main(arch *sys.Arch, theArch Arch) {
+@@ -343,6 +343,12 @@ func Main(arch *sys.Arch, theArch Arch) {
  	bench.Start("layout")
  	filesize := ctxt.layout(order)
  

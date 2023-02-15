@@ -1,7 +1,7 @@
 Index: src/runtime/proc.go
 --- src/runtime/proc.go.orig
 +++ src/runtime/proc.go
-@@ -1317,10 +1317,8 @@ func startTheWorldWithSema(emitTraceEvent bool) int64 
+@@ -1390,10 +1390,8 @@ func startTheWorldWithSema(emitTraceEvent bool) int64 
  // via libcall.
  func usesLibcall() bool {
  	switch GOOS {
@@ -13,7 +13,7 @@ Index: src/runtime/proc.go
  	}
  	return false
  }
-@@ -1329,13 +1327,8 @@ func usesLibcall() bool {
+@@ -1402,13 +1400,8 @@ func usesLibcall() bool {
  // system-allocated stack.
  func mStackIsSystemAllocated() bool {
  	switch GOOS {

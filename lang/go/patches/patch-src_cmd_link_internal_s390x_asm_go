@@ -1,7 +1,7 @@
 Index: src/cmd/link/internal/s390x/asm.go
 --- src/cmd/link/internal/s390x/asm.go.orig
 +++ src/cmd/link/internal/s390x/asm.go
-@@ -313,7 +313,7 @@ func elfreloc1(ctxt *ld.Link, out *ld.OutBuf, ldr *loa
+@@ -309,7 +309,7 @@ func elfreloc1(ctxt *ld.Link, out *ld.OutBuf, ldr *loa
  	return true
  }
  

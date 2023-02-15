@@ -1,7 +1,7 @@
 Index: src/syscall/mkall.sh
 --- src/syscall/mkall.sh.orig
 +++ src/syscall/mkall.sh
-@@ -337,15 +337,28 @@ openbsd_arm64)
+@@ -345,15 +345,28 @@ openbsd_arm64)
  	mkasm="go run mkasm.go"
  	;;
  openbsd_mips64)

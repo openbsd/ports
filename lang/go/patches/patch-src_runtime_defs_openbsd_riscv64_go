@@ -1,7 +1,7 @@
 Index: src/runtime/defs_openbsd_riscv64.go
 --- src/runtime/defs_openbsd_riscv64.go.orig
 +++ src/runtime/defs_openbsd_riscv64.go
-@@ -0,0 +1,178 @@
+@@ -0,0 +1,181 @@
 +// Copyright 2022 The Go Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style
 +// license that can be found in the LICENSE file.
@@ -14,9 +14,11 @@ Index: src/runtime/defs_openbsd_riscv64.go
 +	_EINTR  = 0x4
 +	_EFAULT = 0xe
 +	_EAGAIN = 0x23
-+	_ENOSYS = 0x4e
 +
++	_O_WRONLY   = 0x1
 +	_O_NONBLOCK = 0x4
++	_O_CREAT    = 0x200
++	_O_TRUNC    = 0x400
 +	_O_CLOEXEC  = 0x10000
 +
 +	_PROT_NONE  = 0x0
@@ -29,7 +31,8 @@ Index: src/runtime/defs_openbsd_riscv64.go
 +	_MAP_FIXED   = 0x10
 +	_MAP_STACK   = 0x4000
 +
-+	_MADV_FREE = 0x6
++	_MADV_DONTNEED = 0x4
++	_MADV_FREE     = 0x6
 +
 +	_SA_SIGINFO = 0x40
 +	_SA_RESTART = 0x2

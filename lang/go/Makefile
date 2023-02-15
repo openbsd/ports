@@ -5,11 +5,10 @@ BIN_BOOTSTRAP_VERSION = 1.19.4
 
 COMMENT =		Go programming language
 
-VERSION =		1.19.4
+VERSION =		1.20.1
 DISTNAME =		go${VERSION}.src
 PKGNAME =		go-${VERSION}
 PKGSPEC =		${FULLPKGNAME:S/go-/go-=/}
-REVISION =		1
 
 CATEGORIES =		lang
 
@@ -131,7 +130,7 @@ do-install:
 
 	cd ${WRKDIST} && \
 		pax -rw -s '/^.*\.orig$$//' api doc lib misc src pkg/include \
-			pkg/${GOCFG} test ${GOROOT}
+			test ${GOROOT}
 	find ${GOROOT} -type d -exec chmod ${DIRMODE} {} +
 	find ${GOROOT} -type f -exec chmod ${SHAREMODE} {} +
 

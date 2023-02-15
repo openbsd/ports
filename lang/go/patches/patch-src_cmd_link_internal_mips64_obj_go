@@ -1,7 +1,7 @@
 Index: src/cmd/link/internal/mips64/obj.go
 --- src/cmd/link/internal/mips64/obj.go.orig
 +++ src/cmd/link/internal/mips64/obj.go
-@@ -49,6 +49,7 @@ func Init() (*sys.Arch, ld.Arch) {
+@@ -51,6 +51,7 @@ func Init() (*sys.Arch, ld.Arch) {
  		Minalign:         minAlign,
  		Dwarfregsp:       dwarfRegSP,
  		Dwarfreglr:       dwarfRegLR,
@@ -9,7 +9,7 @@ Index: src/cmd/link/internal/mips64/obj.go
  		Archinit:         archinit,
  		Archreloc:        archreloc,
  		Archrelocvariant: archrelocvariant,
-@@ -57,8 +58,16 @@ func Init() (*sys.Arch, ld.Arch) {
+@@ -59,8 +60,16 @@ func Init() (*sys.Arch, ld.Arch) {
  		ElfrelocSize:     24,
  		Elfsetupplt:      elfsetupplt,
  		Gentext:          gentext,
@@ -24,9 +24,9 @@ Index: src/cmd/link/internal/mips64/obj.go
 +		Trampoline: trampoline,
 +
  		Linuxdynld:     "/lib64/ld64.so.1",
+ 		LinuxdynldMusl: musl,
  		Freebsddynld:   "XXX",
- 		Openbsddynld:   "/usr/libexec/ld.so",
-@@ -96,4 +105,9 @@ func archinit(ctxt *ld.Link) {
+@@ -99,4 +108,9 @@ func archinit(ctxt *ld.Link) {
  			*ld.FlagRound = 0x10000
  		}
  	}

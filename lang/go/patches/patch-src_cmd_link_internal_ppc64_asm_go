@@ -1,7 +1,7 @@
 Index: src/cmd/link/internal/ppc64/asm.go
 --- src/cmd/link/internal/ppc64/asm.go.orig
 +++ src/cmd/link/internal/ppc64/asm.go
-@@ -689,7 +689,7 @@ func elfreloc1(ctxt *ld.Link, out *ld.OutBuf, ldr *loa
+@@ -790,7 +790,7 @@ func elfreloc1(ctxt *ld.Link, out *ld.OutBuf, ldr *loa
  	return true
  }
  

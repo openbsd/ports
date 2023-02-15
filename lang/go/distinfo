@@ -4,11 +4,11 @@ SHA256 (go-openbsd-arm-bootstrap-1.19.4.tar.gz) = QJBjzqH3NbHW9gw+l9KaYY122zSvg+
 SHA256 (go-openbsd-arm64-bootstrap-1.19.4.tar.gz) = 8vpZndhPOU6Apix61VyMMMOZVhSQ/RRxy53Uw25TVAM=
 SHA256 (go-openbsd-mips64-bootstrap-1.19.4.tar.gz) = A5MnRM2WiorgFxeelh6nB1k1qoFGDpjePCwaDtB+u5s=
 SHA256 (go-openbsd-riscv64-bootstrap-1.19.4.tar.gz) = Vh8LwTn68/OXGeljlRxioatFSOMMP/qKc4jtRF6qTPU=
-SHA256 (go1.19.4.src.tar.gz) = 7adNtKxJSACj5m7nhOSVv7ubjlNd+SSosBsagCi382g=
+SHA256 (go1.20.1.src.tar.gz) = tcGjr1LDhabRx2rtU2HPJkWQI5gNAyDedli645FYMaI=
 SIZE (go-openbsd-386-bootstrap-1.19.4.tar.gz) = 156929721
 SIZE (go-openbsd-amd64-bootstrap-1.19.4.tar.gz) = 157634015
 SIZE (go-openbsd-arm-bootstrap-1.19.4.tar.gz) = 152761892
 SIZE (go-openbsd-arm64-bootstrap-1.19.4.tar.gz) = 151220584
 SIZE (go-openbsd-mips64-bootstrap-1.19.4.tar.gz) = 155690899
 SIZE (go-openbsd-riscv64-bootstrap-1.19.4.tar.gz) = 155396694
-SIZE (go1.19.4.src.tar.gz) = 26542047
+SIZE (go1.20.1.src.tar.gz) = 26172675

@@ -1,7 +1,7 @@
 Index: src/runtime/asm_riscv64.s
 --- src/runtime/asm_riscv64.s.orig
 +++ src/runtime/asm_riscv64.s
-@@ -313,6 +313,15 @@ TEXT gosave_systemstack_switch<>(SB),NOSPLIT|NOFRAME,$
+@@ -309,6 +309,15 @@ TEXT gosave_systemstack_switch<>(SB),NOSPLIT|NOFRAME,$
  	CALL	runtime·abort(SB)
  	RET
  

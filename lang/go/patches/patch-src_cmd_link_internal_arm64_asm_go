@@ -1,7 +1,7 @@
 Index: src/cmd/link/internal/arm64/asm.go
 --- src/cmd/link/internal/arm64/asm.go.orig
 +++ src/cmd/link/internal/arm64/asm.go
-@@ -969,7 +969,7 @@ func extreloc(target *ld.Target, ldr *loader.Loader, r
+@@ -1054,7 +1054,7 @@ func extreloc(target *ld.Target, ldr *loader.Loader, r
  	return loader.ExtReloc{}, false
  }
  

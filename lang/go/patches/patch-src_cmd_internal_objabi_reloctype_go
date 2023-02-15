@@ -1,7 +1,7 @@
 Index: src/cmd/internal/objabi/reloctype.go
 --- src/cmd/internal/objabi/reloctype.go.orig
 +++ src/cmd/internal/objabi/reloctype.go
-@@ -238,14 +238,43 @@ const (
+@@ -276,14 +276,43 @@ const (
  	// AUIPC + S-type instruction pair.
  	R_RISCV_PCREL_STYPE
  
@@ -51,7 +51,7 @@ Index: src/cmd/internal/objabi/reloctype.go
  	// R_PCRELDBL relocates s390x 2-byte aligned PC-relative addresses.
  	// TODO(mundaym): remove once variants can be serialized - see issue 14218.
  	R_PCRELDBL
-@@ -279,9 +308,24 @@ const (
+@@ -317,9 +346,24 @@ const (
  	// R_ADDRMIPSU (only used on mips/mips64) resolves to the sign-adjusted "upper" 16
  	// bits (bit 16-31) of an external address, by encoding it into the instruction.
  	R_ADDRMIPSU
