@@ -1,5 +1,5 @@
 PORTROACH=	limit:^8\.0
-PHP_VERSION=	8.0.27
+PHP_VERSION=	8.0.28
 PHP_PKGSPEC=	>=8.0,<8.1
 
 # keep REVISION-curl >= -stable for 7.2 cycle;
