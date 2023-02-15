@@ -1,0 +1,9 @@
+Index: data/yaml2json.py
+--- data/yaml2json.py.orig
++++ data/yaml2json.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python3
++#!/usr/bin/env python${MODPY_VERSION}
+ 
+ import sys
+ if len(sys.argv) != 3:

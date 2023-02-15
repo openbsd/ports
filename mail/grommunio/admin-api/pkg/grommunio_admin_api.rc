@@ -1,0 +1,14 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/sbin/grommunio-admin run"
+daemon_flags="--ip ::1"
+daemon_logger="daemon.info"
+daemon_user="_grommunio"
+
+. /etc/rc.d/rc.subr
+
+pexp="python${MODPY_VERSION} ${daemon}${daemon_flags:+ ${daemon_flags}}"
+rc_bg=YES
+rc_reload=NO
+
+rc_cmd $1

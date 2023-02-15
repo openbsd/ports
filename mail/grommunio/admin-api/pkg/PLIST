@@ -1,5 +1,6 @@
 @newgroup _grommunio:890
 @newuser _grommunio:890:_grommunio::Gromox Account:/var/empty:/sbin/nologin
+@rcscript ${RCDIR}/grommunio_admin_api
 @mode 755
 @owner _grommunio
 @group _grommunio
@@ -35,6 +36,8 @@ share/examples/grommunio-admin-api/
 @sample ${SYSCONFDIR}/grommunio-admin-api/
 share/examples/grommunio-admin-api/conf.d/
 @sample ${SYSCONFDIR}/grommunio-admin-api/conf.d/
+share/examples/grommunio-admin-api/conf.d/database.yaml
+@sample ${SYSCONFDIR}/grommunio-admin-api/conf.d/database.yaml
 share/examples/grommunio-admin-api/sudoers.d/
 @sample ${SYSCONFDIR}/grommunio-admin-api/sudoers.d/
 share/examples/grommunio-admin-api/sudoers.d/grommunio-sudo
@@ -162,7 +165,6 @@ share/grommunio-admin-api/res/config.yaml
 share/grommunio-admin-api/res/domain.sqlite3
 share/grommunio-admin-api/res/ldapTemplates.yaml
 share/grommunio-admin-api/res/midb.sqlite3
-share/grommunio-admin-api/res/openapi.json
 share/grommunio-admin-api/res/openapi.yaml
 share/grommunio-admin-api/res/storelangs.json
 share/grommunio-admin-api/res/user.sqlite3

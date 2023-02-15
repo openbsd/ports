@@ -32,8 +32,13 @@ CONFIGURE_ARGS+=	-DCMAKE_INSTALL_LIBDIR=${PREFIX}/lib \
 			-DCONFDIR=${PREFIX}/share/examples/grommunio-admin-api \
 			-DCOMMONCONFDIR=${PREFIX}/share/examples/grommunio-admin-common
 
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/data/yaml2json.py ${WRKSRC}/main.py
+
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
 		${PREFIX}/share/grommunio-admin-api
+	${INSTALL_DATA} ${FILESDIR}/database.yaml \
+		${PREFIX}/share/examples/grommunio-admin-api/conf.d
 
 .include <bsd.port.mk>

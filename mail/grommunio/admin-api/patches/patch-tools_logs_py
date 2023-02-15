@@ -1,0 +1,12 @@
+Index: tools/logs.py
+--- tools/logs.py.orig
++++ tools/logs.py
+@@ -2,7 +2,7 @@
+ # SPDX-License-Identifier: AGPL-3.0-or-later
+ # SPDX-FileCopyrightText: 2021 grommunio GmbH
+ 
+-from systemd.journal import Reader
++#XXXfrom systemd.journal import Reader
+ 
+ class LogReader:
+     """Central log reader class."""
