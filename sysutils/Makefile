@@ -281,6 +281,7 @@
      SUBDIR += psftools
      SUBDIR += psrecord
      SUBDIR += pstree
+     SUBDIR += puppetserver
      SUBDIR += pv
      SUBDIR += py-analyzemft
      SUBDIR += py-ansible-compat,python3
