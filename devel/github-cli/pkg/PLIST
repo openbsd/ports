@@ -123,6 +123,7 @@
 @man man/man1/gh-run-view.1
 @man man/man1/gh-run-watch.1
 @man man/man1/gh-run.1
+@man man/man1/gh-search-commits.1
 @man man/man1/gh-search-issues.1
 @man man/man1/gh-search-prs.1
 @man man/man1/gh-search-repos.1

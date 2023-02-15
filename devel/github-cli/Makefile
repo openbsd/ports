@@ -1,6 +1,6 @@
 COMMENT =	command-line access to github pull requests, issues and more
 
-V =	2.21.1
+V =	2.23.0
 MODGO_MODNAME =	github.com/cli/cli/v${V:R:R}
 MODGO_VERSION =	v${V}
 
@@ -9,6 +9,8 @@ PKGNAME =	github-cli-${V}
 
 CATEGORIES =	devel
 HOMEPAGE =	https://cli.github.com/
+
+MAINTAINER =	Klemens Nanni <kn@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes
