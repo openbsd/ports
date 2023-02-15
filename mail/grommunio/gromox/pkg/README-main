@@ -5,8 +5,8 @@
 *** Upgrading users: refer to the grommunio documentation on the web to check
 *** if any particular step is required after upgrading to a new version.
 
-Kopano -> Grommunio migration upgrade
-=====================================
+Kopano -> Grommunio migration
+=============================
 
 See https://docs.grommunio.com/migration/
 
@@ -15,18 +15,47 @@ Post-install/update instructions for Gromox
 
 Before starting gromox for the first time
 -----------------------------------------
+Create a database for grommunio and grant permissions for a user.
+    # mysql
+    MariaDB [(none)]> CREATE DATABSE grommunio;
+    MariaDB [(none)]> GRANT ALL PRIVILEGES ON grommunio.* TO 'grommunio'@'localhost' IDENTIFIED BY 'password';
+    MariaDB [(none)]> FLUSH PRIVILEGES;
+
 Configure SQL connection settings in /etc/gromox/mysql_adaptor.cfg.
 
 Create the database schema.
     # gromox-dbop -C
 
+Starting gromox services
+------------------------
+Gromox consist of several services that can be enabled and started with a 'meta' rc.d script.
+    # rcctl enable gromox
+    # rcctl start gromox
+
 After gromox was started for the first time
 -------------------------------------------
+Install the grommunio-admin package to be able to manage the grommunio installation.
+    # pkg_add grommunio-admin
+
+Configure grommunio-admin's database settings by editing /etc/grommunio-admin-api/conf.d/database.yaml.
+ 
 Setting up the password for the admin user.
     # grommunio-admin passwd
 
+Create a domain to be handled by grommunio (-u is mandatory and sets the maximum number of users).
+    # grommunio-admin domain create -u 999 example.com
+
+Create a user to be handled by grommunio
+    # grommunio-admin user create --lang en_US joe@example.com
+
+Set the password for the user.
+    # grommunio-admin passwd robert@nerd.hu
+
 Mail delivery agent configuration
 =================================
+
+By default grommunio will handle SMTP connections on port 24 so a forwarding for
+specific domains have to be configured by your SMTP server.
 
 See the following URL for other MTA integration:
     https://docs.grommunio.com/admin/manual_core.html#loopback-mail

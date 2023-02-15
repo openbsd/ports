@@ -86,9 +86,17 @@ CONFIGURE_STYLE=	autoreconf
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.16
 
-CONFIGURE_ARGS=	--disable-static
+CONFIGURE_ARGS=	--disable-static \
+		--with-php=${MODPHP_PHP_CONFIG}
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples \
 		phpinidir=${PREFIX}/share/examples/php-${MODPHP_VERSION}
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gromox
+	${INSTALL_DATA} ${FILESDIR}/http.cfg \
+		${FILESDIR}/mysql_adaptor.cfg \
+		${FILESDIR}/smtp.cfg \
+		${PREFIX}/share/examples/gromox
 
 .include <bsd.port.mk>

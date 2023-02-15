@@ -9,9 +9,15 @@ rc_bg=YES
 
 rc_pre() {
 	install -d -o _gromox -g _gromox /var/run/gromox
-	install -d -o _gromox -g _gromox /var/db/gromox/queue/mess
-	install -d -o _gromox -g _gromox /var/db/gromox/queue/save
-	install -d -o _gromox -g _gromox /var/db/gromox/queue/cache
+	for _q in mess save timer cache clone insulation; do
+		[ -d /var/db/gromox/queue${_q} ] || \
+			install -d -o _gromox -g _gromox \
+			/var/db/gromox/queue/${_q}
+	done
+	if [ ! -f /var/db/gromox/queue/token.ipc ]; then
+		touch /var/db/gromox/queue/token.ipc
+		chown _gromox:_gromox /var/db/gromox/queue/token.ipc
+	fi
 }
 
 rc_cmd $1
