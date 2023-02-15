@@ -1,6 +1,6 @@
 COMMENT =		GitLab CLI tool
 
-V =			1.24.1
+V =			1.25.3
 MODGO_MODNAME =		gitlab.com/gitlab-org/cli
 MODGO_VERSION =		v${V}
 
@@ -9,6 +9,8 @@ PKGNAME =		gitlab-cli-${V}
 
 CATEGORIES =		sysutils
 HOMEPAGE =		https://docs.gitlab.com/ee/integration/glab/
+
+MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes

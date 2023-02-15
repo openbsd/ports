@@ -23,6 +23,9 @@
 @man man/man1/glab-config-get.1
 @man man/man1/glab-config-set.1
 @man man/man1/glab-config.1
+@man man/man1/glab-incident-list.1
+@man man/man1/glab-incident-view.1
+@man man/man1/glab-incident.1
 @man man/man1/glab-issue-board-create.1
 @man man/man1/glab-issue-board-view.1
 @man man/man1/glab-issue-board.1
@@ -79,6 +82,8 @@
 @man man/man1/glab-repo-transfer.1
 @man man/man1/glab-repo-view.1
 @man man/man1/glab-repo.1
+@man man/man1/glab-schedule-list.1
+@man man/man1/glab-schedule.1
 @man man/man1/glab-snippet-create.1
 @man man/man1/glab-snippet.1
 @man man/man1/glab-ssh-key-add.1
