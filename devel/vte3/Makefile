@@ -3,11 +3,15 @@ COMMENT-gtk4=		GTK4 terminal emulation library
 COMMENT-common=		shared files for vte3
 
 GNOME_PROJECT=		vte
-GNOME_VERSION=		0.70.2
+GNOME_VERSION=		0.70.3
 
 PKGNAME-main=		vte3-${GNOME_VERSION}
 PKGNAME-gtk4=		vte3-gtk4-${GNOME_VERSION}
 PKGNAME-common=		vte3-common-${GNOME_VERSION}
+
+# override gnome MODULE
+MASTER_SITES=		https://gitlab.gnome.org/GNOME/${GNOME_PROJECT}/-/archive/${GNOME_VERSION}/
+EXTRACT_SUFX=		.tar.gz
 
 SHARED_LIBS += vte-2.91                  2.8 # 0.7000.1
 SHARED_LIBS += vte-2.91-gtk4             0.0 # 0
