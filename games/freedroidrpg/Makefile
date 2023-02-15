@@ -1,50 +1,50 @@
-ONLY_FOR_ARCHS=	${GCC4_ARCHS} ${CLANG_ARCHS}
+ONLY_FOR_ARCHS=		${GCC4_ARCHS} ${CLANG_ARCHS}
 
-COMMENT=	isometric RPG game
+COMMENT=		isometric RPG game
 
-DISTNAME =	freedroidRPG-0.16.1
-PKGNAME =	${DISTNAME:L}
-CATEGORIES=	games x11
-REVISION =	5
+DISTNAME=		freedroidRPG-1.0
+PKGNAME=		${DISTNAME:L}
+CATEGORIES=		games x11
 
-HOMEPAGE =	https://www.freedroid.org/
+HOMEPAGE=		https://www.freedroid.org/
 
 # GPLv2+
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE=		Yes
 
-WANTLIB =  ${MODLUA_WANTLIB}
-WANTLIB += GL SDL SDL_gfx SDL_image SDL_mixer X11 c execinfo iconv intl
-WANTLIB += jpeg m ogg png pthread vorbis z
+WANTLIB += ${MODLUA_WANTLIB}
+WANTLIB += GL GLEW GLU SDL SDL_gfx SDL_image SDL_mixer X11 Xext
+WANTLIB += Xi Xmu c execinfo iconv intl jpeg m ogg png pthread
+WANTLIB += vorbis z
 
-MASTER_SITES =	https://ftp.osuosl.org/pub/freedroid/${DISTNAME:R}/ \
-		ftp://ftp.osuosl.org/pub/freedroid/${DISTNAME:R}/
+MASTER_SITES=		https://ftp.osuosl.org/pub/freedroid/${DISTNAME}/
 
-WRKDIST =	${WRKDIR}/${DISTNAME:L}
+WRKDIST=		${WRKDIR}/${DISTNAME:L}
 
-MODULES =	lang/lua \
-		lang/python
+MODULES=		lang/lua \
+			lang/python
 
-MODLUA_SA =	Yes
-MODLUA_VERSION =5.3
+MODLUA_SA=		Yes
+MODLUA_VERSION=		5.3
 
-MODPY_RUNDEP =	No
+USE_GMAKE=		Yes
 
-BUILD_DEPENDS =	lang/gawk
-LIB_DEPENDS=	devel/sdl-gfx \
-		devel/sdl-image \
-		devel/sdl-mixer \
-		${MODLUA_LIB_DEPENDS}
-RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+MODPY_RUNDEP=		No
 
-CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		LUA_CFLAGS="$$(pkg-config --cflags ${MODLUA_DEP})" \
-		LUA_LIBS="$$(pkg-config --libs ${MODLUA_DEP})" \
-		ac_cv_path_LUADOX=
+LIB_DEPENDS=		devel/sdl-gfx \
+			devel/sdl-image \
+			devel/sdl-mixer \
+			graphics/glew \
+			${MODLUA_LIB_DEPENDS}
 
-USE_GMAKE =	Yes
-MAKE_FLAGS =	AWK=gawk
+RUN_DEPENDS=		devel/desktop-file-utils \
+			x11/gtk+3,-guic
+
+CONFIGURE_STYLE=	gnu
+
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib" \
+			LUA_CFLAGS="$$(pkg-config --cflags ${MODLUA_DEP})" \
+			LUA_LIBS="$$(pkg-config --libs ${MODLUA_DEP})" \
+			ac_cv_path_LUADOX=
 
 .include <bsd.port.mk>
