@@ -1,0 +1,18 @@
+Index: ext/bin/puppetserver
+--- ext/bin/puppetserver.orig
++++ ext/bin/puppetserver
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/bin/env bash
+ 
+ #set default privileges to -rw-r-----
+ umask 027
+@@ -13,7 +13,7 @@ elif [ `uname` == "OpenBSD" ] ; then
+     JAVA_ARGS="-Xms2g -Xmx2g -Djruby.logger.class=com.puppetlabs.jruby_utils.jruby.Slf4jLogger"
+     TK_ARGS=""
+     USER="_puppet"
+-    INSTALL_DIR="/opt/puppetlabs/server/apps/puppetserver"
++    INSTALL_DIR="${LOCALBASE}/share/puppetlabs/puppetserver"
+     CONFIG="/etc/puppetlabs/puppetserver/conf.d"
+ else
+     echo "You seem to be missing some important configuration files; could not find /etc/default/puppetserver or /etc/sysconfig/puppetserver" >&2

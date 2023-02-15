@@ -1,0 +1,55 @@
+@rcscript ${RCDIR}/puppetserver
+bin/puppetserver
+share/doc/pkg-readmes/${PKGSTEM}
+share/examples/puppetlabs/
+share/examples/puppetlabs/puppetserver/
+@sample ${SYSCONFDIR}/puppetlabs/puppetserver/
+share/examples/puppetlabs/puppetserver/conf.d/
+@sample ${SYSCONFDIR}/puppetlabs/puppetserver/conf.d/
+share/examples/puppetlabs/puppetserver/conf.d/auth.conf
+@sample ${SYSCONFDIR}/puppetlabs/puppetserver/conf.d/auth.conf
+share/examples/puppetlabs/puppetserver/conf.d/ca.conf
+@sample ${SYSCONFDIR}/puppetlabs/puppetserver/conf.d/ca.conf
+share/examples/puppetlabs/puppetserver/conf.d/global.conf
+@sample ${SYSCONFDIR}/puppetlabs/puppetserver/conf.d/global.conf
+share/examples/puppetlabs/puppetserver/conf.d/metrics.conf
+@sample ${SYSCONFDIR}/puppetlabs/puppetserver/conf.d/metrics.conf
+share/examples/puppetlabs/puppetserver/conf.d/puppetserver.conf
+@sample ${SYSCONFDIR}/puppetlabs/puppetserver/conf.d/puppetserver.conf
+share/examples/puppetlabs/puppetserver/conf.d/web-routes.conf
+@sample ${SYSCONFDIR}/puppetlabs/puppetserver/conf.d/web-routes.conf
+share/examples/puppetlabs/puppetserver/conf.d/webserver.conf
+@sample ${SYSCONFDIR}/puppetlabs/puppetserver/conf.d/webserver.conf
+share/examples/puppetlabs/puppetserver/logback.xml
+@sample ${SYSCONFDIR}/puppetlabs/puppetserver/logback.xml
+share/examples/puppetlabs/puppetserver/request-logging.xml
+@sample ${SYSCONFDIR}/puppetlabs/puppetserver/request-logging.xml
+share/examples/puppetlabs/puppetserver/services.d/
+@sample ${SYSCONFDIR}/puppetlabs/puppetserver/services.d/
+share/examples/puppetlabs/puppetserver/services.d/bootstrap.cfg
+@sample ${SYSCONFDIR}/puppetlabs/puppetserver/services.d/bootstrap.cfg
+share/examples/puppetlabs/puppetserver/services.d/ca.cfg
+@sample ${SYSCONFDIR}/puppetlabs/puppetserver/services.d/ca.cfg
+share/puppetlabs/
+share/puppetlabs/puppetserver/
+share/puppetlabs/puppetserver/cli/
+share/puppetlabs/puppetserver/cli/apps/
+share/puppetlabs/puppetserver/cli/apps/ca
+share/puppetlabs/puppetserver/cli/apps/dropsonde
+share/puppetlabs/puppetserver/cli/apps/foreground
+share/puppetlabs/puppetserver/cli/apps/gem
+share/puppetlabs/puppetserver/cli/apps/irb
+share/puppetlabs/puppetserver/cli/apps/reload
+share/puppetlabs/puppetserver/cli/apps/ruby
+share/puppetlabs/puppetserver/cli/apps/start
+share/puppetlabs/puppetserver/cli/apps/stop
+share/puppetlabs/puppetserver/cli/cli-defaults.sh
+share/puppetlabs/puppetserver/ezbake-functions.sh
+share/puppetlabs/puppetserver/ezbake.manifest
+share/puppetlabs/puppetserver/puppet-server-release.jar
+@owner _puppet
+@group _puppet
+@sample ${LOCALSTATEDIR}/puppetlabs/puppetserver/
+@sample ${LOCALSTATEDIR}/puppetlabs/puppetserver/data/
+@sample ${LOCALSTATEDIR}/puppetlabs/puppetserver/data/state
+@sample ${LOCALSTATEDIR}/log/puppetlabs/puppetserver/

@@ -1,0 +1,18 @@
+Index: ext/ezbake-functions.sh
+--- ext/ezbake-functions.sh.orig
++++ ext/ezbake-functions.sh
+@@ -1,4 +1,4 @@
+-#! /bin/bash
++#! /usr/bin/env bash
+ #
+ # Useful shell functions for programs packaged with ezbake.
+ #
+@@ -126,7 +126,7 @@ init_restart_file()
+     local group="${GROUP:-puppet}"
+ 
+     if [ ! -e "$restartfile" ]; then
+-        /usr/bin/install --directory --owner=$user --group=$group --mode=755 "$restart_file_base_dir"
++        /usr/bin/install -d -o $user -g $group -m 755 "$restart_file_base_dir"
+         if [ $? -ne 0 ]; then
+             echo "Unable to create or set permissions for restart file at ${restart_file_base_dir}" 1>&2
+             return 1

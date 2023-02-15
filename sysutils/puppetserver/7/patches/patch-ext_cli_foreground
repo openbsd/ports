@@ -1,0 +1,36 @@
+Index: ext/cli/foreground
+--- ext/cli/foreground.orig
++++ ext/cli/foreground
+@@ -1,8 +1,16 @@
+ #!/usr/bin/env bash
+ 
+-restartfile="/opt/puppetlabs/server/data/puppetserver/restartcounter"
++restartfile="/var/puppetlabs/puppetserver/data/restartcounter"
+ cli_defaults=${INSTALL_DIR}/cli/cli-defaults.sh
+ 
++if [ -e "$cli_defaults" ]; then
++  . $cli_defaults
++  if [ $? -ne 0 ]; then
++    echo "Unable to initialize cli defaults, failing start." 1>&2
++    exit 1
++  fi
++fi
++
+ if [ ! -e "${INSTALL_DIR}/ezbake-functions.sh" ]; then
+     echo "Unable to find ${INSTALL_DIR}/ezbake-functions.sh script, failing start." 1>&2
+     exit 1
+@@ -18,14 +26,6 @@ then
+ fi
+ 
+ CLASSPATH="${INSTALL_DIR}/puppet-server-release.jar"
+-
+-if [ -e "$cli_defaults" ]; then
+-  . $cli_defaults
+-  if [ $? -ne 0 ]; then
+-    echo "Unable to initialize cli defaults, failing start." 1>&2
+-    exit 1
+-  fi
+-fi
+ 
+ COMMAND="${JAVA_BIN} ${JAVA_ARGS} ${LOG_APPENDER} \
+          -cp "$CLASSPATH" \

@@ -1,0 +1,13 @@
+#!/bin/ksh
+
+daemon=$(/usr/local/bin/javaPathHelper -c puppetserver)
+daemon_flags='-Xms1g -Xmx1g -Djruby.logger.class=com.puppetlabs.jruby_utils.jruby.Slf4jLogger -XX:OnOutOfMemoryError="kill -9 %p" -XX:ErrorFile=/var/log/puppetlabs/puppetserver/puppetserver_err_pid%p.log -cp /usr/local/share/puppetlabs/puppetserver/puppet-server-release.jar clojure.main -m puppetlabs.trapperkeeper.main --config /etc/puppetlabs/puppetserver/conf.d --bootstrap-config /etc/puppetlabs/puppetserver/services.d/ --restart-file /var/puppetlabs/puppetserver/data/restartcounter'
+daemon_user="_puppet"
+daemon_timeout=120
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+rc_reload=NO
+
+rc_cmd $1
