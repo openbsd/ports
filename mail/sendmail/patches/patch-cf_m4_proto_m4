@@ -3,7 +3,7 @@ net/uucp uses login _uucp and bump MaxHopCount
 Index: cf/m4/proto.m4
 --- cf/m4/proto.m4.orig
 +++ cf/m4/proto.m4
-@@ -307,7 +307,7 @@ _OPTION(TempFileMode, `confTEMP_FILE_MOD
+@@ -307,7 +307,7 @@ _OPTION(TempFileMode, `confTEMP_FILE_MODE', `0600')
  _OPTION(MatchGECOS, `confMATCH_GECOS', `False')
  
  # maximum hop count
@@ -12,7 +12,7 @@ Index: cf/m4/proto.m4
  
  # location of help file
  O HelpFile=ifdef(`HELP_FILE', HELP_FILE, `MAIL_SETTINGS_DIR`'helpfile')
-@@ -746,6 +746,7 @@ ifdef(`_USE_CT_FILE_', `', `#')Ft`'ifdef
+@@ -746,6 +746,7 @@ ifdef(`_USE_CT_FILE_', `', `#')Ft`'ifdef(`confCT_FILE'
  Troot
  Tdaemon
  ifdef(`_NO_UUCP_', `dnl', `Tuucp')
