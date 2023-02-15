@@ -12,6 +12,10 @@ MAINTAINER =	Anton Lindqvist <anton@openbsd.org>
 # ISC
 PERMIT_PACKAGE =	Yes
 
+# __builtin_{add,mul}_overflow() not available in base-gcc
+COMPILER =	base-clang ports-gcc
+COMPILER_LANGS =	c
+
 # uses pledge()
 WANTLIB +=	c
 
