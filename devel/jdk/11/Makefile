@@ -90,8 +90,8 @@ PARALLEL_MAKE_FLAGS=
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV+= AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		ac_cv_path_NAWK=awk
-CONFIGURE_ARGS=	MAKE=${GMAKE} \
+		ac_cv_path_GAWK=awk
+CONFIGURE_ARGS=	MAKE=${GMAKE} NAWK=awk \
 		--with-boot-jdk=${BOOT_JDK} \
 		--with-jobs=${MAKE_JOBS} \
 		--with-debug-level=release \
