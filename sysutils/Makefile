@@ -360,6 +360,7 @@
      SUBDIR += ruby-posix-spawn,ruby31
      SUBDIR += ruby-posix-spawn,ruby32
      SUBDIR += ruby-puppet
+     SUBDIR += ruby-puppetserver-ca
      SUBDIR += ruby-puppet-lint
      SUBDIR += ruby-puppet-syntax
      SUBDIR += ruby-r10k
