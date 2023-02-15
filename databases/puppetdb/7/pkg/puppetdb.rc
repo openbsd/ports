@@ -1,0 +1,13 @@
+#!/bin/ksh
+
+daemon=$(${LOCALBASE}/bin/javaPathHelper -c puppetdb)
+daemon_flags='-Xmx192m -Djdk.tls.ephemeralDHKeySize=2048 -XX:OnOutOfMemoryError="kill -9 %p" -XX:ErrorFile=${LOCALSTATEDIR}/log/puppetlabs/puppetdb/puppetdb_err_pid%p.log -cp ${PREFIX}/share/puppetlabs/puppetdb/puppetdb.jar clojure.main -m puppetlabs.puppetdb.cli.services --config ${SYSCONFDIR}/puppetlabs/puppetdb/conf.d --bootstrap-config ${SYSCONFDIR}/puppetlabs/puppetdb/bootstrap.cfg --restart-file ${LOCALSTATEDIR}/puppetlabs/puppetdb/data/restartcounter'
+daemon_user="_puppetdb"
+daemon_timeout=120
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+rc_reload=NO
+
+rc_cmd $1
