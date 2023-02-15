@@ -1,0 +1,34 @@
+From 8ff4cfd06ce554e9df31a088c9d09f45278c6de4 Mon Sep 17 00:00:00 2001
+From: Yasuhito Futatsuki <futatuki@apache.org>
+Date: Tue, 20 Sep 2022 12:57:06 +0000
+Subject: [PATCH] swig-py: Fix conditionals by SWIG version and by Python
+ version for proxy code.
+
+Index: subversion/bindings/swig/include/proxy.swg
+--- subversion/bindings/swig/include/proxy.swg.orig
++++ subversion/bindings/swig/include/proxy.swg
+@@ -66,7 +66,6 @@
+         fn()
+ 
+ %}
+-#if defined(SWIGPYTHON_PY3)
+ #if SWIG_VERSION >= 0x040000
+ %pythoncode %{
+   # -classic and -modern options have been dropped and this variable
+@@ -76,7 +75,7 @@
+   _set_instance_attr = _swig_setattr_nondynamic_instance_variable(object.__setattr__)
+ 
+ %}
+-#else
++#elif defined(SWIGPYTHON_PY3)
+ %pythoncode %{
+   # SWIG classes generated with -modern do not define this variable
+   try:
+@@ -90,7 +89,6 @@
+   _set_instance_attr = _swig_setattr_nondynamic_method(object.__setattr__)
+ 
+ %}
+-#endif
+ #else
+ %pythoncode %{
+   # SWIG classes generated with -classic do not define this variable,
