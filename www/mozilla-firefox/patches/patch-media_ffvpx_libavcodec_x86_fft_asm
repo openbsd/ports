@@ -17,20 +17,19 @@ Index: media/ffvpx/libavcodec/x86/fft.asm
      call r2
  %endmacro ; FFT_DISPATCH
  
-@@ -585,12 +581,6 @@ cglobal imdct_calc, 3,5,3
+@@ -585,11 +581,7 @@ cglobal imdct_calc, 3,5,3
      jl      .loop
      REP_RET
  
 -%ifdef PIC
 -%define SECTION_REL - $$
 -%else
--%define SECTION_REL
+ %define SECTION_REL
 -%endif
--
+ 
  %macro DECL_FFT 1-2 ; nbits, suffix
  %ifidn %0, 1
- %xdefine fullsuffix SUFFIX
-@@ -627,8 +617,10 @@ fft %+ n %+ fullsuffix:
+@@ -627,8 +619,10 @@ fft %+ n %+ fullsuffix:
  %endrep
  %undef n
  
