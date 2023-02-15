@@ -1,3 +1,4 @@
+BROKEN =	needs update - vendored quic-go does not support Go 1.20
 COMMENT =	matrix homeserver written in Go
 
 MODGO_MODNAME =	github.com/matrix-org/dendrite

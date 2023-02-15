@@ -1,3 +1,4 @@
+BROKEN =	needs update - vendored quic-go does not support Go 1.20
 COMMENT =	open decentralized synchronization utility
 
 V =		1.23.0
