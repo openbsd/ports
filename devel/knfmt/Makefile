@@ -1,6 +1,6 @@
 COMMENT =	kernel normal form formatter
 
-V =		3.0.1
+V =		4.0.0
 DISTNAME =	knfmt-${V}
 
 CATEGORIES =	devel
@@ -14,8 +14,6 @@ PERMIT_PACKAGE =	Yes
 
 # uses pledge()
 WANTLIB +=	c
-
-BUILD_DEPENDS =	devel/uthash
 
 MASTER_SITES =	https://github.com/mptre/knfmt/releases/download/v${V}/
 
