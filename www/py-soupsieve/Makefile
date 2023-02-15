@@ -1,10 +1,9 @@
 COMMENT =		modern CSS selector implementation for Beautiful Soup
 
-MODPY_EGG_VERSION =	2.3.2
+MODPY_EGG_VERSION =	2.4
 EPOCH =			0
 DISTNAME =		soupsieve-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		www
 
@@ -17,7 +16,6 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		hatchling
-MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
 FLAVOR =		python3
