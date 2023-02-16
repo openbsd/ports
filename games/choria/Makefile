@@ -6,6 +6,7 @@ DISTNAME =	choria-${V}-${COMMIT}-src
 PKGNAME =	choria-${V}
 CATEGORIES =	games x11
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
+REVISION =	0
 
 HOMEPAGE =	https://choria.gitlab.io/
 
@@ -43,7 +44,7 @@ NO_TEST =	Yes
 
 WRKDIST =	${WRKDIR}/choria-${V}-${COMMIT}
 
-post-patch:
+pre-configure:
 	perl -pi -e "s,games/,,g" ${WRKSRC}/CMakeLists.txt \
 				  ${WRKSRC}/deployment/choria
 	perl -pi -e "s,games,bin,g" ${WRKSRC}/CMakeLists.txt
