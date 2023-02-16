@@ -1,34 +1,43 @@
 COMMENT =	Tcl bindings for Curl
 
-V =		7.19.6
+V =		7.22.0
 
-DISTNAME =	TclCurl-${V}
+DISTNAME =	tclcurl-${V}
+GH_ACCOUNT =	flightaware
+GH_PROJECT =	tclcurl-fa
+GH_COMMIT =	ed4856901dee2784ceeb6d2ee0d621fe05aa0134
 CATEGORIES =	net
-REVISION =	7
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE =Yes
 
-WANTLIB =  crypto curl iconv intl nghttp2 ssl z
+WANTLIB =	curl
 
-MASTER_SITES =	https://distfiles.sigtrap.nl/
 MODULES =	lang/tcl
-LIB_DEPENDS =	devel/gettext,-runtime \
-		net/curl
 BUILD_DEPENDS =	${MODTCL_BUILD_DEPENDS}
 RUN_DEPENDS =	${MODTCL_RUN_DEPENDS}
-FAKE_FLAGS =	PKG_DIR=tclcurl INSTALL_LIBRARY='$$(INSTALL_DATA)'
+LIB_DEPENDS =	net/curl
+
+FAKE_FLAGS =	PKG_DIR=tclcurl \
+		INSTALL_LIBRARY='$$(INSTALL_DATA)'
+
+TEST_FLAGS =	TESTFLAGS='${TESTFLAGS}'
 SEPARATE_BUILD =Yes
 CONFIGURE_STYLE=gnu
 
 CONFIGURE_ARGS+=--with-tcl=${MODTCL_LIBDIR} \
-		--libdir=${MODTCL_TCLDIR} \
-		CFLAGS="${CFLAGS} -pthread"
+		--libdir=${MODTCL_TCLDIR}
 
-NO_TEST =	Yes
+TEST_TARGET =	test
 SUBST_VARS =	VER
 
 VER =		${V:S/.//g}
+
+# Use TESTFLAGS to control the TclCurl tests
+TESTFLAGS =
+
+pre-test:
+	ln -sf ${WRKSRC}/generic/tclcurl.tcl ${WRKBUILD}/
 
 .include <bsd.port.mk>

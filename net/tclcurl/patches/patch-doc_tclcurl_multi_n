@@ -1,6 +1,6 @@
-Index: doc/tclcurl.n
---- doc/tclcurl.n.orig
-+++ doc/tclcurl.n
+Index: doc/tclcurl_multi.n
+--- doc/tclcurl_multi.n.orig
++++ doc/tclcurl_multi.n
 @@ -1,7 +1,7 @@
  .\" You can view this file with:
  .\" nroff -man [file]

@@ -1,5 +1,5 @@
 lib/tcl/tclcurl/
-lib/tcl/tclcurl/libTclCurl${VER}.so
+@so lib/tcl/tclcurl/libTclCurl${VER}.so
 lib/tcl/tclcurl/pkgIndex.tcl
 lib/tcl/tclcurl/tclcurl.tcl
 @man man/mann/tclcurl.n

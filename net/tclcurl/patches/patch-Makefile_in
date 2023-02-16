@@ -1,10 +1,25 @@
---- Makefile.in.orig	Wed Sep 23 11:19:24 2009
-+++ Makefile.in	Thu Jan  6 09:40:07 2011
+Use absolute build dir path to make tests work.
+Don't compress man pages.
+The generated pkgIndex.tcl file is found in the build dir.
+
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -86,7 +86,7 @@ pkgdatadir	= $(datadir)/$(PKG_DIR)
+ pkglibdir	= $(libdir)/$(PKG_DIR)
+ pkgincludedir	= $(includedir)/$(PKG_DIR)
+ 
+-top_builddir	= .
++top_builddir	= @abs_top_builddir@
+ 
+ INSTALL		= @INSTALL@
+ INSTALL_PROGRAM	= @INSTALL_PROGRAM@
 @@ -232,10 +232,7 @@ install-doc: doc
  	@echo "Installing documentation in $(DESTDIR)$(mandir)"
  	@list='$(srcdir)/doc/*.n'; for i in $$list; do \
  	    echo "Installing $$i"; \
--    	    rm -f $(DESTDIR)$(mandir)/mann/`basename $$i`; \
+-	    rm -f $(DESTDIR)$(mandir)/mann/`basename $$i`; \
 -	    gzip $$i; \
 -	    $(INSTALL_DATA) $$i.gz $(DESTDIR)$(mandir)/mann ; \
 -	    gunzip $$i.gz; \
@@ -12,12 +27,12 @@
  	done
  
  test: binaries libraries
-@@ -423,7 +420,7 @@ install-bin-binaries: binaries
- install-scripts: scripts
- 		@for i in generic/$(TCLCURL_SCRIPTS) ; do    \
- 		echo "Installing $$i" ;                      \
--		$(INSTALL_DATA) $$i $(DESTDIR)$(pkglibdir) ; \
-+		$(INSTALL_DATA) $(srcdir)/$$i $(DESTDIR)$(pkglibdir) ; \
- 	done;
+@@ -395,7 +392,7 @@ install-lib-binaries: binaries
+ 	done
+ 	@if test "x$(SHARED_BUILD)" = "x1"; then \
+ 	    echo " Install pkgIndex.tcl $(DESTDIR)$(pkglibdir)"; \
+-	    $(INSTALL_DATA) $(srcdir)/pkgIndex.tcl $(DESTDIR)$(pkglibdir); \
++	    $(INSTALL_DATA) pkgIndex.tcl $(DESTDIR)$(pkglibdir); \
+ 	fi
  
- .SUFFIXES: .c .$(OBJEXT)
+ #========================================================================
