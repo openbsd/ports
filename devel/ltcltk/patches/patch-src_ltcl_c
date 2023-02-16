@@ -1,0 +1,93 @@
+Add missing #defines needed to build against Lua 5.4.
+Fixes for vars not always set.
+Use newer, non-deprecated method to save/restore a Tcl interpreter state.
+
+
+Index: src/ltcl.c
+--- src/ltcl.c.orig
++++ src/ltcl.c
+@@ -46,10 +46,14 @@
+ 
+ #define luaL_reg      luaL_Reg
+ 
++#define lua_objlen    lua_rawlen
++
+ #define luaL_checkint luaL_checkinteger
+ 
+ #define luaL_optint   luaL_optinteger
+ 
++#define lua_equal(L,x,y) lua_compare(L,x,y,LUA_OPEQ)
++
+ #define luaL_register(L,nm,tb) ((nm == NULL) ? NULL : lua_newtable(L), luaL_setfuncs(L, tb, 0))
+ 
+ #else
+@@ -746,7 +750,8 @@ static int ltcl_eval(lua_State *L)
+ 	if (lua_isnumber(L, base)) {
+ 		flags = luaL_checkint(L, base);
+ 		base += 1;
+-	}
++	} else
++		flags = 0;
+ 	cmd = luaL_checklstring(L, base, &cmdlen);
+ 
+ 	Tcl_ResetResult(tcli);
+@@ -805,7 +810,8 @@ static int ltcl_call(lua_State *L)
+ 		flags = luaL_checkint(L, 2);
+ 		nargs -= 1;
+ 		base += 1;
+-	}
++	} else
++		flags = 0;
+ 
+ 	/* function name must be string */
+ 	luaL_checkstring(L, base);
+@@ -873,7 +879,8 @@ static int ltcl_callt(lua_State *L)
+ 	if (lua_isnumber(L, 2)) {
+ 		flags = luaL_checkint(L, 2);
+ 		base += 1;
+-	}
++	} else
++		flags = 0;
+ 
+ 	/* function name must be string */
+ 	luaL_checkstring(L, base);
+@@ -1439,8 +1446,7 @@ static char *ltcl_tracewrapper(ClientData cdata, Tcl_I
+ 	lua_State *L = lcd->L;
+ 	const char *fname = lcd->fname;
+ 	int callres, stop;
+-	char *saveresult;
+-	Tcl_FreeProc *saveproc;
++	Tcl_InterpState state;
+ 	char *traceres = NULL;
+ 	const char *s;
+ 	size_t l;
+@@ -1456,7 +1462,8 @@ static char *ltcl_tracewrapper(ClientData cdata, Tcl_I
+ 		if (ok != TCL_OK) {
+ 			s = Tcl_GetStringResult(tcli);
+ 			l = strlen(s);
+-		}
++		} else
++			s = NULL;
+ 	} else {
+ 	/* otherwise call the handler function.
+ 	 */
+@@ -1476,16 +1483,14 @@ static char *ltcl_tracewrapper(ClientData cdata, Tcl_I
+ 			lua_pushnil(L);
+ 		lua_pushinteger(L, flags);
+ 
+-		/* save Tcl_Interp result and freeProc */
+-		saveresult = tcli->result;
+-		saveproc = tcli->freeProc;
+-		tcli->freeProc = NULL;
++		/* save Tcl_Interp state */
++		state = Tcl_SaveInterpState(tcli, TCL_OK);
+ 
+ 		/* call functions */
+ 		callres = lua_pcall(L, 3, 1, 0); /* 3 return value if any */
+ 
+ 		/* restore saved tcl interpreter data */
+-		Tcl_SetResult(tcli, saveresult, saveproc);
++		Tcl_RestoreInterpState(tcli, state);
+ 
+ 		s = lua_tolstring(L, -1, &l);
+ 	}

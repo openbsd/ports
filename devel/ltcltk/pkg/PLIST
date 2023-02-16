@@ -1,10 +1,13 @@
-lib/lua/${MODLUA_VERSION}/ltcl.so
+bin/ltksh
+@so lib/lua/${MODLUA_VERSION}/ltcl.so
 share/doc/ltcltk/
 share/doc/ltcltk/LICENSE
 share/doc/ltcltk/README
 share/doc/ltcltk/README_ltcl
 share/doc/ltcltk/README_ltk
+share/doc/ltcltk/proto-doc
 share/examples/ltcltk/
+share/examples/ltcltk/2018_advent_10b.lua
 share/examples/ltcltk/ltcltest.lua
 share/examples/ltcltk/ltkaddwidget.lua
 share/examples/ltcltk/ltkcheckers.lua
@@ -14,6 +17,7 @@ share/examples/ltcltk/ltkhtext.lua
 share/examples/ltcltk/ltkimage.lua
 share/examples/ltcltk/ltkoptionmenu.lua
 share/examples/ltcltk/renumbertests.lua
+share/examples/ltcltk/rockgui.lua
 share/examples/ltcltk/tkbrowse.lua
 share/examples/ltcltk/tkhello.lua
 share/examples/ltcltk/tktcolor.lua
