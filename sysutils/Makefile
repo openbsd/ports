@@ -219,6 +219,7 @@
      SUBDIR += ncal
      SUBDIR += ncdu
      SUBDIR += neofetch
+     SUBDIR += nix
      SUBDIR += nnn
      SUBDIR += nnn,nerd
      SUBDIR += node_exporter
