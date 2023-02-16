@@ -1,0 +1,144 @@
+@bin bin/nix
+bin/nix-build
+bin/nix-channel
+bin/nix-collect-garbage
+bin/nix-copy-closure
+bin/nix-daemon
+bin/nix-env
+bin/nix-hash
+bin/nix-instantiate
+bin/nix-prefetch-url
+bin/nix-shell
+bin/nix-store
+include/nix/
+include/nix/affinity.hh
+include/nix/archive.hh
+include/nix/args.hh
+include/nix/attr-path.hh
+include/nix/attr-set.hh
+include/nix/binary-cache-store.hh
+include/nix/builtins.hh
+include/nix/common-args.hh
+include/nix/common-eval-args.hh
+include/nix/compression.hh
+include/nix/config.h
+include/nix/config.hh
+include/nix/crypto.hh
+include/nix/derivations.hh
+include/nix/download.hh
+include/nix/eval-inline.hh
+include/nix/eval.hh
+include/nix/finally.hh
+include/nix/fs-accessor.hh
+include/nix/function-trace.hh
+include/nix/get-drvs.hh
+include/nix/globals.hh
+include/nix/hash.hh
+include/nix/istringstream_nocopy.hh
+include/nix/json-to-value.hh
+include/nix/json.hh
+include/nix/lazy.hh
+include/nix/lexer-tab.hh
+include/nix/local-store.hh
+include/nix/logging.hh
+include/nix/lru-cache.hh
+include/nix/machines.hh
+include/nix/monitor-fd.hh
+include/nix/names.hh
+include/nix/nar-accessor.hh
+include/nix/nar-info-disk-cache.hh
+include/nix/nar-info.hh
+include/nix/nixexpr.hh
+include/nix/parsed-derivations.hh
+include/nix/parser-tab.hh
+include/nix/pathlocks.hh
+include/nix/pool.hh
+include/nix/primops.hh
+include/nix/profiles.hh
+include/nix/ref.hh
+include/nix/references.hh
+include/nix/remote-fs-accessor.hh
+include/nix/remote-store.hh
+include/nix/s3-binary-cache-store.hh
+include/nix/s3.hh
+include/nix/schema.sql.gen.hh
+include/nix/serialise.hh
+include/nix/serve-protocol.hh
+include/nix/shared.hh
+include/nix/sqlite.hh
+include/nix/ssh.hh
+include/nix/store-api.hh
+include/nix/symbol-table.hh
+include/nix/sync.hh
+include/nix/thread-pool.hh
+include/nix/types.hh
+include/nix/util.hh
+include/nix/value-to-json.hh
+include/nix/value-to-xml.hh
+include/nix/value.hh
+include/nix/worker-protocol.hh
+include/nix/xml-writer.hh
+@lib lib/libnixexpr.so.${LIBnixexpr_VERSION}
+@lib lib/libnixmain.so.${LIBnixmain_VERSION}
+@lib lib/libnixstore.so.${LIBnixstore_VERSION}
+@lib lib/libnixutil.so.${LIBnixutil_VERSION}
+lib/pkgconfig/nix-expr.pc
+lib/pkgconfig/nix-main.pc
+lib/pkgconfig/nix-store.pc
+libexec/nix/
+libexec/nix/build-remote
+@man man/man1/nix-build.1
+@man man/man1/nix-channel.1
+@man man/man1/nix-collect-garbage.1
+@man man/man1/nix-copy-closure.1
+@man man/man1/nix-env.1
+@man man/man1/nix-hash.1
+@man man/man1/nix-instantiate.1
+@man man/man1/nix-prefetch-url.1
+@man man/man1/nix-shell.1
+@man man/man1/nix-store.1
+@man man/man5/nix.conf.5
+@man man/man8/nix-daemon.8
+share/doc/nix/
+share/doc/nix/manual/
+share/doc/nix/manual/figures/
+share/doc/nix/manual/figures/user-environments.png
+share/doc/nix/manual/images/
+share/doc/nix/manual/images/callouts/
+share/doc/nix/manual/images/callouts/1.gif
+share/doc/nix/manual/images/callouts/10.gif
+share/doc/nix/manual/images/callouts/11.gif
+share/doc/nix/manual/images/callouts/12.gif
+share/doc/nix/manual/images/callouts/13.gif
+share/doc/nix/manual/images/callouts/14.gif
+share/doc/nix/manual/images/callouts/15.gif
+share/doc/nix/manual/images/callouts/2.gif
+share/doc/nix/manual/images/callouts/3.gif
+share/doc/nix/manual/images/callouts/4.gif
+share/doc/nix/manual/images/callouts/5.gif
+share/doc/nix/manual/images/callouts/6.gif
+share/doc/nix/manual/images/callouts/7.gif
+share/doc/nix/manual/images/callouts/8.gif
+share/doc/nix/manual/images/callouts/9.gif
+share/doc/nix/manual/index.html
+share/doc/nix/manual/manual.html
+share/examples/nix/
+@sample ${SYSCONFDIR}/nix/
+share/examples/nix/profile.d/
+@sample ${SYSCONFDIR}/nix/profile.d/
+share/examples/nix/profile.d/nix-daemon.sh
+@sample ${SYSCONFDIR}/nix/profile.d/nix-daemon.sh
+share/examples/nix/profile.d/nix.sh
+@sample ${SYSCONFDIR}/nix/profile.d/nix.sh
+share/nix/
+share/nix/corepkgs/
+share/nix/corepkgs/buildenv.nix
+share/nix/corepkgs/config.nix
+share/nix/corepkgs/derivation.nix
+share/nix/corepkgs/fetchurl.nix
+share/nix/corepkgs/imported-drv-to-derivation.nix
+share/nix/corepkgs/unpack-channel.nix
+share/nix/sandbox/
+share/nix/sandbox/sandbox-defaults.sb
+share/nix/sandbox/sandbox-minimal.sb
+share/nix/sandbox/sandbox-network.sb

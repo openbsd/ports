@@ -1,0 +1,14 @@
+Use gtar(1) not tar(1) due to dynamic compression support
+
+Index: src/libstore/download.cc
+--- src/libstore/download.cc.orig
++++ src/libstore/download.cc
+@@ -918,7 +918,7 @@ CachedDownloadResult Downloader::downloadCached(
+             Path tmpDir = createTempDir();
+             AutoDelete autoDelete(tmpDir, true);
+             // FIXME: this requires GNU tar for decompression.
+-            runProgram("tar", true, {"xf", store->toRealPath(storePath), "-C", tmpDir, "--strip-components", "1"});
++            runProgram("gtar", true, {"xf", store->toRealPath(storePath), "-C", tmpDir, "--strip-components", "1"});
+             unpackedStorePath = store->addToStore(name, tmpDir, true, htSHA256, defaultPathFilter, NoRepair);
+         }
+         replaceSymlink(unpackedStorePath, unpackedLink);

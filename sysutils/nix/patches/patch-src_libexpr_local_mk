@@ -1,0 +1,14 @@
+Link libexpr against libc.
+
+Index: src/libexpr/local.mk
+--- src/libexpr/local.mk.orig
++++ src/libexpr/local.mk
+@@ -8,7 +8,7 @@ libexpr_SOURCES := $(wildcard $(d)/*.cc) $(wildcard $(
+ 
+ libexpr_LIBS = libutil libstore
+ 
+-libexpr_LDFLAGS =
++libexpr_LDFLAGS = -lc
+ ifdef HOST_LINUX
+  libexpr_LDFLAGS += -ldl
+ endif

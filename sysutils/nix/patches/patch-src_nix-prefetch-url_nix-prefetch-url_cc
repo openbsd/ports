@@ -1,0 +1,14 @@
+Use gtar(1) not tar(1) due to dynamic compression support
+
+Index: src/nix-prefetch-url/nix-prefetch-url.cc
+--- src/nix-prefetch-url/nix-prefetch-url.cc.orig
++++ src/nix-prefetch-url/nix-prefetch-url.cc
+@@ -193,7 +193,7 @@ static int _main(int argc, char * * argv)
+                     runProgram("unzip", true, {"-qq", tmpFile, "-d", unpacked});
+                 else
+                     // FIXME: this requires GNU tar for decompression.
+-                    runProgram("tar", true, {"xf", tmpFile, "-C", unpacked});
++                    runProgram("gtar", true, {"xf", tmpFile, "-C", unpacked});
+ 
+                 /* If the archive unpacks to a single file/directory, then use
+                    that as the top-level. */

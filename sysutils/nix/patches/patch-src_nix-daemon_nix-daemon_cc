@@ -1,0 +1,25 @@
+OpenBSD does not have ucred.pid
+
+Index: src/nix-daemon/nix-daemon.cc
+--- src/nix-daemon/nix-daemon.cc.orig
++++ src/nix-daemon/nix-daemon.cc
+@@ -27,8 +27,9 @@
+ #include <fcntl.h>
+ #include <limits.h>
+ 
+-#if __APPLE__ || __FreeBSD__
++#if __APPLE__ || __FreeBSD__ || __OpenBSD__
+ #include <sys/ucred.h>
++#define LOCAL_PEERCRED 1
+ #endif
+ 
+ using namespace nix;
+@@ -899,7 +900,7 @@ static PeerInfo getPeerInfo(int remote)
+ {
+     PeerInfo peer = { false, 0, false, 0, false, 0 };
+ 
+-#if defined(SO_PEERCRED)
++#if defined(SO_PEERCRED) && !defined(__OpenBSD__)
+ 
+     ucred cred;
+     socklen_t credLen = sizeof(cred);
