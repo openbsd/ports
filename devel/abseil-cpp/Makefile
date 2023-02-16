@@ -4,6 +4,7 @@ CATEGORIES =	devel
 GH_ACCOUNT =	abseil
 GH_PROJECT =	${GH_ACCOUNT}-cpp
 GH_TAGNAME =	20230125.0
+REVISION =	0
 
 HOMEPAGE =	https://abseil.io/
 
@@ -35,6 +36,8 @@ ABSL_LIBS = \
     raw_logging_internal scoped_set_env spinlock_wait stacktrace status \
     statusor str_format_internal strerror strings strings_internal symbolize \
     synchronization throw_delegate time time_zone
+# TESTONLY but needed by other ports
+ABSL_LIBS +=	scoped_mock_log
 .for _lib in ${ABSL_LIBS}
 SHARED_LIBS +=		absl_${_lib}	2.0	# 2301.0.0
 .endfor

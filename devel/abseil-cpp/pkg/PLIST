@@ -483,6 +483,7 @@ lib/cmake/absl/abslTargets.cmake
 @lib lib/libabsl_random_seed_sequences.so.${LIBabsl_random_seed_sequences_VERSION}
 @lib lib/libabsl_raw_hash_set.so.${LIBabsl_raw_hash_set_VERSION}
 @lib lib/libabsl_raw_logging_internal.so.${LIBabsl_raw_logging_internal_VERSION}
+@lib lib/libabsl_scoped_mock_log.so.${LIBabsl_scoped_mock_log_VERSION}
 @lib lib/libabsl_scoped_set_env.so.${LIBabsl_scoped_set_env_VERSION}
 @lib lib/libabsl_spinlock_wait.so.${LIBabsl_spinlock_wait_VERSION}
 @lib lib/libabsl_stacktrace.so.${LIBabsl_stacktrace_VERSION}
@@ -650,6 +651,7 @@ lib/pkgconfig/absl_raw_hash_map.pc
 lib/pkgconfig/absl_raw_hash_set.pc
 lib/pkgconfig/absl_raw_logging_internal.pc
 lib/pkgconfig/absl_sample_recorder.pc
+lib/pkgconfig/absl_scoped_mock_log.pc
 lib/pkgconfig/absl_scoped_set_env.pc
 lib/pkgconfig/absl_span.pc
 lib/pkgconfig/absl_spinlock_wait.pc

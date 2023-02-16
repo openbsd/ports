@@ -1,0 +1,13 @@
+Ship scoped_mock_log library, needed by devel/protobuf tests
+
+Index: absl/log/CMakeLists.txt
+--- absl/log/CMakeLists.txt.orig
++++ absl/log/CMakeLists.txt
+@@ -637,7 +637,6 @@ absl_cc_library(
+     GTest::gmock
+     GTest::gtest
+   PUBLIC
+-  TESTONLY
+ )
+ 
+ absl_cc_library(
