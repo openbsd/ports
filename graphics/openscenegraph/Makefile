@@ -10,7 +10,7 @@ GH_ACCOUNT =		openscenegraph
 GH_PROJECT =		OpenSceneGraph
 GH_TAGNAME =		OpenSceneGraph-$V
 DISTNAME =		openscenegraph-${V}
-REVISION =		3
+REVISION =		4
 
 SUBST_VARS +=		V
 
@@ -64,6 +64,8 @@ LIB_DEPENDS =		devel/sdl \
 			x11/gnome/librsvg
 
 NO_TEST =		Yes
+
+CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_OpenCascade:Bool=Yes
 
 # Fix build with OpenEXR>=3 (Imath split)
 CXXFLAGS +=		-I${LOCALBASE}/include/Imath
