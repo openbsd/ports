@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.148 2023/02/08 09:57:43 espie Exp $
+# $OpenBSD: Engine.pm,v 1.149 2023/02/16 13:44:13 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -336,8 +336,12 @@ sub adjust_extra
 			$self->has_known_depends($d)) ||
 		    ($d->has_fullpkgname &&
 		    $d->fullpkgname eq $v->fullpkgname)) {
-			delete $v->{info}{$kind}{$d};
-			$v->{info}{$kind2}{$d} = $d if defined $kind2;
+		    	if ($self->adjust_distfiles($d)) {
+				$not_yet++;
+			} else {
+				delete $v->{info}{$kind}{$d};
+				$v->{info}{$kind2}{$d} = $d if defined $kind2;
+			}
 		} else {
 			$not_yet++;
 		}
@@ -531,6 +535,40 @@ sub new_path
 	my $has = {};
 	$self->adjust_depends1($v, $has);
 	$self->adjust_depends2($v, $has);
+}
+
+sub new_fetch_path
+{
+	my ($self, $v) = @_;
+	if (defined $v->{info}{IGNORE} && 
+	    !$self->{state}{fetch_only}) {
+		$self->log('!', $v, $v->{info}{IGNORE}->string);
+		$self->stub_out($v);
+		return;
+	}
+	if (defined $v->{info}{MISSING_FILES}) {
+		$self->add_fatal($v, ["fetch manually"], 
+		    "Missing distfiles: ".
+		    $v->{info}{MISSING_FILES}->string, 
+		    $v->{info}{FETCH_MANUALLY}->string);
+		return;
+	}
+	if (defined $v->{info}{FDEPENDS}) {
+		for my $f (values %{$v->{info}{FDEPENDS}}) {
+			if ($self->{tofetch}->contains($f) ||
+			    $self->{tofetch}{doing}{$f}) {
+				next;
+			}
+			if ($self->{tofetch}->is_done($f)) {
+				$v->{info}{distsize} //= 0;
+				$v->{info}{distsize} += $f->{sz};
+				delete $v->{info}{FDEPENDS}{$f};
+				next;
+			}
+			$self->{tofetch}->add($f);
+			$self->log('F', $f);
+		}
+	}
 }
 
 sub requeue

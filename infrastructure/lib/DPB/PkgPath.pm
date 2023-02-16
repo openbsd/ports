@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.64 2022/03/11 18:38:52 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.65 2023/02/16 13:44:13 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -332,6 +332,7 @@ sub merge_depends
 			for my $d (values %{$info->{EXTRA}}) {
 				$global3->{$d} = $d;
 				$d->{wantinfo} = 1;
+				$d->{wantfetch} = 1;
 			}
 	    	}
 			
