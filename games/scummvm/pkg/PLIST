@@ -29,6 +29,7 @@ share/scummvm/cryomni3d.dat
 share/scummvm/drascula.dat
 share/scummvm/encoding.dat
 share/scummvm/fonts.dat
+share/scummvm/freescape.dat
 share/scummvm/grim-patch.lab
 share/scummvm/gui-icons.dat
 share/scummvm/hadesch_translations.dat
@@ -46,6 +47,7 @@ share/scummvm/scummclassic.zip
 share/scummvm/scummmodern.zip
 share/scummvm/scummremastered.zip
 share/scummvm/shaders/
+share/scummvm/shaders.dat
 share/scummvm/shaders/emi_actor.fragment
 share/scummvm/shaders/emi_actor.vertex
 share/scummvm/shaders/emi_actorlights.fragment

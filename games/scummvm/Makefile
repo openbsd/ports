@@ -1,5 +1,5 @@
 COMMENT=	game interpreter
-V=		2.6.1
+V=		2.7.0
 DISTNAME=	scummvm-${V}
 CATEGORIES=	games x11 emulators
 MASTER_SITES=	https://downloads.scummvm.org/frs/scummvm/${V}/
@@ -51,6 +51,7 @@ CONFIGURE_ARGS+=--disable-alsa \
 		--disable-sdlnet \
 		--disable-system-dialogs \
 		--disable-tts \
+		--enable-release \
 		--enable-sndio \
 		--mandir="${LOCALBASE}/man"
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \

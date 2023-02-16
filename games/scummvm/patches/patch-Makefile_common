@@ -1,7 +1,7 @@
 Index: Makefile.common
 --- Makefile.common.orig
 +++ Makefile.common
-@@ -264,27 +264,6 @@ AMIGA_DATE = $(shell date +"%-d.%-m.%Y")
+@@ -271,27 +271,6 @@ AMIGA_DATE = $(shell date +"%-d.%-m.%Y")
  VERFLAGS += -DAMIGA_DATE=\"$(AMIGA_DATE)\"
  endif
  
