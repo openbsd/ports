@@ -11,7 +11,7 @@ Index: configure
  for ac_option in $@; do
  	case "$ac_option" in
  	# Silently ignore options valid for Autotools configure.
-@@ -1152,7 +1155,7 @@ test $TMPR -eq 0 || exit 1	# check exit code of subshe
+@@ -1175,7 +1178,7 @@ test $TMPR -eq 0 || exit 1	# check exit code of subshe
  # for the smaller sizes.
  echo_n "Alignment required... "
  case $_host_cpu in

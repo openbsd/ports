@@ -1,5 +1,5 @@
 COMMENT=	collection of various tools for scummvm
-V=		2.6.0
+V=		2.7.0
 DISTNAME=	scummvm-tools-${V}
 CATEGORIES=	games
 MASTER_SITES=	https://downloads.scummvm.org/frs/scummvm-tools/${V}/
@@ -46,7 +46,7 @@ do-install:
 	${INSTALL_PROGRAM} \
 		${WRKBUILD}/scummvm-tools \
 		${WRKBUILD}/scummvm-tools-cli \
-		${WRKBUILD}/de{cine,gob,kyra,prince,scumm,sword2} \
+		${WRKBUILD}/de{cine,gob,kyra,prince,scumm,sword2,twine} \
 		${WRKBUILD}/extract_{gob_cdi,mohawk,ngi,hadesch,lokalizator} \
 		${WRKBUILD}/construct_mohawk \
 		${WRKBUILD}/msn_convert_mod \

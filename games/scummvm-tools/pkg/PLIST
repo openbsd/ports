@@ -6,6 +6,7 @@
 @bin bin/deprince
 @bin bin/descumm
 @bin bin/desword2
+@bin bin/detwine
 @bin bin/extract_gob_cdi
 @bin bin/extract_hadesch
 @bin bin/extract_lokalizator
