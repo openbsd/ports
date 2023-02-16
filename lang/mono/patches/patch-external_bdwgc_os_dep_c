@@ -1,0 +1,26 @@
+Index: external/bdwgc/os_dep.c
+--- external/bdwgc/os_dep.c.orig
++++ external/bdwgc/os_dep.c
+@@ -525,10 +525,7 @@ GC_INNER char * GC_get_maps(void)
+   STATIC JMP_BUF GC_jmp_buf_openbsd;
+ 
+ # ifdef THREADS
+-#   include <sys/syscall.h>
+-    EXTERN_C_BEGIN
+-    extern sigset_t __syscall(quad_t, ...);
+-    EXTERN_C_END
++    sigset_t signalmask;
+ # endif
+ 
+   /* Don't use GC_find_limit() because siglongjmp() outside of the      */
+@@ -577,7 +574,9 @@ GC_INNER char * GC_get_maps(void)
+ 
+ #   ifdef THREADS
+       /* Due to the siglongjump we need to manually unmask SIGPROF.     */
+-      __syscall(SYS_sigprocmask, SIG_UNBLOCK, sigmask(SIGPROF));
++      sigemptyset(&signalmask);
++      sigaddset(&signalmask, SIGPROF);
++      sigprocmask(SIG_UNBLOCK, &signalmask, NULL);
+ #   endif
+ 
+     sigaction(SIGSEGV, &old_segv_act, 0);
