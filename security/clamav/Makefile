@@ -1,9 +1,9 @@
 COMMENT=	virus scanner
-DISTNAME=	clamav-1.0.0
+DISTNAME=	clamav-1.0.1
 
 CATEGORIES=	security
 
-SHARED_LIBS +=	clamav               27.0
+SHARED_LIBS +=	clamav               28.0
 SHARED_LIBS +=	clamunrar            6.0
 SHARED_LIBS +=	clamunrar_iface      5.0
 SHARED_LIBS +=	freshclam            2.0
