@@ -3,7 +3,7 @@ CATEGORIES =	devel
 
 GH_ACCOUNT =	dlang
 GH_PROJECT =	dub
-GH_TAGNAME =	v1.31.0
+GH_TAGNAME =	v1.31.1
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
