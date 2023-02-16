@@ -1,20 +1,16 @@
 avoid picking up abseil-cpp if found
 
 https://trac.osgeo.org/postgis/ticket/5178
+https://github.com/MapServer/MapServer/pull/6833/
 Index: deps/flatgeobuf/include/flatbuffers/base.h
 --- deps/flatgeobuf/include/flatbuffers/base.h.orig
 +++ deps/flatgeobuf/include/flatbuffers/base.h
-@@ -232,13 +232,6 @@ namespace flatbuffers {
-         typedef std::experimental::string_view string_view;
+@@ -233,7 +233,7 @@ namespace flatbuffers {
        }
        #define FLATBUFFERS_HAS_STRING_VIEW 1
--    // Check for absl::string_view
+     // Check for absl::string_view
 -    #elif __has_include("absl/strings/string_view.h")
--      #include "absl/strings/string_view.h"
--      namespace flatbuffers {
--        typedef absl::string_view string_view;
--      }
--      #define FLATBUFFERS_HAS_STRING_VIEW 1
-     #endif
-   #endif // __has_include
- #endif // !FLATBUFFERS_HAS_STRING_VIEW
++    #elif __has_include("absl/strings/string_view.h") && (__cplusplus >= 201411)
+       #include "absl/strings/string_view.h"
+       namespace flatbuffers {
+         typedef absl::string_view string_view;
