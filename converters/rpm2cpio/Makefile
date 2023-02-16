@@ -2,9 +2,9 @@ COMMENT=	convert .rpm files to cpio format
 
 DISTNAME=	rpm2cpio-1.4
 CATEGORIES=	converters archivers
-REVISION=	0
+REVISION=	1
 
-HOMEPAGE=	https://svnweb.freebsd.org/ports/head/archivers/rpm2cpio/
+HOMEPAGE=	https://cgit.freebsd.org/ports/log/archivers/rpm2cpio
 
 # BSD
 PERMIT_PACKAGE=	Yes
