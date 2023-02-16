@@ -1,19 +1,16 @@
 COMMENT=	wiki and bug tracking system for software projects
 
-MODPY_EGG_VERSION=1.5.4.dev0
-DISTNAME=	trac-1.5.4pre17604
+MODPY_EGG_VERSION=1.5.4
 #PORTROACH=	limitw:1,even
-#DISTNAME=	Trac-${MODPY_EGG_VERSION:S/post/.post/}
-#PKGNAME=	trac-${MODPY_EGG_VERSION:S/post/pl/}
+DISTNAME=	Trac-${MODPY_EGG_VERSION:S/post/.post/}
+PKGNAME=	trac-${MODPY_EGG_VERSION:S/post/pl/}
 CATEGORIES=	www devel
-REVISION=	1
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 HOMEPAGE=	https://trac.edgewall.org/
 
-#MASTER_SITES=	https://ftp.edgewall.org/pub/trac/
-MASTER_SITES=	https://spacehopper.org/mirrors/
+MASTER_SITES=	https://ftp.edgewall.org/pub/trac/
 
 MODPY_PYBUILD=	setuptools
 
