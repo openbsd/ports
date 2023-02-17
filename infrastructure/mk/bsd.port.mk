@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1583 2023/01/18 15:14:52 naddy Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1584 2023/02/17 19:26:57 sthen Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2478,7 +2478,7 @@ _internal-fetch:
 
 _internal-checksum: _internal-fetch
 	@${_warn_checksum}
-	@fgrep 2>/dev/null SIZE ${CHECKSUM_FILE} | \
+	@grep 2>/dev/null ^SIZE ${CHECKSUM_FILE} | \
 	sed -e '/SIZE (\(.*\)).*/s//\1/'|\
 	while read i; do \
 		for j in ${MAKESUMFILES}; do \
