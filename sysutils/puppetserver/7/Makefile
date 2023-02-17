@@ -1,6 +1,6 @@
 COMMENT =		Puppet server
 
-VERSION =		7.9.2
+VERSION =		7.9.5
 DISTNAME =		puppetserver-${VERSION}
 
 
