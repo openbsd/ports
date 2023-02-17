@@ -1,0 +1,55 @@
+Index: netcat.c
+--- netcat.c.orig
++++ netcat.c
+@@ -34,6 +34,8 @@
+ 	backend progs to do various encryption modes??!?!
+ */
+ 
++#include <stdarg.h>
++#include <unistd.h>
+ #include "generic.h"		/* same as with L5, skey, etc */
+ 
+ /* conditional includes -- a very messy section which you may have to dink
+@@ -193,18 +195,19 @@ USHORT o_zero = 0;
+    fake varargs -- need to do this way because we wind up calling through
+    more levels of indirection than vanilla varargs can handle, and not all
+    machines have vfprintf/vsyslog/whatever!  6 params oughta be enough. */
+-void holler (str, p1, p2, p3, p4, p5, p6)
+-  char * str;
+-  char * p1, * p2, * p3, * p4, * p5, * p6;
++void holler (const char *str, ...)
+ {
+   if (o_verbose) {
+-    fprintf (stderr, str, p1, p2, p3, p4, p5, p6);
++    va_list ap;
++    va_start (ap, str);
++    vfprintf (stderr, str, ap);
++    va_end (ap);
+ #ifdef HAVE_BIND
+     if (h_errno) {		/* if host-lookup variety of error ... */
+       if (h_errno > 4)		/* oh no you don't, either */
+ 	fprintf (stderr, "preposterous h_errno: %d", h_errno);
+       else
+-	fprintf (stderr, h_errs[h_errno]);	/* handle it here */
++	fprintf (stderr, "%s", h_errs[h_errno]);	/* handle it here */
+       h_errno = 0;				/* and reset for next call */
+     }
+ #endif
+@@ -218,12 +221,13 @@ void holler (str, p1, p2, p3, p4, p5, p6)
+ 
+ /* bail :
+    error-exit handler, callable from anywhere */
+-void bail (str, p1, p2, p3, p4, p5, p6)
+-  char * str;
+-  char * p1, * p2, * p3, * p4, * p5, * p6;
++void bail (const char *str, ...)
+ {
++  va_list ap;
+   o_verbose = 1;
+-  holler (str, p1, p2, p3, p4, p5, p6);
++  va_start (ap, str);
++  holler (str, ap);
++  va_end (ap);
+   close (netfd);
+   sleep (1);
+   exit (1);

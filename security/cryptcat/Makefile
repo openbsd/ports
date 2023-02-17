@@ -3,10 +3,10 @@ COMMENT=		netcat enhanced with twofish encryption
 V=			1.2.1
 DISTNAME=		cryptcat-unix-$V
 PKGNAME=		cryptcat-$V
-REVISION =		2
+REVISION =		3
 CATEGORIES=		security
 
-HOMEPAGE=		http://cryptcat.sourceforge.net
+HOMEPAGE=		https://cryptcat.sourceforge.net
 
 MAINTAINER=		Laurent Fanis <laurent.fanis@gmail.com>
 
@@ -19,6 +19,7 @@ PERMIT_DISTFILES=	No clear Licence
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=cryptcat/}
 
 EXTRACT_SUFX=		.tar
+FIX_EXTRACT_PERMISSIONS= Yes
 
 ALL_TARGET=		openbsd
 
