@@ -5,7 +5,7 @@ DISTNAME=	grommunio-web-${V}
 
 GH_ACCOUNT=	grommunio
 GH_PROJECT=     grommunio-web
-GH_COMMIT=      62b648dd26fdc63b6135d852b957ba0da96b4380
+GH_COMMIT=      33f629b1b529be92dc4bd9e1da2b519f8e822c55
 
 CATEGORIES=	mail www
 
