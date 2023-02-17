@@ -1,11 +1,11 @@
 COMMENT=	library for delta compression of streams
 
-V =		2.3.2
+V =		2.3.3
 DISTNAME =	librsync-${V}
-REVISION =	0
 
 SHARED_LIBS =	rsync	5.1
 
+# wrong category really, this does not handle the rsync network protocol
 CATEGORIES=	net
 
 HOMEPAGE=	https://librsync.github.io/
