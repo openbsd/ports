@@ -206,8 +206,8 @@ Index: crypto/ec/asm/ecp_nistz256-armv8.pl
  $code.=<<___	if ($i == 0);
 -	adr	$bp_real,.Lone_mont-64
 +	adrp	$bp_real,.Lone_mont
-+	add	$bp,$bp,:lo12:.Lone_mont
-+	sub	$bp,$bp,#64
++	add	$bp_real,$bp_real,:lo12:.Lone_mont
++	sub	$bp_real,$bp_real,#64
  ___
  }
  $code.=<<___;
