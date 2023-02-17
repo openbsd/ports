@@ -1,0 +1,12 @@
+Index: chamber.c
+--- chamber.c.orig
++++ chamber.c
+@@ -24,7 +24,7 @@ void labInit(w, data)
+     XGCValues values;
+ 
+     /* Create GC for walls */
+-    data->WallGC = XCreateGC( dpy, DefaultRootWindow(dpy), NULL, NULL);
++    data->WallGC = XCreateGC( dpy, DefaultRootWindow(dpy), 0, NULL);
+     XSetForeground( dpy, data->WallGC, data->foreground);
+ 
+     /* Create GC for molecules */
