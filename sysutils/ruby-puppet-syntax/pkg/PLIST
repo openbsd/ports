@@ -1,14 +1,16 @@
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/.github/
+${GEM_LIB}/gems/${DISTNAME}/.github/workflows/
+${GEM_LIB}/gems/${DISTNAME}/.github/workflows/release.yml
+${GEM_LIB}/gems/${DISTNAME}/.github/workflows/test.yml
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
-${GEM_LIB}/gems/${DISTNAME}/.travis.yml
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
 ${GEM_LIB}/gems/${DISTNAME}/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/HISTORY.md
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE.txt
 ${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
-${GEM_LIB}/gems/${DISTNAME}/jenkins.sh
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-syntax/
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-syntax.rb
@@ -42,6 +44,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test_module/manifests/fail_warning.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test_module/manifests/future_syntax.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test_module/manifests/pass.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test_module/manifests/pass_storeconfigs.pp
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test_module/manifests/schedule_notice.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test_module/manifests/tag_notice.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test_module/manifests/test_app.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test_module/templates/
