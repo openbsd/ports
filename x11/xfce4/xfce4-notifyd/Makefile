@@ -1,6 +1,6 @@
 COMMENT=	Xfce4 notification daemon
 
-XFCE_VERSION=	0.8.0
+XFCE_VERSION=	0.8.1
 XFCE_GOODIE=	xfce4-notifyd
 
 # GPLv2
