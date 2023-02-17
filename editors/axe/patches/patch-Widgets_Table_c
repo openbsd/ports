@@ -1,0 +1,12 @@
+Index: Widgets/Table.c
+--- Widgets/Table.c.orig
++++ Widgets/Table.c
+@@ -25,6 +25,8 @@ Edit History
+ 
+ */
+ 
++#include <ctype.h>
++
+ #include <X11/Xp/COPY>
+ #include <X11/IntrinsicP.h>
+ 

@@ -1,5 +1,6 @@
---- Help/Hyper.c.orig	Wed Apr  6 18:07:36 1994
-+++ Help/Hyper.c	Wed Apr 19 23:57:24 2017
+Index: Help/Hyper.c
+--- Help/Hyper.c.orig
++++ Help/Hyper.c
 @@ -977,7 +977,6 @@ HyperWidget hyper;
  char   *fname;
  {
@@ -17,3 +18,12 @@
  
      if(ignore_case)
      {
+@@ -1458,7 +1457,7 @@ Boolean HyperGrep(HyperWidget widget,
+     }
+ 
+     /* compile the regular expression */
+-    compile(w,expbuf,&expbuf[ESIZE],'\0');
++    compile(w,expbuf,'\0');
+ 
+ 
+     if(ignore_case) XtFree(w);

@@ -1,0 +1,11 @@
+Index: Widgets/insertfile.c
+--- Widgets/insertfile.c.orig
++++ Widgets/insertfile.c
+@@ -26,6 +26,7 @@ SOFTWARE.
+ #include <X11/Xaw/Text.h>
+ #include <fcntl.h>
+ #include <stdio.h>
++#include <unistd.h>
+ 
+ Boolean
+ InsertFileNamed(tw, str)

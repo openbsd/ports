@@ -1,0 +1,12 @@
+Index: Widgets/TableVec.c
+--- Widgets/TableVec.c.orig
++++ Widgets/TableVec.c
+@@ -3,6 +3,8 @@
+  * SCCS_data:    @(#) TableVec.c	1.8 93/01/29 08:10:55
+  */
+ 
++#include <stdlib.h>
++
+ #include <X11/Xp/COPY>
+ #include <X11/IntrinsicP.h>
+ 

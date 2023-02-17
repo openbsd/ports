@@ -1,0 +1,11 @@
+Index: Widgets/util.c
+--- Widgets/util.c.orig
++++ Widgets/util.c
+@@ -27,6 +27,7 @@
+  *          University of Newcastle upon Tyne, UK
+  */
+ 
++#include <unistd.h>
+ #include <X11/Intrinsic.h>
+ #include <X11/StringDefs.h>
+ 

@@ -1,0 +1,11 @@
+Index: Widgets/match.c
+--- Widgets/match.c.orig
++++ Widgets/match.c
+@@ -36,6 +36,7 @@
+ 
+ /* match.c: pattern matching routines */
+ 
++#include <string.h>
+ 
+ static int rangematch();
+ 

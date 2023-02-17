@@ -1,10 +1,12 @@
---- Widgets/Preference.c.orig	Fri Jun 17 17:00:54 1994
-+++ Widgets/Preference.c	Wed Mar 16 19:23:15 2016
-@@ -35,6 +35,8 @@
+Index: Widgets/Preference.c
+--- Widgets/Preference.c.orig
++++ Widgets/Preference.c
+@@ -35,6 +35,9 @@
  #include <X11/Xaw/Box.h>
  #include <AxeText.h>
  
 +#include <stdio.h>
++#include <stdlib.h>
 +
  #include <PreferenceP.h>
  

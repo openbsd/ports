@@ -1,6 +1,11 @@
---- Widgets/AxeiiText.c.orig	Wed Aug 22 01:02:27 2001
-+++ Widgets/AxeiiText.c	Wed Aug 22 01:04:31 2001
-@@ -35,7 +35,6 @@
+Index: Widgets/AxeiiText.c
+--- Widgets/AxeiiText.c.orig
++++ Widgets/AxeiiText.c
+@@ -32,10 +32,10 @@
+ #include <X11/StringDefs.h>
+ #include <X11/Xmu/Converters.h>
+ #include <X11/keysym.h>
++#include <X11/Xaw/Toggle.h>
  #include <ctype.h>
  #include <stdio.h>
  #include <sys/file.h>
@@ -8,7 +13,7 @@
  #include "AxeiiTextP.h"
  #include "AxeiiUndo.h"
  #include "regexp.h"
-@@ -319,19 +318,18 @@ Initialize(req, new, args, num_args)
+@@ -319,19 +319,18 @@ Initialize(req, new, args, num_args)
      {
  	XtVaSetValues(new,
  		      XtNtextSink,

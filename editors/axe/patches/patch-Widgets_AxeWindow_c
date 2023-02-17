@@ -1,0 +1,11 @@
+Index: Widgets/AxeWindow.c
+--- Widgets/AxeWindow.c.orig
++++ Widgets/AxeWindow.c
+@@ -27,6 +27,7 @@
+  *          University of Newcastle upon Tyne, UK
+  */
+ 
++#include <stdlib.h>
+ #include <X11/Xos.h>
+ #include <X11/IntrinsicP.h>	
+ #include <X11/StringDefs.h>	
