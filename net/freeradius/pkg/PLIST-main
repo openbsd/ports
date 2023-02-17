@@ -150,6 +150,7 @@ lib/freeradius/
 @so lib/freeradius/rlm_sqlippool.so
 @so lib/freeradius/rlm_test.so
 @so lib/freeradius/rlm_totp.so
+@so lib/freeradius/rlm_unbound.so
 @so lib/freeradius/rlm_unix.so
 @so lib/freeradius/rlm_unpack.so
 @so lib/freeradius/rlm_utf8.so
@@ -183,6 +184,7 @@ lib/freeradius/
 @man man/man5/rlm_passwd.5
 @man man/man5/rlm_realm.5
 @man man/man5/rlm_sql.5
+@man man/man5/rlm_unbound.5
 @man man/man5/rlm_unix.5
 @man man/man5/unlang.5
 @man man/man5/users.5
@@ -817,6 +819,7 @@ share/freeradius/dictionary.bskyb
 share/freeradius/dictionary.bt
 share/freeradius/dictionary.cablelabs
 share/freeradius/dictionary.cabletron
+share/freeradius/dictionary.calix
 share/freeradius/dictionary.cambium
 share/freeradius/dictionary.camiant
 share/freeradius/dictionary.centec

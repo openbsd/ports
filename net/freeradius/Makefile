@@ -8,7 +8,7 @@ COMMENT-pgsql=	freeradius pgsql rlm addon
 COMMENT-python=	freeradius python rlm addon
 COMMENT-python3= freeradius python3 rlm addon (experimental)
 
-V=		3.2.1
+V=		3.2.2
 DISTNAME=	freeradius-server-$V
 EXTRACT_SUFX=	.tar.bz2
 
@@ -21,15 +21,6 @@ PKGNAME-mysql=	freeradius-mysql-$V
 PKGNAME-pgsql=	freeradius-pgsql-$V
 PKGNAME-python=	freeradius-python-$V
 PKGNAME-python3= freeradius-python3-$V
-REVISION-freetds=0
-REVISION-iodbc=	0
-REVISION-ldap=	0
-REVISION-main=	0
-REVISION-memcached=0
-REVISION-mysql=	0
-REVISION-pgsql=	0
-REVISION-python=0
-REVISION-python3=1
 
 CATEGORIES=	net security
 
@@ -83,6 +74,7 @@ LIB_DEPENDS-main=	databases/gdbm \
 			databases/sqlite3 \
 			devel/json-c \
 			devel/libtalloc \
+			net/libunbound \
 			security/yubico/yubico-c \
 			security/yubico/yubico-c-client \
 			devel/pcre \
@@ -90,7 +82,7 @@ LIB_DEPENDS-main=	databases/gdbm \
 
 WANTLIB-main += c crypto curl execinfo gdbm hiredis json-c m
 WANTLIB-main += pcap pcre perl pthread readline sqlite3 ssl talloc
-WANTLIB-main += ykclient yubikey
+WANTLIB-main += unbound ykclient yubikey
 
 .for i in ${MULTI_PACKAGES:N-main}
 PSEUDO_FLAVORS+= no_${i:S/-//}
