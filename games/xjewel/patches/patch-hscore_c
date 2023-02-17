@@ -1,0 +1,11 @@
+Index: hscore.c
+--- hscore.c.orig
++++ hscore.c
+@@ -5,6 +5,7 @@
+ */
+ 
+ #include <stdio.h>
++#include <unistd.h>
+ 
+ #ifndef SYSV
+ #   include <string.h>

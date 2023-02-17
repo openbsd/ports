@@ -1,7 +1,7 @@
 COMMENT=	dropping jewels game for X11
 
 DISTNAME=	xjewel-1.6
-REVISION =	6
+REVISION =	7
 CATEGORIES=	games
 FIX_EXTRACT_PERMISSIONS=Yes
 
@@ -13,7 +13,6 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=		X11 Xau Xdmcp Xext c xcb
 
 MAKE_FLAGS=		HSCORE_FILE=/var/games/xjewel.scores \
-			USERDEFS='-DICON_WINDOW -DUSE_SELECT -DGETPWENT' \
 			BINDIR='${PREFIX}/bin' \
 			MANDIR='${PREFIX}/man/man6' \
 			MANSUFFIX=6 \

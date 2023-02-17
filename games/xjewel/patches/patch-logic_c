@@ -1,0 +1,12 @@
+Index: logic.c
+--- logic.c.orig
++++ logic.c
+@@ -518,7 +518,7 @@ void Move_Down()
+ 			}
+ 		else
+ 			{
+-			Process_Block(FALSE, NULL);
++			Process_Block(FALSE, 0);
+ 			}
+ 		}
+ 	else

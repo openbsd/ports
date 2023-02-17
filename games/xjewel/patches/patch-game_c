@@ -1,0 +1,12 @@
+Index: game.c
+--- game.c.orig
++++ game.c
+@@ -14,6 +14,8 @@
+ #include <X11/Xos.h>
+ #endif
+ 
++#include <stdio.h>
++
+ #include "general.h"
+ #include "logic.h"
+ #include "hscore.h"

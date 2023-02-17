@@ -1,0 +1,11 @@
+Index: xw.c
+--- xw.c.orig
++++ xw.c
+@@ -21,6 +21,7 @@
+ #	define HZ 60
+ #endif
+ 
++#include <ctype.h>
+ #include <stdlib.h>
+ #include <stdio.h>
+ #ifndef SYSV

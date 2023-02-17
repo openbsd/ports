@@ -1,6 +1,36 @@
---- Imakefile.orig	Wed Feb 16 11:35:06 1994
-+++ Imakefile	Mon Apr 14 19:01:42 2003
-@@ -52,5 +52,3 @@ FontTarget($(FONT))
+Index: Imakefile
+--- Imakefile.orig
++++ Imakefile
+@@ -1,19 +1,10 @@
+ # A little makeyfile edit up to the solid line...
+ 
+-# EDIT THE CDEBUGFLAGS IF -O GIVES A PROBLEM
+-CDEBUGFLAGS = -O  
+-
+ # CHANGE HSCORE_FILE TO SUIT
+ #HSCORE_FILE=/usr/local/lib/xjewel.scores
+ HSCORE_FILE=xjewel.scores
+ 
+-# ADD YOUR ARCHITECTURE IF YOU USE SELECT INSTEAD OF POLL
+-#if defined(HPArchitecture) || defined(ApolloArchitecture) || \
+- 	defined(UltrixArchitecture)
+ #define sel -DUSE_SELECT
+-#else
+-#define sel 
+-#endif
+ 
+ # DEFINE 'DECWM' if you use DECwindows session manager
+ # DEFINE 'ICON_WINDOW if you want dynamic icons
+@@ -21,7 +12,7 @@ HSCORE_FILE=xjewel.scores
+ # DEFINE 'GETPWENT' if you dont have the cuserid ftn (hscore.c)
+ # DEFINE 'SLOW_FONTS=n' if your server is overly fast on fonts
+ # DEFINE 'SLOW_DRAW=n' if your server is overly fast on drawing
+-USERDEFS = -DICON_WINDOW
++USERDEFS = -DICON_WINDOW -DGETPWENT
+ 
+ # CHANGE FFILE TO REFLECT THE EXTENSION USED FOR COMPILED FONTS
+ FFILE = snf
+@@ -52,5 +43,3 @@ FontTarget($(FONT))
  all:: $(CFONT)
  
  install::
