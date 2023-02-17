@@ -1,0 +1,8 @@
+Index: php_mapi/mapi.ini
+--- php_mapi/mapi.ini.orig
++++ php_mapi/mapi.ini
+@@ -1,3 +1,3 @@
+ ; This enables the php-mapi extension
+ extension=mapi.so
+-mapi.zcore_socket=/run/gromox/zcore.sock
++mapi.zcore_socket=/var/run/gromox/zcore.sock
