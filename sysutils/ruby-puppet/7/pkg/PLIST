@@ -2977,3 +2977,4 @@ ${GEM_LIB}/gems/${DISTNAME}/tasks/parallel.rake
 ${GEM_LIB}/gems/${DISTNAME}/tasks/parser.rake
 ${GEM_LIB}/gems/${DISTNAME}/tasks/yard.rake
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
+@sample ${LOCALSTATEDIR}/puppetlabs/puppet/
