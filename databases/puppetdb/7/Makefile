@@ -2,6 +2,7 @@ COMMENT-main=	fast, scalable, and reliable data warehouse for Puppet
 COMMENT-plugin= PuppetDB terminus plugin
 
 V=		7.11.2
+REVISION =	0
 DISTNAME=	puppetdb-$V
 PKGNAME-plugin= puppetdb-termini-$V
 CATEGORIES=	databases
@@ -21,7 +22,9 @@ MODJAVA_VER=	1.8+
 
 MULTI_PACKAGES= -main -plugin
 
-BUILD_DEPENDS =	sysutils/coreutils
+BUILD_DEPENDS =	archivers/unzip \
+		archivers/zip \
+		sysutils/coreutils
 RUN_DEPENDS-plugin=sysutils/ruby-puppet/7>=7.0.0,<8.0.0v0
 
 RUN_DEPENDS-main=${MODJAVA_RUN_DEPENDS} \
@@ -37,6 +40,11 @@ MAKE_FLAGS +=	confdir="share/examples/" \
 NO_BUILD=	Yes
 NO_TEST=	Yes
 
+post-extract:
+	cd ${WRKSRC} && mkdir temp && cd temp && \
+		unzip ../puppetdb.jar \
+		puppetlabs/puppetdb/scf/storage.clj
+
 do-configure:
 	${SUBST_CMD} ${WRKSRC}/ext/bin/puppetdb \
 		${WRKSRC}/ext/cli/ssl-setup \
@@ -47,13 +55,12 @@ do-configure:
 		${WRKSRC}/ext/cli/*
 
 do-install:
+	cd ${WRKSRC}/temp && zip -f ../puppetdb.jar \
+		puppetlabs/puppetdb/scf/storage.clj && \
+		cd .. && rm -rf temp
 	cd ${WRKSRC} && ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} \
 		install-puppetdb install-puppetdb-termini
-	#rm ${PREFIX}/share/puppetdb/ezbake*
 	${INSTALL_SCRIPT} ${WRKSRC}/ext/default \
 		${PREFIX}/share/puppetlabs/puppetdb/cli/cli-defaults.sh
-	#echo `gem31 which puppet.rb | rev | cut -d '/' -f 2- | rev`
-	#${INSTALL_SCRIPT_DIR} ${DESTDIR}/`gem31 which puppet.rb | rev | cut -d '/' -f 2- | rev`
-	#mv ${PREFIX}/${MODRUBY_SITEDIR}/puppet ${DESTDIR}/`gem31 which puppet.rb | rev | cut -d '/' -f 2- | rev`
 
 .include <bsd.port.mk>

@@ -4,7 +4,6 @@
 @newuser _puppetdb:719:719:daemon:PuppetDB user:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/puppetdb
 bin/puppetdb
-@owner
 share/examples/puppetlabs/
 share/examples/puppetlabs/puppetdb/
 @sample ${SYSCONFDIR}/puppetlabs/puppetdb/
