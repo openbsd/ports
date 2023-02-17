@@ -17,6 +17,7 @@ bin/afl-gcc
 @bin bin/afl-ld-lto
 bin/afl-lto
 bin/afl-lto++
+bin/afl-persistent-config
 bin/afl-plot
 @bin bin/afl-showmap
 bin/afl-system-config
@@ -30,15 +31,11 @@ libexec/afl/afl-compiler-rt-32.o
 libexec/afl/afl-compiler-rt-64.o
 libexec/afl/afl-compiler-rt.o
 @so libexec/afl/afl-llvm-dict2file.so
-@so libexec/afl/afl-llvm-lto-instrumentation.so
 @so libexec/afl/afl-llvm-lto-instrumentlist.so
 @so libexec/afl/afl-llvm-pass.so
-libexec/afl/afl-llvm-rt-32.o
-libexec/afl/afl-llvm-rt-64.o
 libexec/afl/afl-llvm-rt-lto-32.o
 libexec/afl/afl-llvm-rt-lto-64.o
 libexec/afl/afl-llvm-rt-lto.o
-libexec/afl/afl-llvm-rt.o
 libexec/afl/as
 @so libexec/afl/cmplog-instructions-pass.so
 @so libexec/afl/cmplog-routines-pass.so
@@ -63,6 +60,7 @@ libexec/afl/dynamic_list.txt
 @man man/man8/afl-gotcpu.8
 @man man/man8/afl-lto++.8
 @man man/man8/afl-lto.8
+@man man/man8/afl-persistent-config.8
 @man man/man8/afl-plot.8
 @man man/man8/afl-showmap.8
 @man man/man8/afl-system-config.8
@@ -243,28 +241,23 @@ share/doc/afl/
 share/doc/afl/Changelog.md
 share/doc/afl/FAQ.md
 share/doc/afl/INSTALL.md
-share/doc/afl/QuickStartGuide.md
 share/doc/afl/README.cmplog.md
-share/doc/afl/README.ctx.md
 share/doc/afl/README.gcc_plugin.md
 share/doc/afl/README.instrument_list.md
 share/doc/afl/README.laf-intel.md
 share/doc/afl/README.llvm.md
 share/doc/afl/README.lto.md
-share/doc/afl/README.neverzero.md
-share/doc/afl/README.ngram.md
-share/doc/afl/README.out_of_line.md
+share/doc/afl/README.md
 share/doc/afl/README.persistent_mode.md
-share/doc/afl/README.snapshot.md
-share/doc/afl/binaryonly_fuzzing.md
+share/doc/afl/afl-fuzz_approach.md
+share/doc/afl/best_practices.md
 share/doc/afl/custom_mutators.md
-share/doc/afl/docs.md
 share/doc/afl/env_variables.md
+share/doc/afl/features.md
+share/doc/afl/fuzzing_binary-only_targets.md
+share/doc/afl/fuzzing_in_depth.md
 share/doc/afl/ideas.md
-share/doc/afl/life_pro_tips.md
-share/doc/afl/parallel_fuzzing.md
-share/doc/afl/perf_tips.md
+share/doc/afl/important_changes.md
 share/doc/afl/rpc_statsd.md
-share/doc/afl/sister_projects.md
-share/doc/afl/status_screen.md
-share/doc/afl/technical_details.md
+share/doc/afl/third_party_tools.md
+share/doc/afl/tutorials.md
