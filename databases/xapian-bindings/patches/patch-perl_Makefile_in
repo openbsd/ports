@@ -1,7 +1,7 @@
 Index: perl/Makefile.in
 --- perl/Makefile.in.orig
 +++ perl/Makefile.in
-@@ -1491,7 +1491,7 @@ clean-local:
+@@ -1480,7 +1480,7 @@ clean-local:
  
  auto/Xapian/Xapian$(PERL_SO): Xapian.la
  	@$(MKDIR_P) auto/Xapian

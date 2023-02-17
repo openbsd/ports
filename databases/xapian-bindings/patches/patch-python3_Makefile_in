@@ -1,7 +1,7 @@
 Index: python3/Makefile.in
 --- python3/Makefile.in.orig
 +++ python3/Makefile.in
-@@ -1301,7 +1301,7 @@ xapian/__pycache__/__init__.@PYTHON3_CACHE_OPT1_EXT@: 
+@@ -1290,7 +1290,7 @@ xapian/__pycache__/__init__.@PYTHON3_CACHE_OPT1_EXT@: 
  
  xapian/_xapian$(PYTHON3_EXT_SUFFIX): _xapian.la
  	$(MKDIR_P) xapian

@@ -1,6 +1,6 @@
 COMMENT=	search engine library
 
-V=		1.4.21
+V=		1.4.22
 PORTROACH=	limitw:1,even
 DISTNAME=	xapian-core-${V}
 # the other xapian ports should be kept in-sync:
