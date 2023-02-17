@@ -1,0 +1,63 @@
+Index: xaw_ui.c
+--- xaw_ui.c.orig
++++ xaw_ui.c
+@@ -447,12 +447,12 @@ Widget	button;
+ 	n = 0;
+ 	button = XtCreateManagedWidget("confirmok", commandWidgetClass,
+ 		confirmbox, args, n);
+-	XtAddCallback(button, XtNcallback, confirm_callback, 1);
++	XtAddCallback(button, XtNcallback, confirm_callback, (XtPointer)1);
+ 
+ 	n = 0;
+ 	button = XtCreateManagedWidget("confirmcancel", commandWidgetClass,
+ 		confirmbox, args, n);
+-	XtAddCallback(button, XtNcallback, confirm_callback, 2);
++	XtAddCallback(button, XtNcallback, confirm_callback, (XtPointer)2);
+ }
+ 
+ 
+@@ -509,37 +509,37 @@ Arg	args[10];
+ 	n = 0;
+ 	button = XtCreateManagedWidget("helpintro", commandWidgetClass,
+ 		helpform, args, n);
+-	XtAddCallback(button, XtNcallback, change_help, 1);
++	XtAddCallback(button, XtNcallback, change_help, (XtPointer)1);
+ 
+ 	n = 0;
+ 	button = XtCreateManagedWidget("helprules", commandWidgetClass,
+ 		helpform, args, n);
+-	XtAddCallback(button, XtNcallback, change_help, 2);
++	XtAddCallback(button, XtNcallback, change_help, (XtPointer)2);
+ 
+ 	n = 0;
+ 	button = XtCreateManagedWidget("helpcontrols", commandWidgetClass,
+ 		helpform, args, n);
+-	XtAddCallback(button, XtNcallback, change_help, 3);
++	XtAddCallback(button, XtNcallback, change_help, (XtPointer)3);
+ 
+ 	n = 0;
+ 	button = XtCreateManagedWidget("helpexamples", commandWidgetClass,
+ 		helpform, args, n);
+-	XtAddCallback(button, XtNcallback, change_help, 4);
++	XtAddCallback(button, XtNcallback, change_help, (XtPointer)4);
+ 
+ 	n = 0;
+ 	button = XtCreateManagedWidget("helpmisc", commandWidgetClass,
+ 		helpform, args, n);
+-	XtAddCallback(button, XtNcallback, change_help, 5);
++	XtAddCallback(button, XtNcallback, change_help, (XtPointer)5);
+ 
+ 	n = 0;
+ 	button = XtCreateManagedWidget("helpsummary", commandWidgetClass,
+ 		helpform, args, n);
+-	XtAddCallback(button, XtNcallback, change_help, 6);
++	XtAddCallback(button, XtNcallback, change_help, (XtPointer)6);
+ 
+ 	n = 0;
+ 	button = XtCreateManagedWidget("helpexit", commandWidgetClass,
+ 		helpform, args, n);
+-	XtAddCallback(button, XtNcallback, change_help, 7);
++	XtAddCallback(button, XtNcallback, change_help, (XtPointer)7);
+ 
+ 	n = 0;
+ 	XtSetArg(args[n], XtNshowGrip, False);	n++;
