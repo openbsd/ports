@@ -3,7 +3,7 @@ HOMEPAGE ?=		https://www.torproject.org
 PERMIT_PACKAGE ?=	Yes
 CATEGORIES =		www
 BROWSER_NAME =		tor-browser
-TB_VERSION =		12.0.2
+TB_VERSION =		12.0.3
 TB_PREFIX =		tb
 
 # keep meta/tor-browser in sync
