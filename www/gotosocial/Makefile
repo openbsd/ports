@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS = amd64
 COMMENT =	ActivityPub social network server
 
 MODGO_MODNAME =	github.com/superseriousbusiness/gotosocial
-MODGO_VERSION =	v0.6.0
+MODGO_VERSION =	v0.7.0
 
 DISTNAME =	gotosocial-${MODGO_VERSION}
 
@@ -29,10 +29,6 @@ WRKDIST =	${WRKSRC}
 
 MODGO_LDFLAGS += -X 'main.Version=${MODGO_VERSION:S/v//}'
 
-# test currently fails:
-# codeberg.org/gruf/go-logger/v2@v2.0.6 requires
-#	codeberg.org/gruf/go-middleware@v1.1.0 requires
-#	codeberg.org/gruf/go-ulid@v1.0.0: [...] no such file or directory
 TEST_ENV +=	GTS_DB_ADDRESS=":memory:" \
 		GTS_DB_TYPE="sqlite"
 
