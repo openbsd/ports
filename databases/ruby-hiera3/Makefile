@@ -1,6 +1,6 @@
 COMMENT=		simple pluggable hierarchical database
 
-V=			3.11.0
+V=			3.12.0
 DISTNAME=		hiera-${V}
 PKGNAME=		hiera3-${V}
 
