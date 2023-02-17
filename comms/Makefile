@@ -22,7 +22,6 @@
      SUBDIR += hamlib
      SUBDIR += hylafax
      SUBDIR += hylafax,a4
-     SUBDIR += jpilot
      SUBDIR += kermit
      SUBDIR += lcdproc
      SUBDIR += libhidapi
@@ -36,7 +35,6 @@
      SUBDIR += p5-Device-SerialPort
      SUBDIR += p5-SendPage
      SUBDIR += picocom
-     SUBDIR += pilot-link
      SUBDIR += pterm
      SUBDIR += py-gammu
      SUBDIR += qodem
