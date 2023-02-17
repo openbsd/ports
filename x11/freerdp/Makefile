@@ -1,10 +1,10 @@
 COMMENT =		client for Microsoft RDP (remote desktop protocol)
-DISTNAME =		freerdp-2.9.0
+DISTNAME =		freerdp-2.10.0
 DPB_PROPERTIES =	parallel
 CATEGORIES =		x11 net
 
 SHARED_LIBS +=  freerdp-client2           1.1
-SHARED_LIBS +=  freerdp2                  2.0
+SHARED_LIBS +=  freerdp2                  3.0
 SHARED_LIBS +=  winpr-tools2              1.0
 SHARED_LIBS +=  winpr2                    2.1
 

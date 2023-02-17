@@ -1,0 +1,25 @@
+Index: libfreerdp/crypto/crypto.c
+--- libfreerdp/crypto/crypto.c.orig
++++ libfreerdp/crypto/crypto.c
+@@ -976,7 +976,7 @@ WINPR_MD_TYPE crypto_cert_get_signature_alg(X509* xcer
+ 			return WINPR_MD_SHA512;
+ 		case NID_ripemd160:
+ 			return WINPR_MD_RIPEMD160;
+-#if (OPENSSL_VERSION_NUMBER >= 0x1010101fL) || defined(LIBRESSL_VERSION_NUMBER)
++#if (OPENSSL_VERSION_NUMBER >= 0x1010101fL) && defined(NID_sha3_256)
+ 		case NID_sha3_224:
+ 			return WINPR_MD_SHA3_224;
+ 		case NID_sha3_256:
+@@ -986,10 +986,12 @@ WINPR_MD_TYPE crypto_cert_get_signature_alg(X509* xcer
+ 		case NID_sha3_512:
+ 			return WINPR_MD_SHA3_512;
+ #endif
++#if defined(NID_shake256)
+ 		case NID_shake128:
+ 			return WINPR_MD_SHAKE128;
+ 		case NID_shake256:
+ 			return WINPR_MD_SHAKE256;
++#endif
+ 		case NID_undef:
+ 		default:
+ 			return WINPR_MD_NONE;
