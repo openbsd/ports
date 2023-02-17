@@ -22,6 +22,8 @@ LIB_DEPENDS =	www/webkitgtk4 \
 		devel/libsoup \
 		x11/gnome/gcr
 
+# vala generates code llvm15 chokes on
+CFLAGS =	-Wno-int-conversion
 # webkit browsing
 RUN_DEPENDS +=	multimedia/gstreamer1/plugins-libav
 
