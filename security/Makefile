@@ -28,7 +28,6 @@
      SUBDIR += clusterssh
      SUBDIR += corkscrew
      SUBDIR += cracklib
-     SUBDIR += cryptcat
      SUBDIR += cvechecker
      SUBDIR += cyrus-sasl-xoauth2
      SUBDIR += cyrus-sasl2
