@@ -5,7 +5,7 @@ NOT_FOR_ARCHS =		powerpc
 
 PKG_ARCH ?=		*
 
-V ?=			6.0.9
+V ?=			6.0.11
 EXTRACT_SUFX ?=		.tar.bz2
 
 DISTNAME=		kicad-${KICAD_PROJECT}-$V

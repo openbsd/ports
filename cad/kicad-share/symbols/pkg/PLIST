@@ -54,6 +54,8 @@ share/kicad/symbols/Driver_LED.kicad_sym
 share/kicad/symbols/Driver_Motor.kicad_sym
 share/kicad/symbols/Driver_Relay.kicad_sym
 share/kicad/symbols/Driver_TEC.kicad_sym
+share/kicad/symbols/FPGA_CologneChip_GateMate.kicad_sym
+share/kicad/symbols/FPGA_Efinix_Trion.kicad_sym
 share/kicad/symbols/FPGA_Lattice.kicad_sym
 share/kicad/symbols/FPGA_Microsemi.kicad_sym
 share/kicad/symbols/FPGA_Xilinx.kicad_sym
@@ -182,6 +184,7 @@ share/kicad/symbols/Sensor.kicad_sym
 share/kicad/symbols/Sensor_Audio.kicad_sym
 share/kicad/symbols/Sensor_Current.kicad_sym
 share/kicad/symbols/Sensor_Distance.kicad_sym
+share/kicad/symbols/Sensor_Energy.kicad_sym
 share/kicad/symbols/Sensor_Gas.kicad_sym
 share/kicad/symbols/Sensor_Humidity.kicad_sym
 share/kicad/symbols/Sensor_Magnetic.kicad_sym
