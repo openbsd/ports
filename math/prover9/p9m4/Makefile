@@ -1,3 +1,4 @@
+BROKEN=		needs love with wxWidgets>=3.2
 COMMENT=		prover9/mace4 GUI
 
 DISTNAME=		p9m4-v05

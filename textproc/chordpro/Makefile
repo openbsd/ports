@@ -1,3 +1,4 @@
+BROKEN=		needs love with wxWidgets>=3.2
 COMMENT-main=	lyrics and chords formatting program
 COMMENT-wx=	graphical front-end to chordpro
 

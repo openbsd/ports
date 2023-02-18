@@ -1,3 +1,5 @@
+BROKEN=		needs love with wxWidgets>=3.2
+
 COMMENT=	Python bindings for wxWidgets C++ class library
 
 V=		3.0.2.0

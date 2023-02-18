@@ -1,3 +1,4 @@
+BROKEN=		needs love with wxWidgets>=3.2
 COMMENT =	building, finding and using wxWidgets binaries
 
 MODULES =	cpan

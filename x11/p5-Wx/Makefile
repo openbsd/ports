@@ -1,3 +1,4 @@
+BROKEN=		needs love with wxWidgets>=3.2
 BROKEN =	GDI.c:12636:17: error: no member named 'GetPixel' in 'wxColour'
 
 COMMENT =	interface to the wxWidgets cross-platform GUI toolkit

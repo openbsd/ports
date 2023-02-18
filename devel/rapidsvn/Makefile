@@ -1,3 +1,4 @@
+BROKEN=		needs love with wxWidgets>=3.2
 # XXX doesn't build if already installed
 COMMENT=	graphical subversion client
 

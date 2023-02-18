@@ -1,3 +1,4 @@
+BROKEN=		needs love with wxWidgets>=3.2
 COMMENT =	multiplatform vector graphics editor
 
 VERSION =	2.0rc3

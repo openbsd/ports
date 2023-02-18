@@ -1,3 +1,4 @@
+BROKEN=		needs love with wxWidgets>=3.2
 COMMENT =		3D printing host suite
 
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}

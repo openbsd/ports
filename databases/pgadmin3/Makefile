@@ -1,3 +1,4 @@
+BROKEN=		needs love with wxWidgets>=3.2
 COMMENT=	administration and development platform for PostgreSQL
 
 V=		1.22.1

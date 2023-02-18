@@ -1,3 +1,4 @@
+BROKEN=		needs love with wxWidgets>=3.2
 COMMENT-main =		model railroad control daemon
 COMMENT-gui =		model railroad control daemon client
 
