@@ -1,0 +1,37 @@
+Make sure OpenBSD handlers set a GError on failure to avoid NULL dereferences.
+Fix memleak.
+
+Index: toolkit/system/gnome/nsGIOService.cpp
+--- toolkit/system/gnome/nsGIOService.cpp.orig
++++ toolkit/system/gnome/nsGIOService.cpp
+@@ -240,6 +240,9 @@ gboolean g_app_info_launch_uris_openbsd(GAppInfo* mApp
+   gchar* path = g_filename_from_uri(uri, NULL, NULL);
+   const gchar* bin = g_app_info_get_executable(mApp);
+   if (!bin) {
++    g_set_error(error, G_IO_ERROR, G_IO_ERROR_FAILED,
++                "no executable found for %s, maybe not unveiled ?",
++                g_app_info_get_name(mApp));
+     g_warning("no executable found for %s, maybe not unveiled ?",
+               g_app_info_get_name(mApp));
+     return FALSE;
+@@ -270,6 +273,9 @@ gboolean g_app_info_launch_default_for_uri_openbsd(con
+     g_debug("content type for %s: %s", uri, content_type);
+     GAppInfo* app_info = g_app_info_get_default_for_type(content_type, false);
+     if (!app_info) {
++      g_set_error(error, G_IO_ERROR, G_IO_ERROR_FAILED,
++                  "Could not find default handler for content type %s",
++                  content_type);
+       g_warning("Could not find default handler for content type %s",
+                 content_type);
+       g_free(content_type);
+@@ -279,7 +285,10 @@ gboolean g_app_info_launch_default_for_uri_openbsd(con
+       return g_app_info_launch_uris_openbsd(app_info, uri, context, error);
+     }
+   } else {
++    g_set_error(error, G_IO_ERROR, G_IO_ERROR_FAILED,
++                "Could not find content type for URI: %s", uri);
+     g_warning("Could not find content type for URI: %s", uri);
++    g_free(content_type);
+     return FALSE;
+   }
+ }
