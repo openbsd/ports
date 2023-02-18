@@ -1,7 +1,6 @@
 COMMENT =		library to retrieve system information and utilisation
 
-MODPY_EGG_VERSION =	5.8.0
-REVISION =		3
+MODPY_EGG_VERSION =	5.9.4
 
 GH_ACCOUNT =		giampaolo
 GH_PROJECT =		psutil
@@ -18,16 +17,12 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += kvm pthread ${MODPY_WANTLIB}
 
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 FLAVORS =		python3
 FLAVOR =		python3
 
-.if ${FLAVOR:Mpython3}
 MODPY_PYTEST_ARGS =	lib*/psutil/tests
 TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR}
-.else
-NO_TEST =		Yes
-.endif
 
 .include <bsd.port.mk>
