@@ -1,12 +1,12 @@
 COMMENT=	Python binding for the libxml2 and libxslt libraries
 
-# py2 still used by print/printrun
 FLAVORS=	python3
-FLAVOR?=
+FLAVOR=		python3
 
 MODPY_EGG_VERSION=	4.9.2
 DISTNAME=	lxml-${MODPY_EGG_VERSION}
 PKGNAME=	py-lxml-${MODPY_EGG_VERSION}
+REVISION=	0
 
 CATEGORIES=	textproc devel
 

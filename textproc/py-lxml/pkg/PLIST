@@ -1,3 +1,5 @@
+@conflict py-lxml-*
+@pkgpath textproc/py-lxml
 lib/python${MODPY_VERSION}/site-packages/lxml/
 lib/python${MODPY_VERSION}/site-packages/lxml-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/lxml-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
