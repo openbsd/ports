@@ -248,7 +248,7 @@
      SUBDIR += py-qtpy,python3
      SUBDIR += py-sip-qt5,python3
      SUBDIR += py-virtualdisplay,python3
-     SUBDIR += py-wxPython
+     SUBDIR += py-wxPython,python3
      SUBDIR += py-xcbgen,python3
      SUBDIR += py-xlib,python3
      SUBDIR += qdirstat
