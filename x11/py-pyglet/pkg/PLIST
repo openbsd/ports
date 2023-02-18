@@ -1,4 +1,6 @@
 @conflict pyglet-*
+@conflict py-pyglet-*
+@pkgpath x11/py-pyglet
 lib/python${MODPY_VERSION}/site-packages/pyglet/
 lib/python${MODPY_VERSION}/site-packages/pyglet-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pyglet-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
