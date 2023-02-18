@@ -2,7 +2,7 @@ COMMENT=	parse and validate simple name/value option pairs
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME =	Data-OptList-0.112
+DISTNAME =	Data-OptList-0.113
 CATEGORIES=	devel
 
 # perl
