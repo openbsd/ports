@@ -5,11 +5,13 @@ EPOCH=			0
 CATEGORIES=		x11 graphics
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=wxsvg/}
 EXTRACT_SUFX=		.tar.bz2
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  wxsvg                4.1      # 15.6
 
 HOMEPAGE=		http://wxsvg.sourceforge.net/
+
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # Modified LGPL
 PERMIT_PACKAGE=	Yes
