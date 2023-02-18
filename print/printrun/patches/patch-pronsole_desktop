@@ -1,13 +1,12 @@
---- pronsole.desktop.orig	Wed Jan 20 18:37:37 2016
-+++ pronsole.desktop	Wed Jan 20 18:38:52 2016
-@@ -3,8 +3,8 @@ Type=Application
- Name=Pronsole
+Index: pronsole.desktop
+--- pronsole.desktop.orig
++++ pronsole.desktop
+@@ -4,7 +4,7 @@ Name=Pronsole
  GenericName=Printer console
  Comment=Controls your 3D printer form console
--Icon=/usr/share/pixmaps/pronsole.png
+ Icon=pronsole
 -Exec=/usr/bin/pronsole.py
-+Icon=${LOCALBASE}/share/pixmaps/pronsole.png
-+Exec=${LOCALBASE}/bin/pronsole.py
++Exec=${PREFIX}/pronsole
  StartupNotify=true
  Terminal=true
  Categories=Utility;Graphics;3DGraphics;ConsoleOnly;

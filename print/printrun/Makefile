@@ -1,18 +1,12 @@
-BROKEN=		needs love with wxWidgets>=3.2
-COMMENT =		3D printing host suite
+COMMENT=	3D printing host suite
 
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
-# 2.0 release candidates are available which should work with Python 3.x,
-# but they want py-wxWidgets 4.x.
-
-MODPY_EGG_VERSION =	1.6.0
-DISTNAME =		printrun-${MODPY_EGG_VERSION}
+MODPY_EGG_VERSION=	2.0.0rc8
+DISTNAME=	printrun-${MODPY_EGG_VERSION}
 
 GH_ACCOUNT=	kliment
 GH_PROJECT=	Printrun
 GH_TAGNAME=	${DISTNAME}
 EPOCH=		0
-REVISION=	3
 
 CATEGORIES=	print
 
@@ -21,26 +15,24 @@ HOMEPAGE=	https://www.pronterface.com/
 # GPLv3
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += pthread ${MODPY_WANTLIB}
-
 MODULES=	lang/python
 
+MODPY_PYBUILD=	setuptools
+
 RUN_DEPENDS=	devel/desktop-file-utils \
-		devel/py-gobject \
-		devel/py-serial \
-		math/py2-numpy \
-		sysutils/py-psutil \
-		textproc/py-lxml \
-		x11/py-pyglet \
-		x11/py-wxPython
+		devel/py-appdirs${MODPY_FLAVOR} \
+		devel/py-cffi${MODPY_FLAVOR} \
+		devel/py-cairocffi${MODPY_FLAVOR} \
+		devel/py-serial${MODPY_FLAVOR} \
+		math/py-numpy${MODPY_FLAVOR} \
+		sysutils/py-psutil${MODPY_FLAVOR} \
+		textproc/py-lxml${MODPY_FLAVOR} \
+		x11/dbus-python${MODPY_FLAVOR} \
+		x11/py-pyglet${MODPY_FLAVOR} \
+		x11/py-wxPython${MODPY_FLAVOR}
 
-# requires py3 support
-#RUN_DEPENDS +=	x11/dbus-python${MODPY_FLAVOR}
-
-BUILD_DEPENDS=	devel/py-serial \
-		lang/cython
-
-SUBST_VARS+=	LOCALBASE
+BUILD_DEPENDS=	devel/py-serial${MODPY_FLAVOR} \
+		lang/cython${MODPY_FLAVOR}
 
 pre-configure:
 	${SUBST_CMD} ${WRKDIST}/*.desktop

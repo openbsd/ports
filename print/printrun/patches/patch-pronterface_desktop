@@ -1,15 +1,14 @@
---- pronterface.desktop.orig	Wed Jan 20 18:37:37 2016
-+++ pronterface.desktop	Wed Jan 20 18:39:30 2016
-@@ -3,9 +3,9 @@ Type=Application
- Name=Pronterface
+Index: pronterface.desktop
+--- pronterface.desktop.orig
++++ pronterface.desktop
+@@ -4,8 +4,8 @@ Name=Pronterface
  GenericName=Printer Interface
  Comment=Controls your 3D printer
--Icon=/usr/share/pixmaps/pronterface.png
+ Icon=pronterface
 -Exec=/usr/bin/pronterface.py %f
 -Path=/usr/share/pronterface/
-+Icon=${LOCALBASE}/share/pixmaps/pronterface.png
-+Exec=${LOCALBASE}/bin/pronterface.py %f
-+Path=${LOCALBASE}/share/pronterface/
++Exec=${PREFIX}/bin/pronterface %f
++Path=${PREFIX}/share/pronterface/
  StartupNotify=true
  Terminal=false
  Categories=GNOME;GTK;Utility;Graphics;3DGraphics;

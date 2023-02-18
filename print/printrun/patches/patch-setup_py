@@ -1,12 +1,12 @@
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -166,7 +166,7 @@ setup(name = "Printrun",
-       license = "GPLv3",
-       data_files = data_files,
-       packages = ["printrun", "printrun.gl", "printrun.gl.libtatlin", "printrun.gui", "printrun.power", "printrun.plugins"],
--      scripts = ["pronsole.py", "pronterface.py", "plater.py", "printcore.py"],
-+      scripts = ["pronsole", "pronterface", "plater", "printcore"],
-       cmdclass = cmdclass,
-       ext_modules = extensions,
-       )
+@@ -75,7 +75,7 @@ setup(
+     license="GPLv3+",
+     data_files=data_files,
+     packages=find_packages(),
+-    scripts=["pronsole.py", "pronterface.py", "plater.py", "printcore.py"],
++    scripts=["pronsole", "pronterface", "plater", "printcore"],
+     ext_modules=extensions,
+     python_requires=">=3.6",
+     install_requires=install_requires,
