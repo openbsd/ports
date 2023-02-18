@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1498 2023/02/17 21:41:32 tb Exp $
+# $OpenBSD: Quirks.pm,v 1.1499 2023/02/18 08:13:40 landry Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1791,6 +1791,7 @@ setup_obsolete_reason(
 	6 => 'cryptcat',
 	6 => 'pilot-link',
 	6 => 'jpilot',
+	3 => 'midori',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
