@@ -1,9 +1,8 @@
 COMMENT=		concurrent ssh client
 
-GH_TAGNAME=		v0.9
+GH_TAGNAME=		v1.0
 GH_ACCOUNT=		akosela
 GH_PROJECT=		go-cs
-REVISION=		2
 
 CATEGORIES=		sysutils net
 
