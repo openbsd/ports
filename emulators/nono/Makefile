@@ -4,6 +4,7 @@ COMMENT=		OMRON LUNA-I and LUNA-88K emulator
 
 DISTNAME=		nono-0.5.0
 CATEGORIES=		emulators
+REVISION=		0
 
 MAINTAINER=		Gonzalo L. R. <gonzalo@openbsd.org>
 
@@ -15,10 +16,9 @@ PERMIT_PACKAGE =	binaries cannot be distributed
 
 COMPILER=	base-clang ports-gcc
 
-WANTLIB += ${COMPILER_LIBCXX} c curses edit m wx_baseu-3.0 wx_baseu_net-3.0
-WANTLIB += wx_baseu_xml-3.0 wx_gtk3u_adv-3.0 wx_gtk3u_core-3.0
-WANTLIB += wx_gtk3u_html-3.0 wx_gtk3u_qa-3.0 wx_gtk3u_xrc-3.0
-WANTLIB += z
+WANTLIB += ${COMPILER_LIBCXX} c curses edit m wx_baseu-3.2 wx_baseu_net-3.2
+WANTLIB += wx_baseu_xml-3.2 wx_gtk3u_core-3.2 wx_gtk3u_html-3.2
+WANTLIB += wx_gtk3u_qa-3.2 wx_gtk3u_xrc-3.2 z
 
 MASTER_SITES=		http://www.pastel-flower.jp/~isaki/nono/archive/
 

@@ -1,6 +1,8 @@
 COMMENT=	collection of various tools for scummvm
 V=		2.7.0
 DISTNAME=	scummvm-tools-${V}
+REVISION=	0
+
 CATEGORIES=	games
 MASTER_SITES=	https://downloads.scummvm.org/frs/scummvm-tools/${V}/
 
@@ -12,9 +14,9 @@ MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} FLAC c freetype iconv m mad ogg
-WANTLIB += png vorbis vorbisenc vorbisfile wx_baseu-3.0 wx_baseu_net-3.0
-WANTLIB += wx_baseu_xml-3.0 wx_gtk3u_adv-3.0 wx_gtk3u_core-3.0
-WANTLIB += wx_gtk3u_html-3.0 wx_gtk3u_qa-3.0 wx_gtk3u_xrc-3.0 z
+WANTLIB += png vorbis vorbisenc vorbisfile wx_baseu-3.2 wx_baseu_net-3.2
+WANTLIB += wx_baseu_xml-3.2 wx_gtk3u_core-3.2 wx_gtk3u_html-3.2
+WANTLIB += wx_gtk3u_qa-3.2 wx_gtk3u_xrc-3.2 z
 
 NO_TEST=	Yes
 USE_GMAKE=	Yes

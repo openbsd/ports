@@ -4,6 +4,10 @@ COMMENT-daemon =stand-alone daemon/cmdline for amule
 
 V =		2.3.3
 DISTNAME =	aMule-$V
+REVISION-main =	0
+REVISION-web =	0
+REVISION-daemon =	0
+
 CATEGORIES =	net
 
 HOMEPAGE =	http://www.amule.org/
@@ -48,9 +52,9 @@ RUN_DEPENDS-main =	${RUN_DEPENDS} \
 			devel/desktop-file-utils
 
 commonWANTLIB =		c execinfo m pthread ${COMPILER_LIBCXX} \
-			wx_baseu-3.0 wx_baseu_net-3.0 z
+			wx_baseu-3.2 wx_baseu_net-3.2 z
 WANTLIB-main =		${WANTLIB} ${commonWANTLIB} \
-			cryptopp gd readline wx_gtk3u_adv-3.0 wx_gtk3u_core-3.0
+			cryptopp gd readline wx_gtk3u_core-3.2
 
 WANTLIB-daemon =	${WANTLIB} ${commonWANTLIB} \
 			cryptopp readline

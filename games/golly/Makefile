@@ -1,7 +1,7 @@
 COMMENT =	game of life simulator
 
 PKGNAME =	golly-3.2
-REVISION =	2
+REVISION =	3
 DISTNAME =	${PKGNAME}-src
 WRKSRC =	${WRKDIST}/gui-wx/configure
 CATEGORIES =	games math
@@ -18,9 +18,9 @@ MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 LIB_DEPENDS =		x11/wxWidgets>=3.0.4
 RUN_DEPENDS =		devel/desktop-file-utils
 
-WANTLIB += ${COMPILER_LIBCXX} GL c m wx_baseu-3.0 wx_baseu_net-3.0
-WANTLIB += wx_baseu_xml-3.0 wx_gtk3u_adv-3.0 wx_gtk3u_core-3.0
-WANTLIB += wx_gtk3u_gl-3.0 wx_gtk3u_html-3.0 wx_gtk3u_qa-3.0 wx_gtk3u_xrc-3.0
+WANTLIB += ${COMPILER_LIBCXX} GL c m wx_baseu-3.2 wx_baseu_net-3.2
+WANTLIB += wx_baseu_xml-3.2 wx_gtk3u_core-3.2
+WANTLIB += wx_gtk3u_gl-3.2 wx_gtk3u_html-3.2 wx_gtk3u_qa-3.2 wx_gtk3u_xrc-3.2
 WANTLIB += z
 # Note: perl and python are loaded with wxDynamicLibrary.Load(), and
 # python needs libutil to prevent undefined openpty and forkpty symbols.

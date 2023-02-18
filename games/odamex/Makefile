@@ -3,7 +3,7 @@ COMMENT =	online multiplayer doom
 V =		0.9.5
 DISTNAME =	odamex-src-${V}
 PKGNAME =	odamex-${V}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	games
 HOMEPAGE =	https://odamex.net/
@@ -13,9 +13,9 @@ MAINTAINER =	Edd Barrett <edd@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ICE SDL2 SDL2_mixer SM X11 Xext
-WANTLIB += c curl execinfo m miniupnpc png portmidi wx_baseu-3.0
-WANTLIB += wx_baseu_net-3.0 wx_gtk3u_adv-3.0 wx_gtk3u_core-3.0
-WANTLIB += wx_gtk3u_xrc-3.0 z
+WANTLIB += c curl execinfo m miniupnpc png portmidi wx_baseu-3.2
+WANTLIB += wx_baseu_net-3.2 wx_gtk3u_core-3.2
+WANTLIB += wx_gtk3u_xrc-3.2 z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=odamex/}
 EXTRACT_SUFX =		.tar.bz2

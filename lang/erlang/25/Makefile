@@ -11,6 +11,8 @@ PKGNAME-main=	erlang-$V
 PKGNAME-wx=	erlang-wx-$V
 EPOCH=		0
 
+REVISION-wx=	0
+
 VERSION_SPEC=	>=25v0,<26v0
 PKGSPEC-main=	erlang-${VERSION_SPEC}
 PKGSPEC-wx=	erlang-wx-${VERSION_SPEC}
@@ -38,9 +40,9 @@ WANTLIB =	m pthread ${COMPILER_LIBCXX}
 WANTLIB-main =	${WANTLIB} c crypto kvm curses util z
 
 WANTLIB-wx += ${WANTLIB} GL GLU
-WANTLIB-wx += wx_baseu-3.0 wx_baseu_xml-3.0 wx_gtk3u_adv-3.0 wx_gtk3u_aui-3.0
-WANTLIB-wx += wx_gtk3u_core-3.0 wx_gtk3u_gl-3.0 wx_gtk3u_html-3.0
-WANTLIB-wx += wx_gtk3u_stc-3.0 wx_gtk3u_xrc-3.0
+WANTLIB-wx += wx_baseu-3.2 wx_baseu_xml-3.2 wx_gtk3u_aui-3.2
+WANTLIB-wx += wx_gtk3u_core-3.2 wx_gtk3u_gl-3.2 wx_gtk3u_html-3.2
+WANTLIB-wx += wx_gtk3u_stc-3.2 wx_gtk3u_xrc-3.2
 WANTLIB-wx += glib-2.0 intl
 
 LIB_DEPENDS-wx +=x11/wxWidgets>=2.8.12p10
@@ -49,7 +51,7 @@ LIB_DEPENDS-wx +=devel/glib2
 .if ${MACHINE_ARCH} != "alpha" && ${MACHINE_ARCH} != "arm" && \
 	${MACHINE_ARCH} != "hppa"
 LIB_DEPENDS-wx +=x11/wxWidgets,-webkit
-WANTLIB-wx += wx_gtk3u_webview-3.0
+WANTLIB-wx += wx_gtk3u_webview-3.2
 .endif
 
 RUN_DEPENDS-wx =${BASE_PKGPATH},-main>=${MAJ_V}

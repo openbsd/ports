@@ -5,7 +5,7 @@ DISTNAME=		VeraCrypt_${V}_Source
 PKGNAME=		veracrypt-${V}
 CATEGORIES=		security
 HOMEPAGE=		https://www.veracrypt.fr/
-REVISION=		0
+REVISION=		1
 
 MAINTAINER=		Tietoturvamies <main@tietoturvamies.fi>
 
@@ -19,8 +19,7 @@ FIX_EXTRACT_PERMISSIONS=Yes
 # C++11
 COMPILER=		base-clang ports-gcc
 
-WANTLIB += ${COMPILER_LIBCXX} c m fuse wx_baseu-3.0 wx_gtk3u_adv-3.0
-WANTLIB += wx_gtk3u_core-3.0
+WANTLIB += ${COMPILER_LIBCXX} c m fuse wx_baseu-3.2 wx_gtk3u_core-3.2
 
 BUILD_DEPENDS=		devel/yasm \
 			sysutils/coreutils

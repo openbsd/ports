@@ -2,7 +2,7 @@ COMMENT =		modernization of the classic DOS game Scorched Earth
 
 DISTNAME =		Scorched3D-44-src
 PKGNAME =		${DISTNAME:L:S/-src//}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		games x11
 
@@ -13,9 +13,9 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLEW GLU SDL SDL_net alut c expat
 WANTLIB += fftw3f freetype jpeg m ogg openal png vorbis vorbisfile
-WANTLIB += wx_baseu-3.0 wx_baseu_net-3.0 wx_baseu_xml-3.0 wx_gtk3u_adv-3.0
-WANTLIB += wx_gtk3u_core-3.0 wx_gtk3u_html-3.0 wx_gtk3u_qa-3.0
-WANTLIB += wx_gtk3u_xrc-3.0 z
+WANTLIB += wx_baseu-3.2 wx_baseu_net-3.2 wx_baseu_xml-3.2
+WANTLIB += wx_gtk3u_core-3.2 wx_gtk3u_html-3.2 wx_gtk3u_qa-3.2
+WANTLIB += wx_gtk3u_xrc-3.2 z
 
 COMPILER =		base-clang ports-gcc base-gcc
 

@@ -4,6 +4,7 @@ COMMENT =	panorama image stitcher
 
 DISTNAME =	hugin-2022.0.0
 EXTRACT_SUFX =	.tar.bz2
+REVISION =	0
 
 # not needed for releases, but makes RCs/betas easier to work with
 PKGNAME =	${DISTNAME:S/_//:L}
@@ -29,10 +30,9 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} GL GLEW GLU Iex-3_1 OpenEXR-3_1
 WANTLIB += IlmThread-3_1 Imath-3_1 X11 boost_filesystem-mt boost_system-mt
 WANTLIB += c exiv2 fftw3 jpeg lcms2 m pano13 png ${MODPY_WANTLIB} sqlite3
-WANTLIB += tiff vigraimpex wx_baseu-3.0 wx_baseu_net-3.0 wx_baseu_xml-3.0
-WANTLIB += wx_gtk3u_adv-3.0 wx_gtk3u_aui-3.0 wx_gtk3u_core-3.0
-WANTLIB += wx_gtk3u_gl-3.0 wx_gtk3u_html-3.0 wx_gtk3u_qa-3.0 wx_gtk3u_xrc-3.0
-WANTLIB += z
+WANTLIB += tiff vigraimpex wx_baseu-3.2 wx_baseu_net-3.2 wx_baseu_xml-3.2
+WANTLIB += wx_gtk3u_aui-3.2 wx_gtk3u_core-3.2 wx_gtk3u_gl-3.2
+WANTLIB += wx_gtk3u_html-3.2 wx_gtk3u_qa-3.2 wx_gtk3u_xrc-3.2 z
 # lensfun is dlopened, so don't remove it from WANTLIB and LIB_DEPENDS
 WANTLIB += lensfun
 
