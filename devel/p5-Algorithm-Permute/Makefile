@@ -1,9 +1,8 @@
 COMMENT=	interface to handy and fast permutation
 
 MODULES=	cpan
-DISTNAME =	Algorithm-Permute-0.16
+DISTNAME =	Algorithm-Permute-0.17
 CATEGORIES=	devel
-REVISION =	0
 
 PERMIT_PACKAGE=	Yes
 
