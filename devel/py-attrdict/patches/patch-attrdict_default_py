@@ -1,0 +1,12 @@
+Index: attrdict/default.py
+--- attrdict/default.py.orig
++++ attrdict/default.py
+@@ -1,7 +1,7 @@
+ """
+ A subclass of MutableAttr that has defaultdict support.
+ """
+-from collections import Mapping
++from collections.abc import Mapping
+ 
+ import six
+ 

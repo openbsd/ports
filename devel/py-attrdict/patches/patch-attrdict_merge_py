@@ -1,0 +1,12 @@
+Index: attrdict/merge.py
+--- attrdict/merge.py.orig
++++ attrdict/merge.py
+@@ -1,7 +1,7 @@
+ """
+ A right-favoring Mapping merge.
+ """
+-from collections import Mapping
++from collections.abc import Mapping
+ 
+ 
+ __all__ = ['merge']

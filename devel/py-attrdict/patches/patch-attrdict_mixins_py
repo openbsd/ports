@@ -1,0 +1,12 @@
+Index: attrdict/mixins.py
+--- attrdict/mixins.py.orig
++++ attrdict/mixins.py
+@@ -2,7 +2,7 @@
+ Mixin Classes for Attr-support.
+ """
+ from abc import ABCMeta, abstractmethod
+-from collections import Mapping, MutableMapping, Sequence
++from collections.abc import Mapping, MutableMapping, Sequence
+ import re
+ 
+ import six
