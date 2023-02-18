@@ -1,6 +1,6 @@
 COMMENT =	colored pretty-print of Perl data structures and objects
 
-DISTNAME =	Data-Printer-1.000004
+DISTNAME =	Data-Printer-1.001000
 
 CATEGORIES =	devel
 
