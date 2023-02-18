@@ -3,7 +3,7 @@ COMMENT=	Code::Blocks C/C++ IDE
 
 R=		12751
 V=		20.03
-REVISION=	2
+REVISION=	3
 
 DISTNAME=	codeblocks-${V}pl${R}
 EXTRACT_SUFX=	.tar.xz
@@ -35,19 +35,22 @@ HOMEPAGE=	http://www.codeblocks.org/
 # GPLv3
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} ICE SDL2 SM X11 Xcomposite Xcursor
-WANTLIB += Xau Xdmcp Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender Xss
-WANTLIB += Xxf86vm atk-1.0 atk-bridge-2.0 boost_system bz2 c cairo
-WANTLIB += cairo-gobject curses epoxy execinfo expat ffi fontconfig
-WANTLIB += freetype fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
-WANTLIB += gtk-3 harfbuzz hunspell-1.7 iconv intl jpeg lzma m
-WANTLIB += mspack notify pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre2-8 pixman-1 png samplerate sndio tiff usbhid wx_baseu-3.0
-WANTLIB += wx_baseu_net-3.0 wx_baseu_xml-3.0 wx_gtk3u_adv-3.0
-WANTLIB += wx_gtk3u_aui-3.0 wx_gtk3u_core-3.0 wx_gtk3u_html-3.0
-WANTLIB += wx_gtk3u_propgrid-3.0 wx_gtk3u_qa-3.0 wx_gtk3u_richtext-3.0
-WANTLIB += wx_gtk3u_xrc-3.0 xcb xcb-render xcb-shm z zstd
+WANTLIB += ${COMPILER_LIBCXX} ICE SDL2 SM X11 Xau Xcomposite Xcursor
+WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
+WANTLIB += Xss Xtst Xxf86vm aspell atk-1.0 atk-bridge-2.0 atspi
+WANTLIB += boost_system bz2 c cairo cairo-gobject crypto curl
+WANTLIB += curses dbus-1 enchant-2 epoxy execinfo expat ffi fontconfig
+WANTLIB += freetype fribidi gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gpg-error graphite2
+WANTLIB += gspell-1 gthread-2.0 gtk-3 harfbuzz hunspell-1.7 iconv
+WANTLIB += icudata icuuc intl jpeg lzma m mspack nghttp2 nghttp3
+WANTLIB += ngtcp2 ngtcp2_crypto_openssl notify pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre2-32 pcre2-8 pixman-1 png samplerate
+WANTLIB += secret-1 sndio ssl tiff usbhid wx_baseu-3.2 wx_baseu_net-3.2
+WANTLIB += wx_baseu_xml-3.2 wx_gtk3u_aui-3.2 wx_gtk3u_core-3.2
+WANTLIB += wx_gtk3u_html-3.2 wx_gtk3u_propgrid-3.2 wx_gtk3u_qa-3.2
+WANTLIB += wx_gtk3u_richtext-3.2 wx_gtk3u_xrc-3.2 xcb xcb-render
+WANTLIB += xcb-shm z zstd
 
 BUILD_DEPENDS=	archivers/zip
 

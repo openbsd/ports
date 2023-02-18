@@ -1,5 +1,11 @@
 Don't hardcode shared libraries version number.
 
+Last chunks:
+From 9b743cc1fb2715735139fe9c4210416ac522b765 Mon Sep 17 00:00:00 2001
+From: Ian McInerney <ian.s.mcinerney@ieee.org>
+Date: Fri, 8 Apr 2022 01:08:12 +0100
+Subject: [PATCH] Remove custom languages in wx 3.1.6 and above
+
 Index: src/AudacityApp.cpp
 --- src/AudacityApp.cpp.orig
 +++ src/AudacityApp.cpp
@@ -18,3 +24,26 @@ Index: src/AudacityApp.cpp
        if (!mGnome) {
           return;
        }
+@@ -964,12 +964,9 @@ locations of the missing files.").Format( missingFileN
+ #define WL(lang,sublang)
+ #endif
+ 
+-#if wxCHECK_VERSION(3, 0, 1)
++#if wxCHECK_VERSION(3, 0, 1) && !wxCHECK_VERSION(3, 1, 6)
+ wxLanguageInfo userLangs[] =
+ {
+-   // Bosnian is defined in wxWidgets already
+-//   { wxLANGUAGE_USER_DEFINED, wxT("bs"), WL(0, SUBLANG_DEFAULT) wxT("Bosnian"), wxLayout_LeftToRight },
+-
+    { wxLANGUAGE_USER_DEFINED, wxT("eu"), WL(0, SUBLANG_DEFAULT) wxT("Basque"), wxLayout_LeftToRight },
+ };
+ #endif
+@@ -1270,7 +1267,7 @@ bool AudacityApp::OnInit()
+    //
+    // TODO:  The whole Language initialization really need to be reworked.
+    //        It's all over the place.
+-#if wxCHECK_VERSION(3, 0, 1)
++#if wxCHECK_VERSION(3, 0, 1) && !wxCHECK_VERSION(3, 1, 6)
+    for (size_t i = 0, cnt = WXSIZEOF(userLangs); i < cnt; i++)
+    {
+       wxLocale::AddLanguage(userLangs[i]);

@@ -6,7 +6,7 @@ GH_ACCOUNT=	audacity
 GH_PROJECT=	audacity
 GH_TAGNAME=	Audacity-2.4.2
 DISTNAME=	${GH_TAGNAME:L}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	audio
 
@@ -19,9 +19,9 @@ WANTLIB += ${COMPILER_LIBCXX} FLAC FLAC++ SoundTouch atk-1.0 c
 WANTLIB += cairo cairo-gobject expat gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gobject-2.0 gtk-3 harfbuzz id3tag intl m mad
 WANTLIB += ogg pango-1.0 pangocairo-1.0 portaudio portmidi sndfile
-WANTLIB += soxr vamp-hostsdk vorbis vorbisenc vorbisfile wx_baseu-3.0
-WANTLIB += wx_baseu_net-3.0 wx_gtk3u_adv-3.0 wx_gtk3u_core-3.0
-WANTLIB += wx_gtk3u_html-3.0 wx_gtk3u_qa-3.0 z
+WANTLIB += soxr vamp-hostsdk vorbis vorbisenc vorbisfile wx_baseu-3.2
+WANTLIB += wx_baseu_net-3.2 wx_gtk3u_core-3.2
+WANTLIB += wx_gtk3u_html-3.2 wx_gtk3u_qa-3.2 z
 # dlopened
 WANTLIB += avcodec avformat avutil mp3lame
 

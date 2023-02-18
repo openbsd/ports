@@ -1,13 +1,19 @@
 COMMENT =		3D real-time strategy game
 GH_PROJECT =		megaglest-source
 PKGNAME =		megaglest-${GH_TAGNAME}
-REVISION =		6
+REVISION =		7
 
-WANTLIB += GL GLEW GLU ICE SDL2 SM X11 Xext c crypto curl fontconfig
-WANTLIB += freetype fribidi ftgl glib-2.0 intl ircclient jpeg
-WANTLIB += m miniupnpc nghttp2 openal png ssl vlc vlccore vorbisfile
-WANTLIB += wx_baseu-3.0 wx_gtk3u_core-3.0 wx_gtk3u_gl-3.0 z
-WANTLIB += ${COMPILER_LIBCXX} ${MODLUA_WANTLIB}
+MASTER_SITES0 =		https://github.com/MegaGlest/megaglest-source/commit/
+PATCHFILES =		789e1cdf.patch:0 \
+			5801b1fa.patch:0 \
+			412b37d0.patch:0 \
+			e09ba53c.patch:0
+PATCH_DIST_STRIP =	-p1
+
+WANTLIB += ${COMPILER_LIBCXX} GL GLEW GLU ICE SDL2 SM X11 Xext
+WANTLIB += c crypto curl fontconfig freetype ftgl ircclient jpeg
+WANTLIB += lua5.1 m miniupnpc openal png ssl vlc vlccore vorbisfile
+WANTLIB += wx_baseu-3.2 wx_gtk3u_core-3.2 wx_gtk3u_gl-3.2
 
 COMPILER =		base-clang ports-gcc base-gcc
 

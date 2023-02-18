@@ -1,0 +1,36 @@
+r12841 | wh11204 | 2022-06-29 14:34:36 +0200 (Wed, 29 Jun 2022) | 4 lines
+* Fix compilation of wx3.1.6 and later with Clang (thanks AndrewCot).
+See https://forums.codeblocks.org/index.php/topic,25004.msg170429.html#msg170429
+Also fix some typos in documentation.
+
+r12842 | wh11204 | 2022-06-30 11:36:18 +0200 (Thu, 30 Jun 2022) | 3 lines
+- Complete previous commit, InsertPage() must be fixed too.
+It appeared in the diff, but I forgot about it when editing.
+
+Index: src/sdk/cbauibook.cpp
+--- src/sdk/cbauibook.cpp.orig
++++ src/sdk/cbauibook.cpp
+@@ -500,7 +500,11 @@ bool cbAuiNotebook::MovePage(wxWindow* page, size_t ne
+ bool cbAuiNotebook::AddPage(wxWindow* page,
+                             const wxString& caption,
+                             bool select,
++#if wxCHECK_VERSION(3, 1, 6)
++                            const wxBitmapBundle& bitmap)
++#else
+                             const wxBitmap& bitmap)
++#endif
+ {
+     bool result = wxAuiNotebook::AddPage(page, caption, select, bitmap);
+     MinimizeFreeSpace();
+@@ -511,7 +515,11 @@ bool cbAuiNotebook::InsertPage(size_t page_idx,
+                                wxWindow* page,
+                                const wxString& caption,
+                                bool select,
++#if wxCHECK_VERSION(3, 1, 6)
++                               const wxBitmapBundle& bitmap)
++#else
+                                const wxBitmap& bitmap)
++#endif
+ {
+     bool result = wxAuiNotebook::InsertPage(page_idx, page, caption, select, bitmap);
+     MinimizeFreeSpace();
