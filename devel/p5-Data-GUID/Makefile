@@ -2,7 +2,7 @@ COMMENT =	extension for generating GUIDs
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Data-GUID-0.050
+DISTNAME =	Data-GUID-0.051
 CATEGORIES =	devel
 
 # BSD
