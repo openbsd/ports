@@ -20,10 +20,10 @@ MODULES=	lang/python
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 LIB_DEPENDS=    x11/wxWidgets>=3.0.4
 WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB} m
-WANTLIB += wx_baseu-3.0 wx_baseu_net-3.0 wx_baseu_xml-3.0 wx_gtk3u_adv-3.0
-WANTLIB += wx_gtk3u_aui-3.0 wx_gtk3u_core-3.0 wx_gtk3u_gl-3.0
-WANTLIB += wx_gtk3u_html-3.0 wx_gtk3u_propgrid-3.0 wx_gtk3u_qa-3.0
-WANTLIB += wx_gtk3u_richtext-3.0 wx_gtk3u_stc-3.0 wx_gtk3u_xrc-3.0
+WANTLIB += wx_baseu-3.2 wx_baseu_net-3.2 wx_baseu_xml-3.2 wx_gtk3u_adv-3.2
+WANTLIB += wx_gtk3u_aui-3.2 wx_gtk3u_core-3.2 wx_gtk3u_gl-3.2
+WANTLIB += wx_gtk3u_html-3.2 wx_gtk3u_propgrid-3.2 wx_gtk3u_qa-3.2
+WANTLIB += wx_gtk3u_richtext-3.2 wx_gtk3u_stc-3.2 wx_gtk3u_xrc-3.2
 
 COMPILER =		base-clang ports-gcc base-gcc
 

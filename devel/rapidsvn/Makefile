@@ -27,10 +27,10 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png samplerate
 WANTLIB += sasl2 serf-1 sndio sqlite3 svn_client-1 svn_delta-1
 WANTLIB += svn_diff-1 svn_fs-1 svn_fs_base-1 svn_fs_fs-1 svn_fs_util-1
 WANTLIB += svn_fs_x-1 svn_ra-1 svn_ra_local-1 svn_ra_serf-1 svn_ra_svn-1
-WANTLIB += svn_repos-1 svn_subr-1 svn_wc-1 tiff usbhid wx_baseu-3.0
-WANTLIB += wx_baseu_net-3.0 wx_baseu_xml-3.0 wx_gtk3u_adv-3.0
-WANTLIB += wx_gtk3u_core-3.0 wx_gtk3u_html-3.0 wx_gtk3u_qa-3.0
-WANTLIB += wx_gtk3u_xrc-3.0 xcb xcb-render xcb-shm z
+WANTLIB += svn_repos-1 svn_subr-1 svn_wc-1 tiff usbhid wx_baseu-3.2
+WANTLIB += wx_baseu_net-3.2 wx_baseu_xml-3.2 wx_gtk3u_adv-3.2
+WANTLIB += wx_gtk3u_core-3.2 wx_gtk3u_html-3.2 wx_gtk3u_qa-3.2
+WANTLIB += wx_gtk3u_xrc-3.2 xcb xcb-render xcb-shm z
 WANTLIB += Xau Xdmcp Xss crypto execinfo lzma zstd
 
 COMPILER =		base-clang ports-gcc base-gcc

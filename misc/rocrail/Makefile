@@ -25,9 +25,9 @@ COMPILER =		base-clang ports-gcc base-gcc
 MULTI_PACKAGES =	-main -gui
 WANTLIB +=		c pthread
 WANTLIB-gui +=		${WANTLIB} m ${COMPILER_LIBCXX}
-WANTLIB-gui +=		wx_baseu-3.0 wx_baseu_net-3.0 wx_baseu_xml-3.0 wx_gtk3u_adv-3.0
-WANTLIB-gui +=		wx_gtk3u_core-3.0 wx_gtk3u_html-3.0 wx_gtk3u_qa-3.0
-WANTLIB-gui +=		wx_gtk3u_xrc-3.0
+WANTLIB-gui +=		wx_baseu-3.2 wx_baseu_net-3.2 wx_baseu_xml-3.2 wx_gtk3u_adv-3.2
+WANTLIB-gui +=		wx_gtk3u_core-3.2 wx_gtk3u_html-3.2 wx_gtk3u_qa-3.2
+WANTLIB-gui +=		wx_gtk3u_xrc-3.2
 
 LIB_DEPENDS-gui +=	x11/wxWidgets>=3.0.4
 RUN_DEPENDS-gui +=	${PKGPATH},-main
