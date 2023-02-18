@@ -222,8 +222,9 @@ include/pdal/io/TextWriter.hpp
 include/pdal/io/point_types.hpp
 include/pdal/io/private/
 include/pdal/io/private/GDALGrid.hpp
+include/pdal/io/private/connector/
+include/pdal/io/private/connector/Connector.hpp
 include/pdal/io/private/copc/
-include/pdal/io/private/copc/Connector.hpp
 include/pdal/io/private/copc/Entry.hpp
 include/pdal/io/private/copc/Info.hpp
 include/pdal/io/private/copc/Key.hpp
@@ -244,7 +245,6 @@ include/pdal/io/private/copcwriter/VoxelKey.hpp
 include/pdal/io/private/ept/
 include/pdal/io/private/ept/Addon.hpp
 include/pdal/io/private/ept/Artifact.hpp
-include/pdal/io/private/ept/Connector.hpp
 include/pdal/io/private/ept/EptInfo.hpp
 include/pdal/io/private/ept/EptSupport.hpp
 include/pdal/io/private/ept/FixedPointLayout.hpp
