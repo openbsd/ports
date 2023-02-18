@@ -7,5 +7,6 @@ ${P5ARCH}/Data/Dump/Streamer/_/Printers.pm
 ${P5ARCH}/auto/Data/
 ${P5ARCH}/auto/Data/Dump/
 ${P5ARCH}/auto/Data/Dump/Streamer/
-${P5ARCH}/auto/Data/Dump/Streamer/Streamer.so
+${P5ARCH}/auto/Data/Dump/Streamer/Streamer.bs
+@so ${P5ARCH}/auto/Data/Dump/Streamer/Streamer.so
 @man man/man3p/Data::Dump::Streamer.3p
