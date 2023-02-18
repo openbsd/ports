@@ -2,7 +2,7 @@ COMMENT=		Library for Automated Deduction Research
 
 DISTNAME=		LADR-Dec-2007
 PKGNAME=		${DISTNAME:L:S/-Dec//}
-REVISION =		2
+REVISION =		3
 
 MASTER_SITES=		${HOMEPAGE}/download/
 
@@ -24,6 +24,7 @@ EXAMPLE_DIR=		${PREFIX}/share/examples/prover9/
 pre-configure:
 .for u in ${UTIL_FILES}
 	perl -pi -e 's,/usr/bin/python,${MODPY_BIN},g' ${WRKSRC}/$u
+	2to3 -wn ${WRKSRC}/$u
 .endfor
 
 do-build:
