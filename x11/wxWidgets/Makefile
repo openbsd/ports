@@ -8,9 +8,15 @@ PKGNAME-main =		wxWidgets-gtk3-${V}
 PKGNAME-media =		wxWidgets-media-${V}
 PKGNAME-webkit =	wxWidgets-webkit-${V}
 
+REVISION-main =		0
+REVISION-media =	0
+REVISION-webkit =	0
+
 CATEGORIES =		x11
 MASTER_SITES =		https://github.com/wxWidgets/wxWidgets/releases/download/v$V/
 EXTRACT_SUFX =		.tar.bz2
+
+MAINTAINER =		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # !!! always keep those in sync, see SO_VERSION
 SHARED_LIBS +=  wx_baseu-3.2              0.0
@@ -70,7 +76,7 @@ WANTLIB-main += atk-1.0 c cairo cairo-gobject curl enchant-2 expat
 WANTLIB-main += fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB-main += gobject-2.0 gspell-1 gthread-2.0 gtk-3 harfbuzz iconv
 WANTLIB-main += intl jpeg lzma m mspack notify pango-1.0 pangocairo-1.0
-WANTLIB-main += pangoft2-1.0 pcre2-32 png secret-1 tiff z
+WANTLIB-main += pangoft2-1.0 pcre2-32 png secret-1 tiff z execinfo
 
 LIB_DEPENDS-media =	multimedia/gstreamer1/plugins-base \
 			${BASE_PKGPATH},-main>=${V}
@@ -81,7 +87,7 @@ WANTLIB-media += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gspell-1
 WANTLIB-media += gstbase-1.0 gstreamer-1.0 gstvideo-1.0 gthread-2.0
 WANTLIB-media += gtk-3 harfbuzz iconv intl jpeg lzma m notify pango-1.0
 WANTLIB-media += pangocairo-1.0 pangoft2-1.0 pcre2-32 png secret-1 tiff
-WANTLIB-media += wx_baseu-3.2 wx_gtk3u_core-3.2 z
+WANTLIB-media += wx_baseu-3.2 wx_gtk3u_core-3.2 z execinfo
 
 LIB_DEPENDS-webkit =	www/webkitgtk4 \
 			${BASE_PKGPATH},-main>=${V}
@@ -92,7 +98,7 @@ WANTLIB-webkit += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB-webkit += gspell-1 gthread-2.0 gtk-3 harfbuzz iconv intl javascriptcoregtk-4.0
 WANTLIB-webkit += jpeg lzma m notify pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB-webkit += pcre2-32 png secret-1 soup-2.4 tiff webkit2gtk-4.0
-WANTLIB-webkit += wx_baseu-3.2 wx_gtk3u_core-3.2 z
+WANTLIB-webkit += wx_baseu-3.2 wx_gtk3u_core-3.2 z execinfo
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
@@ -101,8 +107,7 @@ MAKE_FLAGS =		SO_VERSION="${LIBwx_baseu-3.2_VERSION}"
 FIX_CRLF_FILES=		src/stc/gen_iface.py
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	--disable-backtrace \
-			--disable-option-checking \
+CONFIGURE_ARGS =	--disable-option-checking \
 			--enable-compat30 \
 			--enable-graphics_ctx \
 			--enable-mediactrl \
