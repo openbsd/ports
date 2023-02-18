@@ -1,0 +1,25 @@
+Sorry: TabError: inconsistent use of tabs and spaces in indentation
+
+Index: control.py
+--- control.py.orig
++++ control.py
+@@ -524,7 +524,7 @@ class Run_program:
+                 os.kill(self.process.pid, signal.SIGKILL)
+ 
+     def done_with_job(self):
+-	if self.fin:  # if one exists, all exist
++        if self.fin:  # if one exists, all exist
+             self.fin.close()
+             self.fout.close()
+             self.ferr.close()
+@@ -628,8 +628,8 @@ class Program_panel(wx.Panel):
+         self.info_btn.Enable(False)
+         
+         self.show_save_btn = wx.Button(self, -1, 'Show/Save')
+-	if not Mac():
+-	    self.show_save_btn.SetToolTipString(
++        if not Mac():
++            self.show_save_btn.SetToolTipString(
+               'The choices refer to the most recent %s search.' % program.name)
+         self.Bind(wx.EVT_BUTTON, self.on_show_save, self.show_save_btn)
+         self.show_save_btn.Enable(False)

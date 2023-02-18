@@ -1,0 +1,23 @@
+Sorry: TabError: inconsistent use of tabs and spaces in indentation
+
+Index: prover9-mace4.py
+--- prover9-mace4.py.orig
++++ prover9-mace4.py
+@@ -635,7 +635,7 @@ class My_app(wx.App):
+             path = os.path.join(image_dir(),'prover9-splash.gif')
+             if not os.access(path, os.R_OK):
+                 error_dialog('splash image %s not found' % path)
+-	    else:
++            else:
+                 splash = Splash_screen(path)
+                 splash.Show(True)
+                 time.sleep(1)
+@@ -643,7 +643,7 @@ class My_app(wx.App):
+ 
+         frame.Show(True)
+     
+-	# info_dialog(path_info())
++        # info_dialog(path_info())
+     
+         return True
+ 

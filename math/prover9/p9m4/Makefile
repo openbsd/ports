@@ -1,9 +1,8 @@
-BROKEN=		needs love with wxWidgets>=3.2
 COMMENT=		prover9/mace4 GUI
 
 DISTNAME=		p9m4-v05
 PKGNAME=		${DISTNAME:S/v//}
-REVISION =		2
+REVISION =		3
 
 MASTER_SITES=		${HOMEPAGE}/gui/
 
@@ -17,9 +16,9 @@ MODPY_ADJ_FILES=	control.py files.py my_setup.py options.py \
 			partition_input.py platforms.py prover9-mace4.py \
 			utilities.py wx_utilities.py
 
-RUN_DEPENDS=		devel/py-modulegraph \
+RUN_DEPENDS=		devel/py-modulegraph${MODPY_FLAVOR} \
 			math/prover9/ladr \
-			x11/py-wxPython
+			x11/py-wxPython${MODPY_FLAVOR}
 
 LIBEXEC_DIR=		${PREFIX}/libexec/prover9/p9m4/
 IMAGES_DIR=		${PREFIX}/share/p9m4/Images/
@@ -42,6 +41,8 @@ do-install:
 		pax -rw . ${SAMPLES_DIR}
 .for m in ${MODPY_ADJ_FILES}
 	${INSTALL_SCRIPT} ${WRKSRC}/$m ${LIBEXEC_DIR}
+	2to3 -wn --no-diffs ${LIBEXEC_DIR}/*
+	${MODPY_BIN} -m compileall ${LIBEXEC_DIR}
 .endfor
 
 .include <bsd.port.mk>

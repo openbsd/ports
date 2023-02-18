@@ -24,7 +24,7 @@ EXAMPLE_DIR=		${PREFIX}/share/examples/prover9/
 pre-configure:
 .for u in ${UTIL_FILES}
 	perl -pi -e 's,/usr/bin/python,${MODPY_BIN},g' ${WRKSRC}/$u
-	2to3 -wn ${WRKSRC}/$u
+	2to3 -wn --no-diffs ${WRKSRC}/$u
 .endfor
 
 do-build:
