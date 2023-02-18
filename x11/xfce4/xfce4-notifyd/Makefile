@@ -12,6 +12,9 @@ MODXFCE_ICON_CACHE=	Yes
 MODXFCE_PURGE_LA =	lib/xfce4/panel/plugins
 MODXFCE_WANTLIB =	xfce4panel-2.0
 
+# drop with next release
+# https://gitlab.xfce.org/apps/xfce4-notifyd/-/commit/d8f9b3835217f84e92a717ae3c5d9368e76cf3b0
+BUILD_DEPENDS=	x11/xfce4/xfce4-dev-tools
 LIB_DEPENDS=	x11/xfce4/xfce4-panel \
 		devel/libnotify
 CONFIGURE_ARGS =	--enable-dbus-start-daemon
