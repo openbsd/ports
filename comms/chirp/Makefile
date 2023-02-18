@@ -1,8 +1,7 @@
 COMMENT=	tool to programme a wide range of amateur radios
 
-MODPY_EGG_VERSION= 20221203
-DISTNAME=	chirp-daily-${MODPY_EGG_VERSION}
-PKGNAME=	chirp-${MODPY_EGG_VERSION}
+MODPY_EGG_VERSION= 20230218
+DISTNAME=	chirp-${MODPY_EGG_VERSION}
 
 CATEGORIES=	comms hamradio
 
@@ -11,18 +10,29 @@ HOMEPAGE=	https://chirp.danplanet.com/
 # GPLv3+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://trac.chirp.danplanet.com/chirp_daily/daily-${MODPY_EGG_VERSION}/
+MASTER_SITES=	https://trac.chirp.danplanet.com/chirp_next/next-${MODPY_EGG_VERSION}/
 
 MODULES=	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
-COMMON_DEPS=	devel/py-serial
-BUILD_DEPENDS=	${COMMON_DEPS}
-RUN_DEPENDS=	${COMMON_DEPS} \
-		devel/desktop-file-utils \
-		devel/py-future \
-		devel/py-suds \
-		x11/py-gtk2
+
+MODPY_PYBUILD=	setuptools
+
+BUILD_DEPENDS=	devel/py-serial${MODPY_FLAVOR}
+
+RUN_DEPENDS=	devel/desktop-file-utils \
+		devel/py-future${MODPY_FLAVOR} \
+		devel/py-serial${MODPY_FLAVOR} \
+		devel/py-six${MODPY_FLAVOR} \
+		devel/py-suds${MODPY_FLAVOR} \
+		www/py-requests${MODPY_FLAVOR} \
+		x11/py-wxPython${MODPY_FLAVOR}
 
 NO_TEST=	Yes
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/{applications,pixmaps}/
+	ln -sf ${MODPY_SITEPKG}/chirp/share/chirp.desktop \
+		${PREFIX}/share/applications/
+	ln -sf ${MODPY_SITEPKG}/chirp/share/chirp.png \
+		${PREFIX}/share/pixmaps/
 
 .include <bsd.port.mk>
