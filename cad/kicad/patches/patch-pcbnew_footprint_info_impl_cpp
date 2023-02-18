@@ -1,0 +1,25 @@
+From 1a670f467392fb6605ce1b88316501518a256eb0 Mon Sep 17 00:00:00 2001
+From: Seth Hillbrand <seth@kipro-pcb.com>
+Date: Tue, 29 Nov 2022 14:07:33 -0800
+Subject: [PATCH] Catch IO_ERROR thrown in timestamp gen
+
+Index: pcbnew/footprint_info_impl.cpp
+--- pcbnew/footprint_info_impl.cpp.orig
++++ pcbnew/footprint_info_impl.cpp
+@@ -118,7 +118,15 @@ void FOOTPRINT_LIST_IMPL::loader_job()
+ bool FOOTPRINT_LIST_IMPL::ReadFootprintFiles( FP_LIB_TABLE* aTable, const wxString* aNickname,
+                                               PROGRESS_REPORTER* aProgressReporter )
+ {
+-    long long int generatedTimestamp = aTable->GenerateTimestamp( aNickname );
++    long long int generatedTimestamp = 0;
++
++    if( !CatchErrors( [&]()
++                 {
++                     generatedTimestamp = aTable->GenerateTimestamp( aNickname );
++                 } ) )
++    {
++        return false;
++    }
+ 
+     if( generatedTimestamp == m_list_timestamp )
+         return true;
