@@ -1,4 +1,5 @@
-@conflict py-modulegraph-<0.17p1
+@conflict py-modulegraph-*
+@pkgpath devel/py-modulegraph
 bin/modulegraph${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/modulegraph/
 lib/python${MODPY_VERSION}/site-packages/modulegraph-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

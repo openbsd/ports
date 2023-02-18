@@ -1460,7 +1460,6 @@
      SUBDIR += py-minidump,python3
      SUBDIR += py-minimock,python3
      SUBDIR += py-mock,python3
-     SUBDIR += py-modulegraph
      SUBDIR += py-modulegraph,python3
      SUBDIR += py-more-itertools,python3
      SUBDIR += py-mox3,python3
