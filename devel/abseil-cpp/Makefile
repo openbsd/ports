@@ -49,7 +49,7 @@ ALL_TARGET =		${ABSL_LIBS}
 
 # C++17
 COMPILER =		base-clang ports-gcc
-COMPILER_LANGS=		c++
+COMPILER_LANGS =	c++
 WANTLIB =		${COMPILER_LIBCXX} execinfo m
 MODULES =		devel/cmake
 
@@ -77,20 +77,20 @@ CONFIGURE_ARGS +=	-DBUILD_TESTING:BOOL=ON \
 BUILD_DEPENDS +=	devel/gtest>=1.11.0pl20220208
 TEST_DEPENDS +=		devel/gtest>=1.11.0pl20220208
 
-# use TEST_TMPDIR instead of /tmp for tests temp data (like in bazel build)
-TEST_ENV +=		TEST_TMPDIR=${WRKBUILD}/test_tmp \
-			LD_LIBRARY_PATH=/usr/lib:${WRKBUILD}/test_lib
-.endif
-
-do-build:
-	@${MODCMAKE_BUILD_TARGET} -t ${ALL_TARGET}
+TESTTMP =		${WRKDIR}/tmp
+TESTLDPATH =		${WRKDIR}/ldpath
+TEST_ENV +=		TMPDIR=${TESTTMP} \
+			LD_LIBRARY_PATH=/usr/lib:${TESTLDPATH}
 
 # build whatever is left (ca. 400 test files)
 pre-test:
 	@${MODCMAKE_BUILD_TARGET}
-	@mkdir -p ${WRKBUILD}/test_tmp
-	@mkdir -p ${WRKBUILD}/test_lib
-	cd ${WRKBUILD}/test_lib && \
-		 find ${WRKBUILD} -name "*\.so\.*\.*" | xargs -I {} ln -s {} .
+	mkdir -p ${TESTTMP} ${TESTLDPATH}
+	find ${WRKBUILD} -type f -name 'libabsl*.so.*' \
+	    -exec ln -s {} ${TESTLDPATH}/ \;
+.endif
+
+do-build:
+	@${MODCMAKE_BUILD_TARGET} -t ${ALL_TARGET}
 
 .include <bsd.port.mk>
