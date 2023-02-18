@@ -1,6 +1,5 @@
 COMMENT = 	show modules your program loads
-DISTNAME =	Devel-TraceUse-2.096
-REVISION =	0
+DISTNAME =	Devel-TraceUse-2.097
 
 CATEGORIES =	devel
 
