@@ -1,0 +1,4 @@
+lib/python${MODPY_VERSION}/site-packages/wx/${MODPY_PYCACHE}html2.${MODPY_PYC_MAGIC_TAG}pyc
+@so lib/python${MODPY_VERSION}/site-packages/wx/_html2.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/wx/html2.py
+lib/python${MODPY_VERSION}/site-packages/wx/html2.pyi

@@ -1,0 +1,4 @@
+lib/python${MODPY_VERSION}/site-packages/wx/${MODPY_PYCACHE}media.${MODPY_PYC_MAGIC_TAG}pyc
+@so lib/python${MODPY_VERSION}/site-packages/wx/_media.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/wx/media.py
+lib/python${MODPY_VERSION}/site-packages/wx/media.pyi
