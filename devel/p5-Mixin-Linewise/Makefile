@@ -1,6 +1,6 @@
 COMMENT =	write your linewise code for handles; this does the rest
 
-DISTNAME =	Mixin-Linewise-0.110
+DISTNAME =	Mixin-Linewise-0.111
 
 CATEGORIES =	devel
 
