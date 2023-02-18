@@ -130,7 +130,8 @@ CONFIGURE_ARGS +=	--disable-webviewwebkit
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 			WXCONFIG_CPPFLAGS="-I${X11BASE}/include" \
-			WXCONFIG_LDFLAGS_GUI="-L${X11BASE}/lib"
+			WXCONFIG_LDFLAGS_GUI="-L${X11BASE}/lib" \
+			wx_cv_gdk_wayland=false
 
 # XXX: When used in conjunction with PIE, symbol versioning triggers
 # weird linking problems in dependent ports
