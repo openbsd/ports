@@ -9,7 +9,7 @@ PKGNAME-media =		wxWidgets-media-${V}
 PKGNAME-webkit =	wxWidgets-webkit-${V}
 
 REVISION-main =		0
-REVISION-media =	0
+REVISION-media =	1
 REVISION-webkit =	0
 
 CATEGORIES =		x11
@@ -79,6 +79,7 @@ WANTLIB-main += intl jpeg lzma m mspack notify pango-1.0 pangocairo-1.0
 WANTLIB-main += pangoft2-1.0 pcre2-32 png secret-1 tiff z execinfo
 
 LIB_DEPENDS-media =	multimedia/gstreamer1/plugins-base \
+			multimedia/gstreamer1/plugins-bad \
 			${BASE_PKGPATH},-main>=${V}
 
 WANTLIB-media += ${COMPILER_LIBCXX} SDL2 SM X11 Xtst Xxf86vm atk-1.0
@@ -87,7 +88,7 @@ WANTLIB-media += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gspell-1
 WANTLIB-media += gstbase-1.0 gstreamer-1.0 gstvideo-1.0 gthread-2.0
 WANTLIB-media += gtk-3 harfbuzz iconv intl jpeg lzma m notify pango-1.0
 WANTLIB-media += pangocairo-1.0 pangoft2-1.0 pcre2-32 png secret-1 tiff
-WANTLIB-media += wx_baseu-3.2 wx_gtk3u_core-3.2 z execinfo
+WANTLIB-media += wx_baseu-3.2 wx_gtk3u_core-3.2 z execinfo gstplayer-1.0
 
 LIB_DEPENDS-webkit =	www/webkitgtk4 \
 			${BASE_PKGPATH},-main>=${V}
