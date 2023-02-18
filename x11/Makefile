@@ -241,7 +241,6 @@
      SUBDIR += pwm
      SUBDIR += py-gtk2
      SUBDIR += py-i3ipc,python3
-     SUBDIR += py-pyglet
      SUBDIR += py-pyglet,python3
      SUBDIR += py-qt5,python3
      SUBDIR += py-qtawesome,python3

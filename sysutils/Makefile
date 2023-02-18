@@ -310,7 +310,6 @@
      SUBDIR += py-pipx,python3
      SUBDIR += py-platformdirs,python3
      SUBDIR += py-prometheus_client,python3
-     SUBDIR += py-psutil
      SUBDIR += py-psutil,python3
      SUBDIR += py-pushover,python3
      SUBDIR += py-pynetbox,python3

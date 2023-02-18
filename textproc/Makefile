@@ -416,7 +416,6 @@
      SUBDIR += py-jsonpatch,python3
      SUBDIR += py-jsonpointer,python3
      SUBDIR += py-lark,python3
-     SUBDIR += py-lxml
      SUBDIR += py-lxml,python3
      SUBDIR += py-markdown,python3
      SUBDIR += py-m2r,python3
