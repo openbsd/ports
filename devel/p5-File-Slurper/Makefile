@@ -3,7 +3,7 @@ COMMENT=	simple, sane and efficient module to slurp a file
 MODULES=	cpan
 PKG_ARCH=	*
 
-DISTNAME=	File-Slurper-0.013
+DISTNAME =	File-Slurper-0.014
 
 CATEGORIES=	devel
 
