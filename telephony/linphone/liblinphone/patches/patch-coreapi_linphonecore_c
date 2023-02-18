@@ -3,7 +3,7 @@ default to ipv6 disabled, the world isnt ready yet
 Index: coreapi/linphonecore.c
 --- coreapi/linphonecore.c.orig
 +++ coreapi/linphonecore.c
-@@ -746,7 +746,7 @@ static void _close_log_collection_file(void) {
+@@ -765,7 +765,7 @@ static void _close_log_collection_file(void) {
  	}
  }
  
@@ -12,7 +12,7 @@ Index: coreapi/linphonecore.c
  static const char* getprogname() {
  #if defined(__GLIBC__)
    	return program_invocation_short_name;
-@@ -1597,7 +1597,7 @@ static void sip_config_read(LinphoneCore *lc) {
+@@ -1628,7 +1628,7 @@ static void sip_config_read(LinphoneCore *lc) {
  	const char *tmpstr;
  	LinphoneSipTransports tr;
  	int i,tmp;

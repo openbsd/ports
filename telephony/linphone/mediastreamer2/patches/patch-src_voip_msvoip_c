@@ -1,7 +1,8 @@
+chunk 3: breaks loading plugins ?
 Index: src/voip/msvoip.c
 --- src/voip/msvoip.c.orig
 +++ src/voip/msvoip.c
-@@ -104,6 +104,10 @@ extern MSSndCardDesc aq_card_desc;
+@@ -105,6 +105,10 @@ extern MSSndCardDesc aq_card_desc;
  extern MSSndCardDesc pulse_card_desc;
  #endif
  
@@ -12,14 +13,23 @@ Index: src/voip/msvoip.c
  #if TARGET_OS_IPHONE
  extern MSSndCardDesc au_card_desc;
  #endif
-@@ -121,6 +125,10 @@ static MSSndCardDesc * ms_snd_card_descs[]={
- 
- #ifdef __PULSEAUDIO_ENABLED__
+@@ -124,6 +128,10 @@ static MSSndCardDesc * ms_snd_card_descs[]={
          &pulse_card_desc,
-+#endif
-+
-+#ifdef __SNDIO_ENABLED__
-+        &sndio_card_desc,
  #endif
  
++#ifdef __SNDIO_ENABLED__
++        &sndio_card_desc,
++#endif
++
  #ifdef __ALSA_ENABLED__
+ 	&alsa_card_desc,
+ #endif
+@@ -362,7 +370,7 @@ MSFactory *ms_factory_new_with_voip(void){
+ 
+ MSFactory *ms_factory_new_with_voip_and_directories(const char *plugins_dir, const char *images_dir) {
+ 	MSFactory *f = ms_factory_new();
+-	ms_factory_set_plugins_dir(f, plugins_dir);
++//	ms_factory_set_plugins_dir(f, plugins_dir);
+ 	ms_factory_set_image_resources_dir(f, images_dir);
+ 	ms_factory_init_voip(f);
+ 	ms_factory_init_plugins(f);

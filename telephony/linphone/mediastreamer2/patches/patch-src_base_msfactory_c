@@ -1,7 +1,7 @@
 Index: src/base/msfactory.c
 --- src/base/msfactory.c.orig
 +++ src/base/msfactory.c
-@@ -194,7 +194,7 @@ void ms_factory_init(MSFactory *obj){
+@@ -197,7 +197,7 @@ void ms_factory_init(MSFactory *obj){
  	GetNativeSystemInfo( &sysinfo );
  
  	num_cpu = sysinfo.dwNumberOfProcessors;

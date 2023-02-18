@@ -1,3 +1,4 @@
+chunk 2: https://github.com/freebsd/freebsd-ports/blob/main/net/belle-sip/files/patch-src_dns_dns.c
 Index: src/dns/dns.c
 --- src/dns/dns.c.orig
 +++ src/dns/dns.c
@@ -14,7 +15,16 @@ Index: src/dns/dns.c
  
  	return resconf;
  error:
-@@ -9179,6 +9181,7 @@ static struct dns_resolv_conf *resconf(void) {
+@@ -5044,7 +5048,7 @@ int dns_resconf_loadfromresolv(struct dns_resolv_conf 
+ 	union res_sockaddr_union addresses[3];
+ 	int i,error,write_index;
+ 
+-
++	memset(&res, 0, sizeof(res));
+ 	if ((error = res_ninit(&res))) {
+ 		return error;
+ 	}
+@@ -9180,6 +9184,7 @@ static struct dns_resolv_conf *resconf(void) {
  			panic("%s: %s", path, dns_strerror(error));
  	}
  
@@ -22,7 +32,7 @@ Index: src/dns/dns.c
  	for (i = 0; i < MAIN.nssconf.count; i++) {
  		path	= MAIN.nssconf.path[i];
  
-@@ -9199,7 +9202,7 @@ static struct dns_resolv_conf *resconf(void) {
+@@ -9200,7 +9205,7 @@ static struct dns_resolv_conf *resconf(void) {
  		else if (error != ENOENT)
  			panic("%s: %s", path, dns_strerror(error));
  	}

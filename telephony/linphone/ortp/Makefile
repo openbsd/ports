@@ -2,10 +2,11 @@ COMMENT =	library implementing the RTP protocol
 
 MODULE =	ortp
 
-SHARED_LIBS +=  ortp 1.0 # 15
+SHARED_LIBS +=  ortp 2.0 # 15
 
 CONFIGURE_ARGS= -DENABLE_STATIC=NO \
 		-DENABLE_TESTS=NO \
+		-DENABLE_UNIT_TESTS=NO \
 		-DENABLE_DOC=NO
 
 LIB_DEPENDS =	telephony/linphone/bctoolbox

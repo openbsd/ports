@@ -1,7 +1,7 @@
 Index: include/bctoolbox/port.h
 --- include/bctoolbox/port.h.orig
 +++ include/bctoolbox/port.h
-@@ -780,7 +780,7 @@ BCTBX_PUBLIC uint64_t bctbx_str_to_uint64(const uint8_
+@@ -859,7 +859,7 @@ BCTBX_PUBLIC void bctbx_set_stack_trace_hooks(bool_t u
  #define IN6_IS_ADDR_MULTICAST(i)	(((uint8_t *) (i))[0] == 0xff)
  #endif
  

@@ -1,0 +1,14 @@
+https://salsa.debian.org/pkg-voip-team/linphone-stack/linphone-desktop/-/commit/f25ee3690c5885e0df4936c7423d913310f996d4
+
+Index: linphone-app/src/components/call/CallModel.cpp
+--- linphone-app/src/components/call/CallModel.cpp.orig
++++ linphone-app/src/components/call/CallModel.cpp
+@@ -946,7 +946,7 @@ void CallModel::searchReceived(std::list<std::shared_p
+ 	bool found = false;
+ 	for(auto it = results.begin() ; it != results.end() && !found ; ++it){
+ 		if((*it)->getFriend()){// Local Friend
+-			if((*it)->getFriend()->getAddress()->weakEqual(mRemoteAddress)){
++			if((*it)->getFriend()->getAddress() && (*it)->getFriend()->getAddress()->weakEqual(mRemoteAddress)){
+ 				setRemoteDisplayName((*it)->getFriend()->getName());
+ 				found = true;
+ 			}

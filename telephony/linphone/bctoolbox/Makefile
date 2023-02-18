@@ -2,7 +2,7 @@ COMMENT =	utilities library used by linphone stack
 
 MODULE =	bctoolbox
 
-SHARED_LIBS +=	bctoolbox 0.1 # 1
+SHARED_LIBS +=	bctoolbox 0.2 # 1
 #SHARED_LIBS +=	bctoolbox-tester 0.0 # 1
 
 CONFIGURE_ARGS =-DENABLE_STATIC=NO

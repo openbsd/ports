@@ -1,7 +1,7 @@
 Index: linphone-app/src/config.h.cmake
 --- linphone-app/src/config.h.cmake.orig
 +++ linphone-app/src/config.h.cmake
-@@ -30,4 +30,5 @@
+@@ -31,4 +31,5 @@
  #cmakedefine ENABLE_UPDATE_CHECK 1
  #cmakedefine EXECUTABLE_NAME "${EXECUTABLE_NAME}"
  #cmakedefine MSPLUGINS_DIR "${MSPLUGINS_DIR}"

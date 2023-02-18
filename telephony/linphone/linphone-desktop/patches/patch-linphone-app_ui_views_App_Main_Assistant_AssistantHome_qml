@@ -1,0 +1,27 @@
+https://salsa.debian.org/pkg-voip-team/linphone-stack/linphone-desktop/-/commit/4a5636303c3a1d4cea41a852442b10a729d2832b
+
+Enable creation of third-party accounts unconditionally
+Users should be able to do it without the need for accepting BC's
+Terms of Use and Privacy Policy.
+
+Index: linphone-app/ui/views/App/Main/Assistant/AssistantHome.qml
+--- linphone-app/ui/views/App/Main/Assistant/AssistantHome.qml.orig
++++ linphone-app/ui/views/App/Main/Assistant/AssistantHome.qml
+@@ -100,7 +100,7 @@ ColumnLayout {
+ 		
+ 		cellHeight: height / 2
+ 		cellWidth: width / 2
+-		enabled: cguCheckBox.checked
++//		enabled: cguCheckBox.checked
+ 		
+ 		delegate: Item {
+ 			height: buttons.cellHeight
+@@ -112,7 +112,7 @@ ColumnLayout {
+ 					margins: AssistantHomeStyle.buttons.spacing
+ 				}
+ 				
+-				enabled: cguCheckBox.checked && SettingsModel[$viewType.charAt(0).toLowerCase() + $viewType.slice(1) + "Enabled"]
++				enabled: $viewType=='UseOtherSipAccount' || (cguCheckBox.checked && SettingsModel[$viewType.charAt(0).toLowerCase() + $viewType.slice(1) + "Enabled"])
+ 				text: $text.replace('%1', Qt.application.name.toUpperCase())
+ 				
+ 				onClicked:{ assistant.pushView($view, $props) }

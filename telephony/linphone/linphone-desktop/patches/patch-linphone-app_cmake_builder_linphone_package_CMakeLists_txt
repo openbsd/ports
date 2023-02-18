@@ -24,8 +24,8 @@ Index: linphone-app/cmake_builder/linphone_package/CMakeLists.txt
 +if (NOT(APP_PROJECT_VERSION))
    set(APP_PROJECT_VERSION "0.0.0")
  endif ()
- string(REGEX REPLACE "([0-9.]+)-?.*" "\\1" LINPHONE_VERSION "${APP_PROJECT_VERSION}")
-@@ -275,8 +267,6 @@ else()# Not Windows and Apple
+ 
+@@ -291,8 +283,6 @@ else()# Not Windows and Apple
  	install(FILES "${CMAKE_CURRENT_BINARY_DIR}/../../${EXECUTABLE_NAME}.desktop" DESTINATION "${CMAKE_INSTALL_DATADIR}/applications" PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
  	set(APP_QT_CONF_PATH "")	
  

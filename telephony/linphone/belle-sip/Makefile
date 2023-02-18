@@ -2,7 +2,7 @@ COMMENT =	library implementing SIP (RFC3261) transport
 
 MODULE =	belle-sip
 
-SHARED_LIBS +=  bellesip 0.1 # 1
+SHARED_LIBS +=  bellesip 1.0 # 1
 
 CONFIGURE_ARGS= -DENABLE_STATIC=NO
 CONFIGURE_ARGS += -DENABLE_TESTS=NO

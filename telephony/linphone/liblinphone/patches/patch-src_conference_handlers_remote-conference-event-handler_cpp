@@ -1,0 +1,14 @@
+Index: src/conference/handlers/remote-conference-event-handler.cpp
+--- src/conference/handlers/remote-conference-event-handler.cpp.orig
++++ src/conference/handlers/remote-conference-event-handler.cpp
+@@ -290,8 +290,10 @@ void RemoteConferenceEventHandler::conferenceInfoNotif
+ 			} else {
+ 				participant = Participant::create(conf,address);
+ 				conf->participants.push_back(participant);
++#ifdef HAVE_DB_STORAGE
+ 				conf->updateParticipantsInConferenceInfo(address);
+ 				lInfo() << "Participant " << *participant << " is successfully added - conference " << conf->getConferenceAddress().asString() << " has " << conf->getParticipantCount() << " participants";
++#endif
+ 
+ 				if (!isFullState || (!oldParticipants.empty() && (pIt == oldParticipants.cend()) && !conf->isMe(address))) {
+ 					conf->notifyParticipantAdded(

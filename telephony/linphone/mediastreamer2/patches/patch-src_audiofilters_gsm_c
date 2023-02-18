@@ -1,8 +1,8 @@
 Index: src/audiofilters/gsm.c
 --- src/audiofilters/gsm.c.orig
 +++ src/audiofilters/gsm.c
-@@ -18,7 +18,7 @@
-  */
+@@ -21,7 +21,7 @@
+ #include <bctoolbox/defs.h>
  
  #include "mediastreamer2/msfilter.h"
 -#include <gsm/gsm.h>

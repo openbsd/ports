@@ -4,7 +4,7 @@ https://github.com/BelledonneCommunications/liblinphone/pull/225
 Index: console/linphonec.c
 --- console/linphonec.c.orig
 +++ console/linphonec.c
-@@ -965,7 +965,7 @@ static void lpc_apply_video_params(void){
+@@ -962,7 +962,7 @@ static void lpc_apply_video_params(void){
   *
   */
  static int
@@ -13,7 +13,7 @@ Index: console/linphonec.c
  {
  	LinphoneCore *opm=linphonec;
  
-@@ -1274,7 +1274,7 @@ linphonec_parse_cmdline(int argc, char **argv)
+@@ -1271,7 +1271,7 @@ linphonec_parse_cmdline(int argc, char **argv)
   *	-1 on error
   */
  static int

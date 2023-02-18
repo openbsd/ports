@@ -1,7 +1,7 @@
 Index: tester/port.c
 --- tester/port.c.orig
 +++ tester/port.c
-@@ -135,21 +135,15 @@ static void time_functions(void) {
+@@ -136,21 +136,15 @@ static void time_functions(void) {
  
  static void bctbx_addrinfo_sort_test(void) {
  	struct addrinfo * res1 = bctbx_name_to_addrinfo(AF_INET6, SOCK_DGRAM, "sip3.linphone.org", 27256);

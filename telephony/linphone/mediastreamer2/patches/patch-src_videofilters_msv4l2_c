@@ -1,7 +1,7 @@
 Index: src/videofilters/msv4l2.c
 --- src/videofilters/msv4l2.c.orig
 +++ src/videofilters/msv4l2.c
-@@ -35,7 +35,7 @@
+@@ -38,7 +38,7 @@
  #include <sys/mman.h>
  #include <poll.h>
  

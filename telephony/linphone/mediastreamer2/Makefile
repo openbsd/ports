@@ -2,7 +2,9 @@ COMMENT =	streaming engine for voice/video telephony applications
 
 MODULE =	mediastreamer2
 
-SHARED_LIBS += mediastreamer 1.0 # 11
+SHARED_LIBS += mediastreamer 2.0 # 11
+
+MODULES+=	x11/qt5
 
 CONFIGURE_ARGS =-DENABLE_STATIC=NO \
 		-DENABLE_DOC=NO \
@@ -11,6 +13,7 @@ CONFIGURE_ARGS =-DENABLE_STATIC=NO \
 		-DENABLE_TOOLS=NO \
 		-DENABLE_SNDIO=YES \
 		-DENABLE_ALSA=NO \
+		-DENABLE_QT_GL=YES \
 		-DENABLE_PULSEAUDIO=NO \
 		-DGSM_INCLUDE_DIRS=${LOCALBASE}/include \
 		-DV4L_INCLUDE_DIRS=${LOCALBASE}/include
@@ -28,16 +31,17 @@ LIB_DEPENDS =	telephony/linphone/bctoolbox\
 		security/libsrtp>=2.3.0p2 \
 		graphics/glew \
 		graphics/ffmpeg \
-		graphics/zxing>=20190320p1 \
+		x11/qt5/qtdeclarative \
 		audio/opus \
 		audio/speex \
 		audio/speexdsp \
 		audio/gsm
 
 WANTLIB += ${COMPILER_LIBCXX} bctoolbox m
+WANTLIB += Qt5Core Qt5Gui Qt5Network Qt5Qml Qt5QmlModels Qt5Quick
 WANTLIB += GLEW X11 Xv avcodec avutil bcg729 bzrtp gsm opus ortp sndio
-WANTLIB += speex speexdsp sqlite3 srtp2 swscale theora turbojpeg v4l1
-WANTLIB += v4l2 v4lconvert vpx xml2 zxing
+WANTLIB += speex speexdsp srtp2 swscale theora turbojpeg v4l1
+WANTLIB += v4l2 v4lconvert vpx
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt

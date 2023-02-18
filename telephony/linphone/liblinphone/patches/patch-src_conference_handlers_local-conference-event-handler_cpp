@@ -1,0 +1,13 @@
+Index: src/conference/handlers/local-conference-event-handler.cpp
+--- src/conference/handlers/local-conference-event-handler.cpp.orig
++++ src/conference/handlers/local-conference-event-handler.cpp
+@@ -1081,7 +1081,9 @@ void LocalConferenceEventHandler::onParticipantAdded (
+ 	// Do not send notify if conference pointer is null. It may mean that the confernece has been terminated
+ 	if (conf) {
+ 		notifyAllExcept(makeContent(createNotifyParticipantAdded(participant->getAddress().asAddress())), participant);
++#ifdef HAVE_DB_STORAGE
+ 		conf->updateParticipantsInConferenceInfo(participant->getAddress());
++#endif
+ 
+ 		if (conf) {
+ 			shared_ptr<Core> core = conf->getCore();

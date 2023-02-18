@@ -1,7 +1,9 @@
+fix dlopen detection so that loading plugins work
+
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -95,6 +95,7 @@ cmake_dependent_option(ENABLE_QSA "Enable QSA (QNX Sou
+@@ -105,6 +105,7 @@ cmake_dependent_option(ENABLE_QSA "Enable QSA (QNX Sou
  cmake_dependent_option(ENABLE_OSS "Enable OSS support." NO "ENABLE_SOUND;LINUX_OR_BSD" NO)
  cmake_dependent_option(ENABLE_PORTAUDIO "Enable portaudio native support." NO "ENABLE_SOUND" NO)
  cmake_dependent_option(ENABLE_PULSEAUDIO "Enable pulseaudio support." YES "ENABLE_SOUND" NO)
@@ -9,7 +11,16 @@ Index: CMakeLists.txt
  option(ENABLE_G726 "Build mediastreamer2 with the G726 codec." NO)
  option(ENABLE_GSM "Build mediastreamer2 with the GSM codec." YES)
  option(ENABLE_BV16 "Build mediastreamer2 with the BV16 codec." YES)
-@@ -228,6 +229,12 @@ endif()
+@@ -173,7 +174,7 @@ if(ENABLE_OSS)
+ 	endif()
+ endif()
+ 
+-check_library_exists("dl" "dlopen" "" HAVE_DLOPEN)
++check_library_exists("c" "dlopen" "" HAVE_DLOPEN)
+ 
+ include(TestBigEndian)
+ test_big_endian(WORDS_BIGENDIAN)
+@@ -246,6 +247,12 @@ endif()
  if(ENABLE_PORTAUDIO)
  	find_package(PortAudio REQUIRED)
  endif()
@@ -22,7 +33,7 @@ Index: CMakeLists.txt
  if(ENABLE_PULSEAUDIO)
  	find_package(PulseAudio)
  	if(NOT PULSEAUDIO_FOUND)
-@@ -348,7 +355,7 @@ if(ENABLE_QNX)
+@@ -366,7 +373,7 @@ if(ENABLE_QNX)
  	endif()
  endif()
  
@@ -31,7 +42,17 @@ Index: CMakeLists.txt
  	message(FATAL_ERROR "Could not find a support sound driver API. Use -DENABLE_SOUND=NO if you don't care about having sound.")
  endif()
  
-@@ -441,6 +448,10 @@ if(PULSEAUDIO_FOUND)
+@@ -446,9 +453,6 @@ endif()
+ if(ANDROID AND ENABLE_VIDEO)
+ 	list(APPEND LINK_LIBS EGL GLESv3 android)
+ endif()
+-if(HAVE_DLOPEN)
+-	list(APPEND LINK_LIBS dl)
+-endif()
+ if(ALSA_FOUND)
+ 	list(APPEND LINK_LIBS asound)
+ 	list(APPEND MEDIASTREAMER2_INCLUDE_DIRS ${ALSA_INCLUDE_DIRS})
+@@ -468,6 +472,10 @@ if(PULSEAUDIO_FOUND)
  	list(APPEND LINK_LIBS pulse)
    	list(APPEND MEDIASTREAMER2_INCLUDE_DIRS ${PULSEAUDIO_INCLUDE_DIRS})
    	set(__PULSEAUDIO_ENABLED__ 1)

@@ -1,7 +1,7 @@
 Index: src/nat/ice-service.cpp
 --- src/nat/ice-service.cpp.orig
 +++ src/nat/ice-service.cpp
-@@ -683,12 +683,14 @@ const struct addrinfo *IceService::getIcePreferredStun
+@@ -744,12 +744,14 @@ const struct addrinfo *IceService::getIcePreferredStun
  			bctbx_addrinfo_to_printable_ip_address(it, ip_port, sizeof(ip_port)-1);
  			if (it->ai_family == AF_INET)
  				break;

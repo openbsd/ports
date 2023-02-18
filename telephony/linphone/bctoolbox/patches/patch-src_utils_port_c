@@ -5,7 +5,28 @@ one chunk from https://svnweb.freebsd.org/ports/head/net/bctoolbox/files/patch-s
 Index: src/utils/port.c
 --- src/utils/port.c.orig
 +++ src/utils/port.c
-@@ -1107,7 +1107,9 @@ static struct addrinfo *convert_to_v4mapped(const stru
+@@ -30,6 +30,9 @@
+ #include "bctoolbox/charconv.h"
+ #include "utils.h"
+ 
++#include <pthread.h>
++#include <pthread_np.h>
++
+ #ifdef __APPLE__
+    #include "TargetConditionals.h"
+ #endif
+@@ -371,8 +374,8 @@ void bctbx_set_self_thread_name(const char *name){
+ 	prctl(PR_SET_NAME, name, NULL, NULL, NULL);
+ #elif TARGET_OS_MAC
+ 	pthread_setname_np(name);
+-#elif
+-	bctbx_warning("bctbx_set_self_thread_name(): not implemented on this platform.");
++#else
++	pthread_set_name_np(pthread_self(), name);
+ #endif
+ }
+ 
+@@ -1311,7 +1314,9 @@ static struct addrinfo *convert_to_v4mapped(const stru
  		struct sockaddr_in6 *sin6;
  		struct sockaddr_in *sin;
  		v4m=_bctbx_alloc_addrinfo(AF_INET6, it->ai_socktype, it->ai_protocol);
@@ -15,7 +36,7 @@ Index: src/utils/port.c
  		sin6=(struct sockaddr_in6*)v4m->ai_addr;
  		sin=(struct sockaddr_in*)it->ai_addr;
  		sin6->sin6_family=AF_INET6;
-@@ -1125,7 +1127,7 @@ static struct addrinfo *convert_to_v4mapped(const stru
+@@ -1329,7 +1334,7 @@ static struct addrinfo *convert_to_v4mapped(const stru
  	return res;
  }
  
@@ -24,11 +45,18 @@ Index: src/utils/port.c
  
  /*
   * SHAME !!! bionic's getaddrinfo does not implement the AI_V4MAPPED flag !
-@@ -1323,11 +1325,12 @@ static struct addrinfo * _bctbx_name_to_addrinfo(int f
+@@ -1521,17 +1526,19 @@ static struct addrinfo * _bctbx_name_to_addrinfo(int f
+ 	struct addrinfo *res=NULL;
+ 	struct addrinfo hints={0};
+ 	char serv[10];
+-	int err;
++	int err = 0;
+ 
+ 	snprintf(serv,sizeof(serv),"%i",port);
  	hints.ai_family=family;
  	if (numeric_only) hints.ai_flags=AI_NUMERICSERV|AI_NUMERICHOST;
  	hints.ai_socktype=socktype;
--	
+ 
 +#ifndef __OpenBSD__
  	if (family == AF_INET6) {
  		hints.ai_flags |= AI_V4MAPPED;
@@ -38,7 +66,7 @@ Index: src/utils/port.c
  	err=bctbx_getaddrinfo(ipaddress,serv,&hints,&res);
  
  	if (err!=0){
-@@ -1438,7 +1441,7 @@ void bctbx_sockaddr_remove_nat64_mapping(const struct 
+@@ -1642,7 +1649,7 @@ void bctbx_sockaddr_remove_nat64_mapping(const struct 
  		if (htonl(0x0064ff9b) ==
  #ifdef _MSC_VER
  			((in6->sin6_addr.u.Word[0] << 16) & in6->sin6_addr.u.Word[1])

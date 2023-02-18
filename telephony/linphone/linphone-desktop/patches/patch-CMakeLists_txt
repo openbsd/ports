@@ -3,7 +3,7 @@ https://sources.debian.org/patches/linphone-desktop/4.2.5-3/0001-do-not-build-li
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -152,7 +152,6 @@ list(APPEND APP_OPTIONS "-DENABLE_RELATIVE_PREFIX=${EN
+@@ -180,7 +180,6 @@ list(APPEND APP_OPTIONS "-DENABLE_RELATIVE_PREFIX=${EN
  list(APPEND APP_OPTIONS "-DLINPHONE_OUTPUT_DIR=${LINPHONE_OUTPUT_DIR}")
  list(APPEND APP_OPTIONS "-DENABLE_QT_GL=${ENABLE_VIDEO}")#Activate on video
  
@@ -11,7 +11,7 @@ Index: CMakeLists.txt
  set(PROJECT_BUILD_COMMAND "")
  if(CMAKE_BUILD_PARALLEL_LEVEL)
  	list(APPEND APP_OPTIONS "-DCMAKE_BUILD_PARALLEL_LEVEL=${CMAKE_BUILD_PARALLEL_LEVEL}")
-@@ -191,26 +190,6 @@ if(ENABLE_BUILD_APP_PLUGINS)
+@@ -221,26 +220,6 @@ if(ENABLE_BUILD_APP_PLUGINS)
  endif()
  
  
@@ -38,7 +38,7 @@ Index: CMakeLists.txt
  include(FindPkgConfig)
  
  set(APP_DEPENDS sdk)
-@@ -227,62 +206,6 @@ find_package(belcard CONFIG QUIET)
+@@ -257,62 +236,6 @@ find_package(belcard CONFIG QUIET)
  find_package(Mediastreamer2 CONFIG QUIET)
  find_package(ortp CONFIG QUIET)
  

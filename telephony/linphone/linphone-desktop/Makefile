@@ -1,6 +1,6 @@
 COMMENT =	graphical audio and video SIP phone
 
-V =		4.4.8
+V =		5.0.10
 MODULE =	linphone-desktop
 PKGNAME =	linphone-${V}
 
@@ -28,7 +28,7 @@ WANTLIB += Qt5Svg Qt5Test Qt5TextToSpeech Qt5Widgets bctoolbox belcard
 WANTLIB += c linphone linphone++ m mediastreamer ortp
 
 post-patch:
-	echo "project(linphoneqt VERSION ${V})" > ${WRKSRC}/linphone-app/linphoneqt_version.cmake
+	echo "project(linphoneqt VERSION ${V})\nset(FULL_VERSION ${V})" > ${WRKSRC}/linphone-app/linphoneqt_version.cmake
 
 # from https://salsa.debian.org/pkg-voip-team/linphone-stack/linphone-desktop/-/blob/master/debian/rules#L14
 post-configure:

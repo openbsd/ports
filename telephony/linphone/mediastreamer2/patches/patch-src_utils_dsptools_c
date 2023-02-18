@@ -1,7 +1,7 @@
 Index: src/utils/dsptools.c
 --- src/utils/dsptools.c.orig
 +++ src/utils/dsptools.c
-@@ -61,7 +61,7 @@
+@@ -62,7 +62,7 @@
  #ifdef HAVE_ALLOCA_H
  #include <alloca.h>
  #else
