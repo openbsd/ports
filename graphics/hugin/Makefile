@@ -4,7 +4,7 @@ COMMENT =	panorama image stitcher
 
 DISTNAME =	hugin-2022.0.0
 EXTRACT_SUFX =	.tar.bz2
-REVISION =	0
+REVISION =	1
 
 # not needed for releases, but makes RCs/betas easier to work with
 PKGNAME =	${DISTNAME:S/_//:L}
@@ -46,7 +46,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			graphics/p5-Image-ExifTool \
 			misc/shared-mime-info \
 			x11/gtk+3,-guic
-RUN_DEPENDS +=		x11/py-wxPython # required for launching python scripts
+RUN_DEPENDS +=		x11/py-wxPython${MODPY_FLAVOR} # required for launching python scripts
 
 LIB_DEPENDS =		devel/boost \
 			graphics/exiv2>=0.12 \
