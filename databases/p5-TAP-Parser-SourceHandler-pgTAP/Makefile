@@ -1,7 +1,6 @@
 COMMENT =	stream TAP from pgTAP test scripts
 
-DISTNAME =	TAP-Parser-SourceHandler-pgTAP-3.35
-REVISION =	0
+DISTNAME =	TAP-Parser-SourceHandler-pgTAP-3.36
 
 CATEGORIES =	databases
 
