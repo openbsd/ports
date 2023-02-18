@@ -1,3 +1,5 @@
+BROKEN=			does not build with new wxWidgets; needs an update
+
 COMMENT=		GUI designer for wxWidgets/wxPython user interfaces
 
 MODPY_EGG_VERSION=	1.0.0
