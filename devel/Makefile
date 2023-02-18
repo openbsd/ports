@@ -1565,7 +1565,7 @@
      SUBDIR += py-stack_data,python3
      SUBDIR += py-stdnum,python3
      SUBDIR += py-straight.plugin,python3
-     SUBDIR += py-suds
+     SUBDIR += py-suds,python3
      SUBDIR += py-sure,python3
      SUBDIR += py-tabulate
      SUBDIR += py-thrift,python3
