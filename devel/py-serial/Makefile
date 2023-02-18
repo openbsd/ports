@@ -3,7 +3,7 @@ COMMENT =		serial interface class for Python
 MODPY_EGG_VERSION =	3.4
 DISTNAME =		pyserial-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		devel
 
@@ -20,7 +20,7 @@ MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 DOCSDIR =		${PREFIX}/share/doc/${MODPY_PY_PREFIX}serial
 EXAMPLESDIR =		${PREFIX}/share/examples/${MODPY_PY_PREFIX}serial

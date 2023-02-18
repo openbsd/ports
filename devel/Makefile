@@ -1539,7 +1539,6 @@
      SUBDIR += py-schema,python3
      SUBDIR += py-semantic-version,python3
      SUBDIR += py-send2trash,python3
-     SUBDIR += py-serial
      SUBDIR += py-serial,python3
      SUBDIR += py-setproctitle,python3
      SUBDIR += py-setuptools,python3
