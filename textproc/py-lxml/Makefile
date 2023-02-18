@@ -20,9 +20,7 @@ WANTLIB=	${MODPY_WANTLIB} exslt m pthread xml2 xslt z
 MODULES=	lang/python
 
 LIB_DEPENDS=	textproc/libxslt
-.if ${FLAVOR} == python3
 TEST_DEPENDS=	textproc/py-cssselect${MODPY_FLAVOR}
-.endif
 
 MODPY_PI=	Yes
 MODPY_SETUPTOOLS=Yes
