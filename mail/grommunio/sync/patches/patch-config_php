@@ -1,0 +1,24 @@
+Index: config.php
+--- config.php.orig
++++ config.php
+@@ -8,6 +8,11 @@
+  */
+ 
+ /*
++ *  Determine the root directory of grommunio sync
++ */
++	define('GTOPDIR', realpath(implode(DIRECTORY_SEPARATOR, [__DIR__, '..'])));
++
++/*
+  *  Default settings
+  */
+ 	// Defines the default time zone, change e.g. to "Europe/London" if necessary
+@@ -79,7 +84,7 @@
+ 	$specialLogUsers = [];
+ 
+ 	// Filelog settings
+-	define('LOGFILEDIR', '/var/log/grommunio-sync/');
++	define('LOGFILEDIR', GTOPDIR . 'logs' . DIRECTORY_SEPARATOR);
+ 	define('LOGFILE', LOGFILEDIR . 'grommunio-sync.log');
+ 	define('LOGERRORFILE', LOGFILEDIR . 'grommunio-sync-error.log');
+ 

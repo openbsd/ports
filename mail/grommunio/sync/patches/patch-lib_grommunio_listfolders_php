@@ -6,7 +6,7 @@ Index: lib/grommunio/listfolders.php
  
  	// include PHP-MAPI classes
 -	define('UMAPI_PATH', '/usr/share/php-mapi');
-+	define('UMAPI_PATH', '/var/www/grommunio-mapi-header-php');
++	define('UMAPI_PATH', GTOPDIR . DIRECTORY_SEPARATOR . 'grommunio-mapi-header-php');
  	require_once UMAPI_PATH . '/mapi.util.php';
  	require_once UMAPI_PATH . '/mapidefs.php';
  	require_once UMAPI_PATH . '/mapitags.php';

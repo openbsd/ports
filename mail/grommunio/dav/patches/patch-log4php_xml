@@ -6,7 +6,7 @@ Index: log4php.xml
              <param name="conversionPattern" value="%date{d.m.Y H:i:s} [%5pid] [%-5level] %4logger %msg%n" />
          </layout>
 -	<param name="file" value="/var/log/grommunio-dav/dav.log" />
-+	<param name="file" value="/var/www/logs/grommunio-dav/dav.log" />
++	<param name="file" value="../logs/grommunio-dav/dav.log" />
          <param name="append" value="true" />
      </appender>
      <root>

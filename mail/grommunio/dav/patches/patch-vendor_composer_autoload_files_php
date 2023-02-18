@@ -1,0 +1,26 @@
+Index: vendor/composer/autoload_files.php
+--- vendor/composer/autoload_files.php.orig
++++ vendor/composer/autoload_files.php
+@@ -5,6 +5,9 @@
+ $vendorDir = dirname(__DIR__);
+ $baseDir = dirname($vendorDir);
+ 
++define('GTOPDIR', realpath(implode(DIRECTORY_SEPARATOR, [__DIR__, '..', '..', '..'])));
++define('UMAPI_PATH', GTOPDIR . DIRECTORY_SEPARATOR . 'grommunio-mapi-header-php');
++
+ return array(
+     '383eaff206634a77a1be54e64e6459c7' => $vendorDir . '/sabre/uri/lib/functions.php',
+     '2b9d0f43f9552984cfa82fee95491826' => $vendorDir . '/sabre/event/lib/coroutine.php',
+@@ -15,8 +18,8 @@ return array(
+     'ebdb698ed4152ae445614b69b5e4bb6a' => $vendorDir . '/sabre/http/lib/functions.php',
+     '777dc149d682152f9ab0caaeffcdbb27' => $baseDir . '/config.php',
+     '32a4f751fbcde8755e5f28bd96eed397' => $baseDir . '/version.php',
+-    'b05b0d0a4f97d8e7b104a9a31ac2ca03' => '/var/www/grommunio-mapi-header-php/mapi.util.php',
+-    '6a9de07a28f7691abb65b9e10c0d3162' => '/var/www/grommunio-mapi-header-php/mapidefs.php',
+-    'f7a3109aab90144ee6f61ff5d8dc18f8' => '/var/www/grommunio-mapi-header-php/mapiguid.php',
+-    'e6a7d3833b984731fa99a3d51254b714' => '/var/www/grommunio-mapi-header-php/mapitags.php',
++    'b05b0d0a4f97d8e7b104a9a31ac2ca03' => UMAPI_PATH . '/mapi.util.php',
++    '6a9de07a28f7691abb65b9e10c0d3162' => UMAPI_PATH . '/mapidefs.php',
++    'f7a3109aab90144ee6f61ff5d8dc18f8' => UMAPI_PATH . '/mapiguid.php',
++    'e6a7d3833b984731fa99a3d51254b714' => UMAPI_PATH . '/mapitags.php',
+ );

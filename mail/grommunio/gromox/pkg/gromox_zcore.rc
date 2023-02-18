@@ -8,7 +8,7 @@ daemon_logger="mail.info"
 rc_bg=YES
 
 rc_pre() {
-	install -d -o _gromox -g _gromox /var/run/gromox
+	install -d -o _gromox -g _gromox /var/www/run/gromox
 }
 
 rc_cmd $1

@@ -225,6 +225,8 @@ share/examples/gromox/mysql_adaptor.cfg
 @sample ${SYSCONFDIR}/gromox/mysql_adaptor.cfg
 share/examples/gromox/smtp.cfg
 @sample ${SYSCONFDIR}/gromox/smtp.cfg
+share/examples/gromox/zcore.cfg
+@sample ${SYSCONFDIR}/gromox/zcore.cfg
 share/gromox/
 share/gromox/(GMT_+01:00).tzd
 share/gromox/AUS_Central.tzd

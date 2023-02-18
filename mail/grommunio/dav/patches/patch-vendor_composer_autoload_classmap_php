@@ -1,0 +1,36 @@
+Index: vendor/composer/autoload_classmap.php
+--- vendor/composer/autoload_classmap.php.orig
++++ vendor/composer/autoload_classmap.php
+@@ -5,11 +5,14 @@
+ $vendorDir = dirname(__DIR__);
+ $baseDir = dirname($vendorDir);
+ 
++define('GTOPDIR', realpath(implode(DIRECTORY_SEPARATOR, [__DIR__, '..', '..', '..'])));
++define('UMAPI_PATH', GTOPDIR . DIRECTORY_SEPARATOR . 'grommunio-mapi-header-php');
++
+ return array(
+-    'BaseException' => '/var/www/grommunio-mapi-header-php/class.baseexception.php',
+-    'BaseRecurrence' => '/var/www/grommunio-mapi-header-php/class.baserecurrence.php',
++    'BaseException' => UMAPI_PATH . '/class.baseexception.php',
++    'BaseRecurrence' => UMAPI_PATH . '/class.baserecurrence.php',
+     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
+-    'FreeBusy' => '/var/www/grommunio-mapi-header-php/class.freebusy.php',
++    'FreeBusy' => UMAPI_PATH . '/class.freebusy.php',
+     'Logger' => $vendorDir . '/apache/log4php/src/main/php/Logger.php',
+     'LoggerAppender' => $vendorDir . '/apache/log4php/src/main/php/LoggerAppender.php',
+     'LoggerAppenderConsole' => $vendorDir . '/apache/log4php/src/main/php/appenders/LoggerAppenderConsole.php',
+@@ -89,9 +92,9 @@ return array(
+     'LoggerRoot' => $vendorDir . '/apache/log4php/src/main/php/LoggerRoot.php',
+     'LoggerThrowableInformation' => $vendorDir . '/apache/log4php/src/main/php/LoggerThrowableInformation.php',
+     'LoggerUtils' => $vendorDir . '/apache/log4php/src/main/php/helpers/LoggerUtils.php',
+-    'MAPIException' => '/var/www/grommunio-mapi-header-php/class.mapiexception.php',
+-    'Meetingrequest' => '/var/www/grommunio-mapi-header-php/class.meetingrequest.php',
+-    'Recurrence' => '/var/www/grommunio-mapi-header-php/class.recurrence.php',
+-    'TaskRecurrence' => '/var/www/grommunio-mapi-header-php/class.taskrecurrence.php',
+-    'TaskRequest' => '/var/www/grommunio-mapi-header-php/class.taskrequest.php',
++    'MAPIException' => UMAPI_PATH . '/class.mapiexception.php',
++    'Meetingrequest' => UMAPI_PATH . '/class.meetingrequest.php',
++    'Recurrence' => UMAPI_PATH . '/class.recurrence.php',
++    'TaskRecurrence' => UMAPI_PATH . '/class.taskrecurrence.php',
++    'TaskRequest' => UMAPI_PATH . '/class.taskrequest.php',
+ );
