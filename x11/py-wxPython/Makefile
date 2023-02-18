@@ -49,6 +49,7 @@ FLAVORS=		python3
 FLAVOR=			python3
 
 BUILD_DEPENDS=		devel/doxygen \
+			devel/py-attrdict${MODPY_FLAVOR} \
 			devel/py-setuptools${MODPY_FLAVOR} \
 			devel/py-sip${MODPY_FLAVOR}
 			
