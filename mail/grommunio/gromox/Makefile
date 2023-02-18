@@ -97,6 +97,7 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/http.cfg \
 		${FILESDIR}/mysql_adaptor.cfg \
 		${FILESDIR}/smtp.cfg \
+		${FILESDIR}/zcore.cfg \
 		${PREFIX}/share/examples/gromox
 
 .include <bsd.port.mk>
