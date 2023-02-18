@@ -1,7 +1,7 @@
 COMMENT =		library to retrieve system information and utilisation
 
 MODPY_EGG_VERSION =	5.8.0
-REVISION =		2
+REVISION =		3
 
 GH_ACCOUNT =		giampaolo
 GH_PROJECT =		psutil
@@ -21,7 +21,7 @@ MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 .if ${FLAVOR:Mpython3}
 MODPY_PYTEST_ARGS =	lib*/psutil/tests

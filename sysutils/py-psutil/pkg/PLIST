@@ -1,3 +1,5 @@
+@conflict py-psutil-*
+@pkgpath sysutils/py-psutil
 lib/python${MODPY_VERSION}/site-packages/psutil/
 lib/python${MODPY_VERSION}/site-packages/psutil-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/psutil-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
