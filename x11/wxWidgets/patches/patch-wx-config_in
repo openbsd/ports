@@ -1,7 +1,7 @@
 Index: wx-config.in
 --- wx-config.in.orig
 +++ wx-config.in
-@@ -1146,7 +1146,7 @@ lib_flags_for()
+@@ -1147,7 +1147,7 @@ lib_flags_for()
          decho "             alllibs = $_all_libs"
      fi
  

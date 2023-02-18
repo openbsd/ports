@@ -3,16 +3,16 @@ Don't hardcode shared lib versions.
 Index: src/common/cairo.cpp
 --- src/common/cairo.cpp.orig
 +++ src/common/cairo.cpp
-@@ -310,7 +310,7 @@ wxCairo::wxCairo()
- #ifdef __WXMSW__
-     wxString cairoDllStr("libcairo-2.dll");
+@@ -331,7 +331,7 @@ wxCairo::wxCairo()
+ #elif defined(__WXOSX__)
+     wxString cairoDllStr("libcairo.2.dylib");
  #else
 -    wxString cairoDllStr("libcairo.so.2");
 +    wxString cairoDllStr("libcairo.so");
  #endif
      m_libCairo.Load(cairoDllStr);
      m_ok = m_libCairo.IsLoaded();
-@@ -318,7 +318,7 @@ wxCairo::wxCairo()
+@@ -339,7 +339,7 @@ wxCairo::wxCairo()
          return;
  
  #if wxUSE_PANGO

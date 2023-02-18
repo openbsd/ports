@@ -2,10 +2,7 @@ COMMENT-main =		C++ cross-platform GUI toolkit
 COMMENT-media =		wxMediaCtrl class for wxWidgets
 COMMENT-webkit =	wxWebView class for wxWidgets
 
-V =			3.0.5.1
-REVISION-main =		4
-REVISION-media =	1
-REVISION-webkit =	2
+V =			3.2.2.1
 DISTNAME =		wxWidgets-${V}
 PKGNAME-main =		wxWidgets-gtk3-${V}
 PKGNAME-media =		wxWidgets-media-${V}
@@ -15,23 +12,23 @@ CATEGORIES =		x11
 MASTER_SITES =		https://github.com/wxWidgets/wxWidgets/releases/download/v$V/
 EXTRACT_SUFX =		.tar.bz2
 
-# XXX always keep those in sync, see SO_VERSION
-SHARED_LIBS +=  wx_baseu-3.0              0.1
-SHARED_LIBS +=  wx_baseu_net-3.0          0.1
-SHARED_LIBS +=  wx_baseu_xml-3.0          0.1
-SHARED_LIBS +=  wx_gtk3u_adv-3.0          0.1
-SHARED_LIBS +=  wx_gtk3u_aui-3.0          0.1
-SHARED_LIBS +=  wx_gtk3u_core-3.0         0.1
-SHARED_LIBS +=  wx_gtk3u_gl-3.0           0.1
-SHARED_LIBS +=  wx_gtk3u_html-3.0         0.1
-SHARED_LIBS +=  wx_gtk3u_media-3.0        0.1
-SHARED_LIBS +=  wx_gtk3u_propgrid-3.0     0.1
-SHARED_LIBS +=  wx_gtk3u_qa-3.0           0.1
-SHARED_LIBS +=  wx_gtk3u_ribbon-3.0       0.1
-SHARED_LIBS +=  wx_gtk3u_richtext-3.0     0.1
-SHARED_LIBS +=  wx_gtk3u_stc-3.0          0.1
-SHARED_LIBS +=  wx_gtk3u_xrc-3.0          0.1
-SHARED_LIBS +=  wx_gtk3u_webview-3.0      0.1
+# !!! always keep those in sync, see SO_VERSION
+SHARED_LIBS +=  wx_baseu-3.2              0.0
+SHARED_LIBS +=  wx_baseu_net-3.2          0.0
+SHARED_LIBS +=  wx_baseu_xml-3.2          0.0
+SHARED_LIBS +=  wx_gtk3u_adv-3.2          0.0
+SHARED_LIBS +=  wx_gtk3u_aui-3.2          0.0
+SHARED_LIBS +=  wx_gtk3u_core-3.2         0.0
+SHARED_LIBS +=  wx_gtk3u_gl-3.2           0.0
+SHARED_LIBS +=  wx_gtk3u_html-3.2         0.0
+SHARED_LIBS +=  wx_gtk3u_media-3.2        0.0
+SHARED_LIBS +=  wx_gtk3u_propgrid-3.2     0.0
+SHARED_LIBS +=  wx_gtk3u_qa-3.2           0.0
+SHARED_LIBS +=  wx_gtk3u_ribbon-3.2       0.0
+SHARED_LIBS +=  wx_gtk3u_richtext-3.2     0.0
+SHARED_LIBS +=  wx_gtk3u_stc-3.2          0.0
+SHARED_LIBS +=  wx_gtk3u_xrc-3.2          0.0
+SHARED_LIBS +=  wx_gtk3u_webview-3.2      0.0
 
 HOMEPAGE =		https://www.wxwidgets.org/
 
@@ -57,47 +54,56 @@ MODPY_RUNDEP =		No
 MODPY_ADJ_FILES =	src/stc/gen_iface.py
 
 BUILD_DEPENDS =		devel/cppunit
-LIB_DEPENDS =		x11/gtk+3
 TEST_DEPENDS =		${BUILD_PKGPATH}>=${V}
 
-LIB_DEPENDS-main =	${LIB_DEPENDS} \
-			archivers/libmspack \
+LIB_DEPENDS-main =	archivers/libmspack \
 			devel/libnotify \
-			devel/sdl2
+			devel/sdl2 \
+			net/curl \
+			textproc/enchant2 \
+			textproc/gspell \
+			x11/gnome/libsecret \
+			x11/gtk+3
 
-WANTLIB-main += ${COMPILER_LIBCXX} GL GLU SDL2 SM X11 Xxf86vm atk-1.0
-WANTLIB-main += c cairo cairo-gobject expat gdk-3 gdk_pixbuf-2.0 gio-2.0
-WANTLIB-main += glib-2.0 gobject-2.0 gthread-2.0 gtk-3 harfbuzz iconv intl
-WANTLIB-main += jpeg m mspack notify pango-1.0 pangocairo-1.0 png tiff z
+WANTLIB-main += ${COMPILER_LIBCXX} EGL GL GLU SDL2 SM X11 Xtst Xxf86vm
+WANTLIB-main += atk-1.0 c cairo cairo-gobject curl enchant-2 expat
+WANTLIB-main += fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB-main += gobject-2.0 gspell-1 gthread-2.0 gtk-3 harfbuzz iconv
+WANTLIB-main += intl jpeg lzma m mspack notify pango-1.0 pangocairo-1.0
+WANTLIB-main += pangoft2-1.0 pcre2-32 png secret-1 tiff z
 
-LIB_DEPENDS-media =	${LIB_DEPENDS} \
-			multimedia/gstreamer1/plugins-base \
+LIB_DEPENDS-media =	multimedia/gstreamer1/plugins-base \
 			${BASE_PKGPATH},-main>=${V}
 
-WANTLIB-media += ${COMPILER_LIBCXX} SM X11 Xxf86vm atk-1.0 cairo cairo-gobject
-WANTLIB-media += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gstbase-1.0
-WANTLIB-media += gstreamer-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz iconv
-WANTLIB-media += intl jpeg m notify pango-1.0 pangocairo-1.0 png tiff
-WANTLIB-media += wx_baseu-3.0 wx_gtk3u_core-3.0 z
+WANTLIB-media += ${COMPILER_LIBCXX} SDL2 SM X11 Xtst Xxf86vm atk-1.0
+WANTLIB-media += cairo cairo-gobject curl enchant-2 fontconfig freetype
+WANTLIB-media += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gspell-1
+WANTLIB-media += gstbase-1.0 gstreamer-1.0 gstvideo-1.0 gthread-2.0
+WANTLIB-media += gtk-3 harfbuzz iconv intl jpeg lzma m notify pango-1.0
+WANTLIB-media += pangocairo-1.0 pangoft2-1.0 pcre2-32 png secret-1 tiff
+WANTLIB-media += wx_baseu-3.2 wx_gtk3u_core-3.2 z
 
-LIB_DEPENDS-webkit =	${LIB_DEPENDS} \
-			www/webkitgtk4 \
+LIB_DEPENDS-webkit =	www/webkitgtk4 \
 			${BASE_PKGPATH},-main>=${V}
 
-WANTLIB-webkit += ${COMPILER_LIBCXX} SM X11 Xxf86vm atk-1.0 cairo cairo-gobject
-WANTLIB-webkit += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gthread-2.0
-WANTLIB-webkit += gtk-3 harfbuzz iconv intl jpeg javascriptcoregtk-4.0 m notify
-WANTLIB-webkit += pango-1.0 pangocairo-1.0 png soup-2.4 tiff webkit2gtk-4.0
-WANTLIB-webkit += wx_baseu-3.0 wx_gtk3u_core-3.0 z gmodule-2.0
+WANTLIB-webkit += ${COMPILER_LIBCXX} SDL2 SM X11 Xtst Xxf86vm atk-1.0
+WANTLIB-webkit += cairo cairo-gobject curl enchant-2 fontconfig freetype
+WANTLIB-webkit += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB-webkit += gspell-1 gthread-2.0 gtk-3 harfbuzz iconv intl javascriptcoregtk-4.0
+WANTLIB-webkit += jpeg lzma m notify pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB-webkit += pcre2-32 png secret-1 soup-2.4 tiff webkit2gtk-4.0
+WANTLIB-webkit += wx_baseu-3.2 wx_gtk3u_core-3.2 z
 
-DEBUG_PACKAGES=		${BUILD_PACKAGES}
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-MAKE_FLAGS =		SO_VERSION="${LIBwx_baseu-3.0_VERSION}"
+MAKE_FLAGS =		SO_VERSION="${LIBwx_baseu-3.2_VERSION}"
 
 FIX_CRLF_FILES=		src/stc/gen_iface.py
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--disable-backtrace \
+			--disable-option-checking \
+			--enable-compat30 \
 			--enable-graphics_ctx \
 			--enable-mediactrl \
 			--enable-protocols \
@@ -105,7 +111,9 @@ CONFIGURE_ARGS =	--disable-backtrace \
 			--enable-unicode \
 			--with-gtk=3 \
 			--with-libmspack \
+			--with-liblzma \
 			--with-opengl \
+			--without-libjbig \
 			--with-sdl
 
 .include <bsd.port.arch.mk>
@@ -128,7 +136,7 @@ CONFIGURE_ARGS +=	--enable-debug
 .endif
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/Makefile.in ${WRKSRC}/wx-config.in
+	${SUBST_CMD} ${WRKSRC}/wx-config.in
 	${MODPYTHON_pre-configure}
 
 post-install:
