@@ -102,7 +102,6 @@
      SUBDIR += luakit
      SUBDIR += lynx
      SUBDIR += mhonarc
-     SUBDIR += midori
      SUBDIR += mimetex
      SUBDIR += minitube
      SUBDIR += moinmoin
