@@ -3,7 +3,7 @@ Fix build on powerpc64 by correcting the stack pointer definition
 Index: lib/sigsegv.c
 --- lib/sigsegv.c.orig
 +++ lib/sigsegv.c
-@@ -214,7 +214,6 @@ int libsigsegv_version = LIBSIGSEGV_VERSION;
+@@ -223,7 +223,6 @@ int libsigsegv_version = LIBSIGSEGV_VERSION;
     the 'struct sigcontext' defined in <asm/sigcontext.h>,
     and the 'struct pt_regs' defined in <asm/ptrace.h>
     are quite different types.  */
@@ -11,7 +11,7 @@ Index: lib/sigsegv.c
  #  if defined __powerpc64__ || defined __powerpc64_elfv2__ /* 64-bit */
  #   define SIGSEGV_FAULT_STACKPOINTER  ((ucontext_t *) ucp)->uc_mcontext.gp_regs[1]
  #  else /* 32-bit */
-@@ -516,7 +515,11 @@ int libsigsegv_version = LIBSIGSEGV_VERSION;
+@@ -560,7 +559,11 @@ int libsigsegv_version = LIBSIGSEGV_VERSION;
  /* See the definition of 'struct sigcontext' and 'struct trapframe' in
     openbsd-src/sys/arch/powerpc/include/signal.h.  */
  
