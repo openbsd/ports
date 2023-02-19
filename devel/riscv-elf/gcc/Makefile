@@ -3,6 +3,7 @@ COMMENT=	gcc for riscv-elf cross-development
 VERSION=	12.2.0
 DISTNAME=	gcc-${VERSION}
 PKGNAME=	riscv-elf-gcc-${VERSION}
+REVISION=	0
 
 SUBST_VARS+=	VERSION
 
@@ -34,7 +35,8 @@ CONFIGURE_ARGS+=--enable-languages=${LANGS}	\
 		--disable-libcc1		\
 		--disable-lto			\
 		--enable-cpp			\
-		--without-isl
+		--without-isl			\
+		--without-zstd
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
