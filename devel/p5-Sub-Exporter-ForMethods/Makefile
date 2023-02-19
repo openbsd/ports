@@ -1,6 +1,6 @@
 COMMENT =	helper routines for using Sub::Exporter to build methods
 
-DISTNAME =	Sub-Exporter-ForMethods-0.100054
+DISTNAME =	Sub-Exporter-ForMethods-0.100055
 
 CATEGORIES =	devel
 
