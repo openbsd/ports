@@ -34,7 +34,6 @@
      SUBDIR += bwidget
      SUBDIR += byzi
      SUBDIR += cegui
-     SUBDIR += chbg
      SUBDIR += clipmenu
      SUBDIR += clipnotify
      SUBDIR += coma

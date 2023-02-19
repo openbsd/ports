@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1505 2023/02/19 08:12:50 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1506 2023/02/19 15:26:43 naddy Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1803,6 +1803,7 @@ setup_obsolete_reason(
 	3 => 'sk1',
 	0 => 'pgadmin3',
 	3 => 'rapidsvn',
+	0 => 'x11/chbg',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
