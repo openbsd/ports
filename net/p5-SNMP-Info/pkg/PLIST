@@ -144,6 +144,7 @@ ${P5SITE}/SNMP/Info/Layer7/Netscaler.pm
 ${P5SITE}/SNMP/Info/MAU.pm
 ${P5SITE}/SNMP/Info/MRO.pm
 ${P5SITE}/SNMP/Info/NortelStack.pm
+${P5SITE}/SNMP/Info/PortAccessEntity.pm
 ${P5SITE}/SNMP/Info/PowerEthernet.pm
 ${P5SITE}/SNMP/Info/RapidCity.pm
 ${P5SITE}/SNMP/Info/SONMP.pm
@@ -287,6 +288,7 @@ ${P5SITE}/SNMP/Info/SONMP.pm
 @man man/man3p/SNMP::Info::MAU.3p
 @man man/man3p/SNMP::Info::MRO.3p
 @man man/man3p/SNMP::Info::NortelStack.3p
+@man man/man3p/SNMP::Info::PortAccessEntity.3p
 @man man/man3p/SNMP::Info::PowerEthernet.3p
 @man man/man3p/SNMP::Info::RapidCity.3p
 @man man/man3p/SNMP::Info::SONMP.3p
