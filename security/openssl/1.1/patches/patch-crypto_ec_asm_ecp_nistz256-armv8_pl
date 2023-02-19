@@ -200,18 +200,17 @@ Index: crypto/ec/asm/ecp_nistz256-armv8.pl
  
  	ldp	$a0,$a1,[$ap,#64]	// in1_z
  	ldp	$a2,$a3,[$ap,#64+16]
-@@ -1300,7 +1331,9 @@ $code.=<<___;
+@@ -1300,7 +1331,8 @@ $code.=<<___;
  	stp	$acc2,$acc3,[$rp_real,#$i+16]
  ___
  $code.=<<___	if ($i == 0);
 -	adr	$bp_real,.Lone_mont-64
-+	adrp	$bp_real,.Lone_mont
-+	add	$bp_real,$bp_real,:lo12:.Lone_mont
-+	sub	$bp_real,$bp_real,#64
++	adrp	$bp_real,.Lone_mont-64
++	add	$bp_real,$bp_real,:lo12:.Lone_mont-64
  ___
  }
  $code.=<<___;
-@@ -1349,7 +1382,8 @@ ecp_nistz256_ord_mul_mont:
+@@ -1349,7 +1381,8 @@ ecp_nistz256_ord_mul_mont:
  	stp	x21,x22,[sp,#32]
  	stp	x23,x24,[sp,#48]
  
@@ -221,7 +220,7 @@ Index: crypto/ec/asm/ecp_nistz256-armv8.pl
  	ldr	$bi,[$bp]		// bp[0]
  	ldp	$a0,$a1,[$ap]
  	ldp	$a2,$a3,[$ap,#16]
-@@ -1490,7 +1524,8 @@ ecp_nistz256_ord_sqr_mont:
+@@ -1490,7 +1523,8 @@ ecp_nistz256_ord_sqr_mont:
  	stp	x21,x22,[sp,#32]
  	stp	x23,x24,[sp,#48]
  
