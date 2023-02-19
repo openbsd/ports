@@ -108,11 +108,12 @@ resources:
         keywords:
             - observations
             - monitoring
-        context:
-            - datetime: https://schema.org/DateTime
-            - vocab: https://example.com/vocab#
-              stn_id: "vocab:stn_id"
-              value: "vocab:value"
+        linked-data:
+            context:
+                - datetime: https://schema.org/DateTime
+                - vocab: https://example.com/vocab#
+                  stn_id: "vocab:stn_id"
+                  value: "vocab:value"
         links:
             - type: text/csv
               rel: canonical
@@ -174,6 +175,34 @@ resources:
               data: tests/data/ne_110m_lakes.geojson
               id_field: id
               title_field: name
+
+    mapserver_world_map:
+        type: collection
+        title: MapServer demo WMS world map
+        description: MapServer demo WMS world map
+        keywords:
+            - MapServer
+            - world map
+        links:
+            - type: text/html
+              rel: canonical
+              title: information
+              href: https://demo.mapserver.org
+              hreflang: en-US
+        extents:
+            spatial:
+                bbox: [-180,-90,180,90]
+                crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+        providers:
+            - type: map
+              name: WMSFacade
+              data: https://demo.mapserver.org/cgi-bin/msautotest
+              options:
+                  layer: world_latlong
+                  style: default
+              format:
+                    name: png
+                    mimetype: image/png
 
     gdps-temperature:
         type: collection
