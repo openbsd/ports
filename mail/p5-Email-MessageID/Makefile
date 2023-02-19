@@ -1,10 +1,9 @@
-COMMENT=	generate world unique message-ids
+COMMENT =	generate world unique message-ids
 
-MODULES=	cpan
-PKG_ARCH=	*
-DISTNAME=	Email-MessageID-1.406
-CATEGORIES=	mail
-REVISION=	0
+MODULES =	cpan
+PKG_ARCH =	*
+DISTNAME =	Email-MessageID-1.408
+CATEGORIES =	mail
 
 # Same as Perl
 PERMIT_PACKAGE=	Yes
