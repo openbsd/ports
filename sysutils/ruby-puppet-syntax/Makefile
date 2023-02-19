@@ -1,6 +1,7 @@
 COMMENT=		syntax checks for Puppet manifests and templates
 
 DISTNAME=		puppet-syntax-3.3.0
+REVISION =		0
 CATEGORIES=		sysutils
 
 MAINTAINER=		Sebastian Reitenbach <sebastia@openbsd.org>
@@ -10,7 +11,8 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/ruby
 
-RUN_DEPENDS+=		sysutils/ruby-puppet/7
+BUILD_DEPENDS +=	${RUN_DEPENDS}
+RUN_DEPENDS +=		sysutils/ruby-puppet/7
 
 CONFIGURE_STYLE=	ruby gem
 
