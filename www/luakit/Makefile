@@ -1,10 +1,8 @@
 COMMENT =	fast, small, webkit based browser written in lua
 
-GH_ACCOUNT =	luakit
-GH_PROJECT =	luakit
-# used in MAKE_FLAGS
-GH_TAGNAME =	2.3.3
-REVISION =	0
+V =		2.3.3
+DISTNAME =	luakit-${V}
+REVISION =	1
 
 EPOCH =		1
 
@@ -13,6 +11,8 @@ CATEGORIES =	www
 MAINTAINER =	Stefan Hagen <sh+ports@codevoid.de>
 
 HOMEPAGE =	https://luakit.github.io
+
+MASTER_SITES =	https://github.com/luakit/luakit/releases/download/${V}/
 
 # GPLv3
 PERMIT_PACKAGE =	Yes
@@ -69,7 +69,6 @@ MAKE_FLAGS +=	LUA_BIN_NAME=${MODLUA_BIN} \
 		PIXMAPDIR=${PREFIX}/share/pixmaps/ \
 		APPDIR=${PREFIX}/share/applications/ \
 		PREFIX=${PREFIX} \
-		DEVELOPMENT_PATHS=0 \
-		VERSION=${GH_TAGNAME}
+		VERSION=${V}
 
 .include <bsd.port.mk>
