@@ -1,6 +1,8 @@
 BROKEN-sparc64=	Error: the specified option is not accepted in ISB at operand 1 -- isb sy
 BROKEN-arm=	lib/time.c:187:1: internal compiler error: Bus error
 
+DPB_PROPERTIES=	parallel
+
 FLAVORS=	aarch64 arm riscv64
 FLAVOR?=	arm
 
