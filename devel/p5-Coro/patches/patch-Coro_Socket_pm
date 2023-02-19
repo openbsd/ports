@@ -1,3 +1,6 @@
+The 5.36 bundle also disables the features "indirect", and
+"multidimensional".
+
 Indirect Object Syntax
 
 Outside of the file handle case, use of this syntax is discouraged as it
@@ -6,7 +9,15 @@ can confuse the Perl interpreter. See below for more details.
 Index: Coro/Socket.pm
 --- Coro/Socket.pm.orig
 +++ Coro/Socket.pm
-@@ -194,7 +194,7 @@ sub configure {
+@@ -62,6 +62,7 @@ For listening sockets, use C<AnyEvent::Socket::tcp_ser
+ 
+ package Coro::Socket;
+ 
++use feature 'multidimensional';
+ use common::sense;
+ 
+ use Errno ();
+@@ -194,7 +195,7 @@ sub configure {
           $! = 0;
  
           if ($self->connect ($_)) {

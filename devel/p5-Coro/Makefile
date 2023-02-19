@@ -2,6 +2,7 @@ COMMENT =	coroutines for perl
 
 DISTNAME =	Coro-6.57
 PKGNAME =	p5-Coro-6.570
+REVISION =	0
 
 CATEGORIES =	devel
 
