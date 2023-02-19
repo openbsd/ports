@@ -3,9 +3,11 @@ COMMENT =	building, finding and using wxWidgets binaries
 MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	Alien-wxWidgets-0.69
-REVISION =	2
+REVISION =	4
 
-CATEGORIES =	devel
+CATEGORIES =	devel x11
+
+MAINTAINER =	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # perl
 PERMIT_PACKAGE =	Yes
