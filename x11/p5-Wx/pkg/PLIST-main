@@ -1,3 +1,4 @@
+@pkgpath x11/p5-Wx
 bin/wxperl_overload
 ${P5ARCH}/Wx/
 ${P5ARCH}/Wx.pm
@@ -7,6 +8,7 @@ ${P5ARCH}/Wx/App.pm
 ${P5ARCH}/Wx/ArtProvider.pm
 ${P5ARCH}/Wx/Calendar.pm
 ${P5ARCH}/Wx/DND.pm
+${P5ARCH}/Wx/DataView.pm
 ${P5ARCH}/Wx/DateTime.pm
 ${P5ARCH}/Wx/DocView.pm
 ${P5ARCH}/Wx/DropSource.pm
@@ -19,7 +21,6 @@ ${P5ARCH}/Wx/IPC.pm
 ${P5ARCH}/Wx/Loader.pod
 ${P5ARCH}/Wx/Locale.pm
 ${P5ARCH}/Wx/MDI.pm
-${P5ARCH}/Wx/Media.pm
 ${P5ARCH}/Wx/Menu.pm
 ${P5ARCH}/Wx/Mini.pm
 ${P5ARCH}/Wx/NewClass.pod
@@ -32,7 +33,9 @@ ${P5ARCH}/Wx/Perl/SplashFast.pm
 ${P5ARCH}/Wx/Perl/TextValidator.pm
 ${P5ARCH}/Wx/PerlTest.pm
 ${P5ARCH}/Wx/Print.pm
+${P5ARCH}/Wx/PropertyGrid.pm
 ${P5ARCH}/Wx/RadioBox.pm
+${P5ARCH}/Wx/Ribbon.pm
 ${P5ARCH}/Wx/RichText.pm
 ${P5ARCH}/Wx/STC.pm
 ${P5ARCH}/Wx/Socket.pm
@@ -75,42 +78,46 @@ ${P5ARCH}/Wx/cpp/wxapi.h
 ${P5ARCH}/Wx/typemap
 ${P5ARCH}/auto/Wx/
 ${P5ARCH}/auto/Wx/AUI/
-${P5ARCH}/auto/Wx/AUI/AUI.so
+@so ${P5ARCH}/auto/Wx/AUI/AUI.so
 ${P5ARCH}/auto/Wx/Calendar/
-${P5ARCH}/auto/Wx/Calendar/Calendar.so
+@so ${P5ARCH}/auto/Wx/Calendar/Calendar.so
 ${P5ARCH}/auto/Wx/DND/
-${P5ARCH}/auto/Wx/DND/DND.so
+@so ${P5ARCH}/auto/Wx/DND/DND.so
+${P5ARCH}/auto/Wx/DataView/
+@so ${P5ARCH}/auto/Wx/DataView/DataView.so
 ${P5ARCH}/auto/Wx/DateTime/
-${P5ARCH}/auto/Wx/DateTime/DateTime.so
+@so ${P5ARCH}/auto/Wx/DateTime/DateTime.so
 ${P5ARCH}/auto/Wx/DocView/
-${P5ARCH}/auto/Wx/DocView/DocView.so
+@so ${P5ARCH}/auto/Wx/DocView/DocView.so
 ${P5ARCH}/auto/Wx/FS/
-${P5ARCH}/auto/Wx/FS/FS.so
+@so ${P5ARCH}/auto/Wx/FS/FS.so
 ${P5ARCH}/auto/Wx/Grid/
-${P5ARCH}/auto/Wx/Grid/Grid.so
+@so ${P5ARCH}/auto/Wx/Grid/Grid.so
 ${P5ARCH}/auto/Wx/Help/
-${P5ARCH}/auto/Wx/Help/Help.so
+@so ${P5ARCH}/auto/Wx/Help/Help.so
 ${P5ARCH}/auto/Wx/Html/
-${P5ARCH}/auto/Wx/Html/Html.so
+@so ${P5ARCH}/auto/Wx/Html/Html.so
 ${P5ARCH}/auto/Wx/IPC/
-${P5ARCH}/auto/Wx/IPC/IPC.so
+@so ${P5ARCH}/auto/Wx/IPC/IPC.so
 ${P5ARCH}/auto/Wx/MDI/
-${P5ARCH}/auto/Wx/MDI/MDI.so
-${P5ARCH}/auto/Wx/Media/
-${P5ARCH}/auto/Wx/Media/Media.so
+@so ${P5ARCH}/auto/Wx/MDI/MDI.so
 ${P5ARCH}/auto/Wx/PerlTest/
-${P5ARCH}/auto/Wx/PerlTest/PerlTest.so
+@so ${P5ARCH}/auto/Wx/PerlTest/PerlTest.so
 ${P5ARCH}/auto/Wx/Print/
-${P5ARCH}/auto/Wx/Print/Print.so
+@so ${P5ARCH}/auto/Wx/Print/Print.so
+${P5ARCH}/auto/Wx/PropertyGrid/
+@so ${P5ARCH}/auto/Wx/PropertyGrid/PropertyGrid.so
+${P5ARCH}/auto/Wx/Ribbon/
+@so ${P5ARCH}/auto/Wx/Ribbon/Ribbon.so
 ${P5ARCH}/auto/Wx/RichText/
-${P5ARCH}/auto/Wx/RichText/RichText.so
+@so ${P5ARCH}/auto/Wx/RichText/RichText.so
 ${P5ARCH}/auto/Wx/STC/
-${P5ARCH}/auto/Wx/STC/STC.so
+@so ${P5ARCH}/auto/Wx/STC/STC.so
 ${P5ARCH}/auto/Wx/Socket/
-${P5ARCH}/auto/Wx/Socket/Socket.so
-${P5ARCH}/auto/Wx/Wx.so
+@so ${P5ARCH}/auto/Wx/Socket/Socket.so
+@so ${P5ARCH}/auto/Wx/Wx.so
 ${P5ARCH}/auto/Wx/XRC/
-${P5ARCH}/auto/Wx/XRC/XRC.so
+@so ${P5ARCH}/auto/Wx/XRC/XRC.so
 @man man/man1/wxperl_overload.1
 @man man/man3p/Wx.3p
 @man man/man3p/Wx::Api.3p
