@@ -3,6 +3,8 @@ VERSION=	0.4.0
 DISTNAME=	dino-${VERSION}
 CATEGORIES=	net x11
 
+REVISION=	0
+
 SHARED_LIBS +=	crypto-vala               0.0 # 0.0
 SHARED_LIBS +=	dino                      2.0 # 0.0
 SHARED_LIBS +=	qlite                     0.0 # 0.1
@@ -21,7 +23,7 @@ MODULES=	devel/cmake
 BUILD_DEPENDS=	devel/gettext,-tools \
 		lang/vala
 RUN_DEPENDS=	devel/desktop-file-utils \
-		x11/gtk+4,-guic
+		x11/gtk+3,-guic
 LIB_DEPENDS=	devel/libgee \
 		devel/libsoup3 \
 		graphics/libqrencode \
