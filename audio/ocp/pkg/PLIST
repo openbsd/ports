@@ -4,6 +4,12 @@ bin/ocp-sdl2
 @info info/ocp.info
 lib/ocp/
 lib/ocp/autoload/
+@so lib/ocp/autoload/35-devpdisk.so
+@so lib/ocp/autoload/35-devpnone.so
+@so lib/ocp/autoload/35-devpsdl2.so
+@so lib/ocp/autoload/35-devwmix.so
+@so lib/ocp/autoload/35-devwmixf.so
+@so lib/ocp/autoload/35-devwnone.so
 @so lib/ocp/autoload/95-playay.so
 @so lib/ocp/autoload/95-playcda.so
 @so lib/ocp/autoload/95-playflac.so
@@ -18,12 +24,8 @@ lib/ocp/autoload/
 @so lib/ocp/autoload/95-playwav.so
 @so lib/ocp/autoload/95-playxm.so
 @so lib/ocp/autoload/95-playym.so
-@so lib/ocp/devpdisk.so
-@so lib/ocp/devpnone.so
-@so lib/ocp/devpsdl2.so
-@so lib/ocp/devwmix.so
-@so lib/ocp/devwmixf.so
-@so lib/ocp/devwnone.so
+@so lib/ocp/autoload/freverb.so
+@so lib/ocp/autoload/ireverb.so
 @so lib/ocp/libocp.so
 @man man/man1/ocp.1
 share/applications/cubic.org-opencubicplayer.desktop
@@ -52,6 +54,7 @@ share/icons/hicolor/32x32/apps/opencubicplayer.png
 share/icons/hicolor/48x48/apps/opencubicplayer.png
 share/icons/hicolor/64x64/apps/opencubicplayer.png
 share/icons/hicolor/scalable/apps/opencubicplayer.svg
+share/mime/packages/opencubicplayer.xml
 share/ocp/
 share/ocp/data/
 share/ocp/data/adplug.db
@@ -60,3 +63,4 @@ share/ocp/etc/
 share/ocp/etc/ocp.ini
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-mime-database

@@ -3,7 +3,7 @@ BROKEN-i386 =	mixasm.c:94: this directive must appear between .cfi_startproc and
 
 COMMENT =	UNIX port of Open Cubic Player
 
-DISTNAME =	ocp-0.2.101
+DISTNAME =	ocp-0.2.103
 CATEGORIES =	audio
 
 HOMEPAGE =	https://stian.cubic.org/project-ocp.php
@@ -11,13 +11,13 @@ HOMEPAGE =	https://stian.cubic.org/project-ocp.php
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=	${COMPILER_LIBCXX} FLAC SDL2 bz2 c cjson curses discid
-WANTLIB +=	freetype iconv jpeg m mad ogg png vorbis vorbisfile
+WANTLIB +=	${COMPILER_LIBCXX} FLAC SDL2 ancient bz2 c cjson curses
+WANTLIB +=	discid freetype iconv jpeg m mad ogg png vorbis vorbisfile
 WANTLIB +=	z
 
 MASTER_SITES =	https://stian.cubic.org/ocp/
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =		base-clang ports-gcc
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		fonts/unifont \
@@ -26,7 +26,8 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 BUILD_DEPENDS =	${RUN_DEPENDS} \
 		devel/xa
 
-LIB_DEPENDS =	archivers/bzip2 \
+LIB_DEPENDS =	archivers/ancient \
+		archivers/bzip2 \
 		audio/flac \
 		audio/libdiscid \
 		audio/libmad \
@@ -51,6 +52,7 @@ CONFIGURE_ARGS = --with-dir-suffix="" \
 		 --without-alsa \
 		 --without-oss \
 		 --without-x11 \
+		 --without-update-mime-database \
 		 --with-unifontdir-ttf=${PREFIX}/share/fonts/unifont
 
 USE_GMAKE =	Yes
