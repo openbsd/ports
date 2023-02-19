@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.111 2018/12/17 18:06:05 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.112 2023/02/19 15:01:12 sdk Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -26,7 +26,7 @@
 # +++ targets +++
 #
 #	afterinstall, all, beforeinstall, build, checksum, clean,
-#	configure, depend, describe, extract, fetch, fetch-list,
+#	configure, depend, extract, fetch, fetch-list,
 #	install, package, deinstall, reinstall,
 #	tags
 #
@@ -179,4 +179,4 @@ clean:
 .endif
 
 .PHONY: ${_recursive_targets} \
-	${_recursive_depends_targets} clean readmes
+	${_recursive_depends_targets} clean
