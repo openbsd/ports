@@ -2,7 +2,7 @@ COMMENT =	parse, manipulate and lookup IPv4 CIDR blocks
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Net-Netmask-2.0001
+DISTNAME =	Net-Netmask-2.0002
 CATEGORIES =	net
 
 # Perl
