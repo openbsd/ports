@@ -1,4 +1,5 @@
-@bin bin/protoc
+bin/protoc
+@bin bin/protoc-3.21.12.0
 include/google/
 include/google/protobuf/
 include/google/protobuf/any.h
@@ -97,7 +98,6 @@ include/google/protobuf/port.h
 include/google/protobuf/port_def.inc
 include/google/protobuf/port_undef.inc
 include/google/protobuf/reflection.h
-include/google/protobuf/reflection_internal.h
 include/google/protobuf/reflection_ops.h
 include/google/protobuf/repeated_field.h
 include/google/protobuf/repeated_ptr_field.h
@@ -143,14 +143,16 @@ include/google/protobuf/wire_format.h
 include/google/protobuf/wire_format_lite.h
 include/google/protobuf/wrappers.pb.h
 include/google/protobuf/wrappers.proto
-@static-lib lib/libprotobuf-lite.a
-lib/libprotobuf-lite.la
+lib/cmake/
+lib/cmake/protobuf/
+lib/cmake/protobuf/protobuf-config-version.cmake
+lib/cmake/protobuf/protobuf-config.cmake
+lib/cmake/protobuf/protobuf-module.cmake
+lib/cmake/protobuf/protobuf-options.cmake
+lib/cmake/protobuf/protobuf-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/protobuf/protobuf-targets.cmake
 @lib lib/libprotobuf-lite.so.${LIBprotobuf-lite_VERSION}
-@static-lib lib/libprotobuf.a
-lib/libprotobuf.la
 @lib lib/libprotobuf.so.${LIBprotobuf_VERSION}
-@static-lib lib/libprotoc.a
-lib/libprotoc.la
 @lib lib/libprotoc.so.${LIBprotoc_VERSION}
 lib/pkgconfig/protobuf-lite.pc
 lib/pkgconfig/protobuf.pc

@@ -6,12 +6,13 @@ V =			${CPPMAJOR}.${PROTOBUF_VERSION}
 TAG =			v${PROTOBUF_VERSION:S/rc-/rc/}
 DISTNAME =		protobuf-cpp-${V}
 PKGNAME =		protobuf-${V:S/-//g}
+REVISION =		0
 
 WRKDIST =		${WRKDIR}/protobuf-${V}
 
-SHARED_LIBS +=		protobuf-lite	18.0    # 32.12
-SHARED_LIBS +=		protobuf	20.0    # 32.12
-SHARED_LIBS +=		protoc		22.0    # 32.12
+SHARED_LIBS +=		protobuf-lite	19.0    # 32.12
+SHARED_LIBS +=		protobuf	21.0    # 32.12
+SHARED_LIBS +=		protoc		23.0    # 32.12
 
 CATEGORIES =		devel
 
@@ -26,17 +27,9 @@ MASTER_SITES =		https://github.com/protocolbuffers/protobuf/releases/download/${
 
 COMPILER =		base-clang ports-gcc
 
-SEPARATE_BUILD =	Yes
-USE_GMAKE =		Yes
-CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	--with-zlib
+MODULES =		devel/cmake
+
+CONFIGURE_ARGS +=	-Dprotobuf_BUILD_SHARED_LIBS=ON
+CONFIGURE_ARGS +=	-Dprotobuf_BUILD_TESTS=OFF
 
 .include <bsd.port.mk>
-
-# avoid undefined reference to __atomic_fetch_add_8
-.if ${CHOSEN_COMPILER} == "ports-gcc"
-. if ${MACHINE_ARCH} == "hppa"
-CONFIGURE_ENV +=	LIBS="-latomic"
-WANTLIB +=		atomic
-. endif
-.endif
