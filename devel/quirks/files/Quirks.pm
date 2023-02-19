@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1504 2023/02/18 14:44:31 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1505 2023/02/19 08:12:50 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1799,6 +1799,10 @@ setup_obsolete_reason(
 	6 => 'pilot-link',
 	6 => 'jpilot',
 	3 => 'midori',
+	3 => 'pykaraoke',
+	3 => 'sk1',
+	0 => 'pgadmin3',
+	3 => 'rapidsvn',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
