@@ -1,4 +1,5 @@
-V =		1.7
+# V > 2.0 changes deps to gtk3 and .NET 6
+V =		1.7.1
 COMMENT =	open source drawing/editing program modeled after Paint.NET
 DISTNAME =	pinta-${V}
 CATEGORIES =	graphics x11
