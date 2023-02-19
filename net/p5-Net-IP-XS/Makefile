@@ -2,8 +2,7 @@ COMMENT =	perl module for IPv4/IPv6 address parsing
 
 MODULES =	cpan
 
-DISTNAME =	Net-IP-XS-0.21
-REVISION =	0
+DISTNAME =	Net-IP-XS-0.22
 
 CATEGORIES =	net
 
