@@ -10,6 +10,7 @@ COMMENT =	nintendo 3DS emulator
 DISTNAME =	citra-unified-source-20230110-ad2cbe2
 V =		1827
 PKGNAME =	citra-0.0.0.${V}
+REVISION =	0
 
 CATEGORIES =	emulators
 
@@ -62,6 +63,12 @@ CXXFLAGS +=	-I${LOCALBASE}/include -I${LOCALBASE}/lib/qt5/cmake/Qt5/
 
 post-extract:
 	rm -rf ${WRKSRC}/externals/{sdl2,catch2,fmt,boost,cryptopp}
+
+.if ${MACHINE_ARCH} == amd64 || ${MACHINE_ARCH} == i386
+PKG_ARGS +=	-Dx86=1
+.else
+PKG_ARGS +=	-Dx86=0
+.endif
 
 .include <bsd.port.arch.mk>
 

@@ -1,3 +1,4 @@
+%%x86%%
 @bin bin/citra
 @bin bin/citra-qt
 @bin bin/citra-room
@@ -152,20 +153,11 @@ include/dynarmic/ir/opt/passes.h
 include/dynarmic/ir/terminal.h
 include/dynarmic/ir/type.h
 include/dynarmic/ir/value.h
-include/xbyak/
-include/xbyak/xbyak.h
-include/xbyak/xbyak_bin2hex.h
-include/xbyak/xbyak_mnemonic.h
-include/xbyak/xbyak_util.h
 lib/cmake/dynarmic/
 lib/cmake/dynarmic/dynarmicConfig.cmake
 lib/cmake/dynarmic/dynarmicConfigVersion.cmake
 lib/cmake/dynarmic/dynarmicTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/dynarmic/dynarmicTargets.cmake
-lib/cmake/xbyak/
-lib/cmake/xbyak/xbyak-config-version.cmake
-lib/cmake/xbyak/xbyak-config.cmake
-lib/cmake/xbyak/xbyak-targets.cmake
 @static-lib lib/libdynarmic.a
 @man man/man6/citra-qt.6
 @man man/man6/citra.6

@@ -1,0 +1,62 @@
+Index: src/common/aarch64/cpu_detect.cpp
+--- src/common/aarch64/cpu_detect.cpp.orig
++++ src/common/aarch64/cpu_detect.cpp
+@@ -14,13 +14,17 @@
+ #include <sys/types.h>
+ #include <sys/sysctl.h>
+ // clang-format on
+-#elif !defined(_WIN32)
++#elif !defined(_WIN32) && !defined(__OpenBSD__)
+ #ifndef __FreeBSD__
+ #include <asm/hwcap.h>
+ #endif // __FreeBSD__
+ #include <sys/auxv.h>
+ #include <unistd.h>
+ #endif // __APPLE__
++#ifdef __OpenBSD__
++#include <sys/sysctl.h>
++#include <machine/cpu.h>	/* CPU_ID_AA64ISAR0 */
++#endif // __OpenBSD__
+ 
+ #include "common/aarch64/cpu_detect.h"
+ #include "common/file_util.h"
+@@ -36,6 +40,10 @@ static std::string GetCPUString() {
+     }
+     return buf;
+ }
++#elif defined(__OpenBSD__)
++static std::string GetCPUString() {
++    return "Unknown";
++}
+ #elif !defined(WIN32)
+ static std::string GetCPUString() {
+     constexpr char procfile[] = "/proc/cpuinfo";
+@@ -76,6 +84,28 @@ static CPUCaps Detect() {
+     caps.sha1 = true;
+     caps.sha2 = true;
+     caps.cpu_string = GetCPUString();
++#elif defined(__OpenBSD__)
++    int isar0_mib[] = { CTL_MACHDEP, CPU_ID_AA64ISAR0 };
++    size_t len = sizeof(uint64_t);
++    uint64_t cpu_id = 0;
++
++    caps.fp = true;
++    caps.cpu_string = GetCPUString();
++
++    if (sysctl(isar0_mib, 2, &cpu_id, &len, NULL, 0) != 1) {
++#define AA64ISA_AES	(0x3 << 4)
++#define AA64ISA_SHA1	(0x1 << 8)
++#define AA64ISA_SHA2	(0x3 << 12)
++#define AA64ISA_CRC32	(0x1 << 16)
++
++        caps.fp = true;
++        caps.asimd = false;	// XXX
++        caps.aes = cpu_id & AA64ISA_AES;
++        caps.crc32 = cpu_id & AA64ISA_CRC32;
++        caps.sha1 = cpu_id & AA64ISA_SHA1;
++        caps.sha2 = cpu_id & AA64ISA_SHA2;
++
++    }
+ #elif defined(_WIN32)
+     // Windows does not provide any mechanism for querying the system registers on ARMv8, unlike
+     // Linux which traps the register reads and emulates them in the kernel. There are environment
