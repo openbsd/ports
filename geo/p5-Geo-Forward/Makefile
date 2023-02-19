@@ -1,11 +1,10 @@
 COMMENT=	module to calculate geographic location
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME=	Geo-Forward-0.14
+DISTNAME=	Geo-Forward-0.16
 CATEGORIES=	geo
-REVISION=	0
 
-# Perl
+# MIT
 PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/p5-Package-New \
