@@ -40,7 +40,7 @@ Index: Configurations/unix-Makefile.tmpl
  
  Makefile: configdata.pm \
            {- join(" \\\n" . ' ' x 10,
-@@ -1568,7 +1568,7 @@ EOF
+@@ -1569,7 +1569,7 @@ EOF
                $generator = 'CC="$(CC)" $(PERL)'.$gen_incs.' '.$gen0.$gen_args
                    .' "$(PERLASM_SCHEME)"'.$incs.' '.$cppflags.$defs.' $(PROCESSOR)';
            } elsif ($gen0 =~ /\.m4$/) {
