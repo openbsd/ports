@@ -1,7 +1,7 @@
 COMMENT =	postmodern object system for Perl 5
 
 MODULES =	cpan
-DISTNAME =	Moose-2.2201
+DISTNAME =	Moose-2.2203
 CATEGORIES =	devel
 
 # Perl
@@ -38,7 +38,7 @@ RUN_DEPENDS +=	devel/p5-Data-OptList
 TEST_DEPENDS =	devel/p5-CPAN-Meta-Check>=0.011 \
 		devel/p5-Test-CleanNamespaces>=0.13 \
 		devel/p5-Test-Fatal>=0.001 \
-		devel/p5-Test-Requires>=0.05
+		devel/p5-Test-Needs>=0.002010
 
 # Optional depends to avoid skipping tests
 # Could test more with p5-Specio-Declare and p5-Types-Standard
