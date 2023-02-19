@@ -17,6 +17,8 @@ PKGNAME-demos=		gtk+4-demos-${GNOME_VERSION}
 PKGNAME-guic=		gtk4-update-icon-cache-${GNOME_VERSION}
 PKGNAME-media=		gtk+4-media-${GNOME_VERSION}
 
+REVISION-main=		0
+
 CATEGORIES=		x11 devel
 
 SHARED_LIBS += gtk-4                     4.3 # 1.800.3
@@ -115,5 +117,8 @@ CONFIGURE_ARGS +=	-Db_asneeded=false
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/modules/printbackends/meson.build
+
+post-install:
+	${INSTALL_DATA} ${FILESDIR}/settings.ini ${PREFIX}/share/gtk-4.0/
 
 .include <bsd.port.mk>
