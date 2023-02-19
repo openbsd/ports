@@ -1,6 +1,6 @@
 COMMENT =	perl module to manage MIME types
 
-DISTNAME =	MIME-Types-2.22
+DISTNAME =	MIME-Types-2.24
 
 CATEGORIES =	mail
 
