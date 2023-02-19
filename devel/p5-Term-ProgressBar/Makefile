@@ -2,9 +2,8 @@ COMMENT=		text mode progress bar
 
 MODULES=		cpan
 PKG_ARCH=		*
-DISTNAME=		Term-ProgressBar-2.22
+DISTNAME =		Term-ProgressBar-2.23
 CATEGORIES=		devel
-REVISION=		0
 
 # Perl
 PERMIT_PACKAGE=	Yes
