@@ -1,7 +1,7 @@
 Index: tools/test.py
 --- tools/test.py.orig
 +++ tools/test.py
-@@ -938,9 +938,9 @@ class Context(object):
+@@ -944,9 +944,9 @@ class Context(object):
      if self.vm is not None:
        return self.vm
      if arch == 'none':

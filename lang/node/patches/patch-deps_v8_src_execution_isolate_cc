@@ -12,7 +12,7 @@ Index: deps/v8/src/execution/isolate.cc
  extern "C" const uint8_t* v8_Default_embedded_blob_code_;
  extern "C" uint32_t v8_Default_embedded_blob_code_size_;
  extern "C" const uint8_t* v8_Default_embedded_blob_data_;
-@@ -3682,6 +3686,11 @@ void Isolate::InitializeDefaultEmbeddedBlob() {
+@@ -3691,6 +3695,11 @@ void Isolate::InitializeDefaultEmbeddedBlob() {
    uint32_t code_size = DefaultEmbeddedBlobCodeSize();
    const uint8_t* data = DefaultEmbeddedBlobData();
    uint32_t data_size = DefaultEmbeddedBlobDataSize();

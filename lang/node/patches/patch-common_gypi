@@ -9,7 +9,7 @@ Index: common.gypi
          'conditions': [
            ['enable_lto=="true"', {
              'cflags': ['<(lto)'],
-@@ -413,7 +412,9 @@
+@@ -409,7 +408,9 @@
            }],
            ['OS=="openbsd"', {
              'cflags': [ '-I/usr/local/include' ],

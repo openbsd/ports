@@ -25,7 +25,7 @@ Index: tools/v8_gypfiles/v8.gyp
                    'sources': [
                      '<!@pymod_do_main(GN-scraper "<(V8_ROOT)/BUILD.gn"  "\\"v8_base_without_compiler.*?v8_current_cpu == \\"x64\\".*?v8_enable_webassembly.*?is_linux.*?sources \\+= ")',
                    ],
-@@ -979,7 +979,7 @@
+@@ -977,7 +977,7 @@
          }],
          # Platforms that don't have Compare-And-Swap (CAS) support need to link atomic library
          # to implement atomic memory access
