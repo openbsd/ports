@@ -14,6 +14,9 @@ FULLPKGPATH-main=	${BUILD_PKGPATH}
 FULLPKGPATH-media=	${BUILD_PKGPATH},-media
 FULLPKGPATH-webkit=	${BUILD_PKGPATH},-webkit
 
+REVISION-media=		0
+REVISION-webkit=	0
+
 CATEGORIES=	x11 devel
 
 HOMEPAGE=	https://www.wxpython.org/
@@ -58,6 +61,10 @@ LIB_DEPENDS-main=	x11/wxWidgets
 LIB_DEPENDS-media=	x11/wxWidgets,-media
 
 LIB_DEPENDS-webkit=	x11/wxWidgets,-webkit
+
+RUN_DEPENDS-media=	${BASE_PKGPATH}
+
+RUN_DEPENDS-webkit=	${BASE_PKGPATH}
 
 NO_TEST=		Yes
 
