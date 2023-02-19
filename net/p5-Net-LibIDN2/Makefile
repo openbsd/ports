@@ -1,7 +1,6 @@
 COMMENT =	Perl bindings for GNU Libidn2
 
-DISTNAME =	Net-LibIDN2-1.01
-REVISION =	0
+DISTNAME =	Net-LibIDN2-1.02
 
 CATEGORIES =	net
 
