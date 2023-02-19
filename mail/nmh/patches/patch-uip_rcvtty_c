@@ -8,7 +8,7 @@ http://git.savannah.gnu.org/cgit/nmh.git/patch/?id=6443ed24f6c3b41186636a0b0fea9
 Index: uip/rcvtty.c
 --- uip/rcvtty.c.orig
 +++ uip/rcvtty.c
-@@ -23,6 +23,8 @@
+@@ -36,6 +36,8 @@
  
  #ifdef HAVE_GETUTXENT
  #include <utmpx.h>
@@ -17,7 +17,7 @@ Index: uip/rcvtty.c
  #endif /* HAVE_GETUTXENT */
  
  #define	SCANFMT	\
-@@ -69,9 +71,7 @@ char *getusername(void);
+@@ -77,9 +79,7 @@ static char *format = NULL;
  static void alrmser (int);
  static int message_fd (char **);
  static int header_fd (void);
@@ -27,9 +27,9 @@ Index: uip/rcvtty.c
  
  
  int
-@@ -80,7 +80,12 @@ main (int argc, char **argv)
+@@ -88,7 +88,12 @@ main (int argc, char **argv)
      int md, vecp = 0;
-     char *cp, *user, buf[BUFSIZ], tty[BUFSIZ];
+     char *cp, *user, buf[BUFSIZ];
      char **argp, **arguments, *vec[MAXARGS];
 +#if HAVE_GETUTXENT
      struct utmpx *utp;
@@ -38,27 +38,25 @@ Index: uip/rcvtty.c
 +    register FILE *uf;
 +#endif
  
-     if (nmh_init(argv[0], 2)) { return 1; }
+     if (nmh_init(argv[0], true, false)) { return 1; }
  
-@@ -162,8 +167,15 @@ main (int argc, char **argv)
+@@ -169,7 +174,14 @@ main (int argc, char **argv)
      }
      endutxent();
  #else
--    NMH_UNUSED (tty);
 -    NMH_UNUSED (utp);
-+    if ((uf = fopen (_PATH_UTMP, "r")) == NULL)
-+       exit (RCV_MBX);
-+    while (fread ((char *) &ut, sizeof(ut), 1, uf) == 1)
++    if ((uf = fopen(_PATH_UTMP, "r")) == NULL)
++       exit(1);
++    while (fread((char *) &ut, sizeof(ut), 1, uf) == 1)
 +       if (ut.ut_name[0] != 0
-+               && strncmp (user, ut.ut_name, sizeof(ut.ut_name)) == 0) {
-+           strncpy (tty, ut.ut_line, sizeof(ut.ut_line));
-+           alert (tty, md);
++               && strncmp(user, ut.ut_name, sizeof(ut.ut_name)) == 0) {
++           alert(ut.ut_line, md);
 +       }
 +    fclose (uf);
  #endif /* HAVE_GETUTXENT */
  
-     exit (RCV_MOK);
-@@ -285,7 +297,6 @@ header_fd (void)
+     exit(0);
+@@ -290,7 +302,6 @@ header_fd (void)
  }
  
  
@@ -66,7 +64,7 @@ Index: uip/rcvtty.c
  static void
  alert (char *tty, int md)
  {
-@@ -323,4 +334,3 @@ alert (char *tty, int md)
+@@ -327,4 +338,3 @@ alert (char *tty, int md)
  
      close (td);
  }

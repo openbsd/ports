@@ -1,20 +1,20 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -6337,7 +6337,6 @@ fi
- 
- if test x"$with_readline" = xyes -o x"$with_readline" = xmaybe; then :
+@@ -7010,7 +7010,6 @@ fi
+ if test x"$with_readline" = xyes -o x"$with_readline" = xmaybe
+ then :
    save_LIBS="$LIBS"
 -    LIBS=
-     { $as_echo "$as_me:${as_lineno-$LINENO}: checking for library containing readline" >&5
- $as_echo_n "checking for library containing readline... " >&6; }
- if ${ac_cv_search_readline+:} false; then :
-@@ -6362,7 +6361,7 @@ return readline ();
+     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for library containing readline" >&5
+ printf %s "checking for library containing readline... " >&6; }
+ if test ${ac_cv_search_readline+y}
+@@ -7033,7 +7032,7 @@ return readline ();
    return 0;
  }
  _ACEOF
--for ac_lib in '' readline editline; do
-+for ac_lib in '' edit readline editline; do
+-for ac_lib in '' readline editline
++for ac_lib in '' edit readline editline
+ do
    if test -z "$ac_lib"; then
      ac_res="none required"
-   else

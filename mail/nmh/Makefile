@@ -1,6 +1,6 @@
 COMMENT=		new MH mail handling program
 
-DISTNAME=		nmh-1.7.1
+DISTNAME=		nmh-1.8
 CATEGORIES=		mail
 MASTER_SITES=		${MASTER_SITE_SAVANNAH:=nmh/}
 HOMEPAGE=		https://www.nongnu.org/nmh/
@@ -30,7 +30,8 @@ FLAVORS=		sasl
 FLAVOR?=
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib" \
+			LEXLIB="-ly -ll"
 SEPARATE_BUILD=		Yes
 
 # much use of .fc
