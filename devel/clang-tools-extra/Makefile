@@ -8,6 +8,8 @@
 
 ONLY_FOR_ARCHS =	${LLVM_ARCHS}
 
+DPB_PROPERTIES =	parallel
+
 COMMENT=	Clang extra tools
 
 LLVM_V =	13.0.0
