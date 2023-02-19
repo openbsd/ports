@@ -1,6 +1,6 @@
 COMMENT =	check Manifest matches your distro
 
-DISTNAME =	Test-CheckManifest-1.42
+DISTNAME =	Test-CheckManifest-1.43
 CATEGORIES =	devel
 
 # Perl
