@@ -4,5 +4,5 @@ ${P5ARCH}/Time/Warp.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Time/
 ${P5ARCH}/auto/Time/Warp/
-${P5ARCH}/auto/Time/Warp/Warp.so
+@so ${P5ARCH}/auto/Time/Warp/Warp.so
 @man man/man3p/Time::Warp.3p

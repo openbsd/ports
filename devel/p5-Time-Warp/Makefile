@@ -1,9 +1,8 @@
 COMMENT =	control over the flow of time
 
 MODULES =	cpan
-DISTNAME =	Time-Warp-0.54
+DISTNAME =	Time-Warp-0.55
 CATEGORIES =	devel
-REVISION =	0
 
 # same as perl
 PERMIT_PACKAGE =	Yes
