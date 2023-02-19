@@ -2,9 +2,8 @@ COMMENT=	simple class for OLE document interface
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME =       OLE-Storage_Lite-0.20
+DISTNAME =       OLE-Storage_Lite-0.22
 CATEGORIES=	devel perl5
-REVISION =       0
 
 # perl
 PERMIT_PACKAGE=	Yes
