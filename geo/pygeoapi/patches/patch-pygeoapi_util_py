@@ -1,7 +1,7 @@
 Index: pygeoapi/util.py
 --- pygeoapi/util.py.orig
 +++ pygeoapi/util.py
-@@ -321,15 +321,13 @@ def render_j2_template(config, template, data, locale_
+@@ -332,15 +332,13 @@ def render_j2_template(config: dict, template: Path,
      try:
          templates_path = config['server']['templates']['path']
          env = Environment(loader=FileSystemLoader(templates_path),
@@ -10,12 +10,12 @@ Index: pygeoapi/util.py
 +                          extensions=['jinja2.ext.i18n'],
                            autoescape=select_autoescape(['html', 'xml']))
          custom_templates = True
-         LOGGER.debug('using custom templates: {}'.format(templates_path))
+         LOGGER.debug(f'using custom templates: {templates_path}')
      except (KeyError, TypeError):
          env = Environment(loader=FileSystemLoader(TEMPLATES),
 -                          extensions=['jinja2.ext.i18n',
 -                                      'jinja2.ext.autoescape'],
 +                          extensions=['jinja2.ext.i18n'],
                            autoescape=select_autoescape(['html', 'xml']))
-         LOGGER.debug('using default templates: {}'.format(TEMPLATES))
+         LOGGER.debug(f'using default templates: {TEMPLATES}')
  
