@@ -1,7 +1,6 @@
 COMMENT =	build sprintf-like functions of your own
 
-DISTNAME =	String-Formatter-0.102084
-REVISION =	0
+DISTNAME =	String-Formatter-1.235
 
 CATEGORIES =	devel
 
