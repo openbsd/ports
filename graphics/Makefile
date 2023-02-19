@@ -300,7 +300,6 @@
      SUBDIR += shotwell
      SUBDIR += simgear
      SUBDIR += simple-scan
-     SUBDIR += sk1
      SUBDIR += skanlite
      SUBDIR += sketch
      SUBDIR += slop

@@ -200,7 +200,6 @@
      SUBDIR += py-mutagen,python3
      SUBDIR += py-speechrecognition,python3
      SUBDIR += py-tagpy,python3
-     SUBDIR += pykaraoke
      SUBDIR += qsynth
      SUBDIR += quodlibet
      SUBDIR += rgain

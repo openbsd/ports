@@ -1660,7 +1660,6 @@
      SUBDIR += radare2
      SUBDIR += ragel
      SUBDIR += range-v3
-     SUBDIR += rapidsvn
      SUBDIR += rats
      SUBDIR += rcs-fast-import
      SUBDIR += re2c

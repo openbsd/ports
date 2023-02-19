@@ -138,7 +138,6 @@
      SUBDIR += pg_sqlite_fdw
      SUBDIR += pg_stats_reporter
      SUBDIR += pg_statsinfo
-     SUBDIR += pgadmin3
      SUBDIR += pgbackrest
      SUBDIR += pgbadger
      SUBDIR += pgbouncer

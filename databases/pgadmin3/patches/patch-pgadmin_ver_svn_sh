@@ -1,8 +1,0 @@
---- pgadmin/ver_svn.sh.orig	Wed Sep 11 14:33:58 2013
-+++ pgadmin/ver_svn.sh	Wed Oct 22 16:32:48 2014
-@@ -1,4 +1,4 @@
--#!/bin/bash
-+#!/bin/sh
- 
- TARGET_DIR=`dirname $0`
- 
