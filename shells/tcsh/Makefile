@@ -1,14 +1,16 @@
 COMMENT=	extended C-shell with many useful features
 
-DISTNAME=	tcsh-6.22.04
+DISTNAME=	tcsh-6.24.07
 CATEGORIES=	shells
-HOMEPAGE=	http://www.tcsh.org/
+HOMEPAGE=	https://www.tcsh.org/
 
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	ftp://ftp.astron.com/pub/tcsh/ \
-		ftp://ftp.astron.com/pub/tcsh/old/
+MASTER_SITES=	https://astron.com/pub/tcsh/ \
+		https://astron.com/pub/tcsh/old/ \
+		https://ftp.funet.fi/pub/mirrors/ftp.astron.com/pub/tcsh/ \
+		https://ftp.funet.fi/pub/mirrors/ftp.astron.com/pub/tcsh/old/
 
 WANTLIB=	c curses
 
@@ -22,14 +24,13 @@ WANTLIB=
 
 CONFIGURE_STYLE=gnu
 # obsolete catopen(3) message catalogs
-CONFIGURE_ARGS+=--disable-nls-catalogs
+CONFIGURE_ARGS=	--disable-nls-catalogs --without-libiconv-prefix
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/acaux
 
-AUTOCONF_VERSION=2.69
+AUTOCONF_VERSION=2.71
 TEST_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS}
 TEST_FLAGS=	AUTOCONF_VERSION=${AUTOCONF_VERSION}
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/tcsh ${PREFIX}/bin/tcsh
-	${INSTALL_MAN} ${WRKSRC}/tcsh.man ${PREFIX}/man/man1/tcsh.1
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 .include <bsd.port.mk>

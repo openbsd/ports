@@ -1,7 +1,7 @@
 Index: tests/subst.at
 --- tests/subst.at.orig
 +++ tests/subst.at
-@@ -52,10 +52,10 @@ foo* ab{c,d} ^fo*
+@@ -55,10 +55,10 @@ foo* ab{c,d} ^fo*
  
  AT_CHECK([
  case "$(uname -s)" in
@@ -14,7 +14,7 @@ Index: tests/subst.at
      HOME=$(getent passwd $(id -un) | awk -F: '{ print $(NF - 1) }')
      ;;
  esac;
-@@ -67,10 +67,10 @@ echo 'echo ~; echo "$HOME"' | tcsh -f | uniq | wc -l |
+@@ -70,10 +70,10 @@ echo 'echo ~; echo "$HOME"' | tcsh -f | uniq | wc -l |
  
  AT_CHECK([
  case "$(uname -s)" in

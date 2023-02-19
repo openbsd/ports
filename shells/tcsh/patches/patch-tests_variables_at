@@ -1,7 +1,7 @@
 Index: tests/variables.at
 --- tests/variables.at.orig
 +++ tests/variables.at
-@@ -593,10 +593,10 @@ echo $home
+@@ -644,10 +644,10 @@ echo $home
  ]])
  AT_CHECK([
  case "$(uname -s)" in
@@ -14,7 +14,7 @@ Index: tests/variables.at
      HOME=$(getent passwd $(id -un) | awk -F: '{ print $(NF - 1) }')
      ;;
  esac;
-@@ -721,10 +721,10 @@ AT_CLEANUP
+@@ -779,10 +779,10 @@ AT_CLEANUP()
  AT_SETUP([$ cdtohome])
  AT_CHECK([
  case "$(uname -s)" in
