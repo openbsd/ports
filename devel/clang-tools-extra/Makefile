@@ -79,9 +79,6 @@ SUBST_VARS +=		CLANG_INCLUDE_PATH LLVM_V GCC_VER GCC_CONFIG
 OPENBSD_LD_IS_LLD =	FALSE
 SUBST_VARS +=		OPENBSD_LD_IS_LLD
 
-ALL_TARGET =	tools/clang/tools/extra/all
-FAKE_TARGET =	tools/clang/tools/extra/install
-
 post-extract:
 	mv ${WRKDIR}/clang-${LLVM_V}.src ${WRKSRC}/tools/clang
 	mv ${WRKDIR}/clang-tools-extra-${LLVM_V}.src ${WRKSRC}/tools/clang/tools/extra
