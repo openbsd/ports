@@ -84,10 +84,10 @@ TEST_ENV +=		TMPDIR=${TESTTMP} \
 
 # build whatever is left (ca. 400 test files)
 pre-test:
-	@${MODCMAKE_BUILD_TARGET}
 	mkdir -p ${TESTTMP} ${TESTLDPATH}
 	find ${WRKBUILD} -type f -name 'libabsl*.so.*' \
 	    -exec ln -s {} ${TESTLDPATH}/ \;
+	@${MODCMAKE_BUILD_TARGET}
 .endif
 
 .include <bsd.port.mk>
