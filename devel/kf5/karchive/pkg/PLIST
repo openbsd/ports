@@ -39,6 +39,7 @@ share/kf5/mkspecs/
 share/kf5/mkspecs/qt_KArchive.pri
 share/locale/ca/LC_MESSAGES/karchive5_qt.qm
 share/locale/ca@valencia/LC_MESSAGES/karchive5_qt.qm
+share/locale/cs/LC_MESSAGES/karchive5_qt.qm
 share/locale/de/LC_MESSAGES/karchive5_qt.qm
 share/locale/en_GB/LC_MESSAGES/karchive5_qt.qm
 share/locale/es/LC_MESSAGES/karchive5_qt.qm
@@ -54,6 +55,7 @@ share/locale/sl/LC_MESSAGES/karchive5_qt.qm
 share/locale/tr/LC_MESSAGES/karchive5_qt.qm
 share/locale/uk/LC_MESSAGES/karchive5_qt.qm
 share/locale/zh_CN/LC_MESSAGES/karchive5_qt.qm
+share/locale/zh_TW/LC_MESSAGES/karchive5_qt.qm
 share/qlogging-categories5/
 share/qlogging-categories5/karchive.categories
 share/qlogging-categories5/karchive.renamecategories

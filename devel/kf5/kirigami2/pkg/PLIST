@@ -102,6 +102,7 @@ lib/qt5/qml/org/kde/kirigami.2/private/CornerShadow.qml
 lib/qt5/qml/org/kde/kirigami.2/private/DefaultCardBackground.qml
 lib/qt5/qml/org/kde/kirigami.2/private/DefaultChipBackground.qml
 lib/qt5/qml/org/kde/kirigami.2/private/DefaultListItemBackground.qml
+lib/qt5/qml/org/kde/kirigami.2/private/DefaultPageTitleDelegate.qml
 lib/qt5/qml/org/kde/kirigami.2/private/EdgeShadow.qml
 lib/qt5/qml/org/kde/kirigami.2/private/GlobalDrawerActionItem.qml
 lib/qt5/qml/org/kde/kirigami.2/private/PageActionPropertyGroup.qml

@@ -4,7 +4,7 @@ https://bugs.kde.org/show_bug.cgi?id=463796
 Index: src/core/slave.cpp
 --- src/core/slave.cpp.orig
 +++ src/core/slave.cpp
-@@ -447,7 +447,7 @@ Slave *Slave::createSlave(const QString &protocol, con
+@@ -455,7 +455,7 @@ Slave *Slave::createSlave(const QString &protocol, con
      const auto useThreads = []() {
          return qgetenv("KIO_ENABLE_WORKER_THREADS") != "0";
      };

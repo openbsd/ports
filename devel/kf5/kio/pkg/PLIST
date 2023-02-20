@@ -407,9 +407,6 @@ share/doc/HTML/ca/kioslave5/help/index.docbook
 share/doc/HTML/ca/kioslave5/http/
 share/doc/HTML/ca/kioslave5/http/index.cache.bz2
 share/doc/HTML/ca/kioslave5/http/index.docbook
-share/doc/HTML/ca/kioslave5/mailto/
-share/doc/HTML/ca/kioslave5/mailto/index.cache.bz2
-share/doc/HTML/ca/kioslave5/mailto/index.docbook
 share/doc/HTML/ca/kioslave5/webdav/
 share/doc/HTML/ca/kioslave5/webdav/index.cache.bz2
 share/doc/HTML/ca/kioslave5/webdav/index.docbook
@@ -452,9 +449,6 @@ share/doc/HTML/ca@valencia/kioslave5/help/index.docbook
 share/doc/HTML/ca@valencia/kioslave5/http/
 share/doc/HTML/ca@valencia/kioslave5/http/index.cache.bz2
 share/doc/HTML/ca@valencia/kioslave5/http/index.docbook
-share/doc/HTML/ca@valencia/kioslave5/mailto/
-share/doc/HTML/ca@valencia/kioslave5/mailto/index.cache.bz2
-share/doc/HTML/ca@valencia/kioslave5/mailto/index.docbook
 share/doc/HTML/ca@valencia/kioslave5/webdav/
 share/doc/HTML/ca@valencia/kioslave5/webdav/index.cache.bz2
 share/doc/HTML/ca@valencia/kioslave5/webdav/index.docbook
@@ -496,9 +490,6 @@ share/doc/HTML/de/kioslave5/help/index.docbook
 share/doc/HTML/de/kioslave5/http/
 share/doc/HTML/de/kioslave5/http/index.cache.bz2
 share/doc/HTML/de/kioslave5/http/index.docbook
-share/doc/HTML/de/kioslave5/mailto/
-share/doc/HTML/de/kioslave5/mailto/index.cache.bz2
-share/doc/HTML/de/kioslave5/mailto/index.docbook
 share/doc/HTML/de/kioslave5/webdav/
 share/doc/HTML/de/kioslave5/webdav/index.cache.bz2
 share/doc/HTML/de/kioslave5/webdav/index.docbook
@@ -540,9 +531,6 @@ share/doc/HTML/en/kioslave5/help/index.docbook
 share/doc/HTML/en/kioslave5/http/
 share/doc/HTML/en/kioslave5/http/index.cache.bz2
 share/doc/HTML/en/kioslave5/http/index.docbook
-share/doc/HTML/en/kioslave5/mailto/
-share/doc/HTML/en/kioslave5/mailto/index.cache.bz2
-share/doc/HTML/en/kioslave5/mailto/index.docbook
 share/doc/HTML/en/kioslave5/webdav/
 share/doc/HTML/en/kioslave5/webdav/index.cache.bz2
 share/doc/HTML/en/kioslave5/webdav/index.docbook
@@ -584,9 +572,6 @@ share/doc/HTML/es/kioslave5/help/index.docbook
 share/doc/HTML/es/kioslave5/http/
 share/doc/HTML/es/kioslave5/http/index.cache.bz2
 share/doc/HTML/es/kioslave5/http/index.docbook
-share/doc/HTML/es/kioslave5/mailto/
-share/doc/HTML/es/kioslave5/mailto/index.cache.bz2
-share/doc/HTML/es/kioslave5/mailto/index.docbook
 share/doc/HTML/es/kioslave5/webdav/
 share/doc/HTML/es/kioslave5/webdav/index.cache.bz2
 share/doc/HTML/es/kioslave5/webdav/index.docbook
@@ -606,9 +591,6 @@ share/doc/HTML/et/kioslave5/help/index.docbook
 share/doc/HTML/et/kioslave5/http/
 share/doc/HTML/et/kioslave5/http/index.cache.bz2
 share/doc/HTML/et/kioslave5/http/index.docbook
-share/doc/HTML/et/kioslave5/mailto/
-share/doc/HTML/et/kioslave5/mailto/index.cache.bz2
-share/doc/HTML/et/kioslave5/mailto/index.docbook
 share/doc/HTML/et/kioslave5/webdav/
 share/doc/HTML/et/kioslave5/webdav/index.cache.bz2
 share/doc/HTML/et/kioslave5/webdav/index.docbook
@@ -650,9 +632,6 @@ share/doc/HTML/fr/kioslave5/help/index.docbook
 share/doc/HTML/fr/kioslave5/http/
 share/doc/HTML/fr/kioslave5/http/index.cache.bz2
 share/doc/HTML/fr/kioslave5/http/index.docbook
-share/doc/HTML/fr/kioslave5/mailto/
-share/doc/HTML/fr/kioslave5/mailto/index.cache.bz2
-share/doc/HTML/fr/kioslave5/mailto/index.docbook
 share/doc/HTML/fr/kioslave5/webdav/
 share/doc/HTML/fr/kioslave5/webdav/index.cache.bz2
 share/doc/HTML/fr/kioslave5/webdav/index.docbook
@@ -710,9 +689,6 @@ share/doc/HTML/it/kioslave5/help/index.docbook
 share/doc/HTML/it/kioslave5/http/
 share/doc/HTML/it/kioslave5/http/index.cache.bz2
 share/doc/HTML/it/kioslave5/http/index.docbook
-share/doc/HTML/it/kioslave5/mailto/
-share/doc/HTML/it/kioslave5/mailto/index.cache.bz2
-share/doc/HTML/it/kioslave5/mailto/index.docbook
 share/doc/HTML/it/kioslave5/webdav/
 share/doc/HTML/it/kioslave5/webdav/index.cache.bz2
 share/doc/HTML/it/kioslave5/webdav/index.docbook
@@ -759,9 +735,6 @@ share/doc/HTML/nl/kioslave5/help/index.docbook
 share/doc/HTML/nl/kioslave5/http/
 share/doc/HTML/nl/kioslave5/http/index.cache.bz2
 share/doc/HTML/nl/kioslave5/http/index.docbook
-share/doc/HTML/nl/kioslave5/mailto/
-share/doc/HTML/nl/kioslave5/mailto/index.cache.bz2
-share/doc/HTML/nl/kioslave5/mailto/index.docbook
 share/doc/HTML/nl/kioslave5/webdav/
 share/doc/HTML/nl/kioslave5/webdav/index.cache.bz2
 share/doc/HTML/nl/kioslave5/webdav/index.docbook
@@ -803,9 +776,6 @@ share/doc/HTML/pt/kioslave5/help/index.docbook
 share/doc/HTML/pt/kioslave5/http/
 share/doc/HTML/pt/kioslave5/http/index.cache.bz2
 share/doc/HTML/pt/kioslave5/http/index.docbook
-share/doc/HTML/pt/kioslave5/mailto/
-share/doc/HTML/pt/kioslave5/mailto/index.cache.bz2
-share/doc/HTML/pt/kioslave5/mailto/index.docbook
 share/doc/HTML/pt/kioslave5/webdav/
 share/doc/HTML/pt/kioslave5/webdav/index.cache.bz2
 share/doc/HTML/pt/kioslave5/webdav/index.docbook
@@ -848,9 +818,6 @@ share/doc/HTML/pt_BR/kioslave5/help/index.docbook
 share/doc/HTML/pt_BR/kioslave5/http/
 share/doc/HTML/pt_BR/kioslave5/http/index.cache.bz2
 share/doc/HTML/pt_BR/kioslave5/http/index.docbook
-share/doc/HTML/pt_BR/kioslave5/mailto/
-share/doc/HTML/pt_BR/kioslave5/mailto/index.cache.bz2
-share/doc/HTML/pt_BR/kioslave5/mailto/index.docbook
 share/doc/HTML/pt_BR/kioslave5/webdav/
 share/doc/HTML/pt_BR/kioslave5/webdav/index.cache.bz2
 share/doc/HTML/pt_BR/kioslave5/webdav/index.docbook
@@ -930,9 +897,6 @@ share/doc/HTML/sr/kioslave5/help/index.docbook
 share/doc/HTML/sr/kioslave5/http/
 share/doc/HTML/sr/kioslave5/http/index.cache.bz2
 share/doc/HTML/sr/kioslave5/http/index.docbook
-share/doc/HTML/sr/kioslave5/mailto/
-share/doc/HTML/sr/kioslave5/mailto/index.cache.bz2
-share/doc/HTML/sr/kioslave5/mailto/index.docbook
 share/doc/HTML/sr/kioslave5/webdav/
 share/doc/HTML/sr/kioslave5/webdav/index.cache.bz2
 share/doc/HTML/sr/kioslave5/webdav/index.docbook
@@ -972,9 +936,6 @@ share/doc/HTML/sr@latin/kioslave5/help/index.docbook
 share/doc/HTML/sr@latin/kioslave5/http/
 share/doc/HTML/sr@latin/kioslave5/http/index.cache.bz2
 share/doc/HTML/sr@latin/kioslave5/http/index.docbook
-share/doc/HTML/sr@latin/kioslave5/mailto/
-share/doc/HTML/sr@latin/kioslave5/mailto/index.cache.bz2
-share/doc/HTML/sr@latin/kioslave5/mailto/index.docbook
 share/doc/HTML/sr@latin/kioslave5/webdav/
 share/doc/HTML/sr@latin/kioslave5/webdav/index.cache.bz2
 share/doc/HTML/sr@latin/kioslave5/webdav/index.docbook
@@ -1016,9 +977,6 @@ share/doc/HTML/sv/kioslave5/help/index.docbook
 share/doc/HTML/sv/kioslave5/http/
 share/doc/HTML/sv/kioslave5/http/index.cache.bz2
 share/doc/HTML/sv/kioslave5/http/index.docbook
-share/doc/HTML/sv/kioslave5/mailto/
-share/doc/HTML/sv/kioslave5/mailto/index.cache.bz2
-share/doc/HTML/sv/kioslave5/mailto/index.docbook
 share/doc/HTML/sv/kioslave5/webdav/
 share/doc/HTML/sv/kioslave5/webdav/index.cache.bz2
 share/doc/HTML/sv/kioslave5/webdav/index.docbook
@@ -1060,9 +1018,6 @@ share/doc/HTML/uk/kioslave5/help/index.docbook
 share/doc/HTML/uk/kioslave5/http/
 share/doc/HTML/uk/kioslave5/http/index.cache.bz2
 share/doc/HTML/uk/kioslave5/http/index.docbook
-share/doc/HTML/uk/kioslave5/mailto/
-share/doc/HTML/uk/kioslave5/mailto/index.cache.bz2
-share/doc/HTML/uk/kioslave5/mailto/index.docbook
 share/doc/HTML/uk/kioslave5/webdav/
 share/doc/HTML/uk/kioslave5/webdav/index.cache.bz2
 share/doc/HTML/uk/kioslave5/webdav/index.docbook

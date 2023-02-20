@@ -157,6 +157,7 @@ lib/qt5/qml/org/kde/newstuff/private/entrygriddelegates/FeedbackOverlay.qml
 lib/qt5/qml/org/kde/newstuff/private/entrygriddelegates/ThumbDelegate.qml
 lib/qt5/qml/org/kde/newstuff/private/entrygriddelegates/TileDelegate.qml
 lib/qt5/qml/org/kde/newstuff/qmldir
+share/applications/org.kde.knewstuff-dialog.desktop
 share/kf5/kmoretools/
 share/kf5/kmoretools/presets-kmoretools/
 share/kf5/kmoretools/presets-kmoretools/_README.md
