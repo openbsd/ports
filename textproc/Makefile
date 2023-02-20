@@ -482,6 +482,7 @@
      SUBDIR += qxlsx
      SUBDIR += raptor
      SUBDIR += rasqal
+     SUBDIR += re2
      SUBDIR += recutils
      SUBDIR += redland
      SUBDIR += redland-bindings
