@@ -1321,7 +1321,6 @@
      SUBDIR += py-astunparse,python3
      SUBDIR += py-async-timeout,python3
      SUBDIR += py-atomicwrites,python3
-     SUBDIR += py-attrdict,python3
      SUBDIR += py-attrs,python3
      SUBDIR += py-autocommand,python3
      SUBDIR += py-automat,python3
