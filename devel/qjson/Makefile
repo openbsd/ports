@@ -24,9 +24,6 @@ CONFIGURE_ARGS =	-DQJSON_BUILD_TESTS=ON
 # evertyhing except tests
 ALL_TARGET =		qjson-qt5
 
-do-build:
-	@${MODCMAKE_BUILD_TARGET} -t ${ALL_TARGET}
-
 # build whatever is left (ca. 25 C++ test files)
 pre-test:
 	@${MODCMAKE_BUILD_TARGET}

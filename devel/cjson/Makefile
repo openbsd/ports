@@ -23,9 +23,6 @@ MODULES =	devel/cmake
 # evertyhing except tests
 ALL_TARGET =	cjson
 
-do-build:
-	@${MODCMAKE_BUILD_TARGET} -t ${ALL_TARGET}
-
 # build whatever is left (ca. 43 C test files)
 pre-test:
 	@${MODCMAKE_BUILD_TARGET}

@@ -25,9 +25,6 @@ CONFIGURE_ARGS+=-DCMAKE_INSTALL_PKGCONFIGDIR=${LOCALBASE}/lib/pkgconfig
 # evertyhing except tests
 ALL_TARGET =	${SHARED_LIBS:Mepoll*}
 
-do-build:
-	@${MODCMAKE_BUILD_TARGET} -t ${ALL_TARGET}
-
 # build whatever is left (ca. 70 C++ test files)
 pre-test:
 	@${MODCMAKE_BUILD_TARGET}

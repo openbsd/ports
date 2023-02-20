@@ -93,9 +93,6 @@ post-patch:
 		browser/BrowserSettingsWidget.cpp \
 		browser/NativeMessageInstaller.cpp
 
-do-build:
-	@${MODCMAKE_BUILD_TARGET} -t ${ALL_TARGET}
-
 # build whatever is left (ca. 200 GUI test files)
 pre-test:
 	@${MODCMAKE_BUILD_TARGET}

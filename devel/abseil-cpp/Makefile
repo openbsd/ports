@@ -89,7 +89,4 @@ pre-test:
 	    -exec ln -s {} ${TESTLDPATH}/ \;
 .endif
 
-do-build:
-	@${MODCMAKE_BUILD_TARGET} -t ${ALL_TARGET}
-
 .include <bsd.port.mk>

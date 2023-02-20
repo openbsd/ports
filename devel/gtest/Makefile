@@ -44,9 +44,6 @@ CONFIGURE_ARGS +=	-DCMAKE_CXX_STANDARD=17
 # evertyhing except tests
 ALL_TARGET =		gmock gmock_main gtest gtest_main
 
-do-build:
-	@${MODCMAKE_BUILD_TARGET} -t ${ALL_TARGET}
-
 # build whatever is left (ca. 102 C++ test files)
 pre-test:
 	@${MODCMAKE_BUILD_TARGET}

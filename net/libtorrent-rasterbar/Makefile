@@ -41,9 +41,6 @@ CONFIGURE_ARGS +=	-DCMAKE_CXX_STANDARD=17
 ALL_TARGET =		torrent-rasterbar \
 			python-libtorrent
 
-do-build:
-	@${MODCMAKE_BUILD_TARGET} -t ${ALL_TARGET}
-
 # build whatever is left (+200 test files)
 pre-test:
 	@${MODCMAKE_BUILD_TARGET}

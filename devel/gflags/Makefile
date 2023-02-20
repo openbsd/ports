@@ -28,9 +28,6 @@ CONFIGURE_ARGS +=	-DBUILD_SHARED_LIBS=ON \
 # evertyhing except tests
 ALL_TARGET =		${SHARED_LIBS:Mgflags*}
 
-do-build:
-	@${MODCMAKE_BUILD_TARGET} -t ${ALL_TARGET}
-
 # build whatever is left (ca. 11 C++ test files)
 pre-test:
 	@${MODCMAKE_BUILD_TARGET}

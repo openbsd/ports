@@ -99,9 +99,6 @@ ALL_TARGET =			mumble mumble-server
 pre-configure:
 	${SUBST_CMD} ${SERVER_CONFIG_FILE}
 
-do-build:
-	@${MODCMAKE_BUILD_TARGET} -t ${ALL_TARGET}
-
 # build whatever is left (ca. 63 C++ test files)
 pre-test:
 	@${MODCMAKE_BUILD_TARGET}

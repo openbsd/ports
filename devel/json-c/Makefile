@@ -19,9 +19,6 @@ CONFIGURE_ARGS=		-DDISABLE_WERROR=ON
 # evertyhing except tests
 ALL_TARGET =		json-c json-c-static
 
-do-build:
-	@${MODCMAKE_BUILD_TARGET} -t ${ALL_TARGET}
-
 # build whatever is left (ca. 56 C test files)
 pre-test:
 	@${MODCMAKE_BUILD_TARGET}
