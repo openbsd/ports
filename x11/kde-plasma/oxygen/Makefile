@@ -1,7 +1,7 @@
 COMMENT =		style for Qt/KDE Applications
 DISTNAME =		oxygen-${VERSION}
 
-SHARED_LIBS =		oxygenstyle5		0.0
+SHARED_LIBS =		oxygenstyle5		1.0
 SHARED_LIBS +=		oxygenstyleconfig5	0.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion

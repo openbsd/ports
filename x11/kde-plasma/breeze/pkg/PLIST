@@ -7,13 +7,17 @@ lib/kconf_update_bin/
 @bin lib/kconf_update_bin/breezetobreezeclassic
 @bin lib/kconf_update_bin/breezetobreezelight
 @lib lib/libbreezecommon5.so.${LIBbreezecommon5_VERSION}
-@so lib/qt5/plugins/kstyle_breeze_config.so
 lib/qt5/plugins/org.kde.kdecoration2/
 @so lib/qt5/plugins/org.kde.kdecoration2/breezedecoration.so
+lib/qt5/plugins/plasma/kcms/breeze/
+@so lib/qt5/plugins/plasma/kcms/breeze/kcm_breezedecoration.so
+@so lib/qt5/plugins/plasma/kcms/systemsettings_qwidgets/breezestyleconfig.so
 lib/qt5/plugins/styles/
 @so lib/qt5/plugins/styles/breeze.so
 share/QtCurve/
 share/QtCurve/Breeze.qtcurve
+share/applications/breezestyleconfig.desktop
+share/applications/kcm_breezedecoration.desktop
 share/color-schemes/
 share/color-schemes/BreezeClassic.colors
 share/color-schemes/BreezeDark.colors
@@ -258,8 +262,6 @@ share/icons/hicolor/scalable/apps/breeze-settings.svgz
 share/kconf_update/breezehighcontrasttobreezedark.upd
 share/kconf_update/breezetobreezeclassic.upd
 share/kconf_update/breezetobreezelight.upd
-share/kservices5/breezedecorationconfig.desktop
-share/kservices5/breezestyleconfig.desktop
 share/kstyle/
 share/kstyle/themes/
 share/kstyle/themes/breeze.themerc
@@ -408,7 +410,9 @@ share/wallpapers/Next/contents/images_dark/3840x2160.png
 share/wallpapers/Next/contents/images_dark/440x247.png
 share/wallpapers/Next/contents/images_dark/5120x2880.png
 share/wallpapers/Next/contents/images_dark/720x1440.png
+share/wallpapers/Next/contents/screenshot.png
 share/wallpapers/Next/metadata.json
 @tag gtk-update-icon-cache %D/share/icons/breeze_cursors
 @tag gtk-update-icon-cache %D/share/icons/Breeze_Snow
 @tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database
