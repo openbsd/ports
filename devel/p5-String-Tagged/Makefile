@@ -1,6 +1,6 @@
 COMMENT =	string buffers with value tags on extents
 
-DISTNAME =	String-Tagged-0.19
+DISTNAME =	String-Tagged-0.20
 
 CATEGORIES =	devel
 
