@@ -6,7 +6,6 @@
 @bin bin/ocsptool
 @bin bin/p11tool
 @bin bin/psktool
-@bin bin/srptool
 include/gnutls/
 include/gnutls/abstract.h
 include/gnutls/compat.h
@@ -29,7 +28,6 @@ include/gnutls/x509-ext.h
 include/gnutls/x509.h
 info/gnutls-client-server-use-case.png
 info/gnutls-crypto-layers.png
-@info info/gnutls-guile.info
 info/gnutls-handshake-sequence.png
 info/gnutls-handshake-state.png
 info/gnutls-internals.png
@@ -58,7 +56,6 @@ lib/pkgconfig/gnutls.pc
 @man man/man1/ocsptool.1
 @man man/man1/p11tool.1
 @man man/man1/psktool.1
-@man man/man1/srptool.1
 @man man/man1/tpmtool.1
 @man man/man3/dane_cert_type_name.3
 @man man/man3/dane_cert_usage_name.3
