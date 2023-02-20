@@ -1,6 +1,6 @@
 COMMENT =		owncloud sync client
 
-V = 			3.1.0.9872
+V = 			3.2.0.10193
 GRAPHAPI_V = 		0.13.2
 DISTNAME =		ownCloud-${V}
 PKGNAME =  		owncloudclient-${V}
