@@ -14,8 +14,9 @@ FULLPKGPATH-main=	${BUILD_PKGPATH}
 FULLPKGPATH-media=	${BUILD_PKGPATH},-media
 FULLPKGPATH-webkit=	${BUILD_PKGPATH},-webkit
 
-REVISION-media=		0
-REVISION-webkit=	0
+REVISION-main=		0
+REVISION-media=		1
+REVISION-webkit=	1
 
 CATEGORIES=	x11 devel
 
@@ -54,17 +55,23 @@ FLAVOR=			python3
 BUILD_DEPENDS=		devel/doxygen \
 			devel/py-attrdict${MODPY_FLAVOR} \
 			devel/py-setuptools${MODPY_FLAVOR} \
-			devel/py-sip${MODPY_FLAVOR}
-			
+			devel/py-sip${MODPY_FLAVOR} \
+			devel/py-six${MODPY_FLAVOR}
+
 LIB_DEPENDS-main=	x11/wxWidgets
 
 LIB_DEPENDS-media=	x11/wxWidgets,-media
 
 LIB_DEPENDS-webkit=	x11/wxWidgets,-webkit
 
-RUN_DEPENDS-media=	${BASE_PKGPATH}
+RUN_DEPENDS-main=	${RUN_DEPENDS} \
+			devel/py-six${MODPY_FLAVOR}
 
-RUN_DEPENDS-webkit=	${BASE_PKGPATH}
+RUN_DEPENDS-media=	${RUN_DEPENDS} \
+			${BASE_PKGPATH}
+
+RUN_DEPENDS-webkit=	${RUN_DEPENDS} \
+			${BASE_PKGPATH}
 
 NO_TEST=		Yes
 
