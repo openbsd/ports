@@ -1,15 +1,15 @@
 COMMENT =	lightweight LLVM-Python binding for writing JIT compilers
 
-MODPY_EGG_VERSION =	0.39.0
+MODPY_EGG_VERSION =	0.39.1
 GH_ACCOUNT =	numba
 GH_PROJECT =	llvmlite
 GH_TAGNAME =	v${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
 
 CATEGORIES =	devel
 
-MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
+MAINTAINER =	Remi Pointel <rpointel@openbsd.org>, \
+		Aisha Tammy <openbsd@aisha.cc>
 
 HOMEPAGE =	http://llvmlite.pydata.org/
 
@@ -20,6 +20,9 @@ WANTLIB +=	${COMPILER_LIBCXX} LLVM m
 
 COMPILER =	base-clang
 MODULES =	lang/python
+
+MODPY_PYBUILD =	setuptools
+MODPY_PYTEST_ARGS =	llvmlite/tests
 
 FLAVORS =	python3
 FLAVOR =	python3
@@ -32,8 +35,5 @@ MAKE_ENV +=	LLVM_CONFIG="/usr/bin/llvm-config" \
 pre-build:
 	cd ${WRKSRC} && \
 	${CXX} -shared `llvm-config --cxxflags` -fPIC ${CXXFLAGS} `llvm-config --ldflags` ${LDFLAGS} -o ffi/libllvmlite.so ffi/*.cpp `llvm-config --libs all`
-
-do-test:
-	cd ${WRKSRC} && PYTHONPATH=. ${SETENV} ${MODPY_BIN} ./runtests.py
 
 .include <bsd.port.mk>
