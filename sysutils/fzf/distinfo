@@ -1,4 +1,4 @@
-SHA256 (fzf-0.37.0.zip) = M05y9OzI4yaWaUKxcb1D+bihHo6CuTLq2gIAsmnunpA=
+SHA256 (fzf-0.38.0.zip) = 85D9ETJJ4MuCNC79v1PQwwYstswayeICJdk0q3RrOfQ=
 SHA256 (go_modules/github.com/gdamore/encoding/@v/v1.0.0.mod) = pJgRJVFfDy3yU8LeOjrBlwx0Q+W2adlH6HTnezaBtuU=
 SHA256 (go_modules/github.com/gdamore/encoding/@v/v1.0.0.zip) = Y4qYMuL2LRGNfFEdhr2uFiKlHzMd5IoB2Sn9JOvmoqY=
 SHA256 (go_modules/github.com/gdamore/tcell/v2/@v/v2.5.4.mod) = 4zhutrVn0oD6CGHqAr93IkVDVuXmzBVThvjmX/RGQ5E=
@@ -52,7 +52,7 @@ SHA256 (go_modules/golang.org/x/tools/@v/v0.1.12.mod) = KouTZYmPCCL6zmW6CJoTU+aK
 SHA256 (go_modules/golang.org/x/tools/@v/v0.1.12.zip) = SxIuDkcDvEAUyxz4wBT8+T6n1y8B2nlJk2U0b1TLuFE=
 SHA256 (go_modules/golang.org/x/xerrors/@v/v0.0.0-20190717185122-a985d3407aa7.mod) = ql4+ybt7n2gWCe+sAZ2d4ae6dxkkj/Hqon54iC2z1/U=
 SHA256 (go_modules/golang.org/x/xerrors/@v/v0.0.0-20190717185122-a985d3407aa7.zip) = xOnwY8/tVGyQ8AqWV96sT5FaiZT4y+bb0/GOeeuDAs8=
-SIZE (fzf-0.37.0.zip) = 273480
+SIZE (fzf-0.38.0.zip) = 276043
 SIZE (go_modules/github.com/gdamore/encoding/@v/v1.0.0.mod) = 77
 SIZE (go_modules/github.com/gdamore/encoding/@v/v1.0.0.zip) = 19867
 SIZE (go_modules/github.com/gdamore/tcell/v2/@v/v2.5.4.mod) = 308
