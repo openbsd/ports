@@ -1826,9 +1826,13 @@ lib/ghc/bytestring-${BYTESTRING_VER}/Data/ByteString/Builder/RealFloat/TableGene
 lib/ghc/bytestring-${BYTESTRING_VER}/Data/ByteString/Char8.dyn_hi
 lib/ghc/bytestring-${BYTESTRING_VER}/Data/ByteString/Char8.hi
 lib/ghc/bytestring-${BYTESTRING_VER}/Data/ByteString/Char8.p_hi
+lib/ghc/bytestring-${BYTESTRING_VER}/Data/ByteString/Internal/
 lib/ghc/bytestring-${BYTESTRING_VER}/Data/ByteString/Internal.dyn_hi
 lib/ghc/bytestring-${BYTESTRING_VER}/Data/ByteString/Internal.hi
 lib/ghc/bytestring-${BYTESTRING_VER}/Data/ByteString/Internal.p_hi
+lib/ghc/bytestring-${BYTESTRING_VER}/Data/ByteString/Internal/Type.dyn_hi
+lib/ghc/bytestring-${BYTESTRING_VER}/Data/ByteString/Internal/Type.hi
+lib/ghc/bytestring-${BYTESTRING_VER}/Data/ByteString/Internal/Type.p_hi
 lib/ghc/bytestring-${BYTESTRING_VER}/Data/ByteString/Lazy/
 lib/ghc/bytestring-${BYTESTRING_VER}/Data/ByteString/Lazy.dyn_hi
 lib/ghc/bytestring-${BYTESTRING_VER}/Data/ByteString/Lazy.hi
@@ -7877,6 +7881,7 @@ share/doc/ghc/html/users_guide/9.2.1-notes.html
 share/doc/ghc/html/users_guide/9.2.2-notes.html
 share/doc/ghc/html/users_guide/9.2.3-notes.html
 share/doc/ghc/html/users_guide/9.2.4-notes.html
+share/doc/ghc/html/users_guide/9.2.5-notes.html
 share/doc/ghc/html/users_guide/${GHC_VER}-notes.html
 share/doc/ghc/html/users_guide/_images/
 share/doc/ghc/html/users_guide/_images/prof_scc.svg
@@ -7885,6 +7890,7 @@ share/doc/ghc/html/users_guide/_sources/9.2.1-notes.rst.txt
 share/doc/ghc/html/users_guide/_sources/9.2.2-notes.rst.txt
 share/doc/ghc/html/users_guide/_sources/9.2.3-notes.rst.txt
 share/doc/ghc/html/users_guide/_sources/9.2.4-notes.rst.txt
+share/doc/ghc/html/users_guide/_sources/9.2.5-notes.rst.txt
 share/doc/ghc/html/users_guide/_sources/${GHC_VER}-notes.rst.txt
 share/doc/ghc/html/users_guide/_sources/bugs.rst.txt
 share/doc/ghc/html/users_guide/_sources/codegens.rst.txt

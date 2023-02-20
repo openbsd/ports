@@ -11,8 +11,7 @@ NO_CCACHE =		Yes
 # Upstream bug: https://gitlab.haskell.org/ghc/ghc/-/issues/22782
 USE_NOEXECONLY =	Yes
 
-GHC_VERSION =		9.2.5
-REVISION =		0
+GHC_VERSION =		9.2.6
 DISTNAME =		ghc-${GHC_VERSION}
 CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/
@@ -66,13 +65,13 @@ GHC_ITEMS = \
 	ARRAY			0.5.4.0		 \
 	BASE			4.16.4.0	 \
 	BINARY			0.8.9.0		 \
-	BYTESTRING		0.11.3.1	 \
+	BYTESTRING		0.11.4.0	 \
 	CONTAINERS		0.6.5.1		 \
 	DEEPSEQ			1.4.6.1		 \
 	DIRECTORY		1.3.6.2		 \
 	EXCEPTIONS		0.10.4		 \
 	FILEPATH		1.4.2.2		 \
-	GHC			9.2.5		 \
+	GHC			9.2.6		 \
 	GHC_BIGNUM		1.2		 \
 	GHC_COMPACT		0.1.0.0		 \
 	GHC_PRIM		0.8.0		 \
