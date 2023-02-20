@@ -1,0 +1,15 @@
+Disable phone-home calls / anonymous usage reporting
+
+diff --git lib/build/build.go lib/build/build.go
+index 285cf65e7..b153174f6 100644
+--- lib/build/build.go
++++ lib/build/build.go
+@@ -73,7 +73,7 @@ func setBuildData() {
+ 
+ 	exp := regexp.MustCompile(`^v\d+\.\d+\.\d+(-[a-z]+[\d\.]+)?$`)
+ 	IsRelease = exp.MatchString(Version)
+-	IsCandidate = strings.Contains(Version, "-rc.")
++	IsCandidate = false
+ 	IsBeta = strings.Contains(Version, "-")
+ 
+ 	stamp, _ := strconv.Atoi(Stamp)

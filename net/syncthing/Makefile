@@ -1,7 +1,7 @@
-BROKEN =	needs update - vendored quic-go does not support Go 1.20
 COMMENT =	open decentralized synchronization utility
 
-V =		1.23.0
+PKGNAME =	syncthing-1.23.2rc1
+V =		1.23.2-rc.1
 DISTNAME =	syncthing-${V}
 DISTFILES =	syncthing-source-v${V}${EXTRACT_SUFX}
 
