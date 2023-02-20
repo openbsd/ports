@@ -1,5 +1,5 @@
 COMMENT =		implementation of XMP
-DISTNAME =		exempi-2.6.2
+DISTNAME =		exempi-2.6.3
 
 CATEGORIES =		textproc
 
@@ -21,7 +21,9 @@ MASTER_SITES =		http://libopenraw.freedesktop.org/download/
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 USE_GMAKE =		yes
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoreconf
+AUTOCONF_VERSION =	2.71
+AUTOMAKE_VERSION =	1.16
 CONFIGURE_ARGS +=	--enable-unittest=no
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
