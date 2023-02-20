@@ -1,9 +1,8 @@
 COMMENT =	fancy and practical functional tools
 
-MODPY_EGG_VERSION =	1.17
+MODPY_EGG_VERSION =	1.18
 DISTNAME =	funcy-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
 
 CATEGORIES =	devel
 
@@ -17,7 +16,7 @@ MODPY_SETUPTOOLS =	Yes
 MODPY_PI =		Yes
 
 # needs 'whatever'
-NO_TEST =		Yes
+#NO_TEST =		Yes
 
 # py2 used by py-viv_utils
 FLAVORS =	python3
