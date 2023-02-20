@@ -15,6 +15,7 @@ COMMENT-rustfmt =	Rust code formatter
 
 V =			1.67.1
 DISTNAME =		rustc-${V}-src
+REVISION =		0
 
 # rustc bootstrap version
 BV-aarch64 =		1.67.0-20230126
@@ -79,7 +80,9 @@ TRIPLE_ARCH-riscv64 =	riscv64gc-unknown-openbsd
 TRIPLE_ARCH-sparc64 =	sparc64-unknown-openbsd
 TRIPLE_ARCH =	${TRIPLE_ARCH-${MACHINE_ARCH}}
 
-USE_EMB_LLVM =		Yes
+USE_EMB_LLVM-${MACHINE_ARCH} ?=	Yes
+USE_EMB_LLVM-sparc64 =		No
+USE_EMB_LLVM ?=	${USE_EMB_LLVM-${MACHINE_ARCH}}
 
 # flags to use when building LLVM
 LLVMCXXFLAGS-aarch64 =	-fno-ret-protector
