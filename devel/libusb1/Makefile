@@ -3,7 +3,7 @@ COMMENT =		library for USB device access from userspace
 VERSION =		1.0.23
 DISTNAME =		libusb-${VERSION}
 PKGNAME =		libusb1-${VERSION}
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS +=		usb-1.0			1.2	# 2.0
 
