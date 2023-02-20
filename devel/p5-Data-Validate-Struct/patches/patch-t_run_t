@@ -1,8 +1,10 @@
-The regression test is missing from the 0.08 distribution.
+The regression test is missing from the 0.11 distribution.
+
 Use the file t/run.t from github.
---- t/run.t.orig	Sun Nov  9 21:26:26 2014
-+++ t/run.t	Sun Nov  9 21:26:26 2014
-@@ -0,0 +1,399 @@
+Index: t/run.t
+--- t/run.t.orig
++++ t/run.t
+@@ -0,0 +1,409 @@
 +# -*-perl-*-
 +use utf8;
 +use Test::More;
@@ -399,6 +401,16 @@ Use the file t/run.t from github.
 +$v3->type(noob => sub { return $_[0] == 42 });
 +
 +ok($v3->validate($cfg3), "using custom types");
++
++
++# check if errors are not cached
++my $v4 = Data::Validate::Struct->new({age => 'int'});
++ok(!$v4->validate({age => 'eight'}), "cache check first run, error");
++ok($v4->validate({age => 8}), "cache check second run, no error");
++
++# different references
++my $v5 = Data::Validate::Struct->new({ foo => [{bar => 'int'}]});
++ok(!$v5->validate({foo=>{bar=>10}}));
 +
 +done_testing();
 +

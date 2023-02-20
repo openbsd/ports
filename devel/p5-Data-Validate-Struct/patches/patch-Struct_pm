@@ -1,0 +1,17 @@
+https://github.com/TLINDEN/Data-Validate-Struct/pull/6
+Do not create hash entries during validate.
+
+Index: Struct.pm
+--- Struct.pm.orig
++++ Struct.pm
+@@ -196,8 +196,8 @@ sub _traverse {
+ 
+   foreach my $key (keys %{$reference}) {
+     my $reference_ref = ref $reference->{$key};
+-    my $hash_ref = ref $hash->{$key};
+-    if ($reference_ref =~ /^ARRAY|HASH$/ && $reference_ref ne $hash_ref)
++    my $hash_ref = exists $hash->{$key} && ref $hash->{$key};
++    if ($hash_ref && $reference_ref =~ /^ARRAY|HASH$/ && $reference_ref ne $hash_ref)
+     {
+       my $err = sprintf("Different structure types %s vs %s", $reference_ref, $hash_ref);
+       push @{$self->{errors}}, sprintf(q{%s at '%s'}, $err, join(' => ', @tree));
