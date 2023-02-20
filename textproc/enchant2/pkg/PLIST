@@ -13,5 +13,10 @@ lib/libenchant-2.la
 lib/pkgconfig/enchant-2.pc
 @man man/man1/enchant-2.1
 @man man/man1/enchant-lsmod-2.1
+@man man/man5/enchant.5
+share/doc/enchant/
+share/doc/enchant/enchant-2.html
+share/doc/enchant/enchant-lsmod-2.html
+share/doc/enchant/enchant.html
 share/enchant-2/
 share/enchant-2/enchant.ordering
