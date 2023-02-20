@@ -10,3 +10,11 @@ Index: log4php.xml
          <param name="append" value="true" />
      </appender>
      <root>
+@@ -12,6 +12,6 @@
+ 
+         <!-- Possible values from least to most granular:
+              FATAL, ERROR, WARN, INFO, DEBUG, TRACE -->
+-        <level value="TRACE" />
++        <level value="INFO" />
+     </root>
+ </configuration>
