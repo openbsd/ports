@@ -1,0 +1,16 @@
+Don't enforce dependency on x11/wxWidgets,-webkit for consumers.
+Only p5-Wx depends on this port and only textproc/chordpro,-wx depends on p5-Wx
+and does not require webkit functionality.
+
+Index: inc/My/Build/Any_wx_config.pm
+--- inc/My/Build/Any_wx_config.pm.orig
++++ inc/My/Build/Any_wx_config.pm
+@@ -6,7 +6,7 @@ use My::Build::Utility qw(awx_arch_dir awx_install_arc
+ 
+ our $WX_CONFIG_LIBSEP;
+ our @LIBRARIES = qw(base net xml adv animate aui core fl gizmos gl html
+-                    media propgrid qa ribbon richtext stc webview xrc);
++                    media propgrid qa ribbon richtext stc xrc);
+ our @MONO_LIBRARIES_2_9 = qw(core gl);
+ our @MONO_LIBRARIES_2_8 = qw(core stc gl);
+ our @CONTRIB_LIBRARIES = qw(gizmos_xrc ogl plot svg);
