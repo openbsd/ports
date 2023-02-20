@@ -1,0 +1,13 @@
+include/re2/
+include/re2/filtered_re2.h
+include/re2/re2.h
+include/re2/set.h
+include/re2/stringpiece.h
+lib/cmake/
+lib/cmake/re2/
+lib/cmake/re2/re2Config.cmake
+lib/cmake/re2/re2ConfigVersion.cmake
+lib/cmake/re2/re2Targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/re2/re2Targets.cmake
+@lib lib/libre2.so.${LIBre2_VERSION}
+lib/pkgconfig/re2.pc
