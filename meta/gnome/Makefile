@@ -8,6 +8,9 @@ PKGNAME=		gnome-${V}
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
+REVISION-main=		0
+REVISION-extras=	0
+
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 MULTI_PACKAGES=		-main -extras
@@ -78,6 +81,7 @@ RUN_DEPENDS-main +=	x11/gnome/calculator \
 			x11/gnome/nautilus \
 			x11/gnome/photos \
 			x11/gnome/text-editor \
+			x11/gnome/totem \
 			x11/gnome/weather \
 			x11/gnome/yelp
 # replacement for gnome-system-monitor
@@ -88,8 +92,7 @@ RUN_DEPENDS-extras +=	graphics/simple-scan \
 			x11/gnome/baobab \
 			x11/gnome/cheese \
 			x11/gnome/connections \
-			x11/gnome/system-monitor \
-			x11/gnome/totem
+			x11/gnome/system-monitor
 
 # https://gitlab.gnome.org/GNOME/gnome-build-meta/blob/master/elements/core/meta-gnome-core-developer-tools.bst
 RUN_DEPENDS-extras +=	sysutils/dspy \
