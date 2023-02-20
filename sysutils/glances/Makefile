@@ -1,6 +1,7 @@
 COMMENT =		cross-platform curses-based monitoring tool
 
 MODPY_EGG_VERSION =	3.3.0.4
+REVISION =		0
 
 DISTNAME =		Glances-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:L}
