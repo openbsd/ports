@@ -1,0 +1,26 @@
+From 2e9169effa9abf14f34f8436a791b8829eea7774 Mon Sep 17 00:00:00 2001
+From: Scott Talbert <swt@techie.net>
+Date: Mon, 8 Aug 2022 20:00:52 -0400
+Subject: [PATCH] Only require attrdict3 on Windows
+
+Index: buildtools/config.py
+--- buildtools/config.py.orig
++++ buildtools/config.py
+@@ -27,8 +27,6 @@ from distutils.dep_util  import newer
+ 
+ import distutils.sysconfig
+ 
+-from attrdict import AttrDict
+-
+ runSilently = False
+ 
+ #----------------------------------------------------------------------
+@@ -991,6 +989,8 @@ def getMSVCInfo(PYTHON, arch, set_env=False):
+     global MSVCinfo
+     if MSVCinfo is not None:
+         return MSVCinfo
++
++    from attrdict import AttrDict
+ 
+     # Note that it starts with a monkey-patch in setuptools.msvc to
+     # workaround this issue: pypa/setuptools#1902

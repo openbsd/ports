@@ -14,7 +14,7 @@ FULLPKGPATH-main=	${BUILD_PKGPATH}
 FULLPKGPATH-media=	${BUILD_PKGPATH},-media
 FULLPKGPATH-webkit=	${BUILD_PKGPATH},-webkit
 
-REVISION-main=		0
+REVISION-main=		1
 REVISION-media=		1
 REVISION-webkit=	1
 
@@ -53,7 +53,6 @@ FLAVORS=		python3
 FLAVOR=			python3
 
 BUILD_DEPENDS=		devel/doxygen \
-			devel/py-attrdict${MODPY_FLAVOR} \
 			devel/py-setuptools${MODPY_FLAVOR} \
 			devel/py-sip${MODPY_FLAVOR} \
 			devel/py-six${MODPY_FLAVOR}
@@ -78,7 +77,7 @@ NO_TEST=		Yes
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} DOXYGEN=${LOCALBASE}/bin/doxygen \
 		${MODPY_BIN} build.py dox touch etg --nodoc sip build_py \
-		build_py --use_syswx --release --jobs=${MAKE_JOBS}
+		--use_syswx --release --jobs=${MAKE_JOBS}
 # substitute 2 above lines with this one when rebuilding after a fix, error...
 #		${MODPY_BIN} build.py build_py --use_syswx --jobs=${MAKE_JOBS}
 

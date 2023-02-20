@@ -1,5 +1,5 @@
-@pkgpath x11/py-wxPython
 @conflict py-wxPython-*
+@pkgpath x11/py-wxPython
 bin/helpviewer
 bin/img2png
 bin/img2py
