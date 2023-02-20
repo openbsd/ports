@@ -1,8 +1,7 @@
 COMMENT =	set of tools built upon the Test2 framework
 
-DISTNAME =	Test2-Suite-0.000130
+DISTNAME =	Test2-Suite-0.000145
 CPAN_AUTHOR =	EXODIST
-REVISION =	0
 
 CATEGORIES =	devel
 

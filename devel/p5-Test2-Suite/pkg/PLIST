@@ -24,6 +24,7 @@ ${P5SITE}/Test2/Compare/Event.pm
 ${P5SITE}/Test2/Compare/EventMeta.pm
 ${P5SITE}/Test2/Compare/Float.pm
 ${P5SITE}/Test2/Compare/Hash.pm
+${P5SITE}/Test2/Compare/Isa.pm
 ${P5SITE}/Test2/Compare/Meta.pm
 ${P5SITE}/Test2/Compare/Negatable.pm
 ${P5SITE}/Test2/Compare/Number.pm
@@ -151,6 +152,7 @@ ${P5SITE}/Test2/Workflow/Task/Group.pm
 @man man/man3p/Test2::Compare::EventMeta.3p
 @man man/man3p/Test2::Compare::Float.3p
 @man man/man3p/Test2::Compare::Hash.3p
+@man man/man3p/Test2::Compare::Isa.3p
 @man man/man3p/Test2::Compare::Meta.3p
 @man man/man3p/Test2::Compare::Negatable.3p
 @man man/man3p/Test2::Compare::Number.3p
