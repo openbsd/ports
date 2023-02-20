@@ -7,7 +7,7 @@ Patch to use it, avoiding the need for Linux/libext2fs libuuid.
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -1073,11 +1073,11 @@ dnl --------------------------------------------------
+@@ -1072,11 +1072,11 @@ dnl --------------------------------------------------
  dnl UUID Support
  
  have_uuid=no
