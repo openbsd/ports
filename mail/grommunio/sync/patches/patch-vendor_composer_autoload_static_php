@@ -1,17 +1,7 @@
 Index: vendor/composer/autoload_static.php
 --- vendor/composer/autoload_static.php.orig
 +++ vendor/composer/autoload_static.php
-@@ -4,6 +4,9 @@
- 
- namespace Composer\Autoload;
- 
-+define('GTOPDIR', realpath(implode(DIRECTORY_SEPARATOR, [__DIR__, '..', '..', '..'])));
-+define('UMAPI_PATH', GTOPDIR . DIRECTORY_SEPARATOR . 'grommunio-mapi-header-php');
-+
- class ComposerStaticInit153a56a781a72686b71399955d98204f
- {
-     public static $files = array (
-@@ -15,8 +18,8 @@ class ComposerStaticInit153a56a781a72686b71399955d9820
+@@ -15,8 +15,8 @@ class ComposerStaticInit153a56a781a72686b71399955d9820
      public static $classMap = array (
          'ASDevice' => __DIR__ . '/../..' . '/lib/core/asdevice.php',
          'AuthenticationRequiredException' => __DIR__ . '/../..' . '/lib/exceptions/authenticationrequiredexception.php',
@@ -22,7 +12,7 @@ Index: vendor/composer/autoload_static.php
          'BodyPartPreference' => __DIR__ . '/../..' . '/lib/core/bodypartpreference.php',
          'BodyPreference' => __DIR__ . '/../..' . '/lib/core/bodypreference.php',
          'ChangesMemoryWrapper' => __DIR__ . '/../..' . '/lib/core/changesmemorywrapper.php',
-@@ -31,7 +34,7 @@ class ComposerStaticInit153a56a781a72686b71399955d9820
+@@ -31,7 +31,7 @@ class ComposerStaticInit153a56a781a72686b71399955d9820
          'Find' => __DIR__ . '/../..' . '/lib/request/find.php',
          'FolderChange' => __DIR__ . '/../..' . '/lib/request/folderchange.php',
          'FolderSync' => __DIR__ . '/../..' . '/lib/request/foldersync.php',
@@ -31,7 +21,7 @@ Index: vendor/composer/autoload_static.php
          'GSync' => __DIR__ . '/../..' . '/lib/core/gsync.php',
          'GSyncException' => __DIR__ . '/../..' . '/lib/exceptions/gsyncexception.php',
          'GetAttachment' => __DIR__ . '/../..' . '/lib/request/getattachment.php',
-@@ -53,14 +56,14 @@ class ComposerStaticInit153a56a781a72686b71399955d9820
+@@ -53,14 +53,14 @@ class ComposerStaticInit153a56a781a72686b71399955d9820
          'ItemOperations' => __DIR__ . '/../..' . '/lib/request/itemoperations.php',
          'Log' => __DIR__ . '/../..' . '/lib/log/log.php',
          'LoopDetection' => __DIR__ . '/../..' . '/lib/core/loopdetection.php',
@@ -48,7 +38,7 @@ Index: vendor/composer/autoload_static.php
          'MoveItems' => __DIR__ . '/../..' . '/lib/request/moveitems.php',
          'NoHierarchyCacheAvailableException' => __DIR__ . '/../..' . '/lib/exceptions/nohierarchycacheavailableexception.php',
          'NoPostRequestException' => __DIR__ . '/../..' . '/lib/exceptions/nopostrequestexception.php',
-@@ -72,7 +75,7 @@ class ComposerStaticInit153a56a781a72686b71399955d9820
+@@ -72,7 +72,7 @@ class ComposerStaticInit153a56a781a72686b71399955d9820
          'Provisioning' => __DIR__ . '/../..' . '/lib/request/provisioning.php',
          'ProvisioningManager' => __DIR__ . '/../..' . '/lib/core/provisioningmanager.php',
          'ProvisioningRequiredException' => __DIR__ . '/../..' . '/lib/exceptions/provisioningrequiredexception.php',
@@ -57,7 +47,7 @@ Index: vendor/composer/autoload_static.php
          'RedisConnection' => __DIR__ . '/../..' . '/lib/core/redisconnection.php',
          'ReplaceNullcharFilter' => __DIR__ . '/../..' . '/lib/wbxml/replacenullcharfilter.php',
          'Request' => __DIR__ . '/../..' . '/lib/request/request.php',
-@@ -138,8 +141,8 @@ class ComposerStaticInit153a56a781a72686b71399955d9820
+@@ -138,8 +138,8 @@ class ComposerStaticInit153a56a781a72686b71399955d9820
          'SyncUserInformation' => __DIR__ . '/../..' . '/lib/syncobjects/syncuserinformation.php',
          'SyncValidateCert' => __DIR__ . '/../..' . '/lib/syncobjects/syncvalidatecert.php',
          'Syslog' => __DIR__ . '/../..' . '/lib/log/syslog.php',

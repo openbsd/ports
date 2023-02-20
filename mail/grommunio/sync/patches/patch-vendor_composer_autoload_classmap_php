@@ -1,13 +1,7 @@
 Index: vendor/composer/autoload_classmap.php
 --- vendor/composer/autoload_classmap.php.orig
 +++ vendor/composer/autoload_classmap.php
-@@ -5,11 +5,14 @@
- $vendorDir = dirname(dirname(__FILE__));
- $baseDir = dirname($vendorDir);
- 
-+define('GTOPDIR', realpath(implode(DIRECTORY_SEPARATOR, [__DIR__, '..', '..', '..'])));
-+define('UMAPI_PATH', GTOPDIR . DIRECTORY_SEPARATOR . 'grommunio-mapi-header-php');
-+
+@@ -8,8 +8,8 @@ $baseDir = dirname($vendorDir);
  return array(
      'ASDevice' => $baseDir . '/lib/core/asdevice.php',
      'AuthenticationRequiredException' => $baseDir . '/lib/exceptions/authenticationrequiredexception.php',
@@ -18,7 +12,7 @@ Index: vendor/composer/autoload_classmap.php
      'BodyPartPreference' => $baseDir . '/lib/core/bodypartpreference.php',
      'BodyPreference' => $baseDir . '/lib/core/bodypreference.php',
      'ChangesMemoryWrapper' => $baseDir . '/lib/core/changesmemorywrapper.php',
-@@ -24,7 +27,7 @@ return array(
+@@ -24,7 +24,7 @@ return array(
      'Find' => $baseDir . '/lib/request/find.php',
      'FolderChange' => $baseDir . '/lib/request/folderchange.php',
      'FolderSync' => $baseDir . '/lib/request/foldersync.php',
@@ -27,7 +21,7 @@ Index: vendor/composer/autoload_classmap.php
      'GSync' => $baseDir . '/lib/core/gsync.php',
      'GSyncException' => $baseDir . '/lib/exceptions/gsyncexception.php',
      'GetAttachment' => $baseDir . '/lib/request/getattachment.php',
-@@ -46,14 +49,14 @@ return array(
+@@ -46,14 +46,14 @@ return array(
      'ItemOperations' => $baseDir . '/lib/request/itemoperations.php',
      'Log' => $baseDir . '/lib/log/log.php',
      'LoopDetection' => $baseDir . '/lib/core/loopdetection.php',
@@ -44,7 +38,7 @@ Index: vendor/composer/autoload_classmap.php
      'MoveItems' => $baseDir . '/lib/request/moveitems.php',
      'NoHierarchyCacheAvailableException' => $baseDir . '/lib/exceptions/nohierarchycacheavailableexception.php',
      'NoPostRequestException' => $baseDir . '/lib/exceptions/nopostrequestexception.php',
-@@ -65,7 +68,7 @@ return array(
+@@ -65,7 +65,7 @@ return array(
      'Provisioning' => $baseDir . '/lib/request/provisioning.php',
      'ProvisioningManager' => $baseDir . '/lib/core/provisioningmanager.php',
      'ProvisioningRequiredException' => $baseDir . '/lib/exceptions/provisioningrequiredexception.php',
@@ -53,7 +47,7 @@ Index: vendor/composer/autoload_classmap.php
      'RedisConnection' => $baseDir . '/lib/core/redisconnection.php',
      'ReplaceNullcharFilter' => $baseDir . '/lib/wbxml/replacenullcharfilter.php',
      'Request' => $baseDir . '/lib/request/request.php',
-@@ -131,8 +134,8 @@ return array(
+@@ -131,8 +131,8 @@ return array(
      'SyncUserInformation' => $baseDir . '/lib/syncobjects/syncuserinformation.php',
      'SyncValidateCert' => $baseDir . '/lib/syncobjects/syncvalidatecert.php',
      'Syslog' => $baseDir . '/lib/log/syslog.php',

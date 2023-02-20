@@ -1,13 +1,9 @@
 Index: vendor/composer/autoload_classmap.php
 --- vendor/composer/autoload_classmap.php.orig
 +++ vendor/composer/autoload_classmap.php
-@@ -5,11 +5,14 @@
- $vendorDir = dirname(__DIR__);
+@@ -6,10 +6,10 @@ $vendorDir = dirname(__DIR__);
  $baseDir = dirname($vendorDir);
  
-+define('GTOPDIR', realpath(implode(DIRECTORY_SEPARATOR, [__DIR__, '..', '..', '..'])));
-+define('UMAPI_PATH', GTOPDIR . DIRECTORY_SEPARATOR . 'grommunio-mapi-header-php');
-+
  return array(
 -    'BaseException' => '/var/www/grommunio-mapi-header-php/class.baseexception.php',
 -    'BaseRecurrence' => '/var/www/grommunio-mapi-header-php/class.baserecurrence.php',
@@ -19,7 +15,7 @@ Index: vendor/composer/autoload_classmap.php
      'Logger' => $vendorDir . '/apache/log4php/src/main/php/Logger.php',
      'LoggerAppender' => $vendorDir . '/apache/log4php/src/main/php/LoggerAppender.php',
      'LoggerAppenderConsole' => $vendorDir . '/apache/log4php/src/main/php/appenders/LoggerAppenderConsole.php',
-@@ -89,9 +92,9 @@ return array(
+@@ -89,9 +89,9 @@ return array(
      'LoggerRoot' => $vendorDir . '/apache/log4php/src/main/php/LoggerRoot.php',
      'LoggerThrowableInformation' => $vendorDir . '/apache/log4php/src/main/php/LoggerThrowableInformation.php',
      'LoggerUtils' => $vendorDir . '/apache/log4php/src/main/php/helpers/LoggerUtils.php',

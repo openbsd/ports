@@ -1,0 +1,13 @@
+Index: vendor/autoload.php
+--- vendor/autoload.php.orig
++++ vendor/autoload.php
+@@ -20,6 +20,9 @@ if (PHP_VERSION_ID < 50600) {
+     );
+ }
+ 
++define('GTOPDIR', realpath(implode(DIRECTORY_SEPARATOR, [__DIR__, '..', '..'])));
++define('UMAPI_PATH', GTOPDIR . DIRECTORY_SEPARATOR . 'grommunio-mapi-header-php');
++
+ require_once __DIR__ . '/composer/autoload_real.php';
+ 
+ return ComposerAutoloaderInite7a02ea966e359790e81bd7430324527::getLoader();

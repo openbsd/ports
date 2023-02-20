@@ -1,17 +1,7 @@
 Index: vendor/composer/autoload_files.php
 --- vendor/composer/autoload_files.php.orig
 +++ vendor/composer/autoload_files.php
-@@ -5,6 +5,9 @@
- $vendorDir = dirname(__DIR__);
- $baseDir = dirname($vendorDir);
- 
-+define('GTOPDIR', realpath(implode(DIRECTORY_SEPARATOR, [__DIR__, '..', '..', '..'])));
-+define('UMAPI_PATH', GTOPDIR . DIRECTORY_SEPARATOR . 'grommunio-mapi-header-php');
-+
- return array(
-     '383eaff206634a77a1be54e64e6459c7' => $vendorDir . '/sabre/uri/lib/functions.php',
-     '2b9d0f43f9552984cfa82fee95491826' => $vendorDir . '/sabre/event/lib/coroutine.php',
-@@ -15,8 +18,8 @@ return array(
+@@ -15,8 +15,8 @@ return array(
      'ebdb698ed4152ae445614b69b5e4bb6a' => $vendorDir . '/sabre/http/lib/functions.php',
      '777dc149d682152f9ab0caaeffcdbb27' => $baseDir . '/config.php',
      '32a4f751fbcde8755e5f28bd96eed397' => $baseDir . '/version.php',

@@ -1,17 +1,7 @@
 Index: vendor/composer/autoload_static.php
 --- vendor/composer/autoload_static.php.orig
 +++ vendor/composer/autoload_static.php
-@@ -4,6 +4,9 @@
- 
- namespace Composer\Autoload;
- 
-+define('GTOPDIR', realpath(implode(DIRECTORY_SEPARATOR, [__DIR__, '..', '..', '..'])));
-+define('UMAPI_PATH', GTOPDIR . DIRECTORY_SEPARATOR . 'grommunio-mapi-header-php');
-+
- class ComposerStaticInite7a02ea966e359790e81bd7430324527
- {
-     public static $files = array (
-@@ -16,10 +19,10 @@ class ComposerStaticInite7a02ea966e359790e81bd74303245
+@@ -16,10 +16,10 @@ class ComposerStaticInite7a02ea966e359790e81bd74303245
          'ebdb698ed4152ae445614b69b5e4bb6a' => __DIR__ . '/..' . '/sabre/http/lib/functions.php',
          '777dc149d682152f9ab0caaeffcdbb27' => __DIR__ . '/../..' . '/config.php',
          '32a4f751fbcde8755e5f28bd96eed397' => __DIR__ . '/../..' . '/version.php',
@@ -26,7 +16,7 @@ Index: vendor/composer/autoload_static.php
      );
  
      public static $prefixLengthsPsr4 = array (
-@@ -93,10 +96,10 @@ class ComposerStaticInite7a02ea966e359790e81bd74303245
+@@ -93,10 +93,10 @@ class ComposerStaticInite7a02ea966e359790e81bd74303245
      );
  
      public static $classMap = array (
@@ -40,7 +30,7 @@ Index: vendor/composer/autoload_static.php
          'Logger' => __DIR__ . '/..' . '/apache/log4php/src/main/php/Logger.php',
          'LoggerAppender' => __DIR__ . '/..' . '/apache/log4php/src/main/php/LoggerAppender.php',
          'LoggerAppenderConsole' => __DIR__ . '/..' . '/apache/log4php/src/main/php/appenders/LoggerAppenderConsole.php',
-@@ -176,11 +179,11 @@ class ComposerStaticInite7a02ea966e359790e81bd74303245
+@@ -176,11 +176,11 @@ class ComposerStaticInite7a02ea966e359790e81bd74303245
          'LoggerRoot' => __DIR__ . '/..' . '/apache/log4php/src/main/php/LoggerRoot.php',
          'LoggerThrowableInformation' => __DIR__ . '/..' . '/apache/log4php/src/main/php/LoggerThrowableInformation.php',
          'LoggerUtils' => __DIR__ . '/..' . '/apache/log4php/src/main/php/helpers/LoggerUtils.php',

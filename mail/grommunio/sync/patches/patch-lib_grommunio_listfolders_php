@@ -1,12 +1,11 @@
 Index: lib/grommunio/listfolders.php
 --- lib/grommunio/listfolders.php.orig
 +++ lib/grommunio/listfolders.php
-@@ -42,7 +42,7 @@ function listfolders_configure() {
+@@ -42,7 +42,6 @@ function listfolders_configure() {
  	}
  
  	// include PHP-MAPI classes
 -	define('UMAPI_PATH', '/usr/share/php-mapi');
-+	define('UMAPI_PATH', GTOPDIR . DIRECTORY_SEPARATOR . 'grommunio-mapi-header-php');
  	require_once UMAPI_PATH . '/mapi.util.php';
  	require_once UMAPI_PATH . '/mapidefs.php';
  	require_once UMAPI_PATH . '/mapitags.php';
