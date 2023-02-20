@@ -10,6 +10,9 @@ CATEGORIES=	textproc
 PKGNAME-main=	chordpro-$V
 PKGNAME-wx=	wxchordpro-$V
 
+REVISION-main=	0
+REVISION-wx=	0
+
 HOMEPAGE=	https://www.chordpro.org/
 
 MAINTAINER=	Todd C. Miller <millert@openbsd.org>
