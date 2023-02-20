@@ -1,5 +1,6 @@
 @pkgpath x11/p5-Wx
 bin/wxperl_overload
+${P5ARCH}/
 ${P5ARCH}/Wx/
 ${P5ARCH}/Wx.pm
 ${P5ARCH}/Wx/AUI.pm
@@ -76,6 +77,7 @@ ${P5ARCH}/Wx/cpp/v_cback.h
 ${P5ARCH}/Wx/cpp/v_cback_def.h
 ${P5ARCH}/Wx/cpp/wxapi.h
 ${P5ARCH}/Wx/typemap
+${P5ARCH}/auto/
 ${P5ARCH}/auto/Wx/
 ${P5ARCH}/auto/Wx/AUI/
 @so ${P5ARCH}/auto/Wx/AUI/AUI.so

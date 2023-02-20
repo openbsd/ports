@@ -7,7 +7,9 @@ DISTNAME =		Wx-${V}
 FULLPKGNAME-media =	p5-Wx-media-${V}
 FULLPKGNAME-webkit =	p5-Wx-webkit-${V}
 
-REVISION-main =		3
+REVISION-main =		4
+REVISION-media =	0
+REVISION-webkit =	0
 
 CATEGORIES =		x11 devel
 
@@ -28,14 +30,11 @@ PERMIT_PACKAGE =	Yes
 MODULES =		cpan
 CPAN_AUTHOR =		MDOOTSON
 
-# XXX using clang breaks with:
-# "Compilation failed in require at Makefile.PL line 21."
-# see: https://trac.macports.org/ticket/59893
-COMPILER =		ports-gcc base-gcc
+COMPILER =		base-clang ports-gcc base-gcc
 
 MULTI_PACKAGES =	-main -media -webkit
 
-WANTLIB += c m perl wx_baseu-3.2 wx_gtk3u_core-3.2
+WANTLIB += ${COMPILER_LIBCXX} c m perl wx_baseu-3.2 wx_gtk3u_core-3.2
 
 WANTLIB-main += ${WANTLIB}
 WANTLIB-main += wx_baseu_net-3.2 wx_baseu_xml-3.2 wx_gtk3u_aui-3.2
@@ -52,8 +51,7 @@ BUILD_DEPENDS =		devel/p5-Alien-wxWidgets \
 # see post-extract; needed for Fedora patches to apply
 BUILD_DEPENDS +=	converters/dos2unix
 
-RUN_DEPENDS =		devel/p5-Alien-wxWidgets \
-			devel/p5-ExtUtils-XSpp
+RUN_DEPENDS =		devel/p5-ExtUtils-XSpp
 
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			x11/wxWidgets
@@ -64,9 +62,11 @@ LIB_DEPENDS-media =	${LIB_DEPENDS} \
 LIB_DEPENDS-webkit =	${LIB_DEPENDS} \
 			x11/wxWidgets,-webkit
 
-RUN_DEPENDS-media =	${BASE_PKGPATH}
+RUN_DEPENDS-media =	${RUN_DEPENDS} \
+			${BASE_PKGPATH}
 
-RUN_DEPENDS-webkit =	${BASE_PKGPATH}
+RUN_DEPENDS-webkit =	${RUN_DEPENDS} \
+			${BASE_PKGPATH}
 
 CONFIGURE_ARGS=		--wx-unicode \
 			--wx-toolkit=gtk \
@@ -76,3 +76,11 @@ post-extract:
 	${LOCALBASE}/bin/dos2unix ${WRKSRC}/{MANIFEST,typemap}
 
 .include <bsd.port.mk>
+
+# XXX Can't exec "gcc":
+# No such file or directory at /usr/libdata/perl5/ExtUtils/CBuilder/Base.pm line 342.
+.if ${CHOSEN_COMPILER} == "base-clang"
+COMPILER_LINKS +=	gcc /usr/bin/clang
+COMPILER_LINKS +=	g++ /usr/bin/clang++
+.endif
+
