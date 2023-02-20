@@ -1,0 +1,21 @@
+disable phone-home
+
+Index: chirp/wxui/report.py
+--- chirp/wxui/report.py.orig
++++ chirp/wxui/report.py
+@@ -97,14 +97,8 @@ def with_session(fn):
+ 
+ 
+ @with_session
+-def check_for_updates(session, callback):
+-    r = session.get('%s/latest' % BASE)
+-    callback(r.json()['latest'])
+-
+-
+-@with_session
+ def report_model(session, rclass, op):
+-    if CONF.get_bool('no_report', 'global', False):
++    if CONF.get_bool('no_report', 'global', True):
+         return
+ 
+     session.post('%s/usage' % BASE,

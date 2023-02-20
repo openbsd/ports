@@ -640,7 +640,7 @@ lib/python${MODPY_VERSION}/site-packages/chirp/wxui/radioinfo.py
 lib/python${MODPY_VERSION}/site-packages/chirp/wxui/radiothread.py
 lib/python${MODPY_VERSION}/site-packages/chirp/wxui/report.py
 lib/python${MODPY_VERSION}/site-packages/chirp/wxui/settingsedit.py
+share/applications/chirp.desktop
 share/pixmaps/
 share/pixmaps/chirp.png
 @tag update-desktop-database
-share/applications/chirp.desktop
