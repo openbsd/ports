@@ -1,6 +1,6 @@
 COMMENT=	create, alter and inspect Matroska files
 
-DISTNAME=	mkvtoolnix-73.0.0
+DISTNAME=	mkvtoolnix-74.0.0
 
 CATEGORIES=	multimedia x11
 
@@ -12,9 +12,9 @@ MAINTAINER=	Rafael Sadowski <rsadowski@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} FLAC Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Multimedia Qt5Network Qt5Svg Qt5Widgets c
-WANTLIB += cmark dvdread ebml fmt gmp iconv intl m matroska ogg
-WANTLIB += pugixml vorbis z
+WANTLIB += Qt5Gui Qt5Multimedia Qt5Network Qt5Svg Qt5Widgets boost_filesystem
+WANTLIB += boost_system c cmark dvdread ebml fmt gmp iconv intl
+WANTLIB += m matroska ogg pugixml vorbis z
 
 MASTER_SITES=	https://www.bunkus.org/videotools/mkvtoolnix/sources/
 
@@ -33,14 +33,14 @@ COMPILER=	base-clang ports-gcc
 EXTRA_ports-gcc=	-lstdc++fs
 LDFLAGS+=		${EXTRA_${CHOSEN_COMPILER}}
 
-BUILD_DEPENDS=	devel/boost \
-		devel/gettext,-tools \
+BUILD_DEPENDS=	devel/gettext,-tools \
 		devel/gtest \
 		textproc/docbook \
 		textproc/docbook-xsl \
 		textproc/nlohmann-json
 
-LIB_DEPENDS=	audio/flac \
+LIB_DEPENDS=	devel/boost \
+		audio/flac \
 		audio/libogg \
 		audio/libvorbis \
 		devel/fmt \
