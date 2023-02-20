@@ -25,4 +25,6 @@ LIB_DEPENDS =	devel/coeurl \
 # C++17
 COMPILER =	base-clang ports-gcc
 
+CONFIGURE_ARGS +=	-DBUILD_LIB_EXAMPLES=OFF
+
 .include <bsd.port.mk>
