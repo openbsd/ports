@@ -1,6 +1,6 @@
 COMMENT=	list-like structure implementing MutableSequence
 
-MODPY_EGG_VERSION=	1.3.1
+MODPY_EGG_VERSION=	1.3.3
 
 DISTNAME=	frozenlist-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
