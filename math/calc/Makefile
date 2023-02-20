@@ -1,6 +1,6 @@
 COMMENT=	C-style arbitrary precision calculator
 
-V=		2.14.1.2
+V=		2.14.1.3
 DISTNAME=	calc-$V
 EXTRACT_SUFX=	.tar.bz2
 
