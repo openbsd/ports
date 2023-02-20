@@ -30,7 +30,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		cpan
 CPAN_AUTHOR =		MDOOTSON
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =		base-clang ports-gcc
 
 MULTI_PACKAGES =	-main -media -webkit
 
@@ -75,12 +75,12 @@ CONFIGURE_ARGS=		--wx-unicode \
 post-extract:
 	${LOCALBASE}/bin/dos2unix ${WRKSRC}/{MANIFEST,typemap}
 
-.include <bsd.port.mk>
-
 # XXX Can't exec "gcc":
 # No such file or directory at /usr/libdata/perl5/ExtUtils/CBuilder/Base.pm line 342.
-.if ${CHOSEN_COMPILER} == "base-clang"
-COMPILER_LINKS +=	gcc /usr/bin/clang
-COMPILER_LINKS +=	g++ /usr/bin/clang++
-.endif
+pre-configure:
+	if [[ ! -e ${WRKDIR}/bin/gcc ]]; then \
+		ln -sf clang ${WRKDIR}/bin/gcc ;\
+		ln -sf clang++ ${WRKDIR}/bin/g++ ;\
+	fi
 
+.include <bsd.port.mk>
