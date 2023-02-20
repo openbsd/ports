@@ -10,8 +10,8 @@ CATEGORIES=	textproc
 PKGNAME-main=	chordpro-$V
 PKGNAME-wx=	wxchordpro-$V
 
-REVISION-main=	0
-REVISION-wx=	0
+REVISION-main=	1
+REVISION-wx=	1
 
 HOMEPAGE=	https://www.chordpro.org/
 
