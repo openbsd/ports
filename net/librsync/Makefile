@@ -1,6 +1,6 @@
 COMMENT=	library for delta compression of streams
 
-V =		2.3.3
+V =		2.3.4
 DISTNAME =	librsync-${V}
 
 SHARED_LIBS =	rsync	5.1
