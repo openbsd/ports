@@ -2,6 +2,7 @@ COMMENT =		authoritative DNS server
 
 # update net/py-libknot when updating this
 DISTNAME =		knot-3.2.5
+REVISION =		0
 
 SHARED_LIBS +=	dnssec               3.1      # .9.0
 SHARED_LIBS +=	knot                 8.0      # .13.0
@@ -11,8 +12,7 @@ CATEGORIES =		net
 
 HOMEPAGE =		https://www.knot-dns.cz/
 
-MAINTAINER =		Aisha Tammy <openbsd@aisha.cc>, \
-			Jeremie Courreges-Anglas <jca@wxcvbn.org>
+MAINTAINER =		Aisha Tammy <openbsd@aisha.cc>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
