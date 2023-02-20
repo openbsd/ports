@@ -1368,7 +1368,6 @@ webapps/docs/api/org/apache/tomcat/buildutil/translate/BackportBase.html
 webapps/docs/api/org/apache/tomcat/buildutil/translate/BackportEnglish.html
 webapps/docs/api/org/apache/tomcat/buildutil/translate/BackportTranslations.html
 webapps/docs/api/org/apache/tomcat/buildutil/translate/Constants.html
-webapps/docs/api/org/apache/tomcat/buildutil/translate/Export.html
 webapps/docs/api/org/apache/tomcat/buildutil/translate/Import.html
 webapps/docs/api/org/apache/tomcat/buildutil/translate/Utils.html
 webapps/docs/api/org/apache/tomcat/buildutil/translate/package-summary.html
@@ -1791,6 +1790,7 @@ webapps/docs/api/org/apache/tomcat/util/http/fileupload/disk/DiskFileItemFactory
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/disk/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/disk/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/impl/
+webapps/docs/api/org/apache/tomcat/util/http/fileupload/impl/FileCountLimitExceededException.html
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/impl/FileItemIteratorImpl.html
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/impl/FileItemStreamImpl.html
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/impl/FileSizeLimitExceededException.html
