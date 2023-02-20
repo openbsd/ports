@@ -1,0 +1,16 @@
+https://rt.cpan.org/Ticket/Display.html?id=146613
+Socket 2.031 uses getaddrinfo() instead of gethostbyname() to
+implement inet_aton().  This requires the four dotted octet syntax.
+
+Index: t/01everything.t
+--- t/01everything.t.orig
++++ t/01everything.t
+@@ -86,7 +86,7 @@ for my $o ({ name => "original", obj => $t }, { name =
+ eval '$t->add_string("_")'; # invalid key
+ like($@, qr/invalid/, 'adding "_"');
+ 
+-ok($t->add_string("0/0"), "add 0/0");
++ok($t->add_string("0.0.0.0/0"), "add 0.0.0.0/0");
+ 
+ $thawed = Storable::thaw(Storable::nfreeze($t));
+ for my $o ({ name => "original", obj => $t }, { name => "thawed", obj => $thawed }) {
