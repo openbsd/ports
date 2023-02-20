@@ -1,4 +1,8 @@
-@pkgpath x11/p5-Wx
+@conflict p5-Wx-media-*
+@conflict p5-Wx-webkit-*
+@pkgpath x11/p5-Wx,-main
+@pkgpath x11/p5-Wx,-media
+@pkgpath x11/p5-Wx,-webkit
 bin/wxperl_overload
 ${P5ARCH}/
 ${P5ARCH}/Wx/
@@ -22,6 +26,7 @@ ${P5ARCH}/Wx/IPC.pm
 ${P5ARCH}/Wx/Loader.pod
 ${P5ARCH}/Wx/Locale.pm
 ${P5ARCH}/Wx/MDI.pm
+${P5ARCH}/Wx/Media.pm
 ${P5ARCH}/Wx/Menu.pm
 ${P5ARCH}/Wx/Mini.pm
 ${P5ARCH}/Wx/NewClass.pod
@@ -103,6 +108,8 @@ ${P5ARCH}/auto/Wx/IPC/
 @so ${P5ARCH}/auto/Wx/IPC/IPC.so
 ${P5ARCH}/auto/Wx/MDI/
 @so ${P5ARCH}/auto/Wx/MDI/MDI.so
+${P5ARCH}/auto/Wx/Media/
+@so ${P5ARCH}/auto/Wx/Media/Media.so
 ${P5ARCH}/auto/Wx/PerlTest/
 @so ${P5ARCH}/auto/Wx/PerlTest/PerlTest.so
 ${P5ARCH}/auto/Wx/Print/

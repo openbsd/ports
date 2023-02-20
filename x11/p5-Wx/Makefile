@@ -1,15 +1,8 @@
-COMMENT-main =		interface to the wxWidgets cross-platform GUI toolkit
-COMMENT-media =		wxMedia support for p5-Wx
-COMMENT-webkit =	wxWebView support for p5-Wx
+COMMENT =		interface to the wxWidgets cross-platform GUI toolkit
 
 V =			0.9932
 DISTNAME =		Wx-${V}
-FULLPKGNAME-media =	p5-Wx-media-${V}
-FULLPKGNAME-webkit =	p5-Wx-webkit-${V}
-
-REVISION-main =		4
-REVISION-media =	0
-REVISION-webkit =	0
+REVISION =		5
 
 CATEGORIES =		x11 devel
 
@@ -26,24 +19,16 @@ MAINTAINER =		Antoine Jacoutot <ajacoutot@openbsd.org>
 # perl
 PERMIT_PACKAGE =	Yes
 
-
 MODULES =		cpan
 CPAN_AUTHOR =		MDOOTSON
 
-COMPILER =		base-clang ports-gcc
+COMPILER =		base-clang ports-gcc base-gcc
 
-MULTI_PACKAGES =	-main -media -webkit
-
-WANTLIB += ${COMPILER_LIBCXX} c m perl wx_baseu-3.2 wx_gtk3u_core-3.2
-
-WANTLIB-main += ${WANTLIB}
-WANTLIB-main += wx_baseu_net-3.2 wx_baseu_xml-3.2 wx_gtk3u_aui-3.2
-WANTLIB-main += wx_gtk3u_html-3.2 wx_gtk3u_propgrid-3.2 wx_gtk3u_ribbon-3.2
-WANTLIB-main += wx_gtk3u_richtext-3.2 wx_gtk3u_stc-3.2 wx_gtk3u_xrc-3.2
-
-WANTLIB-media += ${WANTLIB} wx_gtk3u_media-3.2
-
-WANTLIB-webkit += ${WANTLIB} wx_gtk3u_webview-3.2
+WANTLIB += ${COMPILER_LIBCXX} c m perl wx_baseu-3.2 wx_baseu_net-3.2
+WANTLIB += wx_baseu_xml-3.2 wx_gtk3u_aui-3.2 wx_gtk3u_core-3.2
+WANTLIB += wx_gtk3u_html-3.2 wx_gtk3u_media-3.2 wx_gtk3u_propgrid-3.2
+WANTLIB += wx_gtk3u_ribbon-3.2 wx_gtk3u_richtext-3.2 wx_gtk3u_stc-3.2
+WANTLIB += wx_gtk3u_xrc-3.2
 
 BUILD_DEPENDS =		devel/p5-Alien-wxWidgets \
 			devel/p5-ExtUtils-XSpp
@@ -53,20 +38,7 @@ BUILD_DEPENDS +=	converters/dos2unix
 
 RUN_DEPENDS =		devel/p5-ExtUtils-XSpp
 
-LIB_DEPENDS-main =	${LIB_DEPENDS} \
-			x11/wxWidgets
-
-LIB_DEPENDS-media =	${LIB_DEPENDS} \
-			x11/wxWidgets,-media
-
-LIB_DEPENDS-webkit =	${LIB_DEPENDS} \
-			x11/wxWidgets,-webkit
-
-RUN_DEPENDS-media =	${RUN_DEPENDS} \
-			${BASE_PKGPATH}
-
-RUN_DEPENDS-webkit =	${RUN_DEPENDS} \
-			${BASE_PKGPATH}
+LIB_DEPENDS =		x11/wxWidgets,-media
 
 CONFIGURE_ARGS=		--wx-unicode \
 			--wx-toolkit=gtk \
