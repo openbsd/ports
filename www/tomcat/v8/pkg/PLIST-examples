@@ -1802,6 +1802,7 @@ webapps/docs/api/org/apache/tomcat/util/http/fileupload/disk/DiskFileItemFactory
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/disk/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/disk/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/impl/
+webapps/docs/api/org/apache/tomcat/util/http/fileupload/impl/FileCountLimitExceededException.html
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/impl/FileItemIteratorImpl.html
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/impl/FileItemStreamImpl.html
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/impl/FileSizeLimitExceededException.html
