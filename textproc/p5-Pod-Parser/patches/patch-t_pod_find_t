@@ -1,0 +1,14 @@
+The .orig files from OpenBSD ports patches confuse this test.
+
+Index: t/pod/find.t
+--- t/pod/find.t.orig
++++ t/pod/find.t
+@@ -31,7 +31,7 @@ if ($^O eq 'VMS') {
+ 
+ print "### 2. searching $lib_dir\n";
+ my %pods = pod_find($lib_dir);
+-my @results = values %pods;
++my @results = grep { ! /\.orig$/ } values %pods;
+ print "### found @results\n";
+ my @compare = qw(
+     Pod::Find

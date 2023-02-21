@@ -1,16 +1,17 @@
-COMMENT=	modules for parsing/translating POD format documents
+COMMENT =	modules for parsing/translating POD format documents
 
-DISTNAME=	Pod-Parser-1.63
-REVISION=	0
+DISTNAME =	Pod-Parser-1.65
 
-CATEGORIES=	textproc
+CATEGORIES =	textproc
 
-# perl
-PERMIT_PACKAGE=	Yes
+# Perl
+PERMIT_PACKAGE =	Yes
 
-MODULES=	cpan
-FIX_CRLF_FILES=	Makefile.PL
+MODULES =		cpan
 
-PKG_ARCH=	*
+PKG_ARCH =	*
+
+FIX_CRLF_FILES =	Makefile.PL \
+			t/pod/find.t
 
 .include <bsd.port.mk>
