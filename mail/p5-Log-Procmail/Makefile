@@ -1,13 +1,16 @@
-COMMENT=		perl module for reading procmail logs
+COMMENT =	perl module for reading procmail logs
 
-DISTNAME=		Log-Procmail-0.12
-CATEGORIES=		mail textproc
-REVISION=		1
+DISTNAME =	Log-Procmail-0.14
 
-# GPL/Artistic
-PERMIT_PACKAGE=	Yes
+CATEGORIES =	mail textproc
 
-MODULES=		cpan
-PKG_ARCH=		*
+# Perl
+PERMIT_PACKAGE =	Yes
+
+MODULES =		cpan
+
+TEST_DEPENDS =		devel/p5-Test-Cmd
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
