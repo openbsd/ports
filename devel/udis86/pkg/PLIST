@@ -14,7 +14,6 @@ share/doc/udis86/manual/_sources/getstarted.rst.txt
 share/doc/udis86/manual/_sources/index.rst.txt
 share/doc/udis86/manual/_sources/libudis86.rst.txt
 share/doc/udis86/manual/_static/
-share/doc/udis86/manual/_static/_sphinx_javascript_frameworks_compat.js
 share/doc/udis86/manual/_static/basic.css
 share/doc/udis86/manual/_static/dialog-note.png
 share/doc/udis86/manual/_static/dialog-seealso.png
@@ -28,8 +27,6 @@ share/doc/udis86/manual/_static/file.png
 share/doc/udis86/manual/_static/footerbg.png
 share/doc/udis86/manual/_static/headerbg.png
 share/doc/udis86/manual/_static/ie6.css
-share/doc/udis86/manual/_static/jquery-3.6.0.js
-share/doc/udis86/manual/_static/jquery.js
 share/doc/udis86/manual/_static/language_data.js
 share/doc/udis86/manual/_static/middlebg.png
 share/doc/udis86/manual/_static/minus.png
@@ -40,8 +37,6 @@ share/doc/udis86/manual/_static/searchtools.js
 share/doc/udis86/manual/_static/sphinx_highlight.js
 share/doc/udis86/manual/_static/transparent.gif
 share/doc/udis86/manual/_static/udis86.css
-share/doc/udis86/manual/_static/underscore-1.13.1.js
-share/doc/udis86/manual/_static/underscore.js
 share/doc/udis86/manual/genindex.html
 share/doc/udis86/manual/getstarted.html
 share/doc/udis86/manual/index.html

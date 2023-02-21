@@ -1,5 +1,6 @@
 COMMENT =	fast and easy-to-use status bar
 V =		3.6.3
+REVISION =	0
 DISTNAME =	polybar-$V
 CATEGORIES =	x11
 

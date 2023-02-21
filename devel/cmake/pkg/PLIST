@@ -5196,7 +5196,6 @@ share/doc/cmake/html/_sources/variable/WINDOWS_STORE.rst.txt
 share/doc/cmake/html/_sources/variable/XCODE.rst.txt
 share/doc/cmake/html/_sources/variable/XCODE_VERSION.rst.txt
 share/doc/cmake/html/_static/
-share/doc/cmake/html/_static/_sphinx_javascript_frameworks_compat.js
 share/doc/cmake/html/_static/basic.css
 share/doc/cmake/html/_static/classic.css
 share/doc/cmake/html/_static/cmake-favicon.ico
@@ -5206,8 +5205,6 @@ share/doc/cmake/html/_static/default.css
 share/doc/cmake/html/_static/doctools.js
 share/doc/cmake/html/_static/documentation_options.js
 share/doc/cmake/html/_static/file.png
-share/doc/cmake/html/_static/jquery-3.6.0.js
-share/doc/cmake/html/_static/jquery.js
 share/doc/cmake/html/_static/language_data.js
 share/doc/cmake/html/_static/minus.png
 share/doc/cmake/html/_static/plus.png
@@ -5215,8 +5212,6 @@ share/doc/cmake/html/_static/pygments.css
 share/doc/cmake/html/_static/searchtools.js
 share/doc/cmake/html/_static/sidebar.js
 share/doc/cmake/html/_static/sphinx_highlight.js
-share/doc/cmake/html/_static/underscore-1.13.1.js
-share/doc/cmake/html/_static/underscore.js
 share/doc/cmake/html/command/
 share/doc/cmake/html/command/add_compile_definitions.html
 share/doc/cmake/html/command/add_compile_options.html

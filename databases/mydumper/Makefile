@@ -1,7 +1,7 @@
 COMMENT =	utility for quick MySQL dumping
 
 V =		0.9.1
-REVISION =	7
+REVISION =	8
 DISTNAME =	mydumper-${V}
 CATEGORIES =	databases
 

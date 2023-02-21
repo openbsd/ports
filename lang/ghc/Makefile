@@ -12,7 +12,7 @@ NO_CCACHE =		Yes
 USE_NOEXECONLY =	Yes
 
 GHC_VERSION =		9.2.6
-REVISION =		0
+REVISION =		1
 DISTNAME =		ghc-${GHC_VERSION}
 CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/

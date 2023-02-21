@@ -2,7 +2,7 @@ COMMENT =		synchronize calendars and contacts
 
 MODPY_EGG_VERSION =	0.18.0
 DISTNAME =		vdirsyncer-${MODPY_EGG_VERSION}
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		productivity
 

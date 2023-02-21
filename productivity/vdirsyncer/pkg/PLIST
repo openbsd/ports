@@ -135,7 +135,6 @@ share/doc/vdirsyncer/_sources/tutorials/xandikos.rst.txt
 share/doc/vdirsyncer/_sources/vdir.rst.txt
 share/doc/vdirsyncer/_sources/when.rst.txt
 share/doc/vdirsyncer/_static/
-share/doc/vdirsyncer/_static/_sphinx_javascript_frameworks_compat.js
 share/doc/vdirsyncer/_static/basic.css
 share/doc/vdirsyncer/_static/css/
 share/doc/vdirsyncer/_static/css/badge_only.css
@@ -161,8 +160,6 @@ share/doc/vdirsyncer/_static/css/theme.css
 share/doc/vdirsyncer/_static/doctools.js
 share/doc/vdirsyncer/_static/documentation_options.js
 share/doc/vdirsyncer/_static/file.png
-share/doc/vdirsyncer/_static/jquery-3.6.0.js
-share/doc/vdirsyncer/_static/jquery.js
 share/doc/vdirsyncer/_static/js/
 share/doc/vdirsyncer/_static/js/badge_only.js
 share/doc/vdirsyncer/_static/js/theme.js
@@ -172,8 +169,6 @@ share/doc/vdirsyncer/_static/plus.png
 share/doc/vdirsyncer/_static/pygments.css
 share/doc/vdirsyncer/_static/searchtools.js
 share/doc/vdirsyncer/_static/sphinx_highlight.js
-share/doc/vdirsyncer/_static/underscore-1.13.1.js
-share/doc/vdirsyncer/_static/underscore.js
 share/doc/vdirsyncer/changelog.html
 share/doc/vdirsyncer/config.html
 share/doc/vdirsyncer/contact.html

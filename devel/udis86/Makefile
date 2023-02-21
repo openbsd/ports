@@ -2,7 +2,7 @@ COMMENT =	easy-to-use minimalistic disassembler library
 
 DISTNAME =	udis86-1.7.2
 CATEGORIES =	devel
-REVISION =	7
+REVISION =	8
 
 SHARED_LIBS=	udis86		1.0
 

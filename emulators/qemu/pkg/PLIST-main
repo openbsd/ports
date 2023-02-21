@@ -51,7 +51,6 @@ share/applications/qemu.desktop
 share/doc/pkg-readmes/${PKGSTEM}
 share/doc/qemu/.buildinfo
 share/doc/qemu/_static/
-share/doc/qemu/_static/_sphinx_javascript_frameworks_compat.js
 share/doc/qemu/_static/basic.css
 share/doc/qemu/_static/css/
 share/doc/qemu/_static/css/badge_only.css
@@ -78,8 +77,6 @@ share/doc/qemu/_static/custom.js
 share/doc/qemu/_static/doctools.js
 share/doc/qemu/_static/documentation_options.js
 share/doc/qemu/_static/file.png
-share/doc/qemu/_static/jquery-3.6.0.js
-share/doc/qemu/_static/jquery.js
 share/doc/qemu/_static/js/
 share/doc/qemu/_static/js/badge_only.js
 share/doc/qemu/_static/js/theme.js
@@ -92,8 +89,6 @@ share/doc/qemu/_static/qemu_32x32.png
 share/doc/qemu/_static/searchtools.js
 share/doc/qemu/_static/sphinx_highlight.js
 share/doc/qemu/_static/theme_overrides.css
-share/doc/qemu/_static/underscore-1.13.1.js
-share/doc/qemu/_static/underscore.js
 share/doc/qemu/about/
 share/doc/qemu/about/build-platforms.html
 share/doc/qemu/about/deprecated.html

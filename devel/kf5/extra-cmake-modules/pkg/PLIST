@@ -236,7 +236,6 @@ share/doc/ECM/html/_sources/module/QtVersionOption.rst.txt
 share/doc/ECM/html/_sources/toolchain/
 share/doc/ECM/html/_sources/toolchain/Android.rst.txt
 share/doc/ECM/html/_static/
-share/doc/ECM/html/_static/_sphinx_javascript_frameworks_compat.js
 share/doc/ECM/html/_static/basic.css
 share/doc/ECM/html/_static/classic.css
 share/doc/ECM/html/_static/default.css
@@ -244,8 +243,6 @@ share/doc/ECM/html/_static/doctools.js
 share/doc/ECM/html/_static/documentation_options.js
 share/doc/ECM/html/_static/ecm.css
 share/doc/ECM/html/_static/file.png
-share/doc/ECM/html/_static/jquery-3.6.0.js
-share/doc/ECM/html/_static/jquery.js
 share/doc/ECM/html/_static/kde-favicon.ico
 share/doc/ECM/html/_static/language_data.js
 share/doc/ECM/html/_static/minus.png
@@ -254,8 +251,6 @@ share/doc/ECM/html/_static/pygments.css
 share/doc/ECM/html/_static/searchtools.js
 share/doc/ECM/html/_static/sidebar.js
 share/doc/ECM/html/_static/sphinx_highlight.js
-share/doc/ECM/html/_static/underscore-1.13.1.js
-share/doc/ECM/html/_static/underscore.js
 share/doc/ECM/html/find-module/
 share/doc/ECM/html/find-module/Find7z.html
 share/doc/ECM/html/find-module/FindCanberra.html

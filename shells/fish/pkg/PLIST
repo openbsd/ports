@@ -9,7 +9,6 @@ share/doc/fish/
 share/doc/fish/.buildinfo
 share/doc/fish/CHANGELOG.rst
 share/doc/fish/_static/
-share/doc/fish/_static/_sphinx_javascript_frameworks_compat.js
 share/doc/fish/_static/basic.css
 share/doc/fish/_static/classic.css
 share/doc/fish/_static/default.css
@@ -17,8 +16,6 @@ share/doc/fish/_static/doctools.js
 share/doc/fish/_static/documentation_options.js
 share/doc/fish/_static/file.png
 share/doc/fish/_static/fish.png
-share/doc/fish/_static/jquery-3.6.0.js
-share/doc/fish/_static/jquery.js
 share/doc/fish/_static/language_data.js
 share/doc/fish/_static/minus.png
 share/doc/fish/_static/plus.png
@@ -27,8 +24,6 @@ share/doc/fish/_static/pygments.css
 share/doc/fish/_static/searchtools.js
 share/doc/fish/_static/sidebar.js
 share/doc/fish/_static/sphinx_highlight.js
-share/doc/fish/_static/underscore-1.13.1.js
-share/doc/fish/_static/underscore.js
 share/doc/fish/cmds/
 share/doc/fish/cmds/_.html
 share/doc/fish/cmds/abbr.html
