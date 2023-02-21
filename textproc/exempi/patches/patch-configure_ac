@@ -1,0 +1,12 @@
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -187,7 +187,7 @@ case $build_vendor in
+ 		;;
+ 	*)
+ 		EXEMPI_PLATFORM_DEF=UNIX_ENV
+-		LDFLAGS="$LDFLAGS -lrt -ldl"
++		uname | grep -q OpenBSD || LDFLAGS="$LDFLAGS -lrt -ldl"
+ 		;;
+ esac
+ 
