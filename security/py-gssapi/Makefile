@@ -28,4 +28,8 @@ FLAVOR=			python3
 
 MAKE_ENV=		GSSAPI_KRB5CONFIG=${LOCALBASE}/heimdal/bin/krb5-config
 
+# tests require devel/py-parameterized, k5test (not ported),
+# and a MIT Kerberos installation including KDC (they create
+# a self-contained Kerberos setup).
+
 .include <bsd.port.mk>
