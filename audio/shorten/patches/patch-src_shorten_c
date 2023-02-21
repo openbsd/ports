@@ -1,0 +1,12 @@
+Index: src/shorten.c
+--- src/shorten.c.orig
++++ src/shorten.c
+@@ -334,7 +334,7 @@ BOOL FileHasSeekInfoAppended(FILE *filei,ulong *seekta
+ 
+   if(0==memcmp(SeekTrailerSignature,SeekTrailer.data+4,8)) {
+     if (seektable_version) {
+-      fseek(filei,-uchar_to_ulong_le(SeekTrailer.data),SEEK_END);
++      fseek(filei,-(long)uchar_to_ulong_le(SeekTrailer.data),SEEK_END);
+       fread(SeekHeader.data,1,SEEK_HEADER_SIZE,filei);
+ 
+       if (0==memcmp(SeekHeaderSignature,SeekHeader.data,4)) {

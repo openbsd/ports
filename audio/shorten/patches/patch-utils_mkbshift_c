@@ -1,0 +1,33 @@
+Index: utils/mkbshift.c
+--- utils/mkbshift.c.orig
++++ utils/mkbshift.c
+@@ -83,11 +83,11 @@ int main() {
+   for(shift = 0; shift < SHIFTSIZE; shift++) {
+     fprintf(fout, "{");
+     for(i = 0; i < USIZE - 1; i++)
+-      fprintf(fout, "%ld,", forwardmap[shift][i]);
++      fprintf(fout, "%d,", forwardmap[shift][i]);
+     if(shift != SHIFTSIZE - 1)
+-      fprintf(fout, "%ld},\n", forwardmap[shift][USIZE - 1]);
++      fprintf(fout, "%d},\n", forwardmap[shift][USIZE - 1]);
+     else
+-      fprintf(fout, "%ld}\n};\n", forwardmap[shift][USIZE - 1]);
++      fprintf(fout, "%d}\n};\n", forwardmap[shift][USIZE - 1]);
+   }
+   fprintf(fout, "\n");
+ 
+@@ -96,11 +96,11 @@ int main() {
+   for(shift = 0; shift < SHIFTSIZE; shift++) {
+     fprintf(fout, "{");
+     for(i = 0; i < USIZE - 1; i++)
+-      fprintf(fout, "%ld,", reversemap[shift][i]);
++      fprintf(fout, "%d,", reversemap[shift][i]);
+     if(shift != SHIFTSIZE - 1)
+-      fprintf(fout, "%ld},\n", reversemap[shift][USIZE - 1]);
++      fprintf(fout, "%d},\n", reversemap[shift][USIZE - 1]);
+     else
+-      fprintf(fout, "%ld}\n};\n", reversemap[shift][USIZE - 1]);
++      fprintf(fout, "%d}\n};\n", reversemap[shift][USIZE - 1]);
+   }
+ 
+   fclose(fout);
