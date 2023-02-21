@@ -1,0 +1,108 @@
+lib/python${MODPY_VERSION}/site-packages/gssapi/
+lib/python${MODPY_VERSION}/site-packages/gssapi-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/gssapi-${MODPY_EGG_VERSION}.dist-info/LICENSE.txt
+lib/python${MODPY_VERSION}/site-packages/gssapi-${MODPY_EGG_VERSION}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/gssapi-${MODPY_EGG_VERSION}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/gssapi-${MODPY_EGG_VERSION}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/gssapi-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/gssapi/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gssapi/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gssapi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gssapi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gssapi/${MODPY_PYCACHE}_utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gssapi/${MODPY_PYCACHE}_utils.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gssapi/${MODPY_PYCACHE}_win_config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gssapi/${MODPY_PYCACHE}_win_config.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gssapi/${MODPY_PYCACHE}creds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gssapi/${MODPY_PYCACHE}creds.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gssapi/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gssapi/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gssapi/${MODPY_PYCACHE}mechs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gssapi/${MODPY_PYCACHE}mechs.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gssapi/${MODPY_PYCACHE}names.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gssapi/${MODPY_PYCACHE}names.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gssapi/${MODPY_PYCACHE}sec_contexts.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gssapi/${MODPY_PYCACHE}sec_contexts.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gssapi/_utils.py
+lib/python${MODPY_VERSION}/site-packages/gssapi/_win_config.py
+lib/python${MODPY_VERSION}/site-packages/gssapi/creds.py
+lib/python${MODPY_VERSION}/site-packages/gssapi/exceptions.py
+lib/python${MODPY_VERSION}/site-packages/gssapi/mechs.py
+lib/python${MODPY_VERSION}/site-packages/gssapi/names.py
+lib/python${MODPY_VERSION}/site-packages/gssapi/py.typed
+lib/python${MODPY_VERSION}/site-packages/gssapi/raw/
+lib/python${MODPY_VERSION}/site-packages/gssapi/raw/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gssapi/raw/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gssapi/raw/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gssapi/raw/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gssapi/raw/${MODPY_PYCACHE}named_tuples.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gssapi/raw/${MODPY_PYCACHE}named_tuples.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gssapi/raw/_enum_extensions/
+lib/python${MODPY_VERSION}/site-packages/gssapi/raw/_enum_extensions/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gssapi/raw/_enum_extensions/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gssapi/raw/_enum_extensions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gssapi/raw/_enum_extensions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+@so lib/python${MODPY_VERSION}/site-packages/gssapi/raw/_enum_extensions/ext_dce.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/gssapi/raw/chan_bindings.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/gssapi/raw/chan_bindings.pyi
+@so lib/python${MODPY_VERSION}/site-packages/gssapi/raw/creds.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/gssapi/raw/creds.pyi
+@so lib/python${MODPY_VERSION}/site-packages/gssapi/raw/cython_converters.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/gssapi/raw/exceptions.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/gssapi/raw/exceptions.pyi
+@so lib/python${MODPY_VERSION}/site-packages/gssapi/raw/ext_cred_imp_exp.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/gssapi/raw/ext_cred_imp_exp.pyi
+lib/python${MODPY_VERSION}/site-packages/gssapi/raw/ext_cred_store.pyi
+@so lib/python${MODPY_VERSION}/site-packages/gssapi/raw/ext_dce.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/gssapi/raw/ext_dce.pyi
+@so lib/python${MODPY_VERSION}/site-packages/gssapi/raw/ext_dce_aead.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/gssapi/raw/ext_dce_aead.pyi
+@so lib/python${MODPY_VERSION}/site-packages/gssapi/raw/ext_ggf.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/gssapi/raw/ext_ggf.pyi
+lib/python${MODPY_VERSION}/site-packages/gssapi/raw/ext_iov_mic.pyi
+@so lib/python${MODPY_VERSION}/site-packages/gssapi/raw/ext_krb5.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/gssapi/raw/ext_krb5.pyi
+@so lib/python${MODPY_VERSION}/site-packages/gssapi/raw/ext_password.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/gssapi/raw/ext_password.pyi
+@so lib/python${MODPY_VERSION}/site-packages/gssapi/raw/ext_password_add.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/gssapi/raw/ext_password_add.pyi
+lib/python${MODPY_VERSION}/site-packages/gssapi/raw/ext_rfc4178.pyi
+@so lib/python${MODPY_VERSION}/site-packages/gssapi/raw/ext_rfc5587.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/gssapi/raw/ext_rfc5587.pyi
+@so lib/python${MODPY_VERSION}/site-packages/gssapi/raw/ext_rfc5588.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/gssapi/raw/ext_rfc5588.pyi
+@so lib/python${MODPY_VERSION}/site-packages/gssapi/raw/ext_rfc5801.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/gssapi/raw/ext_rfc5801.pyi
+@so lib/python${MODPY_VERSION}/site-packages/gssapi/raw/ext_rfc6680.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/gssapi/raw/ext_rfc6680.pyi
+lib/python${MODPY_VERSION}/site-packages/gssapi/raw/ext_rfc6680_comp_oid.pyi
+lib/python${MODPY_VERSION}/site-packages/gssapi/raw/ext_s4u.pyi
+@so lib/python${MODPY_VERSION}/site-packages/gssapi/raw/ext_set_cred_opt.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/gssapi/raw/ext_set_cred_opt.pyi
+@so lib/python${MODPY_VERSION}/site-packages/gssapi/raw/mech_krb5.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/gssapi/raw/mech_krb5.pyi
+@so lib/python${MODPY_VERSION}/site-packages/gssapi/raw/message.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/gssapi/raw/message.pyi
+@so lib/python${MODPY_VERSION}/site-packages/gssapi/raw/misc.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/gssapi/raw/misc.pyi
+lib/python${MODPY_VERSION}/site-packages/gssapi/raw/named_tuples.py
+@so lib/python${MODPY_VERSION}/site-packages/gssapi/raw/names.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/gssapi/raw/names.pyi
+@so lib/python${MODPY_VERSION}/site-packages/gssapi/raw/oids.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/gssapi/raw/oids.pyi
+@so lib/python${MODPY_VERSION}/site-packages/gssapi/raw/sec_contexts.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/gssapi/raw/sec_contexts.pyi
+@so lib/python${MODPY_VERSION}/site-packages/gssapi/raw/types.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/gssapi/raw/types.pyi
+lib/python${MODPY_VERSION}/site-packages/gssapi/sec_contexts.py
+lib/python${MODPY_VERSION}/site-packages/gssapi/tests/
+lib/python${MODPY_VERSION}/site-packages/gssapi/tests/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gssapi/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gssapi/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gssapi/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gssapi/tests/${MODPY_PYCACHE}test_high_level.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gssapi/tests/${MODPY_PYCACHE}test_high_level.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gssapi/tests/${MODPY_PYCACHE}test_raw.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gssapi/tests/${MODPY_PYCACHE}test_raw.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gssapi/tests/test_high_level.py
+lib/python${MODPY_VERSION}/site-packages/gssapi/tests/test_raw.py
