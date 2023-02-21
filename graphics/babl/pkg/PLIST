@@ -39,7 +39,7 @@ lib/babl-${API_VERSION}/
 lib/girepository-1.0/
 lib/girepository-1.0/Babl-${API_VERSION}.typelib
 @lib lib/libbabl-${API_VERSION}.so.${LIBbabl-${API_VERSION}_VERSION}
-lib/pkgconfig/babl.pc
+lib/pkgconfig/babl-${API_VERSION}.pc
 share/gir-1.0/
 share/gir-1.0/Babl-${API_VERSION}.gir
 share/vala/
