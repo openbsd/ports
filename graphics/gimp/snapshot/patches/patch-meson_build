@@ -1,6 +1,17 @@
+1st chunk: Fix with newer babl (babl -> babl-0.1).
+
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
+@@ -340,7 +340,7 @@ mscms             = platform_windows ? cc.find_library
+ atk_minver        = '2.4.0'
+ atk               = dependency('atk',                version: '>='+atk_minver)
+ babl_minver       = '0.1.98'
+-babl              = dependency('babl',               version: '>='+babl_minver)
++babl              = dependency('babl-0.1',           version: '>='+babl_minver)
+ cairo_minver      = '1.12.2'
+ cairo             = dependency('cairo',              version: '>='+cairo_minver)
+ 
 @@ -1360,6 +1360,7 @@ conf.set('NO_FD_SET',
    not platform_windows
    and not cc.compiles('''
