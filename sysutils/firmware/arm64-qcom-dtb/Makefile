@@ -1,6 +1,5 @@
 FW_DRIVER=	arm64-qcom-dtb
-FW_VER=		1.1
-REVISION=	0
+FW_VER=		1.2
 
 WRKDIST=	${WRKDIR}
 DISTFILES=
@@ -10,7 +9,7 @@ DISTFILES=
 PERMIT_PACKAGE=	  firmware
 PERMIT_DISTFILES= Yes
 
-BUILD_DEPENDS=	sysutils/dtb>=6.1p0
+BUILD_DEPENDS=	sysutils/dtb>=6.2
 
 DTBS=	sc8280xp-lenovo-thinkpad-x13s.dtb
 
