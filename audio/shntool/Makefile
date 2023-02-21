@@ -1,11 +1,11 @@
 COMMENT =		multi-purpose wave data processing utility
 
 DISTNAME =		shntool-3.0.10
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		audio
 
-HOMEPAGE =		http://www.etree.org/shnutils/shntool/
+HOMEPAGE =		http://shnutils.freeshell.org/shntool/
 
 # GPLv2+
 PERMIT_PACKAGE =		Yes
