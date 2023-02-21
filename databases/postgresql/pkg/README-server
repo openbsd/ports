@@ -56,19 +56,16 @@ Restart PostgreSQL to allow these changes to take effect.
 
 Tuning for busy servers
 =======================
-The default sizes in the GENERIC kernel for SysV semaphores are only
-just large enough for a database with the default configuration
-(max_connections 40) if no other running processes use semaphores.
-In other cases you will need to increase the limits. Adding the
+The default sizes in the GENERIC kernel for SysV semaphores are not
+large enough for PostgreSQL to use the default max_connections
+configuration value of 100, so PostgreSQL will use a smaller than
+default max_connections if you do not increase the limits.  Adding the
 following in /etc/sysctl.conf will be reasonable for many systems:
 
-	kern.seminfo.semmni=60
-	kern.seminfo.semmns=1024
+	kern.seminfo.semmni=256
+	kern.seminfo.semmns=2048
 
-To serve a large number of connections (>250), you may need higher
-values for the above.
-
-You may also want to tune the max_connect value in the
+You may also want to tune the max_connections value in the
 postgresql.conf file to increase the number of connections to the
 backend.
 

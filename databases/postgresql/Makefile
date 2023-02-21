@@ -10,6 +10,8 @@ PREV_MAJOR=	14
 DISTNAME=	postgresql-${VERSION}
 PKGNAME-main=	postgresql-client-${VERSION}
 
+REVISION-server=0
+
 DPB_PROPERTIES=	parallel
 
 CATEGORIES=	databases
