@@ -44,6 +44,7 @@
 ~/.icons r
 ~/.pki rwc
 ~/.sndio rwc
+~/.cache/mesa_shader_cache rwc
 ~/.terminfo r
 
 ~/.mozilla rwc
