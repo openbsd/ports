@@ -4,7 +4,7 @@ CATEGORIES =	devel
 GH_ACCOUNT =	abseil
 GH_PROJECT =	${GH_ACCOUNT}-cpp
 GH_TAGNAME =	20230125.1
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://abseil.io/
 
@@ -50,7 +50,7 @@ ALL_TARGET =		${ABSL_LIBS}
 # C++17
 COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c++
-WANTLIB =		${COMPILER_LIBCXX} execinfo m
+WANTLIB =		${COMPILER_LIBCXX} execinfo gmock gtest m
 MODULES =		devel/cmake
 
 CONFIGURE_ARGS +=	-DBUILD_SHARED_LIBS:BOOL=ON
@@ -64,17 +64,13 @@ CONFIGURE_ARGS +=	-DCMAKE_CXX_STANDARD=17
 # to ensure that our project builds correctly.
 CONFIGURE_ARGS +=	-DABSL_PROPAGATE_CXX_STD:BOOL=ON
 
-.if ${MACHINE_ARCH} == sparc64
-# XXX hash/hash_test.cc:614:22: error: use of deleted function 'absl::lts_20211102::hash_internal::PoisonedHash::PoisonedHash()'
-NO_TEST =		Yes
-.else
 # use googletest from ports
 CONFIGURE_ARGS +=	-DABSL_USE_EXTERNAL_GOOGLETEST:BOOL=${LOCALBASE}/include/gtest
 # turn on tests builds
 CONFIGURE_ARGS +=	-DBUILD_TESTING:BOOL=ON \
 			-DABSL_BUILD_TESTING:BOOL=ON
 
-BUILD_DEPENDS +=	devel/gtest>=1.11.0pl20220208
+LIB_DEPENDS +=		devel/gtest>=1.11.0pl20220208
 TEST_DEPENDS +=		devel/gtest>=1.11.0pl20220208
 
 TESTTMP =		${WRKDIR}/tmp
@@ -88,6 +84,5 @@ pre-test:
 	find ${WRKBUILD} -type f -name 'libabsl*.so.*' \
 	    -exec ln -s {} ${TESTLDPATH}/ \;
 	@${MODCMAKE_BUILD_TARGET}
-.endif
 
 .include <bsd.port.mk>
