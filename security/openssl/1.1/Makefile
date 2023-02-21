@@ -70,4 +70,10 @@ post-install:
 	rm -f ${PREFIX}/lib/eopenssl11/lib{crypto,ssl}.so
 	rmdir ${PREFIX}/lib/eopenssl11/pkgconfig
 
+# Work around 90-test_shlibload.t trying to use incorrect shared libraries.
+pre-test:
+	cd ${WRKSRC} && \
+		${_PBUILD} ln -sf libcrypto.so.${SHLIBVER} libcrypto.so.1.1 && \
+		${_PBUILD} ln -sf libssl.so.${SHLIBVER} libssl.so.1.1
+
 .include <bsd.port.mk>
