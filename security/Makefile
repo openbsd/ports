@@ -280,6 +280,7 @@
      SUBDIR += py-fickling,python3
      SUBDIR += py-fido2,python3
      SUBDIR += py-gnupg,python3
+     SUBDIR += py-gssapi,python3
      SUBDIR += py-hkdf,python3
      SUBDIR += py-hvac,python3
      SUBDIR += py-in-toto,python3
