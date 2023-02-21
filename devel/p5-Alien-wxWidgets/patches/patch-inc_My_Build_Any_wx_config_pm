@@ -1,6 +1,6 @@
-Don't enforce dependency on x11/wxWidgets,-webkit for consumers.
+Don't enforce dependency on x11/wxWidgets,-webview for consumers.
 Only p5-Wx depends on this port and only textproc/chordpro,-wx depends on p5-Wx
-and does not require webkit functionality.
+and does not require webview functionality.
 
 Index: inc/My/Build/Any_wx_config.pm
 --- inc/My/Build/Any_wx_config.pm.orig

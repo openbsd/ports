@@ -11,7 +11,7 @@ PKGNAME-main=	erlang-$V
 PKGNAME-wx=	erlang-wx-$V
 EPOCH=		0
 
-REVISION-wx=	0
+REVISION-wx=	1
 
 VERSION_SPEC=	>=25v0,<26v0
 PKGSPEC-main=	erlang-${VERSION_SPEC}
@@ -50,7 +50,7 @@ LIB_DEPENDS-wx +=devel/glib2
 
 .if ${MACHINE_ARCH} != "alpha" && ${MACHINE_ARCH} != "arm" && \
 	${MACHINE_ARCH} != "hppa"
-LIB_DEPENDS-wx +=x11/wxWidgets,-webkit
+LIB_DEPENDS-wx +=x11/wxWidgets,-webview
 WANTLIB-wx += wx_gtk3u_webview-3.2
 .endif
 

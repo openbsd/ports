@@ -1,16 +1,16 @@
 COMMENT-main =		C++ cross-platform GUI toolkit
 COMMENT-media =		wxMediaCtrl class for wxWidgets
-COMMENT-webkit =	wxWebView class for wxWidgets
+COMMENT-webview =	wxWebView class for wxWidgets
 
 V =			3.2.2.1
 DISTNAME =		wxWidgets-${V}
 PKGNAME-main =		wxWidgets-gtk3-${V}
 PKGNAME-media =		wxWidgets-media-${V}
-PKGNAME-webkit =	wxWidgets-webkit-${V}
+PKGNAME-webview =	wxWidgets-webview-${V}
 
 REVISION-main =		0
 REVISION-media =	1
-REVISION-webkit =	0
+REVISION-webview =	1
 
 CATEGORIES =		x11
 MASTER_SITES =		https://github.com/wxWidgets/wxWidgets/releases/download/v$V/
@@ -42,13 +42,13 @@ HOMEPAGE =		https://www.wxwidgets.org/
 # http://www.wxwidgets.org/about/licence/
 PERMIT_PACKAGE =	Yes
 
-MULTI_PACKAGES =	-main -media -webkit
+MULTI_PACKAGES =	-main -media -webview
 
-PSEUDO_FLAVORS =	no_webkit
+PSEUDO_FLAVORS =	no_webview
 FLAVOR ?=
 .if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "arm" || \
 	${MACHINE_ARCH} == "hppa"
-FLAVOR +=		no_webkit
+FLAVOR +=		no_webview
 .endif
 
 COMPILER =		base-clang ports-gcc base-gcc
@@ -90,16 +90,16 @@ WANTLIB-media += gtk-3 harfbuzz iconv intl jpeg lzma m notify pango-1.0
 WANTLIB-media += pangocairo-1.0 pangoft2-1.0 pcre2-32 png secret-1 tiff
 WANTLIB-media += wx_baseu-3.2 wx_gtk3u_core-3.2 z execinfo gstplayer-1.0
 
-LIB_DEPENDS-webkit =	www/webkitgtk4 \
+LIB_DEPENDS-webview =	www/webkitgtk4 \
 			${BASE_PKGPATH},-main>=${V}
 
-WANTLIB-webkit += ${COMPILER_LIBCXX} SDL2 SM X11 Xtst Xxf86vm atk-1.0
-WANTLIB-webkit += cairo cairo-gobject curl enchant-2 fontconfig freetype
-WANTLIB-webkit += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB-webkit += gspell-1 gthread-2.0 gtk-3 harfbuzz iconv intl javascriptcoregtk-4.0
-WANTLIB-webkit += jpeg lzma m notify pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB-webkit += pcre2-32 png secret-1 soup-2.4 tiff webkit2gtk-4.0
-WANTLIB-webkit += wx_baseu-3.2 wx_gtk3u_core-3.2 z execinfo
+WANTLIB-webview += ${COMPILER_LIBCXX} SDL2 SM X11 Xtst Xxf86vm atk-1.0
+WANTLIB-webview += cairo cairo-gobject curl enchant-2 fontconfig freetype
+WANTLIB-webview += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB-webview += gspell-1 gthread-2.0 gtk-3 harfbuzz iconv intl javascriptcoregtk-4.0
+WANTLIB-webview += jpeg lzma m notify pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB-webview += pcre2-32 png secret-1 soup-2.4 tiff webkit2gtk-4.0
+WANTLIB-webview += wx_baseu-3.2 wx_gtk3u_core-3.2 z execinfo
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
@@ -124,7 +124,7 @@ CONFIGURE_ARGS =	--disable-option-checking \
 
 .include <bsd.port.arch.mk>
 
-.if !${BUILD_PACKAGES:M-webkit}
+.if !${BUILD_PACKAGES:M-webview}
 CONFIGURE_ARGS +=	--disable-webviewwebkit
 .endif
 

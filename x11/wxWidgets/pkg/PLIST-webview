@@ -1,3 +1,5 @@
+@conflict wxWidgets-webkit-*
+@pkgpath x11/wxWidgets,-webkit
 include/wx-3.2/wx/gtk/webview_webkit.h
 include/wx-3.2/wx/gtk/webviewhistoryitem_webkit.h
 include/wx-3.2/wx/webview.h

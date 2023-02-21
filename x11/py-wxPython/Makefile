@@ -1,6 +1,6 @@
 COMMENT-main=	Python bindings for wxWidgets C++ class library
 COMMENT-media=	wxMedia support for wxPython
-COMMENT-webkit=	wxWebView support for wxPython
+COMMENT-webview=wxWebView support for wxPython
 
 V=		4.2.0
 DISTNAME=	wxPython-${V}
@@ -9,14 +9,14 @@ PKGNAME=	py-${DISTNAME}
 # python.port.mk cannot cope with py -> py3 with subpackages
 FULLPKGNAME-main=	py3-${DISTNAME}
 FULLPKGNAME-media=	py3-wxPython-media-${V}
-FULLPKGNAME-webkit=	py3-wxPython-webkit-${V}
+FULLPKGNAME-webview=	py3-wxPython-webview-${V}
 FULLPKGPATH-main=	${BUILD_PKGPATH}
 FULLPKGPATH-media=	${BUILD_PKGPATH},-media
-FULLPKGPATH-webkit=	${BUILD_PKGPATH},-webkit
+FULLPKGPATH-webview=	${BUILD_PKGPATH},-webview
 
 REVISION-main=		1
 REVISION-media=		1
-REVISION-webkit=	1
+REVISION-webview=	2
 
 CATEGORIES=	x11 devel
 
@@ -40,10 +40,10 @@ WANTLIB-main += wx_gtk3u_stc-3.2 wx_gtk3u_xrc-3.2
 WANTLIB-media += ${COMMON_WANTLIB}
 WANTLIB-media += wx_gtk3u_media-3.2
 
-WANTLIB-webkit += ${COMMON_WANTLIB}
-WANTLIB-webkit += wx_gtk3u_webview-3.2
+WANTLIB-webview += ${COMMON_WANTLIB}
+WANTLIB-webview += wx_gtk3u_webview-3.2
 
-MULTI_PACKAGES=		-main -media -webkit
+MULTI_PACKAGES=		-main -media -webview
 
 COMPILER=		base-clang ports-gcc base-gcc
 
@@ -61,7 +61,7 @@ LIB_DEPENDS-main=	x11/wxWidgets
 
 LIB_DEPENDS-media=	x11/wxWidgets,-media
 
-LIB_DEPENDS-webkit=	x11/wxWidgets,-webkit
+LIB_DEPENDS-webview=	x11/wxWidgets,-webkit
 
 RUN_DEPENDS-main=	${RUN_DEPENDS} \
 			devel/py-six${MODPY_FLAVOR}
@@ -69,7 +69,7 @@ RUN_DEPENDS-main=	${RUN_DEPENDS} \
 RUN_DEPENDS-media=	${RUN_DEPENDS} \
 			${BASE_PKGPATH}
 
-RUN_DEPENDS-webkit=	${RUN_DEPENDS} \
+RUN_DEPENDS-webview=	${RUN_DEPENDS} \
 			${BASE_PKGPATH}
 
 NO_TEST=		Yes

@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1506 2023/02/19 15:26:43 naddy Exp $
+# $OpenBSD: Quirks.pm,v 1.1507 2023/02/21 10:43:46 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -772,6 +772,8 @@ my $stem_extensions = {
 	'py-pyglet' => 'py3-pyglet',
 	'py-suds' => 'py3-suds',
 	'py-serial' => 'py3-serial',
+	'py3-wxPython-webkit' => 'py3-wxPython-webview',
+	'wxWidgets-webkit' => 'wxWidgets-webview',
 };
 
 my $obsolete_reason = {};
