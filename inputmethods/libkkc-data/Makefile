@@ -1,3 +1,5 @@
+PORTROACH =	skipv:0.3.5
+
 COMMENT =	language model data for libkkc
 
 VERSION =	0.2.7
