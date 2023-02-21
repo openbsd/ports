@@ -61,7 +61,7 @@ LIB_DEPENDS-main=	x11/wxWidgets
 
 LIB_DEPENDS-media=	x11/wxWidgets,-media
 
-LIB_DEPENDS-webview=	x11/wxWidgets,-webkit
+LIB_DEPENDS-webview=	x11/wxWidgets,-webview
 
 RUN_DEPENDS-main=	${RUN_DEPENDS} \
 			devel/py-six${MODPY_FLAVOR}
