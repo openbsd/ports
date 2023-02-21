@@ -12,7 +12,7 @@ COMMENT=		Iridium browser
 
 V=			2023.01.109
 
-REVISION=		8
+REVISION=		9
 
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}

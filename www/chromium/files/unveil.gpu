@@ -3,3 +3,6 @@
 /usr/X11R6/share r
 /usr/lib r
 /usr/local/chrome r
+
+# ~ gets expanded to $HOME
+~/.cache/mesa_shader_cache rwc
