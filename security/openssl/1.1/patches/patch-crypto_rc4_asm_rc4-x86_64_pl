@@ -1,0 +1,21 @@
+Index: crypto/rc4/asm/rc4-x86_64.pl
+--- crypto/rc4/asm/rc4-x86_64.pl.orig
++++ crypto/rc4/asm/rc4-x86_64.pl
+@@ -542,14 +542,16 @@ RC4_options:
+ .Ldone:
+ 	ret
+ .cfi_endproc
++.rodata
+ .align	64
+ .Lopts:
+ .asciz	"rc4(8x,int)"
+ .asciz	"rc4(8x,char)"
+ .asciz	"rc4(16x,int)"
++.previous
++.size	RC4_options,.-RC4_options
+ .asciz	"RC4 for x86_64, CRYPTOGAMS by <appro\@openssl.org>"
+ .align	64
+-.size	RC4_options,.-RC4_options
+ ___
+ 
+ # EXCEPTION_DISPOSITION handler (EXCEPTION_RECORD *rec,ULONG64 frame,

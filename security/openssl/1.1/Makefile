@@ -8,7 +8,7 @@ PORTROACH=	limit:^1\.1\.[0-9][a-z] skipb:0 skipv:1.1.1
 V=		1.1.1t
 PKGSPEC=	openssl->=1.1.0v0,<1.2v0
 EPOCH=		0
-REVISION=	2
+REVISION=	3
 
 SHLIBVER=	11.6
 SHARED_LIBS=	crypto ${SHLIBVER} \
