@@ -1,12 +1,38 @@
 @bin bin/audacity
+lib/audacity/
+@so lib/audacity/lib-audio-devices.so
+@so lib/audacity/lib-audio-graph.so
+@so lib/audacity/lib-basic-ui.so
+@so lib/audacity/lib-components.so
+@so lib/audacity/lib-exceptions.so
+@so lib/audacity/lib-ffmpeg-support.so
+@so lib/audacity/lib-files.so
+@so lib/audacity/lib-graphics.so
+@so lib/audacity/lib-ipc.so
+@so lib/audacity/lib-math.so
+@so lib/audacity/lib-module-manager.so
+@so lib/audacity/lib-preferences.so
+@so lib/audacity/lib-project-history.so
+@so lib/audacity/lib-project-rate.so
+@so lib/audacity/lib-project.so
+@so lib/audacity/lib-registries.so
+@so lib/audacity/lib-sample-track.so
+@so lib/audacity/lib-screen-geometry.so
+@so lib/audacity/lib-string-utils.so
+@so lib/audacity/lib-strings.so
+@so lib/audacity/lib-theme-resources.so
+@so lib/audacity/lib-theme.so
+@so lib/audacity/lib-track.so
+@so lib/audacity/lib-transactions.so
+@so lib/audacity/lib-utility.so
+@so lib/audacity/lib-uuid.so
+@so lib/audacity/lib-xml.so
+lib/audacity/modules/
+@so lib/audacity/modules/mod-script-pipe.so
 @man man/man1/audacity.1
-share/appdata/
-share/appdata/audacity.appdata.xml
 share/applications/audacity.desktop
 share/audacity/
-share/audacity/EQDefaultCurves.xml
-share/audacity/modules/
-@so share/audacity/modules/mod-script-pipe.so
+share/audacity/EffectsMenuDefaults.xml
 share/audacity/nyquist/
 share/audacity/nyquist/aud-do-support.lsp
 share/audacity/nyquist/dspprims.lsp
@@ -55,8 +81,6 @@ share/audacity/nyquist/velocity.lsp
 share/audacity/nyquist/xlinit.lsp
 share/audacity/nyquist/xm.lsp
 share/audacity/plug-ins/
-share/audacity/plug-ins/SilenceMarker.ny
-share/audacity/plug-ins/SoundFinder.ny
 share/audacity/plug-ins/SpectralEditMulti.ny
 share/audacity/plug-ins/SpectralEditParametricEQ.ny
 share/audacity/plug-ins/SpectralEditShelves.ny
@@ -70,6 +94,7 @@ share/audacity/plug-ins/delay.ny
 share/audacity/plug-ins/eq-xml-to-txt-converter.ny
 share/audacity/plug-ins/equalabel.ny
 share/audacity/plug-ins/highpass.ny
+share/audacity/plug-ins/label-sounds.ny
 share/audacity/plug-ins/limiter.ny
 share/audacity/plug-ins/lowpass.ny
 share/audacity/plug-ins/noisegate.ny
@@ -104,6 +129,9 @@ share/locale/ca/LC_MESSAGES/audacity.mo
 share/locale/ca_ES@valencia/
 share/locale/ca_ES@valencia/LC_MESSAGES/
 share/locale/ca_ES@valencia/LC_MESSAGES/audacity.mo
+share/locale/co/
+share/locale/co/LC_MESSAGES/
+share/locale/co/LC_MESSAGES/audacity.mo
 share/locale/cs/LC_MESSAGES/audacity.mo
 share/locale/cy/LC_MESSAGES/audacity.mo
 share/locale/da/LC_MESSAGES/audacity.mo
@@ -132,6 +160,7 @@ share/locale/km/LC_MESSAGES/audacity.mo
 share/locale/ko/LC_MESSAGES/audacity.mo
 share/locale/lt/LC_MESSAGES/audacity.mo
 share/locale/mk/LC_MESSAGES/audacity.mo
+share/locale/mr/LC_MESSAGES/audacity.mo
 share/locale/my/LC_MESSAGES/audacity.mo
 share/locale/nb/LC_MESSAGES/audacity.mo
 share/locale/nl/LC_MESSAGES/audacity.mo
@@ -159,6 +188,8 @@ share/locale/uk/LC_MESSAGES/audacity.mo
 share/locale/vi/LC_MESSAGES/audacity.mo
 share/locale/zh_CN/LC_MESSAGES/audacity.mo
 share/locale/zh_TW/LC_MESSAGES/audacity.mo
+share/metainfo/
+share/metainfo/audacity.appdata.xml
 share/mime/packages/audacity.xml
 share/pixmaps/
 share/pixmaps/audacity.xpm

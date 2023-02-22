@@ -4,9 +4,8 @@ COMMENT=	free audio editor
 # so can't be fetched automatically
 GH_ACCOUNT=	audacity
 GH_PROJECT=	audacity
-GH_TAGNAME=	Audacity-2.4.2
+GH_TAGNAME=	Audacity-3.2.4
 DISTNAME=	${GH_TAGNAME:L}
-REVISION=	2
 
 CATEGORIES=	audio
 
@@ -17,11 +16,12 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} FLAC FLAC++ SoundTouch atk-1.0 c
 WANTLIB += cairo cairo-gobject expat gdk-3 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gobject-2.0 gtk-3 harfbuzz id3tag intl m mad
-WANTLIB += ogg pango-1.0 pangocairo-1.0 portaudio portmidi sndfile
-WANTLIB += soxr vamp-hostsdk vorbis vorbisenc vorbisfile wx_baseu-3.2
-WANTLIB += wx_baseu_net-3.2 wx_gtk3u_core-3.2
-WANTLIB += wx_gtk3u_html-3.2 wx_gtk3u_qa-3.2 z
+WANTLIB += glib-2.0 gobject-2.0 gtk-3 harfbuzz id3tag intl m mpg123
+WANTLIB += ogg opus pango-1.0 pangocairo-1.0 portaudio portmidi
+WANTLIB += sndfile soxr sqlite3 uuid vamp-hostsdk vorbis vorbisenc
+WANTLIB += vorbisfile wavpack wx_baseu-3.2 wx_baseu_net-3.2 wx_baseu_xml-3.2
+WANTLIB += wx_gtk3u_core-3.2 wx_gtk3u_html-3.2 wx_gtk3u_qa-3.2
+WANTLIB += z
 # dlopened
 WANTLIB += avcodec avformat avutil mp3lame
 
@@ -30,6 +30,7 @@ COMPILER=	base-clang ports-gcc base-gcc
 MODULES=	devel/cmake \
 		lang/python
 
+MODCMAKE_LDFLAGS=	-Wl,-rpath,${TRUEPREFIX}/lib/audacity
 MODPY_RUNDEP=	No
 
 BUILD_DEPENDS=	devel/gettext,-tools
@@ -37,7 +38,6 @@ BUILD_DEPENDS=	devel/gettext,-tools
 LIB_DEPENDS=	audio/flac \
 		audio/lame \
 		audio/libid3tag \
-		audio/libmad \
 		audio/libsndfile \
 		audio/libsoxr \
 		audio/libvorbis \
@@ -45,7 +45,9 @@ LIB_DEPENDS=	audio/flac \
 		audio/portmidi \
 		audio/soundtouch \
 		audio/vamp-plugin-sdk \
+		audio/wavpack \
 		graphics/ffmpeg \
+		sysutils/e2fsprogs \
 		x11/wxWidgets
 
 RUN_DEPENDS=	devel/desktop-file-utils \
@@ -53,25 +55,38 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 
 CONFIGURE_ARGS=	-Daudacity_lib_preference:STRING=system \
+		-Daudacity_has_crashreports:STRING=off \
+		-Daudacity_has_networking:STRING=off \
+		-Daudacity_has_networking:STRING=off \
+		-Daudacity_has_sentry_reporting:STRING=off \
+		-Daudacity_lib_preference:STRING=system \
 		-Daudacity_use_expat:STRING=system \
-		-Daudacity_use_wxwidgets:STRING=system \
-		-Daudacity_use_soxr:STRING=system \
-		-Daudacity_use_sndfile:STRING=system \
-		-Daudacity_use_portsmf:STRING=local \
-		-Daudacity_use_portaudio:STRING=system \
 		-Daudacity_use_ffmpeg:STRING=loaded \
-		-Daudacity_use_flac:STRING=system \
-		-Daudacity_use_id3tag:STRING=system \
+		-Daudacity_use_ladspa:STRING=off \
 		-Daudacity_use_lame:STRING=system \
-		-Daudacity_use_mad:STRING=system \
+		-Daudacity_use_libflac:STRING=system \
+		-Daudacity_use_libid3tag:STRING=system \
+		-Daudacity_use_libmad:STRING=system \
+		-Daudacity_use_libogg:STRING=system \
+		-Daudacity_use_libsndfile:STRING=system \
+		-Daudacity_use_libvorbis:STRING=system \
 		-Daudacity_use_midi:STRING=system \
-		-Daudacity_use_ogg:STRING=system \
+		-Daudacity_use_pch:STRING=off \
+		-Daudacity_use_portaudio:STRING=system \
+		-Daudacity_use_portsmf:STRING=local \
 		-Daudacity_use_soundtouch:STRING=system \
+		-Daudacity_use_soxr:STRING=system \
 		-Daudacity_use_twolame:STRING=off \
 		-Daudacity_use_vamp:STRING=system \
-		-Daudacity_use_vorbis:STRING=system \
-		-Daudacity_use_pch:STRING=off \
-		-Daudacity_use_vst:STRING=local
+		-Daudacity_has_vst3:STRING=off \
+		-Daudacity_use_wxwidgets:STRING=system
+
+# audacity can use libmad or mpg123; we are already linking to mpg123 through
+# libsndfile and pcaudiolib, so prefer it
+CONFIGURE_ARGS +=	-Daudacity_use_libmad:STRING=off
+
+# don't use conan (no port available)
+CONFIGURE_ARGS +=	-Daudacity_conan_enabled:STRING=off
 
 # disable portmixer that requires Pa_GetStreamHostApiType which our
 # audio/portaudio does not provide

@@ -1,0 +1,11 @@
+Index: libraries/lib-basic-ui/BasicUI.cpp
+--- libraries/lib-basic-ui/BasicUI.cpp.orig
++++ libraries/lib-basic-ui/BasicUI.cpp
+@@ -29,6 +29,7 @@ Paul Licameli
+ 
+ #include <string>
+ 
++extern char** environ;
+ namespace
+ {
+ 
