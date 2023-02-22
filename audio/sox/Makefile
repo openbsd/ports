@@ -1,10 +1,11 @@
 COMMENT=	Sound eXchange, the Swiss Army knife of audio manipulation
 
-V=		14.4.2pl20230206
+V=		14.4.2pl20210509
 # see AC_INIT in ${WRKSRC}/configure.ac
 GIT_V=		14.4.3git
 DISTNAME=	sox-${V}
 SHARED_LIBS +=	sox 4.1 # 3.0
+REVISION=	0
 
 CATEGORIES=	audio
 HOMEPAGE=	http://sox.sourceforge.net/
