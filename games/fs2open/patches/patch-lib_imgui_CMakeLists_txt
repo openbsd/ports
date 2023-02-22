@@ -1,0 +1,12 @@
+Index: lib/imgui/CMakeLists.txt
+--- lib/imgui/CMakeLists.txt.orig
++++ lib/imgui/CMakeLists.txt
+@@ -28,7 +28,7 @@ target_include_directories(imgui SYSTEM PUBLIC "${CMAK
+ suppress_warnings(imgui)
+ 
+ set_target_properties(imgui PROPERTIES FOLDER "3rdparty")
+-TARGET_LINK_LIBRARIES(imgui PUBLIC sdl2)
++TARGET_LINK_LIBRARIES(imgui PUBLIC SDL2)
+ target_link_libraries(imgui PUBLIC compiler)
+ 
+ 

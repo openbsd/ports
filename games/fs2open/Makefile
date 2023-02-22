@@ -3,12 +3,11 @@ ONLY_FOR_ARCHS =	aarch64 amd64 i386
 
 COMMENT =	open source game engine based on FreeSpace 2
 
-V =		22.2.0
+V =		23.0.0
 DISTNAME =	fs2open-${V}
 GH_ACCOUNT =	scp-fs2open
 GH_PROJECT =	fs2open.github.com
 GH_TAGNAME =	release_${V:S/./_/g}
-REVISION =	1
 
 CATEGORIES =	games
 
@@ -40,11 +39,14 @@ COMPILER =		base-clang ports-gcc
 MODULES =		devel/cmake \
 			lang/lua
 LIB_DEPENDS =		audio/openal \
+			devel/jansson \
 			devel/sdl2 \
 			graphics/ffmpeg \
 			graphics/png \
-			graphics/vulkan-loader \
-			devel/jansson
+			graphics/vulkan-loader
+
+CXXFLAGS +=		-I${X11BASE}/include -I${LOCALBASE}/include
+MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
 
 # Disable Vulkan because of build failure, since upgrade to 1.3.224.1:
 # code/graphics/vulkan/VulkanRenderer.cpp:794:21: error: no viable overloaded '='
