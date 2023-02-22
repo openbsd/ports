@@ -1,7 +1,7 @@
 COMMENT =	simple async wrapper around CURL for C++
 CATEGORIES =	devel
 
-V =		v0.2.1
+V =		v0.3.0
 DISTNAME =	coeurl-${V}
 PKGNAME =	${DISTNAME:S/v//}
 
