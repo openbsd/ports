@@ -14,8 +14,7 @@ WANTLIB += ${COMPILER_LIBCXX} coeurl crypto m olm ssl
 
 MODULES =	devel/cmake
 
-BUILD_DEPENDS = devel/gtest \
-		devel/libevent2 \
+BUILD_DEPENDS = devel/libevent2 \
 		devel/spdlog \
 		textproc/nlohmann-json
 
@@ -26,5 +25,10 @@ LIB_DEPENDS =	devel/coeurl \
 COMPILER =	base-clang ports-gcc
 
 CONFIGURE_ARGS +=	-DBUILD_LIB_EXAMPLES=OFF
+
+# XXX stalls on first test;  reenable if we know how to prepare for/run it
+CONFIGURE_ARGS +=	-DBUILD_LIB_TESTS=OFF
+
+TEST_IS_INTERACTIVE =	requires local synapse server
 
 .include <bsd.port.mk>
