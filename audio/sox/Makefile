@@ -1,6 +1,6 @@
 COMMENT=	Sound eXchange, the Swiss Army knife of audio manipulation
 
-V=		14.4.2pl20210509
+V=		14.4.2pl20230206
 # see AC_INIT in ${WRKSRC}/configure.ac
 GIT_V=		14.4.3git
 DISTNAME=	sox-${V}

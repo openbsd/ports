@@ -1,0 +1,18 @@
+https://marc.info/?l=oss-security&m=167571683504082&w=2
+
+Index: src/wav.c
+--- src/wav.c.orig
++++ src/wav.c
+@@ -654,6 +654,12 @@ static int wav_read_fmt(sox_format_t *ft, uint32_t len
+     if (err)
+         return SOX_EOF;
+ 
++    if (wav->bitsPerSample == 0)
++    {
++        lsx_fail_errno(ft, SOX_EHDR, "WAV file bits per sample is zero");
++        return SOX_EOF;
++    }
++
+     /* non-PCM formats except alaw and mulaw formats have extended fmt chunk.
+      * Check for those cases.
+      */

@@ -1,3 +1,5 @@
+https://marc.info/?l=oss-security&m=167571683504082&w=2
+
 Index: src/formats.c
 --- src/formats.c.orig
 +++ src/formats.c
@@ -19,3 +21,11 @@ Index: src/formats.c
      char * command = lsx_malloc(strlen(command_format) + strlen(identifier));
      sprintf(command, command_format, identifier);
      f = popen(command, POPEN_MODE);
+@@ -627,6 +627,7 @@ error:
+   free(ft->priv);
+   free(ft->filename);
+   free(ft->filetype);
++  sox_delete_comments(&ft->oob.comments);
+   free(ft);
+   return NULL;
+ }
