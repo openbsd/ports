@@ -48,7 +48,6 @@
      SUBDIR += syncterm
      SUBDIR += tkhylafax
      SUBDIR += tlf
-     SUBDIR += wammu
      SUBDIR += wy60
      SUBDIR += x3270
      SUBDIR += xastir

@@ -1,5 +1,0 @@
-Wammu is a program to manage data in your cell phone such as contacts,
-calendar or messages. It is built on Gammu library, which provides
-abstraction layer to work with different cell phones from different
-vendors (including Nokia, Sony-Ericsson, Motorola, Samsung, Siemens,
-Huawei and others).
