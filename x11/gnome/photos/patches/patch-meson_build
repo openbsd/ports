@@ -1,0 +1,17 @@
+From 9db32c3508a8c5d357a053d5f8278c34b4df18f3 Mon Sep 17 00:00:00 2001
+From: Abderrahim Kitouni <akitouni@gnome.org>
+Date: Sun, 12 Feb 2023 13:13:21 +0100
+Subject: [PATCH] build: accept both babl and babl-0.1
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -152,7 +152,7 @@ libgd = subproject(
+ )
+ libgd_dep = libgd.get_variable('libgd_dep')
+ 
+-babl_dep = dependency('babl')
++babl_dep = dependency('babl-0.1', 'babl')
+ cairo_dep = dependency('cairo', version: '>= 1.14.0')
+ gdk_pixbuf_dep = dependency('gdk-pixbuf-2.0', version: '>= 2.36.8')
+ gegl_dep = dependency('gegl-0.4', version: '>= 0.4.0')
