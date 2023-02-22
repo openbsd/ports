@@ -52,6 +52,7 @@
      SUBDIR += gmime30
      SUBDIR += grepmail
      SUBDIR += greyscanner
+     SUBDIR += grommunio
      SUBDIR += hashcash
      SUBDIR += hypermail
      SUBDIR += hypermail,gdbm
