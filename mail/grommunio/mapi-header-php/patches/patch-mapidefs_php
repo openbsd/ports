@@ -1,0 +1,14 @@
+Index: mapidefs.php
+--- mapidefs.php.orig
++++ mapidefs.php
+@@ -679,8 +679,8 @@ define('TZRULE_FLAG_RECUR_CURRENT_TZREG', 0x0001);
+ define('TZRULE_FLAG_EFFECTIVE_TZREG', 0x0002);
+ 
+ /* RecurrencePattern related values */
+-define('CAL_DEFAULT', 0);
+-define('CAL_GREGORIAN', 1);
++define('MAPI_CAL_DEFAULT', 0);
++define('MAPI_CAL_GREGORIAN', 1);
+ define('IDC_RCEV_PAT_ORB_DAILY', 0x200A);
+ define('IDC_RCEV_PAT_ORB_WEEKLY', 0x200B);
+ define('IDC_RCEV_PAT_ORB_MONTHLY', 0x200C);

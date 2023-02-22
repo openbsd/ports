@@ -1,0 +1,12 @@
+Index: class.baserecurrence.php
+--- class.baserecurrence.php.orig
++++ class.baserecurrence.php
+@@ -169,7 +169,7 @@ abstract class BaseRecurrence {
+ 			return $ret;
+ 		}
+ 
+-		if (!in_array($data['CalendarType'], [CAL_DEFAULT, CAL_GREGORIAN])) {
++		if (!in_array($data['CalendarType'], [MAPI_CAL_DEFAULT, MAPI_CAL_GREGORIAN])) {
+ 			return $ret;
+ 		}
+ 
