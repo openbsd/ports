@@ -1,6 +1,6 @@
 COMMENT =	convert a BDF font to PSF format for the Linux console
 
-V =		1.216
+V =		1.217
 DISTNAME =	console-setup_${V}
 PKGNAME =	bdf2psf-${V}
 EXTRACT_SUFX =	.tar.xz
@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	${MASTER_SITE_DEBIAN:=main/c/console-setup/}
 
-WRKDIST =	${WRKDIR}/console-setup-${V}
+WRKDIST =	${WRKDIR}/console-setup
 
 NO_BUILD =	Yes
 
