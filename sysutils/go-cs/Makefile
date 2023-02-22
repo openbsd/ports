@@ -1,6 +1,6 @@
 COMMENT=		concurrent ssh client
 
-GH_TAGNAME=		v1.0
+GH_TAGNAME=		v1.1
 GH_ACCOUNT=		akosela
 GH_PROJECT=		go-cs
 
@@ -8,7 +8,7 @@ CATEGORIES=		sysutils net
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # BSD
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE=		Yes
 
 MODULES=		lang/go
 
