@@ -23,4 +23,7 @@ BUILD_DEPENDS =	devel/spdlog
 LIB_DEPENDS =	devel/libevent2 \
 		net/curl
 
+# Run-time dependency doctest found: NO (tried pkgconfig and cmake)
+#CONFIGURE_ARGS +=	-Dtests=true
+
 .include <bsd.port.mk>
