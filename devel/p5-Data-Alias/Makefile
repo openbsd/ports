@@ -1,7 +1,7 @@
 COMMENT =	comprehensive set of aliasing operations
 
 MODULES =	cpan
-DISTNAME =	Data-Alias-1.25
+DISTNAME =	Data-Alias-1.28
 CATEGORIES =	devel
 
 # Perl
