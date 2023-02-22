@@ -45,4 +45,7 @@ LIB_DEPENDS =	databases/lmdb \
 		x11/qt5/qtquickcontrols2 \
 		x11/qt5/qtsvg
 
+# -DCMAKE_DISABLE_FIND_PACKAGE_GIT=ON (or _Git or _git) do not work
+CONFIGURE_ARGS +=	-DGIT=OFF
+
 .include <bsd.port.mk>
