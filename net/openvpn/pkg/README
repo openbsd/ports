@@ -2,6 +2,12 @@
 | Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
+Compatibility with older OpenVPN releases
+-----------------------------------------
+OpenVPN 2.6 has compression disabled by default and may need
+'--allow-compression asym' to work against a server which has
+compression enabled.
+
 Using the openvpn rc script
 ---------------------------
 
