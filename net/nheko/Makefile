@@ -1,8 +1,8 @@
-COMMENT =	desktop client for Matrix using Qt and C++17
+COMMENT =	desktop client for Matrix using Qt and C++20
 
 GH_ACCOUNT =	Nheko-Reborn
 GH_PROJECT =	nheko
-GH_TAGNAME =	v0.10.2
+GH_TAGNAME =	v0.11.3
 
 CATEGORIES=	net
 
@@ -19,7 +19,7 @@ WANTLIB += matrix_client olm qt5keychain spdlog ssl xcb xcb-ewmh
 MODULES =	devel/cmake \
 		x11/qt5
 
-# C++17
+# C++20
 COMPILER =	base-clang ports-gcc
 
 RUN_DEPENDS =	devel/desktop-file-utils \
@@ -33,8 +33,8 @@ BUILD_DEPENDS = databases/lmdbxx \
 		x11/qt5/qtbase
 
 LIB_DEPENDS =	databases/lmdb \
-		devel/coeurl \
-		devel/mtxclient \
+		devel/coeurl>=0.3.0 \
+		devel/mtxclient>=0.9.2 \
 		devel/olm \
 		devel/spdlog \
 		multimedia/gstreamer1/core \

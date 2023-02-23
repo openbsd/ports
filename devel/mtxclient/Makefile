@@ -1,27 +1,28 @@
 COMMENT =	client API for Matrix, built on libcurl
 CATEGORIES =	devel
 
-SHARED_LIBS +=  matrix_client	1.0
+SHARED_LIBS +=  matrix_client	2.0
 
 GH_ACCOUNT =	Nheko-Reborn
 GH_PROJECT =	mtxclient
-GH_TAGNAME =	v0.8.2
+GH_TAGNAME =	v0.9.2
 
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} coeurl crypto m olm ssl
+WANTLIB += ${COMPILER_LIBCXX} coeurl crypto m olm re2 spdlog ssl
 
 MODULES =	devel/cmake
 
 BUILD_DEPENDS = devel/libevent2 \
-		devel/spdlog \
 		textproc/nlohmann-json
 
-LIB_DEPENDS =	devel/coeurl \
-		devel/olm>=3.2.7
+LIB_DEPENDS =	devel/coeurl>=0.3.0 \
+		devel/olm>=3.2.7 \
+		devel/spdlog \
+		textproc/re2
 
-# C++17
+# C++20
 COMPILER =	base-clang ports-gcc
 
 CONFIGURE_ARGS +=	-DBUILD_LIB_EXAMPLES=OFF
