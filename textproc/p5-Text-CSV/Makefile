@@ -2,7 +2,7 @@ COMMENT =	comma-separated values manipulator routines
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Text-CSV-2.01
+DISTNAME =	Text-CSV-2.02
 CATEGORIES =	textproc
 
 MAINTAINER =	Andrew Hewus Fresh <afresh1@openbsd.org>
