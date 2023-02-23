@@ -1,7 +1,7 @@
 COMMENT =	recursively copy Perl datatypes
 
 MODULES =	cpan
-DISTNAME =	Clone-0.45
+DISTNAME =	Clone-0.46
 CATEGORIES =	devel
 
 MAINTAINER =	Andrew Hewus Fresh <afresh1@openbsd.org>
