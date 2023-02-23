@@ -1,36 +1,33 @@
 COMMENT=		MTP device filesystem
 
-V=			0.3.0
+V=			0.4.0
 GH_ACCOUNT=		phatina
 GH_PROJECT=		simple-mtpfs
-GH_TAGNAME=		simple-mtpfs-${V}
-DISTNAME=		${GH_PROJECT}-0.3.0
-REVISION=		1
+GH_TAGNAME=		v${V}
 
 CATEGORIES=		sysutils
 
 # GPLv2
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += c fuse m mtp pthread usb-1.0 ${COMPILER_LIBCXX}
 
-# c++11
-COMPILER =		base-clang ports-gcc
-
-CONFIGURE_STYLE=	autoreconf
+# c++17
+COMPILER=		base-clang ports-gcc
 
 LIB_DEPENDS=		devel/libmtp
 
 MAKE_FILE=		makefile
 
-AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.15
-AUTORECONF=		/bin/sh ./autogen.sh
-BUILD_DEPENDS +=	devel/gettext,-runtime
+BUILD_DEPENDS=		devel/autoconf-archive \
+			devel/gettext,-tools
 
-CPPFLAGS +=	-I${LOCALBASE}/include
-LDFLAGS +=	-L${LOCALBASE}/lib
+AUTOCONF_VERSION=	2.71
+AUTOMAKE_VERSION=	1.16
 
-CONFIGURE_ENV +=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_STYLE=	autoreconf
+
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
