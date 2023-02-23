@@ -1,6 +1,6 @@
 COMMENT =	validate method/function parameters
 
-DISTNAME =	Params-Validate-1.30
+DISTNAME =	Params-Validate-1.31
 CATEGORIES =	devel
 
 MAINTAINER =	Andrew Hewus Fresh <afresh1@openbsd.org>

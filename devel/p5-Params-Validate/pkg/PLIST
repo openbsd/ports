@@ -1,4 +1,3 @@
-${P5ARCH}/
 ${P5ARCH}/Params/
 ${P5ARCH}/Params/Validate/
 ${P5ARCH}/Params/Validate.pm
@@ -7,10 +6,9 @@ ${P5ARCH}/Params/Validate/PP.pm
 ${P5ARCH}/Params/Validate/XS.pm
 ${P5ARCH}/Params/ValidatePP.pm
 ${P5ARCH}/Params/ValidateXS.pm
-${P5ARCH}/auto/
 ${P5ARCH}/auto/Params/
 ${P5ARCH}/auto/Params/Validate/
 ${P5ARCH}/auto/Params/Validate/XS/
 ${P5ARCH}/auto/Params/Validate/XS/XS.bs
-${P5ARCH}/auto/Params/Validate/XS/XS.so
+@so ${P5ARCH}/auto/Params/Validate/XS/XS.so
 @man man/man3p/Params::Validate.3p
