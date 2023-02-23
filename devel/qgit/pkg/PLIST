@@ -1,6 +1,7 @@
 @bin bin/qgit
 share/applications/qgit.desktop
 share/icons/hicolor/48x48/apps/qgit.png
+share/icons/hicolor/scalable/apps/qgit.svg
 share/metainfo/
 share/metainfo/qgit.appdata.xml
 @tag update-desktop-database
