@@ -2602,6 +2602,7 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/artifacts/${MODPY_PYCACHE}flags.
 google-cloud-sdk/lib/googlecloudsdk/command_lib/artifacts/${MODPY_PYCACHE}format_util.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/artifacts/${MODPY_PYCACHE}go_util.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/artifacts/${MODPY_PYCACHE}ondemandscanning_util.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/artifacts/${MODPY_PYCACHE}repository_util.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/artifacts/${MODPY_PYCACHE}requests.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/artifacts/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/artifacts/${MODPY_PYCACHE}version_util.${MODPY_PYC_MAGIC_TAG}pyc
@@ -2630,6 +2631,7 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/artifacts/print_settings/npm.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/artifacts/print_settings/python.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/artifacts/print_settings/settings_util.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/artifacts/print_settings/yum.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/artifacts/repository_util.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/artifacts/requests.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/artifacts/resources.yaml
 google-cloud-sdk/lib/googlecloudsdk/command_lib/artifacts/util.py
@@ -5608,11 +5610,13 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/run/integrations/formatters/__in
 ${MODPY_COMMENT}google-cloud-sdk/lib/googlecloudsdk/command_lib/run/integrations/formatters/${MODPY_PYCACHE}/
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/integrations/formatters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/integrations/formatters/${MODPY_PYCACHE}base_formatter.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/run/integrations/formatters/${MODPY_PYCACHE}cloudsql_formatter.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/integrations/formatters/${MODPY_PYCACHE}domain_routing_formatter.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/integrations/formatters/${MODPY_PYCACHE}fallback_formatter.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/integrations/formatters/${MODPY_PYCACHE}redis_formatter.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/integrations/formatters/${MODPY_PYCACHE}states.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/integrations/formatters/base_formatter.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/run/integrations/formatters/cloudsql_formatter.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/integrations/formatters/domain_routing_formatter.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/integrations/formatters/fallback_formatter.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/integrations/formatters/redis_formatter.py
@@ -5907,6 +5911,7 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/storage/${MODPY_PYCACHE}paths.${
 google-cloud-sdk/lib/googlecloudsdk/command_lib/storage/${MODPY_PYCACHE}plurality_checkable_iterator.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/storage/${MODPY_PYCACHE}posix_util.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/storage/${MODPY_PYCACHE}progress_callbacks.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/storage/${MODPY_PYCACHE}rsync_command_util.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/storage/${MODPY_PYCACHE}stdin_iterator.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/storage/${MODPY_PYCACHE}storage_parallel.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/storage/${MODPY_PYCACHE}storage_url.${MODPY_PYC_MAGIC_TAG}pyc
@@ -5971,6 +5976,7 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/storage/resources/resource_util.
 google-cloud-sdk/lib/googlecloudsdk/command_lib/storage/resources/resources.yaml
 google-cloud-sdk/lib/googlecloudsdk/command_lib/storage/resources/s3_resource_reference.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/storage/resources/shim_format_util.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/storage/rsync_command_util.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/storage/stdin_iterator.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/storage/storage_parallel.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/storage/storage_url.py
@@ -6367,7 +6373,6 @@ ${MODPY_COMMENT}google-cloud-sdk/lib/googlecloudsdk/command_lib/workload_certifi
 google-cloud-sdk/lib/googlecloudsdk/command_lib/workload_certificate/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/workload_certificate/${MODPY_PYCACHE}resource.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/workload_certificate/resource.py
-google-cloud-sdk/lib/googlecloudsdk/command_lib/workload_certificate/resource.yaml
 google-cloud-sdk/lib/googlecloudsdk/command_lib/workspace_add_ons/
 google-cloud-sdk/lib/googlecloudsdk/command_lib/workspace_add_ons/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/googlecloudsdk/command_lib/workspace_add_ons/${MODPY_PYCACHE}/
@@ -14133,6 +14138,7 @@ ${MODPY_COMMENT}google-cloud-sdk/lib/surface/composer/environments/${MODPY_PYCAC
 google-cloud-sdk/lib/surface/composer/environments/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/composer/environments/${MODPY_PYCACHE}check_upgrade.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/composer/environments/${MODPY_PYCACHE}create.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/composer/environments/${MODPY_PYCACHE}database_failover.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/composer/environments/${MODPY_PYCACHE}delete.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/composer/environments/${MODPY_PYCACHE}describe.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/composer/environments/${MODPY_PYCACHE}list.${MODPY_PYC_MAGIC_TAG}pyc
@@ -14143,6 +14149,7 @@ google-cloud-sdk/lib/surface/composer/environments/${MODPY_PYCACHE}run.${MODPY_P
 google-cloud-sdk/lib/surface/composer/environments/${MODPY_PYCACHE}update.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/composer/environments/check_upgrade.py
 google-cloud-sdk/lib/surface/composer/environments/create.py
+google-cloud-sdk/lib/surface/composer/environments/database_failover.py
 google-cloud-sdk/lib/surface/composer/environments/delete.py
 google-cloud-sdk/lib/surface/composer/environments/describe.py
 google-cloud-sdk/lib/surface/composer/environments/list.py
@@ -23802,6 +23809,18 @@ google-cloud-sdk/lib/surface/workload_certificate/${MODPY_PYCACHE}enable.${MODPY
 google-cloud-sdk/lib/surface/workload_certificate/describe.py
 google-cloud-sdk/lib/surface/workload_certificate/disable.py
 google-cloud-sdk/lib/surface/workload_certificate/enable.py
+google-cloud-sdk/lib/surface/workload_certificate/workload_registrations/
+google-cloud-sdk/lib/surface/workload_certificate/workload_registrations/__init__.py
+${MODPY_COMMENT}google-cloud-sdk/lib/surface/workload_certificate/workload_registrations/${MODPY_PYCACHE}/
+google-cloud-sdk/lib/surface/workload_certificate/workload_registrations/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/workload_certificate/workload_registrations/${MODPY_PYCACHE}create.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/workload_certificate/workload_registrations/${MODPY_PYCACHE}delete.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/workload_certificate/workload_registrations/${MODPY_PYCACHE}describe.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/workload_certificate/workload_registrations/${MODPY_PYCACHE}list.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/workload_certificate/workload_registrations/create.py
+google-cloud-sdk/lib/surface/workload_certificate/workload_registrations/delete.py
+google-cloud-sdk/lib/surface/workload_certificate/workload_registrations/describe.py
+google-cloud-sdk/lib/surface/workload_certificate/workload_registrations/list.py
 google-cloud-sdk/lib/surface/workspace_add_ons/
 google-cloud-sdk/lib/surface/workspace_add_ons/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/surface/workspace_add_ons/${MODPY_PYCACHE}/
