@@ -3,6 +3,7 @@ ONLY_FOR_ARCHS =	amd64 arm64 armv7 i386 riscv64
 COMMENT =	tiny C compiler
 DISTNAME =	tcc-0.9.27.20221129
 CATEGORIES =	lang
+REVISION =	0
 
 # 0.9.27 release pre-dates OpenBSD support; use GH_COMMIT
 GH_ACCOUNT =	TinyCC
