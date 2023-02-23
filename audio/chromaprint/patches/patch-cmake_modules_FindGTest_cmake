@@ -3,32 +3,39 @@ Find gtest from devel/gtest.
 Index: cmake/modules/FindGTest.cmake
 --- cmake/modules/FindGTest.cmake.orig
 +++ cmake/modules/FindGTest.cmake
-@@ -71,12 +71,24 @@ find_path(GTEST_INCLUDE_DIR
+@@ -55,14 +55,30 @@ find_path(GTEST_SOURCE_DIR
  )
- mark_as_advanced(GTEST_INCLUDE_DIR)
+ mark_as_advanced(GTEST_SOURCE_DIR)
  
-+MACRO(GTEST_FIND varname shortname)
++find_path(GTEST_INCLUDE_DIR
++    NAMES gtest/gtest.h
++    HINTS $ENV{GTEST_ROOT}/include ${GTEST_ROOT}/include
++)
++mark_as_advanced(GTEST_INCLUDE_DIR)
 +
++MACRO(GTEST_FIND varname shortname)
 +    FIND_LIBRARY(${varname}
 +        NAMES ${shortname}
 +        PATHS
-+	${LOCALBASE}/lib
-+		NO_DEFAULT_PATH
++        /usr/local/lib
++            NO_DEFAULT_PATH
 +        DOC "Location of GTEST Libraries"
 +    )
-+
 +ENDMACRO(GTEST_FIND)
 +
  include(FindPackageHandleStandardArgs)
--find_package_handle_standard_args(GTest DEFAULT_MSG GTEST_SOURCE_DIR GTEST_INCLUDE_DIR)
+-find_package_handle_standard_args(GTest DEFAULT_MSG GTEST_SOURCE_DIR)
 +find_package_handle_standard_args(GTest DEFAULT_MSG GTEST_INCLUDE_DIR)
  
  if(GTEST_FOUND)
--	set(GTEST_INCLUDE_DIRS ${GTEST_INCLUDE_DIR})
--	set(GTEST_LIBRARIES gtest)
--	set(GTEST_MAIN_LIBRARIES gtest_main)
-+    set(GTEST_INCLUDE_DIRS ${GTEST_INCLUDE_DIR})
+     SET(GTEST_INCLUDE_DIRS
+-        ${GTEST_SOURCE_DIR}/include
++        ${GTEST_INCLUDE_DIR}
+     )
+-    SET(GTEST_SOURCES
+-        ${GTEST_SOURCE_DIR}/src/gtest-all.cc
+-    )
 +    GTEST_FIND(GTEST_LIBRARIES gtest)
 +    GTEST_FIND(GTEST_MAIN_LIBRARIES gtest_main)
-     set(GTEST_BOTH_LIBRARIES ${GTEST_LIBRARIES} ${GTEST_MAIN_LIBRARIES})
++    SET(GTEST_BOTH_LIBRARIES ${GTEST_LIBRARIES} ${GTEST_MAIN_LIBRARIES})
  endif()

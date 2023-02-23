@@ -2,7 +2,7 @@ COMMENT =		audio fingerprint extraction library
 
 GH_ACCOUNT =		acoustid
 GH_PROJECT =		chromaprint
-GH_TAGNAME =		v1.5.0
+GH_TAGNAME =		v1.5.1
 
 SHARED_LIBS =		chromaprint               3.0 # 1.5.0
 
@@ -32,6 +32,7 @@ CONFIGURE_ARGS =	-DBUILD_TOOLS=ON \
 
 TEST_TARGET =		check
 
+CXXFLAGS +=		-I${LOCALBASE}/include
 MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
 
 pre-configure:
