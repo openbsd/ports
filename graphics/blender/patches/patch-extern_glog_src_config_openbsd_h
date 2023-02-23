@@ -98,7 +98,7 @@
 +#define HAVE_SYS_STAT_H
 +
 +/* Define to 1 if you have the <sys/syscall.h> header file. */
-+#define HAVE_SYS_SYSCALL_H
++/* #undef HAVE_SYS_SYSCALL_H */
 +
 +/* Define to 1 if you have the <sys/time.h> header file. */
 +#define HAVE_SYS_TIME_H
