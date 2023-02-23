@@ -66,6 +66,7 @@ share/openttd/ai/compat_1.7.nut
 share/openttd/ai/compat_1.8.nut
 share/openttd/ai/compat_1.9.nut
 share/openttd/ai/compat_12.nut
+share/openttd/ai/compat_13.nut
 share/openttd/baseset/
 share/openttd/baseset/no_music.obm
 share/openttd/baseset/no_sound.obs
@@ -93,6 +94,7 @@ share/openttd/game/compat_1.7.nut
 share/openttd/game/compat_1.8.nut
 share/openttd/game/compat_1.9.nut
 share/openttd/game/compat_12.nut
+share/openttd/game/compat_13.nut
 share/openttd/lang/
 share/openttd/lang/afrikaans.lng
 share/openttd/lang/arabic_egypt.lng
@@ -184,8 +186,6 @@ share/openttd/media/baseset/openttd/chars.nfo
 share/openttd/media/baseset/openttd/chars.png
 share/openttd/media/baseset/openttd/elrails.nfo
 share/openttd/media/baseset/openttd/elrails.png
-share/openttd/media/baseset/openttd/flags.nfo
-share/openttd/media/baseset/openttd/flags.png
 share/openttd/media/baseset/openttd/foundations.nfo
 share/openttd/media/baseset/openttd/foundations.png
 share/openttd/media/baseset/openttd/mono.nfo
@@ -224,6 +224,8 @@ share/openttd/media/baseset/orig_extra/canals_extra.nfo
 share/openttd/media/baseset/orig_extra/chars_orig_extra.nfo
 share/openttd/media/baseset/orig_extra/fix_graphics.nfo
 share/openttd/media/baseset/orig_extra/fix_graphics.png
+share/openttd/media/baseset/orig_extra/fix_gui_icons.nfo
+share/openttd/media/baseset/orig_extra/fix_gui_icons.png
 share/openttd/media/baseset/orig_extra/orig_extra.nfo
 share/openttd/media/baseset/orig_extra/rivers/
 share/openttd/media/baseset/orig_extra/rivers/arctic.nfo
