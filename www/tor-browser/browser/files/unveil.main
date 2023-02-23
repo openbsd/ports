@@ -55,6 +55,7 @@
 # ~/.cache, ~/.config, and ~/.local/share
 $XDG_RUNTIME_DIR/dconf rwc
 $XDG_CACHE_HOME/thumbnails rwc
+$XDG_CACHE_HOME/mesa_shader_cache rwc
 $XDG_CONFIG_HOME/dconf rw
 $XDG_CONFIG_HOME/fcitx r
 $XDG_CONFIG_HOME/fontconfig r

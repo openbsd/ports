@@ -7,6 +7,7 @@ COMMENT =		modified version of Firefox ESR for browsing over Tor
 MOZILLA_VERSION =	${TB_VERSION}
 MOZILLA_PROJECT =	${BROWSER_NAME}
 MOZILLA_CODENAME =	browser
+REVISION =	0
 
 EXTRACT_SUFX =		.tar.xz
 PATCHORIG =		.pat.orig
