@@ -2,7 +2,7 @@ COMMENT =		routines for manipulating stashes
 
 MODULES =		cpan
 PKG_ARCH =		*
-DISTNAME =		Package-Stash-0.39
+DISTNAME =		Package-Stash-0.40
 CATEGORIES =		devel
 
 FIX_EXTRACT_PERMISSIONS =	Yes
