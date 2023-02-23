@@ -4,22 +4,21 @@ Fix build with opaque HMAC_CTX in LibreSSL 3.5.
 Index: libdroplet/src/utils.c
 --- libdroplet/src/utils.c.orig
 +++ libdroplet/src/utils.c
-@@ -72,6 +72,14 @@ gettid()
+@@ -72,6 +72,13 @@ gettid()
  {
    return syscall(SYS_gettid);
  }
 +#elif defined(__OpenBSD__)
-+#include <sys/syscall.h>
 +#include <unistd.h>
 +pid_t
-+gettid()
++gettid(void)
 +{
-+  return syscall(SYS_getpid);
++  return getpid();
 +}
  
  #else
  #include <syscall.h>
-@@ -120,6 +128,17 @@ linux_gethostbyname_r(const char *name,
+@@ -120,6 +127,17 @@ linux_gethostbyname_r(const char *name,
    *result = resultp;
  
    return 0;
@@ -37,7 +36,7 @@ Index: libdroplet/src/utils.c
  #else
    //linux
    return gethostbyname_r(name, ret, buf, buflen, result, h_errnop);
-@@ -475,14 +494,14 @@ dpl_hmac_sha1(const char *key_buf,
+@@ -475,14 +493,14 @@ dpl_hmac_sha1(const char *key_buf,
                unsigned int data_len,
                char *digest_buf)
  {
