@@ -1,6 +1,6 @@
 COMMENT =	Comma-Separated Values manipulation routines
 
-DISTNAME =	Text-CSV_XS-1.47
+DISTNAME =	Text-CSV_XS-1.49
 CATEGORIES =	textproc
 EXTRACT_SUFX =	.tgz
 
