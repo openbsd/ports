@@ -1,3 +1,8 @@
+add ksh subshell support, but disabled in last chunk for
+now to avoid a problem with zombies left behind.
+
+https://midnight-commander.org/ticket/4447
+
 Index: lib/shell.c
 --- lib/shell.c.orig
 +++ lib/shell.c
@@ -10,15 +15,17 @@ Index: lib/shell.c
      else if (access ("/bin/zsh", X_OK) == 0)
          mc_shell->path = g_strdup ("/bin/zsh");
      else if (access ("/bin/tcsh", X_OK) == 0)
-@@ -201,6 +203,11 @@ mc_shell_recognize_path (mc_shell_t * mc_shell)
-     {
+@@ -202,6 +204,13 @@ mc_shell_recognize_path (mc_shell_t * mc_shell)
          mc_shell->type = SHELL_BASH;
          mc_shell->name = "bash";
-+    }
+     }
++#if 0
 +    else if (strstr (mc_shell->path, "/ksh") != NULL || getenv ("KSH_VERSION") != NULL)
 +    {
 +        mc_shell->type = SHELL_KSH;
 +        mc_shell->name = "ksh";
-     }
++    }
++#endif
      else if (strstr (mc_shell->path, "/sh") != NULL || getenv ("SH") != NULL)
      {
+         mc_shell->type = SHELL_SH;
