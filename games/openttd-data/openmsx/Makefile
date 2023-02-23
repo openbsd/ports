@@ -1,7 +1,7 @@
 COMMENT =		music data for OpenTTD
 
 OPENTTD_PROJECT =	openmsx
-V =			0.3.1
+V =			0.4.2
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/openttd/gm

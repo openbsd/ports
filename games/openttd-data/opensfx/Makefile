@@ -1,7 +1,7 @@
 COMMENT =		sound effects data for OpenTTD
 
 OPENTTD_PROJECT =	opensfx
-V =			0.2.3
+V =			1.0.3
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/openttd/data

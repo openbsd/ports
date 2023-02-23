@@ -3,7 +3,6 @@ share/openttd/
 share/openttd/gm/
 share/openttd/gm/5432gone_redfarn.mid
 share/openttd/gm/be_sharp_bw_redfarn.mid
-share/openttd/gm/big_man_boogie_redfarn.mid
 share/openttd/gm/boogi_marabi_redfarn.mid
 share/openttd/gm/busy_schedule.mid
 share/openttd/gm/careless_perc_redfarn.mid
@@ -13,6 +12,7 @@ share/openttd/gm/city_blues_redfarn.mid
 share/openttd/gm/coconut_run2.mid
 share/openttd/gm/flying_scotsman.mid
 share/openttd/gm/harp_harmony.mid
+share/openttd/gm/keep_on_rolling.mid
 share/openttd/gm/linns_basket.mid
 share/openttd/gm/midnight_snow_run.mid
 share/openttd/gm/mighty_giant_run.mid

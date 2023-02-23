@@ -1,10 +1,7 @@
 COMMENT =		graphics data for OpenTTD
 
 OPENTTD_PROJECT =	opengfx
-V =			0.6.1
-
-post-extract:
-	cd ${WRKDIR} && ${TAR} xf opengfx-$V.tar
+V =			7.1
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/openttd/data

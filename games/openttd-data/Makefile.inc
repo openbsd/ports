@@ -7,7 +7,7 @@ CATEGORIES +=	games
 
 HOMEPAGE ?=	https://www.openttd.org/en/
 
-MAINTAINER ?=	Anthony J. Bentley <anthony@anjbe.name>
+MAINTAINER ?=	Florian Viehweger <openbsd@out-of-creativity.de>
 
 # GPLv2 only
 PERMIT_PACKAGE=	Yes
@@ -24,3 +24,6 @@ NO_TEST ?=	Yes
 PKG_ARCH ?=	*
 
 WRKDIST ?=	${WRKDIR}/${OPENTTD_PROJECT}-$V
+
+post-extract:
+		cd ${WRKDIR} && ${TAR} xf ${DISTNAME:S/-all//}.tar
