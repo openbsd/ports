@@ -7,18 +7,14 @@ COMMENT-gtk4 =		IBus IM module for GTK4
 
 GH_PROJECT =		ibus
 GH_ACCOUNT =		ibus
-GH_TAGNAME =		1.5.27
+GH_TAGNAME =		1.5.28
 
 PKGNAME-main =		ibus-${GH_TAGNAME}
 PKGNAME-gtk2 =		ibus-gtk2-${GH_TAGNAME}
 PKGNAME-gtk3 =		ibus-gtk3-${GH_TAGNAME}
 PKGNAME-gtk4 =		ibus-gtk4-${GH_TAGNAME}
-REVISION-gtk2 =		0
-REVISION-gtk3 =		0
-REVISION-gtk4 =		0
-REVISION-main =		1
 
-SHARED_LIBS +=  ibus-1.0             4.4      # 5.527
+SHARED_LIBS +=  ibus-1.0             4.4      # 5.528
 
 CATEGORIES =		inputmethods chinese japanese korean
 
@@ -38,7 +34,7 @@ WANTLIB += xcb-shm z execinfo jpeg
 
 WANTLIB-main += ${WANTLIB}
 WANTLIB-main += atk-1.0 atk-bridge-2.0 c cairo-gobject dconf epoxy
-WANTLIB-main += gdk-3 gthread-2.0 gtk-3 Xcomposite notify
+WANTLIB-main += gdk-3 gthread-2.0 gtk-3 Xcomposite notify atspi dbus-1
 
 WANTLIB-gtk2 += ${WANTLIB}
 WANTLIB-gtk2 += atk-1.0 dbus-1 gdk-x11-2.0 gtk-x11-2.0 ibus-1.0
@@ -46,7 +42,7 @@ WANTLIB-gtk2 += Xcomposite
 
 WANTLIB-gtk3 += ${WANTLIB}
 WANTLIB-gtk3 += Xcomposite atk-1.0 atk-bridge-2.0 cairo-gobject dbus-1
-WANTLIB-gtk3 += epoxy gdk-3 gtk-3 ibus-1.0
+WANTLIB-gtk3 += epoxy gdk-3 gtk-3 ibus-1.0 atspi
 
 WANTLIB-gtk4 += ${WANTLIB}
 WANTLIB-gtk4 += cairo-gobject cairo-script-interpreter dbus-1 epoxy
