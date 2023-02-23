@@ -1,12 +1,11 @@
 COMMENT =	Perl extension to test methods for warnings
 
-DISTNAME =	Test-Warn-0.36
+DISTNAME =	Test-Warn-0.37
 CATEGORIES =	devel
-REVISION =	0
 
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 
-# perl_5
+# Perl
 PERMIT_PACKAGE =	Yes
 
 MODULES =	cpan
