@@ -2,7 +2,7 @@ COMMENT =		purely functional package manager for Unix
 DISTNAME =		nix-2.3.16
 EXTRACT_SUFX =		.tar.xz
 CATEGORIES =		sysutils
-REVISION =		1
+REVISION =		2
 
 LIBVER =		0.0
 .for _lib in expr main store util
@@ -41,7 +41,7 @@ LIB_DEPENDS =		archivers/brotli \
 RUN_DEPENDS =		archivers/gtar \
 			shells/bash
 
-TEST_DEPENDS =		${PKGPATH} \
+TEST_DEPENDS =		${FULLPKGNAME}:${PKGPATH} \
 			devel/git \
 			misc/findutils \
 			textproc/gdiff
@@ -49,6 +49,7 @@ TEST_DEPENDS =		${PKGPATH} \
 # Bash specific code using `declare' for associative arrays
 CONFIGURE_SCRIPT =	${LOCALBASE}/bin/bash ./configure
 CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS =	--with-coreutils-bin=/bin:/usr/bin
 CONFIGURE_ENV =		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
 			EDITLINE_CFLAGS="-I/usr/include/readline -DREADLINE" \
@@ -60,7 +61,7 @@ MAKE_FLAGS =		V=1 \
 
 FAKE_FLAGS =		sysconfdir="${PREFIX}/share/examples/nix"
 
-# amd64: 9 out of 57 tests failed
+# amd64: 5 out of 57 tests failed
 TEST_TARGET =		installcheck
 
 # TMPDIR is picked up to construct TEST_ROOT in ${WRKSRC}/tests/common.sh.in
