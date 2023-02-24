@@ -1,5 +1,4 @@
 Link libstore against libc.
-XXX Recognise OpenBSD.
 
 Index: src/libstore/local.mk
 --- src/libstore/local.mk.orig
