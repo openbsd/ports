@@ -1,6 +1,6 @@
 COMMENT=		NetBeans Java IDE
 
-V=			16
+V=			17
 DISTNAME=		netbeans-${V}-bin
 PKGNAME=		netbeans-${V}
 CATEGORIES=		devel
