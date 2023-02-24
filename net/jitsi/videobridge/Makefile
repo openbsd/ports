@@ -3,6 +3,7 @@ COMMENT =	WebRTC compatible video router for jitsi
 CATEGORIES =	net
 
 VERSION =	2.0.8044
+REVISION =	0
 DISTNAME =	jitsi-videobridge-${VERSION}
 
 GH_ACCOUNT =	jitsi
@@ -16,7 +17,7 @@ MASTER_SITES7 =	https://files.bsd.ac/openbsd-distfiles/
 DISTFILES +=	jitsi-videobridge-deps-${VERSION}.tgz:7
 
 MAINTAINER =	Philipp Buehler <pb-openbsd@sysfive.com>, \
-		Aisha Tammy <openbsd@aisha.cc>
+		Aisha Tammy <aisha@openbsd.org>
 # Apache-2.0
 PERMIT_PACKAGE =	Yes
 

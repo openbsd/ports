@@ -1,6 +1,7 @@
 COMMENT =	C++17 wrapper for Lightning Memory-Mapped Database
 
 VERSION =	1.0.0
+REVISION =	0
 DISTNAME =	lmdbxx-${VERSION}
 
 CATEGORIES =	databases
@@ -12,7 +13,7 @@ GH_COMMIT =	f1f00acf5f5045b43d7189c2b23ae5ca103a6faa
 
 HOMEPAGE =	https://github.com/hoytech/lmdbxx
 
-MAINTAINER =	Aisha Tammy <openbsd@aisha.cc>
+MAINTAINER =	Aisha Tammy <aisha@openbsd.org>
 
 # Unlicense
 PERMIT_PACKAGE =	Yes

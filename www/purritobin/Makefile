@@ -7,8 +7,10 @@ GH_ACCOUNT =	PurritoBin
 GH_PROJECT =	PurritoBin
 GH_TAGNAME =	0.6.7
 
+REVISION =	0
+
 HOMEPAGE =	https://bsd.ac/
-MAINTAINER =	Aisha Tammy <openbsd@aisha.cc>
+MAINTAINER =	Aisha Tammy <aisha@openbsd.org>
 
 # ISC
 PERMIT_PACKAGE =	Yes

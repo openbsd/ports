@@ -7,7 +7,9 @@ MASTER_SITES =	https://github.com/dani-garcia/bw_web_builds/releases/download/v$
 DISTNAME =	bw_web_v${VERSION}
 PKGNAME =	vaultwarden-web-${VERSION}
 
-MAINTAINER =	Aisha Tammy <openbsd@aisha.cc>
+REVISION =	0
+
+MAINTAINER =	Aisha Tammy <aisha@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE =	Yes
 

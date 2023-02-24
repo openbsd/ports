@@ -4,11 +4,13 @@ GH_ACCOUNT =	fusiondirectory
 GH_PROJECT =	schema2ldif
 GH_COMMIT =	5e107190f89ed4c708fe0d617ea396f4ca7d6f8b
 
+REVISION =	0
+
 DISTNAME =	schema2ldif-1.3pl20210902
 
 CATEGORIES =	converters
 
-MAINTAINER =	Aisha Tammy <openbsd@aisha.cc>
+MAINTAINER =	Aisha Tammy <aisha@openbsd.org>
 
 # BSD, GPL-2+
 PERMIT_PACKAGE =	Yes

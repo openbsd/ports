@@ -8,8 +8,10 @@ GH_ACCOUNT =	jitsi
 GH_PROJECT =	jitsi-meet
 GH_TAGNAME =	jitsi-meet_8044
 
+REVISION =	0
+
 MAINTAINER =	Philipp Buehler <pb-openbsd@sysfive.com>, \
-		Aisha Tammy <openbsd@aisha.cc>
+		Aisha Tammy <aisha@openbsd.org>
 
 # Apache-2.0
 PERMIT_PACKAGE =	Yes

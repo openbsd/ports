@@ -4,11 +4,12 @@ COMMENT-sasl=	SASL module for ZNC
 DISTNAME=	znc-1.8.2
 CATEGORIES=	net
 MASTER_SITES=	${HOMEPAGE}releases/
-REVISION-main=	4
+REVISION-main=	5
+REVISION-sasl=	0
 
 HOMEPAGE=	https://znc.in/
 
-MAINTAINER=	Aisha Tammy <openbsd@aisha.cc>
+MAINTAINER=	Aisha Tammy <aisha@openbsd.org>
 
 # Apache 2.0
 PERMIT_PACKAGE=	Yes

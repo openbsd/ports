@@ -9,6 +9,8 @@ GH_ACCOUNT =	jitsi
 GH_PROJECT =	jitsi-srtp
 GH_COMMIT =	d9bbebfe367820ab358d2d92f5aa563d3fde403a
 
+REVISION =	0
+
 DISTFILES +=	${GH_DISTFILE}
 
 # vendor maven dependencies
@@ -16,7 +18,7 @@ MASTER_SITES7 =	https://files.bsd.ac/openbsd-distfiles/
 DISTFILES +=	jitsi-srtp-deps-${VERSION}.tgz:7
 
 MAINTAINER =	Philipp Buehler <pb-openbsd@sysfive.com>, \
-		Aisha Tammy <openbsd@aisha.cc>
+		Aisha Tammy <aisha@openbsd.org>
 # Apache-2.0
 PERMIT_PACKAGE =	Yes
 

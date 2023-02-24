@@ -6,8 +6,9 @@ GH_PROJECT =	mutt-wizard
 GH_TAGNAME =	v3.3.1
 
 EPOCH =		0
+REVISION =	0
 
-MAINTAINER =	Aisha Tammy <openbsd@aisha.cc>
+MAINTAINER =	Aisha Tammy <aisha@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE =	Yes

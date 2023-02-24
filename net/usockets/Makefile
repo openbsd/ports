@@ -9,7 +9,9 @@ GH_ACCOUNT =	uNetworking
 GH_PROJECT =	uSockets
 GH_TAGNAME =	v0.8.1
 
-MAINTAINER =	Aisha Tammy <openbsd@aisha.cc>
+REVISION =	0
+
+MAINTAINER =	Aisha Tammy <aisha@openbsd.org>
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes

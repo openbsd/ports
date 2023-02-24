@@ -9,6 +9,8 @@ GH_ACCOUNT =	jitsi
 GH_PROJECT =	jicofo
 GH_TAGNAME =	jitsi-meet_8044
 
+REVISION =	0
+
 DISTFILES +=	${GH_DISTFILE}
 
 # vendor maven dependencies
@@ -16,7 +18,7 @@ MASTER_SITES7 =	https://files.bsd.ac/openbsd-distfiles/
 DISTFILES +=	jicofo-deps-${VERSION}.tgz:7
 
 MAINTAINER =	Philipp Buehler <pb-openbsd@sysfive.com>, \
-		Aisha Tammy <openbsd@aisha.cc>
+		Aisha Tammy <aisha@openbsd.org>
 
 # Apache-2.0
 PERMIT_PACKAGE =	Yes

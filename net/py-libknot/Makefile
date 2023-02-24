@@ -4,12 +4,13 @@ MODPY_EGG_VERSION =	3.2.5
 
 DISTNAME =	libknot-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	net
 
 HOMEPAGE =	https://gitlab.nic.cz/knot/knot-dns
 
-MAINTAINER =	Aisha Tammy <openbsd@aisha.cc>
+MAINTAINER =	Aisha Tammy <aisha@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE =	Yes

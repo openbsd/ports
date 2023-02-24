@@ -8,11 +8,11 @@ COMMENT =		unofficial bitwarden compatible server
 GH_ACCOUNT =		dani-garcia
 GH_PROJECT =		vaultwarden
 GH_TAGNAME =		1.27.0
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		security
 
-MAINTAINER =		Aisha Tammy <openbsd@aisha.cc>
+MAINTAINER =		Aisha Tammy <aisha@openbsd.org>
 
 # GPL-3.0
 PERMIT_PACKAGE =	Yes

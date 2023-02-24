@@ -3,7 +3,7 @@ COMMENT =	self hosted personal CRM system
 CATEGORIES =	productivity
 
 VERSION =	3.7.0
-REVISION =	1
+REVISION =	2
 PKGNAME =	monica-${VERSION}
 
 MASTER_SITES =	https://github.com/monicahq/monica/releases/download/v${VERSION}/
@@ -13,7 +13,7 @@ EXTRACT_SUFX =	.tar.bz2
 
 HOMEPAGE =	https://www.monicahq.com/
 
-MAINTAINER =	Aisha Tammy <openbsd@aisha.cc>
+MAINTAINER =	Aisha Tammy <aisha@openbsd.org>
 
 # AGPL-3.0
 PERMIT_PACKAGE =	Yes
