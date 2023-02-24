@@ -31,7 +31,7 @@ NO_TEST=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/{applications,pixmaps}/
-	cp ${MODPY_SITEPKG}/chirp/share/chirp.desktop \
+	cp ${WRKINST}${MODPY_SITEPKG}/chirp/share/chirp.desktop \
 		${PREFIX}/share/applications/
 	ln -sf ${MODPY_SITEPKG}/chirp/share/chirp.png \
 		${PREFIX}/share/pixmaps/
