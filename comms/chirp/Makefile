@@ -2,7 +2,7 @@ COMMENT=	tool to programme a wide range of amateur radios
 
 MODPY_EGG_VERSION= 20230218
 DISTNAME=	chirp-${MODPY_EGG_VERSION}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	comms hamradio
 
@@ -31,7 +31,7 @@ NO_TEST=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/{applications,pixmaps}/
-	ln -sf ${MODPY_SITEPKG}/chirp/share/chirp.desktop \
+	cp ${MODPY_SITEPKG}/chirp/share/chirp.desktop \
 		${PREFIX}/share/applications/
 	ln -sf ${MODPY_SITEPKG}/chirp/share/chirp.png \
 		${PREFIX}/share/pixmaps/
