@@ -1,6 +1,6 @@
 COMMENT =	simple http server class
 
-DISTNAME =	HTTP-Daemon-6.14
+DISTNAME =	HTTP-Daemon-6.16
 
 CATEGORIES =	www
 
