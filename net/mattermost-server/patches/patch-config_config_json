@@ -11,7 +11,7 @@ Index: config/config.json
      "TrustedProxyIPHeader": [],
      "ReadTimeout": 300,
 @@ -92,7 +92,7 @@
-     "PostPriority": false,
+     "PostPriority": true,
      "EnableAPIChannelDeletion": false,
      "EnableLocalMode": false,
 -    "LocalModeSocketLocation": "/var/tmp/mattermost_local.socket",
@@ -19,7 +19,7 @@ Index: config/config.json
      "EnableAWSMetering": false,
      "SplitKey": "",
      "FeatureFlagSyncIntervalSeconds": 30,
-@@ -149,14 +149,14 @@
+@@ -151,14 +151,14 @@
      "ReplicaLagSettings": []
    },
    "LogSettings": {
@@ -35,8 +35,8 @@ Index: config/config.json
 +    "FileLocation": "${LOCALSTATEDIR}/log/mattermost",
      "EnableWebhookDebugging": true,
      "EnableDiagnostics": true,
-     "EnableSentry": true,
-@@ -173,14 +173,14 @@
+     "VerboseDiagnostics": false,
+@@ -176,14 +176,14 @@
      "AdvancedLoggingConfig": ""
    },
    "NotificationLogSettings": {
@@ -53,7 +53,7 @@ Index: config/config.json
      "AdvancedLoggingConfig": ""
    },
    "PasswordSettings": {
-@@ -198,7 +198,7 @@
+@@ -201,7 +201,7 @@
      "MaxImageResolution": 33177600,
      "MaxImageDecoderConcurrency": -1,
      "DriverName": "local",
@@ -62,7 +62,7 @@ Index: config/config.json
      "EnablePublicLink": false,
      "ExtractContent": true,
      "ArchiveRecursion": false,
-@@ -230,11 +230,11 @@
+@@ -233,11 +233,11 @@
      "EnableSMTPAuth": false,
      "SMTPUsername": "",
      "SMTPPassword": "",
@@ -77,7 +77,7 @@ Index: config/config.json
      "PushNotificationServer": "https://push-test.mattermost.com",
      "PushNotificationContents": "full",
      "PushNotificationBuffer": 1000,
-@@ -265,13 +265,13 @@
+@@ -268,13 +268,13 @@
    "SupportSettings": {
      "TermsOfServiceLink": "https://mattermost.com/terms-of-use/",
      "PrivacyPolicyLink": "https://mattermost.com/privacy-policy/",
@@ -93,7 +93,7 @@ Index: config/config.json
    },
    "AnnouncementSettings": {
      "EnableBanner": false,
-@@ -377,7 +377,7 @@
+@@ -380,7 +380,7 @@
    },
    "ComplianceSettings": {
      "Enable": false,
@@ -102,7 +102,7 @@ Index: config/config.json
      "EnableDaily": false,
      "BatchSize": 30000
    },
-@@ -535,8 +535,8 @@
+@@ -542,8 +542,8 @@
      "EnableUploads": false,
      "AllowInsecureDownloadURL": false,
      "EnableHealthCheck": true,
@@ -113,8 +113,8 @@ Index: config/config.json
      "Plugins": {},
      "PluginStates": {
        "com.mattermost.apps": {
-@@ -612,11 +612,11 @@
-     "PostPriority": false
+@@ -622,11 +622,11 @@
+     "OnboardingTourTips": true
    },
    "ImportSettings": {
 -    "Directory": "./import",
