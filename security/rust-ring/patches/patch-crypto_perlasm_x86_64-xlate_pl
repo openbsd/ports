@@ -5,7 +5,7 @@ Index: crypto/perlasm/x86_64-xlate.pl
  		} elsif ($dir eq ".section") {
  		    $current_segment=$$line;
  		    if (!$elf && $current_segment eq ".init") {
-+			if	($flavour eq "macosx")	{ $self->{value} = ".$self->{value} = ".section\t__DATA,__const"; }
++			if	($flavour eq "macosx")	{ $self->{value} = ".section\t__DATA,__const"; }
 +		    }
 +		    if (!$elf && $current_segment eq ".init") {
  			if	($flavour eq "macosx")	{ $self->{value} = ".mod_init_func"; }
