@@ -4,6 +4,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME =	Module-Install-1.19
 CATEGORIES=	devel
+FIX_EXTRACT_PERMISSIONS=	Yes
 
 # perl
 PERMIT_PACKAGE=	Yes
