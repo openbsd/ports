@@ -41,13 +41,12 @@ LIB_DEPENDS =		archivers/brotli \
 RUN_DEPENDS =		archivers/gtar \
 			shells/bash
 
-TEST_DEPENDS =		${FULLPKGNAME}:${PKGPATH} \
+TEST_DEPENDS =		${PKGPATH} \
 			devel/git \
 			misc/findutils \
 			textproc/gdiff
 
-# Bash specific code using `declare' for associative arrays:
-# ./configure[7906]: syntax error: `(' unexpected
+# Bash specific code using `declare' for associative arrays
 CONFIGURE_SCRIPT =	${LOCALBASE}/bin/bash ./configure
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
@@ -61,7 +60,7 @@ MAKE_FLAGS =		V=1 \
 
 FAKE_FLAGS =		sysconfdir="${PREFIX}/share/examples/nix"
 
-# amd64: 11 out of 57 tests failed
+# amd64: 9 out of 57 tests failed
 TEST_TARGET =		installcheck
 
 # TMPDIR is picked up to construct TEST_ROOT in ${WRKSRC}/tests/common.sh.in
@@ -70,11 +69,15 @@ TESTTMP =		${WRKDIR}
 TEST_ROOT =		${TESTTMP}/nix-test
 TEST_ENV =		TMPDIR=${TESTTMP}
 
+GUTILS +=		xargs	# -d
+GUTILS +=		diff	# -B
+GUTILS +=		stat	# --format
+
 pre-test:
+	sed -i 's/tar c/tar -cf-/' ${WRKSRC}/tests/tarball.sh
+.for gutil in ${GUTILS}
+	ln -sf /usr/local/bin/g${gutil} ${WRKDIR}/bin/${gutil}
+.endfor
 	mkdir -p ${TEST_ROOT}
-	# post-build-hook: xargs: unknown option -- d
-	ln -sf ${LOCALBASE}/bin/gxargs ${WRKDIR}/bin/xargs
-	# Tracing expression 'builtins.tryEval (throw "example")'diff: unknown option -- B
-	ln -sf ${LOCALBASE}/bin/gdiff ${WRKDIR}/bin/diff
 
 .include <bsd.port.mk>
