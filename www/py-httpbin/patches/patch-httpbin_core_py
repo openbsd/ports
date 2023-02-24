@@ -1,15 +1,30 @@
+BaseResponse -> Response as of werkzeug 2.0
+
+see: https://github.com/postmanlabs/httpbin/pull/674
+
 Index: httpbin/core.py
 --- httpbin/core.py.orig
 +++ httpbin/core.py
-@@ -21,7 +21,6 @@ from werkzeug.datastructures import WWWAuthenticate, M
+@@ -19,9 +19,8 @@ from flask import Flask, Response, request, render_tem
+ from six.moves import range as xrange
+ from werkzeug.datastructures import WWWAuthenticate, MultiDict
  from werkzeug.http import http_date
- from werkzeug.wrappers import BaseResponse
+-from werkzeug.wrappers import BaseResponse
++from werkzeug.wrappers import Response as WzResponse
  from werkzeug.http import parse_authorization_header
 -from raven.contrib.flask import Sentry
  
  from . import filters
  from .helpers import get_headers, status_code, get_dict, get_request_range, check_basic_auth, check_digest_auth, \
-@@ -55,10 +54,6 @@ tmpl_dir = os.path.join(os.path.dirname(os.path.abspat
+@@ -48,17 +47,13 @@ def jsonify(*args, **kwargs):
+     return response
+ 
+ # Prevent WSGI from correcting the casing of the Location header
+-BaseResponse.autocorrect_location_header = False
++WzResponse.autocorrect_location_header = False
+ 
+ # Find the correct template folder when running from a different location
+ tmpl_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'templates')
  
  app = Flask(__name__, template_folder=tmpl_dir)
  app.debug = bool(os.environ.get('DEBUG'))
