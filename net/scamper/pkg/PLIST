@@ -33,6 +33,7 @@
 @bin bin/scamper-trace
 @bin bin/scamper-tracelb
 @mode
+include/libscamperctrl.h
 include/scamper_addr.h
 include/scamper_dealias.h
 include/scamper_file.h
@@ -46,6 +47,9 @@ include/scamper_sting.h
 include/scamper_tbit.h
 include/scamper_trace.h
 include/scamper_tracelb.h
+@static-lib lib/libscamperctrl.a
+lib/libscamperctrl.la
+@lib lib/libscamperctrl.so.${LIBscamperctrl_VERSION}
 @static-lib lib/libscamperfile.a
 lib/libscamperfile.la
 @lib lib/libscamperfile.so.${LIBscamperfile_VERSION}
@@ -74,5 +78,6 @@ lib/libscamperfile.la
 @man man/man1/sc_wartsfilter.1
 @man man/man1/sc_wartsfix.1
 @man man/man1/scamper.1
+@man man/man3/libscamperctrl.3
 @man man/man3/libscamperfile.3
 @man man/man5/warts.5
