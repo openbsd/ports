@@ -12,6 +12,9 @@ PKG_ARCH=		*
 NO_BUILD=		Yes
 NO_TEST=		Yes
 
+# explicit because of NO_BUILD
+MODPY_BUILDDEP=		Yes
+
 MODPY_ADJ_FILES=	control.py files.py my_setup.py options.py \
 			partition_input.py platforms.py prover9-mace4.py \
 			utilities.py wx_utilities.py
