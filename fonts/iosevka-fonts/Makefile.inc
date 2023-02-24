@@ -1,12 +1,12 @@
-V =			    11.3.0
+V =		19.0.1
 CATEGORIES =	fonts x11
-HOMEPAGE =		https://github.com/be5invis/iosevka
+HOMEPAGE =	https://github.com/be5invis/Iosevka
 MAINTAINER =	Edd Barrett <edd@openbsd.org>
 
 # SIL OFL 1.1
 PERMIT_PACKAGE =Yes
 
-MASTER_SITES =	https://github.com/be5invis/iosevka/releases/download/v${V}/
+MASTER_SITES =	https://github.com/be5invis/Iosevka/releases/download/v${V}/
 EXTRACT_SUFX =	.zip
 
 NO_BUILD =		Yes
