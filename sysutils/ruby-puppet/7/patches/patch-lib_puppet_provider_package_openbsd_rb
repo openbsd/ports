@@ -4,6 +4,8 @@
   but skipping the % un-ambiguity pkg names
 - Bail out on shortform PKG_PATH (i.e. 'ftp.openbsd.org')
 - pkg.conf is gone
+- properly handle packages with multiple versions and flavors,
+  i.e. postfix-XXX-flavor
 
 
 Index: lib/puppet/provider/package/openbsd.rb
@@ -158,16 +160,25 @@ Index: lib/puppet/provider/package/openbsd.rb
    end
  
    def get_full_name(latest = false)
-@@ -177,11 +134,12 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+@@ -177,11 +134,20 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
      # installing with 'latest', we do need to handle the flavors. This is
      # done so we can feed pkg_add(8) the full package name to install to
      # prevent ambiguity.
 -    if latest && resource[:flavor]
-+    if resource[:flavor]
-       "#{resource[:name]}--#{resource[:flavor]}"
+-      "#{resource[:name]}--#{resource[:flavor]}"
 -    elsif latest
 -      # Don't depend on get_version for updates.
 -      @resource[:name]
++    if resource[:flavor]
++      # If :ensure contains a version, use that instead of looking it up.
++      # This allows for installing packages with the same stem, but multiple
++      # version such as postfix-VERSION-flavor.
++      if @resource[:ensure].to_s =~ /(\d[^-]*)$/
++        use_version = @resource[:ensure]
++      else
++        use_version = ''
++      end      
++      "#{resource[:name]}-#{use_version}-#{resource[:flavor]}"
 +    elsif resource[:name].to_s.match(/[a-z0-9]%[0-9a-z]/i)
 +        "#{resource[:name]}"
 +    elsif not latest
@@ -175,7 +186,7 @@ Index: lib/puppet/provider/package/openbsd.rb
      else
        # If :ensure contains a version, use that instead of looking it up.
        # This allows for installing packages with the same stem, but multiple
-@@ -192,32 +150,42 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+@@ -192,32 +158,42 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
          use_version = get_version
        end
  
@@ -236,7 +247,7 @@ Index: lib/puppet/provider/package/openbsd.rb
    rescue Puppet::ExecutionFailure
      return nil
    end
-@@ -236,7 +204,7 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+@@ -236,7 +212,7 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
    end
  
    def uninstall_options
