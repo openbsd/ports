@@ -61,6 +61,6 @@ do-install:
 		--ignore-installed \
 		--no-deps ${WRKSRC}/target/wheels/*.whl
 
-.include "modules.inc"
+.include "crates.inc"
 
 .include <bsd.port.mk>

@@ -24,6 +24,6 @@ CONFIGURE_STYLE =cargo
 BUILD_DEPENDS =	security/rust-ring
 LIB_DEPENDS =	archivers/bzip2
 
-.include "modules.inc"
+.include "crates.inc"
 
 .include <bsd.port.mk>
