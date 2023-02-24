@@ -1,8 +1,6 @@
 @conflict py-PySMT-<0.8.0p1
 @pkgpath math/py-pysmt
-bin/pysmt
 bin/pysmt-install
-bin/pysmt-shell
 lib/python${MODPY_VERSION}/site-packages/PySMT-${MODPY_EGG_VERSION}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/PySMT-${MODPY_EGG_VERSION}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/PySMT-${MODPY_EGG_VERSION}.dist-info/METADATA
@@ -12,9 +10,12 @@ lib/python${MODPY_VERSION}/site-packages/PySMT-${MODPY_EGG_VERSION}.dist-info/en
 lib/python${MODPY_VERSION}/site-packages/PySMT-${MODPY_EGG_VERSION}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pysmt/
 lib/python${MODPY_VERSION}/site-packages/pysmt/__init__.py
+lib/python${MODPY_VERSION}/site-packages/pysmt/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pysmt/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pysmt/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pysmt/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pysmt/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pysmt/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pysmt/${MODPY_PYCACHE}configuration.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pysmt/${MODPY_PYCACHE}configuration.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pysmt/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -81,8 +82,6 @@ lib/python${MODPY_VERSION}/site-packages/pysmt/cmd/installers/${MODPY_PYCACHE}bt
 lib/python${MODPY_VERSION}/site-packages/pysmt/cmd/installers/${MODPY_PYCACHE}btor.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pysmt/cmd/installers/${MODPY_PYCACHE}cvc4.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pysmt/cmd/installers/${MODPY_PYCACHE}cvc4.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pysmt/cmd/installers/${MODPY_PYCACHE}cvc4gpl.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/pysmt/cmd/installers/${MODPY_PYCACHE}cvc4gpl.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pysmt/cmd/installers/${MODPY_PYCACHE}msat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pysmt/cmd/installers/${MODPY_PYCACHE}msat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pysmt/cmd/installers/${MODPY_PYCACHE}pico.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -95,7 +94,6 @@ lib/python${MODPY_VERSION}/site-packages/pysmt/cmd/installers/base.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/cmd/installers/bdd.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/cmd/installers/btor.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/cmd/installers/cvc4.py
-lib/python${MODPY_VERSION}/site-packages/pysmt/cmd/installers/cvc4gpl.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/cmd/installers/msat.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/cmd/installers/pico.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/cmd/installers/yices.py
@@ -132,6 +130,8 @@ lib/python${MODPY_VERSION}/site-packages/pysmt/smtlib/${MODPY_PYCACHE}script.${M
 lib/python${MODPY_VERSION}/site-packages/pysmt/smtlib/${MODPY_PYCACHE}script.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pysmt/smtlib/${MODPY_PYCACHE}solver.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pysmt/smtlib/${MODPY_PYCACHE}solver.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pysmt/smtlib/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pysmt/smtlib/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pysmt/smtlib/annotations.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/smtlib/commands.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/smtlib/parser/
@@ -145,6 +145,7 @@ lib/python${MODPY_VERSION}/site-packages/pysmt/smtlib/parser/parser.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/smtlib/printers.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/smtlib/script.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/smtlib/solver.py
+lib/python${MODPY_VERSION}/site-packages/pysmt/smtlib/utils.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/solvers/
 lib/python${MODPY_VERSION}/site-packages/pysmt/solvers/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pysmt/solvers/${MODPY_PYCACHE}/
@@ -178,8 +179,6 @@ lib/python${MODPY_VERSION}/site-packages/pysmt/solvers/${MODPY_PYCACHE}yices.${M
 lib/python${MODPY_VERSION}/site-packages/pysmt/solvers/${MODPY_PYCACHE}yices.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pysmt/solvers/${MODPY_PYCACHE}z3.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pysmt/solvers/${MODPY_PYCACHE}z3.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pysmt/solvers/${MODPY_PYCACHE}z3_flymake.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/pysmt/solvers/${MODPY_PYCACHE}z3_flymake.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pysmt/solvers/bdd.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/solvers/btor.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/solvers/cvc4.py
@@ -194,7 +193,6 @@ lib/python${MODPY_VERSION}/site-packages/pysmt/solvers/smtlib.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/solvers/solver.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/solvers/yices.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/solvers/z3.py
-lib/python${MODPY_VERSION}/site-packages/pysmt/solvers/z3_flymake.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/substituter.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/__init__.py
@@ -247,6 +245,8 @@ lib/python${MODPY_VERSION}/site-packages/pysmt/test/${MODPY_PYCACHE}test_models.
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/${MODPY_PYCACHE}test_models.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/${MODPY_PYCACHE}test_native_qe.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/${MODPY_PYCACHE}test_native_qe.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pysmt/test/${MODPY_PYCACHE}test_nia.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pysmt/test/${MODPY_PYCACHE}test_nia.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/${MODPY_PYCACHE}test_nlira.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/${MODPY_PYCACHE}test_nlira.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/${MODPY_PYCACHE}test_oracles.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -297,12 +297,12 @@ lib/python${MODPY_VERSION}/site-packages/pysmt/test/smtlib/${MODPY_PYCACHE}test_
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/smtlib/${MODPY_PYCACHE}test_generic_wrapper.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/smtlib/${MODPY_PYCACHE}test_griggio.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/smtlib/${MODPY_PYCACHE}test_griggio.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pysmt/test/smtlib/${MODPY_PYCACHE}test_model_validation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pysmt/test/smtlib/${MODPY_PYCACHE}test_model_validation.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/smtlib/${MODPY_PYCACHE}test_parser_examples.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/smtlib/${MODPY_PYCACHE}test_parser_examples.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/smtlib/${MODPY_PYCACHE}test_parser_extensibility.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/smtlib/${MODPY_PYCACHE}test_parser_extensibility.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pysmt/test/smtlib/${MODPY_PYCACHE}test_parser_invalid.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/pysmt/test/smtlib/${MODPY_PYCACHE}test_parser_invalid.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/smtlib/${MODPY_PYCACHE}test_parser_lra.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/smtlib/${MODPY_PYCACHE}test_parser_lra.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/smtlib/${MODPY_PYCACHE}test_parser_qf_arrays.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -317,6 +317,8 @@ lib/python${MODPY_VERSION}/site-packages/pysmt/test/smtlib/${MODPY_PYCACHE}test_
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/smtlib/${MODPY_PYCACHE}test_parser_qf_nia.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/smtlib/${MODPY_PYCACHE}test_parser_qf_nra.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/smtlib/${MODPY_PYCACHE}test_parser_qf_nra.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pysmt/test/smtlib/${MODPY_PYCACHE}test_parser_qf_uf.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pysmt/test/smtlib/${MODPY_PYCACHE}test_parser_qf_uf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/smtlib/${MODPY_PYCACHE}test_parser_qf_ufbv.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/smtlib/${MODPY_PYCACHE}test_parser_qf_ufbv.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/smtlib/${MODPY_PYCACHE}test_parser_type_error.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -328,9 +330,9 @@ lib/python${MODPY_VERSION}/site-packages/pysmt/test/smtlib/test_annotations.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/smtlib/test_fuzzed.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/smtlib/test_generic_wrapper.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/smtlib/test_griggio.py
+lib/python${MODPY_VERSION}/site-packages/pysmt/test/smtlib/test_model_validation.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/smtlib/test_parser_examples.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/smtlib/test_parser_extensibility.py
-lib/python${MODPY_VERSION}/site-packages/pysmt/test/smtlib/test_parser_invalid.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/smtlib/test_parser_lra.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/smtlib/test_parser_qf_arrays.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/smtlib/test_parser_qf_lia.py
@@ -338,6 +340,7 @@ lib/python${MODPY_VERSION}/site-packages/pysmt/test/smtlib/test_parser_qf_lira.p
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/smtlib/test_parser_qf_lra.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/smtlib/test_parser_qf_nia.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/smtlib/test_parser_qf_nra.py
+lib/python${MODPY_VERSION}/site-packages/pysmt/test/smtlib/test_parser_qf_uf.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/smtlib/test_parser_qf_ufbv.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/smtlib/test_parser_type_error.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/smtlib/test_smtlibscript.py
@@ -363,6 +366,7 @@ lib/python${MODPY_VERSION}/site-packages/pysmt/test/test_lira.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/test_logics.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/test_models.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/test_native_qe.py
+lib/python${MODPY_VERSION}/site-packages/pysmt/test/test_nia.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/test_nlira.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/test_oracles.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/test_portfolio.py

@@ -1,9 +1,8 @@
 COMMENT =		library for SMT formulae manipulation and solving
 
-MODPY_EGG_VERSION =	0.8.0
+MODPY_EGG_VERSION =	0.9.5
 DISTNAME =		PySMT-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		6
 
 CATEGORIES =		math
 
@@ -23,7 +22,14 @@ FLAVOR =		python3
 # Explicitly not adding RUN_DEPENDS on all the supported
 # solvers. That would beat the point of this library.
 # Currently supported and ported is math/z3.
+
+# Not needed as of version 0.9.5, but devel/angr/py-claripy
+# still depends on it being there at run time. We can likely
+# shuffle things around following an update of angr.
 RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR}
+
+# added for tests
+PORTHOME =		${WRKDIR}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${MODPY_PY_PREFIX}pysmt/
