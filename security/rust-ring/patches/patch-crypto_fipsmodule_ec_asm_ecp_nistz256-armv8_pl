@@ -1,0 +1,109 @@
+Index: crypto/fipsmodule/ec/asm/ecp_nistz256-armv8.pl
+--- crypto/fipsmodule/ec/asm/ecp_nistz256-armv8.pl.orig
++++ crypto/fipsmodule/ec/asm/ecp_nistz256-armv8.pl
+@@ -97,7 +97,7 @@ my ($acc6,$acc7)=($ap,$bp);	# used in __ecp_nistz256_s
+ $code.=<<___;
+ #include <GFp/arm_arch.h>
+ 
+-.text
++.section .rodata
+ .align	5
+ .Lpoly:
+ .quad	0xffffffffffffffff,0x00000000ffffffff,0x0000000000000000,0xffffffff00000001
+@@ -106,6 +106,7 @@ $code.=<<___;
+ .Lone:
+ .quad	1,0,0,0
+ .asciz	"ECP_NISTZ256 for ARMv8, CRYPTOGAMS by <appro\@openssl.org>"
++.text
+ 
+ // void	GFp_nistz256_mul_mont(BN_ULONG x0[4],const BN_ULONG x1[4],
+ //					     const BN_ULONG x2[4]);
+@@ -120,8 +121,10 @@ GFp_nistz256_mul_mont:
+ 	ldr	$bi,[$bp]		// bp[0]
+ 	ldp	$a0,$a1,[$ap]
+ 	ldp	$a2,$a3,[$ap,#16]
+-	ldr	$poly1,.Lpoly+8
+-	ldr	$poly3,.Lpoly+24
++	adrp	$poly3,.Lpoly
++	add	$poly3,$poly3,:lo12:.Lpoly
++	ldr	$poly1,[$poly3,#8]
++	ldr	$poly3,[$poly3,#24]
+ 
+ 	bl	__ecp_nistz256_mul_mont
+ 
+@@ -141,8 +144,10 @@ GFp_nistz256_sqr_mont:
+ 
+ 	ldp	$a0,$a1,[$ap]
+ 	ldp	$a2,$a3,[$ap,#16]
+-	ldr	$poly1,.Lpoly+8
+-	ldr	$poly3,.Lpoly+24
++	adrp	$poly3,.Lpoly
++	add	$poly3,$poly3,:lo12:.Lpoly
++	ldr	$poly1,[$poly3,#8]
++	ldr	$poly3,[$poly3,#24]
+ 
+ 	bl	__ecp_nistz256_sqr_mont
+ 
+@@ -164,8 +169,10 @@ GFp_nistz256_add:
+ 	ldp	$t0,$t1,[$bp]
+ 	ldp	$acc2,$acc3,[$ap,#16]
+ 	ldp	$t2,$t3,[$bp,#16]
+-	ldr	$poly1,.Lpoly+8
+-	ldr	$poly3,.Lpoly+24
++	adrp	$poly3,.Lpoly
++	add	$poly3,$poly3,:lo12:.Lpoly
++	ldr	$poly1,[$poly3,#8]
++	ldr	$poly3,[$poly3,#24]
+ 
+ 	bl	__ecp_nistz256_add
+ 
+@@ -186,8 +193,10 @@ GFp_nistz256_neg:
+ 	mov	$acc1,xzr
+ 	mov	$acc2,xzr
+ 	mov	$acc3,xzr
+-	ldr	$poly1,.Lpoly+8
+-	ldr	$poly3,.Lpoly+24
++	adrp	$poly3,.Lpoly
++	add	$poly3,$poly3,:lo12:.Lpoly
++	ldr	$poly1,[$poly3,#8]
++	ldr	$poly3,[$poly3,#24]
+ 
+ 	bl	__ecp_nistz256_sub_from
+ 
+@@ -563,9 +572,11 @@ GFp_nistz256_point_double:
+ 	 mov	$rp_real,$rp
+ 	ldp	$acc2,$acc3,[$ap,#48]
+ 	 mov	$ap_real,$ap
+-	 ldr	$poly1,.Lpoly+8
++	 adrp	$poly3,.Lpoly
++	 add	$poly3,$poly3,:lo12:.Lpoly
++	 ldr	$poly1,[$poly3,#8]
+ 	mov	$t0,$acc0
+-	 ldr	$poly3,.Lpoly+24
++	 ldr	$poly3,[$poly3,#24]
+ 	mov	$t1,$acc1
+ 	 ldp	$a0,$a1,[$ap_real,#64]	// forward load for p256_sqr_mont
+ 	mov	$t2,$acc2
+@@ -718,8 +729,10 @@ GFp_nistz256_point_add_affine:
+ 	mov	$rp_real,$rp
+ 	mov	$ap_real,$ap
+ 	mov	$bp_real,$bp
+-	ldr	$poly1,.Lpoly+8
+-	ldr	$poly3,.Lpoly+24
++	adrp	$poly3,.Lpoly
++	add	$poly3,$poly3,:lo12:.Lpoly
++	ldr	$poly1,[$poly3,#8]
++	ldr	$poly3,[$poly3,#24]
+ 
+ 	ldp	$a0,$a1,[$ap,#64]	// in1_z
+ 	ldp	$a2,$a3,[$ap,#64+16]
+@@ -870,7 +883,8 @@ $code.=<<___;
+ 	stp	$acc2,$acc3,[$rp_real,#$i+16]
+ ___
+ $code.=<<___	if ($i == 0);
+-	adr	$bp_real,.Lone_mont-64
++	adrp	$bp_real,.Lone_mont-64
++	add	$bp_real,$bp_real,:lo12:.Lone_mont-64
+ ___
+ }
+ $code.=<<___;
