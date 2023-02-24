@@ -1,7 +1,7 @@
 COMMENT=		general-purpose utility library
 
 GNOME_PROJECT=		glib
-GNOME_VERSION=		2.74.5
+GNOME_VERSION=		2.74.6
 PKGNAME=		${DISTNAME:S/glib/glib2/}
 
 CATEGORIES=		devel
