@@ -5,7 +5,7 @@ Index: crypto/chacha/asm/chacha-x86_64.pl
  
  .extern GFp_ia32cap_P
  
-+.rodata
++.section .rodata
  .align	64
  .Lzero:
  .long	0,0,0,0
@@ -13,7 +13,7 @@ Index: crypto/chacha/asm/chacha-x86_64.pl
  .Lsixteen:
  .long	16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16
  .asciz	"ChaCha20 for x86_64, CRYPTOGAMS by <appro\@openssl.org>"
-+.previous
++.text
  ___
  
  sub AUTOLOAD()          # thunk [simplified] 32-bit style perlasm

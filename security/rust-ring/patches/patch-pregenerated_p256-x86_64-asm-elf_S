@@ -6,7 +6,7 @@ Index: pregenerated/p256-x86_64-asm-elf.S
  .hidden GFp_ia32cap_P
  
 -
-+.rodata
++.section .rodata
  .align	64
  .Lpoly:
  .quad	0xffffffffffffffff, 0x00000000ffffffff, 0x0000000000000000, 0xffffffff00000001
@@ -15,7 +15,7 @@ Index: pregenerated/p256-x86_64-asm-elf.S
  .LordK:
  .quad	0xccd1c8aaee00bc4f
 -
-+.previous
++.text
  
  
  .globl	GFp_nistz256_add
