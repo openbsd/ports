@@ -1,6 +1,6 @@
 COMMENT =	DBI driver for CSV files
 
-DISTNAME =	DBD-CSV-0.58
+DISTNAME =	DBD-CSV-0.60
 EXTRACT_SUFX =	.tgz
 CATEGORIES =	databases
 MODULES =	cpan
