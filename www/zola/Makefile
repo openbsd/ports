@@ -6,7 +6,7 @@ COMMENT =	static site generator
 GH_ACCOUNT =	getzola
 GH_PROJECT =	zola
 GH_TAGNAME =	v0.16.1
-REVISION =	3
+REVISION =	4
 
 HOMEPAGE =	https://www.getzola.org
 
