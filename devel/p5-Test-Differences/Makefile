@@ -1,6 +1,6 @@
-COMMENT =	test and show differences in strings and data structures
+COMMENT =	test strings and data structures and show differences if not
 
-DISTNAME =	Test-Differences-0.68
+DISTNAME =	Test-Differences-0.69
 CATEGORIES =	devel
 MODULES =	cpan
 PKG_ARCH =	*
