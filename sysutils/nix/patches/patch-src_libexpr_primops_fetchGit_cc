@@ -1,5 +1,5 @@
 Need sys/wait.h for WIFEXITED and WEXITSTATUS
-Use gtar(1) not tar(1) due to dynamic compression support
+Make tar(1) read from stdin not default /dev/rst0
 
 Index: src/libexpr/primops/fetchGit.cc
 --- src/libexpr/primops/fetchGit.cc.orig
@@ -17,7 +17,7 @@ Index: src/libexpr/primops/fetchGit.cc
      AutoDelete delTmpDir(tmpDir, true);
  
 -    runProgram("tar", true, { "x", "-C", tmpDir }, tar);
-+    runProgram("gtar", true, { "x", "-C", tmpDir }, tar);
++    runProgram("tar", true, { "-xf-", "-C", tmpDir }, tar);
  
      gitInfo.storePath = store->addToStore(name, tmpDir);
  
