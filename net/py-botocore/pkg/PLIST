@@ -2234,6 +2234,11 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/timestream-write/2018-11-
 lib/python${MODPY_VERSION}/site-packages/botocore/data/timestream-write/2018-11-01/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/timestream-write/2018-11-01/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/timestream-write/2018-11-01/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/tnb/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/tnb/2008-10-21/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/tnb/2008-10-21/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/tnb/2008-10-21/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/tnb/2008-10-21/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/transcribe/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/transcribe/2017-10-26/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/transcribe/2017-10-26/endpoint-rule-set-1.json
