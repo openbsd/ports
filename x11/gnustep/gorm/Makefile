@@ -1,11 +1,14 @@
 COMMENT=	GNUstep graphical object relationship modeller
 
-DISTNAME=	gorm-1.2.28
-REVISION =	0
+GH_TAGNAME=     1.3.1
+GH_ACCOUNT=     gnustep
+GH_PROJECT=     apps-gorm
+DISTNAME=       gorm-${GH_TAGNAME}
 HOMEPAGE=	http://www.gnustep.org/experience/Gorm.html
-MASTER_SITES=	${MASTER_SITE_GNUSTEP}dev-apps/
+#MASTER_SITES=	${MASTER_SITE_GNUSTEP}dev-apps/
+MASTER_SITES=	https://github.com/gnustep/apps-gorm/releases/download/gorm-1_3_1/
 
-SHARED_LIBS=	GormCore		0.1 \
+SHARED_LIBS=	GormCore		0.2 \
 		GormPrefs		1.0 \
 		Gorm			0.0 \
 		GormObjCHeaderParser 	0.0
@@ -14,6 +17,8 @@ CATEGORIES=	devel
 
 MODULES=	x11/gnustep
 WANTLIB += ${COMPILER_LIBCXX}
+
+WRKDIST=	${WRKDIR}/${DISTNAME}
 
 MAKE_FLAGS+=	libGormObjCHeaderParser_INTERFACE_VERSION=${LIBGormObjCHeaderParser_VERSION}
 MAKE_FLAGS+=	GormPrefs_INTERFACE_VERSION=${LIBGormPrefs_VERSION}
