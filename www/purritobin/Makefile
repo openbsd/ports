@@ -1,13 +1,12 @@
 COMMENT =	minimalistic command line pastebin
 PKGNAME =	${DISTNAME:L}
-REVISION =	2
 CATEGORIES =	www net
 
 GH_ACCOUNT =	PurritoBin
 GH_PROJECT =	PurritoBin
 GH_TAGNAME =	0.6.7
 
-REVISION =	0
+REVISION =	3
 
 HOMEPAGE =	https://bsd.ac/
 MAINTAINER =	Aisha Tammy <aisha@openbsd.org>
