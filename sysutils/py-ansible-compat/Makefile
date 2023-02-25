@@ -1,6 +1,6 @@
 COMMENT=	functions for working with Ansible from Python
 
-MODPY_EGG_VERSION=	2.2.7
+MODPY_EGG_VERSION=	3.0.1
 DISTNAME=	ansible-compat-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 
