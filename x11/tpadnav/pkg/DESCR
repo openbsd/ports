@@ -1,0 +1,2 @@
+tpadnav generates XF86XK_Back and XF86XK_Forward keyboard events
+in response to two-finger swiping left or right on a touchpad.
