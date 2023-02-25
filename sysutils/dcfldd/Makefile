@@ -2,7 +2,7 @@ COMMENT=		GNU dd with added forensic/security features
 
 GH_ACCOUNT=		resurrecting-open-source-projects
 GH_PROJECT=		dcfldd
-GH_TAGNAME=		v1.7.1
+GH_TAGNAME=		v1.9
 
 CATEGORIES=		sysutils
 
