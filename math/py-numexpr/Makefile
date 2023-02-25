@@ -1,10 +1,9 @@
 COMMENT =		fast numerical expression evaluator for NumPy
 
-MODPY_EGG_VERSION =	2.8.3
+MODPY_EGG_VERSION =	2.8.4
 DISTNAME =		numexpr-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
-REVISION =		1
 
 # MIT
 PERMIT_PACKAGE =	Yes
@@ -19,9 +18,7 @@ FLAVOR =		python3
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
-MODPY_PYTEST_ARGS =	build/lib.openbsd-${OSREV}-${ARCH}-cpython-${MODPY_MAJORMINOR}
-
-FIX_CRLF_FILES =	pyproject.toml
+MODPY_TEST_DIR=		${WRKSRC}/build/lib*
 
 RUN_DEPENDS =		math/py-numpy${MODPY_FLAVOR} \
 			sysutils/py-packaging${MODPY_FLAVOR}
