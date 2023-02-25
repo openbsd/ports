@@ -107,6 +107,7 @@ ${LIBDIR}/Resources/cheader.template
 ${LIBDIR}/Resources/class.template
 ${LIBDIR}/Resources/gsmarkup.template
 ${LIBDIR}/Resources/header.template
+${LIBDIR}/Resources/ocppclass.template
 ${LIBDIR}/Resources/postamble.template
 ${LIBDIR}/Resources/protocol.template
 @lib ${LIBDIR}/libProjectCenter.so.${LIBProjectCenter_VERSION}
@@ -268,6 +269,7 @@ libexec/GNUstep/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/FileH
 libexec/GNUstep/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/FileHH.tiff
 libexec/GNUstep/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/FileM.tiff
 libexec/GNUstep/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/FileMH.tiff
+libexec/GNUstep/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/FileMM.tiff
 libexec/GNUstep/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/Info-gnustep.plist
 libexec/GNUstep/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/Info.table
 libexec/GNUstep/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/LineJumper.gorm/
