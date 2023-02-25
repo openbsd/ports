@@ -2,7 +2,7 @@ COMMENT =	database designed to make SQL scalable for time-series data
 
 GH_ACCOUNT =	timescale
 GH_PROJECT =	timescaledb
-GH_TAGNAME =	2.9.3
+GH_TAGNAME =	2.10.0
 
 CATEGORIES =	databases
 HOMEPAGE =	https://www.timescale.com/
