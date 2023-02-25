@@ -1,7 +1,7 @@
 COMMENT =		abstraction layer for constraint solvers
 
 ANGR_PYTHON_MODULE =	claripy
-REVISION =		3
+REVISION =		4
 
 # tests write here
 PORTHOME =		${WRKDIR}
@@ -10,6 +10,7 @@ PORTHOME =		${WRKDIR}
 RUN_DEPENDS =		devel/angr/py-z3-solver>=4.8.9.0 \
 			devel/py-cachetools${MODPY_FLAVOR} \
 			devel/py-future${MODPY_FLAVOR} \
+			devel/py-six${MODPY_FLAVOR} \
 			math/py-pysmt${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
