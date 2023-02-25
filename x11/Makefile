@@ -310,6 +310,7 @@
      SUBDIR += tktable
      SUBDIR += tktray
      SUBDIR += tktreectrl
+     SUBDIR += tpadnav
      SUBDIR += transset-df
      SUBDIR += trayer
      SUBDIR += treewm
