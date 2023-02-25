@@ -1,6 +1,6 @@
 COMMENT =		data analysis and manipulation library
 
-MODPY_EGG_VERSION =	1.5.2
+MODPY_EGG_VERSION =	1.5.3
 DISTNAME =		pandas-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
