@@ -1,10 +1,11 @@
---- libusb/libusb.h.orig	Sat Sep 10 11:00:40 2016
-+++ libusb/libusb.h	Sat Sep 10 11:00:56 2016
-@@ -58,6 +58,7 @@ typedef unsigned __int32  uint32_t;
+Index: libusb/libusb.h
+--- libusb/libusb.h.orig
++++ libusb/libusb.h
+@@ -47,6 +47,7 @@ typedef SSIZE_T ssize_t;
+ #if !defined(_MSC_VER)
  #include <sys/time.h>
  #endif
- 
 +#include <sys/select.h> /* timeval */
  #include <time.h>
- #include <limits.h>
  
+ #if defined(__STDC_VERSION__) && (__STDC_VERSION__ >= 199901L)
