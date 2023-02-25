@@ -5,6 +5,7 @@ COMMENT=	high-performance regular expression matching library
 GH_ACCOUNT=	intel
 GH_PROJECT=	hyperscan
 GH_TAGNAME=	v5.4.0
+REVISION=	0
 
 SHARED_LIBS += hs		0.0
 SHARED_LIBS += hs_runtime	0.0
@@ -21,6 +22,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${COMPILER_LIBCXX} c m pcap sqlite3
 
 COMPILER=	base-clang ports-gcc
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 FLAVORS=	native ssse3 sse4_2 avx2
 FLAVOR?=	ssse3
