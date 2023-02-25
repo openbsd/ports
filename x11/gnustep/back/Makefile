@@ -1,13 +1,15 @@
 COMMENT=	GNUstep gui backend
 
-V =		0.29.0
-REVISION =	1
-DISTNAME=	gnustep-back-${V}
+GH_TAGNAME=     0.30.0
+GH_ACCOUNT=     gnustep
+GH_PROJECT=     libs-back
+DISTNAME=       gnustep-back-${GH_TAGNAME}
 
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.gnustep.org/
-MASTER_SITES=	${MASTER_SITE_GNUSTEP:=core/}
+#MASTER_SITES=	${MASTER_SITE_GNUSTEP:=core/}
+MASTER_SITES=   https://github.com/gnustep/libs-back/releases/download/back-0_30_0/
 
 MODULES =	x11/gnustep
 MODGNUSTEP_NEEDS_BACK=	No
@@ -18,8 +20,10 @@ WANTLIB += ${COMPILER_LIBCXX}
 
 LIB_DEPENDS=	graphics/cairo
 
-BACKENDV=	${V:C/([0-9])*[.]([0-9]*).*/\1\2/1}
+BACKENDV=	${GH_TAGNAME:C/([0-9])*[.]([0-9]*).*/\1\2/1}
 SUBST_VARS=	BACKENDV
+
+WRKDIST=	${WRKDIR}/${DISTNAME}
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lm"
