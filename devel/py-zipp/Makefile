@@ -1,9 +1,8 @@
 COMMENT=		backport of pathlib-compatible object wrapper for zip files
 
-MODPY_EGG_VERSION=	3.5.0
+MODPY_EGG_VERSION=	3.15.0
 DISTNAME=		zipp-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		2
 
 CATEGORIES=		devel
 
@@ -13,6 +12,10 @@ HOMEPAGE=		https://github.com/jaraco/zipp
 PERMIT_PACKAGE=		Yes
 
 MODULES=		lang/python
+
+# tests also need jaraco.itertools (not ported)
+TEST_DEPENDS=		devel/py-jaraco-functools${MODPY_FLAVOR} \
+			devel/py-more-itertools${MODPY_FLAVOR}
 
 MODPY_PI=		Yes
 MODPY_PYBUILD=		setuptools_scm
