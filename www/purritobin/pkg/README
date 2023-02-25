@@ -49,7 +49,7 @@ server "bsd.ac" {
 
 server "bsd.ac" {
 	alias "www.bsd.ac"
-	listen on $ext_if port $https_port
+	listen on $ext_if tls port $https_port
 	tls {
 		certificate "/etc/ssl/bsd.ac.crt"
 		key "/etc/ssl/private/bsd.ac.key"
