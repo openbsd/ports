@@ -2,7 +2,7 @@ COMMENT=		modern 3D graphics API
 
 GNOME_PROJECT=		cogl
 GNOME_VERSION=		1.22.8
-REVISION=		4
+REVISION=		5
 
 SHARED_LIBS +=  cogl                 3.2      # 24.3
 SHARED_LIBS +=  cogl-path            0.1      # 24.3
@@ -14,7 +14,7 @@ WANTLIB += fontconfig freetype fribidi gbm gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glapi glib-2.0 gmodule-2.0 gobject-2.0 graphite2 harfbuzz
 WANTLIB += iconv intl jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre2-8 pixman-1 png xcb xcb-dri2 xcb-dri3 xcb-present
-WANTLIB += xcb-render xcb-shm xcb-sync xcb-xfixes xshmfence z
+WANTLIB += xcb-randr xcb-render xcb-shm xcb-sync xcb-xfixes xshmfence z
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
