@@ -17,3 +17,4 @@ lib/python${MODPY_VERSION}/site-packages/ffmpeg_progress_yield/${MODPY_PYCACHE}_
 lib/python${MODPY_VERSION}/site-packages/ffmpeg_progress_yield/${MODPY_PYCACHE}ffmpeg_progress_yield.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ffmpeg_progress_yield/${MODPY_PYCACHE}ffmpeg_progress_yield.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ffmpeg_progress_yield/ffmpeg_progress_yield.py
+lib/python${MODPY_VERSION}/site-packages/ffmpeg_progress_yield/py.typed
