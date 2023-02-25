@@ -12,7 +12,7 @@ Index: src/mongo/util/processinfo_openbsd.cpp
  namespace mongo {
  
  ProcessInfo::ProcessInfo(ProcessId pid) : _pid(pid) {}
-@@ -195,9 +197,10 @@ bool ProcessInfo::supported() {
+@@ -191,9 +193,10 @@ bool ProcessInfo::supported() {
  }
  
  bool ProcessInfo::blockCheckSupported() {
@@ -24,7 +24,7 @@ Index: src/mongo/util/processinfo_openbsd.cpp
  bool ProcessInfo::blockInMemory(const void* start) {
      char x = 0;
      if (mincore((void*)alignToStartOfPage(start), getPageSize(), &x)) {
-@@ -223,6 +226,7 @@ bool ProcessInfo::pagesInMemory(const void* start, siz
+@@ -219,6 +222,7 @@ bool ProcessInfo::pagesInMemory(const void* start, siz
      }
      return true;
  }

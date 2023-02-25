@@ -18,7 +18,7 @@ Index: SConstruct
                 )
  
  # TODO: Remove these when hygienic builds are default.
-@@ -3410,7 +3411,7 @@ def doConfigure(myenv):
+@@ -3413,7 +3414,7 @@ def doConfigure(myenv):
          sslLibName = "ssl"
          cryptoLibName = "crypto"
          sslLinkDependencies = ["crypto", "dl"]
