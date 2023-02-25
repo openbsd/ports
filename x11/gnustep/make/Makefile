@@ -2,15 +2,15 @@
 
 COMMENT=	GNUstep makefile package
 
-DISTNAME =	gnustep-make-2.9.0
-REVISION=	0
 CATEGORIES=	devel x11/gnustep
-
+GH_TAGNAME=	2.9.1
+GH_ACCOUNT=	gnustep
+GH_PROJECT=	tools-make
+DISTNAME=	gnustep-make-${GH_TAGNAME}
 HOMEPAGE=	http://www.gnustep.org/
 
-MASTER_SITES=	http://ftp.gnustep.org/pub/gnustep/core/
-
 WANTLIB=	${COMPILER_LIBCXX}
+MASTER_SITES= 	https://github.com/gnustep/tools-make/releases/download/make-2_9_1/
 
 BUILD_DEPENDS =	x11/gnustep/libobjc2
 RUN_DEPENDS=	archivers/gtar
@@ -19,6 +19,8 @@ COMPILER =	base-clang
 
 USE_GMAKE=	Yes
 MAKE_FILE=	GNUmakefile
+
+WRKDIST=	${WRKDIR}/${DISTNAME}
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV =	ac_cv_prog_LATEX2HTML="" \

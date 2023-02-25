@@ -1,5 +1,6 @@
---- Instance/framework.make.orig	Fri Jul  8 15:09:17 2016
-+++ Instance/framework.make	Wed Apr 19 09:23:16 2017
+Index: Instance/framework.make
+--- Instance/framework.make.orig
++++ Instance/framework.make
 @@ -261,7 +261,7 @@ ifeq ($(findstring darwin, $(GNUSTEP_TARGET_OS)), darw
  VERSION_FRAMEWORK_LIBRARY_FILE = lib$(GNUSTEP_INSTANCE).$(VERSION)$(SHARED_LIBEXT)
  SONAME_FRAMEWORK_FILE = lib$(GNUSTEP_INSTANCE).$(INTERFACE_VERSION)$(SHARED_LIBEXT)
@@ -9,7 +10,7 @@
  SONAME_FRAMEWORK_FILE = $(FRAMEWORK_LIBRARY_FILE).$(INTERFACE_VERSION)
  endif
  
-@@ -564,13 +564,13 @@ $(GNUSTEP_BUILD_DIR)/$(GNUSTEP_INSTANCE).framework/$(G
+@@ -569,13 +569,13 @@ $(GNUSTEP_BUILD_DIR)/$(GNUSTEP_INSTANCE).framework/$(G
  $(GNUSTEP_BUILD_DIR)/$(GNUSTEP_INSTANCE).framework/$(GNUSTEP_TARGET_LDIR)/$(GNUSTEP_INSTANCE): $(GNUSTEP_BUILD_DIR)/$(GNUSTEP_INSTANCE).framework/$(GNUSTEP_TARGET_LDIR)
  ifeq ($(MAKE_CURRENT_VERSION),yes)
  	$(ECHO_NOTHING)cd $(GNUSTEP_BUILD_DIR)/$(GNUSTEP_INSTANCE).framework/$(GNUSTEP_TARGET_LDIR); \
@@ -27,7 +28,7 @@
  endif
  endif
  endif
-@@ -598,7 +598,7 @@ endif
+@@ -603,7 +603,7 @@ endif
  	$(LIB_LINK_CMD) || $(RM) $(FRAMEWORK_FILE) ; \
  	(cd $(LIB_LINK_OBJ_DIR); \
  	  $(RM_LN_S) $(GNUSTEP_INSTANCE); \
@@ -36,7 +37,7 @@
  	$(END_ECHO)
  
  ifeq ($(GNUSTEP_MAKE_PARALLEL_BUILDING), no)
-@@ -685,18 +685,14 @@ endif
+@@ -690,18 +690,14 @@ endif
  	$(RM_LN_S) $(FRAMEWORK_LIBRARY_FILE); \
  	$(RM_LN_S) $(SONAME_FRAMEWORK_FILE); \
  	$(RM_LN_S) $(VERSION_FRAMEWORK_LIBRARY_FILE); \
