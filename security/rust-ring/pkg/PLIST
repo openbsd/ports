@@ -1,3 +1,4 @@
+@conflict ring-*
 share/ring-0.16.20/
 share/ring-0.16.20/Cargo.toml
 share/ring-0.16.20/Cargo.toml.orig
