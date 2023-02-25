@@ -1,9 +1,11 @@
 COMMENT=	GNUstep base library
 
-DISTNAME=	gnustep-base-1.28.0
-REVISION=	5
+GH_TAGNAME=     1.29.0
+GH_ACCOUNT=     gnustep
+GH_PROJECT=     libs-base
+DISTNAME=       gnustep-base-${GH_TAGNAME}
 
-SHARED_LIBS=	gnustep-base 10.5
+SHARED_LIBS=	gnustep-base 10.6
 CATEGORIES=	devel
 
 LIBDIR=		lib/GNUstep/Libraries/gnustep-base/Versions/${LIBgnustep-base_VERSION}
@@ -19,7 +21,8 @@ WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += iberty
 .endif
 
-MASTER_SITES=	${MASTER_SITE_GNUSTEP:=core/}
+#MASTER_SITES=	${MASTER_SITE_GNUSTEP:=core/}
+MASTER_SITES=	https://github.com/gnustep/libs-base/releases/download/base-1_29_0/
 
 MODULES =	x11/gnustep
 MODGNUSTEP_NEEDS_GUI=	No
@@ -34,6 +37,8 @@ LIB_DEPENDS +=	converters/libiconv \
 		net/avahi,-libs \
 		net/curl \
 		x11/gnustep/libobjc2
+
+WRKDIST=	${WRKDIR}/${DISTNAME}
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	ac_cv_header_execinfo_h=false
