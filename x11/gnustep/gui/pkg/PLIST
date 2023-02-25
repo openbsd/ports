@@ -14,6 +14,7 @@ include/AppKit/DPSOperators.h
 include/AppKit/GMAppKit.h
 include/AppKit/GMArchiver.h
 include/AppKit/GSAnimator.h
+include/AppKit/GSAutoLayoutVFLParser.h
 include/AppKit/GSDisplayServer.h
 include/AppKit/GSDragView.h
 include/AppKit/GSEPSPrintOperation.h
@@ -53,7 +54,6 @@ include/AppKit/GSWindowDecorationView.h
 include/AppKit/GSXibElement.h
 include/AppKit/GSXibKeyedUnarchiver.h
 include/AppKit/GSXibLoading.h
-include/AppKit/GSXibObjectContainer.h
 include/AppKit/IMConnectors.h
 include/AppKit/IMCustomObject.h
 include/AppKit/IMLoading.h
@@ -130,6 +130,7 @@ include/AppKit/NSForm.h
 include/AppKit/NSFormCell.h
 include/AppKit/NSGestureRecognizer.h
 include/AppKit/NSGlyphGenerator.h
+include/AppKit/NSGlyphInfo.h
 include/AppKit/NSGradient.h
 include/AppKit/NSGraphics.h
 include/AppKit/NSGraphicsContext.h
@@ -237,6 +238,7 @@ include/AppKit/NSSpellServer.h
 include/AppKit/NSSplitView.h
 include/AppKit/NSSplitViewController.h
 include/AppKit/NSSplitViewItem.h
+include/AppKit/NSStackView.h
 include/AppKit/NSStatusBar.h
 include/AppKit/NSStatusBarButton.h
 include/AppKit/NSStatusItem.h
@@ -340,7 +342,6 @@ include/GNUstepGUI/GSWindowDecorationView.h
 include/GNUstepGUI/GSXibElement.h
 include/GNUstepGUI/GSXibKeyedUnarchiver.h
 include/GNUstepGUI/GSXibLoading.h
-include/GNUstepGUI/GSXibObjectContainer.h
 include/GNUstepGUI/IMConnectors.h
 include/GNUstepGUI/IMCustomObject.h
 include/GNUstepGUI/IMLoading.h
@@ -348,6 +349,7 @@ include/gnustep/gui/
 include/gnustep/gui/GMAppKit.h
 include/gnustep/gui/GMArchiver.h
 include/gnustep/gui/GSAnimator.h
+include/gnustep/gui/GSAutoLayoutVFLParser.h
 include/gnustep/gui/GSDisplayServer.h
 include/gnustep/gui/GSDragView.h
 include/gnustep/gui/GSEPSPrintOperation.h
@@ -387,7 +389,6 @@ include/gnustep/gui/GSWindowDecorationView.h
 include/gnustep/gui/GSXibElement.h
 include/gnustep/gui/GSXibKeyedUnarchiver.h
 include/gnustep/gui/GSXibLoading.h
-include/gnustep/gui/GSXibObjectContainer.h
 include/gnustep/gui/IMConnectors.h
 include/gnustep/gui/IMCustomObject.h
 include/gnustep/gui/IMLoading.h
@@ -705,6 +706,7 @@ libexec/GNUstep/GSSpeechServer.app/
 libexec/GNUstep/GSSpeechServer.app/Resources/
 libexec/GNUstep/GSSpeechServer.app/Resources/GSSpeechServer.desktop
 libexec/GNUstep/GSSpeechServer.app/Resources/Info-gnustep.plist
+libexec/GNUstep/GSSpeechServer.app/Resources/SpeechSynthesizer.png
 libexec/GNUstep/GSSpeechServer.app/stamp.make
 @man man/man1/gopen.1
 @man man/man1/make_services.1

@@ -3,7 +3,7 @@ use register_cmu_us_kal instead of register_cmu_us_kal16
 Index: Tools/speech/GNUmakefile
 --- Tools/speech/GNUmakefile.orig
 +++ Tools/speech/GNUmakefile
-@@ -21,8 +21,8 @@ GSSpeechServer_OBJC_FILES = \
+@@ -24,8 +24,8 @@ GSSpeechServer_OBJC_FILES = \
  
  
  ifeq ($(GSSPEECHENGINE), Flite)
