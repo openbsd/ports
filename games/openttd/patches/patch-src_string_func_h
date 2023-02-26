@@ -2,7 +2,7 @@ Don't use openttd's internal copy of strcasestr().
 Index: src/string_func.h
 --- src/string_func.h.orig
 +++ src/string_func.h
-@@ -260,7 +260,7 @@ static inline bool IsWhitespace(WChar c)
+@@ -268,7 +268,7 @@ static inline bool IsWhitespace(WChar c)
  #endif
  
  /* strcasestr is available for _GNU_SOURCE, BSD and some Apple */

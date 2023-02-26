@@ -3,7 +3,7 @@ Ours (4.2.3 at time of writing) is old and seemingly incompatible.
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -121,7 +121,6 @@ find_package(PNG)
+@@ -126,7 +126,6 @@ find_package(PNG)
  
  if(NOT OPTION_DEDICATED)
      if(NOT WIN32)
@@ -11,7 +11,7 @@ Index: CMakeLists.txt
          if(NOT APPLE)
              find_package(Freetype)
              find_package(SDL2)
-@@ -253,7 +252,6 @@ if(NOT OPTION_DEDICATED)
+@@ -263,7 +262,6 @@ if(NOT OPTION_DEDICATED)
      link_package(Fluidsynth)
      link_package(SDL)
      link_package(SDL2 TARGET SDL2::SDL2)
