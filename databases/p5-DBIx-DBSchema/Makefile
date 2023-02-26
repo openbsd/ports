@@ -1,10 +1,9 @@
 COMMENT=	database-independent schema objects
 
-DISTNAME=	DBIx-DBSchema-0.45
+DISTNAME =	DBIx-DBSchema-0.47
 CATEGORIES=	databases
 MODULES=	cpan
 PKG_ARCH=	*
-REVISION=	0
 
 # Perl
 PERMIT_PACKAGE=	Yes
