@@ -2,6 +2,7 @@ COMMENT=	Xfce4 desktop screenshot panel plugin
 
 XFCE_VERSION=	1.10.3
 XFCE_GOODIE=	xfce4-screenshooter
+REVISION=	0
 
 PORTROACH=	limitw:1,even
 
@@ -12,6 +13,9 @@ MODULES=	x11/xfce4
 
 LIB_DEPENDS=	x11/xfce4/xfce4-panel \
 		devel/libsoup3
+
+# Build picks up help2man automatically
+CONFIGURE_ENV +=	ac_cv_prog_HELP2MAN=
 
 MODXFCE_DESKTOP_FILE=	Yes
 MODXFCE_ICON_CACHE=	Yes
