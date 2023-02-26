@@ -2,7 +2,7 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	desktop sync client for Nextcloud
 
-V =		3.6.6
+V =		3.7.3
 DISTNAME =	nextcloudclient-${V}
 
 GH_ACCOUNT =	nextcloud
@@ -13,8 +13,8 @@ CATEGORIES =	net
 
 HOMEPAGE =	https://nextcloud.com
 
-SHARED_LIBS +=  nextcloudsync             8.1 # 3.6.6
-SHARED_LIBS +=  nextcloud_csync           2.2 # 3.6.0
+SHARED_LIBS +=  nextcloudsync             9.0 # 3.7.3
+SHARED_LIBS +=  nextcloud_csync           3.0 # 3.7.3
 SHARED_LIBS +=  nextcloudsync_vfs_suffix  0.1 # 3.6.6
 
 MAINTAINER =	Adriano Barbosa <barbosa.aob@gmail.com>
@@ -33,6 +33,7 @@ MODULES =		devel/cmake \
 			x11/qt5
 
 BUILD_DEPENDS =		devel/gettext,-tools \
+			devel/kf5/karchive \
 			x11/gnome/libcloudproviders
 
 # for converting svg icons to png

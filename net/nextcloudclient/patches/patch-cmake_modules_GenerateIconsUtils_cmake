@@ -1,9 +1,9 @@
-Index: src/gui/CMakeLists.txt
---- src/gui/CMakeLists.txt.orig
-+++ src/gui/CMakeLists.txt
-@@ -372,7 +372,7 @@ endif()
+Index: cmake/modules/GenerateIconsUtils.cmake
+--- cmake/modules/GenerateIconsUtils.cmake.orig
++++ cmake/modules/GenerateIconsUtils.cmake
+@@ -4,7 +4,7 @@
+ include(ECMAddAppIcon)
  
- # Generate png icons from svg
  find_program(SVG_CONVERTER
 -  NAMES inkscape inkscape.exe rsvg-convert
 +  NAMES rsvg-convert
