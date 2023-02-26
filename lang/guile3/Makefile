@@ -1,6 +1,8 @@
 # https://debbugs.gnu.org/cgi/bugreport.cgi?bug=26854#11
 BROKEN-powerpc = stage0 abort trap, bad prebuilt/32-bit-big-endian
 
+DPB_PROPERTIES =	parallel
+
 COMMENT=	GNU's Ubiquitous Intelligent Language for Extension
 
 VERSION=	3.0.9
