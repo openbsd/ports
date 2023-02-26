@@ -48,6 +48,10 @@ RUN_DEPENDS =		audio/timidity \
 CONFIGURE_ARGS =	-DCMAKE_INSTALL_BINDIR=bin \
 			-DCMAKE_INSTALL_DATADIR=share
 
+# Disable allegro support.
+# Ours (4.2.3 at time of writing) is old and seemingly incompatible.
+CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Allegro=ON
+
 NO_TEST=		Yes
 
 DOCSDIR=		${PREFIX}/share/doc/openttd
