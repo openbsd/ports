@@ -31,6 +31,7 @@ include/i2pd/I2PEndian.h
 include/i2pd/I2PService.h
 include/i2pd/I2PTunnel.h
 include/i2pd/Identity.h
+include/i2pd/KadDHT.h
 include/i2pd/LeaseSet.h
 include/i2pd/LittleBigEndian.h
 include/i2pd/Log.h
