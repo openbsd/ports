@@ -3,6 +3,7 @@ COMMENT=	open source clone of the game Transport Tycoon Deluxe
 V =		13.0
 DISTNAME =	openttd-$V-source
 PKGNAME =	openttd-$V
+REVISION =	0
 
 CATEGORIES=	games
 
@@ -33,6 +34,9 @@ LIB_DEPENDS=		archivers/lzo2 \
 			graphics/png \
 			textproc/icu4c \
 			archivers/xz
+
+# statically linked
+LIB_DEPENDS +=		devel/sdl2
 
 RUN_DEPENDS =		audio/timidity \
 			devel/desktop-file-utils \
