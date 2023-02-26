@@ -2,7 +2,7 @@ COMMENT = 	object for running system commands
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	System-Command-1.121
+DISTNAME =	System-Command-1.122
 CATEGORIES =	devel
 
 # perl
