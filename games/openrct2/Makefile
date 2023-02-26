@@ -26,6 +26,8 @@ MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
 
 MODULES =	devel/cmake
 
+BUILD_DEPENDS =	textproc/nlohmann-json
+
 LIB_DEPENDS =	archivers/libzip \
 		audio/speexdsp \
 		devel/sdl2 \
@@ -46,11 +48,6 @@ CONFIGURE_ARGS =	-DDOWNLOAD_OBJECTS=OFF \
 
 # Downloads things. See: https://github.com/OpenRCT2/OpenRCT2/issues/5710
 NO_TEST =	Yes
-
-# Work around some upstream lack of inclusion of needed includes
-post-extract:
-	mkdir -p ${WRKSRC}/nlohmann
-	mv ${WRKSRC}/json.hpp ${WRKSRC}/nlohmann
 
 pre-configure:
 	sed -i 's,/usr/local,${TRUEPREFIX},g' \
