@@ -123,7 +123,6 @@ ${P5SITE}/DBIx/Class/SQLAHacks/MySQL.pm
 ${P5SITE}/DBIx/Class/SQLAHacks/Oracle.pm
 ${P5SITE}/DBIx/Class/SQLAHacks/OracleJoins.pm
 ${P5SITE}/DBIx/Class/SQLAHacks/SQLite.pm
-${P5SITE}/DBIx/Class/SQLMaker/
 ${P5SITE}/DBIx/Class/SQLMaker.pm
 ${P5SITE}/DBIx/Class/SQLMaker/ACCESS.pm
 ${P5SITE}/DBIx/Class/SQLMaker/ClassicExtensions.pm

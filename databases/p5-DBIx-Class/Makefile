@@ -2,7 +2,7 @@ COMMENT =	extensible and flexible object relational mapper
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	DBIx-Class-0.082842
+DISTNAME =	DBIx-Class-0.082843
 CATEGORIES =	databases devel
 
 MAINTAINER =	Andrew Hewus Fresh <afresh1@openbsd.org>
@@ -70,7 +70,7 @@ MAKE_ENV =	RELEASE_TESTING=Yes \
 DATABASE =	dbix_class_test
 
 MODULES +=	databases/postgresql
-MODPOSTGRESQL_TEST_DBNAME =    ${DATABASE}
+MODPOSTGRESQL_TEST_DBNAME =	${DATABASE}
 MAKE_ENV +=	DBICTEST_PG_DSN='dbi:Pg:dbname=${DATABASE}' \
 		DBICTEST_PG_USER=${USER} \
 		DBICTEST_PG_PASS=1
