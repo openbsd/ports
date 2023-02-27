@@ -1,4 +1,5 @@
 MuPDF is a lightweight PDF and XPS viewer.
+It can also render EPUB, XHTML, CBZ, PNG, JPEG, GIF, and TIFF.
 
 The renderer in MuPDF is tailored for high quality anti-aliased
 graphics. It renders text with metrics and spacing accurate to within

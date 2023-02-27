@@ -4,6 +4,7 @@ COMMENT =	graphic library, pdf parser, viewer and utilities
 V =		1.21.1
 DISTNAME =	mupdf-$V-source
 PKGNAME =	mupdf-${V:S/-rc/rc/}
+REVISION =	0
 
 CATEGORIES =	textproc x11
 
