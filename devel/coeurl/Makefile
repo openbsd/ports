@@ -26,4 +26,6 @@ LIB_DEPENDS =	devel/libevent2 \
 # Run-time dependency doctest found: NO (tried pkgconfig and cmake)
 #CONFIGURE_ARGS +=	-Dtests=true
 
+TEST_IS_INTERACTIVE =	manually run ${WRKSRC}/scripts/run{,_tls}_testserver.sh
+
 .include <bsd.port.mk>
