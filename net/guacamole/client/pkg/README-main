@@ -60,9 +60,10 @@ guacamole-auth-ldap		LDAP authentication
 guacamole-auth-sso		OpenID/SAML/CAS authentication
 guacamole-auth-totp		TOTP two-factor authentication
 
-Also, not really an authentication plugin, but packaged in the same way:
+Also, other non-authentication plugins:
 
 guacamole-auth-quickconnect	Ad-hoc connections (direct URI entry)
+guacamole-history		History recording storage
 
 At startup, guacamole-client searches /etc/guacamole/extensions and loads
 any extensions discovered there. In common with standard practice for

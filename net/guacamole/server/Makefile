@@ -2,23 +2,26 @@ MASTER_SITES=	${MASTER_SITE_APACHE:=guacamole/$V/source/}
 DISTNAME=	guacamole-server-$V
 COMMENT=	clientless remote desktop gateway
 
-SHARED_LIBS +=	guac-client-kubernetes    0.0 # 0.0
-SHARED_LIBS +=	guac-client-rdp           0.0 # 0.0
-SHARED_LIBS +=	guac-client-ssh           0.0 # 0.0
-SHARED_LIBS +=	guac-client-vnc           0.0 # 0.0
+SHARED_LIBS +=	guac-client-kubernetes    1.0 # 0.0
+SHARED_LIBS +=	guac-client-rdp           1.0 # 0.0
+SHARED_LIBS +=	guac-client-ssh           1.0 # 0.0
+SHARED_LIBS +=	guac-client-vnc           1.0 # 0.0
+SHARED_LIBS +=	guac-terminal             0.0 # 0.0
 SHARED_LIBS +=	guac                      0.0 # 20.0
 
 WANTLIB += ${COMPILER_LIBCXX} X11 Xau Xdmcp Xext Xrender aom avahi-client
 WANTLIB += avahi-common avcodec avformat avutil brotlidec brotlienc
 WANTLIB += bz2 c cairo crypto cups dav1d dbus-1 epoll-shim execinfo
-WANTLIB += expat fontconfig freerdp-client2 freerdp2 freetype
-WANTLIB += gcrypt glib-2.0 gmp gnutls gobject-2.0 gpg-error gsm
-WANTLIB += harfbuzz hogweed iconv idn2 intl jpeg lzma lzo2 m mp3lame
-WANTLIB += nettle ogg opus p11-kit pango-1.0 pangocairo-1.0 pixman-1
-WANTLIB += png pulse sasl2 sndio speex ssh2 ssl swresample swscale
-WANTLIB += tasn1 theoradec theoraenc unistring usb-1.0 uuid vncclient
-WANTLIB += vorbis vorbisenc vpx webp websockets winpr2 x264 x265
-WANTLIB += xcb xcb-render xcb-shm xkbfile xml2 xvidcore z zstd
+WANTLIB += expat ffi fontconfig freerdp-client2 freerdp2 freetype
+WANTLIB += fribidi gcrypt gio-2.0 glib-2.0 gmodule-2.0 gmp gnutls
+WANTLIB += gobject-2.0 gpg-error graphite2 gsm harfbuzz hogweed
+WANTLIB += iconv idn2 intl jpeg lzma lzo2 m mp3lame nettle ogg
+WANTLIB += opus p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre2-8 pixman-1 png pulse sasl2 sndio speex ssh2 ssl
+WANTLIB += swresample swscale tasn1 theoradec theoraenc unistring
+WANTLIB += usb-1.0 uuid vncclient vorbis vorbisenc vpx webp websockets
+WANTLIB += winpr2 x264 x265 xcb xcb-render xcb-shm xkbfile xml2
+WANTLIB += xvidcore z zstd
 
 COMPILER=	base-clang ports-gcc
 

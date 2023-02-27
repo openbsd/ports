@@ -1,11 +1,11 @@
 MASTER_SITES=	${MASTER_SITE_APACHE:=guacamole/$V/binary/}
 DISTNAME=	guacamole-$V
 DISTFILES=	guacamole-$V.war
-REVISION-main=	0
 
 COMMENT-main=	clientless remote desktop gateway, web application
 COMMENT-duo=	Guacamole extension for Duo authentication
 COMMENT-header=	Guacamole extension for HTTP header authentication
+COMMENT-history=Guacamole extension for recording storage
 COMMENT-jdbc=	Guacamole extension for database authentication via JDBC
 COMMENT-json=	Guacamole extension for encrypted JSON authentication
 COMMENT-quickconnect=	Guacamole extension for URI-based connections
@@ -15,12 +15,13 @@ COMMENT-totp=	Guacamole extension for TOTP (time-based OTP)
 
 MULTI_PACKAGES=	-main
 # sso [cas, openid, saml]
-AUTHS=		duo header jdbc json quickconnect ldap sso totp
-.for a in ${AUTHS}
-MULTI_PACKAGES+= -$a
-DISTFILES+=	guacamole-auth-$a-$V.tar.gz
-EXTRACT_ONLY+=	guacamole-auth-$a-$V.tar.gz
-PKGNAME-$a=	guacamole-auth-$a-$V
+EXTS=		auth-duo auth-header auth-jdbc auth-json auth-quickconnect \
+		auth-ldap auth-sso auth-totp history-recording-storage
+.for a in ${EXTS}
+MULTI_PACKAGES+= -${a:S/auth-//:S/-recording-storage//}
+DISTFILES+=	guacamole-$a-$V.tar.gz
+EXTRACT_ONLY+=	guacamole-$a-$V.tar.gz
+PKGNAME-$a=	guacamole-$a-$V
 .endfor
 
 MASTER_SITES0=	https://
@@ -50,19 +51,19 @@ do-install:
 	${INSTALL_DATA} ${FILESDIR}/{guacamole.properties,user-mapping.xml} \
 	    ${PREFIX}/share/examples/guacamole/
 
-.for a in ${AUTHS}
+.for a in ${EXTS}
 	cd ${PREFIX}/share/guacamole/extensions; \
-	for i in `find ${WRKSRC}/guacamole-auth-$a-$V -name '*.jar'`; do \
+	for i in `find ${WRKSRC}/guacamole-$a-$V -name '*.jar'`; do \
 	    ${INSTALL_DATA} $$i `basename $$i | sed s/-$V//`; \
 	done
-	cd ${WRKSRC}/guacamole-auth-$a-$V; \
+	cd ${WRKSRC}/guacamole-$a-$V; \
 	[ -d doc ] && (cd doc; for i in `find . -type f`; do \
-		${INSTALL_DATA_DIR} ${PREFIX}/share/doc/guacamole-auth-$a/`dirname $$i`; \
-		${INSTALL_DATA} $$i ${PREFIX}/share/doc/guacamole-auth-$a/$$i; \
+		${INSTALL_DATA_DIR} ${PREFIX}/share/doc/guacamole-$a/`dirname $$i`; \
+		${INSTALL_DATA} $$i ${PREFIX}/share/doc/guacamole-$a/$$i; \
 	done ); \
 	for i in `find . -type f -and -path '*/schema/*'`; do \
-		${INSTALL_DATA_DIR} ${PREFIX}/share/doc/guacamole-auth-$a/`dirname $$i`; \
-		${INSTALL_DATA} $$i ${PREFIX}/share/doc/guacamole-auth-$a/$$i; \
+		${INSTALL_DATA_DIR} ${PREFIX}/share/doc/guacamole-$a/`dirname $$i`; \
+		${INSTALL_DATA} $$i ${PREFIX}/share/doc/guacamole-$a/$$i; \
 	done
 .endfor
 .for i j in ${LIBS}

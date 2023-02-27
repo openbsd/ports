@@ -32,6 +32,7 @@ include/guacamole/pool.h
 include/guacamole/protocol-constants.h
 include/guacamole/protocol-types.h
 include/guacamole/protocol.h
+include/guacamole/recording.h
 include/guacamole/socket-constants.h
 include/guacamole/socket-fntypes.h
 include/guacamole/socket-ssl.h
@@ -40,6 +41,8 @@ include/guacamole/socket.h
 include/guacamole/stream-types.h
 include/guacamole/stream.h
 include/guacamole/string.h
+include/guacamole/terminal/
+include/guacamole/terminal/terminal.h
 include/guacamole/timestamp-types.h
 include/guacamole/timestamp.h
 include/guacamole/unicode.h
@@ -56,6 +59,7 @@ lib/freerdp2/
 @lib lib/libguac-client-rdp.so.${LIBguac-client-rdp_VERSION}
 @lib lib/libguac-client-ssh.so.${LIBguac-client-ssh_VERSION}
 @lib lib/libguac-client-vnc.so.${LIBguac-client-vnc_VERSION}
+@lib lib/libguac-terminal.so.${LIBguac-terminal_VERSION}
 @lib lib/libguac.so.${LIBguac_VERSION}
 @man man/man1/guacenc.1
 @man man/man1/guaclog.1
