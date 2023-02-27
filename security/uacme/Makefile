@@ -1,13 +1,11 @@
 COMMENT=	lightweight C ACMEv2 client, uses external authenticators
 
-V=		1.7.3
+V=		1.7.4
 GH_ACCOUNT=	ndilieto
 GH_PROJECT=	uacme
 GH_TAGNAME=	upstream/$V
 DISTNAME=	uacme-$V
 WRKDIST=	${WRKDIR}/uacme-upstream-$V
-
-REVISION=	0
 
 CATEGORIES=	security www
 
