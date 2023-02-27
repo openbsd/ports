@@ -14,8 +14,8 @@ Index: src/ngircd/proc.c
  	case 0:
  		/* New child process: */
 +		/* XXX no PAM, fork only for DNS and IDENT */
-+		if (pledge("stdio dns inet", NULL) == -1)   
-+			err(1, "pledge"); 
++		if (pledge("stdio dns inet", NULL) == -1)
++			err(1, "pledge");
  #ifdef HAVE_ARC4RANDOM_STIR
  		arc4random_stir();
  #endif
