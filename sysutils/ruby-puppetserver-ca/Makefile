@@ -1,6 +1,6 @@
 COMMENT =	interact with Puppet Server's CA
 
-DISTNAME =	puppetserver-ca-2.3.6
+DISTNAME =	puppetserver-ca-2.4.0
 CATEGORIES =	sysutils
 HOMEPAGE =	https://github.com/puppetlabs/puppetserver-ca-cli/
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
