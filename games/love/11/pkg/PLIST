@@ -1,0 +1,9 @@
+@option no-default-conflict
+@option is-branch
+@bin bin/love${SUFFIX}
+@lib lib/liblove-${VERSION}.so.${LIBlove-${VERSION}_VERSION}
+@man man/man1/love${SUFFIX}.1
+share/applications/love-${VERSION}.desktop
+share/pixmaps/
+@tag update-desktop-database
+share/pixmaps/love-${VERSION}.svg

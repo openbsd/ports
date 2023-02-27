@@ -1,0 +1,14 @@
+Index: platform/unix/love.desktop.in
+--- platform/unix/love.desktop.in.orig
++++ platform/unix/love.desktop.in
+@@ -1,8 +1,8 @@
+ [Desktop Entry]
+-Name=LÖVE
++Name=LÖVE 11.4
+ Comment=The unquestionably awesome 2D game engine
+ MimeType=application/x-love-game;
+-Exec=@bindir@/love %f
++Exec=@bindir@/love-11.4 %f
+ Type=Application
+ Categories=Development;Game;
+ Terminal=false
