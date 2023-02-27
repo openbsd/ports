@@ -266,6 +266,8 @@ lib/python${MODPY_VERSION}/site-packages/borg/testsuite/${MODPY_PYCACHE}file_int
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/${MODPY_PYCACHE}file_integrity.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/${MODPY_PYCACHE}hashindex.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/${MODPY_PYCACHE}hashindex.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borg/testsuite/${MODPY_PYCACHE}hashindex_pytest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/borg/testsuite/${MODPY_PYCACHE}hashindex_pytest.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/${MODPY_PYCACHE}helpers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/${MODPY_PYCACHE}helpers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/${MODPY_PYCACHE}item.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -392,6 +394,7 @@ lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/rcreate_cmd.py
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/rdelete_cmd.py
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/recreate_cmd.py
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/rename_cmd.py
+lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/repo12.tar.gz
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/return_codes.py
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/rinfo_cmd.py
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/rlist_cmd.py
@@ -408,6 +411,7 @@ lib/python${MODPY_VERSION}/site-packages/borg/testsuite/crypto.py
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/efficient_collection_queue.py
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/file_integrity.py
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/hashindex.py
+lib/python${MODPY_VERSION}/site-packages/borg/testsuite/hashindex_pytest.py
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/helpers.py
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/item.py
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/key.py
@@ -459,10 +463,12 @@ lib/python${MODPY_VERSION}/site-packages/borgbackup-${MODPY_EGG_VERSION}.dist-in
 @man man/man1/borg-key-migrate-to-repokey.1
 @man man/man1/borg-key.1
 @man man/man1/borg-list.1
+@man man/man1/borg-match-archives.1
 @man man/man1/borg-mount.1
 @man man/man1/borg-patterns.1
 @man man/man1/borg-placeholders.1
 @man man/man1/borg-prune.1
+@man man/man1/borg-rcompress.1
 @man man/man1/borg-rcreate.1
 @man man/man1/borg-rdelete.1
 @man man/man1/borg-recreate.1
