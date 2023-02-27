@@ -3,6 +3,7 @@ COMMENT =		Python library for rich text and beautiful formatting
 MODPY_EGG_VERSION =	13.3.1
 DISTNAME =		rich-${MODPY_EGG_VERSION}
 PKGNAME =		py-rich-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		devel
 
@@ -19,7 +20,7 @@ FLAVOR =		python3
 MODPY_PYBUILD =		poetry-core
 NO_TEST =		Yes
 
-RUN_DEPENDS =		textproc/py-commonmark${MODPY_FLAVOR} \
+RUN_DEPENDS =		textproc/py-markdown-it${MODPY_FLAVOR} \
 			textproc/py-pygments${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
