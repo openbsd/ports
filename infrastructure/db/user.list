@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.421 2023/02/07 12:06:08 robert Exp $
+$OpenBSD: user.list,v 1.422 2023/02/27 16:57:32 aisha Exp $
 
 This file lists all users and groups that are created by ports. All
 ports' users/groups have to start with an underscore and have to use
@@ -158,7 +158,7 @@ id  user		group		port
 647 _sqlgrey		_sqlgrey	mail/sqlgrey
 648 _sympa		_sympa		mail/sympa
 649 _nfcapd		_nfcapd		net/nfdump
-#650 _aircontrol		_aircontrol	net/aircontrol
+650 _keycloak		_keycloak	security/keycloak
 651 _mirmon		_mirmon		net/mirmon
 652 _collectd		_collectd	sysutils/collectd
 653 _pgbouncer		_pgbouncer	databases/pgbouncer
