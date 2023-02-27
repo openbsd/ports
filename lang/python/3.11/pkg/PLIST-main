@@ -2113,6 +2113,7 @@ lib/python3.11/lib-dynload/
 @so lib/python3.11/lib-dynload/_struct.cpython-311.so
 @so lib/python3.11/lib-dynload/_testbuffer.cpython-311.so
 @so lib/python3.11/lib-dynload/_testcapi.cpython-311.so
+@so lib/python3.11/lib-dynload/_testclinic.cpython-311.so
 @so lib/python3.11/lib-dynload/_testimportmultiple.cpython-311.so
 @so lib/python3.11/lib-dynload/_testinternalcapi.cpython-311.so
 @so lib/python3.11/lib-dynload/_testmultiphase.cpython-311.so
