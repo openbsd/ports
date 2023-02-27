@@ -1,0 +1,26 @@
+Index: bin/kcadm.sh
+--- bin/kcadm.sh.orig
++++ bin/kcadm.sh
+@@ -7,7 +7,7 @@ case "`uname`" in
+     Darwin*)
+         RESOLVED_NAME=`readlink "$0"`
+         ;;
+-    FreeBSD)
++    FreeBSD|OpenBSD)
+         RESOLVED_NAME=`readlink -f "$0"`
+         ;;
+     Linux)
+@@ -21,6 +21,7 @@ fi
+ 
+ DIRNAME=`dirname "$RESOLVED_NAME"`
+ 
++: ${JAVA_HOME:=$(/usr/local/bin/javaPathHelper -h keycloak)}
+ if [ "x$JAVA" = "x" ]; then
+     if [ "x$JAVA_HOME" != "x" ]; then
+         JAVA="$JAVA_HOME/bin/java"
+@@ -29,4 +30,4 @@ if [ "x$JAVA" = "x" ]; then
+     fi
+ fi
+ 
+-"$JAVA" $KC_OPTS -cp $DIRNAME/client/keycloak-admin-cli-20.0.3.jar org.keycloak.client.admin.cli.KcAdmMain "$@"
++"$JAVA" $KC_OPTS -cp ${TRUEPREFIX}/keycloak/bin/client/keycloak-admin-cli-20.0.3.jar org.keycloak.client.admin.cli.KcAdmMain "$@"

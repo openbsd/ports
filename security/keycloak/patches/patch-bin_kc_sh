@@ -1,0 +1,26 @@
+Index: bin/kc.sh
+--- bin/kc.sh.orig
++++ bin/kc.sh
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!${TRUEPREFIX}/bin/bash
+ 
+ case "$(uname)" in
+     CYGWIN*)
+@@ -9,7 +9,7 @@ case "$(uname)" in
+     Darwin*)
+         RESOLVED_NAME="$(readlink "$0")"
+         ;;
+-    FreeBSD)
++    FreeBSD|OpenBSD)
+         RESOLVED_NAME="$(readlink -f "$0")"
+         ;;
+     Linux)
+@@ -73,6 +73,7 @@ do
+     shift
+ done
+ 
++: ${JAVA_HOME:=$(${TRUEPREFIX}/bin/javaPathHelper -h keycloak)}
+ if [ "x$JAVA" = "x" ]; then
+     if [ "x$JAVA_HOME" != "x" ]; then
+         JAVA="$JAVA_HOME/bin/java"

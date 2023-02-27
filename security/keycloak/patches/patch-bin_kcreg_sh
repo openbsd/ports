@@ -1,0 +1,26 @@
+Index: bin/kcreg.sh
+--- bin/kcreg.sh.orig
++++ bin/kcreg.sh
+@@ -7,7 +7,7 @@ case "`uname`" in
+     Darwin*)
+         RESOLVED_NAME=`readlink "$0"`
+         ;;
+-    FreeBSD)
++    FreeBSD|OpenBSD)
+         RESOLVED_NAME=`readlink -f "$0"`
+         ;;
+     Linux)
+@@ -19,6 +19,7 @@ if [ "x$RESOLVED_NAME" = "x" ]; then
+     RESOLVED_NAME="$0"
+ fi
+ 
++: ${JAVA_HOME:=$(/usr/local/bin/javaPathHelper -h keycloak)}
+ if [ "x$JAVA" = "x" ]; then
+     if [ "x$JAVA_HOME" != "x" ]; then
+         JAVA="$JAVA_HOME/bin/java"
+@@ -28,4 +29,4 @@ if [ "x$JAVA" = "x" ]; then
+ fi
+ 
+ DIRNAME=`dirname "$RESOLVED_NAME"`
+-"$JAVA" $KC_OPTS -cp $DIRNAME/client/keycloak-client-registration-cli-20.0.3.jar org.keycloak.client.registration.cli.KcRegMain "$@"
++"$JAVA" $KC_OPTS -cp ${TRUEPREFIX}/keycloak/bin/client/keycloak-client-registration-cli-20.0.3.jar org.keycloak.client.registration.cli.KcRegMain "$@"

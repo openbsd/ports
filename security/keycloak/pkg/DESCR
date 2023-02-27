@@ -1,0 +1,10 @@
+Keycloak is an open source Identity and Access Management solution
+aimed at modern applications and services. It makes it easy to
+secure applications and services with little to no code, providing
+the following features:
+- SAML, OAuth 2.0 and OpenID Connect
+- Single Sign On
+- Admin Console
+- Account Management Console
+- User Federation with LDAP and Active Directory
+- Identity Brokering and Social Login

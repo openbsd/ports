@@ -1,0 +1,37 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Config files
+============
+
+The default config file for keycloak is stored at:
+
+    ${SYSCONFDIR}/keycloak/keycloak.conf
+
+While the data files are stored at:
+
+    ${LOCALSTATEDIR}/db/keycloak
+
+
+Working with a reverse proxy
+============================
+
+Keycloak needs HTTPS and will not work without a TLS certificate. A reverse proxy
+such as nginx, relayd or haproxy, can be used to do TLS termination. In such a
+case, keycloak must be told to trust the reverse proxy by setting the
+following options in the config file:
+
+    http-enabled=true
+    http-port=<desired-http-port>
+    proxy=edge
+
+
+Working in a cluster
+====================
+
+Keycloak supports clustered, high availability mode. This needs multicast enabled,
+the details of which can be read in multicast(4).
+
+Due to the limitations of Java on OpenBSD, it is recommended to only use the IPv4
+stack for keycloak, both in normal and cluster modes.

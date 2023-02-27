@@ -1,0 +1,14 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/keycloak/bin/kc"
+daemon_flags="start"
+daemon_logger="daemon.info"
+daemon_user="_keycloak"
+
+. /etc/rc.d/rc.subr
+
+pexp="$(${LOCALBASE}/bin/javaPathHelper -c keycloak).* -Dkc.config.built=true.* -Dkc.home.dir=${TRUEPREFIX}/keycloak/bin/\.\..*${daemon_flags:+ ${daemon_flags}}"
+
+rc_reload=NO
+rc_bg=YES
+rc_cmd $1
