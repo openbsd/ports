@@ -30,6 +30,8 @@ WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel
 
+REVISION-java=	0
+
 EPOCH=		0
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
@@ -260,7 +262,7 @@ WANTLIB-kde+=		glib-2.0 gobject-2.0 intl
 
 .if ${BUILD_PACKAGES:M-java}
 MODULES+=		java
-MODJAVA_VER=		11
+MODJAVA_VER=		11+
 .endif
 LIB_DEPENDS-java=	${MODGCC4_CPPLIBDEP}
 RUN_DEPENDS-java=	${MODJAVA_RUN_DEPENDS} \
