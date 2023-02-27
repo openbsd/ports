@@ -1,0 +1,27 @@
+Mesa >= 18.2.5 has newer OpenGL headers from Khronos which change the
+include guards.
+
+Prevent redefining __GLXextFuncPtr.
+
+Index: src/modules/graphics/opengl/GLee.h
+--- src/modules/graphics/opengl/GLee.h.orig
++++ src/modules/graphics/opengl/GLee.h
+@@ -63,7 +63,9 @@
+ 	#include <OpenGL/gl.h>
+ #else // GLX
+ 	#define __glext_h_  /* prevent glext.h from being included  */
++	#define __gl_glext_h_  /* prevent glext.h from being included  */
+ 	#define __glxext_h_ /* prevent glxext.h from being included */
++	#define __glx_glxext_h_ /* prevent glxext.h from being included */
+ 	#define GLX_GLXEXT_PROTOTYPES
+ 	#include <GL/gl.h>
+ 	#include <GL/glx.h>
+@@ -798,8 +800,6 @@ GLEE_EXTERN GLboolean _GLEE_SGIX_texture_range;
+ #else          
+ 
+ 	/* GLX */
+-
+-	typedef void (*__GLXextFuncPtr)(void);
+ 
+ 	#ifndef GLX_ARB_get_proc_address 
+ 	#define GLX_ARB_get_proc_address 1

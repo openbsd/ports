@@ -1,0 +1,20 @@
+--- configure.orig	Fri Apr  6 20:17:02 2012
++++ configure	Fri May 11 11:55:53 2012
+@@ -16443,7 +16443,7 @@ for ac_lib in '' vorbisfile; do
+     ac_res="none required"
+   else
+     ac_res=-l$ac_lib
+-    LIBS="-l$ac_lib  $ac_func_search_save_LIBS"
++    LIBS="-l$ac_lib -lvorbis -lm -logg $ac_func_search_save_LIBS"
+   fi
+   if ac_fn_c_try_link "$LINENO"; then :
+   ac_cv_search_ov_open=$ac_res
+@@ -16460,7 +16460,7 @@ else
+   ac_cv_search_ov_open=no
+ fi
+ rm conftest.$ac_ext
+-LIBS=$ac_func_search_save_LIBS
++LIBS="$ac_func_search_save_LIBS -lvorbis -lm -logg"
+ fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_search_ov_open" >&5
+ $as_echo "$ac_cv_search_ov_open" >&6; }

@@ -1,0 +1,4 @@
+@option no-default-conflict
+@option is-branch
+@pkgpath games/love
+@bin bin/love${SUFFIX}
