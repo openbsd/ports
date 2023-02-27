@@ -1,0 +1,5 @@
+markdown-it is a fast and easily extensible Markdown parser.
+It follows the CommonMark spec + adds syntax extensions & sugar
+(URL autolinking, typographer).
+
+The original is in node.js; this is a Python port.
