@@ -82,6 +82,7 @@
      SUBDIR += keepassxc,yubikey
      SUBDIR += keybase
      SUBDIR += keychain
+     SUBDIR += keycloak
      SUBDIR += keyringer
      SUBDIR += knockpy
      SUBDIR += kpcli
