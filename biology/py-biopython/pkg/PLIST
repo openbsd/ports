@@ -459,9 +459,12 @@ lib/python${MODPY_VERSION}/site-packages/Bio/Entrez/DTDs/eSpell.dtd
 lib/python${MODPY_VERSION}/site-packages/Bio/Entrez/DTDs/eSummary_041029.dtd
 lib/python${MODPY_VERSION}/site-packages/Bio/Entrez/DTDs/egquery.dtd
 lib/python${MODPY_VERSION}/site-packages/Bio/Entrez/DTDs/einfo.dtd
+lib/python${MODPY_VERSION}/site-packages/Bio/Entrez/DTDs/elink.dtd
 lib/python${MODPY_VERSION}/site-packages/Bio/Entrez/DTDs/elink_020122.dtd
+lib/python${MODPY_VERSION}/site-packages/Bio/Entrez/DTDs/epost.dtd
 lib/python${MODPY_VERSION}/site-packages/Bio/Entrez/DTDs/esearch.dtd
 lib/python${MODPY_VERSION}/site-packages/Bio/Entrez/DTDs/esummary-v1.dtd
+lib/python${MODPY_VERSION}/site-packages/Bio/Entrez/DTDs/esummary_gene.dtd
 lib/python${MODPY_VERSION}/site-packages/Bio/Entrez/DTDs/format.ent
 lib/python${MODPY_VERSION}/site-packages/Bio/Entrez/DTDs/htmltable.dtd
 lib/python${MODPY_VERSION}/site-packages/Bio/Entrez/DTDs/isoamsa.ent
