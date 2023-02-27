@@ -2,7 +2,7 @@ COMMENT =		CloudFlare PKI/TLS command-line toolkit and HTTP API server
 
 GH_ACCOUNT =		cloudflare
 GH_PROJECT =		cfssl
-VERSION =		1.6.1
+VERSION =		1.6.3
 GH_TAGNAME =		v${VERSION}
 
 CATEGORIES =		security
