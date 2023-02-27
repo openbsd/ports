@@ -1,0 +1,15 @@
+add -release and -version info to generate a correctly named shared
+library that doesn't conflict with other love versions.
+
+Index: src/Makefile.am
+--- src/Makefile.am.orig
++++ src/Makefile.am
+@@ -25,7 +25,7 @@ endif
+ 
+ # libLÖVE
+ lib_LTLIBRARIES = liblove.la
+-liblove_la_LDFLAGS = -module -export-dynamic $(LDFLAGS)
++liblove_la_LDFLAGS = -module -export-dynamic $(LDFLAGS) -release $(PACKAGE_VERSION) -version-info 0:0:0
+ liblove_la_LIBADD = 	$(SDL_LIBS) $(freetype2_LIBS) $(lua_LIBS)	$(openal_LIBS) $(zlib_LIBS) $(libmodplug_LIBS)	$(vorbisfile_LIBS) $(theora_LIBS)
+ liblove_la_SOURCES = \
+     ./common/ios.h \
