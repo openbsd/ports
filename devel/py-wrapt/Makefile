@@ -1,6 +1,6 @@
 COMMENT=	Python module for decorators, wrappers and monkey patching
 
-MODPY_EGG_VERSION=	1.14.1
+MODPY_EGG_VERSION=	1.15.0
 DISTNAME=	wrapt-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
