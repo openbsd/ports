@@ -1,6 +1,7 @@
---- Makefile.in.orig	Mon Jul 18 00:47:55 2005
-+++ Makefile.in	Mon Sep 19 18:47:38 2005
-@@ -104,7 +104,7 @@ Makefile: $(srcdir)/Makefile.in  $(top_b
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -110,7 +110,7 @@ Makefile: $(srcdir)/Makefile.in  $(top_builddir)/confi
  	cd $(top_builddir) \
  	  && CONFIG_FILES=$@ CONFIG_HEADERS= $(SHELL) ./config.status
  
@@ -9,7 +10,7 @@
  	cd $(srcdir) && $(ACLOCAL) $(ACLOCAL_AMFLAGS)
  
  config.status: $(srcdir)/configure $(CONFIG_STATUS_DEPENDENCIES)
-@@ -375,6 +375,7 @@ install-data-local:
+@@ -381,6 +381,7 @@ install-data-local:
  	if test -d $(srcdir)/examples; then \
  	$(mkinstalldirs) $(DESTDIR)$(pkgdatadir); \
  	$(INSTALL_DATA) $(srcdir)/README $(DESTDIR)$(pkgdatadir); \

@@ -1,6 +1,7 @@
---- src/Makefile.in.orig	Sun Jul 24 08:31:38 2005
-+++ src/Makefile.in	Mon Sep 19 18:51:27 2005
-@@ -384,8 +384,10 @@ uninstall-local uninstall-am uninstall a
+Index: src/Makefile.in
+--- src/Makefile.in.orig
++++ src/Makefile.in
+@@ -389,8 +389,10 @@ uninstall-local uninstall-am uninstall all-redirect al
  installdirs mostlyclean-generic distclean-generic clean-generic \
  maintainer-clean-generic clean mostlyclean distclean maintainer-clean
  
