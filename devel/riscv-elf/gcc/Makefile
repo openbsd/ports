@@ -3,7 +3,7 @@ COMMENT=	gcc for riscv-elf cross-development
 VERSION=	12.2.0
 DISTNAME=	gcc-${VERSION}
 PKGNAME=	riscv-elf-gcc-${VERSION}
-REVISION=	0
+REVISION=	1
 
 SUBST_VARS+=	VERSION
 
@@ -37,8 +37,13 @@ CONFIGURE_ARGS+=--enable-languages=${LANGS}	\
 		--enable-cpp			\
 		--without-isl			\
 		--without-zstd
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+# Avoid build failure when lang/gcc/8 is installed whose ansidecl.h misses these
+CPPFLAGS +=	-DATTRIBUTE_NONSTRING= -DATTRIBUTE_RESULT_SIZE_1=
+CPPFLAGS +=	-DATTRIBUTE_RESULT_SIZE_2= -DATTRIBUTE_RESULT_SIZE_1_2=
+CPPFLAGS +=	-DATTRIBUTE_WARN_UNUSED_RESULT=
 
 SEPARATE_BUILD=	Yes
 USE_GMAKE=	Yes
