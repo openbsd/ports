@@ -23,6 +23,8 @@ TEST_DEPENDS=	devel/py-appdirs${MODPY_FLAVOR} \
 FLAVORS=	python3
 FLAVOR=		python3
 
+PORTHOME=	${WRKDIR}
+
 post-install:
 	rm ${WRKINST}${MODPY_SITEPKG}/platformdirs/unix.py${PATCHORIG}
 
