@@ -2056,6 +2056,7 @@ lib/python3.10/lib-dynload/
 @so lib/python3.10/lib-dynload/_struct.cpython-310.so
 @so lib/python3.10/lib-dynload/_testbuffer.cpython-310.so
 @so lib/python3.10/lib-dynload/_testcapi.cpython-310.so
+@so lib/python3.10/lib-dynload/_testclinic.cpython-310.so
 @so lib/python3.10/lib-dynload/_testimportmultiple.cpython-310.so
 @so lib/python3.10/lib-dynload/_testinternalcapi.cpython-310.so
 @so lib/python3.10/lib-dynload/_testmultiphase.cpython-310.so

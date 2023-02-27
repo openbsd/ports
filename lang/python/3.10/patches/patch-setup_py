@@ -1,7 +1,7 @@
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -1872,7 +1872,7 @@ class PyBuildExt(build_ext):
+@@ -1875,7 +1875,7 @@ class PyBuildExt(build_ext):
          uuid_h = sysconfig.get_config_var("HAVE_UUID_H")
          uuid_uuid_h = sysconfig.get_config_var("HAVE_UUID_UUID_H")
          if uuid_h or uuid_uuid_h:
