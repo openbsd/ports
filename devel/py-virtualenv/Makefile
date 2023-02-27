@@ -1,6 +1,6 @@
 COMMENT =		virtual Python environment builder
 
-MODPY_EGG_VERSION =	20.17.1
+MODPY_EGG_VERSION =	20.19.0
 DISTNAME =		virtualenv-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools_scm
+MODPY_PYBUILD =		hatch-vcs
 
 # messes up naming of packaged wheels
 UPDATE_PLIST_ARGS =	-i MODPY_PY_PREFIX
@@ -24,7 +24,8 @@ FLAVOR =		python3
 RUN_DEPENDS =		sysutils/py-distlib${MODPY_FLAVOR} \
 			sysutils/py-filelock${MODPY_FLAVOR} \
 			sysutils/py-platformdirs${MODPY_FLAVOR}
-TEST_DEPENDS =		devel/py-coverage${MODPY_FLAVOR} \
+TEST_DEPENDS =		${BUILD_PKGPATH} \
+			devel/py-coverage${MODPY_FLAVOR} \
 			devel/py-flaky${MODPY_FLAVOR} \
 			sysutils/py-packaging${MODPY_FLAVOR} \
 			devel/py-test-mock${MODPY_FLAVOR} \
