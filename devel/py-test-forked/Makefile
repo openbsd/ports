@@ -1,10 +1,9 @@
 COMMENT =		run each test in a forked subprocess
 
-MODPY_EGG_VERSION =	1.4.0
+MODPY_EGG_VERSION =	1.6.0
 
 DISTNAME =		pytest-forked-${MODPY_EGG_VERSION}
 PKGNAME =		py-test-forked-${MODPY_EGG_VERSION}
-REVISION =		1
 
 CATEGORIES =		devel
 
