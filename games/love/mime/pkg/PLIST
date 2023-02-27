@@ -1,0 +1,4 @@
+share/icons/hicolor/scalable/mimetypes/application-x-love-game.svg
+share/mime/packages/love.xml
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-mime-database
