@@ -1,6 +1,6 @@
 COMMENT=		ncurses-based du(1)
 
-DISTNAME=		ncdu-1.17
+DISTNAME=		ncdu-1.18.1
 CATEGORIES=		sysutils
 
 HOMEPAGE=		https://dev.yorhel.nl/ncdu/
