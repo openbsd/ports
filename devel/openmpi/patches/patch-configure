@@ -1,0 +1,18 @@
+Index: configure
+--- configure.orig
++++ configure
+@@ -156103,12 +156103,12 @@ $as_echo "$compile_mode" >&6; }
+ 
+     # try to configure the component
+ 
+-    # disable on MacOS/Darwin where it isn't used and the deprecated
++    # disable on MacOS/Darwin and OpenBSD where it isn't used and the deprecated
+     # syscall interface causes compiler warnings.
+     { $as_echo "$as_me:${as_lineno-$LINENO}: checking if memory patcher supports $host_os" >&5
+ $as_echo_n "checking if memory patcher supports $host_os... " >&6; }
+     case $host_os in
+-    darwin*)
++    darwin* | openbsd*)
+         opal_memory_patcher_happy=no
+     ;;
+     *)
