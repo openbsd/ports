@@ -51,11 +51,8 @@ lib/python${MODPY_VERSION}/site-packages/tinytuya/${MODPY_PYCACHE}core.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/tinytuya/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tinytuya/${MODPY_PYCACHE}scanner.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tinytuya/${MODPY_PYCACHE}scanner.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/tinytuya/${MODPY_PYCACHE}ui.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/tinytuya/${MODPY_PYCACHE}ui.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tinytuya/${MODPY_PYCACHE}wizard.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tinytuya/${MODPY_PYCACHE}wizard.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tinytuya/core.py
 lib/python${MODPY_VERSION}/site-packages/tinytuya/scanner.py
-lib/python${MODPY_VERSION}/site-packages/tinytuya/ui.py
 lib/python${MODPY_VERSION}/site-packages/tinytuya/wizard.py
