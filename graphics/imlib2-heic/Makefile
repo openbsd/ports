@@ -22,4 +22,6 @@ MAKE_FLAGS=	CC="${CC}" \
 		DISABLE_DEBUG=1
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
+NO_TEST =	Yes
+
 .include <bsd.port.mk>
