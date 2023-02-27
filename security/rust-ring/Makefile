@@ -4,7 +4,7 @@ COMMENT =		ring crate source patched for x-only assembly
 VERSION =		0.16.20
 DISTNAME =		ring-${VERSION}
 PKGNAME =		rust-${DISTNAME}
-REVISION =		4
+REVISION =		5
 
 MASTER_SITES =		https://crates.io/api/v1/crates/
 

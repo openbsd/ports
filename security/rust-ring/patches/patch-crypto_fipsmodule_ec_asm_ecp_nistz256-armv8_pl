@@ -24,7 +24,7 @@ Index: crypto/fipsmodule/ec/asm/ecp_nistz256-armv8.pl
  	ldp	$a2,$a3,[$ap,#16]
 -	ldr	$poly1,.Lpoly+8
 -	ldr	$poly3,.Lpoly+24
-+	adrp	$poly3,.Lpoly
++	adrp	$poly3,:pg_hi21:.Lpoly
 +	add	$poly3,$poly3,:lo12:.Lpoly
 +	ldr	$poly1,[$poly3,#8]
 +	ldr	$poly3,[$poly3,#24]
@@ -37,7 +37,7 @@ Index: crypto/fipsmodule/ec/asm/ecp_nistz256-armv8.pl
  	ldp	$a2,$a3,[$ap,#16]
 -	ldr	$poly1,.Lpoly+8
 -	ldr	$poly3,.Lpoly+24
-+	adrp	$poly3,.Lpoly
++	adrp	$poly3,:pg_hi21:.Lpoly
 +	add	$poly3,$poly3,:lo12:.Lpoly
 +	ldr	$poly1,[$poly3,#8]
 +	ldr	$poly3,[$poly3,#24]
@@ -50,7 +50,7 @@ Index: crypto/fipsmodule/ec/asm/ecp_nistz256-armv8.pl
  	ldp	$t2,$t3,[$bp,#16]
 -	ldr	$poly1,.Lpoly+8
 -	ldr	$poly3,.Lpoly+24
-+	adrp	$poly3,.Lpoly
++	adrp	$poly3,:pg_hi21:.Lpoly
 +	add	$poly3,$poly3,:lo12:.Lpoly
 +	ldr	$poly1,[$poly3,#8]
 +	ldr	$poly3,[$poly3,#24]
@@ -63,7 +63,7 @@ Index: crypto/fipsmodule/ec/asm/ecp_nistz256-armv8.pl
  	mov	$acc3,xzr
 -	ldr	$poly1,.Lpoly+8
 -	ldr	$poly3,.Lpoly+24
-+	adrp	$poly3,.Lpoly
++	adrp	$poly3,:pg_hi21:.Lpoly
 +	add	$poly3,$poly3,:lo12:.Lpoly
 +	ldr	$poly1,[$poly3,#8]
 +	ldr	$poly3,[$poly3,#24]
@@ -75,7 +75,7 @@ Index: crypto/fipsmodule/ec/asm/ecp_nistz256-armv8.pl
  	ldp	$acc2,$acc3,[$ap,#48]
  	 mov	$ap_real,$ap
 -	 ldr	$poly1,.Lpoly+8
-+	 adrp	$poly3,.Lpoly
++	 adrp	$poly3,:pg_hi21:.Lpoly
 +	 add	$poly3,$poly3,:lo12:.Lpoly
 +	 ldr	$poly1,[$poly3,#8]
  	mov	$t0,$acc0
@@ -90,7 +90,7 @@ Index: crypto/fipsmodule/ec/asm/ecp_nistz256-armv8.pl
  	mov	$bp_real,$bp
 -	ldr	$poly1,.Lpoly+8
 -	ldr	$poly3,.Lpoly+24
-+	adrp	$poly3,.Lpoly
++	adrp	$poly3,:pg_hi21:.Lpoly
 +	add	$poly3,$poly3,:lo12:.Lpoly
 +	ldr	$poly1,[$poly3,#8]
 +	ldr	$poly3,[$poly3,#24]
@@ -102,7 +102,7 @@ Index: crypto/fipsmodule/ec/asm/ecp_nistz256-armv8.pl
  ___
  $code.=<<___	if ($i == 0);
 -	adr	$bp_real,.Lone_mont-64
-+	adrp	$bp_real,.Lone_mont-64
++	adrp	$bp_real,:pg_hi21:.Lone_mont-64
 +	add	$bp_real,$bp_real,:lo12:.Lone_mont-64
  ___
  }
