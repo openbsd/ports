@@ -1,7 +1,7 @@
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -1,9 +1,9 @@
+@@ -1,10 +1,10 @@
  PREFIX = /usr/local
  BINDIR = ${PREFIX}/bin
  
@@ -9,10 +9,12 @@ Index: Makefile
 +X11PREFIX = ${X11BASE}
  
 -CFLAGS += -I${X11PREFIX}/include `imlib2-config --cflags` `pkg-config xft --cflags` -g -pedantic -Wall
-+CFLAGS += -I${X11PREFIX}/include `imlib2-config --cflags` `pkg-config xft --cflags` -pedantic -Wall
- LDFLAGS += -L${X11PREFIX}/lib -lX11 -lm `imlib2-config --libs` `pkg-config xft --libs`
+-LDFLAGS += -L${X11PREFIX}/lib -lX11 -lm `imlib2-config --libs` `pkg-config xft --libs`
++CFLAGS += -I${X11PREFIX}/include `pkg-config xft imlib2 --cflags` -pedantic -Wall
++LDFLAGS += -L${X11PREFIX}/lib -lX11 -lm `pkg-config xft imlib2 --libs`
  
  # Comment these out to disable Xinerama support
+ CFLAGS += -DXINERAMA
 @@ -17,11 +17,15 @@ EXESUFFIX =
  
  SOURCES = skippy.c wm.c dlist.c mainwin.c clientwin.c layout.c focus.c config.c tooltip.c
