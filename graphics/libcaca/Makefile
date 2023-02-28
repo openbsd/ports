@@ -3,6 +3,7 @@ COMMENT=		color ascii art library
 V=			0.99.beta20
 DISTNAME=		libcaca-${V}
 PKGNAME=		${DISTNAME:S/beta//}
+REVISION =		0
 SHARED_LIBS +=	caca	2.0 # .0.99
 CATEGORIES=		graphics
 
@@ -23,7 +24,7 @@ CONFIGURE_ARGS+=	--disable-x11 \
 			--disable-imlib2
 .else
 LIB_DEPENDS =    	graphics/imlib2
-WANTLIB +=		X11 Xext freetype xcb Imlib2>=1
+WANTLIB +=		X11 X11-xcb Xext freetype xcb xcb-shm Imlib2>=1
 .endif
 
 MAKE_FLAGS=		V=1
