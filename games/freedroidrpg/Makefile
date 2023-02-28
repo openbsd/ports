@@ -30,6 +30,8 @@ USE_GMAKE=		Yes
 
 MODPY_RUNDEP=		No
 
+BUILD_DEPENDS=		devel/gettext,-tools
+
 LIB_DEPENDS=		devel/sdl-gfx \
 			devel/sdl-image \
 			devel/sdl-mixer \
