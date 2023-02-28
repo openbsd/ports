@@ -1,7 +1,7 @@
 COMMENT=		put clickable icons on the desktop
 
 DISTNAME=		idesk-0.7.5
-REVISION =		7
+REVISION =		8
 CATEGORIES=		x11
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=idesk/}
@@ -13,8 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 EXTRACT_SUFX=		.tar.bz2
 
-WANTLIB=		ICE ${COMPILER_LIBCXX} c X11 Xrender Xau Xdmcp expat z m Imlib2 \
-			SM Xft freetype fontconfig Xext xcb
+WANTLIB += ${COMPILER_LIBCXX} ICE Imlib2 SM X11 Xext Xft c m
 
 COMPILER =		base-clang ports-gcc base-gcc
 
