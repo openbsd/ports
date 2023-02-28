@@ -1,6 +1,7 @@
 COMMENT =	GNU Astronomy Utilities
 DISTNAME =	gnuastro-0.18
 CATEGORIES =	astro
+REVISION =	0
 
 SHARED_LIBS +=	gnuastro                  3.1 # 16.0
 
@@ -12,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += bz2 c cfitsio crypto curl git2 gsl gslcblas http_parser
 WANTLIB += jpeg lzma m nghttp2 pcre pthread ssh2 ssl
-WANTLIB += tiff wcs z zstd
+WANTLIB += tiff wcs z zstd nghttp3 ngtcp2 ngtcp2_crypto_openssl
 
 MASTER_SITES =	${MASTER_SITE_GNU:=gnuastro/}
 
