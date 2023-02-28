@@ -1,3 +1,7 @@
+# as of 7.8.0, the version of modernc.org/sqlite used doesn't seem
+# to support other archs
+ONLY_FOR_ARCHS =	amd64 aarch64
+
 COMMENT =	open source Slack-alternative
 
 V =		7.8.0
