@@ -1,0 +1,14 @@
+use pkg-config instead of the removed imlib2-config
+
+Index: makefile
+--- makefile.orig
++++ makefile
+@@ -2,7 +2,7 @@ include commands.mk
+ 
+ OPTS    := -O3
+ CFLAGS  := -std=c99 $(OPTS) $(shell pkg-config libheif --cflags) -fPIC -Wall
+-LDFLAGS := $(shell imlib2-config --libs) $(shell pkg-config libheif --libs)
++LDFLAGS := $(shell pkg-config libheif imlib2 --libs)
+ 
+ 
+ SRC = $(wildcard *.c)
