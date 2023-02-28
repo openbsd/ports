@@ -1,7 +1,7 @@
 COMMENT =		prometheus utility tool
 
 MODGO_MODNAME =         github.com/prometheus/promu
-MODGO_VERSION =         v0.13.0
+MODGO_VERSION =         v0.14.0
 
 DISTNAME =		promu-${MODGO_VERSION}
 
