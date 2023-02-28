@@ -3,7 +3,7 @@ VERSION=	0.4.0
 DISTNAME=	dino-${VERSION}
 CATEGORIES=	net x11
 
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS +=	crypto-vala               0.0 # 0.0
 SHARED_LIBS +=	dino                      2.0 # 0.0
@@ -38,8 +38,8 @@ LIB_DEPENDS=	devel/libgee \
 		x11/gnome/libadwaita \
 		x11/gtk+4
 
-# links against plugins-base, dlopen()s plugins-good
-LIB_DEPENDS +=	multimedia/gstreamer1/plugins-good
+# dlopen()ed
+RUN_DEPENDS +=	multimedia/gstreamer1/plugins-good
 
 WANTLIB += adwaita-1 c cairo cairo-gobject gcrypt gdk_pixbuf-2.0 gee-0.8
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnutls gobject-2.0 gpgme
