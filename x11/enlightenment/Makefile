@@ -5,7 +5,7 @@ DISTNAME=	e16-$V
 PKGNAME=	enlightenment-$V
 DOCS=		e16-docs-0.16.8.0.2
 THEMES=		e16-themes-1.0.2
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	x11
 
@@ -14,11 +14,12 @@ HOMEPAGE=	https://www.enlightenment.org/e16
 # X11
 PERMIT_PACKAGE=	Yes
 
-WANTLIB =  FLAC ICE Imlib2 SM X11 Xcomposite Xdamage Xext Xfixes Xft
-WANTLIB += Xinerama Xrandr Xrender audiofile c expat ffi fontconfig
-WANTLIB += freetype fribidi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
-WANTLIB += harfbuzz iconv intl m ogg pango-1.0 pangoft2-1.0
-WANTLIB += pangoxft-1.0 pcre2-8 pthread sndio xcb z ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} FLAC ICE Imlib2 SM X11 X11-xcb Xcomposite
+WANTLIB += Xdamage Xext Xfixes Xft Xinerama Xrandr Xrender audiofile
+WANTLIB += c expat ffi fontconfig freetype fribidi gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 graphite2 harfbuzz iconv intl
+WANTLIB += m ogg pango-1.0 pangoft2-1.0 pangoxft-1.0 pcre2-8 sndio
+WANTLIB += xcb xcb-shm z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=enlightenment/}
 
