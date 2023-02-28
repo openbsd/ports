@@ -1,7 +1,7 @@
 Index: lib/mruby/build.rb
 --- lib/mruby/build.rb.orig
 +++ lib/mruby/build.rb
-@@ -432,7 +432,7 @@ EOS
+@@ -443,7 +443,7 @@ EOS
        targets << filename(".") if File.directory? "./bintest"
        mrbc = @gems["mruby-bin-mrbc"] ? exefile("#{@build_dir}/bin/mrbc") : mrbcfile
        env = {"BUILD_DIR" => @build_dir, "MRBCFILE" => mrbc}
