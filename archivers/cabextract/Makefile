@@ -1,6 +1,6 @@
 COMMENT=		extracts files from Microsoft CAB archives
 
-DISTNAME=		cabextract-1.9.1
+DISTNAME=		cabextract-1.11
 CATEGORIES=		archivers
 
 HOMEPAGE=		https://www.cabextract.org.uk/
