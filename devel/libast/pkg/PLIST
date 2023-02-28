@@ -20,8 +20,7 @@ include/libast/tok.h
 include/libast/types.h
 include/libast/url.h
 include/libast/vector_if.h
-lib/libast.a
+@static-lib lib/libast.a
 lib/libast.la
 @lib lib/libast.so.${LIBast_VERSION}
-share/aclocal/
 share/aclocal/libast.m4
