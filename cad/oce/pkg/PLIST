@@ -1,7 +1,7 @@
 bin/DRAWEXE
 @bin bin/DRAWEXE-7.6.0
 bin/oce_custom.sh
-bin/oce_custom_clang_${BITS}.sh
+bin/oce_custom_${COMP}_${BITS}.sh
 bin/oce_draw.sh
 bin/oce_env.sh
 include/opencascade/

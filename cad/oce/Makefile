@@ -7,7 +7,7 @@ GH_ACCOUNT =	tpaviot
 GH_PROJECT =	oce
 GH_COMMIT =	98a788062f0f30593880b0df1bcf967408212ba4
 DISTNAME =	oce-7.6.0
-REVISION =	0
+REVISION =	1
 
 .for LIB in TKBO TKBRep TKBin TKBinL TKBinTObj TKBinXCAF TKBool TKCAF TKCDF \
 	TKDCAF TKDraw TKFeat TKFillet TKG2d TKG3d TKGeomAlgo TKGeomBase TKHLR \
@@ -50,7 +50,14 @@ BITS=64
 .else
 BITS=32
 .endif
-SUBST_VARS += BITS
+
+.if ${PROPERTIES:Mclang}
+COMP=clang
+.else
+COMP=gcc
+.endif
+
+SUBST_VARS += BITS COMP
 
 # fix bash and make installed script names less generic
 pre-configure:
