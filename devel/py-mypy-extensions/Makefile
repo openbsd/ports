@@ -1,6 +1,6 @@
 COMMENT=	extensions to the standard "typing" module for mypy
 
-MODPY_EGG_VERSION=	0.4.3
+MODPY_EGG_VERSION=	1.0.0
 
 DISTNAME=	mypy_extensions-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
