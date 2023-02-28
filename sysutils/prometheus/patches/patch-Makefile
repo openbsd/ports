@@ -3,7 +3,7 @@ The react build is provided via extra distfile
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -66,7 +66,7 @@ ui-lint:
+@@ -83,7 +83,7 @@ ui-lint:
  	cd $(UI_PATH) && npm run lint
  
  .PHONY: assets
@@ -12,7 +12,7 @@ Index: Makefile
  
  .PHONY: assets-compress
  assets-compress: assets
-@@ -107,7 +107,7 @@ plugins/plugins.go: plugins.yml plugins/generate.go
+@@ -124,7 +124,7 @@ plugins/plugins.go: plugins.yml plugins/generate.go
  plugins: plugins/plugins.go
  
  .PHONY: build

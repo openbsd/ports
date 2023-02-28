@@ -3,12 +3,12 @@ Don't include user and hostname into build and build verbose.
 Index: .promu.yml
 --- .promu.yml.orig
 +++ .promu.yml
-@@ -10,12 +10,12 @@ build:
-           path: ./cmd/prometheus
-         - name: promtool
-           path: ./cmd/promtool
--    flags: -a -tags netgo,builtinassets
-+    flags: -v -a -tags netgo,builtinassets
+@@ -16,12 +16,12 @@ build:
+             - builtinassets
+         windows:
+             - builtinassets
+-    flags: -a
++    flags: -v -a
      ldflags: |
          -X github.com/prometheus/common/version.Version={{.Version}}
          -X github.com/prometheus/common/version.Revision={{.Revision}}

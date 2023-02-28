@@ -3,7 +3,7 @@ Don't fetch promu form internet. This is just a build-dependency
 Index: Makefile.common
 --- Makefile.common.orig
 +++ Makefile.common
-@@ -229,11 +229,7 @@ common-docker-manifest:
+@@ -232,11 +232,7 @@ common-docker-manifest:
  promu: $(PROMU)
  
  $(PROMU):
