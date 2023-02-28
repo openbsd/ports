@@ -44,6 +44,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/format2/timezone_index_definition.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/info_timezone.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/linked_timezone.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/offset_timezone_period.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/ruby_core_support.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/string_deduper.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/time_with_offset.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/timestamp.rb
@@ -55,7 +56,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/timezone_proxy.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/timezone_transition.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/transition_rule.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/transitions_timezone_period.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/untaint_ext.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/with_offset.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec

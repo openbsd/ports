@@ -1,6 +1,6 @@
 COMMENT=	access to time zone data and conversion
 
-DISTNAME=	tzinfo-2.0.5
+DISTNAME=	tzinfo-2.0.6
 
 CATEGORIES=	sysutils
 HOMEPAGE=	https://tzinfo.github.io/
