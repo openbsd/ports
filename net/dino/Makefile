@@ -35,16 +35,13 @@ LIB_DEPENDS=	devel/libgee \
 		security/libgcrypt \
 		security/libsrtp \
 		textproc/icu4c \
+		x11/gnome/libadwaita \
 		x11/gtk+4
-
-# dlopen()ed
-LIB_DEPENDS +=	x11/gnome/libadwaita
-WANTLIB +=	adwaita-1
 
 # links against plugins-base, dlopen()s plugins-good
 LIB_DEPENDS +=	multimedia/gstreamer1/plugins-good
 
-WANTLIB += c cairo cairo-gobject gcrypt gdk_pixbuf-2.0 gee-0.8
+WANTLIB += adwaita-1 c cairo cairo-gobject gcrypt gdk_pixbuf-2.0 gee-0.8
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnutls gobject-2.0 gpgme
 WANTLIB += graphene-1.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstreamer-1.0
 WANTLIB += gstrtp-1.0 gstvideo-1.0 gtk-4 harfbuzz icudata icuuc
