@@ -6,7 +6,7 @@ DISTNAME=	Eterm-$V
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 # also see below
 PKGNAME=	eterm-$V
-REVISION=	0
+REVISION=	1
 SHARED_LIBS +=  Eterm                1.0      # unknown
 CATEGORIES=	x11
 
@@ -18,8 +18,8 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=	${HOMEPAGE}/download/ \
 		${MASTER_SITE_SOURCEFORGE:=eterm/}
 
-WANTLIB += ICE Imlib2 SM X11 XRes Xext ast c freetype iconv m ttf util
-WANTLIB += xcb z
+WANTLIB += ICE Imlib2 SM X11 X11-xcb XRes Xext ast c freetype
+WANTLIB += iconv m pcre ttf util xcb xcb-shm z
 
 LIB_DEPENDS=	converters/libiconv \
 		devel/libast \
