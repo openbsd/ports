@@ -1,5 +1,5 @@
 include/mspack.h
-lib/libmspack.a
+@static-lib lib/libmspack.a
 lib/libmspack.la
 @lib lib/libmspack.so.${LIBmspack_VERSION}
 lib/pkgconfig/libmspack.pc
