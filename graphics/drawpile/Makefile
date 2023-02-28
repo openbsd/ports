@@ -1,7 +1,6 @@
 COMMENT =	collaborative drawing program
-DISTNAME =	drawpile-2.1.17
+DISTNAME =	drawpile-2.1.20
 CATEGORIES =	graphics x11
-REVISION =	0
 
 HOMEPAGE =	https://drawpile.net/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -14,8 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5DNSSD Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Multimedia Qt5Network Qt5Sql Qt5Svg Qt5Widgets
-WANTLIB += c gif gio-2.0 glib-2.0 gobject-2.0 intl m microhttpd
-WANTLIB += miniupnpc qt5keychain secret-1 sodium vpx
+WANTLIB += c gif m microhttpd miniupnpc qt5keychain sodium vpx
 
 MASTER_SITES =	https://drawpile.net/files/src/
 
