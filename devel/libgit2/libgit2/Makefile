@@ -2,7 +2,7 @@ COMMENT=		the Git library, take 2
 
 GH_ACCOUNT =		libgit2
 GH_PROJECT =		libgit2
-GH_TAGNAME =		v1.6.1
+GH_TAGNAME =		v1.6.2
 
 SHARED_LIBS +=  git2                      14.2 # 0.28
 
@@ -27,7 +27,7 @@ LIB_DEPENDS=		devel/http-parser \
 CONFIGURE_ARGS=		-DUSE_SSH=ON \
 			-DUSE_HTTP_PARSER=system
 
-CFLAGS +=	-I${LOCALBASE}/include
+CFLAGS +=		-I${LOCALBASE}/include
 MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
