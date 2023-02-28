@@ -45,27 +45,3 @@ Index: CMakeLists.txt
  
  IF (ZLIB_FOUND)
      INCLUDE_DIRECTORIES(${ZLIB_INCLUDE_DIRS})
-@@ -460,14 +460,21 @@ IF (WITH_MRUBY)
-     ELSE ()
-         SET(MRUBY_TOOLCHAIN "gcc")
-     ENDIF ()
--    ADD_CUSTOM_TARGET(mruby MRUBY_TOOLCHAIN=${MRUBY_TOOLCHAIN} MRUBY_CONFIG=${CMAKE_CURRENT_SOURCE_DIR}/misc/mruby_config.rb MRUBY_BUILD_DIR=${CMAKE_CURRENT_BINARY_DIR}/mruby ruby minirake
--        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/deps/mruby)
-+    ADD_CUSTOM_TARGET(mruby
-+        # deps/mruby/tasks/toolchains/clang.rake looks for CC, CXX and LD.
-+        # There are no C++ files in deps/mruby, use the C compiler for linking.
-+        MRUBY_TOOLCHAIN=${MRUBY_TOOLCHAIN} CC=${CMAKE_C_COMPILER} CXX=${CMAKE_CXX_COMPILER} LD=${CMAKE_C_COMPILER} MRUBY_CONFIG=${CMAKE_CURRENT_SOURCE_DIR}/misc/mruby_config.rb MRUBY_BUILD_DIR=${CMAKE_CURRENT_BINARY_DIR}/mruby MRUBY_ADDITIONAL_CONFIG=${MRUBY_ADDITIONAL_CONFIG} ruby minirake
-+        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/deps/mruby
-+        BYPRODUCTS "${CMAKE_CURRENT_BINARY_DIR}/mruby/host/lib/libmruby.a"
-+                   "${CMAKE_CURRENT_BINARY_DIR}/mruby/host/mrbgems/mruby-onig-regexp/onigmo-6.1.1/.libs/libonigmo.a"
-+    )
-     LIST(APPEND STANDALONE_SOURCE_FILES
-         lib/handler/mruby.c
-         lib/handler/mruby/chunked.c
-         lib/handler/mruby/http_request.c
-         lib/handler/configurator/mruby.c)
-     SET(STANDALONE_COMPILE_FLAGS "${STANDALONE_COMPILE_FLAGS} -DH2O_USE_MRUBY=1")
-+    SET_PROPERTY(DIRECTORY PROPERTY ADDITIONAL_MAKE_CLEAN_FILES ${CMAKE_CURRENT_BINARY_DIR}/mruby/)
- ENDIF (WITH_MRUBY)
- IF (WITH_PICOTLS)
-     LIST(APPEND STANDALONE_SOURCE_FILES ${PICOTLS_SOURCE_FILES})

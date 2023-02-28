@@ -50,7 +50,6 @@
      SUBDIR += gotosocial
      SUBDIR += gumbo
      SUBDIR += h2o
-     SUBDIR += h2o,mruby
      SUBDIR += haserl
      SUBDIR += haserl,no_lua
      SUBDIR += haserl,no_lua,static

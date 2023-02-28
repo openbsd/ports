@@ -8,7 +8,7 @@ CATEGORIES =	www
 GH_ACCOUNT =	h2o
 GH_PROJECT =	h2o
 GH_TAGNAME =	v2.2.6
-REVISION =	7
+REVISION =	8
 
 HOMEPAGE =	https://h2o.examp1e.net/
 MAINTAINER =	Otto Moerbeek <otto@drijf.net>
@@ -21,13 +21,6 @@ WANTLIB += ${COMPILER_LIBCXX} c crypto m ssl uv z
 # uses TLS
 COMPILER =		base-clang ports-gcc
 
-FLAVORS =		mruby
-FLAVOR ?=
-
-.if ${FLAVOR:Mmruby}
-BROKEN-arm =		SIGBUS in mruby build
-.endif
-
 MODULES =		devel/cmake
 
 BUILD_DEPENDS =		devel/bison
@@ -37,22 +30,6 @@ CONFIGURE_ARGS =	-DBUILD_SHARED_LIBS=ON \
 			-DCMAKE_INSTALL_SYSCONFDIR=${SYSCONFDIR}/h2o \
 			-DWITH_BUNDLED_SSL=OFF \
 			-DWITH_PICOTLS=OFF
-
-.if ${FLAVOR:Mmruby}
-MODULES +=		lang/ruby
-MODRUBY_RUNDEP =	No
-CONFIGURE_ARGS +=	-DWITH_MRUBY=ON
-# mruby build picks up the static oniguruma library if present during build
-# otherwise uses a bundled older version
-BUILD_DEPENDS +=	textproc/oniguruma
-MAKE_ENV +=		AWK=/usr/bin/awk \
-			SED=/usr/bin/sed \
-			GREP=/usr/bin/grep \
-			ac_cv_path_mkdir=/bin/mkdir
-
-pre-configure:
-	ln -sf ${RUBY} ${WRKDIR}/bin/ruby
-.endif
 
 post-install:
 	cd ${WRKSRC}/doc; pax -rw [a-z]* ${PREFIX}/share/doc/h2o/

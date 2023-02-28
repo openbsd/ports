@@ -103,7 +103,6 @@ share/examples/h2o/libh2o/simple.c
 share/examples/h2o/libh2o/socket-client.c
 share/examples/h2o/libh2o/websocket.c
 share/h2o/
-%%mruby%%
 share/h2o/annotate-backtrace-symbols
 share/h2o/ca-bundle.crt
 share/h2o/fastcgi-cgi
