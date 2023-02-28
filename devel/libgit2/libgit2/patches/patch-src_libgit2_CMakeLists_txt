@@ -1,0 +1,21 @@
+From 3142fdba3258cce583e6590ca135e3b665c81c64 Mon Sep 17 00:00:00 2001
+From: Edward Thomson <ethomson@edwardthomson.com>
+Date: Mon, 27 Feb 2023 22:08:47 +0000
+Subject: [PATCH] meta: configure pkg-config .pc correctly
+
+Index: src/libgit2/CMakeLists.txt
+--- src/libgit2/CMakeLists.txt.orig
++++ src/libgit2/CMakeLists.txt
+@@ -103,10 +103,10 @@ if(SONAME)
+ 	endif()
+ endif()
+ 
+-pkg_build_config(NAME "${LIBGIT2_FILENAME}"
++pkg_build_config(NAME "lib${LIBGIT2_FILENAME}"
+ 	VERSION ${libgit2_VERSION}
+ 	DESCRIPTION "The git library, take 2"
+-	LIBS_SELF git2
++	LIBS_SELF ${LIBGIT2_FILENAME}
+ 	PRIVATE_LIBS ${LIBGIT2_PC_LIBS}
+ 	REQUIRES ${LIBGIT2_PC_REQUIRES})
+ 

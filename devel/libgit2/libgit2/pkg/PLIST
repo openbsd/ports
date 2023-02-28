@@ -1,4 +1,4 @@
-@bin bin/git2_cli
+@bin bin/git2
 include/git2/
 include/git2.h
 include/git2/annotated_commit.h
@@ -23,6 +23,7 @@ include/git2/describe.h
 include/git2/diff.h
 include/git2/email.h
 include/git2/errors.h
+include/git2/experimental.h
 include/git2/filter.h
 include/git2/global.h
 include/git2/graph.h

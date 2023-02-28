@@ -2,9 +2,9 @@ COMMENT=		the Git library, take 2
 
 GH_ACCOUNT =		libgit2
 GH_PROJECT =		libgit2
-GH_TAGNAME =		v1.5.1
+GH_TAGNAME =		v1.6.1
 
-SHARED_LIBS +=  git2                      14.1 # 0.28
+SHARED_LIBS +=  git2                      14.2 # 0.28
 
 WANTLIB += c crypto http_parser pcre pthread ssh2 ssl z
 

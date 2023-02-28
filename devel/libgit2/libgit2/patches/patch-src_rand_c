@@ -11,4 +11,4 @@ Index: src/util/rand.c
 +#endif
  #endif
  
- static uint64_t state[4];
+ #if defined(GIT_WIN32)
