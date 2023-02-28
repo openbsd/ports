@@ -2,6 +2,7 @@ COMMENT =		simple background setter
 
 VERSION =		0.8
 DISTNAME =		${GH_PROJECT}-${VERSION}
+REVISION =		0
 CATEGORIES =		x11 graphics
 
 MAINTAINER =		Joerg Jung <jung@openbsd.org>
@@ -9,7 +10,7 @@ MAINTAINER =		Joerg Jung <jung@openbsd.org>
 # MIT/X
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =		X11 Xinerama c Imlib2 m Xext freetype z
+WANTLIB =		X11 Xinerama c Imlib2 m
 
 GH_ACCOUNT =		Gottox
 GH_PROJECT =		bgs
