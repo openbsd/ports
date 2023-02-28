@@ -1,19 +1,19 @@
 COMMENT=		utility library including a imlib2 wrapper
 
 DISTNAME=		giblib-1.2.4
-REVISION =		8
+REVISION =		9
 SHARED_LIBS=		giblib	1.6	# .1.6
 
 CATEGORIES=		devel
 
 # BSD
 PERMIT_PACKAGE=	Yes
-WANTLIB=		X11 Xext freetype m xcb z
+
+WANTLIB += Imlib2 X11 X11-xcb Xext freetype m xcb xcb-shm
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=project/slackbuildsdirectlinks/giblib/}
 
 LIB_DEPENDS=		graphics/imlib2
-WANTLIB +=		Imlib2>=1
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include" \

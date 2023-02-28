@@ -11,7 +11,7 @@ include/giblib/gib_style.h
 include/giblib/gib_utils.h
 include/giblib/giblib.h
 include/giblib/giblib_config.h
-lib/libgiblib.a
+@static-lib lib/libgiblib.a
 lib/libgiblib.la
 @lib lib/libgiblib.so.${LIBgiblib_VERSION}
 lib/pkgconfig/giblib.pc
