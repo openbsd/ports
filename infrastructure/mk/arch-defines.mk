@@ -1,4 +1,4 @@
-# $OpenBSD: arch-defines.mk,v 1.95 2023/01/30 12:45:34 sthen Exp $
+# $OpenBSD: arch-defines.mk,v 1.96 2023/02/28 15:44:54 sthen Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -98,6 +98,12 @@ _SYSTEM_VERSION-${ARCH} ?= 0
 
 # added to version for all clang arches
 _SYSTEM_VERSION-clang = 1
+
+# defined in go.port.mk; added to version for all go arches so that
+# go-compiled packages can be updated easily for a new go compiler
+.if defined(MODULES) && ${MODULES:Mlang/go}
+_SYSTEM_VERSION-go = ${_MODGO_SYSTEM_VERSION}
+.endif
 
 # @version = ${_SYSTEM_VERSION} + ${_SYSTEM_VERSION-${MACHINE_ARCH}}
 _PKG_ARGS_VERSION += -V ${_SYSTEM_VERSION} -V ${_SYSTEM_VERSION-${MACHINE_ARCH}}

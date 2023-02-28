@@ -1,3 +1,7 @@
+# increment after a go compiler update to trigger updates of
+# compiled go packages (see arch-defines.mk)
+_MODGO_SYSTEM_VERSION =	1
+
 ONLY_FOR_ARCHS ?=	${GO_ARCHS}
 
 MODGO_BUILDDEP ?=	Yes
