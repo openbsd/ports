@@ -3,7 +3,7 @@ VERSION=	0.4.0
 DISTNAME=	dino-${VERSION}
 CATEGORIES=	net x11
 
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=	crypto-vala               0.0 # 0.0
 SHARED_LIBS +=	dino                      2.0 # 0.0
@@ -39,6 +39,7 @@ LIB_DEPENDS=	devel/libgee \
 
 # dlopen()ed
 LIB_DEPENDS +=	x11/gnome/libadwaita
+WANTLIB +=	adwaita-1
 
 # links against plugins-base, dlopen()s plugins-good
 LIB_DEPENDS +=	multimedia/gstreamer1/plugins-good
