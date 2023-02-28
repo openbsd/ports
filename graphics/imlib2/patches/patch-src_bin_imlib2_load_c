@@ -1,0 +1,32 @@
+fix access/return garbage if stat fails
+
+while here convert it to fstat after open, and range check the value
+we're about to mmap.
+
+Index: src/bin/imlib2_load.c
+--- src/bin/imlib2_load.c.orig
++++ src/bin/imlib2_load.c
+@@ -112,16 +112,19 @@ image_load_mem(const char *file, int *perr)
+    else
+       ext = file;
+ 
+-   err = stat(file, &st);
+-   if (err)
+-      goto bail;
+-
+    im = NULL;
+    fd = -1;
+    fdata = MAP_FAILED;
+ 
+    fd = open(file, O_RDONLY);
+    if (fd < 0)
++      goto bail;
++
++   err = fstat(fd, &st);
++   if (err)
++      goto bail;
++
++   if (st.st_size > SIZE_MAX)
+       goto bail;
+ 
+    fdata = mmap(NULL, st.st_size, PROT_READ, MAP_SHARED, fd, 0);
