@@ -2,7 +2,7 @@ COMMENT =		Mac OS-X style lightweight application launcher
 
 DISTNAME =		wbar-2.3.4
 EXTRACT_SUFX =		.tgz
-REVISION =		8
+REVISION =		9
 
 CATEGORIES=		x11
 
@@ -11,7 +11,7 @@ HOMEPAGE=		https://code.google.com/p/wbar/
 # GPLv3
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += Imlib2 X11 Xext c freetype intl m ${COMPILER_LIBCXX} z
+WANTLIB += ${COMPILER_LIBCXX} Imlib2 X11 c intl m
 
 COMPILER =		base-clang ports-gcc base-gcc
 
