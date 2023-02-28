@@ -2,7 +2,7 @@ COMMENT =	distributed and RESTful search engine
 
 V =		2.5.0
 DISTNAME =	opensearch-$V-linux-x64
-REVISION =	0
+REVISION =	1
 PKGNAME =	opensearch-$V
 
 CATEGORIES =	textproc devel
@@ -40,6 +40,10 @@ do-build:
 	find ${WRKSRC} -name '*.bat' -delete
 	${SUBST_CMD} ${SUBST_TARGETS}
 	rm -f ${WRKSRC}/{bin,config,plugins/opensearch-security/tools}/*{.beforesubst,${PATCHORIG}}
+	# fix for ECDSA certificates, see https://github.com/opensearch-project/security/pull/2422
+	rm -f ${WRKSRC}/plugins/opensearch-security/bcprov-jdk15on-1.67.jar && \
+	cp ${WRKSRC}/plugins/opensearch-performance-analyzer/bcprov-jdk15on-1.70.jar \
+		${WRKSRC}/plugins/opensearch-security/
 	find ${WRKSRC}/{bin,performance-analyzer-rca/bin,plugins/opensearch-security/tools} \
 		 -type f -exec sed -i 's,#!/bin/bash,#!/usr/bin/env bash,' {} +
 	find ${WRKSRC}/{bin,performance-analyzer-rca/bin,plugins/opensearch-security/tools} \
