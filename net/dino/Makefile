@@ -23,6 +23,7 @@ MODULES=	devel/cmake
 BUILD_DEPENDS=	devel/gettext,-tools \
 		lang/vala
 RUN_DEPENDS=	devel/desktop-file-utils \
+		multimedia/gstreamer1/plugins-good \
 		x11/gtk+3,-guic
 LIB_DEPENDS=	devel/libgee \
 		devel/libsoup3 \
@@ -37,9 +38,6 @@ LIB_DEPENDS=	devel/libgee \
 		textproc/icu4c \
 		x11/gnome/libadwaita \
 		x11/gtk+4
-
-# dlopen()ed
-RUN_DEPENDS +=	multimedia/gstreamer1/plugins-good
 
 WANTLIB += adwaita-1 c cairo cairo-gobject gcrypt gdk_pixbuf-2.0 gee-0.8
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnutls gobject-2.0 gpgme
