@@ -2,7 +2,7 @@ COMMENT =	flexible DNS proxy with support for encrypted DNS protocols
 
 GH_ACCOUNT =	jedisct1
 GH_PROJECT =	dnscrypt-proxy
-GH_TAGNAME =	2.1.3
+GH_TAGNAME =	2.1.4
 
 CATEGORIES =	net
 
@@ -19,7 +19,7 @@ MODGO_TYPE =	bin
 
 INSTDIR =	${PREFIX}/share/examples/dnscrypt-proxy
 
-post-patch:
+pre-configure:
 	sed -i "s;cache_file = '\(.*\)\.md';cache_file =\
 		'${LOCALSTATEDIR}/dnscrypt-proxy/\1.md';g" \
 		${MODGO_SUBDIR}/dnscrypt-proxy/example-dnscrypt-proxy.toml
@@ -34,6 +34,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dnscrypt-proxy/dnscrypt-proxy ${PREFIX}/bin/
 	${INSTALL_DATA_DIR} ${INSTDIR}
 	${INSTALL_DATA} ${WRKSRC}/dnscrypt-proxy/example-* ${INSTDIR}
-	rm -f ${INSTDIR}/example-dnscrypt-proxy.toml.orig
+	rm -f ${INSTDIR}/example-dnscrypt-proxy.toml${PATCHORIG}
 
 .include <bsd.port.mk>
