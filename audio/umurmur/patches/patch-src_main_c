@@ -1,0 +1,28 @@
+initgroups(3) invalidates the data returned by getgrnam(3) producing
+bogus logs.
+
+Backport of <https://github.com/umurmur/umurmur/pull/183>
+
+Index: src/main.c
+--- src/main.c.orig
++++ src/main.c
+@@ -149,6 +149,9 @@ static void switch_user(void)
+ 			Log_fatal("Unknown group '%s'", groupname);
+ 
+ 		gid = grp->gr_gid;
++
++		/* initgroups() will invalidate this data */
++		grp = NULL;
+ 	}
+ 
+ 	if (initgroups(pwd->pw_name, gid))
+@@ -160,8 +163,7 @@ static void switch_user(void)
+ 	if (setuid(pwd->pw_uid))
+ 		Log_fatal("setuid() failed: %s", strerror(errno));
+ 
+-	if (!grp)
+-		grp = getgrgid(gid);
++	grp = getgrgid(gid);
+ 	if (!grp)
+ 		Log_fatal("getgrgid() failed: %s", strerror(errno));
+ 
