@@ -1,11 +1,11 @@
-@conflict libcanberra-<gtk-0.28p0
+@conflict libcanberra-gtk-*
 @pkgpath audio/libcanberra
-include/canberra-gtk.h
+@pkgpath audio/libcanberra,-gtk
 include/canberra.h
 lib/libcanberra-0.30/
-lib/libcanberra-0.30/libcanberra-multi.so
-lib/libcanberra-0.30/libcanberra-sndio.so
-lib/libcanberra.a
+@so lib/libcanberra-0.30/libcanberra-multi.so
+@so lib/libcanberra-0.30/libcanberra-sndio.so
+@static-lib lib/libcanberra.a
 lib/libcanberra.la
 @lib lib/libcanberra.so.${LIBcanberra_VERSION}
 lib/pkgconfig/libcanberra.pc

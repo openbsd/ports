@@ -1,9 +1,0 @@
-@conflict libcanberra-<=0.24p1
-lib/gtk-2.0/
-lib/gtk-2.0/modules/
-lib/gtk-2.0/modules/libcanberra-gtk-module.so
-lib/libcanberra-gtk.a
-lib/libcanberra-gtk.la
-@lib lib/libcanberra-gtk.so.${LIBcanberra-gtk_VERSION}
-lib/pkgconfig/libcanberra-gtk.pc
-share/vala/vapi/libcanberra-gtk.vapi

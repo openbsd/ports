@@ -1,18 +1,15 @@
 COMMENT-main=	implementation of the Freedesktop sound theme spec.
-COMMENT-gtk=	gtk+2 helper for libcanberra
 COMMENT-gtk3=	gtk+3 helper for libcanberra
 
 V=		0.30
 DISTNAME=	libcanberra-${V}
 EXTRACT_SUFX=	.tar.xz
 
-REVISION-main=	5
-REVISION-gtk=	10
-REVISION-gtk3=	11
+REVISION-main=	6
+REVISION-gtk3=	12
 
 SHARED_LIBS +=  canberra             2.0      # 2.5
 SHARED_LIBS +=  canberra-gtk3        1.8      # 1.8
-SHARED_LIBS +=  canberra-gtk         1.0      # 1.8
 
 CATEGORIES=	audio devel
 
@@ -25,33 +22,23 @@ PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
-cWANTLIB += ltdl m ogg pthread vorbis vorbisfile
+WANTLIB += ltdl m ogg pthread vorbis vorbisfile
 
-WANTLIB-main += ${cWANTLIB} sndio
+WANTLIB-main += ${WANTLIB} sndio
 
-WANTLIB-gtk += ${cWANTLIB}
-WANTLIB-gtk += X11 Xcomposite Xcursor Xdamage Xext Xfixes
-WANTLIB-gtk += Xi Xinerama Xrandr Xrender atk-1.0 cairo canberra
-WANTLIB-gtk += expat ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB-gtk += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
-WANTLIB-gtk += gtk-x11-2.0 harfbuzz iconv intl pango-1.0 pangocairo-1.0
-WANTLIB-gtk += pangoft2-1.0 pcre2-8 pixman-1 png xcb xcb-render xcb-shm z
-WANTLIB-gtk += ${COMPILER_LIBCXX} fribidi Xau Xdmcp jpeg
-
-WANTLIB-gtk3 += ${cWANTLIB}
-WANTLIB-gtk3 += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
-WANTLIB-gtk3 += Xrender atk-1.0 atk-bridge-2.0 c cairo cairo-gobject 
-WANTLIB-gtk3 += canberra epoxy expat ffi fontconfig freetype jpeg
-WANTLIB-gtk3 += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB-gtk3 += graphite2 gthread-2.0 gtk-3 harfbuzz iconv intl pango-1.0
-WANTLIB-gtk3 += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png xcb xcb-render
-WANTLIB-gtk3 += xcb-shm z ${COMPILER_LIBCXX} fribidi Xau Xdmcp execinfo
+WANTLIB-gtk3 += ${WANTLIB} ${COMPILER_LIBCXX}
+WANTLIB-gtk3 += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB-gtk3 += Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
+WANTLIB-gtk3 += c cairo cairo-gobject canberra dbus-1 epoxy execinfo
+WANTLIB-gtk3 += expat ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
+WANTLIB-gtk3 += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
+WANTLIB-gtk3 += gthread-2.0 gtk-3 harfbuzz iconv intl jpeg pango-1.0
+WANTLIB-gtk3 += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png xcb
+WANTLIB-gtk3 += xcb-render xcb-shm z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MULTI_PACKAGES=		-main -gtk -gtk3
-
-SUBST_VARS=		V
+MULTI_PACKAGES=		-main -gtk3
 
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION= 	1.11
@@ -61,11 +48,7 @@ BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
 
 LIB_DEPENDS-main=	audio/libvorbis \
 			devel/libtool,-ltdl
-RUN_DEPENDS-main=	audio/sound-theme-freedesktop>=0.6
-
-LIB_DEPENDS-gtk=	${BASE_PKGPATH} \
-			x11/gtk+2
-RUN_DEPENDS-gtk=
+RUN_DEPENDS-main=	audio/sound-theme-freedesktop
 
 LIB_DEPENDS-gtk3=	${BASE_PKGPATH} \
 			x11/gtk+3
@@ -77,6 +60,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS= 	--disable-gstreamer \
+			--disable-gtk \
 			--disable-null \
 			--disable-oss \
 			--disable-pulse \
@@ -98,6 +82,6 @@ pre-configure:
 
 post-install:
 	rm ${PREFIX}/lib/libcanberra-${V}/*.{a,la}
-	rm ${PREFIX}/lib/gtk-{2,3}.0/modules/*.{a,la}
+	rm ${PREFIX}/lib/gtk-3.0/modules/*.{a,la}
 
 .include <bsd.port.mk>
