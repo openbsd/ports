@@ -1,8 +1,0 @@
-A couple of tests have missing files in the source distribution.
-
-Index: tests/regression_tests/Makefile.am
---- tests/regression_tests/Makefile.am.orig
-+++ tests/regression_tests/Makefile.am
-@@ -1 +1 @@
--SUBDIRS = shapes vuln
-+#SUBDIRS = shapes vuln

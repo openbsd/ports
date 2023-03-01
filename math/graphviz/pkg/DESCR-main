@@ -1,18 +1,14 @@
-graphviz is a set of graph drawing tools for Unix or MS-Windows
-(win32), including a web service interface (webdot).  Graph
-drawing addresses the problem of visualizing structural information
-by constructing geometric representations of abstract graphs and
-networks. 
+Graphviz is open source graph visualization software.
 
-The goal of graphviz has been twofold: 
+Graph visualization is a way of representing structural information as
+diagrams of abstract graphs and networks. It has important applications
+in networking, bioinformatics, software engineering, database and web
+design, machine learning, and in visual interfaces for other technical
+domains.
 
-    to find efficient algorithms for making very readable
-    drawings of graphs up to several hundreds of nodes,
-    approaching the quality of manual layouts (made
-    with CAD tools).  The algorithms should scale even
-    further, as layout of large graphs can also offer
-    a gestalt view of complex systems.
-
-    to create convenient graph drawing systems and web
-    services. This means defining useful interfaces and
-    features to support applications.
+The Graphviz layout programs take descriptions of graphs in a simple
+text language, and make diagrams in useful formats, such as images and
+SVG for web pages; PDF or Postscript for inclusion in other documents;
+or display in an interactive graph browser. Graphviz has many useful
+features for concrete diagrams, such as options for colors, fonts,
+tabular node layouts, line styles, hyperlinks, and custom shapes.

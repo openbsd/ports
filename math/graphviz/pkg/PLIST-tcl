@@ -1,0 +1,11 @@
+@conflict graphviz-<3
+lib/tcl/graphviz/
+@so lib/tcl/graphviz/libgdtclft.so
+@so lib/tcl/graphviz/libgv_tcl.so
+@so lib/tcl/graphviz/libtcldot.so
+@so lib/tcl/graphviz/libtcldot_builtin.so
+@so lib/tcl/graphviz/libtclplan.so
+lib/tcl/graphviz/pkgIndex.tcl
+man/man3/gdtclft.3tcl
+man/man3/gv.3tcl
+man/man3/tcldot.3tcl

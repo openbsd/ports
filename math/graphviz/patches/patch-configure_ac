@@ -1,17 +1,21 @@
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -693,11 +693,12 @@ else
-     if test `$SWIG -help 2>&1 | $EGREP -c '\-guile *- Generate'` = 0; then
-       use_guile="No (swig does not support -guile option)"
-     else
--      AC_CHECK_PROGS(GUILE,guile2 guile1.8 guile)
-+      AC_CHECK_PROGS(GUILE,guile1.8 guile)
-       if test "x$GUILE" = "x"; then
+@@ -77,7 +77,7 @@ case "${host_os}" in
+     GVPLUGIN_VERSION=`expr $GVPLUGIN_CURRENT + 1`
+     ;;
+   * )
+-    GVPLUGIN_VERSION=$GVPLUGIN_CURRENT
++    GVPLUGIN_VERSION=$GVPLUGIN_CURRENT.0
+     ;;
+ esac
+ AC_DEFINE_UNQUOTED(GVPLUGIN_VERSION,$GVPLUGIN_VERSION,[Compatibility version number for plugins.])
+@@ -642,7 +642,7 @@ else
+       if test "x$GUILE_CONFIG" = "x"; then
          use_guile="No (guile not available)"
        else
-         [GUILE_VERSION=`$GUILE --version | sed -n '1 s/^.* \+\([0-9\.]\+\)$/\1/ p'`]
-+        [GUILE_VERSION=`$GUILE --version | sed -n '1 s/^Guile \([0-9][0-9]*\.[0-9][0-9]*\.[0-9][0-9]*\)$/\1/ p'`]
+-        [GUILE_VERSION=`$GUILE_CONFIG --version 2>&1 | sed -n '1 s/^.* \+\([0-9\.]\+\)$/\1/ p'`]
++        [GUILE_VERSION=`$GUILE_CONFIG --version 2>&1 | sed -En '1 s/^.* +([0-9\.]+)$/\1/ p'`]
          GUILE_VERSION_MAJOR=`echo $GUILE_VERSION | cut -d '.' -f 1`
          GUILE_VERSION_MINOR=`echo $GUILE_VERSION | cut -d '.' -f 2`
-         if test 0$GUILE_VERSION_MAJOR -lt 2; then
+         AC_CHECK_PROGS(GUILE,guile$GUILE_VERSION_MAJOR.$GUILE_VERSION_MINOR guile$GUILE_VERSION_MAJOR guile)

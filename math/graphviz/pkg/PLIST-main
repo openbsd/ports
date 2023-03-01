@@ -8,7 +8,7 @@ bin/circo
 @bin bin/dot
 bin/dot2gxl
 @bin bin/dot_builtins
-bin/dotty
+@bin bin/edgepaint
 bin/fdp
 @bin bin/gc
 @bin bin/gml2gv
@@ -23,8 +23,6 @@ bin/gvmap.sh
 @bin bin/gvpr
 bin/gxl2dot
 @bin bin/gxl2gv
-@bin bin/lefty
-bin/lneato
 @bin bin/mm2gv
 bin/neato
 @bin bin/nop
@@ -99,15 +97,6 @@ lib/pkgconfig/libgvpr.pc
 lib/pkgconfig/liblab_gamut.pc
 lib/pkgconfig/libpathplan.pc
 lib/pkgconfig/libxdot.pc
-lib/tcl/graphviz/
-@lib lib/tcl/graphviz/libgdtclft.so.${LIBgdtclft_VERSION}
-@so lib/tcl/graphviz/libgv_tcl.so
-@lib lib/tcl/graphviz/libtcldot.so.${LIBtcldot_VERSION}
-@lib lib/tcl/graphviz/libtcldot_builtin.so.${LIBtcldot_builtin_VERSION}
-@lib lib/tcl/graphviz/libtclplan.so.${LIBtclplan_VERSION}
-lib/tcl/graphviz/pkgIndex.tcl
-lib/tcl${MODTCL_VERSION}/
-lib/tcl${MODTCL_VERSION}/graphviz
 ${P5ARCH}/
 ${P5ARCH}/gv.pm
 @so ${P5ARCH}/gv.so
@@ -120,7 +109,7 @@ ${P5ARCH}/gv.pm
 @man man/man1/dijkstra.1
 @man man/man1/dot.1
 @man man/man1/dot2gxl.1
-@man man/man1/dotty.1
+@man man/man1/edgepaint.1
 @man man/man1/fdp.1
 @man man/man1/gc.1
 @man man/man1/gml2gv.1
@@ -135,9 +124,6 @@ ${P5ARCH}/gv.pm
 @man man/man1/gvpr.1
 @man man/man1/gxl2dot.1
 @man man/man1/gxl2gv.1
-@man man/man1/lefty.1
-@man man/man1/lneato.1
-@man man/man1/mingle.1
 @man man/man1/mm2gv.1
 @man man/man1/neato.1
 @man man/man1/nop.1
@@ -153,271 +139,52 @@ ${P5ARCH}/gv.pm
 @man man/man3/cdt.3
 @man man/man3/cgraph.3
 @man man/man3/expr.3
-man/man3/gdtclft.3tcl
 man/man3/gv.3guile
 man/man3/gv.3perl
 man/man3/gv.3python
-man/man3/gv.3tcl
 @man man/man3/gvc.3
 @man man/man3/gvpr.3
-@man man/man3/lab_gamut.3
 @man man/man3/pack.3
 @man man/man3/pathplan.3
-man/man3/tcldot.3tcl
 @man man/man3/xdot.3
 @man man/man7/graphviz.7
 share/doc/graphviz/
 share/doc/graphviz/AUTHORS
+share/doc/graphviz/CHANGELOG.md
 share/doc/graphviz/COPYING
-share/doc/graphviz/ChangeLog
 share/doc/graphviz/Dot.ref
 share/doc/graphviz/NEWS
-share/doc/graphviz/addingLayout.txt
 share/doc/graphviz/cpl1.0.txt
-share/doc/graphviz/fontfaq.txt
 share/doc/graphviz/html/
 share/doc/graphviz/html/FAQ.html
-share/doc/graphviz/html/Mcircle.gif
-share/doc/graphviz/html/Mdiamond.gif
-share/doc/graphviz/html/Msquare.gif
-share/doc/graphviz/html/a_box.gif
-share/doc/graphviz/html/a_crow.gif
-share/doc/graphviz/html/a_diamond.gif
-share/doc/graphviz/html/a_dot.gif
-share/doc/graphviz/html/a_ediamond.gif
-share/doc/graphviz/html/a_empty.gif
-share/doc/graphviz/html/a_forward.gif
-share/doc/graphviz/html/a_halfopen.gif
-share/doc/graphviz/html/a_inv.gif
-share/doc/graphviz/html/a_invdot.gif
-share/doc/graphviz/html/a_invempty.gif
-share/doc/graphviz/html/a_invodot.gif
-share/doc/graphviz/html/a_lteeoldiamond.gif
-share/doc/graphviz/html/a_nohead.gif
-share/doc/graphviz/html/a_none.gif
-share/doc/graphviz/html/a_normal.gif
-share/doc/graphviz/html/a_obox.gif
-share/doc/graphviz/html/a_odiamond.gif
-share/doc/graphviz/html/a_odot.gif
-share/doc/graphviz/html/a_open.gif
-share/doc/graphviz/html/a_tee.gif
-share/doc/graphviz/html/aa_box.gif
-share/doc/graphviz/html/aa_crow.gif
-share/doc/graphviz/html/aa_diamond.gif
-share/doc/graphviz/html/aa_dot.gif
-share/doc/graphviz/html/aa_inv.gif
-share/doc/graphviz/html/aa_lbox.gif
-share/doc/graphviz/html/aa_lcrow.gif
-share/doc/graphviz/html/aa_ldiamond.gif
-share/doc/graphviz/html/aa_linv.gif
-share/doc/graphviz/html/aa_lnormal.gif
-share/doc/graphviz/html/aa_ltee.gif
-share/doc/graphviz/html/aa_lvee.gif
-share/doc/graphviz/html/aa_none.gif
-share/doc/graphviz/html/aa_normal.gif
-share/doc/graphviz/html/aa_obox.gif
-share/doc/graphviz/html/aa_odiamond.gif
-share/doc/graphviz/html/aa_odot.gif
-share/doc/graphviz/html/aa_oinv.gif
-share/doc/graphviz/html/aa_olbox.gif
-share/doc/graphviz/html/aa_oldiamond.gif
-share/doc/graphviz/html/aa_olinv.gif
-share/doc/graphviz/html/aa_olnormal.gif
-share/doc/graphviz/html/aa_onormal.gif
-share/doc/graphviz/html/aa_orbox.gif
-share/doc/graphviz/html/aa_ordiamond.gif
-share/doc/graphviz/html/aa_orinv.gif
-share/doc/graphviz/html/aa_ornormal.gif
-share/doc/graphviz/html/aa_rbox.gif
-share/doc/graphviz/html/aa_rcrow.gif
-share/doc/graphviz/html/aa_rdiamond.gif
-share/doc/graphviz/html/aa_rinv.gif
-share/doc/graphviz/html/aa_rnormal.gif
-share/doc/graphviz/html/aa_rtee.gif
-share/doc/graphviz/html/aa_rvee.gif
-share/doc/graphviz/html/aa_tee.gif
-share/doc/graphviz/html/aa_vee.gif
-share/doc/graphviz/html/arrows.html
-share/doc/graphviz/html/attrs.html
-share/doc/graphviz/html/back.gif
-share/doc/graphviz/html/both.gif
-share/doc/graphviz/html/box.gif
-share/doc/graphviz/html/box3d.gif
 share/doc/graphviz/html/build.html
-share/doc/graphviz/html/c_bold.png
-share/doc/graphviz/html/c_dashed.png
-share/doc/graphviz/html/c_dotted.png
-share/doc/graphviz/html/c_filled.png
-share/doc/graphviz/html/c_rounded.png
-share/doc/graphviz/html/c_solid.png
-share/doc/graphviz/html/c_striped.png
 share/doc/graphviz/html/char.html
-share/doc/graphviz/html/circle.gif
-share/doc/graphviz/html/colorlist.gif
-share/doc/graphviz/html/colors.html
-share/doc/graphviz/html/command.html
-share/doc/graphviz/html/component.gif
-share/doc/graphviz/html/constraint.gif
-share/doc/graphviz/html/cylinder.gif
-share/doc/graphviz/html/diamond.gif
-share/doc/graphviz/html/doublecircle.gif
-share/doc/graphviz/html/doubleoctagon.gif
-share/doc/graphviz/html/e_bold.png
-share/doc/graphviz/html/e_dashed.png
-share/doc/graphviz/html/e_dotted.png
-share/doc/graphviz/html/e_solid.png
-share/doc/graphviz/html/egg.gif
-share/doc/graphviz/html/ellipse.gif
-share/doc/graphviz/html/fill.gif
-share/doc/graphviz/html/folder.gif
-share/doc/graphviz/html/forward.gif
-share/doc/graphviz/html/g_lin0.png
-share/doc/graphviz/html/g_lin180.png
-share/doc/graphviz/html/g_lin270.png
-share/doc/graphviz/html/g_lin360.png
-share/doc/graphviz/html/g_lin45.png
-share/doc/graphviz/html/g_lin90.png
-share/doc/graphviz/html/g_rad0.png
-share/doc/graphviz/html/g_rad180.png
-share/doc/graphviz/html/g_rad270.png
-share/doc/graphviz/html/g_rad360.png
-share/doc/graphviz/html/g_rad45.png
-share/doc/graphviz/html/g_rad90.png
 share/doc/graphviz/html/gdtclft.entities.example.png
-share/doc/graphviz/html/hexagon.gif
-share/doc/graphviz/html/house.gif
-share/doc/graphviz/html/html1.gif
-share/doc/graphviz/html/html2.gif
-share/doc/graphviz/html/html2.gv
-share/doc/graphviz/html/html3.gif
-share/doc/graphviz/html/html3.gv
-share/doc/graphviz/html/html4.gif
-share/doc/graphviz/html/html4.gv
 share/doc/graphviz/html/index.html
+share/doc/graphviz/html/info/
+share/doc/graphviz/html/info/arrows.html
+share/doc/graphviz/html/info/attrs.html
+share/doc/graphviz/html/info/colors.html
+share/doc/graphviz/html/info/command.html
+share/doc/graphviz/html/info/index.html
+share/doc/graphviz/html/info/lang.html
+share/doc/graphviz/html/info/output.html
+share/doc/graphviz/html/info/shapes.html
 share/doc/graphviz/html/internal_todo.html
-share/doc/graphviz/html/invhouse.gif
-share/doc/graphviz/html/invtrapezium.gif
-share/doc/graphviz/html/invtriangle.gif
-share/doc/graphviz/html/lang.html
-share/doc/graphviz/html/mrecord.gif
-share/doc/graphviz/html/n_bold.png
-share/doc/graphviz/html/n_dashed.png
-share/doc/graphviz/html/n_diagonals.png
-share/doc/graphviz/html/n_dotted.png
-share/doc/graphviz/html/n_filled.png
-share/doc/graphviz/html/n_rounded.png
-share/doc/graphviz/html/n_solid.png
-share/doc/graphviz/html/n_striped.png
-share/doc/graphviz/html/n_wedged.png
-share/doc/graphviz/html/nohead.gif
-share/doc/graphviz/html/none.gif
-share/doc/graphviz/html/none_back.png
-share/doc/graphviz/html/none_both.png
-share/doc/graphviz/html/none_forward.png
-share/doc/graphviz/html/none_none.png
-share/doc/graphviz/html/normal_back.png
-share/doc/graphviz/html/normal_both.png
-share/doc/graphviz/html/normal_forward.png
-share/doc/graphviz/html/normal_none.png
-share/doc/graphviz/html/note.gif
-share/doc/graphviz/html/octagon.gif
-share/doc/graphviz/html/output.html
-share/doc/graphviz/html/oval.gif
-share/doc/graphviz/html/parallelogram.gif
-share/doc/graphviz/html/pentagon.gif
-share/doc/graphviz/html/plain.gif
-share/doc/graphviz/html/plaintext.gif
-share/doc/graphviz/html/plugins.png
-share/doc/graphviz/html/point.gif
-share/doc/graphviz/html/polygon.gif
 share/doc/graphviz/html/pspdf.png
-share/doc/graphviz/html/record.gif
-share/doc/graphviz/html/record2.gif
-share/doc/graphviz/html/rect.gif
-share/doc/graphviz/html/rectangle.gif
-share/doc/graphviz/html/round.gif
-share/doc/graphviz/html/sdlshapes.jpg
-share/doc/graphviz/html/sdlshapes.png
-share/doc/graphviz/html/septagon.gif
-share/doc/graphviz/html/shapes.html
-share/doc/graphviz/html/spline_curved.png
-share/doc/graphviz/html/spline_line.png
-share/doc/graphviz/html/spline_none.png
-share/doc/graphviz/html/spline_ortho.png
-share/doc/graphviz/html/spline_polyline.png
-share/doc/graphviz/html/spline_spline.png
-share/doc/graphviz/html/square.gif
-share/doc/graphviz/html/tab.gif
+share/doc/graphviz/html/schema/
+share/doc/graphviz/html/schema/arguments.xml
+share/doc/graphviz/html/schema/attributes.xml
+share/doc/graphviz/html/schema/attributes.xslt
 share/doc/graphviz/html/tcldot.html
 share/doc/graphviz/html/todo.html
-share/doc/graphviz/html/trapezium.gif
-share/doc/graphviz/html/triangle.gif
-share/doc/graphviz/html/tripleoctagon.gif
-share/doc/graphviz/html/underline.gif
 share/doc/graphviz/html/winbuild.html
 share/doc/graphviz/latex_suggestions.txt
 share/doc/graphviz/pdf/
 share/doc/graphviz/pdf/Agraph.pdf
-share/doc/graphviz/pdf/acyclic.1.pdf
-share/doc/graphviz/pdf/bcomps.1.pdf
-share/doc/graphviz/pdf/ccomps.1.pdf
-share/doc/graphviz/pdf/cdt.3.pdf
-share/doc/graphviz/pdf/cgraph.3.pdf
-share/doc/graphviz/pdf/circo.1.pdf
-share/doc/graphviz/pdf/cluster.1.pdf
-share/doc/graphviz/pdf/diffimg.1.pdf
-share/doc/graphviz/pdf/dijkstra.1.pdf
-share/doc/graphviz/pdf/dot.1.pdf
-share/doc/graphviz/pdf/dot2gxl.1.pdf
 share/doc/graphviz/pdf/dotguide.pdf
-share/doc/graphviz/pdf/dotty.1.pdf
-share/doc/graphviz/pdf/dottyguide.pdf
-share/doc/graphviz/pdf/expr.3.pdf
-share/doc/graphviz/pdf/fdp.1.pdf
-share/doc/graphviz/pdf/gc.1.pdf
-share/doc/graphviz/pdf/gdtclft.3tcl.pdf
-share/doc/graphviz/pdf/gml2gv.1.pdf
-share/doc/graphviz/pdf/graphml2gv.1.pdf
-share/doc/graphviz/pdf/gv.3guile.pdf
-share/doc/graphviz/pdf/gv.3perl.pdf
-share/doc/graphviz/pdf/gv.3python.pdf
-share/doc/graphviz/pdf/gv.3tcl.pdf
-share/doc/graphviz/pdf/gv2gml.1.pdf
-share/doc/graphviz/pdf/gv2gxl.1.pdf
-share/doc/graphviz/pdf/gvc.3.pdf
-share/doc/graphviz/pdf/gvcolor.1.pdf
-share/doc/graphviz/pdf/gvgen.1.pdf
-share/doc/graphviz/pdf/gvmap.1.pdf
-share/doc/graphviz/pdf/gvmap.sh.1.pdf
-share/doc/graphviz/pdf/gvpack.1.pdf
-share/doc/graphviz/pdf/gvpr.1.pdf
-share/doc/graphviz/pdf/gvpr.3.pdf
-share/doc/graphviz/pdf/gxl2dot.1.pdf
-share/doc/graphviz/pdf/gxl2gv.1.pdf
-share/doc/graphviz/pdf/lab_gamut.3.pdf
-share/doc/graphviz/pdf/lefty.1.pdf
-share/doc/graphviz/pdf/leftyguide.pdf
 share/doc/graphviz/pdf/libguide.pdf
-share/doc/graphviz/pdf/lneato.1.pdf
-share/doc/graphviz/pdf/mingle.1.pdf
-share/doc/graphviz/pdf/mm2gv.1.pdf
-share/doc/graphviz/pdf/neato.1.pdf
 share/doc/graphviz/pdf/neatoguide.pdf
-share/doc/graphviz/pdf/nop.1.pdf
-share/doc/graphviz/pdf/osage.1.pdf
-share/doc/graphviz/pdf/pack.3.pdf
-share/doc/graphviz/pdf/patchwork.1.pdf
-share/doc/graphviz/pdf/pathplan.3.pdf
-share/doc/graphviz/pdf/prune.pdf
-share/doc/graphviz/pdf/sccmap.1.pdf
-share/doc/graphviz/pdf/sfdp.1.pdf
-share/doc/graphviz/pdf/smyrna.pdf
-share/doc/graphviz/pdf/tcldot.3tcl.pdf
-share/doc/graphviz/pdf/tred.1.pdf
-share/doc/graphviz/pdf/twopi.1.pdf
-share/doc/graphviz/pdf/unflatten.1.pdf
-share/doc/graphviz/pdf/vimdot.1.pdf
-share/doc/graphviz/pdf/xdot.3.pdf
 share/examples/graphviz/
 share/examples/graphviz/demo/
 share/examples/graphviz/demo/doted.tcl
@@ -427,6 +194,8 @@ share/examples/graphviz/demo/entities.tcl
 share/examples/graphviz/demo/entities.tcl.README
 share/examples/graphviz/demo/gcat.tcl
 share/examples/graphviz/demo/gcat.tcl.README
+share/examples/graphviz/demo/modgraph.pl
+share/examples/graphviz/demo/modgraph.tcl
 share/examples/graphviz/demo/pathplan.tcl
 share/examples/graphviz/demo/pathplan.tcl.README
 share/examples/graphviz/demo/pathplan_data/
@@ -505,29 +274,7 @@ share/examples/graphviz/graphs/undirected/Heawood.gv
 share/examples/graphviz/graphs/undirected/Petersen.gv
 share/examples/graphviz/graphs/undirected/ngk10_4.gv
 share/examples/graphviz/graphs/undirected/process.gv
-share/examples/graphviz/lefty/
-share/examples/graphviz/lefty/box.lefty
-share/examples/graphviz/lefty/def.lefty
-share/examples/graphviz/lefty/dotty.lefty
-share/examples/graphviz/lefty/dotty_draw.lefty
-share/examples/graphviz/lefty/dotty_edit.lefty
-share/examples/graphviz/lefty/dotty_layout.lefty
-share/examples/graphviz/lefty/dotty_ui.lefty
-share/examples/graphviz/lefty/fractal.lefty
-share/examples/graphviz/lefty/fractal2.lefty
-share/examples/graphviz/lefty/lefty.psp
-share/examples/graphviz/lefty/slides.lefty
-share/examples/graphviz/lefty/tree.lefty
 share/graphviz/
-share/graphviz/demo/
-share/graphviz/demo/modgraph.pl
-share/graphviz/demo/modgraph.tcl
-share/graphviz/doc/
-share/graphviz/doc/html/
-share/graphviz/doc/html/schema/
-share/graphviz/doc/html/schema/arguments.xml
-share/graphviz/doc/html/schema/attributes.xml
-share/graphviz/doc/html/schema/attributes.xslt
 share/graphviz/gvpr/
 share/graphviz/gvpr/addedges
 share/graphviz/gvpr/addranks
