@@ -3,7 +3,7 @@ malloc.h is not standard, even on sparc
 Index: cextern/cfitsio/lib/eval_l.c
 --- cextern/cfitsio/lib/eval_l.c.orig
 +++ cextern/cfitsio/lib/eval_l.c
-@@ -663,11 +663,7 @@ char *fftext;
+@@ -857,11 +857,7 @@ static const flex_int16_t yy_chk[472] =
  #include <math.h>
  #include <string.h>
  #include <ctype.h>
@@ -13,5 +13,5 @@ Index: cextern/cfitsio/lib/eval_l.c
  #include <stdlib.h>
 -#endif
  #include "eval_defs.h"
+ #include "eval_tab.h"
  
- ParseData gParse;     /* Global structure holding all parser information     */
