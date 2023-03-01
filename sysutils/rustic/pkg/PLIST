@@ -6,6 +6,7 @@ share/examples/rustic/
 share/examples/rustic/copy_example.toml
 share/examples/rustic/local.toml
 share/examples/rustic/ovh-hot-cold.toml
+share/examples/rustic/par2.toml
 share/examples/rustic/rustic.toml
 share/fish/
 share/fish/vendor_completions.d/

@@ -5,8 +5,7 @@ COMMENT =		fast, encrypted, deduplicated backups
 
 GH_ACCOUNT =		rustic-rs
 GH_PROJECT =		rustic
-GH_TAGNAME =		v0.4.3
-REVISION =		0
+GH_TAGNAME =		v0.4.4
 
 CATEGORIES =		sysutils
 
@@ -26,8 +25,6 @@ BUILD_DEPENDS =		security/rust-ring
 CONFIGURE_STYLE =	cargo
 
 SEPARATE_BUILD =	Yes
-
-PATCHORIG =		.orig.port
 
 post-build:
 .for s in bash fish zsh
