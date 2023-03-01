@@ -32,8 +32,8 @@ do-install:
 	${INSTALL_DATA} ${WRKDIST}/*.txt ${PREFIX}/share/doc/kibana/
 	${INSTALL_DATA} ${WRKDIST}/config/kibana.yml \
 		${PREFIX}/share/examples/kibana/
-	rm -r ${WRKDIST}/*.{orig,txt} ${WRKDIST}/{data,plugins} \
-		${WRKDIST}/{bin/*.{orig,beforesubst},config,node}
+	rm -r ${WRKDIST}/*{${PATCHORIG},.txt} ${WRKDIST}/{data,plugins} \
+		${WRKDIST}/{bin/*{${PATCHORIG},.beforesubst},config,node}
 	find ${WRKDIST} \( -name \.* -a \! -name \.cache \) -exec rm -rf {} +
 	find ${WRKDIST} -name \*~ -delete
 	cd ${WRKDIST} && cp -R * ${PREFIX}/kibana/

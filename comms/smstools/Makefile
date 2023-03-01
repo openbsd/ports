@@ -43,7 +43,7 @@ do-install:
 		${PREFIX}/share/examples/smstools
 	${INSTALL_DATA} ${WRKDIST}/scripts/* \
 		${PREFIX}/share/examples/smstools/scripts
-	rm ${PREFIX}/share/examples/smstools/scripts/*.orig
+	rm ${PREFIX}/share/examples/smstools/scripts/*${PATCHORIG}
 	${SUBST_DATA} ${FILESDIR}/smsd.conf.openbsd \
 		${PREFIX}/share/examples/smstools/smsd.conf.openbsd
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/smstools

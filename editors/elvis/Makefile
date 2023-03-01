@@ -35,7 +35,7 @@ WANTLIB+=	X11 Xft Xpm xcb
 NO_TEST=	Yes
 
 do-install:
-	rm ${WRKSRC}/{doc,data}/*.orig
+	rm ${WRKSRC}/{doc,data}/*${PATCHORIG}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/elvis
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/elvis
 .for prog in elvfmt elvis ref

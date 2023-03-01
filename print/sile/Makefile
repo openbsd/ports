@@ -47,7 +47,7 @@ CONFIGURE_ENV =		CPPFLAGS="-I${MODLUA_INCL_DIR} `pkg-config --cflags libpng`" \
 WRKDIST =		${WRKDIR}/sile-$V
 
 post-install:
-	rm ${PREFIX}/share/sile/core/font.lua.orig
+	rm ${PREFIX}/share/sile/core/font.lua${PATCHORIG}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/sile
 	${INSTALL_DATA} ${DISTDIR}/sile-$V.pdf ${PREFIX}/share/doc/sile/sile.pdf
 

@@ -20,7 +20,7 @@ pre-patch:
 	@cd ${WRKSRC}; perl -i -pe 's/\r$$//' `find . -type f`
 
 do-install:
-	rm ${WRKSRC}/lib/propmgr.tcl.orig ${WRKSRC}/lib/tkcon.tcl.orig
+	rm ${WRKSRC}/lib/{propmgr,tkcon}.tcl${PATCHORIG}
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/vtcl
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/vtcl
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/vtcl

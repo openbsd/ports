@@ -41,8 +41,8 @@ SUBST_VARS =		JFFI_ARCH LOCALSTATEDIR
 # the system jruby.
 do-build:
 	${SUBST_CMD} ${SUBST_TARGETS}
-	rm ${WRKSRC}/bin/{*.bat,*.beforesubst,*.orig,system-install}
-	rm ${WRKSRC}/config/*.{beforesubst,orig} \
+	rm ${WRKSRC}/bin/*{.bat,.beforesubst,${PATCHORIG},system-install}
+	rm ${WRKSRC}/config/*{.beforesubst,${PATCHORIG}} \
 		${WRKSRC}/config/startup.options
 	rm ${WRKSRC}/vendor/jruby/bin/*.{bash,bat,dll,exe,sh}
 	rm -r ${WRKSRC}/vendor/jruby/lib/jni

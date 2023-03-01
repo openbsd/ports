@@ -32,8 +32,8 @@ ES_HOME =		${PREFIX}/elasticsearch/
 do-install:
 	${SUBST_CMD} ${WRKSRC}/bin/elasticsearch-env \
 		${WRKSRC}/config/{elasticsearch.yml,jvm.options}
-	rm ${WRKSRC}/bin/*.{beforesubst,orig} \
-		${WRKSRC}/config/*.{beforesubst,orig}
+	rm ${WRKSRC}/bin/*{.beforesubst,${PATCHORIG}} \
+		${WRKSRC}/config/*{.beforesubst,${PATCHORIG}}
 	sed -i 's,#!/bin/bash,#!/usr/bin/env bash,' ${WRKSRC}/bin/*
 	${INSTALL_DATA_DIR} ${ES_HOME}/bin \
 		${PREFIX}/share/{doc,examples}/elasticsearch/

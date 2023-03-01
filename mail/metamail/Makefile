@@ -23,7 +23,7 @@ post-configure:
 	@${SUBST_CMD} ${WRKSRC}/config.h
 
 pre-install:
-	rm ${WRKSRC}/bin/*.orig
+	rm ${WRKSRC}/bin/*${PATCHORIG}
 
 post-install:
 	mv ${PREFIX}/man/man4/mailcap.4 ${PREFIX}/man/man5/mailcap.5

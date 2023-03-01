@@ -89,7 +89,7 @@ post-extract:
 pre-configure:
 	cd ${WRKSRC}/node/sbin; \
 	${SUBST_CMD} munin-node munin-node-configure munin-run; \
-	rm munin-{node,node-configure,run}.{beforesubst,orig}; \
+	rm munin-{node,node-configure,run}{.beforesubst,${PATCHORIG}}; \
 	perl -pi -e 's,/etc/munin/plugins,${SYSCONFDIR}/munin/plugins,g;' \
 	    -e 's,/etc/munin/node.d,${SYSCONFDIR}/munin/plugins,g;' \
 	    -e 's,/usr/local/libexec/munin,${TRUEPREFIX}/libexec/munin,g;' \

@@ -42,7 +42,7 @@ do-test:
 	cd ${WRKSRC} && PYTHONPATH=. ${MODPY_BIN} tests/myparser_test.py
 
 do-install:
-	rm ${WRKDIST}/.gitignore ${WRKSRC}/discovery/*.{orig,beforesubst}
+	rm ${WRKDIST}/.gitignore ${WRKSRC}/discovery/*{${PATCHORIG},.beforesubst}
 	cp -r ${WRKDIST} ${INSTDIR}
 	chmod 755 ${INSTDIR}/theHarvester.py
 	ln -s ${TRUEPREFIX}/share/theharvester/theHarvester.py ${PREFIX}/bin/theHarvester

@@ -34,8 +34,8 @@ do-install:
 	${INSTALL_DATA} ${WRKDIST}/*.txt ${PREFIX}/share/doc/opensearch-dashboards
 	${INSTALL_DATA} ${WRKDIST}/config/opensearch_dashboards.yml \
 		${PREFIX}/share/examples/opensearch-dashboards
-	rm -r ${WRKDIST}/*.orig \
-		${WRKDIST}/data ${WRKDIST}/{bin/*.{orig,beforesubst},config,node}
+	rm -r ${WRKDIST}/*${PATCHORIG} \
+		${WRKDIST}/data ${WRKDIST}/{bin/*{${PATCHORIG},.beforesubst},config,node}
 	find ${WRKDIST} \( -name '.*' -a ! -name \.cache \) -exec rm -rf {} +
 	find ${WRKDIST} -name \*~ -delete
 	cd ${WRKDIST} && cp -R * ${PREFIX}/opensearch-dashboards/

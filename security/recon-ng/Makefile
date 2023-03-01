@@ -38,7 +38,7 @@ MODPY_ADJ_FILES =	recon-cli recon-ng recon-web
 
 pre-install:
 	${SUBST_CMD} ${WRKSRC}/recon/core/base.py
-	rm ${WRKSRC}/recon/core/*.{beforesubst,orig}
+	rm ${WRKSRC}/recon/core/*{.beforesubst,${PATCHORIG}}
 
 do-install:
 .for s in cli ng web

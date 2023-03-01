@@ -30,7 +30,7 @@ CFLAGS+=	-DUSE_IPV6
 CFLAGS+=	-fno-strength-reduce -DCONFDIR="\"${SYSCONFDIR}/tetrinetx\""
 
 post-patch:
-	rm ${WRKDIST}/bin/game.*.orig
+	rm ${WRKDIST}/bin/game.*${PATCHORIG}
 
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} -I${LOCALBASE}/include \

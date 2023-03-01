@@ -16,6 +16,6 @@ RUN_DEPENDS=		textproc/p5-XML-Elemental>=2.0 \
 WRKDIST= 		${WRKDIR}/XML-RSS-Parser-4
 
 pre-configure:
-	rm ${WRKBUILD}/lib/XML/RSS/*.orig
+	rm ${WRKBUILD}/lib/XML/RSS/*${PATCHORIG}
 
 .include <bsd.port.mk>

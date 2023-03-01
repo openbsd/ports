@@ -19,7 +19,4 @@ RUN_DEPENDS=	devel/p5-Time-Format \
 		www/p5-libwww
 TEST_DEPENDS=	devel/p5-Test-MockObject
 
-pre-configure:
-	@rm ${WRKSRC}/lib/Weather/Com/Base.pm.orig
-
 .include <bsd.port.mk>
