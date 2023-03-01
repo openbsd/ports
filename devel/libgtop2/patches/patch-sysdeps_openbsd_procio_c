@@ -1,0 +1,22 @@
+Index: sysdeps/openbsd/procio.c
+--- sysdeps/openbsd/procio.c.orig
++++ sysdeps/openbsd/procio.c
+@@ -50,7 +50,7 @@ glibtop_get_proc_io_p (glibtop *server, glibtop_proc_i
+ 	glibtop_suid_enter (server);
+ 
+ 	/* Get the process information */
+-	pinfo = kvm_getprocs (server->machine->kd, KERN_PROC_PID, pid, &count);
++	pinfo = kvm_getprocs (server->machine->kd, KERN_PROC_PID, pid, sizeof(*pinfo), &count);
+ 	if ((pinfo == NULL) || (count != 1)) {
+ 		glibtop_warn_io_r (server, "kvm_getprocs (%d)", pid);
+ 		glibtop_suid_leave (server);
+@@ -74,7 +74,7 @@ glibtop_get_proc_io_p (glibtop *server, glibtop_proc_i
+ 
+ 	   FIXME: seems the blocksize is 1024 but ...
+ 	*/
+-	buf->disk_rbytes = pinfo->ki_rusage.ru_inblock << 10;
+-	buf->disk_wbytes = pinfo->ki_rusage.ru_oublock << 10;
++	buf->disk_rbytes = pinfo->p_uru_inblock << 10;
++	buf->disk_wbytes = pinfo->p_uru_oublock << 10;
+ 	buf->flags = _glibtop_sysdeps_proc_io;
+ }

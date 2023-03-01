@@ -1,15 +1,10 @@
-@bin bin/libgtop_daemon2
-@mode 2555
-@group kmem
-@bin bin/libgtop_server2
-@mode
-@group
 include/libgtop-2.0/
 include/libgtop-2.0/glibtop/
 include/libgtop-2.0/glibtop.h
 include/libgtop-2.0/glibtop/close.h
 include/libgtop-2.0/glibtop/command.h
 include/libgtop-2.0/glibtop/cpu.h
+include/libgtop-2.0/glibtop/disk.h
 include/libgtop-2.0/glibtop/fsusage.h
 include/libgtop-2.0/glibtop/global.h
 include/libgtop-2.0/glibtop/gnuserv.h
@@ -56,6 +51,12 @@ lib/girepository-1.0/GTop-2.0.typelib
 lib/libgtop-2.0.la
 @lib lib/libgtop-2.0.so.${LIBgtop-2.0_VERSION}
 lib/pkgconfig/libgtop-2.0.pc
+@bin libexec/libgtop_daemon2
+@mode 2555
+@group kmem
+@bin libexec/libgtop_server2
+@mode
+@group
 share/gir-1.0/
 share/gir-1.0/GTop-2.0.gir
 share/gtk-doc/
@@ -109,6 +110,7 @@ share/gtk-doc/html/libgtop/right.png
 share/gtk-doc/html/libgtop/style.css
 share/gtk-doc/html/libgtop/up-insensitive.png
 share/gtk-doc/html/libgtop/up.png
+share/locale/ab/LC_MESSAGES/libgtop.mo
 share/locale/am/LC_MESSAGES/libgtop.mo
 share/locale/ar/LC_MESSAGES/libgtop.mo
 share/locale/as/LC_MESSAGES/libgtop.mo

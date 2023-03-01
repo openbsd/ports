@@ -1,10 +1,10 @@
 Rewrite of glibtop_get_netload_p() to use getifaddrs(3) instead of KVM.
+https://gitlab.gnome.org/GNOME/libgtop/-/issues/32
 
-https://bugzilla.gnome.org/show_bug.cgi?id=759064
-
---- sysdeps/openbsd/netload.c.orig	Mon Aug 17 20:59:37 2015
-+++ sysdeps/openbsd/netload.c	Fri Dec 11 14:34:54 2015
-@@ -1,48 +1,39 @@
+Index: sysdeps/openbsd/netload.c
+--- sysdeps/openbsd/netload.c.orig
++++ sysdeps/openbsd/netload.c
+@@ -1,52 +1,39 @@
 -/* Copyright (C) 1998-99 Martin Baulig
 -   This file is part of LibGTop 1.0.
 +/*
@@ -60,12 +60,16 @@ https://bugzilla.gnome.org/show_bug.cgi?id=759064
  
 -#include <sys/ioctl.h>
 -
+ #include <netinet/in.h>
+-
+-#include <sys/malloc.h>
+-
+-#define _KERNEL
 -#include <net/if_var.h>
 -
- #include <netinet/in.h>
--#define _KERNEL
  #include <netinet/in_var.h>
 -#undef _KERNEL
+-
  #include <netinet6/in6_var.h>
  
 +#include <ifaddrs.h>
@@ -78,7 +82,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=759064
  (1L << GLIBTOP_NETLOAD_IF_FLAGS) +
  (1L << GLIBTOP_NETLOAD_PACKETS_IN) +
  (1L << GLIBTOP_NETLOAD_PACKETS_OUT) +
-@@ -55,183 +46,115 @@ static const unsigned long _glibtop_sysdeps_netload =
+@@ -59,183 +46,115 @@ static const unsigned long _glibtop_sysdeps_netload =
  (1L << GLIBTOP_NETLOAD_ERRORS_TOTAL) +
  (1L << GLIBTOP_NETLOAD_COLLISIONS);
  
@@ -101,7 +105,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=759064
      server->sysdeps.netload = _glibtop_sysdeps_netload;
 -
 -    if (kvm_nlist (server->machine->kd, nlst) < 0)
--	glibtop_error_io_r (server, "kvm_nlist");
+-	glibtop_warn_io_r (server, "kvm_nlist");
  }
  
 -/* Provides Network statistics. */
@@ -134,7 +138,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=759064
  
 -    if (kvm_read (server->machine->kd, nlst [0].n_value,
 -		  &ifnetaddr, sizeof (ifnetaddr)) != sizeof (ifnetaddr))
--	glibtop_error_io_r (server, "kvm_read (ifnet)");
+-	glibtop_warn_io_r (server, "kvm_read (ifnet)");
 +        if (ifa->ifa_addr->sa_family == AF_LINK) {
 +            struct sockaddr_dl *dl = (struct sockaddr_dl *)ifa->ifa_addr;
  

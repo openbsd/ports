@@ -1,14 +1,10 @@
-# All patches annotated with XXKVM are to prevent any kvm(3) which
-# results in an abort() for the caller.
-
 COMMENT=		portable library for obtaining system information
 
-GNOME_VERSION=		2.40.0
+GNOME_VERSION=		2.41.1
 GNOME_PROJECT=		libgtop
 PKGNAME=		libgtop2-${VERSION}
-REVISION=		5
 
-SHARED_LIBS=		gtop-2.0	10.0	# .10.0
+SHARED_LIBS=		gtop-2.0	10.1	# .10.0
 
 CATEGORIES=		devel
 
@@ -22,24 +18,15 @@ WANTLIB += pthread
 
 MODULES=		x11/gnome
 
-DEBUG_PACKAGES =	${BUILD_PACKAGES}
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 LIB_DEPENDS=		devel/glib2
 
-MODGNOME_TOOLS +=	gobject-introspection
+MODGNOME_TOOLS=		gobject-introspection
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		GMSGFMT="${LOCALBASE}/bin/msgfmt" \
-			ac_cv_header_sys_mount_h=yes
-
-.ifdef DEBUG
-CONFIGURE_ARGS+=	--enable-debug
-CPPFLAGS+=		-DDEBUG \
-			-DLIBGTOP_ENABLE_DEBUG \
-			-DLIBGTOP_FATAL_WARNINGS
-.endif
 
 post-extract:
-	cp ${FILESDIR}/procio.c ${WRKSRC}/sysdeps/openbsd/
+	cp ${WRKSRC}/sysdeps/{freebsd,openbsd}/procio.c
 
 .include <bsd.port.mk>
