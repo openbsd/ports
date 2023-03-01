@@ -41,8 +41,6 @@ LIB_DEPENDS =		audio/libcanberra,-gtk3 \
 RUN_DEPENDS =		x11/gtk+3,-guic \
 			devel/desktop-file-utils
 
-#SEPARATE_BUILD =	Yes
-
 USE_GMAKE =		Yes
 
 CONFIGURE_STYLE =	gnu
