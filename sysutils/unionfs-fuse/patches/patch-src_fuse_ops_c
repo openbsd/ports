@@ -1,7 +1,7 @@
 Index: src/fuse_ops.c
 --- src/fuse_ops.c.orig
 +++ src/fuse_ops.c
-@@ -886,7 +886,7 @@ struct fuse_operations unionfs_oper = {
+@@ -895,7 +895,7 @@ struct fuse_operations unionfs_oper = {
  	.getattr = unionfs_getattr,
  	.access = unionfs_access,
  	.init = unionfs_init,

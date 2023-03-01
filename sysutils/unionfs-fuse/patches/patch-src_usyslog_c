@@ -1,7 +1,7 @@
 Index: src/usyslog.c
 --- src/usyslog.c.orig
 +++ src/usyslog.c
-@@ -23,8 +23,6 @@
+@@ -32,8 +32,6 @@
  
  #if __APPLE__
  #include <malloc/malloc.h>

@@ -2,7 +2,7 @@ COMMENT =	unionfs filesystem implementation
 
 GH_ACCOUNT =	rpodgorny
 GH_PROJECT =	unionfs-fuse
-GH_TAGNAME =	v3.2
+GH_TAGNAME =	v3.3
 
 CATEGORIES =	sysutils
 
