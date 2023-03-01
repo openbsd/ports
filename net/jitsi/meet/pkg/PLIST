@@ -41,6 +41,7 @@ www/jitsi-meet/images/icon-cloud.png
 www/jitsi-meet/images/icon-info.png
 www/jitsi-meet/images/icon-users.png
 www/jitsi-meet/images/jitsilogo.png
+www/jitsi-meet/images/logo-deep-linking-mobile.png
 www/jitsi-meet/images/logo-deep-linking.png
 www/jitsi-meet/images/microsoftLogo.svg
 www/jitsi-meet/images/share-audio.gif
@@ -132,8 +133,6 @@ www/jitsi-meet/libs/blazeface-front.bin
 www/jitsi-meet/libs/blazeface-front.json
 www/jitsi-meet/libs/capabilities.json
 www/jitsi-meet/libs/close3.min.js
-www/jitsi-meet/libs/dial_in_info_bundle.min.js
-www/jitsi-meet/libs/dial_in_info_bundle.min.js.map
 www/jitsi-meet/libs/do_external_connect.min.js
 www/jitsi-meet/libs/do_external_connect.min.js.map
 www/jitsi-meet/libs/emotion.bin

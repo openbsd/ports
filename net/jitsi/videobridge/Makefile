@@ -2,13 +2,12 @@ COMMENT =	WebRTC compatible video router for jitsi
 
 CATEGORIES =	net
 
-VERSION =	2.0.8044
-REVISION =	0
+VERSION =	2.0.8319
 DISTNAME =	jitsi-videobridge-${VERSION}
 
 GH_ACCOUNT =	jitsi
 GH_PROJECT =	jitsi-videobridge
-GH_COMMIT =	98c9f868414abfe2cf2a92d16ecff526fe9a06b6
+GH_COMMIT =	f6426ea01d6d4426149dd2bf658d388f447b9f5d
 
 DISTFILES +=	${GH_DISTFILE}
 

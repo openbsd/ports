@@ -16,14 +16,12 @@ share/jicofo/jicofo.conf.sample
 @group _jicofo
 @sample ${SYSCONFDIR}/jicofo/jicofo.conf
 @mode
-@owner
 @group
 share/jicofo/jicofo.in.sh.sample
 @mode 640
 @group _jicofo
 @sample ${SYSCONFDIR}/jicofo/jicofo.in.sh
 @mode
-@owner
 @group
 share/jicofo/lib/
 share/jicofo/lib/logging.properties.sample
