@@ -1,27 +1,30 @@
 COMMENT =		GNU Backgammon
+
 V =			1.07.001
 DISTNAME =		gnubg-release-$V-sources
 PKGNAME =		gnubg-$V
+REVISION =		0
+
 CATEGORIES =		games x11
+
 HOMEPAGE =		http://gnubg.org/
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${MODPY_WANTLIB}
-WANTLIB += ${COMPILER_LIBCXX} GL GLU X11 X11-xcb Xau Xcomposite
-WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender Xxf86vm atk-1.0 c cairo canberra canberra-gtk
-WANTLIB += crypto curl curses drm expat ffi fontconfig freetype
-WANTLIB += fribidi gdk-x11-2.0 gdk_pixbuf-2.0 gdkglext-x11-1.0
+WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB}
+WANTLIB += GL GLU X11 X11-xcb Xau Xcomposite Xcursor Xdamage Xdmcp
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
+WANTLIB += atk-bridge-2.0 atspi c cairo cairo-gobject canberra
+WANTLIB += canberra-gtk3 crypto curl curses dbus-1 drm epoxy execinfo
+WANTLIB += expat ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glapi glib-2.0 gmodule-2.0 gmp gobject-2.0
-WANTLIB += graphite2 gthread-2.0 gtk-x11-2.0 gtkglext-x11-1.0
-WANTLIB += harfbuzz iconv intl jpeg ltdl m nghttp2 nghttp3 ngtcp2
-WANTLIB += ngtcp2_crypto_openssl ogg pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre2-8 pixman-1 png readline sqlite3
-WANTLIB += ssl util vorbis vorbisfile xcb xcb-dri2 xcb-dri3 xcb-glx
-WANTLIB += xcb-present xcb-render xcb-shm xcb-sync xcb-xfixes
-WANTLIB += xshmfence z
+WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz iconv intl jpeg
+WANTLIB += ltdl m nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_openssl
+WANTLIB += ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1
+WANTLIB += png readline sqlite3 ssl util vorbis vorbisfile xcb
+WANTLIB += xcb-dri2 xcb-dri3 xcb-glx xcb-present xcb-render xcb-shm
+WANTLIB += xcb-sync xcb-xfixes xshmfence z
 
 MASTER_SITES =		https://ftp.gnu.org/gnu/gnubg/
 
@@ -30,22 +33,23 @@ MODULES =		lang/python
 BUILD_DEPENDS =		devel/gettext,-tools \
 			math/cglm
 
-LIB_DEPENDS =		audio/libcanberra,-gtk \
+LIB_DEPENDS =		audio/libcanberra,-gtk3 \
 			databases/sqlite3 \
-			devel/gettext,-runtime \
 			devel/gmp \
-			devel/pango \
-			graphics/png \
-			net/curl \
-			x11/gtkglext
+			net/curl
 
 RUN_DEPENDS =		x11/gtk+3,-guic \
 			devel/desktop-file-utils
 
-SEPARATE_BUILD =	Yes
+#SEPARATE_BUILD =	Yes
+
 USE_GMAKE =		Yes
+
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	--disable-cputest
+
+CONFIGURE_ARGS =	--disable-cputest \
+			--with-gtk3
+
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
