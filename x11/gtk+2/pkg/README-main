@@ -23,13 +23,6 @@ You may want to install the "gnome-themes-extra" package if you need:
 - The legacy HighContrast icon theme
 - Index files needed for Adwaita to be used outside of GNOME
 
-Sound
------
-GTK+ itself does not support event sounds, you have to use a loadable module
-like the one that comes with libcanberra which is loaded automatically when a
-GTK+ application is launched.
-You may want to install the "libcanberra-gtk" package if you require these.
-
 Printing
 ========
 
