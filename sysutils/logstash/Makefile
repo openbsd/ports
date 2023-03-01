@@ -1,11 +1,10 @@
 ONLY_FOR_ARCHS =	amd64
 COMMENT =		tool for managing events and logs
 
-V =			7.10.0
+V =			8.6.2
 DISTNAME =		logstash-oss-$V-darwin-x86_64
 PKGNAME =		logstash-$V
 EPOCH =			0
-REVISION =		0
 
 CATEGORIES =		sysutils
 
@@ -19,7 +18,7 @@ PERMIT_PACKAGE =	Yes
 MASTER_SITES =		https://artifacts.elastic.co/downloads/logstash/
 
 MODULES =		java
-MODJAVA_VER =		11
+MODJAVA_VER =		17
 
 RUN_DEPENDS =		java/javaPathHelper \
 			lang/jruby \
@@ -45,9 +44,9 @@ do-build:
 	rm ${WRKSRC}/config/*{.beforesubst,${PATCHORIG}} \
 		${WRKSRC}/config/startup.options
 	rm ${WRKSRC}/vendor/jruby/bin/*.{bash,bat,dll,exe,sh}
-	rm -r ${WRKSRC}/vendor/jruby/lib/jni
+	rm -r ${WRKSRC}/vendor/jruby/tmp
 	cd ${WRKSRC}/vendor/jruby/lib/ruby/stdlib/ffi/platform/ && \
-		rm -r *-{aix,cygwin,darwin,freebsd,gnu,linux,netbsd,solaris,windows}*
+		rm -r *-{aix,cygwin,darwin,dragonflybsd,freebsd,gnu,haiku,linux,msys,netbsd,solaris,windows}*
 	@# apply hammer to fixup weird modes
 	find ${WRKSRC}/vendor/ -type f -exec chmod 0644 {} +
 	chmod 755 ${WRKSRC}/vendor/jruby/bin/*

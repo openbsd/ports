@@ -10,14 +10,12 @@ https://www.elastic.co/support/matrix
 Running Logstash
 ================
 Logstash should be started with it's own uid/gid _logstash, since this user
-has all necessary filesystem permissions. For example, if you want to check
-the configuration, use doas(1):
+has all necessary filesystem permissions. For example, to install opensearch
+output plugin:
 
-    # doas -u _logstash ${TRUEPREFIX}/logstash/bin/logstash -t
-
-Or if you want to manage plugins:
-
-    # doas -u _logstash ${TRUEPREFIX}/logstash/bin/logstash-plugin install <plugin>
+    $ doas su -s /bin/sh -c daemon _logstash -c \
+        '/usr/local/logstash/bin/logstash-plugin install --version 2.0.1 \
+        logstash-output-opensearch'
 
 Upgrading Logstash
 ==================

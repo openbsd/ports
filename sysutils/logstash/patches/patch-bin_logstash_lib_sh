@@ -6,7 +6,7 @@ Index: bin/logstash.lib.sh
  fi
  
 -LOGSTASH_HOME="$(cd `dirname $SOURCEPATH`/..; pwd)"
-+JAVA_HOME="$(${TRUEPREFIX}/bin/javaPathHelper -h logstash)"
++LS_JAVA_HOME="$(${TRUEPREFIX}/bin/javaPathHelper -h logstash)"
 +LOGSTASH_HOME="${TRUEPREFIX}/logstash"
  export LOGSTASH_HOME
  export LS_HOME="${LOGSTASH_HOME}"
@@ -14,4 +14,4 @@ Index: bin/logstash.lib.sh
 +SINCEDB_DIR="${LOCALSTATEDIR}/logstash"
  export SINCEDB_DIR
  LOGSTASH_JARS=${LOGSTASH_HOME}/logstash-core/lib/jars
- 
+ JRUBY_HOME="${LOGSTASH_HOME}/vendor/jruby"
