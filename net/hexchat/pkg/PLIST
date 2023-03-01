@@ -12,12 +12,16 @@ lib/hexchat/plugins/
 @so lib/hexchat/plugins/perl.so
 @comment lib/hexchat/plugins/python.la
 @so lib/hexchat/plugins/python.so
+lib/hexchat/python/
+lib/hexchat/python/_hexchat.py
+lib/hexchat/python/hexchat.py
+lib/hexchat/python/xchat.py
 lib/pkgconfig/hexchat-plugin.pc
 @man man/man1/hexchat.1
 share/applications/io.github.Hexchat.desktop
 share/dbus-1/services/org.hexchat.service.service
-share/icons/hicolor/48x48/apps/hexchat.png
-share/icons/hicolor/scalable/apps/hexchat.svg
+share/icons/hicolor/48x48/apps/io.github.Hexchat.png
+share/icons/hicolor/scalable/apps/io.github.Hexchat.svg
 share/locale/af/LC_MESSAGES/hexchat.mo
 share/locale/am/LC_MESSAGES/hexchat.mo
 share/locale/ast/LC_MESSAGES/hexchat.mo
