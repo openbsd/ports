@@ -3,7 +3,7 @@ COMMENT=	meta package for all Jitsi Meet components
 CATEGORIES=	meta net
 
 VERSION=	1.0
-REVISION=	0
+REVISION=	1
 
 MAINTAINER=	Philipp Buehler <pb-openbsd@sysfive.com>, \
 		Aisha Tammy <aisha@openbsd.org>

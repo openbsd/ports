@@ -147,7 +147,7 @@ Prosody also hosts the internal domain 'auth.jitsi.example.com' and can use
 self signed TLS certificates for this.
 They should be generated using the following command:
 
-    $ prosodyctl cert generate auth.jitsi.example.com
+    # prosodyctl cert generate auth.jitsi.example.com
 
 The certificates will be stored in:
     ${LOCALSTATEDIR}/prosody/auth.jitsi.example.com.{crt,key}.
@@ -155,21 +155,21 @@ The certificates will be stored in:
 These certificates also need to be shared with jicofo and jvb by adding them
 to a Java certificate truststore ${SYSCONFDIR}/ssl/jitsi.store.
 
-    $ $(javaPathHelper -h jicofo)/bin/keytool -import -alias prosody \
+    # $(javaPathHelper -h jicofo)/bin/keytool -import -alias prosody \
       -file ${LOCALSTATEDIR}/prosody/auth.jitsi.example.com \
       -keystore ${SYSCONFDIR}/ssl/jitsi.store -storepass ${JAVA_TS_PASS}
 
 Prosody needs two plugins to be added to the setup which can be achieved by:
 
-    $ prosodyctl install --server=https://modules.prosody.im/rocks/ \
+    # prosodyctl install --server=https://modules.prosody.im/rocks/ \
         mod_client_proxy
-    $ prosodyctl install --server=https://modules.prosody.im/rocks/ \
+    # prosodyctl install --server=https://modules.prosody.im/rocks/ \
         mod_roster_command
 
 The 'focus' user for prosody should also be registered via the command line:
 
-    $ prosodyctl register focus auth.jitsi.example.com ${FOCUS_COMP_PASS}
-    $ prosodyctl mod_roster_command subscribe focus.jitsi.example.com \
+    # prosodyctl register focus auth.jitsi.example.com ${FOCUS_COMP_PASS}
+    # prosodyctl mod_roster_command subscribe focus.jitsi.example.com \
         focus@auth.jitsi.example.com
 
 JVB and jicofo configuration
@@ -179,7 +179,7 @@ The default configuration files for jvb and jicofo only need the domain and
 password fields to be updated.
 The jicofo daemon needs to be provided the host name:
 
-    $ rcctl set jicofo flags "--host=jitsi.example.com"
+    # rcctl set jicofo flags "--host=jitsi.example.com"
 
 SIP configuration
 =================
@@ -221,9 +221,9 @@ Spinning up the daemons
 
 The daemons needs to be started in the order given:
 
-    $ rcctl enable nginx prosody jvb jicofo
-    $ rcctl order nginx prosody jvb jicofo
-    $ rcctl start nginx prosody jvb jicofo
+    # rcctl enable nginx prosody jicofo jvb
+    # rcctl order nginx prosody jicofo jvb
+    # rcctl start nginx prosody jicofo jvb
 
 The setup can be tested by visiting the site at https://jitsi.example.com.
 
