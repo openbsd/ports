@@ -34,6 +34,7 @@ share/examples/filebeat/modules.d/mysql.yml.disabled
 share/examples/filebeat/modules.d/nginx.yml.disabled
 @sample ${SYSCONFDIR}/filebeat/modules.d/nginx.yml.disabled
 @comment share/examples/filebeat/modules.d/osquery.yml.disabled
+@comment share/examples/filebeat/modules.d/pensando.yml.disabled
 share/examples/filebeat/modules.d/postgresql.yml.disabled
 @sample ${SYSCONFDIR}/filebeat/modules.d/postgresql.yml.disabled
 share/examples/filebeat/modules.d/redis.yml.disabled
@@ -74,6 +75,7 @@ share/filebeat/kibana/7/dashboard/Filebeat-syslog.json
 @comment share/filebeat/kibana/7/dashboard/filebeat-santa-log-overview.json
 @comment share/filebeat/kibana/7/dashboard/osquery-compliance.json
 @comment share/filebeat/kibana/7/dashboard/osquery-rootkit.json
+@comment share/filebeat/kibana/7/dashboard/pensando-dfw-overview.json
 share/filebeat/module/
 share/filebeat/module/apache/
 share/filebeat/module/apache/access/
@@ -193,6 +195,13 @@ share/filebeat/module/icinga/startup/manifest.yml
 @comment share/filebeat/module/kafka/log/manifest.yml
 @comment share/filebeat/module/kafka/module.yml
 share/filebeat/module/kibana/
+share/filebeat/module/kibana/audit/
+share/filebeat/module/kibana/audit/config/
+share/filebeat/module/kibana/audit/config/audit.yml
+share/filebeat/module/kibana/audit/ingest/
+share/filebeat/module/kibana/audit/ingest/pipeline-json.yml
+share/filebeat/module/kibana/audit/ingest/pipeline.yml
+share/filebeat/module/kibana/audit/manifest.yml
 share/filebeat/module/kibana/log/
 share/filebeat/module/kibana/log/config/
 share/filebeat/module/kibana/log/config/log.yml
@@ -276,11 +285,21 @@ share/filebeat/module/nginx/module.yml
 @comment share/filebeat/module/osquery/result/ingest/
 @comment share/filebeat/module/osquery/result/ingest/pipeline.json
 @comment share/filebeat/module/osquery/result/manifest.yml
+@comment share/filebeat/module/pensando/
+@comment share/filebeat/module/pensando/dfw/
+@comment share/filebeat/module/pensando/dfw/config/
+@comment share/filebeat/module/pensando/dfw/config/dfw.yml
+@comment share/filebeat/module/pensando/dfw/ingest/
+@comment share/filebeat/module/pensando/dfw/ingest/pipeline.yml
+@comment share/filebeat/module/pensando/dfw/manifest.yml
+@comment share/filebeat/module/pensando/module.yml
 share/filebeat/module/postgresql/
 share/filebeat/module/postgresql/log/
 share/filebeat/module/postgresql/log/config/
 share/filebeat/module/postgresql/log/config/log.yml
 share/filebeat/module/postgresql/log/ingest/
+share/filebeat/module/postgresql/log/ingest/pipeline-csv.yml
+share/filebeat/module/postgresql/log/ingest/pipeline-log.yml
 share/filebeat/module/postgresql/log/ingest/pipeline.yml
 share/filebeat/module/postgresql/log/manifest.yml
 share/filebeat/module/postgresql/module.yml
