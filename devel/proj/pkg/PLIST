@@ -12,6 +12,7 @@ include/proj/
 include/proj.h
 include/proj/common.hpp
 include/proj/coordinateoperation.hpp
+include/proj/coordinates.hpp
 include/proj/coordinatesystem.hpp
 include/proj/crs.hpp
 include/proj/datum.hpp
