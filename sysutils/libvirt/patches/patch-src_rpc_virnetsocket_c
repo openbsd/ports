@@ -1,7 +1,7 @@
 Index: src/rpc/virnetsocket.c
 --- src/rpc/virnetsocket.c.orig
 +++ src/rpc/virnetsocket.c
-@@ -1422,7 +1422,7 @@ int virNetSocketGetUNIXIdentity(virNetSocket *sock,
+@@ -1415,7 +1415,7 @@ int virNetSocketGetUNIXIdentity(virNetSocket *sock,
                                  pid_t *pid,
                                  unsigned long long *timestamp)
  {

@@ -1,7 +1,7 @@
 Index: src/storage/storage_util.c
 --- src/storage/storage_util.c.orig
 +++ src/storage/storage_util.c
-@@ -1909,7 +1909,7 @@ virStorageBackendUpdateVolTargetInfoFD(virStorageSourc
+@@ -1905,7 +1905,7 @@ virStorageBackendUpdateVolTargetInfoFD(virStorageSourc
  
  #ifdef __APPLE__
      target->timestamps->atime = sb->st_atimespec;
@@ -10,7 +10,7 @@ Index: src/storage/storage_util.c
      target->timestamps->ctime = sb->st_ctimespec;
      target->timestamps->mtime = sb->st_mtimespec;
  #else /* ! __APPLE__ */
-@@ -1917,7 +1917,7 @@ virStorageBackendUpdateVolTargetInfoFD(virStorageSourc
+@@ -1913,7 +1913,7 @@ virStorageBackendUpdateVolTargetInfoFD(virStorageSourc
  # ifdef __linux__
      target->timestamps->btime = (struct timespec){0, 0};
  # else /* ! __linux__ */

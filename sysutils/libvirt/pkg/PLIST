@@ -254,6 +254,7 @@ share/doc/libvirt/html/go/
 share/doc/libvirt/html/go/libvirt.html
 share/doc/libvirt/html/go/libvirtxml.html
 share/doc/libvirt/html/goals.html
+share/doc/libvirt/html/golang.html
 share/doc/libvirt/html/governance.html
 share/doc/libvirt/html/hacking.html
 share/doc/libvirt/html/hooks.html
@@ -332,6 +333,7 @@ share/doc/libvirt/html/libvirt-go-xml.html
 share/doc/libvirt/html/libvirt-go.html
 share/doc/libvirt/html/logging.html
 share/doc/libvirt/html/logos/
+share/doc/libvirt/html/logos/index.html
 share/doc/libvirt/html/logos/logo-banner-dark-256.png
 share/doc/libvirt/html/logos/logo-banner-dark-800.png
 share/doc/libvirt/html/logos/logo-banner-dark.svg
