@@ -21,7 +21,8 @@ MODULES =		devel/meson \
 			lang/python \
 			textproc/intltool
 
-BUILD_DEPENDS =		devel/iso-codes
+BUILD_DEPENDS =		devel/iso-codes \
+			devel/py-cffi${MODPY_FLAVOR}
 
 # work towards gtk+3 support is in
 # https://github.com/hexchat/hexchat/tree/wip/gtk3
