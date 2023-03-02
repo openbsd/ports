@@ -131,7 +131,6 @@ share/locale/zh_CN/LC_MESSAGES/dino.mo
 share/locale/zh_TW/LC_MESSAGES/dino-omemo.mo
 share/locale/zh_TW/LC_MESSAGES/dino-openpgp.mo
 share/locale/zh_TW/LC_MESSAGES/dino.mo
-share/metainfo/
 share/metainfo/im.dino.Dino.appdata.xml
 share/vala/vapi/crypto-vala.deps
 share/vala/vapi/crypto-vala.vapi
