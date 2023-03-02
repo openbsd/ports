@@ -1,5 +1,5 @@
 COMMENT =	lightweight shipper for real-time network analytics
-REVISION =	1
+REVISION =	2
 
 BEAT =		packetbeat
 

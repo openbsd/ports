@@ -1,5 +1,5 @@
 COMMENT =	lightweight shipper for real-time network analytics
-REVISION =	0
+REVISION =	1
 
 BEAT =		heartbeat
 

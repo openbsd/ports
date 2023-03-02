@@ -10,9 +10,9 @@ Index: packetbeat/packetbeat.yml
 -packetbeat.interfaces.device: any
 +packetbeat.interfaces.device: em0
  
- # =================================== Flows ====================================
- 
-@@ -210,10 +210,10 @@ processors:
+ # The network CIDR blocks that are considered "internal" networks for
+ # the purpose of network perimeter boundary classification. The valid
+@@ -222,10 +222,10 @@ processors:
      then:
        - drop_fields:
            fields: [host]
@@ -24,6 +24,6 @@ Index: packetbeat/packetbeat.yml
 +  #    - add_host_metadata: ~
 +  #- add_cloud_metadata: ~
 +  #- add_docker_metadata: ~
- 
- # ================================== Logging ===================================
- 
+   - detect_mime_type:
+       field: http.request.body.content
+       target: http.request.mime_type

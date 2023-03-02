@@ -1,3 +1,4 @@
+// $OpenBSD: sigar_openbsd.go,v 1.3 2023/03/02 18:52:19 pvk Exp $
 // Copyright (c) 2016 Jasper Lievisse Adriaanse <j@jasper.la>.
 
 // +build openbsd
@@ -19,7 +20,6 @@ import "C"
 //import "github.com/davecgh/go-spew/spew"
 
 import (
-	"fmt"
 	"runtime"
 	"syscall"
 	"time"
@@ -165,9 +165,9 @@ func (self *FileSystemList) Get() error {
 	for i := 0; i < num; i++ {
 		fs := FileSystem{}
 
-		fs.DirName = bytePtrToString(&buf[i].F_mntonname[0])
-		fs.DevName = bytePtrToString(&buf[i].F_mntfromname[0])
-		fs.SysTypeName = bytePtrToString(&buf[i].F_fstypename[0])
+		fs.DirName = byteListToString(buf[i].F_mntonname[:])
+		fs.DevName = byteListToString(buf[i].F_mntfromname[:])
+		fs.SysTypeName = byteListToString(buf[i].F_fstypename[:])
 
 		fslist = append(fslist, fs)
 	}
@@ -243,12 +243,12 @@ func (self *Mem) Get() error {
 	// First we determine how much memory we'll need to pass later on (via `n`)
 	_, _, errno := syscall.Syscall6(syscall.SYS___SYSCTL, uintptr(unsafe.Pointer(&mib[0])), 2, 0, uintptr(unsafe.Pointer(&n)), 0, 0)
 	if errno != 0 || n == 0 {
-		return fmt.Errorf("Failed to prepare vm.uvmexp: %d", errno)
+		return nil
 	}
 
 	_, _, errno = syscall.Syscall6(syscall.SYS___SYSCTL, uintptr(unsafe.Pointer(&mib[0])), 2, uintptr(unsafe.Pointer(&uvmexp)), uintptr(unsafe.Pointer(&n)), 0, 0)
 	if errno != 0 || n == 0 {
-		return fmt.Errorf("Failed to query vm.uvmexp: %d", errno)
+		return nil
 	}
 
 	var bcachestats Bcachestats
@@ -256,11 +256,11 @@ func (self *Mem) Get() error {
 	n = uintptr(0)
 	_, _, errno = syscall.Syscall6(syscall.SYS___SYSCTL, uintptr(unsafe.Pointer(&mib3[0])), 3, 0, uintptr(unsafe.Pointer(&n)), 0, 0)
 	if errno != 0 || n == 0 {
-		return fmt.Errorf("Failed to prepare vfs.generic.bcachestat: %d", errno)
+		return nil
 	}
 	_, _, errno = syscall.Syscall6(syscall.SYS___SYSCTL, uintptr(unsafe.Pointer(&mib3[0])), 3, uintptr(unsafe.Pointer(&bcachestats)), uintptr(unsafe.Pointer(&n)), 0, 0)
 	if errno != 0 || n == 0 {
-		return fmt.Errorf("Failed to query vfs.generic.bcachestat: %d", errno)
+		return nil
 	}
 
 	self.Total = uint64(uvmexp.npages) << uvmexp.pageshift
@@ -272,7 +272,7 @@ func (self *Mem) Get() error {
 	// the program flow as by now various kernel interfaces have been
 	// used. cf. https://github.com/elastic/gosigar/issues/72
 	if self.Total == 0 {
-		return fmt.Errorf("Invalid data: zero memory pages found")
+		return nil
 	}
 
 	self.ActualFree = self.Free + (uint64(bcachestats.numbufpages) << uvmexp.pageshift)

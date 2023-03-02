@@ -1,16 +1,22 @@
 Index: metricbeat/include/list_common.go
 --- metricbeat/include/list_common.go.orig
 +++ metricbeat/include/list_common.go
-@@ -93,12 +93,12 @@ import (
- 	_ "github.com/elastic/beats/v7/metricbeat/module/kvm"
- 	_ "github.com/elastic/beats/v7/metricbeat/module/kvm/dommemstat"
- 	_ "github.com/elastic/beats/v7/metricbeat/module/kvm/status"
+@@ -90,15 +90,15 @@ import (
+ 	_ "github.com/elastic/beats/v7/metricbeat/module/kibana"
+ 	_ "github.com/elastic/beats/v7/metricbeat/module/kibana/stats"
+ 	_ "github.com/elastic/beats/v7/metricbeat/module/kibana/status"
+-	_ "github.com/elastic/beats/v7/metricbeat/module/kvm"
+-	_ "github.com/elastic/beats/v7/metricbeat/module/kvm/dommemstat"
+-	_ "github.com/elastic/beats/v7/metricbeat/module/kvm/status"
 -	_ "github.com/elastic/beats/v7/metricbeat/module/linux"
 -	_ "github.com/elastic/beats/v7/metricbeat/module/linux/conntrack"
 -	_ "github.com/elastic/beats/v7/metricbeat/module/linux/iostat"
 -	_ "github.com/elastic/beats/v7/metricbeat/module/linux/ksm"
 -	_ "github.com/elastic/beats/v7/metricbeat/module/linux/memory"
 -	_ "github.com/elastic/beats/v7/metricbeat/module/linux/pageinfo"
++	//_ "github.com/elastic/beats/v7/metricbeat/module/kvm"
++	//_ "github.com/elastic/beats/v7/metricbeat/module/kvm/dommemstat"
++	//_ "github.com/elastic/beats/v7/metricbeat/module/kvm/status"
 +	//_ "github.com/elastic/beats/v7/metricbeat/module/linux"
 +	//_ "github.com/elastic/beats/v7/metricbeat/module/linux/conntrack"
 +	//_ "github.com/elastic/beats/v7/metricbeat/module/linux/iostat"

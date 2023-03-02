@@ -1,7 +1,7 @@
 Index: metricbeat/modules.d/system.yml
 --- metricbeat/modules.d/system.yml.orig
 +++ metricbeat/modules.d/system.yml
-@@ -7,36 +7,14 @@
+@@ -7,38 +7,14 @@
      - cpu
      - load
      - memory
@@ -18,6 +18,8 @@ Index: metricbeat/modules.d/system.yml
 -  process.include_top_n:
 -    by_cpu: 5      # include top 5 processes by CPU
 -    by_memory: 5   # include top 5 processes by memory
+-  # Configure the mount point of the host’s filesystem for use in monitoring a host from within a container
+-  #system.hostfs: "/hostfs"
  
  - module: system
    period: 1m

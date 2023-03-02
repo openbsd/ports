@@ -1,5 +1,5 @@
 COMMENT =	lightweight shipper for system metrics
-REVISION =	0
+REVISION =	1
 
 BEAT =		metricbeat
 
@@ -9,7 +9,8 @@ KIBANA_DASHBOARDS = yes
 pre-build:
 	cd ${WRKSRC}/${BEAT}/cmd && ${MODGO_CMD} get ${MODGO_FLAGS} -d -v ./...
 	chmod u+w \
-		${MODGO_WORKSPACE}/pkg/mod/github.com/elastic/gosigar@v0.10.6-0.20200715000138-f115143bb233/sigar_openbsd.go
-	cp ${FILESDIR}/sigar_openbsd.go ${MODGO_WORKSPACE}/pkg/mod/github.com/elastic/gosigar@v0.10.6-0.20200715000138-f115143bb233/
+		${MODGO_WORKSPACE}/pkg/mod/github.com/elastic/gosigar@v0.14.1/sigar_openbsd.go
+	cp ${FILESDIR}/sigar_openbsd.go ${MODGO_WORKSPACE}/pkg/mod/github.com/elastic/gosigar@v0.14.1/
+	GOCACHE="${MODGO_GOCACHE}" go clean -cache
 
 .include <bsd.port.mk>
