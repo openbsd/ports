@@ -1,0 +1,5 @@
+This library helps testing HTTP clients without contacting the real
+HTTP server. It provides an easy to use API to start the server,
+configure the request handlers and then shut it down gracefully.
+All of these without touching a configuration file or dealing with
+daemons.
