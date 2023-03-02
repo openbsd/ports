@@ -330,7 +330,6 @@
      SUBDIR += windowlab
      SUBDIR += windowmaker
      SUBDIR += windowmaker-extra
-     SUBDIR += winwrangler
      SUBDIR += wm2
      SUBDIR += wmbutton
      SUBDIR += wmcalclock
