@@ -1,10 +1,9 @@
 COMMENT=		C++ and python library of 2D and 3D vector & matrix
 
-V=			3.1.6
+V=			3.1.7
 GH_ACCOUNT=		AcademySoftwareFoundation
 GH_PROJECT=		Imath
 GH_TAGNAME=		v${V}
-REVISION=		1
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
