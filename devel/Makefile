@@ -1304,6 +1304,7 @@
      SUBDIR += pudb,python3
      SUBDIR += py-aioresponses,python3
      SUBDIR += py-aiosignal,python3
+     SUBDIR += py-aiostream,python3
      SUBDIR += py-algorithm-munkres,python3
      SUBDIR += py-altgraph
      SUBDIR += py-altgraph,python3
@@ -1586,6 +1587,7 @@
      SUBDIR += py-test-flake8,python3
      SUBDIR += py-test-forked,python3
      SUBDIR += py-test-httpbin,python3
+     SUBDIR += py-test-httpserver,python3
      SUBDIR += py-test-isort,python3
      SUBDIR += py-test-lazy-fixture,python3
      SUBDIR += py-test-localserver,python3
