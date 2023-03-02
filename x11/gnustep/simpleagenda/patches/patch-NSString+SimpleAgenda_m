@@ -1,0 +1,15 @@
+Index: NSString+SimpleAgenda.m
+--- NSString+SimpleAgenda.m.orig
++++ NSString+SimpleAgenda.m
+@@ -1,11 +1,7 @@
+ #import <Foundation/Foundation.h>
+ #import "NSString+SimpleAgenda.h"
+ #import "config.h"
+-#ifdef HAVE_UUID_UUID_H
+-#include <uuid/uuid.h>
+-#else
+ #import "Date.h"
+-#endif
+ 
+ @implementation NSString(SimpleAgenda)
+ + (NSString *)uuid
