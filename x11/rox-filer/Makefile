@@ -37,7 +37,6 @@ do-build:
 		with_platform="OpenBSD" ROX-Filer/AppRun --compile
 
 do-install:
-	rm ${WRKSRC}/ROX-Filer/src/*.orig
 	${INSTALL_DATA_DIR} ${PREFIX}/rox/ROX-Filer
 	${INSTALL_MAN} ${WRKSRC}/rox.1 ${PREFIX}/man/man1/
 	${INSTALL_MAN} ${WRKSRC}/rox.1 ${PREFIX}/man/man1/ROX-Filer.1
