@@ -419,6 +419,7 @@
      SUBDIR += py-CherryPy,python3
      SUBDIR += py-adblock,python3
      SUBDIR += py-aiohttp,python3
+     SUBDIR += py-aiohttp-oauthlib,python3
      SUBDIR += py-autobahn,python3
      SUBDIR += py-beaker,python3
      SUBDIR += py-beautifulsoup4,python3
