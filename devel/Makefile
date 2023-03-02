@@ -1303,6 +1303,7 @@
      SUBDIR += pth
      SUBDIR += ptlib
      SUBDIR += pudb,python3
+     SUBDIR += py-aioresponses,python3
      SUBDIR += py-aiosignal,python3
      SUBDIR += py-algorithm-munkres,python3
      SUBDIR += py-altgraph
@@ -1368,6 +1369,7 @@
      SUBDIR += py-curtsies,python3
      SUBDIR += py-dateutil,python3
      SUBDIR += py-dbus-deviation,python3
+     SUBDIR += py-ddt,python3
      SUBDIR += py-decorator,python3
      SUBDIR += py-deprecation,python3
      SUBDIR += py-dill,python3
