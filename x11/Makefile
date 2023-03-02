@@ -114,7 +114,6 @@
      SUBDIR += gtkdatabox
      SUBDIR += gtkglarea
      SUBDIR += gtkglext
-     SUBDIR += gtkhotkey
      SUBDIR += gtkmm40
      SUBDIR += gtksourceview
      SUBDIR += gtksourceview3
