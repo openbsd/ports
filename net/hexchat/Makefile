@@ -21,8 +21,6 @@ MODULES =		devel/meson \
 			lang/python \
 			textproc/intltool
 
-MODPY_BUILDDEP =	No
-
 BUILD_DEPENDS =		devel/iso-codes
 
 # work towards gtk+3 support is in
