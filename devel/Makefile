@@ -333,7 +333,6 @@
      SUBDIR += libvirt-glib
      SUBDIR += libvmime
      SUBDIR += libvterm
-     SUBDIR += libwnck
      SUBDIR += libwnck3
      SUBDIR += libxsvf
      SUBDIR += libyajl
