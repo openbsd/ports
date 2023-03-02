@@ -109,7 +109,6 @@ FIX_CRLF_FILES=		src/stc/gen_iface.py
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--disable-option-checking \
-			--enable-compat30 \
 			--enable-graphics_ctx \
 			--enable-mediactrl \
 			--enable-protocols \
