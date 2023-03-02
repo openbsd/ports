@@ -1,6 +1,6 @@
 COMMENT =		rc file (dotfile) management
 
-DISTNAME =		rcm-1.3.4
+DISTNAME =		rcm-1.3.6
 
 CATEGORIES =		sysutils
 
