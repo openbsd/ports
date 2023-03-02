@@ -1,6 +1,6 @@
 COMMENT =		database migration tool for sqlalchemy
 
-MODPY_EGG_VERSION =	1.9.0
+MODPY_EGG_VERSION =	1.9.4
 FIX_EXTRACT_PERMISSIONS = Yes
 
 DISTNAME =		alembic-${MODPY_EGG_VERSION}
