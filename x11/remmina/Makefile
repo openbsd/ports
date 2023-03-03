@@ -42,7 +42,7 @@ LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
 			x11/gnome/libsecret
 
 RUN_DEPENDS=		devel/desktop-file-utils \
-			devel/py-gobject${MODPY_FLAVOR} \
+			devel/py-gobject3${MODPY_FLAVOR} \
 			misc/shared-mime-info \
 			x11/gtk+3,-guic
 
