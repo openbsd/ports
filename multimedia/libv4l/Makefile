@@ -3,7 +3,7 @@ COMMENT =		libv4l userspace library
 VERSION =		1.20.0
 DISTNAME =		v4l-utils-${VERSION}
 PKGNAME =		libv4l-${VERSION}
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS +=	v4l1		0.0 # 0.0
 SHARED_LIBS +=	v4l2		0.0 # 0.0

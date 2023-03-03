@@ -1,0 +1,18 @@
+The redirection of mmap through __syscall(2) is broken in multiple ways.
+Just call mmap directly.
+
+Index: lib/libv4lconvert/libv4lsyscall-priv.h
+--- lib/libv4lconvert/libv4lsyscall-priv.h.orig
++++ lib/libv4lconvert/libv4lsyscall-priv.h
+@@ -107,10 +107,7 @@
+ 	syscall(SYS_mmap, (void *)(addr), (size_t)(len), \
+ 			(int)(prot), (int)(flags), (int)(fd), (off_t)(off))
+ #elif defined(__OpenBSD__)
+-register_t __syscall(quad_t, ...);
+-#define SYS_MMAP(addr, len, prot, flags, fd, offset) \
+-	__syscall((quad_t)SYS_mmap, (void *)(addr), (size_t)(len), \
+-			(int)(prot), (int)(flags), (int)(fd), 0, (off_t)(offset))
++#define SYS_MMAP mmap
+ #else
+ #define SYS_MMAP(addr, len, prot, flags, fd, off) \
+ 	syscall(SYS_mmap2, (void *)(addr), (size_t)(len), \
