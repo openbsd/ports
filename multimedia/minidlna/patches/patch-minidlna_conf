@@ -7,8 +7,7 @@ Index: minidlna.conf
  port=8200
  
  # network interfaces to serve, comma delimited (8 interfaces max)
--#network_interface=eth0
-+#network_interface=em0
+ #network_interface=eth0
  
 -# specify the user account name or uid to run as
 -#user=jmaggard

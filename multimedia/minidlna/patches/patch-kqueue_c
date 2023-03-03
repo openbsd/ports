@@ -1,3 +1,5 @@
+64bit time_t
+
 Index: kqueue.c
 --- kqueue.c.orig
 +++ kqueue.c
@@ -9,3 +11,12 @@ Index: kqueue.c
  #include <assert.h>
  #include <errno.h>
  #include <stdlib.h>
+@@ -189,7 +190,7 @@ kqueue_process(struct timeval *tv)
+ 
+ 	TIMEVAL_TO_TIMESPEC(tv, &ts);
+ 
+-	DPRINTF(E_DEBUG, L_GENERAL, "kevent timer: %lu.%06lu, changes: %d\n",
++	DPRINTF(E_DEBUG, L_GENERAL, "kevent timer: %lld.%06lu, changes: %d\n",
+ 	    ts.tv_sec, ts.tv_nsec, n);
+ 
+ 	events = kevent(kq, change_list, n, event_list, MAXEVENTS, &ts);
