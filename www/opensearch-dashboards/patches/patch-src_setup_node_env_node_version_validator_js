@@ -1,18 +1,22 @@
+do no even bother looking at the current node version
+
 Index: src/setup_node_env/node_version_validator.js
 --- src/setup_node_env/node_version_validator.js.orig
 +++ src/setup_node_env/node_version_validator.js
-@@ -38,11 +38,11 @@ var rawRequiredVersion = pkg && pkg.engines && pkg.eng
- var requiredVersion = rawRequiredVersion ? 'v' + rawRequiredVersion : rawRequiredVersion;
- var currentVersionMajorMinorPatch = currentVersion.match(/^v(\d+)\.(\d+)\.(\d+)/);
- var requiredVersionMajorMinorPatch = requiredVersion.match(/^v(\d+)\.(\d+)\.(\d+)/);
--var isVersionValid = currentVersionMajorMinorPatch[1] === requiredVersionMajorMinorPatch[1] && currentVersionMajorMinorPatch[2] === requiredVersionMajorMinorPatch[2] && parseInt(currentVersionMajorMinorPatch[3], 10) >= parseInt(requiredVersionMajorMinorPatch[3], 10); // Validates current the NodeJS version compatibility when OpenSearch Dashboards starts.
-+var isVersionValid = currentVersionMajorMinorPatch[1] === requiredVersionMajorMinorPatch[1] && parseInt(currentVersionMajorMinorPatch[2], 10) >= parseInt(requiredVersionMajorMinorPatch[2], 10) && parseInt(currentVersionMajorMinorPatch[3], 10) >= parseInt(requiredVersionMajorMinorPatch[3], 10); // Validates current the NodeJS version compatibility when OpenSearch Dashboards starts.
+@@ -186,6 +186,8 @@ function versionCompare(versionA, versionB) {
+   return -1;
+ }
  
- if (!isVersionValid) {
-   var errorMessage = `OpenSearch Dashboards was built with ${requiredVersion} and does not support the current Node.js version ${currentVersion}. ` + `Please use Node.js ${requiredVersion} or a higher patch version.`; // Actions to apply when validation fails: error report + exit.
++if (false) {
++
+ var currentVersion = process && process.version;
  
-   console.error(errorMessage);
-   process.exit(1);
+ if (!currentVersion) {
+@@ -220,4 +222,5 @@ if (satisfiesBottom && rangeTop) {
+ if (!satisfiesBottom || rangeTop && !satisfiesTop) {
+   console.error('OpenSearch Dashboards cannot start up using the Node.js runtime v' + version.major + '.' + version.minor + '.' + version.patch + '. ' + getVersionCompatibilityMessage());
+   process.exit(21);
 -}
 \ No newline at end of file
++}
 +}

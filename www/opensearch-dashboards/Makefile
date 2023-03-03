@@ -1,8 +1,7 @@
 COMMENT =	visualization tool for data in OpenSearch
 
-V =		2.5.0
+V =		2.6.0
 DISTNAME =	opensearch-dashboards-$V-linux-x64
-REVISION =	0
 PKGNAME =	opensearch-dashboards-$V
 
 CATEGORIES =	www
@@ -34,7 +33,7 @@ do-install:
 	${INSTALL_DATA} ${WRKDIST}/*.txt ${PREFIX}/share/doc/opensearch-dashboards
 	${INSTALL_DATA} ${WRKDIST}/config/opensearch_dashboards.yml \
 		${PREFIX}/share/examples/opensearch-dashboards
-	rm -r ${WRKDIST}/*${PATCHORIG} \
+	rm -r ${WRKDIST}/src/setup_node_env/*${PATCHORIG} \
 		${WRKDIST}/data ${WRKDIST}/{bin/*{${PATCHORIG},.beforesubst},config,node}
 	find ${WRKDIST} \( -name '.*' -a ! -name \.cache \) -exec rm -rf {} +
 	find ${WRKDIST} -name \*~ -delete

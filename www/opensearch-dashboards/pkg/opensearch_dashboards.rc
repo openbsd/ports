@@ -2,6 +2,7 @@
 
 daemon="${TRUEPREFIX}/opensearch-dashboards/bin/opensearch-dashboards"
 daemon_user="_opensearch-dashboards"
+daemon_execdir="${TRUEPREFIX}/opensearch-dashboards"
 
 . /etc/rc.d/rc.subr
 
