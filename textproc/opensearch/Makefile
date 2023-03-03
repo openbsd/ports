@@ -1,8 +1,7 @@
 COMMENT =	distributed and RESTful search engine
 
-V =		2.5.0
+V =		2.6.0
 DISTNAME =	opensearch-$V-linux-x64
-REVISION =	1
 PKGNAME =	opensearch-$V
 
 CATEGORIES =	textproc devel
