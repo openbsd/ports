@@ -51,4 +51,9 @@ post-install:
 	mv ${WRKINST}${SYSCONFDIR}/{dbus-1,geoclue,xdg} \
 		${PREFIX}/share/examples/geoclue2
 
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+CFLAGS +=	-std=gnu99
+.endif
+
 .include <bsd.port.mk>
