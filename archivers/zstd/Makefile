@@ -2,6 +2,7 @@ COMMENT =		zstandard fast real-time compression algorithm
 
 V =			1.5.4
 DISTNAME =		zstd-${V}
+REVISION =		0
 
 SHARED_LIBS =		zstd	6.2	# 1.5.4
 
@@ -23,12 +24,15 @@ LIB_DEPENDS =		archivers/lz4 \
 BUILD_DEPENDS =		sysutils/ggrep
 
 MAKE_ENV =		CC="${CC}" \
-			CPPFLAGS="-I${LOCALBASE}/include" \
+			CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 MAKE_FLAGS =		SHARED_EXT_VER="so.$(LIBzstd_VERSION)" \
 			SONAME_FLAGS= \
 			V=1
 FAKE_FLAGS =		PREFIX="${PREFIX}"
+
+# Avoid unaligned access; use memcpy.
+CPPFLAGS +=		-DMEM_FORCE_MEMORY_ACCESS=0
 
 USE_GMAKE =		Yes
 

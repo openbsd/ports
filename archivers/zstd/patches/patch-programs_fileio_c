@@ -1,0 +1,14 @@
+Don't crash on 'zstd /etc/motd' -- setvbuf isn't NULL safe.
+https://github.com/facebook/zstd/issues/3523
+
+Index: programs/fileio.c
+--- programs/fileio.c.orig
++++ programs/fileio.c
+@@ -644,6 +644,7 @@ FIO_openDstFile(FIO_ctx_t* fCtx, FIO_prefs_t* const pr
+ #endif
+         if (f == NULL) {
+             DISPLAYLEVEL(1, "zstd: %s: %s\n", dstFileName, strerror(errno));
++            return NULL;
+         }
+         /* An increased buffer size can provide a significant performance boost on some platforms.
+          * Note that providing a NULL buf with a size that's not 0 is not defined in ANSI C, but is defined
