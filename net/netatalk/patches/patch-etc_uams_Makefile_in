@@ -1,7 +1,7 @@
 Index: etc/uams/Makefile.in
 --- etc/uams/Makefile.in.orig
 +++ etc/uams/Makefile.in
-@@ -963,7 +963,7 @@ install-data: install-data-recursive
+@@ -980,7 +980,7 @@ install-data: install-data-recursive
  uninstall: uninstall-recursive
  
  install-am: all-am

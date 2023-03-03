@@ -2,8 +2,7 @@ PORTROACH=	limit:^2
 
 COMMENT=	AFP file and print services for IP networks
 
-DISTNAME=	netatalk-2.2.6
-REVISION=	4
+DISTNAME=	netatalk-2.2.8
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=netatalk/}
 EXTRACT_SUFX=	.tar.bz2
@@ -13,7 +12,7 @@ HOMEPAGE=	http://netatalk.sourceforge.net/
 # GPLv2+ and BSD or similar
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c crypto db gcrypt gpg-error iconv intl rpcsvc execinfo
+WANTLIB += c crypto db gcrypt gpg-error iconv intl
 
 LIB_DEPENDS=	databases/db/v4 \
 		security/libgcrypt 
@@ -22,6 +21,9 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--disable-cups \
 		--disable-overwrite \
 		--disable-tcp-wrappers \
+		--disable-ddp \
+		--disable-timelord \
+		--disable-a2boot \
 		--with-ssl-dir=/usr \
 		--with-uams-path=${PREFIX}/lib/netatalk/uams \
 		--without-ldap \
@@ -46,9 +48,6 @@ post-build:
 	@cd ${WRKSRC}/config; make afpd.conf AppleVolumes.default
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/netatalk
-	${INSTALL_DATA} ${WRKSRC}/doc/README.AppleTalk \
-	    ${PREFIX}/share/doc/netatalk
 	mv ${WRKINST}/etc/netatalk ${PREFIX}/share/examples/
 	@find ${PREFIX}/lib/netatalk/uams \( -name '*.a' -o -name '*.la' \) \
 	    -delete

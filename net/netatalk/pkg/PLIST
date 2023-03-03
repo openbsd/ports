@@ -1,5 +1,8 @@
 @option is-branch
 @conflict jday-*
+@rcscript ${RCDIR}/afpd
+@rcscript ${RCDIR}/cnid_metad
+@rcscript ${RCDIR}/netatalk
 @bin bin/ad
 @bin bin/adv1tov2
 @bin bin/afpldaptest
@@ -66,18 +69,18 @@ include/netatalk/ddp.h
 include/netatalk/ddp_var.h
 include/netatalk/endian.h
 include/netatalk/phase2.h
-lib/libatalk.a
+@static-lib lib/libatalk.a
 lib/libatalk.la
 lib/netatalk/
 lib/netatalk/uams/
-lib/netatalk/uams/uams_clrtxt.so
-lib/netatalk/uams/uams_dhx.so
-lib/netatalk/uams/uams_dhx2.so
-lib/netatalk/uams/uams_dhx2_passwd.so
-lib/netatalk/uams/uams_dhx_passwd.so
-lib/netatalk/uams/uams_guest.so
-lib/netatalk/uams/uams_passwd.so
-lib/netatalk/uams/uams_randnum.so
+@so lib/netatalk/uams/uams_clrtxt.so
+@so lib/netatalk/uams/uams_dhx.so
+@so lib/netatalk/uams/uams_dhx2.so
+@so lib/netatalk/uams/uams_dhx2_passwd.so
+@so lib/netatalk/uams/uams_dhx_passwd.so
+@so lib/netatalk/uams/uams_guest.so
+@so lib/netatalk/uams/uams_passwd.so
+@so lib/netatalk/uams/uams_randnum.so
 @man man/man1/ad.1
 @man man/man1/afpldaptest.1
 @man man/man1/afppasswd.1
@@ -110,8 +113,6 @@ lib/netatalk/uams/uams_randnum.so
 @bin sbin/cnid_dbd
 @bin sbin/cnid_metad
 share/aclocal/netatalk.m4
-share/doc/netatalk/
-share/doc/netatalk/README.AppleTalk
 share/examples/netatalk/
 @mode 750
 @sample ${SYSCONFDIR}/netatalk/
@@ -125,6 +126,3 @@ share/examples/netatalk/afpd.conf
 share/examples/netatalk/netatalk.conf
 @sample ${SYSCONFDIR}/netatalk/netatalk.conf
 @mode
-@rcscript ${RCDIR}/afpd
-@rcscript ${RCDIR}/cnid_metad
-@rcscript ${RCDIR}/netatalk
