@@ -4,6 +4,7 @@ V=			3.1.14
 DISTNAME=		netatalk-${V}
 PKGSPEC=		netatalk->=3,<4
 EPOCH=			0
+REVISION=		0
 
 SHARED_LIBS +=  atalk                16.0     # 18.0
 

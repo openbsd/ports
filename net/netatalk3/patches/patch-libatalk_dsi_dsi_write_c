@@ -1,0 +1,26 @@
+From e6a9ce5b8145d0b39851fbf80916035a714e9d59 Mon Sep 17 00:00:00 2001
+From: Etienne Helluy-Lafont <etienne.helluy-lafont@synacktiv.com>
+Date: Fri, 20 Jan 2023 11:32:46 +0100
+Subject: [PATCH] fix CVE-2022-43634
+
+Index: libatalk/dsi/dsi_write.c
+--- libatalk/dsi/dsi_write.c.orig
++++ libatalk/dsi/dsi_write.c
+@@ -23,7 +23,7 @@
+ #include <atalk/util.h>
+ #include <atalk/logger.h>
+ 
+-size_t dsi_writeinit(DSI *dsi, void *buf, const size_t buflen _U_)
++size_t dsi_writeinit(DSI *dsi, void *buf, const size_t buflen)
+ {
+     size_t bytes = 0;
+     dsi->datasize = ntohl(dsi->header.dsi_len) - dsi->header.dsi_data.dsi_doff;
+@@ -31,7 +31,7 @@ size_t dsi_writeinit(DSI *dsi, void *buf, const size_t
+     if (dsi->eof > dsi->start) {
+         /* We have data in the buffer */
+         bytes = MIN(dsi->eof - dsi->start, dsi->datasize);
+-        memmove(buf, dsi->start, bytes);
++        memmove(buf, dsi->start, MIN(buflen, bytes));
+         dsi->start += bytes;
+         dsi->datasize -= bytes;
+         if (dsi->start >= dsi->eof)
