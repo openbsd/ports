@@ -451,12 +451,12 @@ MODGO_MODULES =	\
 	golang.org/x/lint					 v0.0.0-20210508222113-6edffad5e616 \
 	golang.org/x/mobile					 v0.0.0-20190719004257-d2bd2a29d028 \
 	golang.org/x/mod					 v0.7.0 \
-	golang.org/x/net					 v0.5.0 \
+	golang.org/x/net					 v0.7.0 \
 	golang.org/x/oauth2					 v0.1.0 \
 	golang.org/x/sync					 v0.0.0-20220929204114-8fcdb60fdcc0 \
-	golang.org/x/sys					 v0.4.0 \
-	golang.org/x/term					 v0.4.0 \
-	golang.org/x/text					 v0.6.0 \
+	golang.org/x/sys					 v0.5.0 \
+	golang.org/x/term					 v0.5.0 \
+	golang.org/x/text					 v0.7.0 \
 	golang.org/x/time					 v0.0.0-20200630173020-3af7569d3a1e \
 	golang.org/x/tools					 v0.4.0 \
 	golang.org/x/xerrors					 v0.0.0-20220907171357-04be3eba64a2 \
@@ -1190,6 +1190,7 @@ MODGO_MODFILES =	\
 	golang.org/x/net					 v0.0.0-20221014081412-f15817d10f9b \
 	golang.org/x/net					 v0.1.0 \
 	golang.org/x/net					 v0.3.0 \
+	golang.org/x/net					 v0.5.0 \
 	golang.org/x/oauth2					 v0.0.0-20180821212333-d2e6202438be \
 	golang.org/x/oauth2					 v0.0.0-20190226205417-e64efc72b421 \
 	golang.org/x/oauth2					 v0.0.0-20190604053449-0f29369cfe45 \
@@ -1331,11 +1332,13 @@ MODGO_MODFILES =	\
 	golang.org/x/sys					 v0.0.0-20220811171246-fbc7d0a398ab \
 	golang.org/x/sys					 v0.1.0 \
 	golang.org/x/sys					 v0.3.0 \
+	golang.org/x/sys					 v0.4.0 \
 	golang.org/x/term					 v0.0.0-20201117132131-f5c789dd3221 \
 	golang.org/x/term					 v0.0.0-20201126162022-7de9c90e9dd1 \
 	golang.org/x/term					 v0.0.0-20201210144234-2321bbc49cbf \
 	golang.org/x/term					 v0.0.0-20210927222741-03fcf44c2211 \
 	golang.org/x/term					 v0.1.0 \
+	golang.org/x/term					 v0.4.0 \
 	golang.org/x/text					 v0.0.0-20160726164857-2910a502d2bf \
 	golang.org/x/text					 v0.0.0-20170915032832-14c0d48ead0c \
 	golang.org/x/text					 v0.3.0 \
@@ -1349,6 +1352,7 @@ MODGO_MODFILES =	\
 	golang.org/x/text					 v0.3.7 \
 	golang.org/x/text					 v0.4.0 \
 	golang.org/x/text					 v0.5.0 \
+	golang.org/x/text					 v0.6.0 \
 	golang.org/x/time					 v0.0.0-20180412165947-fbb02b2291d2 \
 	golang.org/x/time					 v0.0.0-20181108054448-85acf8d2951c \
 	golang.org/x/time					 v0.0.0-20190308202827-9d24e82272b4 \
