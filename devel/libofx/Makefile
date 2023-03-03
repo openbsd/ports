@@ -1,11 +1,12 @@
 COMMENT=	opensource implementation of the OFX specification
 
-DISTNAME=	libofx-0.10.7
+V=	0.10.9
+DISTNAME=	libofx-${V}
+
 CATEGORIES=	devel
-REVISION=	0
 
 HOMEPAGE=	http://libofx.sourceforge.net/
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libofx/}
+MASTER_SITES=https://github.com/libofx/libofx/releases/download/${V}/
 
 MAINTAINER=	Landry Breuil <landry@openbsd.org>
 
@@ -14,16 +15,16 @@ SHARED_LIBS=	ofx 8.0	# .7.2
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	c iconv intl m pthread ${COMPILER_LIBCXX} osp
-
 COMPILER =		base-clang ports-gcc base-gcc
+
+WANTLIB += ${COMPILER_LIBCXX} c crypto curl ffi glib-2.0 glibmm-2.4
+WANTLIB += gmodule-2.0 gobject-2.0 iconv intl lzma m nghttp2 nghttp3
+WANTLIB += ngtcp2 ngtcp2_crypto_openssl osp pcre2-8 sigc-2.0 ssl
+WANTLIB += xml++-2.6 xml2 z
 
 LIB_DEPENDS=	textproc/opensp \
 		net/curl \
 		textproc/libxml++
-
-WANTLIB += crypto curl ffi glib-2.0 glibmm-2.4 gmodule-2.0 gobject-2.0
-WANTLIB += lzma nghttp2 pcre2-8 sigc-2.0 ssl xml++-2.6 xml2 z
 
 BUILD_DEPENDS =	devel/help2man
 
