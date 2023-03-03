@@ -1,6 +1,6 @@
 COMMENT =	Vulkan Validation Layers
 
-V =		1.3.224.1
+V =		1.3.239.0
 PKGNAME =	vulkan-validation-layers-${V}
 GH_TAGNAME =	sdk-${V}
 GH_ACCOUNT =	KhronosGroup
@@ -32,11 +32,13 @@ CONFIGURE_ARGS +=	-DBUILD_WSI_WAYLAND_SUPPORT=False \
 			-DSPIRV_HEADERS_INSTALL_DIR=${LOCALBASE}/include/spirv \
 			-DBUILD_WERROR=False
 
+# Tests only build if Google Test framework is in directory external/
+NO_TEST =	Yes
+
+CXXFLAGS +=	-I${X11BASE}/include
+
 .if ${MACHINE_ARCH} == "mips64" || ${MACHINE_ARCH} == "mips64el"
 CXXFLAGS +=	-mxgot
 .endif
-
-# Tests only build if Google Test framework is in directory external/
-NO_TEST =	Yes
 
 .include <bsd.port.mk>

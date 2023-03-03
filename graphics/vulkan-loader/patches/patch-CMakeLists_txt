@@ -1,7 +1,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -180,9 +180,9 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+@@ -149,9 +149,9 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
  set(LOADER_HELPER_FOLDER "Helper Targets")
  
  if(UNIX)
@@ -13,11 +13,3 @@ Index: CMakeLists.txt
              "Search path to use when XDG_DATA_DIRS is unset or empty or the current process is SUID/SGID. Default is freedesktop compliant.")
      set(SYSCONFDIR "" CACHE STRING
              "System-wide search directory. If not set or empty, CMAKE_INSTALL_FULL_SYSCONFDIR and /etc are used.")
-@@ -208,6 +208,7 @@ if(UNIX AND NOT APPLE) # i.e.: Linux
- 
-     if(BUILD_WSI_XCB_SUPPORT)
-         find_package(XCB REQUIRED)
-+        include_directories(${XCB_INCLUDE_DIR})
-     endif()
- 
-     if(BUILD_WSI_XLIB_SUPPORT)

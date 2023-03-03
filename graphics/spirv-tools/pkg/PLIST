@@ -35,6 +35,10 @@ lib/cmake/SPIRV-Tools-reduce/
 lib/cmake/SPIRV-Tools-reduce/SPIRV-Tools-reduceConfig.cmake
 lib/cmake/SPIRV-Tools-reduce/SPIRV-Tools-reduceTarget${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/SPIRV-Tools-reduce/SPIRV-Tools-reduceTarget.cmake
+lib/cmake/SPIRV-Tools-tools/
+lib/cmake/SPIRV-Tools-tools/SPIRV-Tools-toolsConfig.cmake
+lib/cmake/SPIRV-Tools-tools/SPIRV-Tools-toolsTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/SPIRV-Tools-tools/SPIRV-Tools-toolsTargets.cmake
 lib/cmake/SPIRV-Tools/SPIRV-ToolsConfig.cmake
 lib/cmake/SPIRV-Tools/SPIRV-ToolsTarget${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/SPIRV-Tools/SPIRV-ToolsTarget.cmake

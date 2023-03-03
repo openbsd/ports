@@ -1,18 +1,7 @@
-stub loader_platform_executable_path()
-
 Index: loader/vk_loader_platform.h
 --- loader/vk_loader_platform.h.orig
 +++ loader/vk_loader_platform.h
-@@ -43,7 +43,7 @@
- #include "dlopen_fuchsia.h"
- #endif  // defined(__Fuchsia__)
- 
--#if defined(__linux__) || defined(__APPLE__) || defined(__Fuchsia__) || defined(__QNXNTO__) || defined(__FreeBSD__)
-+#if defined(__unix__) || defined(__APPLE__) || defined(__Fuchsia__) || defined(__QNXNTO__) || defined(__FreeBSD__)
- #include <unistd.h>
- // Note: The following file is for dynamic loading:
- #include <dlfcn.h>
-@@ -51,7 +51,7 @@
+@@ -52,7 +52,7 @@
  #include <stdlib.h>
  #include <libgen.h>
  
@@ -21,16 +10,7 @@ Index: loader/vk_loader_platform.h
  /* Windows-specific common code: */
  // WinBase.h defines CreateSemaphore and synchapi.h defines CreateEvent
  //  undefine them to avoid conflicts with VkLayerDispatchTable struct members.
-@@ -98,7 +98,7 @@
- #define LAYERS_PATH_ENV "VK_LAYER_PATH"
- #define ENABLED_LAYERS_ENV "VK_INSTANCE_LAYERS"
- 
--#if defined(__linux__) || defined(__APPLE__) || defined(__Fuchsia__) || defined(__QNXNTO__) || defined(__FreeBSD__)
-+#if defined(__unix__) || defined(__APPLE__) || defined(__Fuchsia__) || defined(__QNXNTO__) || defined(__FreeBSD__)
- /* Linux-specific common code: */
- 
- // VK Library Filenames, Paths, etc.:
-@@ -144,7 +144,7 @@ typedef pthread_mutex_t loader_platform_thread_mutex;
+@@ -157,7 +157,7 @@ typedef pthread_mutex_t loader_platform_thread_mutex;
  
  typedef pthread_cond_t loader_platform_thread_cond;
  
@@ -39,27 +19,7 @@ Index: loader/vk_loader_platform.h
  
  // VK Library Filenames, Paths, etc.:
  #define PATH_SEPARATOR ';'
-@@ -219,7 +219,7 @@ static inline void loader_platform_thread_once_fn(pthr
- 
- #endif
- 
--#if defined(__linux__) || defined(__APPLE__) || defined(__Fuchsia__) || defined(__QNXNTO__) || defined(__FreeBSD__)
-+#if defined(__unix__) || defined(__APPLE__) || defined(__Fuchsia__) || defined(__QNXNTO__) || defined(__FreeBSD__)
- 
- // File IO
- static inline bool loader_platform_file_exists(const char *path) {
-@@ -259,6 +259,10 @@ static inline char *loader_platform_executable_path(ch
-     buffer[ret] = '\0';
-     return buffer;
- }
-+#elif defined(__OpenBSD__)
-+static inline char *loader_platform_executable_path(char *buffer, size_t size) {
-+   return NULL;
-+}
- #elif defined(__DragonFly__) || defined(__FreeBSD__) || defined(__NetBSD__)
- #include <sys/sysctl.h>
- static inline char *loader_platform_executable_path(char *buffer, size_t size) {
-@@ -357,7 +361,7 @@ static inline void loader_platform_thread_lock_mutex(l
+@@ -371,7 +375,7 @@ static inline void loader_platform_thread_lock_mutex(l
  static inline void loader_platform_thread_unlock_mutex(loader_platform_thread_mutex *pMutex) { pthread_mutex_unlock(pMutex); }
  static inline void loader_platform_thread_delete_mutex(loader_platform_thread_mutex *pMutex) { pthread_mutex_destroy(pMutex); }
  

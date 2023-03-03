@@ -2,10 +2,9 @@ PORTROACH =	limit:^[0-9]
 
 COMMENT =	reference front-end for GLSL and ESSL
 
-GH_TAGNAME =	11.11.0
+GH_TAGNAME =	12.0.0
 GH_ACCOUNT =	KhronosGroup
 GH_PROJECT =	glslang
-REVISION =	0
 
 CATEGORIES =	devel graphics
 

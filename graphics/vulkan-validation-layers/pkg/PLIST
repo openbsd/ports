@@ -1,5 +1,4 @@
 @so lib/libVkLayer_khronos_validation.so
-@static-lib lib/libVkLayer_utils.a
 share/vulkan/
 share/vulkan/explicit_layer.d/
 share/vulkan/explicit_layer.d/VkLayer_khronos_validation.json
