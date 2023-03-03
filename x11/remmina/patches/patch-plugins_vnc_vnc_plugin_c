@@ -3,7 +3,7 @@ Fix double mutex lock and double free
 Index: plugins/vnc/vnc_plugin.c
 --- plugins/vnc/vnc_plugin.c.orig
 +++ plugins/vnc/vnc_plugin.c
-@@ -111,8 +111,6 @@ static void onMainThread_schedule_callback_and_wait(st
+@@ -113,8 +113,6 @@ static void onMainThread_schedule_callback_and_wait(st
  	pthread_mutex_lock(&d->mu);
  	gdk_threads_add_idle((GSourceFunc)onMainThread_cb, (gpointer)d);
  
@@ -12,7 +12,7 @@ Index: plugins/vnc/vnc_plugin.c
  	pthread_cleanup_pop(0);
  	pthread_mutex_unlock(&d->mu);
  	pthread_mutex_destroy(&d->mu);
-@@ -237,7 +235,6 @@ static void remmina_plugin_vnc_update_scale(RemminaPro
+@@ -239,7 +237,6 @@ static void remmina_plugin_vnc_update_scale(RemminaPro
  		d->gp = gp;
  		d->scale = scale;
  		onMainThread_schedule_callback_and_wait(d);

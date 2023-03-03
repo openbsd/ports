@@ -1,9 +1,8 @@
 COMMENT=		GTK+ remote desktop client
 
-V=			1.4.23
+V=			1.4.29
 DISTNAME=		remmina-${V}
-WRKDIST=		${WRKDIR}/Remmina-v${V}-a03c1648a090458736434c77c0be00a7cf9cc44b
-REVISION=		0
+WRKDIST=		${WRKDIR}/Remmina-v${V}-fb19eb5f11f206ffb442a9e0c519cb0f2cb3fd8b
 
 CATEGORIES=		x11 net
 
@@ -12,16 +11,17 @@ HOMEPAGE=		https://www.remmina.org/
 # GPLv2+
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += ICE SM X11 Xext avahi-client avahi-common avahi-ui-gtk3
-WANTLIB += c cairo crypto cups freerdp-client2 freerdp2 gcrypt
-WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gtk-3 intl json-glib-1.0 pango-1.0 pthread secret-1
-WANTLIB += sodium soup-2.4 spice-client-glib-2.0 spice-client-gtk-3.0
-WANTLIB += ssh ssl vncclient vte-2.91 winpr2
+WANTLIB += ${MODPY_WANTLIB}
+WANTLIB += avahi-client avahi-common avahi-ui-gtk3 c cairo crypto
+WANTLIB += cups freerdp-client2 freerdp2 gcrypt gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gtk-3 intl
+WANTLIB += json-glib-1.0 pango-1.0 pthread secret-1 sodium spice-client-glib-2.0
+WANTLIB += spice-client-gtk-3.0 ssh ssl vncclient vte-2.91 winpr2
 
 MASTER_SITES=		https://gitlab.com/Remmina/Remmina/-/archive/v${V}/
 
-MODULES=		devel/cmake
+MODULES=		devel/cmake \
+			lang/python
 
 COMPILER=		base-clang ports-gcc ports-clang
 COMPILER_LANGS=		c
@@ -29,8 +29,8 @@ COMPILER_LANGS=		c
 BUILD_DEPENDS=		devel/gettext,-tools \
 			devel/spice-protocol
 
-LIB_DEPENDS=		devel/gettext,-runtime \
-			devel/libsoup \
+LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
+			devel/gettext,-runtime \
 			devel/json-glib \
 			devel/vte3 \
 			net/avahi,,-gtk3 \
@@ -42,6 +42,7 @@ LIB_DEPENDS=		devel/gettext,-runtime \
 			x11/gnome/libsecret
 
 RUN_DEPENDS=		devel/desktop-file-utils \
+			devel/py-gobject${MODPY_FLAVOR} \
 			misc/shared-mime-info \
 			x11/gtk+3,-guic
 
