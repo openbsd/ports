@@ -1,8 +1,7 @@
 COMMENT =	CLI program to download videos from YouTube and other sites
 
-VERSION =	2023.02.17
+VERSION =	2023.03.03
 MODPY_EGG_VERSION =	${VERSION:S/.0/./g}
-REVISION =	0
 
 DISTNAME =	yt-dlp-${VERSION}
 DISTFILES =	yt-dlp-${VERSION}{yt-dlp}${EXTRACT_SUFX}
