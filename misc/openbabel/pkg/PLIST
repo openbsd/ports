@@ -1,5 +1,6 @@
 @bin bin/obabel
 @bin bin/obconformer
+@bin bin/obdistgen
 @bin bin/obenergy
 @bin bin/obfit
 @bin bin/obfitall
@@ -9,6 +10,7 @@
 @bin bin/obmm
 @bin bin/obprobe
 @bin bin/obprop
+@bin bin/obrms
 @bin bin/obrotamer
 @bin bin/obrotate
 @bin bin/obspectrophore
@@ -48,6 +50,12 @@ include/maeparser/MaeParserConfig.hpp
 include/maeparser/Reader.hpp
 include/maeparser/Writer.hpp
 include/openbabel3/
+include/openbabel3/LBFGS/
+include/openbabel3/LBFGS.h
+include/openbabel3/LBFGS/LineSearchBacktracking.h
+include/openbabel3/LBFGS/LineSearchBracketing.h
+include/openbabel3/LBFGS/LineSearchNocedalWright.h
+include/openbabel3/LBFGS/Param.h
 include/openbabel3/openbabel/
 include/openbabel3/openbabel/alias.h
 include/openbabel3/openbabel/atom.h
@@ -184,6 +192,7 @@ lib/openbabel/${V}/
 @so lib/openbabel/${V}/cmlformat.so
 @so lib/openbabel/${V}/cmlreactformat.so
 @so lib/openbabel/${V}/cofformat.so
+@so lib/openbabel/${V}/confabreport.so
 @so lib/openbabel/${V}/copyformat.so
 @so lib/openbabel/${V}/crkformat.so
 @so lib/openbabel/${V}/crystal09format.so

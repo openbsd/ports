@@ -1,6 +1,7 @@
 COMMENT=	chemistry file translation program
 
 V=		3.1.1
+REVISION=	0
 DISTNAME=	openbabel-${V}
 
 CATEGORIES=	misc
@@ -8,7 +9,7 @@ CATEGORIES=	misc
 SHARED_LIBS +=	coordgen	0.0 \
 		inchi		0.0 \
 		maeparser	0.0 \
-		openbabel	6.0
+		openbabel	6.1
 
 HOMEPAGE=	https://openbabel.org
 
@@ -33,6 +34,8 @@ MODPY_BUILDDEP=	No
 LIB_DEPENDS=	devel/boost \
 		graphics/cairo \
 		textproc/libxml
+
+BUILD_DEPENDS=	math/eigen3
 
 CONFIGURE_ARGS=	-DBUILD_GUI=OFF
 
