@@ -3,7 +3,7 @@ disble tip-of-the-day dialog by default
 Index: officecfg/registry/schema/org/openoffice/Office/Common.xcs
 --- officecfg/registry/schema/org/openoffice/Office/Common.xcs.orig
 +++ officecfg/registry/schema/org/openoffice/Office/Common.xcs
-@@ -5565,7 +5565,7 @@
+@@ -5590,7 +5590,7 @@
          <info>
            <desc>Determines whether the Tip-of-the-Day dialog is shown on startup.</desc>
          </info>
