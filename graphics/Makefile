@@ -145,6 +145,7 @@
      SUBDIR += libgxps
      SUBDIR += libimagequant
      SUBDIR += libiptcdata
+     SUBDIR += libjxl
      SUBDIR += liblqr
      SUBDIR += libmng
      SUBDIR += libmpeg2
