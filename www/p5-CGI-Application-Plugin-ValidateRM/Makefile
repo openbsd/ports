@@ -2,10 +2,9 @@ COMMENT =	helps validate CGI::Application run modes
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	CGI-Application-Plugin-ValidateRM-2.5
+DISTNAME =	CGI-Application-Plugin-ValidateRM-2.52
 CATEGORIES =	www
 FIX_EXTRACT_PERMISSIONS=Yes
-REVISION =	0
 
 # perl
 PERMIT_PACKAGE =		Yes
