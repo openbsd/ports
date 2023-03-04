@@ -1,6 +1,6 @@
 COMMENT =	parser and builder for x-www-form-urlencoded in XS
 
-DISTNAME =	WWW-Form-UrlEncoded-XS-0.27
+DISTNAME =	WWW-Form-UrlEncoded-XS-0.28
 CATEGORIES =	www
 MODULES =	cpan
 
