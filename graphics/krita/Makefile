@@ -2,7 +2,7 @@ COMMENT =	advanced drawing and image manipulation
 
 VERSION =	5.1.5
 DISTNAME =	krita-${VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  kritabasicflakes          4.1 # 16.0
 SHARED_LIBS +=  kritacolord               2.0 # 16.0
@@ -54,7 +54,7 @@ WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickWidgets Qt5Sql
 WANTLIB += Qt5Svg Qt5Widgets Qt5X11Extras Qt5Xml SM X11 Xext Xi
 WANTLIB += boost_system-mt c exiv2 fftw3 gif gsl gslcblas heif
 WANTLIB += jpeg lcms2 m mypaint openjp2 png poppler poppler-qt5
-WANTLIB += quazip1-qt5 raw tiff turbojpeg webp z
+WANTLIB += quazip1-qt5 raw tiff turbojpeg webp z jxl jxl_threads
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/krita/${VERSION}/}
 EXTRACT_SUFX =	.tar.xz
@@ -91,6 +91,7 @@ LIB_DEPENDS =		archivers/quazip>=1.3 \
 			graphics/giflib \
 			graphics/jpeg \
 			graphics/lcms2 \
+			graphics/libjxl \
 			graphics/libmypaint \
 			graphics/libraw \
 			graphics/libwebp \

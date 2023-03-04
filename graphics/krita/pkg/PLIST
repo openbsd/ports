@@ -75,6 +75,8 @@ lib/kritaplugins/
 @so lib/kritaplugins/kritajp2import.so
 @so lib/kritaplugins/kritajpegexport.so
 @so lib/kritaplugins/kritajpegimport.so
+@so lib/kritaplugins/kritajxlexport.so
+@so lib/kritaplugins/kritajxlimport.so
 @so lib/kritaplugins/kritakraexport.so
 @so lib/kritaplugins/kritakraimport.so
 @so lib/kritaplugins/kritakrzexport.so
@@ -235,6 +237,7 @@ share/applications/krita_heif.desktop
 share/applications/krita_heightmap.desktop
 share/applications/krita_jp2.desktop
 share/applications/krita_jpeg.desktop
+share/applications/krita_jxl.desktop
 share/applications/krita_kra.desktop
 share/applications/krita_krz.desktop
 share/applications/krita_ora.desktop
