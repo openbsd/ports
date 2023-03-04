@@ -1,4 +1,3 @@
-@bin bin/benchmark_xl
 @bin bin/cjpeg_hdr
 @bin bin/cjxl
 @bin bin/djxl
