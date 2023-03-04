@@ -5,6 +5,7 @@ V =		3.6.2
 DISTNAME =	gdal-${V}
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		gdalautotest-${V}${EXTRACT_SUFX}
+REVISION =	0
 
 FULLPKGNAME-main =	${DISTNAME}
 FULLPKGPATH-main =	geo/gdal,-main
@@ -48,6 +49,7 @@ LIB_DEPENDS-main =	databases/sqlite3 \
 			print/poppler \
 			graphics/png \
 			graphics/giflib \
+			graphics/libjxl \
 			graphics/libwebp \
 			graphics/jpeg \
 			graphics/openjp2 \
@@ -56,7 +58,7 @@ LIB_DEPENDS-main =	databases/sqlite3 \
 			devel/geotiff>=1.5.0
 
 WANTLIB-main =		c crypto curl expat freexl geos_c geotiff \
-			gif hdf5 iconv jpeg json-c lzma lz4 m \
+			gif hdf5 iconv jpeg json-c jxl jxl_threads lzma lz4 m \
 			netcdf openjp2 pcre2-8 png poppler pq proj pthread qhull_r \
 			spatialite sqlite3 ssl tiff xml2 webp z zstd \
 			${COMPILER_LIBCXX}
