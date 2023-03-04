@@ -3,6 +3,7 @@
 @so lib/qt5/plugins/imageformats/kimg_eps.so
 @so lib/qt5/plugins/imageformats/kimg_exr.so
 @so lib/qt5/plugins/imageformats/kimg_hdr.so
+@so lib/qt5/plugins/imageformats/kimg_jxl.so
 @so lib/qt5/plugins/imageformats/kimg_kra.so
 @so lib/qt5/plugins/imageformats/kimg_ora.so
 @so lib/qt5/plugins/imageformats/kimg_pcx.so
@@ -22,6 +23,7 @@ share/kservices5/qimageioplugins/eps.desktop
 share/kservices5/qimageioplugins/exr.desktop
 share/kservices5/qimageioplugins/hdr.desktop
 share/kservices5/qimageioplugins/jp2.desktop
+share/kservices5/qimageioplugins/jxl.desktop
 share/kservices5/qimageioplugins/kra.desktop
 share/kservices5/qimageioplugins/ora.desktop
 share/kservices5/qimageioplugins/pcx.desktop
