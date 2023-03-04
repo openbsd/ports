@@ -1,0 +1,34 @@
+@bin bin/benchmark_xl
+@bin bin/cjpeg_hdr
+@bin bin/cjxl
+@bin bin/djxl
+@bin bin/jxlinfo
+include/jxl/
+include/jxl/butteraugli.h
+include/jxl/butteraugli_cxx.h
+include/jxl/cms_interface.h
+include/jxl/codestream_header.h
+include/jxl/color_encoding.h
+include/jxl/decode.h
+include/jxl/decode_cxx.h
+include/jxl/encode.h
+include/jxl/encode_cxx.h
+include/jxl/jxl_export.h
+include/jxl/jxl_threads_export.h
+include/jxl/memory_manager.h
+include/jxl/parallel_runner.h
+include/jxl/resizable_parallel_runner.h
+include/jxl/resizable_parallel_runner_cxx.h
+include/jxl/thread_parallel_runner.h
+include/jxl/thread_parallel_runner_cxx.h
+include/jxl/types.h
+include/jxl/version.h
+@static-lib lib/libjxl.a
+@lib lib/libjxl.so.${LIBjxl_VERSION}
+@static-lib lib/libjxl_dec.a
+@static-lib lib/libjxl_threads.a
+@lib lib/libjxl_threads.so.${LIBjxl_threads_VERSION}
+lib/pkgconfig/libjxl.pc
+lib/pkgconfig/libjxl_threads.pc
+@man man/man1/cjxl.1
+@man man/man1/djxl.1

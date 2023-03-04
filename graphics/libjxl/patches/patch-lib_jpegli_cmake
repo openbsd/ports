@@ -1,0 +1,13 @@
+https://github.com/libjxl/libjxl/issues/2167
+
+Index: lib/jpegli.cmake
+--- lib/jpegli.cmake.orig
++++ lib/jpegli.cmake
+@@ -127,6 +127,7 @@ set(JPEGLI_LIBJPEG_OBJ_COMPILE_DEFINITIONS
+ )
+ 
+ add_library(jpegli-libjpeg-obj OBJECT jpegli/libjpeg_wrapper.cc)
++target_include_directories(jpegli-libjpeg-obj PUBLIC "${JPEG_INCLUDE_DIRS}")
+ target_compile_options(jpegli-libjpeg-obj PRIVATE ${JPEGXL_INTERNAL_FLAGS})
+ target_compile_options(jpegli-libjpeg-obj PUBLIC ${JPEGXL_COVERAGE_FLAGS})
+ set_property(TARGET jpegli-libjpeg-obj PROPERTY POSITION_INDEPENDENT_CODE ON)

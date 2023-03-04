@@ -1,0 +1,10 @@
+JPEG XL is a next-generation image format that brings many advantages:
+* High-fidelity lossy image compression
+* Best lossless image compression
+* Progressive decoding
+* Lossless JPEG transcoding
+* Designed for both photographic and synthetic images
+* Fast software encoding and decoding
+* Full support for wide gamut and HDR
+* Perceptually optimizing reference encoder
+* FOSS and royalty-free
