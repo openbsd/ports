@@ -1,10 +1,9 @@
 COMMENT=		parse, validate and reformat standard numbers and codes
 
-MODPY_EGG_VERSION=	1.17
+MODPY_EGG_VERSION=	1.18
 DISTNAME=		python-stdnum-${MODPY_EGG_VERSION}
 PKGNAME=		py-stdnum-${MODPY_EGG_VERSION}
 CATEGORIES=		devel
-REVISION=		1
 
 HOMEPAGE=		https://arthurdejong.org/python-stdnum/
 
