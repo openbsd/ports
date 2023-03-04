@@ -28,10 +28,13 @@ some key features like screen locking, session tracking... will not work
 properly. To do so, "gdm" must be added at the end of "pkg_scripts" in
 rc.conf.local(8) (and "xenodm_flags" commented or removed).
 
-GDM greeter language and character set is configured in:
+Locales
+-------
+Default language and character set for GNOME and the GDM greeter are set in:
     ${SYSCONFDIR}/gdm/locale.conf
 Note that the variables set in this file will be inherited by the user session.
-They can be unset/overriden in the user's .profile file.
+They can be unset/overriden in the user's .profile file or using
+gnome-control-center.
 
 Alternative (non-GDM) GNOME startup
 -----------------------------------
