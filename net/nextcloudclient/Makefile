@@ -4,6 +4,7 @@ COMMENT =	desktop sync client for Nextcloud
 
 V =		3.7.3
 DISTNAME =	nextcloudclient-${V}
+REVISION =	0
 
 GH_ACCOUNT =	nextcloud
 GH_PROJECT =	desktop
@@ -22,19 +23,17 @@ MAINTAINER =	Adriano Barbosa <barbosa.aob@gmail.com>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} lib/inotify/inotify
+WANTLIB += ${COMPILER_LIBCXX} lib/inotify/inotify KF5Archive
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Positioning
 WANTLIB += Qt5PrintSupport Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickControls2
 WANTLIB += Qt5Svg Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
 WANTLIB += Qt5WebSockets Qt5Widgets Qt5Xml c crypto m qt5keychain
-WANTLIB += sqlite3 ssl z
+WANTLIB += cloudproviders gio-2.0 glib-2.0 gobject-2.0 intl sqlite3 ssl z
 
 MODULES =		devel/cmake \
 			x11/qt5
 
-BUILD_DEPENDS =		devel/gettext,-tools \
-			devel/kf5/karchive \
-			x11/gnome/libcloudproviders
+BUILD_DEPENDS =		devel/gettext,-tools
 
 # for converting svg icons to png
 BUILD_DEPENDS +=	x11/gnome/librsvg
@@ -44,14 +43,15 @@ BUILD_DEPENDS +=	devel/cmocka
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			misc/shared-mime-info \
-			x11/gnome/libcloudproviders \
 			x11/gtk+3,-guic \
 			x11/qt5/qtgraphicaleffects \
 			x11/qt5/qtquickcontrols
 
 LIB_DEPENDS =		databases/sqlite3 \
 			devel/libinotify \
+			devel/kf5/karchive \
 			security/qtkeychain \
+			x11/gnome/libcloudproviders \
 			x11/qt5/qtsvg \
 			x11/qt5/qtquickcontrols2 \
 			x11/qt5/qtwebengine \
