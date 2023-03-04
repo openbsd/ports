@@ -2,6 +2,7 @@ COMMENT=	GNU Image Manipulation Program
 
 V=		2.99
 DISTNAME=	gimp-${V}.14
+REVISION=	0
 
 .for i in gimp gimpbase gimpcolor gimpconfig gimpmath gimpmodule \
 	gimpthumb gimpui gimpwidgets gimp-scriptfu
@@ -26,7 +27,7 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gs gtk-3 harfbuzz
 WANTLIB += heif intl jpeg json-glib-1.0 lcms2 lzma m mypaint openjp2
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 png poppler-glib
 WANTLIB += rsvg-2 tiff webp webpdemux webpmux wmf-0.2 wmflite-0.2
-WANTLIB += z ${COMPILER_LIBCXX}
+WANTLIB += z jxl jxl_threads ${COMPILER_LIBCXX}
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
@@ -75,6 +76,7 @@ LIB_DEPENDS=	archivers/bzip2 \
 		graphics/jpeg \
 		graphics/lcms2 \
 		graphics/libgexiv2 \
+		graphics/libjxl \
 		graphics/libmypaint \
 		graphics/libwmf \
 		graphics/openexr \
@@ -99,8 +101,7 @@ CONFIGURE_ARGS=	-Dmng=disabled \
 		-Dappdata-test=disabled \
 		-Dheadless-tests=disabled \
 		-Dcheck-update=no \
-		-Denable-console-bin=true \
-		-Djpeg-xl=disabled
+		-Denable-console-bin=true
 
 UPDATE_PLIST_ARGS +=	-i MODPY_PY_PREFIX -i MODPY_BIN_SUFFIX
 
