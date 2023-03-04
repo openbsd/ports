@@ -4,7 +4,7 @@ COMMENT=	free audio editor
 # so can't be fetched automatically
 GH_ACCOUNT=	audacity
 GH_PROJECT=	audacity
-GH_TAGNAME=	Audacity-3.2.4
+GH_TAGNAME=	Audacity-3.2.5
 DISTNAME=	${GH_TAGNAME:L}
 
 CATEGORIES=	audio
@@ -21,9 +21,9 @@ WANTLIB += ogg opus pango-1.0 pangocairo-1.0 portaudio portmidi
 WANTLIB += sndfile soxr sqlite3 uuid vamp-hostsdk vorbis vorbisenc
 WANTLIB += vorbisfile wavpack wx_baseu-3.2 wx_baseu_net-3.2 wx_baseu_xml-3.2
 WANTLIB += wx_gtk3u_core-3.2 wx_gtk3u_html-3.2 wx_gtk3u_qa-3.2
-WANTLIB += z
+WANTLIB += z mp3lame
 # dlopened
-WANTLIB += avcodec avformat avutil mp3lame
+WANTLIB += avcodec avformat avutil
 
 COMPILER=	base-clang ports-gcc base-gcc
 
