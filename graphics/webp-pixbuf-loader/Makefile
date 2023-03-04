@@ -2,7 +2,7 @@ COMMENT=		WebP GDK Pixbuf Loader library
 
 GH_ACCOUNT=		aruiz
 GH_PROJECT=		webp-pixbuf-loader
-GH_TAGNAME=		0.2.0
+GH_TAGNAME=		0.2.1
 
 CATEGORIES=		graphics
 
@@ -11,7 +11,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += gdk_pixbuf-2.0 glib-2.0 gobject-2.0 webp webpdemux
+WANTLIB += gdk_pixbuf-2.0 glib-2.0 gobject-2.0 webp webpdemux webpmux
 
 MODULES=		devel/meson
 
