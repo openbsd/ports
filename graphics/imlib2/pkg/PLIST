@@ -26,6 +26,7 @@ lib/imlib2/loaders/
 @so lib/imlib2/loaders/id3.so
 @so lib/imlib2/loaders/j2k.so
 @so lib/imlib2/loaders/jpeg.so
+@so lib/imlib2/loaders/jxl.so
 @so lib/imlib2/loaders/lbm.so
 @so lib/imlib2/loaders/lzma.so
 @so lib/imlib2/loaders/png.so
