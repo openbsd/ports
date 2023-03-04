@@ -1,8 +1,8 @@
 COMMENT = 	C graph library
-V =		0.9.9
+V =		0.10.4
 DISTNAME =	igraph-$V
 
-SHARED_LIBS =	igraph 1.0	# 0.0
+SHARED_LIBS =	igraph 2.0	# 0.0
 
 CATEGORIES =	math
 
@@ -34,7 +34,7 @@ CONFIGURE_ARGS += 	-DBUILD_SHARED_LIBS=ON \
 			-DIGRAPH_WARNINGS_AS_ERRORS=OFF
 
 .include <bsd.port.arch.mk>
-.if ${PROPERTIES:Mclang}
+.if ${PROPERTIES:Mlld}
 CONFIGURE_ARGS += 	-DIGRAPH_ENABLE_LTO=ON
 .endif
 
