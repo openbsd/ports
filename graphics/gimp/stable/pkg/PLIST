@@ -385,6 +385,8 @@ lib/gimp/2.0/plug-ins/file-jp2-load/
 @bin lib/gimp/2.0/plug-ins/file-jp2-load/file-jp2-load
 lib/gimp/2.0/plug-ins/file-jpeg/
 @bin lib/gimp/2.0/plug-ins/file-jpeg/file-jpeg
+lib/gimp/2.0/plug-ins/file-jpegxl/
+@bin lib/gimp/2.0/plug-ins/file-jpegxl/file-jpegxl
 lib/gimp/2.0/plug-ins/file-mng/
 @bin lib/gimp/2.0/plug-ins/file-mng/file-mng
 lib/gimp/2.0/plug-ins/file-openraster/

@@ -2,6 +2,7 @@ COMMENT=	GNU Image Manipulation Program
 
 DISTNAME =	gimp-2.10.34
 PKGSPEC =	gimp->=2,<2.99
+REVISION =	0
 
 .for i in gimp gimpbase gimpcolor gimpconfig gimpmath gimpmodule \
 	gimpthumb gimpui gimpwidgets
@@ -22,6 +23,7 @@ EXTRACT_SUFX=	.tar.bz2
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += brotlicommon brotlidec brotlienc hwy jxl jxl_threads
 WANTLIB += ICE Iex-3_1 IlmThread-3_1 Imath-3_1 OpenEXR-3_1 OpenEXRCore-3_1
 WANTLIB += OpenEXRUtil-3_1 SM X11 Xau Xcomposite Xcursor Xdamage
 WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xmu Xpm Xrandr Xrender
@@ -75,6 +77,7 @@ LIB_DEPENDS=	archivers/bzip2 \
 		graphics/jpeg \
 		graphics/lcms2 \
 		graphics/libgexiv2 \
+		graphics/libjxl \
 		graphics/libmng \
 		graphics/libmypaint>=1.5.0 \
 		graphics/libwmf \
