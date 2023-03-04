@@ -159,6 +159,8 @@ lib/GraphicsMagick/modules-Q16/coders/jp2.la
 @so lib/GraphicsMagick/modules-Q16/coders/jp2.so
 lib/GraphicsMagick/modules-Q16/coders/jpeg.la
 @so lib/GraphicsMagick/modules-Q16/coders/jpeg.so
+lib/GraphicsMagick/modules-Q16/coders/jxl.la
+@so lib/GraphicsMagick/modules-Q16/coders/jxl.so
 lib/GraphicsMagick/modules-Q16/coders/label.la
 @so lib/GraphicsMagick/modules-Q16/coders/label.so
 lib/GraphicsMagick/modules-Q16/coders/locale.la
