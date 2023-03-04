@@ -1,8 +1,7 @@
 COMMENT =	web outside of browsers
 
-MODPY_EGG_VERSION =	3.0
+MODPY_EGG_VERSION =	3.3.1
 DISTNAME =	woob-${MODPY_EGG_VERSION}
-REVISION =	2
 
 CATEGORIES =	www
 HOMEPAGE =	https://woob.tech/
@@ -19,6 +18,7 @@ MODPY_PYBUILD =	setuptools
 
 RUN_DEPENDS +=	converters/py-html2text${MODPY_FLAVOR} \
 		devel/py-babel${MODPY_FLAVOR} \
+		devel/py-colorama${MODPY_FLAVOR} \
 		devel/py-dateutil${MODPY_FLAVOR} \
 		devel/py-simplejson${MODPY_FLAVOR} \
 		devel/py-six${MODPY_FLAVOR} \
