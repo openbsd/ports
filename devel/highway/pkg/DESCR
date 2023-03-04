@@ -1,0 +1,14 @@
+Highway is a C++ library that provides portable SIMD/vector intrinsics.
+
+Highway makes SIMD/vector programming practical and workable according
+to these guiding principles:
+
+Does what you expect: Highway is a C++ library with carefully-chosen
+functions that map well to CPU instructions without extensive compiler
+transformations. The resulting code is more predictable and robust to
+code changes/compiler updates than autovectorization.
+
+Works on widely-used platforms: Highway supports four architectures;
+the same application code can target eight instruction sets, including
+those with 'scalable' vectors (size unknown at compile time). Highway
+only requires C++11 and supports four families of compilers.
