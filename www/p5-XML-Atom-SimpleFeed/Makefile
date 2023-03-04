@@ -3,7 +3,7 @@ COMMENT =	no-fuss generation of Atom syndication feeds
 MODULES =	cpan
 PKG_ARCH =	*
 
-DISTNAME =	XML-Atom-SimpleFeed-0.904
+DISTNAME =	XML-Atom-SimpleFeed-0.905
 
 CATEGORIES =	www textproc
 
