@@ -211,6 +211,7 @@
      SUBDIR += harfbuzz
      SUBDIR += hasktags
      SUBDIR += help2man
+     SUBDIR += highway
      SUBDIR += http-parser
      SUBDIR += hub
      SUBDIR += iaito
