@@ -1170,6 +1170,12 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/inspector2/2020-06-08/exa
 lib/python${MODPY_VERSION}/site-packages/botocore/data/inspector2/2020-06-08/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/inspector2/2020-06-08/paginators-1.sdk-extras.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/inspector2/2020-06-08/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/internetmonitor/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/internetmonitor/2021-06-03/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/internetmonitor/2021-06-03/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/internetmonitor/2021-06-03/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/internetmonitor/2021-06-03/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/internetmonitor/2021-06-03/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iot/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iot-data/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iot-data/2015-05-28/
