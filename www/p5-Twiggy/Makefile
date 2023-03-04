@@ -2,9 +2,8 @@ COMMENT =		AnyEvent HTTP server for PSGI (like Thin)
 
 MODULES =		cpan
 PKG_ARCH =		*
-DISTNAME =		Twiggy-0.1025
+DISTNAME =		Twiggy-0.1026
 CATEGORIES =		www
-REVISION =		1
 
 # Perl
 PERMIT_PACKAGE =	Yes
