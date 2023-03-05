@@ -45,6 +45,7 @@ RUN_DEPENDS=	graphics/dcraw \
 
 MODGNOME_TOOLS=	desktop-file-utils gtk-update-icon-cache shared-mime-info yelp
 
-CONFIGURE_ARGS=	-Dlibbrasero=false
+CONFIGURE_ARGS=	-Dlibbrasero=false \
+		-Dcolord=false
 
 .include <bsd.port.mk>
