@@ -4,6 +4,7 @@ CATEGORIES =	security
 
 VERSION =	21.0.1
 DISTNAME =	keycloak-${VERSION}
+REVISION =	0
 
 MASTER_SITES =	https://github.com/keycloak/keycloak/releases/download/${VERSION}/
 

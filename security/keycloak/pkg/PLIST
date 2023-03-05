@@ -1,5 +1,5 @@
 @newgroup _keycloak:650
-@newuser _keycloak:650:650:default:Keycloak Daemon:/nonexistent:/sbin/nologin
+@newuser _keycloak:650:650::Keycloak Daemon:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/keycloak
 @mode 0750
 @owner _keycloak
