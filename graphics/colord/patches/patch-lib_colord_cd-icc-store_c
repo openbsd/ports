@@ -1,0 +1,23 @@
+/var/lib -> /var/db
+
+Index: lib/colord/cd-icc-store.c
+--- lib/colord/cd-icc-store.c.orig
++++ lib/colord/cd-icc-store.c
+@@ -194,7 +194,7 @@ cd_icc_store_add_icc (CdIccStore *store, GFile *file, 
+ 	icc = cd_icc_new ();
+ 	filename = g_file_get_path (file);
+ 	if (priv->cache != NULL) {
+-		if (g_str_has_prefix (filename, "/usr/share/color/icc/colord/")) {
++		if (g_str_has_prefix (filename, "{PREFIX}/share/color/icc/colord/")) {
+ 			g_autofree gchar *cache_key = NULL;
+ 			cache_key = g_build_filename ("/org/freedesktop/colord",
+ 						      "profiles",
+@@ -589,7 +589,7 @@ cd_icc_store_search_kind (CdIccStore *store,
+ 		break;
+ 	case CD_ICC_STORE_SEARCH_KIND_MACHINE:
+ 		g_ptr_array_add (locations, g_strdup (CD_SYSTEM_PROFILES_DIR));
+-		g_ptr_array_add (locations, g_strdup ("/var/lib/color/icc"));
++		g_ptr_array_add (locations, g_strdup ("/var/db/color/icc"));
+ 		break;
+ 	case CD_ICC_STORE_SEARCH_KIND_SYSTEM:
+ 		g_ptr_array_add (locations, g_strdup ("/usr/share/color/icc"));

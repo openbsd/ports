@@ -1,0 +1,14 @@
+/var/lib -> /var/db
+
+Index: client/cd-util.c
+--- client/cd-util.c.orig
++++ client/cd-util.c
+@@ -772,7 +772,7 @@ cd_util_dump (CdUtilPrivate *priv, gchar **values, GEr
+ {
+ 	CdDevice *device;
+ 	CdProfile *profile;
+-	const gchar *argv[] = { "sqlite3", "/var/lib/colord/mapping.db", ".dump", NULL };
++	const gchar *argv[] = { "sqlite3", "/var/db/colord/mapping.db", ".dump", NULL };
+ 	gboolean ret = TRUE;
+ 	gchar *tmp;
+ 	GDateTime *dt;

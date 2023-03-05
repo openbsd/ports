@@ -1,0 +1,34 @@
+REVERT:
+From c9650c0bb7324c32d82fa6d7d898e236f10ea63b Mon Sep 17 00:00:00 2001
+From: Richard Hughes <richard@hughsie.com>
+Date: Mon, 24 Jul 2017 14:30:12 +0100
+Subject: [PATCH] Make udev a hard requirement
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -118,12 +118,13 @@ giounix = dependency('gio-unix-2.0', version : '>= 2.4
+ lcms = dependency('lcms2', version : '>= 2.6')
+ sqlite = dependency('sqlite3')
+ gusb = dependency('gusb', version : '>= 0.2.7')
+-gudev = dependency('gudev-1.0')
++gudev = []
+ libm = cc.find_library('m', required: false)
+-libudev = dependency('libudev')
++libudev = []
+ 
+ if get_option('udev_rules')
+   udev = dependency('udev')
++  conf.set('HAVE_UDEV', '1')
+ endif
+ 
+ if get_option('systemd')
+@@ -234,7 +235,7 @@ conf.set_quoted('LIBEXECDIR', libexecdir)
+ conf.set_quoted('LOCALSTATEDIR', localstatedir)
+ 
+ cd_system_profiles_dir = join_paths(localstatedir,
+-                                    'lib', 'colord', 'icc')
++                                    'db', 'colord', 'icc')
+ conf.set_quoted('CD_SYSTEM_PROFILES_DIR', cd_system_profiles_dir)
+ 
+ conf.set_quoted('GETTEXT_PACKAGE', meson.project_name())

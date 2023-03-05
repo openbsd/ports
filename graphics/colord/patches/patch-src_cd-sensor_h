@@ -1,0 +1,32 @@
+REVERT:
+From c9650c0bb7324c32d82fa6d7d898e236f10ea63b Mon Sep 17 00:00:00 2001
+From: Richard Hughes <richard@hughsie.com>
+Date: Mon, 24 Jul 2017 14:30:12 +0100
+Subject: [PATCH] Make udev a hard requirement
+
+Index: src/cd-sensor.h
+--- src/cd-sensor.h.orig
++++ src/cd-sensor.h
+@@ -28,7 +28,9 @@
+ #include <gio/gio.h>
+ #include <colord-private.h>
+ 
++#ifdef HAVE_UDEV
+ #include <gudev/gudev.h>
++#endif
+ #include <gusb.h>
+ 
+ #include "cd-common.h"
+@@ -66,10 +68,12 @@ gboolean	 cd_sensor_register_object	(CdSensor		*sensor
+ 						 GDBusConnection	*connection,
+ 						 GDBusInterfaceInfo	*info,
+ 						 GError			**error);
++#ifdef HAVE_UDEV
+ gboolean	 cd_sensor_set_from_device	(CdSensor		*sensor,
+ 						 GUdevDevice		*device,
+ 						 GError			**error);
+ GUdevDevice	*cd_sensor_get_device		(CdSensor		*sensor);
++#endif
+ void		 cd_sensor_set_index		(CdSensor		*sensor,
+ 						 guint			 idx);
+ GUsbDevice	*cd_sensor_open_usb_device	(CdSensor		*sensor,

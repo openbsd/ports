@@ -1,0 +1,13 @@
+Index: lib/colord/cd-edid.c
+--- lib/colord/cd-edid.c.orig
++++ lib/colord/cd-edid.c
+@@ -25,7 +25,9 @@
+ #include <string.h>
+ #include <glib-object.h>
+ #include <math.h>
++#ifndef PNP_IDS
+ #include <libudev.h>
++#endif
+ 
+ #include "cd-edid.h"
+ #include "cd-quirk.h"

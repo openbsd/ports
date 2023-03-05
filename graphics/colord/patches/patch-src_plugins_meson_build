@@ -1,0 +1,23 @@
+REVERT:
+From c9650c0bb7324c32d82fa6d7d898e236f10ea63b Mon Sep 17 00:00:00 2001
+From: Richard Hughes <richard@hughsie.com>
+Date: Mon, 24 Jul 2017 14:30:12 +0100
+Subject: [PATCH] Make udev a hard requirement
+
+Index: src/plugins/meson.build
+--- src/plugins/meson.build.orig
++++ src/plugins/meson.build
+@@ -15,6 +15,7 @@ shared_module('colord_sensor_example',
+     gio,
+   ],
+ )
++if get_option('udev_rules')
+ shared_module('colord_sensor_camera',
+   sources : [
+     'cd-plugin-camera.c',
+@@ -73,4 +74,5 @@ if get_option('sane')
+       gudev,
+     ],
+   )
++endif
+ endif

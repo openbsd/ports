@@ -1,0 +1,30 @@
+REVERT:
+From c9650c0bb7324c32d82fa6d7d898e236f10ea63b Mon Sep 17 00:00:00 2001
+From: Richard Hughes <richard@hughsie.com>
+Date: Mon, 24 Jul 2017 14:30:12 +0100
+Subject: [PATCH] Make udev a hard requirement
+
+Index: src/meson.build
+--- src/meson.build.orig
++++ src/meson.build
+@@ -30,6 +30,11 @@ if get_option('systemd')
+   colord_extra_deps += libsystemd
+ endif
+ 
++colord_extra_sources = []
++if get_option('udev_rules')
++  colord_extra_sources += 'cd-sensor-client.c'
++endif
++
+ executable(
+   'colord',
+   resources_src,
+@@ -49,7 +54,7 @@ executable(
+     'cd-profile.c',
+     'cd-profile-db.c',
+     'cd-sensor.c',
+-    'cd-sensor-client.c',
++    colord_extra_sources,
+   ],
+   include_directories : [
+     colord_incdir,
