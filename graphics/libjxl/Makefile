@@ -6,7 +6,7 @@ GH_TAGNAME =	v0.8.1
 GH_TESTDATA_COMMIT=98b37ee31189f1a31bb384191de0ea4b0358e0a0
 CATEGORIES =	graphics
 
-REVISION =	0
+REVISION =	1
 
 # add external test data
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
@@ -17,6 +17,7 @@ SHARED_LIBS +=	jxl		0.0 # 0.0
 SHARED_LIBS +=	jxl_threads	0.0 # 0.0
 
 HOMEPAGE =	https://jpegxl.info/
+MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes
