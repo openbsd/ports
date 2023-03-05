@@ -2,8 +2,7 @@ COMMENT=	perl interface to the graphviz graphing tool
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME=	GraphViz-2.02
-REVISION=	3
+DISTNAME=	GraphViz-2.26
 CATEGORIES=	math
 
 # perl
@@ -13,6 +12,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/p5-IPC-Run \
 		devel/p5-Graph \
 		math/graphviz \
-		math/p5-Math-Bezier
+		math/p5-Math-Bezier \
+		sysutils/p5-File-Which
 
 .include <bsd.port.mk>
