@@ -1,27 +1,27 @@
-COMMENT =		Python implementation of the patiencediff algorithm
+COMMENT=	Python implementation of the patiencediff algorithm
 
-MODPY_EGG_VERSION =	0.2.10
-DISTNAME =		patiencediff-${MODPY_EGG_VERSION}
-PKGNAME =		py-patiencediff-${MODPY_EGG_VERSION}
+MODPY_EGG_VERSION=	0.2.13
+DISTNAME=	patiencediff-${MODPY_EGG_VERSION}
+PKGNAME=	py-patiencediff-${MODPY_EGG_VERSION}
 
-CATEGORIES =		textproc
+CATEGORIES=	textproc
 
-HOMEPAGE =		https://pypi.org/project/patiencediff/
+HOMEPAGE=	https://pypi.org/project/patiencediff/
 
 # GPLv3+
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-WANTLIB +=		${MODPY_WANTLIB} pthread
+WANTLIB +=	${MODPY_WANTLIB} pthread
 
-MODULES =		lang/python
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+MODULES=	lang/python
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools
 # otherwise extension is not found and relevant tests are skipped
-MODPY_TEST_DIR =	${WRKSRC}/build/lib.*
+MODPY_TEST_DIR=	${WRKSRC}/build/lib.*
 
-BUILD_DEPENDS =		lang/cython${MODPY_FLAVOR}
+BUILD_DEPENDS=	lang/cython${MODPY_FLAVOR}
 
-FLAVORS =		python3
-FLAVOR =		python3
+FLAVORS=	python3
+FLAVOR=		python3
 
 .include <bsd.port.mk>

@@ -1,3 +1,4 @@
+bin/patiencediff
 lib/python${MODPY_VERSION}/site-packages/patiencediff/
 lib/python${MODPY_VERSION}/site-packages/patiencediff-${MODPY_EGG_VERSION}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/patiencediff-${MODPY_EGG_VERSION}.dist-info/AUTHORS
@@ -5,6 +6,7 @@ lib/python${MODPY_VERSION}/site-packages/patiencediff-${MODPY_EGG_VERSION}.dist-
 lib/python${MODPY_VERSION}/site-packages/patiencediff-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/patiencediff-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/patiencediff-${MODPY_EGG_VERSION}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/patiencediff-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/patiencediff-${MODPY_EGG_VERSION}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/patiencediff/__init__.py
 lib/python${MODPY_VERSION}/site-packages/patiencediff/__main__.py
@@ -19,4 +21,5 @@ lib/python${MODPY_VERSION}/site-packages/patiencediff/${MODPY_PYCACHE}test_patie
 lib/python${MODPY_VERSION}/site-packages/patiencediff/${MODPY_PYCACHE}test_patiencediff.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/python${MODPY_VERSION}/site-packages/patiencediff/_patiencediff_c.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/patiencediff/_patiencediff_py.py
+lib/python${MODPY_VERSION}/site-packages/patiencediff/py.typed
 lib/python${MODPY_VERSION}/site-packages/patiencediff/test_patiencediff.py
