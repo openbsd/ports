@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.422 2023/02/27 16:57:32 aisha Exp $
+$OpenBSD: user.list,v 1.423 2023/03/05 15:56:56 ajacoutot Exp $
 
 This file lists all users and groups that are created by ports. All
 ports' users/groups have to start with an underscore and have to use
@@ -202,7 +202,7 @@ id  user		group		port
 691 _natpmpd		_natpmpd	net/natpmpd
 692 _cntlm		_cntlm		www/cntlm
 693 _trac		_trac		www/trac
-#694 _colord		_colord		graphics/colord
+694 _colord		_colord		graphics/colord
 695 _deadwood		_deadwood	net/maradns-deadwood
 696 _sslh		_sslh		net/sslh
 #697 _cvsyncd		_cvsyncd	net/cvsync
