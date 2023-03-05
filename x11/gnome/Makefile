@@ -14,6 +14,7 @@
      SUBDIR += characters
      SUBDIR += cheese
      SUBDIR += clocks
+     SUBDIR += color-manager
      SUBDIR += connections
      SUBDIR += console
      SUBDIR += contacts
