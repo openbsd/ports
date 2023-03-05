@@ -33,6 +33,7 @@ lib/pkgconfig/sqlite3.pc
 @man man/man3/SQLITE_OPEN_READONLY.3
 @man man/man3/SQLITE_PREPARE_PERSISTENT.3
 @man man/man3/SQLITE_ROLLBACK.3
+@man man/man3/SQLITE_SCANSTAT_COMPLEX.3
 @man man/man3/SQLITE_SCANSTAT_NLOOP.3
 @man man/man3/SQLITE_SERIALIZE_NOCOPY.3
 @man man/man3/SQLITE_SESSION_CONFIG_STRMSIZE.3
@@ -114,6 +115,7 @@ lib/pkgconfig/sqlite3.pc
 @man man/man3/sqlite3_extended_result_codes.3
 @man man/man3/sqlite3_file.3
 @man man/man3/sqlite3_file_control.3
+@man man/man3/sqlite3_filename.3
 @man man/man3/sqlite3_filename_database.3
 @man man/man3/sqlite3_finalize.3
 @man man/man3/sqlite3_get_autocommit.3
@@ -122,7 +124,6 @@ lib/pkgconfig/sqlite3.pc
 @man man/man3/sqlite3_index_info.3
 @man man/man3/sqlite3_initialize.3
 @man man/man3/sqlite3_interrupt.3
-@man man/man3/sqlite3_io_methods.3
 @man man/man3/sqlite3_keyword_count.3
 @man man/man3/sqlite3_last_insert_rowid.3
 @man man/man3/sqlite3_limit.3
@@ -200,6 +201,7 @@ lib/pkgconfig/sqlite3.pc
 @man man/man3/sqlite3_value.3
 @man man/man3/sqlite3_value_blob.3
 @man man/man3/sqlite3_value_dup.3
+@man man/man3/sqlite3_value_encoding.3
 @man man/man3/sqlite3_value_subtype.3
 @man man/man3/sqlite3_version.3
 @man man/man3/sqlite3_vfs.3
