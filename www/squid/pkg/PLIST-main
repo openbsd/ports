@@ -578,22 +578,22 @@ share/squid/errors/en/error-details.txt
 share/squid/errors/es/
 share/squid/errors/es-ar
 share/squid/errors/es-bo
-share/squid/errors/es-bz
+@comment share/squid/errors/es-bz
 share/squid/errors/es-cl
 share/squid/errors/es-co
-share/squid/errors/es-cr
+@comment share/squid/errors/es-cr
 share/squid/errors/es-cu
 share/squid/errors/es-do
 share/squid/errors/es-ec
 share/squid/errors/es-es
-share/squid/errors/es-gt
-share/squid/errors/es-hn
-share/squid/errors/es-ni
-share/squid/errors/es-pa
+@comment share/squid/errors/es-gt
+@comment share/squid/errors/es-hn
+@comment share/squid/errors/es-ni
+@comment share/squid/errors/es-pa
 share/squid/errors/es-pe
 share/squid/errors/es-pr
 share/squid/errors/es-py
-share/squid/errors/es-sv
+@comment share/squid/errors/es-sv
 share/squid/errors/es-us
 share/squid/errors/es-uy
 share/squid/errors/es-ve

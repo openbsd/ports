@@ -1,2 +1,4 @@
-SHA256 (squid-5.7.tar.xz) = awdTqrpMnE79Mz5nEkyuz3rWzC04WB8Z0vAyH1t+zYE=
-SIZE (squid-5.7.tar.xz) = 2566560
+SHA256 (squid-5.8.tar.xz) = fpafjI31acuGRtZ+5Z/b8mJ76toSlUwwHnwanBwRc08=
+SHA256 (squid-langpack-20230225.tar.gz) = FTK3lvIKZbn05wQDBhckd/e7qs/OPF9AL+Gl+UZLkr4=
+SIZE (squid-5.8.tar.xz) = 2447560
+SIZE (squid-langpack-20230225.tar.gz) = 371642
