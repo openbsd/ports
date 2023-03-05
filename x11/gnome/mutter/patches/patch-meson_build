@@ -1,5 +1,3 @@
-No colord (needs GUdev) on OpenBSD (XXX add HAVE_COLORD to meson_options.txt)
-
 XXX: pkg-config bug:
 Package gsettings-desktop-schemas>=40.alpha was not found in the pkg-config search path
 
@@ -15,14 +13,3 @@ Index: meson.build
  json_glib_req = '>= 0.12.0'
  xcomposite_req = '>= 0.4'
  xkbcommon_req = '>= 0.4.3'
-@@ -125,8 +125,8 @@ xkbcommon_dep = dependency('xkbcommon', version: xkbco
- ice_dep = dependency('ice')
- atk_dep = dependency('atk', version: atk_req)
- dbus_dep = dependency('dbus-1')
--colord_dep = dependency('colord', version: colord_req)
--lcms2_dep = dependency('lcms2', version: lcms2_req)
-+colord_dep = []
-+lcms2_dep = []
- 
- have_wayland = get_option('wayland')
- # For now always require X11 support
