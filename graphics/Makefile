@@ -26,6 +26,8 @@
      SUBDIR += cfdg
      SUBDIR += chafa
      SUBDIR += clutter
+     SUBDIR += colord
+     SUBDIR += colord-gtk
      SUBDIR += colorexplorer
      SUBDIR += comix
      SUBDIR += cstitch
