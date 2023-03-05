@@ -6,18 +6,18 @@ COMMENT =	desktop geographical information system
 
 DPB_PROPERTIES =	parallel
 
-DISTNAME =	qgis-3.28.3
+DISTNAME =	qgis-3.30.0
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 DEBUG_PACKAGES =${BUILD_PACKAGES}
 
-SHARED_LIBS =	qgis_core	67.0 \
-		qgis_app	43.0 \
-		qgis_gui	50.0 \
-		qgis_analysis	20.0 \
-		qgis_server	18.1 \
+SHARED_LIBS =	qgis_core	68.0 \
+		qgis_app	44.0 \
+		qgis_gui	51.0 \
+		qgis_analysis	21.0 \
+		qgis_server	18.2 \
 		qgispython	6.0 \
-		qgis_3d		14.0 \
+		qgis_3d		15.0 \
 		qgis_native	0.3
 
 HOMEPAGE =	https://www.qgis.org/
@@ -86,6 +86,7 @@ WANTLIB += qca-qt5 qscintilla2_qt5 qt5keychain qwt spatialindex
 WANTLIB += spatialite sqlite3 util zip hdf5 xml2 z GL
 WANTLIB += Qt53DCore Qt53DExtras Qt53DInput Qt53DLogic
 WANTLIB += Qt53DRender Qt5Gamepad protobuf-lite
+WANTLIB += Qt5Multimedia Qt5MultimediaWidgets
 WANTLIB += Qt5DBus Qt5Qml Qt5Quick Qt5QuickWidgets Qt5SerialPort
 WANTLIB += Qt5QmlModels pdal_base pdal_util zstd
 
