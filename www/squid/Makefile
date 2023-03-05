@@ -7,7 +7,7 @@ EXTRACT_SUFX=	.tar.xz
 PKGNAME-main=	squid-$V
 PKGNAME-ldap=	squid-ldap-$V
 DPB_PROPERTIES=	parallel
-REVISION-main=	0
+REVISION-main=	1
 REVISION-ldap=	0
 
 # subpackages aren't flavoured, so overwrite the default name/path
@@ -155,7 +155,9 @@ post-install:
 .endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/snmp/mibs
 	-cd ${PREFIX}/share; mv squid/mib.txt snmp/mibs/SQUID-MIB.txt
-	# XXX pkg_add -u can't cope with symlinks changing to real files
-	rm -r ${PREFIX}/share/squid/errors/es-mx; ln -s es ${PREFIX}/share/squid/errors/es-mx
+	# XXX was a symlink to es but is now a real directory
+	# remove for now (pkg_add -u can't cope with such updates),
+	# reinstate ppst release
+	rm -r ${PREFIX}/share/squid/errors/es-mx
 
 .include <bsd.port.mk>
