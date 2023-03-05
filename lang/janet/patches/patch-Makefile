@@ -4,7 +4,7 @@ Fix installation.
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -28,13 +28,13 @@ JANETCONF_HEADER?=src/conf/janetconf.h
+@@ -28,14 +28,14 @@ JANETCONF_HEADER?=src/conf/janetconf.h
  INCLUDEDIR?=$(PREFIX)/include
  BINDIR?=$(PREFIX)/bin
  LIBDIR?=$(PREFIX)/lib
@@ -12,6 +12,7 @@ Index: Makefile
 +JANET_BUILD?="\"$(shell date +%Y%m%d)\""
  CLIBS=-lm -lpthread
  JANET_TARGET=build/janet
+ JANET_IMPORT_LIB=build/janet.lib
  JANET_LIBRARY=build/libjanet.so
  JANET_STATIC_LIBRARY=build/libjanet.a
  JANET_PATH?=$(LIBDIR)/janet
@@ -20,7 +21,7 @@ Index: Makefile
  JANET_PKG_CONFIG_PATH?=$(LIBDIR)/pkgconfig
  JANET_DIST_DIR?=janet-dist
  JPM_TAG?=master
-@@ -284,7 +284,7 @@ install: $(JANET_TARGET) $(JANET_LIBRARY) $(JANET_STAT
+@@ -291,7 +291,7 @@ install: $(JANET_TARGET) $(JANET_LIBRARY) $(JANET_STAT
  	cp $(JANET_TARGET) '$(DESTDIR)$(BINDIR)/janet'
  	mkdir -p '$(DESTDIR)$(INCLUDEDIR)/janet'
  	cp -r build/janet.h '$(DESTDIR)$(INCLUDEDIR)/janet'
@@ -29,7 +30,7 @@ Index: Makefile
  	mkdir -p '$(DESTDIR)$(JANET_PATH)'
  	mkdir -p '$(DESTDIR)$(LIBDIR)'
  	if test $(UNAME) = Darwin ; then \
-@@ -292,16 +292,13 @@ install: $(JANET_TARGET) $(JANET_LIBRARY) $(JANET_STAT
+@@ -299,9 +299,7 @@ install: $(JANET_TARGET) $(JANET_LIBRARY) $(JANET_STAT
  		ln -sf $(SONAME) '$(DESTDIR)$(LIBDIR)/libjanet.dylib' ; \
  		ln -sf libjanet.$(shell $(JANET_TARGET) -e '(print janet/version)').dylib $(DESTDIR)$(LIBDIR)/$(SONAME) ; \
  	else \
@@ -40,9 +41,10 @@ Index: Makefile
  	fi
  	cp $(JANET_STATIC_LIBRARY) '$(DESTDIR)$(LIBDIR)/libjanet.a'
  	mkdir -p '$(DESTDIR)$(JANET_MANPATH)'
- 	cp janet.1 '$(DESTDIR)$(JANET_MANPATH)'
+@@ -309,7 +307,6 @@ install: $(JANET_TARGET) $(JANET_LIBRARY) $(JANET_STAT
  	mkdir -p '$(DESTDIR)$(JANET_PKG_CONFIG_PATH)'
  	cp build/janet.pc '$(DESTDIR)$(JANET_PKG_CONFIG_PATH)/janet.pc'
+ 	cp '$(JANET_IMPORT_LIB)' '$(DESTDIR)$(LIBDIR)' || echo 'no import lib to install (mingw only)'
 -	[ -z '$(DESTDIR)' ] && $(LDCONFIG) || echo "You can ignore this error for non-Linux systems or local installs"
  
  install-jpm-git: $(JANET_TARGET)
