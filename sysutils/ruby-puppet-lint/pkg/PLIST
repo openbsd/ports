@@ -1,7 +1,6 @@
 ${GEM_BIN}/puppet-lint${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
-${GEM_LIB}/gems/${DISTNAME}/.rubocop.yml
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/bin/
@@ -69,7 +68,12 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/plugins/check_whitespace/arrow_align
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/plugins/check_whitespace/hard_tabs.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/plugins/check_whitespace/line_length.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/plugins/check_whitespace/trailing_whitespace.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/plugins/legacy_facts/
+${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/plugins/legacy_facts/legacy_facts.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/plugins/top_scope_facts/
+${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/plugins/top_scope_facts/top_scope_facts.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/report/
+${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/report/codeclimate.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/report/github.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/report/sarif_template.json
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/tasks/
@@ -77,6 +81,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/tasks/gemfile_rewrite.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/tasks/puppet-lint.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/tasks/release_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/version.rb
+${GEM_LIB}/gems/${DISTNAME}/rubocop_baseline.yml
 ${GEM_LIB}/gems/${DISTNAME}/spec/
 ${GEM_LIB}/gems/${DISTNAME}/spec/acceptance/
 ${GEM_LIB}/gems/${DISTNAME}/spec/acceptance/puppet_lint_spec.rb
@@ -95,6 +100,8 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/two_warnings.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/unterminated_control_comment.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/url_interpolation.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/warning.pp
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/reports/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/reports/code_climate.json
 ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper_acceptance.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper_acceptance_local.rb
@@ -156,5 +163,9 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/unit/puppet-lint/plugins/check_whitespace/80cha
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/puppet-lint/plugins/check_whitespace/arrow_alignment_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/puppet-lint/plugins/check_whitespace/hard_tabs_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/puppet-lint/plugins/check_whitespace/trailing_whitespace_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/puppet-lint/plugins/legacy_facts/
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/puppet-lint/plugins/legacy_facts/legacy_facts_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/puppet-lint/plugins/top_scope_facts/
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/puppet-lint/plugins/top_scope_facts/top_scope_facts_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/puppet-lint/puppet-lint_spec.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
