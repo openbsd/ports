@@ -28,9 +28,8 @@ ${P5SITE}/LWP/Protocol/nogo.pm
 ${P5SITE}/LWP/RobotUA.pm
 ${P5SITE}/LWP/Simple.pm
 ${P5SITE}/LWP/UserAgent.pm
-${P5SITE}/libwww/
-${P5SITE}/libwww/lwpcook.pod
-${P5SITE}/libwww/lwptut.pod
+${P5SITE}/lwpcook.pod
+${P5SITE}/lwptut.pod
 @man man/man1/lwp-download.1
 @man man/man1/lwp-dump.1
 @man man/man1/lwp-mirror.1
@@ -44,5 +43,5 @@ ${P5SITE}/libwww/lwptut.pod
 @man man/man3p/LWP::RobotUA.3p
 @man man/man3p/LWP::Simple.3p
 @man man/man3p/LWP::UserAgent.3p
-@man man/man3p/libwww::lwpcook.3p
-@man man/man3p/libwww::lwptut.3p
+@man man/man3p/lwpcook.3p
+@man man/man3p/lwptut.3p
