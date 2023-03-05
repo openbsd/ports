@@ -81,6 +81,9 @@ CONFIGURE_ARGS=		-Dprint_backends="cups,file,lpr" \
 # explicitly decativate wayland
 CONFIGURE_ARGS +=	-Dwayland_backend=false
 
+# !!! Disable colord until proven useful
+CONFIGURE_ARGS +=	-Dcolord=no
+
 .include <bsd.port.arch.mk>
 .if !${PROPERTIES:Mclang}
 CFLAGS +=	-std=gnu99
