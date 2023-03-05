@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1510 2023/03/02 16:06:38 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1511 2023/03/05 16:02:24 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1386,9 +1386,7 @@ setup_obsolete_reason(
 	5 => 'gnome-getting-started-docs',
 	3 => 'py-poppler',
 	3 => 'pdfshuffler',
-	27 => 'colord',
 	27 => 'colord-gtk',
-	5 => 'gnome-color-manager',
 	3 => 'zeya',
 	3 => 'py-trollius',
 	3 => qr{^kde-i18n-},
