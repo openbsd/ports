@@ -8,7 +8,7 @@ PKGNAME=		gnome-${V}
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
-REVISION-main=		1
+REVISION-main=		2
 REVISION-extras=	0
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -49,6 +49,7 @@ RUN_DEPENDS-main +=	devel/gsettings-desktop-schemas \
 			net/glib2-networking \
 			x11/gnome/adwaita-icon-theme \
 			x11/gnome/backgrounds \
+			x11/gnome/color-manager \
 			x11/gnome/control-center \
 			x11/gnome/desktop \
 			x11/gnome/gdm \
