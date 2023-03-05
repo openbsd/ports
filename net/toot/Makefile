@@ -1,6 +1,6 @@
 COMMENT =		CLI and TUI tool to interact with Mastodon instances
 
-MODPY_EGG_VERSION =	0.33.0
+MODPY_EGG_VERSION =	0.35.0
 DISTNAME =		toot-${MODPY_EGG_VERSION}
 
 CATEGORIES =		net
@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PYBUILD =		setuptools
-# skip test which  requires a local test instance of mastodon,
+# skip test which requires a local test instance of mastodon,
 # plus databases/py-psycopg2
 MODPY_PYTEST_ARGS =	--ignore tests/test_integration.py
 
