@@ -51,6 +51,9 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 
 RUN_DEPENDS-main=	print/cups-filters
 
+# don't enforce dependency on colord; it'll be used if found at runtime
+#RUN_DEPENDS-main +=	graphics/colord
+
 # we don't install the desktop file
 #BUILD_DEPENDS +=	devel/xdg-utils
 #RUN_DEPENDS-main +=	devel/xdg-utils

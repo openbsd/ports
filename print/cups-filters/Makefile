@@ -52,6 +52,9 @@ LIB_DEPENDS=	graphics/libexif \
 # regeneration of PPD files from share/foomatic/db/source/*/*.xml
 RUN_DEPENDS +=	print/foomatic-db-engine
 
+# don't enforce dependency on colord; it'll be used if found at runtime
+#RUN_DEPENDS +=	graphics/colord
+
 FAKE_FLAGS=	pkgfontconfigdir=${PREFIX}/share/examples/cups-filters \
 		pkgcupsserverrootdir=${PREFIX}/share/examples/cups-filters/cups
 
