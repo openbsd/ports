@@ -4,14 +4,16 @@ COMMENT=		GNOME settings daemon
 
 GNOME_PROJECT=		gnome-settings-daemon
 GNOME_VERSION=		43.0
+REVISION=		0
 
 # GPLv3
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += X11 Xext Xfixes Xi c canberra canberra-gtk3 cups fontconfig
-WANTLIB += gdk-3 geoclue-2 geocode-glib-2 gio-2.0 glib-2.0 gnome-desktop-3
-WANTLIB += gobject-2.0 gtk-3 gweather-4 intl m notify nspr4 nss3
-WANTLIB += polkit-gobject-1 pulse pulse-mainloop-glib upower-glib
+WANTLIB += X11 Xext Xfixes Xi c canberra canberra-gtk3 colord
+WANTLIB += cups fontconfig gdk-3 geoclue-2 geocode-glib-2 gio-2.0
+WANTLIB += glib-2.0 gnome-desktop-3 gobject-2.0 gtk-3 gweather-4
+WANTLIB += intl m notify nspr4 nss3 polkit-gobject-1 pulse pulse-mainloop-glib
+WANTLIB += upower-glib
 
 MODULES=		devel/dconf \
 			devel/meson \
@@ -22,6 +24,7 @@ LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			devel/libnotify \
 			geo/geoclue2 \
 			geo/geocode-glib,soup3 \
+			graphics/colord \
 			print/cups,-libs \
 			security/nss \
 			sysutils/upower \
@@ -50,8 +53,7 @@ CONFIGURE_ARGS= 	-Dalsa=false \
 			-Drfkill=false \
 			-Dsystemd=false \
 			-Dwayland=false \
-			-Dwwan=false \
-			-Dcolord=false
+			-Dwwan=false
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 

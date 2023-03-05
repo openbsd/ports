@@ -5,6 +5,7 @@ lib/gnome-settings-daemon-43/
 @so lib/gnome-settings-daemon-43/libgsd.so
 lib/pkgconfig/gnome-settings-daemon.pc
 @bin libexec/gsd-a11y-settings
+@bin libexec/gsd-color
 @bin libexec/gsd-datetime
 @bin libexec/gsd-housekeeping
 @bin libexec/gsd-keyboard
