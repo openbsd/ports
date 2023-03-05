@@ -1,5 +1,6 @@
 No udisks2 on OpenBSD (XXX add HAVE_UDISKS2 to meson_options.txt)
 
+REVERT:
 From 25518a6bca6d84199cfadf4ab0dc49fd86ac3e58 Mon Sep 17 00:00:00 2001
 From: Bastien Nocera <hadess@hadess.net>
 Date: Tue, 25 Jan 2022 23:12:58 +0100

@@ -4,16 +4,18 @@ COMMENT=		GNOME settings
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		43.4.1
+REVISION=		0
 
 CATEGORIES=		x11
 
 # GPLv2
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += X11 accountsservice adwaita-1 c cairo cups epoxy fontconfig
-WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gnome-bg-4 gnome-desktop-4
-WANTLIB += goa-1.0 goa-backend-1.0 gobject-2.0 gsound gtk-3 gtk-4
-WANTLIB += gtop-2.0 ibus-1.0 intl m pango-1.0 pangocairo-1.0 polkit-gobject-1
+WANTLIB += X11 accountsservice adwaita-1 c cairo colord colord-gtk4
+WANTLIB += cups epoxy fontconfig gdk-3 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gnome-bg-4 gnome-desktop-4 gnome-rr-4 goa-1.0
+WANTLIB += goa-backend-1.0 gobject-2.0 gsound gtk-3 gtk-4 gtop-2.0
+WANTLIB += ibus-1.0 intl m pango-1.0 pangocairo-1.0 polkit-gobject-1
 WANTLIB += pulse pulse-mainloop-glib pwquality smbclient upower-glib
 WANTLIB += xml2
 
@@ -28,6 +30,7 @@ CFLAGS +=		-std=gnu99
 LIB_DEPENDS=		audio/gsound \
 			audio/pulseaudio \
 			devel/libgtop2 \
+			graphics/colord-gtk \
 			inputmethods/ibus \
 			net/samba \
 			print/cups,-libs \
@@ -42,15 +45,17 @@ BUILD_DEPENDS=		devel/iso-codes \
 			devel/gsettings-desktop-schemas \
 			x11/gnome/settings-daemon
 
+# NOTE that a11y dependencies (e.g. caribou) are not enforced on purpose.
 RUN_DEPENDS=		x11/gnome/settings-daemon \
 			devel/iso-codes \
 			devel/gsettings-desktop-schemas
 
-# NOTE that a11y dependencies (e.g. mousetweaks, caribou...) are not
-# enforced on purpose.
 
 # polkit(8) almost always needs to know the "active" session
 RUN_DEPENDS +=	sysutils/consolekit
+
+# needed for gnome-color-panel
+RUN_DEPENDS +=		x11/gnome/color-manager
 
 # needed for gnome-printers-panel
 RUN_DEPENDS +=		print/cups-pk-helper \

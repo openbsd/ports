@@ -1,19 +1,11 @@
-No GUdev on OpenBSD (XXX add HAVE_GUDEV to meson_options.txt)
-No colord (needs GUdev) on OpenBSD (XXX add HAVE_COLORD to meson_options.txt)
+The mouse panel needs gsd_device_manager_get() which needs GUdev.
+
 wwan needs network-manager
 
 Index: panels/meson.build
 --- panels/meson.build.orig
 +++ panels/meson.build
-@@ -4,7 +4,6 @@ panels = [
-   'applications',
-   'background',
-   'camera',
--  'color',
-   'datetime',
-   'default-apps',
-   'diagnostics',
-@@ -14,7 +13,6 @@ panels = [
+@@ -14,7 +14,6 @@ panels = [
    'keyboard',
    'location',
    'microphone',
@@ -21,7 +13,7 @@ Index: panels/meson.build
    'multitasking',
    'notifications',
    'online-accounts',
-@@ -29,11 +27,13 @@ panels = [
+@@ -29,11 +28,13 @@ panels = [
    'universal-access',
    'usage',
    'user-accounts',
