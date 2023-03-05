@@ -2,7 +2,7 @@ COMMENT=		simple scanning utility
 
 GNOME_PROJECT=		simple-scan
 GNOME_VERSION=		42.5
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		graphics
 
@@ -11,14 +11,16 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += c cairo gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
-WANTLIB += gtk-3 gusb handy-1 intl m sane webp z
+WANTLIB += c cairo colord gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gobject-2.0 gtk-3 gusb handy-1 intl m sane webp webpmux
+WANTLIB += z
 
 MODULES=		devel/dconf \
 			devel/meson \
 			x11/gnome
 
 LIB_DEPENDS=		devel/libgusb \
+			graphics/colord \
 			graphics/libwebp \
 			graphics/sane-backends \
 			x11/libhandy
