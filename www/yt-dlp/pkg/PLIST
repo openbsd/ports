@@ -977,6 +977,8 @@ lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}lectur
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}lecturio.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}leeco.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}leeco.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}lefigaro.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}lefigaro.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}lego.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}lego.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}lemonde.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1019,6 +1021,8 @@ lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}loveho
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}lovehomeporn.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}lrt.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}lrt.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}lumni.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}lumni.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}lynda.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}lynda.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}m6.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1765,6 +1769,8 @@ lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}tele5.
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}tele5.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}telebruxelles.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}telebruxelles.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}telecaribe.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}telecaribe.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}telecinco.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}telecinco.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}telegraaf.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2622,6 +2628,7 @@ lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/lcp.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/lecture2go.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/lecturio.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/leeco.py
+lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/lefigaro.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/lego.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/lemonde.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/lenta.py
@@ -2643,6 +2650,7 @@ lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/lnkgo.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/localnews8.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/lovehomeporn.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/lrt.py
+lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/lumni.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/lynda.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/m6.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/magentamusik360.py
@@ -3016,6 +3024,7 @@ lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/ted.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/tele13.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/tele5.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/telebruxelles.py
+lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/telecaribe.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/telecinco.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/telegraaf.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/telegram.py
