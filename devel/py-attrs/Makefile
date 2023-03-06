@@ -1,10 +1,9 @@
 COMMENT =		classes without boilerplate
 
-MODPY_EGG_VERSION =	22.1.0
+MODPY_EGG_VERSION =	22.2.0
 
 DISTNAME =		attrs-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		devel
 

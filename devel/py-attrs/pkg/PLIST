@@ -36,6 +36,7 @@ lib/python${MODPY_VERSION}/site-packages/attr/_config.py
 lib/python${MODPY_VERSION}/site-packages/attr/_funcs.py
 lib/python${MODPY_VERSION}/site-packages/attr/_make.py
 lib/python${MODPY_VERSION}/site-packages/attr/_next_gen.py
+lib/python${MODPY_VERSION}/site-packages/attr/_typing_compat.pyi
 lib/python${MODPY_VERSION}/site-packages/attr/_version_info.py
 lib/python${MODPY_VERSION}/site-packages/attr/_version_info.pyi
 lib/python${MODPY_VERSION}/site-packages/attr/converters.py
@@ -51,7 +52,6 @@ lib/python${MODPY_VERSION}/site-packages/attr/validators.py
 lib/python${MODPY_VERSION}/site-packages/attr/validators.pyi
 lib/python${MODPY_VERSION}/site-packages/attrs/
 lib/python${MODPY_VERSION}/site-packages/attrs-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/attrs-${MODPY_EGG_VERSION}.dist-info/AUTHORS.rst
 lib/python${MODPY_VERSION}/site-packages/attrs-${MODPY_EGG_VERSION}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/attrs-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/attrs-${MODPY_EGG_VERSION}.dist-info/RECORD
