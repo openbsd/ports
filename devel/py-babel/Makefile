@@ -1,10 +1,9 @@
 COMMENT=		I18N/L10N tools for Python
 
-MODPY_EGG_VERSION=	2.10.3
+MODPY_EGG_VERSION=	2.12.1
 DISTNAME=		Babel-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME:L}
 CATEGORIES=		devel
-REVISION=		1
 
 HOMEPAGE=		https://babel.pocoo.org/
 
