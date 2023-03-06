@@ -1,8 +1,7 @@
 COMMENT=		people aggregation library
 
 GNOME_PROJECT=		folks
-GNOME_VERSION=		0.15.5
-REVISION=		1
+GNOME_VERSION=		0.15.6
 
 # see BACKEND_DIR in config.h
 API_V=			26
