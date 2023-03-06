@@ -86,6 +86,7 @@ ${P5SITE}/Perl/Critic/Policy/ErrorHandling/RequireCarping.pm
 ${P5SITE}/Perl/Critic/Policy/ErrorHandling/RequireCheckingReturnValueOfEval.pm
 ${P5SITE}/Perl/Critic/Policy/InputOutput/
 ${P5SITE}/Perl/Critic/Policy/InputOutput/ProhibitBacktickOperators.pm
+${P5SITE}/Perl/Critic/Policy/InputOutput/ProhibitBarewordDirHandles.pm
 ${P5SITE}/Perl/Critic/Policy/InputOutput/ProhibitBarewordFileHandles.pm
 ${P5SITE}/Perl/Critic/Policy/InputOutput/ProhibitExplicitStdin.pm
 ${P5SITE}/Perl/Critic/Policy/InputOutput/ProhibitInteractiveTest.pm
@@ -217,11 +218,8 @@ ${P5SITE}/Perl/Critic/UserProfile.pm
 ${P5SITE}/Perl/Critic/Utils/
 ${P5SITE}/Perl/Critic/Utils.pm
 ${P5SITE}/Perl/Critic/Utils/Constants.pm
-${P5SITE}/Perl/Critic/Utils/DataConversion.pm
 ${P5SITE}/Perl/Critic/Utils/McCabe.pm
-${P5SITE}/Perl/Critic/Utils/POD/
 ${P5SITE}/Perl/Critic/Utils/POD.pm
-${P5SITE}/Perl/Critic/Utils/POD/ParseInteriorSequence.pm
 ${P5SITE}/Perl/Critic/Utils/PPI.pm
 ${P5SITE}/Perl/Critic/Utils/Perl.pm
 ${P5SITE}/Perl/Critic/Violation.pm
@@ -302,6 +300,7 @@ ${P5SITE}/Test/Perl/Critic/Policy.pm
 @man man/man3p/Perl::Critic::Policy::ErrorHandling::RequireCarping.3p
 @man man/man3p/Perl::Critic::Policy::ErrorHandling::RequireCheckingReturnValueOfEval.3p
 @man man/man3p/Perl::Critic::Policy::InputOutput::ProhibitBacktickOperators.3p
+@man man/man3p/Perl::Critic::Policy::InputOutput::ProhibitBarewordDirHandles.3p
 @man man/man3p/Perl::Critic::Policy::InputOutput::ProhibitBarewordFileHandles.3p
 @man man/man3p/Perl::Critic::Policy::InputOutput::ProhibitExplicitStdin.3p
 @man man/man3p/Perl::Critic::Policy::InputOutput::ProhibitInteractiveTest.3p
@@ -420,10 +419,8 @@ ${P5SITE}/Test/Perl/Critic/Policy.pm
 @man man/man3p/Perl::Critic::UserProfile.3p
 @man man/man3p/Perl::Critic::Utils.3p
 @man man/man3p/Perl::Critic::Utils::Constants.3p
-@man man/man3p/Perl::Critic::Utils::DataConversion.3p
 @man man/man3p/Perl::Critic::Utils::McCabe.3p
 @man man/man3p/Perl::Critic::Utils::POD.3p
-@man man/man3p/Perl::Critic::Utils::POD::ParseInteriorSequence.3p
 @man man/man3p/Perl::Critic::Utils::PPI.3p
 @man man/man3p/Perl::Critic::Utils::Perl.3p
 @man man/man3p/Perl::Critic::Violation.3p
