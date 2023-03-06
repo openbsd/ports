@@ -1,5 +1,5 @@
 COMMENT =	X11 Cursors themes
-DISTNAME =	xcursor-themes-1.0.6
+DISTNAME =	xcursor-themes-1.0.7
 CATEGORIES =	x11
 
 HOMEPAGE =	http://wiki.X.Org/
