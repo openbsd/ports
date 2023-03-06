@@ -3,7 +3,12 @@
 MODULES +=	lang/php
 
 FLAVORS ?= php74 php80 php81 php82
-FLAVOR ?= php80
+
+.if ${MACHINE_ARCH} == sparc64
+FLAVOR ?=	php80
+.else
+FLAVOR ?=	php81
+.endif
 
 # MODPECL_DEFAULTV is used in PLISTs so that @pkgpath markers are only
 # applied for packages built against the "ports default" version of PHP,
