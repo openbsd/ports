@@ -1,3 +1,20 @@
+BROKEN = fails at runtime
+# Errors like these are reported at startup:
+# [065 12:20:33.981266] [glfw error 65544]: OpenGL version string retrieval is broken
+# [065 12:20:33.982391] Failed to create GLFW temp window! This usually happens because of old/broken OpenGL drivers. kitty requires working OpenGL 3.3 drivers.
+# 
+# Seems to have occurred when Mesa was updated from 22.1.7 to 22.3.4
+# but not 100% sure.
+# 
+# Same problem occurs with kitty 0.26.5 and 0.27.1.
+# (0.26.5 is a simple update; 0.27.1 is not particularly easily buildable
+# in ports; requires running the newly built kitty binary during build,
+# iirc PORTPATH=${WRKSRC}/linux-package/bin:${PATH} does the trick for
+# that, though build also fails if you have an older version of kitty
+# installed; it also wants to download go modules during build).
+#
+# https://github.com/kovidgoyal/kitty/issues/6007
+
 # Requires OpenGL>=3.3
 ONLY_FOR_ARCHS =	aarch64 amd64 i386
 
