@@ -15,8 +15,6 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-PATCHORIG =		.orig.port
-
 FLAVORS =		python3
 FLAVOR  =		python3
 

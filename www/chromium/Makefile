@@ -49,8 +49,6 @@ COMPILER =	base-clang ports-clang ports-gcc
 
 MODPY_RUNDEP=		No
 
-PATCHORIG=	.orig.port
-
 # uses pledge()
 WANTLIB+=	GL X11 Xau Xcomposite Xdamage Xdmcp Xext Xfixes Xft Xi Xrandr
 WANTLIB+=	Xrender Xtst atk-1.0 atk-bridge-2.0 atspi c c++ c++abi cairo

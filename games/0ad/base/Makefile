@@ -48,7 +48,6 @@ MAKE_ENV =		CC="${CC}" \
 			LDFLAGS="-liconv"
 
 FIX_CRLF_FILES =	build/premake/premake5/build/gmake.bsd/Premake5.make
-PATCHORIG =		.orig.port
 
 USE_GMAKE =		Yes
 

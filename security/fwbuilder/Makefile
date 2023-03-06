@@ -21,9 +21,6 @@ WANTLIB += c crypto m netsnmp util xml2 xslt z
 MODULES =	devel/cmake \
 		x11/qt5
 
-# .orig produces too much spam in tests directories
-PATCHORIG =	.orig.port
-
 LIB_DEPENDS =	net/net-snmp \
 		textproc/libxml \
 		textproc/libxslt \

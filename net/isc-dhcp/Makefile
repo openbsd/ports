@@ -13,7 +13,6 @@ CATEGORIES=	net
 
 DISTFILES=	dhcp-${VERSION}.tar.gz
 WRKDIST=	${WRKDIR}/dhcp-${VERSION}
-PATCHORIG=	.orig.port
 
 MASTER_SITES=	${MASTER_SITE_ISC:=dhcp/${VERSION}/} \
 		${MASTER_SITE_ISC:=dhcp/}

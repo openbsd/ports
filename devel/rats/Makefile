@@ -16,7 +16,6 @@ WANTLIB += c expat
 MASTER_SITES=		https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/rough-auditing-tool-for-security/
 
 FIX_CRLF_FILES=		*
-PATCHORIG=		.orig.port
 
 CONFIGURE_STYLE=	gnu dest
 CONFIGURE_ARGS+=	--libdir=${WRKINST}${PREFIX}/share/rats \

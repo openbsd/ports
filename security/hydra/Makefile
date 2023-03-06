@@ -35,7 +35,6 @@ CONFIGURE_STYLE=gnu
 USE_GMAKE=	Yes
 NO_TEST=	Yes
 MAKE_FLAGS=	CC="${CC}"
-PATCHORIG=	.orig.port
 
 CONFIGURE_ARGS=	--nostrip \
 		--with-ssl=prefix="/usr/include" \

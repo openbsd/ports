@@ -36,8 +36,6 @@ MODJAVA_BUILD_FILE ?=	build-linux64.xml
 BUILD_DEPENDS ?=	devel/apache-ant \
 			devel/maven
 
-PATCHORIG ?=		.orig.port
-
 # mvn command
 # -o: offline build
 MVN ?=			mvn -o -Dmaven.repo.local=${WRKDIR}/m2repo-libgdx-${VERSION}-tools package

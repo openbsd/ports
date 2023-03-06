@@ -37,7 +37,6 @@ MODULES_DIR=		${LOCALBASE}/${MODULES_SUBDIR}
 
 INI_TEMPLATES?=		development production
 
-PATCHORIG=		.orig.port
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION?=	2.69
 COMPILER=		base-clang ports-gcc

@@ -22,8 +22,6 @@ CONFIGURE_STYLE =	cargo
 
 DOCDIR =		${PREFIX}/share/doc/difftastic
 
-PATCHORIG = 		.orig.port
-
 # Prepare directory for HTML manual
 post-extract:
 	sed -i 's/DFT_VERSION_HERE/${GH_TAGNAME}/g' \

@@ -17,8 +17,6 @@ MODPY_PI=		Yes
 MODPY_PYBUILD =	setuptools
 MODPY_PYTEST_ARGS=	passlib
 
-PATCHORIG=	.orig.port
-
 FLAVORS=	python3
 FLAVOR=		python3
 

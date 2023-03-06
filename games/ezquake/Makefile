@@ -34,7 +34,6 @@ NO_TEST =	Yes
 
 GAMEDIR =	${PREFIX}/share/ezquake
 SUBST_VARS +=	GAMEDIR
-PATCHORIG =	.orig.port
 
 do-configure:
 	${SUBST_CMD} ${WRKSRC}/EX_browser_sources.c

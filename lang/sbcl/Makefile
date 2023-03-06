@@ -9,7 +9,6 @@ DISTNAME=		sbcl-${V}-source
 PKGNAME=		sbcl-${V}
 WRKDIST=		${WRKDIR}/sbcl-${V}
 EXTRACT_SUFX=		.tar.bz2
-PATCHORIG =		.orig.port
 
 CATEGORIES=		lang
 HOMEPAGE=		http://www.sbcl.org/

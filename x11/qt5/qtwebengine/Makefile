@@ -103,8 +103,6 @@ PKG_ARGS+=		-Dswiftshader=0
 PKG_ARGS+=		-Dswiftshader=1
 .endif
 
-PATCHORIG=		.orig.port
-
 SUBST_VARS +=	WRKSRC WRKDIR DEBUGFLAG WRKBUILD
 
 MODQMAKE_RECURSIVE =	No

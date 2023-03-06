@@ -22,7 +22,6 @@ RUN_DEPENDS =	audio/timidity
 MAKE_FLAGS +=	FHEROES2_DATA=${PREFIX}/share/fheroes2
 USE_GMAKE =	Yes
 NO_TEST =	Yes
-PATCHORIG =	.orig.port
 
 # needs gsed
 do-gen:

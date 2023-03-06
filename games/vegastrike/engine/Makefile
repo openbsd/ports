@@ -15,7 +15,6 @@ WANTLIB += vorbis vorbisfile z ${MODPY_WANTLIB} harfbuzz
 COMPILER =		base-clang ports-gcc base-gcc
 
 FIX_CRLF_FILES =	src/cmd/unit_jump.h src/cmd/unit_physics.h
-PATCHORIG =		.orig.port
 
 MODULES =		lang/python
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}

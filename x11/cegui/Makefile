@@ -4,8 +4,6 @@ V =			0.8.7
 DISTNAME =		cegui-${V}
 REVISION =		0
 
-PATCHORIG =		.orig.port
-
 SHARED_LIBS +=  CEGUIBase-0			1.0 # 3.1
 SHARED_LIBS +=  CEGUICommonDialogs-0		1.0 # 3.1
 SHARED_LIBS +=  CEGUIIrrlichtRenderer-0		1.0 # 3.1
