@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1584 2023/02/17 19:26:57 sthen Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1585 2023/03/06 13:32:42 sthen Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -755,7 +755,7 @@ MAKE_ENV += PATH='${PORTPATH}' PREFIX='${PREFIX}' \
 
 DISTORIG ?= .bak.orig
 PATCH ?= /usr/bin/patch
-PATCHORIG ?= .orig
+PATCHORIG ?= .orig.port
 PATCH_STRIP ?= -p0
 PATCH_DIST_STRIP ?= -p0
 
