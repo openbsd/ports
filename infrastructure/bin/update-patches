@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-# $OpenBSD: update-patches,v 1.22 2022/03/01 11:15:31 espie Exp $
+# $OpenBSD: update-patches,v 1.23 2023/03/06 15:34:50 sthen Exp $
 # Copyright (c) 2017
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -38,7 +38,7 @@ my ($distorig, $patchorig, $wrkdist, $patchdir, $patch_list, $wrkobj) =
     ($ENV{DISTORIG}, $ENV{PATCHORIG}, $ENV{WRKDIST}, $ENV{PATCHDIR},
 	 $ENV{PATCH_LIST}, $ENV{WRKOBJDIR});
 
-if ($patchorig ne '.orig') {
+if ($patchorig ne '.orig.port') {
 	say "PATCHORIG=$patchorig";
 }
 my $force = defined($ENV{FORCE_REGEN});
