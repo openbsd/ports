@@ -9,7 +9,7 @@ COMMENT-guic=		gtk+ icon theme caching utility
 COMMENT-media=		gtk+ media engine
 
 GNOME_PROJECT=		gtk
-GNOME_VERSION=		4.8.3
+GNOME_VERSION=		4.10.0
 
 PKGNAME-main=		gtk+4-${GNOME_VERSION}
 PKGNAME-cups=		gtk+4-cups-${GNOME_VERSION}
@@ -17,11 +17,9 @@ PKGNAME-demos=		gtk+4-demos-${GNOME_VERSION}
 PKGNAME-guic=		gtk4-update-icon-cache-${GNOME_VERSION}
 PKGNAME-media=		gtk+4-media-${GNOME_VERSION}
 
-REVISION-main=		0
-
 CATEGORIES=		x11 devel
 
-SHARED_LIBS += gtk-4                     4.3 # 1.800.3
+SHARED_LIBS += gtk-4                     4.4 # 1.1000.0
 
 HOMEPAGE=		http://www.gtk.org/
 
@@ -104,6 +102,9 @@ CONFIGURE_ARGS +=	-Dwayland-backend=false
 # preference for media-gstreamer
 CONFIGURE_ARGS +=	-Dmedia-ffmpeg=disabled
 
+# Disable colord until proven useful
+#CONFIGURE_ARGS +=      -Dcolord=true
+
 .include <bsd.port.arch.mk>
 .if !${PROPERTIES:Mclang}
 CFLAGS +=		-Wno-error
@@ -114,9 +115,6 @@ CFLAGS +=		-Wno-error
 .if !${PROPERTIES:Mlld}
 CONFIGURE_ARGS +=	-Db_asneeded=false
 .endif
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/modules/printbackends/meson.build
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/settings.ini ${PREFIX}/share/gtk-4.0/

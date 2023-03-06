@@ -3,7 +3,7 @@ unveil(2): check if the XDG directories exist before showing them on the sidebar
 Index: gtk/gtkfilechooserwidget.c
 --- gtk/gtkfilechooserwidget.c.orig
 +++ gtk/gtkfilechooserwidget.c
-@@ -7181,7 +7181,8 @@ desktop_folder_handler (GtkFileChooserWidget *impl)
+@@ -6238,7 +6238,8 @@ desktop_folder_handler (GtkFileChooserWidget *impl)
     * See http://freedesktop.org/wiki/Software/xdg-user-dirs
     */
    name = g_get_user_special_dir (G_USER_DIRECTORY_DESKTOP);
