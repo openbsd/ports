@@ -45,8 +45,6 @@ CONFIGURE_ENV =		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 
 AUTOCONF_VERSION =	2.69
 
-PATCHORIG =		.ports.orig
-
 # The online tests rely on bash features, but we don't want
 # interactive tests that much.
 BASH_FILES =		${WRKSRC}/tests/*.{sh,test} \

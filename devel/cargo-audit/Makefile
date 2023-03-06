@@ -28,7 +28,6 @@ MODCARGO_CRATES_UPDATE =	cc libc
 
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
-PATCHORIG =		.openbsd.orig
 
 WRKSRC =		${WRKDIR}/${PKGNAME}
 

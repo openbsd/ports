@@ -17,7 +17,6 @@ BUILD_DEPENDS =		textproc/asciidoctor
 
 CONFIGURE_STYLE =	cargo
 
-PATCHORIG =		.openbsd.orig
 SEPARATE_BUILD =	Yes
 
 # for riscv64 and powerpc64, please keep: cc >= 1.0.73 and libc >= 0.2.113

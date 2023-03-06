@@ -15,9 +15,6 @@ MAINTAINER =		Theo Buehler <tb@openbsd.org>
 # Various, mostly MIT/Apache2, see crates.inc for details
 PERMIT_PACKAGE =	Yes
 
-# Must be different from '.orig': .cargo-checksum.json contains Cargo.toml.orig
-PATCHORIG =		.patch.orig
-
 MODULES =		devel/cargo
 
 NO_BUILD =		Yes

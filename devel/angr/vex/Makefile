@@ -11,9 +11,6 @@ MAKE_FILE =	Makefile-gcc
 
 CFLAGS +=	-DVGA_amd64
 
-# ${WRKSRC}/orig_arm/nanoarm.orig
-PATCHORIG =	.pat.orig
-
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include/angr-vex/
 	${INSTALL_DATA} ${WRKSRC}/pub/*.h ${PREFIX}/include/angr-vex/

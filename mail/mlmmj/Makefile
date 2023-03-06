@@ -15,10 +15,6 @@ MASTER_SITES=	http://mlmmj.org/releases/
 
 LIB_DEPENDS=	converters/libiconv
 
-# ./contrib/web/php-admin/htdocs/index.php.orig
-# ./contrib/web/php-user/mlmmj.php.orig
-PATCHORIG=	.pat.orig
-
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--enable-receive-strip=yes
 

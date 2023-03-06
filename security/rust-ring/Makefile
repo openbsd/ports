@@ -17,8 +17,6 @@ MAINTAINER =		Theo Buehler <tb@openbsd.org>
 # ISC, OpenSSL
 PERMIT_PACKAGE =	Yes
 
-PATCHORIG =		.patch.orig
-
 NO_BUILD =		Yes
 NO_TEST =		Yes
 

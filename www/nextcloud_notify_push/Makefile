@@ -27,7 +27,6 @@ MODULES =		devel/cargo
 .include "crates.inc"
 
 MODCARGO_CRATES_KEEP +=	libsqlite3-sys
-PATCHORIG =		.openbsd.orig
 WANTLIB += c c++abi m pthread
 
 CONFIGURE_STYLE =	cargo

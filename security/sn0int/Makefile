@@ -32,7 +32,6 @@ RUN_DEPENDS =		net/libmaxminddb,-asn \
 .include "crates.mk"
 
 CONFIGURE_STYLE =	cargo
-PATCHORIG =		.openbsd.orig
 SEPARATE_BUILD =	Yes
 
 MODCARGO_RUSTFLAGS =	-C debuginfo=0

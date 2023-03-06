@@ -7,8 +7,6 @@ PKGNAME=	${MODPY_PY_PREFIX}${DISTNAME}
 
 .include "crates.inc"
 
-PATCHORIG=	.patch.orig
-
 CATEGORIES=	security devel
 
 HOMEPAGE=	https://cryptography.io/

@@ -11,7 +11,6 @@ HOMEPAGE=	http://www.latex2html.org/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-PATCHORIG=	.pat.orig
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	graphics/netpbm \
 		print/ghostscript/gnu \

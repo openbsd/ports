@@ -20,8 +20,6 @@ WANTLIB += c c++abi pthread
 
 TEST_ENV =	CC=${CC} CXX=${CXX}
 
-PATCHORIG =	.ports.orig
-
 .include "crates.inc"
 
 .include <bsd.port.mk>

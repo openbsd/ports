@@ -24,8 +24,6 @@ MODCARGO_CRATES_UPDATE =	cc libc
 
 .include "crates.inc"
 
-PATCHORIG =		.openbsd.orig
-
 MAKE_ENV =		DESTDIR="" \
 			LIBDIR="${LOCALBASE}/lib" \
 			INCLUDEDIR="${LOCALBASE}/include"
