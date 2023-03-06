@@ -2,7 +2,7 @@ COMMENT =		graphical client for the SoulSeek peer-to-peer system
 
 GH_ACCOUNT =		Nicotine-Plus
 GH_PROJECT =		nicotine-plus
-GH_TAGNAME =		3.2.8
+GH_TAGNAME =		3.2.9
 
 CATEGORIES =		net
 

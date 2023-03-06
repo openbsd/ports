@@ -1,10 +1,10 @@
 bin/nicotine
-lib/python${MODPY_VERSION}/site-packages/nicotine_plus-3.2.8-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/nicotine_plus-3.2.8-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/nicotine_plus-3.2.8-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/nicotine_plus-3.2.8-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/nicotine_plus-3.2.8-py${MODPY_VERSION}.egg-info/requires.txt
-lib/python${MODPY_VERSION}/site-packages/nicotine_plus-3.2.8-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/nicotine_plus-3.2.9-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/nicotine_plus-3.2.9-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/nicotine_plus-3.2.9-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/nicotine_plus-3.2.9-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/nicotine_plus-3.2.9-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/nicotine_plus-3.2.9-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pynicotine/
 lib/python${MODPY_VERSION}/site-packages/pynicotine/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pynicotine/__main__.py
@@ -571,9 +571,9 @@ share/locale/sk/LC_MESSAGES/nicotine.mo
 share/locale/sv/LC_MESSAGES/nicotine.mo
 share/locale/tr/LC_MESSAGES/nicotine.mo
 share/locale/uk/LC_MESSAGES/nicotine.mo
-share/locale/zh_Hans/
-share/locale/zh_Hans/LC_MESSAGES/
-share/locale/zh_Hans/LC_MESSAGES/nicotine.mo
+share/locale/zh_CN/
+share/locale/zh_CN/LC_MESSAGES/
+share/locale/zh_CN/LC_MESSAGES/nicotine.mo
 share/metainfo/
 share/metainfo/org.nicotine_plus.Nicotine.appdata.xml
 @tag update-desktop-database
