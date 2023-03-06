@@ -6,6 +6,8 @@ DISTNAME=	puppetdb-$V
 PKGNAME-plugin= puppetdb-termini-$V
 CATEGORIES=	databases
 
+REVISION-main=	0
+
 HOMEPAGE=	https://puppet.com/docs/puppetdb/
 
 MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
