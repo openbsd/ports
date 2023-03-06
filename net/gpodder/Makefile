@@ -1,6 +1,6 @@
 COMMENT=		media aggregator and podcast client
 
-MODPY_EGG_VERSION=	3.11.0
+MODPY_EGG_VERSION=	3.11.1
 
 GH_ACCOUNT=		gpodder
 GH_PROJECT=		gpodder
@@ -27,7 +27,7 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 			www/py-requests${MODPY_FLAVOR} \
 			net/mygpoclient \
 			textproc/py-podcastparser${MODPY_FLAVOR} \
-			www/youtube-dl \
+			www/yt-dlp \
 			www/webkitgtk4 \
 			x11/dbus-python${MODPY_FLAVOR} \
 			x11/gtk+3,-guic
