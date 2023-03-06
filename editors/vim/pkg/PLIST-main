@@ -471,6 +471,7 @@ share/vim/${P}/ftplugin/expect.vim
 share/vim/${P}/ftplugin/falcon.vim
 share/vim/${P}/ftplugin/fennel.vim
 share/vim/${P}/ftplugin/fetchmail.vim
+share/vim/${P}/ftplugin/fish.vim
 share/vim/${P}/ftplugin/flexwiki.vim
 share/vim/${P}/ftplugin/fortran.vim
 share/vim/${P}/ftplugin/fpcmake.vim
@@ -597,6 +598,7 @@ share/vim/${P}/ftplugin/python.vim
 share/vim/${P}/ftplugin/qb64.vim
 share/vim/${P}/ftplugin/qf.vim
 share/vim/${P}/ftplugin/quake.vim
+share/vim/${P}/ftplugin/quarto.vim
 share/vim/${P}/ftplugin/r.vim
 share/vim/${P}/ftplugin/racc.vim
 share/vim/${P}/ftplugin/racket.vim
@@ -736,6 +738,7 @@ share/vim/${P}/indent/eterm.vim
 share/vim/${P}/indent/expect.vim
 share/vim/${P}/indent/falcon.vim
 share/vim/${P}/indent/fennel.vim
+share/vim/${P}/indent/fish.vim
 share/vim/${P}/indent/fortran.vim
 share/vim/${P}/indent/framescript.vim
 share/vim/${P}/indent/freebasic.vim
@@ -791,6 +794,7 @@ share/vim/${P}/indent/ps1.vim
 share/vim/${P}/indent/pyrex.vim
 share/vim/${P}/indent/python.vim
 share/vim/${P}/indent/qb64.vim
+share/vim/${P}/indent/quarto.vim
 share/vim/${P}/indent/r.vim
 share/vim/${P}/indent/racket.vim
 share/vim/${P}/indent/raku.vim
@@ -1245,6 +1249,7 @@ share/vim/${P}/syntax/fasm.vim
 share/vim/${P}/syntax/fdcc.vim
 share/vim/${P}/syntax/fetchmail.vim
 share/vim/${P}/syntax/fgl.vim
+share/vim/${P}/syntax/fish.vim
 share/vim/${P}/syntax/flexwiki.vim
 share/vim/${P}/syntax/focexec.vim
 share/vim/${P}/syntax/form.vim
@@ -1510,9 +1515,11 @@ share/vim/${P}/syntax/ptcap.vim
 share/vim/${P}/syntax/purifylog.vim
 share/vim/${P}/syntax/pyrex.vim
 share/vim/${P}/syntax/python.vim
+share/vim/${P}/syntax/python2.vim
 share/vim/${P}/syntax/qb64.vim
 share/vim/${P}/syntax/qf.vim
 share/vim/${P}/syntax/quake.vim
+share/vim/${P}/syntax/quarto.vim
 share/vim/${P}/syntax/r.vim
 share/vim/${P}/syntax/racc.vim
 share/vim/${P}/syntax/racket.vim

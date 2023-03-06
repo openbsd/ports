@@ -3,7 +3,7 @@ COMMENT-lang=	vi clone, NLS subpackage
 
 # careful with PLISTs if updating; it usually works best if you use
 # a gui flavour rather than no_x11
-V=		9.0.1285
+V=		9.0.1388
 GH_ACCOUNT=	vim
 GH_PROJECT=	vim
 GH_TAGNAME=	v$V
