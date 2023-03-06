@@ -6,7 +6,7 @@ GH_TAGNAME =	v0.8.1
 GH_TESTDATA_COMMIT=98b37ee31189f1a31bb384191de0ea4b0358e0a0
 CATEGORIES =	graphics
 
-REVISION =	1
+REVISION =	2
 
 # add external test data
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
@@ -28,15 +28,13 @@ DEBUG_PACKAGES=	${BUILD_PACKAGES}
 BUILD_DEPENDS +=	textproc/asciidoc \
 		devel/gtest
 LIB_DEPENDS +=	graphics/lcms2>=2.13 \
-		graphics/openexr \
 		graphics/png \
 		graphics/giflib \
 		devel/highway \
 		archivers/brotli
 
-WANTLIB += ${COMPILER_LIBCXX} Iex-3_1 IlmThread-3_1 Imath-3_1
-WANTLIB += OpenEXR-3_1 OpenEXRCore-3_1 OpenEXRUtil-3_1 brotlicommon
-WANTLIB += brotlidec brotlienc c gif hwy jpeg lcms2 m png z
+WANTLIB += ${COMPILER_LIBCXX} brotlicommon brotlidec
+WANTLIB += brotlienc c gif hwy jpeg lcms2 m png z
 
 # makes sure gmock library is found
 CONFIGURE_ENV = LDFLAGS="-L${LOCALBASE}/lib"
@@ -44,7 +42,7 @@ CONFIGURE_ENV = LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS += \
 	-DJPEGXL_BUNDLE_SKCMS:BOOL=OFF \
 	-DJPEGXL_ENABLE_DOXYGEN:BOOL=OFF \
-	-DJPEGXL_ENABLE_OPENEXR:BOOL=ON \
+	-DJPEGXL_ENABLE_OPENEXR:BOOL=OFF \
 	-DJPEGXL_ENABLE_SJPEG:BOOL=OFF \
 	-DJPEGXL_ENABLE_SKCMS:BOOL=OFF \
 	-DJPEGXL_FORCE_SYSTEM_BROTLI:BOOL=ON \
