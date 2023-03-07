@@ -1,13 +1,12 @@
-bin/nsgmls
-bin/sgmlnorm
-bin/spam
-bin/spent
-bin/sx
+@bin bin/nsgmls
+@bin bin/sgmlnorm
+@bin bin/spam
+@bin bin/spent
+@bin bin/sx
 include/sp/
 include/sp/Allocator.h
 include/sp/ArcEngine.h
 include/sp/Attribute.h
-include/sp/Attribute.h.orig
 include/sp/Attributed.h
 include/sp/Big5CodingSystem.h
 include/sp/Boolean.h
@@ -138,14 +137,13 @@ include/sp/XMLCodingSystem.h
 include/sp/XcharMap.cxx
 include/sp/XcharMap.h
 include/sp/config.h
-include/sp/config.h.orig
 include/sp/constant.h
 include/sp/macros.h
 include/sp/rtti.h
 include/sp/sptchar.h
 include/sp/types.h
 include/sp/xnew.h
-lib/libsp.a
+@static-lib lib/libsp.a
 share/doc/sp/
 share/doc/sp/archform.htm
 share/doc/sp/build.htm

@@ -1,7 +1,7 @@
 COMMENT=	OO toolkit for SGML parsing and entity management
 
 DISTNAME=	sp-1.3.4
-REVISION =	6
+REVISION =	7
 CATEGORIES=	textproc
 HOMEPAGE=	http://www.jclark.com/sp/
 
@@ -33,5 +33,6 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include/sp
 	${INSTALL_DATA} ${WRKSRC}/include/* ${PREFIX}/include/sp
 	${INSTALL_DATA} ${WRKSRC}/generic/* ${PREFIX}/include/sp
+	rm ${PREFIX}/include/sp/{Attribute,config}.h.orig.port
 
 .include <bsd.port.mk>
