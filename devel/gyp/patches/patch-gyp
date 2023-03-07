@@ -1,9 +1,12 @@
 Index: gyp
 --- gyp.orig
 +++ gyp
-@@ -5,4 +5,4 @@
+@@ -5,7 +5,7 @@
  
- set -e
+ set -eu
  base=$(dirname "$0")
--exec python "${base}/gyp_main.py" "$@"
+-if type python3 >& /dev/null; then
 +exec ${MODPY_BIN} "${base}/gyp_main.py" "$@"
+   python=python3
+ else
+   python=python

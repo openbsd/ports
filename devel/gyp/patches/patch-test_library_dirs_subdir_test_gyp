@@ -1,0 +1,12 @@
+Index: test/library_dirs/subdir/test.gyp
+--- test/library_dirs/subdir/test.gyp.orig
++++ test/library_dirs/subdir/test.gyp
+@@ -52,7 +52,7 @@
+       ],
+       'link_settings': {
+         'conditions': [
+-          ['OS=="linux"', {
++          ['OS=="openbsd"', {
+             'libraries': [
+               '-lmylib',
+             ],

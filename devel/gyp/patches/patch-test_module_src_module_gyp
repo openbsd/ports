@@ -1,0 +1,15 @@
+Index: test/module/src/module.gyp
+--- test/module/src/module.gyp.orig
++++ test/module/src/module.gyp
+@@ -17,6 +17,11 @@
+         'cflags': ['-fPIC'],
+         'libraries': ['-ldl'],
+       }],
++      ['OS=="openbsd"', {
++        'defines': ['PLATFORM_LINUX'],
++        # Support 64-bit shared libs (also works fine for 32-bit).
++        'cflags': ['-fPIC'],
++      }],
+     ],
+   },
+   'targets': [

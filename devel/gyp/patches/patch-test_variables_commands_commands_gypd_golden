@@ -1,0 +1,36 @@
+sync expected test output with input.py
+
+Index: test/variables/commands/commands.gypd.golden
+--- test/variables/commands/commands.gypd.golden.orig
++++ test/variables/commands/commands.gypd.golden
+@@ -1,10 +1,10 @@
+ {'_DEPTH': '.',
+  'included_files': ['commands.gyp', 'commands.gypi'],
+  'targets': [{'actions': [{'action': ['echo',
+-                                      '"3.14159265359 ABCD"',
++                                      '"3.141592653589793 ABCD"',
+                                       'ABCD letters_list'],
+                            'action_name': 'test_action',
+-                           'inputs': ['3.14159265359 ABCD'],
++                           'inputs': ['3.141592653589793 ABCD'],
+                            'outputs': ['ABCD', 'letters_list'],
+                            'variables': {'var7': 'letters_list'}}],
+               'configurations': {'Default': {}},
+@@ -12,7 +12,7 @@
+               'target_name': 'foo',
+               'toolset': 'target',
+               'type': 'none',
+-              'variables': {'var1': '3.14159265359',
++              'variables': {'var1': '3.141592653589793',
+                             'var10': '7 8 9',
+                             'var11': ['7', '8', '9'],
+                             'var12': ' 10',
+@@ -23,7 +23,7 @@
+                             'var17': '-15',
+                             'var18': '0',
+                             'var19': ['samplepathfoo.cpp'],
+-                            'var2': '3.14159265359 ABCD',
++                            'var2': '3.141592653589793 ABCD',
+                             'var20': 'sample\\path\\foo.cpp',
+                             'var21': 'my_str',
+                             'var22': '',
