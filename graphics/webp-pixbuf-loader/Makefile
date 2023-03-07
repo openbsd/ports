@@ -2,7 +2,7 @@ COMMENT=		WebP GDK Pixbuf Loader library
 
 GH_ACCOUNT=		aruiz
 GH_PROJECT=		webp-pixbuf-loader
-GH_TAGNAME=		0.2.1
+GH_TAGNAME=		0.2.2
 
 CATEGORIES=		graphics
 
