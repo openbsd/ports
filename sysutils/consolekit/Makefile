@@ -1,10 +1,9 @@
 COMMENT=		framework for defining and tracking users, sessions & seats
 
-DISTNAME=		ConsoleKit2-1.2.4
+DISTNAME=		ConsoleKit2-1.2.4.20230307
 PKGNAME=		${DISTNAME:L}
-REVISION=		6
 
-GH_COMMIT=		176c841a6559b97734065b0f125e5cba04f15858
+GH_COMMIT=		ca22ff81c2d14c45961bf2c113b6678ef92f8d78
 GH_ACCOUNT=		ConsoleKit2
 GH_PROJECT=		ConsoleKit2
 
@@ -44,8 +43,8 @@ FAKE_FLAGS=		DBUS_SYS_DIR=${TRUEPREFIX}/share/examples/consolekit/dbus-1 \
 
 BUILD_DEPENDS +=	devel/gettext,-tools
 AUTORECONF=		./autogen.sh
-AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.15
+AUTOCONF_VERSION=	2.71
+AUTOMAKE_VERSION=	1.16
 
 post-install:
 	rmdir ${WRKINST}/var/run/ConsoleKit
