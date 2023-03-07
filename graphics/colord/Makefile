@@ -39,7 +39,8 @@ MODULES=		devel/dconf \
 BUILD_DEPENDS=		devel/gettext,-tools \
 			devel/gobject-introspection \
 			lang/vala \
-			shells/bash-completion
+			shells/bash-completion \
+			textproc/gtk-doc
 
 LIB_DEPENDS=		databases/sqlite3 \
 			devel/libgusb \
