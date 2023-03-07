@@ -16,6 +16,9 @@ PERMIT_PACKAGE =	Yes
 MASTER_SITES =		https://github.com/libusb/libusb/releases/download/v${VERSION}/
 EXTRACT_SUFX =		.tar.bz2
 
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 WANTLIB =		pthread
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
