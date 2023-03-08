@@ -41,7 +41,7 @@ configuration section for use with nginx:
 	include		fastcgi_params;
     }
 
-Or httpd(8):
+Or the httpd(8) in OpenBSD base:
 
     server "example.org" {
 	listen on * port 80
@@ -98,6 +98,10 @@ The Smokeping FastCGI script must also be told to use the daemon.
 This is done by setting the variable in your web server. For nginx:
 
 fastcgi_param  RRDCACHED_ADDRESS unix:/var/run/rrd/rrdcached.sock;
+
+Or the httpd(8) in OpenBSD base:
+
+param RRDCACHED_ADDRESS "unix:/var/www/run/rrd/rrdcached.sock"
 
 Then restart smokeping and smokeping_fcgi. Use -d to show more information
 in case of errors at startup.

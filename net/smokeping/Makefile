@@ -2,13 +2,13 @@ COMMENT=	latency logging and graphing system
 
 V=		2.8.2
 DISTNAME=	smokeping-$V
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	net
 
 MASTER_SITES=	${HOMEPAGE}pub/
 
-HOMEPAGE=	http://oss.oetiker.ch/smokeping/
+HOMEPAGE=	https://oss.oetiker.ch/smokeping/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
