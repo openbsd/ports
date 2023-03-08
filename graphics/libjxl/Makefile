@@ -22,6 +22,9 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 # BSD
 PERMIT_PACKAGE =	Yes
 
+# C++
+COMPILER =	base-clang ports-gcc
+
 MODULES =	devel/cmake
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
