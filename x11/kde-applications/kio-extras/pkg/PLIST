@@ -469,6 +469,9 @@ share/doc/HTML/pt_BR/kioslave5/man/index.docbook
 share/doc/HTML/pt_BR/kioslave5/nfs/
 share/doc/HTML/pt_BR/kioslave5/nfs/index.cache.bz2
 share/doc/HTML/pt_BR/kioslave5/nfs/index.docbook
+share/doc/HTML/pt_BR/kioslave5/recentdocuments/
+share/doc/HTML/pt_BR/kioslave5/recentdocuments/index.cache.bz2
+share/doc/HTML/pt_BR/kioslave5/recentdocuments/index.docbook
 share/doc/HTML/pt_BR/kioslave5/sftp/
 share/doc/HTML/pt_BR/kioslave5/sftp/index.cache.bz2
 share/doc/HTML/pt_BR/kioslave5/sftp/index.docbook

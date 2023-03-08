@@ -1,7 +1,6 @@
 COMMENT =	KDE app that allows your devices to communicate
 
 DISTNAME =	kdeconnect-kde-${MODKDE_VERSION}
-REVISION =	0
 
 SHARED_LIBS +=	kdeconnectcore		3.0 # 1.4
 SHARED_LIBS +=	kdeconnectinterfaces	3.1 # 1.4

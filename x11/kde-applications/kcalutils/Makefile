@@ -1,7 +1,6 @@
 COMMENT =	library for the handling of calendar data.
 DISTNAME =	kcalutils-${VERSION}
 CATEGORIES =	productivity
-REVISION =	1
 
 SHARED_LIBS +=  KF5CalendarUtils          3.0 # 5.6
 

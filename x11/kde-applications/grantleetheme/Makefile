@@ -1,7 +1,6 @@
 COMMENT =	grantlee theme library
 DISTNAME =	grantleetheme-${VERSION}
 CATEGORIES =	devel x11
-REVISION =	0
 
 SHARED_LIBS +=  KF5GrantleeTheme          2.0 # 5.9
 
