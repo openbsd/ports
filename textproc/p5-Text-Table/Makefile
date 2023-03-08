@@ -2,9 +2,8 @@ COMMENT=	organize data in tables
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME =	Text-Table-1.134
+DISTNAME =	Text-Table-1.135
 CATEGORIES=	textproc
-REVISION =	0
 
 # Perl
 PERMIT_PACKAGE=	Yes
