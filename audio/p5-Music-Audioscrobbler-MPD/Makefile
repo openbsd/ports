@@ -14,7 +14,4 @@ MODCPAN_EXAMPLES=	Yes
 RUN_DEPENDS=		audio/p5-Music-Audioscrobbler-Submit \
 			devel/p5-Proc-Daemon
 
-post-configure:
-	rm ${WRKSRC}/examples/*.orig
-
 .include <bsd.port.mk>
