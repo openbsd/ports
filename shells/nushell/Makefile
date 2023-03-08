@@ -2,7 +2,7 @@ COMMENT =		a new kind of shell
 
 GH_ACCOUNT =		nushell
 GH_PROJECT =		nushell
-GH_TAGNAME =		0.70.0
+GH_TAGNAME =		0.76.0
 
 CATEGORIES =		shells
 
