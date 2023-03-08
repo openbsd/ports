@@ -2,7 +2,7 @@ COMMENT=	perl module for generating randoms strings
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME =	String-Random-0.31
+DISTNAME =	String-Random-0.32
 CATEGORIES=	textproc
 
 # perl
