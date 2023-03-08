@@ -1,7 +1,6 @@
 COMMENT =	open decentralized synchronization utility
 
-PKGNAME =	syncthing-1.23.2rc1
-V =		1.23.2-rc.1
+V =		1.23.2
 DISTNAME =	syncthing-${V}
 DISTFILES =	syncthing-source-v${V}${EXTRACT_SUFX}
 
