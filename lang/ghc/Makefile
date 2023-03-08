@@ -11,8 +11,7 @@ NO_CCACHE =		Yes
 # Upstream bug: https://gitlab.haskell.org/ghc/ghc/-/issues/22782
 USE_NOEXECONLY =	Yes
 
-GHC_VERSION =		9.2.6
-REVISION =		1
+GHC_VERSION =		9.2.7
 DISTNAME =		ghc-${GHC_VERSION}
 CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/
@@ -72,7 +71,7 @@ GHC_ITEMS = \
 	DIRECTORY		1.3.6.2		 \
 	EXCEPTIONS		0.10.4		 \
 	FILEPATH		1.4.2.2		 \
-	GHC			9.2.6		 \
+	GHC			9.2.7		 \
 	GHC_BIGNUM		1.2		 \
 	GHC_COMPACT		0.1.0.0		 \
 	GHC_PRIM		0.8.0		 \

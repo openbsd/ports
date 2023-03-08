@@ -7877,6 +7877,7 @@ share/doc/ghc/html/users_guide/9.2.2-notes.html
 share/doc/ghc/html/users_guide/9.2.3-notes.html
 share/doc/ghc/html/users_guide/9.2.4-notes.html
 share/doc/ghc/html/users_guide/9.2.5-notes.html
+share/doc/ghc/html/users_guide/9.2.6-notes.html
 share/doc/ghc/html/users_guide/${GHC_VER}-notes.html
 share/doc/ghc/html/users_guide/_images/
 share/doc/ghc/html/users_guide/_images/prof_scc.svg
@@ -7886,6 +7887,7 @@ share/doc/ghc/html/users_guide/_sources/9.2.2-notes.rst.txt
 share/doc/ghc/html/users_guide/_sources/9.2.3-notes.rst.txt
 share/doc/ghc/html/users_guide/_sources/9.2.4-notes.rst.txt
 share/doc/ghc/html/users_guide/_sources/9.2.5-notes.rst.txt
+share/doc/ghc/html/users_guide/_sources/9.2.6-notes.rst.txt
 share/doc/ghc/html/users_guide/_sources/${GHC_VER}-notes.rst.txt
 share/doc/ghc/html/users_guide/_sources/bugs.rst.txt
 share/doc/ghc/html/users_guide/_sources/codegens.rst.txt
