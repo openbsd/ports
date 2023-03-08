@@ -1,8 +1,8 @@
-COMMENT = 	Module::Build subclass for building Alien:: modules
+COMMENT =	Module::Build subclass for building Alien:: modules
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Alien-Base-ModuleBuild-1.15
+DISTNAME =	Alien-Base-ModuleBuild-1.17
 
 CATEGORIES =	devel
 
