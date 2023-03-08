@@ -3,7 +3,7 @@ COMMENT-update=	lightweight update-only tool for rrdtool
 COMMENT-ruby=	ruby interface to librrd
 
 V=		1.8.0
-REVISION=	0
+REVISION=	1
 DISTNAME=	rrdtool-$V
 PKGNAME-main=	${DISTNAME}
 PKGNAME-update=	rrdupdate-$V
@@ -26,6 +26,7 @@ USE_GMAKE=	Yes
 
 PSEUDO_FLAVORS=	no_ruby
 MULTI_PACKAGES= -main -ruby -update
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 MODULES=	lang/ruby
 
