@@ -1,7 +1,7 @@
 Index: media/base/supported_types.cc
 --- media/base/supported_types.cc.orig
 +++ media/base/supported_types.cc
-@@ -206,7 +206,7 @@ bool IsHevcProfileSupported(const VideoType& type) {
+@@ -209,7 +209,7 @@ bool IsHevcProfileSupported(const VideoType& type) {
  
  #if BUILDFLAG(ENABLE_PLATFORM_HEVC)
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || \

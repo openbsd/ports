@@ -10,7 +10,7 @@ Index: gpu/command_buffer/tests/gl_oes_egl_image_unittest.cc
  #include "ui/gl/gl_image_native_pixmap.h"
  #endif
  
-@@ -43,7 +43,7 @@ class GpuOESEGLImageTest : public testing::Test,
+@@ -46,7 +46,7 @@ class GpuOESEGLImageTest : public testing::Test,
    bool egl_initialized_{false};
  };
  

@@ -1,7 +1,7 @@
 Index: content/public/browser/render_process_host.h
 --- content/public/browser/render_process_host.h.orig
 +++ content/public/browser/render_process_host.h
-@@ -54,7 +54,7 @@
+@@ -53,7 +53,7 @@
  #include "content/public/browser/android/child_process_importance.h"
  #endif
  

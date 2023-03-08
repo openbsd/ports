@@ -5,6 +5,7 @@ chrome/
 @bin chrome/chrome
 chrome/chrome_100_percent.pak
 chrome/chrome_200_percent.pak
+chrome/headless_command_resources.pak
 chrome/headless_lib_data.pak
 chrome/headless_lib_strings.pak
 @so chrome/libEGL.so

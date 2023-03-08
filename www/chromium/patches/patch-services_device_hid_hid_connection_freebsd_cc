@@ -1,7 +1,7 @@
 Index: services/device/hid/hid_connection_freebsd.cc
 --- services/device/hid/hid_connection_freebsd.cc.orig
 +++ services/device/hid/hid_connection_freebsd.cc
-@@ -0,0 +1,242 @@
+@@ -0,0 +1,241 @@
 +// Copyright (c) 2014 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -11,7 +11,6 @@ Index: services/device/hid/hid_connection_freebsd.cc
 +#include <dev/usb/usbhid.h>
 +#include <dev/usb/usb_ioctl.h>
 +
-+#include "base/bind.h"
 +#include "base/files/file_descriptor_watcher_posix.h"
 +#include "base/location.h"
 +#include "base/numerics/safe_math.h"

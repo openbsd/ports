@@ -1,7 +1,21 @@
 Index: third_party/wayland/include/config.h
 --- third_party/wayland/include/config.h.orig
 +++ third_party/wayland/include/config.h
-@@ -25,7 +25,11 @@
+@@ -9,7 +9,13 @@
+ 
+ #define HAVE_BROKEN_MSG_CMSG_CLOEXEC 0
+ 
++#if defined(__FreeBSD__)
++#include <osreldate.h>
++#if defined(__FreeBSD_version) && __FreeBSD_version < 1300048
++#undef HAVE_MEMFD_CREATE
++#else
+ #define HAVE_MEMFD_CREATE
++#endif
+ 
+ #define HAVE_MKOSTEMP
+ 
+@@ -25,7 +31,11 @@
  
  #undef HAVE_SYS_PROCCTL_H
  

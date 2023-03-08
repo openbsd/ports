@@ -1,7 +1,7 @@
 Index: services/device/hid/hid_service_freebsd.cc
 --- services/device/hid/hid_service_freebsd.cc.orig
 +++ services/device/hid/hid_service_freebsd.cc
-@@ -0,0 +1,397 @@
+@@ -0,0 +1,396 @@
 +// Copyright 2014 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -17,7 +17,6 @@ Index: services/device/hid/hid_service_freebsd.cc
 +#include <string>
 +#include <vector>
 +
-+#include "base/bind.h"
 +#include "base/files/file_descriptor_watcher_posix.h"
 +#include "base/files/file_enumerator.h"
 +#include "base/files/file_util.h"

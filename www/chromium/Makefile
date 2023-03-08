@@ -1,5 +1,4 @@
 BROKEN-powerpc64 =	Check failed: false. OS architecture not handled. (powerpc64)
-BROKEN-i386 =		v8_context_snapshot_generator segfaults
 
 USE_WXNEEDED=		Yes
 
@@ -7,7 +6,7 @@ DPB_PROPERTIES=		parallel parallel2
 
 COMMENT=		Chromium browser
 
-V=			110.0.5481.177
+V=			111.0.5563.64
 
 DISTNAME=		chromium-${V}
 
@@ -48,6 +47,8 @@ MODQT5_DEPS=	No
 COMPILER =	base-clang ports-clang ports-gcc
 
 MODPY_RUNDEP=		No
+
+PATCHORIG=	.orig.port
 
 # uses pledge()
 WANTLIB+=	GL X11 Xau Xcomposite Xdamage Xdmcp Xext Xfixes Xft Xi Xrandr
