@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1512 2023/03/08 10:33:31 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1513 2023/03/08 10:42:31 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1809,6 +1809,7 @@ setup_obsolete_reason(
 	3 => 'winwrangler',
 	3 => 'gtkhotkey',
 	3 => 'libwnck',
+	6 => 'ap-utils',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually

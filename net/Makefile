@@ -5,7 +5,6 @@
      SUBDIR += aggregate6
      SUBDIR += amfora
      SUBDIR += amule
-     SUBDIR += ap-utils
      SUBDIR += argus
      SUBDIR += argus-clients
      SUBDIR += arouteserver
