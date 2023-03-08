@@ -1,6 +1,7 @@
 COMMENT =	validate recursive perl hash structures
 
-DISTNAME =	Data-Validate-Struct-0.11
+DISTNAME =	Data-Validate-Struct-0.12
+CPAN_AUTHOR =	TLINDEN
 
 CATEGORIES =	devel
 
