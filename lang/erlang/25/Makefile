@@ -3,15 +3,13 @@ BROKEN-alpha=	beam/erl_process.c:6692: internal compiler error: in final_scan_in
 COMMENT-main=	${COMMENT}
 COMMENT-wx=	WxWidgets bindings for Erlang
 
-V=		25.2.2
+V=		25.2.3
 PORTROACH=	limit:^OTP-25\.
 DISTNAME=	otp_src_$V
 PKGNAME=	erlang-$V
 PKGNAME-main=	erlang-$V
 PKGNAME-wx=	erlang-wx-$V
 EPOCH=		0
-
-REVISION-wx=	1
 
 VERSION_SPEC=	>=25v0,<26v0
 PKGSPEC-main=	erlang-${VERSION_SPEC}
@@ -79,7 +77,7 @@ ERL_INTERFACE_VSN       5.3 \
 ET_VSN  1.6.5 \
 EUNIT_VSN       2.8.1 \
 FTP_VSN 1.1.3 \
-INETS_VSN       8.2.1 \
+INETS_VSN       8.2.2 \
 JINTERFACE_VSN  1.13.1 \
 KERNEL_VSN      8.5.3 \
 MEGACO_VSN      4.4.2 \
@@ -93,14 +91,14 @@ RELTOOL_VSN     0.9 \
 RUNTIME_TOOLS_VSN       1.19 \
 SASL_VSN        4.2 \
 SNMP_VSN        5.13.3 \
-SSH_VSN 4.15.1 \
-SSL_VSN 10.8.6 \
+SSH_VSN 4.15.2 \
+SSL_VSN 10.8.7 \
 STDLIB_VSN      4.2 \
 SYNTAX_TOOLS_VSN        3.0 \
 TFTP_VSN        1.0.3 \
 TOOLS_VSN       3.5.3 \
 WX_VSN  2.2.1 \
 XMERL_VSN       1.3.30 \
-ERTS_VSN        13.1.4
+ERTS_VSN        13.1.5
 
 .include <bsd.port.mk>
