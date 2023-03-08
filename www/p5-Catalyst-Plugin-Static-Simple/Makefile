@@ -2,15 +2,13 @@ COMMENT= 	serving static pages with catalyst
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME=	Catalyst-Plugin-Static-Simple-0.36
+DISTNAME =	Catalyst-Plugin-Static-Simple-0.37
 CATEGORIES=	www
-REVISION=	0
 
 # Perl
 PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/p5-Moose \
-		devel/p5-MooseX-Types \
 		devel/p5-namespace-autoclean \
 		www/p5-Catalyst-Runtime>=5.80008 \
 		mail/p5-MIME-Types>=2.03

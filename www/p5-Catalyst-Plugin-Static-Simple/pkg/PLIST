@@ -1,4 +1,3 @@
-${P5SITE}/Catalyst/Plugin/
 ${P5SITE}/Catalyst/Plugin/Static/
 ${P5SITE}/Catalyst/Plugin/Static/Simple.pm
 @man man/man3p/Catalyst::Plugin::Static::Simple.3p
