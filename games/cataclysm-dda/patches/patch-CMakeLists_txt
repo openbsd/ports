@@ -1,0 +1,12 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -120,7 +120,7 @@ else ()
+ endif ()
+ 
+ # System specific actions
+-if ("${CMAKE_SYSTEM_NAME}" MATCHES "(Linux|FreeBSD|Darwin)")
++if ("${CMAKE_SYSTEM_NAME}" MATCHES "(Linux|FreeBSD|Darwin|OpenBSD)")
+     if (NOT DATA_PREFIX)
+         set(DATA_PREFIX ${CMAKE_INSTALL_PREFIX}/share/cataclysm-dda)
+     endif ()
