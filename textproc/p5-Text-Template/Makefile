@@ -2,7 +2,7 @@ COMMENT=	expand template text with embedded perl
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME =	Text-Template-1.59
+DISTNAME =	Text-Template-1.61
 CATEGORIES=	textproc
 
 # perl
