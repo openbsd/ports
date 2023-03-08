@@ -3,7 +3,6 @@ share/thinkingrock/
 share/thinkingrock/etc/
 share/thinkingrock/etc/tr.clusters
 share/thinkingrock/etc/tr.conf
-@comment share/thinkingrock/platform8/lib/nbexec.orig
 share/thinkingrock/ide10/
 share/thinkingrock/ide10/config/
 share/thinkingrock/ide10/config/Modules/
@@ -90,7 +89,6 @@ share/thinkingrock/platform9/lib/locale/org-openide-modules_fr.jar
 share/thinkingrock/platform9/lib/locale/org-openide-util_fr.jar
 share/thinkingrock/platform9/lib/nbexec
 share/thinkingrock/platform9/lib/nbexec.exe
-share/thinkingrock/platform9/lib/nbexec.orig
 share/thinkingrock/platform9/lib/org-openide-modules.jar
 share/thinkingrock/platform9/lib/org-openide-util.jar
 share/thinkingrock/platform9/modules/

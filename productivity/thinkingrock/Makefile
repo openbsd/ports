@@ -3,7 +3,8 @@ COMMENT=	collecting and processing thoughts according to GTD
 V=		2.2.1
 DISTNAME=	tr-$V
 PKGNAME=	thinkingrock-${V}
-REVISION=	7
+REVISION=	8
+
 CATEGORIES=	productivity
 
 HOMEPAGE=	http://www.trgtd.com.au/
