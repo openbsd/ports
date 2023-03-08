@@ -12,6 +12,9 @@ SHARED_LIBS +=	hwy_test	0.0 # 0.0
 # Apache-2.0
 PERMIT_PACKAGE =	Yes
 
+# C++
+COMPILER =	base-clang ports-gcc
+
 MODULES =	devel/cmake
 
 BUILD_DEPENDS =	devel/gtest
