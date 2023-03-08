@@ -1,5 +1,5 @@
 COMMENT=	VI Editor Like Emacs
-DISTNAME=	vile-9.8w
+DISTNAME=	vile-9.8y
 CATEGORIES=	editors
 HOMEPAGE=	https://invisible-island.net/vile/
 
@@ -25,4 +25,3 @@ MAKE_FILE=	makefile
 NO_TEST=	yes
 
 .include <bsd.port.mk>
-

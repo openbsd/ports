@@ -1,67 +1,56 @@
---- configure.orig	Sat Aug 20 15:48:11 2022
-+++ configure	Thu Aug 25 14:05:32 2022
-@@ -27603,8 +27603,8 @@
+Index: configure
+--- configure.orig
++++ configure
+@@ -27758,8 +27758,8 @@ fi
  		;;
  	(*)
  
--echo "$as_me:27606: checking for crypt function" >&5
+-echo "$as_me:27761: checking for crypt function" >&5
 -echo $ECHO_N "checking for crypt function... $ECHO_C" >&6
-+echo "$as_me:27606: checking for broken_crypt function" >&5
++echo "$as_me:27761: checking for broken_crypt function" >&5
 +echo $ECHO_N "checking for broken_crypt function... $ECHO_C" >&6
  if test "${cf_cv_crypt_func+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
-@@ -27617,7 +27617,7 @@
+@@ -27776,7 +27776,7 @@ $cf_crypt_headers
  int
  main (void)
  {
--crypt()
-+broken_crypt()
+-crypt("","")
++broken_crypt("","")
    ;
    return 0;
  }
-@@ -27649,7 +27649,7 @@
+@@ -27808,7 +27808,7 @@ $cf_crypt_headers
  int
  main (void)
  {
--crypt()
-+broken_crypt()
+-crypt("","")
++broken_crypt("","")
    ;
    return 0;
  }
-@@ -27686,8 +27686,8 @@
+@@ -27845,8 +27845,8 @@ echo "${ECHO_T}$cf_cv_crypt_func" >&6
  if test "$cf_cv_crypt_func" != no ; then
  	cf_save_LIBS="$LIBS"
  	test "$cf_cv_crypt_func" != yes && LIBS="$cf_cv_crypt_func $LIBS"
--echo "$as_me:27689: checking if crypt works" >&5
+-echo "$as_me:27848: checking if crypt works" >&5
 -echo $ECHO_N "checking if crypt works... $ECHO_C" >&6
-+echo "$as_me:27689: checking if broken_crypt works" >&5
++echo "$as_me:27848: checking if broken_crypt works" >&5
 +echo $ECHO_N "checking if broken_crypt works... $ECHO_C" >&6
  if test "${cf_cv_crypt_works+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
-@@ -27701,9 +27701,9 @@
- #include "confdefs.h"
+@@ -27861,7 +27861,7 @@ else
+ $cf_crypt_headers
  
- #include <string.h>
--extern char *crypt();
-+extern char *broken_crypt();
  int main(void) {
 -	char *s = crypt("vi-crypt", "vi");
 +	char *s = broken_crypt("vi-crypt", "vi");
- 	${cf_cv_main_return:-return}(strcmp("vi6r2tczBYLvM", s) != 0);
+ 	${cf_cv_main_return:-return}(strcmp("vi6r2tczBYLvM", s ? s : "") != 0);
  }
  
-@@ -28114,7 +28114,7 @@
- _nc_free_tinfo \
- access \
- alarm \
--crypt \
-+broken_crypt \
- getcwd \
- getegid \
- geteuid \
-@@ -32763,7 +32763,7 @@
+@@ -32925,7 +32925,7 @@ alarm \
  atoi \
  chdir \
  close \
