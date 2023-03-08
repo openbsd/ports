@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1511 2023/03/05 16:02:24 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1512 2023/03/08 10:33:31 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1804,11 +1804,11 @@ setup_obsolete_reason(
 	3 => 'sk1',
 	0 => 'pgadmin3',
 	3 => 'rapidsvn',
-	0 => 'x11/chbg',
-	3 => 'comms/wammu',
-	3 => 'x11/winwrangler',
-	3 => 'x11/gtkhotkey',
-	3 => 'devel/libwnck',
+	0 => 'chbg',
+	3 => 'wammu',
+	3 => 'winwrangler',
+	3 => 'gtkhotkey',
+	3 => 'libwnck',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
