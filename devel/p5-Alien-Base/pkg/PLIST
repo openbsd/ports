@@ -17,12 +17,14 @@ ${P5SITE}/Alien/Build/Log/Abbreviate.pm
 ${P5SITE}/Alien/Build/Log/Default.pm
 ${P5SITE}/Alien/Build/MM.pm
 ${P5SITE}/Alien/Build/Manual/
+${P5SITE}/Alien/Build/Manual.pod
 ${P5SITE}/Alien/Build/Manual/Alien.pod
 ${P5SITE}/Alien/Build/Manual/AlienAuthor.pod
 ${P5SITE}/Alien/Build/Manual/AlienUser.pod
 ${P5SITE}/Alien/Build/Manual/Contributing.pod
 ${P5SITE}/Alien/Build/Manual/FAQ.pod
 ${P5SITE}/Alien/Build/Manual/PluginAuthor.pod
+${P5SITE}/Alien/Build/Manual/Security.pod
 ${P5SITE}/Alien/Build/Plugin/
 ${P5SITE}/Alien/Build/Plugin.pm
 ${P5SITE}/Alien/Build/Plugin/Build/
@@ -49,6 +51,11 @@ ${P5SITE}/Alien/Build/Plugin/Decode/DirListing.pm
 ${P5SITE}/Alien/Build/Plugin/Decode/DirListingFtpcopy.pm
 ${P5SITE}/Alien/Build/Plugin/Decode/HTML.pm
 ${P5SITE}/Alien/Build/Plugin/Decode/Mojo.pm
+${P5SITE}/Alien/Build/Plugin/Digest/
+${P5SITE}/Alien/Build/Plugin/Digest.pod
+${P5SITE}/Alien/Build/Plugin/Digest/Negotiate.pm
+${P5SITE}/Alien/Build/Plugin/Digest/SHA.pm
+${P5SITE}/Alien/Build/Plugin/Digest/SHAPP.pm
 ${P5SITE}/Alien/Build/Plugin/Download/
 ${P5SITE}/Alien/Build/Plugin/Download.pod
 ${P5SITE}/Alien/Build/Plugin/Download/Negotiate.pm
@@ -58,6 +65,7 @@ ${P5SITE}/Alien/Build/Plugin/Extract/ArchiveTar.pm
 ${P5SITE}/Alien/Build/Plugin/Extract/ArchiveZip.pm
 ${P5SITE}/Alien/Build/Plugin/Extract/CommandLine.pm
 ${P5SITE}/Alien/Build/Plugin/Extract/Directory.pm
+${P5SITE}/Alien/Build/Plugin/Extract/File.pm
 ${P5SITE}/Alien/Build/Plugin/Extract/Negotiate.pm
 ${P5SITE}/Alien/Build/Plugin/Fetch/
 ${P5SITE}/Alien/Build/Plugin/Fetch.pod
@@ -69,8 +77,10 @@ ${P5SITE}/Alien/Build/Plugin/Fetch/LocalDir.pm
 ${P5SITE}/Alien/Build/Plugin/Fetch/NetFTP.pm
 ${P5SITE}/Alien/Build/Plugin/Fetch/Wget.pm
 ${P5SITE}/Alien/Build/Plugin/Gather/
+${P5SITE}/Alien/Build/Plugin/Gather.pod
 ${P5SITE}/Alien/Build/Plugin/Gather/IsolateDynamic.pm
 ${P5SITE}/Alien/Build/Plugin/PkgConfig/
+${P5SITE}/Alien/Build/Plugin/PkgConfig.pod
 ${P5SITE}/Alien/Build/Plugin/PkgConfig/CommandLine.pm
 ${P5SITE}/Alien/Build/Plugin/PkgConfig/LibPkgConf.pm
 ${P5SITE}/Alien/Build/Plugin/PkgConfig/MakeStatic.pm
@@ -87,6 +97,7 @@ ${P5SITE}/Alien/Build/Plugin/Probe/CBuilder.pm
 ${P5SITE}/Alien/Build/Plugin/Probe/CommandLine.pm
 ${P5SITE}/Alien/Build/Plugin/Probe/Vcpkg.pm
 ${P5SITE}/Alien/Build/Plugin/Test/
+${P5SITE}/Alien/Build/Plugin/Test.pod
 ${P5SITE}/Alien/Build/Plugin/Test/Mock.pm
 ${P5SITE}/Alien/Build/Temp.pm
 ${P5SITE}/Alien/Build/Util.pm
@@ -118,12 +129,14 @@ ${P5SITE}/alienfile.pm
 @man man/man3p/Alien::Build::Log::Abbreviate.3p
 @man man/man3p/Alien::Build::Log::Default.3p
 @man man/man3p/Alien::Build::MM.3p
+@man man/man3p/Alien::Build::Manual.3p
 @man man/man3p/Alien::Build::Manual::Alien.3p
 @man man/man3p/Alien::Build::Manual::AlienAuthor.3p
 @man man/man3p/Alien::Build::Manual::AlienUser.3p
 @man man/man3p/Alien::Build::Manual::Contributing.3p
 @man man/man3p/Alien::Build::Manual::FAQ.3p
 @man man/man3p/Alien::Build::Manual::PluginAuthor.3p
+@man man/man3p/Alien::Build::Manual::Security.3p
 @man man/man3p/Alien::Build::Plugin.3p
 @man man/man3p/Alien::Build::Plugin::Build.3p
 @man man/man3p/Alien::Build::Plugin::Build::Autoconf.3p
@@ -146,6 +159,10 @@ ${P5SITE}/alienfile.pm
 @man man/man3p/Alien::Build::Plugin::Decode::DirListingFtpcopy.3p
 @man man/man3p/Alien::Build::Plugin::Decode::HTML.3p
 @man man/man3p/Alien::Build::Plugin::Decode::Mojo.3p
+@man man/man3p/Alien::Build::Plugin::Digest.3p
+@man man/man3p/Alien::Build::Plugin::Digest::Negotiate.3p
+@man man/man3p/Alien::Build::Plugin::Digest::SHA.3p
+@man man/man3p/Alien::Build::Plugin::Digest::SHAPP.3p
 @man man/man3p/Alien::Build::Plugin::Download.3p
 @man man/man3p/Alien::Build::Plugin::Download::Negotiate.3p
 @man man/man3p/Alien::Build::Plugin::Extract.3p
@@ -153,6 +170,7 @@ ${P5SITE}/alienfile.pm
 @man man/man3p/Alien::Build::Plugin::Extract::ArchiveZip.3p
 @man man/man3p/Alien::Build::Plugin::Extract::CommandLine.3p
 @man man/man3p/Alien::Build::Plugin::Extract::Directory.3p
+@man man/man3p/Alien::Build::Plugin::Extract::File.3p
 @man man/man3p/Alien::Build::Plugin::Extract::Negotiate.3p
 @man man/man3p/Alien::Build::Plugin::Fetch.3p
 @man man/man3p/Alien::Build::Plugin::Fetch::CurlCommand.3p
@@ -162,7 +180,9 @@ ${P5SITE}/alienfile.pm
 @man man/man3p/Alien::Build::Plugin::Fetch::LocalDir.3p
 @man man/man3p/Alien::Build::Plugin::Fetch::NetFTP.3p
 @man man/man3p/Alien::Build::Plugin::Fetch::Wget.3p
+@man man/man3p/Alien::Build::Plugin::Gather.3p
 @man man/man3p/Alien::Build::Plugin::Gather::IsolateDynamic.3p
+@man man/man3p/Alien::Build::Plugin::PkgConfig.3p
 @man man/man3p/Alien::Build::Plugin::PkgConfig::CommandLine.3p
 @man man/man3p/Alien::Build::Plugin::PkgConfig::LibPkgConf.3p
 @man man/man3p/Alien::Build::Plugin::PkgConfig::MakeStatic.3p
@@ -176,6 +196,7 @@ ${P5SITE}/alienfile.pm
 @man man/man3p/Alien::Build::Plugin::Probe::CBuilder.3p
 @man man/man3p/Alien::Build::Plugin::Probe::CommandLine.3p
 @man man/man3p/Alien::Build::Plugin::Probe::Vcpkg.3p
+@man man/man3p/Alien::Build::Plugin::Test.3p
 @man man/man3p/Alien::Build::Plugin::Test::Mock.3p
 @man man/man3p/Alien::Build::Temp.3p
 @man man/man3p/Alien::Build::Util.3p

@@ -3,7 +3,7 @@ COMMENT =	base classes for Alien:: modules
 MODULES =	cpan
 PKG_ARCH =	*
 
-V =		2.53
+V =		2.78
 
 PKGNAME =	p5-Alien-Base-${V}
 DISTNAME =	Alien-Build-${V}
