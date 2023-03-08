@@ -1,10 +1,9 @@
 COMMENT =	rewrite strings based on a set of known prefixes
 
-DISTNAME =	String-RewritePrefix-0.008
+DISTNAME =	String-RewritePrefix-0.009
 CATEGORIES =	textproc
 MODULES =	cpan
 PKG_ARCH =	*
-REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =		Yes
