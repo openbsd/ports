@@ -67,10 +67,13 @@ additional packages to be installed:
 Advanced topic: Heavy load systems
 ==================================
 If problems are seen with excessive load or i/o, it is possible to
-configure Smokeping to use rrdcached instead. Read through the whole
-section before starting; this is *not* needed for a typical setup.
+configure Smokeping to use rrdcached instead. This is not needed for
+a typical setup but will typically reduce the amount of data that
+needs to be written to disk (the RRD files are flushed periodically
+according to the command-line flags, allowing some writes to be
+aggregated).
 
-To do this, group permissions should be set to allow Smokeping to
+To use this, group permissions should be set to allow Smokeping to
 access the rrdcached socket, and to allow rrdcached to access
 Smokeping's files, e.g.:
 
@@ -89,13 +92,26 @@ The rrdcached daemon must be running:
 	    -p /var/run/rrd/rrdcached.pid
 	# rcctl restart rrdcached
 
-Smokeping must be told to use the daemon. This is done by setting an
-environment variable; add this to /etc/login.conf:
+The Smokeping daemon must be told to use rrdcached when writing data.
+This is done by setting an environment variable; add this to /etc/login.conf:
 
 smokeping:setenv=RRDCACHED_ADDRESS=unix\c/var/run/rrd/rrdcached.sock:tc=daemon
 
-The Smokeping FastCGI script must also be told to use the daemon.
-This is done by setting the variable in your web server. For nginx:
+Then restart smokeping. Use -d to show more information in case
+of errors at startup.
+
+	# rcctl -d restart smokeping
+
+You can also have Smokeping's FastCGI script use rrdcached when accessing
+data to display. This will be needed in order that it displays the most
+up-to-date information (otherwise it will only see updates that have been
+flushed to disk) and *may* improve performance, however it can also
+result in too much kernel contention (the OpenBSD kernel does not have
+great SMP support for disk access yet) so can actually slow down display.
+Test to see what's best for your system.
+
+To do this, a FastCGI parameter needs to be passed across from your
+web server. For nginx:
 
 fastcgi_param  RRDCACHED_ADDRESS unix:/var/run/rrd/rrdcached.sock;
 
@@ -103,8 +119,4 @@ Or the httpd(8) in OpenBSD base:
 
 param RRDCACHED_ADDRESS "unix:/var/www/run/rrd/rrdcached.sock"
 
-Then restart smokeping and smokeping_fcgi. Use -d to show more information
-in case of errors at startup.
-
-	# rcctl -d restart smokeping
-	# rcctl -d restart smokeping_fcgi
+And reload the web server configuration.
