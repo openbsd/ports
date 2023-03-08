@@ -1,5 +1,5 @@
 # Do not forget to sync meta/audacious
-VERSION =	4.2
+VERSION =	4.3
 
 CATEGORIES =	audio multimedia
 

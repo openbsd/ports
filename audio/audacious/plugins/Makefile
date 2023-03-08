@@ -9,8 +9,9 @@ WANTLIB += ${COMPILER_LIBCXX} FLAC GL Qt5Core Qt5Gui Qt5OpenGL
 WANTLIB += Qt5Widgets Qt5X11Extras X11 audcore audqt audtag avcodec
 WANTLIB += avformat avutil cddb cdio cdio_cdda cue curl faad gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 iconv intl m mms modplug
-WANTLIB += mp3lame mpg123 neon notify ogg samplerate sndfile sndio
-WANTLIB += soxr vorbis vorbisenc vorbisfile wavpack xml2 z
+WANTLIB += mp3lame mpg123 neon notify ogg opus opusfile samplerate
+WANTLIB += sndfile sndio soxr vorbis vorbisenc vorbisfile wavpack
+WANTLIB += xml2 z
 
 # needed for the gio plugin
 RUN_DEPENDS =		x11/gnome/gvfs
@@ -27,6 +28,8 @@ LIB_DEPENDS =		audio/audacious/player>=${VERSION} \
 			audio/libsoxr \
 			audio/libvorbis \
 			audio/mpg123 \
+			audio/opus \
+			audio/opusfile \
 			audio/wavpack \
 			devel/libnotify>=0.7.2 \
 			graphics/ffmpeg \
@@ -41,7 +44,6 @@ CONFIGURE_ARGS =	--disable-alsa \
 			--disable-bs2b \
 			--disable-jack \
 			--disable-lirc \
-			--disable-oss4 \
 			--disable-pulse \
 			--disable-qtaudio \
 			--disable-sdlout \

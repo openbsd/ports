@@ -1,9 +1,0 @@
-Index: src/libaudgui/Makefile
---- src/libaudgui/Makefile.orig
-+++ src/libaudgui/Makefile
-@@ -1,4 +1,4 @@
--SHARED_LIB = ${LIB_PREFIX}audgui${LIB_SUFFIX}
-+SHARED_LIB = ${LIB_PREFIX}audgui.so.${LIBaudgui_VERSION}
- LIB_MAJOR = 5
- LIB_MINOR = 1
- 
