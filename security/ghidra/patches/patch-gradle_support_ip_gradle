@@ -1,12 +1,12 @@
-Explicitly exclude *.orig and *.beforesubst files left behind by our patch to
-prevent getIpForModule() from breaking like this:
+Explicitly exclude *.orig.port and *.beforesubst files left behind by our patch
+to prevent getIpForModule() from breaking like this:
 
 * Where:
 Script '/usr/ports/pobj/ghidra-9.0.4/ghidra-Ghidra_9.0.4_build/gradleScripts/ip.gradle' line: 131
 
 * What went wrong:
 Execution failed for task ':CabExtract:ip'.
-> No IP found for /usr/ports/pobj/ghidra-9.0.4/ghidra-Ghidra_9.0.4_build/GPL/CabExtract/build.gradle.orig in module: /usr/ports/pobj/ghidra-9.0.4/ghidra-Ghidra_9.0.4_build/GPL/CabExtract. Expression: (ip != null). Values: ip = null
+> No IP found for /usr/ports/pobj/ghidra-9.0.4/ghidra-Ghidra_9.0.4_build/GPL/CabExtract/build.gradle.orig.port in module: /usr/ports/pobj/ghidra-9.0.4/ghidra-Ghidra_9.0.4_build/GPL/CabExtract. Expression: (ip != null). Values: ip = null
 
 Index: gradle/support/ip.gradle
 --- gradle/support/ip.gradle.orig
@@ -15,7 +15,7 @@ Index: gradle/support/ip.gradle
  		exclude "**/data/build.xml" // language build file (generated for dev only)
  		exclude "**/.vs/**"
  		exclude "**/*.vcxproj.user"
-+		exclude "**/*.orig"
++		exclude "**/*.orig.port"
 +		exclude "**/*.beforesubst"
  	}
  	tree.each { file ->
