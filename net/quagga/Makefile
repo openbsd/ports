@@ -48,13 +48,6 @@ WANTLIB += crypto kvm netsnmp netsnmpagent netsnmpmibs perl
 CONFIGURE_ARGS+= --enable-snmp=agentx
 .endif
 
-# XXX temporary check to make sure this fails on build machines that aren't
-# updated yet
-pre-configure:
-	@if ! grep -q ip_mreqn /usr/include/netinet/in.h; then echo; \
-	    echo "*** Building quagge requires newer base (struct ip_mreqn in netinet/in.h)"; \
-	    echo; false; fi
-
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/quagga
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/quagga
