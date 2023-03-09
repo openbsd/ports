@@ -1,4 +1,6 @@
-BROKEN = fails at runtime
+## tb: 20230309: uncommented to facilitate testing
+# BROKEN = fails at runtime
+#
 # Errors like these are reported at startup:
 # [065 12:20:33.981266] [glfw error 65544]: OpenGL version string retrieval is broken
 # [065 12:20:33.982391] Failed to create GLFW temp window! This usually happens because of old/broken OpenGL drivers. kitty requires working OpenGL 3.3 drivers.
