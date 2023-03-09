@@ -100,9 +100,10 @@ then
 		if [[ -n $ports ]]
 		then
 			printf '===>\t%s\n' "$match"
+			{
 			printf 'BASE_PKGPATH\tVERSION\tNEW\tHOMEPAGE/COMMENT\n'
-			printf '%s' "$ports" |
-				column -tc4 -s'	'
+			printf '%s' "$ports"
+			} |	column -tc4 -s'	'
 			printf '\n'
 		fi
 	done
