@@ -2,9 +2,8 @@ COMMENT =	verify credit card pins
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Business-CreditCard-0.36
+DISTNAME =	Business-CreditCard-0.39
 CATEGORIES =	misc
-REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =	Yes
