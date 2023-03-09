@@ -1,0 +1,12 @@
+Index: common/openssl-compat.c
+--- common/openssl-compat.c.orig
++++ common/openssl-compat.c
+@@ -11,7 +11,7 @@
+ 
+ int make_iso_compilers_happy;
+ 
+-#if (OPENSSL_VERSION_NUMBER < 0x10100000L) || defined(LIBRESSL_VERSION_NUMBER)
++#if (OPENSSL_VERSION_NUMBER < 0x10100000L)
+ 
+ #include <string.h>
+ #include <limits.h>

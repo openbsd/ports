@@ -1,0 +1,12 @@
+Index: ykcs11/tests/CMakeLists.txt
+--- ykcs11/tests/CMakeLists.txt.orig
++++ ykcs11/tests/CMakeLists.txt
+@@ -50,7 +50,7 @@ if(NOT DEFINED SKIP_TESTS)
+     )
+ 
+     add_executable(test_ykcs11 ${SOURCE_YKCS11_TESTS})
+-    target_link_libraries(test_ykcs11 ykcs11_shared ${LIBCRYPTO_LDFLAGS})
++    target_link_libraries(test_ykcs11 ykcs11_shared ${LIBCRYPTO_LDFLAGS} pthread)
+ 
+     add_test(
+         NAME test_ykcs11

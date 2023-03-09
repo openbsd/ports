@@ -1,0 +1,20 @@
+Index: ykcs11/utils.c
+--- ykcs11/utils.c.orig
++++ ykcs11/utils.c
+@@ -88,11 +88,16 @@ CK_RV native_create_mutex(void **mutex) {
+     free(mtx);
+     return CKR_CANT_LOCK;
+   }
++#ifndef __OpenBSD__
++  /* no process-shared mutexes on OoenBSD; this was added in a "Enable
++   * forked processes to use the library" commit which doesn't seem to
++   * be needed for yubico-piv-tool */
+   if(pthread_mutexattr_setpshared(&mattr, PTHREAD_PROCESS_SHARED)) {
+     pthread_mutexattr_destroy(&mattr);
+     free(mtx);
+     return CKR_CANT_LOCK;
+   }
++#endif
+   if(pthread_mutex_init(mtx, &mattr)) {
+     pthread_mutexattr_destroy(&mattr);
+     free(mtx);
