@@ -5,7 +5,7 @@ VERSION =		1.4.287
 DISTNAME =		mumble-${VERSION}
 PKGNAME-server =	murmur-${VERSION}
 REVISION-main =		2
-REVISION-server =	1
+REVISION-server =	2
 
 CATEGORIES =		audio net
 
@@ -109,5 +109,7 @@ post-install:
 	# "[DRAFT] Rename "murmur" to "mumble-server" across the project"
 	# https://github.com/mumble-voip/mumble/pull/4695
 	ln -f ${PREFIX}/bin/{mumble-server,murmurd}
+	# remove manual for uninstalled linux specific wrapper
+	rm -f ${PREFIX}/man/man1/mumble-server-user-wrapper.1
 
 .include <bsd.port.mk>

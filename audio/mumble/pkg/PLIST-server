@@ -3,7 +3,6 @@
 @rcscript ${RCDIR}/murmurd
 @bin bin/mumble-server
 @bin bin/murmurd
-@man man/man1/mumble-server-user-wrapper.1
 @man man/man1/mumble-server.1
 share/examples/murmur/
 share/examples/murmur/murmur.ini
