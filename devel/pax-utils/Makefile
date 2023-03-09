@@ -13,6 +13,9 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 WANTLIB +=	c
 
 MASTER_SITES =	https://dev.gentoo.org/~sam/distfiles/app-misc/pax-utils/
