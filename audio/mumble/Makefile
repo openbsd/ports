@@ -4,7 +4,7 @@ COMMENT-server =	low-latency voice chat server
 VERSION =		1.4.287
 DISTNAME =		mumble-${VERSION}
 PKGNAME-server =	murmur-${VERSION}
-REVISION-main =		1
+REVISION-main =		2
 REVISION-server =	1
 
 CATEGORIES =		audio net
