@@ -30,6 +30,9 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 WANTLIB += c gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gusb intl
 WANTLIB += lcms2 m polkit-gobject-1 sqlite3
 
