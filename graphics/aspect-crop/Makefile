@@ -1,3 +1,5 @@
+BROKEN-sparc64 = Project ERROR: failed to parse default search paths from compiler output
+
 COMMENT =	crop tool for xwallpaper(1)
 CATEGORIES = 	graphics
 MAINTAINER = 	Marc Espie <espie@openbsd.org>
