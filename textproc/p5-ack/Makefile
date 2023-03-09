@@ -1,9 +1,9 @@
 COMMENT=	grep like tool, aimed at programmers
 
-PORTROACH=	limit:v?[3-9].*
+PORTROACH=	limit:[3-9].*
 MODULES=	cpan
 PKG_ARCH=	*
-V=		3.6.0
+V=		3.7.0
 DISTNAME=	ack-v$V
 PKGNAME=	p5-ack-$V
 CPAN_AUTHOR=	PETDANCE
