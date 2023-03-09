@@ -1,0 +1,17 @@
+$OpenBSD: patch-libraries_base_configure,v 1.1.1.1 2023/03/09 18:59:42 kili Exp $
+
+Unbreaks iconv check as explained in:
+https://gitlab.haskell.org/ghc/ghc/-/commit/544414ba604b13e0992ad87e90b8bdf45c43011c#3bae3b74ae866493bd6b79df16cb638a5f2e0f87_106_106
+
+Index: libraries/base/configure
+--- libraries/base/configure.orig
++++ libraries/base/configure
+@@ -4934,7 +4934,7 @@ esac
+ # Check whether --with-iconv-includes was given.
+ if test ${with_iconv_includes+y}
+ then :
+-  withval=$with_iconv_includes; ICONV_INCLUDE_DIRS=$withval
++  withval=$with_iconv_includes; ICONV_INCLUDE_DIRS=$withval; CPPFLAGS="-I$withval $CPPFLAGS"
+ else $as_nop
+   ICONV_INCLUDE_DIRS=
+ fi

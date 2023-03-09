@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2023/03/09 18:59:42 kili Exp $
+Index: configure
+--- configure.orig
++++ configure
+@@ -9979,7 +9979,7 @@ else $as_nop
+  if test "$Unregisterised" = "YES"; then
+    # These used to be conditioned on gcc version but we no longer support
+    # GCC versions which lack support for these flags
+-   fp_cv_gcc_extra_opts="-fwrapv -fno-builtin"
++   fp_cv_gcc_extra_opts="-fno-pie -fwrapv -fno-builtin"
+  fi
+ 
+ fi

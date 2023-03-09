@@ -1,0 +1,23 @@
+Fix the bindist-list (for building the bootstrapper); without this,
+gtar creates an archive which our tar can't extract.
+
+Index: ghc.mk
+--- ghc.mk.orig
++++ ghc.mk
+@@ -1045,7 +1045,6 @@ $(eval $(call bindist-list,.,\
+     $(includes_1_H_VERSION) \
+     $(includes_DERIVEDCONSTANTS) \
+     $(includes_GHCCONSTANTS) \
+-    $(libffi_HEADERS) \
+     $(INSTALL_LIBEXECS) \
+     $(INSTALL_LIBEXEC_SCRIPTS) \
+     $(INSTALL_BINS) \
+@@ -1098,6 +1097,8 @@ unix-binary-dist-prep: $(includes_1_H_CONFIG) $(includ
+ 	echo "CrossCompiling     = $(CrossCompiling)"     >> $(BIN_DIST_MK)
+ 	cd $(BIN_DIST_PREP_DIR) && autoreconf
+ 	$(call removeFiles,$(BIN_DIST_PREP_TAR))
++	sed 's@/\./@/@g' bindist-list | sort -u > bindist-list.new
++	mv bindist-list.new bindist-list
+ # h means "follow symlinks", e.g. if aclocal.m4 is a symlink to a source
+ # tree then we want to include the real file, not a symlink to it
+ 	sort bindist-list | uniq > bindist-list.uniq
