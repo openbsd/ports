@@ -41,7 +41,7 @@ share/locale/sv_SE/LC_MESSAGES/xmoto.mo
 share/locale/tr/LC_MESSAGES/xmoto.mo
 share/locale/zh_TW/LC_MESSAGES/xmoto.mo
 share/pixmaps/
-share/pixmaps/xmoto.xpm
+share/pixmaps/xmoto.png
 share/xmoto/
 share/xmoto/Textures/
 share/xmoto/Textures/Fonts/
@@ -57,4 +57,5 @@ share/xmoto/Textures/Musics/ridealong.ogg
 share/xmoto/Textures/Musics/speeditup.ogg
 share/xmoto/xmoto.bin
 @tag update-desktop-database
-@comment share/xmoto/xmoto_icone_x.ico
+share/xmoto/xmoto.bmp
+@comment share/xmoto/xmoto.ico

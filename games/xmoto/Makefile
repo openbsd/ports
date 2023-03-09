@@ -2,7 +2,7 @@ COMMENT =	challenging 2D motocross platform game
 
 GH_ACCOUNT = 	xmoto
 GH_PROJECT = 	xmoto
-GH_TAGNAME = 	0.6.1
+GH_TAGNAME = 	v0.6.2
 
 CATEGORIES =	games
 
@@ -13,9 +13,9 @@ MAINTAINER =	Kirill Bychkov <kirby@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} ${MODLUA_WANTLIB} GL GLU SDL SDL_mixer
-WANTLIB += SDL_net SDL_ttf bz2 c curl intl jpeg m ode
-WANTLIB += png sqlite3 xdg-basedir xml2 z
+WANTLIB += ${COMPILER_LIBCXX} ${MODLUA_WANTLIB} GL GLU SDL2
+WANTLIB += SDL2_mixer SDL2_net SDL2_ttf bz2 c curl intl jpeg
+WANTLIB += m ode png sqlite3 xdg-basedir xml2 z
 
 # C++11
 COMPILER =	base-clang ports-gcc
@@ -25,9 +25,9 @@ MODLUA_SA=	Yes
 LIB_DEPENDS =	archivers/bzip2 \
 		databases/sqlite3 \
 		devel/ode \
-		devel/sdl-mixer \
-		devel/sdl-net \
-		devel/sdl-ttf \
+		devel/sdl2-mixer \
+		devel/sdl2-net \
+		devel/sdl2-ttf \
 		graphics/jpeg \
 		graphics/png \
 		net/curl \
