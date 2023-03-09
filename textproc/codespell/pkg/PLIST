@@ -1,6 +1,4 @@
 bin/codespell
-lib/python${MODPY_VERSION}/site-packages/bin/
-lib/python${MODPY_VERSION}/site-packages/bin/codespell
 lib/python${MODPY_VERSION}/site-packages/codespell-${MODPY_EGG_VERSION}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/codespell-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/codespell-${MODPY_EGG_VERSION}.dist-info/RECORD
@@ -34,6 +32,7 @@ lib/python${MODPY_VERSION}/site-packages/codespell_lib/data/dictionary_names.txt
 lib/python${MODPY_VERSION}/site-packages/codespell_lib/data/dictionary_rare.txt
 lib/python${MODPY_VERSION}/site-packages/codespell_lib/data/dictionary_usage.txt
 lib/python${MODPY_VERSION}/site-packages/codespell_lib/data/linux-kernel.exclude
+lib/python${MODPY_VERSION}/site-packages/codespell_lib/py.typed
 lib/python${MODPY_VERSION}/site-packages/codespell_lib/tests/
 lib/python${MODPY_VERSION}/site-packages/codespell_lib/tests/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/codespell_lib/tests/${MODPY_PYCACHE}/
