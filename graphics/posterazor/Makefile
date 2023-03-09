@@ -1,3 +1,5 @@
+BROKEN-sparc64 = Project ERROR: failed to parse default search paths from compiler output
+
 COMMENT =	split large images into smaller ones to assemble posters
 
 GH_ACCOUNT = 	aportale
