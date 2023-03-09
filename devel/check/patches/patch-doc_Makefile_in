@@ -1,5 +1,6 @@
---- doc/Makefile.in.orig	Sun Aug  2 21:31:55 2015
-+++ doc/Makefile.in	Mon Aug 24 08:23:07 2015
+Index: doc/Makefile.in
+--- doc/Makefile.in.orig
++++ doc/Makefile.in
 @@ -309,7 +309,7 @@ build_vendor = @build_vendor@
  builddir = @builddir@
  datadir = @datadir@
@@ -9,7 +10,7 @@
  dvidir = @dvidir@
  exec_prefix = @exec_prefix@
  host = @host@
-@@ -946,47 +946,47 @@ $(srcdir)/check.texi: money.1-2.h.diff \
+@@ -947,47 +947,47 @@ $(srcdir)/check.texi: money.1-2.h.diff \
  # diff returns 1 if there is a difference, but we don't want make to
  # think that means there is an error
  money.1-2.h.diff: $(eg_src)/money.1.h $(eg_src)/money.2.h
