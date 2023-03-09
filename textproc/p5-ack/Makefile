@@ -1,6 +1,6 @@
 COMMENT=	grep like tool, aimed at programmers
 
-PORTROACH=	limit:[3-9].*
+PORTROACH=	site:https://github.com/beyondgrep/ack3/archive/
 MODULES=	cpan
 PKG_ARCH=	*
 V=		3.7.0
