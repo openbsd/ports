@@ -5,7 +5,7 @@ NOT_FOR_ARCHS =		${BE_ARCHS} i386
 
 COMMENT =		Telegram Desktop messenger
 PORTROACH =		limit:-full$$
-V =			4.6.7
+V =			4.6.8
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
@@ -31,7 +31,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt6Core Qt6Core5Compat Qt6DBus Qt6Gui Qt6Network
 WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6Svg Qt6Widgets absl_strings
-WANTLIB += avcodec avformat avutil c crypto dispatch gio-2.0 giomm-2.68
+WANTLIB += avcodec avfilter avformat avutil c crypto dispatch gio-2.0 giomm-2.68
 WANTLIB += glib-2.0 glibmm-2.68 gobject-2.0 hunspell-1.7 jpeg lz4
 WANTLIB += m openal opus protobuf-lite qrcodegencpp rnnoise sigc-3.0
 WANTLIB += swresample swscale tg_owt xcb xcb-keysyms xcb-record xcb-screensaver
