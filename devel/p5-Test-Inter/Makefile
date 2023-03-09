@@ -1,8 +1,7 @@
 COMMENT =		framework for more readable interactive test scripts
 
-DISTNAME =		Test-Inter-1.09
+DISTNAME =		Test-Inter-1.10
 CATEGORIES =		devel
-REVISION =		0
 
 # perl
 PERMIT_PACKAGE =	Yes
@@ -10,9 +9,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		cpan
 PKG_ARCH =		*
 
-TEST_DEPENDS =	devel/p5-File-Find-Rule \
-		devel/p5-Test-Pod>=1.00 \
-		devel/p5-Test-Pod-Coverage>=1.00
+TEST_DEPENDS =	devel/p5-File-Find-Rule 
 
 TEST_ENV =	RELEASE_TESTING=1
 
