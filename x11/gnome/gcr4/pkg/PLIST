@@ -733,6 +733,9 @@ share/doc/gcr-4/type_func.Parsed.unref.html
 share/doc/gcr-4/type_func.Pkcs11Certificate.lookup_issuer.html
 share/doc/gcr-4/type_func.Pkcs11Certificate.lookup_issuer_async.html
 share/doc/gcr-4/type_func.Pkcs11Certificate.lookup_issuer_finish.html
+share/doc/gcr-4/type_func.Pkcs11Certificate.new_from_uri.html
+share/doc/gcr-4/type_func.Pkcs11Certificate.new_from_uri_async.html
+share/doc/gcr-4/type_func.Pkcs11Certificate.new_from_uri_finish.html
 share/doc/gcr-4/type_func.SshAskpass.child_setup.html
 share/doc/gcr-4/type_func.SystemPrompt.error_get_domain.html
 share/doc/gcr-4/type_func.SystemPrompt.open.html
@@ -803,6 +806,8 @@ share/locale/hi/LC_MESSAGES/gcr-4.mo
 share/locale/hr/LC_MESSAGES/gcr-4.mo
 share/locale/hu/LC_MESSAGES/gcr-4.mo
 share/locale/id/LC_MESSAGES/gcr-4.mo
+share/locale/ie/LC_MESSAGES/gcr-4.mo
+share/locale/is/LC_MESSAGES/gcr-4.mo
 share/locale/it/LC_MESSAGES/gcr-4.mo
 share/locale/ja/LC_MESSAGES/gcr-4.mo
 share/locale/ka/LC_MESSAGES/gcr-4.mo
