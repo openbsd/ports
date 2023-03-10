@@ -1,6 +1,6 @@
 COMMENT =	charset Informations for MIME
 
-DISTNAME =	MIME-Charset-1.013
+DISTNAME =	MIME-Charset-1.013.1
 CATEGORIES =	mail
 
 # Perl
