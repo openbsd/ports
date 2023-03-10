@@ -1,6 +1,6 @@
 COMMENT =		accurately serialize a data structure as Perl code
 
-DISTNAME =		Data-Dump-Streamer-2.41
+DISTNAME =		Data-Dump-Streamer-2.42
 CATEGORIES =		devel
 
 MODULES =		cpan
