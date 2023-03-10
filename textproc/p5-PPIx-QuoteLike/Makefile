@@ -1,6 +1,6 @@
 COMMENT =	parse Perl string literals and string-literal-like things
 
-DISTNAME =	PPIx-QuoteLike-0.022
+DISTNAME =	PPIx-QuoteLike-0.023
 
 CATEGORIES =	textproc
 
