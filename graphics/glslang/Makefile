@@ -5,6 +5,7 @@ COMMENT =	reference front-end for GLSL and ESSL
 GH_TAGNAME =	12.0.0
 GH_ACCOUNT =	KhronosGroup
 GH_PROJECT =	glslang
+REVISION =	0
 
 CATEGORIES =	devel graphics
 
@@ -24,12 +25,9 @@ MODULES =	devel/cmake \
 TEST_DEPENDS =	graphics/spirv-tools \
 		shells/bash
 
-SUBST_VARS +=	WRKBUILD
-
-post-configure:
-	${SUBST_CMD} ${WRKSRC}/Test/runtests
-
 do-test:
-	cd ${WRKSRC}/Test; bash runtests
+	cd ${WRKSRC}/Test; exec ./runtests localResults \
+	    ${WRKBUILD}/StandAlone/glslangValidator \
+	    ${WRKBUILD}/StandAlone/spirv-remap
 
 .include <bsd.port.mk>

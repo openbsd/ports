@@ -2,6 +2,7 @@ COMMENT =	Vulkan Validation Layers
 
 V =		1.3.239.0
 PKGNAME =	vulkan-validation-layers-${V}
+REVISION =	0
 GH_TAGNAME =	sdk-${V}
 GH_ACCOUNT =	KhronosGroup
 GH_PROJECT =	Vulkan-ValidationLayers
