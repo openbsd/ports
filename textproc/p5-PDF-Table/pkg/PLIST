@@ -1,7 +1,6 @@
 ${P5SITE}/PDF/Table/
 ${P5SITE}/PDF/Table.pm
+${P5SITE}/PDF/Table.pod
 ${P5SITE}/PDF/Table/ColumnWidth.pm
 ${P5SITE}/PDF/Table/Settings.pm
-${P5SITE}/PDF/Table/Table.pod
 @man man/man3p/PDF::Table.3p
-@man man/man3p/PDF::Table::Table.3p

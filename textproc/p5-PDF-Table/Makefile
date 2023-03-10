@@ -1,6 +1,6 @@
 COMMENT =		create PDF tables with perl
 
-DISTNAME =		PDF-Table-1.003
+DISTNAME =		PDF-Table-1.005
 
 CATEGORIES =		textproc
 
