@@ -2,7 +2,7 @@ COMMENT =	provides Moose-like method modifiers
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Class-Method-Modifiers-2.14
+DISTNAME =	Class-Method-Modifiers-2.15
 CATEGORIES =	devel
 FIX_EXTRACT_PERMISSIONS =	Yes
 
