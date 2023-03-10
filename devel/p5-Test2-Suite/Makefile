@@ -1,6 +1,6 @@
 COMMENT =	set of tools built upon the Test2 framework
 
-DISTNAME =	Test2-Suite-0.000145
+DISTNAME =	Test2-Suite-0.000148
 CPAN_AUTHOR =	EXODIST
 
 CATEGORIES =	devel
@@ -17,6 +17,7 @@ RUN_DEPENDS =		devel/p5-Importer>=0.024 \
 			devel/p5-Sub-Info>=0.002 \
 			devel/p5-Term-Table>=0.013
 TEST_DEPENDS =		converters/p5-Unicode-LineBreak \
+			devel/p5-Devel-MAT-Dumper \
 			devel/p5-Sub-Name \
 			devel/p5-Term-Size-Any
 

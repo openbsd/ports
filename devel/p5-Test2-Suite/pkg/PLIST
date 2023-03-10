@@ -106,6 +106,7 @@ ${P5SITE}/Test2/Tools/GenTemp.pm
 ${P5SITE}/Test2/Tools/Grab.pm
 ${P5SITE}/Test2/Tools/Mock.pm
 ${P5SITE}/Test2/Tools/Ref.pm
+${P5SITE}/Test2/Tools/Refcount.pm
 ${P5SITE}/Test2/Tools/Spec.pm
 ${P5SITE}/Test2/Tools/Subtest.pm
 ${P5SITE}/Test2/Tools/Target.pm
@@ -226,6 +227,7 @@ ${P5SITE}/Test2/Workflow/Task/Group.pm
 @man man/man3p/Test2::Tools::Grab.3p
 @man man/man3p/Test2::Tools::Mock.3p
 @man man/man3p/Test2::Tools::Ref.3p
+@man man/man3p/Test2::Tools::Refcount.3p
 @man man/man3p/Test2::Tools::Spec.3p
 @man man/man3p/Test2::Tools::Subtest.3p
 @man man/man3p/Test2::Tools::Target.3p
