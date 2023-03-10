@@ -1,6 +1,6 @@
 COMMENT =	port of Quake 1 using Vulkan instead of OpenGL
 
-V =		1.20.3
+V =		1.22.3
 PKGNAME =	vkquake-${V}
 GH_ACCOUNT =	Novum
 GH_PROJECT =	vkQuake
@@ -32,11 +32,6 @@ USE_GMAKE =	Yes
 NO_TEST =	Yes
 WRKSRC =	${WRKDIST}/Quake
 ALL_TARGET =	vkquake
-
-# remove some .orig files that mess with ports work
-post-extract:
-	rm ${WRKSRC}/../Misc/vq_pak/*.orig
-	rm ${WRKSRC}/../Misc/vq_pak/maps/*.orig
 
 pre-install:
 	mkdir -p ${PREFIX}/share/vkquake/id1
