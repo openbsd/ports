@@ -260,6 +260,7 @@ lib/asterisk/modules/
 @so lib/asterisk/modules/app_blind_transfer.so
 @so lib/asterisk/modules/app_bridgeaddchan.so
 @so lib/asterisk/modules/app_bridgewait.so
+@so lib/asterisk/modules/app_broadcast.so
 @so lib/asterisk/modules/app_cdr.so
 @so lib/asterisk/modules/app_celgenuserevent.so
 @so lib/asterisk/modules/app_chanisavail.so
@@ -306,6 +307,7 @@ lib/asterisk/modules/
 @so lib/asterisk/modules/app_senddtmf.so
 @so lib/asterisk/modules/app_sendtext.so
 @so lib/asterisk/modules/app_sf.so
+@so lib/asterisk/modules/app_signal.so
 @so lib/asterisk/modules/app_sms.so
 @so lib/asterisk/modules/app_softhangup.so
 @so lib/asterisk/modules/app_speech_utils.so
