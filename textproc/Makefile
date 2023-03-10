@@ -46,7 +46,6 @@
      SUBDIR += doclifter
      SUBDIR += docx2txt
      SUBDIR += ebook-tools
-     SUBDIR += elasticsearch
      SUBDIR += enchant
      SUBDIR += enchant2
      SUBDIR += epubcheck
