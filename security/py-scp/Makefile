@@ -1,6 +1,6 @@
 COMMENT =		scp module for Paramiko
 
-MODPY_EGG_VERSION =	0.14.4
+MODPY_EGG_VERSION =	0.14.5
 DISTNAME =		scp-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
