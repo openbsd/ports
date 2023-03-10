@@ -1,11 +1,12 @@
 COMMENT =		CLI and TUI tool to interact with Mastodon instances
 
-MODPY_EGG_VERSION =	0.35.0
+MODPY_EGG_VERSION =	0.36.0
 DISTNAME =		toot-${MODPY_EGG_VERSION}
 
 CATEGORIES =		net
 
-HOMEPAGE =		https://github.com/ihabunek/toot
+# https://github.com/ihabunek/toot
+HOMEPAGE =		https://toot.bezdomni.net/
 
 MASTER_SITES =		https://github.com/ihabunek/toot/releases/download/${MODPY_EGG_VERSION}/
 
