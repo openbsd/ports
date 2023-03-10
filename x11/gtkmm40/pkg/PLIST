@@ -77,6 +77,7 @@ include/gtkmm-4.0/gdkmm/private/seat_p.h
 include/gtkmm-4.0/gdkmm/private/snapshot_p.h
 include/gtkmm-4.0/gdkmm/private/surface_p.h
 include/gtkmm-4.0/gdkmm/private/texture_p.h
+include/gtkmm-4.0/gdkmm/private/texturedownloader_p.h
 include/gtkmm-4.0/gdkmm/private/timecoord_p.h
 include/gtkmm-4.0/gdkmm/private/toplevel_p.h
 include/gtkmm-4.0/gdkmm/private/toplevellayout_p.h
@@ -87,6 +88,7 @@ include/gtkmm-4.0/gdkmm/seat.h
 include/gtkmm-4.0/gdkmm/snapshot.h
 include/gtkmm-4.0/gdkmm/surface.h
 include/gtkmm-4.0/gdkmm/texture.h
+include/gtkmm-4.0/gdkmm/texturedownloader.h
 include/gtkmm-4.0/gdkmm/timecoord.h
 include/gtkmm-4.0/gdkmm/toplevel.h
 include/gtkmm-4.0/gdkmm/toplevellayout.h
@@ -103,6 +105,7 @@ include/gtkmm-4.0/gtkmm/accessible.h
 include/gtkmm-4.0/gtkmm/actionable.h
 include/gtkmm-4.0/gtkmm/actionbar.h
 include/gtkmm-4.0/gtkmm/adjustment.h
+include/gtkmm-4.0/gtkmm/alertdialog.h
 include/gtkmm-4.0/gtkmm/appchooser.h
 include/gtkmm-4.0/gtkmm/appchooserbutton.h
 include/gtkmm-4.0/gtkmm/appchooserdialog.h
@@ -112,6 +115,7 @@ include/gtkmm-4.0/gtkmm/applicationwindow.h
 include/gtkmm-4.0/gtkmm/aspectframe.h
 include/gtkmm-4.0/gtkmm/assistant.h
 include/gtkmm-4.0/gtkmm/assistantpage.h
+include/gtkmm-4.0/gtkmm/atcontext.h
 include/gtkmm-4.0/gtkmm/binlayout.h
 include/gtkmm-4.0/gtkmm/bitset.h
 include/gtkmm-4.0/gtkmm/bitsetconstiter.h
@@ -147,8 +151,11 @@ include/gtkmm-4.0/gtkmm/checkbutton.h
 include/gtkmm-4.0/gtkmm/colorbutton.h
 include/gtkmm-4.0/gtkmm/colorchooser.h
 include/gtkmm-4.0/gtkmm/colorchooserdialog.h
+include/gtkmm-4.0/gtkmm/colordialog.h
+include/gtkmm-4.0/gtkmm/colordialogbutton.h
 include/gtkmm-4.0/gtkmm/columnview.h
 include/gtkmm-4.0/gtkmm/columnviewcolumn.h
+include/gtkmm-4.0/gtkmm/columnviewsorter.h
 include/gtkmm-4.0/gtkmm/combobox.h
 include/gtkmm-4.0/gtkmm/comboboxtext.h
 include/gtkmm-4.0/gtkmm/constraint.h
@@ -174,6 +181,7 @@ include/gtkmm-4.0/gtkmm/entry.h
 include/gtkmm-4.0/gtkmm/entrybuffer.h
 include/gtkmm-4.0/gtkmm/entrycompletion.h
 include/gtkmm-4.0/gtkmm/enums.h
+include/gtkmm-4.0/gtkmm/error.h
 include/gtkmm-4.0/gtkmm/eventcontroller.h
 include/gtkmm-4.0/gtkmm/eventcontrollerfocus.h
 include/gtkmm-4.0/gtkmm/eventcontrollerkey.h
@@ -187,7 +195,9 @@ include/gtkmm-4.0/gtkmm/filechooser.h
 include/gtkmm-4.0/gtkmm/filechooserdialog.h
 include/gtkmm-4.0/gtkmm/filechoosernative.h
 include/gtkmm-4.0/gtkmm/filechooserwidget.h
+include/gtkmm-4.0/gtkmm/filedialog.h
 include/gtkmm-4.0/gtkmm/filefilter.h
+include/gtkmm-4.0/gtkmm/filelauncher.h
 include/gtkmm-4.0/gtkmm/filter.h
 include/gtkmm-4.0/gtkmm/filterlistmodel.h
 include/gtkmm-4.0/gtkmm/fixed.h
@@ -198,6 +208,8 @@ include/gtkmm-4.0/gtkmm/fontbutton.h
 include/gtkmm-4.0/gtkmm/fontchooser.h
 include/gtkmm-4.0/gtkmm/fontchooserdialog.h
 include/gtkmm-4.0/gtkmm/fontchooserwidget.h
+include/gtkmm-4.0/gtkmm/fontdialog.h
+include/gtkmm-4.0/gtkmm/fontdialogbutton.h
 include/gtkmm-4.0/gtkmm/frame.h
 include/gtkmm-4.0/gtkmm/gesture.h
 include/gtkmm-4.0/gtkmm/gestureclick.h
@@ -277,6 +289,7 @@ include/gtkmm-4.0/gtkmm/private/accessible_p.h
 include/gtkmm-4.0/gtkmm/private/actionable_p.h
 include/gtkmm-4.0/gtkmm/private/actionbar_p.h
 include/gtkmm-4.0/gtkmm/private/adjustment_p.h
+include/gtkmm-4.0/gtkmm/private/alertdialog_p.h
 include/gtkmm-4.0/gtkmm/private/appchooser_p.h
 include/gtkmm-4.0/gtkmm/private/appchooserbutton_p.h
 include/gtkmm-4.0/gtkmm/private/appchooserdialog_p.h
@@ -286,6 +299,7 @@ include/gtkmm-4.0/gtkmm/private/applicationwindow_p.h
 include/gtkmm-4.0/gtkmm/private/aspectframe_p.h
 include/gtkmm-4.0/gtkmm/private/assistant_p.h
 include/gtkmm-4.0/gtkmm/private/assistantpage_p.h
+include/gtkmm-4.0/gtkmm/private/atcontext_p.h
 include/gtkmm-4.0/gtkmm/private/binlayout_p.h
 include/gtkmm-4.0/gtkmm/private/bitset_p.h
 include/gtkmm-4.0/gtkmm/private/boolfilter_p.h
@@ -319,8 +333,11 @@ include/gtkmm-4.0/gtkmm/private/checkbutton_p.h
 include/gtkmm-4.0/gtkmm/private/colorbutton_p.h
 include/gtkmm-4.0/gtkmm/private/colorchooser_p.h
 include/gtkmm-4.0/gtkmm/private/colorchooserdialog_p.h
+include/gtkmm-4.0/gtkmm/private/colordialog_p.h
+include/gtkmm-4.0/gtkmm/private/colordialogbutton_p.h
 include/gtkmm-4.0/gtkmm/private/columnview_p.h
 include/gtkmm-4.0/gtkmm/private/columnviewcolumn_p.h
+include/gtkmm-4.0/gtkmm/private/columnviewsorter_p.h
 include/gtkmm-4.0/gtkmm/private/combobox_p.h
 include/gtkmm-4.0/gtkmm/private/comboboxtext_p.h
 include/gtkmm-4.0/gtkmm/private/constraint_p.h
@@ -346,6 +363,7 @@ include/gtkmm-4.0/gtkmm/private/entry_p.h
 include/gtkmm-4.0/gtkmm/private/entrybuffer_p.h
 include/gtkmm-4.0/gtkmm/private/entrycompletion_p.h
 include/gtkmm-4.0/gtkmm/private/enums_p.h
+include/gtkmm-4.0/gtkmm/private/error_p.h
 include/gtkmm-4.0/gtkmm/private/eventcontroller_p.h
 include/gtkmm-4.0/gtkmm/private/eventcontrollerfocus_p.h
 include/gtkmm-4.0/gtkmm/private/eventcontrollerkey_p.h
@@ -359,7 +377,9 @@ include/gtkmm-4.0/gtkmm/private/filechooser_p.h
 include/gtkmm-4.0/gtkmm/private/filechooserdialog_p.h
 include/gtkmm-4.0/gtkmm/private/filechoosernative_p.h
 include/gtkmm-4.0/gtkmm/private/filechooserwidget_p.h
+include/gtkmm-4.0/gtkmm/private/filedialog_p.h
 include/gtkmm-4.0/gtkmm/private/filefilter_p.h
+include/gtkmm-4.0/gtkmm/private/filelauncher_p.h
 include/gtkmm-4.0/gtkmm/private/filter_p.h
 include/gtkmm-4.0/gtkmm/private/filterlistmodel_p.h
 include/gtkmm-4.0/gtkmm/private/fixed_p.h
@@ -370,6 +390,8 @@ include/gtkmm-4.0/gtkmm/private/fontbutton_p.h
 include/gtkmm-4.0/gtkmm/private/fontchooser_p.h
 include/gtkmm-4.0/gtkmm/private/fontchooserdialog_p.h
 include/gtkmm-4.0/gtkmm/private/fontchooserwidget_p.h
+include/gtkmm-4.0/gtkmm/private/fontdialog_p.h
+include/gtkmm-4.0/gtkmm/private/fontdialogbutton_p.h
 include/gtkmm-4.0/gtkmm/private/frame_p.h
 include/gtkmm-4.0/gtkmm/private/gesture_p.h
 include/gtkmm-4.0/gtkmm/private/gestureclick_p.h
@@ -516,6 +538,7 @@ include/gtkmm-4.0/gtkmm/private/treesortable_p.h
 include/gtkmm-4.0/gtkmm/private/treestore_p.h
 include/gtkmm-4.0/gtkmm/private/treeview_p.h
 include/gtkmm-4.0/gtkmm/private/treeviewcolumn_p.h
+include/gtkmm-4.0/gtkmm/private/urilauncher_p.h
 include/gtkmm-4.0/gtkmm/private/video_p.h
 include/gtkmm-4.0/gtkmm/private/viewport_p.h
 include/gtkmm-4.0/gtkmm/private/volumebutton_p.h
@@ -603,6 +626,7 @@ include/gtkmm-4.0/gtkmm/treestore.h
 include/gtkmm-4.0/gtkmm/treeview.h
 include/gtkmm-4.0/gtkmm/treeview_private.h
 include/gtkmm-4.0/gtkmm/treeviewcolumn.h
+include/gtkmm-4.0/gtkmm/urilauncher.h
 include/gtkmm-4.0/gtkmm/version.h
 include/gtkmm-4.0/gtkmm/video.h
 include/gtkmm-4.0/gtkmm/viewport.h
