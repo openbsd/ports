@@ -2,9 +2,8 @@ COMMENT =	update access and modification timestamps of files
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	File-Touch-0.11
+DISTNAME =	File-Touch-0.12
 CATEGORIES =	devel
-REVISION =	0
 
 MAINTAINER =	Abel Abraham Camarillo Ojeda <acamari@verlet.org>
 
