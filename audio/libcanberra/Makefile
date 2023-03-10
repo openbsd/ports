@@ -22,6 +22,9 @@ PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
+# C++
+COMPILER=	base-clang ports-gcc
+
 WANTLIB += ltdl m ogg pthread vorbis vorbisfile
 
 WANTLIB-main += ${WANTLIB} sndio
