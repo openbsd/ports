@@ -1,6 +1,6 @@
 COMMENT =	perl memory analysis tool
 
-DISTNAME =	Devel-MAT-0.49
+DISTNAME =	Devel-MAT-0.50
 
 CATEGORIES =	devel
 
