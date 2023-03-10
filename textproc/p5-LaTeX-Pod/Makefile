@@ -1,6 +1,6 @@
 COMMENT=		transform LaTeX source files to POD
 
-DISTNAME =		LaTeX-Pod-0.22
+DISTNAME =		LaTeX-Pod-0.23
 CATEGORIES=		textproc
 
 MODULES=		cpan
