@@ -19,7 +19,7 @@ Index: services/cert_verifier/cert_verifier_creation.cc
      verify_proc = net::CreateCertVerifyProcBuiltin(
          std::move(cert_net_fetcher), net::CreateSslSystemTrustStore());
  #else
-@@ -212,6 +212,7 @@ std::unique_ptr<net::CertVerifierWithUpdatableProc> Cr
+@@ -219,6 +219,7 @@ std::unique_ptr<net::CertVerifierWithUpdatableProc> Cr
  bool IsUsingCertNetFetcher() {
  #if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA) ||      \
      BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) ||       \

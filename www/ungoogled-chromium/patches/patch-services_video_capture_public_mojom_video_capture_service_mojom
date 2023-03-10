@@ -1,7 +1,7 @@
 Index: services/video_capture/public/mojom/video_capture_service.mojom
 --- services/video_capture/public/mojom/video_capture_service.mojom.orig
 +++ services/video_capture/public/mojom/video_capture_service.mojom
-@@ -24,10 +24,10 @@ interface AcceleratorFactory {
+@@ -25,10 +25,10 @@ interface AcceleratorFactory {
        pending_receiver<chromeos_camera.mojom.MjpegDecodeAccelerator> jda);
  };
  

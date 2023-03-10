@@ -10,7 +10,7 @@ Index: net/BUILD.gn
    net_configs += [ "//build/config/linux:libresolv" ]
  }
  
-@@ -1214,6 +1214,15 @@ component("net") {
+@@ -1216,6 +1216,15 @@ component("net") {
      deps += [ "//third_party/xdg_shared_mime_info" ]
    }
  
@@ -26,7 +26,7 @@ Index: net/BUILD.gn
    if (is_mac) {
      sources += [
        "base/network_notification_thread_mac.cc",
-@@ -1346,7 +1355,7 @@ component("net") {
+@@ -1348,7 +1357,7 @@ component("net") {
      }
    }
  
@@ -35,7 +35,7 @@ Index: net/BUILD.gn
      sources += [
        "base/network_change_notifier_posix.cc",
        "base/network_change_notifier_posix.h",
-@@ -1379,7 +1388,7 @@ component("net") {
+@@ -1381,7 +1390,7 @@ component("net") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux.
@@ -44,7 +44,7 @@ Index: net/BUILD.gn
      sources += [
        "base/network_interfaces_getifaddrs.cc",
        "base/network_interfaces_getifaddrs.h",
-@@ -4642,7 +4651,7 @@ test("net_unittests") {
+@@ -4724,7 +4733,7 @@ test("net_unittests") {
      sources += [ "proxy_resolution/proxy_config_service_linux_unittest.cc" ]
    }
  
@@ -53,7 +53,7 @@ Index: net/BUILD.gn
      sources += [
        "base/address_tracker_linux_unittest.cc",
        "base/network_interfaces_linux_unittest.cc",
-@@ -4714,6 +4723,10 @@ test("net_unittests") {
+@@ -4796,6 +4805,10 @@ test("net_unittests") {
      "//url:buildflags",
    ]
  
@@ -64,7 +64,7 @@ Index: net/BUILD.gn
    if (enable_websockets) {
      deps += [ "//net/server:tests" ]
    }
-@@ -4781,7 +4794,7 @@ test("net_unittests") {
+@@ -4863,7 +4876,7 @@ test("net_unittests") {
      ]
    }
  
@@ -73,7 +73,7 @@ Index: net/BUILD.gn
      sources += [ "tools/quic/quic_simple_server_test.cc" ]
    }
  
-@@ -4903,7 +4916,7 @@ test("net_unittests") {
+@@ -4988,7 +5001,7 @@ test("net_unittests") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux.

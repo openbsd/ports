@@ -29,7 +29,7 @@ Index: chrome/app/theme/theme_resources.grd
              <structure type="chrome_scaled_image" name="IDR_PRODUCT_LOGO_NAME_22" file="google_chrome/product_logo_name_22.png" />
 @@ -162,7 +162,7 @@
          <else> <!-- not _google_chrome -->
-           <if expr="_google_chrome_for_testing and _use_internal_chrome_for_testing_icons">
+           <if expr="_is_chrome_for_testing_branded">
              <then>
 -              <if expr="is_linux">
 +              <if expr="is_posix">
@@ -43,7 +43,7 @@ Index: chrome/app/theme/theme_resources.grd
 -              </if> <!-- is_linux -->
 +              </if> <!-- is_posix -->
              </then>
-             <else> <!-- not (_google_chrome_for_testing and _use_internal_chrome_for_testing_icons) -->
+             <else> <!-- not _is_chrome_for_testing_branded -->
 -              <if expr="is_linux">
 +              <if expr="is_posix">
                  <then>
@@ -56,5 +56,5 @@ Index: chrome/app/theme/theme_resources.grd
 -              </if> <!-- is_linux -->
 +              </if> <!-- is_posix -->
              </else>
-           </if> <!-- _google_chrome_for_testing and _use_internal_chrome_for_testing_icons -->
+           </if> <!-- _is_chrome_for_testing_branded -->
            <structure type="chrome_scaled_image" name="IDR_PRODUCT_LOGO_NAME_22" file="chromium/product_logo_name_22.png" />
