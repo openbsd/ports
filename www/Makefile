@@ -72,7 +72,6 @@
      SUBDIR += jupyter-notebook
      SUBDIR += kcaldav
      SUBDIR += kcgi
-     SUBDIR += kibana
      SUBDIR += kore
      SUBDIR += kore,acme
      SUBDIR += kore,curl
