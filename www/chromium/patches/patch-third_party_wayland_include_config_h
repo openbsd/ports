@@ -1,7 +1,7 @@
 Index: third_party/wayland/include/config.h
 --- third_party/wayland/include/config.h.orig
 +++ third_party/wayland/include/config.h
-@@ -9,7 +9,13 @@
+@@ -9,7 +9,14 @@
  
  #define HAVE_BROKEN_MSG_CMSG_CLOEXEC 0
  
@@ -12,10 +12,11 @@ Index: third_party/wayland/include/config.h
 +#else
  #define HAVE_MEMFD_CREATE
 +#endif
++#endif
  
  #define HAVE_MKOSTEMP
  
-@@ -25,7 +31,11 @@
+@@ -25,7 +32,11 @@
  
  #undef HAVE_SYS_PROCCTL_H
  
