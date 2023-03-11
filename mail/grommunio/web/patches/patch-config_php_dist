@@ -15,7 +15,7 @@ Index: config.php.dist
  
  	// Path used for full text index of every user
 -	define("SQLITE_INDEX_PATH", "/var/lib/grommunio-web/sqlite-index");
-+	define("SQLITE_INDEX_PATH", "/cache/sqlite-index");
++	define("SQLITE_INDEX_PATH", GROOT . DIRECTORY_SEPARATOR . "cache/sqlite-index");
  
  	// General grommunio Web theme. This will be loaded by default for every user
  	// (if the theme is installed as a plugin)
