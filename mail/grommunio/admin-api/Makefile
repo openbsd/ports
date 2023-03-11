@@ -11,6 +11,8 @@ CATEGORIES=	mail www productivity
 
 MODULES=	devel/cmake lang/python
 
+BUILD_DEPENDS=	textproc/py-yaml${MODPY_FLAVOR}
+
 RUN_DEPENDS=	databases/py-ldap3${MODPY_FLAVOR} \
 		databases/py-mysqlclient${MODPY_FLAVOR} \
 		databases/py-redis${MODPY_FLAVOR} \
