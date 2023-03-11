@@ -70,12 +70,12 @@ TESTTMP =		${WRKDIR}
 TEST_ROOT =		${TESTTMP}/nix-test
 TEST_ENV =		TMPDIR=${TESTTMP}
 
+TEST_ENV +=		TAPE=-	# make tar(1) default to stdin not /dev/rst0
 GUTILS +=		xargs	# -d
 GUTILS +=		diff	# -B
 GUTILS +=		stat	# --format
 
 pre-test:
-	sed -i 's/tar c/tar -cf-/' ${WRKSRC}/tests/tarball.sh
 .for gutil in ${GUTILS}
 	ln -sf /usr/local/bin/g${gutil} ${WRKDIR}/bin/${gutil}
 .endfor
