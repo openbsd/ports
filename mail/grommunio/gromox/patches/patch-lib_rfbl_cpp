@@ -1,0 +1,15 @@
+Index: lib/rfbl.cpp
+--- lib/rfbl.cpp.orig
++++ lib/rfbl.cpp
+@@ -933,7 +933,11 @@ static void init_locale()
+ int iconv_validate()
+ {
+ 	init_locale();
++#if defined(__OpenBSD__)
++	for (const auto s : {"UTF-7", "UTF-16LE", "windows-1252",
++#else
+ 	for (const auto s : {"UTF-7", "UTF-16LE", "UNICODE", "windows-1252",
++#endif
+ 	     "iso-8859-1", "iso-2022-jp"}) {
+ 		auto k = iconv_open("UTF-8", s);
+ 		if (k == (iconv_t)-1) {

@@ -190,6 +190,7 @@ man/man8/freebusy.8gx
 @man man/man8/gromox-mkprivate.8
 @man man/man8/gromox-mkpublic.8
 @man man/man8/gromox-mt2exm.8
+@man man/man8/gromox-snapshot.8
 man/man8/http.8gx
 man/man8/imap.8gx
 @man man/man8/kdb-uidextract-limited.8
