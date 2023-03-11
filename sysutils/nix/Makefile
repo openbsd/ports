@@ -2,7 +2,7 @@ COMMENT =		purely functional package manager for Unix
 DISTNAME =		nix-2.3.16
 EXTRACT_SUFX =		.tar.xz
 CATEGORIES =		sysutils
-REVISION =		2
+REVISION =		3
 
 LIBVER =		0.0
 .for _lib in expr main store util

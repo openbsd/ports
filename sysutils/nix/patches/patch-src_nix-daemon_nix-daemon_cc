@@ -1,24 +1,19 @@
+Use proper struct sockpeercred for SO_PEERCRED
+
+getsockopt(2) documents this;  ucred is wrong ("cr_" member prefix, no pid).
+
 Index: src/nix-daemon/nix-daemon.cc
 --- src/nix-daemon/nix-daemon.cc.orig
 +++ src/nix-daemon/nix-daemon.cc
-@@ -27,7 +27,7 @@
- #include <fcntl.h>
- #include <limits.h>
+@@ -901,7 +901,11 @@ static PeerInfo getPeerInfo(int remote)
  
--#if __APPLE__ || __FreeBSD__
-+#if __APPLE__ || __FreeBSD__ || __OpenBSD__
- #include <sys/ucred.h>
- #endif
+ #if defined(SO_PEERCRED)
  
-@@ -905,7 +905,11 @@ static PeerInfo getPeerInfo(int remote)
++#if defined(__OpenBSD__)
++    struct sockpeercred cred;
++#else
+     ucred cred;
++#endif
      socklen_t credLen = sizeof(cred);
      if (getsockopt(remote, SOL_SOCKET, SO_PEERCRED, &cred, &credLen) == -1)
          throw SysError("getting peer credentials");
-+#if __OpenBSD__
-+    peer = { true, 0, true, cred.cr_uid, true, cred.cr_gid };
-+#else
-     peer = { true, cred.pid, true, cred.uid, true, cred.gid };
-+#endif
- 
- #elif defined(LOCAL_PEERCRED)
- 
