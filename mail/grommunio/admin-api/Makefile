@@ -1,11 +1,11 @@
 COMMENT=	management REST API for grommunio
 
-V=		1.9
+V=		1.9.20
 DISTNAME=	grommunio-admin-api-${V}
 
 GH_ACCOUNT=	grommunio
 GH_PROJECT=	admin-api
-GH_COMMIT=	774374b82e3a9d802ffb861b26f90318c161fb5b
+GH_COMMIT=	e075ce03c4f6425bef555f989b545bb75031c7a3
 
 CATEGORIES=	mail www productivity
 
@@ -20,6 +20,7 @@ RUN_DEPENDS=	databases/py-ldap3${MODPY_FLAVOR} \
 		mail/grommunio/gromox \
 		mail/grommunio/libexmdbpp \
 		net/py-idna${MODPY_FLAVOR} \
+		security/py-cryptography${MODPY_FLAVOR} \
 		sysutils/py-psutil${MODPY_FLAVOR} \
 		textproc/py-yaml${MODPY_FLAVOR} \
 		www/py-flask${MODPY_FLAVOR} \

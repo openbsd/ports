@@ -165,6 +165,7 @@ share/grommunio-admin-api/res/config.yaml
 share/grommunio-admin-api/res/domain.sqlite3
 share/grommunio-admin-api/res/ldapTemplates.yaml
 share/grommunio-admin-api/res/midb.sqlite3
+share/grommunio-admin-api/res/openapi.json
 share/grommunio-admin-api/res/openapi.yaml
 share/grommunio-admin-api/res/storelangs.json
 share/grommunio-admin-api/res/user.sqlite3
