@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.424 2023/03/12 18:06:34 danj Exp $
+$OpenBSD: user.list,v 1.425 2023/03/12 18:09:18 danj Exp $
 
 This file lists all users and groups that are created by ports. All
 ports' users/groups have to start with an underscore and have to use
@@ -48,7 +48,7 @@ id  user		group		port
 537 _maradns		_maradns	net/maradns
 538 _vilter		_vilter		mail/smtp-vilter
 539 _clamav		_clamav		security/clamav
-540 _dspam		_dspam		mail/dspam
+#540 _dspam		_dspam		mail/dspam
 541 _cups		_cups		print/cups, print/hplip
 542 _flowd		_flowd		net/flowd
 543 _cyrus		_cyrus		mail/cyrus-imapd
@@ -162,7 +162,7 @@ id  user		group		port
 651 _mirmon		_mirmon		net/mirmon
 652 _collectd		_collectd	sysutils/collectd
 653 _pgbouncer		_pgbouncer	databases/pgbouncer
-654 _spectrum		_spectrum	net/spectrum
+#654 _spectrum		_spectrum	net/spectrum
 655 _minbif		_minbif		net/minbif
 #656 _mediatomb		_mediatomb	multimedia/mediatomb
 #657 _ircd-seven		_ircd-seven	net/ircd-seven
@@ -210,7 +210,7 @@ id  user		group		port
 #699 _mozsync		_mozsync	www/mozilla-sync
 700 _yubiserve		_yubiserve	security/yubiserve
 701 _polkitd		_polkitd	sysutils/polkit
-702 _riak		_riak		databases/riak
+#702 _riak		_riak		databases/riak
 703 _ngircd		_ngircd		net/ngircd
 704 _gophernicus	_gophernicus	net/gophernicus
 705 _minidlna		_minidlna	multimedia/minidlna
@@ -256,7 +256,7 @@ id  user		group		port
 745 _smmsp		_smmsp		mail/sendmail
 746 _spampd		_spampd		mail/spampd
 747 _mfi		_mfi		net/mfi
-748 _elasticsearch	_elasticsearch	textproc/elasticsearch
+#748 _elasticsearch	_elasticsearch	textproc/elasticsearch
 749 _ocserv		_ocserv		net/ocserv
 750 _ddclient		_ddclient	net/ddclient
 751 _knot		_knot		net/knot
@@ -273,8 +273,8 @@ id  user		group		port
 762 _icingaweb2		_icingaweb2	net/icinga/web2
 763 _kea		_kea		net/kea
 764 _distcc		_distcc		devel/distcc
-765 _hedgewars		_hedgewars	games/hedgewars
-766 _kibana		_kibana		www/kibana
+#765 _hedgewars		_hedgewars	games/hedgewars
+#766 _kibana		_kibana		www/kibana
 767 _squeezelite	_squeezelite	audio/squeezelite
 768 _syncthing		_syncthing	net/syncthing
 769 			_mailmanq	mail/mailman
@@ -291,7 +291,7 @@ id  user		group		port
 780 _rundeck		_rundeck	sysutils/rundeck
 781 _consul-template	_consul-template	sysutils/consul-template
 782 _ympd		_ympd		audio/ympd
-783 _rmilter		_rmilter	mail/rmilter
+#783 _rmilter		_rmilter	mail/rmilter
 784 _hping		_hping		net/hping
 785 _uucp		_uucp		net/uucp
 786 _riemann		_riemann	sysutils/riemann
