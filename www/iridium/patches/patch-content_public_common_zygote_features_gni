@@ -5,5 +5,5 @@ Index: content/public/common/zygote/features.gni
  # Use of this source code is governed by a BSD-style license that can be
  # found in the LICENSE file.
  
--use_zygote_handle = is_posix && !is_android && !is_mac
-+use_zygote_handle = is_posix && !is_android && !is_mac && !is_bsd
+-use_zygote = is_posix && !is_android && !is_mac
++use_zygote = is_posix && !is_android && !is_mac && !is_bsd

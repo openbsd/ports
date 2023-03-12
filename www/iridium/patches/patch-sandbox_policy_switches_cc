@@ -1,7 +1,7 @@
 Index: sandbox/policy/switches.cc
 --- sandbox/policy/switches.cc.orig
 +++ sandbox/policy/switches.cc
-@@ -54,10 +54,10 @@ const char kWindowsSystemProxyResolverSandbox[] = "pro
+@@ -54,10 +54,10 @@ const char kFileUtilSandbox[] = "file_util";
  const char kMirroringSandbox[] = "mirroring";
  #endif  // BUILDFLAG(IS_MAC)
  

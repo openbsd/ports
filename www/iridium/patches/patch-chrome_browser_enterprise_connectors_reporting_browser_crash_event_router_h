@@ -10,8 +10,8 @@ Index: chrome/browser/enterprise/connectors/reporting/browser_crash_event_router
  #include "third_party/crashpad/crashpad/client/crash_report_database.h"
  #endif  // !BUILDFLAG(IS_FUCHSIA)
  namespace enterprise_connectors {
-@@ -27,7 +27,7 @@ class BrowserCrashEventRouter
-   BrowserCrashEventRouter& operator=(const BrowserCrashEventRouter&) = delete;
+@@ -31,7 +31,7 @@ class BrowserCrashEventRouter
+   BrowserCrashEventRouter& operator=(BrowserCrashEventRouter&&) = delete;
    ~BrowserCrashEventRouter() override;
  
 -#if !BUILDFLAG(IS_FUCHSIA)
@@ -19,7 +19,7 @@ Index: chrome/browser/enterprise/connectors/reporting/browser_crash_event_router
    void OnCloudReportingLaunched(
        enterprise_reporting::ReportScheduler* report_scheduler) override;
    void UploadToReportingServer(
-@@ -42,7 +42,7 @@ class BrowserCrashEventRouter
+@@ -46,7 +46,7 @@ class BrowserCrashEventRouter
    raw_ptr<policy::ChromeBrowserCloudManagementController, DanglingUntriaged>
        controller_ = nullptr;
  

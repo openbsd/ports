@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/browser.h
 --- chrome/browser/ui/browser.h.orig
 +++ chrome/browser/ui/browser.h
-@@ -276,7 +276,7 @@ class Browser : public TabStripModelObserver,
+@@ -280,7 +280,7 @@ class Browser : public TabStripModelObserver,
      int32_t restore_id = kDefaultRestoreId;
  #endif
  

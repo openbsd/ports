@@ -10,7 +10,7 @@ Index: third_party/blink/renderer/platform/fonts/font_cache.cc
  float FontCache::device_scale_factor_ = 1.0;
  #endif
  
-@@ -139,7 +139,7 @@ FontCache::~FontCache() {
+@@ -118,7 +118,7 @@ FontCache::~FontCache() = default;
  FontPlatformData* FontCache::SystemFontPlatformData(
      const FontDescription& font_description) {
    const AtomicString& family = FontCache::SystemFontFamily();

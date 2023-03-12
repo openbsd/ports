@@ -10,15 +10,13 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Iridium browser
 
-V=			2023.01.109
-
-REVISION=		9
+V=			2023.03.111
 
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
 
-PATCHFILES=		disable-privacy-sandbox-7f49edb924b6d2b38fcc9a2c76d4e5e1f857e7b9.patch
+PATCHFILES=		disable-privacy-sandbox-ce036275d9d21a8408ef48ee9839b3c21b8448ca.patch
 PATCH_DIST_STRIP=	-p1
 
 CATEGORIES=		www
@@ -38,7 +36,6 @@ PERMIT_PACKAGE =	Yes
 
 MASTER_SITES=		https://downloads.iridiumbrowser.de/source/ \
 			http://nerd.hu/distfiles/
-MASTER_SITES0=		https://raw.githubusercontent.com/ungoogled-software/ungoogled-chromium/master/patches/core/ungoogled-chromium/
 
 MODULES=	lang/python x11/qt5
 MODQT5_DEPS=	No

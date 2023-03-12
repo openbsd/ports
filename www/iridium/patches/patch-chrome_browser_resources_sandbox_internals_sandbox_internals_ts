@@ -9,7 +9,7 @@ Index: chrome/browser/resources/sandbox_internals/sandbox_internals.ts
 +// <if expr="is_posix or is_chromeos">
  import './strings.m.js';
  
- import {loadTimeData} from 'chrome://resources/js/load_time_data.m.js';
+ import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
 @@ -121,7 +121,7 @@ function androidHandler() {
  }
  // </if>

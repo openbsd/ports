@@ -1,7 +1,7 @@
 Index: mojo/core/BUILD.gn
 --- mojo/core/BUILD.gn.orig
 +++ mojo/core/BUILD.gn
-@@ -163,7 +163,7 @@ template("core_impl_source_set") {
+@@ -164,7 +164,7 @@ template("core_impl_source_set") {
          ]
        }
  
