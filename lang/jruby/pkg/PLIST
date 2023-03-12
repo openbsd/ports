@@ -47,9 +47,9 @@ jruby/lib/ruby/gems/1.8/gems/bundler-2.3.25/exe/bundler
 jruby/lib/ruby/gems/1.8/gems/erb-2.2.3/
 jruby/lib/ruby/gems/1.8/gems/erb-2.2.3/libexec/
 jruby/lib/ruby/gems/1.8/gems/erb-2.2.3/libexec/erb
-jruby/lib/ruby/gems/1.8/gems/irb-1.4.1/
-jruby/lib/ruby/gems/1.8/gems/irb-1.4.1/exe/
-jruby/lib/ruby/gems/1.8/gems/irb-1.4.1/exe/irb
+jruby/lib/ruby/gems/1.8/gems/irb-1.4.2/
+jruby/lib/ruby/gems/1.8/gems/irb-1.4.2/exe/
+jruby/lib/ruby/gems/1.8/gems/irb-1.4.2/exe/irb
 jruby/lib/ruby/gems/1.8/gems/jar-dependencies-0.4.1/
 jruby/lib/ruby/gems/1.8/gems/jar-dependencies-0.4.1/bin/
 jruby/lib/ruby/gems/1.8/gems/jar-dependencies-0.4.1/bin/lock_jars
@@ -550,9 +550,9 @@ jruby/lib/ruby/gems/1.8/specifications/default/find-0.1.1.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/forwardable-1.3.2.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/getoptlong-0.1.1.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/io-console-0.5.11-java.gemspec
-jruby/lib/ruby/gems/1.8/specifications/default/io-wait-0.2.3-java.gemspec
+jruby/lib/ruby/gems/1.8/specifications/default/io-wait-0.3.0-java.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/ipaddr-1.2.4.gemspec
-jruby/lib/ruby/gems/1.8/specifications/default/irb-1.4.1.gemspec
+jruby/lib/ruby/gems/1.8/specifications/default/irb-1.4.2.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/jar-dependencies-0.4.1.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/jruby-openssl-0.14.0-java.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/jruby-readline-1.3.7-java.gemspec
@@ -562,7 +562,8 @@ jruby/lib/ruby/gems/1.8/specifications/default/mutex_m-0.1.1.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/net-http-0.2.2.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/net-protocol-0.1.1.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/observer-0.1.1.gemspec
-jruby/lib/ruby/gems/1.8/specifications/default/open-uri-0.1.0.gemspec
+jruby/lib/ruby/gems/1.8/specifications/default/open-uri-0.3.0.gemspec
+jruby/lib/ruby/gems/1.8/specifications/default/open3-0.1.2.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/optparse-0.2.0.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/ostruct-0.5.5.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/pp-0.3.0.gemspec
@@ -580,8 +581,8 @@ jruby/lib/ruby/gems/1.8/specifications/default/rubygems-update-3.3.25.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/securerandom-0.2.0.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/shellwords-0.1.0.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/singleton-0.1.1.gemspec
-jruby/lib/ruby/gems/1.8/specifications/default/stringio-3.0.4-java.gemspec
-jruby/lib/ruby/gems/1.8/specifications/default/strscan-3.0.4-java.gemspec
+jruby/lib/ruby/gems/1.8/specifications/default/stringio-3.0.5-java.gemspec
+jruby/lib/ruby/gems/1.8/specifications/default/strscan-3.0.6-java.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/subspawn-0.1.1.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/subspawn-posix-0.1.1.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/time-0.1.0.gemspec
@@ -1367,7 +1368,10 @@ jruby/lib/ruby/stdlib/nkf.rb
 jruby/lib/ruby/stdlib/objspace.rb
 jruby/lib/ruby/stdlib/observer.rb
 jruby/lib/ruby/stdlib/open-uri.rb
+jruby/lib/ruby/stdlib/open3/
 jruby/lib/ruby/stdlib/open3.rb
+jruby/lib/ruby/stdlib/open3/jruby_windows.rb
+jruby/lib/ruby/stdlib/open3/version.rb
 jruby/lib/ruby/stdlib/openssl/
 jruby/lib/ruby/stdlib/openssl.rb
 jruby/lib/ruby/stdlib/openssl/bn.rb
