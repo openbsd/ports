@@ -3,7 +3,7 @@ BROKEN-powerpc =	fails at runtime, the UI is totally blank
 COMMENT-main =	2D and 3D game engine
 COMMENT-tools=	2D and 3D game engine (with tools)
 
-V =		3.5.1
+V =		3.5.2
 # Later versions of GodotSteam need isteamdualsense.h.
 # Can only update once that is part of games/goldberg_emulator
 GODOTSTEAM_V =	g35-s155-gs3171
