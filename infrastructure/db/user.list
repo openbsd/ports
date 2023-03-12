@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.423 2023/03/05 15:56:56 ajacoutot Exp $
+$OpenBSD: user.list,v 1.424 2023/03/12 18:06:34 danj Exp $
 
 This file lists all users and groups that are created by ports. All
 ports' users/groups have to start with an underscore and have to use
@@ -175,7 +175,7 @@ id  user		group		port
 664 _mdnsd		_mdnsd		net/openmdns
 #665 _hgd		_hgd		audio/hgd
 666 _dovenull		_dovenull	mail/dovecot
-667 _icinga		_icinga		net/icinga/core
+667 _icinga		_icinga		net/icinga/core2
 668 _jenkins		_jenkins	devel/jenkins
 669 _rsync		_rsync		net/rsync
 670 _mongodb		_mongodb	databases/mongodb
@@ -227,7 +227,7 @@ id  user		group		port
 716 _c-icap		_c-icap		www/c-icap/c-icap
 717 _uptimed		_uptimed	sysutils/uptimed
 718 _stuntman		_stuntman	telephony/stuntman
-719 _puppetdb		_puppetdb	databases/puppetdb4, databases/puppetdb5
+719 _puppetdb		_puppetdb	databases/puppetdb/7
 720 _lldpd		_lldpd		net/lldpd
 721 _dkimproxy		_dkimproxy	mail/dkimproxy
 722 _salt		_salt		sysutils/salt
@@ -365,7 +365,7 @@ id  user		group		port
 854 _murmurd		_murmurd	audio/mumble,-server
 855 _repro		_repro		telephony/resiprocate
 856 _return		_return		telephony/resiprocate
-857 _web2ldap		_web2ldap	sysutils/web2ldap
+857 _web2ldap		_web2ldap	databases/web2ldap
 858 _purritobin		_purritobin	www/purritobin
 859 _miniflux		_miniflux	net/miniflux
 860 _dendrite		_dendrite	net/dendrite
@@ -398,4 +398,4 @@ id  user		group		port
 887 _endlessh		_endlessh	net/endlessh
 888 _epmd		_epmd		lang/erlang/25
 889 _gromox		_gromox		mail/grommunio/gromox
-890 _grommunio		_grommunio	mail/grommunio/grommunio-admin-api
+890 _grommunio		_grommunio	mail/grommunio/admin-api
