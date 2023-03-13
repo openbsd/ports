@@ -1,5 +1,6 @@
 BROKEN-powerpc64 =	Check failed: false. OS architecture not handled. (powerpc64)
 BROKEN-riscv64 =	Unknown current CPU: riscv64
+BROKEN-i386 =		./v8_context_snapshot_generator failed with exit code -11
 
 USE_WXNEEDED=		Yes
 
