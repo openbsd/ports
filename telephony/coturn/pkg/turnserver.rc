@@ -1,10 +1,15 @@
 #!/bin/ksh
 
 daemon="${TRUEPREFIX}/bin/turnserver --daemon"
+daemon_flags="--pidfile=/var/run/turnserver/turnserver.pid"
 daemon_user="_turnserver"
 
 . /etc/rc.d/rc.subr
 
 rc_reload=NO
+
+rc_pre() {
+	install -d -o ${daemon_user} /var/run/turnserver
+}
 
 rc_cmd $1
