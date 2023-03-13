@@ -1,5 +1,6 @@
 @bin bin/pivy-agent
 @bin bin/pivy-box
+@bin bin/pivy-ca
 @bin bin/pivy-tool
 share/doc/pivy/
 share/doc/pivy/README.adoc
