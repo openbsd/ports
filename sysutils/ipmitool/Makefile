@@ -5,11 +5,19 @@ GH_ACCOUNT=	ipmitool
 GH_PROJECT=	ipmitool
 GH_TAGNAME=	IPMITOOL_${V:S/./_/g}
 PKGNAME=	ipmitool-$V
-DISTFILES=	${GH_DISTFILE} enterprise-numbers.20220204.gz:0
-EXTRACT_ONLY=	${GH_DISTFILE}
+REVISION=	0
+
+#DISTFILES=	${GH_DISTFILE} \
+#		enterprise-numbers.20220204.gz:0
+#EXTRACT_ONLY=	${GH_DISTFILE}
+# was re-rolled
+DISTFILES=	ipmitool-IPMITOOL_1_8_19.0{ipmitool-IPMITOOL_1_8_19}.tar.gz \
+		enterprise-numbers.20220204.gz:0
+EXTRACT_ONLY=	ipmitool-IPMITOOL_1_8_19.0.tar.gz
 
 CATEGORIES=	sysutils
 
+# https://sourceforge.net/projects/ipmitool/
 HOMEPAGE=	https://github.com/ipmitool/ipmitool
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
