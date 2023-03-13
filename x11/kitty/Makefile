@@ -3,11 +3,14 @@ ONLY_FOR_ARCHS =	aarch64 amd64 i386
 
 COMMENT =		fast, feature full, GPU-based terminal emulator
 
-MODPY_EGG_VERSION =	0.26.4
+# 0.27.1 runs the newly built kitty binary during build, but expects
+# it to be in the path (try PORTPATH=${WRKSRC}/linux-package/bin:${PATH})
+# build also fails if you have an older version of kitty installed -
+# it also wants to download go modules during build
+MODPY_EGG_VERSION =	0.26.5
 DISTNAME =		kitty-${MODPY_EGG_VERSION}
 CATEGORIES =		x11
 HOMEPAGE =		https://sw.kovidgoyal.net/kitty/
-REVISION =		4
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
@@ -48,7 +51,7 @@ LIB_DEPENDS =		audio/libcanberra \
 			x11/dbus \
 			x11/xkbcommon
 
-TEST_ENV = 		CI=true \
+TEST_ENV =		CI=true \
 			TMPDIR=${WRKDIR}/tmp \
 			KITTY_CACHE_DIRECTORY=${WRKDIR}/tmp/cache
 
