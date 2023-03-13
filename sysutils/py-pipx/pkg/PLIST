@@ -65,6 +65,8 @@ lib/python${MODPY_VERSION}/site-packages/pipx/commands/${MODPY_PYCACHE}run.${MOD
 lib/python${MODPY_VERSION}/site-packages/pipx/commands/${MODPY_PYCACHE}run.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pipx/commands/${MODPY_PYCACHE}run_pip.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pipx/commands/${MODPY_PYCACHE}run_pip.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pipx/commands/${MODPY_PYCACHE}uninject.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pipx/commands/${MODPY_PYCACHE}uninject.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pipx/commands/${MODPY_PYCACHE}uninstall.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pipx/commands/${MODPY_PYCACHE}uninstall.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pipx/commands/${MODPY_PYCACHE}upgrade.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -78,6 +80,7 @@ lib/python${MODPY_VERSION}/site-packages/pipx/commands/list_packages.py
 lib/python${MODPY_VERSION}/site-packages/pipx/commands/reinstall.py
 lib/python${MODPY_VERSION}/site-packages/pipx/commands/run.py
 lib/python${MODPY_VERSION}/site-packages/pipx/commands/run_pip.py
+lib/python${MODPY_VERSION}/site-packages/pipx/commands/uninject.py
 lib/python${MODPY_VERSION}/site-packages/pipx/commands/uninstall.py
 lib/python${MODPY_VERSION}/site-packages/pipx/commands/upgrade.py
 lib/python${MODPY_VERSION}/site-packages/pipx/constants.py
