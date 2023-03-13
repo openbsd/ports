@@ -1,6 +1,6 @@
 COMMENT =	C/C++ compiler front-end to cache compiled object code
 
-V =		4.7.3
+V =		4.8
 DISTNAME =	ccache-$V
 
 CATEGORIES =	devel
@@ -32,11 +32,8 @@ PORTHOME =		${WRKDIR}
 TEST_DEPENDS =		shells/bash
 TEST_ENV =		CC="${CC}"
 
-# evertyhing except tests
-ALL_TARGET =		ccache doc
-
-# build whatever is left (ca. 35 C++ test files)
+# disabled in default build via patch
 pre-test:
-	@${MODCMAKE_BUILD_TARGET}
+	@${MODCMAKE_BUILD_TARGET} -t unittest
 
 .include <bsd.port.mk>

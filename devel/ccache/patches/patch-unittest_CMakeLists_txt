@@ -1,0 +1,14 @@
+don't build tests by default
+
+Index: unittest/CMakeLists.txt
+--- unittest/CMakeLists.txt.orig
++++ unittest/CMakeLists.txt
+@@ -47,7 +47,7 @@ endif()
+ file(GLOB headers *.hpp)
+ list(APPEND source_files ${headers})
+ 
+-add_executable(unittest ${source_files})
++add_executable(unittest EXCLUDE_FROM_ALL ${source_files})
+ 
+ if(MSVC)
+   # Turn off /Zc:preprocessor for this test because it triggers a bug in some older Windows 10 SDK headers.
