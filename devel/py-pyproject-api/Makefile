@@ -1,6 +1,6 @@
 COMMENT=	API to interact with pyproject.toml-based projects
 
-MODPY_EGG_VERSION=	1.5.0
+MODPY_EGG_VERSION=	1.5.1
 DISTNAME=	pyproject_api-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 
