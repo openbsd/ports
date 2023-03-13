@@ -159,6 +159,7 @@ awstats/wwwroot/cgi-bin/lang/awstats-se.txt
 awstats/wwwroot/cgi-bin/lang/awstats-si.txt
 awstats/wwwroot/cgi-bin/lang/awstats-sk.txt
 awstats/wwwroot/cgi-bin/lang/awstats-sr.txt
+awstats/wwwroot/cgi-bin/lang/awstats-tg.txt
 awstats/wwwroot/cgi-bin/lang/awstats-th.txt
 awstats/wwwroot/cgi-bin/lang/awstats-tr.txt
 awstats/wwwroot/cgi-bin/lang/awstats-tw.txt
@@ -722,6 +723,9 @@ awstats/wwwroot/icon/os/aix.png
 awstats/wwwroot/icon/os/amigaos.png
 awstats/wwwroot/icon/os/android.png
 awstats/wwwroot/icon/os/android10.png
+awstats/wwwroot/icon/os/android11.png
+awstats/wwwroot/icon/os/android12.png
+awstats/wwwroot/icon/os/android13.png
 awstats/wwwroot/icon/os/androidcupcake.png
 awstats/wwwroot/icon/os/androiddonut.png
 awstats/wwwroot/icon/os/androideclair.png
@@ -755,6 +759,7 @@ awstats/wwwroot/icon/os/dos.png
 awstats/wwwroot/icon/os/dreamcast.png
 awstats/wwwroot/icon/os/freebsd.png
 awstats/wwwroot/icon/os/gnu.png
+awstats/wwwroot/icon/os/haiku.png
 awstats/wwwroot/icon/os/hpux.png
 awstats/wwwroot/icon/os/ibm.png
 awstats/wwwroot/icon/os/imode.png
@@ -783,6 +788,8 @@ awstats/wwwroot/icon/os/linuxvine.png
 awstats/wwwroot/icon/os/linuxzenwalk.png
 awstats/wwwroot/icon/os/mac.png
 awstats/wwwroot/icon/os/macintosh.png
+awstats/wwwroot/icon/os/macos11.png
+awstats/wwwroot/icon/os/macos12.png
 awstats/wwwroot/icon/os/macosx.png
 awstats/wwwroot/icon/os/macosx10.png
 awstats/wwwroot/icon/os/macosx11.png
@@ -817,6 +824,7 @@ awstats/wwwroot/icon/os/webtv.png
 awstats/wwwroot/icon/os/wii.png
 awstats/wwwroot/icon/os/win.png
 awstats/wwwroot/icon/os/win10.png
+awstats/wwwroot/icon/os/win11.png
 awstats/wwwroot/icon/os/win16.png
 awstats/wwwroot/icon/os/win2000.png
 awstats/wwwroot/icon/os/win2003.png
