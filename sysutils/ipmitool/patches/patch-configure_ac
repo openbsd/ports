@@ -9,15 +9,6 @@ Fix bad AC_TRY_COMPILE check.
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -2,7 +2,7 @@ dnl
- dnl autoconf for ipmitool
- dnl
- m4_define([git_suffix], m4_esyscmd_s(./csv-revision))
--AC_INIT([ipmitool], [1.8.18git_suffix])
-+AC_INIT([ipmitool], [1.8.19git_suffix])
- AC_CONFIG_SRCDIR([src/ipmitool.c])
- AC_CONFIG_COMMANDS_PRE([export prefix=$prefix])
- AC_CANONICAL_SYSTEM
 @@ -36,7 +36,7 @@ AC_CHECK_FUNCS([alarm gethostbyname getaddrinfo getifa
  AC_CHECK_FUNCS([memmove memset strchr strdup strerror])
  AC_CHECK_FUNCS([getpassphrase])
