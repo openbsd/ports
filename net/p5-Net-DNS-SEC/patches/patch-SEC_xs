@@ -1,0 +1,24 @@
+Do not set a missing DSA private key to 0
+
+DSA parameters may or may not have a private key. If the private key is absent,
+it should be NULL to indicate it is missing. If it is mocked up to be 0, this
+won't pass minimal sanity checks.
+
+There are similar issues in this code, e.g., in RSA.
+
+There are also quality issues such as missing error checks and hardcoded nids
+that should really use the appropriate NID_* macros from <openssl/objects.h>.
+
+Index: SEC.xs
+--- SEC.xs.orig
++++ SEC.xs
+@@ -318,7 +318,8 @@ EVP_PKEY_new_DSA(SV *p_SV, SV *q_SV, SV *g_SV, SV *y_S
+ 	BIGNUM *p = BN_bin2bn( (unsigned char*) SvPVX(p_SV), SvCUR(p_SV), NULL );
+ 	BIGNUM *q = BN_bin2bn( (unsigned char*) SvPVX(q_SV), SvCUR(q_SV), NULL );
+ 	BIGNUM *g = BN_bin2bn( (unsigned char*) SvPVX(g_SV), SvCUR(g_SV), NULL );
+-	BIGNUM *x = BN_bin2bn( (unsigned char*) SvPVX(x_SV), SvCUR(x_SV), NULL );
++	BIGNUM *x = SvCUR(x_SV) == 0 ? NULL :
++		    BN_bin2bn( (unsigned char*) SvPVX(x_SV), SvCUR(x_SV), NULL );
+ 	BIGNUM *y = BN_bin2bn( (unsigned char*) SvPVX(y_SV), SvCUR(y_SV), NULL );
+     CODE:
+ #ifdef OBSOLETE_API
