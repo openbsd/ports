@@ -5228,10 +5228,6 @@ lib/ghc/unix-${UNIX_VER}/
 lib/ghc/unix-${UNIX_VER}/HSunix-${UNIX_VER}.o
 lib/ghc/unix-${UNIX_VER}/HSunix-${UNIX_VER}.p_o
 lib/ghc/unix-${UNIX_VER}/System/
-lib/ghc/unix-${UNIX_VER}/System/OpenBSD/
-lib/ghc/unix-${UNIX_VER}/System/OpenBSD/Process.dyn_hi
-lib/ghc/unix-${UNIX_VER}/System/OpenBSD/Process.hi
-lib/ghc/unix-${UNIX_VER}/System/OpenBSD/Process.p_hi
 lib/ghc/unix-${UNIX_VER}/System/Posix/
 lib/ghc/unix-${UNIX_VER}/System/Posix.dyn_hi
 lib/ghc/unix-${UNIX_VER}/System/Posix.hi
@@ -7756,7 +7752,6 @@ share/doc/ghc/html/libraries/transformers-${TRANSFORMERS_VER}/transformers.haddo
 share/doc/ghc/html/libraries/transformers-${TRANSFORMERS_VER}/transformers.txt
 share/doc/ghc/html/libraries/unix-${UNIX_VER}/
 share/doc/ghc/html/libraries/unix-${UNIX_VER}/LICENSE
-share/doc/ghc/html/libraries/unix-${UNIX_VER}/System-OpenBSD-Process.html
 share/doc/ghc/html/libraries/unix-${UNIX_VER}/System-Posix-ByteString-FilePath.html
 share/doc/ghc/html/libraries/unix-${UNIX_VER}/System-Posix-ByteString.html
 share/doc/ghc/html/libraries/unix-${UNIX_VER}/System-Posix-Directory-ByteString.html

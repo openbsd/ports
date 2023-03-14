@@ -12,6 +12,7 @@ NO_CCACHE =		Yes
 USE_NOEXECONLY =	Yes
 
 GHC_VERSION =		9.2.7
+REVISION =		0
 DISTNAME =		ghc-${GHC_VERSION}
 CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/
@@ -137,9 +138,6 @@ TEST_DEPENDS =	print/ghostscript/gnu ${MODPY_RUN_DEPENDS}
 
 post-extract:
 	cd ${WRKSRC} && ${AUTOCONF_ENV} ./boot
-	cd ${WRKSRC}/libraries/unix && \
-	mkdir -p System/OpenBSD && \
-	install -m 644 ${FILESDIR}/Process.hsc System/OpenBSD
 
 BOOTSTRAP_SHLIBS =	${WRKDIR}/ghc-${BIN_VER}-shlibs-${MACHINE_ARCH}
 
