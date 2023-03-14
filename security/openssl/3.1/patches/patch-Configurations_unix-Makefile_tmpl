@@ -1,0 +1,51 @@
+Index: Configurations/unix-Makefile.tmpl
+--- Configurations/unix-Makefile.tmpl.orig
++++ Configurations/unix-Makefile.tmpl
+@@ -1398,7 +1398,7 @@ libcrypto.pc:
+ 	    else \
+ 	        echo 'libdir=$(libdir)'; \
+ 	    fi; \
+-	    echo 'includedir=$${prefix}/include'; \
++	    echo 'includedir=$${prefix}/include/eopenssl30'; \
+ 	    echo 'enginesdir=$${libdir}/engines-{- $sover_dirname -}'; \
+ 	    echo 'modulesdir=$${libdir}/ossl-modules'; \
+ 	    echo ''; \
+@@ -1417,12 +1417,12 @@ libssl.pc:
+ 	    else \
+ 	        echo 'libdir=$(libdir)'; \
+ 	    fi; \
+-	    echo 'includedir=$${prefix}/include'; \
++	    echo 'includedir=$${prefix}/include/eopenssl30'; \
+ 	    echo ''; \
+ 	    echo 'Name: OpenSSL-libssl'; \
+ 	    echo 'Description: Secure Sockets Layer and cryptography libraries'; \
+ 	    echo 'Version: '$(VERSION); \
+-	    echo 'Requires.private: libcrypto'; \
++	    echo 'Requires.private: libecrypto30'; \
+ 	    echo 'Libs: -L$${libdir} -lssl'; \
+ 	    echo 'Cflags: -I$${includedir}' ) > libssl.pc
+ 
+@@ -1434,12 +1434,12 @@ openssl.pc:
+ 	    else \
+ 	        echo 'libdir=$(libdir)'; \
+ 	    fi; \
+-	    echo 'includedir=$${prefix}/include'; \
++	    echo 'includedir=$${prefix}/include/eopenssl30'; \
+ 	    echo ''; \
+ 	    echo 'Name: OpenSSL'; \
+ 	    echo 'Description: Secure Sockets Layer and cryptography libraries and tools'; \
+ 	    echo 'Version: '$(VERSION); \
+-	    echo 'Requires: libssl libcrypto' ) > openssl.pc
++	    echo 'Requires: libessl30 libecrypto30' ) > openssl.pc
+ 
+ Makefile: configdata.pm \
+           {- join(" \\\n" . ' ' x 10,
+@@ -1569,7 +1569,7 @@ EOF
+               $generator = 'CC="$(CC)" $(PERL)'.$gen_incs.' '.$gen0.$gen_args
+                   .' "$(PERLASM_SCHEME)"'.$incs.' '.$cppflags.$defs.' $(PROCESSOR)';
+           } elsif ($gen0 =~ /\.m4$/) {
+-              $generator = 'm4 -B 8192'.$gen_incs.' '.$gen0.$gen_args.' >'
++              $generator = 'm4'.$gen_incs.' '.$gen0.$gen_args.' >'
+           } elsif ($gen0 =~ /\.S$/) {
+               $generator = undef;
+           } else {

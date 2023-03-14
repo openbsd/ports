@@ -1,0 +1,16 @@
+Index: crypto/bn/asm/rsaz-x86_64.pl
+--- crypto/bn/asm/rsaz-x86_64.pl.orig
++++ crypto/bn/asm/rsaz-x86_64.pl
+@@ -2248,10 +2248,12 @@ $code.=<<___;
+ .cfi_endproc
+ .size	rsaz_512_gather4,.-rsaz_512_gather4
+ 
++.rodata
+ .align	64
+ .Linc:
+ 	.long	0,0, 1,1
+ 	.long	2,2, 2,2
++.previous
+ ___
+ }
+ 
