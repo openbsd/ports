@@ -1,11 +1,11 @@
 COMMENT =	reimplementation of Zelda - A Link to the Past
 
-DISTNAME =	zelda3-0.1pre20221101
+V =		0.2-beta
+PKGNAME =	zelda3-${V:S/-//g}
 
-# use a commit hash, for now; the latest tag (v0.1-beta) is quite outdated
 GH_ACCOUNT =	snesrev
 GH_PROJECT =	zelda3
-GH_COMMIT =	91d771ecc4532e4e40995b133edd9d82a39d61ac
+GH_TAGNAME =	v${V}
 
 CATEGORIES =	games
 
