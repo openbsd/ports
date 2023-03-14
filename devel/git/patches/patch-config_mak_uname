@@ -3,7 +3,7 @@ OpenBSD wants DIR_HAS_BSD_GROUP_SEMANTICS, just like FreeBSD
 Index: config.mak.uname
 --- config.mak.uname.orig
 +++ config.mak.uname
-@@ -279,8 +279,7 @@ ifeq ($(uname_S),FreeBSD)
+@@ -280,8 +280,7 @@ ifeq ($(uname_S),FreeBSD)
  	FILENO_IS_A_MACRO = UnfortunatelyYes
  endif
  ifeq ($(uname_S),OpenBSD)

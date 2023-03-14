@@ -24,14 +24,12 @@ ${P5SITE}/Git/Packet.pm
 libexec/git/
 @bin libexec/git/git
 @bin libexec/git/git-add
-libexec/git/git-add--interactive
 @bin libexec/git/git-am
 @bin libexec/git/git-annotate
 @bin libexec/git/git-apply
 libexec/git/git-archimport
 @bin libexec/git/git-archive
-libexec/git/git-bisect
-@bin libexec/git/git-bisect--helper
+@bin libexec/git/git-bisect
 @bin libexec/git/git-blame
 @bin libexec/git/git-branch
 @bin libexec/git/git-bugreport
@@ -70,7 +68,6 @@ libexec/git/git-cvsserver
 @bin libexec/git/git-diff-tree
 @bin libexec/git/git-difftool
 libexec/git/git-difftool--helper
-@bin libexec/git/git-env--helper
 @bin libexec/git/git-fast-export
 @bin libexec/git/git-fast-import
 @bin libexec/git/git-fetch
