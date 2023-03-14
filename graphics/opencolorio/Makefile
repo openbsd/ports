@@ -1,3 +1,5 @@
+BROKEN-sparc64 = NumberUtils.h:143:17: error: no member named 'strtoll_l' in the global namespace
+
 COMMENT =		color management library
 
 EPOCH =			1
