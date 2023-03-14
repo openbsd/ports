@@ -12,6 +12,13 @@ CATEGORIES=	mail www
 
 MODULES=	lang/php
 
+.if ${MACHINE_ARCH} == i386
+# java process run during the build uses a lot of ram; avoid scheduling
+# other build jobs at the same time to increase the chance of this build
+# succeeding
+DPB_PROPERTIES=	lonesome
+.endif
+
 MODPHP_BUILDDEP=Yes
 MODPHP_RUNDEP=	No
 
