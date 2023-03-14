@@ -1,0 +1,16 @@
+"Fix ruby-mode.el local command injection vulnerability (bug#60268)" (CVE-2022-48338)
+https://debbugs.gnu.org/cgi/bugreport.cgi?bug=60268
+https://git.savannah.gnu.org/cgit/emacs.git/commit/?h=emacs-28&id=22fb5ff5126dc8bb01edaa0252829d853afb284f
+https://git.savannah.gnu.org/cgit/emacs.git/commit/?id=9a3b08061feea14d6f37685ca1ab8801758bfd1c
+
+--- lisp/progmodes/ruby-mode.el.orig
++++ lisp/progmodes/ruby-mode.el
+@@ -1819,7 +1819,7 @@ or `gem' statement around point."
+       (setq feature-name (read-string "Feature name: " init))))
+   (let ((out
+          (substring
+-          (shell-command-to-string (concat "gem which " feature-name))
++          (shell-command-to-string (concat "gem which " (shell-quote-argument feature-name)))
+           0 -1)))
+     (if (string-match-p "\\`ERROR" out)
+         (user-error "%s" out)

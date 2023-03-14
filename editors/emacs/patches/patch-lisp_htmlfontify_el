@@ -1,0 +1,17 @@
+"Fix htmlfontify.el command injection vulnerability." (CVE-2022-48339)
+https://debbugs.gnu.org/cgi/bugreport.cgi?bug=60295
+https://git.savannah.gnu.org/cgit/emacs.git/commit/?h=emacs-28&id=807d2d5b3a7cd1d0e3f7dd24de22770f54f5ae16
+https://git.savannah.gnu.org/cgit/emacs.git/commit/?id=1b4dc4691c1f87fc970fbe568b43869a15ad0d4c
+
+Index: lisp/htmlfontify.el
+--- lisp/htmlfontify.el.orig
++++ lisp/htmlfontify.el
+@@ -1882,7 +1882,7 @@ Hardly bombproof, but good enough in the context in wh
+ 
+ (defun hfy-text-p (srcdir file)
+   "Is SRCDIR/FILE text?  Use `hfy-istext-command' to determine this."
+-  (let* ((cmd (format hfy-istext-command (expand-file-name file srcdir)))
++  (let* ((cmd (format hfy-istext-command (shell-quote-argument (expand-file-name file srcdir))))
+          (rsp (shell-command-to-string    cmd)))
+     (string-match "text" rsp)))
+ 
