@@ -1,7 +1,17 @@
-Jenkins is the leading open source automation server supported by
-a large and growing community of developers, testers, designers
-and other people interested in continuous integration,
-continuous delivery and modern software delivery practices.
-Built on the Java Virtual Machine (JVM), it provides more than
-1,800 plugins that extend Jenkins to automate with practically
-any technology software delivery teams use.
+Jenkins is a self-contained, open source automation server which can be
+used to automate all sorts of tasks related to building, testing, and
+delivering or deploying software.
+
+As an extensible automation server, Jenkins can be used as a simple CI
+(Continuous Integration) server or turned into the continuous delivery
+hub for any project.
+
+Jenkins can be extended via its plugin architecture. Hundreds of plugins
+are available in the Update Center integrating with practically every
+tool in the continuous integration and continuous delivery toolchain.
+ 
+It can easily distribute work across multiple machines, helping drive
+builds, tests and deployments across multiple platforms faster.
+
+Jenkins can be easily set up and configured via its web interface,
+which includes on-the-fly error checks and built-in help.
