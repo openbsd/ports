@@ -1,7 +1,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -270,4 +270,4 @@ elseif(BUILD_CLIENT)
+@@ -282,4 +282,4 @@ elseif(BUILD_CLIENT)
      configure_file(sync-exclude.lst bin/sync-exclude.lst COPYONLY)
  endif()
  
