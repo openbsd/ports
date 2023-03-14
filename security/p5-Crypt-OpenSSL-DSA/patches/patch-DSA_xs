@@ -1,0 +1,26 @@
+Use a dummy public key that has a chance of being an actual public key.
+
+This works around an expected test failure until we add a check that a 
+signature can be verified with the provided DSA parameters.
+
+It would probably make more sense to mark the failing test without this
+diff as XFAIL.
+
+Index: DSA.xs
+--- DSA.xs.orig
++++ DSA.xs
+@@ -601,12 +601,12 @@ set_priv_key(dsa, priv_key_SV)
+     PREINIT:
+         STRLEN len;
+         const BIGNUM *old_pub_key;
+-        BIGNUM *pub_key;
++        BIGNUM *pub_key = NULL;
+         BIGNUM *priv_key;
+     CODE:
+         DSA_get0_key(dsa, &old_pub_key, NULL);
+         if (NULL == old_pub_key) {
+-            pub_key = BN_new();
++            BN_dec2bn(&pub_key, "2");
+             if (NULL == pub_key) {
+                 croak("Could not create a dummy public key");
+             }
