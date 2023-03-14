@@ -5,6 +5,7 @@ DISTNAME=	libevent-$V-stable
 PKGNAME=	libevent-$V
 CATEGORIES=	devel
 HOMEPAGE=	https://libevent.org/
+REVISION=	0
 
 SHARED_LIBS+=	event_core	2.1	# 7.1
 SHARED_LIBS+=	event_extra	1.0	# 7.1
@@ -17,6 +18,10 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=	https://github.com/libevent/libevent/releases/download/release-$V-stable/
 
 WANTLIB=	crypto pthread ssl
+
+MODULES=	lang/python
+MODPY_RUNDEP=	No
+MODPY_ADJ_FILES=event_rpcgen.py
 
 CONFIGURE_STYLE=gnu
 
