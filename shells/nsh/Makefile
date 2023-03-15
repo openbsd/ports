@@ -1,11 +1,9 @@
 COMMENT =	network switch style shell
 
-DISTNAME =	nsh-1.0.20220919
 
 GH_ACCOUNT =	yellowman
 GH_PROJECT =	nsh
-GH_COMMIT =	fcad0f6af197ab0c96e2c5410c546ad90027f7a1
-
+GH_TAGNAME =	v1.1
 CATEGORIES =	shells net
 HOMEPAGE =	https://www.nmedia.net/nsh/
 
