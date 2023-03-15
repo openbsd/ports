@@ -1,0 +1,5 @@
+@bin bin/pizauth
+@man man/man1/pizauth.1
+@man man/man5/pizauth.conf.5
+share/examples/pizauth/
+share/examples/pizauth/pizauth.conf
