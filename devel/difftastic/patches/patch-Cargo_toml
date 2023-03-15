@@ -12,7 +12,7 @@ Index: Cargo.toml
  bumpalo = "3.11.1"
  unicode-width = "0.1.9"
  crossterm = { version = "0.25.0", features = [] }
-@@ -71,6 +71,3 @@ path = "src/main.rs"
+@@ -77,6 +77,3 @@ path = "src/main.rs"
  
  [features]
  
