@@ -2,6 +2,7 @@ COMMENT =	web outside of browsers
 
 MODPY_EGG_VERSION =	3.3.1
 DISTNAME =	woob-${MODPY_EGG_VERSION}
+REVISION =	0
 
 CATEGORIES =	www
 HOMEPAGE =	https://woob.tech/
@@ -25,6 +26,7 @@ RUN_DEPENDS +=	converters/py-html2text${MODPY_FLAVOR} \
 		graphics/py-Pillow${MODPY_FLAVOR} \
 		net/curl \
 		security/gnupg \
+		sysutils/py-packaging${MODPY_FLAVOR} \
 		textproc/py-lxml${MODPY_FLAVOR} \
 		textproc/py-feedparser${MODPY_FLAVOR} \
 		textproc/py-prettytable${MODPY_FLAVOR} \
