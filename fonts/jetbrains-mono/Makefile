@@ -1,6 +1,6 @@
 COMMENT =	monotype font for developers
 
-V =		2.242
+V =		2.304
 DISTNAME =	${TYPEFACE}-$V
 PKGNAME =	jetbrains-mono-$V
 
@@ -8,7 +8,7 @@ CATEGORIES =	fonts x11
 
 HOMEPAGE =	https://www.jetbrains.com/lp/mono/
 
-# Apache 2.0
+# SIL OFL 1.1
 PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	https://download.jetbrains.com/fonts/
