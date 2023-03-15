@@ -1,0 +1,13 @@
+Index: data/motion-dist.conf.in
+--- data/motion-dist.conf.in.orig
++++ data/motion-dist.conf.in
+@@ -31,6 +31,9 @@ log_level 6
+ ; target_dir value
+ 
+ # Video device (e.g. /dev/video0) to be used for capturing.
++# Remember that the _motion user will need to have permission to
++# able to access it (e.g. chown _motion /dev/video0), and that
++# recording is disabled unless sysctl kern.video.record=1 is set.
+ video_device /dev/video0
+ 
+ # Parameters to control video device.  See motion_guide.html

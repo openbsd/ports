@@ -4,6 +4,7 @@ COMMENT=	motion detection software for video
 GH_ACCOUNT=	Motion-Project
 GH_PROJECT=	motion
 GH_TAGNAME=	release-$V
+REVISION=	0
 
 CATEGORIES=	multimedia
 
