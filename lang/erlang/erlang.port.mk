@@ -42,7 +42,7 @@ MODERL_BUILD_DEPENDS +=	devel/rebar3
 REBAR_BIN ?=		${LOCALBASE}/bin/rebar3-${MODERL_VERSION}
 # Make sure rebar gets called as 'rebar3', otherwise escript tries to call the
 # binary name (e.g. rebar3-25) as the script entrypoint.
-_MODERL_LINKS +=	rebar3-${MODERL_VERSION} rebar
+_MODERL_LINKS +=	rebar3-${MODERL_VERSION} rebar3
 .endif
 
 # Append the flavor to all the Erlang dependencies
@@ -115,7 +115,7 @@ pre-configure:
 .endif
 .endif
 
-.if ${CONFIGURE_STYLE:L} == "rebar" || ${CONFIGURE_STYLE:L} == "rebar3"
+.if ${CONFIGURE_STYLE:L} == "rebar3"
 # Some modules bundle their own rebar escript, force them to use the system
 # rebar instead.
 # While here, remove the deps{} block from rebar.config, we cannot download
@@ -123,12 +123,12 @@ pre-configure:
 # management from the ports Makefile.
 .  if ! target(pre-build)
 pre-build:
-	@cp -f ${REBAR_BIN} ${WRKSRC}/rebar
+	@cp -f ${REBAR_BIN} ${WRKSRC}/rebar3
 	@perl -pi -e 'BEGIN{undef $$/;} s/{deps,.*?]}.//smg' ${WRKSRC}/rebar.config
 .  endif
 .endif
 
-# Regression test handing:
+# Regression test handling:
 # If nothing is explicitly set, then MODERL_TEST=Yes and default
 # target 'test' is used. Otherwise, if MODERL_TEST=eunit, then
 # TEST_TARGET=eunit
