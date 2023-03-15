@@ -5,7 +5,7 @@ GH_ACCOUNT=	pierky
 GH_PROJECT=	arouteserver
 GH_TAGNAME=	v${MODPY_EGG_VERSION}
 
-MODPY_EGG_VERSION=	1.19.0
+MODPY_EGG_VERSION=	1.20.0
 DISTNAME=	arouteserver-${MODPY_EGG_VERSION}
 
 CATEGORIES=	net
@@ -28,7 +28,6 @@ TEST_DEPENDS=	www/py-requests-mock${MODPY_FLAVOR} \
 		net/bgpq3
 
 MODPY_PYBUILD=	setuptools
-#MODPY_PYTEST_DIR= tests
 MODPY_PYTEST_ARGS= \
 		--ignore pierky/arouteserver/tests/live_tests \
 		--ignore tests/real \
