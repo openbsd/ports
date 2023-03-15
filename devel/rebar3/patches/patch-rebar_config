@@ -3,10 +3,10 @@ set main module name for escript
 Index: rebar.config
 --- rebar.config.orig
 +++ rebar.config
-@@ -24,7 +24,7 @@
+@@ -12,7 +12,7 @@
  {escript_name, rebar3}.
  {escript_wrappers_windows, ["cmd", "powershell"]}.
- {escript_comment, "%%Rebar3 3.19.0\n"}.
+ {escript_comment, "%%Rebar3 3.20.0\n"}.
 -{escript_emu_args, "%%! +sbtu +A1\n"}.
 +{escript_emu_args, "%%! +sbtu +A1 -escript main rebar3\n"}.
  %% escript_incl_priv is for internal rebar-private use only.

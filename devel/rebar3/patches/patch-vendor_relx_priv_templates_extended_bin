@@ -1,8 +1,8 @@
 use versioned erlang binary
 
-Index: _build/default/lib/relx/priv/templates/extended_bin
---- _build/default/lib/relx/priv/templates/extended_bin.orig
-+++ _build/default/lib/relx/priv/templates/extended_bin
+Index: vendor/relx/priv/templates/extended_bin
+--- vendor/relx/priv/templates/extended_bin.orig
++++ vendor/relx/priv/templates/extended_bin
 @@ -199,7 +199,7 @@ find_erts_dir() {
      if [ -d "$__erts_dir" ]; then
          ERTS_DIR="$__erts_dir";
