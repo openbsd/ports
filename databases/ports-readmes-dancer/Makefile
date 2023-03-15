@@ -4,7 +4,7 @@ PKG_ARCH = *
 MAINTAINER =		Marc Espie <espie@openbsd.org>
 
 GH_PROJECT = ports-readmes-dancer
-GH_TAGNAME = 3.10
+GH_TAGNAME = 3.11
 GH_ACCOUNT = marcespie
 CATEGORIES =		databases www
 
