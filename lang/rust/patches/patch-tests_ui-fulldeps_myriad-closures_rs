@@ -1,6 +1,6 @@
-Index: src/test/ui-fulldeps/myriad-closures.rs
---- src/test/ui-fulldeps/myriad-closures.rs.orig
-+++ src/test/ui-fulldeps/myriad-closures.rs
+Index: tests/ui-fulldeps/myriad-closures.rs
+--- tests/ui-fulldeps/myriad-closures.rs.orig
++++ tests/ui-fulldeps/myriad-closures.rs
 @@ -7,6 +7,8 @@
  // Make sure we don't optimize anything away:
  // compile-flags: -C no-prepopulate-passes -Cpasses=name-anon-globals

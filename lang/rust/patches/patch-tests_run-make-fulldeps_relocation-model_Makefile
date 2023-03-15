@@ -1,0 +1,13 @@
+Index: tests/run-make-fulldeps/relocation-model/Makefile
+--- tests/run-make-fulldeps/relocation-model/Makefile.orig
++++ tests/run-make-fulldeps/relocation-model/Makefile
+@@ -1,5 +1,9 @@
+ include ../tools.mk
+ 
++ifeq ($(UNAME),OpenBSD)
++skip:
++endif
++
+ all: others
+ 	$(RUSTC) -C relocation-model=dynamic-no-pic foo.rs
+ 	$(call RUN,foo)

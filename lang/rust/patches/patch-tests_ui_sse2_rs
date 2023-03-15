@@ -1,8 +1,6 @@
-Disable SSE2 tests for i386.
-
-Index: src/test/ui/sse2.rs
---- src/test/ui/sse2.rs.orig
-+++ src/test/ui/sse2.rs
+Index: tests/ui/sse2.rs
+--- tests/ui/sse2.rs.orig
++++ tests/ui/sse2.rs
 @@ -9,7 +9,7 @@ fn main() {
      match env::var("TARGET") {
          Ok(s) => {
