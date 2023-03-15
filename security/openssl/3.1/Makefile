@@ -2,7 +2,8 @@
 USE_NOEXECONLY =	Yes
 .endif
 
-PORTROACH=	limit:^3
+# skip PORTROACH limit for newest version
+#PORTROACH=	limit:^3\.1
 V=		3.1.0
 PKGNAME=	openssl-${V}
 PKGSPEC=	openssl->=3.1v0,<3.2v0
