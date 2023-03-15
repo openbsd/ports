@@ -1,4 +1,4 @@
-VERSION =		4.17.5
+VERSION =		4.17.6
 DISTNAME =		samba-${VERSION}
 EPOCH =			0
 
@@ -7,8 +7,6 @@ COMMENT-docs =		additional documentation and examples for Samba
 
 PKGNAME-main =		${PKGNAME}
 PKGNAME-docs =		samba-docs-${VERSION}
-
-REVISION-main =		0
 
 PKG_ARCH-docs =		*
 
