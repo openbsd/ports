@@ -248,6 +248,7 @@
      SUBDIR += pinentry-dmenu
      SUBDIR += pivy
      SUBDIR += pixiewps
+     SUBDIR += pizauth
      SUBDIR += plaso
      SUBDIR += polarssl
      SUBDIR += portscanner
