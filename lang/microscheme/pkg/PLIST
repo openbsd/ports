@@ -2,12 +2,10 @@
 share/examples/microscheme/
 share/examples/microscheme/BLINK.ms
 share/examples/microscheme/GERALD.ms
-share/examples/microscheme/ascii.ms
 share/examples/microscheme/blink-led-morse.ms
 share/examples/microscheme/clock.ms
+share/examples/microscheme/fade.ms
 share/examples/microscheme/helloworld.ms
-share/examples/microscheme/lcd.ms
 share/examples/microscheme/marquee.ms
-share/examples/microscheme/max7.ms
 share/examples/microscheme/music.ms
 share/examples/microscheme/serial.ms
