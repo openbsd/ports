@@ -6,6 +6,7 @@ PORTROACH=	limit:^3
 V=		3.1.0
 PKGNAME=	openssl-${V}
 PKGSPEC=	openssl->=3.1v0,<3.2v0
+REVISION=	0
 
 SHLIBVER=	15.0
 SHARED_LIBS=	crypto ${SHLIBVER} \

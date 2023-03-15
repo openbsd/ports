@@ -6,7 +6,7 @@ Index: Configurations/unix-Makefile.tmpl
  	        echo 'libdir=$(libdir)'; \
  	    fi; \
 -	    echo 'includedir=$${prefix}/include'; \
-+	    echo 'includedir=$${prefix}/include/eopenssl30'; \
++	    echo 'includedir=$${prefix}/include/eopenssl31'; \
  	    echo 'enginesdir=$${libdir}/engines-{- $sover_dirname -}'; \
  	    echo 'modulesdir=$${libdir}/ossl-modules'; \
  	    echo ''; \
@@ -15,13 +15,13 @@ Index: Configurations/unix-Makefile.tmpl
  	        echo 'libdir=$(libdir)'; \
  	    fi; \
 -	    echo 'includedir=$${prefix}/include'; \
-+	    echo 'includedir=$${prefix}/include/eopenssl30'; \
++	    echo 'includedir=$${prefix}/include/eopenssl31'; \
  	    echo ''; \
  	    echo 'Name: OpenSSL-libssl'; \
  	    echo 'Description: Secure Sockets Layer and cryptography libraries'; \
  	    echo 'Version: '$(VERSION); \
 -	    echo 'Requires.private: libcrypto'; \
-+	    echo 'Requires.private: libecrypto30'; \
++	    echo 'Requires.private: libecrypto31'; \
  	    echo 'Libs: -L$${libdir} -lssl'; \
  	    echo 'Cflags: -I$${includedir}' ) > libssl.pc
  
@@ -30,13 +30,13 @@ Index: Configurations/unix-Makefile.tmpl
  	        echo 'libdir=$(libdir)'; \
  	    fi; \
 -	    echo 'includedir=$${prefix}/include'; \
-+	    echo 'includedir=$${prefix}/include/eopenssl30'; \
++	    echo 'includedir=$${prefix}/include/eopenssl31'; \
  	    echo ''; \
  	    echo 'Name: OpenSSL'; \
  	    echo 'Description: Secure Sockets Layer and cryptography libraries and tools'; \
  	    echo 'Version: '$(VERSION); \
 -	    echo 'Requires: libssl libcrypto' ) > openssl.pc
-+	    echo 'Requires: libessl30 libecrypto30' ) > openssl.pc
++	    echo 'Requires: libessl31 libecrypto31' ) > openssl.pc
  
  Makefile: configdata.pm \
            {- join(" \\\n" . ' ' x 10,
