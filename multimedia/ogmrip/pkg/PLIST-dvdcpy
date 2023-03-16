@@ -1,4 +1,0 @@
-@conflict ogmrip-<0.13.8p1
-@pkgpath multimedia/dvdcpy
-@bin bin/dvdcpy
-@man man/man1/dvdcpy.1

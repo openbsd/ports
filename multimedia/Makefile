@@ -54,7 +54,6 @@
      SUBDIR += mpgtx
      SUBDIR += mpv
      SUBDIR += oggz
-     SUBDIR += ogmrip
      SUBDIR += ogmtools
      SUBDIR += openh264
      SUBDIR += p5-AMF-Connection
@@ -74,7 +73,6 @@
      SUBDIR += regionset
      SUBDIR += sfml
      SUBDIR += shotcut
-     SUBDIR += shrip
      SUBDIR += streamdvd
      SUBDIR += streamlink
      SUBDIR += subrip

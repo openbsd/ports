@@ -1,4 +1,0 @@
-OGMRip is an application and a set of libraries for ripping and
-encoding DVD into AVI, OGM, MP4, or Matroska files using a wide
-variety of codecs. It relies on mplayer, mencoder, ogmtools,
-mkvtoolnix, mp4box, oggenc, lame, and faac to perform its tasks.
