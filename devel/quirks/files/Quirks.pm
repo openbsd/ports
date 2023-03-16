@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1515 2023/03/10 08:35:49 pvk Exp $
+# $OpenBSD: Quirks.pm,v 1.1516 2023/03/16 06:37:55 namn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1812,6 +1812,8 @@ setup_obsolete_reason(
 	6 => 'ap-utils',
 	6 => 'kibana',
 	6 => 'elasticsearch',
+	3 => 'ogmrip',
+	3 => 'shrip',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
