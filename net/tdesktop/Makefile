@@ -9,6 +9,7 @@ V =			4.6.11
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
+REVISION =		0
 
 DPB_PROPERTIES =	parallel
 
@@ -71,7 +72,7 @@ LIB_DEPENDS =		archivers/lz4 \
 			devel/protobuf \
 			graphics/ffmpeg \
 			graphics/qr-code-generator>=1.7.0p1 \
-			net/tg_owt>=0.0.0.20221215 \
+			net/tg_owt>=0.0.0.20230314p1 \
 			sysutils/xxhash \
 			textproc/hunspell \
 			x11/qt6/qt5compat \
