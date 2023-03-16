@@ -5,10 +5,9 @@ PKG_ARCH =	*
 
 GH_ACCOUNT =	FreshRSS
 GH_PROJECT =	FreshRSS
-GH_TAGNAME =	1.20.2
+GH_TAGNAME =	1.21.0
 
 PKGNAME =	freshrss-${GH_TAGNAME}
-REVISION =	1
 
 HOMEPAGE =	https://freshrss.org/
 

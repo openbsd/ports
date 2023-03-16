@@ -1,4 +1,8 @@
 www/freshrss/
+www/freshrss/.devcontainer/
+www/freshrss/.devcontainer/Dockerfile
+www/freshrss/.devcontainer/devcontainer.json
+www/freshrss/.devcontainer/postCreateCommand.sh
 www/freshrss/.dockerignore
 www/freshrss/.editorconfig
 www/freshrss/.eslintignore
@@ -431,6 +435,7 @@ www/freshrss/cli/.htaccess
 www/freshrss/cli/README.md
 www/freshrss/cli/_cli.php
 www/freshrss/cli/_update-or-create-user.php
+www/freshrss/cli/access-permissions.sh
 www/freshrss/cli/actualize-user.php
 www/freshrss/cli/check.translation.php
 www/freshrss/cli/create-user.php
@@ -454,6 +459,7 @@ www/freshrss/cli/list-users.php
 www/freshrss/cli/manipulate.translation.php
 www/freshrss/cli/prepare.php
 www/freshrss/cli/reconfigure.php
+www/freshrss/cli/sensitive-log.sh
 www/freshrss/cli/translation-update.sh
 www/freshrss/cli/update-user.php
 www/freshrss/cli/user-info.php
@@ -585,6 +591,8 @@ www/freshrss/docs/en/users/05_Configuration.md
 www/freshrss/docs/en/users/06_Mobile_access.md
 www/freshrss/docs/en/users/07_Frequently_Asked_Questions.md
 www/freshrss/docs/en/users/08_sharing_services.md
+www/freshrss/docs/en/users/09_refreshing_feeds.md
+www/freshrss/docs/en/users/10_filter.md
 www/freshrss/docs/fr/
 www/freshrss/docs/fr/contributing.md
 www/freshrss/docs/fr/developers/
@@ -592,7 +600,6 @@ www/freshrss/docs/fr/developers/01_First_steps.md
 www/freshrss/docs/fr/developers/02_Github.md
 www/freshrss/docs/fr/developers/03_Backend/
 www/freshrss/docs/fr/developers/03_Backend/01_Database_schema.md
-www/freshrss/docs/fr/developers/03_Backend/02_Minz.md
 www/freshrss/docs/fr/developers/03_Backend/03_External_libraries.md
 www/freshrss/docs/fr/developers/03_Backend/04_Changing_source_code.md
 www/freshrss/docs/fr/developers/03_Backend/05_Extensions.md
@@ -601,6 +608,9 @@ www/freshrss/docs/fr/developers/04_Frontend/
 www/freshrss/docs/fr/developers/04_Frontend/01_View_files.md
 www/freshrss/docs/fr/developers/04_Frontend/02_Design.md
 www/freshrss/docs/fr/developers/05_Release_new_version.md
+www/freshrss/docs/fr/developers/Minz/
+www/freshrss/docs/fr/developers/Minz/index.md
+www/freshrss/docs/fr/developers/Minz/migration.md
 www/freshrss/docs/fr/img/
 www/freshrss/docs/fr/img/doc.edit.png
 www/freshrss/docs/fr/img/logo_freshrss.png
@@ -619,6 +629,7 @@ www/freshrss/docs/fr/img/users/status.filter.0.7.png
 www/freshrss/docs/fr/img/users/status.filter.0.8.png
 www/freshrss/docs/fr/img/users/token.1.png
 www/freshrss/docs/fr/index.md
+www/freshrss/docs/fr/internationalization.md
 www/freshrss/docs/fr/users/
 www/freshrss/docs/fr/users/01_Installation.md
 www/freshrss/docs/fr/users/02_First_steps.md
@@ -750,8 +761,16 @@ www/freshrss/lib/favicons.php
 www/freshrss/lib/http-conditional.php
 www/freshrss/lib/lib_date.php
 www/freshrss/lib/lib_install.php
-www/freshrss/lib/lib_opml.php
 www/freshrss/lib/lib_rss.php
+www/freshrss/lib/marienfressinaud/
+www/freshrss/lib/marienfressinaud/lib_opml/
+www/freshrss/lib/marienfressinaud/lib_opml/LICENSE
+www/freshrss/lib/marienfressinaud/lib_opml/README.md
+www/freshrss/lib/marienfressinaud/lib_opml/composer.json
+www/freshrss/lib/marienfressinaud/lib_opml/src/
+www/freshrss/lib/marienfressinaud/lib_opml/src/LibOpml/
+www/freshrss/lib/marienfressinaud/lib_opml/src/LibOpml/Exception.php
+www/freshrss/lib/marienfressinaud/lib_opml/src/LibOpml/LibOpml.php
 www/freshrss/lib/phpgt/
 www/freshrss/lib/phpgt/cssxpath/
 www/freshrss/lib/phpgt/cssxpath/LICENSE
@@ -866,7 +885,6 @@ www/freshrss/p/themes/BlueLagoon/BlueLagoon.css
 www/freshrss/p/themes/BlueLagoon/BlueLagoon.rtl.css
 www/freshrss/p/themes/BlueLagoon/README.md
 www/freshrss/p/themes/BlueLagoon/icons/
-www/freshrss/p/themes/BlueLagoon/icons/bookmark.svg
 www/freshrss/p/themes/BlueLagoon/icons/favicon-16-32-48-64.ico
 www/freshrss/p/themes/BlueLagoon/icons/favicon-256.png
 www/freshrss/p/themes/BlueLagoon/icons/favicon.svg
@@ -981,7 +999,6 @@ www/freshrss/p/themes/Pafat/
 www/freshrss/p/themes/Pafat/README.md
 www/freshrss/p/themes/Pafat/icons/
 www/freshrss/p/themes/Pafat/icons/all.svg
-www/freshrss/p/themes/Pafat/icons/bookmark.svg
 www/freshrss/p/themes/Pafat/icons/down.svg
 www/freshrss/p/themes/Pafat/icons/icon.svg
 www/freshrss/p/themes/Pafat/icons/link.svg
@@ -1005,7 +1022,6 @@ www/freshrss/p/themes/Pafat/thumbs/original.png
 www/freshrss/p/themes/Screwdriver/
 www/freshrss/p/themes/Screwdriver/README.md
 www/freshrss/p/themes/Screwdriver/icons/
-www/freshrss/p/themes/Screwdriver/icons/bookmark.svg
 www/freshrss/p/themes/Screwdriver/icons/favicon-16-32-48-64.ico
 www/freshrss/p/themes/Screwdriver/icons/favicon-256.png
 www/freshrss/p/themes/Screwdriver/icons/favicon.svg
@@ -1025,7 +1041,6 @@ www/freshrss/p/themes/Swage/icons/add.svg
 www/freshrss/p/themes/Swage/icons/all.svg
 www/freshrss/p/themes/Swage/icons/bookmark-add.svg
 www/freshrss/p/themes/Swage/icons/bookmark-tag.svg
-www/freshrss/p/themes/Swage/icons/bookmark.svg
 www/freshrss/p/themes/Swage/icons/category.svg
 www/freshrss/p/themes/Swage/icons/configure.svg
 www/freshrss/p/themes/Swage/icons/disabled-light.svg
@@ -1080,7 +1095,6 @@ www/freshrss/p/themes/icons/all.svg
 www/freshrss/p/themes/icons/apple-touch-icon.png
 www/freshrss/p/themes/icons/bookmark-add.svg
 www/freshrss/p/themes/icons/bookmark-tag.svg
-www/freshrss/p/themes/icons/bookmark.svg
 www/freshrss/p/themes/icons/category.svg
 www/freshrss/p/themes/icons/close.svg
 www/freshrss/p/themes/icons/configure.svg

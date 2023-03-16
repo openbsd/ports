@@ -5,7 +5,24 @@
 Exposing a webserver
 ====================
 
-An example nginx config is provided for reference:
+Sample httpd(8) configuration provided for reference:
+
+	# /etc/httpd.conf
+	server "localhost" {
+		listen on * port 80
+
+		root "/freshrss/p"
+		directory index "index.php"
+
+		location "/" {
+			directory index "index.html"
+		}
+		location "*.php" {
+			fastcgi socket "/run/php-fpm.sock"
+		}
+	}
+
+and also one for nginx:
 
 server {
     listen 443 ssl http2;
