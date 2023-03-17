@@ -1,5 +1,6 @@
 # https://debbugs.gnu.org/cgi/bugreport.cgi?bug=26854#11
 BROKEN-powerpc = stage0 abort trap, bad prebuilt/32-bit-big-endian
+BROKEN-sparc64 = stage0 abort trap, bad prebuilt/64-bit-big-endian ?
 
 DPB_PROPERTIES =	parallel
 
