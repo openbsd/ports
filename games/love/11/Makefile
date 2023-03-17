@@ -1,3 +1,7 @@
+# ./modules/data/HashFunction.cpp:25:3: error:
+# Hashing not yet implemented for big endian
+NOT_FOR_ARCHS =		${BE_ARCHS}
+
 VERSION =		11.4
 
 SHARED_LIBS =		love-${VERSION}	0.0
