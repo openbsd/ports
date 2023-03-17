@@ -3,10 +3,15 @@ include/packer.h
 @static-lib lib/libcrack.a
 lib/libcrack.la
 @lib lib/libcrack.so.${LIBcrack_VERSION}
+@man man/man3/FascistCheck.3
+@man man/man8/cracklib-check.8
+@man man/man8/cracklib-format.8
+@man man/man8/cracklib-update.8
 @bin sbin/cracklib-check
 sbin/cracklib-format
 @bin sbin/cracklib-packer
 @bin sbin/cracklib-unpacker
+sbin/cracklib-update
 sbin/create-cracklib-dict
 share/cracklib/
 share/cracklib/cracklib-small
