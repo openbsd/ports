@@ -49,7 +49,8 @@ MODULES =		devel/cmake \
 			x11/qt6
 MODPY_RUNDEP =		No
 
-BUILD_DEPENDS =		devel/microsoft-gsl \
+BUILD_DEPENDS =		devel/crc32c \
+			devel/microsoft-gsl \
 			devel/range-v3>=0.11.0p0 \
 			devel/tl-expected
 
