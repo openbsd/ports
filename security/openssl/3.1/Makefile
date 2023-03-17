@@ -7,7 +7,7 @@ USE_NOEXECONLY =	Yes
 V=		3.1.0
 PKGNAME=	openssl-${V}
 PKGSPEC=	openssl->=3.1v0,<3.2v0
-REVISION=	0
+REVISION=	1
 
 SHLIBVER=	15.0
 SHARED_LIBS=	crypto ${SHLIBVER} \
@@ -28,6 +28,11 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			no-threads no-rc5 no-ssl3 \
 			no-devcryptoeng \
 			shared
+
+# Avoid T4 assembly issues https://github.com/openssl/openssl/issues/20523
+.if ${MACHINE_ARCH} == sparc64
+CONFIGURE_ARGS+=	no-asm
+.endif
 
 INSTALL_TARGET=		install_sw install_ssldirs
 
