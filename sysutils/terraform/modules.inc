@@ -349,12 +349,12 @@ MODGO_MODULES =	\
 	github.com/tombuildsstuff/giovanni				 v0.15.1 \
 	github.com/ulikunitz/xz						 v0.5.10 \
 	github.com/vmihailenco/msgpack					 v4.0.4+incompatible \
-	github.com/vmihailenco/msgpack/v5				 v5.3.5 \
-	github.com/vmihailenco/tagparser/v2				 v2.0.0 \
+	github.com/vmihailenco/msgpack/v4				 v4.3.12 \
+	github.com/vmihailenco/tagparser				 v0.1.1 \
 	github.com/xanzy/ssh-agent					 v0.3.1 \
 	github.com/xlab/treeprint					 v0.0.0-20161029104018-1d6e34225557 \
 	github.com/yuin/goldmark					 v1.4.13 \
-	github.com/zclconf/go-cty					 v1.13.0 \
+	github.com/zclconf/go-cty					 v1.12.1 \
 	github.com/zclconf/go-cty-debug					 v0.0.0-20191215020915-b22d67c1ba0b \
 	github.com/zclconf/go-cty-yaml					 v1.0.3 \
 	go.opencensus.io						 v0.23.0 \
@@ -788,7 +788,6 @@ MODGO_MODFILES =	\
 	github.com/yuin/goldmark					 v1.4.0 \
 	github.com/zclconf/go-cty					 v1.0.0 \
 	github.com/zclconf/go-cty					 v1.1.0 \
-	github.com/zclconf/go-cty					 v1.12.1 \
 	github.com/zclconf/go-cty					 v1.2.0 \
 	github.com/zclconf/go-cty					 v1.8.4 \
 	go.opencensus.io						 v0.21.0 \
