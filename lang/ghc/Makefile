@@ -12,13 +12,13 @@ NO_CCACHE =		Yes
 USE_NOEXECONLY =	Yes
 
 GHC_VERSION =		9.2.7
-REVISION =		0
+REVISION =		1
 DISTNAME =		ghc-${GHC_VERSION}
 CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/
 
 # Version of the precompiled binaries
-BIN_VER =		8.10.7.20220904
+BIN_VER =		8.10.7.20230316
 
 # lang/python needed for regression tests.
 MODULES =		lang/python
