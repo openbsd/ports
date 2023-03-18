@@ -1,7 +1,7 @@
 COMMENT =	tool used to brute-force stuff
 
 MODGO_MODNAME =	github.com/OJ/gobuster/v3
-MODGO_VERSION =	v3.4.0
+MODGO_VERSION =	v3.5.0
 
 DISTNAME =	gobuster-${MODGO_VERSION}
 
