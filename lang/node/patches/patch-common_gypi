@@ -20,3 +20,12 @@ Index: common.gypi
            }],
          ],
          'conditions': [
+@@ -426,7 +427,7 @@
+             'ldflags': [ '-m32' ],
+           }],
+           [ 'target_arch=="ppc64" and OS!="aix"', {
+-            'cflags': [ '-m64', '-mminimal-toc' ],
++            'cflags': [ '-m64' ],
+             'ldflags': [ '-m64' ],
+           }],
+           [ 'target_arch=="s390x" and OS=="linux"', {
