@@ -2,6 +2,7 @@ COMMENT =		prometheus exporter for hardware and OS metrics
 
 MODGO_MODNAME =		github.com/prometheus/node_exporter
 MODGO_VERSION =		v1.5.0
+REVISION =		0
 
 DISTNAME =		node_exporter-${MODGO_VERSION}
 
@@ -12,6 +13,8 @@ HOMEPAGE =		https://prometheus.io/
 MAINTAINER =		Claudio Jeker <claudio@openbsd.org>
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
+
+WRKDIST =		${WRKSRC}
 
 WANTLIB =		c pthread
 
