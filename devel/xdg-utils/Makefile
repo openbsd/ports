@@ -5,6 +5,7 @@
 COMMENT=		utilities to assist desktop integration tasks
 
 DISTNAME=		xdg-utils-1.1.3.20210805
+REVISION=		0
 
 # use a git checkout; releases are not made regularly
 COMMIT=			1a58bc28f6844898532daf9ee1bf6da7764955a9

@@ -1,8 +1,17 @@
-Fix sed(1) usage (i.e. !GNU sed).
+Fix sed(1), grep(1) usage (i.e. !GNU).
 
 Index: scripts/xdg-open.in
 --- scripts/xdg-open.in.orig
 +++ scripts/xdg-open.in
+@@ -84,7 +84,7 @@ is_file_url_or_path()
+ file_url_to_path()
+ {
+     local file="$1"
+-    if echo "$file" | grep -q '^file://\(localhost\)\?/'; then
++    if echo "$file" | grep -Eq '^file://(localhost)?/'; then
+         file=${file#file://localhost}
+         file=${file#file://}
+         file=${file%%#*}
 @@ -354,7 +354,7 @@ DEBUG 3 "$xdg_user_dir:$xdg_system_dirs"
  
  open_generic_xdg_file_mime()
