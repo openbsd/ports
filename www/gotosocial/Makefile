@@ -1,3 +1,5 @@
+BROKEN =	uses modernc.org/sqlite which uses a hardcoded syscall number of the old obsolete version of SYS_mmap with pad arguments, now removed from the kernel
+
 # has deps that can build only on OpenBSD/amd64
 ONLY_FOR_ARCHS = amd64
 
