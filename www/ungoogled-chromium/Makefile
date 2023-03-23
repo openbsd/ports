@@ -8,9 +8,8 @@ DPB_PROPERTIES=		parallel parallel2
 
 COMMENT=		Chromium browser sans integration with Google
 
-V=			111.0.5563.64
+V=			111.0.5563.110
 UGV=			${V}-1
-REVISION=		0
 
 DISTNAME=		ungoogled-chromium-${V}
 
