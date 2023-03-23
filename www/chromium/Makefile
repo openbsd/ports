@@ -7,8 +7,7 @@ DPB_PROPERTIES=		parallel parallel2
 
 COMMENT=		Chromium browser
 
-V=			111.0.5563.64
-REVISION=		0
+V=			111.0.5563.110
 
 DISTNAME=		chromium-${V}
 
