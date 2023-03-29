@@ -1,4 +1,4 @@
-SHA256 (cli-v1.25.3.zip) = mIFngqeFRSFLR3vLLRj1BnoXUSRhndE0DWFR0relAyk=
+SHA256 (cli-v1.26.0.zip) = lYuAYUQyzDXvLtRdeCcnT5IuIDMRY/KYqRCnsehbvBU=
 SHA256 (go_modules/cloud.google.com/go/@v/v0.26.0.mod) = IhijTyC5cbwZUhbUGV9XUgoqy9hd5/wxrPxEAmZwTBE=
 SHA256 (go_modules/cloud.google.com/go/@v/v0.34.0.mod) = IhijTyC5cbwZUhbUGV9XUgoqy9hd5/wxrPxEAmZwTBE=
 SHA256 (go_modules/cloud.google.com/go/@v/v0.38.0.mod) = IRVe7cPkx6CccZziPHA/vxTDSspC7QDcCHdN5uu+gAc=
@@ -874,7 +874,7 @@ SHA256 (go_modules/rsc.io/quote/v3/@v/v3.1.0.mod) = shHZ8WtVQpcPA6LmJJ30UDgwSjeh
 SHA256 (go_modules/rsc.io/quote/v3/@v/v3.1.0.zip) = tDTLv8MsF7UijQsO3erqib707JvZC1yPxVtk+M4T7rk=
 SHA256 (go_modules/rsc.io/sampler/@v/v1.3.0.mod) = oq5uhUCkC4XldwPMYYuZxbEHU4bZWOiZmg4tTALzpwU=
 SHA256 (go_modules/rsc.io/sampler/@v/v1.3.0.zip) = 2iArDagDqyZhq5imgLuk9kEjoyblQMJVgrbNu53BFKo=
-SIZE (cli-v1.25.3.zip) = 16991275
+SIZE (cli-v1.26.0.zip) = 17001561
 SIZE (go_modules/cloud.google.com/go/@v/v0.26.0.mod) = 27
 SIZE (go_modules/cloud.google.com/go/@v/v0.34.0.mod) = 27
 SIZE (go_modules/cloud.google.com/go/@v/v0.38.0.mod) = 1006

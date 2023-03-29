@@ -83,6 +83,7 @@
 @man man/man1/glab-repo-view.1
 @man man/man1/glab-repo.1
 @man man/man1/glab-schedule-list.1
+@man man/man1/glab-schedule-run.1
 @man man/man1/glab-schedule.1
 @man man/man1/glab-snippet-create.1
 @man man/man1/glab-snippet.1
@@ -93,6 +94,7 @@
 @man man/man1/glab-user-events.1
 @man man/man1/glab-user.1
 @man man/man1/glab-variable-delete.1
+@man man/man1/glab-variable-export.1
 @man man/man1/glab-variable-get.1
 @man man/man1/glab-variable-list.1
 @man man/man1/glab-variable-set.1
