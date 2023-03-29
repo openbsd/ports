@@ -1,18 +1,19 @@
-COMMENT =	c++11/14/17 std::expected with functional-style extensions
+COMMENT =	C++11/14/17 std::expected with functional-style extensions
 
 GH_ACCOUNT =		TartanLlama
 GH_PROJECT =		expected
-GH_TAGNAME =		v1.0.0
+GH_TAGNAME =		v1.1.0
 PKGNAME =		tl-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		1
 
-# cmake file for build and install;  no release or tags, use latest master
-ADD_TL_COMMIT =		284c6a3f0f61823cc3871b0f193e8df699e2c4ce
-MASTER_SITES0 =	https://raw.githubusercontent.com/${GH_ACCOUNT}/tl-cmake/${ADD_TL_COMMIT}/
-DISTFILES =		${GH_DISTFILE} \
-			add-tl.cmake:0
-EXTRACT_ONLY =		${GH_DISTFILE}
+DIST_SUBDIR =		tl-expected
+MASTER_SITES0 =		https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/
+# pending "Added packaged Catch2 support and switched to v3"
+PATCHFILES =		use-system-catch2-{pull/}141.patch:0
+# pending "Fixed version number in exported CMake configs"
+PATCHFILES +=		fix-version-{pull/}142.patch:0
+
+PATCH_DIST_STRIP =	-p1
 
 HOMEPAGE =		https://tl.tartanllama.xyz
 
@@ -27,18 +28,10 @@ COMPILER_LANGS =	c++
 
 MODULES =		devel/cmake
 
-# avoid network and point at prefetched DISTFILES
-CONFIGURE_ARGS +=	-DFETCHCONTENT_FULLY_DISCONNECTED=ON \
-			-DFETCHCONTENT_SOURCE_DIR_TL_CMAKE=${FULLDISTDIR}
-
 # only tests are built, defer compilation to running tests
 NO_BUILD =		Yes
 
 pre-test:
 	@${MODCMAKE_BUILD_TARGET}
-
-post-test:
-	# actually run tests
-	${WRKBUILD}/tests --order rand --durations yes
 
 .include <bsd.port.mk>
