@@ -2,7 +2,7 @@ COMMENT =	benchmark for OpenGL 2.0 and ES 2.0
 
 GH_ACCOUNT =	glmark2
 GH_PROJECT =	glmark2
-GH_TAGNAME =	2021.12
+GH_TAGNAME =	2023.01
 
 CATEGORIES =	benchmarks x11
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>

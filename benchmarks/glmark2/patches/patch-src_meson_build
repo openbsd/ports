@@ -3,7 +3,7 @@ remove libdl
 Index: src/meson.build
 --- src/meson.build.orig
 +++ src/meson.build
-@@ -69,7 +69,6 @@ libmatrix_headers_dep = declare_dependency(
+@@ -70,7 +70,6 @@ libmatrix_headers_dep = declare_dependency(
  
  common_deps = [
      m_dep,
