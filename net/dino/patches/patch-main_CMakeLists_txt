@@ -1,4 +1,4 @@
-Fix crash on startup, see https://github.com/dino/dino/issues/438
+merged after 0.4.2 release: https://github.com/dino/dino/issues/438
 
 Index: main/CMakeLists.txt
 --- main/CMakeLists.txt.orig
