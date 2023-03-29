@@ -1,12 +1,13 @@
 COMMENT =	command-line encryption using scrypt key derivation function
 
 DISTNAME =	scrypt-1.3.1
+REVISION =	0
 
 SHARED_LIBS +=	scrypt-kdf                0.0 # 1.0
 
 CATEGORIES =	security
 
-HOMEPAGE =	https://www.tarsnap.com/scrypt/
+HOMEPAGE =	https://www.tarsnap.com/scrypt.html
 
 # BSD
 PERMIT_PACKAGE =	Yes
