@@ -20,4 +20,9 @@ BUILD_DEPENDS =	editors/vim,-main
 MAKE_FILE =	makefile
 ALL_TARGET =	build
 
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+CFLAGS +=	-std=gnu99
+.endif
+
 .include <bsd.port.mk>
