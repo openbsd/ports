@@ -114,6 +114,7 @@
 @man man/man1/gh-repo-rename.1
 @man man/man1/gh-repo-set-default.1
 @man man/man1/gh-repo-sync.1
+@man man/man1/gh-repo-unarchive.1
 @man man/man1/gh-repo-view.1
 @man man/man1/gh-repo.1
 @man man/man1/gh-run-cancel.1
@@ -137,6 +138,10 @@
 @man man/man1/gh-ssh-key-list.1
 @man man/man1/gh-ssh-key.1
 @man man/man1/gh-status.1
+@man man/man1/gh-variable-delete.1
+@man man/man1/gh-variable-list.1
+@man man/man1/gh-variable-set.1
+@man man/man1/gh-variable.1
 @man man/man1/gh-workflow-disable.1
 @man man/man1/gh-workflow-enable.1
 @man man/man1/gh-workflow-list.1
