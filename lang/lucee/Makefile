@@ -1,11 +1,8 @@
 COMMENT=	JVM-based scripting language for web apps (open-source CFML)
 
-V=		5.3.10.97
+V=		5.3.10.120
 DISTNAME=	lucee-$V
-PKGNAME=	${DISTNAME:S/-RC/rc0/}
 EXTRACT_SUFX=	.war
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}{$V}
-# snaps: ${DISTNAME}${EXTRACT_SUFX}{$V-SNAPSHOT}
 
 CATEGORIES=	lang www
 
@@ -16,7 +13,7 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://release.lucee.org/rest/update/provider/war/
+MASTER_SITES=	https://cdn.lucee.org/
 
 # doesn't actually need tomcat to build, but listing it here avoids
 # providing a useless package on arch where it's unavailable
