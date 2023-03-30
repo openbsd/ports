@@ -1,7 +1,0 @@
-[source."https://github.com/BlackDex/multer-rs"]
-git = "https://github.com/BlackDex/multer-rs"
-rev = "477d16b7fa0f361b5c2a5ba18a5b28bec6d26a8a"
-replace-with = "vendored-sources"
-
-[source.vendored-sources]
-directory = "${WRKSRC}/myvendordir"
