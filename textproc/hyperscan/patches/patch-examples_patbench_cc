@@ -1,7 +1,7 @@
 Index: examples/patbench.cc
 --- examples/patbench.cc.orig
 +++ examples/patbench.cc
-@@ -127,14 +127,16 @@
+@@ -128,14 +128,16 @@
  
  // We use the BSD primitives throughout as they exist on both BSD and Linux.
  #define __FAVOR_BSD

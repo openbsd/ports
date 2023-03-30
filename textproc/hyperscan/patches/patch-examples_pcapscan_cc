@@ -1,7 +1,7 @@
 Index: examples/pcapscan.cc
 --- examples/pcapscan.cc.orig
 +++ examples/pcapscan.cc
-@@ -62,14 +62,16 @@
+@@ -63,14 +63,16 @@
  
  // We use the BSD primitives throughout as they exist on both BSD and Linux.
  #define __FAVOR_BSD

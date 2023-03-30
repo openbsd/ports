@@ -11,7 +11,7 @@ Index: CMakeLists.txt
      endif(OPTIMISE)
  
      # set compiler flags - more are tested and added later
-@@ -464,7 +461,7 @@ else()
+@@ -478,7 +475,7 @@ else()
  endif()
  
  add_subdirectory(util)
