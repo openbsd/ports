@@ -1,6 +1,6 @@
 COMMENT =	rsync for cloud storage
 
-V =		1.61.1
+V =		1.62.2
 DISTNAME =	rclone-v${V}
 PKGNAME =	rclone-${V}
 
@@ -20,7 +20,8 @@ DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		${DISTNAME}-vendor${EXTRACT_SUFX}
 
 MODULES =	lang/go
-MODGO_TYPE =	bin
+
+NO_TEST =	Yes
 
 ALL_TARGET =	github.com/rclone/rclone
 
