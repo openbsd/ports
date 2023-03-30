@@ -1,6 +1,6 @@
 COMMENT=	small utility to convert a Python dictionary into an XML
 
-MODPY_EGG_VERSION=	1.7.2
+MODPY_EGG_VERSION=	1.7.3
 
 DISTNAME=	dict2xml-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
