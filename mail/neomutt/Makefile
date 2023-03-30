@@ -2,8 +2,7 @@ COMMENT=	tty-based e-mail client, Mutt with patches
 
 GH_ACCOUNT=	neomutt
 GH_PROJECT=	neomutt
-GH_TAGNAME=	20220429
-REVISION=	0
+GH_TAGNAME=	20230322
 
 CATEGORIES=	mail
 HOMEPAGE=	https://neomutt.org/
@@ -76,11 +75,5 @@ LIB_DEPENDS+=  databases/kyotocabinet
 WANTLIB+=      kyotocabinet
 CONFIGURE_ARGS+= --kyotocabinet
 .endif
-
-post-install:
-	@mv -f ${PREFIX}/share/doc/neomutt/samples/* ${PREFIX}/share/examples/neomutt
-	@sed -i -e "s,/usr/bin/gpg,${LOCALBASE}/bin/gpg," \
-		-e "s,/usr/libexec/neomutt,${TRUEPREFIX}/libexec/neomutt," \
-		${PREFIX}/share/examples/neomutt/gpg.rc
 
 .include <bsd.port.mk>
