@@ -1,8 +1,7 @@
 COMMENT=	mail retrieval utility for POP2, POP3, KPOP, IMAP and more
 
-DISTNAME=	fetchmail-6.4.22
+DISTNAME=	fetchmail-6.4.37
 EXTRACT_SUFX=	.tar.xz
-REVISION=	1
 
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=fetchmail/}
