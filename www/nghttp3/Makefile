@@ -1,6 +1,6 @@
 COMMENT=	implementation of HTTP/3
 
-V=		0.9.0
+V=		0.10.0
 DISTNAME=	nghttp3-$V
 
 SHARED_LIBS +=	nghttp3              0.1     # 4.0
