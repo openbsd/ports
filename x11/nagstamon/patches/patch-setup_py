@@ -1,14 +1,17 @@
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -43,7 +43,7 @@ if OS not in ['Windows', 'Darwin']:
+@@ -43,9 +43,9 @@ if OS not in ['Windows', 'Darwin']:
      elif OS == 'NetBSD':
          DIST, DIST_VERSION, DIST_NAME = ('', '', '')
      else:
 -        DIST, DIST_VERSION, DIST_NAME = platform.dist()
 +        DIST, DIST_VERSION, DIST_NAME = ('', '', '')
      NAME = NAME.lower()
- VERSION = AppInfo.VERSION.replace('-', '.') + '.' + DIST + DIST_VERSION
+-VERSION = AppInfo.VERSION.replace('-', '.') + '.' + DIST + DIST_VERSION
++VERSION = AppInfo.VERSION.replace('-', '.')
+ 
+ NAGSTAMON_SCRIPT = 'nagstamon.py'
  
 @@ -126,7 +126,7 @@ setup(name=NAME,
                  'Nagstamon.thirdparty.Xlib.xobject'],
