@@ -4,10 +4,10 @@ PORTROACH=	limit:^8\.1
 PHP_VERSION=	8.1.17
 PHP_PKGSPEC=	>=8.1,<8.2
 
-# keep REVISION-curl >= -stable for 7.2 cycle;
-# curl gained additional WANTLIB post 7.2-release
-REVISION-curl=	0
-
 AUTOCONF_VERSION=	2.71
+
+REVISION=	1
+
+DEFAULT_PHP=	Yes
 
 .include <bsd.port.mk>

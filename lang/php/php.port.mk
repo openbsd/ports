@@ -4,6 +4,10 @@ CATEGORIES+=		lang/php
 # MD code (which PHP doesn't have for sparc64) or ucontext,
 # which OpenBSD doesn't have.
 #
+# also see DEFAULT_PHP setting in subdirs, which controls whether
+# to install /usr/local/bin/php and similar symlinks (which can't
+# really handle sparc64 being different because that needs conflicts)
+#
 .if ${MACHINE_ARCH} == sparc64
 MODPHP_VERSION?=	8.0
 .else
