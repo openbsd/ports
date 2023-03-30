@@ -233,6 +233,8 @@ lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/${MODPY_PYCACHE}pagerdu
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/${MODPY_PYCACHE}pagerduty.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/${MODPY_PYCACHE}postgresql.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/${MODPY_PYCACHE}postgresql.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/${MODPY_PYCACHE}sqlite.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/${MODPY_PYCACHE}sqlite.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/command.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/cronhub.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/cronitor.py
@@ -245,6 +247,7 @@ lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/mysql.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/ntfy.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/pagerduty.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/postgresql.py
+lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/sqlite.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/logger.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/signals.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/verbosity.py
