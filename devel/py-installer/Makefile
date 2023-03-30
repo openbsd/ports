@@ -1,29 +1,29 @@
-COMMENT =	low-level library to install Python wheel distributions
+COMMENT=	low-level library to install Python wheel distributions
 
-MODPY_EGG_VERSION =	0.6.0
+MODPY_EGG_VERSION=	0.7.0
 
-DISTNAME =	installer-${MODPY_EGG_VERSION}
-PKGNAME =	py-${DISTNAME}
+DISTNAME=	installer-${MODPY_EGG_VERSION}
+PKGNAME=	py-${DISTNAME}
 
-CATEGORIES =	devel
+CATEGORIES=	devel
 
-HOMEPAGE =	https://installer.readthedocs.io/en/stable/
+HOMEPAGE=	https://installer.readthedocs.io/en/stable/
 
 # BSD
-PERMIT_PACKAGE = Yes
+PERMIT_PACKAGE= Yes
 
-MODULES =	lang/python
+MODULES=	lang/python
 
-MODPY_PI =	Yes
-MODPY_PYTEST =	Yes
+MODPY_PI=	Yes
+MODPY_PYTEST=	Yes
 
-FLAVOR =	python3
-FLAVORS =	python3
+FLAVOR=		python3
+FLAVORS=	python3
 
 # This port is a BDEP of most py-* ports so must have minimal deps and
 # cannot use MODPY_PYBUILD. flit_core is OK because it has its own
 # bootstrap method to install from the wheel.
-BUILD_DEPENDS =	devel/py-flit_core${MODPY_FLAVOR}
+BUILD_DEPENDS=	devel/py-flit_core${MODPY_FLAVOR}
 
 do-build:
 	cd ${WRKSRC} && ${MODPY_BIN} -m flit_core.wheel
