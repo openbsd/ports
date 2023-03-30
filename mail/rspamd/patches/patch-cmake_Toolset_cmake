@@ -5,7 +5,7 @@ egcc: error: unrecognized command line option '-fuse-ld=lld'; did you mean '-fus
 Index: cmake/Toolset.cmake
 --- cmake/Toolset.cmake.orig
 +++ cmake/Toolset.cmake
-@@ -65,7 +65,7 @@ if(NOT LINKER_NAME)
+@@ -86,7 +86,7 @@ if(NOT LINKER_NAME)
      endif()
  endif()
  

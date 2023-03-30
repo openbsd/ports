@@ -464,7 +464,7 @@ share/rspamd/www/js/lib/d3evolution.min.js
 share/rspamd/www/js/lib/d3pie.min.js
 share/rspamd/www/js/lib/fontawesome.min.js
 share/rspamd/www/js/lib/footable.min.js
-share/rspamd/www/js/lib/jquery-3.6.1.min.js
+share/rspamd/www/js/lib/jquery-3.6.3.min.js
 share/rspamd/www/js/lib/jquery.stickytabs.min.js
 share/rspamd/www/js/lib/linenumbers.min.js
 share/rspamd/www/js/lib/nprogress.min.js
