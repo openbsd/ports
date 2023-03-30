@@ -4,7 +4,7 @@ wpath is not enough
 Index: main.go
 --- main.go.orig
 +++ main.go
-@@ -51,7 +51,7 @@ func main() {
+@@ -52,7 +52,7 @@ func main() {
  	// Example: https://go.dev/play/p/8214zCX6hVq.
  	defer writeCPUProfile()()
  
