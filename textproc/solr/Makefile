@@ -1,6 +1,6 @@
 COMMENT=	full-text search engine based on Lucene
 
-V=		9.1.1
+V=		9.2.0
 DISTNAME=	solr-$V
 EXTRACT_SUFX=	.tgz
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=	${MASTER_SITE_APACHE:=solr/solr/$V/}
 
 MODULES=	java
-MODJAVA_VER=	1.8+
+MODJAVA_VER=	11+
 SUBST_VARS=	V
 RUN_DEPENDS=	shells/bash \
 		java/javaPathHelper
