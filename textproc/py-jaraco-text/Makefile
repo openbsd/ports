@@ -1,6 +1,6 @@
 COMMENT=	handy routines for dealing with text
 
-MODPY_EGG_VERSION=	3.11.0
+MODPY_EGG_VERSION=	3.11.1
 DISTNAME=	jaraco.text-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 
