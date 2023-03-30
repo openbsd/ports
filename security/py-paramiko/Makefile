@@ -1,10 +1,9 @@
 COMMENT =	low-level pure Python implementation of SSHv2
 
-MODPY_EGG_VERSION =	2.12.0
+MODPY_EGG_VERSION =	3.1.0
 DISTNAME =		paramiko-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		security
-REVISION =		0
 
 HOMEPAGE =		https://www.paramiko.org/
 
@@ -16,7 +15,8 @@ MODPY_PI =		Yes
 MODULES =		lang/python
 
 MODPY_PYBUILD =		setuptools
-MODPY_PYTEST =		Yes
+# needs icecream
+NO_TEST =		Yes
 
 RUN_DEPENDS =		devel/py-asn1${MODPY_FLAVOR} \
 			security/py-bcrypt${MODPY_FLAVOR} \
