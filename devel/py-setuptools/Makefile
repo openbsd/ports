@@ -1,12 +1,9 @@
 COMMENT=	simplified packaging system for Python modules
 
-# not 65.0 yet; drops distutils.msvccompiler which requires patches
-# or updates for at least devel/gobject-introspection, math/py-numpy
-MODPY_EGG_VERSION=	64.0.3
+MODPY_EGG_VERSION=	67.6.1
 DISTNAME=		setuptools-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 EPOCH=			0
-REVISION=		1
 
 CATEGORIES=		devel
 
@@ -20,6 +17,7 @@ PERMIT_PACKAGE=		Yes
 MODULES=		lang/python
 
 MODPY_PI=		Yes
+# setuptools is a dependency of py-build, so can't use MODPY_PYBUILD
 MODPY_SETUPTOOLS=	Yes
 MODPY_PYTEST=		Yes
 # test_editable_install.py needs pip_run
@@ -31,8 +29,7 @@ SUBST_VARS+=		MODPY_FLAVOR
 FLAVORS=		python3
 FLAVOR=			python3
 
-TEST_DEPENDS=		devel/py-mock${MODPY_FLAVOR} \
-			devel/py-jaraco-envs${MODPY_FLAVOR} \
+TEST_DEPENDS=		devel/py-jaraco-envs${MODPY_FLAVOR} \
 			devel/py-jaraco-path${MODPY_FLAVOR} \
 			devel/py-path${MODPY_FLAVOR} \
 			devel/py-pip${MODPY_FLAVOR} \
