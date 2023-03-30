@@ -5,7 +5,7 @@ COMMENT =	library for communicating with USB and Bluetooth HID devices
 
 V =		0.8.0pre20160128
 DISTNAME =	libhidapi-${V}
-REVISION =	0
+REVISION =	1
 
 GH_ACCOUNT =	signal11
 GH_PROJECT =	hidapi
@@ -16,8 +16,6 @@ SHARED_LIBS +=  hidapi-libusb		0.0 # 0.0
 SHARED_LIBS +=  hidapi			0.0 # 0.0
 
 CATEGORIES =	comms
-
-MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 
 # GPLv3, BSD-style, or more liberal original HIDAPI license
 # chosen at the discretion of the user of HIDAPI
