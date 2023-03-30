@@ -1,0 +1,10 @@
+share/c2sp-testvectors/
+share/c2sp-testvectors/ed25519vectors/
+share/c2sp-testvectors/ed25519vectors/LICENSE
+share/c2sp-testvectors/ed25519vectors/README.md
+share/c2sp-testvectors/ed25519vectors/ed25519vectors.go
+share/c2sp-testvectors/ed25519vectors/ed25519vectors.json
+share/c2sp-testvectors/ed25519vectors/ed25519vectors_test.go
+share/c2sp-testvectors/ed25519vectors/go.mod
+share/c2sp-testvectors/ed25519vectors/go.sum
+share/c2sp-testvectors/ed25519vectors/reencoded25519.go
