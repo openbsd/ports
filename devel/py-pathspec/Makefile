@@ -1,19 +1,19 @@
-COMMENT =	utility for gitignore style pattern matching of file paths
+COMMENT=	utility for gitignore style pattern matching of file paths
 
-MODPY_EGG_VERSION = 0.11.0
-DISTNAME =	pathspec-${MODPY_EGG_VERSION}
-PKGNAME =	py-${DISTNAME}
+MODPY_EGG_VERSION= 0.11.1
+DISTNAME=	pathspec-${MODPY_EGG_VERSION}
+PKGNAME=	py-${DISTNAME}
 
-CATEGORIES =	devel
+CATEGORIES=	devel
 
 # Mozilla Public License v2
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
-MODPY_PI =		Yes
-MODPY_PYBUILD =		flit_core
+MODULES=	lang/python
+MODPY_PI=	Yes
+MODPY_PYBUILD=	flit_core
 
-FLAVORS =		python3
-FLAVOR =		python3
+FLAVORS=	python3
+FLAVOR=		python3
 
 .include <bsd.port.mk>
