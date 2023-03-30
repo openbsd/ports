@@ -21,6 +21,7 @@ vpn-user-portal/locale/pt-PT.php
 vpn-user-portal/locale/ro-RO.php
 vpn-user-portal/locale/sv-SE.php
 vpn-user-portal/locale/uk-UA.php
+vpn-user-portal/phpunit.xml.dist
 vpn-user-portal/schema/
 vpn-user-portal/schema/2022022201.schema
 vpn-user-portal/schema/2022022201_2023011801.migration

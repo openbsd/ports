@@ -1,6 +1,6 @@
 COMMENT=	user and admin portal for Let's Connect/eduVPN
 
-V=		3.3.1
+V=		3.3.3
 MASTER_SITES0=	https://spacehopper.org/mirrors/
 DISTNAME=	vpn-user-portal-$V
 DISTFILES=	${DISTNAME}.tar.xz ${DISTNAME}-vendor.tar.xz:0
