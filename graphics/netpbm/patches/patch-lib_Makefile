@@ -1,7 +1,7 @@
 Index: lib/Makefile
 --- lib/Makefile.orig
 +++ lib/Makefile
-@@ -57,6 +57,9 @@ LIBOBJECTS_X = \
+@@ -56,6 +56,9 @@ LIBOBJECTS_X = \
    util/token.o \
    util/vasprintf.o \
  
@@ -11,7 +11,7 @@ Index: lib/Makefile
  MANUALS3 = libnetpbm
  MANUALS5 = pbm pgm ppm pnm pam
  
-@@ -93,13 +96,16 @@ extra_staticlib: $(EXTRA_STATICLIB)
+@@ -92,13 +95,16 @@ extra_staticlib: $(EXTRA_STATICLIB)
  # type, but request a static library in addition.
  #----------------------------------------------------------------------------
  
@@ -26,10 +26,10 @@ Index: lib/Makefile
 +$(SHLIBOBJECTS): %.lo: %.c importinc
 +	$(CC) -c $(INCLUDES) $(CFLAGS_ALL) -o $@ $<
 +
- MAJ = 11
- MIN = $(NETPBM_MINOR_RELEASE)
- 
-@@ -124,7 +130,7 @@ endif
+ # The major number increases when there is a non-backward-compatible change
+ # to the library at the binary level, meaning any client of the library needs
+ # to keep using the old library until it has been recompiled for the new
+@@ -145,7 +151,7 @@ endif
  
  ifeq ($(NETPBMLIBTYPE),unixshared)
  # The libxxx.so link is needed to link the executables.
@@ -38,7 +38,7 @@ Index: lib/Makefile
  	rm -f $@
  	$(SYMLINK) $< $@
  # The $(SONAME) link is needed only to test the programs without
-@@ -133,8 +139,8 @@ libnetpbm.$(NETPBMLIBSUFFIX): $(SONAME)
+@@ -154,8 +160,8 @@ libnetpbm.$(NETPBMLIBSUFFIX): $(SONAME)
  $(SONAME): libnetpbm.$(NETPBMLIBSUFFIX).$(MAJ).$(MIN)
  	rm -f $@
  	$(SYMLINK) $< $@
@@ -49,7 +49,7 @@ Index: lib/Makefile
            $(SHLIB_CLIB) -lm $(LADD)
  endif
  
-@@ -213,25 +219,21 @@ standardppmdfont.c:
+@@ -234,25 +240,21 @@ standardppmdfont.c:
  compile.h:
  	$(SRCDIR)/buildtools/stamp-date >$@ || rm $@
  
@@ -79,7 +79,7 @@ Index: lib/Makefile
  endif
  ifeq ($(NETPBMLIBTYPE),dll)
  #install a Windows DLL shared library
-@@ -267,9 +269,9 @@ $(INTERFACE_HEADERS:%=%_installhdr): $(PKGDIR)/include
+@@ -288,9 +290,9 @@ $(INTERFACE_HEADERS:%=%_installhdr): $(PKGDIR)/include
  	  $(SRCDIR)/lib/$(@:%_installhdr=%) $(PKGDIR)/include/netpbm/
  
  .PHONY: install.staticlib

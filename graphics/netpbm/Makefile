@@ -1,7 +1,7 @@
 COMMENT=	toolkit for manipulation and conversion of graphic images
 
-DISTNAME=	netpbm-10.97.04
-SHARED_LIBS=	netpbm	5.3
+DISTNAME=	netpbm-11.01.01
+SHARED_LIBS=	netpbm	6.0
 CATEGORIES=	graphics
 HOMEPAGE=	http://netpbm.sourceforge.net/
 

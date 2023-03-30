@@ -47,6 +47,7 @@ bin/manweb
 @bin bin/pambackground
 @bin bin/pambayer
 @bin bin/pambrighten
+@bin bin/pamcat
 @bin bin/pamchannel
 @bin bin/pamcomp
 @bin bin/pamcrater
@@ -82,6 +83,7 @@ bin/pamfixtrunc
 @bin bin/pampick
 @bin bin/pampop9
 @bin bin/pamrecolor
+@bin bin/pamrestack
 bin/pamrgbatopng
 @bin bin/pamrubber
 @bin bin/pamscale
@@ -89,6 +91,7 @@ bin/pamrgbatopng
 @bin bin/pamshadedrelief
 @bin bin/pamsharpmap
 @bin bin/pamsharpness
+@bin bin/pamshuffle
 @bin bin/pamsistoaglyph
 @bin bin/pamslice
 @bin bin/pamsplit
@@ -115,6 +118,7 @@ bin/pamstretch-gen
 @bin bin/pamtopfm
 @bin bin/pamtopng
 @bin bin/pamtopnm
+@bin bin/pamtoqoi
 @bin bin/pamtosrf
 @bin bin/pamtosvg
 @bin bin/pamtotga
@@ -218,7 +222,7 @@ bin/pgmslice
 bin/pngtopnm
 @bin bin/pnmalias
 bin/pnmarith
-@bin bin/pnmcat
+bin/pnmcat
 @bin bin/pnmcolormap
 bin/pnmcomp
 @bin bin/pnmconvol
@@ -233,6 +237,7 @@ bin/pnmflip
 @bin bin/pnmhistmap
 @bin bin/pnmindex
 bin/pnminterp
+bin/pnminterp-gen
 @bin bin/pnminvert
 bin/pnmmargin
 @bin bin/pnmmercator
@@ -342,6 +347,7 @@ bin/ppmtouil
 @bin bin/ppmwheel
 @bin bin/psidtopgm
 @bin bin/pstopnm
+@bin bin/qoitopam
 @bin bin/qrttoppm
 @bin bin/rasttopnm
 @bin bin/rawtopgm
@@ -395,7 +401,6 @@ include/netpbm/ppm.h
 include/netpbm/ppmcmap.h
 include/netpbm/ppmdfont.h
 include/netpbm/ppmdraw.h
-include/netpbm/ppmfloyd.h
 include/netpbm/runlength.h
 include/netpbm/shhopt.h
 @static-lib lib/libnetpbm.a
