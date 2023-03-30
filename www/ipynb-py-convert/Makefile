@@ -4,8 +4,7 @@ MODPY_EGG_VERSION =	0.4.5
 DISTNAME =	ipynb-py-convert-${MODPY_EGG_VERSION}
 CATEGORIES =	www devel
 HOMEPAGE =	https://github.com/kiwi0fruit/ipynb-py-convert
-MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
-REVISION =	3
+REVISION =	4
 
 # MIT
 PERMIT_PACKAGE =	Yes
