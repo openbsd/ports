@@ -2,7 +2,7 @@ COMMENT =	multi-platform file synchronization tool
 
 GH_ACCOUNT =	bcpierce00
 GH_PROJECT =	unison
-GH_TAGNAME =	v2.53.0
+GH_TAGNAME =	v2.53.2
 
 CATEGORIES =	net
 
