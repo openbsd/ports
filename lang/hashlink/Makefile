@@ -3,11 +3,11 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	virtual machine for Haxe
 
-DISTNAME =	hashlink-1.12pl0
+V =		1.13
+DISTNAME =	hashlink-${V}
 GH_ACCOUNT =	HaxeFoundation
 GH_PROJECT =	hashlink
-# checkout from 2023-01-03
-GH_COMMIT =	76ca98fee1ace39a3e5843724c226ee809d5928e
+GH_TAGNAME =	${V}
 
 SHARED_LIBS =	hl	1.0	# 1.12
 
