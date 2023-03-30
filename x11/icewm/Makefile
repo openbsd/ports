@@ -1,10 +1,9 @@
 # unconditionally uses machine/apmvar.h and related structures/defines
 ONLY_FOR_ARCHS=	${APM_ARCHS}
 
-V=		3.3.1
+V=		3.3.2
 COMMENT=	small and fast window manager
 DISTNAME=	icewm-${V}
-REVISION=	0
 EXTRACT_SUFX=	.tar.lz
 CATEGORIES=	x11
 
@@ -54,7 +53,7 @@ CONFIGURE_ARGS=	--with-libdir=${PREFIX}/share/icewm \
 #CONFIGURE_ARGS+=--with-icesound=sndio
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lintl"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 TEST_ENV=	FAKED_MODE=True
 
