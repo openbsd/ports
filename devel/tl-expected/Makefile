@@ -31,6 +31,10 @@ MODULES =		devel/cmake
 # only tests are built, defer compilation to running tests
 NO_BUILD =		Yes
 
+# detect during configure
+BUILD_DEPENDS =		devel/catch2
+TEST_DEPENDS =		devel/catch2
+
 pre-test:
 	@${MODCMAKE_BUILD_TARGET}
 
