@@ -1,23 +1,23 @@
-COMMENT =	add an OCR text layer to scanned PDF files
+COMMENT=	add an OCR text layer to scanned PDF files
 
-MODPY_EGG_VERSION =  14.0.2
+MODPY_EGG_VERSION=  14.0.4
 # intentionally no py- prefix
-DISTNAME =	ocrmypdf-${MODPY_EGG_VERSION}
+DISTNAME=	ocrmypdf-${MODPY_EGG_VERSION}
 
-CATEGORIES =	print
+CATEGORIES=	print
 
 # https://github.com/ocrmypdf/OCRmyPDF
-HOMEPAGE =	https://ocrmypdf.readthedocs.io/
+HOMEPAGE=	https://ocrmypdf.readthedocs.io/
 
 # MPL-2.0
-PERMIT_PACKAGE =Yes
+PERMIT_PACKAGE=Yes
 
-MODULES =	lang/python
-MODPY_PI =	Yes
-MODPY_PYBUILD =	setuptools_scm
+MODULES=	lang/python
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools_scm
 
 # python deps:
-RUN_DEPENDS =	graphics/py-Pillow${MODPY_FLAVOR} \
+RUN_DEPENDS=	graphics/py-Pillow${MODPY_FLAVOR} \
 		textproc/py-coloredlogs${MODPY_FLAVOR} \
 		devel/py-deprecation${MODPY_FLAVOR} \
 		graphics/img2pdf \
@@ -35,7 +35,7 @@ RUN_DEPENDS +=	graphics/tesseract/tesseract \
 		print/ghostscript/gnu \
 		print/unpaper
 
-TEST_DEPENDS =	devel/py-test-xdist${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-test-xdist${MODPY_FLAVOR}
 
 post-install:
 	${INSTALL_DATA_DIR} \
