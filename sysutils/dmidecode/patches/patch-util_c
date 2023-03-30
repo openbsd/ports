@@ -1,14 +1,11 @@
 Index: util.c
 --- util.c.orig
 +++ util.c
-@@ -184,6 +184,10 @@ void *mem_chunk(off_t base, size_t len, const char *de
- 	if ((fd = open(devmem, O_RDONLY)) == -1)
+@@ -192,6 +192,7 @@ void *mem_chunk(off_t base, size_t len, const char *de
+ 	 || (geteuid() == 0 && !S_ISCHR(statbuf.st_mode)))
  	{
- 		perror(devmem);
-+		if (errno == EPERM) {
-+			fprintf(stderr, "Note: requires running as root with "
-+			    "access to kernel memory (kern.allowkmem=1).\n");
-+		}
- 		return NULL;
- 	}
- 
+ 		fprintf(stderr, "Can't read memory from %s\n", devmem);
++		fprintf(stderr, "Do you need to set kern.allowkmem=1 in sysctl.conf and reboot?\n");
+ 		if (fd == -1)
+ 			return NULL;
+ 		goto out;
