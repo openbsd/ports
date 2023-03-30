@@ -179,6 +179,8 @@ lib/python${MODPY_VERSION}/site-packages/borg/testsuite/${MODPY_PYCACHE}file_int
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/${MODPY_PYCACHE}file_integrity.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/${MODPY_PYCACHE}hashindex.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/${MODPY_PYCACHE}hashindex.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borg/testsuite/${MODPY_PYCACHE}hashindex_stress.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/borg/testsuite/${MODPY_PYCACHE}hashindex_stress.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/${MODPY_PYCACHE}helpers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/${MODPY_PYCACHE}helpers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/${MODPY_PYCACHE}item.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -225,6 +227,7 @@ lib/python${MODPY_VERSION}/site-packages/borg/testsuite/crypto.py
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/efficient_collection_queue.py
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/file_integrity.py
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/hashindex.py
+lib/python${MODPY_VERSION}/site-packages/borg/testsuite/hashindex_stress.py
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/helpers.py
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/item.py
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/key.py
