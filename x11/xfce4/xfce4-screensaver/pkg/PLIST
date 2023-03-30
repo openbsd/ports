@@ -6,8 +6,8 @@ libexec/xfce4-screensaver/
 @mode g+s
 @group auth
 @bin libexec/xfce4-screensaver-ask-pass
-@group
 @mode
+@group
 @bin libexec/xfce4-screensaver-dialog
 @bin libexec/xfce4-screensaver-gl-helper
 @bin libexec/xfce4-screensaver/floaters
