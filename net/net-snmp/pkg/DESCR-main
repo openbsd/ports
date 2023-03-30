@@ -17,7 +17,8 @@ It can log, run external handlers, or forward over the network.
 - tools with special output types; snmpdelta displays differences over
 time, snmptable collates information from SNMP tables (e.g. ifTable),
 and there are single-purpose tools like snmpstatus, snmpdf, snmpps,
-snmptop, snmpnetstat.
+snmptop, snmpnetstat. checkbandwidth provides a Nagios-compatible
+checker (and requires p5-JSON and p5-Mail-Sender to be installed).
 
 - snmptranslate converts between numerical and textual forms of MIB OIDs,
 and displays MIB content and structure.
