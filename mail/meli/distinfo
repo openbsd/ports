@@ -253,7 +253,7 @@ SHA256 (cargo/ws2_32-sys-0.2.1.tar.gz) = 1Zzv69DIkvot1t5YHpNzAdhVLLREic3/A1xhh8t
 SHA256 (cargo/xdg-2.4.1.tar.gz) = DEWD21y9TEwDA98tFa+A8FOdtwP6HGiALUy70t0PiPY=
 SHA256 (cargo/xdg-utils-0.4.0.tar.gz) = 25/v5i1ZaXIeLPxSnmp2CQHMDaQittZ+e/0Y5pSQ26Y=
 SHA256 (cargo/xml-rs-0.8.4.tar.gz) = 0tfTlIYT91yY/ZMoz9zEWsxNNgZVKJ0KfU7JMTkiAKM=
-SHA256 (meli-0.7.2.20221017-3697b7d9.tar.gz) = G1g92uvUHbDmm3qMkbWPvu0FQ8URuDzyo/7OmPo1lKQ=
+SHA256 (meli-0.7.2.20230306-2447a2cb.tar.gz) = jPWlN0XHe0coAPM6CL8cukonbyIcaQdrsLfpqEoZc9E=
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
 SIZE (cargo/ahash-0.7.6.tar.gz) = 38030
 SIZE (cargo/aho-corasick-0.7.18.tar.gz) = 112923
@@ -509,4 +509,4 @@ SIZE (cargo/ws2_32-sys-0.2.1.tar.gz) = 4697
 SIZE (cargo/xdg-2.4.1.tar.gz) = 14034
 SIZE (cargo/xdg-utils-0.4.0.tar.gz) = 17059
 SIZE (cargo/xml-rs-0.8.4.tar.gz) = 52690
-SIZE (meli-0.7.2.20221017-3697b7d9.tar.gz) = 1062265
+SIZE (meli-0.7.2.20230306-2447a2cb.tar.gz) = 1083926
