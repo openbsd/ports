@@ -1,8 +1,7 @@
 COMMENT =	BDF to SFD converter
 
-V =		1.1.7
+V =		1.1.8
 DISTNAME =	bdf2sfd-$V
-REVISION =	0
 
 CATEGORIES =	converters
 
