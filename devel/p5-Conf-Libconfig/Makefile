@@ -1,10 +1,9 @@
 COMMENT =	perl extension for libconfig
 
 DISTNAME =	Conf-Libconfig-0.101
+REVISION =	0
 
 CATEGORIES =	devel
-
-MAINTAINER =	Bjorn Ketelaars <bket@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes
