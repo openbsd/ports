@@ -12,10 +12,12 @@ lib/python${MODPY_VERSION}/site-packages/frozendict/${MODPY_PYCACHE}__init__.${M
 lib/python${MODPY_VERSION}/site-packages/frozendict/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/frozendict/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/frozendict/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/frozendict/${MODPY_PYCACHE}monkeypatch.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/frozendict/${MODPY_PYCACHE}monkeypatch.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/frozendict/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/frozendict/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
-@so lib/python${MODPY_VERSION}/site-packages/frozendict/_frozendict.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/frozendict/core.py
 lib/python${MODPY_VERSION}/site-packages/frozendict/frozendict.pyi
+lib/python${MODPY_VERSION}/site-packages/frozendict/monkeypatch.py
 lib/python${MODPY_VERSION}/site-packages/frozendict/py.typed
 lib/python${MODPY_VERSION}/site-packages/frozendict/version.py

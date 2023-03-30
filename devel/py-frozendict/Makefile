@@ -1,6 +1,6 @@
 COMMENT=	immutable dictionary
 
-MODPY_EGG_VERSION=	2.3.5
+MODPY_EGG_VERSION=	2.3.6
 DISTNAME=	frozendict-${MODPY_EGG_VERSION}
 PKGNAME=	py-frozendict-${MODPY_EGG_VERSION}
 
