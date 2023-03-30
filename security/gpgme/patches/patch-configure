@@ -1,7 +1,7 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -25296,7 +25296,6 @@ $as_echo "$_gcc_wopt" >&6; }
+@@ -30722,7 +30722,6 @@ $as_echo "$_gcc_wopt" >&6; }
        CFLAGS="$CFLAGS -Wno-missing-field-initializers"
        CFLAGS="$CFLAGS -Wno-sign-compare"
        CFLAGS="$CFLAGS -Wno-format-zero-length"
