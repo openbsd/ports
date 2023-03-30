@@ -1,21 +1,21 @@
-COMMENT =		Python API for dealing with timezones
+COMMENT=	Python API for dealing with timezones
 
-MODPY_EGG_VERSION =	2022.7.1
-DISTNAME =		pytz-${MODPY_EGG_VERSION}
-PKGNAME =		${DISTNAME:S/^py/py-/}
-CATEGORIES =		devel
+MODPY_EGG_VERSION=	2023.2
+DISTNAME=	pytz-${MODPY_EGG_VERSION}
+PKGNAME=	${DISTNAME:S/^py/py-/}
+CATEGORIES=	devel
 
-HOMEPAGE =		https://pythonhosted.org/pytz/
+HOMEPAGE=	https://pythonhosted.org/pytz/
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
+MODULES=	lang/python
 
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools
 
-FLAVORS=		python3
-FLAVOR=			python3
+FLAVORS=	python3
+FLAVOR=		python3
 
 .include <bsd.port.mk>
