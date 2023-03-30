@@ -2,15 +2,14 @@ COMMENT =		command-line benchmarking tool
 
 GH_ACCOUNT =		sharkdp
 GH_PROJECT =		hyperfine
-GH_TAGNAME =		v1.15.0
-REVISION =		1
+GH_TAGNAME =		v1.16.1
 
 CATEGORIES =		benchmarks
 
 # MIT/Apache-2.0
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=		c c++abi m pthread
+WANTLIB +=		${MODCARGO_WANTLIB} m
 
 MODULES =		devel/cargo
 
