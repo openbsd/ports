@@ -1,29 +1,24 @@
 COMMENT=		check shell scripts for bash-specific constructs
 
-V=			2.0.0.2
-REVISION=		0
-DISTNAME=		checkbashisms
-PKGNAME=		checkbashisms-2.0.0.2
-EXTRACT_SUFX=
-DIST_SUBDIR=		${PKGNAME}
-WRKDIST=		${WRKDIR}
+V=			2.23.3
+DISTNAME=		devscripts_$V
+PKGNAME=		checkbashisms-$V
+EXTRACT_SUFX=		.tar.xz
+WRKDIST=		${WRKDIR}/devscripts
 CATEGORIES=		sysutils devel
 
 # GPLv2 only
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=checkbaskisms/$V/}
+MASTER_SITES=		https://deb.debian.org/debian/pool/main/d/devscripts/
 
 NO_BUILD=		Yes
 NO_TEST=		Yes
 PKG_ARCH=		*
 
-do-extract:
-	cp ${FULLDISTDIR}/checkbashisms ${WRKDIR}/
-
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/checkbashisms \
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/checkbashisms.pl \
 		${PREFIX}/bin/checkbashisms
-	${INSTALL_MAN} ${FILESDIR}/checkbashisms.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/scripts/checkbashisms.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
