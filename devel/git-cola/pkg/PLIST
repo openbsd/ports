@@ -34,6 +34,8 @@ lib/python${MODPY_VERSION}/site-packages/cola/${MODPY_PYCACHE}difftool.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/cola/${MODPY_PYCACHE}difftool.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cola/${MODPY_PYCACHE}display.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cola/${MODPY_PYCACHE}display.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cola/${MODPY_PYCACHE}editpatch.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/cola/${MODPY_PYCACHE}editpatch.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cola/${MODPY_PYCACHE}fsmonitor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cola/${MODPY_PYCACHE}fsmonitor.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cola/${MODPY_PYCACHE}git.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -97,6 +99,7 @@ lib/python${MODPY_VERSION}/site-packages/cola/decorators.py
 lib/python${MODPY_VERSION}/site-packages/cola/diffparse.py
 lib/python${MODPY_VERSION}/site-packages/cola/difftool.py
 lib/python${MODPY_VERSION}/site-packages/cola/display.py
+lib/python${MODPY_VERSION}/site-packages/cola/editpatch.py
 lib/python${MODPY_VERSION}/site-packages/cola/fsmonitor.py
 lib/python${MODPY_VERSION}/site-packages/cola/git.py
 lib/python${MODPY_VERSION}/site-packages/cola/gitcfg.py
@@ -180,6 +183,7 @@ lib/python${MODPY_VERSION}/site-packages/cola/icons/dark/link-external.svg
 lib/python${MODPY_VERSION}/site-packages/cola/icons/dark/modified.svg
 lib/python${MODPY_VERSION}/site-packages/cola/icons/dark/partial.svg
 lib/python${MODPY_VERSION}/site-packages/cola/icons/dark/pencil.svg
+lib/python${MODPY_VERSION}/site-packages/cola/icons/dark/play.svg
 lib/python${MODPY_VERSION}/site-packages/cola/icons/dark/plus.svg
 lib/python${MODPY_VERSION}/site-packages/cola/icons/dark/primitive-dot.svg
 lib/python${MODPY_VERSION}/site-packages/cola/icons/dark/question-plain.svg
@@ -194,6 +198,7 @@ lib/python${MODPY_VERSION}/site-packages/cola/icons/dark/star.svg
 lib/python${MODPY_VERSION}/site-packages/cola/icons/dark/sync.svg
 lib/python${MODPY_VERSION}/site-packages/cola/icons/dark/tag.svg
 lib/python${MODPY_VERSION}/site-packages/cola/icons/dark/telescope.svg
+lib/python${MODPY_VERSION}/site-packages/cola/icons/dark/terminal.svg
 lib/python${MODPY_VERSION}/site-packages/cola/icons/dark/three-bars.svg
 lib/python${MODPY_VERSION}/site-packages/cola/icons/dark/trashcan.svg
 lib/python${MODPY_VERSION}/site-packages/cola/icons/dark/unfold.svg
@@ -235,6 +240,7 @@ lib/python${MODPY_VERSION}/site-packages/cola/icons/link-external.svg
 lib/python${MODPY_VERSION}/site-packages/cola/icons/modified.svg
 lib/python${MODPY_VERSION}/site-packages/cola/icons/partial.svg
 lib/python${MODPY_VERSION}/site-packages/cola/icons/pencil.svg
+lib/python${MODPY_VERSION}/site-packages/cola/icons/play.svg
 lib/python${MODPY_VERSION}/site-packages/cola/icons/plus.svg
 lib/python${MODPY_VERSION}/site-packages/cola/icons/primitive-dot.svg
 lib/python${MODPY_VERSION}/site-packages/cola/icons/question-plain.svg
@@ -249,6 +255,7 @@ lib/python${MODPY_VERSION}/site-packages/cola/icons/star.svg
 lib/python${MODPY_VERSION}/site-packages/cola/icons/sync.svg
 lib/python${MODPY_VERSION}/site-packages/cola/icons/tag.svg
 lib/python${MODPY_VERSION}/site-packages/cola/icons/telescope.svg
+lib/python${MODPY_VERSION}/site-packages/cola/icons/terminal.svg
 lib/python${MODPY_VERSION}/site-packages/cola/icons/three-bars.svg
 lib/python${MODPY_VERSION}/site-packages/cola/icons/trashcan.svg
 lib/python${MODPY_VERSION}/site-packages/cola/icons/unfold.svg
@@ -379,6 +386,8 @@ lib/python${MODPY_VERSION}/site-packages/cola/widgets/${MODPY_PYCACHE}status.${M
 lib/python${MODPY_VERSION}/site-packages/cola/widgets/${MODPY_PYCACHE}status.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cola/widgets/${MODPY_PYCACHE}submodules.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cola/widgets/${MODPY_PYCACHE}submodules.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cola/widgets/${MODPY_PYCACHE}switcher.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/cola/widgets/${MODPY_PYCACHE}switcher.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cola/widgets/${MODPY_PYCACHE}text.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cola/widgets/${MODPY_PYCACHE}text.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cola/widgets/${MODPY_PYCACHE}toolbar.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -425,11 +434,11 @@ lib/python${MODPY_VERSION}/site-packages/cola/widgets/startup.py
 lib/python${MODPY_VERSION}/site-packages/cola/widgets/stash.py
 lib/python${MODPY_VERSION}/site-packages/cola/widgets/status.py
 lib/python${MODPY_VERSION}/site-packages/cola/widgets/submodules.py
+lib/python${MODPY_VERSION}/site-packages/cola/widgets/switcher.py
 lib/python${MODPY_VERSION}/site-packages/cola/widgets/text.py
 lib/python${MODPY_VERSION}/site-packages/cola/widgets/toolbar.py
 lib/python${MODPY_VERSION}/site-packages/cola/widgets/toolbarcmds.py
 lib/python${MODPY_VERSION}/site-packages/git_cola-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/git_cola-${MODPY_EGG_VERSION}.dist-info/COPYING
 lib/python${MODPY_VERSION}/site-packages/git_cola-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/git_cola-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/git_cola-${MODPY_EGG_VERSION}.dist-info/WHEEL
