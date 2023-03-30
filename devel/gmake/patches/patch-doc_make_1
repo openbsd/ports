@@ -5,11 +5,11 @@ Index: doc/make.1
 --- doc/make.1.orig
 +++ doc/make.1
 @@ -1,13 +1,13 @@
--.TH MAKE 1 "28 February 2016" "GNU" "User Commands"
-+.TH GMAKE 1 "28 February 2016" "GNU" "User Commands"
+-.TH MAKE 1 "26 May 2023" "GNU" "User Commands"
++.TH GMAKE 1 "31 May 2022" "GNU" "User Commands"
  .SH NAME
--make \- GNU make utility to maintain groups of programs
-+gmake \- GNU make utility to maintain groups of programs
+-make \- GNU Make utility to maintain groups of programs
++gmake \- GNU Make utility to maintain groups of programs
  .SH SYNOPSIS
 -.B make
 +.B gmake
@@ -40,7 +40,7 @@ Index: doc/make.1
 +.BR gmake ,
  you must write a file called the
  .I makefile
- that describes the relationships among files in your program, and the states
+ that describes the relationships among files in your program, and provides
 @@ -35,17 +35,17 @@ Once a suitable makefile exists, each time you change 
  this simple shell command:
  .sp 1
@@ -61,7 +61,7 @@ Index: doc/make.1
 +.B gmake
  executes commands in the
  .I makefile
- to update one or more target
+ to update one or more
 @@ -56,7 +56,7 @@ is typically a program.
  If no
  .B \-f
@@ -71,7 +71,7 @@ Index: doc/make.1
  will look for the makefiles
  .IR GNUmakefile ,
  .IR makefile ,
-@@ -84,7 +84,7 @@ If
+@@ -83,7 +83,7 @@ If
  .I makefile
  is '\-', the standard input is read.
  .LP
@@ -80,7 +80,7 @@ Index: doc/make.1
  updates a target if it depends on prerequisite files
  that have been modified since the target was last modified,
  or if the target does not exist.
-@@ -111,7 +111,7 @@ previous one:
+@@ -110,7 +110,7 @@ previous one:
  is equivalent to
  .BR "\-C " /etc.
  This is typically used with recursive invocations of
@@ -89,7 +89,7 @@ Index: doc/make.1
  .TP 0.5i
  .B \-d
  Print debugging information in addition to normal processing.
-@@ -119,7 +119,7 @@ The debugging information says which files are being c
+@@ -118,7 +118,7 @@ The debugging information says which files are being c
  remaking, which file-times are being compared and with what results,
  which files actually need to be remade, which implicit rules are
  considered and which are applied---everything interesting about how
@@ -98,7 +98,16 @@ Index: doc/make.1
  decides what to do.
  .TP 0.5i
  .BI \-\-debug "[=FLAGS]"
-@@ -172,7 +172,7 @@ If several
+@@ -148,7 +148,7 @@ for debugging while remaking makefiles,
+ shows all recipes that are run even if they are silent, and
+ .I why
+ shows the reason
+-.BR make
++.BR gmake
+ decided to rebuild each target.  Use
+ .I none
+ to disable all previous debugging flags.
+@@ -178,7 +178,7 @@ If several
  options are used to specify several directories, the directories are
  searched in the order specified.
  Unlike the arguments to other flags of
@@ -107,7 +116,7 @@ Index: doc/make.1
  directories given with
  .B \-I
  flags may come directly after the flag:
-@@ -195,7 +195,7 @@ option, the last one is effective.
+@@ -201,7 +201,7 @@ option, the last one is effective.
  If the
  .B \-j
  option is given without an argument,
@@ -115,8 +124,8 @@ Index: doc/make.1
 +.BR gmake
  will not limit the number of jobs that can run simultaneously.
  .TP 0.5i
- \fB\-k\fR, \fB\-\-keep\-going\fR
-@@ -256,7 +256,7 @@ This also prints the version information given by the
+ \fB\--jobserver-style=\fR\fIstyle\fR
+@@ -272,7 +272,7 @@ This also prints the version information given by the
  .B \-v
  switch (see below).
  To print the data base without trying to remake any files, use
@@ -125,7 +134,7 @@ Index: doc/make.1
  .TP 0.5i
  \fB\-q\fR, \fB\-\-question\fR
  ``Question mode''.
-@@ -287,7 +287,7 @@ Touch files (mark them up to date without really chang
+@@ -303,7 +303,7 @@ Touch files (mark them up to date without really chang
  instead of running their commands.
  This is used to pretend that the commands were done, in order to fool
  future invocations of
@@ -134,7 +143,7 @@ Index: doc/make.1
  .TP 0.5i
  .B \-\-trace
  Information about the disposition of each target is printed (why the target is
-@@ -295,7 +295,7 @@ being rebuilt and what commands are run to rebuild it)
+@@ -311,7 +311,7 @@ being rebuilt and what commands are run to rebuild it)
  .TP 0.5i
  \fB\-v\fR, \fB\-\-version\fR
  Print the version of the
@@ -143,7 +152,7 @@ Index: doc/make.1
  program plus a copyright, a list of authors and a notice that there
  is no warranty.
  .TP 0.5i
-@@ -304,7 +304,7 @@ Print a message containing the working directory
+@@ -320,7 +320,7 @@ Print a message containing the working directory
  before and after other processing.
  This may be useful for tracking down errors from complicated nests of
  recursive
@@ -152,7 +161,7 @@ Index: doc/make.1
  commands.
  .TP 0.5i
  .B \-\-no\-print\-directory
-@@ -324,33 +324,33 @@ Without
+@@ -360,9 +360,9 @@ Without
  it is almost the same as running a
  .I touch
  command on the given file before running
@@ -164,12 +173,7 @@ Index: doc/make.1
  .TP 0.5i
  .B \-\-warn\-undefined\-variables
  Warn when an undefined variable is referenced.
- .SH "EXIT STATUS"
- GNU
--.B make
-+.B gmake
- exits with a status of zero if all makefiles were successfully parsed
- and no targets that were built failed.  A status of one will be returned
+@@ -372,19 +372,19 @@ and no targets that were built failed.  A status of on
  if the
  .B \-q
  flag was used and

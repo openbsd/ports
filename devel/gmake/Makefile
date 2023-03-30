@@ -1,6 +1,6 @@
 COMMENT=	GNU make
 
-DISTNAME=	make-4.3
+DISTNAME=	make-4.4.1
 PKGNAME=	g${DISTNAME}
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=make/}
@@ -26,8 +26,9 @@ MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/build-aux
 
 TEST_ENV=	SHELL=$$SHELL
 
-# Known test failures:
-# output-sync can fail due to a race condition in the test itself
-# https://lists.gnu.org/archive/html/bug-make/2020-01/msg00075.html
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+CFLAGS+=	-std=gnu99
+.endif
 
 .include <bsd.port.mk>
