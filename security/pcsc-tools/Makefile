@@ -1,11 +1,11 @@
 COMMENT=	tools for use with PC/SC drivers, cards, readers
 
-DISTNAME=	pcsc-tools-1.6.1
+DISTNAME=	pcsc-tools-1.6.2
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	security sysutils
 
-HOMEPAGE=	http://ludovic.rousseau.free.fr/softwares/pcsc-tools/
+HOMEPAGE=	https://pcsc-tools.apdu.fr/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
@@ -15,7 +15,7 @@ COMPILER_LANGS=	c
 
 WANTLIB += c pcsclite pthread
 
-MASTER_SITES=	http://ludovic.rousseau.free.fr/softwares/pcsc-tools/
+MASTER_SITES=	https://pcsc-tools.apdu.fr/
 
 CONFIGURE_STYLE= gnu
 USE_GMAKE=	Yes
