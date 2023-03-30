@@ -2,7 +2,7 @@ COMMENT =	optimized library for DEFLATE/zlib/gzip (de)compression
 
 GH_ACCOUNT =	ebiggers
 GH_PROJECT =	libdeflate
-GH_TAGNAME =	v1.17
+GH_TAGNAME =	v1.18
 
 SHARED_LIBS =	deflate	0.0
 
