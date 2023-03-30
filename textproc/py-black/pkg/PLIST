@@ -20,6 +20,8 @@ lib/python${MODPY_VERSION}/site-packages/black/${MODPY_PYCACHE}__init__.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/black/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/black/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/black/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/black/${MODPY_PYCACHE}_width_table.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/black/${MODPY_PYCACHE}_width_table.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/black/${MODPY_PYCACHE}brackets.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/black/${MODPY_PYCACHE}brackets.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/black/${MODPY_PYCACHE}cache.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -58,6 +60,7 @@ lib/python${MODPY_VERSION}/site-packages/black/${MODPY_PYCACHE}strings.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/black/${MODPY_PYCACHE}strings.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/black/${MODPY_PYCACHE}trans.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/black/${MODPY_PYCACHE}trans.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/black/_width_table.py
 lib/python${MODPY_VERSION}/site-packages/black/brackets.py
 lib/python${MODPY_VERSION}/site-packages/black/cache.py
 lib/python${MODPY_VERSION}/site-packages/black/comments.py
