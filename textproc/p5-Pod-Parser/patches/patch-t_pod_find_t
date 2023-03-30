@@ -8,7 +8,7 @@ Index: t/pod/find.t
  print "### 2. searching $lib_dir\n";
  my %pods = pod_find($lib_dir);
 -my @results = values %pods;
-+my @results = grep { ! /\.orig$/ } values %pods;
++my @results = grep { ! /\.orig\.port$/ } values %pods;
  print "### found @results\n";
  my @compare = qw(
      Pod::Find
