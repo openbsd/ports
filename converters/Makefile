@@ -44,6 +44,7 @@
      SUBDIR += p5-Convert-Binary-C
      SUBDIR += p5-Convert-Color
      SUBDIR += p5-Convert-Color-XTerm
+     SUBDIR += p5-Convert-NLS_DATE_FORMAT
      SUBDIR += p5-Convert-PEM
      SUBDIR += p5-Convert-TNEF
      SUBDIR += p5-Convert-UU
