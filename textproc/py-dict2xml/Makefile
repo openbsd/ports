@@ -15,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 MODULES=	lang/python
 
 MODPY_PI=	Yes
-MODPY_PYBUILD=	setuptools
+MODPY_PYBUILD=	hatchling
 
 # tests require unported noseOfYeti
 NO_TEST=	Yes
