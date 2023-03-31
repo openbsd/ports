@@ -1,6 +1,0 @@
-@bin bin/compton
-bin/compton-trans
-@man man/man1/compton-trans.1
-@man man/man1/compton.1
-share/applications/compton.desktop
-@tag update-desktop-database
