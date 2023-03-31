@@ -1,4 +1,3 @@
-MODCARGO_CRATES +=	autocfg	1.1.0	# Apache-2.0 OR MIT
 MODCARGO_CRATES +=	bindgen	0.64.0	# BSD-3-Clause
 MODCARGO_CRATES +=	bitflags	1.3.2	# MIT/Apache-2.0
 MODCARGO_CRATES +=	bssl-sys	0.1.0	# MIT
@@ -47,7 +46,7 @@ MODCARGO_CRATES +=	serde_derive	1.0.159	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	serde_json	1.0.95	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	shlex	1.1.0	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	syn	1.0.109	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	syn	2.0.11	# MIT OR Apache-2.0
+MODCARGO_CRATES +=	syn	2.0.12	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	term	0.6.1	# MIT/Apache-2.0
 MODCARGO_CRATES +=	thiserror	1.0.40	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	thiserror-impl	1.0.40	# MIT OR Apache-2.0
