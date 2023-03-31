@@ -76,6 +76,8 @@ lib/python${MODPY_VERSION}/site-packages/ini2toml/plugins/${MODPY_PYCACHE}pytest
 lib/python${MODPY_VERSION}/site-packages/ini2toml/plugins/${MODPY_PYCACHE}pytest.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ini2toml/plugins/${MODPY_PYCACHE}setuptools_pep621.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ini2toml/plugins/${MODPY_PYCACHE}setuptools_pep621.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ini2toml/plugins/${MODPY_PYCACHE}toml_incompatibilities.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ini2toml/plugins/${MODPY_PYCACHE}toml_incompatibilities.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ini2toml/plugins/best_effort.py
 lib/python${MODPY_VERSION}/site-packages/ini2toml/plugins/coverage.py
 lib/python${MODPY_VERSION}/site-packages/ini2toml/plugins/isort.py
@@ -83,6 +85,7 @@ lib/python${MODPY_VERSION}/site-packages/ini2toml/plugins/mypy.py
 lib/python${MODPY_VERSION}/site-packages/ini2toml/plugins/profile_independent_tasks.py
 lib/python${MODPY_VERSION}/site-packages/ini2toml/plugins/pytest.py
 lib/python${MODPY_VERSION}/site-packages/ini2toml/plugins/setuptools_pep621.py
+lib/python${MODPY_VERSION}/site-packages/ini2toml/plugins/toml_incompatibilities.py
 lib/python${MODPY_VERSION}/site-packages/ini2toml/profile.py
 lib/python${MODPY_VERSION}/site-packages/ini2toml/py.typed
 lib/python${MODPY_VERSION}/site-packages/ini2toml/transformations.py

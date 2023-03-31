@@ -1,6 +1,6 @@
 COMMENT =		convert .ini/.cfg files to TOML equivalents
 
-MODPY_EGG_VERSION =	0.11.3
+MODPY_EGG_VERSION =	0.12
 DISTNAME =		ini2toml-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
