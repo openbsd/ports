@@ -1,6 +1,6 @@
 COMMENT =	color space conversions and named lookups
 
-DISTNAME =	Convert-Color-0.14
+DISTNAME =	Convert-Color-0.16
 
 CATEGORIES =	converters
 
@@ -11,7 +11,8 @@ MODULES =		cpan
 
 RUN_DEPENDS =		devel/p5-Module-Pluggable \
 			textproc/p5-List-UtilsBy
-TEST_DEPENDS =		devel/p5-Test-Number-Delta
+TEST_DEPENDS =		devel/p5-Test-Number-Delta \
+			devel/p5-Test2-Suite
 
 CONFIGURE_STYLE =	modbuild
 
