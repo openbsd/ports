@@ -1,8 +1,7 @@
 COMMENT=		highly DNS-, DoS- and abuse-aware loadbalancer
 
-DISTNAME=		dnsdist-1.7.3
+DISTNAME=		dnsdist-1.8.0
 EXTRACT_SUFX=		.tar.bz2
-REVISION=		0
 
 CATEGORIES=		net
 
@@ -60,6 +59,6 @@ LIB_DEPENDS+=		${MODLUA_LIB_DEPENDS} \
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/{doc,examples}/dnsdist
 	cd ${WRKSRC}; ${INSTALL_DATA} README.md ${PREFIX}/share/doc/dnsdist/; \
-	    ${INSTALL_DATA} dnsdistconf.lua ${PREFIX}/share/examples/dnsdist/
+	    ${INSTALL_DATA} dnsdist.conf-dist ${PREFIX}/share/examples/dnsdist/
 
 .include <bsd.port.mk>

@@ -7,7 +7,7 @@ share/doc/dnsdist/
 share/doc/dnsdist/README.md
 share/examples/dnsdist/
 @sample ${SYSCONFDIR}/
-share/examples/dnsdist/dnsdistconf.lua
+share/examples/dnsdist/dnsdist.conf-dist
 @mode 640
 @group _dnsdist
 @sample ${SYSCONFDIR}/dnsdist.conf
