@@ -1,10 +1,10 @@
 COMMENT=		efficient search engine and triplestore
 
 GNOME_PROJECT=		tracker
-GNOME_VERSION=		3.4.2
+GNOME_VERSION=		3.5.0
 PKGNAME=		tracker3-${GNOME_VERSION}
 
-SHARED_LIBS += tracker-sparql-3.0        0.2 # 0.402.0
+SHARED_LIBS += tracker-sparql-3.0        0.2 # 0.500.0
 
 # LGPLv2.1+ - GPLv2+ - BSD-3-clause
 PERMIT_PACKAGE=		Yes
@@ -17,7 +17,7 @@ MODULES=		devel/meson \
 			lang/python \
 			x11/gnome
 
-MODGNOME_TOOLS=		gobject-introspection
+MODGNOME_TOOLS=		gi-docgen gobject-introspection vala
 
 MODPY_BUILDDEP=		No
 MODPY_RUNDEP=		No
