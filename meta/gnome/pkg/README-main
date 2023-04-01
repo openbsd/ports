@@ -30,10 +30,10 @@ rc.conf.local(8) (and "xenodm_flags" commented or removed).
 
 Locales
 -------
-Default language and character set for GNOME and the GDM greeter are set in:
+Default language and character set for GNOME by the GDM greeter are set in:
     ${SYSCONFDIR}/gdm/locale.conf
 Note that the variables set in this file will be inherited by the user session.
-They can be unset/overriden in the user's .profile file or using
+They can be unset/overriden in the user's .profile file or by using
 gnome-control-center.
 
 Alternative (non-GDM) GNOME startup
