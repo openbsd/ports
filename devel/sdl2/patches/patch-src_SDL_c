@@ -4,7 +4,7 @@
 Index: src/SDL.c
 --- src/SDL.c.orig
 +++ src/SDL.c
-@@ -301,9 +301,6 @@ SDL_InitSubSystem(Uint32 flags)
+@@ -303,9 +303,6 @@ SDL_InitSubSystem(Uint32 flags)
          }
          SDL_PrivateSubsystemRefCountIncr(SDL_INIT_GAMECONTROLLER);
          flags_initialized |= SDL_INIT_GAMECONTROLLER;
@@ -14,7 +14,7 @@ Index: src/SDL.c
  #endif
      }
  
-@@ -533,6 +530,10 @@ SDL_GetRevisionNumber(void)
+@@ -558,6 +555,10 @@ SDL_GetRevisionNumber(void)
  const char *
  SDL_GetPlatform(void)
  {

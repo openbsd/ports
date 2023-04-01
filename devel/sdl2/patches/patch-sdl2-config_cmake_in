@@ -1,0 +1,12 @@
+Index: sdl2-config.cmake.in
+--- sdl2-config.cmake.in.orig
++++ sdl2-config.cmake.in
+@@ -124,7 +124,7 @@ if(WIN32)
+   unset(_sdl2_implib)
+   unset(_sdl2_dll)
+ else()
+-  set(_sdl2_shared "${SDL2_LIBDIR}/libSDL2${CMAKE_SHARED_LIBRARY_SUFFIX}")
++  set(_sdl2_shared "${SDL2_LIBDIR}/libSDL2${CMAKE_SHARED_LIBRARY_SUFFIX}.${LIBSDL2_VERSION}")
+   if(EXISTS "${_sdl2_shared}")
+     if(NOT TARGET SDL2::SDL2)
+       add_library(SDL2::SDL2 SHARED IMPORTED)
