@@ -1,9 +1,10 @@
-@conflict xfce4-datetime-<0.6.2
+@conflict xfce4-datetime-*
 @conflict xfce4-iconbox-*
 @conflict xfce4-showdesktop-*
 @conflict xfce4-systray-*
 @conflict xfce4-taskbar-*
 @conflict xfce4-trigger-launcher-*
+@pkgpath x11/xfce4/xfce4-datetime
 @bin bin/xfce4-panel
 bin/xfce4-popup-applicationsmenu
 bin/xfce4-popup-directorymenu
