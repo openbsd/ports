@@ -6474,6 +6474,8 @@ share/rust-openssl-tests/openssl/test/alt_name_cert.pem
 share/rust-openssl-tests/openssl/test/ca.crt
 share/rust-openssl-tests/openssl/test/cert.pem
 share/rust-openssl-tests/openssl/test/certs.pem
+share/rust-openssl-tests/openssl/test/certv3.pem
+share/rust-openssl-tests/openssl/test/certv3_extfile
 share/rust-openssl-tests/openssl/test/cms.p12
 share/rust-openssl-tests/openssl/test/cms_pubkey.der
 share/rust-openssl-tests/openssl/test/crl-ca.crt

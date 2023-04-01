@@ -58,7 +58,7 @@ SHA256 (cargo/which-4.4.0.tar.gz) = JEHHhMUrKJoFS3IB/JMlPiiPCU4vS+kFg0MSfEImomk=
 SHA256 (cargo/winapi-0.3.9.tar.gz) = XIOaZ0/NepiVLlkyQupACr6TmSdGdh44ZBQF0osA9Bk=
 SHA256 (cargo/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = rDuHxjYgQm3ZuZHlzgMp7/VFvMu7NPO+Cf9vtqtRt7Y=
 SHA256 (cargo/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = cS4ieEHQV8HuHNL7Ivp+WlRhro5I+iynnsQs/BkxGD8=
-SHA256 (rust-openssl-tests-20230331-b127fb2b.tar.gz) = 4p9bz6WvssgPIuFRCDoRvwOBD9PfkrLyB9js/9CL1cQ=
+SHA256 (rust-openssl-tests-20230401-6af36a70.tar.gz) = LwoupUPCzfMGVYtE5TH01AGpp2LN7KbFyJu+1FF98SM=
 SIZE (cargo/bindgen-0.64.0.tar.gz) = 204700
 SIZE (cargo/bitflags-1.3.2.tar.gz) = 23021
 SIZE (cargo/bssl-sys-0.1.0.tar.gz) = 1061
@@ -119,4 +119,4 @@ SIZE (cargo/which-4.4.0.tar.gz) = 10889
 SIZE (cargo/winapi-0.3.9.tar.gz) = 1200382
 SIZE (cargo/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = 2918815
 SIZE (cargo/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 2947998
-SIZE (rust-openssl-tests-20230331-b127fb2b.tar.gz) = 333407
+SIZE (rust-openssl-tests-20230401-6af36a70.tar.gz) = 334230
