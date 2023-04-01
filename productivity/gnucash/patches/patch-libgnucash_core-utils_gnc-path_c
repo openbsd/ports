@@ -7,6 +7,6 @@ Index: libgnucash/core-utils/gnc-path.c
  {
 -    gchar *sysconfdir = gnc_gbr_find_etc_dir (SYSCONFDIR);
 +    gchar *sysconfdir = gnc_gbr_find_etc_dir ("${SYSCONFDIR}");
-     gchar *result = g_build_filename (sysconfdir, "gnucash", (char*)NULL);
+     gchar *result = g_build_filename (sysconfdir, PROJECT_NAME, (char*)NULL);
      g_free (sysconfdir);
      //printf("Returning pkgsysconfdir %s\n", result);
