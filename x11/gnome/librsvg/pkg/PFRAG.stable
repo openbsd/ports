@@ -1,7 +1,5 @@
 include/librsvg-2.0/librsvg/rsvg-features.h
 include/librsvg-2.0/librsvg/rsvg-version.h
 share/doc/librsvg/
-share/doc/librsvg/COMPILING.md
-share/doc/librsvg/CONTRIBUTING.md
 share/doc/librsvg/README.md
 share/doc/librsvg/code-of-conduct.md

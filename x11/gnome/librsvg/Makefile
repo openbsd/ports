@@ -1,7 +1,7 @@
 COMMENT=		SAX-based render library for SVG files
 
 GNOME_PROJECT=		librsvg
-STABLE_VERSION=		2.54.5
+STABLE_VERSION=		2.56.0
 OLD_VERSION=		2.40.21
 DISTFILES=		librsvg-${STABLE_VERSION}${EXTRACT_SUFX}:0 \
 			librsvg-${OLD_VERSION}${EXTRACT_SUFX}:1
@@ -15,18 +15,19 @@ DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 ### stable
 .if ${PROPERTIES:Mrust}
-REVISION=		2
 SHARED_LIBS +=  rsvg-2               41.0     # 50.0
 GNOME_VERSION=		${STABLE_VERSION}
-MODULES +=		lang/python
+MODULES +=		devel/cargo \
+			lang/python
+MODCARGO_BUILD=		No
+MODCARGO_DIST_SUBDIR=	${DIST_SUBDIR}
+MODCARGO_INSTALL=	No
+MODCARGO_TEST=		No
 MODPY_RUNDEP=		No
 BUILD_DEPENDS=		lang/rust \
 			textproc/py-docutils${MODPY_FLAVOR}
 PKG_ARGS=		-Dold=0 -Dstable=1
-MAKE_ENV +=		CARGO_BUILD_JOBS=${MAKE_JOBS} \
-			CARGO_HOME=${WRKBUILD}/cargo-home \
-			CARGO_PROFILE_RELEASE_OPT_LEVEL=2 \
-			CARGO_PROFILE_RELEASE_DEBUG=1
+MAKE_ENV +=		${MODCARGO_ENV}
 MAKE_FLAGS +=		V=1
 WANTLIB += ${COMPILER_LIBCXX} Xau Xdmcp cairo-gobject jpeg
 .else
@@ -39,6 +40,7 @@ PKG_ARGS=		-Dold=1 -Dstable=0
 WANTLIB += ${COMPILER_LIBCXX} croco-0.6 ffi gmodule-2.0 jpeg pcre2-8 Xau Xdmcp
 LIB_DEPENDS +=		www/libcroco
 CONFIGURE_ARGS +=	--disable-tools
+CHECKSUM_FILE=		${.CURDIR}/distinfo.old
 .endif
 
 CATEGORIES=		devel graphics
@@ -69,8 +71,9 @@ CONFIGURE_ARGS +=	--disable-Bsymbolic
 .endif
 
 .if ${PROPERTIES:Mrust}
-post-patch:
-	sed -i 's/"files":{[^}]*}/"files":{}/' ${WRKSRC}/vendor/*/.cargo-checksum.json
+.include "crates.inc"
+pre-configure:
+	@${MODCARGO_configure}
 .endif
 
 post-install:
