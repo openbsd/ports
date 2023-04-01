@@ -8,3 +8,9 @@ share/c2sp-testvectors/ed25519vectors/ed25519vectors_test.go
 share/c2sp-testvectors/ed25519vectors/go.mod
 share/c2sp-testvectors/ed25519vectors/go.sum
 share/c2sp-testvectors/ed25519vectors/reencoded25519.go
+share/c2sp-testvectors/jq255vectors/
+share/c2sp-testvectors/jq255vectors/README.md
+share/c2sp-testvectors/jq255vectors/jq255test.py
+share/c2sp-testvectors/jq255vectors/mktests-json.py
+share/c2sp-testvectors/jq255vectors/test-jq255e.json
+share/c2sp-testvectors/jq255vectors/test-jq255s.json
