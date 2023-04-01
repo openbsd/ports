@@ -1,4 +1,4 @@
-VERSION =		3.0.5
+VERSION =		3.0.6
 DISTNAME =		ruby-${VERSION}
 SHARED_LIBS =		ruby30	0.0
 NEXTVER =		3.1

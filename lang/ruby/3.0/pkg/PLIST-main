@@ -206,7 +206,7 @@ include/ruby-${REV}/ruby/util.h
 include/ruby-${REV}/ruby/version.h
 include/ruby-${REV}/ruby/vm.h
 include/ruby-${REV}/${SUB}/
-include/ruby-${REV}/${SUB}/rb_mjit_min_header-3.0.5.h
+include/ruby-${REV}/${SUB}/rb_mjit_min_header-3.0.6.h
 include/ruby-${REV}/${SUB}/ruby/
 include/ruby-${REV}/${SUB}/ruby/config.h
 @so lib/libruby30.so
@@ -2359,7 +2359,7 @@ lib/ruby/gems/${REV}/gems/test-unit-3.3.7/test/util/test-output.rb
 lib/ruby/gems/${REV}/gems/test-unit-3.3.7/test/util/test_backtracefilter.rb
 lib/ruby/gems/${REV}/gems/test-unit-3.3.7/test/util/test_observable.rb
 lib/ruby/gems/${REV}/gems/test-unit-3.3.7/test/util/test_procwrapper.rb
-lib/ruby/gems/${REV}/gems/time-0.1.0/
+lib/ruby/gems/${REV}/gems/time-0.1.1/
 lib/ruby/gems/${REV}/gems/timeout-0.1.1/
 lib/ruby/gems/${REV}/gems/tmpdir-0.1.2/
 lib/ruby/gems/${REV}/gems/tracer-0.1.1/
@@ -2731,7 +2731,7 @@ lib/ruby/gems/${REV}/gems/typeprof-0.15.2/tools/
 lib/ruby/gems/${REV}/gems/typeprof-0.15.2/tools/coverage.rb
 lib/ruby/gems/${REV}/gems/typeprof-0.15.2/tools/setup-insns-def.rb
 lib/ruby/gems/${REV}/gems/un-0.1.0/
-lib/ruby/gems/${REV}/gems/uri-0.10.1/
+lib/ruby/gems/${REV}/gems/uri-0.10.2/
 lib/ruby/gems/${REV}/gems/weakref-0.1.1/
 lib/ruby/gems/${REV}/gems/yaml-0.1.1/
 lib/ruby/gems/${REV}/gems/zlib-2.0.0/
@@ -2806,13 +2806,13 @@ lib/ruby/gems/${REV}/specifications/default/stringio-3.0.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/strscan-3.0.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/syslog-0.1.0.gemspec
 lib/ruby/gems/${REV}/specifications/default/tempfile-0.1.1.gemspec
-lib/ruby/gems/${REV}/specifications/default/time-0.1.0.gemspec
+lib/ruby/gems/${REV}/specifications/default/time-0.1.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/timeout-0.1.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/tmpdir-0.1.2.gemspec
 lib/ruby/gems/${REV}/specifications/default/tracer-0.1.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/tsort-0.1.0.gemspec
 lib/ruby/gems/${REV}/specifications/default/un-0.1.0.gemspec
-lib/ruby/gems/${REV}/specifications/default/uri-0.10.1.gemspec
+lib/ruby/gems/${REV}/specifications/default/uri-0.10.2.gemspec
 lib/ruby/gems/${REV}/specifications/default/weakref-0.1.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/yaml-0.1.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/zlib-2.0.0.gemspec
