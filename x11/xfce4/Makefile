@@ -17,7 +17,6 @@
      SUBDIR += xfce4-battery
      SUBDIR += xfce4-clipman
      SUBDIR += xfce4-cpugraph
-     SUBDIR += xfce4-datetime
      SUBDIR += xfce4-dev-tools
      SUBDIR += xfce4-dict
      SUBDIR += xfce4-diskperf
