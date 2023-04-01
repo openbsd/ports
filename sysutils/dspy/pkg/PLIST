@@ -17,13 +17,12 @@ include/dspy-1/dspy-view.h
 include/dspy-1/dspy.h
 @lib lib/libdspy-1.so.${LIBdspy-1_VERSION}
 lib/pkgconfig/dspy-1.pc
-share/appdata/
-share/appdata/org.gnome.dspy.appdata.xml
 share/applications/org.gnome.dspy.desktop
 share/glib-2.0/schemas/org.gnome.dspy.gschema.xml
 share/icons/hicolor/scalable/apps/org.gnome.dspy.devel.svg
 share/icons/hicolor/scalable/apps/org.gnome.dspy.svg
 share/icons/hicolor/symbolic/apps/org.gnome.dspy-symbolic.svg
+share/metainfo/org.gnome.dspy.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag glib-compile-schemas
 @tag update-desktop-database
