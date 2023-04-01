@@ -1,11 +1,10 @@
 COMMENT=		GLib wrapper around libarchive
 
 GNOME_PROJECT=		gnome-autoar
-GNOME_VERSION=		0.4.3
-REVISION=		0
+GNOME_VERSION=		0.4.4
 
-SHARED_LIBS += gnome-autoar-0            0.0 # 0.1.2
-SHARED_LIBS += gnome-autoar-gtk-0        0.0 # 0.1.2
+SHARED_LIBS += gnome-autoar-0            0.0 # 0.2.0
+SHARED_LIBS += gnome-autoar-gtk-0        0.0 # 0.2.0
 
 CATEGORIES=		archivers
 
