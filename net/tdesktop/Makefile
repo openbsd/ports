@@ -9,6 +9,7 @@ V =			4.7.0
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
+REVISION =		0
 
 DPB_PROPERTIES =	parallel
 
@@ -66,7 +67,7 @@ LIB_DEPENDS =		archivers/lz4 \
 			audio/rnnoise \
 			devel/abseil-cpp \
 			devel/glib2 \
-			devel/glibmm268>=2.7.0 \
+			devel/glibmm268>=2.76.0 \
 			devel/libdispatch \
 			devel/libsigc++30 \
 			devel/protobuf \
