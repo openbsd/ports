@@ -27,7 +27,6 @@ lib/tracker-miners-3.0/extract-modules/
 @so lib/tracker-miners-3.0/extract-modules/libextract-tiff.so
 @so lib/tracker-miners-3.0/extract-modules/libextract-xps.so
 @so lib/tracker-miners-3.0/libtracker-extract.so
-@so lib/tracker-miners-3.0/libtracker-miner-3.0.so
 lib/tracker-miners-3.0/writeback-modules/
 @so lib/tracker-miners-3.0/writeback-modules/libwriteback-gstreamer.so
 @so lib/tracker-miners-3.0/writeback-modules/libwriteback-xmp.so

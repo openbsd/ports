@@ -1,7 +1,7 @@
 COMMENT=		tracker miners and metadata extractors
 
 GNOME_PROJECT=		tracker-miners
-GNOME_VERSION=		3.4.3
+GNOME_VERSION=		3.5.0
 PKGNAME=		tracker3-miners-${GNOME_VERSION}
 
 # LGPLv2.1+ - GPLv2+
@@ -21,9 +21,10 @@ MODULES=		devel/dconf \
 MODPY_BUILDDEP=		No
 MODPY_RUNDEP=		No
 
-# coreutils: sha256sum; cf. patch-meson_build
-BUILD_DEPENDS=		sysutils/coreutils \
-			textproc/asciidoc
+BUILD_DEPENDS=		textproc/asciidoc
+
+# sha256sum; cf. patch-meson_build
+BUILD_DEPENDS +=	sysutils/coreutils
 
 LIB_DEPENDS=		audio/libcue \
 			devel/libgsf \
