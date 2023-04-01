@@ -17,6 +17,8 @@ share/help/
 share/help/C/
 share/help/C/deja-dup/
 share/help/C/deja-dup/contribute.page
+share/help/C/deja-dup/figures/
+share/help/C/deja-dup/figures/DejaDup.svg
 share/help/C/deja-dup/index.page
 share/help/C/deja-dup/prefs.page
 share/help/C/deja-dup/restore-full.page
@@ -26,6 +28,8 @@ share/help/C/deja-dup/support.page
 share/help/af/
 share/help/af/deja-dup/
 share/help/af/deja-dup/contribute.page
+share/help/af/deja-dup/figures/
+share/help/af/deja-dup/figures/DejaDup.svg
 share/help/af/deja-dup/index.page
 share/help/af/deja-dup/prefs.page
 share/help/af/deja-dup/restore-full.page
@@ -35,6 +39,8 @@ share/help/af/deja-dup/support.page
 share/help/ar/
 share/help/ar/deja-dup/
 share/help/ar/deja-dup/contribute.page
+share/help/ar/deja-dup/figures/
+share/help/ar/deja-dup/figures/DejaDup.svg
 share/help/ar/deja-dup/index.page
 share/help/ar/deja-dup/prefs.page
 share/help/ar/deja-dup/restore-full.page
@@ -44,6 +50,8 @@ share/help/ar/deja-dup/support.page
 share/help/bg/
 share/help/bg/deja-dup/
 share/help/bg/deja-dup/contribute.page
+share/help/bg/deja-dup/figures/
+share/help/bg/deja-dup/figures/DejaDup.svg
 share/help/bg/deja-dup/index.page
 share/help/bg/deja-dup/prefs.page
 share/help/bg/deja-dup/restore-full.page
@@ -53,6 +61,8 @@ share/help/bg/deja-dup/support.page
 share/help/bs/
 share/help/bs/deja-dup/
 share/help/bs/deja-dup/contribute.page
+share/help/bs/deja-dup/figures/
+share/help/bs/deja-dup/figures/DejaDup.svg
 share/help/bs/deja-dup/index.page
 share/help/bs/deja-dup/prefs.page
 share/help/bs/deja-dup/restore-full.page
@@ -62,6 +72,8 @@ share/help/bs/deja-dup/support.page
 share/help/ca/
 share/help/ca/deja-dup/
 share/help/ca/deja-dup/contribute.page
+share/help/ca/deja-dup/figures/
+share/help/ca/deja-dup/figures/DejaDup.svg
 share/help/ca/deja-dup/index.page
 share/help/ca/deja-dup/prefs.page
 share/help/ca/deja-dup/restore-full.page
@@ -71,6 +83,8 @@ share/help/ca/deja-dup/support.page
 share/help/cs/
 share/help/cs/deja-dup/
 share/help/cs/deja-dup/contribute.page
+share/help/cs/deja-dup/figures/
+share/help/cs/deja-dup/figures/DejaDup.svg
 share/help/cs/deja-dup/index.page
 share/help/cs/deja-dup/prefs.page
 share/help/cs/deja-dup/restore-full.page
@@ -80,6 +94,8 @@ share/help/cs/deja-dup/support.page
 share/help/da/
 share/help/da/deja-dup/
 share/help/da/deja-dup/contribute.page
+share/help/da/deja-dup/figures/
+share/help/da/deja-dup/figures/DejaDup.svg
 share/help/da/deja-dup/index.page
 share/help/da/deja-dup/prefs.page
 share/help/da/deja-dup/restore-full.page
@@ -89,6 +105,8 @@ share/help/da/deja-dup/support.page
 share/help/de/
 share/help/de/deja-dup/
 share/help/de/deja-dup/contribute.page
+share/help/de/deja-dup/figures/
+share/help/de/deja-dup/figures/DejaDup.svg
 share/help/de/deja-dup/index.page
 share/help/de/deja-dup/prefs.page
 share/help/de/deja-dup/restore-full.page
@@ -98,6 +116,8 @@ share/help/de/deja-dup/support.page
 share/help/el/
 share/help/el/deja-dup/
 share/help/el/deja-dup/contribute.page
+share/help/el/deja-dup/figures/
+share/help/el/deja-dup/figures/DejaDup.svg
 share/help/el/deja-dup/index.page
 share/help/el/deja-dup/prefs.page
 share/help/el/deja-dup/restore-full.page
@@ -107,6 +127,8 @@ share/help/el/deja-dup/support.page
 share/help/en_AU/
 share/help/en_AU/deja-dup/
 share/help/en_AU/deja-dup/contribute.page
+share/help/en_AU/deja-dup/figures/
+share/help/en_AU/deja-dup/figures/DejaDup.svg
 share/help/en_AU/deja-dup/index.page
 share/help/en_AU/deja-dup/prefs.page
 share/help/en_AU/deja-dup/restore-full.page
@@ -116,6 +138,8 @@ share/help/en_AU/deja-dup/support.page
 share/help/en_GB/
 share/help/en_GB/deja-dup/
 share/help/en_GB/deja-dup/contribute.page
+share/help/en_GB/deja-dup/figures/
+share/help/en_GB/deja-dup/figures/DejaDup.svg
 share/help/en_GB/deja-dup/index.page
 share/help/en_GB/deja-dup/prefs.page
 share/help/en_GB/deja-dup/restore-full.page
@@ -125,6 +149,8 @@ share/help/en_GB/deja-dup/support.page
 share/help/eo/
 share/help/eo/deja-dup/
 share/help/eo/deja-dup/contribute.page
+share/help/eo/deja-dup/figures/
+share/help/eo/deja-dup/figures/DejaDup.svg
 share/help/eo/deja-dup/index.page
 share/help/eo/deja-dup/prefs.page
 share/help/eo/deja-dup/restore-full.page
@@ -134,6 +160,8 @@ share/help/eo/deja-dup/support.page
 share/help/es/
 share/help/es/deja-dup/
 share/help/es/deja-dup/contribute.page
+share/help/es/deja-dup/figures/
+share/help/es/deja-dup/figures/DejaDup.svg
 share/help/es/deja-dup/index.page
 share/help/es/deja-dup/prefs.page
 share/help/es/deja-dup/restore-full.page
@@ -143,6 +171,8 @@ share/help/es/deja-dup/support.page
 share/help/eu/
 share/help/eu/deja-dup/
 share/help/eu/deja-dup/contribute.page
+share/help/eu/deja-dup/figures/
+share/help/eu/deja-dup/figures/DejaDup.svg
 share/help/eu/deja-dup/index.page
 share/help/eu/deja-dup/prefs.page
 share/help/eu/deja-dup/restore-full.page
@@ -152,6 +182,8 @@ share/help/eu/deja-dup/support.page
 share/help/fi/
 share/help/fi/deja-dup/
 share/help/fi/deja-dup/contribute.page
+share/help/fi/deja-dup/figures/
+share/help/fi/deja-dup/figures/DejaDup.svg
 share/help/fi/deja-dup/index.page
 share/help/fi/deja-dup/prefs.page
 share/help/fi/deja-dup/restore-full.page
@@ -161,6 +193,8 @@ share/help/fi/deja-dup/support.page
 share/help/fr/
 share/help/fr/deja-dup/
 share/help/fr/deja-dup/contribute.page
+share/help/fr/deja-dup/figures/
+share/help/fr/deja-dup/figures/DejaDup.svg
 share/help/fr/deja-dup/index.page
 share/help/fr/deja-dup/prefs.page
 share/help/fr/deja-dup/restore-full.page
@@ -170,6 +204,8 @@ share/help/fr/deja-dup/support.page
 share/help/gl/
 share/help/gl/deja-dup/
 share/help/gl/deja-dup/contribute.page
+share/help/gl/deja-dup/figures/
+share/help/gl/deja-dup/figures/DejaDup.svg
 share/help/gl/deja-dup/index.page
 share/help/gl/deja-dup/prefs.page
 share/help/gl/deja-dup/restore-full.page
@@ -179,6 +215,8 @@ share/help/gl/deja-dup/support.page
 share/help/he/
 share/help/he/deja-dup/
 share/help/he/deja-dup/contribute.page
+share/help/he/deja-dup/figures/
+share/help/he/deja-dup/figures/DejaDup.svg
 share/help/he/deja-dup/index.page
 share/help/he/deja-dup/prefs.page
 share/help/he/deja-dup/restore-full.page
@@ -188,6 +226,8 @@ share/help/he/deja-dup/support.page
 share/help/hr/
 share/help/hr/deja-dup/
 share/help/hr/deja-dup/contribute.page
+share/help/hr/deja-dup/figures/
+share/help/hr/deja-dup/figures/DejaDup.svg
 share/help/hr/deja-dup/index.page
 share/help/hr/deja-dup/prefs.page
 share/help/hr/deja-dup/restore-full.page
@@ -197,6 +237,8 @@ share/help/hr/deja-dup/support.page
 share/help/hu/
 share/help/hu/deja-dup/
 share/help/hu/deja-dup/contribute.page
+share/help/hu/deja-dup/figures/
+share/help/hu/deja-dup/figures/DejaDup.svg
 share/help/hu/deja-dup/index.page
 share/help/hu/deja-dup/prefs.page
 share/help/hu/deja-dup/restore-full.page
@@ -206,6 +248,8 @@ share/help/hu/deja-dup/support.page
 share/help/id/
 share/help/id/deja-dup/
 share/help/id/deja-dup/contribute.page
+share/help/id/deja-dup/figures/
+share/help/id/deja-dup/figures/DejaDup.svg
 share/help/id/deja-dup/index.page
 share/help/id/deja-dup/prefs.page
 share/help/id/deja-dup/restore-full.page
@@ -215,6 +259,8 @@ share/help/id/deja-dup/support.page
 share/help/it/
 share/help/it/deja-dup/
 share/help/it/deja-dup/contribute.page
+share/help/it/deja-dup/figures/
+share/help/it/deja-dup/figures/DejaDup.svg
 share/help/it/deja-dup/index.page
 share/help/it/deja-dup/prefs.page
 share/help/it/deja-dup/restore-full.page
@@ -224,6 +270,8 @@ share/help/it/deja-dup/support.page
 share/help/ja/
 share/help/ja/deja-dup/
 share/help/ja/deja-dup/contribute.page
+share/help/ja/deja-dup/figures/
+share/help/ja/deja-dup/figures/DejaDup.svg
 share/help/ja/deja-dup/index.page
 share/help/ja/deja-dup/prefs.page
 share/help/ja/deja-dup/restore-full.page
@@ -233,6 +281,8 @@ share/help/ja/deja-dup/support.page
 share/help/ko/
 share/help/ko/deja-dup/
 share/help/ko/deja-dup/contribute.page
+share/help/ko/deja-dup/figures/
+share/help/ko/deja-dup/figures/DejaDup.svg
 share/help/ko/deja-dup/index.page
 share/help/ko/deja-dup/prefs.page
 share/help/ko/deja-dup/restore-full.page
@@ -242,6 +292,8 @@ share/help/ko/deja-dup/support.page
 share/help/ku/
 share/help/ku/deja-dup/
 share/help/ku/deja-dup/contribute.page
+share/help/ku/deja-dup/figures/
+share/help/ku/deja-dup/figures/DejaDup.svg
 share/help/ku/deja-dup/index.page
 share/help/ku/deja-dup/prefs.page
 share/help/ku/deja-dup/restore-full.page
@@ -251,6 +303,8 @@ share/help/ku/deja-dup/support.page
 share/help/lt/
 share/help/lt/deja-dup/
 share/help/lt/deja-dup/contribute.page
+share/help/lt/deja-dup/figures/
+share/help/lt/deja-dup/figures/DejaDup.svg
 share/help/lt/deja-dup/index.page
 share/help/lt/deja-dup/prefs.page
 share/help/lt/deja-dup/restore-full.page
@@ -260,6 +314,8 @@ share/help/lt/deja-dup/support.page
 share/help/my/
 share/help/my/deja-dup/
 share/help/my/deja-dup/contribute.page
+share/help/my/deja-dup/figures/
+share/help/my/deja-dup/figures/DejaDup.svg
 share/help/my/deja-dup/index.page
 share/help/my/deja-dup/prefs.page
 share/help/my/deja-dup/restore-full.page
@@ -269,6 +325,8 @@ share/help/my/deja-dup/support.page
 share/help/nb/
 share/help/nb/deja-dup/
 share/help/nb/deja-dup/contribute.page
+share/help/nb/deja-dup/figures/
+share/help/nb/deja-dup/figures/DejaDup.svg
 share/help/nb/deja-dup/index.page
 share/help/nb/deja-dup/prefs.page
 share/help/nb/deja-dup/restore-full.page
@@ -278,6 +336,8 @@ share/help/nb/deja-dup/support.page
 share/help/nl/
 share/help/nl/deja-dup/
 share/help/nl/deja-dup/contribute.page
+share/help/nl/deja-dup/figures/
+share/help/nl/deja-dup/figures/DejaDup.svg
 share/help/nl/deja-dup/index.page
 share/help/nl/deja-dup/prefs.page
 share/help/nl/deja-dup/restore-full.page
@@ -287,6 +347,8 @@ share/help/nl/deja-dup/support.page
 share/help/oc/
 share/help/oc/deja-dup/
 share/help/oc/deja-dup/contribute.page
+share/help/oc/deja-dup/figures/
+share/help/oc/deja-dup/figures/DejaDup.svg
 share/help/oc/deja-dup/index.page
 share/help/oc/deja-dup/prefs.page
 share/help/oc/deja-dup/restore-full.page
@@ -296,6 +358,8 @@ share/help/oc/deja-dup/support.page
 share/help/pa/
 share/help/pa/deja-dup/
 share/help/pa/deja-dup/contribute.page
+share/help/pa/deja-dup/figures/
+share/help/pa/deja-dup/figures/DejaDup.svg
 share/help/pa/deja-dup/index.page
 share/help/pa/deja-dup/prefs.page
 share/help/pa/deja-dup/restore-full.page
@@ -305,6 +369,8 @@ share/help/pa/deja-dup/support.page
 share/help/pl/
 share/help/pl/deja-dup/
 share/help/pl/deja-dup/contribute.page
+share/help/pl/deja-dup/figures/
+share/help/pl/deja-dup/figures/DejaDup.svg
 share/help/pl/deja-dup/index.page
 share/help/pl/deja-dup/prefs.page
 share/help/pl/deja-dup/restore-full.page
@@ -314,6 +380,8 @@ share/help/pl/deja-dup/support.page
 share/help/ps/
 share/help/ps/deja-dup/
 share/help/ps/deja-dup/contribute.page
+share/help/ps/deja-dup/figures/
+share/help/ps/deja-dup/figures/DejaDup.svg
 share/help/ps/deja-dup/index.page
 share/help/ps/deja-dup/prefs.page
 share/help/ps/deja-dup/restore-full.page
@@ -323,6 +391,8 @@ share/help/ps/deja-dup/support.page
 share/help/pt_BR/
 share/help/pt_BR/deja-dup/
 share/help/pt_BR/deja-dup/contribute.page
+share/help/pt_BR/deja-dup/figures/
+share/help/pt_BR/deja-dup/figures/DejaDup.svg
 share/help/pt_BR/deja-dup/index.page
 share/help/pt_BR/deja-dup/prefs.page
 share/help/pt_BR/deja-dup/restore-full.page
@@ -332,6 +402,8 @@ share/help/pt_BR/deja-dup/support.page
 share/help/ru/
 share/help/ru/deja-dup/
 share/help/ru/deja-dup/contribute.page
+share/help/ru/deja-dup/figures/
+share/help/ru/deja-dup/figures/DejaDup.svg
 share/help/ru/deja-dup/index.page
 share/help/ru/deja-dup/prefs.page
 share/help/ru/deja-dup/restore-full.page
@@ -341,6 +413,8 @@ share/help/ru/deja-dup/support.page
 share/help/sk/
 share/help/sk/deja-dup/
 share/help/sk/deja-dup/contribute.page
+share/help/sk/deja-dup/figures/
+share/help/sk/deja-dup/figures/DejaDup.svg
 share/help/sk/deja-dup/index.page
 share/help/sk/deja-dup/prefs.page
 share/help/sk/deja-dup/restore-full.page
@@ -350,6 +424,8 @@ share/help/sk/deja-dup/support.page
 share/help/sl/
 share/help/sl/deja-dup/
 share/help/sl/deja-dup/contribute.page
+share/help/sl/deja-dup/figures/
+share/help/sl/deja-dup/figures/DejaDup.svg
 share/help/sl/deja-dup/index.page
 share/help/sl/deja-dup/prefs.page
 share/help/sl/deja-dup/restore-full.page
@@ -359,6 +435,8 @@ share/help/sl/deja-dup/support.page
 share/help/sr/
 share/help/sr/deja-dup/
 share/help/sr/deja-dup/contribute.page
+share/help/sr/deja-dup/figures/
+share/help/sr/deja-dup/figures/DejaDup.svg
 share/help/sr/deja-dup/index.page
 share/help/sr/deja-dup/prefs.page
 share/help/sr/deja-dup/restore-full.page
@@ -368,6 +446,8 @@ share/help/sr/deja-dup/support.page
 share/help/sv/
 share/help/sv/deja-dup/
 share/help/sv/deja-dup/contribute.page
+share/help/sv/deja-dup/figures/
+share/help/sv/deja-dup/figures/DejaDup.svg
 share/help/sv/deja-dup/index.page
 share/help/sv/deja-dup/prefs.page
 share/help/sv/deja-dup/restore-full.page
@@ -377,6 +457,8 @@ share/help/sv/deja-dup/support.page
 share/help/th/
 share/help/th/deja-dup/
 share/help/th/deja-dup/contribute.page
+share/help/th/deja-dup/figures/
+share/help/th/deja-dup/figures/DejaDup.svg
 share/help/th/deja-dup/index.page
 share/help/th/deja-dup/prefs.page
 share/help/th/deja-dup/restore-full.page
@@ -386,6 +468,8 @@ share/help/th/deja-dup/support.page
 share/help/tr/
 share/help/tr/deja-dup/
 share/help/tr/deja-dup/contribute.page
+share/help/tr/deja-dup/figures/
+share/help/tr/deja-dup/figures/DejaDup.svg
 share/help/tr/deja-dup/index.page
 share/help/tr/deja-dup/prefs.page
 share/help/tr/deja-dup/restore-full.page
@@ -395,6 +479,8 @@ share/help/tr/deja-dup/support.page
 share/help/uk/
 share/help/uk/deja-dup/
 share/help/uk/deja-dup/contribute.page
+share/help/uk/deja-dup/figures/
+share/help/uk/deja-dup/figures/DejaDup.svg
 share/help/uk/deja-dup/index.page
 share/help/uk/deja-dup/prefs.page
 share/help/uk/deja-dup/restore-full.page
@@ -404,6 +490,8 @@ share/help/uk/deja-dup/support.page
 share/help/vi/
 share/help/vi/deja-dup/
 share/help/vi/deja-dup/contribute.page
+share/help/vi/deja-dup/figures/
+share/help/vi/deja-dup/figures/DejaDup.svg
 share/help/vi/deja-dup/index.page
 share/help/vi/deja-dup/prefs.page
 share/help/vi/deja-dup/restore-full.page
@@ -413,6 +501,8 @@ share/help/vi/deja-dup/support.page
 share/help/zh_CN/
 share/help/zh_CN/deja-dup/
 share/help/zh_CN/deja-dup/contribute.page
+share/help/zh_CN/deja-dup/figures/
+share/help/zh_CN/deja-dup/figures/DejaDup.svg
 share/help/zh_CN/deja-dup/index.page
 share/help/zh_CN/deja-dup/prefs.page
 share/help/zh_CN/deja-dup/restore-full.page
@@ -422,6 +512,8 @@ share/help/zh_CN/deja-dup/support.page
 share/help/zh_TW/
 share/help/zh_TW/deja-dup/
 share/help/zh_TW/deja-dup/contribute.page
+share/help/zh_TW/deja-dup/figures/
+share/help/zh_TW/deja-dup/figures/DejaDup.svg
 share/help/zh_TW/deja-dup/index.page
 share/help/zh_TW/deja-dup/prefs.page
 share/help/zh_TW/deja-dup/restore-full.page
@@ -475,9 +567,11 @@ share/locale/hu/LC_MESSAGES/deja-dup.mo
 share/locale/hy/LC_MESSAGES/deja-dup.mo
 share/locale/ia/LC_MESSAGES/deja-dup.mo
 share/locale/id/LC_MESSAGES/deja-dup.mo
+share/locale/ie/LC_MESSAGES/deja-dup.mo
 share/locale/io/LC_MESSAGES/deja-dup.mo
 share/locale/it/LC_MESSAGES/deja-dup.mo
 share/locale/ja/LC_MESSAGES/deja-dup.mo
+share/locale/ka/LC_MESSAGES/deja-dup.mo
 share/locale/kab/LC_MESSAGES/deja-dup.mo
 share/locale/kk/LC_MESSAGES/deja-dup.mo
 share/locale/km/LC_MESSAGES/deja-dup.mo

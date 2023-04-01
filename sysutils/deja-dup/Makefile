@@ -1,6 +1,6 @@
 COMMENT=		simple encrypted backup tool for GNOME
 
-GNOME_VERSION=		44.0
+GNOME_VERSION=		44.1
 GNOME_PROJECT=		deja-dup
 
 # override gnome MODULE
