@@ -1,12 +1,12 @@
 COMMENT=		C++ API for parts of GLib
 
 GNOME_PROJECT=		glibmm
-GNOME_VERSION=		2.74.0
+GNOME_VERSION=		2.76.0
 PKGNAME=		glibmm268-${GNOME_VERSION}
 
-SHARED_LIBS += glibmm_generate_extra_defs-2.68 0.1 # 1.3.0
-SHARED_LIBS += glibmm-2.68                0.1 # 1.3.0
-SHARED_LIBS += giomm-2.68                 0.1 # 1.3.0
+SHARED_LIBS += glibmm_generate_extra_defs-2.68 0.2 # 1.3.0
+SHARED_LIBS += glibmm-2.68                0.2 # 1.3.0
+SHARED_LIBS += giomm-2.68                 0.2 # 1.3.0
 
 CATEGORIES=		devel
 
@@ -23,11 +23,13 @@ WANTLIB += sigc-3.0
 MODULES=		devel/meson \
 			x11/gnome
 
-# c++11
+# C++17
 COMPILER=		base-clang ports-gcc
 
 LIB_DEPENDS=		devel/glib2 \
 			devel/libsigc++30
+
+TEST_IS_INTERACTIVE=	does DNS lookups
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
