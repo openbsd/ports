@@ -1,7 +1,7 @@
 Index: icons/meson.build
 --- icons/meson.build.orig
 +++ icons/meson.build
-@@ -226,7 +226,7 @@ foreach flavour: icon_flavors
+@@ -241,7 +241,7 @@ foreach flavour: icon_flavors
  
        if local_links.length() > 0
          links_targets = run_command(
