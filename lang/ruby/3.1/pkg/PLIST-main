@@ -220,7 +220,7 @@ include/ruby-${REV}/ruby/util.h
 include/ruby-${REV}/ruby/version.h
 include/ruby-${REV}/ruby/vm.h
 include/ruby-${REV}/${SUB}/
-include/ruby-${REV}/${SUB}/rb_mjit_min_header-3.1.3.h
+include/ruby-${REV}/${SUB}/rb_mjit_min_header-3.1.4.h
 include/ruby-${REV}/${SUB}/ruby/
 include/ruby-${REV}/${SUB}/ruby/config.h
 @so lib/libruby31.so
@@ -1544,7 +1544,7 @@ lib/ruby/gems/${REV}/gems/bundler-2.3.26/
 lib/ruby/gems/${REV}/gems/bundler-2.3.26/libexec/
 lib/ruby/gems/${REV}/gems/bundler-2.3.26/libexec/bundle
 lib/ruby/gems/${REV}/gems/bundler-2.3.26/libexec/bundler
-lib/ruby/gems/${REV}/gems/cgi-0.3.5/
+lib/ruby/gems/${REV}/gems/cgi-0.3.6/
 lib/ruby/gems/${REV}/gems/csv-3.2.5/
 lib/ruby/gems/${REV}/gems/date-3.2.2/
 lib/ruby/gems/${REV}/gems/debug-1.6.3/
@@ -2615,7 +2615,7 @@ lib/ruby/gems/${REV}/gems/test-unit-3.5.3/sample/subtracter.rb
 lib/ruby/gems/${REV}/gems/test-unit-3.5.3/sample/test_adder.rb
 lib/ruby/gems/${REV}/gems/test-unit-3.5.3/sample/test_subtracter.rb
 lib/ruby/gems/${REV}/gems/test-unit-3.5.3/sample/test_user.rb
-lib/ruby/gems/${REV}/gems/time-0.2.0/
+lib/ruby/gems/${REV}/gems/time-0.2.2/
 lib/ruby/gems/${REV}/gems/timeout-0.2.0/
 lib/ruby/gems/${REV}/gems/tmpdir-0.1.2/
 lib/ruby/gems/${REV}/gems/tsort-0.1.0/
@@ -2652,7 +2652,7 @@ lib/ruby/gems/${REV}/gems/typeprof-0.21.3/tools/coverage.rb
 lib/ruby/gems/${REV}/gems/typeprof-0.21.3/tools/setup-insns-def.rb
 lib/ruby/gems/${REV}/gems/typeprof-0.21.3/typeprof-lsp
 lib/ruby/gems/${REV}/gems/un-0.2.0/
-lib/ruby/gems/${REV}/gems/uri-0.11.0/
+lib/ruby/gems/${REV}/gems/uri-0.12.1/
 lib/ruby/gems/${REV}/gems/weakref-0.1.1/
 lib/ruby/gems/${REV}/gems/yaml-0.2.0/
 lib/ruby/gems/${REV}/gems/zlib-2.1.1/
@@ -2665,7 +2665,7 @@ lib/ruby/gems/${REV}/specifications/default/base64-0.1.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/benchmark-0.2.0.gemspec
 lib/ruby/gems/${REV}/specifications/default/bigdecimal-3.1.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/bundler-2.3.26.gemspec
-lib/ruby/gems/${REV}/specifications/default/cgi-0.3.5.gemspec
+lib/ruby/gems/${REV}/specifications/default/cgi-0.3.6.gemspec
 lib/ruby/gems/${REV}/specifications/default/csv-3.2.5.gemspec
 lib/ruby/gems/${REV}/specifications/default/date-3.2.2.gemspec
 lib/ruby/gems/${REV}/specifications/default/delegate-0.2.0.gemspec
@@ -2721,12 +2721,12 @@ lib/ruby/gems/${REV}/specifications/default/stringio-3.0.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/strscan-3.0.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/syslog-0.1.0.gemspec
 lib/ruby/gems/${REV}/specifications/default/tempfile-0.1.2.gemspec
-lib/ruby/gems/${REV}/specifications/default/time-0.2.0.gemspec
+lib/ruby/gems/${REV}/specifications/default/time-0.2.2.gemspec
 lib/ruby/gems/${REV}/specifications/default/timeout-0.2.0.gemspec
 lib/ruby/gems/${REV}/specifications/default/tmpdir-0.1.2.gemspec
 lib/ruby/gems/${REV}/specifications/default/tsort-0.1.0.gemspec
 lib/ruby/gems/${REV}/specifications/default/un-0.2.0.gemspec
-lib/ruby/gems/${REV}/specifications/default/uri-0.11.0.gemspec
+lib/ruby/gems/${REV}/specifications/default/uri-0.12.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/weakref-0.1.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/yaml-0.2.0.gemspec
 lib/ruby/gems/${REV}/specifications/default/zlib-2.1.1.gemspec

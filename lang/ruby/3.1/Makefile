@@ -1,10 +1,8 @@
-VERSION =		3.1.3
+VERSION =		3.1.4
 DISTNAME =		ruby-${VERSION}
 SHARED_LIBS =		ruby31	0.0
 NEXTVER =		3.2
 PKGSPEC-main ?=         ruby->=3.1.0,<${NEXTVER}
-
-REVISION-main =		0
 
 MASTER_SITES1 ?=	https://github.com/ruby/openssl/commit/
 

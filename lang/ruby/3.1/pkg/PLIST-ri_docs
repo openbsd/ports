@@ -12363,6 +12363,8 @@ share/ri/${REV}/system/URI/Generic/coerce-i.ri
 share/ri/${REV}/system/URI/Generic/component-c.ri
 share/ri/${REV}/system/URI/Generic/component-i.ri
 share/ri/${REV}/system/URI/Generic/component_ary-i.ri
+share/ri/${REV}/system/URI/Generic/decoded_password-i.ri
+share/ri/${REV}/system/URI/Generic/decoded_user-i.ri
 share/ri/${REV}/system/URI/Generic/default_port-c.ri
 share/ri/${REV}/system/URI/Generic/default_port-i.ri
 share/ri/${REV}/system/URI/Generic/eql%3f-i.ri
@@ -12515,9 +12517,13 @@ share/ri/${REV}/system/URI/WS/cdesc-WS.ri
 share/ri/${REV}/system/URI/WS/request_uri-i.ri
 share/ri/${REV}/system/URI/WSS/
 share/ri/${REV}/system/URI/WSS/cdesc-WSS.ri
+share/ri/${REV}/system/URI/_decode_uri_component-c.ri
+share/ri/${REV}/system/URI/_encode_uri_component-c.ri
 share/ri/${REV}/system/URI/cdesc-URI.ri
+share/ri/${REV}/system/URI/decode_uri_component-c.ri
 share/ri/${REV}/system/URI/decode_www_form-c.ri
 share/ri/${REV}/system/URI/decode_www_form_component-c.ri
+share/ri/${REV}/system/URI/encode_uri_component-c.ri
 share/ri/${REV}/system/URI/encode_www_form-c.ri
 share/ri/${REV}/system/URI/encode_www_form_component-c.ri
 share/ri/${REV}/system/URI/extract-c.ri

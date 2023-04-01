@@ -8,7 +8,7 @@ so ports don't have to be bumped when OpenBSD version changes.
 Index: configure
 --- configure.orig
 +++ configure
-@@ -29533,6 +29533,10 @@ esac
+@@ -29567,6 +29567,10 @@ esac
  
              coroutine_type=x86
           ;; #(
@@ -19,7 +19,7 @@ Index: configure
    *-openbsd*) :
  
              coroutine_type=pthread
-@@ -31793,7 +31797,7 @@ fi
+@@ -31827,7 +31831,7 @@ fi
  	 ;; #(
    openbsd*|mirbsd*) :
  
@@ -28,7 +28,7 @@ Index: configure
  	 ;; #(
    solaris*) :
  
-@@ -33495,7 +33499,7 @@ then :
+@@ -33529,7 +33533,7 @@ then :
  
  else $as_nop
  
