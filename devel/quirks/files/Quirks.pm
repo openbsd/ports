@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1517 2023/03/31 16:49:45 thfr Exp $
+# $OpenBSD: Quirks.pm,v 1.1518 2023/04/01 14:50:37 thfr Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1816,6 +1816,7 @@ setup_obsolete_reason(
 	3 => 'shrip',
 # 7.4
 	53 => 'compton',
+	54 => 'depotdownloader',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
@@ -1885,6 +1886,7 @@ my $obsolete_message = {
 	51 => "dead upstream, consider using socat or SSH",
 	52 => "unmaintained since import, already on LibreSSL life support for too long",
 	53 => "upstream is dead, consider migrating to picom",
+	54 => "dependencies for recent versions can't be met (dotnet), consider switching to steamctl",
 };
 
 # ->is_base_system($handle, $state):

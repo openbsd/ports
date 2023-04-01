@@ -69,7 +69,6 @@
      SUBDIR += dangerdeep
      SUBDIR += dd2
      SUBDIR += defendguin
-     SUBDIR += depotdownloader
      SUBDIR += devilutionx
      SUBDIR += dhewm3
      SUBDIR += dmagnetic
