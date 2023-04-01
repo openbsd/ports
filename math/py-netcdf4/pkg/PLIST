@@ -17,4 +17,7 @@ lib/python${MODPY_VERSION}/site-packages/netCDF4/${MODPY_PYCACHE}__init__.${MODP
 lib/python${MODPY_VERSION}/site-packages/netCDF4/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/netCDF4/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/python${MODPY_VERSION}/site-packages/netCDF4/_netCDF4.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/netCDF4/_netCDF4.pyx
+lib/python${MODPY_VERSION}/site-packages/netCDF4/plugins/
+lib/python${MODPY_VERSION}/site-packages/netCDF4/plugins/empty.txt
 lib/python${MODPY_VERSION}/site-packages/netCDF4/utils.py
