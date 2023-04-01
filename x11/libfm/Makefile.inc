@@ -1,10 +1,13 @@
+# this port is split in two to prevent a circular dependency:
+# menu-cache -> libfm (though only extra is needed) -> menu-cache
+
 V=			1.3.2
 DISTNAME=		libfm-${V}
 EXTRACT_SUFX=		.tar.xz
 
 # quantum entanglement between core and extra
 SHARED_LIBS +=  fm                   1.1      # 5.3
-SHARED_LIBS +=  fm-gtk               1.1      # 5.3
+SHARED_LIBS +=  fm-gtk3              0.0      # 5.3
 SHARED_LIBS +=  fm-extra             1.1      # 5.3
 
 CATEGORIES +=		x11 devel

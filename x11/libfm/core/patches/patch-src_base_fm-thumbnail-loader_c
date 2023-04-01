@@ -1,0 +1,14 @@
+64bit time_t
+
+Index: src/base/fm-thumbnail-loader.c
+--- src/base/fm-thumbnail-loader.c.orig
++++ src/base/fm-thumbnail-loader.c
+@@ -882,7 +882,7 @@ static void save_thumbnail_to_disk(ThumbnailTask* task
+     if(fd != -1)
+     {
+         char mtime_str[100];
+-        g_snprintf( mtime_str, 100, "%lu", fm_file_info_get_mtime(task->fi));
++        g_snprintf( mtime_str, 100, "%lld", fm_file_info_get_mtime(task->fi));
+         chmod( tmpfile, 0600 );  /* only the owner can read it. */
+         backend.set_image_text(pix, "tEXt::Thumb::URI", task->uri);
+         backend.set_image_text(pix, "tEXt::Thumb::MTime", mtime_str);

@@ -1,2 +1,1 @@
-Extra library for libfm; split from libfm itself to prevent a circular
-dependency with menu-cache.
+Extra library for libfm.

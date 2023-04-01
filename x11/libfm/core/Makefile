@@ -1,14 +1,14 @@
 COMMENT=		glib/gio-based lib for file management
-REVISION=		1
+REVISION=		2
 
-WANTLIB += ${COMPILER_LIBCXX} X11 Xcomposite Xcursor Xdamage Xext
-WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo exif
-WANTLIB += expat ffi fm-extra fontconfig freetype fribidi gdk-x11-2.0
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz iconv intl
-WANTLIB += m menu-cache pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += ${COMPILER_LIBCXX} X11 Xau Xcomposite Xcursor Xdamage
+WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0
+WANTLIB += atk-bridge-2.0 atspi c cairo cairo-gobject dbus-1 epoxy
+WANTLIB += execinfo exif expat ffi fm-extra fontconfig freetype
+WANTLIB += fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz iconv
+WANTLIB += intl jpeg m menu-cache pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre2-8 pixman-1 png xcb xcb-render xcb-shm z
-WANTLIB += Xau Xdmcp jpeg
 
 BUILD_DEPENDS=		lang/vala
 
@@ -19,7 +19,9 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 LIB_DEPENDS=		graphics/libexif \
 			x11/libfm/extra \
 			x11/menu-cache \
-			x11/gtk+2
+			x11/gtk+3
+
+CONFIGURE_ARGS=		--with-gtk=3
 
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/libfm
 
