@@ -42,7 +42,96 @@ Index: getweb.in
  	error "Couldn't download $url/$file"
      gunzip <$file | tar xvf - $what
      rm $file
-@@ -243,7 +243,7 @@ getone() {
+@@ -155,7 +155,7 @@ getone() {
+     case "$1" in
+     lj1000|1000)
+ 	gettgz \
+-	    http://foo2zjs.rkkda.com/firmware sihp1000.tar.gz \
++	    https://foo2zjs.linkevich.net/foo2zjs/firmware sihp1000.tar.gz \
+ 	    ""
+ 	#echo "provided"
+ 	#getexe \
+@@ -166,7 +166,7 @@ getone() {
+ 	;;
+     lj1005|1005)
+ 	gettgz \
+-	    http://foo2zjs.rkkda.com/firmware sihp1005.tar.gz \
++	    https://foo2zjs.linkevich.net/foo2zjs/firmware sihp1005.tar.gz \
+ 	    ""
+ 	#echo "provided"
+ 	#getexe \
+@@ -175,45 +175,45 @@ getone() {
+ 	    #sihp1005.img
+ 	copyright "(c) Copyright Hewlett-Packard 2002"
+ 	gettgz \
+-	    http://foo2zjs.rkkda.com/firmware sihpP1005.tar.gz \
++	    https://foo2zjs.linkevich.net/foo2zjs/firmware sihpP1005.tar.gz \
+ 	    ""
+ 	copyright "(c) Copyright Hewlett-Packard 2009"
+ 	;;
+     lj1018|1018)
+ 	gettgz \
+-	    http://foo2zjs.rkkda.com/firmware sihp1018.tar.gz \
++	    https://foo2zjs.linkevich.net/foo2zjs/firmware sihp1018.tar.gz \
+ 	    ""
+ 	copyright "(c) Copyright Hewlett-Packard 2005"
+ 	;;
+     lj1020|1020)
+ 	# http://ftp.hp.com/pub/softlib/software8/COL14041/lj-39322-2/hp_LJ_1020-1022_Full_Solution.exe
+ 	gettgz \
+-	    http://foo2zjs.rkkda.com/firmware sihp1020.tar.gz \
++	    https://foo2zjs.linkevich.net/foo2zjs/firmware sihp1020.tar.gz \
+ 	    ""
+ 	copyright "(c) Copyright Hewlett-Packard 2005"
+ 	;;
+     [pP]100[57])
+ 	gettgz \
+-	    http://foo2zjs.rkkda.com/firmware sihpP1005.tar.gz \
++	    https://foo2zjs.linkevich.net/foo2zjs/firmware sihpP1005.tar.gz \
+ 	    ""
+ 	copyright "(c) Copyright Hewlett-Packard 2009"
+ 	;;
+     [pP]100[68])
+ 	gettgz \
+-	    http://foo2zjs.rkkda.com/firmware sihpP1006.tar.gz \
++	    https://foo2zjs.linkevich.net/foo2zjs/firmware sihpP1006.tar.gz \
+ 	    ""
+ 	copyright "(c) Copyright Hewlett-Packard 2009"
+ 	;;
+     [pP]1505)
+ 	gettgz \
+-	    http://foo2zjs.rkkda.com/firmware sihpP1505.tar.gz \
++	    https://foo2zjs.linkevich.net/foo2zjs/firmware sihpP1505.tar.gz \
+ 	    ""
+ 	copyright "(c) Copyright Hewlett-Packard 2009"
+ 	;;
+     2200dl|2200)
+ 	if true; then
+ 	    gettgz \
+-		http://foo2zjs.rkkda.com/icm dl2300.tar.gz \
++		https://foo2zjs.linkevich.net/foo2zjs/icm dl2300.tar.gz \
+ 		""
+ 	else
+ 	    getexe \
+@@ -225,7 +225,7 @@ getone() {
+     2300dl|2300)
+ 	if true; then
+ 	    gettgz \
+-		http://foo2zjs.rkkda.com/icm dl2300.tar.gz \
++		https://foo2zjs.linkevich.net/foo2zjs/icm dl2300.tar.gz \
+ 		""
+ 	else
+ 	    getexe \
+@@ -233,7 +233,7 @@ getone() {
+ 		"*.icm"
+ 	fi
+ 	gettgz \
+-	    http://foo2zjs.rkkda.com/icm km2430.tar.gz \
++	    https://foo2zjs.linkevich.net/foo2zjs/icm km2430.tar.gz \
+ 	    ""
+ 	copyright "(c) Copyright Minolta-QMS 2001"
+ 	;;
+@@ -243,13 +243,13 @@ getone() {
  	BASE="$BASE/openmind/technic/swfw/mswprtdl.nsf/logdwl"
  	FILE="MC2300DL_v255.zip"
  	URL="$BASE?openagent&4CE486C20839C75AC1256D9E001EBD1F/\$File/$FILE"
@@ -51,6 +140,13 @@ Index: getweb.in
  	echo "*** Now use a windows box to unzip and install $FILE ***"
  	;;
      cpwl|pageworks)
+ 	if true; then
+ 	    gettgz \
+-		http://foo2zjs.rkkda.com/icm dl2300.tar.gz \
++		https://foo2zjs.linkevich.net/foo2zjs/icm dl2300.tar.gz \
+ 		""
+ 	else
+ 	    getexe \
 @@ -259,7 +259,7 @@ getone() {
  	    do
  		base=`basename $i .IC_`
@@ -60,6 +156,33 @@ Index: getweb.in
  		rm -f $base.ic_
  	    done
  	fi
+@@ -267,7 +267,7 @@ getone() {
+ 	;;
+     2430)
+ 	gettgz \
+-	    http://foo2zjs.rkkda.com/icm km2430.tar.gz \
++	    https://foo2zjs.linkevich.net/foo2zjs/icm km2430.tar.gz \
+ 	    ""
+ 	copyright "(c) Copyright Konica Minolta 2003"
+ 	;;
+@@ -295,7 +295,7 @@ getone() {
+ 	;;
+     1025)
+ 	gettgz \
+-	    http://foo2zjs.rkkda.com/icm hp-cp1025.tar.gz \
++	    https://foo2zjs.linkevich.net/foo2zjs/icm hp-cp1025.tar.gz \
+ 	    ""
+ 	copyright "(c) Copyright Rick Richardson 2010.  All Rights Reserved"
+ 	;;
+@@ -304,7 +304,7 @@ getone() {
+ 	    http://foo2hp.rkkda.com/icm hpclj2600n.tar.gz \
+ 	    ""
+ 	gettgz \
+-	    http://foo2zjs.rkkda.com/icm km2430.tar.gz \
++	    https://foo2zjs.linkevich.net/foo2zjs/icm km2430.tar.gz \
+ 	    "km2430_2.icm"
+ 	copyright "(c) Copyright Hewlett-Packard 2003"
+ 	copyright "(c) Copyright Rick Richardson 2006.  All Rights Reserved"
 @@ -408,7 +408,7 @@ getone() {
  	    URL="$URL?driver=$driver&printer=$printer"
  	    URL="$URL&.submit=Generate+PPD+file"

@@ -2,11 +2,13 @@ COMMENT=	driver for ZjStream wire protocol compatible printers
 
 VERSION=	20201003
 DISTNAME=	foo2zjs-${VERSION}
+REVISION=	0
 
 CATEGORIES=	print
 
-# http://foo2zjs.rkkda.com/ seems dead
-HOMEPAGE=	https://www.openprinting.org/driver/foo2zjs
+# original http://foo2zjs.rkkda.com/ is dead
+# see also: https://github.com/koenkooi/foo2zjs
+HOMEPAGE=	https://foo2zjs.linkevich.net//
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
