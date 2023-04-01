@@ -1,4 +1,3 @@
-bin/hexdump
 ${P5SITE}/Data/
 ${P5SITE}/Data/HexDump.pm
 @man man/man3p/Data::HexDump.3p

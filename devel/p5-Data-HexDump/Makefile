@@ -2,8 +2,7 @@ COMMENT=        hexadecimal dumper
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME=	Data-HexDump-0.02
-REVISION=	2
+DISTNAME =	Data-HexDump-0.04
 CATEGORIES=     devel
 
 MAINTAINER=	Abel Abraham Camarillo Ojeda <acamari@verlet.org>
