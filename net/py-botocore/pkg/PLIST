@@ -1279,6 +1279,11 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/iotwireless/2020-11-22/ex
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iotwireless/2020-11-22/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iotwireless/2020-11-22/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ivs/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/ivs-realtime/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/ivs-realtime/2020-07-14/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/ivs-realtime/2020-07-14/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/ivs-realtime/2020-07-14/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/ivs-realtime/2020-07-14/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ivs/2020-07-14/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ivs/2020-07-14/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ivs/2020-07-14/examples-1.json
@@ -2270,6 +2275,11 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/voice-id/2021-09-27/endpo
 lib/python${MODPY_VERSION}/site-packages/botocore/data/voice-id/2021-09-27/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/voice-id/2021-09-27/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/voice-id/2021-09-27/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/vpc-lattice/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/vpc-lattice/2022-11-30/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/vpc-lattice/2022-11-30/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/vpc-lattice/2022-11-30/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/vpc-lattice/2022-11-30/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/waf/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/waf-regional/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/waf-regional/2016-11-28/
