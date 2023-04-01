@@ -52,7 +52,6 @@
      SUBDIR += libcloudproviders
      SUBDIR += libcryptui
      SUBDIR += libdazzle
-     SUBDIR += libdmapsharing
      SUBDIR += libdmapsharing4
      SUBDIR += libgda
      SUBDIR += libgepub
