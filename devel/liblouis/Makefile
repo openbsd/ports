@@ -1,13 +1,13 @@
 COMMENT=	braille translator, back-translator and formatter
 
-V=		3.24.0
+V=		3.25.0
 DISTNAME=	liblouis-${V}
 
-SHARED_LIBS +=  louis                8.0      # 20.12
+SHARED_LIBS +=  louis                8.1      # 20.13
 
 CATEGORIES=	devel
 
-HOMEPAGE=	http://www.liblouis.org/
+HOMEPAGE=	https://liblouis.io/
 
 # GPLv3 - LGPLv3 - LGPLv2.1+
 PERMIT_PACKAGE=	Yes
@@ -18,7 +18,7 @@ MASTER_SITES=	https://github.com/liblouis/liblouis/releases/download/v${V}/
 
 MODULES=	lang/python
 
-DEBUG_PACKAGES =${BUILD_PACKAGES}
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 BUILD_DEPENDS=	devel/help2man
 
