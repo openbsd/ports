@@ -1,10 +1,9 @@
 COMMENT=	OCR Engine developed at HP Labs
 
 GH_PROJECT=	tesseract
-GH_TAGNAME=	5.3.0
-REVISION=	0
+GH_TAGNAME=	5.3.1
 
-SHARED_LIBS +=  tesseract            5.0
+SHARED_LIBS +=  tesseract            5.0      # 5.3
 
 WANTLIB += ${COMPILER_LIBCXX} X11 Xau Xdmcp Xext Xrender archive
 WANTLIB += b2 bz2 c cairo crypto curl expat ffi fontconfig freetype
