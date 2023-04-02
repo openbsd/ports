@@ -1,9 +1,8 @@
 COMMENT =	high-level API and CLI on top of OGR
 
-MODPY_EGG_VERSION =	1.8.21
+MODPY_EGG_VERSION =	1.9.2
 DISTNAME =	Fiona-${MODPY_EGG_VERSION:S/post/pl/}
 PKGNAME =	${MODPY_PY_PREFIX}${DISTNAME:L}
-REVISION =	1
 
 CATEGORIES =	geo
 
@@ -39,7 +38,7 @@ TEST_DEPENDS =	devel/py-nose${MODPY_FLAVOR} \
 		devel/py-tz${MODPY_FLAVOR} \
 		net/py-boto3${MODPY_FLAVOR}
 
-WANTLIB += ${COMPILER_LIBCXX} gdal m ${MODPY_WANTLIB}
+WANTLIB += ${COMPILER_LIBCXX} gdal m
 
 pre-test:
 	cp ${WRKSRC}/build/lib*/fiona/*.so ${WRKSRC}/fiona/
