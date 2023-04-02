@@ -11,11 +11,10 @@ COMMENT =		WebRTC build for Telegram
 GH_ACCOUNT =		desktop-app
 GH_PROJECT =		tg_owt
 # no releases or tags, use latest master
-GH_COMMIT =		1a18da2ed4d5ce134e984d1586b915738e0da257
-DISTNAME =		${GH_PROJECT}-0.0.0.20230314
+GH_COMMIT =		d85b53d12e9f32e3fd556a247af16b1a52a4a565
+DISTNAME =		${GH_PROJECT}-0.0.0.20230401
 DISTFILES =		${GH_DISTFILE}
 CATEGORIES =		net
-REVISION =		1
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
@@ -64,7 +63,7 @@ WANTLIB += absl_raw_hash_set absl_raw_logging_internal absl_spinlock_wait
 WANTLIB += absl_stacktrace absl_str_format_internal absl_strings
 WANTLIB += absl_strings_internal absl_symbolize absl_synchronization
 WANTLIB += absl_throw_delegate absl_time absl_time_zone avcodec
-WANTLIB += avformat avutil crypto jpeg m openh264 opus
+WANTLIB += avformat avutil crc32c crypto jpeg m openh264 opus
 WANTLIB += protobuf ssl swresample swscale vpx
 
 # C++20
@@ -77,15 +76,10 @@ MODULES =		devel/cmake \
 			lang/python
 MODPY_RUNDEP =		No
 
-# XXX revert "Fix libabsl/crc32c packaged scope" to unbreak net/tdesktop build
-PATCHFILES +=		cmake-packaged-scope-{}1a18da2e.patch:1
-PATCH_CASES +=		cmake-packaged-scope-1a18da2e.patch) \
-				${PATCH} ${PATCH_DIST_ARGS} -R < $$patchfile ;;
-
-BUILD_DEPENDS =		devel/crc32c \
-			devel/yasm
+BUILD_DEPENDS =		devel/yasm
 
 LIB_DEPENDS =		audio/opus \
+			devel/crc32c \
 			devel/abseil-cpp \
 			devel/protobuf \
 			graphics/ffmpeg \
