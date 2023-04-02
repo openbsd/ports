@@ -174,6 +174,7 @@ share/ibus-typing-booster/data/annotationsDerived/ast.xml
 share/ibus-typing-booster/data/annotationsDerived/az.xml
 share/ibus-typing-booster/data/annotationsDerived/be.xml
 share/ibus-typing-booster/data/annotationsDerived/bg.xml
+share/ibus-typing-booster/data/annotationsDerived/bgn.xml
 share/ibus-typing-booster/data/annotationsDerived/bn.xml
 share/ibus-typing-booster/data/annotationsDerived/br.xml
 share/ibus-typing-booster/data/annotationsDerived/bs.xml
@@ -240,6 +241,7 @@ share/ibus-typing-booster/data/annotationsDerived/ko.xml
 share/ibus-typing-booster/data/annotationsDerived/kok.xml
 share/ibus-typing-booster/data/annotationsDerived/ky.xml
 share/ibus-typing-booster/data/annotationsDerived/lb.xml
+share/ibus-typing-booster/data/annotationsDerived/lij.xml
 share/ibus-typing-booster/data/annotationsDerived/lo.xml
 share/ibus-typing-booster/data/annotationsDerived/lt.xml
 share/ibus-typing-booster/data/annotationsDerived/lv.xml
@@ -258,6 +260,7 @@ share/ibus-typing-booster/data/annotationsDerived/ne.xml
 share/ibus-typing-booster/data/annotationsDerived/nl.xml
 share/ibus-typing-booster/data/annotationsDerived/nn.xml
 share/ibus-typing-booster/data/annotationsDerived/no.xml
+share/ibus-typing-booster/data/annotationsDerived/nso.xml
 share/ibus-typing-booster/data/annotationsDerived/oc.xml
 share/ibus-typing-booster/data/annotationsDerived/or.xml
 share/ibus-typing-booster/data/annotationsDerived/pa.xml
@@ -268,6 +271,7 @@ share/ibus-typing-booster/data/annotationsDerived/ps.xml
 share/ibus-typing-booster/data/annotationsDerived/pt.xml
 share/ibus-typing-booster/data/annotationsDerived/pt_PT.xml
 share/ibus-typing-booster/data/annotationsDerived/qu.xml
+share/ibus-typing-booster/data/annotationsDerived/quc.xml
 share/ibus-typing-booster/data/annotationsDerived/rm.xml
 share/ibus-typing-booster/data/annotationsDerived/ro.xml
 share/ibus-typing-booster/data/annotationsDerived/root.xml
@@ -297,6 +301,7 @@ share/ibus-typing-booster/data/annotationsDerived/tg.xml
 share/ibus-typing-booster/data/annotationsDerived/th.xml
 share/ibus-typing-booster/data/annotationsDerived/ti.xml
 share/ibus-typing-booster/data/annotationsDerived/tk.xml
+share/ibus-typing-booster/data/annotationsDerived/tn.xml
 share/ibus-typing-booster/data/annotationsDerived/to.xml
 share/ibus-typing-booster/data/annotationsDerived/tr.xml
 share/ibus-typing-booster/data/annotationsDerived/tt.xml
