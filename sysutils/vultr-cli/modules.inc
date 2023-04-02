@@ -49,7 +49,7 @@ MODGO_MODULES =	\
 	github.com/hashicorp/go-cleanhttp			 v0.5.2 \
 	github.com/hashicorp/go-hclog				 v1.2.0 \
 	github.com/hashicorp/go-immutable-radix			 v1.3.1 \
-	github.com/hashicorp/go-retryablehttp			 v0.7.1 \
+	github.com/hashicorp/go-retryablehttp			 v0.7.2 \
 	github.com/hashicorp/go-rootcerts			 v1.0.2 \
 	github.com/hashicorp/golang-lru				 v0.5.4 \
 	github.com/hashicorp/hcl				 v1.0.0 \
@@ -87,7 +87,7 @@ MODGO_MODULES =	\
 	github.com/stretchr/objx				 v0.5.0 \
 	github.com/stretchr/testify				 v1.8.1 \
 	github.com/subosito/gotenv				 v1.4.2 \
-	github.com/vultr/govultr/v2				 v2.17.2 \
+	github.com/vultr/govultr/v3				 v3.0.2 \
 	github.com/yuin/goldmark				 v1.2.1 \
 	go.etcd.io/etcd/api/v3					 v3.5.6 \
 	go.etcd.io/etcd/client/pkg/v3				 v3.5.6 \
@@ -219,7 +219,6 @@ MODGO_MODFILES =	\
 	github.com/google/pprof			 v0.0.0-20201203190320-1bf35d6f28c2 \
 	github.com/googleapis/gax-go/v2		 v2.0.4 \
 	github.com/googleapis/gax-go/v2		 v2.0.5 \
-	github.com/hashicorp/go-cleanhttp	 v0.5.1 \
 	github.com/hashicorp/go-hclog		 v0.9.2 \
 	github.com/hashicorp/golang-lru		 v0.5.0 \
 	github.com/hashicorp/golang-lru		 v0.5.1 \
