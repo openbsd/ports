@@ -55,6 +55,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/dbus/matchrule.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/dbus/message.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/dbus/message_queue.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/dbus/object.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/dbus/object_manager.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/dbus/object_path.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/dbus/proxy_object.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/dbus/proxy_object_factory.rb
@@ -65,6 +66,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/dbus/xml.rb
 ${GEM_LIB}/gems/${DISTNAME}/ruby-dbus.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/spec/
 ${GEM_LIB}/gems/${DISTNAME}/spec/async_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/auth_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/binding_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/bus_and_xml_backend_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/bus_driver_spec.rb
@@ -81,15 +83,18 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/introspect_xml_parser_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/introspection_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/main_loop_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/node_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/object_manager_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/object_path_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/object_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/packet_marshaller_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/packet_unmarshaller_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/property_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/proxy_object_interface_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/proxy_object_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/server_robustness_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/server_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/service_newapi.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/service_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/session_bus_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/session_bus_spec_manual.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/signal_spec.rb
