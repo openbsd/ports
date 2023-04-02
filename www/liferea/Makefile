@@ -1,6 +1,6 @@
 COMMENT=		simple GTK desktop news aggregator
 
-V=			1.14.0
+V=			1.14.4
 DISTNAME=		liferea-${V}
 
 CATEGORIES=		www news x11
@@ -25,7 +25,7 @@ WANTLIB += jpeg json-glib-1.0 lcms2 lzma m openjp2 orc-0.4 pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 peas-1.0 peas-gtk-1.0
 WANTLIB += pixman-1 png psl secret-1 soup-2.4 sqlite3 tasn1 unistring
 WANTLIB += webkit2gtk-4.0 webp webpdemux woff2common woff2dec
-WANTLIB += xcb xcb-dri2 xcb-dri3 xcb-glx xcb-present xcb-render
+WANTLIB += xcb xcb-dri2 xcb-dri3 xcb-glx xcb-present xcb-randr xcb-render
 WANTLIB += xcb-shm xcb-sync xcb-xfixes xml2 xshmfence xslt z
 
 COMPILER=		base-clang ports-gcc base-gcc
