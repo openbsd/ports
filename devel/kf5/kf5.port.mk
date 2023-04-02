@@ -1,4 +1,4 @@
-MODKF5_VERSION =	5.103.0
+MODKF5_VERSION =	5.104.0
 
 .if empty(GH_ACCOUNT)
 EXTRACT_SUFX ?=		.tar.xz
@@ -45,6 +45,7 @@ MODKF5_post-install += \
 		${INSTALL_DATA_DIR} ${MODKF5_EXAMPLES_DIR}; \
 		pax -rw * ${MODKF5_EXAMPLES_DIR}; \
 		rm -Rf ${WRKINST}/etc; \
+		mkdir ${WRKINST}/{firmware,rc.d}; \
 	fi; \
 	if [ -d ${WRKINST}/etc/dbus-1 ]; then \
 		cd ${WRKINST}/etc; \

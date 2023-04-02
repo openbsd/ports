@@ -3,6 +3,7 @@
 include/KF5/KDocTools/
 include/KF5/KDocTools/docbookxslt.h
 include/KF5/KDocTools/kdoctools_export.h
+include/KF5/KDocTools/kdoctools_version.h
 lib/cmake/KF5DocTools/
 lib/cmake/KF5DocTools/KF5DocToolsConfig.cmake
 lib/cmake/KF5DocTools/KF5DocToolsConfigVersion.cmake
