@@ -3,15 +3,15 @@ fix configure by hacking python build system
 Index: build/moz.configure/init.configure
 --- build/moz.configure/init.configure.orig
 +++ build/moz.configure/init.configure
-@@ -337,11 +337,6 @@ def virtualenv_python2(env_python, build_env, mozillab
-             'is in your PATH or define PYTHON to point to a Python 2.7 '
-             'executable.')
+@@ -544,6 +544,11 @@ def virtualenv_python2(env_python, build_env, mozillab
+                               '%s is Python %d.%d' % (python, version[0],
+                                                       version[1]))
  
--    if version < (2, 7, 0):
--        raise FatalCheckError(
--            'Python 2.7 is required to build; '
--            '%s is Python %d.%d' % (python, version[0], version[1]))
--
++    if version < (2, 7, 0):
++        raise FatalCheckError(
++            'Python 2.7 is required to build; '
++            '%s is Python %d.%d' % (python, version[0], version[1]))
++
      log.debug("python2: found executable: %r" % python)
  
-     if not manager.up_to_date(python):
+     virtualenvs_root = os.path.join(topobjdir, '_virtualenvs')

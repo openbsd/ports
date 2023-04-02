@@ -1,0 +1,16 @@
+Disabling assembly in SkJumper.cpp allows seamonkey to run fine on PKU machines
+(until you hit the avcodec issue with fft inline asm)
+
+Index: gfx/skia/moz.build
+--- gfx/skia/moz.build.orig
++++ gfx/skia/moz.build
+@@ -755,7 +755,8 @@ if CONFIG['MOZ_WIDGET_TOOLKIT'] == 'windows':
+ 
+ # Work around a crash when jumping into assembly on platforms where
+ # Clang has 4-byte stack alignment.
+-if CONFIG['CPU_ARCH'] == 'x86' and CONFIG['CC_TYPE'] == 'clang':
++if CONFIG['CPU_ARCH'] in ['x86', 'x86_64'] and CONFIG['CC_TYPE'] == 'clang':
++    DEFINES['SK_JUMPER_USE_ASSEMBLY'] = 0
+     SOURCES['skia/src/jumper/SkJumper.cpp'].flags += [
+         '-mstack-alignment=16',
+         '-mstackrealign'

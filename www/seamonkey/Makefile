@@ -7,15 +7,14 @@ COMMENT-lightning =	Mozilla Seamonkey calendar extension
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
 
 # version = (TB version - 3) / 100 + 2
-MOZILLA_VERSION =	2.53.15
+MOZILLA_VERSION =	2.53.16
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	comm/suite
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
-PKGNAME-lightning =	lightning-seamonkey-5.8.15
+PKGNAME-lightning =	lightning-seamonkey-5.8.16
 EPOCH-lightning =	0
-REVISION-main =		1
 
 HOMEPAGE =	https://www.seamonkey-project.org/
 
@@ -68,6 +67,12 @@ MAKE_ENV +=	RUSTC_BOOTSTRAP="packed_simd_2,encoding_rs"
 CONFIGURE_ARGS +=	--enable-calendar
 # remove post 96
 CONFIGURE_ARGS +=	--disable-necko-wifi
+
+# XXX badly formed debug ?
+DWZ = :
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
+DEBUG_CONFIGURE_ARGS +=	--enable-debug-symbols \
+			--disable-install-strip
 
 post-install:
 	${INSTALL_MAN} ${WRKBUILD}/dist/man/man1/seamonkey.1 ${PREFIX}/man/man1/
