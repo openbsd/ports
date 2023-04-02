@@ -154,12 +154,15 @@ lib/python${MODPY_VERSION}/site-packages/owslib/ogcapi/${MODPY_PYCACHE}coverages
 lib/python${MODPY_VERSION}/site-packages/owslib/ogcapi/${MODPY_PYCACHE}coverages.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/owslib/ogcapi/${MODPY_PYCACHE}features.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/owslib/ogcapi/${MODPY_PYCACHE}features.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/owslib/ogcapi/${MODPY_PYCACHE}maps.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/owslib/ogcapi/${MODPY_PYCACHE}maps.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/owslib/ogcapi/${MODPY_PYCACHE}processes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/owslib/ogcapi/${MODPY_PYCACHE}processes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/owslib/ogcapi/${MODPY_PYCACHE}records.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/owslib/ogcapi/${MODPY_PYCACHE}records.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/owslib/ogcapi/coverages.py
 lib/python${MODPY_VERSION}/site-packages/owslib/ogcapi/features.py
+lib/python${MODPY_VERSION}/site-packages/owslib/ogcapi/maps.py
 lib/python${MODPY_VERSION}/site-packages/owslib/ogcapi/processes.py
 lib/python${MODPY_VERSION}/site-packages/owslib/ogcapi/records.py
 lib/python${MODPY_VERSION}/site-packages/owslib/ows.py
