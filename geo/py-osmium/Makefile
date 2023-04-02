@@ -1,11 +1,10 @@
 COMMENT =	Python bindings for libosmium
 
-MODPY_EGG_VERSION =	3.4.1
+MODPY_EGG_VERSION =	3.6.0
 GH_TAGNAME =	v${MODPY_EGG_VERSION}
 GH_ACCOUNT =	osmcode
 GH_PROJECT =	pyosmium
 PKGNAME =	py-osmium-${MODPY_EGG_VERSION}
-REVISION =	0
 
 CATEGORIES =	geo
 
