@@ -1,7 +1,7 @@
 Index: src/options.hpp
 --- src/options.hpp.orig
 +++ src/options.hpp
-@@ -145,7 +145,7 @@ class options_t (public)
+@@ -144,7 +144,7 @@ class options_t (public)
      /// Minimum zoom level for tile expiry list
      uint32_t expire_tiles_zoom_min = 0;
  

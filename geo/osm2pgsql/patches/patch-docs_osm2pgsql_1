@@ -1,21 +1,21 @@
 Index: docs/osm2pgsql.1
 --- docs/osm2pgsql.1.orig
 +++ docs/osm2pgsql.1
-@@ -153,7 +153,7 @@ If the RAM is not big enough, use about 75% of memory.
+@@ -154,7 +154,7 @@ If the RAM is not big enough, use about 75% of memory.
  Make sure to leave enough RAM for PostgreSQL.
- It needs at least the amount of \f[C]shared_buffers\f[R] given in its
+ It needs at least the amount of \f[V]shared_buffers\f[R] given in its
  configuration.
 -Defaults to 800.
 +Defaults to 100.
  .TP
  --cache-strategy=STRATEGY
  This deprecated option will be ignored.
-@@ -212,7 +212,7 @@ The style file.
+@@ -213,7 +213,7 @@ The style file.
  This specifies how the data is imported into the database, its format
  depends on the output.
  (For the \f[B]pgsql\f[R] output, the default is
--\f[C]/usr/share/osm2pgsql/default.style\f[R], for other outputs there is
-+\f[C]${TRUEPREFIX}/share/osm2pgsql/default.style\f[R], for other outputs there is
+-\f[V]/usr/share/osm2pgsql/default.style\f[R], for other outputs there is
++\f[V]${TRUEPREFIX}/share/osm2pgsql/default.style\f[R], for other outputs there is
  no default.)
  .SH PGSQL OUTPUT OPTIONS
  .TP

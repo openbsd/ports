@@ -1,7 +1,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -193,7 +193,7 @@ if (WITH_LUA)
+@@ -188,7 +188,7 @@ if (WITH_LUA)
          add_definitions(-DHAVE_LUAJIT=1)
      else()
          message(STATUS "Building with Lua support")
