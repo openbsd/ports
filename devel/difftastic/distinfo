@@ -105,7 +105,7 @@ SHA256 (cargo/windows_x86_64_gnu-0.42.1.tar.gz) = wQQPIhKF4X68y8JZH/3C1E7h+RhjJN
 SHA256 (cargo/windows_x86_64_gnullvm-0.42.1.tar.gz) = Yov98jLaoisNZP22Kwn8w2uwHwWjk54gq3Oq+UcNBGM=
 SHA256 (cargo/windows_x86_64_msvc-0.42.1.tar.gz) = RHZgrTahMoix201CSOhXtRDow6IlyCK6T7dIwKr+z/0=
 SHA256 (cargo/wu-diff-0.1.2.tar.gz) = jj5nNfzeBkMocNuNydfjqxuTcnwU6u8ymWlCYpnyiJM=
-SHA256 (difftastic-0.45.0.tar.gz) = jEzArVCADW5XBddo4q0aMqwKSkQxgQL9jBGYpZQimSs=
+SHA256 (difftastic-0.46.0.tar.gz) = urm4k/b2R2rv0qPdkpjK3HC82uV9TeA6ZRV01xRSKKg=
 SIZE (cargo/aho-corasick-0.7.18.tar.gz) = 112923
 SIZE (cargo/ansi_term-0.12.1.tar.gz) = 24838
 SIZE (cargo/assert_cmd-2.0.5.tar.gz) = 22683
@@ -213,4 +213,4 @@ SIZE (cargo/windows_x86_64_gnu-0.42.1.tar.gz) = 697614
 SIZE (cargo/windows_x86_64_gnullvm-0.42.1.tar.gz) = 362788
 SIZE (cargo/windows_x86_64_msvc-0.42.1.tar.gz) = 664606
 SIZE (cargo/wu-diff-0.1.2.tar.gz) = 33439
-SIZE (difftastic-0.45.0.tar.gz) = 52126132
+SIZE (difftastic-0.46.0.tar.gz) = 54963804
