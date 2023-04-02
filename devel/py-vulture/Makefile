@@ -1,10 +1,9 @@
 COMMENT =	finds unused code in Python programs
 
-MODPY_EGG_VERSION =	2.6
+MODPY_EGG_VERSION =	2.7
 
 DISTNAME =	vulture-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
 
 CATEGORIES =	devel
 
