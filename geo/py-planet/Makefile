@@ -1,9 +1,8 @@
 COMMENT =	client library and CLI for Planet's public API
 
-MODPY_EGG_VERSION =	1.5.1
+MODPY_EGG_VERSION =	1.5.2
 DISTNAME =	planet-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
 
 CATEGORIES =	geo
 
