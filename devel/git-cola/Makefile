@@ -1,6 +1,6 @@
 COMMENT =	python powered git gui
 
-MODPY_EGG_VERSION =	4.2.0
+MODPY_EGG_VERSION =	4.2.1
 DISTNAME =		git-cola-${MODPY_EGG_VERSION}
 
 CATEGORIES =	devel x11
