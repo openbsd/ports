@@ -16,10 +16,16 @@ share/wayland-protocols/staging/ext-idle-notify/
 share/wayland-protocols/staging/ext-idle-notify/ext-idle-notify-v1.xml
 share/wayland-protocols/staging/ext-session-lock/
 share/wayland-protocols/staging/ext-session-lock/ext-session-lock-v1.xml
+share/wayland-protocols/staging/fractional-scale/
+share/wayland-protocols/staging/fractional-scale/fractional-scale-v1.xml
 share/wayland-protocols/staging/single-pixel-buffer/
 share/wayland-protocols/staging/single-pixel-buffer/single-pixel-buffer-v1.xml
+share/wayland-protocols/staging/tearing-control/
+share/wayland-protocols/staging/tearing-control/tearing-control-v1.xml
 share/wayland-protocols/staging/xdg-activation/
 share/wayland-protocols/staging/xdg-activation/xdg-activation-v1.xml
+share/wayland-protocols/staging/xwayland-shell/
+share/wayland-protocols/staging/xwayland-shell/xwayland-shell-v1.xml
 share/wayland-protocols/unstable/
 share/wayland-protocols/unstable/fullscreen-shell/
 share/wayland-protocols/unstable/fullscreen-shell/fullscreen-shell-unstable-v1.xml
