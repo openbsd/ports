@@ -1,12 +1,11 @@
 COMMENT=	grommunio PHP MAPI headers
 
-V=		1.0
-REVISION=	1
+V=		1.1
 DISTNAME=	grommunio-mapi-header-php-${V}
 
 GH_ACCOUNT=	grommunio
 GH_PROJECT=     mapi-header-php
-GH_COMMIT=	fb9929c103e9ffc488c51bb94081566d8796e437
+GH_COMMIT=	389f0cf6b438f55a698c849af3771f5e349a2937
 
 CATEGORIES=	mail www
 
