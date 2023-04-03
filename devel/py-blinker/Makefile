@@ -1,9 +1,8 @@
 COMMENT =	fast, simple object-to-object and broadcast signaling
 
-MODPY_EGG_VERSION = 1.5
+MODPY_EGG_VERSION = 1.6
 DISTNAME =	blinker-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
 
 CATEGORIES =	devel
 
@@ -17,6 +16,7 @@ MODPY_PI =	Yes
 MODULES =	lang/python
 
 MODPY_PYBUILD =	setuptools
+TEST_DEPENDS =	devel/py-test-asyncio${MODPY_FLAVOR}
 
 FLAVORS =	python3
 FLAVOR =	python3
