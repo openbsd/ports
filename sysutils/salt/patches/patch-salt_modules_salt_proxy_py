@@ -5,12 +5,12 @@ given proxy isn't running and fork off another copy repeatedly.
 Index: salt/modules/salt_proxy.py
 --- salt/modules/salt_proxy.py.orig
 +++ salt/modules/salt_proxy.py
-@@ -79,7 +79,7 @@ def _is_proxy_running(proxyname):
+@@ -71,7 +71,7 @@ def _is_proxy_running(proxyname):
      """
      Check if proxy for this name is running
      """
--    cmd = 'ps ax | grep "salt-proxy --proxyid={0}" | grep -v grep'.format(
-+    cmd = 'ps axww | grep "salt-proxy --proxyid={0}" | grep -v grep'.format(
-         salt.ext.six.moves.shlex_quote(proxyname)
+-    cmd = 'ps ax | grep "salt-proxy --proxyid={}" | grep -v grep'.format(
++    cmd = 'ps axww | grep "salt-proxy --proxyid={}" | grep -v grep'.format(
+         shlex.quote(proxyname)
      )
      cmdout = __salt__["cmd.run_all"](cmd, timeout=5, python_shell=True)

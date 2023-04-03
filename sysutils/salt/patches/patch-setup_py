@@ -1,0 +1,18 @@
+From 1b7fac1599a50c970fdef49abca7151cb11bdcd0 Mon Sep 17 00:00:00 2001
+From: Pedro Algarvio <palgarvio@vmware.com>
+Date: Tue, 11 Oct 2022 21:19:21 +0100
+Subject: [PATCH] Disable the setuptools user warning "Setuptools is replacing
+ distutils."
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -4,6 +4,8 @@ The setup script for salt
+ """
+ 
+ # pylint: disable=file-perms,resource-leakage
++import setuptools  # isort:skip
++
+ import contextlib
+ import distutils.dist
+ import glob

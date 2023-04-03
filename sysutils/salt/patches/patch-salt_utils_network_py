@@ -4,7 +4,7 @@ https://github.com/saltstack/salt/pull/58158
 Index: salt/utils/network.py
 --- salt/utils/network.py.orig
 +++ salt/utils/network.py
-@@ -1897,7 +1897,7 @@ def _openbsd_remotes_on(port, which_end):
+@@ -1923,7 +1923,7 @@ def _openbsd_remotes_on(port, which_end):
          log.error("Failed netstat")
          raise
  

@@ -24,7 +24,6 @@ bin/salt-proxy
 bin/salt-run
 bin/salt-ssh
 bin/salt-syndic
-bin/salt-unity
 bin/spm
 lib/python${MODPY_VERSION}/site-packages/salt/
 lib/python${MODPY_VERSION}/site-packages/salt-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -45,8 +44,6 @@ lib/python${MODPY_VERSION}/site-packages/salt/${MODPY_PYCACHE}exceptions.${MODPY
 lib/python${MODPY_VERSION}/site-packages/salt/${MODPY_PYCACHE}features.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/${MODPY_PYCACHE}fileclient.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/${MODPY_PYCACHE}key.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/salt/${MODPY_PYCACHE}loader.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/salt/${MODPY_PYCACHE}loader_context.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/${MODPY_PYCACHE}master.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/${MODPY_PYCACHE}minion.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/${MODPY_PYCACHE}payload.${MODPY_PYC_MAGIC_TAG}pyc
@@ -184,6 +181,14 @@ lib/python${MODPY_VERSION}/site-packages/salt/cache/etcd_cache.py
 lib/python${MODPY_VERSION}/site-packages/salt/cache/localfs.py
 lib/python${MODPY_VERSION}/site-packages/salt/cache/mysql_cache.py
 lib/python${MODPY_VERSION}/site-packages/salt/cache/redis_cache.py
+lib/python${MODPY_VERSION}/site-packages/salt/channel/
+lib/python${MODPY_VERSION}/site-packages/salt/channel/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/salt/channel/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/salt/channel/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/salt/channel/${MODPY_PYCACHE}client.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/salt/channel/${MODPY_PYCACHE}server.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/salt/channel/client.py
+lib/python${MODPY_VERSION}/site-packages/salt/channel/server.py
 lib/python${MODPY_VERSION}/site-packages/salt/cli/
 lib/python${MODPY_VERSION}/site-packages/salt/cli/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/salt/cli/${MODPY_PYCACHE}/
@@ -443,10 +448,12 @@ lib/python${MODPY_VERSION}/site-packages/salt/executors/${MODPY_PYCACHE}direct_c
 lib/python${MODPY_VERSION}/site-packages/salt/executors/${MODPY_PYCACHE}docker.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/executors/${MODPY_PYCACHE}splay.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/executors/${MODPY_PYCACHE}sudo.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/salt/executors/${MODPY_PYCACHE}transactional_update.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/executors/direct_call.py
 lib/python${MODPY_VERSION}/site-packages/salt/executors/docker.py
 lib/python${MODPY_VERSION}/site-packages/salt/executors/splay.py
 lib/python${MODPY_VERSION}/site-packages/salt/executors/sudo.py
+lib/python${MODPY_VERSION}/site-packages/salt/executors/transactional_update.py
 lib/python${MODPY_VERSION}/site-packages/salt/ext/
 lib/python${MODPY_VERSION}/site-packages/salt/ext/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/salt/ext/${MODPY_PYCACHE}/
@@ -454,13 +461,18 @@ lib/python${MODPY_VERSION}/site-packages/salt/ext/${MODPY_PYCACHE}__init__.${MOD
 lib/python${MODPY_VERSION}/site-packages/salt/ext/${MODPY_PYCACHE}backports_abc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/ext/${MODPY_PYCACHE}ipaddress.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/ext/${MODPY_PYCACHE}saslprep.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/salt/ext/${MODPY_PYCACHE}six.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/ext/${MODPY_PYCACHE}ssl_match_hostname.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/ext/${MODPY_PYCACHE}win_inet_pton.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/salt/ext/${MODPY_PYCACHE}zipp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/ext/backports_abc.py
+lib/python${MODPY_VERSION}/site-packages/salt/ext/importlib_metadata/
+lib/python${MODPY_VERSION}/site-packages/salt/ext/importlib_metadata/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/salt/ext/importlib_metadata/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/salt/ext/importlib_metadata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/salt/ext/importlib_metadata/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/salt/ext/importlib_metadata/_compat.py
 lib/python${MODPY_VERSION}/site-packages/salt/ext/ipaddress.py
 lib/python${MODPY_VERSION}/site-packages/salt/ext/saslprep.py
-lib/python${MODPY_VERSION}/site-packages/salt/ext/six.py
 lib/python${MODPY_VERSION}/site-packages/salt/ext/ssl_match_hostname.py
 lib/python${MODPY_VERSION}/site-packages/salt/ext/tornado/
 lib/python${MODPY_VERSION}/site-packages/salt/ext/tornado/__init__.py
@@ -641,6 +653,7 @@ lib/python${MODPY_VERSION}/site-packages/salt/ext/vsan/${MODPY_PYCACHE}vsanmgmtO
 lib/python${MODPY_VERSION}/site-packages/salt/ext/vsan/vsanapiutils.py
 lib/python${MODPY_VERSION}/site-packages/salt/ext/vsan/vsanmgmtObjects.py
 lib/python${MODPY_VERSION}/site-packages/salt/ext/win_inet_pton.py
+lib/python${MODPY_VERSION}/site-packages/salt/ext/zipp.py
 lib/python${MODPY_VERSION}/site-packages/salt/features.py
 lib/python${MODPY_VERSION}/site-packages/salt/fileclient.py
 lib/python${MODPY_VERSION}/site-packages/salt/fileserver/
@@ -680,6 +693,7 @@ lib/python${MODPY_VERSION}/site-packages/salt/grains/${MODPY_PYCACHE}marathon.${
 lib/python${MODPY_VERSION}/site-packages/salt/grains/${MODPY_PYCACHE}mdadm.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/grains/${MODPY_PYCACHE}mdata.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/grains/${MODPY_PYCACHE}metadata.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/salt/grains/${MODPY_PYCACHE}metadata_gce.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/grains/${MODPY_PYCACHE}minion_process.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/grains/${MODPY_PYCACHE}napalm.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/grains/${MODPY_PYCACHE}nvme.${MODPY_PYC_MAGIC_TAG}pyc
@@ -707,6 +721,7 @@ lib/python${MODPY_VERSION}/site-packages/salt/grains/marathon.py
 lib/python${MODPY_VERSION}/site-packages/salt/grains/mdadm.py
 lib/python${MODPY_VERSION}/site-packages/salt/grains/mdata.py
 lib/python${MODPY_VERSION}/site-packages/salt/grains/metadata.py
+lib/python${MODPY_VERSION}/site-packages/salt/grains/metadata_gce.py
 lib/python${MODPY_VERSION}/site-packages/salt/grains/minion_process.py
 lib/python${MODPY_VERSION}/site-packages/salt/grains/napalm.py
 lib/python${MODPY_VERSION}/site-packages/salt/grains/nvme.py
@@ -720,8 +735,14 @@ lib/python${MODPY_VERSION}/site-packages/salt/grains/smartos.py
 lib/python${MODPY_VERSION}/site-packages/salt/grains/ssh_sample.py
 lib/python${MODPY_VERSION}/site-packages/salt/grains/zfs.py
 lib/python${MODPY_VERSION}/site-packages/salt/key.py
-lib/python${MODPY_VERSION}/site-packages/salt/loader.py
-lib/python${MODPY_VERSION}/site-packages/salt/loader_context.py
+lib/python${MODPY_VERSION}/site-packages/salt/loader/
+lib/python${MODPY_VERSION}/site-packages/salt/loader/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/salt/loader/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/salt/loader/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/salt/loader/${MODPY_PYCACHE}context.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/salt/loader/${MODPY_PYCACHE}lazy.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/salt/loader/context.py
+lib/python${MODPY_VERSION}/site-packages/salt/loader/lazy.py
 lib/python${MODPY_VERSION}/site-packages/salt/log/
 lib/python${MODPY_VERSION}/site-packages/salt/log/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/salt/log/${MODPY_PYCACHE}/
@@ -732,16 +753,20 @@ lib/python${MODPY_VERSION}/site-packages/salt/log/handlers/
 lib/python${MODPY_VERSION}/site-packages/salt/log/handlers/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/salt/log/handlers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/salt/log/handlers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/salt/log/handlers/${MODPY_PYCACHE}fluent_mod.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/salt/log/handlers/${MODPY_PYCACHE}log4mongo_mod.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/salt/log/handlers/${MODPY_PYCACHE}logstash_mod.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/salt/log/handlers/${MODPY_PYCACHE}sentry_mod.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/salt/log/handlers/fluent_mod.py
-lib/python${MODPY_VERSION}/site-packages/salt/log/handlers/log4mongo_mod.py
-lib/python${MODPY_VERSION}/site-packages/salt/log/handlers/logstash_mod.py
-lib/python${MODPY_VERSION}/site-packages/salt/log/handlers/sentry_mod.py
 lib/python${MODPY_VERSION}/site-packages/salt/log/mixins.py
 lib/python${MODPY_VERSION}/site-packages/salt/log/setup.py
+lib/python${MODPY_VERSION}/site-packages/salt/log_handlers/
+lib/python${MODPY_VERSION}/site-packages/salt/log_handlers/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/salt/log_handlers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/salt/log_handlers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/salt/log_handlers/${MODPY_PYCACHE}fluent_mod.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/salt/log_handlers/${MODPY_PYCACHE}log4mongo_mod.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/salt/log_handlers/${MODPY_PYCACHE}logstash_mod.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/salt/log_handlers/${MODPY_PYCACHE}sentry_mod.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/salt/log_handlers/fluent_mod.py
+lib/python${MODPY_VERSION}/site-packages/salt/log_handlers/log4mongo_mod.py
+lib/python${MODPY_VERSION}/site-packages/salt/log_handlers/logstash_mod.py
+lib/python${MODPY_VERSION}/site-packages/salt/log_handlers/sentry_mod.py
 lib/python${MODPY_VERSION}/site-packages/salt/master.py
 lib/python${MODPY_VERSION}/site-packages/salt/matchers/
 lib/python${MODPY_VERSION}/site-packages/salt/matchers/__init__.py
@@ -783,7 +808,9 @@ lib/python${MODPY_VERSION}/site-packages/salt/metaproxy/
 lib/python${MODPY_VERSION}/site-packages/salt/metaproxy/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/salt/metaproxy/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/salt/metaproxy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/salt/metaproxy/${MODPY_PYCACHE}deltaproxy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/metaproxy/${MODPY_PYCACHE}proxy.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/salt/metaproxy/deltaproxy.py
 lib/python${MODPY_VERSION}/site-packages/salt/metaproxy/proxy.py
 lib/python${MODPY_VERSION}/site-packages/salt/minion.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/
@@ -1153,12 +1180,14 @@ lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}random_org
 lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}rbac_solaris.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}rbenv.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}rdp.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}rebootmgr.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}redismod.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}reg.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}rest_pkg.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}rest_sample_utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}rest_service.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}restartcheck.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}restconf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}ret.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}rh_ip.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}rh_service.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1216,6 +1245,7 @@ lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}status.${M
 lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}statuspage.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}supervisord.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}suse_apache.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}suse_ip.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}svn.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}swarm.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}swift.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1238,6 +1268,7 @@ lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}timezone.$
 lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}tls.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}tomcat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}trafficserver.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}transactional_update.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}travisci.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}tuned.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}twilio_notify.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1283,6 +1314,7 @@ lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}win_psget.
 lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}win_servermanager.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}win_service.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}win_shadow.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}win_shortcut.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}win_smtp_server.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}win_snmp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}win_status.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1300,6 +1332,7 @@ lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}xbpspkg.${
 lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}xfs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}xml.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}xmpp.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}yaml.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}yumpkg.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}zabbix.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}zcbuildout.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1693,12 +1726,14 @@ lib/python${MODPY_VERSION}/site-packages/salt/modules/random_org.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/rbac_solaris.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/rbenv.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/rdp.py
+lib/python${MODPY_VERSION}/site-packages/salt/modules/rebootmgr.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/redismod.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/reg.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/rest_pkg.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/rest_sample_utils.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/rest_service.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/restartcheck.py
+lib/python${MODPY_VERSION}/site-packages/salt/modules/restconf.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/ret.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/rh_ip.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/rh_service.py
@@ -1756,6 +1791,7 @@ lib/python${MODPY_VERSION}/site-packages/salt/modules/status.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/statuspage.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/supervisord.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/suse_apache.py
+lib/python${MODPY_VERSION}/site-packages/salt/modules/suse_ip.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/svn.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/swarm.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/swift.py
@@ -1778,6 +1814,7 @@ lib/python${MODPY_VERSION}/site-packages/salt/modules/timezone.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/tls.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/tomcat.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/trafficserver.py
+lib/python${MODPY_VERSION}/site-packages/salt/modules/transactional_update.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/travisci.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/tuned.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/twilio_notify.py
@@ -1823,6 +1860,7 @@ lib/python${MODPY_VERSION}/site-packages/salt/modules/win_psget.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/win_servermanager.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/win_service.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/win_shadow.py
+lib/python${MODPY_VERSION}/site-packages/salt/modules/win_shortcut.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/win_smtp_server.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/win_snmp.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/win_status.py
@@ -1840,6 +1878,7 @@ lib/python${MODPY_VERSION}/site-packages/salt/modules/xbpspkg.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/xfs.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/xml.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/xmpp.py
+lib/python${MODPY_VERSION}/site-packages/salt/modules/yaml.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/yumpkg.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/zabbix.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/zcbuildout.py
@@ -2039,6 +2078,7 @@ lib/python${MODPY_VERSION}/site-packages/salt/proxy/${MODPY_PYCACHE}arista_pyeap
 lib/python${MODPY_VERSION}/site-packages/salt/proxy/${MODPY_PYCACHE}chronos.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/proxy/${MODPY_PYCACHE}cimc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/proxy/${MODPY_PYCACHE}cisconso.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/salt/proxy/${MODPY_PYCACHE}deltaproxy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/proxy/${MODPY_PYCACHE}docker.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/proxy/${MODPY_PYCACHE}dummy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/proxy/${MODPY_PYCACHE}esxcluster.${MODPY_PYC_MAGIC_TAG}pyc
@@ -2055,12 +2095,14 @@ lib/python${MODPY_VERSION}/site-packages/salt/proxy/${MODPY_PYCACHE}nxos_api.${M
 lib/python${MODPY_VERSION}/site-packages/salt/proxy/${MODPY_PYCACHE}panos.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/proxy/${MODPY_PYCACHE}philips_hue.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/proxy/${MODPY_PYCACHE}rest_sample.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/salt/proxy/${MODPY_PYCACHE}restconf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/proxy/${MODPY_PYCACHE}ssh_sample.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/proxy/${MODPY_PYCACHE}vcenter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/proxy/arista_pyeapi.py
 lib/python${MODPY_VERSION}/site-packages/salt/proxy/chronos.py
 lib/python${MODPY_VERSION}/site-packages/salt/proxy/cimc.py
 lib/python${MODPY_VERSION}/site-packages/salt/proxy/cisconso.py
+lib/python${MODPY_VERSION}/site-packages/salt/proxy/deltaproxy.py
 lib/python${MODPY_VERSION}/site-packages/salt/proxy/docker.py
 lib/python${MODPY_VERSION}/site-packages/salt/proxy/dummy.py
 lib/python${MODPY_VERSION}/site-packages/salt/proxy/esxcluster.py
@@ -2077,6 +2119,7 @@ lib/python${MODPY_VERSION}/site-packages/salt/proxy/nxos_api.py
 lib/python${MODPY_VERSION}/site-packages/salt/proxy/panos.py
 lib/python${MODPY_VERSION}/site-packages/salt/proxy/philips_hue.py
 lib/python${MODPY_VERSION}/site-packages/salt/proxy/rest_sample.py
+lib/python${MODPY_VERSION}/site-packages/salt/proxy/restconf.py
 lib/python${MODPY_VERSION}/site-packages/salt/proxy/ssh_sample.py
 lib/python${MODPY_VERSION}/site-packages/salt/proxy/vcenter.py
 lib/python${MODPY_VERSION}/site-packages/salt/queues/
@@ -2225,6 +2268,7 @@ lib/python${MODPY_VERSION}/site-packages/salt/roster/${MODPY_PYCACHE}ansible.${M
 lib/python${MODPY_VERSION}/site-packages/salt/roster/${MODPY_PYCACHE}cache.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/roster/${MODPY_PYCACHE}cloud.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/roster/${MODPY_PYCACHE}clustershell.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/salt/roster/${MODPY_PYCACHE}dir.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/roster/${MODPY_PYCACHE}flat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/roster/${MODPY_PYCACHE}range.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/roster/${MODPY_PYCACHE}scan.${MODPY_PYC_MAGIC_TAG}pyc
@@ -2234,6 +2278,7 @@ lib/python${MODPY_VERSION}/site-packages/salt/roster/ansible.py
 lib/python${MODPY_VERSION}/site-packages/salt/roster/cache.py
 lib/python${MODPY_VERSION}/site-packages/salt/roster/cloud.py
 lib/python${MODPY_VERSION}/site-packages/salt/roster/clustershell.py
+lib/python${MODPY_VERSION}/site-packages/salt/roster/dir.py
 lib/python${MODPY_VERSION}/site-packages/salt/roster/flat.py
 lib/python${MODPY_VERSION}/site-packages/salt/roster/range.py
 lib/python${MODPY_VERSION}/site-packages/salt/roster/scan.py
@@ -2475,6 +2520,7 @@ lib/python${MODPY_VERSION}/site-packages/salt/states/${MODPY_PYCACHE}cisconso.${
 lib/python${MODPY_VERSION}/site-packages/salt/states/${MODPY_PYCACHE}cloud.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/states/${MODPY_PYCACHE}cmd.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/states/${MODPY_PYCACHE}composer.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/salt/states/${MODPY_PYCACHE}consul.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/states/${MODPY_PYCACHE}cron.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/states/${MODPY_PYCACHE}cryptdev.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/states/${MODPY_PYCACHE}csf.${MODPY_PYC_MAGIC_TAG}pyc
@@ -2674,6 +2720,7 @@ lib/python${MODPY_VERSION}/site-packages/salt/states/${MODPY_PYCACHE}rbenv.${MOD
 lib/python${MODPY_VERSION}/site-packages/salt/states/${MODPY_PYCACHE}rdp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/states/${MODPY_PYCACHE}redismod.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/states/${MODPY_PYCACHE}reg.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/salt/states/${MODPY_PYCACHE}restconf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/states/${MODPY_PYCACHE}rsync.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/states/${MODPY_PYCACHE}rvm.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/states/${MODPY_PYCACHE}salt_proxy.${MODPY_PYC_MAGIC_TAG}pyc
@@ -2731,6 +2778,7 @@ lib/python${MODPY_VERSION}/site-packages/salt/states/${MODPY_PYCACHE}win_path.${
 lib/python${MODPY_VERSION}/site-packages/salt/states/${MODPY_PYCACHE}win_pki.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/states/${MODPY_PYCACHE}win_powercfg.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/states/${MODPY_PYCACHE}win_servermanager.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/salt/states/${MODPY_PYCACHE}win_shortcut.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/states/${MODPY_PYCACHE}win_smtp_server.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/states/${MODPY_PYCACHE}win_snmp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/states/${MODPY_PYCACHE}win_system.${MODPY_PYC_MAGIC_TAG}pyc
@@ -2824,6 +2872,7 @@ lib/python${MODPY_VERSION}/site-packages/salt/states/cisconso.py
 lib/python${MODPY_VERSION}/site-packages/salt/states/cloud.py
 lib/python${MODPY_VERSION}/site-packages/salt/states/cmd.py
 lib/python${MODPY_VERSION}/site-packages/salt/states/composer.py
+lib/python${MODPY_VERSION}/site-packages/salt/states/consul.py
 lib/python${MODPY_VERSION}/site-packages/salt/states/cron.py
 lib/python${MODPY_VERSION}/site-packages/salt/states/cryptdev.py
 lib/python${MODPY_VERSION}/site-packages/salt/states/csf.py
@@ -3023,6 +3072,7 @@ lib/python${MODPY_VERSION}/site-packages/salt/states/rbenv.py
 lib/python${MODPY_VERSION}/site-packages/salt/states/rdp.py
 lib/python${MODPY_VERSION}/site-packages/salt/states/redismod.py
 lib/python${MODPY_VERSION}/site-packages/salt/states/reg.py
+lib/python${MODPY_VERSION}/site-packages/salt/states/restconf.py
 lib/python${MODPY_VERSION}/site-packages/salt/states/rsync.py
 lib/python${MODPY_VERSION}/site-packages/salt/states/rvm.py
 lib/python${MODPY_VERSION}/site-packages/salt/states/salt_proxy.py
@@ -3080,6 +3130,7 @@ lib/python${MODPY_VERSION}/site-packages/salt/states/win_path.py
 lib/python${MODPY_VERSION}/site-packages/salt/states/win_pki.py
 lib/python${MODPY_VERSION}/site-packages/salt/states/win_powercfg.py
 lib/python${MODPY_VERSION}/site-packages/salt/states/win_servermanager.py
+lib/python${MODPY_VERSION}/site-packages/salt/states/win_shortcut.py
 lib/python${MODPY_VERSION}/site-packages/salt/states/win_smtp_server.py
 lib/python${MODPY_VERSION}/site-packages/salt/states/win_snmp.py
 lib/python${MODPY_VERSION}/site-packages/salt/states/win_system.py
@@ -3131,7 +3182,12 @@ lib/python${MODPY_VERSION}/site-packages/salt/templates/rh_ip/network.jinja
 lib/python${MODPY_VERSION}/site-packages/salt/templates/rh_ip/rh6_route_eth.jinja
 lib/python${MODPY_VERSION}/site-packages/salt/templates/rh_ip/rh7_eth.jinja
 lib/python${MODPY_VERSION}/site-packages/salt/templates/rh_ip/rh8_eth.jinja
+lib/python${MODPY_VERSION}/site-packages/salt/templates/rh_ip/rh9_eth.jinja
 lib/python${MODPY_VERSION}/site-packages/salt/templates/rh_ip/route_eth.jinja
+lib/python${MODPY_VERSION}/site-packages/salt/templates/suse_ip/
+lib/python${MODPY_VERSION}/site-packages/salt/templates/suse_ip/ifcfg.jinja
+lib/python${MODPY_VERSION}/site-packages/salt/templates/suse_ip/ifroute.jinja
+lib/python${MODPY_VERSION}/site-packages/salt/templates/suse_ip/network.jinja
 lib/python${MODPY_VERSION}/site-packages/salt/templates/virt/
 lib/python${MODPY_VERSION}/site-packages/salt/templates/virt/libvirt_chardevs.jinja
 lib/python${MODPY_VERSION}/site-packages/salt/templates/virt/libvirt_disks.jinja
@@ -3193,6 +3249,7 @@ lib/python${MODPY_VERSION}/site-packages/salt/transport/
 lib/python${MODPY_VERSION}/site-packages/salt/transport/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/salt/transport/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/salt/transport/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/salt/transport/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/transport/${MODPY_PYCACHE}client.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/transport/${MODPY_PYCACHE}frame.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/transport/${MODPY_PYCACHE}ipc.${MODPY_PYC_MAGIC_TAG}pyc
@@ -3200,16 +3257,11 @@ lib/python${MODPY_VERSION}/site-packages/salt/transport/${MODPY_PYCACHE}local.${
 lib/python${MODPY_VERSION}/site-packages/salt/transport/${MODPY_PYCACHE}server.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/transport/${MODPY_PYCACHE}tcp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/transport/${MODPY_PYCACHE}zeromq.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/salt/transport/base.py
 lib/python${MODPY_VERSION}/site-packages/salt/transport/client.py
 lib/python${MODPY_VERSION}/site-packages/salt/transport/frame.py
 lib/python${MODPY_VERSION}/site-packages/salt/transport/ipc.py
 lib/python${MODPY_VERSION}/site-packages/salt/transport/local.py
-lib/python${MODPY_VERSION}/site-packages/salt/transport/mixins/
-lib/python${MODPY_VERSION}/site-packages/salt/transport/mixins/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/salt/transport/mixins/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/salt/transport/mixins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/salt/transport/mixins/${MODPY_PYCACHE}auth.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/salt/transport/mixins/auth.py
 lib/python${MODPY_VERSION}/site-packages/salt/transport/server.py
 lib/python${MODPY_VERSION}/site-packages/salt/transport/tcp.py
 lib/python${MODPY_VERSION}/site-packages/salt/transport/zeromq.py
@@ -3218,6 +3270,7 @@ lib/python${MODPY_VERSION}/site-packages/salt/utils/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/salt/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/salt/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/${MODPY_PYCACHE}aggregation.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/salt/utils/${MODPY_PYCACHE}ansible.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/${MODPY_PYCACHE}args.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/${MODPY_PYCACHE}asynchronous.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/${MODPY_PYCACHE}atomicfile.${MODPY_PYC_MAGIC_TAG}pyc
@@ -3229,6 +3282,7 @@ lib/python${MODPY_VERSION}/site-packages/salt/utils/${MODPY_PYCACHE}boto3mod.${M
 lib/python${MODPY_VERSION}/site-packages/salt/utils/${MODPY_PYCACHE}boto_elb_tag.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/${MODPY_PYCACHE}botomod.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/${MODPY_PYCACHE}cache.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/salt/utils/${MODPY_PYCACHE}channel.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/${MODPY_PYCACHE}cloud.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/${MODPY_PYCACHE}color.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
@@ -3369,12 +3423,14 @@ lib/python${MODPY_VERSION}/site-packages/salt/utils/${MODPY_PYCACHE}xmlutil.${MO
 lib/python${MODPY_VERSION}/site-packages/salt/utils/${MODPY_PYCACHE}yaml.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/${MODPY_PYCACHE}yamldumper.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/${MODPY_PYCACHE}yamlencoding.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/salt/utils/${MODPY_PYCACHE}yamllint.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/${MODPY_PYCACHE}yamlloader.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/${MODPY_PYCACHE}yamlloader_old.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/${MODPY_PYCACHE}yast.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/${MODPY_PYCACHE}zeromq.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/${MODPY_PYCACHE}zfs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/aggregation.py
+lib/python${MODPY_VERSION}/site-packages/salt/utils/ansible.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/args.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/asynchronous.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/atomicfile.py
@@ -3386,6 +3442,7 @@ lib/python${MODPY_VERSION}/site-packages/salt/utils/boto3mod.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/boto_elb_tag.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/botomod.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/cache.py
+lib/python${MODPY_VERSION}/site-packages/salt/utils/channel.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/cloud.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/color.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/compat.py
@@ -3520,6 +3577,22 @@ lib/python${MODPY_VERSION}/site-packages/salt/utils/psutil_compat.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/pushover.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/pycrypto.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/pydsl.py
+lib/python${MODPY_VERSION}/site-packages/salt/utils/pyinstaller/
+lib/python${MODPY_VERSION}/site-packages/salt/utils/pyinstaller/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/salt/utils/pyinstaller/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/salt/utils/pyinstaller/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/salt/utils/pyinstaller/${MODPY_PYCACHE}hook-salt.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/salt/utils/pyinstaller/hook-salt.py
+lib/python${MODPY_VERSION}/site-packages/salt/utils/pyinstaller/rthooks/
+lib/python${MODPY_VERSION}/site-packages/salt/utils/pyinstaller/rthooks/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/salt/utils/pyinstaller/rthooks/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/salt/utils/pyinstaller/rthooks/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/salt/utils/pyinstaller/rthooks/${MODPY_PYCACHE}_overrides.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/salt/utils/pyinstaller/rthooks/${MODPY_PYCACHE}pyi_rth_salt.utils.vt.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/salt/utils/pyinstaller/rthooks/${MODPY_PYCACHE}pyi_rth_subprocess.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/salt/utils/pyinstaller/rthooks/_overrides.py
+lib/python${MODPY_VERSION}/site-packages/salt/utils/pyinstaller/rthooks/pyi_rth_salt.utils.vt.py
+lib/python${MODPY_VERSION}/site-packages/salt/utils/pyinstaller/rthooks/pyi_rth_subprocess.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/pyobjects.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/reactor.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/reclass.py
@@ -3588,6 +3661,7 @@ lib/python${MODPY_VERSION}/site-packages/salt/utils/xmlutil.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/yaml.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/yamldumper.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/yamlencoding.py
+lib/python${MODPY_VERSION}/site-packages/salt/utils/yamllint.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/yamlloader.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/yamlloader_old.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/yast.py
@@ -3621,7 +3695,6 @@ lib/python${MODPY_VERSION}/site-packages/salt/wheel/pillar_roots.py
 @man man/man1/salt-run.1
 @man man/man1/salt-ssh.1
 @man man/man1/salt-syndic.1
-@man man/man1/salt-unity.1
 @man man/man1/salt.1
 @man man/man1/spm.1
 @man man/man7/salt.7

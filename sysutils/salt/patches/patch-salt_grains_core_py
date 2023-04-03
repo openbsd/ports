@@ -6,7 +6,7 @@ https://github.com/saltstack/salt/pull/58155
 Index: salt/grains/core.py
 --- salt/grains/core.py.orig
 +++ salt/grains/core.py
-@@ -552,13 +552,15 @@ def _bsd_memdata(osdata):
+@@ -554,13 +554,15 @@ def _bsd_memdata(osdata):
          if osdata["kernel"] in ["OpenBSD", "NetBSD"]:
              swapctl = salt.utils.path.which("swapctl")
              swap_data = __salt__["cmd.run"]("{} -sk".format(swapctl))

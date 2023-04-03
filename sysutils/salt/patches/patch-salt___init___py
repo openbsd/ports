@@ -1,0 +1,24 @@
+From 1b7fac1599a50c970fdef49abca7151cb11bdcd0 Mon Sep 17 00:00:00 2001
+From: Pedro Algarvio <palgarvio@vmware.com>
+Date: Tue, 11 Oct 2022 21:19:21 +0100
+Subject: [PATCH] Disable the setuptools user warning "Setuptools is replacing
+ distutils."
+
+Index: salt/__init__.py
+--- salt/__init__.py.orig
++++ salt/__init__.py
+@@ -69,6 +69,14 @@ warnings.filterwarnings(
+     append=True,
+ )
+ 
++# Filter the setuptools UserWarning until we stop relying on distutils
++warnings.filterwarnings(
++    "ignore",
++    message="Setuptools is replacing distutils.",
++    category=UserWarning,
++    module="_distutils_hack",
++)
++
+ 
+ def __define_global_system_encoding_variable__():
+     import sys
