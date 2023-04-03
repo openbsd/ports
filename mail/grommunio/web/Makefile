@@ -1,12 +1,11 @@
 COMMENT=	web user interface for grommunio
 
-V=		3.1
+V=		3.2
 DISTNAME=	grommunio-web-${V}
-REVISION=	2
 
 GH_ACCOUNT=	grommunio
 GH_PROJECT=     grommunio-web
-GH_COMMIT=      e3d04618a2f9b33f23061ed77568394aac66c36d
+GH_COMMIT=      d44c6672a2b7409cd76600e3abebd4db9f4cbc0d
 
 CATEGORIES=	mail www
 
