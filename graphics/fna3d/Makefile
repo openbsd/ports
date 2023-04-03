@@ -1,5 +1,5 @@
 # versions are in sync with FNA versions
-V =		22.09
+V =		23.04
 COMMENT =	3D graphics library for FNA
 DISTNAME =	fna-${V:S/.//g}
 PKGNAME =	fna3d-${V}
