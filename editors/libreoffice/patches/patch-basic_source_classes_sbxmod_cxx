@@ -1,7 +1,7 @@
 Index: basic/source/classes/sbxmod.cxx
 --- basic/source/classes/sbxmod.cxx.orig
 +++ basic/source/classes/sbxmod.cxx
-@@ -1131,7 +1131,7 @@ void SbModule::Run( SbMethod* pMeth )
+@@ -1133,7 +1133,7 @@ void SbModule::Run( SbMethod* pMeth )
            struct rlimit rl;
            getrlimit ( RLIMIT_STACK, &rl );
  #endif

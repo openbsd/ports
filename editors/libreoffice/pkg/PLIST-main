@@ -6526,6 +6526,7 @@ lib/libreoffice/help/media/icon-themes/res/odb_48_8.svg
 lib/libreoffice/help/media/icon-themes/res/odf_16_8.svg
 lib/libreoffice/help/media/icon-themes/res/odf_32_8.svg
 lib/libreoffice/help/media/icon-themes/res/odf_48_8.svg
+lib/libreoffice/help/media/icon-themes/res/odf_96_8.svg
 lib/libreoffice/help/media/icon-themes/res/odg_16_8.svg
 lib/libreoffice/help/media/icon-themes/res/odg_32_8.svg
 lib/libreoffice/help/media/icon-themes/res/odg_48_8.svg
@@ -6548,6 +6549,7 @@ lib/libreoffice/help/media/icon-themes/res/odt_96_8.svg
 lib/libreoffice/help/media/icon-themes/res/otf_16_8.svg
 lib/libreoffice/help/media/icon-themes/res/otf_32_8.svg
 lib/libreoffice/help/media/icon-themes/res/otf_48_8.svg
+lib/libreoffice/help/media/icon-themes/res/otf_96_8.svg
 lib/libreoffice/help/media/icon-themes/res/otg_16_8.svg
 lib/libreoffice/help/media/icon-themes/res/otg_32_8.svg
 lib/libreoffice/help/media/icon-themes/res/otg_48_8.svg
@@ -6600,6 +6602,7 @@ lib/libreoffice/help/media/icon-themes/res/tb05.svg
 lib/libreoffice/help/media/icon-themes/res/templatestar.svg
 lib/libreoffice/help/media/icon-themes/res/versionwarning.svg
 lib/libreoffice/help/media/icon-themes/res/writer128.svg
+lib/libreoffice/help/media/icon-themes/res/writer32.svg
 lib/libreoffice/help/media/icon-themes/res/xml_16.svg
 lib/libreoffice/help/media/icon-themes/sc/
 lib/libreoffice/help/media/icon-themes/sc/res/
@@ -8625,6 +8628,8 @@ lib/libreoffice/share/config/images_sifr_dark.zip
 lib/libreoffice/share/config/images_sifr_dark_svg.zip
 lib/libreoffice/share/config/images_sifr_svg.zip
 lib/libreoffice/share/config/images_sukapura.zip
+lib/libreoffice/share/config/images_sukapura_dark.zip
+lib/libreoffice/share/config/images_sukapura_dark_svg.zip
 lib/libreoffice/share/config/images_sukapura_svg.zip
 lib/libreoffice/share/config/soffice.cfg/
 lib/libreoffice/share/config/soffice.cfg/cui/
