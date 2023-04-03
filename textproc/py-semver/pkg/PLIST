@@ -1,8 +1,6 @@
 @pkgpath textproc/py-semver
 bin/pysemver
-lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}semver.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}semver.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/semver/
 lib/python${MODPY_VERSION}/site-packages/semver-${MODPY_EGG_VERSION}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/semver-${MODPY_EGG_VERSION}.dist-info/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/semver-${MODPY_EGG_VERSION}.dist-info/METADATA
@@ -10,4 +8,26 @@ lib/python${MODPY_VERSION}/site-packages/semver-${MODPY_EGG_VERSION}.dist-info/R
 lib/python${MODPY_VERSION}/site-packages/semver-${MODPY_EGG_VERSION}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/semver-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/semver-${MODPY_EGG_VERSION}.dist-info/top_level.txt
-lib/python${MODPY_VERSION}/site-packages/semver.py
+lib/python${MODPY_VERSION}/site-packages/semver/__about__.py
+lib/python${MODPY_VERSION}/site-packages/semver/__init__.py
+lib/python${MODPY_VERSION}/site-packages/semver/__main__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/semver/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/semver/${MODPY_PYCACHE}__about__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/semver/${MODPY_PYCACHE}__about__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/semver/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/semver/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/semver/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/semver/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/semver/${MODPY_PYCACHE}_deprecated.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/semver/${MODPY_PYCACHE}_deprecated.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/semver/${MODPY_PYCACHE}_types.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/semver/${MODPY_PYCACHE}_types.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/semver/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/semver/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/semver/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/semver/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/semver/_deprecated.py
+lib/python${MODPY_VERSION}/site-packages/semver/_types.py
+lib/python${MODPY_VERSION}/site-packages/semver/cli.py
+lib/python${MODPY_VERSION}/site-packages/semver/py.typed
+lib/python${MODPY_VERSION}/site-packages/semver/version.py
