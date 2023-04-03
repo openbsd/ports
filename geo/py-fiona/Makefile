@@ -23,6 +23,7 @@ MODPY_PI =	Yes
 MODPY_PYTEST_ARGS =	tests
 
 BUILD_DEPENDS +=${RUN_DEPENDS} \
+		math/py-oldest-supported-numpy${MODPY_FLAVOR} \
 		math/py-numpy${MODPY_FLAVOR} \
 		lang/cython${MODPY_FLAVOR}
 
