@@ -1,30 +1,40 @@
-COMMENT=	DBI wrapper and abstraction layer
+COMMENT =	DBI wrapper and abstraction layer
 
-MODULES=	cpan
-PKG_ARCH=	*
 
-DISTNAME=	Rose-DB-0.778
-CATEGORIES=	databases
-FIX_EXTRACT_PERMISSIONS=Yes
-REVISION=	0
+DISTNAME =	Rose-DB-0.785
+FIX_EXTRACT_PERMISSIONS =	Yes
 
-# Same as Perl
-PERMIT_PACKAGE=	Yes
+CATEGORIES =	databases
 
-RUN_DEPENDS=	math/p5-Bit-Vector \
-		devel/p5-DateTime-Format-Pg \
-		devel/p5-DateTime-Format-MySQL \
-		databases/p5-SQL-ReservedWords \
-		devel/p5-Time-Clock \
-		databases/p5-DBI \
-		databases/p5-Rose-Object \
-		databases/p5-Rose-DateTime \
-		devel/p5-Clone \
-		devel/p5-YAML-Syck
+# Perl
+PERMIT_PACKAGE =	Yes
 
-TEST_FLAGS +=	AUTOMATED_TESTING=1
+MODULES =		cpan
 
-pre-configure:
-	find ${WRKSRC} -type f -name \*.orig -delete
+RUN_DEPENDS =		databases/p5-DBI \
+			databases/p5-Rose-DateTime>=0.532 \
+			databases/p5-Rose-Object>=0.854 \
+			databases/p5-SQL-ReservedWords \
+			devel/p5-Clone \
+			devel/p5-DateTime \
+			devel/p5-DateTime-Format-MySQL \
+			devel/p5-DateTime-Format-Oracle \
+			devel/p5-DateTime-Format-Pg>=0.11 \
+			devel/p5-Time-Clock \
+			math/p5-Bit-Vector>=6.4
+
+TEST_DEPENDS =		databases/p5-DBD-MariaDB \
+			databases/p5-DBD-Pg \
+			databases/p5-DBD-SQLite \
+			databases/p5-DBD-mysql \
+			devel/p5-Test-Pod>=1.00 \
+			devel/p5-YAML-Syck
+
+TEST_FLAGS =		AUTOMATED_TESTING=1
+
+PKG_ARCH =		*
+
+post-build:
+		find ${WRKBUILD}/blib -type f -name '*.orig.port' -delete
 
 .include <bsd.port.mk>

@@ -1,5 +1,6 @@
---- lib/Rose/DB.pm.orig	Sat Dec 12 20:42:54 2015
-+++ lib/Rose/DB.pm	Sat Dec 12 20:43:09 2015
+Index: lib/Rose/DB.pm
+--- lib/Rose/DB.pm.orig
++++ lib/Rose/DB.pm
 @@ -4,7 +4,7 @@ use strict;
  
  use DBI;
@@ -9,7 +10,7 @@
  use Bit::Vector::Overload;
  use SQL::ReservedWords();
  
-@@ -689,7 +689,7 @@ sub init_db_info
+@@ -703,7 +703,7 @@ sub init_db_info
  sub init_connect_options
  {
    my($class) = ref $_[0];

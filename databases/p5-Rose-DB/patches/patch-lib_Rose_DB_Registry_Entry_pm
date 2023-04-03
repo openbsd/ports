@@ -10,7 +10,7 @@ Index: lib/Rose/DB/Registry/Entry.pm
  
  use Rose::Object;
  our @ISA = qw(Rose::Object);
-@@ -190,7 +190,7 @@ sub dump
+@@ -193,7 +193,7 @@ sub dump
    {
      my $value = $self->$attr();
      next  unless(defined $value);
@@ -19,7 +19,7 @@ Index: lib/Rose/DB/Registry/Entry.pm
    }
  
  
-@@ -200,13 +200,13 @@ sub dump
+@@ -203,13 +203,13 @@ sub dump
    {
      my $value = $self->{$attr};
      next  unless(defined $value);

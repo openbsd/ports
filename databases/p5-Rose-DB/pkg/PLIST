@@ -6,6 +6,7 @@ ${P5SITE}/Rose/DB/Cache/Entry.pm
 ${P5SITE}/Rose/DB/Constants.pm
 ${P5SITE}/Rose/DB/Generic.pm
 ${P5SITE}/Rose/DB/Informix.pm
+${P5SITE}/Rose/DB/MariaDB.pm
 ${P5SITE}/Rose/DB/MySQL.pm
 ${P5SITE}/Rose/DB/Oracle.pm
 ${P5SITE}/Rose/DB/Pg.pm
@@ -20,6 +21,7 @@ ${P5SITE}/Rose/DB/Tutorial.pod
 @man man/man3p/Rose::DB::Constants.3p
 @man man/man3p/Rose::DB::Generic.3p
 @man man/man3p/Rose::DB::Informix.3p
+@man man/man3p/Rose::DB::MariaDB.3p
 @man man/man3p/Rose::DB::MySQL.3p
 @man man/man3p/Rose::DB::Oracle.3p
 @man man/man3p/Rose::DB::Pg.3p
