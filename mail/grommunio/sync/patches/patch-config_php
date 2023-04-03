@@ -1,21 +1,12 @@
 Index: config.php
 --- config.php.orig
 +++ config.php
-@@ -68,7 +68,7 @@
-  *  LOGAUTHFAIL is logged to the LOGBACKEND.
-  */
- 	define('LOGBACKEND', 'filelog');
--	define('LOGLEVEL', LOGLEVEL_WBXML);
-+	define('LOGLEVEL', LOGLEVEL_INFO);
- 	define('LOGAUTHFAIL', false);
+@@ -79,7 +79,7 @@ define('LOGUSERLEVEL', LOGLEVEL_DEVICEID);
+ $specialLogUsers = [];
  
- 	// To save e.g. WBXML data only for selected users, add the usernames to the array
-@@ -79,7 +79,7 @@
- 	$specialLogUsers = [];
- 
- 	// Filelog settings
--	define('LOGFILEDIR', '/var/log/grommunio-sync/');
-+	define('LOGFILEDIR', GTOPDIR . DIRECTORY_SEPARATOR . 'logs' . DIRECTORY_SEPARATOR);
- 	define('LOGFILE', LOGFILEDIR . 'grommunio-sync.log');
- 	define('LOGERRORFILE', LOGFILEDIR . 'grommunio-sync-error.log');
+ // Filelog settings
+-define('LOGFILEDIR', '/var/log/grommunio-sync/');
++define('LOGFILEDIR', GTOPDIR . DIRECTORY_SEPARATOR . 'logs' . DIRECTORY_SEPARATOR);
+ define('LOGFILE', LOGFILEDIR . 'grommunio-sync.log');
+ define('LOGERRORFILE', LOGFILEDIR . 'grommunio-sync-error.log');
  

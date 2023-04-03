@@ -47,7 +47,7 @@ Index: vendor/composer/autoload_classmap.php
      'RedisConnection' => $baseDir . '/lib/core/redisconnection.php',
      'ReplaceNullcharFilter' => $baseDir . '/lib/wbxml/replacenullcharfilter.php',
      'Request' => $baseDir . '/lib/request/request.php',
-@@ -131,8 +131,8 @@ return array(
+@@ -140,8 +140,8 @@ return array(
      'SyncUserInformation' => $baseDir . '/lib/syncobjects/syncuserinformation.php',
      'SyncValidateCert' => $baseDir . '/lib/syncobjects/syncvalidatecert.php',
      'Syslog' => $baseDir . '/lib/log/syslog.php',

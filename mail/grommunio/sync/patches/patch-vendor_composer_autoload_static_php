@@ -47,7 +47,7 @@ Index: vendor/composer/autoload_static.php
          'RedisConnection' => __DIR__ . '/../..' . '/lib/core/redisconnection.php',
          'ReplaceNullcharFilter' => __DIR__ . '/../..' . '/lib/wbxml/replacenullcharfilter.php',
          'Request' => __DIR__ . '/../..' . '/lib/request/request.php',
-@@ -138,8 +138,8 @@ class ComposerStaticInit153a56a781a72686b71399955d9820
+@@ -147,8 +147,8 @@ class ComposerStaticInit153a56a781a72686b71399955d9820
          'SyncUserInformation' => __DIR__ . '/../..' . '/lib/syncobjects/syncuserinformation.php',
          'SyncValidateCert' => __DIR__ . '/../..' . '/lib/syncobjects/syncvalidatecert.php',
          'Syslog' => __DIR__ . '/../..' . '/lib/log/syslog.php',

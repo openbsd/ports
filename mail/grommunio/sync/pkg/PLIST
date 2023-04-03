@@ -117,6 +117,7 @@ grommunio-sync/lib/request/settings.php
 grommunio-sync/lib/request/sync.php
 grommunio-sync/lib/request/validatecert.php
 grommunio-sync/lib/syncobjects/
+grommunio-sync/lib/syncobjects/responsetrait.php
 grommunio-sync/lib/syncobjects/syncaccount.php
 grommunio-sync/lib/syncobjects/syncappointment.php
 grommunio-sync/lib/syncobjects/syncappointmentexception.php
@@ -132,6 +133,7 @@ grommunio-sync/lib/syncobjects/syncemailaddresses.php
 grommunio-sync/lib/syncobjects/syncfindproperties.php
 grommunio-sync/lib/syncobjects/syncfolder.php
 grommunio-sync/lib/syncobjects/syncitemoperationsattachment.php
+grommunio-sync/lib/syncobjects/synclocation.php
 grommunio-sync/lib/syncobjects/syncmail.php
 grommunio-sync/lib/syncobjects/syncmailflags.php
 grommunio-sync/lib/syncobjects/syncmeetingrequest.php
