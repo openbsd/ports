@@ -17,11 +17,15 @@ webapps/ROOT/tomcat.svg
 webapps/docs/
 webapps/docs/BUILDING.txt
 webapps/docs/LICENSE
+webapps/docs/META-INF/
+webapps/docs/META-INF/context.xml
 webapps/docs/NOTICE
 webapps/docs/README.md
 webapps/docs/RELEASE-NOTES.txt
 webapps/docs/RUNNING.txt
 webapps/docs/WEB-INF/
+webapps/docs/WEB-INF/jsp/
+webapps/docs/WEB-INF/jsp/403.jsp
 webapps/docs/WEB-INF/web.xml
 webapps/docs/aio.html
 webapps/docs/annotationapi/
@@ -822,6 +826,8 @@ webapps/docs/api/org/apache/catalina/tribes/util/
 webapps/docs/api/org/apache/catalina/tribes/util/Arrays.html
 webapps/docs/api/org/apache/catalina/tribes/util/ExceptionUtils.html
 webapps/docs/api/org/apache/catalina/tribes/util/ExecutorFactory.html
+webapps/docs/api/org/apache/catalina/tribes/util/Jre14Compat.html
+webapps/docs/api/org/apache/catalina/tribes/util/JreCompat.html
 webapps/docs/api/org/apache/catalina/tribes/util/Logs.html
 webapps/docs/api/org/apache/catalina/tribes/util/StringManager.html
 webapps/docs/api/org/apache/catalina/tribes/util/TcclThreadFactory.html
@@ -926,6 +932,7 @@ webapps/docs/api/org/apache/catalina/valves/JDBCAccessLogValve.html
 webapps/docs/api/org/apache/catalina/valves/JsonErrorReportValve.html
 webapps/docs/api/org/apache/catalina/valves/LoadBalancerDrainingValve.html
 webapps/docs/api/org/apache/catalina/valves/PersistentValve.html
+webapps/docs/api/org/apache/catalina/valves/ProxyErrorReportValve.html
 webapps/docs/api/org/apache/catalina/valves/RemoteAddrValve.html
 webapps/docs/api/org/apache/catalina/valves/RemoteCIDRValve.html
 webapps/docs/api/org/apache/catalina/valves/RemoteHostValve.html
@@ -944,6 +951,7 @@ webapps/docs/api/org/apache/catalina/valves/rewrite/InternalRewriteMap.Unescape.
 webapps/docs/api/org/apache/catalina/valves/rewrite/InternalRewriteMap.UpperCase.html
 webapps/docs/api/org/apache/catalina/valves/rewrite/InternalRewriteMap.html
 webapps/docs/api/org/apache/catalina/valves/rewrite/QuotedStringTokenizer.html
+webapps/docs/api/org/apache/catalina/valves/rewrite/RandomizedTextRewriteMap.html
 webapps/docs/api/org/apache/catalina/valves/rewrite/Resolver.html
 webapps/docs/api/org/apache/catalina/valves/rewrite/ResolverImpl.html
 webapps/docs/api/org/apache/catalina/valves/rewrite/RewriteCond.Condition.html
@@ -2977,6 +2985,8 @@ webapps/examples/WEB-INF/classes/websocket/snake/SnakeTimer$1.class
 webapps/examples/WEB-INF/classes/websocket/snake/SnakeTimer.class
 webapps/examples/WEB-INF/classes/websocket/snake/SnakeTimer.java
 webapps/examples/WEB-INF/jsp/
+webapps/examples/WEB-INF/jsp/403.jsp
+webapps/examples/WEB-INF/jsp/403.jsp.html
 webapps/examples/WEB-INF/jsp/debug-taglib.tld
 webapps/examples/WEB-INF/jsp/example-taglib.tld
 webapps/examples/WEB-INF/jsp/jsp2-example-taglib.tld
