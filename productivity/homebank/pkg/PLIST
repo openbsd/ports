@@ -22,6 +22,7 @@ share/homebank/datas/hb-categories-sk.csv
 share/homebank/help/
 share/homebank/help/00-intro.html
 share/homebank/help/00-lexicon.html
+share/homebank/help/00-notenglish.html
 share/homebank/help/00-previously.html
 share/homebank/help/00-whatsnew.html
 share/homebank/help/dlg-acco.html
@@ -106,6 +107,7 @@ share/homebank/help/images/dlg-txnmultiple.png
 share/homebank/help/images/dlg-xferselection.png
 share/homebank/help/images/doc_balance.png
 share/homebank/help/images/doc_title.png
+share/homebank/help/images/g_translate.png
 share/homebank/help/images/hb-ope-auto.png
 share/homebank/help/images/hb-ope-budget.png
 share/homebank/help/images/hb-ope-cleared.png
