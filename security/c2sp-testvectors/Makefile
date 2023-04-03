@@ -22,6 +22,6 @@ C2SP_DIR=	${PREFIX}/share/c2sp-testvectors/
 
 do-install:
 	${INSTALL_DATA_DIR} ${C2SP_DIR}
-	cd ${WRKSRC} && pax -rw -s * ${C2SP_DIR}
+	cd ${WRKSRC} && pax -rw * ${C2SP_DIR}
 
 .include <bsd.port.mk>
