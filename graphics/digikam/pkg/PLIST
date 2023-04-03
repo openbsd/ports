@@ -313,7 +313,6 @@ share/digikam/data/colors-luma.png
 share/digikam/data/craters-pattern.png
 share/digikam/data/curvefree.png
 share/digikam/data/curvemooth.png
-share/digikam/data/detectFacesImg.png
 share/digikam/data/dried-pattern.png
 share/digikam/data/duplicatebothhorz.png
 share/digikam/data/duplicatebothvert.png
@@ -325,7 +324,6 @@ share/digikam/data/histogram-lin.png
 share/digikam/data/histogram-log.png
 share/digikam/data/histogram.png
 share/digikam/data/ice-pattern.png
-share/digikam/data/ignoreImg.png
 share/digikam/data/image-full.png
 share/digikam/data/image-selection.png
 share/digikam/data/leaf-pattern.png
@@ -356,7 +354,6 @@ share/digikam/data/metalwire-texture.png
 share/digikam/data/modern-texture.png
 share/digikam/data/moss-texture.png
 share/digikam/data/original.png
-share/digikam/data/overlayImg.png
 share/digikam/data/paper-pattern.png
 share/digikam/data/paper-texture.png
 share/digikam/data/paper2-texture.png
@@ -370,13 +367,11 @@ share/digikam/data/sample-aix.png
 share/digikam/data/splash-digikam.png
 share/digikam/data/stone-pattern.png
 share/digikam/data/stone-texture.png
-share/digikam/data/tagFacesImg.gif
 share/digikam/data/target.png
 share/digikam/data/togglemouseover.png
 share/digikam/data/wall-pattern.png
 share/digikam/data/wall-texture.png
 share/digikam/data/wood-pattern.png
-share/digikam/data/workOnAllCoresImg.png
 share/digikam/database/
 share/digikam/database/dbconfig.xml
 share/digikam/database/mysql-global.conf
@@ -820,6 +815,7 @@ share/locale/be/LC_MESSAGES/digikam.mo
 share/locale/bg/LC_MESSAGES/digikam.mo
 share/locale/bs/LC_MESSAGES/digikam.mo
 share/locale/ca/LC_MESSAGES/digikam.mo
+share/locale/ca@valencia/LC_MESSAGES/digikam.mo
 share/locale/cs/LC_MESSAGES/digikam.mo
 share/locale/da/LC_MESSAGES/digikam.mo
 share/locale/de/LC_MESSAGES/digikam.mo

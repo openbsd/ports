@@ -6,7 +6,7 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	KDE digital photo and video management utility
 
-V =		7.9.0
+V =		7.10.0
 PKGNAME =	digikam-${V}
 DISTNAME =	digiKam-${V}
 CATEGORIES =	graphics
