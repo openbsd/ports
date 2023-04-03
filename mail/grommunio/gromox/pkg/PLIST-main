@@ -685,7 +685,6 @@ share/gromox/http/php/lib/
 share/gromox/http/php/lib/conf.php
 share/gromox/http/php/lib/db.php
 share/gromox/http/php/lib/util.php
-share/gromox/imap_lang.txt
 share/gromox/lang_charset.txt
 share/gromox/lcid.txt
 share/gromox/local_bounce/
