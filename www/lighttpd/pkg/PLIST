@@ -63,7 +63,6 @@ share/doc/lighttpd/redirect.txt
 share/doc/lighttpd/rewrite.txt
 share/doc/lighttpd/rrdtool.txt
 share/doc/lighttpd/scgi.txt
-share/doc/lighttpd/secdownload.txt
 share/doc/lighttpd/security.txt
 share/doc/lighttpd/setenv.txt
 share/doc/lighttpd/simple-vhost.txt
