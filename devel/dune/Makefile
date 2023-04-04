@@ -1,13 +1,9 @@
-MULTI_PACKAGES =	-main -private -configurator
+MULTI_PACKAGES =	-main -configurator
 
 COMMENT-main =		OCaml build system
-COMMENT-private =	private libraries of the dune build system
 COMMENT-configurator =	OCaml library for gathering system configuration
-REVISION-configurator =	2
-REVISION-main =		1
-REVISION-private =	2
 
-VERSION =		2.7.0
+VERSION =		3.6.2
 
 CATEGORIES =		devel
 
@@ -15,7 +11,8 @@ GH_ACCOUNT =		ocaml
 GH_PROJECT =		dune
 GH_TAGNAME =		${VERSION}
 
-HOMEPAGE =		https://github.com/ocaml/dune
+MASTER_SITES = https://github.com/ocaml/dune/releases/download/${VERSION}/
+EXTRACT_SUFX = .tbz
 
 MAINTAINER =		Christopher Zimmermann <chrisz@openbsd.org>
 
@@ -26,31 +23,38 @@ WANTLIB-main =		c m pthread
 
 MODULES =		lang/ocaml
 
-RUN_DEPENDS-configurator = devel/dune,-private
+RUN_DEPENDS-configurator = devel/dune
 
 CONFIGURE_STYLE =	simple
-CONFIGURE_ARGS =	--libdir ${PREFIX}/lib/ocaml/
+
+# Set default installation directories
+# These affect runtime behavior later!
+CONFIGURE_ARGS =	--bindir ${TRUEPREFIX}/bin \
+			--sbindir ${TRUEPREFIX}/sbin \
+			--datadir ${TRUEPREFIX}/share \
+			--etcdir ${SYSCONFDIR} \
+			--libdir ${TRUEPREFIX}/lib/ocaml \
+			--libexecdir ${TRUEPREFIX}/lib/ocaml \
+			--mandir ${TRUEPREFIX}/man \
+			--docdir ${TRUEPREFIX}/share/doc
+
+MAKE_ENV +=		JOBS=${MAKE_JOBS}
 
 USE_GMAKE =		Yes
 
 ALL_TARGET =		release
 
-#FAKE_FLAGS =		PREFIX=${PREFIX} LIBDIR=lib/ocaml
-INSTALL_TARGET =	install
+FAKE_FLAGS =		PREFIX=${TRUEPREFIX} LIBDIR=${PREFIX}/lib/ocaml
+INSTALL_TARGET =	doc install
 
-#./dune.exe build --display=short
 post-build:
 	cd ${WRKSRC} && env -i ${MAKE_ENV} \
-	./dune.exe build --display=short \
-	dune-private-libs.install dune-configurator.install
+	./dune.exe build -j${MAKE_JOBS} --display=short \
+	stdune.install dune-configurator.install
 
 do-install:
 	cd ${WRKSRC} && env -i ${MAKE_ENV} ${FAKE_SETUP} \
-	./dune.exe install --display=short \
-	dune dune-private-libs dune-configurator
-
-post-install:
-	mv ${PREFIX}/doc/* ${PREFIX}/share/doc/
-	rmdir ${PREFIX}/doc
+	./dune.exe install -j${MAKE_JOBS} --display=short \
+	dune stdune dune-configurator
 
 .include <bsd.port.mk>

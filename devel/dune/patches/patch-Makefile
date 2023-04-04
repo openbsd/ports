@@ -1,0 +1,13 @@
+Respect MAKE_JOBS during bootstrap phase
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -47,7 +47,7 @@ release: $(BIN)
+ 	@$(BIN) build @install -p dune --profile dune-bootstrap
+ 
+ $(BIN):
+-	@ocaml boot/bootstrap.ml
++	@ocaml boot/bootstrap.ml -j $(JOBS)
+ 
+ dev: $(BIN)
+ 	$(BIN) build @install

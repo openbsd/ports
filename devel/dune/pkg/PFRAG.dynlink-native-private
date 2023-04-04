@@ -1,8 +1,0 @@
-lib/ocaml/dune-private-libs/cache/cache.cmxs
-lib/ocaml/dune-private-libs/dune-lang/dune_lang.cmxs
-lib/ocaml/dune-private-libs/dune_csexp/dune_csexp.cmxs
-lib/ocaml/dune-private-libs/dune_re/dune_re.cmxs
-lib/ocaml/dune-private-libs/dune_util/dune_util.cmxs
-lib/ocaml/dune-private-libs/ocaml-config/ocaml_config.cmxs
-lib/ocaml/dune-private-libs/stdune/stdune.cmxs
-lib/ocaml/dune-private-libs/xdg/xdg.cmxs

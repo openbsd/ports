@@ -1,8 +1,0 @@
-lib/ocaml/dune/_caml/dune_caml.cmxs
-lib/ocaml/dune/_dune_lang/dune_lang.cmxs
-lib/ocaml/dune/_ocaml_config/ocaml_config.cmxs
-lib/ocaml/dune/_result/dune_result.cmxs
-lib/ocaml/dune/_stdune/stdune.cmxs
-lib/ocaml/dune/_wp/dune/wp_dune.cmxs
-lib/ocaml/dune/_wp/jbuilder/wp_jbuilder.cmxs
-lib/ocaml/dune/configurator/configurator.cmxs
