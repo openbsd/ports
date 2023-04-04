@@ -1,6 +1,6 @@
 COMMENT =		robust sending of e-mail via external commands
 
-DISTNAME =		extsmail-2.7
+DISTNAME =		extsmail-2.8
 CATEGORIES =		mail
 
 HOMEPAGE =		https://tratt.net/laurie/src/extsmail/
