@@ -1,2 +1,2 @@
-@bin lib/ocaml/menhirLib/menhirLib.cmxs
-@bin lib/ocaml/menhirSdk/menhirSdk.cmxs
+lib/ocaml/menhirLib/menhirLib.cmxs
+lib/ocaml/menhirSdk/menhirSdk.cmxs

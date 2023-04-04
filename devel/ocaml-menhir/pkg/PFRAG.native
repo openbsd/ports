@@ -1,5 +1,10 @@
 %%dynlink%%
 lib/ocaml/menhirLib/menhirLib.cmx
-lib/ocaml/menhirLib/menhirLib.o
+lib/ocaml/menhirLib/menhirLib.cmxa
 lib/ocaml/menhirSdk/menhirSdk.cmx
-lib/ocaml/menhirSdk/menhirSdk.o
+lib/ocaml/menhirSdk/menhirSdk.cmxa
+lib/ocaml/menhirSdk/menhirSdk__Cmly_api.cmx
+lib/ocaml/menhirSdk/menhirSdk__Cmly_format.cmx
+lib/ocaml/menhirSdk/menhirSdk__Cmly_read.cmx
+lib/ocaml/menhirSdk/menhirSdk__Keyword.cmx
+lib/ocaml/menhirSdk/menhirSdk__Version.cmx
