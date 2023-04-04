@@ -1,7 +1,7 @@
 Index: check_postgres.pl
 --- check_postgres.pl.orig
 +++ check_postgres.pl
-@@ -1601,12 +1601,9 @@ if (! $opt{'no-check_postgresrc'}) {
+@@ -1608,12 +1608,9 @@ if (! $opt{'no-check_postgresrc'}) {
      elsif (exists $ENV{HOME} and -e "$ENV{HOME}/.check_postgresrc") {
          $rcfile = "$ENV{HOME}/.check_postgresrc";
      }
@@ -16,7 +16,7 @@ Index: check_postgres.pl
  }
  ## We need a temporary hash so that multi-value options can be overridden on the command line
  my %tempopt;
-@@ -2814,7 +2811,7 @@ sub build_symlinks {
+@@ -2874,7 +2871,7 @@ sub build_symlinks {
              next;
          }
  

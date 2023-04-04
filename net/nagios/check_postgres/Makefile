@@ -1,9 +1,8 @@
 PKG_ARCH=	*
 
 COMMENT=	Nagios plugin to monitor PostgresQL
-DISTNAME=	check_postgres-2.25.0
+DISTNAME=	check_postgres-2.26.0
 CATEGORIES=	net databases
-REVISION=	0
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 

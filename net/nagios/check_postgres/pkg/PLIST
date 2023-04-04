@@ -31,6 +31,7 @@ libexec/nagios/check_postgres_new_version_box
 libexec/nagios/check_postgres_new_version_cp
 libexec/nagios/check_postgres_new_version_pg
 libexec/nagios/check_postgres_new_version_tnm
+libexec/nagios/check_postgres_partman_premake
 libexec/nagios/check_postgres_pgagent_jobs
 libexec/nagios/check_postgres_pgb_pool_cl_active
 libexec/nagios/check_postgres_pgb_pool_cl_waiting
@@ -42,6 +43,7 @@ libexec/nagios/check_postgres_pgb_pool_sv_tested
 libexec/nagios/check_postgres_pgb_pool_sv_used
 libexec/nagios/check_postgres_pgbouncer_backends
 libexec/nagios/check_postgres_pgbouncer_checksum
+libexec/nagios/check_postgres_pgbouncer_maxwait
 libexec/nagios/check_postgres_prepared_txns
 libexec/nagios/check_postgres_query_runtime
 libexec/nagios/check_postgres_query_time
