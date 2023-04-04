@@ -1,10 +1,9 @@
 COMMENT=	HEIF and AVIF file format decoder and encoder
 
-V=		1.13.0
+V=		1.14.2
 DISTNAME=	libheif-$V
-REVISION=	0
 
-SHARED_LIBS +=  heif                      1.3 # 9.0
+SHARED_LIBS +=  heif                      1.4 # 9.0
 
 CATEGORIES=	multimedia graphics
 
@@ -13,26 +12,28 @@ HOMEPAGE=	https://github.com/strukturag/libheif
 # LGPLv3+ (library), MIT (sample applications)
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} aom c dav1d de265 ffi gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 iconv intl
-WANTLIB += jpeg m pcre2-8 png x265 z
+WANTLIB += ${COMPILER_LIBCXX} aom c dav1d de265 gdk_pixbuf-2.0
+WANTLIB += glib-2.0 gobject-2.0 intl jpeg m png x265
 
 MASTER_SITES=	https://github.com/strukturag/libheif/releases/download/v$V/
 
 COMPILER=	base-clang ports-gcc
 
-USE_GMAKE=	Yes
-CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	--disable-go
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+MODULES=	devel/cmake
 
 LIB_DEPENDS=	graphics/gdk-pixbuf2 \
 		multimedia/aom \
 		multimedia/dav1d \
 		multimedia/libde265 \
 		multimedia/x265
+# examples
+LIB_DEPENDS+=	graphics/jpeg \
+		graphics/png
+
 RUN_DEPENDS=	misc/shared-mime-info
+
+CONFIGURE_ARGS= -DWITH_RAV1E=Off \
+		-DWITH_SvtEnc=Off
 
 NO_TEST=	Yes
 

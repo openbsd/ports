@@ -7,11 +7,12 @@ include/libheif/heif.h
 include/libheif/heif_cxx.h
 include/libheif/heif_plugin.h
 include/libheif/heif_version.h
-@static-lib lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-heif.a
-lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-heif.la
+lib/cmake/libheif/
+lib/cmake/libheif/libheif-config${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/libheif/libheif-config-version.cmake
+lib/cmake/libheif/libheif-config.cmake
 @so lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-heif.so
-@static-lib lib/libheif.a
-lib/libheif.la
+lib/libheif/
 @lib lib/libheif.so.${LIBheif_VERSION}
 lib/pkgconfig/libheif.pc
 @man man/man1/heif-convert.1
