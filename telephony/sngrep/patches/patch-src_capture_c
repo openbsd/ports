@@ -1,7 +1,7 @@
 Index: src/capture.c
 --- src/capture.c.orig
 +++ src/capture.c
-@@ -1331,8 +1331,11 @@ datalink_size(int datalink)
+@@ -1344,8 +1344,11 @@ datalink_size(int datalink)
          case DLT_PPP:
          case DLT_PPP_BSDOS:
          case DLT_PPP_SERIAL:

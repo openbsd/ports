@@ -2,7 +2,7 @@ COMMENT=	SIP packet capture tool with curses UI
 
 GH_ACCOUNT=	irontec
 GH_PROJECT=	sngrep
-GH_TAGNAME=	v1.6.0
+GH_TAGNAME=	v1.7.0
 
 CATEGORIES=	telephony net
 
