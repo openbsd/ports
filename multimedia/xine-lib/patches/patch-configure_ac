@@ -1,7 +1,7 @@
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -888,9 +888,7 @@ AC_ARG_ENABLE([optimizations],
+@@ -933,9 +933,7 @@ AC_ARG_ENABLE([optimizations],
                [AS_HELP_STRING([--disable-optimizations], [Don't try to guess what optimization to enable])],
                [], [test x"$enable_debug" != x"no" && enable_optimizations="no"])
  AM_CONDITIONAL([DISABLE_OPTIMIZATIONS], [test x"$enable_optimizations" = x"no"])
@@ -12,7 +12,7 @@ Index: configure.ac
      dnl For multi-pass compilation: never when cross-compiling
      if test x"$cross_compiling" != x"yes"; then
          if test x"$GCC" = x"yes"; then
-@@ -911,7 +909,7 @@ AC_SUBST(O0_CFLAGS)
+@@ -956,7 +954,7 @@ AC_SUBST(O0_CFLAGS)
  AC_SUBST(PASS1_CFLAGS)
  AC_SUBST(PASS2_CFLAGS)
  
@@ -21,7 +21,7 @@ Index: configure.ac
  
  
  dnl xineutils.h:dlist_*
-@@ -1324,9 +1322,9 @@ t q
+@@ -1369,9 +1367,9 @@ t q
  b
  :q
  q"

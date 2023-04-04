@@ -1,12 +1,11 @@
 COMMENT=	multimedia decoding library
 
-DISTNAME=	xine-lib-1.2.12
-REVISION=	2
+DISTNAME=	xine-lib-1.2.13
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xine/}
 EXTRACT_SUFX=	.tar.xz
 
-SHARED_LIBS=	xine	37.0
+SHARED_LIBS=	xine	38.0
 
 HOMEPAGE=	https://www.xine-project.org/
 
@@ -26,7 +25,7 @@ WANTLIB += v4lconvert vcdinfo vorbis vorbisenc vpx x264 x265 xcb xcb-dri2
 WANTLIB += xcb-dri3 xcb-glx xcb-present xcb-shape xcb-shm xcb-sync
 WANTLIB += xcb-xfixes xcb-xv xdg-basedir xml2 xshmfence xvidcore z
 
-XINEAPI_REV=	2.10
+XINEAPI_REV=	2.11
 SUBST_VARS+=	XINEAPI_REV
 
 COMPILER=	base-clang ports-gcc
@@ -61,8 +60,6 @@ CFLAGS+=	-ffast-math
 
 MAKE_ENV=	V=1
 
-FIX_CRLF_FILES=	src/demuxers/asfheader.c
-
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.69
@@ -94,9 +91,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 NO_TEST=	Yes
-
-pre-configure:
-	sed -i 's/__u32/u_int32_t/' ${WRKSRC}/src/input/input_pvr.c
 
 post-install:
 	@find ${PREFIX}/lib/xine/plugins -name '*.a' -delete

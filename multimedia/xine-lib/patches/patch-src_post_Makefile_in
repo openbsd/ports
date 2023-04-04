@@ -1,7 +1,7 @@
 Index: src/post/Makefile.in
 --- src/post/Makefile.in.orig
 +++ src/post/Makefile.in
-@@ -899,7 +899,7 @@ libdeinterlaceplugins_O1_la_SOURCES = \
+@@ -847,7 +847,7 @@ libdeinterlaceplugins_O1_la_SOURCES = \
  	$(debug_sources)
  
  libdeinterlaceplugins_O1_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(top_srcdir)/src/post/deinterlace
@@ -10,7 +10,7 @@ Index: src/post/Makefile.in
  libdeinterlaceplugins_O1_la_LDFLAGS = 
  libdeinterlaceplugins_la_SOURCES = \
  	deinterlace/plugins/double.c \
-@@ -944,7 +944,7 @@ xineplug_post_tvtime_la_LDFLAGS = $(AM_LDFLAGS) $(IMPU
+@@ -892,7 +892,7 @@ xineplug_post_tvtime_la_LDFLAGS = $(AM_LDFLAGS) $(IMPU
  @ENABLE_POSTPROC_TRUE@pp_module_cflags = $(FFMPEG_CFLAGS) $(POSTPROC_CFLAGS)
  @ARCH_X86_TRUE@PLANAR_X86_LIB = libpost_planar_x86.la
  @ARCH_X86_TRUE@libpost_planar_x86_la_SOURCES = planar/x86/noise.c planar/x86/noise.h
