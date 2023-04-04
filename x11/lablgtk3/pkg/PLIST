@@ -1,19 +1,6 @@
 %%native%%
-bin/gdk_pixbuf_mlsource3
-bin/lablgladecc3
-doc/
-doc/lablgtk3/
-doc/lablgtk3-sourceview3/
-doc/lablgtk3-sourceview3/CHANGELOG.API
-doc/lablgtk3-sourceview3/CHANGES.md
-doc/lablgtk3-sourceview3/LICENSE
-doc/lablgtk3-sourceview3/README.dune.md
-doc/lablgtk3-sourceview3/README.md
-doc/lablgtk3/CHANGELOG.API
-doc/lablgtk3/CHANGES.md
-doc/lablgtk3/LICENSE
-doc/lablgtk3/README.dune.md
-doc/lablgtk3/README.md
+@bin bin/gdk_pixbuf_mlsource3
+@bin bin/lablgladecc3
 lib/ocaml/lablgtk3/
 lib/ocaml/lablgtk3-sourceview3/
 lib/ocaml/lablgtk3-sourceview3/META
@@ -387,4 +374,14 @@ lib/ocaml/lablgtk3/wrappers.h
 @so lib/ocaml/stublibs/dlllablgtk3_sourceview3_stubs.so
 @so lib/ocaml/stublibs/dlllablgtk3_stubs.so
 share/doc/lablgtk3/
+share/doc/lablgtk3-sourceview3/
+share/doc/lablgtk3-sourceview3/CHANGELOG.API
+share/doc/lablgtk3-sourceview3/CHANGES.md
+share/doc/lablgtk3-sourceview3/LICENSE
+share/doc/lablgtk3-sourceview3/README.dune.md
+share/doc/lablgtk3-sourceview3/README.md
+share/doc/lablgtk3/CHANGELOG.API
+share/doc/lablgtk3/CHANGES.md
+share/doc/lablgtk3/LICENSE
+share/doc/lablgtk3/README.dune.md
 share/doc/lablgtk3/README.md

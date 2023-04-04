@@ -4,7 +4,7 @@ CATEGORIES =	graphics
 V =		0.6.2
 DISTNAME =	cairo2-$V
 PKGNAME =	ocaml-cairo-$V
-REVISION =	3
+REVISION =	4
 
 # LGPL 3.0
 PERMIT_PACKAGE = Yes
@@ -34,7 +34,6 @@ ALL_TARGET =
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ocaml-cairo
-	mv ${PREFIX}/doc/* ${PREFIX}/share/doc/ocaml-cairo/
-	rmdir ${PREFIX}/doc
+	mv ${PREFIX}/share/doc/cairo* ${PREFIX}/share/doc/ocaml-cairo/
 
 .include <bsd.port.mk>

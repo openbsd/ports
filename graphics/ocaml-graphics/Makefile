@@ -2,7 +2,7 @@ COMMENT =	graphics library providing basic drawing primitives
 CATEGORIES =	graphics
 
 V =		5.0.0
-REVISION =	2
+REVISION =	3
 DISTNAME =	graphics-$V
 PKGNAME =	ocaml-graphics-$V
 
@@ -24,6 +24,6 @@ MAKE_ENV =	CPATH=${X11BASE}/include \
 ALL_TARGET =	default
 
 post-install:
-	mv ${PREFIX}/doc/graphics ${PREFIX}/share/doc/ocaml-graphics
+	mv ${PREFIX}/share/doc/graphics ${PREFIX}/share/doc/ocaml-graphics
 
 .include <bsd.port.mk>

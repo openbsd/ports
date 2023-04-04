@@ -4,7 +4,7 @@ CATEGORIES =	devel
 GH_ACCOUNT =	ocaml-community
 GH_PROJECT =	cppo
 GH_TAGNAME =	v1.6.6
-REVISION =	4
+REVISION =	5
 PKGNAME =	ocaml-${DISTNAME}
 
 # 3-clause BSD
@@ -19,7 +19,7 @@ BUILD_DEPENDS = devel/dune \
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ocaml-${GH_PROJECT}
-	mv ${PREFIX}/doc/* ${PREFIX}/share/doc/ocaml-${GH_PROJECT}/
-	rmdir ${PREFIX}/doc
+	mv ${PREFIX}/share/doc/${GH_PROJECT} ${PREFIX}/share/doc/ocaml-${GH_PROJECT}
+	mv ${PREFIX}/share/doc/cppo_ocamlbuild ${PREFIX}/share/doc/ocaml-${GH_PROJECT}/
 
 .include <bsd.port.mk>

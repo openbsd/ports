@@ -3,7 +3,7 @@ CATEGORIES =	x11 devel
 
 V =		3.1.1
 DISTNAME =	lablgtk3-${V}
-REVISION =	3
+REVISION =	4
 
 MASTER_SITES =	https://github.com/garrigue/lablgtk/releases/download/${V}/
 EXTRACT_SUFX =	.tbz
@@ -42,7 +42,5 @@ do-install:
 
 post-install:
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/ocaml/lablgtk3
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/lablgtk3
-	${INSTALL_DATA} ${WRKDIST}/README.md ${PREFIX}/share/doc/lablgtk3
 
 .include <bsd.port.mk>

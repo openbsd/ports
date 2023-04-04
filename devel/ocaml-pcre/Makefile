@@ -8,6 +8,7 @@ PKGNAME =	ocaml-${DISTNAME}
 MASTER_SITES =	https://github.com/mmottl/pcre-ocaml/releases/download/${V}/
 EXTRACT_SUFX =	.tbz
 HOMEPAGE =	https://github.com/mmottl/pcre-ocaml
+REVISION =	0
 
 # GPLv2+
 PERMIT_PACKAGE =		Yes
@@ -28,7 +29,6 @@ post-install:
 	cp -R ${WRKDIST}/examples/* ${PREFIX}/share/examples/${NAME}/
 	${INSTALL_DATA} ${FILESDIR}/README ${PREFIX}/share/examples/${NAME}/
 	chmod -R u=rwX,go=rX ${PREFIX}/share/examples/${NAME}/*
-	mv ${PREFIX}/doc/pcre ${PREFIX}/share/doc/${NAME}
-	rm -rf ${PREFIX}/doc
+	mv ${PREFIX}/share/doc/pcre ${PREFIX}/share/doc/${NAME}
 
 .include <bsd.port.mk>

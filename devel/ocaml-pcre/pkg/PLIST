@@ -2,7 +2,7 @@
 lib/ocaml/pcre/
 lib/ocaml/pcre/META
 lib/ocaml/pcre/dune-package
-lib/ocaml/pcre/libpcre_stubs.a
+@static-lib lib/ocaml/pcre/libpcre_stubs.a
 lib/ocaml/pcre/opam
 lib/ocaml/pcre/pcre.cma
 lib/ocaml/pcre/pcre.cmi
@@ -10,7 +10,7 @@ lib/ocaml/pcre/pcre.cmt
 lib/ocaml/pcre/pcre.cmti
 lib/ocaml/pcre/pcre.ml
 lib/ocaml/pcre/pcre.mli
-lib/ocaml/stublibs/dllpcre_stubs.so
+@so lib/ocaml/stublibs/dllpcre_stubs.so
 share/doc/ocaml-pcre/
 share/doc/ocaml-pcre/CHANGES.md
 share/doc/ocaml-pcre/LICENSE.md
