@@ -1,6 +1,6 @@
 COMMENT =		sensible unix password cracker
 
-V =			2.9.10
+V =			2.9.11
 DISTNAME =		cracklib-${V}
 SHARED_LIBS =		crack	0.4	# 11.0
 CATEGORIES =		security
