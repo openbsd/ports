@@ -424,6 +424,7 @@
      SUBDIR += terraform
      SUBDIR += terragrunt
      SUBDIR += testdisk
+     SUBDIR += tflint
      SUBDIR += tkdvd
      SUBDIR += tmate
      SUBDIR += tmux-mem-cpu-load
