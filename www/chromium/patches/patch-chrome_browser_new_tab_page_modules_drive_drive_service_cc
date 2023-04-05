@@ -5,8 +5,8 @@ Index: chrome/browser/new_tab_page/modules/drive/drive_service.cc
  #include "services/network/public/cpp/resource_request.h"
  
  namespace {
--#if OS_LINUX
-+#if defined(OS_LINUX) || defined(OS_BSD)   
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  constexpr char kPlatform[] = "LINUX";
- #elif OS_WIN
+ #elif BUILDFLAG(IS_WIN)
  constexpr char kPlatform[] = "WINDOWS";

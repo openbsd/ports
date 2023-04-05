@@ -10,7 +10,7 @@ Index: content/browser/audio/audio_service.cc
  #include "ui/display/display_util.h"
  #endif  // BUILDFLAG(IS_LINUX)
  
-@@ -213,7 +213,7 @@ audio::mojom::AudioService& GetAudioService() {
+@@ -225,7 +225,7 @@ audio::mojom::AudioService& GetAudioService() {
          ->PostTaskAndReplyWithResult(
              FROM_HERE, base::BindOnce(&ScanEdidBitstreams),
              base::BindOnce(&LaunchAudioService, std::move(receiver)));

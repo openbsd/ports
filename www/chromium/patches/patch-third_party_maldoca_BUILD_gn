@@ -1,7 +1,7 @@
 Index: third_party/maldoca/BUILD.gn
 --- third_party/maldoca/BUILD.gn.orig
 +++ third_party/maldoca/BUILD.gn
-@@ -299,6 +299,10 @@ static_library("maldoca") {
+@@ -264,6 +264,10 @@ source_set("maldoca-public-headers") {
      ":maldoca_chromium_config",
      ":maldoca_flags",
    ]
@@ -11,4 +11,4 @@ Index: third_party/maldoca/BUILD.gn
 +  }
  }
  
- fuzzer_test("process_doc_fuzzer") {
+ static_library("maldoca") {
