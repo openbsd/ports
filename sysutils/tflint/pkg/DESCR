@@ -1,0 +1,5 @@
+TFLint is a pluggable Terraform linter and each feature is provided by plugins,
+the key features are as follows:
+* find possible errors (like invalid instance types) for major cloud providers
+* warn about deprecated syntax, unused declarations
+* enforce best practices, naming conventions
