@@ -46,6 +46,7 @@
 @man man/man1/gh-gist-delete.1
 @man man/man1/gh-gist-edit.1
 @man man/man1/gh-gist-list.1
+@man man/man1/gh-gist-rename.1
 @man man/man1/gh-gist-view.1
 @man man/man1/gh-gist.1
 @man man/man1/gh-gpg-key-add.1

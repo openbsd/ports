@@ -80,7 +80,7 @@ MODGO_MODULES =	\
 	github.com/kr/text					 v0.1.0 \
 	github.com/lucasb-eyer/go-colorful			 v1.2.0 \
 	github.com/mattn/go-colorable				 v0.1.13 \
-	github.com/mattn/go-isatty				 v0.0.17 \
+	github.com/mattn/go-isatty				 v0.0.18 \
 	github.com/mattn/go-runewidth				 v0.0.14 \
 	github.com/mgutz/ansi					 v0.0.0-20200706080929-d51e80ef957d \
 	github.com/microcosm-cc/bluemonday			 v1.0.20 \
