@@ -1,12 +1,11 @@
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -98,7 +98,7 @@ lua_dep = dependency('lua', version: '>= 5.3.0', requi
- if not lua_dep.found()
-     lua_dep = dependency('lua5.3', version: '>= 5.3.0', required: false)
-     if not lua_dep.found()
--        lua_dep = dependency('lua-5.3', version: '>= 5.3.0', required: false)
-+        lua_dep = dependency('lua${LUA_V}', version: '>= 5.3.0', required: false)
-     endif
- endif
+@@ -101,6 +101,7 @@ tracker3_dep = dependency('tracker-sparql-3.0', requir
+ tracker3_testutils_dep = dependency('tracker-testutils-3.0', required: false)
  
+ lua_pkg = [
++  'lua${LUA_V}',
+   'lua',
+   'lua5.4',
+   'lua-5.4',
