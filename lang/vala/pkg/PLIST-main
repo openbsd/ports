@@ -366,6 +366,8 @@ share/vala-${API_V}/vapi/webkitgtk-6.0.deps
 share/vala-${API_V}/vapi/webkitgtk-6.0.vapi
 share/vala-${API_V}/vapi/webkitgtk-web-extension-6.0.deps
 share/vala-${API_V}/vapi/webkitgtk-web-extension-6.0.vapi
+share/vala-${API_V}/vapi/webkitgtk-web-process-extension-6.0.deps
+share/vala-${API_V}/vapi/webkitgtk-web-process-extension-6.0.vapi
 share/vala-${API_V}/vapi/x11.vapi
 share/vala-${API_V}/vapi/xcb-icccm.deps
 share/vala-${API_V}/vapi/xcb-icccm.vapi
