@@ -1294,6 +1294,7 @@
      SUBDIR += poedit
      SUBDIR += pony-stable
      SUBDIR += popt
+     SUBDIR += pre-commit
      SUBDIR += premake4
      SUBDIR += proj
      SUBDIR += promu
@@ -1344,6 +1345,7 @@
      SUBDIR += py-cairocffi,python3
      SUBDIR += py-certifi,python3
      SUBDIR += py-cffi,python3
+     SUBDIR += py-cfgv,python3
      SUBDIR += py-cflow2dot,python3
      SUBDIR += py-characteristic,python3
      SUBDIR += py-cheetah,python3
@@ -1424,6 +1426,7 @@
      SUBDIR += py-html5lib,python3
      SUBDIR += py-hypothesis,python3
      SUBDIR += py-icalendar,python3
+     SUBDIR += py-identify,python3
      SUBDIR += py-importlib-metadata,python3
      SUBDIR += py-incremental,python3
      SUBDIR += py-installer,python3
