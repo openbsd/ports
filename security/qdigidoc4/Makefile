@@ -3,7 +3,7 @@ COMMENT =		DigiDoc4 GUI client for signing and encrypting documents
 V =			4.2.14
 DISTNAME =		qdigidoc4-${V}
 CATEGORIES =		security x11
-REVISION =		1
+REVISION =		2
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
@@ -12,17 +12,19 @@ HOMEPAGE =		https://www.id.ee/
 # LGPL 2.1+
 PERMIT_PACKAGE =	Yes
 
-DIST_SUBDIR =		qdigidoc4-0
+DIST_SUBDIR =		qdigidoc4
 MASTER_SITES =		https://github.com/open-eid/DigiDoc4-Client/releases/download/v${V}/
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
 
 MASTER_SITES0 =		https://id.eesti.ee/
-DISTFILES +=		config.json:0 \
-			config.pub:0 \
-			config.rsa:0
+CONFIG_NAME =		config-20230405
+# need to be in sync due to CONFIG_URL handling
+.for _suffix in json pub rsa
+DISTFILES +=		${CONFIG_NAME}{config}.${_suffix}:0
+.endfor
 # ${WRKSRC}/common/CMakeLists.txt itself substitutes suffix in CONFIG_URL
-CONFIGURE_ENV +=	CONFIG_URL=file://${FULLDISTDIR}/config.json
+CONFIGURE_ENV +=	CONFIG_URL=file://${FULLDISTDIR}/${CONFIG_NAME}.json
 
 MASTER_SITES1 =		https://ec.europa.eu/tools/lotl/
 DISTFILES +=		eu-lotl-pivot-300.xml:1
