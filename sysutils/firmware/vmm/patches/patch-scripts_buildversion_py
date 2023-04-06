@@ -3,6 +3,8 @@ a consistent version number detected for all binutils tools, however this
 detection is too simplistic to cope with older binutils (mix of
 "GNU assembler 2.17" and "GNU ld version 2.17" etc).
 
+Omit datetime and hostname from dmesg visible version string.
+
 Index: scripts/buildversion.py
 --- scripts/buildversion.py.orig
 +++ scripts/buildversion.py
@@ -24,3 +26,11 @@ Index: scripts/buildversion.py
          if verstr.startswith('GNU '):
              isbinutils = 1
              verstr = verstr[4:]
+@@ -124,6 +126,7 @@ def main():
+         cleanbuild = cleanbuild and ver and options.extra != ""
+         if not ver:
+             ver = "?"
++    cleanbuild = True # XXX omit useless information
+     if not cleanbuild:
+         btime = time.strftime("%Y%m%d_%H%M%S")
+         hostname = socket.gethostname()
