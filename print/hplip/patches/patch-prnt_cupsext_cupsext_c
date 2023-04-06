@@ -3,12 +3,12 @@ Backwards memcpy, triggered by changing default page size in hp-toolbox
 Index: prnt/cupsext/cupsext.c
 --- prnt/cupsext/cupsext.c.orig
 +++ prnt/cupsext/cupsext.c
-@@ -1165,7 +1165,7 @@ PyObject * removeOption( PyObject * self, PyObject * a
+@@ -1226,7 +1226,7 @@ PyObject *removeOption(PyObject *self, PyObject *args)
  
-             if ( j < g_num_options )
+             if (j < g_num_options)
              {
--                memcpy( (g_options + j), (g_options + j + 1),
-+                memmove( (g_options + j), (g_options + j + 1),
-                         sizeof(cups_option_t) * (g_num_options - j) );
+-                memcpy((g_options + j), (g_options + j + 1),
++                memmove((g_options + j), (g_options + j + 1),
+                        sizeof(cups_option_t) * (g_num_options - j));
  
                  r = 1;

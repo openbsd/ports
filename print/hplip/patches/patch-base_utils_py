@@ -175,3 +175,12 @@ Index: base/utils.py
  
      log.debug("Requied groups list =[%s]"%exp_grp_list)
  
+@@ -2627,6 +2624,8 @@ def readAuthType():
+             authType = 'sudo'
+         else:
+             authType = 'su'
++        # don't enforce sudo on OpenBSD (external package)
++        authType = 'su'
+     except :
+         log.warn("unable to determine auth_type ")
+     return authType

@@ -1,5 +1,14 @@
---- ui/devmgr4.py.orig	Thu Jan 29 13:20:22 2015
-+++ ui/devmgr4.py	Thu Feb  5 16:41:34 2015
+2nd chunk:
+From 95a73bbc9bd65602a0f9411469ab511bc80a01d0 Mon Sep 17 00:00:00 2001
+From: Till Kamppeter <till.kamppeter@gmail.com>
+Date: Wed, 3 Oct 2018 15:13:00 +0200
+Subject: Call QMessageBox constructors of PyQT5 with the correct parameters
+Bug-Debian: https://bugs.debian.org/912768
+Bug-Ubuntu: https://bugs.launchpad.net/bugs/1745383
+
+Index: ui/devmgr4.py
+--- ui/devmgr4.py.orig
++++ ui/devmgr4.py
 @@ -1226,7 +1226,7 @@ class DevMgr4(DevMgr4_base):
              opt_plugin = d.plugin == PLUGIN_OPTIONAL
  
@@ -9,6 +18,15 @@
              hplip_conf.readfp(fp)
              fp.close()
  
+@@ -1422,7 +1422,7 @@ class DevMgr4(DevMgr4_base):
+             QMessageBox.critical(self,
+                 self.caption(),
+                 self.__tr("<b>Unable to find an appropriate su/sudo utility to run hp-plugin.</b><p>Install kdesu, gnomesu, or gksu.</p>"),
+-                QMessageBox.Ok,
++                QMessageBox.Ok |\
+                 QMessageBox.NoButton,
+                 QMessageBox.NoButton)
+         else:
 @@ -2842,7 +2842,7 @@ class DevMgr4(DevMgr4_base):
          if utils.which('hp-setup'):
              cmd = 'hp-setup -u'
@@ -18,3 +36,66 @@
  
          log.debug(cmd)
          utils.run(cmd)
+@@ -2854,7 +2854,7 @@ class DevMgr4(DevMgr4_base):
+             x = QMessageBox.critical(self,
+            self.caption(),
+            self.__tr("<b>Annoying Confirmation: Are you sure you want to remove this device?</b>"),
+-            QMessageBox.Yes,
++            QMessageBox.Yes |\
+             QMessageBox.No | QMessageBox.Default,
+             QMessageBox.NoButton)
+             if x == QMessageBox.Yes:
+@@ -2949,7 +2949,7 @@ class DevMgr4(DevMgr4_base):
+         QMessageBox.critical(self,
+             self.caption(),
+             error_text,
+-            QMessageBox.Ok,
++            QMessageBox.Ok |\
+             QMessageBox.NoButton,
+             QMessageBox.NoButton)
+ 
+@@ -2958,7 +2958,7 @@ class DevMgr4(DevMgr4_base):
+         QMessageBox.warning(self,
+             self.caption(),
+             msg,
+-            QMessageBox.Ok,
++            QMessageBox.Ok |\
+             QMessageBox.NoButton,
+             QMessageBox.NoButton)
+ 
+@@ -3115,7 +3115,7 @@ class ScrollTestpageView(ScrollView):
+             QMessageBox.information(self,
+                 self.caption(),
+                 self.__tr("<p><b>A test page should be printing on your printer.</b><p>If the page fails to print, please visit http://hplip.sourceforge.net for troubleshooting and support."),
+-                QMessageBox.Ok,
++                QMessageBox.Ok |\
+                 QMessageBox.NoButton,
+                 QMessageBox.NoButton)
+ 
+@@ -3130,7 +3130,7 @@ class ScrollTestpageView(ScrollView):
+         QMessageBox.critical(self,
+             self.caption(),
+             error_text,
+-            QMessageBox.Ok,
++            QMessageBox.Ok |\
+             QMessageBox.NoButton,
+             QMessageBox.NoButton)
+ 
+@@ -3272,7 +3272,7 @@ class ScrollColorCalView(ScrollView):
+             QMessageBox.information(self,
+                 self.caption(),
+                 self.__tr("<p><b>A test page should be printing on your printer.</b><p>If the page fails to print, please visit http://hplip.sourceforge.net for troubleshooting and support."),
+-                QMessageBox.Ok,
++                QMessageBox.Ok |\
+                 QMessageBox.NoButton,
+                 QMessageBox.NoButton)
+ 
+@@ -3287,7 +3287,7 @@ class ScrollColorCalView(ScrollView):
+         QMessageBox.critical(self,
+             self.caption(),
+             error_text,
+-            QMessageBox.Ok,
++            QMessageBox.Ok |\
+             QMessageBox.NoButton,
+             QMessageBox.NoButton)
+ 

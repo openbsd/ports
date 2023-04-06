@@ -1,8 +1,23 @@
-https://bugs.launchpad.net/hplip/+bug/1914743
+1st chunk:
+From 95a73bbc9bd65602a0f9411469ab511bc80a01d0 Mon Sep 17 00:00:00 2001
+From: Till Kamppeter <till.kamppeter@gmail.com>
+Date: Wed, 3 Oct 2018 15:13:00 +0200
+Subject: Call QMessageBox constructors of PyQT5 with the correct parameters
+Bug-Debian: https://bugs.debian.org/912768
+Bug-Ubuntu: https://bugs.launchpad.net/bugs/1745383
 
 Index: ui5/fabwindow.py
 --- ui5/fabwindow.py.orig
 +++ ui5/fabwindow.py
+@@ -344,7 +344,7 @@ class FABWindow(QMainWindow,  Ui_MainWindow):
+             new_name = to_unicode(self.NameLineEdit.text())
+             if new_name != self.name:
+                 if QMessageBox.question(self, self.__tr("Rename?"), "Rename '%s' to '%s'?"%(self.name,new_name), \
+-                                        QMessageBox.Yes | QMessageBox.No) == QMessageBox.Yes:
++                                        QMessageBox.Yes | QMessageBox.No, QMessageBox.No) == QMessageBox.Yes:
+ 
+                     self.db.rename(self.name, new_name)
+                     log.debug("Rename %s to %s" % (self.name, new_name))
 @@ -518,7 +518,7 @@ class FABWindow(QMainWindow,  Ui_MainWindow):
                           self.__tr("Import fax addresses from LDIF or vCard"),
                           #user_conf.workingDirectory(),

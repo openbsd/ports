@@ -7,19 +7,9 @@ COMMENT-hpcups=		HP native CUPS driver
 COMMENT-hpijs=		HP ghostscript driver (spooler independent)
 COMMENT-gui=		HPLIP graphical tools
 
-V=			3.22.10
+V=			3.23.3
 DISTNAME=		hplip-${V}
 SUBST_VARS=		V
-
-REVISION-common=	0
-REVISION-gui=		0
-REVISION-hpaio=		0
-REVISION-main=		1
-
-# https://bugs.launchpad.net/ubuntu/+source/hplip/+bug/1745383
-MASTER_SITES0=		https://src.fedoraproject.org/rpms/hplip/raw/rawhide/f/
-PATCHFILES=		0026-Call-QMessageBox-constructors-of-PyQT5-with-the-corr.patch:0
-PATCH_DIST_STRIP=	-p1
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-common=		hplip-common-${V}

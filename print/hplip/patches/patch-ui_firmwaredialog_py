@@ -1,0 +1,19 @@
+From 95a73bbc9bd65602a0f9411469ab511bc80a01d0 Mon Sep 17 00:00:00 2001
+From: Till Kamppeter <till.kamppeter@gmail.com>
+Date: Wed, 3 Oct 2018 15:13:00 +0200
+Subject: Call QMessageBox constructors of PyQT5 with the correct parameters
+Bug-Debian: https://bugs.debian.org/912768
+Bug-Ubuntu: https://bugs.launchpad.net/bugs/1745383
+
+Index: ui/firmwaredialog.py
+--- ui/firmwaredialog.py.orig
++++ ui/firmwaredialog.py
+@@ -109,7 +109,7 @@ class FirmwareDialog(QDialog, FirmwareDialog_Base):
+         QMessageBox.critical(self,
+                 self.caption(),
+                 error_text,
+-                QMessageBox.Ok,
++                QMessageBox.Ok |\
+                 QMessageBox.NoButton,
+                 QMessageBox.NoButton)
+ 

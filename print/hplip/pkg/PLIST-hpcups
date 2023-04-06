@@ -4,6 +4,7 @@
 @bin libexec/cups/backend/hp
 libexec/cups/backend/hpfax
 @mode
+@bin libexec/cups/filter/hpcdmfax
 @bin libexec/cups/filter/hpcups
 @bin libexec/cups/filter/hpcupsfax
 @bin libexec/cups/filter/hpps

@@ -3,7 +3,7 @@ https://bugs.launchpad.net/ubuntu/+source/hplip/+bug/1718129
 Index: ui4/wifisetupdialog.py
 --- ui4/wifisetupdialog.py.orig
 +++ ui4/wifisetupdialog.py
-@@ -250,7 +250,7 @@ class WifiSetupDialog(QDialog, Ui_Dialog):
+@@ -329,7 +329,7 @@ class WifiSetupDialog(QDialog, Ui_Dialog):
              try:
                  self.dev = device.Device(self.device_uri)
              except Error as e:
@@ -12,7 +12,7 @@ Index: ui4/wifisetupdialog.py
  
                  if self.dev is not None:
                      self.dev.close()
-@@ -828,7 +828,7 @@ class WifiSetupDialog(QDialog, Ui_Dialog):
+@@ -929,7 +929,7 @@ class WifiSetupDialog(QDialog, Ui_Dialog):
  
  
      def showIOError(self, e):

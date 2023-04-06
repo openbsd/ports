@@ -108,9 +108,11 @@ share/hplip/${MODPY_PYCACHE}upgrade.${MODPY_PYC_MAGIC_TAG}pyc
 share/hplip/${MODPY_PYCACHE}wificonfig.${MODPY_PYC_MAGIC_TAG}pyc
 share/hplip/align.py
 share/hplip/base/
+share/hplip/base/CdmWifi.py
 share/hplip/base/LedmWifi.py
 share/hplip/base/__init__.py
 ${MODPY_COMMENT}share/hplip/base/${MODPY_PYCACHE}/
+share/hplip/base/${MODPY_PYCACHE}CdmWifi.${MODPY_PYC_MAGIC_TAG}pyc
 share/hplip/base/${MODPY_PYCACHE}LedmWifi.${MODPY_PYC_MAGIC_TAG}pyc
 share/hplip/base/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/hplip/base/${MODPY_PYCACHE}avahi.${MODPY_PYC_MAGIC_TAG}pyc
@@ -244,6 +246,7 @@ share/hplip/fax/
 share/hplip/fax/__init__.py
 ${MODPY_COMMENT}share/hplip/fax/${MODPY_PYCACHE}/
 share/hplip/fax/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+share/hplip/fax/${MODPY_PYCACHE}cdmfax.${MODPY_PYC_MAGIC_TAG}pyc
 share/hplip/fax/${MODPY_PYCACHE}coverpages.${MODPY_PYC_MAGIC_TAG}pyc
 share/hplip/fax/${MODPY_PYCACHE}fax.${MODPY_PYC_MAGIC_TAG}pyc
 share/hplip/fax/${MODPY_PYCACHE}faxdevice.${MODPY_PYC_MAGIC_TAG}pyc
@@ -252,6 +255,7 @@ share/hplip/fax/${MODPY_PYCACHE}ledmsoapfax.${MODPY_PYC_MAGIC_TAG}pyc
 share/hplip/fax/${MODPY_PYCACHE}marvellfax.${MODPY_PYC_MAGIC_TAG}pyc
 share/hplip/fax/${MODPY_PYCACHE}pmlfax.${MODPY_PYC_MAGIC_TAG}pyc
 share/hplip/fax/${MODPY_PYCACHE}soapfax.${MODPY_PYC_MAGIC_TAG}pyc
+share/hplip/fax/cdmfax.py
 share/hplip/fax/coverpages.py
 share/hplip/fax/fax.py
 share/hplip/fax/faxdevice.py

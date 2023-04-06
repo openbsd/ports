@@ -4,6 +4,7 @@
 @bin bin/hpijs
 libexec/cups/filter/foomatic-rip-hplip
 share/cups/drv/hp/hpijs.drv
+share/foomatic/db/source/PPD/HP/HP-Fax-CDM-hpcups.ppd.gz
 share/foomatic/db/source/PPD/HP/HP-Fax-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/HP-Fax2-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/HP-Fax3-hpijs.ppd.gz
@@ -1302,10 +1303,14 @@ share/foomatic/db/source/PPD/HP/hp-psc_920.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-psc_950.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-psc_950vr.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-psc_950xi.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-smart_tank_210-220_series.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-smart_tank_350_series.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-smart_tank_500_series.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-smart_tank_510_series.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-smart_tank_5100_series.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-smart_tank_520_540_series.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-smart_tank_530_series.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-smart_tank_580-590_series.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-smart_tank_6000_series.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-smart_tank_610_series.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-smart_tank_660-670_series.ppd.gz

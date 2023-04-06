@@ -69,7 +69,7 @@ Index: prnt/cups.py
  
  
  for p in list(models.TECH_CLASS_PDLS.values()):
-@@ -699,7 +699,7 @@ def getFaxPPDFile(mq, model):
+@@ -703,7 +703,7 @@ def getFaxPPDFile(mq, model):
  
  
  def getErrorLogLevel():

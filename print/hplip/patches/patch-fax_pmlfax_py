@@ -7,7 +7,7 @@ code gets fixed.
 Index: fax/pmlfax.py
 --- fax/pmlfax.py.orig
 +++ fax/pmlfax.py
-@@ -143,8 +143,8 @@ class PMLFaxDevice(FaxDevice):
+@@ -145,8 +145,8 @@ class PMLFaxDevice(FaxDevice):
  
      def getPhoneNum(self):
          if PY3:
@@ -18,7 +18,7 @@ Index: fax/pmlfax.py
          else:
              return utils.printable(self.getPML(pml.OID_FAX_LOCAL_PHONE_NUM)[1])
      phone_num = property(getPhoneNum, setPhoneNum, doc="OID_FAX_LOCAL_PHONE_NUM")
-@@ -155,8 +155,8 @@ class PMLFaxDevice(FaxDevice):
+@@ -157,8 +157,8 @@ class PMLFaxDevice(FaxDevice):
  
      def getStationName(self):
          if PY3:
