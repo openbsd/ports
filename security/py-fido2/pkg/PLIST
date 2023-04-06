@@ -105,6 +105,8 @@ lib/python${MODPY_VERSION}/site-packages/fido2/hid/${MODPY_PYCACHE}linux.${MODPY
 lib/python${MODPY_VERSION}/site-packages/fido2/hid/${MODPY_PYCACHE}linux.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fido2/hid/${MODPY_PYCACHE}macos.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fido2/hid/${MODPY_PYCACHE}macos.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/fido2/hid/${MODPY_PYCACHE}netbsd.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/fido2/hid/${MODPY_PYCACHE}netbsd.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fido2/hid/${MODPY_PYCACHE}openbsd.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fido2/hid/${MODPY_PYCACHE}openbsd.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fido2/hid/${MODPY_PYCACHE}windows.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -113,6 +115,7 @@ lib/python${MODPY_VERSION}/site-packages/fido2/hid/base.py
 lib/python${MODPY_VERSION}/site-packages/fido2/hid/freebsd.py
 lib/python${MODPY_VERSION}/site-packages/fido2/hid/linux.py
 lib/python${MODPY_VERSION}/site-packages/fido2/hid/macos.py
+lib/python${MODPY_VERSION}/site-packages/fido2/hid/netbsd.py
 lib/python${MODPY_VERSION}/site-packages/fido2/hid/openbsd.py
 lib/python${MODPY_VERSION}/site-packages/fido2/hid/windows.py
 lib/python${MODPY_VERSION}/site-packages/fido2/mds3.py
