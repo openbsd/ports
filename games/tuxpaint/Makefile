@@ -1,8 +1,7 @@
 COMMENT=		drawing program for children
 
-V=			0.9.28
-DISTNAME=		tuxpaint-${V}-sdl2
-PKGNAME=		tuxpaint-${V}
+V=			0.9.29
+DISTNAME=		tuxpaint-${V}
 
 CATEGORIES=		games graphics
 
