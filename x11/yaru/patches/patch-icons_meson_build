@@ -1,12 +1,21 @@
 Index: icons/meson.build
 --- icons/meson.build.orig
 +++ icons/meson.build
-@@ -262,7 +262,7 @@ foreach flavour: icon_flavors
- 
+@@ -265,7 +265,7 @@ foreach flavour: icon_flavors
        if local_links.length() > 0
-         links_targets = run_command(
+         relative_to = meson.current_source_dir() / icon_dir
+         links_paths_getter = run_command(
 -          'realpath', '-e',
 +          'grealpath', '-e',
-           '--relative-to=' + meson.current_source_dir() / icon_dir,
+           '--relative-to=' + relative_to,
            local_links,
-           check: true,
+           check: false,
+@@ -275,7 +275,7 @@ foreach flavour: icon_flavors
+           failed_links = []
+           foreach link: local_links
+             if run_command(
+-              'realpath', '-e',
++              'grealpath', '-e',
+               '--relative-to=' + relative_to,
+               link,
+               check: false,
