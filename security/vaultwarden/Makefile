@@ -7,7 +7,7 @@ COMMENT =		unofficial bitwarden compatible server
 
 GH_ACCOUNT =		dani-garcia
 GH_PROJECT =		vaultwarden
-GH_TAGNAME =		1.28.0
+GH_TAGNAME =		1.28.1
 
 CATEGORIES =		security
 
