@@ -15,10 +15,6 @@ lib/python${MODPY_VERSION}/site-packages/xmldiff/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/xmldiff/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/xmldiff/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/xmldiff/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/xmldiff/${MODPY_PYCACHE}_diff_match_patch_py2.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/xmldiff/${MODPY_PYCACHE}_diff_match_patch_py2.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/xmldiff/${MODPY_PYCACHE}_diff_match_patch_py3.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/xmldiff/${MODPY_PYCACHE}_diff_match_patch_py3.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xmldiff/${MODPY_PYCACHE}actions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/xmldiff/${MODPY_PYCACHE}actions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xmldiff/${MODPY_PYCACHE}diff.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -33,8 +29,6 @@ lib/python${MODPY_VERSION}/site-packages/xmldiff/${MODPY_PYCACHE}patch.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/xmldiff/${MODPY_PYCACHE}patch.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xmldiff/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/xmldiff/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/xmldiff/_diff_match_patch_py2.py
-lib/python${MODPY_VERSION}/site-packages/xmldiff/_diff_match_patch_py3.py
 lib/python${MODPY_VERSION}/site-packages/xmldiff/actions.py
 lib/python${MODPY_VERSION}/site-packages/xmldiff/diff.py
 lib/python${MODPY_VERSION}/site-packages/xmldiff/diff_match_patch.py
