@@ -4,7 +4,7 @@ use readline from ports.
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -16,7 +16,8 @@ AC_HEADER_TIOCGWINSZ
+@@ -17,7 +17,8 @@ AC_HEADER_TIOCGWINSZ
  AX_DEBUG_CFLAGS
  AX_WITH_CURSES
  AX_WITH_CURSES_PANEL
