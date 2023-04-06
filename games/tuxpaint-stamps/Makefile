@@ -2,7 +2,7 @@ PKG_ARCH=	*
 
 COMMENT=	rubber stamps collection for Tux Paint
 
-DISTNAME=	tuxpaint-stamps-2022.06.04
+DISTNAME=	tuxpaint-stamps-2023.04.02
 PKGNAME=	${DISTNAME:S/.//g}
 
 CATEGORIES=	games graphics
