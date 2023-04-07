@@ -16,10 +16,8 @@ MODULES=	lang/python
 FLAVORS=	python3
 FLAVOR=		python3
 
-MODPY_PYBUILD=	setuptools
+MODPY_PYBUILD=	hatchling
 MODPY_PI=	Yes
-
-MODPY_PYTEST_ARGS=	bs4
 
 RUN_DEPENDS=	www/py-soupsieve${MODPY_FLAVOR}
 
