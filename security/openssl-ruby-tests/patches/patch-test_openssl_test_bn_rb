@@ -1,0 +1,14 @@
+Do not expect that a particular modular square root is chosen
+
+Index: test/openssl/test_bn.rb
+--- test/openssl/test_bn.rb.orig
++++ test/openssl/test_bn.rb
+@@ -175,7 +175,7 @@ class OpenSSL::TestBN < OpenSSL::TestCase
+   end
+ 
+   def test_mod_sqrt
+-    assert_equal(3, 4.to_bn.mod_sqrt(5))
++    assert_equal(4, 4.to_bn.mod_sqrt(5).mod_sqr(5))
+     assert_equal(0, 5.to_bn.mod_sqrt(5))
+     assert_raise(OpenSSL::BNError) { 3.to_bn.mod_sqrt(5) }
+   end
