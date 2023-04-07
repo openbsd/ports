@@ -1,7 +1,7 @@
 Index: printing/print_settings_conversion.cc
 --- printing/print_settings_conversion.cc.orig
 +++ printing/print_settings_conversion.cc
-@@ -275,7 +275,7 @@ std::unique_ptr<PrintSettings> PrintSettingsFromJobSet
+@@ -277,7 +277,7 @@ std::unique_ptr<PrintSettings> PrintSettingsFromJobSet
      settings->set_is_modifiable(is_modifiable.value());
    }
  

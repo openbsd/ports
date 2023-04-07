@@ -19,12 +19,12 @@ Index: chrome/browser/safe_browsing/download_protection/file_analyzer.h
    void StartExtractDocumentFeatures();
    void OnDocumentAnalysisFinished(
        const DocumentAnalyzerResults& document_results);
-@@ -133,7 +133,7 @@ class FileAnalyzer {
-   scoped_refptr<SandboxedDMGAnalyzer> dmg_analyzer_;
+@@ -136,7 +136,7 @@ class FileAnalyzer {
+       dmg_analyzer_{nullptr, base::OnTaskRunnerDeleter(nullptr)};
  #endif
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
-   scoped_refptr<SandboxedDocumentAnalyzer> document_analyzer_;
+   std::unique_ptr<SandboxedDocumentAnalyzer, base::OnTaskRunnerDeleter>
+       document_analyzer_{nullptr, base::OnTaskRunnerDeleter(nullptr)};
    base::TimeTicks document_analysis_start_time_;
- #endif

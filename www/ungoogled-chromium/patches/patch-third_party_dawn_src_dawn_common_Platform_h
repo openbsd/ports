@@ -1,7 +1,7 @@
 Index: third_party/dawn/src/dawn/common/Platform.h
 --- third_party/dawn/src/dawn/common/Platform.h.orig
 +++ third_party/dawn/src/dawn/common/Platform.h
-@@ -45,6 +45,11 @@
+@@ -46,6 +46,11 @@
  #error "Unsupported Windows platform."
  #endif
  

@@ -19,7 +19,7 @@ Index: chrome/browser/safe_browsing/download_protection/file_analyzer.cc
    } else if (inspection_type == DownloadFileType::OFFICE_DOCUMENT) {
      StartExtractDocumentFeatures();
  #endif
-@@ -326,7 +326,7 @@ void FileAnalyzer::OnDmgAnalysisFinished(
+@@ -325,7 +325,7 @@ void FileAnalyzer::OnDmgAnalysisFinished(
  }
  #endif  // BUILDFLAG(IS_MAC)
  

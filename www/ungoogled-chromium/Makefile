@@ -7,7 +7,7 @@ DPB_PROPERTIES=		parallel parallel2
 
 COMMENT=		Chromium browser sans integration with Google
 
-V=			111.0.5563.147
+V=			112.0.5615.49
 UGV=			${V}-1
 
 DISTNAME=		ungoogled-chromium-${V}
@@ -215,7 +215,6 @@ GN_ARGS+=	build_with_tflite_lib=false \
 		clang_use_chrome_plugins=false \
 		disable_fieldtrial_testing_config=true \
 		enable_hangout_services_extension=false \
-		enable_js_type_check=false \
 		enable_mdns=false \
 		enable_mse_mpeg2ts_stream_parser=true \
 		enable_nacl=false \
