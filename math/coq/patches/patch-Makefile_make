@@ -1,0 +1,12 @@
+Index: Makefile.make
+--- Makefile.make.orig
++++ Makefile.make
+@@ -108,7 +108,7 @@ GENGRAMMLFILES := $(GRAMMLFILES) gramlib/.pack/gramlib
+ 
+ GENMLGFILES:= $(MLGFILES:.mlg=.ml)
+ GENMLFILES:=$(LEXFILES:.mll=.ml) $(YACCFILES:.mly=.ml) $(GENMLGFILES) $(GENGRAMMLFILES) ide/coqide/coqide_os_specific.ml kernel/vmopcodes.ml kernel/uint63.ml kernel/float64.ml
+-GENMLIFILES:=$(GRAMMLIFILES)
++GENMLIFILES:=$(GRAMMLIFILES) $(YACCFILES:.mly=.mli)
+ GENHFILES:=kernel/byterun/coq_instruct.h kernel/byterun/coq_jumptbl.h
+ GENFILES:=$(GENMLFILES) $(GENMLIFILES) $(GENHFILES) kernel/genOpcodeFiles.exe
+ COQ_EXPORTED += GRAMFILES GRAMMLFILES GRAMMLIFILES GENMLFILES GENHFILES GENFILES
