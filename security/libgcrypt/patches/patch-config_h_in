@@ -1,0 +1,15 @@
+https://dev.gnupg.org/T6442
+
+Index: config.h.in
+--- config.h.in.orig
++++ config.h.in
+@@ -285,6 +285,9 @@
+ /* Define to 1 if you have the `getentropy' function. */
+ #undef HAVE_GETENTROPY
+ 
++/* Define to 1 if you have the `getrandom' function. */
++#undef HAVE_GETRANDOM
++
+ /* Define to 1 if you have the `gethrtime' function. */
+ #undef HAVE_GETHRTIME
+ 

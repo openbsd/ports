@@ -1,0 +1,14 @@
+https://dev.gnupg.org/T6442
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -18809,7 +18809,7 @@ _ACEOF
+ fi
+ done
+ 
+-for ac_func in explicit_bzero explicit_memset getentropy
++for ac_func in explicit_bzero explicit_memset getentropy getrandom
+ do :
+   as_ac_var=`$as_echo "ac_cv_func_$ac_func" | $as_tr_sh`
+ ac_fn_c_check_func "$LINENO" "$ac_func" "$as_ac_var"
