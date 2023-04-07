@@ -23,6 +23,9 @@ PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	https://www.weechat.org/files/src/
 
+# C++
+COMPILER=	base-clang ports-gcc
+
 MULTI_PACKAGES=	-main -lua -python -ruby -tcl
 
 WANTLIB-main += aspell c curl curses gcrypt gnutls gpg-error iconv
