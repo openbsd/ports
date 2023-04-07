@@ -108,7 +108,7 @@ Index: Makefile
  
  .PHONY: echo-thumb-starters
  echo-thumb-starters:
-@@ -968,35 +968,22 @@ install-nokia770:
+@@ -968,36 +968,23 @@ install-nokia770:
  install-xdg: src/tuxpaint.desktop src/tuxpaint-fullscreen.desktop src/org.tuxpaint.Tuxpaint.appdata.xml
  	@echo
  	@echo "...Installing launcher icon into desktop environment..."
@@ -141,6 +141,7 @@ Index: Makefile
 -	@if [ "x$(shell which update-desktop-database)" != "x" ]; then \
 -	  update-desktop-database ; \
 -	fi
+-	install --mode=0644 -Dt $(METAINFO_PREFIX) src/org.tuxpaint.Tuxpaint.appdata.xml
 +	${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(PREFIX)/share/icons/hicolor/192x192/apps ; \
 +	${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(PREFIX)/share/icons/hicolor/128x128/apps ; \
 +	${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(PREFIX)/share/icons/hicolor/96x96/apps ; \
@@ -157,9 +158,10 @@ Index: Makefile
 +	${BSD_INSTALL_DATA} data/images/icon32x32.png $(DESTDIR)$(PREFIX)/share/icons/hicolor/32x32/apps/tux4kids-tuxpaint.png ; \
 +	${BSD_INSTALL_DATA} data/images/icon22x22.png $(DESTDIR)$(PREFIX)/share/icons/hicolor/22x22/apps/tux4kids-tuxpaint.png ; \
 +	${BSD_INSTALL_DATA} data/images/icon16x16.png $(DESTDIR)$(PREFIX)/share/icons/hicolor/16x16/apps/tux4kids-tuxpaint.png ; \
- 	install --mode=0644 -Dt $(METAINFO_PREFIX) src/org.tuxpaint.Tuxpaint.appdata.xml
++	install -m0644 -D src/org.tuxpaint.Tuxpaint.appdata.xml $(METAINFO_PREFIX)/src/org.tuxpaint.Tuxpaint.appdata.xml
  
  # Install the PNG icon (for KDE desktop, etc.)
+ # and the 24-color 32x32 XPM (for other Window managers):
 @@ -1005,12 +992,9 @@ install-xdg: src/tuxpaint.desktop src/tuxpaint-fullscr
  install-icon:
  	@echo
