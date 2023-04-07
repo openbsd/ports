@@ -1,0 +1,16 @@
+Build GraphicsContextGLGBMTextureMapper.cpp separately so that epoll-shim does
+not taint the rest of the unified code:
+https://bugs.webkit.org/show_bug.cgi?id=253794
+
+Index: Source/WebCore/SourcesGTK.txt
+--- Source/WebCore/SourcesGTK.txt.orig
++++ Source/WebCore/SourcesGTK.txt
+@@ -83,7 +83,7 @@ platform/graphics/gbm/GBMDevice.cpp
+ platform/graphics/gbm/GraphicsContextGLANGLELinux.cpp
+ platform/graphics/gbm/GraphicsContextGLFallback.cpp
+ platform/graphics/gbm/GraphicsContextGLGBM.cpp
+-platform/graphics/gbm/GraphicsContextGLGBMTextureMapper.cpp
++platform/graphics/gbm/GraphicsContextGLGBMTextureMapper.cpp @no-unify
+ 
+ platform/graphics/glx/GLContextGLX.cpp @no-unify
+ 

@@ -4,7 +4,7 @@ build with an older webkitgtk4 package installed.
 Index: Source/cmake/OptionsCommon.cmake
 --- Source/cmake/OptionsCommon.cmake.orig
 +++ Source/cmake/OptionsCommon.cmake
-@@ -180,6 +180,9 @@ if (NOT PORT STREQUAL "GTK" AND NOT PORT STREQUAL "WPE
+@@ -210,6 +210,9 @@ if (NOT PORT STREQUAL "GTK" AND NOT PORT STREQUAL "WPE
      set(LIBEXEC_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/bin" CACHE PATH "Absolute path to install executables executed by the library")
  endif ()
  

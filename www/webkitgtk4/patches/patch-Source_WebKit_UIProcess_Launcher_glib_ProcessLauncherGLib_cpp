@@ -1,0 +1,15 @@
+This file only '#include "valgrind.h"' for OS(LINUX) and RUNNING_ON_VALGRIND
+will be left undefined.
+
+Index: Source/WebKit/UIProcess/Launcher/glib/ProcessLauncherGLib.cpp
+--- Source/WebKit/UIProcess/Launcher/glib/ProcessLauncherGLib.cpp.orig
++++ Source/WebKit/UIProcess/Launcher/glib/ProcessLauncherGLib.cpp
+@@ -91,7 +91,7 @@ static int connectionOptions()
+ 
+ static bool isSandboxEnabled(const ProcessLauncher::LaunchOptions& launchOptions)
+ {
+-#if !USE(SYSTEM_MALLOC)
++#if !USE(SYSTEM_MALLOC) && OS(LINUX)
+     if (RUNNING_ON_VALGRIND)
+         return false;
+ #endif

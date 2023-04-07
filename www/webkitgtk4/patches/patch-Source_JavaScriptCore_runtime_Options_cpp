@@ -5,7 +5,7 @@ JSC::parse<unsigned long>(char const*)'
 Index: Source/JavaScriptCore/runtime/Options.cpp
 --- Source/JavaScriptCore/runtime/Options.cpp.orig
 +++ Source/JavaScriptCore/runtime/Options.cpp
-@@ -91,7 +91,7 @@ std::optional<OptionsStorage::Unsigned> parse(const ch
+@@ -92,7 +92,7 @@ std::optional<OptionsStorage::Unsigned> parse(const ch
      return std::nullopt;
  }
  
@@ -14,7 +14,7 @@ Index: Source/JavaScriptCore/runtime/Options.cpp
  template<>
  std::optional<OptionsStorage::Size> parse(const char* string)
  {
-@@ -100,7 +100,7 @@ std::optional<OptionsStorage::Size> parse(const char* 
+@@ -101,7 +101,7 @@ std::optional<OptionsStorage::Size> parse(const char* 
          return value;
      return std::nullopt;
  }
