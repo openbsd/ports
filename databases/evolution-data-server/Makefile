@@ -2,6 +2,7 @@ COMMENT=		unified backend for PIM programs
 
 GNOME_PROJECT=		evolution-data-server
 GNOME_VERSION=		3.46.4
+REVISION=		0
 
 CATEGORIES=		databases productivity
 
@@ -47,7 +48,7 @@ LIB_DEPENDS= 		audio/libcanberra,-gtk3 \
 			security/nss \
 			textproc/libical,-glib \
 			www/webkitgtk4,webkitgtk41 \
-			www/webkitgtk4,webkitgtk50 \
+			www/webkitgtk50 \
 			x11/gnome/libgweather4 \
 			x11/gnome/online-accounts
 

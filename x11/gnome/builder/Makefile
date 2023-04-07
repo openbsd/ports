@@ -5,6 +5,7 @@ COMMENT=		IDE for GNOME
 
 GNOME_PROJECT=		gnome-builder
 GNOME_VERSION=		43.7
+REVISION=		0
 
 CATEGORIES=		devel
 
@@ -50,7 +51,7 @@ LIB_DEPENDS=		devel/jsonrpc-glib \
 			sysutils/dspy \
 			sysutils/libportal,-gtk4 \
 			textproc/cmark \
-			www/webkitgtk4,webkitgtk50 \
+			www/webkitgtk50 \
 			x11/gnome/libpanel \
 			x11/gtksourceview5
 

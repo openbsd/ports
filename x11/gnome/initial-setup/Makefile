@@ -2,6 +2,7 @@ COMMENT=		initial-setup firstboot-like tool
 
 GNOME_PROJECT=		gnome-initial-setup
 GNOME_VERSION=		43.2
+REVISION=		0
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
@@ -26,7 +27,7 @@ LIB_DEPENDS=		geo/geoclue2 \
 			geo/geocode-glib,soup3 \
 			inputmethods/ibus \
 			security/libpwquality \
-			www/webkitgtk4,webkitgtk50 \
+			www/webkitgtk50 \
 			x11/gnome/desktop,-gtk4 \
 			x11/gnome/gdm \
 			x11/gnome/libgweather4 \
