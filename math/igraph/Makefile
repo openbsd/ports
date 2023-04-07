@@ -36,7 +36,7 @@ CONFIGURE_ARGS += 	-DBUILD_SHARED_LIBS=ON \
 .include <bsd.port.arch.mk>
 .if ${PROPERTIES:Mlld}
 CONFIGURE_ARGS += 	-DIGRAPH_ENABLE_LTO=ON
-.endif
 
 DEBUG_PACKAGES = 	${BUILD_PACKAGES}
+.endif
 .include <bsd.port.mk>
