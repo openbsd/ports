@@ -1,7 +1,7 @@
 COMMENT=	POSIX-compliant command line shell
 
-DISTNAME=	yash-2.52
-RELEASE=	76153
+DISTNAME=	yash-2.54
+RELEASE=	78345
 CATEGORIES=	shells
 HOMEPAGE=	https://yash.osdn.jp/index.html.en
 
