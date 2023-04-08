@@ -15,7 +15,7 @@ Index: lib/Xm/VirtKeys.c
 +  Modifiers     EffectiveSMMask;
 +
 +  XDisplayKeycodes(dpy, &min_kc, &max_kc);
-+  if (keycode < min_kcode || (keycode - min_kcode) * ks_per_kc >= max_kc)
++  if (keycode < min_kcode || keycode > max_kc)
 +    return; 
 +
 +  EffectiveSMMask = EffectiveStdModMask( dpy, kc_map, ks_per_kc);
