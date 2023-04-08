@@ -1,6 +1,6 @@
 COMMENT=	HTML/XML parser that supports invalid markup
 
-MODPY_EGG_VERSION=	4.12.1
+MODPY_EGG_VERSION=	4.12.2
 DISTNAME=	beautifulsoup4-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 
