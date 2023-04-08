@@ -1,8 +1,7 @@
 COMMENT =		federated status conveyance
 
-DISTNAME =		honk-0.9.8
+DISTNAME =		honk-0.9.91
 CATEGORIES =		www
-REVISION =		0
 
 HOMEPAGE =		https://humungus.tedunangst.com/r/honk
 
@@ -14,8 +13,6 @@ PERMIT_PACKAGE =	Yes
 WANTLIB +=		c pthread sqlite3
 
 MASTER_SITES =		${HOMEPAGE}/d/
-DISTFILES =		${EXTRACT_ONLY} honk-{../v/tip/d/views/}icon.png
-EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_SUFX =		.tgz
 
 MODULES =		lang/go
@@ -34,7 +31,7 @@ post-build:
 	${MODGO_CMD} build ${MODGO_FLAGS} -o ${MODGO_WORKSPACE}/bin/${toy} \
 		${MODGO_WORKSPACE}/src/${ALL_TARGET}/toys/${toy}.go
 .endfor
-.for toy2 in gettoken wonkawonk
+.for toy2 in gettoken
 	${MODGO_CMD} build ${MODGO_FLAGS} -o ${MODGO_WORKSPACE}/bin/${toy2} \
 		${MODGO_WORKSPACE}/src/${ALL_TARGET}/toys/{${toy2}.go,fetch.go}
 .endfor
@@ -55,7 +52,5 @@ post-install:
 		${EXAMPLESDIR}/views/
 	${INSTALL_DATA} ${MODGO_WORKSPACE}/src/${ALL_TARGET}/schema.sql \
 		${EXAMPLESDIR}/
-	${INSTALL_DATA} ${DISTDIR}/honk-icon.png ${EXAMPLESDIR}/views/favicon.ico
-	${INSTALL_DATA} ${DISTDIR}/honk-icon.png ${EXAMPLESDIR}/views/icon.png
 
 .include <bsd.port.mk>

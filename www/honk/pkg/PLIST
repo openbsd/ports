@@ -6,7 +6,6 @@
 @bin bin/honk
 @bin bin/saytheday
 @bin bin/sprayandpray
-@bin bin/wonkawonk
 @bin bin/youvegothonks
 @man man/man1/hfcs.1
 @man man/man1/honk.1
@@ -71,8 +70,8 @@ share/examples/honk/views/chatter.html
 @sample ${LOCALSTATEDIR}/honk/views/chatter.html
 share/examples/honk/views/combos.html
 @sample ${LOCALSTATEDIR}/honk/views/combos.html
-share/examples/honk/views/favicon.ico
-@sample ${LOCALSTATEDIR}/honk/views/favicon.ico
+share/examples/honk/views/emus.html
+@sample ${LOCALSTATEDIR}/honk/views/emus.html
 share/examples/honk/views/funzone.html
 @sample ${LOCALSTATEDIR}/honk/views/funzone.html
 share/examples/honk/views/header.html
@@ -95,6 +94,8 @@ share/examples/honk/views/icon.png
 @sample ${LOCALSTATEDIR}/honk/views/icon.png
 share/examples/honk/views/login.html
 @sample ${LOCALSTATEDIR}/honk/views/login.html
+share/examples/honk/views/misc.js
+@sample ${LOCALSTATEDIR}/honk/views/misc.js
 share/examples/honk/views/msg.html
 @sample ${LOCALSTATEDIR}/honk/views/msg.html
 share/examples/honk/views/onts.html
@@ -103,7 +104,5 @@ share/examples/honk/views/pleroma.css
 @sample ${LOCALSTATEDIR}/honk/views/pleroma.css
 share/examples/honk/views/style.css
 @sample ${LOCALSTATEDIR}/honk/views/style.css
-share/examples/honk/views/wonk.js
-@sample ${LOCALSTATEDIR}/honk/views/wonk.js
 share/examples/honk/views/xzone.html
 @sample ${LOCALSTATEDIR}/honk/views/xzone.html

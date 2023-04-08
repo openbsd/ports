@@ -63,19 +63,15 @@ MAILTO=root
 Database Upgrade
 ================
 
-If you are upgrading from a version before 0.9.7, you will need to upgrade
+If you are upgrading from a version before 0.9.8, you will need to upgrade
 the database format:
 
 Stop the old honk process.
 honk# rcctl stop honk
 
-Backup the database.
-honk# doas -su _honk
-honk$ umask 077; cd ${LOCALSTATEDIR}/honk && honk backup `date +backup-%F`
-
 Perform the upgrade with the upgrade command.
-honk$ honk upgrade
-honk$ exit
+honk# doas -su _honk
+honk$ umask 077; cd ${LOCALSTATEDIR}/honk && honk upgrade && exit
 
 Restart.
 honk# rcctl start honk
