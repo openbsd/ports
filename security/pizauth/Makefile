@@ -1,6 +1,6 @@
 COMMENT =		OAuth2 authentication daemon
 
-V =			0.2.1
+V =			0.2.2
 DISTNAME =		pizauth-$V
 
 CATEGORIES =		mail security
