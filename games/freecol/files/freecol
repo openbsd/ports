@@ -8,4 +8,4 @@ if [ $(ulimit -Sd) -lt ${DATASIZE} ]; then
 		[ $? -eq 0 ] || exit
 fi
 
-exec `${TRUEPREFIX}/bin/javaPathHelper -c freecol` -Xmx512M -cp "${TRUEPREFIX}/share/freecol/FreeCol.jar" net.sf.freecol.FreeCol --freecol-data "${TRUEPREFIX}/share/freecol/data" ${1+"$@"}
+exec `${TRUEPREFIX}/bin/javaPathHelper -c freecol` -Xmx2048M -cp "${TRUEPREFIX}/share/freecol/FreeCol.jar" net.sf.freecol.FreeCol --freecol-data "${TRUEPREFIX}/share/freecol/data" ${1+"$@"}

@@ -1,10 +1,9 @@
 COMMENT =	free Colonization clone
-DISTNAME =	freecol-0.11.6
+DISTNAME =	freecol-1.0.0
 EXTRACT_SUFX =	.zip
 CATEGORIES =	games java x11
-REVISION =	3
 
-HOMEPAGE =	http://www.freecol.org/
+HOMEPAGE =	https://www.freecol.org/
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
@@ -12,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=freecol/}
 
 MODULES =		java
-MODJAVA_VER =		1.8+
+MODJAVA_VER =		11+
 
 RUN_DEPENDS =	java/javaPathHelper
 
