@@ -1,11 +1,10 @@
 COMMENT=	portable ASS/SSA subtitle renderer
 
-VER=		0.16.0
+VER=		0.17.1
 DISTNAME=	libass-${VER}
 CATEGORIES=	multimedia devel
 MASTER_SITES=	https://github.com/libass/libass/releases/download/${VER}/
 EXTRACT_SUFX=	.tar.xz
-REVISION=	0
 
 SHARED_LIBS=	ass	3.1
 
@@ -16,8 +15,8 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # ISC
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	${COMPILER_LIBCXX} expat fontconfig freetype fribidi \
-		glib-2.0 graphite2 harfbuzz iconv intl m pcre2-8 z
+WANTLIB=	${COMPILER_LIBCXX} expat fontconfig freetype fribidi glib-2.0 \
+		graphite2 harfbuzz iconv intl m pcre2-8 unibreak z
 
 COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
@@ -28,11 +27,12 @@ BUILD_DEPENDS+=	devel/nasm
 
 LIB_DEPENDS=	converters/libiconv \
 		devel/fribidi \
-		devel/harfbuzz
+		devel/harfbuzz \
+		textproc/libunibreak
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
-		ASFLAGS="-DPIC=1 "
+		ASFLAGS="-DPIC"
 
 .include <bsd.port.mk>
