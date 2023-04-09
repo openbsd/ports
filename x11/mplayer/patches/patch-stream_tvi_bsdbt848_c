@@ -13,7 +13,7 @@ Index: stream/tvi_bsdbt848.c
  #include <sys/audioio.h>
  #endif
  
-@@ -67,6 +68,9 @@
+@@ -67,11 +68,15 @@
  #include IOCTL_BT848_H_NAME
  #endif
  
@@ -23,15 +23,13 @@ Index: stream/tvi_bsdbt848.c
  #ifdef HAVE_SYS_SOUNDCARD_H
  #include <sys/soundcard.h>
  #else
-@@ -76,6 +80,7 @@
  #include <machine/soundcard.h>
- #endif
  #endif
 +#endif
  
  #include "libaf/af_format.h"
  #include "libmpcodecs/img_format.h"
-@@ -105,7 +110,13 @@ typedef struct priv {
+@@ -101,7 +106,13 @@ typedef struct priv {
  /* Audio */
      char *dspdev;
      int dspready;
@@ -45,7 +43,7 @@ Index: stream/tvi_bsdbt848.c
      int dspsamplesize;
      int dspstereo;
      int dspspeed;
-@@ -113,6 +124,9 @@ typedef struct priv {
+@@ -109,6 +120,9 @@ typedef struct priv {
      int dspframesize;
      int dsprate;
      long long dspbytesread;
@@ -55,7 +53,7 @@ Index: stream/tvi_bsdbt848.c
  
  /* Video */
      char *btdev;
-@@ -162,6 +176,15 @@ static priv_t *G_private=NULL;
+@@ -158,6 +172,15 @@ static priv_t *G_private=NULL;
  
  static int getinput(int innumber);
  
@@ -71,7 +69,7 @@ Index: stream/tvi_bsdbt848.c
  static void processframe(int signal)
  {
  struct timeval curtime;
-@@ -222,7 +245,9 @@ static tvi_handle_t *tvi_init_bsdbt848(tv_param_t* tv_
+@@ -218,7 +241,9 @@ static tvi_handle_t *tvi_init_bsdbt848(tv_param_t* tv_
  
      /* set audio device name */
      if (!tv_param->adevice)
@@ -82,7 +80,7 @@ Index: stream/tvi_bsdbt848.c
          priv->dspdev = strdup("/dev/sound");
  #else
          priv->dspdev = strdup("/dev/dsp");
-@@ -331,12 +356,39 @@ static int control(priv_t *priv, int cmd, void *arg)
+@@ -327,12 +352,39 @@ static int control(priv_t *priv, int cmd, void *arg)
          {
          int dspspeed = *(int *)arg;
  
@@ -123,7 +121,7 @@ Index: stream/tvi_bsdbt848.c
          priv->dspspeed = dspspeed;
  
          priv->dspframesize = priv->dspspeed*priv->dspsamplesize/8/
-@@ -645,12 +697,76 @@ priv->dspready = 1;
+@@ -641,12 +693,76 @@ priv->dspready = 1;
  priv->dspsamplesize = 16;
  priv->dspstereo = 1;
  priv->dspspeed = 44100;
@@ -200,7 +198,7 @@ Index: stream/tvi_bsdbt848.c
  if((priv->dspfd = open (priv->dspdev, O_RDONLY, 0)) < 0)
      {
      mp_msg(MSGT_TV, MSGL_ERR, MSGTR_TV_Bt848ErrorOpeningDspDev, strerror(errno));
-@@ -676,6 +792,8 @@ if(priv->dspready &&
+@@ -672,6 +788,8 @@ if(priv->dspready &&
      priv->dspready = 0;
      }
  
@@ -209,7 +207,7 @@ Index: stream/tvi_bsdbt848.c
  return 1;
  }
  
-@@ -699,7 +817,9 @@ if(ioctl(priv->btfd, METEORSSIGNAL, &marg) < 0)
+@@ -695,7 +813,9 @@ if(ioctl(priv->btfd, METEORSSIGNAL, &marg) < 0)
      return 0;
      }
  
@@ -219,7 +217,7 @@ Index: stream/tvi_bsdbt848.c
  
  gettimeofday(&curtime, NULL);
  
-@@ -738,10 +858,15 @@ if(ioctl(priv->btfd, METEORCAPTUR, &marg) < 0 )
+@@ -734,10 +854,15 @@ if(ioctl(priv->btfd, METEORCAPTUR, &marg) < 0 )
      return 0;
      }
  
@@ -237,7 +235,7 @@ Index: stream/tvi_bsdbt848.c
  priv->btfd = -1;
  
  priv->dspready = priv->videoready = 0;
-@@ -821,13 +946,21 @@ gettimeofday(&curtime, NULL);
+@@ -817,13 +942,21 @@ gettimeofday(&curtime, NULL);
  
  /* Get exactly one frame of audio, which forces video sync to audio.. */
  
@@ -260,7 +258,7 @@ Index: stream/tvi_bsdbt848.c
          {
          mp_msg(MSGT_TV, MSGL_ERR, MSGTR_TV_Bt848ErrorReadingAudio, strerror(errno));
          return 0;
-@@ -860,13 +993,19 @@ return priv->dspbytesread * 1.0 / priv->dsprate;
+@@ -856,13 +989,19 @@ return priv->dspbytesread * 1.0 / priv->dsprate;
  static int get_audio_framesize(priv_t *priv)
  {
  int bytesavail;

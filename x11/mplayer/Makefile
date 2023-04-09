@@ -1,9 +1,8 @@
 COMMENT=	movie player supporting many formats
 
-V=		20211106
+V=		20230409
 FFMPEG_V=	4.4.3
 DISTNAME=	mplayer-${V}
-REVISION=	6
 CATEGORIES=	x11 multimedia
 MASTER_SITES=	https://comstyle.com/source/
 EXTRACT_SUFX=	.tar.xz
@@ -19,8 +18,8 @@ WANTLIB=	EGL GL SDL X11 Xext Xinerama Xss Xv Xxf86dga Xxf86vm ass \
 		avcodec avformat avutil bluray bs2b bz2 c cdda_interface \
 		cdda_paranoia crypto dv dvdnav dvdread enca fontconfig \
 		freetype fribidi gif iconv jpeg m mng mp3lame curses png \
-		postproc pthread sndio ssl ${COMPILER_LIBCXX} swscale \
-		swresample util x264 xvidcore z
+		postproc pthread sndio ssl swscale swresample util x264 \
+		xvidcore z
 
 COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
