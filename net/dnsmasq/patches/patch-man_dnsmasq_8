@@ -17,8 +17,8 @@ Index: man/dnsmasq.8
  .TP
  .B \-v, --version
  Print the version number.
-@@ -2217,7 +2216,7 @@ and /share/ads-domains.gz containing a compressed
- list of ad server domains will save disk space with large ad-server blocklists.
+@@ -2231,7 +2230,7 @@ dig +short chaos txt cachesize.bind
+ 
  .SH CONFIG FILE
  At startup, dnsmasq reads
 -.I /etc/dnsmasq.conf,
@@ -26,7 +26,7 @@ Index: man/dnsmasq.8
  if it exists. (On
  FreeBSD, the file is 
  .I /usr/local/etc/dnsmasq.conf
-@@ -2676,7 +2675,7 @@ dnsmasq has no direct way of determining the charset i
+@@ -2681,7 +2680,7 @@ dnsmasq has no direct way of determining the charset i
  assume that it is the system default. 
   
  .SH FILES
