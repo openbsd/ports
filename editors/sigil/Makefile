@@ -3,11 +3,10 @@ USE_WXNEEDED =	Yes
 COMMENT =	EPUB ebook editor
 
 PKGNAME =	sigil-${GH_TAGNAME}
-REVISION =	0
 
 GH_ACCOUNT =	Sigil-Ebook
 GH_PROJECT =	Sigil
-GH_TAGNAME =	1.9.20
+GH_TAGNAME =	1.9.30
 
 CATEGORIES =	editors
 
