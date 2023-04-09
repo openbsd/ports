@@ -3,6 +3,8 @@ COMMENT =	length-agnostic SIMD with runtime dispatch
 GH_ACCOUNT =	google
 GH_PROJECT =	highway
 GH_TAGNAME =	1.0.3
+REVISION =	0
+
 CATEGORIES =	devel
 
 SHARED_LIBS +=	hwy		0.0 # 0.0
