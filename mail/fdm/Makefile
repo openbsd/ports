@@ -1,6 +1,6 @@
 COMMENT=	fetch, filter and deliver mail
 
-V=		2.1
+V=		2.2
 DISTNAME=	fdm-$V
 CATEGORIES=	mail
 
