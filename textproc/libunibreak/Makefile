@@ -1,12 +1,12 @@
 COMMENT=		implementation of the line and word breaking
 
-V=			5.0
+V=			5.1
 GH_ACCOUNT=		adah1972
 GH_PROJECT=		libunibreak
 GH_TAGNAME=		libunibreak_${V:S/./_/}
 PKGNAME=		${GH_PROJECT}-${V}
 
-SHARED_LIBS +=  unibreak             0.0      # 5.0
+SHARED_LIBS +=  unibreak             1.0      # 5.1
 
 CATEGORIES=		textproc
 
