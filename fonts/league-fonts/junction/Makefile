@@ -3,7 +3,7 @@ COMMENT =	humanist sans-serif typeface
 V =		1.001pre1
 DISTNAME =	Junction-$V
 LEAGUE_FONT =	junction
-REVISION =	0
+REVISION =	1
 
 MASTER_SITES =	https://distfiles.roadrunner.page/
 

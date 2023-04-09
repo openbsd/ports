@@ -2,7 +2,7 @@ COMMENT=	HTTP caching proxy
 
 DISTNAME=	polipo-1.1.1
 CATEGORIES=	www
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	http://www.pps.univ-paris-diderot.fr/~jch/software/polipo/
 

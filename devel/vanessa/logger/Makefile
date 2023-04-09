@@ -2,7 +2,7 @@ COMMENT=	provides a generic logging layer
 
 VERSION=	0.0.10
 DISTNAME=	vanessa_logger-${VERSION}
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS=	vanessa_logger			1.0	# 0.5
 

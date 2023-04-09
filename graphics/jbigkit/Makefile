@@ -1,6 +1,7 @@
 COMMENT =	lossless image compression library, with lightweight version
 
 DISTNAME =	jbigkit-2.1
+REVISION =	0
 
 SHARED_LIBS +=	jbig   3.0 # 2.0
 SHARED_LIBS +=	jbig85 3.0 # 2.0

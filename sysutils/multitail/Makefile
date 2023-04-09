@@ -2,7 +2,7 @@ COMMENT=	multi-window tail(1) utility
 
 DISTNAME=	multitail-6.4.2
 CATEGORIES=	sysutils
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	https://www.vanheusden.com/multitail/
 PORTROACH=	site:https://github.com/folkertvanheusden/multitail/releases/

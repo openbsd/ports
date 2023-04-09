@@ -2,6 +2,7 @@ COMMENT =	collection of puzzles games
 
 DISTNAME =	puzzles-20211021
 CATEGORIES =	games
+REVISION =	0
 
 MASTER_SITES =	https://rhaalovely.net/stuff/
 HOMEPAGE =	https://www.chiark.greenend.org.uk/~sgtatham/puzzles/

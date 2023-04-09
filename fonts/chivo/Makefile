@@ -2,7 +2,7 @@ COMMENT =	open-source Grotesque sans-serif typeface family
 
 # version numbers listed in README.md
 DISTNAME =	chivo-1.007
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	fonts
 

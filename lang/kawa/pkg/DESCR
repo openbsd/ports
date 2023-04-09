@@ -6,4 +6,4 @@ language", but includes a compiler and all the benefits of a "real"
 programming language, including optional static typing, so Kawa programs
 can be as efficient as Java.  Kawa is also a useful framework for
 implementing other programming languages on the Java platform. It has
-has many useful utility classes.
+many useful utility classes.

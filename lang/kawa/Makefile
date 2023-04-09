@@ -2,7 +2,7 @@ COMMENT=		Scheme and language framework for the Java platform
 
 DISTNAME=		kawa-3.1.1
 CATEGORIES=		lang java
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		https://www.gnu.org/software/kawa/
 

@@ -8,6 +8,7 @@ GL_TAGNAME =	v1.76.2
 CATEGORIES =	lang
 HOMEPAGE =	https://gitlab.com/${GL_ACCOUNT}/${GL_TAGNAME}
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
+REVISION =	0
 
 # AGPL-3.0+
 PERMIT_PACKAGE =	Yes

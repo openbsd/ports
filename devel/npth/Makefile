@@ -1,6 +1,7 @@
 COMMENT=	new GNU Portable Threads Library
 
 DISTNAME=	npth-1.6
+REVISION=	0
 
 SHARED_LIBS=	npth 1.0	# 1.1
 

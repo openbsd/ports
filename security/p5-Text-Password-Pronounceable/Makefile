@@ -4,7 +4,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Text-Password-Pronounceable-0.30
 FIX_EXTRACT_PERMISSIONS=Yes
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	security
 

@@ -1,7 +1,7 @@
 COMMENT=	set of Makefile fragments to manage LaTeX documents
 
 DISTNAME=	latex-mk-1.9.1
-REVISION=	1
+REVISION=	2
 CATEGORIES=	print
 HOMEPAGE=	http://latex-mk.sourceforge.net/
 
