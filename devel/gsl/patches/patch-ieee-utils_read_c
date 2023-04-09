@@ -1,5 +1,6 @@
---- ieee-utils/read.c.orig	Wed Nov 19 10:13:46 2008
-+++ ieee-utils/read.c	Mon Jun  1 15:27:59 2009
+Index: ieee-utils/read.c
+--- ieee-utils/read.c.orig
++++ ieee-utils/read.c
 @@ -41,14 +41,12 @@ gsl_ieee_read_mode_string (const char * description, 
    int rounding_count = 0 ;
    int exception_count = 0 ;

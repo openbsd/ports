@@ -3,8 +3,8 @@ programmers. It is free software under the GNU General Public License.
 The library provides a wide range of mathematical routines such as
 random number generators, special functions and least-squares
 fitting. There are over 1000 functions in total.
- 
-The complete range of subject areas covered by the library includes, 
+
+The complete range of subject areas covered by the library includes,
 
   Complex Numbers		Roots of Polynomials	Special Functions
   Vectors and Matrices  	Permutations		Sorting

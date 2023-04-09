@@ -20,6 +20,10 @@ include/gsl/gsl_block_uint.h
 include/gsl/gsl_block_ulong.h
 include/gsl/gsl_block_ushort.h
 include/gsl/gsl_bspline.h
+include/gsl/gsl_bst.h
+include/gsl/gsl_bst_avl.h
+include/gsl/gsl_bst_rb.h
+include/gsl/gsl_bst_types.h
 include/gsl/gsl_cblas.h
 include/gsl/gsl_cdf.h
 include/gsl/gsl_chebyshev.h
@@ -47,6 +51,7 @@ include/gsl/gsl_fft_halfcomplex.h
 include/gsl/gsl_fft_halfcomplex_float.h
 include/gsl/gsl_fft_real.h
 include/gsl/gsl_fft_real_float.h
+include/gsl/gsl_filter.h
 include/gsl/gsl_fit.h
 include/gsl/gsl_heapsort.h
 include/gsl/gsl_histogram.h
@@ -55,6 +60,7 @@ include/gsl/gsl_ieee_utils.h
 include/gsl/gsl_inline.h
 include/gsl/gsl_integration.h
 include/gsl/gsl_interp.h
+include/gsl/gsl_interp2d.h
 include/gsl/gsl_linalg.h
 include/gsl/gsl_machine.h
 include/gsl/gsl_math.h
@@ -81,8 +87,12 @@ include/gsl/gsl_monte.h
 include/gsl/gsl_monte_miser.h
 include/gsl/gsl_monte_plain.h
 include/gsl/gsl_monte_vegas.h
+include/gsl/gsl_movstat.h
 include/gsl/gsl_multifit.h
 include/gsl/gsl_multifit_nlin.h
+include/gsl/gsl_multifit_nlinear.h
+include/gsl/gsl_multilarge.h
+include/gsl/gsl_multilarge_nlinear.h
 include/gsl/gsl_multimin.h
 include/gsl/gsl_multiroots.h
 include/gsl/gsl_multiset.h
@@ -101,6 +111,21 @@ include/gsl/gsl_permute_float.h
 include/gsl/gsl_permute_int.h
 include/gsl/gsl_permute_long.h
 include/gsl/gsl_permute_long_double.h
+include/gsl/gsl_permute_matrix.h
+include/gsl/gsl_permute_matrix_char.h
+include/gsl/gsl_permute_matrix_complex_double.h
+include/gsl/gsl_permute_matrix_complex_float.h
+include/gsl/gsl_permute_matrix_complex_long_double.h
+include/gsl/gsl_permute_matrix_double.h
+include/gsl/gsl_permute_matrix_float.h
+include/gsl/gsl_permute_matrix_int.h
+include/gsl/gsl_permute_matrix_long.h
+include/gsl/gsl_permute_matrix_long_double.h
+include/gsl/gsl_permute_matrix_short.h
+include/gsl/gsl_permute_matrix_uchar.h
+include/gsl/gsl_permute_matrix_uint.h
+include/gsl/gsl_permute_matrix_ulong.h
+include/gsl/gsl_permute_matrix_ushort.h
 include/gsl/gsl_permute_short.h
 include/gsl/gsl_permute_uchar.h
 include/gsl/gsl_permute_uint.h
@@ -128,6 +153,7 @@ include/gsl/gsl_qrng.h
 include/gsl/gsl_randist.h
 include/gsl/gsl_rng.h
 include/gsl/gsl_roots.h
+include/gsl/gsl_rstat.h
 include/gsl/gsl_sf.h
 include/gsl/gsl_sf_airy.h
 include/gsl/gsl_sf_bessel.h
@@ -146,6 +172,7 @@ include/gsl/gsl_sf_expint.h
 include/gsl/gsl_sf_fermi_dirac.h
 include/gsl/gsl_sf_gamma.h
 include/gsl/gsl_sf_gegenbauer.h
+include/gsl/gsl_sf_hermite.h
 include/gsl/gsl_sf_hyperg.h
 include/gsl/gsl_sf_laguerre.h
 include/gsl/gsl_sf_lambert.h
@@ -155,6 +182,7 @@ include/gsl/gsl_sf_mathieu.h
 include/gsl/gsl_sf_pow_int.h
 include/gsl/gsl_sf_psi.h
 include/gsl/gsl_sf_result.h
+include/gsl/gsl_sf_sincos_pi.h
 include/gsl/gsl_sf_synchrotron.h
 include/gsl/gsl_sf_transport.h
 include/gsl/gsl_sf_trig.h
@@ -184,8 +212,26 @@ include/gsl/gsl_sort_vector_uchar.h
 include/gsl/gsl_sort_vector_uint.h
 include/gsl/gsl_sort_vector_ulong.h
 include/gsl/gsl_sort_vector_ushort.h
+include/gsl/gsl_spblas.h
 include/gsl/gsl_specfunc.h
+include/gsl/gsl_splinalg.h
 include/gsl/gsl_spline.h
+include/gsl/gsl_spline2d.h
+include/gsl/gsl_spmatrix.h
+include/gsl/gsl_spmatrix_char.h
+include/gsl/gsl_spmatrix_complex_double.h
+include/gsl/gsl_spmatrix_complex_float.h
+include/gsl/gsl_spmatrix_complex_long_double.h
+include/gsl/gsl_spmatrix_double.h
+include/gsl/gsl_spmatrix_float.h
+include/gsl/gsl_spmatrix_int.h
+include/gsl/gsl_spmatrix_long.h
+include/gsl/gsl_spmatrix_long_double.h
+include/gsl/gsl_spmatrix_short.h
+include/gsl/gsl_spmatrix_uchar.h
+include/gsl/gsl_spmatrix_uint.h
+include/gsl/gsl_spmatrix_ulong.h
+include/gsl/gsl_spmatrix_ushort.h
 include/gsl/gsl_statistics.h
 include/gsl/gsl_statistics_char.h
 include/gsl/gsl_statistics_double.h
@@ -221,11 +267,12 @@ include/gsl/gsl_vector_ushort.h
 include/gsl/gsl_version.h
 include/gsl/gsl_wavelet.h
 include/gsl/gsl_wavelet2d.h
+include/gsl/test_source.c
 @info info/gsl-ref.info
-lib/libgsl.a
+@static-lib lib/libgsl.a
 lib/libgsl.la
 @lib lib/libgsl.so.${LIBgsl_VERSION}
-lib/libgslcblas.a
+@static-lib lib/libgslcblas.a
 lib/libgslcblas.la
 @lib lib/libgslcblas.so.${LIBgslcblas_VERSION}
 lib/pkgconfig/gsl.pc

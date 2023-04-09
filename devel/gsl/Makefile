@@ -1,7 +1,6 @@
 COMMENT=	GNU Scientific Library
 
-DISTNAME=	gsl-1.15
-REVISION=	3
+DISTNAME=	gsl-2.7.1
 SHARED_LIBS +=	gslcblas             1.0      # .0.0
 SHARED_LIBS +=	gsl                  12.0     # .16.0
 

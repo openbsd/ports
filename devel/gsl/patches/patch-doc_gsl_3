@@ -1,7 +1,8 @@
 Fix rendering with mandoc(1).
 
---- doc/gsl.3.orig	Wed Apr  4 14:53:16 2012
-+++ doc/gsl.3	Wed Apr  4 14:53:25 2012
+Index: doc/gsl.3
+--- doc/gsl.3.orig
++++ doc/gsl.3
 @@ -11,9 +11,8 @@ team in C, and present a modern Applications Programmi
  level languages.
  .PP
