@@ -1,13 +1,14 @@
 COMMENT =	data visualization and analysis software
 
-VERSION =	2.9.0
-DISTNAME =	labplot-${VERSION}
+DISTNAME =	labplot-2.10.0
 
 CATEGORIES =	math x11
 
 HOMEPAGE =	https://labplot.kde.org/
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
+
+SHARED_LIBS +=  Vector_BLF                0.0 # 0.0
 
 # LGPL, GPL and many others
 PERMIT_PACKAGE =	Yes
@@ -26,7 +27,7 @@ WANTLIB += cantorlibs cerf cfitsio fftw3 gsl gslcblas hdf5 lz4
 WANTLIB += m markdown matio netcdf poppler poppler-qt5 spectre
 WANTLIB += z
 
-MASTER_SITES =	https://download.kde.org/stable/labplot/${VERSION}/
+MASTER_SITES =	https://download.kde.org/stable/labplot/
 EXTRACT_SUFX =	.tar.xz
 
 MODULES =	devel/kf5
