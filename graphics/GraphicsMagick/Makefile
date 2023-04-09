@@ -1,13 +1,12 @@
 COMMENT=	image processing tools with stable ABI
 
-DISTNAME=	GraphicsMagick-1.3.38
+DISTNAME=	GraphicsMagick-1.3.40
 CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=graphicsmagick/}
 EXTRACT_SUFX=	.tar.xz
-REVISION=	0
 
-SHARED_LIBS=	GraphicsMagick		9.2 \
-		GraphicsMagick++	6.0 \
+SHARED_LIBS=	GraphicsMagick		9.3 \
+		GraphicsMagick++	6.1 \
 		GraphicsMagickWand	4.0
 
 HOMEPAGE=	http://www.graphicsmagick.org/
