@@ -4,8 +4,8 @@ COMMENT-hunspell =	HunSpell plugin for Sonnet
 
 DISTNAME =		sonnet-${VERSION}
 
-SHARED_LIBS =		KF5SonnetCore		6.0
-SHARED_LIBS +=		KF5SonnetUi		5.0
+SHARED_LIBS =		KF5SonnetCore		7.0
+SHARED_LIBS +=		KF5SonnetUi		6.0
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Network Qt5Qml
 WANTLIB += Qt5QmlModels Qt5Quick Qt5Widgets c m

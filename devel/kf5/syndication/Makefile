@@ -1,7 +1,7 @@
 COMMENT =	RSS/Atom parser library
 DISTNAME =	syndication-${VERSION}
 
-SHARED_LIBS = KF5Syndication            1.0 # 5.68
+SHARED_LIBS = KF5Syndication            2.0 # 5.68
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Codecs Qt5Core Qt5Xml m
 

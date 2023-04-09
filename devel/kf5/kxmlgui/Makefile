@@ -1,7 +1,7 @@
 COMMENT =		KDE framework for managing menu and toolbar actions
 DISTNAME =		kxmlgui-${VERSION}
 
-SHARED_LIBS =		KF5XmlGui		6.6
+SHARED_LIBS =		KF5XmlGui		7.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5GlobalAccel

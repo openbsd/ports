@@ -1,7 +1,7 @@
 COMMENT =	KDE framework for Plasma runners
 DISTNAME =	krunner-${VERSION}
 
-SHARED_LIBS =		KF5Runner		8.3
+SHARED_LIBS =		KF5Runner		9.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Activities KF5ConfigCore KF5CoreAddons
 WANTLIB += KF5I18n KF5KIOCore KF5Package KF5Plasma KF5Service

@@ -1,7 +1,7 @@
 COMMENT =	global desktop keyboard shortcuts for KDE
 DISTNAME =	kglobalaccel-${VERSION}
 
-SHARED_LIBS =	KF5GlobalAccel		6.3
+SHARED_LIBS =	KF5GlobalAccel		7.0
 SHARED_LIBS +=	KF5GlobalAccelPrivate	6.3
 
 WANTLIB += ${COMPILER_LIBCXX} KF5ConfigCore KF5CoreAddons KF5Crash

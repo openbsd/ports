@@ -2,7 +2,7 @@ COMMENT =		KDE safe desktop-wide storage for passwords
 DISTNAME =		kwallet-${VERSION}
 PKGNAME =		kf5-kwallet-${VERSION}
 
-SHARED_LIBS =		KF5Wallet		6.0
+SHARED_LIBS =		KF5Wallet		7.0
 SHARED_LIBS +=		kwalletbackend5		6.1
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore

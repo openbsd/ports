@@ -1,9 +1,9 @@
 COMMENT =	KDE framework for sharing additional application data
 DISTNAME =	knewstuff-${VERSION}
 
-SHARED_LIBS +=  KF5NewStuff               6.2
-SHARED_LIBS +=  KF5NewStuffCore           6.4
-SHARED_LIBS +=  KF5NewStuffWidgets        0.0
+SHARED_LIBS +=  KF5NewStuff               7.0
+SHARED_LIBS +=  KF5NewStuffCore           7.0
+SHARED_LIBS +=  KF5NewStuffWidgets        1.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Attica KF5Auth KF5AuthCore
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
@@ -17,7 +17,8 @@ WANTLIB += Qt5QmlModels Qt5Quick Qt5Widgets Qt5Xml X11 c m
 BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/kf5/kirigami2>=${MODKF5_VERSION}
 
-RUN_DEPENDS =	devel/kf5/kirigami2>=${MODKF5_VERSION}
+RUN_DEPENDS =	devel/kf5/kirigami2>=${MODKF5_VERSION} \
+		devel/desktop-file-utils
 
 LIB_DEPENDS =	devel/kf5/karchive>=${MODKF5_VERSION} \
 		devel/kf5/attica>=${MODKF5_VERSION} \

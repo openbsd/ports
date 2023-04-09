@@ -190,6 +190,8 @@ share/locale/eu/LC_MESSAGES/balooshow5.mo
 share/locale/eu/LC_MESSAGES/kio5_baloosearch.mo
 share/locale/eu/LC_MESSAGES/kio5_tags.mo
 share/locale/eu/LC_MESSAGES/kio5_timeline.mo
+share/locale/fi/LC_MESSAGES/baloo_file5.mo
+share/locale/fi/LC_MESSAGES/baloo_file_extractor5.mo
 share/locale/fi/LC_MESSAGES/balooctl5.mo
 share/locale/fi/LC_MESSAGES/baloodb5.mo
 share/locale/fi/LC_MESSAGES/balooengine5.mo
@@ -328,6 +330,8 @@ share/locale/nl/LC_MESSAGES/balooshow5.mo
 share/locale/nl/LC_MESSAGES/kio5_baloosearch.mo
 share/locale/nl/LC_MESSAGES/kio5_tags.mo
 share/locale/nl/LC_MESSAGES/kio5_timeline.mo
+share/locale/nn/LC_MESSAGES/baloo_file5.mo
+share/locale/nn/LC_MESSAGES/baloo_file_extractor5.mo
 share/locale/nn/LC_MESSAGES/balooctl5.mo
 share/locale/nn/LC_MESSAGES/baloodb5.mo
 share/locale/nn/LC_MESSAGES/balooengine5.mo
@@ -390,6 +394,8 @@ share/locale/ru/LC_MESSAGES/balooshow5.mo
 share/locale/ru/LC_MESSAGES/kio5_baloosearch.mo
 share/locale/ru/LC_MESSAGES/kio5_tags.mo
 share/locale/ru/LC_MESSAGES/kio5_timeline.mo
+share/locale/sk/LC_MESSAGES/baloo_file5.mo
+share/locale/sk/LC_MESSAGES/baloo_file_extractor5.mo
 share/locale/sk/LC_MESSAGES/balooctl5.mo
 share/locale/sk/LC_MESSAGES/baloodb5.mo
 share/locale/sk/LC_MESSAGES/balooengine5.mo
