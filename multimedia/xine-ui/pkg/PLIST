@@ -25,6 +25,13 @@ man/fr/man1/
 @man man/man1/xine-check.1
 @man man/man1/xine-remote.1
 @man man/man1/xine.1
+man/nl/
+man/nl/man1/
+@man man/nl/man1/aaxine.1
+@man man/nl/man1/xine-bugreport.1
+@man man/nl/man1/xine-check.1
+@man man/nl/man1/xine-remote.1
+@man man/nl/man1/xine.1
 man/pl/
 man/pl/man1/
 @man man/pl/man1/aaxine.1
@@ -46,6 +53,14 @@ share/doc/xine-ui/README.en.30.Advanced
 share/doc/xine-ui/README.en.32.Window_managers
 share/doc/xine-ui/README.en.35.Legal_issues
 share/doc/xine-ui/README.en.5.xine-ui
+share/doc/xine-ui/README.nl.0.Introduction
+share/doc/xine-ui/README.nl.10.Remote_control
+share/doc/xine-ui/README.nl.15.MRLs
+share/doc/xine-ui/README.nl.25.VideoCD
+share/doc/xine-ui/README.nl.30.Advanced
+share/doc/xine-ui/README.nl.32.Window_managers
+share/doc/xine-ui/README.nl.35.Legal_issues
+share/doc/xine-ui/README.nl.5.xine-ui
 share/doc/xine-ui/README_cs
 share/doc/xine-ui/README_de
 share/doc/xine-ui/README_en
@@ -53,6 +68,7 @@ share/doc/xine-ui/README_es
 share/doc/xine-ui/README_fi
 share/doc/xine-ui/README_fr
 share/doc/xine-ui/README_it
+share/doc/xine-ui/README_nl
 share/doc/xine-ui/README_pl
 share/doc/xine-ui/README_uk
 share/doc/xitk/
@@ -80,6 +96,7 @@ share/locale/ja/LC_MESSAGES/xine-ui.mo
 share/locale/ja/LC_MESSAGES/xitk.mo
 share/locale/nb/LC_MESSAGES/xine-ui.mo
 share/locale/nb/LC_MESSAGES/xitk.mo
+share/locale/nl/LC_MESSAGES/xine-ui.mo
 share/locale/pl/LC_MESSAGES/xine-ui.mo
 share/locale/pl/LC_MESSAGES/xitk.mo
 share/locale/pt_BR/LC_MESSAGES/xine-ui.mo
@@ -110,6 +127,7 @@ share/xine/skins/xinetic/CtlBg.png
 share/xine/skins/xinetic/Letters.png
 share/xine/skins/xinetic/Letters2.png
 share/xine/skins/xinetic/LettersA.png
+share/xine/skins/xinetic/LettersHL.png
 share/xine/skins/xinetic/LettersHLA.png
 share/xine/skins/xinetic/MainBg.png
 share/xine/skins/xinetic/MainBits1.png

@@ -1,6 +1,6 @@
 COMMENT=	multimedia player
 
-DISTNAME=	xine-ui-0.99.13
+DISTNAME=	xine-ui-0.99.14
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xine/}
 EXTRACT_SUFX=	.tar.xz
@@ -11,7 +11,7 @@ HOMEPAGE=	https://www.xine-project.org/
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xext Xft Xinerama Xss Xtst Xv Xxf86vm c curl
-WANTLIB += iconv intl jpeg m curses png pthread readline xine z
+WANTLIB += iconv intl jpeg m curses png pthread readline xine
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		misc/shared-mime-info \
