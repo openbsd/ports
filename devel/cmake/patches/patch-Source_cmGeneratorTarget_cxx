@@ -1,9 +1,9 @@
 Index: Source/cmGeneratorTarget.cxx
 --- Source/cmGeneratorTarget.cxx.orig
 +++ Source/cmGeneratorTarget.cxx
-@@ -5183,6 +5183,50 @@ cmGeneratorTarget::Names cmGeneratorTarget::GetLibrary
-   // The library name.
-   targetNames.Output = prefix + targetNames.Base + suffix;
+@@ -5259,6 +5259,50 @@ cmGeneratorTarget::Names cmGeneratorTarget::GetLibrary
+   targetNames.Output =
+     components.prefix + targetNames.Base + components.suffix;
  
 +#if defined(__OpenBSD__)
 +  // Override shared library version using LIBxxx_VERSION
@@ -17,7 +17,7 @@ Index: Source/cmGeneratorTarget.cxx
 +  // Target name libXXX with PREFIX set to ""
 +  auto getLibName = [&](std::string& baseName) {
 +    const std::string toMatch = "lib";
-+    if (baseName.find(toMatch) == 0 && prefix == "")
++    if (baseName.find(toMatch) == 0 && components.prefix == "")
 +        return baseName.substr(toMatch.length());
 +    return baseName;
 +  };
@@ -50,5 +50,5 @@ Index: Source/cmGeneratorTarget.cxx
 +#endif
 +
    if (this->IsFrameworkOnApple()) {
-     targetNames.Real = prefix;
+     targetNames.Real = components.prefix;
      if (!this->Makefile->PlatformIsAppleEmbedded()) {
