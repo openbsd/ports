@@ -17,9 +17,6 @@ include/X11/qt6/QtSensors/${VERSION}/QtSensors/private/qpressuresensor_p.h
 include/X11/qt6/QtSensors/${VERSION}/QtSensors/private/qproximitysensor_p.h
 include/X11/qt6/QtSensors/${VERSION}/QtSensors/private/qrotationsensor_p.h
 include/X11/qt6/QtSensors/${VERSION}/QtSensors/private/qsensor_p.h
-include/X11/qt6/QtSensors/${VERSION}/QtSensors/private/qsensorbackend_p.h
-include/X11/qt6/QtSensors/${VERSION}/QtSensors/private/qsensorgesture_p.h
-include/X11/qt6/QtSensors/${VERSION}/QtSensors/private/qsensorgesturemanagerprivate_p.h
 include/X11/qt6/QtSensors/${VERSION}/QtSensors/private/qtapsensor_p.h
 include/X11/qt6/QtSensors/${VERSION}/QtSensors/private/qtiltsensor_p.h
 include/X11/qt6/QtSensors/${VERSION}/QtSensors/private/qtsensors-config_p.h
@@ -71,10 +68,6 @@ include/X11/qt6/QtSensors/QSensorBackend
 include/X11/qt6/QtSensors/QSensorBackendFactory
 include/X11/qt6/QtSensors/QSensorChangesInterface
 include/X11/qt6/QtSensors/QSensorFilter
-include/X11/qt6/QtSensors/QSensorGesture
-include/X11/qt6/QtSensors/QSensorGestureManager
-include/X11/qt6/QtSensors/QSensorGesturePluginInterface
-include/X11/qt6/QtSensors/QSensorGestureRecognizer
 include/X11/qt6/QtSensors/QSensorManager
 include/X11/qt6/QtSensors/QSensorPluginInterface
 include/X11/qt6/QtSensors/QSensorReading
@@ -103,10 +96,6 @@ include/X11/qt6/QtSensors/qproximitysensor.h
 include/X11/qt6/QtSensors/qrotationsensor.h
 include/X11/qt6/QtSensors/qsensor.h
 include/X11/qt6/QtSensors/qsensorbackend.h
-include/X11/qt6/QtSensors/qsensorgesture.h
-include/X11/qt6/QtSensors/qsensorgesturemanager.h
-include/X11/qt6/QtSensors/qsensorgestureplugininterface.h
-include/X11/qt6/QtSensors/qsensorgesturerecognizer.h
 include/X11/qt6/QtSensors/qsensormanager.h
 include/X11/qt6/QtSensors/qsensorplugin.h
 include/X11/qt6/QtSensors/qsensorsglobal.h
@@ -134,7 +123,6 @@ include/X11/qt6/QtSensorsQuick/${VERSION}/QtSensorsQuick/private/qmlpressuresens
 include/X11/qt6/QtSensorsQuick/${VERSION}/QtSensorsQuick/private/qmlproximitysensor_p.h
 include/X11/qt6/QtSensorsQuick/${VERSION}/QtSensorsQuick/private/qmlrotationsensor_p.h
 include/X11/qt6/QtSensorsQuick/${VERSION}/QtSensorsQuick/private/qmlsensor_p.h
-include/X11/qt6/QtSensorsQuick/${VERSION}/QtSensorsQuick/private/qmlsensorgesture_p.h
 include/X11/qt6/QtSensorsQuick/${VERSION}/QtSensorsQuick/private/qmlsensorglobal_p.h
 include/X11/qt6/QtSensorsQuick/${VERSION}/QtSensorsQuick/private/qmlsensorrange_p.h
 include/X11/qt6/QtSensorsQuick/${VERSION}/QtSensorsQuick/private/qmltapsensor_p.h
@@ -189,14 +177,16 @@ lib/libQt6Sensors.prl
 @lib lib/libQt6Sensors.so.${LIBQt6Sensors_VERSION}
 lib/libQt6SensorsQuick.prl
 @lib lib/libQt6SensorsQuick.so.${LIBQt6SensorsQuick_VERSION}
-lib/metatypes/qt6sensors_release_metatypes.json
-lib/metatypes/qt6sensorsquick_release_metatypes.json
 lib/pkgconfig/Qt6Sensors.pc
 lib/pkgconfig/Qt6SensorsQuick.pc
+lib/qt6/metatypes/qt6sensors_release_metatypes.json
+lib/qt6/metatypes/qt6sensorsquick_release_metatypes.json
 lib/qt6/mkspecs/modules/qt_lib_sensors.pri
 lib/qt6/mkspecs/modules/qt_lib_sensors_private.pri
 lib/qt6/mkspecs/modules/qt_lib_sensorsquick.pri
 lib/qt6/mkspecs/modules/qt_lib_sensorsquick_private.pri
+lib/qt6/modules/Sensors.json
+lib/qt6/modules/SensorsQuick.json
 lib/qt6/plugins/sensors/
 @so lib/qt6/plugins/sensors/libqtsensors_dummy.so
 @so lib/qt6/plugins/sensors/libqtsensors_generic.so
@@ -204,5 +194,3 @@ lib/qt6/qml/QtSensors/
 @so lib/qt6/qml/QtSensors/libsensorsquickplugin.so
 lib/qt6/qml/QtSensors/plugins.qmltypes
 lib/qt6/qml/QtSensors/qmldir
-share/qt6/modules/Sensors.json
-share/qt6/modules/SensorsQuick.json

@@ -10,7 +10,6 @@ include/X11/qt6/QtSvg/${VERSION}/QtSvg/private/qsvgstructure_p.h
 include/X11/qt6/QtSvg/${VERSION}/QtSvg/private/qsvgstyle_p.h
 include/X11/qt6/QtSvg/${VERSION}/QtSvg/private/qsvgtinydocument_p.h
 include/X11/qt6/QtSvg/${VERSION}/QtSvg/private/qtsvgexports_p.h
-include/X11/qt6/QtSvg/${VERSION}/QtSvg/private/qtsvgglobal_p.h
 include/X11/qt6/QtSvg/QSvgGenerator
 include/X11/qt6/QtSvg/QSvgRenderer
 include/X11/qt6/QtSvg/QtSvg
@@ -67,16 +66,16 @@ lib/libQt6Svg.prl
 @lib lib/libQt6Svg.so.${LIBQt6Svg_VERSION}
 lib/libQt6SvgWidgets.prl
 @lib lib/libQt6SvgWidgets.so.${LIBQt6SvgWidgets_VERSION}
-lib/metatypes/qt6svg_release_metatypes.json
-lib/metatypes/qt6svgwidgets_release_metatypes.json
 lib/pkgconfig/Qt6Svg.pc
 lib/pkgconfig/Qt6SvgWidgets.pc
+lib/qt6/metatypes/qt6svg_release_metatypes.json
+lib/qt6/metatypes/qt6svgwidgets_release_metatypes.json
 lib/qt6/mkspecs/modules/qt_lib_svg.pri
 lib/qt6/mkspecs/modules/qt_lib_svg_private.pri
 lib/qt6/mkspecs/modules/qt_lib_svgwidgets.pri
 lib/qt6/mkspecs/modules/qt_lib_svgwidgets_private.pri
+lib/qt6/modules/Svg.json
+lib/qt6/modules/SvgWidgets.json
 lib/qt6/plugins/iconengines/
 @so lib/qt6/plugins/iconengines/libqsvgicon.so
 @so lib/qt6/plugins/imageformats/libqsvg.so
-share/qt6/modules/Svg.json
-share/qt6/modules/SvgWidgets.json

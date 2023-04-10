@@ -209,14 +209,16 @@ lib/libQt6DataVisualization.prl
 @lib lib/libQt6DataVisualization.so.${LIBQt6DataVisualization_VERSION}
 lib/libQt6DataVisualizationQml.prl
 @lib lib/libQt6DataVisualizationQml.so.${LIBQt6DataVisualizationQml_VERSION}
-lib/metatypes/qt6datavisualization_release_metatypes.json
-lib/metatypes/qt6datavisualizationqml_release_metatypes.json
 lib/pkgconfig/Qt6DataVisualization.pc
 lib/pkgconfig/Qt6DataVisualizationQml.pc
+lib/qt6/metatypes/qt6datavisualization_release_metatypes.json
+lib/qt6/metatypes/qt6datavisualizationqml_release_metatypes.json
 lib/qt6/mkspecs/modules/qt_lib_datavisualization.pri
 lib/qt6/mkspecs/modules/qt_lib_datavisualization_private.pri
 lib/qt6/mkspecs/modules/qt_lib_datavisualizationqml.pri
 lib/qt6/mkspecs/modules/qt_lib_datavisualizationqml_private.pri
+lib/qt6/modules/DataVisualization.json
+lib/qt6/modules/DataVisualizationQml.json
 lib/qt6/qml/QtDataVisualization/
 lib/qt6/qml/QtDataVisualization/designer/
 lib/qt6/qml/QtDataVisualization/designer/Bars3DSpecifics.qml
@@ -237,5 +239,3 @@ lib/qt6/qml/QtDataVisualization/designer/qtdatavisualization.metainfo
 @so lib/qt6/qml/QtDataVisualization/libdatavisualizationqmlplugin.so
 lib/qt6/qml/QtDataVisualization/plugins.qmltypes
 lib/qt6/qml/QtDataVisualization/qmldir
-share/qt6/modules/DataVisualization.json
-share/qt6/modules/DataVisualizationQml.json

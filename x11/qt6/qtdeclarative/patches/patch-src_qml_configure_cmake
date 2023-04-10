@@ -2,7 +2,7 @@ Disable QML just-in-time compiler
 Index: src/qml/configure.cmake
 --- src/qml/configure.cmake.orig
 +++ src/qml/configure.cmake
-@@ -113,7 +113,7 @@ qt_feature("qml-jit" PRIVATE
+@@ -116,7 +116,7 @@ qt_feature("qml-jit" PRIVATE
      SECTION "QML"
      LABEL "QML just-in-time compiler"
      PURPOSE "Provides a JIT for QML and JavaScript"

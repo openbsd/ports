@@ -194,15 +194,15 @@ lib/libQt6StateMachine.prl
 @lib lib/libQt6StateMachine.so.${LIBQt6StateMachine_VERSION}
 lib/libQt6StateMachineQml.prl
 @lib lib/libQt6StateMachineQml.so.${LIBQt6StateMachineQml_VERSION}
-lib/metatypes/qt6scxml_release_metatypes.json
-lib/metatypes/qt6scxmlqml_release_metatypes.json
-lib/metatypes/qt6statemachine_release_metatypes.json
-lib/metatypes/qt6statemachineqml_release_metatypes.json
 lib/pkgconfig/Qt6Scxml.pc
 lib/pkgconfig/Qt6ScxmlQml.pc
 lib/pkgconfig/Qt6StateMachine.pc
 lib/pkgconfig/Qt6StateMachineQml.pc
 @bin lib/qt6/libexec/qscxmlc
+lib/qt6/metatypes/qt6scxml_release_metatypes.json
+lib/qt6/metatypes/qt6scxmlqml_release_metatypes.json
+lib/qt6/metatypes/qt6statemachine_release_metatypes.json
+lib/qt6/metatypes/qt6statemachineqml_release_metatypes.json
 lib/qt6/mkspecs/features/qscxmlc.prf
 lib/qt6/mkspecs/modules/qt_lib_scxml.pri
 lib/qt6/mkspecs/modules/qt_lib_scxml_private.pri
@@ -212,6 +212,10 @@ lib/qt6/mkspecs/modules/qt_lib_statemachine.pri
 lib/qt6/mkspecs/modules/qt_lib_statemachine_private.pri
 lib/qt6/mkspecs/modules/qt_lib_statemachineqml.pri
 lib/qt6/mkspecs/modules/qt_lib_statemachineqml_private.pri
+lib/qt6/modules/Scxml.json
+lib/qt6/modules/ScxmlQml.json
+lib/qt6/modules/StateMachine.json
+lib/qt6/modules/StateMachineQml.json
 lib/qt6/plugins/scxmldatamodel/
 @so lib/qt6/plugins/scxmldatamodel/libqscxmlecmascriptdatamodel.so
 lib/qt6/qml/QtQml/StateMachine/
@@ -222,7 +226,3 @@ lib/qt6/qml/QtScxml/
 @so lib/qt6/qml/QtScxml/libdeclarative_scxmlplugin.so
 lib/qt6/qml/QtScxml/plugins.qmltypes
 lib/qt6/qml/QtScxml/qmldir
-share/qt6/modules/Scxml.json
-share/qt6/modules/ScxmlQml.json
-share/qt6/modules/StateMachine.json
-share/qt6/modules/StateMachineQml.json

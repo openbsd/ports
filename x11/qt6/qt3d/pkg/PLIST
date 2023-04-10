@@ -133,7 +133,6 @@ include/X11/qt6/Qt3DCore/${VERSION}/Qt3DCore/private/calcboundingvolumejob_p.h
 include/X11/qt6/Qt3DCore/${VERSION}/Qt3DCore/private/corelogging_p.h
 include/X11/qt6/Qt3DCore/${VERSION}/Qt3DCore/private/coresettings_p.h
 include/X11/qt6/Qt3DCore/${VERSION}/Qt3DCore/private/job_common_p.h
-include/X11/qt6/Qt3DCore/${VERSION}/Qt3DCore/private/matrix4x4_avx2_p.h
 include/X11/qt6/Qt3DCore/${VERSION}/Qt3DCore/private/matrix4x4_p.h
 include/X11/qt6/Qt3DCore/${VERSION}/Qt3DCore/private/matrix4x4_sse_p.h
 include/X11/qt6/Qt3DCore/${VERSION}/Qt3DCore/private/nullservices_p.h
@@ -163,7 +162,6 @@ include/X11/qt6/Qt3DCore/${VERSION}/Qt3DCore/private/qcoreaspect_p.h
 include/X11/qt6/Qt3DCore/${VERSION}/Qt3DCore/private/qcoresettings_p.h
 include/X11/qt6/Qt3DCore/${VERSION}/Qt3DCore/private/qdestructionidandtypecollector_p.h
 include/X11/qt6/Qt3DCore/${VERSION}/Qt3DCore/private/qdownloadhelperservice_p.h
-include/X11/qt6/Qt3DCore/${VERSION}/Qt3DCore/private/qdownloadhelperservice_p_p.h
 include/X11/qt6/Qt3DCore/${VERSION}/Qt3DCore/private/qdownloadnetworkworker_p.h
 include/X11/qt6/Qt3DCore/${VERSION}/Qt3DCore/private/qentity_p.h
 include/X11/qt6/Qt3DCore/${VERSION}/Qt3DCore/private/qeventfilterservice_p.h
@@ -200,7 +198,6 @@ include/X11/qt6/Qt3DCore/${VERSION}/Qt3DCore/private/vector3d_sse_p.h
 include/X11/qt6/Qt3DCore/${VERSION}/Qt3DCore/private/vector4d_p.h
 include/X11/qt6/Qt3DCore/${VERSION}/Qt3DCore/private/vector4d_sse_p.h
 include/X11/qt6/Qt3DCore/${VERSION}/Qt3DCore/private/vector_helper_p.h
-include/X11/qt6/Qt3DCore/FunctorType
 include/X11/qt6/Qt3DCore/QAbstractAspect
 include/X11/qt6/Qt3DCore/QAbstractFunctor
 include/X11/qt6/Qt3DCore/QAbstractSkeleton
@@ -441,7 +438,6 @@ include/X11/qt6/Qt3DInput/${VERSION}/Qt3DInput/private/qaxis_p.h
 include/X11/qt6/Qt3DInput/${VERSION}/Qt3DInput/private/qaxisaccumulator_p.h
 include/X11/qt6/Qt3DInput/${VERSION}/Qt3DInput/private/qaxissetting_p.h
 include/X11/qt6/Qt3DInput/${VERSION}/Qt3DInput/private/qbuttonaxisinput_p.h
-include/X11/qt6/Qt3DInput/${VERSION}/Qt3DInput/private/qgamepadinput_p.h
 include/X11/qt6/Qt3DInput/${VERSION}/Qt3DInput/private/qgenericinputdevice_p.h
 include/X11/qt6/Qt3DInput/${VERSION}/Qt3DInput/private/qinputaspect_p.h
 include/X11/qt6/Qt3DInput/${VERSION}/Qt3DInput/private/qinputchord_p.h
@@ -887,7 +883,6 @@ include/X11/qt6/Qt3DRender/${VERSION}/Qt3DRender/private/sendbuffercapturejob_p.
 include/X11/qt6/Qt3DRender/${VERSION}/Qt3DRender/private/setfence_p.h
 include/X11/qt6/Qt3DRender/${VERSION}/Qt3DRender/private/shader_p.h
 include/X11/qt6/Qt3DRender/${VERSION}/Qt3DRender/private/shaderbuilder_p.h
-include/X11/qt6/Qt3DRender/${VERSION}/Qt3DRender/private/shadercache_p.h
 include/X11/qt6/Qt3DRender/${VERSION}/Qt3DRender/private/shaderdata_p.h
 include/X11/qt6/Qt3DRender/${VERSION}/Qt3DRender/private/shaderimage_p.h
 include/X11/qt6/Qt3DRender/${VERSION}/Qt3DRender/private/skeleton_p.h
@@ -903,7 +898,6 @@ include/X11/qt6/Qt3DRender/${VERSION}/Qt3DRender/private/technique_p.h
 include/X11/qt6/Qt3DRender/${VERSION}/Qt3DRender/private/techniquefilternode_p.h
 include/X11/qt6/Qt3DRender/${VERSION}/Qt3DRender/private/techniquemanager_p.h
 include/X11/qt6/Qt3DRender/${VERSION}/Qt3DRender/private/texture_p.h
-include/X11/qt6/Qt3DRender/${VERSION}/Qt3DRender/private/texturedatamanager_p.h
 include/X11/qt6/Qt3DRender/${VERSION}/Qt3DRender/private/textureimage_p.h
 include/X11/qt6/Qt3DRender/${VERSION}/Qt3DRender/private/transform_p.h
 include/X11/qt6/Qt3DRender/${VERSION}/Qt3DRender/private/triangleboundingvolume_p.h
@@ -922,8 +916,6 @@ include/X11/qt6/Qt3DRender/${VERSION}/Qt3DRender/private/visitorutils_p.h
 include/X11/qt6/Qt3DRender/${VERSION}/Qt3DRender/private/vsyncframeadvanceservice_p.h
 include/X11/qt6/Qt3DRender/${VERSION}/Qt3DRender/private/vulkaninstance_p.h
 include/X11/qt6/Qt3DRender/${VERSION}/Qt3DRender/private/waitfence_p.h
-include/X11/qt6/Qt3DRender/PropertyReaderInterface
-include/X11/qt6/Qt3DRender/PropertyReaderInterfacePtr
 include/X11/qt6/Qt3DRender/QAbstractLight
 include/X11/qt6/Qt3DRender/QAbstractRayCaster
 include/X11/qt6/Qt3DRender/QAbstractTexture
@@ -933,7 +925,6 @@ include/X11/qt6/Qt3DRender/QAlphaTest
 include/X11/qt6/Qt3DRender/QBlendEquation
 include/X11/qt6/Qt3DRender/QBlendEquationArguments
 include/X11/qt6/Qt3DRender/QBlitFramebuffer
-include/X11/qt6/Qt3DRender/QBufferCapture
 include/X11/qt6/Qt3DRender/QCamera
 include/X11/qt6/Qt3DRender/QCameraLens
 include/X11/qt6/Qt3DRender/QCameraSelector
@@ -1018,7 +1009,6 @@ include/X11/qt6/Qt3DRender/QStencilOperation
 include/X11/qt6/Qt3DRender/QStencilOperationArguments
 include/X11/qt6/Qt3DRender/QStencilTest
 include/X11/qt6/Qt3DRender/QStencilTestArguments
-include/X11/qt6/Qt3DRender/QSubtreeEnabler
 include/X11/qt6/Qt3DRender/QTechnique
 include/X11/qt6/Qt3DRender/QTechniqueFilter
 include/X11/qt6/Qt3DRender/QTexture
@@ -1372,18 +1362,6 @@ lib/libQt63DQuickScene2D.prl
 @lib lib/libQt63DQuickScene2D.so.${LIBQt63DQuickScene2D_VERSION}
 lib/libQt63DRender.prl
 @lib lib/libQt63DRender.so.${LIBQt63DRender_VERSION}
-lib/metatypes/qt63danimation_release_metatypes.json
-lib/metatypes/qt63dcore_release_metatypes.json
-lib/metatypes/qt63dextras_release_metatypes.json
-lib/metatypes/qt63dinput_release_metatypes.json
-lib/metatypes/qt63dlogic_release_metatypes.json
-lib/metatypes/qt63dquick_release_metatypes.json
-lib/metatypes/qt63dquickanimation_release_metatypes.json
-lib/metatypes/qt63dquickextras_release_metatypes.json
-lib/metatypes/qt63dquickinput_release_metatypes.json
-lib/metatypes/qt63dquickrender_release_metatypes.json
-lib/metatypes/qt63dquickscene2d_release_metatypes.json
-lib/metatypes/qt63drender_release_metatypes.json
 lib/pkgconfig/Qt63DAnimation.pc
 lib/pkgconfig/Qt63DCore.pc
 lib/pkgconfig/Qt63DExtras.pc
@@ -1396,6 +1374,18 @@ lib/pkgconfig/Qt63DQuickInput.pc
 lib/pkgconfig/Qt63DQuickRender.pc
 lib/pkgconfig/Qt63DQuickScene2D.pc
 lib/pkgconfig/Qt63DRender.pc
+lib/qt6/metatypes/qt63danimation_release_metatypes.json
+lib/qt6/metatypes/qt63dcore_release_metatypes.json
+lib/qt6/metatypes/qt63dextras_release_metatypes.json
+lib/qt6/metatypes/qt63dinput_release_metatypes.json
+lib/qt6/metatypes/qt63dlogic_release_metatypes.json
+lib/qt6/metatypes/qt63dquick_release_metatypes.json
+lib/qt6/metatypes/qt63dquickanimation_release_metatypes.json
+lib/qt6/metatypes/qt63dquickextras_release_metatypes.json
+lib/qt6/metatypes/qt63dquickinput_release_metatypes.json
+lib/qt6/metatypes/qt63dquickrender_release_metatypes.json
+lib/qt6/metatypes/qt63dquickscene2d_release_metatypes.json
+lib/qt6/metatypes/qt63drender_release_metatypes.json
 lib/qt6/mkspecs/modules/qt_lib_3danimation.pri
 lib/qt6/mkspecs/modules/qt_lib_3danimation_private.pri
 lib/qt6/mkspecs/modules/qt_lib_3dcore.pri
@@ -1420,6 +1410,18 @@ lib/qt6/mkspecs/modules/qt_lib_3dquickscene2d.pri
 lib/qt6/mkspecs/modules/qt_lib_3dquickscene2d_private.pri
 lib/qt6/mkspecs/modules/qt_lib_3drender.pri
 lib/qt6/mkspecs/modules/qt_lib_3drender_private.pri
+lib/qt6/modules/3DAnimation.json
+lib/qt6/modules/3DCore.json
+lib/qt6/modules/3DExtras.json
+lib/qt6/modules/3DInput.json
+lib/qt6/modules/3DLogic.json
+lib/qt6/modules/3DQuick.json
+lib/qt6/modules/3DQuickAnimation.json
+lib/qt6/modules/3DQuickExtras.json
+lib/qt6/modules/3DQuickInput.json
+lib/qt6/modules/3DQuickRender.json
+lib/qt6/modules/3DQuickScene2D.json
+lib/qt6/modules/3DRender.json
 lib/qt6/plugins/geometryloaders/
 @so lib/qt6/plugins/geometryloaders/libdefaultgeometryloader.so
 @so lib/qt6/plugins/geometryloaders/libgltfgeometryloader.so
@@ -1465,15 +1467,3 @@ lib/qt6/qml/QtQuick/Scene3D/
 @so lib/qt6/qml/QtQuick/Scene3D/libqtquickscene3dplugin.so
 lib/qt6/qml/QtQuick/Scene3D/plugins.qmltypes
 lib/qt6/qml/QtQuick/Scene3D/qmldir
-share/qt6/modules/3DAnimation.json
-share/qt6/modules/3DCore.json
-share/qt6/modules/3DExtras.json
-share/qt6/modules/3DInput.json
-share/qt6/modules/3DLogic.json
-share/qt6/modules/3DQuick.json
-share/qt6/modules/3DQuickAnimation.json
-share/qt6/modules/3DQuickExtras.json
-share/qt6/modules/3DQuickInput.json
-share/qt6/modules/3DQuickRender.json
-share/qt6/modules/3DQuickScene2D.json
-share/qt6/modules/3DRender.json

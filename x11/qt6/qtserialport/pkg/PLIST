@@ -5,8 +5,6 @@ include/X11/qt6/QtSerialPort/${VERSION}/QtSerialPort/private/
 include/X11/qt6/QtSerialPort/${VERSION}/QtSerialPort/private/qserialport_p.h
 include/X11/qt6/QtSerialPort/${VERSION}/QtSerialPort/private/qserialportinfo_p.h
 include/X11/qt6/QtSerialPort/${VERSION}/QtSerialPort/private/qtserialport-config_p.h
-include/X11/qt6/QtSerialPort/${VERSION}/QtSerialPort/private/qtudev_p.h
-include/X11/qt6/QtSerialPort/${VERSION}/QtSerialPort/private/qwinoverlappedionotifier_p.h
 include/X11/qt6/QtSerialPort/QSerialPort
 include/X11/qt6/QtSerialPort/QSerialPortInfo
 include/X11/qt6/QtSerialPort/QtSerialPort
@@ -30,8 +28,8 @@ lib/cmake/Qt6SerialPort/Qt6SerialPortTargets.cmake
 lib/cmake/Qt6SerialPort/Qt6SerialPortVersionlessTargets.cmake
 lib/libQt6SerialPort.prl
 @lib lib/libQt6SerialPort.so.${LIBQt6SerialPort_VERSION}
-lib/metatypes/qt6serialport_release_metatypes.json
 lib/pkgconfig/Qt6SerialPort.pc
+lib/qt6/metatypes/qt6serialport_release_metatypes.json
 lib/qt6/mkspecs/modules/qt_lib_serialport.pri
 lib/qt6/mkspecs/modules/qt_lib_serialport_private.pri
-share/qt6/modules/SerialPort.json
+lib/qt6/modules/SerialPort.json

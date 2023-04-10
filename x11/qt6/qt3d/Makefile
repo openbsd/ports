@@ -2,18 +2,18 @@ QT6NAME =	Qt3D
 COMMENT =	Qt6 components for 3D graphics
 PKGSPEC =	qt6-qt3d-${QT6_PKGSPEC}
 
-SHARED_LIBS +=  Qt63DAnimation            0.1 # 0.0
-SHARED_LIBS +=  Qt63DCore                 0.1 # 0.0
-SHARED_LIBS +=  Qt63DExtras               0.1 # 0.0
-SHARED_LIBS +=  Qt63DInput                0.1 # 0.0
-SHARED_LIBS +=  Qt63DLogic                0.0 # 0.0
-SHARED_LIBS +=  Qt63DQuick                0.1 # 0.0
-SHARED_LIBS +=  Qt63DQuickAnimation       0.0 # 0.0
-SHARED_LIBS +=  Qt63DQuickExtras          0.0 # 0.0
-SHARED_LIBS +=  Qt63DQuickInput           0.0 # 0.0
-SHARED_LIBS +=  Qt63DQuickRender          0.1 # 0.0
-SHARED_LIBS +=  Qt63DQuickScene2D         0.0 # 0.0
-SHARED_LIBS +=  Qt63DRender               1.0 # 0.0
+SHARED_LIBS +=  Qt63DAnimation            1.0 # 6.5
+SHARED_LIBS +=  Qt63DCore                 1.0 # 6.5
+SHARED_LIBS +=  Qt63DExtras               1.0 # 6.5
+SHARED_LIBS +=  Qt63DInput                1.0 # 6.5
+SHARED_LIBS +=  Qt63DLogic                1.0 # 6.5
+SHARED_LIBS +=  Qt63DQuick                1.0 # 6.5
+SHARED_LIBS +=  Qt63DQuickAnimation       1.0 # 6.5
+SHARED_LIBS +=  Qt63DQuickExtras          1.0 # 6.5
+SHARED_LIBS +=  Qt63DQuickInput           1.0 # 6.5
+SHARED_LIBS +=  Qt63DQuickRender          1.0 # 6.5
+SHARED_LIBS +=  Qt63DQuickScene2D         1.0 # 6.5
+SHARED_LIBS +=  Qt63DRender               1.0 # 6.5
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Concurrent Qt6Core Qt6Gui
 WANTLIB += Qt6Network Qt6OpenGL Qt6Qml Qt6QmlModels Qt6Quick Qt6ShaderTools
@@ -24,7 +24,7 @@ BUILD_DEPENDS =	x11/qt6/qtmultimedia \
 
 LIB_DEPENDS =	multimedia/assimp \
 		x11/qt6/qtshadertools \
-		x11/qt6/qtdeclarative
-
+		x11/qt6/qtdeclarative \
+		x11/xkbcommon
 
 .include <bsd.port.mk>

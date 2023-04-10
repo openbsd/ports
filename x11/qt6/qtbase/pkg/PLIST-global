@@ -132,6 +132,7 @@ share/doc/qt6/global/template/style/icomoon.ttf
 share/doc/qt6/global/template/style/icomoon.woff
 share/doc/qt6/global/template/style/list_arrow.png
 share/doc/qt6/global/template/style/list_expand.png
+share/doc/qt6/global/template/style/offline-dark.css
 share/doc/qt6/global/template/style/offline-simple.css
 share/doc/qt6/global/template/style/offline.css
 share/doc/qt6/global/template/style/online.css

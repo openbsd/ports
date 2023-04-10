@@ -77,6 +77,7 @@ include/X11/qt6/QtPositioningQuick/${VERSION}/QtPositioningQuick/private/qdeclar
 include/X11/qt6/QtPositioningQuick/${VERSION}/QtPositioningQuick/private/qdeclarativepluginparameter_p.h
 include/X11/qt6/QtPositioningQuick/${VERSION}/QtPositioningQuick/private/qdeclarativeposition_p.h
 include/X11/qt6/QtPositioningQuick/${VERSION}/QtPositioningQuick/private/qdeclarativepositionsource_p.h
+include/X11/qt6/QtPositioningQuick/${VERSION}/QtPositioningQuick/private/qdeclarativesatellitesource_p.h
 include/X11/qt6/QtPositioningQuick/${VERSION}/QtPositioningQuick/private/qpositioningquickglobal_p.h
 include/X11/qt6/QtPositioningQuick/${VERSION}/QtPositioningQuick/private/qpositioningquickmodule_p.h
 include/X11/qt6/QtPositioningQuick/${VERSION}/QtPositioningQuick/private/qquickgeocoordinateanimation_p.h
@@ -140,14 +141,16 @@ lib/libQt6Positioning.prl
 @lib lib/libQt6Positioning.so.${LIBQt6Positioning_VERSION}
 lib/libQt6PositioningQuick.prl
 @lib lib/libQt6PositioningQuick.so.${LIBQt6PositioningQuick_VERSION}
-lib/metatypes/qt6positioning_release_metatypes.json
-lib/metatypes/qt6positioningquick_release_metatypes.json
 lib/pkgconfig/Qt6Positioning.pc
 lib/pkgconfig/Qt6PositioningQuick.pc
+lib/qt6/metatypes/qt6positioning_release_metatypes.json
+lib/qt6/metatypes/qt6positioningquick_release_metatypes.json
 lib/qt6/mkspecs/modules/qt_lib_positioning.pri
 lib/qt6/mkspecs/modules/qt_lib_positioning_private.pri
 lib/qt6/mkspecs/modules/qt_lib_positioningquick.pri
 lib/qt6/mkspecs/modules/qt_lib_positioningquick_private.pri
+lib/qt6/modules/Positioning.json
+lib/qt6/modules/PositioningQuick.json
 lib/qt6/plugins/position/
 @so lib/qt6/plugins/position/libqtposition_geoclue2.so
 @so lib/qt6/plugins/position/libqtposition_nmea.so
@@ -156,5 +159,3 @@ lib/qt6/qml/QtPositioning/
 @so lib/qt6/qml/QtPositioning/libpositioningquickplugin.so
 lib/qt6/qml/QtPositioning/plugins.qmltypes
 lib/qt6/qml/QtPositioning/qmldir
-share/qt6/modules/Positioning.json
-share/qt6/modules/PositioningQuick.json

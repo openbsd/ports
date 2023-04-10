@@ -2,28 +2,18 @@ include/X11/qt6/QtCore5Compat/
 include/X11/qt6/QtCore5Compat/${VERSION}/
 include/X11/qt6/QtCore5Compat/${VERSION}/QtCore5Compat/
 include/X11/qt6/QtCore5Compat/${VERSION}/QtCore5Compat/private/
-include/X11/qt6/QtCore5Compat/${VERSION}/QtCore5Compat/private/cp949codetbl_p.h
-include/X11/qt6/QtCore5Compat/${VERSION}/QtCore5Compat/private/qbig5codec_p.h
 include/X11/qt6/QtCore5Compat/${VERSION}/QtCore5Compat/private/qbinaryjson_p.h
 include/X11/qt6/QtCore5Compat/${VERSION}/QtCore5Compat/private/qbinaryjsonarray_p.h
 include/X11/qt6/QtCore5Compat/${VERSION}/QtCore5Compat/private/qbinaryjsonobject_p.h
 include/X11/qt6/QtCore5Compat/${VERSION}/QtCore5Compat/private/qbinaryjsonvalue_p.h
-include/X11/qt6/QtCore5Compat/${VERSION}/QtCore5Compat/private/qeucjpcodec_p.h
-include/X11/qt6/QtCore5Compat/${VERSION}/QtCore5Compat/private/qeuckrcodec_p.h
-include/X11/qt6/QtCore5Compat/${VERSION}/QtCore5Compat/private/qgb18030codec_p.h
-include/X11/qt6/QtCore5Compat/${VERSION}/QtCore5Compat/private/qiconvcodec_p.h
 include/X11/qt6/QtCore5Compat/${VERSION}/QtCore5Compat/private/qicucodec_p.h
 include/X11/qt6/QtCore5Compat/${VERSION}/QtCore5Compat/private/qisciicodec_p.h
-include/X11/qt6/QtCore5Compat/${VERSION}/QtCore5Compat/private/qjiscodec_p.h
-include/X11/qt6/QtCore5Compat/${VERSION}/QtCore5Compat/private/qjpunicode_p.h
 include/X11/qt6/QtCore5Compat/${VERSION}/QtCore5Compat/private/qlatincodec_p.h
 include/X11/qt6/QtCore5Compat/${VERSION}/QtCore5Compat/private/qsimplecodec_p.h
-include/X11/qt6/QtCore5Compat/${VERSION}/QtCore5Compat/private/qsjiscodec_p.h
 include/X11/qt6/QtCore5Compat/${VERSION}/QtCore5Compat/private/qtcore5compat-config_p.h
 include/X11/qt6/QtCore5Compat/${VERSION}/QtCore5Compat/private/qtextcodec_p.h
 include/X11/qt6/QtCore5Compat/${VERSION}/QtCore5Compat/private/qtsciicodec_p.h
 include/X11/qt6/QtCore5Compat/${VERSION}/QtCore5Compat/private/qutfcodec_p.h
-include/X11/qt6/QtCore5Compat/${VERSION}/QtCore5Compat/private/qwindowscodec_p.h
 include/X11/qt6/QtCore5Compat/${VERSION}/QtCore5Compat/private/qxml_p.h
 include/X11/qt6/QtCore5Compat/QBinaryJson
 include/X11/qt6/QtCore5Compat/QConcatenable
@@ -88,10 +78,11 @@ lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateTargets${MODCMAKE_BUILD_
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateTargets.cmake
 lib/libQt6Core5Compat.prl
 @lib lib/libQt6Core5Compat.so.${LIBQt6Core5Compat_VERSION}
-lib/metatypes/qt6core5compat_release_metatypes.json
 lib/pkgconfig/Qt6Core5Compat.pc
+lib/qt6/metatypes/qt6core5compat_release_metatypes.json
 lib/qt6/mkspecs/modules/qt_lib_core5compat.pri
 lib/qt6/mkspecs/modules/qt_lib_core5compat_private.pri
+lib/qt6/modules/Core5Compat.json
 lib/qt6/qml/Qt5Compat/
 lib/qt6/qml/Qt5Compat/GraphicalEffects/
 lib/qt6/qml/Qt5Compat/GraphicalEffects/Blend.qml
@@ -130,6 +121,6 @@ lib/qt6/qml/Qt5Compat/GraphicalEffects/private/GaussianGlow.qml
 lib/qt6/qml/Qt5Compat/GraphicalEffects/private/GaussianInnerShadow.qml
 lib/qt6/qml/Qt5Compat/GraphicalEffects/private/GaussianMaskedBlur.qml
 @so lib/qt6/qml/Qt5Compat/GraphicalEffects/private/libqtgraphicaleffectsprivateplugin.so
+lib/qt6/qml/Qt5Compat/GraphicalEffects/private/plugins.qmltypes
 lib/qt6/qml/Qt5Compat/GraphicalEffects/private/qmldir
 lib/qt6/qml/Qt5Compat/GraphicalEffects/qmldir
-share/qt6/modules/Core5Compat.json

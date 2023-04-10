@@ -3,7 +3,7 @@ include/X11/qt6/QtShaderTools/${VERSION}/
 include/X11/qt6/QtShaderTools/${VERSION}/QtShaderTools/
 include/X11/qt6/QtShaderTools/${VERSION}/QtShaderTools/private/
 include/X11/qt6/QtShaderTools/${VERSION}/QtShaderTools/private/qshaderbaker_p.h
-include/X11/qt6/QtShaderTools/${VERSION}/QtShaderTools/private/qshaderbatchablerewriter_p.h
+include/X11/qt6/QtShaderTools/${VERSION}/QtShaderTools/private/qshaderrewriter_p.h
 include/X11/qt6/QtShaderTools/${VERSION}/QtShaderTools/private/qspirvcompiler_p.h
 include/X11/qt6/QtShaderTools/${VERSION}/QtShaderTools/private/qspirvshader_p.h
 include/X11/qt6/QtShaderTools/${VERSION}/QtShaderTools/private/qspirvshaderremap_p.h
@@ -37,9 +37,9 @@ lib/cmake/Qt6ShaderToolsTools/Qt6ShaderToolsToolsTargets.cmake
 lib/cmake/Qt6ShaderToolsTools/Qt6ShaderToolsToolsVersionlessTargets.cmake
 lib/libQt6ShaderTools.prl
 @lib lib/libQt6ShaderTools.so.${LIBQt6ShaderTools_VERSION}
-lib/metatypes/qt6shadertools_release_metatypes.json
 lib/pkgconfig/Qt6ShaderTools.pc
 @bin lib/qt6/bin/qsb
+lib/qt6/metatypes/qt6shadertools_release_metatypes.json
 lib/qt6/mkspecs/modules/qt_lib_shadertools.pri
 lib/qt6/mkspecs/modules/qt_lib_shadertools_private.pri
-share/qt6/modules/ShaderTools.json
+lib/qt6/modules/ShaderTools.json

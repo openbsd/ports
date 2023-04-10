@@ -8,14 +8,17 @@ include/X11/qt6/QtQuick3D/${VERSION}/QtQuick3D/private/qquick3dcamera_p.h
 include/X11/qt6/QtQuick3D/${VERSION}/QtQuick3D/private/qquick3dcubemaptexture_p.h
 include/X11/qt6/QtQuick3D/${VERSION}/QtQuick3D/private/qquick3dcustomcamera_p.h
 include/X11/qt6/QtQuick3D/${VERSION}/QtQuick3D/private/qquick3dcustommaterial_p.h
+include/X11/qt6/QtQuick3D/${VERSION}/QtQuick3D/private/qquick3ddebugsettings_p.h
 include/X11/qt6/QtQuick3D/${VERSION}/QtQuick3D/private/qquick3ddefaultmaterial_p.h
 include/X11/qt6/QtQuick3D/${VERSION}/QtQuick3D/private/qquick3ddirectionallight_p.h
 include/X11/qt6/QtQuick3D/${VERSION}/QtQuick3D/private/qquick3deffect_p.h
+include/X11/qt6/QtQuick3D/${VERSION}/QtQuick3D/private/qquick3dfog_p.h
 include/X11/qt6/QtQuick3D/${VERSION}/QtQuick3D/private/qquick3dfrustumcamera_p.h
 include/X11/qt6/QtQuick3D/${VERSION}/QtQuick3D/private/qquick3dgeometry_p.h
 include/X11/qt6/QtQuick3D/${VERSION}/QtQuick3D/private/qquick3dinstancing_p.h
 include/X11/qt6/QtQuick3D/${VERSION}/QtQuick3D/private/qquick3ditem2d_p.h
 include/X11/qt6/QtQuick3D/${VERSION}/QtQuick3D/private/qquick3djoint_p.h
+include/X11/qt6/QtQuick3D/${VERSION}/QtQuick3D/private/qquick3dlightmapbaker_p.h
 include/X11/qt6/QtQuick3D/${VERSION}/QtQuick3D/private/qquick3dlightmapper_p.h
 include/X11/qt6/QtQuick3D/${VERSION}/QtQuick3D/private/qquick3dloader_p.h
 include/X11/qt6/QtQuick3D/${VERSION}/QtQuick3D/private/qquick3dmaterial_p.h
@@ -90,6 +93,7 @@ include/X11/qt6/QtQuick3DAssetUtils/${VERSION}/QtQuick3DAssetUtils/private/qquic
 include/X11/qt6/QtQuick3DAssetUtils/${VERSION}/QtQuick3DAssetUtils/private/qssgqmlutilities_p.h
 include/X11/qt6/QtQuick3DAssetUtils/${VERSION}/QtQuick3DAssetUtils/private/qssgrtutilities_p.h
 include/X11/qt6/QtQuick3DAssetUtils/${VERSION}/QtQuick3DAssetUtils/private/qssgscenedesc_p.h
+include/X11/qt6/QtQuick3DAssetUtils/${VERSION}/QtQuick3DAssetUtils/private/qssgsceneedit_p.h
 include/X11/qt6/QtQuick3DAssetUtils/${VERSION}/QtQuick3DAssetUtils/private/qtquick3dassetutilsexports_p.h
 include/X11/qt6/QtQuick3DAssetUtils/${VERSION}/QtQuick3DAssetUtils/private/qtquick3dassetutilsglobal_p.h
 include/X11/qt6/QtQuick3DAssetUtils/QtQuick3DAssetUtils
@@ -127,6 +131,7 @@ include/X11/qt6/QtQuick3DHelpers/${VERSION}/QtQuick3DHelpers/
 include/X11/qt6/QtQuick3DHelpers/${VERSION}/QtQuick3DHelpers/private/
 include/X11/qt6/QtQuick3DHelpers/${VERSION}/QtQuick3DHelpers/private/gridgeometry_p.h
 include/X11/qt6/QtQuick3DHelpers/${VERSION}/QtQuick3DHelpers/private/heightfieldgeometry_p.h
+include/X11/qt6/QtQuick3DHelpers/${VERSION}/QtQuick3DHelpers/private/infinitegrid_p.h
 include/X11/qt6/QtQuick3DHelpers/${VERSION}/QtQuick3DHelpers/private/instancerepeater_p.h
 include/X11/qt6/QtQuick3DHelpers/${VERSION}/QtQuick3DHelpers/private/lookatnode_p.h
 include/X11/qt6/QtQuick3DHelpers/${VERSION}/QtQuick3DHelpers/private/proceduralskytexturedata_p.h
@@ -138,6 +143,18 @@ include/X11/qt6/QtQuick3DHelpers/QtQuick3DHelpersDepends
 include/X11/qt6/QtQuick3DHelpers/QtQuick3DHelpersVersion
 include/X11/qt6/QtQuick3DHelpers/qtquick3dhelpersexports.h
 include/X11/qt6/QtQuick3DHelpers/qtquick3dhelpersversion.h
+include/X11/qt6/QtQuick3DHelpersImpl/
+include/X11/qt6/QtQuick3DHelpersImpl/${VERSION}/
+include/X11/qt6/QtQuick3DHelpersImpl/${VERSION}/QtQuick3DHelpersImpl/
+include/X11/qt6/QtQuick3DHelpersImpl/${VERSION}/QtQuick3DHelpersImpl/private/
+include/X11/qt6/QtQuick3DHelpersImpl/${VERSION}/QtQuick3DHelpersImpl/private/qquick3drenderstatsmeshesmodel_p.h
+include/X11/qt6/QtQuick3DHelpersImpl/${VERSION}/QtQuick3DHelpersImpl/private/qquick3drenderstatspassesmodel_p.h
+include/X11/qt6/QtQuick3DHelpersImpl/${VERSION}/QtQuick3DHelpersImpl/private/qquick3drenderstatstexturesmodel_p.h
+include/X11/qt6/QtQuick3DHelpersImpl/${VERSION}/QtQuick3DHelpersImpl/private/sceneeffects_p.h
+include/X11/qt6/QtQuick3DHelpersImpl/QtQuick3DHelpersImpl
+include/X11/qt6/QtQuick3DHelpersImpl/QtQuick3DHelpersImplDepends
+include/X11/qt6/QtQuick3DHelpersImpl/QtQuick3DHelpersImplVersion
+include/X11/qt6/QtQuick3DHelpersImpl/qtquick3dhelpersimplversion.h
 include/X11/qt6/QtQuick3DIblBaker/
 include/X11/qt6/QtQuick3DIblBaker/${VERSION}/
 include/X11/qt6/QtQuick3DIblBaker/${VERSION}/QtQuick3DIblBaker/
@@ -196,6 +213,8 @@ include/X11/qt6/QtQuick3DRuntimeRender/
 include/X11/qt6/QtQuick3DRuntimeRender/${VERSION}/
 include/X11/qt6/QtQuick3DRuntimeRender/${VERSION}/QtQuick3DRuntimeRender/
 include/X11/qt6/QtQuick3DRuntimeRender/${VERSION}/QtQuick3DRuntimeRender/private/
+include/X11/qt6/QtQuick3DRuntimeRender/${VERSION}/QtQuick3DRuntimeRender/private/qssgcputonemapper_p.h
+include/X11/qt6/QtQuick3DRuntimeRender/${VERSION}/QtQuick3DRuntimeRender/private/qssgdebugdrawsystem_p.h
 include/X11/qt6/QtQuick3DRuntimeRender/${VERSION}/QtQuick3DRuntimeRender/private/qssglayerrenderdata_p.h
 include/X11/qt6/QtQuick3DRuntimeRender/${VERSION}/QtQuick3DRuntimeRender/private/qssglightmapper_p.h
 include/X11/qt6/QtQuick3DRuntimeRender/${VERSION}/QtQuick3DRuntimeRender/private/qssgperframeallocator_p.h
@@ -228,6 +247,7 @@ include/X11/qt6/QtQuick3DRuntimeRender/${VERSION}/QtQuick3DRuntimeRender/private
 include/X11/qt6/QtQuick3DRuntimeRender/${VERSION}/QtQuick3DRuntimeRender/private/qssgrendermorphtarget_p.h
 include/X11/qt6/QtQuick3DRuntimeRender/${VERSION}/QtQuick3DRuntimeRender/private/qssgrendernode_p.h
 include/X11/qt6/QtQuick3DRuntimeRender/${VERSION}/QtQuick3DRuntimeRender/private/qssgrenderparticles_p.h
+include/X11/qt6/QtQuick3DRuntimeRender/${VERSION}/QtQuick3DRuntimeRender/private/qssgrenderpass_p.h
 include/X11/qt6/QtQuick3DRuntimeRender/${VERSION}/QtQuick3DRuntimeRender/private/qssgrenderpickresult_p.h
 include/X11/qt6/QtQuick3DRuntimeRender/${VERSION}/QtQuick3DRuntimeRender/private/qssgrenderray_p.h
 include/X11/qt6/QtQuick3DRuntimeRender/${VERSION}/QtQuick3DRuntimeRender/private/qssgrenderreflectionmap_p.h
@@ -265,6 +285,7 @@ include/X11/qt6/QtQuick3DUtils/${VERSION}/QtQuick3DUtils/
 include/X11/qt6/QtQuick3DUtils/${VERSION}/QtQuick3DUtils/private/
 include/X11/qt6/QtQuick3DUtils/${VERSION}/QtQuick3DUtils/private/qqsbcollection_p.h
 include/X11/qt6/QtQuick3DUtils/${VERSION}/QtQuick3DUtils/private/qquick3dprofiler_p.h
+include/X11/qt6/QtQuick3DUtils/${VERSION}/QtQuick3DUtils/private/qssgassert_p.h
 include/X11/qt6/QtQuick3DUtils/${VERSION}/QtQuick3DUtils/private/qssgbounds3_p.h
 include/X11/qt6/QtQuick3DUtils/${VERSION}/QtQuick3DUtils/private/qssgdataref_p.h
 include/X11/qt6/QtQuick3DUtils/${VERSION}/QtQuick3DUtils/private/qssginvasivelinkedlist_p.h
@@ -272,7 +293,6 @@ include/X11/qt6/QtQuick3DUtils/${VERSION}/QtQuick3DUtils/private/qssglightmapuvg
 include/X11/qt6/QtQuick3DUtils/${VERSION}/QtQuick3DUtils/private/qssgmesh_p.h
 include/X11/qt6/QtQuick3DUtils/${VERSION}/QtQuick3DUtils/private/qssgmeshbvh_p.h
 include/X11/qt6/QtQuick3DUtils/${VERSION}/QtQuick3DUtils/private/qssgmeshbvhbuilder_p.h
-include/X11/qt6/QtQuick3DUtils/${VERSION}/QtQuick3DUtils/private/qssgoption_p.h
 include/X11/qt6/QtQuick3DUtils/${VERSION}/QtQuick3DUtils/private/qssgplane_p.h
 include/X11/qt6/QtQuick3DUtils/${VERSION}/QtQuick3DUtils/private/qssgrenderbasetypes_p.h
 include/X11/qt6/QtQuick3DUtils/${VERSION}/QtQuick3DUtils/private/qssgutils_p.h
@@ -281,8 +301,10 @@ include/X11/qt6/QtQuick3DUtils/${VERSION}/QtQuick3DUtils/private/qtquick3dutilsg
 include/X11/qt6/QtQuick3DUtils/QtQuick3DUtils
 include/X11/qt6/QtQuick3DUtils/QtQuick3DUtilsDepends
 include/X11/qt6/QtQuick3DUtils/QtQuick3DUtilsVersion
+include/X11/qt6/QtQuick3DUtils/meshoptimizer.h
 include/X11/qt6/QtQuick3DUtils/qtquick3dutilsexports.h
 include/X11/qt6/QtQuick3DUtils/qtquick3dutilsversion.h
+include/X11/qt6/QtQuick3DUtils/xatlas.h
 lib/cmake/Qt6/FindWrapQuick3DAssimp.cmake
 lib/cmake/Qt6BuildInternals/StandaloneTests/QtQuick3DTestsConfig.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qquick3dpluginAdditionalTargetInfo.cmake
@@ -303,6 +325,12 @@ lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3deffectpluginConfigVersion.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3deffectpluginConfigVersionImpl.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3deffectpluginTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3deffectpluginTargets.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dhelpersimplpluginAdditionalTargetInfo.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dhelpersimplpluginConfig.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dhelpersimplpluginConfigVersion.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dhelpersimplpluginConfigVersionImpl.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dhelpersimplpluginTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dhelpersimplpluginTargets.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dhelperspluginAdditionalTargetInfo.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dhelperspluginConfig.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dhelperspluginConfigVersion.cmake
@@ -389,6 +417,15 @@ lib/cmake/Qt6Quick3DHelpers/Qt6Quick3DHelpersDependencies.cmake
 lib/cmake/Qt6Quick3DHelpers/Qt6Quick3DHelpersTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Quick3DHelpers/Qt6Quick3DHelpersTargets.cmake
 lib/cmake/Qt6Quick3DHelpers/Qt6Quick3DHelpersVersionlessTargets.cmake
+lib/cmake/Qt6Quick3DHelpersImpl/
+lib/cmake/Qt6Quick3DHelpersImpl/Qt6Quick3DHelpersImplAdditionalTargetInfo.cmake
+lib/cmake/Qt6Quick3DHelpersImpl/Qt6Quick3DHelpersImplConfig.cmake
+lib/cmake/Qt6Quick3DHelpersImpl/Qt6Quick3DHelpersImplConfigVersion.cmake
+lib/cmake/Qt6Quick3DHelpersImpl/Qt6Quick3DHelpersImplConfigVersionImpl.cmake
+lib/cmake/Qt6Quick3DHelpersImpl/Qt6Quick3DHelpersImplDependencies.cmake
+lib/cmake/Qt6Quick3DHelpersImpl/Qt6Quick3DHelpersImplTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6Quick3DHelpersImpl/Qt6Quick3DHelpersImplTargets.cmake
+lib/cmake/Qt6Quick3DHelpersImpl/Qt6Quick3DHelpersImplVersionlessTargets.cmake
 lib/cmake/Qt6Quick3DIblBaker/
 lib/cmake/Qt6Quick3DIblBaker/Qt6Quick3DIblBakerAdditionalTargetInfo.cmake
 lib/cmake/Qt6Quick3DIblBaker/Qt6Quick3DIblBakerConfig.cmake
@@ -455,6 +492,8 @@ lib/libQt6Quick3DGlslParser.prl
 @lib lib/libQt6Quick3DGlslParser.so.${LIBQt6Quick3DGlslParser_VERSION}
 lib/libQt6Quick3DHelpers.prl
 @lib lib/libQt6Quick3DHelpers.so.${LIBQt6Quick3DHelpers_VERSION}
+lib/libQt6Quick3DHelpersImpl.prl
+@lib lib/libQt6Quick3DHelpersImpl.so.${LIBQt6Quick3DHelpersImpl_VERSION}
 lib/libQt6Quick3DIblBaker.prl
 @lib lib/libQt6Quick3DIblBaker.so.${LIBQt6Quick3DIblBaker_VERSION}
 lib/libQt6Quick3DParticleEffects.prl
@@ -465,22 +504,12 @@ lib/libQt6Quick3DRuntimeRender.prl
 @lib lib/libQt6Quick3DRuntimeRender.so.${LIBQt6Quick3DRuntimeRender_VERSION}
 lib/libQt6Quick3DUtils.prl
 @lib lib/libQt6Quick3DUtils.so.${LIBQt6Quick3DUtils_VERSION}
-lib/metatypes/qt6quick3d_release_metatypes.json
-lib/metatypes/qt6quick3dassetimport_release_metatypes.json
-lib/metatypes/qt6quick3dassetutils_release_metatypes.json
-lib/metatypes/qt6quick3deffects_release_metatypes.json
-lib/metatypes/qt6quick3dglslparserprivate_release_metatypes.json
-lib/metatypes/qt6quick3dhelpers_release_metatypes.json
-lib/metatypes/qt6quick3diblbaker_release_metatypes.json
-lib/metatypes/qt6quick3dparticleeffects_release_metatypes.json
-lib/metatypes/qt6quick3dparticles_release_metatypes.json
-lib/metatypes/qt6quick3druntimerender_release_metatypes.json
-lib/metatypes/qt6quick3dutils_release_metatypes.json
 lib/pkgconfig/Qt6Quick3D.pc
 lib/pkgconfig/Qt6Quick3DAssetImport.pc
 lib/pkgconfig/Qt6Quick3DAssetUtils.pc
 lib/pkgconfig/Qt6Quick3DEffects.pc
 lib/pkgconfig/Qt6Quick3DHelpers.pc
+lib/pkgconfig/Qt6Quick3DHelpersImpl.pc
 lib/pkgconfig/Qt6Quick3DIblBaker.pc
 lib/pkgconfig/Qt6Quick3DParticleEffects.pc
 lib/pkgconfig/Qt6Quick3DParticles.pc
@@ -493,6 +522,18 @@ lib/pkgconfig/Qt6Quick3DUtils.pc
 @bin lib/qt6/bin/meshdebug
 @bin lib/qt6/bin/shadergen
 @bin lib/qt6/bin/shapegen
+lib/qt6/metatypes/qt6quick3d_release_metatypes.json
+lib/qt6/metatypes/qt6quick3dassetimport_release_metatypes.json
+lib/qt6/metatypes/qt6quick3dassetutils_release_metatypes.json
+lib/qt6/metatypes/qt6quick3deffects_release_metatypes.json
+lib/qt6/metatypes/qt6quick3dglslparserprivate_release_metatypes.json
+lib/qt6/metatypes/qt6quick3dhelpers_release_metatypes.json
+lib/qt6/metatypes/qt6quick3dhelpersimpl_release_metatypes.json
+lib/qt6/metatypes/qt6quick3diblbaker_release_metatypes.json
+lib/qt6/metatypes/qt6quick3dparticleeffects_release_metatypes.json
+lib/qt6/metatypes/qt6quick3dparticles_release_metatypes.json
+lib/qt6/metatypes/qt6quick3druntimerender_release_metatypes.json
+lib/qt6/metatypes/qt6quick3dutils_release_metatypes.json
 lib/qt6/mkspecs/modules/qt_lib_quick3d.pri
 lib/qt6/mkspecs/modules/qt_lib_quick3d_private.pri
 lib/qt6/mkspecs/modules/qt_lib_quick3dassetimport.pri
@@ -504,6 +545,8 @@ lib/qt6/mkspecs/modules/qt_lib_quick3deffects_private.pri
 lib/qt6/mkspecs/modules/qt_lib_quick3dglslparser_private.pri
 lib/qt6/mkspecs/modules/qt_lib_quick3dhelpers.pri
 lib/qt6/mkspecs/modules/qt_lib_quick3dhelpers_private.pri
+lib/qt6/mkspecs/modules/qt_lib_quick3dhelpersimpl.pri
+lib/qt6/mkspecs/modules/qt_lib_quick3dhelpersimpl_private.pri
 lib/qt6/mkspecs/modules/qt_lib_quick3diblbaker.pri
 lib/qt6/mkspecs/modules/qt_lib_quick3diblbaker_private.pri
 lib/qt6/mkspecs/modules/qt_lib_quick3dparticleeffects.pri
@@ -514,6 +557,18 @@ lib/qt6/mkspecs/modules/qt_lib_quick3druntimerender.pri
 lib/qt6/mkspecs/modules/qt_lib_quick3druntimerender_private.pri
 lib/qt6/mkspecs/modules/qt_lib_quick3dutils.pri
 lib/qt6/mkspecs/modules/qt_lib_quick3dutils_private.pri
+lib/qt6/modules/Quick3D.json
+lib/qt6/modules/Quick3DAssetImport.json
+lib/qt6/modules/Quick3DAssetUtils.json
+lib/qt6/modules/Quick3DEffects.json
+lib/qt6/modules/Quick3DGlslParserPrivate.json
+lib/qt6/modules/Quick3DHelpers.json
+lib/qt6/modules/Quick3DHelpersImpl.json
+lib/qt6/modules/Quick3DIblBaker.json
+lib/qt6/modules/Quick3DParticleEffects.json
+lib/qt6/modules/Quick3DParticles.json
+lib/qt6/modules/Quick3DRuntimeRender.json
+lib/qt6/modules/Quick3DUtils.json
 lib/qt6/plugins/assetimporters/
 @so lib/qt6/plugins/assetimporters/libassimp.so
 @so lib/qt6/plugins/qmltooling/libqmldbg_quick3dprofiler.so
@@ -612,6 +667,8 @@ lib/qt6/qml/QtQuick3D/Effects/qmldir
 lib/qt6/qml/QtQuick3D/Helpers/
 lib/qt6/qml/QtQuick3D/Helpers/AxisHelper.qml
 lib/qt6/qml/QtQuick3D/Helpers/DebugView.qml
+lib/qt6/qml/QtQuick3D/Helpers/ExtendedSceneEnvironment.qml
+lib/qt6/qml/QtQuick3D/Helpers/LodManager.qml
 lib/qt6/qml/QtQuick3D/Helpers/OrbitCameraController.qml
 lib/qt6/qml/QtQuick3D/Helpers/WasdController.qml
 lib/qt6/qml/QtQuick3D/Helpers/designer/
@@ -619,18 +676,28 @@ lib/qt6/qml/QtQuick3D/Helpers/designer/AxisHelperSection.qml
 lib/qt6/qml/QtQuick3D/Helpers/designer/AxisHelperSpecifics.qml
 lib/qt6/qml/QtQuick3D/Helpers/designer/DebugViewSection.qml
 lib/qt6/qml/QtQuick3D/Helpers/designer/DebugViewSpecifics.qml
+lib/qt6/qml/QtQuick3D/Helpers/designer/ExtendedSceneEnvironmentSection.qml
+lib/qt6/qml/QtQuick3D/Helpers/designer/ExtendedSceneEnvironmentSpecifics.qml
 lib/qt6/qml/QtQuick3D/Helpers/designer/GridGeometrySection.qml
 lib/qt6/qml/QtQuick3D/Helpers/designer/GridGeometrySpecifics.qml
 lib/qt6/qml/QtQuick3D/Helpers/designer/HeightFieldGeometrySection.qml
 lib/qt6/qml/QtQuick3D/Helpers/designer/HeightFieldGeometrySpecifics.qml
 lib/qt6/qml/QtQuick3D/Helpers/designer/IdComboBox.qml
+lib/qt6/qml/QtQuick3D/Helpers/designer/InfiniteGridSection.qml
+lib/qt6/qml/QtQuick3D/Helpers/designer/InfiniteGridSpecifics.qml
 lib/qt6/qml/QtQuick3D/Helpers/designer/InstanceModelSection.qml
 lib/qt6/qml/QtQuick3D/Helpers/designer/InstanceModelSpecifics.qml
 lib/qt6/qml/QtQuick3D/Helpers/designer/InstanceRepeaterSection.qml
 lib/qt6/qml/QtQuick3D/Helpers/designer/InstanceRepeaterSpecifics.qml
+lib/qt6/qml/QtQuick3D/Helpers/designer/LodManagerSection.qml
+lib/qt6/qml/QtQuick3D/Helpers/designer/LodManagerSpecifics.qml
 lib/qt6/qml/QtQuick3D/Helpers/designer/LookAtNodeSection.qml
 lib/qt6/qml/QtQuick3D/Helpers/designer/LookAtNodeSpecifics.qml
 lib/qt6/qml/QtQuick3D/Helpers/designer/NodeSection.qml
+lib/qt6/qml/QtQuick3D/Helpers/designer/OrbitCameraControllerSection.qml
+lib/qt6/qml/QtQuick3D/Helpers/designer/OrbitCameraControllerSpecifics.qml
+lib/qt6/qml/QtQuick3D/Helpers/designer/ProceduralSkyTextureDataSection.qml
+lib/qt6/qml/QtQuick3D/Helpers/designer/ProceduralSkyTextureDataSpecifics.qml
 lib/qt6/qml/QtQuick3D/Helpers/designer/Repeater3DSection.qml
 lib/qt6/qml/QtQuick3D/Helpers/designer/WasdControllerSection.qml
 lib/qt6/qml/QtQuick3D/Helpers/designer/WasdControllerSpecifics.qml
@@ -645,29 +712,65 @@ lib/qt6/qml/QtQuick3D/Helpers/designer/images/debugview@2x.png
 lib/qt6/qml/QtQuick3D/Helpers/designer/images/dummy.png
 lib/qt6/qml/QtQuick3D/Helpers/designer/images/dummy16.png
 lib/qt6/qml/QtQuick3D/Helpers/designer/images/dummy@2x.png
+lib/qt6/qml/QtQuick3D/Helpers/designer/images/extendedsceneenvironment.png
+lib/qt6/qml/QtQuick3D/Helpers/designer/images/extendedsceneenvironment16.png
+lib/qt6/qml/QtQuick3D/Helpers/designer/images/extendedsceneenvironment@2x.png
 lib/qt6/qml/QtQuick3D/Helpers/designer/images/gridgeometry.png
 lib/qt6/qml/QtQuick3D/Helpers/designer/images/gridgeometry16.png
 lib/qt6/qml/QtQuick3D/Helpers/designer/images/gridgeometry@2x.png
 lib/qt6/qml/QtQuick3D/Helpers/designer/images/heightfieldgeometry.png
 lib/qt6/qml/QtQuick3D/Helpers/designer/images/heightfieldgeometry16.png
 lib/qt6/qml/QtQuick3D/Helpers/designer/images/heightfieldgeometry@2x.png
+lib/qt6/qml/QtQuick3D/Helpers/designer/images/infinitegrid.png
+lib/qt6/qml/QtQuick3D/Helpers/designer/images/infinitegrid16.png
+lib/qt6/qml/QtQuick3D/Helpers/designer/images/infinitegrid@2x.png
 lib/qt6/qml/QtQuick3D/Helpers/designer/images/instancemodel.png
 lib/qt6/qml/QtQuick3D/Helpers/designer/images/instancemodel16.png
 lib/qt6/qml/QtQuick3D/Helpers/designer/images/instancemodel@2x.png
 lib/qt6/qml/QtQuick3D/Helpers/designer/images/instancerepeater.png
 lib/qt6/qml/QtQuick3D/Helpers/designer/images/instancerepeater16.png
 lib/qt6/qml/QtQuick3D/Helpers/designer/images/instancerepeater@2x.png
+lib/qt6/qml/QtQuick3D/Helpers/designer/images/lodmanager.png
+lib/qt6/qml/QtQuick3D/Helpers/designer/images/lodmanager16.png
+lib/qt6/qml/QtQuick3D/Helpers/designer/images/lodmanager@2x.png
 lib/qt6/qml/QtQuick3D/Helpers/designer/images/lookatnode.png
 lib/qt6/qml/QtQuick3D/Helpers/designer/images/lookatnode16.png
 lib/qt6/qml/QtQuick3D/Helpers/designer/images/lookatnode@2x.png
+lib/qt6/qml/QtQuick3D/Helpers/designer/images/orbitcameracontroller.png
+lib/qt6/qml/QtQuick3D/Helpers/designer/images/orbitcameracontroller16.png
+lib/qt6/qml/QtQuick3D/Helpers/designer/images/orbitcameracontroller@2x.png
+lib/qt6/qml/QtQuick3D/Helpers/designer/images/proceduralskytexturedata.png
+lib/qt6/qml/QtQuick3D/Helpers/designer/images/proceduralskytexturedata16.png
+lib/qt6/qml/QtQuick3D/Helpers/designer/images/proceduralskytexturedata@2x.png
 lib/qt6/qml/QtQuick3D/Helpers/designer/images/wasdcontroller.png
 lib/qt6/qml/QtQuick3D/Helpers/designer/images/wasdcontroller16.png
 lib/qt6/qml/QtQuick3D/Helpers/designer/images/wasdcontroller@2x.png
+lib/qt6/qml/QtQuick3D/Helpers/impl/
+lib/qt6/qml/QtQuick3D/Helpers/impl/DepthOfFieldBlur.qml
+lib/qt6/qml/QtQuick3D/Helpers/impl/LightmapperOutputWindow.qml
+lib/qt6/qml/QtQuick3D/Helpers/impl/SceneEffect.qml
+@so lib/qt6/qml/QtQuick3D/Helpers/impl/libqtquick3dhelpersimplplugin.so
+lib/qt6/qml/QtQuick3D/Helpers/impl/plugins.qmltypes
+lib/qt6/qml/QtQuick3D/Helpers/impl/qmldir
 @so lib/qt6/qml/QtQuick3D/Helpers/libqtquick3dhelpersplugin.so
 lib/qt6/qml/QtQuick3D/Helpers/meshes/
 lib/qt6/qml/QtQuick3D/Helpers/meshes/axisGrid.mesh
 lib/qt6/qml/QtQuick3D/Helpers/plugins.qmltypes
 lib/qt6/qml/QtQuick3D/Helpers/qmldir
+lib/qt6/qml/QtQuick3D/MaterialEditor/
+lib/qt6/qml/QtQuick3D/MaterialEditor/AboutDialog.qml
+lib/qt6/qml/QtQuick3D/MaterialEditor/EditorView.qml
+lib/qt6/qml/QtQuick3D/MaterialEditor/FrostedGlass.qml
+lib/qt6/qml/QtQuick3D/MaterialEditor/MaterialPropertiesPane.qml
+lib/qt6/qml/QtQuick3D/MaterialEditor/Preview.qml
+lib/qt6/qml/QtQuick3D/MaterialEditor/PreviewControls.qml
+lib/qt6/qml/QtQuick3D/MaterialEditor/SaveChangesDialog.qml
+lib/qt6/qml/QtQuick3D/MaterialEditor/ShaderEditor.qml
+lib/qt6/qml/QtQuick3D/MaterialEditor/UniformManagerPane.qml
+lib/qt6/qml/QtQuick3D/MaterialEditor/main.qml
+lib/qt6/qml/QtQuick3D/MaterialEditor/plugins.qmltypes
+lib/qt6/qml/QtQuick3D/MaterialEditor/qmldir
+lib/qt6/qml/QtQuick3D/MaterialEditor/qtquickcontrols2.conf
 lib/qt6/qml/QtQuick3D/ParticleEffects/
 lib/qt6/qml/QtQuick3D/ParticleEffects/Quick3DParticleEffects.qmltypes
 lib/qt6/qml/QtQuick3D/ParticleEffects/designer/
@@ -841,6 +944,8 @@ lib/qt6/qml/QtQuick3D/designer/CubeMapTextureSpecifics.qml
 lib/qt6/qml/QtQuick3D/designer/CustomCameraSpecifics.qml
 lib/qt6/qml/QtQuick3D/designer/CustomMaterialSection.qml
 lib/qt6/qml/QtQuick3D/designer/CustomMaterialSpecifics.qml
+lib/qt6/qml/QtQuick3D/designer/DebugSettingsSection.qml
+lib/qt6/qml/QtQuick3D/designer/DebugSettingsSpecifics.qml
 lib/qt6/qml/QtQuick3D/designer/DefaultMaterialSection.qml
 lib/qt6/qml/QtQuick3D/designer/DefaultMaterialSpecifics.qml
 lib/qt6/qml/QtQuick3D/designer/DirectionalLightSection.qml
@@ -849,6 +954,8 @@ lib/qt6/qml/QtQuick3D/designer/EffectSection.qml
 lib/qt6/qml/QtQuick3D/designer/EffectSpecifics.qml
 lib/qt6/qml/QtQuick3D/designer/FileInstancingSection.qml
 lib/qt6/qml/QtQuick3D/designer/FileInstancingSpecifics.qml
+lib/qt6/qml/QtQuick3D/designer/FogSection.qml
+lib/qt6/qml/QtQuick3D/designer/FogSpecifics.qml
 lib/qt6/qml/QtQuick3D/designer/FrustumCameraSection.qml
 lib/qt6/qml/QtQuick3D/designer/FrustumCameraSpecifics.qml
 lib/qt6/qml/QtQuick3D/designer/IdComboBox.qml
@@ -856,8 +963,11 @@ lib/qt6/qml/QtQuick3D/designer/InstanceListEntrySection.qml
 lib/qt6/qml/QtQuick3D/designer/InstanceListEntrySpecifics.qml
 lib/qt6/qml/QtQuick3D/designer/InstanceListSection.qml
 lib/qt6/qml/QtQuick3D/designer/InstanceListSpecifics.qml
+lib/qt6/qml/QtQuick3D/designer/InstancingSection.qml
 lib/qt6/qml/QtQuick3D/designer/JointSection.qml
 lib/qt6/qml/QtQuick3D/designer/JointSpecifics.qml
+lib/qt6/qml/QtQuick3D/designer/LightmapperSection.qml
+lib/qt6/qml/QtQuick3D/designer/LightmapperSpecifics.qml
 lib/qt6/qml/QtQuick3D/designer/Loader3DSection.qml
 lib/qt6/qml/QtQuick3D/designer/Loader3DSpecifics.qml
 lib/qt6/qml/QtQuick3D/designer/MaterialSection.qml
@@ -882,6 +992,8 @@ lib/qt6/qml/QtQuick3D/designer/ReflectionProbeSection.qml
 lib/qt6/qml/QtQuick3D/designer/ReflectionProbeSpecifics.qml
 lib/qt6/qml/QtQuick3D/designer/Repeater3DSection.qml
 lib/qt6/qml/QtQuick3D/designer/Repeater3DSpecifics.qml
+lib/qt6/qml/QtQuick3D/designer/ResourceLoaderSection.qml
+lib/qt6/qml/QtQuick3D/designer/ResourceLoaderSpecifics.qml
 lib/qt6/qml/QtQuick3D/designer/SceneEnvironmentSection.qml
 lib/qt6/qml/QtQuick3D/designer/SceneEnvironmentSpecifics.qml
 lib/qt6/qml/QtQuick3D/designer/SetUniformValueSection.qml
@@ -889,6 +1001,8 @@ lib/qt6/qml/QtQuick3D/designer/SetUniformValueSpecifics.qml
 lib/qt6/qml/QtQuick3D/designer/ShaderSection.qml
 lib/qt6/qml/QtQuick3D/designer/ShaderSpecifics.qml
 lib/qt6/qml/QtQuick3D/designer/ShadowSection.qml
+lib/qt6/qml/QtQuick3D/designer/SkinSection.qml
+lib/qt6/qml/QtQuick3D/designer/SkinSpecifics.qml
 lib/qt6/qml/QtQuick3D/designer/SpecularGlossyMaterialSection.qml
 lib/qt6/qml/QtQuick3D/designer/SpecularGlossyMaterialSpecifics.qml
 lib/qt6/qml/QtQuick3D/designer/SpotLightSection.qml
@@ -918,6 +1032,9 @@ lib/qt6/qml/QtQuick3D/designer/images/custommaterial@2x.png
 lib/qt6/qml/QtQuick3D/designer/images/cylinder.png
 lib/qt6/qml/QtQuick3D/designer/images/cylinder16.png
 lib/qt6/qml/QtQuick3D/designer/images/cylinder@2x.png
+lib/qt6/qml/QtQuick3D/designer/images/debugsettings.png
+lib/qt6/qml/QtQuick3D/designer/images/debugsettings16.png
+lib/qt6/qml/QtQuick3D/designer/images/debugsettings@2x.png
 lib/qt6/qml/QtQuick3D/designer/images/dummy.png
 lib/qt6/qml/QtQuick3D/designer/images/dummy16.png
 lib/qt6/qml/QtQuick3D/designer/images/dummy@2x.png
@@ -927,6 +1044,9 @@ lib/qt6/qml/QtQuick3D/designer/images/effect@2x.png
 lib/qt6/qml/QtQuick3D/designer/images/fileinstancing.png
 lib/qt6/qml/QtQuick3D/designer/images/fileinstancing16.png
 lib/qt6/qml/QtQuick3D/designer/images/fileinstancing@2x.png
+lib/qt6/qml/QtQuick3D/designer/images/fog.png
+lib/qt6/qml/QtQuick3D/designer/images/fog16.png
+lib/qt6/qml/QtQuick3D/designer/images/fog@2x.png
 lib/qt6/qml/QtQuick3D/designer/images/group.png
 lib/qt6/qml/QtQuick3D/designer/images/group16.png
 lib/qt6/qml/QtQuick3D/designer/images/group@2x.png
@@ -942,6 +1062,9 @@ lib/qt6/qml/QtQuick3D/designer/images/joint@2x.png
 lib/qt6/qml/QtQuick3D/designer/images/lightdirectional.png
 lib/qt6/qml/QtQuick3D/designer/images/lightdirectional16.png
 lib/qt6/qml/QtQuick3D/designer/images/lightdirectional@2x.png
+lib/qt6/qml/QtQuick3D/designer/images/lightmapper.png
+lib/qt6/qml/QtQuick3D/designer/images/lightmapper16.png
+lib/qt6/qml/QtQuick3D/designer/images/lightmapper@2x.png
 lib/qt6/qml/QtQuick3D/designer/images/lightpoint.png
 lib/qt6/qml/QtQuick3D/designer/images/lightpoint16.png
 lib/qt6/qml/QtQuick3D/designer/images/lightpoint@2x.png
@@ -967,6 +1090,9 @@ lib/qt6/qml/QtQuick3D/designer/images/reflectionProbe@2x.png
 lib/qt6/qml/QtQuick3D/designer/images/repeater3d.png
 lib/qt6/qml/QtQuick3D/designer/images/repeater3d16.png
 lib/qt6/qml/QtQuick3D/designer/images/repeater3d@2x.png
+lib/qt6/qml/QtQuick3D/designer/images/resourceloader.png
+lib/qt6/qml/QtQuick3D/designer/images/resourceloader16.png
+lib/qt6/qml/QtQuick3D/designer/images/resourceloader@2x.png
 lib/qt6/qml/QtQuick3D/designer/images/scene.png
 lib/qt6/qml/QtQuick3D/designer/images/scene16.png
 lib/qt6/qml/QtQuick3D/designer/images/scene@2x.png
@@ -979,6 +1105,9 @@ lib/qt6/qml/QtQuick3D/designer/images/shaderutil@2x.png
 lib/qt6/qml/QtQuick3D/designer/images/skeleton.png
 lib/qt6/qml/QtQuick3D/designer/images/skeleton16.png
 lib/qt6/qml/QtQuick3D/designer/images/skeleton@2x.png
+lib/qt6/qml/QtQuick3D/designer/images/skin.png
+lib/qt6/qml/QtQuick3D/designer/images/skin16.png
+lib/qt6/qml/QtQuick3D/designer/images/skin@2x.png
 lib/qt6/qml/QtQuick3D/designer/images/sphere.png
 lib/qt6/qml/QtQuick3D/designer/images/sphere16.png
 lib/qt6/qml/QtQuick3D/designer/images/sphere@2x.png
@@ -998,14 +1127,3 @@ lib/qt6/qml/QtQuick3D/designer/source/view3D_template.qml
 @so lib/qt6/qml/QtQuick3D/libqquick3dplugin.so
 lib/qt6/qml/QtQuick3D/plugins.qmltypes
 lib/qt6/qml/QtQuick3D/qmldir
-share/qt6/modules/Quick3D.json
-share/qt6/modules/Quick3DAssetImport.json
-share/qt6/modules/Quick3DAssetUtils.json
-share/qt6/modules/Quick3DEffects.json
-share/qt6/modules/Quick3DGlslParserPrivate.json
-share/qt6/modules/Quick3DHelpers.json
-share/qt6/modules/Quick3DIblBaker.json
-share/qt6/modules/Quick3DParticleEffects.json
-share/qt6/modules/Quick3DParticles.json
-share/qt6/modules/Quick3DRuntimeRender.json
-share/qt6/modules/Quick3DUtils.json

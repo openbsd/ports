@@ -1,0 +1,21 @@
+Index: src/qml/memory/qv4stacklimits.cpp
+--- src/qml/memory/qv4stacklimits.cpp.orig
++++ src/qml/memory/qv4stacklimits.cpp
+@@ -14,7 +14,7 @@
+ #ifdef Q_OS_WIN
+ #  include <QtCore/qt_windows.h>
+ #elif defined(Q_OS_FREEBSD_KERNEL) || defined(Q_OS_OPENBSD)
+-#  include <pthread_np.h>
++#include <pthread_np.h>
+ #elif defined(Q_OS_LINUX)
+ #  include <unistd.h>
+ #  include <sys/resource.h> // for getrlimit()
+@@ -180,7 +180,7 @@ StackProperties stackProperties()
+     // the logical top of the stack.
+ 
+     stack_t ss;
+-    rc = pthread_stackseg_np(pthread_self, &ss);
++    int rc = pthread_stackseg_np(pthread_self(), &ss);
+ #if Q_STACK_GROWTH_DIRECTION < 0
+     return createStackProperties(ss.ss_sp);
+ #else

@@ -324,14 +324,16 @@ lib/libQt6Charts.prl
 @lib lib/libQt6Charts.so.${LIBQt6Charts_VERSION}
 lib/libQt6ChartsQml.prl
 @lib lib/libQt6ChartsQml.so.${LIBQt6ChartsQml_VERSION}
-lib/metatypes/qt6charts_release_metatypes.json
-lib/metatypes/qt6chartsqml_release_metatypes.json
 lib/pkgconfig/Qt6Charts.pc
 lib/pkgconfig/Qt6ChartsQml.pc
+lib/qt6/metatypes/qt6charts_release_metatypes.json
+lib/qt6/metatypes/qt6chartsqml_release_metatypes.json
 lib/qt6/mkspecs/modules/qt_lib_charts.pri
 lib/qt6/mkspecs/modules/qt_lib_charts_private.pri
 lib/qt6/mkspecs/modules/qt_lib_chartsqml.pri
 lib/qt6/mkspecs/modules/qt_lib_chartsqml_private.pri
+lib/qt6/modules/Charts.json
+lib/qt6/modules/ChartsQml.json
 lib/qt6/qml/QtCharts/
 lib/qt6/qml/QtCharts/designer/
 lib/qt6/qml/QtCharts/designer/ChartViewSpecifics.qml
@@ -389,5 +391,3 @@ lib/qt6/qml/QtCharts/designer/qtcharts.metainfo
 @so lib/qt6/qml/QtCharts/libqtchartsqml2plugin.so
 lib/qt6/qml/QtCharts/plugins.qmltypes
 lib/qt6/qml/QtCharts/qmldir
-share/qt6/modules/Charts.json
-share/qt6/modules/ChartsQml.json

@@ -3,10 +3,6 @@ include/X11/qt6/QtRemoteObjects/${VERSION}/
 include/X11/qt6/QtRemoteObjects/${VERSION}/QtRemoteObjects/
 include/X11/qt6/QtRemoteObjects/${VERSION}/QtRemoteObjects/private/
 include/X11/qt6/QtRemoteObjects/${VERSION}/QtRemoteObjects/private/qconnection_local_backend_p.h
-include/X11/qt6/QtRemoteObjects/${VERSION}/QtRemoteObjects/private/qconnection_qnx_backend_p.h
-include/X11/qt6/QtRemoteObjects/${VERSION}/QtRemoteObjects/private/qconnection_qnx_global_p.h
-include/X11/qt6/QtRemoteObjects/${VERSION}/QtRemoteObjects/private/qconnection_qnx_qiodevices_p.h
-include/X11/qt6/QtRemoteObjects/${VERSION}/QtRemoteObjects/private/qconnection_qnx_server_p.h
 include/X11/qt6/QtRemoteObjects/${VERSION}/QtRemoteObjects/private/qconnection_tcpip_backend_p.h
 include/X11/qt6/QtRemoteObjects/${VERSION}/QtRemoteObjects/private/qconnectionfactories_p.h
 include/X11/qt6/QtRemoteObjects/${VERSION}/QtRemoteObjects/private/qremoteobjectabstractitemmodeladapter_p.h
@@ -23,10 +19,7 @@ include/X11/qt6/QtRemoteObjects/${VERSION}/QtRemoteObjects/private/qremoteobject
 include/X11/qt6/QtRemoteObjects/${VERSION}/QtRemoteObjects/private/qtremoteobjects-config_p.h
 include/X11/qt6/QtRemoteObjects/QAbstractItemModelReplica
 include/X11/qt6/QtRemoteObjects/QConnectionAbstractServer
-include/X11/qt6/QtRemoteObjects/QIOQnxSource
 include/X11/qt6/QtRemoteObjects/QIntHash
-include/X11/qt6/QtRemoteObjects/QQnxNativeIo
-include/X11/qt6/QtRemoteObjects/QQnxNativeServer
 include/X11/qt6/QtRemoteObjects/QRemoteObjectAbstractPersistedStore
 include/X11/qt6/QtRemoteObjects/QRemoteObjectDynamicReplica
 include/X11/qt6/QtRemoteObjects/QRemoteObjectHost
@@ -50,8 +43,6 @@ include/X11/qt6/QtRemoteObjects/QtROServerIoDevice
 include/X11/qt6/QtRemoteObjects/QtRemoteObjects
 include/X11/qt6/QtRemoteObjects/QtRemoteObjectsDepends
 include/X11/qt6/QtRemoteObjects/QtRemoteObjectsVersion
-include/X11/qt6/QtRemoteObjects/qconnection_qnx_qiodevices.h
-include/X11/qt6/QtRemoteObjects/qconnection_qnx_server.h
 include/X11/qt6/QtRemoteObjects/qconnectionfactories.h
 include/X11/qt6/QtRemoteObjects/qremoteobjectabstractitemmodelreplica.h
 include/X11/qt6/QtRemoteObjects/qremoteobjectdynamicreplica.h
@@ -75,12 +66,10 @@ include/X11/qt6/QtRemoteObjectsQml/QtRemoteObjectsQmlDepends
 include/X11/qt6/QtRemoteObjectsQml/QtRemoteObjectsQmlVersion
 include/X11/qt6/QtRemoteObjectsQml/qtremoteobjectsqmlversion.h
 include/X11/qt6/QtRepParser/
-include/X11/qt6/QtRepParser/QRegexParser
 include/X11/qt6/QtRepParser/QtRepParser
 include/X11/qt6/QtRepParser/QtRepParserDepends
 include/X11/qt6/QtRepParser/QtRepParserVersion
 include/X11/qt6/QtRepParser/parser.g
-include/X11/qt6/QtRepParser/qregexparser.h
 include/X11/qt6/QtRepParser/qtrepparserversion.h
 lib/cmake/Qt6BuildInternals/StandaloneTests/QtRemoteObjectsTestsConfig.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6declarative_remoteobjectsAdditionalTargetInfo.cmake
@@ -129,12 +118,12 @@ lib/libQt6RemoteObjects.prl
 @lib lib/libQt6RemoteObjects.so.${LIBQt6RemoteObjects_VERSION}
 lib/libQt6RemoteObjectsQml.prl
 @lib lib/libQt6RemoteObjectsQml.so.${LIBQt6RemoteObjectsQml_VERSION}
-lib/metatypes/qt6remoteobjects_release_metatypes.json
-lib/metatypes/qt6remoteobjectsqml_release_metatypes.json
 lib/pkgconfig/Qt6RemoteObjects.pc
 lib/pkgconfig/Qt6RemoteObjectsQml.pc
 lib/pkgconfig/Qt6RepParser.pc
 @bin lib/qt6/libexec/repc
+lib/qt6/metatypes/qt6remoteobjects_release_metatypes.json
+lib/qt6/metatypes/qt6remoteobjectsqml_release_metatypes.json
 lib/qt6/mkspecs/features/remoteobjects_repc.prf
 lib/qt6/mkspecs/features/repcclient.pri
 lib/qt6/mkspecs/features/repccommon.pri
@@ -147,10 +136,10 @@ lib/qt6/mkspecs/modules/qt_lib_remoteobjectsqml.pri
 lib/qt6/mkspecs/modules/qt_lib_remoteobjectsqml_private.pri
 lib/qt6/mkspecs/modules/qt_lib_repparser.pri
 lib/qt6/mkspecs/modules/qt_lib_repparser_private.pri
+lib/qt6/modules/RemoteObjects.json
+lib/qt6/modules/RemoteObjectsQml.json
+lib/qt6/modules/RepParser.json
 lib/qt6/qml/QtRemoteObjects/
 @so lib/qt6/qml/QtRemoteObjects/libdeclarative_remoteobjectsplugin.so
 lib/qt6/qml/QtRemoteObjects/plugins.qmltypes
 lib/qt6/qml/QtRemoteObjects/qmldir
-share/qt6/modules/RemoteObjects.json
-share/qt6/modules/RemoteObjectsQml.json
-share/qt6/modules/RepParser.json

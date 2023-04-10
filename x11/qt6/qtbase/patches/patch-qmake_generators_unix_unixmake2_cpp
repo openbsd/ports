@@ -1,7 +1,7 @@
 Index: qmake/generators/unix/unixmake2.cpp
 --- qmake/generators/unix/unixmake2.cpp.orig
 +++ qmake/generators/unix/unixmake2.cpp
-@@ -41,6 +41,10 @@ UnixMakefileGenerator::writeMakefile(QTextStream &t)
+@@ -42,6 +42,10 @@ UnixMakefileGenerator::writeMakefile(QTextStream &t)
      if (writeDummyMakefile(t))
          return true;
  
@@ -12,7 +12,7 @@ Index: qmake/generators/unix/unixmake2.cpp
      if (project->first("TEMPLATE") == "app" ||
          project->first("TEMPLATE") == "lib" ||
          project->first("TEMPLATE") == "aux") {
-@@ -167,16 +171,17 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
+@@ -168,16 +172,17 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
      writeExportedVariables(t);
  
      t << "####### Compiler, tools and options\n\n";
@@ -37,7 +37,7 @@ Index: qmake/generators/unix/unixmake2.cpp
          for(int i = 0; i < incs.size(); ++i) {
              const ProString &inc = incs.at(i);
              if (inc.isEmpty())
-@@ -192,9 +197,9 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
+@@ -193,9 +198,9 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
      writeDefaultVariables(t);
  
      if(!project->isActiveConfig("staticlib")) {
@@ -49,7 +49,7 @@ Index: qmake/generators/unix/unixmake2.cpp
                                             << fixLibFlags("LIBS_PRIVATE").join(' ') << ' '
                                             << fixLibFlags("QMAKE_LIBS").join(' ') << ' '
                                             << fixLibFlags("QMAKE_LIBS_PRIVATE").join(' ') << Qt::endl;
-@@ -202,8 +207,8 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
+@@ -203,8 +208,8 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
  
      t << "AR            = " << var("QMAKE_AR") << Qt::endl;
      t << "RANLIB        = " << var("QMAKE_RANLIB") << Qt::endl;
@@ -60,7 +60,7 @@ Index: qmake/generators/unix/unixmake2.cpp
  
      t << Qt::endl;
  
-@@ -237,12 +242,19 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
+@@ -238,12 +243,19 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
              t << "TARGET0       = " << fileVar("TARGET_") << Qt::endl;
          } else if (!project->isActiveConfig("unversioned_libname")) {
              t << "TARGET0       = " << fileVar("TARGET_") << Qt::endl;
@@ -85,7 +85,7 @@ Index: qmake/generators/unix/unixmake2.cpp
              }
          }
      }
-@@ -576,7 +588,8 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
+@@ -577,7 +589,8 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
              if(!project->isEmpty("QMAKE_POST_LINK"))
                  t << "\n\t" << var("QMAKE_POST_LINK");
              t << Qt::endl << Qt::endl;
@@ -95,7 +95,7 @@ Index: qmake/generators/unix/unixmake2.cpp
              t << "\n\t";
  
              if (!project->isActiveConfig("unversioned_libname"))
-@@ -610,7 +623,22 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
+@@ -611,7 +624,22 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
              if(!project->isEmpty("QMAKE_POST_LINK"))
                  t << "\n\t" << var("QMAKE_POST_LINK");
              t << Qt::endl << Qt::endl;
@@ -118,7 +118,7 @@ Index: qmake/generators/unix/unixmake2.cpp
              t << "\n\t"
                << "-$(DEL_FILE) $(TARGET) $(TARGET0)\n\t"
                << var("QMAKE_LINK_SHLIB_CMD") << "\n\t";
-@@ -1239,6 +1267,12 @@ void UnixMakefileGenerator::init2()
+@@ -1242,6 +1270,12 @@ void UnixMakefileGenerator::init2()
                  project->values("TARGET_x").append("lib" + project->first("TARGET") + "." +
                                                          project->first("VER_MAJ"));
              project->values("TARGET") = project->values("TARGET_x");
@@ -131,8 +131,8 @@ Index: qmake/generators/unix/unixmake2.cpp
          } else if (!project->isEmpty("QMAKE_AIX_SHLIB")) {
              project->values("PRL_TARGET").prepend("lib" + project->first("TARGET"));
              project->values("TARGET_").append(project->first("QMAKE_PREFIX_STATICLIB") + project->first("TARGET")
-@@ -1478,18 +1512,33 @@ UnixMakefileGenerator::writeLibtoolFile()
-       << qVersion() << ")";
+@@ -1481,18 +1515,33 @@ UnixMakefileGenerator::writeLibtoolFile()
+       << QT_VERSION_STR << ")";
      t << "\n";
  
 +    if (!project->isEmpty("QMAKE_OPENBSD_SHLIB"))

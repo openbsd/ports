@@ -22,6 +22,7 @@ share/qt6/translations/assistant_tr.qm
 share/qt6/translations/assistant_uk.qm
 share/qt6/translations/assistant_zh_CN.qm
 share/qt6/translations/assistant_zh_TW.qm
+share/qt6/translations/catalogs.json
 share/qt6/translations/designer_ar.qm
 share/qt6/translations/designer_bg.qm
 share/qt6/translations/designer_cs.qm

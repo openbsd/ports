@@ -52,10 +52,10 @@ lib/cmake/Qt6Qml/QmlPlugins/Qt6lottieqtpluginTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Qml/QmlPlugins/Qt6lottieqtpluginTargets.cmake
 lib/libQt6Bodymovin.prl
 @lib lib/libQt6Bodymovin.so.${LIBQt6Bodymovin_VERSION}
-lib/metatypes/qt6bodymovinprivate_release_metatypes.json
+lib/qt6/metatypes/qt6bodymovinprivate_release_metatypes.json
 lib/qt6/mkspecs/modules/qt_lib_bodymovin_private.pri
+lib/qt6/modules/BodymovinPrivate.json
 lib/qt6/qml/Qt/labs/lottieqt/
 @so lib/qt6/qml/Qt/labs/lottieqt/liblottieqtplugin.so
 lib/qt6/qml/Qt/labs/lottieqt/plugins.qmltypes
 lib/qt6/qml/Qt/labs/lottieqt/qmldir
-share/qt6/modules/BodymovinPrivate.json

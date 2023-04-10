@@ -41,7 +41,6 @@ include/X11/qt6/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/qvirtualk
 include/X11/qt6/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/settings_p.h
 include/X11/qt6/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/shadowinputcontext_p.h
 include/X11/qt6/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/shifthandler_p.h
-include/X11/qt6/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/unipentrace_p.h
 include/X11/qt6/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/virtualkeyboard_p.h
 include/X11/qt6/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/virtualkeyboardattachedtype_p.h
 include/X11/qt6/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/virtualkeyboarddebug_p.h
@@ -188,14 +187,16 @@ lib/libQt6HunspellInputMethod.prl
 @lib lib/libQt6HunspellInputMethod.so.${LIBQt6HunspellInputMethod_VERSION}
 lib/libQt6VirtualKeyboard.prl
 @lib lib/libQt6VirtualKeyboard.so.${LIBQt6VirtualKeyboard_VERSION}
-lib/metatypes/qt6hunspellinputmethod_release_metatypes.json
-lib/metatypes/qt6virtualkeyboard_release_metatypes.json
 lib/pkgconfig/Qt6HunspellInputMethod.pc
 lib/pkgconfig/Qt6VirtualKeyboard.pc
+lib/qt6/metatypes/qt6hunspellinputmethod_release_metatypes.json
+lib/qt6/metatypes/qt6virtualkeyboard_release_metatypes.json
 lib/qt6/mkspecs/modules/qt_lib_hunspellinputmethod.pri
 lib/qt6/mkspecs/modules/qt_lib_hunspellinputmethod_private.pri
 lib/qt6/mkspecs/modules/qt_lib_virtualkeyboard.pri
 lib/qt6/mkspecs/modules/qt_lib_virtualkeyboard_private.pri
+lib/qt6/modules/HunspellInputMethod.json
+lib/qt6/modules/VirtualKeyboard.json
 @so lib/qt6/plugins/platforminputcontexts/libqtvirtualkeyboardplugin.so
 lib/qt6/qml/QtQuick/VirtualKeyboard/
 lib/qt6/qml/QtQuick/VirtualKeyboard/Components/
@@ -290,5 +291,3 @@ lib/qt6/qml/QtQuick/VirtualKeyboard/Styles/qmldir
 @so lib/qt6/qml/QtQuick/VirtualKeyboard/libqtvkbplugin.so
 lib/qt6/qml/QtQuick/VirtualKeyboard/plugins.qmltypes
 lib/qt6/qml/QtQuick/VirtualKeyboard/qmldir
-share/qt6/modules/HunspellInputMethod.json
-share/qt6/modules/VirtualKeyboard.json
