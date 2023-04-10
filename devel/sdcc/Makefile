@@ -3,11 +3,10 @@ BROKEN-sparc64=	illegal operands building SDCCval.c
 BROKEN-alpha=	sdcc segfaults when building the device library
 BROKEN-aarch64=	*** BFD does not support target aarch64-unknown-openbsd6.2.
 
-DISTNAME=	sdcc-src-3.8.0
+DISTNAME=	sdcc-src-4.2.0
 PKGNAME=	${DISTNAME:S/-src//}
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	devel
-REVISION=	0
 
 HOMEPAGE=	http://sdcc.sourceforge.net/
 MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
@@ -35,8 +34,10 @@ RUN_DEPENDS=		devel/gputils
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	docdir=${PREFIX}/share/doc/sdcc
-CONFIGURE_ENV+=		sdcc_cv_CCggdb=no \
-                        sdcc_cv_c_fms_extensions=no \
+CONFIGURE_ENV+=		sdcc_cv_c_ggdb=no \
+			sdcc_cv_cxx_ggdb=no \
+			bor_cv_c_ggdb=no \
+			ac_cv_lib_lex='none needed' \
 			CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
