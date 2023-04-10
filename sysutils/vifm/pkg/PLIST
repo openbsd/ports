@@ -16,6 +16,7 @@ share/doc/vifm/AUTHORS
 share/doc/vifm/BUGS
 share/doc/vifm/COPYING
 share/doc/vifm/ChangeLog
+share/doc/vifm/ChangeLog.LuaAPI
 share/doc/vifm/FAQ
 share/doc/vifm/INSTALL
 share/doc/vifm/NEWS
@@ -24,6 +25,14 @@ share/doc/vifm/TODO
 share/fish/
 share/fish/vendor_completions.d/
 share/fish/vendor_completions.d/vifm.fish
+@comment share/icons/
+@comment share/icons/hicolor/
+@comment share/icons/hicolor/128x128/
+@comment share/icons/hicolor/128x128/apps/
+@comment share/icons/hicolor/128x128/apps/vifm.png
+@comment share/icons/hicolor/scalable/
+@comment share/icons/hicolor/scalable/apps/
+@comment share/icons/hicolor/scalable/apps/vifm.svg
 @comment share/pixmaps/
 @comment share/pixmaps/vifm.png
 share/vifm/
