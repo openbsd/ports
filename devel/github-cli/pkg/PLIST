@@ -119,6 +119,7 @@
 @man man/man1/gh-repo-view.1
 @man man/man1/gh-repo.1
 @man man/man1/gh-run-cancel.1
+@man man/man1/gh-run-delete.1
 @man man/man1/gh-run-download.1
 @man man/man1/gh-run-list.1
 @man man/man1/gh-run-rerun.1
