@@ -1,6 +1,6 @@
 COMMENT=		functional language for building scalable applications
 
-V=			1.14.3
+V=			1.14.4
 GH_ACCOUNT=		elixir-lang
 GH_PROJECT=		elixir
 GH_TAGNAME=		v$V
@@ -24,6 +24,8 @@ PORTHOME=		${WRKDIR}
 MAKE_FLAGS=		PREFIX="${PREFIX}" \
 			MAN_PREFIX="${PREFIX}/man" \
 			Q=""
+
+CONFIGURE_STYLE=	None
 
 # Needed because otherwise the bootstrapping step complains
 MAKE_ENV+=		LC_ALL="en_US.UTF-8"
