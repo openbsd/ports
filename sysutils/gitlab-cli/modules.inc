@@ -1,7 +1,7 @@
 MODGO_MODULES =	\
 	cloud.google.com/go					 v0.81.0 \
 	cloud.google.com/go/bigquery				 v1.8.0 \
-	cloud.google.com/go/compute				 v1.7.0 \
+	cloud.google.com/go/compute/metadata			 v0.2.0 \
 	cloud.google.com/go/datastore				 v1.1.0 \
 	cloud.google.com/go/firestore				 v1.1.0 \
 	cloud.google.com/go/pubsub				 v1.3.1 \
@@ -56,7 +56,7 @@ MODGO_MODULES =	\
 	github.com/golang/glog					 v0.0.0-20160126235308-23def4e6c14b \
 	github.com/golang/groupcache				 v0.0.0-20200121045136-8c9f03a8e57e \
 	github.com/golang/mock					 v1.5.0 \
-	github.com/golang/protobuf				 v1.5.2 \
+	github.com/golang/protobuf				 v1.5.3 \
 	github.com/google/btree					 v1.0.0 \
 	github.com/google/go-cmp				 v0.5.8 \
 	github.com/google/go-querystring			 v1.1.0 \
@@ -80,7 +80,7 @@ MODGO_MODULES =	\
 	github.com/hashicorp/go-immutable-radix			 v1.0.0 \
 	github.com/hashicorp/go-msgpack				 v0.5.3 \
 	github.com/hashicorp/go-multierror			 v1.1.1 \
-	github.com/hashicorp/go-retryablehttp			 v0.7.1 \
+	github.com/hashicorp/go-retryablehttp			 v0.7.2 \
 	github.com/hashicorp/go-rootcerts			 v1.0.0 \
 	github.com/hashicorp/go-sockaddr			 v1.0.0 \
 	github.com/hashicorp/go-syslog				 v1.0.0 \
@@ -154,11 +154,11 @@ MODGO_MODULES =	\
 	github.com/spf13/jwalterweatherman			 v1.1.0 \
 	github.com/spf13/pflag					 v1.0.5 \
 	github.com/spf13/viper					 v1.8.1 \
-	github.com/stretchr/objx				 v0.4.0 \
-	github.com/stretchr/testify				 v1.8.0 \
+	github.com/stretchr/objx				 v0.5.0 \
+	github.com/stretchr/testify				 v1.8.1 \
 	github.com/subosito/gotenv				 v1.2.0 \
 	github.com/tidwall/pretty				 v1.2.0 \
-	github.com/xanzy/go-gitlab				 v0.73.1 \
+	github.com/xanzy/go-gitlab				 v0.81.0 \
 	github.com/yuin/goldmark				 v1.4.2 \
 	github.com/yuin/goldmark-emoji				 v1.0.1 \
 	go.etcd.io/etcd/api/v3					 v3.5.0 \
@@ -175,19 +175,19 @@ MODGO_MODULES =	\
 	golang.org/x/mobile					 v0.0.0-20190719004257-d2bd2a29d028 \
 	golang.org/x/mod					 v0.8.0 \
 	golang.org/x/net					 v0.8.0 \
-	golang.org/x/oauth2					 v0.0.0-20220722155238-128564f6959c \
+	golang.org/x/oauth2					 v0.6.0 \
 	golang.org/x/sync					 v0.0.0-20210220032951-036812b2e83c \
 	golang.org/x/sys					 v0.6.0 \
 	golang.org/x/term					 v0.6.0 \
 	golang.org/x/text					 v0.8.0 \
-	golang.org/x/time					 v0.0.0-20220722155302-e5dcc9cfc0b9 \
+	golang.org/x/time					 v0.3.0 \
 	golang.org/x/tools					 v0.6.0 \
 	golang.org/x/xerrors					 v0.0.0-20200804184101-5ec99f83aff1 \
 	google.golang.org/api					 v0.44.0 \
 	google.golang.org/appengine				 v1.6.7 \
 	google.golang.org/genproto				 v0.0.0-20210602131652-f16073e35f0c \
 	google.golang.org/grpc					 v1.38.0 \
-	google.golang.org/protobuf				 v1.28.1 \
+	google.golang.org/protobuf				 v1.30.0 \
 	gopkg.in/check.v1					 v1.0.0-20180628173108-788fd7840127 \
 	gopkg.in/errgo.v2					 v2.1.0 \
 	gopkg.in/ini.v1						 v1.62.0 \
@@ -269,6 +269,7 @@ MODGO_MODFILES =	\
 	github.com/golang/protobuf		 v1.4.3 \
 	github.com/golang/protobuf		 v1.5.0 \
 	github.com/golang/protobuf		 v1.5.1 \
+	github.com/golang/protobuf		 v1.5.2 \
 	github.com/google/btree			 v0.0.0-20180813153112-4030bb1f1f0c \
 	github.com/google/go-cmp		 v0.2.0 \
 	github.com/google/go-cmp		 v0.3.0 \
@@ -328,6 +329,7 @@ MODGO_MODFILES =	\
 	github.com/russross/blackfriday/v2	 v2.0.1 \
 	github.com/spf13/cast			 v1.3.1 \
 	github.com/stretchr/objx		 v0.1.0 \
+	github.com/stretchr/objx		 v0.4.0 \
 	github.com/stretchr/testify		 v1.2.2 \
 	github.com/stretchr/testify		 v1.3.0 \
 	github.com/stretchr/testify		 v1.4.0 \
@@ -335,6 +337,7 @@ MODGO_MODFILES =	\
 	github.com/stretchr/testify		 v1.6.1 \
 	github.com/stretchr/testify		 v1.7.0 \
 	github.com/stretchr/testify		 v1.7.1 \
+	github.com/stretchr/testify		 v1.8.0 \
 	github.com/yuin/goldmark		 v1.1.25 \
 	github.com/yuin/goldmark		 v1.1.27 \
 	github.com/yuin/goldmark		 v1.1.32 \
@@ -422,8 +425,6 @@ MODGO_MODFILES =	\
 	golang.org/x/net			 v0.0.0-20210331212208-0fccb6fa2b5c \
 	golang.org/x/net			 v0.0.0-20210405180319-a5a99cb37ef4 \
 	golang.org/x/net			 v0.0.0-20210614182718-04defd469f4e \
-	golang.org/x/net			 v0.0.0-20220624214902-1bab6f366d9e \
-	golang.org/x/net			 v0.0.0-20220805013720-a33c5aa5df48 \
 	golang.org/x/oauth2			 v0.0.0-20180821212333-d2e6202438be \
 	golang.org/x/oauth2			 v0.0.0-20190226205417-e64efc72b421 \
 	golang.org/x/oauth2			 v0.0.0-20190604053449-0f29369cfe45 \
@@ -664,6 +665,7 @@ MODGO_MODFILES =	\
 	google.golang.org/protobuf		 v1.26.0 \
 	google.golang.org/protobuf		 v1.26.0-rc.1 \
 	google.golang.org/protobuf		 v1.28.0 \
+	google.golang.org/protobuf		 v1.29.0 \
 	gopkg.in/check.v1			 v0.0.0-20161208181325-20d25e280405 \
 	gopkg.in/yaml.v2			 v2.2.2 \
 	gopkg.in/yaml.v2			 v2.2.3 \
