@@ -287,7 +287,6 @@
      SUBDIR += ruby-chunky_png
      SUBDIR += ruby-color
      SUBDIR += ruby-gruff
-     SUBDIR += ruby-rmagick,ruby30
      SUBDIR += ruby-rmagick,ruby31
      SUBDIR += ruby-rmagick,ruby32
      SUBDIR += ruby-rqrcode

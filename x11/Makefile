@@ -264,7 +264,6 @@
      SUBDIR += rox-filer
      SUBDIR += roxterm
      SUBDIR += ruby-dbus
-     SUBDIR += ruby-tk,ruby30
      SUBDIR += ruby-tk,ruby31
      SUBDIR += ruby-tk,ruby32
      SUBDIR += rxvt-unicode

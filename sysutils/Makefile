@@ -348,16 +348,13 @@
      SUBDIR += rset
      SUBDIR += rsyslog
      SUBDIR += rtty
-     SUBDIR += ruby-augeas,ruby30
      SUBDIR += ruby-augeas,ruby31
      SUBDIR += ruby-augeas,ruby32
      SUBDIR += ruby-capistrano
      SUBDIR += ruby-directory_watcher
      SUBDIR += ruby-facter
-     SUBDIR += ruby-libvirt,ruby30
      SUBDIR += ruby-libvirt,ruby31
      SUBDIR += ruby-libvirt,ruby32
-     SUBDIR += ruby-posix-spawn,ruby30
      SUBDIR += ruby-posix-spawn,ruby31
      SUBDIR += ruby-posix-spawn,ruby32
      SUBDIR += ruby-puppet
@@ -365,7 +362,6 @@
      SUBDIR += ruby-puppet-lint
      SUBDIR += ruby-puppet-syntax
      SUBDIR += ruby-r10k
-     SUBDIR += ruby-shadow,ruby30
      SUBDIR += ruby-shadow,ruby31
      SUBDIR += ruby-shadow,ruby32
      SUBDIR += ruby-serverengine
