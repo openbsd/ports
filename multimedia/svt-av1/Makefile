@@ -2,10 +2,9 @@ ONLY_FOR_ARCHS=	${LP64_ARCHS} i386
 
 COMMENT=	scalable AV1 encoder/decoder
 
-VER=		1.4.0
+VER=		1.4.1
 DISTNAME=	SVT-AV1-v${VER}
 PKGNAME=	svt-av1-${VER}
-REVISION=	0
 CATEGORIES=	multimedia
 MASTER_SITES=	https://gitlab.com/AOMediaCodec/SVT-AV1/-/archive/v${VER}/
 EXTRACT_SUFX=	.tar.bz2
