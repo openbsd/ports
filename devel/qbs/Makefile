@@ -1,8 +1,6 @@
-BROKEN =	Segmentation fault when building qbs
-
 COMMENT =	declarative cross-platform build tool
 
-V =		1.21.0
+V =		2.0.0
 DISTNAME =	qbs-src-${V}
 PKGNAME =	qbs-${V}
 
@@ -19,18 +17,15 @@ MASTER_SITES =		https://download.qt.io/official_releases/qbs/${V}/
 # LGPLv3 or GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5Gui Qt5Network
-WANTLIB += Qt5Script Qt5Widgets Qt5Xml c m
+WANTLIB += ${COMPILER_LIBCXX} GL Qt6Concurrent Qt6Core Qt6Core5Compat
+WANTLIB += Qt6Gui Qt6Network Qt6Widgets Qt6Xml c m
 
-MODULES =		x11/qt5 \
-			devel/cmake
+MODULES =		devel/cmake \
+			x11/qt6
 
-BUILD_DEPENDS =		x11/qt5/qtdeclarative
-RUN_DEPENDS =		x11/qt5/qtdeclarative
+BUILD_DEPENDS =		x11/qt6/qtdeclarative
+RUN_DEPENDS =		x11/qt6/qtdeclarative
 
-LIB_DEPENDS =		x11/qt5/qtbase \
-			x11/qt5/qtscript
-
-CONFIGURE_ENV +=	QT_DIR=/usr/local/lib/qt5/cmake
+LIB_DEPENDS =		x11/qt6/qt5compat
 
 .include <bsd.port.mk>

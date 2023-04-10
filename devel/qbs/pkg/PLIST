@@ -27,13 +27,13 @@ include/qbs/language/forward_decls.h
 include/qbs/logging/
 include/qbs/logging/ilogsink.h
 include/qbs/qbs.h
-include/qbs/qbs_version.pri
 include/qbs/tools/
 include/qbs/tools/architectures.h
 include/qbs/tools/buildoptions.h
 include/qbs/tools/cleanoptions.h
 include/qbs/tools/codelocation.h
 include/qbs/tools/commandechomode.h
+include/qbs/tools/deprecationwarningmode.h
 include/qbs/tools/error.h
 include/qbs/tools/generateoptions.h
 include/qbs/tools/installoptions.h
@@ -49,7 +49,6 @@ include/qbs/tools/settingsrepresentation.h
 include/qbs/tools/setupprojectparameters.h
 include/qbs/tools/toolchains.h
 include/qbs/tools/version.h
-include/qbs/use_installed_corelib.pri
 @lib lib/libqbscore.so.${LIBqbscore_VERSION}
 lib/qbs/
 lib/qbs/plugins/
@@ -437,6 +436,7 @@ share/qbs/imports/qbs/Probes/PathProbe.qbs
 share/qbs/imports/qbs/Probes/PkgConfigProbe.qbs
 share/qbs/imports/qbs/Probes/SdccProbe.qbs
 share/qbs/imports/qbs/Probes/TypeScriptProbe.qbs
+share/qbs/imports/qbs/Probes/WatcomProbe.qbs
 share/qbs/imports/qbs/Probes/WiXProbe.qbs
 share/qbs/imports/qbs/Probes/XcodeLocationProbe.qbs
 share/qbs/imports/qbs/Probes/XcodeProbe.qbs
@@ -514,6 +514,9 @@ share/qbs/modules/Exporter/pkgconfig/pkgconfig.qbs
 share/qbs/modules/Exporter/qbs/
 share/qbs/modules/Exporter/qbs/qbsexporter.js
 share/qbs/modules/Exporter/qbs/qbsexporter.qbs
+share/qbs/modules/Sanitizers/
+share/qbs/modules/Sanitizers/address/
+share/qbs/modules/Sanitizers/address/asan.qbs
 share/qbs/modules/archiver/
 share/qbs/modules/archiver/archiver.qbs
 share/qbs/modules/autotest/
@@ -570,6 +573,8 @@ share/qbs/modules/cpp/sdcc.qbs
 share/qbs/modules/cpp/setuprunenv.js
 share/qbs/modules/cpp/tvos-gcc.qbs
 share/qbs/modules/cpp/watchos-gcc.qbs
+share/qbs/modules/cpp/watcom.js
+share/qbs/modules/cpp/watcom.qbs
 share/qbs/modules/cpp/windows-clang-cl.qbs
 share/qbs/modules/cpp/windows-clang-mingw.qbs
 share/qbs/modules/cpp/windows-mingw.qbs
