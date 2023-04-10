@@ -1,7 +1,6 @@
 COMMENT =	reliable event logging protocol library
 
-DISTNAME =	librelp-1.9.0
-REVISION =	1
+DISTNAME =	librelp-1.10.0
 
 SHARED_LIBS +=  relp                      5.0 # 5.0
 
