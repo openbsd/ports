@@ -1,6 +1,7 @@
---- CMakeLists.txt.orig	Thu Mar 10 03:25:57 2022
-+++ CMakeLists.txt	Sun Oct 23 17:31:01 2022
-@@ -25,7 +25,7 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -25,7 +25,7 @@ find_package(Fcitx5Qt5WidgetsAddons REQUIRED)
  endif ()
  
  if (NOT SKK_DEFAULT_PATH)
