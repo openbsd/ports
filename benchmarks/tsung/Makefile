@@ -1,17 +1,14 @@
 COMMENT=	multi-protocol distributed load testing tool
 
-V=		1.7.0
-DISTNAME=	tsung-$V
-REVISION=	5
+V=		1.8.0
+GH_ACCOUNT=	processone
+GH_PROJECT=	tsung
+GH_TAGNAME=	v${V}
 
 CATEGORIES=	benchmarks net
 
-HOMEPAGE=	http://tsung.erlang-projects.org/
-
 # GPLv2
 PERMIT_PACKAGE=	Yes
-
-MASTER_SITES=		http://tsung.erlang-projects.org/dist/
 
 MODULES=		lang/erlang \
 			lang/python
@@ -35,5 +32,11 @@ FAKE_FLAGS=		CONFDIR="${PREFIX}/share/examples/tsung/" \
 			MAN_DIR="${PREFIX}/man/man1/"
 
 SUBST_VARS+=		V
+
+post-install:
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+		${PREFIX}/lib/tsung/tsung_plotter/__init__.py
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+		${PREFIX}/lib/tsung/tsung_plotter/tsung.py
 
 .include <bsd.port.mk>

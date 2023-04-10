@@ -178,6 +178,7 @@ lib/tsung/tsung_controller-${V}/ebin/ts_controller_sup.beam
 lib/tsung/tsung_controller-${V}/ebin/ts_file_server.beam
 lib/tsung/tsung_controller-${V}/ebin/ts_interaction_server.beam
 lib/tsung/tsung_controller-${V}/ebin/ts_job_notify.beam
+lib/tsung/tsung_controller-${V}/ebin/ts_local_file_server.beam
 lib/tsung/tsung_controller-${V}/ebin/ts_match_logger.beam
 lib/tsung/tsung_controller-${V}/ebin/ts_mon.beam
 lib/tsung/tsung_controller-${V}/ebin/ts_msg_server.beam
@@ -236,6 +237,7 @@ lib/tsung/tsung_controller-${V}/src/ts_controller_sup.erl
 lib/tsung/tsung_controller-${V}/src/ts_file_server.erl
 lib/tsung/tsung_controller-${V}/src/ts_interaction_server.erl
 lib/tsung/tsung_controller-${V}/src/ts_job_notify.erl
+lib/tsung/tsung_controller-${V}/src/ts_local_file_server.erl
 lib/tsung/tsung_controller-${V}/src/ts_match_logger.erl
 lib/tsung/tsung_controller-${V}/src/ts_mon.erl
 lib/tsung/tsung_controller-${V}/src/ts_msg_server.erl
@@ -252,6 +254,9 @@ lib/tsung/tsung_controller-${V}/src/ts_web.erl
 lib/tsung/tsung_controller-${V}/src/tsung_controller.erl
 lib/tsung/tsung_plotter/
 lib/tsung/tsung_plotter/__init__.py
+${MODPY_COMMENT}lib/tsung/tsung_plotter/${MODPY_PYCACHE}/
+lib/tsung/tsung_plotter/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/tsung/tsung_plotter/${MODPY_PYCACHE}tsung.${MODPY_PYC_MAGIC_TAG}pyc
 lib/tsung/tsung_plotter/tsung.py
 lib/tsung/tsung_recorder-${V}/
 lib/tsung/tsung_recorder-${V}/ebin/
