@@ -1,8 +1,7 @@
 COMMENT=		XSLT C Library for GNOME
 
-VERSION=		1.1.37
-DISTNAME=		libxslt-${VERSION}
-EXTRACT_SUFX=		.tar.xz
+GNOME_VERSION=		1.1.37
+GNOME_PROJECT=		libxslt
 REVISION=		0
 
 SHARED_LIBS +=  xslt                 4.0      # 2.37
@@ -21,8 +20,6 @@ MODULES=		x11/gnome
 
 LIB_DEPENDS=		textproc/libxml \
 			security/libgcrypt
-
-USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-libxml-include-prefix="${LOCALBASE}/include/libxml2" \
