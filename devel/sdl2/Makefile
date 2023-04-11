@@ -1,6 +1,6 @@
 COMMENT=	cross-platform multimedia library
 
-V=		2.26.4
+V=		2.26.5
 DISTNAME=	SDL2-${V}
 PKGNAME=	sdl2-${V}
 CATEGORIES=	devel
@@ -38,7 +38,6 @@ CONFIGURE_ARGS+= --disable-alsa \
 		 --disable-libsamplerate-shared \
 		 --disable-libudev \
 		 --disable-nas \
-		 --disable-oss \
 		 --disable-pulseaudio \
 		 --disable-sndio-shared \
 		 --disable-video-wayland \

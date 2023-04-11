@@ -1,20 +1,9 @@
-- Disable breaking if no haptic feedback support which disallows gamecontroller API
 - Allow custom SDL GetPlatform name with env var SDL_PLATFORM
 
 Index: src/SDL.c
 --- src/SDL.c.orig
 +++ src/SDL.c
-@@ -303,9 +303,6 @@ SDL_InitSubSystem(Uint32 flags)
-         }
-         SDL_PrivateSubsystemRefCountIncr(SDL_INIT_GAMECONTROLLER);
-         flags_initialized |= SDL_INIT_GAMECONTROLLER;
--#else
--        SDL_SetError("SDL not built with joystick support");
--        goto quit_and_error;
- #endif
-     }
- 
-@@ -558,6 +555,10 @@ SDL_GetRevisionNumber(void)
+@@ -558,6 +558,10 @@ SDL_GetRevisionNumber(void)
  const char *
  SDL_GetPlatform(void)
  {
