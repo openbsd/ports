@@ -37,15 +37,17 @@ CONFDIR=		${SYSCONFDIR}/apache2
 FLAVOR_COMMA=		${FLAVOR_EXT:S/-/,/g}
 SUBST_VARS=		CONFDIR FLAVOR_COMMA
 
-CONFIGURE_STYLE=	simple
+CONFIGURE_STYLE=	gnu
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 CONFIGURE_ARGS=		--enable-authnz-fcgi \
 			--enable-cache \
 			--enable-cgi \
 			--enable-disk-cache \
+			--enable-socache-dc=no \
 			--enable-http2 \
 			--enable-layout=OpenBSD \
+			--enable-lua=no \
 			--enable-mods-shared=all \
 			--enable-modules=all \
 			--enable-mpms-shared=all \
@@ -67,7 +69,10 @@ CONFIGURE_ARGS=		--enable-authnz-fcgi \
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
-			AWK=awk
+			AWK=awk \
+			GREP=grep \
+			ac_cv_path_RSYNC=no \
+			ac_cv_path_SVN=no
 
 FAKE_FLAGS=		rel_user=www rel_group=www \
 			rel_datadir=${HTTPD_DIR} \
