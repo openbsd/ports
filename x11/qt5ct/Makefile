@@ -1,10 +1,12 @@
 COMMENT =	Qt5 configuration tool
 
-DISTNAME =	qt5ct-1.5
+DISTNAME =	qt5ct-1.7
 
 CATEGORIES =	x11
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
+
+SHARED_LIBS +=  qt5ct-common              0.0 # 1.7
 
 # BSD
 PERMIT_PACKAGE=	Yes

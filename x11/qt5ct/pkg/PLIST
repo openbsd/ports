@@ -1,4 +1,5 @@
 @bin bin/qt5ct
+@lib lib/qt5/libqt5ct-common.so.${LIBqt5ct-common_VERSION}
 @so lib/qt5/plugins/platformthemes/libqt5ct.so
 lib/qt5/plugins/styles/
 @so lib/qt5/plugins/styles/libqt5ct-style.so
