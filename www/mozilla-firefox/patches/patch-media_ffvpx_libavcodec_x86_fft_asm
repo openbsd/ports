@@ -19,7 +19,7 @@ Index: media/ffvpx/libavcodec/x86/fft.asm
  
 @@ -585,11 +581,7 @@ cglobal imdct_calc, 3,5,3
      jl      .loop
-     REP_RET
+     RET
  
 -%ifdef PIC
 -%define SECTION_REL - $$
