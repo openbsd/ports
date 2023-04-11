@@ -1,6 +1,7 @@
 COMMENT =			retrieve and process nzb-files via web interface
 
 VERSION =			3.7.2
+REVISION =			0
 DISTNAME =			SABnzbd-${VERSION}
 PKGNAME =			sabnzbd-${VERSION}
 
@@ -43,6 +44,9 @@ TEST_DEPENDS =			devel/py-flaky${MODPY_FLAVOR} \
 				textproc/py-xmltodict${MODPY_FLAVOR} \
 				www/py-requests${MODPY_FLAVOR} \
 				www/py-selenium${MODPY_FLAVOR}
+
+# Relying on pkg_resources
+RUN_DEPENDS +=			devel/py-setuptools${MODPY_FLAVOR}
 
 NO_BUILD =			Yes
 
