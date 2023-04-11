@@ -7,7 +7,7 @@ Index: main.c
      }
    }
  
-+#ifdef USE_SASL
++#ifdef USE_SASL_CYRUS
 +  {
 +    int ret;
 +    if ((ret = mutt_sasl_start()) != SASL_OK) {
