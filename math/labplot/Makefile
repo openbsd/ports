@@ -1,14 +1,13 @@
 COMMENT =	data visualization and analysis software
 
 DISTNAME =	labplot-2.10.0
+REVISION =	0
 
 CATEGORIES =	math x11
 
 HOMEPAGE =	https://labplot.kde.org/
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
-
-SHARED_LIBS +=  Vector_BLF                0.0 # 0.0
 
 # LGPL, GPL and many others
 PERMIT_PACKAGE =	Yes
@@ -93,6 +92,10 @@ CONFIGURE_ARGS +=	-DENABLE_MQTT=OFF
 CONFIGURE_ARGS +=	-DENABLE_LIBORIGIN=OFF
 
 CONFIGURE_ARGS +=	-DKDE_INSTALL_MANDIR=${WRKINST}/man
+
+CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Git=On
+CONFIGURE_ARGS +=	-DENABLE_VECTOR_BLF=Off
+CONFIGURE_ARGS +=	-DENABLE_EXCEL=Off
 
 TEST_IS_INTERACTIVE =	X11
 
