@@ -1,7 +1,7 @@
 COMMENT =	plain-text driven engine for personal wikis
 
 MODGO_MODNAME =	github.com/bouncepaw/mycorrhiza
-MODGO_VERSION =	v1.13.0
+MODGO_VERSION =	v1.14.0
 
 DISTNAME =	mycorrhiza-${MODGO_VERSION}
 
