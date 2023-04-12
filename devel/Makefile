@@ -1428,6 +1428,7 @@
      SUBDIR += py-icalendar,python3
      SUBDIR += py-identify,python3
      SUBDIR += py-importlib-metadata,python3
+     SUBDIR += py-immutabledict,python3
      SUBDIR += py-incremental,python3
      SUBDIR += py-installer,python3
      SUBDIR += py-intervaltree
