@@ -1,6 +1,6 @@
 COMMENT =	test suite using WWW::Mechanize
 
-DISTNAME =	Test-WWW-Mechanize-1.58
+DISTNAME =	Test-WWW-Mechanize-1.60
 
 CATEGORIES =	www devel
 
@@ -16,10 +16,10 @@ RUN_DEPENDS =		devel/p5-Carp-Assert-More>=1.16 \
 			www/p5-HTML-Lint>=2.20 \
 			www/p5-HTML-Parser \
 			www/p5-HTTP-Message>=6.29 \
-			www/p5-HTTP-Server-Simple>=0.42 \
-			www/p5-URI \
 			www/p5-WWW-Mechanize>=1.68 \
 			www/p5-libwww>=6.02
+TEST_DEPENDS =		www/p5-HTTP-Server-Simple>=0.42 \
+			www/p5-URI
 
 MAKE_ENV =		TEST_POD=Yes
 
