@@ -4,11 +4,11 @@ CATEGORIES =	net
 
 V =		1.26
 DISTNAME =	libaccounts-glib-${V}
-REVISION =	1
+REVISION =	0
 
 SHARED_LIBS +=  accounts-glib             0.0 # 0.0
 
-MASTER_SITES =		https://gitlab.com/accounts-sso/libaccounts-glib/-/archive/${V}/
+MASTER_SITES =	https://gitlab.com/accounts-sso/libaccounts-glib/-/archive/${V}/
 
 # LGPLv2.1+, GPLv2+
 PERMIT_PACKAGE =	Yes
@@ -21,6 +21,8 @@ MODULES =	lang/python \
 MODPY_RUNDEP =	No
 
 CONFIGURE_STYLE = meson
+
+RUN_DEPENDS =	devel/py-gobject3${MODPY_FLAVOR}
 
 BUILD_DEPENDS =	lang/vala \
 		devel/check \
