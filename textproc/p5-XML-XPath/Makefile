@@ -1,20 +1,21 @@
-COMMENT =	modules for parsing and evaluating XPath statements
+COMMENT =	parse and evaluate XPath statements
 
-MODULES =	cpan
-PKG_ARCH =	*
-
-DISTNAME =	XML-XPath-1.44
-REVISION =	0
+DISTNAME =	XML-XPath-1.48
 
 CATEGORIES =	textproc
 
-# perl
+# Artistic 2.0
 PERMIT_PACKAGE =	Yes
 
-RUN_DEPENDS =	textproc/p5-XML-Parser>=2.23
+MODULES =		cpan
 
-TEST_DEPENDS =	devel/p5-Test-CPAN-Meta \
-		devel/p5-Path-Tiny>=0.076
+BUILD_DEPENDS =		devel/p5-Path-Tiny>=0.076
+RUN_DEPENDS =		textproc/p5-XML-Parser>=2.23
+TEST_DEPENDS =		devel/p5-Test-CPAN-Meta \
+			devel/p5-Test-CheckManifest \
+			devel/p5-Test-LeakTrace \
+
+PKG_ARCH =		*
 
 MODCPAN_EXAMPLES =	Yes
 

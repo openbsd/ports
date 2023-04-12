@@ -28,6 +28,7 @@ ${P5SITE}/XML/XPath/XMLParser.pm
 @man man/man3p/XML::XPath.3p
 @man man/man3p/XML::XPath::Boolean.3p
 @man man/man3p/XML::XPath::Builder.3p
+@man man/man3p/XML::XPath::Function.3p
 @man man/man3p/XML::XPath::Literal.3p
 @man man/man3p/XML::XPath::Node.3p
 @man man/man3p/XML::XPath::Node::Attribute.3p
