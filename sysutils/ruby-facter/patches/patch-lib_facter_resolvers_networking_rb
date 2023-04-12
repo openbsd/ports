@@ -1,0 +1,17 @@
+This is a bit ugly, but prevents omitting all IP related
+output when you have a interface that has an IP address,
+but no mask, i.e. a gif IPv6 in IPv4 tunnel.
+
+
+Index: lib/facter/resolvers/networking.rb
+--- lib/facter/resolvers/networking.rb.orig
++++ lib/facter/resolvers/networking.rb
+@@ -86,7 +86,7 @@ module Facter
+           ip6 = extract_values(raw_data, /inet6 (\S+)/).map { |val| val.gsub(/%.+/, '') }
+           mask6 = extract_values(raw_data, /prefixlen (\S+)/)
+ 
+-          parsed_interface_data[:bindings] = create_bindings(ip, mask) unless ip.empty?
++          parsed_interface_data[:bindings] = create_bindings(ip, mask) unless ip.empty? or mask.empty?
+           parsed_interface_data[:bindings6] = create_bindings(ip6, mask6) unless ip6.empty?
+         end
+ 

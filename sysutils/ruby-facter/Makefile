@@ -1,6 +1,7 @@
-COMMENT =	Puppet module management
+COMMENT =	system inventory tool
 
 DISTNAME =	facter-4.3.0
+REVISION =	0
 CATEGORIES =	sysutils
 HOMEPAGE =	https://github.com/puppetlabs/facter
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
