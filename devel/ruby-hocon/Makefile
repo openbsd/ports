@@ -1,6 +1,6 @@
 COMMENT =		Ruby port of Java Typesafe Config
 
-DISTNAME =		hocon-1.3.1
+DISTNAME =		hocon-1.4.0
 CATEGORIES =		devel
 HOMEPAGE =		https://github.com/puppetlabs/ruby-hocon
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
