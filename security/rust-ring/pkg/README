@@ -1,0 +1,14 @@
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+It is possible to use this port for locally built crates depending on
+ring. The following snippet can be added to ~/.cargo/config.toml to
+replace ring from crates.io with the patched source from this port:
+
+  [patch.crates-io]
+  ring = { path = "${LOCALBASE}/share/ring-${VERSION}" }
+
+One side effect one needs to be aware of is that it changes Cargo.lock
+files, so one needs to be careful when dealing with projects that have
+it checked into git. This is typically the case for binary crates.
