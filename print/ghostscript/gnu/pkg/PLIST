@@ -30,20 +30,6 @@ include/ghostscript/gserrors.h
 include/ghostscript/iapi.h
 include/ghostscript/ierrors.h
 @lib lib/libgs.so.${LIBgs_VERSION}
-man/de/
-man/de/man1/
-@man man/de/man1/dvipdf.1
-@man man/de/man1/eps2eps.1
-@man man/de/man1/gsnd.1
-@man man/de/man1/pdf2dsc.1
-@man man/de/man1/pdf2ps.1
-@man man/de/man1/printafm.1
-@man man/de/man1/ps2ascii.1
-@man man/de/man1/ps2pdf.1
-@man man/de/man1/ps2pdf12.1
-@man man/de/man1/ps2pdf13.1
-@man man/de/man1/ps2pdf14.1
-@man man/de/man1/ps2ps.1
 @man man/man1/dvipdf.1
 @man man/man1/eps2eps.1
 @man man/man1/gs.1
@@ -70,8 +56,8 @@ share/doc/ghostscript/
 share/doc/ghostscript/${VERSION}/
 share/doc/ghostscript/${VERSION}/COPYING
 share/doc/ghostscript/${VERSION}/GS9_Color_Management.pdf
+share/doc/ghostscript/${VERSION}/Ghostscript.pdf
 share/doc/ghostscript/${VERSION}/News.htm
-share/doc/ghostscript/${VERSION}/images/
 share/ghostscript/
 share/ghostscript/${VERSION}/
 share/ghostscript/${VERSION}/lib/

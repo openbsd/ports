@@ -1,13 +1,12 @@
 COMMENT =	PostScript and PDF interpreter
 
-VERSION =	10.00.0
-DISTVSN =	10.0.0
-DISTNAME =	ghostscript-${DISTVSN}
+VERSION =	10.01.1
+DISTNAME =	ghostscript-${VERSION}
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	lang print
 SHARED_LIBS =	gs 18.0
 
-MASTER_SITES =	https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs${DISTVSN:S/.//g}/
+MASTER_SITES =	https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs${VERSION:S/.//g}/
 
 PORTROACH =	site:https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/
 
@@ -109,6 +108,9 @@ pre-configure:
 
 post-install:
 	rm -f ${PREFIX}/lib/libgs.so{,.${LIBgs_VERSION:R}}
+.if !${FLAVOR:Mgtk}
+	rm -f ${PREFIX}/bin/gsx
+.endif
 # rename the dynamic binary
 	mv ${PREFIX}/bin/{gsc,gs}
 
