@@ -1,9 +1,8 @@
 COMMENT =		canonical JSON
 
-MODPY_EGG_VERSION =	1.6.2
+MODPY_EGG_VERSION =	2.0.0
 DISTNAME =		canonicaljson-${MODPY_EGG_VERSION}
 PKGNAME =		py-canonicaljson-${MODPY_EGG_VERSION}
-REVISION =		1
 
 CATEGORIES =		textproc
 
@@ -19,8 +18,5 @@ MODPY_PYBUILD =		setuptools
 MODPY_PI =		Yes
 FLAVORS =		python3
 FLAVOR =		python3
-
-RUN_DEPENDS =		devel/py-frozendict${MODPY_FLAVOR} \
-			devel/py-simplejson${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
