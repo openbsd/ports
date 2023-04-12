@@ -4,7 +4,7 @@ MODPY_EGG_VERSION=	0.6.0
 
 DISTNAME=	babelfish-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	misc
 
@@ -18,6 +18,9 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	poetry-core
 NO_TEST=	Yes
+
+# for pkg_resources
+RUN_DEPENDS=	devel/py-setuptools${MODPY_FLAVOR}
 
 FLAVORS=	python3
 FLAVOR=		python3
