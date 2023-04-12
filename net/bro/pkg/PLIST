@@ -1063,10 +1063,12 @@ lib/zeek/python/zeekctl/plugins/${MODPY_PYCACHE}lb_custom.${MODPY_PYC_MAGIC_TAG}
 lib/zeek/python/zeekctl/plugins/${MODPY_PYCACHE}lb_myricom.${MODPY_PYC_MAGIC_TAG}pyc
 lib/zeek/python/zeekctl/plugins/${MODPY_PYCACHE}lb_pf_ring.${MODPY_PYC_MAGIC_TAG}pyc
 lib/zeek/python/zeekctl/plugins/${MODPY_PYCACHE}ps.${MODPY_PYC_MAGIC_TAG}pyc
+lib/zeek/python/zeekctl/plugins/${MODPY_PYCACHE}zeek_port_warning.${MODPY_PYC_MAGIC_TAG}pyc
 lib/zeek/python/zeekctl/plugins/lb_custom.py
 lib/zeek/python/zeekctl/plugins/lb_myricom.py
 lib/zeek/python/zeekctl/plugins/lb_pf_ring.py
 lib/zeek/python/zeekctl/plugins/ps.py
+lib/zeek/python/zeekctl/plugins/zeek_port_warning.py
 lib/zeek/python/zeekpkg/
 lib/zeek/python/zeekpkg/__init__.py
 ${MODPY_COMMENT}lib/zeek/python/zeekpkg/${MODPY_PYCACHE}/
@@ -1208,6 +1210,8 @@ share/btest/data/pcaps/ftp/ftp-missing-reply-code.pcap
 share/btest/data/pcaps/ftp/ftp-missing-space-after-reply-code.pcap
 share/btest/data/pcaps/ftp/ftp-with-numbers-in-filename.pcap
 share/btest/data/pcaps/ftp/ipv4.trace
+share/btest/data/pcaps/ftp/ipv6-multiline-reply.trace
+share/btest/data/pcaps/ftp/ipv6-retr-samba.trace
 share/btest/data/pcaps/ftp/ipv6.trace
 share/btest/data/pcaps/ftp/retr.trace
 share/btest/data/pcaps/globus-url-copy-bad-encoding.trace
@@ -1234,7 +1238,9 @@ share/btest/data/pcaps/http/flash-version.trace
 share/btest/data/pcaps/http/get-gzip.trace
 share/btest/data/pcaps/http/get.trace
 share/btest/data/pcaps/http/get_nosyn.trace
+share/btest/data/pcaps/http/http-09-content-length-confusion.pcap
 share/btest/data/pcaps/http/http-11-request-then-cruft.pcap
+share/btest/data/pcaps/http/http-bad-content-range-01.pcap
 share/btest/data/pcaps/http/http-bad-request-with-version.trace
 share/btest/data/pcaps/http/http-filename.pcap
 share/btest/data/pcaps/http/http-post-large.pcap
@@ -1365,8 +1371,10 @@ share/btest/data/pcaps/radius/radius_localhost.pcap
 share/btest/data/pcaps/raw_layer.pcap
 share/btest/data/pcaps/raw_packets.trace
 share/btest/data/pcaps/rdp/
+share/btest/data/pcaps/rdp/rdp-invalid-length.pcap
 share/btest/data/pcaps/rdp/rdp-proprietary-encryption.pcap
 share/btest/data/pcaps/rdp/rdp-to-ssl.pcap
+share/btest/data/pcaps/rdp/rdp-unknown-keyboard.pcap
 share/btest/data/pcaps/rdp/rdp-x509.pcap
 share/btest/data/pcaps/rdp/rdpeudp-handshake-fail.pcap
 share/btest/data/pcaps/rdp/rdpeudp-handshake-success.pcap
@@ -1399,6 +1407,7 @@ share/btest/data/pcaps/smb/smb311.pcap
 share/btest/data/pcaps/smb/smb3_multichannel.pcap
 share/btest/data/pcaps/smb/smb3_negotiate_context.pcap
 share/btest/data/pcaps/smtp-attachment-msg.pcap
+share/btest/data/pcaps/smtp-mail-transactions-invalid.pcap
 share/btest/data/pcaps/smtp-multi-addr.pcap
 share/btest/data/pcaps/smtp-one-side-only.trace
 share/btest/data/pcaps/smtp.trace
@@ -1531,6 +1540,8 @@ share/btest/data/pcaps/tunnels/6in6.pcap
 share/btest/data/pcaps/tunnels/6in6in6.pcap
 share/btest/data/pcaps/tunnels/Teredo.pcap
 share/btest/data/pcaps/tunnels/ayiya3.trace
+share/btest/data/pcaps/tunnels/geneve-many-options.pcap
+share/btest/data/pcaps/tunnels/geneve-truncated.pcap
 share/btest/data/pcaps/tunnels/geneve.README
 share/btest/data/pcaps/tunnels/geneve.pcap
 share/btest/data/pcaps/tunnels/gre-aruba.pcap
@@ -1559,6 +1570,7 @@ share/btest/data/pcaps/tunnels/socks.pcap
 share/btest/data/pcaps/tunnels/teredo-udp-in-udp.pcap
 share/btest/data/pcaps/tunnels/teredo_bubble_with_payload.pcap
 share/btest/data/pcaps/tunnels/vxlan-encapsulated-http.pcap
+share/btest/data/pcaps/tunnels/vxlan-encapsulated-igmp-v2.pcap
 share/btest/data/pcaps/tunnels/vxlan.pcap
 share/btest/data/pcaps/udp-multiple-source-ports.pcap
 share/btest/data/pcaps/udp-signature-test.pcap
