@@ -45,6 +45,8 @@ lib/python${MODPY_VERSION}/site-packages/synapse/_scripts/${MODPY_PYCACHE}genera
 lib/python${MODPY_VERSION}/site-packages/synapse/_scripts/${MODPY_PYCACHE}generate_log_config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/_scripts/${MODPY_PYCACHE}generate_signing_key.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/synapse/_scripts/${MODPY_PYCACHE}generate_signing_key.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/synapse/_scripts/${MODPY_PYCACHE}generate_workers_map.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/synapse/_scripts/${MODPY_PYCACHE}generate_workers_map.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/_scripts/${MODPY_PYCACHE}hash_password.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/synapse/_scripts/${MODPY_PYCACHE}hash_password.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/_scripts/${MODPY_PYCACHE}move_remote_media_to_new_store.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -63,6 +65,7 @@ lib/python${MODPY_VERSION}/site-packages/synapse/_scripts/export_signing_key.py
 lib/python${MODPY_VERSION}/site-packages/synapse/_scripts/generate_config.py
 lib/python${MODPY_VERSION}/site-packages/synapse/_scripts/generate_log_config.py
 lib/python${MODPY_VERSION}/site-packages/synapse/_scripts/generate_signing_key.py
+lib/python${MODPY_VERSION}/site-packages/synapse/_scripts/generate_workers_map.py
 lib/python${MODPY_VERSION}/site-packages/synapse/_scripts/hash_password.py
 lib/python${MODPY_VERSION}/site-packages/synapse/_scripts/move_remote_media_to_new_store.py
 lib/python${MODPY_VERSION}/site-packages/synapse/_scripts/register_new_matrix_user.py
@@ -1952,6 +1955,8 @@ lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/73/${
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/73/${MODPY_PYCACHE}10_update_sqlite_fts4_tokenizer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/74/
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/74/01_user_directory_stale_remote_users.sql
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/74/02_set_device_id_for_pushers_bg_update.sql
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/74/03_room_membership_index.sql
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/74/90COMMENTS_destinations.sql.postgres
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/full_schemas/
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/full_schemas/16/

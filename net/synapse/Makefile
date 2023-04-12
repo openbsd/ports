@@ -1,6 +1,6 @@
 COMMENT =	open network for secure, decentralized communication
 
-MODPY_EGG_VERSION =	1.80.0
+MODPY_EGG_VERSION =	1.81.0
 
 GH_ACCOUNT =	matrix-org
 GH_PROJECT =	synapse
@@ -31,9 +31,9 @@ BUILD_DEPENDS += devel/py-setuptools-rust${MODPY_FLAVOR}>=1.3.0
 
 # in same order as in pyproject.toml: mandatory section
 RUN_DEPENDS =	devel/py-jsonschema${MODPY_FLAVOR}>=3.0.0 \
-		devel/py-frozendict${MODPY_FLAVOR} \
+		devel/py-immutabledict${MODPY_FLAVOR} \
 		textproc/py-unpaddedbase64${MODPY_FLAVOR}>=2.1.0 \
-		textproc/py-canonicaljson${MODPY_FLAVOR}>=1.6.2 \
+		textproc/py-canonicaljson${MODPY_FLAVOR}<3.0.0,>=2.0.0 \
 		textproc/py-signedjson${MODPY_FLAVOR} \
 		security/py-service_identity${MODPY_FLAVOR} \
 		devel/py-twisted${MODPY_FLAVOR} \
