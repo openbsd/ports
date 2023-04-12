@@ -1,6 +1,6 @@
 COMMENT =	Perl extension for ICalendar date objects
 
-DISTNAME =	Date-ICal-2.679
+DISTNAME =	Date-ICal-2.680
 
 CATEGORIES =	devel
 
