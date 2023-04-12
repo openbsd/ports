@@ -1,5 +1,10 @@
 Remove all the -Werror= flags.
 
+Backport of 769164a55bd74f2f11d14dd5175fbee01cf77638 ("Fix SConstruct
+for scons 4.5.0+; env['CPPDEFINES'] may return a deque object") and
+partial backport of 189ac23f61605903eb3eaa0004d287b7bd9296bc ("Prefer
+V.copy over V[:]")
+
 Index: SConstruct
 --- SConstruct.orig
 +++ SConstruct
@@ -38,3 +43,48 @@ Index: SConstruct
  		])
  		env.Append(
  			CXXFLAGS = ['-funsigned-char'],
+@@ -4831,7 +4821,7 @@ class DXXProgram(DXXCommon):
+ 			# Bypass ccache, if any, since this is a preprocess only
+ 			# call.
+ 			kwargs['CXXFLAGS'] = (env['CXXFLAGS'] or []) + ['-E']
+-			kwargs['CPPDEFINES'] = (env['CPPDEFINES'] or []) + [
++			kwargs['CPPDEFINES'] = list(env['CPPDEFINES'] or []) + [
+ 					# Define these tokens to themselves so that
+ 					# `#ifndef` does not try to redefine them.
+ 					('DXX_KCONFIG_UI_ENUM', 'DXX_KCONFIG_UI_ENUM'),
+@@ -4851,7 +4841,7 @@ class DXXProgram(DXXCommon):
+ 	def _apply_target_name(self,name):
+ 		return os.path.join(os.path.dirname(name), '.%s.%s' % (self.target, os.path.splitext(os.path.basename(name))[0]))
+ 	def _apply_env_version_seq(self,env,_empty={}):
+-		return _empty if self.user_settings.pch else {'CPPDEFINES' : env['CPPDEFINES'] + [('DXX_VERSION_SEQ', self.DXX_VERSION_SEQ)]}
++		return _empty if self.user_settings.pch else {'CPPDEFINES' : list(env['CPPDEFINES']) + [('DXX_VERSION_SEQ', self.DXX_VERSION_SEQ)]}
+ 	get_objects_similar_arch_ogl = DXXCommon.create_lazy_object_states_getter((LazyObjectState(sources=(
+ 'similar/arch/ogl/gr.cpp',
+ 'similar/arch/ogl/ogl.cpp',
+@@ -4947,7 +4937,7 @@ class DXXProgram(DXXCommon):
+ 	), LazyObjectState(sources=(
+ 'similar/main/inferno.cpp',
+ ),
+-		transform_env = (lambda self, env: {'CPPDEFINES' : env['CPPDEFINES'] + env.__dxx_CPPDEFINE_SHAREPATH + env.__dxx_CPPDEFINE_git_version}),
++		transform_env = (lambda self, env: {'CPPDEFINES' : list(env['CPPDEFINES']) + env.__dxx_CPPDEFINE_SHAREPATH + env.__dxx_CPPDEFINE_git_version}),
+ 		transform_target=_apply_target_name,
+ 	), LazyObjectState(sources=(
+ 'similar/main/kconfig.cpp',
+@@ -4957,7 +4947,7 @@ class DXXProgram(DXXCommon):
+ 	), LazyObjectState(sources=(
+ 'similar/misc/physfsx.cpp',
+ ),
+-		transform_env = (lambda self, env: {'CPPDEFINES' : env['CPPDEFINES'] + env.__dxx_CPPDEFINE_SHAREPATH}),
++		transform_env = (lambda self, env: {'CPPDEFINES' : list(env['CPPDEFINES']) + env.__dxx_CPPDEFINE_SHAREPATH}),
+ 		transform_target=_apply_target_name,
+ 	), LazyObjectState(sources=(
+ 'similar/main/playsave.cpp',
+@@ -5168,7 +5158,7 @@ class DXXProgram(DXXCommon):
+ 			objects.extend(self.get_objects_editor())
+ 			objects.extend(static_archive_construction.get_objects_editor())
+ 		versid_build_environ = ['CXX', 'CPPFLAGS', 'CXXFLAGS', 'LINKFLAGS']
+-		versid_cppdefines = env['CPPDEFINES'][:]
++		versid_cppdefines = env['CPPDEFINES'].copy()
+ 		extra_version = user_settings.extra_version
+ 		if extra_version is None:
+ 			extra_version = 'v%u.%u' % (self.VERSION_MAJOR, self.VERSION_MINOR)
