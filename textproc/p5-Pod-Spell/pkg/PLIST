@@ -1,4 +1,5 @@
 bin/podspell
+${P5SITE}/Pod/
 ${P5SITE}/Pod/Spell.pm
 ${P5SITE}/Pod/Wordlist.pm
 ${P5SITE}/auto/share/dist/Pod-Spell/
