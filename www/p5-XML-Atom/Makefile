@@ -1,26 +1,26 @@
-COMMENT= 	Atom RSS protocol for perl
+COMMENT =	atom feed and API implementation
 
-MODULES=	cpan
-PKG_ARCH=	*
+DISTNAME =	XML-Atom-0.43
 
-DISTNAME =	XML-Atom-0.42
-CATEGORIES=	www textproc
-REVISION =	0
+CATEGORIES =	www textproc
 
-# perl
-PERMIT_PACKAGE=	Yes
+# Perl
+PERMIT_PACKAGE =	Yes
 
-RUN_DEPENDS=	devel/p5-Class-Data-Inheritable \
-		devel/p5-DateTime \
-		devel/p5-DateTime-TimeZone \
-		security/p5-Digest-SHA1 \
-		textproc/p5-XML-LibXML \
-		textproc/p5-XML-XPath \
-		www/p5-HTML-Parser \
-		www/p5-LWP-Authen-Wsse \
-		www/p5-libwww
-BUILD_DEPENDS=	${RUN_DEPENDS}
+MODULES =		cpan
+
+RUN_DEPENDS =		devel/p5-Class-Data-Inheritable \
+			devel/p5-DateTime \
+			devel/p5-DateTime-TimeZone \
+			textproc/p5-XML-LibXML>=2.0202 \
+			textproc/p5-XML-XPath>=1.20 \
+			www/p5-HTML-Parser \
+			www/p5-URI \
+			www/p5-libwww
+TEST_DEPENDS =		devel/p5-DateTime
 
 CONFIGURE_STYLE =	modbuild tiny
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
