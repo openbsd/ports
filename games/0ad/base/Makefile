@@ -35,6 +35,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			games/0ad/data=${V}
 MODULES =		lang/python
 
+# gnu++17
 COMPILER =		base-clang ports-gcc
 
 MODPY_RUNDEP =		No
@@ -58,7 +59,8 @@ CONFIGURE_ENV +=	SHELL=sh
 
 # XXX don't use --with-native-mozjs because 0ad needs to stay in sync
 # with it: updates to mozjs could break the multiplayer.
-CONFIGURE_ARGS +=	--without-nvtt \
+CONFIGURE_ARGS +=	-j${MAKE_JOBS} \
+			--without-nvtt \
 			--datadir=${PREFIX}/share/0ad \
 			--libdir=${PREFIX}/lib \
 			--minimal-flags
@@ -97,6 +99,11 @@ do-install:
 
 # most tests fail without nvtt
 NO_TEST =		Yes
+# avoid building unused tests in ${WRKSRC}/Makefile
+MAKE_FLAGS +=		cxxtestroot_config='' \
+			mocks_test_config='' \
+			test_config=''
+
 #do-test:
 #	cd ${WRKDIST}/binaries/system && ./test
 
