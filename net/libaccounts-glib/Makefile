@@ -4,7 +4,7 @@ CATEGORIES =	net
 
 V =		1.26
 DISTNAME =	libaccounts-glib-${V}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  accounts-glib             0.0 # 0.0
 
@@ -30,7 +30,6 @@ BUILD_DEPENDS =	lang/vala \
 
 LIB_DEPENDS =	databases/sqlite3 \
 		devel/glib2 \
-		devel/py-gobject3${MODPY_FLAVOR} \
 		textproc/libxml
 
 .include <bsd.port.mk>
