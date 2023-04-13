@@ -1,5 +1,8 @@
 @conflict libproxy-gnome-*
+@conflict libproxy-webkit-*
 @pkgpath net/libproxy,-gnome
+@pkgpath net/libproxy,-main
+@pkgpath net/libproxy,-webkit
 @bin bin/proxy
 include/proxy.h
 lib/libproxy/
@@ -9,6 +12,7 @@ lib/libproxy/${GH_TAGNAME}/modules/
 @so lib/libproxy/${GH_TAGNAME}/modules/config_gnome3.so
 @so lib/libproxy/${GH_TAGNAME}/modules/config_kde.so
 @so lib/libproxy/${GH_TAGNAME}/modules/config_pacrunner.so
+@so lib/libproxy/${GH_TAGNAME}/modules/pacrunner_duktape.so
 lib/pkgconfig/libproxy-1.0.pc
 lib/python${MODPY_VERSION}/site-packages/libproxy.py
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
