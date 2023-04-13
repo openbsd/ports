@@ -1,19 +1,26 @@
-COMMENT=	module for pcap access
+COMMENT =	module for pcap access
 
-MODULES=	cpan
-DISTNAME=	Net-Pcap-0.20
-CATEGORIES=	net
+DISTNAME =	Net-Pcap-0.20
+REVISION =	0
 
-PERMIT_PACKAGE=	Yes
+CATEGORIES =	net
 
-WANTLIB += c m pcap perl pthread
+# Perl
+PERMIT_PACKAGE =	Yes
 
-RUN_DEPENDS=		net/p5-IO-Interface
+WANTLIB =		c m pcap perl
 
-MODCPAN_EXAMPLES=	Yes
-MODCPAN_EXAMPLES_DIST=	eg
+MODULES =		cpan
+
+TEST_DEPENDS =		devel/p5-Test-Distribution \
+			devel/p5-Test-Exception \
+			devel/p5-Test-Pod>=1.14 \
+			net/p5-POE-Component-Pcap
+
+MODCPAN_EXAMPLES =	Yes
+MODCPAN_EXAMPLES_DIST =	eg
 
 # must be run as root
-TEST_IS_INTERACTIVE=	Yes
+TEST_IS_INTERACTIVE =	Yes
 
 .include <bsd.port.mk>

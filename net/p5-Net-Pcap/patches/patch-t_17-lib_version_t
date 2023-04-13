@@ -1,0 +1,15 @@
+OpenBSD has its own version of libpcap.
+
+Index: t/17-lib_version.t
+--- t/17-lib_version.t.orig
++++ t/17-lib_version.t
+@@ -13,6 +13,9 @@ diag($version);
+ if ($^O eq 'MSWin32' or $^O eq 'cygwin') {
+     like( $version, '/^WinPcap version \d\.\d+/', " - checking version string ($version)" );
+ }
++elsif ($^O eq 'openbsd') {
++    like( $version, '/^OpenBSD libpcap$/', " - checking version string ($version)" );
++}
+ else {
+     like( $version,
+             '/^libpcap version (?:\d+\.\d+(?:\.\d+|[^\d.\s]+)?|unknown \(pre 0\.8\))/',

@@ -1,6 +1,8 @@
 bin/pcapinfo
+${P5ARCH}/
 ${P5ARCH}/Net/
 ${P5ARCH}/Net/Pcap.pm
+${P5ARCH}/auto/
 ${P5ARCH}/auto/Net/
 ${P5ARCH}/auto/Net/Pcap/
 @so ${P5ARCH}/auto/Net/Pcap/Pcap.so

@@ -1,0 +1,50 @@
+OpenBSD pcap_setnonblock() and pcap_getnonblock() do not support errbuf.
+
+Index: Pcap.xs
+--- Pcap.xs.orig
++++ Pcap.xs
+@@ -336,20 +336,16 @@ pcap_setnonblock(p, nb, err)
+ 
+ 	CODE:
+ 		if (SvROK(err)) {
+-            char    *errbuf = NULL;
+             SV      *err_sv = SvRV(err);
+ 
+-            Newx(errbuf, PCAP_ERRBUF_SIZE+1, char);
+-			RETVAL = pcap_setnonblock(p, nb, errbuf);
++			RETVAL = pcap_setnonblock(p, nb, NULL);
+ 
+ 			if (RETVAL == -1) {
+-				sv_setpv(err_sv, errbuf);
++				sv_setpv(err_sv, pcap_geterr(p));
+ 			} else {
+ 				err_sv = &PL_sv_undef;
+ 			}
+ 
+-			safefree(errbuf);
+-
+ 		} else
+ 			croak("arg3 not a reference");	
+ 
+@@ -365,19 +361,15 @@ pcap_getnonblock(p, err)
+ 
+     CODE:
+         if (SvROK(err)) {
+-            char    *errbuf = NULL;
+             SV      *err_sv = SvRV(err);
+ 
+-            Newx(errbuf, PCAP_ERRBUF_SIZE+1, char);
+-            RETVAL = pcap_getnonblock(p, errbuf);
++            RETVAL = pcap_getnonblock(p, NULL);
+ 
+             if (RETVAL == -1) {
+-                sv_setpv(err_sv, errbuf);
++                sv_setpv(err_sv, pcap_geterr(p));
+             } else {
+                 err_sv = &PL_sv_undef;
+             }
+-
+-            safefree(errbuf);
+ 
+ 		} else
+ 			croak("arg2 not a reference");	

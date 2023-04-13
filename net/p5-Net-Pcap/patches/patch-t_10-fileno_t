@@ -1,0 +1,14 @@
+OpenBSD pcap_open_offline(3) does not set file descriptor.
+
+Index: t/10-fileno.t
+--- t/10-fileno.t.orig
++++ t/10-fileno.t
+@@ -111,7 +111,7 @@ SKIP: {
+     $fileno = undef;
+     eval { $fileno = Net::Pcap::get_selectable_fd($pcap) };
+     is( $@, '', "get_selectable_fd() on a dump file" );
+-    like( $fileno, '/^\d+$/', " - fileno must be an integer: $fileno" );
++    like( $fileno, '/^(-1|\d+)$/', " - fileno must be an integer: $fileno" );
+ }
+ 
+ Net::Pcap::close($pcap);

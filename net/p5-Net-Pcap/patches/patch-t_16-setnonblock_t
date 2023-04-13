@@ -1,0 +1,27 @@
+OpenBSD pcap_open_offline(3) does not set file descriptor.
+
+Index: t/16-setnonblock.t
+--- t/16-setnonblock.t.orig
++++ t/16-setnonblock.t
+@@ -5,6 +5,7 @@ use Test::More;
+ use Net::Pcap;
+ use lib 't';
+ use Utils;
++use Errno 'EBADF';
+ 
+ plan skip_all => "pcap_setnonblock() and pcap_getnonblock() are not available"
+   unless is_available('pcap_setnonblock');
+@@ -87,9 +88,11 @@ SKIP: {
+ }
+ 
+ # Testing getnonblock()
++$! = EBADF;
++my $error = "$!";
+ eval { $r = Net::Pcap::getnonblock($pcap, \$err) };
+ is( $@,   '', "getnonblock()" );
+-is( $err, '', " - err must be null" );
+-is( $r,    0, " - state must be 0 for savefile" );
++is( $err, "F_GETFL: $error", " - err must be EBADF" );
++is( $r,   -1, " - state must be -1 for savefile" );
+ 
+ Net::Pcap::close($pcap);

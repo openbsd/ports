@@ -1,0 +1,90 @@
+Replace non existing DLT constants with available ones.  Adapt
+description to OpenBSD names.
+
+Index: t/14-datalink.t
+--- t/14-datalink.t.orig
++++ t/14-datalink.t
+@@ -12,7 +12,7 @@ plan skip_all => "extended datalink related functions 
+ 
+ %name2val = (
+     undef            => -1, 
+-    LTalk            => DLT_LTALK, 
++    ProNET           => DLT_PRONET, 
+     raw              => DLT_RAW, 
+     PPP_serial       => DLT_PPP_SERIAL, 
+     SLIP             => DLT_SLIP, 
+@@ -20,20 +20,19 @@ plan skip_all => "extended datalink related functions 
+ );
+ %val2name = (
+     0                => 'NULL', 
+-    DLT_LTALK()      => 'LTALK', 
++    DLT_PRONET()      => 'PRONET', 
+     DLT_RAW()        => 'RAW', 
+     DLT_PPP_SERIAL() => 'PPP_SERIAL', 
+     DLT_SLIP()       => 'SLIP', 
+     DLT_IEEE802_11() => 'IEEE802_11', 
+ );
+ %val2descr = (
+-    0                => 'BSD loopback', 
+-    DLT_NULL()       => 'BSD loopback', 
+-    DLT_LTALK()      => 'Localtalk', 
+-    DLT_RAW()        => 'Raw IP', 
++    DLT_NULL()       => 'no link-layer encapsulation', 
++    DLT_PRONET()      => 'Proteon ProNET Token Ring', 
++    DLT_RAW()        => 'raw IP', 
+     DLT_PPP_SERIAL() => 'PPP over serial', 
+-    DLT_SLIP()       => 'SLIP', 
+-    DLT_IEEE802_11() => '802.11', 
++    DLT_SLIP()       => 'Serial Line IP', 
++    DLT_IEEE802_11() => 'IEEE 802.11 wireless', 
+ );
+ 
+ plan tests => keys(%name2val) * 2 + keys(%val2name) * 2 + keys(%val2descr) * 2 + 23;
+@@ -104,7 +103,7 @@ SKIP: {
+     like( $datalink , '/^\d+$/', " - datalink is an integer" );
+ 
+     # Testing set_datalink()
+-    eval { $r = Net::Pcap::set_datalink($pcap, DLT_LTALK) };  # Apple LocalTalk
++    eval { $r = Net::Pcap::set_datalink($pcap, DLT_PRONET) };  # ProNET
+     is( $@, '', "set_datalink() on a live connection" );
+     is( $r , -1, " - returned -1 (expected failure)" );
+ 
+@@ -123,7 +122,7 @@ like( $datalink , '/^\d+$/', " - datalink is an intege
+ is( $datalink , DLT_EN10MB, " - datalink is DLT_EN10MB (Ethernet)" );
+ 
+ # Testing set_datalink()
+-eval { $r = Net::Pcap::set_datalink($pcap, DLT_LTALK) };  # Apple LocalTalk
++eval { $r = Net::Pcap::set_datalink($pcap, DLT_PRONET) };  # ProNET
+ is( $@, '', "set_datalink() on a save file" );
+ is( $r , -1, " - returned -1 (expected failure)" );
+ 
+@@ -131,24 +130,24 @@ Net::Pcap::close($pcap);
+ 
+ 
+ # Open a dead pcap descriptor
+-$pcap = Net::Pcap::open_dead(DLT_IP_OVER_FC, 1024);
++$pcap = Net::Pcap::open_dead(DLT_IEEE802_11_RADIO, 1024);
+ isa_ok( $pcap, 'pcap_tPtr', "\$pcap" );
+ 
+ # Testing datalink()
+ $datalink = '';
+ eval { $datalink = Net::Pcap::datalink($pcap) };
+ is( $@, '', "datalink() on a dead descriptor" );
+-is( $datalink , DLT_IP_OVER_FC, " - datalink is an integer" );
++is( $datalink , DLT_IEEE802_11_RADIO, " - datalink is an integer" );
+ 
+ # Testing set_datalink()
+-# the migration of the century: from IP-over-Fibre Channel to Apple LocalTalk!
+-eval { $r = Net::Pcap::set_datalink($pcap, DLT_LTALK) };
++# the migration of the century: from 802.11 WLAN header to ProNET!
++eval { $r = Net::Pcap::set_datalink($pcap, DLT_PRONET) };
+ is( $@, '', "set_datalink() on a dead descriptor" );
+ is( $r , -1, " - returned -1 (expected failure)" );
+ # The following tests don't work, but maybe they're just incorrect. 
+ #isnt( $r , -1, " - should not returned -1" );
+ #$datalink = Net::Pcap::datalink($pcap);
+-#is( $datalink, DLT_LTALK, " - new link type was correctly stored" );
++#is( $datalink, DLT_PRONET, " - new link type was correctly stored" );
+ 
+ 
+ # Testing datalink_name_to_val()

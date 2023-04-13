@@ -1,0 +1,44 @@
+OpenBSD pcap_findalldevs(3) returns empty list for non root user.
+
+Index: t/02-lookup.t
+--- t/02-lookup.t.orig
++++ t/02-lookup.t
+@@ -130,18 +130,24 @@ SKIP: {
+     eval { @devs = Net::Pcap::findalldevs(\$err) };
+     is(   $@,   '', "findalldevs() - 1-arg form, legacy from Marco Carnut 0.05" );
+     is(   $err, '', " - \$err must be null: $err" ); $err = '';
++    SKIP: {
++    skip "must be run as root", 2 unless is_allowed_to_use_pcap();
+     ok( @devs >= 1, " - at least one device must be present in the list returned by findalldevs()" );
+     %devs = map { $_ => 1 } @devs;
+     is( $devs{$dev}, 1, " - '$dev' must be present in the list returned by findalldevs()" );
++    }
+ 
+     # findalldevs(\$err, \%devinfo), legacy from Jean-Louis Morel 0.04.02
+     eval { @devs = Net::Pcap::findalldevs(\$err, \%devinfo) };
+     is(   $@,   '', "findalldevs() - 2-args form, legacy from Jean-Louis Morel 0.04.02" );
+     is(   $err, '', " - \$err must be null: $err" ); $err = '';
++    SKIP: {
++    skip "must be run as root", 3 unless is_allowed_to_use_pcap();
+     ok( @devs >= 1, " - at least one device must be present in the list returned by findalldevs()" );
+     ok( keys %devinfo >= 1, " - at least one device must be present in the hash filled by findalldevs()" );
+     %devs = map { $_ => 1 } @devs;
+     is( $devs{$dev}, 1, " - '$dev' must be present in the list returned by findalldevs()" );
++    }
+     SKIP: {
+         is( $devinfo{'any'}, 'Pseudo-device that captures on all interfaces', 
+             " - checking pseudo-device description" ) and last if exists $devinfo{'any'};
+@@ -163,10 +169,13 @@ SKIP: {
+         eval { @devs = Net::Pcap::findalldevs(\%devinfo, \$err) };
+         is(   $@,   '', "findalldevs() - 2-args form, new, correct syntax, consistent with libpcap(3)" );
+         is(   $err, '', " - \$err must be null: $err" ); $err = '';
++        SKIP: {
++        skip "must be run as root", 3 unless is_allowed_to_use_pcap();
+         ok( @devs >= 1, " - at least one device must be present in the list returned by findalldevs()" );
+         ok( keys %devinfo >= 1, " - at least one device must be present in the hash filled by findalldevs()" );
+         %devs = map { $_ => 1 } @devs;
+         is( $devs{$dev}, 1, " - '$dev' must be present in the list returned by findalldevs()" );
++        }
+         SKIP: {
+             is( $devinfo{'any'}, 'Pseudo-device that captures on all interfaces', 
+                 " - checking pseudo-device description" ) and last if exists $devinfo{'any'};
