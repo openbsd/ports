@@ -1,15 +1,20 @@
-COMMENT =		build and install Perl modules
+COMMENT =	build and install Perl modules
 
-DISTNAME =		Module-Build-0.4231
-CATEGORIES =		devel
+DISTNAME =	Module-Build-0.4232
+
+CATEGORIES =	devel
 
 # Perl
 PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
-PKG_ARCH =		*
 
-TEST_DEPENDS +=		devel/p5-PAR-Dist
+TEST_DEPENDS =		archivers/p5-Archive-Zip \
+			devel/p5-PAR-Dist \
+			security/p5-Module-Signature
+
 CONFIGURE_STYLE =	modbuild none
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
