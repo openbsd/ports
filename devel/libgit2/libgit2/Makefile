@@ -1,8 +1,8 @@
 COMMENT=		the Git library, take 2
 
-GH_ACCOUNT =		libgit2
-GH_PROJECT =		libgit2
-GH_TAGNAME =		v1.6.3
+GH_ACCOUNT=		libgit2
+GH_PROJECT=		libgit2
+GH_TAGNAME=		v1.6.4
 
 SHARED_LIBS +=  git2                      14.2 # 0.28
 
@@ -18,7 +18,7 @@ COMPILER_LANGS=		c
 # for atomic builtins
 MODGCC4_ARCHS=		hppa
 
-DEBUG_PACKAGES =	${BUILD_PACKAGES}
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 LIB_DEPENDS=		devel/http-parser \
 			devel/pcre \
@@ -28,6 +28,6 @@ CONFIGURE_ARGS=		-DUSE_SSH=ON \
 			-DUSE_HTTP_PARSER=system
 
 CFLAGS +=		-I${LOCALBASE}/include
-MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
+MODCMAKE_LDFLAGS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
