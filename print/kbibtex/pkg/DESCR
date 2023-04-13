@@ -1,0 +1,19 @@
+KBibTeX is a reference management application which can be used to collect
+TeX/LaTeX bibliographies and export them in various formats.
+
+KBibTeX can do the following things:
+
+ - Preview bibliography entries in various formats (Source (BibTeX), Source
+   (RIS), Wikipedia, standard (XML/XSLT), fancy (XML/XSLT), and abstract-only
+   (XML/XSLT)). Additional preview styles become available when bibtex2html is
+   installed.
+ - Import data in various bibliography file formats such as BibTeX,
+   RIS and ISI and export data to PDF (requires pdflatex), PostScrip,
+   RTF, and HTML.
+ - Search for the bibliography entries data in online databases (e.g. Google
+   Scholar, ACM, IEEE, arXiv, etc.)
+ - Preview local or remote (online) resources, e.g. PDF files, linked in the
+   BibTEX entry.
+ - Find and merge duplicate entries in bibliography.
+ - Integrate your bibliographies with LaTeX editors such as Kile and LyX.
+ - Import your Zotero library.
