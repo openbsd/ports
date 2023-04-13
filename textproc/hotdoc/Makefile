@@ -1,6 +1,6 @@
 COMMENT=		documentation tool micro-framework
 
-MODPY_EGG_VERSION=	0.14.0
+MODPY_EGG_VERSION=	0.14.1
 DISTNAME=		hotdoc-${MODPY_EGG_VERSION}
 
 CATEGORIES=		textproc
