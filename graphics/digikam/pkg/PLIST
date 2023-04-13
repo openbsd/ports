@@ -7,6 +7,7 @@ bin/digitaglinktree
 include/digikam/
 include/digikam/batchtool.h
 include/digikam/bcgcontainer.h
+include/digikam/captionvalues.h
 include/digikam/coredbaccess.h
 include/digikam/coredbalbuminfo.h
 include/digikam/coredbconstants.h
@@ -36,6 +37,7 @@ include/digikam/digikam_version.h
 include/digikam/dimg.h
 include/digikam/dimgbuiltinfilter.h
 include/digikam/dimgloaderobserver.h
+include/digikam/dimgloadersettings.h
 include/digikam/dimgpreviewitem.h
 include/digikam/dimgthreadedanalyser.h
 include/digikam/dimgthreadedfilter.h
@@ -86,6 +88,7 @@ include/digikam/iteminfolist.h
 include/digikam/loadingdescription.h
 include/digikam/loadsavethread.h
 include/digikam/managedloadsavethread.h
+include/digikam/metadatainfo.h
 include/digikam/metaengine.h
 include/digikam/metaengine_data.h
 include/digikam/photoinfocontainer.h
@@ -124,7 +127,9 @@ lib/cmake/DigikamPlugin/DigikamPluginConfig.cmake
 lib/qt5/plugins/digikam/
 lib/qt5/plugins/digikam/bqm/
 @so lib/qt5/plugins/digikam/bqm/Bqm_AntiVignetting_Plugin.so
+@so lib/qt5/plugins/digikam/bqm/Bqm_AssignLabels_Plugin.so
 @so lib/qt5/plugins/digikam/bqm/Bqm_AssignTemplate_Plugin.so
+@so lib/qt5/plugins/digikam/bqm/Bqm_Assigncaptions_Plugin.so
 @so lib/qt5/plugins/digikam/bqm/Bqm_AutoCorrection_Plugin.so
 @so lib/qt5/plugins/digikam/bqm/Bqm_BWconvert_Plugin.so
 @so lib/qt5/plugins/digikam/bqm/Bqm_BcgCorrection_Plugin.so
@@ -135,13 +140,16 @@ lib/qt5/plugins/digikam/bqm/
 @so lib/qt5/plugins/digikam/bqm/Bqm_ColorFX_Plugin.so
 @so lib/qt5/plugins/digikam/bqm/Bqm_Convert16To8_Plugin.so
 @so lib/qt5/plugins/digikam/bqm/Bqm_Convert8To16_Plugin.so
+@so lib/qt5/plugins/digikam/bqm/Bqm_ConvertToAVIF_Plugin.so
 @so lib/qt5/plugins/digikam/bqm/Bqm_ConvertToDNG_Plugin.so
 @so lib/qt5/plugins/digikam/bqm/Bqm_ConvertToHEIF_Plugin.so
 @so lib/qt5/plugins/digikam/bqm/Bqm_ConvertToJP2lugin_Plugin.so
 @so lib/qt5/plugins/digikam/bqm/Bqm_ConvertToJPEG_Plugin.so
+@so lib/qt5/plugins/digikam/bqm/Bqm_ConvertToJXL_Plugin.so
 @so lib/qt5/plugins/digikam/bqm/Bqm_ConvertToPGF_Plugin.so
 @so lib/qt5/plugins/digikam/bqm/Bqm_ConvertToPNG_Plugin.so
 @so lib/qt5/plugins/digikam/bqm/Bqm_ConvertToTIFF_Plugin.so
+@so lib/qt5/plugins/digikam/bqm/Bqm_ConvertToWEBP_Plugin.so
 @so lib/qt5/plugins/digikam/bqm/Bqm_Crop_Plugin.so
 @so lib/qt5/plugins/digikam/bqm/Bqm_CurvesAdjust_Plugin.so
 @so lib/qt5/plugins/digikam/bqm/Bqm_FilmGrain_Plugin.so
@@ -153,6 +161,7 @@ lib/qt5/plugins/digikam/bqm/
 @so lib/qt5/plugins/digikam/bqm/Bqm_LensAutoFix_Plugin.so
 @so lib/qt5/plugins/digikam/bqm/Bqm_LocalContrast_Plugin.so
 @so lib/qt5/plugins/digikam/bqm/Bqm_NoiseReduction_Plugin.so
+@so lib/qt5/plugins/digikam/bqm/Bqm_QualitySort_Plugin.so
 @so lib/qt5/plugins/digikam/bqm/Bqm_RedEyeCorrection_Plugin.so
 @so lib/qt5/plugins/digikam/bqm/Bqm_RemoveMetadata_Plugin.so
 @so lib/qt5/plugins/digikam/bqm/Bqm_Resize_Plugin.so
@@ -161,6 +170,7 @@ lib/qt5/plugins/digikam/bqm/
 @so lib/qt5/plugins/digikam/bqm/Bqm_Sharpen_Plugin.so
 @so lib/qt5/plugins/digikam/bqm/Bqm_Texture_Plugin.so
 @so lib/qt5/plugins/digikam/bqm/Bqm_TimeAdjust_Plugin.so
+@so lib/qt5/plugins/digikam/bqm/Bqm_Translate_Plugin.so
 @so lib/qt5/plugins/digikam/bqm/Bqm_UserScript_Plugin.so
 @so lib/qt5/plugins/digikam/bqm/Bqm_WaterMark_Plugin.so
 @so lib/qt5/plugins/digikam/bqm/Bqm_WhiteBalance_Plugin.so
@@ -250,12 +260,14 @@ lib/qt5/plugins/digikam/generic/
 @so lib/qt5/plugins/digikam/generic/Generic_SendByMail_Plugin.so
 @so lib/qt5/plugins/digikam/generic/Generic_SlideShow_Plugin.so
 @so lib/qt5/plugins/digikam/generic/Generic_SmugMug_Plugin.so
+@so lib/qt5/plugins/digikam/generic/Generic_TextConverter_Plugin.so
 @so lib/qt5/plugins/digikam/generic/Generic_TimeAdjust_Plugin.so
 @so lib/qt5/plugins/digikam/generic/Generic_Twitter_Plugin.so
 @so lib/qt5/plugins/digikam/generic/Generic_VideoSlideShow_Plugin.so
 @so lib/qt5/plugins/digikam/generic/Generic_Wallpaper_Plugin.so
 @so lib/qt5/plugins/digikam/generic/Generic_iNaturalist_Plugin.so
 lib/qt5/plugins/digikam/rawimport/
+@so lib/qt5/plugins/digikam/rawimport/RawImport_ART_Plugin.so
 @so lib/qt5/plugins/digikam/rawimport/RawImport_DarkTable_Plugin.so
 @so lib/qt5/plugins/digikam/rawimport/RawImport_Native_Plugin.so
 @so lib/qt5/plugins/digikam/rawimport/RawImport_RawTherapee_Plugin.so
@@ -414,6 +426,8 @@ share/digikam/geolocationedit/bookmarks-marker.png
 share/digikam/geolocationedit/searchmarker-normal.png
 share/digikam/geolocationedit/searchmarker-selected.png
 share/digikam/metadata/
+share/digikam/metadata/darktable.dkamp
+share/digikam/metadata/digikam.dkamp
 share/digikam/metadata/topicset.iptc-subjectcode.xml
 share/digikam/profiles/
 share/digikam/profiles/compatibleWithAdobeRGB1998.icc
@@ -692,10 +706,12 @@ share/digikam/themes/vanilla/template.xsl
 share/digikam/themes/vanilla/vanilla.desktop
 share/digikam/utils/
 share/digikam/utils/digikam-camera
+share/icons/hicolor/128x128/apps/avplayer.png
 share/icons/hicolor/128x128/apps/digikam.png
 share/icons/hicolor/128x128/apps/expoblending.png
 share/icons/hicolor/128x128/apps/panorama.png
 share/icons/hicolor/128x128/apps/showfoto.png
+share/icons/hicolor/16x16/apps/avplayer.png
 share/icons/hicolor/16x16/apps/digikam.png
 share/icons/hicolor/16x16/apps/dk-box.png
 share/icons/hicolor/16x16/apps/dk-dropbox.png
@@ -714,6 +730,7 @@ share/icons/hicolor/16x16/apps/dk-smugmug.png
 share/icons/hicolor/16x16/apps/expoblending.png
 share/icons/hicolor/16x16/apps/panorama.png
 share/icons/hicolor/16x16/apps/showfoto.png
+share/icons/hicolor/22x22/apps/avplayer.png
 share/icons/hicolor/22x22/apps/digikam.png
 share/icons/hicolor/22x22/apps/dk-box.png
 share/icons/hicolor/22x22/apps/dk-dropbox.png
@@ -732,6 +749,7 @@ share/icons/hicolor/22x22/apps/dk-smugmug.png
 share/icons/hicolor/22x22/apps/expoblending.png
 share/icons/hicolor/22x22/apps/panorama.png
 share/icons/hicolor/22x22/apps/showfoto.png
+share/icons/hicolor/256x256/apps/avplayer.png
 share/icons/hicolor/256x256/apps/digikam.png
 share/icons/hicolor/256x256/apps/showfoto.png
 share/icons/hicolor/32x32/actions/albumfolder-importdir.png
@@ -752,6 +770,7 @@ share/icons/hicolor/32x32/actions/tag-recents.png
 share/icons/hicolor/32x32/actions/tag-reset.png
 share/icons/hicolor/32x32/actions/tag.png
 share/icons/hicolor/32x32/actions/underexposure.png
+share/icons/hicolor/32x32/apps/avplayer.png
 share/icons/hicolor/32x32/apps/digikam.png
 share/icons/hicolor/32x32/apps/dk-box.png
 share/icons/hicolor/32x32/apps/dk-dropbox.png
@@ -770,6 +789,7 @@ share/icons/hicolor/32x32/apps/dk-smugmug.png
 share/icons/hicolor/32x32/apps/expoblending.png
 share/icons/hicolor/32x32/apps/panorama.png
 share/icons/hicolor/32x32/apps/showfoto.png
+share/icons/hicolor/48x48/apps/avplayer.png
 share/icons/hicolor/48x48/apps/digikam.png
 share/icons/hicolor/48x48/apps/dk-box.png
 share/icons/hicolor/48x48/apps/dk-dropbox.png
@@ -788,10 +808,12 @@ share/icons/hicolor/48x48/apps/dk-smugmug.png
 share/icons/hicolor/48x48/apps/expoblending.png
 share/icons/hicolor/48x48/apps/panorama.png
 share/icons/hicolor/48x48/apps/showfoto.png
+share/icons/hicolor/64x64/apps/avplayer.png
 share/icons/hicolor/64x64/apps/digikam.png
 share/icons/hicolor/64x64/apps/showfoto.png
 share/icons/hicolor/96x96/apps/expoblending.png
 share/icons/hicolor/96x96/apps/panorama.png
+share/icons/hicolor/scalable/apps/avplayer.svgz
 share/icons/hicolor/scalable/apps/digikam.svgz
 share/icons/hicolor/scalable/apps/dk-flickr.svgz
 share/icons/hicolor/scalable/apps/dk-googlephoto.svgz
@@ -832,6 +854,7 @@ share/locale/ga/LC_MESSAGES/digikam.mo
 share/locale/gl/LC_MESSAGES/digikam.mo
 share/locale/he/LC_MESSAGES/digikam.mo
 share/locale/hi/LC_MESSAGES/digikam.mo
+share/locale/hne/LC_MESSAGES/digikam.mo
 share/locale/hr/LC_MESSAGES/digikam.mo
 share/locale/hu/LC_MESSAGES/digikam.mo
 share/locale/id/LC_MESSAGES/digikam.mo
@@ -843,6 +866,8 @@ share/locale/km/LC_MESSAGES/digikam.mo
 share/locale/ko/LC_MESSAGES/digikam.mo
 share/locale/lt/LC_MESSAGES/digikam.mo
 share/locale/lv/LC_MESSAGES/digikam.mo
+share/locale/mai/LC_MESSAGES/digikam.mo
+share/locale/mr/LC_MESSAGES/digikam.mo
 share/locale/ms/LC_MESSAGES/digikam.mo
 share/locale/nb/LC_MESSAGES/digikam.mo
 share/locale/nds/LC_MESSAGES/digikam.mo
@@ -863,6 +888,7 @@ share/locale/sq/LC_MESSAGES/digikam.mo
 share/locale/sv/LC_MESSAGES/digikam.mo
 share/locale/th/LC_MESSAGES/digikam.mo
 share/locale/tr/LC_MESSAGES/digikam.mo
+share/locale/ug/LC_MESSAGES/digikam.mo
 share/locale/uk/LC_MESSAGES/digikam.mo
 share/locale/vi/LC_MESSAGES/digikam.mo
 share/locale/zh_CN/LC_MESSAGES/digikam.mo
