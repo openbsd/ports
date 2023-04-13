@@ -29,6 +29,7 @@
      SUBDIR += hplip
      SUBDIR += htmldoc
      SUBDIR += ijs
+     SUBDIR += kbibtex
      SUBDIR += l2a
      SUBDIR += latex-mk
      SUBDIR += lcdf-typetools
