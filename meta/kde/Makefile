@@ -24,6 +24,12 @@ PKGNAME-pim =		kde-pim-${MODKDE_VERSION}
 PKGNAME-development =	kde-development-${MODKDE_VERSION}
 PKGNAME-utils =		kde-utils-${MODKDE_VERSION}
 
+REVISION-development =	0
+REVISION-education =	0
+REVISION-utils =	0
+REVISION-pim =		0
+REVISION-main =		0
+
 MULTI_PACKAGES +=	-main \
 			-games \
 			-admin \
@@ -77,6 +83,9 @@ RUN_DEPENDS-education = \
 	x11/kde-applications/minuet \
 	x11/kde-applications/rocs \
 	x11/kde-applications/step
+
+RUN_DEPENDS-education += \
+	print/kbibtex
 
 # Not ported yet
 # x11/kde-applications/parley
@@ -217,6 +226,9 @@ RUN_DEPENDS-pim = \
 	x11/kde-applications/korganizer \
 	x11/kde-applications/kpimtextedit
 
+RUN_DEPENDS-pim = \
+	productivity/kalendar
+
 WANTLIB-utils =
 LIB_DEPENDS-utils =
 RUN_DEPENDS-utils = \
@@ -233,7 +245,8 @@ RUN_DEPENDS-utils = \
 	x11/kde-applications/ktimer \
 	x11/kde-applications/kwalletmanager \
 	x11/kde-applications/print-manager \
-	x11/kde-applications/sweeper
+	x11/kde-applications/sweeper \
+	x11/kde-applications/markdownpart
 
 RUN_DEPENDS-utils += \
 	x11/yakuake
@@ -298,13 +311,13 @@ RUN_DEPENDS-development = \
 	x11/kde-applications/kimagemapeditor
 
 RUN_DEPENDS-development += \
-	x11/kde-applications/okteta
+	x11/kde-applications/okteta \
+	x11/kde-applications/signon-kwallet-extension \
+	x11/kde-applications/kaccounts-integration \
+	x11/kde-applications/kaccounts-providers
 
 # Not yet ported
-#x11/kde-applications/signon-kwallet-extension
 #x11/kde-applications/kpat
-#x11/kde-applications/kaccounts-integration
-#x11/kde-applications/kaccounts-providers
 
 WANTLIB-main =
 LIB_DEPENDS-main =
