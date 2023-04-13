@@ -25,7 +25,7 @@ PKGNAME-development =	kde-development-${MODKDE_VERSION}
 PKGNAME-utils =		kde-utils-${MODKDE_VERSION}
 
 REVISION-development =	0
-REVISION-education =	0
+REVISION-education =	1
 REVISION-utils =	0
 REVISION-pim =		0
 REVISION-main =		0
@@ -85,7 +85,8 @@ RUN_DEPENDS-education = \
 	x11/kde-applications/step
 
 RUN_DEPENDS-education += \
-	print/kbibtex
+	print/kbibtex \
+	math/labplot
 
 # Not ported yet
 # x11/kde-applications/parley
