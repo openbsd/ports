@@ -2,7 +2,7 @@ PORTROACH =	limitw:1,even
 
 COMMENT =	GNU privacy guard - a free PGP replacement
 
-DISTNAME =	gnupg-2.2.40
+DISTNAME =	gnupg-2.2.41
 
 CATEGORIES =	security
 
