@@ -4,9 +4,8 @@ PORTROACH=	site:https://github.com/NetworkConfiguration/dhcpcd/releases/
 
 GH_ACCOUNT=	NetworkConfiguration
 GH_PROJECT=	dhcpcd
-GH_TAGNAME=	dhcpcd-9.4.1
+GH_TAGNAME=	dhcpcd-9.5.0
 DISTNAME=	${GH_TAGNAME}
-REVISION=	2
 
 EPOCH=		0
 
