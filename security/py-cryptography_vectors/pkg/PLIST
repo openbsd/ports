@@ -139,6 +139,21 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/Ed448/e
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/Ed448/ed448-pub.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/Ed448/rfc8032.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/certs/
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/certs/dsa-p256.pub
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/certs/p256-dsa.pub
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/certs/p256-p256-broken-signature-key-type.pub
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/certs/p256-p256-duplicate-crit-opts.pub
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/certs/p256-p256-duplicate-extension.pub
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/certs/p256-p256-empty-principals.pub
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/certs/p256-p256-invalid-cert-type.pub
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/certs/p256-p256-non-lexical-crit-opts.pub
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/certs/p256-p256-non-lexical-extensions.pub
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/certs/p256-p384.pub
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/certs/p256-p521.pub
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/certs/p256-rsa-sha1.pub
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/certs/p256-rsa-sha256.pub
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/certs/p256-rsa-sha512.pub
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/dsa-nopsw.key
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/dsa-nopsw.key-cert.pub
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/dsa-nopsw.key.pub
@@ -2287,6 +2302,7 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/cryptography.
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/cryptography.io.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/cryptography.io.precert.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/cryptography.io.with_garbage.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/cryptography.io.with_headers.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/aia_ca_issuers.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/aia_ocsp.pem
@@ -2331,6 +2347,7 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/crl_id
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/crl_idp_reasons_only.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/crl_idp_relative_user_all_reasons.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/crl_idp_relativename_only.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/crl_inner_outer_mismatch.der
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/crl_inval_cert_issuer_entry_ext.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/crl_invalid_time.der
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/crl_md2_unknown_crit_entry_ext.pem
@@ -2351,6 +2368,7 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/invali
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/invalid_utf8_common_name.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/invalid_version.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/long-form-name-attribute.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/mismatch_inner_outer_sig_algorithm.der
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/nc_excluded.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/nc_invalid_ip4_netmask.der
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/nc_invalid_ip_netmask.pem
