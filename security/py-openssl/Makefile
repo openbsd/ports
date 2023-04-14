@@ -1,6 +1,6 @@
 COMMENT=	Python interface to the OpenSSL library
 
-MODPY_EGG_VERSION=	23.0.0
+MODPY_EGG_VERSION=	23.1.1
 DISTNAME=	pyOpenSSL-${MODPY_EGG_VERSION}
 PKGNAME=	py-openssl-${MODPY_EGG_VERSION}
 CATEGORIES=	security devel
