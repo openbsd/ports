@@ -2,7 +2,7 @@ COMMENT=	SSH remote version scanner
 
 GH_ACCOUNT=	ofalk
 GH_PROJECT=	scanssh
-GH_TAGNAME=	2.1.3
+GH_TAGNAME=	2.1.3.1
 
 CATEGORIES=	security
 
