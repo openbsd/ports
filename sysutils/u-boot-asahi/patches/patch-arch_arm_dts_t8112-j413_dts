@@ -1,10 +1,10 @@
 Index: arch/arm/dts/t8112-j413.dts
 --- arch/arm/dts/t8112-j413.dts.orig
 +++ arch/arm/dts/t8112-j413.dts
-@@ -135,15 +135,6 @@
- 		model = "MacBook Pro J413 integrated audio";
- 
+@@ -152,15 +152,6 @@
  		dai-link@0 {
+ 			link-name = "Speakers";
+ 
 -			/*
 -			 * DANGER ZONE: You can blow your speakers!
 -			 *
@@ -14,6 +14,6 @@ Index: arch/arm/dts/t8112-j413.dts
 -			 */
 -			status = "disabled";
 -
- 			link-name = "Speakers";
- 			mclk-fs = <64>;
- 
+ 			cpu {
+ 				sound-dai = <&mca 0>, <&mca 1>;
+ 			};

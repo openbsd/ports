@@ -1,0 +1,18 @@
+Index: arch/arm/dts/t600x-j375.dtsi
+--- arch/arm/dts/t600x-j375.dtsi.orig
++++ arch/arm/dts/t600x-j375.dtsi
+@@ -292,14 +292,6 @@
+ 
+ 		dai-link@0 {
+ 			link-name = "Speaker";
+-			/*
+-			* DANGER ZONE: You can blow your speakers!
+-			*
+-			* The drivers are not ready, and unless you are careful
+-			* to attenuate the audio stream, you run the risk of
+-			* blowing your speakers.
+-			*/
+-			status = "disabled";
+ 			cpu {
+ 				sound-dai = <&mca 0>;
+ 			};
