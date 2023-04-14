@@ -10,7 +10,6 @@ bin/0ad
 @static-lib lib/liblobby.a
 @static-lib lib/liblowlevel.a
 @static-lib lib/libmocks_real.a
-@static-lib lib/libmocks_test.a
 @static-lib lib/libmongoose.a
 @lib lib/libmozjs78-ps-release.so.${LIBmozjs78-ps-release_VERSION}
 @static-lib lib/libnetwork.a
