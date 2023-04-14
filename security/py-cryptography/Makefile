@@ -1,6 +1,6 @@
 COMMENT=	cryptographic recipes and primitives for Python
 
-MODPY_EGG_VERSION=	39.0.1
+MODPY_EGG_VERSION=	40.0.2
 DISTNAME=	cryptography-${MODPY_EGG_VERSION}
 DISTFILES=	cryptography-${MODPY_EGG_VERSION}${EXTRACT_SUFX}
 PKGNAME=	${MODPY_PY_PREFIX}${DISTNAME}
@@ -35,12 +35,13 @@ MODCARGO_CARGOTOML= ${WRKSRC}/src/rust/Cargo.toml
 MODCARGO_INSTALL= No
 MODCARGO_TEST=	No
 
+MAKE_ENV=	OPENSSL_DIR="/usr"
+
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		devel/py-setuptools-rust${MODPY_FLAVOR}
 
 RUN_DEPENDS=	devel/py-cffi${MODPY_FLAVOR}>=1.4.2
 
-MODPY_PYTEST=	Yes
 PORTHOME=	${WRKDIR}
 TEST_DEPENDS=	devel/py-coverage${MODPY_FLAVOR} \
 		devel/py-hypothesis${MODPY_FLAVOR} \
@@ -57,7 +58,6 @@ do-configure:
 	@${MODCARGO_configure}
 
 do-build:
-	#@${MODCARGO_BUILD_TARGET}
 	@${MODPY_BUILD_TARGET}
 
 .include <bsd.port.mk>

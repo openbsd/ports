@@ -72,8 +72,6 @@ lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/${
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/${MODPY_PYCACHE}rsa.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/${MODPY_PYCACHE}x25519.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/${MODPY_PYCACHE}x25519.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/${MODPY_PYCACHE}x448.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/${MODPY_PYCACHE}x448.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/aead.py
@@ -91,20 +89,21 @@ lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/hm
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/poly1305.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/rsa.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/utils.py
-lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/x25519.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/x448.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-@so lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_openssl${MODPY_ABI3SO}.so
-lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_openssl.pyi
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/
 @so lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust${MODPY_ABI3SO}.so
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/__init__.pyi
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/_openssl.pyi
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/asn1.pyi
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/ocsp.pyi
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/openssl/
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/openssl/__init__.pyi
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/openssl/x25519.pyi
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/pkcs7.pyi
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/x509.pyi
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/openssl/
