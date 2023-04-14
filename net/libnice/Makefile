@@ -1,11 +1,13 @@
 COMMENT =		GLib ICE implementation
 DISTNAME =		libnice-0.1.21
+REVISION =		0
+
 CATEGORIES =		net
 
 SHARED_LIBS +=		nice	4.2	# 10.13.1
 
 WANTLIB += c crypto gio-2.0 glib-2.0 gobject-2.0 gstbase-1.0 gstreamer-1.0
-WANTLIB += gupnp-igd-1.0
+WANTLIB += gupnp-igd-1.6
 
 HOMEPAGE =		https://libnice.freedesktop.org
 DIST_SUBDIR =		libnice
