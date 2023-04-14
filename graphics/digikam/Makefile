@@ -124,6 +124,11 @@ CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON \
 			-DENABLE_INTERNALMYSQL=OFF \
 			-DENABLE_MEDIAPLAYER=ON
 
+# Some unit tests require data from the external "Digikam Test Data" git
+# repository
+CONFIGURE_ARGS +=	-DBUILD_TESTING=OFF
+CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Git=On
+
 .if ${FLAVOR:Mmysql}
 BUILD_DEPENDS +=	databases/mariadb
 RUN_DEPENDS +=		databases/mariadb
