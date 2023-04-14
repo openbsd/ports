@@ -19,7 +19,7 @@ Index: config/config.json
      "EnableAWSMetering": false,
      "SplitKey": "",
      "FeatureFlagSyncIntervalSeconds": 30,
-@@ -151,14 +151,14 @@
+@@ -152,14 +152,14 @@
      "ReplicaLagSettings": []
    },
    "LogSettings": {
@@ -36,7 +36,7 @@ Index: config/config.json
      "EnableWebhookDebugging": true,
      "EnableDiagnostics": true,
      "VerboseDiagnostics": false,
-@@ -176,14 +176,14 @@
+@@ -177,14 +177,14 @@
      "AdvancedLoggingConfig": ""
    },
    "NotificationLogSettings": {
@@ -53,7 +53,7 @@ Index: config/config.json
      "AdvancedLoggingConfig": ""
    },
    "PasswordSettings": {
-@@ -201,7 +201,7 @@
+@@ -202,7 +202,7 @@
      "MaxImageResolution": 33177600,
      "MaxImageDecoderConcurrency": -1,
      "DriverName": "local",
@@ -62,7 +62,7 @@ Index: config/config.json
      "EnablePublicLink": false,
      "ExtractContent": true,
      "ArchiveRecursion": false,
-@@ -233,11 +233,11 @@
+@@ -234,11 +234,11 @@
      "EnableSMTPAuth": false,
      "SMTPUsername": "",
      "SMTPPassword": "",
@@ -77,7 +77,7 @@ Index: config/config.json
      "PushNotificationServer": "https://push-test.mattermost.com",
      "PushNotificationContents": "full",
      "PushNotificationBuffer": 1000,
-@@ -268,13 +268,13 @@
+@@ -269,13 +269,13 @@
    "SupportSettings": {
      "TermsOfServiceLink": "https://mattermost.com/terms-of-use/",
      "PrivacyPolicyLink": "https://mattermost.com/privacy-policy/",
@@ -93,7 +93,7 @@ Index: config/config.json
    },
    "AnnouncementSettings": {
      "EnableBanner": false,
-@@ -380,7 +380,7 @@
+@@ -381,7 +381,7 @@
    },
    "ComplianceSettings": {
      "Enable": false,
@@ -102,7 +102,7 @@ Index: config/config.json
      "EnableDaily": false,
      "BatchSize": 30000
    },
-@@ -542,8 +542,8 @@
+@@ -543,8 +543,8 @@
      "EnableUploads": false,
      "AllowInsecureDownloadURL": false,
      "EnableHealthCheck": true,
@@ -113,7 +113,7 @@ Index: config/config.json
      "Plugins": {},
      "PluginStates": {
        "com.mattermost.apps": {
-@@ -622,11 +622,11 @@
+@@ -623,11 +623,11 @@
      "OnboardingTourTips": true
    },
    "ImportSettings": {
