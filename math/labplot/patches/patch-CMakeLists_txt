@@ -1,0 +1,12 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -502,7 +502,7 @@ ENDIF ()
+ 
+ ### Excel (optional) #############################
+ IF (ENABLE_EXCEL)
+-        FIND_PACKAGE (QXlsx)
++        FIND_PACKAGE (QXlsxQt5)
+         IF (QXLSX_FOUND)
+ 		MESSAGE (STATUS "QXlsx library FOUND.")
+                 add_definitions (-DHAVE_EXCEL)

@@ -1,0 +1,12 @@
+Index: src/CMakeLists.txt
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -585,7 +585,7 @@ IF (ENABLE_EXCEL)
+         ENDIF ()
+ 
+ 	IF (QXLSX_FOUND OR BUILD_EXCEL)
+-		target_link_libraries( labplot2lib QXlsx )
++		target_link_libraries( labplot2lib QXlsx::QXlsx )
+         ENDIF ()
+ ENDIF ()
+ 

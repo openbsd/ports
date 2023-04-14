@@ -1,7 +1,7 @@
 COMMENT =	data visualization and analysis software
 
 DISTNAME =	labplot-2.10.0
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	math x11
 
@@ -20,11 +20,11 @@ WANTLIB += KF5KIOFileWidgets KF5KIOGui KF5KIOWidgets KF5NewStuff
 WANTLIB += KF5NewStuffCore KF5Parts KF5Service KF5Solid KF5SonnetUi
 WANTLIB += KF5SyntaxHighlighting KF5TextWidgets KF5WidgetsAddons
 WANTLIB += KF5WindowSystem KF5XmlGui KUserFeedbackCore KUserFeedbackWidgets
-WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB += Qt5SerialPort Qt5Sql Qt5Svg Qt5Widgets Qt5Xml X11 c
-WANTLIB += cantorlibs cerf cfitsio fftw3 gsl gslcblas hdf5 lz4
-WANTLIB += m markdown matio netcdf poppler poppler-qt5 spectre
-WANTLIB += z
+WANTLIB += QXlsxQt5 Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
+WANTLIB += Qt5PrintSupport Qt5SerialPort Qt5Sql Qt5Svg Qt5Widgets
+WANTLIB += Qt5Xml X11 c cantorlibs cerf cfitsio fftw3 gsl gslcblas
+WANTLIB += hdf5 lz4 m markdown matio netcdf poppler poppler-qt5
+WANTLIB += spectre z
 
 MASTER_SITES =	https://download.kde.org/stable/labplot/
 EXTRACT_SUFX =	.tar.xz
@@ -77,6 +77,7 @@ LIB_DEPENDS +=	devel/kf5/syntax-highlighting \
 		math/libcerf \
 		math/matio \
 		math/netcdf \
+		textproc/qxlsx \
 		productivity/kuserfeedback \
 		x11/kde-applications/cantor
 
@@ -95,8 +96,13 @@ CONFIGURE_ARGS +=	-DKDE_INSTALL_MANDIR=${WRKINST}/man
 
 CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Git=On
 CONFIGURE_ARGS +=	-DENABLE_VECTOR_BLF=Off
-CONFIGURE_ARGS +=	-DENABLE_EXCEL=Off
+
+CONFIGURE_ARGS +=	-DCMAKE_MODULE_PATH=${LOCALBASE}/lib/cmake
 
 TEST_IS_INTERACTIVE =	X11
+
+pre-configure:
+	# use system dependencies
+	rm -rf ${WRKSRC}/src/{cmake,cantor,kdmactouchbar,liborigin,QXlsx,stringtokenizer}
 
 .include <bsd.port.mk>
