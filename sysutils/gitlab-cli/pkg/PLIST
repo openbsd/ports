@@ -23,6 +23,7 @@
 @man man/man1/glab-config-get.1
 @man man/man1/glab-config-set.1
 @man man/man1/glab-config.1
+@man man/man1/glab-incident-close.1
 @man man/man1/glab-incident-list.1
 @man man/man1/glab-incident-view.1
 @man man/man1/glab-incident.1
