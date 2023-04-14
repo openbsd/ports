@@ -1,7 +1,7 @@
 Index: php.ini-development
 --- php.ini-development.orig
 +++ php.ini-development
-@@ -735,11 +735,8 @@ default_charset = "UTF-8"
+@@ -740,11 +740,8 @@ default_charset = "UTF-8"
  ;;;;;;;;;;;;;;;;;;;;;;;;;
  
  ; UNIX: "/path1:/path2"
@@ -14,7 +14,7 @@ Index: php.ini-development
  ; PHP's default setting for include_path is ".;/path/to/php/pear"
  ; https://php.net/include-path
  
-@@ -761,6 +758,7 @@ user_dir =
+@@ -766,6 +763,7 @@ user_dir =
  ;extension_dir = "./"
  ; On windows:
  ;extension_dir = "ext"
@@ -22,7 +22,7 @@ Index: php.ini-development
  
  ; Directory where the temporary files should be placed.
  ; Defaults to the system default (see sys_get_temp_dir)
-@@ -856,7 +854,7 @@ max_file_uploads = 20
+@@ -861,7 +859,7 @@ max_file_uploads = 20
  
  ; Whether to allow the treatment of URLs (like http:// or ftp://) as files.
  ; https://php.net/allow-url-fopen
@@ -31,7 +31,7 @@ Index: php.ini-development
  
  ; Whether to allow include/require to open URLs (like https:// or ftp://) as files.
  ; https://php.net/allow-url-include
-@@ -968,7 +966,7 @@ cli_server.color = On
+@@ -973,7 +971,7 @@ cli_server.color = On
  [Date]
  ; Defines the default timezone used by the date functions
  ; https://php.net/date.timezone

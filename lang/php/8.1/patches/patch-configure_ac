@@ -1,7 +1,7 @@
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -1107,16 +1107,16 @@ case $php_sapi_module in
+@@ -1108,16 +1108,16 @@ case $php_sapi_module in
      fi
      case $with_pic in
        yes)
@@ -21,7 +21,7 @@ Index: configure.ac
      if test -z "$PHP_MODULES" && test -z "$PHP_ZEND_EX"; then
        enable_shared=no
      fi
-@@ -1372,7 +1372,7 @@ EXPANDED_SYSCONFDIR=`eval echo $sysconfdir`
+@@ -1373,7 +1373,7 @@ EXPANDED_SYSCONFDIR=`eval echo $sysconfdir`
  EXPANDED_DATADIR=$datadir
  EXPANDED_PHP_CONFIG_FILE_PATH=`eval echo "$PHP_CONFIG_FILE_PATH"`
  EXPANDED_PHP_CONFIG_FILE_SCAN_DIR=`eval echo "$PHP_CONFIG_FILE_SCAN_DIR"`
