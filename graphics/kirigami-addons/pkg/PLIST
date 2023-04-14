@@ -19,7 +19,12 @@ lib/qt5/qml/org/kde/kirigamiaddons/dateandtime/private/TumblerTimePicker.qml
 lib/qt5/qml/org/kde/kirigamiaddons/dateandtime/qmldir
 lib/qt5/qml/org/kde/kirigamiaddons/labs/
 lib/qt5/qml/org/kde/kirigamiaddons/labs/components/
+lib/qt5/qml/org/kde/kirigamiaddons/labs/components/AbstractMaximizeComponent.qml
+lib/qt5/qml/org/kde/kirigamiaddons/labs/components/AlbumMaximizeComponent.qml
+lib/qt5/qml/org/kde/kirigamiaddons/labs/components/AlbumModelItem.qml
+lib/qt5/qml/org/kde/kirigamiaddons/labs/components/ImageMaximizeDelegate.qml
 lib/qt5/qml/org/kde/kirigamiaddons/labs/components/SearchPopupField.qml
+lib/qt5/qml/org/kde/kirigamiaddons/labs/components/VideoMaximizeDelegate.qml
 @so lib/qt5/qml/org/kde/kirigamiaddons/labs/components/libcomponentsplugin.so
 lib/qt5/qml/org/kde/kirigamiaddons/labs/components/qmldir
 lib/qt5/qml/org/kde/kirigamiaddons/labs/mobileform/
@@ -36,12 +41,14 @@ lib/qt5/qml/org/kde/kirigamiaddons/labs/mobileform/FormDelegateBackground.qml
 lib/qt5/qml/org/kde/kirigamiaddons/labs/mobileform/FormDelegateSeparator.qml
 lib/qt5/qml/org/kde/kirigamiaddons/labs/mobileform/FormRadioDelegate.qml
 lib/qt5/qml/org/kde/kirigamiaddons/labs/mobileform/FormSectionText.qml
+lib/qt5/qml/org/kde/kirigamiaddons/labs/mobileform/FormSpinBoxDelegate.qml
 lib/qt5/qml/org/kde/kirigamiaddons/labs/mobileform/FormSwitchDelegate.qml
 lib/qt5/qml/org/kde/kirigamiaddons/labs/mobileform/FormTextDelegate.qml
 lib/qt5/qml/org/kde/kirigamiaddons/labs/mobileform/FormTextFieldDelegate.qml
 @so lib/qt5/qml/org/kde/kirigamiaddons/labs/mobileform/libmobileformplugin.so
 lib/qt5/qml/org/kde/kirigamiaddons/labs/mobileform/private/
 lib/qt5/qml/org/kde/kirigamiaddons/labs/mobileform/private/ContentItemLoader.qml
+lib/qt5/qml/org/kde/kirigamiaddons/labs/mobileform/private/SpinButton.qml
 lib/qt5/qml/org/kde/kirigamiaddons/labs/mobileform/qmldir
 lib/qt5/qml/org/kde/kirigamiaddons/sounds/
 lib/qt5/qml/org/kde/kirigamiaddons/sounds/SoundsPicker.qml
