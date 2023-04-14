@@ -1944,6 +1944,7 @@ librenms/html/images/logos/ionodes.png
 librenms/html/images/logos/lambdatrail.svg
 librenms/html/images/logos/lantronix.svg
 librenms/html/images/logos/linksys.svg
+librenms/html/images/logos/loadbalancer.svg
 librenms/html/images/logos/logmaster.png
 librenms/html/images/logos/maipu.png
 librenms/html/images/logos/mcafeewebgateway.svg
@@ -1953,6 +1954,7 @@ librenms/html/images/logos/mikrotik.svg
 librenms/html/images/logos/mitsubishi.svg
 librenms/html/images/logos/montclair.svg
 librenms/html/images/logos/netmodule.png
+librenms/html/images/logos/nutanix.svg
 librenms/html/images/logos/omnitron.png
 librenms/html/images/logos/oneaccess.png
 librenms/html/images/logos/open-e.svg
@@ -1979,6 +1981,7 @@ librenms/html/images/logos/rittal.svg
 librenms/html/images/logos/rockstor.svg
 librenms/html/images/logos/rocky.svg
 librenms/html/images/logos/rs.svg
+librenms/html/images/logos/rubrik.svg
 librenms/html/images/logos/ruckus.svg
 librenms/html/images/logos/ruijie.png
 librenms/html/images/logos/sagemcom.svg
@@ -2234,6 +2237,7 @@ librenms/html/images/os/ligowave.png
 librenms/html/images/os/linksys.png
 librenms/html/images/os/linux.svg
 librenms/html/images/os/linuxmint.svg
+librenms/html/images/os/loadbalancer.svg
 librenms/html/images/os/logmaster.png
 librenms/html/images/os/loop-telecom.svg
 librenms/html/images/os/maipu.png
@@ -2276,6 +2280,7 @@ librenms/html/images/os/nokia.svg
 librenms/html/images/os/novell.svg
 librenms/html/images/os/nrg.png
 librenms/html/images/os/nti.svg
+librenms/html/images/os/nutanix.svg
 librenms/html/images/os/oki.svg
 librenms/html/images/os/omnitron.png
 librenms/html/images/os/oneaccess.png
@@ -2341,6 +2346,7 @@ librenms/html/images/os/rockstor.svg
 librenms/html/images/os/rocky.svg
 librenms/html/images/os/roku.svg
 librenms/html/images/os/rs.svg
+librenms/html/images/os/rubrik.svg
 librenms/html/images/os/ruckus.svg
 librenms/html/images/os/ruijie.png
 librenms/html/images/os/saf.png
@@ -3515,6 +3521,7 @@ librenms/includes/definitions/liebert.yaml
 librenms/includes/definitions/ligoos.yaml
 librenms/includes/definitions/linksys-ss.yaml
 librenms/includes/definitions/linux.yaml
+librenms/includes/definitions/loadbalancer.yaml
 librenms/includes/definitions/logmaster.yaml
 librenms/includes/definitions/loop-telecom.yaml
 librenms/includes/definitions/luminato.yaml
@@ -3572,6 +3579,7 @@ librenms/includes/definitions/nrg.yaml
 librenms/includes/definitions/ns-bsd.yaml
 librenms/includes/definitions/nti.yaml
 librenms/includes/definitions/ntron.yaml
+librenms/includes/definitions/nutanix-aos.yaml
 librenms/includes/definitions/nxos.yaml
 librenms/includes/definitions/occamos.yaml
 librenms/includes/definitions/oceanstor.yaml
@@ -3667,6 +3675,7 @@ librenms/includes/definitions/rnx-updu.yaml
 librenms/includes/definitions/ros.yaml
 librenms/includes/definitions/routeros.yaml
 librenms/includes/definitions/rs.yaml
+librenms/includes/definitions/rubrik.yaml
 librenms/includes/definitions/ruckuswireless-hotzone.yaml
 librenms/includes/definitions/ruckuswireless-sz.yaml
 librenms/includes/definitions/ruckuswireless-unleashed.yaml
@@ -5227,6 +5236,26 @@ librenms/includes/html/graphs/device/ntp_dispersion.inc.php
 librenms/includes/html/graphs/device/ntp_offset.inc.php
 librenms/includes/html/graphs/device/ntp_stratum.inc.php
 librenms/includes/html/graphs/device/panos_activetunnels.inc.php
+librenms/includes/html/graphs/device/panos_panFlowDosBlkHwEntries.inc.php
+librenms/includes/html/graphs/device/panos_panFlowDosBlkNumEntries.inc.php
+librenms/includes/html/graphs/device/panos_panFlowDosBlkSwEntries.inc.php
+librenms/includes/html/graphs/device/panos_panFlowDosDropIpBlocked.inc.php
+librenms/includes/html/graphs/device/panos_panFlowDosPbpDrop.inc.php
+librenms/includes/html/graphs/device/panos_panFlowDosRedIcmp.inc.php
+librenms/includes/html/graphs/device/panos_panFlowDosRedIcmp6.inc.php
+librenms/includes/html/graphs/device/panos_panFlowDosRedIp.inc.php
+librenms/includes/html/graphs/device/panos_panFlowDosRedTcp.inc.php
+librenms/includes/html/graphs/device/panos_panFlowDosRedUdp.inc.php
+librenms/includes/html/graphs/device/panos_panFlowDosRuleDeny.inc.php
+librenms/includes/html/graphs/device/panos_panFlowDosRuleDrop.inc.php
+librenms/includes/html/graphs/device/panos_panFlowDosSyncookieNotTcpSyn.inc.php
+librenms/includes/html/graphs/device/panos_panFlowDosSyncookieNotTcpSynAck.inc.php
+librenms/includes/html/graphs/device/panos_panFlowDosZoneRedAct.inc.php
+librenms/includes/html/graphs/device/panos_panFlowDosZoneRedMax.inc.php
+librenms/includes/html/graphs/device/panos_panFlowMeterVsysThrottle.inc.php
+librenms/includes/html/graphs/device/panos_panFlowPolicyDeny.inc.php
+librenms/includes/html/graphs/device/panos_panFlowPolicyNat.inc.php
+librenms/includes/html/graphs/device/panos_panFlowScanDrop.inc.php
 librenms/includes/html/graphs/device/panos_sessions.inc.php
 librenms/includes/html/graphs/device/panos_sessions_icmp.inc.php
 librenms/includes/html/graphs/device/panos_sessions_ssl.inc.php
