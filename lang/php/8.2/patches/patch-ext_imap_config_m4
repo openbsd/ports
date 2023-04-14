@@ -4,7 +4,7 @@ https://git.slackware.nl/current/diff/source/n/php/php.imap.api.diff?id=4f9273af
 Index: ext/imap/config.m4
 --- ext/imap/config.m4.orig
 +++ ext/imap/config.m4
-@@ -34,6 +34,7 @@ AC_DEFUN([PHP_IMAP_TEST_BUILD], [
+@@ -46,6 +46,7 @@ AC_DEFUN([PHP_IMAP_TEST_BUILD], [
      PHP_IMAP_EXPORT void mm_nocritical(void){}
      PHP_IMAP_EXPORT void mm_notify(void){}
      PHP_IMAP_EXPORT void mm_login(void){}
@@ -12,7 +12,7 @@ Index: ext/imap/config.m4
      PHP_IMAP_EXPORT void mm_diskerror(void){}
      PHP_IMAP_EXPORT void mm_status(void){}
      PHP_IMAP_EXPORT void mm_lsub(void){}
-@@ -262,6 +263,7 @@ if test "$PHP_IMAP" != "no"; then
+@@ -282,6 +283,7 @@ if test "$PHP_IMAP" != "no"; then
        PHP_IMAP_EXPORT void mm_nocritical(void){}
        PHP_IMAP_EXPORT void mm_notify(void){}
        PHP_IMAP_EXPORT void mm_login(void){}

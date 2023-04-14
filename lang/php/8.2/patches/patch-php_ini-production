@@ -10,7 +10,7 @@ Index: php.ini-production
  
  ;;;;;;;;;;;;;;;;;;;
  ; Resource Limits ;
-@@ -737,11 +737,8 @@ default_charset = "UTF-8"
+@@ -742,11 +742,8 @@ default_charset = "UTF-8"
  ;;;;;;;;;;;;;;;;;;;;;;;;;
  
  ; UNIX: "/path1:/path2"
@@ -23,7 +23,7 @@ Index: php.ini-production
  ; PHP's default setting for include_path is ".;/path/to/php/pear"
  ; https://php.net/include-path
  
-@@ -763,6 +760,7 @@ user_dir =
+@@ -768,6 +765,7 @@ user_dir =
  ;extension_dir = "./"
  ; On windows:
  ;extension_dir = "ext"
@@ -31,7 +31,7 @@ Index: php.ini-production
  
  ; Directory where the temporary files should be placed.
  ; Defaults to the system default (see sys_get_temp_dir)
-@@ -858,7 +856,7 @@ max_file_uploads = 20
+@@ -863,7 +861,7 @@ max_file_uploads = 20
  
  ; Whether to allow the treatment of URLs (like http:// or ftp://) as files.
  ; https://php.net/allow-url-fopen
@@ -40,7 +40,7 @@ Index: php.ini-production
  
  ; Whether to allow include/require to open URLs (like https:// or ftp://) as files.
  ; https://php.net/allow-url-include
-@@ -971,7 +969,7 @@ cli_server.color = On
+@@ -976,7 +974,7 @@ cli_server.color = On
  [Date]
  ; Defines the default timezone used by the date functions
  ; https://php.net/date.timezone

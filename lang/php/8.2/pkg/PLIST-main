@@ -123,6 +123,7 @@ share/php-${PV}/include/Zend/zend_list.h
 share/php-${PV}/include/Zend/zend_llist.h
 share/php-${PV}/include/Zend/zend_long.h
 share/php-${PV}/include/Zend/zend_map_ptr.h
+share/php-${PV}/include/Zend/zend_max_execution_timer.h
 share/php-${PV}/include/Zend/zend_mmap.h
 share/php-${PV}/include/Zend/zend_modules.h
 share/php-${PV}/include/Zend/zend_multibyte.h
