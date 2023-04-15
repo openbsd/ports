@@ -1,10 +1,9 @@
 COMMENT =		library to manipulate font files from for Python
 
-MODPY_EGG_VERSION =	4.37.4
+MODPY_EGG_VERSION =	4.39.3
 DISTNAME =		fonttools-${MODPY_EGG_VERSION}
 PKGNAME =		py-fonttools-${MODPY_EGG_VERSION}
 EXTRACT_SUFX =		.zip
-REVISION =		0
 
 CATEGORIES =		print
 

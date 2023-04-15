@@ -250,6 +250,8 @@ lib/python${MODPY_VERSION}/site-packages/fontTools/misc/${MODPY_PYCACHE}xmlReade
 lib/python${MODPY_VERSION}/site-packages/fontTools/misc/${MODPY_PYCACHE}xmlWriter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fontTools/misc/${MODPY_PYCACHE}xmlWriter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fontTools/misc/arrayTools.py
+lib/python${MODPY_VERSION}/site-packages/fontTools/misc/bezierTools.c
+@so lib/python${MODPY_VERSION}/site-packages/fontTools/misc/bezierTools.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/fontTools/misc/bezierTools.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/misc/classifyTools.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/misc/cliTools.py
@@ -353,6 +355,8 @@ lib/python${MODPY_VERSION}/site-packages/fontTools/pens/${MODPY_PYCACHE}pointPen
 lib/python${MODPY_VERSION}/site-packages/fontTools/pens/${MODPY_PYCACHE}pointPen.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fontTools/pens/${MODPY_PYCACHE}qtPen.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fontTools/pens/${MODPY_PYCACHE}qtPen.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/fontTools/pens/${MODPY_PYCACHE}qu2cuPen.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/fontTools/pens/${MODPY_PYCACHE}qu2cuPen.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fontTools/pens/${MODPY_PYCACHE}quartzPen.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fontTools/pens/${MODPY_PYCACHE}quartzPen.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fontTools/pens/${MODPY_PYCACHE}recordingPen.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -393,6 +397,7 @@ lib/python${MODPY_VERSION}/site-packages/fontTools/pens/perimeterPen.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/pens/pointInsidePen.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/pens/pointPen.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/pens/qtPen.py
+lib/python${MODPY_VERSION}/site-packages/fontTools/pens/qu2cuPen.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/pens/quartzPen.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/pens/recordingPen.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/pens/reportLabPen.py
@@ -405,6 +410,25 @@ lib/python${MODPY_VERSION}/site-packages/fontTools/pens/teePen.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/pens/transformPen.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/pens/ttGlyphPen.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/pens/wxPen.py
+lib/python${MODPY_VERSION}/site-packages/fontTools/qu2cu/
+lib/python${MODPY_VERSION}/site-packages/fontTools/qu2cu/__init__.py
+lib/python${MODPY_VERSION}/site-packages/fontTools/qu2cu/__main__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fontTools/qu2cu/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/fontTools/qu2cu/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/fontTools/qu2cu/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/fontTools/qu2cu/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/fontTools/qu2cu/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/fontTools/qu2cu/${MODPY_PYCACHE}benchmark.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/fontTools/qu2cu/${MODPY_PYCACHE}benchmark.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/fontTools/qu2cu/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/fontTools/qu2cu/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/fontTools/qu2cu/${MODPY_PYCACHE}qu2cu.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/fontTools/qu2cu/${MODPY_PYCACHE}qu2cu.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/fontTools/qu2cu/benchmark.py
+lib/python${MODPY_VERSION}/site-packages/fontTools/qu2cu/cli.py
+lib/python${MODPY_VERSION}/site-packages/fontTools/qu2cu/qu2cu.c
+@so lib/python${MODPY_VERSION}/site-packages/fontTools/qu2cu/qu2cu.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/fontTools/qu2cu/qu2cu.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/subset/
 lib/python${MODPY_VERSION}/site-packages/fontTools/subset/__init__.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/subset/__main__.py
@@ -878,9 +902,15 @@ lib/python${MODPY_VERSION}/site-packages/fontTools/varLib/instancer/${MODPY_PYCA
 lib/python${MODPY_VERSION}/site-packages/fontTools/varLib/instancer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fontTools/varLib/instancer/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fontTools/varLib/instancer/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/fontTools/varLib/instancer/${MODPY_PYCACHE}featureVars.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/fontTools/varLib/instancer/${MODPY_PYCACHE}featureVars.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fontTools/varLib/instancer/${MODPY_PYCACHE}names.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fontTools/varLib/instancer/${MODPY_PYCACHE}names.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/fontTools/varLib/instancer/${MODPY_PYCACHE}solver.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/fontTools/varLib/instancer/${MODPY_PYCACHE}solver.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/fontTools/varLib/instancer/featureVars.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/varLib/instancer/names.py
+lib/python${MODPY_VERSION}/site-packages/fontTools/varLib/instancer/solver.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/varLib/interpolatable.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/varLib/interpolate_layout.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/varLib/iup.c
