@@ -43,6 +43,8 @@ lib/python${MODPY_VERSION}/site-packages/ocrmypdf/${MODPY_PYCACHE}helpers.${MODP
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/${MODPY_PYCACHE}helpers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/${MODPY_PYCACHE}hocrtransform.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/${MODPY_PYCACHE}hocrtransform.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ocrmypdf/${MODPY_PYCACHE}imageops.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ocrmypdf/${MODPY_PYCACHE}imageops.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/${MODPY_PYCACHE}optimize.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/${MODPY_PYCACHE}optimize.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/${MODPY_PYCACHE}pdfa.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -119,6 +121,7 @@ lib/python${MODPY_VERSION}/site-packages/ocrmypdf/extra_plugins/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/extra_plugins/semfree.py
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/helpers.py
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/hocrtransform.py
+lib/python${MODPY_VERSION}/site-packages/ocrmypdf/imageops.py
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/optimize.py
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/pdfa.py
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/pdfinfo/
