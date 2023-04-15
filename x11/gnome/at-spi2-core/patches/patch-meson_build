@@ -1,9 +1,25 @@
+1st chunk:
+../at-spi2-core-2.48.0/atk-adaptor/bridge.c:138:8: warning: implicit declaration of function 'strncasecmp' is invalid in C99 [-Wimplicit-function-declaration]
+  if (!strncasecmp (property, "action.", 7))
+../at-spi2-core-2.48.0/atk-adaptor/bridge.c:183:12: warning: implicit declaration of function 'strcasecmp' is invalid in C99 [-Wimplicit-function-declaration]
+      if (!strcasecmp (dp->name, member))
+
+2nd chunk:
 XXX push upstream; this is what gdk-pixbuf is doing
 
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -85,16 +85,10 @@ if host_machine.system() == 'darwin'
+@@ -8,7 +8,7 @@ project('at-spi2-core', 'c',
+         ],
+         meson_version: '>= 0.63.0')
+ 
+-add_project_arguments([ '-D_POSIX_C_SOURCE=200809L', '-D_DEFAULT_SOURCE' ], language: 'c')
++add_project_arguments([ '-D_POSIX_C_SOURCE=200809L', '-D_BSD_SOURCE' ], language: 'c')
+ 
+ fs = import('fs')
+ 
+@@ -87,16 +87,10 @@ if host_machine.system() == 'darwin'
    common_ldflags += [ '-compatibility_version', darwin_versions[0], '-current_version', darwin_versions[1]]
  endif
  
