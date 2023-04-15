@@ -1,0 +1,12 @@
+Index: tls/tests/meson.build
+--- tls/tests/meson.build.orig
++++ tls/tests/meson.build
+@@ -71,7 +71,7 @@ foreach backend: backends
+       '-D_GNU_SOURCE',
+     ]
+ 
+-    if not ['windows'].contains(host_system)
++    if not ['windows'].contains(host_system) and not ['openbsd'].contains(host_system)
+       program_deps += cc.find_library('dl')
+     endif
+ 
