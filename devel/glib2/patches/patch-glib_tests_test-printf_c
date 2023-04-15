@@ -3,7 +3,7 @@ Don't use printf %n.
 Index: glib/tests/test-printf.c
 --- glib/tests/test-printf.c.orig
 +++ glib/tests/test-printf.c
-@@ -576,6 +576,7 @@ test_s (void)
+@@ -578,6 +578,7 @@ test_s (void)
  static void
  test_n (void)
  {
@@ -11,7 +11,7 @@ Index: glib/tests/test-printf.c
    gchar buf[128];
    gint res;
    gint i;
-@@ -590,6 +591,7 @@ test_n (void)
+@@ -592,6 +593,7 @@ test_n (void)
    g_assert_cmpint (res, ==, 3);
    g_assert_cmpstr (buf, ==, "abc");
    g_assert_cmpint (l, ==, 3);

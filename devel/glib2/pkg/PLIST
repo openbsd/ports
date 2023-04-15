@@ -105,6 +105,7 @@ include/glib-2.0/gio/ginetsocketaddress.h
 include/glib-2.0/gio/ginitable.h
 include/glib-2.0/gio/ginputstream.h
 include/glib-2.0/gio/gio-autocleanups.h
+include/glib-2.0/gio/gio-visibility.h
 include/glib-2.0/gio/gio.h
 include/glib-2.0/gio/gioenums.h
 include/glib-2.0/gio/gioenumtypes.h
@@ -232,6 +233,7 @@ include/glib-2.0/glib/giochannel.h
 include/glib-2.0/glib/gkeyfile.h
 include/glib-2.0/glib/glib-autocleanups.h
 include/glib-2.0/glib/glib-typeof.h
+include/glib-2.0/glib/glib-visibility.h
 include/glib-2.0/glib/glist.h
 include/glib-2.0/glib/gmacros.h
 include/glib-2.0/glib/gmain.h
@@ -241,6 +243,7 @@ include/glib-2.0/glib/gmem.h
 include/glib-2.0/glib/gmessages.h
 include/glib-2.0/glib/gnode.h
 include/glib-2.0/glib/goption.h
+include/glib-2.0/glib/gpathbuf.h
 include/glib-2.0/glib/gpattern.h
 include/glib-2.0/glib/gpoll.h
 include/glib-2.0/glib/gprimes.h
@@ -281,7 +284,9 @@ include/glib-2.0/glib/gvarianttype.h
 include/glib-2.0/glib/gversion.h
 include/glib-2.0/glib/gversionmacros.h
 include/glib-2.0/glib/gwin32.h
+include/glib-2.0/gmodule/
 include/glib-2.0/gmodule.h
+include/glib-2.0/gmodule/gmodule-visibility.h
 include/glib-2.0/gobject/
 include/glib-2.0/gobject/gbinding.h
 include/glib-2.0/gobject/gbindinggroup.h
@@ -292,6 +297,7 @@ include/glib-2.0/gobject/glib-enumtypes.h
 include/glib-2.0/gobject/glib-types.h
 include/glib-2.0/gobject/gmarshal.h
 include/glib-2.0/gobject/gobject-autocleanups.h
+include/glib-2.0/gobject/gobject-visibility.h
 include/glib-2.0/gobject/gobject.h
 include/glib-2.0/gobject/gobjectnotifyqueue.c
 include/glib-2.0/gobject/gparam.h
@@ -352,10 +358,16 @@ share/bash-completion/completions/gdbus
 share/bash-completion/completions/gio
 share/bash-completion/completions/gresource
 share/bash-completion/completions/gsettings
+share/doc/glib-2.0/
+share/doc/glib-2.0/gvariant-byte-boundaries.svg
+share/doc/glib-2.0/gvariant-integer-and-string-structure.svg
+share/doc/glib-2.0/gvariant-integer-array.svg
+share/doc/glib-2.0/gvariant-specification-1.0.html
+share/doc/glib-2.0/gvariant-string-array.svg
 share/doc/pkg-readmes/${PKGSTEM}
 share/gdb/auto-load/usr/local/lib/
-share/gdb/auto-load/usr/local/lib/libglib-2.0.so.0.7400.6-gdb.py
-share/gdb/auto-load/usr/local/lib/libgobject-2.0.so.0.7400.6-gdb.py
+share/gdb/auto-load/usr/local/lib/libglib-2.0.so.0.7600.1-gdb.py
+share/gdb/auto-load/usr/local/lib/libgobject-2.0.so.0.7600.1-gdb.py
 share/gettext/its/
 share/gettext/its/gschema.its
 share/gettext/its/gschema.loc
@@ -365,6 +377,7 @@ share/glib-2.0/codegen/__init__.py
 share/glib-2.0/codegen/codegen.py
 share/glib-2.0/codegen/codegen_docbook.py
 share/glib-2.0/codegen/codegen_main.py
+share/glib-2.0/codegen/codegen_md.py
 share/glib-2.0/codegen/codegen_rst.py
 share/glib-2.0/codegen/config.py
 share/glib-2.0/codegen/dbustypes.py
