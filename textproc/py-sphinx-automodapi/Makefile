@@ -1,6 +1,6 @@
 COMMENT =		auto-generate API documentation for entire modules in Sphinx
 
-MODPY_EGG_VERSION =	0.14.1
+MODPY_EGG_VERSION =	0.15.0
 DISTNAME =		sphinx-automodapi-${MODPY_EGG_VERSION}
 PKGNAME =		py-sphinx-automodapi-${MODPY_EGG_VERSION}
 
