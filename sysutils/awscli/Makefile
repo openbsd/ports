@@ -1,10 +1,7 @@
 COMMENT=		universal command line environment for AWS
 
-MODPY_EGG_VERSION=	1.27.109
+MODPY_EGG_VERSION=	1.27.114
 DISTNAME=		awscli-${MODPY_EGG_VERSION}
-GH_ACCOUNT=		aws
-GH_PROJECT=		aws-cli
-GH_TAGNAME=		${MODPY_EGG_VERSION}
 
 CATEGORIES=		sysutils
 
@@ -17,7 +14,7 @@ PERMIT_PACKAGE=		Yes
 
 MODULES=		lang/python
 
-#MODPY_PI=		Yes
+MODPY_PI=		Yes
 MODPY_PYBUILD=		setuptools
 
 RUN_DEPENDS=		textproc/py-docutils${MODPY_FLAVOR}
