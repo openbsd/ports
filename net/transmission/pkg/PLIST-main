@@ -22,81 +22,59 @@
 @man man/man1/transmission-remote.1
 @man man/man1/transmission-show.1
 @comment share/applications/
+share/doc/transmission/
+share/doc/transmission/AUTHORS
+share/doc/transmission/COPYING
+share/doc/transmission/README.md
+share/doc/transmission/news/
+share/doc/transmission/news/news-2.42-and-older.md
+share/doc/transmission/news/news-2.50.md
+share/doc/transmission/news/news-2.51.md
+share/doc/transmission/news/news-2.52.md
+share/doc/transmission/news/news-2.60.md
+share/doc/transmission/news/news-2.61.md
+share/doc/transmission/news/news-2.70.md
+share/doc/transmission/news/news-2.71.md
+share/doc/transmission/news/news-2.72.md
+share/doc/transmission/news/news-2.73.md
+share/doc/transmission/news/news-2.74.md
+share/doc/transmission/news/news-2.75.md
+share/doc/transmission/news/news-2.76.md
+share/doc/transmission/news/news-2.77.md
+share/doc/transmission/news/news-2.80.md
+share/doc/transmission/news/news-2.81.md
+share/doc/transmission/news/news-2.82.md
+share/doc/transmission/news/news-2.83.md
+share/doc/transmission/news/news-2.84.md
+share/doc/transmission/news/news-2.90.md
+share/doc/transmission/news/news-2.91.md
+share/doc/transmission/news/news-2.92.md
+share/doc/transmission/news/news-2.93.md
+share/doc/transmission/news/news-2.94.md
+share/doc/transmission/news/news-3.00.md
+share/doc/transmission/news/news-4.0.0-beta-1.md
+share/doc/transmission/news/news-4.0.0-beta-2.md
+share/doc/transmission/news/news-4.0.0-beta-3.md
+share/doc/transmission/news/news-4.0.0.md
+share/doc/transmission/news/news-4.0.1.md
+share/doc/transmission/news/news-4.0.2.md
+share/doc/transmission/rpc-spec.md
+share/doc/transmission/send-email-when-torrent-done.sh
+@comment XXX update-plist(1) really wants this here, but -main is CLI only
+@comment share/icons/
+@comment share/icons/hicolor/
+@comment share/icons/hicolor/scalable/
+@comment share/icons/hicolor/scalable/apps/
+@comment share/icons/hicolor/symbolic/
+@comment share/icons/hicolor/symbolic/apps/
 share/transmission/
-share/transmission/web/
-share/transmission/web/LICENSE
-share/transmission/web/images/
-share/transmission/web/images/favicon.ico
-share/transmission/web/images/favicon.png
-share/transmission/web/images/webclip-icon.png
-share/transmission/web/index.html
-share/transmission/web/javascript/
-share/transmission/web/javascript/common.js
-share/transmission/web/javascript/dialog.js
-share/transmission/web/javascript/file-row.js
-share/transmission/web/javascript/formatter.js
-share/transmission/web/javascript/inspector.js
-share/transmission/web/javascript/jquery/
-share/transmission/web/javascript/jquery/jquery-migrate.min.js
-share/transmission/web/javascript/jquery/jquery-ui.min.js
-share/transmission/web/javascript/jquery/jquery.min.js
-share/transmission/web/javascript/jquery/jquery.transmenu.min.js
-share/transmission/web/javascript/jquery/jquery.ui-contextmenu.min.js
-share/transmission/web/javascript/jquery/json2.min.js
-share/transmission/web/javascript/main.js
-share/transmission/web/javascript/notifications.js
-share/transmission/web/javascript/polyfill.js
-share/transmission/web/javascript/prefs-dialog.js
-share/transmission/web/javascript/remote.js
-share/transmission/web/javascript/torrent-row.js
-share/transmission/web/javascript/torrent.js
-share/transmission/web/javascript/transmission.js
-share/transmission/web/style/
-share/transmission/web/style/jqueryui/
-share/transmission/web/style/jqueryui/images/
-share/transmission/web/style/jqueryui/images/ui-bg_flat_0_aaaaaa_40x100.png
-share/transmission/web/style/jqueryui/images/ui-bg_flat_75_ffffff_40x100.png
-share/transmission/web/style/jqueryui/images/ui-bg_glass_55_fbf9ee_1x400.png
-share/transmission/web/style/jqueryui/images/ui-bg_glass_65_ffffff_1x400.png
-share/transmission/web/style/jqueryui/images/ui-bg_glass_75_dadada_1x400.png
-share/transmission/web/style/jqueryui/images/ui-bg_glass_75_e6e6e6_1x400.png
-share/transmission/web/style/jqueryui/images/ui-bg_glass_95_fef1ec_1x400.png
-share/transmission/web/style/jqueryui/images/ui-bg_highlight-soft_75_cccccc_1x100.png
-share/transmission/web/style/jqueryui/images/ui-icons_222222_256x240.png
-share/transmission/web/style/jqueryui/images/ui-icons_2e83ff_256x240.png
-share/transmission/web/style/jqueryui/images/ui-icons_454545_256x240.png
-share/transmission/web/style/jqueryui/images/ui-icons_888888_256x240.png
-share/transmission/web/style/jqueryui/images/ui-icons_cd0a0a_256x240.png
-share/transmission/web/style/jqueryui/jquery-ui.min.css
-share/transmission/web/style/transmission/
-share/transmission/web/style/transmission/common.css
-share/transmission/web/style/transmission/images/
-share/transmission/web/style/transmission/images/arrow-down.png
-share/transmission/web/style/transmission/images/arrow-up.png
-share/transmission/web/style/transmission/images/blue-turtle.png
-share/transmission/web/style/transmission/images/buttons/
-share/transmission/web/style/transmission/images/buttons/torrent_buttons.png
-share/transmission/web/style/transmission/images/compact.png
-share/transmission/web/style/transmission/images/file-priority-high.png
-share/transmission/web/style/transmission/images/file-priority-low.png
-share/transmission/web/style/transmission/images/file-priority-normal.png
-share/transmission/web/style/transmission/images/filter_bar.png
-share/transmission/web/style/transmission/images/filter_icon.png
-share/transmission/web/style/transmission/images/inspector-files.png
-share/transmission/web/style/transmission/images/inspector-info.png
-share/transmission/web/style/transmission/images/inspector-peers.png
-share/transmission/web/style/transmission/images/inspector-trackers.png
-share/transmission/web/style/transmission/images/lock_icon.png
-share/transmission/web/style/transmission/images/logo.png
-share/transmission/web/style/transmission/images/progress.png
-share/transmission/web/style/transmission/images/settings.png
-share/transmission/web/style/transmission/images/toolbar-close.png
-share/transmission/web/style/transmission/images/toolbar-folder.png
-share/transmission/web/style/transmission/images/toolbar-info.png
-share/transmission/web/style/transmission/images/toolbar-pause-all.png
-share/transmission/web/style/transmission/images/toolbar-pause.png
-share/transmission/web/style/transmission/images/toolbar-start-all.png
-share/transmission/web/style/transmission/images/toolbar-start.png
-share/transmission/web/style/transmission/images/turtle.png
-share/transmission/web/style/transmission/images/wrench.png
-share/transmission/web/style/transmission/mobile.css
+share/transmission/public_html/
+share/transmission/public_html/images/
+share/transmission/public_html/images/favicon.ico
+share/transmission/public_html/images/favicon.png
+share/transmission/public_html/images/webclip-icon.png
+share/transmission/public_html/index.html
+share/transmission/public_html/transmission-app.js
+share/transmission/public_html/transmission-app.js.LICENSE.txt
+@comment XXX update-plist(1) really wants this here, but -main is CLI only
+@comment @tag gtk-update-icon-cache %D/share/icons/hicolor

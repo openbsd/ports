@@ -2,10 +2,7 @@ COMMENT-main=	BitTorrent command line and daemon client
 COMMENT-gtk=	BitTorrent client with GTK+ interface
 COMMENT-qt=	BitTorrent client with Qt interface
 
-NOT_FOR_ARCHS-gtk= sparc64
-NOT_FOR_ARCHS-qt= sparc64
-
-VER=		3.00
+VER=		4.0.2
 DISTNAME=	transmission-${VER}
 PKGNAME-main=	transmission-${VER}
 PKGNAME-gtk=	transmission-gtk-${VER}
@@ -13,22 +10,17 @@ PKGNAME-qt=	transmission-qt-${VER}
 CATEGORIES=	net
 HOMEPAGE=	https://transmissionbt.com/
 MAINTAINER=	Josh Grosse <josh@jggimi.net>
-REVISION-gtk=	2
-REVISION-main=	2
-REVISION-qt=	2
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://github.com/transmission/transmission-releases/raw/master/
+MASTER_SITES=	https://github.com/transmission/transmission/releases/download/${VER}/
 EXTRACT_SUFX=	.tar.xz
 
 MULTI_PACKAGES=	-main -gtk -qt
 
-ONLY_FOR_ARCHS-qt=	${MODGCC4_ARCHS} ${CLANG_ARCHS}
-
+# gnu++17
 COMPILER =	base-clang ports-gcc
-COMPILER_LANGS =	c
 
 
 PSEUDO_FLAVORS=	no_gtk no_qt
@@ -36,84 +28,65 @@ FLAVOR?=
 
 .include <bsd.port.arch.mk>
 
-WANTLIB-common=	c crypto curl event_core event_extra m miniupnpc>=2.0 \
-		natpmp pthread ssl z intl
-WANTLIB-main=	${WANTLIB-common} nghttp2 iconv
-WANTLIB-gtk=	${WANTLIB-common} X11 Xcomposite Xcursor Xdamage \
-		Xext Xfixes Xi Xinerama Xrandr Xrender \
-		atk-1.0 atk-bridge-2.0 cairo cairo-gobject \
-		expat ffi fontconfig freetype fribidi \
-		gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 \
-		gobject-2.0 graphite2 gthread-2.0 gtk-3 \
-		harfbuzz pango-1.0 pangoft2-1.0 \
-		pangocairo-1.0 pixman-1 png pcre2-8 xcb \
-		xcb-render xcb-shm epoxy nghttp2 iconv \
-		Xau Xdmcp execinfo jpeg ${COMPILER_LIBCXX}
-WANTLIB-qt=	${WANTLIB-common} ${MODQT_WANTLIB} \
-		GL Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets \
-		fontconfig freetype $(COMPILER_LIBCXX)
+WANTLIB-common =	${COMPILER_LIBCXX} c crypto curl m miniupnpc natpmp psl ssl
 
-MODULES+=	textproc/intltool
+WANTLIB-main =	${WANTLIB-common}
 
-LIB_DEPENDS-common=devel/gettext,-runtime \
-		devel/libevent2 \
-		net/curl \
-		net/miniupnp/libnatpmp \
-		net/miniupnp/miniupnpc>=1.9
-LIB_DEPENDS-main=${LIB_DEPENDS-common}
-LIB_DEPENDS-gtk=${LIB_DEPENDS-common} \
-		x11/gtk+3
-LIB_DEPENDS-qt=	${LIB_DEPENDS-common} \
-		${MODQT_LIB_DEPENDS}
+WANTLIB-gtk +=	${WANTLIB-common} atk-1.0 atkmm-1.6 cairo cairo-gobject
+WANTLIB-gtk +=	cairomm-1.0 gdk-3 gdk_pixbuf-2.0 gdkmm-3.0 gio-2.0
+WANTLIB-gtk +=	giomm-2.4 glib-2.0 glibmm-2.4 gobject-2.0 gtk-3 gtkmm-3.0
+WANTLIB-gtk +=	harfbuzz intl pango-1.0 pangocairo-1.0 pangomm-1.4 sigc-2.0
 
-RUN_DEPENDS-gtk=${PKGNAME-main}:${BUILD_PKGPATH} \
-		devel/desktop-file-utils \
-		x11/gtk+3,-guic
-RUN_DEPENDS-qt=	${PKGNAME-main}:${BUILD_PKGPATH} \
-		devel/desktop-file-utils
+WANTLIB-qt +=	${WANTLIB-common} GL Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Svg
+WANTLIB-qt +=	Qt6Widgets
 
-USE_GMAKE=	Yes
-CONFIGURE_STYLE=gnu
+MODULES +=		devel/cmake \
+			textproc/intltool
 
-CONFIGURE_ARGS=	--disable-shared \
-		--enable-cli \
-		--enable-external-natpmp
+LIB_DEPENDS-common +=	net/curl \
+			net/libpsl \
+			net/miniupnp/libnatpmp \
+			net/miniupnp/miniupnpc>=1.9
 
-# -I$(top_builddir)/third-party is required, but configure fails to
-# set it if we use external miniupnp libs.
+LIB_DEPENDS-main =	${LIB_DEPENDS-common}
 
-CONFIGURE_ENV=	CPPFLAGS="-I${WRKSRC}/third-party -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+LIB_DEPENDS-gtk +=	${LIB_DEPENDS-common} \
+			x11/gtk3mm \
+			x11/gtk+3
 
-.if ${BUILD_PACKAGES:M-qt}
-MODULES+=		devel/qmake x11/qt5
-COMPILER_LANGS +=	c++
-# avoid setting LINK=
-MODQT5_USE_CXX11=	No
-MODQMAKE_PROJECTS=	qt/qtr.pro
-CONFIGURE_STYLE+=	qmake
-SEPARATE_BUILD=		No
-MODQMAKE_INSTALL_ROOT=	${PREFIX}
+LIB_DEPENDS-qt +=	${LIB_DEPENDS-common} \
+			${MODQT_LIB_DEPENDS} \
+			x11/qt6/qtsvg
+
+RUN_DEPENDS-gtk +=	${PKGNAME-main}:${BUILD_PKGPATH} \
+			devel/desktop-file-utils \
+			x11/gtk+3,-guic
+
+RUN_DEPENDS-qt +=	${PKGNAME-main}:${BUILD_PKGPATH} \
+			devel/desktop-file-utils
+
+CONFIGURE_ARGS +=	-DENABLE_CLI=ON \
+			-DENABLE_TESTS=OFF
+
+# XXX sees ports libevent2 but picks base libevent expecting a single .so.*
+# use the bundle until upstream cmake code gets fixed
+CONFIGURE_ARGS +=	-DUSE_SYSTEM_EVENT2=OFF
+
+.if ${BUILD_PACKAGES:M-gtk}
+CONFIGURE_ARGS +=	-DENABLE_GTK=ON \
+			-DUSE_GTK_VERSION=3
+.else
+CONFIGURE_ARGS +=	-DENABLE_GTK=OFF
 .endif
 
-.if !${BUILD_PACKAGES:M-gtk}
-CONFIGURE_ARGS+=--without-gtk
-.endif
-
-FIX_CRLF_FILES=	third-party/libutp/*.h third-party/libutp/*.cpp
-
 .if ${BUILD_PACKAGES:M-qt}
-post-build:
-	${MODQMAKE_build}
-
-post-install:
-	${MODQMAKE_install}
-	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/qt/transmission-qt.desktop \
-	    ${PREFIX}/share/applications/
-	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/qt/icons/transmission.png \
-	    ${PREFIX}/share/pixmaps/transmission-qt.png
+MODULES +=		x11/qt6
+# XXX =6 finds "Qt6", =5 fails to find "Qt", but Qt6 is preferred, anyway
+BUILD_DEPENDS +=	x11/qt6/qttools
+CONFIGURE_ARGS +=	-DENABLE_QT=ON \
+			-DUSE_QT_VERSION=6
+.else
+CONFIGURE_ARGS +=	-DENABLE_QT=OFF
 .endif
 
 .include <bsd.port.mk>

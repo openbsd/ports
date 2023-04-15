@@ -1,0 +1,13 @@
+Unbreak build with missing include
+
+Index: gtk/DetailsDialog.cc
+--- gtk/DetailsDialog.cc.orig
++++ gtk/DetailsDialog.cc
+@@ -67,6 +67,7 @@
+ #include <winsock2.h>
+ #include <ws2tcpip.h>
+ #else
++#include <sys/socket.h> // AF_INET
+ #include <arpa/inet.h>
+ #endif
+ 

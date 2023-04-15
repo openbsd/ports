@@ -1,6 +1,35 @@
 @bin bin/transmission-qt
 @man man/man1/transmission-qt.1
 share/applications/transmission-qt.desktop
-share/pixmaps/
-share/pixmaps/transmission-qt.png
+share/transmission/translations/
+share/transmission/translations/transmission_af.qm
+share/transmission/translations/transmission_ca.qm
+share/transmission/translations/transmission_da.qm
+share/transmission/translations/transmission_de.qm
+share/transmission/translations/transmission_el.qm
+share/transmission/translations/transmission_en.qm
+share/transmission/translations/transmission_es.qm
+share/transmission/translations/transmission_eu.qm
+share/transmission/translations/transmission_fi.qm
+share/transmission/translations/transmission_fr.qm
+share/transmission/translations/transmission_hu.qm
+share/transmission/translations/transmission_id.qm
+share/transmission/translations/transmission_it_IT.qm
+share/transmission/translations/transmission_ja.qm
+share/transmission/translations/transmission_ka.qm
+share/transmission/translations/transmission_kk.qm
+share/transmission/translations/transmission_ko.qm
+share/transmission/translations/transmission_lt.qm
+share/transmission/translations/transmission_nb.qm
+share/transmission/translations/transmission_nl.qm
+share/transmission/translations/transmission_pl.qm
+share/transmission/translations/transmission_pt.qm
+share/transmission/translations/transmission_pt_BR.qm
+share/transmission/translations/transmission_pt_PT.qm
+share/transmission/translations/transmission_ru.qm
+share/transmission/translations/transmission_sl.qm
+share/transmission/translations/transmission_sv.qm
+share/transmission/translations/transmission_tr.qm
+share/transmission/translations/transmission_uk.qm
+share/transmission/translations/transmission_zh_CN.qm
 @tag update-desktop-database
