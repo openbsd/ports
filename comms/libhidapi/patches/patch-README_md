@@ -1,9 +1,9 @@
 rename hid_init() to hidapi_hid_init() to avoid collision with usbhid
 
-Index: README.txt
---- README.txt.orig
-+++ README.txt
-@@ -64,7 +64,7 @@ int main(int argc, char* argv[])
+Index: README.md
+--- README.md.orig
++++ README.md
+@@ -112,7 +112,7 @@ int main(int argc, char* argv[])
  	int i;
  
  	// Initialize the hidapi library

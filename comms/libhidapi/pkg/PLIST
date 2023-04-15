@@ -1,7 +1,12 @@
 include/hidapi/
 include/hidapi/hidapi.h
-lib/libhidapi-libusb.a
-lib/libhidapi-libusb.la
+include/hidapi/hidapi_libusb.h
+lib/cmake/
+lib/cmake/hidapi/
+lib/cmake/hidapi/hidapi-config-version.cmake
+lib/cmake/hidapi/hidapi-config.cmake
+lib/cmake/hidapi/libhidapi${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/hidapi/libhidapi.cmake
 @lib lib/libhidapi-libusb.so.${LIBhidapi-libusb_VERSION}
 @lib lib/libhidapi.so.${LIBhidapi_VERSION}
 lib/pkgconfig/hidapi-libusb.pc
@@ -11,5 +16,5 @@ share/doc/hidapi/LICENSE-bsd.txt
 share/doc/hidapi/LICENSE-gpl3.txt
 share/doc/hidapi/LICENSE-orig.txt
 share/doc/hidapi/LICENSE.txt
-share/doc/hidapi/README.txt
+share/doc/hidapi/README.md
 share/doc/pkg-readmes/${PKGSTEM}

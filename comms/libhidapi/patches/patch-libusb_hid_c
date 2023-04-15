@@ -3,16 +3,16 @@ rename hid_init() to hidapi_hid_init() to avoid collision with usbhid
 Index: libusb/hid.c
 --- libusb/hid.c.orig
 +++ libusb/hid.c
-@@ -490,7 +490,7 @@ static char *make_path(libusb_device *dev, int interfa
+@@ -536,7 +536,7 @@ HID_API_EXPORT const char* HID_API_CALL hid_version_st
+ 	return HID_API_VERSION_STR;
  }
- 
  
 -int HID_API_EXPORT hid_init(void)
 +int HID_API_EXPORT hidapi_hid_init(void)
  {
  	if (!usb_context) {
  		const char *locale;
-@@ -529,7 +529,7 @@ struct hid_device_info  HID_API_EXPORT *hid_enumerate(
+@@ -750,7 +750,7 @@ struct hid_device_info  HID_API_EXPORT *hid_enumerate(
  	struct hid_device_info *root = NULL; /* return object */
  	struct hid_device_info *cur_dev = NULL;
  
@@ -21,9 +21,18 @@ Index: libusb/hid.c
  		return NULL;
  
  	num_devs = libusb_get_device_list(usb_context, &devs);
-@@ -877,7 +877,7 @@ hid_device * HID_API_EXPORT hid_open_path(const char *
+@@ -1144,7 +1144,7 @@ hid_device * HID_API_EXPORT hid_open_path(const char *
  	int d = 0;
  	int good_open = 0;
+ 
+-	if(hid_init() < 0)
++	if(hidapi_hid_init() < 0)
+ 		return NULL;
+ 
+ 	dev = new_hid_device();
+@@ -1206,7 +1206,7 @@ HID_API_EXPORT hid_device * HID_API_CALL hid_libusb_wr
+ 	int res = 0;
+ 	int j = 0, k = 0;
  
 -	if(hid_init() < 0)
 +	if(hidapi_hid_init() < 0)
