@@ -4,6 +4,7 @@ COMMENT =	desktop sync client for Nextcloud
 
 V =		3.8.0
 DISTNAME =	nextcloudclient-${V}
+REVISION =	0
 
 GH_ACCOUNT =	nextcloud
 GH_PROJECT =	desktop
@@ -37,6 +38,9 @@ BUILD_DEPENDS =		devel/gettext,-tools
 # for converting svg icons to png
 BUILD_DEPENDS +=	x11/gnome/librsvg
 
+# FindInotify.cmake
+BUILD_DEPENDS +=	devel/kf5/extra-cmake-modules
+
 # for tests, but detected during configure
 BUILD_DEPENDS +=	devel/cmocka
 
@@ -68,12 +72,18 @@ CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON
 # Disable SharedMime
 CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_SharedMimeInfo=ON
 
+CONFIGURE_ARGS +=	-DCMAKE_MODULE_PATH=${LOCALBASE}/share/ECM/find-modules
+
 # Do not install under /etc/Nextcloud
 CONFIGURE_ARGS +=	-DSYSCONF_INSTALL_DIR=${SYSCONFDIR}
 
-CFLAGS +=	-I${LOCALBASE}/include -I${LOCALBASE}/include/inotify -I${LOCALBASE}/include/qtkeychain
-CXXFLAGS +=	-I${LOCALBASE}/include -I${LOCALBASE}/include/inotify -I${LOCALBASE}/include/qtkeychain
-MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib -L${LOCALBASE}/lib/inotify -linotify -Wl,-rpath=${LOCALBASE}/lib/inotify
+CONFIGURE_ARGS +=	-DCMAKE_INSTALL_RPATH=${LOCALBASE}/lib/inotify
+
+CXXFLAGS +=		-I${LOCALBASE}/include/inotify -I${LOCALBASE}/include/qtkeychain
+MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib/inotify
+
+pre-configure:
+	rm ${WRKSRC}/cmake/modules/FindInotify.cmake
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/Nextcloud/
