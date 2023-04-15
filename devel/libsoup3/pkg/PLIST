@@ -189,6 +189,7 @@ share/doc/libsoup-${API_VERSION}/func.CHECK_VERSION.html
 share/doc/libsoup-${API_VERSION}/func.DEPRECATED_FOR.html
 share/doc/libsoup-${API_VERSION}/func.DEPRECATED_IN_3_0_FOR.html
 share/doc/libsoup-${API_VERSION}/func.DEPRECATED_IN_3_2_FOR.html
+share/doc/libsoup-${API_VERSION}/func.DEPRECATED_IN_3_4_FOR.html
 share/doc/libsoup-${API_VERSION}/func.UNAVAILABLE.html
 share/doc/libsoup-${API_VERSION}/func.check_version.html
 share/doc/libsoup-${API_VERSION}/func.cookies_free.html
@@ -338,6 +339,7 @@ share/doc/libsoup-${API_VERSION}/method.Message.disable_feature.html
 share/doc/libsoup-${API_VERSION}/method.Message.get_connection_id.html
 share/doc/libsoup-${API_VERSION}/method.Message.get_first_party.html
 share/doc/libsoup-${API_VERSION}/method.Message.get_flags.html
+share/doc/libsoup-${API_VERSION}/method.Message.get_force_http1.html
 share/doc/libsoup-${API_VERSION}/method.Message.get_http_version.html
 share/doc/libsoup-${API_VERSION}/method.Message.get_is_options_ping.html
 share/doc/libsoup-${API_VERSION}/method.Message.get_is_top_level_navigation.html
@@ -361,6 +363,7 @@ share/doc/libsoup-${API_VERSION}/method.Message.query_flags.html
 share/doc/libsoup-${API_VERSION}/method.Message.remove_flags.html
 share/doc/libsoup-${API_VERSION}/method.Message.set_first_party.html
 share/doc/libsoup-${API_VERSION}/method.Message.set_flags.html
+share/doc/libsoup-${API_VERSION}/method.Message.set_force_http1.html
 share/doc/libsoup-${API_VERSION}/method.Message.set_is_options_ping.html
 share/doc/libsoup-${API_VERSION}/method.Message.set_is_top_level_navigation.html
 share/doc/libsoup-${API_VERSION}/method.Message.set_method.html
@@ -517,6 +520,9 @@ share/doc/libsoup-${API_VERSION}/method.Session.send.html
 share/doc/libsoup-${API_VERSION}/method.Session.send_and_read.html
 share/doc/libsoup-${API_VERSION}/method.Session.send_and_read_async.html
 share/doc/libsoup-${API_VERSION}/method.Session.send_and_read_finish.html
+share/doc/libsoup-${API_VERSION}/method.Session.send_and_splice.html
+share/doc/libsoup-${API_VERSION}/method.Session.send_and_splice_async.html
+share/doc/libsoup-${API_VERSION}/method.Session.send_and_splice_finish.html
 share/doc/libsoup-${API_VERSION}/method.Session.send_async.html
 share/doc/libsoup-${API_VERSION}/method.Session.send_finish.html
 share/doc/libsoup-${API_VERSION}/method.Session.set_accept_language.html
@@ -633,6 +639,7 @@ share/doc/libsoup-${API_VERSION}/signal.Message.accept-certificate.html
 share/doc/libsoup-${API_VERSION}/signal.Message.authenticate.html
 share/doc/libsoup-${API_VERSION}/signal.Message.content-sniffed.html
 share/doc/libsoup-${API_VERSION}/signal.Message.finished.html
+share/doc/libsoup-${API_VERSION}/signal.Message.got-body-data.html
 share/doc/libsoup-${API_VERSION}/signal.Message.got-body.html
 share/doc/libsoup-${API_VERSION}/signal.Message.got-headers.html
 share/doc/libsoup-${API_VERSION}/signal.Message.got-informational.html
@@ -717,8 +724,6 @@ share/doc/libsoup-${API_VERSION}/vfunc.WebsocketExtension.get_response_params.ht
 share/doc/libsoup-${API_VERSION}/vfunc.WebsocketExtension.process_incoming_message.html
 share/doc/libsoup-${API_VERSION}/vfunc.WebsocketExtension.process_outgoing_message.html
 share/gir-1.0/Soup-${API_VERSION}.gir
-share/locale/ab/
-share/locale/ab/LC_MESSAGES/
 share/locale/ab/LC_MESSAGES/libsoup-${API_VERSION}.mo
 share/locale/an/LC_MESSAGES/libsoup-${API_VERSION}.mo
 share/locale/as/LC_MESSAGES/libsoup-${API_VERSION}.mo
