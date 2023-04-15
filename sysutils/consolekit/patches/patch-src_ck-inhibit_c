@@ -1,0 +1,14 @@
+Index: src/ck-inhibit.c
+--- src/ck-inhibit.c.orig
++++ src/ck-inhibit.c
+@@ -388,7 +388,9 @@ close_named_pipe (CkInhibit *inhibit)
+ 
+         priv = CK_INHIBIT_GET_PRIVATE (inhibit);
+ 
+-        if (priv->named_pipe) {
++        if (priv->named_pipe == -1) {
++                return;
++        } else {
+                 if (g_close (priv->named_pipe, &error) == -1) {
+                         g_warning ("Failed to close inhibit named pipe, error was %s",
+                                    error->message);

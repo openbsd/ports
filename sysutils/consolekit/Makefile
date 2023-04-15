@@ -5,6 +5,8 @@ GH_ACCOUNT=		ConsoleKit2
 GH_PROJECT=		ConsoleKit2
 PKGNAME=		${DISTNAME:L}
 
+REVISION=		0
+
 CATEGORIES=		sysutils	
 
 SHARED_LIBS +=  consolekit           0.1      # 1.0
