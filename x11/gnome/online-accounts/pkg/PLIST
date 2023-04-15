@@ -51,8 +51,6 @@ share/locale/bn_IN/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/bs/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/ca/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/ca@valencia/LC_MESSAGES/gnome-online-accounts.mo
-share/locale/ckb/
-share/locale/ckb/LC_MESSAGES/
 share/locale/ckb/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/cs/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/da/LC_MESSAGES/gnome-online-accounts.mo
@@ -76,12 +74,11 @@ share/locale/hi/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/hr/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/hu/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/id/LC_MESSAGES/gnome-online-accounts.mo
+share/locale/ie/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/is/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/it/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/ja/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/ka/LC_MESSAGES/gnome-online-accounts.mo
-share/locale/kab/
-share/locale/kab/LC_MESSAGES/
 share/locale/kab/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/kk/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/km/LC_MESSAGES/gnome-online-accounts.mo
@@ -89,8 +86,6 @@ share/locale/kn/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/ko/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/lt/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/lv/LC_MESSAGES/gnome-online-accounts.mo
-share/locale/mjw/
-share/locale/mjw/LC_MESSAGES/
 share/locale/mjw/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/mk/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/ml/LC_MESSAGES/gnome-online-accounts.mo
