@@ -3,7 +3,7 @@ unixodbc vs iodbc
 Index: src/pyodbcmodule.cpp
 --- src/pyodbcmodule.cpp.orig
 +++ src/pyodbcmodule.cpp
-@@ -1131,7 +1131,9 @@ static const ConstantDef aConstants[] = {
+@@ -1102,7 +1102,9 @@ static const ConstantDef aConstants[] = {
      MAKECONST(SQL_CONVERT_DECIMAL),
      MAKECONST(SQL_CONVERT_DOUBLE),
      MAKECONST(SQL_CONVERT_FLOAT),
