@@ -1,3 +1,5 @@
+BROKEN=		does not build with new Glib
+
 COMMENT=	GkrellM2 plugin to display sun rise/set times
 
 DISTNAME=	gkrellsun-1.0.0
