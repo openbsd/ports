@@ -1,10 +1,9 @@
 COMMENT=		Python bindings for GLib and GObject
 
 GNOME_PROJECT=		pygobject
-GNOME_VERSION=		3.42.2
+GNOME_VERSION=		3.44.1
 MODPY_EGG_VERSION=	${GNOME_VERSION}
 PKGNAME=		py3-gobject3-${GNOME_VERSION}
-REVISION=		4
 
 CATEGORIES=		devel
 
@@ -16,7 +15,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE=		Yes
 
 WANTLIB += cairo cairo-gobject ffi gio-2.0 girepository-1.0 glib-2.0
-WANTLIB += gobject-2.0 intl pthread
+WANTLIB += gobject-2.0 intl
 
 FLAVORS=		python3
 FLAVOR=			python3
