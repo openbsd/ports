@@ -1,10 +1,9 @@
 COMMENT =		PostgreSQL database adapter for Python
 
-MODPY_EGG_VERSION =	2.9.5
+MODPY_EGG_VERSION =	2.9.6
 DISTNAME =		psycopg2-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		databases
-REVISION =		0
 
 HOMEPAGE =		https://www.psycopg.org/
 
