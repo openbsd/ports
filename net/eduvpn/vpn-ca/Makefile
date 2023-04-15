@@ -7,7 +7,6 @@ DISTNAME=	vpn-ca-$V
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/go
-WRKDIST=	${WRKDIR}/${DISTNAME}
 
 WANTLIB=	c pthread
 
