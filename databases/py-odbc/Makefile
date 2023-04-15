@@ -29,7 +29,4 @@ CFLAGS+=	-fPIC -I${LOCALBASE}/include -L${LOCALBASE}/lib -Wno-deprecated-registe
 FLAVORS=	python3
 FLAVOR=		python3
 
-post-install:
-	mv ${PREFIX}/pyodbc.pyi ${WRKINST}${MODPY_SITEPKG}
-
 .include <bsd.port.mk>
