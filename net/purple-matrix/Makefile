@@ -1,10 +1,10 @@
 COMMENT =		libpurple plugin for connecting to Matrix network
 
-DISTNAME =		purple-matrix-0.20191228
+DISTNAME =		purple-matrix-0.20230207
 
 GH_ACCOUNT =		matrix-org
 GH_PROJECT =		purple-matrix
-GH_COMMIT =		1d23385e6c22f63591fcbfc85c09999953c388ed
+GH_COMMIT =		91021c8d3bff295d92ae731df576a1db6af75f9d
 
 CATEGORIES =		net
 
