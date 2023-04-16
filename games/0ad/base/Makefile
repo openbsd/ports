@@ -71,6 +71,8 @@ WRKSRC =		${WRKDIST}/build/workspaces/gcc
 
 # most tests fail without nvtt
 CONFIGURE_ARGS +=	--without-tests
+# XXX built and packaged even without tests
+MAKE_FLAGS +=		mocks_test_config=''
 
 post-extract:
 	# remove unused bundled sources
