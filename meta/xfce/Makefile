@@ -6,7 +6,7 @@ PKGNAME=	xfce-${V}
 
 PKGNAME-main =		xfce-${V}
 PKGNAME-extras =	xfce-extras-${V}
-REVISION-extras =	2
+REVISION-extras =	3
 REVISION-main =		3
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
@@ -64,6 +64,7 @@ RUN_DEPENDS-extras += \
 		x11/xfce4/xfce4-cpugraph \
 		x11/xfce4/xfce4-dict \
 		x11/xfce4/xfce4-diskperf \
+		x11/xfce4/xfce4-docklike \
 		x11/xfce4/xfce4-fsguard \
 		x11/xfce4/xfce4-genmon \
 		x11/xfce4/xfce4-mailwatch \
