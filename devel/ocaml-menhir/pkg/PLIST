@@ -9,7 +9,6 @@ lib/ocaml/menhir/dune-package
 lib/ocaml/menhirLib/
 lib/ocaml/menhirLib/META
 lib/ocaml/menhirLib/dune-package
-lib/ocaml/menhirLib/menhirLib.a
 lib/ocaml/menhirLib/menhirLib.cma
 lib/ocaml/menhirLib/menhirLib.cmi
 lib/ocaml/menhirLib/menhirLib.cmt
@@ -25,7 +24,6 @@ lib/ocaml/menhirSdk/cmly_read.mli
 lib/ocaml/menhirSdk/dune-package
 lib/ocaml/menhirSdk/keyword.ml
 lib/ocaml/menhirSdk/keyword.mli
-lib/ocaml/menhirSdk/menhirSdk.a
 lib/ocaml/menhirSdk/menhirSdk.cma
 lib/ocaml/menhirSdk/menhirSdk.cmi
 lib/ocaml/menhirSdk/menhirSdk.cmt
