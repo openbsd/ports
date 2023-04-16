@@ -1,9 +1,10 @@
 COMMENT =	module for pcap access
 
-DISTNAME =	Net-Pcap-0.20
-REVISION =	0
+DISTNAME =	Net-Pcap-0.21
 
 CATEGORIES =	net
+
+MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE =	Yes
