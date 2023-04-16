@@ -234,6 +234,7 @@ abcl/src/org/armedbear/lisp/ceiling.java
 abcl/src/org/armedbear/lisp/cell_error_name.java
 abcl/src/org/armedbear/lisp/chars.lisp
 abcl/src/org/armedbear/lisp/check-type.lisp
+abcl/src/org/armedbear/lisp/classloader.lisp
 abcl/src/org/armedbear/lisp/clos.lisp
 abcl/src/org/armedbear/lisp/coerce.lisp
 abcl/src/org/armedbear/lisp/collect.lisp

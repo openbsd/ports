@@ -543,6 +543,8 @@ java:add-urls-to-classpath
 java:canonicalize-java-type
 java:canonicalize-jproxy-interfaces
 java:chain
+java:classloader
+java:context-classloader
 java:define-java-class
 java:describe-java-object
 java:dump-classpath
@@ -622,6 +624,7 @@ java:runtime-class-add-fields
 java:runtime-class-add-methods
 java:unregister-java-exception
 java:vector-from-jarray
+java:with-classloader
 jvm:%%emit
 jvm:%define-opcode
 jvm:%emit
@@ -695,6 +698,7 @@ jvm:class-field
 jvm:class-file-p
 jvm:class-method
 jvm:class-methods-by-name
+jvm:class-name->type-signature
 jvm:class-name-from-filespec
 jvm:class-remove-method
 jvm:code-add-attribute
@@ -1014,6 +1018,7 @@ jvm:make-unique-class-name
 jvm:make-unwind-protect-node
 jvm:make-var-ref
 jvm:make-variable
+jvm:map-array-type
 jvm:map-flags
 jvm:map-method-name
 jvm:map-primitive-type
@@ -3039,6 +3044,7 @@ the-start
 third
 threads:current-thread
 threads:destroy-thread
+threads:get-java-thread
 threads:get-mutex
 threads:interrupt-thread
 threads:mailbox-empty-p
@@ -3308,10 +3314,6 @@ xp:write-string++
 xp:write-string+++
 xp:xp-print
 xp:xp-structure-p
-y-or-n-p
-yes-or-no-p
-zerop
--structure-p
 y-or-n-p
 yes-or-no-p
 zerop
