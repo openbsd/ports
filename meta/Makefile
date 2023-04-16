@@ -4,6 +4,7 @@
      SUBDIR += geda
      SUBDIR += gnome
      SUBDIR += gnustep
+     SUBDIR += jitsi
      SUBDIR += kde
      SUBDIR += league-fonts
      SUBDIR += lxqt
