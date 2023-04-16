@@ -1,0 +1,14 @@
+Fix build with icu4c>=73.1
+
+Index: third_party/icu/source/common/unicode/uniset.h
+--- third_party/icu/source/common/unicode/uniset.h.orig
++++ third_party/icu/source/common/unicode/uniset.h
+@@ -282,7 +282,7 @@ class RuleCharacterIterator;
+  * @author Alan Liu
+  * @stable ICU 2.0
+  */
+-class U_COMMON_API UnicodeSet U_FINAL : public UnicodeFilter {
++class U_COMMON_API UnicodeSet final : public UnicodeFilter {
+ private:
+     /**
+      * Enough for sets with few ranges.

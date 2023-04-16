@@ -1,0 +1,23 @@
+Fix build with icu4c>=73.1
+
+Index: third_party/icu/source/i18n/unicode/regex.h
+--- third_party/icu/source/i18n/unicode/regex.h.orig
++++ third_party/icu/source/i18n/unicode/regex.h
+@@ -84,7 +84,7 @@ class  UVector64;
+   *
+   * @stable ICU 2.4
+   */
+-class U_I18N_API RegexPattern U_FINAL : public UObject {
++class U_I18N_API RegexPattern final : public UObject {
+ public:
+ 
+     /**
+@@ -656,7 +656,7 @@ class U_I18N_API RegexPattern U_FINAL : public UObject
+  *
+  * @stable ICU 2.4
+  */
+-class U_I18N_API RegexMatcher U_FINAL : public UObject {
++class U_I18N_API RegexMatcher final : public UObject {
+ public:
+ 
+     /**
