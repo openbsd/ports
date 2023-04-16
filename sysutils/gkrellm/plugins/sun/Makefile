@@ -1,9 +1,8 @@
-BROKEN=		does not build with new Glib
-
 COMMENT=	GkrellM2 plugin to display sun rise/set times
 
 DISTNAME=	gkrellsun-1.0.0
-REVISION=	2
+REVISION=	3
+
 CATEGORIES=	astro
 
 HOMEPAGE=	http://gkrellsun.sourceforge.net/

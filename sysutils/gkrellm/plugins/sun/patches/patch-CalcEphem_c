@@ -1,0 +1,14 @@
+64bit time_t
+
+Index: CalcEphem.c
+--- CalcEphem.c.orig
++++ CalcEphem.c
+@@ -217,7 +217,7 @@ static void SunRise(int year, int month, int day, gdou
+ 
+    if (debug)
+    {
+-      g_message("gkrellsun ephem : CurrentGMTTime = %ld\n", CurrentGMTTime);
++      g_message("gkrellsun ephem : CurrentGMTTime = %lld\n", CurrentGMTTime);
+    }
+ 
+    /* N.B. CurrentGMTTime must already be set! */

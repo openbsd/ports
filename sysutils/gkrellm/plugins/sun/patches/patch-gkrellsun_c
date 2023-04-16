@@ -1,6 +1,31 @@
---- gkrellsun.c.orig	Fri Jun 26 20:21:26 2015
-+++ gkrellsun.c	Fri Jun 26 20:24:21 2015
-@@ -1388,8 +1388,8 @@ setTextColor_cb(/*@unused@*/GtkWidget *widget, /*@unus
+Index: gkrellsun.c
+--- gkrellsun.c.orig
++++ gkrellsun.c
+@@ -17,7 +17,6 @@ time_t* CurrentTime;
+ #include <math.h>
+ 
+ /* splint */
+-extern gchar* g_string_free (/*@only@*/ GString *, gboolean);
+ extern void pango_font_description_free (/*@owned@*/PangoFontDescription *);
+ 
+ #define PLUGIN_HEIGHT 54
+@@ -910,13 +909,13 @@ static void show_moon_riseset_time(Sun *sun, gint offs
+     rise += 0.5 / 60;
+     set += 0.5 / 60;
+ 
+-    if (abs(rise) > 24.0)
++    if (fabs(rise) > 24.0)
+ 	(void)g_string_append_printf(mboxes, "no rise ");
+     else
+ 	(void)g_string_append_printf(mboxes, "%02d:%02d ", (gint)rise,
+ 	  (gint)(rise * 60) % 60);
+ 
+-    if (abs(set) > 24.0)
++    if (fabs(set) > 24.0)
+ 	(void)g_string_append_printf(mboxes, "no set\n");
+     else
+ 	(void)g_string_append_printf(mboxes, "%02d:%02d\n", (gint)set,
+@@ -1388,8 +1387,8 @@ setTextColor_cb(/*@unused@*/GtkWidget *widget, /*@unus
     GdkColor color;
     gint response;
  
@@ -11,7 +36,7 @@
  
     w = gtk_color_selection_dialog_new(_("Pick a color"));
  
-@@ -1459,8 +1459,8 @@ sun_create_tab(GtkWidget *tab_vbox)
+@@ -1459,8 +1458,8 @@ sun_create_tab(GtkWidget *tab_vbox)
     GtkWidget     *ll_vbox, *ll_frame;
     GtkWidget     *long_hbox, *lat_hbox;
     GtkWidget     *table1;
