@@ -12,7 +12,7 @@ x11/qt5/qtwebkit
 Index: source/common/unicode/umachine.h
 --- source/common/unicode/umachine.h.orig
 +++ source/common/unicode/umachine.h
-@@ -280,6 +280,7 @@ typedef int8_t UBool;
+@@ -258,6 +258,7 @@ typedef int8_t UBool;
   *
   * @internal ICU 68
   */
