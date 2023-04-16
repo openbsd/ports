@@ -1,6 +1,7 @@
 QT6NAME =	QtMultimedia
 COMMENT =	Qt6 multimedia components
 PKGSPEC =	qt6-qtmultimedia-${QT6_PKGSPEC}
+REVISION =	0
 
 SHARED_LIBS +=  Qt6Multimedia             2.0 # 6.5
 SHARED_LIBS +=  Qt6MultimediaQuick        3.0 # 6.5
@@ -27,6 +28,8 @@ LIB_DEPENDS =	audio/pulseaudio \
 		multimedia/gstreamer1/plugins-base \
 		x11/qt6/qtdeclarative \
 		x11/xkbcommon
+
+CONFIGURE_ARGS =	-DQT_FEATURE_ffmpeg=ON
 
 MODCMAKE_LDFLAGS +=	-L${X11BASE}/lib
 
