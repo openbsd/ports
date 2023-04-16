@@ -1,7 +1,7 @@
 COMMENT =	data visualization and analysis software
 
 DISTNAME =	labplot-2.10.0
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	math x11
 
@@ -99,10 +99,13 @@ CONFIGURE_ARGS +=	-DENABLE_VECTOR_BLF=Off
 
 CONFIGURE_ARGS +=	-DCMAKE_MODULE_PATH=${LOCALBASE}/lib/cmake
 
+CONFIGURE_ARGS +=	-DUSE_SYSTEM_QXLSX=ON
+
 TEST_IS_INTERACTIVE =	X11
 
 pre-configure:
 	# use system dependencies
-	rm -rf ${WRKSRC}/src/{cmake,cantor,kdmactouchbar,liborigin,QXlsx,stringtokenizer}
+	rm -rf ${WRKSRC}/src/3rdparty/{cmake,kdmactouchbar,liborigin,QXlsx}
+	rm -rf ${WRKSRC}/cmake/FindQXlsx.cmake
 
 .include <bsd.port.mk>

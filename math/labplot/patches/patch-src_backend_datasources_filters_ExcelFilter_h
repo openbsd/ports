@@ -1,0 +1,19 @@
+Index: src/backend/datasources/filters/ExcelFilter.h
+--- src/backend/datasources/filters/ExcelFilter.h.orig
++++ src/backend/datasources/filters/ExcelFilter.h
+@@ -15,10 +15,14 @@
+ 
+ #include <QObject>
+ 
+-#ifdef HAVE_EXCEL
++#if defined(HAVE_EXCEL) && !defined(HAVE_SYSTEM_EXCEL)
+ #include "3rdparty/QXlsx/header/xlsxcellrange.h"
+ #include "3rdparty/QXlsx/header/xlsxcellreference.h"
+ #include "3rdparty/QXlsx/header/xlsxdocument.h"
++#elif defined(HAVE_SYSTEM_EXCEL)
++#include "QXlsx/xlsxcellrange.h"
++#include "QXlsx/xlsxcellreference.h"
++#include "QXlsx/xlsxdocument.h"
+ #endif
+ 
+ class ExcelFilterPrivate;

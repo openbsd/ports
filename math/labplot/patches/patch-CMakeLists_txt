@@ -1,12 +1,58 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -502,7 +502,7 @@ ENDIF ()
+@@ -14,7 +14,7 @@ set(KF_MIN_VERSION "5.16.0")
+ set(APPLE_SUPPRESS_X11_WARNING ON)
+ 
+ find_package(ECM ${KF_MIN_VERSION} REQUIRED NO_MODULE)
+-set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/ ${ECM_MODULE_PATH})
++list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/ ${ECM_MODULE_PATH})
+ 
+ include(KDEInstallDirs)
+ include(KDECMakeSettings)
+@@ -201,7 +201,7 @@ if (NOT WIN32)
+ endif()
+ 
+ include_directories (${QDBUS_INCLUDE_DIRS} ${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR})
+-set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake ${CMAKE_MODULE_PATH})
++list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
+ add_definitions (-DLVERSION=\"2.10.0\")
+ add_definitions (-DCXX_COMPILER=\"${CMAKE_CXX_COMPILER_ID}\ ${CMAKE_CXX_COMPILER_VERSION}\")
+ add_definitions (-DCXX_COMPILER_FLAGS=\"${CMAKE_CXX_FLAGS}\")
+@@ -259,6 +259,7 @@ option(ENABLE_QTSERIALPORT "Build with QtSerialPort su
+ option(ENABLE_DISCOUNT "Build with Discount support" ON)
+ option(ENABLE_REPRODUCIBLE "Enable reproducible builds" OFF)
+ option(ENABLE_EXCEL "Build with Excel (xlsx) support" ON)
++option(USE_SYSTEM_QXLSX "QXlsx will use from system and not compile from 3rdparty source" OFF)
+ option(ENABLE_VECTOR_BLF "Build with Vector BLF file format support" ON)
+ IF (APPLE)
+ 	option(ENABLE_TOUCHBAR "Enable touch bar support on macOS" ON)
+@@ -502,11 +503,15 @@ ENDIF ()
  
  ### Excel (optional) #############################
  IF (ENABLE_EXCEL)
 -        FIND_PACKAGE (QXlsx)
-+        FIND_PACKAGE (QXlsxQt5)
-         IF (QXLSX_FOUND)
+-        IF (QXLSX_FOUND)
++        FIND_PACKAGE (QXlsx NAMES QXlsx QXlsxQt5)
++	# QXlsx_FOUND comes from systeme/upstream QXlsx, QXLSX_FOUND from cmake/FindQXlsx.cmake
++        IF (QXLSX_FOUND OR QXlsx_FOUND)
  		MESSAGE (STATUS "QXlsx library FOUND.")
-                 add_definitions (-DHAVE_EXCEL)
+-                add_definitions (-DHAVE_EXCEL)
+-        ELSE ()
++		add_definitions (-DHAVE_EXCEL)
++		IF (USE_SYSTEM_QXLSX)
++			add_definitions (-DHAVE_SYSTEM_EXCEL)
++		ENDIF ()
++        ELSEIF (NOT USE_SYSTEM_QXLSX)
+ 		if (TARGET Qt5::GuiPrivate)
+ 			set(BUILD_EXCEL TRUE)
+ 
+@@ -515,6 +520,8 @@ IF (ENABLE_EXCEL)
+ 		ELSE ()
+ 			MESSAGE (STATUS "Missing Qt5::GuiPrivate to build own QXlsx.")
+ 		ENDIF ()
++        ELSEIF (USE_SYSTEM_QXLSX)
++		MESSAGE (FATAL_ERROR "QXlsx library NOT FOUND. USE_SYSTEM_QXLSX is set.")
+         ENDIF ()
+ 
+ ELSE ()
