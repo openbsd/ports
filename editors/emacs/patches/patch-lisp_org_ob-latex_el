@@ -1,0 +1,39 @@
+"Fixed command injection vulnerability" (CVE-2023-28617)
+https://git.savannah.gnu.org/cgit/emacs/org-mode.git/commit/?id=a8006ea580ed74f27f974d60b598143b04ad1741
+https://git.savannah.gnu.org/cgit/emacs/org-mode.git/commit/?id=8f8ec2ccf3f5ef8f38d68ec84a7e4739c45db485
+
+Index: lisp/org/ob-latex.el
+--- lisp/org/ob-latex.el.orig
++++ lisp/org/ob-latex.el
+@@ -167,7 +167,7 @@ This function is called by `org-babel-execute-src-bloc
+ 	                     tmp-pdf
+                              (list org-babel-latex-pdf-svg-process)
+                              extension err-msg log-buf)))
+-              (shell-command (format "mv %s %s" img-out out-file)))))
++              (rename-file img-out out-file t))))
+          ((string-suffix-p ".tikz" out-file)
+ 	  (when (file-exists-p out-file) (delete-file out-file))
+ 	  (with-temp-file out-file
+@@ -205,17 +205,14 @@ This function is called by `org-babel-execute-src-bloc
+ 	    (if (string-suffix-p ".svg" out-file)
+ 		(progn
+ 		  (shell-command "pwd")
+-		  (shell-command (format "mv %s %s"
+-					 (concat (file-name-sans-extension tex-file) "-1.svg")
+-					 out-file)))
++                  (rename-file (concat (file-name-sans-extension tex-file) "-1.svg")
++                               out-file t))
+ 	      (error "SVG file produced but HTML file requested")))
+ 	   ((file-exists-p (concat (file-name-sans-extension tex-file) ".html"))
+ 	    (if (string-suffix-p ".html" out-file)
+-		(shell-command "mv %s %s"
+-			       (concat (file-name-sans-extension tex-file)
+-				       ".html")
+-			       out-file)
+-	      (error "HTML file produced but SVG file requested")))))
++                (rename-file (concat (file-name-sans-extension tex-file) ".html")
++                             out-file t)
++              (error "HTML file produced but SVG file requested")))))
+ 	 ((or (string= "pdf" extension) imagemagick)
+ 	  (with-temp-file tex-file
+ 	    (require 'ox-latex)
