@@ -28,6 +28,7 @@ lib/python${MODPY_VERSION}/site-packages/mapproxy/cache/
 lib/python${MODPY_VERSION}/site-packages/mapproxy/cache/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mapproxy/cache/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mapproxy/cache/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mapproxy/cache/${MODPY_PYCACHE}azureblob.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/cache/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/cache/${MODPY_PYCACHE}compact.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/cache/${MODPY_PYCACHE}couchdb.${MODPY_PYC_MAGIC_TAG}pyc
@@ -43,6 +44,7 @@ lib/python${MODPY_VERSION}/site-packages/mapproxy/cache/${MODPY_PYCACHE}renderd.
 lib/python${MODPY_VERSION}/site-packages/mapproxy/cache/${MODPY_PYCACHE}riak.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/cache/${MODPY_PYCACHE}s3.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/cache/${MODPY_PYCACHE}tile.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mapproxy/cache/azureblob.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/cache/base.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/cache/compact.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/cache/couchdb.py
@@ -233,7 +235,6 @@ lib/python${MODPY_VERSION}/site-packages/mapproxy/service/templates/demo/demo.ht
 lib/python${MODPY_VERSION}/site-packages/mapproxy/service/templates/demo/openlayers-demo.cfg
 lib/python${MODPY_VERSION}/site-packages/mapproxy/service/templates/demo/static/
 lib/python${MODPY_VERSION}/site-packages/mapproxy/service/templates/demo/static.html
-lib/python${MODPY_VERSION}/site-packages/mapproxy/service/templates/demo/static/OpenLayers.js
 lib/python${MODPY_VERSION}/site-packages/mapproxy/service/templates/demo/static/img/
 lib/python${MODPY_VERSION}/site-packages/mapproxy/service/templates/demo/static/img/blank.gif
 lib/python${MODPY_VERSION}/site-packages/mapproxy/service/templates/demo/static/img/east-mini.png
@@ -244,6 +245,10 @@ lib/python${MODPY_VERSION}/site-packages/mapproxy/service/templates/demo/static/
 lib/python${MODPY_VERSION}/site-packages/mapproxy/service/templates/demo/static/img/zoom-plus-mini.png
 lib/python${MODPY_VERSION}/site-packages/mapproxy/service/templates/demo/static/img/zoom-world-mini.png
 lib/python${MODPY_VERSION}/site-packages/mapproxy/service/templates/demo/static/logo.png
+lib/python${MODPY_VERSION}/site-packages/mapproxy/service/templates/demo/static/ol.css
+lib/python${MODPY_VERSION}/site-packages/mapproxy/service/templates/demo/static/ol.js
+lib/python${MODPY_VERSION}/site-packages/mapproxy/service/templates/demo/static/proj4.min.js
+lib/python${MODPY_VERSION}/site-packages/mapproxy/service/templates/demo/static/proj4defs.js
 lib/python${MODPY_VERSION}/site-packages/mapproxy/service/templates/demo/static/site.css
 lib/python${MODPY_VERSION}/site-packages/mapproxy/service/templates/demo/static/theme/
 lib/python${MODPY_VERSION}/site-packages/mapproxy/service/templates/demo/static/theme/default/
@@ -423,6 +428,7 @@ lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/${MODPY_PYCACHE}te
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/${MODPY_PYCACHE}test_auth.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/${MODPY_PYCACHE}test_behind_proxy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/${MODPY_PYCACHE}test_bulk_meta_tiles.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/${MODPY_PYCACHE}test_cache_azureblob.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/${MODPY_PYCACHE}test_cache_band_merge.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/${MODPY_PYCACHE}test_cache_geopackage.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/${MODPY_PYCACHE}test_cache_grid_names.${MODPY_PYC_MAGIC_TAG}pyc
@@ -476,6 +482,7 @@ lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/arcgis.yaml
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/auth.yaml
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/cache.mbtiles
+lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/cache_azureblob.yaml
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/cache_band_merge.yaml
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/cache_bulk_meta_tiles.yaml
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/cache_data/
@@ -562,6 +569,7 @@ lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_arcgis.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_auth.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_behind_proxy.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_bulk_meta_tiles.py
+lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_cache_azureblob.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_cache_band_merge.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_cache_geopackage.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_cache_grid_names.py
@@ -617,6 +625,7 @@ lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/${MODPY_PYCACHE}__in
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/${MODPY_PYCACHE}test_async.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/${MODPY_PYCACHE}test_auth.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/${MODPY_PYCACHE}test_cache.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/${MODPY_PYCACHE}test_cache_azureblob.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/${MODPY_PYCACHE}test_cache_compact.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/${MODPY_PYCACHE}test_cache_couchdb.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/${MODPY_PYCACHE}test_cache_geopackage.${MODPY_PYC_MAGIC_TAG}pyc
@@ -668,6 +677,7 @@ lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/polygons/polygons.sh
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/test_async.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/test_auth.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/test_cache.py
+lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/test_cache_azureblob.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/test_cache_compact.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/test_cache_couchdb.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/test_cache_geopackage.py
