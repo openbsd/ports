@@ -70,7 +70,7 @@ CONFIGURE_ARGS +=	--disable-atlas
 WRKSRC =		${WRKDIST}/build/workspaces/gcc
 
 # most tests fail without nvtt
-CONFIGURE_ARGS +=	--disable-tests
+CONFIGURE_ARGS +=	--without-tests
 
 post-extract:
 	# remove unused bundled sources
