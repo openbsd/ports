@@ -39,7 +39,6 @@ MODULES =		lang/python
 COMPILER =		base-clang ports-gcc
 
 MODPY_RUNDEP =		No
-MODPY_ADJ_FILES =	../../../libraries/source/cxxtest-4.4/bin/cxxtestgen
 
 MAKE_FLAGS =		SILENT=
 MAKE_ENV =		CC="${CC}" \
@@ -70,6 +69,13 @@ CONFIGURE_ARGS +=	--disable-atlas
 
 WRKSRC =		${WRKDIST}/build/workspaces/gcc
 
+# most tests fail without nvtt
+CONFIGURE_ARGS +=	--disable-tests
+
+post-extract:
+	# remove unused bundled sources
+	rm -rf ${WRKSRC}/libraries/source/{cxxtest-4.4,enet,miniupnpc,nvtt,valgrind}
+
 do-build:
 	cd ${WRKDIST}/build/workspaces && \
 		${SETENV} CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" \
@@ -96,15 +102,5 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKDIST}/build/resources/0ad.png \
 		${PREFIX}/share/pixmaps/
-
-# most tests fail without nvtt
-NO_TEST =		Yes
-# avoid building unused tests in ${WRKSRC}/Makefile
-MAKE_FLAGS +=		cxxtestroot_config='' \
-			mocks_test_config='' \
-			test_config=''
-
-#do-test:
-#	cd ${WRKDIST}/binaries/system && ./test
 
 .include <bsd.port.mk>
