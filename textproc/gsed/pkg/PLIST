@@ -25,6 +25,9 @@ share/locale/hu/LC_MESSAGES/sed.mo
 share/locale/id/LC_MESSAGES/sed.mo
 share/locale/it/LC_MESSAGES/sed.mo
 share/locale/ja/LC_MESSAGES/sed.mo
+share/locale/ka/
+share/locale/ka/LC_MESSAGES/
+share/locale/ka/LC_MESSAGES/sed.mo
 share/locale/ko/LC_MESSAGES/sed.mo
 share/locale/nb/LC_MESSAGES/sed.mo
 share/locale/nl/LC_MESSAGES/sed.mo
