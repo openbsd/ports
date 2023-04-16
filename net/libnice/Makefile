@@ -1,6 +1,6 @@
 COMMENT =		GLib ICE implementation
 DISTNAME =		libnice-0.1.21
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		net
 
@@ -31,7 +31,7 @@ BUILD_DEPENDS =		devel/gobject-introspection
 
 LIB_DEPENDS =		devel/glib2 \
 			multimedia/gstreamer1/core \
-			net/gupnp/igd
+			net/gupnp/igd>=1.6.0
 
 # avoid picking up GnuTLS over LibreSSL
 CONFIGURE_ARGS +=	-Dcrypto-library=openssl
