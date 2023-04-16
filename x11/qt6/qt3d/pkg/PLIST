@@ -134,7 +134,6 @@ include/X11/qt6/Qt3DCore/${VERSION}/Qt3DCore/private/corelogging_p.h
 include/X11/qt6/Qt3DCore/${VERSION}/Qt3DCore/private/coresettings_p.h
 include/X11/qt6/Qt3DCore/${VERSION}/Qt3DCore/private/job_common_p.h
 include/X11/qt6/Qt3DCore/${VERSION}/Qt3DCore/private/matrix4x4_p.h
-include/X11/qt6/Qt3DCore/${VERSION}/Qt3DCore/private/matrix4x4_sse_p.h
 include/X11/qt6/Qt3DCore/${VERSION}/Qt3DCore/private/nullservices_p.h
 include/X11/qt6/Qt3DCore/${VERSION}/Qt3DCore/private/propertychangehandler_p.h
 include/X11/qt6/Qt3DCore/${VERSION}/Qt3DCore/private/qabstractaspect_p.h
@@ -194,9 +193,7 @@ include/X11/qt6/Qt3DCore/${VERSION}/Qt3DCore/private/qurlhelper_p.h
 include/X11/qt6/Qt3DCore/${VERSION}/Qt3DCore/private/sqt_p.h
 include/X11/qt6/Qt3DCore/${VERSION}/Qt3DCore/private/task_p.h
 include/X11/qt6/Qt3DCore/${VERSION}/Qt3DCore/private/vector3d_p.h
-include/X11/qt6/Qt3DCore/${VERSION}/Qt3DCore/private/vector3d_sse_p.h
 include/X11/qt6/Qt3DCore/${VERSION}/Qt3DCore/private/vector4d_p.h
-include/X11/qt6/Qt3DCore/${VERSION}/Qt3DCore/private/vector4d_sse_p.h
 include/X11/qt6/Qt3DCore/${VERSION}/Qt3DCore/private/vector_helper_p.h
 include/X11/qt6/Qt3DCore/QAbstractAspect
 include/X11/qt6/Qt3DCore/QAbstractFunctor
