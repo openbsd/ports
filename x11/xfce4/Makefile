@@ -20,6 +20,7 @@
      SUBDIR += xfce4-dev-tools
      SUBDIR += xfce4-dict
      SUBDIR += xfce4-diskperf
+     SUBDIR += xfce4-docklike
      SUBDIR += xfce4-fsguard
      SUBDIR += xfce4-genmon
      SUBDIR += xfce4-icon-theme
