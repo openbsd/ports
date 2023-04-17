@@ -46,11 +46,6 @@ lib/python${MODPY_VERSION}/site-packages/buildbot_worker/${MODPY_PYCACHE}runproc
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/${MODPY_PYCACHE}runprocess.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/${MODPY_PYCACHE}tunnel.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/${MODPY_PYCACHE}tunnel.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/buildbot_worker/backports/
-lib/python${MODPY_VERSION}/site-packages/buildbot_worker/backports/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/buildbot_worker/backports/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/buildbot_worker/backports/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/buildbot_worker/backports/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/base.py
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/bot.py
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/commands/
