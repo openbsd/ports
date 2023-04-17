@@ -94,8 +94,10 @@ CONFIGURE_ARGS +=	--with-system-icu
 SEPARATE_BUILD =	Yes
 
 .if ${MACHINE_ARCH:Mi386} || ${MACHINE_ARCH:Mamd64}
-# needed for webm
+.if ${MOZILLA_PROJECT} == "seamonkey"
+# needed for webm/jpeg/vpx ?
 MODMOZ_BUILD_DEPENDS +=	devel/yasm
+.endif
 # needed for dav1d since 67
 MODMOZ_BUILD_DEPENDS +=	devel/nasm
 .endif
