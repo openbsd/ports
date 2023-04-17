@@ -1,0 +1,14 @@
+backport commit fix dd7b96cdcc6e0430b8f737a6fc5287f476476a85
+
+Index: src/CfgParserSource.cc
+--- src/CfgParserSource.cc.orig
++++ src/CfgParserSource.cc
+@@ -144,7 +144,7 @@ CfgParserSourceCommand::open(void)
+ 		std::string path(Util::getEnv("PATH"));
+ 		path = _command_path + ":" + path;
+ 		env.override("PATH", path);
+-		execle(PEKWM_SH, PEKWM_SH, "-c", _name.c_str(), nullptr,
++		execle(PEKWM_SH, PEKWM_SH, "-c", _name.c_str(), NULL,
+ 		       env.getCEnv());
+ 
+ 		::close (STDOUT_FILENO);

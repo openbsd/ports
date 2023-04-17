@@ -1,0 +1,14 @@
+backport commit fix dd7b96cdcc6e0430b8f737a6fc5287f476476a85
+
+Index: src/Util.cc
+--- src/Util.cc.orig
++++ src/Util.cc
+@@ -191,7 +191,7 @@ namespace Util {
+ 		case 0:
+ 			setsid();
+ 			execlp(PEKWM_SH, PEKWM_SH, "-c", command.c_str(),
+-			       static_cast<char*>(0));
++			       NULL);
+ 			P_ERR("execlp failed: " << strerror(errno));
+ 			exit(1);
+ 		case -1:
