@@ -1,2 +1,2 @@
 lib/python${MODPY_VERSION}/site-packages/dnet-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
-lib/python${MODPY_VERSION}/site-packages/dnet.so
+@so lib/python${MODPY_VERSION}/site-packages/dnet.so

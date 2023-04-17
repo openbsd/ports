@@ -2,7 +2,7 @@ COMMENT-main=	portable low-level networking library
 COMMENT-python= python interface to libdnet
 
 MODPY_EGG_VERSION= 1.12
-REVISION=	13
+REVISION=	14
 DISTNAME=	libdnet-${MODPY_EGG_VERSION}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-python= py-${DISTNAME}

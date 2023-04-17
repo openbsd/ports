@@ -18,7 +18,7 @@ include/dnet/route.h
 include/dnet/tcp.h
 include/dnet/tun.h
 include/dnet/udp.h
-lib/libdnet.a
+@static-lib lib/libdnet.a
 lib/libdnet.la
 @lib lib/libdnet.so.${LIBdnet_VERSION}
 @man man/man3/dnet.3
