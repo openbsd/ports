@@ -1,8 +1,7 @@
 COMMENT =		create PDFs from markdown or HTML
 
-MODPY_EGG_VERSION =	57.0
+MODPY_EGG_VERSION =	58.1
 DISTNAME =		weasyprint-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		print
 
