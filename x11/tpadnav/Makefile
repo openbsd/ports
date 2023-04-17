@@ -2,7 +2,7 @@ COMMENT=	generate back and forward navigation events from touchpad
 
 GH_ACCOUNT=	jcs
 GH_PROJECT=	tpadnav
-GH_TAGNAME=	v1.0
+GH_TAGNAME=	v2.0
 
 CATEGORIES=	x11
 
