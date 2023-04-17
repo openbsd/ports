@@ -2,15 +2,15 @@ COMMENT=	lightweight video thumbnailer for file managers
 
 CATEGORIES=	graphics multimedia
 
+DISTNAME=	ffmpegthumbnailer-2.2.2
+REVISION=	0
 GH_ACCOUNT=	dirkvdb
 GH_PROJECT=	ffmpegthumbnailer
-GH_TAGNAME=	2.2.0
+GH_COMMIT=	c2fba253f3751f9bb825defec66109e5d33c74d6
 
-SHARED_LIBS=	ffmpegthumbnailer 5.0
+SHARED_LIBS=	ffmpegthumbnailer 6.0
 HOMEPAGE=	https://github.com/dirkvdb/ffmpegthumbnailer
 MAINTAINER=	Victor Kukshiev <andrey0bolkonsky@gmail.com>
-MASTER_SITES=	https://github.com/dirkvdb/ffmpegthumbnailer/releases/download/${GH_TAGNAME}/
-EXTRACT_SUFX=	.tar.bz2
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
