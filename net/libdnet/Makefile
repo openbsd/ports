@@ -35,11 +35,12 @@ CONFIGURE_ARGS +=	--without-check
 .include <bsd.port.arch.mk>
 .if ${BUILD_PACKAGES:M-python}
 MODULES+=		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
+MODPY_VERSION=		${MODPY_DEFAULT_VERSION_2}
 CONFIGURE_ARGS+=	--with-python
 MAKE_FLAGS=		PYTHON=${MODPY_BIN}
-TEST_DEPENDS=		net/libdnet,-python
+TEST_DEPENDS=		${FULLPKGNAME-python}:${FULLPKGPATH-python}
 TEST_FLAGS=		TESTS_ENVIRONMENT=${MODPY_BIN}
+TEST_IS_INTERACTIVE=	needs root
 WANTLIB-python=		${MODPY_WANTLIB} m pthread util
 .else
 CONFIGURE_ARGS+=	--without-python
