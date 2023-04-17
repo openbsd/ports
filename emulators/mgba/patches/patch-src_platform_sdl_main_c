@@ -53,17 +53,17 @@ Index: src/platform/sdl/main.c
 +#ifdef USE_PLEDGE_UNVEIL
 +static bool mPledgeBroad(struct mArguments *args) {
 +	if (args->debuggerType == DEBUGGER_CLI) {
-+		if (pledge("stdio rpath wpath cpath inet fattr unix dns sendfd prot_exec tty drm audio", NULL) == -1) {
++		if (pledge("stdio rpath wpath cpath inet fattr flock unix dns sendfd prot_exec tty drm audio", NULL) == -1) {
 +			return false;
 +		}
 +#ifdef USE_GDB_STUB
 +	} else if (args->debuggerType == DEBUGGER_GDB) {
-+		if (pledge("stdio rpath wpath cpath inet fattr unix dns sendfd prot_exec drm audio", NULL) == -1) {
++		if (pledge("stdio rpath wpath cpath inet fattr flock unix dns sendfd prot_exec drm audio", NULL) == -1) {
 +			return false;
 +		}
 +#endif
 +	} else {
-+		if (pledge("stdio rpath wpath cpath inet fattr unix dns sendfd prot_exec drm audio", NULL) == -1) {
++		if (pledge("stdio rpath wpath cpath inet fattr flock unix dns sendfd prot_exec drm audio", NULL) == -1) {
 +			return false;
 +		}
 +	}
@@ -72,17 +72,17 @@ Index: src/platform/sdl/main.c
 +
 +static bool mPledgeNarrow(struct mArguments *args) {
 +	if (args->debuggerType == DEBUGGER_CLI) {
-+		if (pledge("stdio rpath wpath cpath fattr sendfd tty prot_exec drm audio", NULL) == -1) {
++		if (pledge("stdio rpath wpath cpath fattr flock sendfd tty prot_exec drm audio", NULL) == -1) {
 +			return false;
 +		}
 +#ifdef USE_GDB_STUB
 +	} else if (args->debuggerType == DEBUGGER_GDB) {
-+		if (pledge("stdio rpath wpath cpath inet fattr sendfd prot_exec drm audio", NULL) == -1) {
++		if (pledge("stdio rpath wpath cpath inet fattr flock sendfd prot_exec drm audio", NULL) == -1) {
 +			return false;
 +		}
 +#endif
 +	} else {
-+		if (pledge("stdio rpath wpath cpath fattr sendfd prot_exec drm audio", NULL) == -1) {
++		if (pledge("stdio rpath wpath cpath fattr flock sendfd prot_exec drm audio", NULL) == -1) {
 +			return false;
 +		}
 +	}

@@ -7,6 +7,7 @@ GH_ACCOUNT =		mgba-emu
 GH_PROJECT =		mgba
 GH_TAGNAME =		$V
 PKGNAME-libretro =	libretro-mgba-$V
+REVISION-main =		0
 
 MULTI_PACKAGES =	-main -qt -libretro
 DEBUG_PACKAGES =	-main -qt -libretro
