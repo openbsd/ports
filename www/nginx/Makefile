@@ -15,7 +15,7 @@ COMMENT-passenger=	nginx passenger (ruby/python/nodejs) integration module
 COMMENT-rtmp=		nginx module for RTMP streaming
 COMMENT-securelink=	nginx HMAC secure link module
 
-VERSION=	1.22.0
+VERSION=	1.24.0
 DISTNAME=	nginx-${VERSION}
 CATEGORIES=	www
 
@@ -36,8 +36,6 @@ PKGNAME-passenger=	nginx-passenger-${VERSION}
 PKGNAME-rtmp=		nginx-rtmp-${VERSION}
 PKGNAME-securelink=	nginx-securelink-${VERSION}
 
-REVISION-main=		0
-
 ONLY_FOR_ARCHS-passenger= aarch64 amd64 arm i386
 
 MASTER_SITES=	https://nginx.org/download/
@@ -48,9 +46,9 @@ MASTER_SITES1=	https://raw.githubusercontent.com/rnagy/nginx_chroot_patch/master
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 _GH_MODS=	\
-	openresty	headers-more-nginx-module	v0.33 \
+	openresty	headers-more-nginx-module	v0.34 \
 	openresty	lua-nginx-module		v0.10.11 \
-	nbs-system	naxsi				1.3 \
+	nbs-system	naxsi				d714f1636ea49a9a9f4f06dba14aee003e970834 \
 	kvspb		nginx-auth-ldap			83c059b73566c2ee9cbda920d91b66657cf120b7 \
 	arut		nginx-rtmp-module		v${VERSION-rtmp} \
 	simpl		ngx_devel_kit			v0.3.0 \
@@ -81,7 +79,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 .include <bsd.port.arch.mk>
 
-WANTLIB-main=		c z pcre ssl crypto
+WANTLIB-main=		c crypto pcre2-8 ssl z
 WANTLIB-mailproxy=
 WANTLIB-stream=
 WANTLIB-image_filter=	gd
@@ -96,7 +94,7 @@ WANTLIB-perl=		c m perl
 WANTLIB-passenger=	m pthread ${COMPILER_LIBCXX}
 WANTLIB-securelink=	crypto
 
-LIB_DEPENDS-main=	devel/pcre
+LIB_DEPENDS-main=	devel/pcre2
 LIB_DEPENDS-xslt=	textproc/libxml \
 			textproc/libxslt
 LIB_DEPENDS-image_filter=graphics/gd
@@ -182,7 +180,6 @@ CONFIGURE_ARGS+=	--prefix=${NGINX_DIR} \
 			--with-stream=dynamic \
 			--with-stream_ssl_module \
 			--with-stream_ssl_preread_module \
-			--without-pcre2 \
 			--add-dynamic-module=${WRKSRC}/naxsi/naxsi_src/ \
 			--add-dynamic-module=${WRKSRC}/ngx_devel_kit \
 			--add-dynamic-module=${WRKSRC}/headers-more-nginx-module \
