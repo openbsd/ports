@@ -1,6 +1,6 @@
 COMMENT =		jq wrapper for YAML/XML documents
 
-MODPY_EGG_VERSION =	3.1.1
+MODPY_EGG_VERSION =	3.2.1
 DISTNAME =		yq-${MODPY_EGG_VERSION}
 
 CATEGORIES =		textproc
@@ -17,7 +17,7 @@ MODPY_PYTEST_ARGS =	test/test.py
 
 RUN_DEPENDS =		devel/py-argcomplete${MODPY_FLAVOR} \
 			textproc/jq \
-			textproc/py-toml${MODPY_FLAVOR} \
+			textproc/py-tomlkit${MODPY_FLAVOR} \
 			textproc/py-xmltodict${MODPY_FLAVOR} \
 			textproc/py-yaml${MODPY_FLAVOR}>=5.3.1
 
