@@ -1,11 +1,13 @@
 COMMENT=		components for the MATE desktop
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS+=		mate-desktop-2		0.0 # 18.4
 
 MATE_PROJECT=		mate-desktop
 
 CATEGORIES=		x11
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 # LGPLv2/GFDLv1.1/GPLv2
 PERMIT_PACKAGE=	Yes
