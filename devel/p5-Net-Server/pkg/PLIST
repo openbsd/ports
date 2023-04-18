@@ -27,6 +27,7 @@ ${P5SITE}/Net/Server/Proto/UNIX.pm
 ${P5SITE}/Net/Server/Proto/UNIXDGRAM.pm
 ${P5SITE}/Net/Server/SIG.pm
 ${P5SITE}/Net/Server/Single.pm
+${P5SITE}/Net/Server/Thread.pm
 @man man/man1/net-server.1
 @man man/man3p/Net::Server.3p
 @man man/man3p/Net::Server::Daemonize.3p
@@ -49,6 +50,7 @@ ${P5SITE}/Net/Server/Single.pm
 @man man/man3p/Net::Server::Proto::UNIXDGRAM.3p
 @man man/man3p/Net::Server::SIG.3p
 @man man/man3p/Net::Server::Single.3p
+@man man/man3p/Net::Server::Thread.3p
 share/examples/p5-Net-Server/
 share/examples/p5-Net-Server/LoadTester.pl
 share/examples/p5-Net-Server/connection_test.pl

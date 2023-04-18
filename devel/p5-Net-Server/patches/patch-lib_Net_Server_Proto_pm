@@ -3,7 +3,7 @@ We don't have the sysctl any more, resulting in this binding to v6 only.
 Index: lib/Net/Server/Proto.pm
 --- lib/Net/Server/Proto.pm.orig
 +++ lib/Net/Server/Proto.pm
-@@ -162,10 +162,7 @@ sub get_addr_info {
+@@ -163,10 +163,7 @@ sub get_addr_info {
  }
  
  sub _bindv6only {
