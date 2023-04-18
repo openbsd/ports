@@ -13,21 +13,24 @@ COMMENT =	continuation and extension of Vim
 
 GH_ACCOUNT =	neovim
 GH_PROJECT =	neovim
-GH_TAGNAME =	v0.8.3
+GH_TAGNAME =	v0.9.0
 
 CATEGORIES =	editors devel
 HOMEPAGE =	https://neovim.io
 MAINTAINER =	Edd Barrett <edd@openbsd.org>
 
 # The versions listed here must match those in cmake.deps/CMakeLists.txt.
-LUV_VER =	1.44.2-1
-LUAJIT_VER =	633f265f67f322cbe2c5fd11d3e46d968ac220f7
+LUV_VER =	093a977b82077591baefe1e880d37dfa2730bd54
+LUAJIT_VER =	505e2c03de35e2718eef0d2d3660712e06dadf1f
+LUACOMPAT_VER =	v0.9
 
-MASTER_SITES0 =	https://github.com/luvit/luv/releases/download/${LUV_VER}/
+MASTER_SITES0 =	https://github.com/luvit/luv/archive/
 MASTER_SITES1 = https://github.com/LuaJIT/LuaJIT/archive/
+MASTER_SITES2 = https://github.com/keplerproject/lua-compat-5.3/archive/
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
-		luv-${LUV_VER}${EXTRACT_SUFX}:0 \
-		luajit-{}${LUAJIT_VER}${EXTRACT_SUFX}:1
+		luv-{}${LUV_VER}${EXTRACT_SUFX}:0 \
+		luajit-{}${LUAJIT_VER}${EXTRACT_SUFX}:1 \
+		lua-compat-5.3-{}${LUACOMPAT_VER}${EXTRACT_SUFX}:2
 
 # Neovim: Apache 2.0 + Vim License
 # LuaJIT: MIT + public domain
@@ -65,7 +68,7 @@ LIB_DEPENDS =		devel/gettext,-runtime \
 			devel/libvterm \
 			devel/msgpack \
 			devel/unibilium \
-			textproc/tree-sitter
+			textproc/tree-sitter>=0.20.8
 
 RUN_DEPENDS +=		devel/libmpack/lua \
 			devel/libmpack/main \
@@ -87,6 +90,7 @@ CONFIGURE_ARGS +=	-DPREFER_LUA=ON \
 			-DLUA_INCLUDE_DIR=${MODLUA_INCL_DIR} \
 			-DLUA_LIBRARIES=${MODLUA_LIB}
 .endif
+MAKE_ENV =		CCACHE_DISABLE=true
 
 # Tests need gmake
 USE_GMAKE = Yes
@@ -104,6 +108,8 @@ post-extract:
 	mkdir ${STATIC_DEPS_WRKSRC}
 	mv ${WRKDIR}/LuaJIT-${LUAJIT_VER} ${STATIC_DEPS_WRKSRC}/luajit
 	mv ${WRKDIR}/luv-${LUV_VER} ${STATIC_DEPS_WRKSRC}/luv
+	mv ${WRKDIR}/lua-compat-5.3-${LUACOMPAT_VER:C/^v//} \
+		${STATIC_DEPS_WRKSRC}/lua-compat-5.3
 
 # Build LuaJIT (if required) and libluv as static libraries.
 #
@@ -161,6 +167,8 @@ pre-configure:
 		-DLUA_BUILD_TYPE=System \
 		-DLUA_INCLUDE_DIR=${MODLUA_INCL_DIR} \
 		-DLUA_LIBRARIES=${MODLUA_LIBDIR} \
+		-DWITH_SHARED_LIBUV=ON \
+		-DLUA_COMPAT53_DIR=${STATIC_DEPS_WRKSRC}/lua-compat-5.3 \
 		-DWITH_LUA_ENGINE=Lua \
 		${STATIC_DEPS_WRKSRC}/luv
 	cd ${STATIC_DEPS_WRKBUILD}/luv && \
@@ -182,7 +190,7 @@ pre-configure:
 do-test:
 	true
 	${SETENV} LC_CTYPE=en_US.UTF-8 \
-		${MAKE_PROGRAM} -C ${WRKSRC}/src/nvim/testdir \
+		${MAKE_PROGRAM} -C ${WRKSRC}/test/old/testdir \
 		HOME=${WRKBUILD} NVIM_PRG=${WRKBUILD}/bin/nvim ${MAKE_FLAGS}
 
 .include <bsd.port.mk>
