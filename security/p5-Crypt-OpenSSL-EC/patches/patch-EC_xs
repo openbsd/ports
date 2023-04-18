@@ -1,0 +1,16 @@
+Index: EC.xs
+--- EC.xs.orig
++++ EC.xs
+@@ -25,8 +25,12 @@ EC_GFp_simple_method()
+ const EC_METHOD *
+ EC_GFp_mont_method()
+ 
++#if !defined(LIBRESSL_VERSION_NUMBER) || LIBRESSL_VERSION_NUMBER < 0x3080000fL
++
+ const EC_METHOD *
+ EC_GFp_nist_method()
++
++#endif
+ 
+ #ifndef OPENSSL_NO_EC2M
+ 

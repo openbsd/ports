@@ -4,6 +4,7 @@ MODULES =	cpan
 
 DISTNAME =	Crypt-OpenSSL-EC-1.32
 CATEGORIES =	security
+REVISION =	0
 
 # Perl
 PERMIT_PACKAGE = Yes
