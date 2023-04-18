@@ -4,8 +4,6 @@ lib/python${MODPY_VERSION}/site-packages/ykman/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ykman/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ykman/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ykman/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/ykman/${MODPY_PYCACHE}_openpgp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/ykman/${MODPY_PYCACHE}_openpgp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ykman/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ykman/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ykman/${MODPY_PYCACHE}device.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -20,6 +18,8 @@ lib/python${MODPY_VERSION}/site-packages/ykman/${MODPY_PYCACHE}logging_setup.${M
 lib/python${MODPY_VERSION}/site-packages/ykman/${MODPY_PYCACHE}logging_setup.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ykman/${MODPY_PYCACHE}oath.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ykman/${MODPY_PYCACHE}oath.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ykman/${MODPY_PYCACHE}openpgp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ykman/${MODPY_PYCACHE}openpgp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ykman/${MODPY_PYCACHE}otp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ykman/${MODPY_PYCACHE}otp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ykman/${MODPY_PYCACHE}piv.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -71,7 +71,6 @@ lib/python${MODPY_VERSION}/site-packages/ykman/_cli/otp.py
 lib/python${MODPY_VERSION}/site-packages/ykman/_cli/piv.py
 lib/python${MODPY_VERSION}/site-packages/ykman/_cli/script.py
 lib/python${MODPY_VERSION}/site-packages/ykman/_cli/util.py
-lib/python${MODPY_VERSION}/site-packages/ykman/_openpgp.py
 lib/python${MODPY_VERSION}/site-packages/ykman/base.py
 lib/python${MODPY_VERSION}/site-packages/ykman/device.py
 lib/python${MODPY_VERSION}/site-packages/ykman/diagnostics.py
@@ -99,6 +98,7 @@ lib/python${MODPY_VERSION}/site-packages/ykman/hid/windows.py
 lib/python${MODPY_VERSION}/site-packages/ykman/logging.py
 lib/python${MODPY_VERSION}/site-packages/ykman/logging_setup.py
 lib/python${MODPY_VERSION}/site-packages/ykman/oath.py
+lib/python${MODPY_VERSION}/site-packages/ykman/openpgp.py
 lib/python${MODPY_VERSION}/site-packages/ykman/otp.py
 lib/python${MODPY_VERSION}/site-packages/ykman/pcsc/
 lib/python${MODPY_VERSION}/site-packages/ykman/pcsc/__init__.py
@@ -156,6 +156,8 @@ lib/python${MODPY_VERSION}/site-packages/yubikit/${MODPY_PYCACHE}management.${MO
 lib/python${MODPY_VERSION}/site-packages/yubikit/${MODPY_PYCACHE}management.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yubikit/${MODPY_PYCACHE}oath.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yubikit/${MODPY_PYCACHE}oath.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/yubikit/${MODPY_PYCACHE}openpgp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/yubikit/${MODPY_PYCACHE}openpgp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yubikit/${MODPY_PYCACHE}piv.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yubikit/${MODPY_PYCACHE}piv.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yubikit/${MODPY_PYCACHE}support.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -179,6 +181,7 @@ lib/python${MODPY_VERSION}/site-packages/yubikit/core/smartcard.py
 lib/python${MODPY_VERSION}/site-packages/yubikit/logging.py
 lib/python${MODPY_VERSION}/site-packages/yubikit/management.py
 lib/python${MODPY_VERSION}/site-packages/yubikit/oath.py
+lib/python${MODPY_VERSION}/site-packages/yubikit/openpgp.py
 lib/python${MODPY_VERSION}/site-packages/yubikit/piv.py
 lib/python${MODPY_VERSION}/site-packages/yubikit/py.typed
 lib/python${MODPY_VERSION}/site-packages/yubikit/support.py
