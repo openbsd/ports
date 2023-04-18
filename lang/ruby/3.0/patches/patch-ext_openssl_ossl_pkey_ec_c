@@ -1,0 +1,14 @@
+LibreSSL 3.8 dropped support for EC_GFp_nist_method()
+
+Index: ext/openssl/ossl_pkey_ec.c
+--- ext/openssl/ossl_pkey_ec.c.orig
++++ ext/openssl/ossl_pkey_ec.c
+@@ -743,7 +743,7 @@ static VALUE ossl_ec_group_initialize(int argc, VALUE 
+             } else if (id == s_GFp_mont) {
+                 method = EC_GFp_mont_method();
+             } else if (id == s_GFp_nist) {
+-                method = EC_GFp_nist_method();
++                method = NULL;
+ #if !defined(OPENSSL_NO_EC2M)
+             } else if (id == s_GF2m_simple) {
+                 method = EC_GF2m_simple_method();

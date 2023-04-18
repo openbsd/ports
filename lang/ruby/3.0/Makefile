@@ -4,6 +4,8 @@ SHARED_LIBS =		ruby30	0.0
 NEXTVER =		3.1
 PKGSPEC-main ?=         ruby->=3.0.0,<${NEXTVER}
 
+REVISION-main =		0
+
 # Backport fix for fixnum*fixnum multiplication on octeon
 PATCHFILES =		ruby-octeon-fix{fe6245b4309c855e6aca5b786ad50a72d53d278a}.patch:0
 
