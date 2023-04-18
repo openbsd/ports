@@ -35,7 +35,7 @@ Index: iaxmodem.c
  
  #ifndef MODEMVER
  #define MODEMVER "0.0.0"
-@@ -168,6 +162,9 @@ int logmode = S_IRUSR | S_IWUSR | S_IRGRP;
+@@ -169,6 +163,9 @@ int logmode = S_IRUSR | S_IWUSR | S_IRGRP;
  #include "compat/headers.h"
  #include "sys/stropts.h"
  #endif
@@ -45,7 +45,7 @@ Index: iaxmodem.c
  
  #ifdef __FreeBSD__
  #include "compat/strndup-freebsd.c"
-@@ -688,7 +685,8 @@ iaxmodem(const char *config, int nondaemon)
+@@ -697,7 +694,8 @@ iaxmodem(const char *config, int nondaemon)
      int fd;
      char logfile[256];
  
