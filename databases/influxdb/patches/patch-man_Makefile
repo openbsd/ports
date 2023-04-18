@@ -9,7 +9,7 @@ Index: man/Makefile
  
  MAN1_TXT =
  MAN1_TXT += influxd.txt
-@@ -22,8 +22,8 @@ build: $(DOC_MAN1)
+@@ -21,8 +21,8 @@ build: $(DOC_MAN1)
  
  install: build
  	@echo '  INSTALL $(DOC_MAN1)' && \

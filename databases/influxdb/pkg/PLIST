@@ -4,20 +4,16 @@
 @extraunexec rm -rf ${VARBASE}/influxdb/
 @bin bin/influx
 @bin bin/influx_inspect
-@bin bin/influx_stress
 @bin bin/influx_tools
 @bin bin/influxd
 @man man/man1/influx.1
 @man man/man1/influx_inspect.1
-@man man/man1/influx_stress.1
 @man man/man1/influxd-backup.1
 @man man/man1/influxd-config.1
 @man man/man1/influxd-restore.1
 @man man/man1/influxd-run.1
 @man man/man1/influxd-version.1
 @man man/man1/influxd.1
-share/examples/login.conf.d/influxdb
-@sample ${SYSCONFDIR}/login.conf.d/influxdb
 share/examples/influxdb/
 @sample ${SYSCONFDIR}/influxdb/
 share/examples/influxdb/config.sample.toml
@@ -27,3 +23,8 @@ share/examples/influxdb/config.sample.toml
 @sample ${SYSCONFDIR}/influxdb/influxdb.conf
 @mode 0750
 @sample ${VARBASE}/influxdb/
+@mode
+@owner
+@group
+share/examples/login.conf.d/influxdb
+@sample ${SYSCONFDIR}/login.conf.d/influxdb
