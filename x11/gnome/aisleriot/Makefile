@@ -1,7 +1,7 @@
 COMMENT =		suite of solitaire card games
 
 GNOME_PROJECT =		aisleriot
-GNOME_VERSION =		3.22.28
+GNOME_VERSION =		3.22.29
 
 # override gnome MODULE
 MASTER_SITES =		https://gitlab.gnome.org/GNOME/${GNOME_PROJECT}/-/archive/${GNOME_VERSION}/
