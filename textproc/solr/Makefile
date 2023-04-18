@@ -3,14 +3,13 @@ COMMENT=	full-text search engine based on Lucene
 V=		9.2.0
 DISTNAME=	solr-$V
 EXTRACT_SUFX=	.tgz
+REVISION=	0
 
 PKG_ARCH=	*
 
 CATEGORIES=	textproc
 
 HOMEPAGE=	https://lucene.apache.org/solr/
-
-MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 # Apache 2.0
 PERMIT_PACKAGE=	Yes
