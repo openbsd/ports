@@ -1343,6 +1343,7 @@
      SUBDIR += py-cached-property,python3
      SUBDIR += py-cachetools,python3
      SUBDIR += py-cairocffi,python3
+     SUBDIR += py-calver,python3
      SUBDIR += py-certifi,python3
      SUBDIR += py-cffi,python3
      SUBDIR += py-cfgv,python3
@@ -1616,6 +1617,7 @@
      SUBDIR += py-tox,python3
      SUBDIR += py-tqdm,python3
      SUBDIR += py-traitlets,python3
+     SUBDIR += py-trove-classifiers,python3
      SUBDIR += py-twisted,python3
      SUBDIR += py-txaio,python3
      SUBDIR += py-typing-extensions,python3
