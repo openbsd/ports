@@ -1,0 +1,16 @@
+Ensure audio recording works by default.
+
+Index: src/control/settings/Settings.cpp
+--- src/control/settings/Settings.cpp.orig
++++ src/control/settings/Settings.cpp
+@@ -161,8 +161,8 @@ void Settings::loadDefault() {
+     // clang-format on
+ 
+     this->audioSampleRate = 44100.0;
+-    this->audioInputDevice = -1;
+-    this->audioOutputDevice = -1;
++    this->audioInputDevice = 0;
++    this->audioOutputDevice = 0;
+     this->audioGain = 1.0;
+     this->defaultSeekTime = 5;
+ 

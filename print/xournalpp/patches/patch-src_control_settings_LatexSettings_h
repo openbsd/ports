@@ -1,0 +1,14 @@
+Pre-fill the LaTeX template path.
+
+Index: src/control/settings/LatexSettings.h
+--- src/control/settings/LatexSettings.h.orig
++++ src/control/settings/LatexSettings.h
+@@ -18,7 +18,7 @@
+ class LatexSettings {
+ public:
+     bool autoCheckDependencies{true};
+-    fs::path globalTemplatePath{};
++    fs::path globalTemplatePath{ "${LOCALBASE}/share/xournalpp/resources/default_template.tex" };
+ #ifdef __APPLE__
+     std::string genCmd{"/Library/TeX/texbin/pdflatex -halt-on-error -interaction=nonstopmode '{}'"};
+ #else

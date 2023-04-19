@@ -1,0 +1,19 @@
+Not strictly necessary, but prevents xournalpp from looking for /proc all the
+time.
+
+Index: src/util/Stacktrace.cpp
+--- src/util/Stacktrace.cpp.orig
++++ src/util/Stacktrace.cpp
+@@ -64,6 +64,12 @@ fs::path Stacktrace::getExePath() {
+     delete[] path;
+     return "";
+ }
++#elif defined(__OpenBSD__)
++
++fs::path Stacktrace::getExePath() {
++    return fs::path("${LOCALBASE}/bin/xournalpp");
++}
++
+ #else
+ auto Stacktrace::getExePath() -> fs::path {
+     std::array<char, PATH_MAX> result{};
