@@ -135,8 +135,6 @@ lib/python${MODPY_VERSION}/site-packages/hatchling/metadata/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hatchling/metadata/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hatchling/metadata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hatchling/metadata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/hatchling/metadata/${MODPY_PYCACHE}classifiers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/hatchling/metadata/${MODPY_PYCACHE}classifiers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hatchling/metadata/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hatchling/metadata/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hatchling/metadata/${MODPY_PYCACHE}custom.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -145,7 +143,6 @@ lib/python${MODPY_VERSION}/site-packages/hatchling/metadata/${MODPY_PYCACHE}spec
 lib/python${MODPY_VERSION}/site-packages/hatchling/metadata/${MODPY_PYCACHE}spec.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hatchling/metadata/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hatchling/metadata/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/hatchling/metadata/classifiers.py
 lib/python${MODPY_VERSION}/site-packages/hatchling/metadata/core.py
 lib/python${MODPY_VERSION}/site-packages/hatchling/metadata/custom.py
 lib/python${MODPY_VERSION}/site-packages/hatchling/metadata/plugin/
