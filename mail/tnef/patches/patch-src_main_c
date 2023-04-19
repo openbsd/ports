@@ -1,0 +1,16 @@
+Index: src/main.c
+--- src/main.c.orig
++++ src/main.c
+@@ -355,6 +355,12 @@ main (int argc, char *argv[]) 
+                  (unsigned long)max_size);
+     }
+ 
++    if (pledge("stdio rpath wpath cpath", NULL) == -1)
++    {
++        perror ("pledge");
++        exit (1);
++    }
++
+     /* open the file */
+     if (in_file)
+     {
