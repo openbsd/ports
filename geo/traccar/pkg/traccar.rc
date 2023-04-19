@@ -2,6 +2,7 @@
 
 daemon="${TRUEPREFIX}/share/traccar/tracker-server.jar"
 daemon_user="_traccar"
+daemon_execdir="${TRUEPREFIX}/share/traccar"
 
 . /etc/rc.d/rc.subr
 

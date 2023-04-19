@@ -1,15 +1,11 @@
-seems that database.changelog requires a relative path
-
 Index: conf/default.xml
 --- conf/default.xml.orig
 +++ conf/default.xml
-@@ -11,7 +11,8 @@
-     -->
+@@ -12,6 +12,7 @@
  
      <entry key='web.port'>8082</entry>
--    <entry key='web.path'>./modern</entry>
+     <entry key='web.path'>./modern</entry>
 +    <entry key='web.address'>127.0.0.1</entry>
-+    <entry key='web.path'>${LOCALBASE}/share/traccar/modern</entry>
      <entry key='web.sanitize'>false</entry>
      <entry key='web.persistSession'>false</entry>
  
@@ -22,22 +18,12 @@ Index: conf/default.xml
      <entry key='logger.rotate'>true</entry>
  
      <entry key='filter.enable'>true</entry>
-@@ -30,16 +31,14 @@
- 
-     <entry key='event.ignoreDuplicateAlerts'>true</entry>
- 
--    <entry key='media.path'>./media</entry>
-+    <entry key='media.path'>${LOCALBASE}/share/traccar/media</entry>
+@@ -33,8 +34,6 @@
+     <entry key='media.path'>./media</entry>
  
      <entry key='notificator.types'>web,mail,command</entry>
- 
--    <entry key='server.statistics'>https://www.traccar.org/analytics/</entry>
 -
+-    <entry key='server.statistics'>https://www.traccar.org/analytics/</entry>
+ 
      <entry key='commands.queueing'>true</entry>
  
-     <entry key='database.ignoreUnknown'>true</entry>
--    <entry key='database.changelog'>./schema/changelog-master.xml</entry>
-+    <entry key='database.changelog'>../../..${LOCALBASE}/share/traccar/schema/changelog-master.xml</entry>
- 
-     <entry key='gps103.port'>5001</entry>
-     <entry key='tk103.port'>5002</entry>
