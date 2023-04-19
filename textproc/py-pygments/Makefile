@@ -1,6 +1,6 @@
 COMMENT=	Python syntax highlighter
 
-MODPY_EGG_VERSION = 2.14.0
+MODPY_EGG_VERSION = 2.15.1
 
 DISTNAME=	Pygments-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:L:S/^/py-/}
