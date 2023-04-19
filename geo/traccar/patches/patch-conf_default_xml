@@ -13,7 +13,7 @@ Index: conf/default.xml
      <entry key='web.sanitize'>false</entry>
      <entry key='web.persistSession'>false</entry>
  
-@@ -23,7 +24,7 @@
+@@ -22,7 +23,7 @@
      <entry key='geocoder.ignorePositions'>true</entry>
  
      <entry key='logger.level'>info</entry>
@@ -22,14 +22,14 @@ Index: conf/default.xml
      <entry key='logger.rotate'>true</entry>
  
      <entry key='filter.enable'>true</entry>
-@@ -31,16 +32,14 @@
+@@ -30,16 +31,14 @@
  
      <entry key='event.ignoreDuplicateAlerts'>true</entry>
  
 -    <entry key='media.path'>./media</entry>
 +    <entry key='media.path'>${LOCALBASE}/share/traccar/media</entry>
  
-     <entry key='notificator.types'>web,mail</entry>
+     <entry key='notificator.types'>web,mail,command</entry>
  
 -    <entry key='server.statistics'>https://www.traccar.org/analytics/</entry>
 -
@@ -37,7 +37,7 @@ Index: conf/default.xml
  
      <entry key='database.ignoreUnknown'>true</entry>
 -    <entry key='database.changelog'>./schema/changelog-master.xml</entry>
-+    <entry key='database.changelog'>../..${LOCALBASE}/share/traccar/schema/changelog-master.xml</entry>
++    <entry key='database.changelog'>../../..${LOCALBASE}/share/traccar/schema/changelog-master.xml</entry>
  
      <entry key='gps103.port'>5001</entry>
      <entry key='tk103.port'>5002</entry>

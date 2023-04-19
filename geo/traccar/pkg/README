@@ -46,13 +46,18 @@ Open Network Ports
 ==================
 
 By default, traccar will listen on many network ports. Each tracker protocol
-requires its own open port. So you should really block those ports using pf and
-only allow the protocols you actually use.
+requires its own open port, which requires a large number of file descriptors
+and may conflict with other software.
 
-You can also restrict the open ports by altering the default.xml file and remove
-all the protocols you don't use. However, the default.xml file will change on
-almost every revision, so if you do that you should do it on a copy of
-default.xml and reference that copy in traccar.xml configuration file. Also, you
-should ensure that at every upgrade, you track the changes in default.xml as
-the file contains important informations about SQL queries. This is definitely
-more complex than firewalling the unused ports.
+The list of protocols can be seen in ${SYSCONFDIR}/traccar/default.xml, along
+with various other settings, but do not edit defalut.xml. Instead, you can
+list the specific protocols to enable in ${SYSCONFDIR}/traccar/traccar.xml.
+For examply, to allow only teltonika and osmand protocols, add this:
+
+ <entry key='protocols.enable'>teltonika,osmand</entry>
+
+You may like to override other settings from default.xml - again, change
+traccar.xml instead by copying the entry to override. For example, to
+avoid sending positions to a network-based reverse geocoder service:
+
+  <entry key='geocoder.enable'>false</entry>
