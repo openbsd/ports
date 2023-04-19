@@ -2,23 +2,30 @@ COMMENT=		portable cross-platform audio API
 
 DISTNAME =		pa_stable_v190700_20210406
 PKGNAME =		portaudio-svn-1970
+REVISION =		0
 CATEGORIES=		audio
 MASTER_SITES =		http://files.portaudio.com/archives/
 EXTRACT_SUFX =		.tgz
 
 SHARED_LIBS =		portaudio	1.2
+SHARED_LIBS +=		portaudiocpp	0.0 # 0.12
 
 HOMEPAGE=		http://www.portaudio.com/
 
 # MIT
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=		m pthread sndio
+WANTLIB=		${COMPILER_LIBCXX} m pthread sndio
+
+COMPILER =		base-clang ports-gcc
 
 USE_GMAKE=		Yes
 AUTOCONF_VERSION =	2.69
 CONFIGURE_STYLE=	autoconf no-autoheader
-CONFIGURE_ARGS=		--without-alsa --without-oss --without-jack
+CONFIGURE_ARGS=		--without-alsa \
+			--without-oss \
+			--without-jack \
+			--enable-cxx
 
 # builds non-automated, interactive tests in ${WRKBUILD}/bin
 TEST_TARGET=		tests
