@@ -76,6 +76,7 @@
      SUBDIR += unpaper
      SUBDIR += weasyprint,python3
      SUBDIR += xournal
+     SUBDIR += xournalpp
      SUBDIR += xprintproto
 
 .include <bsd.port.subdir.mk>
