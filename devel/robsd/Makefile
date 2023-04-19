@@ -13,16 +13,14 @@ MAINTAINER =	Anton Lindqvist <anton@openbsd.org>
 # ISC
 PERMIT_PACKAGE =	Yes
 
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 # uses pledge()
 WANTLIB +=	c
 
 MASTER_SITES =	https://github.com/mptre/robsd/releases/download/v${V}/
 
 CONFIGURE_STYLE =	simple
-
-.include <bsd.port.arch.mk>
-.if !${PROPERTIES:Mclang}
-CFLAGS +=	-std=gnu99
-.endif
 
 .include <bsd.port.mk>
