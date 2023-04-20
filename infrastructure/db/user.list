@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.425 2023/03/12 18:09:18 danj Exp $
+$OpenBSD: user.list,v 1.426 2023/04/20 18:31:34 landry Exp $
 
 This file lists all users and groups that are created by ports. All
 ports' users/groups have to start with an underscore and have to use
@@ -75,7 +75,7 @@ id  user		group		port
 564 _stalwart-jmap	_stalwart-jmap	mail/stalwart/jmap
 565 _stalwart-imap	_stalwart-imap	mail/stalwart/imap
 566 _tor		_tor		net/tor
-#567 _dk-milter		_dk-milter	mail/dk-milter
+567 _stalwart-smtp	_stalwart-smtp	mail/stalwart/smtp
 568 _milter-greylist			mail/milter-greylist
 #569 _dkim-milter	_dkim-milter	mail/dkim-milter
 570 _mdefang		_mdefang	mail/mimedefang
