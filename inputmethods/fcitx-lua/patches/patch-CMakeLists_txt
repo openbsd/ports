@@ -1,0 +1,20 @@
+Dirty hack to resolve to the correct library path
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -36,12 +36,12 @@ endif()
+ function(_RESOLVE_LIBRARY_PATH _FILE_NAME _LIBRARY_PATH)
+     if (CMAKE_OBJDUMP)
+         execute_process (
+-            COMMAND ${CMAKE_OBJDUMP} -p "${_LIBRARY_PATH}"
++            COMMAND "find" "${_LIBRARY_PATH}"
+             RESULT_VARIABLE STATUS
+             OUTPUT_VARIABLE OBJDUMP_RESULT
+             ERROR_QUIET
+         )
+-        string(REGEX REPLACE ".*SONAME +([^ ]+)\n.*$" "\\1" SONAME_OUT "${OBJDUMP_RESULT}")
++	string(REGEX REPLACE "\n$" "" SONAME_OUT "${OBJDUMP_RESULT}")
+         if (SONAME_OUT)
+             set(_FILE_NAME_OUT "${SONAME_OUT}")
+         endif ()

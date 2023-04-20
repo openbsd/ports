@@ -1,25 +1,20 @@
-include/Fcitx5/
-include/Fcitx5/Module/
-include/Fcitx5/Module/fcitx-module/
 include/Fcitx5/Module/fcitx-module/luaaddonloader/
 include/Fcitx5/Module/fcitx-module/luaaddonloader/luaaddon_public.h
 lib/cmake/Fcitx5ModuleLuaAddonLoader/
 lib/cmake/Fcitx5ModuleLuaAddonLoader/Fcitx5ModuleLuaAddonLoaderConfig.cmake
 lib/cmake/Fcitx5ModuleLuaAddonLoader/Fcitx5ModuleLuaAddonLoaderConfigVersion.cmake
-lib/fcitx5/
-@so lib/fcitx5/luaaddonloader.so
-share/fcitx5/
-share/fcitx5/addon/
+@so lib/fcitx5/libluaaddonloader.so
 share/fcitx5/addon/imeapi.conf
 share/fcitx5/addon/luaaddonloader.conf
 share/fcitx5/lua/
 share/fcitx5/lua/imeapi/
 share/fcitx5/lua/imeapi/imeapi.lua
 share/locale/da/LC_MESSAGES/fcitx5-lua.mo
+share/locale/fr/LC_MESSAGES/fcitx5-lua.mo
 share/locale/ja/LC_MESSAGES/fcitx5-lua.mo
 share/locale/ko/LC_MESSAGES/fcitx5-lua.mo
+share/locale/ru/LC_MESSAGES/fcitx5-lua.mo
 share/locale/zh_CN/LC_MESSAGES/fcitx5-lua.mo
 share/locale/zh_TW/LC_MESSAGES/fcitx5-lua.mo
-share/metainfo/
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 share/metainfo/org.fcitx.Fcitx5.Addon.Lua.metainfo.xml

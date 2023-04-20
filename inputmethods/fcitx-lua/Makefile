@@ -1,8 +1,7 @@
 COMMENT =	Lua support for fcitx5
 
-DISTNAME =	fcitx5-lua-5.0.5
+DISTNAME =	fcitx5-lua-5.0.10
 PKGNAME =	${DISTNAME:S/fcitx5/fcitx/}
-REVISION =	0
 
 CATEGORIES =	inputmethods
 
