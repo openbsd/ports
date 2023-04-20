@@ -1,11 +1,10 @@
 COMMENT =	standards compliant, simple to use Wiki
 
-VERSION =	2022-07-31a
+VERSION =	2023-04-04
 DISTNAME =	dokuwiki-${VERSION}
 PKGNAME =	dokuwiki-${VERSION:S/-/./g}
 CATEGORIES =	www
 HOMEPAGE =	https://www.dokuwiki.org/dokuwiki
-REVISION =	0
 
 MAINTAINER =	Pierre-Emmanuel Andre <pea@openbsd.org>
 # GPLv2
