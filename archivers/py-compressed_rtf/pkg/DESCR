@@ -1,0 +1,5 @@
+Python module to work with Compressed Rich Text Format (RTF) files
+(also known as "LZFu").
+
+Based on Rich Text Format (RTF) Compression Algorithm:
+https://msdn.microsoft.com/en-us/library/cc463890(v=exchg.80).aspx
