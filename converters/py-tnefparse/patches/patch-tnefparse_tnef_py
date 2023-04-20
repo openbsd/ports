@@ -1,0 +1,22 @@
+From 8bc78ccb0f36f5df0ca441c80031b8673a9cdfa8 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Albrecht=20Dre=C3=9F?= <albrecht.dress@arcor.de>
+Date: Sun, 24 Jan 2021 19:27:51 +0100
+Subject: [PATCH] ensure attachment file name
+
+Attached messages may have no file name.  In this case, set the
+name to 'unlabeled_attachment.bin' so it visible in the listing
+(option '-o') and can be extracted ('-a', '-z').  See also issue
+koodaamo/tnefparse#74.
+
+Index: tnefparse/tnef.py
+--- tnefparse/tnef.py.orig
++++ tnefparse/tnef.py
+@@ -112,7 +112,7 @@ class TNEFAttachment:
+         name = [a.data for a in self.mapi_attrs if a.name == atname]
+         if name:
+             return name[0]
+-        return self.name
++        return (self.name or 'unlabeled_attachment.bin')
+ 
+     def add_attr(self, attribute):
+         # For now, we ignore rendering/preview properties
