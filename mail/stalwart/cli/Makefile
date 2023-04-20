@@ -1,8 +1,7 @@
 COMMENT =		JMAP server admin CLI
 
-GH_PROJECT =		jmap-server-cli
-GH_TAGNAME =		v0.1.0
-REVISION =		2
+GH_PROJECT =		cli
+GH_TAGNAME =		v0.2.0
 
 .include "crates.inc"
 
