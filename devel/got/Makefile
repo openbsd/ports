@@ -1,11 +1,13 @@
 COMMENT-main =		game of trees version control system
 COMMENT-server =	game of trees repository server
 COMMENT-webd =		game of trees repository fast-cgi server
+COMMENT-gitwrapper =	invoke an appropriate Git repository server
 
-V =			0.86
+V =			0.87
 DISTNAME =		got-${V}
 PKGNAME-server =	gotd-${V}
 PKGNAME-webd =		gotwebd-${V}
+PKGNAME-gitwrapper =	gitwrapper-${V}
 CATEGORIES =		devel
 HOMEPAGE =		https://gameoftrees.org
 MAINTAINER =		Stefan Sperling <stsp@openbsd.org>
@@ -13,12 +15,15 @@ MAINTAINER =		Stefan Sperling <stsp@openbsd.org>
 # ISC
 PERMIT_PACKAGE =	Yes
 
-MULTI_PACKAGES =	-main -server -webd
+RUN_DEPENDS-server =	devel/got,-gitwrapper
+
+MULTI_PACKAGES =	-main -server -webd -gitwrapper
 
 # uses pledge()
 WANTLIB-main =		c curses m panel pthread util z
 WANTLIB-server =	c event m util z
 WANTLIB-webd =		c event m util z
+WANTLIB-gitwrapper =	c
 
 MAKE_FLAGS =		CC="${CC}"
 ALL_TARGET =		all server webd
@@ -37,5 +42,9 @@ TEST_DEPENDS =		devel/git \
 PREFIX-webd =		${VARBASE}/www
 TEST_TARGET =		regress
 FAKE_FLAGS =		MANDIR=${PREFIX}/man/man CHROOT_DIR=${VARBASE}/www
+
+post-install:
+	@ln -s gitwrapper ${PREFIX}/bin/git-upload-pack
+	@ln -s gitwrapper ${PREFIX}/bin/git-receive-pack
 
 .include <bsd.port.mk>

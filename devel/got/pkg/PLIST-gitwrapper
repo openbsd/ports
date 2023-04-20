@@ -1,0 +1,5 @@
+@conflict git-<2.40.0p0
+bin/git-receive-pack
+bin/git-upload-pack
+@bin bin/gitwrapper
+@man man/man1/gitwrapper.1

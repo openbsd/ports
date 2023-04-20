@@ -1,0 +1,8 @@
+The gitwrapper program is designed to replace git-upload-pack(1) and
+git-receive-pack(1) and to invoke an appropriate Git server based on
+configuration information placed in gotd.conf(5).  This permits the
+administrator to configure which Git server is to be invoked on the
+system at run-time.  Git repositories which are listed in gotd.conf(5)
+and exist on the filesystem will be served by gotsh(1).  Any other Git
+repositories will be served by git-upload-pack(1) and
+git-receive-pack(1).
