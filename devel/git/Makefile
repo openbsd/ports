@@ -3,6 +3,7 @@ COMMENT-svn =	subversion interoperability tools
 COMMENT-x11 =	graphical tools
 
 V =		2.40.0
+REVISION =	0
 DISTNAME =	git-${V}
 CATEGORIES =	devel
 
@@ -41,8 +42,10 @@ WANTLIB-main +=		nghttp2
 
 
 RUN_DEPENDS-main =	devel/cvsps \
+			devel/got,-gitwrapper \
 			devel/p5-Error \
 			mail/p5-Mail-Tools
+
 LIB_DEPENDS-main =	devel/gettext,-runtime \
 			net/curl
 
@@ -137,5 +140,7 @@ post-install:
 	perl -pi -e "s|${WRKINST}||g" ${PREFIX}/share/gitweb/gitweb.cgi
 	${INSTALL_DATA} ${WRKBUILD}/gitweb/README ${PREFIX}/share/gitweb
 	${MODTCL_WISH_ADJ} ${PREFIX}/libexec/git/git-gui--askpass
+	rm ${PREFIX}/bin/git-receive-pack	# handled by gitwrapper
+	rm ${PREFIX}/bin/git-upload-pack	# handled by gitwrapper
 
 .include <bsd.port.mk>

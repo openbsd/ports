@@ -5,10 +5,8 @@
 @rcscript ${RCDIR}/gitdaemon
 @bin bin/git
 bin/git-cvsserver
-@bin bin/git-receive-pack
 @shell bin/git-shell
 @bin bin/git-upload-archive
-@bin bin/git-upload-pack
 @bin bin/scalar
 @static-lib lib/libgit.a
 ${P5SITE}/Git/
