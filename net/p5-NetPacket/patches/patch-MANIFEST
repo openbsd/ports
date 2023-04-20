@@ -1,12 +1,11 @@
---- MANIFEST.orig	Wed Jan 29 13:25:03 2003
-+++ MANIFEST	Thu Apr 14 10:10:49 2005
-@@ -9,6 +9,9 @@ NetPacket/IGMP.pm
- NetPacket/IP.pm
- NetPacket/UDP.pm
- NetPacket/TCP.pm
-+NetPacket/PFLog.pm
-+NetPacket/IPv6.pm
-+NetPacket/ICMPv6.pm
- NetPacket/SpanningTree.pm
- NetPacket/LLC.pm
- NetPacket/LACP.pm
+Index: MANIFEST
+--- MANIFEST.orig
++++ MANIFEST
+@@ -21,6 +21,7 @@ lib/NetPacket/IGMP.pm
+ lib/NetPacket/IP.pm
+ lib/NetPacket/IPX.pm
+ lib/NetPacket/IPv6.pm
++lib/NetPacket/PFLog.pm
+ lib/NetPacket/TCP.pm
+ lib/NetPacket/UDP.pm
+ lib/NetPacket/USBMon.pm

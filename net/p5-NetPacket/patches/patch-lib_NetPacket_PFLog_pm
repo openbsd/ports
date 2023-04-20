@@ -1,5 +1,5 @@
---- NetPacket/PFLog.pm.orig	Wed Oct 11 14:13:35 2006
-+++ NetPacket/PFLog.pm	Wed Oct 11 14:31:46 2006
+--- lib/NetPacket/PFLog.pm.orig	Wed Oct 11 14:13:35 2006
++++ lib/NetPacket/PFLog.pm	Wed Oct 11 14:31:46 2006
 @@ -0,0 +1,385 @@
 +#
 +# PFLog.pm

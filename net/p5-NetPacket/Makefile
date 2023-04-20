@@ -1,19 +1,16 @@
-COMMENT=	Perl module for encoding/decoding network traffic
+COMMENT =	assemble/disassemble network packets at protocol level
 
-MODULES=	cpan
-PKG_ARCH=	*
-DISTNAME=	NetPacket-0.04
-REVISION=	4
-CATEGORIES=	net
+DISTNAME =	NetPacket-1.7.2
 
-# Artistic License
-PERMIT_PACKAGE=	Yes
+CATEGORIES =	net
 
-BUILD_DEPENDS=	net/p5-Net-Pcap
+# Artistic 2.0
+PERMIT_PACKAGE =	Yes
 
-NO_TEST=	Yes
+MODULES =		cpan
 
-post-install:
-	@find ${WRKINST} -name '*.orig' -delete
+TEST_DEPENDS =		net/p5-Net-Pcap
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
