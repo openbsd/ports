@@ -1,14 +1,13 @@
 COMMENT =	convert between traditional and simplified Chinese
 
-V =		1.1.3
+V =		1.1.6
 DISTNAME =	opencc-$V
-REVISION =	0
 
 GH_ACCOUNT =	BYVoid
 GH_PROJECT =	OpenCC
 GH_TAGNAME =	ver.$V
 
-SHARED_LIBS +=	opencc                    0.0 # 1.0
+SHARED_LIBS +=	opencc                    1.0 # 2.0
 
 CATEGORIES =	converters textproc
 
