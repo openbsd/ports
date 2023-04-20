@@ -1,8 +1,7 @@
 COMMENT =	m17n wrapper for fcitx5
 
-V =		5.0.8
+V =		5.0.11
 PKGNAME =	fcitx-m17n-$V
-REVISION =      0
 
 GH_ACCOUNT =    fcitx
 GH_PROJECT =    fcitx5-m17n
