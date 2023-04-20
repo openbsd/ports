@@ -1,8 +1,7 @@
 COMMENT =	flexible input method framework
 
-DISTNAME =	fcitx5-5.0.15
+DISTNAME =	fcitx5-5.0.23
 PKGNAME =	${DISTNAME:S/fcitx5/fcitx/}
-REVISION =	2
 
 SHARED_LIBS +=  Fcitx5Config			0.0 # 0.0
 SHARED_LIBS +=  Fcitx5Core			0.0 # 0.0
@@ -23,7 +22,7 @@ WANTLIB += gobject-2.0 harfbuzz intl json-c kvm m pango-1.0
 WANTLIB += pangocairo-1.0 pthread uuid xcb xcb-ewmh xcb-icccm
 WANTLIB += xcb-imdkit xcb-keysyms xcb-randr xcb-render
 WANTLIB += xcb-shape xcb-util xcb-xfixes xcb-xinerama xcb-xkb
-WANTLIB += xkbcommon xkbcommon-x11 xkbfile
+WANTLIB += xkbcommon xkbcommon-x11 xkbfile z
 
 MASTER_SITES =	https://download.fcitx-im.org/fcitx5/fcitx5/
 MASTER_SITES0 =	https://download.fcitx-im.org/data/
@@ -64,6 +63,6 @@ CXXFLAGS +=	-I${LOCALBASE}/include -I${X11BASE}/include
 
 post-patch:
 	cp ${FULLDISTDIR}/en_dict-20121020.tar.gz \
-		${WRKSRC}/src/modules/spell/dict/
+		${WRKSRC}/src/modules/spell/
 
 .include <bsd.port.mk>
