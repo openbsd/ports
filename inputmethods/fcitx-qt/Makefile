@@ -1,8 +1,7 @@
 COMMENT =	Qt library and IM module for fcitx5
 
-DISTNAME =	fcitx5-qt-5.0.9
+DISTNAME =	fcitx5-qt-5.0.17
 PKGNAME =	${DISTNAME:S/fcitx5/fcitx/}
-REVISION =	1
 
 SHARED_LIBS +=	Fcitx5Qt5WidgetsAddons		0.0 # 0.0
 SHARED_LIBS +=	Fcitx5Qt5DBusAddons		0.0 # 0.0
@@ -18,9 +17,9 @@ MAINTAINER =	Yifei Zhan <openbsd@zhan.science>
 # LGPL2.1+ for other files
 PERMIT_PACKAGE=	Yes
 
-WANTLIB +=	${COMPILER_LIBCXX} Fcitx5Utils GL Qt5Concurrent Qt5Core
-WANTLIB +=	Qt5DBus Qt5Gui Qt5Widgets Qt6Core Qt6DBus Qt6Gui c
-WANTLIB +=	m xcb xkbcommon
+WANTLIB += ${COMPILER_LIBCXX} Fcitx5Utils GL Qt5Concurrent Qt5Core
+WANTLIB += Qt5DBus Qt5Gui Qt5Widgets Qt6Core Qt6DBus Qt6Gui Qt6Widgets
+WANTLIB += c m xcb xkbcommon
 
 MASTER_SITES =	https://download.fcitx-im.org/fcitx5/fcitx5-qt/
 

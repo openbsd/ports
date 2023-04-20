@@ -47,6 +47,7 @@ lib/fcitx5/qt5/
 @so lib/qt5/plugins/platforminputcontexts/libfcitx5platforminputcontextplugin.so
 @so lib/qt6/plugins/platforminputcontexts/libfcitx5platforminputcontextplugin.so
 @bin libexec/fcitx5-qt5-gui-wrapper
+share/applications/org.fcitx.fcitx5-qt5-gui-wrapper.desktop
 share/locale/ca/LC_MESSAGES/fcitx5-qt.mo
 share/locale/da/LC_MESSAGES/fcitx5-qt.mo
 share/locale/de/LC_MESSAGES/fcitx5-qt.mo
@@ -58,3 +59,4 @@ share/locale/ko/LC_MESSAGES/fcitx5-qt.mo
 share/locale/ru/LC_MESSAGES/fcitx5-qt.mo
 share/locale/zh_CN/LC_MESSAGES/fcitx5-qt.mo
 share/locale/zh_TW/LC_MESSAGES/fcitx5-qt.mo
+@tag update-desktop-database
