@@ -1,11 +1,10 @@
 COMMENT =		module for interacting with various Steam features
 
-MODPY_EGG_VERSION =	1.3.0
+MODPY_EGG_VERSION =	1.4.4
 DISTNAME =		steam-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		games
 HOMEPAGE =		https://github.com/ValvePython/steam
-REVISION =		1
 
 # MIT
 PERMIT_PACKAGE =	Yes
