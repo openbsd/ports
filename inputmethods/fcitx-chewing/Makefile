@@ -1,8 +1,7 @@
 COMMENT =	chewing wrapper for fcitx5
 
-V =		5.0.10
+V =		5.0.14
 PKGNAME =	fcitx-chewing-$V
-REVISION =      0
 
 GH_ACCOUNT =    fcitx
 GH_PROJECT =    fcitx5-chewing
