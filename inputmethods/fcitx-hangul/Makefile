@@ -1,8 +1,7 @@
 COMMENT =	Hangul wrapper for fcitx5
 
-V =		5.0.8
+V =		5.0.11
 PKGNAME =	fcitx-hangul-$V
-REVISION =      0
 
 GH_ACCOUNT =    fcitx
 GH_PROJECT =    fcitx5-hangul
