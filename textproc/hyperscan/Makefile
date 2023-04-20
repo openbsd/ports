@@ -4,10 +4,10 @@ COMMENT=	high-performance regular expression matching library
 
 GH_ACCOUNT=	intel
 GH_PROJECT=	hyperscan
-GH_TAGNAME=	v5.4.1
+GH_TAGNAME=	v5.4.2
 
-SHARED_LIBS += hs		0.0
-SHARED_LIBS += hs_runtime	0.0
+SHARED_LIBS += hs		0.1
+SHARED_LIBS += hs_runtime	0.1
 
 CATEGORIES=	textproc
 
