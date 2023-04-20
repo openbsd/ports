@@ -1,7 +1,6 @@
 COMMENT =	library to support generic input method implementation
 
-DISTNAME =	libime-1.0.11
-REVISION =	0
+DISTNAME =	libime-1.0.17
 
 SHARED_LIBS +=	IMECore		0.0 # 0.0
 SHARED_LIBS +=	IMEPinyin	0.0 # 0.0
@@ -22,9 +21,12 @@ MASTER_SITES =		https://download.fcitx-im.org/fcitx5/libime/
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
 
 MASTER_SITES0 =		https://download.fcitx-im.org/data/
-DISTFILES +=		dict.utf8-20211021.tar.xz:0
-# Language Model Simplified Chinese, 3-gram
-DISTFILES +=		lm_sc.3gm.arpa-20140820.tar.bz2:0
+
+# Dictionary and Language Model
+# Keep in sync with the post-patch section + upstream list
+# https://github.com/fcitx/libime/blob/master/data/CMakeLists.txt
+DISTFILES +=		dict-20220810.tar.xz:0
+DISTFILES +=		lm_sc.arpa-20220810.tar.xz:0
 DISTFILES +=		table.tar.gz:0
 
 EXTRACT_SUFX = 		.tar.xz
@@ -45,9 +47,9 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 LIB_DEPENDS =		inputmethods/fcitx \
 			devel/boost
 post-patch:
-			@cp ${FULLDISTDIR}/dict.utf8-20211021.tar.xz \
+			@cp ${FULLDISTDIR}/dict-20220810.tar.xz \
 				${WRKSRC}/data/
-			@cp ${FULLDISTDIR}/lm_sc.3gm.arpa-20140820.tar.bz2 \
+			@cp ${FULLDISTDIR}/lm_sc.arpa-20220810.tar.xz \
 				${WRKSRC}/data/
 			@cp ${FULLDISTDIR}/table.tar.gz \
 				${WRKSRC}/data/

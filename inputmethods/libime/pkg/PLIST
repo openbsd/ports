@@ -68,6 +68,7 @@ share/libime/
 share/libime/cj.main.dict
 share/libime/db.main.dict
 share/libime/erbi.main.dict
+share/libime/extb.dict
 share/libime/qxm.main.dict
 share/libime/sc.dict
 share/libime/wanfeng.main.dict
