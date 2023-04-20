@@ -1,7 +1,7 @@
 Index: platform/gsutil/gslib/commands/config.py
 --- platform/gsutil/gslib/commands/config.py.orig
 +++ platform/gsutil/gslib/commands/config.py
-@@ -345,7 +345,7 @@ CONFIG_INPUTLESS_GSUTIL_SECTION_CONTENT = """
+@@ -300,7 +300,7 @@ CONFIG_INPUTLESS_GSUTIL_SECTION_CONTENT = """
  # available. 'software_update_check_period' specifies the number of days
  # between such checks. The default is 30. Setting the value to 0 disables
  # periodic software update checks.
