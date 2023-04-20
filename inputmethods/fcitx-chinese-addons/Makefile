@@ -1,9 +1,8 @@
 COMMENT =	addons related to Chinese with IME bundled inside fcitx
 
-V =		5.0.12
+V =		5.0.17
 DISTNAME =	fcitx5-chinese-addons-$V
 PKGNAME =	${DISTNAME:S/fcitx5/fcitx/}
-REVISION =	0
 
 CATEGORIES =	inputmethods chinese
 
