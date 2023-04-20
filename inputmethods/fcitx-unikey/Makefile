@@ -1,8 +1,7 @@
 COMMENT =	unikey Vietnamese support for fcitx5
 
-V =		5.0.9
+V =		5.0.13
 PKGNAME =	fcitx-unikey-$V
-REVISION =      0
 
 GH_ACCOUNT =    fcitx
 GH_PROJECT =    fcitx5-unikey
