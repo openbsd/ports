@@ -1,7 +1,4 @@
-lib/fcitx5/
 @so lib/fcitx5/anthy.so
-share/fcitx5/
-share/fcitx5/addon/
 share/fcitx5/addon/anthy.conf
 share/fcitx5/anthy/
 share/fcitx5/anthy/101kana.sty
@@ -22,18 +19,16 @@ share/fcitx5/anthy/vje-delta.sty
 share/fcitx5/anthy/wnn.sty
 share/fcitx5/inputmethod/
 share/fcitx5/inputmethod/anthy.conf
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/status/
+share/icons/hicolor/16x16/apps/fcitx-anthy.png
+share/icons/hicolor/16x16/apps/org.fcitx.Fcitx5.fcitx-anthy.png
+share/icons/hicolor/22x22/apps/fcitx-anthy.png
+share/icons/hicolor/22x22/apps/org.fcitx.Fcitx5.fcitx-anthy.png
 share/icons/hicolor/22x22/status/fcitx-anthy-symbol.png
 share/icons/hicolor/22x22/status/org.fcitx.Fcitx5.fcitx-anthy-symbol.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/status/
-share/icons/hicolor/48x48/status/fcitx-anthy.png
-share/icons/hicolor/48x48/status/org.fcitx.Fcitx5.fcitx-anthy.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/status/
+share/icons/hicolor/24x24/apps/fcitx-anthy.png
+share/icons/hicolor/24x24/apps/org.fcitx.Fcitx5.fcitx-anthy.png
+share/icons/hicolor/48x48/apps/fcitx-anthy.png
+share/icons/hicolor/48x48/apps/org.fcitx.Fcitx5.fcitx-anthy.png
 share/icons/hicolor/scalable/status/fcitx-anthy-period-japanese.svg
 share/icons/hicolor/scalable/status/fcitx-anthy-period-latin.svg
 share/icons/hicolor/scalable/status/fcitx-anthy-period-wide-japanese.svg
@@ -53,6 +48,5 @@ share/locale/ko/LC_MESSAGES/fcitx5-anthy.mo
 share/locale/ru/LC_MESSAGES/fcitx5-anthy.mo
 share/locale/zh_CN/LC_MESSAGES/fcitx5-anthy.mo
 share/locale/zh_TW/LC_MESSAGES/fcitx5-anthy.mo
-share/metainfo/
 share/metainfo/org.fcitx.Fcitx5.Addon.Anthy.metainfo.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
