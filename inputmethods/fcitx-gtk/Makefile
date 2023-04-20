@@ -1,8 +1,7 @@
 COMMENT =	GTK IM module for fcitx5
 
-DISTNAME =	fcitx5-gtk-5.0.13
+DISTNAME =	fcitx5-gtk-5.0.23
 PKGNAME =	${DISTNAME:S/fcitx5/fcitx/}
-REVISION =	1
 
 SHARED_LIBS =	Fcitx5GClient			0.0 # 0.0
 
