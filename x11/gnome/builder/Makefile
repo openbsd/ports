@@ -5,7 +5,7 @@ COMMENT=		IDE for GNOME
 
 GNOME_PROJECT=		gnome-builder
 GNOME_VERSION=		43.7
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		devel
 
@@ -17,7 +17,7 @@ WANTLIB += gdk_pixbuf-2.0 gio-2.0 girepository-1.0 git2 git2-glib-1.0
 WANTLIB += glib-2.0 gobject-2.0 gtk-4 gtksourceview-5 icuuc intl
 WANTLIB += json-glib-1.0 jsonrpc-glib-1.0 m panel-1 pango-1.0
 WANTLIB += peas-1.0 portal portal-gtk4 template_glib-1.0 vte-2.91-gtk4
-WANTLIB += webkit2gtk-5.0 xml2
+WANTLIB += webkitgtk-6.0 xml2
 
 MODULES=		devel/dconf \
 			devel/meson \
@@ -51,7 +51,7 @@ LIB_DEPENDS=		devel/jsonrpc-glib \
 			sysutils/dspy \
 			sysutils/libportal,-gtk4 \
 			textproc/cmark \
-			www/webkitgtk50 \
+			www/webkitgtk4,webkitgtk60 \
 			x11/gnome/libpanel \
 			x11/gtksourceview5
 
