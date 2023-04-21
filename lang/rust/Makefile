@@ -13,16 +13,16 @@ COMMENT-gdb =		Rust debugger through gdb
 COMMENT-clippy =	Rust linter
 COMMENT-rustfmt =	Rust code formatter
 
-V =			1.68.0
+V =			1.69.0
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
-BV-aarch64 =		1.68.0-20230308
-BV-amd64 =		1.68.0-20230307
-BV-i386 =		1.68.0-20230307
+BV-aarch64 =		1.69.0-20230419
+BV-amd64 =		1.69.0-20230417
+BV-i386 =		1.69.0-20230418
 BV-powerpc64 =		1.65.0-20221213
-BV-riscv64 =		1.67.1-20230314
-BV-sparc64 =		1.67.1p0-20230306
+BV-riscv64 =		1.68.0-20230417
+BV-sparc64 =		1.68.0-20230417
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
@@ -205,7 +205,7 @@ do-configure:
 	echo 'gdb = "${LOCALBASE}/bin/egdb"' >>${WRKBUILD}/config.toml
 	echo 'vendor = true' >>${WRKBUILD}/config.toml
 	echo 'extended = true' >>${WRKBUILD}/config.toml
-	echo 'tools = ["cargo", "clippy", "rustfmt"]' >>${WRKBUILD}/config.toml
+	echo 'tools = ["cargo", "clippy", "rustdoc", "rustfmt"]' >>${WRKBUILD}/config.toml
 	echo 'docs = false' >>${WRKBUILD}/config.toml
 	echo 'verbose = 2' >>${WRKBUILD}/config.toml
 	echo 'host = ["${TRIPLE_ARCH}"]' >>${WRKBUILD}/config.toml
