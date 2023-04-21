@@ -16,7 +16,11 @@ share/help/C/gnome-help/a11y-slowkeys.page
 share/help/C/gnome-help/a11y-stickykeys.page
 share/help/C/gnome-help/a11y-visualalert.page
 share/help/C/gnome-help/a11y.page
+share/help/C/gnome-help/about-hardware.page
+share/help/C/gnome-help/about-hostname.page
+share/help/C/gnome-help/about-os.page
 share/help/C/gnome-help/about-this-guide.page
+share/help/C/gnome-help/about.page
 share/help/C/gnome-help/accounts-add.page
 share/help/C/gnome-help/accounts-disable-service.page
 share/help/C/gnome-help/accounts-provider-not-available.page
@@ -341,6 +345,7 @@ share/help/C/gnome-help/net-wireless-wepwpa.page
 share/help/C/gnome-help/net-wireless.page
 share/help/C/gnome-help/net-wrongnetwork.page
 share/help/C/gnome-help/net.page
+share/help/C/gnome-help/parental-controls.page
 share/help/C/gnome-help/power-autobrightness.page
 share/help/C/gnome-help/power-autosuspend.page
 share/help/C/gnome-help/power-batteryestimate.page
@@ -396,7 +401,6 @@ share/help/C/gnome-help/session-language.page
 share/help/C/gnome-help/session-screenlocks.page
 share/help/C/gnome-help/sharing-bluetooth.page
 share/help/C/gnome-help/sharing-desktop.page
-share/help/C/gnome-help/sharing-displayname.page
 share/help/C/gnome-help/sharing-media.page
 share/help/C/gnome-help/sharing-personal.page
 share/help/C/gnome-help/sharing.page
@@ -521,7 +525,11 @@ share/help/as/gnome-help/a11y-slowkeys.page
 share/help/as/gnome-help/a11y-stickykeys.page
 share/help/as/gnome-help/a11y-visualalert.page
 share/help/as/gnome-help/a11y.page
+share/help/as/gnome-help/about-hardware.page
+share/help/as/gnome-help/about-hostname.page
+share/help/as/gnome-help/about-os.page
 share/help/as/gnome-help/about-this-guide.page
+share/help/as/gnome-help/about.page
 share/help/as/gnome-help/accounts-add.page
 share/help/as/gnome-help/accounts-disable-service.page
 share/help/as/gnome-help/accounts-provider-not-available.page
@@ -846,6 +854,7 @@ share/help/as/gnome-help/net-wireless-wepwpa.page
 share/help/as/gnome-help/net-wireless.page
 share/help/as/gnome-help/net-wrongnetwork.page
 share/help/as/gnome-help/net.page
+share/help/as/gnome-help/parental-controls.page
 share/help/as/gnome-help/power-autobrightness.page
 share/help/as/gnome-help/power-autosuspend.page
 share/help/as/gnome-help/power-batteryestimate.page
@@ -901,7 +910,6 @@ share/help/as/gnome-help/session-language.page
 share/help/as/gnome-help/session-screenlocks.page
 share/help/as/gnome-help/sharing-bluetooth.page
 share/help/as/gnome-help/sharing-desktop.page
-share/help/as/gnome-help/sharing-displayname.page
 share/help/as/gnome-help/sharing-media.page
 share/help/as/gnome-help/sharing-personal.page
 share/help/as/gnome-help/sharing.page
@@ -968,7 +976,11 @@ share/help/ca/gnome-help/a11y-slowkeys.page
 share/help/ca/gnome-help/a11y-stickykeys.page
 share/help/ca/gnome-help/a11y-visualalert.page
 share/help/ca/gnome-help/a11y.page
+share/help/ca/gnome-help/about-hardware.page
+share/help/ca/gnome-help/about-hostname.page
+share/help/ca/gnome-help/about-os.page
 share/help/ca/gnome-help/about-this-guide.page
+share/help/ca/gnome-help/about.page
 share/help/ca/gnome-help/accounts-add.page
 share/help/ca/gnome-help/accounts-disable-service.page
 share/help/ca/gnome-help/accounts-provider-not-available.page
@@ -1293,6 +1305,7 @@ share/help/ca/gnome-help/net-wireless-wepwpa.page
 share/help/ca/gnome-help/net-wireless.page
 share/help/ca/gnome-help/net-wrongnetwork.page
 share/help/ca/gnome-help/net.page
+share/help/ca/gnome-help/parental-controls.page
 share/help/ca/gnome-help/power-autobrightness.page
 share/help/ca/gnome-help/power-autosuspend.page
 share/help/ca/gnome-help/power-batteryestimate.page
@@ -1348,7 +1361,6 @@ share/help/ca/gnome-help/session-language.page
 share/help/ca/gnome-help/session-screenlocks.page
 share/help/ca/gnome-help/sharing-bluetooth.page
 share/help/ca/gnome-help/sharing-desktop.page
-share/help/ca/gnome-help/sharing-displayname.page
 share/help/ca/gnome-help/sharing-media.page
 share/help/ca/gnome-help/sharing-personal.page
 share/help/ca/gnome-help/sharing.page
@@ -1473,7 +1485,11 @@ share/help/cs/gnome-help/a11y-slowkeys.page
 share/help/cs/gnome-help/a11y-stickykeys.page
 share/help/cs/gnome-help/a11y-visualalert.page
 share/help/cs/gnome-help/a11y.page
+share/help/cs/gnome-help/about-hardware.page
+share/help/cs/gnome-help/about-hostname.page
+share/help/cs/gnome-help/about-os.page
 share/help/cs/gnome-help/about-this-guide.page
+share/help/cs/gnome-help/about.page
 share/help/cs/gnome-help/accounts-add.page
 share/help/cs/gnome-help/accounts-disable-service.page
 share/help/cs/gnome-help/accounts-provider-not-available.page
@@ -1798,6 +1814,7 @@ share/help/cs/gnome-help/net-wireless-wepwpa.page
 share/help/cs/gnome-help/net-wireless.page
 share/help/cs/gnome-help/net-wrongnetwork.page
 share/help/cs/gnome-help/net.page
+share/help/cs/gnome-help/parental-controls.page
 share/help/cs/gnome-help/power-autobrightness.page
 share/help/cs/gnome-help/power-autosuspend.page
 share/help/cs/gnome-help/power-batteryestimate.page
@@ -1853,7 +1870,6 @@ share/help/cs/gnome-help/session-language.page
 share/help/cs/gnome-help/session-screenlocks.page
 share/help/cs/gnome-help/sharing-bluetooth.page
 share/help/cs/gnome-help/sharing-desktop.page
-share/help/cs/gnome-help/sharing-displayname.page
 share/help/cs/gnome-help/sharing-media.page
 share/help/cs/gnome-help/sharing-personal.page
 share/help/cs/gnome-help/sharing.page
@@ -1978,7 +1994,11 @@ share/help/da/gnome-help/a11y-slowkeys.page
 share/help/da/gnome-help/a11y-stickykeys.page
 share/help/da/gnome-help/a11y-visualalert.page
 share/help/da/gnome-help/a11y.page
+share/help/da/gnome-help/about-hardware.page
+share/help/da/gnome-help/about-hostname.page
+share/help/da/gnome-help/about-os.page
 share/help/da/gnome-help/about-this-guide.page
+share/help/da/gnome-help/about.page
 share/help/da/gnome-help/accounts-add.page
 share/help/da/gnome-help/accounts-disable-service.page
 share/help/da/gnome-help/accounts-provider-not-available.page
@@ -2303,6 +2323,7 @@ share/help/da/gnome-help/net-wireless-wepwpa.page
 share/help/da/gnome-help/net-wireless.page
 share/help/da/gnome-help/net-wrongnetwork.page
 share/help/da/gnome-help/net.page
+share/help/da/gnome-help/parental-controls.page
 share/help/da/gnome-help/power-autobrightness.page
 share/help/da/gnome-help/power-autosuspend.page
 share/help/da/gnome-help/power-batteryestimate.page
@@ -2358,7 +2379,6 @@ share/help/da/gnome-help/session-language.page
 share/help/da/gnome-help/session-screenlocks.page
 share/help/da/gnome-help/sharing-bluetooth.page
 share/help/da/gnome-help/sharing-desktop.page
-share/help/da/gnome-help/sharing-displayname.page
 share/help/da/gnome-help/sharing-media.page
 share/help/da/gnome-help/sharing-personal.page
 share/help/da/gnome-help/sharing.page
@@ -2425,7 +2445,11 @@ share/help/de/gnome-help/a11y-slowkeys.page
 share/help/de/gnome-help/a11y-stickykeys.page
 share/help/de/gnome-help/a11y-visualalert.page
 share/help/de/gnome-help/a11y.page
+share/help/de/gnome-help/about-hardware.page
+share/help/de/gnome-help/about-hostname.page
+share/help/de/gnome-help/about-os.page
 share/help/de/gnome-help/about-this-guide.page
+share/help/de/gnome-help/about.page
 share/help/de/gnome-help/accounts-add.page
 share/help/de/gnome-help/accounts-disable-service.page
 share/help/de/gnome-help/accounts-provider-not-available.page
@@ -2750,6 +2774,7 @@ share/help/de/gnome-help/net-wireless-wepwpa.page
 share/help/de/gnome-help/net-wireless.page
 share/help/de/gnome-help/net-wrongnetwork.page
 share/help/de/gnome-help/net.page
+share/help/de/gnome-help/parental-controls.page
 share/help/de/gnome-help/power-autobrightness.page
 share/help/de/gnome-help/power-autosuspend.page
 share/help/de/gnome-help/power-batteryestimate.page
@@ -2805,7 +2830,6 @@ share/help/de/gnome-help/session-language.page
 share/help/de/gnome-help/session-screenlocks.page
 share/help/de/gnome-help/sharing-bluetooth.page
 share/help/de/gnome-help/sharing-desktop.page
-share/help/de/gnome-help/sharing-displayname.page
 share/help/de/gnome-help/sharing-media.page
 share/help/de/gnome-help/sharing-personal.page
 share/help/de/gnome-help/sharing.page
@@ -2930,7 +2954,11 @@ share/help/el/gnome-help/a11y-slowkeys.page
 share/help/el/gnome-help/a11y-stickykeys.page
 share/help/el/gnome-help/a11y-visualalert.page
 share/help/el/gnome-help/a11y.page
+share/help/el/gnome-help/about-hardware.page
+share/help/el/gnome-help/about-hostname.page
+share/help/el/gnome-help/about-os.page
 share/help/el/gnome-help/about-this-guide.page
+share/help/el/gnome-help/about.page
 share/help/el/gnome-help/accounts-add.page
 share/help/el/gnome-help/accounts-disable-service.page
 share/help/el/gnome-help/accounts-provider-not-available.page
@@ -3255,6 +3283,7 @@ share/help/el/gnome-help/net-wireless-wepwpa.page
 share/help/el/gnome-help/net-wireless.page
 share/help/el/gnome-help/net-wrongnetwork.page
 share/help/el/gnome-help/net.page
+share/help/el/gnome-help/parental-controls.page
 share/help/el/gnome-help/power-autobrightness.page
 share/help/el/gnome-help/power-autosuspend.page
 share/help/el/gnome-help/power-batteryestimate.page
@@ -3310,7 +3339,6 @@ share/help/el/gnome-help/session-language.page
 share/help/el/gnome-help/session-screenlocks.page
 share/help/el/gnome-help/sharing-bluetooth.page
 share/help/el/gnome-help/sharing-desktop.page
-share/help/el/gnome-help/sharing-displayname.page
 share/help/el/gnome-help/sharing-media.page
 share/help/el/gnome-help/sharing-personal.page
 share/help/el/gnome-help/sharing.page
@@ -3377,7 +3405,11 @@ share/help/es/gnome-help/a11y-slowkeys.page
 share/help/es/gnome-help/a11y-stickykeys.page
 share/help/es/gnome-help/a11y-visualalert.page
 share/help/es/gnome-help/a11y.page
+share/help/es/gnome-help/about-hardware.page
+share/help/es/gnome-help/about-hostname.page
+share/help/es/gnome-help/about-os.page
 share/help/es/gnome-help/about-this-guide.page
+share/help/es/gnome-help/about.page
 share/help/es/gnome-help/accounts-add.page
 share/help/es/gnome-help/accounts-disable-service.page
 share/help/es/gnome-help/accounts-provider-not-available.page
@@ -3702,6 +3734,7 @@ share/help/es/gnome-help/net-wireless-wepwpa.page
 share/help/es/gnome-help/net-wireless.page
 share/help/es/gnome-help/net-wrongnetwork.page
 share/help/es/gnome-help/net.page
+share/help/es/gnome-help/parental-controls.page
 share/help/es/gnome-help/power-autobrightness.page
 share/help/es/gnome-help/power-autosuspend.page
 share/help/es/gnome-help/power-batteryestimate.page
@@ -3757,7 +3790,6 @@ share/help/es/gnome-help/session-language.page
 share/help/es/gnome-help/session-screenlocks.page
 share/help/es/gnome-help/sharing-bluetooth.page
 share/help/es/gnome-help/sharing-desktop.page
-share/help/es/gnome-help/sharing-displayname.page
 share/help/es/gnome-help/sharing-media.page
 share/help/es/gnome-help/sharing-personal.page
 share/help/es/gnome-help/sharing.page
@@ -3882,7 +3914,11 @@ share/help/fa/gnome-help/a11y-slowkeys.page
 share/help/fa/gnome-help/a11y-stickykeys.page
 share/help/fa/gnome-help/a11y-visualalert.page
 share/help/fa/gnome-help/a11y.page
+share/help/fa/gnome-help/about-hardware.page
+share/help/fa/gnome-help/about-hostname.page
+share/help/fa/gnome-help/about-os.page
 share/help/fa/gnome-help/about-this-guide.page
+share/help/fa/gnome-help/about.page
 share/help/fa/gnome-help/accounts-add.page
 share/help/fa/gnome-help/accounts-disable-service.page
 share/help/fa/gnome-help/accounts-provider-not-available.page
@@ -4207,6 +4243,7 @@ share/help/fa/gnome-help/net-wireless-wepwpa.page
 share/help/fa/gnome-help/net-wireless.page
 share/help/fa/gnome-help/net-wrongnetwork.page
 share/help/fa/gnome-help/net.page
+share/help/fa/gnome-help/parental-controls.page
 share/help/fa/gnome-help/power-autobrightness.page
 share/help/fa/gnome-help/power-autosuspend.page
 share/help/fa/gnome-help/power-batteryestimate.page
@@ -4262,7 +4299,6 @@ share/help/fa/gnome-help/session-language.page
 share/help/fa/gnome-help/session-screenlocks.page
 share/help/fa/gnome-help/sharing-bluetooth.page
 share/help/fa/gnome-help/sharing-desktop.page
-share/help/fa/gnome-help/sharing-displayname.page
 share/help/fa/gnome-help/sharing-media.page
 share/help/fa/gnome-help/sharing-personal.page
 share/help/fa/gnome-help/sharing.page
@@ -4329,7 +4365,11 @@ share/help/fi/gnome-help/a11y-slowkeys.page
 share/help/fi/gnome-help/a11y-stickykeys.page
 share/help/fi/gnome-help/a11y-visualalert.page
 share/help/fi/gnome-help/a11y.page
+share/help/fi/gnome-help/about-hardware.page
+share/help/fi/gnome-help/about-hostname.page
+share/help/fi/gnome-help/about-os.page
 share/help/fi/gnome-help/about-this-guide.page
+share/help/fi/gnome-help/about.page
 share/help/fi/gnome-help/accounts-add.page
 share/help/fi/gnome-help/accounts-disable-service.page
 share/help/fi/gnome-help/accounts-provider-not-available.page
@@ -4654,6 +4694,7 @@ share/help/fi/gnome-help/net-wireless-wepwpa.page
 share/help/fi/gnome-help/net-wireless.page
 share/help/fi/gnome-help/net-wrongnetwork.page
 share/help/fi/gnome-help/net.page
+share/help/fi/gnome-help/parental-controls.page
 share/help/fi/gnome-help/power-autobrightness.page
 share/help/fi/gnome-help/power-autosuspend.page
 share/help/fi/gnome-help/power-batteryestimate.page
@@ -4709,7 +4750,6 @@ share/help/fi/gnome-help/session-language.page
 share/help/fi/gnome-help/session-screenlocks.page
 share/help/fi/gnome-help/sharing-bluetooth.page
 share/help/fi/gnome-help/sharing-desktop.page
-share/help/fi/gnome-help/sharing-displayname.page
 share/help/fi/gnome-help/sharing-media.page
 share/help/fi/gnome-help/sharing-personal.page
 share/help/fi/gnome-help/sharing.page
@@ -4776,7 +4816,11 @@ share/help/fr/gnome-help/a11y-slowkeys.page
 share/help/fr/gnome-help/a11y-stickykeys.page
 share/help/fr/gnome-help/a11y-visualalert.page
 share/help/fr/gnome-help/a11y.page
+share/help/fr/gnome-help/about-hardware.page
+share/help/fr/gnome-help/about-hostname.page
+share/help/fr/gnome-help/about-os.page
 share/help/fr/gnome-help/about-this-guide.page
+share/help/fr/gnome-help/about.page
 share/help/fr/gnome-help/accounts-add.page
 share/help/fr/gnome-help/accounts-disable-service.page
 share/help/fr/gnome-help/accounts-provider-not-available.page
@@ -5101,6 +5145,7 @@ share/help/fr/gnome-help/net-wireless-wepwpa.page
 share/help/fr/gnome-help/net-wireless.page
 share/help/fr/gnome-help/net-wrongnetwork.page
 share/help/fr/gnome-help/net.page
+share/help/fr/gnome-help/parental-controls.page
 share/help/fr/gnome-help/power-autobrightness.page
 share/help/fr/gnome-help/power-autosuspend.page
 share/help/fr/gnome-help/power-batteryestimate.page
@@ -5156,7 +5201,6 @@ share/help/fr/gnome-help/session-language.page
 share/help/fr/gnome-help/session-screenlocks.page
 share/help/fr/gnome-help/sharing-bluetooth.page
 share/help/fr/gnome-help/sharing-desktop.page
-share/help/fr/gnome-help/sharing-displayname.page
 share/help/fr/gnome-help/sharing-media.page
 share/help/fr/gnome-help/sharing-personal.page
 share/help/fr/gnome-help/sharing.page
@@ -5223,7 +5267,11 @@ share/help/gl/gnome-help/a11y-slowkeys.page
 share/help/gl/gnome-help/a11y-stickykeys.page
 share/help/gl/gnome-help/a11y-visualalert.page
 share/help/gl/gnome-help/a11y.page
+share/help/gl/gnome-help/about-hardware.page
+share/help/gl/gnome-help/about-hostname.page
+share/help/gl/gnome-help/about-os.page
 share/help/gl/gnome-help/about-this-guide.page
+share/help/gl/gnome-help/about.page
 share/help/gl/gnome-help/accounts-add.page
 share/help/gl/gnome-help/accounts-disable-service.page
 share/help/gl/gnome-help/accounts-provider-not-available.page
@@ -5548,6 +5596,7 @@ share/help/gl/gnome-help/net-wireless-wepwpa.page
 share/help/gl/gnome-help/net-wireless.page
 share/help/gl/gnome-help/net-wrongnetwork.page
 share/help/gl/gnome-help/net.page
+share/help/gl/gnome-help/parental-controls.page
 share/help/gl/gnome-help/power-autobrightness.page
 share/help/gl/gnome-help/power-autosuspend.page
 share/help/gl/gnome-help/power-batteryestimate.page
@@ -5603,7 +5652,6 @@ share/help/gl/gnome-help/session-language.page
 share/help/gl/gnome-help/session-screenlocks.page
 share/help/gl/gnome-help/sharing-bluetooth.page
 share/help/gl/gnome-help/sharing-desktop.page
-share/help/gl/gnome-help/sharing-displayname.page
 share/help/gl/gnome-help/sharing-media.page
 share/help/gl/gnome-help/sharing-personal.page
 share/help/gl/gnome-help/sharing.page
@@ -5728,7 +5776,11 @@ share/help/gu/gnome-help/a11y-slowkeys.page
 share/help/gu/gnome-help/a11y-stickykeys.page
 share/help/gu/gnome-help/a11y-visualalert.page
 share/help/gu/gnome-help/a11y.page
+share/help/gu/gnome-help/about-hardware.page
+share/help/gu/gnome-help/about-hostname.page
+share/help/gu/gnome-help/about-os.page
 share/help/gu/gnome-help/about-this-guide.page
+share/help/gu/gnome-help/about.page
 share/help/gu/gnome-help/accounts-add.page
 share/help/gu/gnome-help/accounts-disable-service.page
 share/help/gu/gnome-help/accounts-provider-not-available.page
@@ -6053,6 +6105,7 @@ share/help/gu/gnome-help/net-wireless-wepwpa.page
 share/help/gu/gnome-help/net-wireless.page
 share/help/gu/gnome-help/net-wrongnetwork.page
 share/help/gu/gnome-help/net.page
+share/help/gu/gnome-help/parental-controls.page
 share/help/gu/gnome-help/power-autobrightness.page
 share/help/gu/gnome-help/power-autosuspend.page
 share/help/gu/gnome-help/power-batteryestimate.page
@@ -6108,7 +6161,6 @@ share/help/gu/gnome-help/session-language.page
 share/help/gu/gnome-help/session-screenlocks.page
 share/help/gu/gnome-help/sharing-bluetooth.page
 share/help/gu/gnome-help/sharing-desktop.page
-share/help/gu/gnome-help/sharing-displayname.page
 share/help/gu/gnome-help/sharing-media.page
 share/help/gu/gnome-help/sharing-personal.page
 share/help/gu/gnome-help/sharing.page
@@ -6175,7 +6227,11 @@ share/help/he/gnome-help/a11y-slowkeys.page
 share/help/he/gnome-help/a11y-stickykeys.page
 share/help/he/gnome-help/a11y-visualalert.page
 share/help/he/gnome-help/a11y.page
+share/help/he/gnome-help/about-hardware.page
+share/help/he/gnome-help/about-hostname.page
+share/help/he/gnome-help/about-os.page
 share/help/he/gnome-help/about-this-guide.page
+share/help/he/gnome-help/about.page
 share/help/he/gnome-help/accounts-add.page
 share/help/he/gnome-help/accounts-disable-service.page
 share/help/he/gnome-help/accounts-provider-not-available.page
@@ -6500,6 +6556,7 @@ share/help/he/gnome-help/net-wireless-wepwpa.page
 share/help/he/gnome-help/net-wireless.page
 share/help/he/gnome-help/net-wrongnetwork.page
 share/help/he/gnome-help/net.page
+share/help/he/gnome-help/parental-controls.page
 share/help/he/gnome-help/power-autobrightness.page
 share/help/he/gnome-help/power-autosuspend.page
 share/help/he/gnome-help/power-batteryestimate.page
@@ -6555,7 +6612,6 @@ share/help/he/gnome-help/session-language.page
 share/help/he/gnome-help/session-screenlocks.page
 share/help/he/gnome-help/sharing-bluetooth.page
 share/help/he/gnome-help/sharing-desktop.page
-share/help/he/gnome-help/sharing-displayname.page
 share/help/he/gnome-help/sharing-media.page
 share/help/he/gnome-help/sharing-personal.page
 share/help/he/gnome-help/sharing.page
@@ -6622,7 +6678,11 @@ share/help/hi/gnome-help/a11y-slowkeys.page
 share/help/hi/gnome-help/a11y-stickykeys.page
 share/help/hi/gnome-help/a11y-visualalert.page
 share/help/hi/gnome-help/a11y.page
+share/help/hi/gnome-help/about-hardware.page
+share/help/hi/gnome-help/about-hostname.page
+share/help/hi/gnome-help/about-os.page
 share/help/hi/gnome-help/about-this-guide.page
+share/help/hi/gnome-help/about.page
 share/help/hi/gnome-help/accounts-add.page
 share/help/hi/gnome-help/accounts-disable-service.page
 share/help/hi/gnome-help/accounts-provider-not-available.page
@@ -6947,6 +7007,7 @@ share/help/hi/gnome-help/net-wireless-wepwpa.page
 share/help/hi/gnome-help/net-wireless.page
 share/help/hi/gnome-help/net-wrongnetwork.page
 share/help/hi/gnome-help/net.page
+share/help/hi/gnome-help/parental-controls.page
 share/help/hi/gnome-help/power-autobrightness.page
 share/help/hi/gnome-help/power-autosuspend.page
 share/help/hi/gnome-help/power-batteryestimate.page
@@ -7002,7 +7063,6 @@ share/help/hi/gnome-help/session-language.page
 share/help/hi/gnome-help/session-screenlocks.page
 share/help/hi/gnome-help/sharing-bluetooth.page
 share/help/hi/gnome-help/sharing-desktop.page
-share/help/hi/gnome-help/sharing-displayname.page
 share/help/hi/gnome-help/sharing-media.page
 share/help/hi/gnome-help/sharing-personal.page
 share/help/hi/gnome-help/sharing.page
@@ -7069,7 +7129,11 @@ share/help/hr/gnome-help/a11y-slowkeys.page
 share/help/hr/gnome-help/a11y-stickykeys.page
 share/help/hr/gnome-help/a11y-visualalert.page
 share/help/hr/gnome-help/a11y.page
+share/help/hr/gnome-help/about-hardware.page
+share/help/hr/gnome-help/about-hostname.page
+share/help/hr/gnome-help/about-os.page
 share/help/hr/gnome-help/about-this-guide.page
+share/help/hr/gnome-help/about.page
 share/help/hr/gnome-help/accounts-add.page
 share/help/hr/gnome-help/accounts-disable-service.page
 share/help/hr/gnome-help/accounts-provider-not-available.page
@@ -7394,6 +7458,7 @@ share/help/hr/gnome-help/net-wireless-wepwpa.page
 share/help/hr/gnome-help/net-wireless.page
 share/help/hr/gnome-help/net-wrongnetwork.page
 share/help/hr/gnome-help/net.page
+share/help/hr/gnome-help/parental-controls.page
 share/help/hr/gnome-help/power-autobrightness.page
 share/help/hr/gnome-help/power-autosuspend.page
 share/help/hr/gnome-help/power-batteryestimate.page
@@ -7449,7 +7514,6 @@ share/help/hr/gnome-help/session-language.page
 share/help/hr/gnome-help/session-screenlocks.page
 share/help/hr/gnome-help/sharing-bluetooth.page
 share/help/hr/gnome-help/sharing-desktop.page
-share/help/hr/gnome-help/sharing-displayname.page
 share/help/hr/gnome-help/sharing-media.page
 share/help/hr/gnome-help/sharing-personal.page
 share/help/hr/gnome-help/sharing.page
@@ -7574,7 +7638,11 @@ share/help/hu/gnome-help/a11y-slowkeys.page
 share/help/hu/gnome-help/a11y-stickykeys.page
 share/help/hu/gnome-help/a11y-visualalert.page
 share/help/hu/gnome-help/a11y.page
+share/help/hu/gnome-help/about-hardware.page
+share/help/hu/gnome-help/about-hostname.page
+share/help/hu/gnome-help/about-os.page
 share/help/hu/gnome-help/about-this-guide.page
+share/help/hu/gnome-help/about.page
 share/help/hu/gnome-help/accounts-add.page
 share/help/hu/gnome-help/accounts-disable-service.page
 share/help/hu/gnome-help/accounts-provider-not-available.page
@@ -7899,6 +7967,7 @@ share/help/hu/gnome-help/net-wireless-wepwpa.page
 share/help/hu/gnome-help/net-wireless.page
 share/help/hu/gnome-help/net-wrongnetwork.page
 share/help/hu/gnome-help/net.page
+share/help/hu/gnome-help/parental-controls.page
 share/help/hu/gnome-help/power-autobrightness.page
 share/help/hu/gnome-help/power-autosuspend.page
 share/help/hu/gnome-help/power-batteryestimate.page
@@ -7954,7 +8023,6 @@ share/help/hu/gnome-help/session-language.page
 share/help/hu/gnome-help/session-screenlocks.page
 share/help/hu/gnome-help/sharing-bluetooth.page
 share/help/hu/gnome-help/sharing-desktop.page
-share/help/hu/gnome-help/sharing-displayname.page
 share/help/hu/gnome-help/sharing-media.page
 share/help/hu/gnome-help/sharing-personal.page
 share/help/hu/gnome-help/sharing.page
@@ -8079,7 +8147,11 @@ share/help/id/gnome-help/a11y-slowkeys.page
 share/help/id/gnome-help/a11y-stickykeys.page
 share/help/id/gnome-help/a11y-visualalert.page
 share/help/id/gnome-help/a11y.page
+share/help/id/gnome-help/about-hardware.page
+share/help/id/gnome-help/about-hostname.page
+share/help/id/gnome-help/about-os.page
 share/help/id/gnome-help/about-this-guide.page
+share/help/id/gnome-help/about.page
 share/help/id/gnome-help/accounts-add.page
 share/help/id/gnome-help/accounts-disable-service.page
 share/help/id/gnome-help/accounts-provider-not-available.page
@@ -8404,6 +8476,7 @@ share/help/id/gnome-help/net-wireless-wepwpa.page
 share/help/id/gnome-help/net-wireless.page
 share/help/id/gnome-help/net-wrongnetwork.page
 share/help/id/gnome-help/net.page
+share/help/id/gnome-help/parental-controls.page
 share/help/id/gnome-help/power-autobrightness.page
 share/help/id/gnome-help/power-autosuspend.page
 share/help/id/gnome-help/power-batteryestimate.page
@@ -8459,7 +8532,6 @@ share/help/id/gnome-help/session-language.page
 share/help/id/gnome-help/session-screenlocks.page
 share/help/id/gnome-help/sharing-bluetooth.page
 share/help/id/gnome-help/sharing-desktop.page
-share/help/id/gnome-help/sharing-displayname.page
 share/help/id/gnome-help/sharing-media.page
 share/help/id/gnome-help/sharing-personal.page
 share/help/id/gnome-help/sharing.page
@@ -8584,7 +8656,11 @@ share/help/it/gnome-help/a11y-slowkeys.page
 share/help/it/gnome-help/a11y-stickykeys.page
 share/help/it/gnome-help/a11y-visualalert.page
 share/help/it/gnome-help/a11y.page
+share/help/it/gnome-help/about-hardware.page
+share/help/it/gnome-help/about-hostname.page
+share/help/it/gnome-help/about-os.page
 share/help/it/gnome-help/about-this-guide.page
+share/help/it/gnome-help/about.page
 share/help/it/gnome-help/accounts-add.page
 share/help/it/gnome-help/accounts-disable-service.page
 share/help/it/gnome-help/accounts-provider-not-available.page
@@ -8909,6 +8985,7 @@ share/help/it/gnome-help/net-wireless-wepwpa.page
 share/help/it/gnome-help/net-wireless.page
 share/help/it/gnome-help/net-wrongnetwork.page
 share/help/it/gnome-help/net.page
+share/help/it/gnome-help/parental-controls.page
 share/help/it/gnome-help/power-autobrightness.page
 share/help/it/gnome-help/power-autosuspend.page
 share/help/it/gnome-help/power-batteryestimate.page
@@ -8964,7 +9041,6 @@ share/help/it/gnome-help/session-language.page
 share/help/it/gnome-help/session-screenlocks.page
 share/help/it/gnome-help/sharing-bluetooth.page
 share/help/it/gnome-help/sharing-desktop.page
-share/help/it/gnome-help/sharing-displayname.page
 share/help/it/gnome-help/sharing-media.page
 share/help/it/gnome-help/sharing-personal.page
 share/help/it/gnome-help/sharing.page
@@ -9031,7 +9107,11 @@ share/help/ja/gnome-help/a11y-slowkeys.page
 share/help/ja/gnome-help/a11y-stickykeys.page
 share/help/ja/gnome-help/a11y-visualalert.page
 share/help/ja/gnome-help/a11y.page
+share/help/ja/gnome-help/about-hardware.page
+share/help/ja/gnome-help/about-hostname.page
+share/help/ja/gnome-help/about-os.page
 share/help/ja/gnome-help/about-this-guide.page
+share/help/ja/gnome-help/about.page
 share/help/ja/gnome-help/accounts-add.page
 share/help/ja/gnome-help/accounts-disable-service.page
 share/help/ja/gnome-help/accounts-provider-not-available.page
@@ -9356,6 +9436,7 @@ share/help/ja/gnome-help/net-wireless-wepwpa.page
 share/help/ja/gnome-help/net-wireless.page
 share/help/ja/gnome-help/net-wrongnetwork.page
 share/help/ja/gnome-help/net.page
+share/help/ja/gnome-help/parental-controls.page
 share/help/ja/gnome-help/power-autobrightness.page
 share/help/ja/gnome-help/power-autosuspend.page
 share/help/ja/gnome-help/power-batteryestimate.page
@@ -9411,7 +9492,6 @@ share/help/ja/gnome-help/session-language.page
 share/help/ja/gnome-help/session-screenlocks.page
 share/help/ja/gnome-help/sharing-bluetooth.page
 share/help/ja/gnome-help/sharing-desktop.page
-share/help/ja/gnome-help/sharing-displayname.page
 share/help/ja/gnome-help/sharing-media.page
 share/help/ja/gnome-help/sharing-personal.page
 share/help/ja/gnome-help/sharing.page
@@ -9478,7 +9558,11 @@ share/help/kn/gnome-help/a11y-slowkeys.page
 share/help/kn/gnome-help/a11y-stickykeys.page
 share/help/kn/gnome-help/a11y-visualalert.page
 share/help/kn/gnome-help/a11y.page
+share/help/kn/gnome-help/about-hardware.page
+share/help/kn/gnome-help/about-hostname.page
+share/help/kn/gnome-help/about-os.page
 share/help/kn/gnome-help/about-this-guide.page
+share/help/kn/gnome-help/about.page
 share/help/kn/gnome-help/accounts-add.page
 share/help/kn/gnome-help/accounts-disable-service.page
 share/help/kn/gnome-help/accounts-provider-not-available.page
@@ -9803,6 +9887,7 @@ share/help/kn/gnome-help/net-wireless-wepwpa.page
 share/help/kn/gnome-help/net-wireless.page
 share/help/kn/gnome-help/net-wrongnetwork.page
 share/help/kn/gnome-help/net.page
+share/help/kn/gnome-help/parental-controls.page
 share/help/kn/gnome-help/power-autobrightness.page
 share/help/kn/gnome-help/power-autosuspend.page
 share/help/kn/gnome-help/power-batteryestimate.page
@@ -9858,7 +9943,6 @@ share/help/kn/gnome-help/session-language.page
 share/help/kn/gnome-help/session-screenlocks.page
 share/help/kn/gnome-help/sharing-bluetooth.page
 share/help/kn/gnome-help/sharing-desktop.page
-share/help/kn/gnome-help/sharing-displayname.page
 share/help/kn/gnome-help/sharing-media.page
 share/help/kn/gnome-help/sharing-personal.page
 share/help/kn/gnome-help/sharing.page
@@ -9925,7 +10009,11 @@ share/help/ko/gnome-help/a11y-slowkeys.page
 share/help/ko/gnome-help/a11y-stickykeys.page
 share/help/ko/gnome-help/a11y-visualalert.page
 share/help/ko/gnome-help/a11y.page
+share/help/ko/gnome-help/about-hardware.page
+share/help/ko/gnome-help/about-hostname.page
+share/help/ko/gnome-help/about-os.page
 share/help/ko/gnome-help/about-this-guide.page
+share/help/ko/gnome-help/about.page
 share/help/ko/gnome-help/accounts-add.page
 share/help/ko/gnome-help/accounts-disable-service.page
 share/help/ko/gnome-help/accounts-provider-not-available.page
@@ -10250,6 +10338,7 @@ share/help/ko/gnome-help/net-wireless-wepwpa.page
 share/help/ko/gnome-help/net-wireless.page
 share/help/ko/gnome-help/net-wrongnetwork.page
 share/help/ko/gnome-help/net.page
+share/help/ko/gnome-help/parental-controls.page
 share/help/ko/gnome-help/power-autobrightness.page
 share/help/ko/gnome-help/power-autosuspend.page
 share/help/ko/gnome-help/power-batteryestimate.page
@@ -10305,7 +10394,6 @@ share/help/ko/gnome-help/session-language.page
 share/help/ko/gnome-help/session-screenlocks.page
 share/help/ko/gnome-help/sharing-bluetooth.page
 share/help/ko/gnome-help/sharing-desktop.page
-share/help/ko/gnome-help/sharing-displayname.page
 share/help/ko/gnome-help/sharing-media.page
 share/help/ko/gnome-help/sharing-personal.page
 share/help/ko/gnome-help/sharing.page
@@ -10430,7 +10518,11 @@ share/help/lt/gnome-help/a11y-slowkeys.page
 share/help/lt/gnome-help/a11y-stickykeys.page
 share/help/lt/gnome-help/a11y-visualalert.page
 share/help/lt/gnome-help/a11y.page
+share/help/lt/gnome-help/about-hardware.page
+share/help/lt/gnome-help/about-hostname.page
+share/help/lt/gnome-help/about-os.page
 share/help/lt/gnome-help/about-this-guide.page
+share/help/lt/gnome-help/about.page
 share/help/lt/gnome-help/accounts-add.page
 share/help/lt/gnome-help/accounts-disable-service.page
 share/help/lt/gnome-help/accounts-provider-not-available.page
@@ -10755,6 +10847,7 @@ share/help/lt/gnome-help/net-wireless-wepwpa.page
 share/help/lt/gnome-help/net-wireless.page
 share/help/lt/gnome-help/net-wrongnetwork.page
 share/help/lt/gnome-help/net.page
+share/help/lt/gnome-help/parental-controls.page
 share/help/lt/gnome-help/power-autobrightness.page
 share/help/lt/gnome-help/power-autosuspend.page
 share/help/lt/gnome-help/power-batteryestimate.page
@@ -10810,7 +10903,6 @@ share/help/lt/gnome-help/session-language.page
 share/help/lt/gnome-help/session-screenlocks.page
 share/help/lt/gnome-help/sharing-bluetooth.page
 share/help/lt/gnome-help/sharing-desktop.page
-share/help/lt/gnome-help/sharing-displayname.page
 share/help/lt/gnome-help/sharing-media.page
 share/help/lt/gnome-help/sharing-personal.page
 share/help/lt/gnome-help/sharing.page
@@ -10877,7 +10969,11 @@ share/help/lv/gnome-help/a11y-slowkeys.page
 share/help/lv/gnome-help/a11y-stickykeys.page
 share/help/lv/gnome-help/a11y-visualalert.page
 share/help/lv/gnome-help/a11y.page
+share/help/lv/gnome-help/about-hardware.page
+share/help/lv/gnome-help/about-hostname.page
+share/help/lv/gnome-help/about-os.page
 share/help/lv/gnome-help/about-this-guide.page
+share/help/lv/gnome-help/about.page
 share/help/lv/gnome-help/accounts-add.page
 share/help/lv/gnome-help/accounts-disable-service.page
 share/help/lv/gnome-help/accounts-provider-not-available.page
@@ -11202,6 +11298,7 @@ share/help/lv/gnome-help/net-wireless-wepwpa.page
 share/help/lv/gnome-help/net-wireless.page
 share/help/lv/gnome-help/net-wrongnetwork.page
 share/help/lv/gnome-help/net.page
+share/help/lv/gnome-help/parental-controls.page
 share/help/lv/gnome-help/power-autobrightness.page
 share/help/lv/gnome-help/power-autosuspend.page
 share/help/lv/gnome-help/power-batteryestimate.page
@@ -11257,7 +11354,6 @@ share/help/lv/gnome-help/session-language.page
 share/help/lv/gnome-help/session-screenlocks.page
 share/help/lv/gnome-help/sharing-bluetooth.page
 share/help/lv/gnome-help/sharing-desktop.page
-share/help/lv/gnome-help/sharing-displayname.page
 share/help/lv/gnome-help/sharing-media.page
 share/help/lv/gnome-help/sharing-personal.page
 share/help/lv/gnome-help/sharing.page
@@ -11324,7 +11420,11 @@ share/help/mr/gnome-help/a11y-slowkeys.page
 share/help/mr/gnome-help/a11y-stickykeys.page
 share/help/mr/gnome-help/a11y-visualalert.page
 share/help/mr/gnome-help/a11y.page
+share/help/mr/gnome-help/about-hardware.page
+share/help/mr/gnome-help/about-hostname.page
+share/help/mr/gnome-help/about-os.page
 share/help/mr/gnome-help/about-this-guide.page
+share/help/mr/gnome-help/about.page
 share/help/mr/gnome-help/accounts-add.page
 share/help/mr/gnome-help/accounts-disable-service.page
 share/help/mr/gnome-help/accounts-provider-not-available.page
@@ -11649,6 +11749,7 @@ share/help/mr/gnome-help/net-wireless-wepwpa.page
 share/help/mr/gnome-help/net-wireless.page
 share/help/mr/gnome-help/net-wrongnetwork.page
 share/help/mr/gnome-help/net.page
+share/help/mr/gnome-help/parental-controls.page
 share/help/mr/gnome-help/power-autobrightness.page
 share/help/mr/gnome-help/power-autosuspend.page
 share/help/mr/gnome-help/power-batteryestimate.page
@@ -11704,7 +11805,6 @@ share/help/mr/gnome-help/session-language.page
 share/help/mr/gnome-help/session-screenlocks.page
 share/help/mr/gnome-help/sharing-bluetooth.page
 share/help/mr/gnome-help/sharing-desktop.page
-share/help/mr/gnome-help/sharing-displayname.page
 share/help/mr/gnome-help/sharing-media.page
 share/help/mr/gnome-help/sharing-personal.page
 share/help/mr/gnome-help/sharing.page
@@ -11771,7 +11871,11 @@ share/help/nl/gnome-help/a11y-slowkeys.page
 share/help/nl/gnome-help/a11y-stickykeys.page
 share/help/nl/gnome-help/a11y-visualalert.page
 share/help/nl/gnome-help/a11y.page
+share/help/nl/gnome-help/about-hardware.page
+share/help/nl/gnome-help/about-hostname.page
+share/help/nl/gnome-help/about-os.page
 share/help/nl/gnome-help/about-this-guide.page
+share/help/nl/gnome-help/about.page
 share/help/nl/gnome-help/accounts-add.page
 share/help/nl/gnome-help/accounts-disable-service.page
 share/help/nl/gnome-help/accounts-provider-not-available.page
@@ -12096,6 +12200,7 @@ share/help/nl/gnome-help/net-wireless-wepwpa.page
 share/help/nl/gnome-help/net-wireless.page
 share/help/nl/gnome-help/net-wrongnetwork.page
 share/help/nl/gnome-help/net.page
+share/help/nl/gnome-help/parental-controls.page
 share/help/nl/gnome-help/power-autobrightness.page
 share/help/nl/gnome-help/power-autosuspend.page
 share/help/nl/gnome-help/power-batteryestimate.page
@@ -12151,7 +12256,6 @@ share/help/nl/gnome-help/session-language.page
 share/help/nl/gnome-help/session-screenlocks.page
 share/help/nl/gnome-help/sharing-bluetooth.page
 share/help/nl/gnome-help/sharing-desktop.page
-share/help/nl/gnome-help/sharing-displayname.page
 share/help/nl/gnome-help/sharing-media.page
 share/help/nl/gnome-help/sharing-personal.page
 share/help/nl/gnome-help/sharing.page
@@ -12203,6 +12307,64 @@ share/help/nl/gnome-help/wacom-mode.page
 share/help/nl/gnome-help/wacom-multi-monitor.page
 share/help/nl/gnome-help/wacom-stylus.page
 share/help/nl/gnome-help/wacom.page
+share/help/nl/system-admin-guide/
+share/help/nl/system-admin-guide/appearance.page
+share/help/nl/system-admin-guide/autostart-applications.page
+share/help/nl/system-admin-guide/backgrounds-extra.page
+share/help/nl/system-admin-guide/dconf-custom-defaults.page
+share/help/nl/system-admin-guide/dconf-keyfiles.page
+share/help/nl/system-admin-guide/dconf-lockdown.page
+share/help/nl/system-admin-guide/dconf-nfs-home.page
+share/help/nl/system-admin-guide/dconf-profiles.page
+share/help/nl/system-admin-guide/dconf-snippets.xml
+share/help/nl/system-admin-guide/dconf.page
+share/help/nl/system-admin-guide/desktop-background.page
+share/help/nl/system-admin-guide/desktop-favorite-applications.page
+share/help/nl/system-admin-guide/desktop-lockscreen.page
+share/help/nl/system-admin-guide/desktop-shield.page
+share/help/nl/system-admin-guide/extensions-enable.page
+share/help/nl/system-admin-guide/extensions-lockdown.page
+share/help/nl/system-admin-guide/extensions.page
+share/help/nl/system-admin-guide/fonts-user.page
+share/help/nl/system-admin-guide/fonts.page
+share/help/nl/system-admin-guide/gsettings-browse.page
+share/help/nl/system-admin-guide/index.page
+share/help/nl/system-admin-guide/keyboard-compose-key.page
+share/help/nl/system-admin-guide/keyboard-layout.page
+share/help/nl/system-admin-guide/legal.xml
+share/help/nl/system-admin-guide/lockdown-command-line.page
+share/help/nl/system-admin-guide/lockdown-file-saving.page
+share/help/nl/system-admin-guide/lockdown-logout.page
+share/help/nl/system-admin-guide/lockdown-online-accounts.page
+share/help/nl/system-admin-guide/lockdown-printing.page
+share/help/nl/system-admin-guide/lockdown-repartitioning.page
+share/help/nl/system-admin-guide/lockdown-single-app-mode.page
+share/help/nl/system-admin-guide/login-automatic.page
+share/help/nl/system-admin-guide/login-banner.page
+share/help/nl/system-admin-guide/login-enterprise.page
+share/help/nl/system-admin-guide/login-fingerprint.page
+share/help/nl/system-admin-guide/login-logo.page
+share/help/nl/system-admin-guide/login-userlist-disable.page
+share/help/nl/system-admin-guide/login.page
+share/help/nl/system-admin-guide/logout-automatic.page
+share/help/nl/system-admin-guide/mime-types-application-user.page
+share/help/nl/system-admin-guide/mime-types-application.page
+share/help/nl/system-admin-guide/mime-types-custom-user.page
+share/help/nl/system-admin-guide/mime-types-custom.page
+share/help/nl/system-admin-guide/mime-types.page
+share/help/nl/system-admin-guide/network-server-list.page
+share/help/nl/system-admin-guide/network-vpn.page
+share/help/nl/system-admin-guide/network.page
+share/help/nl/system-admin-guide/overrides.page
+share/help/nl/system-admin-guide/power-dim-screen.page
+share/help/nl/system-admin-guide/processes.page
+share/help/nl/system-admin-guide/session-custom.page
+share/help/nl/system-admin-guide/session-debug.page
+share/help/nl/system-admin-guide/session-user.page
+share/help/nl/system-admin-guide/setup.page
+share/help/nl/system-admin-guide/software.page
+share/help/nl/system-admin-guide/sundry.page
+share/help/nl/system-admin-guide/user-settings.page
 share/help/pa/
 share/help/pa/gnome-help/
 share/help/pa/gnome-help/a11y-bouncekeys.page
@@ -12218,7 +12380,11 @@ share/help/pa/gnome-help/a11y-slowkeys.page
 share/help/pa/gnome-help/a11y-stickykeys.page
 share/help/pa/gnome-help/a11y-visualalert.page
 share/help/pa/gnome-help/a11y.page
+share/help/pa/gnome-help/about-hardware.page
+share/help/pa/gnome-help/about-hostname.page
+share/help/pa/gnome-help/about-os.page
 share/help/pa/gnome-help/about-this-guide.page
+share/help/pa/gnome-help/about.page
 share/help/pa/gnome-help/accounts-add.page
 share/help/pa/gnome-help/accounts-disable-service.page
 share/help/pa/gnome-help/accounts-provider-not-available.page
@@ -12543,6 +12709,7 @@ share/help/pa/gnome-help/net-wireless-wepwpa.page
 share/help/pa/gnome-help/net-wireless.page
 share/help/pa/gnome-help/net-wrongnetwork.page
 share/help/pa/gnome-help/net.page
+share/help/pa/gnome-help/parental-controls.page
 share/help/pa/gnome-help/power-autobrightness.page
 share/help/pa/gnome-help/power-autosuspend.page
 share/help/pa/gnome-help/power-batteryestimate.page
@@ -12598,7 +12765,6 @@ share/help/pa/gnome-help/session-language.page
 share/help/pa/gnome-help/session-screenlocks.page
 share/help/pa/gnome-help/sharing-bluetooth.page
 share/help/pa/gnome-help/sharing-desktop.page
-share/help/pa/gnome-help/sharing-displayname.page
 share/help/pa/gnome-help/sharing-media.page
 share/help/pa/gnome-help/sharing-personal.page
 share/help/pa/gnome-help/sharing.page
@@ -12665,7 +12831,11 @@ share/help/pl/gnome-help/a11y-slowkeys.page
 share/help/pl/gnome-help/a11y-stickykeys.page
 share/help/pl/gnome-help/a11y-visualalert.page
 share/help/pl/gnome-help/a11y.page
+share/help/pl/gnome-help/about-hardware.page
+share/help/pl/gnome-help/about-hostname.page
+share/help/pl/gnome-help/about-os.page
 share/help/pl/gnome-help/about-this-guide.page
+share/help/pl/gnome-help/about.page
 share/help/pl/gnome-help/accounts-add.page
 share/help/pl/gnome-help/accounts-disable-service.page
 share/help/pl/gnome-help/accounts-provider-not-available.page
@@ -12990,6 +13160,7 @@ share/help/pl/gnome-help/net-wireless-wepwpa.page
 share/help/pl/gnome-help/net-wireless.page
 share/help/pl/gnome-help/net-wrongnetwork.page
 share/help/pl/gnome-help/net.page
+share/help/pl/gnome-help/parental-controls.page
 share/help/pl/gnome-help/power-autobrightness.page
 share/help/pl/gnome-help/power-autosuspend.page
 share/help/pl/gnome-help/power-batteryestimate.page
@@ -13045,7 +13216,6 @@ share/help/pl/gnome-help/session-language.page
 share/help/pl/gnome-help/session-screenlocks.page
 share/help/pl/gnome-help/sharing-bluetooth.page
 share/help/pl/gnome-help/sharing-desktop.page
-share/help/pl/gnome-help/sharing-displayname.page
 share/help/pl/gnome-help/sharing-media.page
 share/help/pl/gnome-help/sharing-personal.page
 share/help/pl/gnome-help/sharing.page
@@ -13112,7 +13282,11 @@ share/help/pt/gnome-help/a11y-slowkeys.page
 share/help/pt/gnome-help/a11y-stickykeys.page
 share/help/pt/gnome-help/a11y-visualalert.page
 share/help/pt/gnome-help/a11y.page
+share/help/pt/gnome-help/about-hardware.page
+share/help/pt/gnome-help/about-hostname.page
+share/help/pt/gnome-help/about-os.page
 share/help/pt/gnome-help/about-this-guide.page
+share/help/pt/gnome-help/about.page
 share/help/pt/gnome-help/accounts-add.page
 share/help/pt/gnome-help/accounts-disable-service.page
 share/help/pt/gnome-help/accounts-provider-not-available.page
@@ -13437,6 +13611,7 @@ share/help/pt/gnome-help/net-wireless-wepwpa.page
 share/help/pt/gnome-help/net-wireless.page
 share/help/pt/gnome-help/net-wrongnetwork.page
 share/help/pt/gnome-help/net.page
+share/help/pt/gnome-help/parental-controls.page
 share/help/pt/gnome-help/power-autobrightness.page
 share/help/pt/gnome-help/power-autosuspend.page
 share/help/pt/gnome-help/power-batteryestimate.page
@@ -13492,7 +13667,6 @@ share/help/pt/gnome-help/session-language.page
 share/help/pt/gnome-help/session-screenlocks.page
 share/help/pt/gnome-help/sharing-bluetooth.page
 share/help/pt/gnome-help/sharing-desktop.page
-share/help/pt/gnome-help/sharing-displayname.page
 share/help/pt/gnome-help/sharing-media.page
 share/help/pt/gnome-help/sharing-personal.page
 share/help/pt/gnome-help/sharing.page
@@ -13559,7 +13733,11 @@ share/help/pt_BR/gnome-help/a11y-slowkeys.page
 share/help/pt_BR/gnome-help/a11y-stickykeys.page
 share/help/pt_BR/gnome-help/a11y-visualalert.page
 share/help/pt_BR/gnome-help/a11y.page
+share/help/pt_BR/gnome-help/about-hardware.page
+share/help/pt_BR/gnome-help/about-hostname.page
+share/help/pt_BR/gnome-help/about-os.page
 share/help/pt_BR/gnome-help/about-this-guide.page
+share/help/pt_BR/gnome-help/about.page
 share/help/pt_BR/gnome-help/accounts-add.page
 share/help/pt_BR/gnome-help/accounts-disable-service.page
 share/help/pt_BR/gnome-help/accounts-provider-not-available.page
@@ -13884,6 +14062,7 @@ share/help/pt_BR/gnome-help/net-wireless-wepwpa.page
 share/help/pt_BR/gnome-help/net-wireless.page
 share/help/pt_BR/gnome-help/net-wrongnetwork.page
 share/help/pt_BR/gnome-help/net.page
+share/help/pt_BR/gnome-help/parental-controls.page
 share/help/pt_BR/gnome-help/power-autobrightness.page
 share/help/pt_BR/gnome-help/power-autosuspend.page
 share/help/pt_BR/gnome-help/power-batteryestimate.page
@@ -13939,7 +14118,6 @@ share/help/pt_BR/gnome-help/session-language.page
 share/help/pt_BR/gnome-help/session-screenlocks.page
 share/help/pt_BR/gnome-help/sharing-bluetooth.page
 share/help/pt_BR/gnome-help/sharing-desktop.page
-share/help/pt_BR/gnome-help/sharing-displayname.page
 share/help/pt_BR/gnome-help/sharing-media.page
 share/help/pt_BR/gnome-help/sharing-personal.page
 share/help/pt_BR/gnome-help/sharing.page
@@ -14064,7 +14242,11 @@ share/help/ro/gnome-help/a11y-slowkeys.page
 share/help/ro/gnome-help/a11y-stickykeys.page
 share/help/ro/gnome-help/a11y-visualalert.page
 share/help/ro/gnome-help/a11y.page
+share/help/ro/gnome-help/about-hardware.page
+share/help/ro/gnome-help/about-hostname.page
+share/help/ro/gnome-help/about-os.page
 share/help/ro/gnome-help/about-this-guide.page
+share/help/ro/gnome-help/about.page
 share/help/ro/gnome-help/accounts-add.page
 share/help/ro/gnome-help/accounts-disable-service.page
 share/help/ro/gnome-help/accounts-provider-not-available.page
@@ -14389,6 +14571,7 @@ share/help/ro/gnome-help/net-wireless-wepwpa.page
 share/help/ro/gnome-help/net-wireless.page
 share/help/ro/gnome-help/net-wrongnetwork.page
 share/help/ro/gnome-help/net.page
+share/help/ro/gnome-help/parental-controls.page
 share/help/ro/gnome-help/power-autobrightness.page
 share/help/ro/gnome-help/power-autosuspend.page
 share/help/ro/gnome-help/power-batteryestimate.page
@@ -14444,7 +14627,6 @@ share/help/ro/gnome-help/session-language.page
 share/help/ro/gnome-help/session-screenlocks.page
 share/help/ro/gnome-help/sharing-bluetooth.page
 share/help/ro/gnome-help/sharing-desktop.page
-share/help/ro/gnome-help/sharing-displayname.page
 share/help/ro/gnome-help/sharing-media.page
 share/help/ro/gnome-help/sharing-personal.page
 share/help/ro/gnome-help/sharing.page
@@ -14511,7 +14693,11 @@ share/help/ru/gnome-help/a11y-slowkeys.page
 share/help/ru/gnome-help/a11y-stickykeys.page
 share/help/ru/gnome-help/a11y-visualalert.page
 share/help/ru/gnome-help/a11y.page
+share/help/ru/gnome-help/about-hardware.page
+share/help/ru/gnome-help/about-hostname.page
+share/help/ru/gnome-help/about-os.page
 share/help/ru/gnome-help/about-this-guide.page
+share/help/ru/gnome-help/about.page
 share/help/ru/gnome-help/accounts-add.page
 share/help/ru/gnome-help/accounts-disable-service.page
 share/help/ru/gnome-help/accounts-provider-not-available.page
@@ -14836,6 +15022,7 @@ share/help/ru/gnome-help/net-wireless-wepwpa.page
 share/help/ru/gnome-help/net-wireless.page
 share/help/ru/gnome-help/net-wrongnetwork.page
 share/help/ru/gnome-help/net.page
+share/help/ru/gnome-help/parental-controls.page
 share/help/ru/gnome-help/power-autobrightness.page
 share/help/ru/gnome-help/power-autosuspend.page
 share/help/ru/gnome-help/power-batteryestimate.page
@@ -14891,7 +15078,6 @@ share/help/ru/gnome-help/session-language.page
 share/help/ru/gnome-help/session-screenlocks.page
 share/help/ru/gnome-help/sharing-bluetooth.page
 share/help/ru/gnome-help/sharing-desktop.page
-share/help/ru/gnome-help/sharing-displayname.page
 share/help/ru/gnome-help/sharing-media.page
 share/help/ru/gnome-help/sharing-personal.page
 share/help/ru/gnome-help/sharing.page
@@ -15016,7 +15202,11 @@ share/help/sl/gnome-help/a11y-slowkeys.page
 share/help/sl/gnome-help/a11y-stickykeys.page
 share/help/sl/gnome-help/a11y-visualalert.page
 share/help/sl/gnome-help/a11y.page
+share/help/sl/gnome-help/about-hardware.page
+share/help/sl/gnome-help/about-hostname.page
+share/help/sl/gnome-help/about-os.page
 share/help/sl/gnome-help/about-this-guide.page
+share/help/sl/gnome-help/about.page
 share/help/sl/gnome-help/accounts-add.page
 share/help/sl/gnome-help/accounts-disable-service.page
 share/help/sl/gnome-help/accounts-provider-not-available.page
@@ -15341,6 +15531,7 @@ share/help/sl/gnome-help/net-wireless-wepwpa.page
 share/help/sl/gnome-help/net-wireless.page
 share/help/sl/gnome-help/net-wrongnetwork.page
 share/help/sl/gnome-help/net.page
+share/help/sl/gnome-help/parental-controls.page
 share/help/sl/gnome-help/power-autobrightness.page
 share/help/sl/gnome-help/power-autosuspend.page
 share/help/sl/gnome-help/power-batteryestimate.page
@@ -15396,7 +15587,6 @@ share/help/sl/gnome-help/session-language.page
 share/help/sl/gnome-help/session-screenlocks.page
 share/help/sl/gnome-help/sharing-bluetooth.page
 share/help/sl/gnome-help/sharing-desktop.page
-share/help/sl/gnome-help/sharing-displayname.page
 share/help/sl/gnome-help/sharing-media.page
 share/help/sl/gnome-help/sharing-personal.page
 share/help/sl/gnome-help/sharing.page
@@ -15463,7 +15653,11 @@ share/help/sr/gnome-help/a11y-slowkeys.page
 share/help/sr/gnome-help/a11y-stickykeys.page
 share/help/sr/gnome-help/a11y-visualalert.page
 share/help/sr/gnome-help/a11y.page
+share/help/sr/gnome-help/about-hardware.page
+share/help/sr/gnome-help/about-hostname.page
+share/help/sr/gnome-help/about-os.page
 share/help/sr/gnome-help/about-this-guide.page
+share/help/sr/gnome-help/about.page
 share/help/sr/gnome-help/accounts-add.page
 share/help/sr/gnome-help/accounts-disable-service.page
 share/help/sr/gnome-help/accounts-provider-not-available.page
@@ -15788,6 +15982,7 @@ share/help/sr/gnome-help/net-wireless-wepwpa.page
 share/help/sr/gnome-help/net-wireless.page
 share/help/sr/gnome-help/net-wrongnetwork.page
 share/help/sr/gnome-help/net.page
+share/help/sr/gnome-help/parental-controls.page
 share/help/sr/gnome-help/power-autobrightness.page
 share/help/sr/gnome-help/power-autosuspend.page
 share/help/sr/gnome-help/power-batteryestimate.page
@@ -15843,7 +16038,6 @@ share/help/sr/gnome-help/session-language.page
 share/help/sr/gnome-help/session-screenlocks.page
 share/help/sr/gnome-help/sharing-bluetooth.page
 share/help/sr/gnome-help/sharing-desktop.page
-share/help/sr/gnome-help/sharing-displayname.page
 share/help/sr/gnome-help/sharing-media.page
 share/help/sr/gnome-help/sharing-personal.page
 share/help/sr/gnome-help/sharing.page
@@ -15910,7 +16104,11 @@ share/help/sr@latin/gnome-help/a11y-slowkeys.page
 share/help/sr@latin/gnome-help/a11y-stickykeys.page
 share/help/sr@latin/gnome-help/a11y-visualalert.page
 share/help/sr@latin/gnome-help/a11y.page
+share/help/sr@latin/gnome-help/about-hardware.page
+share/help/sr@latin/gnome-help/about-hostname.page
+share/help/sr@latin/gnome-help/about-os.page
 share/help/sr@latin/gnome-help/about-this-guide.page
+share/help/sr@latin/gnome-help/about.page
 share/help/sr@latin/gnome-help/accounts-add.page
 share/help/sr@latin/gnome-help/accounts-disable-service.page
 share/help/sr@latin/gnome-help/accounts-provider-not-available.page
@@ -16235,6 +16433,7 @@ share/help/sr@latin/gnome-help/net-wireless-wepwpa.page
 share/help/sr@latin/gnome-help/net-wireless.page
 share/help/sr@latin/gnome-help/net-wrongnetwork.page
 share/help/sr@latin/gnome-help/net.page
+share/help/sr@latin/gnome-help/parental-controls.page
 share/help/sr@latin/gnome-help/power-autobrightness.page
 share/help/sr@latin/gnome-help/power-autosuspend.page
 share/help/sr@latin/gnome-help/power-batteryestimate.page
@@ -16290,7 +16489,6 @@ share/help/sr@latin/gnome-help/session-language.page
 share/help/sr@latin/gnome-help/session-screenlocks.page
 share/help/sr@latin/gnome-help/sharing-bluetooth.page
 share/help/sr@latin/gnome-help/sharing-desktop.page
-share/help/sr@latin/gnome-help/sharing-displayname.page
 share/help/sr@latin/gnome-help/sharing-media.page
 share/help/sr@latin/gnome-help/sharing-personal.page
 share/help/sr@latin/gnome-help/sharing.page
@@ -16357,7 +16555,11 @@ share/help/sv/gnome-help/a11y-slowkeys.page
 share/help/sv/gnome-help/a11y-stickykeys.page
 share/help/sv/gnome-help/a11y-visualalert.page
 share/help/sv/gnome-help/a11y.page
+share/help/sv/gnome-help/about-hardware.page
+share/help/sv/gnome-help/about-hostname.page
+share/help/sv/gnome-help/about-os.page
 share/help/sv/gnome-help/about-this-guide.page
+share/help/sv/gnome-help/about.page
 share/help/sv/gnome-help/accounts-add.page
 share/help/sv/gnome-help/accounts-disable-service.page
 share/help/sv/gnome-help/accounts-provider-not-available.page
@@ -16682,6 +16884,7 @@ share/help/sv/gnome-help/net-wireless-wepwpa.page
 share/help/sv/gnome-help/net-wireless.page
 share/help/sv/gnome-help/net-wrongnetwork.page
 share/help/sv/gnome-help/net.page
+share/help/sv/gnome-help/parental-controls.page
 share/help/sv/gnome-help/power-autobrightness.page
 share/help/sv/gnome-help/power-autosuspend.page
 share/help/sv/gnome-help/power-batteryestimate.page
@@ -16737,7 +16940,6 @@ share/help/sv/gnome-help/session-language.page
 share/help/sv/gnome-help/session-screenlocks.page
 share/help/sv/gnome-help/sharing-bluetooth.page
 share/help/sv/gnome-help/sharing-desktop.page
-share/help/sv/gnome-help/sharing-displayname.page
 share/help/sv/gnome-help/sharing-media.page
 share/help/sv/gnome-help/sharing-personal.page
 share/help/sv/gnome-help/sharing.page
@@ -16862,7 +17064,11 @@ share/help/ta/gnome-help/a11y-slowkeys.page
 share/help/ta/gnome-help/a11y-stickykeys.page
 share/help/ta/gnome-help/a11y-visualalert.page
 share/help/ta/gnome-help/a11y.page
+share/help/ta/gnome-help/about-hardware.page
+share/help/ta/gnome-help/about-hostname.page
+share/help/ta/gnome-help/about-os.page
 share/help/ta/gnome-help/about-this-guide.page
+share/help/ta/gnome-help/about.page
 share/help/ta/gnome-help/accounts-add.page
 share/help/ta/gnome-help/accounts-disable-service.page
 share/help/ta/gnome-help/accounts-provider-not-available.page
@@ -17187,6 +17393,7 @@ share/help/ta/gnome-help/net-wireless-wepwpa.page
 share/help/ta/gnome-help/net-wireless.page
 share/help/ta/gnome-help/net-wrongnetwork.page
 share/help/ta/gnome-help/net.page
+share/help/ta/gnome-help/parental-controls.page
 share/help/ta/gnome-help/power-autobrightness.page
 share/help/ta/gnome-help/power-autosuspend.page
 share/help/ta/gnome-help/power-batteryestimate.page
@@ -17242,7 +17449,6 @@ share/help/ta/gnome-help/session-language.page
 share/help/ta/gnome-help/session-screenlocks.page
 share/help/ta/gnome-help/sharing-bluetooth.page
 share/help/ta/gnome-help/sharing-desktop.page
-share/help/ta/gnome-help/sharing-displayname.page
 share/help/ta/gnome-help/sharing-media.page
 share/help/ta/gnome-help/sharing-personal.page
 share/help/ta/gnome-help/sharing.page
@@ -17309,7 +17515,11 @@ share/help/te/gnome-help/a11y-slowkeys.page
 share/help/te/gnome-help/a11y-stickykeys.page
 share/help/te/gnome-help/a11y-visualalert.page
 share/help/te/gnome-help/a11y.page
+share/help/te/gnome-help/about-hardware.page
+share/help/te/gnome-help/about-hostname.page
+share/help/te/gnome-help/about-os.page
 share/help/te/gnome-help/about-this-guide.page
+share/help/te/gnome-help/about.page
 share/help/te/gnome-help/accounts-add.page
 share/help/te/gnome-help/accounts-disable-service.page
 share/help/te/gnome-help/accounts-provider-not-available.page
@@ -17634,6 +17844,7 @@ share/help/te/gnome-help/net-wireless-wepwpa.page
 share/help/te/gnome-help/net-wireless.page
 share/help/te/gnome-help/net-wrongnetwork.page
 share/help/te/gnome-help/net.page
+share/help/te/gnome-help/parental-controls.page
 share/help/te/gnome-help/power-autobrightness.page
 share/help/te/gnome-help/power-autosuspend.page
 share/help/te/gnome-help/power-batteryestimate.page
@@ -17689,7 +17900,6 @@ share/help/te/gnome-help/session-language.page
 share/help/te/gnome-help/session-screenlocks.page
 share/help/te/gnome-help/sharing-bluetooth.page
 share/help/te/gnome-help/sharing-desktop.page
-share/help/te/gnome-help/sharing-displayname.page
 share/help/te/gnome-help/sharing-media.page
 share/help/te/gnome-help/sharing-personal.page
 share/help/te/gnome-help/sharing.page
@@ -17756,7 +17966,11 @@ share/help/tr/gnome-help/a11y-slowkeys.page
 share/help/tr/gnome-help/a11y-stickykeys.page
 share/help/tr/gnome-help/a11y-visualalert.page
 share/help/tr/gnome-help/a11y.page
+share/help/tr/gnome-help/about-hardware.page
+share/help/tr/gnome-help/about-hostname.page
+share/help/tr/gnome-help/about-os.page
 share/help/tr/gnome-help/about-this-guide.page
+share/help/tr/gnome-help/about.page
 share/help/tr/gnome-help/accounts-add.page
 share/help/tr/gnome-help/accounts-disable-service.page
 share/help/tr/gnome-help/accounts-provider-not-available.page
@@ -18081,6 +18295,7 @@ share/help/tr/gnome-help/net-wireless-wepwpa.page
 share/help/tr/gnome-help/net-wireless.page
 share/help/tr/gnome-help/net-wrongnetwork.page
 share/help/tr/gnome-help/net.page
+share/help/tr/gnome-help/parental-controls.page
 share/help/tr/gnome-help/power-autobrightness.page
 share/help/tr/gnome-help/power-autosuspend.page
 share/help/tr/gnome-help/power-batteryestimate.page
@@ -18136,7 +18351,6 @@ share/help/tr/gnome-help/session-language.page
 share/help/tr/gnome-help/session-screenlocks.page
 share/help/tr/gnome-help/sharing-bluetooth.page
 share/help/tr/gnome-help/sharing-desktop.page
-share/help/tr/gnome-help/sharing-displayname.page
 share/help/tr/gnome-help/sharing-media.page
 share/help/tr/gnome-help/sharing-personal.page
 share/help/tr/gnome-help/sharing.page
@@ -18261,7 +18475,11 @@ share/help/uk/gnome-help/a11y-slowkeys.page
 share/help/uk/gnome-help/a11y-stickykeys.page
 share/help/uk/gnome-help/a11y-visualalert.page
 share/help/uk/gnome-help/a11y.page
+share/help/uk/gnome-help/about-hardware.page
+share/help/uk/gnome-help/about-hostname.page
+share/help/uk/gnome-help/about-os.page
 share/help/uk/gnome-help/about-this-guide.page
+share/help/uk/gnome-help/about.page
 share/help/uk/gnome-help/accounts-add.page
 share/help/uk/gnome-help/accounts-disable-service.page
 share/help/uk/gnome-help/accounts-provider-not-available.page
@@ -18586,6 +18804,7 @@ share/help/uk/gnome-help/net-wireless-wepwpa.page
 share/help/uk/gnome-help/net-wireless.page
 share/help/uk/gnome-help/net-wrongnetwork.page
 share/help/uk/gnome-help/net.page
+share/help/uk/gnome-help/parental-controls.page
 share/help/uk/gnome-help/power-autobrightness.page
 share/help/uk/gnome-help/power-autosuspend.page
 share/help/uk/gnome-help/power-batteryestimate.page
@@ -18641,7 +18860,6 @@ share/help/uk/gnome-help/session-language.page
 share/help/uk/gnome-help/session-screenlocks.page
 share/help/uk/gnome-help/sharing-bluetooth.page
 share/help/uk/gnome-help/sharing-desktop.page
-share/help/uk/gnome-help/sharing-displayname.page
 share/help/uk/gnome-help/sharing-media.page
 share/help/uk/gnome-help/sharing-personal.page
 share/help/uk/gnome-help/sharing.page
@@ -18766,7 +18984,11 @@ share/help/vi/gnome-help/a11y-slowkeys.page
 share/help/vi/gnome-help/a11y-stickykeys.page
 share/help/vi/gnome-help/a11y-visualalert.page
 share/help/vi/gnome-help/a11y.page
+share/help/vi/gnome-help/about-hardware.page
+share/help/vi/gnome-help/about-hostname.page
+share/help/vi/gnome-help/about-os.page
 share/help/vi/gnome-help/about-this-guide.page
+share/help/vi/gnome-help/about.page
 share/help/vi/gnome-help/accounts-add.page
 share/help/vi/gnome-help/accounts-disable-service.page
 share/help/vi/gnome-help/accounts-provider-not-available.page
@@ -19091,6 +19313,7 @@ share/help/vi/gnome-help/net-wireless-wepwpa.page
 share/help/vi/gnome-help/net-wireless.page
 share/help/vi/gnome-help/net-wrongnetwork.page
 share/help/vi/gnome-help/net.page
+share/help/vi/gnome-help/parental-controls.page
 share/help/vi/gnome-help/power-autobrightness.page
 share/help/vi/gnome-help/power-autosuspend.page
 share/help/vi/gnome-help/power-batteryestimate.page
@@ -19146,7 +19369,6 @@ share/help/vi/gnome-help/session-language.page
 share/help/vi/gnome-help/session-screenlocks.page
 share/help/vi/gnome-help/sharing-bluetooth.page
 share/help/vi/gnome-help/sharing-desktop.page
-share/help/vi/gnome-help/sharing-displayname.page
 share/help/vi/gnome-help/sharing-media.page
 share/help/vi/gnome-help/sharing-personal.page
 share/help/vi/gnome-help/sharing.page
@@ -19213,7 +19435,11 @@ share/help/zh_CN/gnome-help/a11y-slowkeys.page
 share/help/zh_CN/gnome-help/a11y-stickykeys.page
 share/help/zh_CN/gnome-help/a11y-visualalert.page
 share/help/zh_CN/gnome-help/a11y.page
+share/help/zh_CN/gnome-help/about-hardware.page
+share/help/zh_CN/gnome-help/about-hostname.page
+share/help/zh_CN/gnome-help/about-os.page
 share/help/zh_CN/gnome-help/about-this-guide.page
+share/help/zh_CN/gnome-help/about.page
 share/help/zh_CN/gnome-help/accounts-add.page
 share/help/zh_CN/gnome-help/accounts-disable-service.page
 share/help/zh_CN/gnome-help/accounts-provider-not-available.page
@@ -19538,6 +19764,7 @@ share/help/zh_CN/gnome-help/net-wireless-wepwpa.page
 share/help/zh_CN/gnome-help/net-wireless.page
 share/help/zh_CN/gnome-help/net-wrongnetwork.page
 share/help/zh_CN/gnome-help/net.page
+share/help/zh_CN/gnome-help/parental-controls.page
 share/help/zh_CN/gnome-help/power-autobrightness.page
 share/help/zh_CN/gnome-help/power-autosuspend.page
 share/help/zh_CN/gnome-help/power-batteryestimate.page
@@ -19593,7 +19820,6 @@ share/help/zh_CN/gnome-help/session-language.page
 share/help/zh_CN/gnome-help/session-screenlocks.page
 share/help/zh_CN/gnome-help/sharing-bluetooth.page
 share/help/zh_CN/gnome-help/sharing-desktop.page
-share/help/zh_CN/gnome-help/sharing-displayname.page
 share/help/zh_CN/gnome-help/sharing-media.page
 share/help/zh_CN/gnome-help/sharing-personal.page
 share/help/zh_CN/gnome-help/sharing.page
