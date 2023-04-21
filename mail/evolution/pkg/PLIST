@@ -567,6 +567,7 @@ lib/evolution-data-server/ui-modules/
 lib/evolution/modules/
 @so lib/evolution/modules/module-accounts-window.so
 @so lib/evolution/modules/module-addressbook.so
+@so lib/evolution/modules/module-appearance-settings.so
 @so lib/evolution/modules/module-backup-restore.so
 @so lib/evolution/modules/module-bogofilter.so
 @so lib/evolution/modules/module-book-config-carddav.so
@@ -1363,8 +1364,8 @@ share/evolution/icons/hicolor/32x32/status/mail-send.png
 share/evolution/icons/hicolor/32x32/status/mail-unread.png
 share/evolution/icons/hicolor/32x32/status/media-playback-start.png
 share/evolution/icons/hicolor/32x32/status/media-record.png
-share/evolution/icons/hicolor/32x32/status/offline.png
-share/evolution/icons/hicolor/32x32/status/online.png
+share/evolution/icons/hicolor/32x32/status/offline.svg
+share/evolution/icons/hicolor/32x32/status/online.svg
 share/evolution/icons/hicolor/32x32/status/preferences-system.png
 share/evolution/icons/hicolor/32x32/status/process-stop.png
 share/evolution/icons/hicolor/32x32/status/security-high.png
@@ -1550,6 +1551,8 @@ share/evolution/icons/hicolor/scalable/actions/markdown-link-dark.svg
 share/evolution/icons/hicolor/scalable/actions/markdown-link.svg
 share/evolution/icons/hicolor/scalable/actions/markdown-numbers-dark.svg
 share/evolution/icons/hicolor/scalable/actions/markdown-numbers.svg
+share/evolution/icons/hicolor/scalable/actions/markdown-preview-dark.svg
+share/evolution/icons/hicolor/scalable/actions/markdown-preview.svg
 share/evolution/icons/hicolor/scalable/actions/markdown-quote-dark.svg
 share/evolution/icons/hicolor/scalable/actions/markdown-quote.svg
 share/evolution/icons/hicolor/scalable/actions/stock_insert-note-symbolic.svg
@@ -1600,6 +1603,8 @@ share/evolution/images/confidential-stamp.jpg
 share/evolution/images/draft-paper.png
 share/evolution/images/draft-stamp.jpg
 share/evolution/images/midnight-stars.jpg
+share/evolution/images/mode-with-headerbar.png
+share/evolution/images/mode-without-headerbar.png
 share/evolution/images/paper.png
 share/evolution/images/rect.png
 share/evolution/images/ribbon.jpg
@@ -1758,7 +1763,7 @@ share/help/C/evolution/figures/color-a40000.png
 share/help/C/evolution/figures/color-c4a000.png
 share/help/C/evolution/figures/color-ccccccffffff.png
 share/help/C/evolution/figures/color-ce5c00.png
-share/help/C/evolution/figures/evolutionlogo.png
+share/help/C/evolution/figures/evolution.svg
 share/help/C/evolution/figures/html-composer-insert-image.png
 share/help/C/evolution/figures/html-composer-insert-link.png
 share/help/C/evolution/figures/html-composer-insert-rule.png
@@ -1990,7 +1995,7 @@ share/help/ca/evolution/figures/color-a40000.png
 share/help/ca/evolution/figures/color-c4a000.png
 share/help/ca/evolution/figures/color-ccccccffffff.png
 share/help/ca/evolution/figures/color-ce5c00.png
-share/help/ca/evolution/figures/evolutionlogo.png
+share/help/ca/evolution/figures/evolution.svg
 share/help/ca/evolution/figures/html-composer-insert-image.png
 share/help/ca/evolution/figures/html-composer-insert-link.png
 share/help/ca/evolution/figures/html-composer-insert-rule.png
@@ -2222,7 +2227,7 @@ share/help/cs/evolution/figures/color-a40000.png
 share/help/cs/evolution/figures/color-c4a000.png
 share/help/cs/evolution/figures/color-ccccccffffff.png
 share/help/cs/evolution/figures/color-ce5c00.png
-share/help/cs/evolution/figures/evolutionlogo.png
+share/help/cs/evolution/figures/evolution.svg
 share/help/cs/evolution/figures/html-composer-insert-image.png
 share/help/cs/evolution/figures/html-composer-insert-link.png
 share/help/cs/evolution/figures/html-composer-insert-rule.png
@@ -2454,7 +2459,7 @@ share/help/de/evolution/figures/color-a40000.png
 share/help/de/evolution/figures/color-c4a000.png
 share/help/de/evolution/figures/color-ccccccffffff.png
 share/help/de/evolution/figures/color-ce5c00.png
-share/help/de/evolution/figures/evolutionlogo.png
+share/help/de/evolution/figures/evolution.svg
 share/help/de/evolution/figures/html-composer-insert-image.png
 share/help/de/evolution/figures/html-composer-insert-link.png
 share/help/de/evolution/figures/html-composer-insert-rule.png
@@ -2686,7 +2691,7 @@ share/help/el/evolution/figures/color-a40000.png
 share/help/el/evolution/figures/color-c4a000.png
 share/help/el/evolution/figures/color-ccccccffffff.png
 share/help/el/evolution/figures/color-ce5c00.png
-share/help/el/evolution/figures/evolutionlogo.png
+share/help/el/evolution/figures/evolution.svg
 share/help/el/evolution/figures/html-composer-insert-image.png
 share/help/el/evolution/figures/html-composer-insert-link.png
 share/help/el/evolution/figures/html-composer-insert-rule.png
@@ -2919,7 +2924,7 @@ share/help/en_GB/evolution/figures/color-a40000.png
 share/help/en_GB/evolution/figures/color-c4a000.png
 share/help/en_GB/evolution/figures/color-ccccccffffff.png
 share/help/en_GB/evolution/figures/color-ce5c00.png
-share/help/en_GB/evolution/figures/evolutionlogo.png
+share/help/en_GB/evolution/figures/evolution.svg
 share/help/en_GB/evolution/figures/html-composer-insert-image.png
 share/help/en_GB/evolution/figures/html-composer-insert-link.png
 share/help/en_GB/evolution/figures/html-composer-insert-rule.png
@@ -3151,7 +3156,7 @@ share/help/es/evolution/figures/color-a40000.png
 share/help/es/evolution/figures/color-c4a000.png
 share/help/es/evolution/figures/color-ccccccffffff.png
 share/help/es/evolution/figures/color-ce5c00.png
-share/help/es/evolution/figures/evolutionlogo.png
+share/help/es/evolution/figures/evolution.svg
 share/help/es/evolution/figures/html-composer-insert-image.png
 share/help/es/evolution/figures/html-composer-insert-link.png
 share/help/es/evolution/figures/html-composer-insert-rule.png
@@ -3383,7 +3388,7 @@ share/help/eu/evolution/figures/color-a40000.png
 share/help/eu/evolution/figures/color-c4a000.png
 share/help/eu/evolution/figures/color-ccccccffffff.png
 share/help/eu/evolution/figures/color-ce5c00.png
-share/help/eu/evolution/figures/evolutionlogo.png
+share/help/eu/evolution/figures/evolution.svg
 share/help/eu/evolution/figures/html-composer-insert-image.png
 share/help/eu/evolution/figures/html-composer-insert-link.png
 share/help/eu/evolution/figures/html-composer-insert-rule.png
@@ -3615,7 +3620,7 @@ share/help/fr/evolution/figures/color-a40000.png
 share/help/fr/evolution/figures/color-c4a000.png
 share/help/fr/evolution/figures/color-ccccccffffff.png
 share/help/fr/evolution/figures/color-ce5c00.png
-share/help/fr/evolution/figures/evolutionlogo.png
+share/help/fr/evolution/figures/evolution.svg
 share/help/fr/evolution/figures/html-composer-insert-image.png
 share/help/fr/evolution/figures/html-composer-insert-link.png
 share/help/fr/evolution/figures/html-composer-insert-rule.png
@@ -3847,7 +3852,7 @@ share/help/gl/evolution/figures/color-a40000.png
 share/help/gl/evolution/figures/color-c4a000.png
 share/help/gl/evolution/figures/color-ccccccffffff.png
 share/help/gl/evolution/figures/color-ce5c00.png
-share/help/gl/evolution/figures/evolutionlogo.png
+share/help/gl/evolution/figures/evolution.svg
 share/help/gl/evolution/figures/html-composer-insert-image.png
 share/help/gl/evolution/figures/html-composer-insert-link.png
 share/help/gl/evolution/figures/html-composer-insert-rule.png
@@ -4079,7 +4084,7 @@ share/help/hu/evolution/figures/color-a40000.png
 share/help/hu/evolution/figures/color-c4a000.png
 share/help/hu/evolution/figures/color-ccccccffffff.png
 share/help/hu/evolution/figures/color-ce5c00.png
-share/help/hu/evolution/figures/evolutionlogo.png
+share/help/hu/evolution/figures/evolution.svg
 share/help/hu/evolution/figures/html-composer-insert-image.png
 share/help/hu/evolution/figures/html-composer-insert-link.png
 share/help/hu/evolution/figures/html-composer-insert-rule.png
@@ -4312,7 +4317,7 @@ share/help/id/evolution/figures/color-a40000.png
 share/help/id/evolution/figures/color-c4a000.png
 share/help/id/evolution/figures/color-ccccccffffff.png
 share/help/id/evolution/figures/color-ce5c00.png
-share/help/id/evolution/figures/evolutionlogo.png
+share/help/id/evolution/figures/evolution.svg
 share/help/id/evolution/figures/html-composer-insert-image.png
 share/help/id/evolution/figures/html-composer-insert-link.png
 share/help/id/evolution/figures/html-composer-insert-rule.png
@@ -4545,7 +4550,7 @@ share/help/mk/evolution/figures/color-a40000.png
 share/help/mk/evolution/figures/color-c4a000.png
 share/help/mk/evolution/figures/color-ccccccffffff.png
 share/help/mk/evolution/figures/color-ce5c00.png
-share/help/mk/evolution/figures/evolutionlogo.png
+share/help/mk/evolution/figures/evolution.svg
 share/help/mk/evolution/figures/html-composer-insert-image.png
 share/help/mk/evolution/figures/html-composer-insert-link.png
 share/help/mk/evolution/figures/html-composer-insert-rule.png
@@ -4777,7 +4782,7 @@ share/help/oc/evolution/figures/color-a40000.png
 share/help/oc/evolution/figures/color-c4a000.png
 share/help/oc/evolution/figures/color-ccccccffffff.png
 share/help/oc/evolution/figures/color-ce5c00.png
-share/help/oc/evolution/figures/evolutionlogo.png
+share/help/oc/evolution/figures/evolution.svg
 share/help/oc/evolution/figures/html-composer-insert-image.png
 share/help/oc/evolution/figures/html-composer-insert-link.png
 share/help/oc/evolution/figures/html-composer-insert-rule.png
@@ -5009,7 +5014,7 @@ share/help/pt_BR/evolution/figures/color-a40000.png
 share/help/pt_BR/evolution/figures/color-c4a000.png
 share/help/pt_BR/evolution/figures/color-ccccccffffff.png
 share/help/pt_BR/evolution/figures/color-ce5c00.png
-share/help/pt_BR/evolution/figures/evolutionlogo.png
+share/help/pt_BR/evolution/figures/evolution.svg
 share/help/pt_BR/evolution/figures/html-composer-insert-image.png
 share/help/pt_BR/evolution/figures/html-composer-insert-link.png
 share/help/pt_BR/evolution/figures/html-composer-insert-rule.png
@@ -5242,7 +5247,7 @@ share/help/ru/evolution/figures/color-a40000.png
 share/help/ru/evolution/figures/color-c4a000.png
 share/help/ru/evolution/figures/color-ccccccffffff.png
 share/help/ru/evolution/figures/color-ce5c00.png
-share/help/ru/evolution/figures/evolutionlogo.png
+share/help/ru/evolution/figures/evolution.svg
 share/help/ru/evolution/figures/html-composer-insert-image.png
 share/help/ru/evolution/figures/html-composer-insert-link.png
 share/help/ru/evolution/figures/html-composer-insert-rule.png
@@ -5474,7 +5479,7 @@ share/help/sl/evolution/figures/color-a40000.png
 share/help/sl/evolution/figures/color-c4a000.png
 share/help/sl/evolution/figures/color-ccccccffffff.png
 share/help/sl/evolution/figures/color-ce5c00.png
-share/help/sl/evolution/figures/evolutionlogo.png
+share/help/sl/evolution/figures/evolution.svg
 share/help/sl/evolution/figures/html-composer-insert-image.png
 share/help/sl/evolution/figures/html-composer-insert-link.png
 share/help/sl/evolution/figures/html-composer-insert-rule.png
@@ -5706,7 +5711,7 @@ share/help/sv/evolution/figures/color-a40000.png
 share/help/sv/evolution/figures/color-c4a000.png
 share/help/sv/evolution/figures/color-ccccccffffff.png
 share/help/sv/evolution/figures/color-ce5c00.png
-share/help/sv/evolution/figures/evolutionlogo.png
+share/help/sv/evolution/figures/evolution.svg
 share/help/sv/evolution/figures/html-composer-insert-image.png
 share/help/sv/evolution/figures/html-composer-insert-link.png
 share/help/sv/evolution/figures/html-composer-insert-rule.png
@@ -5939,7 +5944,7 @@ share/help/te/evolution/figures/color-a40000.png
 share/help/te/evolution/figures/color-c4a000.png
 share/help/te/evolution/figures/color-ccccccffffff.png
 share/help/te/evolution/figures/color-ce5c00.png
-share/help/te/evolution/figures/evolutionlogo.png
+share/help/te/evolution/figures/evolution.svg
 share/help/te/evolution/figures/html-composer-insert-image.png
 share/help/te/evolution/figures/html-composer-insert-link.png
 share/help/te/evolution/figures/html-composer-insert-rule.png
@@ -6171,7 +6176,7 @@ share/help/uk/evolution/figures/color-a40000.png
 share/help/uk/evolution/figures/color-c4a000.png
 share/help/uk/evolution/figures/color-ccccccffffff.png
 share/help/uk/evolution/figures/color-ce5c00.png
-share/help/uk/evolution/figures/evolutionlogo.png
+share/help/uk/evolution/figures/evolution.svg
 share/help/uk/evolution/figures/html-composer-insert-image.png
 share/help/uk/evolution/figures/html-composer-insert-link.png
 share/help/uk/evolution/figures/html-composer-insert-rule.png
@@ -6403,7 +6408,7 @@ share/help/zh_CN/evolution/figures/color-a40000.png
 share/help/zh_CN/evolution/figures/color-c4a000.png
 share/help/zh_CN/evolution/figures/color-ccccccffffff.png
 share/help/zh_CN/evolution/figures/color-ce5c00.png
-share/help/zh_CN/evolution/figures/evolutionlogo.png
+share/help/zh_CN/evolution/figures/evolution.svg
 share/help/zh_CN/evolution/figures/html-composer-insert-image.png
 share/help/zh_CN/evolution/figures/html-composer-insert-link.png
 share/help/zh_CN/evolution/figures/html-composer-insert-rule.png
