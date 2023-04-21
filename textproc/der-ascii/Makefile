@@ -15,13 +15,10 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/go
 
+ALL_TARGET =		${MODGO_MODNAME}/...
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/der-ascii
 	${INSTALL_DATA} ${WRKSRC}/language.txt ${PREFIX}/share/doc/der-ascii
-
-do-test:
-.for dir in ascii2der der2ascii
-	cd ${WRKSRC}/cmd/${dir} && ${MODGO_TEST_CMD}
-.endfor
 
 .include <bsd.port.mk>
