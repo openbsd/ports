@@ -1,7 +1,7 @@
 COMMENT=	binutils for riscv-elf cross-development
 
 V=		2.40
-REVISION=	0
+REVISION=	1
 DISTNAME=	binutils-${V}
 
 HOMEPAGE=	https://www.gnu.org/software/binutils/

@@ -14,10 +14,6 @@
 @bin bin/${CONFIG}-size
 @bin bin/${CONFIG}-strings
 @bin bin/${CONFIG}-strip
-@info info/ctf-spec.info
-@info info/sframe-spec.info
-lib/bfd-plugins/
-@static-lib lib/bfd-plugins/libdep.a
 @man man/man1/${CONFIG}-addr2line.1
 @man man/man1/${CONFIG}-ar.1
 @man man/man1/${CONFIG}-as.1
