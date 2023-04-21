@@ -1,3 +1,12 @@
-@bin bin/UEFIExtract
-@bin bin/UEFIFind
-@bin bin/UEFITool
+@bin bin/uefiextract
+@bin bin/uefifind
+@bin bin/uefitool
+share/applications/uefitool.desktop
+share/icons/hicolor/128x128/apps/uefitool.png
+share/icons/hicolor/16x16/apps/uefitool.png
+share/icons/hicolor/256x256/apps/uefitool.png
+share/icons/hicolor/32x32/apps/uefitool.png
+share/icons/hicolor/512x512/apps/uefitool.png
+share/icons/hicolor/64x64/apps/uefitool.png
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database
