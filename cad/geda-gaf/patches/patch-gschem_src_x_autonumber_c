@@ -1,0 +1,14 @@
+Use g_memdup2, which avoids overflow on the size argument.
+
+Index: gschem/src/x_autonumber.c
+--- gschem/src/x_autonumber.c.orig
++++ gschem/src/x_autonumber.c
+@@ -440,7 +440,7 @@ void autonumber_get_used(GschemToplevel *w_current, AU
+ 		  /* insert all slots to the list, except of the current one */
+ 		  for (i=1; i <= numslots; i++) {
+ 		    if (i != slotnr) {
+-		      slot = g_memdup(slot, sizeof(AUTONUMBER_SLOT));
++		      slot = g_memdup2(slot, sizeof(AUTONUMBER_SLOT));
+ 		      slot->slotnr = i;
+ 		      autotext->free_slots = g_list_insert_sorted(autotext->free_slots,
+ 								  slot,

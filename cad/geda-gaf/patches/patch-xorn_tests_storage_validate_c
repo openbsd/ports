@@ -1,0 +1,14 @@
+alloca.h is a glibc thing.
+
+Index: xorn/tests/storage/validate.c
+--- xorn/tests/storage/validate.c.orig
++++ xorn/tests/storage/validate.c
+@@ -15,7 +15,7 @@
+    Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.  */
+ 
+ #include <xornstorage.h>
+-#include <alloca.h>
++#include <stdlib.h>		/* alloca() */
+ #include <assert.h>
+ #include <math.h>
+ #include <string.h>

@@ -1,0 +1,25 @@
+Use g_memdup2, which avoids overflow on the size argument.
+
+Index: libgeda/src/o_picture.c
+--- libgeda/src/o_picture.c.orig
++++ libgeda/src/o_picture.c
+@@ -309,7 +309,7 @@ OBJECT *o_picture_new (TOPLEVEL *toplevel,
+ 
+       /* Force the data into the object anyway, so as to prevent data
+        * loss of embedded images. */
+-      picture->file_content = g_memdup (file_content, file_length);
++      picture->file_content = g_memdup2 (file_content, file_length);
+       picture->file_length = file_length;
+     }
+   }
+@@ -724,8 +724,8 @@ OBJECT *o_picture_copy(TOPLEVEL *toplevel, OBJECT *obj
+   picture->lower_y = object->picture->lower_y;
+ 
+   if (object->picture->file_content != NULL) {
+-    picture->file_content = g_memdup (object->picture->file_content,
+-                                      object->picture->file_length);
++    picture->file_content = g_memdup2 (object->picture->file_content,
++                                       object->picture->file_length);
+   } else {
+     picture->file_content = NULL;
+   }

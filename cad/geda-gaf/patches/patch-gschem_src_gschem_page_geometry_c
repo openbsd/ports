@@ -1,0 +1,14 @@
+Use g_memdup2, which avoids overflow on the size argument.
+
+Index: gschem/src/gschem_page_geometry.c
+--- gschem/src/gschem_page_geometry.c.orig
++++ gschem/src/gschem_page_geometry.c
+@@ -52,7 +52,7 @@ update_constants (GschemPageGeometry *geometry);
+ GschemPageGeometry*
+ gschem_page_geometry_copy (GschemPageGeometry *geometry)
+ {
+-  return (GschemPageGeometry*) g_memdup (geometry, sizeof (GschemPageGeometry));
++  return (GschemPageGeometry*) g_memdup2 (geometry, sizeof (GschemPageGeometry));
+ }
+ 
+ 

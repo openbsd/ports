@@ -1,0 +1,14 @@
+do not ENABLE_GROFF_HTML if we have no groff
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -14664,7 +14664,7 @@ $as_echo_n "checking whether $GROFF has an html driver
+ $as_echo "$HAVE_GROFF_HTML" >&6; }
+   fi
+ 
+-   if test "X$HAVE_GROFF_HTML" != Xno; then
++   if test "X$HAVE_GROFF_HTML" = Xyes; then
+   ENABLE_GROFF_HTML_TRUE=
+   ENABLE_GROFF_HTML_FALSE='#'
+ else

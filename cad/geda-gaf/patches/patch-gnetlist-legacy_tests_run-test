@@ -1,0 +1,14 @@
+Avoid GNUism '\|' by using extended REs.
+
+Index: gnetlist-legacy/tests/run-test
+--- gnetlist-legacy/tests/run-test.orig
++++ gnetlist-legacy/tests/run-test
+@@ -2,7 +2,7 @@
+ 
+ ref="$1"
+ tmp="`echo "x$1" | sed -e 's:.*/tests/::' -e 's:\\.out$::' -e 's:^x\\./::'`"
+-stem="`echo "${tmp}" | sed -e 's:-spice-.*:@@@:' -e 's:\\(-[^-@]*\\|@@@\\)$::'`"
++stem="`echo "${tmp}" | sed -E -e 's:-spice-.*:@@@:' -e 's:(-[^-@]*|@@@)$::'`"
+ backend="`echo "${tmp}" | sed -e "s:^${stem}-::"`"
+ 
+ GNETLIST="${abs_top_builddir}/gnetlist-legacy/src/gnetlist-legacy"

@@ -1,0 +1,14 @@
+Avoid deprecation warning for g_pattern_match_string, which got a new name.
+
+Index: gschem/src/gschem_find_text_dockable.c
+--- gschem/src/gschem_find_text_dockable.c.orig
++++ gschem/src/gschem_find_text_dockable.c
+@@ -418,7 +418,7 @@ find_objects_using_pattern (GSList *pages, const char 
+         continue;
+       }
+ 
+-      if (g_pattern_match_string (pattern, str)) {
++      if (g_pattern_spec_match_string (pattern, str)) {
+         object_list = g_slist_prepend (object_list, object);
+       }
+     }

@@ -1,0 +1,19 @@
+strchrnul() is a GNU extension
+
+Index: gschem/src/x_controlfd.c
+--- gschem/src/x_controlfd.c.orig
++++ gschem/src/x_controlfd.c
+@@ -195,10 +195,11 @@ split_args (gchar ***args_return, gint *count_return, 
+   GSList *tokens = NULL;
+   size_t len = strlen (buf);
+   size_t skip = 0;
++  gchar *p;
+ 
+   do {
+-    size_t sp = strchrnul (buf + skip, ' ') - buf;
+-    size_t bs = strchrnul (buf + skip, '\\') - buf;
++    size_t sp = (p = strchr (buf + skip, ' ')) != NULL ? p - buf : len;
++    size_t bs = (p = strchr (buf + skip, '\\')) != NULL ? p - buf : len;
+ 
+     if (sp < bs) {
+       if (sp != 0)

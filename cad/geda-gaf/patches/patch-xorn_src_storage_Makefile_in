@@ -1,0 +1,14 @@
+expose symbols beginning with xornsch_
+
+Index: xorn/src/storage/Makefile.in
+--- xorn/src/storage/Makefile.in.orig
++++ xorn/src/storage/Makefile.in
+@@ -427,7 +427,7 @@ libxornstorage_la_SOURCES = \
+ 	selection.cc \
+ 	validate.cc
+ 
+-libxornstorage_la_LDFLAGS = -export-symbols-regex '^xorn_'
++libxornstorage_la_LDFLAGS = -export-symbols-regex '^xorn(sch)?_'
+ all: all-am
+ 
+ .SUFFIXES:

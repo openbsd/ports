@@ -1,0 +1,14 @@
+Avoid deprecation warning for g_pattern_match_string, which got a new name.
+
+Index: libgeda/src/s_clib.c
+--- libgeda/src/s_clib.c.orig
++++ libgeda/src/s_clib.c
+@@ -1320,7 +1320,7 @@ GList *s_clib_search (const gchar *pattern, const CLib
+ 	  }
+ 	  break;
+ 	case CLIB_GLOB:
+-	  if (g_pattern_match_string (globpattern, symbol->name)) {
++	  if (g_pattern_spec_match_string (globpattern, symbol->name)) {
+ 	    result = g_list_prepend (result, symbol);
+ 	  }
+ 	  break;

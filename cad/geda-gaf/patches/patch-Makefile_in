@@ -1,0 +1,14 @@
+None of the contrib programs get installed, so don't build them.
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -454,7 +454,7 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ @ENABLE_GATTRIB_TRUE@GATTRIB_DIR = gattrib
+ SUBDIRS = libgeda libgedacairo gaf gschem ${GATTRIB_DIR} \
+-	gsymcheck gnetlist-legacy utils symbols docs examples contrib xorn
++	gsymcheck gnetlist-legacy utils symbols docs examples xorn
+ 
+ ACLOCAL_AMFLAGS = -I m4
+ 
