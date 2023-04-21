@@ -1,7 +1,6 @@
 COMMENT =	build OpenBSD release
 
-V =		17.4.2
-REVISION =	0
+V =		17.4.4
 DISTNAME =	robsd-${V}
 
 CATEGORIES =	devel
@@ -13,11 +12,10 @@ MAINTAINER =	Anton Lindqvist <anton@openbsd.org>
 # ISC
 PERMIT_PACKAGE =	Yes
 
-COMPILER =		base-clang ports-gcc
-COMPILER_LANGS =	c
-
 # uses pledge()
 WANTLIB +=	c
+
+TEST_DEPENDS =	textproc/libxml
 
 MASTER_SITES =	https://github.com/mptre/robsd/releases/download/v${V}/
 
