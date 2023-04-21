@@ -1,9 +1,8 @@
 COMMENT =		DigiDoc4 GUI client for signing and encrypting documents
 
-V =			4.2.14
+V =			4.3.0
 DISTNAME =		qdigidoc4-${V}
 CATEGORIES =		security x11
-REVISION =		2
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
@@ -43,7 +42,7 @@ BUILD_DEPENDS =		devel/gettext,-tools \
 			x11/qt6/qttools
 
 LIB_DEPENDS =		databases/openldap,-main \
-			security/libdigidocpp>=3.14.11 \
+			security/libdigidocpp>=3.15.0 \
 			security/pcsc-lite \
 			x11/qt6/qt5compat \
 			x11/qt6/qtsvg

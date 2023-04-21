@@ -2,9 +2,9 @@ SHA256 (qdigidoc4/config-20230405.json) = udfNY+0Fw1JJdfB07H4U6P/iKc6WrXlJpzoDIX
 SHA256 (qdigidoc4/config-20230405.pub) = KeBXeM6YtRl5YyZr3Ckq+AqUBszMP+XvfKK3WxvrNOs=
 SHA256 (qdigidoc4/config-20230405.rsa) = /zXgqbBchvEe3EtTjWeW8QkU84+oZ7vXpoueU9//C58=
 SHA256 (qdigidoc4/eu-lotl-pivot-300.xml) = DSmCpZOMKFf1lEcM4XkKac7R65hkcovZZw/exM34M7I=
-SHA256 (qdigidoc4/qdigidoc4-4.2.14.tar.gz) = bhmdfQt7dxx5UnwigwzOEkiANuOA2FdjidHz51xSURQ=
+SHA256 (qdigidoc4/qdigidoc4-4.3.0.tar.gz) = xFR4pwy8nk2kjGl5GGWt/sxNIChmuf5pWgxGIbLNHhE=
 SIZE (qdigidoc4/config-20230405.json) = 74407
 SIZE (qdigidoc4/config-20230405.pub) = 426
 SIZE (qdigidoc4/config-20230405.rsa) = 349
 SIZE (qdigidoc4/eu-lotl-pivot-300.xml) = 424989
-SIZE (qdigidoc4/qdigidoc4-4.2.14.tar.gz) = 4149585
+SIZE (qdigidoc4/qdigidoc4-4.3.0.tar.gz) = 4175669
