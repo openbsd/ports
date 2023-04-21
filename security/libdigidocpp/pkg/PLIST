@@ -27,6 +27,7 @@ share/examples/digidocpp/schema/OpenDocument_dsig.xsd
 @sample ${SYSCONFDIR}/digidocpp/schema/OpenDocument_dsig.xsd
 share/examples/digidocpp/schema/OpenDocument_manifest.xsd
 @sample ${SYSCONFDIR}/digidocpp/schema/OpenDocument_manifest.xsd
+share/examples/digidocpp/schema/OpenDocument_manifest_v1_2.xsd
 share/examples/digidocpp/schema/XAdES01903v132-201601-relaxed.xsd
 @sample ${SYSCONFDIR}/digidocpp/schema/XAdES01903v132-201601-relaxed.xsd
 share/examples/digidocpp/schema/XAdES01903v132-201601.xsd
