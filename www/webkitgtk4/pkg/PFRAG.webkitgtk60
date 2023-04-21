@@ -1,3 +1,5 @@
+@conflict webkitgtk50-*
+@pkgpath www/webkitgtk50
 @bin bin/WebKitWebDriver
 include/webkitgtk-${API}/webkit/WebKitNetworkSession.h
 include/webkitgtk-${API}/webkit/WebKitWebProcessExtension.h
