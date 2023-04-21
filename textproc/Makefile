@@ -33,6 +33,7 @@
      SUBDIR += csvquote
      SUBDIR += dblatex
      SUBDIR += delta
+     SUBDIR += der-ascii
      SUBDIR += diction
      SUBDIR += diffstat
      SUBDIR += discount
