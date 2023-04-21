@@ -1,0 +1,4 @@
+@bin bin/ascii2der
+@bin bin/der2ascii
+share/doc/der-ascii/
+share/doc/der-ascii/language.txt
