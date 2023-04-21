@@ -134,6 +134,7 @@ include/evolution-data-server/libebackend/e-backend-enums.h
 include/evolution-data-server/libebackend/e-backend-enumtypes.h
 include/evolution-data-server/libebackend/e-backend-factory.h
 include/evolution-data-server/libebackend/e-backend.h
+include/evolution-data-server/libebackend/e-cache-keys.h
 include/evolution-data-server/libebackend/e-cache-reaper.h
 include/evolution-data-server/libebackend/e-cache.h
 include/evolution-data-server/libebackend/e-collection-backend-factory.h
@@ -158,6 +159,7 @@ include/evolution-data-server/libebackend/libebackend.h
 include/evolution-data-server/libebook/
 include/evolution-data-server/libebook-contacts/
 include/evolution-data-server/libebook-contacts/e-address-western.h
+include/evolution-data-server/libebook-contacts/e-book-contacts-autocleanups.h
 include/evolution-data-server/libebook-contacts/e-book-contacts-enums.h
 include/evolution-data-server/libebook-contacts/e-book-contacts-enumtypes.h
 include/evolution-data-server/libebook-contacts/e-book-contacts-utils.h
@@ -168,6 +170,7 @@ include/evolution-data-server/libebook-contacts/e-phone-number.h
 include/evolution-data-server/libebook-contacts/e-source-backend-summary-setup.h
 include/evolution-data-server/libebook-contacts/e-vcard.h
 include/evolution-data-server/libebook-contacts/libebook-contacts.h
+include/evolution-data-server/libebook/e-book-autocleanups.h
 include/evolution-data-server/libebook/e-book-client-cursor.h
 include/evolution-data-server/libebook/e-book-client-view.h
 include/evolution-data-server/libebook/e-book-client.h
@@ -513,7 +516,6 @@ share/glib-2.0/schemas/org.gnome.evolution-data-server.calendar.gschema.xml
 share/glib-2.0/schemas/org.gnome.evolution-data-server.gschema.xml
 share/glib-2.0/schemas/org.gnome.evolution.eds-shell.gschema.xml
 share/glib-2.0/schemas/org.gnome.evolution.shell.network-config.gschema.xml
-share/locale/ab/LC_MESSAGES/evolution-data-server.mo
 share/locale/am/LC_MESSAGES/evolution-data-server.mo
 share/locale/ar/LC_MESSAGES/evolution-data-server.mo
 share/locale/as/LC_MESSAGES/evolution-data-server.mo
