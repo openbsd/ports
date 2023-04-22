@@ -2,8 +2,7 @@ COMMENT =	contextual menu for X11
 
 GH_ACCOUNT =	phillbush
 GH_PROJECT =	xmenu
-GH_TAGNAME =	v4.5.5
-REVISION =	0
+GH_TAGNAME =	v4.6.1
 
 CATEGORIES =	x11
 
