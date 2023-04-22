@@ -1,4 +1,3 @@
-arm-none-eabi/
 arm-none-eabi/include/
 arm-none-eabi/include/_ansi.h
 arm-none-eabi/include/_syslist.h
@@ -106,101 +105,49 @@ arm-none-eabi/include/utmp.h
 arm-none-eabi/include/wchar.h
 arm-none-eabi/include/wctype.h
 arm-none-eabi/include/wordexp.h
-arm-none-eabi/lib/
 arm-none-eabi/lib/aprofile-validation.specs
 arm-none-eabi/lib/aprofile-ve.specs
+arm-none-eabi/lib/arm/
+arm-none-eabi/lib/arm/autofp/
+arm-none-eabi/lib/arm/autofp/v5te/
+arm-none-eabi/lib/arm/autofp/v5te/fpu/
+arm-none-eabi/lib/arm/autofp/v5te/fpu/aprofile-validation.specs
+arm-none-eabi/lib/arm/autofp/v5te/fpu/aprofile-ve.specs
+arm-none-eabi/lib/arm/autofp/v5te/fpu/cpu-init/
+arm-none-eabi/lib/arm/autofp/v5te/fpu/cpu-init/rdimon-aem.o
+arm-none-eabi/lib/arm/autofp/v5te/fpu/crt0.o
+arm-none-eabi/lib/arm/autofp/v5te/fpu/iq80310.specs
+@static-lib arm-none-eabi/lib/arm/autofp/v5te/fpu/libc.a
+@static-lib arm-none-eabi/lib/arm/autofp/v5te/fpu/libg.a
+@static-lib arm-none-eabi/lib/arm/autofp/v5te/fpu/libgloss-linux.a
+@static-lib arm-none-eabi/lib/arm/autofp/v5te/fpu/libm.a
+@static-lib arm-none-eabi/lib/arm/autofp/v5te/fpu/libnosys.a
+@static-lib arm-none-eabi/lib/arm/autofp/v5te/fpu/librdimon.a
+@static-lib arm-none-eabi/lib/arm/autofp/v5te/fpu/librdpmon.a
+arm-none-eabi/lib/arm/autofp/v5te/fpu/linux-crt0.o
+arm-none-eabi/lib/arm/autofp/v5te/fpu/linux.specs
+arm-none-eabi/lib/arm/autofp/v5te/fpu/nano.specs
+arm-none-eabi/lib/arm/autofp/v5te/fpu/nosys.specs
+arm-none-eabi/lib/arm/autofp/v5te/fpu/pid.specs
+arm-none-eabi/lib/arm/autofp/v5te/fpu/rdimon-crt0.o
+arm-none-eabi/lib/arm/autofp/v5te/fpu/rdimon.specs
+arm-none-eabi/lib/arm/autofp/v5te/fpu/rdpmon-crt0.o
+arm-none-eabi/lib/arm/autofp/v5te/fpu/rdpmon.specs
+arm-none-eabi/lib/arm/autofp/v5te/fpu/redboot-crt0.o
+arm-none-eabi/lib/arm/autofp/v5te/fpu/redboot-syscalls.o
+arm-none-eabi/lib/arm/autofp/v5te/fpu/redboot.ld
+arm-none-eabi/lib/arm/autofp/v5te/fpu/redboot.specs
 arm-none-eabi/lib/cpu-init/
 arm-none-eabi/lib/cpu-init/rdimon-aem.o
 arm-none-eabi/lib/crt0.o
-arm-none-eabi/lib/fpu/
-arm-none-eabi/lib/fpu/aprofile-validation.specs
-arm-none-eabi/lib/fpu/aprofile-ve.specs
-arm-none-eabi/lib/fpu/cpu-init/
-arm-none-eabi/lib/fpu/cpu-init/rdimon-aem.o
-arm-none-eabi/lib/fpu/crt0.o
-arm-none-eabi/lib/fpu/interwork/
-arm-none-eabi/lib/fpu/interwork/aprofile-validation.specs
-arm-none-eabi/lib/fpu/interwork/aprofile-ve.specs
-arm-none-eabi/lib/fpu/interwork/cpu-init/
-arm-none-eabi/lib/fpu/interwork/cpu-init/rdimon-aem.o
-arm-none-eabi/lib/fpu/interwork/crt0.o
-arm-none-eabi/lib/fpu/interwork/iq80310.specs
-arm-none-eabi/lib/fpu/interwork/libc.a
-arm-none-eabi/lib/fpu/interwork/libg.a
-arm-none-eabi/lib/fpu/interwork/libgloss-linux.a
-arm-none-eabi/lib/fpu/interwork/libm.a
-arm-none-eabi/lib/fpu/interwork/libnosys.a
-arm-none-eabi/lib/fpu/interwork/librdimon.a
-arm-none-eabi/lib/fpu/interwork/librdpmon.a
-arm-none-eabi/lib/fpu/interwork/linux-crt0.o
-arm-none-eabi/lib/fpu/interwork/linux.specs
-arm-none-eabi/lib/fpu/interwork/nano.specs
-arm-none-eabi/lib/fpu/interwork/nosys.specs
-arm-none-eabi/lib/fpu/interwork/pid.specs
-arm-none-eabi/lib/fpu/interwork/rdimon-crt0.o
-arm-none-eabi/lib/fpu/interwork/rdimon.specs
-arm-none-eabi/lib/fpu/interwork/rdpmon-crt0.o
-arm-none-eabi/lib/fpu/interwork/rdpmon.specs
-arm-none-eabi/lib/fpu/interwork/redboot-crt0.o
-arm-none-eabi/lib/fpu/interwork/redboot-syscalls.o
-arm-none-eabi/lib/fpu/interwork/redboot.ld
-arm-none-eabi/lib/fpu/interwork/redboot.specs
-arm-none-eabi/lib/fpu/iq80310.specs
-arm-none-eabi/lib/fpu/libc.a
-arm-none-eabi/lib/fpu/libg.a
-arm-none-eabi/lib/fpu/libgloss-linux.a
-arm-none-eabi/lib/fpu/libm.a
-arm-none-eabi/lib/fpu/libnosys.a
-arm-none-eabi/lib/fpu/librdimon.a
-arm-none-eabi/lib/fpu/librdpmon.a
-arm-none-eabi/lib/fpu/linux-crt0.o
-arm-none-eabi/lib/fpu/linux.specs
-arm-none-eabi/lib/fpu/nano.specs
-arm-none-eabi/lib/fpu/nosys.specs
-arm-none-eabi/lib/fpu/pid.specs
-arm-none-eabi/lib/fpu/rdimon-crt0.o
-arm-none-eabi/lib/fpu/rdimon.specs
-arm-none-eabi/lib/fpu/rdpmon-crt0.o
-arm-none-eabi/lib/fpu/rdpmon.specs
-arm-none-eabi/lib/fpu/redboot-crt0.o
-arm-none-eabi/lib/fpu/redboot-syscalls.o
-arm-none-eabi/lib/fpu/redboot.ld
-arm-none-eabi/lib/fpu/redboot.specs
-arm-none-eabi/lib/interwork/
-arm-none-eabi/lib/interwork/aprofile-validation.specs
-arm-none-eabi/lib/interwork/aprofile-ve.specs
-arm-none-eabi/lib/interwork/cpu-init/
-arm-none-eabi/lib/interwork/cpu-init/rdimon-aem.o
-arm-none-eabi/lib/interwork/crt0.o
-arm-none-eabi/lib/interwork/iq80310.specs
-arm-none-eabi/lib/interwork/libc.a
-arm-none-eabi/lib/interwork/libg.a
-arm-none-eabi/lib/interwork/libgloss-linux.a
-arm-none-eabi/lib/interwork/libm.a
-arm-none-eabi/lib/interwork/libnosys.a
-arm-none-eabi/lib/interwork/librdimon.a
-arm-none-eabi/lib/interwork/librdpmon.a
-arm-none-eabi/lib/interwork/linux-crt0.o
-arm-none-eabi/lib/interwork/linux.specs
-arm-none-eabi/lib/interwork/nano.specs
-arm-none-eabi/lib/interwork/nosys.specs
-arm-none-eabi/lib/interwork/pid.specs
-arm-none-eabi/lib/interwork/rdimon-crt0.o
-arm-none-eabi/lib/interwork/rdimon.specs
-arm-none-eabi/lib/interwork/rdpmon-crt0.o
-arm-none-eabi/lib/interwork/rdpmon.specs
-arm-none-eabi/lib/interwork/redboot-crt0.o
-arm-none-eabi/lib/interwork/redboot-syscalls.o
-arm-none-eabi/lib/interwork/redboot.ld
-arm-none-eabi/lib/interwork/redboot.specs
 arm-none-eabi/lib/iq80310.specs
-arm-none-eabi/lib/libc.a
-arm-none-eabi/lib/libg.a
-arm-none-eabi/lib/libgloss-linux.a
-arm-none-eabi/lib/libm.a
-arm-none-eabi/lib/libnosys.a
-arm-none-eabi/lib/librdimon.a
-arm-none-eabi/lib/librdpmon.a
+@static-lib arm-none-eabi/lib/libc.a
+@static-lib arm-none-eabi/lib/libg.a
+@static-lib arm-none-eabi/lib/libgloss-linux.a
+@static-lib arm-none-eabi/lib/libm.a
+@static-lib arm-none-eabi/lib/libnosys.a
+@static-lib arm-none-eabi/lib/librdimon.a
+@static-lib arm-none-eabi/lib/librdpmon.a
 arm-none-eabi/lib/linux-crt0.o
 arm-none-eabi/lib/linux.specs
 arm-none-eabi/lib/nano.specs
@@ -217,44 +164,46 @@ arm-none-eabi/lib/redboot.specs
 arm-none-eabi/lib/thumb/
 arm-none-eabi/lib/thumb/aprofile-validation.specs
 arm-none-eabi/lib/thumb/aprofile-ve.specs
+arm-none-eabi/lib/thumb/autofp/
+arm-none-eabi/lib/thumb/autofp/v7/
+arm-none-eabi/lib/thumb/autofp/v7/fpu/
+arm-none-eabi/lib/thumb/autofp/v7/fpu/aprofile-validation.specs
+arm-none-eabi/lib/thumb/autofp/v7/fpu/aprofile-ve.specs
+arm-none-eabi/lib/thumb/autofp/v7/fpu/cpu-init/
+arm-none-eabi/lib/thumb/autofp/v7/fpu/cpu-init/rdimon-aem.o
+arm-none-eabi/lib/thumb/autofp/v7/fpu/crt0.o
+arm-none-eabi/lib/thumb/autofp/v7/fpu/iq80310.specs
+@static-lib arm-none-eabi/lib/thumb/autofp/v7/fpu/libc.a
+@static-lib arm-none-eabi/lib/thumb/autofp/v7/fpu/libg.a
+@static-lib arm-none-eabi/lib/thumb/autofp/v7/fpu/libgloss-linux.a
+@static-lib arm-none-eabi/lib/thumb/autofp/v7/fpu/libm.a
+@static-lib arm-none-eabi/lib/thumb/autofp/v7/fpu/libnosys.a
+@static-lib arm-none-eabi/lib/thumb/autofp/v7/fpu/librdimon.a
+@static-lib arm-none-eabi/lib/thumb/autofp/v7/fpu/librdpmon.a
+arm-none-eabi/lib/thumb/autofp/v7/fpu/linux-crt0.o
+arm-none-eabi/lib/thumb/autofp/v7/fpu/linux.specs
+arm-none-eabi/lib/thumb/autofp/v7/fpu/nano.specs
+arm-none-eabi/lib/thumb/autofp/v7/fpu/nosys.specs
+arm-none-eabi/lib/thumb/autofp/v7/fpu/pid.specs
+arm-none-eabi/lib/thumb/autofp/v7/fpu/rdimon-crt0.o
+arm-none-eabi/lib/thumb/autofp/v7/fpu/rdimon.specs
+arm-none-eabi/lib/thumb/autofp/v7/fpu/rdpmon-crt0.o
+arm-none-eabi/lib/thumb/autofp/v7/fpu/rdpmon.specs
+arm-none-eabi/lib/thumb/autofp/v7/fpu/redboot-crt0.o
+arm-none-eabi/lib/thumb/autofp/v7/fpu/redboot-syscalls.o
+arm-none-eabi/lib/thumb/autofp/v7/fpu/redboot.ld
+arm-none-eabi/lib/thumb/autofp/v7/fpu/redboot.specs
 arm-none-eabi/lib/thumb/cpu-init/
 arm-none-eabi/lib/thumb/cpu-init/rdimon-aem.o
 arm-none-eabi/lib/thumb/crt0.o
-arm-none-eabi/lib/thumb/interwork/
-arm-none-eabi/lib/thumb/interwork/aprofile-validation.specs
-arm-none-eabi/lib/thumb/interwork/aprofile-ve.specs
-arm-none-eabi/lib/thumb/interwork/cpu-init/
-arm-none-eabi/lib/thumb/interwork/cpu-init/rdimon-aem.o
-arm-none-eabi/lib/thumb/interwork/crt0.o
-arm-none-eabi/lib/thumb/interwork/iq80310.specs
-arm-none-eabi/lib/thumb/interwork/libc.a
-arm-none-eabi/lib/thumb/interwork/libg.a
-arm-none-eabi/lib/thumb/interwork/libgloss-linux.a
-arm-none-eabi/lib/thumb/interwork/libm.a
-arm-none-eabi/lib/thumb/interwork/libnosys.a
-arm-none-eabi/lib/thumb/interwork/librdimon.a
-arm-none-eabi/lib/thumb/interwork/librdpmon.a
-arm-none-eabi/lib/thumb/interwork/linux-crt0.o
-arm-none-eabi/lib/thumb/interwork/linux.specs
-arm-none-eabi/lib/thumb/interwork/nano.specs
-arm-none-eabi/lib/thumb/interwork/nosys.specs
-arm-none-eabi/lib/thumb/interwork/pid.specs
-arm-none-eabi/lib/thumb/interwork/rdimon-crt0.o
-arm-none-eabi/lib/thumb/interwork/rdimon.specs
-arm-none-eabi/lib/thumb/interwork/rdpmon-crt0.o
-arm-none-eabi/lib/thumb/interwork/rdpmon.specs
-arm-none-eabi/lib/thumb/interwork/redboot-crt0.o
-arm-none-eabi/lib/thumb/interwork/redboot-syscalls.o
-arm-none-eabi/lib/thumb/interwork/redboot.ld
-arm-none-eabi/lib/thumb/interwork/redboot.specs
 arm-none-eabi/lib/thumb/iq80310.specs
-arm-none-eabi/lib/thumb/libc.a
-arm-none-eabi/lib/thumb/libg.a
-arm-none-eabi/lib/thumb/libgloss-linux.a
-arm-none-eabi/lib/thumb/libm.a
-arm-none-eabi/lib/thumb/libnosys.a
-arm-none-eabi/lib/thumb/librdimon.a
-arm-none-eabi/lib/thumb/librdpmon.a
+@static-lib arm-none-eabi/lib/thumb/libc.a
+@static-lib arm-none-eabi/lib/thumb/libg.a
+@static-lib arm-none-eabi/lib/thumb/libgloss-linux.a
+@static-lib arm-none-eabi/lib/thumb/libm.a
+@static-lib arm-none-eabi/lib/thumb/libnosys.a
+@static-lib arm-none-eabi/lib/thumb/librdimon.a
+@static-lib arm-none-eabi/lib/thumb/librdpmon.a
 arm-none-eabi/lib/thumb/linux-crt0.o
 arm-none-eabi/lib/thumb/linux.specs
 arm-none-eabi/lib/thumb/nano.specs

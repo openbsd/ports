@@ -3,7 +3,7 @@ COMMENT=	newlib for arm-none-eabi cross-development
 DISTNAME=	newlib-2.2.0-1
 VERSION=	2.2.0.1
 PKGNAME=	${CONFIG}-newlib-${VERSION}
-REVISION=	1
+REVISION=	2
 
 MAKE_ENV+=	${CONFIGURE_ENV}
 
@@ -14,9 +14,9 @@ MASTER_SITES=	ftp://sourceware.org/pub/newlib/
 
 EXTRACT_SUFX=	.tar.gz
 
-BUILD_DEPENDS=	devel/arm-none-eabi/binutils \
+BUILD_DEPENDS=	devel/arm-none-eabi/binutils,arm \
 		${RUN_DEPENDS}
-RUN_DEPENDS=	devel/arm-none-eabi/gcc-linaro
+RUN_DEPENDS=	devel/arm-none-eabi/gcc,arm
 
 # cope with user settings in /etc/mk.conf
 MAKE_FLAGS=	CFLAGS="-I${LOCALBASE}/include"
