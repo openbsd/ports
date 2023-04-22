@@ -2,7 +2,6 @@ bin/duplicity
 bin/rdiffdir
 lib/python${MODPY_VERSION}/site-packages/duplicity/
 lib/python${MODPY_VERSION}/site-packages/duplicity-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/duplicity-${MODPY_EGG_VERSION}.dist-info/AUTHORS
 lib/python${MODPY_VERSION}/site-packages/duplicity-${MODPY_EGG_VERSION}.dist-info/COPYING
 lib/python${MODPY_VERSION}/site-packages/duplicity-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/duplicity-${MODPY_EGG_VERSION}.dist-info/RECORD
@@ -44,6 +43,8 @@ lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}globmatch.${M
 lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}globmatch.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}gpg.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}gpg.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}gpg_error_codes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}gpg_error_codes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}gpginterface.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}gpginterface.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}lazy.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -150,6 +151,8 @@ lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}s3_b
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}s3_boto3_backend.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}s3_boto_backend.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}s3_boto_backend.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}slatebackend.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}slatebackend.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}ssh_paramiko_backend.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}ssh_paramiko_backend.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}ssh_pexpect_backend.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -204,6 +207,7 @@ lib/python${MODPY_VERSION}/site-packages/duplicity/backends/rclonebackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/rsyncbackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/s3_boto3_backend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/s3_boto_backend.py
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/slatebackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/ssh_paramiko_backend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/ssh_pexpect_backend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/swiftbackend.py
@@ -224,6 +228,7 @@ lib/python${MODPY_VERSION}/site-packages/duplicity/file_naming.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/filechunkio.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/globmatch.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/gpg.py
+lib/python${MODPY_VERSION}/site-packages/duplicity/gpg_error_codes.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/gpginterface.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/lazy.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/librsync.py

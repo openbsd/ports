@@ -14,7 +14,7 @@ Only minimal dependencies are enforced, other backends require
 additional dependencies (some are available in packages, some not).
 For S3, "pkg_add py3-boto3" and use the URL boto3+s3://bucket/subdir.
 
-Other options are:
+Some other options are:
 # azure
 # b2sdk
 # dropbox==6.9.0

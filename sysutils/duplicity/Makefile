@@ -1,7 +1,6 @@
 COMMENT =		encrypted backup using rsync algorithm
 
-MODPY_EGG_VERSION =	0.8.21
-REVISION =		2
+MODPY_EGG_VERSION =	1.0.0
 DISTNAME =		duplicity-${MODPY_EGG_VERSION}
 
 CATEGORIES =		sysutils
@@ -11,7 +10,7 @@ HOMEPAGE =		https://www.nongnu.org/duplicity/
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += pthread rsync
+WANTLIB += rsync
 
 MASTER_SITES =		${MASTER_SITE_SAVANNAH:=duplicity/}
 
