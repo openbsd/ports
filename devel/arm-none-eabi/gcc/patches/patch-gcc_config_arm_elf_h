@@ -1,0 +1,12 @@
+Index: gcc/config/arm/elf.h
+--- gcc/config/arm/elf.h.orig
++++ gcc/config/arm/elf.h
+@@ -50,7 +50,7 @@
+ 
+ #ifndef SUBTARGET_ASM_FLOAT_SPEC
+ #define SUBTARGET_ASM_FLOAT_SPEC "\
+-%{mapcs-float:-mfloat}"
++%{mapcs-float:-mfloat} %{!mhard-float:-mfpu=softfpa} %{mhard-float:-mfpu=fpa}"
+ #endif
+ 
+ #undef SUBSUBTARGET_EXTRA_SPECS

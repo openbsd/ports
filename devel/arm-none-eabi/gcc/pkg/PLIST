@@ -1,0 +1,37 @@
+%%aarch64%%
+%%arm%%
+@bin bin/${CONFIG}-c++
+@bin bin/${CONFIG}-cpp
+@bin bin/${CONFIG}-g++
+@bin bin/${CONFIG}-gcc
+@bin bin/${CONFIG}-gcc-${VERSION}
+@bin bin/${CONFIG}-gcc-ar
+@bin bin/${CONFIG}-gcc-nm
+@bin bin/${CONFIG}-gcc-ranlib
+@bin bin/${CONFIG}-gcov
+@bin bin/${CONFIG}-gcov-dump
+@bin bin/${CONFIG}-gcov-tool
+libexec/gcc/
+libexec/gcc/${CONFIG}/
+libexec/gcc/${CONFIG}/${VERSION}/
+@bin libexec/gcc/${CONFIG}/${VERSION}/cc1
+@bin libexec/gcc/${CONFIG}/${VERSION}/cc1plus
+@bin libexec/gcc/${CONFIG}/${VERSION}/collect2
+@bin libexec/gcc/${CONFIG}/${VERSION}/g++-mapper-server
+libexec/gcc/${CONFIG}/${VERSION}/install-tools/
+libexec/gcc/${CONFIG}/${VERSION}/install-tools/fixinc.sh
+@bin libexec/gcc/${CONFIG}/${VERSION}/install-tools/fixincl
+libexec/gcc/${CONFIG}/${VERSION}/install-tools/mkheaders
+libexec/gcc/${CONFIG}/${VERSION}/install-tools/mkinstalldirs
+@bin libexec/gcc/${CONFIG}/${VERSION}/lto-wrapper
+libexec/gcc/${CONFIG}/${VERSION}/plugin/
+@bin libexec/gcc/${CONFIG}/${VERSION}/plugin/gengtype
+@man man/man1/${CONFIG}-cpp.1
+@man man/man1/${CONFIG}-g++.1
+@man man/man1/${CONFIG}-gcc.1
+@man man/man1/${CONFIG}-gcov-dump.1
+@man man/man1/${CONFIG}-gcov-tool.1
+@man man/man1/${CONFIG}-gcov.1
+@comment @man man/man7/fsf-funding.7
+@comment @man man/man7/gfdl.7
+@comment @man man/man7/gpl.7
