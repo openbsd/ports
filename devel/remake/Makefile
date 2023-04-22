@@ -1,8 +1,8 @@
 COMMENT=		GNU make debugger
 
-PKGNAME=		remake-1.5
-DISTNAME=		remake-4.3+dbg-1.5
-REVISION=		0
+V=			1.6
+PKGNAME=		remake-${V}
+DISTNAME=		remake-4.3+dbg-${V}
 
 CATEGORIES=		devel
 
