@@ -1,7 +1,7 @@
 COMMENT =	2D RTS space combat game
-DISTNAME =	spacezero-0.86.00
+
+DISTNAME =	spacezero-0.86.01
 CATEGORIES =	games x11
-REVISION =	2
 
 HOMEPAGE =	http://spacezero.sourceforge.net/
 
@@ -12,7 +12,7 @@ WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender alut atk-1.0 c cairo fontconfig freetype
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += gtk-x11-2.0 harfbuzz intl m openal pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pthread vorbisfile z
+WANTLIB += pangoft2-1.0 pthread vorbisfile
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=spacezero/}
 

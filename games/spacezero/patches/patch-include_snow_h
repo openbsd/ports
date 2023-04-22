@@ -3,7 +3,7 @@ Fix for -fno-common
 Index: include/snow.h
 --- include/snow.h.orig
 +++ include/snow.h
-@@ -29,13 +29,6 @@
+@@ -32,13 +32,6 @@
  #include "objects.h"
  
  
