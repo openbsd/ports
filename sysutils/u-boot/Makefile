@@ -8,7 +8,7 @@ FLAVOR?=	arm
 
 COMMENT=	U-Boot firmware
 VERSION=	2021.10
-REVISION=	5
+REVISION=	6
 DISTNAME=	u-boot-${VERSION}
 PKGNAME=	u-boot-${FLAVOR}-${VERSION:S/-//}
 FULLPKGNAME=	${PKGNAME}
@@ -39,7 +39,7 @@ MAKE_ENV=	KBUILD_VERBOSE=1 \
 		PYTHON="${MODPY_BIN}"
 
 .if "${FLAVOR}" == "aarch64"
-BUILD_DEPENDS+=	devel/arm-none-eabi/gcc-linaro,aarch64 \
+BUILD_DEPENDS+=	devel/arm-none-eabi/gcc,aarch64 \
 		devel/py-elftools${MODPY_FLAVOR} \
 		sysutils/arm-trusted-firmware>=2.2p0v0
 MAKE_ENV+=	CROSS_COMPILE="aarch64-none-elf-"
@@ -48,7 +48,7 @@ RK3399_BL31=	"${LOCALBASE}/share/arm-trusted-firmware/rk3399-bl31.elf"
 SUNXI_BL31=	"${LOCALBASE}/share/arm-trusted-firmware/sun50i_a64-bl31.bin"
 SUNXI_H6_BL31=	"${LOCALBASE}/share/arm-trusted-firmware/sun50i_h6-bl31.bin"
 .elif "${FLAVOR}" == "arm"
-BUILD_DEPENDS+=	devel/arm-none-eabi/gcc-linaro>=7.4.2019.02
+BUILD_DEPENDS+=	devel/arm-none-eabi/gcc,arm
 MAKE_ENV+=	CROSS_COMPILE="arm-none-eabi-"
 .elif "${FLAVOR}" == "riscv64"
 BUILD_DEPENDS+= devel/riscv-elf/gcc \

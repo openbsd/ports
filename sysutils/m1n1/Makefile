@@ -5,7 +5,7 @@ COMMENT=	Bootloader for Apple Silicon
 GH_ACCOUNT=	AsahiLinux
 GH_PROJECT=	m1n1
 GH_TAGNAME=	v1.1.6
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	sysutils
 HOMEPAGE=	https://github.com/AsahiLinux/m1n1
@@ -15,7 +15,7 @@ MAINTAINER=	Tobias Heider <tobhe@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 BUILD_DEPENDS+=	archivers/zopfli \
-		devel/arm-none-eabi/gcc-linaro,aarch64 \
+		devel/arm-none-eabi/gcc,aarch64 \
 		graphics/ImageMagick
 
 MAKE_ENV+=	CROSS_COMPILE="aarch64-none-elf-" \

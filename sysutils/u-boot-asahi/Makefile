@@ -6,6 +6,7 @@ VERSION=	2023.04
 GH_ACCOUNT=	AsahiLinux
 GH_PROJECT=	u-boot
 GH_TAGNAME=	openbsd-v${VERSION}
+REVISION=	0
 
 PKGNAME=	u-boot-asahi-${VERSION:S/-/./g}
 
@@ -17,7 +18,7 @@ PERMIT_PACKAGE=	Yes
 
 BUILD_DEPENDS=	devel/bison \
 		devel/dtc \
-		devel/arm-none-eabi/gcc-linaro,aarch64
+		devel/arm-none-eabi/gcc,aarch64
 
 MAKE_ENV+=	KBUILD_VERBOSE=1 \
 		CROSS_COMPILE="aarch64-none-elf-"
