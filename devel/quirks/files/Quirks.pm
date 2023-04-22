@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1518 2023/04/01 14:50:37 thfr Exp $
+# $OpenBSD: Quirks.pm,v 1.1519 2023/04/22 16:33:54 patrick Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -775,6 +775,9 @@ my $stem_extensions = {
 	'py3-wxPython-webkit' => 'py3-wxPython-webview',
 	'wxWidgets-webkit' => 'wxWidgets-webview',
 	'ring' => 'rust-ring',
+# 7.4
+	'aarch64-none-elf-gcc-linaro' => 'aarch64-none-elf-gcc',
+	'arm-none-eabi-gcc-linaro' => 'arm-none-eabi-gcc',
 };
 
 my $obsolete_reason = {};
