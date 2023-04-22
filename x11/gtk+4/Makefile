@@ -9,7 +9,7 @@ COMMENT-guic=		gtk+ icon theme caching utility
 COMMENT-media=		gtk+ media engine
 
 GNOME_PROJECT=		gtk
-GNOME_VERSION=		4.10.1
+GNOME_VERSION=		4.10.2
 
 PKGNAME-main=		gtk+4-${GNOME_VERSION}
 PKGNAME-cups=		gtk+4-cups-${GNOME_VERSION}
@@ -88,8 +88,8 @@ WANTLIB-guic += c gdk_pixbuf-2.0 glib-2.0 intl
 LIB_DEPENDS-media=	multimedia/gstreamer1/plugins-bad \
 			${BASE_PKGPATH},-main=${GNOME_VERSION}
 
-WANTLIB-media += gio-2.0 glib-2.0 gobject-2.0 gstgl-1.0 gstbase-1.0
-WANTLIB-media += gstplayer-1.0 gstreamer-1.0 gstvideo-1.0 gtk-4 m
+WANTLIB-media += gio-2.0 glib-2.0 gobject-2.0 gstgl-1.0 gstplayer-1.0
+WANTLIB-media += gstreamer-1.0 gstvideo-1.0 gtk-4 m
 
 TEST_IS_INTERACTIVE=	x11
 
