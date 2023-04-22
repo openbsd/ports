@@ -1,3 +1,5 @@
+PORTROACH =		skipv:1.71
+
 COMMENT =	interface to the uulib library
 
 DISTNAME =	Convert-UUlib-1.8
