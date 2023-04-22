@@ -9,4 +9,4 @@ Index: third_party/blink/renderer/modules/webgl/webgl_webcodecs_video_frame.cc
 +    BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
    // TODO(jie.a.chen@intel.com): Add Linux support.
    return false;
- #elif BUILDFLAG(IS_MAC)
+ #elif BUILDFLAG(IS_APPLE)

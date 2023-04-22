@@ -1,7 +1,7 @@
 Index: content/public/common/content_switches.cc
 --- content/public/common/content_switches.cc.orig
 +++ content/public/common/content_switches.cc
-@@ -359,6 +359,10 @@ const char kEnableGpuMemoryBufferVideoFrames[] =
+@@ -368,6 +368,10 @@ const char kEnableIsolatedWebAppsInRenderer[] =
  // builds.
  const char kEnableLogging[]                 = "enable-logging";
  

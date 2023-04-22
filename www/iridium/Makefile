@@ -10,8 +10,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Iridium browser
 
-V=			2023.03.111
-REVISION=		2
+V=			2023.04.112
 
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
@@ -120,7 +119,6 @@ GN_ARGS=	enable_nacl=false \
 		is_debug=false \
 		is_cfi=false \
 		optimize_webui=true \
-		enable_js_type_check=false \
 		enable_remoting=false \
 		enable_hangout_services_extension=true \
 		use_bundled_fontconfig=false \
@@ -219,8 +217,6 @@ pre-configure:
 # 2. bootstrap gn, the tool to generate ninja files
 # 3. run gn with the appropriate configuration arguments
 do-configure:
-	# Regenerate build and perlasm files (force json to not overwrite our local gn patches)
-	@cd ${WRKSRC}/third_party/boringssl && ${MODPY_BIN} src/util/generate_build_files.py json
 	@cd ${WRKSRC} && env -i ${MAKE_ENV} build/linux/unbundle/replace_gn_files.py \
 		--system-libraries ${GN_SYSTEM_LIBS}
 	@cd ${WRKSRC}/tools/gn && env -i ${MAKE_ENV} LDFLAGS=-L${LOCALBASE}/lib ${MODPY_BIN} bootstrap/bootstrap.py \

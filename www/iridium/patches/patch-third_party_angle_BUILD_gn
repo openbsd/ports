@@ -9,7 +9,7 @@ Index: third_party/angle/BUILD.gn
        "-Wsuggest-destructor-override",
        "-Wsuggest-override",
  
-@@ -464,7 +463,7 @@ template("angle_common_lib") {
+@@ -451,7 +450,7 @@ template("angle_common_lib") {
        all_dependent_configs = [ ":angle_disable_pool_alloc" ]
      }
  
@@ -18,7 +18,7 @@ Index: third_party/angle/BUILD.gn
        libs = [ "dl" ]
      }
  
-@@ -619,6 +618,9 @@ angle_static_library("angle_gpu_info_util") {
+@@ -606,6 +605,9 @@ angle_static_library("angle_gpu_info_util") {
          "Xi",
          "Xext",
        ]

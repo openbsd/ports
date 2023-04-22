@@ -1,8 +1,8 @@
 Index: services/device/public/mojom/BUILD.gn
 --- services/device/public/mojom/BUILD.gn.orig
 +++ services/device/public/mojom/BUILD.gn
-@@ -89,7 +89,7 @@ mojom("device_service") {
-   disable_variants = true
+@@ -90,7 +90,7 @@ mojom("device_service") {
+   cpp_only = true
  
    enabled_features = []
 -  if ((is_linux || is_chromeos) && use_udev) {

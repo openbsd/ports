@@ -6,18 +6,18 @@ Index: third_party/fontconfig/include/config.h
  
  /* Additional font directories */
 -#define FC_ADD_FONTS "yes"
-+#define FC_ADD_FONTS "/usr/local/share/fonts"     
++#define FC_ADD_FONTS "/usr/local/share/fonts"
  
  /* Architecture prefix to use for cache file names */
  /* #undef FC_ARCHITECTURE */
  
  /* System font directory */
--#define FC_DEFAULT_FONTS "/usr/share/fonts"
-+#define FC_DEFAULT_FONTS "/usr/X11R6/lib/X11/fonts"
+-#define FC_DEFAULT_FONTS "<dir>/usr/share/fonts</dir>"
++#define FC_DEFAULT_FONTS "<dir>/usr/X11R6/lib/X11/fonts</dir>"
  
  /* The type of len parameter of the gperf hash/lookup function */
  #define FC_GPERF_SIZE_T size_t
-@@ -100,7 +100,7 @@
+@@ -99,7 +99,7 @@
  #define HAVE_GETPAGESIZE 1
  
  /* Define to 1 if you have the `getprogname' function. */
@@ -26,7 +26,7 @@ Index: third_party/fontconfig/include/config.h
  
  /* Define if the GNU gettext() function is already present or preinstalled. */
  #define HAVE_GETTEXT 1
-@@ -142,7 +142,7 @@
+@@ -141,7 +141,7 @@
  /* #undef HAVE_NDIR_H */
  
  /* Define to 1 if you have the 'posix_fadvise' function. */
@@ -35,7 +35,7 @@ Index: third_party/fontconfig/include/config.h
  
  /* Have POSIX threads */
  #define HAVE_PTHREAD 1
-@@ -157,11 +157,14 @@
+@@ -156,11 +156,14 @@
  #define HAVE_RANDOM 1
  
  /* Define to 1 if you have the `random_r' function. */
@@ -51,7 +51,7 @@ Index: third_party/fontconfig/include/config.h
  /* Define to 1 if you have the `readlink' function. */
  #define HAVE_READLINK 1
  
-@@ -199,7 +202,7 @@
+@@ -204,7 +207,7 @@
  #define HAVE_STRUCT_STATFS_F_FLAGS 1
  
  /* Define to 1 if `f_fstypename' is a member of `struct statfs'. */
@@ -60,7 +60,7 @@ Index: third_party/fontconfig/include/config.h
  
  /* Define to 1 if `f_basetype' is a member of `struct statvfs'. */
  /* #undef HAVE_STRUCT_STATVFS_F_BASETYPE */
-@@ -225,7 +228,7 @@
+@@ -230,7 +233,7 @@
  #define HAVE_SYS_PARAM_H 1
  
  /* Define to 1 if you have the <sys/statfs.h> header file. */
@@ -69,7 +69,7 @@ Index: third_party/fontconfig/include/config.h
  
  /* Define to 1 if you have the <sys/statvfs.h> header file. */
  #define HAVE_SYS_STATVFS_H 1
-@@ -237,7 +240,7 @@
+@@ -242,7 +245,7 @@
  #define HAVE_SYS_TYPES_H 1
  
  /* Define to 1 if you have the <sys/vfs.h> header file. */
@@ -78,7 +78,7 @@ Index: third_party/fontconfig/include/config.h
  
  /* Define to 1 if you have the <unistd.h> header file. */
  #define HAVE_UNISTD_H 1
-@@ -257,7 +260,8 @@
+@@ -265,7 +268,8 @@
  /* Define to 1 if you have the `_mktemp_s' function. */
  /* #undef HAVE__MKTEMP_S */
  
