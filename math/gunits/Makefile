@@ -1,22 +1,29 @@
 COMMENT=		GNU units conversion program
 
-DISTNAME=		units-2.16
+DISTNAME=		units-2.22
 PKGNAME=		g${DISTNAME}
 CATEGORIES=		math
 MASTER_SITES=		${MASTER_SITE_GNU:=units/}
-REVISION=		4
 
 HOMEPAGE=		https://www.gnu.org/software/units/
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c curses m readline
+WANTLIB += c m readline
 
-MODULES =		lang/python
-RUN_DEPENDS =		www/py-requests${MODPY_FLAVOR}
+MODULES=		lang/python
+
+# needed for 'make test'
+MODPY_ADJ_FILES =	units_cur
+
+RUN_DEPENDS=		www/py-requests${MODPY_FLAVOR}
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--program-prefix=g
+CONFIGURE_ARGS=		--program-prefix=g \
+			--sharedstatedir=${PREFIX}/share
+
+# needs network connection
+TEST_IS_INTERACTIVE=	Yes
 
 .include <bsd.port.mk>
