@@ -4,24 +4,3 @@ libexec/cabal/
 share/${PKGNAME}/
 share/${PKGNAME}/AlexTemplate.hs
 share/${PKGNAME}/AlexWrappers.hs
-share/doc/${MODCABAL_STEM}/
-@comment share/doc/${PKGNAME}/
-@comment share/doc/${PKGNAME}/LICENSE
-share/doc/${MODCABAL_STEM}/about.html
-share/doc/${MODCABAL_STEM}/${MODCABAL_STEM}-files.html
-share/doc/${MODCABAL_STEM}/api.html
-share/doc/${MODCABAL_STEM}/basic-api.html
-share/doc/${MODCABAL_STEM}/bug-reports.html
-share/doc/${MODCABAL_STEM}/charsets.html
-share/doc/${MODCABAL_STEM}/fptools.css
-share/doc/${MODCABAL_STEM}/index.html
-share/doc/${MODCABAL_STEM}/introduction.html
-share/doc/${MODCABAL_STEM}/invoking.html
-share/doc/${MODCABAL_STEM}/license.html
-share/doc/${MODCABAL_STEM}/regexps.html
-share/doc/${MODCABAL_STEM}/relnotes-20.html
-share/doc/${MODCABAL_STEM}/relnotes-210.html
-share/doc/${MODCABAL_STEM}/relnotes-22.html
-share/doc/${MODCABAL_STEM}/syntax.html
-share/doc/${MODCABAL_STEM}/types.html
-share/doc/${MODCABAL_STEM}/wrappers.html
