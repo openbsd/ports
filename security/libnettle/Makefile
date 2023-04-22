@@ -2,7 +2,7 @@ COMMENT=		cryptographic library
 
 DISTNAME=		nettle-3.8.1
 PKGNAME=		lib${DISTNAME}
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  hogweed                   3.0 # 6.3
 SHARED_LIBS +=  nettle                    7.1 # 8.3
@@ -24,7 +24,10 @@ LIB_DEPENDS=		devel/gmp
 
 USE_GMAKE=		Yes
 
-CONFIGURE_STYLE=	gnu
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.16
+
+CONFIGURE_STYLE=	autoconf
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
