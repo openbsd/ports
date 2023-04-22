@@ -1,0 +1,14 @@
+Index: X11/configure
+--- X11/configure.orig
++++ X11/configure
+@@ -2244,10 +2244,6 @@ ac_config_headers="$ac_config_headers config.h"
+ 
+ DO_SAVER=yes
+ 
+-if ! test -z "$ac_unrecognized_opts" ; then
+-  echo "" >&2
+-  exit 2
+-fi
+ 
+ 
+ 
