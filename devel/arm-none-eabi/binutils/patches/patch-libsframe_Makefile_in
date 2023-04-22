@@ -1,0 +1,12 @@
+Index: libsframe/Makefile.in
+--- libsframe/Makefile.in.orig
++++ libsframe/Makefile.in
+@@ -276,7 +276,7 @@ AM_V_texidevnull = $(am__v_texidevnull_@AM_V@)
+ am__v_texidevnull_ = $(am__v_texidevnull_@AM_DEFAULT_V@)
+ am__v_texidevnull_0 = > /dev/null
+ am__v_texidevnull_1 = 
+-INFO_DEPS = doc/sframe-spec.info
++INFO_DEPS =
+ am__TEXINFO_TEX_DIR = $(srcdir)
+ DVIS = doc/sframe-spec.dvi
+ PDFS = doc/sframe-spec.pdf

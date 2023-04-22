@@ -1,6 +1,6 @@
 COMMENT=	binutils for ${CONFIG} cross-development
 
-VERSION=	2.31.1
+VERSION=		2.40
 DISTNAME=	binutils-${VERSION}
 
 FLAVORS=	aarch64 arm
@@ -21,11 +21,13 @@ WANTLIB=	c z
 MASTER_SITES=	${MASTER_SITE_GNU:=binutils/}
 DIST_SUBDIR=	binutils
 
+USE_GMAKE=	Yes
 USE_LIBTOOL=	No
 
 CONFIGURE_ARGS+=--enable-commonbfdlib=no \
 		--enable-interwork	 \
-		--enable-multilib
+		--enable-multilib	\
+		--without-zstd
 
 SUBST_VARS +=	CONFIG
 
