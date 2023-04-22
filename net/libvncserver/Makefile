@@ -1,11 +1,10 @@
 COMMENT=		library for easy implementation of a VNC server
 
-DISTNAME=		LibVNCServer-0.9.13
+DISTNAME=		LibVNCServer-0.9.14
 PKGNAME=		${DISTNAME:L}
-REVISION=		0
 
-SHARED_LIBS +=  vncclient                 1.0 # 0.0
-SHARED_LIBS +=  vncserver                 3.1 # 0.0
+SHARED_LIBS +=  vncclient                 1.1 # 0.0
+SHARED_LIBS +=  vncserver                 3.2 # 0.0
 
 CATEGORIES=		net devel
 

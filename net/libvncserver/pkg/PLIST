@@ -7,6 +7,11 @@ include/rfb/rfbconfig.h
 include/rfb/rfbproto.h
 include/rfb/rfbregion.h
 include/rfb/threading.h
+lib/cmake/LibVNCServer/
+lib/cmake/LibVNCServer/LibVNCServerConfig.cmake
+lib/cmake/LibVNCServer/LibVNCServerConfigVersion.cmake
+lib/cmake/LibVNCServer/LibVNCServerTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/LibVNCServer/LibVNCServerTargets.cmake
 @lib lib/libvncclient.so.${LIBvncclient_VERSION}
 @lib lib/libvncserver.so.${LIBvncserver_VERSION}
 lib/pkgconfig/libvncclient.pc

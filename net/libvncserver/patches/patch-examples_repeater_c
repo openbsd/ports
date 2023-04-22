@@ -1,8 +1,9 @@
 Index: examples/repeater.c
 --- examples/repeater.c.orig
 +++ examples/repeater.c
-@@ -1,5 +1,6 @@
- /* This example shows how to connect to an UltraVNC repeater. */
+@@ -24,6 +24,7 @@
+ 
+  */
  
 +#include <sys/socket.h>
  #include <rfb/rfb.h>
