@@ -5,8 +5,7 @@ NOT_FOR_ARCHS=		${GCC3_ARCHS}
 
 COMMENT=	straightforward implementation of DBM
 
-DISTNAME=	kyotocabinet-1.2.79
-REVISION=	0
+DISTNAME=	kyotocabinet-1.2.80
 
 SHARED_LIBS +=	kyotocabinet 0.0 # 16.0
 
