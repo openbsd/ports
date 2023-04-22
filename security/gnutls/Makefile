@@ -2,6 +2,7 @@ COMMENT=		GNU Transport Layer Security library
 
 V=			3.8.0
 DISTNAME=		gnutls-${V}
+REVISION=		0
 EXTRACT_SUFX=		.tar.xz
 
 CATEGORIES=		security
@@ -54,12 +55,17 @@ CONFIGURE_ARGS=		--disable-ssl3-support \
 # for tpm(4): http://bsssd.sourceforge.net/
 CONFIGURE_ARGS +=	--without-tpm
 
+.if ${MACHINE_ARCH:Maarch64}
+CCASFLAGS+=		-mmark-bti-property
+.endif
+
 LDFLAGS=		-L${LOCALBASE}/lib
 .if ${MACHINE_ARCH:Mi386}
 LDFLAGS+=		-Wl,-z,notext
 .endif
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			CCASFLAGS="${CCASFLAGS}" \
 			LDFLAGS="${LDFLAGS}"
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
