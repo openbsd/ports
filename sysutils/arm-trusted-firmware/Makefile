@@ -7,14 +7,15 @@ GH_PROJECT=	arm-trusted-firmware
 GH_TAGNAME=	v2.7.0
 
 EPOCH=		0
+REVISION=	0
 
 CATEGORIES=	sysutils
 
 # BSD
 PERMIT_PACKAGE=	Yes
 
-BUILD_DEPENDS+= devel/arm-none-eabi/gcc-linaro,aarch64
-BUILD_DEPENDS+= devel/arm-none-eabi/gcc-linaro,arm
+BUILD_DEPENDS+= devel/arm-none-eabi/gcc,aarch64
+BUILD_DEPENDS+= devel/arm-none-eabi/gcc,arm
 
 MAKE_ENV+= CROSS_COMPILE="aarch64-none-elf-"
 MAKE_ENV+= BUILD_STRING="${GH_TAGNAME:S/v//}"
