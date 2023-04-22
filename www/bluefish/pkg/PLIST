@@ -8,8 +8,6 @@ lib/bluefish/
 @so lib/bluefish/snippets.so
 @so lib/bluefish/zencoding.so
 @man man/man1/bluefish.1
-share/appdata/
-share/appdata/bluefish.appdata.xml
 share/applications/bluefish.desktop
 share/bluefish/
 ${MODPY_COMMENT}share/bluefish/${MODPY_PYCACHE}/
@@ -500,6 +498,7 @@ share/locale/zh_TW/LC_MESSAGES/bluefish_plugin_htmlbar.mo
 share/locale/zh_TW/LC_MESSAGES/bluefish_plugin_infbrowser.mo
 share/locale/zh_TW/LC_MESSAGES/bluefish_plugin_snippets.mo
 share/locale/zh_TW/LC_MESSAGES/bluefish_plugin_zencoding.mo
+share/metainfo/bluefish.appdata.xml
 share/mime/packages/bluefish.xml
 share/pixmaps/
 share/pixmaps/application-x-bluefish-project.png
