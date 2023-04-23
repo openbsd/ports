@@ -1,7 +1,7 @@
 COMMENT=		GNOME desktop calculator
 
 GNOME_PROJECT=		gnome-calculator
-GNOME_VERSION=		43.0.1
+GNOME_VERSION=		44.0
 
 CATEGORIES=		math
 
@@ -17,6 +17,8 @@ WANTLIB += gtksourceview-5 intl mpc mpfr soup-3.0 xml2
 MODULES=		devel/dconf \
 			devel/meson \
 			x11/gnome
+
+BUILD_DEPENDS=		lang/vala,-valadoc
 
 LIB_DEPENDS=		devel/libgee \
 			devel/libmpc \
