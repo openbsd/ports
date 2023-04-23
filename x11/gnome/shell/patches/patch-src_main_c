@@ -1,3 +1,18 @@
+REVERT:
+From 9bc89b821cf09195418f20225bbec39c0567d263 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Jonas=20=C3=85dahl?= <jadahl@gmail.com>
+Date: Wed, 17 Aug 2022 21:43:21 +0200
+Subject: [PATCH] main: Prepend RPATH or RUNPATH paths to gir search paths
+
+This triggers the following error:
+../gnome-shell-44.0/src/main.c:135:3: warning: implicit declaration of function 'ElfW' is invalid in C99 [-Wimplicit-function-declaration]
+  ElfW (Dyn) *dyn;
+  ^
+../gnome-shell-44.0/src/main.c:135:9: error: use of undeclared identifier 'Dyn'
+  ElfW (Dyn) *dyn;
+
+
+Last chunk:
 Disable broken signal handler which locks the malloc mutex recursively.
 
 What's happening here is that gnome-shell wants to print a gjs stack
@@ -36,7 +51,107 @@ not available.
 Index: src/main.c
 --- src/main.c.orig
 +++ src/main.c
-@@ -372,6 +372,7 @@ dump_gjs_stack_on_signal_handler (int signo)
+@@ -17,12 +17,7 @@
+ #include <meta/meta-plugin.h>
+ #include <meta/prefs.h>
+ #include <atk-bridge.h>
+-#include <link.h>
+ 
+-#ifdef HAVE_EXE_INTROSPECTION
+-#include <elf.h>
+-#endif
+-
+ #include "shell-global.h"
+ #include "shell-global-private.h"
+ #include "shell-perf-log.h"
+@@ -128,75 +123,7 @@ shell_dbus_init (gboolean replace)
+   g_object_unref (session);
+ }
+ 
+-#ifdef HAVE_EXE_INTROSPECTION
+ static void
+-maybe_add_rpath_introspection_paths (void)
+-{
+-  ElfW (Dyn) *dyn;
+-  ElfW (Dyn) *rpath = NULL;
+-  ElfW (Dyn) *runpath = NULL;
+-  const char *strtab = NULL;
+-  g_auto (GStrv) paths = NULL;
+-  g_autofree char *exe_dir = NULL;
+-  GStrv str;
+-
+-  for (dyn = _DYNAMIC; dyn->d_tag != DT_NULL; dyn++)
+-    {
+-      if (dyn->d_tag == DT_RPATH)
+-        rpath = dyn;
+-      else if (dyn->d_tag == DT_RUNPATH)
+-        runpath = dyn;
+-      else if (dyn->d_tag == DT_STRTAB)
+-        strtab = (const char *) dyn->d_un.d_val;
+-    }
+-
+-  if ((!rpath && !runpath) || !strtab)
+-    return;
+-
+-  if (rpath)
+-    paths = g_strsplit (strtab + rpath->d_un.d_val, ":", -1);
+-  else
+-    paths = g_strsplit (strtab + runpath->d_un.d_val, ":", -1);
+-
+-  if (!paths)
+-    return;
+-
+-  for (str = paths; *str; str++)
+-    {
+-      g_autoptr (GError) error = NULL;
+-      g_autoptr (GString) rpath_dir = NULL;
+-
+-      if (!strstr (*str, "$ORIGIN"))
+-        continue;
+-
+-      if (!exe_dir)
+-        {
+-          g_autofree char *exe_path = NULL;
+-
+-          exe_path = g_file_read_link ("/proc/self/exe", &error);
+-          if (!exe_path)
+-            {
+-              g_warning ("Failed to find directory of executable: %s",
+-                         error->message);
+-              return;
+-            }
+-
+-          exe_dir = g_path_get_dirname (exe_path);
+-        }
+-
+-      rpath_dir = g_string_new (*str);
+-      g_string_replace (rpath_dir, "$ORIGIN", exe_dir, 0);
+-
+-      g_debug ("Prepending RPATH directory '%s' "
+-               "to introsepciton library search path",
+-               rpath_dir->str);
+-      g_irepository_prepend_search_path (rpath_dir->str);
+-      g_irepository_prepend_library_path (rpath_dir->str);
+-    }
+-}
+-#endif /* HAVE_EXE_INTROSPECTION */
+-
+-static void
+ shell_introspection_init (void)
+ {
+ 
+@@ -210,10 +137,6 @@ shell_introspection_init (void)
+    */
+   g_irepository_prepend_library_path (MUTTER_TYPELIB_DIR);
+   g_irepository_prepend_library_path (GNOME_SHELL_PKGLIBDIR);
+-
+-#ifdef HAVE_EXE_INTROSPECTION
+-  maybe_add_rpath_introspection_paths ();
+-#endif
+ }
+ 
+ static void
+@@ -449,6 +372,7 @@ dump_gjs_stack_on_signal_handler (int signo)
  static void
  dump_gjs_stack_on_signal (int signo)
  {
@@ -44,7 +159,7 @@ Index: src/main.c
    struct sigaction sa = {
      .sa_flags   = SA_RESETHAND | SA_NODEFER,
      .sa_handler = dump_gjs_stack_on_signal_handler,
-@@ -381,6 +382,7 @@ dump_gjs_stack_on_signal (int signo)
+@@ -458,6 +382,7 @@ dump_gjs_stack_on_signal (int signo)
  
    sigaction (signo, &sa, NULL);
    _tracked_signals[signo] = TRUE;

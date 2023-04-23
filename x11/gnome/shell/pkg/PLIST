@@ -12,22 +12,20 @@ bin/gnome-shell-extension-tool
 bin/gnome-shell-perf-tool
 lib/gnome-shell/
 lib/gnome-shell/Gvc-1.0.typelib
-lib/gnome-shell/Shell-0.1.typelib
-lib/gnome-shell/St-1.0.typelib
+lib/gnome-shell/Shell-12.typelib
+lib/gnome-shell/St-12.typelib
 lib/gnome-shell/girepository-1.0/
 lib/gnome-shell/girepository-1.0/Shew-0.typelib
 @so lib/gnome-shell/libgnome-shell-menu.so
-@so lib/gnome-shell/libgnome-shell.so
 @so lib/gnome-shell/libgvc.so
+@so lib/gnome-shell/libshell-12.so
 @so lib/gnome-shell/libshew-0.so
-@so lib/gnome-shell/libst-1.0.so
+@so lib/gnome-shell/libst-12.so
 @bin libexec/gnome-shell-calendar-server
 @bin libexec/gnome-shell-hotplug-sniffer
-libexec/gnome-shell-overrides-migration.sh
 @bin libexec/gnome-shell-perf-helper
 @man man/man1/gnome-extensions.1
 @man man/man1/gnome-shell.1
-share/applications/evolution-calendar.desktop
 share/applications/org.gnome.Extensions.desktop
 share/applications/org.gnome.Shell.Extensions.desktop
 share/applications/org.gnome.Shell.desktop
@@ -46,19 +44,14 @@ share/dbus-1/services/org.gnome.Shell.Extensions.service
 share/dbus-1/services/org.gnome.Shell.HotplugSniffer.service
 share/dbus-1/services/org.gnome.Shell.Notifications.service
 share/dbus-1/services/org.gnome.Shell.Screencast.service
-share/examples/gnome-shell/
-share/examples/gnome-shell/xdg/
-share/examples/gnome-shell/xdg/autostart/
-share/examples/gnome-shell/xdg/autostart/gnome-shell-overrides-migration.desktop
-@sample ${SYSCONFDIR}/xdg/autostart/gnome-shell-overrides-migration.desktop
 share/glib-2.0/schemas/00_org.gnome.shell.gschema.override
 share/glib-2.0/schemas/org.gnome.shell.gschema.xml
 share/gnome-control-center/keybindings/50-gnome-shell-launchers.xml
 share/gnome-control-center/keybindings/50-gnome-shell-screenshots.xml
 share/gnome-control-center/keybindings/50-gnome-shell-system.xml
 share/gnome-shell/Gvc-1.0.gir
-share/gnome-shell/Shell-0.1.gir
-share/gnome-shell/St-1.0.gir
+share/gnome-shell/Shell-12.gir
+share/gnome-shell/St-12.gir
 share/gnome-shell/gir-1.0/
 share/gnome-shell/gir-1.0/Shew-0.gir
 share/gnome-shell/gnome-shell-dbus-interfaces.gresource

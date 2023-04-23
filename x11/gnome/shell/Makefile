@@ -6,21 +6,20 @@ COMMENT=		next generation GNOME shell
 # major upgrade
 GNOME_PROJECT=		gnome-shell
 # sync with meta/gnome "V" variable
-GNOME_VERSION=		43.4
-REVISION=		0
+GNOME_VERSION=		44.0
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
 
 WANTLIB += X11 Xfixes atk-1.0 atk-bridge-2.0 c cairo ecal-2.0
 WANTLIB += edataserver-1.2 gcr-4 gdk-3 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += girepository-1.0 gjs glib-2.0 gnome-autoar-0 gnome-desktop-3
+WANTLIB += girepository-1.0 gjs glib-2.0 gnome-autoar-0 gnome-desktop-4
 WANTLIB += gobject-2.0 graphene-1.0 gtk-3 gtk-4 ical-glib intl
-WANTLIB += json-glib-1.0 m mutter-11 pango-1.0
+WANTLIB += json-glib-1.0 m mutter-12 pango-1.0
 WANTLIB += polkit-agent-1 polkit-gobject-1 pulse pulse-mainloop-glib
-WANTLIB += lib/mutter-11/mutter-clutter-11
-WANTLIB += lib/mutter-11/mutter-cogl-11
-WANTLIB += lib/mutter-11/mutter-cogl-pango-11
+WANTLIB += lib/mutter-12/mutter-clutter-12
+WANTLIB += lib/mutter-12/mutter-cogl-12
+WANTLIB += lib/mutter-12/mutter-cogl-pango-12
 
 MODULES=		devel/dconf \
 			devel/meson \
@@ -108,9 +107,5 @@ PORTHOME=		${WRKDIR}
 
 post-extract:
 	cp ${FILESDIR}/*.xml ${WRKSRC}/data/dbus-interfaces/
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnome-shell
-	mv ${WRKINST}${SYSCONFDIR}/xdg ${PREFIX}/share/examples/gnome-shell
 
 .include <bsd.port.mk>
