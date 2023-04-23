@@ -1,7 +1,7 @@
 COMMENT=		GNOME file manager
 
 GNOME_PROJECT=		nautilus
-GNOME_VERSION=		43.4
+GNOME_VERSION=		44.1
 
 SHARED_LIBS += nautilus-extension        3.0 # 4
 
@@ -40,7 +40,7 @@ LIB_DEPENDS=		graphics/libgexiv2 \
 			x11/gnome/tracker3
 
 MODGNOME_TOOLS=		desktop-file-utils gobject-introspection \
-			gtk-update-icon-cache gi-docgen
+			gtk-update-icon-cache
 
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
