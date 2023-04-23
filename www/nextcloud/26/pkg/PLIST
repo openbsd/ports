@@ -9608,6 +9608,8 @@ nextcloud/apps/admin_audit/l10n/es.js
 nextcloud/apps/admin_audit/l10n/es.json
 nextcloud/apps/admin_audit/l10n/es_AR.js
 nextcloud/apps/admin_audit/l10n/es_AR.json
+nextcloud/apps/admin_audit/l10n/es_CL.js
+nextcloud/apps/admin_audit/l10n/es_CL.json
 nextcloud/apps/admin_audit/l10n/es_CO.js
 nextcloud/apps/admin_audit/l10n/es_CO.json
 nextcloud/apps/admin_audit/l10n/es_CR.js
@@ -15737,6 +15739,8 @@ nextcloud/apps/notifications/lib/Model/SettingsMapper.php
 nextcloud/apps/notifications/lib/Notifier/
 nextcloud/apps/notifications/lib/Notifier/AdminNotifications.php
 nextcloud/apps/notifications/lib/Push.php
+nextcloud/apps/notifications/lib/Service/
+nextcloud/apps/notifications/lib/Service/ClientService.php
 nextcloud/apps/notifications/lib/Settings/
 nextcloud/apps/notifications/lib/Settings/Admin.php
 nextcloud/apps/notifications/lib/Settings/AdminSection.php
@@ -16625,6 +16629,8 @@ nextcloud/apps/privacy/l10n/eo.js
 nextcloud/apps/privacy/l10n/eo.json
 nextcloud/apps/privacy/l10n/es.js
 nextcloud/apps/privacy/l10n/es.json
+nextcloud/apps/privacy/l10n/es_EC.js
+nextcloud/apps/privacy/l10n/es_EC.json
 nextcloud/apps/privacy/l10n/eu.js
 nextcloud/apps/privacy/l10n/eu.json
 nextcloud/apps/privacy/l10n/fa.js
@@ -23352,6 +23358,8 @@ nextcloud/core/Migrations/Version25000Date20220515204012.php
 nextcloud/core/Migrations/Version25000Date20220602190540.php
 nextcloud/core/Migrations/Version25000Date20220905140840.php
 nextcloud/core/Migrations/Version25000Date20221007010957.php
+nextcloud/core/Migrations/Version27000Date20230309104325.php
+nextcloud/core/Migrations/Version27000Date20230309104802.php
 nextcloud/core/Notification/
 nextcloud/core/Notification/CoreNotifier.php
 nextcloud/core/Service/
@@ -23497,7 +23505,6 @@ nextcloud/core/doc/admin/_images/sharing-files-1.png
 nextcloud/core/doc/admin/_images/skeleton-files.png
 nextcloud/core/doc/admin/_images/skeleton-files1.png
 nextcloud/core/doc/admin/_images/smb.png
-nextcloud/core/doc/admin/_images/smtp-config-smtp.png
 nextcloud/core/doc/admin/_images/smtp-config-wizard.png
 nextcloud/core/doc/admin/_images/theming.png
 nextcloud/core/doc/admin/_images/updater-1-update-available.png
@@ -23993,6 +24000,11 @@ nextcloud/core/doc/user/_images/sharing_public_file.png
 nextcloud/core/doc/user/_images/sharing_public_folder.png
 nextcloud/core/doc/user/_images/sidebar-chat.png
 nextcloud/core/doc/user/_images/synchronize_cardbook.png
+nextcloud/core/doc/user/_images/talk-breakout-rooms-setup-dialog.png
+nextcloud/core/doc/user/_images/talk-breakout-rooms-setup.png
+nextcloud/core/doc/user/_images/talk-breakout-rooms-sidebar-header.png
+nextcloud/core/doc/user/_images/talk-breakout-rooms-sidebar-item.png
+nextcloud/core/doc/user/_images/talk-breakout-rooms-sidebar.png
 nextcloud/core/doc/user/_images/talk-grid-view.png
 nextcloud/core/doc/user/_images/talk-promoted-view.png
 nextcloud/core/doc/user/_images/talk-settings.png
