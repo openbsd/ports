@@ -9973,6 +9973,8 @@ nextcloud/apps/admin_audit/l10n/es.js
 nextcloud/apps/admin_audit/l10n/es.json
 nextcloud/apps/admin_audit/l10n/es_AR.js
 nextcloud/apps/admin_audit/l10n/es_AR.json
+nextcloud/apps/admin_audit/l10n/es_CL.js
+nextcloud/apps/admin_audit/l10n/es_CL.json
 nextcloud/apps/admin_audit/l10n/es_CO.js
 nextcloud/apps/admin_audit/l10n/es_CO.json
 nextcloud/apps/admin_audit/l10n/es_CR.js
@@ -16871,6 +16873,8 @@ nextcloud/apps/privacy/l10n/eo.js
 nextcloud/apps/privacy/l10n/eo.json
 nextcloud/apps/privacy/l10n/es.js
 nextcloud/apps/privacy/l10n/es.json
+nextcloud/apps/privacy/l10n/es_EC.js
+nextcloud/apps/privacy/l10n/es_EC.json
 nextcloud/apps/privacy/l10n/eu.js
 nextcloud/apps/privacy/l10n/eu.json
 nextcloud/apps/privacy/l10n/fa.js
