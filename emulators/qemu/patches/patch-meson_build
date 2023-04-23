@@ -1,20 +1,10 @@
 - localstatedir does not belong under prefix
 - Remove hardcoding of optimization
-- thread-posix: add support for setting threads name on OpenBSD
 
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -75,7 +75,7 @@ have_tools = get_option('tools') \
-   .allowed()
- have_ga = get_option('guest_agent') \
-   .disable_auto_if(not have_system and not have_tools) \
--  .require(targetos in ['sunos', 'linux', 'windows', 'freebsd'],
-+  .require(targetos in ['sunos', 'linux', 'windows', 'freebsd', 'openbsd'],
-            error_message: 'unsupported OS for QEMU guest agent') \
-   .allowed()
- have_block = have_system or have_tools
-@@ -1790,7 +1790,7 @@ config_host_data.set('CONFIG_QEMU_FIRMWAREPATH', qemu_
+@@ -1802,7 +1802,7 @@ config_host_data.set('CONFIG_QEMU_FIRMWAREPATH', qemu_
  config_host_data.set_quoted('CONFIG_QEMU_HELPERDIR', get_option('prefix') / get_option('libexecdir'))
  config_host_data.set_quoted('CONFIG_QEMU_ICONDIR', get_option('prefix') / qemu_icondir)
  config_host_data.set_quoted('CONFIG_QEMU_LOCALEDIR', get_option('prefix') / get_option('localedir'))
@@ -23,34 +13,13 @@ Index: meson.build
  config_host_data.set_quoted('CONFIG_QEMU_MODDIR', get_option('prefix') / qemu_moddir)
  config_host_data.set_quoted('CONFIG_SYSCONFDIR', get_option('prefix') / get_option('sysconfdir'))
  
-@@ -2123,6 +2123,18 @@ config_host_data.set('CONFIG_PTHREAD_SETNAME_NP_WO_TID
-     pthread_create(&thread, 0, f, 0);
-     return 0;
-   }''', dependencies: threads))
-+config_host_data.set('CONFIG_PTHREAD_SET_NAME_NP', cc.links(gnu_source_prefix + '''
-+  #include <pthread.h>
-+  #include <pthread_np.h>
-+
-+  static void *f(void *p) { return NULL; }
-+  int main(void)
-+  {
-+    pthread_t thread;
-+    pthread_create(&thread, 0, f, 0);
-+    pthread_set_name_np(thread, "QEMU");
-+    return 0;
-+  }''', dependencies: threads))
- config_host_data.set('CONFIG_PTHREAD_CONDATTR_SETCLOCK', cc.links(gnu_source_prefix + '''
-   #include <pthread.h>
-   #include <time.h>
-@@ -3756,11 +3768,9 @@ if targetos == 'darwin'
+@@ -3805,9 +3805,6 @@ if targetos == 'darwin'
    summary_info += {'Objective-C compiler': ' '.join(meson.get_compiler('objc').cmd_array())}
  endif
- summary_info += {'CFLAGS':            ' '.join(get_option('c_args')
--                                               + ['-O' + get_option('optimization')]
-                                                + (get_option('debug') ? ['-g'] : []))}
+ option_cflags = (get_option('debug') ? ['-g'] : [])
+-if get_option('optimization') != 'plain'
+-  option_cflags += ['-O' + get_option('optimization')]
+-endif
+ summary_info += {'CFLAGS':            ' '.join(get_option('c_args') + option_cflags)}
  if link_language == 'cpp'
-   summary_info += {'CXXFLAGS':        ' '.join(get_option('cpp_args')
--                                               + ['-O' + get_option('optimization')]
-                                                + (get_option('debug') ? ['-g'] : []))}
- endif
- if targetos == 'darwin'
+   summary_info += {'CXXFLAGS':        ' '.join(get_option('cpp_args') + option_cflags)}

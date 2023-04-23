@@ -3,7 +3,7 @@ Set OpenBSD/powerpc cache sizes.
 Index: util/cacheflush.c
 --- util/cacheflush.c.orig
 +++ util/cacheflush.c
-@@ -163,6 +163,13 @@ static void arch_cache_info(int *isize, int *dsize)
+@@ -167,6 +167,13 @@ static void arch_cache_info(int *isize, int *dsize)
      have_coherent_icache = qemu_getauxval(AT_HWCAP) & PPC_FEATURE_ICACHE_SNOOP;
  }
  

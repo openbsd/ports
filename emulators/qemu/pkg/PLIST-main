@@ -92,6 +92,7 @@ share/doc/qemu/_static/theme_overrides.css
 share/doc/qemu/about/
 share/doc/qemu/about/build-platforms.html
 share/doc/qemu/about/deprecated.html
+share/doc/qemu/about/emulation.html
 share/doc/qemu/about/index.html
 share/doc/qemu/about/license.html
 share/doc/qemu/about/removed-features.html
@@ -137,6 +138,7 @@ share/doc/qemu/devel/style.html
 share/doc/qemu/devel/submitting-a-patch.html
 share/doc/qemu/devel/submitting-a-pull-request.html
 share/doc/qemu/devel/tcg-icount.html
+share/doc/qemu/devel/tcg-ops.html
 share/doc/qemu/devel/tcg-plugins.html
 share/doc/qemu/devel/tcg.html
 share/doc/qemu/devel/testing.html
@@ -162,6 +164,7 @@ share/doc/qemu/interop/vhost-user-gpu.html
 share/doc/qemu/interop/vhost-user.html
 share/doc/qemu/interop/vhost-vdpa.html
 share/doc/qemu/interop/virtio-balloon-stats.html
+share/doc/qemu/interop/vnc-ledstate-pseudo-encoding.html
 share/doc/qemu/objects.inv
 share/doc/qemu/search.html
 share/doc/qemu/searchindex.js
@@ -229,6 +232,7 @@ share/doc/qemu/system/devices/can.html
 share/doc/qemu/system/devices/canokey.html
 share/doc/qemu/system/devices/ccid.html
 share/doc/qemu/system/devices/cxl.html
+share/doc/qemu/system/devices/igb.html
 share/doc/qemu/system/devices/ivshmem.html
 share/doc/qemu/system/devices/net.html
 share/doc/qemu/system/devices/nvme.html
@@ -247,13 +251,15 @@ share/doc/qemu/system/i386/kvm-pv.html
 share/doc/qemu/system/i386/microvm.html
 share/doc/qemu/system/i386/pc.html
 share/doc/qemu/system/i386/sgx.html
+share/doc/qemu/system/i386/xen.html
 share/doc/qemu/system/images.html
 share/doc/qemu/system/index.html
+share/doc/qemu/system/introduction.html
 share/doc/qemu/system/invocation.html
 share/doc/qemu/system/keys.html
 share/doc/qemu/system/linuxboot.html
 share/doc/qemu/system/loongarch/
-share/doc/qemu/system/loongarch/loongson3.html
+share/doc/qemu/system/loongarch/virt.html
 share/doc/qemu/system/managed-startup.html
 share/doc/qemu/system/monitor.html
 share/doc/qemu/system/multi-process.html
@@ -274,7 +280,6 @@ share/doc/qemu/system/pr-manager.html
 share/doc/qemu/system/qemu-block-drivers.html
 share/doc/qemu/system/qemu-cpu-models.html
 share/doc/qemu/system/qemu-manpage.html
-share/doc/qemu/system/quickstart.html
 share/doc/qemu/system/replay.html
 share/doc/qemu/system/riscv/
 share/doc/qemu/system/riscv/microchip-icicle-kit.html
@@ -285,6 +290,7 @@ share/doc/qemu/system/s390x/
 share/doc/qemu/system/s390x/3270.html
 share/doc/qemu/system/s390x/bootdevices.html
 share/doc/qemu/system/s390x/css.html
+share/doc/qemu/system/s390x/pcidevices.html
 share/doc/qemu/system/s390x/protvirt.html
 share/doc/qemu/system/s390x/vfio-ap.html
 share/doc/qemu/system/s390x/vfio-ccw.html
@@ -315,7 +321,6 @@ share/doc/qemu/tools/qemu-pr-helper.html
 share/doc/qemu/tools/qemu-storage-daemon.html
 share/doc/qemu/tools/qemu-trace-stap.html
 share/doc/qemu/tools/virtfs-proxy-helper.html
-share/doc/qemu/tools/virtiofsd.html
 share/doc/qemu/user/
 share/doc/qemu/user/index.html
 share/doc/qemu/user/main.html
@@ -444,7 +449,6 @@ share/qemu/qemu-nsis.bmp
 share/qemu/qemu_vga.ndrv
 share/qemu/s390-ccw.img
 share/qemu/s390-netboot.img
-share/qemu/sgabios.bin
 share/qemu/skiboot.lid
 share/qemu/slof.bin
 share/qemu/trace-events-all

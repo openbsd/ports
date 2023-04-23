@@ -1,29 +1,11 @@
 Adapted from https://github.com/aborche/qemu-guest-agent
 
-Adds support for
-"guest-get-fsinfo"
-"guest-get-vcpus"
-"guest-network-get-interfaces"
-and guest shutdown from host.
-
-Setting user password is not supported on OpenBSD.
+Adds support for "guest-get-fsinfo" and "guest-get-vcpus"
 
 Index: qga/commands-posix.c
 --- qga/commands-posix.c.orig
 +++ qga/commands-posix.c
-@@ -45,13 +45,23 @@
- #include <arpa/inet.h>
- #include <sys/socket.h>
- #include <net/if.h>
-+#ifdef __OpenBSD__
-+#include <net/if_arp.h>
-+#include <netinet/if_ether.h>
-+#else
- #include <net/ethernet.h>
-+#endif
- #include <sys/types.h>
- #ifdef CONFIG_SOLARIS
- #include <sys/sockio.h>
+@@ -56,6 +56,11 @@
  #endif
  #endif
  
@@ -35,127 +17,7 @@ Index: qga/commands-posix.c
  static void ga_wait_child(pid_t pid, int *status, Error **errp)
  {
      pid_t rpid;
-@@ -2232,12 +2242,118 @@ out:
-         close(datafd[1]);
-     }
- }
--#else /* __linux__ || __FreeBSD__ */
-+#elif defined(__OpenBSD__) /* __linux__ || __FreeBSD__ */
- void qmp_guest_set_user_password(const char *username,
-                                  const char *password,
-                                  bool crypted,
-                                  Error **errp)
- {
-+    Error *local_err = NULL;
-+    char *pw_path = NULL;
-+    pid_t pid;
-+    int status;
-+    int datafd[2] = { -1, -1 };
-+    char *rawpasswddata = NULL;
-+    size_t rawpasswdlen;
-+    char *chpasswddata = NULL;
-+    size_t chpasswdlen;
-+
-+    rawpasswddata = (char *)qbase64_decode(password, -1, &rawpasswdlen, errp);
-+    if (!rawpasswddata) {
-+        return;
-+    }
-+
-+    rawpasswddata = g_renew(char, rawpasswddata, rawpasswdlen + 1);
-+    rawpasswddata[rawpasswdlen] = '\0';
-+
-+    if (strchr(rawpasswddata, '\n')) {
-+        error_setg(errp, "forbidden characters in raw password");
-+        goto out;
-+    }
-+
-+    if (strchr(username, '\n') ||
-+        strchr(username, ':')) {
-+        error_setg(errp, "forbidden characters in username");
-+        goto out;
-+    }
-+
-+    chpasswddata = g_strdup_printf("%s", rawpasswddata);
-+    chpasswdlen = strlen(chpasswddata);
-+
-+    pw_path = g_find_program_in_path("pw");
-+
-+    if (!pw_path) {
-+        error_setg(errp, "cannot find 'pw' program in PATH");
-+        goto out;
-+    }
-+
-+    if (pipe(datafd) < 0) {
-+        error_setg(errp, "cannot create pipe FDs");
-+        goto out;
-+    }
-+
-+    pid = fork();
-+    if (pid == 0) {
-+        close(datafd[1]);
-+        /* child */
-+        setsid();
-+        dup2(datafd[0], 0);
-+        reopen_fd_to_null(1);
-+        reopen_fd_to_null(2);
-+
-+        if (crypted) {
-+            execl(pw_path, "pw", "usermod", username, "-H", "0", (char*)NULL);
-+        } else {
-+            execl(pw_path, "pw", "usermod", username, "-h", "0", (char*)NULL);
-+        }
-+        _exit(EXIT_FAILURE);
-+    } else if (pid < 0) {
-+        error_setg_errno(errp, errno, "failed to create child process");
-+        goto out;
-+    }
-+    close(datafd[0]);
-+    datafd[0] = -1;
-+
-+    if (qemu_write_full(datafd[1], chpasswddata, chpasswdlen) != chpasswdlen) {
-+        error_setg_errno(errp, errno, "cannot write new account password");
-+        goto out;
-+    }
-+    close(datafd[1]);
-+    datafd[1] = -1;
-+
-+    ga_wait_child(pid, &status, &local_err);
-+    if (local_err) {
-+        error_propagate(errp, local_err);
-+        goto out;
-+    }
-+
-+    if (!WIFEXITED(status)) {
-+        error_setg(errp, "child process has terminated abnormally");
-+        goto out;
-+    }
-+
-+    if (WEXITSTATUS(status)) {
-+        error_setg(errp, "child process has failed to set user password");
-+        goto out;
-+    }
-+
-+out:
-+    g_free(chpasswddata);
-+    g_free(rawpasswddata);
-+    g_free(pw_path);
-+    if (datafd[0] != -1) {
-+        close(datafd[0]);
-+    }
-+    if (datafd[1] != -1) {
-+        close(datafd[1]);
-+    }
-+}
-+#else /* __OpenBSD__ */
-+void qmp_guest_set_user_password(const char *username,
-+                                 const char *password,
-+                                 bool crypted,
-+                                 Error **errp)
-+{
-     error_setg(errp, QERR_UNSUPPORTED);
- }
- #endif /* __linux__ || __FreeBSD__ */
-@@ -2750,7 +2866,7 @@ GuestCpuStatsList *qmp_guest_get_cpustats(Error **errp
+@@ -2743,7 +2748,7 @@ GuestCpuStatsList *qmp_guest_get_cpustats(Error **errp
      return head;
  }
  
@@ -164,12 +26,12 @@ Index: qga/commands-posix.c
  
  void qmp_guest_suspend_disk(Error **errp)
  {
-@@ -2769,10 +2885,103 @@ void qmp_guest_suspend_hybrid(Error **errp)
+@@ -2762,10 +2767,99 @@ void qmp_guest_suspend_hybrid(Error **errp)
  
  GuestLogicalProcessorList *qmp_guest_get_vcpus(Error **errp)
  {
 +    int64_t current;
-+    GuestLogicalProcessorList *head, **link;
++    GuestLogicalProcessorList *head, **tail;
 +    long sc_max;
 +    Error *local_err = NULL;
 +    int Query[2];
@@ -185,7 +47,7 @@ Index: qga/commands-posix.c
 +
 +    current = 0;
 +    head = NULL;
-+    link = &head;
++    tail = &head;
 +    if (sysctl(Query, 2, &NumCpu, &Length, NULL, 0) == -1) {
 +        error_setg(errp, "sysctl get CTL_HW.HW_NCPU failed");
 +    }
@@ -193,17 +55,13 @@ Index: qga/commands-posix.c
 +
 +    while (local_err == NULL && current < sc_max) {
 +        GuestLogicalProcessor *vcpu;
-+        GuestLogicalProcessorList *entry;
 +        int64_t id = current++;
 +        vcpu = g_malloc0(sizeof *vcpu);
 +        vcpu->logical_id = id;
 +        vcpu->has_can_offline = false; /* lolspeak ftw */
 +        vcpu->online = true;
 +        vcpu->can_offline = false;
-+        entry = g_malloc0(sizeof *entry);
-+        entry->value = vcpu;
-+        *link = entry;
-+        link = &entry->next;
++        QAPI_LIST_APPEND(tail, vcpu);
 +    }
 +
 +    if (local_err == NULL) {
@@ -268,25 +126,7 @@ Index: qga/commands-posix.c
  int64_t qmp_guest_set_vcpus(GuestLogicalProcessorList *vcpus, Error **errp)
  {
      error_setg(errp, QERR_UNSUPPORTED);
-@@ -2881,7 +3090,7 @@ static int guest_get_network_stats(const char *name,
-     return -1;
- }
- 
--#ifndef __FreeBSD__
-+#ifndef CONFIG_BSD
- /*
-  * Fill "buf" with MAC address by ifaddrs. Pointer buf must point to a
-  * buffer with ETHER_ADDR_LEN length at least.
-@@ -2930,7 +3139,7 @@ bool guest_get_hw_addr(struct ifaddrs *ifa, unsigned c
-     close(sock);
-     return true;
- }
--#endif /* __FreeBSD__ */
-+#endif /* CONFIG_BSD */
- 
- /*
-  * Build information about guest interfaces
-@@ -3070,11 +3279,245 @@ GuestNetworkInterfaceList *qmp_guest_network_get_inter
+@@ -3060,11 +3154,245 @@ GuestNetworkInterfaceList *qmp_guest_network_get_inter
  
  #if !defined(CONFIG_FSFREEZE)
  
@@ -532,7 +372,7 @@ Index: qga/commands-posix.c
  
  GuestFsfreezeStatus qmp_guest_fsfreeze_status(Error **errp)
  {
-@@ -3140,12 +3583,21 @@ GList *ga_command_init_blockedrpcs(GList *blockedrpcs)
+@@ -3130,12 +3458,21 @@ GList *ga_command_init_blockedrpcs(GList *blockedrpcs)
  {
  #if !defined(__linux__)
      {
@@ -554,7 +394,7 @@ Index: qga/commands-posix.c
          char **p = (char **)list;
  
          while (*p) {
-@@ -3161,11 +3613,19 @@ GList *ga_command_init_blockedrpcs(GList *blockedrpcs)
+@@ -3151,11 +3488,19 @@ GList *ga_command_init_blockedrpcs(GList *blockedrpcs)
  
  #if !defined(CONFIG_FSFREEZE)
      {
