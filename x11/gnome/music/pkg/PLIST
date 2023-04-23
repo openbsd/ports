@@ -1,6 +1,7 @@
 bin/gnome-music
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/__init__.py
+lib/python${MODPY_VERSION}/site-packages/gnomemusic/about.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/albumart.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/application.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/artistart.py
@@ -213,7 +214,6 @@ share/help/fr/gnome-music/playlist-remove-songs.page
 share/help/fr/gnome-music/playlist-repeat.page
 share/help/fr/gnome-music/playlist-shuffle.page
 share/help/fr/gnome-music/search.page
-share/help/gl/
 share/help/gl/gnome-music/
 share/help/gl/gnome-music/figures/
 share/help/gl/gnome-music/figures/org.gnome.Music.svg
@@ -245,7 +245,6 @@ share/help/hr/gnome-music/playlist-remove-songs.page
 share/help/hr/gnome-music/playlist-repeat.page
 share/help/hr/gnome-music/playlist-shuffle.page
 share/help/hr/gnome-music/search.page
-share/help/hu/
 share/help/hu/gnome-music/
 share/help/hu/gnome-music/figures/
 share/help/hu/gnome-music/figures/org.gnome.Music.svg
@@ -309,7 +308,6 @@ share/help/ko/gnome-music/playlist-remove-songs.page
 share/help/ko/gnome-music/playlist-repeat.page
 share/help/ko/gnome-music/playlist-shuffle.page
 share/help/ko/gnome-music/search.page
-share/help/nl/
 share/help/nl/gnome-music/
 share/help/nl/gnome-music/figures/
 share/help/nl/gnome-music/figures/org.gnome.Music.svg
@@ -451,6 +449,7 @@ share/help/zh_CN/gnome-music/playlist-shuffle.page
 share/help/zh_CN/gnome-music/search.page
 share/icons/hicolor/scalable/apps/org.gnome.Music.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Music-symbolic.svg
+share/locale/ab/LC_MESSAGES/org.gnome.Music.mo
 share/locale/af/LC_MESSAGES/org.gnome.Music.mo
 share/locale/an/LC_MESSAGES/org.gnome.Music.mo
 share/locale/ar/LC_MESSAGES/org.gnome.Music.mo
@@ -484,6 +483,7 @@ share/locale/id/LC_MESSAGES/org.gnome.Music.mo
 share/locale/is/LC_MESSAGES/org.gnome.Music.mo
 share/locale/it/LC_MESSAGES/org.gnome.Music.mo
 share/locale/ja/LC_MESSAGES/org.gnome.Music.mo
+share/locale/ka/LC_MESSAGES/org.gnome.Music.mo
 share/locale/kk/LC_MESSAGES/org.gnome.Music.mo
 share/locale/kn/LC_MESSAGES/org.gnome.Music.mo
 share/locale/ko/LC_MESSAGES/org.gnome.Music.mo
