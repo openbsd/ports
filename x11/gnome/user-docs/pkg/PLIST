@@ -165,6 +165,8 @@ share/help/C/gnome-help/figures/network-wired-symbolic.svg
 share/help/C/gnome-help/figures/network-wireless-disabled-symbolic.svg
 share/help/C/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/C/gnome-help/figures/printing-select.png
+share/help/C/gnome-help/figures/ps-button.svg
+share/help/C/gnome-help/figures/ps-create.svg
 share/help/C/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/C/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/C/gnome-help/figures/screenshot-tool.png
@@ -228,6 +230,7 @@ share/help/C/gnome-help/figures/topbar-pointer.svg
 share/help/C/gnome-help/figures/topbar-screen-shared.svg
 share/help/C/gnome-help/figures/topbar-system-shutdown.svg
 share/help/C/gnome-help/figures/topbar-thunderbolt-acquiring.svg
+share/help/C/gnome-help/figures/touch-edge-scroll.svg
 share/help/C/gnome-help/figures/touch-hold.svg
 share/help/C/gnome-help/figures/touch-osk.svg
 share/help/C/gnome-help/figures/touch-overview.svg
@@ -674,6 +677,8 @@ share/help/as/gnome-help/figures/network-wired-symbolic.svg
 share/help/as/gnome-help/figures/network-wireless-disabled-symbolic.svg
 share/help/as/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/as/gnome-help/figures/printing-select.png
+share/help/as/gnome-help/figures/ps-button.svg
+share/help/as/gnome-help/figures/ps-create.svg
 share/help/as/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/as/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/as/gnome-help/figures/screenshot-tool.png
@@ -737,6 +742,7 @@ share/help/as/gnome-help/figures/topbar-pointer.svg
 share/help/as/gnome-help/figures/topbar-screen-shared.svg
 share/help/as/gnome-help/figures/topbar-system-shutdown.svg
 share/help/as/gnome-help/figures/topbar-thunderbolt-acquiring.svg
+share/help/as/gnome-help/figures/touch-edge-scroll.svg
 share/help/as/gnome-help/figures/touch-hold.svg
 share/help/as/gnome-help/figures/touch-osk.svg
 share/help/as/gnome-help/figures/touch-overview.svg
@@ -1125,6 +1131,8 @@ share/help/ca/gnome-help/figures/network-wired-symbolic.svg
 share/help/ca/gnome-help/figures/network-wireless-disabled-symbolic.svg
 share/help/ca/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/ca/gnome-help/figures/printing-select.png
+share/help/ca/gnome-help/figures/ps-button.svg
+share/help/ca/gnome-help/figures/ps-create.svg
 share/help/ca/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/ca/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/ca/gnome-help/figures/screenshot-tool.png
@@ -1188,6 +1196,7 @@ share/help/ca/gnome-help/figures/topbar-pointer.svg
 share/help/ca/gnome-help/figures/topbar-screen-shared.svg
 share/help/ca/gnome-help/figures/topbar-system-shutdown.svg
 share/help/ca/gnome-help/figures/topbar-thunderbolt-acquiring.svg
+share/help/ca/gnome-help/figures/touch-edge-scroll.svg
 share/help/ca/gnome-help/figures/touch-hold.svg
 share/help/ca/gnome-help/figures/touch-osk.svg
 share/help/ca/gnome-help/figures/touch-overview.svg
@@ -1634,6 +1643,8 @@ share/help/cs/gnome-help/figures/network-wired-symbolic.svg
 share/help/cs/gnome-help/figures/network-wireless-disabled-symbolic.svg
 share/help/cs/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/cs/gnome-help/figures/printing-select.png
+share/help/cs/gnome-help/figures/ps-button.svg
+share/help/cs/gnome-help/figures/ps-create.svg
 share/help/cs/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/cs/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/cs/gnome-help/figures/screenshot-tool.png
@@ -1697,6 +1708,7 @@ share/help/cs/gnome-help/figures/topbar-pointer.svg
 share/help/cs/gnome-help/figures/topbar-screen-shared.svg
 share/help/cs/gnome-help/figures/topbar-system-shutdown.svg
 share/help/cs/gnome-help/figures/topbar-thunderbolt-acquiring.svg
+share/help/cs/gnome-help/figures/touch-edge-scroll.svg
 share/help/cs/gnome-help/figures/touch-hold.svg
 share/help/cs/gnome-help/figures/touch-osk.svg
 share/help/cs/gnome-help/figures/touch-overview.svg
@@ -2143,6 +2155,8 @@ share/help/da/gnome-help/figures/network-wired-symbolic.svg
 share/help/da/gnome-help/figures/network-wireless-disabled-symbolic.svg
 share/help/da/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/da/gnome-help/figures/printing-select.png
+share/help/da/gnome-help/figures/ps-button.svg
+share/help/da/gnome-help/figures/ps-create.svg
 share/help/da/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/da/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/da/gnome-help/figures/screenshot-tool.png
@@ -2206,6 +2220,7 @@ share/help/da/gnome-help/figures/topbar-pointer.svg
 share/help/da/gnome-help/figures/topbar-screen-shared.svg
 share/help/da/gnome-help/figures/topbar-system-shutdown.svg
 share/help/da/gnome-help/figures/topbar-thunderbolt-acquiring.svg
+share/help/da/gnome-help/figures/touch-edge-scroll.svg
 share/help/da/gnome-help/figures/touch-hold.svg
 share/help/da/gnome-help/figures/touch-osk.svg
 share/help/da/gnome-help/figures/touch-overview.svg
@@ -2594,6 +2609,8 @@ share/help/de/gnome-help/figures/network-wired-symbolic.svg
 share/help/de/gnome-help/figures/network-wireless-disabled-symbolic.svg
 share/help/de/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/de/gnome-help/figures/printing-select.png
+share/help/de/gnome-help/figures/ps-button.svg
+share/help/de/gnome-help/figures/ps-create.svg
 share/help/de/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/de/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/de/gnome-help/figures/screenshot-tool.png
@@ -2657,6 +2674,7 @@ share/help/de/gnome-help/figures/topbar-pointer.svg
 share/help/de/gnome-help/figures/topbar-screen-shared.svg
 share/help/de/gnome-help/figures/topbar-system-shutdown.svg
 share/help/de/gnome-help/figures/topbar-thunderbolt-acquiring.svg
+share/help/de/gnome-help/figures/touch-edge-scroll.svg
 share/help/de/gnome-help/figures/touch-hold.svg
 share/help/de/gnome-help/figures/touch-osk.svg
 share/help/de/gnome-help/figures/touch-overview.svg
@@ -3103,6 +3121,8 @@ share/help/el/gnome-help/figures/network-wired-symbolic.svg
 share/help/el/gnome-help/figures/network-wireless-disabled-symbolic.svg
 share/help/el/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/el/gnome-help/figures/printing-select.png
+share/help/el/gnome-help/figures/ps-button.svg
+share/help/el/gnome-help/figures/ps-create.svg
 share/help/el/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/el/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/el/gnome-help/figures/screenshot-tool.png
@@ -3166,6 +3186,7 @@ share/help/el/gnome-help/figures/topbar-pointer.svg
 share/help/el/gnome-help/figures/topbar-screen-shared.svg
 share/help/el/gnome-help/figures/topbar-system-shutdown.svg
 share/help/el/gnome-help/figures/topbar-thunderbolt-acquiring.svg
+share/help/el/gnome-help/figures/touch-edge-scroll.svg
 share/help/el/gnome-help/figures/touch-hold.svg
 share/help/el/gnome-help/figures/touch-osk.svg
 share/help/el/gnome-help/figures/touch-overview.svg
@@ -3554,6 +3575,8 @@ share/help/es/gnome-help/figures/network-wired-symbolic.svg
 share/help/es/gnome-help/figures/network-wireless-disabled-symbolic.svg
 share/help/es/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/es/gnome-help/figures/printing-select.png
+share/help/es/gnome-help/figures/ps-button.svg
+share/help/es/gnome-help/figures/ps-create.svg
 share/help/es/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/es/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/es/gnome-help/figures/screenshot-tool.png
@@ -3617,6 +3640,7 @@ share/help/es/gnome-help/figures/topbar-pointer.svg
 share/help/es/gnome-help/figures/topbar-screen-shared.svg
 share/help/es/gnome-help/figures/topbar-system-shutdown.svg
 share/help/es/gnome-help/figures/topbar-thunderbolt-acquiring.svg
+share/help/es/gnome-help/figures/touch-edge-scroll.svg
 share/help/es/gnome-help/figures/touch-hold.svg
 share/help/es/gnome-help/figures/touch-osk.svg
 share/help/es/gnome-help/figures/touch-overview.svg
@@ -4063,6 +4087,8 @@ share/help/fa/gnome-help/figures/network-wired-symbolic.svg
 share/help/fa/gnome-help/figures/network-wireless-disabled-symbolic.svg
 share/help/fa/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/fa/gnome-help/figures/printing-select.png
+share/help/fa/gnome-help/figures/ps-button.svg
+share/help/fa/gnome-help/figures/ps-create.svg
 share/help/fa/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/fa/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/fa/gnome-help/figures/screenshot-tool.png
@@ -4126,6 +4152,7 @@ share/help/fa/gnome-help/figures/topbar-pointer.svg
 share/help/fa/gnome-help/figures/topbar-screen-shared.svg
 share/help/fa/gnome-help/figures/topbar-system-shutdown.svg
 share/help/fa/gnome-help/figures/topbar-thunderbolt-acquiring.svg
+share/help/fa/gnome-help/figures/touch-edge-scroll.svg
 share/help/fa/gnome-help/figures/touch-hold.svg
 share/help/fa/gnome-help/figures/touch-osk.svg
 share/help/fa/gnome-help/figures/touch-overview.svg
@@ -4514,6 +4541,8 @@ share/help/fi/gnome-help/figures/network-wired-symbolic.svg
 share/help/fi/gnome-help/figures/network-wireless-disabled-symbolic.svg
 share/help/fi/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/fi/gnome-help/figures/printing-select.png
+share/help/fi/gnome-help/figures/ps-button.svg
+share/help/fi/gnome-help/figures/ps-create.svg
 share/help/fi/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/fi/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/fi/gnome-help/figures/screenshot-tool.png
@@ -4577,6 +4606,7 @@ share/help/fi/gnome-help/figures/topbar-pointer.svg
 share/help/fi/gnome-help/figures/topbar-screen-shared.svg
 share/help/fi/gnome-help/figures/topbar-system-shutdown.svg
 share/help/fi/gnome-help/figures/topbar-thunderbolt-acquiring.svg
+share/help/fi/gnome-help/figures/touch-edge-scroll.svg
 share/help/fi/gnome-help/figures/touch-hold.svg
 share/help/fi/gnome-help/figures/touch-osk.svg
 share/help/fi/gnome-help/figures/touch-overview.svg
@@ -4965,6 +4995,8 @@ share/help/fr/gnome-help/figures/network-wired-symbolic.svg
 share/help/fr/gnome-help/figures/network-wireless-disabled-symbolic.svg
 share/help/fr/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/fr/gnome-help/figures/printing-select.png
+share/help/fr/gnome-help/figures/ps-button.svg
+share/help/fr/gnome-help/figures/ps-create.svg
 share/help/fr/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/fr/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/fr/gnome-help/figures/screenshot-tool.png
@@ -5028,6 +5060,7 @@ share/help/fr/gnome-help/figures/topbar-pointer.svg
 share/help/fr/gnome-help/figures/topbar-screen-shared.svg
 share/help/fr/gnome-help/figures/topbar-system-shutdown.svg
 share/help/fr/gnome-help/figures/topbar-thunderbolt-acquiring.svg
+share/help/fr/gnome-help/figures/touch-edge-scroll.svg
 share/help/fr/gnome-help/figures/touch-hold.svg
 share/help/fr/gnome-help/figures/touch-osk.svg
 share/help/fr/gnome-help/figures/touch-overview.svg
@@ -5416,6 +5449,8 @@ share/help/gl/gnome-help/figures/network-wired-symbolic.svg
 share/help/gl/gnome-help/figures/network-wireless-disabled-symbolic.svg
 share/help/gl/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/gl/gnome-help/figures/printing-select.png
+share/help/gl/gnome-help/figures/ps-button.svg
+share/help/gl/gnome-help/figures/ps-create.svg
 share/help/gl/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/gl/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/gl/gnome-help/figures/screenshot-tool.png
@@ -5479,6 +5514,7 @@ share/help/gl/gnome-help/figures/topbar-pointer.svg
 share/help/gl/gnome-help/figures/topbar-screen-shared.svg
 share/help/gl/gnome-help/figures/topbar-system-shutdown.svg
 share/help/gl/gnome-help/figures/topbar-thunderbolt-acquiring.svg
+share/help/gl/gnome-help/figures/touch-edge-scroll.svg
 share/help/gl/gnome-help/figures/touch-hold.svg
 share/help/gl/gnome-help/figures/touch-osk.svg
 share/help/gl/gnome-help/figures/touch-overview.svg
@@ -5925,6 +5961,8 @@ share/help/gu/gnome-help/figures/network-wired-symbolic.svg
 share/help/gu/gnome-help/figures/network-wireless-disabled-symbolic.svg
 share/help/gu/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/gu/gnome-help/figures/printing-select.png
+share/help/gu/gnome-help/figures/ps-button.svg
+share/help/gu/gnome-help/figures/ps-create.svg
 share/help/gu/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/gu/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/gu/gnome-help/figures/screenshot-tool.png
@@ -5988,6 +6026,7 @@ share/help/gu/gnome-help/figures/topbar-pointer.svg
 share/help/gu/gnome-help/figures/topbar-screen-shared.svg
 share/help/gu/gnome-help/figures/topbar-system-shutdown.svg
 share/help/gu/gnome-help/figures/topbar-thunderbolt-acquiring.svg
+share/help/gu/gnome-help/figures/touch-edge-scroll.svg
 share/help/gu/gnome-help/figures/touch-hold.svg
 share/help/gu/gnome-help/figures/touch-osk.svg
 share/help/gu/gnome-help/figures/touch-overview.svg
@@ -6376,6 +6415,8 @@ share/help/he/gnome-help/figures/network-wired-symbolic.svg
 share/help/he/gnome-help/figures/network-wireless-disabled-symbolic.svg
 share/help/he/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/he/gnome-help/figures/printing-select.png
+share/help/he/gnome-help/figures/ps-button.svg
+share/help/he/gnome-help/figures/ps-create.svg
 share/help/he/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/he/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/he/gnome-help/figures/screenshot-tool.png
@@ -6439,6 +6480,7 @@ share/help/he/gnome-help/figures/topbar-pointer.svg
 share/help/he/gnome-help/figures/topbar-screen-shared.svg
 share/help/he/gnome-help/figures/topbar-system-shutdown.svg
 share/help/he/gnome-help/figures/topbar-thunderbolt-acquiring.svg
+share/help/he/gnome-help/figures/touch-edge-scroll.svg
 share/help/he/gnome-help/figures/touch-hold.svg
 share/help/he/gnome-help/figures/touch-osk.svg
 share/help/he/gnome-help/figures/touch-overview.svg
@@ -6827,6 +6869,8 @@ share/help/hi/gnome-help/figures/network-wired-symbolic.svg
 share/help/hi/gnome-help/figures/network-wireless-disabled-symbolic.svg
 share/help/hi/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/hi/gnome-help/figures/printing-select.png
+share/help/hi/gnome-help/figures/ps-button.svg
+share/help/hi/gnome-help/figures/ps-create.svg
 share/help/hi/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/hi/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/hi/gnome-help/figures/screenshot-tool.png
@@ -6890,6 +6934,7 @@ share/help/hi/gnome-help/figures/topbar-pointer.svg
 share/help/hi/gnome-help/figures/topbar-screen-shared.svg
 share/help/hi/gnome-help/figures/topbar-system-shutdown.svg
 share/help/hi/gnome-help/figures/topbar-thunderbolt-acquiring.svg
+share/help/hi/gnome-help/figures/touch-edge-scroll.svg
 share/help/hi/gnome-help/figures/touch-hold.svg
 share/help/hi/gnome-help/figures/touch-osk.svg
 share/help/hi/gnome-help/figures/touch-overview.svg
@@ -7278,6 +7323,8 @@ share/help/hr/gnome-help/figures/network-wired-symbolic.svg
 share/help/hr/gnome-help/figures/network-wireless-disabled-symbolic.svg
 share/help/hr/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/hr/gnome-help/figures/printing-select.png
+share/help/hr/gnome-help/figures/ps-button.svg
+share/help/hr/gnome-help/figures/ps-create.svg
 share/help/hr/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/hr/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/hr/gnome-help/figures/screenshot-tool.png
@@ -7341,6 +7388,7 @@ share/help/hr/gnome-help/figures/topbar-pointer.svg
 share/help/hr/gnome-help/figures/topbar-screen-shared.svg
 share/help/hr/gnome-help/figures/topbar-system-shutdown.svg
 share/help/hr/gnome-help/figures/topbar-thunderbolt-acquiring.svg
+share/help/hr/gnome-help/figures/touch-edge-scroll.svg
 share/help/hr/gnome-help/figures/touch-hold.svg
 share/help/hr/gnome-help/figures/touch-osk.svg
 share/help/hr/gnome-help/figures/touch-overview.svg
@@ -7787,6 +7835,8 @@ share/help/hu/gnome-help/figures/network-wired-symbolic.svg
 share/help/hu/gnome-help/figures/network-wireless-disabled-symbolic.svg
 share/help/hu/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/hu/gnome-help/figures/printing-select.png
+share/help/hu/gnome-help/figures/ps-button.svg
+share/help/hu/gnome-help/figures/ps-create.svg
 share/help/hu/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/hu/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/hu/gnome-help/figures/screenshot-tool.png
@@ -7850,6 +7900,7 @@ share/help/hu/gnome-help/figures/topbar-pointer.svg
 share/help/hu/gnome-help/figures/topbar-screen-shared.svg
 share/help/hu/gnome-help/figures/topbar-system-shutdown.svg
 share/help/hu/gnome-help/figures/topbar-thunderbolt-acquiring.svg
+share/help/hu/gnome-help/figures/touch-edge-scroll.svg
 share/help/hu/gnome-help/figures/touch-hold.svg
 share/help/hu/gnome-help/figures/touch-osk.svg
 share/help/hu/gnome-help/figures/touch-overview.svg
@@ -8296,6 +8347,8 @@ share/help/id/gnome-help/figures/network-wired-symbolic.svg
 share/help/id/gnome-help/figures/network-wireless-disabled-symbolic.svg
 share/help/id/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/id/gnome-help/figures/printing-select.png
+share/help/id/gnome-help/figures/ps-button.svg
+share/help/id/gnome-help/figures/ps-create.svg
 share/help/id/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/id/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/id/gnome-help/figures/screenshot-tool.png
@@ -8359,6 +8412,7 @@ share/help/id/gnome-help/figures/topbar-pointer.svg
 share/help/id/gnome-help/figures/topbar-screen-shared.svg
 share/help/id/gnome-help/figures/topbar-system-shutdown.svg
 share/help/id/gnome-help/figures/topbar-thunderbolt-acquiring.svg
+share/help/id/gnome-help/figures/touch-edge-scroll.svg
 share/help/id/gnome-help/figures/touch-hold.svg
 share/help/id/gnome-help/figures/touch-osk.svg
 share/help/id/gnome-help/figures/touch-overview.svg
@@ -8805,6 +8859,8 @@ share/help/it/gnome-help/figures/network-wired-symbolic.svg
 share/help/it/gnome-help/figures/network-wireless-disabled-symbolic.svg
 share/help/it/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/it/gnome-help/figures/printing-select.png
+share/help/it/gnome-help/figures/ps-button.svg
+share/help/it/gnome-help/figures/ps-create.svg
 share/help/it/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/it/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/it/gnome-help/figures/screenshot-tool.png
@@ -8868,6 +8924,7 @@ share/help/it/gnome-help/figures/topbar-pointer.svg
 share/help/it/gnome-help/figures/topbar-screen-shared.svg
 share/help/it/gnome-help/figures/topbar-system-shutdown.svg
 share/help/it/gnome-help/figures/topbar-thunderbolt-acquiring.svg
+share/help/it/gnome-help/figures/touch-edge-scroll.svg
 share/help/it/gnome-help/figures/touch-hold.svg
 share/help/it/gnome-help/figures/touch-osk.svg
 share/help/it/gnome-help/figures/touch-overview.svg
@@ -9256,6 +9313,8 @@ share/help/ja/gnome-help/figures/network-wired-symbolic.svg
 share/help/ja/gnome-help/figures/network-wireless-disabled-symbolic.svg
 share/help/ja/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/ja/gnome-help/figures/printing-select.png
+share/help/ja/gnome-help/figures/ps-button.svg
+share/help/ja/gnome-help/figures/ps-create.svg
 share/help/ja/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/ja/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/ja/gnome-help/figures/screenshot-tool.png
@@ -9319,6 +9378,7 @@ share/help/ja/gnome-help/figures/topbar-pointer.svg
 share/help/ja/gnome-help/figures/topbar-screen-shared.svg
 share/help/ja/gnome-help/figures/topbar-system-shutdown.svg
 share/help/ja/gnome-help/figures/topbar-thunderbolt-acquiring.svg
+share/help/ja/gnome-help/figures/touch-edge-scroll.svg
 share/help/ja/gnome-help/figures/touch-hold.svg
 share/help/ja/gnome-help/figures/touch-osk.svg
 share/help/ja/gnome-help/figures/touch-overview.svg
@@ -9707,6 +9767,8 @@ share/help/kn/gnome-help/figures/network-wired-symbolic.svg
 share/help/kn/gnome-help/figures/network-wireless-disabled-symbolic.svg
 share/help/kn/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/kn/gnome-help/figures/printing-select.png
+share/help/kn/gnome-help/figures/ps-button.svg
+share/help/kn/gnome-help/figures/ps-create.svg
 share/help/kn/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/kn/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/kn/gnome-help/figures/screenshot-tool.png
@@ -9770,6 +9832,7 @@ share/help/kn/gnome-help/figures/topbar-pointer.svg
 share/help/kn/gnome-help/figures/topbar-screen-shared.svg
 share/help/kn/gnome-help/figures/topbar-system-shutdown.svg
 share/help/kn/gnome-help/figures/topbar-thunderbolt-acquiring.svg
+share/help/kn/gnome-help/figures/touch-edge-scroll.svg
 share/help/kn/gnome-help/figures/touch-hold.svg
 share/help/kn/gnome-help/figures/touch-osk.svg
 share/help/kn/gnome-help/figures/touch-overview.svg
@@ -10158,6 +10221,8 @@ share/help/ko/gnome-help/figures/network-wired-symbolic.svg
 share/help/ko/gnome-help/figures/network-wireless-disabled-symbolic.svg
 share/help/ko/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/ko/gnome-help/figures/printing-select.png
+share/help/ko/gnome-help/figures/ps-button.svg
+share/help/ko/gnome-help/figures/ps-create.svg
 share/help/ko/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/ko/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/ko/gnome-help/figures/screenshot-tool.png
@@ -10221,6 +10286,7 @@ share/help/ko/gnome-help/figures/topbar-pointer.svg
 share/help/ko/gnome-help/figures/topbar-screen-shared.svg
 share/help/ko/gnome-help/figures/topbar-system-shutdown.svg
 share/help/ko/gnome-help/figures/topbar-thunderbolt-acquiring.svg
+share/help/ko/gnome-help/figures/touch-edge-scroll.svg
 share/help/ko/gnome-help/figures/touch-hold.svg
 share/help/ko/gnome-help/figures/touch-osk.svg
 share/help/ko/gnome-help/figures/touch-overview.svg
@@ -10667,6 +10733,8 @@ share/help/lt/gnome-help/figures/network-wired-symbolic.svg
 share/help/lt/gnome-help/figures/network-wireless-disabled-symbolic.svg
 share/help/lt/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/lt/gnome-help/figures/printing-select.png
+share/help/lt/gnome-help/figures/ps-button.svg
+share/help/lt/gnome-help/figures/ps-create.svg
 share/help/lt/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/lt/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/lt/gnome-help/figures/screenshot-tool.png
@@ -10730,6 +10798,7 @@ share/help/lt/gnome-help/figures/topbar-pointer.svg
 share/help/lt/gnome-help/figures/topbar-screen-shared.svg
 share/help/lt/gnome-help/figures/topbar-system-shutdown.svg
 share/help/lt/gnome-help/figures/topbar-thunderbolt-acquiring.svg
+share/help/lt/gnome-help/figures/touch-edge-scroll.svg
 share/help/lt/gnome-help/figures/touch-hold.svg
 share/help/lt/gnome-help/figures/touch-osk.svg
 share/help/lt/gnome-help/figures/touch-overview.svg
@@ -11118,6 +11187,8 @@ share/help/lv/gnome-help/figures/network-wired-symbolic.svg
 share/help/lv/gnome-help/figures/network-wireless-disabled-symbolic.svg
 share/help/lv/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/lv/gnome-help/figures/printing-select.png
+share/help/lv/gnome-help/figures/ps-button.svg
+share/help/lv/gnome-help/figures/ps-create.svg
 share/help/lv/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/lv/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/lv/gnome-help/figures/screenshot-tool.png
@@ -11181,6 +11252,7 @@ share/help/lv/gnome-help/figures/topbar-pointer.svg
 share/help/lv/gnome-help/figures/topbar-screen-shared.svg
 share/help/lv/gnome-help/figures/topbar-system-shutdown.svg
 share/help/lv/gnome-help/figures/topbar-thunderbolt-acquiring.svg
+share/help/lv/gnome-help/figures/touch-edge-scroll.svg
 share/help/lv/gnome-help/figures/touch-hold.svg
 share/help/lv/gnome-help/figures/touch-osk.svg
 share/help/lv/gnome-help/figures/touch-overview.svg
@@ -11569,6 +11641,8 @@ share/help/mr/gnome-help/figures/network-wired-symbolic.svg
 share/help/mr/gnome-help/figures/network-wireless-disabled-symbolic.svg
 share/help/mr/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/mr/gnome-help/figures/printing-select.png
+share/help/mr/gnome-help/figures/ps-button.svg
+share/help/mr/gnome-help/figures/ps-create.svg
 share/help/mr/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/mr/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/mr/gnome-help/figures/screenshot-tool.png
@@ -11632,6 +11706,7 @@ share/help/mr/gnome-help/figures/topbar-pointer.svg
 share/help/mr/gnome-help/figures/topbar-screen-shared.svg
 share/help/mr/gnome-help/figures/topbar-system-shutdown.svg
 share/help/mr/gnome-help/figures/topbar-thunderbolt-acquiring.svg
+share/help/mr/gnome-help/figures/touch-edge-scroll.svg
 share/help/mr/gnome-help/figures/touch-hold.svg
 share/help/mr/gnome-help/figures/touch-osk.svg
 share/help/mr/gnome-help/figures/touch-overview.svg
@@ -12020,6 +12095,8 @@ share/help/nl/gnome-help/figures/network-wired-symbolic.svg
 share/help/nl/gnome-help/figures/network-wireless-disabled-symbolic.svg
 share/help/nl/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/nl/gnome-help/figures/printing-select.png
+share/help/nl/gnome-help/figures/ps-button.svg
+share/help/nl/gnome-help/figures/ps-create.svg
 share/help/nl/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/nl/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/nl/gnome-help/figures/screenshot-tool.png
@@ -12083,6 +12160,7 @@ share/help/nl/gnome-help/figures/topbar-pointer.svg
 share/help/nl/gnome-help/figures/topbar-screen-shared.svg
 share/help/nl/gnome-help/figures/topbar-system-shutdown.svg
 share/help/nl/gnome-help/figures/topbar-thunderbolt-acquiring.svg
+share/help/nl/gnome-help/figures/touch-edge-scroll.svg
 share/help/nl/gnome-help/figures/touch-hold.svg
 share/help/nl/gnome-help/figures/touch-osk.svg
 share/help/nl/gnome-help/figures/touch-overview.svg
@@ -12529,6 +12607,8 @@ share/help/pa/gnome-help/figures/network-wired-symbolic.svg
 share/help/pa/gnome-help/figures/network-wireless-disabled-symbolic.svg
 share/help/pa/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/pa/gnome-help/figures/printing-select.png
+share/help/pa/gnome-help/figures/ps-button.svg
+share/help/pa/gnome-help/figures/ps-create.svg
 share/help/pa/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/pa/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/pa/gnome-help/figures/screenshot-tool.png
@@ -12592,6 +12672,7 @@ share/help/pa/gnome-help/figures/topbar-pointer.svg
 share/help/pa/gnome-help/figures/topbar-screen-shared.svg
 share/help/pa/gnome-help/figures/topbar-system-shutdown.svg
 share/help/pa/gnome-help/figures/topbar-thunderbolt-acquiring.svg
+share/help/pa/gnome-help/figures/touch-edge-scroll.svg
 share/help/pa/gnome-help/figures/touch-hold.svg
 share/help/pa/gnome-help/figures/touch-osk.svg
 share/help/pa/gnome-help/figures/touch-overview.svg
@@ -12980,6 +13061,8 @@ share/help/pl/gnome-help/figures/network-wired-symbolic.svg
 share/help/pl/gnome-help/figures/network-wireless-disabled-symbolic.svg
 share/help/pl/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/pl/gnome-help/figures/printing-select.png
+share/help/pl/gnome-help/figures/ps-button.svg
+share/help/pl/gnome-help/figures/ps-create.svg
 share/help/pl/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/pl/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/pl/gnome-help/figures/screenshot-tool.png
@@ -13043,6 +13126,7 @@ share/help/pl/gnome-help/figures/topbar-pointer.svg
 share/help/pl/gnome-help/figures/topbar-screen-shared.svg
 share/help/pl/gnome-help/figures/topbar-system-shutdown.svg
 share/help/pl/gnome-help/figures/topbar-thunderbolt-acquiring.svg
+share/help/pl/gnome-help/figures/touch-edge-scroll.svg
 share/help/pl/gnome-help/figures/touch-hold.svg
 share/help/pl/gnome-help/figures/touch-osk.svg
 share/help/pl/gnome-help/figures/touch-overview.svg
@@ -13431,6 +13515,8 @@ share/help/pt/gnome-help/figures/network-wired-symbolic.svg
 share/help/pt/gnome-help/figures/network-wireless-disabled-symbolic.svg
 share/help/pt/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/pt/gnome-help/figures/printing-select.png
+share/help/pt/gnome-help/figures/ps-button.svg
+share/help/pt/gnome-help/figures/ps-create.svg
 share/help/pt/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/pt/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/pt/gnome-help/figures/screenshot-tool.png
@@ -13494,6 +13580,7 @@ share/help/pt/gnome-help/figures/topbar-pointer.svg
 share/help/pt/gnome-help/figures/topbar-screen-shared.svg
 share/help/pt/gnome-help/figures/topbar-system-shutdown.svg
 share/help/pt/gnome-help/figures/topbar-thunderbolt-acquiring.svg
+share/help/pt/gnome-help/figures/touch-edge-scroll.svg
 share/help/pt/gnome-help/figures/touch-hold.svg
 share/help/pt/gnome-help/figures/touch-osk.svg
 share/help/pt/gnome-help/figures/touch-overview.svg
@@ -13882,6 +13969,8 @@ share/help/pt_BR/gnome-help/figures/network-wired-symbolic.svg
 share/help/pt_BR/gnome-help/figures/network-wireless-disabled-symbolic.svg
 share/help/pt_BR/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/pt_BR/gnome-help/figures/printing-select.png
+share/help/pt_BR/gnome-help/figures/ps-button.svg
+share/help/pt_BR/gnome-help/figures/ps-create.svg
 share/help/pt_BR/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/pt_BR/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/pt_BR/gnome-help/figures/screenshot-tool.png
@@ -13945,6 +14034,7 @@ share/help/pt_BR/gnome-help/figures/topbar-pointer.svg
 share/help/pt_BR/gnome-help/figures/topbar-screen-shared.svg
 share/help/pt_BR/gnome-help/figures/topbar-system-shutdown.svg
 share/help/pt_BR/gnome-help/figures/topbar-thunderbolt-acquiring.svg
+share/help/pt_BR/gnome-help/figures/touch-edge-scroll.svg
 share/help/pt_BR/gnome-help/figures/touch-hold.svg
 share/help/pt_BR/gnome-help/figures/touch-osk.svg
 share/help/pt_BR/gnome-help/figures/touch-overview.svg
@@ -14391,6 +14481,8 @@ share/help/ro/gnome-help/figures/network-wired-symbolic.svg
 share/help/ro/gnome-help/figures/network-wireless-disabled-symbolic.svg
 share/help/ro/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/ro/gnome-help/figures/printing-select.png
+share/help/ro/gnome-help/figures/ps-button.svg
+share/help/ro/gnome-help/figures/ps-create.svg
 share/help/ro/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/ro/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/ro/gnome-help/figures/screenshot-tool.png
@@ -14454,6 +14546,7 @@ share/help/ro/gnome-help/figures/topbar-pointer.svg
 share/help/ro/gnome-help/figures/topbar-screen-shared.svg
 share/help/ro/gnome-help/figures/topbar-system-shutdown.svg
 share/help/ro/gnome-help/figures/topbar-thunderbolt-acquiring.svg
+share/help/ro/gnome-help/figures/touch-edge-scroll.svg
 share/help/ro/gnome-help/figures/touch-hold.svg
 share/help/ro/gnome-help/figures/touch-osk.svg
 share/help/ro/gnome-help/figures/touch-overview.svg
@@ -14842,6 +14935,8 @@ share/help/ru/gnome-help/figures/network-wired-symbolic.svg
 share/help/ru/gnome-help/figures/network-wireless-disabled-symbolic.svg
 share/help/ru/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/ru/gnome-help/figures/printing-select.png
+share/help/ru/gnome-help/figures/ps-button.svg
+share/help/ru/gnome-help/figures/ps-create.svg
 share/help/ru/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/ru/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/ru/gnome-help/figures/screenshot-tool.png
@@ -14905,6 +15000,7 @@ share/help/ru/gnome-help/figures/topbar-pointer.svg
 share/help/ru/gnome-help/figures/topbar-screen-shared.svg
 share/help/ru/gnome-help/figures/topbar-system-shutdown.svg
 share/help/ru/gnome-help/figures/topbar-thunderbolt-acquiring.svg
+share/help/ru/gnome-help/figures/touch-edge-scroll.svg
 share/help/ru/gnome-help/figures/touch-hold.svg
 share/help/ru/gnome-help/figures/touch-osk.svg
 share/help/ru/gnome-help/figures/touch-overview.svg
@@ -15351,6 +15447,8 @@ share/help/sl/gnome-help/figures/network-wired-symbolic.svg
 share/help/sl/gnome-help/figures/network-wireless-disabled-symbolic.svg
 share/help/sl/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/sl/gnome-help/figures/printing-select.png
+share/help/sl/gnome-help/figures/ps-button.svg
+share/help/sl/gnome-help/figures/ps-create.svg
 share/help/sl/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/sl/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/sl/gnome-help/figures/screenshot-tool.png
@@ -15414,6 +15512,7 @@ share/help/sl/gnome-help/figures/topbar-pointer.svg
 share/help/sl/gnome-help/figures/topbar-screen-shared.svg
 share/help/sl/gnome-help/figures/topbar-system-shutdown.svg
 share/help/sl/gnome-help/figures/topbar-thunderbolt-acquiring.svg
+share/help/sl/gnome-help/figures/touch-edge-scroll.svg
 share/help/sl/gnome-help/figures/touch-hold.svg
 share/help/sl/gnome-help/figures/touch-osk.svg
 share/help/sl/gnome-help/figures/touch-overview.svg
@@ -15802,6 +15901,8 @@ share/help/sr/gnome-help/figures/network-wired-symbolic.svg
 share/help/sr/gnome-help/figures/network-wireless-disabled-symbolic.svg
 share/help/sr/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/sr/gnome-help/figures/printing-select.png
+share/help/sr/gnome-help/figures/ps-button.svg
+share/help/sr/gnome-help/figures/ps-create.svg
 share/help/sr/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/sr/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/sr/gnome-help/figures/screenshot-tool.png
@@ -15865,6 +15966,7 @@ share/help/sr/gnome-help/figures/topbar-pointer.svg
 share/help/sr/gnome-help/figures/topbar-screen-shared.svg
 share/help/sr/gnome-help/figures/topbar-system-shutdown.svg
 share/help/sr/gnome-help/figures/topbar-thunderbolt-acquiring.svg
+share/help/sr/gnome-help/figures/touch-edge-scroll.svg
 share/help/sr/gnome-help/figures/touch-hold.svg
 share/help/sr/gnome-help/figures/touch-osk.svg
 share/help/sr/gnome-help/figures/touch-overview.svg
@@ -16253,6 +16355,8 @@ share/help/sr@latin/gnome-help/figures/network-wired-symbolic.svg
 share/help/sr@latin/gnome-help/figures/network-wireless-disabled-symbolic.svg
 share/help/sr@latin/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/sr@latin/gnome-help/figures/printing-select.png
+share/help/sr@latin/gnome-help/figures/ps-button.svg
+share/help/sr@latin/gnome-help/figures/ps-create.svg
 share/help/sr@latin/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/sr@latin/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/sr@latin/gnome-help/figures/screenshot-tool.png
@@ -16316,6 +16420,7 @@ share/help/sr@latin/gnome-help/figures/topbar-pointer.svg
 share/help/sr@latin/gnome-help/figures/topbar-screen-shared.svg
 share/help/sr@latin/gnome-help/figures/topbar-system-shutdown.svg
 share/help/sr@latin/gnome-help/figures/topbar-thunderbolt-acquiring.svg
+share/help/sr@latin/gnome-help/figures/touch-edge-scroll.svg
 share/help/sr@latin/gnome-help/figures/touch-hold.svg
 share/help/sr@latin/gnome-help/figures/touch-osk.svg
 share/help/sr@latin/gnome-help/figures/touch-overview.svg
@@ -16704,6 +16809,8 @@ share/help/sv/gnome-help/figures/network-wired-symbolic.svg
 share/help/sv/gnome-help/figures/network-wireless-disabled-symbolic.svg
 share/help/sv/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/sv/gnome-help/figures/printing-select.png
+share/help/sv/gnome-help/figures/ps-button.svg
+share/help/sv/gnome-help/figures/ps-create.svg
 share/help/sv/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/sv/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/sv/gnome-help/figures/screenshot-tool.png
@@ -16767,6 +16874,7 @@ share/help/sv/gnome-help/figures/topbar-pointer.svg
 share/help/sv/gnome-help/figures/topbar-screen-shared.svg
 share/help/sv/gnome-help/figures/topbar-system-shutdown.svg
 share/help/sv/gnome-help/figures/topbar-thunderbolt-acquiring.svg
+share/help/sv/gnome-help/figures/touch-edge-scroll.svg
 share/help/sv/gnome-help/figures/touch-hold.svg
 share/help/sv/gnome-help/figures/touch-osk.svg
 share/help/sv/gnome-help/figures/touch-overview.svg
@@ -17213,6 +17321,8 @@ share/help/ta/gnome-help/figures/network-wired-symbolic.svg
 share/help/ta/gnome-help/figures/network-wireless-disabled-symbolic.svg
 share/help/ta/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/ta/gnome-help/figures/printing-select.png
+share/help/ta/gnome-help/figures/ps-button.svg
+share/help/ta/gnome-help/figures/ps-create.svg
 share/help/ta/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/ta/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/ta/gnome-help/figures/screenshot-tool.png
@@ -17276,6 +17386,7 @@ share/help/ta/gnome-help/figures/topbar-pointer.svg
 share/help/ta/gnome-help/figures/topbar-screen-shared.svg
 share/help/ta/gnome-help/figures/topbar-system-shutdown.svg
 share/help/ta/gnome-help/figures/topbar-thunderbolt-acquiring.svg
+share/help/ta/gnome-help/figures/touch-edge-scroll.svg
 share/help/ta/gnome-help/figures/touch-hold.svg
 share/help/ta/gnome-help/figures/touch-osk.svg
 share/help/ta/gnome-help/figures/touch-overview.svg
@@ -17664,6 +17775,8 @@ share/help/te/gnome-help/figures/network-wired-symbolic.svg
 share/help/te/gnome-help/figures/network-wireless-disabled-symbolic.svg
 share/help/te/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/te/gnome-help/figures/printing-select.png
+share/help/te/gnome-help/figures/ps-button.svg
+share/help/te/gnome-help/figures/ps-create.svg
 share/help/te/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/te/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/te/gnome-help/figures/screenshot-tool.png
@@ -17727,6 +17840,7 @@ share/help/te/gnome-help/figures/topbar-pointer.svg
 share/help/te/gnome-help/figures/topbar-screen-shared.svg
 share/help/te/gnome-help/figures/topbar-system-shutdown.svg
 share/help/te/gnome-help/figures/topbar-thunderbolt-acquiring.svg
+share/help/te/gnome-help/figures/touch-edge-scroll.svg
 share/help/te/gnome-help/figures/touch-hold.svg
 share/help/te/gnome-help/figures/touch-osk.svg
 share/help/te/gnome-help/figures/touch-overview.svg
@@ -18115,6 +18229,8 @@ share/help/tr/gnome-help/figures/network-wired-symbolic.svg
 share/help/tr/gnome-help/figures/network-wireless-disabled-symbolic.svg
 share/help/tr/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/tr/gnome-help/figures/printing-select.png
+share/help/tr/gnome-help/figures/ps-button.svg
+share/help/tr/gnome-help/figures/ps-create.svg
 share/help/tr/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/tr/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/tr/gnome-help/figures/screenshot-tool.png
@@ -18178,6 +18294,7 @@ share/help/tr/gnome-help/figures/topbar-pointer.svg
 share/help/tr/gnome-help/figures/topbar-screen-shared.svg
 share/help/tr/gnome-help/figures/topbar-system-shutdown.svg
 share/help/tr/gnome-help/figures/topbar-thunderbolt-acquiring.svg
+share/help/tr/gnome-help/figures/touch-edge-scroll.svg
 share/help/tr/gnome-help/figures/touch-hold.svg
 share/help/tr/gnome-help/figures/touch-osk.svg
 share/help/tr/gnome-help/figures/touch-overview.svg
@@ -18624,6 +18741,8 @@ share/help/uk/gnome-help/figures/network-wired-symbolic.svg
 share/help/uk/gnome-help/figures/network-wireless-disabled-symbolic.svg
 share/help/uk/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/uk/gnome-help/figures/printing-select.png
+share/help/uk/gnome-help/figures/ps-button.svg
+share/help/uk/gnome-help/figures/ps-create.svg
 share/help/uk/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/uk/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/uk/gnome-help/figures/screenshot-tool.png
@@ -18687,6 +18806,7 @@ share/help/uk/gnome-help/figures/topbar-pointer.svg
 share/help/uk/gnome-help/figures/topbar-screen-shared.svg
 share/help/uk/gnome-help/figures/topbar-system-shutdown.svg
 share/help/uk/gnome-help/figures/topbar-thunderbolt-acquiring.svg
+share/help/uk/gnome-help/figures/touch-edge-scroll.svg
 share/help/uk/gnome-help/figures/touch-hold.svg
 share/help/uk/gnome-help/figures/touch-osk.svg
 share/help/uk/gnome-help/figures/touch-overview.svg
@@ -19133,6 +19253,8 @@ share/help/vi/gnome-help/figures/network-wired-symbolic.svg
 share/help/vi/gnome-help/figures/network-wireless-disabled-symbolic.svg
 share/help/vi/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/vi/gnome-help/figures/printing-select.png
+share/help/vi/gnome-help/figures/ps-button.svg
+share/help/vi/gnome-help/figures/ps-create.svg
 share/help/vi/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/vi/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/vi/gnome-help/figures/screenshot-tool.png
@@ -19196,6 +19318,7 @@ share/help/vi/gnome-help/figures/topbar-pointer.svg
 share/help/vi/gnome-help/figures/topbar-screen-shared.svg
 share/help/vi/gnome-help/figures/topbar-system-shutdown.svg
 share/help/vi/gnome-help/figures/topbar-thunderbolt-acquiring.svg
+share/help/vi/gnome-help/figures/touch-edge-scroll.svg
 share/help/vi/gnome-help/figures/touch-hold.svg
 share/help/vi/gnome-help/figures/touch-osk.svg
 share/help/vi/gnome-help/figures/touch-overview.svg
@@ -19584,6 +19707,8 @@ share/help/zh_CN/gnome-help/figures/network-wired-symbolic.svg
 share/help/zh_CN/gnome-help/figures/network-wireless-disabled-symbolic.svg
 share/help/zh_CN/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/zh_CN/gnome-help/figures/printing-select.png
+share/help/zh_CN/gnome-help/figures/ps-button.svg
+share/help/zh_CN/gnome-help/figures/ps-create.svg
 share/help/zh_CN/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/zh_CN/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/zh_CN/gnome-help/figures/screenshot-tool.png
@@ -19647,6 +19772,7 @@ share/help/zh_CN/gnome-help/figures/topbar-pointer.svg
 share/help/zh_CN/gnome-help/figures/topbar-screen-shared.svg
 share/help/zh_CN/gnome-help/figures/topbar-system-shutdown.svg
 share/help/zh_CN/gnome-help/figures/topbar-thunderbolt-acquiring.svg
+share/help/zh_CN/gnome-help/figures/touch-edge-scroll.svg
 share/help/zh_CN/gnome-help/figures/touch-hold.svg
 share/help/zh_CN/gnome-help/figures/touch-osk.svg
 share/help/zh_CN/gnome-help/figures/touch-overview.svg
