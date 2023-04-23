@@ -1,7 +1,7 @@
 COMMENT=		GNOME document viewer
 
 GNOME_PROJECT=		evince
-GNOME_VERSION=		43.1
+GNOME_VERSION=		44.1
 
 MAJ_V=			3.0
 SUBST_VARS=		MAJ_V

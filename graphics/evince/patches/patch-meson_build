@@ -7,7 +7,7 @@ Subject: [PATCH] build: Require poppler 22.02.0 for PDF rendering
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -399,7 +399,7 @@ elif get_option('dvi').auto()
+@@ -404,7 +404,7 @@ elif get_option('dvi').auto()
  endif
  
  # *** PDF ***
