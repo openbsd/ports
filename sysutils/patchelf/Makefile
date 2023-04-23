@@ -1,6 +1,6 @@
 COMMENT =	utility for modifying existing ELF executables and libraries
 
-V =			0.17.2
+V =			0.18.0
 DISTNAME =		patchelf-${V}
 MASTER_SITES =		https://github.com/NixOS/patchelf/releases/download/${V}/
 
@@ -24,7 +24,7 @@ CONFIGURE_ARGS =	--mandir=${PREFIX}/man
 
 .include <bsd.port.arch.mk>
 
-# 0.17.2 amd64:   TOTAL: 48, PASS: 47, FAIL:  1 (replace-add-needed.sh)
+# 0.18.0 amd64:   TOTAL: 56, PASS: 52, FAIL:  2 (replace-add-needed.sh, shared-rpath.sh)
 # 0.14.5 sparc64: TOTAL: 45, PASS: 33, FAIL: 12 (XXX: mostly 'Abort trap')
 TEST_TARGET =		check
 
