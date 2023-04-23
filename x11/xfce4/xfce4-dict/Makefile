@@ -1,8 +1,7 @@
 COMMENT=	Xfce4 dictionary application
 
-XFCE_VERSION=	0.8.4
+XFCE_VERSION=	0.8.5
 XFCE_GOODIE=	xfce4-dict
-REVISION=	3
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -23,6 +22,6 @@ WANTLIB += pangoft2-1.0 pcre2-8 pixman-1 png pthread
 WANTLIB += startup-notification-1 xcb xcb-util xcb-render xcb-shm
 WANTLIB += xfce4panel-2.0 xfce4util z harfbuzz graphite2 xfce4ui-2
 WANTLIB += atk-bridge-2.0 cairo-gobject epoxy gdk-3 gtk-3 ${COMPILER_LIBCXX}
-WANTLIB += Xau Xdmcp execinfo jpeg atspi dbus-1
+WANTLIB += Xau Xdmcp execinfo jpeg atspi dbus-1 xfconf-0
 
 .include <bsd.port.mk>
