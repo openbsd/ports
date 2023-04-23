@@ -7,19 +7,19 @@ include/gnome-connections/gtk-frdp/gtk-frdp-version.h
 include/gnome-connections/gtk-frdp/gtk-frdp.h
 lib/gnome-connections/
 lib/gnome-connections/girepository-1.0/
-lib/gnome-connections/girepository-1.0/GtkFrdp-0.1.typelib
-@so lib/gnome-connections/libgtk-frdp-0.1.so
+lib/gnome-connections/girepository-1.0/GtkFrdp-0.2.typelib
+@so lib/gnome-connections/libgtk-frdp-0.2.so
 lib/gnome-connections/pkgconfig/
-lib/gnome-connections/pkgconfig/gtk-frdp-0.1.pc
+lib/gnome-connections/pkgconfig/gtk-frdp-0.2.pc
 share/applications/org.gnome.Connections.desktop
 share/dbus-1/services/org.gnome.Connections.service
 share/glib-2.0/schemas/org.gnome.Connections.gschema.xml
 share/gnome-connections/
 share/gnome-connections/gir-1.0/
-share/gnome-connections/gir-1.0/GtkFrdp-0.1.gir
+share/gnome-connections/gir-1.0/GtkFrdp-0.2.gir
 share/gnome-connections/vapi/
-share/gnome-connections/vapi/gtk-frdp-0.1.deps
-share/gnome-connections/vapi/gtk-frdp-0.1.vapi
+share/gnome-connections/vapi/gtk-frdp-0.2.deps
+share/gnome-connections/vapi/gtk-frdp-0.2.vapi
 share/help/
 share/help/C/
 share/help/C/gnome-connections/
@@ -171,6 +171,7 @@ share/help/uk/gnome-connections/legal.xml
 share/icons/hicolor/scalable/apps/org.gnome.Connections.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Connections-symbolic.svg
 share/locale/ab/LC_MESSAGES/gnome-connections.mo
+share/locale/be/LC_MESSAGES/gnome-connections.mo
 share/locale/bg/LC_MESSAGES/gnome-connections.mo
 share/locale/ca/LC_MESSAGES/gnome-connections.mo
 share/locale/cs/LC_MESSAGES/gnome-connections.mo
