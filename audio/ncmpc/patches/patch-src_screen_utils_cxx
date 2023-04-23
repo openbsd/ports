@@ -1,7 +1,7 @@
 Index: src/screen_utils.cxx
 --- src/screen_utils.cxx.orig
 +++ src/screen_utils.cxx
-@@ -31,6 +31,7 @@
+@@ -15,6 +15,7 @@
  #include <cerrno>
  #endif
  

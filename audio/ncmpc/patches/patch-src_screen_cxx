@@ -3,7 +3,7 @@ Because c++14 zomg woot woot
 Index: src/screen.cxx
 --- src/screen.cxx.orig
 +++ src/screen.cxx
-@@ -43,8 +43,8 @@ ScreenManager::MakePage(const PageMeta &sf) noexcept
+@@ -27,8 +27,8 @@ ScreenManager::MakePage(const PageMeta &sf) noexcept
  		return i;
  
  	auto j = pages.emplace(&sf,
