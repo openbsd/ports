@@ -3,6 +3,7 @@ COMMENT=	gcc for ${CONFIG} cross-development
 VERSION=	12.2.0
 DISTNAME=	gcc-${VERSION}
 PKGNAME=	${CONFIG}-gcc-${VERSION}
+REVISION=	0
 
 USE_NOEXECONLY=	Yes
 

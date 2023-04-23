@@ -1,3 +1,4 @@
+@conflict aarch64-none-elf-gcc-linaro-*
 @pkgpath devel/arm-none-eabi/gcc-linaro,aarch64
 lib/gcc/
 lib/gcc/${CONFIG}/
