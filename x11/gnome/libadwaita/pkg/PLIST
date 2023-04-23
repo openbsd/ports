@@ -8,6 +8,7 @@ include/libadwaita-1/adw-animation.h
 include/libadwaita-1/adw-application-window.h
 include/libadwaita-1/adw-application.h
 include/libadwaita-1/adw-avatar.h
+include/libadwaita-1/adw-banner.h
 include/libadwaita-1/adw-bin.h
 include/libadwaita-1/adw-button-content.h
 include/libadwaita-1/adw-carousel-indicator-dots.h
@@ -17,7 +18,6 @@ include/libadwaita-1/adw-clamp-layout.h
 include/libadwaita-1/adw-clamp-scrollable.h
 include/libadwaita-1/adw-clamp.h
 include/libadwaita-1/adw-combo-row.h
-include/libadwaita-1/adw-deprecation-macros.h
 include/libadwaita-1/adw-easing.h
 include/libadwaita-1/adw-entry-row.h
 include/libadwaita-1/adw-enum-list-model.h
@@ -44,6 +44,8 @@ include/libadwaita-1/adw-style-manager.h
 include/libadwaita-1/adw-swipe-tracker.h
 include/libadwaita-1/adw-swipeable.h
 include/libadwaita-1/adw-tab-bar.h
+include/libadwaita-1/adw-tab-button.h
+include/libadwaita-1/adw-tab-overview.h
 include/libadwaita-1/adw-tab-view.h
 include/libadwaita-1/adw-timed-animation.h
 include/libadwaita-1/adw-toast-overlay.h
@@ -80,6 +82,7 @@ share/locale/fr/LC_MESSAGES/libadwaita.mo
 share/locale/fur/LC_MESSAGES/libadwaita.mo
 share/locale/gl/LC_MESSAGES/libadwaita.mo
 share/locale/he/LC_MESSAGES/libadwaita.mo
+share/locale/hi/LC_MESSAGES/libadwaita.mo
 share/locale/hr/LC_MESSAGES/libadwaita.mo
 share/locale/hu/LC_MESSAGES/libadwaita.mo
 share/locale/id/LC_MESSAGES/libadwaita.mo
