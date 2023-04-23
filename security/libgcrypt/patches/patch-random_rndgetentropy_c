@@ -1,4 +1,4 @@
-https://dev.gnupg.org/T6442
+https://dev.gnupg.org/rCfa21ddc158b5d7b5900856e5b131071302217a51
 
 Index: random/rndgetentropy.c
 --- random/rndgetentropy.c.orig
@@ -7,7 +7,7 @@ Index: random/rndgetentropy.c
        do
          {
            _gcry_pre_syscall ();
-+#ifdef HAVE_GETRANDOM
++#ifdef GRND_RANDOM
            if (fips_mode ())
              {
                /* DRBG chaining defined in SP 800-90A (rev 1) specify
