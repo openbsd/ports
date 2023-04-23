@@ -1,11 +1,11 @@
 COMMENT =		digital photo organizer
 
-GNOME_VERSION =		0.30.18
+GNOME_VERSION =		0.32.0
 GNOME_PROJECT =		shotwell
 
-SHARED_LIBS += shotwell-plugin-dev-1.0   0.0 # 0.30.18
-SHARED_LIBS += shotwell-plugin-common    0.0 # 0.30.18
-SHARED_LIBS += shotwell-authenticator    0.0 # 0.30.18
+SHARED_LIBS += shotwell-plugin-dev-1.0   0.0 # 0.32.0
+SHARED_LIBS += shotwell-plugin-common    0.0 # 0.32.0
+SHARED_LIBS += shotwell-authenticator    0.0 # 0.32.0
 
 CATEGORIES =		graphics
 
@@ -16,12 +16,12 @@ MAINTAINER = 		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c cairo cairo-gobject exif gcr-base-3 gcr-ui-3 gdata
-WANTLIB += gdk-3 gdk_pixbuf-2.0 gee-0.8 gexiv2 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 gphoto2 gphoto2_port gstpbutils-1.0
-WANTLIB += gstreamer-1.0 gtk-3 intl json-glib-1.0 m pango-1.0
-WANTLIB += pangocairo-1.0 portal portal-gtk3 raw soup-2.4 sqlite3
-WANTLIB += webkit2gtk-4.0 xml2
+WANTLIB += c cairo cairo-gobject exif gcr-base-3 gcr-ui-3 gdk-3
+WANTLIB += gdk_pixbuf-2.0 gee-0.8 gexiv2 gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 gphoto2 gphoto2_port gstreamer-1.0 gtk-3
+WANTLIB += intl json-glib-1.0 m pango-1.0 pangocairo-1.0 portal
+WANTLIB += portal-gtk3 raw secret-1 soup-3.0 sqlite3 webkit2gtk-4.1
+WANTLIB += webp webpdemux xml2
 
 MODULES =		devel/dconf \
 			devel/meson \
@@ -29,17 +29,15 @@ MODULES =		devel/dconf \
 
 MODGNOME_TOOLS =	desktop-file-utils gtk-update-icon-cache vala yelp
 
-LIB_DEPENDS =		devel/libgdata \
-			devel/libgee \
+LIB_DEPENDS =		devel/libgee \
 			graphics/libgexiv2 \
 			graphics/libgphoto2 \
 			graphics/libraw \
 			sysutils/libportal,-gtk3 \
-			www/webkitgtk4
+			www/webkitgtk4,webkitgtk41
 
-CONFIGURE_ARGS =	-Dface-detection=false \
-			-Dudev=false \
-			-Dinstall-apport-hook=false
+CONFIGURE_ARGS =	-Dinstall_apport_hook=false \
+			-Dudev=false
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
