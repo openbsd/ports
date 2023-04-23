@@ -1,7 +1,7 @@
 COMMENT=	GNOME web browser based on webkit
 
 GNOME_PROJECT=	epiphany
-GNOME_VERSION=	43.1
+GNOME_VERSION=	44.2
 
 CATEGORIES=	www
 
@@ -10,11 +10,11 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += archive atk-1.0 c cairo dazzle-1.0 gcr-base-3 gcr-ui-3
-WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmp gobject-2.0
-WANTLIB += gtk-3 handy-1 hogweed intl javascriptcoregtk-4.1 json-glib-1.0
-WANTLIB += m nettle pango-1.0 portal portal-gtk3 secret-1 soup-3.0
-WANTLIB += sqlite3 webkit2gtk-4.1 xml2
+WANTLIB += adwaita-1 archive c cairo gcr-4 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gmp gobject-2.0 graphene-1.0 gstreamer-1.0
+WANTLIB += gtk-4 hogweed intl javascriptcoregtk-6.0 json-glib-1.0
+WANTLIB += m nettle pango-1.0 portal portal-gtk4 secret-1 soup-3.0
+WANTLIB += sqlite3 webkitgtk-6.0 xml2
 
 BUILD_DEPENDS=	devel/iso-codes \
 		devel/gsettings-desktop-schemas
@@ -22,12 +22,10 @@ BUILD_DEPENDS=	devel/iso-codes \
 RUN_DEPENDS=	devel/iso-codes \
 		devel/gsettings-desktop-schemas
 
-LIB_DEPENDS=	sysutils/libportal,-gtk3 \
-		www/webkitgtk4,webkitgtk41 \
-		x11/gnome/at-spi2-core \
-		x11/gnome/gcr \
-		x11/gnome/libdazzle \
-		x11/libhandy
+LIB_DEPENDS=	sysutils/libportal,-gtk4 \
+		www/webkitgtk4,webkitgtk60 \
+		x11/gnome/gcr4 \
+		x11/gnome/libadwaita
 
 # webkit browsing
 RUN_DEPENDS +=	multimedia/gstreamer1/plugins-libav

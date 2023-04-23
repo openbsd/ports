@@ -21,7 +21,7 @@ Index: lib/safe-browsing/ephy-gsb-service.c
  }
  
  static gboolean
-@@ -587,13 +587,13 @@ ephy_gsb_service_update_full_hashes_in_thread (UpdateF
+@@ -574,13 +574,13 @@ ephy_gsb_service_update_full_hashes_in_thread (UpdateF
    g_mutex_lock (&data->mutex);
  
    if (self->next_full_hashes_time > CURRENT_TIME) {
