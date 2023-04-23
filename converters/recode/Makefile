@@ -1,6 +1,6 @@
 COMMENT=	convert files between character sets and usages
 
-V=		3.7.13
+V=		3.7.14
 DISTNAME=	recode-$V
 SHARED_LIBS +=	recode               1.0      # 10.12
 
