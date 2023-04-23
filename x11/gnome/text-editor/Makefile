@@ -1,7 +1,7 @@
 COMMENT=		simple Text Editor for GNOME
 
 GNOME_PROJECT=		gnome-text-editor
-GNOME_VERSION=		43.2
+GNOME_VERSION=		44.0
 
 CATEGORIES=		editors
 
