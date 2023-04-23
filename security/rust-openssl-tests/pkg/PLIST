@@ -6367,6 +6367,7 @@ share/rust-openssl-tests/openssl-sys/src/handwritten/aes.rs
 share/rust-openssl-tests/openssl-sys/src/handwritten/asn1.rs
 share/rust-openssl-tests/openssl-sys/src/handwritten/bio.rs
 share/rust-openssl-tests/openssl-sys/src/handwritten/bn.rs
+share/rust-openssl-tests/openssl-sys/src/handwritten/cmac.rs
 share/rust-openssl-tests/openssl-sys/src/handwritten/cms.rs
 share/rust-openssl-tests/openssl-sys/src/handwritten/conf.rs
 share/rust-openssl-tests/openssl-sys/src/handwritten/crypto.rs
