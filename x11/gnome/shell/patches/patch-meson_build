@@ -1,25 +1,16 @@
-REVERT:
-From 9bc89b821cf09195418f20225bbec39c0567d263 Mon Sep 17 00:00:00 2001
-From: =?UTF-8?q?Jonas=20=C3=85dahl?= <jadahl@gmail.com>
-Date: Wed, 17 Aug 2022 21:43:21 +0200
-Subject: [PATCH] main: Prepend RPATH or RUNPATH paths to gir search paths
-
-This triggers the following error:
-../gnome-shell-44.0/src/main.c:135:3: warning: implicit declaration of function 'ElfW' is invalid in C99 [-Wimplicit-function-declaration]
-  ElfW (Dyn) *dyn;
-  ^
-../gnome-shell-44.0/src/main.c:135:9: error: use of undeclared identifier 'Dyn'
-  ElfW (Dyn) *dyn;
+https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/2747
 
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -148,8 +148,6 @@ cdata.set('HAVE_FDWALK', cc.has_function('fdwalk'))
+@@ -148,8 +148,10 @@ cdata.set('HAVE_FDWALK', cc.has_function('fdwalk'))
  cdata.set('HAVE_MALLINFO', cc.has_function('mallinfo'))
  cdata.set('HAVE_MALLINFO2', cc.has_function('mallinfo2'))
  cdata.set('HAVE_SYS_RESOURCE_H', cc.has_header('sys/resource.h'))
--cdata.set('HAVE_EXE_INTROSPECTION',
--  cc.has_header('elf.h') and cc.has_header('link.h'))
++if host_machine.system() == 'linux'
+ cdata.set('HAVE_EXE_INTROSPECTION',
+   cc.has_header('elf.h') and cc.has_header('link.h'))
++endif
  cdata.set('HAVE__NL_TIME_FIRST_WEEKDAY',
    cc.has_header_symbol('langinfo.h', '_NL_TIME_FIRST_WEEKDAY')
  )
