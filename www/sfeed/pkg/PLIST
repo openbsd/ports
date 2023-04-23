@@ -7,6 +7,7 @@ bin/sfeed_content
 @bin bin/sfeed_frames
 @bin bin/sfeed_gopher
 @bin bin/sfeed_html
+@bin bin/sfeed_json
 bin/sfeed_markread
 @bin bin/sfeed_mbox
 bin/sfeed_opml_export
@@ -23,6 +24,7 @@ bin/sfeed_update
 @man man/man1/sfeed_frames.1
 @man man/man1/sfeed_gopher.1
 @man man/man1/sfeed_html.1
+@man man/man1/sfeed_json.1
 @man man/man1/sfeed_markread.1
 @man man/man1/sfeed_mbox.1
 @man man/man1/sfeed_opml_export.1
