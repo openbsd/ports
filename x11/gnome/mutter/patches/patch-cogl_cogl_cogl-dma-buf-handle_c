@@ -1,10 +1,10 @@
 Index: cogl/cogl/cogl-dma-buf-handle.c
 --- cogl/cogl/cogl-dma-buf-handle.c.orig
 +++ cogl/cogl/cogl-dma-buf-handle.c
-@@ -36,8 +36,10 @@
- 
+@@ -37,8 +37,10 @@
  #include <errno.h>
  #include <gio/gio.h>
+ #include <glib/gstdio.h>
 +#ifdef __linux__
  #include <linux/dma-buf.h>
  #include <sys/ioctl.h>

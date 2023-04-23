@@ -5,7 +5,7 @@ https://gitlab.gnome.org/GNOME/mutter/-/issues/2103
 Index: src/backends/meta-stage-impl.c
 --- src/backends/meta-stage-impl.c.orig
 +++ src/backends/meta-stage-impl.c
-@@ -561,10 +561,14 @@ meta_stage_impl_redraw_view_primary (MetaStageImpl    
+@@ -570,10 +570,14 @@ meta_stage_impl_redraw_view_primary (MetaStageImpl    
     * artefacts.
     */
    /* swap_region does not need damage history, set it up before that */
