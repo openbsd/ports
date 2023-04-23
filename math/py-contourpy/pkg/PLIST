@@ -19,6 +19,7 @@ lib/python${MODPY_VERSION}/site-packages/contourpy/${MODPY_PYCACHE}enum_util.${M
 lib/python${MODPY_VERSION}/site-packages/contourpy/_version.py
 lib/python${MODPY_VERSION}/site-packages/contourpy/chunk.py
 lib/python${MODPY_VERSION}/site-packages/contourpy/enum_util.py
+lib/python${MODPY_VERSION}/site-packages/contourpy/py.typed
 lib/python${MODPY_VERSION}/site-packages/contourpy/util/
 lib/python${MODPY_VERSION}/site-packages/contourpy/util/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/contourpy/util/${MODPY_PYCACHE}/
@@ -34,8 +35,11 @@ lib/python${MODPY_VERSION}/site-packages/contourpy/util/${MODPY_PYCACHE}mpl_rend
 lib/python${MODPY_VERSION}/site-packages/contourpy/util/${MODPY_PYCACHE}mpl_renderer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/contourpy/util/${MODPY_PYCACHE}mpl_util.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/contourpy/util/${MODPY_PYCACHE}mpl_util.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/contourpy/util/${MODPY_PYCACHE}renderer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/contourpy/util/${MODPY_PYCACHE}renderer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/contourpy/util/bokeh_renderer.py
 lib/python${MODPY_VERSION}/site-packages/contourpy/util/bokeh_util.py
 lib/python${MODPY_VERSION}/site-packages/contourpy/util/data.py
 lib/python${MODPY_VERSION}/site-packages/contourpy/util/mpl_renderer.py
 lib/python${MODPY_VERSION}/site-packages/contourpy/util/mpl_util.py
+lib/python${MODPY_VERSION}/site-packages/contourpy/util/renderer.py
