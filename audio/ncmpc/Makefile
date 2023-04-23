@@ -3,6 +3,7 @@ COMMENT=		curses based frontend for mpd
 VER=			0.48
 DISTNAME=		ncmpc-${VER}
 EPOCH=			0
+REVISION=		0
 CATEGORIES=		audio
 
 HOMEPAGE=		https://www.musicpd.org/clients/ncmpc/
@@ -11,7 +12,8 @@ HOMEPAGE=		https://www.musicpd.org/clients/ncmpc/
 PERMIT_PACKAGE=	Yes
 
 # make sure to regen WANTLIB on ld.lld arches (-Wl,--as-needed)
-WANTLIB=		c intl m mpdclient>=1 ${COMPILER_LIBCXX} curses pcre2-8
+WANTLIB +=	${COMPILER_LIBCXX} c curses iconv intl m mpdclient>=1
+WANTLIB +=	pcre2-8
 
 MASTER_SITES=		https://www.musicpd.org/download/ncmpc/${VER:R}/
 
@@ -26,9 +28,9 @@ BUILD_DEPENDS=		devel/boost \
 			devel/gettext,-tools \
 			textproc/py-sphinx,python3
 
-LIB_DEPENDS=		devel/gettext,-runtime \
-			devel/pcre2 \
-			audio/libmpdclient>=2.20
+LIB_DEPENDS=		audio/libmpdclient>=2.20 \
+			devel/gettext,-runtime \
+			devel/pcre2
 
 CONFIGURE_ARGS=		-Dlirc=disabled \
 			-Dhtml_manual=false \
