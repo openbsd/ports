@@ -23,7 +23,7 @@ Index: shell/cc-panel-loader.c
  extern GType cc_sound_panel_get_type (void);
  #ifdef BUILD_THUNDERBOLT
  extern GType cc_bolt_panel_get_type (void);
-@@ -115,7 +119,9 @@ static CcPanelLoaderVtable default_panels[] =
+@@ -118,7 +122,9 @@ static CcPanelLoaderVtable default_panels[] =
    PANEL_TYPE("location",         cc_location_panel_get_type,             NULL),
    PANEL_TYPE("firmware-security",cc_firmware_security_panel_get_type,    cc_firmware_security_panel_static_init_func),
    PANEL_TYPE("microphone",       cc_microphone_panel_get_type,           NULL),
@@ -33,7 +33,7 @@ Index: shell/cc-panel-loader.c
    PANEL_TYPE("multitasking",     cc_multitasking_panel_get_type,         NULL),
  #ifdef BUILD_NETWORK
    PANEL_TYPE("network",          cc_network_panel_get_type,              NULL),
-@@ -129,7 +135,9 @@ static CcPanelLoaderVtable default_panels[] =
+@@ -132,7 +138,9 @@ static CcPanelLoaderVtable default_panels[] =
    PANEL_TYPE("removable-media",  cc_removable_media_panel_get_type,      NULL),
    PANEL_TYPE("screen",           cc_screen_panel_get_type,               NULL),
    PANEL_TYPE("search",           cc_search_panel_get_type,               NULL),
@@ -42,4 +42,4 @@ Index: shell/cc-panel-loader.c
 +#endif
    PANEL_TYPE("sound",            cc_sound_panel_get_type,                NULL),
  #ifdef BUILD_THUNDERBOLT
-   PANEL_TYPE("thunderbolt",      cc_bolt_panel_get_type,                 NULL),
+   PANEL_TYPE("thunderbolt",      cc_bolt_panel_get_type,                 cc_thunderbolt_panel_static_init_func),

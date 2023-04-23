@@ -1,7 +1,7 @@
 Index: panels/user-accounts/cc-user-panel.c
 --- panels/user-accounts/cc-user-panel.c.orig
 +++ panels/user-accounts/cc-user-panel.c
-@@ -1496,6 +1496,8 @@ cc_user_panel_init (CcUserPanel *self)
+@@ -1539,6 +1539,8 @@ cc_user_panel_init (CcUserPanel *self)
          /* register types that the builder might need */
          type = cc_permission_infobar_get_type ();
  

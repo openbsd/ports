@@ -9,7 +9,7 @@ Subject: [PATCH] info: Use udev to get the hardware RAM size
 Index: panels/info-overview/meson.build
 --- panels/info-overview/meson.build.orig
 +++ panels/info-overview/meson.build
-@@ -39,9 +39,7 @@ sources += gnome.compile_resources(
+@@ -33,9 +33,7 @@ sources += gnome.compile_resources(
  )
  
  deps = common_deps + [
