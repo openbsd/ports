@@ -2,7 +2,7 @@ COMMENT-main=		GNOME desktop meta-package (core installation)
 COMMENT-extras=		GNOME desktop meta-package (world installation)
 
 # sync with x11/gnome/shell GNOME_VERSION
-V=			43.4
+V=			44.0
 PKGNAME=		gnome-${V}
 
 PKGNAME-main=		gnome-${V}
@@ -49,6 +49,7 @@ RUN_DEPENDS-main +=	devel/gsettings-desktop-schemas \
 			x11/gnome/color-manager \
 			x11/gnome/control-center \
 			x11/gnome/desktop \
+			x11/gnome/desktop,-gtk4 \
 			x11/gnome/gdm \
 			x11/gnome/gvfs \
 			x11/gnome/initial-setup \
