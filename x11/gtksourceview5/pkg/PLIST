@@ -171,6 +171,7 @@ share/gtksourceview-5/language-specs/modelica.lang
 share/gtksourceview-5/language-specs/mxml.lang
 share/gtksourceview-5/language-specs/nemerle.lang
 share/gtksourceview-5/language-specs/netrexx.lang
+share/gtksourceview-5/language-specs/nix.lang
 share/gtksourceview-5/language-specs/nsis.lang
 share/gtksourceview-5/language-specs/objc.lang
 share/gtksourceview-5/language-specs/objj.lang
@@ -192,6 +193,7 @@ share/gtksourceview-5/language-specs/protobuf.lang
 share/gtksourceview-5/language-specs/puppet.lang
 share/gtksourceview-5/language-specs/python.lang
 share/gtksourceview-5/language-specs/python3.lang
+share/gtksourceview-5/language-specs/reasonml.lang
 share/gtksourceview-5/language-specs/rpmspec.lang
 share/gtksourceview-5/language-specs/rst.lang
 share/gtksourceview-5/language-specs/ruby.lang
@@ -216,6 +218,7 @@ share/gtksourceview-5/language-specs/tera.lang
 share/gtksourceview-5/language-specs/terraform.lang
 share/gtksourceview-5/language-specs/texinfo.lang
 share/gtksourceview-5/language-specs/thrift.lang
+share/gtksourceview-5/language-specs/todotxt.lang
 share/gtksourceview-5/language-specs/toml.lang
 share/gtksourceview-5/language-specs/twig.lang
 share/gtksourceview-5/language-specs/typescript-js-expressions.lang
@@ -306,6 +309,7 @@ share/locale/hi/LC_MESSAGES/gtksourceview-5.mo
 share/locale/hr/LC_MESSAGES/gtksourceview-5.mo
 share/locale/hu/LC_MESSAGES/gtksourceview-5.mo
 share/locale/id/LC_MESSAGES/gtksourceview-5.mo
+share/locale/ie/LC_MESSAGES/gtksourceview-5.mo
 share/locale/is/LC_MESSAGES/gtksourceview-5.mo
 share/locale/it/LC_MESSAGES/gtksourceview-5.mo
 share/locale/ja/LC_MESSAGES/gtksourceview-5.mo
