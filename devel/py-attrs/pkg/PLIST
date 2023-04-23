@@ -52,11 +52,11 @@ lib/python${MODPY_VERSION}/site-packages/attr/validators.py
 lib/python${MODPY_VERSION}/site-packages/attr/validators.pyi
 lib/python${MODPY_VERSION}/site-packages/attrs/
 lib/python${MODPY_VERSION}/site-packages/attrs-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/attrs-${MODPY_EGG_VERSION}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/attrs-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/attrs-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/attrs-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/attrs-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/attrs-${MODPY_EGG_VERSION}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/attrs-${MODPY_EGG_VERSION}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/attrs/__init__.py
 lib/python${MODPY_VERSION}/site-packages/attrs/__init__.pyi
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/attrs/${MODPY_PYCACHE}/

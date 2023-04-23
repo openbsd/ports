@@ -1,6 +1,6 @@
 COMMENT =		classes without boilerplate
 
-MODPY_EGG_VERSION =	22.2.0
+MODPY_EGG_VERSION =	23.1.0
 
 DISTNAME =		attrs-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+MODPY_PYBUILD =		hatchling
 
 TEST_DEPENDS =		devel/py-hypothesis${MODPY_FLAVOR} \
 			devel/py-zopeinterface${MODPY_FLAVOR}
