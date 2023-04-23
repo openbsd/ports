@@ -18,6 +18,7 @@ MODCARGO_CRATES +=	sieve-rs	0.2.1	# AGPL-3.0-only
 # needs 0.3.0 per https://github.com/stalwartlabs/sieve/commit/3ae7364c4da991533e91f0df6992e1129518848d
 
 MODCARGO_CRATES_KEEP += libsqlite3-sys
+BUILD_DEPENDS = devel/protobuf
 LIB_DEPENDS =	archivers/zstd \
 		archivers/bzip2
 WANTLIB += bz2 c c++abi m pthread zstd
