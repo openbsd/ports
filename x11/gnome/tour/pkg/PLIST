@@ -5,6 +5,7 @@ share/gnome-tour/resources.gresource
 share/icons/hicolor/scalable/apps/org.gnome.Tour.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Tour-symbolic.svg
 share/locale/ab/LC_MESSAGES/gnome-tour.mo
+share/locale/be/LC_MESSAGES/gnome-tour.mo
 share/locale/bg/LC_MESSAGES/gnome-tour.mo
 share/locale/ca/LC_MESSAGES/gnome-tour.mo
 share/locale/cs/LC_MESSAGES/gnome-tour.mo
@@ -21,6 +22,7 @@ share/locale/fr/LC_MESSAGES/gnome-tour.mo
 share/locale/fur/LC_MESSAGES/gnome-tour.mo
 share/locale/gl/LC_MESSAGES/gnome-tour.mo
 share/locale/he/LC_MESSAGES/gnome-tour.mo
+share/locale/hi/LC_MESSAGES/gnome-tour.mo
 share/locale/hr/LC_MESSAGES/gnome-tour.mo
 share/locale/hu/LC_MESSAGES/gnome-tour.mo
 share/locale/id/LC_MESSAGES/gnome-tour.mo
