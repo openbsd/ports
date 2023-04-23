@@ -224,7 +224,7 @@ MODGO_MODULES =	\
 	github.com/spf13/pflag					 v1.0.2 \
 	github.com/stretchr/objx				 v0.5.0 \
 	github.com/stretchr/testify				 v1.8.1 \
-	github.com/terraform-linters/tflint-plugin-sdk		 v0.16.0 \
+	github.com/terraform-linters/tflint-plugin-sdk		 v0.16.1 \
 	github.com/terraform-linters/tflint-ruleset-terraform	 v0.2.2 \
 	github.com/ulikunitz/xz					 v0.5.10 \
 	github.com/vmihailenco/msgpack				 v3.3.3+incompatible \
@@ -241,20 +241,20 @@ MODGO_MODULES =	\
 	github.com/zclconf/go-cty-yaml				 v1.0.3 \
 	go.opencensus.io					 v0.24.0 \
 	go.opentelemetry.io/proto/otlp				 v0.7.0 \
-	golang.org/x/crypto					 v0.7.0 \
+	golang.org/x/crypto					 v0.8.0 \
 	golang.org/x/exp					 v0.0.0-20220722155223-a9213eeb770e \
 	golang.org/x/image					 v0.0.0-20190802002840-cff245a6509b \
 	golang.org/x/lint					 v0.0.0-20210508222113-6edffad5e616 \
 	golang.org/x/mobile					 v0.0.0-20190719004257-d2bd2a29d028 \
-	golang.org/x/mod					 v0.9.0 \
-	golang.org/x/net					 v0.8.0 \
-	golang.org/x/oauth2					 v0.6.0 \
+	golang.org/x/mod					 v0.10.0 \
+	golang.org/x/net					 v0.9.0 \
+	golang.org/x/oauth2					 v0.7.0 \
 	golang.org/x/sync					 v0.1.0 \
-	golang.org/x/sys					 v0.6.0 \
-	golang.org/x/term					 v0.6.0 \
-	golang.org/x/text					 v0.8.0 \
+	golang.org/x/sys					 v0.7.0 \
+	golang.org/x/term					 v0.7.0 \
+	golang.org/x/text					 v0.9.0 \
 	golang.org/x/time					 v0.0.0-20191024005414-555d28b269f0 \
-	golang.org/x/tools					 v0.7.0 \
+	golang.org/x/tools					 v0.8.0 \
 	golang.org/x/xerrors					 v0.0.0-20220907171357-04be3eba64a2 \
 	google.golang.org/api					 v0.103.0 \
 	google.golang.org/appengine				 v1.6.7 \
@@ -695,6 +695,7 @@ MODGO_MODFILES =	\
 	golang.org/x/net					 v0.0.0-20221014081412-f15817d10f9b \
 	golang.org/x/net					 v0.1.0 \
 	golang.org/x/net					 v0.3.0 \
+	golang.org/x/net					 v0.8.0 \
 	golang.org/x/oauth2					 v0.0.0-20180821212333-d2e6202438be \
 	golang.org/x/oauth2					 v0.0.0-20190226205417-e64efc72b421 \
 	golang.org/x/oauth2					 v0.0.0-20190604053449-0f29369cfe45 \
@@ -807,6 +808,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sys					 v0.1.0 \
 	golang.org/x/sys					 v0.3.0 \
 	golang.org/x/sys					 v0.5.0 \
+	golang.org/x/sys					 v0.6.0 \
 	golang.org/x/term					 v0.0.0-20201126162022-7de9c90e9dd1 \
 	golang.org/x/term					 v0.0.0-20210927222741-03fcf44c2211 \
 	golang.org/x/term					 v0.1.0 \
@@ -822,6 +824,7 @@ MODGO_MODFILES =	\
 	golang.org/x/text					 v0.3.8 \
 	golang.org/x/text					 v0.4.0 \
 	golang.org/x/text					 v0.5.0 \
+	golang.org/x/text					 v0.8.0 \
 	golang.org/x/time					 v0.0.0-20181108054448-85acf8d2951c \
 	golang.org/x/time					 v0.0.0-20190308202827-9d24e82272b4 \
 	golang.org/x/tools					 v0.0.0-20180917221912-90fa682c2a6e \
