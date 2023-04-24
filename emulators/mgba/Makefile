@@ -1,15 +1,12 @@
 COMMENT-main =		Game Boy Color/Advance emulator
 COMMENT-qt =		Game Boy Color/Advance emulator with GUI
 COMMENT-libretro =	Game Boy Color/Advance core for retroarch
-REVISION-qt =		0
 
-V =			0.9.2
+V =			0.10.1
 GH_ACCOUNT =		mgba-emu
 GH_PROJECT =		mgba
 GH_TAGNAME =		$V
 PKGNAME-libretro =	libretro-mgba-$V
-REVISION-main =		1
-REVISION-libretro =	0
 
 MULTI_PACKAGES =	-main -qt -libretro
 DEBUG_PACKAGES =	-main -qt -libretro
@@ -27,9 +24,9 @@ MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 # MPL 2.0
 PERMIT_PACKAGE =	Yes
 
-cWANTLIB =		GL SDL2 avfilter \
-			avcodec avformat avutil c curses edit m png \
-			pthread sqlite3 swresample swscale z zip elf
+cWANTLIB =		GL SDL2 avfilter avcodec avformat avutil c \
+			curses edit elf m png pthread sqlite3 swresample \
+			swscale z zip
 WANTLIB-main =		${cWANTLIB}
 WANTLIB-qt =		${cWANTLIB} mgba Qt5Core Qt5Gui Qt5Multimedia \
 			Qt5Network Qt5Widgets ${COMPILER_LIBCXX}
@@ -51,6 +48,7 @@ RUN_DEPENDS-qt =	devel/desktop-file-utils \
 			x11/gtk+4,-guic
 
 CONFIGURE_ARGS +=	-DBUILD_LIBRETRO=ON \
+			-DENABLE_SCRIPTING=OFF \
 			-DUSE_PLEDGE_UNVEIL=ON \
 			-DUSE_MINIZIP=OFF
 

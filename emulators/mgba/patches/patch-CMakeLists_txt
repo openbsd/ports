@@ -4,7 +4,7 @@ From https://github.com/mgba-emu/mgba/pull/1271.
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -50,6 +50,7 @@ if(NOT LIBMGBA_ONLY)
+@@ -47,6 +47,7 @@ if(NOT LIBMGBA_ONLY)
  		set(USE_EDITLINE ON CACHE BOOL "Whether or not to enable the CLI-mode debugger")
  	endif()
  	set(USE_GDB_STUB ON CACHE BOOL "Whether or not to enable the GDB stub ARM debugger")
@@ -12,7 +12,7 @@ Index: CMakeLists.txt
  	set(USE_FFMPEG ON CACHE BOOL "Whether or not to enable FFmpeg support")
  	set(USE_ZLIB ON CACHE BOOL "Whether or not to enable zlib support")
  	set(USE_MINIZIP ON CACHE BOOL "Whether or not to enable external minizip support")
-@@ -547,6 +548,14 @@ if(USE_GDB_STUB)
+@@ -533,6 +534,14 @@ if(USE_GDB_STUB)
  endif()
  source_group("Debugger" FILES ${DEBUGGER_SRC})
  
@@ -27,7 +27,7 @@ Index: CMakeLists.txt
  if(USE_FFMPEG)
  	list(APPEND FEATURES FFMPEG)
  	if(LIBSWRESAMPLE_FOUND)
-@@ -1231,6 +1240,7 @@ if(NOT QUIET AND NOT LIBMGBA_ONLY)
+@@ -1274,6 +1283,7 @@ if(NOT QUIET AND NOT LIBMGBA_ONLY)
  		message(STATUS "	CLI debugger: ${USE_EDITLINE}")
  	endif()
  	message(STATUS "	GDB stub: ${USE_GDB_STUB}")

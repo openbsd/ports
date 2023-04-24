@@ -1,14 +1,14 @@
 @bin bin/mgba-qt
 @man man/man6/mgba-qt.6
-share/applications/mgba-qt.desktop
-share/icons/hicolor/128x128/apps/mgba.png
-share/icons/hicolor/16x16/apps/mgba.png
-share/icons/hicolor/24x24/apps/mgba.png
-share/icons/hicolor/256x256/apps/mgba.png
-share/icons/hicolor/32x32/apps/mgba.png
-share/icons/hicolor/48x48/apps/mgba.png
-share/icons/hicolor/512x512/apps/mgba.png
-share/icons/hicolor/64x64/apps/mgba.png
-share/icons/hicolor/96x96/apps/mgba.png
+share/applications/io.mgba.mGBA.desktop
+share/icons/hicolor/128x128/apps/io.mgba.mGBA.png
+share/icons/hicolor/16x16/apps/io.mgba.mGBA.png
+share/icons/hicolor/24x24/apps/io.mgba.mGBA.png
+share/icons/hicolor/256x256/apps/io.mgba.mGBA.png
+share/icons/hicolor/32x32/apps/io.mgba.mGBA.png
+share/icons/hicolor/48x48/apps/io.mgba.mGBA.png
+share/icons/hicolor/512x512/apps/io.mgba.mGBA.png
+share/icons/hicolor/64x64/apps/io.mgba.mGBA.png
+share/icons/hicolor/96x96/apps/io.mgba.mGBA.png
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor

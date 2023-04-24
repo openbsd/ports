@@ -4,9 +4,9 @@ From https://github.com/mgba-emu/mgba/pull/1271.
 Index: src/platform/sdl/main.c
 --- src/platform/sdl/main.c.orig
 +++ src/platform/sdl/main.c
-@@ -43,6 +43,11 @@ static void mSDLDeinit(struct mSDLRenderer* renderer);
+@@ -45,6 +45,11 @@ static int mSDLRun(struct mSDLRenderer* renderer, stru
  
- static int mSDLRun(struct mSDLRenderer* renderer, struct mArguments* args);
+ static struct mStandardLogger _logger;
  
 +#ifdef USE_PLEDGE_UNVEIL
 +static bool mPledgeBroad(struct mArguments* args);
@@ -16,14 +16,14 @@ Index: src/platform/sdl/main.c
  static struct VFile* _state = NULL;
  
  static void _loadState(struct mCoreThread* thread) {
-@@ -164,6 +169,15 @@ int main(int argc, char** argv) {
+@@ -171,6 +176,15 @@ int main(int argc, char** argv) {
  	renderer.player.bindings = &renderer.core->inputMap;
  	mSDLInitBindingsGBA(&renderer.core->inputMap);
  	mSDLInitEvents(&renderer.events);
 +
 +#ifdef USE_PLEDGE_UNVEIL
 +	if (!mPledgeBroad(&args)) {
-+		freeArguments(&args);
++		mArgumentsDeinit(&args);
 +		fprintf(stderr, "pledge\n");
 +		return 1;
 +	}
@@ -32,7 +32,7 @@ Index: src/platform/sdl/main.c
  	mSDLEventsLoadConfig(&renderer.events, mCoreConfigGetInput(&renderer.core->config));
  	mSDLAttachPlayer(&renderer.events, &renderer.player);
  	mSDLPlayerLoadConfig(&renderer.player, mCoreConfigGetInput(&renderer.core->config));
-@@ -282,6 +296,12 @@ int mSDLRun(struct mSDLRenderer* renderer, struct mArg
+@@ -295,6 +309,12 @@ int mSDLRun(struct mSDLRenderer* renderer, struct mArg
  					state->close(state);
  				}
  			}
@@ -45,7 +45,7 @@ Index: src/platform/sdl/main.c
  			renderer->runloop(renderer, &thread);
  			mSDLPauseAudio(&renderer->audio);
  			if (mCoreThreadHasCrashed(&thread)) {
-@@ -321,3 +341,43 @@ static void mSDLDeinit(struct mSDLRenderer* renderer) 
+@@ -335,3 +355,43 @@ static void mSDLDeinit(struct mSDLRenderer* renderer) 
  
  	SDL_Quit();
  }
