@@ -83,7 +83,7 @@ post-install:
 		${PREFIX}/share/gtk-2.0
 	rm ${PREFIX}/lib/gtk-2.0/2.10.0/{engines,immodules,printbackends}/*.{a,la}
 	rm ${PREFIX}/lib/gtk-2.0/modules/*.{a,la}
-# built as a subpackage of x11/gtk+3
+# gtk-update-icon-cache is provided by x11/gtk+4,-guic
 	rm ${PREFIX}/bin/gtk-update-icon-cache
 
 .include <bsd.port.mk>
