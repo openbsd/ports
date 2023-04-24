@@ -3,7 +3,7 @@ COMMENT =	simple webbrowser based on webkit/gtk+
 DISTNAME =	surf-2.1
 CATEGORIES =	www
 HOMEPAGE =	http://surf.suckless.org/
-REVISION =	1
+REVISION =	2
 
 MAINTAINER=	Joerg Jung <jung@openbsd.org>
 
@@ -19,6 +19,7 @@ WANTLIB += p11-kit pthread
 MASTER_SITES =	http://dl.suckless.org/surf/
 
 LIB_DEPENDS =	devel/gettext,-runtime \
+		x11/gnome/gcr \
 		www/webkitgtk4
 RUN_DEPENDS =	x11/dmenu \
 		net/curl
