@@ -1,0 +1,40 @@
+Index: src/arm/64/refmvs.S
+--- src/arm/64/refmvs.S.orig
++++ src/arm/64/refmvs.S
+@@ -34,13 +34,13 @@
+ function splat_mv_neon, export=1
+         ld1             {v3.16b},  [x1]
+         clz             w3,  w3
+-        adr             x5,  L(splat_tbl)
++        adrp            x5,  L(splat_tbl)
++        add             x5,  x5, :lo12: L(splat_tbl)
+         sub             w3,  w3,  #26
+         ext             v2.16b,  v3.16b,  v3.16b,  #12
+-        ldrh            w3,  [x5, w3, uxtw #1]
++        ldr             x3,  [x5, w3, uxtw #3]
+         add             w2,  w2,  w2,  lsl #1
+         ext             v0.16b,  v2.16b,  v3.16b,  #4
+-        sub             x3,  x5,  w3, uxtw
+         ext             v1.16b,  v2.16b,  v3.16b,  #8
+         lsl             w2,  w2,  #2
+         ext             v2.16b,  v2.16b,  v3.16b,  #12
+@@ -81,11 +81,13 @@ function splat_mv_neon, export=1
+         b.gt            1b
+         ret
+ 
++	.pushsection .data.rel.ro, "aw"
+ L(splat_tbl):
+-        .hword L(splat_tbl) -  320b
+-        .hword L(splat_tbl) -  160b
+-        .hword L(splat_tbl) -   80b
+-        .hword L(splat_tbl) -   40b
+-        .hword L(splat_tbl) -   20b
+-        .hword L(splat_tbl) -   10b
++        .xword 320b
++        .xword 160b
++        .xword  80b
++        .xword  40b
++        .xword  20b
++        .xword  10b
++	.popsection
+ endfunc

@@ -1,0 +1,483 @@
+Index: src/arm/64/mc.S
+--- src/arm/64/mc.S.orig
++++ src/arm/64/mc.S
+@@ -79,11 +79,11 @@ function \type\()_8bpc_neon, export=1
+ .ifc \type, mask
+         movi            v31.16b, #256-2
+ .endif
+-        adr             x7,  L(\type\()_tbl)
++        adrp            x7,  L(\type\()_tbl)
++        add             x7,  x7, :lo12: L(\type\()_tbl)
+         sub             w4,  w4,  #24
+-        ldrh            w4,  [x7, x4, lsl #1]
++        ldr             x7,  [x7, x4, lsl #3]
+         \type           v4,  v0,  v1,  v2,  v3
+-        sub             x7,  x7,  w4, uxtw
+         br              x7
+ 40:
+         AARCH64_VALID_JUMP_TARGET
+@@ -192,13 +192,15 @@ function \type\()_8bpc_neon, export=1
+         b               128b
+ 0:
+         ret
++	.pushsection .data.rel.ro, "aw"
+ L(\type\()_tbl):
+-        .hword L(\type\()_tbl) - 1280b
+-        .hword L(\type\()_tbl) -  640b
+-        .hword L(\type\()_tbl) -  320b
+-        .hword L(\type\()_tbl) -   16b
+-        .hword L(\type\()_tbl) -   80b
+-        .hword L(\type\()_tbl) -   40b
++        .xword 1280b
++        .xword  640b
++        .xword  320b
++        .xword   16b
++        .xword   80b
++        .xword   40b
++	.popsection
+ endfunc
+ .endm
+ 
+@@ -210,10 +212,10 @@ bidir_fn mask
+ .macro w_mask_fn type
+ function w_mask_\type\()_8bpc_neon, export=1
+         clz             w8,  w4
+-        adr             x9,  L(w_mask_\type\()_tbl)
++        adrp            x9,  L(w_mask_\type\()_tbl)
++        add             x9,  x9, :lo12: L(w_mask_\type\()_tbl)
+         sub             w8,  w8,  #24
+-        ldrh            w8,  [x9,  x8,  lsl #1]
+-        sub             x9,  x9,  w8,  uxtw
++        ldr             x9,  [x9,  x8,  lsl #3]
+         mov             w10, #6903
+         dup             v0.8h,   w10
+ .if \type == 444
+@@ -413,13 +415,15 @@ function w_mask_\type\()_8bpc_neon, export=1
+         add             x12, x12, x1
+         b.gt            161b
+         ret
++	.pushsection .data.rel.ro, "aw"
+ L(w_mask_\type\()_tbl):
+-        .hword L(w_mask_\type\()_tbl) - 1280b
+-        .hword L(w_mask_\type\()_tbl) -  640b
+-        .hword L(w_mask_\type\()_tbl) -  320b
+-        .hword L(w_mask_\type\()_tbl) -  160b
+-        .hword L(w_mask_\type\()_tbl) -    8b
+-        .hword L(w_mask_\type\()_tbl) -    4b
++        .xword 1280b
++        .xword  640b
++        .xword  320b
++        .xword  160b
++        .xword    8b
++        .xword    4b
++	.popsection
+ endfunc
+ .endm
+ 
+@@ -429,11 +433,11 @@ w_mask_fn 420
+ 
+ 
+ function blend_8bpc_neon, export=1
+-        adr             x6,  L(blend_tbl)
++        adrp            x6,  L(blend_tbl)
++        add             x6,  x6, :lo12: L(blend_tbl)
+         clz             w3,  w3
+         sub             w3,  w3,  #26
+-        ldrh            w3,  [x6,  x3,  lsl #1]
+-        sub             x6,  x6,  w3,  uxtw
++        ldr             x6,  [x6,  x3,  lsl #3]
+         movi            v4.16b,  #64
+         add             x8,  x0,  x1
+         lsl             x1,  x1,  #1
+@@ -535,15 +539,18 @@ function blend_8bpc_neon, export=1
+         st1             {v27.16b, v28.16b}, [x8],  x1
+         b.gt            32b
+         ret
++	.pushsection .data.rel.ro, "aw"
+ L(blend_tbl):
+-        .hword L(blend_tbl) - 32b
+-        .hword L(blend_tbl) - 16b
+-        .hword L(blend_tbl) -  8b
+-        .hword L(blend_tbl) -  4b
++        .xword 32b
++        .xword 16b
++        .xword  8b
++        .xword  4b
++	.popsection
+ endfunc
+ 
+ function blend_h_8bpc_neon, export=1
+-        adr             x6,  L(blend_h_tbl)
++        adrp            x6,  L(blend_h_tbl)
++        add             x6,  x6, :lo12: L(blend_h_tbl)
+         movrel          x5,  X(obmc_masks)
+         add             x5,  x5,  w4,  uxtw
+         sub             w4,  w4,  w4,  lsr #2
+@@ -552,8 +559,7 @@ function blend_h_8bpc_neon, export=1
+         add             x8,  x0,  x1
+         lsl             x1,  x1,  #1
+         sub             w7,  w7,  #24
+-        ldrh            w7,  [x6,  x7,  lsl #1]
+-        sub             x6,  x6,  w7, uxtw
++        ldr             x6,  [x6,  x7,  lsl #3]
+         br              x6
+ 2:
+         AARCH64_VALID_JUMP_TARGET
+@@ -682,18 +688,21 @@ function blend_h_8bpc_neon, export=1
+         add             x7,  x7,  w3,  uxtw
+         b.gt            321b
+         ret
++	.pushsection .data.rel.ro, "aw"
+ L(blend_h_tbl):
+-        .hword L(blend_h_tbl) - 1280b
+-        .hword L(blend_h_tbl) -  640b
+-        .hword L(blend_h_tbl) -  320b
+-        .hword L(blend_h_tbl) -   16b
+-        .hword L(blend_h_tbl) -    8b
+-        .hword L(blend_h_tbl) -    4b
+-        .hword L(blend_h_tbl) -    2b
++        .xword 1280b
++        .xword  640b
++        .xword  320b
++        .xword   16b
++        .xword    8b
++        .xword    4b
++        .xword    2b
++	.popsection
+ endfunc
+ 
+ function blend_v_8bpc_neon, export=1
+-        adr             x6,  L(blend_v_tbl)
++        adrp            x6,  L(blend_v_tbl)
++        add             x6,  x6, :lo12: L(blend_v_tbl)
+         movrel          x5,  X(obmc_masks)
+         add             x5,  x5,  w3,  uxtw
+         clz             w3,  w3
+@@ -701,8 +710,7 @@ function blend_v_8bpc_neon, export=1
+         add             x8,  x0,  x1
+         lsl             x1,  x1,  #1
+         sub             w3,  w3,  #26
+-        ldrh            w3,  [x6,  x3,  lsl #1]
+-        sub             x6,  x6,  w3,  uxtw
++        ldr             x6,  [x6,  x3,  lsl #3]
+         br              x6
+ 20:
+         AARCH64_VALID_JUMP_TARGET
+@@ -826,21 +834,23 @@ function blend_v_8bpc_neon, export=1
+         st1             {v27.8b},  [x8],  x1
+         b.gt            32b
+         ret
++	.pushsection .data.rel.ro, "aw"
+ L(blend_v_tbl):
+-        .hword L(blend_v_tbl) - 320b
+-        .hword L(blend_v_tbl) - 160b
+-        .hword L(blend_v_tbl) -  80b
+-        .hword L(blend_v_tbl) -  40b
+-        .hword L(blend_v_tbl) -  20b
++        .xword 320b
++        .xword 160b
++        .xword  80b
++        .xword  40b
++        .xword  20b
++	.popsection
+ endfunc
+ 
+ 
+ // This has got the same signature as the put_8tap functions,
+ // and assumes that x8 is set to (clz(w)-24).
+ function put_neon
+-        adr             x9,  L(put_tbl)
+-        ldrh            w8,  [x9, x8, lsl #1]
+-        sub             x9,  x9,  w8, uxtw
++        adrp            x9,  L(put_tbl)
++        add             x9,  x9, :lo12: L(put_tbl)
++        ldr             x9,  [x9, x8, lsl #3]
+         br              x9
+ 
+ 2:
+@@ -926,23 +936,25 @@ function put_neon
+         b.gt            128b
+         ret
+ 
++	.pushsection .data.rel.ro, "aw"
+ L(put_tbl):
+-        .hword L(put_tbl) - 128b
+-        .hword L(put_tbl) -  64b
+-        .hword L(put_tbl) -  32b
+-        .hword L(put_tbl) - 160b
+-        .hword L(put_tbl) -   8b
+-        .hword L(put_tbl) -   4b
+-        .hword L(put_tbl) -   2b
++        .xword 128b
++        .xword  64b
++        .xword  32b
++        .xword 160b
++        .xword   8b
++        .xword   4b
++        .xword   2b
++	.popsection
+ endfunc
+ 
+ 
+ // This has got the same signature as the prep_8tap functions,
+ // and assumes that x8 is set to (clz(w)-24), and x7 to w*2.
+ function prep_neon
+-        adr             x9,  L(prep_tbl)
+-        ldrh            w8,  [x9, x8, lsl #1]
+-        sub             x9,  x9,  w8, uxtw
++        adrp            x9,  L(prep_tbl)
++        add             x9,  x9, :lo12: L(prep_tbl)
++        ldr             x9,  [x9, x8, lsl #3]
+         br              x9
+ 
+ 4:
+@@ -1058,13 +1070,15 @@ function prep_neon
+         b.gt            128b
+         ret
+ 
++	.pushsection .data.rel.ro, "aw"
+ L(prep_tbl):
+-        .hword L(prep_tbl) - 1280b
+-        .hword L(prep_tbl) -  640b
+-        .hword L(prep_tbl) -  320b
+-        .hword L(prep_tbl) -  160b
+-        .hword L(prep_tbl) -    8b
+-        .hword L(prep_tbl) -    4b
++        .xword 1280b
++        .xword 640b
++        .xword 320b
++        .xword 160b
++        .xword 8b
++        .xword 4b
++	.popsection
+ endfunc
+ 
+ 
+@@ -1370,9 +1384,9 @@ L(\type\()_8tap_h):
+         add             \xmx, x10, \mx, uxtw #3
+         b.ne            L(\type\()_8tap_hv)
+ 
+-        adr             x9,  L(\type\()_8tap_h_tbl)
+-        ldrh            w8,  [x9, x8, lsl #1]
+-        sub             x9,  x9,  w8, uxtw
++        adrp            x9,  L(\type\()_8tap_h_tbl)
++        add             x9,  x9, :lo12: L(\type\()_8tap_h_tbl)
++        ldr             x9,  [x9, x8, lsl #3]
+         br              x9
+ 
+ 20:     // 2xN h
+@@ -1575,15 +1589,17 @@ L(\type\()_8tap_h):
+         b.gt            161b
+         ret
+ 
++	.pushsection .data.rel.ro, "aw"
+ L(\type\()_8tap_h_tbl):
+-        .hword L(\type\()_8tap_h_tbl) - 1280b
+-        .hword L(\type\()_8tap_h_tbl) -  640b
+-        .hword L(\type\()_8tap_h_tbl) -  320b
+-        .hword L(\type\()_8tap_h_tbl) -  160b
+-        .hword L(\type\()_8tap_h_tbl) -   80b
+-        .hword L(\type\()_8tap_h_tbl) -   40b
+-        .hword L(\type\()_8tap_h_tbl) -   20b
+-        .hword 0
++        .xword 1280b
++        .xword 640b
++        .xword 320b
++        .xword 160b
++        .xword 80b
++        .xword 40b
++        .xword 20b
++        .xword 0
++	.popsection
+ 
+ 
+ L(\type\()_8tap_v):
+@@ -1595,9 +1611,9 @@ L(\type\()_8tap_v):
+ 4:
+         add             \xmy, x10, \my, uxtw #3
+ 
+-        adr             x9,  L(\type\()_8tap_v_tbl)
+-        ldrh            w8,  [x9, x8, lsl #1]
+-        sub             x9,  x9,  w8, uxtw
++        adrp            x9,  L(\type\()_8tap_v_tbl)
++        add             x9,  x9, :lo12: L(\type\()_8tap_v_tbl)
++        ldr             x9,  [x9, x8, lsl #3]
+         br              x9
+ 
+ 20:     // 2xN v
+@@ -1901,15 +1917,17 @@ L(\type\()_8tap_v):
+ 0:
+         ret
+ 
++	.pushsection .data.rel.ro, "aw"
+ L(\type\()_8tap_v_tbl):
+-        .hword L(\type\()_8tap_v_tbl) - 1280b
+-        .hword L(\type\()_8tap_v_tbl) -  640b
+-        .hword L(\type\()_8tap_v_tbl) -  320b
+-        .hword L(\type\()_8tap_v_tbl) -  160b
+-        .hword L(\type\()_8tap_v_tbl) -   80b
+-        .hword L(\type\()_8tap_v_tbl) -   40b
+-        .hword L(\type\()_8tap_v_tbl) -   20b
+-        .hword 0
++        .xword 1280b
++        .xword  640b
++        .xword  320b
++        .xword  160b
++        .xword   80b
++        .xword   40b
++        .xword   20b
++        .xword 0
++	.popsection
+ 
+ L(\type\()_8tap_hv):
+         cmp             \h,  #4
+@@ -1920,9 +1938,9 @@ L(\type\()_8tap_hv):
+ 4:
+         add             \xmy,  x10, \my, uxtw #3
+ 
+-        adr             x9,  L(\type\()_8tap_hv_tbl)
+-        ldrh            w8,  [x9, x8, lsl #1]
+-        sub             x9,  x9,  w8, uxtw
++        adrp            x9,  L(\type\()_8tap_hv_tbl)
++        add             x9,  x9, :lo12: L(\type\()_8tap_hv_tbl)
++        ldr             x9,  [x9, x8, lsl #3]
+         br              x9
+ 
+ 20:
+@@ -2444,15 +2462,17 @@ L(\type\()_8tap_filter_8):
+         srshr           v25.8h,  v25.8h, #2
+         ret
+ 
++	.pushsection .data.rel.ro, "aw"
+ L(\type\()_8tap_hv_tbl):
+-        .hword L(\type\()_8tap_hv_tbl) - 1280b
+-        .hword L(\type\()_8tap_hv_tbl) -  640b
+-        .hword L(\type\()_8tap_hv_tbl) -  320b
+-        .hword L(\type\()_8tap_hv_tbl) -  160b
+-        .hword L(\type\()_8tap_hv_tbl) -   80b
+-        .hword L(\type\()_8tap_hv_tbl) -   40b
+-        .hword L(\type\()_8tap_hv_tbl) -   20b
+-        .hword 0
++        .xword 1280b
++        .xword  640b
++        .xword  320b
++        .xword  160b
++        .xword   80b
++        .xword   40b
++        .xword   20b
++        .xword 0
++	.popsection
+ endfunc
+ 
+ 
+@@ -2478,9 +2498,9 @@ function \type\()_bilin_8bpc_neon, export=1
+ L(\type\()_bilin_h):
+         cbnz            \my, L(\type\()_bilin_hv)
+ 
+-        adr             x9,  L(\type\()_bilin_h_tbl)
+-        ldrh            w8,  [x9, x8, lsl #1]
+-        sub             x9,  x9,  w8, uxtw
++        adrp            x9,  L(\type\()_bilin_h_tbl)
++        add             x9,  x9, :lo12: L(\type\()_bilin_h_tbl)
++        ldr             x9,  [x9, x8, lsl #3]
+         br              x9
+ 
+ 20:     // 2xN h
+@@ -2624,22 +2644,24 @@ L(\type\()_bilin_h):
+         b.gt            161b
+         ret
+ 
++	.pushsection .data.rel.ro, "aw"
+ L(\type\()_bilin_h_tbl):
+-        .hword L(\type\()_bilin_h_tbl) - 1280b
+-        .hword L(\type\()_bilin_h_tbl) -  640b
+-        .hword L(\type\()_bilin_h_tbl) -  320b
+-        .hword L(\type\()_bilin_h_tbl) -  160b
+-        .hword L(\type\()_bilin_h_tbl) -   80b
+-        .hword L(\type\()_bilin_h_tbl) -   40b
+-        .hword L(\type\()_bilin_h_tbl) -   20b
+-        .hword 0
++        .xword 1280b
++        .xword  640b
++        .xword  320b
++        .xword  160b
++        .xword   80b
++        .xword   40b
++        .xword   20b
++        .xword 0
++	.popsection
+ 
+ 
+ L(\type\()_bilin_v):
+         cmp             \h,  #4
+-        adr             x9,  L(\type\()_bilin_v_tbl)
+-        ldrh            w8,  [x9, x8, lsl #1]
+-        sub             x9,  x9,  w8, uxtw
++        adrp            x9,  L(\type\()_bilin_v_tbl)
++        add             x9,  x9, :lo12: L(\type\()_bilin_v_tbl)
++        ldr             x9,  [x9, x8, lsl #3]
+         br              x9
+ 
+ 20:     // 2xN v
+@@ -2810,22 +2832,24 @@ L(\type\()_bilin_v):
+ 0:
+         ret
+ 
++	.pushsection .data.rel.ro, "aw"
+ L(\type\()_bilin_v_tbl):
+-        .hword L(\type\()_bilin_v_tbl) - 1280b
+-        .hword L(\type\()_bilin_v_tbl) -  640b
+-        .hword L(\type\()_bilin_v_tbl) -  320b
+-        .hword L(\type\()_bilin_v_tbl) -  160b
+-        .hword L(\type\()_bilin_v_tbl) -   80b
+-        .hword L(\type\()_bilin_v_tbl) -   40b
+-        .hword L(\type\()_bilin_v_tbl) -   20b
+-        .hword 0
++        .xword 1280b
++        .xword  640b
++        .xword  320b
++        .xword  160b
++        .xword   80b
++        .xword   40b
++        .xword   20b
++        .xword 0
++	.popsection
+ 
+ L(\type\()_bilin_hv):
+         uxtl            v2.8h, v2.8b
+         uxtl            v3.8h, v3.8b
+-        adr             x9,  L(\type\()_bilin_hv_tbl)
+-        ldrh            w8,  [x9, x8, lsl #1]
+-        sub             x9,  x9,  w8, uxtw
++        adrp            x9,  L(\type\()_bilin_hv_tbl)
++        add             x9,  x9, :lo12: L(\type\()_bilin_hv_tbl)
++        ldr             x9,  [x9, x8, lsl #3]
+         br              x9
+ 
+ 20:     // 2xN hv
+@@ -2975,15 +2999,17 @@ L(\type\()_bilin_hv):
+ 0:
+         ret
+ 
++	.pushsection .data.rel.ro, "aw"
+ L(\type\()_bilin_hv_tbl):
+-        .hword L(\type\()_bilin_hv_tbl) - 1280b
+-        .hword L(\type\()_bilin_hv_tbl) -  640b
+-        .hword L(\type\()_bilin_hv_tbl) -  320b
+-        .hword L(\type\()_bilin_hv_tbl) -  160b
+-        .hword L(\type\()_bilin_hv_tbl) -   80b
+-        .hword L(\type\()_bilin_hv_tbl) -   40b
+-        .hword L(\type\()_bilin_hv_tbl) -   20b
+-        .hword 0
++        .xword 1280b
++        .xword  640b
++        .xword  320b
++        .xword  160b
++        .xword   80b
++        .xword   40b
++        .xword   20b
++        .xword 0
++	.popsection
+ endfunc
+ .endm
+ 

@@ -1,0 +1,186 @@
+Index: src/arm/64/filmgrain.S
+--- src/arm/64/filmgrain.S.orig
++++ src/arm/64/filmgrain.S
+@@ -884,12 +884,12 @@ function generate_grain_\type\()_8bpc_neon, export=1
+ .else
+         add             x4,  x1,  #FGD_AR_COEFFS_UV
+ .endif
+-        adr             x16, L(gen_grain_\type\()_tbl)
++        adrp            x16, L(gen_grain_\type\()_tbl)
++        add             x16, x16, :lo12: L(gen_grain_\type\()_tbl)
+         ldr             w17, [x1, #FGD_AR_COEFF_LAG]
+         add             w9,  w9,  #4
+-        ldrh            w17, [x16, w17, uxtw #1]
++        ldr             x16, [x16, w17, uxtw #3]
+         dup             v31.8h,  w9    // 4 + data->grain_scale_shift
+-        sub             x16, x16, w17, uxtw
+         neg             v31.8h,  v31.8h
+ 
+ .ifc \type, uv_444
+@@ -1076,11 +1076,13 @@ L(generate_grain_\type\()_lag3):
+         AARCH64_VALIDATE_LINK_REGISTER
+         ret
+ 
++	.pushsection .data.rel.ro, "aw"
+ L(gen_grain_\type\()_tbl):
+-        .hword L(gen_grain_\type\()_tbl) - L(generate_grain_\type\()_lag0)
+-        .hword L(gen_grain_\type\()_tbl) - L(generate_grain_\type\()_lag1)
+-        .hword L(gen_grain_\type\()_tbl) - L(generate_grain_\type\()_lag2)
+-        .hword L(gen_grain_\type\()_tbl) - L(generate_grain_\type\()_lag3)
++        .xword L(generate_grain_\type\()_lag0)
++        .xword L(generate_grain_\type\()_lag1)
++        .xword L(generate_grain_\type\()_lag2)
++        .xword L(generate_grain_\type\()_lag3)
++	.popsection
+ endfunc
+ .endm
+ 
+@@ -1118,12 +1120,12 @@ function generate_grain_\type\()_8bpc_neon, export=1
+         ldr             w2,  [x1, #FGD_SEED]
+         ldr             w9,  [x1, #FGD_GRAIN_SCALE_SHIFT]
+         add             x4,  x1,  #FGD_AR_COEFFS_UV
+-        adr             x16, L(gen_grain_\type\()_tbl)
++        adrp            x16, L(gen_grain_\type\()_tbl)
++        add             x16, x16, :lo12: L(gen_grain_\type\()_tbl)
+         ldr             w17, [x1, #FGD_AR_COEFF_LAG]
+         add             w9,  w9,  #4
+-        ldrh            w17, [x16, w17, uxtw #1]
++        ldr             x16, [x16, w17, uxtw #3]
+         dup             v31.8h,  w9    // 4 + data->grain_scale_shift
+-        sub             x16, x16, w17, uxtw
+         neg             v31.8h,  v31.8h
+ 
+         cmp             w13, #0
+@@ -1273,11 +1275,13 @@ L(generate_grain_\type\()_lag3):
+         AARCH64_VALIDATE_LINK_REGISTER
+         ret
+ 
++	.pushsection .data.rel.ro, "aw"
+ L(gen_grain_\type\()_tbl):
+-        .hword L(gen_grain_\type\()_tbl) - L(generate_grain_\type\()_lag0)
+-        .hword L(gen_grain_\type\()_tbl) - L(generate_grain_\type\()_lag1)
+-        .hword L(gen_grain_\type\()_tbl) - L(generate_grain_\type\()_lag2)
+-        .hword L(gen_grain_\type\()_tbl) - L(generate_grain_\type\()_lag3)
++        .xword L(generate_grain_\type\()_lag0)
++        .xword L(generate_grain_\type\()_lag1)
++        .xword L(generate_grain_\type\()_lag2)
++        .xword L(generate_grain_\type\()_lag3)
++	.popsection
+ endfunc
+ .endm
+ 
+@@ -1407,19 +1411,18 @@ function fgy_32x32_8bpc_neon, export=1
+         add_offset      x5,  w6,  x10, x5,  x9
+ 
+         ldr             w11, [sp, #24]         // type
+-        adr             x13, L(fgy_loop_tbl)
++        adrp            x13, L(fgy_loop_tbl)
++        add             x13, x13, :lo12: L(fgy_loop_tbl)
+ 
+         add             x4,  x12, #32          // grain_lut += BLOCK_SIZE * bx
+         add             x6,  x14, x9,  lsl #5  // grain_lut += grain_stride * BLOCK_SIZE * by
+ 
+         tst             w11, #1
+-        ldrh            w11, [x13, w11, uxtw #1]
++        ldr             x11, [x13, w11, uxtw #3]
+ 
+         add             x8,  x16, x9,  lsl #5  // grain_lut += grain_stride * BLOCK_SIZE * by
+         add             x8,  x8,  #32          // grain_lut += BLOCK_SIZE * bx
+ 
+-        sub             x11, x13, w11, uxtw
+-
+         b.eq            1f
+         // y overlap
+         dup             v6.16b,  v27.b[0]
+@@ -1556,11 +1559,13 @@ L(loop_\ox\oy):
+         fgy             1, 0
+         fgy             1, 1
+ 
++	.pushsection .data.rel.ro, "aw"
+ L(fgy_loop_tbl):
+-        .hword L(fgy_loop_tbl) - L(loop_00)
+-        .hword L(fgy_loop_tbl) - L(loop_01)
+-        .hword L(fgy_loop_tbl) - L(loop_10)
+-        .hword L(fgy_loop_tbl) - L(loop_11)
++        .xword L(loop_00)
++        .xword L(loop_01)
++        .xword L(loop_10)
++        .xword L(loop_11)
++	.popsection
+ endfunc
+ 
+ // void dav1d_fguv_32x32_420_8bpc_neon(pixel *const dst,
+@@ -1646,11 +1651,12 @@ function fguv_32x32_\layout\()_8bpc_neon, export=1
+         ldr             w13, [sp, #64]         // type
+ 
+         movrel          x16, overlap_coeffs_\sx
+-        adr             x14, L(fguv_loop_sx\sx\()_tbl)
++        adrp            x14, L(fguv_loop_sx\sx\()_tbl)
++        add             x14, x14, :lo12: L(fguv_loop_sx\sx\()_tbl)
+ 
+         ld1             {v27.8b, v28.8b}, [x16] // overlap_coeffs
+         tst             w13, #1
+-        ldrh            w13, [x14, w13, uxtw #1]
++        ldr             x13, [x14, w13, uxtw #3]
+ 
+         b.eq            1f
+         // y overlap
+@@ -1658,8 +1664,6 @@ function fguv_32x32_\layout\()_8bpc_neon, export=1
+         mov             w9,  #(2 >> \sy)
+ 
+ 1:
+-        sub             x13, x14, w13, uxtw
+-
+ .if \sy
+         movi            v25.16b, #23
+         movi            v26.16b, #22
+@@ -1849,15 +1853,17 @@ L(fguv_loop_sx0_csfl\csfl\()_\ox\oy):
+         AARCH64_VALIDATE_LINK_REGISTER
+         ret
+ 
++	.pushsection .data.rel.ro, "aw"
+ L(fguv_loop_sx0_tbl):
+-        .hword L(fguv_loop_sx0_tbl) - L(fguv_loop_sx0_csfl0_00)
+-        .hword L(fguv_loop_sx0_tbl) - L(fguv_loop_sx0_csfl0_01)
+-        .hword L(fguv_loop_sx0_tbl) - L(fguv_loop_sx0_csfl0_10)
+-        .hword L(fguv_loop_sx0_tbl) - L(fguv_loop_sx0_csfl0_11)
+-        .hword L(fguv_loop_sx0_tbl) - L(fguv_loop_sx0_csfl1_00)
+-        .hword L(fguv_loop_sx0_tbl) - L(fguv_loop_sx0_csfl1_01)
+-        .hword L(fguv_loop_sx0_tbl) - L(fguv_loop_sx0_csfl1_10)
+-        .hword L(fguv_loop_sx0_tbl) - L(fguv_loop_sx0_csfl1_11)
++        .xword L(fguv_loop_sx0_csfl0_00)
++        .xword L(fguv_loop_sx0_csfl0_01)
++        .xword L(fguv_loop_sx0_csfl0_10)
++        .xword L(fguv_loop_sx0_csfl0_11)
++        .xword L(fguv_loop_sx0_csfl1_00)
++        .xword L(fguv_loop_sx0_csfl1_01)
++        .xword L(fguv_loop_sx0_csfl1_10)
++        .xword L(fguv_loop_sx0_csfl1_11)
++	.popsection
+ endfunc
+ 
+ function fguv_loop_sx1_neon
+@@ -1998,13 +2004,15 @@ L(fguv_loop_sx1_csfl\csfl\()_\ox\oy):
+         AARCH64_VALIDATE_LINK_REGISTER
+         ret
+ 
++	.pushsection .data.rel.ro, "aw"
+ L(fguv_loop_sx1_tbl):
+-        .hword L(fguv_loop_sx1_tbl) - L(fguv_loop_sx1_csfl0_00)
+-        .hword L(fguv_loop_sx1_tbl) - L(fguv_loop_sx1_csfl0_01)
+-        .hword L(fguv_loop_sx1_tbl) - L(fguv_loop_sx1_csfl0_10)
+-        .hword L(fguv_loop_sx1_tbl) - L(fguv_loop_sx1_csfl0_11)
+-        .hword L(fguv_loop_sx1_tbl) - L(fguv_loop_sx1_csfl1_00)
+-        .hword L(fguv_loop_sx1_tbl) - L(fguv_loop_sx1_csfl1_01)
+-        .hword L(fguv_loop_sx1_tbl) - L(fguv_loop_sx1_csfl1_10)
+-        .hword L(fguv_loop_sx1_tbl) - L(fguv_loop_sx1_csfl1_11)
++        .xword L(fguv_loop_sx1_csfl0_00)
++        .xword L(fguv_loop_sx1_csfl0_01)
++        .xword L(fguv_loop_sx1_csfl0_10)
++        .xword L(fguv_loop_sx1_csfl0_11)
++        .xword L(fguv_loop_sx1_csfl1_00)
++        .xword L(fguv_loop_sx1_csfl1_01)
++        .xword L(fguv_loop_sx1_csfl1_10)
++        .xword L(fguv_loop_sx1_csfl1_11)
++	.popsection
+ endfunc
