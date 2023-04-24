@@ -65,7 +65,8 @@ CONFIGURE_ARGS +=	--enable-profile-use
 CONFIGURE_ARGS +=	--with-pgo-profile-path=${WRKDIR}/merged.profdata
 .endif
 
-MODMOZ_RUN_DEPENDS =	devel/desktop-file-utils
+MODMOZ_RUN_DEPENDS =	devel/desktop-file-utils \
+			x11/gtk+4,-guic
 # autoconf-2.13 isnt a real dependency since a while, but configure still checks for it
 MODMOZ_BUILD_DEPENDS =	devel/autoconf/2.13 \
 			archivers/gtar \
@@ -159,6 +160,7 @@ MOZILLA_VER =	${MOZILLA_VERSION:C/b[0-9]*//:C/esr//:C/rc.$//}
 SUBST_VARS +=	MOZILLA_PROJECT MOZILLA_VER MOZILLA_VERSION
 
 MAKE_ENV +=	MOZILLA_OFFICIAL=1 \
+		MOZ_APP_REMOTINGNAME=${MOZILLA_PROJECT} \
 		SHELL=/bin/sh \
 		SO_VERSION="${SO_VERSION}" \
 		LLVM_CONFIG="${LOCALBASE}/bin/llvm-config"
