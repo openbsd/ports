@@ -2,6 +2,7 @@ COMMENT=		bad elements for GStreamer
 
 DISTNAME=		gst-plugins-bad-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-bad-${V}
+REVISION=		0
 
 SHARED_LIBS += gsturidownloader-1.0      5.1 # 0.2202.0
 SHARED_LIBS += gstadaptivedemux-1.0      4.1 # 0.2202.0
@@ -38,7 +39,9 @@ LIB_DEPENDS=		${P}/plugins-base=${V} \
 			audio/opus \
 			audio/soundtouch \
 			graphics/lcms2 \
-			multimedia/libass
+			multimedia/libass \
+			security/libnettle \
+			x11/gnome/librsvg
 
 # each plugin that has an external dependency is disabled unless proven useful
 DISABLED += 		opencv wayland aom androidmedia applemedia bluez ldac
