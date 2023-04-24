@@ -8,6 +8,7 @@ MOZILLA_PROFDATA_TASKID=bGb5UXF5R5ubFWcVAekUjw
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
+REVISION =	0
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/b[0-9]*//}
 HOMEPAGE =	https://www.mozilla.org/firefox/
@@ -78,17 +79,22 @@ post-install:
 		${PREFIX}/lib/${MOZILLA_PROJECT}/distribution/distribution.ini
 	# install desktop file
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
-	${SUBST_DATA} ${WRKSRC}/taskcluster/docker/firefox-snap/${MOZILLA_PROJECT}.desktop \
+	${INSTALL_DATA} ${WRKSRC}/taskcluster/docker/firefox-flatpak/org.mozilla.firefox.desktop \
 		${PREFIX}/share/applications/${MOZILLA_PROJECT}.desktop
 
 	# make sure TwemojiMozilla.ttf is found
 	${INSTALL_DATA_DIR} ${PREFIX}/share/fonts/
 	mv ${PREFIX}/lib/${MOZILLA_PROJECT}/fonts ${PREFIX}/share/fonts/${MOZILLA_PROJECT}
 
-	# install icon for desktop file
-	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps/
-	${INSTALL_DATA} ${PREFIX}/lib/${MOZILLA_PROJECT}/browser/chrome/icons/default/default128.png \
-		${PREFIX}/share/pixmaps/${MOZILLA_PROJECT}.png
+	# install icons for desktop file
+.for s in 16 22 24 32 48 64 128 256
+	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/${s}x${s}/apps
+	${INSTALL_DATA} ${WRKSRC}/browser/branding/official/default${s}.png \
+		${PREFIX}/share/icons/hicolor/${s}x${s}/apps/org.mozilla.${MOZILLA_PROJECT}.png
+.endfor
+	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/scalable/apps
+	${INSTALL_DATA} ${WRKSRC}/browser/branding/official/content/about-logo.svg \
+		${PREFIX}/share/icons/hicolor/scalable/apps/org.mozilla.${MOZILLA_PROJECT}.svg
 
 	# link default48.png to default.png to be used by default by non-icccm compliant wm
 	ln -f ${PREFIX}/lib/${MOZILLA_PROJECT}/browser/chrome/icons/default/default{48,}.png
