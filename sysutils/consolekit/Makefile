@@ -5,7 +5,7 @@ GH_ACCOUNT=		ConsoleKit2
 GH_PROJECT=		ConsoleKit2
 PKGNAME=		${DISTNAME:L}
 
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		sysutils	
 

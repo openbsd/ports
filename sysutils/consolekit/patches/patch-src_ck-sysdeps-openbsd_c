@@ -1,0 +1,28 @@
+commit 418a25ea37a5292fec06d92a99481b89890ff0b2
+Author: Antoine Jacoutot <ajacoutot@openbsd.org>
+Date:   Mon Apr 24 15:22:15 2023 +0200
+    OpenBSD: simplify ck_system_can_suspend
+
+Index: src/ck-sysdeps-openbsd.c
+--- src/ck-sysdeps-openbsd.c.orig
++++ src/ck-sysdeps-openbsd.c
+@@ -461,8 +461,7 @@ ck_get_active_console_num (int    console_fd,
+ gboolean
+ ck_system_can_suspend (void)
+ {
+-/* needs acpi(4) */
+-#if defined(__i386__) || defined(__amd64__) || defined(__aarch64__)
++	/* needs apmd(8) running */
+ 	struct stat st;
+ 
+ 	if (stat("/var/run/apmdev", &st) < 0) {
+@@ -474,9 +473,6 @@ ck_system_can_suspend (void)
+ 	}
+ 
+ 	return TRUE;
+-#else
+-	return FALSE;
+-#endif
+ }
+ 
+ gboolean
