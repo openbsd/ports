@@ -6483,6 +6483,7 @@ share/rust-openssl-tests/openssl/src/x509/verify.rs
 share/rust-openssl-tests/openssl/test/
 share/rust-openssl-tests/openssl/test/aia_test_cert.pem
 share/rust-openssl-tests/openssl/test/alt_name_cert.pem
+share/rust-openssl-tests/openssl/test/authority_key_identifier.pem
 share/rust-openssl-tests/openssl/test/ca.crt
 share/rust-openssl-tests/openssl/test/cert.pem
 share/rust-openssl-tests/openssl/test/certs.pem
