@@ -114,7 +114,7 @@ post-install:
 # Remove desktop file and icons; we don't really need them (it's just a
 # launcher for http://localhost:631 and we may actually want to
 # configure a remote server); this is needed to prevent a dependency
-# loop: cups->gtk+3,-guic->cups
+# loop: cups->gtk+4,-guic->cups
 	rm -rf ${PREFIX}/share/icons
 	rm -rf ${PREFIX}/share/applications
 

@@ -1,6 +1,6 @@
 COMMENT=		fallback theme of the icon theme specification
 
-# new release: bump x11/gtk+3,-guic to force a run of gtk-update-icon-cache;
+# new release: bump x11/gtk+4,-guic to force a run of gtk-update-icon-cache;
 # we cannot run it ourselves because gtk-update-icon-cache depends on
 # hicolor-icon-theme and that would create a dependency loop
 DISTNAME=		hicolor-icon-theme-0.17
