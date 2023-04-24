@@ -1,7 +1,7 @@
 COMMENT =	Thunar vcs integration plugin
 
 XFCE_VERSION =	0.2.0
-REVISION =	4
+REVISION =	5
 THUNAR_PLUGIN =	thunar-vcs-plugin
 
 HOMEPAGE = https://docs.xfce.org/xfce/thunar/${THUNAR_PLUGIN}

@@ -1,7 +1,7 @@
 COMMENT =	Qt client for the X2Go system
 
 DISTNAME =	x2goclient-4.1.2.2
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	x11
 
@@ -27,7 +27,7 @@ LIB_DEPENDS =	databases/openldap \
 
 RUN_DEPENDS =	x11/nx/nxcomp \
 		x11/nx/nxproxy \
-		x11/gtk+3,-guic \
+		x11/gtk+4,-guic \
 		devel/desktop-file-utils \
 		shells/bash
 

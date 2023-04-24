@@ -2,6 +2,7 @@ COMMENT=	Xfce4 settings helpers
 
 XFCE_PROJECT=	xfce4-settings
 XFCE_VERSION=	4.18.2
+REVISION=	0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

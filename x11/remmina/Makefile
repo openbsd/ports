@@ -3,6 +3,7 @@ COMMENT=		GTK+ remote desktop client
 V=			1.4.29
 DISTNAME=		remmina-${V}
 WRKDIST=		${WRKDIR}/Remmina-v${V}-fb19eb5f11f206ffb442a9e0c519cb0f2cb3fd8b
+REVISION=		0
 
 CATEGORIES=		x11 net
 
@@ -44,7 +45,7 @@ LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
 RUN_DEPENDS=		devel/desktop-file-utils \
 			devel/py-gobject3${MODPY_FLAVOR} \
 			misc/shared-mime-info \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 # Appindicator is only used by Ubuntu's Unity.
 CONFIGURE_ARGS +=	-DHAVE_LIBAPPINDICATOR=OFF \

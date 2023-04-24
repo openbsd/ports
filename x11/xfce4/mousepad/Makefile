@@ -2,6 +2,7 @@ COMMENT=	Xfce4 simple text editor
 
 XFCE_VERSION=	0.6.0
 XFCE_GOODIE=	mousepad
+REVISION=	0
 
 SHARED_LIBS +=	mousepad	1.0 # 0.0
 

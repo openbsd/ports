@@ -15,7 +15,7 @@ VERSION =		${QT5_WEBENGINE_VERSION}
 DIST_VERSION =		${QT5_WEBENGINE_VERSION}
 DISTNAME =		${QT5NAME:L}-everywhere-src-${DIST_VERSION}
 PKGNAME ?=		${DISTNAME:C/-everywhere-src//:C/-${DIST_VERSION}/-${VERSION}/}
-REVISION =		11
+REVISION =		12
 
 MASTER_SITES ?=		https://download.qt.io/official_releases/qt/${QT5_WEBENGINE_VERSION:R}/${QT5_WEBENGINE_VERSION}/submodules/ \
 			https://mirrors.ocf.berkeley.edu/qt/official_releases/qt/${QT5_WEBENGINE_VERSION:R}/${QT5_WEBENGINE_VERSION}/submodules/
@@ -53,7 +53,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/xdg-utils \
 		fonts/noto/fonts \
 		graphics/libexif \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 BUILD_DEPENDS =	archivers/bzip2 \
 		devel/bison \

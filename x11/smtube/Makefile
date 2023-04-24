@@ -3,6 +3,7 @@ USE_WXNEEDED =		Yes
 COMMENT =		browse and download YouTube videos
 
 DISTNAME =		smtube-21.10.0
+REVISION =		0
 
 CATEGORIES =		multimedia x11
 
@@ -22,7 +23,7 @@ EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		x11/qt5
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+3,-guic \
+			x11/gtk+4,-guic \
 			x11/smplayer
 
 LIB_DEPENDS =		x11/qt5/qtwebkit

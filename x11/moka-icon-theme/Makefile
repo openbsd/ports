@@ -3,7 +3,7 @@ COMMENT =		minimal, flat style icon theme
 GH_ACCOUNT =		snwh
 GH_PROJECT =		moka-icon-theme
 GH_TAGNAME =		v5.4.0
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		x11
 
@@ -16,7 +16,7 @@ PKG_ARCH =		*
 NO_BUILD =		Yes
 NO_TEST =		Yes
 
-RUN_DEPENDS =		x11/gtk+3,-guic \
+RUN_DEPENDS =		x11/gtk+4,-guic \
 			x11/faba-icon-theme
 
 ICONSDIR =		${PREFIX}/share/icons/

@@ -3,6 +3,7 @@ COMMENT=	high performance, multi-platform VNC client and server
 GH_ACCOUNT=	TigerVNC
 GH_PROJECT=	tigervnc
 GH_TAGNAME=	v1.13.1
+REVISION=	0
 
 # update the post-patch target if moving to a new major branch of xorg-server
 DISTFILES=	${GH_DISTFILE} \
@@ -63,7 +64,7 @@ LIB_DEPENDS=	devel/gettext,-runtime \
 		security/gnutls \
 		x11/fltk
 RUN_DEPENDS=	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 AUTOCONF_VERSION= 2.71
 AUTOMAKE_VERSION= 1.16

@@ -2,6 +2,7 @@ COMMENT=	Xfce4 mount device panel plugin
 
 XFCE_VERSION=	1.1.6
 XFCE_PLUGIN=	mount
+REVISION=	0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

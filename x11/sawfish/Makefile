@@ -3,7 +3,7 @@ COMMENT=		extensible window manager
 VERSION=		1.12.90
 DISTNAME=		sawfish_${VERSION}
 PKGNAME=		sawfish-${VERSION}
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		x11
 
@@ -30,7 +30,7 @@ BUILD_DEPENDS=		archivers/gtar \
 			x11/rep-gtk
 
 RUN_DEPENDS=		devel/desktop-file-utils \
-			x11/gtk+3,-guic \
+			x11/gtk+4,-guic \
 			x11/rep-gtk
 
 LIB_DEPENDS=		devel/gettext,-runtime \

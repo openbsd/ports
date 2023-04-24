@@ -2,6 +2,7 @@ COMMENT =	drop-down terminal emulator based on KDE Konsole
 
 DISTNAME =	yakuake-${MODKDE_VERSION}
 EPOCH =		0
+REVISION =	0
 
 CATEGORIES =	x11 sysutils
 
@@ -35,7 +36,7 @@ BUILD_DEPENDS =	devel/gettext,-tools \
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
 		devel/kf5/kdoctools \
-		x11/gtk+3,-guic \
+		x11/gtk+4,-guic \
 		x11/kde-applications/konsole
 
 LIB_DEPENDS =	devel/kf5/attica \

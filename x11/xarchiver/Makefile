@@ -3,7 +3,7 @@ CATEGORIES =	x11 archivers
 GH_ACCOUNT =	ib
 GH_PROJECT =	xarchiver
 GH_TAGNAME =	0.5.4.17
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	http://xarchiver.sourceforge.net
 
@@ -36,7 +36,7 @@ RUN_DEPENDS =	archivers/zip \
 		archivers/p7zip \
 		devel/xdg-utils \
 		devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 
 .include <bsd.port.mk>

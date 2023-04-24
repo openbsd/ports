@@ -1,7 +1,7 @@
 COMMENT=		Tango icon theme
 
 DISTNAME=		tango-icon-theme-0.8.90
-REVISION=		12
+REVISION=		13
 CATEGORIES=		x11
 
 HOMEPAGE=		http://tango.freedesktop.org/
@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=		textproc/intltool
 
-RUN_DEPENDS=		x11/gtk+3,-guic
+RUN_DEPENDS=		x11/gtk+4,-guic
 BUILD_DEPENDS=          x11/icon-naming-utils \
 			graphics/ImageMagick
 

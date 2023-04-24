@@ -3,7 +3,7 @@ BROKEN-hppa=	build stuck on virt-viewer-window.c
 COMMENT=	graphics viewer for KVM guest displays
 
 DISTNAME=	virt-viewer-11.0
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	x11
 
@@ -32,7 +32,7 @@ LIB_DEPENDS=	devel/libvirt-glib \
 		x11/spice-gtk
 
 RUN_DEPENDS=	devel/desktop-file-utils \
-		x11/gtk+3,-guic \
+		x11/gtk+4,-guic \
 		misc/shared-mime-info
 
 CONFIGURE_ARGS=	-Dovirt=disabled

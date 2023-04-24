@@ -2,7 +2,7 @@ COMMENT=		display graphical dialogs from shell scripts or command line
 
 DISTNAME=		yad-0.40.0
 CATEGORIES=		x11
-REVISION=		2
+REVISION=		3
 
 HOMEPAGE=		http://sourceforge.net/projects/yad-dialog/
 
@@ -22,7 +22,7 @@ USE_GMAKE=		Yes
 
 LIB_DEPENDS=		devel/gettext,-runtime \
 			x11/gtk+3
-RUN_DEPENDS=		x11/gtk+3,-guic
+RUN_DEPENDS=		x11/gtk+4,-guic
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-gtk=gtk3 \

@@ -2,7 +2,7 @@ COMMENT=	Xfce4 desktop screenshot panel plugin
 
 XFCE_VERSION=	1.10.3
 XFCE_GOODIE=	xfce4-screenshooter
-REVISION=	0
+REVISION=	1
 
 PORTROACH=	limitw:1,even
 

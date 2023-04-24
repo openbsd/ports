@@ -3,6 +3,7 @@ COMMENT =	Qt-based directory statistics
 GH_ACCOUNT =	shundhammer
 GH_PROJECT =	qdirstat
 GH_TAGNAME =	1.8.1
+REVISION =	0
 
 CATEGORIES =	x11
 
@@ -18,7 +19,7 @@ MODULES =	devel/qmake \
 		x11/qt5
 
 RUN_DEPENDS +=	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/src/qdirstat ${PREFIX}/bin/qdirstat

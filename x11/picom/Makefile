@@ -3,6 +3,7 @@ COMMENT =	lightweight compositor for X11
 GH_ACCOUNT =	yshui
 GH_PROJECT =	picom
 GH_TAGNAME =	v10.2
+REVISION =	0
 
 CATEGORIES =	x11
 
@@ -23,7 +24,7 @@ COMPILER_LANGS =	c
 BUILD_DEPENDS =		devel/uthash \
 			textproc/asciidoc
 
-RUN_DEPENDS =		x11/gtk+3,-guic \
+RUN_DEPENDS =		x11/gtk+4,-guic \
 			devel/desktop-file-utils
 
 LIB_DEPENDS =		devel/libconfig \

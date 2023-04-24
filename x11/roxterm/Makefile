@@ -3,7 +3,7 @@ COMMENT=		highly configurable terminal emulator
 GH_ACCOUNT=		realh
 GH_PROJECT=		roxterm
 GH_TAGNAME=		3.10.1
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		x11
 
@@ -22,7 +22,7 @@ LIB_DEPENDS=		devel/vte3 \
 			x11/dbus-glib
 
 RUN_DEPENDS=		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 .include <bsd.port.arch.mk>
 .if !${PROPERTIES:Mclang}

@@ -4,6 +4,7 @@ CATEGORIES =	x11
 GH_ACCOUNT =	rodlie
 GH_PROJECT =	qtfm
 GH_TAGNAME =	6.2.1
+REVISION =	0
 
 HOMEPAGE =	https://qtfm.eu/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -20,7 +21,7 @@ MODULES =	devel/qmake \
 LIB_DEPENDS =	devel/libinotify
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 MAKE_ENV =	CXXOPTS="-I${LOCALBASE}/include/inotify" \
 		LIBS="-L${LOCALBASE}/lib/inotify -linotify -Wl,-rpath,${LOCALBASE}/lib/inotify"

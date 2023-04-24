@@ -2,6 +2,7 @@ COMMENT =	Xfce4 alternative applications menu panel plugin
 
 XFCE_VERSION =	2.7.2
 XFCE_PLUGIN =	whiskermenu
+REVISION =	0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

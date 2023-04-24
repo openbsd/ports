@@ -1,4 +1,5 @@
 COMMENT=		standard MATE themes
+REVISION=		0
 
 MATE_PROJECT=		mate-themes
 MATE_VERSION=		3.22.22

@@ -2,6 +2,7 @@ COMMENT=	Xfce4 periodical screen locker panel plugin
 
 XFCE_VERSION=	1.1.3
 XFCE_PLUGIN=	time-out
+REVISION=	0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

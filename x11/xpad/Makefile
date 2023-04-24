@@ -3,7 +3,7 @@ COMMENT=	virtual sticky pad system
 DISTNAME=	xpad-${V}
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	x11
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://launchpad.net/xpad
 MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
@@ -22,7 +22,7 @@ MODULES=	textproc/intltool
 LIB_DEPENDS=	x11/gtksourceview3
 
 RUN_DEPENDS=	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 CONFIGURE_STYLE=autoreconf
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

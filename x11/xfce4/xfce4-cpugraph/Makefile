@@ -2,6 +2,7 @@ COMMENT=	Xfce4 cpu usage graph panel plugin
 
 XFCE_VERSION=	1.2.7
 XFCE_PLUGIN=	cpugraph
+REVISION=	0
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

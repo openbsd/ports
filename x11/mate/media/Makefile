@@ -1,5 +1,5 @@
 COMMENT=		media tools for the MATE desktop
-REVISION=		1
+REVISION=		2
 
 MATE_PROJECT=		mate-media
 

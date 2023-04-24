@@ -1,5 +1,5 @@
 COMMENT=		weather library for MATE
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  mateweather               7.9 # 7.9
 

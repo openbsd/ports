@@ -2,7 +2,7 @@ COMMENT=	Xfce4 network load monitor panel plugin
 
 XFCE_VERSION=	1.4.0
 XFCE_PLUGIN=	netload
-REVISION=	3
+REVISION=	4
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

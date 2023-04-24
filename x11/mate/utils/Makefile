@@ -1,5 +1,5 @@
 COMMENT=		MATE support utilities
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  matedict                  6.7 # 6.7
 

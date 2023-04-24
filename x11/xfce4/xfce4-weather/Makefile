@@ -2,6 +2,7 @@ COMMENT=	Xfce4 temperature/weather conditions panel plugin
 
 XFCE_VERSION=	0.11.1
 XFCE_PLUGIN=	weather
+REVISION=	0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

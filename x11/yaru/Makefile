@@ -3,6 +3,7 @@ COMMENT=		Ubuntu GNOME theme
 GH_TAGNAME=		23.04.4
 GH_ACCOUNT=		ubuntu
 GH_PROJECT=		yaru
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -22,7 +23,7 @@ BUILD_DEPENDS +=	devel/glib2
 # grealpath(1)
 BUILD_DEPENDS +=	sysutils/coreutils
 
-RUN_DEPENDS=		x11/gtk+3,-guic
+RUN_DEPENDS=		x11/gtk+4,-guic
 
 PKG_ARCH=		*
 

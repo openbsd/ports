@@ -3,6 +3,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	organizer for book/dvd/music collections
 
 DISTNAME =	tellico-3.4.6
+REVISION =	0
 
 CATEGORIES =	x11
 
@@ -40,7 +41,7 @@ BUILD_DEPENDS =	devel/gettext,-tools \
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
 		devel/kf5/kdoctools \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 LIB_DEPENDS =	audio/libcdio \
 		audio/taglib \

@@ -2,6 +2,7 @@ COMMENT =		complete front-end for MPlayer and MPV
 
 DISTNAME =		smplayer-22.7.0
 CATEGORIES =		multimedia x11
+REVISION =		0
 
 HOMEPAGE =		https://www.smplayer.info/
 
@@ -22,7 +23,7 @@ MODULES =		x11/qt5
 RUN_DEPENDS =		devel/desktop-file-utils \
 			mpv-*|mplayer->=20090708:multimedia/mpv \
 			www/yt-dlp \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 USE_GMAKE =		Yes
 

@@ -4,7 +4,7 @@ COMMENT=	Xfce4 icon theme
 
 XFCE_ARTWORK=	xfce4-icon-theme
 XFCE_VERSION=	4.4.3
-REVISION=	15
+REVISION=	16
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

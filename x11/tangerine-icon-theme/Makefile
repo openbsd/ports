@@ -4,7 +4,7 @@ V=			0.27
 DISTNAME=		tangerine-icon-theme_${V}
 PKGNAME=		${DISTNAME:S/_/-/}
 CATEGORIES=		x11
-REVISION=		1
+REVISION=		2
 
 MASTER_SITES=		http://archive.ubuntu.com/ubuntu/pool/main/t/tangerine-icon-theme/
 
@@ -15,7 +15,7 @@ MODULES=		textproc/intltool
 
 WRKDIST=		${WRKDIR}/tangerine-icon-theme-0.27
 
-RUN_DEPENDS=		x11/gtk+3,-guic
+RUN_DEPENDS=		x11/gtk+4,-guic
 
 BUILD_DEPENDS=		devel/gettext,-runtime \
 			misc/findutils \

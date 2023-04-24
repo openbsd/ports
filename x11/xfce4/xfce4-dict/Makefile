@@ -2,6 +2,7 @@ COMMENT=	Xfce4 dictionary application
 
 XFCE_VERSION=	0.8.5
 XFCE_GOODIE=	xfce4-dict
+REVISION=	0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

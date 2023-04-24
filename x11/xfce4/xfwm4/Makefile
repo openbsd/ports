@@ -1,4 +1,5 @@
 COMMENT=	Xfce4 window manager
+REVISION=	0
 
 XFCE_PROJECT=	xfwm4
 

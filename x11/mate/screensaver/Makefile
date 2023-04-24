@@ -1,5 +1,5 @@
 COMMENT=		MATE screensaver
-REVISION=		0
+REVISION=		1
 
 MATE_PROJECT=		mate-screensaver
 MATE_VERSION=		1.26.1

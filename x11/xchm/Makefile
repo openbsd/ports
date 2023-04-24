@@ -2,6 +2,7 @@ COMMENT=	display chm files
 
 V=		1.35
 DISTNAME=	xchm-$V
+REVISION=	0
 
 CATEGORIES=	devel textproc x11
 
@@ -21,7 +22,7 @@ LIB_DEPENDS=	devel/chmlib \
 		x11/wxWidgets>=3.0.4
 
 RUN_DEPENDS=	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 COMPILER=	base-clang ports-gcc base-gcc
 

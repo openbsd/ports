@@ -2,6 +2,7 @@ COMMENT =	Thunar archive plugin
 
 XFCE_VERSION =	0.5.1
 THUNAR_PLUGIN =	thunar-archive-plugin
+REVISION =	0
 
 # GPLv2
 PERMIT_PACKAGE =	Yes

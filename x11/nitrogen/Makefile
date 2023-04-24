@@ -2,7 +2,7 @@ COMMENT=		background browser and setter for X11
 
 DISTNAME=		nitrogen-1.6.1
 CATEGORIES=		x11 graphics
-REVISION=		2
+REVISION=		3
 
 HOMEPAGE=		http://projects.l3ib.org/nitrogen/
 
@@ -24,7 +24,7 @@ CXXFLAGS +=		-std=c++11
 
 LIB_DEPENDS=		devel/gettext,-runtime \
 			x11/gtk2mm
-RUN_DEPENDS=		x11/gtk+3,-guic
+RUN_DEPENDS=		x11/gtk+4,-guic
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--disable-inotify

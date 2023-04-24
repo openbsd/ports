@@ -1,7 +1,7 @@
 COMMENT =	graphical documentation browser for Perl
 
 DISTNAME =	podbrowser-0.12
-REVISION=	11
+REVISION=	12
 
 CATEGORIES =	devel x11
 
@@ -18,7 +18,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		www/p5-URI \
 		x11/p5-Gtk2-Ex-PodViewer \
 		x11/p5-Gtk2-GladeXML>=1.007p7 \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 NO_TEST =	Yes
 
