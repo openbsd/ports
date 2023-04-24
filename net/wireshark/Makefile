@@ -15,6 +15,8 @@ SHARED_LIBS +=	wsutil               4.0
 SHARED_LIBS +=	wiretap              4.0
 SHARED_LIBS +=	wireshark            4.0
 
+REVISION-main =	0
+
 CATEGORIES =	net security x11
 
 HOMEPAGE =	https://www.wireshark.org/
@@ -75,7 +77,7 @@ BUILD_DEPENDS +=	devel/bison \
 RUN_DEPENDS =		devel/desktop-file-utils \
 			devel/xdg-utils \
 			misc/shared-mime-info \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 RUN_DEPENDS-text =	# empty
 
 LIB_DEPENDS-text =	${MODLUA_LIB_DEPENDS} \
