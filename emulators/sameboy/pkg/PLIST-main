@@ -21,6 +21,14 @@ share/icons/hicolor/64x64/mimetypes/x-gameboy-rom.png
 share/mime/packages/sameboy.xml
 share/sameboy/
 share/sameboy/LICENSE
+share/sameboy/Palettes/
+share/sameboy/Palettes/Desert.sbp
+share/sameboy/Palettes/Evening.sbp
+share/sameboy/Palettes/Fog.sbp
+share/sameboy/Palettes/Magic Eggplant.sbp
+share/sameboy/Palettes/Radioactive Pea.sbp
+share/sameboy/Palettes/Seaweed.sbp
+share/sameboy/Palettes/Twilight.sbp
 share/sameboy/Shaders/
 share/sameboy/Shaders/AAOmniScaleLegacy.fsh
 share/sameboy/Shaders/AAScale2x.fsh
@@ -39,8 +47,10 @@ share/sameboy/Shaders/Scale4x.fsh
 share/sameboy/Shaders/SmoothBilinear.fsh
 share/sameboy/agb_boot.bin
 share/sameboy/background.bmp
+share/sameboy/cgb0_boot.bin
 share/sameboy/cgb_boot.bin
 share/sameboy/dmg_boot.bin
+share/sameboy/mgb_boot.bin
 share/sameboy/registers.sym
 share/sameboy/sgb2_boot.bin
 share/sameboy/sgb_boot.bin

@@ -3,10 +3,8 @@ COMMENT-libretro =	accurate Nintendo Game Boy core for retroarch
 
 PKGNAME-main =		sameboy-$V
 PKGNAME-libretro =	libretro-sameboy-$V
-REVISION-libretro =	0
-REVISION-main =		0
 
-V =		0.14.3
+V =		0.15.8
 
 GH_ACCOUNT =	LIJI32
 GH_PROJECT =	SameBoy
@@ -25,7 +23,7 @@ MAINTAINER =	Anthony J. Bentley <anthony@anjbe.name>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB-main += GL SDL2 c m
+WANTLIB-main += GL SDL2 c m openal pthread
 WANTLIB-libretro += m
 
 # -std=gnu11
@@ -36,7 +34,8 @@ BUILD_DEPENDS =		devel/rgbds \
 
 # dlopens libgtk-3.so for file chooser
 WANTLIB-main += gtk-3
-LIB_DEPENDS-main =	devel/sdl2 \
+LIB_DEPENDS-main =	audio/openal \
+			devel/sdl2 \
 			x11/gtk+3
 
 RUN_DEPENDS =		devel/desktop-file-utils \
