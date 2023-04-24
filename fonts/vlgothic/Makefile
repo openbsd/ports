@@ -1,6 +1,6 @@
 COMMENT =	Japanese gothic TrueType fonts from Vine Linux
 
-V =		20200720
+V =		20220612
 DISTNAME =	VLGothic-$V
 PKGNAME =	vlgothic-$V
 
@@ -11,7 +11,7 @@ HOMEPAGE =	http://vlgothic.dicey.org/
 #BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES =		${MASTER_SITE_OSDN_JP:=vlgothic/73361/}
+MASTER_SITES =		${MASTER_SITE_OSDN_JP:=vlgothic/77450/}
 EXTRACT_SUFX =		.tar.bz2
 
 NO_BUILD =		Yes
