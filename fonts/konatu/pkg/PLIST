@@ -1,0 +1,7 @@
+share/doc/konatu/
+share/doc/konatu/README.txt
+share/doc/konatu/README_Japanese.txt
+share/fonts/
+@fontdir share/fonts/konatu/
+share/fonts/konatu/Konatu.ttf
+share/fonts/konatu/KonatuTohaba.ttf

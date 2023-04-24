@@ -57,6 +57,7 @@
      SUBDIR += ko-baekmuk-fonts
      SUBDIR += ko-baekmuk-ttf
      SUBDIR += ko-hanterm-fonts
+     SUBDIR += konatu
      SUBDIR += league-fonts
      SUBDIR += liberation-fonts
      SUBDIR += linuxlibertine-fonts-otf
