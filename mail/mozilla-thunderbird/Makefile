@@ -98,7 +98,7 @@ post-install:
 		${PREFIX}/share/icons/hicolor/${s}x${s}/apps/org.mozilla.${MOZILLA_PROJECT}.png
 .endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/scalable/apps
-	${INSTALL_DATA} ${WRKSRC}/comm/mail/branding/thunderbird/content/about-logo.svg \
+	sed -e '1,3d' ${WRKSRC}/comm/mail/branding/thunderbird/content/about-logo.svg > \
 		${PREFIX}/share/icons/hicolor/scalable/apps/org.mozilla.${MOZILLA_PROJECT}.svg
 
 .include <bsd.port.mk>
