@@ -1,3 +1,6 @@
+# XXX cannot be updated because it needs libdex which depends on ucontext.h
+# (makecontext(3) etc.)
+
 # XXX prctl(2) or procctl(2)
 # error: #error "Please submit a patch to support parent-death signal on your OS"
 
