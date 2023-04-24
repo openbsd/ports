@@ -536,6 +536,7 @@
      SUBDIR += stringtemplate
      SUBDIR += svndumptool
      SUBDIR += swish-e
+     SUBDIR += sword
      SUBDIR += tcpdf
      SUBDIR += tdom
      SUBDIR += terraform-docs
