@@ -1,37 +1,24 @@
+No wordexp(3) on OpenBSD.
+XXX check for the wordexp function instead of using G_OS_UNIX + push upstream
+
 Index: src/editor-path.c
 --- src/editor-path.c.orig
 +++ src/editor-path.c
-@@ -26,8 +26,7 @@
+@@ -25,7 +25,7 @@
+ #include <glib.h>
  #include <string.h>
  
- #ifdef G_OS_UNIX
--# include <unistd.h>
--# include <wordexp.h>
-+# include <glob.h>
+-#ifdef G_OS_UNIX
++#if defined G_OS_UNIX && !defined(__OpenBSD__)
+ # include <unistd.h>
+ # include <wordexp.h>
  #endif
- 
- #include "editor-path-private.h"
-@@ -36,7 +35,7 @@ char *
+@@ -35,7 +35,7 @@
+ char *
  _editor_path_expand (const gchar *path)
  {
- #ifdef G_OS_UNIX
--  wordexp_t state = { 0 };
-+  glob_t state = { 0 };
+-#ifdef G_OS_UNIX
++#if defined G_OS_UNIX && !defined(__OpenBSD__)
+   wordexp_t state = { 0 };
    char *escaped = NULL;
    char *ret = NULL;
-   int r;
-@@ -45,10 +44,10 @@ _editor_path_expand (const gchar *path)
-     return NULL;
- 
-   escaped = g_shell_quote (path);
--  r = wordexp (escaped, &state, WRDE_NOCMD);
--  if (r == 0 && state.we_wordc > 0)
--    ret = g_strdup (state.we_wordv [0]);
--  wordfree (&state);
-+  r = glob (escaped, GLOB_ERR, NULL, &state);
-+  if (r == 0 && state.gl_pathc > 0)
-+    ret = g_strdup (state.gl_pathv [0]);
-+  globfree (&state);
- 
-   if (!g_path_is_absolute (ret))
-     {
