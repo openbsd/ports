@@ -9,6 +9,7 @@ MOZILLA_PROJECT =	thunderbird
 MOZILLA_CODENAME =	comm/mail
 EXTRACT_SUFX =		.tar.xz
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
+REVISION =	0
 
 # XXX badly formed debug in libxul ?
 DWZ = :
@@ -86,12 +87,18 @@ post-install:
 	echo "[Global]\nid=OpenBSD\nversion=${OSREV}\nabout=Packaged by ${MAINTAINER}\n" > \
 		${PREFIX}/lib/${MOZILLA_PROJECT}/distribution/distribution.ini
 	# install desktop file
-	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/ ; \
-	${SUBST_DATA} ${FILESDIR}/${MOZILLA_PROJECT}.desktop \
-		${PREFIX}/share/applications/${MOZILLA_PROJECT}.desktop ; \
-	# install icon for desktop file
-	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps/
-	${INSTALL_DATA} ${PREFIX}/lib/${MOZILLA_PROJECT}/chrome/icons/default/default128.png \
-		${PREFIX}/share/pixmaps/${MOZILLA_PROJECT}.png
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
+	${INSTALL_DATA} ${FILESDIR}/${MOZILLA_PROJECT}.desktop \
+		${PREFIX}/share/applications/${MOZILLA_PROJECT}.desktop
+
+	# install icons for desktop file
+.for s in 16 22 24 32 48 64 128 256
+	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/${s}x${s}/apps
+	${INSTALL_DATA} ${WRKSRC}/comm/mail/branding/thunderbird/default${s}.png \
+		${PREFIX}/share/icons/hicolor/${s}x${s}/apps/org.mozilla.${MOZILLA_PROJECT}.png
+.endfor
+	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/scalable/apps
+	${INSTALL_DATA} ${WRKSRC}/comm/mail/branding/thunderbird/content/about-logo.svg \
+		${PREFIX}/share/icons/hicolor/scalable/apps/org.mozilla.${MOZILLA_PROJECT}.svg
 
 .include <bsd.port.mk>
