@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.143 2022/11/23 17:51:47 op Exp $
+# $OpenBSD: portcheck,v 1.144 2023/04/24 11:44:20 ajacoutot Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -919,7 +919,7 @@ sub_checks() {
 
 # Checks made:
 #   * If package installs system-wide icons, it should have the
-#     x11/gtk+3,-guic dependency and 
+#     x11/gtk+4,-guic dependency and 
 #     @tag gtk-update-icon-cache %D/share/icons/$theme
 #     for each icon theme used in package. 
 #
@@ -1044,7 +1044,7 @@ check_plist() {
 			err "${portref}installs icon ${l##*/} in ${l%/*}, it" \
 			    "should go in share/$app/icons/ or like instead"
 			;;
-		"@depend x11/gtk+3,-guic"*)
+		"@depend x11/gtk+4,-guic"*)
 			guic_dep=true
 			;;
 		@?(un)exec*" %D/bin/gtk-update-icon-cache"*)
@@ -1191,7 +1191,7 @@ check_plist() {
 	# gtk-update-icon-cache
 	$guic_dep_needed && ! $guic_dep &&
 	    [[ $fullpkgname != gtk-update-icon-cache-* ]] &&
-		err "${portref}missing RDEP on x11/gtk+3,-guic"
+		err "${portref}missing RDEP on x11/gtk+4,-guic"
 	local cnt
 
 	# desktop-file-utils (simplier than previous, isn't it?)
