@@ -2,6 +2,7 @@ COMMENT=		base elements for GStreamer
 
 DISTNAME=		gst-plugins-base-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-base-${V}
+REVISION=		0
 
 SHARED_LIBS += gsttag-1.0                7.1 # 0.2202.0
 SHARED_LIBS += gstfft-1.0                7.1 # 0.2202.0
@@ -40,8 +41,10 @@ LIB_DEPENDS=		${P}/core=${V} \
 			graphics/jpeg \
 			multimedia/libtheora
 
-# needed for the gio plugin
-RUN_DEPENDS +=		x11/gnome/gvfs
+# optional dependency for the the gio plugin;
+# disabled because of cyclic build dependency:
+# x11/gtk+4 -> gst-plugins-{bad,base} -> gvfs -> gtk+4,-guic -> x11/gtk+4
+#RUN_DEPENDS +=		x11/gnome/gvfs
 
 CONFIGURE_ARGS=		-Dalsa=disabled \
 			-Dgl_winsys=x11
