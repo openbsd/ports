@@ -4,7 +4,7 @@ GH_ACCOUNT =	haecker-felix
 GH_PROJECT =	Gradio
 DISTNAME =	${GH_PROJECT:L}-${GH_TAGNAME:S/^v//}
 EPOCH =		0
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	audio www
 
@@ -18,7 +18,8 @@ WANTLIB += soup-2.4 sqlite3 m
 
 LIB_DEPENDS =		devel/json-glib \
 			devel/libsoup \
-			multimedia/gstreamer1/plugins-base
+			multimedia/gstreamer1/plugins-base \
+			x11/gtk+3
 
 MODULES =		devel/meson \
 			textproc/intltool
