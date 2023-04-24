@@ -4,14 +4,15 @@ PORTROACH=		skipv:3.90.0,3.92.1,3.93.0,3.94.0
 
 COMMENT-main=		multi-platform graphical toolkit
 COMMENT-cups=		gtk+3 CUPS print backend
-COMMENT-guic=		gtk+ icon theme caching utility
 
 GNOME_PROJECT=		gtk+
 GNOME_VERSION=		3.24.37
 
 PKGNAME-main=		gtk+3-${GNOME_VERSION}
 PKGNAME-cups=		gtk+3-cups-${GNOME_VERSION}
-PKGNAME-guic=		gtk-update-icon-cache-${GNOME_VERSION}
+
+REVISION-main=		0
+REVISION-cups=		0
 
 CATEGORIES=		x11 devel
 
@@ -26,7 +27,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2
 PERMIT_PACKAGE=		Yes
 
-MULTI_PACKAGES=		-main -cups -guic
+MULTI_PACKAGES=		-main -cups
 
 MODULES=		devel/dconf \
 			devel/meson \
@@ -64,12 +65,6 @@ RUN_DEPENDS-cups=
 
 WANTLIB-cups += cairo cups gdk-3 gio-2.0 glib-2.0 gobject-2.0 gtk-3
 
-LIB_DEPENDS-guic=	graphics/gdk-pixbuf2
-RUN_DEPENDS-guic=	x11/hicolor-icon-theme
-
-# uses pledge()
-WANTLIB-guic += c gdk_pixbuf-2.0 glib-2.0 intl
-
 MODGNOME_TOOLS=		docbook gobject-introspection gtk-update-icon-cache \
 			desktop-file-utils
 
@@ -94,5 +89,8 @@ post-install:
 	mv ${WRKINST}${SYSCONFDIR}/gtk-3.0 ${PREFIX}/share/examples/gtk+3
 # own the directory
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/gtk-3.0/modules
+# gtk-update-icon-cache is provided by x11/gtk+4,-guic
+	rm ${PREFIX}/bin/gtk-update-icon-cache \
+		${PREFIX}/man/man1/gtk-update-icon-cache.1
 
 .include <bsd.port.mk>

@@ -390,7 +390,6 @@ lib/pkgconfig/gtk4.pc
 @man man/man1/gtk4-encode-symbolic-svg.1
 @man man/man1/gtk4-launch.1
 @man man/man1/gtk4-query-settings.1
-@man man/man1/gtk4-update-icon-cache.1
 share/doc/pkg-readmes/${PKGSTEM}
 share/gettext/its/gtk4builder.its
 share/gettext/its/gtk4builder.loc

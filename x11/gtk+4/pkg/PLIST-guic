@@ -1,4 +1,12 @@
-@comment @define-tag gtk-update-icon-cache at-end %D/bin/gtk-update-icon-cache -q -t %u
-@comment @tag gtk-update-icon-cache
+@conflict gtk-update-icon-cache-<4
+@conflict gtk+2-<2.24.8p0
+@conflict gtk+4-<4.10.3p0
+@pkgpath x11/gtk+2,-guic
+@pkgpath x11/gtk+3,-guic
+@define-tag gtk-update-icon-cache at-end %D/bin/gtk-update-icon-cache -q -t %u
+@tag gtk-update-icon-cache
+bin/gtk-update-icon-cache
 @bin bin/gtk4-update-icon-cache
-@comment @exec-update /usr/bin/find %D/share/icons -type d -mindepth 1 -maxdepth 1 -exec %D/bin/gtk-update-icon-cache -q -t -f {} \; 2>/dev/null || true
+@man man/man1/gtk-update-icon-cache.1
+@man man/man1/gtk4-update-icon-cache.1
+@exec-update /usr/bin/find %D/share/icons -type d -mindepth 1 -maxdepth 1 -exec %D/bin/gtk-update-icon-cache -q -t -f {} \; 2>/dev/null || true

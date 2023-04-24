@@ -17,6 +17,12 @@ PKGNAME-demos=		gtk+4-demos-${GNOME_VERSION}
 PKGNAME-guic=		gtk4-update-icon-cache-${GNOME_VERSION}
 PKGNAME-media=		gtk+4-media-${GNOME_VERSION}
 
+REVISION-main=		0
+REVISION-cups=		0
+REVISION-demos=		0
+REVISION-guic=		0
+REVISION-media=		0
+
 CATEGORIES=		x11 devel
 
 SHARED_LIBS += gtk-4                     4.4 # 1.1000.3
@@ -118,5 +124,9 @@ CONFIGURE_ARGS +=	-Db_asneeded=false
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/settings.ini ${PREFIX}/share/gtk-4.0/
+# ease transition from gtk->gtk4 update-icon-cache by providing symlinks
+	ln -sf gtk4-update-icon-cache ${PREFIX}/bin/gtk-update-icon-cache
+	ln -sf gtk4-update-icon-cache.1 \
+		${PREFIX}/man/man1/gtk-update-icon-cache.1
 
 .include <bsd.port.mk>
