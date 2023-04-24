@@ -1,0 +1,20 @@
+workaround for vasprintf bug in openbsd headers when
+POSIX_C_SOURCE=200809L is defined
+
+see:
+https://github.com/gbdev/rgbds/issues/1111
+https://marc.info/?l=openbsd-tech&m=161833545600505&w=2
+https://marc.info/?l=openbsd-bugs&m=157758838031146&w=2
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -42,7 +42,7 @@ CXXFLAGS	?= -O3 -flto -DNDEBUG
+ REALCFLAGS	:= ${CFLAGS} ${WARNFLAGS} -std=gnu11 -I include \
+ 		   -D_POSIX_C_SOURCE=200809L -D_ISOC11_SOURCE
+ REALCXXFLAGS	:= ${CXXFLAGS} ${WARNFLAGS} -std=c++17 -I include \
+-		   -D_POSIX_C_SOURCE=200809L -fno-exceptions -fno-rtti
++		   -fno-exceptions -fno-rtti
+ # Overridable LDFLAGS
+ LDFLAGS		?=
+ # Non-overridable LDFLAGS

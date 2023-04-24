@@ -1,22 +1,30 @@
 Index: src/fix/main.c
 --- src/fix/main.c.orig
 +++ src/fix/main.c
-@@ -49,6 +49,8 @@ static struct option const longopts[] = {
+@@ -21,6 +21,7 @@
+ 
+ #include "extern/getopt.h"
+ 
++#include "error.h"
+ #include "helpers.h"
+ #include "platform.h"
+ #include "version.h"
+@@ -62,6 +63,8 @@ static struct option const longopts[] = {
  	{ NULL,               no_argument,       NULL, 0   }
  };
  
 +int pledge(const char *, const char *);
 +
- static void print_usage(void)
+ static void printUsage(void)
  {
  	fputs(
-@@ -107,6 +109,9 @@ int main(int argc, char *argv[])
- 	int ramsize = 0;   /* RAM size ID */
- 	int version = 0;   /* mask ROM version number */
- 	int padvalue = 0;  /* to pad the rom with if it changes size */
+@@ -1221,6 +1224,9 @@ int main(int argc, char *argv[])
+ {
+ 	nbErrors = 0;
+ 	int ch;
 +
 +	if (pledge("stdio rpath wpath cpath", NULL) == -1)
-+		errx(1, "pledge");
++		err("pledge");
  
- 	while ((ch = musl_getopt_long_only(argc, argv, optstring, longopts,
- 					   NULL)) != -1) {
+ 	while ((ch = musl_getopt_long_only(argc, argv, optstring, longopts, NULL)) != -1) {
+ 		switch (ch) {
