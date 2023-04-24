@@ -1,0 +1,52 @@
+Index: taskcluster/docker/firefox-flatpak/org.mozilla.firefox.desktop
+--- taskcluster/docker/firefox-flatpak/org.mozilla.firefox.desktop.orig
++++ taskcluster/docker/firefox-flatpak/org.mozilla.firefox.desktop
+@@ -1,6 +1,6 @@
+ [Desktop Entry]
+ Version=1.0
+-Name=Firefox
++Name=Firefox - ESR
+ GenericName=Web Browser
+ GenericName[ca]=Navegador web
+ GenericName[cs]=Webový prohlížeč
+@@ -42,8 +42,8 @@ Comment[pt]=Navegue na Internet
+ Comment[pt_BR]=Navegue na Internet
+ Comment[sk]=Prehliadanie internetu
+ Comment[sv]=Surfa på webben
+-Exec=firefox %u
+-Icon=org.mozilla.firefox
++Exec=${MOZILLA_PROJECT} %u
++Icon=org.mozilla.${MOZILLA_PROJECT}
+ Terminal=false
+ Type=Application
+ MimeType=text/html;text/xml;application/xhtml+xml;application/vnd.mozilla.xul+xml;text/mml;x-scheme-handler/http;x-scheme-handler/https;
+@@ -51,7 +51,7 @@ StartupNotify=true
+ Categories=Network;WebBrowser;
+ Keywords=web;browser;internet;
+ Actions=new-window;new-private-window;profile-manager-window;
+-StartupWMClass=firefox
++StartupWMClass=${MOZILLA_PROJECT}
+ 
+ 
+ [Desktop Action new-window]
+@@ -160,7 +160,7 @@ Name[wo]=Palanteer bu bees
+ Name[xh]=Ifestile entsha
+ Name[zh-CN]=新建窗口
+ Name[zh-TW]=開新視窗
+-Exec=firefox --new-window %u
++Exec=${MOZILLA_PROJECT} --new-window %u
+ 
+ [Desktop Action new-private-window]
+ Name=Open a New Private Window
+@@ -268,9 +268,9 @@ Name[wo]=Panlanteeru biir bu bees
+ Name[xh]=Ifestile yangasese entsha
+ Name[zh-CN]=新建隐私浏览窗口
+ Name[zh-TW]=新增隱私視窗
+-Exec=firefox --private-window %u
++Exec=${MOZILLA_PROJECT} --private-window %u
+ 
+ [Desktop Action profile-manager-window]
+ Name=Open the Profile Manager
+ Name[cs]=Správa profilů
+-Exec=firefox --ProfileManager
++Exec=${MOZILLA_PROJECT} --ProfileManager
