@@ -2,6 +2,7 @@ COMMENT =	RSS/Atom feed reader for text terminals
 
 V =		2.30.1
 DISTNAME =	newsboat-$V
+REVISION =	0
 
 CATEGORIES =	www
 
@@ -29,7 +30,7 @@ MODCARGO_TEST =		No
 BUILD_DEPENDS =	devel/gettext,-tools \
 		textproc/asciidoctor
 
-RUN_DEPENDS =	x11/gtk+3,-guic
+RUN_DEPENDS =	x11/gtk+4,-guic
 
 LIB_DEPENDS =	databases/sqlite3 \
 		devel/gettext,-runtime \

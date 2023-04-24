@@ -2,6 +2,7 @@ COMMENT=		D-Bus exploration tool
 
 GNOME_VERSION=		1.6.0
 GNOME_PROJECT=		d-spy
+REVISION=		0
 
 SHARED_LIBS += dspy-1                    0.0 # 1.0.0
 

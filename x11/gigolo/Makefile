@@ -2,7 +2,7 @@ COMMENT =	GVfs mountpoint manager
 
 XFCE_VERSION =	0.5.2
 XFCE_GOODIE =	gigolo
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	x11
 

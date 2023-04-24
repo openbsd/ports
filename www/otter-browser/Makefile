@@ -3,6 +3,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	browser aiming to recreate classic Opera (12.x) UI using Qt5
 
 DISTNAME =	otter-browser-1.0.03
+REVISION =	0
 
 CATEGORIES =	www
 
@@ -23,7 +24,7 @@ WANTLIB += Qt5Widgets Qt5XmlPatterns c hunspell-1.7 m
 
 MODULES =	devel/cmake x11/qt5
 
-RUN_DEPENDS =	devel/desktop-file-utils x11/gtk+3,-guic
+RUN_DEPENDS =	devel/desktop-file-utils x11/gtk+4,-guic
 
 LIB_DEPENDS =	textproc/hunspell \
 		x11/qt5/qtdeclarative \

@@ -2,6 +2,7 @@ COMMENT =	flexible input method framework
 
 DISTNAME =	fcitx5-5.0.23
 PKGNAME =	${DISTNAME:S/fcitx5/fcitx/}
+REVISION =	0
 
 SHARED_LIBS +=  Fcitx5Config			0.0 # 0.0
 SHARED_LIBS +=  Fcitx5Core			0.0 # 0.0
@@ -42,7 +43,7 @@ BUILD_DEPENDS =		devel/gettext,-tools \
 RUN_DEPENDS =		devel/desktop-file-utils \
 			misc/shared-mime-info \
 			shells/bash \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 LIB_DEPENDS =		devel/harfbuzz,-main \
 			devel/json-c \

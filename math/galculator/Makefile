@@ -3,7 +3,7 @@ COMMENT=	GTK-based scientific calculator
 GH_ACCOUNT=	galculator
 GH_PROJECT=	galculator
 GH_TAGNAME=	v2.1.4
-REVISION=	7
+REVISION=	8
 
 CATEGORIES=	math
 HOMEPAGE=	http://galculator.mnim.org/
@@ -25,7 +25,7 @@ WANTLIB+= execinfo jpeg
 MODULES=	textproc/intltool
 
 RUN_DEPENDS=	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 LIB_DEPENDS=	devel/gettext,-runtime \
 		x11/gtk+3
 

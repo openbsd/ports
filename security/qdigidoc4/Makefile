@@ -3,6 +3,7 @@ COMMENT =		DigiDoc4 GUI client for signing and encrypting documents
 V =			4.3.0
 DISTNAME =		qdigidoc4-${V}
 CATEGORIES =		security x11
+REVISION =		0
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
@@ -50,7 +51,7 @@ LIB_DEPENDS =		databases/openldap,-main \
 RUN_DEPENDS =		devel/desktop-file-utils \
 			misc/shared-mime-info \
 			x11/qt6/qttranslations \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 CONFIGURE_ENV +=	LDFLAGS=${LDFLAGS:Q}
 

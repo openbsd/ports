@@ -4,7 +4,7 @@ CATEGORIES =	net
 GH_ACCOUNT =	SrainApp
 GH_PROJECT =	srain
 GH_TAGNAME =	1.1.1
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://srain.im/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -29,7 +29,7 @@ LIB_DEPENDS =	devel/libconfig \
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gnome/keyring \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS =	--disable-debug \

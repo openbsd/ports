@@ -4,6 +4,7 @@ DISTNAME=	xine-ui-0.99.14
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xine/}
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 HOMEPAGE=	https://www.xine-project.org/
 
@@ -15,7 +16,7 @@ WANTLIB += iconv intl jpeg m curses png pthread readline xine
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		misc/shared-mime-info \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 LIB_DEPENDS=	graphics/jpeg \
 		graphics/png \
 		multimedia/xine-lib \

@@ -4,6 +4,8 @@ VERSION =		7.12.0
 DISTNAME =		mlt-${VERSION}
 PKGNAME-main =		mlt7-${VERSION}
 PKGNAME-gpl2 =		mlt7-gpl2-${VERSION}
+REVISION-gpl2 =		0
+REVISION-main =		0
 
 CATEGORIES =		multimedia devel
 
@@ -43,7 +45,7 @@ BUILD_DEPENDS =		audio/ladspa \
 
 RUN_DEPENDS-main =	audio/ladspa \
 			multimedia/frei0r-plugins \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 LIB_DEPENDS-main =	audio/jack \
 			audio/libebur128 \

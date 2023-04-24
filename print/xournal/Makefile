@@ -1,6 +1,7 @@
 COMMENT =		application for notetaking & annotating PDF files
 DISTNAME =		xournal-0.4.8.2016
 CATEGORIES =		print
+REVISION =		0
 
 HOMEPAGE =		http://xournal.sourceforge.net/
 
@@ -22,7 +23,7 @@ LIB_DEPENDS =		print/poppler \
 			x11/gnome/libgnomecanvas
 RUN_DEPENDS = 		devel/desktop-file-utils \
 			misc/shared-mime-info \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -DHAVE_UNISTD_H=1" \

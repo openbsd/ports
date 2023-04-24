@@ -2,7 +2,7 @@ COMMENT=		Genealogical Research Analysis Management Programming System
 
 MODPY_EGG_VERSION =	5.1.5
 DISTNAME=		gramps-${MODPY_EGG_VERSION}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		misc x11
 
@@ -28,7 +28,7 @@ RUN_DEPENDS=		databases/py-bsddb3${MODPY_FLAVOR} \
 			misc/shared-mime-info \
 			textproc/gtkspell3 \
 			textproc/py-ICU${MODPY_FLAVOR} \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 MODPY_DISTUTILS_BUILD=	build
 NO_TEST=		Yes

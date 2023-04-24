@@ -6,6 +6,7 @@ COMMENT=	fast FTP and SFTP GUI client with a lot of features
 V=		3.63.2.1
 PKGNAME=	filezilla-$V
 DISTNAME=	FileZilla_$V_src
+REVISION=	0
 
 SHARED_LIBS+=	fzclient-commonui-private	4.0
 SHARED_LIBS+=	fzclient-private		7.0
@@ -55,7 +56,7 @@ BUILD_DEPENDS=	devel/cppunit \
 		devel/xdg-utils
 RUN_DEPENDS=	devel/desktop-file-utils \
 		devel/xdg-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 FAKE_FLAGS=	docsdir="${PREFIX}/share/examples/filezilla/"
 

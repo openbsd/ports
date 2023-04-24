@@ -4,7 +4,7 @@ XFCE_GOODIE =	catfish
 XFCE_VERSION =	4.16.4
 MODPY_EGG_VERSION =	${XFCE_VERSION}
 CATEGORIES =	textproc
-REVISION =	3
+REVISION =	4
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
@@ -25,7 +25,7 @@ RUN_DEPENDS =	devel/py-gobject3${MODPY_FLAVOR} \
 		devel/xdg-utils \
 		devel/py-pexpect${MODPY_FLAVOR} \
 		x11/dbus-python${MODPY_FLAVOR} \
-		x11/gtk+3,-guic \
+		x11/gtk+4,-guic \
 		x11/xfce4/xfconf
 
 BUILD_DEPENDS +=	${_MODPY_BUILD_DEPENDS} \

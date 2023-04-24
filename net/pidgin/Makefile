@@ -14,6 +14,9 @@ FULLPKGPATH$i= ${PKGPATH},$i${FLAVOR_EXT:S/-gtkspell//:S/-/,/g}
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pidgin/}
 EXTRACT_SUFX=	.tar.bz2
+REVISION-finch=	0
+REVISION-libpurple=0
+REVISION-main=	0
 
 SHARED_LIBS=	jabber		0.0 \
 		purple		7.1 \
@@ -48,7 +51,7 @@ BUILD_DEPENDS=		x11/dbus-python${MODPY_FLAVOR}
 LIB_DEPENDS=		devel/glib2
 RUN_DEPENDS-main=	x11/dbus-python${MODPY_FLAVOR} \
 			devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			x11/gtk+2
 RUN_DEPENDS-finch=	# empty

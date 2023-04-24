@@ -5,6 +5,7 @@ CATEGORIES =	x11
 GH_ACCOUNT =	Swordfish90
 GH_PROJECT =	cool-retro-term
 GH_TAGNAME =	1.2.0
+REVISION =	0
 
 # check version in submodule at https://github.com/Swordfish90/cool-retro-term
 QMLTERMWIDGET =	63228027e1f97c24abb907550b22ee91836929c5
@@ -26,7 +27,7 @@ WANTLIB += Qt5QuickControls2 Qt5Sql Qt5Widgets c m
 MODULES =	devel/qmake x11/qt5
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+3,-guic \
+		x11/gtk+4,-guic \
 		x11/qt5/qtgraphicaleffects \
 		x11/qt5/qtquickcontrols
 

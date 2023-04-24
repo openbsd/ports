@@ -3,7 +3,7 @@ COMMENT=	data viewing/plotting tool
 GH_ACCOUNT =	Kst-plot
 GH_PROJECT =	kst
 GH_TAGNAME =	v2.0.8
-REVISION =	7
+REVISION =	8
 
 SHARED_LIBS +=  kst2core                  0.0 # 2.0
 SHARED_LIBS +=  kst2math                  0.0 # 2.0
@@ -23,7 +23,7 @@ MODULES=	devel/cmake \
 		x11/qt5
 
 RUN_DEPENDS +=	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 CONFIGURE_ARGS =	-Dkst_release=ON \
 			-Dkst_release=2 \

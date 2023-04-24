@@ -2,7 +2,7 @@ COMMENT=	fully-featured XMPP client written in Python
 MODPY_EGG_VERSION=	1.5.2
 DISTNAME=	gajim-${MODPY_EGG_VERSION}
 CATEGORIES=	net x11
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	https://www.gajim.org
 
@@ -36,7 +36,7 @@ RUN_DEPENDS=	audio/gsound \
 		textproc/py-css-parser${MODPY_FLAVOR} \
 		textproc/py-precis_i18n${MODPY_FLAVOR} \
 		x11/dbus-python${MODPY_FLAVOR} \
-		x11/gtk+3,-guic \
+		x11/gtk+4,-guic \
 		x11/gtksourceview4
 
 .include <bsd.port.mk>

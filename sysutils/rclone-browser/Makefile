@@ -4,7 +4,7 @@ GH_ACCOUNT =	kapitainsky
 GH_PROJECT =	RcloneBrowser
 GH_TAGNAME =	1.8.0
 PKGNAME =	rclone-browser-${GH_TAGNAME}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	sysutils x11
 
@@ -16,7 +16,7 @@ MODULES =	devel/cmake \
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		sysutils/rclone \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 WANTLIB += Qt5Core Qt5Gui Qt5Network Qt5Widgets c m
 WANTLIB += ${COMPILER_LIBCXX}

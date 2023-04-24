@@ -2,6 +2,7 @@ COMMENT=		task manager for GNOME
 
 GNOME_PROJECT=		endeavor
 GNOME_VERSION=		43.0
+REVISION=		0
 
 # override gnome MODULE
 MASTER_SITES=		https://gitlab.gnome.org/World/Endeavour/-/archive/${GNOME_VERSION}/

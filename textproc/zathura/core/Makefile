@@ -3,6 +3,7 @@ COMMENT =		document viewer for PDF and other formats with a vi-like UI
 DISTNAME =		zathura-${V}
 CATEGORIES =		textproc x11
 EXTRACT_SUFX =		.tar.xz
+REVISION =		0
 
 HOMEPAGE =		https://pwmt.org/projects/zathura/
 
@@ -19,7 +20,7 @@ BUILD_DEPENDS =	textproc/py-docutils,python3 \
 		devel/gettext,-tools \
 		textproc/py-sphinx,python3
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 LIB_DEPENDS =	databases/sqlite3 \
 		devel/libmagic \
 		x11/girara>=0.3.4 \

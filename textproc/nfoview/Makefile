@@ -2,7 +2,7 @@ COMMENT =	simple viewer for NFO files
 MODPY_EGG_VERSION =	1.28.1
 DISTNAME =	nfoview-${MODPY_EGG_VERSION}
 CATEGORIES =	textproc x11
-REVISION =	1
+REVISION =	2
 
 GH_ACCOUNT =	otsaloma
 GH_PROJECT =	nfoview
@@ -21,7 +21,7 @@ BUILD_DEPENDS =	devel/gettext,-tools
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/py-gobject3${MODPY_FLAVOR} \
 		fonts/cascadia-code \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 # pygobject GTK3 introspection (not provided by indirect dependencies)
 RUN_DEPENDS +=	x11/gtk+3

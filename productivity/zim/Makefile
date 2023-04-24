@@ -2,6 +2,7 @@ COMMENT =		desktop wiki
 
 MODPY_EGG_VERSION =	0.75.1
 DISTNAME =		zim-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		productivity
 
@@ -28,7 +29,7 @@ BUILD_DEPENDS = 	${COMMON_DEPENDS}
 RUN_DEPENDS =		${COMMON_DEPENDS} \
 			devel/desktop-file-utils \
 			misc/shared-mime-info \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 PORTHOME =		${WRKDIR}
 MAKE_ENV +=		XDG_RUNTIME_DIR=${PORTHOME}

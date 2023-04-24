@@ -2,7 +2,7 @@ COMMENT =	multimedia files tag editor
 DISTNAME =	kid3-3.8.5
 CATEGORIES =	multimedia x11
 HOMEPAGE =	https://kid3.kde.org/
-REVISION =	1
+REVISION =	2
 
 MAINTAINER =	Vadim Zhukov <zhuk@openbsd.org>
 
@@ -27,7 +27,7 @@ BUILD_DEPENDS =		devel/kf5/kdoctools \
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			multimedia/gstreamer1/plugins-bad \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 LIB_DEPENDS =		audio/chromaprint \
 			audio/flac \

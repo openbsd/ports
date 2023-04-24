@@ -2,7 +2,7 @@ COMMENT=		graphical browser for plain-text protocols
 
 V=			0.9.0
 DISTNAME=		castor-${V}
-REVISION =		1
+REVISION =		2
 
 DISTFILES=		castor-{castor/archive/}${V}${EXTRACT_SUFX}
 
@@ -27,7 +27,7 @@ CONFIGURE_STYLE=	cargo
 LIB_DEPENDS=		x11/gtk+3
 
 RUN_DEPENDS=		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 .include "crates.inc"
 

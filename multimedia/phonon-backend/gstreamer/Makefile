@@ -2,7 +2,7 @@ COMMENT =	GStreamer-based Phonon backend
 
 VERSION =	4.10.0
 DISTNAME =	phonon-backend-gstreamer-${VERSION}
-REVISION =	1
+REVISION =	2
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/phonon/phonon-backend-gstreamer/${VERSION}/}
 EXTRACT_SUFX = .tar.xz
@@ -19,7 +19,7 @@ BUILD_DEPENDS =	devel/gettext,-tools
 # allow playing Vorbis and MP3 notification sounds out of the box
 RUN_DEPENDS =	multimedia/gstreamer1/plugins-good \
 		multimedia/gstreamer1/plugins-libav \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 LIB_DEPENDS =	multimedia/gstreamer1/core \
 		multimedia/gstreamer1/plugins-base \

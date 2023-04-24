@@ -2,6 +2,7 @@ COMMENT =	SDL multi protocol navigator
 VERSION =	1.15.8
 
 DISTNAME =	lagrange-${VERSION}
+REVISION =	0
 
 CATEGORIES =	net x11
 
@@ -27,7 +28,7 @@ MODULES =	devel/cmake
 BUILD_DEPENDS =	archivers/zip
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 LIB_DEPENDS =	audio/mpg123 \
 		converters/libunistring \

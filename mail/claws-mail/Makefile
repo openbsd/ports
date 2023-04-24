@@ -11,6 +11,11 @@ PKGNAME-bogofilter=	claws-mail-bogofilter-${V}
 PKGNAME-spamassassin=	claws-mail-spamassassin-${V}
 PKGNAME-pdfviewer=	claws-mail-pdfviewer-${V}
 PKGNAME-gdata=		claws-mail-gdata-${V}
+REVISION-bogofilter=	0
+REVISION-gdata=		0
+REVISION-main=		0
+REVISION-pdfviewer=	0
+REVISION-spamassassin=	0
 
 CATEGORIES=		mail news
 
@@ -70,7 +75,7 @@ LIB_DEPENDS=		devel/glib2 \
 
 RUN_DEPENDS-main=	${RUN_DEPENDS} \
 			devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			archivers/libarchive \

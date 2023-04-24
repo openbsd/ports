@@ -6,7 +6,7 @@ CATEGORIES =	multimedia games x11
 GH_ACCOUNT =	vinszent
 GH_PROJECT =	gnome-twitch
 GH_TAGNAME =	v0.4.2
-REVISION =	5
+REVISION =	6
 
 HOMEPAGE =	http://gnome-twitch.vinszent.com/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -36,7 +36,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		multimedia/gstreamer1/plugins-bad \
 		multimedia/gstreamer1/plugins-good \
 		multimedia/gstreamer1/plugins-libav \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 CONFIGURE_ARGS =	-Dbuild-player-backends=gstreamer-cairo,gstreamer-opengl
 

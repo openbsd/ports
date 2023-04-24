@@ -1,7 +1,7 @@
 COMMENT =		Equinox desktop environment
 
 DISTNAME =		ede-${V}
-REVISION =		12
+REVISION =		13
 
 WANTLIB += X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xinerama Xpm c crypto
 WANTLIB += curl dbus-1 edelib edelib_dbus edelib_gui fltk fltk_images
@@ -22,7 +22,7 @@ LIB_DEPENDS =		devel/startup-notification \
 			x11/ede/lib
 RUN_DEPENDS =		devel/desktop-file-utils \
 			misc/shared-mime-info \
-			x11/gtk+3,-guic \
+			x11/gtk+4,-guic \
 			x11/pekwm
 
 FAKE_FLAGS =		sysconfdir="${TRUEPREFIX}/share/examples/ede"

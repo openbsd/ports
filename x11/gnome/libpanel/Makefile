@@ -2,6 +2,7 @@ COMMENT=		IDE paneling library for GTK
 
 GNOME_PROJECT=		libpanel
 GNOME_VERSION=		1.2.0
+REVISION=		0
 
 SHARED_LIBS += panel-1                   0.1 # 1.0.0
 

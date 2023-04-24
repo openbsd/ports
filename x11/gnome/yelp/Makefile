@@ -2,7 +2,7 @@ COMMENT=		GNOME help browser
 
 GNOME_PROJECT=		yelp
 GNOME_VERSION=		42.2
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  yelp                 0.0      # unknown
 

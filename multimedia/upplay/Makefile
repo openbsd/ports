@@ -1,7 +1,7 @@
 COMMENT =		UPnP audio control point
 
 DISTNAME =		upplay-1.3.3
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		multimedia net
 
@@ -24,7 +24,7 @@ USE_WXNEEDED =		Yes
 MODULES =		devel/qmake \
 			x11/qt5
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 LIB_DEPENDS =		devel/jsoncpp \
 			net/libupnpp>=0.17.1 \
 			x11/qt5/qtwebkit

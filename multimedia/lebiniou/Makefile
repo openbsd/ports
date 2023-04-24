@@ -3,7 +3,7 @@ COMMENT =	music visualization & VJing tool
 PKGNAME =	${DISTNAME:S/-version//}
 DISTNAME =	lebiniou-${V}
 V = 		version-3.65.0
-REVISION =      0
+REVISION =      1
 
 CATEGORIES =	multimedia
 
@@ -24,7 +24,7 @@ COMPILER =	base-clang ports-gcc
 COMPILER_LANGS =	c
 
 RUN_DEPENDS +=		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 LIB_DEPENDS +=		audio/jack \
 			audio/libsndfile \

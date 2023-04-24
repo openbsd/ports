@@ -3,6 +3,7 @@ COMMENT =		graphical client for the SoulSeek peer-to-peer system
 GH_ACCOUNT =		Nicotine-Plus
 GH_PROJECT =		nicotine-plus
 GH_TAGNAME =		3.2.9
+REVISION =		0
 
 CATEGORIES =		net
 
@@ -19,6 +20,6 @@ BUILD_DEPENDS =		devel/gettext,-tools
 RUN_DEPENDS =		devel/desktop-file-utils \
 			devel/py-gobject3${MODPY_FLAVOR} \
 			lang/python/${MODPY_VERSION},-gdbm \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 .include <bsd.port.mk>

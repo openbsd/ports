@@ -2,7 +2,7 @@ COMMENT =		todo management and time tracker
 
 VERSION =		5.0.1
 DISTNAME =		ktimetracker-${VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		productivity x11
 
@@ -44,7 +44,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			devel/kf5/kcompletion \
 			devel/kf5/kitemviews \
 			devel/kf5/solid \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 
 LIB_DEPENDS =		devel/kf5/kauth \

@@ -4,7 +4,7 @@ COMMENT =	accounting for KDE 5
 
 V =		5.1.3
 DISTNAME =	kmymoney-${V}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	productivity x11
 
@@ -64,7 +64,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			textproc/p5-XML-Writer \
 			www/p5-libwww \
 			www/woob \
-			x11/gtk+3,-guic \
+			x11/gtk+4,-guic \
 			x11/kde-applications/kqtquickcharts
 
 LIB_DEPENDS =		devel/gwenhywfar \

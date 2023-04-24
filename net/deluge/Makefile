@@ -2,7 +2,7 @@ COMMENT =	bittorrent client
 
 DISTNAME =		deluge-${MODPY_EGG_VERSION}
 MODPY_EGG_VERSION =	2.0.5
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =	net
 
@@ -43,7 +43,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			textproc/py-chardet${MODPY_FLAVOR} \
 			www/py-mako${MODPY_FLAVOR} \
 			x11/gtk+3 \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 PORTHOME=		${WRKSRC}
 

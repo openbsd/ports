@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.43 2023/04/23 12:04:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2023/04/24 11:41:30 ajacoutot Exp $
 
 COMMENT-main=		take photos and videos, with fun graphical effects
 COMMENT-libs=		webcam display and capture widgets
+REVISION-main=		0
 
 GNOME_PROJECT=		cheese
 GNOME_VERSION=		44.0.1
 
 PKGNAME-libs=		libcheese-${GNOME_VERSION}
+REVISION-libs=		0
 
 CATEGORIES=		multimedia
 

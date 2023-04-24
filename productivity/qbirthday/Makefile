@@ -3,7 +3,7 @@ COMMENT =		birthday reminder with tray notification
 GH_ACCOUNT = 		lafrech
 GH_PROJECT =		qbirthday
 GH_TAGNAME = 		v0.7.0b3
-REVISION =              1
+REVISION =              2
 
 CATEGORIES =		productivity x11
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+3,-guic \
+			x11/gtk+4,-guic \
 			x11/py-qt5${MODPY_FLAVOR}
 NO_TEST =		Yes
 

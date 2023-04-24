@@ -1,6 +1,7 @@
 COMMENT =		BASIC converter to C translator for Unix system
 
 DISTNAME =		bacon-4.6
+REVISION =		0
 
 CATEGORIES =		lang
 
@@ -22,7 +23,7 @@ MASTER_SITES =		https://www.basic-converter.org/stable/ \
 BUILD_DEPENDS =		shells/zsh
 RUN_DEPENDS =		devel/desktop-file-utils \
 			shells/bash \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 LIB_DEPENDS =		x11/fltk
 
 PORTHOME =		${WRKDIR}

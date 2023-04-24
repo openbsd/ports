@@ -2,6 +2,7 @@ COMMENT =		GTK+2 IRC Client
 DISTNAME =		hexchat-2.16.1
 EXTRACT_SUFX =		.tar.xz
 CATEGORIES =		net x11
+REVISION =		0
 
 HOMEPAGE =		https://hexchat.github.io/
 # GPLv2+
@@ -35,7 +36,7 @@ LIB_DEPENDS =		audio/libcanberra \
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			devel/iso-codes \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 CONFIGURE_ARGS +=	-Dwith-sysinfo=false
 

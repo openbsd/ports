@@ -3,6 +3,7 @@ COMMENT =	handwriting notetaking with PDF annotation support
 GH_ACCOUNT =	xournalpp
 GH_PROJECT =	xournalpp
 GH_TAGNAME =	v1.1.3
+REVISION =	0
 
 CATEGORIES =	print graphics productivity
 
@@ -43,7 +44,7 @@ LIB_DEPENDS =		${MODLUA_LIB_DEPENDS} \
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			misc/shared-mime-info \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/control/settings/LatexSettings.h

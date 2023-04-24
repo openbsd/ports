@@ -6,7 +6,7 @@ HOMEPAGE=	http://lifeograph.sourceforge.net
 
 V=		2.0.2
 DISTNAME=	lifeograph-${V}
-REVISION=	2
+REVISION=	3
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes
@@ -28,7 +28,7 @@ BUILD_DEPENDS=	devel/gettext,-tools
 
 RUN_DEPENDS=	www/webkitgtk4 \
 		devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 LIB_DEPENDS=	geo/libchamplain \
 		security/libgcrypt \

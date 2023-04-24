@@ -3,7 +3,7 @@ COMMENT =	FFmpeg-based Qt multimedia framework
 GH_ACCOUNT =	wang-bin
 GH_PROJECT =	QtAV
 GH_TAGNAME =	v1.12.0
-REVISION =	11
+REVISION =	12
 
 PKGNAME =	${DISTNAME:L}
 
@@ -27,7 +27,7 @@ MODULES =		devel/qmake \
 			x11/qt5
 
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 LIB_DEPENDS =		audio/openal \
 			audio/pulseaudio \

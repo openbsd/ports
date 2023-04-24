@@ -7,6 +7,7 @@ V=		0.8.3.1
 DISTNAME=	ettercap-$V
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/Ettercap/ettercap/releases/download/v$V/
+REVISION=	0
 
 HOMEPAGE=	https://www.ettercap-project.org/
 
@@ -47,7 +48,7 @@ CONFIGURE_ARGS+= -DMAN_INSTALLDIR="${TRUEPREFIX}/man" \
 CONFIGURE_ARGS+= -DENABLE_GTK=off
 .else
 RUN_DEPENDS+=	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 CONFIGURE_ARGS+= -DGTK_BUILD_TYPE=GTK2
 # when built with gtk3, it fails at runtime with:
 # gtk_list_store_get_value: assertion 'iter_is_valid (iter, list_store)' failed

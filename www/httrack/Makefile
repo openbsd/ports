@@ -1,6 +1,6 @@
 COMMENT =		offline browser
 DISTNAME =		httrack-3.48.21
-REVISION =		2
+REVISION =		3
 
 # "main" application libraries
 SHARED_LIBS +=  htsjava                   0.0 # 2.48
@@ -33,7 +33,7 @@ MASTER_SITES =		https://mirror.httrack.com/ \
 LIB_DEPENDS =		converters/libiconv
 
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 SEPARATE_BUILD =	No
 CONFIGURE_STYLE =	autoconf

@@ -6,7 +6,7 @@ CATEGORIES =	productivity x11
 V =		8.0.4
 PKGNAME =	libalkimia-$V
 DISTNAME =	alkimia-$V
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS =  alkimia5  1.0 # 8.0.4
 
@@ -38,7 +38,7 @@ BUILD_DEPENDS =	devel/gettext,-tools \
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/gmp,-cxx \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 LIB_DEPENDS =	devel/gmp \
 		devel/kf5/attica \

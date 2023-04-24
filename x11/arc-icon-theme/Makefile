@@ -3,6 +3,7 @@ COMMENT=		Arc icon theme
 GH_ACCOUNT=		horst3180
 GH_PROJECT=		arc-icon-theme
 GH_TAGNAME=		20161122
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -19,7 +20,7 @@ AUTOMAKE_VERSION=	1.16
 
 CONFIGURE_STYLE=	autoreconf
 
-RUN_DEPENDS=		x11/gtk+3,-guic \
+RUN_DEPENDS=		x11/gtk+4,-guic \
 			x11/moka-icon-theme
 
 .include <bsd.port.mk>

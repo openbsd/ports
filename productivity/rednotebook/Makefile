@@ -4,6 +4,7 @@ MODPY_EGG_VERSION=	2.29.3
 GH_TAGNAME=		v${MODPY_EGG_VERSION}
 GH_ACCOUNT=		jendrikseipp
 GH_PROJECT=		rednotebook
+REVISION=		0
 
 CATEGORIES=		productivity
 
@@ -23,7 +24,7 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 			textproc/py-enchant${MODPY_FLAVOR} \
 			textproc/py-yaml${MODPY_FLAVOR} \
 			www/webkitgtk4 \
-			x11/gtk+3,-guic \
+			x11/gtk+4,-guic \
 			x11/gtksourceview4
 
 NO_TEST=		Yes

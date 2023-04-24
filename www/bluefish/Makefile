@@ -1,6 +1,7 @@
 COMMENT=		HTML editor for experienced web designers
 
 DISTNAME=		bluefish-2.2.13
+REVISION=		0
 
 CATEGORIES=		www editors
 
@@ -28,7 +29,7 @@ MODULES=		lang/python \
 
 RUN_DEPENDS=		devel/desktop-file-utils \
 			misc/shared-mime-info \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 LIB_DEPENDS=		textproc/enchant2 \
 			x11/gnome/gucharmap

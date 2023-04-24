@@ -6,6 +6,7 @@ DISTNAME =		ownCloud-${V}
 PKGNAME =  		owncloudclient-${V}
 DISTFILES += 		ownCloud-${V}.tar.xz \
 			libre-graph-api-cpp-qt-client-{}v${GRAPHAPI_V}.tar.gz:0
+REVISION =              0
 
 SHARED_LIBS +=		owncloudsync		8.0
 SHARED_LIBS +=		owncloud_csync		2.0
@@ -33,7 +34,7 @@ MODULES =		devel/cmake x11/qt5
 BUILD_DEPENDS = 	devel/kf5/extra-cmake-modules
 RUN_DEPENDS =		devel/desktop-file-utils \
 			misc/shared-mime-info \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 LIB_DEPENDS =		databases/sqlite3 \
 			devel/libinotify \
 			security/qtkeychain

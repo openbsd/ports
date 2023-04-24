@@ -3,7 +3,7 @@
 COMMENT =	dock from elementary OS
 DISTNAME =	dock-0.11.89
 PKGNAME =	${DISTNAME:S/^/elementary-/}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=	plank                     0.0 # 1.0.0
 
@@ -30,7 +30,7 @@ LIB_DEPENDS =	devel/bamf \
 		x11/gnome/menus
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 # Doesn't use dbusmenu even if you have it.
 CONFIGURE_ARGS =	-Denable-apport=false \

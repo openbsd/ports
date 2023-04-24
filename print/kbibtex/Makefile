@@ -2,6 +2,7 @@ COMMENT =	KDE TeX/LaTeX bibliographies management application
 
 VERSION =	0.10.0
 DISTNAME =	kbibtex-${VERSION}
+REVISION =	0
 
 CATEGORIES =	print editors
 
@@ -44,7 +45,7 @@ BUILD_DEPENDS = devel/gettext,-tools \
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
 		print/texlive/base \
-		x11/gtk+3,-guic \
+		x11/gtk+4,-guic \
 		x11/qt5/qtquickcontrols
 
 RUN_DEPENDS +=	x11/kde-applications/okular

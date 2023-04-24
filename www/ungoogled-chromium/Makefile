@@ -11,6 +11,7 @@ V=			112.0.5615.165
 UGV=			${V}-1
 
 DISTNAME=		ungoogled-chromium-${V}
+REVISION=		0
 
 DISTFILES+=		${CHROMIUM_DISTFILES} \
 			${UGOOGLE_DISTFILES}:0 \
@@ -67,7 +68,7 @@ RUN_DEPENDS=	devel/xdg-utils \
 		fonts/noto/fonts \
 		graphics/libexif \
 		x11/gtk+3,-main \
-		x11/gtk+3,-guic \
+		x11/gtk+4,-guic \
 		x11/gtk+3,-cups
 BUILD_DEPENDS=	archivers/bzip2 \
 		devel/gpatch \

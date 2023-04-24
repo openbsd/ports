@@ -15,6 +15,7 @@ V=			2023.04.112
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
+REVISION=		0
 
 PATCHFILES=		disable-privacy-sandbox-ce036275d9d21a8408ef48ee9839b3c21b8448ca.patch
 PATCH_DIST_STRIP=	-p1
@@ -61,7 +62,7 @@ RUN_DEPENDS=	devel/xdg-utils \
 		fonts/noto/fonts \
 		graphics/libexif \
 		x11/gtk+3,-main \
-		x11/gtk+3,-guic \
+		x11/gtk+4,-guic \
 		x11/gtk+3,-cups
 BUILD_DEPENDS=	archivers/bzip2 \
 		devel/gperf \

@@ -1,6 +1,7 @@
 COMMENT =	rsync GUI
 DISTNAME =	grsync-1.3.0
 CATEGORIES =	x11 net
+REVISION =	0
 
 HOMEPAGE =	https://www.opbyte.it/grsync/
 
@@ -27,6 +28,6 @@ LIB_DEPENDS =	x11/gtk+3
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
 		net/rsync \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 .include <bsd.port.mk>

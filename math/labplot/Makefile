@@ -1,7 +1,7 @@
 COMMENT =	data visualization and analysis software
 
 DISTNAME =	labplot-2.10.0
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	math x11
 
@@ -34,7 +34,7 @@ MODULES =	devel/kf5
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/gettext,-tools \
 		misc/shared-mime-info \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 BUILD_DEPENDS =	devel/bison \
 		devel/desktop-file-utils \

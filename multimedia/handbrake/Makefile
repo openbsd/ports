@@ -2,7 +2,7 @@ V = 		1.3.3
 COMMENT =	open source video transcoder
 DISTNAME =	HandBrake-${V}-source
 PKGNAME =	handbrake-${V}
-REVISION =	5
+REVISION =	6
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	multimedia x11
 
@@ -54,7 +54,7 @@ LIB_DEPENDS =	devel/jansson \
 		x11/gtk+3
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 SEPARATE_BUILD =	Yes
 

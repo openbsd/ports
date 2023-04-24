@@ -5,6 +5,7 @@ COMMENT =	video editor
 GH_ACCOUNT =	mltframework
 GH_PROJECT =	shotcut
 GH_TAGNAME =	v22.12.21
+REVISION =	0
 
 CATEGORIES =	multimedia
 
@@ -30,7 +31,7 @@ RUN_DEPENDS =		audio/jack \
 			devel/sdl2 \
 			misc/shared-mime-info \
 			multimedia/mlt7,-gpl2 \
-			x11/gtk+3,-guic \
+			x11/gtk+4,-guic \
 			x11/qt5/qtgraphicaleffects \
 			x11/qt5/qtquickcontrols
 

@@ -2,7 +2,7 @@ COMMENT=		GUI for managing virtual machines through libvirt
 
 DISTNAME=		virt-manager-4.1.0
 CATEGORIES=		sysutils x11
-REVISION=		2
+REVISION=		3
 
 HOMEPAGE=		http://virt-manager.org/
 
@@ -37,7 +37,7 @@ RUN_DEPENDS=		devel/libvirt-glib \
 RUN_DEPENDS +=		x11/gtk+3
 
 RUN_DEPENDS +=		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 MODPY_SETUP_ARGS=	--no-update-icon-cache \
 			--no-compile-schemas

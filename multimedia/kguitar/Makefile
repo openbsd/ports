@@ -6,7 +6,7 @@ GH_COMMIT =	a7c73491ef236134de55cbdcfc9f8cafa2a76ae1
 
 # commit date YYYYMMDD
 DISTNAME =	${GH_PROJECT}-20170809
-REVISION =	7
+REVISION =	8
 
 # override kf5
 EXTRACT_SUFX =	.tar.gz
@@ -33,7 +33,7 @@ MODULES =	devel/cmake \
 
 RUN_DEPENDS +=	devel/desktop-file-utils \
 		devel/gettext,-runtime \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 # kdelibs4support includes kdex.dtd which is necessary to generate docs
 BUILD_DEPENDS +=	devel/kf5/kdoctools \

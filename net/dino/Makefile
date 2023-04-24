@@ -2,6 +2,7 @@ COMMENT=	XMPP desktop client
 VERSION=	0.4.2
 DISTNAME=	dino-${VERSION}
 CATEGORIES=	net x11
+REVISION=	0
 
 SHARED_LIBS +=	crypto-vala               0.0 # 0.0
 SHARED_LIBS +=	dino                      2.0 # 0.0
@@ -22,7 +23,7 @@ BUILD_DEPENDS=	devel/gettext,-tools \
 		lang/vala
 RUN_DEPENDS=	devel/desktop-file-utils \
 		multimedia/gstreamer1/plugins-good \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 LIB_DEPENDS=	devel/libgee \
 		devel/libsoup3 \
 		graphics/libqrencode \

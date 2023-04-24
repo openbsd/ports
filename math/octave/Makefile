@@ -2,7 +2,7 @@ COMMENT =      Scientific Programming Language
 
 VERSION =	7.3.0
 DISTNAME =	octave-${VERSION}
-REVISION =	0
+REVISION =	1
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	math
 
@@ -34,7 +34,7 @@ BUILD_DEPENDS +=devel/desktop-file-utils
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		archivers/gtar \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 LIB_DEPENDS =	${MODFORTRAN_LIB_DEPENDS} \
 		audio/libsndfile \

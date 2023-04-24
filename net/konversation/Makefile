@@ -1,6 +1,7 @@
 COMMENT =	IRC client for KDE
 
 DISTNAME =	konversation-${MODKDE_VERSION}
+REVISION =	0
 
 CATEGORIES =	net
 
@@ -36,7 +37,7 @@ BUILD_DEPENDS =	devel/gettext,-tools \
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/gettext,-runtime \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 LIB_DEPENDS =	devel/kf5/karchive  \
 		devel/kf5/kbookmarks \

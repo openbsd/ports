@@ -1,6 +1,7 @@
 COMMENT=	create, alter and inspect Matroska files
 
 DISTNAME=	mkvtoolnix-75.0.0
+REVISION=	0
 
 CATEGORIES=	multimedia x11
 
@@ -56,7 +57,7 @@ LIB_DEPENDS=	devel/boost \
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		misc/shared-mime-info \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.71

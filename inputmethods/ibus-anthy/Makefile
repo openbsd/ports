@@ -3,7 +3,7 @@ COMMENT =		japanese input engine for ibus
 GH_ACCOUNT =		ibus
 GH_PROJECT =		ibus-anthy
 GH_TAGNAME =		1.5.14
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS +=  anthygobject-1.0     1.1      # 5.514
 
@@ -23,7 +23,7 @@ BUILD_DEPENDS =		devel/gettext,-tools \
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			inputmethods/ibus \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 LIB_DEPENDS =		inputmethods/anthy
 

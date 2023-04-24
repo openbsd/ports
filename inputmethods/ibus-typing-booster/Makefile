@@ -2,6 +2,7 @@ COMMENT =		completion input-method to speed up typing
 VERSION =		2.22.3
 
 DISTNAME =		ibus-typing-booster-${VERSION}
+REVISION =		0
 
 CATEGORIES =		inputmethods
 
@@ -21,7 +22,7 @@ BUILD_DEPENDS =		devel/gettext,-tools \
 RUN_DEPENDS =		devel/desktop-file-utils \
 			inputmethods/ibus \
 			misc/m17n/lib \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 USE_GMAKE =		Yes
 

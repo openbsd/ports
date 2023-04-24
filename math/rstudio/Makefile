@@ -10,7 +10,7 @@ ONLY_FOR_ARCHS =	${LP64_ARCHS}
 V =		1.3.959
 COMMENT =	Integrated Development Environment (IDE) for R
 PKGNAME =	rstudio-${V}
-REVISION =	7
+REVISION =	8
 CATEGORIES =	math x11
 
 HOMEPAGE =	https://www.rstudio.com/
@@ -62,7 +62,7 @@ LIB_DEPENDS =	devel/boost \
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 CONFIGURE_ARGS =	-DBoost_INCLUDE_DIR="${LOCALBASE}/include" \
 			-DQT_QMAKE_EXECUTABLE="${LOCALBASE}/bin/qmake-qt5" \

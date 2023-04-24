@@ -3,7 +3,7 @@ COMMENT =		GTK+/GNOME frontend for MPlayer
 V =			1.0.9
 DISTNAME =		gnome-mplayer-${V}
 EPOCH =			0
-REVISION =		9
+REVISION =		10
 
 CATEGORIES =		x11 multimedia
 
@@ -26,7 +26,7 @@ LIB_DEPENDS =		devel/libnotify>=0.7.2 \
 			x11/dbus-glib \
 			x11/gmtk>=${V}
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 
 USE_GMAKE =		Yes

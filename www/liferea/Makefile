@@ -2,6 +2,7 @@ COMMENT=		simple GTK desktop news aggregator
 
 V=			1.14.5
 DISTNAME=		liferea-${V}
+REVISION=		0
 
 CATEGORIES=		www news x11
 
@@ -50,7 +51,7 @@ LIB_DEPENDS=		devel/json-glib \
 			www/webkitgtk4
 
 RUN_DEPENDS=		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 # lib/liferea/plugins/{libnotify,media-player}.py
 RUN_DEPENDS +=		devel/libnotify \

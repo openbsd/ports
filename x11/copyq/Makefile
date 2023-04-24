@@ -4,6 +4,7 @@ GH_PROJECT =		CopyQ
 GH_TAGNAME =		v6.4.0
 PKGNAME =		${DISTNAME:L}
 CATEGORIES =		x11
+REVISION =		0
 
 MAINTAINER =		kikadf <kikadf.01@gmail.com>
 
@@ -17,7 +18,7 @@ WANTLIB += Qt5X11Extras Qt5Xml SM X11 Xext Xfixes Xtst c m wayland-client
 MODULES =		devel/kf5
 
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 LIB_DEPENDS =		devel/kf5/knotifications \
 			x11/qt5/qtsvg \

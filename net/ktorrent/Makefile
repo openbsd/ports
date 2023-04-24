@@ -3,6 +3,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	BitTorrent Client
 
 DISTNAME =	ktorrent-${MODKDE_VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  ktcore                    3.0 # 0.0
 
@@ -38,7 +39,7 @@ BUILD_DEPENDS =		devel/gettext,-tools \
 			devel/boost
 
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 LIB_DEPENDS =		audio/taglib \
 			devel/kf5/karchive \

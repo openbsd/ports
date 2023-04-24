@@ -3,6 +3,7 @@ COMMENT=		powerful newsreader
 GNOME_PROJECT=		pan
 GNOME_VERSION=		v0.153
 PKGNAME=		${GNOME_PROJECT}-${GNOME_VERSION:S/v//}
+REVISION=		0
 
 # override gnome MODULE
 MASTER_SITES=		https://gitlab.gnome.org/GNOME/pan/-/archive/${GNOME_VERSION}/

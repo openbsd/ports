@@ -2,6 +2,7 @@ COMMENT =	anthy wrapper for fcitx5
 
 V =		5.0.14
 PKGNAME =	fcitx-anthy-$V
+REVISION =      0
 
 GH_ACCOUNT =    fcitx
 GH_PROJECT =    fcitx5-anthy
@@ -28,7 +29,7 @@ BUILD_DEPENDS =		devel/gettext,-tools \
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			misc/shared-mime-info \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 LIB_DEPENDS =		inputmethods/fcitx \
 			inputmethods/anthy

@@ -6,7 +6,7 @@ COMMENT=		simple and modern GTK eBook viewer
 GH_ACCOUNT=		johnfactotum
 GH_PROJECT=		foliate
 GH_TAGNAME=		2.6.4
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		textproc graphics
 
@@ -31,7 +31,7 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 			textproc/hyphen \
 			www/webkitgtk4 \
 			x11/gnome/gjs \
-			x11/gtk+3,-guic \
+			x11/gtk+4,-guic \
 			x11/libhandy
 
 post-install:

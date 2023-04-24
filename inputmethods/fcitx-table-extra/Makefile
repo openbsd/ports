@@ -3,6 +3,7 @@ COMMENT =	extra table for Fcitx5
 V =		5.0.13
 DISTNAME =	fcitx5-table-extra-$V
 PKGNAME =	${DISTNAME:S/fcitx5/fcitx/}
+REVISION =	0
 
 CATEGORIES =	inputmethods chinese
 
@@ -22,7 +23,7 @@ BUILD_DEPENDS =		devel/gettext,-tools \
 			devel/iso-codes
 
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+3,-guic \
+			x11/gtk+4,-guic \
 			misc/shared-mime-info
 
 LIB_DEPENDS =		inputmethods/fcitx \

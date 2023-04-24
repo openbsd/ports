@@ -1,7 +1,7 @@
 COMMENT=		GUI to dvd+rw-tools and cdrecord
 
 DISTNAME=		tkdvd-4.0.9
-REVISION =		4
+REVISION =		5
 CATEGORIES=		sysutils
 
 HOMEPAGE=		http://regis.damongeot.free.fr/tkdvd/
@@ -18,7 +18,7 @@ MODULES=		x11/tk
 BUILD_DEPENDS=		${MODTCL_RUN_DEPENDS}
 RUN_DEPENDS=		sysutils/cdrtools \
 			sysutils/dvd+rw-tools \
-			x11/gtk+3,-guic \
+			x11/gtk+4,-guic \
 			${MODTK_RUN_DEPENDS}
 
 NO_TEST=		Yes

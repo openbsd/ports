@@ -8,6 +8,7 @@ GH_ACCOUNT =	fwbuilder
 GH_PROJECT =	fwbuilder
 GH_TAGNAME =	v${V}-${RC}
 DISTNAME =	${GH_PROJECT}-${V}${RC}
+REVISION =	0
 
 CATEGORIES =	net security
 
@@ -27,7 +28,7 @@ LIB_DEPENDS =	net/net-snmp \
 		x11/qt5/qtbase
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 # Requires itself to be installed for tests
 TEST_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH}

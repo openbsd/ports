@@ -2,6 +2,7 @@ COMMENT =		window switcher, run dialog and dmenu replacement
 
 V =			1.7.5
 DISTNAME =		rofi-${V}
+REVISION =		0
 
 CATEGORIES =		sysutils x11
 HOMEPAGE =		https://github.com/davatorium/rofi
@@ -28,7 +29,7 @@ LIB_DEPENDS =		devel/pango \
 			graphics/gdk-pixbuf2 \
 			x11/xkbcommon
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--disable-check

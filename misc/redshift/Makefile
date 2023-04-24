@@ -2,7 +2,7 @@ COMMENT=		automatic color temperature adjustment
 
 V=			1.12
 DISTNAME=		redshift-$V
-REVISION=		7
+REVISION=		8
 
 CATEGORIES=		misc graphics
 
@@ -29,7 +29,7 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 			devel/py-gobject3${MODPY_FLAVOR} \
 			devel/py-xdg${MODPY_FLAVOR} \
 			geo/geoclue2 \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 # pygobject GTK3 introspection (not provided by indirect dependencies)
 RUN_DEPENDS +=		x11/gtk+3

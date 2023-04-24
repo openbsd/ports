@@ -3,6 +3,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	Akonadi calendar application
 
 DISTNAME =	kalendar-${MODKDE_VERSION}
+REVISION =	0
 
 CATEGORIES =	productivity x11
 
@@ -57,7 +58,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/kf5/kirigami2 \
 		devel/kf5/plasma-framework \
 		devel/kf5/qqc2-desktop-style \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcodecs \

@@ -4,6 +4,7 @@ GH_ACCOUNT =		snwh
 GH_PROJECT =		faba-icon-theme
 GH_TAGNAME =		v4.3
 CATEGORIES =		x11
+REVISION =		0
 
 HOMEPAGE =		https://snwh.org/moka#faba-icon-theme
 MASTER_SITES0 =		https://github.com/moka-project/faba-mono-icons/raw/master/
@@ -16,7 +17,7 @@ PKG_ARCH =		*
 NO_BUILD =		Yes
 NO_TEST =		Yes
 
-RUN_DEPENDS =		x11/gtk+3,-guic
+RUN_DEPENDS =		x11/gtk+4,-guic
 
 ICONSDIR =		${PREFIX}/share/icons/
 

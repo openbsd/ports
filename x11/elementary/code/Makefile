@@ -1,6 +1,6 @@
 COMMENT =	code editor from elementary OS
 PKGNAME =	${DISTNAME:S/^/elementary-/}
-REVISION =	5
+REVISION =	6
 
 SHARED_LIBS +=	codecore                  0.0 # 0.0
 
@@ -32,7 +32,7 @@ LIB_DEPENDS =	devel/libgee \
 		x11/gtksourceview3
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 CONFIGURE_ENV =	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"

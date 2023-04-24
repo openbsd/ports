@@ -3,7 +3,7 @@ COMMENT =	graphical interface to manage/explore OpenBSD packages
 DISTNAME =	AppManager-${V}
 PKGNAME =	appmanager-${V}
 CATEGORIES =	sysutils
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://tildegit.org/solene/AppManager/
 
@@ -19,7 +19,7 @@ MODULES =	lang/python
 RUN_DEPENDS =	devel/desktop-file-utils \
 		databases/sqlports \
 		games/godot \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 NO_TEST =	Yes
 NO_BUILD =	Yes

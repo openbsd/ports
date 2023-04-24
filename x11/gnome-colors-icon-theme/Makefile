@@ -1,7 +1,7 @@
 COMMENT =		complete, multi-colored suite of icons
 
 V =			5.5.1
-REVISION =		10
+REVISION =		11
 DISTNAME =		gnome-colors-${V}
 PKGNAME =		gnome-colors-icon-theme-${V}
 CATEGORIES =		x11
@@ -16,7 +16,7 @@ PKG_ARCH =		*
 NO_BUILD =		Yes
 NO_TEST =		Yes
 
-RUN_DEPENDS =		x11/gtk+3,-guic
+RUN_DEPENDS =		x11/gtk+4,-guic
 
 WRKDIST =		${WRKDIR}
 ICONSDIR =		${PREFIX}/share/icons/

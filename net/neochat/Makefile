@@ -1,6 +1,7 @@
 COMMENT =	client for Matrix chat
 VERSION =	23.01.0
 DISTNAME =	neochat-${VERSION}
+REVISION =	0
 
 CATEGORIES=	net
 
@@ -27,7 +28,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/kf5/sonnet \
 		graphics/kquickimageeditor>=0.2.0 \
 		graphics/kirigami-addons \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 BUILD_DEPENDS = devel/gettext,-tools \
 		devel/kf5/kitemmodels \

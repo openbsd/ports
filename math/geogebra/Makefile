@@ -3,7 +3,7 @@ COMMENT=	educational mathematical software
 V=		4.2.60.0
 DISTNAME=	GeoGebra-Unixlike-Installer-${V}
 PKGNAME=	geogebra-${V}
-REVISION=	7
+REVISION=	8
 
 CATEGORIES=	math java
 
@@ -24,7 +24,7 @@ MODJAVA_VER=		1.8+
 RUN_DEPENDS=		java/javaPathHelper \
 			devel/desktop-file-utils \
 			misc/shared-mime-info \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 NO_BUILD=		Yes
 NO_TEST=		Yes

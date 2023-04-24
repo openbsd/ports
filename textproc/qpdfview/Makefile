@@ -2,6 +2,7 @@ COMMENT=	tabbed DjVu/PDF/PS document viewer
 V=		0.4.18
 DISTNAME=	qpdfview-$V
 CATEGORIES=	textproc
+REVISION=	0
 
 HOMEPAGE=	https://launchpad.net/qpdfview
 
@@ -37,7 +38,7 @@ LIB_DEPENDS=	graphics/djvulibre \
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 NO_TEST =	Yes
 

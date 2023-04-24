@@ -3,7 +3,7 @@ PORTROACH=	skipv:2.3.x
 COMMENT=	graphical frontend for LaTeX (nearly WYSIWYG)
 
 DISTNAME=	lyx-2.3.6.1
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	print editors
 
@@ -33,7 +33,7 @@ TEST_DEPENDS=	devel/boost
 
 RUN_DEPENDS=	print/texlive/base \
 		graphics/ImageMagick \
-		x11/gtk+3,-guic \
+		x11/gtk+4,-guic \
 		devel/desktop-file-utils
 
 LIB_DEPENDS=	devel/libmagic \

@@ -3,6 +3,7 @@ COMMENT =	graphical audio and video SIP phone
 V =		5.0.10
 MODULE =	linphone-desktop
 PKGNAME =	linphone-${V}
+REVISION =	0
 
 MODULES +=	x11/qt5
 CONFIGURE_ARGS =-DENABLE_STATIC=NO \
@@ -20,7 +21,7 @@ LIB_DEPENDS =	telephony/linphone/bctoolbox \
 RUN_DEPENDS +=	devel/desktop-file-utils \
 		x11/qt5/qtquickcontrols \
 		x11/qt5/qtgraphicaleffects \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
 WANTLIB += Qt5Network Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickControls2

@@ -1,4 +1,5 @@
 COMMENT =		BitTorrent client with Qt interface
+REVISION =		0
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6DBus Qt6Gui Qt6Network
 WANTLIB += Qt6Sql Qt6Widgets Qt6Xml c crypto execinfo m ssl torrent-rasterbar
@@ -11,7 +12,7 @@ MODPY_TESTDEP =		No
 
 BUILD_DEPENDS +=	x11/qt6/qtsvg
 
-RUN_DEPENDS +=		x11/gtk+3,-guic \
+RUN_DEPENDS +=		x11/gtk+4,-guic \
 			devel/desktop-file-utils
 
 CONFIGURE_ARGS +=	-DDBUS=ON

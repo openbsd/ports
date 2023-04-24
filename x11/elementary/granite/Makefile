@@ -4,6 +4,7 @@ SHARED_LIBS +=	granite                   0.0 # 5.5.0
 
 GH_PROJECT =	granite
 GH_TAGNAME =	5.5.0
+REVISION =	0
 
 # LGPLv3+
 PERMIT_PACKAGE =	Yes
@@ -18,6 +19,6 @@ BUILD_DEPENDS =	devel/gettext,-tools \
 LIB_DEPENDS =	devel/libgee \
 		x11/gtk+3
 
-RUN_DEPENDS =	x11/gtk+3,-guic
+RUN_DEPENDS =	x11/gtk+4,-guic
 
 .include <bsd.port.mk>

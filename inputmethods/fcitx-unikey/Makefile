@@ -2,6 +2,7 @@ COMMENT =	unikey Vietnamese support for fcitx5
 
 V =		5.0.13
 PKGNAME =	fcitx-unikey-$V
+REVISION =      0
 
 GH_ACCOUNT =    fcitx
 GH_PROJECT =    fcitx5-unikey
@@ -26,7 +27,7 @@ BUILD_DEPENDS =		devel/gettext,-tools \
 			devel/iso-codes
 
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+3,-guic \
+			x11/gtk+4,-guic \
 			misc/shared-mime-info
 
 LIB_DEPENDS =		inputmethods/fcitx \

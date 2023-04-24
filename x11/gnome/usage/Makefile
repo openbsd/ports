@@ -2,7 +2,7 @@ COMMENT=		system resources status
 
 GNOME_PROJECT=		gnome-usage
 GNOME_VERSION=		3.38.1
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		sysutils
 

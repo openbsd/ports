@@ -1,6 +1,7 @@
 COMMENT =	personal accounting application
 
 DISTNAME =	homebank-5.6.3
+REVISION =	0
 
 CATEGORIES =	productivity x11
 
@@ -27,7 +28,7 @@ LIB_DEPENDS =	x11/gtk+3 \
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 USE_GMAKE =	Yes
 

@@ -4,6 +4,7 @@ V=			1.10.50
 DISTNAME=		workrave-v${V}
 PKGNAME=		workrave-${V}
 WRKDIST=		${WRKDIR}/workrave-${V}
+REVISION=		0
 
 SHARED_LIBS +=  workrave-private-1.0 1.0      # unknown
 
@@ -40,7 +41,7 @@ LIB_DEPENDS=		multimedia/gstreamer1/core \
 			x11/gtk3mm
 
 RUN_DEPENDS=		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 # c++11
 COMPILER=		base-clang ports-gcc

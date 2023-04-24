@@ -7,7 +7,7 @@ COMMENT=	multiplatform Jabber client
 V=		1.5
 DISTNAME=	psi-${V}
 CATEGORIES=	net
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://psi-im.org/
 
@@ -34,7 +34,7 @@ LIB_DEPENDS=		devel/libidn \
 			x11/qt5/qtx11extras
 
 RUN_DEPENDS=		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 CONFIGURE_ARGS=		-DUSE_CCACHE=OFF -DUSE_HUNSPELL=OFF
 

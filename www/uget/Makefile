@@ -1,7 +1,7 @@
 COMMENT =	lightweight graphical download manager
 DISTNAME =	uget-2.2.2
 CATEGORIES =	www net x11
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://ugetdm.com/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -26,7 +26,7 @@ LIB_DEPENDS =	devel/gettext,-runtime \
 		x11/gtk+3
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+3,-guic \
+		x11/gtk+4,-guic \
 		www/aria2
 
 CONFIGURE_STYLE =	gnu

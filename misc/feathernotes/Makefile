@@ -1,6 +1,7 @@
 COMMENT =	lightweight Qt5 notes manager
 DISTNAME =	feathernotes-${GH_TAGNAME:S/^V//}
 CATEGORIES =	misc x11
+REVISION =	0
 
 GH_ACCOUNT =	tsujan
 GH_PROJECT =	FeatherNotes
@@ -22,7 +23,7 @@ LIB_DEPENDS =	x11/qt5/qtsvg \
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 NO_TEST =	Yes
 

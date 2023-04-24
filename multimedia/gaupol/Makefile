@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	1.10.1
 GH_ACCOUNT =	otsaloma
 GH_PROJECT =	gaupol
 GH_TAGNAME =	${MODPY_EGG_VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	multimedia
 
@@ -32,7 +32,7 @@ RUN_DEPENDS =	devel/iso-codes \
 		multimedia/mpv \
 		textproc/gspell \
 		textproc/py-chardet${MODPY_FLAVOR} \
-		x11/gtk+3,-guic \
+		x11/gtk+4,-guic \
 		x11/hicolor-icon-theme
 
 NO_TEST =	Yes

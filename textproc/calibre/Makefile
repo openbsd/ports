@@ -2,7 +2,7 @@ COMMENT =		ebook management application
 
 V =			5.44.0
 DISTNAME =		calibre-$V
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		textproc
 
@@ -68,7 +68,7 @@ RUN_DEPENDS =		${COMMON_DEPENDS} \
 			misc/shared-mime-info \
 			net/py-netifaces${MODPY_FLAVOR}  \
 			print/poppler,-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 SUBST_VARS =		WRKDIR
 

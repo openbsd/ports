@@ -4,6 +4,7 @@ MODPY_EGG_VERSION =	1.9.2
 GH_ACCOUNT =		pdfarranger
 GH_PROJECT =		pdfarranger
 GH_TAGNAME =		${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		print
 
@@ -27,7 +28,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			print/py-pikepdf${MODPY_FLAVOR} \
 			sysutils/py-packaging${MODPY_FLAVOR} \
 			x11/gtk+3 \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 TEST_IS_INTERACTIVE =	X11
 

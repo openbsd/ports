@@ -6,8 +6,8 @@ GNOME_VERSION=		43.0
 
 PKGNAME-nautilus=	${GNOME_PROJECT}-nautilus-${GNOME_VERSION}
 
-REVISION-main=		1
-REVISION-nautilus=	0
+REVISION-main=		2
+REVISION-nautilus=	1
 
 CATEGORIES=		archivers
 

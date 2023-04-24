@@ -10,6 +10,9 @@ PKGNAME-qt=	transmission-qt-${VER}
 CATEGORIES=	net
 HOMEPAGE=	https://transmissionbt.com/
 MAINTAINER=	Josh Grosse <josh@jggimi.net>
+REVISION-gtk=	0
+REVISION-main=	0
+REVISION-qt=	0
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
@@ -60,7 +63,7 @@ LIB_DEPENDS-qt +=	${LIB_DEPENDS-common} \
 
 RUN_DEPENDS-gtk +=	${PKGNAME-main}:${BUILD_PKGPATH} \
 			devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 RUN_DEPENDS-qt +=	${PKGNAME-main}:${BUILD_PKGPATH} \
 			devel/desktop-file-utils

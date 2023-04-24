@@ -1,6 +1,6 @@
 COMMENT =	minimalist and privacy-oriented WebKitGTK+ browser
 DISTNAME =	badwolf-1.2.2
-REVISION =	1
+REVISION =	2
 CATEGORIES =	www
 
 HOMEPAGE =	https://hacktivis.me/projects/badwolf
@@ -24,7 +24,7 @@ BUILD_DEPENDS =	devel/gettext,-tools \
 LIB_DEPENDS =	devel/libsoup \
 		www/webkitgtk4
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 # The test target does some linting on the manpage and the configure
 # script; setting NO_TEST because otherwise would add a TEST_DEP on

@@ -1,6 +1,7 @@
 COMMENT=		media aggregator and podcast client
 
 MODPY_EGG_VERSION=	3.11.1
+REVISION=		0
 
 GH_ACCOUNT=		gpodder
 GH_PROJECT=		gpodder
@@ -30,7 +31,7 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 			www/yt-dlp \
 			www/webkitgtk4 \
 			x11/dbus-python${MODPY_FLAVOR} \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 TEST_DEPENDS=		devel/py-coverage${MODPY_FLAVOR} \
 			devel/py-minimock${MODPY_FLAVOR} \
 			devel/py-test${MODPY_FLAVOR} \

@@ -2,12 +2,12 @@ COMMENT =		tryton desktop client
 
 MODPY_EGG_VERSION =	5.0.45
 DISTNAME =		tryton-${MODPY_EGG_VERSION}
-REVISION =		1
+REVISION =		2
 
 TRYTON_PY =		Yes
 
 RUN_DEPENDS +=		devel/desktop-file-utils \
-			x11/gtk+3,-guic \
+			x11/gtk+4,-guic \
 			devel/py-gobject3${MODPY_FLAVOR} \
 			x11/gnome/librsvg \
 			devel/py-dateutil${MODPY_FLAVOR}

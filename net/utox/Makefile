@@ -6,6 +6,7 @@ DISTNAME =	uTox-${V}-full
 PKGNAME =	utox-${V}
 MASTER_SITES =	https://github.com/uTox/uTox/releases/download/v${V}/
 FIX_EXTRACT_PERMISSIONS = Yes
+REVISION =	0
 
 CATEGORIES =	net
 
@@ -20,7 +21,7 @@ WANTLIB += pthread openal opus toxcore v4lconvert vpx
 MODULES =	devel/cmake
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 LIB_DEPENDS +=	audio/openal \
 		multimedia/libv4l \

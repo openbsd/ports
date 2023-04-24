@@ -1,6 +1,7 @@
 COMMENT =	KDE app that allows your devices to communicate
 
 DISTNAME =	kdeconnect-kde-${MODKDE_VERSION}
+REVISION =	0
 
 SHARED_LIBS +=	kdeconnectcore		3.0 # 1.4
 SHARED_LIBS +=	kdeconnectinterfaces	3.1 # 1.4
@@ -46,7 +47,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/kf5/qqc2-desktop-style \
 		sysutils/sshfs-fuse \
 		sysutils/sshpass \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kbookmarks \

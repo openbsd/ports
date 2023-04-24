@@ -3,7 +3,7 @@ USE_WXNEEDED =	Yes
 COMMENT =		fast Qt IMAP e-mail client
 
 DISTNAME =		trojita-0.7
-REVISION =		15
+REVISION =		16
 
 SHARED_LIBS =		trojita_plugins	2.0 # 2.0
 
@@ -26,7 +26,7 @@ MODULES =		devel/cmake x11/qt5
 BUILD_DEPENDS =		x11/qt5/qtsvg
 
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+3,-guic \
+			x11/gtk+4,-guic \
 			x11/qt5/qtsvg
 
 LIB_DEPENDS =		mail/mimetic \

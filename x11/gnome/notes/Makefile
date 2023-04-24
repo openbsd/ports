@@ -2,7 +2,7 @@ COMMENT=		simple note editor
 
 GNOME_PROJECT=		gnome-notes
 GNOME_VERSION=		40.1
-REVISION=		5
+REVISION=		6
 
 # override gnome MODULE
 MASTER_SITES=		https://gitlab.gnome.org/GNOME/${GNOME_PROJECT}/-/archive/BIJIBEN_${GNOME_VERSION:S/./_/}/

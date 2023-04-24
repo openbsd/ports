@@ -3,7 +3,7 @@ DPB_PROPERTIES=	parallel
 COMMENT=	desktop publishing program
 DISTNAME=	scribus-1.5.8
 CATEGORIES=	print
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://www.scribus.net/
 
@@ -31,7 +31,7 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 		print/ghostscript/gnu \
 		textproc/antiword \
 		misc/shared-mime-info \
-		x11/gtk+3,-guic \
+		x11/gtk+4,-guic \
 		${MODPY_TKINTER_DEPENDS}
 
 LIB_DEPENDS=	graphics/lcms2 \

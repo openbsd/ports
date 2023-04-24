@@ -2,7 +2,7 @@ COMMENT =	standalone YouTube.com video browser/player
 
 V =		3.9.3
 DISTNAME =	minitube-$V
-REVISION =	0
+REVISION =	1
 EXTRACT_SUFX =	.tar.bz2
 
 CATEGORIES =	www multimedia
@@ -24,7 +24,7 @@ LIB_DEPENDS +=	multimedia/mpv \
 		x11/qt5/qtx11extras
 
 RUN_DEPENDS +=	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 MAKE_FLAGS =	CXX="${CXX}" \
 		LINK="${CXX}"

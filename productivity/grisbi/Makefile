@@ -1,7 +1,7 @@
 COMMENT=	personal accounting application
 
 DISTNAME=	grisbi-2.0.5
-REVISION=	3
+REVISION=	4
 
 EXTRACT_SUFX=	.tar.bz2
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=grisbi/}
@@ -37,7 +37,7 @@ LIB_DEPENDS=	textproc/libxml \
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		misc/shared-mime-info \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 BUILD_DEPENDS=	devel/cunit
 USE_GMAKE=	Yes

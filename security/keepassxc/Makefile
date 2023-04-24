@@ -2,7 +2,7 @@ COMMENT =	management tool for password and sensitive data
 
 V =		2.7.4
 DISTNAME =	keepassxc-${V}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	security
 
@@ -39,7 +39,7 @@ LIB_DEPENDS =	archivers/minizip \
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 BUILD_DEPENDS =	textproc/asciidoctor
 

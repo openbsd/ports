@@ -3,6 +3,7 @@ COMMENT =	addons related to Chinese with IME bundled inside fcitx
 V =		5.0.17
 DISTNAME =	fcitx5-chinese-addons-$V
 PKGNAME =	${DISTNAME:S/fcitx5/fcitx/}
+REVISION =	0
 
 CATEGORIES =	inputmethods chinese
 
@@ -35,7 +36,7 @@ BUILD_DEPENDS =		devel/gettext,-tools \
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			inputmethods/fcitx-lua \
-			x11/gtk+3,-guic \
+			x11/gtk+4,-guic \
 			misc/shared-mime-info
 
 LIB_DEPENDS =		inputmethods/fcitx \

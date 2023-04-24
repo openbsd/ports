@@ -2,6 +2,7 @@ COMMENT =	graphical wordcount grapher
 DISTNAME =	novprog-3.2.0
 EXTRACT_SUFX =	-src.tar.bz2
 CATEGORIES =	productivity x11
+REVISION =	0
 
 HOMEPAGE =	https://gottcode.org/novprog/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -21,7 +22,7 @@ MODULES =	devel/qmake \
 		x11/qt5
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 NO_TEST =	Yes
 

@@ -2,7 +2,7 @@ COMMENT=		screenshot application for GNOME
 
 GNOME_PROJECT=		gnome-screenshot
 GNOME_VERSION=		41.0
-REVISION=		0
+REVISION=		1
 
 # GPLv2
 PERMIT_PACKAGE=		Yes

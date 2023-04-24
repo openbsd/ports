@@ -1,7 +1,7 @@
 COMMENT =	fd.o-compliant menu editor
 
 MODPY_EGG_VERSION =	2.3.0
-REVISION =	3
+REVISION =	4
 DISTNAME =	menulibre-${MODPY_EGG_VERSION}
 GH_ACCOUNT =	bluesabre
 GH_PROJECT =	menulibre
@@ -27,7 +27,7 @@ RUN_DEPENDS +=	devel/desktop-file-utils \
 		sysutils/py-psutil${MODPY_FLAVOR} \
 		x11/gnome/menus \
 		devel/xdg-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 # pygobject GTK3 introspection (not provided by indirect dependencies)
 RUN_DEPENDS +=	x11/gtk+3

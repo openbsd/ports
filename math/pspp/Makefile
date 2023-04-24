@@ -1,6 +1,6 @@
 COMMENT =	program for statistical analysis of sampled data
 DISTNAME =	pspp-1.4.1
-REVISION =	2
+REVISION =	3
 CATEGORIES =	math x11
 
 HOMEPAGE =	https://www.gnu.org/software/pspp/
@@ -38,7 +38,7 @@ LIB_DEPENDS =	databases/postgresql \
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 # In-base makeinfo segfaults during build.
 # The readline configure tests are broken, so force it.
