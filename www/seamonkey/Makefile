@@ -13,7 +13,7 @@ MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
 PKGNAME-lightning =	lightning-seamonkey-5.8.16
 EPOCH-lightning =	0
-REVISION-main =		0
+REVISION-main =		1
 
 HOMEPAGE =	https://www.seamonkey-project.org/
 
@@ -81,11 +81,16 @@ post-install:
 		${PREFIX}/lib/${MOZILLA_PROJECT}/defaults/pref/all-openbsd.js
 	# install desktop file
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/ ; \
-	${SUBST_DATA} ${FILESDIR}/${MOZILLA_PROJECT}.desktop \
+	${INSTALL_DATA} ${FILESDIR}/${MOZILLA_PROJECT}.desktop \
 		${PREFIX}/share/applications/${MOZILLA_PROJECT}.desktop ; \
-	# install icon for desktop file
-	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps/
-	${INSTALL_DATA} ${PREFIX}/lib/${MOZILLA_PROJECT}/chrome/icons/default/default128.png \
-		${PREFIX}/share/pixmaps/${MOZILLA_PROJECT}.png
+
+	# install icons for desktop file
+.for s in 16 22 24 32 48 64 128 256
+	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/${s}x${s}/apps
+	${INSTALL_DATA} ${WRKSRC}/comm/suite/branding/seamonkey/default${s}.png \
+		${PREFIX}/share/icons/hicolor/${s}x${s}/apps/org.mozilla.${MOZILLA_PROJECT}.png
+.endfor
+	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/scalable/apps
+	${INSTALL_DATA} ${FILESDIR}/org.mozilla.${MOZILLA_PROJECT}.svg ${PREFIX}/share/icons/hicolor/scalable/apps/org.mozilla.${MOZILLA_PROJECT}.svg
 
 .include <bsd.port.mk>
