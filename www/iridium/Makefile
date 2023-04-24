@@ -10,12 +10,11 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Iridium browser
 
-V=			2023.04.112
+V=			2023.04.112.2
 
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
-REVISION=		0
 
 PATCHFILES=		disable-privacy-sandbox-ce036275d9d21a8408ef48ee9839b3c21b8448ca.patch
 PATCH_DIST_STRIP=	-p1
@@ -218,6 +217,8 @@ pre-configure:
 # 2. bootstrap gn, the tool to generate ninja files
 # 3. run gn with the appropriate configuration arguments
 do-configure:
+	# Regenerate build and perlasm files (force json to not overwrite our local gn patches)
+	@cd ${WRKSRC}/third_party/boringssl && ${MODPY_BIN} src/util/generate_build_files.py json
 	@cd ${WRKSRC} && env -i ${MAKE_ENV} build/linux/unbundle/replace_gn_files.py \
 		--system-libraries ${GN_SYSTEM_LIBS}
 	@cd ${WRKSRC}/tools/gn && env -i ${MAKE_ENV} LDFLAGS=-L${LOCALBASE}/lib ${MODPY_BIN} bootstrap/bootstrap.py \
