@@ -10,7 +10,8 @@ HOMEPAGE=	https://bird.network.cz/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	ftp://bird.network.cz/pub/bird/
+MASTER_SITES=	https://bird.network.cz/download/ \
+		ftp://bird.network.cz/pub/bird/
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
