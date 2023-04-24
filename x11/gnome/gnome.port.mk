@@ -130,7 +130,7 @@ MODGNOME_BUILD_DEPENDS +=	devel/gobject-introspection
 .   endif
 
 .   if ${MODGNOME_TOOLS:Mgtk-update-icon-cache}
-MODGNOME_RUN_DEPENDS +=	x11/gtk+3,-guic
+MODGNOME_RUN_DEPENDS +=	x11/gtk+4,-guic
 .   endif
 
 .   if ${MODGNOME_TOOLS:Mshared-mime-info}

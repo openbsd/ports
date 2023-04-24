@@ -28,7 +28,7 @@ MODXFCE_RUN_DEPENDS+=	devel/desktop-file-utils
 
 # Set to 'yes' if there are icon files under share/icons/.
 .if defined(MODXFCE_ICON_CACHE) && ${MODXFCE_ICON_CACHE:L} == "yes"
-MODXFCE_RUN_DEPENDS+=  x11/gtk+3,-guic
+MODXFCE_RUN_DEPENDS+=  x11/gtk+4,-guic
 .endif
 
 .if defined(XFCE_PLUGIN)

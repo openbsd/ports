@@ -7,7 +7,7 @@ MODKDE5_RUN_DEPENDS +=		devel/desktop-file-utils
 
 # Set to 'yes' if there are icon files under share/icons/.
 .if defined(MODKDE5_ICON_CACHE) && ${MODKDE5_ICON_CACHE:L} == "yes"
-MODKDE5_RUN_DEPENDS +=		x11/gtk+3,-guic
+MODKDE5_RUN_DEPENDS +=		x11/gtk+4,-guic
 .endif
 
 # Set to 'yes' if there are icon files under share/locale/.
