@@ -1,0 +1,11 @@
+Index: lib/Makefile.in
+--- lib/Makefile.in.orig
++++ lib/Makefile.in
+@@ -790,7 +790,6 @@ libsword_la_SOURCES = $(keysdir)/swkey.cpp $(keysdir)/
+ 	$(zlddir)/zld.cpp $(bindingsdir)/flatapi.cpp
+ @HAVE_ICU_FALSE@ICUDEF = 
+ @HAVE_ICU_TRUE@ICUDEF = -DSWICU_DATA=\"${pkglibdir}/${VERSION}_icu_${ICU_VER}\" 
+-libsword_la_LDFLAGS = -release $(VERSION)
+ keysdir = $(top_srcdir)/src/keys
+ utilfunsdir = $(top_srcdir)/src/utilfuns
+ @INTERNALFTPLIB_FALSE@ftpsrc = 

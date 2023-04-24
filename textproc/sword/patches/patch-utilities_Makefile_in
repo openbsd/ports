@@ -1,0 +1,12 @@
+Index: utilities/Makefile.in
+--- utilities/Makefile.in.orig
++++ utilities/Makefile.in
+@@ -547,7 +547,7 @@ LDADD = $(top_builddir)/lib/libsword.la
+ @HAVE_LIBZ_FALSE@ZLIBPROG = 
+ @HAVE_LIBZ_TRUE@ZLIBPROG = mod2zmod
+ lexdump_SOURCES = lexdump.c
+-lexdump_LDADD = -lstdc++
++lexdump_LDADD =
+ mkfastmod_SOURCES = mkfastmod.cpp
+ mod2vpl_SOURCES = mod2vpl.cpp
+ vpl2mod_SOURCES = vpl2mod.cpp
