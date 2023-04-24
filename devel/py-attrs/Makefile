@@ -14,8 +14,9 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_PYBUILD =		hatchling
+MODPY_PYBUILD =		hatch-vcs
 
+BUILD_DEPENDS =		devel/py-hatch-fancy-pypi-readme${MODPY_FLAVOR}
 TEST_DEPENDS =		devel/py-hypothesis${MODPY_FLAVOR} \
 			devel/py-zopeinterface${MODPY_FLAVOR}
 
