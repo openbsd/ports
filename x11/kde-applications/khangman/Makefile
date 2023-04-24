@@ -1,6 +1,7 @@
 COMMENT =	KDE hangman game
 DISTNAME =	khangman-${VERSION}
 CATEGORIES =	games education
+REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} KEduVocDocument KF5Attica KF5Auth
 WANTLIB += KF5AuthCore KF5Codecs KF5ConfigCore KF5ConfigGui KF5ConfigWidgets

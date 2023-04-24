@@ -1,6 +1,7 @@
 COMMENT =	three-in-a-row game
 DISTNAME =	kdiamond-${VERSION}
 CATEGORIES =	games
+REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/kdiamond
 

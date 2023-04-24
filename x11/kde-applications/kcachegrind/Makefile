@@ -1,6 +1,7 @@
 COMMENT =	profile data visualization tool
 DISTNAME =	kcachegrind-${VERSION}
 CATEGORIES =	x11 devel
+REVISION =	0
 
 HOMEPAGE =	https://kde.org/applications/development/org.kde.kcachegrind
 

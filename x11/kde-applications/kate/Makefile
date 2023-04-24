@@ -1,6 +1,7 @@
 COMMENT =	KDE advanced text editor
 DISTNAME =	kate-${VERSION}
 CATEGORIES =	editors
+REVISION =	0
 
 HOMEPAGE =	https://kate-editor.org/
 

@@ -1,6 +1,7 @@
 COMMENT =	simple game of evading killer robots
 DISTNAME =	killbots-${VERSION}
 CATEGORIES =	games
+REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/killbots
 

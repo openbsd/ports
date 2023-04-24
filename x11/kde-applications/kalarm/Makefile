@@ -1,6 +1,7 @@
 COMMENT =	personal alarm message, command and email scheduler
 DISTNAME =	kalarm-${VERSION}
 CATEGORIES =	productivity
+REVISION =	0
 
 SHARED_LIBS +=  kalarmcalendar           1.1 # 0.0
 SHARED_LIBS +=  kalarmplugin             1.0 # 0.0

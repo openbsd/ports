@@ -1,6 +1,7 @@
 COMMENT =	3-D Game based on Rubiks Cube
 DISTNAME =	kubrick-${VERSION}
 CATEGORIES =	games
+REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/kubrick
 

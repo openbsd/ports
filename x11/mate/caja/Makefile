@@ -1,4 +1,5 @@
 COMMENT=		file manager for the MATE desktop
+REVISION=		0
 
 SHARED_LIBS +=  caja-extension            5.0 # 5.0
 

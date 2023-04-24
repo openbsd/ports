@@ -4,6 +4,7 @@ CATEGORIES =	x11
 GH_ACCOUNT =	jgmenu
 GH_PROJECT =	jgmenu
 GH_TAGNAME =	v4.4.1
+REVISION =	0
 
 # GPLv2 only
 PERMIT_PACKAGE =	Yes
@@ -18,7 +19,7 @@ COMPILER =	base-clang ports-gcc
 LIB_DEPENDS =	x11/gnome/librsvg
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-                x11/gtk+3,-guic
+                x11/gtk+4,-guic
 
 CONFIGURE_STYLE =	simple
 

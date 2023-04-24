@@ -1,7 +1,7 @@
 COMMENT=		Industrial icon theme from OpenSUSE
 
 DISTNAME=		industrial-icon-theme-11.0.5
-REVISION=		9
+REVISION=		10
 
 CATEGORIES=		x11
 
@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=		textproc/intltool
 
-RUN_DEPENDS=		x11/gtk+3,-guic
+RUN_DEPENDS=		x11/gtk+4,-guic
 
 BUILD_DEPENDS=		x11/icon-naming-utils
 

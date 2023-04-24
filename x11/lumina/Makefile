@@ -4,7 +4,7 @@ GH_ACCOUNT=		trueos
 GH_PROJECT=		lumina
 GH_TAGNAME=		v1.4.0-p1
 PKGNAME=		lumina-1.4.0pl1
-REVISION=		6
+REVISION=		7
 
 CATEGORIES=		x11
 
@@ -31,7 +31,7 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 			x11/fluxbox \
 			x11/numlockx \
 			x11/xscreensaver \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 LIB_DEPENDS=		print/poppler,-qt5 \
 			x11/qt5/qtmultimedia \

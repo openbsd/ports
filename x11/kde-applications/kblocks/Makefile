@@ -1,6 +1,7 @@
 COMMENT =	falling blocks game
 DISTNAME =	kblocks-${VERSION}
 CATEGORIES =	games
+REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/kblocks
 

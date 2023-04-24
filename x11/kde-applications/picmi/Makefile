@@ -1,6 +1,7 @@
 COMMENT =	single player puzzle game for KDE
 DISTNAME =	picmi-${VERSION}
 CATEGORIES =	games
+REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/picmi
 

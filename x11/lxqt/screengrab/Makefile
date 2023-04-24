@@ -1,6 +1,7 @@
 COMMENT =	tool for fast making screenshots
 
 VERSION =	2.3.0
+REVISION =	0
 
 NAME =		screengrab
 
@@ -17,7 +18,7 @@ LIB_DEPENDS +=		x11/qt5/qtx11extras \
 			devel/kf5/kwindowsystem
 
 RUN_DEPENDS +=		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${NAME}

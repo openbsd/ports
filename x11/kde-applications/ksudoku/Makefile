@@ -1,6 +1,7 @@
 COMMENT =	sudoku game
 DISTNAME =	ksudoku-${VERSION}
 CATEGORIES =	games
+REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/ksudoku
 

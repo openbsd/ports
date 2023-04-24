@@ -1,6 +1,7 @@
 COMMENT =	Tron-like game
 DISTNAME =	ksnakeduel-${VERSION}
 CATEGORIES =	games
+REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/ksnakeduel
 

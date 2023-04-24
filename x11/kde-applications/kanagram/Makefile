@@ -3,6 +3,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	letter order game
 DISTNAME =	kanagram-${VERSION}
 CATEGORIES =	education x11
+REVISION =	0
 
 HOMEPAGE =	https://edu.kde.org/kanagram/
 

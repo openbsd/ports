@@ -3,6 +3,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	KDE mathematical applications
 DISTNAME =	cantor-${VERSION}
 CATEGORIES =	education math
+REVISION =	0
 
 SHARED_LIBS +=  cantorlibs                54.0 # 17.08
 

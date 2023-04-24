@@ -1,6 +1,7 @@
 COMMENT =	graphical timer based task execution for KDE
 DISTNAME =	ktimer-${VERSION}
 CATEGORIES =	x11 sysutils
+REVISION =	0
 
 HOMEPAGE =	https://kde.org/applications/utilities/org.kde.ktimer
 

@@ -1,6 +1,7 @@
 COMMENT =	online account providers for the KAccounts system
 
 DISTNAME =	kaccounts-providers-${VERSION}
+REVISION =	0
 
 CATEGORIES =	net devel
 

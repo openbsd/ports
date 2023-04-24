@@ -1,5 +1,6 @@
 COMMENT =		Breeze KDE desktop theme
 DISTNAME =		breeze-${VERSION}
+REVISION =		0
 
 SHARED_LIBS +=  breezecommon5         1.0 # 5.12.0
 

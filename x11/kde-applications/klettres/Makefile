@@ -1,6 +1,7 @@
 COMMENT =	alphabet learning application for KDE
 DISTNAME =	klettres-${VERSION}
 CATEGORIES =	education
+REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Attica KF5Auth KF5AuthCore KF5Codecs
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons

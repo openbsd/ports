@@ -1,7 +1,7 @@
 COMMENT =	touch typing tutor program
 
 DISTNAME =	klavaro-1.5.0
-REVISION =	12
+REVISION =	13
 
 CATEGORIES =	x11
 
@@ -29,7 +29,7 @@ LIB_DEPENDS = 	devel/gettext,-runtime \
 		x11/gtk+2 \
 		x11/gtkdatabox \
 		net/curl
-RUN_DEPENDS =	x11/gtk+3,-guic
+RUN_DEPENDS =	x11/gtk+4,-guic
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \

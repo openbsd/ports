@@ -5,7 +5,7 @@ GH_PROJECT =	Lightly
 GH_TAGNAME =	v0.4.1
 
 PKGNAME =	${DISTNAME:L}
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS =	lightlycommon5	0.0 # 0.4.1
 
@@ -28,7 +28,7 @@ EXTRACT_SUFX =		.tar.gz
 BUILD_DEPENDS =		devel/gettext,-tools \
 			devel/kf5/kpackage
 
-RUN_DEPENDS =		x11/gtk+3,-guic \
+RUN_DEPENDS =		x11/gtk+4,-guic \
 			devel/kf5/kpackage \
 			devel/kf5/breeze-icons
 

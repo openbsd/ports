@@ -3,6 +3,7 @@ COMMENT =	draw annotations on X11
 GH_ACCOUNT =	bk138
 GH_PROJECT =	gromit-mpx
 GH_TAGNAME =	1.3.1
+REVISION =	0
 
 CATEGORIES =	x11
 
@@ -22,7 +23,7 @@ MODULES =	devel/cmake
 CONFIGURE_ARGS =	-DCMAKE_INSTALL_SYSCONFDIR=share/examples
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 LIB_DEPENDS =	x11/gtk+3
 
 NO_TEST =	Yes

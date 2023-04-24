@@ -1,6 +1,7 @@
 COMMENT =	KDE storage device statistics
 DISTNAME =	kdf-${VERSION}
 CATEGORIES =	x11 sysutils
+REVISION =	0
 
 HOMEPAGE =	https://kde.org/applications/system/org.kde.kdf
 

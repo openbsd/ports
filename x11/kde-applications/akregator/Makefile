@@ -3,6 +3,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	news feed reader
 DISTNAME =	akregator-${VERSION}
 CATEGORIES =	net www
+REVISION =	0
 
 SHARED_LIBS +=  akregatorinterfaces       2.0 # 5.13.2
 SHARED_LIBS +=  akregatorprivate          3.0 # 5.13.2

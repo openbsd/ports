@@ -1,4 +1,5 @@
 COMMENT =	tools to configure LXQt and the underlying operating system
+REVISION =	0
 
 NAME =		lxqt-config
 
@@ -13,7 +14,7 @@ LIB_DEPENDS +=		x11/lxqt/liblxqt>=1.0.0 \
 BUILD_DEPENDS +=	x11/lxqt/build-tools
 
 RUN_DEPENDS +=		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 # No KF5Screen yet...
 CONFIGURE_ARGS +=	-DWITH_MONITOR=No

@@ -3,6 +3,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	KDE File Manager & Web Browser
 DISTNAME =	konqueror-${VERSION}
 CATEGORIES =	www
+REVISION =	0
 
 SHARED_LIBS +=  KF5Konq              1.2 # 5.97.0
 SHARED_LIBS +=  konquerorprivate     1.1 # 5.97.0

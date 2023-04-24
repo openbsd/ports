@@ -1,6 +1,7 @@
 COMMENT =	interface to use kipi-plugins from a KDE application
 DISTNAME =	libkipi-${VERSION}
 CATEGORIES =	devel graphics
+REVISION =	0
 
 SHARED_LIBS +=  KF5Kipi                   2.0 # 5.2
 

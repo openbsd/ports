@@ -1,6 +1,7 @@
 COMMENT =	screen ruler for KDE
 DISTNAME =	kruler-${VERSION}
 CATEGORIES =	graphics
+REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/graphics/kruler/
 

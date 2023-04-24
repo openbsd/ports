@@ -1,6 +1,7 @@
 COMMENT =	clone of the classic bomberman game
 DISTNAME =	granatier-${VERSION}
 CATEGORIES =	games
+REVISION =	0
 
 HOMEPAGE =	https://apps.kde.org/granatier
 

@@ -1,6 +1,7 @@
 COMMENT =	notes management tool
 DISTNAME =	knotes-${VERSION}
 CATEGORIES =	net www
+REVISION =	0
 
 HOMEPAGE =	http://knotesapp.com/
 

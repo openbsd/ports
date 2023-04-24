@@ -1,6 +1,7 @@
 COMMENT =	picture game for children
 DISTNAME =	ktuberling-${VERSION}
 CATEGORIES =	games
+REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/ktuberling
 

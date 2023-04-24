@@ -1,6 +1,7 @@
 COMMENT =	KDE image viewer
 DISTNAME =	gwenview-${VERSION}
 CATEGORIES =	graphics x11
+REVISION =	0
 
 SHARED_LIBS +=  gwenviewlib               59.2 # 4.97
 

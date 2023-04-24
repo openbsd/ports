@@ -1,6 +1,7 @@
 COMMENT =	battle ship game
 DISTNAME =	knavalbattle-${VERSION}
 CATEGORIES =	games
+REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/knavalbattle
 

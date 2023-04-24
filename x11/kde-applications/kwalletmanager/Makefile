@@ -1,6 +1,7 @@
 COMMENT =	KDE password wallet manager
 DISTNAME =	kwalletmanager-${VERSION}
 CATEGORIES =	x11 security
+REVISION =	0
 
 HOMEPAGE =	https://userbase.kde.org/KDE_Wallet_Manager
 

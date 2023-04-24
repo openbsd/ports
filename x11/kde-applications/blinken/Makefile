@@ -1,6 +1,7 @@
 COMMENT =	memory enhancement game
 DISTNAME =	blinken-${VERSION}
 CATEGORIES =	games education
+REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/education/blinken/
 

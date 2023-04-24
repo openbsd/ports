@@ -1,6 +1,7 @@
 COMMENT =	KDE raster image editor
 DISTNAME =	kolourpaint-${VERSION}
 CATEGORIES =	graphics
+REVISION =	0
 
 SHARED_LIBS +=  kolourpaint_lgpl           2.1 # 0.0
 

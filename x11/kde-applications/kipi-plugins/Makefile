@@ -1,6 +1,7 @@
 COMMENT =	plugins for the KDE KIPI interface
 DISTNAME =	kipi-plugins-${VERSION}
 CATEGORIES =	devel graphics
+REVISION =	0
 
 SHARED_LIBS +=  KF5kipiplugins   1.0 # 5.9.1
 

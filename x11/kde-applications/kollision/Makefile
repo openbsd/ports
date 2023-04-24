@@ -1,6 +1,7 @@
 COMMENT =	simple ball dodging game
 DISTNAME =	kollision-${VERSION}
 CATEGORIES =	games
+REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/kollision
 

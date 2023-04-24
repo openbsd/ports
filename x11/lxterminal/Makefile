@@ -2,7 +2,7 @@ COMMENT =	vte-based terminal emulator of LXDE
 
 V =		0.3.2
 DISTNAME =	lxterminal-$V
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	x11
 
@@ -25,7 +25,7 @@ MODULES =	textproc/intltool
 
 BUILD_DEPENDS = devel/gettext,-tools
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 LIB_DEPENDS =	devel/vte3 \
 		x11/gtk+3
 

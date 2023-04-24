@@ -1,4 +1,5 @@
 COMMENT =	lightweight Qt terminal emulator based on QTermWidget
+REVISION =	0
 
 NAME =		qterminal
 
@@ -11,6 +12,6 @@ LIB_DEPENDS +=		x11/lxqt/qtermwidget>=1.0.0 \
 BUILD_DEPENDS +=	x11/lxqt/build-tools
 
 RUN_DEPENDS +=		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
 COMMENT=	GTK+3 based xmessage(1) clone
 
 DISTNAME=	gxmessage-3.4.3
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	x11
 
@@ -20,7 +20,7 @@ MODULES=	textproc/intltool
 
 LIB_DEPENDS=	x11/gtk+3
 
-RUN_DEPENDS=	x11/gtk+3,-guic
+RUN_DEPENDS=	x11/gtk+4,-guic
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

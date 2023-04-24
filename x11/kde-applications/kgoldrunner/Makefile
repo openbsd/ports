@@ -1,6 +1,7 @@
 COMMENT =	hunt gold, dodge enemies and solve puzzles
 DISTNAME =	kgoldrunner-${VERSION}
 CATEGORIES =	games
+REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/kgoldrunner
 

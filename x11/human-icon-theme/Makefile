@@ -3,7 +3,7 @@ COMMENT=		Human icon theme from Ubuntu
 V=			0.36
 DISTNAME=		human-icon-theme_${V}
 PKGNAME=		human-icon-theme-${V}
-REVISION=		4
+REVISION=		5
 
 CATEGORIES=		x11
 
@@ -17,7 +17,7 @@ MASTER_SITES=		https://launchpad.net/ubuntu/oneiric/+source/human-icon-theme/${V
 WRKDIST=	${WRKDIR}/human-icon-theme
 MODULES=	textproc/intltool
 
-RUN_DEPENDS=	x11/gtk+3,-guic
+RUN_DEPENDS=	x11/gtk+4,-guic
 BUILD_DEPENDS=	x11/icon-naming-utils
 
 # Add the corresponding "Inherits" theme.

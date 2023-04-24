@@ -1,6 +1,7 @@
 COMMENT =	KDE version of Color Lines game
 DISTNAME =	klines-${VERSION}
 CATEGORIES =	games
+REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/klines
 

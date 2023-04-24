@@ -1,4 +1,5 @@
 COMMENT =	power management module for LXQt
+REVISION =	0
 
 NAME =		lxqt-powermanagement
 
@@ -18,7 +19,7 @@ BUILD_DEPENDS +=	x11/lxqt/build-tools
 
 RUN_DEPENDS +=		devel/desktop-file-utils \
 			sysutils/upower \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${NAME}

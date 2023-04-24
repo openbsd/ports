@@ -1,6 +1,7 @@
 COMMENT =	music collection manager and player for KDE
 DISTNAME =	juk-${VERSION}
 CATEGORIES =	audio
+REVISION =	0
 
 HOMEPAGE =	https://kde.org/applications/multimedia/org.kde.juk
 

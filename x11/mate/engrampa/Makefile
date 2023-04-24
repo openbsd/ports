@@ -1,7 +1,7 @@
 USE_WXNEEDED=		Yes
 
 COMMENT=		file archiver for the MATE desktop
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		archivers
 

@@ -11,6 +11,7 @@ MODPY_EGG_VERSION =	0.26.5
 DISTNAME =		kitty-${MODPY_EGG_VERSION}
 CATEGORIES =		x11
 HOMEPAGE =		https://sw.kovidgoyal.net/kitty/
+REVISION =		0
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
@@ -42,7 +43,7 @@ MODPY_SETUP_ARGS +=	--update-check-interval=0
 #	the terminal)
 # textproc/py-pygments (for syntax highlighting in kitty +kitten diff)
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 LIB_DEPENDS =		audio/libcanberra \
 			devel/harfbuzz \
 			graphics/lcms2 \

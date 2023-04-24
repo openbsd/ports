@@ -1,6 +1,7 @@
 COMMENT =	KDE software for music education
 DISTNAME =	minuet-${VERSION}
 CATEGORIES =	audio education
+REVISION =	0
 
 HOMEPAGE =	https://minuet.kde.org/
 

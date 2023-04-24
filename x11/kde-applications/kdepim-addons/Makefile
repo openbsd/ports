@@ -1,6 +1,7 @@
 COMMENT =	KDE PIM mail related libraries
 DISTNAME =	kdepim-addons-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=  adblocklibprivate                        2.0 # 5.13.2
 SHARED_LIBS +=  coisceim_widget                          2.0 # 5.13.2
@@ -53,7 +54,7 @@ MODKF5_L10N_CONFLICT = yes
 BUILD_DEPENDS =	textproc/libxslt \
 		devel/boost
 
-RUN_DEPENDS =	x11/gtk+3,-guic
+RUN_DEPENDS =	x11/gtk+4,-guic
 
 LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kauth \

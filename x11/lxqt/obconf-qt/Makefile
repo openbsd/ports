@@ -1,6 +1,7 @@
 COMMENT =	configuration editor for openbox window manager
 
 VERSION =	0.16.1
+REVISION =	0
 
 NAME =		obconf-qt
 
@@ -16,6 +17,6 @@ LIB_DEPENDS +=		x11/qt5/qtx11extras \
 BUILD_DEPENDS +=	x11/lxqt/build-tools
 
 RUN_DEPENDS +=		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 .include <bsd.port.mk>

@@ -1,6 +1,7 @@
 COMMENT =	arcade bombing game
 DISTNAME =	bomber-${VERSION}
 CATEGORIES =	games
+REVISION =	0
 
 HOMEPAGE =	https://apps.kde.org/bomber/
 

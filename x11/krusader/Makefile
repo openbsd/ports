@@ -2,6 +2,7 @@ COMMENT=	twin panel file manager for KDE
 
 VERSION=	2.8.0
 DISTNAME=	krusader-${VERSION}
+REVISION=	0
 
 CATEGORIES=	x11
 
@@ -28,7 +29,7 @@ EXTRACT_SUFX=	.tar.xz
 MODULES =	devel/kf5
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+3,-guic \
+		x11/gtk+4,-guic \
 		x11/kde-applications/kompare
 
 BUILD_DEPENDS =	devel/kf5/kdoctools \

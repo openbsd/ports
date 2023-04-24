@@ -1,6 +1,7 @@
 COMMENT =	KDE calculating fractions practicing app
 DISTNAME =	kbruch-${VERSION}
 CATEGORIES =	education x11
+REVISION =	0
 
 HOMEPAGE =	https://edu.kde.org/kbruch/
 
