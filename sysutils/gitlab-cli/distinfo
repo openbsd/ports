@@ -1,4 +1,4 @@
-SHA256 (cli-v1.28.0.zip) = pzXaETuZ+aQPdLFN7J6Rqv+i6Y+FdFM/lfCPGv/ym0A=
+SHA256 (cli-v1.28.1.zip) = /aeFAKLOYocBvhB6HybAp3q1WJUgJtGsQ+Vx9G37jkI=
 SHA256 (go_modules/cloud.google.com/go/@v/v0.26.0.mod) = IhijTyC5cbwZUhbUGV9XUgoqy9hd5/wxrPxEAmZwTBE=
 SHA256 (go_modules/cloud.google.com/go/@v/v0.34.0.mod) = IhijTyC5cbwZUhbUGV9XUgoqy9hd5/wxrPxEAmZwTBE=
 SHA256 (go_modules/cloud.google.com/go/@v/v0.38.0.mod) = IRVe7cPkx6CccZziPHA/vxTDSspC7QDcCHdN5uu+gAc=
@@ -70,6 +70,8 @@ SHA256 (go_modules/github.com/alecthomas/kong/@v/v0.2.4.mod) = t24CSTMKTrWrRPr29
 SHA256 (go_modules/github.com/alecthomas/kong/@v/v0.2.4.zip) = 6kBuQ+UQuTsW7tNyEBOew1m/weW3ZFxFiBjl2MIqzp4=
 SHA256 (go_modules/github.com/alecthomas/repr/@v/v0.0.0-20180818092828-117648cd9897.mod) = 4e05ugtpFM6ppl82/zkI3GIlMR+o9VX2ma0hIIA//Ls=
 SHA256 (go_modules/github.com/alecthomas/repr/@v/v0.0.0-20180818092828-117648cd9897.zip) = 4H8aIRdcaldHsTxppTE+he/sY0t+ktHJgjdRCh1ZJWE=
+SHA256 (go_modules/github.com/alessio/shellescape/@v/v1.4.1.mod) = q9Gu4qdCQe1JaXQGkTx4ugoXrpgE/mRn3aMWXKiyun4=
+SHA256 (go_modules/github.com/alessio/shellescape/@v/v1.4.1.zip) = 4o1ETnO4A6Fc+D5heRSdNMbBMrqmDLgTfl8K6lClQ78=
 SHA256 (go_modules/github.com/antihax/optional/@v/v1.0.0.mod) = 0sIhN/ViECf4dLEiVGzxWHIp34YY+WFbqf5OYw4oC+s=
 SHA256 (go_modules/github.com/antihax/optional/@v/v1.0.0.zip) = FatNQb27cu4Kxj22Fs3vx2cceeE9D3O1g1WmqIIZyX8=
 SHA256 (go_modules/github.com/armon/circbuf/@v/v0.0.0-20150827004946-bbbad097214e.mod) = JCKh4fO7lGhCnzbga85FR4EzakCXJi909d2lp1Tpvng=
@@ -113,6 +115,8 @@ SHA256 (go_modules/github.com/cpuguy83/go-md2man/v2/@v/v2.0.1.mod) = FMOvou9iNVX
 SHA256 (go_modules/github.com/cpuguy83/go-md2man/v2/@v/v2.0.1.zip) = 9d7REwAx6Y3EvfF+RayJrS7q4wg9YVC21fP8dbnpzWs=
 SHA256 (go_modules/github.com/creack/pty/@v/v1.1.17.mod) = BBOkGR3M1sdbDMdMtxrxVkBw8uy/zjq0ujzMnXAf2Cw=
 SHA256 (go_modules/github.com/creack/pty/@v/v1.1.17.zip) = xrCCCzXCX314L4bABUUEWyiZK23olJMGNBkf7sVvxIQ=
+SHA256 (go_modules/github.com/danieljoos/wincred/@v/v1.1.2.mod) = twJqs5elD8duY9AYYZfBYDxKer2UapLOABC1rlhDaoA=
+SHA256 (go_modules/github.com/danieljoos/wincred/@v/v1.1.2.zip) = gusECptUUrN+M+WcbXrBpqn2g4hdTBYRRjllyZyA3o0=
 SHA256 (go_modules/github.com/danwakefield/fnmatch/@v/v0.0.0-20160403171240-cbb64ac3d964.mod) = f6DftXrb4b6IkjXUeZbtKk3wyyKlB5sh/59+Hqho+AE=
 SHA256 (go_modules/github.com/danwakefield/fnmatch/@v/v0.0.0-20160403171240-cbb64ac3d964.zip) = 9gHo0lpD7TLgCFHhaGqTsBddreqPTjLIry8VM/IHNrw=
 SHA256 (go_modules/github.com/davecgh/go-spew/@v/v1.1.0.mod) = vLKTkyUSN7eaF7bBm/KRNPQ+j0OMMZiYj81GGhzfBcw=
@@ -149,7 +153,8 @@ SHA256 (go_modules/github.com/go-gl/glfw/v3.3/glfw/@v/v0.0.0-20191125211704-12ad
 SHA256 (go_modules/github.com/go-gl/glfw/v3.3/glfw/@v/v0.0.0-20200222043503-6f7a984d4dc4.mod) = 1WNuRK+jDUmMutczAQLwzsjeXbXGpwN25pxs/j4UNco=
 SHA256 (go_modules/github.com/go-gl/glfw/v3.3/glfw/@v/v0.0.0-20200222043503-6f7a984d4dc4.zip) = L2oZYzl8t8PfZiV6RddfroYKqbnuwXgl2BAcHhMT2ls=
 SHA256 (go_modules/github.com/godbus/dbus/v5/@v/v5.0.4.mod) = h0Pqcv7SHMFDxKBnQI4h93h2EOZi/b6NWUMxLqiuiBY=
-SHA256 (go_modules/github.com/godbus/dbus/v5/@v/v5.0.4.zip) = I6I/CL6kjm5JpGpAFbZK27FpLcbd8Ng8LwwgJ8uOMcg=
+SHA256 (go_modules/github.com/godbus/dbus/v5/@v/v5.1.0.mod) = h0Pqcv7SHMFDxKBnQI4h93h2EOZi/b6NWUMxLqiuiBY=
+SHA256 (go_modules/github.com/godbus/dbus/v5/@v/v5.1.0.zip) = A9+o5xCJpvR3MQ0VxNOgNtgtAoUyiBtQ/uJUNY54Ktk=
 SHA256 (go_modules/github.com/gogo/protobuf/@v/v1.3.2.mod) = lm6k32HphWCWdkI+68++XwjIZlLTqt3294woxyyB6dw=
 SHA256 (go_modules/github.com/gogo/protobuf/@v/v1.3.2.zip) = 3Stz8WPIGDlBYmNgGWyPhErd2VQj00GgQS4bItAQT/c=
 SHA256 (go_modules/github.com/golang/glog/@v/v0.0.0-20160126235308-23def4e6c14b.mod) = nJuvwPUpBa+qcWSFizoBoMw9wH2iMDAXfOSH9ydDiVg=
@@ -468,6 +473,8 @@ SHA256 (go_modules/github.com/yuin/goldmark/@v/v1.3.3.mod) = 2rHWY7hg6+VF/NzsJOX
 SHA256 (go_modules/github.com/yuin/goldmark/@v/v1.3.5.mod) = 2rHWY7hg6+VF/NzsJOX5M9UXvSAZr2jXprWodkqmGw8=
 SHA256 (go_modules/github.com/yuin/goldmark/@v/v1.4.2.mod) = 1YFZMeRDtnB/ONnCtC485jZEMwwjhZtl2ahEAzlNZuQ=
 SHA256 (go_modules/github.com/yuin/goldmark/@v/v1.4.2.zip) = zptNRRn6DImnmup/JFJWe3KzhoKZN5DfRfmxtf7+UtU=
+SHA256 (go_modules/github.com/zalando/go-keyring/@v/v0.2.2.mod) = /xEM7FUmrMoSG2JmYsy6Kr6Bd42FtzqnhEC+TlX3Pwg=
+SHA256 (go_modules/github.com/zalando/go-keyring/@v/v0.2.2.zip) = QNtkWIAbO14NzbUiCH+Gf5q8HJpqk+s3jmdh1G7rDh4=
 SHA256 (go_modules/go.etcd.io/etcd/api/v3/@v/v3.5.0.mod) = mz5RawZWsBD+JBqNT/tCZBi5WuaUSuQ8trABW03qZAA=
 SHA256 (go_modules/go.etcd.io/etcd/api/v3/@v/v3.5.0.zip) = h1RYe/bUsbyInVGTVeqImeCT2FUODZhzD4Vw1gj5mPk=
 SHA256 (go_modules/go.etcd.io/etcd/client/pkg/v3/@v/v3.5.0.mod) = 3OxOwnVgvHR/qm7wmqmTjfqe+mlAvX0DrsR10krXJPU=
@@ -650,6 +657,7 @@ SHA256 (go_modules/golang.org/x/sys/@v/v0.0.0-20210403161142-5e06dd20ab57.mod) =
 SHA256 (go_modules/golang.org/x/sys/@v/v0.0.0-20210423082822-04245dca01da.mod) = GBl56L1X0tngZBgtqGyaYRGqaXVeiI8IQx7OR0Kuw0M=
 SHA256 (go_modules/golang.org/x/sys/@v/v0.0.0-20210510120138-977fb7262007.mod) = 8DMzMJb+GY8xUd7tk/LeunTlC7/nc5E0BFvDt85KUCQ=
 SHA256 (go_modules/golang.org/x/sys/@v/v0.0.0-20210630005230-0f9fa26af87c.mod) = 8DMzMJb+GY8xUd7tk/LeunTlC7/nc5E0BFvDt85KUCQ=
+SHA256 (go_modules/golang.org/x/sys/@v/v0.0.0-20210819135213-f52c844e1c1c.mod) = 8DMzMJb+GY8xUd7tk/LeunTlC7/nc5E0BFvDt85KUCQ=
 SHA256 (go_modules/golang.org/x/sys/@v/v0.0.0-20220422013727-9388b58f7150.mod) = 8DMzMJb+GY8xUd7tk/LeunTlC7/nc5E0BFvDt85KUCQ=
 SHA256 (go_modules/golang.org/x/sys/@v/v0.0.0-20220811171246-fbc7d0a398ab.mod) = 8DMzMJb+GY8xUd7tk/LeunTlC7/nc5E0BFvDt85KUCQ=
 SHA256 (go_modules/golang.org/x/sys/@v/v0.5.0.mod) = 8DMzMJb+GY8xUd7tk/LeunTlC7/nc5E0BFvDt85KUCQ=
@@ -874,7 +882,7 @@ SHA256 (go_modules/rsc.io/quote/v3/@v/v3.1.0.mod) = shHZ8WtVQpcPA6LmJJ30UDgwSjeh
 SHA256 (go_modules/rsc.io/quote/v3/@v/v3.1.0.zip) = tDTLv8MsF7UijQsO3erqib707JvZC1yPxVtk+M4T7rk=
 SHA256 (go_modules/rsc.io/sampler/@v/v1.3.0.mod) = oq5uhUCkC4XldwPMYYuZxbEHU4bZWOiZmg4tTALzpwU=
 SHA256 (go_modules/rsc.io/sampler/@v/v1.3.0.zip) = 2iArDagDqyZhq5imgLuk9kEjoyblQMJVgrbNu53BFKo=
-SIZE (cli-v1.28.0.zip) = 17006889
+SIZE (cli-v1.28.1.zip) = 17007842
 SIZE (go_modules/cloud.google.com/go/@v/v0.26.0.mod) = 27
 SIZE (go_modules/cloud.google.com/go/@v/v0.34.0.mod) = 27
 SIZE (go_modules/cloud.google.com/go/@v/v0.38.0.mod) = 1006
@@ -946,6 +954,8 @@ SIZE (go_modules/github.com/alecthomas/kong/@v/v0.2.4.mod) = 219
 SIZE (go_modules/github.com/alecthomas/kong/@v/v0.2.4.zip) = 288228
 SIZE (go_modules/github.com/alecthomas/repr/@v/v0.0.0-20180818092828-117648cd9897.mod) = 34
 SIZE (go_modules/github.com/alecthomas/repr/@v/v0.0.0-20180818092828-117648cd9897.zip) = 5773
+SIZE (go_modules/github.com/alessio/shellescape/@v/v1.4.1.mod) = 47
+SIZE (go_modules/github.com/alessio/shellescape/@v/v1.4.1.zip) = 11037
 SIZE (go_modules/github.com/antihax/optional/@v/v1.0.0.mod) = 44
 SIZE (go_modules/github.com/antihax/optional/@v/v1.0.0.zip) = 9639
 SIZE (go_modules/github.com/armon/circbuf/@v/v0.0.0-20150827004946-bbbad097214e.mod) = 32
@@ -989,6 +999,8 @@ SIZE (go_modules/github.com/cpuguy83/go-md2man/v2/@v/v2.0.1.mod) = 100
 SIZE (go_modules/github.com/cpuguy83/go-md2man/v2/@v/v2.0.1.zip) = 12383
 SIZE (go_modules/github.com/creack/pty/@v/v1.1.17.mod) = 38
 SIZE (go_modules/github.com/creack/pty/@v/v1.1.17.zip) = 24284
+SIZE (go_modules/github.com/danieljoos/wincred/@v/v1.1.2.mod) = 148
+SIZE (go_modules/github.com/danieljoos/wincred/@v/v1.1.2.zip) = 15626
 SIZE (go_modules/github.com/danwakefield/fnmatch/@v/v0.0.0-20160403171240-cbb64ac3d964.mod) = 39
 SIZE (go_modules/github.com/danwakefield/fnmatch/@v/v0.0.0-20160403171240-cbb64ac3d964.zip) = 6032
 SIZE (go_modules/github.com/davecgh/go-spew/@v/v1.1.0.mod) = 34
@@ -1025,7 +1037,8 @@ SIZE (go_modules/github.com/go-gl/glfw/v3.3/glfw/@v/v0.0.0-20191125211704-12ad95
 SIZE (go_modules/github.com/go-gl/glfw/v3.3/glfw/@v/v0.0.0-20200222043503-6f7a984d4dc4.mod) = 48
 SIZE (go_modules/github.com/go-gl/glfw/v3.3/glfw/@v/v0.0.0-20200222043503-6f7a984d4dc4.zip) = 646118
 SIZE (go_modules/github.com/godbus/dbus/v5/@v/v5.0.4.mod) = 42
-SIZE (go_modules/github.com/godbus/dbus/v5/@v/v5.0.4.zip) = 99582
+SIZE (go_modules/github.com/godbus/dbus/v5/@v/v5.1.0.mod) = 42
+SIZE (go_modules/github.com/godbus/dbus/v5/@v/v5.1.0.zip) = 105330
 SIZE (go_modules/github.com/gogo/protobuf/@v/v1.3.2.mod) = 215
 SIZE (go_modules/github.com/gogo/protobuf/@v/v1.3.2.zip) = 2700673
 SIZE (go_modules/github.com/golang/glog/@v/v0.0.0-20160126235308-23def4e6c14b.mod) = 30
@@ -1344,6 +1357,8 @@ SIZE (go_modules/github.com/yuin/goldmark/@v/v1.3.3.mod) = 41
 SIZE (go_modules/github.com/yuin/goldmark/@v/v1.3.5.mod) = 41
 SIZE (go_modules/github.com/yuin/goldmark/@v/v1.4.2.mod) = 41
 SIZE (go_modules/github.com/yuin/goldmark/@v/v1.4.2.zip) = 272637
+SIZE (go_modules/github.com/zalando/go-keyring/@v/v0.2.2.mod) = 243
+SIZE (go_modules/github.com/zalando/go-keyring/@v/v0.2.2.zip) = 16607
 SIZE (go_modules/go.etcd.io/etcd/api/v3/@v/v3.5.0.mod) = 657
 SIZE (go_modules/go.etcd.io/etcd/api/v3/@v/v3.5.0.zip) = 118102
 SIZE (go_modules/go.etcd.io/etcd/client/pkg/v3/@v/v3.5.0.mod) = 179
@@ -1526,6 +1541,7 @@ SIZE (go_modules/golang.org/x/sys/@v/v0.0.0-20210403161142-5e06dd20ab57.mod) = 3
 SIZE (go_modules/golang.org/x/sys/@v/v0.0.0-20210423082822-04245dca01da.mod) = 33
 SIZE (go_modules/golang.org/x/sys/@v/v0.0.0-20210510120138-977fb7262007.mod) = 33
 SIZE (go_modules/golang.org/x/sys/@v/v0.0.0-20210630005230-0f9fa26af87c.mod) = 33
+SIZE (go_modules/golang.org/x/sys/@v/v0.0.0-20210819135213-f52c844e1c1c.mod) = 33
 SIZE (go_modules/golang.org/x/sys/@v/v0.0.0-20220422013727-9388b58f7150.mod) = 33
 SIZE (go_modules/golang.org/x/sys/@v/v0.0.0-20220811171246-fbc7d0a398ab.mod) = 33
 SIZE (go_modules/golang.org/x/sys/@v/v0.5.0.mod) = 33

@@ -18,6 +18,7 @@ MODGO_MODULES =	\
 	github.com/alecthomas/colour				 v0.0.0-20160524082231-60882d9e2721 \
 	github.com/alecthomas/kong				 v0.2.4 \
 	github.com/alecthomas/repr				 v0.0.0-20180818092828-117648cd9897 \
+	github.com/alessio/shellescape				 v1.4.1 \
 	github.com/antihax/optional				 v1.0.0 \
 	github.com/armon/circbuf				 v0.0.0-20150827004946-bbbad097214e \
 	github.com/armon/go-metrics				 v0.0.0-20180917152333-f0300d1749da \
@@ -38,6 +39,7 @@ MODGO_MODULES =	\
 	github.com/coreos/go-systemd/v22			 v22.3.2 \
 	github.com/cpuguy83/go-md2man/v2			 v2.0.1 \
 	github.com/creack/pty					 v1.1.17 \
+	github.com/danieljoos/wincred				 v1.1.2 \
 	github.com/danwakefield/fnmatch				 v0.0.0-20160403171240-cbb64ac3d964 \
 	github.com/davecgh/go-spew				 v1.1.1 \
 	github.com/dlclark/regexp2				 v1.4.0 \
@@ -51,7 +53,7 @@ MODGO_MODULES =	\
 	github.com/ghodss/yaml					 v1.0.0 \
 	github.com/go-gl/glfw					 v0.0.0-20190409004039-e6da0acd62b1 \
 	github.com/go-gl/glfw/v3.3/glfw				 v0.0.0-20200222043503-6f7a984d4dc4 \
-	github.com/godbus/dbus/v5				 v5.0.4 \
+	github.com/godbus/dbus/v5				 v5.1.0 \
 	github.com/gogo/protobuf				 v1.3.2 \
 	github.com/golang/glog					 v0.0.0-20160126235308-23def4e6c14b \
 	github.com/golang/groupcache				 v0.0.0-20200121045136-8c9f03a8e57e \
@@ -161,6 +163,7 @@ MODGO_MODULES =	\
 	github.com/xanzy/go-gitlab				 v0.81.0 \
 	github.com/yuin/goldmark				 v1.4.2 \
 	github.com/yuin/goldmark-emoji				 v1.0.1 \
+	github.com/zalando/go-keyring				 v0.2.2 \
 	go.etcd.io/etcd/api/v3					 v3.5.0 \
 	go.etcd.io/etcd/client/pkg/v3				 v3.5.0 \
 	go.etcd.io/etcd/client/v2				 v2.305.0 \
@@ -244,6 +247,7 @@ MODGO_MODFILES =	\
 	github.com/envoyproxy/go-control-plane	 v0.9.9-0.20201210154907-fd9021fe5dad \
 	github.com/fatih/color			 v1.7.0 \
 	github.com/go-gl/glfw/v3.3/glfw		 v0.0.0-20191125211704-12ad95a8df72 \
+	github.com/godbus/dbus/v5		 v5.0.4 \
 	github.com/golang/groupcache		 v0.0.0-20190702054246-869f871628b6 \
 	github.com/golang/groupcache		 v0.0.0-20191227052852-215e87163ea7 \
 	github.com/golang/mock			 v1.1.1 \
@@ -494,6 +498,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sys			 v0.0.0-20210423082822-04245dca01da \
 	golang.org/x/sys			 v0.0.0-20210510120138-977fb7262007 \
 	golang.org/x/sys			 v0.0.0-20210630005230-0f9fa26af87c \
+	golang.org/x/sys			 v0.0.0-20210819135213-f52c844e1c1c \
 	golang.org/x/sys			 v0.0.0-20220422013727-9388b58f7150 \
 	golang.org/x/sys			 v0.0.0-20220811171246-fbc7d0a398ab \
 	golang.org/x/sys			 v0.5.0 \
