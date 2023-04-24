@@ -2,7 +2,7 @@ COMMENT=	GNU Image Manipulation Program
 
 V=		2.99
 DISTNAME=	gimp-${V}.14
-REVISION=	0
+REVISION=	1
 
 .for i in gimp gimpbase gimpcolor gimpconfig gimpmath gimpmodule \
 	gimpthumb gimpui gimpwidgets gimp-scriptfu
@@ -60,7 +60,7 @@ BUILD_DEPENDS=	${COMMON_DEPENDS} \
 
 RUN_DEPENDS=	${COMMON_DEPENDS} \
 		devel/xdg-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 LIB_DEPENDS=	archivers/bzip2 \
 		archivers/xz \

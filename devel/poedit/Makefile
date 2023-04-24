@@ -3,7 +3,7 @@ COMMENT=	cross-platform gettext catalogs (PO-files) editor
 V=		3.2.2
 DISTNAME=	poedit-${V}
 CATEGORIES=	devel textproc
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	https://www.poedit.net/
 
@@ -27,7 +27,7 @@ COMPILER=	base-clang ports-gcc
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		devel/gettext,-tools \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 LIB_DEPENDS=	textproc/gtkspell3 \
 		textproc/luceneplusplus \
 		textproc/pugixml \

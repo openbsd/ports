@@ -1,7 +1,7 @@
 COMMENT=	BBS terminal program
 
 DISTNAME=	syncterm-1.1
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	comms net
 
@@ -21,7 +21,7 @@ NO_TEST=	Yes
 
 LIB_DEPENDS=	devel/sdl2
 RUN_DEPENDS=	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 MAKE_FILE=	GNUmakefile
 MAKE_FLAGS=	RELEASE=1 \

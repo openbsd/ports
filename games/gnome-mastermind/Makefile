@@ -2,7 +2,7 @@ COMMENT =	Mastermind clone reflexion game
 
 GNOME_PROJECT =	gnome-mastermind
 GNOME_VERSION =	0.3.1
-REVISION =	22
+REVISION =	23
 
 CATEGORIES =	games
 

@@ -5,7 +5,7 @@ COMMENT =	simple offline API documentation browser
 
 V =	0.6.1
 DISTNAME = zeal-${V}
-REVISION = 1
+REVISION = 2
 
 CATEGORIES =	devel
 
@@ -27,7 +27,7 @@ EXTRACT_SUFX =	.tar.xz
 MODULES =	devel/kf5
 
 RUN_DEPENDS +=	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 LIB_DEPENDS +=	archivers/libarchive \
 		databases/sqlite3 \

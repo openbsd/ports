@@ -5,7 +5,7 @@ BROKEN-hppa =	ICE/failure on filter/hq2x.cpp
 GH_ACCOUNT =	snes9xgit
 GH_PROJECT =	snes9x
 GH_TAGNAME =	1.60
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	emulators games
 
@@ -20,7 +20,7 @@ WANTLIB += glib-2.0 gobject-2.0 gtk-3 intl m pango-1.0 pangocairo-1.0
 WANTLIB += png z
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 LIB_DEPENDS =	devel/sdl2 \
 		graphics/png \

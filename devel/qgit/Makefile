@@ -4,6 +4,7 @@ GH_ACCOUNT =	tibirna
 GH_PROJECT =	qgit
 GH_TAGNAME =	qgit-2.10
 DISTNAME =	${GH_TAGNAME}
+REVISION =	0
 
 CATEGORIES =	devel x11
 
@@ -17,6 +18,6 @@ MODULES =	devel/cmake \
 
 RUN_DEPENDS =	devel/git \
 		devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 .include <bsd.port.mk>

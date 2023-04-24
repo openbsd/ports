@@ -6,6 +6,7 @@ GH_PROJECT=		Cataclysm-DDA
 GH_TAGNAME=		0.G
 DISTNAME=		cataclysm-dda-${GH_TAGNAME}
 EPOCH=			0
+REVISION=		0
 
 HOMEPAGE=		https://cataclysmdda.org
 MAINTAINER=		Kirill Bychkov <kirby@openbsd.org>
@@ -24,7 +25,7 @@ COMPILER=		base-clang ports-gcc
 MODULES=		devel/cmake textproc/intltool
 
 RUN_DEPENDS=		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 LIB_DEPENDS=		devel/gettext,-runtime
 

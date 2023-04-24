@@ -2,7 +2,7 @@ COMMENT =	visual programming environment and toolkit
 
 DISTNAME =	${PKGNAME}.src
 PKGNAME =	scratch-1.4.0.7
-REVISION =	12
+REVISION =	13
 CATEGORIES =	graphics
 HOMEPAGE =	http://scratch.mit.edu/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
@@ -24,7 +24,7 @@ RUN_DEPENDS =	lang/squeak/vm \
 		devel/desktop-file-utils \
 		devel/xdg-utils \
 		misc/shared-mime-info \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 LIB_DEPENDS =	devel/pango
 SEPARATE_BUILD = Yes

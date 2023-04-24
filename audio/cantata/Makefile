@@ -3,6 +3,7 @@ COMMENT =	Qt-based MPD client
 V =		2.5.0
 DISTNAME =	cantata-${V}
 HOMEPAGE =	https://github.com/CDrummond/cantata
+REVISION =	0
 
 MASTER_SITES =	https://github.com/CDrummond/cantata/releases/download/v${V}/
 EXTRACT_SUFX =	.tar.bz2
@@ -22,7 +23,7 @@ MODULES =	devel/cmake \
 		x11/qt5
 
 RUN_DEPENDS +=	devel/desktop-file-utils
-RUN_DEPENDS +=	x11/gtk+3,-guic
+RUN_DEPENDS +=	x11/gtk+4,-guic
 LIB_DEPENDS +=	audio/mpg123 \
 		audio/libcdio \
 		audio/libcdio-paranoia \

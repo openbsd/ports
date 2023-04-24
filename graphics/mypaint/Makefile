@@ -3,7 +3,7 @@ COMMENT =	raster graphics editor for digital painters
 MODPY_EGG_VERSION =	2.0.1
 DISTNAME =		mypaint-${MODPY_EGG_VERSION}
 EXTRACT_SUFX =		.tar.xz
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		graphics
 
@@ -40,7 +40,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			graphics/mypaint-brushes2 \
 			graphics/py-cairo${MODPY_FLAVOR} \
 			math/py-numpy${MODPY_FLAVOR} \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 LIB_DEPENDS =		devel/harfbuzz \
 			devel/json-c \

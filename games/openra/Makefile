@@ -1,6 +1,6 @@
 COMMENT =		open-source real-time strategy game engine
 V =			20210321
-REVISION =		0
+REVISION =		1
 DISTNAME =		openra-${V}
 CATEGORIES =		games x11
 HOMEPAGE =		https://www.openra.net
@@ -37,7 +37,7 @@ BUILD_DEPENDS =		devel/msbuild \
 RUN_DEPENDS =		devel/desktop-file-utils \
 			misc/shared-mime-info \
 			net/libmaxminddb,-db \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 LIB_DEPENDS =		audio/openal \
 			devel/sdl2
 USE_GMAKE =		Yes

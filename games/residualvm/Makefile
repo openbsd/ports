@@ -3,7 +3,7 @@ COMMENT =		interpreter for some LucasArts 3D games
 V =			0.3.1
 DISTNAME =		residualvm-${V}-sources
 PKGNAME =		residualvm-${V}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		games
 
@@ -28,7 +28,7 @@ LIB_DEPENDS =		audio/libmad \
 			graphics/png \
 			multimedia/libtheora
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 # GCC 4.2.1 miscompiles this on at least ppc, so play safe and
 # just use a newer compiler everywhere.

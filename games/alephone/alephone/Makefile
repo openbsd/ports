@@ -6,6 +6,7 @@ COMMENT =		open source game engine based on Marathon 2: Durandal
 DATE =			20200904
 DISTNAME =		AlephOne-${DATE}
 PKGNAME =		alephone-1.3.1
+REVISION =		0
 
 EXTRACT_SUFX =		.tar.bz2
 CATEGORIES =		games x11
@@ -41,7 +42,7 @@ LIB_DEPENDS =		archivers/zziplib \
 			net/curl
 
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+3,-guic \
+			x11/gtk+4,-guic \
 			misc/shared-mime-info
 
 USE_BZIP2 =		Yes

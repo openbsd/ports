@@ -1,7 +1,7 @@
 COMMENT =	classic snake game on the terminal
 
 DISTNAME =	nsnake-3.0.1
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	games
 
@@ -17,7 +17,7 @@ COMPILER =	base-clang ports-gcc base-gcc
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=nsnake/GNU-Linux/}
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 MAKE_FLAGS =	V=1 CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 MAKE_FLAGS +=	CC="${CC}" COMMANDER_CFLAGS="${CFLAGS}"

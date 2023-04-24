@@ -2,6 +2,7 @@ COMMENT=	printed circuit board layout tool
 DISTNAME=	pcb-4.3.0
 CATEGORIES=	cad
 EPOCH=		0
+REVISION=	0
 
 HOMEPAGE=	http://pcb.geda-project.org/
 
@@ -21,7 +22,7 @@ RUN_DEPENDS=	devel/m4 \
 		devel/desktop-file-utils \
 		graphics/ImageMagick \
 		misc/shared-mime-info \
-		x11/gtk+3,-guic \
+		x11/gtk+4,-guic \
 		${MODTK_RUN_DEPENDS}
 
 BUILD_DEPENDS=	${MODTK_BUILD_DEPENDS} \

@@ -2,6 +2,7 @@ COMMENT=	wysiwyw (what you see is what you want) editing platform
 
 DISTNAME=	TeXmacs-2.1.2-src
 PKGNAME=	${DISTNAME:S/-src//}
+REVISION=	0
 
 CATEGORIES=	editors print x11
 
@@ -27,7 +28,7 @@ BUILD_DEPENDS=	print/ghostscript/gnu
 RUN_DEPENDS=	devel/desktop-file-utils \
 		misc/shared-mime-info \
 		print/ghostscript/gnu \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 LIB_DEPENDS=	databases/sqlite3 \
 		devel/gmp \
 		graphics/jpeg \

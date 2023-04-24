@@ -2,7 +2,7 @@ COMMENT =	gpx file viewer
 
 VERSION =	0.4.0
 DISTNAME =	gpx-viewer-${VERSION}
-REVISION =	17
+REVISION =	18
 
 CATEGORIES =	geo x11
 
@@ -40,7 +40,7 @@ LIB_DEPENDS =	geo/libchamplain>=0.12.0 \
 		x11/gnome/gdl
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 FAKE_FLAGS=	desktopdir=${PREFIX}/share/applications
 

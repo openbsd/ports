@@ -7,7 +7,7 @@ PKGNAME =	arx-libertatis-${GH_TAGNAME}
 GH_ACCOUNT =	arx
 GH_PROJECT =	ArxLibertatis
 GH_TAGNAME =	1.2.1
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=	ArxIO                     0.0 # 1.2
 
@@ -30,7 +30,7 @@ BUILD_DEPENDS =	devel/boost \
 LIB_DEPENDS =	audio/openal \
 		devel/sdl2
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 CONFIGURE_ARGS =	-DBUILD_CRASHHANDLER=OFF \
 			-DBUILD_CRASHREPORTER=OFF \

@@ -3,8 +3,8 @@ COMMENT-npcomplete =	extra levels for physics-based drawing puzzle game
 
 DISTNAME =		numptyphysics-0.3.r20100916
 PKGNAME-npcomplete =	npcomplete-0.0.r20100124
-REVISION-main =		6
-REVISION-npcomplete =	3
+REVISION-main =		7
+REVISION-npcomplete =	4
 
 MULTI_PACKAGES =	-main -npcomplete
 
@@ -27,7 +27,7 @@ WANTLIB-main =		SDL SDL_image SDL_ttf X11 c m \
 COMPILER =		base-clang ports-gcc base-gcc
 
 RUN_DEPENDS-main =	devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 LIB_DEPENDS-main =	devel/sdl \
 			devel/sdl-image \
 			devel/sdl-ttf

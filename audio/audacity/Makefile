@@ -6,6 +6,7 @@ GH_ACCOUNT=	audacity
 GH_PROJECT=	audacity
 GH_TAGNAME=	Audacity-3.2.5
 DISTNAME=	${GH_TAGNAME:L}
+REVISION=	0
 
 CATEGORIES=	audio
 
@@ -52,7 +53,7 @@ LIB_DEPENDS=	audio/flac \
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		misc/shared-mime-info \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 CONFIGURE_ARGS=	-Daudacity_lib_preference:STRING=system \
 		-Daudacity_has_crashreports:STRING=off \

@@ -4,6 +4,7 @@ GH_PROJECT =	GPXSee
 GH_ACCOUNT =	tumic0
 GH_TAGNAME =	12.3
 PKGNAME =	${DISTNAME:L}
+REVISION =	0
 
 CATEGORIES =	geo x11
 
@@ -16,7 +17,7 @@ MODULES =	devel/qmake x11/qt5
 
 RUN_DEPENDS+=	devel/desktop-file-utils
 RUN_DEPENDS +=	misc/shared-mime-info
-RUN_DEPENDS +=	x11/gtk+3,-guic
+RUN_DEPENDS +=	x11/gtk+4,-guic
 
 LIB_DEPENDS +=	x11/qt5/qtlocation x11/qt5/qtsvg
 

@@ -3,7 +3,7 @@ PORTROACH=	skipv:0.98.11_01
 COMMENT=	full featured DVD copy program
 
 VERSION=	0.98.11
-REVISION=	4
+REVISION=	5
 DISTNAME=	dvdrip-${VERSION}
 CATEGORIES=	graphics audio multimedia perl5
 
@@ -26,7 +26,7 @@ RUN_DEPENDS=	graphics/ImageMagick \
 		x11/p5-Gtk2-Ex-FormFactory \
 		multimedia/ogmtools \
 		multimedia/lsdvd>=0.15 \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 BUILD_DEPENDS=	devel/p5-Event-ExecFlow \
 		net/p5-Event-RPC \
 		x11/p5-Gtk2-Ex-FormFactory

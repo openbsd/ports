@@ -5,6 +5,7 @@ COMMENT =		kart racing game with OSS mascots
 V =			1.4
 DISTNAME =		SuperTuxKart-${V}
 PKGNAME =		${DISTNAME:L}
+REVISION =		0
 
 CATEGORIES =		games
 
@@ -30,7 +31,7 @@ CXXFLAGS +=		-I${X11BASE}/include
 MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
 
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 LIB_DEPENDS =		audio/openal>=0.0.8p7 \
 			audio/libvorbis \

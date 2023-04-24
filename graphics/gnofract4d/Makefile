@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	4.3
 
 MASTER_SITES =		https://github.com/fract4d/gnofract4d/releases/download/v${MODPY_EGG_VERSION}/
 DISTNAME =		gnofract4d-${MODPY_EGG_VERSION}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		graphics
 
@@ -30,7 +30,7 @@ RUN_DEPENDS +=		devel/desktop-file-utils \
 			graphics/py-cairo${MODPY_FLAVOR} \
 			misc/shared-mime-info \
 			x11/gtk+3 \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 NO_TEST =		Yes
 

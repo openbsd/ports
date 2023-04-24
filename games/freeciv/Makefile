@@ -1,10 +1,13 @@
 COMMENT-main=	Civilization clone for X11; multiplayer; game server
 COMMENT-client=	Freeciv client
 COMMENT-share=	shared data files for Freeciv
+REVISION-client=0
+REVISION-share=	0
 
 VERSION=	3.0.6
 DISTNAME=	freeciv-${VERSION}
 PKGNAME-main=	freeciv-server-${VERSION}
+REVISION-main=	0
 
 CATEGORIES=	games
 
@@ -50,11 +53,11 @@ LIB_DEPENDS-share=
 
 RUN_DEPENDS-client= freeciv-share-${VERSION}:${BUILD_PKGPATH},-share \
 		    devel/desktop-file-utils \
-		    x11/gtk+3,-guic
+		    x11/gtk+4,-guic
 
 RUN_DEPENDS-main=   freeciv-share-${VERSION}:${BUILD_PKGPATH},-share \
 		    devel/desktop-file-utils \
-		    x11/gtk+3,-guic
+		    x11/gtk+4,-guic
 
 SEPARATE_BUILD = Yes
 USE_GMAKE =	Yes

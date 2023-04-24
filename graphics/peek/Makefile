@@ -3,7 +3,7 @@ COMMENT =	simple screen recorder
 GH_PROJECT = 	peek
 GH_ACCOUNT = 	phw
 GH_TAGNAME = 	1.5.1
-REVISION =	1
+REVISION =	2
 
 CATEGORIES = 	graphics x11
 
@@ -15,7 +15,7 @@ MODULES =	devel/meson \
 		lang/python
 
 RUN_DEPENDS =	graphics/ffmpeg \
-		x11/gtk+3,-guic \
+		x11/gtk+4,-guic \
 		devel/desktop-file-utils
 
 BUILD_DEPENDS =	devel/gettext,-tools \

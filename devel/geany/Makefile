@@ -1,7 +1,7 @@
 COMMENT=	small and lightweight IDE
 
 DISTNAME =	geany-1.36
-REVISION =	3
+REVISION =	4
 SHARED_LIBS +=  geany                     0.0 # 0.0
 
 CATEGORIES=	devel
@@ -34,7 +34,7 @@ WANTLIB += z fribidi Xau Xdmcp execinfo jpeg
 LIB_DEPENDS=	x11/gtk+3
 RUN_DEPENDS=	devel/desktop-file-utils \
 		devel/vte3 \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 FAKE_FLAGS=	doc_DATA="${WRKSRC}/README"
 LIBTOOL_FLAGS =	--tag=disable-static

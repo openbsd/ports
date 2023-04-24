@@ -3,7 +3,7 @@ ONLY_FOR_ARCHS = ${GCC4_ARCHS} ${CLANG_ARCHS}
 COMMENT =	CALF LADSPA plugins
 DISTNAME =	calf-0.0.18.6
 CATEGORIES =	audio
-REVISION =	6
+REVISION =	7
 
 HOMEPAGE =	https://calf-studio-gear.org/
 
@@ -23,7 +23,7 @@ MASTER_SITES =		https://calf-studio-gear.org/files/
 
 COMPILER =		base-clang ports-gcc
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 LIB_DEPENDS =		audio/jack \
 			devel/libglade2
 BUILD_DEPENDS +=	audio/ladspa

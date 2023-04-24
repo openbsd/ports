@@ -3,7 +3,7 @@ COMMENT =	puzzle/platform game
 DISTNAME =	meandmyshadow-0.4.1-src
 CATEGORIES =	games
 PKGNAME =	${DISTNAME:S/-src//}
-REVISION =	4
+REVISION =	5
 
 HOMEPAGE =	http://meandmyshadow.sourceforge.net/
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=meandmyshadow/}
@@ -26,7 +26,7 @@ WANTLIB += curl m pthread ssl ${COMPILER_LIBCXX} GL GLU ICE SM X11 Xext
 COMPILER =		base-clang ports-gcc base-gcc
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 CXXFLAGS +=	-Wno-narrowing
 

@@ -2,6 +2,7 @@ COMMENT =	python powered git gui
 
 MODPY_EGG_VERSION =	4.2.1
 DISTNAME =		git-cola-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =	devel x11
 
@@ -27,7 +28,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/git \
 		devel/git,-x11 \
 		textproc/xxdiff \
-		x11/gtk+3,-guic \
+		x11/gtk+4,-guic \
 		x11/py-qt5${MODPY_FLAVOR} \
 		x11/py-qtpy${MODPY_FLAVOR}
 

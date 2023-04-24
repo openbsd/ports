@@ -1,7 +1,7 @@
 COMMENT =	lightweight audio player with a simple interface
 DISTNAME =	potamus-17
 CATEGORIES =	audio x11
-REVISION =	4
+REVISION =	5
 
 HOMEPAGE =	http://offog.org/code/potamus/
 
@@ -28,7 +28,7 @@ LIB_DEPENDS =	audio/libao \
 		x11/gtk+2
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--disable-output-jack

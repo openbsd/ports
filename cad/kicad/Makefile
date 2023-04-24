@@ -7,6 +7,7 @@ V =			6.0.11
 COMMENT =		schematic and PCB editing software
 DISTNAME =		kicad-${V}
 EPOCH =			0
+REVISION =		0
 
 SHARED_LIBS +=		kicad_3dsg                1.0 # 2.0
 
@@ -54,7 +55,7 @@ RUN_DEPENDS =		cad/kicad-share/footprints>=${V} \
 			cad/kicad-share/templates>=${V} \
 			devel/desktop-file-utils \
 			misc/shared-mime-info \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 LIB_DEPENDS =		cad/ngspice/libngspice \
 			cad/oce \

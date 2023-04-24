@@ -10,6 +10,7 @@ V =		8.0.0
 PKGNAME =	digikam-${V}
 DISTNAME =	digiKam-${V}
 CATEGORIES =	graphics
+REVISION =	0
 
 HOMEPAGE =	https://www.digikam.org/
 
@@ -65,7 +66,7 @@ BUILD_DEPENDS =	devel/bison \
 RUN_DEPENDS =	databases/sqlite3 \
 		devel/desktop-file-utils \
 		devel/kf5/kdoctools \
-		x11/gtk+3,-guic \
+		x11/gtk+4,-guic \
 		x11/qt5/qtwebview
 
 LIB_DEPENDS =	audio/portaudio-svn \

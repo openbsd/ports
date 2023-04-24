@@ -5,7 +5,7 @@ GH_ACCOUNT=		ApostropheEditor
 GH_PROJECT=		Apostrophe
 
 PKGNAME=		apostrophe-${GH_TAGNAME:S/v//}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		editors
 
@@ -29,7 +29,7 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 			textproc/py-pypandoc${MODPY_FLAVOR} \
 			www/webkitgtk4 \
 			x11/gtk+3 \
-			x11/gtk+3,-guic \
+			x11/gtk+4,-guic \
 			x11/libhandy
 
 LIB_DEPENDS=		www/sassc \

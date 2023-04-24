@@ -1,5 +1,6 @@
 COMMENT =	framework to create integrate services and actions
 DISTNAME =	purpose-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  KF5Purpose                2.1
 SHARED_LIBS +=  KF5PurposeWidgets         2.0
@@ -23,7 +24,7 @@ BUILD_DEPENDS =	devel/gettext,-tools \
 
 RUN_DEPENDS =	x11/qt5/qtquickcontrols \
 		devel/kf5/kirigami2>=${MODKF5_VERSION} \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 LIB_DEPENDS =	devel/kf5/kcompletion>=${MODKF5_VERSION} \
 		devel/kf5/kcoreaddons>=${MODKF5_VERSION} \

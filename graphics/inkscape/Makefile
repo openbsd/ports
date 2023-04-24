@@ -2,6 +2,7 @@ COMMENT =	SVG vector drawing application
 
 VERSION =	1.2.2
 DISTNAME =	inkscape-${VERSION}
+REVISION =	0
 
 CATEGORIES =	graphics
 
@@ -66,7 +67,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		textproc/py-cssselect${MODPY_FLAVOR} \
 		textproc/py-lxml${MODPY_FLAVOR} \
 		www/py-requests${MODPY_FLAVOR} \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 WRKDIST =	${WRKDIR}/inkscape-${VERSION}_2022-12-01_b0a8486541
 

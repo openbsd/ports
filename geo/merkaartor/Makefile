@@ -3,6 +3,7 @@ COMMENT =	OpenStreetMap editor
 GH_ACCOUNT =	openstreetmap
 GH_PROJECT =	merkaartor
 GH_TAGNAME =	0.19.0
+REVISION =	0
 
 CATEGORIES =	geo x11
 
@@ -15,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 NO_TEST =	Yes
 MODULES =	devel/cmake x11/qt5
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 # spatialite is marked as non-working
 LIB_DEPENDS =	devel/proj \

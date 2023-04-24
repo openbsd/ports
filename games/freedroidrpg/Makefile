@@ -5,6 +5,7 @@ COMMENT=		isometric RPG game
 DISTNAME=		freedroidRPG-1.0
 PKGNAME=		${DISTNAME:L}
 CATEGORIES=		games x11
+REVISION=		0
 
 HOMEPAGE=		https://www.freedroid.org/
 
@@ -39,7 +40,7 @@ LIB_DEPENDS=		devel/sdl-gfx \
 			${MODLUA_LIB_DEPENDS}
 
 RUN_DEPENDS=		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 CONFIGURE_STYLE=	gnu
 

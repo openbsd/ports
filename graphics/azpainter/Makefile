@@ -4,6 +4,7 @@ DISTNAME =	azpainter-v${V}
 PKGNAME =	azpainter-${V}
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	graphics multimedia x11
+REVISION =	0
 
 HOMEPAGE =	http://azsky2.html.xdomain.jp/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -27,7 +28,7 @@ LIB_DEPENDS =	converters/libiconv \
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 # CONFIGURE_ARGS is not a typo.
 # The configure script is broken.

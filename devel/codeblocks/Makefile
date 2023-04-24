@@ -3,7 +3,7 @@ COMMENT=	Code::Blocks C/C++ IDE
 
 R=		12751
 V=		20.03
-REVISION=	3
+REVISION=	4
 
 DISTNAME=	codeblocks-${V}pl${R}
 EXTRACT_SUFX=	.tar.xz
@@ -61,7 +61,7 @@ LIB_DEPENDS=	archivers/bzip2 \
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		misc/shared-mime-info \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 # C++11
 COMPILER =		base-clang ports-gcc

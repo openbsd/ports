@@ -3,6 +3,7 @@ COMMENT =	economic and military simulation game
 GH_ACCOUNT = 	widelands
 GH_PROJECT = 	widelands
 GH_TAGNAME = 	v1.0
+REVISION =      0
 
 CATEGORIES =	games
 
@@ -29,7 +30,7 @@ LIB_DEPENDS =	devel/boost \
 		net/curl \
 		textproc/icu4c
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 MODULES =	devel/cmake \
 		lang/lua \

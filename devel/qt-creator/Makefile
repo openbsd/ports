@@ -5,7 +5,7 @@ COMMENT =		cross-platform IDE for use with Qt
 V =			8.0.2
 DISTNAME =		qt-creator-opensource-src-${V}
 PKGNAME =		qt-creator-${V}
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS +=  Aggregation               1.1 # 0.0
 SHARED_LIBS +=  CPlusPlus                 6.0 # 0.0
@@ -62,7 +62,7 @@ RUN_DEPENDS =	devel/clang-tools-extra \
 		devel/gmake \
 		devel/llvm \
 		lang/clazy \
-		x11/gtk+3,-guic \
+		x11/gtk+4,-guic \
 		x11/qt5/qtquickcontrols
 
 LIB_DEPENDS =	devel/kf5/syntax-highlighting \

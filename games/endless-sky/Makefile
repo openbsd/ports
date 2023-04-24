@@ -4,6 +4,7 @@ CATEGORIES =	games x11
 GH_ACCOUNT =	endless-sky
 GH_PROJECT =	endless-sky
 GH_TAGNAME =	v0.9.12
+REVISION =	0
 
 HOMEPAGE =	https://endless-sky.github.io/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -28,7 +29,7 @@ LIB_DEPENDS =	audio/libmad \
 		graphics/png
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 MAKE_ENV =	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib"

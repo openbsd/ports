@@ -2,7 +2,7 @@ BROKEN-alpha =	OOM on XcomRuleset.cpp
 BROKEN-hppa =	OOM on Engine/Scalers/hq4x.cpp
 COMMENT =		open source reimplementation of the original X-Com
 DISTNAME =		openxcom-1.0.0
-REVISION =		10
+REVISION =		11
 EPOCH =			0
 CATEGORIES =		games x11
 
@@ -24,7 +24,7 @@ COMPILER =		base-clang ports-gcc
 
 RUN_DEPENDS =		audio/timidity \
 			devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 LIB_DEPENDS =		devel/sdl-gfx \
 			devel/sdl-image \
 			devel/sdl-mixer \

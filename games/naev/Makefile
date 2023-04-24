@@ -3,6 +3,8 @@ ONLY_FOR_ARCHS = 	aarch64 amd64 i386
 
 COMMENT-main =		2D space trading and combat game
 COMMENT-data =		naev game data
+REVISION-data =		0
+REVISION-main =		0
 
 V = 			0.10.4
 DISTNAME =		naev-${V}-source
@@ -43,7 +45,7 @@ LIB_DEPENDS-main =	audio/libvorbis \
 			${MODLUA_LIB_DEPENDS}
 RUN_DEPENDS-main =	devel/desktop-file-utils \
 			naev-data-${V}:${BUILD_PKGPATH},-data \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 CONFIGURE_ARGS +=	-Ddocs_c=disabled \
 			-Ddocs_lua=disabled \

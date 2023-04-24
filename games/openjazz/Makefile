@@ -1,6 +1,6 @@
 COMMENT =	open-source version of the classic Jazz Jackrabbit games
 DISTNAME =	openjazz-20190120
-REVISION =	0
+REVISION =	1
 CATEGORIES =	games x11
 
 # Upstream does make real tarballs.
@@ -23,7 +23,7 @@ BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \
 LIB_DEPENDS =	devel/sdl
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 CONFIGURE_STYLE =	gnu
 

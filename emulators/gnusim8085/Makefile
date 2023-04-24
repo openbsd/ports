@@ -2,7 +2,7 @@ COMMENT =		graphical 8085 simulator, assembler, and debugger
 
 V =			1.3.7
 DISTNAME =		gnusim8085-${V}
-REVISION =		6
+REVISION =		7
 
 CATEGORIES =		emulators devel
 
@@ -22,7 +22,7 @@ MASTER_SITES =		http://launchpad.net/gnusim8085/trunk/${V}/+download/
 
 BUILD_DEPENDS =		devel/gettext,-tools
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 LIB_DEPENDS =		x11/gtksourceview
 
 CONFIGURE_STYLE =	gnu

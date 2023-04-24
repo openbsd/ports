@@ -5,6 +5,7 @@ COMMENT =	stand-alone photo geotagging program
 V =		1.4.0
 DISTNAME =	kgeotag-${V}
 CATEGORIES =	geo x11
+REVISION =	0
 
 HOMEPAGE =	https://kgeotag.kde.org
 
@@ -30,7 +31,7 @@ BUILD_DEPENDS =	devel/kf5/kdoctools \
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/kf5/kdoctools \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcodecs \

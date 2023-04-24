@@ -3,6 +3,7 @@ COMMENT =	screenshot tool with annotations features
 GH_ACCOUNT =	ksnip
 GH_PROJECT =	ksnip
 GH_TAGNAME =	v1.10.0
+REVISION =	0
 
 CATEGORIES =	graphics
 
@@ -19,7 +20,7 @@ EXTRACT_SUFX =		.tar.gz
 MODULES =		devel/kf5
 
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 LIB_DEPENDS =		graphics/kcolorpicker>=0.2.0 \
 			graphics/kimageannotator>=0.6.0 \

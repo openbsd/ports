@@ -6,6 +6,8 @@ COMMENT-main=	multi-platform productivity suite
 COMMENT-kde=	optional integration of LibreOffice to the KDE environment
 COMMENT-java=	optional integration of LibreOffice java features
 
+REVISION=	0
+
 SHARED_LIBS +=  etonyek-0.1-lo            1.10 # 1.10
 SHARED_LIBS +=  langtag-lo                5.1 # 5.1
 SHARED_LIBS +=  mwaw-0.3-lo               3.21 # 3.21
@@ -241,7 +243,7 @@ RUN_DEPENDS-main=	devel/desktop-file-utils \
 			security/nss \
 			textproc/clucene \
 			x11/gtk+3 \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 MODULES+=		x11/qt5
 RUN_DEPENDS-kde=	editors/libreoffice

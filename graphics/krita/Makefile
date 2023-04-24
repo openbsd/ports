@@ -2,7 +2,7 @@ COMMENT =	advanced drawing and image manipulation
 
 VERSION =	5.1.5
 DISTNAME =	krita-${VERSION}
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS +=  kritabasicflakes          4.1 # 16.0
 SHARED_LIBS +=  kritacolord               2.0 # 16.0
@@ -66,7 +66,7 @@ MODPY_RUNDEP=	No
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			net/curl \
-			x11/gtk+3,-guic \
+			x11/gtk+4,-guic \
 			x11/qt5/qtquickcontrols
 
 BUILD_DEPENDS =		devel/gettext,-tools \

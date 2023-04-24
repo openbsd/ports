@@ -3,7 +3,7 @@ COMMENT =	user-friendly TeX/LaTeX editor for KDE
 CATEGORIES =	editors
 
 DISTNAME =	kile-2.9.93
-REVISION =	4
+REVISION =	5
 
 HOMEPAGE =	https://kile.sourceforge.io
 
@@ -38,7 +38,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		graphics/ImageMagick \
 		misc/shared-mime-info \
 		print/texlive/base \
-		x11/gtk+3,-guic \
+		x11/gtk+4,-guic \
 		x11/kde-applications/kate
 
 LIB_DEPENDS =	devel/kf5/kauth \

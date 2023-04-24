@@ -1,7 +1,7 @@
 COMMENT=		fast and simple image viewer
 
 DISTNAME=		viewnior-1.6
-REVISION=		8
+REVISION=		9
 
 CATEGORIES=		graphics x11
 
@@ -28,7 +28,7 @@ LIB_DEPENDS=		graphics/exiv2 \
 			x11/gtk+2
 
 RUN_DEPENDS=		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 USE_GMAKE=		yes
 

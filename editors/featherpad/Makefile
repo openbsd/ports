@@ -1,6 +1,7 @@
 COMMENT =	lightweight Qt5 plain-text editor
 PKGNAME =	featherpad-${GH_TAGNAME:S/^V//}
 CATEGORIES =	editors x11
+REVISION =	0
 
 GH_ACCOUNT =	tsujan
 GH_PROJECT =	FeatherPad
@@ -23,7 +24,7 @@ LIB_DEPENDS =	textproc/hunspell \
 		x11/qt5/qtx11extras
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 CONFIGURE_ARGS =	-DCMAKE_INSTALL_PREFIX="${PREFIX}"
 

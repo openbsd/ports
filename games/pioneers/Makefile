@@ -2,7 +2,7 @@ COMMENT=		Settlers of Catan for GNOME/Gtk
 
 GNOME_PROJECT=		pioneers
 GNOME_VERSION=		15.5
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		games
 
@@ -27,7 +27,7 @@ MODULES=		textproc/intltool \
 
 BUILD_DEPENDS=		x11/gnome/librsvg
 
-RUN_DEPENDS=		x11/gtk+3,-guic
+RUN_DEPENDS=		x11/gtk+4,-guic
 
 LIB_DEPENDS=		devel/libnotify \
 			x11/gtk+3

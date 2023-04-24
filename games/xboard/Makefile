@@ -3,7 +3,7 @@ COMMENT=	X11 frontend for GNU Chess and the Internet Chess Server
 DISTNAME=	xboard-4.9.1
 CATEGORIES=	games x11
 MASTER_SITES=	${MASTER_SITE_GNU:=xboard/}
-REVISION=	5
+REVISION=	6
 
 HOMEPAGE=	https://www.gnu.org/software/xboard/
 
@@ -26,7 +26,7 @@ RUN_DEPENDS=		games/gnuchess \
 			devel/desktop-file-utils \
 			devel/xdg-utils \
 			misc/shared-mime-info \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 FAKE_FLAGS =		sysconfdir="${PREFIX}/share/examples/xboard/"
 

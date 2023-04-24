@@ -3,7 +3,7 @@ COMMENT =	Jagged Alliance 2 engine
 GH_ACCOUNT =	ja2-stracciatella
 GH_PROJECT =	ja2-stracciatella
 GH_TAGNAME =	v0.15.1
-REVISION =	6
+REVISION =	7
 
 CATEGORIES =	games
 
@@ -19,7 +19,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 LIB_DEPENDS =	devel/sdl \
 		devel/boost
 
-RUN_DEPENDS =	x11/gtk+3,-guic \
+RUN_DEPENDS =	x11/gtk+4,-guic \
 		devel/desktop-file-utils
 
 USE_GMAKE =	Yes

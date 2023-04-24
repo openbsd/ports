@@ -3,7 +3,7 @@ COMMENT =	small and fast Qt image viewer
 GH_ACCOUNT =	nomacs
 GH_PROJECT =	nomacs
 GH_TAGNAME =	3.17.2206
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	graphics
 
@@ -24,7 +24,7 @@ MODULES =		devel/cmake \
 			x11/qt5
 
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+3,-guic \
+			x11/gtk+4,-guic \
 			x11/qt5/qtimageformats
 
 LIB_DEPENDS =		archivers/quazip>=1.3 \

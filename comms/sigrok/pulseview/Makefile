@@ -1,4 +1,5 @@
 COMMENT =		graphical frontend for sigrok logic analyzer
+REVISION =		0
 
 SIGROK_PROJECT =	pulseview
 SIGROK_VERSION =	0.4.2
@@ -17,7 +18,7 @@ LIB_DEPENDS =		comms/sigrok/libsigrok \
 			devel/glib2mm \
 			x11/qt5/qtsvg
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 CONFIGURE_STYLE =	cmake
 CONFIGURE_ARGS =	-DQt5_DIR=${MODQT5_LIBDIR}/cmake/Qt5 \

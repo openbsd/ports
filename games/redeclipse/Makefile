@@ -16,8 +16,8 @@ PKGNAME=	${N}-${V}
 MASTER_SITES=	https://github.com/red-eclipse/base/releases/download/v${V}/
 DISTNAME=	redeclipse_${V}_combined
 EXTRACT_SUFX=	.tar.bz2
-REVISION-main=	2
-REVISION-data=	0
+REVISION-main=	3
+REVISION-data=	1
 
 PKG_ARCH-data=	*
 
@@ -28,7 +28,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 RUN_DEPENDS-main +=	${BASE_PKGPATH},-data>=${V} \
 			devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 BUILD_DEPENDS=		graphics/GraphicsMagick
 LIB_DEPENDS-main=	devel/sdl2-mixer \

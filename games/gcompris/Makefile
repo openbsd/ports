@@ -5,6 +5,7 @@ DISTNAME=	gcompris-qt-${V}
 PKGNAME=	gcompris-${V}
 EPOCH=		0
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 CATEGORIES=	games education
 
@@ -36,7 +37,7 @@ LIB_DEPENDS=	x11/qt5/qtcharts \
 		x11/qt5/qtsvg
 
 RUN_DEPENDS=	devel/desktop-file-utils \
-		x11/gtk+3,-guic \
+		x11/gtk+4,-guic \
 		x11/qt5/qtgraphicaleffects
 
 CONFIGURE_ARGS=	-DQML_BOX2D_MODULE=disabled

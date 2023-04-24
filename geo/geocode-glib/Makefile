@@ -7,7 +7,7 @@ GNOME_PROJECT=		geocode-glib
 PKGNAME-main=		${GNOME_PROJECT}-${GNOME_VERSION}
 FULLPKGNAME-icons=	${GNOME_PROJECT}-icons-${GNOME_VERSION}
 FULLPKGPATH-icons=	geo/geocode-glib,-icons
-REVISION-icons=		0
+REVISION-icons=		1
 
 SHARED_LIBS += geocode-glib              0.1 # 0.0.0
 SHARED_LIBS += geocode-glib-2            0.0 # 0.0.0
@@ -47,7 +47,7 @@ CONFIGURE_ARGS +=	-Dsoup2=false
 LIB_DEPENDS-main +=	devel/libsoup
 WANTLIB-main += soup-2.4
 .endif
-REVISION-main=		0
+REVISION-main=		1
 
 RUN_DEPENDS-main=	geo/geocode-glib,-icons
 

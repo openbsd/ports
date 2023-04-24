@@ -5,6 +5,7 @@ DISTNAME =		lmms_$V
 PKGNAME =		lmms-$V
 WRKDIST =		${WRKDIR}/lmms
 EXTRACT_SUFX =		.tar.xz
+REVISION =		0
 
 CATEGORIES =		audio
 
@@ -31,7 +32,7 @@ BUILD_DEPENDS =		shells/bash
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			misc/shared-mime-info \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 LIB_DEPENDS =		audio/fluidsynth \
 			audio/jack \
 			audio/lame \

@@ -5,7 +5,7 @@ PKGNAME =		moonlight-qt-${V}
 
 DISTNAME =		MoonlightSrc-${V}
 MASTER_SITES =		https://github.com/moonlight-stream/moonlight-qt/releases/download/v${V}/
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		games
 
@@ -22,7 +22,7 @@ WANTLIB += drm m opus ssl
 MODULES =		devel/qmake \
 			x11/qt5
 
-RUN_DEPENDS =		x11/gtk+3,-guic \
+RUN_DEPENDS =		x11/gtk+4,-guic \
 			devel/desktop-file-utils
 
 LIB_DEPENDS =		graphics/ffmpeg \

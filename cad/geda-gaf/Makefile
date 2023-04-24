@@ -3,6 +3,7 @@ V =			1.10.2
 DISTNAME =		geda-gaf-${V}
 CATEGORIES =		cad
 HOMEPAGE =		http://wiki.geda-project.org/geda:gaf
+REVISION =		0
 
 SHARED_LIBS = 		geda		1.0	# 47.0
 SHARED_LIBS +=		gedacairo	0.0	# 1.3
@@ -36,7 +37,7 @@ BUILD_DEPENDS =		misc/shared-mime-info \
 RUN_DEPENDS = 		misc/shared-mime-info \
 			devel/desktop-file-utils \
 			devel/xdg-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 MODULES =		lang/python
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_2}

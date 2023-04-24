@@ -1,7 +1,7 @@
 COMMENT =	2D arcade game
 
 DISTNAME =	blobwars-2.00
-REVISION =	4
+REVISION =	5
 FIX_EXTRACT_PERMISSIONS=Yes
 
 CATEGORIES =	games
@@ -29,7 +29,7 @@ LIB_DEPENDS =	devel/sdl2-image \
 		devel/sdl2-ttf
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 CXXFLAGS +=	-DOpenBSD
 

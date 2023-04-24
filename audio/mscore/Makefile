@@ -4,7 +4,7 @@ V =		3.5
 COMMENT =	WYSIWYG music notation software (MuseScore)
 DISTNAME =	MuseScore-${V}.0
 PKGNAME =	musescore-${V}
-REVISION =	1
+REVISION =	2
 EXTRACT_SUFX =	.zip
 CATEGORIES =	audio x11
 
@@ -38,7 +38,7 @@ LIB_DEPENDS =	audio/portaudio-svn \
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 CONFIGURE_ARGS =-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 		-DBUILD_ALSA=OFF \

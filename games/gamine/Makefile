@@ -1,7 +1,7 @@
 COMMENT=		interactive game for young children
 
 DISTNAME=		gamine-1.6
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		games
 
@@ -17,7 +17,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gamine-game/}
 BUILD_DEPENDS=		devel/gettext,-tools
 
 RUN_DEPENDS=		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 # sndio(7) support
 RUN_DEPENDS +=		multimedia/gstreamer1/plugins-base

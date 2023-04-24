@@ -1,7 +1,7 @@
 COMMENT=		GNU editor: extensible, customizable, self-documenting
 
 VERSION=		28.2
-REVISION=		3
+REVISION=		4
 DISTNAME=		emacs-${VERSION}
 
 CATEGORIES=		editors
@@ -66,7 +66,7 @@ LIB_DEPENDS+=		devel/harfbuzz \
 			x11/gnome/librsvg
 RUN_DEPENDS+=		devel/desktop-file-utils \
 			devel/xdg-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 . if ${FLAVOR} == "athena"
 CONFIGURE_ARGS+=	--with-x-toolkit=athena
 LIB_DEPENDS+=		x11/Xaw3d

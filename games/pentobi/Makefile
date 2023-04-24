@@ -2,7 +2,7 @@ COMMENT =	free clone of Blokus board game
 DISTNAME =	pentobi-18.1
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	games x11
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://pentobi.sourceforge.net/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -31,7 +31,7 @@ LIB_DEPENDS =	x11/qt5/qtdeclarative \
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
-		x11/gtk+3,-guic \
+		x11/gtk+4,-guic \
 		x11/qt5/qttools
 
 CONFIGURE_ARGS =	-DMETAINFO_ITS="${LOCALBASE}/share/gettext/its/appdata.its" \

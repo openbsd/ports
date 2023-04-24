@@ -5,6 +5,7 @@ COMMENT =		open-source implementation of Bioware's Infinity Engine
 V =			0.8.8
 DISTNAME =		gemrb-${V}-sources
 PKGNAME =		gemrb-${V}
+REVISION =		0
 
 CATEGORIES =		games emulators x11
 
@@ -32,7 +33,7 @@ LIB_DEPENDS =		audio/openal \
 			x11/vlc \
 			${MODPY_LIB_DEPENDS}
 RUN_DEPENDS = 		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 CONFIGURE_ARGS +=	-DSYSCONF_DIR=${SYSCONFDIR}/gemrb \
 			-DEXAMPLE_CONF_DIR=${PREFIX}/share/examples/gemrb/ \

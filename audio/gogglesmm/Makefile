@@ -1,7 +1,7 @@
 COMMENT =	music collection manager and player
 DISTNAME =	gogglesmm-0.12.7
 EXTRACT_SUFX =	.tar.xz
-REVISION =	14
+REVISION =	15
 CATEGORIES =	audio x11
 
 HOMEPAGE =	https://gogglesmm.github.io/
@@ -23,7 +23,7 @@ LIB_DEPENDS =	audio/taglib \
 		x11/dbus
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 CONFIGURE_ARGS =	--prefix=${PREFIX} \
 			--with-md5=internal

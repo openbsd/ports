@@ -7,8 +7,8 @@ COMMENT-nogui =		Nintendo GameCube and Wii emulator
 V =			5.0.0.20190621
 DISTNAME =		dolphin-emu-${V}
 PKGNAME =		dolphin-${V}
-REVISION-main =		3
-REVISION-nogui =	3
+REVISION-main =		4
+REVISION-nogui =	4
 
 MULTI_PACKAGES =	-main -nogui
 
@@ -56,7 +56,7 @@ LIB_DEPENDS-main =	${LIB_DEPENDS-nogui} \
 RUN_DEPENDS-main =	${RUN_DEPENDS-nogui} \
 			devel/desktop-file-utils \
 			emulators/dolphin,-nogui \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 CONFIGURE_ARGS +=	-Dmandir:=${PREFIX}/man \
 			-DENABLE_ALSA=OFF \
 			-DENABLE_PULSEAUDIO=OFF \

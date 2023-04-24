@@ -1,7 +1,7 @@
 COMMENT=	audio player and tagger for GTK+ with regex support
 
 MODPY_EGG_VERSION= 4.5.0
-REVISION=	2
+REVISION=	3
 DISTNAME=	quodlibet-${MODPY_EGG_VERSION}
 PORTROACH=	skipv:release-${MODPY_EGG_VERSION}
 
@@ -29,7 +29,7 @@ RUN_DEPENDS+=	devel/desktop-file-utils \
 		multimedia/gstreamer1/plugins-good>=1.20.3p0 \
 		multimedia/gstreamer1/plugins-libav \
 		multimedia/xine-lib \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		devel/gettext,-runtime \

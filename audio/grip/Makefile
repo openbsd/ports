@@ -1,6 +1,7 @@
 COMMENT=		front-end to external cd audio rippers and mp3 encoders
 
 DISTNAME=		grip-4.2.4
+REVISION=		0
 
 CATEGORIES=		audio
 
@@ -33,7 +34,7 @@ LIB_DEPENDS=		audio/cdparanoia \
 			x11/gtk+2
 
 RUN_DEPENDS=		audio/vorbis-tools \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 BUILD_DEPENDS=		devel/gettext,-tools
 

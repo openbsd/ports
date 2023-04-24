@@ -3,7 +3,7 @@ COMMENT =		GNU Backgammon
 V =			1.07.001
 DISTNAME =		gnubg-release-$V-sources
 PKGNAME =		gnubg-$V
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		games x11
 
@@ -38,7 +38,7 @@ LIB_DEPENDS =		audio/libcanberra,-gtk3 \
 			devel/gmp \
 			net/curl
 
-RUN_DEPENDS =		x11/gtk+3,-guic \
+RUN_DEPENDS =		x11/gtk+4,-guic \
 			devel/desktop-file-utils
 
 USE_GMAKE =		Yes

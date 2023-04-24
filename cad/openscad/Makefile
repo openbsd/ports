@@ -3,7 +3,7 @@ BROKEN-sparc64=	SIGILL on src/cgalutils.cc with CGAL-4.6.3
 
 V =			2021.01
 DISTNAME =		openscad-${V}
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		cad
 
@@ -47,7 +47,7 @@ LIB_DEPENDS =		archivers/libzip \
 RUN_DEPENDS =		devel/desktop-file-utils \
 			fonts/liberation-fonts \
 			misc/shared-mime-info \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 # virtual memory exhausted: Cannot allocate memory
 .if ${MACHINE_ARCH:Malpha}

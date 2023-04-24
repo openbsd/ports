@@ -7,6 +7,7 @@ GH_ACCOUNT =	KDE
 GH_PROJECT =	ghostwriter
 GH_COMMIT =	151268bcfdca57bba4944caa7172dde9549f0622
 DISTNAME =	ghostwriter-2.2.0
+REVISION =	0
 
 CATEGORIES =	editors
 
@@ -25,7 +26,7 @@ USE_GMAKE =	Yes
 MODULES =		devel/qmake \
 			x11/qt5
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 LIB_DEPENDS =		textproc/hunspell \
 			x11/qt5/qtbase \
 			x11/qt5/qtsvg \

@@ -2,7 +2,7 @@ COMMENT =		fast paced arcade-style space shooter
 DISTNAME =		chromium-bsu-0.9.16.1
 CATEGORIES =		games x11
 HOMEPAGE =		http://chromium-bsu.sourceforge.net/
-REVISION =		2
+REVISION =		3
 
 # Clarified Artistic License
 PERMIT_PACKAGE =	Yes
@@ -18,7 +18,7 @@ USE_GMAKE =		Yes
 
 BUILD_DEPENDS =		devel/gettext,-tools
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 LIB_DEPENDS =		graphics/ftgl \
 			devel/sdl2-image \
 			audio/freealut

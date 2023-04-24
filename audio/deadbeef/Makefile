@@ -1,7 +1,7 @@
 COMMENT =		DeaDBeeF is an audio player
 DISTNAME =		deadbeef-1.9.2
 CATEGORIES =		audio
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://deadbeef.sourceforge.io/
 
@@ -36,7 +36,7 @@ BUILD_DEPENDS +=	devel/yasm
 .endif
 
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 LIB_DEPENDS =		archivers/libzip \
 			audio/faad \

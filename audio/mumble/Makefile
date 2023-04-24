@@ -4,8 +4,8 @@ COMMENT-server =	low-latency voice chat server
 VERSION =		1.4.287
 DISTNAME =		mumble-${VERSION}
 PKGNAME-server =	murmur-${VERSION}
-REVISION-main =		2
-REVISION-server =	2
+REVISION-main =		3
+REVISION-server =	3
 
 CATEGORIES =		audio net
 
@@ -68,7 +68,7 @@ LIB_DEPENDS-server =	devel/protobuf \
 TEST_DEPENDS =		x11/qt5/qtbase
 
 RUN_DEPENDS-main =	devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 # silence noisy cmake messages during configure
 CONFIGURE_ARGS +=	-Wno-dev

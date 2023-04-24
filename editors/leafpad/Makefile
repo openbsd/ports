@@ -2,6 +2,7 @@ COMMENT=	simple GTK+ text editor
 
 DISTNAME=	leafpad-0.8.19
 CATEGORIES=	editors x11
+REVISION=	0
 
 HOMEPAGE=	http://tarot.freeshell.org/leafpad/
 
@@ -21,7 +22,7 @@ MODULES=	textproc/intltool
 
 LIB_DEPENDS=	x11/gtk+2
 RUN_DEPENDS=	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 USE_GMAKE=	Yes
 

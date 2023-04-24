@@ -6,6 +6,7 @@ GH_ACCOUNT =		Gargaj
 GH_PROJECT =		Bonzomatic
 GH_TAGNAME =		2022-08-20
 PKGNAME =		bonzomatic-${GH_TAGNAME:S/-//g}
+REVISION =		0
 
 PATCH_DIST_STRIP =	-p1
 
@@ -30,7 +31,7 @@ LIB_DEPENDS =		graphics/glew \
 			graphics/glfw
 
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 # C++11
 COMPILER =		base-clang ports-gcc

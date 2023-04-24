@@ -3,7 +3,7 @@ COMMENT =		convert images to cross stitch patterns
 GH_ACCOUNT =		kleintom
 GH_PROJECT =		cstitch
 GH_TAGNAME =		0.9.8
-REVISION =		3
+REVISION =		4
 
 DISTFILES=		${DISTNAME}.tar.gz ${DISTNAME}-icons{icons}.zip:0
 
@@ -26,7 +26,7 @@ WANTLIB += GL Qt5Core Qt5Gui Qt5PrintSupport Qt5Widgets Qt5Xml
 WANTLIB += c m pthread
 WANTLIB += ${COMPILER_LIBCXX}
 
-RUN_DEPENDS =		devel/desktop-file-utils x11/gtk+3,-guic
+RUN_DEPENDS =		devel/desktop-file-utils x11/gtk+4,-guic
 
 WRKDIST = ${WRKDIR}/Cstitch-${GH_TAGNAME}
 EXTRACT_CASES += *icons.zip) \

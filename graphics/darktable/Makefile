@@ -6,6 +6,7 @@ V=		3.6.1
 DISTNAME=	darktable-$V
 PORTROACH=	limitw:1,even skipv:release-$V
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 CATEGORIES=	graphics x11
 
@@ -40,7 +41,7 @@ BUILD_DEPENDS=	sysutils/coreutils \
 		textproc/libxslt
 RUN_DEPENDS=	devel/desktop-file-utils \
 		graphics/p5-Image-ExifTool \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 LIB_DEPENDS=	devel/gettext,-runtime \
 		devel/json-glib \
 		devel/libsoup \

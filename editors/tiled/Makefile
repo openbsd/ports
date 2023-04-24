@@ -6,7 +6,7 @@ COMMENT =		tile map editor
 GH_ACCOUNT =		bjorn
 GH_PROJECT =		tiled
 GH_TAGNAME =		v1.3.1
-REVISION =		3
+REVISION =		4
 
 SHARED_LIBS +=		tiled                     1.0 # 1.0
 
@@ -30,7 +30,7 @@ BUILD_DEPENDS =		x11/qt5/qtquickcontrols
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			misc/shared-mime-info \
-			x11/gtk+3,-guic \
+			x11/gtk+4,-guic \
 			x11/qt5/qtquickcontrols
 
 NO_TEST=		Yes

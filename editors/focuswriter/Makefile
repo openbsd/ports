@@ -3,7 +3,7 @@ COMMENT =	simple, distraction-free writing environment
 DISTNAME =	focuswriter-1.7.6
 CATEGORIES =	editors
 EXTRACT_SUFX =	-src.tar.bz2
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://gottcode.org/focuswriter/
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 MODULES +=	devel/qmake \
 		x11/qt5
 RUN_DEPENDS +=	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 LIB_DEPENDS +=	textproc/hunspell \
 		x11/qt5/qtmultimedia
 

@@ -2,7 +2,7 @@ COMMENT=	portable DjVu viewer and browser plugin
 
 DISTNAME=	djview-4.10.6
 PKGNAME=	${DISTNAME:S/djview/djview4/}
-REVISION=	9
+REVISION=	10
 CATEGORIES=	graphics print
 
 HOMEPAGE=	http://djvu.sourceforge.net/djview4.html
@@ -21,7 +21,7 @@ MODULES=	x11/qt5
 LIB_DEPENDS=	graphics/djvulibre
 
 RUN_DEPENDS=	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 USE_GMAKE=	Yes
 

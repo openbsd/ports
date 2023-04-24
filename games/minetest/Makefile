@@ -6,6 +6,7 @@ IRRLICHTMT_V =		1.9.0mt7
 
 DISTNAME =		minetest-${V}
 CATEGORIES =		games x11
+REVISION =		0
 
 HOMEPAGE =		https://www.minetest.net/
 
@@ -39,7 +40,7 @@ MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
 BUILD_DEPENDS =		devel/gettext,-tools
 
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 LIB_DEPENDS =		${MODLUA_LIB_DEPENDS} \
 			audio/openal \

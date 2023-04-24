@@ -3,7 +3,7 @@ ONLY_FOR_ARCHS=	amd64 i386
 COMMENT=	3D realtime strategy on a future earth
 
 V=		4.3.2
-REVISION=	0
+REVISION=	1
 DISTNAME=	warzone2100-$V
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/Warzone2100/warzone2100/releases/download/$V/
@@ -47,7 +47,7 @@ BUILD_DEPENDS=	archivers/libzip \
 		textproc/asciidoc \
 		textproc/asciidoctor
 RUN_DEPENDS=	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 # needs glslc
 CONFIGURE_ARGS+=	-DWZ_ENABLE_BACKEND_VULKAN=OFF

@@ -1,6 +1,7 @@
 COMMENT =		Qt GUI Interface for FluidSynth
 
 DISTNAME =		qsynth-0.6.3
+REVISION =		0
 
 CATEGORIES =		audio
 
@@ -21,7 +22,7 @@ MODULES =		x11/qt5
 LIB_DEPENDS +=		audio/fluidsynth
 
 RUN_DEPENDS +=		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 USE_GMAKE =		Yes
 NO_TEST =		Yes

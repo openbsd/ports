@@ -1,6 +1,6 @@
 COMMENT=		viewer for Gerber (RS-274X) files
 DISTNAME=		gerbv-2.7.0
-REVISION=		2
+REVISION=		3
 CATEGORIES=		cad graphics
 
 HOMEPAGE=		http://gerbv.geda-project.org/
@@ -30,7 +30,7 @@ BUILD_DEPENDS=		shells/bash \
 LIB_DEPENDS=		x11/gtk+2
 
 RUN_DEPENDS=		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--disable-update-desktop-database

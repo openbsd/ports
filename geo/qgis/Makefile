@@ -10,6 +10,7 @@ DISTNAME =	qgis-3.30.1
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 DEBUG_PACKAGES =${BUILD_PACKAGES}
+REVISION =	0
 
 SHARED_LIBS =	qgis_core	69.0 \
 		qgis_app	44.0 \
@@ -53,7 +54,7 @@ RUN_DEPENDS =	x11/py-qt5${MODPY_FLAVOR} \
 		www/py-requests${MODPY_FLAVOR} \
 		editors/py-qscintilla${MODPY_FLAVOR} \
 		devel/desktop-file-utils \
-		x11/gtk+3,-guic \
+		x11/gtk+4,-guic \
 		misc/shared-mime-info
 
 LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \

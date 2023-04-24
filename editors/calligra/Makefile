@@ -3,7 +3,7 @@ HOMEPAGE =	https://www.calligra.org
 VERSION =	3.2.1
 DISTNAME =	calligra-${VERSION}
 CATEGORIES =	editors
-REVISION =	9
+REVISION =	10
 
 SHARED_LIBS =   RtfReader                 51.0 # 0.0
 SHARED_LIBS +=  basicflakes               50.0 # 0.0
@@ -82,7 +82,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/kf5/ktexteditor \
 		misc/shared-mime-info \
 		productivity/librcps \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 LIB_DEPENDS =	converters/libiconv \
 		devel/kf5/kactivities \

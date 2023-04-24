@@ -14,6 +14,7 @@ COMMENT =	continuation and extension of Vim
 GH_ACCOUNT =	neovim
 GH_PROJECT =	neovim
 GH_TAGNAME =	v0.9.0
+REVISION =	0
 
 CATEGORIES =	editors devel
 HOMEPAGE =	https://neovim.io
@@ -74,7 +75,7 @@ RUN_DEPENDS +=		devel/libmpack/lua \
 			devel/libmpack/main \
 			devel/desktop-file-utils \
 			devel/lua-compat53 \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 SEPARATE_BUILD =	Yes
 CONFIGURE_ARGS +=	-DUSE_BUNDLED=OFF \

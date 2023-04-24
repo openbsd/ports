@@ -3,6 +3,7 @@ COMMENT =		jump 'n' run game
 V =			0.6.3
 DISTNAME =		SuperTux-v${V}-Source
 PKGNAME =		supertux-$V
+REVISION =		0
 
 CATEGORIES =		games
 
@@ -28,7 +29,7 @@ MODULES +=		devel/cmake
 COMPILER =		base-clang ports-gcc
 BUILD_DEPENDS =		graphics/glm
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 LIB_DEPENDS =		devel/sdl2-image \
 			devel/physfs \
 			graphics/glew \

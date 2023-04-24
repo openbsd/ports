@@ -1,7 +1,7 @@
 COMMENT =		vertical shoot-em-up with nontraditional elements
 
 DISTNAME =		garden-1.0.9
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		games
 
@@ -19,7 +19,7 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=garden/}
 
 BUILD_DEPENDS =		devel/desktop-file-utils
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 LIB_DEPENDS =		games/allegro
 
 CONFIGURE_STYLE =	gnu

@@ -1,6 +1,7 @@
 COMMENT =	compares and merges multiple files or directories
 
 DISTNAME =	kdiff3-1.10.1
+REVISION =	0
 
 CATEGORIES =	devel
 
@@ -32,7 +33,7 @@ BUILD_DEPENDS =	devel/boost \
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/kf5/kbookmarks \
 		devel/kf5/kdoctools \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcodecs \

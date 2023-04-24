@@ -4,6 +4,7 @@ V =		2.8
 DISTNAME =	grafx2-${V}.3091-HEAD-src
 PKGNAME =	grafx2-${V}
 EXTRACT_SUFX =	.tgz
+REVISION =	0
 
 CATEGORIES =	graphics
 
@@ -20,7 +21,7 @@ MODULES =	lang/lua
 MODLUA_VERSION = 5.3
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 LIB_DEPENDS =	devel/sdl2 \
 		devel/sdl2-image

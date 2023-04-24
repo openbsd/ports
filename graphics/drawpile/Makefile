@@ -1,6 +1,7 @@
 COMMENT =	collaborative drawing program
 DISTNAME =	drawpile-2.1.20
 CATEGORIES =	graphics x11
+REVISION =	0
 
 HOMEPAGE =	https://drawpile.net/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -32,7 +33,7 @@ LIB_DEPENDS =	devel/kf5/karchive \
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 CXXFLAGS +=	-I${LOCALBASE}/include
 

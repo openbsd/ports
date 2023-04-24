@@ -10,7 +10,7 @@ COMMENT =	nintendo 3DS emulator
 DISTNAME =	citra-unified-source-20230110-ad2cbe2
 V =		1827
 PKGNAME =	citra-0.0.0.${V}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	emulators
 
@@ -37,7 +37,7 @@ BUILD_DEPENDS =	devel/catch2 \
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 LIB_DEPENDS =	devel/boost \
 		devel/cryptopp \

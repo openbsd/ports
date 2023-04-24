@@ -3,6 +3,7 @@ COMMENT =	neo simple X Image Viewer
 GH_PROJECT =	nsxiv
 GH_ACCOUNT =	nsxiv
 GH_TAGNAME =	v31
+REVISION =	0
 
 CATEGORIES =	graphics x11
 
@@ -17,7 +18,7 @@ WANTLIB += Imlib2 X11 Xft c exif fontconfig gif lib/inotify/inotify
 WANTLIB += webp webpdemux
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 LIB_DEPENDS =	devel/libinotify \
 		graphics/imlib2 \

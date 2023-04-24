@@ -1,5 +1,6 @@
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
+REVISION-main=	0
 
 # careful with PLISTs if updating; it usually works best if you use
 # a gui flavour rather than no_x11
@@ -17,6 +18,7 @@ FULLPKGNAME-lang= vim-lang-$V
 FULLPKGPATH-lang= ${PKGPATH},-lang
 P=		vim${V:R:S/.//}
 CATEGORIES=	editors
+REVISION-lang=    0
 
 HOMEPAGE=	https://www.vim.org/
 
@@ -164,7 +166,7 @@ post-install:
 	${INSTALL_DATA} ${WRKDIST}/runtime/vim48x48.png ${PREFIX}/share/pixmaps/vim.png
 
 RUN_DEPENDS+= devel/desktop-file-utils
-RUN_DEPENDS+= x11/gtk+3,-guic
+RUN_DEPENDS+= x11/gtk+4,-guic
 .endif
 
 .include <bsd.port.mk>

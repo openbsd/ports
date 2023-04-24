@@ -2,6 +2,7 @@ COMMENT=		drawing program for children
 
 V=			0.9.29
 DISTNAME=		tuxpaint-${V}
+REVISION=		0
 
 CATEGORIES=		games graphics
 
@@ -34,7 +35,7 @@ LIB_DEPENDS=		devel/sdl2-gfx \
 			x11/gnome/librsvg
 
 RUN_DEPENDS=		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 USE_GMAKE=		Yes
 

@@ -2,7 +2,7 @@ COMMENT =	lepton electronic design automation suite
 
 V =		1.9.18-20220529
 DISTNAME =	lepton-eda-${V:C/-.*//}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=	lepton               1.0      # 11.0
 SHARED_LIBS +=	leptongui            1.0      # 5.0
@@ -36,7 +36,7 @@ BUILD_DEPENDS =	devel/gettext,-tools \
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 LIB_DEPENDS =	devel/gettext,-runtime \
 		lang/guile2 \

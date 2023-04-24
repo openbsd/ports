@@ -2,7 +2,7 @@ COMMENT=		GNOME music player client
 
 VERSION=		11.8.16
 DISTNAME=		gmpc-${VERSION}
-REVISION =		21
+REVISION =		22
 
 CATEGORIES=		audio
 

@@ -5,6 +5,7 @@ COMMENT =	IDE for C, C++, Python, QML/JavaScript and PHP
 CATEGORIES =	devel x11
 
 DISTNAME =	kdevelop-${MODKDE_VERSION}
+REVISION =	0
 
 HOMEPAGE =	https://www.kdevelop.org/
 
@@ -72,7 +73,7 @@ RUN_DEPENDS =	devel/clang-tools-extra \
 		devel/gmake \
 		lang/clazy \
 		misc/shared-mime-info \
-		x11/gtk+3,-guic \
+		x11/gtk+4,-guic \
 		x11/kde-applications/kate \
 		x11/kde-applications/kio-extras \
 		x11/kde-applications/konsole

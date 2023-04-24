@@ -5,6 +5,7 @@ V =		0.3.1
 COMMENT =	open source re-implementation of RollerCoaster Tycoon 2
 DISTNAME =	openrct2-${V}
 CATEGORIES =	games x11
+REVISION =	0
 
 HOMEPAGE =	https://openrct2.org/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -38,7 +39,7 @@ LIB_DEPENDS =	archivers/libzip \
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 CONFIGURE_ARGS =	-DDOWNLOAD_OBJECTS=OFF \
 			-DDOWNLOAD_REPLAYS=OFF \

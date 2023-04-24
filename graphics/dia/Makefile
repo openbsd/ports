@@ -2,7 +2,7 @@ COMMENT=		technical diagrams drawing tool
 
 GNOME_PROJECT=		dia
 GNOME_VERSION=		0.97.3
-REVISION=		9
+REVISION=		10
 
 CATEGORIES=		graphics
 

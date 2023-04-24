@@ -2,6 +2,7 @@ COMMENT =		digital photo organizer
 
 GNOME_VERSION =		0.32.0
 GNOME_PROJECT =		shotwell
+REVISION =		0
 
 SHARED_LIBS += shotwell-plugin-dev-1.0   0.0 # 0.32.0
 SHARED_LIBS += shotwell-plugin-common    0.0 # 0.32.0

@@ -3,6 +3,7 @@ V=		2.7.0
 DISTNAME=	scummvm-${V}
 CATEGORIES=	games x11 emulators
 MASTER_SITES=	https://downloads.scummvm.org/frs/scummvm/${V}/
+REVISION=	0
 
 HOMEPAGE=	https://www.scummvm.org/
 
@@ -19,7 +20,7 @@ WANTLIB += vorbisfile z
 COMPILER=	base-clang ports-gcc
 
 RUN_DEPENDS=	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 LIB_DEPENDS=	audio/fluidsynth \
 		audio/liba52 \
 		audio/libmad \

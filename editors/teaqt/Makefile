@@ -4,7 +4,7 @@ GH_ACCOUNT =	psemiletov
 GH_PROJECT =	tea-qt
 GH_TAGNAME =	50.0.4
 PKGNAME =	teaqt-${GH_TAGNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	editors x11
 
@@ -25,7 +25,7 @@ LIB_DEPENDS =	graphics/djvulibre \
 		textproc/hunspell
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 
 CFLAGS +=	-I${LOCALBASE}/include

@@ -2,6 +2,7 @@ COMMENT=		GTK+-based electronic waveform viewer
 
 DISTNAME=		gtkwave-3.3.113
 CATEGORIES=		cad
+REVISION=		0
 
 HOMEPAGE=		http://gtkwave.sourceforge.net/
 
@@ -24,7 +25,7 @@ BUILD_DEPENDS=		devel/gperf
 
 RUN_DEPENDS=		devel/desktop-file-utils \
 			misc/shared-mime-info \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 LIB_DEPENDS=		archivers/bzip2 \
 			archivers/xz \

@@ -3,7 +3,7 @@ COMMENT =	ridiculous shoot-em-up game
 DISTNAME =	mars_source_${V}
 PKGNAME =	mars-${V}
 CATEGORIES =	games x11
-REVISION =	8
+REVISION =	9
 
 HOMEPAGE =	http://mars-game.sourceforge.net/
 
@@ -26,7 +26,7 @@ LIB_DEPENDS =	audio/taglib \
 		multimedia/sfml
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 NO_TEST =	Yes
 WRKDIST =	${WRKDIR}/mars-game

@@ -3,7 +3,7 @@ COMMENT=	electric diagrams drawing tool
 DISTNAME =	qet-0.7.0
 PKGNAME = 	qelectrotech-0.70
 CATEGORIES =	cad graphics
-REVISION =      0
+REVISION =      1
 
 HOMEPAGE =	https://qelectrotech.org/
 MASTER_SITES =	https://git.tuxfamily.org/qet/qet.git/snapshot/
@@ -26,7 +26,7 @@ WANTLIB += KF5CoreAddons KF5WidgetsAddons
 
 RUN_DEPENDS =	misc/shared-mime-info \
 		devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 CONFIGURE_STYLE =	qmake
 CONFIGURE_ENV =		QMAKEMODULES=${LOCALBASE}/share/kf5/mkspecs

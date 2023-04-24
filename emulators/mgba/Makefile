@@ -1,13 +1,15 @@
 COMMENT-main =		Game Boy Color/Advance emulator
 COMMENT-qt =		Game Boy Color/Advance emulator with GUI
 COMMENT-libretro =	Game Boy Color/Advance core for retroarch
+REVISION-qt =		0
 
 V =			0.9.2
 GH_ACCOUNT =		mgba-emu
 GH_PROJECT =		mgba
 GH_TAGNAME =		$V
 PKGNAME-libretro =	libretro-mgba-$V
-REVISION-main =		0
+REVISION-main =		1
+REVISION-libretro =	0
 
 MULTI_PACKAGES =	-main -qt -libretro
 DEBUG_PACKAGES =	-main -qt -libretro
@@ -46,7 +48,7 @@ LIB_DEPENDS-qt =	${LIB_DEPENDS-main} \
 			x11/qt5/qtmultimedia
 LIB_DEPENDS-libretro =
 RUN_DEPENDS-qt =	devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 CONFIGURE_ARGS +=	-DBUILD_LIBRETRO=ON \
 			-DUSE_PLEDGE_UNVEIL=ON \

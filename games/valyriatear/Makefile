@@ -5,7 +5,7 @@ COMMENT =	free J-RPG game
 DISTNAME =	ValyriaTear-src-with-deps-${V}
 PKGNAME =	valyriatear-${V}
 CATEGORIES =	games x11
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://valyriatear.blogspot.com/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -40,7 +40,7 @@ LIB_DEPENDS =	audio/libogg \
 		graphics/glew
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 WRKDIST =	${WRKDIR}/ValyriaTear
 

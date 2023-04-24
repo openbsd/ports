@@ -4,6 +4,7 @@ COMMENT=		free open source planetarium
 
 V=			23.1
 DISTNAME=		stellarium-${V}
+REVISION=		0
 
 CATEGORIES=		astro x11
 
@@ -44,7 +45,7 @@ LIB_DEPENDS=		misc/gpsd \
 RUN_DEPENDS=		net/curl \
 			devel/desktop-file-utils \
 			misc/shared-mime-info \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 CONFIGURE_ENV=		HOME=${WRKDIR}
 PORTHOME=		${WRKDIR}

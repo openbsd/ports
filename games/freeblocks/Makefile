@@ -4,7 +4,7 @@ CATEGORIES =	games x11
 GH_ACCOUNT =	dorkster
 GH_PROJECT =	freeblocks
 GH_TAGNAME =	v0.5
-REVISION =	3
+REVISION =	4
 
 HOMEPAGE =	https://github.com/dorkster/freeblocks
 
@@ -20,7 +20,7 @@ LIB_DEPENDS =	devel/sdl-image \
 		devel/sdl-ttf
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 CONFIGURE_ARGS =	-DDATADIR="${PREFIX}/share/freeblocks"
 

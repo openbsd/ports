@@ -1,4 +1,5 @@
 COMMENT =		n64 emulator command-line ui plugin
+REVISION =		0
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
@@ -14,6 +15,6 @@ MAKE_FLAGS +=		MANDIR=${PREFIX}/man \
 USE_WXNEEDED =		Yes
 
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 .include <bsd.port.mk>

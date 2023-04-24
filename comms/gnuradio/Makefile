@@ -7,7 +7,7 @@ COMMENT =	signal-processing toolkit for SDR (software-defined radio)
 
 V =		3.8.2.0
 DISTNAME =	gnuradio-$V
-REVISION =	5
+REVISION =	6
 
 SHARED_LIBS +=  gnuradio-analog           0.0 # 3.7
 SHARED_LIBS +=  gnuradio-atsc             0.0 # 3.7
@@ -79,7 +79,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
 		textproc/py-lxml${MODPY_FLAVOR} \
 		textproc/py-yaml${MODPY_FLAVOR} \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 LIB_DEPENDS =	audio/jack \
 		audio/gsm \

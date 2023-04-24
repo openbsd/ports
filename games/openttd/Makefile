@@ -3,7 +3,7 @@ COMMENT=	open source clone of the game Transport Tycoon Deluxe
 V =		13.0
 DISTNAME =	openttd-$V-source
 PKGNAME =	openttd-$V
-REVISION =	1
+REVISION =	2
 
 CATEGORIES=	games
 
@@ -44,7 +44,7 @@ RUN_DEPENDS =		audio/timidity \
 			games/openttd-data/opengfx \
 			games/openttd-data/openmsx \
 			games/openttd-data/opensfx \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 CONFIGURE_ARGS =	-DCMAKE_INSTALL_BINDIR=bin \
 			-DCMAKE_INSTALL_DATADIR=share

@@ -3,6 +3,7 @@ COMMENT=	Oxyd/Rock'n'Roll clone
 V=		1.30
 PKGNAME=	enigma-${V}
 DISTNAME=	Enigma-${V}
+REVISION=	0
 
 CATEGORIES=	games x11
 
@@ -25,7 +26,7 @@ WRKDIST=	${WRKDIR}/enigma-${V}
 BUILD_DEPENDS =	graphics/ImageMagick
 
 RUN_DEPENDS=	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 LIB_DEPENDS=	devel/gettext,-runtime \
 		converters/libiconv \

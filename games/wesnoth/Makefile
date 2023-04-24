@@ -4,6 +4,7 @@ BROKEN-hppa =	missing atomic ops
 COMMENT=	fantasy turn-based strategy game
 
 DISTNAME=	wesnoth-1.16.8
+REVISION=	0
 
 CATEGORIES=	games x11
 
@@ -40,7 +41,7 @@ LIB_DEPENDS=	devel/boost,-md \
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		textproc/libxslt \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 CONFIGURE_ARGS+=-DFIFO_DIR=${VARBASE}/wesnothd \
 		-DSERVER_UID=708 \

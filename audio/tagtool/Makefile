@@ -1,7 +1,7 @@
 COMMENT=	Ogg Vorbis and MP3 files tagger
 
 DISTNAME=	tagtool-0.12.3
-REVISION=	28
+REVISION=	29
 CATEGORIES=	audio
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tagtool/}
@@ -27,7 +27,7 @@ LIB_DEPENDS=	audio/id3lib \
 		devel/libglade2 \
 		audio/libvorbis
 RUN_DEPENDS=	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 CONFIGURE_STYLE=gnu
 

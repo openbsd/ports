@@ -8,7 +8,7 @@ GH_PROJECT=	minecraft
 GH_ACCOUNT=	qbit
 GH_TAGNAME=	${GH_PROJECT}-${V}
 DISTNAME=	${GH_TAGNAME}
-REVISION=	10
+REVISION=	11
 
 CATEGORIES=	games
 
@@ -25,7 +25,7 @@ RUN_DEPENDS=	audio/openal \
 		devel/desktop-file-utils \
 		games/lwjgl \
 		java/javaPathHelper \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 MAKE_FLAGS=	PREFIX=${PREFIX}
 

@@ -1,6 +1,7 @@
 COMMENT =		turn-based empire game
 
 DISTNAME =		vms-empire-1.16
+REVISION =		0
 
 CATEGORIES =		games
 
@@ -17,7 +18,7 @@ MAKE_FLAGS =		CC="${CC}" \
 			CFLAGS="${CFLAGS}"
 
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 NO_TEST =		Yes
 

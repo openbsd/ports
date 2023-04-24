@@ -2,7 +2,7 @@ COMMENT =	collection of puzzles games
 
 DISTNAME =	puzzles-20211021
 CATEGORIES =	games
-REVISION =	0
+REVISION =	1
 
 MASTER_SITES =	https://rhaalovely.net/stuff/
 HOMEPAGE =	https://www.chiark.greenend.org.uk/~sgtatham/puzzles/
@@ -23,7 +23,7 @@ WRKDIST =	${WRKDIR}/puzzles-${GIT_COMMIT_SHORT}
 USE_GMAKE =	yes
 LIB_DEPENDS =	x11/gtk+3
 RUN_DEPENDS =	devel/desktop-file-utils devel/xdg-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 MODULES =	devel/cmake
 CONFIGURE_ARGS=	-DPUZZLES_GTK_VERSION=3 -DNAME_PREFIX=puzzle-

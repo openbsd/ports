@@ -2,7 +2,7 @@ V =		1.6.0
 COMMENT =	open-source Zelda-like 2D game engine
 DISTNAME =	solarus-${V}-src
 PKGNAME =	solarus-${V}
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS +=	solarus                   0.0 # 1.5
 
@@ -31,7 +31,7 @@ LIB_DEPENDS =	audio/libmodplug \
 		devel/sdl2-ttf \
 		lang/luajit
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 WRKDIST =	${WRKDIR}/solarus-${V}
 

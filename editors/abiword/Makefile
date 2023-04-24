@@ -4,7 +4,7 @@ COMMENT=	free cross-platform WYSIWYG word processor
 
 VERSION=	3.0.5
 DISTNAME=	abiword-${VERSION}
-REVISION=	4
+REVISION=	5
 
 CATEGORIES=	editors
 
@@ -49,7 +49,7 @@ BUILD_DEPENDS +=devel/boost
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		devel/py-gobject3${MODPY_FLAVOR} \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 LIB_DEPENDS=	devel/fribidi \
 		converters/wv \

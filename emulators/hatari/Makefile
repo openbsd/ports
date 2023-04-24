@@ -5,7 +5,7 @@ COMMENT =	Atari ST/STE/TT/Falcon emulator
 V =		2.4.1
 DISTNAME =	hatari-${V}
 EXTRACT_SUFX =	.tar.bz2
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	emulators
 
@@ -22,7 +22,7 @@ MASTER_SITES =	https://download.tuxfamily.org/hatari/$V/
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
 		sysutils/mtools \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 LIB_DEPENDS =	audio/portmidi \
 		devel/sdl2 \

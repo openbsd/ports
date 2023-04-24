@@ -5,7 +5,7 @@ V =		8.1
 COMMENT =	tactical action game focusing on controlling Clonks
 DISTNAME =	openclonk-${V}-src
 PKGNAME =	openclonk-${V}
-REVISION =	5
+REVISION =	6
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	games x11
 
@@ -40,7 +40,7 @@ LIB_DEPENDS =	audio/freealut \
 		textproc/tinyxml
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 CONFIGURE_ARGS +=	-DFREETYPE_INCLUDE_DIRS="${X11BASE}/include/freetype2" \
 			-DHAVE_PRECOMPILED_HEADERS:BOOL=OFF \

@@ -16,7 +16,7 @@ WANTLIB += sigc-2.0 vorbisfile z
 GH_ACCOUNT =		pioneerspacesim
 GH_PROJECT =		pioneer
 GH_TAGNAME =		20190203
-REVISION =		0
+REVISION =		1
 
 COMPILER =		base-clang ports-gcc
 MODULES =		devel/cmake \
@@ -28,7 +28,7 @@ LIB_DEPENDS =		audio/libvorbis \
 			graphics/glew \
 			multimedia/assimp
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \

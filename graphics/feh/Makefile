@@ -4,6 +4,7 @@ DISTNAME=	feh-3.9.1
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	graphics
 FIX_EXTRACT_PERMISSIONS=Yes
+REVISION=	0
 
 HOMEPAGE=	https://feh.finalrewind.org/
 MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
@@ -20,7 +21,7 @@ LIB_DEPENDS=	graphics/imlib2 \
 		net/curl
 
 RUN_DEPENDS+=	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 TEST_DEPENDS=	devel/p5-Test-Command
 
 CFLAGS+=	-I${LOCALBASE}/include \

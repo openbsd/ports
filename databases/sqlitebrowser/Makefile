@@ -3,6 +3,7 @@ COMMENT =	graphical interface to sqlite databases
 GH_ACCOUNT =	sqlitebrowser
 GH_PROJECT =	sqlitebrowser
 GH_TAGNAME =	v3.12.2
+REVISION =	0
 
 CATEGORIES =	databases x11
 
@@ -21,7 +22,7 @@ MODULES =	x11/qt5 \
 LIB_DEPENDS =	databases/sqlite3 \
 		editors/qscintilla
 
-RUN_DEPENDS =	x11/gtk+3,-guic \
+RUN_DEPENDS =	x11/gtk+4,-guic \
 		devel/desktop-file-utils
 
 CONFIGURE_ARGS +=-DQSCINTILLA_INCLUDE_DIR=${LOCALBASE}/include/X11/qt5/Qsci

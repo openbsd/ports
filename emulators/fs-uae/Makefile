@@ -10,6 +10,7 @@ MODPY_EGG_VERSION =	${V}
 DISTNAME =		fs-uae-$V
 EXTRACT_SUFX =		.tar.xz
 CATEGORIES =		emulators
+REVISION =		0
 
 HOMEPAGE =		https://fs-uae.net/
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
@@ -32,7 +33,7 @@ LIB_DEPENDS =		devel/sdl2 \
 			audio/openal \
 			devel/glib2
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 CONFIGURE_STYLE =	gnu
 USE_GMAKE =		Yes

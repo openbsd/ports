@@ -2,6 +2,7 @@ COMMENT=	turn-based strategy engine
 
 DISTNAME=	lgeneral-1.4.4
 CATEGORIES=	games x11
+REVISION=	0
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		kukgen-data-1.1.tar.gz
@@ -19,7 +20,7 @@ BUILD_DEPENDS=	devel/gettext,-tools
 LIB_DEPENDS=	devel/gettext,-runtime \
 		devel/sdl-mixer
 RUN_DEPENDS=	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 AUTOCONF_VERSION=	2.69
 CONFIGURE_STYLE=	autoconf

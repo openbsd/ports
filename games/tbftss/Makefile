@@ -3,6 +3,7 @@ COMMENT =		2D mission-based space shooter
 V =			1.5.1
 DISTNAME =		tbftss-$V.src
 PKGNAME =		tbftss-$V
+REVISION =		0
 
 CATEGORIES =		games
 
@@ -19,7 +20,7 @@ LIB_DEPENDS =		devel/sdl2-image \
 			devel/sdl2-mixer \
 			devel/sdl2-ttf
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 MAKE_FLAGS =		CC="${CC}" \
 			CXXFLAGS="${CFLAGS} `sdl2-config --cflags` \

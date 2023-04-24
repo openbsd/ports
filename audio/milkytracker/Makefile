@@ -5,6 +5,7 @@ GH_PROJECT =	MilkyTracker
 GH_TAGNAME =	v1.03.00
 
 PKGNAME =	${DISTNAME:L}
+REVISION =	0
 
 CATEGORIES =	audio
 
@@ -24,7 +25,7 @@ BUILD_DEPENDS =	audio/jack
 # libjack accessed via dlopen()
 RUN_DEPENDS =	audio/jack \
 		devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 LIB_DEPENDS =	archivers/zziplib \
 		devel/sdl2

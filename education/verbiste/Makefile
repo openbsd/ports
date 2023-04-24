@@ -1,7 +1,7 @@
 COMMENT=	French and Italian conjugation system
 
 DISTNAME=	verbiste-0.1.47
-REVISION=	1
+REVISION=	2
 SHARED_LIBS=	verbiste-0.1	5.0	# .0.0
 CATEGORIES=	education
 HOMEPAGE=	http://perso.b2b2c.ca/~sarrazip/dev/verbiste.html
@@ -25,7 +25,7 @@ MASTER_SITES=	http://perso.b2b2c.ca/~sarrazip/dev/
 BUILD_DEPENDS=	textproc/p5-XML-Parser
 LIB_DEPENDS=	x11/gtk+2 \
 		textproc/libxml
-RUN_DEPENDS=	x11/gtk+3,-guic \
+RUN_DEPENDS=	x11/gtk+4,-guic \
 		print/texlive/base,-mktexlsr
 
 

@@ -1,7 +1,7 @@
 COMMENT =	third-person rabbit combat action game
 
 DISTNAME =	lugaru-1.2
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	games
 
@@ -23,7 +23,7 @@ MODULES =		devel/cmake
 
 COMPILER =		base-clang ports-clang
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 LIB_DEPENDS =		audio/libvorbis \
 			audio/openal \
 			devel/sdl2 \

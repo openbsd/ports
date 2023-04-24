@@ -2,6 +2,7 @@ COMMENT =	KDE Calligra project management application
 
 VERSION =	3.3.0
 DISTNAME =	calligraplan-${VERSION}
+REVISION =	0
 
 CATEGORIES =	editors x11
 
@@ -54,7 +55,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/kf5/kinit \
 		devel/kf5/threadweaver \
 		misc/shared-mime-info \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 LIB_DEPENDS =	devel/kf5/kactivities \
 		devel/kf5/karchive \

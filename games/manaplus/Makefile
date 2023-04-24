@@ -1,5 +1,5 @@
 V =		2.1.3.17
-REVISION =	0
+REVISION =	1
 COMMENT =	client for The Mana World
 DISTNAME =	manaplus-${V}
 EXTRACT_SUFX =	.tar.xz
@@ -33,7 +33,7 @@ LIB_DEPENDS =	devel/gettext,-runtime \
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/xdg-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 CONFIGURE_STYLE =	autoreconf
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include"

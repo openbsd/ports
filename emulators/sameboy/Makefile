@@ -3,6 +3,8 @@ COMMENT-libretro =	accurate Nintendo Game Boy core for retroarch
 
 PKGNAME-main =		sameboy-$V
 PKGNAME-libretro =	libretro-sameboy-$V
+REVISION-libretro =	0
+REVISION-main =		0
 
 V =		0.14.3
 
@@ -39,7 +41,7 @@ LIB_DEPENDS-main =	devel/sdl2 \
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			misc/shared-mime-info \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 MAKE_FLAGS =		CC="${CC}" \
 			DATA_DIR=${PREFIX}/share/sameboy/

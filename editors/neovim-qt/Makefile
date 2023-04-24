@@ -3,7 +3,7 @@ COMMENT =	Qt5 GUI front-end for neovim
 GH_ACCOUNT = equalsraf
 GH_PROJECT = neovim-qt
 GH_TAGNAME = v0.2.16.1
-REVISION =	2
+REVISION =	3
 
 CATEGORIES = editors
 
@@ -30,7 +30,7 @@ LIB_DEPENDS =	devel/msgpack \
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		editors/neovim \
-		x11/gtk+3,-guic \
+		x11/gtk+4,-guic \
 		x11/xclip
 
 CONFIGURE_ARGS =	-DUSE_SYSTEM_MSGPACK=On \

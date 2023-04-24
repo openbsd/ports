@@ -1,6 +1,7 @@
 COMMENT =	scanning application for KDE
 
 DISTNAME =	skanlite-${MODKDE_VERSION}
+REVISION =	0
 
 CATEGORIES =	graphics
 
@@ -24,7 +25,7 @@ MODULES =	x11/kde-applications \
 		devel/kf5
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/kf5/kdoctools

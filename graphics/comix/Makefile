@@ -1,7 +1,7 @@
 COMMENT=	gtk2 comic book viewer
 
 DISTNAME=	comix-4.0.4
-REVISION=	9
+REVISION=	10
 
 CATEGORIES=	graphics
 
@@ -28,7 +28,7 @@ RUN_DEPENDS=	graphics/py2-Pillow \
 		x11/py-gtk2 \
 		misc/shared-mime-info \
 		devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 NO_TEST=	Yes
 

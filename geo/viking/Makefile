@@ -1,6 +1,7 @@
 COMMENT =	GPS track manager
 
 DISTNAME =	viking-1.10
+REVISION =	0
 
 CATEGORIES =	geo x11
 

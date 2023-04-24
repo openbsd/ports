@@ -7,7 +7,7 @@ COMMENT =		clone of the touhou games
 VERSION =		v1.3.2
 DISTNAME =		taisei-${VERSION}
 PKGNAME =		taisei-${VERSION:S/^v//}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		games
 
@@ -33,7 +33,7 @@ BUILD_DEPENDS =		math/cglm
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			misc/shared-mime-info \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 LIB_DEPENDS =		audio/opusfile \
 			devel/sdl2>=2.0.5 \

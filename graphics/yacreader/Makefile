@@ -3,6 +3,7 @@ COMMENT =	read and manage your digital comic collection
 V =		9.11.0
 DISTNAME =	yacreader-${V}.2301073
 PKGNAME =	yacreader-${V}
+REVISION =	0
 
 CATEGORIES =	graphics
 
@@ -34,7 +35,7 @@ LIB_DEPENDS =		archivers/unarr \
 			x11/qt5/qtmultimedia \
 			x11/qt5/qtsvg
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 do-install:
 .for bin in YACReader YACReaderLibrary YACReaderLibraryServer

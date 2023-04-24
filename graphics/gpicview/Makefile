@@ -1,7 +1,7 @@
 COMMENT =	simple and fast image viewer for X11
 
 DISTNAME =	gpicview-0.2.5
-REVISION =	5
+REVISION =	6
 
 CATEGORIES =	graphics x11
 
@@ -26,7 +26,7 @@ MODULES =	textproc/intltool
 
 LIB_DEPENDS =	x11/gtk+2
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 USE_GMAKE =	yes
 

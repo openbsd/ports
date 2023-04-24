@@ -4,6 +4,7 @@ V =		0.65.1
 COMMENT =	open source clone of Theme Hospital
 PKGNAME =	corsixth-${V}
 CATEGORIES =	games x11
+REVISION =	0
 
 GH_ACCOUNT =	CorsixTH
 GH_PROJECT =	CorsixTH
@@ -32,7 +33,7 @@ RUN_DEPENDS =	audio/timidity \
 		devel/desktop-file-utils \
 		devel/lpeg,${MODLUA_FLAVOR} \
 		devel/luafs,${MODLUA_FLAVOR} \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 NO_TEST =	Yes
 

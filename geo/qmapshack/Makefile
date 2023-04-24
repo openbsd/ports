@@ -5,7 +5,7 @@ COMMENT =	map management tool
 GH_ACCOUNT =	Maproom
 GH_PROJECT =	qmapshack
 GH_TAGNAME =	V_1.16.0
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	geo
 
@@ -23,7 +23,7 @@ WANTLIB += z
 MODULES =		devel/cmake x11/qt5
 
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 LIB_DEPENDS =		archivers/quazip>=1.3 \
 			devel/proj \
 			geo/gdal,-main \

@@ -1,6 +1,6 @@
 COMMENT=		tool for producing computational artwork
 DISTNAME=		fyre-1.0.1
-REVISION=		26
+REVISION=		27
 CATEGORIES=		graphics
 
 HOMEPAGE=		http://fyre.navi.cx/
@@ -25,7 +25,7 @@ LIB_DEPENDS=		devel/libglade2 \
 			graphics/openexr
 RUN_DEPENDS=		devel/desktop-file-utils \
 			misc/shared-mime-info \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 USE_GMAKE=		Yes
 

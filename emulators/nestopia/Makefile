@@ -1,6 +1,7 @@
 COMMENT =		accurate Nintendo Entertainment System emulator
 
 DISTNAME =		nestopia-1.51.1
+REVISION =		0
 
 .include <bsd.port.arch.mk>
 
@@ -23,7 +24,7 @@ EXTRACT_SUFX =		.tgz
 
 BUILD_DEPENDS =		devel/autoconf-archive
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 LIB_DEPENDS =		archivers/libarchive \
 			devel/sdl2 \
 			x11/fltk

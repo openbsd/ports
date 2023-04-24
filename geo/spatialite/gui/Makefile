@@ -1,7 +1,7 @@
 COMMENT =	GUI for spatialite
 DISTNAME =	spatialite_gui-2.1.0-beta1
 PKGNAME =	spatialite_gui-2.1.0beta1
-REVISION =	2
+REVISION =	3
 PROJECT =	spatialite_gui
 MASTER_SITES =	http://www.gaia-gis.it/gaia-sins/spatialite-gui-sources/
 
@@ -11,7 +11,7 @@ LIB_DEPENDS +=	x11/wxWidgets>=3.0.4 \
 		geo/spatialite/librasterlite2>=1.1.0beta1 \
 		geo/spatialite/virtualpg
 RUN_DEPENDS +=	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 WANTLIB += ${COMPILER_LIBCXX} ICE SDL2 SM X11 Xau Xcomposite Xcursor
 WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender

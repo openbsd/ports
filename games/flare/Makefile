@@ -1,5 +1,7 @@
 COMMENT-main =		free/libre action roleplaying engine
 COMMENT-data =		free/libre action roleplaying engine data
+REVISION-data =		0
+REVISION-main =		0
 
 V = 			1.14
 DISTNAME = 		flare.${V}
@@ -26,7 +28,7 @@ DISTFILES = 		flare-engine-v${V}${EXTRACT_SUFX} \
 MODULES =		devel/cmake
 RUN_DEPENDS-main =	devel/desktop-file-utils \
 			games/flare,-data \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 LIB_DEPENDS-main =	devel/sdl2-image \
 			devel/sdl2-mixer \
 			devel/sdl2-ttf

@@ -3,6 +3,7 @@ V =		1.7.1
 COMMENT =	open source drawing/editing program modeled after Paint.NET
 DISTNAME =	pinta-${V}
 CATEGORIES =	graphics x11
+REVISION =	0
 
 HOMEPAGE =	http://pinta-project.com/
 
@@ -20,7 +21,7 @@ BUILD_DEPENDS =	devel/mono-addins \
 
 RUN_DEPENDS =	devel/mono-addins \
 		devel/desktop-file-utils \
-		x11/gtk+3,-guic \
+		x11/gtk+4,-guic \
 		x11/mono-gtk2
 
 CONFIGURE_STYLE =	gnu

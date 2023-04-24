@@ -1,7 +1,7 @@
 COMMENT =	free font editor for TTF, EOT, and SVG fonts
 
 DISTNAME =	birdfont-2.29.4
-REVISION =	6
+REVISION =	7
 CATEGORIES =	graphics print
 
 SHARED_LIBS +=	birdfont			17.0 # 2.11.7
@@ -37,7 +37,7 @@ LIB_DEPENDS =	devel/libgee \
 RUN_DEPENDS =	devel/desktop-file-utils \
 		fonts/roboto-fonts \
 		misc/shared-mime-info \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS =	-c "${CC}"

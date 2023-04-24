@@ -5,7 +5,7 @@ COMMENT =	UNIX port of Open Cubic Player
 
 DISTNAME =	ocp-0.2.103
 CATEGORIES =	audio
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://stian.cubic.org/project-ocp.php
 
@@ -23,7 +23,7 @@ COMPILER =		base-clang ports-gcc
 RUN_DEPENDS =	devel/desktop-file-utils \
 		fonts/unifont \
 		misc/shared-mime-info \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 BUILD_DEPENDS =	devel/desktop-file-utils \
 		fonts/unifont \

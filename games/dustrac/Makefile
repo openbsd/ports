@@ -1,7 +1,7 @@
 COMMENT =		traditional top-down car racing game
 
 PKGNAME =		dustrac-${GH_TAGNAME}
-REVISION =		2
+REVISION =		3
 
 GH_ACCOUNT =		juzzlin
 GH_PROJECT =		DustRacing2D
@@ -21,7 +21,7 @@ WANTLIB += ${COMPILER_LIBCXX}
 MODULES =		devel/cmake \
 			x11/qt5
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 LIB_DEPENDS =		audio/libvorbis \
 			audio/openal

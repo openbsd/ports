@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS =	amd64
 COMMENT =		RAW image processing application
 
 DISTNAME =		rawtherapee-5.9
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		graphics
 
@@ -31,7 +31,7 @@ EXTRACT_SUFX = 		.tar.xz
 MODULES =		devel/cmake
 
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 
 LIB_DEPENDS =		audio/libcanberra,-gtk3 \
 			graphics/libiptcdata \
