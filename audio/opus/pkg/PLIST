@@ -4,7 +4,7 @@ include/opus/opus_defines.h
 include/opus/opus_multistream.h
 include/opus/opus_projection.h
 include/opus/opus_types.h
-lib/libopus.a
+@static-lib lib/libopus.a
 lib/libopus.la
 @lib lib/libopus.so.${LIBopus_VERSION}
 lib/pkgconfig/opus.pc
