@@ -2,9 +2,9 @@ SHA256 (ruby-3.1.4.tar.gz) = o9VYeaDfqx1xQf3xDSKgfb+OXNxEFdob3gYSfVzDx7Y=
 SHA256 (ruby-asn1time-fix.patch) = IFBYT7Yksks4N6VH5iAN3MjU+ag8wJS1RUaNUEm8rFA=
 SHA256 (ruby-ed25519-fix.patch) = hTjqj6BwVhNlUMutAHJ48TKhcWJR8UJNNp9p64d7Mgo=
 SHA256 (ruby-enable-hkdf.patch) = 9/thoWkaa8EmvjppRKRtpE510mVPTmxeRcwHMyxNVqw=
-SHA256 (ruby-octeon-fix.patch) = qFc5PJPaBF1ly9Kr9hXaQIYLmPPyUUw7ThMTkfE6y3A=
+SHA256 (ruby-octeon-fix-1.patch) = A409ftqhLedlHxh8kGWlqWd68JA4xn9Hk3jBL5+ZWPk=
 SIZE (ruby-3.1.4.tar.gz) = 20917933
 SIZE (ruby-asn1time-fix.patch) = 2277
 SIZE (ruby-ed25519-fix.patch) = 1494
 SIZE (ruby-enable-hkdf.patch) = 1469
-SIZE (ruby-octeon-fix.patch) = 1880
+SIZE (ruby-octeon-fix-1.patch) = 1882
