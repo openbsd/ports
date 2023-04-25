@@ -1,3 +1,6 @@
+Ensure that the CC_TYPE_AVATAR_CHOOSER private type is used by the template
+so that symbols can be resolved in the user panel.
+
 Index: panels/user-accounts/cc-user-panel.c
 --- panels/user-accounts/cc-user-panel.c.orig
 +++ panels/user-accounts/cc-user-panel.c
