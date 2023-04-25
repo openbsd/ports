@@ -1,0 +1,21 @@
+Index: mpn/arm64/arm64-defs.m4
+--- mpn/arm64/arm64-defs.m4.orig
++++ mpn/arm64/arm64-defs.m4
+@@ -37,6 +37,17 @@ dnl  don't want to disable macro expansions in or afte
+ changecom
+ 
+ 
++dnl  Called: PROLOGUE_cpu(GSYM_PREFIX`'foo)
++
++define(`PROLOGUE_cpu',
++m4_assert_numargs(1)
++`	TEXT
++	ALIGN(8)
++	GLOBL	`$1' GLOBL_ATTR
++	TYPE(`$1',`function')
++`$1'LABEL_SUFFIX
++	bti	c')
++
+ dnl  LEA_HI(reg,gmp_symbol), LEA_LO(reg,gmp_symbol)
+ dnl
+ dnl  Load the address of gmp_symbol into a register. We split this into two
