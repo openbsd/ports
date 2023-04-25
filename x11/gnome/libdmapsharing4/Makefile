@@ -3,6 +3,7 @@ COMMENT=		DMAP client and server library
 GNOME_PROJECT=		libdmapsharing
 GNOME_VERSION=		3.9.12
 PKGNAME=		${GNOME_PROJECT}4-${GNOME_VERSION}
+REVISION=		0
 
 # override gnome MODULE
 MASTER_SITES=		https://www.flyn.org/projects/libdmapsharing/
@@ -28,8 +29,9 @@ MODGNOME_TOOLS=		vala
 BUILD_DEPENDS=		devel/libgee
 
 LIB_DEPENDS=		devel/libsoup3 \
+			graphics/gdk-pixbuf2 \
 			multimedia/gstreamer1/plugins-base \
-			net/avahi,-libs
+			net/avahi,-glib
 
 CONFIGURE_STYLE=	gnu
 

@@ -4,7 +4,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	divelog program for recreational, tech, and free-divers
 
 VER =		4.8.5
-REVISION =	3
+REVISION =	4
 PKGNAME =	subsurface-${VER}
 DISTNAME =	Subsurface-${VER}
 
@@ -43,6 +43,7 @@ BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \
 LIB_DEPENDS =	archivers/libzip \
 		databases/sqlite3 \
 		devel/libgit2/libgit2 \
+		devel/libusb1 \
 		net/curl \
 		security/libssh2 \
 		textproc/libxml \
