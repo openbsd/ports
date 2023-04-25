@@ -15,5 +15,6 @@
      SUBDIR += prociono
      SUBDIR += raleway
      SUBDIR += sniglet
+     SUBDIR += the-neue-black
 
 .include <bsd.port.subdir.mk>
