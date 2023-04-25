@@ -1,0 +1,13 @@
+Consider MODERL_VERSION
+Index: compiler-cli/src/run.rs
+--- compiler-cli/src/run.rs.orig
++++ compiler-cli/src/run.rs
+@@ -126,7 +126,7 @@ fn run_erlang(
+         args.push(argument);
+     }
+ 
+-    ProjectIO::new().exec("erl", &args, &[], None, Stdio::Inherit)
++    ProjectIO::new().exec("erl${MODERL_VERSION}", &args, &[], None, Stdio::Inherit)
+ }
+ 
+ fn run_javascript_node(

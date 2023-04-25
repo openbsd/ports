@@ -1,0 +1,9 @@
+Gleam is a fast, friendly, and functional language for building
+type-safe, scalable systems.
+
+It compiles to Erlang (or JavaScript) and has straightforward interop
+with other BEAM languages such as Erlang, Elixir, and LFE.
+
+It features algebraic data-types, immutable data structures, full type
+inference, fast compilation, generics, no nulls nor exceptions, and a
+few bonus features such as helpful error messages.

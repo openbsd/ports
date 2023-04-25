@@ -1,0 +1,13 @@
+Consider MODERL_VERSION
+Index: compiler-core/src/build/package_compiler.rs
+--- compiler-core/src/build/package_compiler.rs.orig
++++ compiler-core/src/build/package_compiler.rs
+@@ -172,7 +172,7 @@ where
+         // Compile Erlang and Elixir modules
+         let status = self
+             .io
+-            .exec("escript", &args, &[], None, self.subprocess_stdio)?;
++            .exec("escript${MODERL_VERSION}", &args, &[], None, self.subprocess_stdio)?;
+ 
+         if status == 0 {
+             Ok(())
