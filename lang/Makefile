@@ -45,6 +45,7 @@
      SUBDIR += gerbil
      SUBDIR += gforth
      SUBDIR += ghc
+     SUBDIR += gleam
      SUBDIR += gnucobol
      SUBDIR += go
      SUBDIR += gpc
