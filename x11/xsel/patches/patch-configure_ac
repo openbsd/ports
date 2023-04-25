@@ -3,12 +3,12 @@
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -24,7 +24,7 @@ AC_SEARCH_LIBS([XOpenDisplay], [X11], [], [AC_MSG_ERRO
+@@ -17,7 +17,7 @@ PKG_CHECK_MODULES([X], [x11])
  dnl Add some useful warnings if we have gcc.
  dnl changequote(,)dnl
- if test "x$ac_cv_prog_gcc" = xyes ; then
--  CFLAGS="$CFLAGS -fno-strict-aliasing -Wall -Werror -g -std=gnu99 -Wdeclaration-after-statement -Wno-unused"
-+  CFLAGS="$CFLAGS -fno-strict-aliasing -Wall -Werror -g -std=gnu99 -Wno-unused"
- fi
+ AS_IF([test "x$ac_cv_c_compiler_gnu" = xyes], [
+-  CFLAGS="$CFLAGS -fno-strict-aliasing -Wall -Wdeclaration-after-statement -Wno-unused"
++  CFLAGS="$CFLAGS -fno-strict-aliasing -Wall -Wno-unused"
+ ])
  dnl changequote([,])dnl
  
