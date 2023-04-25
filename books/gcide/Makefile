@@ -1,6 +1,6 @@
 COMMENT =	gnu collaborative international dictionary of english
 
-DISTNAME =	gcide-0.52
+DISTNAME =	gcide-0.53
 
 CATEGORIES =	books
 
