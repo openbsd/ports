@@ -1,6 +1,6 @@
 COMMENT =		simple utilities for manipulating HTML and XML files
 
-DISTNAME =		html-xml-utils-8.5
+DISTNAME =		html-xml-utils-8.6
 
 CATEGORIES =		textproc
 
