@@ -1,0 +1,25 @@
+BN_zero can't fail in LibreSSL >= 3.7.1.
+
+Index: lib/libcmb/cmb.c
+--- lib/libcmb/cmb.c.orig
++++ lib/libcmb/cmb.c
+@@ -851,8 +851,7 @@ cmb_count_bn(struct cmb_config *config, uint32_t nitem
+ 	/* Initialize count */
+ 	if ((count = BN_new()) == NULL)
+ 		return (NULL);
+-	if (!BN_zero(count))
+-		goto cmb_count_bn_return;
++	BN_zero(count);
+ 
+ 	/* If entire set is requested, return 2^N[-1] */
+ 	if ((setinit == 1 && setdone == nitems) ||
+@@ -1029,8 +1028,7 @@ cmb_bn(struct cmb_config *config, uint32_t nitems, cha
+ 	if (seq == NULL) {
+ 		if ((seq = BN_new()) == NULL)
+ 			goto cmb_bn_return;
+-		if (!BN_zero(seq))
+-			goto cmb_bn_return;
++		BN_zero(seq);
+ 	}
+ 
+ 	/* Show the empty set consisting of a single combination of no-items */

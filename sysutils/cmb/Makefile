@@ -1,6 +1,7 @@
 COMMENT =	combinatorics library/utility from FreeBSD
 DISTNAME =	cmb-3.9.5
 CATEGORIES =	sysutils
+REVISION =	0
 
 SHARED_LIBS +=	cmb                       0.0 # 0.0
 
