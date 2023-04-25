@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-# $OpenBSD: register-plist,v 1.32 2022/10/31 13:31:58 espie Exp $
+# $OpenBSD: register-plist,v 1.33 2023/04/25 13:23:04 espie Exp $
 # Copyright (c) 2005,2012
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -448,8 +448,16 @@ sub handle_options
 {
 	my $self = shift;
 
-	$self->SUPER::handle_options('tpns:', 
-	    '[-n] [-s dir] [-t p1 p2] dir pkg ...');
+	$self->{opt} = {
+		d => sub {
+		    push(@{$self->{dirs}}, split(/:/, shift));
+	    	},
+		f => sub {
+		    push(@{$self->{plists}}, shift);
+	    	},
+	};
+	$self->SUPER::handle_options('tpns:d:f:', 
+	    '[-n] [-d dir] [-s dir] [-t p1 p2] [-f plist] [dir pkg ...]');
 
 	if ($self->opt('s')) {
 		$self->{snapdir} = $self->opt('s');
@@ -661,12 +669,37 @@ sub compare_versions
 	return $result;
 }
 
+sub register_plist
+{
+	my ($plist, $state) = @_;
+	my $error = 0;
+	$plist->forget_details;
+	for my $dir (@{$state->{dirs}}) {
+		next unless -d $dir;
+		my $result = $dir.'/'.$plist->pkgname;
+		if (-f $result && -s _) { # XXX we ignore empty files
+			my $plist2 = OpenBSD::PackingList->fromfile($result);
+			$error += compare_lists($plist, $plist2, $result,
+			    $state);
+			last;
+		}
+		$error += compare_versions($dir, $plist, $state);
+	}
+	if (!$error && !$state->{not}) {
+		if (defined $state->{snapdir}) {
+			my $result = $state->{snapdir}.'/'.$plist->pkgname;
+			$plist->tofile($result);
+		}
+		my $result = $state->{dirs}[0].'/'.$plist->pkgname;
+		if (!-f $result || -z _) {
+			$plist->tofile($result);
+		}
+	}
+	return $error;
+}
+
 my $state = OpenBSD::RegisterPlist::State->new('register-plist');
 $state->handle_options;
-
-if (@ARGV < 2 && !$state->opt('p')) {
-	$state->usage;
-}
 
 if ($state->opt('t')) {
 	if (@ARGV != 2) {
@@ -679,15 +712,21 @@ if ($state->opt('t')) {
 	exit(compare_lists($plist, $plist2, $result, $state));
 }
 
-my @dirs = split(/:/, shift);
-if (!-d $dirs[0]) {
-	$state->usage("not a directory: #1", $dirs[0]);
+if (!defined $state->{dirs}) {
+	if (@ARGV == 0) {
+		$state->usage("no repository for registration");
+	}
+	$state->{dirs} = [split(/:/, shift)];
+}
+
+if (!-d $state->{dirs}[0]) {
+	$state->usage("not a directory: #1", $state->{dirs}[0]);
 }
 
 if ($state->opt('p')) {
 	my $plist = OpenBSD::PackingList->read(\*STDIN);
 	$plist->forget_details;
-	for my $dir (@dirs) {
+	for my $dir (@{$state->{dirs}}) {
 		next unless -d $dir;
 		my $result = $dir.'/'.$plist->pkgname;
 		if (-f $result) {
@@ -705,7 +744,11 @@ if ($state->opt('p')) {
 	exit(1);
 }
 
-my $error = 0;
+my $errors = 0;
+
+if (@ARGV == 0 && !defined $state->{plists}) {
+	$state->usage("no packing lists to register");
+}
 
 for my $pkgfile (@ARGV) {
 	my $pkg = $state->repo->find($pkgfile);
@@ -717,29 +760,17 @@ for my $pkgfile (@ARGV) {
 	$pkg->close;
 	$pkg->wipe_info;
 
-	$plist->forget_details;
-	for my $dir (@dirs) {
-		next unless -d $dir;
-		my $result = $dir.'/'.$plist->pkgname;
-		if (-f $result && -s _) {
-			my $plist2 = OpenBSD::PackingList->fromfile($result);
-			$error += compare_lists($plist, $plist2, $result,
-			    $state);
-			last;
-		}
-		$error += compare_versions($dir, $plist, $state);
-	}
-	if (!$error) {
-		if (defined $state->{snapdir}) {
-			my $result = $state->{snapdir}.'/'.$plist->pkgname;
-			$plist->tofile($result);
-		}
-		if (!$state->{not}) {
-			my $result = $dirs[0].'/'.$plist->pkgname;
-			if (!-f $result || -z _) {
-				$plist->tofile($result);
-			}
-		}
+	$errors += register_plist($plist, $state);
+}
+
+for my $file (@{$state->{plists}}) {
+	my $plist = OpenBSD::PackingList->fromfile($file);
+	if (!defined $plist) {
+		$state->errsay("Couldn't parse packing-list #1", $file);
+		$errors++;
+	} else {
+		$errors += register_plist($plist, $state);
 	}
 }
-exit($error != 0);
+
+exit($errors != 0);
