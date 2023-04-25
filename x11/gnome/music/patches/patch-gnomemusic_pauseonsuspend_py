@@ -1,0 +1,18 @@
+login1 -> ConsoleKit
+
+Index: gnomemusic/pauseonsuspend.py
+--- gnomemusic/pauseonsuspend.py.orig
++++ gnomemusic/pauseonsuspend.py
+@@ -107,9 +107,9 @@ class PauseOnSuspend(GObject.GObject):
+         Gio.DBusProxy.new_for_bus(
+             Gio.BusType.SYSTEM,
+             Gio.DBusProxyFlags.DO_NOT_LOAD_PROPERTIES, None,
+-            "org.freedesktop.login1",
+-            "/org/freedesktop/login1",
+-            "org.freedesktop.login1.Manager", None,
++            "org.freedesktop.ConsoleKit",
++            "/org/freedesktop/ConsoleKit/Manager",
++            "org.freedesktop.ConsoleKit.Manager", None,
+             self._suspend_proxy_ready)
+ 
+     def _suspend_proxy_ready(self, proxy, result, data=None):
