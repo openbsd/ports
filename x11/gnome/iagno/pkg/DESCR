@@ -1,0 +1,7 @@
+Iagno is a computer version of the game Reversi, more popularly called
+Othello. Iagno is a two player strategy game similar to Go. The board is
+8 by 8 with tiles that are black on one side and white on the other
+side. The object of Iagno is to flip as many of your opponent's tiles to
+your color as possible without your opponent flipping your tiles. This
+is done by trapping your opponent's tiles between two tiles of your own
+color.
