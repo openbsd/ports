@@ -6,36 +6,18 @@ NOT_FOR_ARCHS =	${BE_ARCHS}
 PPSSPP_JIT_ARCHS =	arm aarch64 i386 amd64
 ONLY_FOR_ARCHS =	${PPSSPP_JIT_ARCHS}
 
+V =		1.14.4
+DISTNAME =	ppsspp-$V
+
 COMMENT =	Sony PlayStation Portable emulator
 
-GH_ACCOUNT =	hrydgard
-GH_PROJECT =	ppsspp
-GH_TAGNAME =	v1.11.3
+EXTRACT_SUFX =	.tar.xz
 
-GLSLANG =	d0850f875ec392a130ccf00018dab458b546f27c
-PPSSPP_LANG =	6bd5b4bc983917ea8402f73c726b46e36f3de0b4
-SPIRV_CROSS =	a1f7c8dc8ea2f94443951ee27003bffa562c1f13
-ARMIPS =	7885552b208493a6a0f21663770c446c3ba65576
-MINIUPNP =	7e229ddd635933239583ab190d9b614bde018157
-
-MASTER_SITES0 =	https://github.com/hrydgard/glslang/archive/
-MASTER_SITES1 =	https://github.com/hrydgard/ppsspp-lang/archive/
-MASTER_SITES2 =	https://github.com/hrydgard/SPIRV-Cross/archive/
-MASTER_SITES3 =	https://github.com/Kingcom/armips/archive/
-MASTER_SITES4 =	https://github.com/hrydgard/miniupnp/archive/
-
-DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
-		${GLSLANG}.tar.gz:0 \
-		${PPSSPP_LANG}.tar.gz:1 \
-		${SPIRV_CROSS}.tar.gz:2 \
-		${ARMIPS}.tar.gz:3 \
-		${MINIUPNP}.tar.gz:4
+MASTER_SITES =	https://github.com/hrydgard/ppsspp/releases/download/v$V/
 
 CATEGORIES =	emulators
 
 HOMEPAGE =	https://www.ppsspp.org/
-
-MAINTAINER =	Anthony J. Bentley <anthony@anjbe.name>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
@@ -67,18 +49,6 @@ CONFIGURE_ARGS =	-DUSE_SYSTEM_FFMPEG=ON \
 CXXFLAGS +=	-I${X11BASE}/include
 
 NO_TEST =		Yes
-
-post-extract:
-	rmdir	${WRKSRC}/assets/lang \
-		${WRKSRC}/ext/armips \
-		${WRKSRC}/ext/glslang \
-		${WRKSRC}/ext/SPIRV-Cross \
-		${WRKSRC}/ext/miniupnp
-	ln -s ${WRKDIR}/ppsspp-lang-${PPSSPP_LANG} ${WRKSRC}/assets/lang
-	ln -s ${WRKDIR}/armips-${ARMIPS} ${WRKSRC}/ext/armips
-	ln -s ${WRKDIR}/glslang-${GLSLANG} ${WRKSRC}/ext/glslang
-	ln -s ${WRKDIR}/SPIRV-Cross-${SPIRV_CROSS} ${WRKSRC}/ext/SPIRV-Cross
-	ln -s ${WRKDIR}/miniupnp-${MINIUPNP} ${WRKSRC}/ext/miniupnp
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt ${WRKSRC}/UI/NativeApp.cpp

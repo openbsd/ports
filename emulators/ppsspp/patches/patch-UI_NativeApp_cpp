@@ -1,15 +1,17 @@
 Index: UI/NativeApp.cpp
 --- UI/NativeApp.cpp.orig
 +++ UI/NativeApp.cpp
-@@ -470,10 +470,7 @@ void NativeInit(int argc, const char *argv[], const ch
- #if !defined(MOBILE_DEVICE) && !defined(_WIN32) && !PPSSPP_PLATFORM(SWITCH)
- 	VFSRegister("", new DirectoryAssetReader((File::GetExeDirectory() + "assets/").c_str()));
- 	VFSRegister("", new DirectoryAssetReader((File::GetExeDirectory()).c_str()));
--	VFSRegister("", new DirectoryAssetReader("/usr/local/share/ppsspp/assets/"));
--	VFSRegister("", new DirectoryAssetReader("/usr/local/share/games/ppsspp/assets/"));
--	VFSRegister("", new DirectoryAssetReader("/usr/share/ppsspp/assets/"));
--	VFSRegister("", new DirectoryAssetReader("/usr/share/games/ppsspp/assets/"));
-+	VFSRegister("", new DirectoryAssetReader("${PREFIX}/share/ppsspp/assets/"));
+@@ -483,12 +483,7 @@ void NativeInit(int argc, const char *argv[], const ch
+ 	VFSRegister("", new DirectoryAssetReader(Path(ASSETS_DIR)));
  #endif
+ #if !defined(MOBILE_DEVICE) && !defined(_WIN32) && !PPSSPP_PLATFORM(SWITCH)
+-	VFSRegister("", new DirectoryAssetReader(File::GetExeDirectory() / "assets"));
+-	VFSRegister("", new DirectoryAssetReader(File::GetExeDirectory()));
+-	VFSRegister("", new DirectoryAssetReader(Path("/usr/local/share/ppsspp/assets")));
+-	VFSRegister("", new DirectoryAssetReader(Path("/usr/local/share/games/ppsspp/assets")));
+-	VFSRegister("", new DirectoryAssetReader(Path("/usr/share/ppsspp/assets")));
+-	VFSRegister("", new DirectoryAssetReader(Path("/usr/share/games/ppsspp/assets")));
++	VFSRegister("", new DirectoryAssetReader(Path("${PREFIX}/share/ppsspp/assets")));
+ #endif
+ 
  #if PPSSPP_PLATFORM(SWITCH)
- 	std::string assetPath = user_data_path + "assets/";

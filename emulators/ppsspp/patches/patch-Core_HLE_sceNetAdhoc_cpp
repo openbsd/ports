@@ -3,7 +3,7 @@ ensure that u_int32_t and friends are defined
 Index: Core/HLE/sceNetAdhoc.cpp
 --- Core/HLE/sceNetAdhoc.cpp.orig
 +++ Core/HLE/sceNetAdhoc.cpp
-@@ -20,6 +20,7 @@
+@@ -21,6 +21,7 @@
  #endif
  
  #if !defined(_WIN32)

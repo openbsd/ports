@@ -5,7 +5,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -202,6 +202,8 @@ endif()
+@@ -252,6 +252,8 @@ endif()
  if(NOT LIBRETRO AND NOT IOS)
  	find_package(SDL2)
  endif()
@@ -14,7 +14,7 @@ Index: CMakeLists.txt
  include(FindThreads)
  
  if(APPLE)
-@@ -293,13 +295,13 @@ if(NOT MSVC)
+@@ -351,13 +353,13 @@ if(NOT MSVC)
  		endif()
  	endif()
  
@@ -30,30 +30,30 @@ Index: CMakeLists.txt
 -	set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -O2 -D_NDEBUG")
 +	set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -D_NDEBUG")
  	set(CMAKE_C_FLAGS_RELWITHDEBINFO "${CMAKE_C_FLAGS_RELWITHDEBINFO} -O2 -g -D_NDEBUG")
- 	#TODO: Remove this and include the file properly everywhere it makes sense
- 	# First step is too use the macros everywhere
-@@ -335,7 +337,6 @@ if(NOT MSVC)
- 		if(NOT ${CMAKE_C_COMPILER_ID} STREQUAL "Intel" AND NOT ${CMAKE_CXX_COMPILER_ID} STREQUAL "Clang")
+ 
+ 	# Enable checking printf-like format strings (also works for logging functions)
+@@ -388,7 +390,6 @@ if(NOT MSVC)
+ 		if(NOT ${CMAKE_C_COMPILER_ID} STREQUAL "Intel" AND NOT ${CMAKE_CXX_COMPILER_ID} MATCHES "Clang")
  			add_definitions(-Wno-psabi)
  		endif()
 -		add_definitions(-D_XOPEN_SOURCE=700)
  		add_definitions(-D_XOPEN_SOURCE_EXTENDED -D__BSD_VISIBLE=1)
  		add_definitions(-D_LARGEFILE64_SOURCE=1 -D_FILE_OFFSET_BITS=64)
  	elseif(ANDROID)
-@@ -792,6 +793,7 @@ endif()
+@@ -900,6 +901,7 @@ endif()
  find_package(LIBZIP)
  if(LIBZIP_FOUND AND USE_SYSTEM_LIBZIP)
  	add_definitions(-DSHARED_LIBZIP)
 +	include_directories(${LIBZIP_INCLUDE_DIRS})
  else()
  	add_library(libzip STATIC
- 		ext/libzip/zip.h
-@@ -1873,7 +1875,7 @@ if(USE_MINIUPNPC)
- 	
- 	if (NOT WIN32)
- 	  add_definitions (-DMINIUPNPC_SET_SOCKET_TIMEOUT)
--	  add_definitions (-D_BSD_SOURCE -D_DEFAULT_SOURCE -D_POSIX_C_SOURCE=200112L)
-+	  add_definitions (-D_BSD_SOURCE -D_DEFAULT_SOURCE -D_POSIX_C_SOURCE=200809L)
- 	endif()
- 	if (MACOSX)
- 	  add_definitions (-D_DARWIN_C_SOURCE)
+ 		ext/libzip/zip_add.c
+@@ -2123,7 +2125,7 @@ if(USE_MINIUPNPC)
+ 
+ 		if (NOT WIN32)
+ 			add_definitions (-DMINIUPNPC_SET_SOCKET_TIMEOUT)
+-			add_definitions (-D_BSD_SOURCE -D_DEFAULT_SOURCE -D_POSIX_C_SOURCE=200112L)
++			add_definitions (-D_BSD_SOURCE -D_DEFAULT_SOURCE -D_POSIX_C_SOURCE=200809L)
+ 		endif()
+ 		if (MACOSX)
+ 			add_definitions (-D_DARWIN_C_SOURCE)
