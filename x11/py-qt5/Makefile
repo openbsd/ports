@@ -2,10 +2,9 @@ COMMENT=	Python bindings for Qt5
 
 DPB_PROPERTIES=	parallel
 
-MODPY_EGG_VERSION= 5.15.7
+MODPY_EGG_VERSION= 5.15.9
 DISTNAME=	PyQt5-${MODPY_EGG_VERSION}
 PKGNAME=	py-qt5-${MODPY_EGG_VERSION}
-REVISION=	1
 
 CATEGORIES=	x11 devel
 
@@ -17,10 +16,10 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Bluetooth Qt5Core Qt5DBus
 WANTLIB += Qt5Designer Qt5Gui Qt5Help Qt5Location Qt5Multimedia
-WANTLIB += Qt5MultimediaWidgets Qt5Network Qt5NetworkAuth Qt5Nfc
-WANTLIB += Qt5OpenGL Qt5Positioning Qt5PositioningQuick Qt5PrintSupport
-WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickWidgets Qt5RemoteObjects
-WANTLIB += Qt5Sensors Qt5SerialPort Qt5Sql Qt5Svg Qt5Test Qt5TextToSpeech
+WANTLIB += Qt5MultimediaWidgets Qt5Network Qt5Nfc Qt5OpenGL Qt5Positioning
+WANTLIB += Qt5PositioningQuick Qt5PrintSupport Qt5Qml Qt5QmlModels
+WANTLIB += Qt5Quick Qt5QuickWidgets Qt5RemoteObjects Qt5Sensors
+WANTLIB += Qt5SerialPort Qt5Sql Qt5Svg Qt5Test Qt5TextToSpeech
 WANTLIB += Qt5WebChannel Qt5WebKit Qt5WebKitWidgets Qt5WebSockets
 WANTLIB += Qt5Widgets Qt5X11Extras Qt5Xml Qt5XmlPatterns dbus-1
 WANTLIB += m ${MODPY_WANTLIB}
@@ -43,7 +42,6 @@ LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
 		x11/qt5/qtdeclarative \
 		x11/qt5/qtlocation \
 		x11/qt5/qtmultimedia \
-		x11/qt5/qtnetworkauth \
 		x11/qt5/qtremoteobjects \
 		x11/qt5/qtsensors \
 		x11/qt5/qtserialport \
