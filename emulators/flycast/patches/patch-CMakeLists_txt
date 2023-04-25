@@ -1,0 +1,87 @@
+add include and link directories
+unbundle xxhash and libchdr
+link against -lSDL2 instead of libSDL2.a by using PkgConfig
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -6,6 +6,11 @@ if(CCACHE_PROGRAM)
+ 	set(CMAKE_CXX_COMPILER_LAUNCHER ${CCACHE_PROGRAM} CACHE STRING "Compiler launcher for CXX.")
+ endif()
+ 
++include_directories( ${LOCALBASE}/include
++		     ${LOCALBASE}/include/SDL2
++		     ${X11BASE}/include )
++link_directories( ${LOCALBASE}/lib )
++
+ option(ENABLE_CTEST "Enables unit tests" OFF)
+ option(ENABLE_OPROFILE "Enable OProfile" OFF)
+ option(TEST_AUTOMATION "Enable test automation" OFF)
+@@ -325,8 +330,11 @@ endif()
+ 
+ option(BUILD_SHARED_LIBS "Build shared library" OFF)
+ set(XXHASH_BUILD_XXHSUM OFF CACHE BOOL "Build the xxhsum binary")
+-add_subdirectory(core/deps/xxHash/cmake_unofficial)
+-target_link_libraries(${PROJECT_NAME} PRIVATE xxHash::xxhash)
++find_library(XXHASH_LIBRARIES xxhash)
++if(XXHASH_LIBRARIES)
++	message(STATUS "Found xxHash: ${XXHASH_LIBRARIES}")
++endif(XXHASH_LIBRARIES)
++target_link_libraries(${PROJECT_NAME} PRIVATE ${XXHASH_LIBRARIES})
+ 
+ option(BUILD_SHARED_LIBS "Build shared library" OFF)
+ add_subdirectory(core/deps/glm)
+@@ -356,29 +364,10 @@ if(NOT LIBRETRO)
+ 	endif()
+ 
+ 	if(NOT ANDROID AND NOT IOS)
+-		if(NOT APPLE AND (NOT UNIX OR CMAKE_SYSTEM_NAME MATCHES "(FreeBSD|OpenBSD|NetBSD)"))
+-			find_package(SDL2)
+-		endif()
+-		if(NOT SDL2_FOUND)
+-			add_subdirectory(core/deps/SDL EXCLUDE_FROM_ALL)
+-			set(SDL2_FOUND 1)
+-		endif()
+-
+-		# SDL2::SDL2main may or may not be available. It is e.g. required by Windows GUI applications
+-		if(TARGET SDL2::SDL2main)
+-			# It has an implicit dependency on SDL2 functions, so it MUST be added before SDL2::SDL2 (or SDL2::SDL2-static)
+-			target_link_libraries(${PROJECT_NAME} PRIVATE SDL2::SDL2main)
+-		endif()
+-
+-		if((APPLE OR WIN32) AND TARGET SDL2::SDL2-static)
+-			target_link_libraries(${PROJECT_NAME} PRIVATE SDL2::SDL2-static)
+-		elseif(TARGET SDL2::SDL2)
+-			target_link_libraries(${PROJECT_NAME} PRIVATE SDL2::SDL2)
+-		else()
+-			target_include_directories(${PROJECT_NAME} PRIVATE ${SDL2_INCLUDE_DIRS})
+-			target_link_libraries(${PROJECT_NAME} PRIVATE ${SDL2_LIBRARIES})
+-		endif()
+-
++		find_package(PkgConfig)
++		pkg_check_modules(SDL2 REQUIRED sdl2)
++		target_include_directories(${PROJECT_NAME} PRIVATE ${SDL2_INCLUDE_DIRS})
++		target_link_libraries(${PROJECT_NAME} PRIVATE ${SDL2_LIBRARIES})
+ 		target_compile_definitions(${PROJECT_NAME} PRIVATE USE_SDL USE_SDL_AUDIO)
+ 		target_sources(${PROJECT_NAME} PRIVATE core/sdl/sdl.cpp core/sdl/sdl.h core/sdl/sdl_gamepad.h core/sdl/sdl_keyboard.h)
+ 
+@@ -403,10 +392,6 @@ if(NOT LIBRETRO)
+ 	endif()
+ endif()
+ 
+-add_subdirectory(core/deps/libchdr EXCLUDE_FROM_ALL)
+-target_link_libraries(${PROJECT_NAME} PRIVATE chdr-static)
+-target_include_directories(${PROJECT_NAME} PRIVATE core/deps/libchdr/include)
+-
+ if(NOT WITH_SYSTEM_ZLIB)
+ 	target_include_directories(${PROJECT_NAME} PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/core/deps/libchdr/deps/zlib-1.2.11")
+ 	target_link_libraries(${PROJECT_NAME} PRIVATE zlib)
+@@ -521,7 +506,7 @@ if(UNIX AND NOT APPLE AND NOT ANDROID)
+ 		target_link_libraries(${PROJECT_NAME} PRIVATE ${LIBRT})
+ 	endif()
+ 
+-	target_link_libraries(${PROJECT_NAME} PRIVATE ${CMAKE_DL_LIBS})
++	target_link_libraries(${PROJECT_NAME} PRIVATE ${CMAKE_DL_LIBS} chdr)
+ endif()
+ 
+ if(ASAN)
