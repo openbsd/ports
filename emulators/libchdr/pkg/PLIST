@@ -1,0 +1,10 @@
+include/libchdr/
+include/libchdr/bitstream.h
+include/libchdr/cdrom.h
+include/libchdr/chd.h
+include/libchdr/chdconfig.h
+include/libchdr/coretypes.h
+include/libchdr/flac.h
+include/libchdr/huffman.h
+@lib lib/libchdr.so.${LIBchdr_VERSION}
+lib/pkgconfig/libchdr.pc

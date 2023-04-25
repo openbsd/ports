@@ -1,0 +1,12 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -79,7 +79,7 @@ if (BUILD_SHARED_LIBS)
+   elseif(APPLE)
+     target_link_libraries(chdr PRIVATE -Wl,-dead_strip -Wl,-exported_symbol,_chd_*)
+   else()
+-    target_link_libraries(chdr PRIVATE -Wl,--version-script ${CMAKE_CURRENT_SOURCE_DIR}/src/link.T -Wl,--no-undefined)
++    target_link_libraries(chdr PRIVATE -Wl,--version-script ${CMAKE_CURRENT_SOURCE_DIR}/src/link.T)
+   endif()
+ 
+   set_target_properties(chdr PROPERTIES C_VISIBILITY_PRESET hidden)
