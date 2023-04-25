@@ -1,4 +1,4 @@
-@conflict gtk-update-icon-cache-<4
+@conflict gtk-update-icon-cache-*
 @conflict gtk+2-<2.24.8p0
 @conflict gtk+4-<4.10.3p0
 @pkgpath x11/gtk+2,-guic

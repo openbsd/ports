@@ -20,7 +20,7 @@ PKGNAME-media=		gtk+4-media-${GNOME_VERSION}
 REVISION-main=		0
 REVISION-cups=		0
 REVISION-demos=		0
-REVISION-guic=		0
+REVISION-guic=		1
 REVISION-media=		0
 
 CATEGORIES=		x11 devel
