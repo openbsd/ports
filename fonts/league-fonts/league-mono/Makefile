@@ -1,9 +1,8 @@
 COMMENT =	mashup of beautiful monospace font forms
 
-V =		2.220
+V =		2.300
 DISTNAME =	LeagueMono-$V
 LEAGUE_FONT =	league-mono
-REVISION =	0
 
 do-install:
 	${INSTALL_DATA_DIR} ${FONTDIR}
