@@ -5,7 +5,7 @@ COMMENT =		fast, encrypted, deduplicated backups
 
 GH_ACCOUNT =		rustic-rs
 GH_PROJECT =		rustic
-GH_TAGNAME =		v0.5.1
+GH_TAGNAME =		v0.5.2
 
 CATEGORIES =		sysutils
 
