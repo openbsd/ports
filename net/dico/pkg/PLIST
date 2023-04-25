@@ -41,6 +41,8 @@ lib/dico/pam.la
 @so lib/dico/pam.so
 lib/dico/pcre.la
 @so lib/dico/pcre.so
+lib/dico/python.la
+@so lib/dico/python.so
 lib/dico/stratall.la
 @so lib/dico/stratall.so
 lib/dico/substr.la

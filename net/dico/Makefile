@@ -1,8 +1,7 @@
 COMMENT =	GNU dictionary server
 
-V =		2.10
+V =		2.11
 DISTNAME =	dico-$V
-REVISION =	3
 
 SHARED_LIBS +=  dico                      0.0 # 2.0
 
@@ -15,8 +14,10 @@ MAINTAINER =	Anthony J. Bentley <anthony@anjbe.name>
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
+WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += c crypto curses gcrypt gpg-error gsasl iconv idn intl
-WANTLIB += lber ldap ltdl pam pcre readline sasl2 ssl z
+WANTLIB += lber ldap ltdl m pam pcre pthread readline sasl2 ssl
+WANTLIB += util z
 
 MASTER_SITES =		${MASTER_SITE_GNU:=dico/}
 
