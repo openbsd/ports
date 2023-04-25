@@ -28,6 +28,7 @@
      SUBDIR += gxemul
      SUBDIR += hatari
      SUBDIR += higan
+     SUBDIR += libchdr
      SUBDIR += libretro-genesis-plus-gx
      SUBDIR += libretro-nestopia
      SUBDIR += libretro-pcsx-rearmed
