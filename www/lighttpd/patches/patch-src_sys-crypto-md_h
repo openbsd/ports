@@ -1,0 +1,14 @@
+Use EVP API for truncated SHA-2 with LibreSSL
+
+Index: src/sys-crypto-md.h
+--- src/sys-crypto-md.h.orig
++++ src/sys-crypto-md.h
+@@ -496,7 +496,7 @@ SHA512_Update(SHA512_CTX *ctx, const void *data, size_
+ #ifdef BORINGSSL_API_VERSION
+ typedef SHA512_CTX SHA512_256_CTX;
+ #endif
+-#if OPENSSL_VERSION_NUMBER >= 0x30000000L
++#if OPENSSL_VERSION_NUMBER >= 0x30000000L || defined(LIBRESSL_VERSION_NUMBER)
+ #include <openssl/evp.h>
+ 
+ #ifdef USE_LIB_CRYPTO_MD4
