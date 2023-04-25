@@ -1,12 +1,10 @@
 COMMENT =		emulator for Nintendo Entertainment System
 
-V =			2.5.0
+V =			2.6.4
 DISTNAME =		fceux-${V}
 CATEGORIES =		emulators games
 
 HOMEPAGE =		https://fceux.com/web/home.html
-
-MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
