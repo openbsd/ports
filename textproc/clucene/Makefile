@@ -2,7 +2,7 @@ COMMENT =	full-text search engine library
 CATEGORIES =	textproc
 DISTNAME =	clucene-core-2.3.3.4
 
-REVISION =	3
+REVISION =	4
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=clucene/}
 

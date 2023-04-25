@@ -1,0 +1,18 @@
+https://git.libreoffice.org/core/+/refs/heads/master/external/clucene/patches/clucene-mutex.patch
+https://sourceforge.net/p/clucene/mailman/message/32314782/
+
+Index: src/core/CLucene/store/FSDirectory.cpp
+--- src/core/CLucene/store/FSDirectory.cpp.orig
++++ src/core/CLucene/store/FSDirectory.cpp
+@@ -219,9 +219,8 @@ CL_NS_USE(util)
+ 		_CLDECDELETE(handle);
+ 
+ 		//printf("handle=%d\n", handle->__cl_refcount);
+-		if ( dounlock ){
+-			mutex->unlock();
+-		}else{
++		mutex->unlock();
++		if ( !dounlock ){
+ 			delete mutex;
+ 		}
+ 	}
