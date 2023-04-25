@@ -8,6 +8,7 @@
 @bin bin/md-mx-ctrl
 @bin bin/mimedefang
 @bin bin/mimedefang-multiplexor
+bin/mimedefang-release
 bin/mimedefang-util
 bin/mimedefang.pl
 bin/watch-mimedefang
@@ -46,6 +47,7 @@ libdata/perl5/site_perl/Mail/MIMEDefang/Utils.pm
 @man man/man7/mimedefang-protocol.7
 @man man/man8/md-mx-ctrl.8
 @man man/man8/mimedefang-multiplexor.8
+@man man/man8/mimedefang-release.8
 @man man/man8/mimedefang.8
 @man man/man8/mimedefang.pl.8
 @man man/man8/watch-mimedefang.8

@@ -1,6 +1,6 @@
 COMMENT=	mailfilter to identify and mark spam
 
-DISTNAME=	mimedefang-3.3
+DISTNAME=	mimedefang-3.4
 
 CATEGORIES=	mail
 
@@ -44,9 +44,6 @@ FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/mimedefang
 post-extract:
 	cp ${WRKSRC}/examples/suggested-minimum-filter-for-windows-clients \
 		${WRKSRC}/examples/mimedefang-filter-openbsd-ports
-
-pre-configure:
-	sed -i 's,/var/lib,/var/db,g' ${WRKSRC}/mimedefang.pl.in
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/SpamAssassin/spamassassin.cf \
