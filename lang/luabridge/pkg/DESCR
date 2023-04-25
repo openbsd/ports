@@ -1,0 +1,19 @@
+LuaBridge is a lightweight and dependency-free library for mapping data,
+functions, and classes back and forth between C++ and Lua, a powerful,
+fast, lightweight, embeddable scripting language. LuaBridge has been
+tested and works with Lua revisions starting from 5.1.5, although it
+should work in any version of Lua from 5.1.0 and later. It also works
+transparently with LuaJIT.
+
+LuaBridge offers the following features:
+
+- MIT Licensed, no usage restrictions!
+- Headers-only: No Makefile, no .cpp files, just one #include!
+- Simple, light, and nothing else needed (like Boost).
+- No macros, settings, or configuration scripts needed.
+- Supports different object lifetime management models.
+- Convenient, type-safe access to the Lua stack.
+- Automatic function parameter type binding.
+- Easy access to Lua objects like tables and functions.
+- Written in a clear and easy to debug style.
+- C++11 compliant.
