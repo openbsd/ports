@@ -44,6 +44,7 @@
      SUBDIR += grilo-plugins
      SUBDIR += gucharmap
      SUBDIR += gvfs,
+     SUBDIR += iagno
      SUBDIR += icon-theme
      SUBDIR += icon-theme-symbolic
      SUBDIR += initial-setup
