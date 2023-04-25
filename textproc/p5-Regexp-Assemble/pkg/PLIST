@@ -4,6 +4,7 @@ ${P5SITE}/Regexp/Assemble.pm
 share/examples/p5-Regexp-Assemble/
 share/examples/p5-Regexp-Assemble/assemble
 share/examples/p5-Regexp-Assemble/debugging
+share/examples/p5-Regexp-Assemble/failure.01.pl
 share/examples/p5-Regexp-Assemble/fee
 share/examples/p5-Regexp-Assemble/file.1
 share/examples/p5-Regexp-Assemble/file.2
