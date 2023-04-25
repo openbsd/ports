@@ -91,6 +91,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/packet_unmarshaller_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/property_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/proxy_object_interface_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/proxy_object_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/raw_message_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/server_robustness_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/server_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/service_newapi.rb
