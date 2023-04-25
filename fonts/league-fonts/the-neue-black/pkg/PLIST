@@ -1,0 +1,4 @@
+share/fonts/
+@fontdir share/fonts/league-fonts/
+share/fonts/league-fonts/TheNeue-Black.otf
+share/fonts/league-fonts/TheNeue-Black.ttf
