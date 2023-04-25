@@ -97,7 +97,23 @@ Index: SSLeay.xs
  
  void
  RSA_free(r)
-@@ -7197,7 +7223,7 @@ ASN1_OBJECT *
+@@ -7010,6 +7036,7 @@ X509_VERIFY_PARAM_get0_peername(param)
+ 
+ #endif /* OpenSSL 1.0.2-beta2, LibreSSL 2.7.0 */
+ 
++#if !defined(LIBRESSL_VERSION_NUMBER) || (LIBRESSL_VERSION_NUMBER < 0x3080000fL) /* LibreSSL < 3.8.0 */
+ void
+ X509_policy_tree_free(tree)
+     X509_POLICY_TREE *tree
+@@ -7052,6 +7079,7 @@ const X509_POLICY_NODE *
+ X509_policy_node_get0_parent(node)
+     const X509_POLICY_NODE *node
+ 
++#endif /* !(LibreSSL >= 3.7.0) */
+ #endif
+ 
+ ASN1_OBJECT *
+@@ -7197,7 +7225,7 @@ ASN1_OBJECT *
  P_X509_get_signature_alg(x)
          X509 * x
      CODE:
@@ -106,7 +122,7 @@ Index: SSLeay.xs
          RETVAL = (X509_get0_tbs_sigalg(x)->algorithm);
  #else
          RETVAL = (x->cert_info->signature->algorithm);
-@@ -7690,7 +7716,7 @@ OCSP_response_results(rsp,...)
+@@ -7690,7 +7718,7 @@ OCSP_response_results(rsp,...)
  		if (!idsv) {
  		    /* getall: create new SV with OCSP_CERTID */
  		    unsigned char *pi,*pc;
@@ -115,7 +131,7 @@ Index: SSLeay.xs
  		    int len = i2d_OCSP_CERTID((OCSP_CERTID *)OCSP_SINGLERESP_get0_id(sir),NULL);
  #else
  		    int len = i2d_OCSP_CERTID(sir->certId,NULL);
-@@ -7699,7 +7725,7 @@ OCSP_response_results(rsp,...)
+@@ -7699,7 +7727,7 @@ OCSP_response_results(rsp,...)
  		    Newx(pc,len,unsigned char);
  		    if (!pc) croak("out of memory");
  		    pi = pc;
