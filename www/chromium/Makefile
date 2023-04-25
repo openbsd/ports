@@ -9,7 +9,7 @@ COMMENT=		Chromium browser
 V=			112.0.5615.165
 
 DISTNAME=		chromium-${V}
-REVISION=		0
+REVISION=		1
 
 DISTFILES+=		${CHROMIUM_DISTFILES} \
 			${PROFILE_DISTFILES}:0 \
@@ -52,10 +52,10 @@ MODPY_RUNDEP=		No
 # uses pledge()
 WANTLIB+=	GL X11 Xau Xcomposite Xdamage Xdmcp Xext Xfixes Xft Xi Xrandr
 WANTLIB+=	Xrender Xtst atk-1.0 atk-bridge-2.0 atspi c c++ c++abi cairo
-WANTLIB+=	cbor crypto cups dbus-1 drm event execinfo expat ffi fido2
+WANTLIB+=	cbor crypto cups dav1d dbus-1 drm event execinfo expat ffi fido2
 WANTLIB+=	fontconfig freetype fribidi gbm gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB+=	gobject-2.0 graphite2 gthread-2.0 harfbuzz harfbuzz-gobject
-WANTLIB+=	harfbuzz-subset iconv icudata icui18n icuuc intl jpeg kvm lzo2 m
+WANTLIB+=	harfbuzz-subset iconv icudata icui18n icuuc intl jpeg kvm m
 WANTLIB+=	nspr4 nss3 nssutil3 openh264 pango-1.0 pangocairo-1.0
 WANTLIB+=	pangoft2-1.0 pcre2-8 pixman-1 plc4 plds4 png pthread pthread smime3
 WANTLIB+=	snappy sndio usbhid util xcb xcb-render xcb-shm xkbcommon xml2
@@ -83,6 +83,7 @@ BUILD_DEPENDS=	archivers/bzip2 \
 LIB_DEPENDS=	archivers/snappy \
 		devel/pango \
 		graphics/jpeg \
+		multimedia/dav1d \
 		multimedia/openh264 \
 		security/nss \
 		textproc/icu4c \
@@ -131,7 +132,8 @@ BUILDDIR=	${WRKSRC}/out/${BUILDTYPE}
 # These libraries are used from the system and the build infrastructure
 # removes them from the bundled third_party directory and replaces them
 # with hooks to use them from the system.
-GN_SYSTEM_LIBS=	icu \
+GN_SYSTEM_LIBS=	dav1d \
+		icu \
 		libevent \
 		libjpeg \
 		libpng \
