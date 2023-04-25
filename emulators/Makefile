@@ -15,6 +15,7 @@
      SUBDIR += dynamips
      SUBDIR += emulationstation
      SUBDIR += fceux
+     SUBDIR += flycast
      SUBDIR += frodo
      SUBDIR += fs-uae
      SUBDIR += fs-uae-launcher
