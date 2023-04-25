@@ -1,6 +1,6 @@
 COMMENT=	MIMEDefang integration to the OpenSMTPD daemon
 
-V=		0.1
+V=		0.2
 FILTER_NAME =	mimedefang
 DISTNAME =	${FILTER_NAME}-smtpd-filter-${V}
 PKGNAME =	filter-${FILTER_NAME}-${V}
