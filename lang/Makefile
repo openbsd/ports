@@ -68,6 +68,7 @@
      SUBDIR += librep
      SUBDIR += libv8
      SUBDIR += lua
+     SUBDIR += luabridge
      SUBDIR += luajit
      SUBDIR += lucee
      SUBDIR += mawk
