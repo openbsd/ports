@@ -2,7 +2,7 @@ COMMENT=	Crosswire's Bible study utility
 
 V=		1.9.0
 DISTNAME=	sword-${V}
-CATEGORIES=    	textproc books
+CATEGORIES=	textproc books
 
 MASTER_SITES=	https://crosswire.org/ftpmirror/pub/sword/source/v${V:R}/
 MASTER_SITES0=	https://crosswire.org/ftpmirror/pub/sword/packages/rawzip/
