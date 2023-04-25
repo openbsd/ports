@@ -3,7 +3,7 @@ and Linux.
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -939,7 +939,7 @@ TESTS = tests/addid1.sh tests/addid1.sh tests/ascxml.s
+@@ -932,7 +932,7 @@ TESTS = tests/addid1.sh tests/addid1.sh tests/ascxml.s
  	tests/cite4.sh\
  	tests/clean1.sh tests/copy1.sh tests/copy2.sh tests/copy3.sh\
  	tests/copy4.sh tests/copy5.sh tests/copy6.sh\
