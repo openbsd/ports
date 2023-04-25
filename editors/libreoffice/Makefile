@@ -1,5 +1,4 @@
 USE_WXNEEDED=	Yes
-BROKEN-i386=	segfaults in build
 
 ONLY_FOR_ARCHS= amd64 i386 aarch64
 
