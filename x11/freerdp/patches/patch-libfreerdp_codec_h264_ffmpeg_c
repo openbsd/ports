@@ -1,0 +1,18 @@
+Fixed #8686: Update h264 to use new FFMPEG API
+
+Index: libfreerdp/codec/h264_ffmpeg.c
+--- libfreerdp/codec/h264_ffmpeg.c.orig
++++ libfreerdp/codec/h264_ffmpeg.c
+@@ -529,10 +529,12 @@ static BOOL libavcodec_init(H264_CONTEXT* h264)
+ 			goto EXCEPTION;
+ 		}
+ 
++#if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(59, 18, 100)
+ 		if (sys->codecDecoder->capabilities & AV_CODEC_CAP_TRUNCATED)
+ 		{
+ 			sys->codecDecoderContext->flags |= AV_CODEC_FLAG_TRUNCATED;
+ 		}
++#endif
+ 
+ #ifdef WITH_VAAPI
+ 

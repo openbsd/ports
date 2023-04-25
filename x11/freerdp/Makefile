@@ -1,5 +1,6 @@
 COMMENT =		client for Microsoft RDP (remote desktop protocol)
 DISTNAME =		freerdp-2.10.0
+REVISION =		0
 DPB_PROPERTIES =	parallel
 CATEGORIES =		x11 net
 
