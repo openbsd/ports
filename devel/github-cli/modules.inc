@@ -14,7 +14,7 @@ MODGO_MODULES =	\
 	github.com/alessio/shellescape				 v1.4.1 \
 	github.com/aymerick/douceur				 v0.2.0 \
 	github.com/briandowns/spinner				 v1.18.1 \
-	github.com/cenkalti/backoff/v4				 v4.2.0 \
+	github.com/cenkalti/backoff/v4				 v4.2.1 \
 	github.com/census-instrumentation/opencensus-proto	 v0.2.1 \
 	github.com/cespare/xxhash/v2				 v2.1.1 \
 	github.com/charmbracelet/glamour			 v0.5.1-0.20220727184942-e70ff2d969da \
@@ -24,10 +24,10 @@ MODGO_MODULES =	\
 	github.com/chzyer/test					 v0.0.0-20180213035817-a1ea475d72b1 \
 	github.com/cli/browser					 v1.1.0 \
 	github.com/cli/crypto					 v0.0.0-20210929142629-6be313f59b03 \
-	github.com/cli/go-gh					 v1.2.1 \
+	github.com/cli/go-gh/v2					 v2.0.0 \
 	github.com/cli/oauth					 v1.0.1 \
 	github.com/cli/safeexec					 v1.0.1 \
-	github.com/cli/shurcoo!l-graphql			 v0.0.2 \
+	github.com/cli/shurcoo!l-graphql			 v0.0.3 \
 	github.com/client9/misspell				 v0.3.4 \
 	github.com/cncf/udpa/go					 v0.0.0-20210930031921-04548b0d99d4 \
 	github.com/cncf/xds/go					 v0.0.0-20211011173535-cb28da3451f1 \
