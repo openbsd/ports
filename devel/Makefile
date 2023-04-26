@@ -1834,6 +1834,7 @@
      SUBDIR += tclcl
      SUBDIR += tcllib
      SUBDIR += tclthread
+     SUBDIR += tea
      SUBDIR += teensyloader
      SUBDIR += template-glib
      SUBDIR += ti-msp430gcc
