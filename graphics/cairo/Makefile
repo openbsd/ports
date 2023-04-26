@@ -2,6 +2,7 @@ COMMENT=		vector graphics library
 
 GNOME_PROJECT=		cairo
 GNOME_VERSION=		1.17.8
+REVISION=		0
 
 CATEGORIES=		graphics
 DPB_PROPERTIES=		parallel
