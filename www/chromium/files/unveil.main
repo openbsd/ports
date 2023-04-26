@@ -63,6 +63,7 @@
 ~/.config/fcitx r
 ~/.config/fontconfig r
 ~/.config/gtk-3.0 r
+~/.config/ibus r
 ~/.config/mimeapps.list r
 ~/.config/user-dirs.dirs r
 
