@@ -7,7 +7,7 @@ GH_ACCOUNT =		AcademySoftwareFoundation
 GH_PROJECT =		OpenColorIO
 GH_TAGNAME =		v2.1.1
 PKGNAME =		${DISTNAME:L}
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=  OpenColorIO               1.1 # 1.1.1
 
@@ -15,8 +15,7 @@ CATEGORIES =		graphics
 
 HOMEPAGE =		http://opencolorio.org/index.html
 
-MAINTAINER =		Pascal Stumpf <pascal@stumpf.co> \
-			Dimitri Karamazov <deserter666@danwin1210.me>
+MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # several BSD-like
 PERMIT_PACKAGE =	Yes

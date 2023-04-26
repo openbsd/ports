@@ -13,11 +13,9 @@ GH_PROJECT =	python-adblock
 GH_TAGNAME =	0.5.1
 DISTNAME =	py-adblock-${GH_TAGNAME}
 MODPY_EGG_VERSION = ${GH_TAGNAME}
-REVISION =          5
+REVISION =          6
 
 CATEGORIES =	www
-
-MAINTAINER =	Dimitri Karamazov <deserter666@danwin1210.me>
 
 # MIT
 PERMIT_PACKAGE =Yes

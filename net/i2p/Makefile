@@ -4,13 +4,11 @@ GH_ACCOUNT=	i2p
 GH_PROJECT=	i2p.i2p
 GH_TAGNAME=	i2p-1.8.0
 DISTNAME=	${GH_TAGNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	net
 
 HOMEPAGE=	https://geti2p.net/en/
-
-MAINTAINER=	Dimitri Karamazov <deserter666@danwin1210.me>
 
 # Apache-2.0 Artistic BSD CC-BY-2.5 CC-BY-3.0 CC-BY-SA-3.0
 # EPLv1.0 GPLv2 GPLv3 LGPLv2.1 LGPLv3 MIT public-domain WTFPLv2

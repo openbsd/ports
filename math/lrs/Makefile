@@ -1,7 +1,7 @@
 COMMENT =		solve vertex enumeration and convex hull problems
 
 V =			071a
-REVISION =		0
+REVISION =		1
 DISTNAME =		lrslib-${V}
 PKGNAME =		lrs-${V}
 FIX_EXTRACT_PERMISSIONS=Yes
@@ -11,8 +11,6 @@ SHARED_LIBS =		lrs		0.0 # 1.0
 CATEGORIES =		math
 
 HOMEPAGE =		http://cgm.cs.mcgill.ca/~avis/C/lrs.html
-
-MAINTAINER =		Dimitri Karamazov <deserter666@danwin1210.me>
 
 # GPLv2
 PERMIT_PACKAGE =	Yes

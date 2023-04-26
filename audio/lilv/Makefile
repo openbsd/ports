@@ -1,15 +1,13 @@
 COMMENT=	library for simple use of LV2 plugins in applications
 
 DISTNAME=	lilv-0.24.12
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS=	lilv-0		0.0 # 0.24
 
 CATEGORIES=	audio
 
 HOMEPAGE=	https://drobilla.net/software/lilv
-
-MAINTAINER=	Dimitri Karamazov <deserter666@danwin1210.me>
 
 # ISC
 PERMIT_PACKAGE= Yes

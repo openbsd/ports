@@ -5,10 +5,9 @@ COMMENT=	fast hash map and hash set
 GH_ACCOUNT=	Tessil
 GH_PROJECT=	robin-map
 GH_TAGNAME=	v0.6.3
+REVISION =	0
 
 CATEGORIES=	devel
-
-MAINTAINER=	Dimitri Karamazov <deserter666@danwin1210.me>
 
 # MIT
 PERMIT_PACKAGE=	Yes

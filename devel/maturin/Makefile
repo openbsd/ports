@@ -6,11 +6,9 @@ COMMENT =	develop crates with pyo3, rust-cpython and cffi bindings
 GH_ACCOUNT =	PyO3
 GH_PROJECT =	maturin
 GH_TAGNAME =	v0.12.9
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	devel
-
-MAINTAINER =	Dimitri Karamazov <deserter666@danwin1210.me>
 
 # APACHE 2.0
 PERMIT_PACKAGE =Yes

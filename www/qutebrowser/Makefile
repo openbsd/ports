@@ -2,13 +2,11 @@ COMMENT =		keyboard-focused browser with a minimal GUI
 
 MODPY_EGG_VERSION =	2.5.1
 DISTNAME =		qutebrowser-${MODPY_EGG_VERSION}
-REVISION =		2
+REVISION =		3
 
 HOMEPAGE =		https://www.qutebrowser.org/
 
 CATEGORIES =		www
-
-MAINTAINER =		Dimitri Karamazov <deserter666@danwin1210.me>
 
 # GPLv3
 PERMIT_PACKAGE =	Yes

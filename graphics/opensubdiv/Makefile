@@ -5,6 +5,7 @@ GH_ACCOUNT=	PixarAnimationStudios
 GH_PROJECT=	OpenSubdiv
 GH_TAGNAME=	v${V:S/./_/g}
 DISTNAME=	${GH_PROJECT:L}-${V}
+REVISION=	0
 
 SHARED_LIBS +=	osdCPU		1.0 # 3.4.4
 SHARED_LIBS +=	osdGPU		1.0 # 3.4.4
@@ -12,8 +13,6 @@ SHARED_LIBS +=	osdGPU		1.0 # 3.4.4
 CATEGORIES=	graphics
 
 HOMEPAGE=	https://graphics.pixar.com/opensubdiv/
-
-MAINTAINER=	Dimitri Karamazov <deserter666@danwin1210.me>
 
 # APACHE 2.0
 PERMIT_PACKAGE=	Yes

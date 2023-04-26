@@ -1,13 +1,12 @@
 COMMENT=	Tanuki Java Service Wrapper
 
 V=		3.5.49
+REVISION=	0
 DISTNAME=	wrapper_${V}_src
 PKGNAME=	java-tanukiwrapper-${V}
 CATEGORIES=	java
 
 HOMEPAGE=	https://wrapper.tanukisoftware.com/
-
-MAINTAINER=	Dimitri Karamazov <deserter666@danwin1210.me>
 
 MASTER_SITES=	https://download.tanukisoftware.com/wrapper/${V}/
 

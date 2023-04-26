@@ -5,10 +5,9 @@ PKGNAME=	mruby-zest-20210207
 GH_ACCOUNT=	mruby-zest
 GH_PROJECT=	mruby-zest-build
 GH_COMMIT=	f1eeda675f6bbda1d2f9f1454ec0d84e0632e603
+REVISION =	0
 
 CATEGORIES=	x11
-
-MAINTAINER=	Dimitri Karamazov <deserter666@danwin1210.me>
 
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes

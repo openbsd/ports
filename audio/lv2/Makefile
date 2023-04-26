@@ -1,13 +1,11 @@
 COMMENT=	open standard for audio plugins, used by hundreds of plugins
 
 DISTNAME=	lv2-1.18.2
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	audio
 
 HOMEPAGE=	https://lv2plug.in
-
-MAINTAINER=     Dimitri Karamazov <deserter666@danwin1210.me>
 
 # ISC
 PERMIT_PACKAGE= Yes

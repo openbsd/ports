@@ -3,10 +3,9 @@ COMMENT =	simple and fast file manager
 GH_ACCOUNT =	dylanaraps
 GH_PROJECT =	fff
 GH_TAGNAME =	2.2
+REVISION =	0
 
 CATEGORIES =	sysutils
-
-MAINTAINER =		Dimitri Karamazov <deserter666@danwin1210.me>
 
 # MIT
 PERMIT_PACKAGE =	Yes

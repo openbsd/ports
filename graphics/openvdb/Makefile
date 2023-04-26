@@ -7,14 +7,13 @@ COMMENT=	tools for storage and manipulation of volumetric data
 GH_ACCOUNT=	AcademySoftwareFoundation
 GH_PROJECT=	openvdb
 GH_TAGNAME=	v9.0.0
+REVISION=	0
 
 SHARED_LIBS +=  openvdb                   3.0 # 9.0
 
 CATEGORIES=	graphics
 
 HOMEPAGE=	https://www.openvdb.org/
-
-MAINTAINER=	Dimitri Karamazov <deserter666@danwin1210.me>
 
 # MPL
 PERMIT_PACKAGE=	Yes

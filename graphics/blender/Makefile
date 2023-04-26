@@ -8,13 +8,11 @@ DPB_PROPERTIES = parallel
 COMMENT =	3D creation software
 
 DISTNAME =	blender-3.0.1
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	graphics
 
 HOMEPAGE =	https://www.blender.org/
-
-MAINTAINER =	Dimitri Karamazov <deserter666@danwin1210.me>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

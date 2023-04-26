@@ -6,8 +6,7 @@ SHARED_LIBS +=	bemenu                    2.0 # 0.6.7
 GH_ACCOUNT =	Cloudef
 GH_PROJECT =	bemenu
 GH_TAGNAME =	0.6.7
-
-MAINTAINER =	Dimitri Karamazov <deserter666@danwin1210.me>
+REVISION =	0
 
 # Library and bindings: LGPLv3+
 # Everything else: GPLv3+

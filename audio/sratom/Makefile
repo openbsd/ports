@@ -2,15 +2,13 @@ COMMENT=	library for serialising LV2 atoms to/from RDF
 
 V=		0.6.8
 DISTNAME=	sratom-${V}
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS=	sratom-0	0.0 # 0.6
 
 CATEGORIES=	audio
 
 HOMEPAGE=	https://drobilla.net/software/sratom
-
-MAINTAINER=     Dimitri Karamazov <deserter666@danwin1210.me>
 
 # MIT
 PERMIT_PACKAGE= Yes

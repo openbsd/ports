@@ -5,15 +5,13 @@ DISTNAME =		lmms_$V
 PKGNAME =		lmms-$V
 WRKDIST =		${WRKDIR}/lmms
 EXTRACT_SUFX =		.tar.xz
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		audio
 
 HOMEPAGE =		https://lmms.io/
 
 MASTER_SITES =		https://github.com/LMMS/lmms/releases/download/v$V/
-
-MAINTAINER =		Dimitri Karamazov <deserter666@danwin1210.me>
 
 # GPLv2
 PERMIT_PACKAGE =	Yes

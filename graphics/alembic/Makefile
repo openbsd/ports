@@ -3,14 +3,13 @@ COMMENT=	open framework for storing and sharing scene data
 GH_ACCOUNT=	alembic
 GH_PROJECT=	alembic
 GH_TAGNAME=	1.8.3
+REVISION=	0
 
 SHARED_LIBS +=  Alembic                   0.1 # 1.8
 
 CATEGORIES=	graphics
 
 HOMEPAGE=	https://www.alembic.io/
-
-MAINTAINER=	Dimitri Karamazov <deserter666@danwin1210.me>
 
 # BSD
 PERMIT_PACKAGE=	Yes

@@ -1,13 +1,11 @@
 COMMENT=	synth capable of making a countless number of instruments
 
 DISTNAME=	zynaddsubfx-3.0.6
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	audio
 
 HOMEPAGE=	https://zynaddsubfx.sourceforge.net
-
-MAINTAINER=	Dimitri Karamazov <deserter666@danwin1210.me>
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

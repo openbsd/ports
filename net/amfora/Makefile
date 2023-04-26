@@ -2,14 +2,13 @@ COMMENT=	terminal browser for gemini protocol
 
 MODGO_MODNAME=	github.com/makeworld-the-better-one/amfora
 MODGO_VERSION=	v1.9.2
+REVISION=	0
 
 DISTNAME=	amfora-${MODGO_VERSION}
 
 CATEGORIES=	net
 
 HOMEPAGE=	https://github.com/makeworld-the-better-one/amfora
-
-MAINTAINER=	Dimitri Karamazov <deserter666@danwin1210.me>
 
 # GPLv3
 PERMIT_PACKAGE=	Yes

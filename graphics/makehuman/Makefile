@@ -3,13 +3,11 @@ COMMENT=	parametrical modeling of 3D humanoid characters
 GH_ACCOUNT=	makehumancommunity
 GH_PROJECT=	makehuman
 GH_TAGNAME=	v1.2.0
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.makehumancommunity.org/
-
-MAINTAINER=	Dimitri Karamazov <deserter666@danwin1210.me>
 
 # AGPLv3
 PERMIT_PACKAGE=	Yes

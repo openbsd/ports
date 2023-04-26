@@ -8,7 +8,7 @@ GH_PROJECT =		oiio
 GH_TAGNAME =		Release-$V
 V =			2.2.20.0
 DISTNAME =		openimageio-${V}
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS +=		OpenImageIO		11.1 # 2.2.20
 SHARED_LIBS +=		OpenImageIO_Util	7.0 # 2.2.20
@@ -16,8 +16,6 @@ SHARED_LIBS +=		OpenImageIO_Util	7.0 # 2.2.20
 CATEGORIES =		graphics devel
 
 HOMEPAGE =		https://sites.google.com/site/openimageio/home
-
-MAINTAINER =		Dimitri Karamazov <deserter666@danwin1210.me>
 
 # BSD
 PERMIT_PACKAGE =	Yes

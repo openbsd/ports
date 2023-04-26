@@ -1,15 +1,13 @@
 COMMENT=	lightweight C library for storing RDF data in memory
 
 DISTNAME=	sord-0.16.8
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS=	sord-0	0.0 # 0.16
 
 CATEGORIES=	devel
 
 HOMEPAGE=	https://drobilla.net/software/sord
-
-MAINTAINER=	Dimitri Karamazov <deserter666@danwin1210.me>
 
 # MIT
 PERMIT_PACKAGE=	Yes

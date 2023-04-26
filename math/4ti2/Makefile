@@ -5,13 +5,11 @@ GH_ACCOUNT =	4ti2
 GH_PROJECT =	4ti2
 GH_TAGNAME =	Release_${V:S/./_/g}
 DISTNAME =	${GH_PROJECT}-${V}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	math
 
 HOMEPAGE =	https://4ti2.github.io/
-
-MAINTAINER =	Dimitri Karamazov <deserter666@danwin1210.me>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

@@ -1,15 +1,13 @@
 COMMENT=	lightweight C library for RDF syntax
 
 DISTNAME=	serd-0.30.10
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS=	serd-0	0.0 # 0.30
 
 CATEGORIES=	devel
 
 HOMEPAGE=	https://drobilla.net/software/serd
-
-MAINTAINER=	Dimitri Karamazov <deserter666@danwin1210.me>
 
 # MIT
 PERMIT_PACKAGE=	Yes
