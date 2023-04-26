@@ -1,7 +1,7 @@
 # i386 uses fastcall, which currently does not compile with luabridge.
 # if fastcall is patched out, i386 interpreter works (slow) but dynarec crashes.
 # see: https://github.com/vinniefalco/LuaBridge/issues/302
-ONLY_FOR_ARCHES =	amd64
+ONLY_FOR_ARCHS =	amd64
 
 COMMENT =	emulator for Sega Dreamcast and Sega Naomi based on reicast
 
