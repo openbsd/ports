@@ -3,7 +3,7 @@ Our utility is called sha256.
 Index: makeself.sh
 --- makeself.sh.orig
 +++ makeself.sh
-@@ -724,7 +724,7 @@ if test "$SHA256" = y; then
+@@ -678,7 +678,7 @@ if test "$SHA256" = y; then
  	if test -x "$SHA_PATH"; then
  		shasum=`eval "$SHA_PATH -a 256" < "$tmpfile" | cut -b-64`
  	else

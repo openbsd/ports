@@ -2,7 +2,7 @@ COMMENT=		script generating a self-extractible .tgz from a directory
 
 GH_ACCOUNT=		megastep
 GH_PROJECT=		makeself
-GH_TAGNAME=		release-2.4.5
+GH_TAGNAME=		release-2.5.0
 
 CATEGORIES=		archivers misc
 
