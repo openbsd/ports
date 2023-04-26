@@ -1,5 +1,5 @@
 COMMENT =	user interface library from pwmt
-DISTNAME =	girara-0.3.8
+DISTNAME =	girara-0.4.0
 
 SHARED_LIBS += girara-gtk3               1.2 # 3.1
 
