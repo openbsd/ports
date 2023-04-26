@@ -1,0 +1,72 @@
+Index: gtksourceview/gtksourcebufferoutputstream.c
+--- gtksourceview/gtksourcebufferoutputstream.c.orig
++++ gtksourceview/gtksourcebufferoutputstream.c
+@@ -1063,8 +1063,10 @@ gtk_source_buffer_output_stream_write (GOutputStream  
+ 	}
+ 	else
+ 	{
+-		text = (gchar *) buffer;
+ 		len = count;
++		text = g_malloc (len + 1);
++		memcpy (text, buffer, len);
++		text[len] = '\0';
+ 	}
+ 
+ 	if (!ostream->is_utf8)
+@@ -1079,10 +1081,7 @@ gtk_source_buffer_output_stream_write (GOutputStream  
+ 			g_set_error_literal (error, G_IO_ERROR, G_IO_ERROR_NOT_INITIALIZED,
+ 			                     _("Invalid object, not initialized"));
+ 
+-			if (freetext)
+-			{
+-				g_free (text);
+-			}
++			g_free (text);
+ 
+ 			goto failure;
+ 		}
+@@ -1101,10 +1100,7 @@ gtk_source_buffer_output_stream_write (GOutputStream  
+ 
+ 			text2[len2] = '\0';
+ 
+-			if (freetext)
+-			{
+-				g_free (text);
+-			}
++			g_free (text);
+ 
+ 			text = text2;
+ 			len = len2;
+@@ -1119,18 +1115,11 @@ gtk_source_buffer_output_stream_write (GOutputStream  
+ 
+ 		if (!convert_text (ostream, text, len, &outbuf, &outbuf_len, error))
+ 		{
+-			if (freetext)
+-			{
+-				g_free (text);
+-			}
+-
++			g_free (text);
+ 			goto failure;
+ 		}
+ 
+-		if (freetext)
+-		{
+-			g_free (text);
+-		}
++		g_free (text);
+ 
+ 		/* set the converted text as the text to validate */
+ 		text = outbuf;
+@@ -1139,10 +1128,7 @@ gtk_source_buffer_output_stream_write (GOutputStream  
+ 
+ 	validate_and_insert (ostream, text, len, freetext);
+ 
+-	if (freetext)
+-	{
+-		g_free (text);
+-	}
++	g_free (text);
+ 
+ 	ret = (gssize)count;
+ 
