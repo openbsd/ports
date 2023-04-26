@@ -1,12 +1,11 @@
 include/scintilla/
 include/scintilla/ILexer.h
 include/scintilla/ILoader.h
-include/scintilla/Platform.h
-include/scintilla/SciLexer.h
 include/scintilla/Sci_Position.h
 include/scintilla/Scintilla.h
+include/scintilla/ScintillaCall.h
+include/scintilla/ScintillaMessages.h
+include/scintilla/ScintillaStructures.h
+include/scintilla/ScintillaTypes.h
 include/scintilla/ScintillaWidget.h
-@static-lib lib/libscintilla.a
 @lib lib/libscintilla.so.${LIBscintilla_VERSION}
-@static-lib lib/libscintilla_lexers.a
-@lib lib/libscintilla_lexers.so.${LIBscintilla_lexers_VERSION}
