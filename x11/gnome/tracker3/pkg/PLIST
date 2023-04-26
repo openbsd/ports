@@ -99,6 +99,7 @@ share/doc/Tracker-3.0/class.SparqlConnection.html
 share/doc/Tracker-3.0/class.SparqlCursor.html
 share/doc/Tracker-3.0/class.SparqlStatement.html
 share/doc/Tracker-3.0/classes_hierarchy.html
+share/doc/Tracker-3.0/commandline.html
 share/doc/Tracker-3.0/const.MAJOR_VERSION.html
 share/doc/Tracker-3.0/const.MICRO_VERSION.html
 share/doc/Tracker-3.0/const.MINOR_VERSION.html
@@ -116,6 +117,7 @@ share/doc/Tracker-3.0/const.PREFIX_RDFS.html
 share/doc/Tracker-3.0/const.PREFIX_SLO.html
 share/doc/Tracker-3.0/const.PREFIX_TRACKER.html
 share/doc/Tracker-3.0/const.PREFIX_XSD.html
+share/doc/Tracker-3.0/containment.svg
 share/doc/Tracker-3.0/ctor.EndpointDBus.new.html
 share/doc/Tracker-3.0/ctor.EndpointHttp.new.html
 share/doc/Tracker-3.0/ctor.NamespaceManager.new.html
@@ -132,6 +134,7 @@ share/doc/Tracker-3.0/enum.RdfFormat.html
 share/doc/Tracker-3.0/enum.SerializeFlags.html
 share/doc/Tracker-3.0/enum.SparqlValueType.html
 share/doc/Tracker-3.0/error.SparqlError.html
+share/doc/Tracker-3.0/example-interpretation-containment.svg
 share/doc/Tracker-3.0/examples.html
 share/doc/Tracker-3.0/flags.SparqlConnectionFlags.html
 share/doc/Tracker-3.0/fonts.css
@@ -145,13 +148,9 @@ share/doc/Tracker-3.0/func.sparql_get_ontology_nepomuk.html
 share/doc/Tracker-3.0/func.sparql_get_uuid_urn.html
 share/doc/Tracker-3.0/fzy.js
 share/doc/Tracker-3.0/go-up-symbolic.png
-share/doc/Tracker-3.0/icon-deprecated.svg
-share/doc/Tracker-3.0/icon-fulltextindexed.svg
-share/doc/Tracker-3.0/icon-multivalue.svg
-share/doc/Tracker-3.0/icon-notify.svg
-share/doc/Tracker-3.0/icon-superproperty.svg
 share/doc/Tracker-3.0/index.html
 share/doc/Tracker-3.0/index.json
+share/doc/Tracker-3.0/interpretation.svg
 share/doc/Tracker-3.0/limits.html
 share/doc/Tracker-3.0/logo.svg
 share/doc/Tracker-3.0/main.js

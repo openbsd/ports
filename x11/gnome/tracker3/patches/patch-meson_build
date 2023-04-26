@@ -3,7 +3,7 @@ XXX push upstream
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -83,7 +83,11 @@ if not libsoup2.found() and not libsoup3.found()
+@@ -85,7 +85,11 @@ if not libsoup2.found() and not libsoup3.found()
  endif
  
  libmath = cc.find_library('m', required: false)
