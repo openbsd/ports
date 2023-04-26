@@ -577,8 +577,13 @@ lib/python${MODPY_VERSION}/site-packages/hotdoc/hotdoc_bootstrap_theme/dist/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/hotdoc_bootstrap_theme/dist/css/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/hotdoc_bootstrap_theme/dist/css/bootstrap-toc.min.css
 lib/python${MODPY_VERSION}/site-packages/hotdoc/hotdoc_bootstrap_theme/dist/css/custom_bootstrap.css
+lib/python${MODPY_VERSION}/site-packages/hotdoc/hotdoc_bootstrap_theme/dist/css/dark-frontend.css
+lib/python${MODPY_VERSION}/site-packages/hotdoc/hotdoc_bootstrap_theme/dist/css/dark-sitenav.css
 lib/python${MODPY_VERSION}/site-packages/hotdoc/hotdoc_bootstrap_theme/dist/css/frontend.css
 lib/python${MODPY_VERSION}/site-packages/hotdoc/hotdoc_bootstrap_theme/dist/css/jquery.mCustomScrollbar.min.css
+lib/python${MODPY_VERSION}/site-packages/hotdoc/hotdoc_bootstrap_theme/dist/css/light-frontend.css
+lib/python${MODPY_VERSION}/site-packages/hotdoc/hotdoc_bootstrap_theme/dist/css/light-sitenav.css
+lib/python${MODPY_VERSION}/site-packages/hotdoc/hotdoc_bootstrap_theme/dist/css/sitenav.css
 lib/python${MODPY_VERSION}/site-packages/hotdoc/hotdoc_bootstrap_theme/dist/fonts/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/hotdoc_bootstrap_theme/dist/fonts/glyphicons-halflings-regular.eot
 lib/python${MODPY_VERSION}/site-packages/hotdoc/hotdoc_bootstrap_theme/dist/fonts/glyphicons-halflings-regular.svg
@@ -592,6 +597,7 @@ lib/python${MODPY_VERSION}/site-packages/hotdoc/hotdoc_bootstrap_theme/dist/js/a
 lib/python${MODPY_VERSION}/site-packages/hotdoc/hotdoc_bootstrap_theme/dist/js/bootstrap-toc.min.js
 lib/python${MODPY_VERSION}/site-packages/hotdoc/hotdoc_bootstrap_theme/dist/js/bootstrap.js
 lib/python${MODPY_VERSION}/site-packages/hotdoc/hotdoc_bootstrap_theme/dist/js/compare-versions.js
+lib/python${MODPY_VERSION}/site-packages/hotdoc/hotdoc_bootstrap_theme/dist/js/full-width.js
 lib/python${MODPY_VERSION}/site-packages/hotdoc/hotdoc_bootstrap_theme/dist/js/isotope.pkgd.min.js
 lib/python${MODPY_VERSION}/site-packages/hotdoc/hotdoc_bootstrap_theme/dist/js/jquery.js
 lib/python${MODPY_VERSION}/site-packages/hotdoc/hotdoc_bootstrap_theme/dist/js/jquery.mCustomScrollbar.concat.min.js
@@ -605,6 +611,7 @@ lib/python${MODPY_VERSION}/site-packages/hotdoc/hotdoc_bootstrap_theme/dist/js/s
 lib/python${MODPY_VERSION}/site-packages/hotdoc/hotdoc_bootstrap_theme/dist/js/search/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/hotdoc_bootstrap_theme/dist/js/search.js
 lib/python${MODPY_VERSION}/site-packages/hotdoc/hotdoc_bootstrap_theme/dist/js/search/enable_search.css
+lib/python${MODPY_VERSION}/site-packages/hotdoc/hotdoc_bootstrap_theme/dist/js/styleswitcher.js
 lib/python${MODPY_VERSION}/site-packages/hotdoc/hotdoc_bootstrap_theme/dist/js/tag_filtering.js
 lib/python${MODPY_VERSION}/site-packages/hotdoc/hotdoc_bootstrap_theme/dist/js/typeahead.jquery.min.js
 lib/python${MODPY_VERSION}/site-packages/hotdoc/hotdoc_bootstrap_theme/dist/js/utils.js
