@@ -5,7 +5,7 @@ ONLY_FOR_ARCHS =	amd64 arm64
 COMMENT =	open source implementation of the Tailscale control server
 
 MODGO_MODNAME =	github.com/juanfont/headscale
-MODGO_VERSION =	v0.18.0
+MODGO_VERSION =	v0.22.1
 
 DISTNAME =	headscale-${MODGO_VERSION}
 
@@ -18,7 +18,7 @@ MAINTAINER =	Laurent Cheylus <foxy@free.fr>
 # BSD-3
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c pthread
+WANTLIB +=	c pthread
 
 MODULES =		lang/go
 MODGO_LDFLAGS +=	-X ${MODGO_MODNAME}/cmd/headscale/cli.Version=$\
@@ -26,9 +26,13 @@ MODGO_LDFLAGS +=	-X ${MODGO_MODNAME}/cmd/headscale/cli.Version=$\
 
 WRKDIST =	${WRKSRC}
 
+do-install:
+	${INSTALL_PROGRAM} ${MODGO_WORKSPACE}/bin/headscale ${PREFIX}/bin
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/headscale
-	${INSTALL_DATA} ${WRKSRC}/derp-example.yaml ${PREFIX}/share/examples/headscale/
+	${INSTALL_DATA} ${WRKSRC}/derp-example.yaml \
+		${PREFIX}/share/examples/headscale/
 	${SUBST_DATA} ${WRKSRC}/config-example.yaml \
 		${PREFIX}/share/examples/headscale/config-example.yaml
 

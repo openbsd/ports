@@ -9,10 +9,10 @@ Generate a private key:
 
     # openssl rand -base64 32 > ${SYSCONFDIR}/headscale/private.key
 
-Create an initial namespace:
+Create an initial user:
 
     # su -s/bin/sh _headscale
-    $ headscale namespaces create myfirstnamespace
+    $ headscale users create myfirstuser
 
 Enable and start the service
 
