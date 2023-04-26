@@ -12,7 +12,7 @@ Index: CMakeLists.txt
  	set(USE_FFMPEG ON CACHE BOOL "Whether or not to enable FFmpeg support")
  	set(USE_ZLIB ON CACHE BOOL "Whether or not to enable zlib support")
  	set(USE_MINIZIP ON CACHE BOOL "Whether or not to enable external minizip support")
-@@ -533,6 +534,14 @@ if(USE_GDB_STUB)
+@@ -540,6 +541,14 @@ if(USE_GDB_STUB)
  endif()
  source_group("Debugger" FILES ${DEBUGGER_SRC})
  
@@ -27,7 +27,7 @@ Index: CMakeLists.txt
  if(USE_FFMPEG)
  	list(APPEND FEATURES FFMPEG)
  	if(LIBSWRESAMPLE_FOUND)
-@@ -1274,6 +1283,7 @@ if(NOT QUIET AND NOT LIBMGBA_ONLY)
+@@ -1281,6 +1290,7 @@ if(NOT QUIET AND NOT LIBMGBA_ONLY)
  		message(STATUS "	CLI debugger: ${USE_EDITLINE}")
  	endif()
  	message(STATUS "	GDB stub: ${USE_GDB_STUB}")

@@ -2,7 +2,7 @@ COMMENT-main =		Game Boy Color/Advance emulator
 COMMENT-qt =		Game Boy Color/Advance emulator with GUI
 COMMENT-libretro =	Game Boy Color/Advance core for retroarch
 
-V =			0.10.1
+V =			0.10.2
 GH_ACCOUNT =		mgba-emu
 GH_PROJECT =		mgba
 GH_TAGNAME =		$V
@@ -24,7 +24,7 @@ MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 # MPL 2.0
 PERMIT_PACKAGE =	Yes
 
-cWANTLIB =		GL SDL2 avfilter avcodec avformat avutil c \
+cWANTLIB =		EGL GL SDL2 avfilter avcodec avformat avutil c \
 			curses edit elf m png pthread sqlite3 swresample \
 			swscale z zip
 WANTLIB-main =		${cWANTLIB}

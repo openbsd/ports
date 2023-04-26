@@ -169,6 +169,7 @@ include/mgba/internal/gba/sio/lockstep.h
 include/mgba/internal/gba/timer.h
 include/mgba/internal/gba/video.h
 include/mgba/internal/script/
+include/mgba/internal/script/lua.h
 include/mgba/internal/script/socket.h
 include/mgba/internal/sm83/
 include/mgba/internal/sm83/debugger/
