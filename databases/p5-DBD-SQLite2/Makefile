@@ -1,9 +1,8 @@
 COMMENT=		SQLite2 drivers for the Perl DBI
 
-DISTNAME=		DBD-SQLite2-0.37
+DISTNAME=		DBD-SQLite2-0.38
 CATEGORIES=		databases
 MODULES=		cpan
-REVISION=		0
 
 MAINTAINER=		Robert Nagy <robert@openbsd.org>
 
