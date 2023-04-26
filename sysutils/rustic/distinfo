@@ -313,7 +313,7 @@ SHA256 (cargo/zeroize-1.4.3.tar.gz) = 1o2dzsX5tDow04xJ+R3+36rDhMuPCF+so2bCYgfdFh
 SHA256 (cargo/zstd-0.12.3+zstd.1.5.2.tar.gz) = du6hMvsCTg4T/ZwvXV1ZXYqWeqcjgqwvnTn8yVr9CAY=
 SHA256 (cargo/zstd-safe-6.0.5+zstd.1.5.4.tar.gz) = 1W2eYLSxdYIGwjihAWX7yuPKN7AXROOUxGNGP2Up0js=
 SHA256 (cargo/zstd-sys-2.0.8+zstd.1.5.5.tar.gz) = VVbm7iXTLfJYbAmLv6J4gDaSog0KuVZeBJSA1ScH7Iw=
-SHA256 (rustic-0.5.2.tar.gz) = QI5fwV5pQnxvvDNKILDYmqvt0KPMn0PqvUYYkCjI2G4=
+SHA256 (rustic-0.5.3.tar.gz) = b4Ryyn822ReHpS7xNyt6ZI8rZgXpzFjoF48lbrUuBtg=
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
 SIZE (cargo/aead-0.4.3.tar.gz) = 14717
 SIZE (cargo/aes-0.7.5.tar.gz) = 128544
@@ -629,4 +629,4 @@ SIZE (cargo/zeroize-1.4.3.tar.gz) = 15573
 SIZE (cargo/zstd-0.12.3+zstd.1.5.2.tar.gz) = 29693
 SIZE (cargo/zstd-safe-6.0.5+zstd.1.5.4.tar.gz) = 20863
 SIZE (cargo/zstd-sys-2.0.8+zstd.1.5.5.tar.gz) = 736270
-SIZE (rustic-0.5.2.tar.gz) = 323940
+SIZE (rustic-0.5.3.tar.gz) = 324307
