@@ -31,7 +31,7 @@ Index: src/subshell/common.c
      case SHELL_TCSH:
      case SHELL_FISH:
          execl (mc_global.shell->path, mc_global.shell->path, (char *) NULL);
-@@ -1133,6 +1149,7 @@ init_subshell_precmd (char *precmd, size_t buff_size)
+@@ -1134,6 +1150,7 @@ init_subshell_precmd (char *precmd, size_t buff_size)
           * "PRECMD=precmd; "
           * "PS1='$($PRECMD)$ '\n",
           */

@@ -105,8 +105,8 @@ share/examples/mc/mc.default.keymap
 @sample ${SYSCONFDIR}/mc/mc.default.keymap
 share/examples/mc/mc.emacs.keymap
 @sample ${SYSCONFDIR}/mc/mc.emacs.keymap
-share/examples/mc/mc.ext
-@sample ${SYSCONFDIR}/mc/mc.ext
+share/examples/mc/mc.ext.ini
+@sample ${SYSCONFDIR}/mc/mc.ext.ini
 share/examples/mc/mc.keymap
 @sample ${SYSCONFDIR}/mc/mc.keymap
 share/examples/mc/mc.menu
@@ -151,8 +151,6 @@ share/locale/ia/
 share/locale/ia/LC_MESSAGES/
 share/locale/ia/LC_MESSAGES/mc.mo
 share/locale/id/LC_MESSAGES/mc.mo
-share/locale/ie/
-share/locale/ie/LC_MESSAGES/
 share/locale/ie/LC_MESSAGES/mc.mo
 share/locale/it/LC_MESSAGES/mc.mo
 share/locale/ja/LC_MESSAGES/mc.mo
@@ -219,7 +217,6 @@ share/mc/hints/mc.hint.ca
 share/mc/hints/mc.hint.cs
 share/mc/hints/mc.hint.da
 share/mc/hints/mc.hint.de
-share/mc/hints/mc.hint.de_CH
 share/mc/hints/mc.hint.el
 share/mc/hints/mc.hint.en_GB
 share/mc/hints/mc.hint.eo
@@ -228,13 +225,11 @@ share/mc/hints/mc.hint.et
 share/mc/hints/mc.hint.eu
 share/mc/hints/mc.hint.fa
 share/mc/hints/mc.hint.fr
-share/mc/hints/mc.hint.fr_CA
 share/mc/hints/mc.hint.ga
 share/mc/hints/mc.hint.gl
 share/mc/hints/mc.hint.hu
 share/mc/hints/mc.hint.id
 share/mc/hints/mc.hint.it
-share/mc/hints/mc.hint.it_IT
 share/mc/hints/mc.hint.ja
 share/mc/hints/mc.hint.ko
 share/mc/hints/mc.hint.lt
@@ -248,10 +243,8 @@ share/mc/hints/mc.hint.ru
 share/mc/hints/mc.hint.sk
 share/mc/hints/mc.hint.sr
 share/mc/hints/mc.hint.sv
-share/mc/hints/mc.hint.sv_SE
 share/mc/hints/mc.hint.tr
 share/mc/hints/mc.hint.uk
-share/mc/hints/mc.hint.zh
 share/mc/hints/mc.hint.zh_CN
 share/mc/hints/mc.hint.zh_TW
 share/mc/mc.charsets
@@ -353,6 +346,7 @@ share/mc/syntax/perl.syntax
 share/mc/syntax/php.syntax
 share/mc/syntax/po.syntax
 share/mc/syntax/povray.syntax
+share/mc/syntax/privoxy.syntax
 share/mc/syntax/procmail.syntax
 share/mc/syntax/properties.syntax
 share/mc/syntax/protobuf.syntax
@@ -373,6 +367,7 @@ share/mc/syntax/swig.syntax
 share/mc/syntax/syntax.syntax
 share/mc/syntax/tcl.syntax
 share/mc/syntax/texinfo.syntax
+share/mc/syntax/toml.syntax
 share/mc/syntax/ts.syntax
 share/mc/syntax/tt.syntax
 share/mc/syntax/unknown.syntax

@@ -1,8 +1,8 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -18346,7 +18346,7 @@ if ${mc_cv_slang_termcap+:} false; then :
- else
+@@ -19729,7 +19729,7 @@ then :
+ else $as_nop
  
  	ac_save_LIBS="$LIBS"
 -	LIBS="$LIBS -lslang"
@@ -10,16 +10,16 @@ Index: configure
  	cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -25327,7 +25327,7 @@ if test -n "$EXT2FS_CFLAGS"; then
+@@ -26982,7 +26982,7 @@ if test -n "$EXT2FS_CFLAGS"; then
    ac_status=$?
-   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   printf "%s\n" "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
    test $ac_status = 0; }; then
 -  pkg_cv_EXT2FS_CFLAGS=`$PKG_CONFIG --cflags "ext2fs >= 1.42.4" 2>/dev/null`
 +  pkg_cv_EXT2FS_CFLAGS=`$PKG_CONFIG --cflags "ext2fs <= 1.42.4" 2>/dev/null`
  		      test "x$?" != "x0" && pkg_failed=yes
  else
    pkg_failed=yes
-@@ -25575,7 +25575,7 @@ done
+@@ -27238,7 +27238,7 @@ done
    done
  IFS=$as_save_IFS
  
@@ -28,7 +28,7 @@ Index: configure
    ;;
  esac
  fi
-@@ -25616,7 +25616,7 @@ done
+@@ -27284,7 +27284,7 @@ done
    done
  IFS=$as_save_IFS
  
