@@ -3,7 +3,7 @@ COMMENT-server =	network and application monitoring - server
 COMMENT-proxy =		network and application monitoring - proxy
 COMMENT-web =		network and application monitoring - web frontend
 
-VERSION =		6.2.6
+VERSION =		6.4.2
 DISTNAME =		zabbix-${VERSION}
 FULLPKGNAME-main =	zabbix-agent-${VERSION}
 FULLPKGPATH-main =	net/zabbix,-main
@@ -12,8 +12,6 @@ PKGNAME-proxy =		zabbix-proxy-${VERSION}
 FULLPKGNAME-web =	zabbix-web-${VERSION}
 FULLPKGPATH-web =	net/zabbix,-web
 CATEGORIES =		net
-REVISION-main =		0
-REVISION-web =		0
 
 MAJV =			${VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 
@@ -93,25 +91,30 @@ FLAVOR =		mysql
 BACKEND =		${FLAVOR}
 .if ${BACKEND} == "mysql"
 MULTI_PACKAGES +=	-proxy -server
-LIB_DEPENDS-proxy +=	databases/mariadb,-main
-LIB_DEPENDS-server +=	databases/mariadb,-main
+LIB_DEPENDS-proxy +=	databases/mariadb,-main \
+			devel/libevent2
+LIB_DEPENDS-server +=	databases/mariadb,-main \
+			devel/libevent2
 CONFIGURE_ARGS +=	--with-mysql
-WANTLIB-proxy +=	event mariadb pthread
-WANTLIB-server +=	event mariadb
+WANTLIB-proxy +=	event_core event_pthreads mariadb pthread
+WANTLIB-server +=	event_core event_pthreads mariadb
 .elif ${BACKEND} == "pgsql"
 MULTI_PACKAGES +=	-proxy -server
-LIB_DEPENDS-proxy +=	databases/postgresql,-main
-LIB_DEPENDS-server +=	databases/postgresql,-main
+LIB_DEPENDS-proxy +=	databases/postgresql,-main \
+			devel/libevent2
+LIB_DEPENDS-server +=	databases/postgresql,-main \
+			devel/libevent2
 CONFIGURE_ARGS +=	--with-postgresql
-WANTLIB-proxy +=	event pq
-WANTLIB-server +=	event pq
+WANTLIB-proxy +=	event_core event_pthreads pq
+WANTLIB-server +=	event_core event_pthreads pq
 .elif ${BACKEND} == "sqlite3"
 MULTI_PACKAGES +=	-proxy
 CONFIGURE_ARGS +=	--with-sqlite3 \
 			--disable-server
 
-WANTLIB-proxy +=	event sqlite3
-LIB_DEPENDS-proxy +=	databases/sqlite3
+WANTLIB-proxy +=	event_core event_pthreads sqlite3
+LIB_DEPENDS-proxy +=	databases/sqlite3 \
+			devel/libevent2
 FULLPKGPATH-proxy =	net/zabbix,-proxy,${FLAVOR}
 .elif ${BACKEND} == "no_server"
 CONFIGURE_ARGS +=	--disable-server \

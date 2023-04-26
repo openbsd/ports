@@ -27,7 +27,7 @@ Index: conf/zabbix_proxy.conf
  
  # Option: DBPort
  #	Database port when not using local socket. Ignored for SQLite.
-@@ -530,6 +531,7 @@ Timeout=4
+@@ -523,6 +524,7 @@ Timeout=4
  # Mandatory: no
  # Default:
  # ExternalScripts=${datadir}/zabbix/externalscripts
@@ -35,7 +35,7 @@ Index: conf/zabbix_proxy.conf
  
  ### Option: FpingLocation
  #	Location of fping.
-@@ -538,6 +540,7 @@ Timeout=4
+@@ -531,6 +533,7 @@ Timeout=4
  # Mandatory: no
  # Default:
  # FpingLocation=/usr/sbin/fping
@@ -43,7 +43,7 @@ Index: conf/zabbix_proxy.conf
  
  ### Option: Fping6Location
  #	Location of fping6.
-@@ -547,6 +550,7 @@ Timeout=4
+@@ -540,6 +543,7 @@ Timeout=4
  # Mandatory: no
  # Default:
  # Fping6Location=/usr/sbin/fping6

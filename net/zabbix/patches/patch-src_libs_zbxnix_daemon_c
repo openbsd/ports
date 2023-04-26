@@ -1,7 +1,7 @@
 Index: src/libs/zbxnix/daemon.c
 --- src/libs/zbxnix/daemon.c.orig
 +++ src/libs/zbxnix/daemon.c
-@@ -337,7 +337,7 @@ int	zbx_daemon_start(int allow_root, const char *user,
+@@ -308,7 +308,7 @@ int	zbx_daemon_start(int allow_root, const char *user,
  	if (0 == allow_root && 0 == getuid())	/* running as root? */
  	{
  		if (NULL == user)

@@ -42,24 +42,25 @@ NGINX
 First install and enable php-fpm and enable the required modules:
 
     # cd ${SYSCONFDIR}/php-${MODPHP_VERSION}.sample
-    # for i in *; do ln -fs ../php-${MODPHP_VERSION}.sample/$i ../php-${MODPHP_VERSION}/; done
+    # for i in *; do ln -fs ../php-${MODPHP_VERSION}.sample/$i \
+      ../php-${MODPHP_VERSION}/; done
 
 Next configure a nginx such as:
 
-server {                         
-  listen        80;              
+server {
+  listen        80;
   server_name   zabbix.example.com;
   root          ${ZABBIX_WEB};
-  index         index.php;                             
+  index         index.php;
   error_page    403 404 502 503 504  /zabbix/index.php;
-  
-  location ~ \.php {                                                         
+
+  location ~ \.php {
     fastcgi_pass        unix:run/php-fpm.sock;
-    fastcgi_index       index.php;     
+    fastcgi_index       index.php;
     fastcgi_param       DOCUMENT_ROOT $document_root;
     fastcgi_param       SCRIPT_FILENAME $request_filename;
     include             fastcgi_params;
-  }                   
+  }
   location ~ \.(jpg|jpeg|gif|png|ico)$ {
      access_log      off;
      expires         33d;
@@ -95,4 +96,3 @@ server "zabbix.example.com" {
 	}
 	root "/zabbix"
 }
-

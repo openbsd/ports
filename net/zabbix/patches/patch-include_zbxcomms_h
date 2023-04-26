@@ -1,7 +1,7 @@
 Index: include/zbxcomms.h
 --- include/zbxcomms.h.orig
 +++ include/zbxcomms.h
-@@ -210,7 +210,7 @@ int	zbx_telnet_execute(ZBX_SOCKET socket_fd, const cha
+@@ -253,7 +253,7 @@ int	zbx_telnet_execute(ZBX_SOCKET socket_fd, const cha
  /* TLS BLOCK */
  #if defined(HAVE_GNUTLS) || defined(HAVE_OPENSSL)
  

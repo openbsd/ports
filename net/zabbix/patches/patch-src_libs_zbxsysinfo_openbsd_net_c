@@ -3,7 +3,7 @@ Stop using struct ifnet and libkvm for interface stats.
 Index: src/libs/zbxsysinfo/openbsd/net.c
 --- src/libs/zbxsysinfo/openbsd/net.c.orig
 +++ src/libs/zbxsysinfo/openbsd/net.c
-@@ -36,7 +36,6 @@
+@@ -37,7 +37,6 @@
  
  static struct nlist kernel_symbols[] =
  {
@@ -11,10 +11,10 @@ Index: src/libs/zbxsysinfo/openbsd/net.c
  	{"_tcbtable", N_UNDF, 0, 0, 0},
  	{NULL, 0, 0, 0, 0}
  };
-@@ -49,11 +48,6 @@ static int	get_ifdata(const char *if_name,
- 		zbx_uint64_t *tbytes, zbx_uint64_t *tpackets, zbx_uint64_t *terrors,
+@@ -50,11 +49,6 @@ static int	get_ifdata(const char *if_name,
  		zbx_uint64_t *icollisions, char **error)
  {
+ #define IFNET_ID 0
 -	struct ifnet_head	head;
 -	struct ifnet		*ifp;
 -
@@ -23,7 +23,7 @@ Index: src/libs/zbxsysinfo/openbsd/net.c
  	int	ret = SYSINFO_RET_FAIL;
  
  	if (NULL == if_name || '\0' == *if_name)
-@@ -94,66 +88,7 @@ static int	get_ifdata(const char *if_name,
+@@ -95,66 +89,7 @@ static int	get_ifdata(const char *if_name,
  	if (icollisions)
  		*icollisions = 0;
  
