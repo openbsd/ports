@@ -1,20 +1,19 @@
 COMMENT=		flexible and small GTK+ editor
 
-VERSION=		4.0.3
+VERSION=		5.3.5
 DISTNAME=		scite${VERSION:S/.//g}
 PKGNAME=		scite-${VERSION}
 CATEGORIES=		editors x11
 
-HOMEPAGE=		http://www.scintilla.org/SciTE.html
+HOMEPAGE=		https://www.scintilla.org/SciTE.html
 
 # old Python license
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c cairo gdk-3 gdk_pixbuf-2.0 glib-2.0
-WANTLIB += gobject-2.0 gtk-3 pango-1.0 pangocairo-1.0 scintilla
-WANTLIB += scintilla_lexers
+WANTLIB += gobject-2.0 gtk-3 m pango-1.0 pangocairo-1.0 scintilla
 
-MASTER_SITES=		http://www.scintilla.org/
+MASTER_SITES=		https://www.scintilla.org/
 EXTRACT_SUFX=		.tgz
 
 # c++17
@@ -22,6 +21,8 @@ COMPILER=		base-clang ports-gcc
 
 LIB_DEPENDS=		x11/gtk+3 \
 			editors/scintilla
+RUN_DEPENDS +=		devel/xdg-utils \
+			devel/desktop-file-utils
 
 USE_GMAKE=		Yes
 NO_TEST=		Yes
@@ -31,11 +32,7 @@ MAKE_FILE=		makefile
 MAKE_ENV=		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
 			CC="${CC}" CFLAGS="${CFLAGS}" GTK3=1
 
-post-extract:
-	perl -pi -e 's|\x0d||' ${WRKSRC}/*.cxx ${WRKDIST}/src/*.cxx
-
 pre-build:
-	perl -pi -e 's|__DOCDIR__|${LOCALBASE}/share/doc/scite|' \
-		${WRKDIST}/src/*.properties
+	cd ${WRKDIR}/lexilla/src && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM}
 
 .include <bsd.port.mk>
