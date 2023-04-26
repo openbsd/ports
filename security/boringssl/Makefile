@@ -13,7 +13,6 @@ DISTFILES +=	${GH_DISTFILE}
 # can't use GH_DISTFILE because EXTRACT_ONLY does not understand DISTFILES {}
 EXTRACT_ONLY =	${DISTNAME}-${GH_COMMIT:C/(........).*/\1/}${EXTRACT_SUFX}
 
-
 BORING_GOMOD +=	golang.org/x/crypto	v0.6.0
 BORING_GOMOD +=	golang.org/x/net	v0.7.0
 BORING_GOMOD +=	golang.org/x/sys	v0.5.0
@@ -44,6 +43,8 @@ BUILD_DEPENDS =		lang/go
 
 PORTHOME =		${WRKDIR}
 TEST_ENV =		GOPROXY=file://${DISTDIR}/go_modules
+
+FIX_CLEANUP_PERMISSIONS =	Yes
 
 do-test:
 	${SETENV} ${ALL_TEST_ENV} ninja -C ${WRKBUILD} -j ${MAKE_JOBS} run_tests
