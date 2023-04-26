@@ -42,7 +42,7 @@ CONFIGURE_ARGS +=	-DCMAKE_INSTALL_PREFIX=${PREFIX}/eboringssl
 
 BUILD_DEPENDS =		lang/go
 
-PORTHOME =		${WRKSRC}
+PORTHOME =		${WRKDIR}
 TEST_ENV =		GOPROXY=file://${DISTDIR}/go_modules
 
 do-test:
