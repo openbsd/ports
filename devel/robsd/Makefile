@@ -1,6 +1,6 @@
 COMMENT =	build OpenBSD release
 
-V =		17.5.0
+V =		17.5.1
 DISTNAME =	robsd-${V}
 
 CATEGORIES =	devel
