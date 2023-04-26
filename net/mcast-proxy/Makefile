@@ -1,11 +1,9 @@
 COMMENT =		multicast proxy daemon
 
-GH_ACCOUNT =		Esdenera
+GH_ACCOUNT =		bket
 GH_PROJECT =		mcast-proxy
-GH_TAGNAME =		v1.0
-REVISION =		7
-
-DISTFILES =		mcast-proxy-1.0-0{mcast-proxy-1.0}.tar.gz
+GH_COMMIT =		6222960d03eb7911918388d39c687b75aca9ee59
+DISTNAME =		${GH_PROJECT}-1.0.20230329
 
 CATEGORIES =		net
 
