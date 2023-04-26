@@ -3,7 +3,7 @@ Add sndio support
 Index: src/gui/src/PreferencesDialog.cpp
 --- src/gui/src/PreferencesDialog.cpp.orig
 +++ src/gui/src/PreferencesDialog.cpp
-@@ -63,6 +63,9 @@ PreferencesDialog::PreferencesDialog(QWidget* parent)
+@@ -64,6 +64,9 @@ PreferencesDialog::PreferencesDialog(QWidget* parent)
  
  	driverComboBox->clear();
  	driverComboBox->addItem( "Auto" );
@@ -13,7 +13,7 @@ Index: src/gui/src/PreferencesDialog.cpp
  #ifdef H2CORE_HAVE_JACK
  	driverComboBox->addItem( "Jack" );
  #endif
-@@ -94,6 +97,9 @@ PreferencesDialog::PreferencesDialog(QWidget* parent)
+@@ -114,6 +117,9 @@ PreferencesDialog::PreferencesDialog(QWidget* parent)
  
  
  	m_pMidiDriverComboBox->clear();
@@ -23,7 +23,7 @@ Index: src/gui/src/PreferencesDialog.cpp
  #ifdef H2CORE_HAVE_ALSA
  	m_pMidiDriverComboBox->addItem( "ALSA" );
  #endif
-@@ -363,6 +369,9 @@ void PreferencesDialog::on_okBtn_clicked()
+@@ -390,6 +396,9 @@ void PreferencesDialog::on_okBtn_clicked()
  	if (driverComboBox->currentText() == "Auto" ) {
  		pPref->m_sAudioDriver = "Auto";
  	}
@@ -33,7 +33,7 @@ Index: src/gui/src/PreferencesDialog.cpp
  	else if (driverComboBox->currentText() == "Jack" ) {
  		pPref->m_sAudioDriver = "Jack";
  	}
-@@ -424,7 +433,10 @@ void PreferencesDialog::on_okBtn_clicked()
+@@ -451,7 +460,10 @@ void PreferencesDialog::on_okBtn_clicked()
  	// maxVoices
  	pPref->m_nMaxNotes = maxVoicesTxt->value();
  
@@ -45,7 +45,7 @@ Index: src/gui/src/PreferencesDialog.cpp
  		pPref->m_sMidiDriver = "ALSA";
  	}
  	else if ( m_pMidiDriverComboBox->currentText() == "PortMidi" ) {
-@@ -555,6 +567,11 @@ void PreferencesDialog::updateDriverInfo()
+@@ -592,6 +604,11 @@ void PreferencesDialog::updateDriverInfo()
  	Preferences *pPref = Preferences::get_instance();
  	QString info;
  
@@ -57,7 +57,7 @@ Index: src/gui/src/PreferencesDialog.cpp
  	bool bJack_support = false;
  #ifdef H2CORE_HAVE_JACK
  	bJack_support = true;
-@@ -600,6 +617,19 @@ void PreferencesDialog::updateDriverInfo()
+@@ -637,6 +654,19 @@ void PreferencesDialog::updateDriverInfo()
  		sampleRateComboBox->setEnabled( false );
  		trackOutputComboBox->setEnabled( false );
  		connectDefaultsCheckBox->setEnabled( false );

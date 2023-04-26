@@ -1,9 +1,8 @@
 COMMENT=		software drum machine
 
-V=			1.0.1
+V=			1.0.2
 DISTNAME=		hydrogen-$V
 CATEGORIES=		audio
-REVISION=		0
 
 HOMEPAGE=		http://www.hydrogen-music.org/
 
