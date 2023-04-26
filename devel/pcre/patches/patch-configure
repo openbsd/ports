@@ -1,8 +1,8 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -4163,17 +4163,9 @@ $as_echo "$ac_cv_prog_cc_g" >&6; }
- if test "$ac_test_CFLAGS" = set; then
+@@ -4787,17 +4787,9 @@ printf "%s\n" "$ac_cv_prog_cc_g" >&6; }
+ if test $ac_test_CFLAGS; then
    CFLAGS=$ac_save_CFLAGS
  elif test $ac_cv_prog_cc_g = yes; then
 -  if test "$GCC" = yes; then
@@ -17,10 +17,10 @@ Index: configure
      CFLAGS=
 -  fi
  fi
- { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $CC option to accept ISO C89" >&5
- $as_echo_n "checking for $CC option to accept ISO C89... " >&6; }
-@@ -5078,17 +5070,9 @@ $as_echo "$ac_cv_prog_cc_g" >&6; }
- if test "$ac_test_CFLAGS" = set; then
+ ac_prog_cc_stdc=no
+ if test x$ac_prog_cc_stdc = xno
+@@ -5910,17 +5902,9 @@ printf "%s\n" "$ac_cv_prog_cc_g" >&6; }
+ if test $ac_test_CFLAGS; then
    CFLAGS=$ac_save_CFLAGS
  elif test $ac_cv_prog_cc_g = yes; then
 -  if test "$GCC" = yes; then
@@ -35,10 +35,10 @@ Index: configure
      CFLAGS=
 -  fi
  fi
- { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $CC option to accept ISO C89" >&5
- $as_echo_n "checking for $CC option to accept ISO C89... " >&6; }
-@@ -5612,17 +5596,9 @@ $as_echo "$ac_cv_prog_cxx_g" >&6; }
- if test "$ac_test_CXXFLAGS" = set; then
+ ac_prog_cc_stdc=no
+ if test x$ac_prog_cc_stdc = xno
+@@ -6521,17 +6505,9 @@ printf "%s\n" "$ac_cv_prog_cxx_g" >&6; }
+ if test $ac_test_CXXFLAGS; then
    CXXFLAGS=$ac_save_CXXFLAGS
  elif test $ac_cv_prog_cxx_g = yes; then
 -  if test "$GXX" = yes; then
@@ -53,9 +53,9 @@ Index: configure
      CXXFLAGS=
 -  fi
  fi
- ac_ext=c
- ac_cpp='$CPP $CPPFLAGS'
-@@ -5764,7 +5740,7 @@ if test "x$remember_set_CFLAGS" = "x"
+ ac_prog_cxx_stdcxx=no
+ if test x$ac_prog_cxx_stdcxx = xno
+@@ -6768,7 +6744,7 @@ if test "x$remember_set_CFLAGS" = "x"
  then
    if test "$CFLAGS" = "-g -O2"
    then
@@ -64,7 +64,7 @@ Index: configure
    elif test "$CFLAGS" = "-g"
    then
      CFLAGS=""
-@@ -5775,7 +5751,7 @@ if test "x$remember_set_CXXFLAGS" = "x"
+@@ -6779,7 +6755,7 @@ if test "x$remember_set_CXXFLAGS" = "x"
  then
    if test "$CXXFLAGS" = "-g -O2"
    then

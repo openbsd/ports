@@ -1,6 +1,6 @@
 COMMENT=	perl-compatible regular expression library
 
-DISTNAME=	pcre-8.44
+DISTNAME=	pcre-8.45
 
 SHARED_LIBS +=  pcre                 3.0      # 0.1
 SHARED_LIBS +=  pcre16               0.0      # 0.0
@@ -10,8 +10,7 @@ SHARED_LIBS +=  pcrecpp              3.3      # 0.0
 CATEGORIES=	devel
 DPB_PROPERTIES=	parallel
 
-MASTER_SITES=	https://ftp.pcre.org/pub/pcre/ \
-		ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pcre/}
 
 HOMEPAGE=	http://www.pcre.org/
 
