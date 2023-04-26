@@ -9,7 +9,7 @@ generates thumbnails as 64x64 ppm at $XDG_CACHE_HOME/thumbnails (usually
 
 Both scripts act as configuration for XFiles and should be manually
 written by the user.  Examples that can be used as template for building
-your own can be found at ${LOCALBASE}/share/examples/xfiles/.
+your own can be found at ${PREFIX}/share/examples/xfiles/.
 
 Additional packages need to be installed for the example scripts to
 work.  For example, the provided xfilesthumb example script depends on
@@ -18,4 +18,4 @@ provided xfilesctl example script depends on dmenu to display an URL bar
 for typing paths and xmenu for the context menu.
 
 XFiles theme can be customized with X resources.  An example resources
-file is installed at ${LOCALBASE}/share/examples/xfiles/Xresources.
+file is installed at ${PREFIX}/share/examples/xfiles/Xresources.

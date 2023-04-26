@@ -3,6 +3,7 @@ COMMENT =	simple X11 file manager
 GH_ACCOUNT =	phillbush
 GH_PROJECT =	xfiles
 GH_TAGNAME =	v1.0.4
+REVISION =	0
 
 CATEGORIES =	x11 sysutils
 
