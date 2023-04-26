@@ -2,8 +2,7 @@ COMMENT=		read and convert TNEF files
 
 SHARED_LIBS +=  ytnef                     0.0 # 0.0
 
-DISTNAME=		libytnef-1.9.3
-REVISION=		1
+DISTNAME=		libytnef-2.1.1
 
 GH_ACCOUNT=		Yeraze
 GH_PROJECT=		ytnef
