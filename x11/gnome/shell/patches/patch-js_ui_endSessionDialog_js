@@ -6,7 +6,7 @@ Index: js/ui/endSessionDialog.js
  
          this._loginManager = LoginManager.getLoginManager();
 -        this._canRebootToBootLoaderMenu = false;
--        this._getCanRebootToBootLoaderMenu();
+-        this._getCanRebootToBootLoaderMenu().catch(logError);
  
          this._userManager = AccountsService.UserManager.get_default();
          this._user = this._userManager.get_user(GLib.get_user_name());
