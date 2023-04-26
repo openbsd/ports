@@ -1,7 +1,6 @@
 COMMENT =		troff to DocBook converter
 
-DISTNAME =		doclifter-2.19
-REVISION =		1
+DISTNAME =		doclifter-2.20
 
 CATEGORIES =		textproc
 
@@ -14,8 +13,7 @@ MASTER_SITES =		http://www.catb.org/~esr/doclifter/
 
 MODULES =		lang/python
 
-MODPY_BUILDDEP =	No
-MODPY_ADJ_FILES =	doclifter manlifter
+MODPY_ADJ_FILES =	manlifter
 
 NO_BUILD =		Yes
 
