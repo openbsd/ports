@@ -1916,7 +1916,6 @@ grommunio-web/plugins/files/php/Files/Backend/Webdav/sabredav/vendor/sabre/uri/l
 grommunio-web/plugins/files/php/Files/Backend/Webdav/sabredav/vendor/sabre/uri/lib/InvalidUriException.php
 grommunio-web/plugins/files/php/Files/Backend/Webdav/sabredav/vendor/sabre/uri/lib/Version.php
 grommunio-web/plugins/files/php/Files/Backend/Webdav/sabredav/vendor/sabre/uri/lib/functions.php
-grommunio-web/plugins/files/php/Files/Backend/Webdav/sabredav/vendor/sabre/uri/phpstan.neon
 grommunio-web/plugins/files/php/Files/Backend/Webdav/sabredav/vendor/sabre/vobject/
 grommunio-web/plugins/files/php/Files/Backend/Webdav/sabredav/vendor/sabre/vobject/LICENSE
 grommunio-web/plugins/files/php/Files/Backend/Webdav/sabredav/vendor/sabre/vobject/README.md
