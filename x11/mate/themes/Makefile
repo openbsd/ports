@@ -1,8 +1,7 @@
 COMMENT=		standard MATE themes
-REVISION=		0
 
 MATE_PROJECT=		mate-themes
-MATE_VERSION=		3.22.22
+MATE_VERSION=		3.22.23
 
 MASTER_SITES=		http://pub.mate-desktop.org/releases/themes/${MATE_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/
 
