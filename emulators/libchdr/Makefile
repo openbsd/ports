@@ -1,20 +1,26 @@
 COMMENT =	library for reading MAME's CHDv1-v5 formats
 
-V =		1.0pl20221022
+V =		1.0pl20230220
 DISTNAME =	libchdr-$V
 
 GH_ACCOUNT =	rtissera
 GH_PROJECT =	libchdr
-GH_COMMIT =	464044e6cc5c7cfeb331906f4ef67d13dd4c83b6
+GH_COMMIT =	fec8ab94212cc65d9d9a62cb3da924f5830c04b0
 
-SHARED_LIBS +=	chdr	0.0 # 0.1
+SHARED_LIBS +=	chdr	1.0 # 0.1
 
-CATEGORIES =	emulators games
+CATEGORIES =	emulators devel games
 
 HOMEPAGE =	https://github.com/rtissera/libchdr
 
+CONFIGURE_ARGS +=	-DWITH_SYSTEM_ZLIB=ON
+
 # BSD 3-Clause
+# Public Domain (lzma)
+# zlib (zlib)
 PERMIT_PACKAGE =	Yes
+
+WANTLIB +=	z
 
 MODULES =		devel/cmake
 
