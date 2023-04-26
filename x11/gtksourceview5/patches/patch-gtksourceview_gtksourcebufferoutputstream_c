@@ -1,3 +1,5 @@
+https://gitlab.gnome.org/GNOME/gtksourceview/-/issues/309
+
 Index: gtksourceview/gtksourcebufferoutputstream.c
 --- gtksourceview/gtksourcebufferoutputstream.c.orig
 +++ gtksourceview/gtksourcebufferoutputstream.c
