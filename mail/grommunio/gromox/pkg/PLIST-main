@@ -167,6 +167,7 @@ man/man4/mysql_adaptor.4gx
 man/man4/pam_gromox.4gx
 man/man4/timer_agent.4gx
 man/man4/user_filter.4gx
+@man man/man5/gromox.cfg.5
 @man man/man7/gromox.7
 man/man7/mapi.7gx
 man/man8/cgkrepair.8gx
