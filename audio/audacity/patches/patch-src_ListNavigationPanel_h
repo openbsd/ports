@@ -1,0 +1,14 @@
+https://github.com/audacity/audacity/issues/4614
+
+Index: src/ListNavigationPanel.h
+--- src/ListNavigationPanel.h.orig
++++ src/ListNavigationPanel.h
+@@ -13,8 +13,6 @@
+ #include <wx/window.h>
+ #include <wx/containr.h>
+ 
+-extern template class WXDLLIMPEXP_CORE wxNavigationEnabled<wxWindow>;
+-
+ #include "ListNavigationEnabled.h"
+ 
+ //!Focusable widget container.

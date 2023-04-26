@@ -4,9 +4,8 @@ COMMENT=	free audio editor
 # so can't be fetched automatically
 GH_ACCOUNT=	audacity
 GH_PROJECT=	audacity
-GH_TAGNAME=	Audacity-3.2.5
+GH_TAGNAME=	Audacity-3.3.0
 DISTNAME=	${GH_TAGNAME:L}
-REVISION=	0
 
 CATEGORIES=	audio
 
@@ -36,6 +35,10 @@ MODPY_RUNDEP=	No
 
 BUILD_DEPENDS=	devel/gettext,-tools
 
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
+BUILD_DEPENDS +=	devel/nasm
+.endif
+
 LIB_DEPENDS=	audio/flac \
 		audio/lame \
 		audio/libid3tag \
@@ -57,7 +60,6 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 
 CONFIGURE_ARGS=	-Daudacity_lib_preference:STRING=system \
 		-Daudacity_has_crashreports:STRING=off \
-		-Daudacity_has_networking:STRING=off \
 		-Daudacity_has_networking:STRING=off \
 		-Daudacity_has_sentry_reporting:STRING=off \
 		-Daudacity_lib_preference:STRING=system \

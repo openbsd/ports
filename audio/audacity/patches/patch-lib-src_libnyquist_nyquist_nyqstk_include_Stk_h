@@ -3,7 +3,7 @@
 Index: lib-src/libnyquist/nyquist/nyqstk/include/Stk.h
 --- lib-src/libnyquist/nyquist/nyqstk/include/Stk.h.orig
 +++ lib-src/libnyquist/nyquist/nyqstk/include/Stk.h
-@@ -160,6 +160,10 @@ class Stk (public)
+@@ -161,6 +161,10 @@ class Stk (public)
    //! Static method which sets the STK rawwave path.
    static void setRawwavePath(std::string path);
  

@@ -2,8 +2,11 @@
 lib/audacity/
 @so lib/audacity/lib-audio-devices.so
 @so lib/audacity/lib-audio-graph.so
+@so lib/audacity/lib-audio-io.so
 @so lib/audacity/lib-basic-ui.so
+@so lib/audacity/lib-command-parameters.so
 @so lib/audacity/lib-components.so
+@so lib/audacity/lib-effects.so
 @so lib/audacity/lib-exceptions.so
 @so lib/audacity/lib-ffmpeg-support.so
 @so lib/audacity/lib-files.so
@@ -11,21 +14,33 @@ lib/audacity/
 @so lib/audacity/lib-ipc.so
 @so lib/audacity/lib-math.so
 @so lib/audacity/lib-module-manager.so
+@so lib/audacity/lib-numeric-formats.so
 @so lib/audacity/lib-preferences.so
+@so lib/audacity/lib-project-file-io.so
 @so lib/audacity/lib-project-history.so
 @so lib/audacity/lib-project-rate.so
 @so lib/audacity/lib-project.so
+@so lib/audacity/lib-realtime-effects.so
 @so lib/audacity/lib-registries.so
 @so lib/audacity/lib-sample-track.so
 @so lib/audacity/lib-screen-geometry.so
+@so lib/audacity/lib-shuttlegui.so
+@so lib/audacity/lib-snapping.so
 @so lib/audacity/lib-string-utils.so
 @so lib/audacity/lib-strings.so
+@so lib/audacity/lib-tags.so
 @so lib/audacity/lib-theme-resources.so
 @so lib/audacity/lib-theme.so
+@so lib/audacity/lib-time-frequency-selection.so
+@so lib/audacity/lib-time-track.so
+@so lib/audacity/lib-track-selection.so
 @so lib/audacity/lib-track.so
 @so lib/audacity/lib-transactions.so
 @so lib/audacity/lib-utility.so
 @so lib/audacity/lib-uuid.so
+@so lib/audacity/lib-wave-track.so
+@so lib/audacity/lib-wx-init.so
+@so lib/audacity/lib-wx-wrappers.so
 @so lib/audacity/lib-xml.so
 lib/audacity/modules/
 @so lib/audacity/modules/mod-script-pipe.so
@@ -81,6 +96,7 @@ share/audacity/nyquist/velocity.lsp
 share/audacity/nyquist/xlinit.lsp
 share/audacity/nyquist/xm.lsp
 share/audacity/plug-ins/
+share/audacity/plug-ins/ShelfFilter.ny
 share/audacity/plug-ins/SpectralEditMulti.ny
 share/audacity/plug-ins/SpectralEditParametricEQ.ny
 share/audacity/plug-ins/SpectralEditShelves.ny
@@ -112,7 +128,7 @@ share/audacity/plug-ins/vocalrediso.ny
 share/audacity/plug-ins/vocoder.ny
 share/doc/audacity/
 share/doc/audacity/LICENSE.txt
-share/doc/audacity/README.txt
+share/doc/audacity/README.md
 share/icons/hicolor/16x16/apps/audacity.png
 share/icons/hicolor/22x22/apps/audacity.png
 share/icons/hicolor/24x24/apps/audacity.png
