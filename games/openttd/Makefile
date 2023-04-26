@@ -1,9 +1,8 @@
 COMMENT=	open source clone of the game Transport Tycoon Deluxe
 
-V =		13.0
+V =		13.1
 DISTNAME =	openttd-$V-source
 PKGNAME =	openttd-$V
-REVISION =	2
 
 CATEGORIES=	games
 
