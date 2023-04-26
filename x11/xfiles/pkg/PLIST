@@ -1,0 +1,7 @@
+@bin bin/xfiles
+@man man/man1/xfiles.1
+share/doc/pkg-readmes/${PKGSTEM}
+share/examples/xfiles/
+share/examples/xfiles/Xresources
+share/examples/xfiles/xfilesctl
+share/examples/xfiles/xfilesthumb

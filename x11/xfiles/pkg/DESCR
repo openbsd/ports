@@ -1,0 +1,4 @@
+XFiles is a configurable and simple file manager for X11.  It can
+navigate through directories, show icons for files, select files, call a
+command to open files, generate thumbnails, and call a command to run on
+right mouse button click.
