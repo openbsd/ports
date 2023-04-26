@@ -1,0 +1,2 @@
+@conflict teaqt-*
+@bin bin/tea
