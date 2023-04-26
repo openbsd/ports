@@ -1,7 +1,7 @@
 /dev/dri rwx
-/usr/X11R6/lib r
-/usr/X11R6/share r
-/usr/lib r
+/usr/X11R6/lib/modules/dri r
+/usr/X11R6/share/libdrm r
+/usr/X11R6/share/vulkan r
 /usr/local/chrome r
 
 # ~ gets expanded to $HOME

@@ -5,8 +5,8 @@ Index: chrome/browser/profiles/profile_impl.cc
  #include "chrome/browser/spellchecker/spellcheck_service.h"
  #endif
  
-+#if BUILDFLAG(IS_OPENBSD)
-+#include "sandbox/policy/openbsd/sandbox_openbsd.h"
++#if BUILDFLAG(IS_BSD)
++#include "sandbox/policy/sandbox.h"
 +#endif
 +
  using bookmarks::BookmarkModel;

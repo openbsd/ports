@@ -5,8 +5,8 @@ Index: services/network/network_sandbox_hook_linux.h
  #include "base/component_export.h"
  #include "sandbox/linux/syscall_broker/broker_command.h"
  #include "sandbox/linux/syscall_broker/broker_file_permission.h"
-+#if defined(OS_BSD)
-+#include "sandbox/policy/openbsd/sandbox_openbsd.h"
++#if defined(__OpenBSD__) || defined(__FreeBSD__)
++#include "sandbox/policy/sandbox.h"
 +#else
  #include "sandbox/policy/linux/sandbox_linux.h"
 +#endif

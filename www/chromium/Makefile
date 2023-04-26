@@ -9,7 +9,7 @@ COMMENT=		Chromium browser
 V=			112.0.5615.165
 
 DISTNAME=		chromium-${V}
-REVISION=		1
+REVISION=		2
 
 DISTFILES+=		${CHROMIUM_DISTFILES} \
 			${PROFILE_DISTFILES}:0 \
@@ -307,8 +307,7 @@ do-install:
 
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/chromium
 .for f in pledge.main pledge.utility_audio pledge.utility_network pledge.utility_video \
-    unveil.gpu unveil.main unveil.plugin unveil.renderer unveil.utility unveil.utility_audio \
-    unveil.utility_network unveil.utility_video
+    unveil.gpu unveil.main unveil.utility_audio unveil.utility_network unveil.utility_video \
 	${INSTALL_DATA} ${FILESDIR}/${f} ${PREFIX}/share/examples/chromium
 .endfor
 	${INSTALL_DATA} ${WRKDIR}/sysutils/libudev-openbsd/build-${MACHINE_ARCH}/libudev.so.0.0 \

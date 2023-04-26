@@ -6,7 +6,7 @@ Index: sandbox/policy/sandbox.cc
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  
 +#if BUILDFLAG(IS_BSD)
-+#include "sandbox/policy/openbsd/sandbox_openbsd.h"
++#include "sandbox/policy/sandbox.h"
 +#endif  // BUILDFLAG(IS_BSD)
 +
  #if BUILDFLAG(IS_MAC)

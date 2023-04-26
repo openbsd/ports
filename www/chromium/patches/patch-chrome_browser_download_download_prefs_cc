@@ -13,8 +13,8 @@ Index: chrome/browser/download/download_prefs.cc
  #include "chrome/browser/download/bubble/download_bubble_prefs.h"
  #endif
  
-+#if BUILDFLAG(IS_OPENBSD)
-+#include "sandbox/policy/openbsd/sandbox_openbsd.h"
++#if BUILDFLAG(IS_BSD)
++#include "sandbox/policy/sandbox.h"
 +#endif
 +
  using content::BrowserContext;

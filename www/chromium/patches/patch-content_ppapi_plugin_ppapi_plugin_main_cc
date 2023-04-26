@@ -5,8 +5,8 @@ Index: content/ppapi_plugin/ppapi_plugin_main.cc
  #include "gin/v8_initializer.h"
  #endif
  
-+#if BUILDFLAG(IS_OPENBSD)
-+#include "sandbox/policy/openbsd/sandbox_openbsd.h"
++#if BUILDFLAG(IS_BSD)
++#include "sandbox/policy/sandbox.h"
 +#include "sandbox/policy/sandbox_type.h"
 +#endif
 +
