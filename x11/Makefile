@@ -385,6 +385,7 @@
      SUBDIR += xdu
      SUBDIR += xfce4
      SUBDIR += xfe
+     SUBDIR += xfiles
      SUBDIR += xforms
      SUBDIR += xglobe
      SUBDIR += xglobe,no_map
