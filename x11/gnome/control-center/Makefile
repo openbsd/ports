@@ -51,7 +51,7 @@ BUILD_DEPENDS=		devel/iso-codes \
 			x11/gnome/settings-daemon
 
 # BDEP only because it's used by the wwan and sharing panels which we don't ship
-BUILD_DEPENDS=		x11/gnome/gcr
+BUILD_DEPENDS +=	x11/gnome/gcr
 
 # NOTE that a11y dependencies (e.g. caribou) are not enforced on purpose.
 RUN_DEPENDS=		x11/gnome/settings-daemon \
