@@ -1,8 +1,8 @@
 COMMENT =	support library for FileZilla
 
-DISTNAME =	libfilezilla-0.41.1
+DISTNAME =	libfilezilla-0.42.2
 
-SHARED_LIBS +=  filezilla	16.0 # 35.0.0
+SHARED_LIBS +=  filezilla	16.1 # 38.0.2
 
 CATEGORIES =	net
 
@@ -18,7 +18,7 @@ WANTLIB +=	iconv idn2 intl m nettle p11-kit tasn1 unistring z
 WANTLIB +=	zstd
 
 MASTER_SITES =		https://download.filezilla-project.org/libfilezilla/
-EXTRACT_SUFX =		.tar.bz2
+EXTRACT_SUFX =		.tar.xz
 
 # c++17
 COMPILER =		base-clang ports-gcc
