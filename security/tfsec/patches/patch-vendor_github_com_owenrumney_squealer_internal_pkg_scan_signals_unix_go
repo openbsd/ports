@@ -1,0 +1,13 @@
+https://github.com/aquasecurity/tfsec/issues/2015
+
+Index: vendor/github.com/owenrumney/squealer/internal/pkg/scan/signals_unix.go
+--- vendor/github.com/owenrumney/squealer/internal/pkg/scan/signals_unix.go.orig
++++ vendor/github.com/owenrumney/squealer/internal/pkg/scan/signals_unix.go
+@@ -1,5 +1,5 @@
+-//go:build linux || bsd || darwin || freebsd
+-// +build linux bsd darwin freebsd
++//go:build linux || bsd || darwin || freebsd || openbsd
++// +build linux bsd darwin freebsd openbsd
+ 
+ package scan
+ 
