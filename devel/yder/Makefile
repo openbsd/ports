@@ -2,7 +2,7 @@ COMMENT =	logging library for C applications
 
 GH_ACCOUNT =	babelouest
 GH_PROJECT =	yder
-GH_TAGNAME =	v1.4.14
+GH_TAGNAME =	v1.4.19
 
 SHARED_LIBS =	yder		0.0
 
@@ -17,7 +17,7 @@ WANTLIB +=	orcania
 
 MODULES =		devel/cmake
 
-LIB_DEPENDS +=		devel/orcania
+LIB_DEPENDS +=		devel/orcania>=2.3.2
 
 CONFIGURE_ARGS +=	-DWITH_JOURNALD:BOOL=OFF
 

@@ -1,14 +1,22 @@
 include/yder-cfg.h
 include/yder.h
+lib/cmake/Yder/
+lib/cmake/Yder/FindSystemd.cmake
+lib/cmake/Yder/YderConfig.cmake
+lib/cmake/Yder/YderConfigVersion.cmake
+lib/cmake/Yder/YderTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Yder/YderTargets.cmake
 @lib lib/libyder.so.${LIByder_VERSION}
 lib/pkgconfig/libyder.pc
 share/doc/yder/
 share/doc/yder/README.md
 share/doc/yder/examples/
+share/doc/yder/examples/.gitignore
 share/doc/yder/examples/Makefile
 share/doc/yder/examples/log_callback.c
 share/doc/yder/examples/log_combined.c
 share/doc/yder/examples/log_console.c
 share/doc/yder/examples/log_file.c
 share/doc/yder/examples/log_journald.c
+share/doc/yder/examples/log_newline.c
 share/doc/yder/examples/log_syslog.c
