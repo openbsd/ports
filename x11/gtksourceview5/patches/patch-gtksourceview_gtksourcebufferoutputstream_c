@@ -1,5 +1,7 @@
-https://gitlab.gnome.org/GNOME/gtksourceview/-/issues/309
-https://gitlab.gnome.org/GNOME/gtksourceview/-/merge_requests/322
+From 6c1e9f06f892407f667da6bd0c13ab6f3df92024 Mon Sep 17 00:00:00 2001
+From: Christian Hergert <chergert@redhat.com>
+Date: Wed, 26 Apr 2023 16:42:40 -0700
+Subject: [PATCH] bufferoutputstream: be defensive about dereferencing nul byte
 
 Index: gtksourceview/gtksourcebufferoutputstream.c
 --- gtksourceview/gtksourcebufferoutputstream.c.orig
