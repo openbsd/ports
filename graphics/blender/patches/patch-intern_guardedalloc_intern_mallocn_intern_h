@@ -3,7 +3,7 @@ Don't use malloc.h header on OpenBSD.
 Index: intern/guardedalloc/intern/mallocn_intern.h
 --- intern/guardedalloc/intern/mallocn_intern.h.orig
 +++ intern/guardedalloc/intern/mallocn_intern.h
-@@ -39,6 +39,8 @@
+@@ -23,6 +23,8 @@
  #  define HAVE_MALLOC_STATS
  #elif defined(__FreeBSD__)
  #  include <malloc_np.h>
@@ -12,7 +12,7 @@ Index: intern/guardedalloc/intern/mallocn_intern.h
  #elif defined(__APPLE__)
  #  include <malloc/malloc.h>
  #  define malloc_usable_size malloc_size
-@@ -66,7 +68,8 @@ size_t malloc_usable_size(void *ptr);
+@@ -50,7 +52,8 @@ size_t malloc_usable_size(void *ptr);
  #  define UNLIKELY(x) (x)
  #endif
  

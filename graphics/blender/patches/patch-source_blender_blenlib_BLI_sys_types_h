@@ -1,13 +1,14 @@
 uchar.h doesn't exist in OpenBSD
 
---- source/blender/blenlib/BLI_sys_types.h.orig	Tue Sep 22 19:36:29 2020
-+++ source/blender/blenlib/BLI_sys_types.h	Sun Nov 22 13:12:51 2020
-@@ -72,7 +72,7 @@ typedef uint64_t u_int64_t;
- #include <stddef.h> /* size_t define */
+Index: source/blender/blenlib/BLI_sys_types.h
+--- source/blender/blenlib/BLI_sys_types.h.orig
++++ source/blender/blenlib/BLI_sys_types.h
+@@ -57,7 +57,7 @@ typedef uint64_t u_int64_t;
  
  #ifndef __cplusplus
+ /* The <uchar.h> standard header is missing on some systems. */
 -#  if defined(__APPLE__) || defined(__NetBSD__)
 +#  if defined(__APPLE__) || defined(__NetBSD__) || defined(__OpenBSD__)
- /* The <uchar.h> standard header is missing on macOS. */
  typedef unsigned int char32_t;
  #  else
+ #    include <uchar.h>

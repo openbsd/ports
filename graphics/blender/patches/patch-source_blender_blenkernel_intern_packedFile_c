@@ -1,7 +1,7 @@
 Index: source/blender/blenkernel/intern/packedFile.c
 --- source/blender/blenkernel/intern/packedFile.c.orig
 +++ source/blender/blenkernel/intern/packedFile.c
-@@ -333,7 +333,7 @@ int BKE_packedfile_write_to_file(ReportList *reports,
+@@ -317,7 +317,7 @@ int BKE_packedfile_write_to_file(ReportList *reports,
    /* make sure the path to the file exists... */
    BLI_make_existing_file(name);
  

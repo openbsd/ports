@@ -1,0 +1,14 @@
+Fix: Build with FFmpeg 6.0
+
+Index: source/blender/blenkernel/intern/writeffmpeg.c
+--- source/blender/blenkernel/intern/writeffmpeg.c.orig
++++ source/blender/blenkernel/intern/writeffmpeg.c
+@@ -644,7 +644,7 @@ static AVStream *alloc_video_stream(FFMpegContext *con
+                                                             255);
+   st->avg_frame_rate = av_inv_q(c->time_base);
+ 
+-  if (codec->capabilities & AV_CODEC_CAP_AUTO_THREADS) {
++  if (codec->capabilities & AV_CODEC_CAP_OTHER_THREADS) {
+     c->thread_count = 0;
+   }
+   else {

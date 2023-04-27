@@ -1,7 +1,7 @@
 Index: intern/guardedalloc/intern/mallocn_guarded_impl.c
---- intern/guardedalloc/intern/mallocn_guarded_impl.c.orig	Fri Oct 30 13:00:11 2020
-+++ intern/guardedalloc/intern/mallocn_guarded_impl.c	Sat Nov 28 21:50:54 2020
-@@ -620,6 +620,9 @@ static int compare_len(const void *p1, const void *p2)
+--- intern/guardedalloc/intern/mallocn_guarded_impl.c.orig
++++ intern/guardedalloc/intern/mallocn_guarded_impl.c
+@@ -604,6 +604,9 @@ static int compare_len(const void *p1, const void *p2)
  
  void MEM_guarded_printmemlist_stats(void)
  {
@@ -11,7 +11,7 @@ Index: intern/guardedalloc/intern/mallocn_guarded_impl.c
    MemHead *membl;
    MemPrintBlock *pb, *printblock;
    unsigned int totpb, a, b;
-@@ -718,6 +721,7 @@ void MEM_guarded_printmemlist_stats(void)
+@@ -702,6 +705,7 @@ void MEM_guarded_printmemlist_stats(void)
  #ifdef HAVE_MALLOC_STATS
    printf("System Statistics:\n");
    malloc_stats();

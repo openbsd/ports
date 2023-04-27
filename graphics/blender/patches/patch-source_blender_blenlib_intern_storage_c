@@ -3,7 +3,7 @@ Use statvfs() on OpenBSD.
 Index: source/blender/blenlib/intern/storage.c
 --- source/blender/blenlib/intern/storage.c.orig
 +++ source/blender/blenlib/intern/storage.c
-@@ -29,7 +29,7 @@
+@@ -13,7 +13,7 @@
  
  #include <sys/stat.h>
  

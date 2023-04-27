@@ -3,7 +3,7 @@ Use posix_memalign() on OpenBSD.
 Index: intern/guardedalloc/intern/mallocn.c
 --- intern/guardedalloc/intern/mallocn.c.orig
 +++ intern/guardedalloc/intern/mallocn.c
-@@ -72,7 +72,8 @@ void *aligned_malloc(size_t size, size_t alignment)
+@@ -58,7 +58,8 @@ void *aligned_malloc(size_t size, size_t alignment)
  
  #ifdef _WIN32
    return _aligned_malloc(size, alignment);

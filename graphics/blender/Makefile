@@ -7,8 +7,7 @@ DPB_PROPERTIES = parallel
 
 COMMENT =	3D creation software
 
-DISTNAME =	blender-3.0.1
-REVISION =	2
+DISTNAME =	blender-3.3.6
 
 CATEGORIES =	graphics
 
@@ -18,15 +17,16 @@ HOMEPAGE =	https://www.blender.org/
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${MODPY_WANTLIB}
-WANTLIB += ${COMPILER_LIBCXX} Alembic GL GLEW Iex-3_1 IlmThread-3_1
-WANTLIB += Imath-3_1 OpenColorIO OpenEXR-3_1 OpenImageIO SDL2
-WANTLIB += X11 Xfixes Xi Xrender Xxf86vm avcodec avdevice avformat
-WANTLIB += avutil blosc boost_atomic-mt boost_chrono-mt boost_date_time-mt
-WANTLIB += boost_filesystem-mt boost_iostreams-mt boost_regex-mt
-WANTLIB += boost_system-mt boost_thread-mt c expat fftw3 freetype
-WANTLIB += gmp gmpxx jpeg m openal openjp2 openvdb osdCPU osdGPU
-WANTLIB += png potrace pugixml pystring sndfile swscale tbb tiff
-WANTLIB += util yaml-cpp z zstd
+WANTLIB += ${COMPILER_LIBCXX} Alembic GL GLEW Iex-3_1 IlmThread-3_1 Imath-3_1
+WANTLIB += OpenColorIO OpenEXR-3_1 OpenEXRCore-3_1 OpenImageIO OpenImageIO_Util
+WANTLIB += SDL2 X11 Xfixes Xi Xrender Xxf86vm avcodec avdevice
+WANTLIB += avfilter avformat avutil blosc boost_atomic-mt boost_chrono-mt
+WANTLIB += boost_date_time-mt boost_filesystem-mt boost_iostreams-mt
+WANTLIB += boost_regex-mt boost_system-mt boost_thread-mt c expat
+WANTLIB += fftw3 freetype gmp gmpxx jpeg m openal openjp2 openvdb
+WANTLIB += osdCPU osdGPU png potrace pugixml pystring sndfile
+WANTLIB += swresample swscale tbb tiff util webp webpdemux webpmux
+WANTLIB += yaml-cpp z zstd
 
 MASTER_SITES =	https://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/
@@ -83,8 +83,6 @@ NO_TEST =	Yes
 
 CXXFLAGS +=	-I${LOCALBASE}/include -I${X11BASE}/include
 CFLAGS +=	-I${LOCALBASE}/include
-# Fix build with OpenEXR>=3 (Imath split)
-CXXFLAGS +=	-I${LOCALBASE}/include/Imath
 
 MODPY_ADJ_FILES =	release/scripts/modules/bl_i18n_utils/merge_po.py \
 			release/scripts/modules/bl_i18n_utils/utils_rtl.py \
