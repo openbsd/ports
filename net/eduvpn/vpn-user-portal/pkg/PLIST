@@ -21,6 +21,7 @@ vpn-user-portal/locale/pt-PT.php
 vpn-user-portal/locale/ro-RO.php
 vpn-user-portal/locale/sv-SE.php
 vpn-user-portal/locale/uk-UA.php
+vpn-user-portal/php.mod
 vpn-user-portal/phpunit.xml.dist
 vpn-user-portal/schema/
 vpn-user-portal/schema/2022022201.schema
@@ -215,6 +216,7 @@ vpn-user-portal/vendor/fkooman/oauth2-server/Makefile
 vpn-user-portal/vendor/fkooman/oauth2-server/README.md
 vpn-user-portal/vendor/fkooman/oauth2-server/TOKEN_FORMAT.md
 vpn-user-portal/vendor/fkooman/oauth2-server/composer.json
+vpn-user-portal/vendor/fkooman/oauth2-server/php.mod
 vpn-user-portal/vendor/fkooman/oauth2-server/phpstan.neon
 vpn-user-portal/vendor/fkooman/oauth2-server/psalm.xml.dist
 vpn-user-portal/vendor/fkooman/oauth2-server/src/
