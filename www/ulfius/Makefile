@@ -2,7 +2,7 @@ COMMENT =	HTTP Framework for REST Applications in C
 
 GH_ACCOUNT =	babelouest
 GH_PROJECT =	ulfius
-GH_TAGNAME =	v2.7.7
+GH_TAGNAME =	v2.7.13
 
 SHARED_LIBS =	ulfius	0.0
 
