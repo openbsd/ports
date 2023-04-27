@@ -26,5 +26,6 @@ WANTLIB += ${COMPILER_LIBCXX} m z
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS=		--without-docs
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include"
+USE_GMAKE=		Yes
 
 .include <bsd.port.mk>
