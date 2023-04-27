@@ -1,0 +1,14 @@
+Squealer scans a git repository or filesystem for secrets that are being leaked
+deep within the commit history.
+
+The built-in configuration has the following checks;
+AWS
+	* access key id
+	* access secret key
+Github
+	* github token
+Slack
+	* slack token OAUTH
+	* webhook url
+Other
+	* asymmetric private Key
