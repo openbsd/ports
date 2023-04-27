@@ -227,6 +227,7 @@
      SUBDIR += p5-Text-Password-Pronounceable
      SUBDIR += p5-Tie-EncryptedHash
      SUBDIR += p5-Unix-OpenBSD-Random
+     SUBDIR += paperkey
      SUBDIR += pass-import
      SUBDIR += pass-otp
      SUBDIR += passphraseme
