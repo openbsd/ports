@@ -386,6 +386,7 @@
      SUBDIR += swatch
      SUBDIR += tclgpg
      SUBDIR += tcltls
+     SUBDIR += tfsec
      SUBDIR += theharvester
      SUBDIR += tls-attacker
      SUBDIR += towitoko
