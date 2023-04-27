@@ -171,6 +171,11 @@ lib/rhythmbox/plugins/rb/stringmatch.py
 lib/rhythmbox/plugins/rbzeitgeist/
 lib/rhythmbox/plugins/rbzeitgeist/rbzeitgeist.plugin
 lib/rhythmbox/plugins/rbzeitgeist/rbzeitgeist.py
+lib/rhythmbox/plugins/replaygain/
+lib/rhythmbox/plugins/replaygain/config.py
+lib/rhythmbox/plugins/replaygain/player.py
+lib/rhythmbox/plugins/replaygain/replaygain.plugin
+lib/rhythmbox/plugins/replaygain/replaygain.py
 lib/rhythmbox/plugins/webremote/
 lib/rhythmbox/plugins/webremote/siphash.py
 lib/rhythmbox/plugins/webremote/webremote.plugin
@@ -572,6 +577,8 @@ share/rhythmbox/plugins/magnatune/magnatune-prefs.ui
 share/rhythmbox/plugins/magnatune/magnatune-toolbar.ui
 share/rhythmbox/plugins/magnatune/magnatune_logo_color_small.png
 share/rhythmbox/plugins/magnatune/magnatune_logo_color_tiny.png
+share/rhythmbox/plugins/replaygain/
+share/rhythmbox/plugins/replaygain/replaygain-prefs.ui
 share/rhythmbox/plugins/webremote/
 share/rhythmbox/plugins/webremote/css/
 share/rhythmbox/plugins/webremote/css/grids-responsive-min.css

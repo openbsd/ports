@@ -2,7 +2,7 @@ COMMENT=		integrated music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
 GNOME_VERSION=		3.4.7
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS += rhythmbox-core            0.0 # 10.0.0
 
@@ -38,6 +38,10 @@ LIB_DEPENDS=		databases/tdb \
 			x11/gnome/grilo \
 			x11/gnome/totem-pl-parser
 
+# MagnatuneAccount.py
+BUILD_DEPENDS +=	x11/gnome/libsecret
+RUN_DEPENDS +=		x11/gnome/libsecret
+
 # context plugin
 RUN_DEPENDS +=		www/py-mako${MODPY_FLAVOR}
 
@@ -67,9 +71,5 @@ CONFIGURE_ARGS +=	-Dmtp=disabled
 
 # WRKBUILD/tests
 TEST_IS_INTERACTIVE=	x11
-
-post-install:
-	# XXX hangs: check at next rhythmbox update
-	rm -rf ${PREFIX}/{lib,share}/rhythmbox/plugins/replaygain
 
 .include <bsd.port.mk>
