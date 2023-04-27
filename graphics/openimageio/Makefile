@@ -5,13 +5,13 @@ COMMENT =		library for reading and writing images
 
 GH_ACCOUNT =		OpenImageIO
 GH_PROJECT =		oiio
-GH_TAGNAME =		Release-$V
-V =			2.2.20.0
+GH_TAGNAME =		v$V
+V =			2.4.10.0
 DISTNAME =		openimageio-${V}
 REVISION =		3
 
-SHARED_LIBS +=		OpenImageIO		11.1 # 2.2.20
-SHARED_LIBS +=		OpenImageIO_Util	7.0 # 2.2.20
+SHARED_LIBS +=		OpenImageIO		12.0 # 2.4.10
+SHARED_LIBS +=		OpenImageIO_Util	8.0 # 2.4.10
 
 CATEGORIES =		graphics devel
 
@@ -20,17 +20,16 @@ HOMEPAGE =		https://sites.google.com/site/openimageio/home
 # BSD
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += GL GLU Iex-3_1 IlmThread-3_1 Imath-3_1 OpenColorIO
-WANTLIB += OpenEXR-3_1 Qt5Core Qt5Gui Qt5OpenGL Qt5Widgets avcodec
-WANTLIB += avformat avutil boost_atomic-mt boost_chrono-mt boost_date_time-mt
-WANTLIB += boost_filesystem-mt boost_system-mt boost_thread-mt
-WANTLIB += bz2 c freetype gif heif jpeg m openjp2 png pugixml
-WANTLIB += raw_r swscale tiff webp webpdemux z
+WANTLIB += ${COMPILER_LIBCXX} GL GLU Iex-3_1 IlmThread-3_1 Imath-3_1
+WANTLIB += OpenColorIO OpenEXR-3_1 OpenEXRCore-3_1 Qt6Core Qt6Gui
+WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6Widgets avcodec avformat
+WANTLIB += avutil boost_atomic-mt boost_chrono-mt boost_filesystem-mt
+WANTLIB += boost_thread-mt bz2 c freetype gif heif jpeg m openjp2
+WANTLIB += png pugixml raw_r swscale tbb tiff webp webpdemux z
 
 MODULES =		devel/cmake \
 			lang/python \
-			x11/qt5
+			x11/qt6
 
 COMPILER =		base-clang ports-gcc
 
@@ -40,6 +39,7 @@ BUILD_DEPENDS =		devel/fmt \
 			textproc/txt2man
 
 LIB_DEPENDS =		devel/boost \
+			devel/tbb \
 			graphics/ffmpeg \
 			graphics/giflib \
 			graphics/jpeg \
@@ -54,6 +54,7 @@ LIB_DEPENDS =		devel/boost \
 			textproc/pugixml
 
 CONFIGURE_ARGS +=	-DCMAKE_INSTALL_MANDIR="man/man1" \
+			-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 			-DCMAKE_LIBRARY_PATH="${WRKBUILD}/lib:${CMAKE_LIBRARY_PATH}" \
 			-DSTOP_ON_WARNING=OFF \
 			-DUSE_CCACHE=OFF \
