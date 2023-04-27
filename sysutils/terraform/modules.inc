@@ -246,10 +246,10 @@ MODGO_MODULES =	\
 	github.com/hashicorp/go-retryablehttp				 v0.7.2 \
 	github.com/hashicorp/go-rootcerts				 v1.0.2 \
 	github.com/hashicorp/go-safetemp				 v1.0.0 \
-	github.com/hashicorp/go-slug					 v0.10.1 \
+	github.com/hashicorp/go-slug					 v0.11.0 \
 	github.com/hashicorp/go-sockaddr				 v1.0.0 \
 	github.com/hashicorp/go-syslog					 v1.0.0 \
-	github.com/hashicorp/go-tfe					 v1.18.0 \
+	github.com/hashicorp/go-tfe					 v1.21.0 \
 	github.com/hashicorp/go-uuid					 v1.0.3 \
 	github.com/hashicorp/go-version					 v1.6.0 \
 	github.com/hashicorp/golang-lru					 v0.5.1 \
@@ -340,7 +340,7 @@ MODGO_MODULES =	\
 	github.com/spf13/pflag						 v1.0.5 \
 	github.com/stoewer/go-strcase					 v1.2.0 \
 	github.com/stretchr/objx					 v0.5.0 \
-	github.com/stretchr/testify					 v1.8.1 \
+	github.com/stretchr/testify					 v1.8.2 \
 	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common	 v1.0.588 \
 	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/kms	 v1.0.194 \
 	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/sts	 v1.0.588 \
