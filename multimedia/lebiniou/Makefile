@@ -2,12 +2,11 @@ COMMENT =	music visualization & VJing tool
 
 PKGNAME =	${DISTNAME:S/-version//}
 DISTNAME =	lebiniou-${V}
-V = 		version-3.65.0
-REVISION =      1
+V = 		version-3.66.0
 
 CATEGORIES =	multimedia
 
-HOMEPAGE =	https://www.lebiniou.net/
+HOMEPAGE =	https://biniou.net/
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

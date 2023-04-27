@@ -2,11 +2,11 @@ COMMENT =	data files for use with lebiniou
 
 PKGNAME =	${DISTNAME:S/-version//}
 DISTNAME =	lebiniou-data-${V}
-V =		version-3.65.0
+V =		version-3.66.0
 
 CATEGORIES =	multimedia
 
-HOMEPAGE =	https://www.lebiniou.net/
+HOMEPAGE =	https://biniou.net/
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
