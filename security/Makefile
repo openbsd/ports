@@ -362,6 +362,7 @@
      SUBDIR += sops
      SUBDIR += spiped
      SUBDIR += sqlmap
+     SUBDIR += squealer
      SUBDIR += ssdeep
      SUBDIR += ssh-askpass-fullscreen
      SUBDIR += ssh-audit
