@@ -1,8 +1,7 @@
 COMMENT =	tools for LiDAR processing
-DISTNAME =	lastools-0.20200310
 GH_ACCOUNT =	LAStools
 GH_PROJECT =	LAStools
-GH_COMMIT =	978d1709a4e15a84deb09f65475554f56172e831
+GH_TAGNAME =	v2.0.2
 
 CATEGORIES =	converters textproc devel
 
