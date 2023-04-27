@@ -1,23 +1,11 @@
 @bin bin/wpd2html
 @bin bin/wpd2raw
 @bin bin/wpd2text
-include/libwpd-0.8/
-include/libwpd-0.8/libwpd/
-include/libwpd-0.8/libwpd/GSFStream.h
-include/libwpd-0.8/libwpd/WPDocument.h
-include/libwpd-0.8/libwpd/WPXHLListenerImpl.h
-include/libwpd-0.8/libwpd/WPXProperty.h
-include/libwpd-0.8/libwpd/WPXPropertyList.h
-include/libwpd-0.8/libwpd/WPXPropertyListVector.h
-include/libwpd-0.8/libwpd/WPXStream.h
-include/libwpd-0.8/libwpd/WPXString.h
-include/libwpd-0.8/libwpd/libwpd.h
-include/libwpd-0.8/libwpd/libwpd_types.h
-lib/libwpd-0.8.a
-lib/libwpd-0.8.la
-@lib lib/libwpd-0.8.so.${LIBwpd-0.8_VERSION}
-lib/libwpd-stream-0.8.a
-lib/libwpd-stream-0.8.la
-@lib lib/libwpd-stream-0.8.so.${LIBwpd-stream-0.8_VERSION}
-lib/pkgconfig/libwpd-0.8.pc
-lib/pkgconfig/libwpd-stream-0.8.pc
+include/libwpd-0.10/
+include/libwpd-0.10/libwpd/
+include/libwpd-0.10/libwpd/WPDocument.h
+include/libwpd-0.10/libwpd/libwpd.h
+@static-lib lib/libwpd-0.10.a
+lib/libwpd-0.10.la
+@lib lib/libwpd-0.10.so.${LIBwpd-0.10_VERSION}
+lib/pkgconfig/libwpd-0.10.pc

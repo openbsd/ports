@@ -1,12 +1,9 @@
 COMMENT=	import and export WordPerfect(tm) documents
 
-DISTNAME=	libwpd-0.8.9
+DISTNAME=	libwpd-0.10.3
 CATEGORIES=	textproc
 
-REVISION=	13
-
-SHARED_LIBS=	wpd-0.8		8.9 \
-		wpd-stream-0.8	8.9
+SHARED_LIBS=	wpd-0.10	10.0
 
 HOMEPAGE=	http://libwpd.sourceforge.net/
 
@@ -15,18 +12,19 @@ MAINTAINER=	Robert Nagy <robert@openbsd.org>
 # LGPL
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += bz2 c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gsf-1
-WANTLIB += gthread-2.0 iconv intl lzma m pcre2-8 pthread ${COMPILER_LIBCXX} xml2 z
-
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libwpd/}
 
+WANTLIB += ${COMPILER_LIBCXX} c m z
+WANTLIB += revenge-0.0 revenge-generators-0.0
+WANTLIB += revenge-stream-0.0
 
-LIB_DEPENDS=		devel/libgsf
-TEST_DEPENDS=	devel/cppunit
+BUILD_DEPENDS=	devel/boost
+LIB_DEPENDS=	textproc/librevenge
 
-CONFIGURE_STYLE= 	gnu
-CONFIGURE_ARGS=		--without-docs
+CONFIGURE_STYLE= gnu
+CONFIGURE_ARGS=	--without-docs
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
 
 .include <bsd.port.mk>
