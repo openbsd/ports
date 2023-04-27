@@ -1,4 +1,10 @@
 include/orcania-cfg.h
 include/orcania.h
+lib/cmake/
+lib/cmake/Orcania/
+lib/cmake/Orcania/OrcaniaConfig.cmake
+lib/cmake/Orcania/OrcaniaConfigVersion.cmake
+lib/cmake/Orcania/OrcaniaTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Orcania/OrcaniaTargets.cmake
 @lib lib/liborcania.so.${LIBorcania_VERSION}
 lib/pkgconfig/liborcania.pc

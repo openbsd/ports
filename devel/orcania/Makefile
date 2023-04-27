@@ -2,9 +2,9 @@ COMMENT =	potluck with different functions for different purposes
 
 GH_ACCOUNT =	babelouest
 GH_PROJECT =	orcania
-GH_TAGNAME =	v2.2.1
+GH_TAGNAME =	v2.3.2
 
-SHARED_LIBS =	orcania		0.0
+SHARED_LIBS =	orcania		1.0
 
 CATEGORIES =	devel
 
@@ -12,8 +12,6 @@ HOMEPAGE =	https://babelouest.github.io/orcania/
 
 # LGPL 2.1
 PERMIT_PACKAGE =	Yes
-
-WANTLIB =	m
 
 MODULES =		devel/cmake
 
