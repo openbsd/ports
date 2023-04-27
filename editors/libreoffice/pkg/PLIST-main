@@ -8094,7 +8094,6 @@ lib/libreoffice/program/intro.png
 @so lib/libreoffice/program/libpyuno.so
 @so lib/libreoffice/program/libreflectionlo.so
 @so lib/libreoffice/program/libreglo.so
-@lib lib/libreoffice/program/librevenge-0.0-lo.so.${LIBrevenge-0.0-lo_VERSION}
 @so lib/libreoffice/program/libsal_textenclo.so
 @so lib/libreoffice/program/libscdlo.so
 @so lib/libreoffice/program/libscfiltlo.so
@@ -8142,7 +8141,6 @@ lib/libreoffice/program/intro.png
 @so lib/libreoffice/program/libvbaswobjlo.so
 @so lib/libreoffice/program/libvclplug_genlo.so
 @so lib/libreoffice/program/libvclplug_gtk3lo.so
-@lib lib/libreoffice/program/libwpd-0.10-lo.so.${LIBwpd-0.10-lo_VERSION}
 @so lib/libreoffice/program/libwpftcalclo.so
 @so lib/libreoffice/program/libwpftdrawlo.so
 @so lib/libreoffice/program/libwpftimpresslo.so

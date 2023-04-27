@@ -62,10 +62,8 @@ SHA256 (libreoffice/libreoffice-7.5.2.2.tar.xz) = YYuQfdNrj4DgfdwTpgXo58EhJh323c
 SHA256 (libreoffice/libreoffice-dictionaries-7.5.2.2.tar.xz) = 2HeuCnR1gMlyJN0MLZ25uFAQlIji6+lyZvPZoNQtiGA=
 SHA256 (libreoffice/libreoffice-help-7.5.2.2.tar.xz) = h1uQ3EaroSyz6uCU7SFC06TuGMvaXm97/v9zCKvNxDY=
 SHA256 (libreoffice/libreoffice-translations-7.5.2.2.tar.xz) = IPdXQibM+xz1Wok/XnRxyNVqvwh4BarWCH9FceylN/0=
-SHA256 (libreoffice/librevenge-0.0.4.tar.bz2) = xRYBzQgyC3VwKBLGSq4GU0CRZNp4Jf0PRRrCxdvnfL8=
 SHA256 (libreoffice/libstaroffice-0.0.7.tar.xz) = +U+wrYIW+XEnvt7xY6RYhrQ8Yt6sXlsPXmKOI0IgyNs=
 SHA256 (libreoffice/libvisio-0.1.7.tar.xz) = j6+N+HDLJ7CaeHoZWdbGRvqkTQ2KsVGIPfQItxZr6kw=
-SHA256 (libreoffice/libwpd-0.10.3.tar.xz) = JGWwtmL9xdTjvrzcmnkCdxP7Ypyiv/BKPJJR/exC3Qk=
 SHA256 (libreoffice/libwpg-0.3.3.tar.xz) = mbP3+IMjhXSFgquBMPu55WB71Reb6/l1GsHVGlMJnRw=
 SHA256 (libreoffice/libwps-0.4.12.tar.xz) = 4hr7UqBtA7d0xajHJnloerZIkbkc4MO98tPpcjFTTts=
 SHA256 (libreoffice/libzmf-0.0.2.tar.xz) = JwUaMMsFf9tdXeZaHxZccVPcduJ/5iJRy7hmOessryI=
@@ -142,10 +140,8 @@ SIZE (libreoffice/libreoffice-7.5.2.2.tar.xz) = 269326892
 SIZE (libreoffice/libreoffice-dictionaries-7.5.2.2.tar.xz) = 51795040
 SIZE (libreoffice/libreoffice-help-7.5.2.2.tar.xz) = 166236800
 SIZE (libreoffice/libreoffice-translations-7.5.2.2.tar.xz) = 204351912
-SIZE (libreoffice/librevenge-0.0.4.tar.bz2) = 529833
 SIZE (libreoffice/libstaroffice-0.0.7.tar.xz) = 707920
 SIZE (libreoffice/libvisio-0.1.7.tar.xz) = 854296
-SIZE (libreoffice/libwpd-0.10.3.tar.xz) = 534712
 SIZE (libreoffice/libwpg-0.3.3.tar.xz) = 328664
 SIZE (libreoffice/libwps-0.4.12.tar.xz) = 713008
 SIZE (libreoffice/libzmf-0.0.2.tar.xz) = 320952

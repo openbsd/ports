@@ -7,6 +7,7 @@ COMMENT-kde=	optional integration of LibreOffice to the KDE environment
 COMMENT-java=	optional integration of LibreOffice java features
 
 REVISION=	0
+REVISION-main=	1
 
 SHARED_LIBS +=  etonyek-0.1-lo            1.10 # 1.10
 SHARED_LIBS +=  langtag-lo                5.1 # 5.1
@@ -14,14 +15,12 @@ SHARED_LIBS +=  mwaw-0.3-lo               3.21 # 3.21
 SHARED_LIBS +=  odfgen-0.1-lo             1.8 # 1.8
 SHARED_LIBS +=  orcus-0.17                0.0 # 0.0
 SHARED_LIBS +=  orcus-parser-0.17         0.0 # 0.0
-SHARED_LIBS +=  revenge-0.0-lo            0.4 # 0.4
 SHARED_LIBS +=  staroffice-0.0-lo         0.0 # 0.0
 SHARED_LIBS +=  uno_cppu                  3.0 # 3.0
 SHARED_LIBS +=  uno_cppuhelpergcc3        3.0 # 3.0
 SHARED_LIBS +=  uno_purpenvhelpergcc3     3.0 # 3.0
 SHARED_LIBS +=  uno_sal                   3.0 # 3.0
 SHARED_LIBS +=  uno_salhelpergcc3         3.0 # 3.0
-SHARED_LIBS +=  wpd-0.10-lo               10.3 # 10.3
 SHARED_LIBS +=  wpg-0.3-lo                3.3 # 3.3
 SHARED_LIBS +=  wps-0.4-lo                4.12 # 4.12
 
@@ -120,10 +119,8 @@ DISTFILES += liborcus-0.17.2.tar.bz2:0
 DISTFILES += libpagemaker-0.0.4.tar.xz:0
 DISTFILES += libqxp-0.0.2.tar.xz:0
 DISTFILES += libre-hebrew-1.0.tar.gz:0
-DISTFILES += librevenge-0.0.4.tar.bz2:0
 DISTFILES += libstaroffice-0.0.7.tar.xz:0
 DISTFILES += libvisio-0.1.7.tar.xz:0
-DISTFILES += libwpd-0.10.3.tar.xz:0
 DISTFILES += libwpg-0.3.3.tar.xz:0
 DISTFILES += libwps-0.4.12.tar.xz:0
 DISTFILES += libzmf-0.0.2.tar.xz:0
@@ -206,6 +203,7 @@ LIB_DEPENDS-main=databases/openldap \
 		multimedia/gstreamer1/plugins-base \
 		print/cups,-libs \
 		print/poppler \
+		textproc/libwpd \
 		textproc/libxslt \
 		textproc/raptor \
 		net/curl \
@@ -233,7 +231,7 @@ WANTLIB-main+=	X11-xcb
 WANTLIB-main+=	gstaudio-1.0 gstbase-1.0 gstreamer-1.0 gstpbutils-1.0
 WANTLIB-main+=	gstvideo-1.0
 WANTLIB-main+=	boost_atomic-mt poppler-cpp
-WANTLIB-main+=	tiff webp
+WANTLIB-main+=	tiff webp revenge-0.0 wpd-0.10
 
 RUN_DEPENDS-main=	devel/desktop-file-utils \
 			devel/xdg-utils \
@@ -246,9 +244,9 @@ RUN_DEPENDS-main=	devel/desktop-file-utils \
 			x11/gtk+4,-guic
 
 MODULES+=		x11/qt5
-RUN_DEPENDS-kde=	editors/libreoffice
 LIB_DEPENDS-kde=	devel/kf5/kcoreaddons \
 			devel/kf5/kio \
+			editors/libreoffice \
 			${MODQT_LIB_DEPENDS} \
 			${MODGCC4_CPPLIBDEP}
 WANTLIB-kde+=		icuuc ${COMPILER_LIBCXX} m pthread xcb xcb-icccm
@@ -257,6 +255,10 @@ WANTLIB-kde+=		KF5ConfigCore KF5CoreAddons KF5I18n KF5KIOCore
 WANTLIB-kde+=		KF5KIOFileWidgets KF5KIOWidgets KF5WindowSystem
 WANTLIB-kde+=		Qt5Core Qt5Gui Qt5Network Qt5Widgets Qt5X11Extras
 WANTLIB-kde+=		glib-2.0 gobject-2.0 intl
+WANTLIB-kde+=		lib/libreoffice/program/uno_cppu \
+			lib/libreoffice/program/uno_cppuhelpergcc3 \
+			lib/libreoffice/program/uno_sal \
+			lib/libreoffice/program/uno_salhelpergcc3
 
 .include <bsd.port.arch.mk>
 
@@ -264,12 +266,16 @@ WANTLIB-kde+=		glib-2.0 gobject-2.0 intl
 MODULES+=		java
 MODJAVA_VER=		11+
 .endif
-LIB_DEPENDS-java=	${MODGCC4_CPPLIBDEP}
+LIB_DEPENDS-java=	${MODGCC4_CPPLIBDEP} \
+			editors/libreoffice
 RUN_DEPENDS-java=	${MODJAVA_RUN_DEPENDS} \
 			databases/db/v4,-java \
-			editors/libreoffice \
 			java/javaPathHelper
 WANTLIB-java=		c ${COMPILER_LIBCXX} m pthread
+WANTLIB-java+=		lib/libreoffice/program/uno_cppu \
+			lib/libreoffice/program/uno_cppuhelpergcc3 \
+			lib/libreoffice/program/uno_sal \
+			lib/libreoffice/program/uno_salhelpergcc3
 
 USE_GMAKE=	Yes
 NO_TEST=	Yes
@@ -328,8 +334,10 @@ CONFIGURE_ARGS+=\
 		--with-system-jpeg \
 		--with-system-lcms2 \
 		--with-system-libpng \
+		--with-system-librevenge \
 		--with-system-libtiff \
 		--with-system-libwebp \
+		--with-system-libwpd \
 		--with-system-mariadb \
 		--with-system-nss \
 		--with-system-openldap \
@@ -347,7 +355,6 @@ CONFIGURE_ARGS+=\
 		--without-system-beanshell \
 		--without-system-hsqldb \
 		--without-system-jfreereport \
-		--without-system-libwpd \
 		--without-system-orcus
 
 .if ${BUILD_PACKAGES:M-java}
