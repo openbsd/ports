@@ -1,6 +1,7 @@
---- test.cfg.orig	Sun Jun  1 12:35:49 2014
-+++ test.cfg	Mon Feb 16 15:32:28 2015
-@@ -4,22 +4,22 @@
+Index: test.cfg
+--- test.cfg.orig
++++ test.cfg
+@@ -4,19 +4,19 @@
  
  # Set this to the full path of your LDAP server executable
  # (e.g '/usr/sbin/slapd')
@@ -22,8 +23,4 @@
 +$SLAPD_SCHEMA_DIR = '${SYSCONFDIR}/openldap/schema';
  
  # OpenLDAP DB type: default is mdb, alternatives: hdb, bdb, ...
--#$SLAPD_DB = 'mdb';
-+$SLAPD_DB = 'hdb';
- 
- # Set this to the slapd module directory if your $SLAPD_DB is dynamically built
- # (e.g. '/usr/lib/ldap/')
+ #$SLAPD_DB = 'mdb';

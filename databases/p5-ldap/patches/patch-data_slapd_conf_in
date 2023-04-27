@@ -1,0 +1,12 @@
+Index: data/slapd.conf.in
+--- data/slapd.conf.in.orig
++++ data/slapd.conf.in
+@@ -11,7 +11,7 @@ include $SLAPD_SCHEMA_DIR/openldap.schema
+ # get required dynmaic modules
+ #modulepath     $SLAPD_MODULE_DIR
+ #moduleload     back_$SLAPD_DB
+-#moduleload	sssvlv
++moduleload	sssvlv
+ 
+ # PID & args file
+ pidfile         $TESTDB/slapd.pid

@@ -1,0 +1,17 @@
+This test is not reliable, skip it on OpenBSD to see regressions.
+
+Index: t/60cancel.t
+--- t/60cancel.t.orig
++++ t/60cancel.t
+@@ -60,8 +60,11 @@ SKIP: {
+ 
+   # cancel the running search => should work [may fail, as it depends on the server's speed]
+   $cancel = $ldap->cancel($search);
++  SKIP: {
++  skip("This test may fail because the server is too fast", 1);
+   ok(!$cancel->code, "cancel a running operation: " . $cancel->code . ": " . $cancel->error)
+     or diag("This test may have failed because the server was too fast");
++  }
+ }
+ 
+ 
