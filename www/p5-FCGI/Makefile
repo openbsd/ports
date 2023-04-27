@@ -1,8 +1,7 @@
 COMMENT =	module for enabling FastCGI support in CGI scripts
-DISTNAME =	FCGI-0.78
+DISTNAME =	FCGI-0.82
 FIX_EXTRACT_PERMISSIONS =	Yes
 CATEGORIES =	www
-REVISION =	0
 
 MAINTAINER =	Robert Nagy <robert@openbsd.org>
 
@@ -12,5 +11,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =	cpan
 
 WANTLIB +=	c perl
+
+NO_TEST =	Yes
 
 .include <bsd.port.mk>
