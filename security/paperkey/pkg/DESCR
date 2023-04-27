@@ -1,0 +1,8 @@
+Due to metadata and redundancy, OpenPGP secret keys are significantly larger
+than just the "secret bits". The secret key contains a complete copy of the
+public key. Since the public key generally doesn't need to be escrowed, only
+archiving the secret parts can be a real advantage.
+
+Paperkey extracts just those secret bytes and prints them. To reconstruct, you
+re-enter those bytes (whether by hand, OCR, QR code, or the like) and paperkey
+can use them to transform your existing public key into a secret key.
