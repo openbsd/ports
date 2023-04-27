@@ -1,0 +1,17 @@
+From 5a5883abe03ec2a4fab3fc97dd1f79ad33440c81 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Nelson=20Ben=C3=ADtez=20Le=C3=B3n?= <nbenitezl@gmail.com>
+Date: Mon, 24 Apr 2023 20:25:23 -0400
+Subject: [PATCH] Rename directory 'dbusmock' to 'mock_services'
+
+Index: tests/meson.build
+--- tests/meson.build.orig
++++ tests/meson.build
+@@ -20,7 +20,7 @@ if get_option('introspection')
+     python3_test_modules_found = true
+     python3_test_modules = [
+         'gi',
+-        'dbusmock',
++        'XXXdbusmock',
+     ]
+ 
+     foreach module : python3_test_modules

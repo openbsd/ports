@@ -1,18 +1,18 @@
 Index: src/user.h
 --- src/user.h.orig
 +++ src/user.h
-@@ -56,9 +56,14 @@ GType          user_get_type                (void) G_G
- User *         user_new                     (Daemon        *daemon,
-                                              uid_t          uid);
+@@ -55,9 +55,14 @@ GType          user_get_type (void) G_GNUC_CONST;
+ User *         user_new (Daemon *daemon,
+                          uid_t   uid);
  
 +#ifdef HAVE_SHADOW_H
- void           user_update_from_pwent       (User          *user,
-                                              struct passwd *pwent,
-                                              struct spwd   *spent);
+ void           user_update_from_pwent (User          *user,
+                                        struct passwd *pwent,
+                                        struct spwd   *spent);
 +#else
-+void           user_update_from_pwent       (User          *user,
-+                                             struct passwd *pwent);
++void           user_update_from_pwent (User          *user,
++                                       struct passwd *pwent);
 +#endif
- void           user_update_from_cache       (User *user);
- void           user_update_local_account_property (User          *user,
-                                                    gboolean       local);
+ void           user_update_from_cache (User *user);
+ void           user_update_local_account_property (User    *user,
+                                                    gboolean local);

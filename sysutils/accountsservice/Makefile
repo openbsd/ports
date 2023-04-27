@@ -3,10 +3,8 @@
 COMMENT=	D-Bus interface for user account query and manipulation
 
 # XXX 0.6.43: https://bugs.freedesktop.org/show_bug.cgi?id=48177
-DISTNAME=	accountsservice-22.08.8
+DISTNAME=	accountsservice-23.13.9
 EXTRACT_SUFX=	.tar.xz
-
-REVISION=	4
 
 SHARED_LIBS += accountsservice           0.1 # 0.0.0
 

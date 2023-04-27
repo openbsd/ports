@@ -9,10 +9,10 @@ Index: src/wtmp-helper.c
 -
 -#include <utmpx.h>
 -
- typedef struct {
+ typedef struct
+ {
          guint64 frequency;
-         gint64 time;
-@@ -48,6 +44,10 @@ user_previous_login_free (UserPreviousLogin *previous_
+@@ -50,6 +46,10 @@ user_previous_login_free (UserPreviousLogin *previous_
          g_free (previous_login);
  }
  
@@ -23,7 +23,7 @@ Index: src/wtmp-helper.c
  static gboolean
  wtmp_helper_start (void)
  {
-@@ -213,10 +213,136 @@ wtmp_helper_get_path_for_monitor (void)
+@@ -215,10 +215,136 @@ wtmp_helper_get_path_for_monitor (void)
  
  #else /* HAVE_UTMPX_H */
  
