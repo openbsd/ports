@@ -111,6 +111,7 @@
      SUBDIR += liblrdf
      SUBDIR += libmarisa
      SUBDIR += libnxml
+     SUBDIR += librevenge
      SUBDIR += libstemmer
      SUBDIR += libtextcat
      SUBDIR += libtranslate
