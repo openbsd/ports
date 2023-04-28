@@ -3,7 +3,7 @@ error: invalid operands to binary expression ('std::__1::basic_istream<char>' an
 Index: src/libannotate/addMarkers.cpp
 --- src/libannotate/addMarkers.cpp.orig
 +++ src/libannotate/addMarkers.cpp
-@@ -423,7 +423,7 @@ addMarkers(PlanetProperties *planetProperties, Planet 
+@@ -429,7 +429,7 @@ addMarkers(PlanetProperties *planetProperties, Planet 
          {
              ifstream inFile(markerFile.c_str());
              char *line = new char[MAX_LINE_LENGTH];
@@ -12,7 +12,7 @@ Index: src/libannotate/addMarkers.cpp
              {
                  unsigned char color[3];
                  memcpy(color, planetProperties->MarkerColor(), 3);
-@@ -469,7 +469,7 @@ addMarkers(View *view, const int width, const int heig
+@@ -475,7 +475,7 @@ addMarkers(View *view, const int width, const int heig
          {
              ifstream inFile(markerFile.c_str());
              char *line = new char[MAX_LINE_LENGTH];

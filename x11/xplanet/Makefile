@@ -1,7 +1,6 @@
 COMMENT=	draw pictures of the earth textured by an image
 
-DISTNAME=	xplanet-1.3.0
-REVISION=	6
+DISTNAME=	xplanet-1.3.1
 CATEGORIES=	astro geo x11
 
 HOMEPAGE=	http://xplanet.sourceforge.net/

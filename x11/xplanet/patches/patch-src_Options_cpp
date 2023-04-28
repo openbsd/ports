@@ -1,6 +1,7 @@
---- src/Options.cpp.orig	Sun Feb 12 18:11:29 2012
-+++ src/Options.cpp	Thu Sep 19 15:21:12 2013
-@@ -107,7 +107,7 @@ Options::Options() :
+Index: src/Options.cpp
+--- src/Options.cpp.orig
++++ src/Options.cpp
+@@ -108,7 +108,7 @@ Options::Options() :
      oX_(0),
      oY_(0),
      oZ_(0),
