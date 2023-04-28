@@ -9,6 +9,7 @@ WANTLIB += ${COMPILER_LIBCXX} c m
 # C++14
 COMPILER =		base-clang ports-gcc
 
+MODULES =		devel/cmake
 CONFIGURE_ARGS +=	-DCMAKE_INSTALL_PREFIX=${PREFIX}/eboringssl-fips
 
 # XXX picked up for tests, needs more love
