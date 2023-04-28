@@ -2549,10 +2549,14 @@ share/e16/themes/winter/dock/dock.cfg
 share/e16/themes/winter/dragbar/
 share/e16/themes/winter/dragbar/dragbar.cfg
 share/e16/themes/winter/dragbar/images/
-share/e16/themes/winter/dragbar/images/a1.png
-share/e16/themes/winter/dragbar/images/a1b.png
-share/e16/themes/winter/dragbar/images/a2.png
-share/e16/themes/winter/dragbar/images/a2b.png
+share/e16/themes/winter/dragbar/images/a1_horiz.png
+share/e16/themes/winter/dragbar/images/a1_vert.png
+share/e16/themes/winter/dragbar/images/a1b_horiz.png
+share/e16/themes/winter/dragbar/images/a1b_vert.png
+share/e16/themes/winter/dragbar/images/a2_horiz.png
+share/e16/themes/winter/dragbar/images/a2_vert.png
+share/e16/themes/winter/dragbar/images/a2b_horiz.png
+share/e16/themes/winter/dragbar/images/a2b_vert.png
 share/e16/themes/winter/dragbar/images/dragbar_horiz.png
 share/e16/themes/winter/dragbar/images/dragbar_vert.png
 share/e16/themes/winter/epplets/
@@ -2661,6 +2665,7 @@ share/e16/themes/winter/iconbox/images/button-h.png
 share/e16/themes/winter/iconbox/images/cover.png
 share/e16/themes/winter/iconbox/images/scroll-base_h.png
 share/e16/themes/winter/iconbox/images/scroll-base_v.png
+share/e16/themes/winter/iconbox/images/scroll-base_v.png.old
 share/e16/themes/winter/iconbox/images/scroll-knob.png
 share/e16/themes/winter/iconbox/images/scroll-knob_active.png
 share/e16/themes/winter/iconbox/images/scroll-knob_clicked.png
@@ -2706,8 +2711,6 @@ share/locale/bg/LC_MESSAGES/e16.mo
 share/locale/bs/LC_MESSAGES/e16.mo
 share/locale/ca/LC_MESSAGES/e16.mo
 share/locale/cs/LC_MESSAGES/e16.mo
-share/locale/csb/
-share/locale/csb/LC_MESSAGES/
 share/locale/csb/LC_MESSAGES/e16.mo
 share/locale/da/LC_MESSAGES/e16.mo
 share/locale/de/LC_MESSAGES/e16.mo
@@ -2716,8 +2719,6 @@ share/locale/en_US/LC_MESSAGES/
 share/locale/en_US/LC_MESSAGES/e16.mo
 share/locale/eo/LC_MESSAGES/e16.mo
 share/locale/es/LC_MESSAGES/e16.mo
-share/locale/fo/
-share/locale/fo/LC_MESSAGES/
 share/locale/fo/LC_MESSAGES/e16.mo
 share/locale/fr/LC_MESSAGES/e16.mo
 share/locale/gl/LC_MESSAGES/e16.mo
