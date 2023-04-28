@@ -6,7 +6,7 @@ https://github.com/saltstack/salt/pull/58155
 Index: salt/grains/core.py
 --- salt/grains/core.py.orig
 +++ salt/grains/core.py
-@@ -554,13 +554,15 @@ def _bsd_memdata(osdata):
+@@ -602,13 +602,15 @@ def _bsd_memdata(osdata):
          if osdata["kernel"] in ["OpenBSD", "NetBSD"]:
              swapctl = salt.utils.path.which("swapctl")
              swap_data = __salt__["cmd.run"]("{} -sk".format(swapctl))
@@ -24,3 +24,16 @@ Index: salt/grains/core.py
      return grains
  
  
+@@ -2652,10 +2654,12 @@ def os_data():
+             # derive osrelease from kernelversion prior to that
+             grains["osrelease"] = grains["kernelrelease"].split("-")[0]
+         grains.update(_bsd_cpudata(grains))
++        grains["osfullname"] = "{} {}".format(grains["kernel"], grains["osrelease"])
+     elif grains["kernel"] in ("OpenBSD", "NetBSD"):
+         grains["os_family"] = grains["os"] = grains["kernel"]
+         grains.update(_bsd_cpudata(grains))
+         grains["osrelease"] = grains["kernelrelease"].split("-")[0]
++        grains["osfullname"] = "{} {}".format(grains["kernel"], grains["osrelease"])
+         if grains["kernel"] == "NetBSD":
+             grains.update(_netbsd_gpu_data())
+     else:

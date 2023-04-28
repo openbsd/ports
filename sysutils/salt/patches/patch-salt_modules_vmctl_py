@@ -29,7 +29,7 @@ Index: salt/modules/vmctl.py
  
 @@ -251,6 +246,13 @@ def start(
  
-     if disks and len(disks) > 0:
+     if disks:
          cmd.extend(["-d", x] for x in disks)
 +
 +    if name:
