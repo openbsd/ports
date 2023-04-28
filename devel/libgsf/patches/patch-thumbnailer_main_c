@@ -1,0 +1,54 @@
+From 7006ed1f65b43739dbdbfc66e5be628adbe74ba8 Mon Sep 17 00:00:00 2001
+From: Morten Welinder <terra@gnome.org>
+Date: Fri, 21 Apr 2023 22:21:20 -0400
+Subject: [PATCH] Thumbnailer: plug leaks.
+
+From 7775e225b43c79ebfaf110ca27969a7e4a860336 Mon Sep 17 00:00:00 2001
+From: Morten Welinder <terra@gnome.org>
+Date: Sat, 22 Apr 2023 12:57:09 -0400
+Subject: [PATCH] thumbnailer: fix crash.
+
+Index: thumbnailer/main.c
+--- thumbnailer/main.c.orig
++++ thumbnailer/main.c
+@@ -100,11 +100,11 @@ static void
+ write_thumbnail (const char *filename, gconstpointer data, gsize size, int thumb_size)
+ {
+ 	GError *error = NULL;
+-	char *tmp_name;
++	char *tmp_name = NULL;
+ 	int fd;
+ 	FILE *file;
+ 
+-	fd = g_file_open_tmp("gsf-thumbnailer-XXXXXX", &tmp_name, &error);
++	fd = g_file_open_tmp ("gsf-thumbnailer-XXXXXX", &tmp_name, &error);
+ 	if (error) {
+ 		if (error->message) {
+ 			g_printerr ("error: %s\n", error->message);
+@@ -133,6 +133,8 @@ write_thumbnail (const char *filename, gconstpointer d
+ 
+ 	call_convert (tmp_name, filename, thumb_size);
+ 	unlink (tmp_name);
++
++	g_free (tmp_name);
+ }
+ 
+ static void
+@@ -189,7 +191,7 @@ msole_thumbnail (GsfInfile *infile, const char *out_fi
+ 	if (!thumb_value)
+ 		show_error_string_and_exit ("We got the thumbnail property, but it didn't have a value!?");
+ 
+-	clip_data = GSF_CLIP_DATA (g_value_get_object (thumb_value));
++	clip_data = GSF_CLIP_DATA (g_value_dup_object (thumb_value));
+ 
+ 	clip_format = gsf_clip_data_get_format (clip_data);
+ 
+@@ -240,6 +242,8 @@ read_thumbnail_and_write (const char *in_filename, con
+ 		zip_thumbnail (infile, out_filename, thumb_size);
+ 	else
+ 		show_error_and_exit (error);
++
++	g_clear_error (&error);
+ 
+ 	g_object_unref (infile);
+ 	g_object_unref (input);
