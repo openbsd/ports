@@ -140,7 +140,7 @@ MASTER_SITES =		???
 # Get source from proxy.golang.org
 #MODGO_MODULES =	modulename version
 # These are needed for dependency resolution. We don't actually need the
-# coresponding code
+# corresponding code.
 #MODGO_MODFILES =	modulename version
 
 # Dependencies
