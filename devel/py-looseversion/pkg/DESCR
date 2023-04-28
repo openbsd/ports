@@ -1,0 +1,4 @@
+looseversion provides version numbering for anarchists and software
+realists.
+A backwards/forwards-compatible fork of distutils.version.LooseVersion,
+for times when PEP-440 isn't what you need.
