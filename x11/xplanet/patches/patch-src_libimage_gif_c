@@ -1,20 +1,30 @@
 Index: src/libimage/gif.c
 --- src/libimage/gif.c.orig
 +++ src/libimage/gif.c
-@@ -36,6 +36,7 @@ read_gif(const char *filename, int *width, int *height
-        jumps... */
-     int InterlacedOffset[] = { 0, 4, 2, 1 }; 
-     int InterlacedJumps[] = { 8, 8, 4, 2 };
-+    int giferr = 0;
-     ColorMapObject *ColorMap;
- 
-     int	i, j, Size, Row, Col, Width, Height, ExtCode, Count;
-@@ -179,7 +180,7 @@ read_gif(const char *filename, int *width, int *height
+@@ -179,7 +179,7 @@ read_gif(const char *filename, int *width, int *height
  	}
      }
      
 -    if (DGifCloseFile(GifFile) == GIF_ERROR) {
-+    if (DGifCloseFile(GifFile, &giferr) == GIF_ERROR) {
++    if (DGifCloseFile(GifFile, NULL) == GIF_ERROR) {
  	return(0);
      }
  
+@@ -493,7 +493,7 @@ SortCmpRtn(const void *Entry1,
+ static void QuitGifError(GifFileType *GifFile)
+ {
+     fprintf(stderr, "Error writing GIF file\n");
+-    if (GifFile != NULL) EGifCloseFile(GifFile);
++    if (GifFile != NULL) EGifCloseFile(GifFile, NULL);
+ }
+ 
+ int 
+@@ -589,7 +589,7 @@ write_gif(const char *filename, int width, int height,
+ 	Ptr += width;
+     }
+ 
+-    if (EGifCloseFile(GifFile) == GIF_ERROR)
++    if (EGifCloseFile(GifFile, NULL) == GIF_ERROR)
+ 
+     {
+ 	QuitGifError(GifFile);

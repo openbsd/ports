@@ -1,8 +1,19 @@
+64bit time_t
+
 error: invalid operands to binary expression ('std::__1::basic_istream<char>' and 'nullptr_t')
 
 Index: src/libannotate/addSatellites.cpp
 --- src/libannotate/addSatellites.cpp.orig
 +++ src/libannotate/addSatellites.cpp
+@@ -392,7 +392,7 @@ readSatelliteFile(const char *line, Planet *planet, 
+         if (outputFile.is_open()) 
+         {
+             char line[128];
+-            snprintf(line, 128, "%12.3f%12.3f%12.3f%12ld%30s",
++            snprintf(line, 128, "%12.3f%12.3f%12.3f%12lld%30s",
+                      lat/deg_to_rad, lon/deg_to_rad, 6378.14 * (rad - 1),
+                      t, asctime(gmtime((time_t *) &t)));
+             outputFile << line;
 @@ -488,10 +488,10 @@ loadSatelliteVector(PlanetProperties *planetProperties
          {
              ifstream inFile(tleFile.c_str());
