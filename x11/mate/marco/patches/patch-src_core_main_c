@@ -1,0 +1,12 @@
+Index: src/core/main.c
+--- src/core/main.c.orig
++++ src/core/main.c
+@@ -42,7 +42,7 @@
+  */
+ 
+ #define _GNU_SOURCE
+-#define _XOPEN_SOURCE /* for putenv() and some signal-related functions */
++#define _XOPEN_SOURCE 700 /* for putenv() and some signal-related functions */
+ 
+ #include <config.h>
+ #include <glib/gi18n-lib.h>

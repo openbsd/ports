@@ -1,6 +1,7 @@
---- src/core/window-props.c.orig	Sun Mar 26 16:19:01 2017
-+++ src/core/window-props.c	Sun Mar 26 16:19:18 2017
-@@ -51,7 +51,7 @@
+Index: src/core/window-props.c
+--- src/core/window-props.c.orig
++++ src/core/window-props.c
+@@ -54,7 +54,7 @@
  #include <sys/types.h>
  #include <pwd.h>
  
@@ -9,7 +10,7 @@
  #include <glibtop/procuid.h>
  #include <errno.h>
  #include <pwd.h>
-@@ -394,7 +394,7 @@ reload_net_wm_user_time_window (MetaWindow    *window,
+@@ -440,7 +440,7 @@ reload_net_wm_user_time_window (MetaWindow    *window,
  static gboolean
  owner_of_process (pid_t process, uid_t *result)
  {
