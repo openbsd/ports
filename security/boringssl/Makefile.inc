@@ -11,3 +11,6 @@ MAINTAINER ?=		Bob Beck <beck@openbsd.org>, \
 PERMIT_PACKAGE ?=	Yes
 
 PORTHOME ?=		${WRKSRC}
+
+# XXX go pullutes /tmp and binaries need 'wxallowed' for BTI transition
+MAKE_ENV ?=		TMPDIR=${WRKBUILD}
