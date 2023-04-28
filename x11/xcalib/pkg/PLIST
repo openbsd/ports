@@ -1,6 +1,7 @@
 @bin bin/xcalib
+@man man/man1/xcalib.1
 share/examples/xcalib/
-share/examples/xcalib/README
+share/examples/xcalib/README.md
 share/examples/xcalib/bluish.icc
 share/examples/xcalib/gamma_1_0.icc
 share/examples/xcalib/gamma_2_2.icc
