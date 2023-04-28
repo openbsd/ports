@@ -1463,6 +1463,7 @@
      SUBDIR += py-littleutils,python3
      SUBDIR += py-llvmlite,python3
      SUBDIR += py-logilab-common,python3
+     SUBDIR += py-looseversion,python3
      SUBDIR += py-magic,python3
      SUBDIR += py-matrix-common,python3
      SUBDIR += py-mccabe,python3
