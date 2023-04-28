@@ -12,7 +12,5 @@ PERMIT_PACKAGE ?=	Yes
 
 PORTHOME ?=		${WRKDIR}
 
-FIX_CLEANUP_PERMISSIONS ?=	Yes
-
 # XXX go pullutes /tmp and binaries need 'wxallowed' for BTI transition
 MAKE_ENV ?=		TMPDIR=${WRKBUILD}

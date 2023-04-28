@@ -32,6 +32,8 @@ BUILD_DEPENDS =		lang/go
 
 TEST_ENV =		GOPROXY=file://${DISTDIR}/go_modules
 
+FIX_CLEANUP_PERMISSIONS =	Yes
+
 do-test:
 	${SETENV} ${ALL_TEST_ENV} ninja -C ${WRKBUILD} -j ${MAKE_JOBS} run_tests
 
