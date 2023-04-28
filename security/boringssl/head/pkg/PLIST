@@ -1,4 +1,3 @@
-@option is-branch
 @pkgpath security/boringssl
 eboringssl/
 eboringssl/bin/

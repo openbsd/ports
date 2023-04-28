@@ -6,6 +6,7 @@ GH_ACCOUNT =	google
 GH_PROJECT =	boringssl
 GH_COMMIT =	de2d610a341f5a4b8c222425890537cb84c91400
 DISTNAME = 	boringssl-20230425
+REVISION =      0
 
 CATEGORIES =	security
 

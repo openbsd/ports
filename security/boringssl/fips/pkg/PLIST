@@ -1,4 +1,3 @@
-@option is-branch
 eboringssl-fips/
 eboringssl-fips/bin/
 @bin eboringssl-fips/bin/bssl
