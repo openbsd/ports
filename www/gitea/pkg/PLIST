@@ -1185,6 +1185,9 @@ share/gitea/templates/repo/settings/webhook/telegram.tmpl
 share/gitea/templates/repo/settings/webhook/wechatwork.tmpl
 share/gitea/templates/repo/shabox_badge.tmpl
 share/gitea/templates/repo/sub_menu.tmpl
+share/gitea/templates/repo/sub_menu_release_tag.tmpl
+share/gitea/templates/repo/tag/
+share/gitea/templates/repo/tag/list.tmpl
 share/gitea/templates/repo/unicode_escape_prompt.tmpl
 share/gitea/templates/repo/upload.tmpl
 share/gitea/templates/repo/user_cards.tmpl
