@@ -40,6 +40,8 @@ MODCABAL_EXECUTABLES =	cabal-bundler
 # $ cd cabal-extras/cabal-bundler
 # $ cabal v2-run -w /usr/local/bin/ghc exe:cabal-bundler -- \
 #      cabal-bundler --openbsd --executable cabal-bundler -p ../dist-newstyle/cache/plan.json
+#
+# N.B. when regenerating make sure to remove gentle-introduction.
 MODCABAL_MANIFEST	= \
 	Cabal	3.8.1.0	2	\
 	Cabal-syntax	3.8.1.0	3	\
@@ -75,7 +77,6 @@ MODCABAL_MANIFEST	= \
 	dlist	1.0	0	\
 	edit-distance	0.2.2.1	1	\
 	generically	0.1	0	\
-	gentle-introduction	2022.5	0	\
 	half	0.3.1	0	\
 	hashable	1.4.2.0	0	\
 	hsc2hs	0.68.9	0	\
