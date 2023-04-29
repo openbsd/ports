@@ -1,9 +1,9 @@
 COMMENT =	electric diagrams drawing tool
 
-V=		0.9.1
-DISTNAME =	qet-${V}
-PKGNAME = 	qelectrotech-${V}
+DISTNAME =	qet-0.9.1
+PKGNAME = 	qelectrotech-0.91
 CATEGORIES =	cad graphics
+REVISION =	0
 
 HOMEPAGE =	https://qelectrotech.org/
 MASTER_SITES =	https://git.tuxfamily.org/qet/qet.git/snapshot/
