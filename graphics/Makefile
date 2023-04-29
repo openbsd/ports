@@ -104,7 +104,6 @@
      SUBDIR += iec16022
      SUBDIR += img2pdf
      SUBDIR += imlib2
-     SUBDIR += imlib2-heic
      SUBDIR += imv
      SUBDIR += indexpage
      SUBDIR += inkscape
