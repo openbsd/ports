@@ -1,3 +1,5 @@
+@conflict imlib2-heic-*
+@pkgpath graphics/imlib2-heic
 @bin bin/imlib2_bumpmap
 @bin bin/imlib2_colorspace
 @bin bin/imlib2_conv
