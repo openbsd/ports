@@ -1,6 +1,5 @@
-bin/gdialog
 @bin bin/zenity
-@man man/man1/zenity.1
+share/applications/org.gnome.Zenity.desktop
 share/help/
 share/help/C/
 share/help/C/zenity/
@@ -899,6 +898,7 @@ share/help/zh_CN/zenity/scale.page
 share/help/zh_CN/zenity/text.page
 share/help/zh_CN/zenity/usage.page
 share/help/zh_CN/zenity/warning.page
+share/icons/hicolor/48x48/apps/zenity.png
 share/locale/ab/LC_MESSAGES/zenity.mo
 share/locale/af/LC_MESSAGES/zenity.mo
 share/locale/am/LC_MESSAGES/zenity.mo
@@ -990,14 +990,5 @@ share/locale/xh/LC_MESSAGES/zenity.mo
 share/locale/zh_CN/LC_MESSAGES/zenity.mo
 share/locale/zh_HK/LC_MESSAGES/zenity.mo
 share/locale/zh_TW/LC_MESSAGES/zenity.mo
-share/zenity/
-share/zenity/zenity-calendar.png
-share/zenity/zenity-entry.png
-share/zenity/zenity-file.png
-share/zenity/zenity-list.png
-share/zenity/zenity-notification.png
-share/zenity/zenity-progress.png
-share/zenity/zenity-scale.png
-share/zenity/zenity-text.png
-share/zenity/zenity.png
-share/zenity/zenity.ui
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
