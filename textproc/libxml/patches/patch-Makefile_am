@@ -4,9 +4,9 @@ as equivalent, ours does not.
 Index: Makefile.am
 --- Makefile.am.orig
 +++ Makefile.am
-@@ -62,7 +62,7 @@ libxml2_la_SOURCES = SAX.c entities.c encoding.c error
- 		xmlwriter.c legacy.c chvalid.c pattern.c xmlsave.c \
- 		xmlmodule.c schematron.c xzlib.c
+@@ -112,7 +112,7 @@ if WITH_XPTR_SOURCES
+ libxml2_la_SOURCES += xlink.c xpointer.c
+ endif
  
 -DEPS = $(top_builddir)/libxml2.la
 +DEPS = libxml2.la
