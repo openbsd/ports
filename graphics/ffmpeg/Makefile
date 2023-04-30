@@ -1,8 +1,7 @@
 COMMENT=	audio/video converter and streamer
 
-V=		4.4.3
+V=		4.4.4
 DISTNAME=	ffmpeg-${V}
-REVISION=	3
 EPOCH=		1
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	https://ffmpeg.org/releases/
