@@ -1,0 +1,22 @@
+../gupnp-1.6.3/libgupnp/gupnp-control-point.c:633:27: error: 'xmlRecoverMemory' is deprecated [-Werror,-Wdeprecated-declarations]
+                xml_doc = xmlRecoverMemory (body_data, length);
+                          ^ 
+/usr/local/include/libxml2/libxml/parser.h:870:1: note: 'xmlRecoverMemory' has been explicitly marked deprecated here
+XML_DEPRECATED
+^
+/usr/local/include/libxml2/libxml/xmlversion.h:447:43: note: expanded from macro 'XML_DEPRECATED'
+#    define XML_DEPRECATED __attribute__((deprecated))
+                                          ^
+1 error generated.
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -31,7 +31,6 @@ conf.set('HAVE_LINUX_WIRELESS_H', cc.has_header('linux
+ conf.set('HAVE_IFA_FLAGS', ifa_flags_exists)
+ 
+ glib_version = '2.70'
+-add_project_arguments(cc.get_supported_arguments('-Werror=deprecated-declarations'), language: 'c')
+ conf.set('GLIB_VERSION_MIN_REQUIRED', 'GLIB_VERSION_@0@'.format(glib_version.underscorify()))
+ conf.set('GLIB_VERSION_MAX_ALLOWED', 'GLIB_VERSION_@0@'.format(glib_version.underscorify()))
+ 

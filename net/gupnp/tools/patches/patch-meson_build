@@ -1,0 +1,22 @@
+../gupnp-tools-0.12.0/src/common/pretty-print.c:37:15: error: 'xmlRecoverMemory' is deprecated [-Werror,-Wdeprecated-declarations]
+        doc = xmlRecoverMemory (xml, strlen (xml));
+              ^
+/usr/local/include/libxml2/libxml/parser.h:870:1: note: 'xmlRecoverMemory' has been explicitly marked deprecated here
+XML_DEPRECATED
+^
+/usr/local/include/libxml2/libxml/xmlversion.h:447:43: note: expanded from macro 'XML_DEPRECATED'
+#    define XML_DEPRECATED __attribute__((deprecated))
+                                          ^
+1 error generated.
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -44,7 +44,6 @@ conf.set('HAVE_GTK_SOURCEVIEW', gtksourceview.found())
+ conf.set('GETTEXT_PACKAGE', '"@0@"'.format(meson.project_name()))
+ conf.set('LOCALEDIR', '"@0@"'.format(localedir))
+ cc = meson.get_compiler('c')
+-add_project_arguments(cc.get_supported_arguments('-Werror=deprecated-declarations'), language: 'c')
+ conf.set('GLIB_VERSION_MIN_REQUIRED', 'GLIB_VERSION_@0@'.format(glib_version.underscorify()))
+ conf.set('GLIB_VERSION_MAX_ALLOWED', 'GLIB_VERSION_@0@'.format(glib_version.underscorify()))
+ 

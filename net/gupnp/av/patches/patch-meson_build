@@ -1,0 +1,22 @@
+../gupnp-av-0.14.1/libgupnp-av/gupnp-didl-lite-parser.c:233:15: error: 'xmlRecoverMemory' is deprecated [-Werror,-Wdeprecated-declarations]
+        doc = xmlRecoverMemory (didl, strlen (didl));
+              ^
+/usr/local/include/libxml2/libxml/parser.h:870:1: note: 'xmlRecoverMemory' has been explicitly marked deprecated here
+XML_DEPRECATED
+^
+/usr/local/include/libxml2/libxml/xmlversion.h:447:43: note: expanded from macro 'XML_DEPRECATED'
+#    define XML_DEPRECATED __attribute__((deprecated))
+                                          ^
+1 error generated.
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -71,7 +71,6 @@ endif
+ 
+ common_cflags = cc.get_supported_arguments(test_cflags)
+ 
+-add_project_arguments(cc.get_supported_arguments('-Werror=deprecated-declarations'), language: 'c')
+ conf = configuration_data()
+ conf.set_quoted('DATADIR', join_paths(get_option('prefix'), get_option('datadir'), 'gupnp-av'))
+ conf.set_quoted('VERSION', meson.project_version())
