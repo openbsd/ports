@@ -4,12 +4,12 @@ ONLY_FOR_ARCHS = amd64
 
 COMMENT =	first person survival horror game
 
-DISTNAME =	amnesia-tdd-0.0pl20211020
-REVISION =	0
+V =		0.3.2
+DISTNAME =	amnesia-tdd-${V}
 
 GH_ACCOUNT =	shamazmazum
 GH_PROJECT =	AmnesiaTheDarkDescent
-GH_COMMIT =	11717474d4c0b6a7c0aca72dfd36efb6dedc50ed
+GH_TAGNAME =	v${V}
 
 CATEGORIES =	games
 
@@ -27,10 +27,6 @@ WANTLIB += theora vorbis vorbisfile z
 COMPILER =	base-clang ports-gcc base-gcc
 
 MODULES =	devel/cmake
-
-# override optimization level because clang 13 segfaults but 11 worked with -O2
-CFLAGS+=	-O0
-CXXFLAGS+=	-O0
 
 LIB_DEPENDS =	audio/libogg \
 		audio/libvorbis \
