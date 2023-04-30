@@ -1,0 +1,38 @@
+Fix building on OpenBSD when building shared libs
+
+OpenBSD does not link shared libs against libc so it is expected
+that the use of --no-undefined when linking will fail.
+
+Also garbage collect CMAKE_VERSION check while here, as requested, since
+the minimum version is already 3.14.
+
+see:
+https://github.com/KhronosGroup/glslang/commit/9c7fd1a33e5cecbe465e1cd70170167d5e40d398
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -171,10 +171,8 @@ if(${CMAKE_CXX_COMPILER_ID} MATCHES "GNU")
+         add_compile_options(-Werror=deprecated-copy)
+     endif()
+ 
+-    if(NOT CMAKE_VERSION VERSION_LESS "3.13" AND NOT CMAKE_SYSTEM_NAME STREQUAL "Darwin")
++    if(NOT CMAKE_SYSTEM_NAME STREQUAL "OpenBSD" AND NOT CMAKE_SYSTEM_NAME STREQUAL "Darwin")
+         # Error if there's symbols that are not found at link time.
+-        # add_link_options() was added in CMake 3.13 - if using an earlier
+-        # version don't set this - it should be caught by presubmits anyway.
+         add_link_options("-Wl,--no-undefined")
+     endif()
+ elseif(${CMAKE_CXX_COMPILER_ID} MATCHES "Clang" AND NOT MSVC)
+@@ -188,10 +186,8 @@ elseif(${CMAKE_CXX_COMPILER_ID} MATCHES "Clang" AND NO
+         add_compile_options(-fno-exceptions)
+     endif()
+ 
+-    if(NOT CMAKE_VERSION VERSION_LESS "3.13")
++    if(NOT CMAKE_SYSTEM_NAME STREQUAL "OpenBSD")
+         # Error if there's symbols that are not found at link time.
+-        # add_link_options() was added in CMake 3.13 - if using an earlier
+-        # version don't set this - it should be caught by presubmits anyway.
+         if (CMAKE_CXX_COMPILER_ID STREQUAL "AppleClang")
+             add_link_options("-Wl,-undefined,error")
+         else()

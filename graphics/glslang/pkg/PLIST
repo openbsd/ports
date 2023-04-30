@@ -72,8 +72,6 @@ include/glslang/SPIRV/spvIR.h
 include/glslang/build_info.h
 lib/cmake/
 lib/cmake/HLSLTargets.cmake
-lib/cmake/OGLCompilerTargets.cmake
-lib/cmake/OSDependentTargets.cmake
 lib/cmake/SPIRVTargets.cmake
 lib/cmake/SPVRemapperTargets.cmake
 lib/cmake/glslang/
@@ -82,15 +80,10 @@ lib/cmake/glslang/glslang-config-version.cmake
 lib/cmake/glslang/glslang-config.cmake
 lib/cmake/glslang/glslang-targets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/glslang/glslang-targets.cmake
-lib/cmake/glslangTargets.cmake
 lib/cmake/glslangValidatorTargets.cmake
 lib/cmake/spirv-remapTargets.cmake
-@static-lib lib/libGenericCodeGen.a
-@static-lib lib/libHLSL.a
-@static-lib lib/libMachineIndependent.a
-@static-lib lib/libOGLCompiler.a
-@static-lib lib/libOSDependent.a
-@static-lib lib/libSPIRV.a
-@static-lib lib/libSPVRemapper.a
-@static-lib lib/libglslang-default-resource-limits.a
-@static-lib lib/libglslang.a
+@so lib/libHLSL.so
+@so lib/libSPIRV.so
+@so lib/libSPVRemapper.so
+@so lib/libglslang-default-resource-limits.so
+@lib lib/libglslang.so.${LIBglslang_VERSION}

@@ -5,7 +5,9 @@ COMMENT =	reference front-end for GLSL and ESSL
 GH_TAGNAME =	12.0.0
 GH_ACCOUNT =	KhronosGroup
 GH_PROJECT =	glslang
-REVISION =	0
+REVISION =	1
+
+SHARED_LIBS +=	glslang	0.0 # 12.0
 
 CATEGORIES =	devel graphics
 
@@ -24,6 +26,8 @@ MODULES =	devel/cmake \
 		lang/python
 TEST_DEPENDS =	graphics/spirv-tools \
 		shells/bash
+
+CONFIGURE_ARGS +=	-DBUILD_SHARED_LIBS=ON
 
 do-test:
 	cd ${WRKSRC}/Test; exec ./runtests localResults \
