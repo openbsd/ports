@@ -19,7 +19,7 @@ MAINTAINER =	Nam Nguyen <namn@berkeley.edu>
 # Custom NVIDIA and Khronos Group (glslang preprocessor)
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL SDL2 ao c curl chdr
+WANTLIB += ${COMPILER_LIBCXX} GL SDL2 ao c curl chdr glslang
 WANTLIB += lua${MODLUA_VERSION} m miniupnpc pulse xxhash z zip
 
 NO_TEST =	Yes
@@ -30,6 +30,7 @@ MODULES =		devel/cmake \
 V =	2.1pl20230303
 MASTER_SITES =	https://namtsui.com/source/
 DISTNAME =	flycast-${V}
+REVISION =	0
 
 COMMIT =	27b6bafd0f003c8f8bcd1fb3bfd48a3523b298f5
 
@@ -44,6 +45,7 @@ RUN_DEPENDS =	graphics/vulkan-loader
 BUILD_DEPENDS =	lang/luabridge
 LIB_DEPENDS =	audio/libao \
 		devel/sdl2 \
+		graphics/glslang \
 		emulators/libchdr \
 		sysutils/xxhash \
 		net/curl \
@@ -59,7 +61,7 @@ D =	/tmp/flycast
 dist:
 	cd /tmp && git clone https://github.com/flyinghead/flycast.git; \
 	cd ${D} && git checkout ${COMMIT}; \
-	git rm -r --cached core/deps/{SDL,libchdr,luabridge,breakpad}; \
+	git rm -r --cached core/deps/{SDL,breakpad,glslang,libchdr,luabridge}; \
 	git submodule init; \
 	git submodule update; \
 	rm -rfv core/deps/{dirent,libretro-common,libzip,miniupnpc,oboe,xxHash}; \

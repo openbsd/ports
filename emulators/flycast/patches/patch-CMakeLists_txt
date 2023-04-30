@@ -1,5 +1,5 @@
 add include and link directories
-unbundle xxhash and libchdr
+unbundle xxhash, glslang and libchdr
 link against -lSDL2 instead of libSDL2.a by using PkgConfig
 
 Index: CMakeLists.txt
@@ -31,7 +31,39 @@ Index: CMakeLists.txt
  
  option(BUILD_SHARED_LIBS "Build shared library" OFF)
  add_subdirectory(core/deps/glm)
-@@ -356,29 +364,10 @@ if(NOT LIBRETRO)
+@@ -339,8 +347,29 @@ if(USE_VULKAN)
+ 	option(ENABLE_GLSLANG_BINARIES "Builds glslangValidator and spirv-remap" OFF)
+ 	option(ENABLE_HLSL "Enables HLSL input support" OFF)
+ 	option(ENABLE_PCH "Enables Precompiled header" OFF)
+-	add_subdirectory(core/deps/glslang EXCLUDE_FROM_ALL)
+-	target_link_libraries(${PROJECT_NAME} PRIVATE SPIRV)
++	find_library(GLSLANG_LIBRARIES glslang)
++	if (GLSLANG_LIBRARIES)
++		set(GLSLANG_FOUND 1)
++		find_path(GLSLANG_INCLUDE_DIR GlslangToSpv.h PATH_SUFFIXES glslang/SPIRV)
++		set(GLSLANG_INCLUDE_DIR "${GLSLANG_INCLUDE_DIR}/..")
++	endif(GLSLANG_LIBRARIES)
++	find_library(SPIRV_LIBRARIES SPIRV)
++	if (SPIRV_LIBRARIES)
++		set(SPIRV_FOUND 1)
++	endif (SPIRV_LIBRARIES)
++	if (GLSLANG_FOUND)
++		message(STATUS "Found glslang: ${GLSLANG_LIBRARIES}")
++		message(STATUS "glslang include: ${GLSLANG_INCLUDE_DIR}")
++	else()
++		message(STATUS "glslang library not found.")
++	endif()
++	if (SPIRV_FOUND)
++		message(STATUS "Found SPIRV: ${SPIRV_LIBRARIES}")
++	else()
++		message(STATUS "spirv library not found.")
++	endif()
++	target_include_directories(${PROJECT_NAME} PRIVATE ${GLSLANG_INCLUDE_DIR})
++	target_link_libraries(${PROJECT_NAME} PRIVATE ${GLSLANG_LIBRARIES} ${SPIRV_LIBRARIES})
+ endif()
+ 
+ if(NOT LIBRETRO)
+@@ -356,29 +385,10 @@ if(NOT LIBRETRO)
  	endif()
  
  	if(NOT ANDROID AND NOT IOS)
@@ -65,7 +97,7 @@ Index: CMakeLists.txt
  		target_compile_definitions(${PROJECT_NAME} PRIVATE USE_SDL USE_SDL_AUDIO)
  		target_sources(${PROJECT_NAME} PRIVATE core/sdl/sdl.cpp core/sdl/sdl.h core/sdl/sdl_gamepad.h core/sdl/sdl_keyboard.h)
  
-@@ -403,10 +392,6 @@ if(NOT LIBRETRO)
+@@ -403,10 +413,6 @@ if(NOT LIBRETRO)
  	endif()
  endif()
  
@@ -76,7 +108,7 @@ Index: CMakeLists.txt
  if(NOT WITH_SYSTEM_ZLIB)
  	target_include_directories(${PROJECT_NAME} PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/core/deps/libchdr/deps/zlib-1.2.11")
  	target_link_libraries(${PROJECT_NAME} PRIVATE zlib)
-@@ -521,7 +506,7 @@ if(UNIX AND NOT APPLE AND NOT ANDROID)
+@@ -521,7 +527,7 @@ if(UNIX AND NOT APPLE AND NOT ANDROID)
  		target_link_libraries(${PROJECT_NAME} PRIVATE ${LIBRT})
  	endif()
  

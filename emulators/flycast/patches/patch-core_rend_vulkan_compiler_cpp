@@ -1,0 +1,26 @@
+error: excess elements in scalar initializer
+
+undo 8d0654c323028d9d31f67c51d65e99b410a91750 as done in gentoo port
+
+see:
+https://github.com/gentoo/guru/commit/a960b203c4ba687f0eb08e774d919982e791535c
+
+Index: core/rend/vulkan/compiler.cpp
+--- core/rend/vulkan/compiler.cpp.orig
++++ core/rend/vulkan/compiler.cpp
+@@ -115,6 +115,15 @@ static const TBuiltInResource DefaultTBuiltInResource 
+     /* .maxTaskWorkGroupSizeY_NV = */ 1,
+     /* .maxTaskWorkGroupSizeZ_NV = */ 1,
+     /* .maxMeshViewCountNV = */ 4,
++    /* .maxMeshOutputVerticesEXT = */ 256,
++    /* .maxMeshOutputPrimitivesEXT = */ 256,
++    /* .maxMeshWorkGroupSizeX_EXT = */ 128,
++    /* .maxMeshWorkGroupSizeY_EXT = */ 128,
++    /* .maxMeshWorkGroupSizeZ_EXT = */ 128,
++    /* .maxTaskWorkGroupSizeX_EXT = */ 128,
++    /* .maxTaskWorkGroupSizeY_EXT = */ 128,
++    /* .maxTaskWorkGroupSizeZ_EXT = */ 128,
++    /* .maxMeshViewCountEXT = */ 4,
+     /* .maxDualSourceDrawBuffersEXT = */ 1,
+ 
+     /* .limits = */ {
