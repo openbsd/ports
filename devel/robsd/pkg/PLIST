@@ -53,6 +53,7 @@ libexec/robsd/util.sh
 @man man/man8/robsd-kill.8
 @man man/man8/robsd-ports.8
 @man man/man8/robsd-regress-html.8
+@man man/man8/robsd-regress-log.8
 @man man/man8/robsd-regress.8
 @man man/man8/robsd-rescue.8
 @man man/man8/robsd-stat.8
