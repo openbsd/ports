@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.211 2022/09/11 08:40:40 espie Exp $
+# $OpenBSD: update-plist,v 1.212 2023/04/30 18:54:38 kn Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -921,7 +921,7 @@ sub handle_options
 
 	};
 	$state->SUPER::handle_options('OrvI:c:qV:fFC:i:j:L:s:S:X:P:w:e:E:', 
-	    '[-FfmnOrvx] [-C dir] [-c comment] [-E ext] [-e ext] [-i var]',
+	    '[-FfmnOqrvx] [-C dir] [-c comment] [-E ext] [-e ext] [-i var]',
 	    '[-I ignored] [-j jobs] [-L logfile] [-P pkgdir] [-S var]',
 	    '[-s var] [-V var] [-w suffix] [-X path] -- pkg_create_args ...');
     	$state->{pkgdir} = $state->opt('P');
