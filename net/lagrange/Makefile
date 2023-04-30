@@ -1,8 +1,7 @@
 COMMENT =	SDL multi protocol navigator
-VERSION =	1.15.8
+VERSION =	1.15.9
 
 DISTNAME =	lagrange-${VERSION}
-REVISION =	0
 
 CATEGORIES =	net x11
 
