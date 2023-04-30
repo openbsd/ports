@@ -2,11 +2,10 @@ COMMENT =		graphical audio player which supports lots of formats
 
 DISTNAME =		audacious-${VERSION}
 PKGNAME =		audacious-player-${VERSION}
-REVISION =		0
 
 SHARED_LIBS +=		audcore		5.2	# 5.3
 SHARED_LIBS +=		audtag		3.0	# 3.0
-SHARED_LIBS +=		audqt		0.1	# 2.4
+SHARED_LIBS +=		audqt		0.2	# 2.4
 
 # BSD
 PERMIT_PACKAGE =	Yes
