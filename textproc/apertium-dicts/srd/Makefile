@@ -1,3 +1,5 @@
+BROKEN =	lttoolbox (libxml>=2.11.0): Input is not proper UTF-8
+
 L =	srd
 LANG =	Sardinian
 V =	1.3.1

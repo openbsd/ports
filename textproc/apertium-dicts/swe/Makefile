@@ -1,3 +1,5 @@
+BROKEN =	lttoolbox (libxml>=2.11.0): internal error: Huge input lookup
+
 L =	swe
 LANG =	Swedish
 V =	0.8.1
