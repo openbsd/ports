@@ -1,10 +1,11 @@
 @bin bin/gpxsee
 share/applications/gpxsee.desktop
 share/gpxsee/
-share/gpxsee/csv/
-share/gpxsee/csv/ellipsoids.csv
-share/gpxsee/csv/gcs.csv
-share/gpxsee/csv/pcs.csv
+share/gpxsee/CRS/
+share/gpxsee/CRS/ellipsoids.csv
+share/gpxsee/CRS/gcs.csv
+share/gpxsee/CRS/pcs.csv
+share/gpxsee/CRS/projections.csv
 share/gpxsee/maps/
 share/gpxsee/maps/4UMaps.xml
 share/gpxsee/maps/Antarctica.xml
