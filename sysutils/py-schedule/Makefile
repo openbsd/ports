@@ -1,9 +1,8 @@
 COMMENT =		job scheduling for humans
 
-MODPY_EGG_VERSION = 	1.1.0
+MODPY_EGG_VERSION = 	1.2.0
 DISTNAME =		schedule-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
 
 CATEGORIES =		sysutils
 
