@@ -2,6 +2,7 @@ COMMENT=	management REST API for grommunio
 
 V=		1.11
 DISTNAME=	grommunio-admin-api-${V}
+REVISION=	0
 
 GH_ACCOUNT=	grommunio
 GH_PROJECT=	admin-api
@@ -22,6 +23,7 @@ RUN_DEPENDS=	databases/py-ldap3${MODPY_FLAVOR} \
 		mail/grommunio/gromox \
 		mail/grommunio/libexmdbpp \
 		net/py-idna${MODPY_FLAVOR} \
+		net/py-dnspython${MODPY_FLAVOR} \
 		security/py-cryptography${MODPY_FLAVOR} \
 		sysutils/py-psutil${MODPY_FLAVOR} \
 		textproc/py-yaml${MODPY_FLAVOR} \
