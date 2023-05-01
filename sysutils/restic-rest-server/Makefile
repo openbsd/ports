@@ -1,8 +1,7 @@
 COMMENT =	REST backend for the restic backup tool
 
 MODGO_MODNAME =	github.com/restic/rest-server
-MODGO_VERSION =	v0.11.0
-REVISION =	3
+MODGO_VERSION =	v0.12.0
 
 DISTNAME =	rest-server-${MODGO_VERSION}
 PKGNAME =	restic-${DISTNAME:S/-v/-/}
