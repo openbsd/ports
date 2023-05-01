@@ -1,17 +1,17 @@
 COMMENT =	EC using OpenSSL
 
-MODULES =	cpan
-
 DISTNAME =	Crypt-OpenSSL-EC-1.32
+REVISION =	1
+
 CATEGORIES =	security
-REVISION =	0
 
 # Perl
-PERMIT_PACKAGE = Yes
+PERMIT_PACKAGE = 	Yes
 
-WANTLIB +=	c crypto perl ssl
+WANTLIB =		c crypto perl ssl
 
-RUN_DEPENDS =	security/p5-Crypt-OpenSSL-Bignum>=0.04
-BUILD_DEPENDS =	${RUN_DEPENDS}
+MODULES =		cpan
+
+RUN_DEPENDS =		security/p5-Crypt-OpenSSL-Bignum>=0.04
 
 .include <bsd.port.mk>
