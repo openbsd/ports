@@ -1,6 +1,6 @@
 COMMENT =	source of XYZ tiles providers
 
-MODPY_EGG_VERSION =	2022.9.0
+MODPY_EGG_VERSION =	2023.2.0
 
 DISTNAME =	xyzservices-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
@@ -21,6 +21,7 @@ FLAVORS =	python3
 MODPY_PYBUILD =	setuptools
 
 # Many tests want to get online, but there are passing tests
-TEST_DEPENDS =	geo/py-mercantile${MODPY_FLAVOR}
+TEST_DEPENDS =	geo/py-mercantile${MODPY_FLAVOR} \
+		www/py-requests${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
