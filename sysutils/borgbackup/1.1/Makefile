@@ -1,7 +1,7 @@
 PORTROACH =		limit:^1\.1\.
 
 MODPY_EGG_VERSION =	1.1.18
-REVISION =		3
+REVISION =		4
 
 WANTLIB =		${COMPILER_LIBCXX} b2 crypto m
 
@@ -14,5 +14,8 @@ MASTER_SITES0 =		https://github.com/borgbackup/borg/
 # https://github.com/borgbackup/borg/pull/7181
 PATCHFILES =		${PKGSTEM}-msgpack-fix-big-endian-{pull/}7181.patch:0
 PATCH_DIST_STRIP =	-p1
+
+# Address formatting issue with borg.1
+USE_GROFF =		Yes
 
 .include <bsd.port.mk>
