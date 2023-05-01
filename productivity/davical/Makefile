@@ -1,8 +1,7 @@
 COMMENT =	CalDAV/CardDav calendar/contacts server
 
-DISTNAME =	davical_1.1.10.orig
-PKGNAME =	davical-1.1.10
-REVISION =	1
+DISTNAME =	davical_1.1.12.orig
+PKGNAME =	davical-1.1.12
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	productivity net
 
@@ -23,7 +22,7 @@ SUBST_VARS =	TINSTDIR
 
 RUN_DEPENDS +=	lang/php/${MODPHP_VERSION},-curl \
 		lang/php/${MODPHP_VERSION},-pdo_pgsql \
-		www/awl>=0.62 \
+		www/awl>=0.64 \
 		devel/p5-YAML \
 		databases/p5-DBD-Pg
 
