@@ -200,6 +200,7 @@ share/fish/completions/ansible.fish
 share/fish/completions/ant.fish
 share/fish/completions/apack.fish
 share/fish/completions/apk.fish
+share/fish/completions/apkanalyzer.fish
 share/fish/completions/apm.fish
 share/fish/completions/apropos.fish
 share/fish/completions/apt-build.fish
@@ -433,6 +434,7 @@ share/fish/completions/expand.fish
 share/fish/completions/expect.fish
 share/fish/completions/ezjail-admin.fish
 share/fish/completions/fab.fish
+share/fish/completions/fail2ban-client.fish
 share/fish/completions/fastboot.fish
 share/fish/completions/feh.fish
 share/fish/completions/ffmpeg.fish
@@ -722,6 +724,7 @@ share/fish/completions/opkg.fish
 share/fish/completions/optimus-manager.fish
 share/fish/completions/optipng.fish
 share/fish/completions/or.fish
+share/fish/completions/otool.fish
 share/fish/completions/ouch.fish
 share/fish/completions/p4.fish
 share/fish/completions/pabcnetcclear.fish
@@ -781,8 +784,10 @@ share/fish/completions/ports.fish
 share/fish/completions/poweroff.fish
 share/fish/completions/powerpill.fish
 share/fish/completions/powershell.fish
+share/fish/completions/pre-commit.fish
 share/fish/completions/prevd.fish
 share/fish/completions/prime-run.fish
+share/fish/completions/proxychains.fish
 share/fish/completions/prt-get.fish
 share/fish/completions/ps.fish
 share/fish/completions/ps2pdf.fish
@@ -865,6 +870,7 @@ share/fish/completions/scons.fish
 share/fish/completions/scp.fish
 share/fish/completions/screen.fish
 share/fish/completions/scrot.fish
+share/fish/completions/scrypt.fish
 share/fish/completions/scss.fish
 share/fish/completions/sed.fish
 share/fish/completions/seq.fish
@@ -898,12 +904,14 @@ share/fish/completions/sphinx-build.fish
 share/fish/completions/sphinx-quickstart.fish
 share/fish/completions/sqlsharp.fish
 share/fish/completions/src.fish
+share/fish/completions/ssh-copy-id.fish
 share/fish/completions/ssh.fish
 share/fish/completions/sshfs.fish
 share/fish/completions/stack.fish
 share/fish/completions/starship.fish
 share/fish/completions/stat.fish
 share/fish/completions/status.fish
+share/fish/completions/stow.fish
 share/fish/completions/strace.fish
 share/fish/completions/stream.fish
 share/fish/completions/string.fish
@@ -949,6 +957,11 @@ share/fish/completions/tracepath.fish
 share/fish/completions/traceroute.fish
 share/fish/completions/transmission-remote.fish
 share/fish/completions/trap.fish
+share/fish/completions/trash-empty.fish
+share/fish/completions/trash-list.fish
+share/fish/completions/trash-put.fish
+share/fish/completions/trash-restore.fish
+share/fish/completions/trash.fish
 share/fish/completions/travis.fish
 share/fish/completions/tree.fish
 share/fish/completions/tsc.fish
@@ -1219,6 +1232,7 @@ share/fish/functions/__fish_use_subcommand.fish
 share/fish/functions/__fish_vcs_prompt.fish
 share/fish/functions/__fish_whatis.fish
 share/fish/functions/__fish_whatis_current_token.fish
+share/fish/functions/__ssh_history_completions.fish
 share/fish/functions/__terlar_git_prompt.fish
 share/fish/functions/_validate_int.fish
 share/fish/functions/abbr.fish
@@ -1290,7 +1304,6 @@ share/fish/functions/up-or-search.fish
 share/fish/functions/vared.fish
 share/fish/groff/
 share/fish/groff/fish.tmac
-share/fish/lynx.lss
 @mandir share/fish/man/
 share/fish/man/man1/
 @man share/fish/man/man1/_.1
@@ -1441,7 +1454,6 @@ share/fish/tools/web_config/js/colorutils.js
 share/fish/tools/web_config/js/controllers.js
 share/fish/tools/web_config/js/filters.js
 share/fish/tools/web_config/partials/
-share/fish/tools/web_config/partials/abbreviations.html
 share/fish/tools/web_config/partials/bindings.html
 share/fish/tools/web_config/partials/colors.html
 share/fish/tools/web_config/partials/functions.html
