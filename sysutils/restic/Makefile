@@ -17,7 +17,6 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += c pthread
 
 MODULES=	lang/go
-WRKDIST=	${WRKSRC}
 NO_TEST=	Yes
 
 do-install:
