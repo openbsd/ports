@@ -2,8 +2,8 @@ COMMENT =	SIP library supporting voice/video calls and text messaging
 
 MODULE =	liblinphone
 
-SHARED_LIBS +=	linphone	2.0 \
-		linphone++	2.0 # 10
+SHARED_LIBS +=	linphone	3.0 \
+		linphone++	3.0 # 10
 
 CONFIGURE_ARGS =-DENABLE_STATIC=NO \
 		-DENABLE_UNIT_TESTS=NO \

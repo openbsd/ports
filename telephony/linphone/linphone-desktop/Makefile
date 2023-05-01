@@ -1,9 +1,8 @@
 COMMENT =	graphical audio and video SIP phone
 
-V =		5.0.10
+V =		5.0.15
 MODULE =	linphone-desktop
 PKGNAME =	linphone-${V}
-REVISION =	0
 
 MODULES +=	x11/qt5
 CONFIGURE_ARGS =-DENABLE_STATIC=NO \

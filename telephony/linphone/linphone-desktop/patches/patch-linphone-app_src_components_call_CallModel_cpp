@@ -3,7 +3,7 @@ https://salsa.debian.org/pkg-voip-team/linphone-stack/linphone-desktop/-/commit/
 Index: linphone-app/src/components/call/CallModel.cpp
 --- linphone-app/src/components/call/CallModel.cpp.orig
 +++ linphone-app/src/components/call/CallModel.cpp
-@@ -946,7 +946,7 @@ void CallModel::searchReceived(std::list<std::shared_p
+@@ -951,7 +951,7 @@ void CallModel::searchReceived(std::list<std::shared_p
  	bool found = false;
  	for(auto it = results.begin() ; it != results.end() && !found ; ++it){
  		if((*it)->getFriend()){// Local Friend

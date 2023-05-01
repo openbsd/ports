@@ -19,7 +19,7 @@ Index: linphone-app/src/app/App.cpp
  static inline bool autoStartEnabled () {
  	return QDir(AutoStartDirectory).exists() && QFile(AutoStartDirectory + EXECUTABLE_NAME ".desktop").exists();
  }
-@@ -905,7 +905,7 @@ QLocale App::getLocale () const {
+@@ -908,7 +908,7 @@ QLocale App::getLocale () const {
  
  // -----------------------------------------------------------------------------
  
