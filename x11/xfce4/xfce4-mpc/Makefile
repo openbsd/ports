@@ -1,7 +1,6 @@
 COMMENT=	Xfce4 mpd client panel plugin
 
-XFCE_VERSION=	0.5.2
-REVISION=	4
+XFCE_VERSION=	0.5.3
 XFCE_PLUGIN=	mpc
 
 # BSD-ISC
@@ -20,7 +19,7 @@ WANTLIB += xcb xcb-render xcb-shm xfce4util z xcb-util xfce4ui-2
 WANTLIB += ICE SM X11-xcb ffi startup-notification-1
 WANTLIB += harfbuzz pthread graphite2 iconv intl
 WANTLIB += atk-bridge-2.0 cairo-gobject epoxy gdk-3 gtk-3
-WANTLIB += Xau Xdmcp execinfo jpeg atspi dbus-1
+WANTLIB += Xau Xdmcp execinfo jpeg atspi dbus-1 gthread-2.0 xfconf-0
 WANTLIB += ${COMPILER_LIBCXX}
 
 .include <bsd.port.mk>
