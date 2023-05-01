@@ -1,10 +1,8 @@
 COMMENT=	rabbitmq C library and commandline AMQP utilities
 
-V= 		0.13.0
 GH_ACCOUNT=	alanxz
 GH_PROJECT=	rabbitmq-c
-GH_TAGNAME=	v${V}
-DISTNAME=	${GH_PROJECT}-${V}
+GH_TAGNAME=	v0.13.0
 
 SHARED_LIBS =	rabbitmq 1.0 # 9.4
 
@@ -13,7 +11,7 @@ CATEGORIES=	net
 MAINTAINER=	Gregor Best <gbe@unobtanium.de>
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	devel/cmake
 
