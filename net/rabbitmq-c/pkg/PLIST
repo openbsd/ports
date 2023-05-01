@@ -7,7 +7,19 @@ include/amqp.h
 include/amqp_framing.h
 include/amqp_ssl_socket.h
 include/amqp_tcp_socket.h
-lib/librabbitmq.a
+include/rabbitmq-c/
+include/rabbitmq-c/amqp.h
+include/rabbitmq-c/export.h
+include/rabbitmq-c/framing.h
+include/rabbitmq-c/ssl_socket.h
+include/rabbitmq-c/tcp_socket.h
+lib/cmake/
+lib/cmake/rabbitmq-c/
+lib/cmake/rabbitmq-c/rabbitmq-c-config-version.cmake
+lib/cmake/rabbitmq-c/rabbitmq-c-config.cmake
+lib/cmake/rabbitmq-c/rabbitmq-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/rabbitmq-c/rabbitmq-targets.cmake
+@static-lib lib/librabbitmq.a
 @lib lib/librabbitmq.so.${LIBrabbitmq_VERSION}
 lib/pkgconfig/librabbitmq.pc
 @man man/man1/amqp-consume.1
