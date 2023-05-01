@@ -1,11 +1,11 @@
 COMMENT=	management REST API for grommunio
 
-V=		1.9.20
+V=		1.11
 DISTNAME=	grommunio-admin-api-${V}
 
 GH_ACCOUNT=	grommunio
 GH_PROJECT=	admin-api
-GH_COMMIT=	e075ce03c4f6425bef555f989b545bb75031c7a3
+GH_COMMIT=	d49a025f2ab93affd0abd9983e7f695bf9070f6f
 
 CATEGORIES=	mail www productivity
 
