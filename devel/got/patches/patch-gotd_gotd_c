@@ -1,0 +1,16 @@
+fix gotd segfault
+
+upstream commit c000aa350eac5ac329beb278a513e5f978d2a463
+mail thread: https://marc.gameoftrees.org/thread/1682938801.34210_0.html
+Index: gotd/gotd.c
+--- gotd/gotd.c.orig
++++ gotd/gotd.c
+@@ -1121,7 +1121,7 @@ gotd_dispatch_auth_child(int fd, short event, void *ar
+ 			disconnect_on_error(client, err);
+ 		else
+ 			disconnect(client);
+-		goto done;
++		return;
+ 	}
+ 
+ 	repo = gotd_find_repo_by_name(client->auth->repo_name, &gotd);
