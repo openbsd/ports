@@ -1,0 +1,14 @@
+make sure kqueue() is properly detected
+fallout from https://github.com/baresip/re/pull/558
+Index: cmake/re-config.cmake
+--- cmake/re-config.cmake.orig
++++ cmake/re-config.cmake
+@@ -73,7 +73,7 @@ if(UNIX)
+   if(HAVE_EPOLL)
+     list(APPEND RE_DEFINITIONS -DHAVE_EPOLL)
+   endif()
+-  check_symbol_exists(kqueue "sys/event.h" HAVE_KQUEUE)
++  check_symbol_exists(kqueue "sys/types.h;sys/event.h" HAVE_KQUEUE)
+   if(HAVE_KQUEUE)
+     list(APPEND RE_DEFINITIONS -DHAVE_KQUEUE)
+   endif()

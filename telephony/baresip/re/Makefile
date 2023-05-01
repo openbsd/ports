@@ -1,29 +1,10 @@
 COMMENT =		portable library for real-time communications
 
-GH_ACCOUNT =	baresip
 GH_PROJECT =	re
-GH_TAGNAME =	v2.6.1
 
-# C11
-COMPILER =		base-clang ports-gcc
-COMPILER_LANGS =	c
-
-SHARED_LIBS =		re	8.0
+SHARED_LIBS =		re	9.0
 CATEGORIES +=		devel
 
-WANTLIB = crypto pthread ssl z
-
-MAKE_ENV +=		LIB_SUFFIX=.so.${LIBre_VERSION} V=1
-MAKE_ENV +=		LIBS="-lssl -lcrypto -lz -lpthread"
-
-ALL_TARGET =		libre.a libre.so.${LIBre_VERSION}
-
-NO_TEST =		yes
-
-do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/include/re
-	${INSTALL_DATA} ${WRKBUILD}/include/*.h ${PREFIX}/include/re
-	${INSTALL_DATA} ${WRKBUILD}/libre.a ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKBUILD}/libre.so.${LIBre_VERSION} ${PREFIX}/lib
+WANTLIB = crypto execinfo m pthread ssl z
 
 .include <bsd.port.mk>

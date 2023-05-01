@@ -2,7 +2,7 @@ COMMENT =		library for real-time audio and video processing
 
 GH_ACCOUNT =	baresip
 GH_PROJECT =	rem
-GH_TAGNAME =	v2.6.0
+GH_TAGNAME =	v2.12.0
 SHARED_LIBS =		rem	3.0
 CATEGORIES +=		multimedia devel
 

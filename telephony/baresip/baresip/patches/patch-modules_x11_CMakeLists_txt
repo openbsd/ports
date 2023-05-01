@@ -1,0 +1,10 @@
+Index: modules/x11/CMakeLists.txt
+--- modules/x11/CMakeLists.txt.orig
++++ modules/x11/CMakeLists.txt
+@@ -8,5 +8,5 @@ else()
+     add_library(${PROJECT_NAME} MODULE ${SRCS})
+ endif()
+ 
+-target_include_directories(${PROJECT_NAME} PRIVATE ${X11_INCLUDE_DIR})
++target_include_directories(${PROJECT_NAME} PRIVATE ${X11_Xlib_INCLUDE_PATH})
+ target_link_libraries(${PROJECT_NAME} PRIVATE ${X11_LIBRARIES})

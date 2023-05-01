@@ -1,1 +1,4 @@
 Baresip creates configuration files at "$HOME/.baresip" after first launch.
+
+If you've installed the gtk subpackage, uncomment the line with 'module_app
+gtk.so' in $HOME/.baresip/config to enable the systray icon.

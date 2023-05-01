@@ -1,29 +1,25 @@
 COMMENT-main =		modular SIP User-Agent with audio and video support
 COMMENT-gtk =		GTK+-based modules for baresip
 
-GH_ACCOUNT =	baresip
 GH_PROJECT =	baresip
-GH_TAGNAME =	v2.6.0
-REVISION =	0
 
+SHARED_LIBS +=		baresip	0.0 # 0.0
+MULTI_PACKAGES =	-main -gtk
 PKGNAME-main =		baresip-${GH_TAGNAME:C/^v//}
 PKGNAME-gtk =		baresip-gtk-${GH_TAGNAME:C/^v//}
 
-# C11
-COMPILER =		base-clang ports-gcc
-COMPILER_LANGS =	c
-
-WANTLIB-main += X11 Xext avcodec avdevice avfilter avformat avutil
-WANTLIB-main += c m mosquitto mp3lame mpg123 opus png postproc
-WANTLIB-main += pthread re rem sndfile sndio spandsp speexdsp swresample
-WANTLIB-main += swscale twolame v4l2 vpx opencore-amrnb
+WANTLIB-main += ICE SDL2 SM X11 Xext aom avcodec avdevice avfilter
+WANTLIB-main += avformat avutil c crypto gio-2.0 glib-2.0 gobject-2.0
+WANTLIB-main += m mosquitto mp3lame mpg123 opencore-amrnb opus png
+WANTLIB-main += pthread re sndfile sndio spandsp speexdsp ssl swresample
+WANTLIB-main += swscale twolame v4l2 vpx z
+WANTLIB-main += ${COMPILER_LIBCXX}
 
 WANTLIB-gtk += atk-1.0 cairo cairo-gobject gdk-3 gdk_pixbuf-2.0 gio-2.0
-WANTLIB-gtk += glib-2.0 gobject-2.0 gstreamer-1.0
-WANTLIB-gtk += gtk-3 harfbuzz intl pango-1.0 pangocairo-1.0
-WANTLIB-gtk += re
+WANTLIB-gtk += glib-2.0 gobject-2.0 gtk-3 harfbuzz intl pango-1.0
+WANTLIB-gtk += pangocairo-1.0
 
-BUILD_DEPENDS =		telephony/libzrtp>=0.20170512
+BUILD_DEPENDS =		telephony/libzrtp>=0.20221005:build
 LIB_DEPENDS-main =	audio/libsndfile \
 			audio/opencore-amr \
 			audio/opus \
@@ -31,81 +27,19 @@ LIB_DEPENDS-main =	audio/libsndfile \
 			graphics/ffmpeg \
 			graphics/png \
 			multimedia/libv4l \
-			multimedia/libvpx>=1.3.0 \
+			multimedia/libvpx \
 			net/mosquitto \
-			telephony/baresip/re>=2.4.0 \
-			telephony/baresip/rem>=2.4.0 \
+			telephony/baresip/re>=3.1.0 \
 			telephony/spandsp
-LIB_DEPENDS-gtk =	multimedia/gstreamer1/core \
-			telephony/baresip/re>=2.4.0 \
-			x11/gtk+3,-main
-RUN_DEPENDS-gtk =	telephony/baresip/baresip,-main>=1.1.0
+LIB_DEPENDS-gtk =	x11/gtk+3,-main
+RUN_DEPENDS-gtk =	telephony/baresip/baresip,-main
 
-MAKE_ENV +=		LIBRE_INC=${LOCALBASE}/include/re \
-			LIBRE_SO=${LOCALBASE}/lib LIBS="-lm -lrem"
-
-MAKE_FLAGS +=		MOD_AUTODETECT= \
-			EXTRA_MODULES="echo snapshot sndio swscale" \
-			USE_MQTT=yes \
-			HAVE_LIBV4L2=yes \
-			HAVE_SPEEXDSP=yes \
-			USE_AMR=yes \
-			USE_AVAHI=yes \
-			USE_AVCODEC=yes \
-			USE_AVFORMAT=yes \
-			USE_CONS=yes \
-			USE_DTLS=yes \
-			USE_DTLS_SRTP=yes \
-			USE_FFMPEG=yes \
-			USE_G711=yes \
-			USE_G722=yes \
-			USE_G726=yes \
-			USE_GSM=yes \
-			USE_GST= \
-			USE_H265=yes \
-			USE_L16=yes \
-			USE_MPA=yes \
-			USE_MPG123=yes \
-			USE_NETROAM=yes \
-			USE_OPUS=yes \
-			USE_PLC=yes \
-			USE_SDL2=yes \
-			USE_SNDFILE=yes \
-			USE_SPEEX_AEC=yes \
-			USE_SPEEX_PP=yes \
-			USE_SRTP=yes \
-			USE_STDIO=yes \
-			USE_SYSLOG=yes \
-			USE_UUID=yes \
-			USE_V4L2=yes \
-			USE_VPX=yes \
-			USE_X11=yes \
-			USE_ZRTP=yes
-
-MULTI_PACKAGES = -main -gtk
-PSEUDO_FLAVORS = no_gtk
-FLAVOR ?=
-
-.include <bsd.port.arch.mk>
-
-.if ${FLAVOR:L:Mno_gtk}
-BUILD_PACKAGES :=	${BUILD_PACKAGES:N-gtk}
-.endif
-
-.if ${BUILD_PACKAGES:M-gtk}
-MAKE_FLAGS +=		USE_CAIRO=yes \
-			USE_GST=yes \
-			USE_GTK=yes
-.endif
-
-TEST_TARGET =		test
-NO_TEST =		No
-
-do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/baresip/modules \
-	                    ${PREFIX}/share/baresip
-	${INSTALL_PROGRAM} ${WRKBUILD}/baresip ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKBUILD}/*.so ${PREFIX}/lib/baresip/modules
-	${INSTALL_DATA} ${WRKBUILD}/share/* ${PREFIX}/share/baresip
+post-extract:
+	# revert https://github.com/baresip/baresip/pull/2422
+	mkdir -p ${WRKSRC}/modules/sndio
+	cp ${FILESDIR}/sndio.c ${FILESDIR}/CMakeLists.txt ${WRKSRC}/modules/sndio/
+	# do the symlink dance so that cmake finds static libzrtpcppcore.a & private headers
+	ln -sf ${WRKDIR}/telephony/libzrtp/ZRTPCPP-2d59090ee244bc4d3a682ad45ae49dc7b4d4dfb7 ${WRKDIR}/ZRTPCPP
+	ln -f ${WRKDIR}/telephony/libzrtp/build-${MACHINE_ARCH}/clients/no_client/libzrtpcppcore.a ${WRKDIR}/ZRTPCPP/clients/no_client/
 
 .include <bsd.port.mk>

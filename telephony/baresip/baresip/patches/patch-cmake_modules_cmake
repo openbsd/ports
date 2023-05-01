@@ -1,0 +1,31 @@
+https://github.com/baresip/baresip/pull/2555
+
+(and disable other backends while here)
+Index: cmake/modules.cmake
+--- cmake/modules.cmake.orig
++++ cmake/modules.cmake
+@@ -12,14 +12,11 @@ find_package(GIO)
+ find_package(GST)
+ find_package(GTK3)
+ find_package(GZRTP)
+-find_package(JACK)
+ find_package(MOSQUITTO)
+ find_package(MPA)
+ find_package(OPENSLES)
+ find_package(OPUS)
+ find_package(PNG)
+-find_package(PORTAUDIO)
+-find_package(PULSE)
+ find_package(SDL)
+ find_package(SNDFILE)
+ find_package(SPANDSP)
+@@ -175,6 +172,9 @@ if(X11_XShm_FOUND)
+ endif()
+ if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+   list(APPEND MODULES evdev)
++endif()
++if(${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
++  list(APPEND MODULES sndio)
+ endif()
+ if(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+   list(APPEND MODULES audiounit)

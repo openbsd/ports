@@ -1,11 +1,13 @@
+@conflict rem-*
+@pkgpath telephony/baresip/rem
 include/re/
 include/re/re.h
 include/re/re_aes.h
+include/re/re_async.h
 include/re/re_atomic.h
 include/re/re_av1.h
 include/re/re_base64.h
 include/re/re_bfcp.h
-include/re/re_bitv.h
 include/re/re_btrace.h
 include/re/re_conf.h
 include/re/re_convert.h
@@ -35,6 +37,7 @@ include/re/re_odict.h
 include/re/re_pcp.h
 include/re/re_rtmp.h
 include/re/re_rtp.h
+include/re/re_rtpext.h
 include/re/re_sa.h
 include/re/re_sdp.h
 include/re/re_sha.h
@@ -56,7 +59,35 @@ include/re/re_trice.h
 include/re/re_turn.h
 include/re/re_types.h
 include/re/re_udp.h
+include/re/re_unixsock.h
 include/re/re_uri.h
 include/re/re_websock.h
+include/re/rem.h
+include/re/rem_aac.h
+include/re/rem_au.h
+include/re/rem_aubuf.h
+include/re/rem_auconv.h
+include/re/rem_audio.h
+include/re/rem_aufile.h
+include/re/rem_auframe.h
+include/re/rem_aulevel.h
+include/re/rem_aumix.h
+include/re/rem_auresamp.h
+include/re/rem_autone.h
+include/re/rem_avc.h
+include/re/rem_dsp.h
+include/re/rem_dtmf.h
+include/re/rem_fir.h
+include/re/rem_flv.h
+include/re/rem_g711.h
+include/re/rem_goertzel.h
+include/re/rem_vid.h
+include/re/rem_vidconv.h
+include/re/rem_video.h
+include/re/rem_vidmix.h
+lib/cmake/
+lib/cmake/re/
+lib/cmake/re/re-config.cmake
 @static-lib lib/libre.a
 @lib lib/libre.so.${LIBre_VERSION}
+lib/pkgconfig/libre.pc

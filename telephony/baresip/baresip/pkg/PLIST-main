@@ -1,5 +1,6 @@
 @pkgpath telephony/baresip/baresip
 @bin bin/baresip
+include/baresip.h
 lib/baresip/
 lib/baresip/modules/
 @so lib/baresip/modules/account.so
@@ -9,10 +10,13 @@ lib/baresip/modules/
 @so lib/baresip/modules/aufile.so
 @so lib/baresip/modules/auresamp.so
 @so lib/baresip/modules/ausine.so
+@so lib/baresip/modules/av1.so
 @so lib/baresip/modules/avcodec.so
+@so lib/baresip/modules/avfilter.so
 @so lib/baresip/modules/avformat.so
 @so lib/baresip/modules/cons.so
 @so lib/baresip/modules/contact.so
+@so lib/baresip/modules/ctrl_dbus.so
 @so lib/baresip/modules/ctrl_tcp.so
 @so lib/baresip/modules/debug_cmd.so
 @so lib/baresip/modules/dtls_srtp.so
@@ -22,7 +26,9 @@ lib/baresip/modules/
 @so lib/baresip/modules/g711.so
 @so lib/baresip/modules/g722.so
 @so lib/baresip/modules/g726.so
+@so lib/baresip/modules/gzrtp.so
 @so lib/baresip/modules/httpd.so
+@so lib/baresip/modules/httpreq.so
 @so lib/baresip/modules/ice.so
 @so lib/baresip/modules/l16.so
 @so lib/baresip/modules/menu.so
@@ -35,9 +41,12 @@ lib/baresip/modules/
 @so lib/baresip/modules/natpmp.so
 @so lib/baresip/modules/netroam.so
 @so lib/baresip/modules/opus.so
+@so lib/baresip/modules/opus_multistream.so
+@so lib/baresip/modules/pcp.so
 @so lib/baresip/modules/plc.so
 @so lib/baresip/modules/presence.so
 @so lib/baresip/modules/rtcpsummary.so
+@so lib/baresip/modules/sdl.so
 @so lib/baresip/modules/selfview.so
 @so lib/baresip/modules/serreg.so
 @so lib/baresip/modules/snapshot.so
@@ -57,7 +66,8 @@ lib/baresip/modules/
 @so lib/baresip/modules/vp9.so
 @so lib/baresip/modules/vumeter.so
 @so lib/baresip/modules/x11.so
-@so lib/baresip/modules/zrtp.so
+@lib lib/libbaresip.so.${LIBbaresip_VERSION}
+lib/pkgconfig/libbaresip.pc
 share/baresip/
 share/baresip/autoanswer.wav
 share/baresip/busy.wav
