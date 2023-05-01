@@ -1,9 +1,8 @@
 COMMENT =		personal and small-business financial-accounting software
 
 GNOME_PROJECT =		gnucash
-GNOME_VERSION =		5.0
+GNOME_VERSION =		5.1
 EXTRACT_SUFX =		.tar.bz2
-REVISION =		0
 
 SHARED_LIBS +=  gnc-core-utils       1.1      # unknown
 SHARED_LIBS +=  gnc-module           1.0      # unknown
