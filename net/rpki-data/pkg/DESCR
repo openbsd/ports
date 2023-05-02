@@ -1,0 +1,6 @@
+RPKI data samples for rpki-client(8) regress.
+
+This package is a snapshot in time of all valid RPKI objects
+reachable through the five RIR RPKI Trust Anchors.
+
+Archived by the https://www.rpkiviews.org/ project.
