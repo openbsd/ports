@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortInfo.pm,v 1.43 2020/03/23 19:22:22 espie Exp $
+# $OpenBSD: PortInfo.pm,v 1.44 2023/05/02 10:01:33 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -237,7 +237,7 @@ sub new
 		$d =~ s/^\:+//;
 		$d =~ s/^[^\/]*\://;
 		if ($d =~ s/\:(?:patch|build|configure)$//) {
-			Extra->add($class->extra, $info, $d);
+			Extra->add($class->extra, $info, $d, $parent);
 		} else {
 			$d =~ s/\:$//;
 			if ($d =~ m/[:<>=]/) {
