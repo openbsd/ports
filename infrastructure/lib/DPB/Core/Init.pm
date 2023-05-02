@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Init.pm,v 1.47 2020/03/31 11:11:36 espie Exp $
+# $OpenBSD: Init.pm,v 1.48 2023/05/02 10:07:39 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -122,7 +122,8 @@ sub finalize
 	return 1;
 }
 
-# this is a weird one !
+# this is a kind of "factory" class, that creates the first core running
+# on a host.
 package DPB::Core::Init;
 our @ISA = qw(DPB::Core::WithJobs);
 my $init = {};
