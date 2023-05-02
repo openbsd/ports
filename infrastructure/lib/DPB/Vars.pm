@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Vars.pm,v 1.60 2022/11/01 10:55:54 espie Exp $
+# $OpenBSD: Vars.pm,v 1.61 2023/05/02 10:06:32 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -154,7 +154,7 @@ sub grab_list
 			my $quicklog = $grabber->logger->append(
 			    $grabber->logger->log_pkgpath($dir));
 			print $quicklog @current;
-			&$reset;
+			&$reset();
 			next;
 		}
 		if (m/^\=\=\=\>\s*(.*)/) {
@@ -175,7 +175,7 @@ sub grab_list
 			}
 			$category = $subdir;
 			$previous = '';
-			&$reset;
+			&$reset();
 		} elsif (my ($pkgpath, $var, $value) =
 		    m/^(.*?)\.([A-Z][A-Z_0-9]*)\=\s*(.*)\s*$/) {
 			undef $category;
@@ -205,12 +205,12 @@ sub grab_list
 			}
 			print $log $_, "\n";
 			print $log "Broken ", $dir->fullpkgpath, "\n";
-			&$reset;
+			&$reset();
 		} else {
 			print $log $_, "\n";
 		}
 	}
-	&$reset;
+	&$reset();
 	$core->terminate;
 }
 
