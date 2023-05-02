@@ -1,10 +1,9 @@
-COMMENT =		(re)name a sub
+COMMENT =	(re)name a sub
 
-DISTNAME =		Sub-Name-0.26
-REVISION =		0
+DISTNAME =	Sub-Name-0.27
+FIX_EXTRACT_PERMISSIONS =	Yes
 
-CATEGORIES =		devel
-FIX_EXTRACT_PERMISSIONS=Yes
+CATEGORIES =	devel
 
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
