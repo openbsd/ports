@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Reporter.pm,v 1.35 2021/02/26 07:54:11 espie Exp $
+# $OpenBSD: Reporter.pm,v 1.36 2023/05/02 09:45:38 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -44,10 +44,6 @@ sub ttyclass()
 {
 	require DPB::Reporter::Tty;
 	return "DPB::Reporter::Tty";
-}
-
-sub term_send
-{
 }
 
 sub reset_cursor

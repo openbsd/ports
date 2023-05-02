@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: MiniCurses.pm,v 1.16 2019/10/30 16:07:25 espie Exp $
+# $OpenBSD: MiniCurses.pm,v 1.17 2023/05/02 09:45:38 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -28,13 +28,8 @@ use constant {
 	BLUE => 4,
 	PURPLE => 5,
 	TURQUOISE => 6,
-	WHITE => 7 };
-
-sub term_send
-{
-	my ($self, $seq) = @_;
-	$self->{terminal}->Tputs($seq, 1, \*STDOUT);
-}
+	WHITE => 7 
+};
 
 sub refresh
 {
