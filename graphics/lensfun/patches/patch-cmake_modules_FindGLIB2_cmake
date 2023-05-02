@@ -1,11 +1,12 @@
 Avoid messing up between paths found by pkg-config and CMake itself.
---- cmake/modules/FindGLIB2.cmake.orig	Sun Nov 15 18:07:26 2015
-+++ cmake/modules/FindGLIB2.cmake	Sun Jan 29 10:12:03 2017
+Index: cmake/modules/FindGLIB2.cmake
+--- cmake/modules/FindGLIB2.cmake.orig
++++ cmake/modules/FindGLIB2.cmake
 @@ -1,6 +1,6 @@
  IF (NOT MSVC)
      INCLUDE(FindPkgConfig)
--    PKG_SEARCH_MODULE( GLIB2 REQUIRED glib-2.0 )
-+    PKG_SEARCH_MODULE(PC_GLIB2  REQUIRED glib-2.0 )
+-    PKG_SEARCH_MODULE( GLIB2 glib-2.0 )
++    PKG_SEARCH_MODULE(PC_GLIB2 glib-2.0 )
      IF(WIN32 AND NOT BUILD_STATIC)
          FIND_FILE(GLIB2_DLL 
                  NAMES glib-2.dll glib-2-vs9.dll libglib-2.0-0.dll

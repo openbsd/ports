@@ -3,7 +3,7 @@ Fix c++11-narrowing with clang6
 Index: tests/test_modifier.cpp
 --- tests/test_modifier.cpp.orig
 +++ tests/test_modifier.cpp
-@@ -77,8 +77,8 @@ void test_mod_projection_center(lfFixture* lfFix, gcon
+@@ -78,8 +78,8 @@ void test_mod_projection_center(lfFixture* lfFix, gcon
  // check if output becomes NaN when processing geometry conversion
  void test_mod_projection_borders(lfFixture* lfFix, gconstpointer data)
  {
@@ -14,3 +14,28 @@ Index: tests/test_modifier.cpp
      float res[2] = {0, 0};
  
      lfLensType geom_types [] = {LF_RECTILINEAR, LF_PANORAMIC, LF_EQUIRECTANGULAR, LF_FISHEYE_STEREOGRAPHIC, LF_FISHEYE, LF_FISHEYE_EQUISOLID, LF_FISHEYE_ORTHOGRAPHIC, LF_FISHEYE_THOBY, LF_UNKNOWN};
+@@ -102,18 +102,18 @@ void test_mod_projection_borders(lfFixture* lfFix, gco
+                 LF_MODIFY_GEOMETRY, false);
+ 
+             if (lfFix->mod->ApplyGeometryDistortion(0,0,1,1,res)) {
+-                g_assert_false(std::isnan(res[0]));
+-                g_assert_false(std::isnan(res[1]));
++                g_assert_false(isnan(res[0]));
++                g_assert_false(isnan(res[1]));
+             }
+ 
+             if (lfFix->mod->ApplyGeometryDistortion(in[0],in[1],1,1,res)) {
+-                g_assert_false(std::isnan(res[0]));
+-                g_assert_false(std::isnan(res[1]));
++                g_assert_false(isnan(res[0]));
++                g_assert_false(isnan(res[1]));
+             }
+ 
+             if (lfFix->mod->ApplyGeometryDistortion(in2[0],in2[1],1,1,res)) {
+-                g_assert_false(std::isnan(res[0]));
+-                g_assert_false(std::isnan(res[1]));
++                g_assert_false(isnan(res[0]));
++                g_assert_false(isnan(res[1]));
+             }
+ 
+             delete lfFix->mod;

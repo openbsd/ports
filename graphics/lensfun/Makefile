@@ -1,11 +1,12 @@
 COMMENT=	library to adjust for photographic lens characteristics
-DISTNAME=	lensfun-0.3.2
-REVISION=	4
+GH_ACCOUNT=	lensfun
+GH_PROJECT=	lensfun
+GH_TAGNAME=	v0.3.3
 
-SHARED_LIBS=	lensfun	2.0
+SHARED_LIBS=	lensfun	2.1
 
 CATEGORIES=	graphics
-HOMEPAGE=	http://lensfun.sourceforge.net/
+HOMEPAGE=	https://lensfun.github.io/
 
 # library LGPLv3, lens db CC-BY-SA, build infrastructure/applications GPLv3
 PERMIT_PACKAGE=	Yes
@@ -14,12 +15,12 @@ WANTLIB += c glib-2.0 m png ${COMPILER_LIBCXX} z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=lensfun/}
-
 MODULES=		devel/cmake \
 			lang/python
 
 MODPY_RUNDEP=		No
+
+BUILD_DEPENDS=		devel/py-setuptools${MODPY_FLAVOR}
 
 LIB_DEPENDS=		devel/glib2 \
 			graphics/png
