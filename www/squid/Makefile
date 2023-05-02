@@ -1,20 +1,12 @@
 COMMENT-main=	WWW and FTP proxy cache and accelerator
 COMMENT-ldap=	LDAP authentication/ACL support for Squid
 
-V=		5.8
+V=		5.9
 DISTNAME=	squid-$V
 EXTRACT_SUFX=	.tar.xz
 PKGNAME-main=	squid-$V
 PKGNAME-ldap=	squid-ldap-$V
 DPB_PROPERTIES=	parallel
-
-# cope with missing translations in 5.8
-DISTFILES=	${DISTNAME}.tar.xz \
-		squid-langpack-20230225.tar.gz:0
-MASTER_SITES0=	http://www.squid-cache.org/Versions/langpack/
-EXTRACT_OMLY=	${DISTNAME}.tar.xz
-post-extract:
-	cd ${WRKSRC}/errors; tar xzf ${FULLDISTDIR}/squid-langpack-20230225.tar.gz
 
 # subpackages aren't flavoured, so overwrite the default name/path
 FULLPKGNAME-ldap = squid-ldap-$V
