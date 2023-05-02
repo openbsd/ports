@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: HostProperties.pm,v 1.17 2019/10/07 04:52:14 espie Exp $
+# $OpenBSD: HostProperties.pm,v 1.18 2023/05/02 09:39:00 espie Exp $
 #
 # Copyright (c) 2010-2019 Marc Espie <espie@openbsd.org>
 #
@@ -45,6 +45,7 @@ sub new
 {
 	my ($class, $default) = @_;
 	$default //= {};
+	# XXX that weird construct ensures we get a copy of the hash
 	return bless {%$default}, $class;
 }
 
