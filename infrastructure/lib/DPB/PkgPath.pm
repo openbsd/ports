@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.65 2023/02/16 13:44:13 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.66 2023/05/02 09:53:05 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -248,7 +248,7 @@ sub fix_multi
 		}
 	}
 	# in case BUILD_PACKAGES "erases" some multi, we need to
-	# stub out the correspond paths, so that dependent ports
+	# stub out the corresponding paths, so that dependent ports
 	# will vanish
 	if (defined $may_vanish) {
 		for my $m (keys %$may_vanish) {
@@ -262,10 +262,11 @@ sub fix_multi
 				$w->{info} = DPB::PortInfo->new($w);
 				$w->{info}->stub_name;
 			}
-			#delete $w->{info}->{IGNORE};
-			if (!defined $w->{info}->{IGNORE}) {
+			#delete $w->{info}{IGNORE};
+			if (!defined $w->{info}{IGNORE}) {
 				$w->{info}->add('IGNORE', 
-				    "vanishes from BUILD_PACKAGES");
+				    "vanishes from BUILD_PACKAGES",
+				    undef); # XXX no parent info ?
 			}
 			$h->{$w} = $w;
 		}
