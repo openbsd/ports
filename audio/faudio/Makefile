@@ -1,10 +1,10 @@
 # versions are in sync with FNA versions
-V =		23.04
+V =		23.05
 COMMENT =	XAudio reimplementation for open platforms
 DISTNAME =	fna-${V:S/.//g}
 PKGNAME =	faudio-${V}
 
-SHARED_LIBS =	FAudio		4.0	# 22.08
+SHARED_LIBS =	FAudio		4.1	# 23.05
 
 CATEGORIES =	audio
 HOMEPAGE =	https://github.com/FNA-XNA/FAudio
