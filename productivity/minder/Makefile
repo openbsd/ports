@@ -1,11 +1,10 @@
 COMMENT =	Mind-mapping application
 
 PKGNAME =	${GH_PROJECT:L}-${GH_TAGNAME}
-REVISION =	0
 
 GH_ACCOUNT =	phase1geo
 GH_PROJECT =	Minder
-GH_TAGNAME =	1.14.0
+GH_TAGNAME =	1.15.1
 
 CATEGORIES =	productivity
 
