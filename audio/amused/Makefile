@@ -1,6 +1,6 @@
 COMMENT =	minimalistic music player
 
-DISTNAME =	amused-0.10
+DISTNAME =	amused-0.11
 
 CATEGORIES =	audio
 
@@ -22,6 +22,7 @@ LIB_DEPENDS =	audio/flac \
 		audio/opusfile
 
 CONFIGURE_STYLE = simple
+CONFIGURE_ARGS = --backend=sndio
 
 NO_TEST =	Yes
 
