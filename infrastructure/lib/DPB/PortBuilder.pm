@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.89 2021/04/16 20:14:47 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.90 2023/05/02 09:54:27 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -255,7 +255,7 @@ sub build
 		$self->report($v, $job, $core); 
 		&$final_sub($job->{failed});
 	});
-	$core->start_job($job, $v);
+	$core->start_job($job);
 	# lonesome takes precedence for swallowing everything
 	if ($job->{lonesome}) {
 		# make it arbitrarily high
@@ -282,7 +282,7 @@ sub wipe
 		$self->report($v, $job, $core); 
 		&$final_sub($job->{failed});
 	});
-	$core->start_job($job, $v);
+	$core->start_job($job);
 }
 
 sub force_junk
@@ -298,7 +298,7 @@ sub force_junk
 		&$final_sub($job->{failed});
 		$core->mark_ready;
 	});
-	$core->start_job($job, $v);
+	$core->start_job($job);
 }
 
 sub test
@@ -332,7 +332,7 @@ sub test
 		$self->report($v, $job, $core); 
 		&$final_sub($job->{failed});
 	});
-	$core->start_job($job, $v);
+	$core->start_job($job);
 	$lock->write("host", $core->hostname);
 	$lock->write("pid", $core->{pid});
 	$lock->write("start", "$start (".DPB::Util->time2string($start).")");
@@ -349,7 +349,7 @@ sub install
 	    endcode => sub {
 	    	$core->mark_ready; 
 	});
-	$core->start_job($job, $v);
+	$core->start_job($job);
 	return $core;
 }
 
