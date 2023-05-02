@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Heuristics.pm,v 1.37 2020/04/04 16:45:33 espie Exp $
+# $OpenBSD: Heuristics.pm,v 1.38 2023/05/02 09:37:24 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -368,6 +368,8 @@ package DPB::Heuristics::random;
 our @ISA = qw(DPB::Heuristics);
 my %any;
 
+# note we actually *have* to set weights because we still want consistent
+# sorting !
 sub compare
 {
 	my ($self, $a, $b) = @_;
