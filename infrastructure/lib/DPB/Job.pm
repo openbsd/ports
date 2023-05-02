@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Job.pm,v 1.20 2019/11/08 17:47:01 espie Exp $
+# $OpenBSD: Job.pm,v 1.21 2023/05/02 09:40:05 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -53,8 +53,7 @@ sub run
 	&{$self->code($core)}($core->shell);
 }
 
-# this is a placeholder in the parent when the task starts
-# TODO gc ? this isn't actually used
+# one single user so far: DPB::Signature::Task
 sub process
 {
 	my ($self, $core) = @_;
