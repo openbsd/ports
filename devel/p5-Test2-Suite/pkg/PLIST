@@ -114,6 +114,8 @@ ${P5SITE}/Test2/Tools/Tester.pm
 ${P5SITE}/Test2/Tools/Warnings.pm
 ${P5SITE}/Test2/Util/
 ${P5SITE}/Test2/Util/Grabber.pm
+${P5SITE}/Test2/Util/Guard.pm
+${P5SITE}/Test2/Util/Importer.pm
 ${P5SITE}/Test2/Util/Ref.pm
 ${P5SITE}/Test2/Util/Stash.pm
 ${P5SITE}/Test2/Util/Sub.pm
@@ -234,6 +236,8 @@ ${P5SITE}/Test2/Workflow/Task/Group.pm
 @man man/man3p/Test2::Tools::Tester.3p
 @man man/man3p/Test2::Tools::Warnings.3p
 @man man/man3p/Test2::Util::Grabber.3p
+@man man/man3p/Test2::Util::Guard.3p
+@man man/man3p/Test2::Util::Importer.3p
 @man man/man3p/Test2::Util::Ref.3p
 @man man/man3p/Test2::Util::Stash.3p
 @man man/man3p/Test2::Util::Sub.3p
