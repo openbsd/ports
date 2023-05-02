@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1519 2023/04/22 16:33:54 patrick Exp $
+# $OpenBSD: Quirks.pm,v 1.1520 2023/05/02 01:54:31 thfr Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1820,6 +1820,7 @@ setup_obsolete_reason(
 # 7.4
 	53 => 'compton',
 	54 => 'depotdownloader',
+	55 => 'residualvm',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
@@ -1890,6 +1891,7 @@ my $obsolete_message = {
 	52 => "unmaintained since import, already on LibreSSL life support for too long",
 	53 => "upstream is dead, consider migrating to picom",
 	54 => "dependencies for recent versions can't be met (dotnet), consider switching to steamctl",
+	55 => "residualvm is dead upstream and has been merged into scummvm",
 };
 
 # ->is_base_system($handle, $state):

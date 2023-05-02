@@ -253,7 +253,6 @@
      SUBDIR += quakespasm
      SUBDIR += redeclipse
      SUBDIR += renpy
-     SUBDIR += residualvm
      SUBDIR += returntotheroots
      SUBDIR += rftg
      SUBDIR += ri-li

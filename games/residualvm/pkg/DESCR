@@ -1,5 +1,0 @@
-ResidualVM is a game engine reimplementation that allows you to play 3D
-adventure games such as Grim Fandango and Myst III.
-
-ResidualVM utilizes OpenGL for 3D graphics hardware acceleration. A
-software renderer is also included for machines without hardware OpenGL.
