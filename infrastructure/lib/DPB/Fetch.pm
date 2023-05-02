@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.89 2021/05/02 06:08:53 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.90 2023/05/02 09:17:56 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -337,7 +337,7 @@ sub fetch
 	require DPB::Job::Fetch;
 	my $job = DPB::Job::Fetch->new($file, $endcode, $self, 
 	    $self->{logger});
-	$core->start_job($job, $file);
+	$core->start_job($job);
 }
 
 1;
