@@ -624,6 +624,7 @@
      SUBDIR += radcli
      SUBDIR += rbldnsd
      SUBDIR += routinator
+     SUBDIR += rpki-data
      SUBDIR += rrdpit
      SUBDIR += rrdtool
      SUBDIR += rsnapshot
