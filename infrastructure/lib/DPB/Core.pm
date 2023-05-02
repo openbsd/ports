@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.101 2020/03/31 11:13:14 espie Exp $
+# $OpenBSD: Core.pm,v 1.102 2023/05/02 09:17:33 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -159,6 +159,8 @@ sub logname
 	&hostname;
 }
 
+# This is so we can handle cores like pkgpaths and distfiles
+# for reporting various errors
 sub print_parent
 {
 	# Nothing to do
@@ -620,7 +622,7 @@ sub report_tty
 
 	my $s = join("\n", map {one_core($_, $current)} sort {$a->{started} <=> $b->{started}} values %$running). "\n";
 	for my $a (@extra_report_tty) {
-		$s .= &$a;
+		$s .= &$a();
 	}
 	return $s;
 }
@@ -637,7 +639,7 @@ sub report_notty
 	}
 
 	for my $a (@extra_report_notty) {
-		$s .= &$a;
+		$s .= &$a();
 	}
 	return $s;
 }
