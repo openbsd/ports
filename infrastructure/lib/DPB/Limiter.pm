@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Limiter.pm,v 1.8 2019/10/22 16:02:08 espie Exp $
+# $OpenBSD: Limiter.pm,v 1.9 2023/05/02 09:41:25 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -52,7 +52,7 @@ sub limit
 	delete $self->{unchecked};
 	# actual computation
 	$self->{start} = Time::HiRes::time();
-	&$code;
+	&$code();
 	$self->{end} = Time::HiRes::time();
 	# adjust values for next time
 	my $check_interval = $factor * ($self->{end} - $self->{start});
