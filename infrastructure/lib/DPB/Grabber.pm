@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Grabber.pm,v 1.46 2023/02/16 13:44:13 espie Exp $
+# $OpenBSD: Grabber.pm,v 1.47 2023/05/02 09:35:51 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -131,7 +131,7 @@ sub finish
 		}
 	}
 	$self->{engine}->flush_log;
-	&{$self->{eventloopcode}};
+	&{$self->{eventloopcode}}();
 }
 
 sub ports
