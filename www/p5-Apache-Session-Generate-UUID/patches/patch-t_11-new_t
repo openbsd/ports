@@ -1,0 +1,47 @@
+Index: t/11-new.t
+--- t/11-new.t.orig
++++ t/11-new.t
+@@ -1,10 +1,9 @@
+ #!perl
+ 
+-use Test::More no_plan => 1;
++use Test::More 'no_plan';
+ 
+ use Test::Deep;
+ use Test::Exception;
+-use Test::Group;
+ 
+ use File::Temp qw[tempdir];
+ use Cwd qw[getcwd];
+@@ -13,14 +12,14 @@ use Cwd qw[getcwd];
+ # my $tempdir = tempdir( DIR => '.', CLEANUP => 1 );
+ # chdir( $tempdir );
+ 
+-test 'use ok' => sub {
++{
+     use_ok 'Apache::Session::Generate::UUID';
+ };
+ 
+ my $session = {};
+ my $id;
+ 
+-test 'session creation' => sub {
++{
+     ok Apache::Session::Generate::UUID::generate($session), 'generate called ok';
+     ok exists $session->{'data'}->{'_session_id'}, 'session id created';
+     is keys %{ $session->{'data'} } , 1, 'just one key in the data hashref';
+@@ -28,12 +27,12 @@ test 'session creation' => sub {
+     $id = $session->{'data'}->{'_session_id'};
+ };
+ 
+-test 'session uniqueness' => sub {
++{
+     Apache::Session::Generate::UUID::generate($session);
+     isnt $id, $session->{'data'}->{'_session_id'}, 'old session id does not match new one';
+ };
+ 
+-test 'session validation' => sub {
++{
+     Apache::Session::Generate::UUID::generate($session);
+     ok Apache::Session::Generate::UUID::validate($session), 'session id validates';
+     $session->{'data'}->{'_session_id'} = 'asdasd' . time;
