@@ -1,0 +1,6 @@
+This module implements several sets of C implementations that are used
+within SABnzbd:
+- yEnc decoding and encoding using SIMD routines
+- CRC32 calculations
+- Non-blocking SSL-socket reading
+- Marking files as sparse
