@@ -1,6 +1,6 @@
 COMMENT=	extension for unparsed raw whois information
 
-DISTNAME=	Net-Whois-Raw-2.99031
+DISTNAME=	Net-Whois-Raw-2.99037
 CATEGORIES=	net
 
 MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
