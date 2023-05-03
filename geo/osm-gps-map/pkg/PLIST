@@ -9,9 +9,8 @@ include/osmgpsmap-1.0/osm-gps-map-source.h
 include/osmgpsmap-1.0/osm-gps-map-track.h
 include/osmgpsmap-1.0/osm-gps-map-widget.h
 include/osmgpsmap-1.0/osm-gps-map.h
-lib/girepository-1.0/
 lib/girepository-1.0/OsmGpsMap-1.0.typelib
-lib/libosmgpsmap-1.0.a
+@static-lib lib/libosmgpsmap-1.0.a
 lib/libosmgpsmap-1.0.la
 @lib lib/libosmgpsmap-1.0.so.${LIBosmgpsmap-1.0_VERSION}
 lib/pkgconfig/osmgpsmap-1.0.pc
@@ -21,5 +20,4 @@ share/doc/osm-gps-map/COPYING
 share/doc/osm-gps-map/ChangeLog
 share/doc/osm-gps-map/NEWS
 share/doc/osm-gps-map/README
-share/gir-1.0/
 share/gir-1.0/OsmGpsMap-1.0.gir
