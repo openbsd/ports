@@ -1,14 +1,13 @@
 COMMENT=	library for machine-independent, array-oriented data access
 
-V=		4.8.1
+V=		4.9.2
 NAME=		netcdf
 DISTNAME=	${NAME}-c-${V}
 PKGNAME=	${NAME}-${V}
-REVISION=	0
 
 CATEGORIES=	math
 
-SHARED_LIBS=	netcdf		8.0 # 19.0
+SHARED_LIBS=	netcdf		9.0 # 21.2
 
 HOMEPAGE=	http://www.unidata.ucar.edu/software/netcdf/
 
@@ -47,11 +46,5 @@ CONFIGURE_ARGS+=	--enable-shared \
 
 USE_GMAKE=		Yes
 SEPARATE_BUILD=		Yes
-
-# https://github.com/Unidata/netcdf-c/issues/1347#issuecomment-467633543
-# "Actually, I did not intend the .so files in netcdf-c/plugins to be
-# installed. They are intended only for testing and examples"
-post-install:
-	rm ${PREFIX}/lib/libh5bzip2.{a,la,so}
 
 .include <bsd.port.mk>

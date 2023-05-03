@@ -10,6 +10,8 @@ include/netcdf_aux.h
 include/netcdf_dispatch.h
 include/netcdf_filter.h
 include/netcdf_filter_build.h
+include/netcdf_filter_hdf5_build.h
+include/netcdf_json.h
 include/netcdf_mem.h
 include/netcdf_meta.h
 @static-lib lib/libnetcdf.a
