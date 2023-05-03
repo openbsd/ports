@@ -1,15 +1,15 @@
 Index: arp-scan.c
 --- arp-scan.c.orig
 +++ arp-scan.c
-@@ -454,6 +454,11 @@ main(int argc, char *argv[]) {
+@@ -453,6 +453,11 @@ main(int argc, char *argv[]) {
+       if (write_pkt_to_file == -1)
           err_sys("open %s", pkt_filename);
     }
-    /*
++   /*
 +    * Setup is done at this point, so it's a natural point to pledge().
 +    */
 +   if (pledge("stdio dns bpf", NULL) == -1)
 +      err_sys("pledge");
-+   /*
+    /*
      * Create and initialise array of pointers to host entries.
      */
-    helistptr = Malloc(num_hosts * sizeof(host_entry *));

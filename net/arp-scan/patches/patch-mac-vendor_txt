@@ -1,0 +1,16 @@
+Index: mac-vendor.txt
+--- mac-vendor.txt.orig
++++ mac-vendor.txt
+@@ -42,7 +42,11 @@
+ b0:c4:20	Bochs
+ 
+ # From RFC 2338: 00-00-5E-00-01-{VRID}
+-00:00:5e:00:01	VRRP (last octet is VRID)
++00:00:5e:00:01	CARP/VRRP (last octet is VHID/VRID)
++00:00:5e:00:02	IPv6 VRRPv3 (last octet is VRID)
++
++# ether_fakeaddr()
++fe:e1:ba:d	OpenBSD randomly generated MAC address
+ 
+ # Microsoft WLBS (Windows NT Load Balancing Service)
+ # http://www.microsoft.com/technet/prodtechnol/acs/reskit/acrkappb.mspx
