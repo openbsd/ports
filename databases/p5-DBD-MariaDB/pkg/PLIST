@@ -2,8 +2,10 @@ ${P5ARCH}/DBD/MariaDB/
 ${P5ARCH}/DBD/MariaDB.pm
 ${P5ARCH}/DBD/MariaDB.pod
 ${P5ARCH}/DBD/MariaDB/INSTALL.pod
+${P5ARCH}/DBD/MariaDB/README.pod
 ${P5ARCH}/auto/DBD/
 ${P5ARCH}/auto/DBD/MariaDB/
 @so ${P5ARCH}/auto/DBD/MariaDB/MariaDB.so
 @man man/man3p/DBD::MariaDB.3p
 @man man/man3p/DBD::MariaDB::INSTALL.3p
+@man man/man3p/DBD::MariaDB::README.3p

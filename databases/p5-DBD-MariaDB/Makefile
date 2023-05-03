@@ -1,7 +1,6 @@
 COMMENT =	MariaDB and MySQL driver for the Perl5 Database Interface
 
-DISTNAME =	DBD-MariaDB-1.21
-REVISION =	3
+DISTNAME =	DBD-MariaDB-1.22
 
 MAINTAINER =	Giovanni Bechis <giovanni@openbsd.org>
 
