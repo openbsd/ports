@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: User.pm,v 1.25 2019/10/05 15:52:38 espie Exp $
+# $OpenBSD: User.pm,v 1.26 2023/05/03 19:45:49 espie Exp $
 #
 # Copyright (c) 2010-2019 Marc Espie <espie@openbsd.org>
 #
@@ -77,8 +77,10 @@ sub run_as
 	my ($self, $code) = @_;
 	local $> = 0;
 	local $) = $self->{grouplist};
-	$> = $self->{uid};
-	&$code;
+	{
+		local $> = $self->{uid};
+		return &$code;
+	}
 }
 
 sub enforce_local
@@ -114,10 +116,10 @@ sub make_path
 		$p->{mode} = $self->{dirmode};
 	}
 	if ($self->{droppriv}) {
-		local $> = 0;
-		local $) = $self->{gid};
-		$> = $self->{uid};
-		$self->_make_path(@directories, $p);
+		$self->run_as(
+		    sub {
+			$self->_make_path(@directories, $p);
+		    });
 	} else {
 		if ($self->{uid}) {
 			$p->{uid} = $self->{uid};
@@ -135,69 +137,71 @@ sub make_path
 sub open
 {
 	my ($self, $mode, @parms) = @_;
-	local $> = 0;
-	local $) = $self->{grouplist};
-	$> = $self->{uid};
-	# XXX don't try to read directories, there's opendir for that.
-	if ($mode eq '<' && !-f $parms[0]) {
-		return undef;
-	}
-	if (open(my $fh, $mode, @parms)) {
-		my $flags = fcntl($fh, F_GETFL, 0);
-		fcntl($fh, F_SETFL, $flags | FD_CLOEXEC);
-		return $fh;
-	} else {
-		return undef;
-    	}
+	return $self->run_as(
+	    sub {
+		# XXX don't try to read directories, there's opendir for that.
+		if (-d $parms[0]) {
+			require Errno;
+			$! = Errno::EISDIR();
+			return undef;
+		}
+		if (open(my $fh, $mode, @parms)) {
+			my $flags = fcntl($fh, F_GETFL, 0);
+			fcntl($fh, F_SETFL, $flags | FD_CLOEXEC);
+			return $fh;
+		} else {
+			return undef;
+		}
+	});
 }
 
 sub opendir
 {
 	my ($self, $dirname) = @_;
-	local $> = 0;
-	local $) = $self->{grouplist};
-	$> = $self->{uid};
-	if (opendir(my $fh, $dirname)) {
-		return $fh;
-	} else {
-		return undef;
-    	}
+	return $self->run_as(
+	    sub {
+		if (opendir(my $fh, $dirname)) {
+			return $fh;
+		} else {
+			return undef;
+		}
+	    });
 }
 
 sub unlink
 {
 	my ($self, @links) = @_;
-	local $> = 0;
-	local $) = $self->{grouplist};
-	$> = $self->{uid};
-	unlink(@links);
+	return $self->run_as(
+	    sub {
+		return unlink(@links);
+	    });
 }
 
 sub link
 {
 	my ($self, $a, $b) = @_;
-	local $> = 0;
-	local $) = $self->{grouplist};
-	$> = $self->{uid};
-	link($a, $b);
+	return $self->run_as(
+	    sub {
+		return link($a, $b);
+	    });
 }
 
 sub rename
 {
 	my ($self, $o, $n) = @_;
-	local $> = 0;
-	local $) = $self->{grouplist};
-	$> = $self->{uid};
-	rename($o, $n);
+	return $self->run_as(
+	    sub {
+		return rename($o, $n);
+	    });
 }
 
 sub stat
 {
 	my ($self, $name) = @_;
-	local $> = 0;
-	local $) = $self->{grouplist};
-	$> = $self->{uid};
-	return stat $name;
+	return $self->run_as(
+	    sub {
+		return stat $name;
+	    });
 }
 
 sub rewrite_file
