@@ -3107,6 +3107,7 @@ share/wesnoth/data/campaigns/World_Conquest/lua/game_mechanics/
 share/wesnoth/data/campaigns/World_Conquest/lua/game_mechanics/_load.lua
 share/wesnoth/data/campaigns/World_Conquest/lua/game_mechanics/ability_events.lua
 share/wesnoth/data/campaigns/World_Conquest/lua/game_mechanics/artifacts.lua
+share/wesnoth/data/campaigns/World_Conquest/lua/game_mechanics/artifacts_updated.lua
 share/wesnoth/data/campaigns/World_Conquest/lua/game_mechanics/bonus.lua
 share/wesnoth/data/campaigns/World_Conquest/lua/game_mechanics/bonus_point_definitions.lua
 share/wesnoth/data/campaigns/World_Conquest/lua/game_mechanics/color.lua
@@ -3214,6 +3215,7 @@ share/wesnoth/data/campaigns/World_Conquest/lua/optional_mechanics/unitmarker.lu
 share/wesnoth/data/campaigns/World_Conquest/lua/shared_utils/
 share/wesnoth/data/campaigns/World_Conquest/lua/shared_utils/pretty_print.lua
 share/wesnoth/data/campaigns/World_Conquest/lua/shared_utils/wml_converter.lua
+share/wesnoth/data/campaigns/World_Conquest/lua/shared_utils/wml_converter_updated.lua
 share/wesnoth/data/campaigns/World_Conquest/resources/
 share/wesnoth/data/campaigns/World_Conquest/resources/data/
 share/wesnoth/data/campaigns/World_Conquest/resources/data/artifacts.cfg
@@ -17077,7 +17079,8 @@ share/wesnoth/data/test/scenarios/test_require.cfg
 share/wesnoth/data/test/scenarios/test_resistances.cfg
 share/wesnoth/data/test/scenarios/test_return.cfg
 share/wesnoth/data/test/scenarios/test_role_types.cfg
-share/wesnoth/data/test/scenarios/test_scoped_vars.cfg
+share/wesnoth/data/test/scenarios/test_scoped_array.cfg
+share/wesnoth/data/test/scenarios/test_scoped_scalar.cfg
 share/wesnoth/data/test/scenarios/test_synced_side_number.cfg
 share/wesnoth/data/test/scenarios/test_synced_state.cfg
 share/wesnoth/data/test/scenarios/test_terrain_mask.cfg
