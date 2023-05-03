@@ -1,1 +1,10 @@
 @bin bin/goreleaser
+share/bash-completion/
+share/bash-completion/completions/
+share/bash-completion/completions/goreleaser
+share/fish/
+share/fish/completions/
+share/fish/completions/goreleaser.fish
+share/zsh/
+share/zsh/site-functions/
+share/zsh/site-functions/_goreleaser
