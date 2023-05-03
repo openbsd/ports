@@ -292,7 +292,6 @@ share/doc/libvirt/html/images/migration-tunnel.png
 share/doc/libvirt/html/images/migration-unmanaged-direct.png
 share/doc/libvirt/html/index.html
 share/doc/libvirt/html/issue-handling.html
-share/doc/libvirt/html/java.html
 share/doc/libvirt/html/js/
 share/doc/libvirt/html/js/main.js
 share/doc/libvirt/html/kbase/
@@ -405,7 +404,6 @@ share/doc/libvirt/html/news.html
 share/doc/libvirt/html/nss.html
 share/doc/libvirt/html/pci-addresses.html
 share/doc/libvirt/html/pci-hotplug.html
-share/doc/libvirt/html/php.html
 share/doc/libvirt/html/platforms.html
 share/doc/libvirt/html/programming-languages.html
 share/doc/libvirt/html/python.html
@@ -612,6 +610,7 @@ share/locale/pa/LC_MESSAGES/libvirt.mo
 share/locale/pl/LC_MESSAGES/libvirt.mo
 share/locale/pt/LC_MESSAGES/libvirt.mo
 share/locale/pt_BR/LC_MESSAGES/libvirt.mo
+share/locale/ro/LC_MESSAGES/libvirt.mo
 share/locale/ru/LC_MESSAGES/libvirt.mo
 share/locale/si/LC_MESSAGES/libvirt.mo
 share/locale/sr/LC_MESSAGES/libvirt.mo
