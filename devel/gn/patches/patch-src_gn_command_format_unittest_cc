@@ -1,0 +1,14 @@
+Use hardcoded path for unittests
+
+Index: src/gn/command_format_unittest.cc
+--- src/gn/command_format_unittest.cc.orig
++++ src/gn/command_format_unittest.cc
+@@ -21,7 +21,7 @@ using FormatTest = TestWithScheduler;
+     std::string out;                                                        \
+     std::string expected;                                                   \
+     base::FilePath src_dir =                                                \
+-        GetExePath().DirName().Append(FILE_PATH_LITERAL(".."));             \
++        base::FilePath("${WRKSRC}");                                        \
+     base::SetCurrentDirectory(src_dir);                                     \
+     ASSERT_TRUE(base::ReadFileToString(                                     \
+         base::FilePath(FILE_PATH_LITERAL("src/gn/format_test_data/")        \

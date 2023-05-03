@@ -1,0 +1,4 @@
+@bin bin/gn
+share/doc/gn/
+share/doc/gn/LICENSE
+share/doc/gn/README.md
