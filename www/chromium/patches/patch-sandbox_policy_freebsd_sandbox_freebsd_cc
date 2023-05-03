@@ -1,7 +1,7 @@
 Index: sandbox/policy/freebsd/sandbox_freebsd.cc
 --- sandbox/policy/freebsd/sandbox_freebsd.cc.orig
 +++ sandbox/policy/freebsd/sandbox_freebsd.cc
-@@ -0,0 +1,247 @@
+@@ -0,0 +1,245 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -16,7 +16,6 @@ Index: sandbox/policy/freebsd/sandbox_freebsd.cc
 +#include <sys/time.h>
 +#include <sys/types.h>
 +#include <unistd.h>
-+#include <util.h>
 +
 +#include <limits>
 +#include <memory>
@@ -70,8 +69,7 @@ Index: sandbox/policy/freebsd/sandbox_freebsd.cc
 +namespace policy {
 +
 +SandboxLinux::SandboxLinux()
-+    : unveil_initialized_(false),
-+      sandbox_status_flags_(kInvalid),
++    : sandbox_status_flags_(kInvalid),
 +      pre_initialized_(false),
 +      initialize_sandbox_ran_(false),
 +      broker_process_(nullptr) {

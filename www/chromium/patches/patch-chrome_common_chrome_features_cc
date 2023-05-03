@@ -55,7 +55,7 @@ Index: chrome/common/chrome_features.cc
        true
  #else
        false
-@@ -745,7 +745,7 @@ BASE_FEATURE(kKAnonymityServiceStorage,
+@@ -752,7 +752,7 @@ BASE_FEATURE(kKAnonymityServiceStorage,
               "KAnonymityServiceStorage",
               base::FEATURE_DISABLED_BY_DEFAULT);
  
@@ -64,7 +64,7 @@ Index: chrome/common/chrome_features.cc
  BASE_FEATURE(kLinuxLowMemoryMonitor,
               "LinuxLowMemoryMonitor",
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -758,7 +758,7 @@ constexpr base::FeatureParam<int> kLinuxLowMemoryMonit
+@@ -765,7 +765,7 @@ constexpr base::FeatureParam<int> kLinuxLowMemoryMonit
      &kLinuxLowMemoryMonitor, "critical_level", 255};
  #endif  // BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS)
  

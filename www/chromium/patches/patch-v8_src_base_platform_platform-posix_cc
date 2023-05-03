@@ -60,4 +60,4 @@ Index: v8/src/base/platform/platform-posix.cc
 +    !defined(V8_OS_SOLARIS) && !defined(V8_OS_OPENBSD)
  
  // static
- Stack::StackSlot Stack::GetStackStart() {
+ Stack::StackSlot Stack::ObtainCurrentThreadStackStart() {

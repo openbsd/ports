@@ -9,7 +9,7 @@ Index: third_party/boringssl/BUILD.generated.gni
    "src/crypto/cpu_aarch64_win.c",
    "src/crypto/cpu_arm.c",
    "src/crypto/cpu_arm_freebsd.c",
-@@ -193,6 +194,7 @@ crypto_sources = [
+@@ -195,6 +196,7 @@ crypto_sources = [
    "src/crypto/rand_extra/deterministic.c",
    "src/crypto/rand_extra/forkunsafe.c",
    "src/crypto/rand_extra/fuchsia.c",
