@@ -20,6 +20,7 @@ ${P5SITE}/Log/Any/Proxy/
 ${P5SITE}/Log/Any/Proxy.pm
 ${P5SITE}/Log/Any/Proxy/Null.pm
 ${P5SITE}/Log/Any/Proxy/Test.pm
+${P5SITE}/Log/Any/Proxy/WithStackTrace.pm
 ${P5SITE}/Log/Any/Test.pm
 @man man/man3p/Log::Any.3p
 @man man/man3p/Log::Any::Adapter.3p
@@ -38,4 +39,5 @@ ${P5SITE}/Log/Any/Test.pm
 @man man/man3p/Log::Any::Proxy.3p
 @man man/man3p/Log::Any::Proxy::Null.3p
 @man man/man3p/Log::Any::Proxy::Test.3p
+@man man/man3p/Log::Any::Proxy::WithStackTrace.3p
 @man man/man3p/Log::Any::Test.3p
