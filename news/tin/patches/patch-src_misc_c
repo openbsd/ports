@@ -1,7 +1,7 @@
 Index: src/misc.c
 --- src/misc.c.orig
 +++ src/misc.c
-@@ -2158,8 +2158,6 @@ random_organization(
+@@ -2195,8 +2195,6 @@ random_organization(
  	if (*in_org != '/')
  		return in_org;
  
@@ -10,7 +10,7 @@ Index: src/misc.c
  	if ((orgfp = fopen(in_org, "r")) == NULL)
  		return selorg;
  
-@@ -2173,7 +2171,7 @@ random_organization(
+@@ -2210,7 +2208,7 @@ random_organization(
  	}
  
  	rewind(orgfp);

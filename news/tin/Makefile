@@ -1,8 +1,8 @@
 COMMENT=	threaded NNTP- and spool-based UseNet newsreader
 
 DISTNAME=	tin-${MAJORVERSION}.${PATCHLEVEL}
-MAJORVERSION=	2.4
-PATCHLEVEL=	4
+MAJORVERSION=	2.6
+PATCHLEVEL=	2
 CATEGORIES=	news
 
 MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/stable/ \
@@ -14,8 +14,6 @@ MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/stable/ \
 		ftp://ftp.tin.org/pub/news/clients/tin/v${MAJORVERSION}/
 
 HOMEPAGE=	http://www.tin.org/
-
-MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 
 # This software cannot be redistributed freely due to a few files having
 # licenses that prohibit making money from redistribution - see src/nntplib.c,

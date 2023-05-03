@@ -1,13 +1,13 @@
 Index: src/rfc2047.c
 --- src/rfc2047.c.orig
 +++ src/rfc2047.c
-@@ -1066,9 +1066,8 @@ generate_random_mime_boundary(
+@@ -1073,9 +1073,8 @@ generate_random_mime_boundary(
  {
  	size_t i;
  
 -	srand((unsigned int) time(NULL));
  	for (i = 0; i < len - 1; i++)
--		boundary[i] = base64_alphabet[rand() % sizeof(base64_alphabet)];
+-		boundary[i] = base64_alphabet[(size_t) rand() % sizeof(base64_alphabet)];
 +		boundary[i] = base64_alphabet[arc4random_uniform(sizeof(base64_alphabet))];
  	boundary[len - 1] = '\0';
  }

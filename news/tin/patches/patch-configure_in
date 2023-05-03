@@ -1,30 +1,34 @@
 Index: configure.in
 --- configure.in.orig
 +++ configure.in
-@@ -900,13 +900,15 @@ fi
+@@ -980,16 +980,19 @@ if test $ac_cv_nl_item = yes; then
+         AC_DEFINE(HAVE_NL_ITEM,1,[Define this to 1 if we have header nl_types.h])
+ fi
+ 
++
++ # ICU - International Components for Unicode
  ###	Checks for libraries.
  # libuu/uudeview
  # only define HAVE_LIBUU and HAVE_UUDEVIEW_H if both are found
 -AC_CHECK_LIB(uu, UUInitialize,
 -	[AC_CHECK_HEADER(uudeview.h,
--		[AC_DEFINE(HAVE_LIBUU)
--		AC_DEFINE(HAVE_UUDEVIEW_H)
+-		[AC_DEFINE(HAVE_LIBUU,1,[Define this to 1 if we have library uu])
+-		AC_DEFINE(HAVE_UUDEVIEW_H,1,[Define this to 1 if we have header uudeview.h])
 -		LIBS="$LIBS -luu"]
 -	)]
 -)
 +dnl Disable to make sure the package does not change if someone ever ports this
-+dnl
 +dnl AC_CHECK_LIB(uu, UUInitialize,
-+dnl 	[AC_CHECK_HEADER(uudeview.h,
-+dnl 		[AC_DEFINE(HAVE_LIBUU)
-+dnl 		AC_DEFINE(HAVE_UUDEVIEW_H)
-+dnl 		LIBS="$LIBS -luu"]
-+dnl 	)]
++dnl	[AC_CHECK_HEADER(uudeview.h,
++dnl		[AC_DEFINE(HAVE_LIBUU,1,[Define this to 1 if we have library uu])
++dnl		AC_DEFINE(HAVE_UUDEVIEW_H,1,[Define this to 1 if we have header uudeview.h])
++dnl		LIBS="$LIBS -luu"]
++dnl	)]
 +dnl )
  
  
  # ICU - International Components for Unicode
-@@ -1235,7 +1237,11 @@ CF_TERMIOS
+@@ -1323,7 +1326,11 @@ CF_TERMIOS
  CF_PW_GECOS
  CF_TM_GMTOFF
  
