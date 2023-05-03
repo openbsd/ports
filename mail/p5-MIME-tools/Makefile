@@ -1,8 +1,7 @@
 COMMENT=		modules for parsing (and creating) MIME entities
 
-DISTNAME=		MIME-tools-5.509
+DISTNAME=		MIME-tools-5.510
 CATEGORIES=		mail
-REVISION=		0
 
 MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org>
 
