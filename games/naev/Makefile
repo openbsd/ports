@@ -3,10 +3,8 @@ ONLY_FOR_ARCHS = 	aarch64 amd64 i386
 
 COMMENT-main =		2D space trading and combat game
 COMMENT-data =		naev game data
-REVISION-data =		0
-REVISION-main =		0
 
-V = 			0.10.4
+V = 			0.10.5
 DISTNAME =		naev-${V}-source
 PKGNAME = 		naev-${V}
 
