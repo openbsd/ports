@@ -20,6 +20,7 @@ include/ledger/flags.h
 include/ledger/format.h
 include/ledger/generate.h
 include/ledger/global.h
+include/ledger/gpgme.h
 include/ledger/history.h
 include/ledger/item.h
 include/ledger/iterators.h
@@ -37,7 +38,6 @@ include/ledger/predicate.h
 include/ledger/print.h
 include/ledger/pstream.h
 include/ledger/ptree.h
-include/ledger/pyfstream.h
 include/ledger/pyinterp.h
 include/ledger/pyutils.h
 include/ledger/query.h
@@ -58,7 +58,7 @@ include/ledger/utils.h
 include/ledger/value.h
 include/ledger/views.h
 include/ledger/xact.h
-info/ledger3.info
+@info info/ledger3.info
 @lib lib/libledger.so.${LIBledger_VERSION}
 @man man/man1/ledger.1
 share/doc/ledger/

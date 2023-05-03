@@ -1,0 +1,23 @@
+Sort output to pass tests
+
+Index: test/baseline/cmd-pricedb.test
+--- test/baseline/cmd-pricedb.test.orig
++++ test/baseline/cmd-pricedb.test
+@@ -14,7 +14,7 @@
+     C           15.80 USD @ 0.63 GBP
+     D
+ 
+-test pricedb
++test pricedb --sort date
+ P 2012/01/02 00:00:00 GBP 1.20 EUR
+ P 2012/01/03 00:00:00 EUR 1.3166666667 USD
+ P 2012/01/04 00:00:00 USD 0.63 GBP
+@@ -32,7 +32,7 @@ test pricedb USD
+ P 2012/01/04 00:00:00 USD 0.63 GBP
+ end test
+ 
+-test pricedb U
++test pricedb U --sort date
+ P 2012/01/03 00:00:00 EUR 1.3166666667 USD
+ P 2012/01/04 00:00:00 USD 0.63 GBP
+ end test

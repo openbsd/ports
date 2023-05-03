@@ -1,0 +1,23 @@
+Sort output to pass tests
+
+Index: test/baseline/cmd-prices.test
+--- test/baseline/cmd-prices.test.orig
++++ test/baseline/cmd-prices.test
+@@ -14,7 +14,7 @@
+     C           15.80 USD @ 0.63 GBP
+     D
+ 
+-test prices
++test prices --sort date
+ 2012/01/02 GBP          1.20 EUR
+ 2012/01/03 EUR      1.3166666667 USD
+ 2012/01/04 USD          0.63 GBP
+@@ -32,7 +32,7 @@ test prices GBP
+ 2012/01/02 GBP          1.20 EUR
+ end test
+ 
+-test prices U
++test prices U --sort date
+ 2012/01/03 EUR      1.3166666667 USD
+ 2012/01/04 USD          0.63 GBP
+ end test
