@@ -18,7 +18,7 @@ COMMENT =		remote execution and configuration management system
 MODPY_EGG_VERSION =	3006.0
 DISTNAME =		salt-${MODPY_EGG_VERSION}
 
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		sysutils net devel
 
@@ -45,7 +45,8 @@ RUN_DEPENDS =		devel/py-looseversion${MODPY_FLAVOR} \
 			textproc/py-yaml${MODPY_FLAVOR} \
 			www/py-jinja2${MODPY_FLAVOR} \
 			www/py-requests${MODPY_FLAVOR} \
- 			sysutils/py-distro${MODPY_FLAVOR}>=1.5.0
+ 			sysutils/py-distro${MODPY_FLAVOR}>=1.5.0 \
+			sysutils/py-packaging${MODPY_FLAVOR}
 
 # requirements/zeromq.txt
 RUN_DEPENDS +=		net/py-zmq${MODPY_FLAVOR} \
