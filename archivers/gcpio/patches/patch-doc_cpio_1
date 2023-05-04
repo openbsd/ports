@@ -1,11 +1,9 @@
-CVE-2015-1197: cpio directory traversal
-
 Index: doc/cpio.1
 --- doc/cpio.1.orig
 +++ doc/cpio.1
 @@ -15,9 +15,9 @@
  .\" along with GNU cpio.  If not, see <http://www.gnu.org/licenses/>.
- .TH CPIO 1 "June 21, 2018" "CPIO" "GNU CPIO"
+ .TH CPIO 1 "April 29, 2023" "CPIO" "GNU CPIO"
  .SH NAME
 -cpio \- copy files to and from archives
 +gcpio \- copy files to and from archives
