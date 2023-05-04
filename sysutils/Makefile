@@ -199,6 +199,7 @@
      SUBDIR += lookat
      SUBDIR += lr
      SUBDIR += lscpu
+     SUBDIR += lsd
      SUBDIR += lsyncd
      SUBDIR += m1n1
      SUBDIR += mac-robber
