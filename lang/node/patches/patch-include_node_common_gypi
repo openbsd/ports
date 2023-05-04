@@ -12,7 +12,7 @@ Index: include/node/common.gypi
 @@ -426,7 +425,7 @@
              'ldflags': [ '-m32' ],
            }],
-           [ 'target_arch=="ppc64" and OS!="aix"', {
+           [ 'target_arch=="ppc64" and OS not in "aix os400"', {
 -            'cflags': [ '-m64', '-mminimal-toc' ],
 +            'cflags': [ '-m64' ],
              'ldflags': [ '-m64' ],

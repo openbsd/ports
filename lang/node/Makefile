@@ -5,12 +5,12 @@ USE_WXNEEDED =		Yes
 
 COMMENT = JavaScript runtime built on Chrome's V8 JavaScript engine
 
-NODE_VERSION =		v18.15.0
+NODE_VERSION =		v18.16.0
 PLEDGE_VER =		1.1.3
 DISTFILES =		node-pledge-{}${PLEDGE_VER}.tar.gz:0 \
 			${DISTNAME}-headers.tar.gz \
 			${DISTNAME}.tar.xz
-REVISION =		0
+REVISION =		
 
 DISTNAME =		node-${NODE_VERSION}
 PKGNAME =		${DISTNAME:S/v//g}
