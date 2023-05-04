@@ -1,8 +1,8 @@
 COMMENT=	read metadata from media files
 
-VERSION=	23.03
+VERSION=	23.04
 PKGNAME=	libmediainfo-${VERSION}
-SHARED_LIBS=	mediainfo	5.0 # 0.0
+SHARED_LIBS=	mediainfo	6.0 # 0.0
 CATEGORIES=	multimedia
 
 HOMEPAGE=	https://mediaarea.net/en/MediaInfo
@@ -32,9 +32,6 @@ AUTOCONF_DIR=	${WRKBUILD}
 
 WRKDIST=	${WRKDIR}/MediaInfoLib
 WRKBUILD=	${WRKSRC}/Project/GNU/Library
-
-FIX_CRLF_FILES=	Source/MediaInfo/Audio/File_Usac.cpp \
-		Source/MediaInfo/Audio/File_Usac.h
 
 # tests fetch files from the Internet
 NO_TEST=	Yes
