@@ -11,8 +11,6 @@ lib/python${MODPY_VERSION}/site-packages/urlwatch/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/urlwatch/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/urlwatch/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/urlwatch/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/urlwatch/${MODPY_PYCACHE}browser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/urlwatch/${MODPY_PYCACHE}browser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urlwatch/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/urlwatch/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urlwatch/${MODPY_PYCACHE}command.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -45,7 +43,6 @@ lib/python${MODPY_VERSION}/site-packages/urlwatch/${MODPY_PYCACHE}worker.${MODPY
 lib/python${MODPY_VERSION}/site-packages/urlwatch/${MODPY_PYCACHE}worker.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urlwatch/${MODPY_PYCACHE}xmpp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/urlwatch/${MODPY_PYCACHE}xmpp.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/urlwatch/browser.py
 lib/python${MODPY_VERSION}/site-packages/urlwatch/cli.py
 lib/python${MODPY_VERSION}/site-packages/urlwatch/command.py
 lib/python${MODPY_VERSION}/site-packages/urlwatch/config.py
