@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distfile.pm,v 1.24 2020/04/07 16:02:04 espie Exp $
+# $OpenBSD: Distfile.pm,v 1.25 2023/05/04 09:30:40 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -47,7 +47,8 @@ sub create
 		name => $file,
 		short => $short,
 		path => $v,
-		repo => $repo
+		repo => $repo,
+		sz => 0
 	}, $class;
 }
 
@@ -74,7 +75,7 @@ sub complete
 		$v->break("Missing sha for $file in $fname");
 		return;
 	}
-	if (defined $self->{sz}) {
+	if ($self->{sz} != 0) {
 		if ($self->{sz} != $sz) {
 			$v->break("Inconsistent info for $file in $fname: $self->{sz} vs $sz(".$v->fullpkgpath." vs ".$self->{path}->fullpkgpath.")");
 			$error = 1;
