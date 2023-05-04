@@ -2,8 +2,7 @@ PKG_ARCH=	*
 
 COMMENT=	utilities for manipulating PostScript documents
 
-V=		2.08
-REVISION=	0
+V=		2.10
 DISTNAME=	psutils-${V}
 
 CATEGORIES=	print
@@ -20,7 +19,6 @@ MASTER_SITES=	https://github.com/rrthomas/psutils/releases/download/v${V}/
 MODULES=	perl
 
 RUN_DEPENDS=	devel/p5-IPC-Run3 \
-		print/ghostscript/gnu \
 		print/libpaper
 
 USE_GMAKE=	Yes
