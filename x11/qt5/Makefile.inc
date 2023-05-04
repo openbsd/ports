@@ -1,5 +1,7 @@
 ONLY_FOR_ARCHS ?=	${GCC4_ARCHS} ${CLANG_ARCHS}
 
+FIX_EXTRACT_PERMISSIONS ?=	Yes
+
 .include "Makefile.version"
 
 # DIST_VERSION should be defined, e.g., when patch distfile gets issued,
