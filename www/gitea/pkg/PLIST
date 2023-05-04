@@ -1094,6 +1094,8 @@ share/gitea/templates/repo/issue/labels/label_load_template.tmpl
 share/gitea/templates/repo/issue/labels/label_new.tmpl
 share/gitea/templates/repo/issue/labels/labels_sidebar.tmpl
 share/gitea/templates/repo/issue/list.tmpl
+share/gitea/templates/repo/issue/milestone/
+share/gitea/templates/repo/issue/milestone/select_menu.tmpl
 share/gitea/templates/repo/issue/milestone_issues.tmpl
 share/gitea/templates/repo/issue/milestone_new.tmpl
 share/gitea/templates/repo/issue/milestones.tmpl
