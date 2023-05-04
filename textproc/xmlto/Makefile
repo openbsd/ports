@@ -3,7 +3,7 @@ COMMENT=	front-end for converting XML files to various formats
 DISTNAME=	xmlto-0.0.28
 EXTRACT_SUFX=	.tar.bz2
 
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	textproc
 
@@ -35,7 +35,7 @@ CONFIGURE_ENV=  BASH=${LOCALBASE}/bin/bash \
 		GREP=/usr/bin/grep \
 		LINKS=${LOCALBASE}/bin/links \
 		LYNX=${LOCALBASE}/bin/lynx \
-		PAPERCONF=${LOCALBASE}/bin/paperconf \
+		PAPER_CONF=${LOCALBASE}/bin/paperconf \
 		PDFXMLTEX=${LOCALBASE}/bin/pdfxmltex \
 		TAIL=/usr/bin/tail \
 		XMLLINT=${LOCALBASE}/bin/xmllint \
