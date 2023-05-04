@@ -1,0 +1,12 @@
+Index: extra/mariabackup/xtrabackup.cc
+--- extra/mariabackup/xtrabackup.cc.orig
++++ extra/mariabackup/xtrabackup.cc
+@@ -6966,6 +6966,8 @@ static int get_exepath(char *buf, size_t size, const c
+   if (sysctl(mib, 4, buf, &size, NULL, 0) == 0) {
+     return 0;
+   }
++#elif defined(__OpenBSD__)
++  return 0;
+ #endif
+ 
+   return my_realpath(buf, argv0, 0);
