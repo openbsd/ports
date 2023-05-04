@@ -1,0 +1,11 @@
+@bin bin/lsd
+@man man/man1/lsd.1
+share/bash-completion/
+share/bash-completion/completions/
+share/bash-completion/completions/lsd
+share/fish/
+share/fish/completions/
+share/fish/completions/lsd.fish
+share/zsh/
+share/zsh/site-functions/
+share/zsh/site-functions/_lsd
