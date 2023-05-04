@@ -1,9 +1,8 @@
 COMMENT=	format files for printing on PostScript printers
 
-DISTNAME=	a2ps-4.14
-REVISION=	15
+DISTNAME=	a2ps-4.15.4
 
-SHARED_LIBS +=  a2ps                 2.0      # 2.0
+SHARED_LIBS +=  a2ps 3.0
 
 CATEGORIES=	print
 
@@ -15,25 +14,30 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # terms (see ${WRKSRC}/afm/MustRead.html).
 PERMIT_PACKAGE=	Yes
 
-WANTLIB =  c iconv intl m paper
+WANTLIB += c gc iconv intl m paper pthread
 
 MASTER_SITES=	${MASTER_SITE_GNU:=a2ps/}
 
-BUILD_DEPENDS=	devel/gperf \
-		print/psutils
+USE_GMAKE=	Yes
+
+BUILD_DEPENDS=	print/psutils
 
 RUN_DEPENDS=	print/psutils
 
-LIB_DEPENDS=	devel/gettext,-runtime \
+LIB_DEPENDS=	devel/boehm-gc \
+		devel/gettext,-runtime \
 		print/libpaper
 
-MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/auxdir
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/ogonkify
 
 CONFIGURE_STYLE=gnu
+
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
-		ac_cv_prog_EMACS=no \
-		lispdir=${PREFIX}/share/a2ps/emacs
+		ac_cv_path_grog=
+
+CONFIGURE_ARGS=	--without-emacs \
+		--with-lispdir=${PREFIX}/share/emacs/site-lisp
 
 .for p in bzip2 gv ghostview dvips pdf2ps tex latex ps2pdf \
 	  bzip distill netscape html2ps grog convert
@@ -41,9 +45,7 @@ CONFIGURE_ENV+= ac_cv_prog_COM_$p=no
 .endfor
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/configure \
-		${WRKSRC}/etc/a2ps_cfg.in \
-		${WRKSRC}/etc/a2ps-site.cfg.in
+	${SUBST_CMD} ${WRKSRC}/etc/a2ps{_,-site.}cfg.in
 
 pre-build:
 	/usr/bin/touch $(WRKSRC)/doc/*.info
@@ -51,7 +53,7 @@ pre-build:
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/a2ps
-	mv ${WRKINST}${SYSCONFDIR}/a2ps.cfg ${PREFIX}/share/examples/a2ps
-	mv ${WRKINST}${SYSCONFDIR}/a2ps-site.cfg ${PREFIX}/share/examples/a2ps
+	mv ${WRKINST}${SYSCONFDIR}/a2ps{,-site}.cfg \
+		${PREFIX}/share/examples/a2ps
 
 .include <bsd.port.mk>

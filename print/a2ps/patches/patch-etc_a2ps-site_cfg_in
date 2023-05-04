@@ -1,7 +1,7 @@
 Index: etc/a2ps-site.cfg.in
 --- etc/a2ps-site.cfg.in.orig
 +++ etc/a2ps-site.cfg.in
-@@ -36,6 +36,9 @@ DefaultPPD: level1
+@@ -33,6 +33,9 @@ DefaultPPD: level1
  #   #{lp} there should be the name of the printer.
  #
  
