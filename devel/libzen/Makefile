@@ -1,6 +1,6 @@
 COMMENT=	C++ utility library
 
-VERSION=	0.4.40
+VERSION=	0.4.41
 PKGNAME=	libzen-${VERSION}
 SHARED_LIBS=	zen		0.0 # 0.0
 CATEGORIES=	devel
