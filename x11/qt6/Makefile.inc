@@ -1,6 +1,6 @@
 ONLY_FOR_ARCHS ?=	${GCC4_ARCHS} ${CLANG_ARCHS}
 
-FIX_EXTRACT_PERMISSIONS ?=	Yes
+FIX_EXTRACT_PERMISSIONS =	Yes
 
 .include "Makefile.version"
 
