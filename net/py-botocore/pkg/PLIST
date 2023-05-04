@@ -875,6 +875,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/ec2/2016-11-15/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ec2/2016-11-15/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ec2/2016-11-15/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ec2/2016-11-15/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/ec2/2016-11-15/paginators-1.sdk-extras.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ec2/2016-11-15/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ec2/2016-11-15/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ecr/
