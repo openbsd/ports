@@ -4,6 +4,7 @@ V=		4.9.2
 NAME=		netcdf
 DISTNAME=	${NAME}-c-${V}
 PKGNAME=	${NAME}-${V}
+REVISION=	0
 
 CATEGORIES=	math
 
@@ -35,13 +36,13 @@ MODULES=		fortran
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib -lexecinfo" \
 			CPPFLAGS="-I${LOCALBASE}/include -DH5_USE_110_API" \
-			ac_cv_lib_zip_zip_open=
 
 CONFIGURE_ARGS+=	--enable-shared \
 			--disable-doxygen \
 			--enable-netcdf-4 \
 			--enable-dap \
 			--prefix=${PREFIX} \
+			--disable-nczarr \
 			FC=egfortran
 
 USE_GMAKE=		Yes
