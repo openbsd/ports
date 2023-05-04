@@ -3231,6 +3231,8 @@ lib/libreoffice/help/media/icon-themes/cmd/32/alphalowliststyle.svg
 lib/libreoffice/help/media/icon-themes/cmd/32/animationeffects.svg
 lib/libreoffice/help/media/icon-themes/cmd/32/animationmode.svg
 lib/libreoffice/help/media/icon-themes/cmd/32/animationobjects.svg
+lib/libreoffice/help/media/icon-themes/cmd/32/ar/jumpdownthislevel.svg
+lib/libreoffice/help/media/icon-themes/cmd/32/ar/jumpupthislevel.svg
 lib/libreoffice/help/media/icon-themes/cmd/32/arc.svg
 lib/libreoffice/help/media/icon-themes/cmd/32/arrowshapes.chevron.svg
 lib/libreoffice/help/media/icon-themes/cmd/32/arrowshapes.circular-arrow.svg
@@ -3797,6 +3799,8 @@ lib/libreoffice/help/media/icon-themes/cmd/32/interactivegradient.svg
 lib/libreoffice/help/media/icon-themes/cmd/32/interactivetransparence.svg
 lib/libreoffice/help/media/icon-themes/cmd/32/intersect.svg
 lib/libreoffice/help/media/icon-themes/cmd/32/italic.svg
+lib/libreoffice/help/media/icon-themes/cmd/32/jumpdownthislevel.svg
+lib/libreoffice/help/media/icon-themes/cmd/32/jumpupthislevel.svg
 lib/libreoffice/help/media/icon-themes/cmd/32/km/
 lib/libreoffice/help/media/icon-themes/cmd/32/km/bold.svg
 lib/libreoffice/help/media/icon-themes/cmd/32/km/italic.svg
@@ -4259,6 +4263,10 @@ lib/libreoffice/help/media/icon-themes/cmd/32/zoompage.svg
 lib/libreoffice/help/media/icon-themes/cmd/32/zoompagewidth.svg
 lib/libreoffice/help/media/icon-themes/cmd/32/zoompanning.svg
 lib/libreoffice/help/media/icon-themes/cmd/32/zoomprevious.svg
+lib/libreoffice/help/media/icon-themes/cmd/ar/lc_jumpdownthislevel.svg
+lib/libreoffice/help/media/icon-themes/cmd/ar/lc_jumpupthislevel.svg
+lib/libreoffice/help/media/icon-themes/cmd/ar/sc_jumpdownthislevel.svg
+lib/libreoffice/help/media/icon-themes/cmd/ar/sc_jumpupthislevel.svg
 lib/libreoffice/help/media/icon-themes/cmd/km/
 lib/libreoffice/help/media/icon-themes/cmd/km/lc_bold.svg
 lib/libreoffice/help/media/icon-themes/cmd/km/lc_italic.svg
@@ -4919,6 +4927,8 @@ lib/libreoffice/help/media/icon-themes/cmd/lc_interactivegradient.svg
 lib/libreoffice/help/media/icon-themes/cmd/lc_interactivetransparence.svg
 lib/libreoffice/help/media/icon-themes/cmd/lc_intersect.svg
 lib/libreoffice/help/media/icon-themes/cmd/lc_italic.svg
+lib/libreoffice/help/media/icon-themes/cmd/lc_jumpdownthislevel.svg
+lib/libreoffice/help/media/icon-themes/cmd/lc_jumpupthislevel.svg
 lib/libreoffice/help/media/icon-themes/cmd/lc_label.svg
 lib/libreoffice/help/media/icon-themes/cmd/lc_lastrecord.svg
 lib/libreoffice/help/media/icon-themes/cmd/lc_leaveallgroups.svg
@@ -5948,6 +5958,8 @@ lib/libreoffice/help/media/icon-themes/cmd/sc_interactivegradient.svg
 lib/libreoffice/help/media/icon-themes/cmd/sc_interactivetransparence.svg
 lib/libreoffice/help/media/icon-themes/cmd/sc_intersect.svg
 lib/libreoffice/help/media/icon-themes/cmd/sc_italic.svg
+lib/libreoffice/help/media/icon-themes/cmd/sc_jumpdownthislevel.svg
+lib/libreoffice/help/media/icon-themes/cmd/sc_jumpupthislevel.svg
 lib/libreoffice/help/media/icon-themes/cmd/sc_label.svg
 lib/libreoffice/help/media/icon-themes/cmd/sc_lastrecord.svg
 lib/libreoffice/help/media/icon-themes/cmd/sc_leaveallgroups.svg

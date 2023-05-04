@@ -6,10 +6,6 @@ COMMENT-main=	multi-platform productivity suite
 COMMENT-kde=	optional integration of LibreOffice to the KDE environment
 COMMENT-java=	optional integration of LibreOffice java features
 
-REVISION-main=	1
-REVISION-java=	1
-REVISION-kde=	1
-
 SHARED_LIBS +=  etonyek-0.1-lo            1.10 # 1.10
 SHARED_LIBS +=  langtag-lo                5.1 # 5.1
 SHARED_LIBS +=  mwaw-0.3-lo               3.21 # 3.21
@@ -26,7 +22,7 @@ SHARED_LIBS +=  wpg-0.3-lo                3.3 # 3.3
 SHARED_LIBS +=  wps-0.4-lo                4.12 # 4.12
 
 BV=		7.5
-VERSION=	${BV}.2.2
+VERSION=	${BV}.3.2
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 CATEGORIES=	editors productivity
