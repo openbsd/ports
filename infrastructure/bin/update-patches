@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
-# $OpenBSD: update-patches,v 1.23 2023/03/06 15:34:50 sthen Exp $
-# Copyright (c) 2017
+# $OpenBSD: update-patches,v 1.24 2023/05/04 14:13:10 espie Exp $
+# Copyright (c) 2017-2023
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions
@@ -25,9 +25,7 @@
 # SUCH DAMAGE.
 
 use File::Find;
-use strict;
-use warnings;
-use feature qw(say);
+use v5.36;
 
 # our "normal" output is STDERR
 open my $oldout, '>&STDOUT';
@@ -85,9 +83,8 @@ my $kw_re = qr{\$(
 			RCSFile|Revision|Source|State|OpenBSD
 		    )\b.*\$}x;
 
-sub fuzz_chunk
+sub fuzz_chunk($chunk)
 {
-	my $chunk = shift;
 	return 0 if @{$chunk->{lines}} < 4;
 	my $zap = 0;
 	my $fuzzed = 0;
@@ -128,10 +125,8 @@ sub fuzz_chunk
 	return $fuzzed;
 }
 
-sub may_fuzz_patch
+sub may_fuzz_patch($stem, $list)
 {
-	my ($stem, $list) = @_;
-
 	my $try_fuzz = 0;
 	for my $l (@$list) {
 		if ($l =~ m/$kw_re/) {
@@ -193,9 +188,8 @@ sub may_fuzz_patch
 	}
 }
 
-sub create_patch
+sub create_patch($src, $dst, $stem)
 {
-	my ($src, $dst, $stem) = @_;
 	say "Processing $stem" if $verbose;
 	open(my $file, "-|", "diff", "-u", "-p", "-a", @diff_args, "-L",
 		"$stem.orig", "-L", $stem, "--", $src, $dst) or 
@@ -212,9 +206,8 @@ sub create_patch
 		comment => [] };
 }
 
-sub parse_existing_patch
+sub parse_existing_patch($filename)
 {
-	my $filename = shift;
 	open (my $f, '<', $filename) or die "can't read existing $filename: $!";
 	my (@comment, $src, @patch);
 	while (<$f>) {
@@ -248,9 +241,8 @@ sub parse_existing_patch
 	    comment => \@comment, patch => \@patch};
 }
 
-sub write_patch
+sub write_patch($p)
 {
-	my $p = shift;
 	if (-f $p->{filename}) {
 		rename $p->{filename}, $p->{filename}.".orig" or 
 		    die "can't rename $p->{filename}: $!";
@@ -269,16 +261,14 @@ sub write_patch
 	close $f or die;
 }
 
-sub patch_name
+sub patch_name($arg)
 {
-	my $arg = shift;
 	$arg =~ s/[\s\/\.]/_/g;
 	return "patch-$arg";
 }
 
-sub description
+sub description($p)
 {
-	my $p = shift;
 	if ($p->{filename} ne patch_name($p->{stem})) {
 		return "$p->{filename} for $p->{stem}";
 	} else {
@@ -286,9 +276,8 @@ sub description
 	}
 }
 
-sub patches_differ
+sub patches_differ($a, $b)
 {
-	my ($a, $b) = @_;
 	if (@{$a->{patch}} != @{$b->{patch}}) {
 		return 1;
 	}
@@ -301,15 +290,14 @@ sub patches_differ
 	return 0;
 }
 
-sub identical_msg
+sub identical_msg($name)
 {
-	my $name = shift;
 	return "$name and $name$distorig are identical";
 }
 
 # figure out which files to work with
 find({wanted =>
-    sub {
+    sub() {
     	return if -l $_;
 	return unless -f _;
 	return unless m/\Q$patchorig\E$/;
