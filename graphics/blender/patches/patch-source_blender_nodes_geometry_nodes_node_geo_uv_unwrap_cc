@@ -1,0 +1,19 @@
+fix build on i386
+
+/build/obj/ports/blender-3.3.6/blender-3.3.6/source/blender/nodes/geometry/nodes/node_geo_uv_unwrap.cc:114:32: error: 
+                  non-constant-expression cannot be narrowed from type 'unsigned int' to 'ParamKey' (aka 'long') in initializer list 
+                  [-Wc++11-narrowing]
+/build/obj/ports/blender-3.3.6/blender-3.3.6/source/blender/nodes/geometry/nodes/node_geo_uv_unwrap.cc:114:32: note: 
+                  insert an explicit cast to silence this issue
+Index: source/blender/nodes/geometry/nodes/node_geo_uv_unwrap.cc
+--- source/blender/nodes/geometry/nodes/node_geo_uv_unwrap.cc.orig
++++ source/blender/nodes/geometry/nodes/node_geo_uv_unwrap.cc
+@@ -111,7 +111,7 @@ static VArray<float3> construct_uv_gvarray(const MeshC
+   }
+   for (const int i : seam) {
+     const MEdge &edge = mesh->medge[i];
+-    ParamKey vkeys[2]{edge.v1, edge.v2};
++    ParamKey vkeys[2]{static_cast<ParamKey>(edge.v1), static_cast<ParamKey>(edge.v2)};
+     GEO_uv_parametrizer_edge_set_seam(handle, vkeys);
+   }
+   /* TODO: once field input nodes are able to emit warnings (T94039), emit a
