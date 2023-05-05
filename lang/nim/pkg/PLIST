@@ -12,6 +12,7 @@ lib/nim/arch/
 lib/nim/arch/x86/
 lib/nim/arch/x86/amd64.S
 lib/nim/arch/x86/i386.S
+lib/nim/compilation.nim
 lib/nim/core/
 lib/nim/core/hotcodereloading.nim
 lib/nim/core/locks.nim

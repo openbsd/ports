@@ -24,7 +24,7 @@ Index: config/nim.cfg
    @elif haiku:
      gcc.options.linker = "-Wl,--as-needed -lnetwork"
      gcc.cpp.options.linker = "-Wl,--as-needed -lnetwork"
-@@ -195,21 +195,27 @@ clang.objc.options.linker = "-lobjc -lgnustep-base"
+@@ -198,21 +198,27 @@ clang.objc.options.linker = "-lobjc -lgnustep-base"
  
  # Options for FreeBSD, OpenBSD, NetBSD linker to add locations for searching
  # shared libraries.
@@ -58,7 +58,7 @@ Index: config/nim.cfg
  @elif netbsd:
    cincludes: "/usr/pkg/include"
    clibdir: "/usr/pkg/lib"
-@@ -229,15 +235,15 @@ clang.objc.options.linker = "-lobjc -lgnustep-base"
+@@ -232,15 +238,15 @@ clang.objc.options.linker = "-lobjc -lgnustep-base"
    gcc.options.linker %= "-L $WIND_BASE/target/lib/usr/lib/ppc/PPC32/common -mrtp -fno-strict-aliasing -D_C99 -D_HAS_C9X -std=c99 -fasm -Wall -Wno-write-strings"
  @end
  
@@ -78,7 +78,7 @@ Index: config/nim.cfg
  gcc.cpp.options.debug = "-g3 -Og"
  #passl = "-pg"
  
-@@ -251,8 +257,8 @@ llvm_gcc.options.size = "-Os"
+@@ -254,8 +260,8 @@ llvm_gcc.options.size = "-Os"
  clang.options.debug = "-g"
  clang.cpp.options.debug = "-g"
  clang.options.always = "-w -ferror-limit=3"

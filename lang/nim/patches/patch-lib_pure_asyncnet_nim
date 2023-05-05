@@ -1,0 +1,22 @@
+Index: lib/pure/asyncnet.nim
+--- lib/pure/asyncnet.nim.orig
++++ lib/pure/asyncnet.nim
+@@ -261,6 +261,9 @@ when defineSsl:
+       ErrClearError()
+       # Call the desired operation.
+       opResult = op
++      var err = SSL_ERROR_NONE
++      if opResult < 0:
++        err = getSslError(socket, opResult.cint)
+ 
+       # Send any remaining pending SSL data.
+       await sendPendingSslData(socket, flags)
+@@ -268,7 +271,7 @@ when defineSsl:
+       # If the operation failed, try to see if SSL has some data to read
+       # or write.
+       if opResult < 0:
+-        let err = getSslError(socket, opResult.cint)
++        #let err = getSslError(socket, opResult.cint)
+         let fut = appeaseSsl(socket, flags, err.cint)
+         yield fut
+         if not fut.read():
