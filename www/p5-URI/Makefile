@@ -1,6 +1,6 @@
 COMMENT =	library to parse Uniform Resource Identifiers
 
-DISTNAME =	URI-5.17
+DISTNAME =	URI-5.19
 
 CATEGORIES =	www
 
@@ -16,7 +16,7 @@ TEST_DEPENDS =		devel/p5-Test-Fatal \
 			devel/p5-Test-Needs \
 			devel/p5-Test-Warnings
 # not ported yet
-#TEST_DEPENDS +=	misc/p5-Business-ISBN
+#TEST_DEPENDS +=	misc/p5-Business-ISBN>=3.005
 
 PKG_ARCH =		*
 
