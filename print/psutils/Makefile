@@ -18,6 +18,8 @@ MASTER_SITES=	https://github.com/rrthomas/psutils/releases/download/v${V}/
 
 MODULES=	perl
 
+BUILD_DEPENDS=	print/libpaper
+
 RUN_DEPENDS=	devel/p5-IPC-Run3 \
 		print/libpaper
 
