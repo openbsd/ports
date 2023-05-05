@@ -1,3 +1,5 @@
+64bit time_t
+
 Index: src/yapp.cc
 --- src/yapp.cc.orig
 +++ src/yapp.cc
