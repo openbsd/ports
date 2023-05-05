@@ -1134,7 +1134,6 @@
      SUBDIR += p5-Test-File
      SUBDIR += p5-Test-File-Contents
      SUBDIR += p5-Test-File-ShareDir
-     SUBDIR += p5-Test-Group
      SUBDIR += p5-Test-HTML-Tidy
      SUBDIR += p5-Test-HasVersion
      SUBDIR += p5-Test-HexDifferences
