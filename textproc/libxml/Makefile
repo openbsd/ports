@@ -1,13 +1,13 @@
 COMMENT-main=		XML parsing library
 COMMENT-python=		Python bindings for libxml
 
-GNOME_VERSION=		2.11.1
+GNOME_VERSION=		2.11.2
 GNOME_PROJECT=		libxml2
 
 PKGNAME-main=		libxml-${VERSION}
 PKGNAME-python=		py3-libxml-${VERSION}
 
-SHARED_LIBS +=  xml2                 19.0     # 13.1
+SHARED_LIBS +=  xml2                 19.0     # 13.2
 
 CATEGORIES=		textproc
 
@@ -58,6 +58,9 @@ CONFIGURE_ARGS+=	--with-python
 .else
 CONFIGURE_ARGS+=	--without-python
 .endif
+
+# needs network access
+TEST_IS_INTERACTIVE=	Yes
 
 post-configure:
 	sed -e 's,@PREFIX@,${PREFIX},' <${FILESDIR}/rebuild >${WRKBUILD}/rebuild
