@@ -5,7 +5,7 @@ ONLY_FOR_ARCHS=		${LP64_ARCHS}
 COMMENT=		tool for building machine images
 
 MODGO_MODNAME=		github.com/hashicorp/packer
-MODGO_VERSION=		v1.8.6
+MODGO_VERSION=		v1.8.7
 DISTNAME=		packer-${MODGO_VERSION}
 
 CATEGORIES=		sysutils
@@ -22,6 +22,10 @@ WANTLIB += c pthread
 MODULES=		lang/go
 
 .include "modules.inc"
+
+# XXX
+pre-configure:
+	sed -i "s,1.8.6,1.8.7," ${WRKSRC}/version/version.go
 
 post-install:
 	rm ${PREFIX}/bin/{generate-fixer-deprecations,ssh-keygen}
