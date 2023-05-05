@@ -1,0 +1,19 @@
+fix build on i386
+
+./../src/CellBuffer.cxx:216:39: error: cannot initialize a parameter of type 'const int *' with an lvalue of type 'const Sci::Position *' (aka 'const long *')
+Index: src/CellBuffer.cxx
+--- src/CellBuffer.cxx.orig
++++ src/CellBuffer.cxx
+@@ -212,11 +212,7 @@ class LineVector : public ILineVector { (public)
+ 	}
+ 	void InsertLines(Sci::Line line, const Sci::Position *positions, size_t lines, bool lineStart) override {
+ 		const POS lineAsPos = pos_cast(line);
+-		if constexpr (sizeof(Sci::Position) == sizeof(POS)) {
+-			starts.InsertPartitions(lineAsPos, positions, lines);
+-		} else {
+-			starts.InsertPartitionsWithCast(lineAsPos, positions, lines);
+-		}
++		starts.InsertPartitionsWithCast(lineAsPos, positions, lines);
+ 		if (activeIndices != LineCharacterIndexType::None) {
+ 			if (FlagSet(activeIndices, LineCharacterIndexType::Utf32)) {
+ 				startsUTF32.InsertLines(line, lines);
