@@ -1,7 +1,7 @@
 Index: base/base_switches.h
 --- base/base_switches.h.orig
 +++ base/base_switches.h
-@@ -60,7 +60,7 @@ extern const char kEnableIdleTracing[];
+@@ -57,7 +57,7 @@ extern const char kEnableIdleTracing[];
  extern const char kForceFieldTrialParams[];
  #endif
  

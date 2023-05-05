@@ -8,7 +8,7 @@ Index: media/gpu/sandbox/hardware_video_decoding_sandbox_hook_linux.h
 +#include "build/build_config.h"
 +
 +#if BUILDFLAG(IS_BSD)
-+#include "sandbox/policy/openbsd/sandbox_openbsd.h"
++#include "sandbox/policy/sandbox.h"
 +#else
  #include "sandbox/policy/linux/sandbox_linux.h"
 +#endif

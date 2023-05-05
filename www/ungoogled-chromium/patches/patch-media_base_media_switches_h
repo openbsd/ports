@@ -1,7 +1,7 @@
 Index: media/base/media_switches.h
 --- media/base/media_switches.h.orig
 +++ media/base/media_switches.h
-@@ -277,7 +277,7 @@ MEDIA_EXPORT BASE_DECLARE_FEATURE(kUseDecoderStreamFor
+@@ -279,7 +279,7 @@ MEDIA_EXPORT BASE_DECLARE_FEATURE(kUseDecoderStreamFor
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kUseFakeDeviceForMediaStream);
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kUseMediaHistoryStore);
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kUseR16Texture);

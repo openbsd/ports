@@ -10,7 +10,7 @@ Index: services/cert_verifier/cert_verifier_creation.cc
  #include "net/cert/cert_verify_proc_builtin.h"
  #include "net/cert/internal/system_trust_store.h"
  #endif
-@@ -89,7 +89,7 @@ class OldDefaultCertVerifyProcFactory : public net::Ce
+@@ -90,7 +90,7 @@ class OldDefaultCertVerifyProcFactory : public net::Ce
              user_slot_restriction_ ? crypto::ScopedPK11Slot(PK11_ReferenceSlot(
                                           user_slot_restriction_.get()))
                                     : nullptr));
@@ -19,7 +19,7 @@ Index: services/cert_verifier/cert_verifier_creation.cc
      verify_proc = net::CreateCertVerifyProcBuiltin(
          std::move(cert_net_fetcher), net::CreateSslSystemTrustStore());
  #else
-@@ -226,6 +226,7 @@ std::unique_ptr<net::CertVerifierWithUpdatableProc> Cr
+@@ -225,6 +225,7 @@ std::unique_ptr<net::CertVerifierWithUpdatableProc> Cr
  bool IsUsingCertNetFetcher() {
  #if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA) ||      \
      BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) ||       \

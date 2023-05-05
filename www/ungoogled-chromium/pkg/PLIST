@@ -150,12 +150,6 @@ share/examples/ungoogled-chromium/unveil.gpu
 @sample ${SYSCONFDIR}/ungoogled-chromium/unveil.gpu
 share/examples/ungoogled-chromium/unveil.main
 @sample ${SYSCONFDIR}/ungoogled-chromium/unveil.main
-share/examples/ungoogled-chromium/unveil.plugin
-@sample ${SYSCONFDIR}/ungoogled-chromium/unveil.plugin
-share/examples/ungoogled-chromium/unveil.renderer
-@sample ${SYSCONFDIR}/ungoogled-chromium/unveil.renderer
-share/examples/ungoogled-chromium/unveil.utility
-@sample ${SYSCONFDIR}/ungoogled-chromium/unveil.utility
 share/examples/ungoogled-chromium/unveil.utility_audio
 @sample ${SYSCONFDIR}/ungoogled-chromium/unveil.utility_audio
 share/examples/ungoogled-chromium/unveil.utility_network

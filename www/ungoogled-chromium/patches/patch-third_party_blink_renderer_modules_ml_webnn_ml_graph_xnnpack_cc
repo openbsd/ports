@@ -1,7 +1,7 @@
 Index: third_party/blink/renderer/modules/ml/webnn/ml_graph_xnnpack.cc
 --- third_party/blink/renderer/modules/ml/webnn/ml_graph_xnnpack.cc.orig
 +++ third_party/blink/renderer/modules/ml/webnn/ml_graph_xnnpack.cc
-@@ -177,7 +177,7 @@ class SharedXnnpackContext : public ThreadSafeRefCount
+@@ -180,7 +180,7 @@ class SharedXnnpackContext : public ThreadSafeRefCount
  
    ~SharedXnnpackContext() {
      base::AutoLock auto_lock(SharedXnnpackContextLock());

@@ -27,7 +27,7 @@ Index: content/utility/utility_main.cc
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)
  
 +#if BUILDFLAG(IS_BSD)
-+#include "sandbox/policy/openbsd/sandbox_openbsd.h"
++#include "sandbox/policy/sandbox.h"
 +#endif
 +
  #if BUILDFLAG(IS_CHROMEOS_ASH)

@@ -1,7 +1,7 @@
 Index: chrome/browser/media/webrtc/capture_policy_utils.cc
 --- chrome/browser/media/webrtc/capture_policy_utils.cc.orig
 +++ chrome/browser/media/webrtc/capture_policy_utils.cc
-@@ -118,7 +118,7 @@ AllowedScreenCaptureLevel GetAllowedCaptureLevel(const
+@@ -121,7 +121,7 @@ AllowedScreenCaptureLevel GetAllowedCaptureLevel(const
  
  bool IsGetDisplayMediaSetSelectAllScreensAllowedForAnySite(
      content::BrowserContext* context) {
@@ -10,7 +10,7 @@ Index: chrome/browser/media/webrtc/capture_policy_utils.cc
    Profile* profile = Profile::FromBrowserContext(context);
    if (!profile) {
      return false;
-@@ -145,7 +145,7 @@ bool IsGetDisplayMediaSetSelectAllScreensAllowedForAny
+@@ -148,7 +148,7 @@ bool IsGetDisplayMediaSetSelectAllScreensAllowedForAny
  bool IsGetDisplayMediaSetSelectAllScreensAllowed(
      content::BrowserContext* context,
      const GURL& url) {

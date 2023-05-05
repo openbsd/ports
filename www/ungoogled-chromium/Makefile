@@ -7,11 +7,10 @@ DPB_PROPERTIES=		parallel parallel2
 
 COMMENT=		Chromium browser sans integration with Google
 
-V=			112.0.5615.165
+V=			113.0.5672.63
 UGV=			${V}-1
 
 DISTNAME=		ungoogled-chromium-${V}
-REVISION=		1
 
 DISTFILES+=		${CHROMIUM_DISTFILES} \
 			${UGOOGLE_DISTFILES}:0 \
@@ -263,8 +262,6 @@ pre-configure:
 # 2. bootstrap gn, the tool to generate ninja files
 # 3. run gn with the appropriate configuration arguments
 do-configure:
-	# Regenerate build and perlasm files (force json to not overwrite our local gn patches)
-	@cd ${WRKSRC}/third_party/boringssl && ${MODPY_BIN} src/util/generate_build_files.py json
 	@cd ${WRKSRC} && env -i ${MAKE_ENV} build/linux/unbundle/replace_gn_files.py \
 		--system-libraries ${GN_SYSTEM_LIBS}
 	@cd ${WRKSRC}/tools/gn && env -i ${MAKE_ENV} LDFLAGS=-L${LOCALBASE}/lib ${MODPY_BIN} bootstrap/bootstrap.py \
@@ -326,8 +323,7 @@ do-install:
 
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ungoogled-chromium
 .for f in pledge.main pledge.utility_audio pledge.utility_network pledge.utility_video \
-    unveil.gpu unveil.main unveil.plugin unveil.renderer unveil.utility unveil.utility_audio \
-    unveil.utility_network unveil.utility_video
+    unveil.gpu unveil.main unveil.utility_audio unveil.utility_network unveil.utility_video
 	${INSTALL_DATA} ${FILESDIR}/${f} ${PREFIX}/share/examples/ungoogled-chromium
 .endfor
 	${INSTALL_DATA} ${WRKDIR}/sysutils/libudev-openbsd/build-${MACHINE_ARCH}/libudev.so.0.0 \

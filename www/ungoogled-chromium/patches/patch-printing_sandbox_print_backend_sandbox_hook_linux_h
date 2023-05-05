@@ -8,7 +8,7 @@ Index: printing/sandbox/print_backend_sandbox_hook_linux.h
 +#include "build/build_config.h"
  #include "base/component_export.h"
 +#if defined(OS_BSD)
-+#include "sandbox/policy/openbsd/sandbox_openbsd.h"
++#include "sandbox/policy/sandbox.h"
 +#else
  #include "sandbox/policy/linux/sandbox_linux.h"
 +#endif
