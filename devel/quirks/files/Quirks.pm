@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1521 2023/05/03 04:44:43 bket Exp $
+# $OpenBSD: Quirks.pm,v 1.1522 2023/05/05 21:40:24 bluhm Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1822,6 +1822,7 @@ setup_obsolete_reason(
 	53 => 'compton',
 	54 => 'depotdownloader',
 	55 => 'residualvm',
+	5 => 'p5-Test-Group',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
