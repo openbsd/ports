@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Queue.pm,v 1.1 2019/10/15 14:41:22 espie Exp $
+# $OpenBSD: Queue.pm,v 1.2 2023/05/06 05:20:31 espie Exp $
 #
 # Copyright (c) 2019 Marc Espie <espie@openbsd.org>
 #
@@ -15,49 +15,42 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-use strict;
-use warnings;
+use v5.36;
 
 # uniform interface to various queues
 package DPB::Queue;
 
 package DPB::HashQueue;
 our @ISA = qw(DPB::Queue);
-sub new
+sub new($class)
 {
-	my $class = shift;
 	return bless {}, $class;
 }
 
-sub count
+sub count($self)
 {
-	my $self = shift;
 	return scalar keys %$self;
 }
 
-sub contains
+sub contains($self, $v)
 {
-	my ($self, $v) = @_;
 	return $self->{$v};
 }
 
 package DPB::ListQueue;
 our @ISA = qw(DPB::Queue);
-sub new
+sub new($class)
 {
-	my $class = shift;
 	return bless [], $class;
 }
 
-sub count
+sub count($self)
 {
-	my $self = shift;
 	return scalar @$self;
 }
 
-sub contains
+sub contains($self, $v)
 {
-	my ($self, $v) = @_;
 	return grep {$_ == $v} @$self;
 }
 

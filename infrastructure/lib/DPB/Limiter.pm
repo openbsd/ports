@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Limiter.pm,v 1.9 2023/05/02 09:41:25 espie Exp $
+# $OpenBSD: Limiter.pm,v 1.10 2023/05/06 05:20:31 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -15,8 +15,7 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-use strict;
-use warnings;
+use v5.36;
 
 # rate-limit some computation run.
 # this is a mixin-class.
@@ -27,16 +26,13 @@ use DPB::Util;
 use DPB::Clock;
 
 my $temp;
-sub setup
+sub setup($self, $logger)
 {
-	my ($self, $logger) = @_;	
-
 	$temp //= DPB::Util->make_hot($logger->append("performance"));
 }
 
-sub limit
+sub limit($self, $forced, $factor, $tag, $cond, $code)
 {
-	my ($self, $forced, $factor, $tag, $cond, $code) = @_;
 	$self->{ts} = Time::HiRes::time();
 	$self->{start} = 0;	# so we can register ourselves
 	$self->{next_check} //= $self->{ts};
@@ -71,9 +67,8 @@ sub limit
 	return $check_interval;
 }
 
-sub stopped_clock
+sub stopped_clock($self, $gap, $stopped)
 {
-	my ($self, $gap, $stopped) = @_;
 	$self->{start} += $gap;
 	if ($self->{ts} >= $stopped) {
 		$self->{ts} += $gap;

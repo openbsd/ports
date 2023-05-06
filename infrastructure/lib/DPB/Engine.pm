@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.149 2023/02/16 13:44:13 espie Exp $
+# $OpenBSD: Engine.pm,v 1.150 2023/05/06 05:20:31 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -15,8 +15,7 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-use strict;
-use warnings;
+use v5.36;
 
 use DPB::Limiter;
 use DPB::SubEngine;
@@ -38,9 +37,8 @@ use DPB::Util;
 
 # - it's responsible for (more or less) monitoring locks and errors
 
-sub new
+sub new($class, $state)
 {
-	my ($class, $state) = @_;
 	my $o = bless {built => DPB::HashQueue->new,
 	    tobuild => DPB::HashQueue->new,
 	    state => $state,
@@ -66,15 +64,13 @@ sub new
 	return $o;
 }
 
-sub dump_queue
+sub dump_queue($self, @l)
 {
-	my $self = shift;
-	$self->{buildable}->dump_queue(@_);
+	$self->{buildable}->dump_queue(@l);
 }
 
-sub build_subengine_class
+sub build_subengine_class($class, $state)
 {
-	my ($class, $state) = @_;
 	if ($state->{fetch_only}) {
 		return "DPB::SubEngine::Dummy";
 	} else {
@@ -83,9 +79,8 @@ sub build_subengine_class
 	}
 }
 
-sub fetch_subengine_class
+sub fetch_subengine_class($class, $state)
 {
-	my ($class, $state) = @_;
 	if ($state->{want_fetchinfo}) {
 		require DPB::SubEngine::Fetch;
 		return "DPB::SubEngine::Fetch";
@@ -94,9 +89,8 @@ sub fetch_subengine_class
 	}
 }
 
-sub roach_subengine_class
+sub roach_subengine_class($class, $state)
 {
-	my ($class, $state) = @_;
 	if ($state->{roach}) {
 		require DPB::SubEngine::Roach;
 		return "DPB::SubEngine::Roach";
@@ -106,15 +100,13 @@ sub roach_subengine_class
 }
 
 # forwarder for the wipe external command
-sub wipe
+sub wipe($o, @l)
 {
-	my $o = shift;
-	$o->{buildable}->start_wipe(@_);
+	$o->{buildable}->start_wipe(@l);
 }
 
-sub status
+sub status($self, $v)
 {
-	my ($self, $v) = @_;
 	# each path is in one location only
 	# this is not efficient but we don't care, as this is user ui
 	for my $k (qw(built tobuild installable buildable errors locks nfslist)) {
@@ -125,10 +117,8 @@ sub status
 	return undef;
 }
 
-sub recheck_errors
+sub recheck_errors($self)
 {
-	my $self = shift;
-
 	# XXX we can't do an OR because we want to run every single one
 	# even though we only care that one did break
 	my $problems = $self->{errors}->recheck($self) +
@@ -137,10 +127,8 @@ sub recheck_errors
 	return $problems != 0;
 }
 
-sub log_same_ts
+sub log_same_ts($self, $kind, $v = undef, $extra = '')
 {
-	my ($self, $kind, $v, $extra) = @_;
-	$extra //= '';
 	my $fh = $self->{log};
 	my $ts = DPB::Util->ts2string($self->{ts});
 	print $fh "$$\@$ts: $kind";
@@ -153,25 +141,22 @@ sub log_same_ts
 	print $fh "\n";
 }
 
-sub log
+sub log($self, @l)
 {
-	my $self = shift;
 	$self->{ts} = Time::HiRes::time();
-	$self->log_same_ts(@_);
+	$self->log_same_ts(@l);
 }
 
-sub log_as_built
+sub log_as_built($self, $v)
 {
-	my ($self, $v) = @_;
 	my $n = $v->fullpkgname;
 	my $fh = $self->{logger}->append("built-packages");
 	$self->{built_packages}++;
 	print $fh "$n.tgz\n";
 }
 
-sub flush_log
+sub flush_log($self)
 {
-	my $self = shift;
 	$self->{log}->flush;
 }
 
@@ -180,9 +165,8 @@ sub flush_log
 # on actual Q number, e.g., tries harder to
 # fetch if the queue is "low" (30, not tweakable)
 # and doesn't really care otherwise
-sub fetchcount
+sub fetchcount($self, $q)
 {
-	my ($self, $q)= @_;
 	return () if $self->{tofetch}->is_dummy;
 	if ($self->{state}{fetch_only}) {
 		$self->{tofetch}{queue}->set_fetchonly;
@@ -194,9 +178,8 @@ sub fetchcount
 	return ("F=".$self->{tofetch}->count);
 }
 
-sub statline
+sub statline($self)
 {
-	my $self = shift;
 	my $q = $self->{buildable}->count;
 	return join(" ",
 	    "I=".$self->{installable}->count,
@@ -207,9 +190,8 @@ sub statline
 }
 
 # see next method, don't bother adding stuff if not needed.
-sub may_add
+sub may_add($self, $prefix, $s)
 {
-	my ($self, $prefix, $s) = @_;
 	if ($s eq '') {
 		return '';
 	} else {
@@ -217,9 +199,8 @@ sub may_add
 	}
 }
 
-sub report_tty
+sub report_tty($self, $state)
 {
-	my ($self, $state) = @_;
 	my $q = $self->{buildable}->count;
 	my $t = $self->{tobuild}->count;
 	return join(" ",
@@ -230,15 +211,13 @@ sub report_tty
 	    $self->may_add("H=", $self->{nfslist}->stringize);
 }
 
-sub stats
+sub stats($self)
 {
-	my $self = shift;
 	$self->{stats}->log($self->{ts}, $self->statline);
 }
 
-sub report_notty
+sub report_notty($self, $state)
 {
-	my ($self, $state) = @_;
 	$self->{lasterrors} //= 0;
 	if (@{$self->{errors}} != $self->{lasterrors}) {
 		$self->{lasterrors} = @{$self->{errors}};
@@ -248,9 +227,8 @@ sub report_notty
 	}
 }
 
-sub adjust
+sub adjust($self, $v, $kind, $kind2 = undef)
 {
-	my ($self, $v, $kind, $kind2) = @_;
 	return 0 if !exists $v->{info}{$kind};
 	my $not_yet = 0;
 	# XXX don't use `values` in this loop, it may trigger perlbug 77706
@@ -271,9 +249,8 @@ sub adjust
 	return 0;
 }
 
-sub missing_dep
+sub missing_dep($self, $v, $kind)
 {
-	my ($self, $v, $kind) = @_;
 	return undef if !exists $v->{info}{$kind};
 	for my $d (values %{$v->{info}{$kind}}) {
 		return $d if (defined $d->{info}) && $d->{info}{IGNORE};
@@ -281,9 +258,8 @@ sub missing_dep
 	return undef;
 }
 
-sub stub_out
+sub stub_out($self, $v)
 {
-	my ($self, $v) = @_;
 	push(@{$self->{ignored}}, $v);
 
 	# keep the info if it exists, make sure it's stubbed out otherwise
@@ -301,9 +277,8 @@ sub stub_out
 
 # need to ignore $v because of some missing $kind dependency:
 # wipe out its info and put it in the right list
-sub should_ignore
+sub should_ignore($self, $v, $kind)
 {
-	my ($self, $v, $kind) = @_;
 	if (my $d = $self->missing_dep($v, $kind)) {
 		$self->log_same_ts('!', $v, "because of ".$d->fullpkgpath);
 		$self->stub_out($v);
@@ -313,9 +288,8 @@ sub should_ignore
 	}
 }
 
-sub has_known_depends
+sub has_known_depends($self, $v)
 {
-	my ($self, $v) = @_;
 	for my $kind (qw(DEPENDS BDEPENDS)) {
 		next unless defined $v->{info}{$kind};
 		for my $d (values %{$v->{info}{$kind}}) {
@@ -325,9 +299,8 @@ sub has_known_depends
 	return 1;
 }
 
-sub adjust_extra
+sub adjust_extra($self, $v, $kind, $kind2)
 {
-	my ($self, $v, $kind, $kind2) = @_;
 	return 0 if !exists $v->{info}{$kind};
 	my $not_yet = 0;
 	for my $d (values %{$v->{info}{$kind}}) {
@@ -351,9 +324,8 @@ sub adjust_extra
 	return 0;
 }
 
-sub adjust_distfiles
+sub adjust_distfiles($self, $v)
 {
-	my ($self, $v) = @_;
 	return 0 if !exists $v->{info}{FDEPENDS};
 	my $not_yet = 0;
 	for my $f (values %{$v->{info}{FDEPENDS}}) {
@@ -372,9 +344,8 @@ sub adjust_distfiles
 
 my $output = {};
 
-sub adjust_built
+sub adjust_built($self)
 {
-	my $self = shift;
 	my $changes = 0;
 
 	for my $v (values %{$self->{built}}) {
@@ -403,15 +374,13 @@ sub adjust_built
 	return $changes;
 }
 
-sub adjust_depends1
+sub adjust_depends1($self, $v, $has)
 {
-	my ($self, $v, $has) = @_;
 	$has->{$v} = $self->adjust($v, 'DEPENDS', 'BDEPENDS');
 }
 
-sub adjust_depends2
+sub adjust_depends2($self, $v, $has)
 {
-	my ($self, $v, $has) = @_;
 	if ($has->{$v} != 0) {
 		if (my $d = $self->should_ignore($v, 'DEPENDS')) {
 			delete $self->{tobuild}{$v};
@@ -452,10 +421,8 @@ sub adjust_depends2
 	}
 }
 
-sub adjust_tobuild
+sub adjust_tobuild($self)
 {
-	my $self = shift;
-
 	my $has = {};
 	for my $v (values %{$self->{tobuild}}) {
 		# XXX we don't have enough there !
@@ -473,11 +440,10 @@ sub adjust_tobuild
 	}
 }
 
-sub check_buildable
+sub check_buildable($self, $forced = 0)
 {
-	my ($self, $forced) = @_;
 	my $r = $self->limit($forced, 50, "ENG", 1,
-	    sub {
+	    sub() {
 		$self->log('+');
 		1 while $self->adjust_built;
 		$self->adjust_tobuild;
@@ -486,15 +452,13 @@ sub check_buildable
 	$self->stats;
 	return $r;
 }
-sub new_roach
+sub new_roach($self, $r)
 {
-	my ($self, $r) = @_;
 	$self->{toroach}->add($r);
 }
 
-sub new_path
+sub new_path($self, $v)
 {
-	my ($self, $v) = @_;
 	if (defined $v->{info}{IGNORE} && 
 	    !$self->{state}{fetch_only}) {
 		$self->log('!', $v, $v->{info}{IGNORE}->string);
@@ -537,9 +501,8 @@ sub new_path
 	$self->adjust_depends2($v, $has);
 }
 
-sub new_fetch_path
+sub new_fetch_path($self, $v)
 {
-	my ($self, $v) = @_;
 	if (defined $v->{info}{IGNORE} && 
 	    !$self->{state}{fetch_only}) {
 		$self->log('!', $v, $v->{info}{IGNORE}->string);
@@ -571,28 +534,24 @@ sub new_fetch_path
 	}
 }
 
-sub requeue
+sub requeue($self, $v)
 {
-	my ($self, $v) = @_;
 	$self->{buildable}->add($v);
 	$self->{sizer}->finished($v);
 }
 
-sub requeue_dist
+sub requeue_dist($self, $v)
 {
-	my ($self, $v) = @_;
 	$self->{tofetch}->add($v);
 }
 
-sub rescan
+sub rescan($self, $v)
 {
-	my ($self, $v) = @_;
 	push(@{$self->{requeued}}, $v->path);
 }
 
-sub add_fatal
+sub add_fatal($self, $v, $l, @messages)
 {
-	my ($self, $v, $l, @messages) = @_;
 	push(@{$self->{errors}}, $v);
 	my $error = join(' ', @$l);
 	if (length $error > 60) {
@@ -610,9 +569,8 @@ sub add_fatal
 	$self->stub_out($v);
 }
 
-sub rebuild_info
+sub rebuild_info($self, $core)
 {
-	my ($self, $core) = @_;
 	my @l = @{$self->{requeued}};
 	my %d = ();
 	$self->{requeued} = [];
@@ -639,54 +597,44 @@ sub rebuild_info
 	}
 }
 
-sub start_new_job
+sub start_new_job($self)
 {
-	my $self = shift;
 	my $r = $self->{buildable}->start;
 	$self->flush_log;
 	return $r;
 }
 
-sub start_new_fetch
+sub start_new_fetch($self)
 {
-	my $self = shift;
 	my $r = $self->{tofetch}->start;
 	$self->flush_log;
 	return $r;
 }
 
-sub start_new_roach
+sub start_new_roach($self)
 {
-	my $self = shift;
 	my $r = $self->{toroach}->start;
 	$self->flush_log;
 	return $r;
 }
 
-sub can_build
+sub can_build($self)
 {
-	my $self = shift;
-
 	return $self->{buildable}->non_empty || @{$self->{requeued}} > 0;
 }
 
-sub can_fetch
+sub can_fetch($self)
 {
-	my $self = shift;
 	return $self->{tofetch}->non_empty;
 }
 
-sub can_roach
+sub can_roach($self)
 {
-	my $self = shift;
 	return $self->{toroach}->non_empty;
 }
 
-sub dump_category
+sub dump_category($self, $k, $fh = \*STDOUT)
 {
-	my ($self, $k, $fh) = @_;
-	$fh //= \*STDOUT;
-
 	$k =~ m/^./;
 	my $q = "\u$&: ";
 	my $cache = {};
@@ -704,9 +652,8 @@ sub dump_category
 }
 
 
-sub info_dump
+sub info_dump($self, $fh)
 {
-	my ($self, $fh) = @_;
 	for my $k (qw(tobuild built)) {
 		$self->dump_category($k, $fh);
 	}
@@ -714,10 +661,8 @@ sub info_dump
 	print $fh "\n";
 }
 
-sub end_dump
+sub end_dump($self, $fh = \*STDOUT)
 {
-	my ($self, $fh) = @_;
-	$fh //= \*STDOUT;
 	for my $v (values %{$self->{built}}) {
 		$self->adjust($v, 'RDEPENDS');
 	}
@@ -727,16 +672,13 @@ sub end_dump
 	print $fh "\n";
 }
 
-sub smart_dump
+sub smart_dump($self, $fh)
 {
-	my ($self, $fh) = @_;
 	$self->{buildable}->smart_dump($fh);
 }
 
-sub dump
+sub dump($self, $fh = \*STDOUT)
 {
-	my ($self, $fh) = @_;
-	$fh //= \*STDOUT;
 	for my $k (qw(built tobuild installable)) {
 		$self->dump_category($k, $fh);
 	}
@@ -751,10 +693,8 @@ sub dump
 # use case: when we restart dpb after a few hours, we want the listing job
 # to get to gettext/iconv/gmake very quickly.
 
-sub dump_dependencies
+sub dump_dependencies($self)
 {
-	my $self = shift;
-
 	my $cache = {};
 	for my $v (DPB::PkgPath->seen) {
 		next unless exists $v->{info};
@@ -767,8 +707,7 @@ sub dump_dependencies
 	}
 	my $state = $self->{state};
 	$state->{log_user}->rewrite_file($state, $state->{dependencies_log},
-	    sub {
-	    	my $log = shift;
+	    sub($log) {
 		for my $k (sort {$cache->{$b} <=> $cache->{$a}} keys %$cache) {
 			print $log "$k $cache->{$k}\n" or return 0;
 		}
@@ -776,10 +715,8 @@ sub dump_dependencies
 	    });
 }
 
-sub find_best
+sub find_best($self, $file, $limit)
 {
-	my ($self, $file, $limit) = @_;
-
 	my $list = [];
 	if (open my $fh, '<', $file) {
 		my $i = 0;
@@ -797,9 +734,8 @@ sub find_best
 package DPB::Stats;
 use DPB::Clock;
 
-sub new
+sub new($class, $state)
 {
-	my ($class, $state) = @_;
 	my $o = bless { 
 	    fh => DPB::Util->make_hot($state->logger->append("stats")),
 	    delta => $state->{starttime},
@@ -809,9 +745,8 @@ sub new
 	return $o;
 }
 
-sub log
+sub log($self, $ts, $line)
 {
-	my ($self, $ts, $line) = @_;
 	return if $line eq $self->{statline};
 
 	$self->{statline} = $line;
@@ -819,9 +754,8 @@ sub log
 	    DPB::Util->ts2string($ts-$self->{delta}), $line), "\n";
 }
 
-sub stopped_clock
+sub stopped_clock($self, $gap)
 {
-	my ($self, $gap) = @_;
 	$self->{delta} += $gap;
 }
 

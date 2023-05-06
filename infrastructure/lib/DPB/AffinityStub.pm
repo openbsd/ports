@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: AffinityStub.pm,v 1.1 2013/10/13 18:23:35 espie Exp $
+# $OpenBSD: AffinityStub.pm,v 1.2 2023/05/06 05:20:31 espie Exp $
 #
 # Copyright (c) 2012-2013 Marc Espie <espie@openbsd.org>
 #
@@ -15,8 +15,7 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-use strict;
-use warnings;
+use v5.36;
 
 # single-host version of affinity, doesn't do much
 
@@ -25,39 +24,37 @@ package DPB::AffinityStub;
 use File::Path;
 use DPB::PkgPath;
 
-sub new
+sub new($class, $, $)
 {
-	my ($class, $state, $dir) = @_;
 	bless {}, $class;
 }
 
-sub start
+sub start($, $, $)
 {
 }
 
-sub unmark
+sub unmark($, $)
 {
 }
 
-sub finished
+sub finished($, $)
 {
 }
 
-sub retrieve_existing_markers
+sub retrieve_existing_markers($, $)
 {
 }
 
-sub simplifies_to
+sub simplifies_to($, $, $)
 {
 }
 
-sub sorted
+sub sorted($self, $queue, $core)
 {
-	my ($self, $queue, $core) = @_;
 	return $queue->sorted($core);
 }
 
-sub has_in_queue
+sub has_in_queue($, $)
 {
 }
 

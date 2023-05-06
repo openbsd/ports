@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Job.pm,v 1.21 2023/05/02 09:40:05 espie Exp $
+# $OpenBSD: Job.pm,v 1.22 2023/05/06 05:20:31 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -14,8 +14,7 @@
 # WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-use strict;
-use warnings;
+use v5.36;
 use DPB::Util;
 
 # a "job" is the actual stuff a core runs at some point.
@@ -24,50 +23,44 @@ use DPB::Util;
 
 package DPB::Task;
 # this is used to gc resources from a task (pipes for instance)
-sub end
+sub end($)
 {
 }
 
-sub code
+sub code($self, $core)
 {
-	my $self = shift;
 	return $self->{code};
 }
 
 # no name by default, just display the object
-sub name
+sub name($self)
 {
-	return shift;
+	return $self;
 }
 
-sub new
+sub new($class, $code = undef)
 {
-	my ($class, $code) = @_;
 	return bless {code => $code}, $class;
 }
 
 # TODO this should probably be called exec since we're after the fork
-sub run
+sub run($self, $core)
 {
-	my ($self, $core) = @_;
 	&{$self->code($core)}($core->shell);
 }
 
 # one single user so far: DPB::Signature::Task
-sub process
+sub process($self, $core)
 {
-	my ($self, $core) = @_;
 }
 
-sub finalize
+sub finalize($self, $core)
 {
-	my ($self, $core) = @_;
 	return $core->{status} == 0;
 }
 
-sub redirect_fh
+sub redirect_fh($self, $fh, $log)
 {
-	my ($self, $fh, $log) = @_;
 	close STDOUT;
 	open STDOUT, '>&', $fh or DPB::Util->die_bang("Can't write to $log");
 	close STDERR;
@@ -77,93 +70,81 @@ sub redirect_fh
 package DPB::Task::Pipe;
 our @ISA =qw(DPB::Task);
 
-sub fork
+sub fork($self, $core)
 {
-	my $self = shift;
 	open($self->{fh}, "-|");
 }
 
-sub end
+sub end($self)
 {
-	my $self = shift;
 	close($self->{fh});
 }
 
 
 package DPB::Task::Fork;
 our @ISA =qw(DPB::Task);
-sub fork
+sub fork($, $)
 {
 	CORE::fork();
 }
 
 package DPB::Job;
-sub next_task
+sub next_task($self, $core)
 {
-	my ($self, $core) = @_;
 	return shift @{$self->{tasks}};
 }
 
-sub name
+sub name($self)
 {
-	my $self = shift;
 	return $self->{name};
 }
 
-sub debug_dump
+sub debug_dump($self)
 {
-	my $self = shift;
 	return $self->{name};
 }
 
-sub finalize
+sub finalize($, @)
 {
 }
 
-sub watched
+sub watched($self, $, $)
 {
-	my $self = shift;
 	return $self->{status};
 }
 
-sub add_tasks
+sub add_tasks($self, @tasks)
 {
-	my ($self, @tasks) = @_;
 	push(@{$self->{tasks}}, @tasks);
 }
 
-sub replace_tasks
+sub replace_tasks($self, @tasks)
 {
-	my ($self, @tasks) = @_;
 	$self->{tasks} = [];
 	push(@{$self->{tasks}}, @tasks);
 }
 
-sub insert_tasks
+sub insert_tasks($self, @tasks)
 {
-	my ($self, @tasks) = @_;
 	unshift(@{$self->{tasks}}, @tasks);
 }
 
-sub really_watch
+sub really_watch($, $)
 {
 }
 
-sub new
+sub new($class, $name)
 {
-	my ($class, $name) = @_;
 	return bless {name => $name, status => ""}, $class;
 }
 
-sub set_status
+sub set_status($self, $status)
 {
-	my ($self, $status) = @_;
 	$self->{status} = $status;
 }
 
-sub cleanup_after_fork
+sub cleanup_after_fork($self)
 {
-        my $self = shift;
         $DB::inhibit_exit = 0;
         for my $sig (keys %SIG) {
                 $SIG{$sig} = 'DEFAULT';
@@ -173,19 +154,17 @@ sub cleanup_after_fork
 package DPB::Job::Normal;
 our @ISA =qw(DPB::Job);
 
-sub new
+sub new($class, $code, $endcode, $name)
 {
-	my ($class, $code, $endcode, $name) = @_;
 	my $o = $class->SUPER::new($name);
 	$o->{tasks} = [DPB::Task::Fork->new($code)];
 	$o->{endcode} = $endcode;
 	return $o;
 }
 
-sub finalize
+sub finalize($self, @parms)
 {
-	my $self = shift;
-	&{$self->{endcode}}(@_);
+	&{$self->{endcode}}(@parms);
 }
 
 # the common stuff for jobs that have a kind of watch log, e.g.,
@@ -194,9 +173,8 @@ sub finalize
 package DPB::Job::Watched;
 our @ISA =qw(DPB::Job::Normal);
 
-sub kill_on_timeout
+sub kill_on_timeout($self, $diff, $core, $msg)
 {
-	my ($self, $diff, $core, $msg) = @_;
 	my $to = $self->get_timeout($core);
 	return $msg if !defined $to || $diff <= $to;
 	local $> = 0;	# XXX switch to root, we don't know for sure which
@@ -205,15 +183,13 @@ sub kill_on_timeout
 	return $self->{stuck} = "KILLED: ".$self->killinfo." stuck at $msg";
 }
 
-sub killinfo
+sub killinfo($self)
 {
-	my $self = shift;
 	return $self->{current};
 }
 
-sub watched
+sub watched($self, $current, $core)
 {
-	my ($self, $current, $core) = @_;
 	my $w = $self->{watched};
 	return "" unless defined $w;
 	my $diff = $w->check_change($current);
@@ -232,15 +208,13 @@ sub watched
 
 package DPB::Job::Infinite;
 our @ISA = qw(DPB::Job);
-sub next_task
+sub next_task($job, $core)
 {
-	my $job = shift;
 	return $job->{task};
 }
 
-sub new
+sub new($class, $task, $name)
 {
-	my ($class, $task, $name) = @_;
 	my $o = $class->SUPER::new($name);
 	$o->{task} = $task;
 	return $o;
@@ -248,9 +222,8 @@ sub new
 
 package DPB::Job::Pipe;
 our @ISA = qw(DPB::Job);
-sub new
+sub new($class, $code, $name)
 {
-	my ($class, $code, $name) = @_;
 	my $o = $class->SUPER::new($name);
 	$o->{tasks} = [DPB::Task::Pipe->new($code)];
 	return $o;

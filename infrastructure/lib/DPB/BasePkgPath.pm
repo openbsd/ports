@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: BasePkgPath.pm,v 1.8 2019/10/15 13:45:04 espie Exp $
+# $OpenBSD: BasePkgPath.pm,v 1.9 2023/05/06 05:20:31 espie Exp $
 #
 # Copyright (c) 2010-2019 Marc Espie <espie@openbsd.org>
 #
@@ -14,8 +14,7 @@
 # WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-use strict;
-use warnings;
+use v5.36;
 use DPB::Util;
 
 # Handles PkgPath;
@@ -32,9 +31,8 @@ use DPB::Util;
 package DPB::BasePkgPath;
 my $cache = {};
 
-sub create
+sub create($class, $fullpkgpath)
 {
-	my ($class, $fullpkgpath) = @_;
 	# subdivide into flavors/multi
 	# XXX we want to preserve empty fields
 	my @list = split /,/, $fullpkgpath, -1;
@@ -67,18 +65,15 @@ sub create
 
 # cache just once, put into standard order, so that we don't
 # create different objects for path,f1,f2 and path,f2,f1
-sub normalize
+sub normalize($o)
 {
-	my $o = shift;
-
 	my $fullpkgpath = $o->fullpkgpath;
 	return $cache->{$fullpkgpath} //= $o;
 }
 
 # actual constructor
-sub new
+sub new($class, $fullpkgpath)
 {
-	my ($class, $fullpkgpath) = @_;
 	if (defined $cache->{$fullpkgpath}) {
 		return $cache->{$fullpkgpath};
 	} else {
@@ -86,14 +81,13 @@ sub new
 	}
 }
 
-sub seen
+sub seen($)
 {
 	return values %$cache;
 }
 
-sub basic_list
+sub basic_list($self)
 {
-	my $self = shift;
 	my @list = ($self->{p});
 	if (exists $self->{f}) {
 		if (keys %{$self->{f}}) {
@@ -105,16 +99,14 @@ sub basic_list
 	return @list;
 }
 
-sub debug_dump
+sub debug_dump($self)
 {
-	my $self = shift;
 	return $self->fullpkgpath;
 }
 
 # string version, with everything in a standard order
-sub fullpkgpath
+sub fullpkgpath($self)
 {
-	my $self = shift;
 	my @list = $self->basic_list;
 	if (defined $self->{m}) {
 		push(@list, $self->{m});
@@ -124,15 +116,13 @@ sub fullpkgpath
 	return join (',', @list);
 }
 
-sub pkgpath
+sub pkgpath($self)
 {
-	my $self = shift;
 	return $self->{p};
 }
 
-sub multi
+sub multi($self)
 {
-	my $self = shift;
 	if (defined $self->{m}) {
 		return $self->{m};
 	} elsif (exists $self->{m}) {
@@ -145,15 +135,13 @@ sub multi
 # without multi. Used by the SUBDIRs code to make sure we get the right
 # value for default subpackage.
 
-sub pkgpath_and_flavors
+sub pkgpath_and_flavors($self)
 {
-	my $self = shift;
 	return join (',', $self->basic_list);
 }
 
-sub add_to_subdirlist
+sub add_to_subdirlist($self, $list)
 {
-	my ($self, $list) = @_;
 	$list->{$self->pkgpath_and_flavors} = 1;
 }
 
@@ -173,9 +161,8 @@ sub add_to_subdirlist
 # yields devel/gmp,no_cxx,-main
 # as wanted.
 
-sub compose
+sub compose($class, $fullpkgpath, $pseudo)
 {
-	my ($class, $fullpkgpath, $pseudo) = @_;
 	my $o = $class->create($fullpkgpath);
 	if (defined $pseudo->{f}) {
 		$o->{f} = $pseudo->{f};
@@ -185,9 +172,8 @@ sub compose
 	return $o->normalize;
 }
 
-sub may_create
+sub may_create($n, $o, $h)
 {
-	my ($n, $o, $h) = @_;
 	my $k = $n->fullpkgpath;
 	if (defined $cache->{$k}) {
 		$n = $cache->{$k};
@@ -208,9 +194,8 @@ sub may_create
 
 # (also, in the above case, we get devel/gmp,-cxx as IGNORE'd)
 
-sub handle_equivalences
+sub handle_equivalences($class, $state, $todo, $want)
 {
-	my ($class, $state, $todo, $want) = @_;
 	my $h = {};
 	my $result = {};
 	for my $v (values %$todo) {
@@ -231,9 +216,8 @@ sub handle_equivalences
 	return $result;
 }
 
-sub zap_default
+sub zap_default($self, $subpackage)
 {
-	my ($self, $subpackage) = @_;
 	return $self unless defined $subpackage and defined $self->multi;
 	if ($subpackage eq $self->multi) {
 		my $o = bless {p => $self->{p}}, ref($self);
@@ -246,9 +230,8 @@ sub zap_default
 	}
 }
 
-sub handle_default_flavor
+sub handle_default_flavor($self, $h, $state)
 {
-	my ($self, $h, $state) = @_;
 
 	if (!defined $self->{f}) {
 		my $m = bless { p => $self->{p},
@@ -263,9 +246,8 @@ sub handle_default_flavor
 }
 
 # default subpackage leads to pkgpath,-default = pkgpath
-sub handle_default_subpackage
+sub handle_default_subpackage($self, $h, $state)
 {
-	my ($self, $h, $state) = @_;
 	my $m = $self->zap_default($self->subpackage);
 	if ($m ne $self) {
 		$m = $m->may_create($self, $h);

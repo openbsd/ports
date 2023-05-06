@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distant.pm,v 1.29 2022/06/03 07:45:37 espie Exp $
+# $OpenBSD: Distant.pm,v 1.30 2023/05/06 05:20:31 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -14,38 +14,35 @@
 # WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-use strict;
-use warnings;
+use v5.36;
 
 use DPB::Core;
 use OpenBSD::Paths;
 
 package DPB::Host::Distant;
 our @ISA = (qw(DPB::Host));
-sub shellclass
+sub shellclass($)
 {
 	return "DPB::Ssh";
 }
 
-sub is_localhost
+sub is_localhost($)
 {
 	return 0;
 }
 
-sub is_alive
+sub is_alive($self)
 {
-	my $self = shift;
 	return $self->shell->is_alive;
 }
 
-sub coreclass
+sub coreclass($)
 {
 	return "DPB::Core::Distant";
 }
 
-sub create
+sub create($class, $name, $prop)
 {
-	my ($class, $name, $prop) = @_;
 	my $o = $class->SUPER::create($name, $prop);
 	my $m = DPB::Ssh::Master->find($o);
 	for my $tries (0 .. 120) {
@@ -58,50 +55,43 @@ sub create
 package DPB::Ssh;
 our @ISA = qw(DPB::Shell::Chroot);
 
-sub ssh
+sub ssh($class, $socket)
 {
-	my ($class, $socket) = @_;
 	return ('ssh', '-S', $socket);
 }
 
-sub new
+sub new($class, $host)
 {
-	my ($class, $host) = @_;
 	return bless {
 	    master => DPB::Ssh::Master->find($host),
 	    prop => $host->{prop}
 	    }, $class;
 }
 
-sub is_alive
+sub is_alive($shell)
 {
-	my $shell = shift;
 	return $shell->{master}->is_alive;
 }
 
-sub socket
+sub socket($shell)
 {
-	my $shell = shift;
 	return $shell->{master}->socket;
 }
 
-sub hostname
+sub hostname($shell)
 {
-	my $shell = shift;
 	return $shell->{master}->hostname;
 }
 
-sub stringize_master_pid
+sub stringize_master_pid($shell)
 {
-	my $shell = shift;
 	my $pid = $shell->{master}{pid};
 
 	return " [$pid]";
 }
 
-sub _run
+sub _run($self, @cmd)
 {
-	my ($self, @cmd) = @_;
 	my $try = 0;
 	while (!-e $self->socket) {
 		sleep(1);
@@ -117,17 +107,15 @@ sub _run
 	    ($self->ssh($self->socket), '-T', $self->hostname, join(' ', @cmd));
 }
 
-sub quote
+sub quote($self, $cmd)
 {
-	my ($self, $cmd) = @_;
 	return "\"$cmd\"";
 }
 
 package DPB::Task::SshMaster;
 our @ISA = qw(DPB::Task::Fork);
-sub run
+sub run($self, $core)
 {
-	my $self = shift;
 	my $socket = $self->{socket};
 	unlink($socket);
 	my $timeout = $self->{timeout};
@@ -151,23 +139,21 @@ sub run
 }
 
 # we never error out
-sub finalize
+sub finalize($)
 {
 	return 1;
 }
 
-sub new
+sub new($class, $socket, $timeout, $host)
 {
-	my ($class, $socket, $timeout, $host) = @_;
 	bless {socket => $socket, timeout => $timeout, host => $host}, $class;
 }
 
 package DPB::Job::SshMaster;
 our @ISA = qw(DPB::Job::Infinite);
 
-sub new
+sub new($class, $host)
 {
-	my ($class, $host) = @_;
 	my $h = $host->name;
 	my $timeout = $host->{prop}{timeout} // 10;
 	my $socket = $host->{prop}{socket};
@@ -184,35 +170,29 @@ our @ISA = qw(DPB::Core::Special);
 
 my $master = {};
 
-sub socket
+sub socket($self)
 {
-	my $self = shift;
 	return $self->job->{socket};
 }
 
-sub timeout
+sub timeout($self)
 {
-	my $self = shift;
 	return $self->job->{timeout};
 }
 
-sub is_alive
+sub is_alive($self)
 {
-	my $self = shift;
 	return -e $self->socket;
 }
 
-sub create
+sub create($class, $host)
 {
-	my ($class, $host) = @_;
-
 	my $core = $class->SUPER::new($host);
 	$core->start_job(DPB::Job::SshMaster->new($host));
 }
 
-sub find
+sub find($class, $host)
 {
-	my ($class, $host) = @_;
 	$master->{$host->name} //= $class->create($host);
 }
 
@@ -220,9 +200,8 @@ package DPB::Core::Distant;
 our @ISA = qw(DPB::Core);
 my @dead_cores = ();
 
-sub mark_ready
+sub mark_ready($self)
 {
-	my $self = shift;
 	if ($self->is_alive) {
 		$self->SUPER::mark_ready;
 	} else {
@@ -232,7 +211,7 @@ sub mark_ready
 	}
 }
 
-sub check_dead_hosts
+sub check_dead_hosts()
 {
 	my @redo = @dead_cores;
 	@dead_cores = ();

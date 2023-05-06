@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Tty.pm,v 1.13 2019/11/08 10:26:09 espie Exp $
+# $OpenBSD: Tty.pm,v 1.14 2023/05/06 05:20:32 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -15,8 +15,7 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-use strict;
-use warnings;
+use v5.36;
 
 use DPB::MiniCurses;
 
@@ -25,29 +24,28 @@ use DPB::MiniCurses;
 package DPB::Reporter::Tty;
 our @ISA = qw(DPB::MiniCurses DPB::Reporter DPB::Limiter);
 
-sub handle_window
+sub handle_window($self)
 {
-	my $self = shift;
 	$self->set_cursor;
 	$self->SUPER::handle_window;
 }
 
-sub set_sig_handlers
+sub set_sig_handlers($self)
 {
-	my $self = shift;
 	$self->SUPER::set_sig_handlers;
-	OpenBSD::Handler->register(sub {
-		$self->reset_cursor; });
+	OpenBSD::Handler->register(
+	    sub {
+		$self->reset_cursor; 
+	    });
 }
 
-sub filter
+sub filter($)
 {
 	'report_tty';
 }
 
-sub create
+sub create($class, $state)
 {
-	my ($class, $state) = @_;
 	my $self = $class->SUPER::create($state);
 	$self->{record} = $state->{log_user}->open('>>', $state->{record})
 	    if defined $state->{record};
@@ -59,15 +57,14 @@ sub create
 	return $self;
 }
 
-sub report
+sub report($self, $force)
 {
-	my ($self, $force) = @_;
 	if ($self->{force}) {
 		$force = 1;
 		undef $self->{force};
 	}
 	$self->limit($force, 150, "REP", 1,
-	    sub {
+	    sub() {
 		my $msg = "";
 		for my $prod (@{$self->{producers}}) {
 			my $r = $prod->report_tty($self->{state});
@@ -90,10 +87,9 @@ sub report
 	    });
 }
 
-sub myprint
+sub myprint($self, @msg)
 {
-	my $self = shift;
-	for my $string (@_) {
+	for my $string (@msg) {
 		$string =~ s/^\t/       /gm; # XXX dirty hack for warn
 		$self->{extra} .= $string;
 	}

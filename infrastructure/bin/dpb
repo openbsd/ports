@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.146 2022/06/07 16:13:16 espie Exp $
+# $OpenBSD: dpb,v 1.147 2023/05/06 05:20:31 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -17,8 +17,7 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-use strict;
-use warnings;
+use v5.36;
 my $ports1;
 use FindBin;
 BEGIN {
@@ -48,9 +47,8 @@ use File::Basename;
 
 my $keep_going = 1;
 
-sub show_days
+sub show_days($days)
 {
-	my $days = shift;
 	if ($days == 0) {
 		return "";
 	} elsif ($days == 1) {
@@ -60,9 +58,9 @@ sub show_days
 	}
 }
 
-sub show_duration
+sub show_duration($e)
 {
-	my $secs = int(shift);
+	my $secs = int($e);
 
 	my $mn = int($secs/60);
 	my $hours = int($mn/60);
@@ -74,9 +72,8 @@ sub show_duration
 	return show_days($days).sprintf("%02d:%02d:%02d", $hours, $mn, $secs);
 }
 
-sub report_tty
+sub report_tty($self, $state)
 {
-	my ($self, $state) = @_;
 	$state->{socket_location} //= basename($state->{external}{path});
 	my $t = CORE::time();
 	return DPB::Util->time2string($t)." [$$] ".$state->{socket_location}.
@@ -84,7 +81,7 @@ sub report_tty
 		" elapsed: ".show_duration($t-$state->{starttime})."\n";
 }
 
-sub affinityclass
+sub affinityclass()
 {
 	if (DPB::Core::Init->hostcount > 1 || 
 	    DPB::HostProperties->has_mem) {
@@ -101,11 +98,10 @@ my $subdirlist = {};
 my $state = DPB::State->new;
 
 my $cleanup = 
-    sub {
-    	my $sig = shift;
+    sub($sig = 'INT') {
 	if ($$ == $state->{master_pid}) {
 		$> = 0;
-		DPB::Core->cleanup($sig // "INT", 0);
+		DPB::Core->cleanup($sig, 0);
 	}
 	eval { $state->{external}->cleanup; };
     };
@@ -127,34 +123,30 @@ $trace->set_reporter($state->{reporter});
 $state->{all} = 1;
 
 my $default_handling =
-    sub {
-	my ($pkgpath, $weight) = @_;
+    sub($p, $weight) {
 	if (defined $weight) {
-		$state->heuristics->set_weight($pkgpath);
+		$state->heuristics->set_weight($p);
 	}
-	$pkgpath->add_to_subdirlist($subdirlist);
+	$p->add_to_subdirlist($subdirlist);
 	$state->{all} = 0;
 };
 
 $state->interpret_paths(@{$state->{paths}}, @ARGV,
-    sub {
-	&$default_handling(@_);
+    sub($p, $weight = undef) {
+	&$default_handling($p, $weight);
     });
 $state->interpret_paths(@{$state->{ipaths}},
-    sub {
-	&$default_handling(@_);
-	my $p = shift;
+    sub($p, $weight = undef) {
+	&$default_handling($p, $weight);
 	$p->{wantinstall} = 1;
     });
 $state->interpret_paths(@{$state->{cpaths}},
-    sub {
-	my $p = shift;
+    sub($p, $weight = undef) {
 	$state->{dontclean}{$p->pkgpath} = 1;
     });
 
 $state->interpret_paths(@{$state->{xpaths}},
-    sub {
-	my $p = shift;
+    sub($p, $weight = undef) {
 	$p->{dontjunk} = 1;
     });
 
@@ -186,7 +178,7 @@ while (!DPB::Core->avail) {
 }
 
 # XXX placeholder
-sub reread_config
+sub reread_config()
 {
 }
 
@@ -204,9 +196,8 @@ my $debug = DPB::Util->make_hot($state->logger->append('debug'));
 $trace->set_logger($debug);
 
 # this shouldn't happen too often
-sub show_spinning
+sub show_spinning($name)
 {
-	my $name = shift;
 	my $q = $state->engine->{$name}{queue};
 	print $debug "SPINNING ON $name\n";
 	while (my ($k, $v) = each %{$q->{o}}) {
@@ -215,7 +206,7 @@ sub show_spinning
 }
 
 # this is the usual event loop
-sub handle_non_waiting_jobs
+sub handle_non_waiting_jobs()
 {
 	my $force_report = 0;
 	DPB::Core->reap;
@@ -255,7 +246,7 @@ sub handle_non_waiting_jobs
 	$state->{reporter}->report($force_report);
 }
 
-sub main_loop
+sub main_loop()
 {
 	while (1) {
 		while (1) {

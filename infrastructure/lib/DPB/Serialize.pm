@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Serialize.pm,v 1.4 2019/10/23 10:05:28 espie Exp $
+# $OpenBSD: Serialize.pm,v 1.5 2023/05/06 05:20:31 espie Exp $
 #
 # Copyright (c) 2013 Marc Espie <espie@openbsd.org>
 #
@@ -15,16 +15,13 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-use strict;
-use warnings;
+use v5.36;
 
 # use to read/write some log files in a sensible fashion
 package DPB::Serialize;
 
-sub read
+sub read($class, $line)
 {
-	my ($class, $line) = @_;
-
 	chomp $line;
 	my @list = $class->list;
 	my $r = {};
@@ -52,15 +49,13 @@ sub read
 	return $r;
 }
 
-sub numbers
+sub numbers($class)
 {
 	return {time => 1, size => 1, ts => 1};
 }
 
-sub write
+sub write($class, $r)
 {
-	my ($class, $r) = @_;
-
 	$r->{ts} //= DPB::Util->current_ts;
 	my @r = ();
 	if ($r->{pkgname}) {
@@ -78,14 +73,14 @@ sub write
 
 package DPB::Serialize::Build;
 our @ISA = qw(DPB::Serialize);
-sub list
+sub list($)
 {
 	return (qw(host time size ts));
 }
 
 package DPB::Serialize::Size;
 our @ISA = qw(DPB::Serialize);
-sub list
+sub list($)
 {
 	return (qw(size ts));
 }

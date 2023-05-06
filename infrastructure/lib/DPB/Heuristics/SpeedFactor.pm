@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: SpeedFactor.pm,v 1.2 2013/10/12 14:11:23 espie Exp $
+# $OpenBSD: SpeedFactor.pm,v 1.3 2023/05/06 05:20:31 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -15,8 +15,7 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-use strict;
-use warnings;
+use v5.36;
 
 # this is the optional classes that are only used when speed factors are
 # involved
@@ -25,16 +24,14 @@ use warnings;
 
 package DPB::Heuristics::Bin::Heavy;
 our @ISA = qw(DPB::Heuristics::Bin);
-sub add
+sub add($self, $v)
 {
-	my ($self, $v) = @_;
 	$self->SUPER::add($v);
 	$self->{weight} += $DPB::Heuristics::weight{$v};
 }
 
-sub remove
+sub remove($self, $v)
 {
-	my ($self, $v) = @_;
 	$self->{weight} -= $DPB::Heuristics::weight{$v};
 	$self->SUPER::remove($v);
 }
@@ -44,9 +41,8 @@ package DPB::Heuristics::Queue::Part;
 our @ISA = qw(DPB::Heuristics::Queue);
 
 # 20 bins, binary....
-sub find_bin
+sub find_bin($w)
 {
-	my $w = shift;
 	return 10 if !defined $w;
 	if ($w > 65536) {
 		if ($w > 1048576) { 9 } else { 8 }
@@ -59,24 +55,21 @@ sub find_bin
 	} elsif ($w > 4) { 1 } else { 0 }
 }
 
-sub add
+sub add($self, $v)
 {
-	my ($self, $v) = @_;
 	$self->SUPER::add($v);
 	$v->{weight} = $DPB::Heuristics::weight{$v};
 	$self->{bins}[find_bin($v->{weight})]->add($v);
 }
 
-sub remove
+sub remove($self, $v)
 {
-	my ($self, $v) = @_;
 	$self->SUPER::remove($v);
 	$self->{bins}[find_bin($v->{weight})]->remove($v);
 }
 
-sub find_sorter
+sub find_sorter($self, $core)
 {
-	my ($self, $core) = @_;
 	my $all = DPB::Core->all_sf;
 	if ($core->sf > $all->[-1] - 1) {
 		return $self->SUPER::find_sorter($core);
@@ -87,10 +80,8 @@ sub find_sorter
 }
 
 # simpler partitioning
-sub bin_part
+sub bin_part($self, $wanted, $all_sf)
 {
-	my ($self, $wanted, $all_sf) = @_;
-
 	# note that all_sf is sorted
 
 	# compute totals
@@ -127,9 +118,8 @@ sub bin_part
 	return $result;
 }
 
-sub new
+sub new($class, $h)
 {
-	my ($class, $h) = @_;
 	my $o = $class->SUPER::new($h);
 	my $bins = $o->{bins} = [];
 	for my $i (0 .. 9) {

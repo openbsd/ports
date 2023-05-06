@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: HostProperties.pm,v 1.18 2023/05/02 09:39:00 espie Exp $
+# $OpenBSD: HostProperties.pm,v 1.19 2023/05/06 05:20:31 espie Exp $
 #
 # Copyright (c) 2010-2019 Marc Espie <espie@openbsd.org>
 #
@@ -15,8 +15,7 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-use strict;
-use warnings;
+use v5.36;
 
 # HostProperties is basically a hash of properties associated to a host
 #   this contains the tricky stuff
@@ -41,17 +40,14 @@ my $has_sf = 0;
 my $has_mem = 0;
 my $sf;
 
-sub new
+sub new($class, $default = {})
 {
-	my ($class, $default) = @_;
-	$default //= {};
 	# XXX that weird construct ensures we get a copy of the hash
 	return bless {%$default}, $class;
 }
 
-sub add_overrides
+sub add_overrides($prop, $override)
 {
-	my ($prop, $override) = @_;
 	while (my ($k, $v) = each %$override) {
 		$prop->{$k} = $v;
 	}
@@ -61,19 +57,18 @@ sub add_overrides
 	}
 }
 
-sub has_sf
+sub has_sf($)
 {
 	return $has_sf;
 }
 
-sub has_mem
+sub has_mem($)
 {
 	return $has_mem;
 }
 
-sub finalize
+sub finalize($prop)
 {
-	my $prop = shift;
 	$prop->{sf} //= 1;
 	$prop->{umask} //= sprintf("0%o", umask);
 	if (defined $prop->{stuck}) {
@@ -123,16 +118,14 @@ sub finalize
 	return $prop;
 }
 
-sub finalize_with_overrides
+sub finalize_with_overrides($self, $overrides)
 {
-	my ($self, $overrides) = @_;
 	$self->add_overrides($overrides);
 	return $self->finalize;
 }
 
-sub taint
+sub taint($self, $v)
 {
-	my ($self, $v) = @_;
 	my $t2 = $v->{info}->has_property('tag');
 	if (!defined $t2) {
 		return;
@@ -149,16 +142,14 @@ sub taint
 	}
 }
 
-sub untaint
+sub untaint($self)
 {
-	my $self = shift;
 	delete $self->{tainted};
 	delete $self->{tainted_source};
 }
 
-sub taint_incompatible
+sub taint_incompatible($self, $v)
 {
-	my ($self, $v) = @_;
 	my $t1 = $self->{tainted};
 
 	if (!defined $t1) {

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Logger.pm,v 1.25 2017/06/20 15:46:18 espie Exp $
+# $OpenBSD: Logger.pm,v 1.26 2023/05/06 05:20:31 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -15,8 +15,7 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-use strict;
-use warnings;
+use v5.36;
 use DPB::User;
 
 package DPB::Logger;
@@ -25,9 +24,8 @@ use File::Path;
 use File::Basename;
 use IO::File;
 
-sub new
+sub new($class, $state)
 {
-	my ($class, $state) = @_;
 	if (!defined $state->{log_user}) {
 		die "Too early";
 	}
@@ -35,17 +33,15 @@ sub new
 	    clean => $state->opt('c')}, $class;
 }
 
-sub logfile
+sub logfile($self, $name)
 {
-	my ($self, $name) = @_;
 	my $log = "$self->{logdir}/$name.log";
 	$self->make_path(File::Basename::dirname($log));
 	return $log;
 }
 
-sub _open
+sub _open($self, $mode, $name)
 {
-	my ($self, $mode, $name) = @_;
 	my $log = $self->logfile($name);
 	my $fh = $self->open($mode, $log);
 	if (defined $fh) {
@@ -55,34 +51,28 @@ sub _open
 	}
 }
 
-sub append
+sub append($self, $name)
 {
-	die if @_ > 2;
-	my ($self, $name) = @_;
 	return $self->_open('>>', $name);
 }
 
-sub create
+sub create($self, $name)
 {
-	my ($self, $name) = @_;
 	return $self->_open('>', $name);
 }
 
-sub log_pkgpath
+sub log_pkgpath($self, $v)
 {
-	my ($self, $v) = @_;
 	return $self->logfile("/paths/".$v->fullpkgpath);
 }
 
-sub testlog_pkgpath
+sub testlog_pkgpath($self, $v)
 {
-	my ($self, $v) = @_;
 	return $self->logfile("/tests/".$v->fullpkgpath);
 }
 
-sub log_pkgname
+sub log_pkgname($self, $v)
 {
-	my ($self, $v) = @_;
 	if ($v->has_fullpkgname) {
 		return $self->logfile("/packages/".$v->fullpkgname);
 	} else {
@@ -90,11 +80,10 @@ sub log_pkgname
 	}
 }
 
-sub link
+sub link($self, $a, $b)
 {
-	my ($self, $a, $b) = @_;
 	$self->run_as(
-	    sub {
+	    sub() {
 		if ($self->{clean}) {
 			unlink($b);
 		}
@@ -106,9 +95,8 @@ sub link
 	    });
 }
 
-sub make_logs
+sub make_logs($self, $v)
 {
-	my ($self, $v) = @_;
 	my $log = $self->log_pkgpath($v);
 	if ($self->{clean}) {
 		$self->unlink($log);
@@ -122,18 +110,16 @@ sub make_logs
 	return ($log, $fh);
 }
 
-sub make_test_logs
+sub make_test_logs($self, $v)
 {
-	my ($self, $v) = @_;
 	my $log = $self->testlog_pkgpath($v);
 	if ($self->{clean}) {
 		$self->unlink($log);
 	}
 }
 
-sub log_error
+sub log_error($self, $v, @messages)
 {
-	my ($self, $v, @messages) = @_;
 	my ($log, $fh) = $self->make_logs($v);
 	for my $msg (@messages) {
 		print $fh $msg, "\n";
@@ -141,17 +127,15 @@ sub log_error
 	$v->print_parent($fh);
 }
 
-sub make_distlogs
+sub make_distlogs($self, $f)
 {
-	my ($self, $f) = @_;
 	return $self->logfile("/dist/".$f->{name});
 }
 
-sub make_log_link
+sub make_log_link($self, $v)
 {
-	my ($self, $v) = @_;
 	$self->run_as(
-	    sub {
+	    sub() {
 		my $file = $self->log_pkgname($v);
 		# we were built, but we don't link, so try the main pkgpath.
 		if (!-e $file) {

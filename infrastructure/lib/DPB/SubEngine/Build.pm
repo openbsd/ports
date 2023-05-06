@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Build.pm,v 1.24 2019/05/12 14:09:11 espie Exp $
+# $OpenBSD: Build.pm,v 1.25 2023/05/06 05:20:32 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -15,14 +15,12 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-use strict;
-use warnings;
+use v5.36;
 
 package DPB::SubEngine::Build;
 our @ISA = qw(DPB::SubEngine::BuildBase);
-sub new
+sub new($class, $engine, $builder)
 {
-	my ($class, $engine, $builder) = @_;
 	my $o = $class->SUPER::new($engine, $builder);
 	$o->{toinstall} = [];
 	$o->{nfs} = {};
@@ -30,10 +28,8 @@ sub new
 }
 
 
-sub preempt_core
+sub preempt_core($self, $core)
 {
-	my ($self, $core) = @_;
-
 	if ($self->SUPER::preempt_core($core)) {
 		return 1;
 	}
@@ -48,10 +44,8 @@ sub preempt_core
 	return 0;
 }
 
-sub can_start_build
+sub can_start_build($self, $v, $core)
 {
-	my ($self, $v, $core) = @_;
-
 	if ($self->check_for_memory_hogs($v, $core)) {
 		push(@{$self->{mismatches}}, $v);
 		return 0;
@@ -100,9 +94,8 @@ sub can_start_build
 }
 
 # we cheat a bit to standardize built paths
-sub can_really_start_build
+sub can_really_start_build($self, $v, $core)
 {
-	my ($self, $v, $core) = @_;
 	for my $w (sort {$a->fullpkgpath cmp $b->fullpkgpath} 
 	    $v->build_path_list) {
 	    	next unless $self->{queue}->contains($w);
@@ -116,9 +109,8 @@ sub can_really_start_build
 	return 0;
 }
 
-sub check_for_memory_hogs
+sub check_for_memory_hogs($self, $v, $core)
 {
-	my ($self, $v, $core) = @_;
 	if ($v->{info}->has_property('memoryhog')) {
 		for my $job ($core->same_host_jobs) {
 			if ($job->{v}{info}->has_property('memoryhog')) {
@@ -129,9 +121,8 @@ sub check_for_memory_hogs
 	return 0;
 }
 
-sub can_be_junked
+sub can_be_junked($self, $v, $core)
 {
-	my ($self, $v, $core) = @_;
 	my $tag = $v->{info}->has_property('tag');
 	for my $job ($core->same_host_jobs) {
 		if ($job->{nojunk}) {
@@ -150,10 +141,8 @@ sub can_be_junked
 	return 1;
 }
 
-sub recheck_mismatches
+sub recheck_mismatches($self, $core)
 {
-	my ($self, $core) = @_;
-
 	# first let's try to force junking
 	if (@{$self->{tag_mismatches}} > 0) {
 		for my $v (@{$self->{tag_mismatches}}) {
@@ -189,15 +178,13 @@ sub recheck_mismatches
 	return 0;
 }
 
-sub will_install
+sub will_install($self, $v)
 {
-	my ($self, $v) = @_;
 	push(@{$self->{toinstall}}, $v);
 }
 
-sub start_install
+sub start_install($self, $core)
 {
-	my ($self, $core) = @_;
 	return 0 unless $core->is_local;
 	if (my $v = pop @{$self->{toinstall}}) {
 		$self->{builder}->install($v, $core);
@@ -207,15 +194,13 @@ sub start_install
 	}
 }
 
-sub non_empty
+sub non_empty($self)
 {
-	my $self = shift;
 	return  $self->SUPER::non_empty || @{$self->{toinstall}} > 0;
 }
 
-sub mark_as_done
+sub mark_as_done($self, $v)
 {
-	my ($self, $v) = @_;
 	$self->{engine}{affinity}->unmark($v);
 	delete $self->{engine}{tobuild}{$v};
 	delete $v->{info}{DIST};
@@ -232,9 +217,8 @@ sub mark_as_done
 }
 
 # special case: some of those paths can't be built
-sub remove_stub
+sub remove_stub($self, $v)
 {
-	my ($self, $v) = @_;
 	if ($v->{info}->is_stub) {
 		$self->{engine}{affinity}->unmark($v);
 		delete $self->{engine}{tobuild}{$v};
@@ -244,9 +228,8 @@ sub remove_stub
 	return 0;
 }
 
-sub is_done_or_enqueue
+sub is_done_or_enqueue($self, $v)
 {
-	my ($self, $v) = @_;
 	my $okay = 1;
 	for my $w ($v->build_path_list) {
 		next if $self->remove_stub($w);
@@ -260,9 +243,8 @@ sub is_done_or_enqueue
 	return $okay;
 }
 
-sub is_done
+sub is_done($self, $v)
 {
-	my ($self, $v) = @_;
 	if ($self->{builder}->check($v)) {
 		for my $w ($v->build_path_list) {
 			next if $v eq $w;
@@ -274,9 +256,8 @@ sub is_done
 	return $self->is_done_quick($v);
 }
 
-sub is_done_quick
+sub is_done_quick($self, $v)
 {
-	my ($self, $v) = @_;
 	if ($self->{builder}->check($v)) {
 		$self->mark_as_done($v);
 		return 1;
@@ -285,91 +266,79 @@ sub is_done_quick
 	}
 }
 
-sub key_for_doing
+sub key_for_doing($self, $v)
 {
-	my ($self, $v) = @_;
 	return $v->pkgpath;
 }
 
-sub already_done
+sub already_done($self, $v)
 {
-	my ($self, $v) = @_;
 	$self->{engine}{logger}->make_log_link($v);
 }
 
-sub start_build
+sub start_build($self, $v, $core, $lock)
 {
-	my ($self, $v, $core, $lock) = @_;
 	$self->log('J', $v, " ".$core->hostname);
 	$core->prop->taint($v);
 	$self->{builder}->build($v, $core, $lock, 
-	    sub {
-	    	my $fail = shift;
+	    sub($fail) {
 	    	$self->end($core, $v, $fail);
 	    });
 }
 
-sub start_wipe
+sub start_wipe($self, $v, $core)
 {
-	my ($self, $v, $core) = @_;
 	$self->log('W', $v, " ".$core->hostname);
 	$self->{builder}->wipe($v, $core,
-	    sub {
-	    	my $fail = shift;
+	    sub($fail) {
 	    	$self->end_build($v);
 		$self->log('N', $v);
 		$self->{engine}{locker}->unlock($v);
 	    });
 }
 
-sub force_junk
+sub force_junk($self, $core)
 {
-	my ($self, $core) = @_;
 	my $v = JunkPath->new;
 	$self->log('J', $v, " ".$core->hostname);
 	$self->{builder}->force_junk($v, $core,
-	    sub {
-		my $fail = shift;
+	    sub($fail) {
 		$self->log($fail ? 'E': 'B' , $v, " ".$core->hostname);
 	    });
 }
 
-sub end_build
+sub end_build($self, $v)
 {
-	my ($self, $v) = @_;
 	$self->{engine}{affinity}->finished($v);
 	$self->{engine}{sizer}->finished($v);
 }
 
-sub sorted
+sub sorted($self, $core)
 {
-	my ($self, $core) = @_;
 	return $self->{engine}{affinity}->sorted($self->{queue}, $core);
 }
 
-sub add
+sub add($self, $v)
 {
-	my ($self, $v) = @_;
 	$self->{engine}{affinity}->has_in_queue($v);
 	$self->SUPER::add($v);
 }
 
 package JunkPath;
 our @ISA = qw(DPB::PkgPath);
-sub new
+sub new($class)
 {
-	my $class = shift;
 	my $v = bless {}, $class;
 	DPB::PortInfo->new($v);
 	return $v;
 }
 
-sub fullpkgpath
+sub fullpkgpath($)
 {
 	return "junk-proxy";
 }
 
-sub forcejunk
+sub forcejunk($)
 {
 	return 1;
 }

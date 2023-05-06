@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.26 2021/05/02 06:08:53 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.27 2023/05/06 05:20:31 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -14,35 +14,31 @@
 # WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-use strict;
-use warnings;
+use v5.36;
 
 package DPB::Task::Checksum;
 our @ISA = qw(DPB::Task::Fork);
 
-sub new
+sub new($class, $fetcher, $status)
 {
-	my ($class, $fetcher, $status) = @_;
 	bless {fetcher => $fetcher, fetch_status => $status}, $class;
 }
 
-sub want_frozen
+sub want_frozen($)
 { 0 }
 
-sub want_percent
+sub want_percent($)
 { 0 }
 
-sub run
+sub run($self, $core)
 {
-	my ($self, $core) = @_;
 	my $job = $core->job;
 	$self->redirect_fh($job->{logfh}, $job->{log});
 	exit(!$job->{file}->checksum($job->{file}->tempfilename));
 }
 
-sub finalize
+sub finalize($self, $core)
 {
-	my ($self, $core) = @_;
 	$self->SUPER::finalize($core);
 	my $job = $core->job;
 	if ($core->{status} != 0) {
@@ -51,7 +47,7 @@ sub finalize
 		# full size.
 		if (defined $self->{fetcher}{initial_sz}) {
 			$job->{fetcher}->run_as(
-			    sub {
+			    sub() {
 				unlink($job->{file}->tempfilename);
 			    });
 		} else {
@@ -60,7 +56,7 @@ sub finalize
 		return $job->bad_file($self->{fetcher}, $core);
 	}
 	$job->{fetcher}->run_as(
-	    sub {
+	    sub() {
 		rename($job->{file}->tempfilename, $job->{file}->filename);
 	    });
 	print {$job->{logfh}} "Renamed to ", $job->{file}->filename, "\n";
@@ -85,22 +81,20 @@ sub finalize
 package DPB::Task::Fetch;
 our @ISA = qw(DPB::Task::Clocked);
 
-sub stopped_clock
+sub stopped_clock($self, $gap)
 {
-	my ($self, $gap) = @_;
 	# note that we're missing time
 	$self->{got_suspended}++;
 	$self->SUPER::stopped_clock($gap);
 }
 
-sub backup_class
+sub backup_class($)
 {
 	'DPB::Task::FetchFromBackup'
 }
 
-sub new
+sub new($class, $job)
 {
-	my ($class, $job) = @_;
 	my $o;
 	if (@{$job->{sites}}) {
 		$o = bless { site => $job->{sites}[0]}, $class;
@@ -118,15 +112,13 @@ sub new
 	}
 }
 
-sub filename
+sub filename($self, $info)
 {
-	my ($self, $info) = @_;
 	return $info->{short};
 }
 
-sub run
+sub run($self, $core)
 {
-	my ($self, $core) = @_;
 	my $job = $core->job;
 	my $site = $self->{site};
 	$site =~ s/^\"(.*)\"$/$1/;
@@ -144,9 +136,8 @@ sub run
 	$core->shell->nochroot->exec(@cmd);
 }
 
-sub finalize
+sub finalize($self, $core)
 {
-	my ($self, $core) = @_;
 	$self->SUPER::finalize($core);
 	my $job = $core->job;
 	if ($job->{file}->checksize($job->{file}->tempfilename)) {
@@ -171,18 +162,17 @@ sub finalize
 	}
 }
 
-sub want_frozen
+sub want_frozen($)
 { 1 }
 
-sub want_percent
+sub want_percent($)
 { 1 }
 
 package DPB::Task::FetchFromBackup;
 our @ISA=qw(DPB::Task::Fetch);
 
-sub filename
+sub filename($self, $info)
 {
-	my ($self, $info) = @_;
 	return $info->{name};
 }
 
@@ -193,9 +183,8 @@ our @ISA = qw(DPB::Job::Watched);
 use File::Path;
 use File::Basename;
 
-sub new_fetch_task
+sub new_fetch_task($self)
 {
-	my $self = shift;
 	my $task = DPB::Task::Fetch->new($self);
 	if ($task) {
 		push(@{$self->{tasks}}, $task);
@@ -206,16 +195,13 @@ sub new_fetch_task
 	}
 }
 
-sub next_site
+sub next_site($self)
 {
-	my $self = shift;
-
 	shift @{$self->{sites}} || shift @{$self->{bak}};
 }
 
-sub bad_file
+sub bad_file($job, $task, $core)
 {
-	my ($job, $task, $core) = @_;
 	my $fh = $job->{file}->logger->append("fetch/bad");
 	print $fh $task->{site}.$job->{file}{short}, "\n";
 	if ($job->new_fetch_task) {
@@ -227,15 +213,13 @@ sub bad_file
 	}
 }
 
-sub new_checksum_task
+sub new_checksum_task($self, $fetcher, $status)
 {
-	my ($self, $fetcher, $status) = @_;
 	push(@{$self->{tasks}}, DPB::Task::Checksum->new($fetcher, $status));
 }
 
-sub new
+sub new($class, $file, $e, $fetcher, $logger)
 {
-	my ($class, $file, $e, $fetcher, $logger) = @_;
 	my $job = bless {
 		# need to copy those arrays because we're going to
 		# destroy them, and they are shared between distfiles
@@ -259,22 +243,19 @@ sub new
 	return $job;
 }
 
-sub killinfo
+sub killinfo($self)
 {
-	my $self = shift;
 	return $self->{file};
 }
 
-sub name
+sub name($self)
 {
-	my $self = shift;
 	my $extra = $self->{task}->want_percent ? "" : " cksum...";
 	return '<'.$self->{file}->{name}."(#".$self->{tries}.")".$extra;
 }
 
-sub get_timeout
+sub get_timeout($self, $core)
 {
-	my ($self, $core) = @_;
 	return $core->fetch_timeout;
 }
 

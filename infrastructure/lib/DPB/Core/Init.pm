@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Init.pm,v 1.48 2023/05/02 10:07:39 espie Exp $
+# $OpenBSD: Init.pm,v 1.49 2023/05/06 05:20:31 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -14,23 +14,20 @@
 # WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-use strict;
-use warnings;
+use v5.36;
 use DPB::Core;
 
 # this is the code responsible for initializing all cores
 
 package DPB::Task::Ncpu;
 our @ISA = qw(DPB::Task::Pipe);
-sub run
+sub run($self, $core)
 {
-	my ($self, $core) = @_;
 	$core->shell->exec(OpenBSD::Paths->sysctl, '-n', 'hw.ncpuonline');
 }
 
-sub finalize
+sub finalize($self, $core)
 {
-	my ($self, $core) = @_;
 	my $fh = $self->{fh};
 	if ($core->{status} == 0) {
 		my $line = <$fh>;
@@ -45,15 +42,13 @@ sub finalize
 
 package DPB::Task::WhoAmI;
 our @ISA = qw(DPB::Task::Pipe);
-sub run
+sub run($self, $core)
 {
-	my ($self, $core) = @_;
 	$core->shell->nochroot->exec('/usr/bin/whoami');
 }
 
-sub finalize
+sub finalize($self, $core)
 {
-	my ($self, $core) = @_;
 	my $fh = $self->{fh};
 	if ($core->{status} == 0) {
 		my $line = <$fh>;
@@ -61,7 +56,7 @@ sub finalize
 		if ($line =~ m/^root$/) {
 			$core->prop->{iamroot} = 1;
 		} 
-		&{$self->{extra_code}};
+		&{$self->{extra_code}}();
 	}
 	close($fh);
 	return $core->{status} == 0;
@@ -71,19 +66,16 @@ package DPB::Job::Init;
 our @ISA = qw(DPB::Job);
 use DPB::Signature;
 
-sub new
+sub new($class, $logger)
 {
-	my ($class, $logger) = @_;
 	my $o = $class->SUPER::new('init');
 	$o->{logger} = $logger;
 	return $o;
 }
 
 # if everything is okay, we mark our jobs as ready
-sub finalize
+sub finalize($self, $core)
 {
-	my ($self, $core) = @_;
-
 	if ($core->{status} != 0) {
 		return 0;
 	}
@@ -128,20 +120,18 @@ package DPB::Core::Init;
 our @ISA = qw(DPB::Core::WithJobs);
 my $init = {};
 
-sub new
+sub new($class, $host)
 {
-	my ($class, $host) = @_;
 	return $init->{$host->name} //= $host->new_init_core;
 }
 
-sub hostcount
+sub hostcount($)
 {
 	return scalar(keys %$init);
 }
 
-sub taint
+sub taint($class, $host, $tag, $source)
 {
-	my ($class, $host, $tag, $source) = @_;
 	if (defined $init->{$host}) {
 		$init->{$host}->prop->{tainted} = $tag;
 		$init->{$host}->prop->{tainted_source} = $source;
@@ -149,7 +139,7 @@ sub taint
 }
 
 
-sub alive_hosts
+sub alive_hosts()
 {
 	my @l = ();
 	while (my ($host, $c) = each %$init) {
@@ -165,7 +155,7 @@ sub alive_hosts
 	return "Hosts: ".join(' ', sort(@l))."\n";
 }
 
-sub changed_hosts
+sub changed_hosts()
 {
 	my @l = ();
 	while (my ($host, $c) = each %$init) {
@@ -186,14 +176,13 @@ sub changed_hosts
 
 DPB::Core->register_report(\&alive_hosts, \&changed_hosts);
 
-sub cores
+sub cores($)
 {
 	return values %$init;
 }
 
-sub add_startup
+sub add_startup($self, $core, $state, $logger, $job, @startup)
 {
-	my ($self, $core, $state, $logger, $job, @startup) = @_;
 	my $fetch = $state->{fetch_user};
 	my $prop = $core->prop;
 	my $build = $prop->{build_user};
@@ -218,9 +207,8 @@ sub add_startup
 	));
 }
 
-sub init_core
+sub init_core($self, $core, $state)
 {
-	my ($self, $core, $state) = @_;
 	my $logger = $state->logger;
 	my $startup = $state->{startup_script};
 	my $stale = $state->stalelocks;
@@ -233,7 +221,7 @@ sub init_core
 	my $job = DPB::Job::Init->new($logger);
 	my $t = DPB::Task::WhoAmI->new;
 	# XXX can't get these before I know who I am
-	$t->{extra_code} = sub {
+	$t->{extra_code} = sub() {
 	    my $prop = $core->prop;
 	    ($prop->{wrkobjdir}, $prop->{portslockdir}) = 
 		DPB::Vars->get($core->shell, $state, 
@@ -272,10 +260,8 @@ sub init_core
 	$core->start_job($job);
 }
 
-sub init_cores
+sub init_cores($self, $state)
 {
-	my ($self, $state) = @_;
-
 	DPB::Core->set_logdir($state->logger->{logdir});
 	if (values %$init == 0) {
 		$state->fatal("configuration error: no job runner");

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Roach.pm,v 1.4 2019/11/09 17:06:37 espie Exp $
+# $OpenBSD: Roach.pm,v 1.5 2023/05/06 05:20:31 espie Exp $
 #
 # Copyright (c) 2019 Marc Espie <espie@openbsd.org>
 #
@@ -14,15 +14,15 @@
 # WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-use strict;
-use warnings;
+use v5.36;
 
+# this code is nowhere near finished, it's just glue to try and integrate
+# roach
 package DPB::Roach;
 # handles roach information, if required
 
-sub new
+sub new($class, $engine, $logger, $state)
 {
-	my ($class, $engine, $logger, $state) = @_;
 	my $o = bless {
 	    paths => {},
 	    engine => $engine, 
@@ -32,14 +32,13 @@ sub new
 	return $o;
 }
 
-sub factoryclass
+sub factoryclass($)
 {
 	return "DPB::RoachInfo";
 }
 
-sub build1info
+sub build1info($self, $v)
 {
-	my ($self, $v) = @_;
 	my $f = $self->factoryclass;
 	if (exists $self->{paths}{$v->pkgpath}) {
 		$f->forget_roachinfo($v);
@@ -52,14 +51,13 @@ sub build1info
 
 package DPB::RoachInfo;
 
-sub roachinfo
+sub roachinfo($)
 {
 	return (qw(HOMEPAGE PORTROACH PORTROACH_COMMENT MAINTAINER));
 }
 
-sub new
+sub new($class, $v)
 {
-	my ($class, $v) = @_;
 	my $o = bless {pkgpath => $v->pkgpath}, $class;
 	for my $d ($class->roachinfo) {
 		if (defined $v->{info}{$d}) {
@@ -76,9 +74,8 @@ sub new
 	return $o;
 }
 
-sub forget_roachinfo
+sub forget_roachinfo($class, $v0
 {
-	my ($class, $v) = @_;
 	for my $d ($class->roachinfo) {
 		delete $v->{info}{$d};
 	}

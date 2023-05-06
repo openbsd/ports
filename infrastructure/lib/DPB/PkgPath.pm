@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.66 2023/05/02 09:53:05 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.67 2023/05/06 05:20:31 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -14,8 +14,7 @@
 # WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-use strict;
-use warnings;
+use v5.36;
 
 # Handles PkgPath;
 # all this code is *seriously* dependent on unique objects
@@ -28,27 +27,24 @@ use DPB::Util;
 package DPB::PkgPath;
 our @ISA = qw(DPB::BasePkgPath);
 
-sub init
+sub init($self)
 {
-	my $self = shift;
 	# XXX
 	$self->{has} = 5;
 }
 
-sub forcejunk
+sub forcejunk($)
 {
 	return 0;
 }
 
-sub path
+sub path($self)
 {
-	my $self = shift;
 	return $self;
 }
 
-sub clone_properties
+sub clone_properties($n, $o)
 {
-	my ($n, $o) = @_;
 	if (defined $o->{has} && !defined $n->{has}) {
 		$n->{has} = $o->{has};
 	}
@@ -59,9 +55,8 @@ sub clone_properties
 
 my $lock_bypkgname = {};
 
-sub check_path
+sub check_path($class, $w, $p)
 {
-	my ($class, $w, $p) = @_;
 	if (!defined $w->{info}) {
 		return " has no info(". $p->fullpkgpath. ")";
 	}
@@ -82,10 +77,8 @@ sub check_path
 	return undef;
 }
 
-sub sanity_check
+sub sanity_check($class, $state)
 {
-	my ($class, $state) = @_;
-
 	my $log = $state->logger->append('equiv');
 	for my $p ($class->seen) {
 		next if defined $p->{category};
@@ -103,10 +96,8 @@ sub sanity_check
 }
 
 # XXX All this code knows too much about PortInfo for proper OO
-
-sub fullpkgname
+sub fullpkgname($self)
 {
-	my $self = shift;
 	if (defined $self->{info} && defined $self->{info}{FULLPKGNAME}) {
 		return ${$self->{info}{FULLPKGNAME}};
 	} else {
@@ -116,16 +107,14 @@ sub fullpkgname
 	}
 }
 
-sub has_fullpkgname
+sub has_fullpkgname($self)
 {
-	my $self = shift;
 	return defined $self->{info} && defined $self->{info}{FULLPKGNAME};
 }
 
 # requires flavor as a hash
-sub flavor
+sub flavor($self)
 {
-	my $self = shift;
 	if (defined $self->{info}) {
 		return $self->{info}{FLAVOR};
 	} else {
@@ -133,9 +122,8 @@ sub flavor
 	}
 }
 
-sub subpackage
+sub subpackage($self)
 {
-	my $self = shift;
 	if (defined $self->{info} && defined $self->{info}{SUBPACKAGE}) {
 		return ${$self->{info}{SUBPACKAGE}};
 	} else {
@@ -143,18 +131,16 @@ sub subpackage
 	}
 }
 
-sub dump
+sub dump($self, $fh)
 {
-	my ($self, $fh) = @_;
 	print $fh $self->fullpkgpath, "\n";
 	if (defined $self->{info}) {
 		$self->{info}->dump($fh);
 	}
 }
 
-sub quick_dump
+sub quick_dump($self, $fh)
 {
-	my ($self, $fh) = @_;
 	print $fh $self->fullpkgpath, "\n";
 	if (defined $self->{info}) {
 		$self->{info}->quick_dump($fh);
@@ -162,40 +148,35 @@ sub quick_dump
 }
 
 # interface with logger/lock engine
-sub logname
+sub logname($self)
 {
-	my $self = shift;
 	return $self->fullpkgpath;
 }
 
-sub lockname
+sub lockname($v)
 {
-	my $v = shift;
 	if (defined $v->{info} && defined $v->{info}{DPB_LOCKNAME}) {
 		return ${$v->{info}{DPB_LOCKNAME}};
 	}
 	return $v->pkgpath;
 }
 
-sub print_parent
+sub print_parent($self, $fh)
 {
-	my ($self, $fh) = @_;
 	if (defined $self->{parent}) {
 		print $fh "parent=", $self->{parent}->logname, "\n";
 	}
 }
 
-sub write_parent
+sub write_parent($self, $lock)
 {
-	my ($self, $lock) = @_;
 	if (defined $self->{parent}) {
 		$lock->write("parent", $self->{parent}->logname);
 	}
 }
 
-sub unlock_conditions
+sub unlock_conditions($v, $engine)
 {
-	my ($v, $engine) = @_;
 	if (!$v->{info}) {
 		return 0;
 	}
@@ -206,32 +187,27 @@ sub unlock_conditions
 	return 1;
 }
 
-sub requeue
+sub requeue($v, $engine)
 {
-	my ($v, $engine) = @_;
 	$engine->requeue($v);
 }
 
-sub simplifies_to
+sub simplifies_to($self, $simpler, $state)
 {
-	my ($self, $simpler, $state) = @_;
 	$state->{affinity}->simplifies_to($self, $simpler);
 	my $quicklog = $state->logger->append('equiv');
 	print $quicklog $self->fullpkgpath, " -> ", $simpler->fullpkgpath, "\n";
 }
 
-sub equates
+sub equates($class, $h)
 {
-	my ($class, $h) = @_;
 	DPB::Job::Port->equates($h);
 	DPB::Heuristics->equates($h);
 }
 
 # in the MULTI_PACKAGES case, some stuff may need to be forcibly removed
-sub fix_multi
+sub fix_multi($class, $h)
 {
-	my ($class, $h) = @_;
-
 	my $multi;
 	my $may_vanish;
 	my $path;
@@ -279,10 +255,8 @@ sub fix_multi
 }
 
 # we're always called from values corresponding to the same subdir.
-sub merge_depends
+sub merge_depends($class, $h, $ftp_only)
 {
-	my ($class, $h, $ftp_only) = @_;
-
 	$class->fix_multi($h);
 
 	my $global = bless {}, "AddDepends";
@@ -359,9 +333,8 @@ sub merge_depends
 	}
 }
 
-sub build_path_list
+sub build_path_list($v)
 {
-	my ($v) = @_;
 	my @l = ($v);
 	my $stem = $v->pkgpath_and_flavors;
 	my $w = DPB::PkgPath->new($stem);
@@ -380,16 +353,14 @@ sub build_path_list
 	return @l;
 }
 
-sub break
+sub break($self, $why)
 {
 
-	my ($self, $why) = @_;
 	push @{$self->{broken}}, $why;
 }
 
-sub log_as_built
+sub log_as_built($v, $engine)
 {
-	my ($v, $engine) = @_;
 	$engine->log_as_built($v);
 }
 1;

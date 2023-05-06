@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortInfo.pm,v 1.44 2023/05/02 10:01:33 espie Exp $
+# $OpenBSD: PortInfo.pm,v 1.45 2023/05/06 05:20:31 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -14,8 +14,7 @@
 # WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-use strict;
-use warnings;
+use v5.36;
 
 # AddInfo is responsible for converting a given variable value given by
 # dump-vars into a properly nice "object"
@@ -29,36 +28,32 @@ package AddInfo;
 # by default, we take the value and add it as the corresponding \$string
 # to the portinfo object
 
-sub add
+sub add($class, $var, $info, $value, $parent)
 {
-	my ($class, $var, $info, $value, $parent) = @_;
 	return if $value =~ m/^[\s\-]*$/;
 	$info->{$var} = $class->new($value, $info, $parent);
 }
 
-sub new
+sub new($class, $value, $, $)
 {
-	my ($class, $value) = @_;
 	bless \$value, $class;
 }
 
-sub string
+sub string($self)
 {
-	my $self = shift;
 	return $$self;
 }
 
 # by default don't show up in quick dumps
-sub quickie
+sub quickie($)
 {
 	return 0;
 }
 
 package AddIgnore;
 our @ISA = qw(AddInfo);
-sub string
+sub string($self)
 {
-	my $self = shift;
 	my $msg = $$self;
 	$msg =~ s/\\//g;
 	$msg =~ s/\"\s+\"/\; /g;
@@ -69,16 +64,14 @@ package AddYesNo;
 our @ISA = qw(AddInfo);
 # don't add 'no' values to save space
 
-sub add
+sub add($class, $var, $info, $value, $parent)
 {
-	my ($class, $var, $info, $value, $parent) = @_;
 	return if $value =~ m/^no$/i;
 	$info->{$var} = $class->new($value, $info, $parent);
 }
 
-sub new
+sub new($class, $value, $, $)
 {
-	my ($class, $value) = @_;
 	my $a = 1;
 	bless \$a, $class;
 }
@@ -88,16 +81,14 @@ sub new
 package AddNegative;
 our @ISA = qw(AddInfo);
 
-sub add
+sub add($class, $var, $info, $value, $parent)
 {
-	my ($class, $var, $info, $value, $parent) = @_;
 	return if $value =~ m/^yes$/i;
 	$info->{$var} = $class->new($value, $info, $parent);
 }
 
-sub new
+sub new($class, $value, $, $)
 {
-	my ($class, $value) = @_;
 	my $a = 0;
 	bless \$a, $class;
 }
@@ -105,7 +96,7 @@ sub new
 # variables we WANT in a quick dump
 package AddInfoShow;
 our @ISA = qw(AddInfo);
-sub quickie
+sub quickie($)
 {
 	return 1;
 }
@@ -114,24 +105,21 @@ sub quickie
 package AddList;
 our @ISA = qw(AddInfo);
 
-sub make_list
+sub make_list($class, $value)
 {
-	my ($class, $value) = @_;
 	$value =~ s/^\s+//;
 	$value =~ s/\s+$//;
 	return split(/\s+/, $value);
 }
 
-sub new
+sub new($class, $value, $, $)
 {
-	my ($class, $value) = @_;
 	my %values = map {($_, 1)} $class->make_list($value);
 	bless \%values, $class;
 }
 
-sub string
+sub string($self)
 {
-	my $self = shift;
 	return join(', ', keys %$self);
 }
 
@@ -139,9 +127,8 @@ sub string
 package AddPropertyList;
 our @ISA = (qw(AddList));
 
-sub new
+sub new($class, $value, $, $)
 {
-	my ($class, $value) = @_;
 	my %h = ();
 	for my $v ($class->make_list($value)) {
 		if ($v =~ /^(tag)\:(.*)$/) {
@@ -153,9 +140,8 @@ sub new
 	return bless \%h, $class;
 }
 
-sub string
+sub string($self)
 {
-	my $self = shift;
 	my @l = ();
 	while (my ($k, $v) = each %$self) {
 		if ($v eq '1') {
@@ -169,9 +155,8 @@ sub string
 
 package AddRoachList;
 our @ISA = (qw(AddPropertyList));
-sub new
+sub new($class, $value, $, $)
 {
-	my ($class, $value) = @_;
 	my %h = ();
 	for my $v ($class->make_list($value)) {
 		if ($v =~ /^(.*?)\:(.*)$/) {
@@ -185,51 +170,45 @@ sub new
 
 package AddOrderedList;
 our @ISA = qw(AddList);
-sub new
+sub new($class, $value, $, $)
 {
-	my ($class, $value) = @_;
 	bless [$class->make_list($value)], $class;
 }
 
-sub string
+sub string($self)
 {
-	my $self = shift;
 	return join(' ', @$self);
 }
 
 package FetchManually;
 our @ISA = qw(AddOrderedList);
-sub add
+sub add($class, $var, $info, $value, $parent)
 {
-	my ($class, $var, $info, $value, $parent) = @_;
 	return if $value =~ /^\s*no\s*$/i;
 	$class->SUPER::add($var, $info, $value, $parent);
 }
 
-sub make_list
+sub make_list($class, $value)
 {
-	my ($class, $value) = @_;
 	$value =~ s/^\s*\"//;
 	$value =~ s/\"\s*$//;
 	return split(/\"\s*\"/, $value);
 }
 
-sub string
+sub string($self)
 {
-	my $self = shift;
 	return join("\n", @$self);
 }
 
 package AddDepends;
 our @ISA = qw(AddList);
-sub extra
+sub extra($)
 {
 	return 'EXTRA';
 }
 
-sub new
+sub new($class, $value, $info, $parent)
 {
-	my ($class, $value, $info, $parent) = @_;
 	my $r = {};
 	for my $d ($class->make_list($value)) {
 		my $copy = $d;
@@ -252,20 +231,19 @@ sub new
 	bless $r, $class;
 }
 
-sub string
+sub string($self)
 {
-	my $self = shift;
 	return '['.join(';', map {$_->logname} (values %$self)).']';
 }
 
-sub quickie
+sub quickie($)
 {
 	return 1;
 }
 
 package AddTestDepends;
 our @ISA = qw(AddDepends);
-sub extra
+sub extra($)
 {
 	return 'EXTRA2';
 }
@@ -273,9 +251,8 @@ sub extra
 package Extra;
 our @ISA = qw(AddDepends);
 
-sub add
+sub add($class, $key, $info, $value, $parent)
 {
-	my ($class, $key, $info, $value, $parent) = @_;
 	$info->{$key} //= bless {}, $class;
 	my $path = DPB::PkgPath->new($value);
 	$path->{parent} //= $parent;
@@ -340,27 +317,23 @@ my %adder = (
 	MAINTAINER => 'AddInfo',
 );
 
-sub wanted
+sub wanted($class, $var)
 {
-	my ($class, $var) = @_;
 	return $adder{$var};
 }
 
-sub new
+sub new($class, $pkgpath)
 {
-	my ($class, $pkgpath) = @_;
 	$pkgpath->{info} = bless {}, $class;
 }
 
-sub add
+sub add($self, $var, $value, $parent)
 {
-	my ($self, $var, $value, $parent) = @_;
 	$adder{$var}->add($var, $self, $value, $parent);
 }
 
-sub dump
+sub dump($self, $fh)
 {
-	my ($self, $fh) = @_;
 	for my $k (sort keys %adder) {
 		print $fh "\t $k = ", $self->{$k}->string, "\n"
 		    if defined $self->{$k};
@@ -373,26 +346,24 @@ my $stub_name = bless(\$s2, "AddInfoShow");
 my $stub_info = bless { IGNORE => bless(\$string, "AddIgnore"),
 		FULLPKGNAME => $stub_name}, __PACKAGE__;
 
-sub stub
+sub stub($)
 {
 	return $stub_info;
 }
 
-sub stub_name
+sub stub_name($self)
 {
-	my $self = shift;
 	$self->{FULLPKGNAME} = $stub_name;
 }
 
-sub is_stub
+sub is_stub($self)
 {
-	return shift eq $stub_info;
+	return $self eq $stub_info;
 }
 
 use Data::Dumper;
-sub quick_dump
+sub quick_dump($self, $fh)
 {
-	my ($self, $fh) = @_;
 	for my $k (sort keys %adder) {
 		if (defined $self->{$k} and $adder{$k}->quickie) {
 			print $fh "\t $k = ";
@@ -405,24 +376,20 @@ sub quick_dump
 	}
 }
 
-sub fullpkgname
+sub fullpkgname($self)
 {
-	my $self = shift;
-
 	return (defined $self->{FULLPKGNAME}) ?
 	    $self->{FULLPKGNAME}->string : undef;
 }
 
-sub has_property
+sub has_property($self, $name)
 {
-	my ($self, $name) = @_;
 	return (defined $self->{DPB_PROPERTIES}) ?
 	    $self->{DPB_PROPERTIES}{$name} : undef;
 }
 
-sub want_tests
+sub want_tests($self)
 {
-	my ($self, $name) = @_;
 	if (defined $self->{NO_TEST} && $self->{NO_TEST} == 0) {
 		return 1;
 	} else {
@@ -430,9 +397,8 @@ sub want_tests
 	}
 }
 
-sub solve_depends
+sub solve_depends($self, $withtest = 0)
 {
-	my ($self, $withtest) = @_;
 	if (!defined $self->{solved}) {
 		my $dep = {};
 		my @todo = (qw(DEPENDS BDEPENDS));

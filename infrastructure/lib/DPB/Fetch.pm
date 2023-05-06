@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.90 2023/05/02 09:17:56 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.91 2023/05/06 05:20:31 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -14,8 +14,7 @@
 # WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-use strict;
-use warnings;
+use v5.36;
 use DPB::Clock;
 use DPB::Distfile;
 use OpenBSD::md5;
@@ -25,9 +24,8 @@ use DPB::User;
 package DPB::Fetch;
 our @ISA = (qw(DPB::UserProxy));
 
-sub new
+sub new($class, $distdir, $logger, $state, $ftp_only)
 {
-	my ($class, $distdir, $logger, $state, $ftp_only) = @_;
 	my $o = bless {distdir => $distdir, sha => {}, reverse => {},
 	    logger => $logger,
 	    known_sha => {}, known_files => {},
@@ -81,10 +79,8 @@ sub new
 	return $o;
 }
 
-sub mark_sha
+sub mark_sha($self, $sha, $file)
 {
-	my ($self, $sha, $file) = @_;
-
 	$self->{known_sha}{$sha}{$file} = 1;
 
 	# next cases are only needed to weed out by_cipher of extra links
@@ -109,16 +105,14 @@ sub mark_sha
 	}
 }
 
-sub known_file
+sub known_file($self, $sha, $file)
 {
-	my ($self, $sha, $file) = @_;
 	$self->mark_sha($sha->stringize, $file);
 	$self->{known_file}{$file} = 1;
 }
 
-sub run_expire_old
+sub run_expire_old($self, $core, $opt_e)
 {
-	my ($self, $core, $opt_e) = @_;
 	$core->unsquiggle;
 	$core->start_job(DPB::Job::Normal->new(
 	    sub {
@@ -138,9 +132,8 @@ sub run_expire_old
 	return 1;
 }
 
-sub parse_old
+sub parse_old($self, $fh, $fh2)
 {
-	my ($self, $fh, $fh2) = @_;
 	while (<$fh>) {
 		if (my ($ts, $file, $sha) =
 		    m/^(\d+(?:\.\d+)?)\s+SHA256\s*\((.*)\) \= (.*\=)$/) {
@@ -156,9 +149,8 @@ sub parse_old
 	return 1;
 }
 
-sub expire_old
+sub expire_old($self)
 {
-	my $self = shift;
 	my $ts = CORE::time();
 	my $distdir = $self->distdir;
 	chdir($distdir) or die "can't change to distdir: $!";
@@ -221,21 +213,18 @@ sub expire_old
 	close $fh2 && $self->rename("history.new", "history");
 }
 
-sub forget_cache
+sub forget_cache($self)
 {
-	my $self = shift;
 	$self->{cache} = {};
 }
 
-sub distdir
+sub distdir($self)
 {
-	my $self = shift;
 	return $self->{distdir};
 }
 
-sub read_checksums
+sub read_checksums($self, $filename)
 {
-	my ($self, $filename) = @_;
 	# XXX the fetch user might not have read access there ?
 	my $fh = $self->{build_user}->open('<', $filename);
 	if (!defined $fh) {
@@ -254,9 +243,8 @@ sub read_checksums
 	return $r;
 }
 
-sub build1info
+sub build1info($self, $v, $mirror, $roach)
 {
-	my ($self, $v, $mirror, $roach) = @_;
 	my $info = $v->{info};
 	return unless defined $info->{DISTFILES} ||
 	    defined $info->{PATCHFILES} ||
@@ -278,8 +266,7 @@ sub build1info
 	my $checksums = $self->{cache}{$checksum_file};
 
 	my $files = {};
-	my $build = sub {
-		my $arg = shift;
+	my $build = sub($arg) {
 		my $site = 'MASTER_SITES';
 		my $url;
 		if ($arg =~ m/^(.*)\:(\d)$/) {
@@ -323,17 +310,15 @@ sub build1info
 	}
 }
 
-sub build_distinfo
+sub build_distinfo($self, $h, $mirror, $roach)
 {
-	my ($self, $h, $mirror, $roach) = @_;
 	for my $v (values %$h) {
 		$self->build1info($v, $mirror, $roach);
 	}
 }
 
-sub fetch
+sub fetch($self, $file, $core, $endcode)
 {
-	my ($self, $file, $core, $endcode) = @_;
 	require DPB::Job::Fetch;
 	my $job = DPB::Job::Fetch->new($file, $endcode, $self, 
 	    $self->{logger});

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: MiniCurses.pm,v 1.17 2023/05/02 09:45:38 espie Exp $
+# $OpenBSD: MiniCurses.pm,v 1.18 2023/05/06 05:20:31 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -14,8 +14,7 @@
 # WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-use strict;
-use warnings;
+use v5.36;
 
 package DPB::MiniCurses;
 use Term::Cap;
@@ -28,37 +27,31 @@ use constant {
 	BLUE => 4,
 	PURPLE => 5,
 	TURQUOISE => 6,
-	WHITE => 7 
-};
+	WHITE => 7 };
 
-sub refresh
+sub refresh($self)
 {
-	my $self = shift;
 	$self->{write} = 'go_write_home';
 	$self->{force} = 1;
 }
 
-sub handle_window
+sub handle_window($self)
 {
-	my $self = shift;
 	$self->refresh;
 }
 
-sub width
+sub width($self)
 {
-	my $self = shift;
 	return $self->{state}->width;
 }
 
-sub height
+sub height($self)
 {
-	my $self = shift;
 	return $self->{state}->height;
 }
 
-sub create_terminal
+sub create_terminal($self)
 {
-	my $self = shift;
 	my $oldfh = select(STDOUT);
 	$| = 1;
 	# XXX go back to totally non-buffered raw shit
@@ -79,6 +72,8 @@ sub create_terminal
 		$self->{fg} = $self->{terminal}->Tputs('AF', 1);
 		$self->{blink} = $self->{terminal}->Tputs('mb', 1);
 		$self->{dontblink} = $self->{terminal}->Tputs('me', 1);
+		$self->{clear} = sprintf($self->{fg}, WHITE).
+		    sprintf($self->{bg}, BLACK).$self->{clear};
 	}
 	if ($self->{state}{nocursor}) {
 		$self->{invisible} = 
@@ -93,9 +88,8 @@ sub create_terminal
 	}
 }
 
-sub write_clear
+sub write_clear($self, $msg)
 {
-	my ($self, $msg) = @_;
 	my $r = $self->{clear};
 	$self->{oldlines} = [$self->cut_lines($msg)];
 	my $n = 2;
@@ -106,9 +100,8 @@ sub write_clear
 	print $r;
 }
 
-sub cut_lines
+sub cut_lines($self, $msg)
 {
-	my ($self, $msg) = @_;
 	my @lines = ();
 	for my $line (split("\n", $msg)) {
 		while (length $line > $self->width) {
@@ -120,38 +113,32 @@ sub cut_lines
 	return @lines;
 }
 
-sub default_fg
+sub default_fg($self, $color)
 {
-	my ($self, $color) = @_;
 	$self->{resetfg} = sprintf($self->{fg}, $color);
 }
 
-sub default_bg
+sub default_bg($self, $color)
 {
-	my ($self, $color) = @_;
 	$self->{resetbg} = sprintf($self->{bg}, $color);
 }
-sub color
+sub color($self, $expr, $color)
 {
-	my ($self, $expr, $color) = @_;
 	return sprintf($self->{fg}, $color).$expr.$self->{resetfg};
 }
 
-sub bg
+sub bg($self, $expr, $color)
 {
-	my ($self, $expr, $color) = @_;
 	return sprintf($self->{bg}, $color).$expr.$self->{resetbg};
 }
 
-sub blink
+sub blink($self, $expr, $color)
 {
-	my ($self, $expr, $color) = @_;
 	return $self->{blink}.$expr.$self->{dontblink};
 }
 
-sub mogrify
+sub mogrify($self, $line)
 {
-	my ($self, $line) = @_;
 	my $percent = PURPLE;
 	$self->default_bg(BLACK);
 	$self->default_fg(WHITE);
@@ -196,9 +183,8 @@ sub mogrify
 	return $line;
 }
 
-sub clamped
+sub clamped($self, $line)
 {
-	my ($self, $line) = @_;
 	my $l2 = $line;
 	if (defined $self->{fg}) {
 		$l2 = $self->mogrify($l2);
@@ -210,9 +196,8 @@ sub clamped
 	}
 }
 
-sub clear_clamped
+sub clear_clamped($self, $line)
 {
-	my ($self, $line) = @_;
 	my $l2 = $line;
 	if (defined $self->{fg}) {
 		$l2 = $self->mogrify($l2);
@@ -224,9 +209,8 @@ sub clear_clamped
 	}
 }
 
-sub do_line
+sub do_line($self, $new, $old)
 {
-	my ($self, $new, $old) = @_;
 	# line didn't change: try to go down
 	if (defined $old && $old eq $new) {
 		if ($self->{down}) {
@@ -243,10 +227,8 @@ sub do_line
 	return $self->clamped($new);
 }
 
-sub lines
+sub lines($self, @new)
 {
-	my ($self, @new) = @_;
-
 	my $n = 2;
 	my $r = '';
 
@@ -268,18 +250,16 @@ sub lines
 	return $r;
 }
 
-sub write_home
+sub write_home($self,$msg)
 {
-	my ($self, $msg) = @_;
 	my @new = $self->cut_lines($msg);
 	print $self->{home}.$self->lines(@new);
 	$self->{oldlines} = \@new;
 }
 
-sub go_write_home
+sub go_write_home($self, $msg)
 {
 	# first report has to clear the screen
-	my ($self, $msg) = @_;
 	$self->write_clear($msg);
 	$self->{write} = 'write_home';
 }

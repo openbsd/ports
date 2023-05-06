@@ -1,6 +1,6 @@
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Nosize.pm,v 1.1 2013/10/13 18:23:35 espie Exp $
+# $OpenBSD: Nosize.pm,v 1.2 2023/05/06 05:20:31 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -16,27 +16,25 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-use strict;
-use warnings;
+use v5.36;
 # stub package that never builds in memory
 package DPB::Heuristics::Nosize;
 
-sub new
+sub new($class, $state)
 {
-	my ($class, $state) = @_;
 	bless {state => $state}, $class;
 }
 
-sub build_in_memory
+sub build_in_memory($, $, $, $)
 {
 	return 0;
 }
 
-sub finished
+sub finished($, $)
 {
 }
 
-sub parse_size_file
+sub parse_size_file($)
 {
 }
 

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: SubEngine.pm,v 1.35 2022/02/17 12:42:37 espie Exp $
+# $OpenBSD: SubEngine.pm,v 1.36 2023/05/06 05:20:31 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -15,13 +15,11 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-use strict;
-use warnings;
+use v5.36;
 
 package DPB::SubEngine;
-sub new
+sub new($class, $engine)
 {
-	my ($class, $engine) = @_;
 	bless { engine => $engine, queue => $class->new_queue($engine),
 		doing => {}, later => {}}, $class;
 }
@@ -33,15 +31,13 @@ sub new
 # them again, we use detain/release, and the subengines skip over detained
 # stuff.
 
-sub detain
+sub detain($self, $v)
 {
-	my ($self, $v) = @_;
 	$self->{detained}{$self->key_for_doing($v)} = 1;
 }
 
-sub release
+sub release($self, $v)
 {
-	my ($self, $v) = @_;
 	my $k = $self->key_for_doing($v);
 	delete $self->{detained}{$k};
 	for my $candidate (values %{$self->{later2}}) {
@@ -53,86 +49,72 @@ sub release
 	}
 }
 
-sub detained
+sub detained($self, $v)
 {
-	my ($self, $v) = @_;
 	return $self->{detained}{$self->key_for_doing($v)};
 }
 
-sub count
+sub count($self)
 {
-	my $self = shift;
 	return $self->{queue}->count;
 }
 
-sub add
+sub add($self, $v)
 {
-	my ($self, $v) = @_;
 	$self->{queue}->add($v);
 }
 
-sub remove
+sub remove($self, $v)
 {
-	my ($self, $v) = @_;
 	$self->{queue}->remove($v);
 }
 
-sub dump_queue
+sub dump_queue($self, @r)
 {
-	my $self = shift;
-	$self->{queue}->dump(@_);
+	$self->{queue}->dump(@r);
 }
 
-sub is_done_quick
+sub is_done_quick($self, @r)
 {
-	my $self = shift;
-	return $self->is_done(@_);
+	return $self->is_done(@r);
 }
 
-sub is_done_or_enqueue
+sub is_done_or_enqueue($self, @r)
 {
-	my $self =shift;
-	return $self->is_done(@_);
+	return $self->is_done(@r);
 }
 
-sub sorted
+sub sorted($self, $core)
 {
-	my ($self, $core) = @_;
 	return $self->{queue}->sorted($core);
 }
 
-sub non_empty
+sub non_empty($self)
 {
-	my $self = shift;
 	return $self->{queue}->non_empty;
 }
 
-sub contains
+sub contains($self, $v)
 {
-	my ($self, $v) = @_;
 	return $self->{queue}->contains($v);
 }
 
-sub log
+sub log($self, @r)
 {
-	my ($self, @r) = @_;
 	return $self->{engine}->log(@r);
 }
 
-sub key_for_doing
+sub key_for_doing($self, $v)
 {
-	my ($self, $v) = @_;
 	return $v;
 }
 
-sub already_done
+sub already_done($, $)
 {
 }
 
-sub lock_and_start_build
+sub lock_and_start_build($self, $core, $v)
 {
-	my ($self, $core, $v) = @_;
-
 	$self->remove($v);
 
 	if (my $lock = $self->{engine}{locker}->lock($v)) {
@@ -146,9 +128,8 @@ sub lock_and_start_build
 	}
 }
 
-sub use_core
+sub use_core($self, $core, $rechecked)
 {
-	my ($self, $core, $rechecked) = @_;
 	if ($self->preempt_core($core)) {
 		return 1;
 	}
@@ -172,9 +153,8 @@ sub use_core
 	return 0;
 }
 
-sub can_really_start_build
+sub can_really_start_build($self, $v, $core)
 {
-	my ($self, $v, $core) = @_;
 	# ... trim stuff that's related to other stuff building
 	if ($self->{doing}{$self->key_for_doing($v)}) {
 		$self->remove($v);
@@ -192,9 +172,8 @@ sub can_really_start_build
 	}
 }
 
-sub start
+sub start($self)
 {
-	my $self = shift;
 	my $core = $self->get_core;
 
 	if ($self->use_core($core, 0)) {
@@ -205,26 +184,23 @@ sub start
 	}
 }
 
-sub preempt_core
+sub preempt_core($, $)
 {
 	return 0;
 }
 
-sub can_start_build
+sub can_start_build($self, $v, $core)
 {
-	my ($self, $v, $core) = @_;
-
 	return $self->lock_and_start_build($core, $v);
 }
 
-sub recheck_mismatches
+sub recheck_mismatches($, $)
 {
 	return 0;
 }
 
-sub done
+sub done($self, $v)
 {
-	my ($self, $v) = @_;
 	my $k = $self->key_for_doing($v);
 	for my $candidate (values %{$self->{later}}) {
 		if ($self->key_for_doing($candidate) eq $k) {
@@ -237,9 +213,8 @@ sub done
 	$self->{engine}->recheck_errors;
 }
 
-sub end
+sub end($self, $core, $v, $fail)
 {
-	my ($self, $core, $v, $fail) = @_;
 	my $e = $core->mark_ready;
 	if ($fail) {
 		$core->failure;
@@ -271,17 +246,16 @@ sub end
 	$self->{engine}->flush_log;
 }
 
-sub dump
+sub dump($self, $k, $fh)
 {
-	my ($self, $k, $fh) = @_;
 #	$self->{queue}->dump($k, $fh);
 }
 
-sub remove_stub
+sub remove_stub($, $)
 {
 }
 
-sub is_dummy
+sub is_dummy($)
 {
 	return 0;
 }
@@ -289,30 +263,25 @@ sub is_dummy
 package DPB::SubEngine::BuildBase;
 our @ISA = qw(DPB::SubEngine);
 
-sub new_queue
+sub new_queue($class, $engine)
 {
-	my ($class, $engine) = @_;
 	return $engine->{heuristics}->new_queue;
 }
 
-sub new
+sub new($class, $engine, $builder = undef)
 {
-	my ($class, $engine, $builder) = @_;
-	my $o = $class->SUPER::new($engine, $builder);
+	my $o = $class->SUPER::new($engine);
 	$o->{builder} = $builder;
 	return $o;
 }
 
-sub get_core
+sub get_core($self)
 {
-	my $self = shift;
 	return $self->{builder}->get;
 }
 
-sub preempt_core
+sub preempt_core($self, $core)
 {
-	my ($self, $core) = @_;
-
 	if (@{$self->{engine}{requeued}} > 0) {
 		# XXX note this borrows the core temporarily
 		$self->{engine}->rebuild_info($core);
@@ -320,10 +289,8 @@ sub preempt_core
 	return 0;
 }
 
-sub smart_dump
+sub smart_dump($self, $fh)
 {
-	my ($self, $fh) = @_;
-
 	my $h = {};
 	my $engine = $self->{engine};
 
@@ -365,9 +332,8 @@ sub smart_dump
 	print $fh '-'x70, "\n";
 }
 
-sub follow_thru
+sub follow_thru($self, $v, $fh, $list)
 {
-	my ($self, $v, $fh, $list) = @_;
 	my @d = ();
 	my $known = {$v => $v};
 	while (1) {
@@ -389,32 +355,32 @@ sub follow_thru
 # for parts of dpb that won't run
 package DPB::SubEngine::Dummy;
 our @ISA = qw(DPB::SubEngine::BuildBase);
-sub non_empty
+sub non_empty($)
 {
 	return 0;
 }
 
-sub is_done
+sub is_done($, $)
 {
 	return 0;
 }
 
-sub start_build
+sub start_build($, $, $, $)
 {
 	return 0;
 }
 
-sub start_wipe
+sub start_wipe($, $, $)
 {
 	return 0;
 }
 
-sub is_dummy
+sub is_dummy($)
 {
 	return 1;
 }
 
-sub smart_dump
+sub smart_dump($, $)
 {
 	# don't bother
 }

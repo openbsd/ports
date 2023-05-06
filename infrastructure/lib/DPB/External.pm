@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: External.pm,v 1.29 2021/10/05 12:31:34 espie Exp $
+# $OpenBSD: External.pm,v 1.30 2023/05/06 05:20:31 espie Exp $
 #
 # Copyright (c) 2017 Marc Espie <espie@openbsd.org>
 #
@@ -15,8 +15,7 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-use strict;
-use warnings;
+use v5.36;
 
 # socket for external commands
 
@@ -26,10 +25,8 @@ use IO::Select;
 use File::Basename;
 
 my $motto = "shut up and hack!";
-sub server
+sub server($class, $state)
 {
-	my ($class, $state) = @_;
-
 	my $o = bless {state => $state, 
 	    subdirlist => {},
 	    path => $state->expand_path($state->{subst}->value('CONTROL')),
@@ -39,7 +36,7 @@ sub server
 	$state->{log_user}->make_path(File::Basename::dirname($o->{path}));
 	# this ensures the socket belongs to log_user.
 	$state->{log_user}->run_as(
-	    sub {
+	    sub() {
 	    	unlink($o->{path});
 		$o->{server} = IO::Socket::UNIX->new(
 		    Type => SOCK_STREAM,
@@ -66,15 +63,13 @@ sub server
 	}
 }
 
-sub cleanup
+sub cleanup($self)
 {
-	my $self = shift;
 	$self->{state}{log_user}->unlink($self->{path});
 }
 
-sub status
+sub status($self, $v)
 {
-	my ($self, $v) = @_;
 	if (!defined $v->{info}) {
 		return "unscanned/unknown";
 	}
@@ -91,10 +86,8 @@ sub status
 	return $status;
 }
 
-sub wipe
+sub wipe($self, $fh, $p)
 {
-	my ($self, $fh, $p) = @_;
-
 	my $v = DPB::PkgPath->new($p);
 	my $state = $self->{state};
 	my $info = $state->locker->get_info($v);
@@ -119,10 +112,8 @@ sub wipe
 	}
 }
 
-sub stub_out
+sub stub_out($self, $fh, $p)
 {
-	my ($self, $fh, $p) = @_;
-
 	my $v = DPB::PkgPath->new($p);
 	my $state = $self->{state};
 	my $info = $state->locker->get_info($v);
@@ -143,9 +134,8 @@ sub stub_out
 	}
 }
 
-sub wipehost
+sub wipehost($self, $fh, $h)
 {
-	my ($self, $fh, $h) = @_;
 	# kill the stuff that's running
 	DPB::Core->wipehost($h);
 	my $state = $self->{state};
@@ -158,9 +148,8 @@ sub wipehost
 	}
 }
 
-sub summary
+sub summary($self, $fh, $name)
 {
-	my ($self, $fh, $name) = @_;
 	my $state = $self->{state};
 	my $f = $state->logger->append($name);
 	if (!defined $f) {
@@ -183,9 +172,8 @@ sub summary
 	}
 }
 
-sub handle_command
+sub handle_command($self, $line, $fh)
 {
-	my ($self, $line, $fh) = @_;
 	my $state = $self->{state};
 	if ($line =~ m/^dontclean\s+(.*)/) {
 		for my $p (split(/\s+/, $1)) {
@@ -212,8 +200,7 @@ sub handle_command
 		$fh->print($motto, "\n");
 	} elsif ($line =~ m/^addpath\s+(.*)/) {
 		$state->interpret_paths(split(/\s+/, $1),
-		    sub {
-			my ($pkgpath, $weight) = @_;
+		    sub($pkgpath, $weight = undef) {
 			if (defined $weight) {
 				$state->heuristics->set_weight($pkgpath);
 			}
@@ -266,10 +253,8 @@ sub handle_command
 	$fh->print($self->{prompt});
 }
 
-sub receive_commands
+sub receive_commands($self)
 {
-	my $self = shift;
-
 	while (my @ready = $self->{select}->can_read(0)) {
 		foreach my $fh (@ready) {
 			if ($fh == $self->{server}) {

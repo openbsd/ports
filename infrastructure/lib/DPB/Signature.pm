@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Signature.pm,v 1.12 2020/02/27 13:50:13 espie Exp $
+# $OpenBSD: Signature.pm,v 1.13 2023/05/06 05:20:31 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -14,16 +14,14 @@
 # WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-use strict;
-use warnings;
+use v5.36;
 
 use OpenBSD::LibSpec;
 use OpenBSD::LibSpec::Build;
 
 package DPB::Signature::Dir;
-sub best
+sub best($h, $lib)
 {
-	my ($h, $lib) = @_;
 	if ($lib->is_static) {
 		$h->{a}->{$lib->stem} = 1;
 		return;
@@ -35,20 +33,17 @@ sub best
 	$h->{$lib->stem} = $lib;
 }
 
-sub is_empty
+sub is_empty($h)
 {
-	my $h = shift;
 	return keys %$h == 0;
 }
-sub new
+sub new($class)
 {
-	my $class = shift;
 	bless {}, $class;
 }
 
-sub compare1
+sub compare1($s1, $s2, $h1, $h2, $full)
 {
-	my ($s1, $s2, $h1, $h2, $full) = @_;
 	my $r = '';
 	while (my ($stem, $lib) = each %$s1) {
 		next if $stem eq 'la';
@@ -74,9 +69,8 @@ sub compare1
 	return $r;
 }
 
-sub print_out
+sub print_out($self, $dir, $fh)
 {
-	my ($self, $dir, $fh) = @_;
 	for my $k (sort keys %$self) {
 		next if $k eq 'la';
 		next if $k eq 'a';
@@ -95,32 +89,27 @@ sub print_out
 	}
 }
 
-sub compare
+sub compare($s1, $s2, $h1, $h2)
 {
-	my ($s1, $s2, $h1, $h2) = @_;
 	return compare1($s1, $s2, $h1, $h2, 0) . 
 	    compare1($s2, $s1, $h2, $h1, 1);
 }
 
 package DPB::Signature::Task;
 our @ISA = qw(DPB::Task::Pipe);
-sub new
+sub new($class, $o, $base)
 {
-	my ($class, $o, $base) = @_;
-
 	my $repo = $o->{$base} = DPB::Signature::Dir->new;
 	bless {repo => $repo, dir => "$base/lib"}, $class;
 }
 
-sub run
+sub run($self, $core)
 {
-	my ($self, $core) = @_;
 	$core->shell->exec("/bin/ls", $self->{dir});
 }
 
-sub process
+sub process($self, $core)
 {
-	my ($self, $core) = @_;
 	my $fh = $core->fh;
 	my $repo = $self->{repo};
 	while (<$fh>) {
@@ -135,30 +124,26 @@ sub process
 }
 
 package DPB::Signature;
-sub new
+sub new($class, $state)
 {
-	my ($class, $state) = @_;
 	return bless { reporter => $state->{reporter}}, $class;
 }
 
-sub library_dirs
+sub library_dirs($self)
 {
-	my $self = shift;
 	return OpenBSD::Paths->library_dirs;
 }
 
-sub add_tasks
+sub add_tasks($self, $job)
 {
-	my ($self, $job) = @_;
 	for my $base ($self->library_dirs) {
 		$job->add_tasks(DPB::Signature::Task->new($self, $base));
 	}
 	return $self;
 }
 
-sub compare
+sub compare($s1, $s2)
 {
-	my ($s1, $s2) = @_;
 	my $r = '';
 	for my $dir ($s1->library_dirs) {
 		$r .= $s1->{$dir}->compare($s2->{$dir},
@@ -172,9 +157,8 @@ sub compare
 }
 
 my $ref;
-sub matches
+sub matches($self, $core, $logger)
 {
-	my ($self, $core, $logger) = @_;
 	$self->{host} = $core->hostname;
 	if (!defined $ref) {
 		# couldn't read system dir, can't possibly be okay.
@@ -196,9 +180,8 @@ sub matches
 	}
 }
 
-sub print_out
+sub print_out($self, $core, $logger)
 {
-	my ($self, $core, $logger) = @_;
 	my $log = $logger->create($core->hostname.".sig");
 	for my $dir ($self->library_dirs) {
 		print $log "$dir: \n";

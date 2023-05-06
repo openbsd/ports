@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.205 2021/04/16 20:14:47 espie Exp $
+# $OpenBSD: Port.pm,v 1.206 2023/05/06 05:20:31 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -14,19 +14,17 @@
 # WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-use strict;
-use warnings;
+use v5.36;
 
 use DPB::Job;
 use DPB::Clock;
 
 package DPB::Junk;
-sub want
+
+# job is normally attached to core, unless it's not attached,
+# and then we pass it as an extra parameter
+sub want($class, $core, $job = $core->job)
 {
-	my ($class, $core, $job) = @_;
-	# job is normally attached to core, unless it's not attached,
-	# and then we pass it as an extra parameter
-	$job //= $core->job;
 	return 2 if $job->{v}->forcejunk;
 	# XXX let's wipe the slates at the start of the first tagged
 	# job, as we don't know the exact state of the host.
@@ -44,18 +42,17 @@ package DPB::Task::BasePort;
 our @ISA = qw(DPB::Task::Clocked);
 use OpenBSD::Paths;
 
-sub setup
+sub setup($task, $core)
 {
-	return $_[0];
+	return $task;
 }
 
-sub is_serialized { 0 }
-sub want_frozen { 1 }
-sub want_percent { 1 }
+sub is_serialized($) { 0 }
+sub want_frozen($) { 1 }
+sub want_percent($) { 1 }
 
-sub finalize
+sub finalize($self, $core)
 {
-	my ($self, $core) = @_;
 	$self->SUPER::finalize($core);
 	$core->job->finished_task($self);
 	return $core->{status} == 0;
@@ -64,31 +61,26 @@ sub finalize
 # note that tasks are using the "flyweight" pattern: they're
 # just a name + behavior, and all the data is in job (which is
 # obtained thru core)
-sub new
+sub new($class, $phase)
 {
-	my ($class, $phase) = @_;
 	bless {phase => $phase}, $class;
 }
 
-sub fork
+sub fork($self, $core)
 {
-	my ($self, $core) = @_;
-
 	$core->job->{current} = $self->{phase};
 	return $self->SUPER::fork($core);
 }
 
-sub handle_output
+sub handle_output($self, $job)
 {
-	my ($self, $job) = @_;
 	$self->redirect_fh($job->{logfh}, $job->{log});
 	print ">>> Running $self->{phase} in $job->{path} at ", 
 	    DPB::Util->current_ts, "\n";
 }
 
-sub tweak_args
+sub tweak_args($self, $args, $job, $builder)
 {
-	my ($self, $args, $job, $builder) = @_;
 	push(@$args,
 	    "FETCH_PACKAGES=No",
 	    "PREPARE_CHECK_ONLY=Yes",
@@ -104,9 +96,8 @@ sub tweak_args
 	}
 }
 
-sub run
+sub run($self, $core)
 {
-	my ($self, $core) = @_;
 	my $job = $core->job;
 	my $t = $self->{phase};
 	my $builder = $job->{builder};
@@ -142,14 +133,13 @@ sub run
 	exit(1);
 }
 
-sub notime { 0 }
+sub notime($) { 0 }
 
 package DPB::Task::Port;
 our @ISA = qw(DPB::Task::BasePort);
 
-sub finalize
+sub finalize($self, $core)
 {
-	my ($self, $core) = @_;
 	$self->SUPER::finalize($core);
 	if ($core->prop->{syslog}) {
 		my $fullpkgpath = $core->job->{path};
@@ -183,9 +173,8 @@ sub finalize
 package DPB::Task::Port::Fake;
 our @ISA = qw(DPB::Task::Port);
 
-sub finalize
+sub finalize($self, $core)
 {
-	my ($self, $core) = @_;
 	$core->unswallow;
 	delete $core->job->{nojunk};
 	$self->SUPER::finalize($core);
@@ -196,9 +185,8 @@ sub finalize
 package DPB::Task::Port::Configure;
 our @ISA = qw(DPB::Task::Port);
 
-sub finalize
+sub finalize($self, $core)
 {
-	my ($self, $core) = @_;
 	my $job = $core->job;
 	if ($job->{noconfigurejunk}) {
 		delete $core->job->{nojunk};
@@ -209,9 +197,8 @@ sub finalize
 package DPB::Task::Port::Extract;
 our @ISA = qw(DPB::Task::Port);
 
-sub finalize
+sub finalize($self, $core)
 {
-	my ($self, $core) = @_;
 	my $job = $core->job;
 	# XXX we only exist because there is nojunk involved
 	$job->{nojunk} = 1;
@@ -225,19 +212,17 @@ sub finalize
 package DPB::Task::Port::Signature;
 our @ISA =qw(DPB::Task::BasePort);
 
-sub notime { 1 }
+sub notime($) { 1 }
 
-sub run
+sub run($self, $core)
 {
-	my ($self, $core) = @_;
 	my $job = $core->job;
 	$self->handle_output($job);
 	exit($job->{builder}->check_signature($core, $job->{v}));
 }
 
-sub finalize
+sub finalize($self, $core)
 {
-	my ($self, $core) = @_;
 	$self->SUPER::finalize($core);
 	my $job = $core->job;
 	if ($core->{status} == 0) {
@@ -254,9 +239,8 @@ sub finalize
 package DPB::Task::Port::Checksum;
 our @ISA = qw(DPB::Task::Port);
 
-sub need_checksum
+sub need_checksum($self, $log, $info)
 {
-	my ($self, $log, $info) = @_;
 	my $need = 0;
 	for my $dist (values %{$info->{DIST}}) {
 		if (!$dist->cached_checksum($log, $dist->filename)) {
@@ -268,9 +252,8 @@ sub need_checksum
 	return $need;
 }
 
-sub setup
+sub setup($task, $core)
 {
-	my ($task, $core) = @_;
 	my $job = $core->job;
 	my $info = $job->{v}{info};
 	if (defined $info->{distsize}) {
@@ -284,9 +267,8 @@ sub setup
     	}
 }
 
-sub checksum
+sub checksum($self, $core)
 {
-	my ($self, $core) = @_;
 	my $job = $core->job;
 	$self->handle_output($job);
 	my $exit = 0;
@@ -300,15 +282,13 @@ sub checksum
 	return $exit;
 }
 
-sub run
+sub run($self, $core)
 {
-	my ($self, $core) = @_;
 	exit($self->checksum($core));
 }
 
-sub finalize
+sub finalize($self, $core)
 {
-	my ($self, $core) = @_;
 	$self->SUPER::finalize($core);
 	if ($core->{status} == 0) {
 		delete $core->job->{v}{info}{DIST};
@@ -319,14 +299,13 @@ sub finalize
 package DPB::Task::Port::Serialized;
 our @ISA = qw(DPB::Task::Port);
 
-sub is_serialized { 1 }
-sub want_percent { 0 }
+sub is_serialized($) { 1 }
+sub want_percent($) { 0 }
 
 # note that serialized's setup will return its task only if lock
 # happened succesfully, so we can use that in serialized tasks
-sub setup
+sub setup($task, $core)
 {
-	my ($task, $core) = @_;
 	my $job = $core->job;
 	if (!$job->{locked}) {
 		$task->try_lock($core);
@@ -345,9 +324,8 @@ sub setup
 	return $task;
 }
 
-sub try_lock
+sub try_lock($self, $core)
 {
-	my ($self, $core) = @_;
 	my $job = $core->job;
 
 	my $lock = $job->{builder}->locker->lock($core);
@@ -359,10 +337,8 @@ sub try_lock
 	}
 }
 
-sub junk_unlock
+sub junk_unlock($self, $core)
 {
-	my ($self, $core) = @_;
-
 	if ($core->job->{locked}) {
 		$core->job->{builder}->locker->unlock($core);
 		print {$core->job->{logfh}} "(Junk lock released for ", 
@@ -372,9 +348,8 @@ sub junk_unlock
 	}
 }
 
-sub finalize
+sub finalize($self, $core)
 {
-	my ($self, $core) = @_;
 	my $job = $core->job;
 	my $task = $job->{tasks}[0];
 	# XXX if we didn't lock at the entrance, we locked here.
@@ -391,16 +366,15 @@ sub finalize
 package DPB::Task::Port::Lock;
 our @ISA = qw(DPB::Task::Port::Serialized);
 
-sub setup
+sub setup($task, $core)
 {
-	return $_[0];
+	return $task
 }
 
-sub want_frozen { 0 }
+sub want_frozen($) { 0 }
 
-sub run
+sub run($self, $core)
 {
-	my ($self, $core) = @_;
 	my $job = $core->job;
 	$SIG{IO} = sub { print {$job->{logfh}} "Received IO\n"; };
 	my $start = Time::HiRes::time();
@@ -421,9 +395,8 @@ sub run
 	}
 }
 
-sub finalize
+sub finalize($self, $core)
 {
-	my ($self, $core) = @_;
 	$core->job->{locked} = 1;
 	delete $core->job->{wakemeup};
 	$self->SUPER::finalize($core);
@@ -432,11 +405,10 @@ sub finalize
 package DPB::Task::Port::Depends;
 our @ISA=qw(DPB::Task::Port::Serialized);
 
-sub notime { 1 }
+sub notime($) { 1 }
 
-sub recompute_depends
+sub recompute_depends($self, $core)
 {
-	my ($self, $core) = @_;
 	# we're running this synchronously with other jobs, so 
 	# let's try avoid running pkg_add if we can !
 	# compute all missing deps for all jobs currently waiting
@@ -463,9 +435,8 @@ sub recompute_depends
 	return $deps;
 }
 
-sub setup
+sub setup($task, $core)
 {
-	my ($task, $core) = @_;
 	my $job = $core->job;
 
 	# first, we must be sure to have the lock !
@@ -488,9 +459,8 @@ sub setup
 	}
 }
 
-sub run
+sub run($self, $core)
 {
-	my ($self, $core) = @_;
 	my $job = $core->job;
 	$self->handle_output($job);
 	if ($core->prop->{syslog}) {
@@ -523,9 +493,8 @@ sub run
 	exit(1);
 }
 
-sub finalize
+sub finalize($self, $core)
 {
-	my ($self, $core) = @_;
 	$core->{status} = 0;
 
 	$self->SUPER::finalize($core);
@@ -535,19 +504,16 @@ sub finalize
 package DPB::Task::Port::PrepareResults;
 our @ISA = qw(DPB::Task::Port::Serialized);
 
-sub setup
+sub setup($task, $core)
 {
-	my ($task, $core) = @_;
 	my $job = $core->job;
 	$job->{pos} = tell($job->{logfh});
 	$job->track_lock;
 	return $task->SUPER::setup($core);
 }
 
-sub finalize
+sub finalize($self, $core)
 {
-	my ($self, $core) = @_;
-
 	my $job = $core->{job};
 	my $v = $job->{v};
 	# reopen log at right location
@@ -584,7 +550,7 @@ sub finalize
 package DPB::Task::Port::Uninstall;
 our @ISA=qw(DPB::Task::Port::Serialized);
 
-sub notime { 1 }
+sub notime($) { 1 }
 
 # uninstall is actually a "tentative" junk case
 # it might not happen for various reasons:
@@ -592,9 +558,8 @@ sub notime { 1 }
 # - something else went thru simultaneously and junked already
 
 
-sub setup
+sub setup($task, $core)
 {
-	my ($task, $core) = @_;
 	# we got pre-empted
 	# no actual need to junk
 	if (!DPB::Junk->want($core)) {
@@ -648,18 +613,16 @@ sub setup
 	return $task;
 }
 
-sub add_dontjunk
+sub add_dontjunk($self, $job, $h)
 {
-	my ($self, $job, $h) = @_;
 	return if !defined $job->{builder}{dontjunk};
 	for my $pkgname (keys %{$job->{builder}{dontjunk}}) {
 		$h->{$pkgname} = 1;
 	}
 }
 
-sub add_live_depends
+sub add_live_depends($self, $h, $core)
 {
-	my ($self, $h, $core) = @_;
 	for my $job ($core->same_host_jobs) {
 		if (defined $job->{live_depends}) {
 			for my $d (@{$job->{live_depends}}) {
@@ -673,9 +636,8 @@ sub add_live_depends
 	return 1;
 }
 
-sub run
+sub run($self, $core)
 {
-	my ($self, $core) = @_;
 	my $job = $core->job;
 	my $v = $job->{v};
 
@@ -712,10 +674,8 @@ sub run
 	}
 }
 
-sub finalize
+sub finalize($self, $core)
 {
-	my ($self, $core) = @_;
-
 	# did we really run ? then clean up stuff
 	if ($core->{status} == 0) {
 		my $job = $core->job;
@@ -739,10 +699,8 @@ sub finalize
 # there's nothing to run here, just where we get committed to affinity
 package DPB::Task::Port::InBetween;
 our @ISA = qw(DPB::Task::BasePort);
-sub setup
+sub setup($self, $core)
 {
-	my ($self, $core) = @_;
-
 	my $job = $core->job;
 
 	$job->{builder}{state}{affinity}->start($job->{v}, $core);
@@ -754,21 +712,19 @@ sub setup
 package DPB::Task::Port::ShowSize;
 our @ISA = qw(DPB::Task::Port);
 
-sub want_percent { 0 }
+sub want_percent($) { 0 }
 
-sub fork
+sub fork($self, $core)
 {
-	my ($self, $core) = @_;
 	open($self->{fh}, "-|");
 }
 
-sub handle_output
+sub handle_output($, $)
 {
 }
 
-sub finalize
+sub finalize($self, $core)
 {
-	my ($self, $core) = @_;
 	my $fh = $self->{fh};
 	if ($core->{status} == 0) {
 		my $line = <$fh>;
@@ -796,13 +752,12 @@ sub finalize
 package DPB::Task::Port::Install;
 our @ISA=qw(DPB::Task::Port);
 
-sub notime { 1 }
+sub notime($) { 1 }
 
-sub want_percent { 0 }
+sub want_percent($) { 0 }
 
-sub run
+sub run($self, $core)
 {
-	my ($self, $core) = @_;
 	my $job = $core->job;
 	my $v = $job->{v};
 
@@ -824,9 +779,8 @@ sub run
 	exit(1);
 }
 
-sub finalize
+sub finalize($self, $core)
 {
-	my ($self, $core) = @_;
 	$core->{status} = 0;
 	$self->SUPER::finalize($core);
 	return 1;
@@ -836,12 +790,10 @@ sub finalize
 package DPB::Task::Port::Fetch;
 our @ISA = qw(DPB::Task::Port);
 
-sub notime { 1 }
+sub notime($) { 1 }
 
-sub finalize
+sub finalize($self, $core)
 {
-	my ($self, $core) = @_;
-
 	# if there's a watch file, then we remove the current size,
 	# so that we DON'T take prepare into account.
 	my $job = $core->job;
@@ -854,12 +806,11 @@ sub finalize
 package DPB::Task::Port::Clean;
 our @ISA = qw(DPB::Task::BasePort);
 
-sub notime { 1 }
-sub want_percent { 0 }
+sub notime($) { 1 }
+sub want_percent($) { 0 }
 
-sub setup
+sub setup($task, $core)
 {
-	my ($task, $core) = @_;
 	my $job = $core->job;
 	if ($job->{builder}->should_clean($job->{v})) {
 		$job->{lock}->write("cleaned");
@@ -869,9 +820,8 @@ sub setup
 	}
 }
 
-sub finalize
+sub finalize($self, $core)
 {
-	my ($self, $core) = @_;
 	$self->SUPER::finalize($core);
 	return 1;
 }
@@ -884,9 +834,8 @@ our @ISA = qw(DPB::Task::BasePort);
 #{
 #}
 
-sub finalize
+sub finalize($self, $core)
 {
-	my ($self, $core) = @_;
 	$self->SUPER::finalize($core);
 	# we always make as though we succeeded
 	return 1;
@@ -914,27 +863,26 @@ my $repo = {
 	test => 'DPB::Task::Test',
 };
 
-sub create
+sub create($class, $k)
 {
-	my ($class, $k) = @_;
 	my $fw = $repo->{$k};
 	$fw //= $repo->{default};
 	$fw->new($k);
 }
 
+# placeholder class in case we don't have a real lock
 package DPB::DummyLock;
 
-sub new
+sub new($class)
 {
-	my $class = shift;
 	bless {}, $class;
 }
 
-sub write
+sub write($, $, $ = undef)
 {
 }
 
-sub close
+sub close($)
 {
 }
 
@@ -943,17 +891,13 @@ our @ISA = qw(DPB::Job::Watched);
 
 use Time::HiRes;
 
-sub killinfo
+sub killinfo($self)
 {
-	my $self = shift;
 	return "$self->{path} $self->{current}";
 }
 
-sub new
+sub new($class, %prop)
 {
-	my ($class, %prop) = @_;
-
-
 	my $job = bless \%prop, $class;
 	$job->{path} = $job->{v}->fullpkgpath;
 
@@ -974,16 +918,14 @@ sub new
 	return $job;
 }
 
-sub debug_dump
+sub debug_dump($self)
 {
-	my $self = shift;	
 	return $self->{v}->fullpkgpath;
 }
 
 # a small wrapper that allows us to initialize things
-sub next_task
+sub next_task($self, $core)
 {
-	my ($self, $core) = @_;
 	my $task = shift @{$self->{tasks}};
 	if (defined $task) {
 		return $task->setup($core);
@@ -992,22 +934,19 @@ sub next_task
 	}
 }
 
-sub save_depends
+sub save_depends($job, $l)
 {
-	my ($job, $l) = @_;
 	$job->{live_depends} = $l;
 	$job->{lock}->write("needed", join(' ', sort @$l));
 }
 
-sub save_wanted_depends
+sub save_wanted_depends($job)
 {
-	my $job = shift;
 	$job->{lock}->write("wanted", join(' ', sort keys %{$job->{depends}}));
 }
 
-sub need_depends
+sub need_depends($self, $core, $with_tests)
 {
-	my ($self, $core, $with_tests) = @_;
 	my $dep = $self->{v}{info}->solve_depends($with_tests);
 	return 0 unless %$dep;
 	# XXX we are running this synchronously with other jobs on the
@@ -1040,17 +979,15 @@ sub need_depends
 my $logsize = {};
 my $times = {};
 
-sub add_build_info
+sub add_build_info($class, $pkgpath, $host, $time, $sz)
 {
-	my ($class, $pkgpath, $host, $time, $sz) = @_;
 	$logsize->{$pkgpath} = $sz;
 	$times->{$pkgpath} = $time;
 }
 
 
-sub current_task
+sub current_task($self)
 {
-	my $self = shift;
 	if (@{$self->{tasks}} > 0) {
 		return $self->{tasks}[0]{phase};
 	} else {
@@ -1058,15 +995,13 @@ sub current_task
 	}
 }
 
-sub pkgpath
+sub pkgpath($self)
 {
-	my $self = shift;
 	return $self->{v};
 }
 
-sub name
+sub name($self)
 {
-	my $self = shift;
 	my $n = $self->{path}."(".$self->{task}{phase}.")";
 	if ($self->{nojunk}) {
 		return $n.'!';
@@ -1075,24 +1010,21 @@ sub name
 	}
 }
 
-sub finished_task
+sub finished_task($self, $task)
 {
-	my ($self, $task) = @_;
 	push(@{$self->{done}}, $task);
 }
 
-sub finalize
+sub finalize($self, $core)
 {
-	my $self = shift;
 	if ($self->{stuck}) {
 		print {$self->{logfh}} $self->{stuck}, "\n";
 	}
-	$self->SUPER::finalize(@_);
+	$self->SUPER::finalize($core);
 }
 
-sub totaltime
+sub totaltime($self)
 {
-	my $self = shift;
 	my $t = 0;
 	for my $plus (@{$self->{done}}) {
 		next if $plus->notime;
@@ -1102,15 +1034,13 @@ sub totaltime
 	return DPB::Util->ts2string($t);
 }
 
-sub timings
+sub timings($self)
 {
-	my $self = shift;
 	return join('/', "max_stuck=".DPB::Util->ts2string($self->{watched}{max}), map {sprintf("%s=%.2f", $_->{phase}, $_->elapsed)} @{$self->{done}});
 }
 
-sub equates
+sub equates($class, $h)
 {
-	my ($class, $h) = @_;
 	for my $v (values %$h) {
 		next unless defined $logsize->{$v};
 		for my $w (values %$h) {
@@ -1121,9 +1051,8 @@ sub equates
 	}
 }
 
-sub set_watch
+sub set_watch($self, $logger, $v)
 {
-	my ($self, $logger, $v) = @_;
 	my $expected;
 	for my $w ($v->build_path_list) {
 		if (defined $logsize->{$w}) {
@@ -1136,21 +1065,18 @@ sub set_watch
 	    $expected, $self->{offset}, $self->{started});
 }
 
-sub track_lock
+sub track_lock($self)
 {
-	my $self = shift;
 	$self->{watched}->track_lock;
 }
 
-sub get_timeout
+sub get_timeout($self, $core)
 {
-	my ($self, $core) = @_;
 	return $core->stuck_timeout;
 }
 
-sub really_watch
+sub really_watch($self, $current)
 {
-	my ($self, $current) = @_;
 	return "" unless defined $self->{watched};
 	my $diff = $self->{watched}->check_change($current);
 	$self->{lastdiff} //= 5;
@@ -1163,9 +1089,8 @@ sub really_watch
 	return 0;
 }
 
-sub cleanup_after_fork
+sub cleanup_after_fork($self)
 {
-        my $self = shift;
         $self->{lock}->close;
         $self->SUPER::cleanup_after_fork;
 }
@@ -1173,11 +1098,9 @@ sub cleanup_after_fork
 package DPB::Job::Port;
 our @ISA = qw(DPB::Job::BasePort);
 
-sub new
+sub new($class, @rest)
 {
-	my $class = shift;
-
-	my $job = $class->SUPER::new(@_);
+	my $job = $class->SUPER::new(@rest);
 
 	my $v = $job->{v};
 	my $core = $job->{core};
@@ -1202,10 +1125,9 @@ sub new
 	return $job;
 }
 
-sub silent_log
+sub silent_log($job, @parts)
 {
-	my $job = shift;
-	my $msg = join(@_);
+	my $msg = join(@parts);
 	my $old = $job->{logfh}->autoflush(1);
 	print {$job->{logfh}} $msg;
 	$job->{logfh}->autoflush($old);
@@ -1214,11 +1136,9 @@ sub silent_log
 	}
 }
 
-sub new_junk_only
+sub new_junk_only($class, @rest)
 {
-	my $class = shift;
-
-	my $job = $class->SUPER::new(@_);
+	my $job = $class->SUPER::new(@rest);
 	my $fh2 = $job->{builder}->logger->append("junk");
 	print $fh2 "$$@", CORE::time(), ": ", $job->{core}->hostname,
 	    ": forced junking -> $job->{path}\n";
@@ -1227,9 +1147,8 @@ sub new_junk_only
 }
 
 
-sub add_normal_tasks
+sub add_normal_tasks($self, $should_clean, $core)
 {
-	my ($self, $should_clean, $core) = @_;
 
 	my @todo;
 	my $builder = $self->{builder};
@@ -1311,13 +1230,11 @@ sub add_normal_tasks
 	$self->add_tasks(map {DPB::Port::TaskFactory->create($_)} @todo);
 }
 
-sub wake_others
+sub wake_others($self, $core)
 {
-	my ($self, $core) = @_;
 	my ($minjob, $minpid);
 	$core->walk_same_host_jobs(
-	    sub {
-		my ($pid, $job) = @_;
+	    sub($pid, $job) {
 		return unless exists $job->{wakemeup};
 		if (!defined $minjob || 
 		    $job->{wakemeup} < $minjob->{wakemeup}) {
@@ -1333,20 +1250,17 @@ sub wake_others
 
 package DPB::Job::Port::Test;
 our @ISA = qw(DPB::Job::BasePort);
-sub new
+sub new($class, @rest)
 {
-	my $class = shift;
-
-	my $job = $class->SUPER::new(@_);
+	my $job = $class->SUPER::new(@rest);
 
 	$job->add_test_tasks($job->{core});
 
 	return $job;
 }
 
-sub add_test_tasks
+sub add_test_tasks($self, $core)
 {
-	my ($self, $core) = @_;
 	my @todo;
 
 	my $c = $self->need_depends($core, 1);
@@ -1362,10 +1276,9 @@ sub add_test_tasks
 package DPB::Job::Port::Install;
 our @ISA = qw(DPB::Job::BasePort);
 
-sub new
+sub new($class, @rest)
 {
-	my $class = shift;
-	my $job = $class->SUPER::new(@_);
+	my $job = $class->SUPER::new(@rest);
 
 	push(@{$job->{tasks}},
 		    DPB::Task::Port::Install->new('install'));
@@ -1375,10 +1288,9 @@ sub new
 package DPB::Job::Port::Wipe;
 our @ISA = qw(DPB::Job::BasePort);
 
-sub new
+sub new($class, @rest)
 {
-	my $class = shift;
-	my $job = $class->SUPER::new(@_);
+	my $job = $class->SUPER::new(@rest);
 
 	push(@{$job->{tasks}},
 		    DPB::Task::Port::Clean->new('clean'));
@@ -1391,16 +1303,14 @@ our @ISA = qw(DPB::Watch);
 
 # set things up so that we only track Awaiting lock once.
 
-sub track_lock
+sub track_lock($self)
 {
-	my $self = shift;
 	$self->{tracked} //= 1;
 }
 
 
-sub tweak_msg
+sub tweak_msg($self, $rmsg)
 {
-	my ($self, $rmsg) = @_;
 	if (defined $self->{tracked} && $self->{tracked} == 1) {
 		# we tracked already, so never do it again
 		$self->{tracked} = 0;
@@ -1416,9 +1326,8 @@ sub tweak_msg
 	}
 }
 
-sub frozen_message
+sub frozen_message($self, $diff)
 {
-	my ($self, $diff) = @_;
 	my $msg = $self->SUPER::frozen_message($diff);
 	if ($msg eq "") {
 		delete $self->{override};

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Util.pm,v 1.8 2019/10/23 10:04:06 espie Exp $
+# $OpenBSD: Util.pm,v 1.9 2023/05/06 05:20:31 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -15,61 +15,52 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-use strict;
-use warnings;
-use feature qw(say);
+use v5.36;
 
 package DPB::Util;
-sub make_hot
+sub make_hot($class, $fh)
 {
-	my ($class, $fh) = @_;
 	my $oldfh = select($fh);
 	$| = 1;
 	select($oldfh);
 	return $fh;
 }
 
-sub safe_join
+sub safe_join($class, $sep, @l)
 {
-	my ($class, $sep, @l) = @_;
 	$_ //= "undef" for @l;
 	return join($sep, @l);
 }
 
 my @name =qw(Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec);
-sub time2string
+sub time2string($class, $time)
 {
-	my ($class, $time) = @_;
 	my ($sec, $min, $hour, $mday, $mon) = (localtime $time)[0 .. 4];
 	return sprintf("%d %s %02d:%02d:%02d", $mday, $name[$mon],
 	    $hour, $min, $sec);
 }
 
-sub die_bang
+sub die_bang($class, $msg)
 {
-	my ($class, $msg) = @_;
 	delete $SIG{__DIE__};
 	CORE::die("$msg: $!");
 }
 
-sub ts2string
+sub ts2string($class, $ts)
 {
-	my ($class, $ts) = @_;
 	return sprintf("%.2f", $ts);
 }
 
-sub current_ts
+sub current_ts($class)
 {
-	my $class = shift;
 	return $class->ts2string(Time::HiRes::time());
 }
 
-sub die
+sub die($class, $msg, @extra)
 {
-	my ($class, $msg) = @_;
-	if (@_ > 0) {
+	if (@extra > 0) {
 		require Data::Dumper;
-		say STDERR Data::Dumper::Dumper(@_);
+		say STDERR Data::Dumper::Dumper(@extra);
 	}
 	$DB::single = 1;
 	CORE::die("$msg\n");

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.90 2023/05/02 09:54:27 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.91 2023/05/06 05:20:31 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -15,8 +15,7 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-use strict;
-use warnings;
+use v5.36;
 
 # this object is responsible for launching the build of ports
 # which mostly includes starting the right jobs
@@ -26,9 +25,8 @@ use DPB::Util;
 use DPB::Job::Port;
 use DPB::Serialize;
 
-sub new
+sub new($class, $state)
 {
-	my ($class, $state) = @_;
 	if ($state->opt('R')) {
 		require DPB::PortBuilder::Rebuild;
 		$class = $class->rebuild_class;
@@ -55,9 +53,8 @@ sub new
 	return $self;
 }
 
-sub want_size
+sub want_size($self, $v, $core)
 {
-	my ($self, $v, $core) = @_;
 	if (!$self->{wantsize}) {
 		return 0;
 	}
@@ -73,36 +70,31 @@ sub want_size
 	}
 }
 
-sub rebuild_class
+sub rebuild_class($)
 { 'DPB::PortBuilder::Rebuild' }
 
-sub ports
+sub ports($self)
 {
-	my $self = shift;
 	return $self->{state}->ports;
 }
 
-sub logger
+sub logger($self)
 {
-	my $self = shift;
 	return $self->{state}->logger;
 }
 
-sub locker
+sub locker($self)
 {
-	my $self = shift;
 	return $self->{state}->locker;
 }
 
-sub dontjunk
+sub dontjunk($self, $v)
 {
-	my ($self, $v) = @_;
 	$self->{dontjunk}{$v->fullpkgname} = 1;
 }
 
-sub should_clean
+sub should_clean($self, $v)
 {
-	my ($self, $v) = @_;
 	my $state = $self->{state};
 	if ($state->{never_clean}) {
 		return 0;
@@ -111,21 +103,18 @@ sub should_clean
 	}
 }
 
-sub make
+sub make($self)
 {
-	my $self = shift;
 	return $self->{state}->make;
 }
 
-sub make_args
+sub make_args($self)
 {
-	my $self = shift;
 	return $self->{state}->make_args;
 }
 
-sub init
+sub init($self)
 {
-	my $self = shift;
 	$self->{state}{build_user}->make_path($self->{realfullrepo});
 	$self->{global} = $self->logger->append("build");
 	$self->{lockperf} = 
@@ -140,18 +129,16 @@ sub init
 	}
 }
 
-sub pkgfile
+sub pkgfile($self, $v)
 {
-	my ($self, $v) = @_;
 	my $name = $v->fullpkgname;
 	return "$self->{realfullrepo}/$name.tgz";
 }
 
-sub check
+sub check($self, $v)
 {
-	my ($self, $v) = @_;
 	return $self->{state}{build_user}->run_as(
-	    sub { 
+	    sub() { 
 	    	return -f $self->pkgfile($v); 
 	    });
 }
@@ -161,17 +148,16 @@ sub end_check
 	&check;
 }
 
-sub checks_rebuild
+sub checks_rebuild($, $)
 {
 }
 
-sub register_package
+sub register_package($, $)
 {
 }
 
-sub report
+sub report($self, $v, $job, $core)
 {
-	my ($self, $v, $job, $core) = @_;
 	return if $job->{signature_only};
 	my $pkgpath = $v->fullpkgpath;
 	my $host = $core->fullhostname;
@@ -180,7 +166,7 @@ sub report
 	}
 	my $log = $self->{global};
 	my $sz = $self->logger->run_as(
-	    sub { 
+	    sub() { 
 		return  (stat $self->logger->log_pkgpath($v))[7]; 
 	    });
 	if (defined $job->{offset}) {
@@ -207,15 +193,13 @@ sub report
 	}
 }
 
-sub get
+sub get($self)
 {
-	my $self = shift;
 	return DPB::Core->get;
 }
 
-sub end_lock
+sub end_lock($self, $lock, $core, $job)
 {
-	my ($self, $lock, $core, $job) = @_;
 	my $end = CORE::time();
 	$lock->write("status", $core->{status});
 	$lock->write("todo", $job->current_task);
@@ -223,9 +207,8 @@ sub end_lock
 	$lock->close;
 }
 
-sub build
+sub build($self, $v, $core, $lock, $final_sub)
 {
-	my ($self, $v, $core, $lock, $final_sub) = @_;
 	my $start = CORE::time();
 	my ($log, $fh) = $self->logger->make_logs($v);
 	my $memsize = $self->{sizer}->build_in_memory($fh, $core, $v);
@@ -268,9 +251,8 @@ sub build
 	$lock->write("start", "$start (".DPB::Util->time2string($start).")");
 }
 
-sub wipe
+sub wipe($self, $v, $core, $final_sub)
 {
-	my ($self, $v, $core, $final_sub) = @_;
 	my ($log, $fh) = $self->logger->make_logs($v);
 	print $fh ">>> Wiping on ", $core->hostname, " under ";
 	$v->quick_dump($fh);
@@ -285,9 +267,8 @@ sub wipe
 	$core->start_job($job);
 }
 
-sub force_junk
+sub force_junk($self, $v, $core, $final_sub)
 {
-	my ($self, $v, $core, $final_sub) = @_;
 	my $log = $self->logger->log_pkgpath($v);
 	my $fh = $self->logger->open('>>', $log);
 	print $fh ">>> Force junking on ", $core->hostname;
@@ -301,9 +282,8 @@ sub force_junk
 	$core->start_job($job);
 }
 
-sub test
+sub test($self, $v, $core, $lock, $final_sub)
 {
-	my ($self, $v, $core, $lock, $final_sub) = @_;
 	my $start = CORE::time();
 	my $log = $self->logger->make_test_logs($v);
 	my $memsize = $self->{sizer}->build_in_memory($core, $v);
@@ -338,9 +318,8 @@ sub test
 	$lock->write("start", "$start (".DPB::Util->time2string($start).")");
 }
 
-sub install
+sub install($self, $v, $core)
 {
-	my ($self, $v, $core) = @_;
 	my ($log, $fh) = $self->logger->make_logs($v);
 	print $fh ">>> Installing under ";
 	$v->quick_dump($fh);

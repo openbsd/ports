@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Heuristics.pm,v 1.38 2023/05/02 09:37:24 espie Exp $
+# $OpenBSD: Heuristics.pm,v 1.39 2023/05/06 05:20:31 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -15,8 +15,7 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-use strict;
-use warnings;
+use v5.36;
 
 # this package is responsible for the initial weighing of pkgpaths, and handling
 # consequences
@@ -32,9 +31,8 @@ our %weight;
 # we set the "unknown" weight as max if we parsed a file.
 my $default = 1;
 
-sub finished_parsing
+sub finished_parsing($self)
 {
-	my $self = shift;
 	while (my ($k, $v) = each %bad_weight) {
 		$self->set_weight($k, $v);
 	}
@@ -44,17 +42,15 @@ sub finished_parsing
 	}
 }
 
-sub intrinsic_weight
+sub intrinsic_weight($self, $v)
 {
-	my ($self, $v) = @_;
 	$weight{$v} // $default;
 }
 
 # hook for PkgPath, we don't need to record weights for all fullpkgpaths,
 # as equivalences will define weights for them all
-sub equates
+sub equates($class, $h)
 {
-	my ($class, $h) = @_;
 	for my $v (values %$h) {
 		next unless defined $weight{$v};
 		for my $w (values %$h) {
@@ -65,9 +61,8 @@ sub equates
 }
 
 
-sub set_weight
+sub set_weight($self, $v, $w = undef)
 {
-	my ($self, $v, $w) = @_;
 	return unless defined $w;
 	if (ref $v && $v->{scaled}) {
 		$weight{$v} = $w * $v->{scaled};
@@ -79,9 +74,8 @@ sub set_weight
 
 my $cache;	#  store precomputed full weight
 
-sub mark_depend
+sub mark_depend($self, $d, $v)
 {
-	my ($self, $d, $v) = @_;
 	if (!defined $needed_by{$d}{$v}) {
 		$needed_by{$d}{$v} = $v;
 		$cache = {};# cache gets invalidated each time we see a new
@@ -89,10 +83,8 @@ sub mark_depend
 	}
 }
 
-sub compute_full_weight
+sub compute_full_weight($self, $v)
 {
-	my ($self, $v) = @_;
-
 	# compute the transitive closure of dependencies
 	my $dependencies = {$v => $v};
 	my @todo = values %{$needed_by{$v}};
@@ -109,9 +101,8 @@ sub compute_full_weight
 	return $sum;
 }
 
-sub full_weight
+sub full_weight($self, $v)
 {
-	my ($self, $v) = @_;
 	$cache->{$v} //= $self->compute_full_weight($v);
 }
 
@@ -120,9 +111,8 @@ sub full_weight
 my $sf_per_host = {};
 my $max_sf;
 
-sub calibrate
+sub calibrate($self, @cores)
 {
-	my ($self, @cores) = @_;
 	for my $core (@cores) {
 		$sf_per_host->{$core->fullhostname} = $core->sf;
 		$max_sf //= $core->sf;
@@ -132,9 +122,8 @@ sub calibrate
 	}
 }
 
-sub add_build_info
+sub add_build_info($self, $pkgpath, $host, $time, $sz)
 {
-	my ($self, $pkgpath, $host, $time, $sz) = @_;
 	if (defined $sf_per_host->{$host}) {
 		$time *= $sf_per_host->{$host};
 		$time /= $max_sf;
@@ -144,9 +133,8 @@ sub add_build_info
 	}
 }
 
-sub compare_weights
+sub compare_weights($self, $a, $b)
 {
-	my ($self, $a, $b) = @_;
 	return $self->intrinsic_weight($a) <=> $self->intrinsic_weight($b);
 }
 
@@ -157,22 +145,19 @@ sub compare_weights
 # everything else is a queue... changing the heuristics object gives you
 # more sophisticated queues (separated speed factor bins) or specialized
 # algorithms (squiggles or fetch heuristics)
-sub new
+sub new($class, $state)
 {
-	my ($class, $state) = @_;
 	return bless {state => $state}, $class;
 }
 
-sub random
+sub random($self)
 {
-	my $self = shift;
 	# perl allows you to re-bless an object as a different class
 	return bless $self, "DPB::Heuristics::random";
 }
 
-sub compare
+sub compare($self, $a, $b)
 {
-	my ($self, $a, $b) = @_;
 	# XXX if we don't know, we prefer paths "later in the game"
 	# so if you abort dpb and restart it, it will have stuff to do
 	# this also means that equivalent paths will actually show
@@ -181,9 +166,8 @@ sub compare
 	    $a->fullpkgpath cmp $b->fullpkgpath;
 }
 
-sub new_queue
+sub new_queue($self)
 {
-	my $self = shift;
 	if (DPB::HostProperties->has_sf) {
 		require DPB::Heuristics::SpeedFactor;
 		return DPB::Heuristics::Queue::Part->new($self);
@@ -198,15 +182,13 @@ sub new_queue
 
 package DPB::Heuristics::SimpleSorter;
 # the simplest queue: just use sorted_values, and pop
-sub new
+sub new($class, $o)
 {
-	my ($class, $o) = @_;
 	bless $o->sorted_values, $class;
 }
 
-sub next
+sub next($self)
 {
-	my $self = shift;
 	return pop @$self;
 }
 
@@ -215,16 +197,14 @@ sub next
 # trying to do stuff which has depends first, up to a point.
 package DPB::Heuristics::ReverseSorter;
 our @ISA = (qw(DPB::Heuristics::SimpleSorter));
-sub new
+sub new($class, $o)
 {
-	my ($class, $o) = @_;
 	bless {l => $o->sorted_values, l2 => []}, $class;
 }
 
 # return smallest stuff with depends preferably
-sub next
+sub next($self)
 {
-	my $self = shift;
 	# grab stuff from the normal queue
 	while (my $v = shift @{$self->{l}}) {
 		# XXX when requeuing a job with L= on the side, this might not
@@ -249,17 +229,15 @@ sub next
 # and this is the complex one where there might be several bins thx to
 # differing speed factors
 package DPB::Heuristics::Sorter;
-sub new
+sub new($class, $list)
 {
-	my ($class, $list) = @_;
 	my $o = bless {list => $list, l => []}, $class;
 	$o->next_bin;
 	return $o;
 }
 
-sub next_bin
+sub next_bin($self)
 {
-	my $self = shift;
 	if (my $bin = pop @{$self->{list}}) {
 		$self->{l} = $bin->sorted_values;
 	} else {
@@ -267,9 +245,8 @@ sub next_bin
 	}
 }
 
-sub next
+sub next($self)
 {
-	my $self = shift;
 	if (my $r = pop @{$self->{l}}) {
 		return $r;
 	} else {
@@ -283,57 +260,48 @@ sub next
 
 # and here's how you handle individual bins
 package DPB::Heuristics::Bin;
-sub new
+sub new($class, $h)
 {
-	my ($class, $h) = @_;
 	return bless {o => {}, weight => 0, h => $h}, $class;
 }
 
-sub add
+sub add($self, $v)
 {
-	my ($self, $v) = @_;
 	$self->{o}{$v} = $v;
 }
 
-sub contains
+sub contains($self, $v)
 {
-	my ($self, $v) = @_;
 	return exists $self->{o}{$v};
 }
 
-sub remove
+sub remove($self, $v)
 {
-	my ($self, $v) = @_;
 	delete $self->{o}{$v};
 }
 
-sub weight
+sub weight($self)
 {
-	my $self = shift;
 	return $self->{weight};
 }
 
-sub count
+sub count($self)
 {
-	my $self = shift;
 	return scalar keys %{$self->{o}};
 }
 
-sub non_empty
+sub non_empty($self)
 {
-	my $self = shift;
 	return scalar(keys %{$self->{o}}) != 0;
 }
 
-sub sorted_values
+sub sorted_values($self)
 {
-	my $self = shift;
 	return [sort {$self->{h}->compare($a, $b)} values %{$self->{o}}];
 }
 
-sub dump
+sub dump($self, $fh, $state)
 {
-	my ($self, $fh, $state) = @_;
 	my $l = $self->sorted_values;
 	for my $i (0 .. 49) {
 		last if @$l == 0;
@@ -347,18 +315,16 @@ sub dump
 package DPB::Heuristics::Queue;
 our @ISA = qw(DPB::Heuristics::Bin);
 
-sub sorted
+sub sorted($self, $core)
 {
-	my ($self, $core) = @_;
 	if ($core->{squiggle}) {
 		return DPB::Heuristics::ReverseSorter->new($self);
 	}
 	return $self->find_sorter($core);
 }
 
-sub find_sorter
+sub find_sorter($self, $core)
 {
-	my ($self, $core) = @_;
 	return DPB::Heuristics::SimpleSorter->new($self);
 }
 
@@ -370,15 +336,13 @@ my %any;
 
 # note we actually *have* to set weights because we still want consistent
 # sorting !
-sub compare
+sub compare($self, $a, $b)
 {
-	my ($self, $a, $b) = @_;
 	return ($any{$a} //= rand) <=> ($any{$b} //= rand);
 }
 
-sub new_queue
+sub new_queue($self)
 {
-	my $self = shift;
 	return DPB::Heuristics::Queue->new($self);
 }
 

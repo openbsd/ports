@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.102 2023/05/02 09:17:33 espie Exp $
+# $OpenBSD: Core.pm,v 1.103 2023/05/06 05:20:31 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -14,8 +14,7 @@
 # WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-use strict;
-use warnings;
+use v5.36;
 use DPB::Util;
 use Time::HiRes;
 
@@ -38,9 +37,8 @@ use DPB::Job;
 # need to know which host are around for affinity purposes
 my %allhosts;
 
-sub matches_affinity
+sub matches_affinity($self, $v)
 {
-	my ($self, $v) = @_;
 	my $hostname = $v->{affinity};
 	# same host
 	if ($self->hostname eq $hostname) {
@@ -55,35 +53,32 @@ sub matches_affinity
 # note that we play dangerously, e.g., we only keep cores that are running
 # something in there, the code can keep some others.
 my ($running, $special) = ({}, {});
-sub repositories
+sub repositories($)
 {
 	return ($running, $special);
 }
 
 my @extra_stuff = ();
 
-sub register_event
+sub register_event($class, $code)
 {
-	my ($class, $code) = @_;
 	push(@extra_stuff, $code);
 }
 
-sub handle_events
+sub handle_events($)
 {
 	for my $code (@extra_stuff) {
-		&$code;
+		&$code();
 	}
 }
 
-sub is_alive
+sub is_alive($self)
 {
-	my $self = shift;
 	return $self->host->is_alive;
 }
 
-sub shell
+sub shell($self)
 {
-	my $self = shift;
 	if ($self->{user}) {
 		return $self->host->shell->run_as($self->{user});
 	} else {
@@ -91,66 +86,56 @@ sub shell
 	}
 }
 
-sub new
+sub new($class, $host)
 {
-	my ($class, $host) = @_;
 	my $c = bless {host => $host}, $class;
 	$allhosts{$c->hostname} = 1;
 	return $c;
 }
 
-sub clone
+sub clone($self)
 {
-	my $self = shift;
 	my $c = ref($self)->new($self->host);
 	return $c;
 }
 
-sub host
+sub host($self)
 {
-	my $self = shift;
 	return $self->{host};
 }
 
-sub prop
+sub prop($self)
 {
-	my $self = shift;
 	return $self->host->{prop};
 }
 
-sub sf
+sub sf($self)
 {
-	my $self = shift;
 	return $self->prop->{sf};
 }
 
-sub stuck_timeout
+sub stuck_timeout($self)
 {
-	my $self = shift;
 	return $self->prop->{stuck_timeout};
 }
 
-sub fetch_timeout
+sub fetch_timeout($self)
 {
-	my $self = shift;
 	return $self->prop->{fetch_timeout};
 }
 
-sub memory
+sub memory($self)
 {
-	my $self = shift;
 	return $self->prop->{memory};
 }
 
-sub hostname
+sub hostname($self)
 {
-	my $self = shift;
 	return $self->host->name;
 }
 
-sub lockname
+sub lockname($self)
 {
-	my $self = shift;
 	return "host:".$self->hostname;
 }
 
@@ -161,41 +146,40 @@ sub logname
 
 # This is so we can handle cores like pkgpaths and distfiles
 # for reporting various errors
-sub print_parent
+sub print_parent($, $)
 {
 	# Nothing to do
 }
 
-sub write_parent
+sub write_parent($, $)
 {
 	# Likewise
 }
 
-sub fullhostname
+
+
+
+sub fullhostname($self)
 {
-	my $self = shift;
 	return $self->host->fullname;
 }
 
-sub register
+sub register($self, $pid)
 {
-	my ($self, $pid) = @_;
 	$self->{pid} = $pid;
 	$self->repository->{$self->{pid}} = $self;
 }
 
-sub unregister
+sub unregister($self, $status)
 {
-	my ($self, $status) = @_;
 	delete $self->repository->{$self->{pid}};
 	delete $self->{pid};
 	$self->{status} = $status;
 	return $self;
 }
 
-sub terminate
+sub terminate($self)
 {
-	my $self = shift;
 	if (defined $self->{pid}) {
 		waitpid($self->{pid}, 0);
 		$self->unregister($?);
@@ -205,9 +189,8 @@ sub terminate
 	}
 }
 
-sub reap_kid
+sub reap_kid($class, $kid = undef)
 {
-	my ($class, $kid) = @_;
 	if (defined $kid && $kid > 0) {
 		for my $repo ($class->repositories) {
 			if (defined $repo->{$kid}) {
@@ -219,41 +202,35 @@ sub reap_kid
 	return $kid;
 }
 
-sub reap
+sub reap($class)
 {
-	my ($class, $all) = @_;
 	my $reaped = 0;
 	$class->handle_events;
 	$reaped++ while $class->reap_kid(waitpid(-1, WNOHANG)) > 0;
 	return $reaped;
 }
 
-sub reap_wait
+sub reap_wait($class)
 {
-	my ($class, $reporter) = @_;
 
 	return $class->reap_kid(waitpid(-1, 0));
 }
 
-sub dump
+sub dump($c)
 {
-	my $c = shift;
 	return join(' ', $c->{pid}, ref($c), 
 	    ref($c->job), $c->job->name);
 }
 
 
-sub kill
+sub kill($core, $sig, $pid = $core->{pid})
 {
-	my ($core, $sig, $pid) = @_;
-	$pid //= $core->{pid};
 	kill $sig => -$pid;
 	kill $sig => $pid;
 }
 
-sub send_signal
+sub send_signal($class, $sig, $h, $verbose)
 {
-	my ($class, $sig, $h, $verbose) = @_;
 	while (my ($pid, $core) = each %$h) {
 		print STDERR "Sending $sig to pg ".$core->dump, "\n"
 		    if $verbose;
@@ -261,9 +238,8 @@ sub send_signal
 	}
 }
 
-sub wait_for_kill
+sub wait_for_kill($class, $h, $verbose)
 {
-	my ($class, $h, $verbose) = @_;
 	for (my $i = 0; $i < 4;) {
 		my $kid = waitpid(-1, WNOHANG);
 		if ($kid > 0) {
@@ -284,10 +260,8 @@ sub wait_for_kill
 	return 0;
 }
 
-sub cleanup
+sub cleanup($class, $sig = 'INT', $verbose = 0)
 {
-	my ($class, $sig, $verbose) = @_;
-	$sig //= 'INT';
 	local $> = 0;
 	
 	# collate repos together
@@ -315,13 +289,12 @@ sub cleanup
 	}
 }
 
-sub wipehost
+sub wipehost($class, $h)
 {
-	my ($class, $h) = @_;
 	my @pids;
 	my $r = $class->repository;
-	$class->walk_host_jobs($h, sub {
-		my ($pid, $job) = @_;
+	$class->walk_host_jobs($h, 
+	    sub($pid, $job) {
 		push @pids, $pid;
 	    });
 	for my $pid (@pids) { 
@@ -331,9 +304,8 @@ sub wipehost
 	}
 }
 
-sub debug_dump
+sub debug_dump($self)
 {
-	my $self = shift;
 	return $self->hostname;
 }
 
@@ -343,42 +315,36 @@ OpenBSD::Handler->register( sub { __PACKAGE__->cleanup });
 package DPB::Core::WithJobs;
 our @ISA = qw(DPB::Core::Abstract);
 
-sub fh
+sub fh($self)
 {
-	my $self = shift;
 	return $self->task->{fh};
 }
 
-sub job
+sub job($self)
 {
-	my $self = shift;
 	return $self->{job};
 }
 
-sub debug_dump
+sub debug_dump($self)
 {
-	my $self = shift;
 	return join(':',$self->hostname, $self->job->debug_dump);
 }
 
-sub task
+sub task($self)
 {
-	my $self = shift;
 	return $self->job->{task};
 }
 
-sub terminate
+sub terminate($self)
 {
-	my $self = shift;
 	$self->task->end  if $self->task;
 	if ($self->SUPER::terminate) {
 		$self->job->finalize($self);
 	}
 }
 
-sub run_task
+sub run_task($core)
 {
-	my $core = shift;
 	my $pid = $core->task->fork($core);
 	if (!defined $pid) {
 		DPB::Util->die_bang("Oops: task ".$core->task->name." couldn't start");
@@ -394,9 +360,8 @@ sub run_task
 	}
 }
 
-sub continue
+sub continue($core)
 {
-	my $core = shift;
 	if ($core->task->finalize($core)) {
 		return $core->start_task;
 	} else {
@@ -404,9 +369,8 @@ sub continue
 	}
 }
 
-sub start_task
+sub start_task($core)
 {
-	my $core = shift;
 	my $task = $core->job->next_task($core);
 	$core->job->{task} = $task;
 	if (defined $task) {
@@ -416,9 +380,8 @@ sub start_task
 	}
 }
 
-sub mark_ready
+sub mark_ready($self)
 {
-	my $self = shift;
 	if ($self->{pid}) {
 		require Data::Dumper;
 		#print Data::Dumper::Dumper($self), "\n";
@@ -428,30 +391,26 @@ sub mark_ready
 	return $self;
 }
 
-sub start_job
+sub start_job($core, $job)
 {
-	my ($core, $job) = @_;
 	$core->{job} = $job;
 	$core->{started} = Time::HiRes::time();
 	$core->{status} = 0;
 	$core->start_task;
 }
 
-sub success
+sub success($self)
 {
-	my $self = shift;
 	$self->host->{consecutive_failures} = 0;
 }
 
-sub failure
+sub failure($self)
 {
-	my $self = shift;
 	$self->host->{consecutive_failures}++;
 }
 
-sub start_clock
+sub start_clock($class, $tm)
 {
-	my ($class, $tm) = @_;
 	DPB::Core::Clock->start($tm);
 }
 
@@ -466,9 +425,8 @@ my %stopped = ();
 my $logdir;
 my $lastcount = 0;
 
-sub stats
+sub stats($class, $fh, $state)
 {
-	my ($class, $fh, $state) = @_;
 	$fh->print("Available:\n");
 	for my $c (@$available) {
 		$fh->print("  ", $c->hostname, "\n");
@@ -484,9 +442,8 @@ sub stats
 	}
 }
 
-sub log_concurrency
+sub log_concurrency($class, $time, $fh)
 {
-	my ($class, $time, $fh) = @_;
 	my $j = 0;
 	while (my ($k, $c) = each %{$class->repository}) {
 		$j++;
@@ -503,36 +460,32 @@ sub log_concurrency
 	}
 }
 
-sub set_logdir
+sub set_logdir($, $l)
 {
-	my $class = shift;
-	$logdir = shift;
+	$logdir = $l;
 }
 
-sub is_local
+sub is_local($self)
 {
-	my $self = shift;
 	return $self->host->is_localhost;
 }
 
 my @extra_report_tty = ();
 my @extra_report_notty = ();
-sub register_report
+sub register_report($self, $code, $c2)
 {
-	my ($self, $code, $c2) = @_;
 	push (@extra_report_tty, $code);
 	push (@extra_report_notty, $c2);
 }
 
-sub repository
+sub repository($)
 {
 	return $running;
 }
 
 
-sub walk_host_jobs
+sub walk_host_jobs($self, $h, $sub)
 {
-	my ($self, $h, $sub) = @_;
 	while (my ($pid, $core) = each %{$self->repository}) {
 		next if $core->hostname ne $h;
 		# XXX only interested in "real" jobs now
@@ -541,26 +494,23 @@ sub walk_host_jobs
 	}
 }
 
-sub walk_same_host_jobs
+sub walk_same_host_jobs($self, $sub)
 {
-	my ($self, $sub) = @_;
 	return $self->walk_host_jobs($self->hostname, $sub);
 }
 
-sub same_host_jobs
+sub same_host_jobs($self)
 {
-	my $self = shift;
 	my @jobs = ();
-	$self->walk_same_host_jobs(sub {
-		my ($pid, $job) = @_;
+	$self->walk_same_host_jobs(
+	    sub($pid, $job) {
 		push(@jobs, $job);
 	    });
 	return @jobs;
 }
 
-sub status
+sub status($self, $v)
 {
-	my ($self, $v) = @_;
 	for my $pid (keys %{$self->repository}) {
 		my $core = $self->repository->{$pid};
 		next if !defined $core->job->{v};
@@ -571,9 +521,8 @@ sub status
 	return undef;
 }
 
-sub wake_jobs
+sub wake_jobs($self)
 {
-	my $self = shift;
 	my ($alarm, $sleepin);
 	for my $core (values %{$self->repository}) {
 		next if !defined $core->job->{v};
@@ -590,9 +539,8 @@ sub wake_jobs
 	}
 }
 
-sub one_core
+sub one_core($core, $time)
 {
-	my ($core, $time) = @_;
 	my $hostname = $core->hostname;
 
 	my $s = $core->job->name;
@@ -615,9 +563,8 @@ sub one_core
     	return $s;
 }
 
-sub report_tty
+sub report_tty($, $)
 {
-	my ($self, $state) = @_;
 	my $current = Time::HiRes::time();
 
 	my $s = join("\n", map {one_core($_, $current)} sort {$a->{started} <=> $b->{started}} values %$running). "\n";
@@ -627,9 +574,8 @@ sub report_tty
 	return $s;
 }
 
-sub report_notty
+sub report_notty($, $)
 {
-	my ($self, $state) = @_;
 	my $current = Time::HiRes::time();
 	my $s = '';
 	for my $j (values %$running) {
@@ -644,17 +590,15 @@ sub report_notty
 	return $s;
 }
 
-sub mark_ready
+sub mark_ready($self)
 {
-	my $self = shift;
 	$self->SUPER::mark_ready;
 	$self->mark_available($self);
 	return $self;
 }
 
-sub avail
+sub avail($self)
 {
-	my $self = shift;
 	for my $h (keys %stopped) {
 		if (!-e "$logdir/stop-$h") {
 			$self->mark_available(@{$stopped{$h}});
@@ -664,14 +608,13 @@ sub avail
 	return scalar(@{$self->available});
 }
 
-sub available
+sub available($)
 {
 	return $available;
 }
 
-sub can_swallow
+sub can_swallow($core, $n)
 {
-	my ($core, $n) = @_;
 	$core->{swallow} = $n;
 	$core->{swallowed} = [];
 	$core->{realjobs} = $n+1;
@@ -685,9 +628,8 @@ sub can_swallow
 	}
 }
 
-sub unswallow
+sub unswallow($self)
 {
-	my $self = shift;
 	return unless defined $self->{swallowed};
 	my $l = $self->{swallowed};
 
@@ -702,10 +644,9 @@ sub unswallow
 	$self->mark_available(@$l);
 }
 
-sub mark_available
+sub mark_available($self, @cores)
 {
-	my $self = shift;
-	LOOP: for my $core (@_) {
+	LOOP: for my $core (@cores) {
 		# okay, if this core swallowed stuff, then we release 
 		# the swallowed stuff first
 		$core->unswallow;
@@ -731,14 +672,13 @@ sub mark_available
 	}
 }
 
-sub running
+sub running($)
 {
 	return scalar(%$running);
 }
 
-sub get
+sub get($self)
 {
-	my $self = shift;
 	$a = $self->available;
 	if (@$a > 1) {
 		if (DPB::HostProperties->has_sf) {
@@ -769,15 +709,13 @@ sub get
 	return $core;
 }
 
-sub can_be_swallowed
+sub can_be_swallowed($core)
 {
-	my $core = shift;
 	return defined $core->host->{swallow};
 }
 
-sub may_unsquiggle
+sub may_unsquiggle($core)
 {
-	my $core = shift;
 	if ($core->{squiggle} && $core->{squiggle} < 1) {
 		if (rand() >= $core->{squiggle}) {
 			$core->unsquiggle;
@@ -787,9 +725,8 @@ sub may_unsquiggle
 	return 0;
 }
 
-sub unsquiggle
+sub unsquiggle($core)
 {
-	my $core = shift;
 	if ($core->{squiggle}) {
 		$core->host->{wantsquiggles} += $core->{squiggle};
 		delete $core->{squiggle};
@@ -797,9 +734,8 @@ sub unsquiggle
 	return $core;
 }
 
-sub get_affinity
+sub get_affinity($self, $v)
 {
-	my ($self, $v) = @_;
 	my $host = $v->{affinity};
 	my $l = [];
 	while (@$available > 0) {
@@ -814,9 +750,8 @@ sub get_affinity
 	return undef
 }
 
-sub get_compatible
+sub get_compatible($self, $v)
 {
-	my ($self, $v) = @_;
 	my $l = [];
 	while (@$available > 0) {
 		my $core = shift @$available;
@@ -832,7 +767,7 @@ sub get_compatible
 
 my @all_cores = ();
 
-sub all_sf
+sub all_sf($)
 {
 	my $l = [];
 	for my $j (@all_cores) {
@@ -842,29 +777,26 @@ sub all_sf
 	return [sort {$a <=> $b} @$l];
 }
 
-sub new
+sub new($class, $host)
 {
-	my ($class, $host) = @_;
 	my $o = $class->SUPER::new($host);
 	push(@all_cores, $o);
 	return $o;
 }
 
-sub new_noreg
+sub new_noreg($class, $host)
 {
-	my ($class, $host) = @_;
 	$class->SUPER::new($host);
 }
 
-sub start_pipe
+sub start_pipe($self, $code, $name)
 {
-	my ($self, $code, $name) = @_;
 	$self->start_job(DPB::Job::Pipe->new($code, $name));
 }
 
 package DPB::Core::Special;
 our @ISA = qw(DPB::Core::WithJobs);
-sub repository
+sub repository($)
 {
 	return $special;
 }
@@ -873,7 +805,7 @@ package DPB::Core::Local;
 our @ISA = qw(DPB::Core);
 
 my ($host, $shorthost);
-sub hostname
+sub hostname($)
 {
 	if (!defined $host) {
 		chomp($host = `hostname`);
@@ -883,9 +815,8 @@ sub hostname
 	return $host;
 }
 
-sub short_hostname
+sub short_hostname($class)
 {
-	my $class = shift;
 	$class->hostname;
 	return $shorthost;
 }
@@ -895,24 +826,23 @@ our @ISA = qw(DPB::Core::Local);
 
 my $fetchcores = [];
 
-sub available
+sub available($)
 {
 	return $fetchcores;
 }
 
-sub may_unsquiggle
+sub may_unsquiggle($)
 {
 	return 1;
 }
 
-sub can_be_swallowed
+sub can_be_swallowed($)
 {
 	return 0;
 }
 
-sub new
+sub new($class, $host)
 {
-	my ($class, $host) = @_;
 	my $c = $class->SUPER::new($host);
 	$c->{user} = $c->prop->{fetch_user};
 	return $c;
@@ -921,9 +851,8 @@ sub new
 package DPB::Core::Clock;
 our @ISA = qw(DPB::Core::Special);
 
-sub start
+sub start($class, $reporter)
 {
-	my ($class, $reporter) = @_;
 	my $core = $class->new(DPB::Host->new('localhost'));
 	$core->start_job(DPB::Job::Infinite->new(DPB::Task::Fork->new(sub {
 		sleep($reporter->timeout);

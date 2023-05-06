@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.4 2015/04/27 13:32:57 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.5 2023/05/06 05:20:32 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -15,21 +15,18 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-use strict;
-use warnings;
+use v5.36;
 
 package DPB::SubEngine::Fetch;
 our @ISA = qw(DPB::SubEngine);
-sub new_queue
+sub new_queue($class, $engine)
 {
-	my ($class, $engine) = @_;
 	require DPB::Heuristics::FetchQueue;
 	return DPB::Heuristics::FetchQueue->new($engine->{heuristics});
 }
 
-sub is_done
+sub is_done($self, $v)
 {
-	my ($self, $v) = @_;
 	return 1 if $v->{done};
 	if ($v->check($self->{engine}{logger})) {
 		$self->log('B', $v);
@@ -40,14 +37,13 @@ sub is_done
     	}
 }
 
-sub get_core
+sub get_core($)
 {
 	return DPB::Core::Fetcher->get;
 }
 
-sub start_build
+sub start_build($self, $v, $core, $lock)
 {
-	my ($self, $v, $core, $lock) = @_;
 	$self->log('J', $v);
 	$self->{engine}{state}->fetch->fetch($v, $core,
 	    sub { 
@@ -55,7 +51,7 @@ sub start_build
 	    });
 }
 
-sub end_build
+sub end_build($, $)
 {
 }
 

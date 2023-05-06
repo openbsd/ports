@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Rebuild.pm,v 1.7 2019/06/17 10:55:37 espie Exp $
+# $OpenBSD: Rebuild.pm,v 1.8 2023/05/06 05:20:32 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -15,14 +15,12 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-use strict;
-use warnings;
+use v5.36;
 package DPB::PortBuilder::Rebuild;
 our @ISA = qw(DPB::PortBuilder);
 
-sub init
+sub init($self)
 {
-	my $self = shift;
 	$self->SUPER::init;
 
 	require OpenBSD::PackageRepository;
@@ -36,9 +34,8 @@ sub init
 
 my $uptodate = {};
 
-sub equal_signatures
+sub equal_signatures($self, $core, $v)
 {
-	my ($self, $core, $v) = @_;
 	my $p = $self->{repository}->find($v->fullpkgname.".tgz");
 	my $plist = $p->plist(\&OpenBSD::PackingList::UpdateInfoOnly);
 	my $pkgsig = $plist->signature->string;
@@ -48,9 +45,8 @@ sub equal_signatures
 	return $portsig eq $pkgsig;
 }
 
-sub check_signature
+sub check_signature($self, $core, $v)
 {
-	my ($self, $core, $v) = @_;
 	my $okay = 1;
 	for my $w ($v->build_path_list) {
 		my $name = $w->fullpkgname;
@@ -74,38 +70,33 @@ sub check_signature
 }
 
 # this is due to the fact check_signature is within a child
-sub register_package
+sub register_package($self, $v)
 {
-	my ($self, $v) = @_;
 	$uptodate->{$v->fullpkgname} = 1;
 }
 
-sub end_check
+sub end_check($self, $v)
 {
-	my ($self, $v) = @_;
 	return 0 unless $self->SUPER::end_check($v);
 	$self->register_package($v);
 	return 1;
 }
 
-sub check
+sub check($self, $v)
 {
-	my ($self, $v) = @_;
 	return 0 unless $self->SUPER::check($v);
 	return $uptodate->{$v->fullpkgname};
 }
 
-sub register_updates
+sub register_updates($self, $v)
 {
-	my ($self, $v) = @_;
 	for my $w ($v->build_path_list) {
 		$self->end_check($w);
 	}
 }
 
-sub checks_rebuild
+sub checks_rebuild($self, $v)
 {
-	my ($self, $v) = @_;
 	return 1 unless $uptodate->{$v->fullpkgname};
 }
 

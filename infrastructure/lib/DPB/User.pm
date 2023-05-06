@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: User.pm,v 1.26 2023/05/03 19:45:49 espie Exp $
+# $OpenBSD: User.pm,v 1.27 2023/05/06 05:20:31 espie Exp $
 #
 # Copyright (c) 2010-2019 Marc Espie <espie@openbsd.org>
 #
@@ -15,8 +15,7 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-use strict;
-use warnings;
+use v5.36;
 
 # handling user personalities
 
@@ -28,9 +27,8 @@ use warnings;
 package DPB::User;
 use Fcntl;
 
-sub from_uid
+sub from_uid($class, $u, $g = undef)
 {
-	my ($class, $u, $g) = @_;
 	if (my ($l, undef, $uid, $gid) = getpwuid $u) {
 		my $groups = `/usr/bin/id -G $u`;
 		chomp $groups;
@@ -46,9 +44,8 @@ sub from_uid
 	}
 }
 
-sub new
+sub new($class, $u)
 {
-	my ($class, $u) = @_;
 	# local users are used to do operations
 	# otherwise, distant users are "just" a name for the distant
 	# exec stuff
@@ -66,26 +63,23 @@ sub new
 	}
 }
 
-sub user
+sub user($self)
 {
-	my $self = shift;
 	return $self->{user};
 }
 
-sub run_as
+sub run_as($self, $code)
 {
-	my ($self, $code) = @_;
 	local $> = 0;
 	local $) = $self->{grouplist};
 	{
 		local $> = $self->{uid};
-		return &$code;
+		return &$code();
 	}
 }
 
-sub enforce_local
+sub enforce_local($self)
 {
-	my $self = shift;
 	if (!defined $self->{uid}) {
 		print STDERR "User $self->{user} does not exist locally\n";
 		exit 1;
@@ -94,9 +88,8 @@ sub enforce_local
 	}
 }
 
-sub _make_path
+sub _make_path($self, @directories)
 {
-	my ($self, @directories) = @_;
 	my $p = pop @directories;
 	if ($p->{mode}) {
 		my $m = umask(0);
@@ -107,9 +100,8 @@ sub _make_path
 	}
 }
 
-sub make_path
+sub make_path($self, @directories)
 {
-	my ($self, @directories) = @_;
 	require File::Path;
 	my $p = {};
 	if ($self->{dirmode}) {
@@ -117,8 +109,8 @@ sub make_path
 	}
 	if ($self->{droppriv}) {
 		$self->run_as(
-		    sub {
-			$self->_make_path(@directories, $p);
+		    sub() {
+		    	$self->_make_path(@directories, $p);
 		    });
 	} else {
 		if ($self->{uid}) {
@@ -134,12 +126,12 @@ sub make_path
 	}
 }
 
-sub open
+sub open($self, $mode, @parms)
 {
-	my ($self, $mode, @parms) = @_;
 	return $self->run_as(
-	    sub {
-		# XXX don't try to read directories, there's opendir for that.
+	    sub() {
+		# XXX don't try to read directories, 
+		# there's opendir for that.
 		if (-d $parms[0]) {
 			require Errno;
 			$! = Errno::EISDIR();
@@ -152,14 +144,13 @@ sub open
 		} else {
 			return undef;
 		}
-	});
+	    });
 }
 
-sub opendir
+sub opendir($self, $dirname)
 {
-	my ($self, $dirname) = @_;
 	return $self->run_as(
-	    sub {
+	    sub() {
 		if (opendir(my $fh, $dirname)) {
 			return $fh;
 		} else {
@@ -168,48 +159,43 @@ sub opendir
 	    });
 }
 
-sub unlink
+sub unlink($self, @links)
 {
-	my ($self, @links) = @_;
 	return $self->run_as(
-	    sub {
-		return unlink(@links);
+	    sub() {
+		unlink(@links);
 	    });
 }
 
-sub link
+sub link($self, $a, $b)
 {
-	my ($self, $a, $b) = @_;
 	return $self->run_as(
-	    sub {
-		return link($a, $b);
+	    sub() {
+		link($a, $b);
 	    });
 }
 
-sub rename
+sub rename($self, $o, $n)
 {
-	my ($self, $o, $n) = @_;
 	return $self->run_as(
-	    sub {
-		return rename($o, $n);
+	    sub() {
+		rename($o, $n);
 	    });
 }
 
-sub stat
+sub stat($self, $name)
 {
-	my ($self, $name) = @_;
 	return $self->run_as(
-	    sub {
+	    sub() {
 		return stat $name;
 	    });
 }
 
-sub rewrite_file
+sub rewrite_file($self, $state, $filename, $sub)
 {
-	my ($self, $state, $filename, $sub) = @_;
 	$self->make_path(File::Basename::dirname($filename));
 	$self->run_as(
-	    sub {
+	    sub() {
 	    	my $f;
 		if (!CORE::open $f, '>', "$filename.part") {
 			$state->fatal("#1 can't write #2: #3",
@@ -232,77 +218,65 @@ sub rewrite_file
 # then we delegate most of the actual operations to user
 
 package DPB::UserProxy;
-sub run_as
+sub run_as($self, $code)
 {
-	my ($self, $code) = @_;
 	$self->user->run_as($code);
 }
 
-sub make_path
+sub make_path($self, @dirs)
 {
-	my ($self, @dirs) = @_;
 	$self->user->make_path(@dirs);
 }
 
-sub open
+sub open($self, @parms)
 {
-	my ($self, @parms) = @_;
 	return $self->user->open(@parms);
 }
 
-sub file
+sub file($self, $filename)
 {
-	my ($self, $filename) = @_;
 	return DPB::UserFile->new($self, $filename);
 }
 
-sub opendir
+sub opendir($self, $dirname)
 {
-	my ($self, $dirname) = @_;
 	return $self->user->opendir($dirname);
 }
 
-sub unlink
+sub unlink($self, @links)
 {
-	my ($self, @links) = @_;
 	return $self->user->unlink(@links);
 }
 
-sub link
+sub link($self, $a, $b)
 {
-	my ($self, $a, $b) = @_;
 	return $self->user->link($a, $b);
 }
 
-sub rename
+sub rename($self, @parms)
 {
-	my ($self, @parms) = @_;
 	return $self->user->rename(@parms);
 }
 
-sub stat
+sub stat($self, $name)
 {
-	my ($self, $name) = @_;
 	return $self->user->stat($name);
 }
 
-sub user
+sub user($self)
 {
-	my $self = shift;
 	return $self->{user};
 }
 
-sub write_error
+sub write_error($self, $name)
 {
-	my ($self, $name) = @_;
 	DPB::Util->die_bang($self->user->user." can't write to $name");
 }
 
-sub redirect
+sub redirect($self, $log)
 {
-	my ($self, $log) = @_;
 	$self->user->run_as(
-	    sub {
+	    sub() {
 		close STDOUT;
 		CORE::open STDOUT, '>>', $log or DPB::Util->die_bang(
 		    $self->user->user." can't write to $log");
@@ -318,27 +292,23 @@ package DPB::UserFile;
 
 # can't inherit from UserProxy, open/stat have different calling mechanisms
 
-sub new
+sub new($class, $user, $filename)
 {
-	my ($class, $user, $filename) = @_;
 	bless {filename => $filename, user => $user}, $class;
 }
 
-sub name
+sub name($self)
 {
-	my $self = shift;
 	return $self->{filename};
 }
 
-sub open
+sub open($self, $mode)
 {
-	my ($self, $mode) = @_;
 	return $self->{user}->open($mode, $self->name);
 }
 
-sub stat
+sub stat($self)
 {
-	my $self = shift;
 	return $self->{user}->stat($self->name);
 }
 

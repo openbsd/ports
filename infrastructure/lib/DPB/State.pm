@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: State.pm,v 1.32 2022/11/06 09:29:12 espie Exp $
+# $OpenBSD: State.pm,v 1.33 2023/05/06 05:20:31 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -15,8 +15,7 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-use strict;
-use warnings;
+use v5.36;
 
 package DPB::State;
 our @ISA = qw(OpenBSD::State);
@@ -35,15 +34,13 @@ use DPB::Locks;
 use DPB::Serialize;
 use DPB::Reporter;
 
-sub define_present
+sub define_present($self, $k)
 {
-	my ($self, $k) = @_;
 	return defined $self->{subst}{$k};
 }
 
-sub init
+sub init($self)
 {
-	my $self = shift;
 	$self->SUPER::init;
 	$self->{no_exports} = 1;
 	$self->{heuristics} = DPB::Heuristics->new($self);
@@ -54,18 +51,16 @@ sub init
 	return $self;
 }
 
-sub startdate
+sub startdate($self)
 {
-	my $self = shift;
 	my @l = gmtime $self->{starttime};
 	$l[5] += 1900;
 	$l[4] ++;
 	return sprintf '%04d-%02d-%02d@%02d:%02d:%02d', @l[5,4,3,2,1,0];
 }
 
-sub anchor
+sub anchor($self, $path)
 {
-	my ($self, $path) = @_;
 	if ($self->{chroot}) {
 		return join('/', $self->{chroot}, $path);
 	} else {
@@ -73,15 +68,13 @@ sub anchor
 	}
 }
 
-sub expand_path
+sub expand_path($self, $path)
 {
-	my ($self, $path) = @_;
 	return $self->expand_path_with_ports($path, $self->{realports});
 }
 
-sub expand_path_with_ports
+sub expand_path_with_ports($self, $path, $ports)
 {
-	my ($self, $path, $ports) = @_;
 	$path =~ s/\%L/$self->{logdir}/g;
 	$path =~ s/\%p/$ports/g;
 	$path =~ s/\%h/DPB::Core::Local->short_hostname/ge;
@@ -94,16 +87,13 @@ sub expand_path_with_ports
 }
 
 
-sub expand_chrooted_path
+sub expand_chrooted_path($self, $path)
 {
-	my ($self, $path) = @_;
 	return $self->expand_path_with_ports($path, $self->{ports});
 }
 
-sub interpret_path
+sub interpret_path($state, $path, $do, $scale = undef)
 {
-	my ($state, $path, $do, $scale) = @_;
-
 	my $weight;
 	if ($path =~ s/\=(.*)//) {
 		$weight = $1;
@@ -126,11 +116,11 @@ sub interpret_path
 	push(@{$state->{bad_paths}}, $path);
 }
 
-sub interpret_paths
+sub interpret_paths($state, @r)
 {
-	my $state = shift;
-	my $do = pop;
-	for my $file (@_) {
+	# last parameter is actually a sub !
+	my $do = pop @r;
+	for my $file (@r) {
 		my $scale;
 		if ($file =~ s/\*(\d+)$//) {
 			$scale = $1;
@@ -150,9 +140,8 @@ sub interpret_paths
 	}
 }
 
-sub handle_options
+sub handle_options($state)
 {
-	my $state = shift;
 	DPB::Config->parse_command_line($state);
 	# at this point, we should know all our ids!
 	$state->{logger} = DPB::Logger->new($state);
@@ -167,64 +156,62 @@ sub handle_options
 	DPB::Core->reap;
 }
 
-sub SUPER_handle_options
+sub SUPER_handle_options($state, @p)
 {
-	my ($state, @p) = @_;
 	$state->SUPER::handle_options(@p);
 }
 
-sub logger
+sub logger($self)
 {
-	return shift->{logger};
+	return $self->{logger};
 }
 
-sub heuristics
+sub heuristics($self)
 {
-	return shift->{heuristics};
+	return $self->{heuristics};
 }
 
-sub sizer
+sub sizer($self)
 {
-	return shift->{sizer};
+	return $self->{sizer};
 }
-sub locker
+sub locker($self)
 {
-	return shift->{locker};
-}
-
-sub stalelocks
-{
-	return shift->locker->{stalelocks};
+	return $self->{locker};
 }
 
-sub builder
+sub stalelocks($self)
 {
-	return shift->{builder};
+	return $self->locker->{stalelocks};
 }
 
-sub engine
+sub builder($self)
 {
-	return shift->{engine};
+	return $self->{builder};
 }
 
-sub grabber
+sub engine($self)
 {
-	return shift->{grabber};
+	return $self->{engine};
 }
 
-sub fetch
+sub grabber($self)
 {
-	return shift->{grabber}{fetch};
+	return $self->{grabber};
 }
 
-sub make
+sub fetch($self)
 {
-	return shift->{make};
+	return $self->{grabber}{fetch};
 }
 
-sub make_args
+sub make($self)
 {
-	my $self = shift;
+	return $self->{make};
+}
+
+sub make_args($self)
+{
 	my @l = ($self->{make}, "-C", $self->{ports});
 	if ($self->{build_once}) {
 		push(@l, 'BUILD_ONCE=Yes');
@@ -237,44 +224,43 @@ sub make_args
 	return @l;
 }
 
-sub ports
+sub ports($self)
 {
-	return shift->{ports};
+	return $self->{ports};
 }
 
-sub fullrepo
+sub fullrepo($self)
 {
-	return shift->{fullrepo};
+	return $self->{fullrepo};
 }
 
-sub distdir
+sub distdir($self)
 {
-	return shift->{realdistdir};
+	return $self->{realdistdir};
 }
 
-sub localarch
+sub localarch($self)
 {
-	return shift->{localarch};
+	return $self->{localarch};
 }
 
-sub arch
+sub arch($self)
 {
-	return shift->{arch};
+	return $self->{arch};
 }
 
-sub logdir
+sub logdir($self)
 {
-	return shift->{logdir};
+	return $self->{logdir};
 }
 
-sub parse_build_line
+sub parse_build_line($self)
 {
-	return split(/\s+/, shift);
+	return split(/\s+/, $self);
 }
 
-sub parse_build_file
+sub parse_build_file($state, $fname)
 {
-	my ($state, $fname) = @_;
 	my $errors = 0;
 	if (!-f $fname) {
 		my $arch = $state->arch;
@@ -305,9 +291,8 @@ LINE:
 	sleep(20) if $errors;
 }
 
-sub add_build_info
+sub add_build_info($state, @consumers)
 {
-	my ($state, @consumers) = @_;
 	for my $p (DPB::PkgPath->seen) {
 		next unless defined $p->{stats};
 		my ($i, $time, $sz, $host);
@@ -323,12 +308,10 @@ sub add_build_info
 	}
 }
 
-sub rewrite_build_info
+sub rewrite_build_info($state, $filename)
 {
-	my ($state, $filename) = @_;
 	$state->{log_user}->rewrite_file($state, $filename,
-	    sub {
-	    	my $f = shift;
+	    sub($f) {
 		for my $p (sort {$a->fullpkgpath cmp $b->fullpkgpath}
 		    DPB::PkgPath->seen) {
 			next unless defined $p->{stats};
@@ -343,9 +326,8 @@ sub rewrite_build_info
 	    });
 }
 
-sub handle_build_files
+sub handle_build_files($state)
 {
-	my $state = shift;
 	return if $state->{fetch_only};
 	return unless defined $state->{build_files};
 	print "Reading build stats...";
@@ -362,18 +344,16 @@ sub handle_build_files
 	$state->heuristics->finished_parsing;
 }
 
-sub handle_continue
+sub handle_continue($state)
 {
-	my $state = shift;
 	$state->SUPER::handle_continue;
 	if (defined $state->{reporter}) {
 		$state->{reporter}->handle_continue;
 	}
 }
 
-sub find_window_size
+sub find_window_size($state)
 {
-	my $state = shift;
 	$state->SUPER::find_window_size;
 	if (defined $state->{reporter}) {
 		$state->{reporter}->handle_window;

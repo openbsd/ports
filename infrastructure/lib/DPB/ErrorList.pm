@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: ErrorList.pm,v 1.9 2022/03/15 14:33:29 espie Exp $
+# $OpenBSD: ErrorList.pm,v 1.10 2023/05/06 05:20:31 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -15,8 +15,7 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-use strict;
-use warnings;
+use v5.36;
 
 # Abstract interface to problems that must be handled asynchronously
 # by the engine
@@ -29,9 +28,8 @@ our @ISA = qw(DPB::ListQueue);
 
 # we return 0 only if there was exactly zero problem to check in the first
 # place, because removing some locks means we ought to run things once more.
-sub recheck
+sub recheck($list, $engine)
 {
-	my ($list, $engine) = @_;
 	return 0 if @$list == 0;
 	my $locker = $engine->{locker};
 
@@ -51,9 +49,8 @@ sub recheck
 	return 1;
 }
 
-sub stringize
+sub stringize($list)
 {
-	my $list = shift;
 	my @l = ();
 	for my $e (@$list) {
 		my $s = $e->logname;
@@ -68,9 +65,8 @@ sub stringize
 	return join(' ', @l);
 }
 
-sub reprepare
+sub reprepare($class, $v, $engine)
 {
-	my ($class, $v, $engine) = @_;
 	$v->requeue($engine);
 }
 
@@ -78,9 +74,8 @@ sub reprepare
 package DPB::ErrorList;
 our @ISA = (qw(DPB::ErrorList::Base));
 
-sub unlock_early
+sub unlock_early($list, $v, $engine)
 {
-	my ($list, $v, $engine) = @_;
 	if ($v->unlock_conditions($engine)) {
 		$v->requeue($engine);
 		return 1;
@@ -89,9 +84,8 @@ sub unlock_early
 	}
 }
 
-sub reprepare
+sub reprepare($list, $v, $engine)
 {
-	my ($list, $v, $engine) = @_;
 	$engine->rescan($v);
 }
 
@@ -104,9 +98,8 @@ sub unlock_early
 	&DPB::ErrorList::unlock_early;
 }
 
-sub stringize
+sub stringize($list)
 {
-	my $list = shift;
 	my @l = ();
 	my $done = {};
 	for my $e (@$list) {
@@ -132,9 +125,8 @@ sub reprepare
 	&DPB::ErrorList::reprepare;
 }
 
-sub unlock_early
+sub unlock_early($list, $v, $engine)
 {
-	my ($list, $v, $engine) = @_;
 	my $okay = 1;
 	my $sub = $engine->{buildable};
 	my $h = $sub->{nfs}{$v};

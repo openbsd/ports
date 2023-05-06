@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Affinity.pm,v 1.19 2017/11/24 14:24:04 espie Exp $
+# $OpenBSD: Affinity.pm,v 1.20 2023/05/06 05:20:31 espie Exp $
 #
 # Copyright (c) 2012-2013 Marc Espie <espie@openbsd.org>
 #
@@ -15,8 +15,7 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-use strict;
-use warnings;
+use v5.36;
 
 # on multiple hosts setup, it's useful to record which host is building what,
 # so that on restart, we try to avoid starting a task on the "wrong" box...
@@ -30,10 +29,8 @@ our @ISA = (qw(DPB::UserProxy));
 use File::Path;
 use DPB::PkgPath;
 
-sub new
+sub new($class, $state, $dir)
 {
-	my ($class, $state, $dir) = @_;
-
 	my $o = bless {dir => $dir, user => $state->{log_user}}, $class;
 	$o->make_path($dir);
 	$o->retrieve_existing_markers($state->logger);
@@ -41,9 +38,8 @@ sub new
 }
 
 # each path being built creates an affinity marker
-sub affinity_marker
+sub affinity_marker($self, $v)
 {
-	my ($self, $v) = @_;
 	my $s = $v->fullpkgpath;
 	$s =~ tr|/|.|;
 	return join('/', $self->{dir}, $s);
@@ -51,9 +47,8 @@ sub affinity_marker
 
 # we create a separate marker for each path being built in a MULTI_PACKAGES
 # setting, so that if we finish building one, we lose the affinity for it.
-sub start
+sub start($self, $v, $core)
 {
-	my ($self, $v, $core) = @_;
 	my $host = $core->hostname;
 	for my $w ($v->build_path_list) {
 		next if $w->{info}->is_stub;
@@ -73,26 +68,23 @@ sub start
 
 # when we see a package is already done, we have no way of knowing which
 # MULTI_PACKAGES led to that, so we just unmark a single file
-sub unmark
+sub unmark($self, $v)
 {
-	my ($self, $v) = @_;
 	$self->unlink($self->affinity_marker($v));
 	delete $v->{affinity};
 	delete $v->{mem_affinity};
 }
 
 # on the other hand, when we finish building a port, we can unmark all paths.
-sub finished
+sub finished($self, $v)
 {
-	my ($self, $v) = @_;
 	for my $w ($v->build_path_list) {
 		$self->unmark($w);
 	}
 }
 
-sub retrieve_existing_markers
+sub retrieve_existing_markers($self, $logger)
 {
-	my ($self, $logger) = @_;
 	my $log = $logger->append('affinity');
 	my $d = $self->opendir($self->{dir});
 	return if !defined $d;
@@ -126,9 +118,8 @@ sub retrieve_existing_markers
 	close $log;
 }
 
-sub simplifies_to
+sub simplifies_to($self, $v, $w)
 {
-	my ($self, $v, $w) = @_;
 	for my $tag ("affinity", "mem_affinity") {
 		if (defined $v->{$tag}) {
 			$w->{$tag} //= $v->{$tag};
@@ -141,9 +132,8 @@ sub simplifies_to
 
 my $queued = {};
 
-sub sorted
+sub sorted($self, $queue, $core)
 {
-	my ($self, $queue, $core) = @_;
 	# okay, we know we have affinity stuff in the queue (maybe, so we want to do something special here
 	# maybe...
 	my $n = $core->hostname;
@@ -161,26 +151,24 @@ sub sorted
 	return $queue->sorted($core);
 }
 
-sub has_in_queue
+sub has_in_queue($self, $v)
 {
-	my ($self, $v) = @_;
 	if (defined $v->{affinity}) {
 		$queued->{$v->{affinity}} = 1;
 	}
 }
 
 package DPB::AffinityQueue;
-sub new
+
+sub new($class, $l, $queue, $core)
 {
-	my ($class, $l, $queue, $core) = @_;
 	bless { l => $l, 
 	    queue => $queue, 
 	    core => $core}, $class;
 }
 
-sub next
+sub next($self)
 {
-	my $self = shift;
 	if (@{$self->{l}} > 0) {
 		return pop @{$self->{l}};
 	}

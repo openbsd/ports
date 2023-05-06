@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distfile.pm,v 1.25 2023/05/04 09:30:40 espie Exp $
+# $OpenBSD: Distfile.pm,v 1.26 2023/05/06 05:20:31 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -14,8 +14,7 @@
 # WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-use strict;
-use warnings;
+use v5.36;
 
 use OpenBSD::md5;
 use DPB::User;
@@ -25,9 +24,8 @@ our @ISA = (qw(DPB::UserProxy));
 # same distfile may exist in several ports.
 # so we keep a hash based on full storage path.
 
-sub normalize
+sub normalize($class, $file)
 {
-	my ($class, $file) = @_;
 	# XXX collapse name/../ aka "semarie rule"
 	while ($file =~ s/[^\/]+\/\.\.\///) {
 	}
@@ -39,10 +37,8 @@ sub normalize
 
 my $cache = {};
 
-sub create
+sub create($class, $file, $short, $site, $distinfo, $, $v, $repo)
 {
-	my ($class, $file, $short, $site, $distinfo, undef, $v, $repo) = @_;
-
 	bless {
 		name => $file,
 		short => $short,
@@ -53,9 +49,8 @@ sub create
 }
 
 # complete object with sha/size info, error out if not same info
-sub complete
+sub complete($self, $file, $short, $site, $distinfo, $fname, $v, $repo)
 {
-	my ($self, $file, $short, $site, $distinfo, $fname, $v, $repo) = @_;
 	my $sz = $distinfo->{size}{$file};
 	my $sha = $distinfo->{sha}{$file};
 	my $error = 0;
@@ -99,9 +94,8 @@ sub complete
 	}
 }
 
-sub new
+sub new($class, $file, $url, $dir = undef, @r)
 {
-	my ($class, $file, $url, $dir, @r) = @_;
 	my $full = (defined $dir) ? join('/', $dir->string, $file) : $file;
 
 	$full = DPB::Distfile->normalize($full);
@@ -114,53 +108,47 @@ sub new
 	return $c;
 }
 
-sub user
+sub user($self)
 {
-	my $self = shift;
 	return $self->{repo}->user;
 }
 
-sub distdir
+sub distdir($self, @rest)
 {
-	my ($self, @rest) = @_;
 	return join('/', $self->{repo}->distdir, @rest);
 }
 
-sub path
+sub path($self)
 {
-	return shift->{path};
+	return $self->{path};
 }
 
-sub logger
+sub logger($self)
 {
-	my $self = shift;
 	return $self->{repo}{logger};
 }
 
-sub debug_dump
+sub debug_dump($self)
 {
-	my $self = shift;
 	my $msg = $self->logname;
 	if ($self->{okay}) {
 		$msg .= "(okay)";
 	}
 }
 
-sub cached
+sub cached($self)
 {
-	my $self = shift;
 	return $self->{repo}{sha};
 }
 
-sub logname
+sub logname($self)
 {
-	my $self = shift;
 	return $self->{path}->fullpkgpath.":".$self->{name};
 }
 
-sub lockname
+sub lockname($self)
 {
-	return shift->{name}.".dist";
+	return $self->{name}.".dist";
 }
 
 sub simple_lockname
@@ -168,51 +156,46 @@ sub simple_lockname
 	&lockname;
 }
 
-sub log_as_built
+sub log_as_built($, $)
 {
 	# only applies to packages
 }
 
 # should be used for rebuild_info and logging only
 
-sub fullpkgpath
+sub fullpkgpath($self)
 {
-	return shift->{path}->fullpkgpath;
+	return $self->{path}->fullpkgpath;
 }
 
-sub print_parent
+sub print_parent($self, $fh)
 {
-	my ($self, $fh) = @_;
 	$self->{path}->print_parent($fh);
 }
 
-sub write_parent
+sub write_parent($self, $lock)
 {
-	my ($self, $lock) = @_;
 	$self->{path}->write_parent($lock);
 }
-sub pkgpath_and_flavors
+sub pkgpath_and_flavors($self)
 {
-	return shift->{path}->pkgpath_and_flavors;
+	return $self->{path}->pkgpath_and_flavors;
 }
 
-sub tempfilename
+sub tempfilename($self)
 {
-	my $self = shift;
 	return $self->filename.".part";
 }
 
-sub filename
+sub filename($self)
 {
-	my $self = shift;
 	return $self->distdir($self->{name});
 }
 
 # this is the entry point from the Engine, this is run as soon as the path
 # has been scanned. For performance reasons, we cannot run a sha at that point.
-sub check
+sub check($self, $)
 {
-	my $self = shift;
 	# XXX in fetch_only mode, we won't build anything, so this is
 	# the only place we can check the file is okay
 	if ($self->{repo}{fetch_only}) {
@@ -222,9 +205,8 @@ sub check
 	}
 }
 
-sub make_link
+sub make_link($self)
 {
-	my $self = shift;
 	my $sha = $self->{sha}->stringize;
 	if ($sha =~ m/^(..)/) {
 		my $result = $self->distdir('by_cipher', 'sha256', $1, $sha);
@@ -235,10 +217,8 @@ sub make_link
 	}
 }
 
-sub find_copy
+sub find_copy($self, $name)
 {
-	my ($self, $name) = @_;
-
 	return 0 if !defined $self->{sha};
 	# sha256 must match AND size as well
 	my $alternate = $self->{repo}{reverse}{$self->{sha}->stringize};
@@ -257,9 +237,8 @@ sub find_copy
 	return 0;
 }
 
-sub checkcache_or_size
+sub checkcache_or_size($self, $name)
 {
-	my ($self, $name) = @_;
 	# XXX if we matched once, then we match "forever"
 	return 1 if $self->{okay};
 	if (defined $self->cached->{$self->{name}}) {
@@ -268,9 +247,8 @@ sub checkcache_or_size
 	return $self->checksize($name);
 }
 
-sub checksize
+sub checksize($self, $name)
 {
-	my ($self, $name) = @_;
 	# XXX if we matched once, then we match "forever"
 	return 1 if $self->{okay};
 	if (!defined $self->{sz}) {
@@ -289,9 +267,8 @@ sub checksize
 	return 1;
 }
 
-sub checkcached
+sub checkcached($self, $name)
 {
-	my ($self, $name) = @_;
 	if (!defined $self->{sha}) {
 		my $fh = $self->logger->append('dist/'.$self->{name});
 		print $fh "incomplete distinfo: no sha\n";
@@ -306,7 +283,7 @@ sub checkcached
 		delete $self->cached->{$self->{name}};
 		delete $self->{repo}{reverse}{$self->{sha}->stringize};
 		$self->run_as(
-		    sub {
+		    sub() {
 			unlink($name);
 		    });
 		my $fh = $self->logger->append('dist/'.$self->{name});
@@ -331,25 +308,22 @@ sub checkcached
 	}
 }
 
-sub do_cache
+sub do_cache($self)
 {
-	my $self = shift;
-
 	eval {
-	$self->make_link;
-	print {$self->{repo}->{log}} "SHA256 ($self->{name}) = ",
-	    $self->{sha}->stringize, "\n";
+	    $self->make_link;
+	    print {$self->{repo}->{log}} "SHA256 ($self->{name}) = ",
+		$self->{sha}->stringize, "\n";
 	};
 	# also enter ourselves into the internal repository
 	$self->cached->{$self->{name}} = $self->{sha};
 }
 
 # this is where we actually enter new files in the cache, when they do match.
-sub caches_okay
+sub caches_okay($self, $name)
 {
-	my ($self, $name) = @_;
 	$self->run_as(
-	    sub {
+	    sub() {
 		if (-f -r $name) {
 			if (OpenBSD::sha->new($name)->equals($self->{sha})) {
 				$self->{okay} = 1;
@@ -363,9 +337,8 @@ sub caches_okay
 	    });
 }
 
-sub checksum_and_cache
+sub checksum_and_cache($self, $name)
 {
-	my ($self, $name) = @_;
 	# XXX if we matched once, then we match "forever"
 	return 1 if $self->{okay};
 	if (!defined $self->{sha}) {
@@ -380,9 +353,8 @@ sub checksum_and_cache
 	return $self->find_copy($name);
 }
 
-sub cache
+sub cache($self)
 {
-	my $self = shift;
 	# XXX if we matched once, then we match "forever"
 	return 1 if $self->{okay};
 	$self->{okay} = 1;
@@ -395,9 +367,8 @@ sub cache
 	$self->do_cache;
 }
 
-sub checksum
+sub checksum($self, $name)
 {
-	my ($self, $name) = @_;
 	# XXX if we matched once, then we match "forever"
 	return 1 if $self->{okay};
 	print "checksum for $name: ";
@@ -420,9 +391,8 @@ sub checksum
 	return 0;
 }
 
-sub cached_checksum
+sub cached_checksum($self, $fh, $name)
 {
-	my ($self, $fh, $name) = @_;
 	# XXX if we matched once, then we match "forever"
 	return 1 if $self->{okay};
 	print $fh "checksum for $name: ";
@@ -441,21 +411,18 @@ sub cached_checksum
 	return 0;
 }
 
-sub unlock_conditions
+sub unlock_conditions($self, $)
 {
-	my ($self, $engine) = @_;
 	return $self->check;
 }
 
-sub requeue
+sub requeue($v, $engine)
 {
-	my ($v, $engine) = @_;
 	$engine->requeue_dist($v);
 }
 
-sub forget
+sub forget($self)
 {
-	my $self = shift;
 	delete $self->{sz};
 	delete $self->{sha};
 	delete $self->{okay};

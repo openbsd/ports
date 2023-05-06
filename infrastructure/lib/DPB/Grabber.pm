@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Grabber.pm,v 1.47 2023/05/02 09:35:51 espie Exp $
+# $OpenBSD: Grabber.pm,v 1.48 2023/05/06 05:20:31 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -14,8 +14,7 @@
 # WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-use strict;
-use warnings;
+use v5.36;
 
 
 use DPB::Vars;
@@ -40,9 +39,8 @@ use DPB::Util;
 # do, which is passed to Vars to run a pipe job)
 
 package DPB::Grabber;
-sub new
+sub new($class, $state, $eventloopcode)
 {
-	my ($class, $state, $eventloopcode) = @_;
 
 	my $o = bless { 
 		loglist => DPB::Util->make_hot($state->logger->append("vars")),
@@ -81,17 +79,15 @@ sub new
 	return $o;
 }
 
-sub expire_old_distfiles
+sub expire_old_distfiles($self, $core, $opt_e)
 {
-	my ($self, $core, $opt_e) = @_;
 	# don't bother if dump-vars wasn't perfectly clean
 	return 0 if $self->{errors};
 	return $self->{fetch}->run_expire_old($core, $opt_e);
 }
 
-sub add_to_build
+sub add_to_build($self, $v)
 {
-	my ($self, $v) = @_;
 	if ($self->{do_later}) {
 		if (defined $v->{info} && $v->{info}->has_property('later')) {
 			push(@{$self->{later}}, $v);
@@ -101,16 +97,14 @@ sub add_to_build
 	$self->{engine}->new_path($v);
 }
 
-sub later
+sub later($self)
 {
-	my $self = shift;
 	$self->{do_later} = 0;
 	return @{$self->{later}};
 }
 
-sub finish
+sub finish($self, $h)
 {
-	my ($self, $h) = @_;
 	for my $v (values %$h) {
 		if ($v->{broken}) {
 			$self->{engine}->add_fatal($v, $v->{broken});
@@ -134,46 +128,39 @@ sub finish
 	&{$self->{eventloopcode}}();
 }
 
-sub ports
+sub ports($self)
 {
-	my $self = shift;
 	return $self->{state}->ports;
 }
 
-sub make
+sub make($self)
 {
-	my $self = shift;
 	return $self->{state}->make;
 }
 
-sub make_args
+sub make_args($self)
 {
-	my $self = shift;
 	return $self->{state}->make_args;
 }
 
-sub logger
+sub logger($self)
 {
-	my $self = shift;
 	return $self->{state}->logger;
 }
 
-sub forget_cache
+sub forget_cache($self)
 {
-	my $self = shift;
 	$self->{fetch}->forget_cache;
 }
 
-sub grab_subdirs
+sub grab_subdirs($self, $core, $list, $skip, $ignore_errors = 0)
 {
-	my ($self, $core, $list, $skip, $ignore_errors) = @_;
 	$core->unsquiggle;
 	DPB::Vars->grab_list($core, $self, $list, $skip, $ignore_errors,
 	    $self->{loglist}, $self->{dpb},
-	    sub {
+	    sub($h) {
 	    	# during the first step, we actually WANT to add new dirs
 		# whereas 'complete" will only record what's found
-	    	my $h = shift;
 		for my $v (values %$h) {
 			$v->{wantbuild} = 1;
 		}
@@ -183,21 +170,18 @@ sub grab_subdirs
 
 # Two extra things we can do besides running dump-vars, that use the
 # exact same logic
-sub grab_signature
+sub grab_signature($self, $core, $pkgpath)
 {
-	my ($self, $core, $pkgpath) = @_;
 	return DPB::PortSignature->grab_signature($core, $self, $pkgpath);
 }
 
-sub clean_packages
+sub clean_packages($self, $core, $pkgpath)
 {
-	my ($self, $core, $pkgpath) = @_;
 	return DPB::CleanPackages->clean($core, $self, $pkgpath);
 }
 
-sub find_new_dirs
+sub find_new_dirs($self)
 {
-	my $self = shift;
 	my $subdirlist = {};
 	for my $v (DPB::PkgPath->seen) {
 		if (defined $v->{info}) {
@@ -232,9 +216,8 @@ sub find_new_dirs
 	return $subdirlist;
 }
 
-sub complete_subdirs
+sub complete_subdirs($self, $core, $skip = undef)
 {
-	my ($self, $core, $skip) = @_;
 	while (1) {
 		my $subdirlist = $self->find_new_dirs;
 		$self->{engine}->flush_log;
@@ -242,42 +225,39 @@ sub complete_subdirs
 
 		DPB::Vars->grab_list($core, $self, $subdirlist, $skip, 0,
 		    $self->{loglist}, $self->{dpb},
-		    sub {
-			$self->finish(shift);
+		    sub($h) {
+			$self->finish($h);
 		    });
 	}
 }
 
 package DPB::FetchDummy;
-sub new
+sub new($class)
 {
-	my $class = shift;
 	return bless {}, $class;
 }
 
-sub build_distinfo
+sub build_distinfo($, $, $, $)
 {
 }
 
-sub run_expire_old
+sub run_expire_old($, $, $)
 {
 	return 0;
 }
 
-sub forget_cache
+sub forget_cache($self)
 {
-       my $self = shift;
        $self->{cache} = {};
 }
 
 package DPB::RoachDummy;
-sub new
+sub new($class)
 {
-	my $class = shift;
 	return bless {}, $class;
 }
 
-sub build1info
+sub build1info($, $)
 {
 }
 

@@ -1,6 +1,6 @@
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Size.pm,v 1.9 2018/07/11 16:10:56 espie Exp $
+# $OpenBSD: Size.pm,v 1.10 2023/05/06 05:20:31 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -16,8 +16,7 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-use strict;
-use warnings;
+use v5.36;
 # this package is responsible for recording build sizes
 # and using tmpfs accordingly
 package DPB::Heuristics::Size;
@@ -25,23 +24,20 @@ my (%wrkdir, %pkgname);
 
 use DPB::Serialize;
 
-sub new
+sub new($class, $state)
 {
-	my ($class, $state) = @_;
 	bless {state => $state}, $class;
 }
-sub add_size_info
+sub add_size_info($self, $path, $pkgname, $sz)
 {
-	my ($self, $path, $pkgname, $sz) = @_;
 	$wrkdir{$path->pkgpath_and_flavors} = $sz;
 	if (defined $pkgname) {
 		$pkgname{$path->fullpkgpath} = $pkgname;
 	}
 }
 
-sub match_pkgname
+sub match_pkgname($self, $v)
 {
-	my ($self, $v) = @_;
 	my $p = $pkgname{$v->fullpkgpath};
 	if (!defined $p) {
 		return 0;
@@ -55,9 +51,8 @@ sub match_pkgname
 my $used_memory = {};
 my $used_per_host = {};
 
-sub build_in_memory
+sub build_in_memory($self, $fh, $core, $v)
 {
-	my ($self, $fh, $core, $v) = @_;
 	my $t = $core->memory;
 	return 0 if !defined $t;
 
@@ -84,7 +79,7 @@ sub build_in_memory
 	return 0;
 }
 
-sub finished
+sub finished($self, $v)
 {
 	my ($self, $v) = @_;
 	my $p = $v->pkgpath_and_flavors;
@@ -94,9 +89,8 @@ sub finished
 	}
 }
 
-sub parse_size_file
+sub parse_size_file($self)
 {
-	my $self = shift;
 	my $state = $self->{state};
 	return if $state->{fetch_only};
 	my $fname = $state->opt('S') // $state->{size_log};
@@ -118,8 +112,7 @@ sub parse_size_file
 	close $fh;
 	print "zapping old stuff...";
 	$state->{log_user}->rewrite_file($state, $state->{size_log},
-	    sub {
-	    	my $fh = shift;
+	    sub($fh) {
 		for my $p (sort {$a->{pkgpath} cmp $b->{pkgpath}} @rewrite) {
 			print $fh DPB::Serialize::Size->write($p), "\n"
 			    or return 0;

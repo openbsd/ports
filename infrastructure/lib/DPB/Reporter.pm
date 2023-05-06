@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Reporter.pm,v 1.36 2023/05/02 09:45:38 espie Exp $
+# $OpenBSD: Reporter.pm,v 1.37 2023/05/06 05:20:31 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -15,8 +15,7 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-use strict;
-use warnings;
+use v5.36;
 
 use OpenBSD::Error;
 use DPB::Util;
@@ -40,34 +39,30 @@ use DPB::Clock;
 
 package DPB::Reporter;
 
-sub ttyclass() 	
+sub ttyclass($) 	
 {
 	require DPB::Reporter::Tty;
 	return "DPB::Reporter::Tty";
 }
 
-sub reset_cursor
+sub reset_cursor($self)
 {
-	my $self = shift;
 	print $self->{visible} if defined $self->{visible};
 }
 
-sub set_cursor
+sub set_cursor($self)
 {
-	my $self = shift;
 	print $self->{invisible} if defined $self->{invisible};
 }
 
-sub reset
+sub reset($self)
 {
-	my $self = shift;
 	$self->reset_cursor;
 	print $self->{clear} if defined $self->{clear};
 }
 
-sub set_sigtstp
+sub set_sigtstp($self)
 {
-	my $self =shift;
 	$SIG{TSTP} = sub {
 		$self->reset_cursor;
 		DPB::Clock->stop;
@@ -77,40 +72,35 @@ sub set_sigtstp
 	};
 }
 
-sub set_sig_handlers
+sub set_sig_handlers($self)
 {
-	my $self = shift;
 	$self->set_sigtstp;
 }
 
-sub handle_continue
+sub handle_continue($self)
 {
-	my $self = shift;
 	$self->set_sigtstp;
 	$self->{continued} = 1;
 	DPB::Clock->restart;
 }
 
-sub refresh
+sub refresh($)
 {
 }
 
-sub handle_window
+sub handle_window($)
 {
 }
 
-sub filter_add
+sub filter_add($self, $l, $r, $method)
 {
-	my ($self, $l, $r, $method) = @_;
 	for my $prod (@$r) {
 		push @$l, $prod if $prod->can($method);
 	}
 }
 
-sub new
+sub new($class, $state)
 {
-	my ($class, $state) = @_;
-
 	my $dotty;
 	if ($state->opt('x')) {
 		$dotty = 0;
@@ -126,9 +116,8 @@ sub new
 	return $class->create($state);
 }
 
-sub create
+sub create($class, $state)
 {
-	my ($class, $state) = @_;
 	my $self = bless {msg => '',
 	    producers => [],
 	    timeout => $state->{display_timeout} // 10,
@@ -137,26 +126,23 @@ sub create
 	return $self;
 }
 
-sub add_producers
+sub add_producers($self, @p)
 {
-	my $self = shift;
-	$self->filter_add($self->{producers}, \@_, $self->filter);
+	$self->filter_add($self->{producers}, \@p, $self->filter);
 	return $self;
 }
 
-sub filter
+sub filter($)
 {
 	'report_notty';
 }
-sub timeout
+sub timeout($self)
 {
-	my $self = shift;
 	return $self->{timeout};
 }
 
-sub report
+sub report($self, $)
 {
-	my $self = shift;
 	for my $prod (@{$self->{producers}}) {
 		my $r = $prod->report_notty($self->{state});
 		if (defined $r) {
@@ -165,10 +151,9 @@ sub report
 	}
 }
 
-sub myprint
+sub myprint($self, @msg)
 {
-	my $self = shift;
-	print @_;
+	print @msg;
 }
 
 1;

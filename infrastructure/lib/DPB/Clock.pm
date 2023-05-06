@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Clock.pm,v 1.17 2020/02/14 18:51:46 kmos Exp $
+# $OpenBSD: Clock.pm,v 1.18 2023/05/06 05:20:31 espie Exp $
 #
 # Copyright (c) 2011-2013 Marc Espie <espie@openbsd.org>
 #
@@ -14,8 +14,7 @@
 # WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-use strict;
-use warnings;
+use v5.36;
 
 # everything needed to handle clock
 
@@ -28,26 +27,24 @@ package DPB::Clock;
 # stopped_clock($gap) method to adjust.
 my $items = {};
 
-sub register
+sub register($class, $o)
 {
-	my ($class, $o) = @_;
 	$items->{$o} = $o;
 }
 
-sub unregister
+sub unregister($class, $o)
 {
-	my ($class, $o) = @_;
 	delete $items->{$o};
 }
 
 my $stopped_clock;
 
-sub stop
+sub stop($)
 {
 	$stopped_clock = Time::HiRes::time();
 }
 
-sub restart
+sub restart($)
 {
 	my $gap = Time::HiRes::time() - $stopped_clock;
 
@@ -60,32 +57,27 @@ sub restart
 package DPB::Task::Clocked;
 our @ISA = qw(DPB::Task::Fork);
 
-sub fork
+sub fork($self, $core)
 {
-	my ($self, $core) = @_;
-
 	$self->{started} = Time::HiRes::time();
 	DPB::Clock->register($self);
 	return $self->SUPER::fork($core);
 }
 
-sub finalize
+sub finalize($self, $core)
 {
-	my ($self, $core) = @_;
 	$self->{ended} = Time::HiRes::time();
 	DPB::Clock->unregister($self);
 	return $self->SUPER::finalize($core);
 }
 
-sub elapsed
+sub elapsed($self)
 {
-	my $self = shift;
 	return $self->{ended} - $self->{started};
 }
 
-sub stopped_clock
+sub stopped_clock($self, $gap)
 {
-	my ($self, $gap) = @_;
 	$self->{started} += $gap;
 }
 
@@ -93,9 +85,8 @@ sub stopped_clock
 # if there's some expected value, then we can display a %
 
 package DPB::Watch;
-sub new
+sub new($class, $file, $expected, $offset, $time)
 {
-	my ($class, $file, $expected, $offset, $time) = @_;
 	my $o = bless {
 		file => $file,
 		expected => $expected,
@@ -108,9 +99,8 @@ sub new
 	return $o;
 }
 
-sub check_change
+sub check_change($self, $current)
 {
-	my ($self, $current) = @_;
 	$self->{time} //= $current;
 	my $sz = ($self->{file}->stat)[7];
 	if (defined $sz && defined $self->{offset}) {
@@ -130,17 +120,15 @@ sub check_change
 	return $d;
 }
 
-sub adjust_by
+sub adjust_by($self, $l)
 {
-	my ($self, $l) = @_;
 	if (defined $self->{sz}) {
 		$self->{sz} += $l;
 	}
 }
 
-sub percent_message
+sub percent_message($self)
 {
-	my $self = shift;
 	my $progress = '';
 	if (defined $self->{sz}) {
 		if (defined $self->{expected} &&
@@ -155,9 +143,8 @@ sub percent_message
 }
 
 
-sub frozen_message
+sub frozen_message($self, $diff)
 {
-	my ($self, $diff) = @_;
 	my $unchanged = " frozen for ";
 	if ($diff > 7200) {
 		$unchanged .= int($diff/3600)." HOURS!";
@@ -171,24 +158,21 @@ sub frozen_message
 	return $unchanged;
 }
 
-sub reset_offset
+sub reset_offset($self)
 {
-	my $self = shift;
 	my $sz = ($self->{file}->stat)[7];
 	if (defined $sz) {
 		$self->{offset} = $sz;
 	}
 }
 
-sub stopped_clock
+sub stopped_clock($self, $gap)
 {
-	my ($self, $gap) = @_;
 	$self->{time} += $gap if defined $self->{time};
 }
 
-sub peek
+sub peek($self, $length)
 {
-	my ($self, $length) = @_;
 	if (my $fh = $self->{file}->open('<')) {
 		seek $fh, -$length, 2;
 		local $/;

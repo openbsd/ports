@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.92 2022/01/26 14:28:13 yasuoka Exp $
+# $OpenBSD: Config.pm,v 1.93 2023/05/06 05:20:31 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -15,8 +15,7 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-use strict;
-use warnings;
+use v5.36;
 
 # all the code responsible for handling command line options and the
 # config file.
@@ -25,9 +24,8 @@ package DPB::Config;
 use DPB::User;
 use DPB::PortInfo;
 
-sub setup_users
+sub setup_users($class, $state)
 {
-	my ($class, $state) = @_;
 	for my $u (qw(build_user log_user fetch_user port_user)) {
 		my $U = uc($u);
 		if ($state->defines($U)) {
@@ -55,41 +53,40 @@ sub setup_users
 	$) = $state->{unpriv_user}{grouplist};
 }
 
-sub parse_command_line
+sub parse_command_line($class, $state)
 {
-	my ($class, $state) = @_;
 	$state->{dontclean} = {};
 	$state->{opt} = {
-		A => sub {
-			$state->{arch} = shift;
+		A => sub($opt) {
+			$state->{arch} = $opt;
 		},
-		L => sub {
-			$state->{flogdir} = shift;
+		L => sub($opt) {
+			$state->{flogdir} = $opt;
 		},
-		l => sub {
-			$state->{flockdir} = shift;
+		l => sub($opt) {
+			$state->{flockdir} = $opt;
 		},
-		r => sub {
+		r => sub() {
 			$state->{random} = 1;
 			$state->heuristics->random;
 		},
-		P => sub {
-			push(@{$state->{paths}}, shift);
+		P => sub($opt) {
+			push(@{$state->{paths}}, $opt);
 		},
-		I => sub {
-			push(@{$state->{ipaths}}, shift);
+		I => sub($opt) {
+			push(@{$state->{ipaths}}, $opt);
 		},
-		C => sub {
-			push(@{$state->{cpaths}}, shift);
+		C => sub($opt) {
+			push(@{$state->{cpaths}}, $opt);
 		},
-		X => sub {
-			push(@{$state->{xpaths}}, shift);
+		X => sub($opt) {
+			push(@{$state->{xpaths}}, $opt);
 		},
-		b => sub {
-			push(@{$state->{build_files}}, shift);
+		b => sub($opt) {
+			push(@{$state->{build_files}}, $opt);
 		},
-		h => sub {
-			push(@{$state->{config_files}}, shift);
+		h => sub($opt) {
+			push(@{$state->{config_files}}, $opt);
 		},
 	};
 
@@ -323,10 +320,8 @@ sub parse_command_line
     	$state->{fullrepo} = join("/", $state->{repo}, $state->arch, "all");
 }
 
-sub command_line_overrides
+sub command_line_overrides($class, $state)
 {
-	my ($class, $state) = @_;
-
 	my $override_prop = DPB::HostProperties->new;
 
 	if (defined $state->{base_user}) {
@@ -395,10 +390,8 @@ sub command_line_overrides
 	return $override_prop;
 }
 
-sub parse_config_files
+sub parse_config_files($class, $state)
 {
-	my ($class, $state) = @_;
-
 	my $override_prop = $class->command_line_overrides($state);
 	my $default_prop = {
 		junk => 150, 
@@ -424,9 +417,8 @@ sub parse_config_files
 	$state->{override_prop} = $override_prop;
 }
 
-sub parse_hosts_file
+sub parse_hosts_file($class, $filename, $state, $rdefault, $override)
 {
-	my ($class, $filename, $state, $rdefault, $override) = @_;
 	open my $fh, '<', $filename or
 		$state->fatal("Can't read host files #1: #2", $filename, $!);
 	my $cores = {};
@@ -466,9 +458,8 @@ sub parse_hosts_file
 	}
 }
 
-sub add_host
+sub add_host($class, $state, $host, @properties)
 {
-	my ($class, $state, $host, @properties) = @_;
 	my $prop = DPB::HostProperties->new($state->{default_prop});
 	for my $arg (@properties) {
 		if ($arg =~ m/^(.*?)=(.*)$/) {
@@ -481,17 +472,16 @@ sub add_host
 }
 
 package DPB::ExternalStub;
-sub new
+sub new($class)
 {
-	my $class = shift;
 	bless {}, $class;
 }
 
-sub receive_commands
+sub receive_commands($)
 {
 }
 
-sub cleanup
+sub cleanup($)
 {
 }
 

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Vars.pm,v 1.61 2023/05/02 10:06:32 espie Exp $
+# $OpenBSD: Vars.pm,v 1.62 2023/05/06 05:20:31 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -14,8 +14,7 @@
 # WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-use strict;
-use warnings;
+use v5.36;
 use DPB::Util;
 
 # DPB::Vars is responsible with talking to make: grabbing stuff off makefiles
@@ -23,15 +22,13 @@ use DPB::Util;
 # in Job/Port.pm
 
 package DPB::GetThings;
-sub subdirlist
+sub subdirlist($class, $list)
 {
-	my ($class, $list) = @_;
 	return join(' ', sort keys %$list);
 }
 
-sub run_command
+sub run_command($class, $core, $shell, $grabber, $subdirs, $skip, @args)
 {
-	my ($class, $core, $shell, $grabber, $subdirs, $skip, @args) = @_;
 
 	if (defined $subdirs) {
 		$shell->env(SUBDIR => $class->subdirlist($subdirs));
@@ -52,9 +49,8 @@ use OpenBSD::Paths;
 # this is the "complex" stuff that prints out a *small* Makefile on a pipe,
 # passes it off to make, and gets the result on the other side,
 # so we bypass the normal job creation process
-sub get
+sub get($class, $shell, $state, @names)
 {
-	my ($class, $shell, $state, @names) = @_;
 	pipe(my $rh, my $wh);
 	my $pid = fork();
 	if ($pid == 0) {
@@ -98,9 +94,8 @@ EOT
 }
 
 # this, on the other hand, is the generic code that may run elsewhere
-sub run_pipe
+sub run_pipe($class, $core, $grabber, $subdirs, $skip, $dpb)
 {
-	my ($class, $core, $grabber, $subdirs, $skip, $dpb) = @_;
 	$core->start_pipe(sub {
 		my $shell = shift;
 		close STDERR;
@@ -111,17 +106,16 @@ sub run_pipe
 	}, "LISTING");
 }
 
-sub grab_list
+sub grab_list($class, $core, $grabber, $subdirs, $skip, $ignore_errors, 
+    $log, $dpb, $code)
 {
-	my ($class, $core, $grabber, $subdirs, $skip, $ignore_errors, 
-	    $log, $dpb, $code) = @_;
 	$class->run_pipe($core, $grabber, $subdirs, $skip, $dpb);
 	my $h = {};
 	my $seen = {};
 	my $fh = $core->fh;
 	my $subdir;
 	my $category;
-	my $reset = sub {
+	my $reset = sub() {
 	    $h = DPB::PkgPath->handle_equivalences($grabber->{state}, 
 	    	$h, $subdirs);
 	    $grabber->{fetch}->build_distinfo($h, $grabber->{state}{mirror},
@@ -217,9 +211,8 @@ sub grab_list
 package DPB::PortSignature;
 our @ISA = qw(DPB::GetThings);
 
-sub grab_signature
+sub grab_signature($class, $core, $grabber, $subdir)
 {
-	my ($class, $core, $grabber, $subdir) = @_;
 	my $signature;
 	$core->start_pipe(sub {
 		my $shell = shift;
@@ -237,9 +230,8 @@ sub grab_signature
 
 package DPB::CleanPackages;
 our @ISA = qw(DPB::GetThings);
-sub clean
+sub clean($class, $core, $grabber, $subdir)
 {
-	my ($class, $core, $grabber, $subdir) = @_;
 	$core->start_pipe(sub {
 		my $shell = shift;
 		$class->run_command($core, $shell, $grabber, {$subdir => 1},

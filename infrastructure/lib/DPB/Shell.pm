@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Shell.pm,v 1.19 2019/10/07 04:52:14 espie Exp $
+# $OpenBSD: Shell.pm,v 1.20 2023/05/06 05:20:31 espie Exp $
 #
 # Copyright (c) 2010-2014 Marc Espie <espie@openbsd.org>
 #
@@ -14,8 +14,7 @@
 # WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-use strict;
-use warnings;
+use v5.36;
 
 # the shell package is used to exec commands.
 # It works together with the Host class that actually
@@ -36,9 +35,8 @@ package DPB::Shell::Abstract;
 # actual creation is done through
 # $host->shellclass->new($host)
 
-sub new
+sub new($class, $host)
 {
-	my ($class, $host) = @_;
 	$host //= {}; 	# this makes it possible to build "localhost" shells
 			# without any prop.
 	return bless {as_root => 0, prop => $host->{prop}}, $class;
@@ -46,59 +44,49 @@ sub new
 
 # the abstract class doesn't know how to exec anything
 # but it has accessors and tweakers
-sub prop
+sub prop($self)
 {
-	my $self = shift;
 	return $self->{prop};
 }
 
-sub is_alive
+sub is_alive($)
 {
 	return 1;
 }
 
-sub stringize_master_pid
+sub stringize_master_pid($)
 {
 	return "";
 }
 
-sub chdir
+sub chdir($self, $dir)
 {
-	my ($self, $dir) = @_;
 	$self->{dir} = $dir;
 	return $self;
 }
 
-sub env
+sub env($self, %h)
 {
-	my ($self, %h) = @_;
 	while (my ($k, $v) = each %h) {
 		$self->{env}{$k} = $v;
 	}
 	return $self;
 }
 
-sub as_root
+sub as_root($self, $val = 1)
 {
-	my ($self, $val) = @_;
-	# XXX calling as_root without parms is equivalent to saying "1"
-	if (@_ == 1) {
-		$val = 1;
-	}
 	$self->{as_root} = $val;
 	return $self;
 }
 
-sub run_as
+sub run_as($self, $user)
 {
-	my ($self, $user) = @_;
 	$self->{user} = $user;
 	return $self;
 }
 
-sub nochroot
+sub nochroot($self)
 {
-	my $self = shift;
 	$self->{nochroot} = 1;
 	return $self;
 }
@@ -106,25 +94,22 @@ sub nochroot
 package DPB::Shell::Local;
 our @ISA = qw(DPB::Shell::Abstract);
 
-sub chdir
+sub chdir($self, $dir)
 {
-	my ($self, $dir) = @_;
 	CORE::chdir($dir) or DPB::Util->die_bang("Can't chdir to $dir");
 	return $self;
 }
 
-sub env
+sub env($self, %h)
 {
-	my ($self, %h) = @_;
 	while (my ($k, $v) = each %h) {
 		$ENV{$k} = $v;
 	}
 	return $self;
 }
 
-sub exec
+sub exec($self, @argv)
 {
-	my ($self, @argv) = @_;
 	if ($self->{as_root}) {
 		unshift(@argv, OpenBSD::Paths->doas);
 	}
@@ -137,9 +122,8 @@ sub exec
 
 package DPB::Shell::Chroot;
 our @ISA = qw(DPB::Shell::Abstract);
-sub exec
+sub exec($self, @argv)
 {
-	my ($self, @argv) = @_;
 	my $chroot = $self->prop->{chroot};
 	if ($self->{nochroot}) {
 		undef $chroot;
@@ -184,9 +168,8 @@ sub exec
 
 package DPB::Shell::Local::Chroot;
 our @ISA = qw(DPB::Shell::Chroot);
-sub _run
+sub _run($self, @argv)
 {
-	my ($self, @argv) = @_;
 	if (-t STDIN) {
 		close(STDIN);
 		open STDIN, '</dev/null';
@@ -194,15 +177,13 @@ sub _run
 	exec {$argv[0]} @argv;
 }
 
-sub quote
+sub quote($self, $cmd)
 {
-	my ($self, $cmd) = @_;
 	return $cmd;
 }
 
-sub nochroot
+sub nochroot($self)
 {
-	my $self = shift;
 	return bless $self, 'DPB::Shell::Local';
 }
 
@@ -210,17 +191,15 @@ package DPB::Shell::Local::Root;
 our @ISA = qw(DPB::Shell::Local::Chroot);
 use POSIX;
 
-sub exec
+sub exec($self, @argv)
 {
-	my ($self, @argv) = @_;
 	$> = 0;
 	$) = 0;
 	$self->SUPER::exec(@argv);
 }
 
-sub nochroot
+sub nochroot($self)
 {
-	my $self = shift;
 	$self->{nochroot} = 1;
 	return $self;
 }

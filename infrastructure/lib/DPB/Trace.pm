@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Trace.pm,v 1.6 2019/09/29 12:57:51 espie Exp $
+# $OpenBSD: Trace.pm,v 1.7 2023/05/06 05:20:31 espie Exp $
 #
 # Copyright (c) 2015-2019 Marc Espie <espie@openbsd.org>
 #
@@ -16,13 +16,13 @@
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 use OpenBSD::Trace;
+use v5.36;
 
 package DPB::Trace;
 our @ISA = qw(OpenBSD::Trace);
 
-sub init
+sub init($self, $cleanup)
 {
-	my ($self, $cleanup) = @_;
 	$self->SUPER::init;
 	$self->{cleanup} = $cleanup;
 	$SIG{INFO} = sub {
@@ -31,9 +31,8 @@ sub init
 	}
 }
 
-sub do_warn
+sub do_warn($self, $msg)
 {
-	my ($self, $msg) = @_;
 	if (defined $self->{logfile}) {
 		print {$self->{logfile}} $msg, '-'x70, "\n";
 	}
@@ -44,9 +43,8 @@ sub do_warn
 	};
 }
 
-sub do_die
+sub do_die($self, $msg)
 {
-	my ($self, $msg) = @_;
 	if (defined $self->{reporter}) {
 		$self->{reporter}->reset_cursor;
 	}
@@ -57,16 +55,14 @@ sub do_die
 	$self->SUPER::do_die($msg);
 }
 
-sub set_reporter
+sub set_reporter($self, $reporter)
 {
-	my ($self, $reporter) = @_;
 	$self->{reporter} = $reporter;
 	return $self;
 }
 
-sub set_logger
+sub set_logger($self, $logfile)
 {
-	my ($self, $logfile) = @_;
 	$self->{logfile} = $logfile;
 	return $self;
 }

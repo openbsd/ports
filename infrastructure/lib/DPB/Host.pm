@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Host.pm,v 1.15 2019/10/07 04:52:14 espie Exp $
+# $OpenBSD: Host.pm,v 1.16 2023/05/06 05:20:31 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -14,8 +14,7 @@
 # WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-use strict;
-use warnings;
+use v5.36;
 
 # we have unique objects for hosts, so we can put properties in there.
 # synopsis
@@ -45,23 +44,20 @@ package DPB::Host;
 
 my $hosts = {};
 
-sub shell
+sub shell($self)
 {
-	my $self = shift;
 	# XXX create a lazy shell so host registration already occurred
 	$self->{shell} //= $self->shellclass->new($self);
 	return $self->{shell};
 }
 
-sub create
+sub create($class, $name, $prop)
 {
-	my ($class, $name, $prop) = @_;
 	return bless {host => $name, prop => $prop }, $class;
 }
 
-sub new
+sub new($class, $name, $prop = undef)
 {
-	my ($class, $name, $prop) = @_;
 	if ($class->name_is_localhost($name)) {
 		$class = "DPB::Host::Localhost";
 		$name = 'localhost';
@@ -74,9 +70,8 @@ sub new
 	return $hosts->{$name};
 }
 
-sub retrieve
+sub retrieve($class, $name)
 {
-	my ($class, $name) = @_;
 	if ($class->name_is_localhost($name)) {
 		return $hosts->{localhost};
 	} else {
@@ -84,33 +79,29 @@ sub retrieve
 	}
 }
 
-sub fetch_host
+sub fetch_host($class, $prop)
 {
-	my ($class, $prop) = @_;
 	$hosts->{FETCH} //= DPB::Host::Localhost->create('localhost', $prop);
 	return $hosts->{FETCH};
 }
 
-sub new_init_core
+sub new_init_core($self)
 {
-	my $self = shift;
 	return $self->coreclass->new_noreg($self);
 }
 
-sub coreclass
+sub coreclass($)
 {
 	return "DPB::Core";
 }
 
-sub name
+sub name($self)
 {
-	my $self = shift;
 	return $self->{host};
 }
 
-sub fullname
+sub fullname($self)
 {
-	my $self = shift;
 	my $name = $self->name;
 	if (defined $self->{prop}->{jobs}) {
 		$name .= "/$self->{prop}->{jobs}";
@@ -118,9 +109,8 @@ sub fullname
 	return $name;
 }
 
-sub name_is_localhost
+sub name_is_localhost($class, $host)
 {
-	my ($class, $host) = @_;
 	if ($host eq "localhost" or $host eq DPB::Core::Local->hostname) {
 		return 1;
 	} else {
@@ -131,29 +121,27 @@ sub name_is_localhost
 package DPB::Host::Localhost;
 our @ISA = qw(DPB::Host);
 
-sub create
+sub create($class, $name, $prop)
 {
-	my ($class, $name, $prop) = @_;
 	$prop->{iamroot} = $< == 0;
 	$prop->{build_user}->enforce_local 
 	    if defined $prop->{build_user};
 	return $class->SUPER::create('localhost', $prop);
 }
 
-sub is_localhost
+sub is_localhost($)
 {
 	return 1;
 }
 
-sub is_alive
+sub is_alive($)
 {
 	return 1;
 }
 
 
-sub shellclass
+sub shellclass($self)
 {
-	my $self = shift;
 	if ($self->{prop}{iamroot}) {
 		return "DPB::Shell::Local::Root";
 	} elsif ($self->{prop}{chroot}) {
@@ -164,9 +152,8 @@ sub shellclass
 }
 
 # XXX this is a "quicky" local shell before we set up hosts properly
-sub getshell
+sub getshell($class, $state)
 {
-	my ($class, $state) = @_;
 	my $prop;
 
 	if ($state->{default_prop}) {
