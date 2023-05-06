@@ -3,8 +3,7 @@ COMMENT=		the MATE window manager
 SHARED_LIBS +=  marco-private             1.0 # 1.0
 
 MATE_PROJECT=		marco
-MATE_VERSION=		1.26.1
-REVISION=		0
+MATE_VERSION=		1.26.2
 
 CATEGORIES=		x11
 
