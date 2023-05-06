@@ -2,9 +2,8 @@ COMMENT =	load various configuration file formats
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Config-Any-0.32
+DISTNAME =	Config-Any-0.33
 CATEGORIES =	devel
-REVISION =	0
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
