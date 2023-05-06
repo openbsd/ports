@@ -1,0 +1,12 @@
+Index: python/Makefile.in
+--- python/Makefile.in.orig
++++ python/Makefile.in
+@@ -856,7 +856,7 @@ uninstall-am:
+ @PYTHON_TRUE@distclean: clean
+ 
+ @PYTHON_TRUE@python-install:
+-@PYTHON_TRUE@	$(PYTHON) setup.py install --prefix=$(DESTDIR)$(prefix)
++@PYTHON_TRUE@	$(PYTHON) setup.py install --prefix=$(prefix) --single-version-externally-managed --root=$(DESTDIR)
+ 
+ @PYTHON_TRUE@install-exec-local: python-install
+ 

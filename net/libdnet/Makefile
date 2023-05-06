@@ -1,24 +1,23 @@
 COMMENT-main=	portable low-level networking library
-COMMENT-python= python interface to libdnet
+COMMENT-python=	python interface to libdnet
 
-MODPY_EGG_VERSION= 1.12
-REVISION=	14
-DISTNAME=	libdnet-${MODPY_EGG_VERSION}
+MODPY_EGG_VERSION= 1.16.4
+GH_ACCOUNT=	ofalk
+GH_PROJECT=	libdnet
+# 1.16.4 release with my merged PRs on top
+GH_COMMIT=	8a0163b38fefdf6184f41645548cfbe306a254b5
+DISTNAME=	libdnet-1.16.4
 PKGNAME-main=	${DISTNAME}
-PKGNAME-python= py-${DISTNAME}
+PKGNAME-python=	${MODPY_PY_PREFIX}${DISTNAME}
 
-SHARED_LIBS=	dnet	1.0
+SHARED_LIBS=	dnet	1.1
 
 CATEGORIES=	net
-HOMEPAGE=	https://github.com/dugsong/libdnet
 
 # BSD
 PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
-
-MASTER_SITES=		${MASTER_SITE_GOOGLECODE:=libdnet/}
-EXTRACT_SUFX=		.tgz
 
 PSEUDO_FLAVORS=		no_python
 FLAVOR?=
@@ -35,10 +34,12 @@ CONFIGURE_ARGS +=	--without-check
 .include <bsd.port.arch.mk>
 .if ${BUILD_PACKAGES:M-python}
 MODULES+=		lang/python
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_2}
+MODPY_ADJ_FILES=	python/test.py
 CONFIGURE_ARGS+=	--with-python
+BUILD_DEPENDS+=		lang/cython${MODPY_FLAVOR}
 MAKE_FLAGS=		PYTHON=${MODPY_BIN}
-TEST_DEPENDS=		${FULLPKGNAME-python}:${FULLPKGPATH-python}
+TEST_DEPENDS=		${FULLPKGNAME-python}:${FULLPKGPATH-python} \
+			net/py-netifaces${MODPY_FLAVOR}
 TEST_FLAGS=		TESTS_ENVIRONMENT=${MODPY_BIN}
 TEST_IS_INTERACTIVE=	needs root
 WANTLIB-python=		${MODPY_WANTLIB} m pthread util

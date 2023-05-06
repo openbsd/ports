@@ -12,15 +12,19 @@ include/dnet/icmp.h
 include/dnet/intf.h
 include/dnet/ip.h
 include/dnet/ip6.h
+include/dnet/ndisc.h
 include/dnet/os.h
 include/dnet/rand.h
 include/dnet/route.h
+include/dnet/sctp.h
 include/dnet/tcp.h
 include/dnet/tun.h
 include/dnet/udp.h
 @static-lib lib/libdnet.a
 lib/libdnet.la
 @lib lib/libdnet.so.${LIBdnet_VERSION}
+@comment lib/python${MODPY_VERSION}/
+@comment lib/python${MODPY_VERSION}/site-packages/
 @man man/man3/dnet.3
 @man man/man8/dnet.8
 @bin sbin/dnet

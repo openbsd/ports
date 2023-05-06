@@ -1,9 +1,12 @@
 Do not issue an SIOCSIFNETMASK before SIOCSIFADDR it is not
 needed even if the XXX says otherwise.
 
---- src/intf.c.orig	Mon Jan  9 08:09:49 2006
-+++ src/intf.c	Thu Apr 11 16:16:02 2013
-@@ -66,7 +66,13 @@
+pending https://github.com/ofalk/libdnet/pull/92
+
+Index: src/intf.c
+--- src/intf.c.orig
++++ src/intf.c
+@@ -69,7 +69,13 @@
  /* XXX - superset of ifreq, for portable SIOC{A,D}IFADDR */
  struct dnet_ifaliasreq {
  	char		ifra_name[IFNAMSIZ];
@@ -18,7 +21,7 @@ needed even if the XXX says otherwise.
  	struct sockaddr ifra_brdaddr;
  	struct sockaddr ifra_mask;
  	int		ifra_cookie;	/* XXX - IRIX!@#$ */
-@@ -281,7 +287,7 @@ intf_set(intf_t *intf, const struct intf_entry *entry)
+@@ -303,7 +309,7 @@ intf_set(intf_t *intf, const struct intf_entry *entry)
  	}
  	/* Set interface address. */
  	if (entry->intf_addr.addr_type == ADDR_TYPE_IP) {
