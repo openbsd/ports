@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.73 2023/01/30 14:20:27 espie Exp $
+# $OpenBSD: proot,v 1.74 2023/05/06 05:21:15 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -16,8 +16,7 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-use strict;
-use warnings;
+use v5.36;
 
 my $ports1;
 use FindBin;
@@ -38,15 +37,13 @@ our @ISA = qw(DPB::User);
 use File::Basename;
 use File::Find;
 
-sub new
+sub new($class, @r)
 {
-	my $class = shift;
-	return $class->SUPER::new(@_)->enforce_local;
+	return $class->SUPER::new(@r)->enforce_local;
 }
 
-sub mkpath
+sub mkpath($self, $dir)
 {
-	my ($self, $dir) = @_;
 	my $p = dirname($dir);
 	if (! -d $p) {
 		$self->mkpath($p);
@@ -54,12 +51,11 @@ sub mkpath
 	$self->mkdir($dir);
 }
 
-sub mkRpath
+sub mkRpath($self, $dir, @except)
 {
-	my ($self, $dir, @except) = @_;
 	my %dont = map {($_, 1)} @except;
 	if (-d $dir) {
-		find(sub {
+		find(sub() {
 		    if ($dont{$_}) {
 			    $File::Find::prune = 1;
 			    return;
@@ -71,15 +67,13 @@ sub mkRpath
 	}
 }
 
-sub own
+sub own($self, $path)
 {
-	my ($self, $path) = @_;
 	chown $self->{uid}, $self->{gid}, $path;
 }
 
-sub mkdir
+sub mkdir($self, $dir)
 {
-	my ($self, $dir) = @_;
 	mkdir($dir);
 	$self->own($dir);
 }
@@ -93,30 +87,26 @@ use File::Basename;
 use File::Find;
 use File::Path qw(remove_tree);
 
-sub set_chroot
+sub set_chroot($state)
 {
-	my $state = shift;
 	for my $item (keys %{$state->{dontrm}}) {
 		$state->add_chroot_preserved($item);
 	}
 }
 
-sub fatal_error
+sub fatal_error($self, @r)
 {
-	my $self = shift;
-	$self->errsay(@_);
+	$self->errsay(@r);
 	$self->{error} = 1;
 }
 
-sub add_chroot_preserved
+sub add_chroot_preserved($state, $item)
 {
-	my ($state, $item) = @_;
 	$state->{chroot_dont}{$state->chroot($item)} = 1;
 }
 
-sub add_preserved
+sub add_preserved($state, $item)
 {
-	my ($state, $item) = @_;
 	$state->{dontrm}{$item} = 1;
 	# XXX chicken&egg issue: add_chroot_preserved requires
 	# the chroot to be set, but we might mix preserve/chroot
@@ -129,72 +119,69 @@ sub add_preserved
 	}
 }
 
-sub canonical_dir
+sub canonical_dir($state, $path)
 {
-	my ($state, $path) = @_;
 	$path = File::Spec->canonpath($path);
 	$path =~ s,/+$,,;
 	return $path;
 }
 
-sub do_parm
+sub do_parm($state, $k, $v)
 {
-	my ($state, $k, $v) = @_;
-
 	my $opts = {
-	    chroot => sub {
+	    chroot => sub() {
 		    $state->{chroot} = File::Spec->canonpath($v);
-	    }, srcroot => sub {
+	    }, srcroot => sub() {
 		    $state->{srcroot} = File::Spec->canonpath($v);
-	    }, PORT_USER => sub {
+	    }, PORT_USER => sub() {
 		    $state->{portuser} = MyUser->new($v);
-	    }, LOG_USER => sub {
+	    }, LOG_USER => sub() {
 		    $state->{loguser} = MyUser->new($v);
-	    }, FETCH_USER => sub {
+	    }, FETCH_USER => sub() {
 		    $state->{fetchuser} = MyUser->new($v);
 		    $state->{FETCH_USER} = $state->{fetchuser}->user;
-	    }, BUILD_USER => sub {
+	    }, BUILD_USER => sub() {
 		    $state->{builduser} = MyUser->new($v);
 		    $state->{BUILD_USER} = $state->{builduser}->user;
-	    }, PORTSDIR => sub {
+	    }, PORTSDIR => sub() {
 		    $state->{PORTSDIR} = File::Spec->canonpath($v);
-	    }, DISTDIR => sub {
+	    }, DISTDIR => sub() {
 		    $state->{DISTDIR} = File::Spec->canonpath($v);
-	    }, PACKAGE_REPOSITORY => sub {
+	    }, PACKAGE_REPOSITORY => sub() {
 		    $state->{PACKAGE_REPOSITORY} = File::Spec->canonpath($v);
-	    }, PLIST_REPOSITORY => sub {
+	    }, PLIST_REPOSITORY => sub() {
 		    $state->{PLIST_REPOSITORY} = File::Spec->canonpath($v);
-	    }, NFSDIR => sub {
+	    }, NFSDIR => sub() {
 		    $state->{DISTDIR} = File::Spec->canonpath("$v/distfiles");
 		    $state->{PACKAGE_REPOSITORY} = 
 			File::Spec->canonpath("$v/packages");
 		    $state->{PLIST_REPOSITORY} =
 		    	File::Spec->canonpath("$v/plist");
-	    }, LOCALDIR => sub {
+	    }, LOCALDIR => sub() {
 		    $state->{WRKOBJDIR} = File::Spec->canonpath("$v/pobj");
 		    $state->{LOCKDIR} = File::Spec->canonpath("$v/locks");
-	    }, preserve => sub {
+	    }, preserve => sub() {
 		    $state->add_preserved($v);
-	    }, portscvs => sub {
+	    }, portscvs => sub() {
 		    $state->{portscvs} = $v;
-	    }, ignorecvs => sub {
+	    }, ignorecvs => sub() {
 		    $state->{ignorecvs} = 1;
-	    }, chown_all => sub {
+	    }, chown_all => sub() {
 		    $state->{chown_all} = $v;
-	    }, WRKOBJDIR => sub {
+	    }, WRKOBJDIR => sub() {
 	    	$state->{WRKOBJDIR} = File::Spec->canonpath($v);
-	    }, DISTDIR => sub {
+	    }, DISTDIR => sub() {
 	    	$state->{DISTDIR} = File::Spec->canonpath($v);
-	    }, LOCKDIR => sub {
+	    }, LOCKDIR => sub() {
 	    	$state->{LOCKDIR} = File::Spec->canonpath($v);
-	    }, LOGDIR => sub {
+	    }, LOGDIR => sub() {
 	    	$state->{LOGDIR} = File::Spec->canonpath($v);
-	    }, snapshot => sub {
+	    }, snapshot => sub() {
 	    	$state->{snapshot} = $v;
-	    }, trusted_snapshot => sub {
+	    }, trusted_snapshot => sub() {
 	    	$state->{snapshot} = $v;
 		$state->{trusted} = 1;
-	    }, actions => sub {
+	    }, actions => sub() {
 	    	if ($v eq 'none') {
 			delete $state->{actions};
 		}
@@ -203,31 +190,34 @@ sub do_parm
 		} else {
 			$state->{actions}{$v} = 1;
 		}
-	    }, sets => sub {
+	    }, sets => sub() {
 	    	if ($v =~ m/^-(.*)/) {
 			$state->{sets}{$1} = 0;
 		} else {
 			$state->{sets}{$v} = 1;
 		}
-	    }, extra => sub {
+	    }, extra => sub() {
 	    	$state->{known}{$v} = 1;
-	    }, mkconf_tail => sub {
+	    }, mkconf_tail => sub() {
 	    	$state->{mkconf_tail} = $v;
-	    }, mkconf_lines => sub {
+	    }, mkconf_lines => sub() {
 	    	push(@{$state->{mkconf_lines}}, $v);
 	    }
 	};
 
+	if (!defined $k) {
+		$state->fatal_error("Can't specify option value without a key",
+		    $v);
+	}
 	if (defined $opts->{$k}) {
-		&{$opts->{$k}};
+		&{$opts->{$k}}();
 	} else {
 		$state->fatal_error("Unknown option #1=#2", $k, $v);
 	}
 }
 
-sub read_configfile
+sub read_configfile($state, $name)
 {
-	my ($state, $name) = @_;
 	open(my $f, '<', $name) or die "Can't open config $name: $!";
 	my ($k, $v);
 
@@ -250,9 +240,8 @@ sub read_configfile
 	close($f);
 }
 
-sub handle_options
+sub handle_options($state)
 {
-	my $state = shift;
 	# default shit
 	$state->{actions} = {
 	    check_mount => 1,
@@ -269,9 +258,15 @@ sub handle_options
 	$state->{error} = 0;
 	$state->{no_exports} = 1;
 	$state->{opt} = {
-		B => sub { $state->{fchroot} = File::Spec->canonpath(shift); },
-		S => sub { $state->{fsrcroot} = File::Spec->canonpath(shift); },
-		c => sub { $state->read_configfile(shift); },
+		B => sub($opt) { 
+			$state->{fchroot} = File::Spec->canonpath($opt); 
+		    },
+		S => sub($opt) { 
+			$state->{fsrcroot} = File::Spec->canonpath($opt); 
+		    },
+		c => sub($opt) { 
+			$state->read_configfile($opt); 
+		    },
 	    };
 	$state->SUPER::handle_options("B:S:c:mx", 
 	    "[-B chroot] [-c configfile] [-S chroot] [arg=value...]");
@@ -369,41 +364,36 @@ sub handle_options
 	}
 }
 
-sub chroot
+sub chroot($state, @components)
 {
-	my $state = shift;
 	if (defined $state->{chroot}) {
-		unshift @_, $state->{chroot};
+		unshift @components, $state->{chroot};
 	}
-	return File::Spec->canonpath(join('/', @_));
+	return File::Spec->canonpath(join('/', @components));
 }
 
-sub srcroot
+sub srcroot($state, @components)
 {
-	my $state = shift;
 	if (defined $state->{srcroot}) {
-		unshift @_, $state->{srcroot};
+		unshift @components, $state->{srcroot};
 	}
-	return File::Spec->canonpath(join('/', @_));
+	return File::Spec->canonpath(join('/', @components));
 }
 
-sub chdir
+sub chdir($state, $dir)
 {
-	my ($state, $dir) = @_;
 	CORE::chdir($dir) or $state->fatal("Can't change to #1: #2", $dir, $!);
 }
 
-sub banner
+sub banner($self, $text, $sub)
 {
-	my ($self, $text, $sub) = @_;
 	$self->{progressmeter}->set_header($text);
-	&$sub;
+	&$sub();
 	$self->{progressmeter}->next;
 }
 
-sub run_chroot
+sub run_chroot($self, $text, $sub)
 {
-	my ($self, $text, $sub) = @_;
 	$self->{progressmeter}->set_header($text);
 	my $r = fork();
 	if (!defined $r) {
@@ -415,7 +405,7 @@ sub run_chroot
 		    $self->chroot, $!); 
 		CORE::chdir('/') or
 		    $self->fatal("Can't chdir after chroot: #1", $!);
-		&$sub;
+		&$sub();
 		exit(0);
 	}
 	waitpid($r, 0);
@@ -430,15 +420,13 @@ sub run_chroot
 	$self->{progressmeter}->next;
 }
 
-sub sync_display
+sub sync_display($self)
 {
-	my $self = shift;
 	$self->{progressmeter}->clear if defined $self->{progressmeter};
 }
 
-sub check_mountpoint
+sub check_mountpoint($state)
 {
-	my $state = shift; 
 	open(my $cmd, "-|", OpenBSD::Paths->mount);
 	my ($dev, $nosuid, $wx);
 	while (<$cmd>)  {
@@ -502,16 +490,14 @@ sub check_mountpoint
 	$state->fatal_error("Couldn't find mountpoint for #1 ???", $root);
 }
 
-sub special_data
+sub special_data($state)
 {
-	my $state = shift;
 	$state->{known}{'/etc/resolv.conf'} = 1;
 	$state->{known}{'/etc/hosts'} = 1;
 }
 
-sub read_locates
+sub read_locates($state)
 {
-	my $state = shift;
 	$state->banner("Running locate",
 	    sub {
 		open(my $cmd, '-|', 'locate',
@@ -532,9 +518,8 @@ sub read_locates
 	    });
 }
 
-sub library_sanity_check
+sub library_sanity_check($state)
 {
-	my $state = shift;
 	# create a quick repo containing the best libs.
 	require OpenBSD::LibSpec;
 	my $repo = {};
@@ -581,10 +566,8 @@ sub library_sanity_check
 }
 
 # THIS IS THE WORK HORSE
-sub simple_copy
+sub simple_copy($state, $path, $cpath, $user = undef)
 {
-	my ($state, $path, $cpath, $user) = @_;
-
 	$state->{accounted}{$path} = 1;
 	if (-l $path) {
 		return if $state->{chroot_dont}{$cpath};
@@ -662,10 +645,8 @@ sub simple_copy
 	$state->fatal_error("Can't copy #1: #2", $path, $!);
 }
 
-sub recursive_copy
+sub recursive_copy($state, $path)
 {
-	my ($state, $path) = @_;
-
 	my $d = dirname($path);
 	if ($d ne $path) {
 		if (!-d $state->chroot($d)) {
@@ -680,9 +661,8 @@ sub recursive_copy
 	$state->simple_copy($spath, $state->chroot($path));
 }
 
-sub copy_sync
+sub copy_sync($state)
 {
-	my $state = shift;
 	# farting all over the place
 	$state->banner("Copying stuff over",
 	    sub {
@@ -696,10 +676,9 @@ sub copy_sync
 	    });
 }
 
-sub best_user
+sub best_user($state, $path)
 {
-	my $state = shift;
-	local $_ = shift;
+	local $_ = $path;
 
 	if (m/^\Q$state->{LOGDIR}\E/) {
 		return $state->{loguser};
@@ -722,10 +701,8 @@ sub best_user
 	return $state->{portuser};
 }
 
-sub grab_file
+sub grab_file($state, $snapdir, $file)
 {
-	my ($state, $snapdir, $file) = @_;
-
 	my $baseurl = $state->{snapshot};
 
 	unless (-f $file) {
@@ -739,9 +716,8 @@ sub grab_file
 	}
 }
 
-sub extract_archive
+sub extract_archive($state, $dir, $archive)
 {
-	my ($state, $dir, $archive) = @_;
 	require IO::Uncompress::AnyUncompress;
 
 	my $in = IO::Uncompress::AnyUncompress->new("$dir/$archive", 
@@ -766,9 +742,8 @@ sub extract_archive
 	$in->close;
 }
 
-sub find_snapshot_version
+sub find_snapshot_version($state, $snapdir, $check)
 {
-	my ($state, $snapdir, $check) = @_;
 	open my $f, '<', "$snapdir/$check" or
 	    $state->fatal("no $check");
 	my $v;
@@ -790,10 +765,8 @@ sub find_snapshot_version
 	return $v;
 }
 
-sub get_snapshot
+sub get_snapshot($state)
 {
-	my $state = shift;
-
 	$state->banner("Grabbing snapshot",
 	    sub {
 	    	my ($snapdir, $grab);
@@ -843,9 +816,8 @@ sub get_snapshot
 	    });
 }
 
-sub copy_ports
+sub copy_ports($state)
 {
-	my $state = shift;
 	$state->banner("Copying ports",
 	    sub {
 		my $old = umask;
@@ -878,9 +850,8 @@ sub copy_ports
 	    });
 }
 
-sub copy_sys
+sub copy_sys($state)
 {
-	my $state = shift;
 	$state->banner("Copying sys includes",
 	    sub {
 		my $old = umask;
@@ -903,9 +874,8 @@ sub copy_sys
 	    });
 }
 
-sub regen_devs
+sub regen_devs($state)
 {
-	my $state = shift;
 	$state->banner("Generating devices",
 	    sub {
 		$state->system(
@@ -920,9 +890,8 @@ sub regen_devs
 	    });
 }
 
-sub run_ldconfig
+sub run_ldconfig($state)
 {
-	my $state = shift;
 	$state->banner("Running ldconfig",
 	    sub {
 		$state->system(
@@ -934,9 +903,8 @@ sub run_ldconfig
 	    });
 }
 
-sub checkout_ports
+sub checkout_ports($state)
 {
-	my $state = shift;
 	$state->banner("Checking out ports tree",
 	    sub {
 	    	my @cvs = ("/usr/bin/cvs", "-z3", "-d", $state->{portscvs});
@@ -961,9 +929,8 @@ sub checkout_ports
 	    });
 }
 
-sub unpopulate_chroot
+sub unpopulate_chroot($state)
 {
-	my $state = shift;
 	$state->run_chroot("Cleaning up files and directories",
 	    sub {
 		my @dirs;
@@ -992,9 +959,8 @@ sub unpopulate_chroot
 	    });
 }
 
-sub verbose_shit
+sub verbose_shit($state)
 {
-	my $state = shift;
 	$state->run_chroot("Showing up stragglers",
 	    sub {
 	    	find(
@@ -1015,9 +981,8 @@ sub verbose_shit
 	    });
 }
 
-sub show_absolute_symlinks
+sub show_absolute_symlinks($state)
 {
-	my $state = shift;
 	my $wrapper = '/usr/sbin/mailwrapper';
 	my $expected = {
 		'/etc/localtime' => undef,
@@ -1056,10 +1021,8 @@ sub show_absolute_symlinks
 	    });
 }
 
-sub is_under_nfs
+sub is_under_nfs($state, $dir)
 {
-	my ($state, $dir) = @_;
-
 	my $devno = (stat $dir)[0];
 	if (defined $devno && exists $state->{nfs}{$devno}) {
 		return 1;
@@ -1070,9 +1033,8 @@ sub is_under_nfs
 
 use constant { WHINE => 1, MKPATH => 2 };
 
-sub build_dir
+sub build_dir($state, $opts, $username, $dirname, @r)
 {
-	my ($state, $opts, $username, $dirname, @r) = @_;
 	$state->{progressmeter}->message($dirname);
 	my $dir = join('/', $state->{$dirname}, @r);
 	$state->{$username}->mkpath($dir);
@@ -1087,9 +1049,8 @@ sub build_dir
 }
 
 
-sub make_ports_subdirs
+sub make_ports_subdirs($state)
 {
-	my $state = shift;
 	$state->run_chroot("Adjusting ports directories",
 	    sub {
 	    	$state->build_dir(0, "fetchuser", "DISTDIR");
@@ -1105,9 +1066,8 @@ sub make_ports_subdirs
 	    });
 }
 
-sub write_mk_conf
+sub write_mk_conf($state)
 {
-	my $state = shift;
 	$state->banner("Writing mk.conf",
 	    sub {
 		open(my $f, ">", $state->chroot("/etc/mk.conf"));
