@@ -7,8 +7,8 @@
      SUBDIR += qtdatavis3d
      SUBDIR += qtdeclarative
      #SUBDIR += qtdoc
-     #SUBDIR += qtgrpc
-     #SUBDIR += qthttpserver
+     SUBDIR += qtgrpc
+     SUBDIR += qthttpserver
      SUBDIR += qtimageformats
      SUBDIR += qtlanguageserver
      SUBDIR += qtlottie
@@ -16,8 +16,8 @@
      SUBDIR += qtnetworkauth
      SUBDIR += qtpositioning
      SUBDIR += qtquick3d
-     #SUBDIR += qtquick3dphysics
-     #SUBDIR += qtquickeffectmaker
+     SUBDIR += qtquick3dphysics
+     SUBDIR += qtquickeffectmaker
      SUBDIR += qtquicktimeline
      SUBDIR += qtremoteobjects
      SUBDIR += qtscxml
