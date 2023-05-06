@@ -1,16 +1,17 @@
-COMMENT =		meatier versions of caller
+COMMENT =	meatier versions of caller
 
-MODULES =		cpan
-DISTNAME =		Devel-Caller-2.06
-CATEGORIES =		devel
-CPAN_AUTHOR =		RCLAMP
-REVISION =		2
+DISTNAME =	Devel-Caller-2.07
+CPAN_AUTHOR =	RCLAMP
+
+CATEGORIES =	devel
 
 # Perl
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c perl
+WANTLIB =		c perl
 
-RUN_DEPENDS =		devel/p5-PadWalker
+MODULES =		cpan
+
+RUN_DEPENDS =		devel/p5-PadWalker>=0.08
 
 .include <bsd.port.mk>

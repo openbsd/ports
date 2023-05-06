@@ -2,5 +2,5 @@ ${P5ARCH}/Devel/
 ${P5ARCH}/Devel/Caller.pm
 ${P5ARCH}/auto/Devel/
 ${P5ARCH}/auto/Devel/Caller/
-${P5ARCH}/auto/Devel/Caller/Caller.so
+@so ${P5ARCH}/auto/Devel/Caller/Caller.so
 @man man/man3p/Devel::Caller.3p
