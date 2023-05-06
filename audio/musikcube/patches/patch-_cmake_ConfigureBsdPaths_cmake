@@ -1,0 +1,15 @@
+Fix OpenBSD build
+
+Index: .cmake/ConfigureBsdPaths.cmake
+--- .cmake/ConfigureBsdPaths.cmake.orig
++++ .cmake/ConfigureBsdPaths.cmake
+@@ -24,4 +24,7 @@ if (CMAKE_SYSTEM_NAME MATCHES "Darwin" OR CMAKE_SYSTEM
+     "${BSD_PATH_PREFIX}/lib"
+     "${BSD_PATH_PREFIX}/opt/openssl/lib"
+     "${BSD_PATH_PREFIX}/opt/ncurses/lib")
+-endif ()
+\ No newline at end of file
++
++  include_directories("${BSD_PATH_PREFIX}/include")
++  link_directories("${BSD_PATH_PREFIX}/lib")
++endif ()

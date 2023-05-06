@@ -3,7 +3,7 @@ disable http/websocket server by default
 Index: src/plugins/server/main.cpp
 --- src/plugins/server/main.cpp.orig
 +++ src/plugins/server/main.cpp
-@@ -189,10 +189,10 @@ extern "C" DLL_EXPORT void SetPreferences(musik::core:
+@@ -191,10 +191,10 @@ extern "C" DLL_EXPORT void SetPreferences(musik::core:
      context.prefs = prefs;
  
      if (prefs) {

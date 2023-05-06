@@ -2,8 +2,7 @@ COMMENT =	terminal-based music player
 
 GH_ACCOUNT =	clangen
 GH_PROJECT =	musikcube
-GH_TAGNAME =	0.96.10
-REVISION =	1
+GH_TAGNAME =	0.98.1
 
 CATEGORIES =	audio
 
@@ -15,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${COMPILER_LIBCXX} avcodec avformat avutil boost_atomic-mt
 WANTLIB += boost_chrono-mt boost_filesystem-mt boost_system-mt
 WANTLIB += boost_thread-mt c crypto curl curses ev m microhttpd
-WANTLIB += mp3lame openmpt panel sndio ssl swresample tag z
+WANTLIB += mp3lame mpg123 openmpt panel sndio ssl swresample tag z
 
 COMPILER =	base-clang ports-gcc
 
