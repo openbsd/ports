@@ -1,0 +1,12 @@
+Index: cli/tools/standalone.rs
+--- cli/tools/standalone.rs.orig
++++ cli/tools/standalone.rs
+@@ -100,7 +100,7 @@ async fn get_base_binary(
+   target: Option<String>,
+ ) -> Result<Vec<u8>, AnyError> {
+   if target.is_none() {
+-    let path = std::env::current_exe()?;
++    let path = PathBuf::from("${LOCALBASE}").join("bin/deno");
+     return Ok(tokio::fs::read(path).await?);
+   }
+ 

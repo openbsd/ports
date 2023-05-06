@@ -1,0 +1,17 @@
+Index: cli/build.rs
+--- cli/build.rs.orig
++++ cli/build.rs
+@@ -430,6 +430,13 @@ fn main() {
+     symbols_path.display()
+   );
+ 
++  
++  #[cfg(target_os = "openbsd")]
++  println!(
++    "cargo:rustc-link-arg-bin=deno=-Wl,--export-dynamic-symbol={}",
++    symbols_path.display()
++  );
++
+   #[cfg(target_os = "linux")]
+   {
+     let ver = glibc_version::get_version().unwrap();

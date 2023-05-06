@@ -1,0 +1,22 @@
+Index: modcargo-crates/v8-0.68.0/build/config/BUILD.gn
+--- modcargo-crates/v8-0.68.0/build/config/BUILD.gn.orig
++++ modcargo-crates/v8-0.68.0/build/config/BUILD.gn
+@@ -118,7 +118,7 @@ config("debug") {
+       # builds, and we have to tell it to turn it off.
+       defines += [ "_HAS_ITERATOR_DEBUGGING=0" ]
+     }
+-  } else if ((is_linux || is_chromeos) && current_cpu == "x64" &&
++  } else if ((is_linux || is_bsd || is_chromeos) && current_cpu == "x64" &&
+              enable_iterator_debugging) {
+     # Enable libstdc++ debugging facilities to help catch problems early, see
+     # http://crbug.com/65151 .
+@@ -217,9 +217,7 @@ config("default_libs") {
+     ]
+   } else if (is_linux || is_chromeos) {
+     libs = [
+-      "dl",
+       "pthread",
+-      "rt",
+     ]
+   }
+ }

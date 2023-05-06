@@ -1,0 +1,33 @@
+Index: runtime/ops/os/mod.rs
+--- runtime/ops/os/mod.rs.orig
++++ runtime/ops/os/mod.rs
+@@ -13,6 +13,7 @@ use deno_node::NODE_ENV_VAR_ALLOWLIST;
+ use serde::Serialize;
+ use std::collections::HashMap;
+ use std::env;
++use std::path::PathBuf;
+ 
+ mod sys_info;
+ 
+@@ -67,7 +68,7 @@ deno_core::extension!(
+ 
+ #[op]
+ fn op_exec_path(state: &mut OpState) -> Result<String, AnyError> {
+-  let current_exe = env::current_exe().unwrap();
++  let current_exe = PathBuf::from("${LOCALBASE}").join("bin/deno");
+   state
+     .borrow_mut::<PermissionsContainer>()
+     .check_read_blind(&current_exe, "exec_path", "Deno.execPath()")?;
+@@ -307,6 +308,12 @@ fn op_runtime_memory_usage(scope: &mut v8::HandleScope
+     heap_used: s.used_heap_size(),
+     external: s.external_memory(),
+   }
++}
++
++#[cfg(target_os = "openbsd")]
++// FIXME: Replace stub with a proper implementation
++fn rss() -> usize {
++  0
+ }
+ 
+ #[cfg(target_os = "linux")]

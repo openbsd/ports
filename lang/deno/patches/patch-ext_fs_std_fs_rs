@@ -1,0 +1,12 @@
+Index: ext/fs/std_fs.rs
+--- ext/fs/std_fs.rs.orig
++++ ext/fs/std_fs.rs
+@@ -70,7 +70,7 @@ impl FileSystem for StdFs {
+     {
+       Ok(r.bits())
+     }
+-    #[cfg(target_os = "macos")]
++    #[cfg(any(target_os = "macos", target_os = "openbsd"))]
+     {
+       Ok(r.bits() as u32)
+     }

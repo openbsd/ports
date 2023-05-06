@@ -1,0 +1,11 @@
+Index: tools/wpt/utils.ts
+--- tools/wpt/utils.ts.orig
++++ tools/wpt/utils.ts
+@@ -176,6 +176,7 @@ export async function generateRunInfo(): Promise<unkno
+     "windows": "win",
+     "darwin": "mac",
+     "linux": "linux",
++    "openbsd": "openbsd",
+   };
+   const proc = await new Deno.Command("git", {
+     args: ["rev-parse", "HEAD"],

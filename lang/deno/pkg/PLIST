@@ -1,0 +1,5 @@
+@bin bin/deno
+share/doc/deno/
+share/doc/deno/LICENSE.md
+share/doc/deno/README.md
+share/doc/pkg-readmes/${PKGSTEM}

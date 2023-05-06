@@ -1,0 +1,12 @@
+Index: core/Cargo.toml
+--- core/Cargo.toml.orig
++++ core/Cargo.toml
+@@ -14,7 +14,7 @@ description = "A modern JavaScript/TypeScript runtime 
+ path = "lib.rs"
+ 
+ [features]
+-default = ["v8_use_custom_libcxx"]
++default = []
+ v8_use_custom_libcxx = ["v8/use_custom_libcxx"]
+ include_js_files_for_snapshotting = []
+ 

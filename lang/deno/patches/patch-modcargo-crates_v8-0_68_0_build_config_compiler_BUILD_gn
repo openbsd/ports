@@ -1,0 +1,158 @@
+Index: modcargo-crates/v8-0.68.0/build/config/compiler/BUILD.gn
+--- modcargo-crates/v8-0.68.0/build/config/compiler/BUILD.gn.orig
++++ modcargo-crates/v8-0.68.0/build/config/compiler/BUILD.gn
+@@ -238,13 +238,16 @@ config("default_include_dirs") {
+ # Compiler instrumentation can introduce dependencies in DSOs to symbols in
+ # the executable they are loaded into, so they are unresolved at link-time.
+ config("no_unresolved_symbols") {
+-  if (!using_sanitizer &&
++  if (!using_sanitizer && !is_bsd &&
+       (is_linux || is_chromeos || is_android || is_fuchsia)) {
+     ldflags = [
+       "-Wl,-z,defs",
+       "-Wl,--as-needed",
+     ]
+   }
++  if (current_cpu == "x86" && is_openbsd) {
++    ldflags = [ "-Wl,-z,notext" ]
++  }
+ }
+ 
+ # compiler ---------------------------------------------------------------------
+@@ -468,6 +471,10 @@ config("compiler") {
+     }
+   }
+ 
++  if (is_openbsd) {
++    ldflags += [ "-Wl,-z,wxneeded" ]
++  }
++
+   # Linux-specific compiler flags setup.
+   # ------------------------------------
+   if (use_gold) {
+@@ -543,7 +550,7 @@ config("compiler") {
+     ldflags += [ "-Wl,-z,keep-text-section-prefix" ]
+   }
+ 
+-  if (is_clang && !is_nacl && current_os != "zos") {
++  if (is_clang && !is_nacl && current_os != "zos" && !is_bsd) {
+     cflags += [ "-fcrash-diagnostics-dir=" + clang_diagnostic_dir ]
+     if (save_reproducers_on_lld_crash && use_lld) {
+       ldflags += [
+@@ -827,7 +834,7 @@ config("compiler") {
+   #   lldb doesn't have the needed changes yet.
+   # * Fuchsia isn't supported as zxdb doesn't support simple template names yet.
+   # TODO(crbug.com/1379070): Remove if the upstream default ever changes.
+-  if (is_clang && !is_nacl && !is_win && !is_apple && !is_fuchsia) {
++  if (is_clang && !is_nacl && !is_win && !is_apple && !is_fuchsia && !is_bsd) {
+     cflags_cc += [ "-gsimple-template-names" ]
+   }
+ 
+@@ -987,7 +994,7 @@ config("compiler_cpu_abi") {
+         ]
+       }
+     } else if (current_cpu == "arm") {
+-      if (is_clang && !is_android && !is_nacl &&
++      if (is_clang && !is_android && !is_nacl && !is_bsd &&
+           !(is_chromeos_lacros && is_chromeos_device)) {
+         cflags += [ "--target=arm-linux-gnueabihf" ]
+         ldflags += [ "--target=arm-linux-gnueabihf" ]
+@@ -1002,7 +1009,7 @@ config("compiler_cpu_abi") {
+         cflags += [ "-mtune=$arm_tune" ]
+       }
+     } else if (current_cpu == "arm64") {
+-      if (is_clang && !is_android && !is_nacl && !is_fuchsia &&
++      if (is_clang && !is_bsd && !is_android && !is_nacl && !is_fuchsia &&
+           !(is_chromeos_lacros && is_chromeos_device)) {
+         cflags += [ "--target=aarch64-linux-gnu" ]
+         ldflags += [ "--target=aarch64-linux-gnu" ]
+@@ -1336,7 +1343,7 @@ config("compiler_deterministic") {
+     # different build directory like "out/feature_a" and "out/feature_b" if
+     # we build same files with same compile flag.
+     # Other paths are already given in relative, no need to normalize them.
+-    if (is_nacl) {
++    if (is_nacl || is_bsd) {
+       # TODO(https://crbug.com/1231236): Use -ffile-compilation-dir= here.
+       cflags += [
+         "-Xclang",
+@@ -1350,7 +1357,7 @@ config("compiler_deterministic") {
+       cflags += [ "-ffile-compilation-dir=." ]
+       swiftflags += [ "-file-compilation-dir=." ]
+     }
+-    if (!is_win) {
++    if (!is_win && !is_bsd) {
+       # We don't use clang -cc1as on Windows (yet? https://crbug.com/762167)
+       asmflags = [ "-Wa,-fdebug-compilation-dir,." ]
+     }
+@@ -1388,7 +1395,7 @@ config("compiler_deterministic") {
+ }
+ 
+ config("clang_revision") {
+-  if (is_clang && clang_base_path == default_clang_base_path) {
++  if (is_clang && !is_bsd && clang_base_path == default_clang_base_path) {
+     update_args = [
+       "--print-revision",
+       "--verify-version=$clang_version",
+@@ -1645,7 +1652,7 @@ config("default_warnings") {
+         cflags += [ "-Wno-builtin-assume-aligned-alignment" ]
+       }
+ 
+-      if (!is_nacl && clang_major_version >= 16) {
++      if (!is_nacl && !is_bsd && clang_major_version >= 16) {
+         cflags += [
+           # TODO(crbug.com/1343975) Evaluate and possibly enable.
+           "-Wno-deprecated-builtins",
+@@ -1911,7 +1918,7 @@ config("thin_archive") {
+   # archives.
+   # TODO(crbug.com/1221615): Enable on is_apple if use_lld once that no longer
+   # confuses lldb.
+-  if ((is_posix && !is_nacl && !is_apple) || is_fuchsia) {
++  if ((is_posix && !is_bsd && !is_nacl && !is_apple) || is_fuchsia) {
+     arflags = [ "-T" ]
+   } else if (is_win && use_lld) {
+     arflags = [ "/llvmlibthin" ]
+@@ -2332,7 +2339,7 @@ config("afdo_optimize_size") {
+ # There are some targeted places that AFDO regresses, so we provide a separate
+ # config to allow AFDO to be disabled per-target.
+ config("afdo") {
+-  if (is_clang) {
++  if (is_clang && !is_bsd) {
+     cflags = []
+     if (clang_emit_debug_info_for_profiling) {
+       # Add the following flags to generate debug info for profiling.
+@@ -2348,7 +2355,7 @@ config("afdo") {
+       cflags += [ "-fprofile-sample-use=${rebased_clang_sample_profile}" ]
+       inputs = [ _clang_sample_profile ]
+     }
+-  } else if (auto_profile_path != "" && is_a_target_toolchain) {
++  } else if (auto_profile_path != "" && is_a_target_toolchain && !is_bsd) {
+     cflags = [ "-fauto-profile=${auto_profile_path}" ]
+     inputs = [ auto_profile_path ]
+   }
+@@ -2440,7 +2447,7 @@ config("symbols") {
+     # flag, so we can use use -g1 for pnacl and nacl-clang compiles.
+     # gcc nacl is is_nacl && !is_clang, pnacl and nacl-clang are && is_clang.
+     if ((!is_nacl || is_clang) && current_os != "zos") {
+-      cflags += [ "-g2" ]
++      cflags += [ "-g0" ]
+     }
+ 
+     if (!is_nacl && is_clang && !is_tsan && !is_asan) {
+@@ -2475,7 +2482,7 @@ config("symbols") {
+     # DWARF info may be corrupt; offsets in a range list entry are in different
+     # sections" there.  Maybe just a bug in nacl_switch_32.S.
+     _enable_gdb_index =
+-        symbol_level == 2 && !is_apple && !is_nacl && current_cpu != "x86" &&
++        symbol_level == 2 && !is_apple && !is_bsd && !is_nacl && current_cpu != "x86" &&
+         current_os != "zos" && (use_gold || use_lld) &&
+         # Disable on non-fission 32-bit Android because it pushes
+         # libcomponents_unittests over the 4gb size limit.
+@@ -2502,7 +2509,7 @@ config("symbols") {
+     configs += [ "//build/config:compress_debug_sections" ]
+   }
+ 
+-  if (is_clang && (!is_nacl || is_nacl_saigo) && current_os != "zos") {
++  if (is_clang && (!is_nacl || is_nacl_saigo) && current_os != "zos" && !is_bsd) {
+     if (is_apple) {
+       # TODO(https://crbug.com/1050118): Investigate missing debug info on mac.
+       # Make sure we don't use constructor homing on mac.

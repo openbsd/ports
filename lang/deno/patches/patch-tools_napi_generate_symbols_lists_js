@@ -1,0 +1,11 @@
+Index: tools/napi/generate_symbols_lists.js
+--- tools/napi/generate_symbols_lists.js.orig
++++ tools/napi/generate_symbols_lists.js
+@@ -7,6 +7,7 @@ import exports from "../../cli/napi/sym/symbol_exports
+ 
+ const symbolExportLists = {
+   linux: `{ ${exports.symbols.map((s) => `"${s}"`).join("; ")}; };`,
++  openbsd: `{ ${exports.symbols.map((s) => `"${s}"`).join("; ")}; };`,
+   windows: `LIBRARY\nEXPORTS\n${
+     exports.symbols
+       .map((symbol) => "  " + symbol)

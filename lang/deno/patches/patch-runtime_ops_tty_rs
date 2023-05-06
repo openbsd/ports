@@ -1,0 +1,12 @@
+Index: runtime/ops/tty.rs
+--- runtime/ops/tty.rs.orig
++++ runtime/ops/tty.rs
+@@ -275,7 +275,7 @@ pub fn console_size(
+     // SAFETY: libc calls
+     unsafe {
+       let mut size: libc::winsize = std::mem::zeroed();
+-      if libc::ioctl(fd, libc::TIOCGWINSZ, &mut size as *mut _) != 0 {
++      if libc::ioctl(fd, libc::TIOCGWINSZ.into(), &mut size as *mut _) != 0 {
+         return Err(Error::last_os_error());
+       }
+       Ok(ConsoleSize {
