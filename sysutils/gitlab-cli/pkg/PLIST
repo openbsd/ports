@@ -4,6 +4,8 @@
 @man man/man1/glab-alias-set.1
 @man man/man1/glab-alias.1
 @man man/man1/glab-api.1
+@man man/man1/glab-ask-git.1
+@man man/man1/glab-ask.1
 @man man/man1/glab-auth-login.1
 @man man/man1/glab-auth-status.1
 @man man/man1/glab-auth.1
@@ -25,6 +27,7 @@
 @man man/man1/glab-config.1
 @man man/man1/glab-incident-close.1
 @man man/man1/glab-incident-list.1
+@man man/man1/glab-incident-reopen.1
 @man man/man1/glab-incident-view.1
 @man man/man1/glab-incident.1
 @man man/man1/glab-issue-board-create.1
