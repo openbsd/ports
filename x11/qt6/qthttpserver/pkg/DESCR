@@ -1,0 +1,4 @@
+Qt HTTP Server supports building HTTP server functionality into an application.
+Common use cases are exposing the application's functionality through REST
+APIs, or making devices in a trusted environment configurable also via HTTP.
+The limitations are described in Limitations & Security.
