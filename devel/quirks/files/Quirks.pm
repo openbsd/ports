@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1522 2023/05/05 21:40:24 bluhm Exp $
+# $OpenBSD: Quirks.pm,v 1.1523 2023/05/06 21:45:24 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -779,6 +779,7 @@ my $stem_extensions = {
 	'aarch64-none-elf-gcc-linaro' => 'aarch64-none-elf-gcc',
 	'arm-none-eabi-gcc-linaro' => 'arm-none-eabi-gcc',
 	'py3-sabyenc' => 'py3-sabctools',
+	'py-libdnet' => 'py3-libdnet',
 };
 
 my $obsolete_reason = {};
