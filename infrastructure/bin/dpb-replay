@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb-replay,v 1.6 2018/07/25 12:43:45 espie Exp $
+# $OpenBSD: dpb-replay,v 1.7 2023/05/06 05:24:06 espie Exp $
 #
 # Copyright (c) 2013 Marc Espie <espie@openbsd.org>
 #
@@ -15,9 +15,9 @@
 # WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-use strict;
-use warnings;
+use v5.36;
 use FindBin;
+
 
 my $ports1;
 BEGIN {
@@ -30,11 +30,10 @@ use OpenBSD::State;
 package DPBReplay::State;
 our @ISA = (qw(OpenBSD::State));
 
-sub handle_options
+sub handle_options($state)
 {
-	my $state = shift;
-	$state->SUPER::handle_options('cs:e:', '[-c] [-s speedup] [-e regexp] file');
-	if ($state->opt('c')) {
+	$state->SUPER::handle_options('Ccs:e:', '[-c] [-s speedup] [-e regexp] file');
+	if ($state->opt('c') || $state->opt('C')) {
 		$state->{color} = 1;
 	}
 	if ($state->opt('e')) {
@@ -46,9 +45,8 @@ sub handle_options
 package Term;
 our @ISA = qw(DPB::MiniCurses);
 
-sub new
+sub new($class, $state)
 {
-	my ($class, $state) = @_;
 	my $self = bless {state => $state}, $class;
 	$self->create_terminal;
 	return $self;
