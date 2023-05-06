@@ -1,0 +1,5 @@
+The Qt GRPC and Qt Protobuf modules together allow you to define data and
+messages in proto files, and then use the code generators, which generate code
+allowing accessors for fields and gRPC services in the Qt framework. Such code
+allows users to communicate with the server by sending calls or stream
+messages.
