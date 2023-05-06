@@ -21,6 +21,7 @@
      SUBDIR += cython
      SUBDIR += cython,python3
      SUBDIR += datalog
+     SUBDIR += deno
      SUBDIR += dmd
      SUBDIR += duktape
      SUBDIR += eagle
