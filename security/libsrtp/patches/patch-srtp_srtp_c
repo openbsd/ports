@@ -5,7 +5,7 @@ https://gitlab.linphone.org/BC/public/external/srtp/-/commit/c48e27278e656dc4b88
 Index: srtp/srtp.c
 --- srtp/srtp.c.orig
 +++ srtp/srtp.c
-@@ -2837,6 +2837,19 @@ srtp_err_status_t srtp_dealloc(srtp_t session)
+@@ -2903,6 +2903,19 @@ srtp_err_status_t srtp_dealloc(srtp_t session)
      return srtp_err_status_ok;
  }
  

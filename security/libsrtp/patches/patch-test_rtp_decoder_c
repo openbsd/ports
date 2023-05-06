@@ -1,10 +1,9 @@
 #1: probably a strict alignment fix
-#2, 64-bit time_t on 32-bit archs
 
 Index: test/rtp_decoder.c
 --- test/rtp_decoder.c.orig
 +++ test/rtp_decoder.c
-@@ -714,7 +714,8 @@ void rtp_decoder_handle_pkt(u_char *arg,
+@@ -743,7 +743,8 @@ void rtp_decoder_handle_pkt(u_char *arg,
      dcdr->frame_nr++;
  
      if ((dcdr->start_tv.tv_sec == 0) && (dcdr->start_tv.tv_usec == 0)) {
@@ -14,12 +13,3 @@ Index: test/rtp_decoder.c
      }
  
      if (hdr->caplen < dcdr->rtp_offset) {
-@@ -764,7 +765,7 @@ void rtp_decoder_handle_pkt(u_char *arg,
-         dcdr->rtcp_cnt++;
-     }
-     timersub(&hdr->ts, &dcdr->start_tv, &delta);
--    fprintf(stdout, "%02ld:%02ld.%06ld\n", delta.tv_sec / 60, delta.tv_sec % 60,
-+    fprintf(stdout, "%02lld:%02lld.%06ld\n", (long long)delta.tv_sec / 60, (long long)delta.tv_sec % 60,
-             (long)delta.tv_usec);
-     hexdump(&message, octets_recvd);
- }
