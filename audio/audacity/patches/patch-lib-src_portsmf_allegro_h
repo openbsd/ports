@@ -1,8 +1,8 @@
 Index: lib-src/portsmf/allegro.h
 --- lib-src/portsmf/allegro.h.orig
 +++ lib-src/portsmf/allegro.h
-@@ -51,6 +51,7 @@
- #include <assert.h>
+@@ -52,6 +52,7 @@
+ #include <cstdint>
  #include <istream>
  #include <ostream>
 +#include <cstring>
