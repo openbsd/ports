@@ -1,2 +1,4 @@
+SHA256 (fix-clang13-build-1190629.patch) = tTktpu+fdCkNS1jtAlqI+Q6o8aFAtbCjuL0+RKMfBuQ=
 SHA256 (tdesktop-4.8.1-full.tar.gz) = lmYLsVHANagMWzKo/gQ87LVOn+RQMpz2Euy3UttowG8=
+SIZE (fix-clang13-build-1190629.patch) = 3697
 SIZE (tdesktop-4.8.1-full.tar.gz) = 63997319

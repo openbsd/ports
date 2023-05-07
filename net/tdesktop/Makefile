@@ -9,6 +9,7 @@ V =			4.8.1
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
+REVISION =		0
 
 DPB_PROPERTIES =	parallel
 
@@ -16,6 +17,12 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 HOMEPAGE =		https://desktop.telegram.org
 MASTER_SITES =		https://github.com/telegramdesktop/tdesktop/releases/download/v${V}/
+
+MASTER_SITES0 =		https://github.com/telegramdesktop/tdesktop/
+# "Explicitly specify QVector element type to fix build with clang13+range-v3+qt6"
+# merged https://github.com/telegramdesktop/tdesktop/pull/26219
+PATCHFILES =		fix-clang13-build-{commit/}1190629.patch:0
+PATCH_DIST_STRIP =	-p1
 
 MAINTAINER =		Andrew Krasavin <noiseless-ak@yandex.ru>, \
 			Klemens Nanni <kn@openbsd.org>
@@ -26,7 +33,7 @@ MAINTAINER =		Andrew Krasavin <noiseless-ak@yandex.ru>, \
 # libtgvoip:	unlicense/public domain
 # rlottie:	LGPL 2.1 with freetype, LGPL, MIT, BSD dependencies
 # cld3:		Apache 2.0
-# kcoreaddon:	LGPLv2.1+, GPLv2+
+# kcoreaddons:	LGPLv2.1+, GPLv2+
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt6Core Qt6Core5Compat Qt6DBus Qt6Gui Qt6Network
@@ -72,7 +79,7 @@ LIB_DEPENDS =		archivers/lz4 \
 			devel/protobuf \
 			graphics/ffmpeg \
 			graphics/qr-code-generator>=1.7.0p1 \
-			net/tg_owt>=0.0.0.20230401 \
+			net/tg_owt>=0.0.0.20230501p1 \
 			sysutils/xxhash \
 			textproc/hunspell \
 			x11/qt6/qt5compat \
