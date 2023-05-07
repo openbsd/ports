@@ -1,8 +1,7 @@
 COMMENT=	image manipulation library
 
-DISTNAME=	imlib2-1.10.0
-REVISION=	1
-SHARED_LIBS=	Imlib2	7.0	# 11.0
+DISTNAME=	imlib2-1.11.0
+SHARED_LIBS=	Imlib2	8.0	# 12.0
 CATEGORIES=	graphics
 
 HOMEPAGE=	https://docs.enlightenment.org/api/imlib2/html/
@@ -20,6 +19,8 @@ WANTLIB += heif hwy iconv id3tag intl jpeg jxl jxl_threads lcms2
 WANTLIB += lzma m openjp2 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre2-8 pixman-1 png rsvg-2 tiff webp webpdemux x265
 WANTLIB += xcb xcb-render xcb-shm xml2 z zstd
+
+COMPILER=	base-clang ports-gcc
 
 LIB_DEPENDS+=	archivers/bzip2 \
 		audio/libid3tag \
