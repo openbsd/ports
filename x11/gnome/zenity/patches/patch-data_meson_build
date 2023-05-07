@@ -1,0 +1,15 @@
+Disable broken man page generation:
+https://gitlab.gnome.org/GNOME/zenity/-/issues/53
+
+Index: data/meson.build
+--- data/meson.build.orig
++++ data/meson.build
+@@ -24,7 +24,7 @@ endif
+ 
+ # manpage -- generated from help2man
+ 
+-help2man = find_program('help2man', required: false)
++help2man = find_program('help2manXXX', required: false)
+ # help2man has to run zenity to generate the man page, which it can't do if
+ # we're cross building. We also can't tell help2man what exe wrapper to use.
+ if help2man.found() and not meson.is_cross_build()
