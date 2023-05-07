@@ -4,7 +4,7 @@ COMMENT =	journaling archiver for incremental backup, fork of ZPAQ
 
 GH_ACCOUNT =	fcorbelli
 GH_PROJECT =	zpaqfranz
-GH_TAGNAME =	58.1
+GH_TAGNAME =	58.2
 
 CATEGORIES =	archivers
 MAINTAINER =	tux0r <tux0r@rosaelefanten.org>
@@ -18,9 +18,14 @@ WANTLIB =	${COMPILER_LIBCXX} c m
 
 USE_WXNEEDED =	Yes
 
+CPPFLAGS +=	-Dunix
+.if ${MACHINE_ARCH:Mamd64}
+CPPFLAGS +=	-DHWSHA2
+.endif
+
 do-build:
 	cd ${WRKSRC} && ${SET_ENV} ${MAKE_ENV} \
-	    ${CXX} ${CXXFLAGS} -Dunix -o zpaqfranz zpaqfranz.cpp -lm -lpthread
+	    ${CXX} ${CXXFLAGS} ${CPPFLAGS} -o zpaqfranz zpaqfranz.cpp -lm -lpthread
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/zpaqfranz ${PREFIX}/bin/
