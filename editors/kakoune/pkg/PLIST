@@ -8,6 +8,7 @@ share/kak/
 share/kak/autoload
 share/kak/colors/
 share/kak/colors/base16.kak
+share/kak/colors/black-on-white.kak
 share/kak/colors/default.kak
 share/kak/colors/desertex.kak
 share/kak/colors/github.kak
@@ -61,6 +62,7 @@ share/kak/rc/filetype/cabal.kak
 share/kak/rc/filetype/clojure.kak
 share/kak/rc/filetype/cmake.kak
 share/kak/rc/filetype/coffee.kak
+share/kak/rc/filetype/conf.kak
 share/kak/rc/filetype/coq.kak
 share/kak/rc/filetype/crystal.kak
 share/kak/rc/filetype/css.kak
@@ -73,21 +75,25 @@ share/kak/rc/filetype/diff.kak
 share/kak/rc/filetype/dockerfile.kak
 share/kak/rc/filetype/elixir.kak
 share/kak/rc/filetype/elm.kak
+share/kak/rc/filetype/elvish.kak
 share/kak/rc/filetype/erlang.kak
 share/kak/rc/filetype/eruby.kak
 share/kak/rc/filetype/etc.kak
 share/kak/rc/filetype/exherbo.kak
 share/kak/rc/filetype/fennel.kak
+share/kak/rc/filetype/fidl.kak
 share/kak/rc/filetype/fish.kak
 share/kak/rc/filetype/fsharp.kak
 share/kak/rc/filetype/gas.kak
 share/kak/rc/filetype/gdscript.kak
 share/kak/rc/filetype/gentoo-linux.kak
 share/kak/rc/filetype/git.kak
+share/kak/rc/filetype/github.kak
 share/kak/rc/filetype/gluon.kak
 share/kak/rc/filetype/go.kak
 share/kak/rc/filetype/graphql.kak
 share/kak/rc/filetype/haml.kak
+share/kak/rc/filetype/hare.kak
 share/kak/rc/filetype/haskell.kak
 share/kak/rc/filetype/hbs.kak
 share/kak/rc/filetype/html.kak
@@ -147,6 +153,7 @@ share/kak/rc/filetype/terraform.kak
 share/kak/rc/filetype/toml.kak
 share/kak/rc/filetype/troff.kak
 share/kak/rc/filetype/tupfile.kak
+share/kak/rc/filetype/twig.kak
 share/kak/rc/filetype/vhdl.kak
 share/kak/rc/filetype/void-linux.kak
 share/kak/rc/filetype/yaml.kak
@@ -185,6 +192,7 @@ share/kak/rc/windowing/repl/kitty.kak
 share/kak/rc/windowing/repl/tmux.kak
 share/kak/rc/windowing/repl/x11.kak
 share/kak/rc/windowing/screen.kak
+share/kak/rc/windowing/sway.kak
 share/kak/rc/windowing/tmux.kak
 share/kak/rc/windowing/wayland.kak
 share/kak/rc/windowing/x11.kak
