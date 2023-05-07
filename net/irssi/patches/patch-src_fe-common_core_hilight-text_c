@@ -1,0 +1,14 @@
+jit is disabled in our pcre to avoid w+x mappings; avoid warning from glib
+
+Index: src/fe-common/core/hilight-text.c
+--- src/fe-common/core/hilight-text.c.orig
++++ src/fe-common/core/hilight-text.c
+@@ -123,7 +123,7 @@ static void hilight_init_rec(HILIGHT_REC *rec)
+ 	if (rec->preg != NULL)
+ 		i_regex_unref(rec->preg);
+ 
+-	rec->preg = i_regex_new(rec->text, G_REGEX_OPTIMIZE | G_REGEX_CASELESS, 0, NULL);
++	rec->preg = i_regex_new(rec->text, G_REGEX_CASELESS, 0, NULL);
+ }
+ 
+ void hilight_create(HILIGHT_REC *rec)

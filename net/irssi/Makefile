@@ -7,6 +7,7 @@ COMMENT-main =	modular IRC client with many features
 COMMENT-otr =	OTR (off-the-record) plugin for irssi
 
 V =		1.4.4
+REVISION =	0
 DISTNAME =	irssi-$V
 PKGSPEC-main =	irssi-=$V
 PKGNAME-main =	irssi-$V
