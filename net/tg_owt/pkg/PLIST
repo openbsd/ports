@@ -1917,8 +1917,6 @@ include/tg_owt/system_wrappers/include/rtp_to_ntp_estimator.h
 include/tg_owt/system_wrappers/include/sleep.h
 include/tg_owt/system_wrappers/source/
 include/tg_owt/third_party/
-include/tg_owt/third_party/libsrtp_config/
-include/tg_owt/third_party/libsrtp_config/config.h
 include/tg_owt/third_party/libyuv/
 include/tg_owt/third_party/libyuv/build_overrides/
 include/tg_owt/third_party/libyuv/docs/

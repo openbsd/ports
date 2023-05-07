@@ -15,7 +15,7 @@ GH_COMMIT =		dcb5069ff76bd293e86928804208737e6cee2ccc
 DISTNAME =		${GH_PROJECT}-0.0.0.20230501
 DISTFILES =		${GH_DISTFILE}
 CATEGORIES =		net
-REVISION =		0
+REVISION =		1
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
@@ -31,27 +31,23 @@ MASTER_SITES0 =		https://github.com/klemensn/libyuv/archive/
 LIBYUV_COMMIT =		77c2121f7e6b8e694d6e908bbbe9be24214097da
 DISTFILES +=		libyuv-20230420-{}${LIBYUV_COMMIT}${EXTRACT_SUFX}:0
 
-MASTER_SITES2 =		https://github.com/cisco/libsrtp/archive/
-LIBSRTP_COMMIT =	a566a9cfcd619e8327784aa7cff4a1276dc1e895
-DISTFILES +=		libsrtp-20230201-{}${LIBSRTP_COMMIT}${EXTRACT_SUFX}:2
-
 MASTER_SITES1 =		https://github.com/desktop-app/tg_owt/commit/
-# custom include file for libsrtp module...
-PATCHFILES +=		libsrtp-config-{}0614aac.patch:1
-
 # Pending "Defer third-party source handling to when it is needed"
 # https://github.com/desktop-app/tg_owt/pull/85
 PATCHFILES +=		defer-third-party-sources-{}a264c33.patch:1
 # Pending "libabsl: Use system include directories"
 # https://github.com/desktop-app/tg_owt/pull/87
 PATCHFILES +=		libabsl-use-includes-{}fb12b4bd.patch:1
+# Pending "Unbundle libSRTP"
+# https://github.com/desktop-app/tg_owt/pull/123
+PATCHFILES +=		use-system-libsrtp-{}46cb0ce7.patch:1
 
 PATCH_DIST_STRIP =	-p1
 
 MAINTAINER =		Andrew Krasavin <noiseless-ak@yandex.ru>, \
 			Klemens Nanni <kn@openbsd.org>
 
-# tg_owt, libsrtp, libyuv, rnnoise: BSD 3-clause;  pffft: FFTPACKv5
+# tg_owt, libyuv, rnnoise: BSD 3-clause;  pffft: FFTPACKv5
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} X11 Xcomposite Xdamage Xext Xfixes
@@ -72,7 +68,7 @@ WANTLIB += absl_stacktrace absl_str_format_internal absl_strings
 WANTLIB += absl_strings_internal absl_symbolize absl_synchronization
 WANTLIB += absl_throw_delegate absl_time absl_time_zone avcodec
 WANTLIB += avformat avutil crc32c crypto jpeg m openh264 opus
-WANTLIB += protobuf ssl swresample swscale vpx
+WANTLIB += protobuf srtp2 ssl swresample swscale vpx
 
 # C++20
 COMPILER =		base-clang ports-gcc
@@ -93,7 +89,8 @@ LIB_DEPENDS =		audio/opus \
 			graphics/ffmpeg \
 			graphics/jpeg \
 			multimedia/libvpx>=1.10.0 \
-			multimedia/openh264>=2.1.1p0
+			multimedia/openh264>=2.1.1p0 \
+			security/libsrtp>=2.5.0
 
 # look for system libraries and build a shared library, despite upstream
 # treating it as "community effort" with less support
@@ -110,8 +107,6 @@ NO_TEST =		Yes
 
 # audio/rnnoise but tg_owt ships Google's C++ rewrite (part of libwebrtc)
 NEEDED_BUNDLES +=	rnnoise
-# security/libsrtp but tg_owt does not support it as system library
-NEEDED_BUNDLES +=	libsrtp
 # unported and required
 NEEDED_BUNDLES +=	libyuv pffft
 
@@ -121,8 +116,6 @@ post-extract:
 	# hook up prefetched submodules
 	rmdir ${THIRD_SRC}/libyuv
 	mv ${WRKDIR}/libyuv-${LIBYUV_COMMIT} ${THIRD_SRC}/libyuv
-	rmdir ${THIRD_SRC}/libsrtp
-	mv ${WRKDIR}/libsrtp-${LIBSRTP_COMMIT} ${THIRD_SRC}/libsrtp
 	# All bundles:
 	@cd ${THIRD_SRC}/ && ls -x
 	# Needed bundles (others are removed to prevent accidential use):
@@ -147,7 +140,7 @@ post-configure:
 post-install:
 	# remove bundled sources not needed to build tdesktop
 	cd ${PREFIX}/include/tg_owt/ && rm -r -- \
-	    third_party/{libsrtp,rnnoise,pffft}
+	    third_party/{rnnoise,pffft}
 	find ${PREFIX}/include/tg_owt/ -type d -name test -exec rm -r -- {} +
 
 .include <bsd.port.mk>
