@@ -1,7 +1,7 @@
 COMMENT =		replacement for Comic Sans font
 
 TYPEFACE =		comic-neue
-VERSION =		2.5
+VERSION =		2.51
 DISTNAME =		${TYPEFACE}-${VERSION}
 
 CATEGORIES =		fonts
@@ -13,15 +13,18 @@ MAINTAINER =		Tristan Le Guern <tleguern@bouledef.eu>
 # SIL OFL 1.1
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		http://comicneue.com/
+MASTER_SITES =		https://comicneue.com/
 EXTRACT_SUFX =		.zip
 
 NO_BUILD =		Yes
 NO_TEST =		Yes
 
 PKG_ARCH =		*
+FCDIR =			${PREFIX}/share/comic-neue
 
 do-install:
+	${INSTALL_DATA_DIR} ${FCDIR}
+	${INSTALL_DATA} ${FILESDIR}/30-comic-sans-aliases.conf ${FCDIR}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/fonts/comic-neue
 	${INSTALL_DATA} ${WRKSRC}/{TTF,OTF}/*/*.?tf \
 		${PREFIX}/share/fonts/comic-neue
