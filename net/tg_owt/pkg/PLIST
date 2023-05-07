@@ -1917,6 +1917,8 @@ include/tg_owt/system_wrappers/include/rtp_to_ntp_estimator.h
 include/tg_owt/system_wrappers/include/sleep.h
 include/tg_owt/system_wrappers/source/
 include/tg_owt/third_party/
+include/tg_owt/third_party/libsrtp_config/
+include/tg_owt/third_party/libsrtp_config/config.h
 include/tg_owt/third_party/libyuv/
 include/tg_owt/third_party/libyuv/build_overrides/
 include/tg_owt/third_party/libyuv/docs/
@@ -1948,6 +1950,7 @@ include/tg_owt/third_party/libyuv/include/libyuv/version.h
 include/tg_owt/third_party/libyuv/include/libyuv/video_common.h
 include/tg_owt/third_party/libyuv/infra/
 include/tg_owt/third_party/libyuv/infra/config/
+include/tg_owt/third_party/libyuv/riscv_script/
 include/tg_owt/third_party/libyuv/source/
 include/tg_owt/third_party/libyuv/tools_libyuv/
 include/tg_owt/third_party/libyuv/tools_libyuv/autoroller/

@@ -11,14 +11,15 @@ COMMENT =		WebRTC build for Telegram
 GH_ACCOUNT =		desktop-app
 GH_PROJECT =		tg_owt
 # no releases or tags, use latest master
-GH_COMMIT =		d85b53d12e9f32e3fd556a247af16b1a52a4a565
-DISTNAME =		${GH_PROJECT}-0.0.0.20230401
+GH_COMMIT =		dcb5069ff76bd293e86928804208737e6cee2ccc
+DISTNAME =		${GH_PROJECT}-0.0.0.20230501
 DISTFILES =		${GH_DISTFILE}
 CATEGORIES =		net
+REVISION =		0
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-SHARED_LIBS =		tg_owt	5.2	# upstream is static only
+SHARED_LIBS =		tg_owt	6.0	# upstream is static only
 
 DIST_SUBDIR =		tg_owt
 # Fetch bundles/submodules missing from the tarball, see ${WRKSRC}/.gitmodules
@@ -27,10 +28,17 @@ DIST_SUBDIR =		tg_owt
 # main/master/stable/<commit> tarballs are *not reproducible*
 # use a mirror to get stable tarballs for latest master
 MASTER_SITES0 =		https://github.com/klemensn/libyuv/archive/
-LIBYUV_COMMIT =		6e4b0acb4b3d5858c77a044aad46132998ac4a76
-DISTFILES +=		libyuv-20230104-{}${LIBYUV_COMMIT}${EXTRACT_SUFX}:0
+LIBYUV_COMMIT =		77c2121f7e6b8e694d6e908bbbe9be24214097da
+DISTFILES +=		libyuv-20230420-{}${LIBYUV_COMMIT}${EXTRACT_SUFX}:0
+
+MASTER_SITES2 =		https://github.com/cisco/libsrtp/archive/
+LIBSRTP_COMMIT =	a566a9cfcd619e8327784aa7cff4a1276dc1e895
+DISTFILES +=		libsrtp-20230201-{}${LIBSRTP_COMMIT}${EXTRACT_SUFX}:2
 
 MASTER_SITES1 =		https://github.com/desktop-app/tg_owt/commit/
+# custom include file for libsrtp module...
+PATCHFILES +=		libsrtp-config-{}0614aac.patch:1
+
 # Pending "Defer third-party source handling to when it is needed"
 # https://github.com/desktop-app/tg_owt/pull/85
 PATCHFILES +=		defer-third-party-sources-{}a264c33.patch:1
@@ -102,7 +110,7 @@ NO_TEST =		Yes
 
 # audio/rnnoise but tg_owt ships Google's C++ rewrite (part of libwebrtc)
 NEEDED_BUNDLES +=	rnnoise
-# security/libsrtp is too new and tg_owt does not support it as system library
+# security/libsrtp but tg_owt does not support it as system library
 NEEDED_BUNDLES +=	libsrtp
 # unported and required
 NEEDED_BUNDLES +=	libyuv pffft
@@ -113,6 +121,8 @@ post-extract:
 	# hook up prefetched submodules
 	rmdir ${THIRD_SRC}/libyuv
 	mv ${WRKDIR}/libyuv-${LIBYUV_COMMIT} ${THIRD_SRC}/libyuv
+	rmdir ${THIRD_SRC}/libsrtp
+	mv ${WRKDIR}/libsrtp-${LIBSRTP_COMMIT} ${THIRD_SRC}/libsrtp
 	# All bundles:
 	@cd ${THIRD_SRC}/ && ls -x
 	# Needed bundles (others are removed to prevent accidential use):
