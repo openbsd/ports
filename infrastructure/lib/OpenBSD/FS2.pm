@@ -1,4 +1,4 @@
-# $OpenBSD: FS2.pm,v 1.38 2022/02/13 12:42:46 espie Exp $
+# $OpenBSD: FS2.pm,v 1.39 2023/05/07 06:30:13 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -711,10 +711,8 @@ sub create
 sub has_other_entry
 {
 	my ($self, $dir, $file) = @_;
-	use Symbol;
 
-	my $fh = gensym;
-	opendir($fh, $self->destdir($dir)) or return 0;
+	opendir(my $fh, $self->destdir($dir)) or return 0;
 	while (my $e = readdir($fh)) {
 		next if $e eq '.' or $e eq '..';
 	    	next if $e eq $file;
