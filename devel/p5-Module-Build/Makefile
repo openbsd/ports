@@ -1,6 +1,6 @@
 COMMENT =	build and install Perl modules
 
-DISTNAME =	Module-Build-0.4232
+DISTNAME =	Module-Build-0.4234
 
 CATEGORIES =	devel
 
