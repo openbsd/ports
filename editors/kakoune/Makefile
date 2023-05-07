@@ -2,12 +2,11 @@ COMMENT =		modal code editor with a focus on interactivity
 
 V =			2022.10.31
 DISTNAME =		kakoune-${V}
+REVISION =		0
 
 CATEGORIES =		editors
 
 HOMEPAGE =		https://kakoune.org/
-
-MAINTAINER =		Frederic Galusik <openbsd@galusik.fr>
 
 WANTLIB =		${COMPILER_LIBCXX} c m
 
