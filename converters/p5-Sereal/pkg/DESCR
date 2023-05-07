@@ -1,0 +1,14 @@
+Sereal is an efficient, compact-output, binary and feature-rich
+serialization protocol. The Perl encoder is implemented as the
+Sereal::Encoder module, the Perl decoder correspondingly as
+Sereal::Decoder. They are distributed separately to allow for safe
+upgrading without downtime. (Hint: Upgrade the decoder everywhere
+first, then the encoder.)
+
+This "Sereal" module is a very thin wrapper around both
+"Sereal::Encoder" and "Sereal::Decoder". It depends on both and loads
+both. So if you have a user of both encoder and decoder, it is enough
+to depend on a particular version of "Sereal" and you'll get the most
+recent released versions of "Sereal::Encoder" and "Sereal::Decoder"
+whose version is smaller than or equal to the version of "Sereal" you
+depend on.
