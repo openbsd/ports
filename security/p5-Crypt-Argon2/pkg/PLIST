@@ -1,3 +1,4 @@
+bin/argon2-calibrate
 ${P5ARCH}/
 ${P5ARCH}/Crypt/
 ${P5ARCH}/Crypt/Argon2.pm
@@ -6,4 +7,5 @@ ${P5ARCH}/auto/Crypt/
 ${P5ARCH}/auto/Crypt/Argon2/
 ${P5ARCH}/auto/Crypt/Argon2/Argon2.bs
 @so ${P5ARCH}/auto/Crypt/Argon2/Argon2.so
+@man man/man1/argon2-calibrate.1
 @man man/man3p/Crypt::Argon2.3p
