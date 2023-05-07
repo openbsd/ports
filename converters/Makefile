@@ -65,6 +65,7 @@
      SUBDIR += p5-MARC-Record
      SUBDIR += p5-Net-IDN-Encode
      SUBDIR += p5-Net-IDN-Nameprep
+     SUBDIR += p5-Sereal
      SUBDIR += p5-Sereal-Decoder
      SUBDIR += p5-Sereal-Encoder
      SUBDIR += p5-Text-Iconv
