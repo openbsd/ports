@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Job.pm,v 1.22 2023/05/06 05:20:31 espie Exp $
+# $OpenBSD: Job.pm,v 1.23 2023/05/07 06:26:41 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -104,7 +104,7 @@ sub debug_dump($self)
 	return $self->{name};
 }
 
-sub finalize($, @)
+sub finalize($, $)
 {
 }
 
@@ -162,9 +162,9 @@ sub new($class, $code, $endcode, $name)
 	return $o;
 }
 
-sub finalize($self, @parms)
+sub finalize($self, $core)
 {
-	&{$self->{endcode}}(@parms);
+	&{$self->{endcode}}($core);
 }
 
 # the common stuff for jobs that have a kind of watch log, e.g.,

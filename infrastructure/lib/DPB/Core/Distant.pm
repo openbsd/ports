@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distant.pm,v 1.30 2023/05/06 05:20:31 espie Exp $
+# $OpenBSD: Distant.pm,v 1.31 2023/05/07 06:26:41 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -139,7 +139,7 @@ sub run($self, $core)
 }
 
 # we never error out
-sub finalize($)
+sub finalize($, $)
 {
 	return 1;
 }

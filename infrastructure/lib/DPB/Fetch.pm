@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.91 2023/05/06 05:20:31 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.92 2023/05/07 06:26:41 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -115,10 +115,10 @@ sub run_expire_old($self, $core, $opt_e)
 {
 	$core->unsquiggle;
 	$core->start_job(DPB::Job::Normal->new(
-	    sub {
+	    sub($shell) {
 		$self->expire_old;
 	    },
-	    sub {
+	    sub($core) {
 		# and we will never need this again
 		delete $self->{known_file};
 		delete $self->{known_sha};
@@ -173,7 +173,8 @@ sub expire_old($self)
 
 	# let's also scan the directory proper
 	require File::Find;
-	File::Find::find(sub {
+	File::Find::find(
+	    sub() {
 		if (-d $_ && 
 		    ($File::Find::name eq "./by_cipher" || 
 		     $File::Find::name eq "./list" ||
@@ -190,12 +191,13 @@ sub expire_old($self)
 		my $sha = OpenBSD::sha->new($_)->stringize;
 		print $fh2 "$ts SHA256 ($actual) = $sha\n" or $fatal = 1;
 		$self->mark_sha($sha, $actual);
-	}, ".");
+	    }, ".");
 
 	my $c = "by_cipher/sha256";
 	if (-d $c && !$fatal) {
 		# and scan the ciphers as well !
-		File::Find::find(sub {
+		File::Find::find(
+		    sub() {
 			return unless -f $_;
 			return if $fatal;
 			if ($File::Find::dir =~ 
@@ -206,7 +208,7 @@ sub expire_old($self)
 				print $fh2 "$ts SHA256 ($_) = ", $sha, "\n"
 				    or $fatal = 1;
 			}
-		}, $c);
+		    }, $c);
 	}
 
 	return if $fatal;

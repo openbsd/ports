@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Vars.pm,v 1.62 2023/05/06 05:20:31 espie Exp $
+# $OpenBSD: Vars.pm,v 1.63 2023/05/07 06:26:41 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -96,14 +96,14 @@ EOT
 # this, on the other hand, is the generic code that may run elsewhere
 sub run_pipe($class, $core, $grabber, $subdirs, $skip, $dpb)
 {
-	$core->start_pipe(sub {
-		my $shell = shift;
+	$core->start_pipe(
+	    sub($shell) {
 		close STDERR;
 		open STDERR, '>&', STDOUT or 
 		    DPB::Util->die_bang("bad redirect");
 		$class->run_command($core, $shell, $grabber, $subdirs, $skip,
 		    'dump-vars', "DPB=$dpb", "BATCH=Yes", "REPORT_PROBLEM=:");
-	}, "LISTING");
+	    }, "LISTING");
 }
 
 sub grab_list($class, $core, $grabber, $subdirs, $skip, $ignore_errors, 
@@ -214,11 +214,11 @@ our @ISA = qw(DPB::GetThings);
 sub grab_signature($class, $core, $grabber, $subdir)
 {
 	my $signature;
-	$core->start_pipe(sub {
-		my $shell = shift;
+	$core->start_pipe(
+	    sub($shell) {
 		$class->run_command($core, $shell, $grabber, {$subdir => 1},
 			undef, 'print-update-signature', 'ECHO_MSG=:')
-	}, "UPDATE-SIGNATURE");
+	    }, "UPDATE-SIGNATURE");
 	my $fh = $core->fh;
 	while (<$fh>) {
 		chomp;
@@ -232,11 +232,11 @@ package DPB::CleanPackages;
 our @ISA = qw(DPB::GetThings);
 sub clean($class, $core, $grabber, $subdir)
 {
-	$core->start_pipe(sub {
-		my $shell = shift;
+	$core->start_pipe(
+	    sub($shell) {
 		$class->run_command($core, $shell, $grabber, {$subdir => 1},
 			undef, 'clean=package')
-	}, "CLEAN-PACKAGES");
+	    }, "CLEAN-PACKAGES");
 	my $fh = $core->fh;
 	while (<$fh>) {
 	}
