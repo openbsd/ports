@@ -1,16 +1,18 @@
-COMMENT =		file path utility
+COMMENT =	file path utility
 
-DISTNAME =		Path-Tiny-0.122
-CATEGORIES =		devel
+DISTNAME =	Path-Tiny-0.144
+CPAN_AUTHOR =	DAGOLDEN
 
-# Apachev2
+CATEGORIES =	devel
+
+# Apache 2.0
 PERMIT_PACKAGE =	Yes
 
-CPAN_AUTHOR =		DAGOLDEN
-
 MODULES =		cpan
-PKG_ARCH =		*
 
-TEST_DEPENDS =		devel/p5-Test-MockRandom
+TEST_DEPENDS =		devel/p5-Test-FailWarnings \
+			devel/p5-Test-MockRandom
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
