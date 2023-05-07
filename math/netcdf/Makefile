@@ -4,7 +4,7 @@ V=		4.9.2
 NAME=		netcdf
 DISTNAME=	${NAME}-c-${V}
 PKGNAME=	${NAME}-${V}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	math
 
@@ -17,15 +17,15 @@ MAINTAINER=	Martin Reindl <martin@catai.org>
 # BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=		${COMPILER_LIBCXX} c m z pthread execinfo
-WANTLIB+=		curl crypto nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_openssl ssl
-WANTLIB+=		hdf5 hdf5_hl
-
-BUILD_DEPENDS=		archivers/libzip
+WANTLIB += bz2 c crypto curl execinfo hdf5 hdf5_hl iconv lzma
+WANTLIB += m nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_openssl pthread
+WANTLIB += ssl xml2 z zip zstd
 
 # curl is needed for DAP support
-LIB_DEPENDS=		net/curl \
-			math/hdf5
+LIB_DEPENDS=		archivers/libzip \
+			math/hdf5 \
+			net/curl \
+			textproc/libxml
 
 TEST_DEPENDS=		shells/bash \
 			textproc/gdiff
