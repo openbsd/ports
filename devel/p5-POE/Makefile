@@ -1,34 +1,37 @@
 COMMENT=	portable multitasking and networking framework for perl
 
-MODULES=	cpan
-PKG_ARCH=	*
-DISTNAME=	POE-1.368
-CATEGORIES=	devel
-FIX_EXTRACT_PERMISSIONS=	Yes
+DISTNAME =	POE-1.370
 
-HOMEPAGE=	http://poe.perl.org/
+CATEGORIES =	devel
 
-# perl
-PERMIT_PACKAGE=	Yes
+HOMEPAGE =	http://poe.perl.org/
 
-CONFIGURE_ARGS=	--default
+# Perl
+PERMIT_PACKAGE =	Yes
 
-BUILD_DEPENDS=	devel/p5-POE-Test-Loops>=1.360
-RUN_DEPENDS=	devel/p5-Curses>=1.08 \
-		devel/p5-IO-Pipely>=0.005 \
-		devel/p5-IO-Tty>=1.08 \
-		devel/p5-POE-Test-Loops>=1.360 \
-		net/p5-Socket6>=0.23 \
-		www/p5-URI>=1.74 \
-		www/p5-libwww>=5.79
-TEST_DEPENDS=	devel/p5-Term-Size \
-		devel/p5-YAML \
-		net/p5-Socket-GetAddrInfo
+MODULES =		cpan
 
-MAKE_ENV=	TEST_POD=Yes
-TEST_ENV=	RELEASE_TESTING=1
+BUILD_DEPENDS =		devel/p5-POE-Test-Loops>=1.360
+RUN_DEPENDS =		devel/p5-Curses>=1.08 \
+			devel/p5-IO-Pipely>=0.005 \
+			devel/p5-IO-Tty>=1.08 \
+			devel/p5-POE-Test-Loops>=1.360 \
+			net/p5-Socket6>=0.23 \
+			www/p5-URI>=1.74 \
+			www/p5-libwww>=5.79
+TEST_DEPENDS =		devel/p5-Term-Size \
+			devel/p5-YAML \
+			net/p5-Socket-GetAddrInfo \
+			www/p5-HTTP-Message
 
-MODCPAN_EXAMPLES=	Yes
+MAKE_ENV =		TEST_POD=Yes
+TEST_ENV =		RELEASE_TESTING=1
+
+CONFIGURE_ARGS =	--default
+
+PKG_ARCH =		*
+
+MODCPAN_EXAMPLES =	Yes
 
 post-build:
 	# XXX prevent gen-tests from running again during fake
