@@ -1,0 +1,16 @@
+Index: Makefile.in
+
+Building the loadable modules depends on files created during the
+main build.
+
+--- Makefile.in.orig
++++ Makefile.in
+@@ -803,7 +803,7 @@ $(srcdir)/configure:	$(srcdir)/configure.ac $(srcdir)/
+ reconfig: force
+ 	sh $(srcdir)/configure -C
+ 
+-loadables:
++loadables: .made
+ 	cd $(LOADABLES_DIR) && $(MAKE) $(MFLAGS) all
+ 
+ #newversion:	mkversion
