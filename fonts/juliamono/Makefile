@@ -1,6 +1,6 @@
 COMMENT =	typeface carefully crafted & designed for computer screens
 
-V =		0.047
+V =		0.048
 DISTNAME =	JuliaMono
 PKGNAME =	juliamono-$V
 
