@@ -1,7 +1,7 @@
 COMMENT=	graphical mp3/ogg file splitter
 
 DISTNAME=	mp3splt-gtk-0.9.2
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	audio
 
@@ -17,7 +17,7 @@ WANTLIB += fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 graphite2 gstreamer-1.0 gthread-2.0 gtk-3
 WANTLIB += harfbuzz iconv intl ltdl m mp3splt pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre2-8 pixman-1 png xcb xcb-render xcb-shm z
-WANTLIB += Xau Xdmcp execinfo jpeg
+WANTLIB += Xau Xdmcp execinfo jpeg atspi dbus-1 pcre
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mp3splt/}
 
@@ -26,7 +26,8 @@ LIB_DEPENDS=	audio/libmp3splt \
 		devel/pango \
 		graphics/cairo \
 		multimedia/gstreamer1/core \
-		x11/gnome/at-spi2-core
+		x11/gnome/at-spi2-core \
+		x11/gtk+3
 
 BUILD_DEPENDS=	multimedia/gstreamer1/plugins-base
 
