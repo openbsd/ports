@@ -2,7 +2,7 @@ COMMENT =	create and manipulate PAR distributions
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	PAR-Dist-0.51
+DISTNAME =	PAR-Dist-0.52
 CATEGORIES =	devel archivers
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
