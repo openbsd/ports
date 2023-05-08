@@ -1,7 +1,7 @@
 Index: src/external/rawspeed/cmake/compiler-flags.cmake
 --- src/external/rawspeed/cmake/compiler-flags.cmake.orig
 +++ src/external/rawspeed/cmake/compiler-flags.cmake
-@@ -223,5 +223,3 @@ MARK_AS_ADVANCED(
+@@ -227,5 +227,3 @@ MARK_AS_ADVANCED(
  set(CMAKE_C_FLAGS_RELWITHDEBINFO "${CMAKE_C_FLAGS_RELWITHDEBINFO} -O2")
  set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "${CMAKE_CXX_FLAGS_RELWITHDEBINFO} -O2")
  

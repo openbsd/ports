@@ -6,7 +6,7 @@ fails with _XOPEN_SOURCE set;
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -502,6 +502,8 @@ endif(BUILD_TESTING)
+@@ -486,6 +486,8 @@ endif(BUILD_TESTING)
  if(NOT WIN32)
      if(CMAKE_SYSTEM MATCHES "SunOS.*")
          add_definitions("-D_XOPEN_SOURCE=600")

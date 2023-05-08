@@ -14,6 +14,7 @@ lib/darktable/plugins/imageio/format/
 @so lib/darktable/plugins/imageio/format/libexr.so
 @so lib/darktable/plugins/imageio/format/libj2k.so
 @so lib/darktable/plugins/imageio/format/libjpeg.so
+@so lib/darktable/plugins/imageio/format/libjpegxl.so
 @so lib/darktable/plugins/imageio/format/libpdf.so
 @so lib/darktable/plugins/imageio/format/libpfm.so
 @so lib/darktable/plugins/imageio/format/libpng.so
@@ -34,6 +35,7 @@ lib/darktable/plugins/imageio/storage/
 @so lib/darktable/plugins/libbilat.so
 @so lib/darktable/plugins/libbilateral.so
 @so lib/darktable/plugins/libbloom.so
+@so lib/darktable/plugins/libblurs.so
 @so lib/darktable/plugins/libborders.so
 @so lib/darktable/plugins/libcacorrect.so
 @so lib/darktable/plugins/libcacorrectrgb.so
@@ -59,6 +61,7 @@ lib/darktable/plugins/imageio/storage/
 @so lib/darktable/plugins/libdefringe.so
 @so lib/darktable/plugins/libdemosaic.so
 @so lib/darktable/plugins/libdenoiseprofile.so
+@so lib/darktable/plugins/libdiffuse.so
 @so lib/darktable/plugins/libdither.so
 @so lib/darktable/plugins/libequalizer.so
 @so lib/darktable/plugins/libexposure.so
@@ -98,6 +101,7 @@ lib/darktable/plugins/imageio/storage/
 @so lib/darktable/plugins/libscalepixels.so
 @so lib/darktable/plugins/libshadhi.so
 @so lib/darktable/plugins/libsharpen.so
+@so lib/darktable/plugins/libsigmoid.so
 @so lib/darktable/plugins/libsoften.so
 @so lib/darktable/plugins/libsplittoning.so
 @so lib/darktable/plugins/libspots.so
@@ -122,6 +126,8 @@ lib/darktable/plugins/lighttable/
 @so lib/darktable/plugins/lighttable/libexport.so
 @so lib/darktable/plugins/lighttable/libfilmstrip.so
 @so lib/darktable/plugins/lighttable/libfilter.so
+@so lib/darktable/plugins/lighttable/libfiltering.so
+@so lib/darktable/plugins/lighttable/libgamepad.so
 @so lib/darktable/plugins/lighttable/libgeotagging.so
 @so lib/darktable/plugins/lighttable/libglobal_toolbox.so
 @so lib/darktable/plugins/lighttable/libhinter.so
@@ -133,9 +139,6 @@ lib/darktable/plugins/lighttable/
 @so lib/darktable/plugins/lighttable/libioporder.so
 @so lib/darktable/plugins/lighttable/liblighttable_mode.so
 @so lib/darktable/plugins/lighttable/liblive_view.so
-@so lib/darktable/plugins/lighttable/liblocation.so
-@so lib/darktable/plugins/lighttable/libmap_locations.so
-@so lib/darktable/plugins/lighttable/libmap_settings.so
 @so lib/darktable/plugins/lighttable/libmasks.so
 @so lib/darktable/plugins/lighttable/libmetadata.so
 @so lib/darktable/plugins/lighttable/libmetadata_view.so
@@ -157,7 +160,6 @@ lib/darktable/views/
 @so lib/darktable/views/libdarkroom.so
 @so lib/darktable/views/libknight.so
 @so lib/darktable/views/liblighttable.so
-@so lib/darktable/views/libmap.so
 @so lib/darktable/views/libprint.so
 @so lib/darktable/views/libslideshow.so
 @so lib/darktable/views/libtethering.so
@@ -167,7 +169,7 @@ lib/darktable/views/
 @man man/man1/darktable-cmstest.1
 @man man/man1/darktable-generate-cache.1
 @man man/man1/darktable.1
-share/applications/darktable.desktop
+share/applications/org.darktable.darktable.desktop
 share/darktable/
 share/darktable/darktable.bash
 share/darktable/darktablerc
@@ -350,14 +352,16 @@ share/darktable/tools/purge_unused_tags.sh
 share/darktable/watermarks/
 share/darktable/watermarks/darktable.svg
 share/darktable/watermarks/hasselblad.svg
+share/darktable/watermarks/metadata-template.svg
 share/darktable/watermarks/promo.svg
+share/darktable/watermarks/simple-text-shadow.svg
 share/darktable/watermarks/simple-text.svg
+share/darktable/wb_presets.json
 share/doc/darktable/
 share/doc/darktable/AUTHORS
 share/doc/darktable/LICENSE
 share/doc/darktable/README.md
 share/doc/darktable/TRANSLATORS.md
-share/doc/darktable/darktablerc.html
 share/icons/hicolor/16x16/apps/darktable.png
 share/icons/hicolor/22x22/apps/darktable.png
 share/icons/hicolor/24x24/apps/darktable.png
@@ -369,20 +373,26 @@ share/icons/hicolor/scalable/apps/darktable-1.svg
 share/icons/hicolor/scalable/apps/darktable-2.svg
 share/icons/hicolor/scalable/apps/darktable-3.svg
 share/icons/hicolor/scalable/apps/darktable.svg
-share/locale/af/LC_MESSAGES/darktable.mo
+share/locale/cs/LC_MESSAGES/darktable.mo
 share/locale/de/LC_MESSAGES/darktable.mo
-share/locale/eo/LC_MESSAGES/darktable.mo
 share/locale/es/LC_MESSAGES/darktable.mo
+share/locale/fi/LC_MESSAGES/darktable.mo
 share/locale/fr/LC_MESSAGES/darktable.mo
 share/locale/he/LC_MESSAGES/darktable.mo
 share/locale/hu/LC_MESSAGES/darktable.mo
 share/locale/it/LC_MESSAGES/darktable.mo
+share/locale/ja/LC_MESSAGES/darktable.mo
 share/locale/nl/LC_MESSAGES/darktable.mo
+share/locale/pl/LC_MESSAGES/darktable.mo
 share/locale/pt_BR/LC_MESSAGES/darktable.mo
 share/locale/ru/LC_MESSAGES/darktable.mo
 share/locale/sl/LC_MESSAGES/darktable.mo
+share/locale/sq/LC_MESSAGES/darktable.mo
+share/locale/tr/LC_MESSAGES/darktable.mo
 share/locale/uk/LC_MESSAGES/darktable.mo
+share/locale/zh_CN/LC_MESSAGES/darktable.mo
+share/locale/zh_TW/LC_MESSAGES/darktable.mo
 share/metainfo/
-share/metainfo/darktable.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
+share/metainfo/org.darktable.darktable.appdata.xml

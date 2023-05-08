@@ -9,5 +9,5 @@ Index: src/external/CMakeLists.txt
 -target_include_directories(whereami PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/whereami/src/")
 -
  set(BUILD_TESTING_SAVE "${BUILD_TESTING}")
+ set(BUILD_BENCHMARKING_SAVE "${BUILD_BENCHMARKING}")
  
- set(BUILD_TESTING OFF CACHE BOOL "" FORCE)
