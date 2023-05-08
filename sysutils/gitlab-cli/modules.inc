@@ -116,7 +116,7 @@ MODGO_MODULES =	\
 	github.com/pkg/sftp					 v1.13.1 \
 	github.com/pmezard/go-difflib				 v1.0.0 \
 	github.com/prometheus/client_model			 v0.0.0-20190812154241-14fe0d1b01d4 \
-	github.com/rivo/tview					 v0.0.0-20230406072732-e22ce9588bb4 \
+	github.com/rivo/tview					 v0.0.0-20211029142923-a4acb08f513e \
 	github.com/rivo/uniseg					 v0.4.4 \
 	github.com/rogpeppe/go-internal				 v1.6.1 \
 	github.com/russross/blackfriday/v2			 v2.1.0 \
@@ -219,6 +219,7 @@ MODGO_MODFILES =	\
 	github.com/envoyproxy/go-control-plane	 v0.9.7 \
 	github.com/fatih/color			 v1.13.0 \
 	github.com/fatih/color			 v1.7.0 \
+	github.com/gdamore/tcell/v2		 v2.4.1-0.20210905002822-f057f0a857a1 \
 	github.com/go-gl/glfw/v3.3/glfw		 v0.0.0-20191125211704-12ad95a8df72 \
 	github.com/golang/groupcache		 v0.0.0-20190702054246-869f871628b6 \
 	github.com/golang/groupcache		 v0.0.0-20191227052852-215e87163ea7 \
@@ -286,6 +287,7 @@ MODGO_MODFILES =	\
 	github.com/mattn/go-isatty		 v0.0.17 \
 	github.com/mattn/go-isatty		 v0.0.8 \
 	github.com/mattn/go-runewidth		 v0.0.12 \
+	github.com/mattn/go-runewidth		 v0.0.13 \
 	github.com/mattn/go-runewidth		 v0.0.9 \
 	github.com/mgutz/ansi			 v0.0.0-20170206155736-9520e82c474b \
 	github.com/microcosm-cc/bluemonday	 v1.0.21 \
@@ -447,6 +449,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sys			 v0.0.0-20210104204734-6f8348627aad \
 	golang.org/x/sys			 v0.0.0-20210119212857-b64e53b001e4 \
 	golang.org/x/sys			 v0.0.0-20210225134936-a50acf3fe073 \
+	golang.org/x/sys			 v0.0.0-20210309074719-68d13333faf2 \
 	golang.org/x/sys			 v0.0.0-20210423082822-04245dca01da \
 	golang.org/x/sys			 v0.0.0-20210423185535-09eb48e85fd7 \
 	golang.org/x/sys			 v0.0.0-20210615035016-665e8c7367d1 \
@@ -462,6 +465,8 @@ MODGO_MODFILES =	\
 	golang.org/x/sys			 v0.5.0 \
 	golang.org/x/sys			 v0.6.0 \
 	golang.org/x/term			 v0.0.0-20201126162022-7de9c90e9dd1 \
+	golang.org/x/term			 v0.0.0-20201210144234-2321bbc49cbf \
+	golang.org/x/term			 v0.0.0-20210220032956-6a3ed077a48d \
 	golang.org/x/term			 v0.0.0-20210503060354-a79de5458b56 \
 	golang.org/x/term			 v0.0.0-20210927222741-03fcf44c2211 \
 	golang.org/x/term			 v0.1.0 \
