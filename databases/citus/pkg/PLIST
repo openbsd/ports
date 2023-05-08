@@ -31,6 +31,7 @@ include/postgresql/server/distributed/distribution_column.h
 include/postgresql/server/distributed/enterprise.h
 include/postgresql/server/distributed/error_codes.h
 include/postgresql/server/distributed/errormessage.h
+include/postgresql/server/distributed/executor_util.h
 include/postgresql/server/distributed/extended_op_node_utils.h
 include/postgresql/server/distributed/foreign_key_relationship.h
 include/postgresql/server/distributed/function_call_delegation.h
@@ -51,6 +52,7 @@ include/postgresql/server/distributed/lock_graph.h
 include/postgresql/server/distributed/log_utils.h
 include/postgresql/server/distributed/maintenanced.h
 include/postgresql/server/distributed/memutils.h
+include/postgresql/server/distributed/merge_planner.h
 include/postgresql/server/distributed/metadata_cache.h
 include/postgresql/server/distributed/metadata_sync.h
 include/postgresql/server/distributed/metadata_utility.h
@@ -97,6 +99,7 @@ include/postgresql/server/distributed/relay_utility.h
 include/postgresql/server/distributed/remote_commands.h
 include/postgresql/server/distributed/remote_transaction.h
 include/postgresql/server/distributed/repartition_join_execution.h
+include/postgresql/server/distributed/replication_origin_session_utils.h
 include/postgresql/server/distributed/resource_lock.h
 include/postgresql/server/distributed/run_from_same_connection.h
 include/postgresql/server/distributed/shard_cleaner.h
@@ -133,6 +136,11 @@ include/postgresql/server/distributed/worker_shard_visibility.h
 include/postgresql/server/distributed/worker_transaction.h
 @so lib/postgresql/citus.so
 @so lib/postgresql/citus_columnar.so
+lib/postgresql/citus_decoders/
+@so lib/postgresql/citus_decoders/pgoutput.so
+@so lib/postgresql/citus_decoders/wal2json.so
+@so lib/postgresql/citus_pgoutput.so
+@so lib/postgresql/citus_wal2json.so
 share/postgresql/extension/citus--10.0-1--10.0-2.sql
 share/postgresql/extension/citus--10.0-2--10.0-3.sql
 share/postgresql/extension/citus--10.0-3--10.0-4.sql
@@ -161,6 +169,10 @@ share/postgresql/extension/citus--11.0-4--11.1-1.sql
 share/postgresql/extension/citus--11.1-1--11.0-4.sql
 share/postgresql/extension/citus--11.1-1--11.2-1.sql
 share/postgresql/extension/citus--11.2-1--11.1-1.sql
+share/postgresql/extension/citus--11.2-1--11.2-2.sql
+share/postgresql/extension/citus--11.2-2--11.2-1.sql
+share/postgresql/extension/citus--11.2-2--11.3-1.sql
+share/postgresql/extension/citus--11.3-1--11.2-2.sql
 share/postgresql/extension/citus--8.0-1--8.0-2.sql
 share/postgresql/extension/citus--8.0-1.sql
 share/postgresql/extension/citus--8.0-10--8.0-11.sql
@@ -210,6 +222,8 @@ share/postgresql/extension/citus_columnar--11.1-1--11.1-0.sql
 share/postgresql/extension/citus_columnar--11.1-1--11.2-1.sql
 share/postgresql/extension/citus_columnar--11.1-1.sql
 share/postgresql/extension/citus_columnar--11.2-1--11.1-1.sql
+share/postgresql/extension/citus_columnar--11.2-1--11.3-1.sql
+share/postgresql/extension/citus_columnar--11.3-1--11.2-1.sql
 share/postgresql/extension/citus_columnar.control
 share/postgresql/extension/columnar--10.0-1--10.0-2.sql
 share/postgresql/extension/columnar--10.0-1--9.5-1.sql
