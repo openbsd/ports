@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distfile.pm,v 1.26 2023/05/06 05:20:31 espie Exp $
+# $OpenBSD: Distfile.pm,v 1.27 2023/05/08 11:19:15 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -411,9 +411,9 @@ sub cached_checksum($self, $fh, $name)
 	return 0;
 }
 
-sub unlock_conditions($self, $)
+sub unlock_conditions($self, $engine)
 {
-	return $self->check;
+	return $self->check($engine);
 }
 
 sub requeue($v, $engine)
