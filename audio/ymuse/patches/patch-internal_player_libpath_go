@@ -1,0 +1,43 @@
+From 8f8e02cdd84c4dddbdbadcf057aecf4e5502733e Mon Sep 17 00:00:00 2001
+From: Dmitry Kann <yktooo@gmail.com>
+Date: Wed, 21 Dec 2022 19:06:29 +0100
+Subject: [PATCH] Remove warnings about non-existent/empty Ymuse config
+ (resolves #70)
+
+From f482541a8cce08a80cfba9142773aec488b3647e Mon Sep 17 00:00:00 2001
+From: Dmitry Kann <yktooo@gmail.com>
+Date: Wed, 21 Dec 2022 19:27:37 +0100
+Subject: [PATCH] Allow adding/replacing of all tracks in Library by Files
+ context menu (resolves #69)
+
+Index: internal/player/libpath.go
+--- internal/player/libpath.go.orig
++++ internal/player/libpath.go
+@@ -243,11 +243,14 @@ func (p *LibraryPath) Unmarshal(s string) error {
+ 	// Iterate serialised elements
+ 	var elements []LibraryPathElement
+ 	for _, s := range strings.Split(s, pathElementSeparator) {
+-		element, err := UnmarshalLibPathElement(s)
+-		if err != nil {
+-			return err
++		// Skip over empty elements
++		if s != "" {
++			element, err := UnmarshalLibPathElement(s)
++			if err != nil {
++				return err
++			}
++			elements = append(elements, element)
+ 		}
+-		elements = append(elements, element)
+ 	}
+ 
+ 	// Succeeded
+@@ -334,7 +337,7 @@ func (e *FilesystemLibElement) IsFolder() bool {
+ }
+ 
+ func (e *FilesystemLibElement) IsPlayable() bool {
+-	return false
++	return true
+ }
+ 
+ func (e *FilesystemLibElement) Prefix() string {

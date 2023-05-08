@@ -1,0 +1,31 @@
+From 8f8e02cdd84c4dddbdbadcf057aecf4e5502733e Mon Sep 17 00:00:00 2001
+From: Dmitry Kann <yktooo@gmail.com>
+Date: Wed, 21 Dec 2022 19:06:29 +0100
+Subject: [PATCH] Remove warnings about non-existent/empty Ymuse config
+ (resolves #70)
+
+Index: internal/config/config.go
+--- internal/config/config.go.orig
++++ internal/config/config.go
+@@ -17,6 +17,7 @@ package config
+ 
+ import (
+ 	"encoding/json"
++	"errors"
+ 	"fmt"
+ 	"github.com/gotk3/gotk3/glib"
+ 	"github.com/yktoo/ymuse/internal/util"
+@@ -173,6 +174,13 @@ func (c *Config) Load() {
+ 	// Try to read the file
+ 	file := c.getConfigFile()
+ 	data, err := os.ReadFile(file)
++
++	// Ignore if the file isn't there
++	if errors.Is(err, os.ErrNotExist) {
++		return
++	}
++
++	// Warn on any other error
+ 	if errCheck(err, "Couldn't read file") {
+ 		return
+ 	}

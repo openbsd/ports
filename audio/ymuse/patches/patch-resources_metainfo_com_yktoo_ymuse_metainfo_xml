@@ -1,0 +1,31 @@
+From 4d4325e73db42fdbc9a2f8706028683512ec2dc2 Mon Sep 17 00:00:00 2001
+From: Martin <spam-github@mdosch.de>
+Date: Wed, 19 Oct 2022 08:47:54 +0200
+Subject: [PATCH] Add missing launchable element. (#65)
+
+From adf6e7b8968c592dfef5933432d7cc46277e319a Mon Sep 17 00:00:00 2001
+From: Dmitry Kann <yktooo@gmail.com>
+Date: Wed, 19 Oct 2022 16:05:17 +0200
+Subject: [PATCH] Use remote icon in AppStream metadata (resolves #66)
+
+Index: resources/metainfo/com.yktoo.ymuse.metainfo.xml
+--- resources/metainfo/com.yktoo.ymuse.metainfo.xml.orig
++++ resources/metainfo/com.yktoo.ymuse.metainfo.xml
+@@ -7,7 +7,7 @@
+     <summary>Easy, functional, and snappy GTK client for Music Player Daemon</summary>
+     <developer_name>Dmitry Kann</developer_name>
+     <content_rating type="oars-1.1"/>
+-    <icon type="local">/usr/share/icons/hicolor/scalable/apps/com.yktoo.ymuse.svg</icon>
++    <icon type="remote">https://raw.githubusercontent.com/yktoo/ymuse/master/resources/icons/hicolor/scalable/apps/com.yktoo.ymuse.svg</icon>
+ 
+     <description>
+         <p>Ymuse is an easy, functional, and snappy GTK front-end (client) application for Music Player Daemon.</p>
+@@ -28,6 +28,8 @@
+             <li>Internationalisation support.</li>
+         </ul>
+     </description>
++
++    <launchable type="desktop-id">com.yktoo.ymuse.desktop</launchable>
+ 
+     <screenshots>
+         <screenshot type="default">

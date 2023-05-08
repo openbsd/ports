@@ -1,0 +1,52 @@
+From 8f8e02cdd84c4dddbdbadcf057aecf4e5502733e Mon Sep 17 00:00:00 2001
+From: Dmitry Kann <yktooo@gmail.com>
+Date: Wed, 21 Dec 2022 19:06:29 +0100
+Subject: [PATCH] Remove warnings about non-existent/empty Ymuse config
+ (resolves #70)
+
+From f482541a8cce08a80cfba9142773aec488b3647e Mon Sep 17 00:00:00 2001
+From: Dmitry Kann <yktooo@gmail.com>
+Date: Wed, 21 Dec 2022 19:27:37 +0100
+Subject: [PATCH] Allow adding/replacing of all tracks in Library by Files
+ context menu (resolves #69)
+
+Index: internal/player/main-window.go
+--- internal/player/main-window.go.orig
++++ internal/player/main-window.go
+@@ -15,8 +15,8 @@
+ 
+ package player
+ 
+-import "C"
+ import (
++	"C"
+ 	"bytes"
+ 	"fmt"
+ 	"github.com/fhs/gompd/v2/mpd"
+@@ -2018,18 +2018,19 @@ func (w *MainWindow) updateLibrary() {
+ 		element := element // Make an in-loop copy for closures
+ 		label := element.Label()
+ 		markup := false
+-
+-		// Add replace/append buttons if needed
+ 		var buttons []gtk.IWidget
+-		if element.IsPlayable() {
++
++		// Make root elements bold
++		if lastElement == nil {
++			label = "<b>" + label + "</b>"
++			markup = true
++
++			// For non-root elements, add replace/append buttons if needed
++		} else if element.IsPlayable() {
+ 			buttons = []gtk.IWidget{
+ 				util.NewButton("", glib.Local("Append to the queue"), "", "ymuse-add-symbolic", func() { w.queueLibraryElement(tbFalse, element) }),
+ 				util.NewButton("", glib.Local("Replace the queue"), "", "ymuse-replace-queue-symbolic", func() { w.queueLibraryElement(tbTrue, element) }),
+ 			}
+-		} else {
+-			// Make non-playable (root) elements bold
+-			label = "<b>" + label + "</b>"
+-			markup = true
+ 		}
+ 
+ 		// Add a new list box row
