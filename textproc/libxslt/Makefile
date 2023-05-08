@@ -1,11 +1,10 @@
 COMMENT=		XSLT C Library for GNOME
 
-GNOME_VERSION=		1.1.37
+GNOME_VERSION=		1.1.38
 GNOME_PROJECT=		libxslt
-REVISION=		1
 
-SHARED_LIBS +=  xslt                 4.0      # 2.37
-SHARED_LIBS +=  exslt                9.8      # 8.20
+SHARED_LIBS +=  xslt                 4.1      # 2.38
+SHARED_LIBS +=  exslt                9.8      # 8.21
 
 CATEGORIES=		textproc
 
