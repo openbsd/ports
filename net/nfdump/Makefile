@@ -1,6 +1,9 @@
 COMMENT-main =		tools to collect and process netflow data
 COMMENT-nfprofile =	filters data from nfdump according to profiles
 
+# note; 1.7.x is now available but upstream says "Although nfdump-1.7.x
+# is mostly compatible with old Nfsen, it not recommended to replace
+# nfdump in your NfSen installation."
 V =			1.6.24
 GH_ACCOUNT =		phaag
 GH_PROJECT =		nfdump
