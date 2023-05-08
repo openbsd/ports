@@ -21,7 +21,7 @@ Index: src/notification.c
                                  safe_setenv("DUNST_APP_NAME",  appname);
                                  safe_setenv("DUNST_SUMMARY",   summary);
                                  safe_setenv("DUNST_BODY",      body);
-@@ -683,14 +683,14 @@ void notification_update_text_to_render(struct notific
+@@ -684,14 +684,14 @@ void notification_update_text_to_render(struct notific
                  char *new_buf;
                  if (hours > 0) {
                          new_buf =

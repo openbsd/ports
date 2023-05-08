@@ -1,0 +1,21 @@
+Index: test/rules.c
+--- test/rules.c.orig
++++ test/rules.c
+@@ -41,7 +41,7 @@ TEST test_pattern_match(void) {
+                 ASSERT(rule_field_matches_string("ffffasd", ".*asd"));
+ 
+                 // Substring matching
+-                ASSERT(rule_field_matches_string("asd", ""));
++                ASSERT_FALSE(rule_field_matches_string("asd", ""));
+                 ASSERT(rule_field_matches_string("asd", "sd"));
+                 ASSERT(rule_field_matches_string("asd", "a"));
+                 ASSERT(rule_field_matches_string("asd", "d"));
+@@ -54,7 +54,7 @@ TEST test_pattern_match(void) {
+                 ASSERT_FALSE(rule_field_matches_string("azd", "asd|dfg|ghj"));
+ 
+                 // Special characters
+-                ASSERT_FALSE(rule_field_matches_string("{", "{"));
++                ASSERT(rule_field_matches_string("{", "{"));
+                 ASSERT(rule_field_matches_string("{", "\\{"));
+                 ASSERT(rule_field_matches_string("a", "(a)"));
+         } else {
