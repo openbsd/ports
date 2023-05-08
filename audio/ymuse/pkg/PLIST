@@ -1,0 +1,47 @@
+@bin bin/ymuse
+share/applications/com.yktoo.ymuse.desktop
+share/icons/hicolor/128x128/apps/com.yktoo.ymuse.png
+share/icons/hicolor/16x16/apps/com.yktoo.ymuse.png
+share/icons/hicolor/24x24/apps/com.yktoo.ymuse.png
+share/icons/hicolor/256x256/apps/com.yktoo.ymuse.png
+share/icons/hicolor/32x32/apps/com.yktoo.ymuse.png
+share/icons/hicolor/48x48/apps/com.yktoo.ymuse.png
+share/icons/hicolor/512x512/apps/com.yktoo.ymuse.png
+share/icons/hicolor/64x64/apps/com.yktoo.ymuse.png
+share/icons/hicolor/scalable/actions/ymuse-add-symbolic.svg
+share/icons/hicolor/scalable/actions/ymuse-clear-symbolic.svg
+share/icons/hicolor/scalable/actions/ymuse-consume-symbolic.svg
+share/icons/hicolor/scalable/actions/ymuse-delete-symbolic.svg
+share/icons/hicolor/scalable/actions/ymuse-delete-track-symbolic.svg
+share/icons/hicolor/scalable/actions/ymuse-edit-symbolic.svg
+share/icons/hicolor/scalable/actions/ymuse-filter-symbolic.svg
+share/icons/hicolor/scalable/actions/ymuse-home-symbolic.svg
+share/icons/hicolor/scalable/actions/ymuse-level-up-symbolic.svg
+share/icons/hicolor/scalable/actions/ymuse-next-symbolic.svg
+share/icons/hicolor/scalable/actions/ymuse-now-playing-symbolic.svg
+share/icons/hicolor/scalable/actions/ymuse-pause-symbolic.svg
+share/icons/hicolor/scalable/actions/ymuse-play-symbolic.svg
+share/icons/hicolor/scalable/actions/ymuse-previous-symbolic.svg
+share/icons/hicolor/scalable/actions/ymuse-random-symbolic.svg
+share/icons/hicolor/scalable/actions/ymuse-repeat-symbolic.svg
+share/icons/hicolor/scalable/actions/ymuse-replace-queue-symbolic.svg
+share/icons/hicolor/scalable/actions/ymuse-save-symbolic.svg
+share/icons/hicolor/scalable/actions/ymuse-search-symbolic.svg
+share/icons/hicolor/scalable/actions/ymuse-sort-symbolic.svg
+share/icons/hicolor/scalable/actions/ymuse-stop-symbolic.svg
+share/icons/hicolor/scalable/actions/ymuse-update-db-symbolic.svg
+share/icons/hicolor/scalable/apps/com.yktoo.ymuse.svg
+share/icons/hicolor/scalable/mimetypes/ymuse-album.svg
+share/icons/hicolor/scalable/mimetypes/ymuse-albums.svg
+share/icons/hicolor/scalable/mimetypes/ymuse-artist.svg
+share/icons/hicolor/scalable/mimetypes/ymuse-artists.svg
+share/icons/hicolor/scalable/mimetypes/ymuse-audio-file.svg
+share/icons/hicolor/scalable/mimetypes/ymuse-genre.svg
+share/icons/hicolor/scalable/mimetypes/ymuse-genres.svg
+share/icons/hicolor/scalable/mimetypes/ymuse-playlist.svg
+share/icons/hicolor/scalable/mimetypes/ymuse-playlists.svg
+share/icons/hicolor/scalable/mimetypes/ymuse-stream.svg
+share/metainfo/
+share/metainfo/com.yktoo.ymuse.metainfo.xml
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database
