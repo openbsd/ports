@@ -1,6 +1,7 @@
 COMMENT =		fixed width fonts especially for long hacking sessions
 
 DISTNAME =		terminus-font-4.49.1
+REVISION =		0
 CATEGORIES =		fonts x11
 
 HOMEPAGE =		http://terminus-font.sourceforge.net/
@@ -20,7 +21,7 @@ CONFIGURE_STYLE =	simple
 NO_TEST =		Yes
 USE_X11 =		Yes
 
-ALL_TARGET =		pcf pcf-8bit raw
+ALL_TARGET =		pcf pcf-8bit raw otb
 
 FONTDIR =		${PREFIX}/share/fonts/terminus
 
@@ -42,10 +43,6 @@ PATCH_LIST = patch-* ${FLAVOR_PATCHES}
 PKG_ARCH =	*
 
 post-build:
-	cd ${WRKSRC} && \
-	for bdf in ter-u???.bdf; do \
-		${X11BASE}/bin/fonttosfnt -o `basename $$bdf .bdf`.otb $$bdf; \
-	done
 	${GZIP_CMD} ${WRKSRC}/*.pcf
 
 do-install:
