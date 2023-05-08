@@ -262,6 +262,7 @@
      SUBDIR += xmms2-scrobbler
      SUBDIR += xmp
      SUBDIR += ympd
+     SUBDIR += ymuse
      SUBDIR += yt-audio
      SUBDIR += zmusic
      SUBDIR += zynaddsubfx
