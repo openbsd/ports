@@ -2,6 +2,7 @@ COMMENT =	libre Devanagari typeface family
 
 TYPEFACE =	jaldi
 V =		1.007
+REVISION =	0
 
 DISTFILES =	${V}.zip
 MASTER_SITES =	https://github.com/Omnibus-Type/Jaldi/archive/refs/tags/
