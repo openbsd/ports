@@ -1,3 +1,5 @@
+BROKEN-aarch64 = looks for sys/auxv.h
+
 COMMENT =	library for reading MAME's CHDv1-v5 formats
 
 V =		1.0pl20230220
