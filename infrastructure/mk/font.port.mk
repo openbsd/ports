@@ -1,4 +1,4 @@
-# $OpenBSD: font.port.mk,v 1.4 2016/11/04 15:44:14 rpe Exp $
+# $OpenBSD: font.port.mk,v 1.5 2023/05/09 13:32:04 sthen Exp $
 
 CATEGORIES +=	fonts
 
@@ -15,12 +15,19 @@ PKGNAME ?=	${TYPEFACE}-${VERSION}
 
 FONTDIR ?=	${PREFIX}/share/fonts/${TYPEFACE}
 
-FONTTYPES ?=	ttf
+FONTTYPES ?=
 
 FONT_DISTDIR ?=	${WRKSRC}
 
-MODFONT_do-install = ${INSTALL_DATA_DIR} ${FONTDIR}; \
-	for t in ${FONTTYPES}; do ${INSTALL_DATA} ${FONT_DISTDIR}/${FONT_DISTSUBDIR}/*.$$t ${FONTDIR}; done
+MODFONT_do-install = ${INSTALL_DATA_DIR} ${FONTDIR};
+
+# if FONTTYPES is not set, install .otf files if present (and break,
+# to skip ttf) otherwise fallback to ttf.
+.if empty(FONTTYPES)
+MODFONT_do-install += for t in otf ttf; do ${INSTALL_DATA} ${FONT_DISTDIR}/${FONT_DISTSUBDIR}/*.$$t ${FONTDIR} && break; done
+.else
+MODFONT_do-install += for t in ${FONTTYPES}; do ${INSTALL_DATA} ${FONT_DISTDIR}/${FONT_DISTSUBDIR}/*.$$t ${FONTDIR}; done
+.endif
 
 .  if !target(do-install)
 do-install:
