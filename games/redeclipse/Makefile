@@ -1,3 +1,5 @@
+BROKEN=		SIGSEGV on startup
+
 ONLY_FOR_ARCHS=	i386 amd64
 
 COMMENT-main=	redeclipse client
