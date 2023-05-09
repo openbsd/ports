@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: build-debug-info,v 1.47 2023/01/22 20:48:00 sthen Exp $
+# $OpenBSD: build-debug-info,v 1.48 2023/05/09 13:57:26 espie Exp $
 # Copyright (c) 2019 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -14,8 +14,7 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-use strict;
-use warnings;
+use v5.36;
 
 my $ports1;
 BEGIN {
@@ -31,20 +30,18 @@ our @ISA = qw(OpenBSD::BasePlistFactory);
 
 # note that contrary to update-plist, we never build the "new" plist, but
 # write it on the fly (should we use nlist as well here ?)
-sub stateclass
+sub stateclass($)
 {
 	return 'PlistReader::State';
 }
 
-sub command_name
+sub command_name($)
 {
 	return 'build-debug-info';
 }
 
-sub process_next_subpackage
+sub process_next_subpackage($class, $o)
 {
-	my ($class, $o) = @_;
-
 	my $r = $class->SUPER::process_next_subpackage($o);
 	if ($r->{state}{bad} != 0) {
 		$o->{state}{exitcode} = 1;
@@ -54,28 +51,30 @@ sub process_next_subpackage
 package PlistReader::State;
 our @ISA = qw(OpenBSD::BasePlistReader::State);
 
-sub substclass
+sub substclass($)
 {
 	return 'OpenBSD::Subst';
 }
 
-sub handle_options
+sub handle_options($s)
 {
-	my $s = shift;
 	$s->SUPER::handle_options;
 }
 
 # Most of the heavy lifting is done by visitor methods, as always
 
 package OpenBSD::PackingElement;
-sub write_debug_info
+# $self->write_debug_info($base, $fh, $o):
+#	write debug info (duh) for packing element $self relative to
+#	fake dir $base to filehandle $fh perusing debug object 
+#	$o for storing useful info
+sub write_debug_info($, $, $, $)
 {
 }
 
 package OpenBSD::PackingElement::PkgPath;
-sub write_debug_info
+sub write_debug_info($self, $, $fh, $)
 {
-	my ($self, $base, $fh, $o) = @_;
 	print $fh "\@", $self->keyword, " debug/", $self->name, "\n";
 }
 
@@ -85,9 +84,8 @@ package OpenBSD::PackingElement::Cwd;
 
 # copy the later ones, even if there is nothing to emit afterwards (this
 # is cheap)
-sub write_debug_info
+sub write_debug_info($self, $, $fh, $o)
 {
-	my ($self, $base, $fh, $o) = @_;
 	if ($o->{first_cwd}) {
 		$o->{first_cwd} = 0;
 	} else {
@@ -97,9 +95,8 @@ sub write_debug_info
 
 package OpenBSD::PackingElement::FileWithDebugInfo;
 use File::Basename;
-sub write_debug_info
+sub write_debug_info($self, $base, $fh, $o)
 {
-	my ($self, $base, $fh, $o) = @_;
 	return if $self->{nodebug};
 	my $s = $self->name;
 	my $dbg = $self->mogrify($s);
@@ -115,8 +112,9 @@ sub write_debug_info
 		my $k = join('/', (stat $path)[0,1]);
 		my $l = $o->{linkstash}{$k};
 		if (!defined $l) {
+			$self->ensure_dir($fh, $dir, $o);
 			$o->{linkstash}{$k} = $dbg;
-			$self->write_rule($o, $fh, $s, $dbg, $dir, 
+			$self->write_rule($o, $fh, $s, $dbg, 
 			    $path, $dbgpath, "OBJCOPY_RULE");
 			return;
 		}
@@ -133,20 +131,24 @@ sub write_debug_info
 		# TODO missing checks to be certain there's no ambiguity, just 
 		# need to write an actual example and verify I can detect it.
 		return if exists $o->{ostash}{$n};
-		$self->write_rule($o, $fh, $l, $n, $dir, 
+		$self->ensure_dir($fh, $dir, $o);
+		$self->write_rule($o, $fh, $l, $n, 
 		    $path, $dbgpath, "LINK_RULE");
 	} else {
 		$o->{state}->fatal("Error: #1 does not exist", $path);
 	}
 }
 
-sub write_rule
+sub ensure_dir($self, $fh, $dir, $o)
 {
-	my ($self, $o, $fh, $s, $dbg, $dir, $p1, $p2, $what) = @_;
 	if (!exists $o->{dirstash}{$dir}) {
 		print $fh $dir, "\n";
 		$o->{dirstash}{$dir} = 1;
 	}
+}
+
+sub write_rule($self, $o, $fh, $s, $dbg, $p1, $p2, $what)
+{
 	print $fh $dbg, "\n";
 	my $mk = $o->{mk};
 	print $mk "all: $p2\n";
@@ -156,37 +158,33 @@ sub write_rule
 	delete $o->{empty};
 }
 
-sub mogrify
+sub mogrify($self, $s)
 {
-	my ($self, $s) = @_;
 	$s =~ s,([^\/]+)$,.debug/$1.dbg,;
 	return $s;
 }
 
 package OpenBSD::PackingElement::StaticLib;
-sub write_debug_info
+sub write_debug_info($, $, $, $)
 {
 	# don't do anything
 }
 
 package OpenBSD::PackingElement::NoDefaultConflict;
-sub write_debug_info
+sub write_debug_info($self, $, $fh, $)
 {
-	my ($self, $base, $fh, $o) = @_;
 	$self->write($fh);
 }
 
 package OpenBSD::PackingElement::IsBranch;
-sub write_debug_info
+sub write_debug_info($self, $, $fh, $)
 {
-	my ($self, $base, $fh, $o) = @_;
 	$self->write($fh);
 }
 
 package OpenBSD::PackingElement::Conflict;
-sub write_debug_info
+sub write_debug_info($self, $, $fh, $)
 {
-	my ($self, $base, $fh, $o) = @_;
 	my $m = join('|', map {"debug-$_"} split(/\|/, $self->name));
 	print $fh "\@", $self->keyword, " $m\n";
 }
@@ -194,9 +192,8 @@ sub write_debug_info
 # This is the BuildDebugInfo main code proper
 package BuildDebugInfo::State;
 our @ISA = qw(OpenBSD::AddCreateDelete::State);
-sub handle_options
+sub handle_options($state)
 {
-	my $state = shift;
 	$state->SUPER::handle_options('vqFP:', 
 	    '[-Fmnqvx]',
 	    '-P pkgdir',
@@ -209,9 +206,8 @@ sub handle_options
 	$state->{quiet} = $state->opt('q');
 }
 
-sub openfile
+sub openfile($self, $name)
 {
-	my ($self, $name) = @_;
 	open my $fh, ">", $name or 
 	    $self->fatal("Can't write to #1: #2", $name, $!);
 	$self->say("Writing #1", $name) unless $self->{quiet};
@@ -223,9 +219,8 @@ our @ISA = qw(OpenBSD::BaseFS);
 use File::Basename;
 use File::Compare;
 
-sub new
+sub new($class)
 {
-	my $class = shift;
 	return $class->SUPER::new(undef, BuildDebugInfo::State->new);
 }
 
@@ -236,7 +231,7 @@ my $base = PlistFactory->parse_args($self);
 use File::Basename;
 $self->{mk} = $state->openfile($state->{pkgdir}."/Makefile.new");
 print {$self->{mk}} << 'EOPREAMBLE';
-# Makefile generated by build-debug-info $OpenBSD: build-debug-info,v 1.47 2023/01/22 20:48:00 sthen Exp $
+# Makefile generated by build-debug-info $OpenBSD: build-debug-info,v 1.48 2023/05/09 13:57:26 espie Exp $
 # No serviceable parts
 # Intended to run under the stage area after cd ${WRKINST}
 

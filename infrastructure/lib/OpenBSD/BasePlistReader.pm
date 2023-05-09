@@ -1,4 +1,4 @@
-# $OpenBSD: BasePlistReader.pm,v 1.3 2022/09/11 08:40:41 espie Exp $
+# $OpenBSD: BasePlistReader.pm,v 1.4 2023/05/09 13:57:26 espie Exp $
 # Copyright (c) 2019 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -18,6 +18,7 @@
 # - scanning all packing-lists
 # - handling debug names mogrification
 
+use v5.36;
 use OpenBSD::PkgCreate;
 
 # PlistReader is "just" a specialized version of the PkgCreate algorithm
@@ -25,15 +26,13 @@ use OpenBSD::PkgCreate;
 package OpenBSD::BasePlistReader;
 our @ISA = qw(OpenBSD::PkgCreate);
 
-sub new
+sub new($class)
 {
-	my $class = shift;
 	return bless { olist => OpenBSD::PackingList->new }, $class;
 }
 
-sub olist
+sub olist($self)
 {
-	my $self = shift;
 	return $self->{olist};
 }
 
@@ -41,20 +40,18 @@ sub olist
 # a factory that will repeatedly parse args and scan
 package OpenBSD::BasePlistFactory;
 
-sub stateclass
+sub stateclass($)
 {
 	return 'OpenBSD::BasePlistReader::State';
 }
 
-sub readerclass
+sub readerclass($)
 {
 	return 'OpenBSD::BasePlistReader';
 }
 
-sub process_next_subpackage
+sub process_next_subpackage($self, $o)
 {
-	my ($self, $o) = @_;
-
 	my $r = $self->readerclass->new;
 
 	my $s = $self->stateclass->new($self->command_name, $o->{state});
@@ -78,9 +75,8 @@ sub process_next_subpackage
 	return $r;
 }
 
-sub parse_args
+sub parse_args($class, $o)
 {
-	my ($class, $o) = @_;
 	# this handles update-plist options proper, finished with --
 	$o->{state}->handle_options;
 	if (@ARGV == 0) {
@@ -100,9 +96,8 @@ sub parse_args
 package OpenBSD::BasePlistReader::State;
 our @ISA = qw(OpenBSD::PkgCreate::State);
 # mostly make sure we have a progressmeter
-sub init
+sub init($self, $realstate)
 {
-	my ($self, $realstate) = @_;
 	$self->{subst} = $self->substclass->new($realstate);
 	$self->{progressmeter} = $realstate->{progressmeter};
 	$self->{bad} = 0;
@@ -112,18 +107,16 @@ sub init
 }
 
 # if we're in quiet mode, get rid of status messages
-sub set_status
+sub set_status($self, @parms)
 {
-	my $self = shift;
 	return if $self->{quiet};
-	$self->SUPER::set_status(@_);
+	$self->SUPER::set_status(@parms);
 }
 
-sub end_status
+sub end_status($self, @parms)
 {
-	my $self = shift;
 	return if $self->{quiet};
-	$self->SUPER::end_status(@_);
+	$self->SUPER::end_status(@parms);
 }
 
 1;

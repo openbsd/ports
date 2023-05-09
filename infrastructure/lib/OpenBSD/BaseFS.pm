@@ -1,4 +1,4 @@
-# $OpenBSD: BaseFS.pm,v 1.4 2019/11/30 10:20:53 espie Exp $
+# $OpenBSD: BaseFS.pm,v 1.5 2023/05/09 13:57:26 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -14,22 +14,19 @@
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 # glue code that resolves links based on a destdir directory
-use strict;
-use warnings;
+use v5.36;
 
 package OpenBSD::BaseFS;
 use File::Basename;
 
-sub new
+sub new($class, $destdir, $state)
 {
-	my ($class, $destdir, $state) = @_;
 	return bless {destdir => $destdir, state => $state}, $class;
 } 
-sub destdir
+sub destdir($self, @parts)
 {
-	my $self = shift;
-	unshift @_, $self->{destdir};
-	return File::Spec->canonpath(File::Spec->catfile(@_));
+	unshift @parts, $self->{destdir};
+	return File::Spec->canonpath(File::Spec->catfile(@parts));
 }
 
 # we are given a filename which actually lives under destdir.
@@ -37,10 +34,8 @@ sub destdir
 # link is meant relative to destdir
 # in any case, we always get the name on the actual
 # filesystem, e.g., with destdir prepended
-sub resolve_link
+sub resolve_link($self, $filename, $level = 0)
 {
-	my ($self, $filename, $level) = @_;
-	$level //= 0;
 	my $solved = $self->destdir($filename);
 	if (-l $solved) {
 		my $l = readlink($solved);
@@ -58,9 +53,8 @@ sub resolve_link
 	}
 }
 
-sub undest
+sub undest($self, $filename)
 {
-	my ($self, $filename) = @_;
 	$filename =~ s/^\Q$self->{destdir}\E//;
 	$filename='/' if $filename eq '';
 	return $filename;
