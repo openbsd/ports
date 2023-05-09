@@ -79,6 +79,9 @@ FAKE_FLAGS=		rel_user=www rel_group=www \
 			datadir=${PREFIX}/share/examples/apache2 \
 			sysconfdir=${PREFIX}/share/examples/apache2/conf
 
+# avoid race condition from mkdir.sh during parallel install
+FAKE_FLAGS +=		MKINSTALLDIRS='mkdir -p'
+
 FLAVORS=		ldap
 FLAVOR?=
 
