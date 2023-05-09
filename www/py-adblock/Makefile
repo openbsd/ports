@@ -10,10 +10,9 @@ COMMENT =	Brave's adblock library
 
 GH_ACCOUNT =	ArniDagur
 GH_PROJECT =	python-adblock
-GH_TAGNAME =	0.5.1
+GH_TAGNAME =	0.6.0
 DISTNAME =	py-adblock-${GH_TAGNAME}
 MODPY_EGG_VERSION = ${GH_TAGNAME}
-REVISION =          6
 
 CATEGORIES =	www
 
