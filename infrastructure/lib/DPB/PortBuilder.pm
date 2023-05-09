@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.92 2023/05/07 06:26:41 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.93 2023/05/09 15:37:16 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -115,7 +115,10 @@ sub make_args($self)
 
 sub init($self)
 {
-	$self->{state}{build_user}->make_path($self->{realfullrepo});
+	my $state = $self->{state};
+	$state->{build_user}->make_path($self->{realfullrepo});
+	$state->{fetch_user}->make_path($state->anchor(
+	    join("/", $state->{repo}, $state->arch, "cache")));
 	$self->{global} = $self->logger->append("build");
 	$self->{lockperf} = 
 	    DPB::Util->make_hot($self->logger->append("awaiting-locks"));
@@ -123,9 +126,9 @@ sub init($self)
 		$self->{logsize} = 
 		    DPB::Util->make_hot($self->logger->append("size"));
 	}
-	if ($self->{state}->defines("WRAP_MAKE")) {
+	if ($state->defines("WRAP_MAKE")) {
 		$self->{rsslog} = $self->logger->logfile("rss");
-		$self->{wrapper} = $self->{state}->defines("WRAP_MAKE");
+		$self->{wrapper} = $state->defines("WRAP_MAKE");
 	}
 }
 
