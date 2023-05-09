@@ -5,7 +5,7 @@ BIN_BOOTSTRAP_VERSION = 1.19.4
 
 COMMENT =		Go programming language
 
-VERSION =		1.20.1
+VERSION =		1.20.4
 DISTNAME =		go${VERSION}.src
 PKGNAME =		go-${VERSION}
 PKGSPEC =		${FULLPKGNAME:S/go-/go-=/}
@@ -129,7 +129,7 @@ do-install:
 		-exec ${INSTALL_DATA} -p {} ${GOROOT} \;
 
 	cd ${WRKDIST} && \
-		pax -rw -s '/^.*\.orig$$//' api doc lib misc src pkg/include \
+		pax -rw -s '/^.*\.orig\.port$$//' api doc lib misc src pkg/include \
 			test ${GOROOT}
 	find ${GOROOT} -type d -exec chmod ${DIRMODE} {} +
 	find ${GOROOT} -type f -exec chmod ${SHAREMODE} {} +
