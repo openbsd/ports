@@ -401,8 +401,10 @@ lib/python${MODPY_VERSION}/site-packages/qutebrowser/html/doc/img/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/html/doc/img/cheatsheet-big.png
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/html/doc/img/cheatsheet-small.png
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/html/doc/index.html
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/html/doc/install.html
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/html/doc/quickstart.html
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/html/doc/settings.html
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/html/doc/stacktrace.html
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/html/doc/userscripts.html
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/html/error.html
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/html/history.html
@@ -429,6 +431,7 @@ lib/python${MODPY_VERSION}/site-packages/qutebrowser/javascript/history.js
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/javascript/pac_utils.js
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/javascript/position_caret.js
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/javascript/quirks/
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/javascript/quirks/array_at.user.js
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/javascript/quirks/discord.user.js
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/javascript/quirks/globalthis.user.js
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/javascript/quirks/googledocs.user.js
