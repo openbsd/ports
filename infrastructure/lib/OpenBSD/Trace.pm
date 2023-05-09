@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Trace.pm,v 1.2 2019/09/29 10:58:10 espie Exp $
+# $OpenBSD: Trace.pm,v 1.3 2023/05/09 15:37:54 espie Exp $
 #
 # Copyright (c) 2015-2019 Marc Espie <espie@openbsd.org>
 #
@@ -15,6 +15,7 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
+use v5.36;
 package OpenBSD::Trace;
 
 # this is a base class meant to be inherited from
@@ -27,19 +28,16 @@ package OpenBSD::Trace;
 
 my $forbidden = qr{[^[:print:]\s]};
 
-sub dumper
+sub dumper($self, @parms)
 {
-	my $self = shift;
-
 	require Data::Dumper;
-	return Data::Dumper->new(@_)->
+	return Data::Dumper->new(@parms)->
 	    Indent(0)->Maxdepth(1)->Quotekeys(0)->Sortkeys(1)->
 	    Deparse(1);
 }
 
-sub dump_param
+sub dump_param($self, $arg = undef, $full = 0)
 {
-	my ($self, $arg, $full) = @_;
 	if (!defined $arg) {
 		return '<undef>';
 	} else {
@@ -63,10 +61,8 @@ sub dump_param
 }
 
 # the stack, mostly identical to Carp::Always
-sub stack
+sub stack($self, $full = 0)
 {
-	my ($self, $full) = @_;
-
 	my $msg = '';
 	my $x = 1;
 	while (1) {
@@ -87,11 +83,11 @@ sub stack
 	return $msg;
 }
 
-sub new
+# note that derived classes like DPB::Trace use the extra parms
+sub new($class, @p)
 {
-	my $class = shift;
 	my $o = bless {}, $class;
-    	$o->init(@_);
+    	$o->init(@p);
 	return $o;
 }
 
@@ -102,16 +98,14 @@ END {
 	$SIG{__WARN__} = 'DEFAULT';
 }
 
-sub init
+sub init($self)
 {
-	my $self = shift;
 	$self->setup_warn;
 	$self->setup_die;
 }
 
-sub setup_warn
+sub setup_warn($self)
 {
-	my $self = shift;
 	$SIG{__WARN__} = sub {
 		local $SIG{__WARN__} = 'DEFAULT';
 		# let CORE:: do its job during compile and evals
@@ -127,9 +121,8 @@ sub setup_warn
 	};
 }
 
-sub setup_die
+sub setup_die($self)
 {
-	my $self = shift;
 	$SIG{__DIE__} = sub {
 		local $SIG{__DIE__} = 'DEFAULT';
 		# let CORE:: do its job during compile and evals
@@ -145,29 +138,25 @@ sub setup_die
 	};
 }
 
-sub do_warn
+sub do_warn($self, $msg)
 {
-	my ($self, $msg) = @_;
 	warn $msg;
 
 }
 
-sub dump_data
+sub dump_data($self, @p)
 {
-	my $self = shift;
-
 	require Data::Dumper;
 
-	my $msg = Data::Dumper->new(@_)->
+	my $msg = Data::Dumper->new(@p)->
 	    Quotekeys(0)->Sortkeys(1)->Deparse(1)->Dump;
 	$msg =~ s/$forbidden/?/g;
 
 	return $msg;
 }
 
-sub do_die
+sub do_die($self, $msg)
 {
-	my ($self, $msg) = @_;
 	die $msg;
 }
 1;
