@@ -2,6 +2,7 @@ COMMENT=		dialogs for GNOME
 
 GNOME_PROJECT=		zenity
 GNOME_VERSION=		3.92.0
+REVISION=		0
 
 # LGPLv2
 PERMIT_PACKAGE=		Yes
@@ -11,9 +12,6 @@ WANTLIB += pango-1.0
 
 MODULES=		devel/meson \
 			x11/gnome
-
-# XXX see patch-data_meson_build
-#BUILD_DEPENDS=		devel/help2man
 
 LIB_DEPENDS=		x11/gnome/libadwaita
 

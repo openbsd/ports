@@ -1,15 +1,36 @@
-Disable broken man page generation:
-https://gitlab.gnome.org/GNOME/zenity/-/issues/53
+From db1ad8ee7c3db36a7cca6e998e86719293d37838 Mon Sep 17 00:00:00 2001
+From: Logan Rathbone <poprocks@gmail.com>
+Date: Mon, 8 May 2023 14:39:53 -0400
+Subject: [PATCH] data: Manpage generation changes
 
 Index: data/meson.build
 --- data/meson.build.orig
 +++ data/meson.build
-@@ -24,7 +24,7 @@ endif
+@@ -22,25 +22,6 @@ if desktop_file_validate_prg.found()
+   )
+ endif
  
- # manpage -- generated from help2man
+-# manpage -- generated from help2man
++# manpage
  
 -help2man = find_program('help2man', required: false)
-+help2man = find_program('help2manXXX', required: false)
- # help2man has to run zenity to generate the man page, which it can't do if
- # we're cross building. We also can't tell help2man what exe wrapper to use.
- if help2man.found() and not meson.is_cross_build()
+-# help2man has to run zenity to generate the man page, which it can't do if
+-# we're cross building. We also can't tell help2man what exe wrapper to use.
+-if help2man.found() and not meson.is_cross_build()
+-  help2man_opts = [
+-    '--no-info',
+-    '--section=1',
+-    '--help-option=--help-all',
+-    '--include=@INPUT@',
+-  ]
+-
+-  custom_target('zenity.1',
+-                output: 'zenity.1',
+-                input: 'zenity.roff',
+-                command: [
+-                  help2man, help2man_opts, '--output=@OUTPUT@', zenity
+-                ],
+-                install: true,
+-                install_dir: join_paths(zenity_mandir, 'man1'))
+-endif
++install_man('zenity.1')

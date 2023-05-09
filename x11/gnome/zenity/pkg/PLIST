@@ -1,4 +1,5 @@
 @bin bin/zenity
+@man man/man1/zenity.1
 share/applications/org.gnome.Zenity.desktop
 share/help/
 share/help/C/
