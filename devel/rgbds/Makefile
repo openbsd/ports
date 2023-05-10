@@ -4,6 +4,7 @@ COMMENT =	Game Boy development system
 
 V =		0.6.1
 DISTNAME =	rgbds-$V
+REVISION =	0
 
 CATEGORIES =	devel
 
@@ -20,7 +21,6 @@ WANTLIB += ${COMPILER_LIBCXX} c m png
 MASTER_SITES =	https://github.com/gbdev/rgbds/releases/download/v$V/
 
 COMPILER =	base-clang ports-gcc
-COMPILER_LANGS =	c
 
 BUILD_DEPENDS =	devel/bison \
 		shells/bash
