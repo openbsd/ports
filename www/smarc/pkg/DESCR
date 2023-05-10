@@ -1,0 +1,5 @@
+smarc is a collection of scripts to generate a static mail archive from
+a given Maildir.  It also optionally provides a FastCGI server to allow
+searching in the archive, powered by a sqlite3 database.
+
+The setup process is documented in smarc(7).

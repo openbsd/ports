@@ -1,0 +1,34 @@
+@rcscript ${RCDIR}/msearchd
+bin/smarc
+bin/smingest
+${P5SITE}/SMArc.pm
+libexec/smarc/
+libexec/smarc/filter-ignore
+libexec/smarc/mexp
+libexec/smarc/mkindex
+libexec/smarc/pe
+@man man/man1/smarc.1
+@man man/man1/smingest.1
+@man man/man7/smarc.7
+@man man/man8/msearchd.8
+@bin sbin/msearchd
+share/examples/smarc/
+@sample ${SYSCONFDIR}/smarc/
+share/examples/smarc/foot.html
+@sample ${SYSCONFDIR}/smarc/foot.html
+share/examples/smarc/head.html
+@sample ${SYSCONFDIR}/smarc/head.html
+share/examples/smarc/index-header.html
+@sample ${SYSCONFDIR}/smarc/index-header.html
+share/examples/smarc/logo-small.html
+@sample ${SYSCONFDIR}/smarc/logo-small.html
+share/examples/smarc/schema.sql
+share/examples/smarc/search-header.html
+@sample ${SYSCONFDIR}/smarc/search-header.html
+share/examples/smarc/search.html
+@sample ${SYSCONFDIR}/smarc/search.html
+share/examples/smarc/style.css
+share/smarc/
+share/smarc/mblaze/
+share/smarc/mblaze/filter
+share/smarc/mblaze/seq
