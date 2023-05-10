@@ -1,5 +1,17 @@
-@bin bin/stringify
+@bin bin/bfr_evaluate
 include/opensubdiv/
+include/opensubdiv/bfr/
+include/opensubdiv/bfr/irregularPatchType.h
+include/opensubdiv/bfr/limits.h
+include/opensubdiv/bfr/parameterization.h
+include/opensubdiv/bfr/refinerSurfaceFactory.h
+include/opensubdiv/bfr/surface.h
+include/opensubdiv/bfr/surfaceData.h
+include/opensubdiv/bfr/surfaceFactory.h
+include/opensubdiv/bfr/surfaceFactoryCache.h
+include/opensubdiv/bfr/surfaceFactoryMeshAdapter.h
+include/opensubdiv/bfr/tessellation.h
+include/opensubdiv/bfr/vertexDescriptor.h
 include/opensubdiv/far/
 include/opensubdiv/far/error.h
 include/opensubdiv/far/patchDescriptor.h
@@ -72,6 +84,12 @@ include/opensubdiv/vtr/refinement.h
 include/opensubdiv/vtr/sparseSelector.h
 include/opensubdiv/vtr/stackBuffer.h
 include/opensubdiv/vtr/types.h
+lib/cmake/
+lib/cmake/OpenSubdiv/
+lib/cmake/OpenSubdiv/OpenSubdivConfig.cmake
+lib/cmake/OpenSubdiv/OpenSubdivConfigVersion.cmake
+lib/cmake/OpenSubdiv/OpenSubdivTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/OpenSubdiv/OpenSubdivTargets.cmake
 @static-lib lib/libosdCPU.a
 @lib lib/libosdCPU.so.${LIBosdCPU_VERSION}
 @static-lib lib/libosdGPU.a
