@@ -1,0 +1,2 @@
+Graph::Easy::As_svg contains just the code for converting a Graph::Easy
+object to a SVG text.
