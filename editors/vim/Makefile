@@ -1,10 +1,9 @@
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
-REVISION-main=	0
 
 # careful with PLISTs if updating; it usually works best if you use
 # a gui flavour rather than no_x11
-V=		9.0.1388
+V=		9.0.1536
 GH_ACCOUNT=	vim
 GH_PROJECT=	vim
 GH_TAGNAME=	v$V

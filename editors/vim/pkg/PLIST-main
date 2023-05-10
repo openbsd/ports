@@ -119,12 +119,16 @@ share/vim/${P}/colors/murphy.vim
 share/vim/${P}/colors/pablo.vim
 share/vim/${P}/colors/peachpuff.vim
 share/vim/${P}/colors/quiet.vim
+share/vim/${P}/colors/retrobox.vim
 share/vim/${P}/colors/ron.vim
 share/vim/${P}/colors/shine.vim
 share/vim/${P}/colors/slate.vim
+share/vim/${P}/colors/sorbet.vim
 share/vim/${P}/colors/tools/
 share/vim/${P}/colors/tools/check_colors.vim
 share/vim/${P}/colors/torte.vim
+share/vim/${P}/colors/wildcharm.vim
+share/vim/${P}/colors/zaibatsu.vim
 share/vim/${P}/colors/zellner.vim
 share/vim/${P}/compiler/
 share/vim/${P}/compiler/README.txt
@@ -531,6 +535,7 @@ share/vim/${P}/ftplugin/libao.vim
 share/vim/${P}/ftplugin/limits.vim
 share/vim/${P}/ftplugin/liquid.vim
 share/vim/${P}/ftplugin/lisp.vim
+share/vim/${P}/ftplugin/livebook.vim
 share/vim/${P}/ftplugin/logcheck.vim
 share/vim/${P}/ftplugin/loginaccess.vim
 share/vim/${P}/ftplugin/logindefs.vim
@@ -691,6 +696,7 @@ share/vim/${P}/gvimrc_example.vim
 share/vim/${P}/import/
 share/vim/${P}/import/dist/
 share/vim/${P}/import/dist/vimhelp.vim
+share/vim/${P}/import/dist/vimhighlight.vim
 share/vim/${P}/indent/
 share/vim/${P}/indent.vim
 share/vim/${P}/indent/README.txt
@@ -769,6 +775,7 @@ share/vim/${P}/indent/less.vim
 share/vim/${P}/indent/lifelines.vim
 share/vim/${P}/indent/liquid.vim
 share/vim/${P}/indent/lisp.vim
+share/vim/${P}/indent/livebook.vim
 share/vim/${P}/indent/logtalk.vim
 share/vim/${P}/indent/lua.vim
 share/vim/${P}/indent/mail.vim
@@ -1375,6 +1382,7 @@ share/vim/${P}/syntax/liquid.vim
 share/vim/${P}/syntax/lisp.vim
 share/vim/${P}/syntax/lite.vim
 share/vim/${P}/syntax/litestep.vim
+share/vim/${P}/syntax/livebook.vim
 share/vim/${P}/syntax/loginaccess.vim
 share/vim/${P}/syntax/logindefs.vim
 share/vim/${P}/syntax/logtalk.vim
