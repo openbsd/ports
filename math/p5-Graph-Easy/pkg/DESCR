@@ -1,0 +1,9 @@
+Graph::Easy lets you generate graphs consisting of various shaped
+nodes connected by edges (with optional labels).
+
+It can read and write graphs in a variety of formats, as well as
+render them via its own grid-based layouter.
+
+Since the layouter works on a grid (manhattan layout), the output
+is most useful for flow charts, network diagrams, or hierarchy
+trees.

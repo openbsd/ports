@@ -1,0 +1,65 @@
+bin/graph-easy
+${P5SITE}/Graph/
+${P5SITE}/Graph/Easy/
+${P5SITE}/Graph/Easy.pm
+${P5SITE}/Graph/Easy/As_ascii.pm
+${P5SITE}/Graph/Easy/As_graphml.pm
+${P5SITE}/Graph/Easy/As_graphviz.pm
+${P5SITE}/Graph/Easy/As_txt.pm
+${P5SITE}/Graph/Easy/As_vcg.pm
+${P5SITE}/Graph/Easy/Attributes.pm
+${P5SITE}/Graph/Easy/Base.pm
+${P5SITE}/Graph/Easy/Edge/
+${P5SITE}/Graph/Easy/Edge.pm
+${P5SITE}/Graph/Easy/Edge/Cell.pm
+${P5SITE}/Graph/Easy/Group/
+${P5SITE}/Graph/Easy/Group.pm
+${P5SITE}/Graph/Easy/Group/Anon.pm
+${P5SITE}/Graph/Easy/Group/Cell.pm
+${P5SITE}/Graph/Easy/Layout/
+${P5SITE}/Graph/Easy/Layout.pm
+${P5SITE}/Graph/Easy/Layout/Chain.pm
+${P5SITE}/Graph/Easy/Layout/Force.pm
+${P5SITE}/Graph/Easy/Layout/Grid.pm
+${P5SITE}/Graph/Easy/Layout/Path.pm
+${P5SITE}/Graph/Easy/Layout/Repair.pm
+${P5SITE}/Graph/Easy/Layout/Scout.pm
+${P5SITE}/Graph/Easy/Node/
+${P5SITE}/Graph/Easy/Node.pm
+${P5SITE}/Graph/Easy/Node/Anon.pm
+${P5SITE}/Graph/Easy/Node/Cell.pm
+${P5SITE}/Graph/Easy/Node/Empty.pm
+${P5SITE}/Graph/Easy/Parser/
+${P5SITE}/Graph/Easy/Parser.pm
+${P5SITE}/Graph/Easy/Parser/Graphviz.pm
+${P5SITE}/Graph/Easy/Parser/VCG.pm
+${P5SITE}/Graph/Easy/Util.pm
+@man man/man1/graph-easy.1
+@man man/man3p/Graph::Easy.3p
+@man man/man3p/Graph::Easy::As_ascii.3p
+@man man/man3p/Graph::Easy::As_graphml.3p
+@man man/man3p/Graph::Easy::As_graphviz.3p
+@man man/man3p/Graph::Easy::As_txt.3p
+@man man/man3p/Graph::Easy::As_vcg.3p
+@man man/man3p/Graph::Easy::Attributes.3p
+@man man/man3p/Graph::Easy::Base.3p
+@man man/man3p/Graph::Easy::Edge.3p
+@man man/man3p/Graph::Easy::Edge::Cell.3p
+@man man/man3p/Graph::Easy::Group.3p
+@man man/man3p/Graph::Easy::Group::Anon.3p
+@man man/man3p/Graph::Easy::Group::Cell.3p
+@man man/man3p/Graph::Easy::Layout.3p
+@man man/man3p/Graph::Easy::Layout::Chain.3p
+@man man/man3p/Graph::Easy::Layout::Force.3p
+@man man/man3p/Graph::Easy::Layout::Grid.3p
+@man man/man3p/Graph::Easy::Layout::Path.3p
+@man man/man3p/Graph::Easy::Layout::Repair.3p
+@man man/man3p/Graph::Easy::Layout::Scout.3p
+@man man/man3p/Graph::Easy::Node.3p
+@man man/man3p/Graph::Easy::Node::Anon.3p
+@man man/man3p/Graph::Easy::Node::Cell.3p
+@man man/man3p/Graph::Easy::Node::Empty.3p
+@man man/man3p/Graph::Easy::Parser.3p
+@man man/man3p/Graph::Easy::Parser::Graphviz.3p
+@man man/man3p/Graph::Easy::Parser::VCG.3p
+@man man/man3p/Graph::Easy::Util.3p
