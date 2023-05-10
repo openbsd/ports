@@ -87,6 +87,8 @@
      SUBDIR += p5-Chart-Math-Axis
      SUBDIR += p5-Data-PowerSet
      SUBDIR += p5-GraphViz
+     SUBDIR += p5-Graph-Easy
+     SUBDIR += p5-Graph-Easy-As_svg
      SUBDIR += p5-Math-Base36
      SUBDIR += p5-Math-Base85
      SUBDIR += p5-Math-BaseCnv
