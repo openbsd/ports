@@ -549,6 +549,7 @@
      SUBDIR += selfoss
      SUBDIR += sfeed
      SUBDIR += slowhttptest
+     SUBDIR += smarc
      SUBDIR += snownews
      SUBDIR += sogo
      SUBDIR += sope
