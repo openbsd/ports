@@ -3,15 +3,14 @@
 COMMENT=	framework for making media discovery and browsing easy
 
 GNOME_PROJECT=	grilo
-GNOME_VERSION=	0.3.15
+GNOME_VERSION=	0.3.16
 API=		0.3
-REVISION=	1
 
 SUBST_VARS=	API
 
-SHARED_LIBS += grilo-0.3                 0.2 # 0.315.1
-SHARED_LIBS += grlnet-0.3                0.0 # 0.315.0
-SHARED_LIBS += grlpls-0.3                0.0 # 0.315.0
+SHARED_LIBS += grilo-0.3                 0.2 # 0.316.1
+SHARED_LIBS += grlnet-0.3                0.0 # 0.316.0
+SHARED_LIBS += grlpls-0.3                0.0 # 0.316.0
 
 CATEGORIES+=	multimedia
 

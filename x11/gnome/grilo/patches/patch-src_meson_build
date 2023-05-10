@@ -3,11 +3,11 @@ Should match b_lundef in meson(1).
 Index: src/meson.build
 --- src/meson.build.orig
 +++ src/meson.build
-@@ -100,7 +100,6 @@ libgrl = shared_library(grl_name,
+@@ -102,7 +102,6 @@ libgrl = shared_library(grl_name,
      version: grilo_lt_version,
      dependencies: libgrl_deps,
      c_args: c_args,
--    link_args: '-Wl,--no-undefined',
+-    link_args: cc.get_supported_link_arguments('-Wl,--no-undefined'),
      include_directories: libgrl_inc)
  
  libgrl_dep = declare_dependency(link_with: libgrl,
