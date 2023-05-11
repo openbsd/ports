@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1586 2023/05/07 16:59:36 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1587 2023/05/11 17:36:32 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1738,7 +1738,7 @@ ECHO_REORDER ?= :
 # recheck WRK...
 .for w in WRKDIR WRKDIST WRKSRC WRKCONF WRKBUILD WRKINST DIST_SUBDIR
 .  if ${$w:M*/}
-#ERRORS += "Fatal: $w ends with a slash: ${$w}"
+ERRORS += "Fatal: $w ends with a slash: ${$w}"
 .  endif
 .endfor
 
