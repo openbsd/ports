@@ -1,0 +1,2 @@
+${GEGL_PLUGINS}/
+@so ${GEGL_PLUGINS}/goo.so

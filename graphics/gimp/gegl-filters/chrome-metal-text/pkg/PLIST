@@ -1,0 +1,2 @@
+@so ${GEGL_PLUGINS}/geglchrome.so
+share/doc/gegl-filters/gegl_chrome_guide.pdf

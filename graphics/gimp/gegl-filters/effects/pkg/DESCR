@@ -1,0 +1,6 @@
+Plugin to do various effects on text layers
+
+Important: the plugin shows up in "Tools/GEGL operation..." and not
+in "Filters/Artistic" as you would expect from the code.
+
+See the documentation in ${DOCDIR}

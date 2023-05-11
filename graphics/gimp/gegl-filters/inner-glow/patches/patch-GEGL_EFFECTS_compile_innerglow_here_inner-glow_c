@@ -1,0 +1,12 @@
+Index: GEGL_EFFECTS/compile_innerglow_here/inner-glow.c
+--- GEGL_EFFECTS/compile_innerglow_here/inner-glow.c.orig
++++ GEGL_EFFECTS/compile_innerglow_here/inner-glow.c
+@@ -91,7 +91,7 @@ property_double (opacity, _("Opacity"), 1.2)
+   ui_steps      (0.01, 0.10)
+ 
+ 
+-property_color  (notouch, _("Don't touch. Needed for filter to work"), "#")
++property_color  (notouch, _("Don't touch. Needed for filter to work"), "#00ffffaa")
+     ui_meta     ("role", "output-extent")
+ 
+ 

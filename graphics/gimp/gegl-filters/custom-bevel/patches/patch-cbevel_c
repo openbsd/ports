@@ -1,0 +1,16 @@
+Index: cbevel.c
+--- cbevel.c.orig
++++ cbevel.c
+@@ -245,10 +245,11 @@ default: usethis = state->hardlight;
+   gegl_node_link_many (state->input, state->median, state->box, state->gaussian, usethis, state->opacity, state->mcb, state->sharpen, state->desat, state->multiply2, state->nop, state->mcol, state->lightness, state->output,  NULL);
+   gegl_node_connect_from (usethis, "aux", state->emboss, "output");
+   }
+-else
++else {
+ 
+   gegl_node_link_many (state->input, state->median, state->box, state->gaussian, usethis, state->stringopacity, state->mcb, state->sharpen, state->desat, state->multiply2, state->nop, state->mcol, state->lightness, state->output,  NULL);
+   gegl_node_connect_from (usethis, "aux", state->emboss, "output");
++  }
+ 
+ }
+ 

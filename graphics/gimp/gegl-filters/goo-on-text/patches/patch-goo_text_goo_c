@@ -1,0 +1,12 @@
+Index: goo_text/goo.c
+--- goo_text/goo.c.orig
++++ goo_text/goo.c
+@@ -23,7 +23,7 @@
+ 
+ #ifdef GEGL_PROPERTIES
+ 
+-property_color (color, _("Color of extenral goo"), "#00f73b")
++property_color (color, _("Color of external goo"), "#00f73b")
+     description (_("The color to paint over the input"))
+ 
+ property_double (tile_size, _("Increase to coat text with Goo"), 6.0)

@@ -1,0 +1,2 @@
+@so ${GEGL_PLUGINS}/gegleffects.so
+share/doc/gegl-filters/GEGL_effects_guide.pdf

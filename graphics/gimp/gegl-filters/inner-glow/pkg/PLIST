@@ -1,0 +1,3 @@
+@so ${GEGL_PLUGINS}/inner-glow.so
+share/doc/gegl-filters/
+share/doc/gegl-filters/Inner_Glow_guide.pdf

@@ -1,0 +1,6 @@
+Plugin "Stroke/shadow/glow":
+this creates an outline of the layer, adds a shadow to it
+and optionally uses an external image as the source for the light.
+
+Important: the plugin shows up in "Tools/GEGL operation..." and not
+in "Filters/Artistic" as you would expect from the code.

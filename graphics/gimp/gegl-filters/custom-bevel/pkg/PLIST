@@ -1,0 +1,12 @@
+@so ${GEGL_PLUGINS}/cbevel.so
+share/doc/gegl-filters/
+share/doc/gegl-filters/another_glossy_one
+share/doc/gegl-filters/big
+share/doc/gegl-filters/bump
+share/doc/gegl-filters/chisel
+share/doc/gegl-filters/custom_bevel_guide.pdf
+share/doc/gegl-filters/fat
+share/doc/gegl-filters/glossy
+share/doc/gegl-filters/glossy_lighten
+share/doc/gegl-filters/unique
+share/doc/gegl-filters/unique2
