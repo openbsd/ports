@@ -1,12 +1,11 @@
 COMMENT =		VMware vSphere Automation SDK for Python
 
-MODPY_EGG_VERSION =	8.0.0.1
+MODPY_EGG_VERSION =	8.0.1.0
 GH_ACCOUNT =		vmware
 GH_PROJECT =		vsphere-automation-sdk-python
-GH_TAGNAME =		v8.0.0.1
+GH_TAGNAME =		v${MODPY_EGG_VERSION}
 
 PKGNAME =		py-vsphere-automation-${MODPY_EGG_VERSION}
-REVISION =		1
 
 CATEGORIES =		sysutils
 
@@ -26,6 +25,7 @@ BUILD_DEPENDS =		devel/py-pip${MODPY_FLAVOR} \
 			security/py-openssl${MODPY_FLAVOR} \
 			textproc/py-lxml${MODPY_FLAVOR}
 RUN_DEPENDS =		devel/py-pip${MODPY_FLAVOR} \
+			devel/py-setuptools${MODPY_FLAVOR} \
 			sysutils/py-vmomi${MODPY_FLAVOR} \
 			security/py-openssl${MODPY_FLAVOR} \
 			textproc/py-lxml${MODPY_FLAVOR}
