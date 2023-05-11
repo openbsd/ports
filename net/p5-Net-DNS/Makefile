@@ -1,6 +1,6 @@
 COMMENT =	perl interface to the domain name system
 
-DISTNAME =	Net-DNS-1.37
+DISTNAME =	Net-DNS-1.38
 SUPDISTFILES =	${DISTFILES}.asc
 
 CATEGORIES =	net
@@ -15,6 +15,7 @@ PERMIT_PACKAGE =	Yes
 MASTER_SITES =		http://www.net-dns.org/download/
 
 MODULES =		cpan
+
 RUN_DEPENDS =		security/p5-Digest-HMAC>=1.03
 TEST_DEPENDS =		devel/p5-Test-Pod>=1.45 \
 			net/p5-Net-DNS-SEC>=1.01 \
