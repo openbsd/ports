@@ -1,0 +1,21 @@
+Index: bin/use_node
+--- bin/use_node.orig
++++ bin/use_node
+@@ -25,6 +25,8 @@ SCRIPT="$0"
+ UNAME=$(uname -s)
+ if [ $UNAME = "FreeBSD" ]; then
+   OS="freebsd"
++elif [ $UNAME = "OpenBSD" ]; then
++  OS="openbsd"
+ elif [ $UNAME = "Darwin" ]; then
+   OS="darwin"
+ else
+@@ -68,7 +70,7 @@ fi
+ if [ -x "$NODE" ]; then
+   # Node.js binary was found where it was expected; no need to show an error
+   NODE_ERROR_SHOW=
+-elif [ $OS = "freebsd" ]; then
++elif [ $OS = "freebsd" -o $OS = "openbsd" ]; then
+   NODE="${LOCALBASE}/bin/node"
+ else
+   NODE="$(command -v node)"
