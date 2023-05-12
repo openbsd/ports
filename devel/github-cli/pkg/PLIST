@@ -1,5 +1,6 @@
 @bin bin/gh
 @man man/man1/gh-alias-delete.1
+@man man/man1/gh-alias-import.1
 @man man/man1/gh-alias-list.1
 @man man/man1/gh-alias-set.1
 @man man/man1/gh-alias.1
