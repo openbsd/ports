@@ -13,7 +13,7 @@ CATEGORIES=		audio devel
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c execinfo iconv m ogg pcaudio pulse
-WANTLIB += pulse-simple vorbis
+WANTLIB += pulse-simple vorbis xcb
 
 COMPILER=		base-clang ports-gcc base-gcc
 
@@ -28,7 +28,7 @@ AUTORECONF=		./autogen.sh
 
 CONFIGURE_STYLE=	autoreconf
 
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include"  \
+CONFIGURE_ENV=		CXXFLAGS="-I${LOCALBASE}/include -L${X11BASE}/lib" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
