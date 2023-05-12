@@ -14,8 +14,8 @@ Index: bin/opensearch-env
  SCRIPT="$0"
  
  UNAME=$(uname -s)
-@@ -42,7 +44,7 @@ done
- OPENSEARCH_HOME=`dirname "$OPENSEARCH_HOME"`
+@@ -44,7 +46,7 @@ if [[ -z "$OPENSEARCH_HOME" ]]; then
+ fi
  
  # now set the classpath
 -OPENSEARCH_CLASSPATH="$OPENSEARCH_HOME/lib/*"
@@ -23,7 +23,7 @@ Index: bin/opensearch-env
  
  # now set the path to java: OPENSEARCH_JAVA_HOME -> JAVA_HOME -> bundled JDK
  if [ ! -z "$OPENSEARCH_JAVA_HOME" ]; then
-@@ -94,7 +96,7 @@ fi
+@@ -96,7 +98,7 @@ fi
  export HOSTNAME=$HOSTNAME
  
  if [ -z "$OPENSEARCH_PATH_CONF" ]; then

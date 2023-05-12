@@ -1,6 +1,6 @@
 COMMENT =	distributed and RESTful search engine
 
-V =		2.6.0
+V =		2.7.0
 DISTNAME =	opensearch-$V-linux-x64
 PKGNAME =	opensearch-$V
 
@@ -49,9 +49,12 @@ do-build:
 		 -type f -exec chmod 755 {} +
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/opensearch/ ${PREFIX}/share/{doc,examples}/opensearch/
+	${INSTALL_DATA_DIR} ${PREFIX}/opensearch/ \
+		${PREFIX}/opensearch/extensions \
+		${PREFIX}/share/{doc,examples}/opensearch/
 	cp -R ${WRKSRC}/config/* ${PREFIX}/share/examples/opensearch/
-	cp -R ${WRKSRC}/{bin,lib,modules,performance-analyzer-rca,plugins} ${PREFIX}/opensearch/
+	cp -R ${WRKSRC}/{bin,lib,modules,performance-analyzer-rca,plugins} \
+		${PREFIX}/opensearch/
 	${INSTALL_DATA} ${WRKSRC}/{LICENSE,NOTICE}.txt ${WRKSRC}/README.md \
 		${PREFIX}/share/doc/opensearch/
 

@@ -8,7 +8,7 @@ Initial Node/Cluster Configuration
 Configuration files are located in ${SYSCONFDIR}/opensearch
 
 The security plugin is enabled by default and needs to be configured
-before starting OpenSearch.  
+before starting OpenSearch.
 For demo/testing purposes, basic security configuration can be created
 by running:
 
