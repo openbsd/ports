@@ -1,7 +1,7 @@
 GH_ACCOUNT =	google
 GH_PROJECT =	boringssl
-GH_COMMIT =	c6dd304d2c628277b710ab50ce9eed660696756d
-DISTNAME =	boringssl-20230511
+GH_COMMIT =	b92fcfdc17f3ad794c220a86f4ae6695d0a0fb61
+DISTNAME =	boringssl-20230512
 
 MASTER_SITES0 =	https://proxy.golang.org/
 
