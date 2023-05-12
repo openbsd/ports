@@ -28,6 +28,7 @@
 @man man/man1/glab-incident-close.1
 @man man/man1/glab-incident-list.1
 @man man/man1/glab-incident-reopen.1
+@man man/man1/glab-incident-unsubscribe.1
 @man man/man1/glab-incident-view.1
 @man man/man1/glab-incident.1
 @man man/man1/glab-issue-board-create.1
