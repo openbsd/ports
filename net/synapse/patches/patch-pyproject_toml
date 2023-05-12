@@ -1,5 +1,7 @@
 No need to run-depend on setuptools_rust and rust..
 
+chunk 2: https://github.com/matrix-org/synapse/commit/5a7742a83308743dfd5e9a1fab751e345757aab7
+to remove in 1.84
 Index: pyproject.toml
 --- pyproject.toml.orig
 +++ pyproject.toml
