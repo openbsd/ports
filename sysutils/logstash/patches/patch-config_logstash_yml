@@ -19,7 +19,7 @@ Index: config/logstash.yml
  #
  # ------------ Other Settings --------------
  #
-@@ -323,55 +323,3 @@
+@@ -323,56 +323,3 @@
  # Flag to output log lines of each pipeline in its separate log file. Each log filename contains the pipeline.name
  # Default is false
  # pipeline.separate_logs: false
@@ -75,3 +75,4 @@ Index: config/logstash.yml
 -# X-Pack GeoIP plugin
 -# https://www.elastic.co/guide/en/logstash/current/plugins-filters-geoip.html#plugins-filters-geoip-manage_update
 -#xpack.geoip.download.endpoint: "https://geoip.elastic.co/v1/database"
+-#xpack.geoip.downloader.enabled: true
