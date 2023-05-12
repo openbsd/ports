@@ -1,7 +1,7 @@
 Index: include/openssl/base.h
 --- include/openssl/base.h.orig
 +++ include/openssl/base.h
-@@ -166,6 +166,10 @@ extern "C" {
+@@ -164,6 +164,10 @@ extern "C" {
  #define OPENSSL_FREEBSD
  #endif
  

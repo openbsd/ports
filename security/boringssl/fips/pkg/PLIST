@@ -47,6 +47,8 @@ eboringssl-fips/include/openssl/hmac.h
 eboringssl-fips/include/openssl/hpke.h
 eboringssl-fips/include/openssl/hrss.h
 eboringssl-fips/include/openssl/is_boringssl.h
+eboringssl-fips/include/openssl/kdf.h
+eboringssl-fips/include/openssl/kyber.h
 eboringssl-fips/include/openssl/lhash.h
 eboringssl-fips/include/openssl/md4.h
 eboringssl-fips/include/openssl/md5.h
@@ -78,6 +80,7 @@ eboringssl-fips/include/openssl/ssl.h
 eboringssl-fips/include/openssl/ssl3.h
 eboringssl-fips/include/openssl/stack.h
 eboringssl-fips/include/openssl/thread.h
+eboringssl-fips/include/openssl/time.h
 eboringssl-fips/include/openssl/tls1.h
 eboringssl-fips/include/openssl/trust_token.h
 eboringssl-fips/include/openssl/type_check.h

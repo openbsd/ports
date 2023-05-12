@@ -1,8 +1,8 @@
 Index: crypto/fipsmodule/rand/urandom.c
 --- crypto/fipsmodule/rand/urandom.c.orig
 +++ crypto/fipsmodule/rand/urandom.c
-@@ -71,6 +71,12 @@
- #endif
+@@ -68,6 +68,12 @@
+ #include <sys/random.h>
  #endif
  
 +#if defined(OPENSSL_OPENBSD)
@@ -14,7 +14,7 @@ Index: crypto/fipsmodule/rand/urandom.c
  #include <openssl/thread.h>
  #include <openssl/mem.h>
  
-@@ -334,6 +340,11 @@ static int fill_with_entropy(uint8_t *out, size_t len,
+@@ -300,6 +306,11 @@ static int fill_with_entropy(uint8_t *out, size_t len,
        r = boringssl_getrandom(out, len, getrandom_flags);
  #elif defined(FREEBSD_GETRANDOM)
        r = getrandom(out, len, getrandom_flags);
