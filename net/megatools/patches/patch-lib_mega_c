@@ -3,7 +3,7 @@ Fix build with opaque RSA in LibreSSL 3.5.
 Index: lib/mega.c
 --- lib/mega.c.orig
 +++ lib/mega.c
-@@ -785,7 +785,7 @@ static gboolean rsa_key_gen(struct rsa_key *k)
+@@ -787,7 +787,7 @@ static gboolean rsa_key_gen(struct rsa_key *k)
  		return FALSE;
  	}
  

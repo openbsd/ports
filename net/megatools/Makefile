@@ -2,8 +2,7 @@ PORTROACH =		limit:[0-9]\.tar\.gz
 
 COMMENT =		command line client application for Mega
 
-DISTNAME =		megatools-1.10.3
-REVISION =		0
+DISTNAME =		megatools-1.11.1.20230212
 
 CATEGORIES =		net
 
@@ -14,23 +13,20 @@ MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =  c crypto curl gio-2.0 glib-2.0 gobject-2.0 intl pthread
-WANTLIB += ssl
+WANTLIB += c crypto curl gio-2.0 glib-2.0 gobject-2.0
 
 MASTER_SITES =		https://megatools.megous.com/builds/
 
 COMPILER =		base-clang ports-gcc
 BUILD_DEPENDS =		devel/gobject-introspection \
-			textproc/asciidoc
+			textproc/asciidoc \
+			textproc/docbook2x
 LIB_DEPENDS =		devel/glib2 \
 			net/curl
 
-USE_GMAKE =		Yes
-CONFIGURE_STYLE =	gnu
-MAKE_FLAGS =		VERBOSE=1
+MODULES =		devel/meson
 
-CONFIGURE_ARGS =	--disable-introspection
-
-SEPARATE_BUILD =	Yes
+# tests require network access
+NO_TEST =		Yes
 
 .include <bsd.port.mk>
