@@ -1,7 +1,7 @@
 BROKEN-sparc64=	fibers requires either ucontext or asm code (not present for sparc64)
 
 PORTROACH=	limit:^8\.1
-PHP_VERSION=	8.1.18
+PHP_VERSION=	8.1.19
 PHP_PKGSPEC=	>=8.1,<8.2
 
 AUTOCONF_VERSION=	2.71

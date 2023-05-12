@@ -20,6 +20,7 @@ bin/php
 @bin bin/php-${PV}
 bin/php-config-${PV}
 bin/phpize-${PV}
+@comment lib/apache2/
 lib/php-${PV}/
 lib/php-${PV}/modules/
 @so lib/php-${PV}/modules/opcache.so
