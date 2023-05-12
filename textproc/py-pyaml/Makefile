@@ -1,10 +1,9 @@
 COMMENT =		module to produce pretty and readable YAML
 
-MODPY_EGG_VERSION =	21.10.1
+MODPY_EGG_VERSION =	23.5.9
 
 DISTNAME =		pyaml-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
 
 CATEGORIES =		textproc
 
