@@ -2,11 +2,11 @@ COMMENT=		Verilog simulation and synthesis tool
 
 V=			11.0
 DISTNAME=		verilog-$V
-REVISION=		0
+REVISION=		1
 PKGNAME=		iverilog-$V
 CATEGORIES=		lang devel
 
-HOMEPAGE=		http://iverilog.icarus.com/
+HOMEPAGE =		https://steveicarus.github.io/iverilog/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
