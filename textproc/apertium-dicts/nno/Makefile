@@ -1,5 +1,3 @@
-BROKEN =	lttoolbox (libxml>=2.11.0): internal error: Huge input lookup
-
 L =	nno
 LANG =	Norwegian Nynorsk
 V =	1.1.0

@@ -1,5 +1,3 @@
-BROKEN =	lttoolbox (libxml>=2.11.0): internal error: Huge input lookup
-
 L =	cat
 LANG =	Catalan
 V =	2.10.2

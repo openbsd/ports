@@ -1,5 +1,3 @@
-BROKEN =	lttoolbox (libxml>=2.11.0): internal error: Huge input lookup
-
 L =	hbs
 LANG =	Serbo-Croatian
 V =	0.5.0

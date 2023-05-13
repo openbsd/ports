@@ -1,5 +1,3 @@
-BROKEN =	lttoolbox (libxml>=2.11.0): internal error: Huge input lookup
-
 L =	rus
 LANG =	Russian
 V =	0.2.1
