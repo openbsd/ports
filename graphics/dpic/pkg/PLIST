@@ -1,5 +1,7 @@
 @bin bin/dpic
 @man man/man1/dpic.1
+share/doc/dpic/
+share/doc/dpic/dpic-doc.pdf
 share/examples/dpic/
 share/examples/dpic/Examples.txt
 share/examples/dpic/Makefile
