@@ -1,10 +1,10 @@
 COMMENT =	declarative cross-platform build tool
 
-V =		2.0.0
+V =		2.0.1
 DISTNAME =	qbs-src-${V}
 PKGNAME =	qbs-${V}
 
-SHARED_LIBS =	qbscore		9.0
+SHARED_LIBS =	qbscore		10.0
 
 CATEGORIES =	devel
 
