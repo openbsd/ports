@@ -238,6 +238,7 @@
      SUBDIR += json-glib
      SUBDIR += jsoncpp
      SUBDIR += jsonrpc-glib
+     SUBDIR += kainjow-mustache
      SUBDIR += kdevelop
      SUBDIR += kdiff3
      SUBDIR += keystone
