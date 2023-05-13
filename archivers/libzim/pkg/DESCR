@@ -1,0 +1,2 @@
+The libzim is the standard implementation of the ZIM archive specification.
+It is a library which implements the read and write method for ZIM files.
