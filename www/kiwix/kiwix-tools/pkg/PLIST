@@ -1,0 +1,13 @@
+@newgroup _kiwix-serve:891
+@newuser _kiwix-serve:891:891::Kiwix XML library server:/var/empty:/sbin/nologin
+@rcscript ${RCDIR}/kiwix_serve
+@bin bin/kiwix-manage
+@bin bin/kiwix-search
+@bin bin/kiwix-serve
+man/fr/
+man/fr/man1/
+@man man/fr/man1/kiwix-manage.1
+@man man/fr/man1/kiwix-serve.1
+@man man/man1/kiwix-manage.1
+@man man/man1/kiwix-search.1
+@man man/man1/kiwix-serve.1

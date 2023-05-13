@@ -1,0 +1,3 @@
+The Libkiwix provides the Kiwix software suite core, interfacing with
+Kiwix's compressed content packages from large popular websites like
+Wikipedia, the Gutenberg project, or Stack Exchange.

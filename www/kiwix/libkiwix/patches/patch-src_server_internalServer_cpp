@@ -1,0 +1,12 @@
+Index: src/server/internalServer.cpp
+--- src/server/internalServer.cpp.orig
++++ src/server/internalServer.cpp
+@@ -19,7 +19,7 @@
+ 
+ #include "internalServer.h"
+ 
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ #include <netinet/in.h>
+ #endif
+ 

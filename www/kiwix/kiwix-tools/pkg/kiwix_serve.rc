@@ -1,0 +1,9 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/bin/kiwix-serve -d"
+daemon_user="_kiwix-serve"
+daemon_flags="-p 1024"
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1
