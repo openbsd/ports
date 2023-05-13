@@ -1,7 +1,0 @@
-bin/tdm_update
-bin/thedarkmod
-share/doc/pkg-readmes/${PKGSTEM}
-share/thedarkmod/
-share/thedarkmod/Darkmod.cfg
-@bin share/thedarkmod/tdm_update
-@bin share/thedarkmod/thedarkmod

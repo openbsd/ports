@@ -301,7 +301,6 @@
      SUBDIR += tbftss
      SUBDIR += teeworlds
      SUBDIR += tetrinetx
-     SUBDIR += thedarkmod
      SUBDIR += tic80
      SUBDIR += tome4
      SUBDIR += tong
