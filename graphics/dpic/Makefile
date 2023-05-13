@@ -1,6 +1,6 @@
 COMMENT =		pic-like interpreter for producing line graphics
 
-DISTNAME =		dpic-2021.01.01
+DISTNAME =		dpic-2023.02.01
 
 CATEGORIES =		graphics
 
@@ -19,6 +19,8 @@ TEST_DEPENDS =		print/texlive/base \
 			print/texlive/texmf,-main
 
 CONFIGURE_STYLE =	gnu
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dpic ${PREFIX}/bin
