@@ -1,11 +1,10 @@
 COMMENT=	create, alter and inspect Matroska files
 
-DISTNAME=	mkvtoolnix-75.0.0
-REVISION=	0
+DISTNAME=	mkvtoolnix-76.0
 
 CATEGORIES=	multimedia x11
 
-HOMEPAGE=	https://www.bunkus.org/videotools/mkvtoolnix/
+HOMEPAGE=	https://mkvtoolnix.download
 
 MAINTAINER=	Rafael Sadowski <rsadowski@openbsd.org>
 
@@ -17,7 +16,7 @@ WANTLIB += Qt5Gui Qt5Multimedia Qt5Network Qt5Svg Qt5Widgets boost_filesystem
 WANTLIB += boost_system c cmark dvdread ebml fmt gmp iconv intl
 WANTLIB += m matroska ogg pugixml vorbis z
 
-MASTER_SITES=	https://www.bunkus.org/videotools/mkvtoolnix/sources/
+MASTER_SITES=	https://mkvtoolnix.download/sources/
 
 EXTRACT_SUFX=	.tar.xz
 
