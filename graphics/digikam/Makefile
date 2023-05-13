@@ -45,6 +45,7 @@ WANTLIB += opencv_flann opencv_imgcodecs opencv_imgproc opencv_ml
 WANTLIB += opencv_objdetect png portaudio pulse swresample swscale
 WANTLIB += tiff usb-1.0 x265 xml2 xslt z
 
+# dlopen(3)
 WANTLIB += lib/qt5/QtAV lib/qt5/QtAVWidgets
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/digikam/${V}/}
