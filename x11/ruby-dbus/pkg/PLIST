@@ -13,10 +13,6 @@ ${GEM_LIB}/gems/${DISTNAME}/examples/
 ${GEM_LIB}/gems/${DISTNAME}/examples/doc/
 ${GEM_LIB}/gems/${DISTNAME}/examples/doc/README.md
 ${GEM_LIB}/gems/${DISTNAME}/examples/doc/_extract_examples
-${GEM_LIB}/gems/${DISTNAME}/examples/gdbus/
-${GEM_LIB}/gems/${DISTNAME}/examples/gdbus/gdbus
-${GEM_LIB}/gems/${DISTNAME}/examples/gdbus/gdbus.glade
-${GEM_LIB}/gems/${DISTNAME}/examples/gdbus/launch.sh
 ${GEM_LIB}/gems/${DISTNAME}/examples/no-introspect/
 ${GEM_LIB}/gems/${DISTNAME}/examples/no-introspect/nm-test.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/no-introspect/tracker-test.rb
@@ -57,6 +53,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/dbus/message_queue.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/dbus/object.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/dbus/object_manager.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/dbus/object_path.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/dbus/platform.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/dbus/proxy_object.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/dbus/proxy_object_factory.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/dbus/proxy_object_interface.rb
@@ -88,6 +85,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/object_path_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/object_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/packet_marshaller_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/packet_unmarshaller_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/platform_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/property_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/proxy_object_interface_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/proxy_object_spec.rb
