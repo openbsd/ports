@@ -21,6 +21,7 @@ include/qcoro5/QCoro/QCoroQmlTask
 include/qcoro5/QCoro/QCoroSignal
 include/qcoro5/QCoro/QCoroTask
 include/qcoro5/QCoro/QCoroTcpServer
+include/qcoro5/QCoro/QCoroTest
 include/qcoro5/QCoro/QCoroThread
 include/qcoro5/QCoro/QCoroTimer
 include/qcoro5/QCoro/QCoroWebSocket
@@ -58,6 +59,7 @@ include/qcoro5/qcoro/qcoroquick_export.h
 include/qcoro5/qcoro/qcorosignal.h
 include/qcoro5/qcoro/qcorotask.h
 include/qcoro5/qcoro/qcorotcpserver.h
+include/qcoro5/qcoro/qcorotest.h
 include/qcoro5/qcoro/qcorothread.h
 include/qcoro5/qcoro/qcorotimer.h
 include/qcoro5/qcoro/qcorowebsocket.h
@@ -100,6 +102,10 @@ lib/cmake/QCoro5Quick/QCoro5QuickConfig.cmake
 lib/cmake/QCoro5Quick/QCoro5QuickConfigVersion.cmake
 lib/cmake/QCoro5Quick/QCoro5QuickTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/QCoro5Quick/QCoro5QuickTargets.cmake
+lib/cmake/QCoro5Test/
+lib/cmake/QCoro5Test/QCoro5TestConfig.cmake
+lib/cmake/QCoro5Test/QCoro5TestConfigVersion.cmake
+lib/cmake/QCoro5Test/QCoro5TestTargets.cmake
 lib/cmake/QCoro5WebSockets/
 lib/cmake/QCoro5WebSockets/QCoro5WebSocketsConfig.cmake
 lib/cmake/QCoro5WebSockets/QCoro5WebSocketsConfigVersion.cmake
@@ -119,4 +125,5 @@ mkspecs/modules/qt_QCoroDBus.pri
 mkspecs/modules/qt_QCoroNetwork.pri
 mkspecs/modules/qt_QCoroQml.pri
 mkspecs/modules/qt_QCoroQuick.pri
+mkspecs/modules/qt_QCoroTest.pri
 mkspecs/modules/qt_QCoroWebSockets.pri
