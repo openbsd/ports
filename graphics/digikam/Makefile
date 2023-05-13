@@ -10,7 +10,7 @@ V =		8.0.0
 PKGNAME =	digikam-${V}
 DISTNAME =	digiKam-${V}
 CATEGORIES =	graphics
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://www.digikam.org/
 
@@ -105,6 +105,7 @@ LIB_DEPENDS =	audio/portaudio-svn \
 		graphics/png \
 		graphics/tiff \
 		multimedia/qtav \
+		multimedia/libheif \
 		multimedia/x265 \
 		x11/kde-applications/akonadi \
 		x11/kde-applications/akonadi-contacts \
