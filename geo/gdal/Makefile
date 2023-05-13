@@ -1,7 +1,7 @@
 COMMENT-main =	translator library for geospatial data formats
 COMMENT-python =python bindings and utilities for GDAL
 
-V =		3.6.4
+V =		3.7.0
 DISTNAME =	gdal-${V}
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		gdalautotest-${V}${EXTRACT_SUFX}
@@ -11,7 +11,7 @@ FULLPKGPATH-main =	geo/gdal,-main
 FULLPKGNAME-python =	py3-${DISTNAME}
 FULLPKGPATH-python =	geo/gdal,-python${FLAVOR_EXT:S/-/,/g}
 
-SHARED_LIBS =	gdal 45.2
+SHARED_LIBS =	gdal 46.0
 CATEGORIES =	geo devel
 
 HOMEPAGE =	https://gdal.org/
@@ -35,6 +35,7 @@ MULTI_PACKAGES =	-main -python
 
 MODPY_RUNDEP = No
 LIB_DEPENDS-main =	databases/sqlite3 \
+			archivers/libarchive \
 			archivers/zstd \
 			graphics/tiff \
 			net/curl \
@@ -56,7 +57,7 @@ LIB_DEPENDS-main =	databases/sqlite3 \
 			devel/proj>=6.0 \
 			devel/geotiff>=1.5.0
 
-WANTLIB-main =		c crypto curl expat freexl geos_c geotiff \
+WANTLIB-main =		archive c crypto curl expat freexl geos_c geotiff \
 			gif hdf5 iconv jpeg json-c jxl jxl_threads lzma lz4 m \
 			netcdf openjp2 pcre2-8 png poppler pq proj pthread qhull_r \
 			spatialite sqlite3 ssl tiff xml2 webp z zstd \
@@ -69,10 +70,12 @@ WANTLIB-python =	gdal m pthread ${COMPILER_LIBCXX}
 
 BUILD_DEPENDS +=	${RUN_DEPENDS} \
 			math/py-numpy${MODPY_FLAVOR} \
+			devel/gtest \
 			devel/swig
 
 MODPY_PYTEST =		Yes
 TEST_DEPENDS +=		${FULLPKGNAME-python}:${FULLPKGPATH-python} \
+			sysutils/py-filelock${MODPY_FLAVOR} \
 			textproc/py-lxml${MODPY_FLAVOR}
 TEST_ENV =		GDAL_DOWNLOAD_TEST_DATA=1 GDAL_RUN_SLOW_TESTS=yes
 
@@ -109,14 +112,5 @@ CONFIGURE_ARGS =-DGDAL_USE_CFITSIO:BOOL=OFF \
 
 post-extract:
 	ln -sf ${WRKDIR}/gdalautotest-${V:C/rc.//} ${WRKSRC}/autotest
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${MODPY_PY_PREFIX}gdal
-	cp ${WRKSRC}/swig/python/gdal-utils/osgeo_utils/samples/*.py ${PREFIX}/share/examples/${MODPY_PY_PREFIX}gdal
-
-do-test:
-	cd ${WRKSRC}/autotest && env ${TEST_ENV} ${MODPY_BIN} -m pytest
-#	doesnt work, pytest needs to be run from within the tests dir
-#	${MODPY_TEST_TARGET}
 
 .include <bsd.port.mk>

@@ -27,6 +27,7 @@ bin/gdal-config
 @bin bin/ogrinfo
 @bin bin/ogrlineref
 @bin bin/ogrtindex
+@bin bin/sozip
 include/cpl_atomic_ops.h
 include/cpl_auto_close.h
 include/cpl_compressor.h
@@ -131,6 +132,7 @@ lib/pkgconfig/gdal.pc
 @man man/man1/ogrinfo.1
 @man man/man1/ogrlineref.1
 @man man/man1/ogrtindex.1
+@man man/man1/sozip.1
 share/bash-completion/completions/gdal-config
 share/bash-completion/completions/gdal2tiles.py
 share/bash-completion/completions/gdal2xyz.py
@@ -182,6 +184,7 @@ share/gdal/eedaconf.json
 share/gdal/epsg.wkt
 share/gdal/esri_StatePlane_extra.wkt
 share/gdal/gdalicon.png
+share/gdal/gdalinfo_output.schema.json
 share/gdal/gdalmdiminfo_output.schema.json
 share/gdal/gdalvrt.xsd
 share/gdal/gml_registry.xml
@@ -203,6 +206,7 @@ share/gdal/grib2_table_4_2_0_190.csv
 share/gdal/grib2_table_4_2_0_191.csv
 share/gdal/grib2_table_4_2_0_2.csv
 share/gdal/grib2_table_4_2_0_20.csv
+share/gdal/grib2_table_4_2_0_21.csv
 share/gdal/grib2_table_4_2_0_3.csv
 share/gdal/grib2_table_4_2_0_4.csv
 share/gdal/grib2_table_4_2_0_5.csv
@@ -224,6 +228,7 @@ share/gdal/grib2_table_4_2_2_0.csv
 share/gdal/grib2_table_4_2_2_3.csv
 share/gdal/grib2_table_4_2_2_4.csv
 share/gdal/grib2_table_4_2_2_5.csv
+share/gdal/grib2_table_4_2_2_6.csv
 share/gdal/grib2_table_4_2_3_0.csv
 share/gdal/grib2_table_4_2_3_1.csv
 share/gdal/grib2_table_4_2_3_2.csv
@@ -287,6 +292,7 @@ share/gdal/jpfgdgml_WStrL.gfs
 share/gdal/netcdf_config.xsd
 share/gdal/nitf_spec.xml
 share/gdal/nitf_spec.xsd
+share/gdal/ogrinfo_output.schema.json
 share/gdal/ogrvrt.xsd
 share/gdal/osmconf.ini
 share/gdal/ozi_datum.csv
