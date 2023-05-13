@@ -24,6 +24,7 @@
      SUBDIR += libdeflate
      SUBDIR += libmspack
      SUBDIR += libtar
+     SUBDIR += libzim
      SUBDIR += libzip
      SUBDIR += lrzip
      SUBDIR += luazlib
