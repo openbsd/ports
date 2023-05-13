@@ -1359,7 +1359,7 @@ share/java/doc/javadoc/jquery-ui.overrides.css
 share/java/doc/javadoc/jquery/external/
 share/java/doc/javadoc/jquery/external/jquery/
 share/java/doc/javadoc/jquery/external/jquery/jquery.js
-share/java/doc/javadoc/jquery/jquery-3.6.0.min.js
+share/java/doc/javadoc/jquery/jquery-3.6.1.min.js
 share/java/doc/javadoc/jquery/jquery-ui.min.css
 share/java/doc/javadoc/jquery/jquery-ui.min.js
 share/java/doc/javadoc/jquery/jszip/
