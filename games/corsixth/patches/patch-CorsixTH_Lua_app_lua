@@ -3,7 +3,7 @@ Do not check or download updates.
 Index: CorsixTH/Lua/app.lua
 --- CorsixTH/Lua/app.lua.orig
 +++ CorsixTH/Lua/app.lua
-@@ -64,7 +64,7 @@ function App:App()
+@@ -65,7 +65,7 @@ function App:App()
    }
    self.strings = {}
    self.savegame_version = SAVEGAME_VERSION
