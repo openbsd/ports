@@ -1,9 +1,9 @@
 COMMENT=		service interface for assistive technologies
 
 GNOME_PROJECT=		at-spi2-core
-GNOME_VERSION=		2.48.1
+GNOME_VERSION=		2.48.2
 
-SHARED_LIBS += atk-1.0                   21810.0 # 0.24810.1
+SHARED_LIBS += atk-1.0                   21810.0 # 0.24811.1
 SHARED_LIBS += atspi                     1.1 # 0.0.1
 SHARED_LIBS += atk-bridge-2.0            0.2 # 0.0.0
 
