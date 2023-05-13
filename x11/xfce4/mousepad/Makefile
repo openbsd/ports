@@ -1,8 +1,7 @@
 COMMENT=	Xfce4 simple text editor
 
-XFCE_VERSION=	0.6.0
+XFCE_VERSION=	0.6.1
 XFCE_GOODIE=	mousepad
-REVISION=	0
 
 SHARED_LIBS +=	mousepad	1.0 # 0.0
 
@@ -18,6 +17,9 @@ LIB_DEPENDS=	textproc/gspell \
 		x11/xfce4/libxfce4ui \
 		x11/gtksourceview4
 CONFIGURE_ARGS =	--enable-gspell
+
+# share/polkit-1/actions/org.xfce.mousepad.policy
+BUILD_DEPENDS +=	sysutils/polkit
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 c cairo cairo-gobject
