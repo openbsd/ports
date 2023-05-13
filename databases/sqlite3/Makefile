@@ -2,6 +2,7 @@ COMMENT=	embedded SQL implementation
 
 DISTNAME =	sqlite-autoconf-3410200
 PKGNAME=	sqlite3-3.41.2
+REVISION=	0
 
 # XXX needs bumps every time :-
 SHARED_LIBS +=  sqlite3                   37.23 # 8.6

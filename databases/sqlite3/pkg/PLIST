@@ -124,6 +124,7 @@ lib/pkgconfig/sqlite3.pc
 @man man/man3/sqlite3_index_info.3
 @man man/man3/sqlite3_initialize.3
 @man man/man3/sqlite3_interrupt.3
+@man man/man3/sqlite3_io_methods.3
 @man man/man3/sqlite3_keyword_count.3
 @man man/man3/sqlite3_last_insert_rowid.3
 @man man/man3/sqlite3_limit.3
