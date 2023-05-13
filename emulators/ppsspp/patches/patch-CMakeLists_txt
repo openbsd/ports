@@ -1,6 +1,7 @@
 - fix includes
 - honor CFLAGS and DEBUG
 - set _POSIX_C_SOURCE=200809L for locale_t (build fails otherwise)
+- use system libpng on arm platforms
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
@@ -48,6 +49,15 @@ Index: CMakeLists.txt
  else()
  	add_library(libzip STATIC
  		ext/libzip/zip_add.c
+@@ -1037,7 +1039,7 @@ else()
+ endif()
+ 
+ # Arm platforms require at least libpng17.
+-if(ANDROID OR ARMV7 OR ARM64 OR ARM OR IOS)
++if(ANDROID OR IOS)
+ 	set(PNG_REQUIRED_VERSION 1.7)
+ else()
+ 	set(PNG_REQUIRED_VERSION 1.6)
 @@ -2123,7 +2125,7 @@ if(USE_MINIUPNPC)
  
  		if (NOT WIN32)
