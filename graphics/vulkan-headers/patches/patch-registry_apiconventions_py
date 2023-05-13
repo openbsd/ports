@@ -5,5 +5,5 @@ Index: registry/apiconventions.py
 -#!/usr/bin/python3 -i
 +#!/usr/bin/env python3 -i
  #
- # Copyright 2021-2022 The Khronos Group Inc.
+ # Copyright 2021-2023 The Khronos Group Inc.
  # SPDX-License-Identifier: Apache-2.0

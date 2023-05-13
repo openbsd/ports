@@ -12,7 +12,7 @@ https://github.com/KhronosGroup/glslang/commit/9c7fd1a33e5cecbe465e1cd70170167d5
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -171,10 +171,8 @@ if(${CMAKE_CXX_COMPILER_ID} MATCHES "GNU")
+@@ -161,10 +161,8 @@ if(${CMAKE_CXX_COMPILER_ID} MATCHES "GNU")
          add_compile_options(-Werror=deprecated-copy)
      endif()
  
@@ -24,7 +24,7 @@ Index: CMakeLists.txt
          add_link_options("-Wl,--no-undefined")
      endif()
  elseif(${CMAKE_CXX_COMPILER_ID} MATCHES "Clang" AND NOT MSVC)
-@@ -188,10 +186,8 @@ elseif(${CMAKE_CXX_COMPILER_ID} MATCHES "Clang" AND NO
+@@ -178,10 +176,8 @@ elseif(${CMAKE_CXX_COMPILER_ID} MATCHES "Clang" AND NO
          add_compile_options(-fno-exceptions)
      endif()
  

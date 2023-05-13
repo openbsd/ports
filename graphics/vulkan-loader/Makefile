@@ -1,8 +1,7 @@
 COMMENT =	Vulkan ICD loader
 
-V =		1.3.239.0
+V =		1.3.243.0
 PKGNAME =	vulkan-loader-${V}
-REVISION =	0
 GH_TAGNAME =	sdk-${V}
 GH_ACCOUNT =	KhronosGroup
 GH_PROJECT =	Vulkan-Loader
@@ -17,7 +16,7 @@ MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += m pthread
+WANTLIB += X11 xcb m pthread
 
 BUILD_DEPENDS =	graphics/vulkan-headers
 RUN_DEPENDS =	graphics/vulkan-headers
