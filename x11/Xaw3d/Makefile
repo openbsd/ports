@@ -1,6 +1,6 @@
 COMMENT=	3D Athena Widget set that looks like Motif
 
-PKGNAME=	Xaw3d-1.6.4
+PKGNAME=	Xaw3d-1.6.5
 DISTNAME=	lib${PKGNAME}
 
 SHARED_LIBS +=  Xaw3d                12.0     # 8.0
