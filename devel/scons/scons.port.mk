@@ -1,12 +1,5 @@
-MODSCONS_USE_V2?=	No
-
-.if ${MODSCONS_USE_V2:L} == "yes"
-BUILD_DEPENDS+=	devel/scons-py2
-MODSCONS_BIN=	${LOCALBASE}/bin/scons-2.5.1
-.else
 BUILD_DEPENDS+=	devel/scons
 MODSCONS_BIN=	${LOCALBASE}/bin/scons
-.endif
 
 MODSCONS_ENV?=	CC="${CC}" \
 		CXX="${CXX}" \
