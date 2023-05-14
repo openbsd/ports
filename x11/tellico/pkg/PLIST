@@ -316,6 +316,7 @@ share/tellico/data-sources/dark_horse_comics.py
 share/tellico/data-sources/dark_horse_comics.py.spec
 share/tellico/data-sources/fr.allocine.py
 share/tellico/data-sources/fr.allocine.py.spec
+share/tellico/datacrow2tellico.xsl
 share/tellico/dbc2tellico.xsl
 share/tellico/dblp2tellico.xsl
 share/tellico/delicious2tellico.xsl
@@ -350,6 +351,7 @@ share/tellico/pics/cite.png
 share/tellico/pics/coin.png
 share/tellico/pics/collectorz.png
 share/tellico/pics/comic.png
+share/tellico/pics/datacrow.png
 share/tellico/pics/deliciouslibrary.png
 share/tellico/pics/file.png
 share/tellico/pics/game.png
