@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: pkg_subst,v 1.8 2019/01/22 14:52:49 espie Exp $
+# $OpenBSD: pkg_subst,v 1.9 2023/05/14 09:01:10 espie Exp $
 #
 # Copyright (c) 2008 Marc Espie <espie@openbsd.org>
 #
@@ -18,25 +18,22 @@
 
 # rather simple script
 
-use strict;
-use warnings;
+use v5.36;
 use OpenBSD::Getopt;
 use OpenBSD::Subst;
 use OpenBSD::State;
 use OpenBSD::IdCache;
 
-sub fatal
+sub fatal(@parms)
 {
-	print STDERR @_, "\n";
+	say STDERR @parms;
 	exit 1;
 }
 
 my @basedirs;
 
-sub ensure_basedir
+sub ensure_basedir($file)
 {
-	my $file = shift;
-		
 	for my $b (@basedirs) {
 		return if $file =~ m/^\Q$b\E\//;
 	}
@@ -66,33 +63,27 @@ $ui->do_options(
     sub {
 	getopts('B:D:g:m:o:chi',
 	    {'D' =>
-		    sub {
-			    $subst->parse_option(shift);
+		    sub($opt) {
+			    $subst->parse_option($opt);
 		    },
-	     'o' => sub {
-			    my $owner = shift;
-
+	     'o' => sub($owner) {
 			    $uidc //= OpenBSD::UidCache->new;
 			    $fuid = $uidc->lookup($owner, -1);
 			    fatal("$owner is not a valid user") if $fuid == -1;
 		    },
-	     'g' => sub {
-			    my $group = shift;
-
+	     'g' => sub($group) {
 			    $gidc //= OpenBSD::GidCache->new;
 			    $fgid = $gidc->lookup($group, -1);
 			    fatal("$group is not a valid group") if $fgid == -1;
 		    },
-	     'B' => sub {
-			    push(@basedirs, shift);
+	     'B' => sub($b) {
+			    push(@basedirs, $b);
 		    },
-	     'm' => sub {
-			    my $mode = shift;
-
+	     'm' => sub($mode) {
 			    $fmode = oct($mode);
 			    fatal("$mode is not a valid mode") if $fmode == 0;
 		    },
-	     'h' => sub {	$ui->usage; },
+	     'h' => sub() {	$ui->usage; },
 	    });
     });
 
