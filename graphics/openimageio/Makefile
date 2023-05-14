@@ -6,11 +6,10 @@ COMMENT =		library for reading and writing images
 GH_ACCOUNT =		OpenImageIO
 GH_PROJECT =		oiio
 GH_TAGNAME =		v$V
-V =			2.4.10.0
+V =			2.4.11.0
 DISTNAME =		openimageio-${V}
-REVISION =		3
 
-SHARED_LIBS +=		OpenImageIO		12.0 # 2.4.10
+SHARED_LIBS +=		OpenImageIO		13.0 # 2.4.10
 SHARED_LIBS +=		OpenImageIO_Util	8.0 # 2.4.10
 
 CATEGORIES =		graphics devel
