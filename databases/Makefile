@@ -5,6 +5,7 @@
      SUBDIR += db
      SUBDIR += evolution-data-server
      SUBDIR += freetds
+     SUBDIR += galera
      SUBDIR += gdbm
      SUBDIR += influxdb
      SUBDIR += iodbc
