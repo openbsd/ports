@@ -3615,8 +3615,12 @@ share/locale/de_CH/
 share/locale/de_CH/LC_MESSAGES/
 share/locale/en_AU/
 share/locale/en_AU/LC_MESSAGES/
+share/locale/en_BR/
+share/locale/en_BR/LC_MESSAGES/
 share/locale/en_DE/
 share/locale/en_DE/LC_MESSAGES/
+share/locale/en_US/
+share/locale/en_US/LC_MESSAGES/
 share/locale/es_419/
 share/locale/es_419/LC_MESSAGES/
 share/locale/es_AR/
@@ -3679,8 +3683,12 @@ share/locale/la/
 share/locale/la/LC_MESSAGES/
 share/locale/lb/
 share/locale/lb/LC_MESSAGES/
+share/locale/lfn/
+share/locale/lfn/LC_MESSAGES/
 share/locale/lo/
 share/locale/lo/LC_MESSAGES/
+share/locale/lt_LT/
+share/locale/lt_LT/LC_MESSAGES/
 share/locale/nah/
 share/locale/nah/LC_MESSAGES/
 share/locale/nqo/
