@@ -415,6 +415,7 @@ lib/cmake/absl/abslConfig.cmake
 lib/cmake/absl/abslConfigVersion.cmake
 lib/cmake/absl/abslTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/absl/abslTargets.cmake
+@lib lib/libabsl_atomic_hook_test_helper.so.${LIBabsl_atomic_hook_test_helper_VERSION}
 @lib lib/libabsl_bad_any_cast_impl.so.${LIBabsl_bad_any_cast_impl_VERSION}
 @lib lib/libabsl_bad_optional_access.so.${LIBabsl_bad_optional_access_VERSION}
 @lib lib/libabsl_bad_variant_access.so.${LIBabsl_bad_variant_access_VERSION}
@@ -435,6 +436,7 @@ lib/cmake/absl/abslTargets.cmake
 @lib lib/libabsl_demangle_internal.so.${LIBabsl_demangle_internal_VERSION}
 @lib lib/libabsl_die_if_null.so.${LIBabsl_die_if_null_VERSION}
 @lib lib/libabsl_examine_stack.so.${LIBabsl_examine_stack_VERSION}
+@lib lib/libabsl_exception_safety_testing.so.${LIBabsl_exception_safety_testing_VERSION}
 @lib lib/libabsl_exponential_biased.so.${LIBabsl_exponential_biased_VERSION}
 @lib lib/libabsl_failure_signal_handler.so.${LIBabsl_failure_signal_handler_VERSION}
 @lib lib/libabsl_flags.so.${LIBabsl_flags_VERSION}
@@ -451,6 +453,7 @@ lib/cmake/absl/abslTargets.cmake
 @lib lib/libabsl_flags_usage_internal.so.${LIBabsl_flags_usage_internal_VERSION}
 @lib lib/libabsl_graphcycles_internal.so.${LIBabsl_graphcycles_internal_VERSION}
 @lib lib/libabsl_hash.so.${LIBabsl_hash_VERSION}
+@lib lib/libabsl_hash_generator_testing.so.${LIBabsl_hash_generator_testing_VERSION}
 @lib lib/libabsl_hashtablez_sampler.so.${LIBabsl_hashtablez_sampler_VERSION}
 @lib lib/libabsl_int128.so.${LIBabsl_int128_VERSION}
 @lib lib/libabsl_log_entry.so.${LIBabsl_log_entry_VERSION}
@@ -465,11 +468,16 @@ lib/cmake/absl/abslTargets.cmake
 @lib lib/libabsl_log_internal_message.so.${LIBabsl_log_internal_message_VERSION}
 @lib lib/libabsl_log_internal_nullguard.so.${LIBabsl_log_internal_nullguard_VERSION}
 @lib lib/libabsl_log_internal_proto.so.${LIBabsl_log_internal_proto_VERSION}
+@lib lib/libabsl_log_internal_test_actions.so.${LIBabsl_log_internal_test_actions_VERSION}
+@lib lib/libabsl_log_internal_test_helpers.so.${LIBabsl_log_internal_test_helpers_VERSION}
+@lib lib/libabsl_log_internal_test_matchers.so.${LIBabsl_log_internal_test_matchers_VERSION}
 @lib lib/libabsl_log_severity.so.${LIBabsl_log_severity_VERSION}
 @lib lib/libabsl_log_sink.so.${LIBabsl_log_sink_VERSION}
 @lib lib/libabsl_low_level_hash.so.${LIBabsl_low_level_hash_VERSION}
 @lib lib/libabsl_malloc_internal.so.${LIBabsl_malloc_internal_VERSION}
+@lib lib/libabsl_per_thread_sem_test_common.so.${LIBabsl_per_thread_sem_test_common_VERSION}
 @lib lib/libabsl_periodic_sampler.so.${LIBabsl_periodic_sampler_VERSION}
+@lib lib/libabsl_pow10_helper.so.${LIBabsl_pow10_helper_VERSION}
 @lib lib/libabsl_random_distributions.so.${LIBabsl_random_distributions_VERSION}
 @lib lib/libabsl_random_internal_distribution_test_util.so.${LIBabsl_random_internal_distribution_test_util_VERSION}
 @lib lib/libabsl_random_internal_platform.so.${LIBabsl_random_internal_platform_VERSION}
@@ -483,8 +491,11 @@ lib/cmake/absl/abslTargets.cmake
 @lib lib/libabsl_random_seed_sequences.so.${LIBabsl_random_seed_sequences_VERSION}
 @lib lib/libabsl_raw_hash_set.so.${LIBabsl_raw_hash_set_VERSION}
 @lib lib/libabsl_raw_logging_internal.so.${LIBabsl_raw_logging_internal_VERSION}
+@lib lib/libabsl_scoped_mock_log.so.${LIBabsl_scoped_mock_log_VERSION}
 @lib lib/libabsl_scoped_set_env.so.${LIBabsl_scoped_set_env_VERSION}
+@lib lib/libabsl_spinlock_test_common.so.${LIBabsl_spinlock_test_common_VERSION}
 @lib lib/libabsl_spinlock_wait.so.${LIBabsl_spinlock_wait_VERSION}
+@lib lib/libabsl_stack_consumption.so.${LIBabsl_stack_consumption_VERSION}
 @lib lib/libabsl_stacktrace.so.${LIBabsl_stacktrace_VERSION}
 @lib lib/libabsl_status.so.${LIBabsl_status_VERSION}
 @lib lib/libabsl_statusor.so.${LIBabsl_statusor_VERSION}
@@ -494,8 +505,10 @@ lib/cmake/absl/abslTargets.cmake
 @lib lib/libabsl_strings_internal.so.${LIBabsl_strings_internal_VERSION}
 @lib lib/libabsl_symbolize.so.${LIBabsl_symbolize_VERSION}
 @lib lib/libabsl_synchronization.so.${LIBabsl_synchronization_VERSION}
+@lib lib/libabsl_test_instance_tracker.so.${LIBabsl_test_instance_tracker_VERSION}
 @lib lib/libabsl_throw_delegate.so.${LIBabsl_throw_delegate_VERSION}
 @lib lib/libabsl_time.so.${LIBabsl_time_VERSION}
+@lib lib/libabsl_time_internal_test_util.so.${LIBabsl_time_internal_test_util_VERSION}
 @lib lib/libabsl_time_zone.so.${LIBabsl_time_zone_VERSION}
 lib/pkgconfig/absl_absl_check.pc
 lib/pkgconfig/absl_absl_log.pc
@@ -504,6 +517,7 @@ lib/pkgconfig/absl_algorithm_container.pc
 lib/pkgconfig/absl_any.pc
 lib/pkgconfig/absl_any_invocable.pc
 lib/pkgconfig/absl_atomic_hook.pc
+lib/pkgconfig/absl_atomic_hook_test_helper.pc
 lib/pkgconfig/absl_bad_any_cast.pc
 lib/pkgconfig/absl_bad_any_cast_impl.pc
 lib/pkgconfig/absl_bad_optional_access.pc
@@ -513,6 +527,7 @@ lib/pkgconfig/absl_base_internal.pc
 lib/pkgconfig/absl_bind_front.pc
 lib/pkgconfig/absl_bits.pc
 lib/pkgconfig/absl_btree.pc
+lib/pkgconfig/absl_btree_test_common.pc
 lib/pkgconfig/absl_check.pc
 lib/pkgconfig/absl_city.pc
 lib/pkgconfig/absl_civil_time.pc
@@ -526,11 +541,14 @@ lib/pkgconfig/absl_container_common.pc
 lib/pkgconfig/absl_container_memory.pc
 lib/pkgconfig/absl_cord.pc
 lib/pkgconfig/absl_cord_internal.pc
+lib/pkgconfig/absl_cord_rep_test_util.pc
+lib/pkgconfig/absl_cord_test_helpers.pc
 lib/pkgconfig/absl_cordz_functions.pc
 lib/pkgconfig/absl_cordz_handle.pc
 lib/pkgconfig/absl_cordz_info.pc
 lib/pkgconfig/absl_cordz_sample_token.pc
 lib/pkgconfig/absl_cordz_statistics.pc
+lib/pkgconfig/absl_cordz_test_helpers.pc
 lib/pkgconfig/absl_cordz_update_scope.pc
 lib/pkgconfig/absl_cordz_update_tracker.pc
 lib/pkgconfig/absl_core_headers.pc
@@ -546,6 +564,8 @@ lib/pkgconfig/absl_dynamic_annotations.pc
 lib/pkgconfig/absl_endian.pc
 lib/pkgconfig/absl_errno_saver.pc
 lib/pkgconfig/absl_examine_stack.pc
+lib/pkgconfig/absl_exception_safety_testing.pc
+lib/pkgconfig/absl_exception_testing.pc
 lib/pkgconfig/absl_exponential_biased.pc
 lib/pkgconfig/absl_failure_signal_handler.pc
 lib/pkgconfig/absl_fast_type_id.pc
@@ -569,7 +589,10 @@ lib/pkgconfig/absl_function_ref.pc
 lib/pkgconfig/absl_graphcycles_internal.pc
 lib/pkgconfig/absl_hash.pc
 lib/pkgconfig/absl_hash_function_defaults.pc
+lib/pkgconfig/absl_hash_generator_testing.pc
+lib/pkgconfig/absl_hash_policy_testing.pc
 lib/pkgconfig/absl_hash_policy_traits.pc
+lib/pkgconfig/absl_hash_testing.pc
 lib/pkgconfig/absl_hashtable_debug.pc
 lib/pkgconfig/absl_hashtable_debug_hooks.pc
 lib/pkgconfig/absl_hashtablez_sampler.pc
@@ -599,6 +622,9 @@ lib/pkgconfig/absl_log_internal_nullstream.pc
 lib/pkgconfig/absl_log_internal_proto.pc
 lib/pkgconfig/absl_log_internal_strip.pc
 lib/pkgconfig/absl_log_internal_structured.pc
+lib/pkgconfig/absl_log_internal_test_actions.pc
+lib/pkgconfig/absl_log_internal_test_helpers.pc
+lib/pkgconfig/absl_log_internal_test_matchers.pc
 lib/pkgconfig/absl_log_internal_voidify.pc
 lib/pkgconfig/absl_log_severity.pc
 lib/pkgconfig/absl_log_sink.pc
@@ -617,18 +643,22 @@ lib/pkgconfig/absl_non_temporal_memcpy.pc
 lib/pkgconfig/absl_numeric.pc
 lib/pkgconfig/absl_numeric_representation.pc
 lib/pkgconfig/absl_optional.pc
+lib/pkgconfig/absl_per_thread_sem_test_common.pc
 lib/pkgconfig/absl_periodic_sampler.pc
+lib/pkgconfig/absl_pow10_helper.pc
 lib/pkgconfig/absl_prefetch.pc
 lib/pkgconfig/absl_pretty_function.pc
 lib/pkgconfig/absl_random_bit_gen_ref.pc
 lib/pkgconfig/absl_random_distributions.pc
 lib/pkgconfig/absl_random_internal_distribution_caller.pc
 lib/pkgconfig/absl_random_internal_distribution_test_util.pc
+lib/pkgconfig/absl_random_internal_explicit_seed_seq.pc
 lib/pkgconfig/absl_random_internal_fast_uniform_bits.pc
 lib/pkgconfig/absl_random_internal_fastmath.pc
 lib/pkgconfig/absl_random_internal_generate_real.pc
 lib/pkgconfig/absl_random_internal_iostream_state_saver.pc
 lib/pkgconfig/absl_random_internal_mock_helpers.pc
+lib/pkgconfig/absl_random_internal_mock_overload_set.pc
 lib/pkgconfig/absl_random_internal_nonsecure_base.pc
 lib/pkgconfig/absl_random_internal_pcg_engine.pc
 lib/pkgconfig/absl_random_internal_platform.pc
@@ -640,9 +670,11 @@ lib/pkgconfig/absl_random_internal_randen_hwaes_impl.pc
 lib/pkgconfig/absl_random_internal_randen_slow.pc
 lib/pkgconfig/absl_random_internal_salted_seed_seq.pc
 lib/pkgconfig/absl_random_internal_seed_material.pc
+lib/pkgconfig/absl_random_internal_sequence_urbg.pc
 lib/pkgconfig/absl_random_internal_traits.pc
 lib/pkgconfig/absl_random_internal_uniform_helper.pc
 lib/pkgconfig/absl_random_internal_wide_multiply.pc
+lib/pkgconfig/absl_random_mocking_bit_gen.pc
 lib/pkgconfig/absl_random_random.pc
 lib/pkgconfig/absl_random_seed_gen_exception.pc
 lib/pkgconfig/absl_random_seed_sequences.pc
@@ -650,9 +682,13 @@ lib/pkgconfig/absl_raw_hash_map.pc
 lib/pkgconfig/absl_raw_hash_set.pc
 lib/pkgconfig/absl_raw_logging_internal.pc
 lib/pkgconfig/absl_sample_recorder.pc
+lib/pkgconfig/absl_scoped_mock_log.pc
 lib/pkgconfig/absl_scoped_set_env.pc
 lib/pkgconfig/absl_span.pc
+lib/pkgconfig/absl_spinlock_test_common.pc
 lib/pkgconfig/absl_spinlock_wait.pc
+lib/pkgconfig/absl_spy_hash_state.pc
+lib/pkgconfig/absl_stack_consumption.pc
 lib/pkgconfig/absl_stacktrace.pc
 lib/pkgconfig/absl_status.pc
 lib/pkgconfig/absl_statusor.pc
@@ -663,9 +699,21 @@ lib/pkgconfig/absl_strings.pc
 lib/pkgconfig/absl_strings_internal.pc
 lib/pkgconfig/absl_symbolize.pc
 lib/pkgconfig/absl_synchronization.pc
+lib/pkgconfig/absl_test_instance_tracker.pc
+lib/pkgconfig/absl_thread_pool.pc
 lib/pkgconfig/absl_throw_delegate.pc
 lib/pkgconfig/absl_time.pc
+lib/pkgconfig/absl_time_internal_test_util.pc
 lib/pkgconfig/absl_time_zone.pc
+lib/pkgconfig/absl_tracked.pc
 lib/pkgconfig/absl_type_traits.pc
+lib/pkgconfig/absl_unordered_map_constructor_test.pc
+lib/pkgconfig/absl_unordered_map_lookup_test.pc
+lib/pkgconfig/absl_unordered_map_members_test.pc
+lib/pkgconfig/absl_unordered_map_modifiers_test.pc
+lib/pkgconfig/absl_unordered_set_constructor_test.pc
+lib/pkgconfig/absl_unordered_set_lookup_test.pc
+lib/pkgconfig/absl_unordered_set_members_test.pc
+lib/pkgconfig/absl_unordered_set_modifiers_test.pc
 lib/pkgconfig/absl_utility.pc
 lib/pkgconfig/absl_variant.pc
