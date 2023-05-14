@@ -5,7 +5,7 @@ V=		3.0.18
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-jack=	vlc-jack-${V}
-REVISION-main=	1
+REVISION-main=	2
 CATEGORIES=	x11
 MASTER_SITES=	https://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.xz
@@ -43,7 +43,7 @@ WANTLIB-main=	EGL GL ICE Qt5Core Qt5Gui Qt5Svg Qt5Widgets Qt5X11Extras \
 		vpx webp x264 x265 xcb xcb-composite xcb-dri2 xcb-dri3 \
 		xcb-glx xcb-keysyms xcb-present xcb-randr xcb-render \
 		xcb-shm xcb-sync xcb-xfixes xcb-xv xml2 xshmfence \
-		xvidcore z zstd ${WANTLIB-common}
+		xvidcore z zstd ${WANTLIB-common} ${MODLUA_WANTLIB}
 # v4l2 is dlopen'd
 WANTLIB-main+=	v4l2
 
@@ -53,7 +53,13 @@ AUTOCONF_VERSION= 2.69
 AUTOMAKE_VERSION= 1.16
 AUTORECONF=	./bootstrap
 
-MODULES=	x11/qt5
+MODULES=	lang/lua \
+		x11/qt5
+
+MODLUA_VERSION=	5.2
+MODLUA_SA=	Yes
+MODLUA_RUNDEP=	No
+UPDATE_PLIST_ARGS+= -i MODLUA_DEP_VERSION
 
 COMPILER=	base-clang ports-gcc
 
@@ -145,7 +151,6 @@ CONFIGURE_ARGS+=--disable-a52 \
 		--disable-libva \
 		--disable-linsys \
 		--disable-live555 \
-		--disable-lua \
 		--disable-mad \
 		--disable-mfx \
 		--disable-microdns \
@@ -188,7 +193,8 @@ CONFIGURE_ENV+=	BUILDCC="${CC}" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
 		LIBS_libvlccore="-lexecinfo" \
 		PKG_CONFIG_PATH="${LOCALBASE}/lib/qt5/pkgconfig" \
-		RCC="${LOCALBASE}/bin/rcc-qt5"
+		RCC="${LOCALBASE}/bin/rcc-qt5" \
+		LUAC="${LOCALBASE}/bin/luac${MODLUA_DEP_VERSION}"
 
 PSEUDO_FLAVORS=	no_jack
 FLAVOR?=
