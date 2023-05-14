@@ -2,10 +2,9 @@ COMMENT=	open framework for storing and sharing scene data
 
 GH_ACCOUNT=	alembic
 GH_PROJECT=	alembic
-GH_TAGNAME=	1.8.3
-REVISION=	0
+GH_TAGNAME=	1.8.5
 
-SHARED_LIBS +=  Alembic                   0.1 # 1.8
+SHARED_LIBS +=  Alembic                   1.0 # 1.8
 
 CATEGORIES=	graphics
 
@@ -16,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Imath-3_1 c m
 
-COMPILER=	base-clang ports-gcc base-gcc
+COMPILER=	base-clang ports-gcc
 
 MODULES=	devel/cmake
 
