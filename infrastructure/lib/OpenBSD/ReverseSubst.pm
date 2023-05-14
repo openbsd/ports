@@ -1,4 +1,4 @@
-# $OpenBSD: ReverseSubst.pm,v 1.20 2019/05/18 18:53:48 espie Exp $
+# $OpenBSD: ReverseSubst.pm,v 1.21 2023/05/14 09:05:57 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -13,15 +13,14 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-use strict;
-use warnings;
+
+use v5.36;
 
 # prefix and suffix have a default meaning, and then a special meaning
 # for some element classes
 package OpenBSD::PackingElement;
-sub unsubst_prefix
+sub unsubst_prefix($self, $string, $v, $k2)
 {
-	my ($self, $string, $v, $k2) = @_;
 	
 	# if we start with a keyword, substitute after it
 	if ($string =~ m/^\@/) {
@@ -32,16 +31,14 @@ sub unsubst_prefix
 	return $string;
 }
 
-sub unsubst_suffix
+sub unsubst_suffix($self, $string, $v, $k2)
 {
-	my ($self, $string, $v, $k2) = @_;
 	$string =~ s/\Q$v\E$/\$\{$k2\}/;
 	return $string;
 }
 
-sub unsubst_version
+sub unsubst_version($self, $string, $v, $k2)
 {
-	my ($self, $string, $v, $k2) = @_;
 	# we have to loop over the string because negative assertions are
 	# hard for non constant width strings
 	my $done = '';
@@ -62,9 +59,8 @@ sub unsubst_version
 	return $done.$string;
 }
 
-sub assert_valid_prefix
+sub assert_valid_prefix($self, $subst, $string, $unsubst)
 {
-	my ($self, $subst, $string, $unsubst) = @_;
 	return if !defined $unsubst;
 	my $s2 = $subst->do($unsubst);
 	$s2 =~ s,/+$,/,;
@@ -72,39 +68,36 @@ sub assert_valid_prefix
 	    if $string !~ m/^\Q$s2\E/;
 }
 
-sub adjust
+# $self->adjust($rstring): modify the pointed string after subst if needed
+sub adjust($, $)
 {
 }
 
 package OpenBSD::PackingElement::Action;
-sub unsubst_prefix
+sub unsubst_prefix($self, $string, $v, $k2)
 {
-	my ($self, $string, $v, $k2) = @_;
 	
 	$string =~ s/([\s:=])\Q$v\E/$1\$\{$k2\}/g;
 	return $self->SUPER::unsubst_prefix($string, $v, $k2);
 }
 
-sub unsubst_suffix
+sub unsubst_suffix($self, $string, $v, $k2)
 {
-	my ($self, $string, $v, $k2) = @_;
 	$string =~ s/\Q$v\E([\s:=])/\$\{$k2\}$1/g;
 	return $self->SUPER::unsubst_suffix($string, $v, $k2);
 }
 
 
 package OpenBSD::PackingElement::Manpage;
-sub unsubst_suffix
+sub unsubst_suffix($self, $string, $v, $k2)
 {
-	my ($self, $string, $v, $k2) = @_;
 	$string =~ s/\Q$v\E(\.[^\.]+(\.gz|\.Z)?)$/\$\{$k2\}$1/;
 	return $self->SUPER::unsubst_suffix($string, $v, $k2);
 }
 
 # allow version unsubst not affecting the manpage part
-sub unsubst_version
+sub unsubst_version($self, $string, $v, $k2)
 {
-	my ($self, $string, $v, $k2) = @_;
 	if ($string =~ m/(.*)(\.[^\.]+(\.gz|\.Z)?)$/) {
 		return $self->SUPER::unsubst_version($1, $v, $k2).$2;
 	} else {
@@ -113,9 +106,8 @@ sub unsubst_version
 }
 
 package OpenBSD::PackingElement::Lib;
-sub assert_valid_prefix
+sub assert_valid_prefix($self, $subst, $string, $unsubst)
 {
-	my ($self, $subst, $string, $unsubst) = @_;
 	# libraries are already partially subst'd at this stage
 	$self->SUPER::assert_valid_prefix($subst, $subst->do($string), $unsubst);
 }
@@ -123,9 +115,8 @@ sub assert_valid_prefix
 package OpenBSD::PackingElement::DirBase;
 
 # make sure dirobjects show an explicit / at end, even added after the subst
-sub adjust
+sub adjust($self, $rstring)
 {
-	my ($self, $rstring) = @_;
 	$$rstring =~ s,([^/])$,$1/,;
 }
 
@@ -153,9 +144,8 @@ our @ISA = qw(Forwarder);
 
 # this hijacks the "normal" subst code, but it does gather some useful
 # statistics
-sub new
+sub new($class, $state)
 {
-	my ($class, $state) = @_;
 	my $o = bless {delegate => OpenBSD::Subst->new, 
 	    # count the number of times we see each value. More than once,
 	    # hard to figure out WHICH one to backsubst
@@ -190,9 +180,8 @@ sub new
 	return $o;
 }
 
-sub remove_ignored_vars
+sub remove_ignored_vars($self, $s)
 {
-	my ($self, $s) = @_;
 	for my $v (keys %{$self->{maybe_ignored}}) {
 		while ($s =~ s/\$\{\Q$v\E\}//) {}
 	}
@@ -210,10 +199,8 @@ my $ignore = {
 	HOMEPAGE => 1,
 };
 
-sub add
+sub add($self, $k, $v)
 {
-	my ($self, $k, $v) = @_;
-
 	my $k2 = $k;
 	$k2 =~ s/\^//;
 
@@ -249,18 +236,16 @@ sub add
 	$self->{delegate}->add($k, $v);
 }
 
-sub value
+sub value($self, $k)
 {
-	my ($self, $k) = @_;
 	$k =~ s/\^//;
 	return $self->{delegate}->value($k);
 }
 
 # heuristics to figure out which substitutions we should never add:
 # some are "hard-coded", others are just ambiguous
-sub never_add
+sub never_add($self, $k)
 {
-	my ($self, $k) = @_;
 	if (!$self->{disregard_count}{$k} &&
 	    $self->{count}{$self->value($k)} > 1) {
 		return 1;
@@ -277,9 +262,8 @@ sub parse_option
 
 
 # after we got all variables, but before performing backsubst
-sub finalize
+sub finalize($subst)
 {
-	my $subst = shift;
 	# sort non empty variables by reverse length
 	$subst->{vars} = [sort 
 	    {length($subst->value($b)) <=> length($subst->value($a))} 
@@ -293,9 +277,8 @@ sub finalize
 }
 
 # some unsubst variables have special cases
-sub special_case
+sub special_case($subst, $k, $v, $string)
 {
-	my ($subst, $k, $v, $string) = @_;
 	if ($k eq 'FULLPKGNAME' && $string =~ m,^share/doc/pkg-readmes/,) {
 		return 1;
 	}
@@ -308,9 +291,8 @@ sub special_case
 	return 0;
 }
 
-sub unsubst_non_empty_var
+sub unsubst_non_empty_var($subst, $string, $k, $unsubst, $context)
 {
-	my ($subst, $string, $k, $unsubst, $context) = @_;
 	my $k2 = $k;
 	$k2 =~ s/^\^//;
 	my $v = $subst->value($k2);
@@ -347,9 +329,8 @@ sub unsubst_non_empty_var
 	return $string;
 }
 
-sub do_empty_backsubst
+sub do_empty_backsubst($subst, $string, $unsubst)
 {
-	my ($subst, $string, $unsubst) = @_;
 	# this part will be done repeatedly
 	my $old;
 	do {
@@ -371,9 +352,8 @@ sub do_empty_backsubst
 
 # create actual reverse substitution. $unsubst is the string already stored
 # in an existing plist, to figure out ambiguous cases and empty substs
-sub do_backsubst
+sub do_backsubst($subst, $string, $unsubst, $context)
 {
-	my ($subst, $string, $unsubst, $context) = @_;
 
 	$context //= 'OpenBSD::PackingElement';
 	# note that unsubst doesn't necessarily match the whole of subst
