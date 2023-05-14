@@ -1,0 +1,7 @@
+bin/brogue
+@bin libexec/brogue
+share/brogue/
+share/brogue/assets/
+share/brogue/assets/icon.png
+share/brogue/assets/tiles.bin
+share/brogue/assets/tiles.png
