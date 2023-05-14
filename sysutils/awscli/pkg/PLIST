@@ -5263,6 +5263,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3api/create-multipart-
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3api/delete-bucket-analytics-configuration.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3api/delete-bucket-cors.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3api/delete-bucket-encryption.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3api/delete-bucket-intelligent-tiering-configuration.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3api/delete-bucket-inventory-configuration.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3api/delete-bucket-lifecycle.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3api/delete-bucket-metrics-configuration.rst
@@ -5280,6 +5281,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3api/get-bucket-acl.rs
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3api/get-bucket-analytics-configuration.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3api/get-bucket-cors.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3api/get-bucket-encryption.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3api/get-bucket-intelligent-tiering-configuration.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3api/get-bucket-inventory-configuration.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3api/get-bucket-lifecycle-configuration.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3api/get-bucket-lifecycle.rst
@@ -5307,6 +5309,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3api/get-public-access
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3api/head-bucket.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3api/head-object.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3api/list-bucket-analytics-configurations.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3api/list-bucket-intelligent-tiering-configurations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3api/list-bucket-inventory-configurations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3api/list-bucket-metrics-configurations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3api/list-buckets.rst
@@ -5320,6 +5323,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3api/put-bucket-acl.rs
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3api/put-bucket-analytics-configuration.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3api/put-bucket-cors.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3api/put-bucket-encryption.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3api/put-bucket-intelligent-tiering-configuration.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3api/put-bucket-inventory-configuration.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3api/put-bucket-lifecycle-configuration.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3api/put-bucket-lifecycle.rst
