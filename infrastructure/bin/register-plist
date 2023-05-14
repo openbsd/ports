@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-# $OpenBSD: register-plist,v 1.34 2023/05/10 13:04:20 espie Exp $
+# $OpenBSD: register-plist,v 1.35 2023/05/14 09:03:06 espie Exp $
 # Copyright (c) 2005,2012
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -24,8 +24,7 @@
 # OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
 # SUCH DAMAGE.
 
-use strict;
-use warnings;
+use v5.36;
 
 use OpenBSD::State;
 use OpenBSD::PackageInfo;
@@ -44,16 +43,14 @@ use constant {
 
 package OpenBSD::PackingList;
 
-sub write_mogrified
+sub write_mogrified($self, $fh, $state)
 {
-	my ($self, $fh, $state) = @_;
 	$self->visit('write_mogrified', $fh, $state);
 
 }
 
-sub forget_details
+sub forget_details($self)
 {
-	my $self = shift;
 	undef $self->{"digital-signature"};
 	undef $self->{vendor};
 	undef $self->{signer};
@@ -68,9 +65,8 @@ sub forget_details
 
 package OpenBSD::PackingElement;
 
-sub write_mogrified
+sub write_mogrified($self, $fh, $state)
 {
-	my ($self, $fh, $state) = @_;
 	if ($state->{mogrified}{$self}) {
 		$state->{mogrified}{$self}->write($fh);
 	} else {
@@ -78,7 +74,7 @@ sub write_mogrified
 	}
 }
 
-sub forget_details
+sub forget_details($self)
 {
 }
 
@@ -88,15 +84,13 @@ sub forget_more_details
 {
 }
 
-sub flatten
+sub flatten($self, $l)
 {
-	my ($self, $l) = @_;
 	push(@$l, $self);
 }
 
-sub compare
+sub compare($self, $self2)
 {
-	my ($self, $self2) = @_;
 	if (ref($self) ne ref($self2)) {
 		return Result::Different;
 	} else {
@@ -104,9 +98,8 @@ sub compare
 	}
 }
 
-sub compare_more
+sub compare_more($self, $self2)
 {
-	my ($self, $self2) = @_;
 	my ($data, $data2);
 	open(my $fh, '>',  \$data);
 	open(my $fh2, '>',  \$data2);
@@ -121,34 +114,40 @@ sub compare_more
 	}
 }
 
-sub remove_auxiliary
+# $self->remove_auxiliary($list):
+#	remove auxiliary names (manpage sources and info files) from
+#	the registered list, since info files naming may vary halfhazardly
+sub remove_auxiliary($, $)
 {
 	return 0;
 }
 
-sub record_generic_depends
+# $self->record_generic_depends($state):
+#	depends need to be recorded in the stash
+sub record_generic_depends($, $)
 {
 }
 
-sub find_mogrified
+# $self->find_mogrified($state):
+#	find "equivalent" data in the stash and record a mogrification
+sub find_mogrified($, $)
 {
 }
 
 # to be used for stuff that we no longer want
-sub may_vanish
+sub may_vanish($)
 {
 	0
 }
 
 package OpenBSD::PackingElement::DigitalSignature;
-sub flatten
+sub flatten($, $)
 {
 }
 
 package OpenBSD::PackingElement::Version;
-sub compare_more
+sub compare_more($self, $self2)
 {
-	my ($self, $self2) = @_;
 	# no version element in #2, let's mogrify
 	if ($self2->name == -1) {
 		return Result::Updatable;
@@ -166,9 +165,8 @@ sub compare_more
 }
 
 # special version, avoids writing synthetic version into plist_db
-sub write_mogrified
+sub write_mogrified($self, $fh, $state)
 {
-	my ($self, $fh, $state) = @_;
 	if ($state->{mogrified}{$self}) {
 		return if $state->{mogrified}{$self}->name == -1;
 		$state->{mogrified}{$self}->write($fh);
@@ -177,9 +175,8 @@ sub write_mogrified
 	}
 }
 package OpenBSD::PackingElement::Old;
-sub flatten
+sub flatten($self, $l)
 {
-	my ($self, $l) = @_;
 	if ($self->{keyword} eq 'ignore') {
 		return;
 	}
@@ -188,34 +185,30 @@ sub flatten
 
 package OpenBSD::PackingElement::FileBase;
 
-sub forget_details
+sub forget_details($self)
 {
-	my $self = shift;
 	undef $self->{d};
 	undef $self->{md5};
 	undef $self->{size};
 	undef $self->{ts};
 }
 
-sub forget_more_details
+sub forget_more_details($self)
 {
-	my $self = shift;
 	undef $self->{symlink};
 	undef $self->{link};
 }
 
 package OpenBSD::PackingElement::SpecialFile;
-sub forget_details
+sub forget_details($self)
 {
-	my $self = shift;
 #	undef $self->{md5};
 #	note that special files don't have timestamps
 	undef $self->{size};
 }
 
-sub compare_more
+sub compare_more($self, $self2)
 {
-	my ($self, $self2) = @_;
 	if ($self->{name} ne $self2->{name}) {
 		return Result::Different;
 	}
@@ -236,15 +229,13 @@ sub compare_more
 
 package OpenBSD::PackingElement::Depend;
 
-sub record_generic_depends
+sub record_generic_depends($self, $state)
 {
-	my ($self, $state) = @_;
 	$state->{stash}->{$self->forgetful_key} = $self;
 }
 
-sub find_mogrified
+sub find_mogrified($s1, $state)
 {
-	my ($s1, $state) = @_;
 	my $s2 = $state->{stash}->{$s1->forgetful_key};
 	if (defined $s2 && $s1->compare($s2) == 2) {
 		$state->{mogrified}{$s1} = $s2;
@@ -252,9 +243,8 @@ sub find_mogrified
 }
 
 package OpenBSD::PackingElement::Depend;
-sub make_result
+sub make_result($self, $c)
 {
-	my ($self, $c) = @_;
 	if (!defined $c) {
 		return Result::Different;
 	} elsif ($c < 0) {
@@ -267,9 +257,8 @@ sub make_result
 }
 
 package OpenBSD::PackingElement::Dependency;
-sub compare_more
+sub compare_more($self, $self2)
 {
-	my ($self, $self2) = @_;
 	if ($self->{pkgpath} ne $self2->{pkgpath}) {
 		return Result::Different;
 	}
@@ -284,33 +273,28 @@ sub compare_more
 	    OpenBSD::PackageName->from_string($self2->{def})));
 }
 
-sub forgetful_key
+sub forgetful_key($self)
 {
-	my $self = shift;
 	$self->{name} =~ s/\-\=(\d)/\-$1/;
 	return join(':', 'depend', $self->{name}, $self->{pkgpath}, $self->{pattern});
 }
 
 package OpenBSD::PackingElement::Wantlib;
 
-sub compare_more
+sub compare_more($self, $self2)
 {
-	my ($self, $self2) = @_;
 	return $self->make_result($self->spec->compare($self2->spec));
 }
 
-sub forgetful_key
+sub forgetful_key($self)
 {
-	my $self = shift;
 	return $self->spec->key;
 }
 
 package OpenBSD::PackingElement::Comment;
 
-sub forget_details
+sub forget_details($self)
 {
-	my $self = shift;
-
 	if ($self->{name} =~ m/^VARS:/) {
 		$self->{name} = 'VARS';
 	}
@@ -318,9 +302,8 @@ sub forget_details
 
 package OpenBSD::PackingElement::AlwaysUpdate;
 
-sub forget_details
+sub forget_details($self)
 {
-	my $self = shift;
 	delete $self->{hash};
 }
 
@@ -330,20 +313,18 @@ package OpenBSD::PackingElement::CVSTag;
 
 our $openbsd = 'OpenBSD';
 
-sub may_vanish
+sub may_vanish($)
 {
 	1
 }
 
-sub forget_details
+sub forget_details($self)
 {
-	my $self = shift;
 	$self->{name} =~ s/^(\$$openbsd: .*,v).*/$1\$/;
 }
 
-sub compare_more
+sub compare_more($self, $self2)
 {
-	my ($self, $self2) = @_;
 	if ($self->{name} eq $self2->{name}) {
 		return Result::Equal;
 	}
@@ -356,10 +337,8 @@ sub compare_more
 
 package OpenBSD::PackingElement::InfoFile;
 
-sub remove_auxiliary
+sub remove_auxiliary($self, $list)
 {
-	my ($self, $list) = @_;
-
 	my $stem = $self->{name};
 	my $i;
 	for ($i = 1; @$list > 0 && $list->[0]->{name} eq "$stem-$i"; $i++) {
@@ -370,9 +349,8 @@ sub remove_auxiliary
 
 package OpenBSD::PackingElement::Manpage;
 
-sub remove_auxiliary
+sub remove_auxiliary($self, $list)
 {
-	my ($self, $list) = @_;
 	if ($self->is_source && @$list > 0 && 
 	    ref($list->[0]) eq ref($self) && 
 	    $list->[0]->{name} eq $self->source_to_dest) {
@@ -382,10 +360,8 @@ sub remove_auxiliary
 	return 0;
 }
 
-sub compare_more
+sub compare_more($self, $self2)
 {
-	my ($self, $self2) = @_;
-
 	# identical
 	if ($self->{name} eq $self2->{name}) {
 		return Result::Equal;
@@ -405,9 +381,8 @@ sub compare_more
 
 package OpenBSD::PackingElement::ExtraInfo;
 
-sub compare_more
+sub compare_more($self, $self2)
 {
-	my ($self, $self2) = @_;
 	if ($self->{ftp} ne $self2->{ftp}) {
 		return Result::Different;
 	}
@@ -437,23 +412,20 @@ package OpenBSD::RegisterPlist::State;
 our @ISA = qw(OpenBSD::State);
 
 
-sub init
+sub init($self, @parms)
 {
-	my $self = shift;
 	$self->{signature_style} = 'unsigned';
-	$self->SUPER::init(@_);
+	$self->SUPER::init(@parms);
 }
 
-sub handle_options
+sub handle_options($self)
 {
-	my $self = shift;
-
 	$self->{opt} = {
-		d => sub {
-		    push(@{$self->{dirs}}, split(/:/, shift));
+		d => sub($opt) {
+		    push(@{$self->{dirs}}, split(/:/, $opt));
 	    	},
-		f => sub {
-		    push(@{$self->{plists}}, shift);
+		f => sub($opt) {
+		    push(@{$self->{plists}}, $opt);
 	    	},
 	};
 	$self->SUPER::handle_options('tpns:d:f:', 
@@ -469,9 +441,8 @@ sub handle_options
 
 package main;
 
-sub combine
+sub combine($comparison_result, $seen_stop)
 {
-	my ($comparison_result, $seen_stop) = @_;
 	if (!$seen_stop) {
 		return $comparison_result;
 	} elsif ($comparison_result == Result::Different) {
@@ -482,9 +453,8 @@ sub combine
 }
 
 # my_compare is asymetric $p is always the newer list
-sub my_compare
+sub my_compare($p, $p2, $state)
 {
-	my ($p, $p2, $state) = @_;
 	# back compatibility: if the old list doesn't have a version
 	# marker, let's put a -1 there
 	if (!defined $p2->{version}) {
@@ -539,17 +509,14 @@ sub my_compare
 	return combine($final, $seen_stop);
 }
 
-sub more_mogrified
+sub more_mogrified($p1, $p2, $state)
 {
-	my ($p1, $p2, $state) = @_;
-
 	$p2->record_generic_depends($state);
 	$p1->find_mogrified($state);
 }
 
-sub error_blurb
+sub error_blurb($state, $p)
 {
-	my ($state, $p) = @_;
 	$state->errsay("Error: change in plist");
 	$state->errsay("| Assuming the old and new builds were done correctly");
 	$state->errsay("| (fully up-to-date ports tree including relevant MODULES),");
@@ -563,9 +530,8 @@ sub error_blurb
 }
 
 
-sub write_out_diff
+sub write_out_diff($p1, $p2, $result, $state)
 {
-	my ($p1, $p2, $result, $state) = @_;
 	my $t = "$result-new";
 	# try to actually write the bad file
 	# and run a physical diff
@@ -589,9 +555,8 @@ sub write_out_diff
 	}
 }
 
-sub act_on_compare
+sub act_on_compare($r, $p1, $p2, $result, $state)
 {
-	my ($r, $p1, $p2, $result, $state) = @_;
 
 	my $verb = $state->{not} ? "would be" : "was";
 	if ($r == Result::Different) {
@@ -617,18 +582,16 @@ sub act_on_compare
 	return 0;
 }
 
-sub compare_lists
+sub compare_lists($p1, $p2, $result, $state)
 {
-	my ($p1, $p2, $result, $state) = @_;
 	my $r = my_compare($p1, $p2, $state);
 	return act_on_compare($r, $p1, $p2, $result, $state);
 }
 
-sub compare_versions
+sub compare_versions($dir, $plist, $state)
 {
-	my ($dir, $plist, $state) = @_;
 
-	opendir (my $dirhandle, $dir) or return 0;
+	opendir(my $dirhandle, $dir) or return 0;
 	my (@parsed) = OpenBSD::PackageName::splitname($plist->pkgname);
 	$parsed[1] = '*';
 	my $reference = join('-', @parsed);
@@ -669,9 +632,8 @@ sub compare_versions
 	return $result;
 }
 
-sub register_plist
+sub register_plist($plist, $state)
 {
-	my ($plist, $state) = @_;
 	my $error = 0;
 	$plist->forget_details;
 	for my $dir (@{$state->{dirs}}) {
