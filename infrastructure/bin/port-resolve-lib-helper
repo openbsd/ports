@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: port-resolve-lib-helper,v 1.1 2018/07/09 14:48:08 espie Exp $
+# $OpenBSD: port-resolve-lib-helper,v 1.2 2023/05/14 09:01:27 espie Exp $
 #
 # Copyright (c) 2001-2010 Marc Espie <espie@openbsd.org>
 #
@@ -24,8 +24,7 @@
 # OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
 # SUCH DAMAGE.
 
-use strict;
-use warnings;
+use v5.36;
 use OpenBSD::LibSpec;
 use OpenBSD::LibSpec::Build;
 use OpenBSD::Paths;
@@ -35,9 +34,8 @@ my $error = 0;
 my ($needed, $silent) = @_;
 my $emited = {};
 
-sub solve_spec
+sub solve_spec($spec, $repo)
 {
-	my ($spec, $repo) = @_;
 	my $r = $spec->findbest($repo, $LOCALBASE);
 	if ($needed) {
 		if (!defined $r || $r->is_static) {
