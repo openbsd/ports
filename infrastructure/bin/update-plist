@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.212 2023/04/30 18:54:38 kn Exp $
+# $OpenBSD: update-plist,v 1.213 2023/05/14 09:08:32 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -14,8 +14,7 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-use strict;
-use warnings;
+use v5.36;
 
 # XXX we could pass these as -D options, but it would mean a lot of the
 # code would get run as root before the drop privileges, so checking the
@@ -57,41 +56,45 @@ package OpenBSD::PackingElement;
 
 use File::Basename;
 
+# $self->known_object($o)
 # record everything we need to know about the object:
 # exact file name, approximate directories, possible command names
 # that must come after unexec
-sub known_object
+sub known_object($, $)
 {
 }
 
+# $self->known_directory($o, $plist)
 # record known directories and their parents as anchors for new objects
 # note we can't mark directories for stripping yet, as we don't have them all
-sub known_directory
+sub known_directory($, $, $)
 {
 }
 
+# $self->process_dependency($mtree)
 # while scanning a dependency, note further dependencies to process,
 # and directories we can strip
-sub process_dependency
+sub process_dependency($, $)
 {
 }
 
+# $self->tag_directories($h)
 # keep a record of directories that can get removed by dependencies
-sub tag_directories
+sub tag_directories($, $)
 {
 }
 
+# $self->copy_annotations($plist)
 # non-file objects that can be copied directly, as their location is automatic
 # (e.g., conflict, pkgpath, etc)
-sub copy_annotations
+sub copy_annotations($, $)
 {
 }
 
 # the actual method that stores the objects for writing, dispatching them
 # to the correct fragment
-sub redistribute
+sub redistribute($o, $p)
 {
-	my ($o, $p) = @_;
 	return if $o->{DONT};
 	if (defined $o->{file}) {
 		$p->{tracker}->file($o->{file})->add($o);
@@ -100,18 +103,17 @@ sub redistribute
 	}
 }
 
+# $self->copy_extra($plist)
 # extra objects that get copied very late (e.g., @extra)
-sub copy_extra 
+sub copy_extra($, $)
 {
 }
 
 
 # some objects will have lists of tags, so that when they get copied
 # the tags come with them
-sub tag_along
+sub tag_along($self, $n)
 {
-	my ($self, $n) = @_;
-
 	push(@{$self->{mytags}}, $n);
 	$n->{tagged} = 1;
 }
@@ -120,9 +122,8 @@ sub tag_along
 # we "keep state" of objects that accept tags (because they were found
 # so we know we'll get them)
 # and objects that are not found will tag along if appropriate
-sub tie_objects
+sub tie_objects($self, $plist)
 {
-	my ($self, $plist) = @_;
 	if ($self->{found}) {
 		$self->bookmark($plist);
 	} else {
@@ -131,33 +132,34 @@ sub tie_objects
 }
 
 # so this will use the default attach_to_lastobject mostly
-sub attach_to_lastobject
+sub attach_to_lastobject($self, $plist)
 {
-	my ($self, $plist) = @_;
 	if (defined $plist->{state}{lastobject}) {
 		$plist->{state}{lastobject}->tag_along($self);
 	}
 }
 
+# $self->bookmark($plist)
 # if the object is appropriate, it becomes a last object
-sub bookmark
+sub bookmark($, $)
 {
 }
 
+# $self->may_tag_along($plist)
 # if the object is appropriate, it will tag along
-sub may_tag_along
+sub may_tag_along($, $)
 {
 }
 
+# $self->last_check($plist, $state)
 # warn about files with a wrong name (.swp, ~, .orig)
 # or fuss with paths
-sub last_check
+sub last_check($, $, $)
 {
 }
 
-sub show_unknown
+sub show_unknown($self)
 {
-	my $self = shift;
 	if (!$self->{found}) {
 		print "Not found: ", $self->fullstring, " (in ", 
 		    $self->{file}, ")\n";
@@ -168,18 +170,15 @@ sub show_unknown
 # an object that can have tags
 # TODO some tags should be copied "later" (in redistribute) so that they
 # get in the plist "out-of-order" (comments in preamble)
-sub copy_with_tags
+sub copy_with_tags($self, $plist)
 {
-	my ($self, $plist) = @_;
-
 	$self->{found} = 1;
 	$self->add_object($plist);
 	$self->copy_tags($plist);
 }
 
-sub copy_tags
+sub copy_tags($self, $plist)
 {
-	my ($self, $plist) = @_;
 	if (defined $self->{mytags}) {
 		for my $tag (@{$self->{mytags}}) {
 			next if $tag->{found};
@@ -189,22 +188,22 @@ sub copy_tags
 	}
 }
 
+# $self->locate_files($locator, $exact)
 # pass every actual file to pkglocate to check for unregistered conflicts
-sub locate_files
+sub locate_files($, $, $)
 {
 }
 
 # will be zero for classes that cannot be deduced from the FS
-sub rebless_okay { 1 }
+sub rebless_okay($) { 1 }
 
 # unexec should only match objects which are actual files and not directories
-sub is_file { 0 }
+sub is_file($) { 0 }
 
 # helper method
 # the code that checks the suffixes
-sub check_suffix
+sub check_suffix($self, $state)
 {
-	my ($self, $state) = @_;
 	my $s = $self->fullname;
 	my $error;
 	if ($s =~ m/\/\.[^\/]*\.swp$/) {
@@ -224,19 +223,16 @@ sub check_suffix
 
 # helper method
 # @extra and friends may have unneeded ${PREFIX} prepended to them
-sub strip_redundant_absolute
+sub strip_redundant_absolute($self, $p)
 {
-	my ($self, $p) = @_;
 	# remove unneeded absolute paths
 	if ($self->name =~ m/^\// && $self->cwd eq $p->{state}{prefix}) {
 		$self->{name} = $p->strip_prefix($self->name);
 	}
 }
 
-sub unsubst
+sub unsubst($a)
 {
-	my $a = shift;
-
 	if (!defined $a->{unsubst} && defined $a->{hint_dir}) {
 		my $d = $a->{hint_dir};
 		my $o = $a->{hint_obj};
@@ -275,9 +271,8 @@ sub unsubst
 	return $a->{unsubst};
 }
 
-sub rebless
+sub rebless($self, $newclass)
 {
-	my ($self, $newclass) = @_;
 	my $old_prefix = $self->fullstring;
 	$old_prefix =~ s/^(\@\S+\s|).*/$1/;
 	bless $self, $newclass;
@@ -288,72 +283,64 @@ sub rebless
 	}
 }
 
-# check_specific($h): some file types have specific needs (e.g., @tag)
+# $self->check_specific($h): some file types have specific needs (e.g., @tag)
 # so we record these as $h->{should}, and we record the actual
 # @tag  if we see it as $h->{has}.
-sub check_specific
+sub check_specific($, $)
 {
 }
 
 # placeholder if ever we need to do something when SOME specific entries
 # change
-sub notice_new_file
+sub notice_new_file($, $)
 {
 }
 
 # write anything that will affect pkglocate
-sub write_conflict_info
+sub write_conflict_info($self, $fh)
 {
-	my ($self, $fh) = @_;
 	if ($self->is_part_of_conflict_info) {
 		$self->write($fh);
 	}
 }
 
-sub is_part_of_conflict_info
+sub is_part_of_conflict_info($)
 { 0 }
 
 package OpenBSD::PackingElement::State;
 
 # that stuff NEVER gets copied over, but interpolated from existing objects
-sub show_unknown
+sub show_unknown($)
 {
 }
 
 package OpenBSD::PackingElement::Dependency;
-sub process_dependency
+sub process_dependency($self, $mtree)
 {
-	my ($self, $mtree) = @_;
 	$mtree->{pkgpath}{$self->{pkgpath}} = 1;
 }
 
 package OpenBSD::PackingElement::DirlikeObject;
-sub process_dependency
+sub process_dependency($self, $mtree)
 {
-	my ($self, $mtree) = @_;
-
 	$mtree->{dir}{$self->fullname} = 1;
 }
 
-sub tag_directories
+sub tag_directories($self, $h)
 {
-	my ($self, $h) = @_;
-
 	$h->{$self->fullname} = $self;
 }
 
 package OpenBSD::PackingElement::DirBase;
-sub bookmark
+sub bookmark($self, $plist)
 {
-	my ($self, $plist) = @_;
 	$plist->{state}{lastobject} = $self;
 	$plist->{state}{lastdir} = $self;
 }
 
 package OpenBSD::PackingElement::Meta;
-sub copy_annotations
+sub copy_annotations($self, $plist)
 {
-	my ($self, $plist) = @_;
 	$self->{found} = 1;
 	$self->clone->add_object($plist);
 }
@@ -361,69 +348,66 @@ sub copy_annotations
 # XXX we currently need a placeholder in the old plist so that "top elements"
 # (newuser and friends) have something to attach to
 package OpenBSD::PackingElement::CVSTag;
-sub copy_annotations
+sub copy_annotations($self, $plist)
 {
-	my ($self, $plist) = @_;
 	$self->{found} = 1;
 	$self->copy_tags($plist);
 }
 
-sub tie_objects
+sub tie_objects($self, $plist)
 {
-	my ($self, $plist) = @_;
 	$plist->{state}{lastobject} = $self;
 }
 
 # this is extra stuff that PkgCreate  builds but that we don't want to copy
 package OpenBSD::PackingElement::Name;
-sub copy_annotations
+sub copy_annotations($, $)
 {
 }
 
-sub show_unknown
+sub show_unknown($)
 {
 }
 
-sub is_part_of_conflict_info
+sub is_part_of_conflict_info($)
 { 1 }
 
 package OpenBSD::PackingElement::NoDefaultConflict;
-sub is_part_of_conflict_info
+sub is_part_of_conflict_info($)
 { 1 }
 
 package OpenBSD::PackingElement::Conflict;
-sub is_part_of_conflict_info
+sub is_part_of_conflict_info($)
 { 1 }
 
 package OpenBSD::PackingElement::SpecialFile;
-sub copy_annotations
+sub copy_annotations($, $)
 {
 }
 
-sub show_unknown
+sub show_unknown($)
 {
 }
 
 package OpenBSD::PackingElement::ExtraInfo;
-sub copy_annotations
+sub copy_annotations($, $)
 {
 }
 
-sub show_unknown
+sub show_unknown($)
 {
 }
 
 package OpenBSD::PackingElement::Cwd;
-sub show_unknown
+sub show_unknown($)
 {
 }
 
 package OpenBSD::PackingElement::Comment;
 # comments need to pretend they're like file objects, so that you can comment
 # file objects
-sub fullname
+sub fullname($self)
 {
-	my $self = shift;
 	my $path = $self->name;
 	# strip every keyword for matching
 	$path =~ s/^\@\w+\s+//;
@@ -437,9 +421,8 @@ sub fullname
 
 # comments that are not found as actual paths will tag along after the last
 # object they saw
-sub may_tag_along
+sub may_tag_along($self, $plist)
 {
-	my ($self, $plist) = @_;
 	if ($self->{name} =~ m/^intentional/i && 
 	    defined $plist->{state}{lastobject}) {
 		$plist->{state}{lastobject}{intentional} = 1;
@@ -457,15 +440,13 @@ sub cwd
 	&OpenBSD::PackingElement::Object::cwd;
 }
 
-sub copy_annotations
+sub copy_annotations($, $)
 {
 	# nope these are not normal annotations we can copy
 }
 
-sub last_check
+sub last_check($self, $p, $state)
 {
-	my ($self, $p, $state) = @_;
-
 	$self->strip_redundant_absolute($p);
 	return if !defined $self->{tagged_along};
 	my $error = $self->check_suffix($state);
@@ -476,12 +457,11 @@ sub last_check
 }
 
 # if a file was commented, do not bring it back as a real file
-sub rebless_okay { 0 }
+sub rebless_okay($) { 0 }
 
 package OpenBSD::PackingElement::Sample;
-sub may_tag_along
+sub may_tag_along($self, $plist)
 {
-	my ($self, $plist) = @_;
 	my $o = $self->{copyfrom};
 	if (!defined $o) {
 		print STDERR "Warning: bogus \@sample ", $self->stringize,
@@ -495,49 +475,43 @@ sub may_tag_along
 	}
 }
 
-sub known_object
+sub known_object($self, $o)
 {
-	my ($self, $o) = @_;
 	my $f = $self->fullname;
 	push @{$o->{sample}{$f}}, $self;
 }
 
 package OpenBSD::PackingElement::Tag;
-sub check_specific
+sub check_specific($self, $h)
 {
-	my ($self, $h) = @_;
 	$h->{has}{$self->stringize} = 1;
 }
 
 package OpenBSD::PackingElement::Desktop;
 our @ISA=qw(OpenBSD::PackingElement::File);
-sub check_specific
+sub check_specific($self, $h)
 {
-	my ($self, $h) = @_;
 	$h->{should}{'update-desktop-database'} = 1;
 }
 
 package OpenBSD::PackingElement::Glib2Schema;
 our @ISA=qw(OpenBSD::PackingElement::File);
-sub check_specific
+sub check_specific($self, $h)
 {
-	my ($self, $h) = @_;
 	$h->{should}{'glib-compile-schemas'} = 1;
 }
 
 package OpenBSD::PackingElement::IbusComponent;
 our @ISA=qw(OpenBSD::PackingElement::File);
-sub check_specific
+sub check_specific($self, $h)
 {
-	my ($self, $h) = @_;
 	$h->{should}{'ibus-write-cache'} = 1;
 }
 
 package OpenBSD::PackingElement::IconThemeDirectory;
 our @ISA=qw(OpenBSD::PackingElement::Dir);
-sub check_specific
+sub check_specific($self, $h)
 {
-	my ($self, $h) = @_;
 	$h->{should}{"gtk-update-icon-cache %D/".$self->name} = 1;
 }
 
@@ -545,32 +519,29 @@ package OpenBSD::PackingElement::IconTheme;
 our @ISA=qw(OpenBSD::PackingElement::File);
 use File::Basename;
 
-sub check_specific
+sub check_specific($self, $h)
 {
-	my ($self, $h) = @_;
 	# XXX this works because the file happens *after* its parent directory
 	delete $h->{should}{"gtk-update-icon-cache %D/".dirname($self->name)};
 }
 
 package OpenBSD::PackingElement::MimeInfo;
 our @ISA=qw(OpenBSD::PackingElement::File);
-sub check_specific
+sub check_specific($self, $h)
 {
-	my ($self, $h) = @_;
 	$h->{should}{'update-mime-database'} = 1;
 }
 
 package OpenBSD::PackingElement::Sampledir;
 
 # this is not really smart, but good enough for starters
-sub may_tag_along
+sub may_tag_along($self, $plist)
 {
-	my ($self, $plist) = @_;
 	$self->attach_to_lastobject($plist);
 }
 
 # likewise, sampledirs do not want to become normal dirs
-sub rebless_okay { 0 }
+sub rebless_okay($) { 0 }
 
 # those are objects that only exist in update-plist
 package OpenBSD::PackingElement::Fragment;
@@ -578,24 +549,22 @@ our @ISA=qw(OpenBSD::PackingElement);
 
 {
 no warnings qw(redefine);
-sub needs_keyword() { 0 }
+sub needs_keyword($) { 0 }
 
-sub stringize
+sub stringize($self)
 {
-	return '%%'.shift->{name}.'%%';
+	return '%%'.$self->{name}.'%%';
 }
 }
 
 # copy them in the right location
-sub may_tag_along
+sub may_tag_along($self, $plist)
 {
-	my ($self, $plist) = @_;
 	$self->attach_to_lastobject($plist);
 }
 
-sub frag
+sub frag($self)
 {
-	my $self = shift;
 	return $self->{name};
 }
 
@@ -603,32 +572,29 @@ package OpenBSD::PackingElement::NoFragment;
 our @ISA=qw(OpenBSD::PackingElement::Fragment);
 {
 no warnings qw(redefine);
-sub stringize
+sub stringize($self)
 {
-	return '!%%'.shift->{name}.'%%';
+	return '!%%'.$self->{name}.'%%';
 }
 }
 
-sub frag
+sub frag($self)
 {
-	my $self = shift;
 	return "no-$self->{name}";
 }
 
 package OpenBSD::PackingElement::Action;
 
 # TODO old make-plist would check whether the substitutions didn't change
-sub may_tag_along
+sub may_tag_along($self, $plist)
 {
-	my ($self, $plist) = @_;
 	# for now, we might do something smarter later
 	$self->attach_to_lastobject($plist);
 }
 
 package OpenBSD::PackingElement::Unexec;
-sub known_object
+sub known_object($self, $o)
 {
-	my ($self, $o) = @_;
 	# figure out possible commands in the list
 	for my $i (split/\s+/, $self->{expanded}) {
 		next if $i eq "/usr/bin/env";
@@ -642,10 +608,8 @@ package OpenBSD::PackingElement::FileObject;
 use File::Basename;
 
 # FileObjects are (mostly) stuff with paths that can get substs...
-sub last_check
+sub last_check($self, $p, $state)
 {
-	my ($self, $p, $state) = @_;
-
 	$self->strip_redundant_absolute($p);
 	return if $self->{intentional};
 	my $error = $self->check_suffix($state);
@@ -658,17 +622,15 @@ sub last_check
 	}
 }
 
-sub known_object
+sub known_object($self, $o)
 {
-	my ($self, $o) = @_;
 	my $f = $self->fullname;
 	push @{$o->{exact}{$f}}, $self;
 	delete $o->{approximate}{$f};
 }
 
-sub known_directory
+sub known_directory($self, $o, $plist)
 {
-	my ($self, $o, $plist) = @_;
 	my $d = $self->fullname;
 	while (1) {
 		$d = dirname($d);
@@ -679,42 +641,38 @@ sub known_directory
 	}
 }
 
-sub show_unknown
+sub show_unknown($self)
 {
-	my $self = shift;
 	if (!$self->{found}) {
 		print "Not found: ", $self->fullname, " (in ", $self->{file}, ")\n";
 	}
 }
 
 package OpenBSD::PackingElement::FileBase;
-sub bookmark
+sub bookmark($self, $plist)
 {
-	my ($self, $plist) = @_;
 	$plist->{state}{lastobject} = $self;
 	$plist->{state}{lastfile} = $self;
 }
 
-sub locate_files
+sub locate_files($self, $locator, $exact)
 {
-	my ($self, $locator, $exact) = @_;
 	my $p = $self->fullname;
 	if (!exists $exact->{$p}) {
 		$locator->add_param($p);
 	}
 }
 
-sub is_file { 1 }
+sub is_file($) { 1 }
 
 package OpenBSD::PackingElement::Shell;
 # we have no way to figure out @shell
-sub rebless_okay { 0 }
+sub rebless_okay($) { 0 }
 
 package OpenBSD::PackingElement::Lib;
 my $first_warn = 1;
-sub check_lib_version
+sub check_lib_version($self, $version, $name, $v)
 {
-	my ($self, $version, $name, $v) = @_;
 	if (defined $v) {
 		return if $v eq $version;
 		print STDERR "ERROR: version mismatch for lib: ", $name,
@@ -730,26 +688,23 @@ sub check_lib_version
 }
 
 package OpenBSD::PackingElement::Extra;
-sub copy_extra
+sub copy_extra($self, $plist)
 {
-	my ($self, $plist) = @_;
-
 	if (!$self->{found}) {
 		$self->{found} = 1;
 		$self->clone->add_object($plist);
 	}
 }
 
-sub may_tag_along
+sub may_tag_along($self, $plist)
 {
-	my ($self, $plist) = @_;
 	$self->attach_to_lastobject($plist);
 }
 
-sub rebless_okay() { 0 }
+sub rebless_okay($) { 0 }
 
 package OpenBSD::PackingElement::Extradir;
-sub rebless_okay() { 0 }
+sub rebless_okay($) { 0 }
 
 sub copy_extra
 {
@@ -758,9 +713,8 @@ sub copy_extra
 
 package OpenBSD::PackingElement::Manpage;
 
-sub check_suffix
+sub check_suffix($self, $state)
 {
-	my ($self, $state) = @_;
 	my $s = $self->fullname;
 	my $error;
 	if ($s =~ m/(\.Z|\.gz)$/) {
@@ -792,9 +746,8 @@ our @ISA = qw(OpenBSD::PackingElement::File);
 
 # small class that runs pkglocate in batches
 package OpenBSD::Pkglocate;
-sub new
+sub new($class, $state)
 {
-	my ($class, $state) = @_;
 	my $ncpu;
 	if (defined $state->opt('j')) {
 		$ncpu = $state->opt('j');
@@ -806,19 +759,16 @@ sub new
 		ncpu => $ncpu}, $class;
 }
 
-sub add_param
+sub add_param($self, @p)
 {
-	my ($self, @p) = @_;
 	push(@{$self->{params}}, @p);
 	while (@{$self->{params}} > 200) {
 		$self->run_command;
 	}
 }
 
-sub run_command
+sub run_command($self)
 {
-	my $self = shift;
-
 	if (@{$self->{params}} == 0) {
 		return;
 	}
@@ -839,9 +789,8 @@ sub run_command
 	$self->{params} = [];
 }
 
-sub get_results
+sub get_results($self)
 {
-	my $self = shift;
 	my $e = shift @{$self->{queue}};
 	my $fh = $e->{pipe};
 	while (<$fh>) {
@@ -858,9 +807,8 @@ sub get_results
 	close($fh);
 }
 
-sub result
+sub result($self)
 {
-	my $self = shift;
 	while (@{$self->{params}} > 0) {
 		$self->run_command;
 	}
@@ -870,60 +818,54 @@ sub result
 	return $self->{result};
 }
 
-sub bypath
+sub bypath($self, $pkgname)
 {
-	my ($self, $pkgname) = @_;
 	return $self->{bypath}{$pkgname};
 }
 
 # This is the UpdatePlist main code proper
 package UpdatePlist::State;
 our @ISA = qw(OpenBSD::AddCreateDelete::State);
-sub handle_options
+sub handle_options($state)
 {
-	my $state = shift;
 	$state->{opt} = {
-		'X' => sub {
-			my $path = shift;
+		'X' => sub($path) {
 			$state->{ignored}{$path} = 1;
 		    },
-		'w' => sub {
-			my $warn = shift;
+		'w' => sub($warn) {
 			push(@{$state->{warn_suffix}}, $warn);
 		    },
-		'i' => sub {
-			my $var = shift;
+		'i' => sub($var) {
 			push(@{$state->{dont_backsubst}}, $var);
 		    },
-		'I' => sub {
-			my $var = shift;
+		'I' => sub($var) {
 			push(@{$state->{maybe_ignored}}, $var);
 		    },
-		'c' => sub {
-			my $var = shift;
+		'c' => sub($var) {
 			if (exists $state->{maybe_comment}) {
 				$state->usage;
 			}
 			$state->{maybe_comment} = '${'.$var.'}';
 		    },
-		's' => sub {
-			my $var = shift;
+		's' => sub($var) {
 			push(@{$state->{start_only}}, $var);
 		    },
-		'S' => sub {
-			my $var = shift;
+		'S' => sub($var) {
 			push(@{$state->{suffix_only}}, $var);
 		    },
-		'V' => sub {
-			my $var = shift;
+	    	'H' => sub($hints) {
+			$state->parse_hints_file($hints);
+		    },
+		'V' => sub($var) {
 			push(@{$state->{no_version}}, $var);
 		    },
 
 	};
-	$state->SUPER::handle_options('OrvI:c:qV:fFC:i:j:L:s:S:X:P:w:e:E:', 
-	    '[-FfmnOqrvx] [-C dir] [-c comment] [-E ext] [-e ext] [-i var]',
-	    '[-I ignored] [-j jobs] [-L logfile] [-P pkgdir] [-S var]',
-	    '[-s var] [-V var] [-w suffix] [-X path] -- pkg_create_args ...');
+	$state->SUPER::handle_options('OrvI:c:qV:fFC:i:j:L:s:S:X:P:w:e:E:H:', 
+	    '[-FfmnOrvx] [-C dir] [-c comment] [-E ext] [-e ext] [-H hints]',
+	    '[-i var] [-I ignored] [-j jobs] [-L logfile] [-P pkgdir]',
+	    '[-S var] [-s var] [-V var] [-w suffix] [-X path]',
+	    '-- pkg_create_args ...');
     	$state->{pkgdir} = $state->opt('P');
 	$state->{scan_as_root} = $state->opt('r');
 	$state->{verbose} = $state->opt('v');
@@ -944,24 +886,37 @@ sub handle_options
 	}
 }
 
+sub parse_hints_file($state, $fname)
+{
+	open(my $f, '<', $fname) or 
+	    $state->fatal("Can't read hints file #1: #2", $fname, $!);
+	while (<$f>) {
+		chomp;
+		if (m/^\#(\S+)\s+(\-\S+)$/) {
+			my ($filename, $subpackage) = ($1, $2);
+		} else {
+			$state->fatal("Bad hints file at line #1: #2",
+			    $., $_);
+		}
+	}
+}
+
 package UpdatePlist;
 use File::Basename;
 use File::Compare;
 
-sub new
+sub new($class)
 {
-	my $class = shift;
 	bless {
 	    state => UpdatePlist::State->new,
 	}, $class;
 }
 
-sub known_objects
+sub known_objects($self)
 {
 	# let's record where each object live, including directory
 	# locations.  As a rule, "exact" information will supersede 
 	# deduced directory names.
-	my $self = shift;
 	for my $p (@{$self->{lists}}) {
 		$p->olist->known_directory($self, $p->olist);
 	}
@@ -970,10 +925,8 @@ sub known_objects
 	}
 }
 
-sub scan_fake_dir
+sub scan_fake_dir($self, $base)
 {
-	my ($self, $base) = @_;
-
 	# now we ask the file system what exists, and fill file 
 	# objects according to that.
 	$self->{state}->say("Scanning #1", $base)
@@ -984,9 +937,8 @@ sub scan_fake_dir
 	    $self->{state}{logfile}, $self->{state});
 }
 
-sub zap_debug_files
+sub zap_debug_files($self)
 {
-	my $self = shift;
 	$self->{state}->say("Removing .debug artefacts");
 	my $keep = {};	# hash of directories to keep
 	for my $path (keys %{$self->{objects}}) {
@@ -1012,10 +964,8 @@ sub zap_debug_files
 	}
 }
 
-sub copy_from_old
+sub copy_from_old($self, $e, $o, $unexec)
 {
-	my ($self, $e, $o, $unexec) = @_;
-
 	my $s = $e->{comesfrom};
 	if ($o->element_class ne ref($e) && $e->rebless_okay) {
 		$e->rebless($o->element_class);
@@ -1037,10 +987,8 @@ sub copy_from_old
 	}
 }
 
-sub copy_existing
+sub copy_existing($self, $path, $o)
 {
-	my ($self, $path, $o) = @_;
-
 	if ($self->{exact}{$path}) {
 		# this will be re-added to multiple paths if there are
 		# multiple matching plists
@@ -1053,9 +1001,8 @@ sub copy_existing
 	}
 }
 
-sub handle_annotations
+sub handle_annotations($self)
 {
-	my $self = shift;
 	# First we figure out which objects will get copied.
 	$self->{state}->say("Figuring out tie points")
 	    unless $self->{state}{quiet};
@@ -1079,9 +1026,8 @@ sub handle_annotations
 	}
 }
 
-sub walk_up_directory
+sub walk_up_directory($self, $path, $c)
 {
-	my ($self, $path, $c) = @_;
 	# we didn't find it so we must create a new one
 	# go up dir until we find a matching approximate dir
 	my $d = $path;
@@ -1115,9 +1061,8 @@ sub walk_up_directory
 	return 0;
 }
 
-sub last_resort
+sub last_resort($self, $path, $c)
 {
-	my ($self, $path, $c) = @_;
 	# try all lists in order, until we find one with 
 	# the right prefix
 	for my $p (@{$self->{lists}}) {
@@ -1137,9 +1082,8 @@ sub last_resort
 # somewhat devious: that file was created by the fake install, BUT we
 # install a sample instead. Make sure the sample is copied over in some
 # plist, though
-sub is_a_sample
+sub is_a_sample($self, $path)
 {
-	my ($self, $path) = @_;
 	return 0 unless defined $self->{sample}{$path};
 	for my $e (@{$self->{sample}{$path}}) {
 		return 1 if $e->{tagged};
@@ -1147,9 +1091,8 @@ sub is_a_sample
 	return 0;
 }
 
-sub copy_object
+sub copy_object($self, $path)
 {
-	my ($self, $path) = @_;
 	my $o = $self->{objects}{$path};
 
 	return if $self->copy_existing($path, $o);
@@ -1165,9 +1108,8 @@ sub copy_object
 	push(@{$self->{orphan_paths}}, $path);
 }
 
-sub copy_objects
+sub copy_objects($self)
 {
-	my $self = shift;
 	$self->{state}->say("Copying objects")
 	    unless $self->{state}{quiet};
 	for my $path (sort keys %{$self->{objects}}) {
@@ -1175,9 +1117,8 @@ sub copy_objects
 	}
 }
 
-sub add_delayed_objects
+sub add_delayed_objects($self)
 {
-	my $self = shift;
 	# now we can handle stuff outside of cwd, if that applies
 	for my $p (@{$self->{lists}}) {
 		my $cwd = $p->{state}{prefix};
@@ -1196,10 +1137,8 @@ sub add_delayed_objects
 }
 
 
-sub strip_dependency_directories
+sub strip_dependency_directories($self)
 {
-	my $self = shift;
-
 	# so we read everything, let's figure out common directories
 	my $cache = {};
 	my $portsdir = $ENV{PORTSDIR};
@@ -1233,9 +1172,8 @@ sub strip_dependency_directories
 	}
 }
 
-sub add_missing_tags
+sub add_missing_tags($self)
 {
-	my $self = shift;
 	for my $p (@{$self->{lists}}) {
 		my $h = { should => {}, has => {}};
 		$p->nlist->check_specific($h);
@@ -1246,9 +1184,8 @@ sub add_missing_tags
 	}
 }
 
-sub adjust_final
+sub adjust_final($self)
 {
-	my $self = shift;
 	for my $p (@{$self->{lists}}) {
 		$p->nlist->{name}{DONT} = 1;
 		# CWD that we added manually... this sucks a bit!!!
@@ -1258,9 +1195,8 @@ sub adjust_final
     	}
 }
 
-sub report_per_list
+sub report_per_list($self, $key, $msg)
 {
-	my ($self, $key, $msg) = @_;
 	for my $p (@{$self->{lists}}) {
 		next unless exists $p->{$key};
 		$self->{state}->say($msg, $p->nlist->pkgname);
@@ -1270,9 +1206,8 @@ sub report_per_list
 	}
 }
 
-sub report_issues
+sub report_issues($self)
 {
-	my $self = shift;
 	if (exists $self->{orphan_paths}) {
 		print "Can't put into any plist (no applicable prefix):\n";
 		for my $p (@{$self->{orphan_paths}}) {
@@ -1290,9 +1225,8 @@ sub report_issues
 	$self->report_per_list("oldcomments", "Warning: #1 still contains:");
 }
 
-sub write_new_files
+sub write_new_files($self)
 {
-	my $self = shift;
 	for my $p (@{$self->{lists}}) {
 		# default is the last content we have, thanks ruby :(
 		$p->{tracker} = OpenBSD::TrackFile->new($p->{base_plists}[-1],
@@ -1304,9 +1238,8 @@ sub write_new_files
 	}
 }
 
-sub display_stripped_info
+sub display_stripped_info($self)
 {
-	my $self = shift;
 	return unless $self->{state}{verbose};
 	for my $p (@{$self->{lists}}) {
 		next unless exists $p->{stripped};
@@ -1318,9 +1251,8 @@ sub display_stripped_info
 	}
 }
 
-sub short_list
+sub short_list($self, $l)
 {
-	my ($self, $l) = @_;
 	if (@$l > 10) {
 		return join(' ', splice(@$l, 0, 10))."...";
 	} else {
@@ -1328,9 +1260,8 @@ sub short_list
 	}
 }
 
-sub locate_list
+sub locate_list($self, $p)
 {
-	my ($self, $p) = @_;
 	my $locator = OpenBSD::Pkglocate->new($p->{state});
 	my $exact = $self->{exact};	# by default do not look up known files
 	if ($self->{state}->opt('f')) {	# unless we ask for them: neuter lookup
@@ -1360,9 +1291,8 @@ sub locate_list
 	}
 }
 
-sub no_need_to_run_locate
+sub no_need_to_run_locate($self, $state)
 {
-	my ($self, $state) = @_;
 	if (!defined $state->{PKGLOCATE_COOKIE} || 
 	    !defined $state->{FAKE_COOKIE}) {
 		return 0;
@@ -1395,18 +1325,16 @@ sub no_need_to_run_locate
 	return 0;
 }
 
-sub write_cookie
+sub write_cookie($self, $state)
 {
-	my ($self, $state) = @_;
 	if (defined $state->{PKGLOCATE_COOKIE}) {
 		open(my $cookie, '>', $state->{PKGLOCATE_COOKIE}) or return;
 		print $cookie $state->{cookie};
 	}
 }
 
-sub try_pkglocate
+sub try_pkglocate($self)
 {
-	my $self = shift;
 	my $state = $self->{state};
 	# hardcode the location for now
 	if (-x '/usr/local/bin/pkg_locate') {

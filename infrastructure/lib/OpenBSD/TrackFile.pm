@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: TrackFile.pm,v 1.6 2022/03/07 16:34:26 espie Exp $
+# $OpenBSD: TrackFile.pm,v 1.7 2023/05/14 09:08:32 espie Exp $
 # Copyright (c) 2018-2022 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -14,9 +14,8 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-use strict;
-use warnings;
 
+use v5.36;
 # This is a set of utility classes for update-plist
 
 # so in order to put objects in the right plist part, we need to track
@@ -26,9 +25,8 @@ use warnings;
 
 package OpenBSD::TrackedFile;
 # the actual OpenBSD::TrackedFile(s) will be created by the next (factory) class
-sub new
+sub new($class, $name, $ext)
 {
-	my ($class, $name, $ext) = @_;
 	bless {name => $name, 	# the actual filename proper
 		ext => $ext, 	# extension like -new since update-plist
 				# creates new files for people to diff
@@ -37,17 +35,14 @@ sub new
 	    }, $class;
 }
 
-sub add
+sub add($self, $item)
 {
-	my ($self, $item) = @_;
 	push(@{$self->{items}}, $item);
 }
 
 # this is the internal method that gets called through prepare_restate
-sub add2
+sub add2($self, $item, $p)
 {
-	my ($self, $item, $p) = @_;
-
 	if ($item->NoDuplicateNames) {
 		my $s = $p->subst->remove_ignored_vars($item->{prepared});
 		my $s2 = $p->subst->do($s);
@@ -66,9 +61,8 @@ sub add2
 	push(@{$self->{items2}}, $item);
 }
 
-sub fh
+sub fh($self)
 {
-	my $self = shift;
 	if (!defined $self->{fh}) {
 		my $full = $self->name.$self->{ext};
 		open($self->{fh}, '>', $full) or die "Can't open $full: $!";
@@ -76,16 +70,14 @@ sub fh
 	return $self->{fh};
 }
 
-sub name
+sub name($self)
 {
-	my $self = shift;
 	return $self->{name};
 }
 
 # iterating through the list for preparing
-sub next_item
+sub next_item($self)
 {
-	my $self = shift;
 	if (@{$self->{items}} != 0) {
 		return shift @{$self->{items}};
 	} else {
@@ -94,9 +86,8 @@ sub next_item
 }
 
 # iterating through the list for writing
-sub next_item2
+sub next_item2($self)
 {
-	my $self = shift;
 	if (@{$self->{items2}} != 0) {
 		return shift @{$self->{items2}};
 	} else {
@@ -109,9 +100,8 @@ sub next_item2
 package OpenBSD::TrackFile;
 
 # the base factory creates a "default" destination
-sub new
+sub new($class, $default, $ext)
 {
-	my ($class, $default, $ext) = @_;
 	my $self = bless {ext => $ext}, $class;
 	$self->{known}{$default} = 
 	$self->{default} = 
@@ -121,27 +111,23 @@ sub new
 
 # each new fragment creates a new OpenBSD::TrackedFile 
 # (unless it already exists)
-sub file
+sub file($self, $name)
 {
-	my ($self, $name) = @_;
 	$self->{known}{$name} //= 
 	    OpenBSD::TrackedFile->new($name, $self->{ext});
 	return $self->{known}{$name};
 }
 
-sub default
+sub default($self)
 {
-	my $self = shift;
 	return $self->{default};
 }
 
 # and this is the actual method that writes every object: responsible for
 # handling each and every file, and also passing offstate changes (@mode and
 # the likes) to prepare_restate to avoid too much duplication
-sub write_all
+sub write_all($self, $p)
 {
-	my ($self, $p) = @_;
-
 	# we mimic the way pkg_create writes files
 
 	# first pass is just going to scan through the list and queue actual
@@ -197,34 +183,29 @@ package OpenBSD::PackingElement;
 
 
 # this is the actual writer. 
-sub write_restate
+sub write_restate($o, $file, $p)
 {
-	my ($o, $file, $p) = @_;
 	$o->write_backsubst($file, $p);
 	return undef;
 }
 
 # this just prepares data for the second pass
-sub prepare_restate
+sub prepare_restate($o, $file, $p)
 {
-	my ($o, $file, $p) = @_;
 	$o->prepare_backsubst($file, $p);
 	return undef;
 }
 
-sub prepare_backsubst
+sub prepare_backsubst($o, $file, $p)
 {
-	my ($o, $file, $p) = @_;
 	my $s = $p->subst->do_backsubst($o->fullstring, $o->unsubst, $o);
 	$o->{prepared} = $s;
 	$file->add2($o, $p);
 }
 
 # default backsubstitution and writing. 
-sub write_backsubst
+sub write_backsubst($o, $file, $p)
 {
-	my ($o, $file, $p) = @_;
-
 	if (defined (my $s = $o->{candidate_for_comment})) {
 		if ($p->{stash}{$s} > 1) {
 			$o->{prepared} = 
@@ -235,19 +216,18 @@ sub write_backsubst
 }
 
 package OpenBSD::PackingElement::SpecialFile;
-sub write_restate
+sub write_restate($, $, $)
 {
 }
 
-sub prepare_restate
+sub prepare_restate($, $, $)
 {
 }
 
 package OpenBSD::PackingElement::Fragment;
 # while writing, change file accordingly
-sub write_restate
+sub write_restate($self, $file, $p)
 {
-	my ($self, $file, $p) = @_;
 	# don't do backsubst on fragments, pkg_create does not!
 	$self->write($file->fh);
 	my $base = $file->name;
@@ -258,9 +238,8 @@ sub write_restate
 	return undef;
 }
 
-sub prepare_restate
+sub prepare_restate($self, $file, $p)
 {
-	my ($self, $file, $p) = @_;
 	# don't do backsubst on fragments, pkg_create does not!
 	$file->add2($self, $p);
 	my $base = $file->name;
@@ -272,10 +251,8 @@ sub prepare_restate
 }
 
 package OpenBSD::PackingElement::FileObject;
-sub write_restate
+sub write_restate($self, $f, $p)
 {
-	my ($self, $f, $p) = @_;
-	
 	# TODO there should be some more code matching the mode to the original
 	# file that was copied
 	for my $k (qw(mode owner group)) {
@@ -305,9 +282,8 @@ sub write_restate
 }
 
 package OpenBSD::PackingElement::FileBase;
-sub write_backsubst
+sub write_backsubst($self, $f, $p)
 {
-	my ($self, $f, $p) = @_;
 	if (defined $self->{nochecksum}) {
 		print {$f->fh} "\@comment no checksum\n";
 	}
@@ -320,9 +296,8 @@ sub write_backsubst
 package OpenBSD::PackingElement::LoginClass;
 use File::Basename;
 
-sub prepare_backsubst
+sub prepare_backsubst($self, $f, $p)
 {
-	my ($self, $f, $p) = @_;
 	$self->SUPER::prepare_backsubst($f, $p);
 	if (!defined $self->{mytags}) {
 		my $n = OpenBSD::PackingElement::Sample->new(
@@ -332,9 +307,8 @@ sub prepare_backsubst
 }
 
 package OpenBSD::PackingElement::Lib;
-sub prepare_backsubst
+sub prepare_backsubst($self, $f, $p)
 {
-	my ($self, $f, $p) = @_;
 	if ($self->name =~ m,^(.*?)lib([^\/]+)\.so\.(\d+\.\d+)$,) {
 		my ($path, $name, $version) = ($1, $2, $3);
 		my $k = "LIB${name}_VERSION";
