@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.206 2023/05/06 05:20:31 espie Exp $
+# $OpenBSD: Port.pm,v 1.207 2023/05/14 09:58:25 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -1095,6 +1095,17 @@ sub cleanup_after_fork($self)
         $self->SUPER::cleanup_after_fork;
 }
 
+sub silent_log($job, @parts)
+{
+	my $msg = join(@parts);
+	my $old = $job->{logfh}->autoflush(1);
+	print {$job->{logfh}} $msg;
+	$job->{logfh}->autoflush($old);
+	if (defined $job->{watched}) {
+		$job->{watched}->adjust_by(length($msg));
+	}
+}
+
 package DPB::Job::Port;
 our @ISA = qw(DPB::Job::BasePort);
 
@@ -1123,17 +1134,6 @@ sub new($class, @rest)
 		$job->add_normal_tasks($builder->should_clean($v), $core);
 	}
 	return $job;
-}
-
-sub silent_log($job, @parts)
-{
-	my $msg = join(@parts);
-	my $old = $job->{logfh}->autoflush(1);
-	print {$job->{logfh}} $msg;
-	$job->{logfh}->autoflush($old);
-	if (defined $job->{watched}) {
-		$job->{watched}->adjust_by(length($msg));
-	}
 }
 
 sub new_junk_only($class, @rest)
