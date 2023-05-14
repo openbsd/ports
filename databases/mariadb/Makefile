@@ -7,7 +7,7 @@ DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
 EPOCH=		1
 
-REVISION-server=1
+REVISION-server=2
 
 CATEGORIES=	databases
 MASTER_SITES=	https://downloads.mariadb.com/MariaDB/${DISTNAME}/source/ \
@@ -82,6 +82,7 @@ CONFIGURE_ARGS+=-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 		-DWITH_EXTERNAL_ZLIB=On \
 		-DWITH_PCRE=system \
 		-DWITH_SSL=system \
+		-DWITH_WSREP=On \
 		-DCONNECT_WITH_JDBC=Off \
 		-DCONNECT_WITH_MONGO=Off \
 		-DCONNECT_WITH_ODBC=Off \
