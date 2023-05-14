@@ -7,7 +7,7 @@ DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
 EPOCH=		1
 
-REVISION-server=0
+REVISION-server=1
 
 CATEGORIES=	databases
 MASTER_SITES=	https://downloads.mariadb.com/MariaDB/${DISTNAME}/source/ \

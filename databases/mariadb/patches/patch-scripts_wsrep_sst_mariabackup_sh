@@ -1,0 +1,30 @@
+Index: scripts/wsrep_sst_mariabackup.sh
+--- scripts/wsrep_sst_mariabackup.sh.orig
++++ scripts/wsrep_sst_mariabackup.sh
+@@ -437,14 +437,14 @@ get_footprint()
+     cd "$DATA_DIR"
+     local payload_data=$(find . \
+         -regex '.*undo[0-9]+$\|.*\.ibd$\|.*\.MYI$\|.*\.MYD$\|.*ibdata1$' \
+-        -type f -print0 | du --files0-from=- --block-size=1 -c -s | \
++        -type f -print | xargs du -c -s | \
+         awk 'END { print $1 }')
+ 
+     local payload_undo=0
+     if [ -n "$ib_undo_dir" -a -d "$ib_undo_dir" ]; then
+         cd "$ib_undo_dir"
+-        payload_undo=$(find . -regex '.*undo[0-9]+$' -type f -print0 | \
+-            du --files0-from=- --block-size=1 -c -s | awk 'END { print $1 }')
++        payload_undo=$(find . -regex '.*undo[0-9]+$' -type f -print | \
++            xargs du -c -s | awk 'END { print $1 }')
+     fi
+     cd "$OLD_PWD"
+ 
+@@ -793,7 +793,7 @@ recv_joiner()
+     local ltcmd="$tcmd"
+     if [ $tmt -gt 0 ]; then
+         if [ -n "$(commandex timeout)" ]; then
+-            if timeout --help | grep -qw -F -- '-k'; then
++            if timeout --help 2>/dev/null | grep -qw -F -- '-k'; then
+                 ltcmd="timeout -k $(( tmt+10 )) $tmt $tcmd"
+             else
+                 ltcmd="timeout -s9 $tmt $tcmd"
