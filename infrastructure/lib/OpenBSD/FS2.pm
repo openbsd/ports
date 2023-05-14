@@ -1,4 +1,4 @@
-# $OpenBSD: FS2.pm,v 1.39 2023/05/07 06:30:13 espie Exp $
+# $OpenBSD: FS2.pm,v 1.40 2023/05/14 09:05:04 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -13,54 +13,55 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-use strict;
-use warnings;
-
+use v5.36;
 use OpenBSD::BaseFS;
+
+
+# This is the part of update-plist that interfaces with the filesystem:
+# figuring out which file is what, mostly straightforward especially
+# compared to other parts fo update-plist
+
+# Base class for recognized objects
+# all of these map to "PackingElements"
+# (some of them are dummy elements that are NOT recognized outside of
+#     update-plist)
 
 package OpenBSD::FS::File;
 
 use OpenBSD::IdCache;
 
-sub new
+sub new($class, $filename, $owner, $group)
 {
-	my ($class, $filename, $owner, $group) = @_;
 	bless {path => $filename, owner => $owner, group => $group}, $class
 }
 
-sub path
+sub path($self)
 {
-	shift->{path};
+	$self->{path}
 }
 
-sub owner
+sub owner($self)
 {
-	shift->{owner};
+	$self->{owner};
 }
 
-sub group
+sub group($self)
 {
-	shift->{group};
-}
-
-sub may_queue
-{
+	$self->{group};
 }
 
 my $uid_lookup = OpenBSD::UnameCache->new;
 my $gid_lookup = OpenBSD::GnameCache->new;
 
-sub create
+sub create($class, $path, $fs)
 {
-	my ($class, $path, $fs) = @_;
-
 	my ($uid, $gid) = (lstat $fs->destdir($path))[4,5];
 	$path =~ s,^/etc/X11/app-defaults\b,/usr/local/lib/X11/app-defaults,;
 	return $class->new($path,
 	    $uid_lookup->lookup($uid), $gid_lookup->lookup($gid));
 }
 
-sub classes
+sub classes($)
 {
 	return (qw(OpenBSD::FS::File::Directory OpenBSD::FS::File::Rc
 		OpenBSD::FS::File::Desktop
@@ -82,36 +83,46 @@ sub classes
 		OpenBSD::FS::File));
 }
 
-sub recognize
+# $class->recognize($filename, $fsobj, $data):
+# 	called for each class in order until the "default" file
+#	some retrieved data such as file's contents are cached for
+# 	efficiency
+sub recognize($, $, $, $)
 {
 	return 1;
 }
 
-sub element_class
+sub element_class($)
 {
 	'OpenBSD::PackingElement::File';
 }
 
-sub fill_objdump
+sub fill_objdump($, $filename, $, $data)
 {
-	my ($class, $filename, $fs, $data) = @_;
 	return if exists $data->{objdump};
 	my $check = `/usr/bin/objdump -h \Q$filename\E 2>/dev/null`;
 	chomp $check;
 	$data->{objdump} = $check;
 }
 
-# some files may "bleed" into other objects
-sub tweak_other_paths
+# $self->tweak_other_paths($fsobject, $fileshash)
+# some files may "bleed" into other objects, e.g., if
+# there's an ocaml .cma, then a corresponding .a will be an ocaml library
+# or, for instance, presence of fonts in a directory tags the directory as
+# a font directory
+
+# TODO tweak should use some kind of "reblessing" mechanism to at least
+# warn about stuff that belongs in several non obvious categories
+sub tweak_other_paths($, $, $)
 {
 }
 
-sub can_have_debug
+sub can_have_debug($)
 {
 	return 0;
 }
 
-sub is_dir
+sub is_dir($)
 {
 	return 0;
 }
@@ -119,38 +130,37 @@ sub is_dir
 package OpenBSD::FS::File::WithDebugInfo;
 our @ISA = qw(OpenBSD::FS::File);
 
-sub can_have_debug
+sub can_have_debug($)
 {
 	return 1;
 }
 package OpenBSD::FS::File::Directory;
 our @ISA = qw(OpenBSD::FS::File);
-sub recognize
+sub recognize($, $filename, $fs, $)
 {
-	my ($class, $filename, $fs) = @_;
 	return -d $fs->destdir($filename) && !-l $fs->destdir($filename);
 }
 
-sub element_class
+sub element_class($)
 {
 	'OpenBSD::PackingElement::Dir';
 }
 
-sub is_dir
+sub is_dir($)
 {
 	return 1;
 }
 
 package OpenBSD::FS::File::ManDirectory;
 our @ISA = qw(OpenBSD::FS::File::Directory);
-sub element_class
+sub element_class($)
 {
 	'OpenBSD::PackingElement::Mandir';
 }
 
 package OpenBSD::FS::File::FontDirectory;
 our @ISA = qw(OpenBSD::FS::File::Directory);
-sub element_class
+sub element_class($)
 {
 	'OpenBSD::PackingElement::Fontdir';
 }
@@ -158,34 +168,31 @@ sub element_class
 package OpenBSD::FS::File::Rc;
 our @ISA = qw(OpenBSD::FS::File);
 
-sub recognize
+sub recognize($, $filename, $fs, $)
 {
-	my ($class, $filename, $fs) = @_;
 	return $filename =~ m,/rc\.d/, && -f $fs->destdir($filename);
 }
 
-sub element_class
+sub element_class($)
 {
 	'OpenBSD::PackingElement::RcScript';
 }
 
 package OpenBSD::FS::File::Desktop;
 our @ISA = qw(OpenBSD::FS::File);
-sub recognize
+sub recognize($, $filename, $fs, $)
 {
-	my ($class, $filename, $fs) = @_;
 	return 0 unless $filename =~ m,share/applications/.*\.desktop$, && 
 	    -f $fs->destdir($filename);
 	$filename = $fs->resolve_link($filename);
 	open my $fh, '<:utf8', $filename or return 0;
-#	open my $fh, '<', $filename or return 0;
 	my $tag = <$fh>;
 	chomp;
 	return 1 if $tag =~ m/^\[Desktop Entry\]/;
 	return 0;
 }
 
-sub element_class
+sub element_class($)
 {
 	'OpenBSD::PackingElement::Desktop';
 }
@@ -193,49 +200,45 @@ sub element_class
 package OpenBSD::FS::File::LoginClass;
 our @ISA = qw(OpenBSD::FS::File);
 
-sub recognize
+sub recognize($, $filename, $fs, $)
 {
-	my ($class, $filename, $fs) = @_;
 	return $filename =~ m,/share/examples/login\.conf\.d/, 
 	    && -f $fs->destdir($filename);
 }
 
-sub element_class
+sub element_class($)
 {
 	'OpenBSD::PackingElement::LoginClass';
 }
 
 package OpenBSD::FS::File::Glib2Schema;
 our @ISA = qw(OpenBSD::FS::File);
-sub recognize
+sub recognize($, $filename, $, $)
 {
-	my ($class, $filename, $fs) = @_;
 	return $filename =~ m,glib-2\.0/schemas/.*\.xml$,;
 }
 
-sub element_class
+sub element_class($)
 {
 	'OpenBSD::PackingElement::Glib2Schema';
 }
 
 package OpenBSD::FS::File::IbusComponent;
 our @ISA = qw(OpenBSD::FS::File);
-sub recognize
+sub recognize($, $filename, $, $)
 {
-	my ($class, $filename, $fs) = @_;
 	return $filename =~ m,share/ibus/component/.*\.xml$,;
 }
 
-sub element_class
+sub element_class($)
 {
 	'OpenBSD::PackingElement::IbusComponent';
 }
 
 package OpenBSD::FS::File::PkgConfig;
 our @ISA = qw(OpenBSD::FS::File);
-sub recognize
+sub recognize($, $filename, $fs, $)
 {
-	my ($class, $filename, $fs) = @_;
 	if ($filename =~ m,(.*lib/pkgconfig/)(.*)\.pc$,) {
 		my ($dir, $f) = ($1, $2);
 		my $state = $fs->{state};
@@ -255,13 +258,12 @@ sub recognize
 
 package OpenBSD::FS::File::MimeInfo;
 our @ISA = qw(OpenBSD::FS::File);
-sub recognize
+sub recognize($, $filename, $, $)
 {
-	my ($class, $filename, $fs) = @_;
 	return $filename =~ m,share/mime/packages/.*\.xml$,;
 }
 
-sub element_class
+sub element_class($)
 {
 	'OpenBSD::PackingElement::MimeInfo';
 }
@@ -269,7 +271,7 @@ sub element_class
 package OpenBSD::FS::File::IconThemeDirectory;
 our @ISA = qw(OpenBSD::FS::File::Directory);
 
-sub element_class
+sub element_class($)
 {
 	'OpenBSD::PackingElement::IconThemeDirectory';
 }
@@ -277,13 +279,12 @@ sub element_class
 package OpenBSD::FS::File::IconTheme;
 our @ISA = qw(OpenBSD::FS::File);
 
-sub recognize
+sub recognize($, $filename, $, $)
 {
-	my ($class, $filename, $fs) = @_;
 	return $filename =~ m,share/icons/[^/]+/theme\.cache$,;
 }
 
-sub element_class
+sub element_class($)
 {
 	'OpenBSD::PackingElement::IconTheme';
 }
@@ -291,15 +292,13 @@ sub element_class
 package OpenBSD::FS::File::Icon;
 our @ISA = qw(OpenBSD::FS::File);
 
-sub recognize
+sub recognize($, $filename, $, $)
 {
-	my ($class, $filename, $fs) = @_;
 	return $filename =~ m,share/icons/.*/.*\.(png|svg)$,;
 }
 
-sub tweak_other_paths
+sub tweak_other_paths($self, $fs, $files)
 {
-	my ($self, $fs, $files) = @_;
 	my $m = $self->path;
 	if ($self->path =~ m,(.*/share/icons/.*?)/,) {
 		my $m = $1;
@@ -313,14 +312,13 @@ sub tweak_other_paths
 package OpenBSD::FS::File::Binary;
 our @ISA = qw(OpenBSD::FS::File::WithDebugInfo);
 
-sub element_class
+sub element_class($)
 {
 	'OpenBSD::PackingElement::Binary';
 }
 
-sub recognize
+sub recognize($class, $filename, $fs, $data)
 {
-	my ($class, $filename, $fs, $data) = @_;
 	$filename = $fs->destdir($filename);
 	return 0 if -l $filename or ! -x $filename;
 	$class->fill_objdump($filename, $fs, $data);
@@ -335,9 +333,8 @@ package OpenBSD::FS::File::Info;
 our @ISA = qw(OpenBSD::FS::File);
 use File::Basename;
 
-sub recognize
+sub recognize($class, $filename, $fs, $)
 {
-	my ($class, $filename, $fs) = @_;
 	return 0 unless $filename =~ m/\.info$/ or $filename =~ m/info\/[^\/]+$/;
 	$filename = $fs->resolve_link($filename);
 	open my $fh, '<', $filename or return 0;
@@ -354,14 +351,13 @@ sub recognize
 	}
 }
 
-sub element_class
+sub element_class($)
 {
 	'OpenBSD::PackingElement::InfoFile';
 }
 
-sub tweak_other_paths
+sub tweak_other_paths($self, $fs, $files)
 {
-	my ($self, $fs, $files) = @_;
 	my $m = dirname($self->path);
 	if (exists $files->{$m}) {
 		bless $files->{$m}, "OpenBSD::FS::File::InfoDirectory";
@@ -370,30 +366,27 @@ sub tweak_other_paths
 
 package OpenBSD::FS::File::InfoDirectory;
 our @ISA = qw(OpenBSD::FS::File::Directory);
-sub element_class
+sub element_class($)
 {
 	'OpenBSD::PackingElement::Infodir';
 }
 
 package OpenBSD::FS::File::Subinfo;
 our @ISA = qw(OpenBSD::FS::File::Info);
-sub recognize
+sub recognize($class, $filename, $fs, $data)
 {
-	my ($class, $filename, $fs) = @_;
 	if ($filename =~ m/^(.*\.info)\-\d+$/ or
 	    $filename =~ m/^(.*info\/[^\/]+)\-\d+$/) {
-		return $class->SUPER::recognize($1, $fs);
+		return $class->SUPER::recognize($1, $fs, $data);
 	}
 	if ($filename =~ m/^(.*)\.\d+in$/) {
-		return $class->SUPER::recognize("$1.info");
+		return $class->SUPER::recognize("$1.info", $fs, $data);
 	}
 	return 0;
 }
 
-sub tweak_other_paths
+sub tweak_other_paths($self, $fs, $files)
 {
-	my ($self, $fs, $files) = @_;
-
 	delete $files->{$self->path};
 	$fs->zap_dirs($files, $self->path);
 }
@@ -401,9 +394,8 @@ sub tweak_other_paths
 package OpenBSD::FS::File::Dirinfo;
 our @ISA = qw(OpenBSD::FS::File::Subinfo);
 
-sub recognize
+sub recognize($, $filename, $fs, $)
 {
-	my ($class, $filename, $fs) = @_;
 	return 0 unless $filename =~ m/\/dir$/;
 	$filename = $fs->resolve_link($filename);
 	open my $fh, '<', $filename or return 0;
@@ -428,9 +420,8 @@ package OpenBSD::FS::File::Manpage;
 our @ISA = qw(OpenBSD::FS::File);
 use File::Basename;
 
-sub recognize
+sub recognize($, $re, $fs, $)
 {
-	my ($class, $re, $fs) = @_;
 	if ($re =~ m,/man/(?:[^/]*?/)?man(.*?)/[^/]+\.\1[[:alpha:]]?(?:\.gz|\.Z)?$,) {
 		return 1;
 	}
@@ -446,14 +437,13 @@ sub recognize
 	return 0;
 }
 
-sub element_class
+sub element_class($)
 {
 	return 'OpenBSD::PackingElement::Manpage';
 }
 
-sub tweak_other_paths
+sub tweak_other_paths($self, $fs, $files)
 {
-	my ($self, $fs, $files) = @_;
 	my $m = dirname(dirname($self->path));
 
 	# this should take care of language subdirectories
@@ -471,10 +461,8 @@ sub tweak_other_paths
 package OpenBSD::FS::File::Library;
 our @ISA = qw(OpenBSD::FS::File::WithDebugInfo);
 
-sub recognize
+sub recognize($class, $filename, $fs, $data)
 {
-	my ($class, $filename, $fs, $data) = @_;
-
 	return 0 unless $filename =~ m/\/lib[^\/]+\.so\.\d+\.\d+$/;
 	$filename = $fs->resolve_link($filename);
 	return 0 if -l $filename;
@@ -490,7 +478,7 @@ sub recognize
 	}
 }
 
-sub element_class
+sub element_class($)
 {
 	'OpenBSD::PackingElement::Lib';
 }
@@ -498,15 +486,13 @@ sub element_class
 package OpenBSD::FS::File::Plugin;
 our @ISA = qw(OpenBSD::FS::File::WithDebugInfo);
 
-sub element_class
+sub element_class($)
 {
 	return 'OpenBSD::PackingElement::SharedObject';
 }
 
-sub recognize
+sub recognize($class, $filename, $fs, $data)
 {
-	my ($class, $filename, $fs, $data) = @_;
-
 	return 0 unless $filename =~ m/\.so$/;
 	$filename = $fs->resolve_link($filename);
 	$class->fill_objdump($filename, $fs, $data);
@@ -521,15 +507,13 @@ sub recognize
 package OpenBSD::FS::File::StaticLibrary;
 our @ISA = qw(OpenBSD::FS::File::WithDebugInfo);
 
-sub element_class
+sub element_class($)
 {
 	return 'OpenBSD::PackingElement::StaticLib';
 }
 
-sub recognize
+sub recognize($class, $filename, $fs, $data)
 {
-	my ($class, $filename, $fs, $data) = @_;
-
 	return 0 unless $filename =~ m/\/lib[^\/]+\.a$/;
 	$filename = $fs->resolve_link($filename);
 	my $check = `/usr/bin/ar t \Q$filename\E >/dev/null 2>/dev/null`;
@@ -545,18 +529,16 @@ our @ISA = qw(OpenBSD::FS::File);
 use File::Basename;
 
 # XXX TODO  evaluate whether we ought to be smarter in recognizing fonts
-sub recognize
+sub recognize($, $filename, $, $)
 {
-	my ($class, $filename, $fs, $data) = @_;
 
 	return 0 unless $filename =~ m,^/usr/local/share/fonts/.*\.(ot[bcf]|tt[cf]|pf[ab]|pcf(\.gz)?)$,;
 
 	return 1;
 }
 
-sub tweak_other_paths
+sub tweak_other_paths($self, $fs, $files)
 {
-	my ($self, $fs, $files) = @_;
 	my $m = dirname($self->path);
 	if (exists $files->{$m}) {
 		bless $files->{$m}, "OpenBSD::FS::File::FontDirectory";
@@ -566,20 +548,18 @@ sub tweak_other_paths
 package OpenBSD::FS::File::Ocaml::Cmx;
 our @ISA = qw(OpenBSD::FS::File);
 
-sub recognize
+sub recognize($, $filename, $, $)
 {
-	my ($class, $filename, $fs, $data) = @_;
 	return $filename =~ m/\.cmx$/;
 }
 
-sub element_class
+sub element_class($)
 {
 	"OpenBSD::PackingElement::File::Ocaml::Cmx"
 }
 
-sub tweak_other_paths
+sub tweak_other_paths($self, $fs, $files)
 {
-	my ($self, $fs, $files) = @_;
 	my $o = $self->path;
 	$o =~ s/\.cmx$/.o/;
 	if (exists $files->{$o}) {
@@ -590,20 +570,18 @@ sub tweak_other_paths
 package OpenBSD::FS::File::Ocaml::Cmxa;
 our @ISA = qw(OpenBSD::FS::File);
 
-sub recognize
+sub recognize($, $filename, $, $)
 {
-	my ($class, $filename, $fs, $data) = @_;
 	return $filename =~ m/\.cmxa$/;
 }
 
-sub element_class
+sub element_class($)
 {
 	"OpenBSD::PackingElement::File::Ocaml::Cmxa"
 }
 
-sub tweak_other_paths
+sub tweak_other_paths($self, $fs, $files)
 {
-	my ($self, $fs, $files) = @_;
 	my $a = $self->path;
 	$a =~ s/\.cmxa$/.a/;
 	if (exists $files->{$a}) {
@@ -614,13 +592,12 @@ sub tweak_other_paths
 package OpenBSD::FS::File::Ocaml::Cmxs;
 our @ISA = qw(OpenBSD::FS::File);
 
-sub recognize
+sub recognize($, $filename, $, $)
 {
-	my ($class, $filename, $fs, $data) = @_;
 	return $filename =~ m/\.cmxs$/;
 }
 
-sub element_class
+sub element_class($)
 {
 	"OpenBSD::PackingElement::File::Ocaml::Cmxs"
 }
@@ -628,7 +605,7 @@ sub element_class
 package OpenBSD::FS::File::Ocaml::a;
 our @ISA = qw(OpenBSD::FS::File);
 
-sub element_class
+sub element_class($)
 {
 	"OpenBSD::PackingElement::File::Ocaml::a"
 }
@@ -636,7 +613,7 @@ sub element_class
 package OpenBSD::FS::File::Ocaml::o;
 our @ISA = qw(OpenBSD::FS::File);
 
-sub element_class
+sub element_class($)
 {
 	"OpenBSD::PackingElement::File::Ocaml::o"
 }
@@ -651,9 +628,8 @@ use File::Basename;
 use OpenBSD::IdCache;
 use Config;
 
-sub ignore_parents
+sub ignore_parents($self, $path)
 {
-	my ($self, $path) = @_;
 	do {
 		$self->{ignored}{$path} = 1;
 		$path = dirname($path);
@@ -663,9 +639,8 @@ sub ignore_parents
 
 # existing files are classified by the following class
 # we look under a destdir, and we do ignore a hash of files
-sub new
+sub new($class, $destdir, $ignored, $state)
 {
-	my ($class, $destdir, $ignored, $state) = @_;
 	my $o = $class->SUPER::new($destdir, $state);
 
 	$o->{ignored} = {};
@@ -678,12 +653,9 @@ sub new
 	return $o;
 }
 
-sub mtree
+sub mtree($self)
 {
 	use OpenBSD::Mtree;
-
-	my $self = shift;
-
 	if (!defined $self->{mtree}) {
 		my $mtree = $self->{mtree} = {};
 		OpenBSD::Mtree::parse($mtree, '/', '/etc/mtree/4.4BSD.dist');
@@ -696,9 +668,8 @@ sub mtree
 	return $self->{mtree};
 }
 
-sub create
+sub create($self, $filename)
 {
-	my ($self, $filename) = @_;
 	my $data = {};
 	for my $class (OpenBSD::FS::File->classes) {
 		if ($class->recognize($filename, $self, $data)) {
@@ -708,10 +679,8 @@ sub create
 }
 
 # check that $fullname is not the only entry in its directory
-sub has_other_entry
+sub has_other_entry($self, $dir, $file)
 {
-	my ($self, $dir, $file) = @_;
-
 	opendir(my $fh, $self->destdir($dir)) or return 0;
 	while (my $e = readdir($fh)) {
 		next if $e eq '.' or $e eq '..';
@@ -723,9 +692,8 @@ sub has_other_entry
 
 ## zap directories going up if there is nothing but that filename.
 ## used to zap .perllocal, dir, and other stuff.
-sub zap_dirs
+sub zap_dirs($self, $h, $fullname)
 {
-	my ($self, $h, $fullname) = @_;
 	my $d = dirname($fullname);
 	return if $d eq '/';
 	return if $self->has_other_entry($d, basename($fullname));
@@ -733,10 +701,8 @@ sub zap_dirs
 	$self->zap_dirs($h, $d);
 }
 
-sub is_perl_path
+sub is_perl_path($self, $path)
 {
-	my ($self, $path) = @_;
-
 	my $installsitearch = $Config{'installsitearch'};
 	my $archname = $Config{'archname'};
 	my $installprivlib = $Config{'installprivlib'};
@@ -752,13 +718,11 @@ sub is_perl_path
 	}
 }
 
-sub scan
+sub scan($self)
 {
-	my $self = shift;
-
 	my $files = {};
 	find(
-		sub {
+		sub() {
 			return if $self->{ignored}{$File::Find::name};
 			my $path = $self->undest($File::Find::name);
 			return if $self->mtree->{$path};
@@ -777,9 +741,9 @@ sub scan
 	return $files;
 }
 
-sub parse_logfile
+# XXX not used yet
+sub parse_logfile($self, $filename)
 {
-	my ($self, $filename) = @_;
 	# don't bother if it's not there
 	return unless -f $filename;
 	require OpenBSD::LogParser;
@@ -787,9 +751,8 @@ sub parse_logfile
 }
 
 # build a hash of files needing registration
-sub fill
+sub fill($class, $destdir, $ignored, $logfile, $state)
 {
-	my ($class, $destdir, $ignored, $logfile, $state) = @_;
 	my $self = $class->new($destdir, $ignored, $state);
 
 	if (defined $logfile) {
