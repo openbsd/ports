@@ -1,0 +1,13 @@
+Index: galerautils/src/gu_fdesc.cpp
+--- galerautils/src/gu_fdesc.cpp.orig
++++ galerautils/src/gu_fdesc.cpp
+@@ -235,6 +235,9 @@ namespace gu
+ #if defined(__APPLE__)
+         if (-1 == fcntl (fd_, F_SETSIZE, size_) && -1 == ftruncate (fd_, size_))
+         {
++#elif defined(__OpenBSD__)
++        {
++            errno = ENOSYS;
+ #else
+         int const ret = posix_fallocate (fd_, start, diff);
+         if (0 != ret)

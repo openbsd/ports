@@ -1,0 +1,12 @@
+Index: gcache/src/CMakeLists.txt
+--- gcache/src/CMakeLists.txt.orig
++++ gcache/src/CMakeLists.txt
+@@ -32,7 +32,7 @@ target_link_libraries(gcache galerautilsxx)
+ 
+ add_executable(gcache_test test.cpp)
+ 
+-target_link_libraries(gcache_test gcache pthread rt)
++target_link_libraries(gcache_test gcache pthread)
+ 
+ target_compile_options(gcache_test
+   PRIVATE

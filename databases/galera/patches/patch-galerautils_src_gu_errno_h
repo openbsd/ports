@@ -1,0 +1,12 @@
+Index: galerautils/src/gu_errno.h
+--- galerautils/src/gu_errno.h.orig
++++ galerautils/src/gu_errno.h
+@@ -7,7 +7,7 @@
+ 
+ #include <errno.h>
+ 
+-#if defined(__APPLE__) || defined(__FreeBSD__)
++#if defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+ #  define GU_ELAST ELAST
+ #else
+ /* must be high enough to not collide with system errnos but lower than 256 */

@@ -1,0 +1,39 @@
+Index: galerautils/src/gu_resolver.cpp
+--- galerautils/src/gu_resolver.cpp.orig
++++ galerautils/src/gu_resolver.cpp
+@@ -17,7 +17,7 @@
+ #include <map>
+ #include <stdexcept>
+ 
+-#if defined(__APPLE__) || defined(__FreeBSD__)
++#if defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+ # include <ifaddrs.h>
+ # define IPV6_ADD_MEMBERSHIP IPV6_JOIN_GROUP
+ # define IPV6_DROP_MEMBERSHIP IPV6_LEAVE_GROUP
+@@ -79,7 +79,7 @@ class SchemeMap (private)
+             family,
+             socktype,
+             protocol,
+-#if defined(__FreeBSD__)
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ 	    0, // FreeBSD gives ENOMEM error with non-zero value
+ #else
+             sizeof(struct sockaddr),
+@@ -208,7 +208,7 @@ static unsigned int get_ifindex_by_addr(const gu::net:
+ 
+     unsigned int idx(-1);
+     int err(0);
+-#if defined(__APPLE__) || defined(__FreeBSD__)
++#if defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+     struct ifaddrs *if_addrs = NULL;
+     struct ifaddrs *if_addr = NULL;
+ 
+@@ -272,7 +272,7 @@ out:
+                 }
+ #if defined(__linux__) || defined(__GNU__)
+                 idx = ifrp->ifr_ifindex;
+-#elif defined(__sun__) || defined(__FreeBSD_kernel__)
++#elif defined(__sun__) || defined(__FreeBSD_kernel__) || defined(__OpenBSD__)
+                 idx = ifrp->ifr_index;
+ #else
+ # error "Unsupported ifreq structure"

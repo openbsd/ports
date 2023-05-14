@@ -1,0 +1,12 @@
+Index: galerautils/src/gu_arch.h
+--- galerautils/src/gu_arch.h.orig
++++ galerautils/src/gu_arch.h
+@@ -41,7 +41,7 @@
+ # error "Byte order not defined"
+ #endif
+ 
+-#if defined(__sun__)
++#if defined(__sun__) || defined(__OpenBSD__)
+ # if defined (_LP64)
+ #  define GU_WORDSIZE 64
+ # else

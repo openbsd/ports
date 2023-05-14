@@ -1,0 +1,10 @@
+Index: wsrep/tests/CMakeLists.txt
+--- wsrep/tests/CMakeLists.txt.orig
++++ wsrep/tests/CMakeLists.txt
+@@ -17,5 +17,5 @@ target_compile_definitions(wsrep_test
+   -DWSREP_PROVIDER="${PROJECT_BINARY_DIR}/libgalera_smm.so"
+   -DGALERA_VERSION="${GALERA_VERSION}"
+   -DGALERA_GIT_REVISION="${GALERA_GIT_REVISION}")
+-target_link_libraries(wsrep_test dl)
++target_link_libraries(wsrep_test)
+ add_test(NAME wsrep_test COMMAND wsrep_test)

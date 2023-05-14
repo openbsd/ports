@@ -1,0 +1,14 @@
+Index: galerautils/src/gu_byteswap.h
+--- galerautils/src/gu_byteswap.h.orig
++++ galerautils/src/gu_byteswap.h
+@@ -57,6 +57,10 @@ static GU_FORCE_INLINE uint64_t GU_ROTL64 (uint64_t x,
+ #  define gu_bswap16 BSWAP_16
+ #  define gu_bswap32 BSWAP_32
+ #  define gu_bswap64 BSWAP_64
++#elif defined(__OpenBSD__)
++#  define gu_bswap16 swap16
++#  define gu_bswap32 swap32
++#  define gu_bswap64 swap64
+ #elif defined(bswap16)
+ #  define gu_bswap16 bswap16
+ #  define gu_bswap32 bswap32

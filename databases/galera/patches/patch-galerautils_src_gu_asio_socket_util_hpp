@@ -1,0 +1,12 @@
+Index: galerautils/src/gu_asio_socket_util.hpp
+--- galerautils/src/gu_asio_socket_util.hpp.orig
++++ galerautils/src/gu_asio_socket_util.hpp
+@@ -148,7 +148,7 @@ static struct tcp_info get_tcp_info(Socket& socket)
+ {
+     struct tcp_info tcpi;
+     memset(&tcpi, 0, sizeof(tcpi));
+-#if defined(__linux__) || defined(__FreeBSD__)
++#if defined(__linux__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+ #if defined(__linux__)
+     static int const level(SOL_TCP);
+ #else /* FreeBSD */

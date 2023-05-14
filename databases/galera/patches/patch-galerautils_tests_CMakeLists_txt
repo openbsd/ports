@@ -1,0 +1,12 @@
+Index: galerautils/tests/CMakeLists.txt
+--- galerautils/tests/CMakeLists.txt.orig
++++ galerautils/tests/CMakeLists.txt
+@@ -104,7 +104,7 @@ target_compile_options(deqmap_bench
+   PRIVATE
+   -Wno-conversion)
+ 
+-target_link_libraries(deqmap_bench galerautilsxx rt)
++target_link_libraries(deqmap_bench galerautilsxx)
+ 
+ #
+ # CRC32C micro benchmark.
