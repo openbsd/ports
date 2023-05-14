@@ -1,11 +1,10 @@
 COMMENT=	lightweight headless squeezebox player
 
-V=		1.9.2.1205
+V=		1.9.9.1430
 GH_ACCOUNT=	ralph-irving
 GH_PROJECT=	squeezelite
-GH_COMMIT=	1cff80e5330501b1f587a474f06db08fd53d9521
+GH_COMMIT=	663db8f64d73dceca6a2a18cdb705ad846daa272
 DISTNAME=	squeezelite-$V
-REVISION=	2
 
 CATEGORIES=	audio
 

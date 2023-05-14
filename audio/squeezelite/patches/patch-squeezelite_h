@@ -1,9 +1,9 @@
 Index: squeezelite.h
 --- squeezelite.h.orig
 +++ squeezelite.h
-@@ -59,7 +59,7 @@
- #define OSX       0
+@@ -61,7 +61,7 @@
  #define WIN       1
+ #define PORTAUDIO 1
  #define FREEBSD   0
 -#elif defined(__FreeBSD__)
 +#elif defined(__FreeBSD__) || defined(__OpenBSD__)
