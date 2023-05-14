@@ -1,4 +1,4 @@
-# $OpenBSD: BinaryScan.pm,v 1.6 2021/06/21 15:16:52 espie Exp $
+# $OpenBSD: BinaryScan.pm,v 1.7 2023/05/14 09:00:33 espie Exp $
 # Copyright (c) 2011 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -13,8 +13,7 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-use strict;
-use warnings;
+use v5.36;
 
 # scan binaries through objdump and record the results
 # - retrieves files through source (see FileSource)
@@ -27,40 +26,33 @@ use warnings;
 # it uses $state to display errors and to access the recorder
 
 package OpenBSD::BinaryScan;
-sub new
+sub new($class, $state)
 {
-	my ($class, $state) = @_;
 	bless {state => $state}, $class;
 }
 
-sub set_source
+sub set_source($self, $source)
 {
-	my ($self, $source) = @_;
 	$self->{source} = $source;
 }
 
-sub fatal
+sub fatal($self, @msg)
 {
-	my $self = shift;
-	$self->{state}->fatal(@_);
+	$self->{state}->fatal(@msg);
 }
 
-sub logger
+sub logger($self)
 {
-	my $self = shift;
 	return $self->{state}{logger};
 }
 
-sub dest
+sub dest($self)
 {
-	my $self = shift;
 	return $self->{state}{dump};
 }
 
-sub start
+sub start($self, @names)
 {
-	my ($self, @names) = @_;
-
 	unless (open(my $cmd, '-|')) {
 		if ($self->logger) {
 			my $log = $self->logger->log($self->command.".err");
@@ -79,9 +71,8 @@ sub start
 	}
 }
 
-sub record_libs
+sub record_libs($self, $fullname, @libs)
 {
-	my ($self, $fullname, @libs) = @_;
 	my $fh;
 	if (defined $fullname && defined $self->logger) {
 		$fh = $self->logger->open("$fullname.log") or die "$!";
@@ -101,10 +92,8 @@ sub record_libs
 	}
 }
 
-sub retrieve_and_scan_binary
+sub retrieve_and_scan_binary($self, $item, $fullname)
 {
-	my ($self, $item, $fullname) = @_;
-
 	my $n = $self->{source}->retrieve($self->{state}, $item);
 	# make sure to turn into a relative path
 	$n =~ s/^\/*//;
@@ -112,9 +101,8 @@ sub retrieve_and_scan_binary
 	$self->scan_binary($item, $fullname, $n);
 }
 
-sub finish_retrieve_and_scan
+sub finish_retrieve_and_scan($self, $item, $o)
 {
-	my ($self, $item, $o) = @_;
 	$o->{name} = $item->fullname;
 	$o->create;
 	my $n = $item->fullname;
@@ -123,26 +111,23 @@ sub finish_retrieve_and_scan
 	$self->scan_binary($item, File::Spec->canonpath($item->fullname), $n);
 }
 
-sub dont_scan
+sub dont_scan($self, $item)
 {
-	my ($self, $item) = @_;
 	$self->{source}->skip($item);
 }
 
 package OpenBSD::BinaryScan::Objdump;
 our @ISA = qw(OpenBSD::BinaryScan);
 
-sub command() { 'objdump' }
+sub command($) { 'objdump' }
 
-sub exec
+sub exec($self, @names)
 {
-	my ($self, @names) = @_;
 	exec($self->command, '-p', @names);
 }
 
-sub parse
+sub parse($self, $cmd, $names)
 {
-	my ($self, $cmd, $names) = @_;
 	my $fullname;
 	my @l = ();
 	my $linux_binary = 0;
@@ -194,10 +179,8 @@ sub parse
 	$self->record_libs($fullname, @l) unless $linux_binary;
 }
 
-sub scan_binary
+sub scan_binary($self, $item, $fullname, $n)
 {
-	my ($self, $item, $fullname, $n) = @_;
-
 	# okay, so we don't scan now, we keep it for later !
 	$self->{names}{$n} = $fullname;
 	push(@{$self->{cleanup}}, $item);
@@ -207,10 +190,8 @@ sub scan_binary
 	}
 }
 
-sub finish_scanning
+sub finish_scanning($self)
 {
-	my $self = shift;
-
 	if (defined $self->{names}) {
 		my $cmd = $self->start(sort keys %{$self->{names}});
 		$self->parse($cmd, $self->{names});

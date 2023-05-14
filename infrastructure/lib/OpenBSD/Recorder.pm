@@ -1,4 +1,4 @@
-# $OpenBSD: Recorder.pm,v 1.6 2014/03/24 15:18:17 afresh1 Exp $
+# $OpenBSD: Recorder.pm,v 1.7 2023/05/14 09:00:33 espie Exp $
 # Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -13,74 +13,65 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-use strict;
-use warnings;
+use v5.36;
 
 # part of check-lib-depends
 
 # Recorder: how we keep track of which binary uses which library
 package OpenBSD::Recorder;
-sub new
+sub new($class)
 {
-	my $class = shift;
 	return bless {}, $class;
 }
 
-sub reduce_libname
+sub reduce_libname($self, $lib)
 {
-	my ($self, $lib) = @_;
 	$lib =~ s/^(.*\/)?lib(.*)\.so\.(\d+)\.\d+$/$2.$3/;
 	return $lib;
 }
 
-sub libs
+sub libs($self)
 {
-	my $self = shift;
 	return keys %$self;
 }
 
-sub record_rpath
+# $self->record_rpath($path, $filename)
+sub record_rpath($, $, $)
 {
 }
 
 # SimpleRecorder: remember one single binary for each library
 package OpenBSD::SimpleRecorder;
 our @ISA = qw(OpenBSD::Recorder);
-sub record
+sub record($self, $lib, $filename)
 {
-	my ($self, $lib, $filename) = @_;
 	$self->{$self->reduce_libname($lib)} = $filename;
 }
 
-sub binary
+sub binary($self, $lib)
 {
-	my ($self, $lib) = @_;
 	return $self->{$lib};
 }
 
 # AllRecorder: remember all binaries for each library
 package OpenBSD::AllRecorder;
 our @ISA = qw(OpenBSD::Recorder);
-sub record
+sub record($self, $lib, $filename)
 {
-	my ($self, $lib, $filename) = @_;
 	push(@{$self->{$self->reduce_libname($lib)}}, $filename);
 }
 
-sub binaries
+sub binaries($self, $lib)
 {
-	my ($self, $lib) = @_;
 	return @{$self->{$lib}};
 }
-sub binary
+sub binary($self, $lib)
 {
-	my ($self, $lib) = @_;
 	return $self->{$lib}->[0];
 }
 
-sub dump
+sub dump($self, $fh)
 {
-	my ($self, $fh) = @_;
 	for my $lib (sort $self->libs) {
 		print $fh "$lib:\t\n";
 		for my $binary (sort $self->binaries($lib)) {
@@ -90,27 +81,23 @@ sub dump
 }
 
 package OpenBSD::DumpRecorder;
-sub new
+sub new($class)
 {
-	my $class = shift;
 	return bless {}, $class;
 }
 
-sub record
+sub record($self, $lib, $filename)
 {
-	my ($self, $lib, $filename) = @_;
 	push(@{$self->{$filename}->{libs}}, $lib);
 }
 
-sub record_rpath
+sub record_rpath($self, $path, $filename)
 {
-	my ($self, $path, $filename) = @_;
 	push(@{$self->{$filename}->{rpath}}, $path);
 }
 
-sub dump
+sub dump($self, $fh)
 {
-	my ($self, $fh) = @_;
 	while (my ($binary, $v) = each %$self) {
 		print $fh $binary;
 		if (defined $v->{rpath}) {
@@ -121,9 +108,8 @@ sub dump
 	}
 }
 
-sub libraries
+sub libraries($self, $fullname)
 {
-	my ($self, $fullname) = @_;
 	if (defined $self->{$fullname} && defined $self->{$fullname}{libs}) {
 		return @{$self->{$fullname}{libs}};
 	} else {
@@ -131,9 +117,8 @@ sub libraries
 	}
 }
 
-sub rpath
+sub rpath($self, $fullname)
 {
-	my ($self, $fullname) = @_;
 	if (defined $self->{$fullname} && defined $self->{$fullname}{rpath}) {
 		return @{$self->{$fullname}{rpath}};
 	} else {
@@ -141,9 +126,8 @@ sub rpath
 	}
 }
 
-sub retrieve
+sub retrieve($self, $state, $filename)
 {
-	my ($self, $state, $filename) = @_;
 	open(my $fh, '<', $filename) or
 	    $state->fatal("Can't read #1: #2", $filename, $!);
 	while (my $line = <$fh>) {

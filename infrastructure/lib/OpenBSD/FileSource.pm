@@ -1,4 +1,4 @@
-# $OpenBSD: FileSource.pm,v 1.3 2014/07/09 11:26:11 espie Exp $
+# $OpenBSD: FileSource.pm,v 1.4 2023/05/14 09:00:33 espie Exp $
 # Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -13,39 +13,37 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-use strict;
-use warnings;
+use v5.36;
 
 # part of check-lib-depends
 # FileSource: where we get the files to analyze
 
 package OpenBSD::FileSource;
 
-sub directory
+sub directory($self)
 {
-	my $self = shift;
 	return $self->{location};
 }
 
 # file system
 package OpenBSD::FsFileSource;
 our @ISA = qw(OpenBSD::FileSource);
-sub new
+sub new($class, $location)
 {
-	my ($class, $location) = @_;
 	bless {location => $location }, $class
 }
 
-sub retrieve
+sub retrieve($self, $state, $item)
 {
-	my ($self, $state, $item) = @_;
 	return $item->fullname;
 }
 
-sub skip
+# $self->skip($item)
+sub skip($, $)
 {
 }
 
+# $self->clean($item)
 sub clean
 {
 }
@@ -53,15 +51,13 @@ sub clean
 # package archive
 package OpenBSD::PkgFileSource;
 our @ISA = qw(OpenBSD::FileSource);
-sub new
+sub new($class, $handle, $location)
 {
-	my ($class, $handle, $location) = @_;
 	bless {handle => $handle, location => $location }, $class;
 }
 
-sub prepare_to_extract
+sub prepare_to_extract($self, $item)
 {
-	my ($self, $item) = @_;
 	require OpenBSD::ArcCheck;
 	my $o = $self->{handle}->next;
 	$o->{cwd} = $item->cwd;
@@ -73,9 +69,8 @@ sub prepare_to_extract
 	return $o;
 }
 
-sub next
+sub next($self)
 {
-	my $self = shift;
 	my $o = $self->{handle}->next;
 	if (defined $o) {
 		$o->{destdir} = $self->{location};
@@ -83,30 +78,26 @@ sub next
 	return $o;
 }
 
-sub extracted_name
+sub extracted_name($self, $item)
 {
-	my ($self, $item) = @_;
 	return $self->{location}.$item->fullname;
 }
 
-sub retrieve
+sub retrieve($self, $state, $item)
 {
-	my ($self, $state, $item) = @_;
 	my $o = $self->prepare_to_extract($item);
 	$o->create;
 	return $item->fullname;
 }
 
-sub skip
+sub skip($self, $item)
 {
-	my ($self, $item) = @_;
 	my $o = $self->prepare_to_extract($item);
 	$self->{handle}->skip;
 }
 
-sub clean
+sub clean($self, $item)
 {
-	my ($self, $item) = @_;
 	unlink($self->extracted_name($item));
 }
 
