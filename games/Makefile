@@ -35,6 +35,7 @@
      SUBDIR += bomberclone
      SUBDIR += boswars
      SUBDIR += braincurses
+     SUBDIR += brogue
      SUBDIR += brumbrumrally
      SUBDIR += burgerspace
      SUBDIR += bzflag
