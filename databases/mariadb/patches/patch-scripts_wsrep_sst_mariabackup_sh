@@ -1,25 +1,37 @@
 Index: scripts/wsrep_sst_mariabackup.sh
 --- scripts/wsrep_sst_mariabackup.sh.orig
 +++ scripts/wsrep_sst_mariabackup.sh
-@@ -437,14 +437,14 @@ get_footprint()
+@@ -100,6 +100,12 @@ if [ -z "$BACKUP_BIN" ]; then
+     exit 42
+ fi
+ 
++GFIND_BIN=$(commandex 'gfind')
++if [ -z "$GFIND_BIN" ]; then
++    wsrep_log_error 'gfind binary not found in path'
++    exit 42
++fi
++
+ DATA="$WSREP_SST_OPT_DATA"
+ INFO_FILE='xtrabackup_galera_info'
+ IST_FILE='xtrabackup_ist'
+@@ -437,14 +443,14 @@ get_footprint()
      cd "$DATA_DIR"
      local payload_data=$(find . \
          -regex '.*undo[0-9]+$\|.*\.ibd$\|.*\.MYI$\|.*\.MYD$\|.*ibdata1$' \
 -        -type f -print0 | du --files0-from=- --block-size=1 -c -s | \
-+        -type f -print | xargs du -c -s | \
++        -type f -print0 | xargs -0 du -c -s | \
          awk 'END { print $1 }')
  
      local payload_undo=0
      if [ -n "$ib_undo_dir" -a -d "$ib_undo_dir" ]; then
          cd "$ib_undo_dir"
--        payload_undo=$(find . -regex '.*undo[0-9]+$' -type f -print0 | \
+         payload_undo=$(find . -regex '.*undo[0-9]+$' -type f -print0 | \
 -            du --files0-from=- --block-size=1 -c -s | awk 'END { print $1 }')
-+        payload_undo=$(find . -regex '.*undo[0-9]+$' -type f -print | \
-+            xargs du -c -s | awk 'END { print $1 }')
++            xargs -0 du -c -s | awk 'END { print $1 }')
      fi
      cd "$OLD_PWD"
  
-@@ -793,7 +793,7 @@ recv_joiner()
+@@ -793,7 +799,7 @@ recv_joiner()
      local ltcmd="$tcmd"
      if [ $tmt -gt 0 ]; then
          if [ -n "$(commandex timeout)" ]; then
