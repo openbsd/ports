@@ -1,8 +1,7 @@
 COMMENT=		MATE screensaver
-REVISION=		1
 
 MATE_PROJECT=		mate-screensaver
-MATE_VERSION=		1.26.1
+MATE_VERSION=		1.26.2
 
 # LGPLv2
 PERMIT_PACKAGE=	Yes
