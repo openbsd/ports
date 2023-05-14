@@ -15,7 +15,7 @@ GH_COMMIT =		dcb5069ff76bd293e86928804208737e6cee2ccc
 DISTNAME =		${GH_PROJECT}-0.0.0.20230501
 DISTFILES =		${GH_DISTFILE}
 CATEGORIES =		net
-REVISION =		1
+REVISION =		2
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
@@ -35,9 +35,6 @@ MASTER_SITES1 =		https://github.com/desktop-app/tg_owt/commit/
 # Pending "Defer third-party source handling to when it is needed"
 # https://github.com/desktop-app/tg_owt/pull/85
 PATCHFILES +=		defer-third-party-sources-{}a264c33.patch:1
-# Pending "libabsl: Use system include directories"
-# https://github.com/desktop-app/tg_owt/pull/87
-PATCHFILES +=		libabsl-use-includes-{}fb12b4bd.patch:1
 # Pending "Unbundle libSRTP"
 # https://github.com/desktop-app/tg_owt/pull/123
 PATCHFILES +=		use-system-libsrtp-{}46cb0ce7.patch:1
@@ -84,7 +81,7 @@ BUILD_DEPENDS =		devel/yasm
 
 LIB_DEPENDS =		audio/opus \
 			devel/crc32c \
-			devel/abseil-cpp \
+			devel/abseil-cpp>=20230125.3 \
 			devel/protobuf \
 			graphics/ffmpeg \
 			graphics/jpeg \
