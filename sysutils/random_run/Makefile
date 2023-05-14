@@ -3,7 +3,7 @@ CATEGORIES = 	sysutils
 MAINTAINER = 	Marc Espie <espie@openbsd.org>
 
 GH_PROJECT = 	random_run
-GH_TAGNAME = 	2.13
+GH_TAGNAME = 	2.15
 GH_ACCOUNT = 	marcespie
 
 COMPILER =	base-clang ports-gcc
@@ -15,6 +15,7 @@ NO_TEST = 	Yes
 # need to add this for gcc
 # revisit when gcc drops it
 EXTRA_ports-gcc =	-lstdc++fs
+EXTRA_base-clang =	
 LDLIBS += 	${EXTRA_${CHOSEN_COMPILER}}
 
 WANTLIB =	${COMPILER_LIBCXX} c m
