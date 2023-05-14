@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: pkg_check-problems,v 1.13 2023/05/14 09:15:01 espie Exp $
+# $OpenBSD: pkg_check-problems,v 1.14 2023/05/14 15:06:11 espie Exp $
 # Copyright (c) 2004, 2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -18,8 +18,7 @@
 # check all packages in the current directory, and report common directory
 # issues
 
-use strict;
-use warnings;
+use v5.36;
 my ($ports1);
 
 use FindBin;
@@ -36,33 +35,34 @@ use OpenBSD::Mtree;
 use OpenBSD::PlistScanner;
 
 # code for checking directories
-sub register_dir
+sub register_dir($d, $h)
 {
-	my ($d, $h) = @_;
 	return if defined $h->{$d};
 	$h->{$d} = 1;
 	register_dir(dirname($d), $h);
 }
 
 package OpenBSD::PackingElement;
-sub register
+# $self->register($o, $db, $pkgname)
+sub register($, $, $, $)
 {
 }
 
-sub known_page
+# $self->known_page($h)
+sub known_page($, $)
 {
 }
 
-sub add_extra_manpage
+# $self_>add_extra_manpage($known, $plist)
+sub add_extra_manpage($, $, $)
 {
 }
 
 package OpenBSD::PackingElement::FileBase;
 
 use File::Basename;
-sub register
+sub register($self, $o, $db, $pkgname)
 {
-	my ($self, $o, $db, $pkgname) = @_;
 	# common dirs
 	if ($o->{do_dirs}) {
 		my $d = File::Spec->canonpath($self->fullname);
@@ -95,9 +95,8 @@ sub register
 }
 
 package OpenBSD::PackingElement::DirlikeObject;
-sub register
+sub register($self, $o, $db, $)
 {
-	my ($self, $o, $db, $pkgname) = @_;
 	if ($o->{do_dirs}) {
 		my $d = File::Spec->canonpath($self->fullname);
 		$db->{dirs}{$d} = 1;
@@ -105,9 +104,8 @@ sub register
 }
 
 package OpenBSD::PackingElement::Dependency;
-sub register
+sub register($self, $o, $db, $pkgname)
 {
-	my ($self, $o, $db, $pkgname) = @_;
 	$db->{deps}{$self->{def}} = 1;
 	$o->{wanted}{$self->{def}} //= $o->{currentname};
 	$o->{pkgpath}{$self->{def}} = $self->{pkgpath};
@@ -115,9 +113,8 @@ sub register
 }
 
 package OpenBSD::PackingElement::ExtraInfo;
-sub register
+sub register($self, $o, $, $pkgname)
 {
-	my ($self, $o, $db, $pkgname) = @_;
 	if ($self->{ftp} eq 'yes') {
 		$o->{ftp_okay}{$pkgname} = 1;
 	} else {
@@ -127,29 +124,25 @@ sub register
 
 package OpenBSD::PackingElement::Manpage;
 
-sub is_dest
+sub is_dest($self)
 {
-	my $self = shift;
 	return $self->name =~ m/man\/cat[^\/]+\/[^\/]+\.0$/o;
 }
 
-sub dest_to_source
+sub dest_to_source($self)
 {
-	my $self = shift;
 	my $v = $self->name;
 	$v =~ s/(man\/)cat([^\/]+)(\/[^\/]+)\.0$/$1man$2$3.$2/;
 	return $v;
 }
 
-sub known_page
+sub known_page($self, $h)
 {
-	my ($self, $h) = @_;
 	$h->{File::Spec->canonpath($self->fullname)} = 1;
 }
 
-sub add_extra_manpage
+sub add_extra_manpage($self, $known, $plist)
 {
-	my ($self, $known, $plist) = @_;
 	if ($self->is_source) {
 		my $dest = $self->source_to_dest;
 		my $fullname = $self->cwd."/".$dest;
@@ -174,18 +167,15 @@ package CheckProblemsScanner;
 our @ISA = (qw(OpenBSD::PlistScanner));
 use OpenBSD::PackageInfo;
 
-sub add_more_man
+sub add_more_man($self, $plist)
 {
-	my ($self, $plist) = @_;
 	my $knownman = {};
 	$plist->known_page($knownman);
 	$plist->add_extra_manpage($knownman, $plist);
 }
 
-sub register_plist
+sub register_plist($self, $plist)
 {
-	my ($self, $plist) = @_;
-
 	my $pkgname = $plist->pkgname;
 
 	# don't register twice, which happens for ports tree scans
@@ -213,17 +203,15 @@ sub register_plist
 	$plist->register($self, $self->{db}{$pkgname}, $pkgname);
 }
 
-sub handle_options
+sub handle_options($self)
 {
-	my $self = shift;
 	$self->{signature_style} = 'unsigned';
 	$self->SUPER::handle_options('CD',
 	    "[-CDeSv] [-d plist_dir] [-o output] [-p ports_dir] [pkgname ...]");
 }
 
-sub new
+sub new($class)
 {
-	my ($class) = @_;
 	my $o = $class->SUPER::new('pkg_check-problem');
 
 	if ($o->ui->opt('D') && $o->ui->opt('C')) {
@@ -256,10 +244,8 @@ sub new
 
 
 # for common dirs
-sub parent_has_dir
+sub parent_has_dir($self, $db, $t, $dir)
 {
-	my ($self, $db, $t, $dir) = @_;
-
 	for my $dep (keys %{$t->{deps}}) {
 		if (!defined $db->{$dep}) {
 		    if (!defined $self->{missing_deps}{$dep}) {
@@ -278,9 +264,8 @@ sub parent_has_dir
 	return 0;
 }
 
-sub parent_has_problem
+sub parent_has_problem($db, $t, $dir)
 {
-	my ($db, $t, $dir) = @_;
 	for my $dep (keys %{$t->{deps}}) {
 		next if !defined $db->{$dep};
 		if ($db->{$dep}->{problems}->{$dir}) {
@@ -290,9 +275,8 @@ sub parent_has_problem
 	return 0;
 }
 
-sub build_common_dirs
+sub build_common_dirs($self)
 {
-	my ($self) = @_;
 	my $db = $self->{db};
 	my $mtree = $self->{mtree};
 	my @l = keys %$db;
@@ -311,9 +295,8 @@ sub build_common_dirs
 	    });
 }
 
-sub show_common_dirs
+sub show_common_dirs($self)
 {
-	my ($self) = @_;
 	my $db = $self->{db};
 
 	for my $pkgname (sort {$self->fullname($a) cmp $self->fullname($b)}
@@ -335,22 +318,18 @@ sub show_common_dirs
 my $cache3 = {};
 my $cache4 = {}; 
 
-sub direct_conflict
+sub direct_conflict($conflicts, $pkg, $pkg2)
 {
-	my ($conflicts, $pkg, $pkg2) = @_;
-
 	return $cache3->{$pkg}{$pkg2} //= $conflicts->{$pkg}->conflicts_with($pkg2);
 }
 
-sub has_a_conflict
+sub has_a_conflict($conflicts, $deps, $pkg, $pkg2)
 {
-	my ($conflicts, $deps, $pkg, $pkg2) = @_;
 	return $cache4->{$pkg}{$pkg2} //= find_a_conflict($conflicts, $deps, $pkg, $pkg2);
 }
 
-sub find_a_conflict
+sub find_a_conflict($conflicts, $deps, $pkg, $pkg2)
 {
-	my ($conflicts, $deps, $pkg, $pkg2) = @_;
 	return 0 if $pkg eq $pkg2;
 	
 	if (defined $conflicts->{$pkg} && 
@@ -374,9 +353,8 @@ sub find_a_conflict
 	return 0;
 }
 
-sub compute_true_conflicts
+sub compute_true_conflicts($self, $l)
 {
-	my ($self, $l) = @_;
 	my $conflicts = $self->{conflicts};
 	my $deps = $self->{all_deps};
 	# create a list of unconflicting packages.
@@ -398,10 +376,8 @@ sub compute_true_conflicts
 	return $l2;
 }
 
-sub compute_conflicts
+sub compute_conflicts($self)
 {
-	my ($self) = @_;
-
 	$self->progress->set_header("Compute file problems");
 	my $c = {};
 	my $c2 = {};
@@ -436,9 +412,8 @@ sub compute_conflicts
 	return $r;
 }
 
-sub show_conflicts
+sub show_conflicts($self, $result)
 {
-	my ($self, $result) = @_;
 	for my $cfl (sort keys %$result) {
 		$self->say("#1", $cfl);
 		for my $f (sort @{$result->{$cfl}}) {
@@ -447,9 +422,8 @@ sub show_conflicts
 	}
 }
 
-sub check_license
+sub check_license($self, $pkg, $k)
 {
-	my ($self, $pkg, $k) = @_;
 	my @todo = ($pkg);
 	my $done = {};
 
@@ -470,9 +444,8 @@ sub check_license
 	return undef;
 }
 
-sub check_licenses
+sub check_licenses($self)
 {
-	my ($self) = @_;
 	my $r = {};
 
 	$self->progress->set_header("Compute licenses issues");
@@ -490,9 +463,8 @@ sub check_licenses
 	return $r;
 }
 
-sub show_licenses_issues
+sub show_licenses_issues($self, $result)
 {
-	my ($self, $result) = @_;
 	for my $k (qw(ftp_okay)) {
 		for my $pkg (sort keys %{$result->{$k}}) {
 			$self->say("#1 is marked as #2 but depends on #3",
@@ -501,10 +473,8 @@ sub show_licenses_issues
 	}
 }
 
-sub display_results
+sub display_results($self)
 {
-	my $self = shift;
-
 	if ($self->{do_dirs}) {
 		$self->build_common_dirs;
 		$self->say("Common dirs:");
