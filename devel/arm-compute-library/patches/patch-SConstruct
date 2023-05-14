@@ -20,7 +20,7 @@ Index: SConstruct
  if env['cppthreads']:
      env.Append(CPPDEFINES = [('ARM_COMPUTE_CPP_SCHEDULER', 1)])
  
-@@ -407,25 +398,6 @@ if not GetOption("help"):
+@@ -412,25 +403,6 @@ if not GetOption("help"):
      except OSError:
          print("ERROR: Compiler '%s' not found" % env['CXX'])
          Exit(1)

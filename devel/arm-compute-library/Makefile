@@ -2,7 +2,7 @@ ONLY_FOR_ARCHS =	aarch64
 
 COMMENT =	Arm compute library
 
-V = 		22.11
+V = 		23.02.1
 PKGNAME =	arm-compute-library-${V}
 
 GH_ACCOUNT =	ARM-software
@@ -17,7 +17,7 @@ MAINTAINER = 	Kevin Lo <kevlo@openbsd.org>
 
 CORE_SO_V =	2.0
 GRAPH_SO_V =	2.1
-COMPUTE_SO_V =	3.2
+COMPUTE_SO_V =	3.3
 
 SHARED_LIBS +=	arm_compute ${COMPUTE_SO_V}
 SHARED_LIBS +=	arm_compute_core ${CORE_SO_V}
@@ -57,9 +57,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/arm-compute-library
 	${INSTALL_DATA} ${WRKSRC}/examples/*.{h,cpp} \
 		${PREFIX}/share/examples/arm-compute-library
-.for dir in dynamic_fusion gemm_tuner
-	cp -R ${WRKSRC}/examples/${dir} \
+	cp -R ${WRKSRC}/examples/gemm_tuner \
 		${PREFIX}/share/examples/arm-compute-library
-.endfor
 
 .include <bsd.port.mk>

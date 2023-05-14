@@ -1,3 +1,4 @@
+include/BUILD.bazel
 include/CL/
 include/CL/cl.h
 include/CL/cl_d3d10.h
@@ -26,6 +27,7 @@ include/arm_compute/AclOperators.h
 include/arm_compute/AclTypes.h
 include/arm_compute/AclUtils.h
 include/arm_compute/AclVersion.h
+include/arm_compute/BUILD.bazel
 include/arm_compute/core/
 include/arm_compute/core/CL/
 include/arm_compute/core/CL/CLCompileContext.h
@@ -79,11 +81,7 @@ include/arm_compute/core/Window.h
 include/arm_compute/core/Window.inl
 include/arm_compute/core/WindowIterator.h
 include/arm_compute/core/experimental/
-include/arm_compute/core/experimental/ClWorkload.h
-include/arm_compute/core/experimental/DependencyGraph.h
 include/arm_compute/core/experimental/IPostOp.h
-include/arm_compute/core/experimental/IWorkload.h
-include/arm_compute/core/experimental/OperatorGraph.h
 include/arm_compute/core/experimental/PostOps.h
 include/arm_compute/core/experimental/Types.h
 include/arm_compute/core/utils/
@@ -120,12 +118,31 @@ include/arm_compute/dynamic_fusion/runtime/gpu/cl/
 include/arm_compute/dynamic_fusion/runtime/gpu/cl/ClWorkloadRuntime.h
 include/arm_compute/dynamic_fusion/sketch/
 include/arm_compute/dynamic_fusion/sketch/MemoryDescriptor.h
-include/arm_compute/dynamic_fusion/sketch/OperatorAttributes.h
+include/arm_compute/dynamic_fusion/sketch/attributes/
+include/arm_compute/dynamic_fusion/sketch/attributes/CastAttributes.h
+include/arm_compute/dynamic_fusion/sketch/attributes/ClampAttributes.h
+include/arm_compute/dynamic_fusion/sketch/attributes/Conv2dAttributes.h
+include/arm_compute/dynamic_fusion/sketch/attributes/DepthwiseConv2dAttributes.h
+include/arm_compute/dynamic_fusion/sketch/attributes/Pool2dAttributes.h
+include/arm_compute/dynamic_fusion/sketch/attributes/ReshapeAttributes.h
+include/arm_compute/dynamic_fusion/sketch/attributes/ResizeAttributes.h
+include/arm_compute/dynamic_fusion/sketch/attributes/SoftmaxAttributes.h
 include/arm_compute/dynamic_fusion/sketch/gpu/
 include/arm_compute/dynamic_fusion/sketch/gpu/GpuWorkloadContext.h
 include/arm_compute/dynamic_fusion/sketch/gpu/GpuWorkloadSketch.h
 include/arm_compute/dynamic_fusion/sketch/gpu/operators/
+include/arm_compute/dynamic_fusion/sketch/gpu/operators/GpuAdd.h
+include/arm_compute/dynamic_fusion/sketch/gpu/operators/GpuCast.h
+include/arm_compute/dynamic_fusion/sketch/gpu/operators/GpuClamp.h
 include/arm_compute/dynamic_fusion/sketch/gpu/operators/GpuConv2d.h
+include/arm_compute/dynamic_fusion/sketch/gpu/operators/GpuDepthwiseConv2d.h
+include/arm_compute/dynamic_fusion/sketch/gpu/operators/GpuMul.h
+include/arm_compute/dynamic_fusion/sketch/gpu/operators/GpuOutput.h
+include/arm_compute/dynamic_fusion/sketch/gpu/operators/GpuPool2d.h
+include/arm_compute/dynamic_fusion/sketch/gpu/operators/GpuReshape.h
+include/arm_compute/dynamic_fusion/sketch/gpu/operators/GpuResize.h
+include/arm_compute/dynamic_fusion/sketch/gpu/operators/GpuSoftmax.h
+include/arm_compute/dynamic_fusion/sketch/gpu/operators/GpuSub.h
 include/arm_compute/graph/
 include/arm_compute/graph.h
 include/arm_compute/graph/DataLayerVisitor.h
@@ -318,6 +335,7 @@ include/arm_compute/runtime/CL/functions/CLGEMMLowpMatrixMultiplyCore.h
 include/arm_compute/runtime/CL/functions/CLGEMMLowpOutputStage.h
 include/arm_compute/runtime/CL/functions/CLGather.h
 include/arm_compute/runtime/CL/functions/CLGenerateProposalsLayer.h
+include/arm_compute/runtime/CL/functions/CLIndirectConvolutionLayer.h
 include/arm_compute/runtime/CL/functions/CLInstanceNormalizationLayer.h
 include/arm_compute/runtime/CL/functions/CLL2NormalizeLayer.h
 include/arm_compute/runtime/CL/functions/CLLSTMLayer.h
@@ -405,6 +423,7 @@ include/arm_compute/runtime/NEON/NEFunctions.h
 include/arm_compute/runtime/NEON/NEScheduler.h
 include/arm_compute/runtime/NEON/functions/
 include/arm_compute/runtime/NEON/functions/NEActivationLayer.h
+include/arm_compute/runtime/NEON/functions/NEAddMulAdd.h
 include/arm_compute/runtime/NEON/functions/NEArgMinMaxLayer.h
 include/arm_compute/runtime/NEON/functions/NEArithmeticAddition.h
 include/arm_compute/runtime/NEON/functions/NEArithmeticSubtraction.h
@@ -505,7 +524,6 @@ include/arm_compute/runtime/Types.h
 include/arm_compute/runtime/common/
 include/arm_compute/runtime/common/LSTMParams.h
 include/arm_compute/runtime/experimental/
-include/arm_compute/runtime/experimental/ClCompositeOperator.h
 include/arm_compute/runtime/experimental/Types.h
 include/half/
 include/half/half.hpp
@@ -514,6 +532,7 @@ include/libnpy/npy.hpp
 include/stb/
 include/stb/stb_image.h
 include/support/
+include/support/BUILD.bazel
 include/support/Bfloat16.h
 include/support/CRTP.h
 include/support/Cast.h
@@ -531,6 +550,7 @@ include/support/StringSupport.h
 include/support/ToolchainSupport.h
 include/support/Traits.h
 include/utils/
+include/utils/BUILD.bazel
 include/utils/CommonGraphOptions.cpp
 include/utils/CommonGraphOptions.h
 include/utils/GraphUtils.cpp
@@ -557,9 +577,6 @@ include/utils/command_line/ToggleOption.h
 share/examples/arm-compute-library/
 share/examples/arm-compute-library/cl_cache.cpp
 share/examples/arm-compute-library/cl_sgemm.cpp
-share/examples/arm-compute-library/dynamic_fusion/
-share/examples/arm-compute-library/dynamic_fusion/cl_fused_conv2d_elementwise_add.cpp
-share/examples/arm-compute-library/dynamic_fusion/cl_ref_conv2d_elementwise_add.cpp
 share/examples/arm-compute-library/gemm_tuner/
 share/examples/arm-compute-library/gemm_tuner/CommonGemmExampleOptions.cpp
 share/examples/arm-compute-library/gemm_tuner/CommonGemmExampleOptions.h
