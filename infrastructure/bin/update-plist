@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.213 2023/05/14 09:08:32 espie Exp $
+# $OpenBSD: update-plist,v 1.214 2023/05/14 09:18:05 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -283,10 +283,10 @@ sub rebless($self, $newclass)
 	}
 }
 
-# $self->check_specific($h): some file types have specific needs (e.g., @tag)
-# so we record these as $h->{should}, and we record the actual
+# $self->check_for_specific_needs($h): some file types have specific needs 
+# (e.g., @tag) so we record these as $h->{should}, and we record the actual
 # @tag  if we see it as $h->{has}.
-sub check_specific($, $)
+sub check_for_specific_needs($, $)
 {
 }
 
@@ -482,35 +482,35 @@ sub known_object($self, $o)
 }
 
 package OpenBSD::PackingElement::Tag;
-sub check_specific($self, $h)
+sub check_for_specific_needs($self, $h)
 {
 	$h->{has}{$self->stringize} = 1;
 }
 
 package OpenBSD::PackingElement::Desktop;
 our @ISA=qw(OpenBSD::PackingElement::File);
-sub check_specific($self, $h)
+sub check_for_specific_needs($self, $h)
 {
 	$h->{should}{'update-desktop-database'} = 1;
 }
 
 package OpenBSD::PackingElement::Glib2Schema;
 our @ISA=qw(OpenBSD::PackingElement::File);
-sub check_specific($self, $h)
+sub check_for_specific_needs($self, $h)
 {
 	$h->{should}{'glib-compile-schemas'} = 1;
 }
 
 package OpenBSD::PackingElement::IbusComponent;
 our @ISA=qw(OpenBSD::PackingElement::File);
-sub check_specific($self, $h)
+sub check_for_specific_needs($self, $h)
 {
 	$h->{should}{'ibus-write-cache'} = 1;
 }
 
 package OpenBSD::PackingElement::IconThemeDirectory;
 our @ISA=qw(OpenBSD::PackingElement::Dir);
-sub check_specific($self, $h)
+sub check_for_specific_needs($self, $h)
 {
 	$h->{should}{"gtk-update-icon-cache %D/".$self->name} = 1;
 }
@@ -519,7 +519,7 @@ package OpenBSD::PackingElement::IconTheme;
 our @ISA=qw(OpenBSD::PackingElement::File);
 use File::Basename;
 
-sub check_specific($self, $h)
+sub check_for_specific_needs($self, $h)
 {
 	# XXX this works because the file happens *after* its parent directory
 	delete $h->{should}{"gtk-update-icon-cache %D/".dirname($self->name)};
@@ -527,7 +527,7 @@ sub check_specific($self, $h)
 
 package OpenBSD::PackingElement::MimeInfo;
 our @ISA=qw(OpenBSD::PackingElement::File);
-sub check_specific($self, $h)
+sub check_for_specific_needs($self, $h)
 {
 	$h->{should}{'update-mime-database'} = 1;
 }
@@ -1176,7 +1176,7 @@ sub add_missing_tags($self)
 {
 	for my $p (@{$self->{lists}}) {
 		my $h = { should => {}, has => {}};
-		$p->nlist->check_specific($h);
+		$p->nlist->check_for_specific_needs($h);
 		for my $k (keys %{$h->{should}}) {
 			next if $h->{has}{$k};
 			OpenBSD::PackingElement::Tag->add($p->nlist, $k);
