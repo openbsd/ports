@@ -59,6 +59,8 @@ GOARCH =		mips64
 GOARCH =		riscv64
 .endif
 
+MAKE_ENV +=		TMPDIR="${WRKBUILD}"
+
 # We cannot assume that the machine running the built code will have SSE,
 # even though the machine building the package has SSE. As such, we need
 # to explicitly disable SSE on i386 builds.
