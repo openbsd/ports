@@ -14,16 +14,17 @@ script if you use startx(1) or xenodm(1), respectively.
 
 Logging out and shutting down the computer
 ==========================================
-If your installation supports complete shutdown, clicking on the logout
-button on panel will permit you to either logout, rebooting or halt
+If your installation supports complete shutdown, clicking on the logout button
+on panel will permit you to either logout, suspend, hibernate, reboot or halt
 the computer.
 
-If your user is part of the operator group and thus can execute shutdown(8),
-you should be able to shutdown/logout without further configuration.
+Halting and rebooting from xfce4-session require consolekit2 and polkit: you'll
+need to run a systemwide D-BUS service (# rcctl enable messagebus) and pass
+--with-ck-launch argument to startxfce4.
 
-Otherwise, halting/rebooting requires consolekit2 and polkit to be installed,
-a systemwide D-BUS service ('rcctl enable messagebus') and a '--with-ck-launch'
-argument to startxfce4.
+If you dont want to use messagebus/polkit, you can still configure doas to
+allow your user to run shutdown/halt -p without having to enter a password, and
+create a launcher executing 'doas shutdown -p' (or halt -p)
 
 Screen compositor
 =================
