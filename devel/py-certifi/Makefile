@@ -1,6 +1,6 @@
-COMMENT=	Python package to check certificates using the OpenBSD CA
+COMMENT=	TLS CA support for Python
 
-MODPY_EGG_VERSION=	2022.12.7
+MODPY_EGG_VERSION=	2023.5.7
 DISTNAME=	certifi-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel security
@@ -14,7 +14,6 @@ MODPY_PI=	Yes
 
 MODULES=	lang/python
 MODPY_PYBUILD=	setuptools
-#NO_TEST=	Yes
 
 FLAVORS=	python3
 FLAVOR=		python3
