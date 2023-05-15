@@ -1,6 +1,6 @@
 COMMENT=		statistical and novel interactive HTML plots for Python
 
-MODPY_EGG_VERSION=	3.0.3
+MODPY_EGG_VERSION=	3.1.1
 DISTNAME=		bokeh-${MODPY_EGG_VERSION}
 PKGNAME=		py-bokeh-${MODPY_EGG_VERSION}
 
@@ -41,5 +41,9 @@ TEST_DEPENDS=		devel/ipython${MODPY_FLAVOR} \
 			math/py-pandas${MODPY_FLAVOR} \
 			www/py-requests${MODPY_FLAVOR} \
 			www/py-selenium${MODPY_FLAVOR}
+
+post-extract:
+	sed -i 's/dynamic = \["version"\]/version = "${MODPY_EGG_VERSION}"/' \
+	${WRKSRC}/pyproject.toml
 
 .include <bsd.port.mk>
