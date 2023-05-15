@@ -1,7 +1,7 @@
 Index: src/gui/CMakeLists.txt
 --- src/gui/CMakeLists.txt.orig
 +++ src/gui/CMakeLists.txt
-@@ -156,9 +156,14 @@ elseif(UNIX AND NOT APPLE)
+@@ -157,9 +157,14 @@ elseif(UNIX AND NOT APPLE)
          target_link_libraries(owncloudCore PUBLIC Qt5::DBus)
          target_compile_definitions(owncloudCore PUBLIC "USE_FDO_NOTIFICATIONS")
      endif()

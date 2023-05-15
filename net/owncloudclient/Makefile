@@ -1,16 +1,15 @@
 COMMENT =		owncloud sync client
 
-V = 			3.2.1.10355
-GRAPHAPI_V = 		0.13.2
+V = 			4.0.0.10896
+GRAPHAPI_V = 		1.0.1
 DISTNAME =		ownCloud-${V}
 PKGNAME =  		owncloudclient-${V}
 DISTFILES += 		ownCloud-${V}.tar.xz \
 			libre-graph-api-cpp-qt-client-{}v${GRAPHAPI_V}.tar.gz:0
-REVISION =              0
 
-SHARED_LIBS +=		owncloudsync		8.0
-SHARED_LIBS +=		owncloud_csync		2.0
-SHARED_LIBS +=		owncloudResources	0.0
+SHARED_LIBS +=		owncloudsync		9.0
+SHARED_LIBS +=		owncloud_csync		3.0
+SHARED_LIBS +=		owncloudResources	0.1
 
 CATEGORIES =		net
 
