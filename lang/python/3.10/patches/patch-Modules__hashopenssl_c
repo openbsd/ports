@@ -1,3 +1,6 @@
+LibreSSL has NID_sha3_256 and NID_sha512_256 now, but it's simpler to
+handle -stable updates if we keep the patch until 7.4 is out.
+
 Index: Modules/_hashopenssl.c
 --- Modules/_hashopenssl.c.orig
 +++ Modules/_hashopenssl.c
