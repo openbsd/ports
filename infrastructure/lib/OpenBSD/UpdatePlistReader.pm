@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: UpdatePlistReader.pm,v 1.4 2022/09/11 08:40:41 espie Exp $
+# $OpenBSD: UpdatePlistReader.pm,v 1.5 2023/05/15 07:44:19 espie Exp $
 # Copyright (c) 2018-2022 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -14,32 +14,30 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-use strict;
-use warnings;
+use v5.36;
 
 use OpenBSD::BasePlistReader;
 use OpenBSD::ReverseSubst;
 
 package OpenBSD::UpdatePlistFactory;
 our @ISA = qw(OpenBSD::BasePlistFactory);
-sub stateclass
+sub stateclass($)
 {
 	return 'OpenBSD::UpdatePlistReader::State';
 }
 
-sub readerclass
+sub readerclass($)
 {
 	return 'OpenBSD::UpdatePlistReader';
 }
 
-sub command_name
+sub command_name($)
 {
 	return 'update-plist';
 }
 
-sub process_next_subpackage
+sub process_next_subpackage($class, $o)
 {
-	my ($class, $o) = @_;
 	my $r = $class->SUPER::process_next_subpackage($o);
 
 	# we need to add a "fake" CVSTag as a placeholder for annotations
@@ -60,31 +58,27 @@ our @ISA = qw(OpenBSD::BasePlistReader);
 use File::Path qw(make_path);
 use File::Basename;
 
-sub new
+sub new($class)
 {
-	my $class = shift;
 	my $o = $class->SUPER::new;
 	$o->{nlist} = OpenBSD::PackingList->new;
 	return $o;
 }
 
-sub nlist
+sub nlist($self)
 {
-	my $self = shift;
 	return $self->{nlist};
 }
 
 
-sub strip_prefix
+sub strip_prefix($self, $path)
 {
-	my ($self, $path) = @_;
 	$path =~ s,^\Q$self->{state}{prefix}\E/,,;
 	return $path;
 }
 
-sub subst
+sub subst($self)
 {
-	my $self = shift;
 	return $self->{state}{subst};
 }
 
@@ -93,9 +87,8 @@ sub subst
 # self is the reader (with pkgname et al)
 # file is the fileclass where this comes from
 # unsubst is the full name before substitution
-sub annotate
+sub annotate($self, $e, $s, $file)
 {
-	my ($self, $e, $s, $file) = @_;
 	$e->{file} = $file->name;
 	$e->{comesfrom} = $self;
 
@@ -116,9 +109,8 @@ sub annotate
 }
 
 # and more magic, we want to record fragments as pseudo-objects
-sub record_fragment
+sub record_fragment($self, $plist, $not, $name, $file)
 {
-	my ($self, $plist, $not, $name, $file) = @_;
 	my $f;
 	if ($not) {
 		$f = OpenBSD::PackingElement::NoFragment->add($plist, $name);
@@ -131,20 +123,19 @@ sub record_fragment
 
 # okay, so that plist doesn't exist, wouhou, I don't care,
 # since I'm not pkg_create
-sub cant_read_fragment
+sub cant_read_fragment($, $, $)
 {
 }
 
-sub missing_fragments
+sub missing_fragments($, $, $, $, $)
 {
 }
 
 # XXX we should go to the tree for self, always. Don't grab bad data from
 # old packages or cache.  At the very least invalidate if the version number
 # changes!
-sub get_plist
+sub get_plist($self, $pkgpath, $portsdir)
 {
-	my ($self, $pkgpath, $portsdir) = @_;
 	my $fullpath;
 	if (defined $self->{state}{cache_dir}) {
 		$fullpath = $pkgpath;
@@ -168,9 +159,8 @@ sub get_plist
 	return $plist;
 }
 
-sub figure_out_dependencies
+sub figure_out_dependencies($self, $cache, $portsdir)
 {
-	my ($self, $cache, $portsdir) = @_;
 	my @solve = ();
 	my %solve = ();
 	my $register = $self->{directory_register};
@@ -212,12 +202,11 @@ package OpenBSD::UpdatePlistReader::State;
 our @ISA = qw(OpenBSD::BasePlistReader::State);
 
 # our subst will record everything
-sub substclass
+sub substclass($)
 {
 	return 'OpenBSD::ReverseSubst';
 }
 
 # Most of the heavy lifting is done by visitor methods, as always
-
 
 1;

@@ -1,4 +1,4 @@
-# $OpenBSD: PlistScanner.pm,v 1.17 2020/07/04 16:53:42 espie Exp $
+# $OpenBSD: PlistScanner.pm,v 1.18 2023/05/15 07:44:19 espie Exp $
 # Copyright (c) 2014 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -13,17 +13,16 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-use strict;
-use warnings;
+
+use v5.36;
 
 package OpenBSD::PlistScanner;
 use OpenBSD::PackageInfo;
 use OpenBSD::AddCreateDelete;
 use OpenBSD::PackingList;
 
-sub handle_plist
+sub handle_plist($self, $filename, $plist)
 {
-	my ($self, $filename, $plist) = @_;
 	if (!defined $plist) {
 		$self->ui->errsay("Error reading #1", $filename);
 		return;
@@ -44,31 +43,27 @@ sub handle_plist
 	$plist->forget;
 }
 
-sub progress
+sub progress($self)
 {
-	return shift->ui->progress;
+	return $self->ui->progress;
 }
 
-sub handle_file
+sub handle_file($self, $filename)
 {
-	my ($self, $filename) = @_;
 	return if -d $filename;
 	my $plist = OpenBSD::PackingList->fromfile($filename);
 	$self->handle_plist($filename, $plist);
 }
 
-sub handle_portspath
+sub handle_portspath($self, $path)
 {
-	my ($self, $path) = @_;
 	foreach (split(/:/, $path)) {
 		$self->handle_portsdir($_);
 	}
 }
 
-sub find_current_pkgnames
+sub find_current_pkgnames($self, $dir)
 {
-	my ($self, $dir) = @_;
-
 	my $done = {};
 	my @todo = ();
 
@@ -101,10 +96,8 @@ sub find_current_pkgnames
 	}
 }
 
-sub find_all_current_pkgnames
+sub find_all_current_pkgnames($self, $dir)
 {
-	my ($self, $dir) = @_;
-
 	$self->progress->set_header("Figuring out current names");
 	open(my $input, "cd $dir && $self->{make} show='PKGPATHS PKGNAMES' ECHO_MSG=:|");
 	while (<$input>) {
@@ -124,12 +117,10 @@ sub find_all_current_pkgnames
 	$self->progress->next;
 }
 
-sub reader
+sub reader($self, $rdone)
 {
-	my ($self, $rdone) = @_;
 	return
-	    sub {
-		my ($fh, $cont) = @_;
+	    sub($fh, $cont) {
 		local $_;
 		while (<$fh>) {
 			return if m/^\=\=\=\> /o;
@@ -139,10 +130,8 @@ sub reader
 	    };
 }
 
-sub scan_ports
+sub scan_ports($self, $dir, $paths)
 {
-	my ($self, $dir, $paths) = @_;
-
 	my $child_pid = open(my $input, "-|");
 
 	if (!$child_pid) {
@@ -168,9 +157,8 @@ sub scan_ports
 	waitpid $child_pid, 0;
 }
 
-sub handle_portsdir
+sub handle_portsdir($self, $dir)
 {
-	my ($self, $dir) = @_;
 	# prime initial run
 
 	$self->scan_ports($dir, undef);
@@ -191,10 +179,8 @@ sub handle_portsdir
 	}
 }
 
-sub rescan_dependencies
+sub rescan_dependencies($self, $dir)
 {
-	my ($self, $dir) = @_;
-
 	$self->progress->set_header("Scanning extra dependencies");
 	my $notfound = {};
 	my $todo;
@@ -219,9 +205,8 @@ sub rescan_dependencies
 	$self->progress->next;
 }
 
-sub scan
+sub scan($self)
 {
-	my $self = shift;
 	$self->progress->set_header("Scanning");
 	if ($self->ui->opt('d')) {
 		opendir(my $dir, $self->ui->opt('d'));
@@ -264,10 +249,8 @@ sub scan
 	}
 }
 
-sub run
+sub run($self)
 {
-	my $self = shift;
-
 	if ($self->ui->opt('p') && $self->ui->opt('f')) {
 		$self->find_all_current_pkgnames($self->ui->opt('p'));
 	}
@@ -281,19 +264,17 @@ sub run
 	$self->display_results;
 }
 
-sub say
+sub say($self, @msg)
 {
-	my $self = shift;
-	my $msg = $self->ui->f(@_)."\n";
+	my $msg = $self->ui->f(@msg)."\n";
 	$self->ui->_print($msg) unless $self->ui->opt('s');
 	if (defined $self->{output}) {
 		print {$self->{output}} $msg;
 	}
 }
 
-sub fullname
+sub fullname($self, $pkgname)
 {
-	my ($self, $pkgname) = @_;
 	my $path = $self->{name2path}{$pkgname};
 	if ($self->{current}{$pkgname}) {
 		return "!$pkgname($path)";
@@ -302,23 +283,19 @@ sub fullname
 	}
 }
 
-sub ui
+sub ui($self)
 {
-	my $self = shift;
 	return $self->{ui};
 }
 
-sub handle_options
+sub handle_options($self, $extra = '', $usage = 
+	"[-vefS] [-d plist_dir] [-o output] [-p ports_dir] [pkgname ...]")
 {
-	my ($self, $extra, $usage) = @_;
-	$usage //= "[-vefS] [-d plist_dir] [-o output] [-p ports_dir] [pkgname ...]";
-	$extra //= '';
 	$self->ui->handle_options($extra.'d:efo:p:sS', $usage);
 }
 
-sub new
+sub new($class, $cmd)
 {
-	my ($class, $cmd) = @_;
 	my $ui = OpenBSD::AddCreateDelete::State->new($cmd);
 	my $o = bless {ui => $ui, 
 	    make => $ENV{MAKE} || 'make', 
