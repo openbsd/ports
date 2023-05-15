@@ -12,7 +12,7 @@ Index: scripts/mysql_install_db.sh
  silent_startup="--silent-startup"
  
  force=0
-@@ -339,7 +339,6 @@ then
+@@ -341,7 +341,6 @@ then
    srcpkgdatadir="$srcdir/scripts"
    buildpkgdatadir="$builddir/scripts"
    plugindir="$builddir/plugin/auth_socket"
@@ -20,7 +20,7 @@ Index: scripts/mysql_install_db.sh
  elif test -n "$basedir"
  then
    bindir="$basedir/bin" # only used in the help text
-@@ -368,8 +367,7 @@ then
+@@ -370,8 +369,7 @@ then
      cannot_find_file fill_help_tables.sql @pkgdata_locations@
      exit 1
    fi
@@ -30,7 +30,7 @@ Index: scripts/mysql_install_db.sh
  # relative from where the script was run for a relocatable install
  elif test -n "$dirname0" -a -x "$rel_mysqld" -a ! "$rel_mysqld" -ef "@sbindir@/mariadbd"
  then
-@@ -380,7 +378,6 @@ then
+@@ -382,7 +380,6 @@ then
    srcpkgdatadir="$basedir/@INSTALL_MYSQLSHAREDIR@"
    buildpkgdatadir="$basedir/@INSTALL_MYSQLSHAREDIR@"
    plugindir="$basedir/@INSTALL_PLUGINDIR@"
@@ -38,7 +38,7 @@ Index: scripts/mysql_install_db.sh
  else
    basedir="@prefix@"
    bindir="@bindir@"
-@@ -389,7 +386,6 @@ else
+@@ -391,7 +388,6 @@ else
    srcpkgdatadir="@pkgdatadir@"
    buildpkgdatadir="@pkgdatadir@"
    plugindir="@pkgplugindir@"
@@ -46,7 +46,7 @@ Index: scripts/mysql_install_db.sh
  fi
  
  # Set up paths to SQL scripts required for bootstrap
-@@ -488,13 +484,13 @@ do
+@@ -490,13 +486,13 @@ do
    then
      if test -z "$group"
      then
@@ -63,7 +63,7 @@ Index: scripts/mysql_install_db.sh
        echo "user.  Check that you have the necessary permissions and try again."
        exit 1
      fi
-@@ -503,25 +499,6 @@ done
+@@ -505,25 +501,6 @@ done
  
  if test -n "$user"
  then
@@ -89,25 +89,25 @@ Index: scripts/mysql_install_db.sh
    args="$args --user=$user"
  fi
  
-@@ -639,10 +616,6 @@ fi
+@@ -641,10 +618,6 @@ fi
  # the screen.
  if test "$cross_bootstrap" -eq 0 && test -z "$srcdir"
  then
 -  s_echo
--  s_echo "To start mysqld at boot time you have to copy"
--  s_echo "support-files/mysql.server to the right place for your system"
+-  s_echo "To start mariadbd at boot time you have to copy"
+-  s_echo "support-files/mariadb.service to the right place for your system"
 -
    if test "$auth_root_authentication_method" = normal
    then
      echo
-@@ -674,10 +647,7 @@ then
+@@ -676,10 +649,7 @@ then
    then
      echo
      echo "You can start the MariaDB daemon with:"
--    echo "cd '$basedir' ; $bindir/mysqld_safe --datadir='$ldata'"
+-    echo "cd '$basedir' ; $bindir/mariadb-safe --datadir='$ldata'"
 -    echo
 -    echo "You can test the MariaDB daemon with mysql-test-run.pl"
--    echo "cd '$basedir/mysql-test' ; perl mysql-test-run.pl"
+-    echo "cd '$basedir/@INSTALL_MYSQLTESTDIR@' ; perl mariadb-test-run.pl"
 +    echo "/etc/rc.d/mysqld start"
    fi
  

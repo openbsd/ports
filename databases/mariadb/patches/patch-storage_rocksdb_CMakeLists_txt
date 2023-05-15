@@ -1,7 +1,7 @@
 Index: storage/rocksdb/CMakeLists.txt
 --- storage/rocksdb/CMakeLists.txt.orig
 +++ storage/rocksdb/CMakeLists.txt
-@@ -53,15 +53,6 @@ IF(MSVC_ARM64)
+@@ -58,15 +58,6 @@ IF(MSVC_ARM64)
   SKIP_ROCKSDB_PLUGIN("Windows ARM64 not supported")
  ENDIF()
  

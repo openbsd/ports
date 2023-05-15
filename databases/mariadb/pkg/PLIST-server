@@ -64,7 +64,9 @@ include/mysql/server/little_endian.h
 include/mysql/server/m_ctype.h
 include/mysql/server/m_string.h
 include/mysql/server/ma_dyncol.h
+include/mysql/server/mariadb_capi_rename.h
 include/mysql/server/my_alloc.h
+include/mysql/server/my_alloca.h
 include/mysql/server/my_attribute.h
 include/mysql/server/my_byteorder.h
 include/mysql/server/my_compiler.h
@@ -228,7 +230,6 @@ include/mysql/server/private/log_event_old.h
 include/mysql/server/private/log_slow.h
 include/mysql/server/private/maria.h
 include/mysql/server/private/mariadb.h
-include/mysql/server/private/mariadb_capi_rename.h
 include/mysql/server/private/mdl.h
 include/mysql/server/private/mem_root_array.h
 include/mysql/server/private/message.h
