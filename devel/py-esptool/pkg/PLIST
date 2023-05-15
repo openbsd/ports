@@ -1,3 +1,4 @@
+bin/esp_rfc2217_server.py
 bin/espefuse.py
 bin/espsecure.py
 bin/esptool.py
