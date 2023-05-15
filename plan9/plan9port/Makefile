@@ -2,11 +2,11 @@ ONLY_FOR_ARCHS =	amd64 i386 powerpc powerpc64
 
 COMMENT =		Plan 9 from user space
 
-DISTNAME =		plan9port-20230123
+DISTNAME =		plan9port-20230331
 
 GH_ACCOUNT =		9fans
 GH_PROJECT =		plan9port
-GH_COMMIT =		e2a141ae0952c2d28a9f500bb9da6dc72e57be3c
+GH_COMMIT =		cc4571fec67407652b03d6603ada6580de2194dc
 
 CATEGORIES =		plan9
 
@@ -35,7 +35,7 @@ pre-configure:
 		bin/macedit
 
 do-build:
-	cd ${WRKSRC} && env CC9="${CC}" CCFLAGS="${CFLAGS}" ./INSTALL -b
+	cd ${WRKSRC} && env NPROC=${MAKE_JOBS} CC9="${CC}" CCFLAGS="${CFLAGS}" ./INSTALL -b
 
 do-install:
 	rm -f ${WRKSRC}/.travis.yml
