@@ -1,10 +1,9 @@
 COMMENT =		Qt5 based clipboard manager
 GH_ACCOUNT =		hluk
 GH_PROJECT =		CopyQ
-GH_TAGNAME =		v6.4.0
+GH_TAGNAME =		v7.0.0
 PKGNAME =		${DISTNAME:L}
 CATEGORIES =		x11
-REVISION =		0
 
 MAINTAINER =		kikadf <kikadf.01@gmail.com>
 
