@@ -62,7 +62,6 @@ icinga-php/ipl/asset/js/widget/SearchEditor.js
 icinga-php/ipl/asset/js/widget/TermInput.js
 icinga-php/ipl/asset/static/
 icinga-php/ipl/asset/static/font/
-icinga-php/ipl/asset/static/font/Icinga-Icons.eot
 icinga-php/ipl/asset/static/font/Icinga-Icons.svg
 icinga-php/ipl/asset/static/font/Icinga-Icons.ttf
 icinga-php/ipl/asset/static/font/Icinga-Icons.woff
@@ -315,6 +314,7 @@ icinga-php/ipl/vendor/ipl/orm/src/Relation/
 icinga-php/ipl/vendor/ipl/orm/src/Relation.php
 icinga-php/ipl/vendor/ipl/orm/src/Relation/BelongsTo.php
 icinga-php/ipl/vendor/ipl/orm/src/Relation/BelongsToMany.php
+icinga-php/ipl/vendor/ipl/orm/src/Relation/BelongsToOne.php
 icinga-php/ipl/vendor/ipl/orm/src/Relation/HasMany.php
 icinga-php/ipl/vendor/ipl/orm/src/Relation/HasOne.php
 icinga-php/ipl/vendor/ipl/orm/src/Relation/Junction.php
@@ -494,6 +494,12 @@ icinga-php/ipl/vendor/ipl/web/src/FormElement/ScheduleElement/FieldsRadio.php
 icinga-php/ipl/vendor/ipl/web/src/FormElement/ScheduleElement/MonthlyFields.php
 icinga-php/ipl/vendor/ipl/web/src/FormElement/ScheduleElement/Recurrence.php
 icinga-php/ipl/vendor/ipl/web/src/FormElement/ScheduleElement/WeeklyFields.php
+icinga-php/ipl/vendor/ipl/web/src/FormElement/TermInput/
+icinga-php/ipl/vendor/ipl/web/src/FormElement/TermInput.php
+icinga-php/ipl/vendor/ipl/web/src/FormElement/TermInput/RegisteredTerm.php
+icinga-php/ipl/vendor/ipl/web/src/FormElement/TermInput/Term.php
+icinga-php/ipl/vendor/ipl/web/src/FormElement/TermInput/TermContainer.php
+icinga-php/ipl/vendor/ipl/web/src/FormElement/TermInput/ValidatedTerm.php
 icinga-php/ipl/vendor/ipl/web/src/Layout/
 icinga-php/ipl/vendor/ipl/web/src/Layout/Content.php
 icinga-php/ipl/vendor/ipl/web/src/Layout/Controls.php
