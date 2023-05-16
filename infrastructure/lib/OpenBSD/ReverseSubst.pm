@@ -1,4 +1,4 @@
-# $OpenBSD: ReverseSubst.pm,v 1.21 2023/05/14 09:05:57 espie Exp $
+# $OpenBSD: ReverseSubst.pm,v 1.22 2023/05/16 13:59:17 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -352,10 +352,10 @@ sub do_empty_backsubst($subst, $string, $unsubst)
 
 # create actual reverse substitution. $unsubst is the string already stored
 # in an existing plist, to figure out ambiguous cases and empty substs
-sub do_backsubst($subst, $string, $unsubst, $context)
+sub do_backsubst($subst, $string, $unsubst = undef, 
+    $context = 'OpenBSD::PackingElement')
 {
 
-	$context //= 'OpenBSD::PackingElement';
 	# note that unsubst doesn't necessarily match the whole of subst
 	# (in new elements, it can be stolen from approximate matches)
 	# but it should always be a legitimate prefix of subst
@@ -370,7 +370,8 @@ sub do_backsubst($subst, $string, $unsubst, $context)
 	}
 
 	# we can't do empty subst without an unsubst;
-	if ($unsubst) {
+	# (stuff like @mode/@owner doesn't have an unsubst!)
+	if (defined $unsubst) {
 		$string = $subst->do_empty_backsubst($string, $unsubst);
 	}
 	$context->adjust(\$string);

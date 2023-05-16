@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: TrackFile.pm,v 1.8 2023/05/16 11:49:57 landry Exp $
+# $OpenBSD: TrackFile.pm,v 1.9 2023/05/16 13:59:17 espie Exp $
 # Copyright (c) 2018-2022 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -267,7 +267,7 @@ sub write_restate($self, $f, $p)
 				$s .= " ".$self->{$k};
 			} else {
 				$s .= " ".
-				    $p->subst->do_backsubst($self->{$k}, undef, undef);
+				    $p->subst->do_backsubst($self->{$k});
 			}
 		} else {
 			if (!defined $p->{restate}{$k}) {
