@@ -45,7 +45,7 @@
      SUBDIR += mediainfo
      SUBDIR += minidlna
      SUBDIR += mjpegtools
-     SUBDIR += mjpegtools,quicktime
+     SUBDIR += mjpegtools
      SUBDIR += mkvtoolnix
      SUBDIR += mlt7
      SUBDIR += motion

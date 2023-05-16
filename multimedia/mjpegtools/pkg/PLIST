@@ -1,5 +1,5 @@
+@pkgpath multimedia/mjpegtools,quicktime
 @conflict mplex-*
-%%quicktime%%
 bin/anytovcd.sh
 @bin bin/glav
 @bin bin/jpeg2yuv

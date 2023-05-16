@@ -3,9 +3,6 @@ filtering and encoding video under UNIX-like operating systems.
 
 Flavors:
 
-  quicktime - Builds the package with support for reading and writing
-              QuickTime ".MOV" files.
-
   optimized - Builds the package with SSE instructions. Packages built
               with this FLAVOR might not run on systems that are not SSE
 	      capable.
