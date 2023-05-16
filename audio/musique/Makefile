@@ -2,7 +2,7 @@ COMMENT =	graphical music player focused on a clean ui
 V =		1.10.1
 DISTNAME =	musique-${V}
 CATEGORIES =	audio
-REVISION =	2
+REVISION =	3
 
 HOMEPAGE =	http://flavio.tordini.org/musique/
 
@@ -22,10 +22,7 @@ LIB_DEPENDS =	audio/taglib \
 		multimedia/mpv \
 		x11/qt5/qtdeclarative
 
-BUILD_DEPENDS =	multimedia/qtav
-
 RUN_DEPENDS =	devel/desktop-file-utils \
-		multimedia/qtav \
 		x11/gtk+4,-guic
 
 NO_TEST =	Yes
