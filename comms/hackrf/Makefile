@@ -2,12 +2,15 @@ COMMENT =	host software for the HackRF One SDR
 
 V =		2023.01.1
 DISTNAME =	hackrf-$V
+REVISION =	0
 
 SHARED_LIBS +=  hackrf                    0.0 # 0.8
 
 CATEGORIES =	comms
 
 HOMEPAGE =	https://greatscottgadgets.com/hackrf/
+
+MAINTAINER =	Mikhail <mp39590@gmail.com>
 
 # GPLv2+ (tools), 3-clause BSD (library)
 PERMIT_PACKAGE =	Yes
