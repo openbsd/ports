@@ -1,4 +1,4 @@
-VERSION?=	1.29.1
+VERSION?=	1.30.0
 DISTNAME=	unit-${VERSION}
 
 CATEGORIES=	www
@@ -20,12 +20,14 @@ CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--ld-opt="-L${LOCALBASE}/lib" \
 		--log=${LOCALSTATEDIR}/log/unit/unit.log \
+		--logdir=${LOCALSTATEDIR}/log/unit \
 		--mandir=${PREFIX}/man \
-		--modules=lib/unit/modules \
+		--modulesdir=${PREFIX}/lib/unit/modules \
 		--control=unix:${LOCALSTATEDIR}/run/unit/control.unit.sock \
 		--pid=${LOCALSTATEDIR}/run/unit/unit.pid \
-		--state=${LOCALSTATEDIR}/db/unit \
-		--tmp=${LOCALSTATEDIR}/tmp/unit \
+		--runstatedir=${LOCALSTATEDIR}/run/unit \
+		--statedir=${LOCALSTATEDIR}/db/unit \
+		--tmpdir=${LOCALSTATEDIR}/tmp/unit \
 		--openssl \
 		--user=_unit \
 		--group=_unit
@@ -43,6 +45,6 @@ ALL_TARGET=	${UNIT_MODNAME}
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/unit/modules/
-	${INSTALL_DATA} ${WRKSRC}/build/${UNIT_MODNAME}.unit.so \
+	${INSTALL_DATA} ${WRKSRC}/build/lib/unit/modules/${UNIT_MODNAME}.unit.so \
 	    ${PREFIX}/lib/unit/modules/
 .endif
