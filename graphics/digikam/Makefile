@@ -10,7 +10,7 @@ V =		8.0.0
 PKGNAME =	digikam-${V}
 DISTNAME =	digiKam-${V}
 CATEGORIES =	graphics
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	https://www.digikam.org/
 
@@ -44,9 +44,6 @@ WANTLIB += openal opencv_calib3d opencv_core opencv_dnn opencv_features2d
 WANTLIB += opencv_flann opencv_imgcodecs opencv_imgproc opencv_ml
 WANTLIB += opencv_objdetect png portaudio pulse swresample swscale
 WANTLIB += tiff usb-1.0 x265 xml2 xslt z
-
-# dlopen(3)
-WANTLIB += lib/qt5/QtAV lib/qt5/QtAVWidgets
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/digikam/${V}/}
 
@@ -104,7 +101,6 @@ LIB_DEPENDS =	audio/portaudio-svn \
 		graphics/opencv \
 		graphics/png \
 		graphics/tiff \
-		multimedia/qtav \
 		multimedia/libheif \
 		multimedia/x265 \
 		x11/kde-applications/akonadi \
