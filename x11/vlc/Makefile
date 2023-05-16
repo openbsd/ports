@@ -66,6 +66,7 @@ COMPILER=	base-clang ports-gcc
 WANTLIB-main += ${COMPILER_LIBCXX}
 
 LIB_DEPENDS-main= ${MODQT5_LIB_DEPENDS} \
+		${MODLUA_LIB_DEPENDS} \
 		x11/qt5/qtsvg,-main \
 		x11/qt5/qtx11extras \
 		archivers/libarchive \
