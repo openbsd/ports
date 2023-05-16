@@ -1,7 +1,7 @@
 COMMENT=	video stream processing tools
 
 DISTNAME=	transcode-1.1.7
-REVISION=	21
+REVISION=	22
 CATEGORIES=	multimedia
 
 HOMEPAGE=	https://bitbucket.org/achurch_/transcode/
@@ -12,13 +12,13 @@ EXTRACT_SUFX=	.tar.bz2
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ICE SDL SM X11 Xau Xaw Xdmcp Xext Xmu Xpm Xt Xv a52 avcodec
-WANTLIB += avformat avutil bz2 c crypto dv dvdread freetype gsm iconv intl jpeg
-WANTLIB += m mp3lame mpeg2 mpeg2convert ogg opus postproc pthread
-WANTLIB += quicktime sndio speex ssl theora
-WANTLIB += usbhid vorbis vorbisenc vorbisfile vpx x264 xcb xml2 z
-WANTLIB += lzma ${COMPILER_LIBCXX} swresample x265
-WANTLIB += aom dav1d theoradec theoraenc
+WANTLIB += ${COMPILER_LIBCXX} ICE SDL SM X11 Xau Xaw Xdmcp Xext
+WANTLIB += Xmu Xpm Xt Xv a52 aom avcodec avformat avutil bz2 c
+WANTLIB += crypto dav1d dv dvdread freetype gsm iconv jpeg lzma
+WANTLIB += m mp3lame mpeg2 mpeg2convert ogg opus postproc sndio
+WANTLIB += speex ssl swresample theora theoradec theoraenc usbhid
+WANTLIB += vorbis vorbisenc vorbisfile vpx x264 x265 xcb xml2
+WANTLIB += z
 
 # xvidcore is dlopen()d so check-lib-depends shows it as Extra, however we
 # want to track changes to the ABI to ensure transcode is updated if needed.
@@ -48,7 +48,6 @@ LIB_DEPENDS=	audio/lame \
 		graphics/jpeg \
 		graphics/libmpeg2 \
 		multimedia/libdv \
-		multimedia/libquicktime \
 		multimedia/libtheora \
 		multimedia/x264 \
 		multimedia/xvidcore \
@@ -75,7 +74,6 @@ CONFIGURE_ARGS+=--enable-a52 \
 		--enable-libmpeg2 \
 		--enable-libmpeg2convert \
 		--enable-libpostproc \
-		--enable-libquicktime \
 		--enable-libxml2 \
 		--enable-netstream \
 		--enable-ogg \
