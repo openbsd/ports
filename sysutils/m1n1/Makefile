@@ -4,8 +4,7 @@ COMMENT=	Bootloader for Apple Silicon
 
 GH_ACCOUNT=	AsahiLinux
 GH_PROJECT=	m1n1
-GH_TAGNAME=	v1.1.6
-REVISION=	3
+GH_TAGNAME=	v1.2.7
 
 CATEGORIES=	sysutils
 HOMEPAGE=	https://github.com/AsahiLinux/m1n1
@@ -19,7 +18,7 @@ BUILD_DEPENDS+=	archivers/zopfli \
 		graphics/ImageMagick
 
 MAKE_ENV+=	CROSS_COMPILE="aarch64-none-elf-" \
-		BUILD_TAG="${GH_TAGNAME:S/v//}"
+		M1N1_VERSION_TAG="${GH_TAGNAME:S/v//}"
 
 USE_GMAKE=	Yes
 NO_TEST=	Yes
