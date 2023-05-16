@@ -2,7 +2,7 @@ COMMENT =	client for the I2P anonymous network
 
 GH_ACCOUNT =	PurpleI2P
 GH_PROJECT =	i2pd
-GH_TAGNAME =	2.46.1
+GH_TAGNAME =	2.47.0
 
 CATEGORIES =	net
 HOMEPAGE =	https://i2pd.website
@@ -10,9 +10,9 @@ HOMEPAGE =	https://i2pd.website
 # BSD
 PERMIT_PACKAGE = Yes
 
-WANTLIB += ${COMPILER_LIBCXX} boost_date_time-mt boost_filesystem-mt
-WANTLIB += boost_program_options-mt boost_system-mt c crypto m
-WANTLIB += ssl z
+WANTLIB += ${COMPILER_LIBCXX} boost_atomic-mt boost_date_time-mt
+WANTLIB += boost_filesystem-mt boost_program_options-mt boost_system-mt
+WANTLIB += c crypto m ssl z
 
 COMPILER =	base-clang ports-gcc
 MODULES =	devel/cmake
