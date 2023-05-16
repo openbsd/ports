@@ -1,6 +1,6 @@
 COMMENT =		GitLab CLI tool
 
-V =			1.29.3
+V =			1.29.4
 MODGO_MODNAME =		gitlab.com/gitlab-org/cli
 MODGO_VERSION =		v${V}
 
