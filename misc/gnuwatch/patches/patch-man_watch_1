@@ -1,0 +1,128 @@
+Index: man/watch.1
+--- man/watch.1.orig
++++ man/watch.1
+@@ -10,19 +10,19 @@
+ .\" (at your option) any later version.
+ .\"
+ .\"
+-.TH WATCH 1 "2023-01-17" "procps-ng" "User Commands"
++.TH GNUWATCH 1 "2023-01-17" "procps-ng" "User Commands"
+ .SH NAME
+-watch \- execute a program periodically, showing output fullscreen
++gnuwatch \- execute a program periodically, showing output fullscreen
+ .SH SYNOPSIS
+-.B watch
++.B gnuwatch
+ [\fIoptions\fR] \fIcommand\fR
+ .SH DESCRIPTION
+-.B watch
++.B gnuwatch
+ runs
+ .I command
+ repeatedly, displaying its output and errors (the first screenfull).  This
+ allows you to watch the program output change over time.  By default,
+-\fIcommand\fR is run every 2 seconds and \fBwatch\fR will run until interrupted.
++\fIcommand\fR is run every 2 seconds and \fBgnuwatch\fR will run until interrupted.
+ .SH OPTIONS
+ .TP
+ \fB\-b\fR, \fB\-\-beep\fR
+@@ -34,7 +34,7 @@ Interpret ANSI color and style sequences.
+ \fB\-d\fR, \fB\-\-differences\fR[=\fIpermanent\fR]
+ Highlight the differences between successive updates. If the optional
+ \fIpermanent\fR argument is specified then
+-.B watch
++.B gnuwatch
+ will show all changes since the first iteration.
+ .TP
+ \fB\-e\fR, \fB\-\-errexit\fR
+@@ -53,7 +53,7 @@ set a non-default interval (following the same rules a
+ .TP
+ \fB\-p\fR, \fB\-\-precise\fR
+ Make
+-.BR watch
++.BR gnuwatch
+ attempt to run
+ .I command
+ every
+@@ -106,7 +106,7 @@ Success.
+ Various failures.
+ .TP
+ .B 2
+-Forking the process to watch failed.
++Forking the process to gnuwatch failed.
+ .TP
+ .B 3
+ Replacing child process stdout with write side pipe failed.
+@@ -126,10 +126,10 @@ Getting child process return value with
+ failed, or command exited up on error.
+ .TP
+ .B other
+-The watch will propagate command exit status as child exit status.
++gnuwatch will propagate command exit status as child exit status.
+ .SH ENVIRONMENT
+ The behavior of
+-.B watch
++.B gnuwatch
+ is affected by the following environment variables.
+ 
+ .TP
+@@ -143,7 +143,7 @@ POSIX option processing is used (i.e., option processi
+ the first non\-option argument).  This means that flags after
+ .I command
+ don't get interpreted by
+-.BR watch
++.BR gnuwatch
+ itself.
+ .sp
+ .SH BUGS
+@@ -176,7 +176,7 @@ that takes more than
+ .B \-\-interval
+ .I seconds
+ to execute.
+-.B watch
++.B gnuwatch
+ also can get into a state where it rapid-fires as many executions of
+ .I command
+ as it can to catch up from a previous executions running longer than
+@@ -189,33 +189,33 @@ taking ages on a DNS lookup).
+ .PP
+ To watch for mail, you might do
+ .IP
+-watch \-n 60 from
++gnuwatch \-n 60 from
+ .PP
+ To watch the contents of a directory change, you could use
+ .IP
+-watch \-d ls \-l
++gnuwatch \-d ls \-l
+ .PP
+ If you're only interested in files owned by user joe, you might use
+ .IP
+-watch \-d 'ls \-l | fgrep joe'
++gnuwatch \-d 'ls \-l | fgrep joe'
+ .PP
+ To see the effects of quoting, try these out
+ .IP
+-watch echo $$
++gnuwatch echo $$
+ .br
+-watch echo '$$'
++gnuwatch echo '$$'
+ .br
+-watch echo "'"'$$'"'"
++gnuwatch echo "'"'$$'"'"
+ .PP
+ To see the effect of precision time keeping, try adding
+ .B \-p
+ to
+ .IP
+-watch \-n 10 sleep 1
++gnuwatch \-n 10 sleep 1
+ .PP
+ You can watch for your administrator to install the latest kernel with
+ .IP
+-watch uname \-r
++gnuwatch uname \-r
+ .PP
+ (Note that
+ .B \-p

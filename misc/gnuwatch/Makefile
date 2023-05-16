@@ -1,28 +1,32 @@
-COMMENT=		GNU watch command
+COMMENT=	GNU watch command
 
-DISTNAME=		procps-3.2.8
-PKGNAME=		${DISTNAME:S/procps/gnuwatch/}
-CATEGORIES=		misc
-REVISION=		1
+DISTNAME=	procps-ng-4.0.3
+PKGNAME=	${DISTNAME:S/procps-ng/gnuwatch/}
+EXTRACT_SUFX=	.tar.xz
+CATEGORIES=	misc
 
-HOMEPAGE=		http://procps.sourceforge.net/
+HOMEPAGE=	https://gitlab.com/procps-ng/procps/
 
-# GPLv2/LGPLv2.1
+# watch LGPLv2.1; some other tools.in the distfile GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=		curses c
+WANTLIB=	curses c
 
-MASTER_SITES=		${HOMEPAGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=procps-ng/}
 
-NO_TEST=		Yes
-
-do-build:
-	${CC} ${CFLAGS} -c ${WRKSRC}/watch.c -o ${WRKSRC}/watch.o
-	${CC} ${CFLAGS} ${LDFLAGS} ${WRKSRC}/watch.o -o ${WRKSRC}/gnuwatch \
-	    -lncurses
+NO_TEST=	Yes
+CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS=	--with-ncurses \
+		--disable-nls \
+		--disable-dependency-tracking
+# workaround lack of ncurses pkgconfig files
+CONFIGURE_ENV=	NCURSES_CFLAGS=-I/usr/include \
+		NCURSES_LIBS=-lncurses \
+		NCURSES_VERSION=0
+ALL_TARGET=	src/watch
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/gnuwatch ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/watch.1 ${PREFIX}/man/man1/gnuwatch.1
+	${INSTALL_PROGRAM} ${WRKSRC}/src/watch ${PREFIX}/bin/gnuwatch
+	${INSTALL_MAN} ${WRKSRC}/man/watch.1 ${PREFIX}/man/man1/gnuwatch.1
 
 .include <bsd.port.mk>
