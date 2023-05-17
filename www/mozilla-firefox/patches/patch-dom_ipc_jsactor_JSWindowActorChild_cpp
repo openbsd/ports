@@ -1,0 +1,24 @@
+silence warnings on stderr
+
+https://phabricator.services.mozilla.com/D177917
+Index: dom/ipc/jsactor/JSWindowActorChild.cpp
+--- dom/ipc/jsactor/JSWindowActorChild.cpp.orig
++++ dom/ipc/jsactor/JSWindowActorChild.cpp
+@@ -38,16 +38,7 @@ void JSWindowActorChild::Init(const nsACString& aName,
+   InvokeCallback(CallbackFunction::ActorCreated);
+ }
+ 
+-#define WARN_MESSAGE_UNSENT(aMeta, aWarning)                          \
+-  NS_DebugBreak(                                                      \
+-      NS_DEBUG_WARNING,                                               \
+-      nsPrintfCString(                                                \
+-          "JSWindowActorChild::SendRawMessage (%s, %s) not sent: %s", \
+-          (aMeta).actorName().get(),                                  \
+-          NS_LossyConvertUTF16toASCII((aMeta).messageName()).get(),   \
+-          (aWarning))                                                 \
+-          .get(),                                                     \
+-      nullptr, __FILE__, __LINE__)
++#define WARN_MESSAGE_UNSENT(aMeta, aWarning)
+ 
+ void JSWindowActorChild::SendRawMessage(
+     const JSActorMessageMeta& aMeta, Maybe<ipc::StructuredCloneData>&& aData,
