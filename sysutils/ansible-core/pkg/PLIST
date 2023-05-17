@@ -90,6 +90,9 @@ lib/python${MODPY_VERSION}/site-packages/ansible/compat/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible/compat/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ansible/compat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible/compat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/compat/${MODPY_PYCACHE}importlib_resources.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ansible/compat/${MODPY_PYCACHE}importlib_resources.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/compat/importlib_resources.py
 lib/python${MODPY_VERSION}/site-packages/ansible/compat/selectors/
 lib/python${MODPY_VERSION}/site-packages/ansible/compat/selectors/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible/compat/selectors/${MODPY_PYCACHE}/
@@ -791,12 +794,16 @@ lib/python${MODPY_VERSION}/site-packages/ansible/modules/${MODPY_PYCACHE}copy.${
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/${MODPY_PYCACHE}copy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/${MODPY_PYCACHE}cron.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/${MODPY_PYCACHE}cron.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/modules/${MODPY_PYCACHE}deb822_repository.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ansible/modules/${MODPY_PYCACHE}deb822_repository.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/${MODPY_PYCACHE}debconf.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/${MODPY_PYCACHE}debconf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/${MODPY_PYCACHE}debug.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/${MODPY_PYCACHE}debug.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/${MODPY_PYCACHE}dnf.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/${MODPY_PYCACHE}dnf.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/modules/${MODPY_PYCACHE}dnf5.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ansible/modules/${MODPY_PYCACHE}dnf5.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/${MODPY_PYCACHE}dpkg_selections.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/${MODPY_PYCACHE}dpkg_selections.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/${MODPY_PYCACHE}expect.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -920,9 +927,11 @@ lib/python${MODPY_VERSION}/site-packages/ansible/modules/blockinfile.py
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/command.py
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/copy.py
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/cron.py
+lib/python${MODPY_VERSION}/site-packages/ansible/modules/deb822_repository.py
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/debconf.py
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/debug.py
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/dnf.py
+lib/python${MODPY_VERSION}/site-packages/ansible/modules/dnf5.py
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/dpkg_selections.py
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/expect.py
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/fail.py
@@ -1052,6 +1061,8 @@ lib/python${MODPY_VERSION}/site-packages/ansible/playbook/${MODPY_PYCACHE}collec
 lib/python${MODPY_VERSION}/site-packages/ansible/playbook/${MODPY_PYCACHE}collectionsearch.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/playbook/${MODPY_PYCACHE}conditional.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible/playbook/${MODPY_PYCACHE}conditional.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/playbook/${MODPY_PYCACHE}delegatable.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ansible/playbook/${MODPY_PYCACHE}delegatable.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/playbook/${MODPY_PYCACHE}handler.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible/playbook/${MODPY_PYCACHE}handler.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/playbook/${MODPY_PYCACHE}handler_task_include.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1062,6 +1073,8 @@ lib/python${MODPY_VERSION}/site-packages/ansible/playbook/${MODPY_PYCACHE}includ
 lib/python${MODPY_VERSION}/site-packages/ansible/playbook/${MODPY_PYCACHE}included_file.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/playbook/${MODPY_PYCACHE}loop_control.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible/playbook/${MODPY_PYCACHE}loop_control.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/playbook/${MODPY_PYCACHE}notifiable.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ansible/playbook/${MODPY_PYCACHE}notifiable.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/playbook/${MODPY_PYCACHE}play.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible/playbook/${MODPY_PYCACHE}play.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/playbook/${MODPY_PYCACHE}play_context.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1081,11 +1094,13 @@ lib/python${MODPY_VERSION}/site-packages/ansible/playbook/base.py
 lib/python${MODPY_VERSION}/site-packages/ansible/playbook/block.py
 lib/python${MODPY_VERSION}/site-packages/ansible/playbook/collectionsearch.py
 lib/python${MODPY_VERSION}/site-packages/ansible/playbook/conditional.py
+lib/python${MODPY_VERSION}/site-packages/ansible/playbook/delegatable.py
 lib/python${MODPY_VERSION}/site-packages/ansible/playbook/handler.py
 lib/python${MODPY_VERSION}/site-packages/ansible/playbook/handler_task_include.py
 lib/python${MODPY_VERSION}/site-packages/ansible/playbook/helpers.py
 lib/python${MODPY_VERSION}/site-packages/ansible/playbook/included_file.py
 lib/python${MODPY_VERSION}/site-packages/ansible/playbook/loop_control.py
+lib/python${MODPY_VERSION}/site-packages/ansible/playbook/notifiable.py
 lib/python${MODPY_VERSION}/site-packages/ansible/playbook/play.py
 lib/python${MODPY_VERSION}/site-packages/ansible/playbook/play_context.py
 lib/python${MODPY_VERSION}/site-packages/ansible/playbook/playbook_include.py
@@ -1138,6 +1153,8 @@ lib/python${MODPY_VERSION}/site-packages/ansible/plugins/action/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/action/${MODPY_PYCACHE}copy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/action/${MODPY_PYCACHE}debug.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/action/${MODPY_PYCACHE}debug.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/plugins/action/${MODPY_PYCACHE}dnf.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ansible/plugins/action/${MODPY_PYCACHE}dnf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/action/${MODPY_PYCACHE}fail.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/action/${MODPY_PYCACHE}fail.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/action/${MODPY_PYCACHE}fetch.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1187,6 +1204,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible/plugins/action/async_status.py
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/action/command.py
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/action/copy.py
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/action/debug.py
+lib/python${MODPY_VERSION}/site-packages/ansible/plugins/action/dnf.py
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/action/fail.py
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/action/fetch.py
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/action/gather_facts.py
@@ -1363,6 +1381,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible/plugins/filter/checksum.yml
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/filter/combinations.yml
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/filter/combine.yml
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/filter/comment.yml
+lib/python${MODPY_VERSION}/site-packages/ansible/plugins/filter/commonpath.yml
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/filter/core.py
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/filter/dict2items.yml
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/filter/difference.yml
@@ -1385,6 +1404,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible/plugins/filter/log.yml
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/filter/mandatory.yml
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/filter/mathstuff.py
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/filter/md5.yml
+lib/python${MODPY_VERSION}/site-packages/ansible/plugins/filter/normpath.yml
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/filter/password_hash.yml
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/filter/path_join.yml
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/filter/permutations.yml
@@ -2657,7 +2677,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_test/config/inventory.winrm.tem
 @man man/man1/ansible-vault.1
 @man man/man1/ansible.1
 share/doc/ansible/
-share/doc/ansible/CHANGELOG-v2.14.rst
+share/doc/ansible/CHANGELOG-v2.15.rst
 share/doc/ansible/COPYING
 share/examples/ansible/
 @sample ${SYSCONFDIR}/ansible/
