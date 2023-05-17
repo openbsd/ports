@@ -1,6 +1,6 @@
 COMMENT =	free clone of Dink Smallwood game
 DISTNAME =	freedink-109.6
-REVISION =	4
+REVISION =	5
 
 WANTLIB += ${COMPILER_LIBCXX} SDL2 SDL2_gfx-1.0 SDL2_image SDL2_mixer
 WANTLIB += SDL2_ttf c fontconfig freetype iconv intl m z

@@ -1,0 +1,18 @@
+Fix build with newer sdl-ttF
+
+Index: src/gfx_fonts.cpp
+--- src/gfx_fonts.cpp.orig
++++ src/gfx_fonts.cpp
+@@ -293,10 +293,10 @@ void set_font_color(int no, int r, int g, int b)
+  */
+ void setup_font(TTF_Font *font)
+ {
+-  char *familyname = TTF_FontFaceFamilyName(font);
++  const char *familyname = TTF_FontFaceFamilyName(font);
+   if(familyname)
+     log_info("The family name of the face in the font is: %s", familyname);
+-  char *stylename = TTF_FontFaceStyleName(font);
++  const char *stylename = TTF_FontFaceStyleName(font);
+   if(stylename)
+     log_info("The name of the face in the font is: %s", stylename);
+   log_info("The font max height is: %d", TTF_FontHeight(font));
