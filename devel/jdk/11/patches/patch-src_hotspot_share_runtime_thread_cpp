@@ -1,0 +1,19 @@
+Disable stack guarding on the primordial thread because its protections
+are immutable. Note this will interfere with the primordial thread throwing
+StackOverflowError exceptions.
+
+Index: src/hotspot/share/runtime/thread.cpp
+--- src/hotspot/share/runtime/thread.cpp.orig
++++ src/hotspot/share/runtime/thread.cpp
+@@ -2608,7 +2608,11 @@ size_t JavaThread::_stack_shadow_zone_size = 0;
+ void JavaThread::create_stack_guard_pages() {
+   if (!os::uses_stack_guard_pages() ||
+       _stack_guard_state != stack_guard_unused ||
++#ifdef __OpenBSD__
++      (os::is_primordial_thread())) {
++#else
+       (DisablePrimordialThreadGuardPages && os::is_primordial_thread())) {
++#endif
+       log_info(os, thread)("Stack guard page creation for thread "
+                            UINTX_FORMAT " disabled", os::current_thread_id());
+     return;
