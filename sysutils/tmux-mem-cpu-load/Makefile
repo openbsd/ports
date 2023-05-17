@@ -2,11 +2,11 @@ COMMENT =		CPU, RAM memory, and load monitor for use with tmux(1)
 
 GH_ACCOUNT =		thewtex
 GH_PROJECT =		tmux-mem-cpu-load
-GH_TAGNAME =		v3.5.1
+GH_TAGNAME =		v3.8.0
 
 CATEGORIES =		sysutils
 
-MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
+MAINTAINER =		Robert Nagy <robert@openbsd.org>
 
 HOMEPAGE =		https://github.com/thewtex/tmux-mem-cpu-load
 
