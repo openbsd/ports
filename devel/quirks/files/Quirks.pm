@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1526 2023/05/17 06:39:26 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.1527 2023/05/17 11:03:22 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1827,6 +1827,8 @@ setup_obsolete_reason(
 	5 => 'p5-Test-Group',
 	9 => 'thedarkmod',
 	3 => 'qtav',
+	3 => 'ruby31-mysql',
+	3 => 'ruby32-mysql',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually

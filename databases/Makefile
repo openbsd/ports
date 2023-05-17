@@ -204,8 +204,6 @@
      SUBDIR += ruby-kirbybase
      SUBDIR += ruby-ldap,ruby31
      SUBDIR += ruby-ldap,ruby32
-     SUBDIR += ruby-mysql,ruby31
-     SUBDIR += ruby-mysql,ruby32
      SUBDIR += ruby-mysql2,ruby31
      SUBDIR += ruby-mysql2,ruby32
      SUBDIR += ruby-pg,ruby31
