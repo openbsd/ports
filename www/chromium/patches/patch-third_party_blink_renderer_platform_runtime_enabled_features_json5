@@ -46,7 +46,7 @@ Index: third_party/blink/renderer/platform/runtime_enabled_features.json5
        base_feature: "ReduceUserAgent",
      },
      {
-@@ -3616,12 +3616,12 @@
+@@ -3621,12 +3621,12 @@
        status: "experimental",
        base_feature: "none",
        origin_trial_feature_name: "WebAppUrlHandling",
