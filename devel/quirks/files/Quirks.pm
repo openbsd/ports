@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1525 2023/05/13 19:06:09 thfr Exp $
+# $OpenBSD: Quirks.pm,v 1.1526 2023/05/17 06:39:26 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1826,6 +1826,7 @@ setup_obsolete_reason(
 	55 => 'residualvm',
 	5 => 'p5-Test-Group',
 	9 => 'thedarkmod',
+	3 => 'qtav',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
