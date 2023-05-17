@@ -1,0 +1,12 @@
+Backport https://github.com/erlang/otp/commit/e7a1067112f47a860b6974882fdbd19e52b7c372
+Index: lib/os_mon/src/cpu_sup.erl
+--- lib/os_mon/src/cpu_sup.erl.orig
++++ lib/os_mon/src/cpu_sup.erl
+@@ -163,6 +163,7 @@ handle_call({?util, D, PC}, {Client, _Tag},
+ 	when Flavor == sunos;
+ 	     Flavor == linux;
+ 	     Flavor == freebsd;
++	     Flavor == openbsd;
+ 	     Flavor == darwin ->
+     case measurement_server_call(State#state.server, {?util, D, PC, Client}) of
+ 	{error, Reason} -> 

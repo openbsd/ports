@@ -1,5 +1,7 @@
 @option no-default-conflict
 @option is-branch
+@conflict erlang-wx->=25,<26
+@conflict erlang-wx->=25v0,<26v0
 @pkgpath lang/erlang/21,-wx
 lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/
 lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/doc/
