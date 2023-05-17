@@ -3,7 +3,7 @@ A_ITALIC was only added to curses in 2013.
 Index: color/command.c
 --- color/command.c.orig
 +++ color/command.c
-@@ -233,8 +233,10 @@ static enum CommandResult parse_attr_spec(struct Buffe
+@@ -446,8 +446,10 @@ static enum CommandResult parse_attr_spec(struct Buffe
  
    if (mutt_istr_equal("bold", buf->data))
      *attrs |= A_BOLD;
@@ -14,7 +14,7 @@ Index: color/command.c
    else if (mutt_istr_equal("none", buf->data))
      *attrs = A_NORMAL; // Use '=' to clear other bits
    else if (mutt_istr_equal("normal", buf->data))
-@@ -278,11 +280,13 @@ static enum CommandResult parse_color_pair(struct Buff
+@@ -491,11 +493,13 @@ static enum CommandResult parse_color_pair(struct Buff
        *attrs |= A_BOLD;
        color_debug(LL_DEBUG5, "bold\n");
      }

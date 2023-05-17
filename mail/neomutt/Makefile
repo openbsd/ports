@@ -2,13 +2,10 @@ COMMENT=	tty-based e-mail client, Mutt with patches
 
 GH_ACCOUNT=	neomutt
 GH_PROJECT=	neomutt
-GH_TAGNAME=	20230407
-REVISION=	0
+GH_TAGNAME=	20230517
 
 CATEGORIES=	mail
 HOMEPAGE=	https://neomutt.org/
-
-MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
