@@ -69,7 +69,6 @@
      SUBDIR += py-ffmpeg-progress-yield,python3
      SUBDIR += py-guessit,python3
      SUBDIR += py-pafy,python3
-     SUBDIR += qtav
      SUBDIR += regionset
      SUBDIR += sfml
      SUBDIR += shotcut
