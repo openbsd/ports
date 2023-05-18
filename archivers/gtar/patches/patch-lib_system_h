@@ -1,0 +1,16 @@
+Don't bail out on EPERM from initgroups.  This fixes remote access
+in tar when using unprivileged user account.
+https://git.savannah.gnu.org/cgit/paxutils.git/commit/?id=d50ea31268250eea8166d62326deb4386cb65cf9
+
+Index: lib/system.h
+--- lib/system.h.orig
++++ lib/system.h
+@@ -488,7 +488,7 @@ sys_reset_uid_gid (void)
+     {
+       FATAL_ERROR ((0, errno, "%s(%lu)", "getpwuid", (unsigned long)uid));
+     }
+-  if (initgroups (pw->pw_name, getgid ()))
++  if (initgroups (pw->pw_name, getgid ()) && errno != EPERM)
+     {
+       FATAL_ERROR ((0, errno, "%s", "initgroups"));
+     }
