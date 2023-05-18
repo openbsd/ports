@@ -1,5 +1,6 @@
 @newgroup _gnome-initial-setup:724
 @newuser _gnome-initial-setup:724:_gnome-initial-setup::GNOME Initial Setup:/var/run/gnome-initial-setup:/sbin/nologin
+@comment homedir is needed as a skel dir during initial setup
 @bin libexec/gnome-initial-setup
 @bin libexec/gnome-initial-setup-copy-worker
 @bin libexec/gnome-initial-setup-goa-helper
