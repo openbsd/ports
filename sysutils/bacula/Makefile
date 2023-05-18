@@ -8,7 +8,7 @@ COMMENT-mysql=		Bacula libbaccats support for MySQL
 COMMENT-pgsql=		Bacula libbaccats support for PostgreSQL
 COMMENT-sqlite3=	Bacula libbaccats support for SQLite3
 
-V=			13.0.1
+V=			13.0.3
 DISTNAME=		bacula-$V
 PKGNAME-main=		bacula-client-$V
 PKGNAME-server=		bacula-server-$V
@@ -16,12 +16,6 @@ PKGNAME-bat=		bacula-bat-$V
 PKGNAME-mysql=		bacula-mysql-$V
 PKGNAME-pgsql=		bacula-pgsql-$V
 PKGNAME-sqlite3=	bacula-sqlite3-$V
-REVISION-bat=		0
-REVISION-main=		1
-REVISION-mysql=		0
-REVISION-pgsql=		0
-REVISION-server=	0
-REVISION-sqlite3=	0
 
 CATEGORIES=		sysutils
 

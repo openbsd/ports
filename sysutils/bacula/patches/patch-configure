@@ -37,7 +37,7 @@ Index: configure
  			CONS_LDFLAGS="-L${TOP_DIR}/depkgs/readline"
  			PRTREADLINE_SRC="${TOP_DIR}/depkgs/readline"
  
-@@ -30289,13 +30289,19 @@ if test "${with_lzo+set}" = set; then :
+@@ -30294,13 +30294,19 @@ if test "${with_lzo+set}" = set; then :
  	     ;;
  	  yes|*)
  	     if test -f ${with_lzo}/include/lzo/lzoconf.h; then
@@ -58,7 +58,7 @@ Index: configure
  	     as_ac_Header=`$as_echo "ac_cv_header_${with_lzo}/lzo/lzoconf.h" | $as_tr_sh`
  ac_fn_c_check_header_mongrel "$LINENO" "${with_lzo}/lzo/lzoconf.h" "$as_ac_Header" "$ac_includes_default"
  if eval test \"x\$"$as_ac_Header"\" = x"yes"; then :
-@@ -30315,6 +30321,8 @@ else
+@@ -30320,6 +30326,8 @@ else
  
  fi
  
@@ -67,7 +67,7 @@ Index: configure
  
  	     ;;
  	  esac
-@@ -32083,6 +32091,7 @@ netbsd)
+@@ -32088,6 +32096,7 @@ netbsd)
     DISTVER=`uname -a |awk '{print $3}'`
     lld="qd"
     llu="qu"
@@ -75,7 +75,7 @@ Index: configure
     TAPEDRIVE="/dev/nrst0"
     PSCMD="ps -ax -o pid,command"
     PTHREAD_LIB="-pthread"
-@@ -32101,6 +32110,7 @@ openbsd)
+@@ -32106,6 +32115,7 @@ openbsd)
         platforms/openbsd/bacula-fd \
         platforms/openbsd/bacula-sd \
         platforms/openbsd/bacula-dir"
