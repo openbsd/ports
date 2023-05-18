@@ -1,0 +1,23 @@
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/.document
+${GEM_LIB}/gems/${DISTNAME}/.github/
+${GEM_LIB}/gems/${DISTNAME}/.github/workflows/
+${GEM_LIB}/gems/${DISTNAME}/.github/workflows/unf_ext.yml
+${GEM_LIB}/gems/${DISTNAME}/.gitignore
+${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
+${GEM_LIB}/gems/${DISTNAME}/Gemfile
+${GEM_LIB}/gems/${DISTNAME}/LICENSE.txt
+${GEM_LIB}/gems/${DISTNAME}/README.md
+${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/unf_ext/
+${GEM_LIB}/gems/${DISTNAME}/lib/unf_ext.rb
+@so ${GEM_LIB}/gems/${DISTNAME}/lib/unf_ext.so
+${GEM_LIB}/gems/${DISTNAME}/lib/unf_ext/version.rb
+${GEM_LIB}/gems/${DISTNAME}/test/
+${GEM_LIB}/gems/${DISTNAME}/test/helper.rb
+${GEM_LIB}/gems/${DISTNAME}/test/normalization-test.txt
+${GEM_LIB}/gems/${DISTNAME}/test/test_unf_ext.rb
+${GEM_LIB}/gems/${DISTNAME}/unf_ext.gemspec
+${GEM_LIB}/specifications/${DISTNAME}.gemspec

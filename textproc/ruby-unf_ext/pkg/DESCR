@@ -1,0 +1,5 @@
+Unicode Normalization Form support library for CRuby.
+
+Normalizes UTF-8 strings into and from NFC, NFD, NFKC or NFKD
+
+Compliant with Unicode 9.0
