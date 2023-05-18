@@ -40,6 +40,7 @@ share/keepassxc/translations/keepassxc_en_US.qm
 share/keepassxc/translations/keepassxc_es.qm
 share/keepassxc/translations/keepassxc_et.qm
 share/keepassxc/translations/keepassxc_fi.qm
+share/keepassxc/translations/keepassxc_fil.qm
 share/keepassxc/translations/keepassxc_fr.qm
 share/keepassxc/translations/keepassxc_fr_CA.qm
 share/keepassxc/translations/keepassxc_he.qm
@@ -48,6 +49,7 @@ share/keepassxc/translations/keepassxc_hu.qm
 share/keepassxc/translations/keepassxc_id.qm
 share/keepassxc/translations/keepassxc_it.qm
 share/keepassxc/translations/keepassxc_ja.qm
+share/keepassxc/translations/keepassxc_km.qm
 share/keepassxc/translations/keepassxc_ko.qm
 share/keepassxc/translations/keepassxc_lt.qm
 share/keepassxc/translations/keepassxc_my.qm
@@ -61,6 +63,7 @@ share/keepassxc/translations/keepassxc_ru.qm
 share/keepassxc/translations/keepassxc_si.qm
 share/keepassxc/translations/keepassxc_sk.qm
 share/keepassxc/translations/keepassxc_sl.qm
+share/keepassxc/translations/keepassxc_sq.qm
 share/keepassxc/translations/keepassxc_sr.qm
 share/keepassxc/translations/keepassxc_sv.qm
 share/keepassxc/translations/keepassxc_th.qm
