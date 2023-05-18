@@ -1,0 +1,13 @@
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/COPYING
+${GEM_LIB}/gems/${DISTNAME}/README.markdown
+${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/rails_rinku.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rinku.rb
+@so ${GEM_LIB}/gems/${DISTNAME}/lib/rinku.so
+${GEM_LIB}/gems/${DISTNAME}/rinku.gemspec
+${GEM_LIB}/gems/${DISTNAME}/test/
+${GEM_LIB}/gems/${DISTNAME}/test/autolink_test.rb
+${GEM_LIB}/specifications/${DISTNAME}.gemspec

@@ -1,0 +1,5 @@
+Rinku is a Ruby library that does autolinking. It parses text and turns
+anything that remotely resembles a link into an HTML link, just like the
+Ruby on Rails auto_link method -- but it's about 20 times faster,
+because it's written in C, and it's about 20 times smarter when linking,
+because it does actual parsing instead of RegEx replacements.
