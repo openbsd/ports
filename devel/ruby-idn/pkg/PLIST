@@ -1,0 +1,15 @@
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/CHANGES
+${GEM_LIB}/gems/${DISTNAME}/LICENSE
+${GEM_LIB}/gems/${DISTNAME}/NOTICE
+${GEM_LIB}/gems/${DISTNAME}/README.md
+${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/lib/
+@so ${GEM_LIB}/gems/${DISTNAME}/lib/idn.so
+${GEM_LIB}/gems/${DISTNAME}/test/
+${GEM_LIB}/gems/${DISTNAME}/test/tc_Idna.rb
+${GEM_LIB}/gems/${DISTNAME}/test/tc_Punycode.rb
+${GEM_LIB}/gems/${DISTNAME}/test/tc_Stringprep.rb
+${GEM_LIB}/gems/${DISTNAME}/test/ts_IDN.rb
+${GEM_LIB}/specifications/${DISTNAME}.gemspec
