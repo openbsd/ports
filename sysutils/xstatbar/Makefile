@@ -3,7 +3,7 @@ ONLY_FOR_ARCHS=	${APM_ARCHS}
 COMMENT=	simple system monitor bar
 
 DISTNAME=	xstatbar-0.5
-REVISION=	14
+REVISION=	15
 FIX_EXTRACT_PERMISSIONS=Yes
 
 CATEGORIES=	sysutils x11

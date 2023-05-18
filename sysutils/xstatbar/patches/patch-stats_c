@@ -3,6 +3,8 @@ progress and loop forever. Fix it by trying the next device.
 
 Cope with various changes in OpenBSD since xstatbar was written.
 
+Skip cpu% text if there are many cores, to avoid some horizontal overruns.
+
 Index: stats.c
 --- stats.c.orig
 +++ stats.c
@@ -322,8 +324,12 @@ Index: stats.c
     }
  
     /* convert ticks to percentages */
-@@ -509,12 +500,16 @@ int
- cpu_draw(int cpu, XColor color, int x, int y)
+@@ -506,19 +497,19 @@ sysinfo_close()
+ }
+ 
+ int
+-cpu_draw(int cpu, XColor color, int x, int y)
++cpu_draw(int cpu, XColor color, int x, int y, int firstcpu)
  {
     static char  str[1000];
 -   static char *cpuStateNames[] = { "u", "n", "s", "i", "I" };
@@ -334,14 +340,16 @@ Index: stats.c
     };
     int state, startx, time, col, h, i;
  
-+   /* SMT CPU is offline (hw.smt=0) */
-+   if(!sysinfo.cpu_online[cpu])
-+      return 0;
-+
     startx = x;
  
-    snprintf(str, sizeof(str), "cpu%d:", cpu);
-@@ -531,7 +526,7 @@ cpu_draw(int cpu, XColor color, int x, int y)
+-   snprintf(str, sizeof(str), "cpu%d:", cpu);
+-   x += render_text(color, x, y, str) + 1;
++   if (firstcpu)
++      x += render_text(color, x, y, "cpu:") + 1;
+ 
+    /* for the graph, draw a green rectangle to start with */
+    XSetForeground(XINFO.disp, XINFO.gc, COLOR_GREEN.pixel);
+@@ -531,7 +522,7 @@ cpu_draw(int cpu, XColor color, int x, int y)
  
        /* user time */
        h = 0;
@@ -350,7 +358,7 @@ Index: stats.c
        h = h * XINFO.height / 100;
        XSetForeground(XINFO.disp, XINFO.gc, COLOR_RED.pixel);
        XDrawLine(XINFO.disp, XINFO.buf, XINFO.gc,
-@@ -540,7 +535,7 @@ cpu_draw(int cpu, XColor color, int x, int y)
+@@ -540,7 +531,7 @@ cpu_draw(int cpu, XColor color, int x, int y)
  
        /* nice time */
        h = 0;
@@ -359,7 +367,7 @@ Index: stats.c
        h = h * XINFO.height / 100;
        XSetForeground(XINFO.disp, XINFO.gc, COLOR_BLUE.pixel);
        XDrawLine(XINFO.disp, XINFO.buf, XINFO.gc,
-@@ -549,15 +544,24 @@ cpu_draw(int cpu, XColor color, int x, int y)
+@@ -549,15 +540,24 @@ cpu_draw(int cpu, XColor color, int x, int y)
  
        /* system time */
        h = 0;
@@ -386,7 +394,29 @@ Index: stats.c
        h = h * XINFO.height / 100;
        XSetForeground(XINFO.disp, XINFO.gc, COLOR_MAGENTA.pixel);
        XDrawLine(XINFO.disp, XINFO.buf, XINFO.gc,
-@@ -594,7 +598,8 @@ mem_draw(XColor color, int x, int y)
+@@ -569,13 +569,15 @@ cpu_draw(int cpu, XColor color, int x, int y)
+ 
+    x += sysinfo.hist_size + 1;
+ 
+-   /* draw the text */
+-   time = sysinfo.current;
+-   for (state = 0; state < CPUSTATES; state++) {
+-      snprintf(str, sizeof(str), "%3d%%%s",
+-         sysinfo.cpu_pcnts[cpu][time][state], cpuStateNames[state]);
++   /* draw text, skip if there are many cpus in which case try to avoid overrunning */
++   if (sysinfo.ncpu < 8) {
++      time = sysinfo.current;
++      for (state = 0; state < CPUSTATES; state++) {
++         snprintf(str, sizeof(str), "%3d%%%s",
++            sysinfo.cpu_pcnts[cpu][time][state], cpuStateNames[state]);
+ 
+-      x += render_text(*(cpuStateColors[state]), x, y, str);
++         x += render_text(*(cpuStateColors[state]), x, y, str);
++      }
+    }
+ 
+    return x - startx;
+@@ -594,7 +596,8 @@ mem_draw(XColor color, int x, int y)
     /* determine total memory */
     total = sysinfo.memory[cur][MEM_ACT]
           + sysinfo.memory[cur][MEM_TOT]
@@ -396,7 +426,7 @@ Index: stats.c
  
     /* start drawing ... */
     x += render_text(color, x, y, "mem:") + 1;
-@@ -610,7 +615,8 @@ mem_draw(XColor color, int x, int y)
+@@ -610,7 +613,8 @@ mem_draw(XColor color, int x, int y)
  
        if ((sysinfo.memory[time][MEM_ACT] != 0)
        ||  (sysinfo.memory[time][MEM_TOT] != 0)
@@ -406,7 +436,7 @@ Index: stats.c
  
  
           /* draw yellow (total) bar */
-@@ -627,6 +633,13 @@ mem_draw(XColor color, int x, int y)
+@@ -627,6 +631,13 @@ mem_draw(XColor color, int x, int y)
           XDrawLine(XINFO.disp, XINFO.buf, XINFO.gc,
              x + col, XINFO.height - h,
              x + col, XINFO.height);
@@ -420,7 +450,7 @@ Index: stats.c
        }
  
        time = (time + 1) % sysinfo.hist_size;
-@@ -639,6 +652,8 @@ mem_draw(XColor color, int x, int y)
+@@ -639,6 +650,8 @@ mem_draw(XColor color, int x, int y)
     x += render_text(COLOR_YELLOW, x, y, fmtmem(sysinfo.memory[cur][MEM_TOT]));
     x += render_text(color, x, y, "/");
     x += render_text(COLOR_GREEN, x, y, fmtmem(sysinfo.memory[cur][MEM_FRE]));

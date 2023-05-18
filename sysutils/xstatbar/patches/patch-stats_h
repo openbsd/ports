@@ -61,3 +61,12 @@ Index: stats.h
     int        **memory;    /* [hist_size][3] */
     int      ***cpu_pcnts;  /* [ncpu][hist_size][CPUSTATES] */
     uint64_t ***cpu_raw;    /* [ncpu][hist_size][CPUSTATES] */
+@@ -130,7 +136,7 @@ void sysinfo_close();
+ 
+ int  volume_draw(XColor c, int x, int y);
+ int  power_draw(XColor c, int x, int y);
+-int  cpu_draw(int cpu, XColor c, int x, int y);
++int  cpu_draw(int cpu, XColor c, int x, int y, int firstcpu);
+ int  mem_draw(XColor c, int x, int y);
+ int  procs_draw(XColor c, int x, int y);
+ int  time_draw(XColor c, int x, int y);

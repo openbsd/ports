@@ -13,15 +13,37 @@ Index: xstatbar.c
     int   x, y, w, h;
     int   sleep_seconds;
  
-@@ -297,6 +297,7 @@ draw_divider(XColor color, int x, int width)
+@@ -297,9 +297,10 @@ draw_divider(XColor color, int x, int width)
  void
  draw()
  {
 +   XEvent dummy;
     static int spacing = 10;
     int x, y;
-    int cpu;
-@@ -323,6 +324,7 @@ draw()
+-   int cpu;
++   int cpu, firstcpu = 1;
+ 
+    /* paint over the existing pixmap */
+    XSetForeground(XINFO.disp, XINFO.gc, BlackPixel(XINFO.disp, XINFO.screen));
+@@ -311,9 +312,15 @@ draw()
+    x = 0;
+ 
+    /* start drawing stats */
+-   for (cpu = 0; cpu < sysinfo.ncpu; cpu++)
+-      x += cpu_draw(cpu, COLOR_WHITE, x, y) + spacing;
++   for (cpu = 0; cpu < sysinfo.ncpu; cpu++) {
++      /* SMT CPU is offline (hw.smt=0) */
++      if(!sysinfo.cpu_online[cpu])
++         continue;
+ 
++      x += cpu_draw(cpu, COLOR_WHITE, x, y, firstcpu) + spacing;
++      firstcpu = 0;
++   }
++
+    x += mem_draw(COLOR_WHITE, x, y) + spacing;
+    x += procs_draw(COLOR_WHITE, x, y) + spacing;
+    x += power_draw(COLOR_WHITE, x, y) + spacing;
+@@ -323,6 +330,7 @@ draw()
     /* copy the buffer to the window and flush */
     XCopyArea(XINFO.disp, XINFO.buf, XINFO.win, XINFO.gc,
        0, 0, XINFO.width, XINFO.height, 0, 0);
