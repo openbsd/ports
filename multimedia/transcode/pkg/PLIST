@@ -28,7 +28,6 @@ lib/transcode/
 @so lib/transcode/export_ffmpeg.so
 @so lib/transcode/export_jpg.so
 @so lib/transcode/export_lame.so
-@so lib/transcode/export_mov.so
 @so lib/transcode/export_mp2.so
 @so lib/transcode/export_null.so
 @so lib/transcode/export_ogg.so
@@ -102,7 +101,6 @@ lib/transcode/filter_list.awk
 @so lib/transcode/import_dvd.so
 @so lib/transcode/import_ffmpeg.so
 @so lib/transcode/import_framegen.so
-@so lib/transcode/import_mov.so
 @so lib/transcode/import_mp3.so
 @so lib/transcode/import_mpeg2.so
 @so lib/transcode/import_mplayer.so
