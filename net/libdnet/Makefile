@@ -36,7 +36,8 @@ CONFIGURE_ARGS +=	--without-check
 MODULES+=		lang/python
 MODPY_ADJ_FILES=	python/test.py
 CONFIGURE_ARGS+=	--with-python
-BUILD_DEPENDS+=		lang/cython${MODPY_FLAVOR}
+BUILD_DEPENDS+=		devel/py-setuptools${MODPY_FLAVOR} \
+			lang/cython${MODPY_FLAVOR}
 MAKE_FLAGS=		PYTHON=${MODPY_BIN}
 TEST_DEPENDS=		${FULLPKGNAME-python}:${FULLPKGPATH-python} \
 			net/py-netifaces${MODPY_FLAVOR}
