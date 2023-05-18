@@ -218,6 +218,8 @@
      SUBDIR += ruby-sqlite3,ruby32
      SUBDIR += ruby-tiny_tds,ruby31
      SUBDIR += ruby-tiny_tds,ruby32
+     SUBDIR += ruby-trilogy,ruby31
+     SUBDIR += ruby-trilogy,ruby32
      SUBDIR += sharedance
      SUBDIR += sqlbox
      SUBDIR += sqlcipher

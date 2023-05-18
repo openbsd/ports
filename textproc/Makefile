@@ -493,6 +493,8 @@
      SUBDIR += rman
      SUBDIR += rubber
      SUBDIR += ruby-builder
+     SUBDIR += ruby-commonmarker,ruby31
+     SUBDIR += ruby-commonmarker,ruby32
      SUBDIR += ruby-erubis
      SUBDIR += ruby-fast-stemmer,ruby31
      SUBDIR += ruby-fast-stemmer,ruby32
@@ -518,11 +520,15 @@
      SUBDIR += ruby-redcloth,ruby31
      SUBDIR += ruby-redcloth,ruby32
      SUBDIR += ruby-rexical
+     SUBDIR += ruby-rinku,ruby31
+     SUBDIR += ruby-rinku,ruby32
      SUBDIR += ruby-ronn
      SUBDIR += ruby-rouge
      SUBDIR += ruby-syntax
      SUBDIR += ruby-text
      SUBDIR += ruby-treetop
+     SUBDIR += ruby-unf_ext,ruby31
+     SUBDIR += ruby-unf_ext,ruby32
      SUBDIR += ruby-yard
      SUBDIR += rxp
      SUBDIR += sablotron

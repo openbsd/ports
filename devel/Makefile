@@ -1716,6 +1716,8 @@
      SUBDIR += ruby-hocon
      SUBDIR += ruby-hoe
      SUBDIR += ruby-i18n
+     SUBDIR += ruby-idn,ruby31
+     SUBDIR += ruby-idn,ruby32
      SUBDIR += ruby-indentation
      SUBDIR += ruby-isolate
      SUBDIR += ruby-json_pure
