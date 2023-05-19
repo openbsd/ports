@@ -1,20 +1,19 @@
-COMMENT =	non-validating SQL parser
+COMMENT=	non-validating SQL parser
 
-MODPY_EGG_VERSION =	0.4.3
-DISTNAME =	sqlparse-${MODPY_EGG_VERSION}
-PKGNAME =	py-${DISTNAME}
-REVISION =	0
+MODPY_EGG_VERSION=	0.4.4
+DISTNAME=	sqlparse-${MODPY_EGG_VERSION}
+PKGNAME=	py-${DISTNAME}
 
-CATEGORIES =	databases
+CATEGORIES=	databases
 
 # BSD
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =	lang/python
-MODPY_PI =	Yes
-MODPY_PYBUILD =	setuptools
+MODULES=	lang/python
+MODPY_PI=	Yes
+MODPY_PYBUILD=	flit_core
 
-FLAVORS =	python3
-FLAVOR =	python3
+FLAVORS=	python3
+FLAVOR=		python3
 
 .include <bsd.port.mk>
