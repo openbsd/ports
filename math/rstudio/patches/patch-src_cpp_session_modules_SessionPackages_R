@@ -1,0 +1,16 @@
+Index: src/cpp/session/modules/SessionPackages.R
+--- src/cpp/session/modules/SessionPackages.R.orig
++++ src/cpp/session/modules/SessionPackages.R
+@@ -1252,7 +1252,11 @@ if (identical(as.character(Sys.info()["sysname"]), "Da
+    else if (identical(sysName, "Darwin")) {
+       posixMethod("curl")
+    }
+-   
++
++   else if (identical(sysName, "OpenBSD")) {
++      posixMethod("curl")
++   }
++    
+    else if (identical(sysName, "Linux")) {
+       method <- posixMethod("wget")
+       if (!nzchar(method))

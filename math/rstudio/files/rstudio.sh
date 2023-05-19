@@ -1,3 +1,3 @@
 #!/bin/sh
 
-${TRUEPREFIX}/lib/rstudio/bin/rstudio "$@"
+exec ${TRUEPREFIX}/lib/rstudio/bin/rstudio "$@"
