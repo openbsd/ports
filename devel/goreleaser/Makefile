@@ -1,7 +1,7 @@
 COMMENT =	deliver Go binaries as fast and easily as possible
 
 MODGO_MODNAME =	github.com/goreleaser/goreleaser
-MODGO_VERSION =	v1.17.2
+MODGO_VERSION =	v1.18.2
 
 HOMEPAGE =	https://goreleaser.com/
 
