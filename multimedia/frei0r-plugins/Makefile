@@ -1,9 +1,11 @@
 COMMENT =	minimalistic plugin API for video effects
 CATEGORIES =	graphics multimedia
 
-DISTNAME =	frei0r-plugins-1.8.0
-MASTER_SITES =	https://files.dyne.org/frei0r/releases/
-REVISION =	0
+GH_ACCOUNT =	dyne
+GH_PROJECT =	frei0r
+GH_TAGNAME =	v2.3.0
+
+DISTNAME =	frei0r-plugins-${GH_TAGNAME:S/v//}
 
 HOMEPAGE =	https://frei0r.dyne.org/
 
