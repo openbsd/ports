@@ -221,7 +221,7 @@
      SUBDIR += liboauth
      SUBDIR += liboping
      SUBDIR += libpcapnav
-     SUBDIR += libproxy,
+     SUBDIR += libproxy
      SUBDIR += libpsl
      SUBDIR += librenms
      SUBDIR += librsync
