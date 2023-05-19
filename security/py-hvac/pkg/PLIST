@@ -4,7 +4,6 @@ lib/python${MODPY_VERSION}/site-packages/hvac-${MODPY_EGG_VERSION}.dist-info/LIC
 lib/python${MODPY_VERSION}/site-packages/hvac-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/hvac-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/hvac-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/hvac-${MODPY_EGG_VERSION}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/hvac/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hvac/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hvac/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -50,6 +49,8 @@ lib/python${MODPY_VERSION}/site-packages/hvac/api/auth_methods/${MODPY_PYCACHE}k
 lib/python${MODPY_VERSION}/site-packages/hvac/api/auth_methods/${MODPY_PYCACHE}kubernetes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hvac/api/auth_methods/${MODPY_PYCACHE}ldap.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hvac/api/auth_methods/${MODPY_PYCACHE}ldap.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/hvac/api/auth_methods/${MODPY_PYCACHE}legacy_mfa.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/hvac/api/auth_methods/${MODPY_PYCACHE}legacy_mfa.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hvac/api/auth_methods/${MODPY_PYCACHE}mfa.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hvac/api/auth_methods/${MODPY_PYCACHE}mfa.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hvac/api/auth_methods/${MODPY_PYCACHE}oidc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -71,6 +72,7 @@ lib/python${MODPY_VERSION}/site-packages/hvac/api/auth_methods/github.py
 lib/python${MODPY_VERSION}/site-packages/hvac/api/auth_methods/jwt.py
 lib/python${MODPY_VERSION}/site-packages/hvac/api/auth_methods/kubernetes.py
 lib/python${MODPY_VERSION}/site-packages/hvac/api/auth_methods/ldap.py
+lib/python${MODPY_VERSION}/site-packages/hvac/api/auth_methods/legacy_mfa.py
 lib/python${MODPY_VERSION}/site-packages/hvac/api/auth_methods/mfa.py
 lib/python${MODPY_VERSION}/site-packages/hvac/api/auth_methods/oidc.py
 lib/python${MODPY_VERSION}/site-packages/hvac/api/auth_methods/okta.py
@@ -106,6 +108,8 @@ lib/python${MODPY_VERSION}/site-packages/hvac/api/secrets_engines/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/hvac/api/secrets_engines/${MODPY_PYCACHE}pki.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hvac/api/secrets_engines/${MODPY_PYCACHE}rabbitmq.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hvac/api/secrets_engines/${MODPY_PYCACHE}rabbitmq.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/hvac/api/secrets_engines/${MODPY_PYCACHE}ssh.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/hvac/api/secrets_engines/${MODPY_PYCACHE}ssh.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hvac/api/secrets_engines/${MODPY_PYCACHE}transform.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hvac/api/secrets_engines/${MODPY_PYCACHE}transform.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hvac/api/secrets_engines/${MODPY_PYCACHE}transit.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -122,6 +126,7 @@ lib/python${MODPY_VERSION}/site-packages/hvac/api/secrets_engines/kv_v1.py
 lib/python${MODPY_VERSION}/site-packages/hvac/api/secrets_engines/kv_v2.py
 lib/python${MODPY_VERSION}/site-packages/hvac/api/secrets_engines/pki.py
 lib/python${MODPY_VERSION}/site-packages/hvac/api/secrets_engines/rabbitmq.py
+lib/python${MODPY_VERSION}/site-packages/hvac/api/secrets_engines/ssh.py
 lib/python${MODPY_VERSION}/site-packages/hvac/api/secrets_engines/transform.py
 lib/python${MODPY_VERSION}/site-packages/hvac/api/secrets_engines/transit.py
 lib/python${MODPY_VERSION}/site-packages/hvac/api/system_backend/

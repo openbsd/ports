@@ -1,9 +1,8 @@
 COMMENT =		Python client library for Hashicorp Vault
 
-MODPY_EGG_VERSION =	0.11.2
+MODPY_EGG_VERSION =	1.1.0
 DISTNAME =		hvac-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
 
 MAINTAINER =		Mikolaj Kucharski <mikolaj@kucharski.name>
 
@@ -15,11 +14,10 @@ HOMEPAGE =		https://github.com/hvac/hvac
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_PYBUILD =	setuptools
+MODPY_PYBUILD =		poetry-core
 MODPY_PI =		Yes
 
-RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR} \
-			www/py-requests${MODPY_FLAVOR}
+RUN_DEPENDS =		www/py-requests${MODPY_FLAVOR}
 
 FLAVORS =		python3
 FLAVOR =		python3
