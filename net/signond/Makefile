@@ -6,7 +6,7 @@ HOMEPAGE =	https://accounts-sso.gitlab.io/
 
 V =		VERSION_8.61
 DISTNAME =	signond-${V:S/VERSION_//}
-REVISION =	1
+REVISION =	2
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
@@ -21,14 +21,12 @@ SHARED_LIBS +=  signon-qt5                0.0 # 1.0
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Sql Qt5Xml c m proxy
+WANTLIB += Qt5Sql Qt5Xml c m
 
 MODULES =	x11/qt5 \
 		devel/qmake
 
 BUILD_DEPENDS =	devel/doxygen
-
-LIB_DEPENDS =	net/libproxy
 
 WRKDIST =	${WRKDIR}/signond-${V}-5b34c5bbc45eedf55bf553675595b3fcb5c156a8
 
