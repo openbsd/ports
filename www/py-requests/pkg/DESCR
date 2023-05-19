@@ -1,8 +1,21 @@
-Requests is an ISC Licensed HTTP library, written in Python, for human
-beings.
+Requests is a widely used high-level HTTP library for Python, based on
+the lower-level urllib3.
 
-Requests allow you to send HEAD, GET, POST, PUT, PATCH, and DELETE HTTP
-requests. You can add headers, form data, multipart files, and
+It allows you to send HTTP/1.1 requests extremely easily. There’s no
+need to manually add query strings to your URLs, or to form-encode
+your POST data; you can add headers, form data, multipart files, and
 parameters with simple Python dictionaries, and access the response data
-in the same way. It's powered by urllib2, but it does all the hard work
-and crazy hacks for you.
+in the same way.
+
+Features include:
+
+- Keep-Alive & Connection Pooling
+- International Domains and URLs
+- Sessions with Cookie Persistence
+- Browser-style SSL Verification
+- Automatic Content Decoding
+- HTTP(S) Proxy Support
+- Multipart File Uploads
+- Streaming Downloads
+- Connection Timeouts
+- Chunked Requests

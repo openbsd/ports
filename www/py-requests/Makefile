@@ -1,6 +1,7 @@
 COMMENT=		elegant and simple HTTP library for Python
 
 MODPY_EGG_VERSION=	2.30.0
+REVISION=		0
 DISTNAME=		requests-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
@@ -8,7 +9,7 @@ CATEGORIES=		www
 
 HOMEPAGE=		https://requests.readthedocs.io/
 
-# APLv2
+# Apache 2.0
 PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
@@ -18,7 +19,6 @@ FLAVOR=			python3
 
 MODPY_PI=		Yes
 MODPY_PYBUILD=		setuptools
-MODPY_PYTEST_ARGS=	tests
 
 RUN_DEPENDS=		archivers/py-brotli${MODPY_FLAVOR} \
 			devel/py-certifi${MODPY_FLAVOR} \
