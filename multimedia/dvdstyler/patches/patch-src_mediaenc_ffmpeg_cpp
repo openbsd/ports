@@ -1,0 +1,382 @@
+- fixed encoding of silent audio file
+- added support of ffmpeg5
+
+Index: src/mediaenc_ffmpeg.cpp
+--- src/mediaenc_ffmpeg.cpp.orig
++++ src/mediaenc_ffmpeg.cpp
+@@ -30,6 +30,7 @@ extern "C" {
+ #include <libswscale/swscale.h>
+ #include <libavutil/mathematics.h>
+ #include <libavutil/avstring.h>
++#include <libavcodec/avcodec.h>
+ }
+ 
+ #define AUDIO_BUF_SIZE 524288
+@@ -45,11 +46,11 @@ wxFfmpegMediaEncoder::wxFfmpegMediaEncoder(int threadC
+ 	m_audioCodec = NULL;
+     m_nextVideoPts = 0;
+     m_nextAudioPts = 0;
+-	m_samples = NULL;
+ 	m_audioFrame = NULL;
+ 	m_picture = NULL;
+ 	m_imgConvertCtx = NULL;
+ 	m_videoOutbuf = NULL;
++	m_audioFile = NULL;
+ }
+ 
+ wxFfmpegMediaEncoder::~wxFfmpegMediaEncoder() {
+@@ -57,10 +58,15 @@ wxFfmpegMediaEncoder::~wxFfmpegMediaEncoder() {
+ }
+ 
+ wxString wxFfmpegMediaEncoder::GetBackendVersion() {
++#ifdef LIBAVFORMAT_VERSION_INT
+ 	return wxString::Format(wxT("libavformat %d.%d.%d, libavcodec %d.%d.%d, libavutil %d.%d.%d"),
+ 			LIBAVFORMAT_VERSION_INT >> 16, LIBAVFORMAT_VERSION_INT >> 8 & 0xFF, LIBAVFORMAT_VERSION_INT & 0xFF,
+ 			LIBAVCODEC_VERSION_INT >> 16, LIBAVCODEC_VERSION_INT >> 8 & 0xFF, LIBAVCODEC_VERSION_INT & 0xFF,
+ 			LIBAVUTIL_VERSION_INT >> 16, LIBAVUTIL_VERSION_INT >> 8 & 0xFF, LIBAVUTIL_VERSION_INT & 0xFF);
++#else
++	return wxString::Format(wxT("libavformat %d, libavcodec %d, libavutil %d"),
++			LIBAVCODEC_VERSION_MAJOR, LIBAVFORMAT_VERSION_MAJOR, LIBAVUTIL_VERSION_MAJOR);
++#endif
+ }
+ 
+ void print_error(const char *filename, int err) {
+@@ -74,7 +80,22 @@ void print_error(const char *filename, int err) {
+ bool wxFfmpegMediaEncoder::BeginEncode(const wxString& fileName, VideoFormat videoFormat, AudioFormat audioFormat,
+ 		AspectRatio aspectRatio, int videoBitrate, bool cbr) {
+ 	EndEncode();
+-	AVOutputFormat* outputFormat = NULL;
++	if (videoFormat == vfNONE) {
++		AVCodecID codecId = audioFormat == afAC3 ? AV_CODEC_ID_AC3 : AV_CODEC_ID_MP2;
++		if (!addAudioStream(codecId))
++			return false;
++		
++		m_audioFile = fopen((const char*) fileName.ToUTF8(), "wb");
++		if (!m_audioFile) {
++			wxLogError("Could not open '%s'", fileName.c_str());
++			return false;
++		}
++		return true;
++	}
++#if LIBAVCODEC_VERSION_MAJOR > 58
++	const
++#endif
++AVOutputFormat* outputFormat = NULL;
+ 	if (videoFormat == vfNONE || audioFormat == afNONE)
+ 		outputFormat = av_guess_format(NULL, (const char*) fileName.ToUTF8(), NULL);
+ 	else
+@@ -83,13 +104,15 @@ bool wxFfmpegMediaEncoder::BeginEncode(const wxString&
+ 		wxLogError(wxT("Cannot open output format"));
+ 		return false;
+ 	}
+-	outputFormat->video_codec = videoFormat == vfNONE ? AV_CODEC_ID_NONE : AV_CODEC_ID_MPEG2VIDEO;
++
++	AVCodecID video_codec = videoFormat == vfNONE ? AV_CODEC_ID_NONE : AV_CODEC_ID_MPEG2VIDEO;
++	AVCodecID audio_codec;
+ 	if (audioFormat == afNONE)
+-		outputFormat->audio_codec = AV_CODEC_ID_NONE;
++		audio_codec = AV_CODEC_ID_NONE;
+ 	else if (audioFormat == afAC3)
+-		outputFormat->audio_codec = AV_CODEC_ID_AC3;
++		audio_codec = AV_CODEC_ID_AC3;
+ 	else
+-		outputFormat->audio_codec = AV_CODEC_ID_MP2;
++		audio_codec = AV_CODEC_ID_MP2;
+ 	
+ 	m_outputCtx = NULL;
+ 	avformat_alloc_output_context2(&m_outputCtx, outputFormat, NULL, (const char*) fileName.ToUTF8());
+@@ -101,9 +124,9 @@ bool wxFfmpegMediaEncoder::BeginEncode(const wxString&
+ 	m_outputCtx->packet_size = 2048;
+ 
+ 	// add video and audio streams
+-	if (!addVideoStream(outputFormat->video_codec, videoFormat, aspectRatio, videoBitrate, cbr))
++	if (!addVideoStream(video_codec, videoFormat, aspectRatio, videoBitrate, cbr))
+ 		return false;
+-	if (!addAudioStream(outputFormat->audio_codec))
++	if (!addAudioStream(audio_codec))
+ 		return false;
+ 
+ 	// open the output file
+@@ -136,7 +159,6 @@ AVFrame* allocPicture(AVPixelFormat pix_fmt, int width
+ 	AVFrame* frame = av_frame_alloc();
+ 	if (!frame)
+ 		return NULL;
+-#if LIBAVUTIL_VERSION_INT >= AV_VERSION_INT(53, 0, 0)
+ 	frame->width = width;
+ 	frame->height = height;
+ 	frame->format = pix_fmt;
+@@ -144,15 +166,6 @@ AVFrame* allocPicture(AVPixelFormat pix_fmt, int width
+ 		av_free(frame);
+ 		return NULL;
+ 	}
+-#else
+-	int size = avpicture_get_size(pix_fmt, width, height);
+-	uint8_t* picture_buf = (uint8_t*) av_malloc(size);
+-	if (!picture_buf) {
+-		av_free(frame);
+-		return NULL;
+-	}
+-	avpicture_fill((AVPicture *) frame, picture_buf, pix_fmt, width, height);
+-#endif
+ 	return frame;
+ }
+ 
+@@ -170,7 +183,7 @@ bool wxFfmpegMediaEncoder::addVideoStream(int codecId,
+ 	m_videoStm->id = 0;
+ 
+ 	// find the video encoder and open it
+-	AVCodec* encoder = avcodec_find_encoder((AVCodecID) codecId);
++	auto* encoder = avcodec_find_encoder((AVCodecID) codecId);
+ 	if (!encoder) {
+ 		wxLogError(wxT("Video codec not found"));
+ 		return false;
+@@ -252,25 +265,21 @@ bool wxFfmpegMediaEncoder::addAudioStream(int codecId)
+ 		m_audioStm = NULL;
+ 		return true;
+ 	}
+-	m_audioStm = avformat_new_stream(m_outputCtx, NULL);
+-	if (!m_audioStm) {
+-		wxLogError(wxT("Could not alloc stream"));
+-		return false;
++	if (m_outputCtx != NULL) {
++		m_audioStm = avformat_new_stream(m_outputCtx, NULL);
++		if (!m_audioStm) {
++			wxLogError(wxT("Could not alloc stream"));
++			return false;
++		}
++		m_audioStm->id = 1;
+ 	}
+-	m_audioStm->id = 1;
+ 
+ 	// find the audio encoder and open it
+-	AVCodec* encoder = NULL;
++	const AVCodec* encoder = NULL;
+ 	AVSampleFormat sampleFmt = AV_SAMPLE_FMT_S16;
+ 	if ((AVCodecID) codecId == AV_CODEC_ID_AC3) {
+-		// There are 2 ac3 encoders (float and integer). Depending on libav implementation/version/fork,
+-		// one or the other may work. So we try both.
+-		encoder = avcodec_find_encoder_by_name("ac3_fixed");
+-		if (!hasSampleFmt(encoder, sampleFmt)) {
+-			// Try the encoding from float format
+-			sampleFmt = AV_SAMPLE_FMT_FLTP;
+-			encoder = avcodec_find_encoder((AVCodecID) codecId );
+-		}
++		sampleFmt = AV_SAMPLE_FMT_FLTP;
++		encoder = avcodec_find_encoder((AVCodecID) codecId );
+ 	} else {
+ 		sampleFmt = AV_SAMPLE_FMT_S16;
+  		encoder = avcodec_find_encoder((AVCodecID) codecId );
+@@ -285,54 +294,52 @@ bool wxFfmpegMediaEncoder::addAudioStream(int codecId)
+ 
+ 	AVCodecContext* c = m_audioCodec;
+ 	c->thread_count = m_threadCount;
+-	c->codec_id = (AVCodecID) codecId;
+-	c->codec_type = AVMEDIA_TYPE_AUDIO;
+ 	c->bit_rate = 64000;
+ 	c->sample_rate = 48000;
+ 	c->sample_fmt = sampleFmt;
+ 	c->channels = 2;
+ 	c->channel_layout = AV_CH_LAYOUT_STEREO;
+-	c->time_base = (AVRational){ 1, c->sample_rate };
+-	// some formats want stream headers to be separate
+-	if(m_outputCtx->oformat->flags & AVFMT_GLOBALHEADER)
+-	    c->flags |= AV_CODEC_FLAG_GLOBAL_HEADER;
++	if (m_audioStm && avcodec_parameters_from_context(m_audioStm->codecpar, c) < 0) {
++		wxLogError("Failed to copy encoder parameters to output audio stream");
++		return false;
++	}
+ 
+-	m_audioStm->time_base = c->time_base;
+-
+ 	
+ 	if (avcodec_open2(c, encoder, NULL) < 0) {
+ 		wxLogError(wxT("Could not open audio codec"));
+ 		return false;
+ 	}
+-	if (avcodec_parameters_from_context(m_audioStm->codecpar, c) < 0) {
+-		wxLogError("Failed to copy encoder parameters to output audio stream");
++	
++	m_audioFrame = av_frame_alloc();
++	if (!m_audioFrame) {
++		wxLogError("Could not allocate audio frame");
+ 		return false;
+ 	}
+ 
+-    m_samples = (int16_t*) av_malloc(c->frame_size * av_get_bytes_per_sample(c->sample_fmt) * c->channels);
+-	memset(m_samples, 0, c->frame_size * av_get_bytes_per_sample(c->sample_fmt) * c->channels);
+-	
+-	m_audioFrame = av_frame_alloc();
+ 	m_audioFrame->nb_samples = c->frame_size;
+-	avcodec_fill_audio_frame(m_audioFrame, c->channels, c->sample_fmt, (uint8_t *) m_samples, c->frame_size
+-			* av_get_bytes_per_sample(c->sample_fmt) * c->channels, 1);
++	m_audioFrame->format = c->sample_fmt;
++	m_audioFrame->channel_layout = c->channel_layout;
++		
++	int ret = av_frame_get_buffer(m_audioFrame, 0); // allocate the data buffers
++	if (ret < 0) {
++		wxLogError("Could not allocate audio data buffers");
++		return false;
++	}
++	ret = av_frame_make_writable(m_audioFrame);
++	if (ret < 0)
++		return false;
++	for (int i = 0; i < c->channels; i++) {
++		uint16_t *samples = (uint16_t*)m_audioFrame->data[i];
++		memset(samples, 0, c->frame_size * av_get_bytes_per_sample(c->sample_fmt));
++	}
+ 
+ 	return true;
+ }
+ 
+ void wxFfmpegMediaEncoder::CloseAudioEncoder() {
+-	if (!m_audioStm)
+-		return;
+-	if (m_samples) {
+-		av_freep(&m_samples);
+-	}
+-	if (m_audioFrame) {
+-		av_frame_free(&m_audioFrame);
+-	}
++	av_frame_free(&m_audioFrame);
++	avcodec_free_context(&m_audioCodec);
+ 	m_audioStm = NULL;
+-	if (m_audioCodec != NULL) {
+-		avcodec_close(m_audioCodec);
+-	}
+ }
+ 
+ void wxFfmpegMediaEncoder::CloseVideoEncoder() {
+@@ -345,10 +352,8 @@ void wxFfmpegMediaEncoder::CloseVideoEncoder() {
+ 		av_freep(&m_picture);
+ 	}
+ 	av_freep(&m_videoOutbuf);
++	avcodec_free_context(&m_videoCodec);
+ 	m_videoStm = NULL;
+-	if (m_videoCodec != NULL) {
+-		avcodec_close(m_videoCodec);
+-	}
+ }
+ 
+ bool wxFfmpegMediaEncoder::EncodeImage(wxImage image, int frames, AbstractProgressDialog* progressDialog) {
+@@ -390,20 +395,77 @@ bool wxFfmpegMediaEncoder::EncodeImage(wxImage image, 
+ 	return true;
+ }
+ 
++int encode(AVCodecContext *ctx, AVFrame *frame, AVPacket *pkt, FILE *output) {
++    int ret;
++
++    /* send the frame for encoding */
++    ret = avcodec_send_frame(ctx, frame);
++    if (ret < 0) {
++        wxLogError("Error sending the frame to the encoder");
++        return ret;
++    }
++
++    /* read all the available output packets (in general there may be any
++     * number of them */
++    while (ret >= 0) {
++        ret = avcodec_receive_packet(ctx, pkt);
++        if (ret == AVERROR(EAGAIN) || ret == AVERROR_EOF)
++            return 0;
++        else if (ret < 0) {
++        	wxLogError("Error encoding audio frame");
++            return ret;
++        }
++
++        fwrite(pkt->data, 1, pkt->size, output);
++        av_packet_unref(pkt);
++    }
++    
++    return 0;
++}
++
+ bool wxFfmpegMediaEncoder::EncodeAudio(double duration, AbstractProgressDialog* progressDialog) {
+-	// encode audio
+-	while (true) {
+-		double audioPts = m_audioStm ? ((double) m_nextAudioPts) * m_audioCodec->time_base.num
+-				/ m_audioCodec->time_base.den : 0.0;
+-		if (progressDialog->WasCanceled())
++	if (m_outputCtx != NULL) {
++		// encode audio stream
++		while (true) {
++			double audioPts = m_audioCodec ? ((double) m_nextAudioPts) * m_audioCodec->time_base.num
++					/ m_audioCodec->time_base.den : 0.0;
++			if (progressDialog->WasCanceled())
++				return false;
++	
++			if (!m_audioCodec || audioPts >= duration)
++				break;
++			
++			// write interleaved audio and video frames
++			if (!writeAudioFrame())
++				return false;
++		}
++	} else {
++		// encode audio file
++		AVCodecContext* c = m_audioCodec;
++		
++		AVPacket* pkt = av_packet_alloc();
++		if (!pkt) {
++			wxLogError("could not allocate the packet");
+ 			return false;
++		}
++		
++		int64_t pts = 0;
++		while (true) {
++			double audioPts = ((double) pts) * c->time_base.num /c->time_base.den;
++			if (progressDialog->WasCanceled())
++				return false;
++			if (audioPts >= duration)
++				break;
++			
++			pts += m_audioFrame->nb_samples;
++			if (encode(c, m_audioFrame, pkt, m_audioFile) < 0)
++				return false;
++		}
+ 
+-		if (!m_audioStm || audioPts >= duration)
+-			break;
++		// flush the encoder
++		encode(c, NULL, pkt, m_audioFile);
+ 		
+-		// write interleaved audio and video frames
+-		if (!writeAudioFrame())
+-			return false;
++		av_packet_free(&pkt);
+ 	}
+ 	return true;
+ }
+@@ -429,7 +491,6 @@ int encode(AVCodecContext *avctx, AVPacket *pkt, AVFra
+ 	return ret;
+ }
+ 
+-
+ bool wxFfmpegMediaEncoder::writeAudioFrame() {
+ 	AVPacket pkt = { 0 }; // data and size must be 0;
+ 	int got_packet;
+@@ -495,14 +556,17 @@ bool wxFfmpegMediaEncoder::writeVideoFrame() {
+ }
+ 
+ void wxFfmpegMediaEncoder::EndEncode() {
+-	if (!m_outputCtx)
+-		return;
+-
+-	// write the trailer
+-	if (m_outputCtx->nb_streams)
+-		av_write_trailer(m_outputCtx);
+-	
+-	CloseEncoder();
++	if (m_outputCtx) {
++		// write the trailer
++		if (m_outputCtx->nb_streams)
++			av_write_trailer(m_outputCtx);
++		
++		CloseEncoder();
++	} else if (m_audioFile != NULL) {
++	    fclose(m_audioFile);
++	    m_audioFile = NULL;
++	    CloseAudioEncoder();
++	}
+ }
+ 
+ void wxFfmpegMediaEncoder::CloseEncoder() {

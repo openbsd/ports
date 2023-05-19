@@ -2,6 +2,7 @@ COMMENT=		DVD authoring application
 
 DISTNAME=		DVDStyler-3.2.1
 PKGNAME=		${DISTNAME:L}
+REVISION=		0
 CATEGORIES=		multimedia
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=dvdstyler/}
 EXTRACT_SUFX=		.tar.bz2

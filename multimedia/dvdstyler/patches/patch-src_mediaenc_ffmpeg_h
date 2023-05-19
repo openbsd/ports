@@ -1,0 +1,31 @@
+- fixed encoding of silent audio file
+- added support of ffmpeg5
+
+Index: src/mediaenc_ffmpeg.h
+--- src/mediaenc_ffmpeg.h.orig
++++ src/mediaenc_ffmpeg.h
+@@ -48,7 +48,6 @@ class wxFfmpegMediaEncoder { (private)
+     bool addVideoStream(int codecId, VideoFormat videoFormat, AspectRatio aspectRatio, int videoBitrate, bool cbr);
+     bool addAudioStream(int codecId);
+     
+-    int16_t* m_samples;
+     AVFrame* m_audioFrame;
+     void CloseAudioEncoder();
+     
+@@ -57,12 +56,15 @@ class wxFfmpegMediaEncoder { (private)
+     uint8_t* m_videoOutbuf;
+     void CloseVideoEncoder();
+     
+-    void getAudioFrame(int nbChannels);
++    /** writes a silent audio frame */
+     bool writeAudioFrame();
+     /** writes m_picture */
+     bool writeVideoFrame();
+     
+     void CloseEncoder();
++    
++    /** used to encode audio file **/
++    FILE* m_audioFile;
+ };
+ 
+ #endif // WX_FFMPEG_MEDIA_ENCODER_H
