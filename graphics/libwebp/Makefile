@@ -2,9 +2,10 @@ COMMENT=	Google WebP image format conversion tool
 
 GH_ACCOUNT=	webmproject
 GH_PROJECT=	libwebp
-GH_TAGNAME=	v1.2.4
+GH_TAGNAME=	v1.3.0
 CATEGORIES=	graphics
 
+SHARED_LIBS +=  sharpyuv             0.0      # 0.0
 SHARED_LIBS +=  webp                 4.3      # 6.0
 SHARED_LIBS +=  webpdecoder          2.1      # 2.0
 SHARED_LIBS +=  webpdemux            2.0      # 2.0
@@ -27,12 +28,13 @@ AUTOMAKE_VERSION=	1.15
 
 CONFIGURE_STYLE=autoreconf
 
-CONFIGURE_ARGS=	--enable-everything
+CONFIGURE_ARGS= --enable-everything
 
 # this will use libSDL to build stuff under extras otherwise
 # (a static webp viewer which is more or less useless, and not
 # even installed by default)
-CONFIGURE_ARGS +=	--disable-sdl
+CONFIGURE_ARGS +=--disable-gl \
+		--disable-sdl
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

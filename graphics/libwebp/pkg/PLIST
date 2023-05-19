@@ -10,7 +10,13 @@ include/webp/demux.h
 include/webp/encode.h
 include/webp/mux.h
 include/webp/mux_types.h
+include/webp/sharpyuv/
+include/webp/sharpyuv/sharpyuv.h
+include/webp/sharpyuv/sharpyuv_csp.h
 include/webp/types.h
+@static-lib lib/libsharpyuv.a
+lib/libsharpyuv.la
+@lib lib/libsharpyuv.so.${LIBsharpyuv_VERSION}
 @static-lib lib/libwebp.a
 lib/libwebp.la
 @lib lib/libwebp.so.${LIBwebp_VERSION}
@@ -23,6 +29,7 @@ lib/libwebpdemux.la
 @static-lib lib/libwebpmux.a
 lib/libwebpmux.la
 @lib lib/libwebpmux.so.${LIBwebpmux_VERSION}
+lib/pkgconfig/libsharpyuv.pc
 lib/pkgconfig/libwebp.pc
 lib/pkgconfig/libwebpdecoder.pc
 lib/pkgconfig/libwebpdemux.pc
