@@ -1,0 +1,18 @@
+Add support for detecting the primordial thread
+
+Index: src/hotspot/os/bsd/os_bsd.cpp
+--- src/hotspot/os/bsd/os_bsd.cpp.orig
++++ src/hotspot/os/bsd/os_bsd.cpp
+@@ -2491,6 +2491,12 @@ static void current_stack_region(address * bottom, siz
+          os::current_stack_pointer() < *bottom + *size, "just checking");
+ }
+ 
++#ifdef __OpenBSD__
++bool os::is_primordial_thread() {
++  return (pthread_main_np() == 1);
++}
++#endif
++
+ address os::current_stack_base() {
+   address bottom;
+   size_t size;
