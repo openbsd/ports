@@ -1,6 +1,6 @@
 COMMENT =	monitoring and metric analytics dashboards
 
-V =		9.3.6
+V =		9.5.2
 DISTNAME =	grafana+vendor-$V
 WRKDIST =	${WRKDIR}/grafana-$V
 EXTRACT_SUFX =	.tar.zst
@@ -29,7 +29,6 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/go
 WANTLIB +=	c pthread
-SUBST_VARS +=	BUILD_ID
 
 MODGO_GO111MODULE = on
 MODGO_FLAGS += -ldflags="-w -X main.version=$V"
@@ -45,7 +44,7 @@ do-build:
 	cd ${WRKSRC} && ${MODGO_CMD} run ${MODGO_FLAGS} build.go build
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/openbsd-*/grafana-{server,cli} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/openbsd-*/grafana{,-{server,cli}} ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/grafana
 	${SUBST_CMD} ${WRKSRC}/conf/sample.ini
 .for c in sample.ini ldap.toml
