@@ -1,0 +1,23 @@
+share/fonts/
+@fontdir share/fonts/victor-mono/
+share/fonts/victor-mono/VictorMono-Bold.otf
+share/fonts/victor-mono/VictorMono-BoldItalic.otf
+share/fonts/victor-mono/VictorMono-BoldOblique.otf
+share/fonts/victor-mono/VictorMono-ExtraLight.otf
+share/fonts/victor-mono/VictorMono-ExtraLightItalic.otf
+share/fonts/victor-mono/VictorMono-ExtraLightOblique.otf
+share/fonts/victor-mono/VictorMono-Italic.otf
+share/fonts/victor-mono/VictorMono-Light.otf
+share/fonts/victor-mono/VictorMono-LightItalic.otf
+share/fonts/victor-mono/VictorMono-LightOblique.otf
+share/fonts/victor-mono/VictorMono-Medium.otf
+share/fonts/victor-mono/VictorMono-MediumItalic.otf
+share/fonts/victor-mono/VictorMono-MediumOblique.otf
+share/fonts/victor-mono/VictorMono-Oblique.otf
+share/fonts/victor-mono/VictorMono-Regular.otf
+share/fonts/victor-mono/VictorMono-SemiBold.otf
+share/fonts/victor-mono/VictorMono-SemiBoldItalic.otf
+share/fonts/victor-mono/VictorMono-SemiBoldOblique.otf
+share/fonts/victor-mono/VictorMono-Thin.otf
+share/fonts/victor-mono/VictorMono-ThinItalic.otf
+share/fonts/victor-mono/VictorMono-ThinOblique.otf
