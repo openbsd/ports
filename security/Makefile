@@ -126,6 +126,7 @@
      SUBDIR += nfsshell
      SUBDIR += nikto
      SUBDIR += nss
+     SUBDIR += nuclei
      SUBDIR += oath-toolkit
      SUBDIR += ogvt
      SUBDIR += oledump
