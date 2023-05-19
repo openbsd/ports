@@ -6,16 +6,15 @@ CATEGORIES = 	games emulators
 DISTNAME = 	stepmania-5.0.12
 HOMEPAGE =	http://www.stepmania.com
 
-REVISION =	0
-
 GH_ACCOUNT =	stepmania
 GH_PROJECT =	stepmania
 GH_TAGNAME =	v5.0.12
+REVISION =	1
+EPOCH =		0
 DEBUG_PACKAGES = ${BUILD_PACKAGES}
 # Code base is mostly BSD, with a few tidbits GPL
 PERMIT_PACKAGE = Yes
 MAINTAINER =	Marc Espie <espie@openbsd.org>
-EPOCH =	0
 
 MODULES =	devel/cmake
 CONFIGURE_STYLE = cmake
