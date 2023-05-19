@@ -1,5 +1,3 @@
-BROKEN =	lttoolbox (libxml>=2.11.0): Input is not proper UTF-8
-
 L =	ita
 LANG =	Italian
 V =	1.1.1
