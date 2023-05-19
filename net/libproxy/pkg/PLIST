@@ -4,28 +4,76 @@
 @pkgpath net/libproxy,-main
 @pkgpath net/libproxy,-webkit
 @bin bin/proxy
-include/proxy.h
-lib/libproxy/
+include/libproxy/
+include/libproxy/proxy.h
+lib/girepository-1.0/
+lib/girepository-1.0/Libproxy-1.0.typelib
 @lib lib/libproxy.so.${LIBproxy_VERSION}
-lib/libproxy/${GH_TAGNAME}/
-lib/libproxy/${GH_TAGNAME}/modules/
-@so lib/libproxy/${GH_TAGNAME}/modules/config_gnome3.so
-@so lib/libproxy/${GH_TAGNAME}/modules/config_kde.so
-@so lib/libproxy/${GH_TAGNAME}/modules/config_pacrunner.so
-@so lib/libproxy/${GH_TAGNAME}/modules/pacrunner_duktape.so
+@so lib/libpxbackend-1.0.so
 lib/pkgconfig/libproxy-1.0.pc
-lib/python${MODPY_VERSION}/site-packages/libproxy.py
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Net/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Net/Libproxy.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/Libproxy/
-@so libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/Libproxy/Libproxy.so
-@bin libexec/pxgsettings
-share/cmake/
-share/cmake/Modules/
-share/cmake/Modules/Findlibproxy.cmake
+@man man/man8/proxy.8
+share/doc/libproxy-1.0/
+share/doc/libproxy-1.0/RedHatDisplay-Black.woff
+share/doc/libproxy-1.0/RedHatDisplay-Black.woff2
+share/doc/libproxy-1.0/RedHatDisplay-BlackItalic.woff
+share/doc/libproxy-1.0/RedHatDisplay-BlackItalic.woff2
+share/doc/libproxy-1.0/RedHatDisplay-Bold.woff
+share/doc/libproxy-1.0/RedHatDisplay-Bold.woff2
+share/doc/libproxy-1.0/RedHatDisplay-BoldItalic.woff
+share/doc/libproxy-1.0/RedHatDisplay-BoldItalic.woff2
+share/doc/libproxy-1.0/RedHatDisplay-Italic.woff
+share/doc/libproxy-1.0/RedHatDisplay-Italic.woff2
+share/doc/libproxy-1.0/RedHatDisplay-Medium.woff
+share/doc/libproxy-1.0/RedHatDisplay-Medium.woff2
+share/doc/libproxy-1.0/RedHatDisplay-MediumItalic.woff
+share/doc/libproxy-1.0/RedHatDisplay-MediumItalic.woff2
+share/doc/libproxy-1.0/RedHatDisplay-Regular.woff
+share/doc/libproxy-1.0/RedHatDisplay-Regular.woff2
+share/doc/libproxy-1.0/RedHatText-Bold.woff
+share/doc/libproxy-1.0/RedHatText-Bold.woff2
+share/doc/libproxy-1.0/RedHatText-BoldItalic.woff
+share/doc/libproxy-1.0/RedHatText-BoldItalic.woff2
+share/doc/libproxy-1.0/RedHatText-Italic.woff
+share/doc/libproxy-1.0/RedHatText-Italic.woff2
+share/doc/libproxy-1.0/RedHatText-Medium.woff
+share/doc/libproxy-1.0/RedHatText-Medium.woff2
+share/doc/libproxy-1.0/RedHatText-MediumItalic.woff
+share/doc/libproxy-1.0/RedHatText-MediumItalic.woff2
+share/doc/libproxy-1.0/RedHatText-Regular.woff
+share/doc/libproxy-1.0/RedHatText-Regular.woff2
+share/doc/libproxy-1.0/SourceCodePro-It.ttf.woff
+share/doc/libproxy-1.0/SourceCodePro-Regular.ttf.woff
+share/doc/libproxy-1.0/SourceCodePro-Semibold.ttf.woff
+share/doc/libproxy-1.0/applications.html
+share/doc/libproxy-1.0/architecture.html
+share/doc/libproxy-1.0/build-steps.html
+share/doc/libproxy-1.0/classes_hierarchy.html
+share/doc/libproxy-1.0/configuration-logic.html
+share/doc/libproxy-1.0/ctor.ProxyFactory.new.html
+share/doc/libproxy-1.0/fonts.css
+share/doc/libproxy-1.0/fzy.js
+share/doc/libproxy-1.0/go-up-symbolic.png
+share/doc/libproxy-1.0/index.html
+share/doc/libproxy-1.0/index.json
+share/doc/libproxy-1.0/libproxy-1.0.devhelp2
+share/doc/libproxy-1.0/libproxy.svg
+share/doc/libproxy-1.0/main.js
+share/doc/libproxy-1.0/method.ProxyFactory.free.html
+share/doc/libproxy-1.0/method.ProxyFactory.get_proxies.html
+share/doc/libproxy-1.0/perl.html
+share/doc/libproxy-1.0/proxy-authentication.html
+share/doc/libproxy-1.0/python.html
+share/doc/libproxy-1.0/ruby.html
+share/doc/libproxy-1.0/search.js
+share/doc/libproxy-1.0/solarized-dark.css
+share/doc/libproxy-1.0/solarized-light.css
+share/doc/libproxy-1.0/struct.ProxyFactory.html
+share/doc/libproxy-1.0/style.css
+share/doc/libproxy-1.0/type_func.ProxyFactory.free_proxies.html
+share/doc/libproxy-1.0/vala.html
+share/gir-1.0/
+share/gir-1.0/Libproxy-1.0.gir
 share/vala/
 share/vala/vapi/
+share/vala/vapi/libproxy-1.0.deps
 share/vala/vapi/libproxy-1.0.vapi

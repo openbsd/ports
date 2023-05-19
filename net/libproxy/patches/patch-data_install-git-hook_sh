@@ -1,0 +1,9 @@
+Index: data/install-git-hook.sh
+--- data/install-git-hook.sh.orig
++++ data/install-git-hook.sh
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ cd "$MESON_SOURCE_ROOT"
+ 
