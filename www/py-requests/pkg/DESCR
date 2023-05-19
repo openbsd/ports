@@ -1,7 +1,7 @@
 Requests is a widely used high-level HTTP library for Python, based on
 the lower-level urllib3.
 
-It allows you to send HTTP/1.1 requests extremely easily. There’s no
+It allows you to send HTTP/1.1 requests extremely easily. There's no
 need to manually add query strings to your URLs, or to form-encode
 your POST data; you can add headers, form data, multipart files, and
 parameters with simple Python dictionaries, and access the response data
