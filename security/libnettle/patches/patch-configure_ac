@@ -1,7 +1,7 @@
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -1047,6 +1047,54 @@ if test "$nettle_cv_asm_x86_gnu_property" = yes; then
+@@ -1078,6 +1078,54 @@ if test "$nettle_cv_asm_x86_gnu_property" = yes; then
  	.popsection'
  fi
  

@@ -1,0 +1,16 @@
+Index: x86_64/sha_ni/sha256-compress-n.asm
+--- x86_64/sha_ni/sha256-compress-n.asm.orig
++++ x86_64/sha_ni/sha256-compress-n.asm
+@@ -74,10 +74,11 @@ define(`TRANSPOSE', `
+ 	C _nettle_sha256_compress_n(uint32_t *state, const uint32_t *k,
+ 	C                           size_t blocks, const uint8_t *input)
+ 
+-	.text
++	.rodata
+ 	ALIGN(16)
+ .Lswap_mask:
+ 	.byte 3,2,1,0,7,6,5,4,11,10,9,8,15,14,13,12
++	.text
+ PROLOGUE(_nettle_sha256_compress_n)
+ 	W64_ENTRY(4, 11)
+ 	test	BLOCKS, BLOCKS
