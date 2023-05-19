@@ -1,10 +1,9 @@
-@bin bin/gif2h5
-@bin bin/h52gif
 bin/h5c++
 bin/h5cc
 @bin bin/h5clear
 @bin bin/h5copy
 @bin bin/h5debug
+@bin bin/h5delete
 @bin bin/h5diff
 @bin bin/h5dump
 bin/h5fc
@@ -43,25 +42,30 @@ include/H5DataType.h
 include/H5DcreatProp.h
 include/H5Dpublic.h
 include/H5DxferProp.h
+include/H5ESdevelop.h
 include/H5ESpublic.h
 include/H5EnumType.h
 include/H5Epubgen.h
 include/H5Epublic.h
 include/H5Exception.h
 include/H5FDcore.h
+include/H5FDdevelop.h
 include/H5FDdirect.h
 include/H5FDfamily.h
 include/H5FDhdfs.h
+include/H5FDioc.h
 include/H5FDlog.h
 include/H5FDmirror.h
 include/H5FDmpi.h
 include/H5FDmpio.h
 include/H5FDmulti.h
+include/H5FDonion.h
 include/H5FDpublic.h
 include/H5FDros3.h
 include/H5FDsec2.h
 include/H5FDsplitter.h
 include/H5FDstdio.h
+include/H5FDsubfiling.h
 include/H5FDwindows.h
 include/H5FaccProp.h
 include/H5FcreatProp.h
@@ -72,6 +76,7 @@ include/H5Gpublic.h
 include/H5Group.h
 include/H5IMpublic.h
 include/H5IdComponent.h
+include/H5Idevelop.h
 include/H5Include.h
 include/H5IntType.h
 include/H5Ipublic.h
@@ -79,6 +84,7 @@ include/H5LDpublic.h
 include/H5LTpublic.h
 include/H5LaccProp.h
 include/H5LcreatProp.h
+include/H5Ldevelop.h
 include/H5Library.h
 include/H5Location.h
 include/H5Lpublic.h
@@ -98,6 +104,8 @@ include/H5Rpublic.h
 include/H5Spublic.h
 include/H5StrType.h
 include/H5TBpublic.h
+include/H5TSdevelop.h
+include/H5Tdevelop.h
 include/H5Tpublic.h
 include/H5VLconnector.h
 include/H5VLconnector_passthru.h
@@ -105,6 +113,7 @@ include/H5VLnative.h
 include/H5VLpassthru.h
 include/H5VLpublic.h
 include/H5VarLenType.h
+include/H5Zdevelop.h
 include/H5Zpublic.h
 include/H5api_adpt.h
 include/H5f90i.h
@@ -118,6 +127,7 @@ include/h5a.mod
 include/h5d.mod
 include/h5ds.mod
 include/h5e.mod
+include/h5es.mod
 include/h5f.mod
 include/h5fortkit.mod
 include/h5fortran_types.mod
@@ -219,6 +229,9 @@ share/examples/hdf5/c/h5_vds-percival.c
 share/examples/hdf5/c/h5_vds-simpleIO.c
 share/examples/hdf5/c/h5_vds.c
 share/examples/hdf5/c/h5_write.c
+share/examples/hdf5/c/ph5_filtered_writes.c
+share/examples/hdf5/c/ph5_filtered_writes_no_sel.c
+share/examples/hdf5/c/ph5_subfiling.c
 share/examples/hdf5/c/ph5example.c
 share/examples/hdf5/c/run-c-ex.sh
 share/examples/hdf5/fortran/
