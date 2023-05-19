@@ -1,0 +1,8 @@
+@comment bin/cve-annotate
+@comment bin/docgen
+@comment bin/functional-test
+@comment bin/fuzzplayground
+@comment bin/generate-checksum
+@comment bin/integration-test
+@bin bin/nuclei
+@comment bin/sign-templates
