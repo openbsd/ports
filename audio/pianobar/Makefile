@@ -1,6 +1,6 @@
 COMMENT =	command-line client for Pandora Internet Radio
 
-DISTNAME =	pianobar-2020.11.28
+DISTNAME =	pianobar-2022.04.01
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	audio
 
@@ -8,7 +8,7 @@ HOMEPAGE =	https://6xq.net/pianobar/
 
 MASTER_SITES =	${HOMEPAGE}
 
-SHARED_LIBS =	piano	10.0	# 0.0.0
+SHARED_LIBS =	piano	11.0	# 0.0.0
 
 # MIT
 PERMIT_PACKAGE =	Yes

@@ -1,7 +1,7 @@
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -6,21 +6,8 @@ LIBDIR:=${PREFIX}/lib
+@@ -7,21 +7,8 @@ LIBDIR:=${PREFIX}/lib
  INCDIR:=${PREFIX}/include
  MANDIR:=${PREFIX}/share/man
  DYNLINK:=0
@@ -24,7 +24,7 @@ Index: Makefile
  PIANOBAR_DIR:=src
  PIANOBAR_SRC:=\
  		${PIANOBAR_DIR}/main.c \
-@@ -80,7 +67,7 @@ endif
+@@ -81,7 +68,7 @@ endif
  
  # build pianobar
  ifeq (${DYNLINK},1)
@@ -33,7 +33,7 @@ Index: Makefile
  	${SILENTECHO} "  LINK  $@"
  	${SILENTCMD}${CC} -o $@ ${PIANOBAR_OBJ} -L. -lpiano ${ALL_LDFLAGS}
  else
-@@ -90,12 +77,10 @@ pianobar: ${PIANOBAR_OBJ} ${LIBPIANO_OBJ}
+@@ -91,12 +78,10 @@ pianobar: ${PIANOBAR_OBJ} ${LIBPIANO_OBJ}
  endif
  
  # build shared and static libpiano
@@ -48,7 +48,7 @@ Index: Makefile
  	${SILENTECHO} "    AR  libpiano.a"
  	${SILENTCMD}${AR} rcs libpiano.a ${LIBPIANO_OBJ}
  
-@@ -126,19 +111,17 @@ install: pianobar install-libpiano
+@@ -127,19 +112,17 @@ install: pianobar install-libpiano
  else
  install: pianobar
  endif
