@@ -884,7 +884,6 @@ share/doc/py-sqlalchemy/_static/dragons.png
 share/doc/py-sqlalchemy/_static/dragons_original.png
 share/doc/py-sqlalchemy/_static/file.png
 share/doc/py-sqlalchemy/_static/init.js
-share/doc/py-sqlalchemy/_static/jquery-3.6.0.js
 share/doc/py-sqlalchemy/_static/jquery.js
 share/doc/py-sqlalchemy/_static/language_data.js
 share/doc/py-sqlalchemy/_static/minus.png
@@ -894,8 +893,6 @@ share/doc/py-sqlalchemy/_static/pygments.css
 share/doc/py-sqlalchemy/_static/searchtools.js
 share/doc/py-sqlalchemy/_static/sphinx_highlight.js
 share/doc/py-sqlalchemy/_static/sphinx_paramlinks.css
-share/doc/py-sqlalchemy/_static/underscore-1.13.1.js
-share/doc/py-sqlalchemy/_static/underscore.js
 share/doc/py-sqlalchemy/build/
 share/doc/py-sqlalchemy/build/Makefile
 share/doc/py-sqlalchemy/build/changelog/
