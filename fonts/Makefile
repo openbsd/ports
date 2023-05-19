@@ -111,6 +111,7 @@
      SUBDIR += un-fonts
      SUBDIR += unifont
      SUBDIR += vazirmatn
+     SUBDIR += victor-mono
      SUBDIR += vlgothic
      SUBDIR += vollkorn
      SUBDIR += work-sans
