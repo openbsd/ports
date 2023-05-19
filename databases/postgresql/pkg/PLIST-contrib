@@ -174,6 +174,7 @@ share/postgresql/extension/old_snapshot--1.0.sql
 share/postgresql/extension/old_snapshot.control
 share/postgresql/extension/pageinspect--1.0--1.1.sql
 share/postgresql/extension/pageinspect--1.1--1.2.sql
+share/postgresql/extension/pageinspect--1.10--1.11.sql
 share/postgresql/extension/pageinspect--1.2--1.3.sql
 share/postgresql/extension/pageinspect--1.3--1.4.sql
 share/postgresql/extension/pageinspect--1.4--1.5.sql
@@ -183,7 +184,6 @@ share/postgresql/extension/pageinspect--1.6--1.7.sql
 share/postgresql/extension/pageinspect--1.7--1.8.sql
 share/postgresql/extension/pageinspect--1.8--1.9.sql
 share/postgresql/extension/pageinspect--1.9--1.10.sql
-share/postgresql/extension/pageinspect--1.10--1.11.sql
 share/postgresql/extension/pageinspect.control
 share/postgresql/extension/pg_buffercache--1.0--1.1.sql
 share/postgresql/extension/pg_buffercache--1.1--1.2.sql

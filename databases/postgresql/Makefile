@@ -5,12 +5,10 @@ COMMENT-contrib=PostgreSQL RDBMS contributions
 COMMENT-plpython=Python procedural language for PostgreSQL
 COMMENT-pg_upgrade=Support for upgrading PostgreSQL data from previous version
 
-VERSION=	15.2
+VERSION=	15.3
 PREV_MAJOR=	14
 DISTNAME=	postgresql-${VERSION}
 PKGNAME-main=	postgresql-client-${VERSION}
-
-REVISION-server=0
 
 DPB_PROPERTIES=	parallel
 
