@@ -1799,6 +1799,7 @@
      SUBDIR += sdl2-image
      SUBDIR += sdl2-mixer
      SUBDIR += sdl2-net
+     SUBDIR += sdl2-pango
      SUBDIR += sdl2-ttf
      SUBDIR += sdlmm
      SUBDIR += seergdb
