@@ -2,6 +2,8 @@ COMMENT-main =		base binaries for TeXLive typesetting distribution
 COMMENT-mktexlsr =	mktexlsr for TeXLive typesetting distribution
 COMMENT-synctex =	synctex for TeXLive typesetting distribution
 
+REVISION-main =		0
+
 DISTNAME =		texlive-${DIST_V}-source
 PKGNAME =		texlive_base-${V}
 WRKDIST =		${WRKDIR}/texlive-${DIST_V}-source
