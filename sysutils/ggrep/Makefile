@@ -1,6 +1,6 @@
 COMMENT=	GNU versions of grep pattern matching utilities
 
-DISTNAME=	grep-3.10
+DISTNAME=	grep-3.11
 PKGNAME=	g${DISTNAME}
 CATEGORIES=	sysutils
 HOMEPAGE=	https://www.gnu.org/software/grep/grep.html
