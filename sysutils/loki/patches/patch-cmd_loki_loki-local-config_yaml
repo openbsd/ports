@@ -1,10 +1,10 @@
 Index: cmd/loki/loki-local-config.yaml
 --- cmd/loki/loki-local-config.yaml.orig
 +++ cmd/loki/loki-local-config.yaml
-@@ -5,11 +5,11 @@ server:
-   grpc_listen_port: 9096
+@@ -6,11 +6,11 @@ server:
  
  common:
+   instance_addr: 127.0.0.1
 -  path_prefix: /tmp/loki
 +  path_prefix: /var/loki
    storage:
@@ -15,4 +15,4 @@ Index: cmd/loki/loki-local-config.yaml
 +      rules_directory: /var/loki/rules
    replication_factor: 1
    ring:
-     instance_addr: 127.0.0.1
+     kvstore:
