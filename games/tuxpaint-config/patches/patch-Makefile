@@ -1,7 +1,7 @@
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -21,7 +21,6 @@ endif
+@@ -25,7 +25,6 @@ endif
  
  # Where to install things:
  
@@ -9,7 +9,7 @@ Index: Makefile
  
  
  # Program:
-@@ -38,16 +37,12 @@ DATA_PREFIX=$(PREFIX)/share/tuxpaint-config/
+@@ -42,20 +41,13 @@ DATA_PREFIX=$(PREFIX)/share/tuxpaint-config/
  # Docs and man page:
  
  DOC_PREFIX=$(PREFIX)/share/doc/tuxpaint-config/
@@ -21,14 +21,18 @@ Index: Makefile
  
 -ifeq ($(PREFIX),/usr)
 -  CONFDIR=/etc/tuxpaint
+-else ifeq ($(SYSNAME),Haiku)
+-  CONFDIR=$(shell finddir B_USER_SETTINGS_DIRECTORY)/TuxPaint
 -else
 -  CONFDIR=$(PREFIX)/etc/tuxpaint
 -endif
 +CONFDIR=${SYSCONFDIR}/tuxpaint
  
- 
+-
  # Icons and launchers:
-@@ -61,7 +56,7 @@ KDE_ICON_PREFIX=$(shell kde-config --install icon --ex
+ 
+ ICON_PREFIX=$(PREFIX)/share/pixmaps/
+@@ -67,7 +59,7 @@ KDE_ICON_PREFIX=$(shell kde-config --install icon --ex
  
  # Locale files
  
@@ -37,7 +41,7 @@ Index: Makefile
  # LOCALE_PREFIX=/usr/share/locale/
  
  
-@@ -76,7 +71,6 @@ UNIBREAK_CFLAGS=`pkg-config --cflags libunibreak`
+@@ -82,7 +74,6 @@ UNIBREAK_CFLAGS=`pkg-config --cflags libunibreak`
  UNIBREAK_LIB=`pkg-config --libs libunibreak`
  
  # Default CFLAGS:
@@ -45,7 +49,7 @@ Index: Makefile
  
  # The entire set of CFLAGS:
  ALL_CFLAGS=$(CFLAGS) $(FLTK_CFLAGS) $(UNIBREAK_CFLAGS) \
-@@ -210,16 +204,9 @@ install-win32:
+@@ -219,16 +210,9 @@ install-win32:
  # (depending on the *PREFIX variables at the top, you probably need
  # to do this as superuser ("root"))
  
@@ -64,7 +68,7 @@ Index: Makefile
  
  
  # "make clean" deletes the program, the compiled objects and the
-@@ -298,24 +285,15 @@ install-kde-icons:
+@@ -307,24 +291,15 @@ install-kde-icons:
  # and the 24-color 32x32 XPM (for other Window managers):
  
  install-icon:
@@ -93,7 +97,7 @@ Index: Makefile
  
  
  # Install the data (sound, graphics, fonts):
-@@ -331,31 +309,15 @@ install-data:
+@@ -340,31 +315,15 @@ install-data:
  # Install the text documentation:
  
  install-doc:
@@ -129,7 +133,7 @@ Index: Makefile
  
  
  # Build the program!
-@@ -363,22 +325,22 @@ install-man:
+@@ -372,22 +331,22 @@ install-man:
  tuxpaint-config:	obj/tuxpaint-config.o obj/tuxpaint-config2.o	\
  			obj/defaults.o $(ARCH_LIBS)
  	@echo Linking
