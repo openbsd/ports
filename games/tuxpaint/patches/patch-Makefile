@@ -1,7 +1,7 @@
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -55,7 +55,7 @@ else
+@@ -57,7 +57,7 @@ else
            endif
          else
            OS:=linux
@@ -10,7 +10,7 @@ Index: Makefile
          endif
        endif
      endif
-@@ -171,7 +171,7 @@ windows_ARCH_CFLAGS:=
+@@ -173,7 +173,7 @@ windows_ARCH_CFLAGS:=
  macos_ARCH_CFLAGS:=-isysroot $(SDKROOT) -I$(SDKROOT)/usr/include -I$(HOSTROOT)/include -mmacosx-version-min=$(MINVER) -arch $(subst $() $(), -arch ,$(ARCHS)) -w -headerpad_max_install_names -DHAVE_STRCASESTR
  ios_ARCH_CFLAGS:=-isysroot $(SDKROOT) -I$(SDKROOT)/usr/include -I$(HOSTROOT)/include $(MINVEROPT) -arch $(subst $() $(), -arch ,$(ARCHS)) -w -fPIC -DHAVE_STRCASESTR -DUNLINK_ONLY
  beos_ARCH_CFLAGS:=
@@ -19,7 +19,7 @@ Index: Makefile
  ARCH_CFLAGS:=$($(OS)_ARCH_CFLAGS)
  
  windows_ARCH_LDFLAGS:=
-@@ -182,9 +182,8 @@ linux_ARCH_LDFLAGS:=
+@@ -184,9 +184,8 @@ linux_ARCH_LDFLAGS:=
  ARCH_LDFLAGS:=$($(OS)_ARCH_LDFLAGS)
  LDFLAGS:=$(ARCH_LDFLAGS)
  
@@ -31,7 +31,7 @@ Index: Makefile
  
  FRIBIDI_LIB:=$(shell $(PKG_CONFIG) --libs fribidi)
  FRIBIDI_CFLAGS:=$(shell $(PKG_CONFIG) --cflags fribidi)
-@@ -208,7 +207,7 @@ windows_PREFIX:=/usr/local
+@@ -210,7 +209,7 @@ windows_PREFIX:=/usr/local
  macos_PREFIX:=Resources
  ios_PREFIX:=.
  linux_PREFIX:=/usr/local
@@ -40,7 +40,7 @@ Index: Makefile
  
  # Root directory to place files when creating packages.
  # PKG_ROOT is the old name for this, and should be undefined.
-@@ -244,18 +243,18 @@ INCLUDE_PREFIX:=$(DESTDIR)$(PREFIX)/include
+@@ -246,18 +245,18 @@ INCLUDE_PREFIX:=$(DESTDIR)$(PREFIX)/include
  MAGIC_PREFIX:=$(DESTDIR)$(LIBDIR)/lib$(LIBDIRSUFFIX)/tuxpaint/plugins
  
  # Docs and man page:
@@ -64,7 +64,7 @@ Index: Makefile
  endif
  
  ifeq ($(SYSNAME),Haiku)
-@@ -794,18 +793,16 @@ uninstall:	uninstall-i18n
+@@ -795,18 +794,16 @@ uninstall:	uninstall-i18n
  install-default-config:
  	@echo
  	@echo "...Installing default config file..."
@@ -87,7 +87,7 @@ Index: Makefile
  
  
  # Install example stamps
-@@ -813,7 +810,7 @@ install-bash-completion:
+@@ -814,7 +811,7 @@ install-bash-completion:
  install-example-stamps:
  	@echo
  	@echo "...Installing example stamps..."
@@ -96,7 +96,7 @@ Index: Makefile
  	@cp -R stamps/* $(DATA_PREFIX)/stamps
  	@chmod -R a+rX,g-w,o-w $(DATA_PREFIX)/stamps
  
-@@ -863,7 +860,10 @@ $(THUMB_STARTERS):
+@@ -864,7 +861,10 @@ $(THUMB_STARTERS):
  	fi
  
  $(INSTALLED_THUMB_STARTERS): $(DATA_PREFIX)/%: % install-example-starters-dirs
@@ -108,7 +108,7 @@ Index: Makefile
  
  .PHONY: echo-thumb-starters
  echo-thumb-starters:
-@@ -968,36 +968,23 @@ install-nokia770:
+@@ -969,36 +969,23 @@ install-nokia770:
  install-xdg: src/tuxpaint.desktop src/tuxpaint-fullscreen.desktop src/org.tuxpaint.Tuxpaint.appdata.xml
  	@echo
  	@echo "...Installing launcher icon into desktop environment..."
@@ -162,7 +162,7 @@ Index: Makefile
  
  # Install the PNG icon (for KDE desktop, etc.)
  # and the 24-color 32x32 XPM (for other Window managers):
-@@ -1005,12 +992,9 @@ install-xdg: src/tuxpaint.desktop src/tuxpaint-fullscr
+@@ -1006,12 +993,9 @@ install-xdg: src/tuxpaint.desktop src/tuxpaint-fullscr
  install-icon:
  	@echo
  	@echo "...Installing launcher icon graphics..."
@@ -178,7 +178,7 @@ Index: Makefile
  
  
  # Install the program:
-@@ -1018,9 +1002,8 @@ install-icon:
+@@ -1019,9 +1003,8 @@ install-icon:
  install-bin:
  	@echo
  	@echo "...Installing program itself..."
@@ -190,7 +190,7 @@ Index: Makefile
  
  # Install tuxpaint-config and required Windows DLLs into the 'bdist' directory
  .PHONY: install-dlls
-@@ -1052,8 +1035,7 @@ install-haiku:
+@@ -1053,8 +1036,7 @@ install-haiku:
  install-importscript: install-bin
  	@echo
  	@echo "...Installing 'tuxpaint-import' script..."
@@ -200,7 +200,7 @@ Index: Makefile
  
  
  # Install the data (sound, graphics, fonts):
-@@ -1061,12 +1043,14 @@ install-importscript: install-bin
+@@ -1062,12 +1044,14 @@ install-importscript: install-bin
  install-data:
  	@echo
  	@echo "...Installing data files..."
@@ -217,7 +217,7 @@ Index: Makefile
  	@cp -R fonts/locale/* $(DATA_PREFIX)/fonts/locale
  	@chmod -R a+rX,g-w,o-w $(DATA_PREFIX)/fonts/locale
  
-@@ -1086,7 +1070,7 @@ install-osk:
+@@ -1087,7 +1071,7 @@ install-osk:
  install-doc:
  	@echo
  	@echo "...Installing documentation..."
@@ -226,7 +226,7 @@ Index: Makefile
  	@cp -R docs/* $(DOC_PREFIX)
  	@rm $(DOC_PREFIX)/Makefile # Used to generate TXT from HTML
  	@rm $(DOC_PREFIX)/RELEASE.txt # Not useful to end users
-@@ -1110,27 +1094,19 @@ install-man:
+@@ -1111,27 +1095,19 @@ install-man:
  	@echo
  	@echo "...Installing English man pages..."
  	@# man1 directory...
