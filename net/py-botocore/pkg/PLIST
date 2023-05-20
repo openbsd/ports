@@ -1549,6 +1549,12 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/mediapackage/2017-10-12/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/mediapackage/2017-10-12/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/mediapackage/2017-10-12/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/mediapackage/2017-10-12/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/mediapackagev2/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/mediapackagev2/2022-12-25/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/mediapackagev2/2022-12-25/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/mediapackagev2/2022-12-25/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/mediapackagev2/2022-12-25/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/mediapackagev2/2022-12-25/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/mediastore/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/mediastore-data/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/mediastore-data/2017-09-01/
