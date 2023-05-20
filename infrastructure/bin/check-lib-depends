@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.48 2023/05/14 09:00:32 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.49 2023/05/20 12:45:24 espie Exp $
 # Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -25,7 +25,7 @@ use lib ("$ports1/infrastructure/lib", "$FindBin::Bin/../lib");
 
 use File::Spec;
 use OpenBSD::PackingList;
-use OpenBSD::SharedLibs;
+use OpenBSD::SharedLibs2;
 use OpenBSD::LibSpec;
 use OpenBSD::Temp;
 use OpenBSD::AddCreateDelete;
@@ -227,6 +227,7 @@ sub handle_options($state)
 	if ($state->opt('D')) {
 		$state->{logger} = Logger->new($state->opt('D'));
 	}
+	$state->{shlibs} = OpenBSD::SharedLibs->new($state);
 }
 
 sub init($self, @parms)
@@ -268,10 +269,10 @@ sub set_context($state, $plist)
 sub perllibs($state)
 {
 	if (!defined $state->{perllibs}) {
-		OpenBSD::SharedLibs::add_libs_from_system('/', $state);
+		$state->{shlibs}->add_libs_from_system('/');
 		eval {
-		    my $perl = OpenBSD::SharedLibs->find_best('perl');
-		    my $c = OpenBSD::SharedLibs->find_best('c');
+		    my $perl = $state->{shlibs}->find_best('perl');
+		    my $c = $state->{shlibs}->find_best('c');
 		    if (!defined $perl || !defined $c) {
 			    $state->fatal("can't find system perl and c");
 		    }
@@ -381,15 +382,15 @@ sub handle_dependency($self, $state, $pkgname, $pkgpath)
 	}
 
 	register_dependencies($plist);
-	OpenBSD::SharedLibs::add_libs_from_plist($plist, $state);
+	$state->{shlibs}->add_libs_from_plist($plist);
 
 	return $plist->pkgname;
 }
 
-sub lookup_library($dir, $spec)
+sub lookup_library($state, $dir, $spec)
 {
 	my $libspec = OpenBSD::LibSpec->from_string($spec);
-	my $r = OpenBSD::SharedLibs::lookup_libspec($dir, $libspec);
+	my $r = $state->{shlibs}->lookup_libspec($dir, $libspec);
 	if (!defined $r) {
 		return ();
 	} else {
@@ -400,12 +401,12 @@ sub lookup_library($dir, $spec)
 sub report_lib_issue($self, $state, $plist, $lib, $binary)
 {
 
-	OpenBSD::SharedLibs::add_libs_from_system('/', $state);
+	$state->{shlibs}->add_libs_from_system('/');
 	my $libspec = "$lib.0";
 	my $want = $lib;
 	$want =~ s/\.\d+$//;
 	for my $dir (qw(/usr /usr/X11R6)) {
-		my @r = lookup_library($dir, $libspec);
+		my @r = lookup_library($state, $dir, $libspec);
 		if (grep { $_ eq 'system' } @r) {
 			return OpenBSD::Issue::SystemLib->new($lib, $binary);
 		}
@@ -416,7 +417,7 @@ sub report_lib_issue($self, $state, $plist, $lib, $binary)
 		$self->handle_dependency($state, $p, $pkgpath);
 	}
 
-	my @r = lookup_library('/usr/local', $libspec);
+	my @r = lookup_library($state, '/usr/local', $libspec);
 	if (@r > 0) {
 		for my $p (@r) {
 			if (defined $dependencies->{$plist->pkgname}->{$p}) {
@@ -438,7 +439,7 @@ sub report_lib_issue($self, $state, $plist, $lib, $binary)
 		$done->{$dep} = 1;
 		push(@todo, %{$dependencies->{$dep}});
 	}
-	@r = lookup_library(OpenBSD::Paths->localbase, $libspec);
+	@r = lookup_library($state, OpenBSD::Paths->localbase, $libspec);
 	for my $p (@r) {
 		if (defined $done->{$p}) {
 			return OpenBSD::Issue::IndirectDependency->new($lib, $binary, $p);
@@ -531,7 +532,7 @@ sub analyze($self, $state, $plist)
 
 	if (!defined $dependencies->{$pkgname}) {
 		register_dependencies($plist);
-		OpenBSD::SharedLibs::add_libs_from_plist($plist, $state);
+		$state->{shlibs}->add_libs_from_plist($plist);
 	}
 	my $r = { wantlib => {}, libdepends => {}, wantlib2 => {} };
 	for my $lib (sort $needed_libs->libs) {
