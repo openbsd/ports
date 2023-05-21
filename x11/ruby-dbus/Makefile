@@ -1,6 +1,6 @@
 COMMENT=	Ruby implementation of the D-Bus protocol
 
-DISTNAME=	ruby-dbus-0.22.0
+DISTNAME=	ruby-dbus-0.22.1
 PKGNAME=	${DISTNAME:S/ruby-//}
 
 CATEGORIES=	x11 devel
