@@ -1,6 +1,6 @@
 COMMENT=		diary and journal application
 
-MODPY_EGG_VERSION=	2.29.5
+MODPY_EGG_VERSION=	2.29.6
 GH_TAGNAME=		v${MODPY_EGG_VERSION}
 GH_ACCOUNT=		jendrikseipp
 GH_PROJECT=		rednotebook
@@ -22,7 +22,7 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 			devel/xdg-utils \
 			textproc/py-enchant${MODPY_FLAVOR} \
 			textproc/py-yaml${MODPY_FLAVOR} \
-			www/webkitgtk4 \
+			www/webkitgtk4,webkitgtk41 \
 			x11/gtk+4,-guic \
 			x11/gtksourceview4
 
