@@ -5,11 +5,10 @@ ONLY_FOR_ARCHS =	aarch64 amd64 arm i386 mips64el powerpc powerpc64 sparc64
 
 COMMENT =		multi-paradigm programming language
 
-V =			8.7
+V =			8.9
 PKGNAME =		racket-minimal-$V
 DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX} \
 			racket-openbsd-2${EXTRACT_SUFX}:0
-REVISION =		0
 
 CATEGORIES =		lang
 HOMEPAGE =		https://racket-lang.org/
@@ -29,7 +28,7 @@ MASTER_SITES =		https://mirror.racket-lang.org/installers/${V}/ \
 			http://pre.racket-lang.org/installers/ \
 			https://download.tuxfamily.org/jod/lang/racket/ \
 			ftp://download.tuxfamily.org/jod/lang/racket/ \
-			https://www.cs.utah.edu/plt/snapshots/current/installers/ \
+			https://users.cs.utah.edu/plt/snapshots/current/installers/ \
 			http://plt.eecs.northwestern.edu/snapshots/current/installers/
 
 MASTER_SITES0 =		https://download.tuxfamily.org/jod/lang/racket/ \
@@ -72,7 +71,7 @@ CONFIGURE_ARGS +=	--disable-docs \
 			--disable-shared \
 			--disable-standalone
 
-CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${LDFLAGS_WXNEEDED}" \
+CONFIGURE_ENV +=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${LDFLAGS_WXNEEDED}" \
 			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
 
 .include <bsd.port.arch.mk>
