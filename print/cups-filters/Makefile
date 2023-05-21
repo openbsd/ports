@@ -5,6 +5,7 @@ COMMENT=	OpenPrinting CUPS filters
 
 V=		1.28.17
 DISTNAME=	cups-filters-${V}
+REVISION=	0
 
 CATEGORIES=	print
 
