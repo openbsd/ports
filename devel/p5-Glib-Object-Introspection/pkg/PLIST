@@ -6,4 +6,5 @@ ${P5ARCH}/Glib/Object/Introspection/Install/Files.pm
 ${P5ARCH}/auto/Glib/Object/
 ${P5ARCH}/auto/Glib/Object/Introspection/
 @so ${P5ARCH}/auto/Glib/Object/Introspection/Introspection.so
+@man man/man1/perli11ndoc.1
 @man man/man3p/Glib::Object::Introspection.3p

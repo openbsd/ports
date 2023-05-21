@@ -1,6 +1,6 @@
 COMMENT=	dynamically create Perl language bindings
 
-DISTNAME =	Glib-Object-Introspection-0.049
+DISTNAME =	Glib-Object-Introspection-0.050
 
 CATEGORIES=	devel
 
