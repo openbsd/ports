@@ -1,6 +1,6 @@
 COMMENT=	colorize specific patterns in input
 
-DISTNAME=	supercat-0.5.7
+DISTNAME=	supercat-0.5.8
 CATEGORIES=	misc
 
 HOMEPAGE=	https://supercat.nosredna.net/
