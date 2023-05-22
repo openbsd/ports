@@ -1,0 +1,6 @@
+Client library for Web-Based Enterprise Management (WBEM), a set of
+standards and technologies used by many hardware and software vendors
+for systems management. The Small-Footprint-CIM Client (SFCC) library
+provides a C API to interface with the Common Interface Model. It is
+part of the Standards-Based Linux Instrumentation for Manageability
+(SBLIM).

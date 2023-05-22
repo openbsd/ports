@@ -1,0 +1,12 @@
+Index: backend/cimxml/indicationlistener.c
+--- backend/cimxml/indicationlistener.c.orig
++++ backend/cimxml/indicationlistener.c
+@@ -36,7 +36,7 @@ static int do_listen=1;
+ #define hdrBufsize 5000
+ #define hdrLimmit 5000
+ 
+-#ifdef __APPLE__
++#ifndef __SOCKADDR_ARG
+ # define __SOCKADDR_ARG   struct sockaddr *__restrict
+ #endif
+ 
