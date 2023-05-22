@@ -1,0 +1,8 @@
+Web Services for Management implementation for in-band management of
+unix and Windows platforms. It supports the generic SOAP-based WS-MAN
+transport protocol as well as specific extensions for the Common
+Information Model CIM.
+
+This is a DMTF standards-compliant (WS-Management 1.1.0 + WS-CIM 1.1.0)
+and interoperable with platforms including Windows WMI/WINRM, Intel AMT,
+and Dell DRAC.

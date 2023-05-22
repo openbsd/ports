@@ -1,0 +1,84 @@
+@comment bin/winrs
+include/openwsman/
+include/openwsman/cim/
+include/openwsman/cim/cim-interface.h
+include/openwsman/cpp/
+include/openwsman/cpp/Exception.h
+include/openwsman/cpp/OpenWsmanClient.h
+include/openwsman/cpp/WsmanClient.h
+include/openwsman/cpp/WsmanEPR.h
+include/openwsman/cpp/WsmanFilter.h
+include/openwsman/cpp/WsmanOptions.h
+include/openwsman/u/
+include/openwsman/u/base64.h
+include/openwsman/u/buf.h
+include/openwsman/u/carpal.h
+include/openwsman/u/debug.h
+include/openwsman/u/debug_internal.h
+include/openwsman/u/gettimeofday.h
+include/openwsman/u/hash.h
+include/openwsman/u/iniparser.h
+include/openwsman/u/libu.h
+include/openwsman/u/list.h
+include/openwsman/u/lock.h
+include/openwsman/u/log.h
+include/openwsman/u/logprv.h
+include/openwsman/u/md5.h
+include/openwsman/u/memory.h
+include/openwsman/u/misc.h
+include/openwsman/u/os.h
+include/openwsman/u/pthreadx.h
+include/openwsman/u/strings.h
+include/openwsman/u/syslog.h
+include/openwsman/u/uerr.h
+include/openwsman/u/uoption.h
+include/openwsman/u/uri.h
+include/openwsman/u/uuid.h
+include/openwsman/wsman-api.h
+include/openwsman/wsman-cimindication-processor.h
+include/openwsman/wsman-client-api.h
+include/openwsman/wsman-client-transport.h
+include/openwsman/wsman-client.h
+include/openwsman/wsman-debug.h
+include/openwsman/wsman-declarations.h
+include/openwsman/wsman-epr.h
+include/openwsman/wsman-event-pool.h
+include/openwsman/wsman-faults.h
+include/openwsman/wsman-filter.h
+include/openwsman/wsman-key-value.h
+include/openwsman/wsman-names.h
+include/openwsman/wsman-server-api.h
+include/openwsman/wsman-soap-envelope.h
+include/openwsman/wsman-soap-message.h
+include/openwsman/wsman-soap.h
+include/openwsman/wsman-subscription-repository.h
+include/openwsman/wsman-types.h
+include/openwsman/wsman-xml-api.h
+include/openwsman/wsman-xml-binding.h
+include/openwsman/wsman-xml-serialize.h
+include/openwsman/wsman-xml-serializer.h
+include/openwsman/wsman-xml.h
+@lib lib/libwsman.so.${LIBwsman_VERSION}
+@lib lib/libwsman_client.so.${LIBwsman_client_VERSION}
+@lib lib/libwsman_clientpp.so.${LIBwsman_clientpp_VERSION}
+@lib lib/libwsman_curl_client_transport.so.${LIBwsman_curl_client_transport_VERSION}
+@lib lib/libwsman_server.so.${LIBwsman_server_VERSION}
+lib/openwsman/
+lib/openwsman/authenticators/
+@lib lib/openwsman/authenticators/libwsman_file_auth.so.${LIBwsman_file_auth_VERSION}
+lib/openwsman/plugins/
+@lib lib/openwsman/plugins/libredirect.so.${LIBredirect_VERSION}
+@lib lib/openwsman/plugins/libwsman_cim_plugin.so.${LIBwsman_cim_plugin_VERSION}
+@lib lib/openwsman/plugins/libwsman_identify_plugin.so.${LIBwsman_identify_plugin_VERSION}
+@lib lib/openwsman/plugins/libwsman_test.so.${LIBwsman_test_VERSION}
+lib/pkgconfig/openwsman++.pc
+lib/pkgconfig/openwsman-server.pc
+lib/pkgconfig/openwsman.pc
+@comment @bin sbin/openwsmand
+share/examples/openwsman/
+@sample ${SYSCONFDIR}/openwsman/
+share/examples/openwsman/openwsman.conf
+share/examples/openwsman/openwsman_client.conf
+@sample ${SYSCONFDIR}/openwsman/openwsman_client.conf
+share/examples/openwsman/owsmangencert.sh
+share/examples/openwsman/ssleay.cnf

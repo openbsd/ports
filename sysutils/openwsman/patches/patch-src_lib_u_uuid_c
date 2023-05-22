@@ -1,0 +1,21 @@
+Index: src/lib/u/uuid.c
+--- src/lib/u/uuid.c.orig
++++ src/lib/u/uuid.c
+@@ -141,7 +141,7 @@ generate_uuid(char *buf, int size, int bNoPrefix)
+ #include <sys/param.h>
+ #include <netinet/in.h>
+ 
+-#if defined(__APPLE__)  ||  defined(__FreeBSD__)
++#if defined(__APPLE__)  ||  defined(__FreeBSD__)  ||  defined(__OpenBSD__)
+ #include <net/bpf.h>
+ #include <net/if_dl.h>
+ #include <net/if_types.h>
+@@ -337,7 +337,7 @@ generate_uuid ( char* buf, 
+     clock_sequence++;
+ 
+     // get mac address
+-#if defined(__APPLE__)  ||  defined(__FreeBSD__)
++#if defined(__APPLE__)  ||  defined(__FreeBSD__)  ||  defined(__OpenBSD__)
+     if ( mac_address( mac, 6 ) == 0 )
+ #else    
+     if (mac_addr_sys(mac) == 0 )
