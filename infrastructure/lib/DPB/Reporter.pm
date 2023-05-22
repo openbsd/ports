@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Reporter.pm,v 1.37 2023/05/06 05:20:31 espie Exp $
+# $OpenBSD: Reporter.pm,v 1.38 2023/05/22 06:41:06 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -141,7 +141,7 @@ sub timeout($self)
 	return $self->{timeout};
 }
 
-sub report($self, $)
+sub report($self, $ = 0)
 {
 	for my $prod (@{$self->{producers}}) {
 		my $r = $prod->report_notty($self->{state});
