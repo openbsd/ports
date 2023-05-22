@@ -104,4 +104,5 @@ share/doc/qpdf/examples/pdf-split-pages.cc
 share/doc/qpdf/examples/qpdf-job.cc
 share/doc/qpdf/examples/qpdfjob-c-save-attachment.c
 share/doc/qpdf/examples/qpdfjob-c.c
+share/doc/qpdf/examples/qpdfjob-remove-annotations.cc
 share/doc/qpdf/examples/qpdfjob-save-attachment.cc
