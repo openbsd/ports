@@ -14,6 +14,7 @@ COMMENT-clippy =	Rust linter
 COMMENT-rustfmt =	Rust code formatter
 
 V =			1.69.0
+REVISION =		0
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
@@ -22,7 +23,7 @@ BV-amd64 =		1.69.0-20230417
 BV-i386 =		1.69.0-20230418
 BV-powerpc64 =		1.65.0-20221213
 BV-riscv64 =		1.68.0-20230417
-BV-sparc64 =		1.68.0-20230417
+BV-sparc64 =		1.69.0-20230522
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}

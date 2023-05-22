@@ -1,0 +1,33 @@
+Make -Z branch-protection=bti,pac-ret the default (on Aarch64)
+
+Index: compiler/rustc_session/src/options.rs
+--- compiler/rustc_session/src/options.rs.orig
++++ compiler/rustc_session/src/options.rs
+@@ -1310,6 +1310,18 @@ options! {
+     // - src/doc/rustc/src/codegen-options/index.md
+ }
+ 
++#[cfg(all(target_os="openbsd", target_arch="aarch64"))]
++const DEFAULT_BRANCH_PROTECTION: Option<BranchProtection> = Some(BranchProtection {
++    bti: true,
++    pac_ret: Some(PacRet {
++        leaf: false,
++        key: PAuthKey::A,
++    }),
++});
++
++#[cfg(not(all(target_os="openbsd", target_arch="aarch64")))]
++const DEFAULT_BRANCH_PROTECTION: Option<BranchProtection> = None;
++
+ options! {
+     UnstableOptions, Z_OPTIONS, dbopts, "Z", "unstable",
+ 
+@@ -1335,7 +1347,7 @@ options! {
+         (default: no)"),
+     box_noalias: bool = (true, parse_bool, [TRACKED],
+         "emit noalias metadata for box (default: yes)"),
+-    branch_protection: Option<BranchProtection> = (None, parse_branch_protection, [TRACKED],
++    branch_protection: Option<BranchProtection> = (DEFAULT_BRANCH_PROTECTION, parse_branch_protection, [TRACKED],
+         "set options for branch target identification and pointer authentication on AArch64"),
+     cf_protection: CFProtection = (CFProtection::None, parse_cfprotection, [TRACKED],
+         "instrument control-flow architecture protection"),
