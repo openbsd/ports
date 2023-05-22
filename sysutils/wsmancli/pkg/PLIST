@@ -1,0 +1,4 @@
+@bin bin/wseventmgr
+@bin bin/wsman
+@man man/man1/wseventmgr.1
+@man man/man1/wsman.1

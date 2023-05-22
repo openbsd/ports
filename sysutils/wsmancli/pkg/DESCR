@@ -1,0 +1,2 @@
+wsmancli is a command-line client for running WSMAN requests.
+It also serves as sample code for the Openwsman client libraries.
