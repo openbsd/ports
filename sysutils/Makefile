@@ -236,6 +236,7 @@
      SUBDIR += openbsdisks2
      SUBDIR += openpoppassd
      SUBDIR += opensbi
+     SUBDIR += openwsman
      SUBDIR += p5-Capture-Tiny
      SUBDIR += p5-Data-Entropy
      SUBDIR += p5-Data-Float
@@ -376,6 +377,7 @@
      SUBDIR += safecat
      SUBDIR += salt
      SUBDIR += salt-testing
+     SUBDIR += sblim-sfcc
      SUBDIR += screenfetch
      SUBDIR += sec
      SUBDIR += serf
@@ -462,6 +464,7 @@
      SUBDIR += wmcube
      SUBDIR += wmmon
      SUBDIR += wmwlmon
+     SUBDIR += wsmancli
      SUBDIR += xbatt
      SUBDIR += xbattbar
      SUBDIR += xbattmon
