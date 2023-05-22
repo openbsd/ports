@@ -2,6 +2,7 @@ COMMENT =		C++ library implementing a BitTorrent client
 
 V =			2.0.8
 DISTNAME =		libtorrent-rasterbar-${V}
+REVISION =		0
 
 SHARED_LIBS +=  	torrent-rasterbar 8.0	# 10.0.0
 
@@ -14,7 +15,7 @@ MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 # BSD3
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} boost_python${MODPY_MAJORMINOR}-mt crypto iconv
+WANTLIB += ${COMPILER_LIBCXX} boost_python${MODPY_MAJORMINOR}-mt crypto
 WANTLIB += m ssl
 
 MASTER_SITES =		https://github.com/arvidn/libtorrent/releases/download/v${V}/
@@ -24,8 +25,7 @@ MODULES =		devel/cmake \
 
 BUILD_DEPENDS =		devel/libtool
 
-LIB_DEPENDS =		converters/libiconv \
-			devel/boost
+LIB_DEPENDS =		devel/boost
 
 # boost
 COMPILER =		base-clang ports-gcc
