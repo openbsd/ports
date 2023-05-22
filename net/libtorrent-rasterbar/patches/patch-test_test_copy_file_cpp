@@ -1,0 +1,14 @@
+Fix test compilation, <sys/mount.h> struct statfs has no f_type member
+
+Index: test/test_copy_file.cpp
+--- test/test_copy_file.cpp.orig
++++ test/test_copy_file.cpp
+@@ -125,7 +125,7 @@ bool fs_supports_sparse_files()
+ 	printf("filesystem: %ld\n", long(st.f_type));
+ 	return sparse_filesystems.count(st.f_type);
+ #else
+-	printf("filesystem: (%d) %s\n", int(st.f_type), st.f_fstypename);
++	printf("filesystem: (%d) %s\n", int(42 /* st.f_type */), st.f_fstypename);
+ 	static const std::set<std::string> sparse_filesystems{
+ 		"ufs", "zfs", "ext4", "xfs", "apfs", "btrfs"};
+ 	return sparse_filesystems.count(st.f_fstypename);

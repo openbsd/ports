@@ -41,6 +41,8 @@ CONFIGURE_ARGS +=	-DCMAKE_CXX_STANDARD=17
 ALL_TARGET =		torrent-rasterbar \
 			python-libtorrent
 
+TEST_IS_INTERACTIVE =	needs ^C to kill python3 and ctest program in the end
+
 # build whatever is left (+200 test files)
 pre-test:
 	@${MODCMAKE_BUILD_TARGET}
