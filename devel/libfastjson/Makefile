@@ -1,6 +1,6 @@
 COMMENT =	performance-focused JSON library for C
 
-DISTNAME =	libfastjson-0.99.9
+DISTNAME =	libfastjson-1.2304.0
 
 CATEGORIES =	devel
 
