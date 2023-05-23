@@ -32,6 +32,7 @@ cyrus/libexec/lmtpproxyd
 cyrus/libexec/pop3proxyd
 @bin cyrus/libexec/promstatsd
 cyrus/libexec/proxyd
+@bin cyrus/libexec/ptloader
 @bin cyrus/libexec/smmapd
 @bin cyrus/libexec/timsieved
 @mandir cyrus/man/
@@ -118,6 +119,8 @@ cyrus/sbin/cyr_cd.sh
 @bin cyrus/sbin/mbexamine
 @bin cyrus/sbin/mbpath
 @bin cyrus/sbin/mbtool
+@bin cyrus/sbin/ptdump
+@bin cyrus/sbin/ptexpire
 @bin cyrus/sbin/quota
 @bin cyrus/sbin/reconstruct
 @bin cyrus/sbin/relocate_by_id
@@ -537,6 +540,18 @@ share/doc/cyrus-imapd/html/imap/download/release-notes/3.7/
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.7/index.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.7/x/
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.7/x/3.7.0-alpha0.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.8/
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.8/index.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.8/x/
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.8/x/3.8.0-alpha0.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.8/x/3.8.0-beta1.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.8/x/3.8.0-beta2.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.8/x/3.8.0-rc1.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.8/x/3.8.0.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.9/
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.9/index.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.9/x/
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.9/x/3.9.0-alpha0.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/index.html
 share/doc/cyrus-imapd/html/imap/download/upgrade.html
 share/doc/cyrus-imapd/html/imap/installing.html

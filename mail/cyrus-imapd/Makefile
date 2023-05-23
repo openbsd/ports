@@ -2,7 +2,7 @@ PORTROACH=		limitw:1,even
 
 COMMENT=		Cyrus IMAP server
 
-V=			3.6.1
+V=			3.8.0
 DISTNAME=		cyrus-imapd-${V}
 
 SHARED_LIBS +=	cyrus                     0.0 # 0.0
@@ -21,7 +21,7 @@ PERMIT_PACKAGE=		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c com_err crypto execinfo icudata
 WANTLIB += icui18n icuuc jansson m pcre pcreposix perl sasl2 sqlite3
-WANTLIB += ssl uuid z
+WANTLIB += srs2 ssl uuid z
 
 MASTER_SITES=		https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-${V}/
 
@@ -36,6 +36,7 @@ BUILD_DEPENDS +=	textproc/libical
 LIB_DEPENDS=		databases/sqlite3 \
 			devel/jansson \
 			devel/pcre \
+			mail/libsrs2 \
 			security/cyrus-sasl2 \
 			sysutils/e2fsprogs \
 			textproc/icu4c
@@ -55,7 +56,8 @@ CONFIGURE_ARGS=		--bindir=${PREFIX}/cyrus/bin \
 			--disable-gssapi \
 			--enable-autocreate \
 			--enable-idled \
-			--enable-murder
+			--enable-murder \
+			--enable-srs
 
 # XXX notyet; FLAVOR
 CONFIGURE_ARGS +=	--without-clamav \
