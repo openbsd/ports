@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: pkg_outdated,v 1.7 2023/05/22 16:09:03 espie Exp $
+# $OpenBSD: pkg_outdated,v 1.8 2023/05/23 08:48:03 espie Exp $
 #
 # Copyright (c) 2005 Bernd Ahlers <bernd@openbsd.org>
 #
@@ -16,8 +16,8 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-use strict;
-use warnings;
+use v5.36;
+
 use OpenBSD::Getopt;
 use OpenBSD::Error;
 use OpenBSD::PackageInfo;
@@ -26,17 +26,15 @@ use OpenBSD::PackageName;
 use File::Temp;
 use OpenBSD::AddCreateDelete;
 
-our $opt_q;
 my $state = OpenBSD::AddCreateDelete::State->new;
 $state->handle_options('q', "[-mvxq]");
 
-sub collect_installed
+sub collect_installed()
 {
 	my $pkg = {};
 
 	$state->progress->for_list("Collecting installed packages",
-	    [installed_packages(1)], sub {
-		my $name = shift;
+	    [installed_packages(1)], sub($name) {
 		my ($stem, $version) = OpenBSD::PackageName::splitname($name);
 		my $plist = OpenBSD::PackingList->from_installation($name,
 		    \&OpenBSD::PackingList::UpdateInfoOnly);
@@ -46,36 +44,30 @@ sub collect_installed
 			return;
 		}
 			
-		my $subdir = $plist->{extrainfo}->{subdir};
+		my $subdir = $plist->{extrainfo}{subdir};
 		$subdir =~ s/mystuff\///;
 		$subdir =~ s/\/usr\/ports\///;
 
-		$pkg->{$subdir}->{name}	     = $name;
-		$pkg->{$subdir}->{stem}      = $stem;
-		$pkg->{$subdir}->{version}   = $version;
+		$pkg->{$subdir}{name}	     = $name;
+		$pkg->{$subdir}{stem}      = $stem;
+		$pkg->{$subdir}{version}   = $version;
 		my $sig = $plist->signature->string;
-		$pkg->{$subdir}->{signature} = $sig;
+		$pkg->{$subdir}{signature} = $sig;
 		if (defined $plist->{'always-update'}) {
-			$pkg->{$subdir}->{signature} = 'always-update';
+			$pkg->{$subdir}{signature} = 'always-update';
 		}
 	    });
 	return $pkg;
 }
 
-sub open_cmd
+sub open_cmd($cmd)
 {
-	my $cmd = shift;
 	open my $fh, "-|", $cmd;
-#	my $old = select $fh;
-#	$| = 1;
-#	select $old;
 	return $fh;
 }
 
-sub collect_port_versions
+sub collect_port_versions($pkg, $portsdir, $notfound)
 {
-	my ($pkg, $portsdir, $notfound) = @_;
-
 	my @subdirs = ();
 	for my $subdir (keys %$pkg) {
 		my ($dir) = split(/,/, $subdir);
@@ -114,10 +106,10 @@ sub collect_port_versions
 		} elsif (/^(Stop|\*\*\*)/) {
 			next;
 		}
-		$port->{$subdir}->{name} = $_;
+		$port->{$subdir}{name} = $_;
 		my ($stem, $version) = OpenBSD::PackageName::splitname($_);
-		$port->{$subdir}->{stem}    = $stem;
-		$port->{$subdir}->{version} = $version;
+		$port->{$subdir}{stem}    = $stem;
+		$port->{$subdir}{version} = $version;
 	}
 	close($fh);
 	$state->progress->next;
@@ -125,13 +117,8 @@ sub collect_port_versions
 	return $port, $error;
 }
 
-sub collect_port_signatures
+sub collect_port_signatures($pkg, $port, $portsdir, $output)
 {
-	my $pkg      = shift;
-	my $port     = shift;
-	my $portsdir = shift;
-	my $output   = shift;
-
 	my @subdirs = ();
 	for my $dir (keys %$port) {
 		if ($pkg->{$dir}->{name} eq $port->{$dir}->{name}) {
@@ -159,15 +146,14 @@ sub collect_port_signatures
 			next;
 		}
 		next unless $_ or $subdir;
-		$port->{$subdir}->{signature} = $_;
+		$port->{$subdir}{signature} = $_;
 	}
 	$state->progress->next;
 	system("cd $portsdir && make destroy_DEPENDS_CACHE");
 }
 
-sub split_sig
+sub split_sig($sig)
 {
-	my $sig = shift;
 	my $ret = {};
 
 	for my $item (split(/,/, $sig)) {
@@ -177,12 +163,10 @@ sub split_sig
 	return $ret;
 }
 
-sub diff_sig
+sub diff_sig($dir, $pkg, $port)
 {
-	my ($dir, $pkg, $port) = @_;
-
-	my $old	= split_sig($pkg->{$dir}->{signature});
-	my $new	= split_sig($port->{$dir}->{signature});
+	my $old	= split_sig($pkg->{$dir}{signature});
+	my $new	= split_sig($port->{$dir}{signature});
 
 	for my $key (keys %$old) {
 		if (defined $new->{$key}) {
@@ -194,10 +178,8 @@ sub diff_sig
 	return join(',', sort keys %$old), join(',', sort keys %$new);
 }
 
-sub find_outdated
+sub find_outdated($pkg, $port, $output)
 {
-	my ($pkg, $port, $output) = @_;
-
 	for my $dir (keys %$pkg) {
 		next unless $port->{$dir};
 		if ($pkg->{$dir}{name} ne $port->{$dir}{name}) {
@@ -205,7 +187,7 @@ sub find_outdated
 			    $pkg->{$dir}{version}, $port->{$dir}{version}));
 			next;
 		}
-		next if $opt_q;
+		next if $state->opt('q');
 		if ($pkg->{$dir}{signature} ne $port->{$dir}{signature}) {
 			push(@$output, sprintf("%-30s # %s -> %s\n", $dir,
 			    diff_sig($dir, $pkg, $port)));
@@ -222,13 +204,14 @@ my @output   = ();
 my @notfound = ();
 my ($port, $errors) = collect_port_versions($pkg, $portsdir, \@notfound);
 
-collect_port_signatures($pkg, $port, $portsdir, \@output) unless $opt_q;
+collect_port_signatures($pkg, $port, $portsdir, \@output) 
+    unless $state->opt('q');
 find_outdated($pkg, $port, \@output);
 
 $state->errsay("Outdated ports:\n");
 $state->print("#1", $_) for sort @output;
 
-if ($opt_q) {
+if ($state->opt('q')) {
 	$state->errsay("\nWARNING: You've used the -q option. With this,\n"
 	    . "out-of-date only looks for changed package names\nbut not "
 	    . "for changed package signatures. If you\nwant to see ALL "
