@@ -6,18 +6,15 @@ COMMENT-main=		multi-platform graphical toolkit
 COMMENT-cups=		gtk+3 CUPS print backend
 
 GNOME_PROJECT=		gtk+
-GNOME_VERSION=		3.24.37
+GNOME_VERSION=		3.24.38
 
 PKGNAME-main=		gtk+3-${GNOME_VERSION}
 PKGNAME-cups=		gtk+3-cups-${GNOME_VERSION}
 
-REVISION-main=		0
-REVISION-cups=		0
-
 CATEGORIES=		x11 devel
 
-SHARED_LIBS += gdk-3                     2201.1 # 0.2405.32
-SHARED_LIBS += gtk-3                     2201.0 # 0.2405.32
+SHARED_LIBS += gdk-3                     2201.1 # 0.2406.32
+SHARED_LIBS += gtk-3                     2201.0 # 0.2406.32
 SHARED_LIBS += gailutil-3                0.0 # 0.0.0
 
 HOMEPAGE=		http://www.gtk.org/
