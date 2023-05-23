@@ -1,25 +1,7 @@
-@bin bin/ldrdf
 @bin bin/nasm
 @bin bin/ndisasm
-@bin bin/rdf2bin
-bin/rdf2com
-bin/rdf2ihx
-bin/rdf2ith
-bin/rdf2srec
-@bin bin/rdfdump
-@bin bin/rdflib
-@bin bin/rdx
-@man man/man1/ldrdf.1
 @man man/man1/nasm.1
 @man man/man1/ndisasm.1
-@man man/man1/rdf2bin.1
-@man man/man1/rdf2com.1
-@man man/man1/rdf2ihx.1
-@man man/man1/rdf2ith.1
-@man man/man1/rdf2srec.1
-@man man/man1/rdfdump.1
-@man man/man1/rdflib.1
-@man man/man1/rdx.1
 share/doc/nasm/
 share/doc/nasm/html/
 share/doc/nasm/html/local.css
@@ -43,6 +25,7 @@ share/doc/nasm/html/nasmdocb.html
 share/doc/nasm/html/nasmdocc.html
 share/doc/nasm/html/nasmdocd.html
 share/doc/nasm/html/nasmdoce.html
+share/doc/nasm/html/nasmdocf.html
 share/doc/nasm/html/nasmdoci.html
 share/doc/nasm/html/nasmlogw.png
 share/doc/nasm/internal.doc
