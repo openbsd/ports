@@ -1,11 +1,7 @@
 COMMENT=	Xfce4 desktop panel
 
 XFCE_PROJECT=	xfce4-panel
-XFCE_VERSION=	4.18.3
-REVISION=2
-MASTER_SITES1 =	https://gitlab.xfce.org/xfce/xfce4-panel/-/commit/
-PATCHFILES =	3bf948cc2618632aaaaabefae1b1be50d5a607c3.patch:1
-PATCH_DIST_STRIP =	-p1
+XFCE_VERSION=	4.18.4
 
 SHARED_LIBS=	xfce4panel-2.0	0.2 # 4.0
 
