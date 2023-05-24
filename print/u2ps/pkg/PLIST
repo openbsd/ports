@@ -1,0 +1,22 @@
+@bin bin/psfrem
+@bin bin/u2ps
+@man man/man1/psfrem.1
+@man man/man1/u2ps.1
+share/u2ps/
+share/u2ps/ProcSet/
+share/u2ps/ProcSet/gscompat
+share/u2ps/ProcSet/printf
+share/u2ps/ProcSet/recode
+share/u2ps/ProcSet/reduce.astr
+share/u2ps/ProcSet/reduce.bstr
+share/u2ps/ProcSet/reduce.dump
+share/u2ps/ProcSet/reduce.t1
+share/u2ps/ProcSet/reduce.t42
+share/u2ps/ProcSet/unidata
+share/u2ps/ProcSet/unifont
+share/u2ps/ProcSet/uniterm
+share/u2ps/ProcSet/unpack
+share/u2ps/ProcSet/unprotect
+share/u2ps/fstat.ps
+share/u2ps/reduce.ps
+share/u2ps/t2p42.ps
