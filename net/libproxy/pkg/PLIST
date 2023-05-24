@@ -6,10 +6,10 @@
 @bin bin/proxy
 include/libproxy/
 include/libproxy/proxy.h
-lib/girepository-1.0/
 lib/girepository-1.0/Libproxy-1.0.typelib
+lib/libproxy/
 @lib lib/libproxy.so.${LIBproxy_VERSION}
-@so lib/libpxbackend-1.0.so
+@so lib/libproxy/libpxbackend-1.0.so
 lib/pkgconfig/libproxy-1.0.pc
 @man man/man8/proxy.8
 share/doc/libproxy-1.0/
@@ -71,9 +71,6 @@ share/doc/libproxy-1.0/struct.ProxyFactory.html
 share/doc/libproxy-1.0/style.css
 share/doc/libproxy-1.0/type_func.ProxyFactory.free_proxies.html
 share/doc/libproxy-1.0/vala.html
-share/gir-1.0/
 share/gir-1.0/Libproxy-1.0.gir
-share/vala/
-share/vala/vapi/
 share/vala/vapi/libproxy-1.0.deps
 share/vala/vapi/libproxy-1.0.vapi

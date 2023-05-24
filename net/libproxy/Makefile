@@ -1,11 +1,8 @@
 COMMENT=		library for automatic proxy configuration management
 
-V=			0.5.0
 GH_ACCOUNT=		libproxy
 GH_PROJECT=		libproxy
-GH_TAGNAME=		libproxy-${V}
-DISTNAME=		libproxy-${V}
-REVISION=		0
+GH_TAGNAME=		0.5.1
 
 CATEGORIES=		net
 
@@ -35,10 +32,6 @@ LIB_DEPENDS=		devel/glib2 \
 			net/curl
 
 RUN_DEPENDS=		devel/gsettings-desktop-schemas
-
-# cyclic dep:
-# net/libproxy -> devel/libsoup3 -> net/glib2-networking -> net/libproxy
-CONFIGURE_ARGS +=	-Dtests=false
 
 # before bsd.port.arch.mk
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
