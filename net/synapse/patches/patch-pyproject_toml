@@ -1,7 +1,5 @@
 No need to run-depend on setuptools_rust and rust..
 
-chunk 2: https://github.com/matrix-org/synapse/commit/5a7742a83308743dfd5e9a1fab751e345757aab7
-to remove in 1.84
 Index: pyproject.toml
 --- pyproject.toml.orig
 +++ pyproject.toml
@@ -14,12 +12,3 @@ Index: pyproject.toml
  
  
  # Optional Dependencies
-@@ -368,7 +368,7 @@ furo = ">=2022.12.7,<2024.0.0"
- # system changes.
- # We are happy to raise these upper bounds upon request,
- # provided we check that it's safe to do so (i.e. that CI passes).
--requires = ["poetry-core>=1.0.0,<=1.5.0", "setuptools_rust>=1.3,<=1.5.2"]
-+requires = ["poetry-core>=1.0.0,<=1.5.0", "setuptools_rust>=1.3,<=1.6.0"]
- build-backend = "poetry.core.masonry.api"
- 
- 
