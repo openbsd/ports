@@ -1,25 +1,25 @@
-COMMENT =	unittest subTest() support and subtests fixture
+COMMENT=	unittest subTest() support and subtests fixture
 
-MODPY_EGG_VERSION =	0.10.0
+MODPY_EGG_VERSION=	0.11.0
 
-DISTNAME =	pytest-subtests-${MODPY_EGG_VERSION}
-PKGNAME =	py-${DISTNAME}
+DISTNAME=	pytest-subtests-${MODPY_EGG_VERSION}
+PKGNAME=	py-${DISTNAME}
 
-CATEGORIES =	devel
+CATEGORIES=	devel
 
-HOMEPAGE =	https://github.com/pytest-dev/pytest-subtests
+HOMEPAGE=	https://github.com/pytest-dev/pytest-subtests
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
+MODULES=	lang/python
 
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools_scm
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools_scm
 
-FLAVOR =		python3
-FLAVORS =		python3
+FLAVOR=		python3
+FLAVORS=	python3
 
-RUN_DEPENDS =		devel/py-test${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/py-test${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
