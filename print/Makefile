@@ -73,6 +73,7 @@
      SUBDIR += texinfo
      SUBDIR += texlive
      SUBDIR += transfig
+     SUBDIR += u2ps
      SUBDIR += unpaper
      SUBDIR += weasyprint,python3
      SUBDIR += xournal
