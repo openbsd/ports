@@ -1,24 +1,23 @@
-COMMENT =	compatibility API between asyncio/Twisted/Trollius
+COMMENT=	compatibility API between asyncio/Twisted/Trollius
 
-MODPY_EGG_VERSION =	22.2.1
-DISTNAME =	txaio-${MODPY_EGG_VERSION}
-PKGNAME =	py-${DISTNAME}
-REVISION =	1
+MODPY_EGG_VERSION=	23.1.1
+DISTNAME=	txaio-${MODPY_EGG_VERSION}
+PKGNAME=	py-${DISTNAME}
 
-CATEGORIES =	devel
+CATEGORIES=	devel
 
-HOMEPAGE =	https://github.com/crossbario/txaio
+HOMEPAGE=	https://github.com/crossbario/txaio
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODPY_PI =	Yes
+MODPY_PI=	Yes
 
-MODULES =	lang/python
+MODULES=	lang/python
 
-FLAVORS =	python3
-FLAVOR  =	python3
+FLAVORS=	python3
+FLAVOR=		python3
 
-MODPY_PYBUILD =		setuptools
+MODPY_PYBUILD=	setuptools
 
 .include <bsd.port.mk>
