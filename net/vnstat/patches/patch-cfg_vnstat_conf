@@ -1,15 +1,12 @@
 Index: cfg/vnstat.conf
 --- cfg/vnstat.conf.orig
 +++ cfg/vnstat.conf
-@@ -2,10 +2,7 @@
- ##
+@@ -8,7 +8,7 @@
+ ;Interface ""
  
- # default interface (leave empty for automatic selection)
--Interface ""
--
--# location of the database directory
--DatabaseDir "/var/lib/vnstat"
-+Interface "lo0"
+ # location of the database directory
+-;DatabaseDir "/var/lib/vnstat"
++;DatabaseDir "/var/db/vnstat"
  
  # locale (LC_ALL) ("-" = use system locale)
- Locale "-"
+ ;Locale "-"

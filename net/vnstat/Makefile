@@ -1,13 +1,11 @@
 COMMENT-main =		network traffic monitor
 COMMENT-vnstati =	image output support for vnstat
 
-V =			2.6
+V =			2.10
 EPOCH =			0
 DISTNAME =		vnstat-${V}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-vnstati =	vnstati-${V}
-REVISION-main =		0
-REVISION-vnstati =	0
 
 CATEGORIES =	net sysutils
 
