@@ -10,5 +10,5 @@ Index: unittest/CMakeLists.txt
 -add_executable(unittest ${source_files})
 +add_executable(unittest EXCLUDE_FROM_ALL ${source_files})
  
- if(MSVC)
+ if(MSVC AND NOT CMAKE_CXX_COMPILER_ID MATCHES "^Clang$")
    # Turn off /Zc:preprocessor for this test because it triggers a bug in some older Windows 10 SDK headers.
