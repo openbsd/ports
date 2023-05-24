@@ -17,7 +17,6 @@ FLAVOR=		python3
 MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools_scm
-#MODPY_PYTEST_ARGS=	testing
 
 RUN_DEPENDS=	devel/py-execnet${MODPY_FLAVOR} \
 		devel/py-test${MODPY_FLAVOR} \
