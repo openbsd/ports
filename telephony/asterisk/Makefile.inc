@@ -345,7 +345,7 @@ menuselect: configure
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/asterisk
-	${INSTALL_DATA} ${WRKSRC}/{BUGS,CHANGES,COPYING,CREDITS} \
+	${INSTALL_DATA} ${WRKSRC}/{BUGS,CHANGES*,COPYING,CREDITS} \
 		${WRKSRC}/{ChangeLog,LICENSE,README*,UPGRADE*.txt} \
 		${PREFIX}/share/doc/asterisk
 	${INSTALL_DATA} ${WRKSRC}/doc/*.{pdf,txt} \
