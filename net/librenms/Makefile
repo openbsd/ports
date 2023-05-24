@@ -3,7 +3,7 @@ COMMENT=	auto-discovering network management/monitoring system
 # changelogs at https://github.com/librenms/librenms/releases
 GH_ACCOUNT=	librenms
 GH_PROJECT=	librenms
-GH_TAGNAME=	23.4.1
+GH_TAGNAME=	23.5.0
 
 DISTFILES=	${GH_DISTFILE} \
 		${PKGNAME}-vendor.tar.xz:0
@@ -73,7 +73,7 @@ post-extract:
 	    -e 's, librenms *, _librenms ,' \
 	    -e 's, php *, ${MODPHP_BIN} ,' \
 	    -e 's,/var/www/librenms/cronic,-n,' \
-	    ${WRKSRC}/librenms.nonroot.cron
+	    ${WRKSRC}/dist/librenms.cron
 
 pre-configure:
 	cd ${WRKSRC}; ${SUBST_CMD} daily.sh \
