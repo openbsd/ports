@@ -2,7 +2,7 @@ COMMENT=	py.test xdist plugin for distributed testing
 
 DISTNAME=	pytest-xdist-${MODPY_EGG_VERSION}
 PKGNAME=	py-test-xdist-${MODPY_EGG_VERSION}
-MODPY_EGG_VERSION=	3.2.0
+MODPY_EGG_VERSION=	3.3.1
 
 CATEGORIES=	devel
 
@@ -17,7 +17,7 @@ FLAVOR=		python3
 MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools_scm
-MODPY_PYTEST_ARGS=	testing
+#MODPY_PYTEST_ARGS=	testing
 
 RUN_DEPENDS=	devel/py-execnet${MODPY_FLAVOR} \
 		devel/py-test${MODPY_FLAVOR} \
