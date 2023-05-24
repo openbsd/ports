@@ -1,10 +1,9 @@
 COMMENT=	Hatch plugin for fancy PyPI readmes
 
-MODPY_EGG_VERSION=	22.8.0
+MODPY_EGG_VERSION=	23.1.0
 
 DISTNAME=	hatch_fancy_pypi_readme-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
 
 CATEGORIES=	devel
 
