@@ -84,6 +84,7 @@
      SUBDIR += nekovm
      SUBDIR += newlisp
      SUBDIR += nim
+     SUBDIR += njs
      SUBDIR += node
      SUBDIR += nqp
      SUBDIR += ocaml
