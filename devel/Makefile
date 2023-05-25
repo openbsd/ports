@@ -27,6 +27,7 @@
      SUBDIR += arm-compute-library
      SUBDIR += arm-none-eabi
      SUBDIR += armips
+     SUBDIR += asio
      SUBDIR += asm6
      SUBDIR += astyle
      SUBDIR += atf
