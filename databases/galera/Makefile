@@ -2,6 +2,7 @@ COMMENT=	synchronous multi-master replication engine
 
 VERSION=	26.4.14
 DISTNAME=	galera-${VERSION}
+REVISION=	0
 
 CATEGORIES=	databases
 
@@ -26,7 +27,8 @@ COMPILER=	base-clang ports-gcc
 
 MODULES=	devel/cmake
 
-BUILD_DEPENDS=	devel/check
+BUILD_DEPENDS=	devel/asio \
+		devel/check
 LIB_DEPENDS=	devel/boost
 
 WANTLIB += ${COMPILER_LIBCXX} boost_program_options-mt c crypto m ssl
