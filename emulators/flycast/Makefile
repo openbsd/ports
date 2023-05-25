@@ -5,6 +5,11 @@ ONLY_FOR_ARCHS =	amd64
 
 COMMENT =	emulator for Sega Dreamcast and Sega Naomi based on reicast
 
+V =		2.1pl20230303
+DISTNAME =	flycast-${V}
+COMMIT =	27b6bafd0f003c8f8bcd1fb3bfd48a3523b298f5
+REVISION =	1
+
 CATEGORIES =	emulators games
 
 HOMEPAGE =	https://github.com/flyinghead/flycast
@@ -19,39 +24,40 @@ MAINTAINER =	Nam Nguyen <namn@berkeley.edu>
 # Custom NVIDIA and Khronos Group (glslang preprocessor)
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL SDL2 ao c curl chdr glslang
-WANTLIB += lua${MODLUA_VERSION} m miniupnpc pulse xxhash z zip
+# if running with vulkan backend, dlopen's vulkan in vulkan.hpp
+WANTLIB += ${COMPILER_LIBCXX} GL SDL2 SPIRV ao c curl chdr glslang
+WANTLIB += lua${MODLUA_VERSION} m miniupnpc pulse vulkan xxhash z zip
+
+MASTER_SITES =	https://namtsui.com/source/
 
 NO_TEST =	Yes
+
+FIX_CRLF_FILES =	core/deps/VulkanMemoryAllocator/include/vk_mem_alloc.h
+
+# C++
+COMPILER =	base-clang ports-gcc base-gcc
 
 MODULES =		devel/cmake \
 			lang/lua
 
-V =	2.1pl20230303
-MASTER_SITES =	https://namtsui.com/source/
-DISTNAME =	flycast-${V}
-REVISION =	0
-
-COMMIT =	27b6bafd0f003c8f8bcd1fb3bfd48a3523b298f5
+MODLUA_VERSION =	5.3
 
 WRKDIST =	${WRKDIR}/flycast
 WRKSRC =	${WRKDIST}
 
 USE_WXNEEDED =	Yes
 
-MODLUA_VERSION =	5.3
-
-RUN_DEPENDS =	graphics/vulkan-loader
 BUILD_DEPENDS =	lang/luabridge
-LIB_DEPENDS =	audio/libao \
+LIB_DEPENDS =	archivers/libzip \
+		audio/libao \
+		audio/pulseaudio \
 		devel/sdl2 \
-		graphics/glslang \
 		emulators/libchdr \
-		sysutils/xxhash \
+		graphics/glslang \
+		graphics/vulkan-loader \
 		net/curl \
 		net/miniupnp/miniupnpc \
-		archivers/libzip \
-		audio/pulseaudio
+		sysutils/xxhash
 
 do-gen:
 	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt
@@ -73,7 +79,5 @@ dist:
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/flycast \
 		${PREFIX}/bin/
-
-FIX_CRLF_FILES =	core/deps/VulkanMemoryAllocator/include/vk_mem_alloc.h
 
 .include <bsd.port.mk>
