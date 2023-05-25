@@ -28,7 +28,8 @@ LIB_DEPENDS=		textproc/libxml \
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--without-gnutls \
-			--without-memcached
+			--without-memcached \
+			--without-redis
 CONFIGURE_ENV+=		LIBS="-lexecinfo"
 
 .include <bsd.port.mk>
