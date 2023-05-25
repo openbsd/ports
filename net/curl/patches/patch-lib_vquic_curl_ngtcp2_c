@@ -46,7 +46,7 @@ Index: lib/vquic/curl_ngtcp2.c
      return CURLE_QUIC_CONNECT_ERROR;
    }
  
-@@ -1781,12 +1781,13 @@ static CURLcode recv_pkt(const unsigned char *pkt, siz
+@@ -1784,12 +1784,13 @@ static CURLcode recv_pkt(const unsigned char *pkt, siz
                    ngtcp2_strerror(rv)));
      if(!ctx->last_error.error_code) {
        if(rv == NGTCP2_ERR_CRYPTO) {
@@ -64,7 +64,7 @@ Index: lib/vquic/curl_ngtcp2.c
        }
      }
  
-@@ -1873,9 +1874,9 @@ static ssize_t read_pkt_to_send(void *userp,
+@@ -1876,9 +1877,9 @@ static ssize_t read_pkt_to_send(void *userp,
        if(veccnt < 0) {
          failf(x->data, "nghttp3_conn_writev_stream returned error: %s",
                nghttp3_strerror((int)veccnt));
@@ -77,7 +77,7 @@ Index: lib/vquic/curl_ngtcp2.c
          *err = CURLE_SEND_ERROR;
          return -1;
        }
-@@ -1915,7 +1916,8 @@ static ssize_t read_pkt_to_send(void *userp,
+@@ -1918,7 +1919,8 @@ static ssize_t read_pkt_to_send(void *userp,
          DEBUGASSERT(ndatalen == -1);
          failf(x->data, "ngtcp2_conn_writev_stream returned error: %s",
                ngtcp2_strerror((int)n));
@@ -87,7 +87,7 @@ Index: lib/vquic/curl_ngtcp2.c
          *err = CURLE_SEND_ERROR;
          nwritten = -1;
          goto out;
-@@ -1962,7 +1964,8 @@ static CURLcode cf_flush_egress(struct Curl_cfilter *c
+@@ -1965,7 +1967,8 @@ static CURLcode cf_flush_egress(struct Curl_cfilter *c
    if(rv) {
      failf(data, "ngtcp2_conn_handle_expiry returned error: %s",
            ngtcp2_strerror(rv));
@@ -97,7 +97,7 @@ Index: lib/vquic/curl_ngtcp2.c
      return CURLE_SEND_ERROR;
    }
  
-@@ -2314,7 +2317,7 @@ static CURLcode cf_connect_start(struct Curl_cfilter *
+@@ -2317,7 +2320,7 @@ static CURLcode cf_connect_start(struct Curl_cfilter *
    ngtcp2_conn_set_tls_native_handle(ctx->qconn, ctx->ssl);
  #endif
  
