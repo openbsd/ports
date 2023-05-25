@@ -639,10 +639,9 @@ share/asterisk/static-http/prototype.js
 share/asterisk/third-party/
 share/doc/asterisk/
 share/doc/asterisk/BUGS
-share/doc/asterisk/CHANGES
+share/doc/asterisk/CHANGES.md
 share/doc/asterisk/COPYING
 share/doc/asterisk/CREDITS
-share/doc/asterisk/ChangeLog
 share/doc/asterisk/IAX2-security.pdf
 share/doc/asterisk/IAX2-security.txt
 share/doc/asterisk/LICENSE
@@ -763,6 +762,7 @@ share/examples/asterisk/default/res_config_sqlite3.conf
 share/examples/asterisk/default/res_corosync.conf
 share/examples/asterisk/default/res_curl.conf
 share/examples/asterisk/default/res_fax.conf
+share/examples/asterisk/default/res_http_media_cache.conf
 share/examples/asterisk/default/res_parking.conf
 share/examples/asterisk/default/res_pktccops.conf
 share/examples/asterisk/default/res_stun_monitor.conf
