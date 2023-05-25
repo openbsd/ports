@@ -1,5 +1,6 @@
---- extern/glog/src/config_openbsd.h.orig	Wed Mar 30 13:13:07 2016
-+++ extern/glog/src/config_openbsd.h	Wed Mar 30 14:35:37 2016
+Index: extern/glog/src/config_openbsd.h
+--- extern/glog/src/config_openbsd.h.orig
++++ extern/glog/src/config_openbsd.h
 @@ -0,0 +1,192 @@
 +/* define if glog doesn't use RTTI */
 +/* #undef DISABLE_RTTI */

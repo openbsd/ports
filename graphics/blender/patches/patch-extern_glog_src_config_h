@@ -1,5 +1,6 @@
---- extern/glog/src/config.h.orig	Tue Sep 22 19:36:29 2020
-+++ extern/glog/src/config.h	Sun Nov 22 13:12:51 2020
+Index: extern/glog/src/config.h
+--- extern/glog/src/config.h.orig
++++ extern/glog/src/config.h
 @@ -2,6 +2,8 @@
   #include "config_mac.h"
  #elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
