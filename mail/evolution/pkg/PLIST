@@ -816,6 +816,8 @@ share/evolution/icons/hicolor/16x16/actions/view-calendar-month.png
 share/evolution/icons/hicolor/16x16/actions/view-calendar-week.png
 share/evolution/icons/hicolor/16x16/actions/view-calendar-workweek.png
 share/evolution/icons/hicolor/16x16/actions/view-calendar-year.png
+share/evolution/icons/hicolor/16x16/actions/x-office-address-book.png
+share/evolution/icons/hicolor/16x16/actions/x-office-calendar.png
 share/evolution/icons/hicolor/16x16/apps/
 share/evolution/icons/hicolor/16x16/apps/contact-editor.png
 share/evolution/icons/hicolor/16x16/apps/im-aim.png
@@ -961,6 +963,8 @@ share/evolution/icons/hicolor/22x22/actions/view-calendar-month.png
 share/evolution/icons/hicolor/22x22/actions/view-calendar-week.png
 share/evolution/icons/hicolor/22x22/actions/view-calendar-workweek.png
 share/evolution/icons/hicolor/22x22/actions/view-calendar-year.png
+share/evolution/icons/hicolor/22x22/actions/x-office-address-book.png
+share/evolution/icons/hicolor/22x22/actions/x-office-calendar.png
 share/evolution/icons/hicolor/22x22/apps/
 share/evolution/icons/hicolor/22x22/apps/contact-editor.png
 share/evolution/icons/hicolor/22x22/apps/im-aim.png
@@ -1119,6 +1123,8 @@ share/evolution/icons/hicolor/24x24/actions/view-calendar-month.png
 share/evolution/icons/hicolor/24x24/actions/view-calendar-week.png
 share/evolution/icons/hicolor/24x24/actions/view-calendar-workweek.png
 share/evolution/icons/hicolor/24x24/actions/view-calendar-year.png
+share/evolution/icons/hicolor/24x24/actions/x-office-address-book.png
+share/evolution/icons/hicolor/24x24/actions/x-office-calendar.png
 share/evolution/icons/hicolor/24x24/apps/
 share/evolution/icons/hicolor/24x24/apps/contact-editor.png
 share/evolution/icons/hicolor/24x24/apps/im-aim.png
@@ -1261,6 +1267,8 @@ share/evolution/icons/hicolor/32x32/actions/view-calendar-month.png
 share/evolution/icons/hicolor/32x32/actions/view-calendar-week.png
 share/evolution/icons/hicolor/32x32/actions/view-calendar-workweek.png
 share/evolution/icons/hicolor/32x32/actions/view-calendar-year.png
+share/evolution/icons/hicolor/32x32/actions/x-office-address-book.png
+share/evolution/icons/hicolor/32x32/actions/x-office-calendar.png
 share/evolution/icons/hicolor/32x32/apps/
 share/evolution/icons/hicolor/32x32/apps/contact-editor.png
 share/evolution/icons/hicolor/32x32/places/
@@ -1389,6 +1397,8 @@ share/evolution/icons/hicolor/48x48/actions/stock_notes.png
 share/evolution/icons/hicolor/48x48/actions/stock_people.png
 share/evolution/icons/hicolor/48x48/actions/stock_timezone.png
 share/evolution/icons/hicolor/48x48/actions/stock_todo.png
+share/evolution/icons/hicolor/48x48/actions/x-office-address-book.png
+share/evolution/icons/hicolor/48x48/actions/x-office-calendar.png
 share/evolution/icons/hicolor/48x48/apps/
 share/evolution/icons/hicolor/48x48/apps/contact-editor.png
 share/evolution/icons/hicolor/48x48/categories/
