@@ -3,15 +3,9 @@
 COMMENT=		GNOME settings
 
 GNOME_PROJECT=		gnome-control-center
-GNOME_VERSION=		44.1
-REVISION=		1
+GNOME_VERSION=		44.2
 
 CATEGORIES=		x11
-
-# XXX check at next release
-MASTER_SITES0=		https://gitlab.gnome.org/GNOME/gnome-control-center/-/commit/
-PATCHFILES=		92c4b6a706b32c2c5eb89b4169a7e21537a59c3c.patch:0
-PATCH_DIST_STRIP=	-p1
 
 # GPLv2
 PERMIT_PACKAGE=		Yes

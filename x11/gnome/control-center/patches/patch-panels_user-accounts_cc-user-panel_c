@@ -4,9 +4,9 @@ so that symbols can be resolved in the user panel.
 Index: panels/user-accounts/cc-user-panel.c
 --- panels/user-accounts/cc-user-panel.c.orig
 +++ panels/user-accounts/cc-user-panel.c
-@@ -1539,6 +1539,8 @@ cc_user_panel_init (CcUserPanel *self)
-         /* register types that the builder might need */
-         type = cc_permission_infobar_get_type ();
+@@ -1543,6 +1543,8 @@ cc_user_panel_init (CcUserPanel *self)
+         g_type_ensure (CC_TYPE_AVATAR_CHOOSER);
+         g_type_ensure (CC_TYPE_LIST_ROW);
  
 +        g_type_ensure(CC_TYPE_AVATAR_CHOOSER);
 +
