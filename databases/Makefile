@@ -1,6 +1,7 @@
      SUBDIR =
      SUBDIR += architect
      SUBDIR += barman
+     SUBDIR += bbolt
      SUBDIR += citus
      SUBDIR += db
      SUBDIR += evolution-data-server
