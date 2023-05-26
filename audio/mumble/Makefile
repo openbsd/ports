@@ -4,8 +4,8 @@ COMMENT-server =	low-latency voice chat server
 VERSION =		1.4.287
 DISTNAME =		mumble-${VERSION}
 PKGNAME-server =	murmur-${VERSION}
-REVISION-main =		3
-REVISION-server =	3
+REVISION-main =		4
+REVISION-server =	4
 
 CATEGORIES =		audio net
 
@@ -30,8 +30,6 @@ PATCH_DIST_STRIP =	-p1
 
 # BSD3
 PERMIT_PACKAGE =	Yes
-
-MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 WANTLIB-main += ${COMPILER_LIBCXX} PocoFoundation PocoUtil PocoXML
 WANTLIB-main += PocoZip Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
