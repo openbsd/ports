@@ -1,0 +1,17 @@
+bbolt implements a low-level key/value store in pure Go. It supports
+fully serializable transactions, ACID semantics, and lock-free MVCC with
+multiple readers and a single writer.
+
+It is a fork of Ben Johnson's "Bolt" key/value store aimed at providing
+the Go community with an active maintenance and development target for
+Bolt.
+
+Bolt can be used for projects that want a simple data store without the
+need to add large dependencies such as Postgres or MySQL.
+
+Bolt is a single-level, zero-copy, B+tree data store. This means that
+Bolt is optimized for fast read access and does not require recovery
+in the event of a system crash. Transactions which have not finished
+committing will simply be rolled back in the event of a crash.
+
+The design of Bolt is based on Howard Chu's LMDB database project.
