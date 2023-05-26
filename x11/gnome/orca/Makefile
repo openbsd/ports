@@ -1,8 +1,7 @@
 COMMENT=		assistive screen reader
 
 GNOME_PROJECT=		orca
-GNOME_VERSION=		44.0
-REVISION=		0
+GNOME_VERSION=		44.1
 
 # LGPLv2
 PERMIT_PACKAGE=		Yes
@@ -10,27 +9,19 @@ PERMIT_PACKAGE=		Yes
 MODULES=		lang/python \
 			x11/gnome
 
-COMMON_DEPENDS= 	audio/speech-dispatcher \
-			devel/liblouis \
-			devel/py-gobject3${MODPY_FLAVOR} \
-			x11/gnome/py-atspi
+MODGNOME_TOOLS= 	gtk-update-icon-cache yelp
 
-BUILD_DEPENDS=		${COMMON_DEPENDS} \
-			multimedia/gstreamer1/core \
+BUILD_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
+			x11/gnome/py-atspi \
 			x11/gtk+3
 
-RUN_DEPENDS=		${COMMON_DEPENDS} \
-			devel/libwnck3 \
-			devel/py-setproctitle${MODPY_FLAVOR}
-
-# sndio(7) support, sound.py:123
-RUN_DEPENDS +=		multimedia/gstreamer1/plugins-base \
-			multimedia/gstreamer1/plugins-good
+RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
+			devel/py-setproctitle${MODPY_FLAVOR} \
+			x11/gnome/py-atspi
 
 # pygobject GTK3 introspection (not provided by indirect dependencies)
 RUN_DEPENDS +=		x11/gtk+3
 
-MODGNOME_TOOLS= 	gtk-update-icon-cache yelp
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/orca/
 
 CONFIGURE_STYLE=	gnu

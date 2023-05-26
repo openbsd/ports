@@ -1,7 +1,15 @@
-Orca is a free, open source, flexible, and extensible screen reader
-that provides access to the graphical desktop via user-customizable
-combinations of speech, braille, and/or magnification.
-Orca works with applications and toolkits that support the assistive
-technology service provider interface (AT-SPI).
+Orca is a free, open source, flexible, and extensible screen reader that
+provides access to the graphical desktop via user-customizable combinations of
+speech and/or braille.
 
-Optional Braille support requires installing the "brltty" package.
+Orca works with applications and toolkits that support the assistive technology
+service provider interface (AT-SPI).
+Applications and toolkits supporting the AT-SPI include the GNOME GTK+ toolkit,
+the Java platform's Swing toolkit, OpenOffice/LibreOffice, Gecko, and WebKitGtk.
+
+Optional dependencies:
+* brltty: support for braille
+* gstreamer1-plugins-good: support for sound
+* liblouis: support for contracted braille
+* libwnck3: support for mouse
+* speech-dispatcher: support for speech
