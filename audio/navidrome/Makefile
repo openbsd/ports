@@ -1,7 +1,7 @@
 COMMENT =	modern music server and streamer
 
 MODGO_MODNAME =	github.com/navidrome/navidrome
-MODGO_VERSION =	v0.48.0
+MODGO_VERSION =	v0.49.3
 
 DISTNAME =	navidrome-${MODGO_VERSION}
 
