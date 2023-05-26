@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.93 2023/05/06 05:20:31 espie Exp $
+# $OpenBSD: Config.pm,v 1.94 2023/05/26 15:28:47 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -420,7 +420,7 @@ sub parse_config_files($class, $state)
 sub parse_hosts_file($class, $filename, $state, $rdefault, $override)
 {
 	open my $fh, '<', $filename or
-		$state->fatal("Can't read host files #1: #2", $filename, $!);
+		$state->fatal("Can't read hosts file #1: #2", $filename, $!);
 	my $cores = {};
 	while (<$fh>) {
 		chomp;
