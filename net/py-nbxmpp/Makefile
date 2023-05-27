@@ -1,10 +1,9 @@
 COMMENT =		Python XMPP and Jabber implementation
 
-MODPY_EGG_VERSION =	3.2.4
+MODPY_EGG_VERSION =	4.2.2
 DISTNAME =		nbxmpp-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		net devel
-REVISION =		0
 
 HOMEPAGE =		https://python-nbxmpp.gajim.org/
 
@@ -13,15 +12,12 @@ MAINTAINER =		Paco Esteban <paco@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${MASTER_SITE_PYPI:=n/nbxmpp/}
-
 MODULES =		lang/python
+MODPY_PY =		Yes
 MODPY_PYBUILD =		setuptools
-MODPY_PYTEST =		Yes
-MODPY_PYTEST_ARGS =	test
 
-RUN_DEPENDS =		devel/glib2>=2.6.0 \
-			devel/libsoup \
+RUN_DEPENDS =		devel/glib2>=2.60.0 \
+			devel/libsoup3 \
 			devel/py-gobject3${MODPY_FLAVOR} \
 			net/py-idna${MODPY_FLAVOR} \
 			sysutils/py-packaging${MODPY_FLAVOR} \
