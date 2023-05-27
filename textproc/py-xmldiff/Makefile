@@ -1,6 +1,6 @@
 COMMENT=	show differences between XML files/DOM trees
 
-MODPY_EGG_VERSION=	2.6.1
+MODPY_EGG_VERSION=	2.6.3
 DISTNAME=	xmldiff-${MODPY_EGG_VERSION}
 PKGNAME=	py-xmldiff-${MODPY_EGG_VERSION}
 CATEGORIES=	textproc
