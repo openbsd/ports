@@ -1,4 +1,5 @@
 VER=		16.30.0
+REVISION-main=	0
 
 PJ_V=		2.12.1
 SHLIB_V=	0.0
