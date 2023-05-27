@@ -102,6 +102,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}a
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}assumerole.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}awslambda.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}awslambda.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}binaryhoist.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}binaryhoist.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}cliinputjson.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}cliinputjson.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}cloudfront.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -150,6 +152,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}p
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}preview.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}putmetricdata.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}putmetricdata.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}quicksight.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}quicksight.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}rds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}rds.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}rekognition.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -189,6 +193,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/argrename.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/arguments.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/assumerole.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/awslambda.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/binaryhoist.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cliinputjson.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cloudformation/
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cloudformation/__init__.py
@@ -570,6 +575,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/overridesslcommon
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/paginate.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/preview.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/putmetricdata.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/quicksight.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/rds.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/rekognition.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/removals.py
