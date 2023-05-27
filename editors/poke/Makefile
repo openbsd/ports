@@ -1,6 +1,7 @@
 COMMENT =	interactive, extensible binary editor
 
 DISTNAME =	poke-3.0
+REVISION =	0
 
 SHARED_LIBS +=  poke                      1.0 # 0.0
 
@@ -27,6 +28,8 @@ CONFIGURE_STYLE =	gnu
 
 # test failures due to missing hyperlink support in libtextstyle
 CONFIGURE_ARGS +=	--disable-hserver
+# don't find emacs or xemacs
+CONFIGURE_ENV +=	ac_cv_prog_EMACS=
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
