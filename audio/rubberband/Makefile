@@ -1,9 +1,9 @@
 COMMENT =		audio time-stretching and pitch-shifting library
 
-DISTNAME =		rubberband-1.8.2
+DISTNAME =		rubberband-3.2.1
 EXTRACT_SUFX =		.tar.bz2
 
-SHARED_LIBS =		rubberband 0.0
+SHARED_LIBS =		rubberband 1.0
 
 CATEGORIES =		audio
 HOMEPAGE =		https://breakfastquay.com/rubberband
@@ -14,23 +14,26 @@ PERMIT_PACKAGE =	Yes
 WANTLIB =		${COMPILER_LIBCXX}
 WANTLIB +=		c fftw3 m pthread samplerate sndfile vamp-sdk
 
-COMPILER =		base-clang ports-gcc base-gcc
+# C++11
+COMPILER =		base-clang ports-gcc
 
 MASTER_SITES =		https://breakfastquay.com/files/releases/
+
+MODULES =               devel/meson
 
 LIB_DEPENDS =		audio/libsamplerate \
 			audio/libsndfile \
 			audio/vamp-plugin-sdk \
 			math/fftw3
 
-BUILD_DEPENDS =		audio/ladspa
+BUILD_DEPENDS =		audio/ladspa \
+			audio/lv2 \
+			devel/boost
 
-USE_GMAKE =		Yes
-CONFIGURE_STYLE =	gnu
-CONFIGURE_ENV = 	CPPFLAGS="-I${LOCALBASE}/include"
-MAKE_FLAGS =		DYNAMIC_FULL_VERSION=${LIBrubberband_VERSION} \
-			DYNAMIC_ABI_VERSION=${LIBrubberband_VERSION}
-
-NO_TEST =		Yes
+CONFIGURE_ENV = 	CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib -lboost_unit_test_framework"
+CONFIGURE_ARGS =	-Djni=disabled \
+			-Dfft=fftw \
+			-Dresampler=libsamplerate
 
 .include <bsd.port.mk>
