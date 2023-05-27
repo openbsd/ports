@@ -103,6 +103,7 @@ lib/freeradius/
 @so lib/freeradius/rlm_attr_filter.so
 @so lib/freeradius/rlm_cache.so
 @so lib/freeradius/rlm_cache_rbtree.so
+@so lib/freeradius/rlm_cache_redis.so
 @so lib/freeradius/rlm_chap.so
 @so lib/freeradius/rlm_counter.so
 @so lib/freeradius/rlm_date.so
@@ -847,6 +848,7 @@ share/freeradius/dictionary.digium
 share/freeradius/dictionary.dlink
 share/freeradius/dictionary.dragonwave
 share/freeradius/dictionary.efficientip
+share/freeradius/dictionary.eleven
 share/freeradius/dictionary.eltex
 share/freeradius/dictionary.epygi
 share/freeradius/dictionary.equallogic

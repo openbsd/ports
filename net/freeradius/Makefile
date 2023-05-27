@@ -5,10 +5,10 @@ COMMENT-ldap=	freeradius ldap rlm addon
 COMMENT-memcached= freeradius memcached rlm addon
 COMMENT-mysql=	freeradius mysql rlm addon
 COMMENT-pgsql=	freeradius pgsql rlm addon
-COMMENT-python=	freeradius python rlm addon
-COMMENT-python3= freeradius python3 rlm addon (experimental)
+COMMENT-python=	freeradius python2 rlm addon
+COMMENT-python3= freeradius python3 rlm addon
 
-V=		3.2.2
+V=		3.2.3
 DISTNAME=	freeradius-server-$V
 EXTRACT_SUFX=	.tar.bz2
 
