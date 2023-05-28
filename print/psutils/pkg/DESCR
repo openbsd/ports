@@ -1,2 +1,11 @@
-PSUtils is a suite of utilities for manipulating PostScript documents
-produced according to the Document Structuring Conventions.
+PSUtils is a suite of utilities for manipulating PDF and PostScript documents.
+You can select and rearrange pages, including arrangement into signatures for
+booklet printing, combine multple pages into a single page for n-up printing,
+and resize, flip and rotate pages.
+
+PostScript files should conform to the PostScript Document Structuring
+Conventions (DSC); however, PSUtils intentionally does not check this, as some
+programs produce non-conforming output that can be successfully processed
+anyway.
+If PSUtils does not work for you, check whether your software needs to be
+configured to produce DSC-conformant PostScript.

@@ -1,9 +1,7 @@
-PKG_ARCH=	*
+COMMENT=	manipulate PDF and PostScript documents
 
-COMMENT=	utilities for manipulating PostScript documents
-
-V=		2.10
-DISTNAME=	psutils-${V}
+MODPY_EGG_VERSION=	3.0
+DISTNAME=	psutils-${MODPY_EGG_VERSION}
 
 CATEGORIES=	print
 
@@ -11,22 +9,25 @@ HOMEPAGE=	https://github.com/rrthomas/psutils
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
-# BSD-like (${WRKSRC}/LICENSE)
+# GPLv3+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://github.com/rrthomas/psutils/releases/download/v${V}/
+MASTER_SITES=	https://github.com/rrthomas/psutils/releases/download/v${MODPY_EGG_VERSION}/
 
-MODULES=	perl
+MODULES=	lang/python
 
-BUILD_DEPENDS=	print/libpaper
+MODPY_PYBUILD=	setuptools
 
-RUN_DEPENDS=	devel/p5-IPC-Run3 \
-		print/libpaper
+BUILD_DEPENDS=	devel/py-puremagic${MODPY_FLAVOR} \
+		devel/py-test-datafiles${MODPY_FLAVOR} \
+		print/libpaper \
+		print/py-pypdf${MODPY_FLAVOR} \
+		textproc/argparse-manpage
 
-USE_GMAKE=	Yes
+RUN_DEPENDS=	devel/py-puremagic${MODPY_FLAVOR} \
+		print/libpaper \
+		print/py-pypdf${MODPY_FLAVOR}
 
-CONFIGURE_STYLE=gnu
-
-NO_TEST=	Yes
+FIX_EXTRACT_PERMISSIONS=	Yes
 
 .include <bsd.port.mk>

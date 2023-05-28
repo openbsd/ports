@@ -11,6 +11,71 @@ bin/psnup
 bin/psresize
 bin/psselect
 bin/pstops
+lib/python${MODPY_VERSION}/site-packages/psutils/
+lib/python${MODPY_VERSION}/site-packages/psutils-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/psutils-${MODPY_EGG_VERSION}.dist-info/COPYING
+lib/python${MODPY_VERSION}/site-packages/psutils-${MODPY_EGG_VERSION}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/psutils-${MODPY_EGG_VERSION}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/psutils-${MODPY_EGG_VERSION}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/psutils-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/psutils-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/psutils/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/psutils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/psutils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/psutils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/psutils/${MODPY_PYCACHE}argparse.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/psutils/${MODPY_PYCACHE}argparse.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/psutils/${MODPY_PYCACHE}io.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/psutils/${MODPY_PYCACHE}io.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/psutils/${MODPY_PYCACHE}libpaper.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/psutils/${MODPY_PYCACHE}libpaper.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/psutils/${MODPY_PYCACHE}psresources.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/psutils/${MODPY_PYCACHE}psresources.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/psutils/${MODPY_PYCACHE}readers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/psutils/${MODPY_PYCACHE}readers.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/psutils/${MODPY_PYCACHE}transformers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/psutils/${MODPY_PYCACHE}transformers.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/psutils/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/psutils/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/psutils/${MODPY_PYCACHE}warnings.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/psutils/${MODPY_PYCACHE}warnings.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/psutils/argparse.py
+lib/python${MODPY_VERSION}/site-packages/psutils/command/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/psutils/command/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/psutils/command/${MODPY_PYCACHE}epsffit.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/psutils/command/${MODPY_PYCACHE}epsffit.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/psutils/command/${MODPY_PYCACHE}extractres.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/psutils/command/${MODPY_PYCACHE}extractres.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/psutils/command/${MODPY_PYCACHE}includeres.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/psutils/command/${MODPY_PYCACHE}includeres.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/psutils/command/${MODPY_PYCACHE}psbook.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/psutils/command/${MODPY_PYCACHE}psbook.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/psutils/command/${MODPY_PYCACHE}psjoin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/psutils/command/${MODPY_PYCACHE}psjoin.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/psutils/command/${MODPY_PYCACHE}psnup.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/psutils/command/${MODPY_PYCACHE}psnup.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/psutils/command/${MODPY_PYCACHE}psresize.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/psutils/command/${MODPY_PYCACHE}psresize.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/psutils/command/${MODPY_PYCACHE}psselect.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/psutils/command/${MODPY_PYCACHE}psselect.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/psutils/command/${MODPY_PYCACHE}pstops.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/psutils/command/${MODPY_PYCACHE}pstops.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/psutils/command/epsffit.py
+lib/python${MODPY_VERSION}/site-packages/psutils/command/extractres.py
+lib/python${MODPY_VERSION}/site-packages/psutils/command/includeres.py
+lib/python${MODPY_VERSION}/site-packages/psutils/command/psbook.py
+lib/python${MODPY_VERSION}/site-packages/psutils/command/psjoin.py
+lib/python${MODPY_VERSION}/site-packages/psutils/command/psnup.py
+lib/python${MODPY_VERSION}/site-packages/psutils/command/psresize.py
+lib/python${MODPY_VERSION}/site-packages/psutils/command/psselect.py
+lib/python${MODPY_VERSION}/site-packages/psutils/command/pstops.py
+lib/python${MODPY_VERSION}/site-packages/psutils/io.py
+lib/python${MODPY_VERSION}/site-packages/psutils/libpaper.py
+lib/python${MODPY_VERSION}/site-packages/psutils/psresources.py
+lib/python${MODPY_VERSION}/site-packages/psutils/readers.py
+lib/python${MODPY_VERSION}/site-packages/psutils/transformers.py
+lib/python${MODPY_VERSION}/site-packages/psutils/types.py
+lib/python${MODPY_VERSION}/site-packages/psutils/warnings.py
 @man man/man1/epsffit.1
 @man man/man1/extractres.1
 @man man/man1/includeres.1
@@ -21,5 +86,3 @@ bin/pstops
 @man man/man1/psselect.1
 @man man/man1/pstops.1
 @man man/man1/psutils.1
-share/psutils/
-share/psutils/PSUtils.pm
