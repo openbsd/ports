@@ -28,6 +28,8 @@ share/doc/dnscontrol/providers/hostingde.md
 share/doc/dnscontrol/providers/internetbs.md
 share/doc/dnscontrol/providers/inwx.md
 share/doc/dnscontrol/providers/linode.md
+share/doc/dnscontrol/providers/loopia.md
+share/doc/dnscontrol/providers/luadns.md
 share/doc/dnscontrol/providers/msdns.md
 share/doc/dnscontrol/providers/namecheap.md
 share/doc/dnscontrol/providers/namedotcom.md
