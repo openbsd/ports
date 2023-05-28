@@ -1,0 +1,18 @@
+pytest plugin to create a tmp_path containing a preconfigured set of files
+and/or directories.
+
+This plugin allows you to specify one or several files/directories that are
+copied to a temporary directory (tmp_path) before the execution of the test.
+This means the original files are not modified and every test runs on its own
+version of the same files.
+
+Files/directories can be specified either as strings or as pathlib.Path objects.
+
+To take advantage of the datafiles fixture in a test function, add datafiles as
+one of the test function parameters (per usual with pytest fixtures) and
+decorate the test function with
+@pytest.mark.datafiles(file1, file2, dir1, dir2, ...).
+
+The datafiles variable in your test function is a pathlib.Path object (tmp_path)
+where the copied files are located.
+Under OpenBSD systems this will most likely be some subdirectory of /tmp/.
