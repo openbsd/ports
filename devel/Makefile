@@ -1591,6 +1591,7 @@
      SUBDIR += py-test-asyncio,python3
      SUBDIR += py-test-benchmark,python3
      SUBDIR += py-test-cov,python3
+     SUBDIR += py-test-datafiles,python3
      SUBDIR += py-test-doctestplus,python3
      SUBDIR += py-test-expect,python3
      SUBDIR += py-test-filter-subpackage,python3
