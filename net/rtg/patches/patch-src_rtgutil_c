@@ -1,5 +1,6 @@
---- src/rtgutil.c.orig	Thu Sep 25 16:56:04 2003
-+++ src/rtgutil.c	Mon Jul  7 13:42:39 2008
+Index: src/rtgutil.c
+--- src/rtgutil.c.orig
++++ src/rtgutil.c
 @@ -34,6 +34,7 @@ int read_rtg_config(char *file, config_t * set)
                else if (!strcasecmp(p1, "SNMP_Port")) set->snmp_port = atoi(p2);
                else if (!strcasecmp(p1, "Threads")) set->threads = atoi(p2);
@@ -8,7 +9,7 @@
                else if (!strcasecmp(p1, "DB_Database")) strncpy(set->dbdb, p2, sizeof(set->dbdb));
                else if (!strcasecmp(p1, "DB_User")) strncpy(set->dbuser, p2, sizeof(set->dbuser));
                else if (!strcasecmp(p1, "DB_Pass")) strncpy(set->dbpass, p2, sizeof(set->dbpass));
-@@ -86,6 +87,7 @@ int write_rtg_config(char *file, config_t * set)
+@@ -87,6 +88,7 @@ int write_rtg_config(char *file, config_t * set)
          fprintf(fp, "SNMP_Ver\t%d\n", set->snmp_ver);
          fprintf(fp, "SNMP_Port\t%d\n", set->snmp_port);
          fprintf(fp, "DB_Host\t%s\n", set->dbhost);
@@ -16,7 +17,7 @@
          fprintf(fp, "DB_Database\t%s\n", set->dbdb);
          fprintf(fp, "DB_User\t%s\n", set->dbuser);
          fprintf(fp, "DB_Pass\t%s\n", set->dbpass);
-@@ -107,6 +109,7 @@ void config_defaults(config_t * set)
+@@ -108,6 +110,7 @@ void config_defaults(config_t * set)
     set->snmp_port = DEFAULT_SNMP_PORT;
     set->threads = DEFAULT_THREADS;
     strncpy(set->dbhost, DEFAULT_DB_HOST, sizeof(set->dbhost));
@@ -24,13 +25,3 @@
     strncpy(set->dbdb, DEFAULT_DB_DB, sizeof(set->dbhost));
     strncpy(set->dbuser, DEFAULT_DB_USER, sizeof(set->dbhost));
     strncpy(set->dbpass, DEFAULT_DB_PASS, sizeof(set->dbhost));
-@@ -114,8 +117,8 @@ void config_defaults(config_t * set)
-    set->withzeros = FALSE;
-    set->verbose = OFF; 
-    strncpy(config_paths[0], CONFIG_PATH_1, sizeof(config_paths[0]));
--   snprintf(config_paths[1], sizeof(config_paths[1]), "%s/etc/", RTG_HOME);
-    strncpy(config_paths[2], CONFIG_PATH_2, sizeof(config_paths[1]));
-+   snprintf(config_paths[1], sizeof(config_paths[1]), "%s/etc/", RTG_HOME);
-    return;
- }
- 

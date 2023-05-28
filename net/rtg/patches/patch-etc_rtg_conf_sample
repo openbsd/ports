@@ -1,7 +1,8 @@
---- etc/rtg.conf.orig	Tue Nov 22 18:05:14 2005
-+++ etc/rtg.conf	Tue Nov 22 18:06:16 2005
+Index: etc/rtg.conf.sample
+--- etc/rtg.conf.sample.orig
++++ etc/rtg.conf.sample
 @@ -8,6 +8,7 @@ OutOfRange	93750000000
- SNMP_Ver	1
+ SNMP_Ver	2
  SNMP_Port       161
  DB_Host	localhost
 +DB_Port	3306

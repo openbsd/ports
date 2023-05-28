@@ -2,7 +2,6 @@ bin/95.pl
 bin/report.pl
 @bin bin/rtgplot
 @bin bin/rtgpoll
-bin/rtgtargmkr.pl
 include/common.h
 include/rtg.h
 include/rtgplot.h
@@ -19,10 +18,11 @@ share/examples/rtg/etc/SNMP_util.pm
 @sample ${SYSCONFDIR}/rtg/SNMP_util.pm
 share/examples/rtg/etc/createdb
 @sample ${SYSCONFDIR}/rtg/createdb
-share/examples/rtg/etc/routers
+share/examples/rtg/etc/routers.sample
 @sample ${SYSCONFDIR}/rtg/routers
-share/examples/rtg/etc/rtg.conf
+share/examples/rtg/etc/rtg.conf.sample
 @sample ${SYSCONFDIR}/rtg/rtg.conf
+share/examples/rtg/etc/rtgtargmkr.pl
 share/examples/rtg/web/
 share/examples/rtg/web/95.php
 share/examples/rtg/web/common.php

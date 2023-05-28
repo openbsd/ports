@@ -1,32 +1,26 @@
-# if you are interested in fixing this, see FreeBSD ports - I will probably
-# remove it if there's no interest. -sthen
-BROKEN =	needs patches for -fno-common, newer PHP, newer perl
-
 COMMENT =		SNMP statistics monitoring system
 
-DISTNAME =		rtg-0.7.4
-REVISION =		14
+DISTNAME =		rtg-0.7.5
 CATEGORIES =		net
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=rtg/}
+MASTER_SITES =		ftp://ftpmirror.uk/freebsd-ports/rtg/
 
 HOMEPAGE =		http://rtg.sourceforge.net/
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c crypto fontconfig freetype gd iconv jpeg m mysqlclient_r
-WANTLIB += netsnmp png pthread tiff webp z
+WANTLIB += c crypto gd m netsnmp pthread mariadb
 
-LIB_DEPENDS =		converters/libiconv \
-			net/net-snmp \
+LIB_DEPENDS =		net/net-snmp \
 			databases/mariadb \
-			graphics/gd \
-			graphics/jpeg \
-			graphics/png
+			graphics/gd
 
+CONFIGURE_ARGS+=	--with-gd=${LOCALBASE} \
+			--with-mysql=${LOCALBASE} \
+			--with-snmp=${LOCALBASE}
 CONFIGURE_ENV =		LOCALBASE=${LOCALBASE} \
 			LDFLAGS=-L${X11BASE}/lib
 CONFIGURE_STYLE =	autoconf
-AUTOCONF_VERSION =	2.59
+AUTOCONF_VERSION =	2.69
 
 .include <bsd.port.mk>

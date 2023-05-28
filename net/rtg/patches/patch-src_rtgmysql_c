@@ -1,15 +1,21 @@
---- src/rtgmysql.c.orig	Wed May 21 21:20:38 2003
-+++ src/rtgmysql.c	Mon Jul  7 13:42:39 2008
-@@ -26,10 +26,10 @@ int db_insert(char *query, MYSQL * mysql)
- int rtg_dbconnect(char *database, MYSQL * mysql)
- {
+Index: src/rtgmysql.c
+--- src/rtgmysql.c.orig
++++ src/rtgmysql.c
+@@ -30,7 +30,7 @@ int rtg_dbconnect(char *database, MYSQL * mysql)
+     unsigned int	i;
+ 
      if (set.verbose >= LOW)
 -	fprintf(dfp, "Connecting to MySQL database '%s' on '%s'...", database, set.dbhost);
 +	fprintf(dfp, "Connecting to MySQL database '%s' on '%s' port '%d'...", database, set.dbhost, set.dbport);
+     mysql_library_init(0, NULL, NULL);
      mysql_init(mysql);
+     i = 5;
+@@ -38,7 +38,7 @@ int rtg_dbconnect(char *database, MYSQL * mysql)
+     i = 1;
+     mysql_options(mysql, MYSQL_OPT_RECONNECT, &i);
      if (!mysql_real_connect
 -     (mysql, set.dbhost, set.dbuser, set.dbpass, database, 0, NULL, 0)) {
 +     (mysql, set.dbhost, set.dbuser, set.dbpass, database, set.dbport, NULL, 0)) {
  	fprintf(dfp, "** Failed: %s\n", mysql_error(mysql));
- 	return (-1);
-     } else
+ 	mysql_close(mysql);
+ 	mysql_library_end();

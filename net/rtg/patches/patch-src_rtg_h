@@ -1,5 +1,6 @@
---- src/rtg.h.orig	Thu Sep 25 17:56:04 2003
-+++ src/rtg.h	Thu Nov 24 11:58:31 2005
+Index: src/rtg.h
+--- src/rtg.h.orig
++++ src/rtg.h
 @@ -26,8 +26,8 @@
  /* Define CONFIG_PATHS places to search for the rtg.conf file.  Note
     that RTG_HOME, as determined during autoconf is one path */
@@ -19,7 +20,7 @@
  #define DEFAULT_DB_DB "rtg"
  #define DEFAULT_DB_USER "snmp"
  #define DEFAULT_DB_PASS "rtgdefault"
-@@ -78,6 +79,7 @@ typedef struct config_struct {
+@@ -76,6 +77,7 @@ typedef struct config_struct {
      unsigned int interval;
      unsigned long long out_of_range;
      char dbhost[80];

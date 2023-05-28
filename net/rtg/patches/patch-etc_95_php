@@ -1,17 +1,12 @@
---- etc/95.php.orig	Thu Nov 24 12:10:34 2005
-+++ etc/95.php	Thu Nov 24 12:10:54 2005
-@@ -4,12 +4,12 @@
-   print "<HTML>\n<!-- RTG Version $VERSION -->\n<HEAD>\n";
+Index: etc/95.php
+--- etc/95.php.orig
++++ etc/95.php
+@@ -6,7 +6,7 @@ echo "<!-- RTG Version $VERSION -->\n";
+ echo "<head>\n";
  
-   /* Connect to RTG MySQL Database */
--  $dbc=@mysql_connect ($host, $user, $pass) or
-+  $dbc=@mysql_connect ("$host:$port", $user, $pass) or
-   $dbc=@mysql_connect ("$host:/var/lib/mysql/mysql.sock", $user, $pass) or 
-      die ("MySQL Connection Failed, Check Configuration.");
-   mysql_select_db($db,$dbc);
+ /* Connect to RTG MySQL Database */
+-$dbc = @mysqli_connect($host, $user, $pass, $db) or 
++$dbc = @mysqli_connect($host, $user, $pass, $db, $port) or 
+ 	die ("MySQL Connection Failed, Check Configuration.");
  
--  if ($PHP_SELF == "") {
-+  if (!$PHP_SELF) {
-     $PHP_SELF = "95.php";
-     $customer = $_GET['customer'];
-     $syear = $_GET['syear'];
+ 	if (!isset($PHP_SELF) || ($PHP_SELF == ""))
