@@ -8,6 +8,7 @@
      SUBDIR += apertium-separable
      SUBDIR += apertium-streamparser
      SUBDIR += arabica
+     SUBDIR += argparse-manpage
      SUBDIR += asciidoc
      SUBDIR += asciidoctor
      SUBDIR += asciinema
