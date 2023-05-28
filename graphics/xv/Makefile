@@ -1,23 +1,25 @@
 COMMENT=	X11 image display and modification tool
 
-GH_ACCOUNT=	jasper-software
-GH_PROJECT=	xv
-GH_TAGNAME=	v4.0.0-alpha7
-PKGNAME=	${DISTNAME:S/-alpha/alpha/}
+V=		4.1.1
+DISTNAME=	xv-3.10a-js-$V
+PKGNAME=	xv-$V
 
 CATEGORIES=	graphics x11
 
-HOMEPAGE=	http://www.trilon.com/xv/index.html
+# http://www.trilon.com/xv/index.html
+HOMEPAGE=	https://github.com/jasper-software/xv
+MASTER_SITES=	https://github.com/jasper-software/xv/releases/download/v$V/
 
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ICE SM X11 Xt c jasper jpeg m png tiff z
+WANTLIB += ICE SM X11 Xt c jasper jpeg m png tiff webp z
 
 MODULES=	devel/cmake
 NO_TEST=	Yes
 
 LIB_DEPENDS=	graphics/jpeg \
 		graphics/jasper \
+		graphics/libwebp \
 		graphics/tiff \
 		graphics/png
 
