@@ -13,7 +13,7 @@ MAINTAINER =		Paco Esteban <paco@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_PY =		Yes
+MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =		devel/glib2>=2.60.0 \
