@@ -1,0 +1,17 @@
+configure: quote the assignments for run-compiler
+https://github.com/curl/curl/commit/471dab2da0c6b2b08ca2b96a1da0a4825e2c3c36
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -193,8 +193,8 @@ dnl something different but only have that affect the 
+ dnl of the compile, not change the libraries for the compiler itself.
+ dnl
+ compilersh="run-compiler"
+-echo "CC=$CC" > $compilersh
+-echo "LD_LIBRARY_PATH=$LD_LIBRARY_PATH" >> $compilersh
++echo "CC=\"$CC\"" > $compilersh
++echo "LD_LIBRARY_PATH=\"$LD_LIBRARY_PATH\"" >> $compilersh
+ echo 'exec $CC $@' >> $compilersh
+ 
+ dnl **********************************************************************
