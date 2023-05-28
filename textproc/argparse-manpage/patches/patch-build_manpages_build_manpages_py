@@ -1,0 +1,12 @@
+Index: build_manpages/build_manpages.py
+--- build_manpages/build_manpages.py.orig
++++ build_manpages/build_manpages.py
+@@ -173,7 +173,7 @@ def get_install_cmd(command=install):
+ 
+             data = parse_manpages_spec(spec)
+ 
+-            mandir = os.path.join(self.install_data, 'share/man/man1')
++            mandir = os.path.join(self.install_data, 'man/man1')
+             if not os.path.exists(mandir):
+                 os.makedirs(mandir)
+             for key, _ in data.items():

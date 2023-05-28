@@ -1,0 +1,12 @@
+Index: tests/test_examples.py
+--- tests/test_examples.py.orig
++++ tests/test_examples.py
+@@ -17,7 +17,7 @@ from argparse_testlib import skip_on_python_older_than
+ 
+ def _mandir(prefix, num=1):
+     data = sysconfig.get_path('data', vars={'base': prefix})
+-    return os.path.join(data, 'share/man/man' + str(num))
++    return os.path.join(data, 'man/man' + str(num))
+ 
+ 
+ @contextmanager
