@@ -9,8 +9,6 @@ share/icons/hicolor/48x48/apps/viewnior.png
 share/icons/hicolor/scalable/apps/viewnior.svg
 share/locale/ar/LC_MESSAGES/viewnior.mo
 share/locale/bg/LC_MESSAGES/viewnior.mo
-share/locale/bs/
-share/locale/bs/LC_MESSAGES/
 share/locale/bs/LC_MESSAGES/viewnior.mo
 share/locale/ca/LC_MESSAGES/viewnior.mo
 share/locale/ca@valencia/LC_MESSAGES/viewnior.mo
@@ -18,6 +16,7 @@ share/locale/cs/LC_MESSAGES/viewnior.mo
 share/locale/da/LC_MESSAGES/viewnior.mo
 share/locale/de/LC_MESSAGES/viewnior.mo
 share/locale/el/LC_MESSAGES/viewnior.mo
+share/locale/en_GB/LC_MESSAGES/viewnior.mo
 share/locale/es/LC_MESSAGES/viewnior.mo
 share/locale/fi/LC_MESSAGES/viewnior.mo
 share/locale/fr/LC_MESSAGES/viewnior.mo
@@ -27,6 +26,9 @@ share/locale/hu/LC_MESSAGES/viewnior.mo
 share/locale/it/LC_MESSAGES/viewnior.mo
 share/locale/ja/LC_MESSAGES/viewnior.mo
 share/locale/lt/LC_MESSAGES/viewnior.mo
+share/locale/nb_NO/
+share/locale/nb_NO/LC_MESSAGES/
+share/locale/nb_NO/LC_MESSAGES/viewnior.mo
 share/locale/nl/LC_MESSAGES/viewnior.mo
 share/locale/oc/LC_MESSAGES/viewnior.mo
 share/locale/pl/LC_MESSAGES/viewnior.mo
@@ -39,6 +41,9 @@ share/locale/sv/LC_MESSAGES/viewnior.mo
 share/locale/tr/LC_MESSAGES/viewnior.mo
 share/locale/uk/LC_MESSAGES/viewnior.mo
 share/locale/zh_CN/LC_MESSAGES/viewnior.mo
+share/locale/zh_TW/LC_MESSAGES/viewnior.mo
+share/metainfo/
+share/metainfo/viewnior.metainfo.xml
 share/viewnior/
 share/viewnior/pixmaps/
 share/viewnior/pixmaps/object-flip-horizontal.png
