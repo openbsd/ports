@@ -61,6 +61,7 @@
      SUBDIR += py-pikepdf,python3
      SUBDIR += py-pylatex,python3
      SUBDIR += py-pydyf,python3
+     SUBDIR += py-pypdf,python3
      SUBDIR += py-relatorio,python3
      SUBDIR += py-reportlab
      SUBDIR += py-reportlab,python3
