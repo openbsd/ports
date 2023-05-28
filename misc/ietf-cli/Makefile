@@ -2,10 +2,7 @@ COMMENT=	command-line tools to work with RFCs and Internet Drafts
 
 GH_ACCOUNT=	paulehoffman
 GH_PROJECT=	ietf-cli
-#GH_TAGNAME=	1.23
-# "Didn't check syntax" fix, parent commit is tagged 1.23
-GH_COMMIT=	3d61e38094fccb92f0e197932b49dcdfab5db228
-DISTNAME=	ietf-cli-1.23
+GH_TAGNAME=	1.24
 
 CATEGORIES=	misc net books
 
