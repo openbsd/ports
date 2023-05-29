@@ -1,7 +1,7 @@
 COMMENT-main=	Civilization clone for X11; multiplayer; game server
 COMMENT-client=	Freeciv client
 COMMENT-share=	shared data files for Freeciv
-REVISION-client=0
+REVISION-client=1
 REVISION-share=	0
 
 VERSION=	3.0.6
@@ -43,6 +43,11 @@ LIB_DEPENDS-main=	archivers/xz \
 			net/curl \
 			textproc/icu4c
 LIB_DEPENDS-client=	archivers/xz \
+			audio/flac \
+			audio/libmikmod \
+			audio/libogg \
+			audio/libvorbis \
+			audio/mpg123 \
 			databases/sqlite3 \
 			devel/sdl2-mixer \
 			net/curl \
