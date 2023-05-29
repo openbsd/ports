@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: State.pm,v 1.33 2023/05/06 05:20:31 espie Exp $
+# $OpenBSD: State.pm,v 1.34 2023/05/29 09:04:37 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -152,7 +152,7 @@ sub handle_options($state)
 	DPB::Core->reap;
 	$state->sizer->parse_size_file;
 	DPB::Limiter->setup($state->logger);
-	$state->{concurrent} = $state->{logger}->append("concurrent");
+	$state->{concurrent} = $state->{logger}->append("cpu-concurrency");
 	DPB::Core->reap;
 }
 
