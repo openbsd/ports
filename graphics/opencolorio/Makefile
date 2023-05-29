@@ -1,4 +1,4 @@
-BROKEN-sparc64 = NumberUtils.h:143:17: error: no member named 'strtoll_l' in the global namespace
+ONLY_FOR_ARCHS =	${CLANG_ARCHS}
 
 COMMENT =		color management library
 
@@ -22,7 +22,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Imath-3_1 expat m pystring yaml-cpp
 
-COMPILER =		base-clang ports-gcc
+COMPILER =		base-clang
 
 MODULES =		devel/cmake \
 			lang/python
