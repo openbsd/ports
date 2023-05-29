@@ -1,7 +1,10 @@
 @bin bin/play2mus
 @bin bin/play2wave
 include/SDL2/SDL_mixer.h
-lib/libSDL2_mixer.a
+lib/cmake/SDL2_mixer/
+lib/cmake/SDL2_mixer/sdl2_mixer-config-version.cmake
+lib/cmake/SDL2_mixer/sdl2_mixer-config.cmake
+@static-lib lib/libSDL2_mixer.a
 lib/libSDL2_mixer.la
 @lib lib/libSDL2_mixer.so.${LIBSDL2_mixer_VERSION}
 lib/pkgconfig/SDL2_mixer.pc

@@ -1,11 +1,10 @@
-V =		2.0.5
+V =		2.6.3
 COMMENT =	SDL2 image library
 DISTNAME =	SDL2_image-${V}
 PKGNAME =	sdl2-image-${V}
 CATEGORIES =	devel graphics
-REVISION =	0
 
-SHARED_LIBS +=	SDL2_image		0.1 # 0.4
+SHARED_LIBS +=	SDL2_image		1.0 # 2.6.3
 
 HOMEPAGE =	https://www.libsdl.org/projects/SDL_image/
 
@@ -14,25 +13,27 @@ MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 # zlib
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += SDL2 jpeg m png pthread samplerate sndio tiff usbhid webp z
-WANTLIB += X11 Xcursor Xext Xfixes Xi Xinerama Xrandr Xrender Xss Xxf86vm
-WANTLIB += lzma xcb zstd
+WANTLIB += ${COMPILER_LIBCXX} SDL2 X11 Xcursor Xext Xfixes Xi Xrandr Xrender
+WANTLIB += Xss aom avif brotlicommon brotlidec brotlienc dav1d hwy jpeg jxl
+WANTLIB += lcms2 lzma m pthread samplerate sndio tiff usbhid webp xcb z zstd
 
 MASTER_SITES =	https://www.libsdl.org/projects/SDL_image/release/
 
-LIB_DEPENDS =	devel/sdl2>=2.0.8 \
-		graphics/jpeg \
+COMPILER =	base-clang ports-gcc
+
+LIB_DEPENDS =	archivers/brotli \
+		devel/highway \
+		devel/sdl2 \
+		graphics/lcms2 \
+		graphics/libavif \
+		graphics/libjxl \
 		graphics/libwebp \
-		graphics/png \
 		graphics/tiff
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	--disable-jpg-shared \
-			--disable-png-shared \
+CONFIGURE_ARGS +=	--disable-avif-shared \
 			--disable-tif-shared \
 			--disable-webp-shared
-CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib" \
-			OBJC="${CC}"
+CONFIGURE_ENV +=	OBJC="${CC}"
 
 .include <bsd.port.mk>

@@ -1,4 +1,7 @@
 include/SDL2/SDL_ttf.h
+lib/cmake/SDL2_ttf/
+lib/cmake/SDL2_ttf/sdl2_ttf-config-version.cmake
+lib/cmake/SDL2_ttf/sdl2_ttf-config.cmake
 @static-lib lib/libSDL2_ttf.a
 lib/libSDL2_ttf.la
 @lib lib/libSDL2_ttf.so.${LIBSDL2_ttf_VERSION}

@@ -1,6 +1,8 @@
-include/SDL2/
 include/SDL2/SDL_net.h
-lib/libSDL2_net.a
+lib/cmake/SDL2_net/
+lib/cmake/SDL2_net/sdl2_net-config-version.cmake
+lib/cmake/SDL2_net/sdl2_net-config.cmake
+@static-lib lib/libSDL2_net.a
 lib/libSDL2_net.la
 @lib lib/libSDL2_net.so.${LIBSDL2_net_VERSION}
 lib/pkgconfig/SDL2_net.pc
