@@ -1,4 +1,4 @@
-# $OpenBSD: ReverseSubst.pm,v 1.22 2023/05/16 13:59:17 espie Exp $
+# $OpenBSD: ReverseSubst.pm,v 1.23 2023/05/29 19:05:33 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -254,8 +254,8 @@ sub never_add($self, $k)
 	}
 }
 
-# this can't delegate if reversesubst is to work properly
-sub parse_option
+# this can't use the "magic delegation" if reversesubt is to work properly
+sub parse_option	# forwarder
 {
 	&OpenBSD::Subst::parse_option;
 }

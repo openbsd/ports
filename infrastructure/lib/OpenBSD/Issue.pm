@@ -1,4 +1,4 @@
-# $OpenBSD: Issue.pm,v 1.5 2023/05/14 09:00:33 espie Exp $
+# $OpenBSD: Issue.pm,v 1.6 2023/05/29 19:05:33 espie Exp $
 # Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -62,7 +62,7 @@ sub message($self)
 	return "Missing: ". $self->stringize. " (system lib)";
 }
 
-sub record_wantlib
+sub record_wantlib	# forwarder
 {
 	&OpenBSD::Issue::do_record_wantlib;
 }
@@ -73,7 +73,7 @@ sub message($self)
 	return "Missing: ". $self->stringize;
 }
 
-sub record_wantlib
+sub record_wantlib	# forwarder
 {
 	&OpenBSD::Issue::do_record_wantlib;
 }
@@ -85,7 +85,7 @@ sub message($self)
 	return "Missing: ". $self->stringize;
 }
 
-sub record_wantlib
+sub record_wantlib	# forwarder
 {
 	&OpenBSD::Issue::do_record_wantlib;
 }
