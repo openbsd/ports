@@ -3,6 +3,10 @@ challenge types out of the box or use custom challenge solvers.
 
 Features:
 - ACME v2 RFC 8555
+  - Support RFC 8737: TLS Application-Layer Protocol Negotiation (ALPN)
+    Challenge Extension
+  - Support RFC 8738: certificates for IP addresses
+  - Support draft-ietf-acme-ari-01: Renewal Information (ARI) Extension
 - Register with CA
 - Obtain certificates, both from scratch or with an existing CSR
 - Renew certificates
@@ -12,6 +16,7 @@ Features:
   - DNS (dns-01)
   - TLS (tls-alpn-01)
 - SAN certificate support
+- CNAME support by default
 - Comes with multiple optional DNS providers
 - Custom challenge solvers
 - Certificate bundling
