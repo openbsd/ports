@@ -2,7 +2,7 @@ ONLY_FOR_ARCHS =	${CLANG_ARCHS}
 
 COMMENT =		threading building blocks
 
-V =			2020.3
+V =			2020.3.3
 GH_ACCOUNT =		oneapi-src
 GH_PROJECT =		oneTBB
 GH_TAGNAME =		v${V}
