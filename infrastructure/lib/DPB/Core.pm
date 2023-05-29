@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.103 2023/05/06 05:20:31 espie Exp $
+# $OpenBSD: Core.pm,v 1.104 2023/05/29 19:07:02 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -139,7 +139,7 @@ sub lockname($self)
 	return "host:".$self->hostname;
 }
 
-sub logname
+sub logname	# forwarder
 {
 	&hostname;
 }
@@ -309,7 +309,9 @@ sub debug_dump($self)
 	return $self->hostname;
 }
 
-OpenBSD::Handler->register( sub { __PACKAGE__->cleanup });
+# TODO for now handlers *may* be called with a signal or nothing
+# I'm revamping it so they always get either a signal OR undef
+OpenBSD::Handler->register( sub(@) { __PACKAGE__->cleanup });
 
 # this is a core that can run jobs
 package DPB::Core::WithJobs;
@@ -854,7 +856,7 @@ our @ISA = qw(DPB::Core::Special);
 sub start($class, $reporter)
 {
 	my $core = $class->new(DPB::Host->new('localhost'));
-	$core->start_job(DPB::Job::Infinite->new(DPB::Task::Fork->new(sub {
+	$core->start_job(DPB::Job::Infinite->new(DPB::Task::Fork->new(sub($) {
 		sleep($reporter->timeout);
 		exit(0);
 		}), 'clock'));
