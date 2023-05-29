@@ -4,7 +4,7 @@ COMMENT =		P2P payment system
 
 GH_ACCOUNT =		bitcoin
 GH_PROJECT =		bitcoin
-GH_TAGNAME =		v24.1
+GH_TAGNAME =		v25.0
 
 SHARED_LIBS +=  bitcoinconsensus          6.0 # 0.0
 SHARED_LIBS +=  secp256k1                 0.1 # 0.0
@@ -17,7 +17,6 @@ MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes
-
 
 BUILD_DEPENDS =		devel/boost
 
@@ -51,10 +50,23 @@ FLAVORS =		no_x11
 FLAVOR ?=
 
 .if ${FLAVOR:Mno_x11}
+
+WANTLIB += ${COMPILER_LIBCXX} c db_cxx event_core event_extra
+WANTLIB += event_pthreads m sodium sqlite3 z zmq
+
 CONFIGURE_ARGS +=	--without-gui \
 			--with-miniupnpc=no
 .else
 
+WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5DBus Qt5Gui Qt5Network
+WANTLIB += Qt5Widgets X11 X11-xcb Xau Xdmcp Xext Xfixes Xxf86vm
+WANTLIB += c crypto db_cxx dbus-1 double-conversion drm event_core
+WANTLIB += event_extra event_pthreads execinfo expat freetype
+WANTLIB += glapi glib-2.0 graphite2 gthread-2.0 harfbuzz iconv
+WANTLIB += icudata icui18n icuuc intl m miniupnpc pcre2-16 pcre2-8
+WANTLIB += png qrencode sodium sqlite3 ssl xcb xcb-dri2 xcb-dri3
+WANTLIB += xcb-glx xcb-present xcb-randr xcb-shm xcb-sync xcb-xfixes
+WANTLIB += xshmfence z zmq zstd
 
 MODULES +=		x11/qt5
 
@@ -80,7 +92,7 @@ post-install:
 	${INSTALL_DATA} ${WRKDIST}/share/examples/bitcoin.conf \
 		${PREFIX}/share/examples/bitcoin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/bash-completion/completions/bitcoin
-	${INSTALL_DATA} ${WRKDIST}/contrib/*.bash-completion \
+	${INSTALL_DATA} ${WRKDIST}/contrib/completions/bash/*.bash-completion \
 		${PREFIX}/share/bash-completion/completions/bitcoin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/bitcoin
 	${INSTALL_DATA} ${WRKDIST}/doc/{assets-attribution.md,benchmarking.md} \
