@@ -4,6 +4,7 @@ BROKEN-hppa =	missing atomic ops
 COMMENT=	fantasy turn-based strategy game
 
 DISTNAME=	wesnoth-1.16.9
+REVISION=	0
 
 CATEGORIES=	games x11
 
@@ -32,7 +33,8 @@ MODULES=	devel/cmake
 COMPILER = 	base-clang ports-gcc
 
 BUILD_DEPENDS=	devel/gettext,-tools
-LIB_DEPENDS=	devel/boost,-md \
+LIB_DEPENDS=	audio/libvorbis \
+		devel/boost,-md \
 		devel/sdl2-image \
 		devel/sdl2-mixer \
 		devel/pango \
