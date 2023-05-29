@@ -33,7 +33,6 @@
      SUBDIR += libmediainfo
      SUBDIR += libmms
      SUBDIR += libmp4v2
-     SUBDIR += libquicktime
      SUBDIR += libtheora
      SUBDIR += libtheorafile
      SUBDIR += libtheoraplay
