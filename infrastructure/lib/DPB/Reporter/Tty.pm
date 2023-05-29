@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Tty.pm,v 1.15 2023/05/22 06:41:06 espie Exp $
+# $OpenBSD: Tty.pm,v 1.16 2023/05/29 19:07:51 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -33,8 +33,9 @@ sub handle_window($self)
 sub set_sig_handlers($self)
 {
 	$self->SUPER::set_sig_handlers;
+	# TODO clean up register interface
 	OpenBSD::Handler->register(
-	    sub {
+	    sub(@) {
 		$self->reset_cursor; 
 	    });
 }
