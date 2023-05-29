@@ -2,32 +2,21 @@
 @newuser _lighttpd:585:_lighttpd::lighttpd Account:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/lighttpd
 lib/lighttpd/
-@so lib/lighttpd/mod_access.so
 @so lib/lighttpd/mod_accesslog.so
 @so lib/lighttpd/mod_ajp13.so
-@so lib/lighttpd/mod_alias.so
 @so lib/lighttpd/mod_auth.so
 @so lib/lighttpd/mod_authn_file.so
 @so lib/lighttpd/mod_cgi.so
 @so lib/lighttpd/mod_deflate.so
 @so lib/lighttpd/mod_dirlisting.so
-@so lib/lighttpd/mod_evhost.so
-@so lib/lighttpd/mod_expire.so
 @so lib/lighttpd/mod_extforward.so
-@so lib/lighttpd/mod_fastcgi.so
-@so lib/lighttpd/mod_indexfile.so
+@so lib/lighttpd/mod_h2.so
 @so lib/lighttpd/mod_magnet.so
 @so lib/lighttpd/mod_openssl.so
 @so lib/lighttpd/mod_proxy.so
-@so lib/lighttpd/mod_redirect.so
-@so lib/lighttpd/mod_rewrite.so
 @so lib/lighttpd/mod_rrdtool.so
-@so lib/lighttpd/mod_scgi.so
-@so lib/lighttpd/mod_setenv.so
-@so lib/lighttpd/mod_simple_vhost.so
 @so lib/lighttpd/mod_sockproxy.so
 @so lib/lighttpd/mod_ssi.so
-@so lib/lighttpd/mod_staticfile.so
 @so lib/lighttpd/mod_status.so
 @so lib/lighttpd/mod_userdir.so
 @so lib/lighttpd/mod_vhostdb.so
