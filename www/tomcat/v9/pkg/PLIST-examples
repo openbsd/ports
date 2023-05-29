@@ -222,6 +222,7 @@ webapps/docs/api/org/apache/catalina/authenticator/AuthenticatorBase.html
 webapps/docs/api/org/apache/catalina/authenticator/BasicAuthenticator.BasicCredentials.html
 webapps/docs/api/org/apache/catalina/authenticator/BasicAuthenticator.html
 webapps/docs/api/org/apache/catalina/authenticator/Constants.html
+webapps/docs/api/org/apache/catalina/authenticator/DigestAuthenticator.AuthDigest.html
 webapps/docs/api/org/apache/catalina/authenticator/DigestAuthenticator.DigestInfo.html
 webapps/docs/api/org/apache/catalina/authenticator/DigestAuthenticator.NonceInfo.html
 webapps/docs/api/org/apache/catalina/authenticator/DigestAuthenticator.html
@@ -946,6 +947,8 @@ webapps/docs/api/org/apache/catalina/valves/ExtendedAccessLogValve.TimeElement.h
 webapps/docs/api/org/apache/catalina/valves/ExtendedAccessLogValve.html
 webapps/docs/api/org/apache/catalina/valves/HealthCheckValve.html
 webapps/docs/api/org/apache/catalina/valves/JDBCAccessLogValve.html
+webapps/docs/api/org/apache/catalina/valves/JsonAccessLogValve.CharElement.html
+webapps/docs/api/org/apache/catalina/valves/JsonAccessLogValve.html
 webapps/docs/api/org/apache/catalina/valves/JsonErrorReportValve.html
 webapps/docs/api/org/apache/catalina/valves/LoadBalancerDrainingValve.html
 webapps/docs/api/org/apache/catalina/valves/PersistentValve.html
