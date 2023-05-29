@@ -1,9 +1,0 @@
---- SDL2_image.pc.in.orig	Sat Aug 10 13:38:36 2013
-+++ SDL2_image.pc.in	Fri Nov 15 18:57:27 2013
-@@ -8,5 +8,6 @@ Description: image loading library for Simple DirectMe
- Version: @VERSION@
- Requires: sdl2 >= @SDL_VERSION@
- Libs: -L${libdir} -lSDL2_image
-+Libs.private: @IMG_LIBS@
- Cflags: -I${includedir}/SDL2
- 
