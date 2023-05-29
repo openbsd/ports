@@ -48,9 +48,11 @@ include/musikcube/musikcore/sdk/IVisualizer.h
 include/musikcube/musikcore/sdk/ReplayGain.h
 include/musikcube/musikcore/sdk/String.h
 include/musikcube/musikcore/sdk/constants.h
+include/musikcube/musikcore/sdk/version.h
 share/musikcube/
 @so share/musikcube/libmusikcore.so
 share/musikcube/locales/
+share/musikcube/locales/cs_CZ.json
 share/musikcube/locales/de_DE.json
 share/musikcube/locales/en_US.json
 share/musikcube/locales/es_ES.json
@@ -58,12 +60,12 @@ share/musikcube/locales/fr_FR.json
 share/musikcube/locales/it_IT.json
 share/musikcube/locales/ja_JP.json
 share/musikcube/locales/ru_RU.json
+share/musikcube/locales/uk_UA.json
 share/musikcube/locales/zh_CN.json
 @bin share/musikcube/musikcube
 @bin share/musikcube/musikcubed
 share/musikcube/plugins/
 @so share/musikcube/plugins/libffmpegdecoder.so
-@so share/musikcube/plugins/libgmedecoder.so
 @so share/musikcube/plugins/libhttpdatastream.so
 @so share/musikcube/plugins/libnullout.so
 @so share/musikcube/plugins/libopenmptdecoder.so

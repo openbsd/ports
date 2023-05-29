@@ -1,18 +1,24 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -97,9 +97,11 @@ add_dependencies(musikcubed musikcore)
+@@ -122,12 +122,16 @@ add_dependencies(musikcubed musikcore)
+ # tag readers
  add_plugin("src/plugins/taglib_plugin" "taglibreader")
  # outputs
- add_plugin("src/plugins/nullout" "nullout")
 -add_plugin("src/plugins/alsaout" "alsaout")
--add_plugin("src/plugins/pulseout" "pulseout")
--add_plugin("src/plugins/pipewireout" "pipewireout")
 +if (NOT CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
 +  add_plugin("src/plugins/alsaout" "alsaout")
-+  add_plugin("src/plugins/pulseout" "pulseout")
++endif()
+ add_plugin("src/plugins/coreaudioout" "coreaudioout")
+ add_plugin("src/plugins/nullout" "nullout")
+-add_plugin("src/plugins/pipewireout" "pipewireout")
+-add_plugin("src/plugins/portaudioout" "portaudioout")
+-add_plugin("src/plugins/pulseout" "pulseout")
++if (NOT CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
 +  add_plugin("src/plugins/pipewireout" "pipewireout")
++  add_plugin("src/plugins/portaudioout" "portaudioout")
++  add_plugin("src/plugins/pulseout" "pulseout")
 +endif()
  add_plugin("src/plugins/sndioout" "sndioout")
- add_plugin("src/plugins/coreaudioout" "coreaudioout")
  # remotes
+ add_plugin("src/plugins/macosmediakeys" "macosmediakeys")
