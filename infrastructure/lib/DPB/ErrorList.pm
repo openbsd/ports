@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: ErrorList.pm,v 1.10 2023/05/06 05:20:31 espie Exp $
+# $OpenBSD: ErrorList.pm,v 1.11 2023/05/29 19:04:50 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -93,7 +93,7 @@ sub reprepare($list, $v, $engine)
 # identical path is building.
 package DPB::LockList;
 our @ISA = (qw(DPB::ErrorList::Base));
-sub unlock_early
+sub unlock_early	# forwarder
 {
 	&DPB::ErrorList::unlock_early;
 }
@@ -120,7 +120,7 @@ sub stringize($list)
 package DPB::NFSList;
 our @ISA = (qw(DPB::ErrorList::Base));
 
-sub reprepare
+sub reprepare	# forwarder
 {
 	&DPB::ErrorList::reprepare;
 }

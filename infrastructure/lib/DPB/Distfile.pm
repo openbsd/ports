@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distfile.pm,v 1.27 2023/05/08 11:19:15 espie Exp $
+# $OpenBSD: Distfile.pm,v 1.28 2023/05/29 19:04:50 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -151,7 +151,7 @@ sub lockname($self)
 	return $self->{name}.".dist";
 }
 
-sub simple_lockname
+sub simple_lockname	# forwarder
 {
 	&lockname;
 }
