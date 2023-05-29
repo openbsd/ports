@@ -1,13 +1,12 @@
 COMMENT =	cross-platform 3D audio API
 
-V =		1.22.2
+V =		1.23.1
 DISTNAME =	openal-soft-$V
 PKGNAME =	openal-$V
-REVISION =	1
 EPOCH =		0
 CATEGORIES =	audio
 
-SHARED_LIBS =	openal	4.2
+SHARED_LIBS =	openal	5.0
 
 HOMEPAGE =	https://openal-soft.org/
 
@@ -46,7 +45,7 @@ CONFIGURE_ARGS +=-DALSOFT_CPUEXT_NEON=Off
 
 MODULES =	devel/cmake
 
-COMPILER =	base-clang ports-clang ports-gcc
+COMPILER =	base-clang ports-gcc
 
 NO_TEST =	Yes
 

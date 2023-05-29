@@ -23,6 +23,7 @@ share/openal/hrtf/
 share/openal/hrtf/Default HRTF.mhr
 share/openal/presets/
 share/openal/presets/3D7.1.ambdec
+share/openal/presets/hex-quad.ambdec
 share/openal/presets/hexagon.ambdec
 share/openal/presets/itu5.1-nocenter.ambdec
 share/openal/presets/itu5.1.ambdec
