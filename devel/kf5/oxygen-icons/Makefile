@@ -1,7 +1,6 @@
 COMMENT =	KDE Oxygen-style icon theme
 DISTNAME =	oxygen-icons5-${VERSION}
 PKGNAME =	oxygen-icons-${VERSION}
-REVISION =	0
 
 WANTLIB- =
 

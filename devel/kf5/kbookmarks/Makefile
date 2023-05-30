@@ -1,7 +1,7 @@
 COMMENT =		XBEL bookmarks format support for KDE
 DISTNAME =		kbookmarks-${VERSION}
 
-SHARED_LIBS =		KF5Bookmarks		5.1
+SHARED_LIBS =		KF5Bookmarks		6.0
 
 BUILD_DEPENDS =		devel/gettext,-tools
 
