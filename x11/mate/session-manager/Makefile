@@ -1,5 +1,4 @@
 COMMENT=		MATE session manager
-REVISION=		1
 
 MATE_PROJECT=		mate-session-manager
 

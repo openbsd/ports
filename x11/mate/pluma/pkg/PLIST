@@ -949,6 +949,9 @@ share/locale/el/LC_MESSAGES/pluma.mo
 share/locale/en_AU/LC_MESSAGES/pluma.mo
 share/locale/en_CA/LC_MESSAGES/pluma.mo
 share/locale/en_GB/LC_MESSAGES/pluma.mo
+share/locale/en_US/
+share/locale/en_US/LC_MESSAGES/
+share/locale/en_US/LC_MESSAGES/pluma.mo
 share/locale/eo/LC_MESSAGES/pluma.mo
 share/locale/es/LC_MESSAGES/pluma.mo
 share/locale/es_AR/
@@ -982,8 +985,6 @@ share/locale/hu/LC_MESSAGES/pluma.mo
 share/locale/hy/LC_MESSAGES/pluma.mo
 share/locale/ia/LC_MESSAGES/pluma.mo
 share/locale/id/LC_MESSAGES/pluma.mo
-share/locale/ie/
-share/locale/ie/LC_MESSAGES/
 share/locale/ie/LC_MESSAGES/pluma.mo
 share/locale/ig/
 share/locale/ig/LC_MESSAGES/

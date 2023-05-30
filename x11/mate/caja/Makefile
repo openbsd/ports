@@ -4,7 +4,6 @@ REVISION=		0
 SHARED_LIBS +=  caja-extension            5.0 # 5.0
 
 MATE_PROJECT=		caja
-MATE_VERSION=		1.26.1
 
 CATEGORIES=		x11
 

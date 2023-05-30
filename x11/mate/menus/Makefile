@@ -1,5 +1,4 @@
 COMMENT=		implementation of the FreeDesktop menu spec for MATE
-REVISION=		0
 
 SHARED_LIBS +=  mate-menu                 6.9 # 6.9
 

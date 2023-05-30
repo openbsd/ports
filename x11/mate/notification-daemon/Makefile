@@ -1,5 +1,4 @@
 COMMENT=		MATE notification daemon
-REVISION=		2
 
 MATE_PROJECT=		mate-notification-daemon
 

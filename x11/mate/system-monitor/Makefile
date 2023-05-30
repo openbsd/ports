@@ -2,6 +2,7 @@ COMMENT=		MATE system monitor
 REVISION=		1
 
 MATE_PROJECT=		mate-system-monitor
+MATE_VERSION=		1.26.0
 
 CATEGORIES=		sysutils
 

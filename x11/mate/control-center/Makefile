@@ -4,7 +4,6 @@ SHARED_LIBS +=  mate-slab                 0.0 # 0.0
 SHARED_LIBS +=  mate-window-settings      1.0 # 1.0
 
 MATE_PROJECT=		mate-control-center
-REVISION=		4
 
 CATEGORIES=		x11
 

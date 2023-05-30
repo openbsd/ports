@@ -1,5 +1,4 @@
 COMMENT=		MATE keyboard configuration library
-REVISION=		1
 
 MATE_PROJECT=		libmatekbd
 
