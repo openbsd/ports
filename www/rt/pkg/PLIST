@@ -14,6 +14,7 @@ libdata/perl5/site_perl/RT/Action/AddPriority.pm
 libdata/perl5/site_perl/RT/Action/AutoOpen.pm
 libdata/perl5/site_perl/RT/Action/AutoOpenInactive.pm
 libdata/perl5/site_perl/RT/Action/Autoreply.pm
+libdata/perl5/site_perl/RT/Action/ClearCustomFieldValues.pm
 libdata/perl5/site_perl/RT/Action/CreateTickets.pm
 libdata/perl5/site_perl/RT/Action/EscalatePriority.pm
 libdata/perl5/site_perl/RT/Action/ExtractSubjectTag.pm
@@ -174,7 +175,9 @@ libdata/perl5/site_perl/RT/Interface/Web/QueryBuilder/
 libdata/perl5/site_perl/RT/Interface/Web/QueryBuilder.pm
 libdata/perl5/site_perl/RT/Interface/Web/QueryBuilder/Tree.pm
 libdata/perl5/site_perl/RT/Interface/Web/Request.pm
+libdata/perl5/site_perl/RT/Interface/Web/Scrubber/
 libdata/perl5/site_perl/RT/Interface/Web/Scrubber.pm
+libdata/perl5/site_perl/RT/Interface/Web/Scrubber/Permissive.pm
 libdata/perl5/site_perl/RT/Interface/Web/Session.pm
 libdata/perl5/site_perl/RT/LDAPImport.pm
 libdata/perl5/site_perl/RT/Lifecycle/
@@ -285,6 +288,7 @@ libdata/perl5/site_perl/RT/Record/Role/
 libdata/perl5/site_perl/RT/Record/Role.pm
 libdata/perl5/site_perl/RT/Record/Role/Lifecycle.pm
 libdata/perl5/site_perl/RT/Record/Role/Links.pm
+libdata/perl5/site_perl/RT/Record/Role/LookupType.pm
 libdata/perl5/site_perl/RT/Record/Role/Rights.pm
 libdata/perl5/site_perl/RT/Record/Role/Roles.pm
 libdata/perl5/site_perl/RT/Record/Role/Status.pm
@@ -319,6 +323,8 @@ libdata/perl5/site_perl/RT/SearchBuilder/Role.pm
 libdata/perl5/site_perl/RT/SearchBuilder/Role/Roles.pm
 libdata/perl5/site_perl/RT/SharedSetting.pm
 libdata/perl5/site_perl/RT/SharedSettings.pm
+libdata/perl5/site_perl/RT/Shortener.pm
+libdata/perl5/site_perl/RT/Shorteners.pm
 libdata/perl5/site_perl/RT/Shredder/
 libdata/perl5/site_perl/RT/Shredder.pm
 libdata/perl5/site_perl/RT/Shredder/Constants.pm
@@ -342,6 +348,7 @@ libdata/perl5/site_perl/RT/Squish/
 libdata/perl5/site_perl/RT/Squish.pm
 libdata/perl5/site_perl/RT/Squish/CSS.pm
 libdata/perl5/site_perl/RT/Squish/JS.pm
+libdata/perl5/site_perl/RT/StaticUtil.pm
 libdata/perl5/site_perl/RT/StyleGuide.pod
 libdata/perl5/site_perl/RT/System.pm
 libdata/perl5/site_perl/RT/Template.pm
@@ -379,6 +386,7 @@ libdata/perl5/site_perl/RT/User.pm
 libdata/perl5/site_perl/RT/Users.pm
 libdata/perl5/site_perl/RT/Util.pm
 sbin/rt-attributes-viewer
+sbin/rt-clean-attributes
 sbin/rt-clean-sessions
 sbin/rt-dump-initialdata
 sbin/rt-dump-metadata
@@ -439,6 +447,7 @@ share/doc/rt/customizing/templates.pod
 share/doc/rt/customizing/timezones_in_charts.pod
 share/doc/rt/dashboards.pod
 share/doc/rt/dashboards_reporting.pod
+share/doc/rt/email_management.pod
 share/doc/rt/extending/
 share/doc/rt/extending/clickable_links.pod
 share/doc/rt/extending/external_custom_fields.pod
@@ -487,6 +496,8 @@ share/doc/rt/images/lifecycle-ui-mappings.png
 share/doc/rt/images/lifecycle-ui-modify.png
 share/doc/rt/images/lifecycle-ui-rights.png
 share/doc/rt/images/order-history-example.png
+share/doc/rt/images/query-builder-dynamic-filter-priority.png
+share/doc/rt/images/query-builder-dynamic-sort.png
 share/doc/rt/images/queue-created-started-chart.png
 share/doc/rt/images/quote-selection-highlighted.png
 share/doc/rt/images/quote-selection-ticket-update.png
@@ -1245,6 +1256,20 @@ share/examples/rt/upgrade/5.0.3/indexes
 @sample ${SYSCONFDIR}/rt/upgrade/5.0.3/indexes
 share/examples/rt/upgrade/5.0.3/schema.Pg
 @sample ${SYSCONFDIR}/rt/upgrade/5.0.3/schema.Pg
+share/examples/rt/upgrade/5.0.4/
+@sample ${SYSCONFDIR}/rt/upgrade/5.0.4/
+share/examples/rt/upgrade/5.0.4/acl.Pg
+@sample ${SYSCONFDIR}/rt/upgrade/5.0.4/acl.Pg
+share/examples/rt/upgrade/5.0.4/content
+@sample ${SYSCONFDIR}/rt/upgrade/5.0.4/content
+share/examples/rt/upgrade/5.0.4/schema.Oracle
+@sample ${SYSCONFDIR}/rt/upgrade/5.0.4/schema.Oracle
+share/examples/rt/upgrade/5.0.4/schema.Pg
+@sample ${SYSCONFDIR}/rt/upgrade/5.0.4/schema.Pg
+share/examples/rt/upgrade/5.0.4/schema.SQLite
+@sample ${SYSCONFDIR}/rt/upgrade/5.0.4/schema.SQLite
+share/examples/rt/upgrade/5.0.4/schema.mysql
+@sample ${SYSCONFDIR}/rt/upgrade/5.0.4/schema.mysql
 share/examples/rt/upgrade/generate-rtaddressregexp
 @sample ${SYSCONFDIR}/rt/upgrade/generate-rtaddressregexp
 share/examples/rt/upgrade/reset-sequences
@@ -1363,6 +1388,7 @@ share/rt/html/Admin/Elements/SelectCustomFieldLookupType
 share/rt/html/Admin/Elements/SelectCustomFieldRenderType
 share/rt/html/Admin/Elements/SelectCustomFieldType
 share/rt/html/Admin/Elements/SelectGroups
+share/rt/html/Admin/Elements/SelectLookupType
 share/rt/html/Admin/Elements/SelectNewGroupMembers
 share/rt/html/Admin/Elements/SelectScripAction
 share/rt/html/Admin/Elements/SelectScripCondition
@@ -1451,6 +1477,7 @@ share/rt/html/Admin/Tools/EditConfig.html
 share/rt/html/Admin/Tools/GnuPG.html
 share/rt/html/Admin/Tools/Queries.html
 share/rt/html/Admin/Tools/RightsInspector.html
+share/rt/html/Admin/Tools/Shortener.html
 share/rt/html/Admin/Tools/Shredder/
 share/rt/html/Admin/Tools/Shredder/Dumps/
 share/rt/html/Admin/Tools/Shredder/Dumps/dhandler
@@ -1667,6 +1694,7 @@ share/rt/html/Elements/GotoUser
 share/rt/html/Elements/Header
 share/rt/html/Elements/HeaderJavascript
 share/rt/html/Elements/JavascriptConfig
+share/rt/html/Elements/LabeledValue
 share/rt/html/Elements/Lifecycle/
 share/rt/html/Elements/Lifecycle/Graph
 share/rt/html/Elements/ListActions
@@ -1731,6 +1759,7 @@ share/rt/html/Elements/Refresh
 share/rt/html/Elements/RefreshHomepage
 share/rt/html/Elements/SavedSearches
 share/rt/html/Elements/ScrubHTML
+share/rt/html/Elements/SearchFilter
 share/rt/html/Elements/Section
 share/rt/html/Elements/SelectArticle
 share/rt/html/Elements/SelectArticleAutocomplete
@@ -1770,7 +1799,9 @@ share/rt/html/Elements/SelfServiceShowArticles
 share/rt/html/Elements/SelfServiceTopArticles
 share/rt/html/Elements/SetupSessionCookie
 share/rt/html/Elements/ShortcutHelp
+share/rt/html/Elements/ShowArticle
 share/rt/html/Elements/ShowArticleCustomFields
+share/rt/html/Elements/ShowCalendarInvitation
 share/rt/html/Elements/ShowCustomDateRanges
 share/rt/html/Elements/ShowCustomFieldBinary
 share/rt/html/Elements/ShowCustomFieldCustomGroupings
@@ -1844,6 +1875,7 @@ share/rt/html/Helpers/Autocomplete/Users
 share/rt/html/Helpers/Autocomplete/autohandler
 share/rt/html/Helpers/BuildFormatString
 share/rt/html/Helpers/CollectionListRow
+share/rt/html/Helpers/Permalink
 share/rt/html/Helpers/PreviewScrips
 share/rt/html/Helpers/RightsInspector/
 share/rt/html/Helpers/RightsInspector/Revoke
@@ -2106,7 +2138,6 @@ share/rt/html/Ticket/Graphs/Elements/
 share/rt/html/Ticket/Graphs/Elements/EditGraphProperties
 share/rt/html/Ticket/Graphs/Elements/ShowGraph
 share/rt/html/Ticket/Graphs/Elements/ShowLegends
-share/rt/html/Ticket/Graphs/dhandler
 share/rt/html/Ticket/Graphs/index.html
 share/rt/html/Ticket/History.html
 share/rt/html/Ticket/Modify.html
@@ -2393,9 +2424,6 @@ share/rt/static/RichText/plugins/about/dialogs/logo_ckeditor.png
 share/rt/static/RichText/plugins/autocomplete/
 share/rt/static/RichText/plugins/autocomplete/skins/
 share/rt/static/RichText/plugins/autocomplete/skins/default.css
-share/rt/static/RichText/plugins/ccmsconfighelper/
-share/rt/static/RichText/plugins/ccmsconfighelper/docs/
-share/rt/static/RichText/plugins/ccmsconfighelper/docs/install.html
 share/rt/static/RichText/plugins/clipboard/
 share/rt/static/RichText/plugins/clipboard/dialogs/
 share/rt/static/RichText/plugins/clipboard/dialogs/paste.js
@@ -2406,9 +2434,6 @@ share/rt/static/RichText/plugins/colordialog/dialogs/colordialog.js
 share/rt/static/RichText/plugins/confighelper/
 share/rt/static/RichText/plugins/confighelper/LICENSE
 share/rt/static/RichText/plugins/confighelper/README.md
-share/rt/static/RichText/plugins/confighelper/docs/
-share/rt/static/RichText/plugins/confighelper/docs/install.html
-share/rt/static/RichText/plugins/confighelper/docs/styles.css
 share/rt/static/RichText/plugins/dialog/
 share/rt/static/RichText/plugins/dialog/dialogDefinition.js
 share/rt/static/RichText/plugins/dialog/styles/
@@ -2454,14 +2479,7 @@ share/rt/static/RichText/plugins/pastefromword/filter/default.js
 share/rt/static/RichText/plugins/pastetools/
 share/rt/static/RichText/plugins/pastetools/filter/
 share/rt/static/RichText/plugins/pastetools/filter/common.js
-share/rt/static/RichText/plugins/pbckcode/
-share/rt/static/RichText/plugins/pbckcode/CHANGELOG.md
-share/rt/static/RichText/plugins/pbckcode/LICENSE
-share/rt/static/RichText/plugins/pbckcode/README.md
-share/rt/static/RichText/plugins/pbckcode/dialogs/
-share/rt/static/RichText/plugins/pbckcode/dialogs/PBSyntaxHighlighter.js
-share/rt/static/RichText/plugins/pbckcode/dialogs/pbckcode.js
-share/rt/static/RichText/plugins/pbckcode/dialogs/style.css
+share/rt/static/RichText/plugins/pastetools/filter/image.js
 share/rt/static/RichText/plugins/specialchar/
 share/rt/static/RichText/plugins/specialchar/dialogs/
 share/rt/static/RichText/plugins/specialchar/dialogs/lang/
@@ -2575,13 +2593,6 @@ share/rt/static/RichText/skins/bootstrapck/images/lock-open.png
 share/rt/static/RichText/skins/bootstrapck/images/lock.png
 share/rt/static/RichText/skins/bootstrapck/images/refresh.png
 share/rt/static/RichText/skins/bootstrapck/readme.md
-share/rt/static/RichText/skins/bootstrapck/sample/
-share/rt/static/RichText/skins/bootstrapck/sample/bootstrapck-sample.html
-share/rt/static/RichText/skins/bootstrapck/sample/css/
-share/rt/static/RichText/skins/bootstrapck/sample/css/bootstrapck-sample.css
-share/rt/static/RichText/skins/bootstrapck/sample/js/
-share/rt/static/RichText/skins/bootstrapck/sample/js/analytics.js
-share/rt/static/RichText/skins/bootstrapck/sample/js/jquery-1.11.0.min.js
 share/rt/static/RichText/skins/bootstrapck/scss/
 share/rt/static/RichText/skins/bootstrapck/scss/browser-specific/
 share/rt/static/RichText/skins/bootstrapck/scss/browser-specific/gecko/
@@ -2654,6 +2665,7 @@ share/rt/static/css/elevator-light/keyboard-shortcuts.css
 share/rt/static/css/elevator-light/layout.css
 share/rt/static/css/elevator-light/lifecycleui.css
 share/rt/static/css/elevator-light/login.css
+share/rt/static/css/elevator-light/mail.css
 share/rt/static/css/elevator-light/main.css
 share/rt/static/css/elevator-light/misc.css
 share/rt/static/css/elevator-light/nav.css
@@ -2732,6 +2744,8 @@ share/rt/static/images/farbtastic/marker.png
 share/rt/static/images/farbtastic/mask.png
 share/rt/static/images/farbtastic/wheel.png
 share/rt/static/images/favicon.png
+share/rt/static/images/funnel-fill.svg
+share/rt/static/images/funnel.svg
 share/rt/static/images/jquery_ui/
 share/rt/static/images/jquery_ui/ui-bg_glass_55_fbf9ee_1x400.png
 share/rt/static/images/jquery_ui/ui-bg_glass_65_ffffff_1x400.png
@@ -2760,6 +2774,7 @@ share/rt/static/js/bootstrap.bundle.min.js
 share/rt/static/js/cascaded.js
 share/rt/static/js/chartjs-plugin-colorschemes.min.js
 share/rt/static/js/chosen.jquery.min.js
+share/rt/static/js/clipboard.min.js
 share/rt/static/js/d3.min.js
 share/rt/static/js/dropzone.min.js
 share/rt/static/js/event-registration.js
