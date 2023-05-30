@@ -1,4 +1,4 @@
-# $OpenBSD: FS2.pm,v 1.40 2023/05/14 09:05:04 espie Exp $
+# $OpenBSD: FS2.pm,v 1.41 2023/05/30 05:36:29 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -244,7 +244,7 @@ sub recognize($, $filename, $fs, $)
 		my $state = $fs->{state};
 		
 		if ($state->system(
-		    sub {
+		    sub() {
 			$ENV{PKG_CONFIG_PATH}="$fs->{destdir}/$dir"; }, 
 		    'pkg-config', '--validate', $f) != 0) {
 		    	$state->errsay(
