@@ -20,6 +20,7 @@ bin/rabbitmq-streams
 bin/rabbitmq-tanzu
 bin/rabbitmq-upgrade
 bin/rabbitmqctl
+bin/vmware-rabbitmq
 lib/rabbitmq/
 lib/rabbitmq/escript/
 lib/rabbitmq/escript/rabbitmq-diagnostics
@@ -29,6 +30,7 @@ lib/rabbitmq/escript/rabbitmq-streams
 lib/rabbitmq/escript/rabbitmq-tanzu
 lib/rabbitmq/escript/rabbitmq-upgrade
 lib/rabbitmq/escript/rabbitmqctl
+lib/rabbitmq/escript/vmware-rabbitmq
 lib/rabbitmq/plugins/
 lib/rabbitmq/plugins/README
 lib/rabbitmq/plugins/${RABBIT_ACCEPT}/
@@ -173,6 +175,7 @@ lib/rabbitmq/plugins/${RABBIT_CREDENTIALS_OBFUSCATION}/ebin/credentials_obfuscat
 lib/rabbitmq/plugins/${RABBIT_CREDENTIALS_OBFUSCATION}/ebin/credentials_obfuscation_svc.beam
 lib/rabbitmq/plugins/${RABBIT_CREDENTIALS_OBFUSCATION}/include/
 lib/rabbitmq/plugins/${RABBIT_CREDENTIALS_OBFUSCATION}/include/credentials_obfuscation.hrl
+lib/rabbitmq/plugins/${RABBIT_CREDENTIALS_OBFUSCATION}/include/otp_crypto.hrl
 lib/rabbitmq/plugins/${RABBIT_CUTTLEFISH}/
 lib/rabbitmq/plugins/${RABBIT_CUTTLEFISH}/ebin/
 lib/rabbitmq/plugins/${RABBIT_CUTTLEFISH}/ebin/conf_parse.beam
@@ -483,11 +486,13 @@ lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_counters.beam
 lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_dbg.beam
 lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_directory.beam
 lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_env.beam
+lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_ets_queue.beam
 lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_file_handle.beam
 lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_flru.beam
 lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_leaderboard.beam
 lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_lib.beam
 lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_log.beam
+lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_log_cache.beam
 lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_log_ets.beam
 lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_log_meta.beam
 lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_log_pre_init.beam
@@ -567,6 +572,7 @@ lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_credential_validator_accept_everyth
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_credential_validator_min_password_length.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_credential_validator_password_regexp.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_cuttlefish.beam
+lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_db_vhost_defaults.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_dead_letter.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_definitions.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_definitions_hashing.beam
@@ -591,6 +597,7 @@ lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_ff_controller.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_ff_extra.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_ff_registry.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_ff_registry_factory.beam
+lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_ff_registry_wrapper.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_fhc_helpers.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_fifo.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_fifo_client.beam
@@ -602,7 +609,6 @@ lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_fifo_index.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_fifo_v0.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_fifo_v1.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_file.beam
-lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_framing.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_global_counters.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_guid.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_health_check.beam
@@ -644,10 +650,6 @@ lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_observer_cli.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_observer_cli_classic_queues.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_osiris_metrics.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_parameter_validation.beam
-lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_password.beam
-lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_password_hashing_md5.beam
-lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_password_hashing_sha256.beam
-lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_password_hashing_sha512.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_peer_discovery.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_peer_discovery_classic_config.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_peer_discovery_dns.beam
@@ -757,6 +759,7 @@ lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_env.beam
 lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_error_logger_handler.beam
 lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_event.beam
 lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_exchange_type.beam
+lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_framing.beam
 lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_framing_amqp_0_8.beam
 lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_framing_amqp_0_9_1.beam
 lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_heartbeat.beam
@@ -768,7 +771,11 @@ lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_msg_store_index.beam
 lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_net.beam
 lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_nodes_common.beam
 lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_numerical.beam
+lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_password.beam
 lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_password_hashing.beam
+lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_password_hashing_md5.beam
+lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_password_hashing_sha256.beam
+lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_password_hashing_sha512.beam
 lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_pbe.beam
 lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_peer_discovery_backend.beam
 lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_policy_validator.beam
@@ -963,6 +970,7 @@ lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_db_cache.beam
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_db_cache_sup.beam
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_dispatcher.beam
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_extension.beam
+lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_features.beam
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_headers.beam
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_hsts.beam
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_load_definitions.beam
@@ -1655,6 +1663,7 @@ lib/rabbitmq/sbin/rabbitmq-streams
 lib/rabbitmq/sbin/rabbitmq-tanzu
 lib/rabbitmq/sbin/rabbitmq-upgrade
 lib/rabbitmq/sbin/rabbitmqctl
+lib/rabbitmq/sbin/vmware-rabbitmq
 @man man/man5/rabbitmq-env.conf.5
 @man man/man8/rabbitmq-diagnostics.8
 @man man/man8/rabbitmq-echopid.8
