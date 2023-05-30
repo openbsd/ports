@@ -1,4 +1,4 @@
-# $OpenBSD: PlistScanner.pm,v 1.18 2023/05/15 07:44:19 espie Exp $
+# $OpenBSD: PlistScanner.pm,v 1.19 2023/05/30 07:30:02 espie Exp $
 # Copyright (c) 2014 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -40,7 +40,6 @@ sub handle_plist($self, $filename, $plist)
 	$self->say("#1 -> #2", $filename, $plist->pkgname) 
 	    if $self->ui->verbose;
 	$self->register_plist($plist);
-	$plist->forget;
 }
 
 sub progress($self)
@@ -214,8 +213,7 @@ sub scan($self)
 		closedir($dir);
 
 		$self->progress->for_list("Scanning", \@l,
-		    sub {
-			my $pkgname = shift;
+		    sub($pkgname) {
 			return if $pkgname eq '.' or $pkgname eq '..';
 			if ($self->ui->opt('f') &&
 			    !defined $self->{current}{$pkgname}) {
@@ -234,8 +232,7 @@ sub scan($self)
 
 	if (@ARGV > 0) {
 		$self->progress->for_list("Scanning", \@ARGV,
-		    sub {
-			my $pkgname = shift;
+		    sub($pkgname) {
 			my $true_package = $self->ui->repo->find($pkgname);
 			return unless $true_package;
 			my $dir = $true_package->info;
