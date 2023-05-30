@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.93 2023/05/09 15:37:16 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.94 2023/05/30 05:35:19 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -146,7 +146,7 @@ sub check($self, $v)
 	    });
 }
 
-sub end_check
+sub end_check	# forwarder
 {
 	&check;
 }
