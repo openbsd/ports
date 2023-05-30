@@ -5,6 +5,7 @@ DISTNAME =	grafana+vendor-$V
 WRKDIST =	${WRKDIR}/grafana-$V
 EXTRACT_SUFX =	.tar.zst
 PKGNAME =	grafana-$V
+REVISION =	0
 
 MAINTAINER = Lucas Raab <tuftedocelot@fastmail.fm>
 
