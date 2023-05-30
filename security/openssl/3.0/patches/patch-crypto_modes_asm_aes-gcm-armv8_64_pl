@@ -1,7 +1,7 @@
 Index: crypto/modes/asm/aes-gcm-armv8_64.pl
 --- crypto/modes/asm/aes-gcm-armv8_64.pl.orig
 +++ crypto/modes/asm/aes-gcm-armv8_64.pl
-@@ -5654,6 +5654,7 @@ ___
+@@ -6029,6 +6029,7 @@ ___
  }
  
  $code.=<<___;

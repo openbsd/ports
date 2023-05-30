@@ -210,7 +210,7 @@ Index: crypto/ec/asm/ecp_nistz256-armv8.pl
  ___
  }
  $code.=<<___;
-@@ -1352,7 +1385,8 @@ ecp_nistz256_ord_mul_mont:
+@@ -1352,7 +1384,8 @@ ecp_nistz256_ord_mul_mont:
  	stp	x21,x22,[sp,#32]
  	stp	x23,x24,[sp,#48]
  
@@ -220,7 +220,7 @@ Index: crypto/ec/asm/ecp_nistz256-armv8.pl
  	ldr	$bi,[$bp]		// bp[0]
  	ldp	$a0,$a1,[$ap]
  	ldp	$a2,$a3,[$ap,#16]
-@@ -1493,7 +1527,8 @@ ecp_nistz256_ord_sqr_mont:
+@@ -1493,7 +1526,8 @@ ecp_nistz256_ord_sqr_mont:
  	stp	x21,x22,[sp,#32]
  	stp	x23,x24,[sp,#48]
  
