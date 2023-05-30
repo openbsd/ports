@@ -7,6 +7,7 @@ USE_NOEXECONLY=	Yes
 GH_ACCOUNT=	rbsec
 GH_PROJECT=	sslscan
 GH_TAGNAME=	2.0.16
+REVISION=	0
 
 CATEGORIES=	security net
 
