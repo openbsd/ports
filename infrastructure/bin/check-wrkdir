@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: check-wrkdir,v 1.1 2017/11/24 14:47:26 espie Exp $
+# $OpenBSD: check-wrkdir,v 1.2 2023/05/30 05:40:22 espie Exp $
 # Copyright (c) 2017 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -14,8 +14,7 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-use strict;
-use warnings;
+use v5.36;
 # this script can check a wrkdir for permission issues and unwanted changes
 
 # synopsis: 
@@ -33,9 +32,8 @@ getopt('i:');
 
 my $done;
 
-sub read_timestamps
+sub read_timestamps($name)
 {
-	my $name = shift;
 	my $h = {};
 	if (open(my $fh, "<", $name)) {
 		while (<$fh>) {
@@ -67,7 +65,7 @@ my @changed;
 open(my $fh, ">", $ts_file) or die $!;
 
 find(
-    sub {
+    sub() {
     	my ($mode, $mtime) = (lstat $_)[2, 9];
 	my $f = $File::Find::name;
 	if (defined $opt_i) {
