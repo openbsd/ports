@@ -3,7 +3,7 @@ R =		1
 COMMENT =	text web browser
 DISTNAME =	lynx${V}rel.${R}
 PKGNAME =	lynx-${V}rel${R}
-REVISION =	0
+REVISION =	1
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	www net
 

@@ -1,0 +1,12 @@
+--- src/LYMainLoop.c.orig	Tue May 30 14:29:30 2023
++++ src/LYMainLoop.c	Tue May 30 14:30:30 2023
+@@ -7212,7 +7212,8 @@
+ 	    handle_LYK_DOWN_HALF(&old_c, real_c);
+ 	    break;
+ 
+-#ifdef CAN_CUT_AND_PASTE
++/* Disabling clipboard interactions to avoid pledged calls to exec. */
++#if 0
+ 	case LYK_TO_CLIPBOARD:	/* ^S */
+ 	    {
+ 		char *s;
