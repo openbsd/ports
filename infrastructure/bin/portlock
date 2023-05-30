@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: portlock,v 1.1 2018/07/09 11:33:04 espie Exp $
+# $OpenBSD: portlock,v 1.2 2023/05/30 05:34:43 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -14,8 +14,7 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-use strict;
-use warnings;
+use v5.36;
 use Fcntl;
 use File::Basename;
 use Getopt::Std;
@@ -54,24 +53,24 @@ unless (-e $dname) {
 	}
 }
 if (!-d $dname) {
-	print STDERR "lock directory location $dname is not a directory\n";
+	say STDERR "lock directory location $dname is not a directory";
 	exit(1);
 }
 if (!-w _) {
-	print STDERR "you don't have permission to write into $dname ($<, $()\n";
+	say STDERR "you don't have permission to write into $dname ($<, $()";
 	exit(1);
 }
 
 while(1) {
 	if (sysopen my $handle, $fname, O_WRONLY | O_EXCL | O_CREAT, 0666) {
 		if (@ARGV)  {
-			print $handle join("\n", @ARGV), "\n";
+			say $handle join("\n", @ARGV);
 		}
 		close($handle);
 		exit(0);
 	}
 	unless ($done) {
-		print STDERR "Awaiting lock $fname\n";
+		say STDERR "Awaiting lock $fname";
 		$done = 1;
 }
 	sleep(1);
