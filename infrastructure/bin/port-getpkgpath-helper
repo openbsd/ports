@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-# $OpenBSD: port-getpkgpath-helper,v 1.1 2018/07/09 13:55:14 espie Exp $
+# $OpenBSD: port-getpkgpath-helper,v 1.2 2023/05/30 05:34:08 espie Exp $
 #
 # Copyright (c) 2006 Marc Espie <espie@openbsd.org>
 #
@@ -17,8 +17,7 @@
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 use Cwd qw(abs_path);
-use strict;
-use warnings;
+use v5.36;
 
 my $dir = shift;
 my $path = $ENV{PORTSDIR_PATH} or exit 1;
@@ -26,12 +25,12 @@ my $path = $ENV{PORTSDIR_PATH} or exit 1;
 my $pkgpath;
 my $real_dir = abs_path($dir);
 if (!defined $real_dir) {
-	print STDERR "Error: $dir does not resolve (broken symlink ?)\n";
+	say STDERR "Error: $dir does not resolve (broken symlink ?)";
 }
 for my $d (split ':', $path) {
 	my $real_d = abs_path($d);
 	if (!defined $real_d) {
-		print STDERR "Error: $d does not resolve (broken symlink ?)\n";
+		say STDERR "Error: $d does not resolve (broken symlink ?)";
 	}
 	if ($real_dir =~ m/^\Q$real_d\E\//) {
 		my $newpath = $';
@@ -41,13 +40,13 @@ for my $d (split ':', $path) {
 	}
 }
 if (defined $pkgpath) { 
-	print $pkgpath, "\n";
+	say $pkgpath;
 } else {
 	print STDERR "Can't find $dir ";
 	if ($real_dir ne $dir) {
 		print STDERR "($real_dir) ";
 	}
-	print STDERR "under PORTSDIR_PATH=$path\n";
+	say STDERR "under PORTSDIR_PATH=$path";
 }
 # XXX no error code because this is too verbose from the Makefile
 exit 0;
