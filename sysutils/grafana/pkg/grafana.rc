@@ -6,6 +6,7 @@ daemon_flags="-homepath ${TRUEPREFIX}/share/grafana -config ${SYSCONFDIR}/grafan
 
 . /etc/rc.d/rc.subr
 
+pexp="grafana server ${daemon_flags}"
 rc_bg=YES
 rc_reload=NO
 
