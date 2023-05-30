@@ -47,9 +47,7 @@ include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandinput
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandinputdeviceintegrationfactory_p.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandinputdeviceintegrationplugin_p.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandinputmethodcontext_p.h
-include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandinputmethodeventbuilder_p.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandintegration_p.h
-include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandmimehelper_p.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandnativeinterface_p.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandpointergestures_p.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandprimaryselectionv1_p.h
@@ -58,7 +56,6 @@ include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandscree
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandserverbufferintegration_p.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandserverbufferintegrationfactory_p.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandserverbufferintegrationplugin_p.h
-include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandsharedmemoryformathelper_p.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandshellintegration_p.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandshellintegrationfactory_p.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandshellintegrationplugin_p.h
@@ -135,13 +132,11 @@ include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/qwayl
 include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/qwaylanddestroylistener_p.h
 include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/qwaylandidleinhibitv1_p.h
 include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/qwaylandinputmethodcontrol_p.h
-include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/qwaylandinputmethodeventbuilder_p.h
 include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/qwaylandiviapplication_p.h
 include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/qwaylandivisurface_p.h
 include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/qwaylandivisurfaceintegration_p.h
 include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/qwaylandkeyboard_p.h
 include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/qwaylandkeymap_p.h
-include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/qwaylandmimehelper_p.h
 include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/qwaylandmousetracker_p.h
 include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/qwaylandoutput_p.h
 include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/qwaylandoutputmode_p.h
@@ -156,7 +151,6 @@ include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/qwayl
 include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/qwaylandquickshellsurfaceitem_p.h
 include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/qwaylandquicksurface_p.h
 include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/qwaylandseat_p.h
-include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/qwaylandsharedmemoryformathelper_p.h
 include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/qwaylandshell_p.h
 include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/qwaylandsurface_p.h
 include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/qwaylandtextinput_p.h

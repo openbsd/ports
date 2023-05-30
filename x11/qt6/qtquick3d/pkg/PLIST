@@ -301,10 +301,8 @@ include/X11/qt6/QtQuick3DUtils/${VERSION}/QtQuick3DUtils/private/qtquick3dutilsg
 include/X11/qt6/QtQuick3DUtils/QtQuick3DUtils
 include/X11/qt6/QtQuick3DUtils/QtQuick3DUtilsDepends
 include/X11/qt6/QtQuick3DUtils/QtQuick3DUtilsVersion
-include/X11/qt6/QtQuick3DUtils/meshoptimizer.h
 include/X11/qt6/QtQuick3DUtils/qtquick3dutilsexports.h
 include/X11/qt6/QtQuick3DUtils/qtquick3dutilsversion.h
-include/X11/qt6/QtQuick3DUtils/xatlas.h
 lib/cmake/Qt6/FindWrapQuick3DAssimp.cmake
 lib/cmake/Qt6BuildInternals/StandaloneTests/QtQuick3DTestsConfig.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qquick3dpluginAdditionalTargetInfo.cmake
@@ -575,7 +573,6 @@ lib/qt6/plugins/assetimporters/
 lib/qt6/qml/QtQuick3D/
 lib/qt6/qml/QtQuick3D/AssetUtils/
 lib/qt6/qml/QtQuick3D/AssetUtils/designer/
-lib/qt6/qml/QtQuick3D/AssetUtils/designer/IdComboBox.qml
 lib/qt6/qml/QtQuick3D/AssetUtils/designer/NodeSection.qml
 lib/qt6/qml/QtQuick3D/AssetUtils/designer/RuntimeLoaderSection.qml
 lib/qt6/qml/QtQuick3D/AssetUtils/designer/RuntimeLoaderSpecifics.qml
@@ -646,7 +643,6 @@ lib/qt6/qml/QtQuick3D/Effects/designer/GaussianBlurSection.qml
 lib/qt6/qml/QtQuick3D/Effects/designer/GaussianBlurSpecifics.qml
 lib/qt6/qml/QtQuick3D/Effects/designer/HDRBloomTonemapSection.qml
 lib/qt6/qml/QtQuick3D/Effects/designer/HDRBloomTonemapSpecifics.qml
-lib/qt6/qml/QtQuick3D/Effects/designer/IdComboBox.qml
 lib/qt6/qml/QtQuick3D/Effects/designer/MotionBlurSection.qml
 lib/qt6/qml/QtQuick3D/Effects/designer/MotionBlurSpecifics.qml
 lib/qt6/qml/QtQuick3D/Effects/designer/SCurveTonemapSection.qml
@@ -682,7 +678,6 @@ lib/qt6/qml/QtQuick3D/Helpers/designer/GridGeometrySection.qml
 lib/qt6/qml/QtQuick3D/Helpers/designer/GridGeometrySpecifics.qml
 lib/qt6/qml/QtQuick3D/Helpers/designer/HeightFieldGeometrySection.qml
 lib/qt6/qml/QtQuick3D/Helpers/designer/HeightFieldGeometrySpecifics.qml
-lib/qt6/qml/QtQuick3D/Helpers/designer/IdComboBox.qml
 lib/qt6/qml/QtQuick3D/Helpers/designer/InfiniteGridSection.qml
 lib/qt6/qml/QtQuick3D/Helpers/designer/InfiniteGridSpecifics.qml
 lib/qt6/qml/QtQuick3D/Helpers/designer/InstanceModelSection.qml
@@ -770,7 +765,6 @@ lib/qt6/qml/QtQuick3D/MaterialEditor/UniformManagerPane.qml
 lib/qt6/qml/QtQuick3D/MaterialEditor/main.qml
 lib/qt6/qml/QtQuick3D/MaterialEditor/plugins.qmltypes
 lib/qt6/qml/QtQuick3D/MaterialEditor/qmldir
-lib/qt6/qml/QtQuick3D/MaterialEditor/qtquickcontrols2.conf
 lib/qt6/qml/QtQuick3D/ParticleEffects/
 lib/qt6/qml/QtQuick3D/ParticleEffects/Quick3DParticleEffects.qmltypes
 lib/qt6/qml/QtQuick3D/ParticleEffects/designer/
@@ -816,7 +810,6 @@ lib/qt6/qml/QtQuick3D/Particles3D/designer/EmitBurst3DSection.qml
 lib/qt6/qml/QtQuick3D/Particles3D/designer/EmitBurst3DSpecifics.qml
 lib/qt6/qml/QtQuick3D/Particles3D/designer/Gravity3DSection.qml
 lib/qt6/qml/QtQuick3D/Particles3D/designer/Gravity3DSpecifics.qml
-lib/qt6/qml/QtQuick3D/Particles3D/designer/IdComboBox.qml
 lib/qt6/qml/QtQuick3D/Particles3D/designer/LineParticle3DSection.qml
 lib/qt6/qml/QtQuick3D/Particles3D/designer/LineParticle3DSpecifics.qml
 lib/qt6/qml/QtQuick3D/Particles3D/designer/ModelBlendParticle3DSection.qml
@@ -958,7 +951,6 @@ lib/qt6/qml/QtQuick3D/designer/FogSection.qml
 lib/qt6/qml/QtQuick3D/designer/FogSpecifics.qml
 lib/qt6/qml/QtQuick3D/designer/FrustumCameraSection.qml
 lib/qt6/qml/QtQuick3D/designer/FrustumCameraSpecifics.qml
-lib/qt6/qml/QtQuick3D/designer/IdComboBox.qml
 lib/qt6/qml/QtQuick3D/designer/InstanceListEntrySection.qml
 lib/qt6/qml/QtQuick3D/designer/InstanceListEntrySpecifics.qml
 lib/qt6/qml/QtQuick3D/designer/InstanceListSection.qml

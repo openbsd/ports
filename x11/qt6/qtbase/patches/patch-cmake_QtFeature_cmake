@@ -1,7 +1,7 @@
 Index: cmake/QtFeature.cmake
 --- cmake/QtFeature.cmake.orig
 +++ cmake/QtFeature.cmake
-@@ -1067,7 +1067,23 @@ function(qt_get_platform_try_compile_vars out_var)
+@@ -1068,7 +1068,23 @@ function(qt_get_platform_try_compile_vars out_var)
      set("${out_var}" "${flags_cmd_line}" PARENT_SCOPE)
  endfunction()
  

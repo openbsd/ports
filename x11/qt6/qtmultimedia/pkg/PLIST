@@ -29,6 +29,7 @@ include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qplatformmediarecor
 include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qplatformscreencapture_p.h
 include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qplatformvideodevices_p.h
 include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qplatformvideosink_p.h
+include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qplatformvideosource_p.h
 include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qpulseaudiodevice_p.h
 include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qpulseaudiomediadevices_p.h
 include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qpulseaudiosink_p.h

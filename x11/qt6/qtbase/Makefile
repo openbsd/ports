@@ -18,7 +18,7 @@ DPB_PROPERTIES =	parallel
 SHARED_LIBS +=  Qt6Concurrent                0.1 # 6.5
 SHARED_LIBS +=  Qt6Core                      2.0 # 6.5
 SHARED_LIBS +=  Qt6DBus                      2.0 # 6.5
-SHARED_LIBS +=  Qt6Gui                       3.0 # 6.5
+SHARED_LIBS +=  Qt6Gui                       4.0 # 6.5
 SHARED_LIBS +=  Qt6Network                   1.0 # 6.5
 SHARED_LIBS +=  Qt6OpenGL                    2.0 # 6.5
 SHARED_LIBS +=  Qt6PrintSupport              0.2 # 6.5
@@ -29,7 +29,7 @@ SHARED_LIBS +=  Qt6Xml                       1.0 # 6.5
 SHARED_LIBS +=  Qt6EglFSDeviceIntegration    1.0 # 6.5
 SHARED_LIBS +=  Qt6EglFsKmsSupport           1.0 # 6.5
 SHARED_LIBS +=  Qt6OpenGLExtensions          0.1 # 6.5
-SHARED_LIBS +=  Qt6XcbQpa                    2.0 # 6.5
+SHARED_LIBS +=  Qt6XcbQpa                    2.1 # 6.5
 SHARED_LIBS +=  Qt6EglFsKmsGbmSupport        0.2 # 6.5
 SHARED_LIBS +=  Qt6OpenGLWidgets             1.0 # 6.5
 

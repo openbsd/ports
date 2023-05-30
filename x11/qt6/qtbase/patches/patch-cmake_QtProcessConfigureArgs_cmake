@@ -1,7 +1,7 @@
 Index: cmake/QtProcessConfigureArgs.cmake
 --- cmake/QtProcessConfigureArgs.cmake.orig
 +++ cmake/QtProcessConfigureArgs.cmake
-@@ -206,6 +206,7 @@ defstub(qt_feature_definition)
+@@ -207,6 +207,7 @@ defstub(qt_feature_definition)
  defstub(qt_find_package)
  defstub(set_package_properties)
  defstub(qt_qml_find_python)
