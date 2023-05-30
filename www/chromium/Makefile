@@ -1,4 +1,5 @@
 BROKEN-powerpc64 =	Check failed: false. OS architecture not handled. (powerpc64)
+BROKEN-i386 =		v8_context_snapshot_generator segfault
 
 USE_WXNEEDED=		Yes
 
