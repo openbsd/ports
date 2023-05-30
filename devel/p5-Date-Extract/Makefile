@@ -1,12 +1,11 @@
 COMMENT =	extract probable dates from strings
 
-V =		0.06
+V =		0.07
 
 MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	Date-Extract-${V}
 CATEGORIES =	devel
-REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =	Yes
