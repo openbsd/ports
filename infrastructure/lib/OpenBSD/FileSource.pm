@@ -1,4 +1,4 @@
-# $OpenBSD: FileSource.pm,v 1.4 2023/05/14 09:00:33 espie Exp $
+# $OpenBSD: FileSource.pm,v 1.5 2023/05/30 05:41:35 espie Exp $
 # Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -44,7 +44,7 @@ sub skip($, $)
 }
 
 # $self->clean($item)
-sub clean
+sub clean($, $)
 {
 }
 
