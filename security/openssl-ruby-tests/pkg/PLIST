@@ -96,6 +96,8 @@ share/openssl-ruby-tests/test/openssl/fixtures/pkey/rsa-2.pem
 share/openssl-ruby-tests/test/openssl/fixtures/pkey/rsa-3.pem
 share/openssl-ruby-tests/test/openssl/fixtures/pkey/rsa1024.pem
 share/openssl-ruby-tests/test/openssl/fixtures/pkey/rsa2048.pem
+share/openssl-ruby-tests/test/openssl/fixtures/ssl/
+share/openssl-ruby-tests/test/openssl/fixtures/ssl/openssl_fips.cnf.tmpl
 share/openssl-ruby-tests/test/openssl/test_asn1.rb
 share/openssl-ruby-tests/test/openssl/test_bn.rb
 share/openssl-ruby-tests/test/openssl/test_buffering.rb
