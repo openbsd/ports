@@ -52,6 +52,7 @@ ALL_TARGET =
 
 MODPY_RUNDEP =		No
 MODRUBY_RUNDEP =	No
+MODRUBY_REV =		3.1
 
 BUILD_DEPENDS =		devel/bison \
 			devel/gperf \
