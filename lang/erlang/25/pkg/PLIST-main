@@ -6,7 +6,7 @@
 @pkgpath lang/erlang/21,-main
 @newgroup _epmd:888
 @newuser _epmd:888:_epmd::Erlang EPMD Account:/var/empty:/sbin/nologin
-@rcscript ${RCDIR}/epmd
+@rcscript ${RCDIR}/epmd25
 bin/ct_run25
 bin/dialyzer25
 bin/epmd25
