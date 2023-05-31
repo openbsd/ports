@@ -2,7 +2,7 @@ COMMENT =		fast, intuitive file opening in VIM
 
 V =			1.11.2
 DISTNAME =		vim-command-t-${V}
-REVISION =		6
+REVISION =		7
 
 CATEGORIES =		devel editors
 

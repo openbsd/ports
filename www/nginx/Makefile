@@ -36,6 +36,8 @@ PKGNAME-passenger=	nginx-passenger-${VERSION}
 PKGNAME-rtmp=		nginx-rtmp-${VERSION}
 PKGNAME-securelink=	nginx-securelink-${VERSION}
 
+REVISION-passenger=	0
+
 ONLY_FOR_ARCHS-passenger= aarch64 amd64 arm i386
 
 MASTER_SITES=	https://nginx.org/download/

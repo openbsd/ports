@@ -4,6 +4,8 @@ GH_TAGNAME=		v0.5.5
 GH_PROJECT=		WhatWeb
 GH_ACCOUNT=		urbanadventurer
 
+REVISION=		0
+
 CATEGORIES=		net www
 
 HOMEPAGE=		http://www.morningstarsecurity.com/research/whatweb

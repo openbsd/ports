@@ -11,7 +11,7 @@ PKGNAME-ruby =		ruby-libmarisa-${V}
 
 REVISION-main =		1
 REVISION-python =	4
-REVISION-ruby =		0
+REVISION-ruby =		1
 
 GH_ACCOUNT =	s-yata
 GH_PROJECT =	marisa-trie

@@ -24,6 +24,8 @@ PKGNAME-docs =		texlive_texmf-docs-${V}
 PKGNAME-context =	texlive_texmf-context-${V}
 PKGNAME-buildset =	texlive_texmf-buildset-${V}
 
+REVISION-context =	0
+
 NO_BUILD =		Yes
 NO_TEST =		Yes
 PKG_ARCH =		*

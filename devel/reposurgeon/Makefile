@@ -1,7 +1,7 @@
 COMMENT=	tool for editing version-control repository history
 
 DISTNAME=	reposurgeon-4.32
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 

@@ -1,7 +1,7 @@
 COMMENT=	emacs-based mail client
 
 DISTNAME=	mew-6.9
-REVISION=	1
+REVISION=	2
 CATEGORIES=	mail
 HOMEPAGE=	http://www.mew.org/
 DISTFILES=	mew-6.9a.tar.gz

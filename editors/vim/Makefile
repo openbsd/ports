@@ -17,6 +17,7 @@ FULLPKGNAME-lang= vim-lang-$V
 FULLPKGPATH-lang= ${PKGPATH},-lang
 P=		vim${V:R:S/.//}
 CATEGORIES=	editors
+REVISION-main=	0
 REVISION-lang=    0
 
 HOMEPAGE=	https://www.vim.org/

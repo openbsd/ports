@@ -1,5 +1,5 @@
 VERSION =		0.13
-REVISION =		3
+REVISION =		4
 
 COMMENT =		interactive shell for git
 

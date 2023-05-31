@@ -6,6 +6,8 @@ VERSION =	4.1.0
 DISTNAME =	swig-${VERSION}
 CATEGORIES =	devel
 
+REVISION =	0
+
 HOMEPAGE =	http://www.swig.org/
 
 # BSD
