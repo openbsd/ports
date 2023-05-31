@@ -1,0 +1,14 @@
+Let erlang type inspection handle versioned binaries.
+
+Index: erts/etc/common/typer.c
+--- erts/etc/common/typer.c.orig
++++ erts/etc/common/typer.c
+@@ -42,7 +42,7 @@ static int eargc;		/* Number of arguments in eargv. */
+ #else
+ #  define QUOTE(s) s
+ #  define IS_DIRSEP(c) ((c) == '/')
+-#  define ERL_NAME "erl"
++#  define ERL_NAME "erl${MAJ_V}"
+ #endif
+ 
+ #define UNSHIFT(s) eargc++, eargv--; eargv[0] = QUOTE(s)

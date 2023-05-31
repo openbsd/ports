@@ -1,0 +1,12 @@
+Index: erts/lib_src/Makefile.in
+--- erts/lib_src/Makefile.in.orig
++++ erts/lib_src/Makefile.in
+@@ -43,7 +43,7 @@ INSTALL_PROGRAM=@INSTALL_PROGRAM@
+ ERLANG_OSTYPE=@ERLANG_OSTYPE@
+ 
+ OMIT_FP=false
+-CFLAGS=$(subst O2,O3, @CFLAGS@)
++CFLAGS=@CFLAGS@
+ LDFLAGS=@LDFLAGS@
+ 
+ ifeq ($(TYPE),debug)

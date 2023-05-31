@@ -1,0 +1,14 @@
+Let static analyzer handle versioned binaries.
+
+Index: erts/etc/common/dialyzer.c
+--- erts/etc/common/dialyzer.c.orig
++++ erts/etc/common/dialyzer.c
+@@ -42,7 +42,7 @@ static int eargc;		/* Number of arguments in eargv. */
+ #else
+ #  define QUOTE(s) s
+ #  define IS_DIRSEP(c) ((c) == '/')
+-#  define ERL_NAME "erl"
++#  define ERL_NAME "erl${MAJ_V}"
+ #endif
+ 
+ #define UNSHIFT(s) eargc++, eargv--; eargv[0] = QUOTE(s)

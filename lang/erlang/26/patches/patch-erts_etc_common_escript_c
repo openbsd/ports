@@ -1,0 +1,24 @@
+Let escript handle versioned binaries.
+
+Index: erts/etc/common/escript.c
+--- erts/etc/common/escript.c.orig
++++ erts/etc/common/escript.c
+@@ -48,7 +48,7 @@ static int eargc;		/* Number of arguments in eargv. */
+ #  define DIRSEPSTR "/"
+ #  define PATHSEPSTR ":"
+ #  define PMAX PATH_MAX
+-#  define ERL_NAME "erl"
++#  define ERL_NAME "erl${MAJ_V}"
+ #endif
+ 
+ #define UNSHIFT(s) eargc++, eargv--; eargv[0] = QUOTE(s)
+@@ -459,7 +459,8 @@ main(int argc, char** argv)
+     if ( (_stricmp(basename, "escript.exe") == 0)
+        ||(_stricmp(basename, "escript") == 0)) {
+ #else
+-    if (strcmp(basename, "escript") == 0) {
++   if ( (strcmp(basename, "escript") == 0)
++       ||(strcmp(basename, "escript${MAJ_V}") == 0)) {
+ #endif
+         def_emu_lookup_path = argv[0];
+ 	/*
