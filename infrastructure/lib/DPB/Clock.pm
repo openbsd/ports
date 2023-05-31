@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Clock.pm,v 1.18 2023/05/06 05:20:31 espie Exp $
+# $OpenBSD: Clock.pm,v 1.19 2023/05/31 09:18:08 espie Exp $
 #
 # Copyright (c) 2011-2013 Marc Espie <espie@openbsd.org>
 #
@@ -24,7 +24,7 @@ use Time::HiRes;
 package DPB::Clock;
 
 # users will register/unregister, they must have a
-# stopped_clock($gap) method to adjust.
+# stopped_clock($gap, $stopped_clock) method to adjust.
 my $items = {};
 
 sub register($class, $o)
@@ -182,8 +182,8 @@ sub peek($self, $length)
 	}
 }
 
-sub DESTROY
+sub DESTROY($self)
 {
-	DPB::Clock->unregister(shift);
+	DPB::Clock->unregister($self);
 }
 1;
