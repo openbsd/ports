@@ -1,4 +1,4 @@
-${GEM_BIN}/facter31
+${GEM_BIN}/facter${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
