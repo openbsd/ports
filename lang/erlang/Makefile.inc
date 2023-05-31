@@ -11,8 +11,9 @@ MAJ_V =		${V:C/\.[0-9]+//g}
 
 MAINTAINER =	Volker Schlecht <openbsd-ports@schlecht.dev>
 
+DOCDISTNAME ?=  otp_doc_man_${V}
 DISTFILES ?=	${DISTNAME}.tar.gz \
-		otp_doc_man_${V}.tar.gz
+		${DOCDISTNAME}.tar.gz
 
 EXTRACT_ONLY ?=	${DISTNAME}.tar.gz
 
@@ -80,7 +81,6 @@ gen-versions: extract
 	@find ${WRKSRC} -name 'vsn.mk' -exec awk -F'=' '/_VSN=/ { print $$1"\t"$$2 " \\" }' {} \; | grep -v 'PRE_' | grep -v 'APP_' | sort
 	@grep VSN ${WRKSRC}/erts/vsn.mk |awk '/^VSN/ { print "ERTS_VSN\t" $$3 }' | sort
 
-# Erlang >= 25 uses configure.ac instead of configure.in
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/make/install_bin \
 		     ${WRKSRC}/Makefile.in \
@@ -88,9 +88,12 @@ pre-configure:
 		     ${WRKSRC}/erts/etc/common/dialyzer.c \
 		     ${WRKSRC}/erts/etc/common/erlc.c \
 		     ${WRKSRC}/erts/etc/common/escript.c \
-		     ${WRKSRC}/erts/etc/common/typer.c \
-		     ${WRKSRC}/lib/dialyzer/src/dialyzer_plt.erl 
-	if [ -f ${WRKSRC}/lib/wx/configure.in ]; then ${SUBST_CMD} ${WRKSRC}/lib/wx/configure.in ; fi;
+		     ${WRKSRC}/erts/etc/common/typer.c
+.if ${MAJ_V} == 25
+	${SUBST_CMD} ${WRKSRC}/lib/dialyzer/src/dialyzer_plt.erl
+.else
+	${SUBST_CMD} ${WRKSRC}/lib/dialyzer/src/dialyzer_cplt.erl
+.endif
 	if [ -f ${WRKSRC}/lib/wx/configure.ac ]; then ${SUBST_CMD} ${WRKSRC}/lib/wx/configure.ac ; fi;
 
 
@@ -109,10 +112,11 @@ do-test:
 
 post-test:
 	rm ${WRKSRC}/bin/erl${MAJ_V}
+	-${WRKSRC}/bin/*-unknown-openbsd*/epmd -kill
 
 post-install:
 	ln -sf ../lib/erlang${MAJ_V}/lib/${ERL_EI}/bin/erl_call ${PREFIX}/bin/erl_call${MAJ_V}
-	tar zxf ${FULLDISTDIR}/otp_doc_man_${V}.tar.gz -C ${DOC_DIR}
+	tar zxf ${FULLDISTDIR}/${DOCDISTNAME}.tar.gz -C ${DOC_DIR}
 	rm -r ${DOC_DIR}/man/man7/*MIB.7
 	rm -r ${DOC_DIR}/man/man7/*TM.7
 	if [ ! -x ${PREFIX}/lib/erlang${MAJ_V}/${ERL_ERTS}/bin/beam.smp ]; then \
