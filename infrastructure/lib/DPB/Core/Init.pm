@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Init.pm,v 1.49 2023/05/06 05:20:31 espie Exp $
+# $OpenBSD: Init.pm,v 1.50 2023/05/31 09:19:08 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -188,8 +188,7 @@ sub add_startup($self, $core, $state, $logger, $job, @startup)
 	my $build = $prop->{build_user};
 
 	$job->add_tasks(DPB::Task::Fork->new(
-	    sub {
-		my $shell = shift;
+	    sub($shell) {
 		$logger->redirect($logger->logfile("init.".$core->hostname));
 		$shell
 		    ->chdir($state->ports)
@@ -247,8 +246,7 @@ sub init_core($self, $core, $state)
 	if (defined $stale->{$core->hostname}) {
 		my $subdirlist=join(' ', @{$stale->{$core->hostname}});
 		$job->add_tasks(DPB::Task::Fork->new(
-		    sub {
-			my $shell = shift;
+		    sub($shell) {
 			$logger->redirect( 
 			    $logger->logfile("init.".$core->hostname));
 			$shell
