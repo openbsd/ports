@@ -1,9 +1,9 @@
-Index: net/base/network_change_notifier_posix.cc
---- net/base/network_change_notifier_posix.cc.orig
-+++ net/base/network_change_notifier_posix.cc
-@@ -92,7 +92,7 @@ void NetworkChangeNotifierPosix::GetCurrentMaxBandwidt
+Index: net/base/network_change_notifier_passive.cc
+--- net/base/network_change_notifier_passive.cc.orig
++++ net/base/network_change_notifier_passive.cc
+@@ -107,7 +107,7 @@ NetworkChangeNotifierPassive::GetAddressMapOwnerIntern
  NetworkChangeNotifier::NetworkChangeCalculatorParams
- NetworkChangeNotifierPosix::NetworkChangeCalculatorParamsPosix() {
+ NetworkChangeNotifierPassive::NetworkChangeCalculatorParamsPassive() {
    NetworkChangeCalculatorParams params;
 -#if BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)

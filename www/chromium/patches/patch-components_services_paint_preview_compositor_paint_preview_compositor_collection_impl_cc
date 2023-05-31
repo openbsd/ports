@@ -10,7 +10,7 @@ Index: components/services/paint_preview_compositor/paint_preview_compositor_col
  #include "components/services/font/public/cpp/font_loader.h"
  #endif
  
-@@ -65,7 +65,7 @@ PaintPreviewCompositorCollectionImpl::PaintPreviewComp
+@@ -66,7 +66,7 @@ PaintPreviewCompositorCollectionImpl::PaintPreviewComp
      // Initialize font access for Skia.
  #if BUILDFLAG(IS_WIN)
    content::InitializeDWriteFontProxy();
@@ -19,7 +19,7 @@ Index: components/services/paint_preview_compositor/paint_preview_compositor_col
    mojo::PendingRemote<font_service::mojom::FontService> font_service;
    content::UtilityThread::Get()->BindHostReceiver(
        font_service.InitWithNewPipeAndPassReceiver());
-@@ -88,7 +88,7 @@ PaintPreviewCompositorCollectionImpl::PaintPreviewComp
+@@ -89,7 +89,7 @@ PaintPreviewCompositorCollectionImpl::PaintPreviewComp
                               base::BindOnce([] { SkFontMgr::RefDefault(); }));
  
    // Sanity check that fonts are working.

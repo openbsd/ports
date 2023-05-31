@@ -28,7 +28,7 @@ Index: content/browser/webui/web_ui_main_frame_observer.cc
  void WebUIMainFrameObserver::OnDidAddMessageToConsole(
      RenderFrameHost* source_frame,
      blink::mojom::ConsoleMessageLevel log_level,
-@@ -163,7 +163,7 @@ void WebUIMainFrameObserver::ReadyToCommitNavigation(
+@@ -167,7 +167,7 @@ void WebUIMainFrameObserver::ReadyToCommitNavigation(
  
  // TODO(crbug.com/1129544) This is currently disabled due to Windows DLL
  // thunking issues. Fix & re-enable.

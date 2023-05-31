@@ -1,7 +1,7 @@
 Index: chrome/browser/extensions/BUILD.gn
 --- chrome/browser/extensions/BUILD.gn.orig
 +++ chrome/browser/extensions/BUILD.gn
-@@ -1340,6 +1340,10 @@ static_library("extensions") {
+@@ -1348,6 +1348,10 @@ static_library("extensions") {
      deps += [ "//chrome/services/printing/public/mojom" ]
    }
  

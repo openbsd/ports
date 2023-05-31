@@ -1,7 +1,7 @@
 Index: third_party/angle/src/gpu_info_util/SystemInfo_internal.h
 --- third_party/angle/src/gpu_info_util/SystemInfo_internal.h.orig
 +++ third_party/angle/src/gpu_info_util/SystemInfo_internal.h
-@@ -14,6 +14,13 @@
+@@ -15,6 +15,13 @@
  namespace angle
  {
  
