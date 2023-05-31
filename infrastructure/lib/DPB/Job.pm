@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Job.pm,v 1.23 2023/05/07 06:26:41 espie Exp $
+# $OpenBSD: Job.pm,v 1.24 2023/05/31 09:15:28 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -27,7 +27,9 @@ sub end($)
 {
 }
 
-sub code($self, $core)
+# $self->code($core):
+#	the code to run may depend on the core !
+sub code($self, $)
 {
 	return $self->{code};
 }
@@ -38,28 +40,40 @@ sub name($self)
 	return $self;
 }
 
+# XXX some tasks do not need actual code to run
+# Those tasks will override run obviously
 sub new($class, $code = undef)
 {
 	return bless {code => $code}, $class;
 }
 
 # TODO this should probably be called exec since we're after the fork
+# calls the code we're supposed to run, passing it "the shell" that runs it
+# (the shell class is responsible for cd'ing and exec'ing external programs
+# if need be, handling users, chroot, on localhost and distant boxes)
 sub run($self, $core)
 {
 	&{$self->code($core)}($core->shell);
 }
 
 # one single user so far: DPB::Signature::Task
-sub process($self, $core)
+# $self->process($core)
+sub process($, $)
 {
 }
 
-sub finalize($self, $core)
+# $self->finalize($core):
+#	returns true if the task succeeded
+sub finalize($, $core)
 {
 	return $core->{status} == 0;
 }
 
-sub redirect_fh($self, $fh, $log)
+# $self->redirect_fh($fh, $log):
+#	redirects output to an opened $fh corresponding to a given $log.
+#	we don't reopen $log ourselves for efficiency reasons, and also
+#	because we may not have the right permissions thanks to privsep
+sub redirect_fh($, $fh, $log)
 {
 	close STDOUT;
 	open STDOUT, '>&', $fh or DPB::Util->die_bang("Can't write to $log");
@@ -70,7 +84,8 @@ sub redirect_fh($self, $fh, $log)
 package DPB::Task::Pipe;
 our @ISA =qw(DPB::Task);
 
-sub fork($self, $core)
+# $self->fork($core)
+sub fork($self, $)
 {
 	open($self->{fh}, "-|");
 }
@@ -89,7 +104,11 @@ sub fork($, $)
 }
 
 package DPB::Job;
-sub next_task($self, $core)
+
+# $self->next_task($core):
+#	in some cases, we may need to repeat a task, or add intermediate
+#	tasks, so this needs to be a method
+sub next_task($self, $)
 {
 	return shift @{$self->{tasks}};
 }
@@ -108,9 +127,10 @@ sub finalize($, $)
 {
 }
 
+# $self->watched($current, $core)
 sub watched($self, $, $)
 {
-	return $self->{status};
+	return $self->{status};		# XXX why ?
 }
 
 sub add_tasks($self, @tasks)
@@ -129,6 +149,7 @@ sub insert_tasks($self, @tasks)
 	unshift(@{$self->{tasks}}, @tasks);
 }
 
+# $self->really_watch($current)
 sub really_watch($, $)
 {
 }
@@ -204,7 +225,6 @@ sub watched($self, $current, $core)
 		return $msg;
 	}
 }
-
 
 package DPB::Job::Infinite;
 our @ISA = qw(DPB::Job);
