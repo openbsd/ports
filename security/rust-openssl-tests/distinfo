@@ -28,7 +28,7 @@ SHA256 (cargo/memchr-2.5.0.tar.gz) = Lf/lLs8ndy5gGQW3Uiy073kNLMIDSIu9Di/oX8t0Vm0
 SHA256 (cargo/minimal-lexical-0.2.1.tar.gz) = aDVMXGvTbXP/P+zrBe+lm2rLdiZhf0livjIqgl5h95o=
 SHA256 (cargo/nom-7.1.3.tar.gz) = 0nOYPFplenCj6PKgEymCLzuMgXK3OCZBGlV1HkBKCko=
 SHA256 (cargo/once_cell-1.17.2.tar.gz) = lnCgf5R3ngCQjz5obqtQiHjrs5C6bmBNOihMAOjQSHs=
-SHA256 (cargo/openssl-src-111.25.3+1.1.1t.tar.gz) = kkdXpqImv2DaX33QMRo00rUig92C3esQMgjdxmNi+Aw=
+SHA256 (cargo/openssl-src-111.26.0+1.1.1u.tar.gz) = 78YsnxKyK49SCMI6cgCkQrLlmZ+L34AjOFISK1pPbzc=
 SHA256 (cargo/peeking_take_while-0.1.2.tar.gz) = GbF83b5+w/i8gAiHurXnFzSMleosoLG/CDf7lk3GcJk=
 SHA256 (cargo/pkg-config-0.3.27.tar.gz) = JgcoYLqSTL+pjqOcjBm03WpKJUI9vfIZweypGqDPaWQ=
 SHA256 (cargo/proc-macro2-1.0.59.tar.gz) = auyhi4a0E8Zgt4GqMZ5OJkij5vnq3JtH6QOOb+nzRRs=
@@ -58,7 +58,7 @@ SHA256 (cargo/which-4.4.0.tar.gz) = JEHHhMUrKJoFS3IB/JMlPiiPCU4vS+kFg0MSfEImomk=
 SHA256 (cargo/winapi-0.3.9.tar.gz) = XIOaZ0/NepiVLlkyQupACr6TmSdGdh44ZBQF0osA9Bk=
 SHA256 (cargo/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = rDuHxjYgQm3ZuZHlzgMp7/VFvMu7NPO+Cf9vtqtRt7Y=
 SHA256 (cargo/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = cS4ieEHQV8HuHNL7Ivp+WlRhro5I+iynnsQs/BkxGD8=
-SHA256 (rust-openssl-tests-20230531-79ad66ad.tar.gz) = neyPu0WECFKzHn6qd5ZC7P65eiRdCQefVrKnWtF8i0Q=
+SHA256 (rust-openssl-tests-20230601-4b4a344a.tar.gz) = Pj0a3nB3cwsuslULyI4KMZfdFDi+JHwrbTig4/+xphc=
 SIZE (cargo/bindgen-0.64.0.tar.gz) = 204700
 SIZE (cargo/bitflags-1.3.2.tar.gz) = 23021
 SIZE (cargo/bssl-sys-0.1.0.tar.gz) = 1061
@@ -89,7 +89,7 @@ SIZE (cargo/memchr-2.5.0.tar.gz) = 65812
 SIZE (cargo/minimal-lexical-0.2.1.tar.gz) = 94841
 SIZE (cargo/nom-7.1.3.tar.gz) = 117570
 SIZE (cargo/once_cell-1.17.2.tar.gz) = 33335
-SIZE (cargo/openssl-src-111.25.3+1.1.1t.tar.gz) = 5112603
+SIZE (cargo/openssl-src-111.26.0+1.1.1u.tar.gz) = 5110372
 SIZE (cargo/peeking_take_while-0.1.2.tar.gz) = 6697
 SIZE (cargo/pkg-config-0.3.27.tar.gz) = 18838
 SIZE (cargo/proc-macro2-1.0.59.tar.gz) = 44360
@@ -119,4 +119,4 @@ SIZE (cargo/which-4.4.0.tar.gz) = 10889
 SIZE (cargo/winapi-0.3.9.tar.gz) = 1200382
 SIZE (cargo/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = 2918815
 SIZE (cargo/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 2947998
-SIZE (rust-openssl-tests-20230531-79ad66ad.tar.gz) = 344234
+SIZE (rust-openssl-tests-20230601-4b4a344a.tar.gz) = 344330
