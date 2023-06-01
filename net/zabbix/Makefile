@@ -3,7 +3,7 @@ COMMENT-server =	network and application monitoring - server
 COMMENT-proxy =		network and application monitoring - proxy
 COMMENT-web =		network and application monitoring - web frontend
 
-VERSION =		6.4.2
+VERSION =		6.4.3
 DISTNAME =		zabbix-${VERSION}
 FULLPKGNAME-main =	zabbix-agent-${VERSION}
 FULLPKGPATH-main =	net/zabbix,-main
@@ -34,23 +34,24 @@ FLAVORS =		mysql pgsql sqlite3
 SUBST_VARS +=		PREFIX-web ZABBIX_WEB MAJV
 
 WANTLIB =		c iconv kvm m execinfo lber ldap crypto ssl z \
-			curl nghttp2 pcre pthread xml2
+			curl pcre pthread
 
 LIB_DEPENDS =		converters/libiconv \
 			databases/openldap \
 			devel/pcre \
-			net/curl \
-			textproc/libxml
+			net/curl
 
 RUN_DEPENDS-main =
 
 LIB_DEPENDS-server =	${LIB_DEPENDS} \
 			net/net-snmp \
-			security/libssh2
+			security/libssh2 \
+			textproc/libxml
 RUN_DEPENDS-server =	net/fping
 # we want the _zabbix user&group as well as README-main
 RUN_DEPENDS-server +=	net/zabbix,-main>=${VERSION}
-WANTLIB-server =	${WANTLIB} crypto ssl z netsnmp ssh2
+WANTLIB-server =	${WANTLIB} event_core event_pthreads \
+			crypto ssl z netsnmp ssh2 xml2
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--enable-server \
@@ -76,8 +77,10 @@ ZABBIX_WEB =		${PREFIX-web}/zabbix
 
 LIB_DEPENDS-proxy =	${LIB_DEPENDS} \
 			net/net-snmp \
-			security/libssh2
-WANTLIB-proxy =		${WANTLIB} netsnmp ssh2
+			security/libssh2 \
+			textproc/libxml
+WANTLIB-proxy =		${WANTLIB} event_core event_pthreads netsnmp \
+			ssh2 xml2
 RUN_DEPENDS-proxy =	# empty
 
 FLAVOR ?=		no_server
@@ -96,8 +99,8 @@ LIB_DEPENDS-proxy +=	databases/mariadb,-main \
 LIB_DEPENDS-server +=	databases/mariadb,-main \
 			devel/libevent2
 CONFIGURE_ARGS +=	--with-mysql
-WANTLIB-proxy +=	event_core event_pthreads mariadb pthread
-WANTLIB-server +=	event_core event_pthreads mariadb
+WANTLIB-proxy +=	mariadb pthread
+WANTLIB-server +=	mariadb
 .elif ${BACKEND} == "pgsql"
 MULTI_PACKAGES +=	-proxy -server
 LIB_DEPENDS-proxy +=	databases/postgresql,-main \
@@ -105,14 +108,14 @@ LIB_DEPENDS-proxy +=	databases/postgresql,-main \
 LIB_DEPENDS-server +=	databases/postgresql,-main \
 			devel/libevent2
 CONFIGURE_ARGS +=	--with-postgresql
-WANTLIB-proxy +=	event_core event_pthreads pq
-WANTLIB-server +=	event_core event_pthreads pq
+WANTLIB-proxy +=	pq
+WANTLIB-server +=	pq
 .elif ${BACKEND} == "sqlite3"
 MULTI_PACKAGES +=	-proxy
 CONFIGURE_ARGS +=	--with-sqlite3 \
 			--disable-server
 
-WANTLIB-proxy +=	event_core event_pthreads sqlite3
+WANTLIB-proxy +=	sqlite3
 LIB_DEPENDS-proxy +=	databases/sqlite3 \
 			devel/libevent2
 FULLPKGPATH-proxy =	net/zabbix,-proxy,${FLAVOR}

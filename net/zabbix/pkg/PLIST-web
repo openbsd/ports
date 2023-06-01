@@ -835,7 +835,6 @@ zabbix/include/classes/helpers/CElasticsearchHelper.php
 zabbix/include/classes/helpers/CEncryptHelper.php
 zabbix/include/classes/helpers/CHintBoxHelper.php
 zabbix/include/classes/helpers/CHousekeepingHelper.php
-zabbix/include/classes/helpers/CHtml.php
 zabbix/include/classes/helpers/CMaintenanceHelper.php
 zabbix/include/classes/helpers/CMapHelper.php
 zabbix/include/classes/helpers/CMathHelper.php
@@ -887,6 +886,7 @@ zabbix/include/classes/html/CFormGrid.php
 zabbix/include/classes/html/CFormList.php
 zabbix/include/classes/html/CHorList.php
 zabbix/include/classes/html/CHostAvailability.php
+zabbix/include/classes/html/CHtmlEntity.php
 zabbix/include/classes/html/CHtmlPage.php
 zabbix/include/classes/html/CHtmlPageHeader.php
 zabbix/include/classes/html/CIFrame.php
@@ -1354,7 +1354,6 @@ zabbix/js/
 zabbix/js/browsers.js
 zabbix/js/chkbxrange.js
 zabbix/js/class.base-component.js
-zabbix/js/class.bbcode.js
 zabbix/js/class.browsertab.js
 zabbix/js/class.calendar.js
 zabbix/js/class.cdate.js
