@@ -4,7 +4,7 @@ GH_ACCOUNT=		espeak-ng
 GH_PROJECT=		espeak-ng
 GH_TAGNAME=		1.51
 PKGNAME=		${DISTNAME:S/-ng//}
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=	espeak-ng                 0.0 # 2.51
 
@@ -28,9 +28,8 @@ AUTOMAKE_VERSION=	1.16
 AUTORECONF=		./autogen.sh
 
 CONFIGURE_STYLE=	autoreconf
-
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+# upstream is doing something odd and doesn't add LDFLAGS/CXXFLAGS if CPPFLAGS is set
+CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
