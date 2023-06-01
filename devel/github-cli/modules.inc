@@ -22,7 +22,7 @@ MODGO_MODULES =	\
 	github.com/chzyer/logex					 v1.1.10 \
 	github.com/chzyer/readline				 v0.0.0-20180603132655-2972be24d48e \
 	github.com/chzyer/test					 v0.0.0-20180213035817-a1ea475d72b1 \
-	github.com/cli/browser					 v1.1.0 \
+	github.com/cli/browser					 v1.2.0 \
 	github.com/cli/crypto					 v0.0.0-20210929142629-6be313f59b03 \
 	github.com/cli/go-gh/v2					 v2.0.0 \
 	github.com/cli/oauth					 v1.0.1 \
@@ -33,7 +33,7 @@ MODGO_MODULES =	\
 	github.com/cncf/xds/go					 v0.0.0-20211011173535-cb28da3451f1 \
 	github.com/cpuguy83/go-md2man/v2			 v2.0.2 \
 	github.com/creack/pty					 v1.1.18 \
-	github.com/danieljoos/wincred				 v1.1.2 \
+	github.com/danieljoos/wincred				 v1.2.0 \
 	github.com/davecgh/go-spew				 v1.1.1 \
 	github.com/dlclark/regexp2				 v1.4.0 \
 	github.com/envoyproxy/go-control-plane			 v0.10.2-0.20220325020618-49ff273808a1 \
@@ -80,7 +80,7 @@ MODGO_MODULES =	\
 	github.com/kr/text					 v0.1.0 \
 	github.com/lucasb-eyer/go-colorful			 v1.2.0 \
 	github.com/mattn/go-colorable				 v0.1.13 \
-	github.com/mattn/go-isatty				 v0.0.18 \
+	github.com/mattn/go-isatty				 v0.0.19 \
 	github.com/mattn/go-runewidth				 v0.0.14 \
 	github.com/mgutz/ansi					 v0.0.0-20200706080929-d51e80ef957d \
 	github.com/microcosm-cc/bluemonday			 v1.0.20 \
@@ -101,12 +101,12 @@ MODGO_MODULES =	\
 	github.com/sourcegraph/jsonrpc2				 v0.1.0 \
 	github.com/spf13/cobra					 v1.6.1 \
 	github.com/spf13/pflag					 v1.0.5 \
-	github.com/stretchr/objx				 v0.4.0 \
-	github.com/stretchr/testify				 v1.7.5 \
+	github.com/stretchr/objx				 v0.5.0 \
+	github.com/stretchr/testify				 v1.8.4 \
 	github.com/thlib/go-timezone-local			 v0.0.0-20210907160436-ef149e42d28e \
 	github.com/yuin/goldmark				 v1.4.13 \
 	github.com/yuin/goldmark-emoji				 v1.0.1 \
-	github.com/zalando/go-keyring				 v0.2.2 \
+	github.com/zalando/go-keyring				 v0.2.3 \
 	go.opencensus.io					 v0.22.4 \
 	golang.org/x/crypto					 v0.0.0-20210921155107-089bfa567519 \
 	golang.org/x/exp					 v0.0.0-20200224162631-6cc2880d07d6 \
@@ -117,7 +117,7 @@ MODGO_MODULES =	\
 	golang.org/x/net					 v0.8.0 \
 	golang.org/x/oauth2					 v0.0.0-20220309155454-6242fa91716a \
 	golang.org/x/sync					 v0.1.0 \
-	golang.org/x/sys					 v0.6.0 \
+	golang.org/x/sys					 v0.8.0 \
 	golang.org/x/term					 v0.6.0 \
 	golang.org/x/text					 v0.8.0 \
 	golang.org/x/time					 v0.0.0-20191024005414-555d28b269f0 \
@@ -167,6 +167,7 @@ MODGO_MODFILES =	\
 	cloud.google.com/go/storage		 v1.6.0 \
 	cloud.google.com/go/storage		 v1.8.0 \
 	github.com/cli/browser			 v1.0.0 \
+	github.com/cli/browser			 v1.1.0 \
 	github.com/cli/safeexec			 v1.0.0 \
 	github.com/cncf/udpa/go			 v0.0.0-20191209042840-269d4d468f6f \
 	github.com/creack/pty			 v1.1.17 \
@@ -235,10 +236,13 @@ MODGO_MODFILES =	\
 	github.com/rivo/uniseg			 v0.1.0 \
 	github.com/rivo/uniseg			 v0.2.0 \
 	github.com/stretchr/objx		 v0.1.0 \
+	github.com/stretchr/objx		 v0.4.0 \
 	github.com/stretchr/testify		 v1.4.0 \
 	github.com/stretchr/testify		 v1.6.1 \
 	github.com/stretchr/testify		 v1.7.0 \
 	github.com/stretchr/testify		 v1.7.1 \
+	github.com/stretchr/testify		 v1.8.0 \
+	github.com/stretchr/testify		 v1.8.1 \
 	github.com/yuin/goldmark		 v1.1.25 \
 	github.com/yuin/goldmark		 v1.1.27 \
 	github.com/yuin/goldmark		 v1.1.32 \
@@ -360,11 +364,10 @@ MODGO_MODFILES =	\
 	golang.org/x/sys			 v0.0.0-20201119102817-f84b799fce68 \
 	golang.org/x/sys			 v0.0.0-20210119212857-b64e53b001e4 \
 	golang.org/x/sys			 v0.0.0-20210309074719-68d13333faf2 \
-	golang.org/x/sys			 v0.0.0-20210319071255-635bc2c9138d \
 	golang.org/x/sys			 v0.0.0-20210423082822-04245dca01da \
 	golang.org/x/sys			 v0.0.0-20210615035016-665e8c7367d1 \
+	golang.org/x/sys			 v0.0.0-20210616045830-e2b7044e8c71 \
 	golang.org/x/sys			 v0.0.0-20210630005230-0f9fa26af87c \
-	golang.org/x/sys			 v0.0.0-20210819135213-f52c844e1c1c \
 	golang.org/x/sys			 v0.0.0-20210831042530-f4d43177bf5e \
 	golang.org/x/sys			 v0.0.0-20211019181941-9d821ace8654 \
 	golang.org/x/sys			 v0.0.0-20211216021012-1d35b9e2eb4e \
@@ -375,6 +378,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sys			 v0.0.0-20220728004956-3c1f35247d10 \
 	golang.org/x/sys			 v0.0.0-20220811171246-fbc7d0a398ab \
 	golang.org/x/sys			 v0.5.0 \
+	golang.org/x/sys			 v0.6.0 \
 	golang.org/x/term			 v0.0.0-20201126162022-7de9c90e9dd1 \
 	golang.org/x/term			 v0.0.0-20210220032956-6a3ed077a48d \
 	golang.org/x/term			 v0.0.0-20210503060354-a79de5458b56 \
