@@ -1,9 +1,7 @@
 COMMENT-main=	nagios service check acceptor
 COMMENT-client=	nagios service check acceptor - client
 
-VERSION=	2.9.1
-REVISION-client=	1
-REVISION-main=		2
+VERSION=	2.10.0
 DISTNAME=	nsca-${VERSION}
 PKGNAME-main=	nsca-${VERSION}
 PKGNAME-client=	nsca-client-${VERSION}
@@ -24,20 +22,11 @@ LOCALSTATEDIR=		${BASELOCALSTATEDIR}/nagios
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-nsca-user=_nagios \
 			--with-nsca-grp=_nagios
+CFLAGS+=		-DAI_V4MAPPED=0
 
 MULTI_PACKAGES=		-main -client
 
-TEST_DEPENDS=		devel/p5-Clone \
-			devel/p5-Parallel-Forker
 RUN_DEPENDS-main=	icinga-*|nagios-*:net/nagios/nagios
-
-FIX_CRLF_FILES=		src/nsca.c src/send_nsca.c
-
-pre-build:
-	@${SUBST_CMD} ${WRKSRC}/src/nsca.c ${WRKSRC}/src/send_nsca.c
-
-do-test:
-	@cd ${WRKSRC}/nsca_tests && ./runtests
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/libexec/nagios
@@ -50,7 +39,15 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/sample-config/send_nsca.cfg \
 		${PREFIX}/share/examples/nsca/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nsca
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/nsca/
-	${INSTALL_DATA} ${WRKSRC}/SECURITY ${PREFIX}/share/doc/nsca/
+	${INSTALL_DATA} ${WRKSRC}/README.md ${PREFIX}/share/doc/nsca/
+	${INSTALL_DATA} ${WRKSRC}/SECURITY.md ${PREFIX}/share/doc/nsca/
+
+# Tests are broken; need old Perl
+NO_TEST=	Yes
+#TEST_DEPENDS=		devel/p5-Clone \
+#			devel/p5-Parallel-Forker
+#
+#do-test:
+#	@cd ${WRKSRC}/nsca_tests && ./runtests
 
 .include <bsd.port.mk>

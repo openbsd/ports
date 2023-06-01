@@ -1,9 +1,9 @@
 @pkgpath net/nagios/nsca
+@rcscript ${RCDIR}/nsca
 @bin sbin/nsca
 share/doc/nsca/
-share/doc/nsca/README
-share/doc/nsca/SECURITY
+share/doc/nsca/README.md
+share/doc/nsca/SECURITY.md
 share/examples/nsca/
 share/examples/nsca/nsca.cfg
 @sample ${SYSCONFDIR}/nsca.cfg
-@rcscript ${RCDIR}/nsca
