@@ -2,7 +2,7 @@ COMMENT=		Genealogical Research Analysis Management Programming System
 
 MODPY_EGG_VERSION =	5.1.5
 DISTNAME=		gramps-${MODPY_EGG_VERSION}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		misc x11
 
@@ -16,8 +16,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gramps/}
 MODULES=		lang/python \
 			textproc/intltool
 
-RUN_DEPENDS=		databases/py-bsddb3${MODPY_FLAVOR} \
-			devel/desktop-file-utils \
+RUN_DEPENDS=		devel/desktop-file-utils \
 			devel/py-gobject3${MODPY_FLAVOR} \
 			devel/xdg-utils \
 			fonts/freefont-ttf \
