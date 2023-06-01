@@ -1,9 +1,7 @@
-LibreSSL doesn't have @SECLEVEL yet.
-
 Index: src/nrpe.c
 --- src/nrpe.c.orig
 +++ src/nrpe.c
-@@ -83,7 +83,7 @@ struct addrinfo *listen_addrs = NULL;
+@@ -84,7 +84,7 @@ struct addrinfo *listen_addrs = NULL;
  int       listen_socks[MAX_LISTEN_SOCKS];
  char      remote_host[MAX_HOST_ADDRESS_LENGTH];
  char     *macro_argv[MAX_COMMAND_ARGUMENTS];
@@ -12,21 +10,3 @@ Index: src/nrpe.c
  char      server_address[NI_MAXHOST] = "";
  char     *command_name = NULL;
  int       log_facility = LOG_DAEMON;
-@@ -147,7 +147,7 @@ struct _SSL_PARMS {
- 	ClntCerts client_certs;
- 	SslLogging log_opts;
- } sslprm = {
--#if OPENSSL_VERSION_NUMBER >= 0x10100000
-+#if OPENSSL_VERSION_NUMBER >= 0x10100000 && !defined(LIBRESSL_VERSION_NUMBER)
- NULL, NULL, NULL, "ALL:!MD5:@STRENGTH:@SECLEVEL=0", TLSv1_plus, TRUE, 0, SSL_NoLogging
- #else
- NULL, NULL, NULL, "ALL:!MD5:@STRENGTH", TLSv1_plus, TRUE, 0, SSL_NoLogging
-@@ -463,7 +463,7 @@ void init_ssl(void)
- 	} else {
- 		/* use anonymous DH ciphers */
- 		if (sslprm.allowDH == 2) {
--#if OPENSSL_VERSION_NUMBER >= 0x10100000
-+#if OPENSSL_VERSION_NUMBER >= 0x10100000 && !defined(LIBRESSL_VERSION_NUMBER)
- 			strncpy(sslprm.cipher_list, "ADH@SECLEVEL=0", MAX_FILENAME_LENGTH - 1);
- #else
- 			strncpy(sslprm.cipher_list, "ADH", MAX_FILENAME_LENGTH - 1);
