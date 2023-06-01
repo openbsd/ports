@@ -1,7 +1,7 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -1137,7 +1137,7 @@ do
+@@ -1150,7 +1150,7 @@ do
      ac_prev=sysconfdir ;;
    -sysconfdir=* | --sysconfdir=* | --sysconfdi=* | --sysconfd=* | --sysconf=* \
    | --syscon=* | --sysco=* | --sysc=* | --sys=* | --sy=*)
@@ -10,7 +10,7 @@ Index: configure
  
    -target | --target | --targe | --targ | --tar | --ta | --t)
      ac_prev=target_alias ;;
-@@ -6240,7 +6240,7 @@ cat >>confdefs.h <<_ACEOF
+@@ -6719,7 +6719,7 @@ cat >>confdefs.h <<_ACEOF
  #define DEFAULT_NAGIOS_GROUP "$nagios_grp"
  _ACEOF
  
@@ -19,7 +19,7 @@ Index: configure
  
  
  
-@@ -6671,7 +6671,7 @@ $as_echo_n "checking for gdImagePng in -lgd (order 1).
+@@ -7148,7 +7148,7 @@ $as_echo_n "checking for gdImagePng in -lgd (order 1).
    $as_echo_n "(cached) " >&6
  else
    ac_save_LIBS="$LIBS"
@@ -28,7 +28,7 @@ Index: configure
  	cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  	/* Override any gcc2 internal prototype to avoid an error.  */
-@@ -6702,8 +6702,9 @@ fi
+@@ -7179,8 +7179,9 @@ fi
  $as_echo "yes" >&6; }
  
  			GDLIBFOUND=yes
@@ -39,7 +39,7 @@ Index: configure
  	else
  	  { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
  $as_echo "no" >&6; }
-@@ -7223,7 +7224,7 @@ $as_echo_n "checking for linker flags for loadable mod
+@@ -7700,7 +7701,7 @@ $as_echo_n "checking for linker flags for loadable mod
  		;;
  		*bsd*)
  			MOD_LDFLAGS="-shared"

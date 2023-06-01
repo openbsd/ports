@@ -1,16 +1,13 @@
-ONLY_FOR_ARCHS=	${LP64_ARCHS} # time_t format string issues
+ONLY_FOR_ARCHS=	${LP64_ARCHS} # too many time_t format string issues
 
 COMMENT-main=	host and service monitor
 COMMENT-web=	cgis and webpages for nagios
 
-V=		4.4.6
-REVISION=	1
+V=		4.4.12
 DISTNAME=	nagios-$V
 PKGNAME-main=	nagios-$V
 PKGNAME-web=	nagios-web-$V
 CATEGORIES=	net
-
-REVISION-web=	1
 
 HOMEPAGE=	https://www.nagios.org/
 
@@ -22,7 +19,6 @@ MULTI_PACKAGES=	-main -web
 MASTER_SITES=	https://assets.nagios.com/downloads/nagioscore/releases/
 
 MODULES=	lang/php
-MODPHP_VERSION=	7.4
 
 BUILD_DEPENDS=	graphics/gd \
 		archivers/unzip
@@ -51,7 +47,6 @@ CONFIGURE_ARGS+=--datadir=${PREFIX-web}/nagios \
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib"
 
-
 FLAVORS=	chroot
 FLAVOR?=
 
@@ -77,7 +72,7 @@ RUN_DEPENDS-web= nagios-${V}-!chroot:net/nagios/nagios \
 		 lang/php/${MODPHP_VERSION},-gd
 .endif
 
-WANTLIB-main=	${WANTLIB} ltdl>=4
+WANTLIB-main=	${WANTLIB} ltdl>=4 crypto ssl
 
 NO_TEST=	Yes
 
