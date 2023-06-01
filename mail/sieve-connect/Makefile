@@ -1,17 +1,14 @@
 COMMENT =	perl sieveshell-compatible ManageSieve client
 
-GH_VER =	v0.87
-V =		${GH_VER:S/v//}
-PROJECT =	sieve-connect
-DISTNAME =	${PROJECT}-${V}
+V =		0.90
+DISTNAME =	sieve-connect-${V}
 CATEGORIES =	mail
 PKG_ARCH =	*
-REVISION =	0
 
 MAINTAINER =	LEVAI Daniel <leva@ecentrum.hu>
 
-HOMEPAGE =	http://github.com/philpennock/${PROJECT}
-MASTER_SITES =	http://github.com/philpennock/${PROJECT}/releases/download/${GH_VER}/
+HOMEPAGE =	http://github.com/philpennock/sieve-connect
+MASTER_SITES =	http://github.com/philpennock/sieve-connect/releases/download/v${V}/
 
 EXTRACT_SUFX =	.tar.bz2
 
