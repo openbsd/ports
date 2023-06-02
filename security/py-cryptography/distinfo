@@ -14,7 +14,7 @@ SHA256 (cargo/libc-0.2.144.tar.gz) = KwDMHCKKZ4LQ8HbnsjKALgxWidQbtd82byprZiHP3+E
 SHA256 (cargo/lock_api-0.4.9.tar.gz) = Q1ARNm/lZYOxbPlW+d8AlbQFuC12QlvImBwOIuYOxN8=
 SHA256 (cargo/memoffset-0.8.0.tar.gz) = 1hxxm8+89dYrOgnvpgiN6MVLwL/NPqeuOfzBhhCLjeE=
 SHA256 (cargo/once_cell-1.17.2.tar.gz) = lnCgf5R3ngCQjz5obqtQiHjrs5C6bmBNOihMAOjQSHs=
-SHA256 (cargo/openssl-0.10.53.tar.gz) = Et9AqVZzZIi3tE/nn+EtTyRbtbP1ofYJXkmXYAFb45I=
+SHA256 (cargo/openssl-0.10.54.tar.gz) = abP2VqF6bLwRW1x6QMYWlH0hO6GCE1sBTWBRtzq28Bk=
 SHA256 (cargo/openssl-macros-0.1.1.tar.gz) = qUhma2N6D0ZehWTHPonU3eANctTUc8yXLzkPw9zufZw=
 SHA256 (cargo/openssl-sys-0.9.88.tar.gz) = ws4PJQ80owjc/bs1H1ETWYV9TtITS6cVpOrdRuH/1hc=
 SHA256 (cargo/ouroboros-0.15.6.tar.gz) = 4TWL0VWL0qCD/tQo/+2khvv7Mj5pjN2neUJZ1ZLKcts=
@@ -51,7 +51,7 @@ SHA256 (cargo/windows_i686_msvc-0.42.2.tar.gz) = RNhAtuxkn0gKQcjYD5xlEIuS2JNF3ZQ
 SHA256 (cargo/windows_x86_64_gnu-0.42.2.tar.gz) = jekSuLj+tVwGSGfPBH3aCX+S1R761bSR37mPa7twyzY=
 SHA256 (cargo/windows_x86_64_gnullvm-0.42.2.tar.gz) = JtQbRqNtRTdIrt7xSG1ceoXbIuVq/zRkOYTqhVFOlKM=
 SHA256 (cargo/windows_x86_64_msvc-0.42.2.tar.gz) = muxdozFSQVjG0aSsCrFUEUnAuVBf3gZCOwL17wEGufA=
-SHA256 (cryptography-41.0.0.tar.gz) = a3H2S+7qNBybT5Y7SO47YtYtV7qT6xIOEZazHcECXng=
+SHA256 (cryptography-41.0.1.tar.gz) = 00V5CFQB0/SXYtL31mNNa2wq4SQiAuhg9NJrBG46EAY=
 SIZE (cargo/Inflector-0.11.4.tar.gz) = 17438
 SIZE (cargo/aliasable-0.1.3.tar.gz) = 6169
 SIZE (cargo/asn1-0.15.2.tar.gz) = 34002
@@ -68,7 +68,7 @@ SIZE (cargo/libc-0.2.144.tar.gz) = 682092
 SIZE (cargo/lock_api-0.4.9.tar.gz) = 25685
 SIZE (cargo/memoffset-0.8.0.tar.gz) = 8912
 SIZE (cargo/once_cell-1.17.2.tar.gz) = 33335
-SIZE (cargo/openssl-0.10.53.tar.gz) = 258222
+SIZE (cargo/openssl-0.10.54.tar.gz) = 258266
 SIZE (cargo/openssl-macros-0.1.1.tar.gz) = 5601
 SIZE (cargo/openssl-sys-0.9.88.tar.gz) = 66011
 SIZE (cargo/ouroboros-0.15.6.tar.gz) = 11257
@@ -105,4 +105,4 @@ SIZE (cargo/windows_i686_msvc-0.42.2.tar.gz) = 724951
 SIZE (cargo/windows_x86_64_gnu-0.42.2.tar.gz) = 699373
 SIZE (cargo/windows_x86_64_gnullvm-0.42.2.tar.gz) = 364068
 SIZE (cargo/windows_x86_64_msvc-0.42.2.tar.gz) = 666936
-SIZE (cryptography-41.0.0.tar.gz) = 628254
+SIZE (cryptography-41.0.1.tar.gz) = 629124
