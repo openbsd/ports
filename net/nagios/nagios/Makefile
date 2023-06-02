@@ -3,7 +3,7 @@ ONLY_FOR_ARCHS=	${LP64_ARCHS} # too many time_t format string issues
 COMMENT-main=	host and service monitor
 COMMENT-web=	cgis and webpages for nagios
 
-V=		4.4.12
+V=		4.4.13
 DISTNAME=	nagios-$V
 PKGNAME-main=	nagios-$V
 PKGNAME-web=	nagios-web-$V
