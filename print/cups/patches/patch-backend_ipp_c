@@ -13,7 +13,7 @@ Index: backend/ipp.c
  
   /*
    * See if the printer supports SNMP...
-@@ -2459,7 +2459,7 @@ monitor_printer(
+@@ -2511,7 +2511,7 @@ monitor_printer(
  
    http = httpConnect2(monitor->hostname, monitor->port, NULL, AF_UNSPEC,
                        monitor->encryption, 1, 0, NULL);

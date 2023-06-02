@@ -1,12 +1,12 @@
 Index: scheduler/auth.c
 --- scheduler/auth.c.orig
 +++ scheduler/auth.c
-@@ -644,7 +644,7 @@ cupsdAuthorize(cupsd_client_t *con)	/* I - Client conn
+@@ -641,7 +641,7 @@ cupsdAuthorize(cupsd_client_t *con)	/* I - Client conn
  #  endif /* HAVE_SHADOW_H */
  
  
--	    pw = getpwnam(username);	/* Get the current password */
-+	    pw = getpwnam_shadow(username);	/* Get the current password */
- 	    endpwent();			/* Close the password file */
+-      pw = getpwnam(username);		/* Get the current password */
++      pw = getpwnam_shadow(username);		/* Get the current password */
+       endpwent();			/* Close the password file */
  
- 	    if (!pw)
+       if (!pw)

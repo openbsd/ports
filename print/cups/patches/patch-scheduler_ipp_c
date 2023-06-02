@@ -4,7 +4,7 @@ on low-end configurations.
 Index: scheduler/ipp.c
 --- scheduler/ipp.c.orig
 +++ scheduler/ipp.c
-@@ -4509,7 +4509,7 @@ copy_model(cupsd_client_t *con,		/* I - Client connect
+@@ -4533,7 +4533,7 @@ copy_model(cupsd_client_t *con,		/* I - Client connect
    close(temppipe[1]);
  
   /*
@@ -13,7 +13,7 @@ Index: scheduler/ipp.c
    */
  
    total = 0;
-@@ -4529,7 +4529,7 @@ copy_model(cupsd_client_t *con,		/* I - Client connect
+@@ -4553,7 +4553,7 @@ copy_model(cupsd_client_t *con,		/* I - Client connect
      FD_SET(temppipe[0], &input);
      FD_SET(CGIPipes[0], &input);
  

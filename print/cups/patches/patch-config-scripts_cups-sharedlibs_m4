@@ -4,7 +4,7 @@ Index: config-scripts/cups-sharedlibs.m4
 @@ -29,9 +29,9 @@ AS_IF([test x$enable_shared != xno], [
  	DSOXX="\$(CXX)"
  	DSOFLAGS="$DSOFLAGS -Wl,-h\`basename \$@\` -G"
-     ], [linux* | gnu* | *bsd*], [
+     ], [linux* | gnu* | *bsd* | solaris*], [
 -	LIBCUPS="lib$cupsbase.so.2"
 +	LIBCUPS="lib$cupsbase.so.${LIBcups_VERSION}"
  	AS_IF([test "x$cupsimagebase" != x], [
