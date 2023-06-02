@@ -2359,6 +2359,7 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/crl_un
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/crl_unsupported_reason.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/dsa_selfsigned_ca.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/ec_no_named_curve.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/ecdsa_null_alg.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/extended_key_usage.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/freshestcrl.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/ian_uri.pem
