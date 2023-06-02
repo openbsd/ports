@@ -1,12 +1,3 @@
-lib/cmake/Qt6QQEffectMakerTools/
-lib/cmake/Qt6QQEffectMakerTools/Qt6QQEffectMakerToolsAdditionalTargetInfo.cmake
-lib/cmake/Qt6QQEffectMakerTools/Qt6QQEffectMakerToolsConfig.cmake
-lib/cmake/Qt6QQEffectMakerTools/Qt6QQEffectMakerToolsConfigVersion.cmake
-lib/cmake/Qt6QQEffectMakerTools/Qt6QQEffectMakerToolsConfigVersionImpl.cmake
-lib/cmake/Qt6QQEffectMakerTools/Qt6QQEffectMakerToolsDependencies.cmake
-lib/cmake/Qt6QQEffectMakerTools/Qt6QQEffectMakerToolsTargets${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/Qt6QQEffectMakerTools/Qt6QQEffectMakerToolsTargets.cmake
-lib/cmake/Qt6QQEffectMakerTools/Qt6QQEffectMakerToolsVersionlessTargets.cmake
 @bin lib/qt6/bin/qqem
 lib/qt6/qml/QtQuickEffectMaker/
 lib/qt6/qml/QtQuickEffectMaker/defaultnodes/

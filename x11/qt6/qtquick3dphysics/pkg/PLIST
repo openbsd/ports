@@ -113,7 +113,6 @@ lib/qt6/qml/QtQuick3D/Physics/designer/DynamicRigidBodySection.qml
 lib/qt6/qml/QtQuick3D/Physics/designer/DynamicRigidBodySpecifics.qml
 lib/qt6/qml/QtQuick3D/Physics/designer/HeightFieldShapeSection.qml
 lib/qt6/qml/QtQuick3D/Physics/designer/HeightFieldShapeSpecifics.qml
-lib/qt6/qml/QtQuick3D/Physics/designer/IdComboBox.qml
 lib/qt6/qml/QtQuick3D/Physics/designer/NodeSection.qml
 lib/qt6/qml/QtQuick3D/Physics/designer/PhysicsBodySection.qml
 lib/qt6/qml/QtQuick3D/Physics/designer/PhysicsMaterialSection.qml
