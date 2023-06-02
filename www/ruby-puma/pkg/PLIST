@@ -64,6 +64,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/puma/minissl/context_builder.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/null_io.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/plugin/
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/plugin.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/puma/plugin/systemd.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/plugin/tmp_restart.rb
 @so ${GEM_LIB}/gems/${DISTNAME}/lib/puma/puma_http11.so
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/rack/
@@ -73,10 +74,10 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/puma/rack_default.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/reactor.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/request.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/runner.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/puma/sd_notify.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/server.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/single.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/state_file.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/puma/systemd.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/thread_pool.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/util.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rack/
