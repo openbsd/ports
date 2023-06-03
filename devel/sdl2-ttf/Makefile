@@ -2,6 +2,7 @@ V =		2.20.2
 COMMENT =	SDL2 TrueType fonts library
 DISTNAME =	SDL2_ttf-${V}
 PKGNAME =	sdl2-ttf-${V}
+REVISION =	0
 CATEGORIES =	devel graphics fonts
 
 SHARED_LIBS +=	SDL2_ttf		0.1 # 10.2
@@ -16,6 +17,8 @@ WANTLIB += SDL2 X11 Xcursor Xext Xfixes Xi Xrandr Xrender Xss
 WANTLIB += m pthread samplerate sndio usbhid xcb
 
 MASTER_SITES =	https://www.libsdl.org/projects/SDL_ttf/release/
+
+COMPILER =	base-clang ports-gcc
 
 LIB_DEPENDS =	devel/sdl2
 
