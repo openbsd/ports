@@ -2061,6 +2061,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/securitylake/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/securitylake/2018-05-10/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/securitylake/2018-05-10/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/securitylake/2018-05-10/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/securitylake/2018-05-10/paginators-1.sdk-extras.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/securitylake/2018-05-10/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/serverlessrepo/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/serverlessrepo/2017-09-08/
