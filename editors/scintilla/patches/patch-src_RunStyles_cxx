@@ -1,0 +1,20 @@
+fix build of scite on i386
+
+ld: error: /usr/local/lib/libscintilla.so.12.0: undefined reference to Scintilla::Internal::RunStyles<long, int>::DeleteAll() [--no-allow-shlib-undefined]
+ld: error: /usr/local/lib/libscintilla.so.12.0: undefined reference to Scintilla::Internal::RunStyles<long, int>::InsertSpace(long, long) [--no-allow-shlib-undefined] 
+
+cf https://groups.google.com/g/scintilla-interest/c/xPXquJUIXo8/m/BLXBpTTgBwAJ
+& https://sourceforge.net/p/scintilla/bugs/2315/
+
+Index: src/RunStyles.cxx
+--- src/RunStyles.cxx.orig
++++ src/RunStyles.cxx
+@@ -307,7 +307,7 @@ void RunStyles<DISTANCE, STYLE>::Check() const {
+ 
+ template class Scintilla::Internal::RunStyles<int, int>;
+ template class Scintilla::Internal::RunStyles<int, char>;
+-#if (PTRDIFF_MAX != INT_MAX) || defined(__HAIKU__)
++#if (PTRDIFF_MAX != INT_MAX) || defined(__HAIKU__) || defined(__OpenBSD__)
+ template class Scintilla::Internal::RunStyles<ptrdiff_t, int>;
+ template class Scintilla::Internal::RunStyles<ptrdiff_t, char>;
+ #endif
