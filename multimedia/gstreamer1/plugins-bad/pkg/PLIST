@@ -124,6 +124,7 @@ lib/girepository-${API}/GstWebRTC-${API}.typelib
 @so lib/gstreamer-${API}/libgstdash.so
 @so lib/gstreamer-${API}/libgstdebugutilsbad.so
 @so lib/gstreamer-${API}/libgstdvbsubenc.so
+@so lib/gstreamer-${API}/libgstdvdspu.so
 @so lib/gstreamer-${API}/libgstfaceoverlay.so
 @so lib/gstreamer-${API}/libgstfestival.so
 @so lib/gstreamer-${API}/libgstfieldanalysis.so
