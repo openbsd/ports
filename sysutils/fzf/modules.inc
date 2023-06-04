@@ -12,8 +12,8 @@ MODGO_MODULES =	\
 	golang.org/x/mod			 v0.6.0-dev.0.20220419223038-86c51ed26bb4 \
 	golang.org/x/net			 v0.0.0-20220722155237-a158d28d115b \
 	golang.org/x/sync			 v0.0.0-20220722155255-886fb9371eb4 \
-	golang.org/x/sys			 v0.7.0 \
-	golang.org/x/term			 v0.7.0 \
+	golang.org/x/sys			 v0.8.0 \
+	golang.org/x/term			 v0.8.0 \
 	golang.org/x/text			 v0.5.0 \
 	golang.org/x/tools			 v0.1.12 \
 	golang.org/x/xerrors			 v0.0.0-20190717185122-a985d3407aa7

@@ -1,16 +1,17 @@
 COMMENT =	command-line fuzzy finder
 
 MODGO_MODNAME = github.com/junegunn/fzf
-MODGO_VERSION =	v0.0.0-20230430165921-fb76893e18fd
+MODGO_VERSION =	v0.0.0-20230527065422-6eb1874c5a91
 
-V =	0.40.0
+V =	0.41.1
 DISTNAME =	fzf-${V}
 
 CATEGORIES =	sysutils
 
 HOMEPAGE =	https://github.com/junegunn/fzf
 
-MAINTAINER =	Edd Barrett <edd@openbsd.org>
+MAINTAINER =	Laurent Cheylus <foxy@free.fr>
+
 # BSD
 PERMIT_PACKAGE =	Yes
 
