@@ -1,2 +1,16 @@
 @bin bin/halibut
+info/halibut.info
+info/halibut.info-1
+info/halibut.info-2
+info/halibut.info-3
+info/halibut.info-4
 @man man/man1/halibut.1
+share/doc/halibut/
+share/doc/halibut/IndexPage.html
+share/doc/halibut/index.html
+share/doc/halibut/input.html
+share/doc/halibut/intro.html
+share/doc/halibut/licence.html
+share/doc/halibut/manpage.html
+share/doc/halibut/output.html
+share/doc/halibut/running.html
