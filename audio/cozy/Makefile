@@ -2,8 +2,7 @@ COMMENT =		gtk3 audiobook player
 
 GH_ACCOUNT =		geigi
 GH_PROJECT =		cozy
-GH_TAGNAME =		1.1.2
-REVISION =		1
+GH_TAGNAME =		1.2.1
 
 CATEGORIES =		audio
 
@@ -18,7 +17,7 @@ MODULES =		devel/dconf \
 
 COMMON_DEPENDS =	audio/py-mutagen${MODPY_FLAVOR} \
                         databases/py-peewee${MODPY_FLAVOR} \
-			devel/py-gobject3${MODPY_FLAVOR} \
+                        devel/py-gobject3${MODPY_FLAVOR} \
 			sysutils/py-distro${MODPY_FLAVOR} \
 			x11/elementary/granite \
 			x11/libhandy
@@ -28,9 +27,17 @@ BUILD_DEPENDS =		${COMMON_DEPENDS} \
 
 RUN_DEPENDS =		${COMMON_DEPENDS} \
 			devel/desktop-file-utils \
+			devel/py-tz${MODPY_FLAVOR} \
+			multimedia/gstreamer1/plugins-good,-pulse \
 			multimedia/gstreamer1/plugins-libav \
+			sysutils/py-packaging${MODPY_FLAVOR} \
+			www/py-requests${MODPY_FLAVOR} \
 			x11/gnome/libdazzle \
 			x11/gtk+4,-guic
+
+# required for running tests
+# one failing test due to missing network
+PORTHOME=		${WRKDIR}
 
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${PREFIX}

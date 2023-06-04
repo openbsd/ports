@@ -53,6 +53,7 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cozy/db/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/cozy/db/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cozy/db/${MODPY_PYCACHE}artwork_cache.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cozy/db/${MODPY_PYCACHE}book.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cozy/db/${MODPY_PYCACHE}collation.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cozy/db/${MODPY_PYCACHE}file.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cozy/db/${MODPY_PYCACHE}model_base.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cozy/db/${MODPY_PYCACHE}offline_cache.${MODPY_PYC_MAGIC_TAG}pyc
@@ -63,6 +64,7 @@ lib/python${MODPY_VERSION}/site-packages/cozy/db/${MODPY_PYCACHE}track.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/cozy/db/${MODPY_PYCACHE}track_to_file.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cozy/db/artwork_cache.py
 lib/python${MODPY_VERSION}/site-packages/cozy/db/book.py
+lib/python${MODPY_VERSION}/site-packages/cozy/db/collation.py
 lib/python${MODPY_VERSION}/site-packages/cozy/db/file.py
 lib/python${MODPY_VERSION}/site-packages/cozy/db/model_base.py
 lib/python${MODPY_VERSION}/site-packages/cozy/db/offline_cache.py
@@ -122,7 +124,6 @@ lib/python${MODPY_VERSION}/site-packages/cozy/model/${MODPY_PYCACHE}library.${MO
 lib/python${MODPY_VERSION}/site-packages/cozy/model/${MODPY_PYCACHE}settings.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cozy/model/${MODPY_PYCACHE}single_file_chapter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cozy/model/${MODPY_PYCACHE}storage.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/cozy/model/${MODPY_PYCACHE}storage_block_list.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cozy/model/${MODPY_PYCACHE}track.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cozy/model/book.py
 lib/python${MODPY_VERSION}/site-packages/cozy/model/chapter.py
@@ -131,7 +132,6 @@ lib/python${MODPY_VERSION}/site-packages/cozy/model/library.py
 lib/python${MODPY_VERSION}/site-packages/cozy/model/settings.py
 lib/python${MODPY_VERSION}/site-packages/cozy/model/single_file_chapter.py
 lib/python${MODPY_VERSION}/site-packages/cozy/model/storage.py
-lib/python${MODPY_VERSION}/site-packages/cozy/model/storage_block_list.py
 lib/python${MODPY_VERSION}/site-packages/cozy/model/track.py
 lib/python${MODPY_VERSION}/site-packages/cozy/open_view.py
 lib/python${MODPY_VERSION}/site-packages/cozy/power_manager.py
@@ -167,8 +167,8 @@ lib/python${MODPY_VERSION}/site-packages/cozy/ui/${MODPY_PYCACHE}main_view.${MOD
 lib/python${MODPY_VERSION}/site-packages/cozy/ui/${MODPY_PYCACHE}media_controller.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cozy/ui/${MODPY_PYCACHE}media_controller_big.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cozy/ui/${MODPY_PYCACHE}media_controller_small.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cozy/ui/${MODPY_PYCACHE}preferences_view.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cozy/ui/${MODPY_PYCACHE}search_view.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/cozy/ui/${MODPY_PYCACHE}settings.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cozy/ui/${MODPY_PYCACHE}warnings.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cozy/ui/app_view.py
 lib/python${MODPY_VERSION}/site-packages/cozy/ui/book_detail_view.py
@@ -187,8 +187,8 @@ lib/python${MODPY_VERSION}/site-packages/cozy/ui/main_view.py
 lib/python${MODPY_VERSION}/site-packages/cozy/ui/media_controller.py
 lib/python${MODPY_VERSION}/site-packages/cozy/ui/media_controller_big.py
 lib/python${MODPY_VERSION}/site-packages/cozy/ui/media_controller_small.py
+lib/python${MODPY_VERSION}/site-packages/cozy/ui/preferences_view.py
 lib/python${MODPY_VERSION}/site-packages/cozy/ui/search_view.py
-lib/python${MODPY_VERSION}/site-packages/cozy/ui/settings.py
 lib/python${MODPY_VERSION}/site-packages/cozy/ui/warnings.py
 lib/python${MODPY_VERSION}/site-packages/cozy/ui/widgets/
 lib/python${MODPY_VERSION}/site-packages/cozy/ui/widgets/ScrollWrapper.py
@@ -262,19 +262,23 @@ share/com.github.geigi.cozy/com.github.geigi.cozy.img.gresource
 share/com.github.geigi.cozy/com.github.geigi.cozy.ui.gresource
 share/glib-2.0/schemas/com.github.geigi.cozy.gschema.xml
 share/icons/hicolor/scalable/actions/account-symbolic.svg
+share/icons/hicolor/scalable/actions/bed-symbolic.svg
 share/icons/hicolor/scalable/actions/book-alert-symbolic.svg
 share/icons/hicolor/scalable/actions/book-open-variant-symbolic.svg
+share/icons/hicolor/scalable/actions/checkmark-symbolic.svg
 share/icons/hicolor/scalable/actions/clock-outline-symbolic.svg
 share/icons/hicolor/scalable/actions/download-symbolic.svg
 share/icons/hicolor/scalable/actions/downloaded-symbolic.svg
+share/icons/hicolor/scalable/actions/harddisk-symbolic.svg
 share/icons/hicolor/scalable/actions/info-symbolic.svg
 share/icons/hicolor/scalable/actions/message-flash-symbolic.svg
 share/icons/hicolor/scalable/actions/microphone-symbolic.svg
+share/icons/hicolor/scalable/actions/no-bed-symbolic.svg
+share/icons/hicolor/scalable/actions/papyrus-vertical-symbolic.svg
 share/icons/hicolor/scalable/actions/pause-symbolic.svg
 share/icons/hicolor/scalable/actions/play-symbolic.svg
-share/icons/hicolor/scalable/actions/speedometer-symbolic.svg
-share/icons/hicolor/scalable/actions/timer-off-symbolic.svg
-share/icons/hicolor/scalable/actions/timer-on-symbolic.svg
+share/icons/hicolor/scalable/actions/playback-speed-symbolic.svg
+share/icons/hicolor/scalable/actions/settings-symbolic.svg
 share/icons/hicolor/scalable/apps/com.github.geigi.cozy.Devel.svg
 share/icons/hicolor/scalable/apps/com.github.geigi.cozy.svg
 share/icons/hicolor/symbolic/apps/com.github.geigi.cozy-symbolic.svg
@@ -286,6 +290,7 @@ share/locale/el/LC_MESSAGES/com.github.geigi.cozy.mo
 share/locale/es/LC_MESSAGES/com.github.geigi.cozy.mo
 share/locale/fi/LC_MESSAGES/com.github.geigi.cozy.mo
 share/locale/fr/LC_MESSAGES/com.github.geigi.cozy.mo
+share/locale/gl/LC_MESSAGES/com.github.geigi.cozy.mo
 share/locale/hi/LC_MESSAGES/com.github.geigi.cozy.mo
 share/locale/hr/LC_MESSAGES/com.github.geigi.cozy.mo
 share/locale/it/LC_MESSAGES/com.github.geigi.cozy.mo
@@ -301,10 +306,7 @@ share/locale/ru/LC_MESSAGES/com.github.geigi.cozy.mo
 share/locale/sv/LC_MESSAGES/com.github.geigi.cozy.mo
 share/locale/tr/LC_MESSAGES/com.github.geigi.cozy.mo
 share/locale/uk/LC_MESSAGES/com.github.geigi.cozy.mo
-share/locale/zh/
-share/locale/zh/LC_MESSAGES/
 share/locale/zh/LC_MESSAGES/com.github.geigi.cozy.mo
-share/metainfo/
 share/metainfo/com.github.geigi.cozy.appdata.xml
 @tag update-desktop-database
 @tag glib-compile-schemas
