@@ -1,7 +1,7 @@
 COMMENT=	perl-based deployment and configuration management
 
 CPAN_AUTHOR=	FERKI
-DISTNAME=	Rex-1.13.4
+DISTNAME=	Rex-1.14.2
 
 CATEGORIES=	sysutils
 
@@ -34,8 +34,11 @@ RUN_DEPENDS=	converters/p5-JSON-XS \
 BUILD_DEPENDS=	devel/p5-File-ShareDir
 
 TEST_DEPENDS=	devel/p5-Test-Deep \
+		devel/p5-Sub-Override \
+		devel/p5-Test-Exception \
 		devel/p5-Test-Output \
-		devel/p5-Test-UseAllModules
+		devel/p5-Test-UseAllModules \
+		devel/p5-Test-Warnings
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/p5-Rex

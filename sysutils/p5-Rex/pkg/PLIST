@@ -62,8 +62,6 @@ ${P5SITE}/Rex/Commands/Tail.pm
 ${P5SITE}/Rex/Commands/Upload.pm
 ${P5SITE}/Rex/Commands/User.pm
 ${P5SITE}/Rex/Commands/Virtualization.pm
-${P5SITE}/Rex/Commands/templates/
-${P5SITE}/Rex/Commands/templates/append_if_no_such_line.tpl.pl
 ${P5SITE}/Rex/Config.pm
 ${P5SITE}/Rex/Constants.pm
 ${P5SITE}/Rex/Cron/
