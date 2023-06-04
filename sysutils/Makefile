@@ -16,6 +16,7 @@
      SUBDIR += augeas
      SUBDIR += autossh
      SUBDIR += awscli
+     SUBDIR += awscli-plugin-endpoint
      SUBDIR += backuppc
      SUBDIR += bacula
      SUBDIR += bat
