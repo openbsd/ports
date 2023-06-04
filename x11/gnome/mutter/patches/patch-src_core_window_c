@@ -1,8 +1,9 @@
 Fix focus issue: https://gitlab.gnome.org/GNOME/mutter/-/issues/2690
+
 Index: src/core/window.c
 --- src/core/window.c.orig
 +++ src/core/window.c
-@@ -1998,15 +1998,6 @@ window_state_on_map (MetaWindow *window,
+@@ -2007,15 +2007,6 @@ window_state_on_map (MetaWindow *window,
        return;
      }
  
