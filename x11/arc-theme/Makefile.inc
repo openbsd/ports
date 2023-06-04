@@ -22,7 +22,7 @@ BUILD_DEPENDS +=	devel/glib2 \
 PKG_ARCH=		*
 
 CONFIGURE_ARGS +=	-Dgnome_shell_gresource=true \
-			-Dgnome_shell_version=42 \
+			-Dgnome_shell_version=43 \
 			-Dthemes="gnome-shell,gtk2,gtk3,gtk4,xfwm"
 
 CHECKSUM_FILE=		${.CURDIR}/../distinfo
