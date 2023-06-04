@@ -12,5 +12,5 @@ Index: configure
 -CXXFLAGS='-Wall -W -O2'
 -LDFLAGS=
  LIBS=-lncurses
+ MAKEINFO=makeinfo
  
- # checking whether we are using GNU C++.

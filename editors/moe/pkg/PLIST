@@ -2,5 +2,5 @@
 @info info/moe.info
 @man man/man1/moe.1
 share/examples/moe/
-share/examples/moe/moerc
-@sample ${SYSCONFDIR}/moerc
+share/examples/moe/moe.conf
+@sample ${SYSCONFDIR}/moe.conf

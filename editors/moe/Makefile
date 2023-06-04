@@ -1,5 +1,5 @@
 COMMENT =	powerful and user-friendly console text editor
-DISTNAME =	moe-1.12
+DISTNAME =	moe-1.13
 EXTRACT_SUFX =	.tar.lz
 CATEGORIES =	editors
 
