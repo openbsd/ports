@@ -77,6 +77,7 @@ share/ne/syntax/tabs.jsf
 share/ne/syntax/tcl.jsf
 share/ne/syntax/tex.jsf
 share/ne/syntax/texinfo.jsf
+share/ne/syntax/toml.jsf
 share/ne/syntax/troff.jsf
 share/ne/syntax/txt2tags.jsf
 share/ne/syntax/typescript.jsf

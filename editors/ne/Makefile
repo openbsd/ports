@@ -1,5 +1,5 @@
 COMMENT =	nice console editor
-DISTNAME =	ne-3.3.1
+DISTNAME =	ne-3.3.2
 CATEGORIES =	editors
 
 HOMEPAGE =	http://ne.di.unimi.it/
