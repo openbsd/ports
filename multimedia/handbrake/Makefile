@@ -2,7 +2,7 @@ V = 		1.3.3
 COMMENT =	open source video transcoder
 DISTNAME =	HandBrake-${V}-source
 PKGNAME =	handbrake-${V}
-REVISION =	6
+REVISION =	7
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	multimedia x11
 
@@ -68,6 +68,7 @@ USE_GMAKE =	Yes
 ALL_TARGET =	build
 MAKE_ENV =	AUTOCONF_VERSION="${AUTOCONF_VERSION}" \
 		AUTOMAKE_VERSION="${AUTOMAKE_VERSION}" \
+		AWK=/usr/bin/awk \
 		MKDIR_P='/bin/mkdir -p'
 MAKE_FILE =	GNUmakefile
 MAKE_FLAGS =	CFLAGS="${CFLAGS} -I${LOCALBASE}/include/libxml2 -D_NO_UPDATE_CHECK" \
