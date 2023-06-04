@@ -3,7 +3,7 @@ Don't hardcode PREFIX, CC, or CXX.
 Index: src/Makefile
 --- src/Makefile.orig
 +++ src/Makefile
-@@ -27,7 +27,7 @@ EXE = stockfish
+@@ -45,7 +45,7 @@ else
  endif
  
  ### Installation dir definitions
@@ -12,7 +12,7 @@ Index: src/Makefile
  BINDIR = $(PREFIX)/bin
  
  ### Built-in benchmark for pgo-builds
-@@ -324,8 +324,8 @@ ifeq ($(COMP),)
+@@ -364,8 +364,8 @@ ifeq ($(COMP),)
  endif
  
  ifeq ($(COMP),gcc)
@@ -22,4 +22,4 @@ Index: src/Makefile
 +	CXX?=g++
  	CXXFLAGS += -pedantic -Wextra -Wshadow
  
- 	ifeq ($(arch),$(filter $(arch),armv7 armv8))
+ 	ifeq ($(arch),$(filter $(arch),armv7 armv8 riscv64))

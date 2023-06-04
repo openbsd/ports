@@ -1,7 +1,7 @@
-V =		14.1
+V =		15.1
 COMMENT =	open source chess engine
 PKGNAME =	stockfish-${V}
-NNUE =		nn-13406b1dcbe0.nnue
+NNUE =		nn-ad9b42354671.nnue
 CATEGORIES =	games
 
 HOMEPAGE =	https://stockfishchess.org/
