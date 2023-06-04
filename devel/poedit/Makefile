@@ -1,9 +1,8 @@
 COMMENT=	cross-platform gettext catalogs (PO-files) editor
 
-V=		3.2.2
+V=		3.3.1
 DISTNAME=	poedit-${V}
 CATEGORIES=	devel textproc
-REVISION=	2
 
 HOMEPAGE=	https://www.poedit.net/
 
@@ -25,6 +24,7 @@ WANTLIB += wx_gtk3u_core-3.2 wx_gtk3u_xrc-3.2 wx_gtk3u_webview-3.2
 # C++14
 COMPILER=	base-clang ports-gcc
 
+BUILD_DEPENDS=	textproc/nlohmann-json
 RUN_DEPENDS=	devel/desktop-file-utils \
 		devel/gettext,-tools \
 		x11/gtk+4,-guic
