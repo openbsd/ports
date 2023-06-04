@@ -291,6 +291,11 @@ share/locale/it/LC_TIME/coreutils.mo
 share/locale/ja/LC_MESSAGES/coreutils.mo
 share/locale/ja/LC_TIME/
 share/locale/ja/LC_TIME/coreutils.mo
+share/locale/ka/
+share/locale/ka/LC_MESSAGES/
+share/locale/ka/LC_MESSAGES/coreutils.mo
+share/locale/ka/LC_TIME/
+share/locale/ka/LC_TIME/coreutils.mo
 share/locale/kk/
 share/locale/kk/LC_MESSAGES/
 share/locale/kk/LC_MESSAGES/coreutils.mo
