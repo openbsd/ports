@@ -433,6 +433,7 @@ share/nvim/runtime/ftplugin/context.vim
 share/nvim/runtime/ftplugin/cpp.vim
 share/nvim/runtime/ftplugin/crm.vim
 share/nvim/runtime/ftplugin/crontab.vim
+share/nvim/runtime/ftplugin/cs.lua
 share/nvim/runtime/ftplugin/cs.vim
 share/nvim/runtime/ftplugin/csc.vim
 share/nvim/runtime/ftplugin/csh.vim
