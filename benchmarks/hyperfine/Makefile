@@ -2,7 +2,7 @@ COMMENT =		command-line benchmarking tool
 
 GH_ACCOUNT =		sharkdp
 GH_PROJECT =		hyperfine
-GH_TAGNAME =		v1.16.1
+GH_TAGNAME =		v1.17.0
 
 CATEGORIES =		benchmarks
 
