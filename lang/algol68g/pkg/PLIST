@@ -1,8 +1,8 @@
 @bin bin/a68g
 include/algol68g/
 include/algol68g/a68g-common.h
-include/algol68g/a68g-compiler.h
 include/algol68g/a68g-config.h
+include/algol68g/a68g-config.win32.h
 include/algol68g/a68g-defines.h
 include/algol68g/a68g-diagnostics.h
 include/algol68g/a68g-double.h
@@ -17,6 +17,7 @@ include/algol68g/a68g-lib.h
 include/algol68g/a68g-listing.h
 include/algol68g/a68g-masks.h
 include/algol68g/a68g-math.h
+include/algol68g/a68g-moids.h
 include/algol68g/a68g-mp.h
 include/algol68g/a68g-nil.h
 include/algol68g/a68g-numbers.h
@@ -25,12 +26,15 @@ include/algol68g/a68g-options.h
 include/algol68g/a68g-parser.h
 include/algol68g/a68g-physics.h
 include/algol68g/a68g-platform.h
+include/algol68g/a68g-plugin.h
 include/algol68g/a68g-postulates.h
 include/algol68g/a68g-prelude-gsl.h
 include/algol68g/a68g-prelude-mathlib.h
 include/algol68g/a68g-prelude.h
+include/algol68g/a68g-quad.h
 include/algol68g/a68g-stack.h
 include/algol68g/a68g-stddef.h
+include/algol68g/a68g-torrix.h
 include/algol68g/a68g-transput.h
 include/algol68g/a68g-types.h
 include/algol68g/a68g.h
@@ -38,6 +42,6 @@ include/algol68g/a68g.h
 share/doc/algol68g/
 share/doc/algol68g/AUTHORS
 share/doc/algol68g/COPYING
-share/doc/algol68g/LICENSE
+share/doc/algol68g/ChangeLog
 share/doc/algol68g/NEWS
 share/doc/algol68g/README
