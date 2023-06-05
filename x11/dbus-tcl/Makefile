@@ -1,6 +1,6 @@
 COMMENT =	dbus bindings for Tcl
 
-V =		3.0
+V =		3.1
 
 DISTNAME =	dbus-${V}
 PKGNAME =	dbus-tcl-${V}
