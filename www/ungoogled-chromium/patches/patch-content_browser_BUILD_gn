@@ -1,7 +1,7 @@
 Index: content/browser/BUILD.gn
 --- content/browser/BUILD.gn.orig
 +++ content/browser/BUILD.gn
-@@ -2366,6 +2366,13 @@ source_set("browser") {
+@@ -2389,6 +2389,13 @@ source_set("browser") {
      ]
    }
  

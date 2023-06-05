@@ -19,7 +19,7 @@ Index: chrome/browser/download/download_item_model.cc
        if (download_commands->CanOpenPdfInSystemViewer()) {
          prefs->SetShouldOpenPdfInSystemReader(!is_checked);
          SetShouldPreferOpeningInBrowser(is_checked);
-@@ -1129,7 +1129,7 @@ void DownloadItemModel::DetermineAndSetShouldPreferOpe
+@@ -1141,7 +1141,7 @@ void DownloadItemModel::DetermineAndSetShouldPreferOpe
      return;
    }
  

@@ -1,7 +1,7 @@
 Index: components/crash/core/common/BUILD.gn
 --- components/crash/core/common/BUILD.gn.orig
 +++ components/crash/core/common/BUILD.gn
-@@ -8,7 +8,7 @@ import("//components/gwp_asan/buildflags/buildflags.gn
+@@ -9,7 +9,7 @@ import("//components/gwp_asan/buildflags/buildflags.gn
  
  declare_args() {
    # If set to true, this will stub out and disable the entire crash key system.

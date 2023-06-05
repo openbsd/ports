@@ -7,7 +7,7 @@ DPB_PROPERTIES=		parallel parallel2
 
 COMMENT=		Chromium browser sans integration with Google
 
-V=			113.0.5672.126
+V=			114.0.5735.90
 UGV=			${V}-1
 
 DISTNAME=		ungoogled-chromium-${V}
@@ -57,7 +57,7 @@ WANTLIB+=	cbor crypto cups dav1d dbus-1 drm event execinfo expat ffi fido2
 WANTLIB+=	fontconfig freetype fribidi gbm gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB+=	gobject-2.0 graphite2 gthread-2.0 harfbuzz harfbuzz-gobject
 WANTLIB+=	harfbuzz-subset iconv icudata icui18n icuuc intl jpeg kvm m
-WANTLIB+=	nspr4 nss3 nssutil3 openh264 pango-1.0 pangocairo-1.0
+WANTLIB+=	nspr4 nss3 nssutil3 openh264 opus pango-1.0 pangocairo-1.0
 WANTLIB+=	pangoft2-1.0 pcre2-8 pixman-1 plc4 plds4 png pthread pthread smime3
 WANTLIB+=	snappy sndio usbhid util xcb xcb-render xcb-shm xkbcommon xml2
 WANTLIB+=	xshmfence xslt z
@@ -83,6 +83,7 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		${MODGCC4_CPPDEP} \
 		${RUN_DEPENDS}
 LIB_DEPENDS=	archivers/snappy \
+		audio/opus \
 		devel/pango \
 		graphics/jpeg \
 		multimedia/dav1d \
@@ -96,6 +97,8 @@ LIB_DEPENDS=	archivers/snappy \
 		${MODGCC4_CPPLIBDEP}
 
 BUILD_DEPENDS+=	sysutils/libudev-openbsd:build
+
+USE_GMAKE=	Yes
 
 .include <bsd.own.mk>
 
@@ -117,6 +120,7 @@ TEST_TARGET=		base_unittests \
 			media_unittests \
 			mojo_unittests \
 			net_unittests \
+			pdf_unittests \
 			printing_unittests \
 			skia_unittests \
 			url_unittests \
@@ -140,6 +144,7 @@ GN_SYSTEM_LIBS=	dav1d \
 		libxml \
 		libxslt \
 		openh264 \
+		opus \
 		snappy
 
 GN_ARGS=	is_official_build=true \
@@ -170,19 +175,27 @@ GN_ARGS=	is_official_build=true \
 # notyet
 GN_ARGS+=	use_vaapi=false
 
-.if ${MACHINE_ARCH} == "i386"
-GN_ARGS+=	extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib -Wl,--no-keep-memory\"
-.else
-GN_ARGS+=	extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib\"
-.endif
-
 .if ${MACHINE_ARCH} == "aarch64"
+GN_ARGS+=	extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib\"
 PKG_ARGS+=	-Dswiftshader=0
-.else
+FFMPEG_TARGET=	arm64
+.elif ${MACHINE_ARCH} == "amd64"
+BUILD_DEPENDS+=	devel/nasm
+GN_ARGS+=	extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib\"
 PKG_ARGS+=	-Dswiftshader=1
+FFMPEG_TARGET=	x64
+.elif ${MACHINE_ARCH} == "i386"
+BUILD_DEPENDS+=	devel/nasm
+GN_ARGS+=	extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib -Wl,--no-keep-memory\"
+PKG_ARGS+=	-Dswiftshader=1
+FFMPEG_TARGET=	ia32
 .endif
 
-GN_ARGS+=	ffmpeg_branding=\"Chrome\" \
+FFMPEG_BRAND=	Chrome
+FFMPEG_BDIR=	${WRKSRC}/third_party/ffmpeg/build.${FFMPEG_TARGET}.openbsd/${FFMPEG_BRAND}
+FFMPEG_CDIR=	${WRKSRC}/third_party/ffmpeg/chromium/config/${FFMPEG_BRAND}/openbsd/${FFMPEG_TARGET}
+
+GN_ARGS+=	ffmpeg_branding=\"${FFMPEG_BRAND}\" \
 		proprietary_codecs=true
 
 # XXX dwz doesn't work with chromium yet
@@ -245,11 +258,12 @@ pre-patch:
 pre-configure:
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 	@ln -sf ${MODQT5_MOC} ${WRKDIR}/bin/moc
-.for _arch in x64 ia32 arm64
-.  for _dir in avcodec avformat avutil
-	@cp -pR ${WRKSRC}/third_party/ffmpeg/chromium/config/Chrome/linux/${_arch}/lib${_dir} \
-		${WRKSRC}/third_party/ffmpeg/chromium/config/Chrome/openbsd/${_arch}/lib${_dir}
-.  endfor
+	cd ${WRKSRC}/third_party/ffmpeg && \
+		${MODPY_BIN} chromium/scripts/build_ffmpeg.py openbsd ${FFMPEG_TARGET} --config-only --branding=${FFMPEG_BRAND}
+	cd ${FFMPEG_BDIR} && ${GMAKE} ffversion.h
+	${INSTALL_DATA_DIR} ${FFMPEG_CDIR}
+.for _e in config.h config.asm config_components.h libavcodec libavformat libavutil
+	-cp -pR ${FFMPEG_BDIR}/${_e} ${FFMPEG_CDIR}
 .endfor
 	@mkdir -p ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin
 	@ln -sf ${TRUEPREFIX}/bin/node ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin/node

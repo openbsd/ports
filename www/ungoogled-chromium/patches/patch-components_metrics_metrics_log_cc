@@ -1,7 +1,7 @@
 Index: components/metrics/metrics_log.cc
 --- components/metrics/metrics_log.cc.orig
 +++ components/metrics/metrics_log.cc
-@@ -53,7 +53,7 @@
+@@ -52,7 +52,7 @@
  #include "base/win/current_module.h"
  #endif
  
@@ -10,7 +10,7 @@ Index: components/metrics/metrics_log.cc
  #include "base/environment.h"
  #include "base/nix/xdg_util.h"
  #endif
-@@ -131,7 +131,7 @@ void RecordCurrentTime(
+@@ -130,7 +130,7 @@ void RecordCurrentTime(
    }
  }
  
