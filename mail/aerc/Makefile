@@ -5,12 +5,13 @@ MODGO_VERSION =	v0.0.0-20230511091235-f1772c92f92e
 
 V =		0.15.2
 DISTNAME =	aerc-$V
+REVISION =	0
 
 CATEGORIES =	mail
 
 HOMEPAGE =	https://aerc-mail.org
 
-MAINTAINER =	Omar Polo <op@openbsd.org>
+MAINTAINER =	Thim Cederlund <thim@cederlund.de>
 
 # MIT
 PERMIT_PACKAGE = Yes
