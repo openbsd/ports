@@ -1,0 +1,15 @@
+base64 output includes some CR and the shell seems to do word
+splitting... not fun.
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -15,7 +15,7 @@ BUILD_OPTS?=-trimpath
+ # ignore environment variable
+ GO_LDFLAGS:=
+ GO_LDFLAGS+=-X main.Version=$(VERSION)
+-GO_LDFLAGS+=-X main.Flags=$$(echo -- $(GOFLAGS) | base64 | tr -d '\n')
++GO_LDFLAGS+=-X main.Flags=$$(echo -- $(GOFLAGS) | base64 | tr -d '\r\n')
+ GO_LDFLAGS+=-X git.sr.ht/~rjarry/aerc/config.shareDir=$(SHAREDIR)
+ GO_LDFLAGS+=-X git.sr.ht/~rjarry/aerc/config.libexecDir=$(LIBEXECDIR)
+ GO_LDFLAGS+=$(GO_EXTRA_LDFLAGS)

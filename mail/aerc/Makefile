@@ -1,9 +1,9 @@
 COMMENT =	terminal email client
 
 MODGO_MODNAME =	git.sr.ht/~rjarry/aerc
-MODGO_VERSION =	v0.0.0-20230104153838-a42042f494cc
+MODGO_VERSION =	v0.0.0-20230511091235-f1772c92f92e
 
-V =		0.14.0
+V =		0.15.2
 DISTNAME =	aerc-$V
 
 CATEGORIES =	mail
@@ -21,18 +21,22 @@ MODULES =	lang/go
 
 USE_GMAKE =	yes
 
-BUILD_DEPENDS =	textproc/scdoc
+BUILD_DEPENDS =	converters/base64 \
+		textproc/scdoc
 
 LIB_DEPENDS =	mail/notmuch/notmuch
 
 RUN_DEPENDS =	devel/desktop-file-utils
 
 CFLAGS +=	-I${LOCALBASE}/include
-LDFLAGS +=	-L${LOCALBASE}/lib
+LDFLAGS +=	-L ${LOCALBASE}/lib
 MODGO_FLAGS +=	-tags=notmuch
 
-MAKE_FLAGS =	CGO_CFLAGS="${CFLAGS}" \
+MAKE_FLAGS =	CC="${CC}" \
+		CFLAGS="${CFLAGS}" \
+		CGO_CFLAGS="${CFLAGS}" \
 		CGO_LDFLAGS="${LDFLAGS}" \
+		GO_EXTRA_LDFLAGS="${LDFLAGS}" \
 		GOFLAGS="${MODGO_FLAGS}" \
 		PREFIX=${PREFIX} \
 		VERSION=$V
