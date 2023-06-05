@@ -20,6 +20,12 @@ man/fr/man1/
 @man man/fr/man1/mac2unix.1
 @man man/fr/man1/unix2dos.1
 @man man/fr/man1/unix2mac.1
+man/ko/
+man/ko/man1/
+@man man/ko/man1/dos2unix.1
+@man man/ko/man1/mac2unix.1
+@man man/ko/man1/unix2dos.1
+@man man/ko/man1/unix2mac.1
 @man man/man1/dos2unix.1
 @man man/man1/mac2unix.1
 @man man/man1/unix2dos.1
@@ -42,6 +48,18 @@ man/pt_BR/man1/
 @man man/pt_BR/man1/mac2unix.1
 @man man/pt_BR/man1/unix2dos.1
 @man man/pt_BR/man1/unix2mac.1
+man/ro/
+man/ro/man1/
+@man man/ro/man1/dos2unix.1
+@man man/ro/man1/mac2unix.1
+@man man/ro/man1/unix2dos.1
+@man man/ro/man1/unix2mac.1
+man/sr/
+man/sr/man1/
+@man man/sr/man1/dos2unix.1
+@man man/sr/man1/mac2unix.1
+@man man/sr/man1/unix2dos.1
+@man man/sr/man1/unix2mac.1
 man/sv/
 man/sv/man1/
 @man man/sv/man1/dos2unix.1
@@ -79,6 +97,9 @@ share/doc/dos2unix/es/dos2unix.txt
 share/doc/dos2unix/fr/
 share/doc/dos2unix/fr/dos2unix.htm
 share/doc/dos2unix/fr/dos2unix.txt
+share/doc/dos2unix/ko/
+share/doc/dos2unix/ko/dos2unix.htm
+share/doc/dos2unix/ko/dos2unix.txt
 share/doc/dos2unix/nl/
 share/doc/dos2unix/nl/dos2unix.htm
 share/doc/dos2unix/nl/dos2unix.txt
@@ -88,6 +109,12 @@ share/doc/dos2unix/pl/dos2unix.txt
 share/doc/dos2unix/pt_BR/
 share/doc/dos2unix/pt_BR/dos2unix.htm
 share/doc/dos2unix/pt_BR/dos2unix.txt
+share/doc/dos2unix/ro/
+share/doc/dos2unix/ro/dos2unix.htm
+share/doc/dos2unix/ro/dos2unix.txt
+share/doc/dos2unix/sr/
+share/doc/dos2unix/sr/dos2unix.htm
+share/doc/dos2unix/sr/dos2unix.txt
 share/doc/dos2unix/sv/
 share/doc/dos2unix/sv/dos2unix.htm
 share/doc/dos2unix/sv/dos2unix.txt
@@ -97,6 +124,7 @@ share/doc/dos2unix/uk/dos2unix.txt
 share/doc/dos2unix/zh_CN/
 share/doc/dos2unix/zh_CN/dos2unix.htm
 share/doc/dos2unix/zh_CN/dos2unix.txt
+share/locale/ca/LC_MESSAGES/dos2unix.mo
 share/locale/da/LC_MESSAGES/dos2unix.mo
 share/locale/de/LC_MESSAGES/dos2unix.mo
 share/locale/eo/LC_MESSAGES/dos2unix.mo
@@ -107,10 +135,15 @@ share/locale/fur/LC_MESSAGES/
 share/locale/fur/LC_MESSAGES/dos2unix.mo
 share/locale/hu/LC_MESSAGES/dos2unix.mo
 share/locale/ja/LC_MESSAGES/dos2unix.mo
+share/locale/ka/
+share/locale/ka/LC_MESSAGES/
+share/locale/ka/LC_MESSAGES/dos2unix.mo
+share/locale/ko/LC_MESSAGES/dos2unix.mo
 share/locale/nb/LC_MESSAGES/dos2unix.mo
 share/locale/nl/LC_MESSAGES/dos2unix.mo
 share/locale/pl/LC_MESSAGES/dos2unix.mo
 share/locale/pt_BR/LC_MESSAGES/dos2unix.mo
+share/locale/ro/LC_MESSAGES/dos2unix.mo
 share/locale/ru/LC_MESSAGES/dos2unix.mo
 share/locale/sr/LC_MESSAGES/dos2unix.mo
 share/locale/sv/LC_MESSAGES/dos2unix.mo

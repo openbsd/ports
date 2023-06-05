@@ -1,6 +1,6 @@
 COMMENT=	convert DOS/MAC files to UNIX (line-endings/charset)
 
-DISTNAME =	dos2unix-7.4.2
+DISTNAME =	dos2unix-7.5.0
 
 CATEGORIES=	converters
 
