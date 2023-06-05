@@ -1,3 +1,5 @@
+BROKEN-i386 =	various problems with MMX intrinsics
+
 QT6NAME =	QtQuick3dPhysics
 COMMENT =	Quick 3D Physics support for Qt6
 PKGSPEC =	qt6-qtquick3dphysics-${QT6_PKGSPEC}
