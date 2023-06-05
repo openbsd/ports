@@ -2,7 +2,7 @@ COMMENT =	tools for use with WireGuard VPN
 
 DISTNAME =	wireguard-tools-1.0.20210914
 EPOCH =		0
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	net security
 
