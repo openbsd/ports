@@ -367,6 +367,7 @@
      SUBDIR += xcape
      SUBDIR += xcb
      SUBDIR += xchm
+     SUBDIR += xclickroot
      SUBDIR += xclip
      SUBDIR += xcolor
      SUBDIR += xcoloredit
