@@ -152,8 +152,10 @@
      SUBDIR += p5-Auth-Yubikey_Decrypter
      SUBDIR += p5-Authen-Htpasswd
      SUBDIR += p5-Authen-NTLM
+     SUBDIR += p5-Authen-OATH
      SUBDIR += p5-Authen-Radius
      SUBDIR += p5-Authen-SASL
+     SUBDIR += p5-Authen-WebAuthn
      SUBDIR += p5-Catalyst-Authentication-Store-DBI
      SUBDIR += p5-Catalyst-Authentication-Store-DBIx-Class
      SUBDIR += p5-Catalyst-Plugin-Authentication
@@ -198,6 +200,7 @@
      SUBDIR += p5-Crypt-SmbHash
      SUBDIR += p5-Crypt-TripleDES
      SUBDIR += p5-Crypt-Twofish
+     SUBDIR += p5-Crypt-URandom
      SUBDIR += p5-Crypt-X509
      SUBDIR += p5-CryptX
      SUBDIR += p5-Digest-BubbleBabble
