@@ -64,6 +64,7 @@ lib/${MOZILLA_PROJECT}/distribution/
 lib/${MOZILLA_PROJECT}/distribution/distribution.ini
 @bin lib/${MOZILLA_PROJECT}/${MOZILLA_PROJECT}
 @bin lib/${MOZILLA_PROJECT}/${MOZILLA_PROJECT}-bin
+@bin lib/${MOZILLA_PROJECT}/glxtest
 lib/${MOZILLA_PROJECT}/gmp-clearkey/
 lib/${MOZILLA_PROJECT}/gmp-clearkey/0.1/
 @lib lib/${MOZILLA_PROJECT}/gmp-clearkey/0.1/libclearkey.so.${LIBclearkey_VERSION}

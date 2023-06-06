@@ -3,15 +3,15 @@ ONLY_FOR_ARCHS =	amd64 aarch64
 
 # Don't forget to bump www/firefox-i18n after updates.
 
-MOZILLA_VERSION =	113.0.2
-MOZILLA_PROFDATA_TASKID=Hs7uO1niQpqu_W5d-PyzPA
+MOZILLA_VERSION =	114.0
+MOZILLA_PROFDATA_TASKID=OkzBahh7RaOlarbcc2gPfA
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/b[0-9]*//}
 HOMEPAGE =	https://www.mozilla.org/firefox/
-SO_VERSION =	126.0
+SO_VERSION =	127.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	mozavcodec mozavutil mozgtk xul clearkey lgpllibs mozsqlite3 ipcclientcerts
@@ -51,6 +51,12 @@ CONFIGURE_SCRIPT =	${MODPY_BIN} ${WRKSRC}/configure.py
 CONFIGURE_ARGS +=	--prefix=${PREFIX}
 MAKE_ENV +=		BUILD_VERBOSE_LOG="1" CARGOFLAGS="-j${MAKE_JOBS}"
 CONFIGURE_ENV +=	CPPFLAGS=-Wno-backend-plugin
+DSIZE != ulimit -d
+.if ${DSIZE} > 18000000
+CONFIGURE_ENV +=	LDFLAGS=-Wl,--threads=${MAKE_JOBS}
+.else
+CONFIGURE_ENV +=	LDFLAGS=-Wl,--threads=2
+.endif
 
 CONFIGURE_ARGS +=	--enable-release #1386371
 CONFIGURE_ARGS +=	--enable-sandbox
