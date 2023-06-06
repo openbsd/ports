@@ -1,9 +1,8 @@
 COMMENT =		XRandR GUI
-MODPY_EGG_VERSION =	0.1.10
+MODPY_EGG_VERSION =	0.1.11
 DISTNAME =		arandr-${MODPY_EGG_VERSION}
 CATEGORIES =		x11 sysutils
 HOMEPAGE =		https://christian.amsuess.com/tools/arandr/
-REVISION =		3
 
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
