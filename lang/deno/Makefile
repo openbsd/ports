@@ -5,6 +5,7 @@ COMMENT =		runtime for JavaScript and TypeScript
 USE_WXNEEDED =		Yes
 
 VERSION =		1.32.5
+REVISION =		0
 HOMEPAGE =		https://deno.com/runtime
 
 DISTNAME =		deno-${VERSION}
@@ -21,6 +22,8 @@ PERMIT_PACKAGE =	Yes
 MODULES =		devel/cargo
 MODCARGO_CRATES_KEEP +=	libsqlite3-sys \
 			libz-sys
+
+MODCARGO_CRATES_UPDATE += dprint-plugin-json
 
 MODCARGO_ENV +=		V8_FROM_SOURCE=1 \
 			GN=${LOCALBASE}/bin/gn \

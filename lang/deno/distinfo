@@ -98,7 +98,7 @@ SHA256 (cargo/dlopen-0.1.8.tar.gz) = cegK05+BSpq+aFg81QotRcimdWHDNhq42iQFh92oCTc
 SHA256 (cargo/dlopen_derive-0.1.4.tar.gz) = 8jbZ4bH72BzqD5y9yNzH6OvNgOZlnNfLKtX2wFlGxYE=
 SHA256 (cargo/dotenv-0.15.0.tar.gz) = d8kLre3M9BBeyhAHVqCxKJ4ZH2/L2t087h0vYU+X2o8=
 SHA256 (cargo/dprint-core-0.60.0.tar.gz) = LHYtooLrx2NfeRiJjibVDisoI3iXfcezeGNkrBIGWnE=
-SHA256 (cargo/dprint-plugin-json-0.17.0.tar.gz) = 5hIKpWE4Ftsu8u9TnCKcJPTuPbuhUxckK88N5fF6AGA=
+SHA256 (cargo/dprint-plugin-json-0.17.1.tar.gz) = n2Y2Pr8dzC8X0hFiGNGf/zvXEJ0HNNFqOYR00My68BE=
 SHA256 (cargo/dprint-plugin-markdown-0.15.2.tar.gz) = UJXmRxvHGJL9T+P3QgWm0uIr076bCXWP0jv/Z7XsFf0=
 SHA256 (cargo/dprint-plugin-typescript-0.84.0.tar.gz) = 92P5cAftr23VD1lSbynuiqj6BW9QZEYBveBODxrC4gg=
 SHA256 (cargo/dprint-swc-ext-0.8.0.tar.gz) = AItgYVUbz2REVEaeZQbDK7I7dl35PWCL96jiSU+C/LM=
@@ -618,7 +618,7 @@ SIZE (cargo/dlopen-0.1.8.tar.gz) = 29753
 SIZE (cargo/dlopen_derive-0.1.4.tar.gz) = 3491
 SIZE (cargo/dotenv-0.15.0.tar.gz) = 11668
 SIZE (cargo/dprint-core-0.60.0.tar.gz) = 51630
-SIZE (cargo/dprint-plugin-json-0.17.0.tar.gz) = 18504
+SIZE (cargo/dprint-plugin-json-0.17.1.tar.gz) = 18500
 SIZE (cargo/dprint-plugin-markdown-0.15.2.tar.gz) = 35695
 SIZE (cargo/dprint-plugin-typescript-0.84.0.tar.gz) = 1025932
 SIZE (cargo/dprint-swc-ext-0.8.0.tar.gz) = 72504
