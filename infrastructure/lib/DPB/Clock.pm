@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Clock.pm,v 1.19 2023/05/31 09:18:08 espie Exp $
+# $OpenBSD: Clock.pm,v 1.20 2023/06/06 08:09:13 espie Exp $
 #
 # Copyright (c) 2011-2013 Marc Espie <espie@openbsd.org>
 #
@@ -166,7 +166,7 @@ sub reset_offset($self)
 	}
 }
 
-sub stopped_clock($self, $gap)
+sub stopped_clock($self, $gap, $)
 {
 	$self->{time} += $gap if defined $self->{time};
 }
