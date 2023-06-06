@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Init.pm,v 1.50 2023/05/31 09:19:08 espie Exp $
+# $OpenBSD: Init.pm,v 1.51 2023/06/06 08:09:43 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -145,6 +145,9 @@ sub alive_hosts()
 	while (my ($host, $c) = each %$init) {
 		if (defined $c->prop->{tainted}) {
 			$host = "$host(".$c->prop->{tainted}.")";
+		}
+		if (DPB::Core->stopped($host)) {
+			$host = "$host(STOPPED)";
 		}
 		if ($c->is_alive) {
 			push(@l, $host.$c->shell->stringize_master_pid);

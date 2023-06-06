@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.104 2023/05/29 19:07:02 espie Exp $
+# $OpenBSD: Core.pm,v 1.105 2023/06/06 08:09:43 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -608,6 +608,11 @@ sub avail($self)
 		}
 	}
 	return scalar(@{$self->available});
+}
+
+sub stopped($, $host)
+{
+	return $stopped{$host};
 }
 
 sub available($)
