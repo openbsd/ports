@@ -1,0 +1,3 @@
+${P5SITE}/Crypt/
+${P5SITE}/Crypt/URandom.pm
+@man man/man3p/Crypt::URandom.3p

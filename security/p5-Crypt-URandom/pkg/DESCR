@@ -1,0 +1,4 @@
+Crypt::URandom is intended to provide an interface to the strongest
+available source of non-blocking randomness on the current platform.
+(In practice, it uses /dev/urandom on most unix-like OS, and win32 API
+functions on Windows).
