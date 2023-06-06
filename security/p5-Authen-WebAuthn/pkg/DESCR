@@ -1,0 +1,8 @@
+Authen::WebAuthn lets you validate WebAuthn registration and
+authentication responses.
+
+Currently, it does not handle the generation of registration and
+authentication requests. The transmission of requests and responses
+from the application server to the user's browser, and interaction with
+the WebAuthn browser API, is also out of scope and could be handled by
+a dedicated JS library.
