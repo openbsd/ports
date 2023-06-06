@@ -1,0 +1,10 @@
+Authen::OATH implements HOTP and TOTP One Time Password algorithms
+as defined by OATH (http://www.openauthentication.org).
+
+All necessary parameters are set by default, though these can be
+overridden. Both totp() and htop() have passed all of the test vectors
+defined in the RFC documents for TOTP and HOTP.
+
+totp() and hotp() both default to returning 6 digits and using SHA1.
+As such, both can be called by passing only the secret key and a valid
+OTP will be returned.
