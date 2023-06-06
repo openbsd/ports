@@ -5,6 +5,7 @@ USE_WXNEEDED =		Yes
 COMMENT=		compiler and runtime system for ANSI Common Lisp
 
 V =			2.2.5
+REVISION =		0
 DISTNAME=		sbcl-${V}-source
 PKGNAME=		sbcl-${V}
 WRKDIST=		${WRKDIR}/sbcl-${V}
