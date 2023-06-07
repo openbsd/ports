@@ -8,6 +8,7 @@ COMMENT =	multi-platform file synchronization tool
 GH_ACCOUNT =	bcpierce00
 GH_PROJECT =	unison
 GH_TAGNAME =	v2.53.3
+REVISION =	0
 
 CATEGORIES =	net
 
@@ -39,6 +40,7 @@ WANTLIB +=	gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-3 harfbuzz
 WANTLIB +=	intl pango-1.0 pangocairo-1.0
 BUILD_DEPENDS +=	x11/lablgtk3
 LIB_DEPENDS +=		x11/gtk+3
+RUN_DEPENDS +=		devel/desktop-file-utils
 MAKE_FLAGS +=		UISTYLE=gtk3
 .endif
 
@@ -55,5 +57,13 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/man/unison.1 ${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/unison
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/unison
+.if !${FLAVOR:Mno_x11}
+	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/icons/U.svg \
+		${PREFIX}/share/pixmaps/unison.svg
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
+	${INSTALL_DATA} ${FILESDIR}/unison.desktop \
+		${PREFIX}/share/applications/
+.endif
 
 .include <bsd.port.mk>

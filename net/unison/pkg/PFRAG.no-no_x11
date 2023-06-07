@@ -1,0 +1,4 @@
+share/applications/unison.desktop
+share/pixmaps/
+share/pixmaps/unison.svg
+@tag update-desktop-database

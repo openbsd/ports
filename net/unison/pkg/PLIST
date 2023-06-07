@@ -10,3 +10,4 @@ share/doc/pkg-readmes/${PKGSTEM}
 share/doc/unison/
 share/doc/unison/NEWS.md
 share/doc/unison/README.md
+!%%no_x11%%

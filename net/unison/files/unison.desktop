@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=unison
+Comment=File synchronisation tool for X11
+TryExec=unison
+Exec=unison
+Terminal=false
+Type=Application
+Categories=GTK;Application;Network;
+Icon=unison
+StartupNotify=true
