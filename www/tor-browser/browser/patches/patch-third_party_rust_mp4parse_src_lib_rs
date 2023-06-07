@@ -1,0 +1,23 @@
+Unbreak build with rustc 1.70.0
+
+https://github.com/mozilla/mp4parse-rust/commit/605d601ea8a20e4b26d2f2b55416c3005a8f9a4a
+
+Index: third_party/rust/mp4parse/src/lib.rs
+--- third_party/rust/mp4parse/src/lib.rs.orig
++++ third_party/rust/mp4parse/src/lib.rs
+@@ -3184,8 +3184,13 @@ macro_rules! impl_mul {
+             type Output = $output;
+ 
+             fn mul(self, rhs: $rhs) -> Self::Output {
+-                static_assertions::const_assert!(<$output>::MAX <= <$inner>::MAX as u64);
+-                static_assertions::const_assert!(<$lhs>::MAX * <$rhs>::MAX <= <$output>::MAX);
++                static_assertions::const_assert!(
++                    <$output as UpperBounded>::MAX <= <$inner>::MAX as u64
++                );
++                static_assertions::const_assert!(
++                    <$lhs as UpperBounded>::MAX * <$rhs as UpperBounded>::MAX
++                        <= <$output as UpperBounded>::MAX
++                );
+ 
+                 let lhs: $inner = self.get().into();
+                 let rhs: $inner = rhs.get().into();

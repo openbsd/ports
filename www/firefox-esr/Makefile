@@ -2,6 +2,7 @@ COMMENT =	Firefox web browser, Extended Support Release
 ONLY_FOR_ARCHS =	amd64 aarch64
 
 MOZILLA_VERSION =	102.12.0esr
+REVISION =		0
 MOZILLA_PROFDATA_TASKID=Bf-yEotXQlqhx_XIVkOp4Q
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox-esr
@@ -68,6 +69,8 @@ DEBUG_CONFIGURE_ARGS +=	--enable-debug-symbols \
 
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/xpcom/build/BinaryPath.h
+	sed -i 's/"files":{[^}]*}/"files":{}/' \
+		${WRKSRC}/third_party/rust/mp4parse/.cargo-checksum.json
 
 post-install:
 	# install prefs

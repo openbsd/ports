@@ -4,6 +4,7 @@ COMMENT =		Mozilla e-mail, calendar, rss and usenet client
 # Don't forget to bump mail/thunderbird-i18n after updates.
 
 MOZILLA_VERSION =	102.11.2
+REVISION =		0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	thunderbird
 MOZILLA_CODENAME =	comm/mail
@@ -76,6 +77,10 @@ LIB_DEPENDS +=	security/rnp \
 WANTLIB +=	Xrandr Xtst ffi rnp
 
 ALL_TARGET =	default
+
+post-patch:
+	sed -i 's/"files":{[^}]*}/"files":{}/' \
+		${WRKSRC}/third_party/rust/mp4parse/.cargo-checksum.json
 
 post-install:
 	# install prefs
