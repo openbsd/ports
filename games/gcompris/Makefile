@@ -1,11 +1,10 @@
 COMMENT=	educational game for children
 
-V=		3.2
+V=		3.3
 DISTNAME=	gcompris-qt-${V}
 PKGNAME=	gcompris-${V}
 EPOCH=		0
 EXTRACT_SUFX=	.tar.xz
-REVISION=	0
 
 CATEGORIES=	games education
 

@@ -190,6 +190,7 @@ share/gcompris-qt/rcc/traffic.rcc
 share/gcompris-qt/rcc/watercycle.rcc
 share/gcompris-qt/rcc/wordsgame.rcc
 share/gcompris-qt/translations/
+share/gcompris-qt/translations/gcompris_ar.qm
 share/gcompris-qt/translations/gcompris_az.qm
 share/gcompris-qt/translations/gcompris_be.qm
 share/gcompris-qt/translations/gcompris_br.qm
@@ -200,6 +201,7 @@ share/gcompris-qt/translations/gcompris_de.qm
 share/gcompris-qt/translations/gcompris_el.qm
 share/gcompris-qt/translations/gcompris_en.qm
 share/gcompris-qt/translations/gcompris_en_GB.qm
+share/gcompris-qt/translations/gcompris_eo.qm
 share/gcompris-qt/translations/gcompris_es.qm
 share/gcompris-qt/translations/gcompris_et.qm
 share/gcompris-qt/translations/gcompris_eu.qm
