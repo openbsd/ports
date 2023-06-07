@@ -1,10 +1,9 @@
 COMMENT =	analyze Python pickle object serializations
 
-MODPY_EGG_VERSION = 0.0.4
+MODPY_EGG_VERSION = 0.0.6
 DISTNAME =	fickling-${MODPY_EGG_VERSION}
 PKGNAME =       py-${DISTNAME}
 CATEGORIES =	security
-REVISION =      1
 
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 
