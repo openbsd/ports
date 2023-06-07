@@ -51,6 +51,7 @@ lib/rustlib/${TRIPLE_ARCH}/lib/libunwind-${LIBRUST_HASH}19.rlib
 @man man/man1/cargo-install.1
 @man man/man1/cargo-locate-project.1
 @man man/man1/cargo-login.1
+@man man/man1/cargo-logout.1
 @man man/man1/cargo-metadata.1
 @man man/man1/cargo-new.1
 @man man/man1/cargo-owner.1

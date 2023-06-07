@@ -1,6 +1,7 @@
 ONLY_FOR_ARCHS =	${RUST_ARCHS}
 
 BROKEN-powerpc64 =	needs new bootstrap
+BROKEN-riscv64 =	needs new bootstrap
 
 .if "${MACHINE_ARCH}" == "i386"
 DPB_PROPERTIES =	lonesome
@@ -13,14 +14,13 @@ COMMENT-gdb =		Rust debugger through gdb
 COMMENT-clippy =	Rust linter
 COMMENT-rustfmt =	Rust code formatter
 
-V =			1.69.0
-REVISION =		0
+V =			1.70.0
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
-BV-aarch64 =		1.69.0-20230419
-BV-amd64 =		1.69.0-20230417
-BV-i386 =		1.69.0-20230418
+BV-aarch64 =		1.70.0-20230602
+BV-amd64 =		1.70.0-20230605
+BV-i386 =		1.70.0-20230601
 BV-powerpc64 =		1.65.0-20221213
 BV-riscv64 =		1.68.0-20230417
 BV-sparc64 =		1.69.0-20230522
