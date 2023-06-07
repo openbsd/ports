@@ -1,7 +1,7 @@
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -779,7 +779,7 @@ info: info-recursive
+@@ -787,7 +787,7 @@ info: info-recursive
  
  info-am:
  

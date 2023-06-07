@@ -1,5 +1,6 @@
---- man/srcpd.conf.5.orig	Sat Jan 18 12:35:06 2014
-+++ man/srcpd.conf.5	Sun May 10 13:02:05 2015
+Index: man/srcpd.conf.5
+--- man/srcpd.conf.5.orig
++++ man/srcpd.conf.5
 @@ -39,8 +39,8 @@ default settings and an example bus configuration.
      <server>
        <tcp-port>4303</tcp-port>
@@ -11,7 +12,7 @@
      </server>
      <verbosity>5</verbosity>
    </bus>
-@@ -204,12 +204,12 @@ is
+@@ -202,12 +202,12 @@ is
  .TP
  username
  srcpd runs under this user.  Default is
