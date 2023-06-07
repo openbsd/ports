@@ -7,6 +7,6 @@ Index: ext/ae/ae/framelimit.h
  
 -		std::chrono::time_point<std::chrono::system_clock, std::chrono::nanoseconds> Timer;
 +		std::chrono::time_point<std::chrono::steady_clock, std::chrono::nanoseconds> Timer;
- 		double FrameRate;
- 		double ExtraTime;
+ 		double FrameRate{0.0};
+ 		double ExtraTime{0.0};
  

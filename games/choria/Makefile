@@ -1,12 +1,11 @@
 COMMENT =	2D MMORPG focused on grinding
 
-V =		1.0.1
-COMMIT = 	d3de66a6
+V =		1.0.2
+COMMIT = 	4a83c4cd
 DISTNAME =	choria-${V}-${COMMIT}-src
 PKGNAME =	choria-${V}
 CATEGORIES =	games x11
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
-REVISION =	0
 
 HOMEPAGE =	https://choria.gitlab.io/
 
@@ -38,7 +37,8 @@ LIB_DEPENDS =	audio/libogg \
 		databases/sqlite3 \
 		textproc/tinyxml2
 
-RUN_DEPENDS =	devel/desktop-file-utils
+RUN_DEPENDS =	devel/desktop-file-utils \
+		x11/gtk+4,-guic
 
 NO_TEST =	Yes
 
@@ -47,7 +47,5 @@ WRKDIST =	${WRKDIR}/choria-${V}-${COMMIT}
 pre-configure:
 	perl -pi -e "s,games/,,g" ${WRKSRC}/CMakeLists.txt \
 				  ${WRKSRC}/deployment/choria
-	perl -pi -e "s,games,bin,g" ${WRKSRC}/CMakeLists.txt
-	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt
 	
 .include <bsd.port.mk>
