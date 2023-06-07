@@ -30,7 +30,6 @@ include/ast/ast_stdio.h
 include/ast/ast_sys.h
 include/ast/ast_time.h
 include/ast/ast_tty.h
-include/ast/ast_vfork.h
 include/ast/ast_wait.h
 include/ast/ast_wchar.h
 include/ast/ast_wctype.h
@@ -49,7 +48,9 @@ include/ast/shell.h
 @man man/man3/shell.3
 share/examples/ksh93/
 share/examples/ksh93/autocd
+share/examples/ksh93/cd
 share/examples/ksh93/dirs
 share/examples/ksh93/man
+share/examples/ksh93/mcd
 share/examples/ksh93/popd
 share/examples/ksh93/pushd
