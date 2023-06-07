@@ -1,3 +1,9 @@
+BROKEN-i386 =	problems with mmx intrinsics
+# nnue/nnue_feature_transformer.h:528:24: error: always_inline function '_mm_add_pi16' requires target feature 'mmx', but would be inlined into function
+# 'update_accumulator' that is compiled without support for 'mmx'
+#               acc[k] = vec_add_16(acc[k], column[k]);
+# etc.etc.
+
 V =		15.1
 COMMENT =	open source chess engine
 PKGNAME =	stockfish-${V}
