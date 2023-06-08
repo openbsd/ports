@@ -9,10 +9,10 @@ Index: compiler/rustc_session/src/options.rs
  }
  
 +#[cfg(all(target_os="openbsd", target_arch="x86_64"))]
-+const DEFAULT_CF_PROTECTION: config::CFProtection = CFProtection::Branch;
++const DEFAULT_CF_PROTECTION: CFProtection = CFProtection::Branch;
 +
 +#[cfg(not(all(target_os="openbsd", target_arch="x86_64")))]
-+const DEFAULT_CF_PROTECTION: config::CFProtection = CFProtection::None;
++const DEFAULT_CF_PROTECTION: CFProtection = CFProtection::None;
 +
 +#[cfg(all(target_os="openbsd", target_arch="aarch64"))]
 +const DEFAULT_BRANCH_PROTECTION: Option<BranchProtection> = Some(BranchProtection {
