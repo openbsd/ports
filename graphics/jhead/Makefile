@@ -2,7 +2,7 @@ COMMENT =	Exif jpeg camera setting parser and thumbnail remover
 
 GH_ACCOUNT =	Matthias-Wandel
 GH_PROJECT =	jhead
-GH_TAGNAME =	3.06.0.1
+GH_TAGNAME =	3.08
 
 CATEGORIES =	graphics
 

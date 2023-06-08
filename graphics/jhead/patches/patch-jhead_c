@@ -1,17 +1,6 @@
-Index: jhead.c
---- jhead.c.orig
-+++ jhead.c
-@@ -166,7 +166,8 @@ static int FileEditComment(char * TempFileName, char *
-         }
-         if (strlen(Editor) > PATH_MAX) ErrFatal("env too long");
- 
--        sprintf(QuotedPath, "%s \"%s\"",Editor, TempFileName);
-+        snprintf(QuotedPath, sizeof(QuotedPath), "%s \"%s\"",Editor,
-+	    TempFileName);
-         a = system(QuotedPath);
-     }
- 
-@@ -273,7 +274,8 @@ static int ModifyDescriptComment(char * OutComment, ch
+--- jhead.c.orig.port	Tue Jun  6 18:08:43 2023
++++ jhead.c	Thu Jun  8 07:50:46 2023
+@@ -286,7 +286,8 @@
      if (!HasScandate && !ImageInfo.DateTime[0]){
          // Scan date is not in the file yet, and it doesn't have one built in.  Add it.
          char Temp[40];
@@ -21,11 +10,11 @@ Index: jhead.c
          strncat(OutComment, Temp, MAX_COMMENT_SIZE-5-strlen(OutComment));
          Modified = TRUE;
      }
-@@ -305,8 +307,10 @@ static int AutoResizeCmdStuff(void)
+@@ -318,8 +319,10 @@
  
      if (scale < 0.4) scale = 0.4; // Don't scale down by too much.
  
--    sprintf(CommandString, "mogrify -geometry %dx%d -quality 85 &i",(int)(ImageInfo.Width*scale+0.5), 
+-    sprintf(CommandString, "mogrify -geometry %dx%d -quality 85 &i",(int)(ImageInfo.Width*scale+0.5),
 -                                    (int)(ImageInfo.Height*scale+0.5));
 +    snprintf(CommandString, sizeof(CommandString),
 +        "mogrify -geometry %dx%d -quality 85 &i",
@@ -34,7 +23,7 @@ Index: jhead.c
      return TRUE;
  }
  
-@@ -641,7 +645,8 @@ static void DoFileRenaming(const char * FileName)
+@@ -662,7 +665,8 @@
                          memcpy(pat, pattern+ppos, 4);
                          pat[a-ppos] = 'd'; // Replace 'i' with 'd' for '%d'
                          pat[a-ppos+1] = '\0';
@@ -44,7 +33,7 @@ Index: jhead.c
                          nl = strlen(num);
                          l = strlen(pattern+a+1);
                          if (ppos+nl+l+1 >= PATH_MAX) ErrFatal("str overflow");
-@@ -657,7 +662,7 @@ static void DoFileRenaming(const char * FileName)
+@@ -678,7 +682,7 @@
          strftime(NewName, PATH_MAX, pattern, &tm);
      }else{
          // My favourite scheme.
@@ -53,7 +42,7 @@ Index: jhead.c
               tm.tm_mon+1, tm.tm_mday, tm.tm_hour, tm.tm_min, tm.tm_sec);
      }
  
-@@ -701,7 +706,8 @@ static void DoFileRenaming(const char * FileName)
+@@ -722,7 +726,8 @@
                  printf("%s --> %s\n",FileName, NewName);
  #ifdef _WIN32
                  if (RenameAssociatedFiles){
@@ -63,8 +52,8 @@ Index: jhead.c
                      RenameAssociated(FileName, NewName);
                  }
  #endif
-@@ -735,7 +741,8 @@ static int DoAutoRotate(const char * FileName)
-                 // Unknown orientation, but still modified.                
+@@ -756,7 +761,8 @@
+                 // Unknown orientation, but still modified.
                  return TRUE; // Image is still modified.
              }
 -            sprintf(RotateCommand, "jpegtran -trim -%s -outfile &o &i", Argument);
@@ -73,7 +62,7 @@ Index: jhead.c
              ApplyCommand = RotateCommand;
              DoCommand(FileName, FALSE);
              ApplyCommand = NULL;
-@@ -754,7 +761,8 @@ static int DoAutoRotate(const char * FileName)
+@@ -775,7 +781,8 @@
                  strcpy(ThumbTempName_out, FileName);
                  strcat(ThumbTempName_out, ".tho");
                  SaveThumbnail(ThumbTempName_in);
@@ -82,23 +71,13 @@ Index: jhead.c
 +                    "jpegtran -trim -%s -outfile \"%s\" \"%s\"",
                      Argument, ThumbTempName_out, ThumbTempName_in);
  
-                 if (system(RotateCommand) == 0){
-@@ -782,7 +790,8 @@ static int RegenerateThumbnail(const char * FileName)
-         return FALSE;
-     }
- 
--    sprintf(ThumbnailGenCommand, "mogrify -thumbnail %dx%d -quality 80 \"%s\"", 
-+    snprintf(ThumbnailGenCommand, sizeof(ThumbnailGenCommand),
-+        "mogrify -thumbnail %dx%d -quality 80 \"%s\"",
-         RegenThumbnail, RegenThumbnail, FileName);
- 
-     if (system(ThumbnailGenCommand) == 0){
-@@ -1152,7 +1161,7 @@ static void ProcessFile(const char * FileName)
+                 // Disallow characters in the filenames that could be used to execute arbitrary
+@@ -1187,7 +1194,7 @@
  
              // Print to temp buffer first to avoid putting null termination in destination.
-             // snprintf() would do the trick, hbut not available everywhere (like FreeBSD 4.4)
+             // snprintf() would do the trick, but not available everywhere (like FreeBSD 4.4)
 -            sprintf(TempBuf, "%04d:%02d:%02d %02d:%02d:%02d",
 +            snprintf(TempBuf, sizeof(TempBuf), "%04d:%02d:%02d %02d:%02d:%02d",
                  tm.tm_year+1900, tm.tm_mon+1, tm.tm_mday,
                  tm.tm_hour, tm.tm_min, tm.tm_sec);
-             
+ 
