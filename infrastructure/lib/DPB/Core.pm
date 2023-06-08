@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.106 2023/06/08 11:50:22 espie Exp $
+# $OpenBSD: Core.pm,v 1.107 2023/06/08 11:54:35 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -559,9 +559,7 @@ sub details_at($core, $time)
 	if (!DPB::Host->name_is_localhost($hostname)) {
 		$s .= " on ".$hostname;
 	}
-	if ($core->job) {
-	    	$s .= $core->job->watched($time, $core);
-	}
+	$s .= $core->job->watched($time, $core);
     	return $s;
 }
 
