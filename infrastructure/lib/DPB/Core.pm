@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.105 2023/06/06 08:09:43 espie Exp $
+# $OpenBSD: Core.pm,v 1.106 2023/06/08 11:50:22 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -438,7 +438,7 @@ sub stats($class, $fh, $state)
 	for my $repo ($class->repositories) {
 		$fh->print("$msg:\n");
 		while (my ($k, $c) = each %$repo) {
-			$fh->print("  ", one_core($c, $current), "\n");
+			$fh->print("  ", $c->details_at($current), "\n");
 		}
 		$msg = "Special";
 	}
@@ -541,7 +541,7 @@ sub wake_jobs($self)
 	}
 }
 
-sub one_core($core, $time)
+sub details_at($core, $time)
 {
 	my $hostname = $core->hostname;
 
@@ -569,7 +569,7 @@ sub report_tty($, $)
 {
 	my $current = Time::HiRes::time();
 
-	my $s = join("\n", map {one_core($_, $current)} sort {$a->{started} <=> $b->{started}} values %$running). "\n";
+	my $s = join("\n", map {$_->details_at($current)} sort {$a->{started} <=> $b->{started}} values %$running). "\n";
 	for my $a (@extra_report_tty) {
 		$s .= &$a();
 	}
@@ -582,7 +582,7 @@ sub report_notty($, $)
 	my $s = '';
 	for my $j (values %$running) {
 		if ($j->job->really_watch($current)) {
-			$s .= one_core($j, $current)."\n";
+			$s .= $j->details_at($current)."\n";
 		}
 	}
 
