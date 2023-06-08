@@ -1,8 +1,7 @@
 COMMENT =	extends the Net::DNS module with DNSSEC functionality
 
-DISTNAME =	Net-DNS-SEC-1.20
+DISTNAME =	Net-DNS-SEC-1.21
 SUPDISTFILES =	${DISTFILES}.asc
-REVISION =	0
 
 CATEGORIES =	net security
 
