@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Job.pm,v 1.24 2023/05/31 09:15:28 espie Exp $
+# $OpenBSD: Job.pm,v 1.25 2023/06/08 14:13:12 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -34,7 +34,7 @@ sub code($self, $)
 	return $self->{code};
 }
 
-# no name by default, just display the object
+# no name by default, just display the object as debug stuff
 sub name($self)
 {
 	return $self;
@@ -95,7 +95,6 @@ sub end($self)
 	close($self->{fh});
 }
 
-
 package DPB::Task::Fork;
 our @ISA =qw(DPB::Task);
 sub fork($, $)
@@ -121,6 +120,15 @@ sub name($self)
 sub debug_dump($self)
 {
 	return $self->{name};
+}
+
+sub description($self)
+{
+	my $d = $self->name;
+	if (defined $self->{task}) {
+		$d .= "(".$self->{task}->name.")";
+	}
+	return $d;
 }
 
 sub finalize($, $)
@@ -201,12 +209,7 @@ sub kill_on_timeout($self, $diff, $core, $msg)
 	local $> = 0;	# XXX switch to root, we don't know for sure which
 			# user owns the pid (not really an issue)
 	$core->kill(9);
-	return $self->{stuck} = "KILLED: ".$self->killinfo." stuck at $msg";
-}
-
-sub killinfo($self)
-{
-	return $self->{current};
+	return $self->{stuck} = "KILLED: ".$self->description." stuck at $msg";
 }
 
 sub watched($self, $current, $core)
@@ -247,6 +250,12 @@ sub new($class, $code, $name)
 	my $o = $class->SUPER::new($name);
 	$o->{tasks} = [DPB::Task::Pipe->new($code)];
 	return $o;
+}
+
+# well our task doesn't have a decent name, so don't display it.
+sub description($self)
+{
+	return $self->{name};
 }
 
 1;

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.27 2023/05/06 05:20:31 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.28 2023/06/08 14:13:12 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -243,15 +243,15 @@ sub new($class, $file, $e, $fetcher, $logger)
 	return $job;
 }
 
-sub killinfo($self)
-{
-	return $self->{file};
-}
-
 sub name($self)
 {
+	return $self->{file}{name};
+}
+
+sub description($self)
+{
 	my $extra = $self->{task}->want_percent ? "" : " cksum...";
-	return '<'.$self->{file}->{name}."(#".$self->{tries}.")".$extra;
+	return '<'.$self->name."(#".$self->{tries}.")".$extra;
 }
 
 sub get_timeout($self, $core)

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.207 2023/05/14 09:58:25 espie Exp $
+# $OpenBSD: Port.pm,v 1.208 2023/06/08 14:13:12 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -131,6 +131,11 @@ sub run($self, $core)
 		@env)
 	    ->exec(@args);
 	exit(1);
+}
+
+sub name($self)
+{
+	return $self->{phase};
 }
 
 sub notime($) { 0 }
@@ -891,11 +896,6 @@ our @ISA = qw(DPB::Job::Watched);
 
 use Time::HiRes;
 
-sub killinfo($self)
-{
-	return "$self->{path} $self->{current}";
-}
-
 sub new($class, %prop)
 {
 	my $job = bless \%prop, $class;
@@ -1002,12 +1002,16 @@ sub pkgpath($self)
 
 sub name($self)
 {
-	my $n = $self->{path}."(".$self->{task}{phase}.")";
+	return $self->{path};
+}
+
+sub description($self)
+{
+	my $d = $self->SUPER::description;
 	if ($self->{nojunk}) {
-		return $n.'!';
-	} else {
-		return $n;
+		$d .= '!';
 	}
+	return $d;
 }
 
 sub finished_task($self, $task)

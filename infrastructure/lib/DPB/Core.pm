@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.107 2023/06/08 11:54:35 espie Exp $
+# $OpenBSD: Core.pm,v 1.108 2023/06/08 14:13:12 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -545,7 +545,7 @@ sub details_at($core, $time)
 {
 	my $hostname = $core->hostname;
 
-	my $s = $core->job->name;
+	my $s = $core->job->description;
     	if ($core->{squiggle}) {
 		$s = '~'.$s;
 	}
