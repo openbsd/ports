@@ -15,11 +15,12 @@ COMMENT-clippy =	Rust linter
 COMMENT-rustfmt =	Rust code formatter
 
 V =			1.70.0
+REVISION =		0
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
 BV-aarch64 =		1.70.0-20230602
-BV-amd64 =		1.70.0-20230605
+BV-amd64 =		1.70.0-20230608
 BV-i386 =		1.70.0-20230601
 BV-powerpc64 =		1.65.0-20221213
 BV-riscv64 =		1.68.0-20230417
