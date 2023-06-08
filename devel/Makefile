@@ -1154,6 +1154,7 @@
      SUBDIR += p5-Test-MockRandom
      SUBDIR += p5-Test-MockSleep
      SUBDIR += p5-Test-MockTime
+     SUBDIR += p5-Test-MockTime-HiRes
      SUBDIR += p5-Test-Modern
      SUBDIR += p5-Test-More-UTF8
      SUBDIR += p5-Test-Most
