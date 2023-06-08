@@ -14,7 +14,6 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/GPL3.txt
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/INSTALL.txt
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/ISSUES.txt
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/LICENSE.txt
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/README.mkd
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/SABnzbd.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sabnzbd/${MODPY_PYCACHE}/
