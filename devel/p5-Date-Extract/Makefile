@@ -1,22 +1,20 @@
 COMMENT =	extract probable dates from strings
 
-V =		0.07
+DISTNAME =	Date-Extract-0.07
+REVISION =	0
+FIX_EXTRACT_PERMISSIONS =	Yes
 
-MODULES =	cpan
-PKG_ARCH =	*
-DISTNAME =	Date-Extract-${V}
 CATEGORIES =	devel
 
 # Perl
 PERMIT_PACKAGE =	Yes
 
-TEST_DEPENDS =	devel/p5-Test-MockTime
+MODULES =		cpan
 
-RUN_DEPENDS =	devel/p5-DateTime-Format-Natural \
-		devel/p5-Class-Data-Inheritable
-BUILD_DEPENDS =	${RUN_DEPENDS} \
-		${TEST_DEPENDS}
+RUN_DEPENDS =		devel/p5-Class-Data-Inheritable \
+			devel/p5-DateTime-Format-Natural>=0.60
+TEST_DEPENDS =		devel/p5-Test-MockTime-HiRes
 
-CONFIGURE_STYLE =	modinst
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
