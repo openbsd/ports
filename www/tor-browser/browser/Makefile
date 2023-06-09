@@ -5,14 +5,13 @@
 COMMENT =		modified version of Firefox ESR for browsing over Tor
 
 MOZILLA_VERSION =	${TB_VERSION}
-REVISION =		0
 MOZILLA_PROJECT =	${BROWSER_NAME}
 MOZILLA_CODENAME =	browser
 
 EXTRACT_SUFX =		.tar.xz
 
 PKGNAME =		${TB_PREFIX}-browser-${TB_VERSION:S/a/alpha/}
-DISTNAME =		src-firefox-tor-browser-102.11.0esr-12.0-1-build1
+DISTNAME =		src-firefox-tor-browser-102.12.0esr-12.0-1-build2
 
 FIX_EXTRACT_PERMISSIONS	= Yes
 DISTFILES +=		${DISTNAME}.tar.xz \
