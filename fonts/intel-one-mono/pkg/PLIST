@@ -1,0 +1,18 @@
+share/fonts/
+@fontdir share/fonts/intel-one-mono/
+share/fonts/intel-one-mono/intelone-mono-font-family-bold.otf
+share/fonts/intel-one-mono/intelone-mono-font-family-bold.ttf
+share/fonts/intel-one-mono/intelone-mono-font-family-bolditalic.otf
+share/fonts/intel-one-mono/intelone-mono-font-family-bolditalic.ttf
+share/fonts/intel-one-mono/intelone-mono-font-family-italic.otf
+share/fonts/intel-one-mono/intelone-mono-font-family-italic.ttf
+share/fonts/intel-one-mono/intelone-mono-font-family-light.otf
+share/fonts/intel-one-mono/intelone-mono-font-family-light.ttf
+share/fonts/intel-one-mono/intelone-mono-font-family-lightitalic.otf
+share/fonts/intel-one-mono/intelone-mono-font-family-lightitalic.ttf
+share/fonts/intel-one-mono/intelone-mono-font-family-medium.otf
+share/fonts/intel-one-mono/intelone-mono-font-family-medium.ttf
+share/fonts/intel-one-mono/intelone-mono-font-family-mediumitalic.otf
+share/fonts/intel-one-mono/intelone-mono-font-family-mediumitalic.ttf
+share/fonts/intel-one-mono/intelone-mono-font-family-regular.otf
+share/fonts/intel-one-mono/intelone-mono-font-family-regular.ttf
