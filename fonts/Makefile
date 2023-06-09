@@ -43,6 +43,7 @@
      SUBDIR += ibm-plex
      SUBDIR += inconsolata-font
      SUBDIR += inconsolata-new
+     SUBDIR += intel-one-mono
      SUBDIR += inter
      SUBDIR += intlfonts
      SUBDIR += iosevka-fonts
