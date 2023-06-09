@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Job.pm,v 1.25 2023/06/08 14:13:12 espie Exp $
+# $OpenBSD: Job.pm,v 1.26 2023/06/09 11:17:20 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -34,10 +34,10 @@ sub code($self, $)
 	return $self->{code};
 }
 
-# no name by default, just display the object as debug stuff
+# no name by default, so this will return undef unless explicitly overriden.
 sub name($self)
 {
-	return $self;
+	return $self->{name};
 }
 
 # XXX some tasks do not need actual code to run
@@ -126,7 +126,10 @@ sub description($self)
 {
 	my $d = $self->name;
 	if (defined $self->{task}) {
-		$d .= "(".$self->{task}->name.")";
+		my $extra = $self->{task}->name;
+		if (defined $extra) {
+			$d .= "($extra)";
+		}
 	}
 	return $d;
 }
@@ -250,12 +253,6 @@ sub new($class, $code, $name)
 	my $o = $class->SUPER::new($name);
 	$o->{tasks} = [DPB::Task::Pipe->new($code)];
 	return $o;
-}
-
-# well our task doesn't have a decent name, so don't display it.
-sub description($self)
-{
-	return $self->{name};
 }
 
 1;
