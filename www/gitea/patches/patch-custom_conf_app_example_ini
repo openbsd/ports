@@ -169,7 +169,12 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Default value for DefaultOrgMemberVisible
  ;; True will make the membership of the users visible when added to the organisation
-@@ -884,10 +884,10 @@ ROUTER = console
+@@ -880,14 +880,14 @@ ROUTER = console
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ 
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+-;[repository]
++[repository]
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;; Root path for storing all repository data. By default, it is set to %(APP_DATA_PATH)s/gitea-repositories.
  ;; A relative path is interpreted as _`AppWorkPath`_/%(ROOT)s
@@ -358,7 +363,14 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Specify any extra sendmail arguments
  ;; WARNING: if your sendmail program interprets options you should set this to "--" or terminate these args with "--"
-@@ -1762,14 +1762,14 @@ ROUTER = console
+@@ -1756,20 +1756,20 @@ ROUTER = console
+ 
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+-;[session]
++[session]
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;
  ;; Either "memory", "file", "redis", "db", "mysql", "couchbase", "memcache" or "postgres"
  ;; Default is "memory". "db" will reuse the configuration in [database]
@@ -435,7 +447,26 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Location the UI time display i.e. Asia/Shanghai
  ;; Empty means server's location setting
-@@ -2329,9 +2329,9 @@ ROUTER = console
+@@ -2204,10 +2204,10 @@ ROUTER = console
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ ;; Check for new Gitea versions
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+-;[cron.update_checker]
++[cron.update_checker]
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+-;ENABLED = true
++ENABLED = false
+ ;RUN_AT_START = false
+ ;ENABLE_SUCCESS_NOTICE = false
+ ;SCHEDULE = @every 168h
+@@ -2324,14 +2324,14 @@ ROUTER = console
+ 
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+-;[other]
++[other]
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;SHOW_FOOTER_BRANDING = false
  ;; Show version information about Gitea and Go in the footer
@@ -447,6 +478,15 @@ Index: custom/conf/app.example.ini
  ;; Generate sitemap. Defaults to `true`.
  ;ENABLE_SITEMAP = true
  ;; Enable/Disable RSS/Atom feed
+@@ -2464,7 +2464,7 @@ ROUTER = console
+ 
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+-;[packages]
++[packages]
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ ;;
 @@ -2472,7 +2472,7 @@ ROUTER = console
  ;ENABLED = true
  ;;
