@@ -50,6 +50,7 @@ share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-aes-gcm-nonces.${MODPY_PYC_MAGIC_TA
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-aesccm.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-alpn-negotiation.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-atypical-padding.${MODPY_PYC_MAGIC_TAG}pyc
+share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-bleichenbacher-timing-pregenerate.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-bleichenbacher-timing.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-bleichenbacher-workaround.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-certificate-malformed.${MODPY_PYC_MAGIC_TAG}pyc
@@ -199,6 +200,7 @@ share/tlsfuzzer/scripts/test-aes-gcm-nonces.py
 share/tlsfuzzer/scripts/test-aesccm.py
 share/tlsfuzzer/scripts/test-alpn-negotiation.py
 share/tlsfuzzer/scripts/test-atypical-padding.py
+share/tlsfuzzer/scripts/test-bleichenbacher-timing-pregenerate.py
 share/tlsfuzzer/scripts/test-bleichenbacher-timing.py
 share/tlsfuzzer/scripts/test-bleichenbacher-workaround.py
 share/tlsfuzzer/scripts/test-certificate-malformed.py
