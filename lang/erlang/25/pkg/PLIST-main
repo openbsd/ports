@@ -2,7 +2,7 @@
 @option is-branch
 @conflict erlang->=25,<26
 @conflict erlang->=25v0,<26v0
-@conflict erlang-wx->=25,<25.3.2
+@conflict erlang-wx->=25,<${V}
 @pkgpath lang/erlang/21,-main
 @newgroup _epmd:888
 @newuser _epmd:888:_epmd::Erlang EPMD Account:/var/empty:/sbin/nologin
