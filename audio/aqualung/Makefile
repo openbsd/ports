@@ -1,15 +1,9 @@
 COMMENT=	advanced music player
 
-VERSION=	1.1
+VERSION=	1.2
 DISTNAME=	aqualung-${VERSION}
 EPOCH=		0
-REVISION=	0
 CATEGORIES=	audio
-
-MASTER_SITES0 =         https://github.com/jeremyevans/aqualung/commit/
-# Backport fix for mpeg files after upgrade to libsndfile 1.1.0
-PATCHFILES =            mpeg_before_sndfile{01427d144a4b1c4903e5197a1c76cede49c24eec}.patch:0
-PATCH_DIST_STRIP =      -p1
 
 HOMEPAGE=	https://github.com/jeremyevans/aqualung
 
