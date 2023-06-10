@@ -1,0 +1,11 @@
+Index: include/elf/common.h
+--- include/elf/common.h.orig
++++ include/elf/common.h
+@@ -698,6 +698,7 @@
+ #define NT_OPENBSD_FPREGS	21
+ #define NT_OPENBSD_XFPREGS	22
+ #define NT_OPENBSD_WCOOKIE	23
++#define NT_OPENBSD_PACMASK	24
+ 
+ 
+ /* Note segments for core files on SPU systems.  Note name

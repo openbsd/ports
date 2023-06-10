@@ -1,7 +1,7 @@
 Index: gdb/aarch64-obsd-nat.c
 --- gdb/aarch64-obsd-nat.c.orig
 +++ gdb/aarch64-obsd-nat.c
-@@ -0,0 +1,131 @@
+@@ -0,0 +1,162 @@
 +/* Native-dependent code for OpenBSD/aarch64.
 +
 +   Copyright (C) 2017-2020 Free Software Foundation, Inc.
@@ -22,6 +22,7 @@ Index: gdb/aarch64-obsd-nat.c
 +   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
 +
 +#include "defs.h"
++#include "gdbarch.h"
 +#include "regcache.h"
 +#include "target.h"
 +
@@ -38,6 +39,8 @@ Index: gdb/aarch64-obsd-nat.c
 +{
 +  void fetch_registers (struct regcache *, int) override;
 +  void store_registers (struct regcache *, int) override;
++
++  const struct target_desc *read_description () override;
 +};
 +
 +static aarch64_obsd_nat_target the_aarch64_obsd_nat_target;
@@ -65,6 +68,9 @@ Index: gdb/aarch64-obsd-nat.c
 +aarch64_obsd_nat_target::fetch_registers (struct regcache *regcache,
 +					  int regnum)
 +{
++#ifdef PT_PACMASK
++  struct gdbarch_tdep *tdep = gdbarch_tdep (regcache->arch ());
++#endif
 +  pid_t pid = get_ptrace_pid (regcache->ptid ());
 +
 +  if (regnum == -1 || getregs_supplies (regnum))
@@ -88,6 +94,25 @@ Index: gdb/aarch64-obsd-nat.c
 +      regcache->supply_regset (&aarch64_obsd_fpregset, regnum, &fpregs,
 +			       sizeof (fpregs));
 +    }
++
++#ifdef PT_PACMASK
++  if (tdep->has_pauth())
++    {
++      int cmask_num = AARCH64_PAUTH_CMASK_REGNUM (tdep->pauth_reg_base);
++      int dmask_num = AARCH64_PAUTH_DMASK_REGNUM (tdep->pauth_reg_base);
++      register_t pacmask[2];
++
++      if (regnum == -1 || regnum == cmask_num || regnum == dmask_num)
++	{
++	  if (ptrace (PT_PACMASK, pid, (PTRACE_TYPE_ARG3) &pacmask,
++		      sizeof (pacmask)) == -1)
++	    perror_with_name (_("Couldn't get PAC mask"));
++
++	  regcache->raw_supply (cmask_num, &pacmask[0]);
++	  regcache->raw_supply (dmask_num, &pacmask[1]);
++	}
++    }
++#endif
 +}
 +
 +/* Store register REGNUM back into the inferior.  If REGNUM is -1, do
@@ -126,6 +151,12 @@ Index: gdb/aarch64-obsd-nat.c
 +      if (ptrace (PT_SETFPREGS, pid, (PTRACE_TYPE_ARG3) &fpregs, 0) == -1)
 +	perror_with_name (_("Couldn't write floating point status"));
 +    }
++}
++
++const struct target_desc *
++aarch64_obsd_nat_target::read_description ()
++{
++  return aarch64_read_description(0, true);
 +}
 +
 +void

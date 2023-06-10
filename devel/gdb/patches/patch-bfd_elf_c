@@ -13,3 +13,13 @@ Index: bfd/elf.c
    if (note->type == NT_OPENBSD_PROCINFO)
      return elfcore_grok_openbsd_procinfo (abfd, note);
  
+@@ -10786,6 +10791,9 @@ elfcore_grok_openbsd_note (bfd *abfd, Elf_Internal_Not
+ 
+       return TRUE;
+     }
++
++  if (note->type == NT_OPENBSD_PACMASK)
++    return elfcore_make_note_pseudosection (abfd, ".reg-aarch-pauth", note);
+ 
+   return TRUE;
+ }
