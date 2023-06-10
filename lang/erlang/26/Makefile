@@ -5,7 +5,7 @@ USE_WXNEEDED=	Yes
 COMMENT-main=	${COMMENT}
 COMMENT-wx=	WxWidgets bindings for Erlang
 
-V=		26.0
+V=		26.0.1
 DISTNAME=	otp_src_${V}
 PORTROACH=	limit:^OTP-26\.
 PKGNAME=	erlang-${V}
@@ -61,11 +61,13 @@ FAKE_FLAGS =	libdir_suffix="/erlang${MAJ_V}"
 
 AUTOCONF_VERSION = 2.69
 
+UPDATE_PLIST_ARGS = -i V
+
 # Use the target 'gen-versions' to update this list
 ERL_VERSIONS=	\
 ASN1_VSN        5.1 \
 COMMON_TEST_VSN 1.25 \
-COMPILER_VSN    8.3 \
+COMPILER_VSN    8.3.1 \
 CRYPTO_VSN      5.2 \
 DEBUGGER_VSN    5.3.1 \
 DIALYZER_VSN    5.1 \
@@ -79,9 +81,9 @@ ERL_INTERFACE_VSN       5.4 \
 ET_VSN          1.7 \
 EUNIT_VSN       2.8.2 \
 FTP_VSN         1.2 \
-INETS_VSN       9.0 \
+INETS_VSN       9.0.1 \
 JINTERFACE_VSN  1.14 \
-KERNEL_VSN      9.0 \
+KERNEL_VSN      9.0.1 \
 MEGACO_VSN      4.4.4 \
 MNESIA_VSN      4.22 \
 OBSERVER_VSN    2.15 \
@@ -94,13 +96,13 @@ RUNTIME_TOOLS_VSN       2.0 \
 SASL_VSN        4.2.1 \
 SNMP_VSN        5.14 \
 SSH_VSN         5.0 \
-SSL_VSN         11.0 \
-STDLIB_VSN      5.0 \
+SSL_VSN         11.0.1 \
+STDLIB_VSN      5.0.1 \
 SYNTAX_TOOLS_VSN        3.1 \
 TFTP_VSN        1.1 \
 TOOLS_VSN       3.6 \
 WX_VSN          2.3 \
-XMERL_VSN       1.3.31 \
-ERTS_VSN        14.0
+XMERL_VSN       1.3.32 \
+ERTS_VSN        14.0.1
 
 .include <bsd.port.mk>
