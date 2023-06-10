@@ -2,7 +2,7 @@ COMMENT-main=	library for arbitrary precision arithmetic
 COMMENT-cxx=	C++ library for arbitrary precision arithmetic
 
 VERSION=	6.2.1
-REVISION-main=	1
+REVISION=	2
 DISTNAME=	gmp-${VERSION}
 MULTI_PACKAGES=	-main -cxx
 PKGNAME-cxx=	gmpxx-${VERSION}

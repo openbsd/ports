@@ -1,0 +1,47 @@
+Index: mpn/x86_64/k8/mul_basecase.asm
+--- mpn/x86_64/k8/mul_basecase.asm.orig
++++ mpn/x86_64/k8/mul_basecase.asm
+@@ -335,9 +335,11 @@ C     addmul_2 for remaining vp's
+ 	C adjusted value of n that is reloaded on each iteration
+ 
+ L(addmul_outer_0):
++	endbr64
+ 	add	$3, un
+ 	lea	0(%rip), outer_addr
+ 
++	endbr64
+ 	mov	un, n
+ 	mov	-24(up,un,8), %rax
+ 	mul	v0
+@@ -348,6 +350,7 @@ L(addmul_outer_0):
+ 	jmp	L(addmul_entry_0)
+ 
+ L(addmul_outer_1):
++	endbr64
+ 	mov	un, n
+ 	mov	(up,un,8), %rax
+ 	mul	v0
+@@ -358,9 +361,11 @@ L(addmul_outer_1):
+ 	jmp	L(addmul_entry_1)
+ 
+ L(addmul_outer_2):
++	endbr64
+ 	add	$1, un
+ 	lea	0(%rip), outer_addr
+ 
++	endbr64
+ 	mov	un, n
+ 	mov	-8(up,un,8), %rax
+ 	mul	v0
+@@ -372,9 +377,11 @@ L(addmul_outer_2):
+ 	jmp	L(addmul_entry_2)
+ 
+ L(addmul_outer_3):
++	endbr64
+ 	add	$2, un
+ 	lea	0(%rip), outer_addr
+ 
++	endbr64
+ 	mov	un, n
+ 	mov	-16(up,un,8), %rax
+ 	xor	R32(w3), R32(w3)

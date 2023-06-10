@@ -1,0 +1,73 @@
+Index: mpn/x86_64/k8/redc_1.asm
+--- mpn/x86_64/k8/redc_1.asm.orig
++++ mpn/x86_64/k8/redc_1.asm
+@@ -125,7 +125,8 @@ L(tab):	JMPENT(	L(0), L(tab))
+ 	TEXT
+ 
+ 	ALIGN(16)
+-L(1):	mov	(mp_param), %rax
++L(1):	endbr64
++	mov	(mp_param), %rax
+ 	mul	q0
+ 	add	8(up), %rax
+ 	adc	16(up), %rdx
+@@ -136,7 +137,8 @@ L(1):	mov	(mp_param), %rax
+ 
+ 
+ 	ALIGN(16)
+-L(2):	mov	(mp_param), %rax
++L(2):	endbr64
++	mov	(mp_param), %rax
+ 	mul	q0
+ 	xor	R32(%r14), R32(%r14)
+ 	mov	%rax, %r10
+@@ -171,7 +173,8 @@ L(2):	mov	(mp_param), %rax
+ 	jmp	L(ret)
+ 
+ 
+-L(3):	mov	(mp_param), %rax
++L(3):	endbr64
++	mov	(mp_param), %rax
+ 	mul	q0
+ 	mov	%rax, %rbx
+ 	mov	%rdx, %r10
+@@ -249,7 +252,8 @@ L(3):	mov	(mp_param), %rax
+ 
+ 	ALIGN(16)
+ L(2m4):
+-L(lo2):	mov	(mp,nneg,8), %rax
++L(lo2):	endbr64
++	mov	(mp,nneg,8), %rax
+ 	mul	q0
+ 	xor	R32(%r14), R32(%r14)
+ 	xor	R32(%rbx), R32(%rbx)
+@@ -325,7 +329,8 @@ L(le2):	add	%r10, (up)
+ 
+ 	ALIGN(16)
+ L(1m4):
+-L(lo1):	mov	(mp,nneg,8), %rax
++L(lo1):	endbr64
++	mov	(mp,nneg,8), %rax
+ 	xor	%r9, %r9
+ 	xor	R32(%rbx), R32(%rbx)
+ 	mul	q0
+@@ -399,7 +404,8 @@ L(le1):	add	%r10, (up)
+ 	ALIGN(16)
+ L(0):
+ L(0m4):
+-L(lo0):	mov	(mp,nneg,8), %rax
++L(lo0):	endbr64
++	mov	(mp,nneg,8), %rax
+ 	mov	nneg, i
+ 	mul	q0
+ 	xor	R32(%r10), R32(%r10)
+@@ -464,7 +470,8 @@ L(le0):	add	%r10, (up)
+ 
+ 	ALIGN(16)
+ L(3m4):
+-L(lo3):	mov	(mp,nneg,8), %rax
++L(lo3):	endbr64
++	mov	(mp,nneg,8), %rax
+ 	mul	q0
+ 	mov	%rax, %rbx
+ 	mov	%rdx, %r10

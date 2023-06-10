@@ -1,0 +1,67 @@
+Index: mpn/x86_64/k8/mulmid_basecase.asm
+--- mpn/x86_64/k8/mulmid_basecase.asm.orig
++++ mpn/x86_64/k8/mulmid_basecase.asm
+@@ -329,6 +329,7 @@ C     addmul_2 for remaining vp's
+ 
+ 	ALIGN(16)
+ L(addmul_prologue_0):
++	endbr64
+ 	mov	-8(up,n,8), %rax
+ 	mul	v1
+ 	mov	%rax, w1
+@@ -338,6 +339,7 @@ L(addmul_prologue_0):
+ 
+ 	ALIGN(16)
+ L(addmul_prologue_1):
++	endbr64
+ 	mov	16(up,n,8), %rax
+ 	mul	v1
+ 	mov	%rax, w0
+@@ -348,6 +350,7 @@ L(addmul_prologue_1):
+ 
+ 	ALIGN(16)
+ L(addmul_prologue_2):
++	endbr64
+ 	mov	8(up,n,8), %rax
+ 	mul	v1
+ 	mov	%rax, w3
+@@ -357,6 +360,7 @@ L(addmul_prologue_2):
+ 
+ 	ALIGN(16)
+ L(addmul_prologue_3):
++	endbr64
+ 	mov	(up,n,8), %rax
+ 	mul	v1
+ 	mov	%rax, w2
+@@ -471,6 +475,7 @@ L(diag_prologue_0):
+ 	mov	vp, vp_inner
+ 	mov	vn, n
+ 	lea	0(%rip), outer_addr
++	endbr64
+ 	mov     -8(up,n,8), %rax
+ 	jmp	L(diag_entry_0)
+ 
+@@ -480,6 +485,7 @@ L(diag_prologue_1):
+ 	add	$3, vn
+ 	mov	vn, n
+ 	lea	0(%rip), outer_addr
++	endbr64
+ 	mov     -8(vp_inner), %rax
+ 	jmp	L(diag_entry_1)
+ 
+@@ -489,6 +495,7 @@ L(diag_prologue_2):
+ 	add	$2, vn
+ 	mov	vn, n
+ 	lea	0(%rip), outer_addr
++	endbr64
+ 	mov	16(vp_inner), %rax
+ 	jmp	L(diag_entry_2)
+ 
+@@ -507,6 +514,7 @@ L(diag_entry_0):
+ 	adc     %rdx, w1
+ 	adc     $0, w2
+ L(diag_entry_3):
++	endbr64
+ 	mov     -16(up,n,8), %rax
+ 	mulq    8(vp_inner)
+ 	add     %rax, w0

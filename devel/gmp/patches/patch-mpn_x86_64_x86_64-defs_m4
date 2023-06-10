@@ -1,0 +1,11 @@
+Index: mpn/x86_64/x86_64-defs.m4
+--- mpn/x86_64/x86_64-defs.m4.orig
++++ mpn/x86_64/x86_64-defs.m4
+@@ -95,6 +95,7 @@ m4_assert_numargs(1)
+ 	TYPE($1,`function')
+ 	COFF_TYPE($1)
+ $1:
++	endbr64
+ ')
+ 
+ 
