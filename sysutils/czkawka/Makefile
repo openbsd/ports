@@ -22,12 +22,11 @@ MODULES =		devel/cargo
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
 
-WANTLIB-main +=		c c++abi m pthread
+WANTLIB-main +=		${MODCARGO_WANTLIB} m
 WANTLIB-gui +=		${WANTLIB-main} gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB-gui +=		gobject-2.0 gtk-4 pango-1.0
+WANTLIB-gui +=		gobject-2.0 gtk-4
 
 LIB_DEPENDS-gui =	devel/glib2 \
-			devel/pango \
 			graphics/gdk-pixbuf2 \
 			x11/gtk+4
 
