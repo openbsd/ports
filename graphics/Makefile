@@ -24,6 +24,7 @@
      SUBDIR += cairomm16
      SUBDIR += cal3d
      SUBDIR += cfdg
+     SUBDIR += cgif
      SUBDIR += chafa
      SUBDIR += clutter
      SUBDIR += colord
