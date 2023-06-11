@@ -1,0 +1,31 @@
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -35,7 +35,7 @@ all: static shared
+ 
+ static: $(STATICLIB)
+ 
+-shared: $(SHAREDLIB)
++shared: $(SHAREDLIBVER)
+ 
+ dll:
+ 	$(MAKE) CFLAGS="$(CFLAGS) -DIMAGEQUANT_EXPORTS" $(DLL)
+@@ -54,9 +54,8 @@ $(STATICLIB): $(OBJS)
+ $(SHAREDOBJS):
+ 	$(CC) -fPIC $(CFLAGS) -c $(@:.lo=.c) -o $@
+ 
+-libimagequant.so: $(SHAREDOBJS)
++$(SHAREDLIBVER): $(SHAREDOBJS)
+ 	$(CC) -shared -Wl,-soname,$(SHAREDLIBVER) -o $(SHAREDLIBVER) $^ $(LDFLAGS)
+-	ln -fs $(SHAREDLIBVER) $(SHAREDLIB)
+ 
+ libimagequant.dylib: $(SHAREDOBJS)
+ 	$(CC) -shared -o $(SHAREDLIBVER) $^ $(LDFLAGS)
+@@ -116,7 +115,6 @@ install: all $(PKGCONFIG)
+ 	install -d $(DESTDIR)$(INCLUDEDIR)
+ 	install -m 644 $(STATICLIB) $(DESTDIR)$(LIBDIR)/$(STATICLIB)
+ 	install -m 755 $(SHAREDLIBVER) $(DESTDIR)$(LIBDIR)/$(SHAREDLIBVER)
+-	ln -sf $(SHAREDLIBVER) $(DESTDIR)$(LIBDIR)/$(SHAREDLIB)
+ 	install -m 644 $(PKGCONFIG) $(DESTDIR)$(PKGCONFIGDIR)/$(PKGCONFIG)
+ 	install -m 644 libimagequant.h $(DESTDIR)$(INCLUDEDIR)/libimagequant.h
+ 	$(FIX_INSTALL_NAME)

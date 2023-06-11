@@ -2,7 +2,7 @@ COMMENT=		image quantization library
 
 GH_ACCOUNT=		ImageOptim
 GH_PROJECT=		libimagequant
-GH_TAGNAME=		2.13.1
+GH_TAGNAME=		2.18.0
 
 SHARED_LIBS += imagequant 0.0 # 0
 
@@ -20,10 +20,11 @@ USE_GMAKE=		Yes
 BUILD_DEPENDS=		shells/bash
 
 CONFIGURE_STYLE=	simple
-CONFIGURE_ARGS=		--disable-sse
 
 MAKE_FLAGS=		SOVER=${LIBimagequant_VERSION}
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
+
+NO_TEST=		Yes
 
 .include <bsd.port.mk>
