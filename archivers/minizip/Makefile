@@ -2,11 +2,11 @@ COMMENT =	zip manipulation library
 
 GH_ACCOUNT =	zlib-ng
 GH_PROJECT =	minizip-ng
-GH_TAGNAME =	3.0.6
+GH_TAGNAME =	4.0.0
 
 PKGNAME =	minizip-${GH_TAGNAME}
 
-SHARED_LIBS +=	minizip 1.1 # 3
+SHARED_LIBS +=	minizip 2.0 # 4
 
 CATEGORIES =	archivers
 
@@ -25,9 +25,5 @@ LIB_DEPENDS =		archivers/bzip2 \
 			archivers/xz \
 			archivers/zstd \
 			converters/libiconv
-
-# For the signing-related tests to succeed, you need to add the contents of
-# test/test.pem to /etc/ssl/cert.pem.
-NO_TEST =		No
 
 .include <bsd.port.mk>

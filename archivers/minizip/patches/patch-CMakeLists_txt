@@ -1,22 +1,14 @@
-install headers in include/minizip to avoid conflicts with libzip
+CMake: Fix build with OpenBSD #711
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -86,7 +86,7 @@ include(cmake/clone-repo.cmake)
- 
- set(INSTALL_BIN_DIR ${CMAKE_INSTALL_BINDIR} CACHE PATH "Installation directory for executables")
- set(INSTALL_LIB_DIR ${CMAKE_INSTALL_LIBDIR} CACHE PATH "Installation directory for libraries")
--set(INSTALL_INC_DIR ${CMAKE_INSTALL_INCLUDEDIR} CACHE PATH "Installation directory for headers")
-+set(INSTALL_INC_DIR ${CMAKE_INSTALL_INCLUDEDIR}/minizip CACHE PATH "Installation directory for headers")
- set(INSTALL_MAN_DIR ${CMAKE_INSTALL_MANDIR} CACHE PATH "Installation directory for manual pages")
- 
- set(STDLIB_DEF)
-@@ -442,7 +442,6 @@ endif()
- 
- # Unix specific
- if(UNIX)
--    list(APPEND STDLIB_DEF -D_POSIX_C_SOURCE=200112L)
+@@ -455,7 +455,7 @@ if(WIN32)
+     set(MZ_LIBBSD OFF)
+     set(MZ_ICONV OFF)
+ else()
+-    list(APPEND STDLIB_DEF -D_POSIX_C_SOURCE=200809L)
++    list(APPEND STDLIB_DEF -D_POSIX_C_SOURCE=200809L -D_BSD_SOURCE)
      list(APPEND MINIZIP_SRC mz_os_posix.c mz_strm_os_posix.c)
  
-     if(MZ_PKCRYPT OR MZ_WZAES OR MZ_SIGNING)
+     if(MZ_PKCRYPT OR MZ_WZAES)
