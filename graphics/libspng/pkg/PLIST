@@ -1,0 +1,3 @@
+include/spng.h
+@lib lib/libspng.so.${LIBspng_VERSION}
+lib/pkgconfig/spng.pc
