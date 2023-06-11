@@ -81,6 +81,7 @@
      SUBDIR += hotdoc
      SUBDIR += html
      SUBDIR += html-xml-utils
+     SUBDIR += htmlq
      SUBDIR += hunspell
      SUBDIR += hyperestraier
      SUBDIR += hyperscan,ssse3
