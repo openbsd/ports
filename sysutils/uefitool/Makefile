@@ -5,7 +5,7 @@ COMMENT =		UEFI firmware image viewer and editor
 
 GH_ACCOUNT =		LongSoft
 GH_PROJECT =		UEFITool
-GH_TAGNAME =		A65
+GH_TAGNAME =		A66
 PKGNAME =		${DISTNAME:S/A//}
 
 CATEGORIES =		sysutils
