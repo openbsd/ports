@@ -4,6 +4,7 @@ include/yaml-cpp/binary.h
 include/yaml-cpp/contrib/
 include/yaml-cpp/contrib/anchordict.h
 include/yaml-cpp/contrib/graphbuilder.h
+include/yaml-cpp/depthguard.h
 include/yaml-cpp/dll.h
 include/yaml-cpp/emitfromevents.h
 include/yaml-cpp/emitter.h
@@ -16,7 +17,6 @@ include/yaml-cpp/mark.h
 include/yaml-cpp/node/
 include/yaml-cpp/node/convert.h
 include/yaml-cpp/node/detail/
-include/yaml-cpp/node/detail/bool_type.h
 include/yaml-cpp/node/detail/impl.h
 include/yaml-cpp/node/detail/iterator.h
 include/yaml-cpp/node/detail/iterator_fwd.h
@@ -32,6 +32,7 @@ include/yaml-cpp/node/node.h
 include/yaml-cpp/node/parse.h
 include/yaml-cpp/node/ptr.h
 include/yaml-cpp/node/type.h
+include/yaml-cpp/noexcept.h
 include/yaml-cpp/null.h
 include/yaml-cpp/ostream_wrapper.h
 include/yaml-cpp/parser.h

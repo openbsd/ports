@@ -1,12 +1,12 @@
 COMMENT =		YAML parser and emitter in C++
 
-V=			0.6.3
+V=			0.7.0
 GH_ACCOUNT=		jbeder
 GH_PROJECT=		yaml-cpp
 GH_TAGNAME=		yaml-cpp-$V
 DISTNAME =		yaml-cpp-$V
 
-SHARED_LIBS =		yaml-cpp	3.0 # 0.5
+SHARED_LIBS =		yaml-cpp	4.0 # 0.5
 
 CATEGORIES =		devel
 
