@@ -103,6 +103,7 @@
      SUBDIR += jless
      SUBDIR += jo
      SUBDIR += jq
+     SUBDIR += ktextaddons
      SUBDIR += latex2html
      SUBDIR += latexmk
      SUBDIR += lgrind
