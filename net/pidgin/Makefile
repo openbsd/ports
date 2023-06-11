@@ -2,7 +2,7 @@ COMMENT-main=	multi-protocol instant messaging client
 COMMENT-finch=	multi-protocol instant messaging client, console client
 COMMENT-libpurple= multi-protocol instant messaging library
 
-VERSION=	2.14.10
+VERSION=	2.14.12
 DISTNAME=	pidgin-${VERSION}
 PKGNAME-main=	pidgin-${VERSION}
 PKGNAME-finch=	finch-${VERSION}
@@ -14,9 +14,6 @@ FULLPKGPATH$i= ${PKGPATH},$i${FLAVOR_EXT:S/-gtkspell//:S/-/,/g}
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pidgin/}
 EXTRACT_SUFX=	.tar.bz2
-REVISION-finch=	0
-REVISION-libpurple=0
-REVISION-main=	0
 
 SHARED_LIBS=	jabber		0.0 \
 		purple		7.1 \
@@ -71,7 +68,7 @@ MODGCONF2_LIBDEP=	No
 SEPARATE_BUILD=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= autoreconf
-AUTOCONF_VERSION= 2.69
+AUTOCONF_VERSION= 2.71
 AUTOMAKE_VERSION= 1.16
 CONFIGURE_ARGS+= --disable-avahi \
 		 --disable-cap \
