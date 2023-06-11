@@ -1,3 +1,5 @@
+PORTROACH=		ignore:1
+
 COMMENT=		all-in-one management software
 
 MV=			15.0
