@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.208 2023/06/08 14:13:12 espie Exp $
+# $OpenBSD: Port.pm,v 1.209 2023/06/11 16:53:17 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -68,7 +68,6 @@ sub new($class, $phase)
 
 sub fork($self, $core)
 {
-	$core->job->{current} = $self->{phase};
 	return $self->SUPER::fork($core);
 }
 
@@ -910,7 +909,6 @@ sub new($class, %prop)
 	    &$e;
 	};
 	$job->{tasks} = [];
-	$job->{current} = '';
 	# for stuff that doesn't really lock
 	$job->{lock} //= DPB::DummyLock->new;
 	$job->set_watch($job->{builder}->logger, $job->{v});
