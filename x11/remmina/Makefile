@@ -1,9 +1,8 @@
 COMMENT=		GTK+ remote desktop client
 
-V=			1.4.29
+V=			1.4.31
 DISTNAME=		remmina-${V}
-WRKDIST=		${WRKDIR}/Remmina-v${V}-fb19eb5f11f206ffb442a9e0c519cb0f2cb3fd8b
-REVISION=		0
+WRKDIST=		${WRKDIR}/Remmina-v${V}-7407cc3a27eb25ba4ddddeab565f67fd688324ed
 
 CATEGORIES=		x11 net
 
@@ -17,7 +16,7 @@ WANTLIB += avahi-client avahi-common avahi-ui-gtk3 c cairo crypto
 WANTLIB += cups freerdp-client2 freerdp2 gcrypt gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gtk-3 intl
 WANTLIB += json-glib-1.0 pango-1.0 pthread secret-1 sodium spice-client-glib-2.0
-WANTLIB += spice-client-gtk-3.0 ssh ssl vncclient vte-2.91 winpr2
+WANTLIB += spice-client-gtk-3.0 ssh ssl vncclient vncserver vte-2.91 winpr2
 
 MASTER_SITES=		https://gitlab.com/Remmina/Remmina/-/archive/v${V}/
 

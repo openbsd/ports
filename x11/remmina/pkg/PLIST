@@ -58,6 +58,8 @@ share/icons/hicolor/scalable/actions/org.remmina.Remmina-keyboard-symbolic.svg
 share/icons/hicolor/scalable/actions/org.remmina.Remmina-multi-monitor-symbolic.svg
 share/icons/hicolor/scalable/actions/org.remmina.Remmina-pan-down-symbolic.svg
 share/icons/hicolor/scalable/actions/org.remmina.Remmina-pan-up-symbolic.svg
+share/icons/hicolor/scalable/actions/org.remmina.Remmina-password-conceal-symbolic.svg
+share/icons/hicolor/scalable/actions/org.remmina.Remmina-password-reveal-symbolic.svg
 share/icons/hicolor/scalable/actions/org.remmina.Remmina-pin-down-symbolic.svg
 share/icons/hicolor/scalable/actions/org.remmina.Remmina-pin-up-symbolic.svg
 share/icons/hicolor/scalable/actions/org.remmina.Remmina-preferences-system-symbolic.svg
@@ -159,7 +161,7 @@ share/locale/zh_CN/LC_MESSAGES/remmina.mo
 share/locale/zh_TW/LC_MESSAGES/remmina.mo
 share/metainfo/
 share/metainfo/org.remmina.Remmina.appdata.xml
-share/mime/packages/remmina-mime.xml
+share/mime/packages/org.remmina.Remmina-mime.xml
 share/remmina/
 share/remmina/external_tools/
 share/remmina/external_tools/functions.sh
