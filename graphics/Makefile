@@ -159,6 +159,7 @@
      SUBDIR += librtprocess
      SUBDIR += libsixel
      SUBDIR += libspiro
+     SUBDIR += libspng
      SUBDIR += libvidcap
      SUBDIR += libvips
      SUBDIR += libwebp
