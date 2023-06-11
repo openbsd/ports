@@ -1,0 +1,15 @@
+fixed OpenBSD support (#921)
+
+Index: src/raw_logging.cc
+--- src/raw_logging.cc.orig
++++ src/raw_logging.cc
+@@ -59,7 +59,8 @@
+ # include <unistd.h>
+ #endif
+ 
+-#if (defined(HAVE_SYSCALL_H) || defined(HAVE_SYS_SYSCALL_H)) && (!(defined(GLOG_OS_MACOSX)))
++#if (defined(HAVE_SYSCALL_H) || defined(HAVE_SYS_SYSCALL_H)) && \
++    (!(defined(GLOG_OS_MACOSX)) && !(defined(GLOG_OS_OPENBSD)))
+ # define safe_write(fd, s, len)  syscall(SYS_write, fd, s, len)
+ #else
+   // Not so safe, but what can you do?

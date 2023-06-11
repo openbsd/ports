@@ -1,12 +1,16 @@
 include/glog/
+include/glog/export.h
 include/glog/log_severity.h
 include/glog/logging.h
+include/glog/platform.h
 include/glog/raw_logging.h
 include/glog/stl_logging.h
 include/glog/vlog_is_on.h
 lib/cmake/glog/
 lib/cmake/glog/glog-config-version.cmake
 lib/cmake/glog/glog-config.cmake
+lib/cmake/glog/glog-modules.cmake
 lib/cmake/glog/glog-targets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/glog/glog-targets.cmake
 @lib lib/libglog.so.${LIBglog_VERSION}
+lib/pkgconfig/libglog.pc

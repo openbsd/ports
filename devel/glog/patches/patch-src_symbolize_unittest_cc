@@ -4,10 +4,10 @@ to call this even though those functions don't exist for those archs.
 Index: src/symbolize_unittest.cc
 --- src/symbolize_unittest.cc.orig
 +++ src/symbolize_unittest.cc
-@@ -402,7 +402,7 @@ int main(int argc, char **argv) {
+@@ -424,7 +424,7 @@ int main(int argc, char **argv) {
    InitGoogleLogging(argv[0]);
    InitGoogleTest(&argc, argv);
- #if defined(HAVE_SYMBOLIZE)
+ #if defined(HAVE_SYMBOLIZE) && defined(HAVE_STACKTRACE)
 -# if defined(__ELF__)
 +# if defined(__ELF__) && defined(TEST_X86_32_AND_64)
    // We don't want to get affected by the callback interface, that may be

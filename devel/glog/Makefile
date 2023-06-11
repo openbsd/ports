@@ -2,10 +2,9 @@ COMMENT =		C++ application-level logging library
 
 GH_ACCOUNT =		google
 GH_PROJECT =		glog
-GH_TAGNAME =		v0.4.0
-REVISION =		3
+GH_TAGNAME =		v0.6.0
 
-SHARED_LIBS +=		glog 2.0 # 0.2.1
+SHARED_LIBS +=		glog 3.0 # 0.2.1
 
 CATEGORIES =		devel
 
@@ -14,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} execinfo gflags m
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake
 
