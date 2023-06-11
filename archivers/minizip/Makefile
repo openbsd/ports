@@ -21,6 +21,8 @@ CONFIGURE_ARGS =	-DBUILD_SHARED_LIBS=ON \
 			-DMZ_BUILD_TEST=ON \
 			-DMZ_BUILD_UNIT_TEST=ON
 
+BUILD_DEPENDS +=	devel/gtest
+
 LIB_DEPENDS =		archivers/bzip2 \
 			archivers/xz \
 			archivers/zstd \
