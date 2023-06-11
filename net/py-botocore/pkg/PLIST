@@ -1731,6 +1731,16 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/panorama/2019-07-24/examp
 lib/python${MODPY_VERSION}/site-packages/botocore/data/panorama/2019-07-24/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/panorama/2019-07-24/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/partitions.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/payment-cryptography/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/payment-cryptography-data/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/payment-cryptography-data/2022-02-03/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/payment-cryptography-data/2022-02-03/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/payment-cryptography-data/2022-02-03/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/payment-cryptography-data/2022-02-03/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/payment-cryptography/2021-09-14/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/payment-cryptography/2021-09-14/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/payment-cryptography/2021-09-14/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/payment-cryptography/2021-09-14/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/personalize/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/personalize-events/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/personalize-events/2018-03-22/
