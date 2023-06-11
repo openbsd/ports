@@ -17,6 +17,7 @@ include/guacamole/client-types.h
 include/guacamole/client.h
 include/guacamole/error-types.h
 include/guacamole/error.h
+include/guacamole/fips.h
 include/guacamole/hash.h
 include/guacamole/layer-types.h
 include/guacamole/layer.h
