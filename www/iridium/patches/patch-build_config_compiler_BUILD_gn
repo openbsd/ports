@@ -34,7 +34,7 @@ Index: build/config/compiler/BUILD.gn
    }
  
 +  if (is_openbsd) {
-+    ldflags += [ "-Wl,-z,wxneeded" ]
++    ldflags += [ "-Wl,-z,wxneeded", "-Wl,-z,nobtcfi" ]
 +  }
 +
    # Linux-specific compiler flags setup.

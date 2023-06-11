@@ -9,6 +9,7 @@ COMMENT=		Chromium browser sans integration with Google
 
 V=			114.0.5735.106
 UGV=			${V}-1
+REVISION=		0
 
 DISTNAME=		ungoogled-chromium-${V}
 
