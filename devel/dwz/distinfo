@@ -1,2 +1,4 @@
-SHA256 (dwz-0.14.tar.gz) = MwBuq4df8KB/E/yIWIPFvZUU2D7OqfGLxGtXMt3fDR8=
-SIZE (dwz-0.14.tar.gz) = 186623
+SHA256 (dwz-0.15.tar.gz) = 7VnGEuIEFeaX+8RRH1J+91cAe8VvoalU5JrKHans+0Q=
+SHA256 (xxhash-0.8.1.h) = 1PK5G1R8eQYWSRhnIaazMWCfK/hZVIWiHqYxyC7D75M=
+SIZE (dwz-0.15.tar.gz) = 192777
+SIZE (xxhash-0.8.1.h) = 209646

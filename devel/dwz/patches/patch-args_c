@@ -1,0 +1,32 @@
+Correctly get processors online.
+
+Index: args.c
+--- args.c.orig
++++ args.c
+@@ -25,14 +25,15 @@
+ #include <stdio.h>
+ #include <string.h>
+ #include <stdlib.h>
+-#include <error.h>
++#include <unistd.h>
+ #include <gelf.h>
+-#include <sys/sysinfo.h>
+ 
+ #include "args.h"
+ 
+ #include "util.h"
+ 
++extern void error(int, int, const char *, ...);
++
+ #if DEVEL
+ int tracing;
+ int ignore_size;
+@@ -735,7 +736,7 @@ parse_args (int argc, char *argv[], bool *hardlink, co
+ 
+   if (max_forks == -1)
+     {
+-      long nprocs = get_nprocs ();
++      long nprocs = sysconf(_SC_NPROCESSORS_ONLN);
+       /* Be conservative on max forks: 4 procs may be actually be 4 SMT
+ 	 threads with only 2 cores.  */
+       max_forks = nprocs / 2;

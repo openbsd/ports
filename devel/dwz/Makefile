@@ -1,5 +1,8 @@
 COMMENT =	DWARF optimization and duplicate removal tool
-DISTNAME =	dwz-0.14
+PKGNAME =	dwz-0.15
+XXHASH_V =	0.8.1
+DISTFILES =	${PKGNAME}.tar.gz:0 \
+		xxhash-${XXHASH_V}{xxhash}.h:1
 
 CATEGORIES =	devel
 
@@ -11,7 +14,8 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c elf
 
-MASTER_SITES =	https://sourceware.org/ftp/dwz/releases/
+MASTER_SITES0 =	https://sourceware.org/ftp/dwz/releases/
+MASTER_SITES1 =	https://raw.githubusercontent.com/Cyan4973/xxHash/v${XXHASH_V}/
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
@@ -25,5 +29,25 @@ WRKDIST =	${WRKDIR}/dwz
 # XXX bootstrap: DEBUG_PACKAGES needs a dwz binary to work
 
 DWZ = ${WRKBUILD}/dwz
+
+EXTRACT_ONLY =	${PKGNAME}.tar.gz
+
+# Cannot use sysutils/xxhash as that introduces a loop.
+# XXX: Revisit using the :patch target next update.
+post-extract:
+	cp ${DISTDIR}/xxhash-${XXHASH_V}.h ${WRKSRC}/xxhash.h
+
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mlp64}
+CFLAGS +=	-DNATIVE_POINTER_SIZE=8
+.else
+CFLAGS +=	-DNATIVE_POINTER_SIZE=4
+.endif
+
+.if ${PROPERTIES:Mle}
+CFLAGS +=	-DNATIVE_ENDIAN_VAL=ELFDATA2LSB
+.else
+CFLAGS +=	-DNATIVE_ENDIAN_VAL=ELFDATA2MSB
+.endif
 
 .include <bsd.port.mk>
