@@ -6,12 +6,11 @@ COMMENT =		high-performance road network routing engine
 
 GH_ACCOUNT =		Project-OSRM
 GH_PROJECT =		osrm-backend
-GH_TAGNAME =		v5.22.0
-REVISION =		0
+GH_TAGNAME =		v5.27.1
 
 CATEGORIES =		geo
 
-HOMEPAGE =		http://project-osrm.org/
+HOMEPAGE =		https://project-osrm.org/
 
 # BSD 2-clause
 PERMIT_PACKAGE =	Yes
@@ -19,9 +18,9 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} ${MODLUA_WANTLIB}
 WANTLIB += boost_chrono-mt boost_date_time-mt boost_filesystem-mt
 WANTLIB += boost_iostreams-mt boost_program_options-mt boost_regex-mt
-WANTLIB += boost_system-mt boost_thread-mt bz2 c expat m tbb tbbmalloc z
+WANTLIB += boost_system-mt boost_thread-mt bz2 c expat m tbb z
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake \
 			lang/lua

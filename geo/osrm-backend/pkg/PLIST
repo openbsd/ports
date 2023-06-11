@@ -8,6 +8,21 @@
 @bin bin/osrm-extract
 @bin bin/osrm-partition
 @bin bin/osrm-routed
+include/flatbuffers/
+include/flatbuffers/base.h
+include/flatbuffers/code_generators.h
+include/flatbuffers/flatbuffers.h
+include/flatbuffers/flatc.h
+include/flatbuffers/flexbuffers.h
+include/flatbuffers/grpc.h
+include/flatbuffers/hash.h
+include/flatbuffers/idl.h
+include/flatbuffers/minireflect.h
+include/flatbuffers/reflection.h
+include/flatbuffers/reflection_generated.h
+include/flatbuffers/registry.h
+include/flatbuffers/stl_emulation.h
+include/flatbuffers/util.h
 include/mapbox/
 include/mapbox/optional.hpp
 include/mapbox/recursive_wrapper.hpp
@@ -28,6 +43,7 @@ include/osrm/customizer_config.hpp
 include/osrm/engine/
 include/osrm/engine/api/
 include/osrm/engine/api/base_parameters.hpp
+include/osrm/engine/api/base_result.hpp
 include/osrm/engine/api/match_parameters.hpp
 include/osrm/engine/api/nearest_parameters.hpp
 include/osrm/engine/api/route_parameters.hpp
@@ -81,6 +97,7 @@ include/osrm/util/typedefs.hpp
 @static-lib lib/libosrm_contract.a
 @static-lib lib/libosrm_customize.a
 @static-lib lib/libosrm_extract.a
+@static-lib lib/libosrm_guidance.a
 @static-lib lib/libosrm_partition.a
 @static-lib lib/libosrm_store.a
 @static-lib lib/libosrm_update.a
@@ -90,6 +107,7 @@ share/osrm/profiles/
 share/osrm/profiles/bicycle.lua
 share/osrm/profiles/car.lua
 share/osrm/profiles/debug_example.lua
+share/osrm/profiles/debug_way.lua
 share/osrm/profiles/examples/
 share/osrm/profiles/examples/postgis.lua
 share/osrm/profiles/foot.lua
@@ -105,6 +123,7 @@ share/osrm/profiles/lib/relations.lua
 share/osrm/profiles/lib/sequence.lua
 share/osrm/profiles/lib/set.lua
 share/osrm/profiles/lib/tags.lua
+share/osrm/profiles/lib/traffic_signal.lua
 share/osrm/profiles/lib/utils.lua
 share/osrm/profiles/lib/way_handlers.lua
 share/osrm/profiles/rasterbot.lua
