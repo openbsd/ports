@@ -6,6 +6,7 @@ COMMENT-mysql =		MySQL plugin for Qt6
 COMMENT-psql =		PostgresSQL plugin for Qt6
 
 PKGSPEC-main =		qt6-qtbase-${QT6_PKGSPEC}
+REVISION-main =		0
 
 PKGNAME-mysql =		qt6-mysql-${VERSION}
 PKGNAME-global =	qt6-global-${VERSION}
