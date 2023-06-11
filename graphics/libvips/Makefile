@@ -1,68 +1,58 @@
 COMMENT =	fast image processing library with low memory needs
 
-VERSION =	8.9.2
+VERSION =	8.14.2
 DISTNAME =	vips-${VERSION}
 PKGNAME =	lib${DISTNAME}
-REVISION =	0
-
 CATEGORIES =	graphics
+EXTRACT_SUFX =	.tar.xz
 
-SHARED_LIBS +=  vips       0.0
-SHARED_LIBS +=  vips-cpp   0.0
+SHARED_LIBS +=  vips       1.0
+SHARED_LIBS +=  vips-cpp   1.0
 
 HOMEPAGE =	https://libvips.github.io/libvips/
-
-MAINTAINER =	Stephane Guedon <stephane@22decembre.eu>
 
 # LGPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c expat ffi gif glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gthread-2.0 iconv intl jpeg lzma m pcre2-8
-WANTLIB += png tiff webp webpdemux webpmux z zstd
+WANTLIB += ${COMPILER_LIBCXX} c cgif expat gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 imagequant intl jpeg m spng tiff webp webpdemux
+WANTLIB += webpmux
 
 MASTER_SITES =	https://github.com/libvips/libvips/releases/download/v${VERSION}/
 
-LIB_DEPENDS +=	archivers/xz	\
-		archivers/zstd	\
-		devel/glib2	\
-		graphics/giflib \
-		graphics/jpeg	\
+MODULES =	devel/meson
+
+BUILD_DEPENDS += devel/gettext,-tools
+LIB_DEPENDS +=	devel/gettext \
+		devel/glib2 \
+		graphics/cgif \
+		graphics/jpeg \
+		graphics/libimagequant \
 		graphics/libwebp \
-		graphics/png	\
+		graphics/libspng \
 		graphics/tiff
 
-USE_GMAKE =		Yes
-COMPILER =		base-clang ports-gcc
-CONFIGURE_STYLE =	gnu
+COMPILER =	base-clang ports-gcc
 
-CONFIGURE_ARGS +=	--disable-gtk-doc \
-			--disable-gtk-doc-html \
-			--disable-introspection \
-			--with-analyze \
-			--with-giflib \
-			--with-png \
-			--with-tiff \
-			--with-ppm \
-			--with-radiance \
-			--with-jpeg \
-			--with-libwebp \
-			--without-magick \
-			--without-matio \
-			--without-nifti \
-			--without-openslide \
-			--without-orc \
-			--without-pangoft2 \
-			--without-pdfium \
-			--without-poppler \
-			--without-rsvg \
-			--without-OpenEXR \
-			--without-lcms \
-			--without-libexif \
-			--without-gsf \
-			--without-heif \
-			--without-imagequant \
-			--without-cfitsio \
-			--without-fftw
+CONFIGURE_ARGS += -Ddefault_library=both \
+		-Dcfitsio=disabled \
+		-Dexif=disabled \
+		-Dfftw=disabled \
+		-Dgsf=disabled \
+		-Dheif=disabled \
+		-Djpeg-xl=disabled \
+		-Dlcms=disabled \
+		-Dmagick=disabled \
+		-Dmagick-package=disabled \
+		-Dmatio=disabled \
+		-Dnifti=disabled \
+		-Dopenexr=disabled \
+		-Dopenjpeg=disabled \
+		-Dopenslide=disabled \
+		-Dorc=disabled \
+		-Dpangocairo=disabled \
+		-Dpdfium=disabled \
+		-Dpoppler=disabled \
+		-Drsvg=disabled
 
 .include <bsd.port.mk>
