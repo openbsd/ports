@@ -1,6 +1,6 @@
 COMMENT=	small and fast AV1 decoder
 
-VER=		1.2.0
+VER=		1.2.1
 DISTNAME=	dav1d-${VER}
 CATEGORIES=	multimedia
 MASTER_SITES=	https://downloads.videolan.org/pub/videolan/dav1d/${VER}/

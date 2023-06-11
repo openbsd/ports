@@ -387,7 +387,7 @@ Index: src/arm/64/ipred.S
  endfunc
  
  const padding_mask_buf
-@@ -1614,11 +1632,11 @@ endfunc
+@@ -1653,11 +1671,11 @@ endfunc
  //                               const int dx, const int max_base_x);
  function ipred_z1_fill1_8bpc_neon, export=1
          clz             w9,  w3
@@ -402,7 +402,7 @@ Index: src/arm/64/ipred.S
          ld1r            {v31.16b}, [x10]          // padding
          mov             w7,  w5
          mov             w15, #64
-@@ -1777,12 +1795,14 @@ function ipred_z1_fill1_8bpc_neon, export=1
+@@ -1816,12 +1834,14 @@ function ipred_z1_fill1_8bpc_neon, export=1
          mov             w3,  w12
          b               169b
  
@@ -422,7 +422,7 @@ Index: src/arm/64/ipred.S
  endfunc
  
  function ipred_z1_fill2_8bpc_neon, export=1
-@@ -1900,11 +1920,11 @@ endconst
+@@ -3160,11 +3180,11 @@ endfunc
  function ipred_z3_fill1_8bpc_neon, export=1
          cmp             w6,  #64
          clz             w9,  w3
@@ -437,7 +437,7 @@ Index: src/arm/64/ipred.S
          movrel          x11, increments
          ld1r            {v31.16b}, [x10]          // padding
          ld1             {v30.8h},  [x11]          // increments
-@@ -2243,17 +2263,20 @@ L(ipred_z3_fill1_large_h16):
+@@ -3503,17 +3523,20 @@ L(ipred_z3_fill1_large_h16):
  9:
          ret
  
@@ -464,7 +464,7 @@ Index: src/arm/64/ipred.S
          b.gt            L(ipred_z3_fill_padding_wide)
          // w3 = remaining width, w4 = constant height
          mov             w12, w4
-@@ -2264,8 +2287,7 @@ function ipred_z3_fill_padding_neon, export=0
+@@ -3524,8 +3547,7 @@ function ipred_z3_fill_padding_neon, export=0
          // power of two in the remaining width, and repeating.
          clz             w9,  w3
          sub             w9,  w9,  #25
@@ -474,7 +474,7 @@ Index: src/arm/64/ipred.S
          br              x9
  
  2:
-@@ -2345,13 +2367,15 @@ function ipred_z3_fill_padding_neon, export=0
+@@ -3605,13 +3627,15 @@ function ipred_z3_fill_padding_neon, export=0
  9:
          ret
  
@@ -496,7 +496,7 @@ Index: src/arm/64/ipred.S
  
  L(ipred_z3_fill_padding_wide):
          // Fill a WxH rectangle with padding, with W > 16.
-@@ -2506,13 +2530,13 @@ function ipred_filter_8bpc_neon, export=1
+@@ -3766,13 +3790,13 @@ function ipred_filter_8bpc_neon, export=1
          add             x6,  x6,  w5, uxtw
          ld1             {v16.8b, v17.8b, v18.8b, v19.8b}, [x6], #32
          clz             w9,  w3
@@ -513,7 +513,7 @@ Index: src/arm/64/ipred.S
          sxtl            v18.8h,  v18.8b
          sxtl            v19.8h,  v19.8b
          add             x6,  x0,  x1
-@@ -2653,11 +2677,13 @@ function ipred_filter_8bpc_neon, export=1
+@@ -3913,11 +3937,13 @@ function ipred_filter_8bpc_neon, export=1
  9:
          ret
  
@@ -531,7 +531,7 @@ Index: src/arm/64/ipred.S
  endfunc
  
  // void pal_pred_8bpc_neon(pixel *dst, const ptrdiff_t stride,
-@@ -2666,11 +2692,11 @@ endfunc
+@@ -3926,11 +3952,11 @@ endfunc
  function pal_pred_8bpc_neon, export=1
          ld1             {v0.8h}, [x2]
          clz             w9,  w4
@@ -546,7 +546,7 @@ Index: src/arm/64/ipred.S
          add             x2,  x0,  x1
          lsl             x1,  x1,  #1
          br              x6
-@@ -2748,12 +2774,14 @@ function pal_pred_8bpc_neon, export=1
+@@ -4008,12 +4034,14 @@ function pal_pred_8bpc_neon, export=1
          b.gt            64b
          ret
  
@@ -566,7 +566,7 @@ Index: src/arm/64/ipred.S
  endfunc
  
  // void ipred_cfl_128_8bpc_neon(pixel *dst, const ptrdiff_t stride,
-@@ -2762,12 +2790,12 @@ endfunc
+@@ -4022,12 +4050,12 @@ endfunc
  //                              const int16_t *ac, const int alpha);
  function ipred_cfl_128_8bpc_neon, export=1
          clz             w9,  w3
@@ -582,7 +582,7 @@ Index: src/arm/64/ipred.S
          add             x6,  x0,  x1
          lsl             x1,  x1,  #1
          br              x7
-@@ -2872,12 +2900,14 @@ L(ipred_cfl_splat_w16):
+@@ -4132,12 +4160,14 @@ L(ipred_cfl_splat_w16):
          b.gt            1b
          ret
  
@@ -601,7 +601,7 @@ Index: src/arm/64/ipred.S
  endfunc
  
  // void ipred_cfl_top_8bpc_neon(pixel *dst, const ptrdiff_t stride,
-@@ -2886,12 +2916,12 @@ endfunc
+@@ -4146,12 +4176,12 @@ endfunc
  //                              const int16_t *ac, const int alpha);
  function ipred_cfl_top_8bpc_neon, export=1
          clz             w9,  w3
@@ -617,7 +617,7 @@ Index: src/arm/64/ipred.S
          add             x6,  x0,  x1
          lsl             x1,  x1,  #1
          br              x7
-@@ -2926,11 +2956,13 @@ function ipred_cfl_top_8bpc_neon, export=1
+@@ -4186,11 +4216,13 @@ function ipred_cfl_top_8bpc_neon, export=1
          dup             v0.8h,   v2.h[0]
          b               L(ipred_cfl_splat_w16)
  
@@ -635,7 +635,7 @@ Index: src/arm/64/ipred.S
  endfunc
  
  // void ipred_cfl_left_8bpc_neon(pixel *dst, const ptrdiff_t stride,
-@@ -2941,15 +2973,15 @@ function ipred_cfl_left_8bpc_neon, export=1
+@@ -4201,15 +4233,15 @@ function ipred_cfl_left_8bpc_neon, export=1
          sub             x2,  x2,  w4, uxtw
          clz             w9,  w3
          clz             w8,  w4
@@ -657,7 +657,7 @@ Index: src/arm/64/ipred.S
          add             x6,  x0,  x1
          lsl             x1,  x1,  #1
          br              x7
-@@ -2988,11 +3020,13 @@ L(ipred_cfl_left_h32):
+@@ -4248,11 +4280,13 @@ L(ipred_cfl_left_h32):
          dup             v0.8h,   v2.h[0]
          br              x9
  
@@ -675,7 +675,7 @@ Index: src/arm/64/ipred.S
  endfunc
  
  // void ipred_cfl_8bpc_neon(pixel *dst, const ptrdiff_t stride,
-@@ -3006,16 +3040,15 @@ function ipred_cfl_8bpc_neon, export=1
+@@ -4266,16 +4300,15 @@ function ipred_cfl_8bpc_neon, export=1
          clz             w9,  w3
          clz             w6,  w4
          dup             v16.8h, w8               // width + height
@@ -696,7 +696,7 @@ Index: src/arm/64/ipred.S
          ushr            v16.8h,  v16.8h,  #1     // (width + height) >> 1
          dup             v17.8h,  w8              // -ctz(width + height)
          add             x6,  x0,  x1
-@@ -3132,15 +3165,17 @@ L(ipred_cfl_w32):
+@@ -4392,15 +4425,17 @@ L(ipred_cfl_w32):
          dup             v0.8h,   v0.h[0]
          b               L(ipred_cfl_splat_w16)
  
@@ -722,7 +722,7 @@ Index: src/arm/64/ipred.S
  endfunc
  
  // void cfl_ac_420_8bpc_neon(int16_t *const ac, const pixel *const ypx,
-@@ -3149,14 +3184,14 @@ endfunc
+@@ -4409,14 +4444,14 @@ endfunc
  function ipred_cfl_ac_420_8bpc_neon, export=1
          clz             w8,  w5
          lsl             w4,  w4,  #2
@@ -740,7 +740,7 @@ Index: src/arm/64/ipred.S
          sub             w8,  w6,  w4         // height - h_pad
          rbit            w9,  w5              // rbit(width)
          rbit            w10, w6              // rbit(height)
-@@ -3295,9 +3330,9 @@ L(ipred_cfl_ac_420_w8_subtract_dc):
+@@ -4555,9 +4590,9 @@ L(ipred_cfl_ac_420_w8_subtract_dc):
  
  L(ipred_cfl_ac_420_w16):
          AARCH64_VALID_JUMP_TARGET
@@ -753,7 +753,7 @@ Index: src/arm/64/ipred.S
          br              x7
  
  L(ipred_cfl_ac_420_w16_wpad0):
-@@ -3454,17 +3489,19 @@ L(ipred_cfl_ac_420_w16_hpad):
+@@ -4714,17 +4749,19 @@ L(ipred_cfl_ac_420_w16_hpad):
          lsl             w6,  w6,  #1
          b               L(ipred_cfl_ac_420_w8_calc_subtract_dc)
  
@@ -781,7 +781,7 @@ Index: src/arm/64/ipred.S
  endfunc
  
  // void cfl_ac_422_8bpc_neon(int16_t *const ac, const pixel *const ypx,
-@@ -3473,14 +3510,14 @@ endfunc
+@@ -4733,14 +4770,14 @@ endfunc
  function ipred_cfl_ac_422_8bpc_neon, export=1
          clz             w8,  w5
          lsl             w4,  w4,  #2
@@ -799,7 +799,7 @@ Index: src/arm/64/ipred.S
          sub             w8,  w6,  w4         // height - h_pad
          rbit            w9,  w5              // rbit(width)
          rbit            w10, w6              // rbit(height)
-@@ -3571,9 +3608,9 @@ L(ipred_cfl_ac_422_w8_wpad):
+@@ -4831,9 +4868,9 @@ L(ipred_cfl_ac_422_w8_wpad):
  
  L(ipred_cfl_ac_422_w16):
          AARCH64_VALID_JUMP_TARGET
@@ -812,7 +812,7 @@ Index: src/arm/64/ipred.S
          br              x7
  
  L(ipred_cfl_ac_422_w16_wpad0):
-@@ -3676,17 +3713,19 @@ L(ipred_cfl_ac_422_w16_wpad3):
+@@ -4936,17 +4973,19 @@ L(ipred_cfl_ac_422_w16_wpad3):
          mov             v1.16b,  v3.16b
          b               L(ipred_cfl_ac_420_w16_hpad)
  
@@ -840,7 +840,7 @@ Index: src/arm/64/ipred.S
  endfunc
  
  // void cfl_ac_444_8bpc_neon(int16_t *const ac, const pixel *const ypx,
-@@ -3695,14 +3734,14 @@ endfunc
+@@ -4955,14 +4994,14 @@ endfunc
  function ipred_cfl_ac_444_8bpc_neon, export=1
          clz             w8,  w5
          lsl             w4,  w4,  #2
@@ -858,7 +858,7 @@ Index: src/arm/64/ipred.S
          sub             w8,  w6,  w4         // height - h_pad
          rbit            w9,  w5              // rbit(width)
          rbit            w10, w6              // rbit(height)
-@@ -3823,9 +3862,10 @@ L(ipred_cfl_ac_444_w16_wpad):
+@@ -5083,9 +5122,10 @@ L(ipred_cfl_ac_444_w16_wpad):
  
  L(ipred_cfl_ac_444_w32):
          AARCH64_VALID_JUMP_TARGET
@@ -872,7 +872,7 @@ Index: src/arm/64/ipred.S
          br              x7
  
  L(ipred_cfl_ac_444_w32_wpad0):
-@@ -3971,15 +4011,17 @@ L(ipred_cfl_ac_444_w32_hpad):
+@@ -5231,15 +5271,17 @@ L(ipred_cfl_ac_444_w32_hpad):
          dup             v4.8h,   v4.h[0]
          b               L(ipred_cfl_ac_420_w8_subtract_dc)
  
