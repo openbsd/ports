@@ -483,8 +483,15 @@ UPDATE_PLIST_ARGS+= -i MV
 DEFAULT_PHP?=	No
 DESTDIRNAME=	INSTALL_ROOT
 
+# not: install-modules install-pear install-sapi
 INSTALL_TARGET=	install-binaries install-build install-headers install-programs
-# not: install-modules install-pear install-sapi install-pharcmd
+
+# install-pharcmd makes a $(shell ...) call which requires gmake
+# newer php versions have an extra check and don't provide a useful
+# phar command unless this works - use it on all versions to reduce
+# differing codepaths
+USE_GMAKE=	Yes
+INSTALL_TARGET+= install-pharcmd
 
 .for i in ${MULTI_PACKAGES:N-main:S/-//g}
 DESCR-${i}=		${.CURDIR}/../files/DESCR-${i}
@@ -575,6 +582,6 @@ post-install:
 	  exit 1; fi
 	${INSTALL_MAN} ${WRKSRC}/sapi/cli/php.1 ${PREFIX}/man/man1/php-cgi-${PV}.1
 
-	${INSTALL_PROGRAM} ${WRKBUILD}/ext/phar/phar.phar ${PREFIX}/bin/phar-${PV}
+	[ -e ${WRKBUILD}/ext/phar/phar.phar ] && ${INSTALL_PROGRAM} ${WRKBUILD}/ext/phar/phar.phar ${PREFIX}/bin/phar-${PV}
 	${INSTALL_MAN} ${WRKBUILD}/ext/phar/phar.1 ${PREFIX}/man/man1/phar-${PV}.1
 .endif
