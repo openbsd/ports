@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1589 2023/06/12 10:06:29 sthen Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1590 2023/06/12 17:40:46 sthen Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -413,10 +413,6 @@ USE_WXNEEDED ?= No
 .if ${USE_WXNEEDED:L} == "yes"
 _LINKER_FLAGS += -z wxneeded
 .endif
-USE_NOBTCFI ?= No
-.if ${USE_NOBTCFI:L} == "yes" && ${USE_LLD:L} == "yes"
-_LINKER_FLAGS += -z nobtcfi
-.endif
 USE_GMAKE ?= No
 .if ${USE_GMAKE:L} == "yes"
 BUILD_DEPENDS += devel/gmake
@@ -796,6 +792,11 @@ MAKE_ENV += ${_EXTRA_ENV}
 USE_LLD ?= Yes
 .else
 USE_LLD ?= No
+.endif
+
+USE_NOBTCFI ?= No
+.if ${USE_NOBTCFI:L} == "yes" && ${USE_LLD:L} == "yes"
+_LINKER_FLAGS += -z nobtcfi
 .endif
 
 .if ${USE_LLD:L} == "yes"
