@@ -19,6 +19,7 @@
 @sample ${SYSCONFDIR}/php-fpm.d/
 @rcscript ${RCDIR}/php${SV}_fpm
 bin/phar-${PV}
+bin/phar-${PV}.phar
 @bin bin/php-${PV}
 bin/php-config-${PV}
 bin/phpize-${PV}
@@ -26,6 +27,7 @@ lib/php-${PV}/
 lib/php-${PV}/modules/
 @so lib/php-${PV}/modules/opcache.so
 @man man/man1/phar-${PV}.1
+@man man/man1/phar-${PV}.phar.1
 @man man/man1/php-${PV}.1
 @man man/man1/php-config-${PV}.1
 @man man/man1/phpize-${PV}.1
