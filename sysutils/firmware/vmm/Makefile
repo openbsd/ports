@@ -1,6 +1,5 @@
 ONLY_FOR_ARCHS=	amd64 i386
 
-USE_LLD=	No
 COMPILER=	ports-gcc
 COMPILER_LANGS=	c
 
@@ -17,7 +16,7 @@ FW_DRIVER=	vmm
 FW_VER=		1.14.0
 SB_VER=		20180715
 DISTNAME=	seabios-${FW_VER}
-REVISION=	3
+REVISION=	4
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 	sgabios-${SB_VER}{72f39d48bedf044e202fd51fecf3e2218fc2ae66}.tar.gz:0
 
@@ -48,7 +47,7 @@ EXTRAVERSION=	-OpenBSD-vmm
 MAKE_FLAGS=	V=1 \
 		EXTRAVERSION="${EXTRAVERSION}" \
 		LD32BIT_FLAG=-melf_i386_obsd \
-		LD="${LD} -nopie -znorelro" \
+		LD="ld.bfd -nopie -znorelro" \
 		PYTHON="${MODPY_BIN}"
 
 post-extract:
@@ -59,7 +58,7 @@ post-build:
 	sed -i 's,^#define BUILD_CL.*,#define BUILD_CL "${SB_VER}",' \
 	    ${WRKDIR}/sgabios/sgabios.S
 	cd ${WRKDIR}/sgabios; env ${MAKE_ENV} ${MAKE_PROGRAM} \
-	    BUILD_USER='\"_<vmm\"' BUILD_HOST='\"OpenBSD>\"'
+	    BUILD_USER='\"_<vmm\"' BUILD_HOST='\"OpenBSD>\"' LD="ld.bfd"
 	dd if=/dev/zero of=${WRKDIR}/space bs=1 count=196608
 	cat ${WRKDIR}/sgabios/sgabios.bin ${WRKDIR}/space \
 	    ${WRKSRC}/out/bios.bin > ${WRKDIR}/vmm-bios
