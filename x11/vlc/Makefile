@@ -5,11 +5,13 @@ V=		3.0.18
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-jack=	vlc-jack-${V}
-REVISION-main=	2
+REVISION-main=	3
 CATEGORIES=	x11
 MASTER_SITES=	https://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.xz
 REVISION-jack=	0
+
+USE_NOBTCFI=	Yes
 
 SHARED_LIBS=	vlc		4.0 \
 		vlc_xcb_events	0.0 \
