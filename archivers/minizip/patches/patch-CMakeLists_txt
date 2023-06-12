@@ -1,4 +1,5 @@
 CMake: Fix build with OpenBSD #711
+57be074f6f300fcacd361f52dea62874c7214084
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
