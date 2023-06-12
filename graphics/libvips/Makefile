@@ -22,8 +22,10 @@ MASTER_SITES =	https://github.com/libvips/libvips/releases/download/v${VERSION}/
 
 MODULES =	devel/meson
 
-BUILD_DEPENDS += devel/gettext,-tools
-LIB_DEPENDS +=	devel/gettext \
+BUILD_DEPENDS =	devel/gettext,-tools \
+		devel/gobject-introspection
+
+LIB_DEPENDS =	devel/gettext \
 		devel/glib2 \
 		graphics/cgif \
 		graphics/jpeg \
