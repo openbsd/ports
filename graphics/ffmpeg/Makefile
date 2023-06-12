@@ -3,9 +3,12 @@ COMMENT=	audio/video converter and streamer
 V=		4.4.4
 DISTNAME=	ffmpeg-${V}
 EPOCH=		1
+REVISION=	0
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	https://ffmpeg.org/releases/
 EXTRACT_SUFX=	.tar.xz
+
+USE_NOBTCFI=	Yes
 
 SHARED_LIBS=	avcodec		25.0 \
 		avdevice	13.0 \
