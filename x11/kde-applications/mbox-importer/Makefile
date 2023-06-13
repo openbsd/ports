@@ -1,20 +1,21 @@
 COMMENT =	KMail mbox importer
 DISTNAME =	mbox-importer-${VERSION}
-CATEGORIES =	devel
 
-WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiContact
-WANTLIB += KF5AkonadiCore KF5AkonadiMime KF5AkonadiWidgets KF5Archive
-WANTLIB += KF5Auth KF5AuthCore KF5Codecs KF5Completion KF5ConfigCore
-WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5Contacts KF5CoreAddons
-WANTLIB += KF5Crash KF5GrantleeTheme KF5I18n KF5IMAP KF5IdentityManagement
-WANTLIB += KF5IdentityManagementWidgets KF5ItemModels KF5KIOCore
-WANTLIB += KF5Libkdepim KF5Libkleo KF5MailCommon KF5MailImporter
-WANTLIB += KF5MailImporterAkonadi KF5MessageComposer KF5MessageCore
-WANTLIB += KF5MessageViewer KF5Mime KF5MimeTreeParser KF5PimCommon
-WANTLIB += KF5PimCommonAkonadi KF5PimCommonAutoCorrection KF5PimTextEdit
-WANTLIB += KF5Service KF5WidgetsAddons Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5Xml assuan c gpgme
-WANTLIB += gpgmepp m qgpgme
+CATEGORIES =	devel
+WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Archive KF5Auth
+WANTLIB += KF5AuthCore KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
+WANTLIB += KF5ConfigWidgets KF5Contacts KF5CoreAddons KF5Crash
+WANTLIB += KF5I18n KF5ItemModels KF5KIOCore KF5PimCommon KF5PimCommonAkonadi
+WANTLIB += KF5Service KF5TextAutoCorrectionCore KF5TextAutoCorrectionWidgets
+WANTLIB += KF5TextEditTextToSpeech KF5WidgetsAddons KPim5AkonadiContact
+WANTLIB += KPim5AkonadiCore KPim5AkonadiMime KPim5AkonadiWidgets
+WANTLIB += KPim5GrantleeTheme KPim5IMAP KPim5IdentityManagement
+WANTLIB += KPim5IdentityManagementWidgets KPim5Libkdepim KPim5Libkleo
+WANTLIB += KPim5MailCommon KPim5MailImporter KPim5MailImporterAkonadi
+WANTLIB += KPim5MessageComposer KPim5MessageCore KPim5MessageViewer
+WANTLIB += KPim5Mime KPim5MimeTreeParser KPim5TextEdit Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
+WANTLIB += assuan c gpgme gpgmepp m qgpgme
 
 WANTLIB += lib/inotify/inotify
 
@@ -50,6 +51,6 @@ LIB_DEPENDS =	devel/kf5/karchive \
 
 TEST_IS_INTERACTIVE =	X11
 
-CXXFLAGS +=	-I${LOCALBASE}/include/KF5/MessageViewer
+CXXFLAGS +=	-I${LOCALBASE}/include/KPim5/MessageViewer
 
 .include <bsd.port.mk>

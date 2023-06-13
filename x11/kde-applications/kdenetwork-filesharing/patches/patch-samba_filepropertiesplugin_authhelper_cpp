@@ -3,7 +3,7 @@ Add OpenBSD usermod support
 Index: samba/filepropertiesplugin/authhelper.cpp
 --- samba/filepropertiesplugin/authhelper.cpp.orig
 +++ samba/filepropertiesplugin/authhelper.cpp
-@@ -101,6 +101,12 @@ ActionReply AuthHelper::addtogroup(const QVariantMap &
+@@ -102,6 +102,12 @@ ActionReply AuthHelper::addtogroup(const QVariantMap &
          QStringLiteral("{%1}").arg(group),
          QStringLiteral("-m"),
          QStringLiteral("{%1}").arg(user) });
@@ -13,6 +13,6 @@ Index: samba/filepropertiesplugin/authhelper.cpp
 +        QStringLiteral("-G"),
 +        group,
 +        user });
- #elif defined(Q_OS_LINUX)
+ #elif defined(Q_OS_LINUX) || defined(Q_OS_HURD)
      p.setProgram(QStringLiteral("/usr/sbin/usermod"));
      p.setArguments({

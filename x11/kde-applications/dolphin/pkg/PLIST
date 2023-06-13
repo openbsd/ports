@@ -180,6 +180,29 @@ share/doc/HTML/sv/dolphin/index.docbook
 share/doc/HTML/sv/dolphin/split.png
 share/doc/HTML/sv/dolphin/toolbarbuttons.png
 share/doc/HTML/sv/dolphin/workspacebuttons.png
+share/doc/HTML/tr/dolphin/
+share/doc/HTML/tr/dolphin/baloo-search-more-options.png
+share/doc/HTML/tr/dolphin/baloo-search.png
+share/doc/HTML/tr/dolphin/default-ui.png
+share/doc/HTML/tr/dolphin/grouping-view.png
+share/doc/HTML/tr/dolphin/index.cache.bz2
+share/doc/HTML/tr/dolphin/index.docbook
+share/doc/HTML/tr/dolphin/locationbar-breadcrumb.png
+share/doc/HTML/tr/dolphin/locationbar-context-menu.png
+share/doc/HTML/tr/dolphin/locationbar-editable.png
+share/doc/HTML/tr/dolphin/locationbar-kioslaves-menu.png
+share/doc/HTML/tr/dolphin/locationbar-places-icon.png
+share/doc/HTML/tr/dolphin/preferences-context-menu.png
+share/doc/HTML/tr/dolphin/preferences-general-behavior.png
+share/doc/HTML/tr/dolphin/preferences-navigation.png
+share/doc/HTML/tr/dolphin/preferences-startup.png
+share/doc/HTML/tr/dolphin/preferences-trash.png
+share/doc/HTML/tr/dolphin/preferences-user-feedback.png
+share/doc/HTML/tr/dolphin/preferences-viewmodes-icons.png
+share/doc/HTML/tr/dolphin/toolbar-navigation.png
+share/doc/HTML/tr/dolphin/toolbar-view-appearance.png
+share/doc/HTML/tr/dolphin/toolbar.png
+share/doc/HTML/tr/dolphin/viewproperties-dialog.png
 share/doc/HTML/uk/dolphin/
 share/doc/HTML/uk/dolphin/default-ui.png
 share/doc/HTML/uk/dolphin/grouping-view.png
@@ -203,7 +226,6 @@ share/doc/HTML/uk/dolphin/viewproperties-dialog.png
 share/dolphin/
 share/dolphin/dolphinpartactions.desktop
 share/kconf_update/dolphin_detailsmodesettings.upd
-share/kglobalaccel/
 share/kglobalaccel/org.kde.dolphin.desktop
 share/knsrcfiles/servicemenu.knsrc
 share/locale/ar/LC_MESSAGES/dolphin.mo
@@ -211,6 +233,7 @@ share/locale/ar/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/az/LC_MESSAGES/dolphin.mo
 share/locale/az/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/be/LC_MESSAGES/dolphin.mo
+share/locale/be/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/be@latin/LC_MESSAGES/dolphin.mo
 share/locale/bg/LC_MESSAGES/dolphin.mo
 share/locale/bg/LC_MESSAGES/dolphin_servicemenuinstaller.mo
@@ -233,6 +256,7 @@ share/locale/el/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/en_GB/LC_MESSAGES/dolphin.mo
 share/locale/en_GB/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/eo/LC_MESSAGES/dolphin.mo
+share/locale/eo/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/es/LC_MESSAGES/dolphin.mo
 share/locale/es/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/et/LC_MESSAGES/dolphin.mo
@@ -348,3 +372,4 @@ share/locale/zh_TW/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/metainfo/org.kde.dolphin.appdata.xml
 share/qlogging-categories5/dolphin.categories
 @tag update-desktop-database
+share/zsh/site-functions/_dolphin

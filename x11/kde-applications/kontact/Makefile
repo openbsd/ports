@@ -3,19 +3,19 @@ USE_WXNEEDED =	Yes
 COMMENT =	documentenal information management suite
 DISTNAME =	kontact-${VERSION}
 CATEGORIES =	net www
-REVISION =	0
 
 SHARED_LIBS +=  kontactprivate       3.0 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Auth KF5AuthCore
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
-WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5Crash KF5GrantleeTheme
-WANTLIB += KF5GuiAddons KF5I18n KF5IconThemes KF5JobWidgets KF5KCMUtils
-WANTLIB += KF5KIOCore KF5KIOGui KF5KIOWidgets KF5KontactInterface
-WANTLIB += KF5Libkdepim KF5Parts KF5PimCommon KF5PimCommonAutoCorrection
-WANTLIB += KF5PimTextEdit KF5Service KF5Solid KF5SonnetUi KF5TextWidgets
-WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport
+WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5Crash KF5GuiAddons
+WANTLIB += KF5I18n KF5IconThemes KF5JobWidgets KF5KCMUtils KF5KIOCore
+WANTLIB += KF5KIOGui KF5KIOWidgets KF5Parts KF5PimCommon KF5Service
+WANTLIB += KF5Solid KF5SonnetUi KF5TextAutoCorrectionCore KF5TextAutoCorrectionWidgets
+WANTLIB += KF5TextEditTextToSpeech KF5TextWidgets KF5WidgetsAddons
+WANTLIB += KF5WindowSystem KF5XmlGui KPim5GrantleeTheme KPim5KontactInterface
+WANTLIB += KPim5Libkdepim KPim5TextEdit Qt5Concurrent Qt5Core
+WANTLIB += Qt5DBus Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport
 WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5WebChannel Qt5WebEngineCore
 WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml X11 c m
 

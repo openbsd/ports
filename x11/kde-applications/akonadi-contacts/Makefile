@@ -2,18 +2,18 @@ COMMENT =	PIM Akonadi contacts support library
 DISTNAME =	akonadi-contacts-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  KF5AkonadiContact         1.1 # 5.13.2
-SHARED_LIBS +=  KF5ContactEditor          0.2 # 5.13.2
+SHARED_LIBS +=  KPim5AkonadiContact       0.0 # 0.0
+SHARED_LIBS +=  KPim5ContactEditor        0.0 # 0.0
 
-WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiCore
-WANTLIB += KF5AkonadiWidgets KF5Auth KF5AuthCore KF5Codecs KF5Completion
-WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5Contacts
-WANTLIB += KF5CoreAddons KF5GrantleeTheme KF5I18n KF5I18nLocaleData
-WANTLIB += KF5IconThemes KF5ItemModels KF5JobWidgets KF5KIOCore
-WANTLIB += KF5KIOGui KF5KIOWidgets KF5Mime KF5Prison KF5Service
+WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Auth KF5AuthCore
+WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
+WANTLIB += KF5ConfigWidgets KF5Contacts KF5CoreAddons KF5I18n
+WANTLIB += KF5I18nLocaleData KF5IconThemes KF5ItemModels KF5JobWidgets
+WANTLIB += KF5KIOCore KF5KIOGui KF5KIOWidgets KF5Prison KF5Service
 WANTLIB += KF5Solid KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5Xml X11 m
+WANTLIB += KF5WindowSystem KF5XmlGui KPim5AkonadiCore KPim5AkonadiWidgets
+WANTLIB += KPim5GrantleeTheme KPim5Mime Qt5Concurrent Qt5Core
+WANTLIB += Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml X11 m
 
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes

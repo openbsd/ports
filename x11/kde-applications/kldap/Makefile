@@ -2,12 +2,12 @@ COMMENT =	LDAP access API for KDE
 DISTNAME =	kldap-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  KF5Ldap                   3.0 # 5.9
+SHARED_LIBS +=  KPim5Ldap                 0.0 # 0.0
 
-WANTLIB += ${COMPILER_LIBCXX} KF5ConfigCore KF5CoreAddons KF5I18n
-WANTLIB += KF5KIOCore KF5Service KF5WidgetsAddons Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets lber ldap
-WANTLIB += m qt5keychain sasl2
+WANTLIB += ${COMPILER_LIBCXX} KF5ConfigCore KF5ConfigGui KF5CoreAddons
+WANTLIB += KF5I18n KF5KIOCore KF5Service KF5WidgetsAddons Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
+WANTLIB += lber ldap m qt5keychain sasl2
 
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes

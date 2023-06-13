@@ -2,18 +2,18 @@ COMMENT =	PIM Akonadi calendar support library
 DISTNAME =	akonadi-calendar-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  KF5AkonadiCalendar     4.0 # 5.6
+SHARED_LIBS +=  KPim5AkonadiCalendar      0.0 # 0.0
 
-WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiContact
-WANTLIB += KF5AkonadiCore KF5AkonadiMime KF5AkonadiWidgets KF5Auth
-WANTLIB += KF5AuthCore KF5CalendarCore KF5CalendarUtils KF5Codecs
-WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
-WANTLIB += KF5Contacts KF5CoreAddons KF5DBusAddons KF5GrantleeTheme
-WANTLIB += KF5I18n KF5IdentityManagement KF5ItemModels KF5JobWidgets
-WANTLIB += KF5KIOCore KF5KIOGui KF5KIOWidgets KF5MailTransport
-WANTLIB += KF5MailTransportAkonadi KF5Mime KF5Notifications KF5Service
+WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Auth KF5AuthCore
+WANTLIB += KF5CalendarCore KF5Codecs KF5Completion KF5ConfigCore
+WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5Contacts KF5CoreAddons
+WANTLIB += KF5DBusAddons KF5I18n KF5ItemModels KF5JobWidgets KF5KIOCore
+WANTLIB += KF5KIOGui KF5KIOWidgets KF5Notifications KF5Service
 WANTLIB += KF5Solid KF5Wallet KF5WidgetsAddons KF5WindowSystem
-WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
+WANTLIB += KF5XmlGui KPim5AkonadiContact KPim5AkonadiCore KPim5AkonadiMime
+WANTLIB += KPim5AkonadiWidgets KPim5CalendarUtils KPim5GrantleeTheme
+WANTLIB += KPim5IdentityManagement KPim5MailTransport KPim5MailTransportAkonadi
+WANTLIB += KPim5Mime Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB += Qt5Widgets Qt5Xml X11 c m
 
 MODKDE5_TRANSLATIONS = yes

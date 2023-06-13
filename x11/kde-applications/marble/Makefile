@@ -4,20 +4,18 @@ COMMENT =	virtual globe and world atlas
 DISTNAME =	marble-${VERSION}
 PKGNAME =	marble-kf5-${VERSION}
 CATEGORIES =	geo
-REVISION =	0
 
 HOMEPAGE =	https://marble.kde.org/
 
 SHARED_LIBS +=  astro                     2.0 # 0.17
-SHARED_LIBS +=  marblewidget-qt5          3.1 # 0.28
-SHARED_LIBS +=  marbledeclarative         1.1 # 0.28
+SHARED_LIBS +=  marblewidget-qt5          4.0 # 0.28
+SHARED_LIBS +=  marbledeclarative         1.2 # 0.28
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Attica KF5Auth KF5AuthCore KF5Codecs
-WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
-WANTLIB += KF5CoreAddons KF5Crash KF5I18n KF5JobWidgets KF5KIOCore
-WANTLIB += KF5KIOGui KF5KIOWidgets KF5NewStuff KF5NewStuffCore
-WANTLIB += KF5Package KF5Parts KF5Plasma KF5Runner KF5Service
-WANTLIB += KF5Solid KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
+WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
+WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
+WANTLIB += KF5Crash KF5I18n KF5JobWidgets KF5KIOCore KF5KIOGui
+WANTLIB += KF5KIOWidgets KF5Package KF5Parts KF5Plasma KF5Runner
+WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
 WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport Qt5Qml
 WANTLIB += Qt5QmlModels Qt5Quick Qt5SerialPort Qt5Sql Qt5Svg Qt5WebChannel
@@ -39,8 +37,7 @@ RUN_DEPENDS =	x11/qt5/qtquickcontrols \
 		misc/shared-mime-info \
 		devel/kf5/kwallet
 
-LIB_DEPENDS =	devel/kf5/attica \
-		devel/kf5/kauth \
+LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcodecs \
 		devel/kf5/kcompletion \
 		devel/kf5/kconfig \
@@ -49,7 +46,6 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kcrash \
 		devel/kf5/ki18n \
 		devel/kf5/kio \
-		devel/kf5/knewstuff \
 		devel/kf5/kpackage \
 		devel/kf5/kparts \
 		devel/kf5/krunner \

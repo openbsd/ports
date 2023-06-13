@@ -1,6 +1,7 @@
 @conflict kdebase-*
 @bin bin/kdialog
 @bin bin/kdialog_progress_helper
+share/applications/org.kde.kdialog.desktop
 share/dbus-1/interfaces/org.kde.kdialog.ProgressDialog.xml
 share/locale/af/LC_MESSAGES/kdialog.mo
 share/locale/ar/LC_MESSAGES/kdialog.mo
@@ -94,3 +95,4 @@ share/locale/zh_CN/LC_MESSAGES/kdialog.mo
 share/locale/zh_TW/LC_MESSAGES/kdialog.mo
 share/metainfo/
 share/metainfo/org.kde.kdialog.metainfo.xml
+@tag update-desktop-database

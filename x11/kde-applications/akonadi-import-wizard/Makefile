@@ -1,26 +1,26 @@
 COMMENT =	PIM Akonadi import wizard
 DISTNAME =	akonadi-import-wizard-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
-SHARED_LIBS +=  KPimImportWizard       1.1 # 5.13.2
+SHARED_LIBS +=  KPim5ImportWizard         0.0 # 0.0
 
-WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiContact
-WANTLIB += KF5AkonadiCore KF5AkonadiMime KF5AkonadiWidgets KF5Archive
-WANTLIB += KF5Auth KF5AuthCore KF5Codecs KF5Completion KF5ConfigCore
-WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5Contacts KF5CoreAddons
-WANTLIB += KF5Crash KF5DBusAddons KF5GrantleeTheme KF5I18n KF5IMAP
-WANTLIB += KF5IdentityManagement KF5IdentityManagementWidgets
-WANTLIB += KF5ItemModels KF5KIOCore KF5Libkdepim KF5Libkleo KF5MailCommon
-WANTLIB += KF5MailImporter KF5MailImporterAkonadi KF5MailTransport
-WANTLIB += KF5MessageComposer KF5MessageCore KF5MessageViewer
-WANTLIB += KF5Mime KF5MimeTreeParser KF5PimCommon KF5PimCommonAkonadi
-WANTLIB += KF5PimCommonAutoCorrection KF5PimTextEdit KF5Service
-WANTLIB += KF5Wallet KF5WidgetsAddons KF5XmlGui Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
-WANTLIB += assuan c gpgme gpgmepp m qgpgme qt5keychain
+WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Archive KF5Auth
+WANTLIB += KF5AuthCore KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
+WANTLIB += KF5ConfigWidgets KF5Contacts KF5CoreAddons KF5Crash
+WANTLIB += KF5DBusAddons KF5I18n KF5ItemModels KF5KIOCore KF5PimCommon
+WANTLIB += KF5PimCommonAkonadi KF5Service KF5TextAutoCorrectionCore
+WANTLIB += KF5TextAutoCorrectionWidgets KF5TextEditTextToSpeech
+WANTLIB += KF5Wallet KF5WidgetsAddons KF5XmlGui KPim5AkonadiContact
+WANTLIB += KPim5AkonadiCore KPim5AkonadiMime KPim5AkonadiWidgets
+WANTLIB += KPim5GrantleeTheme KPim5IMAP KPim5IdentityManagement
+WANTLIB += KPim5IdentityManagementWidgets KPim5Libkdepim KPim5Libkleo
+WANTLIB += KPim5MailCommon KPim5MailImporter KPim5MailImporterAkonadi
+WANTLIB += KPim5MailTransport KPim5MessageComposer KPim5MessageCore
+WANTLIB += KPim5MessageViewer KPim5Mime KPim5MimeTreeParser KPim5TextEdit
+WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets
+WANTLIB += Qt5Xml assuan c gpgme gpgmepp m qgpgme qt5keychain
 
-#WANTLIB += lib/inotify/inotify
+WANTLIB += lib/inotify/inotify
 
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_ICON_CACHE = yes
@@ -58,6 +58,6 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		x11/kde-applications/pimcommon \
 		x11/kde-applications/mailcommon
 
-CXXFLAGS +=	-I${LOCALBASE}/include/KF5/MessageViewer
+CXXFLAGS +=	-I${LOCALBASE}/include/KPim5/MessageViewer
 
 .include <bsd.port.mk>

@@ -24,12 +24,6 @@ PKGNAME-pim =		kde-pim-${MODKDE_VERSION}
 PKGNAME-development =	kde-development-${MODKDE_VERSION}
 PKGNAME-utils =		kde-utils-${MODKDE_VERSION}
 
-REVISION-development =	0
-REVISION-education =	1
-REVISION-utils =	0
-REVISION-pim =		0
-REVISION-main =		0
-
 MULTI_PACKAGES +=	-main \
 			-games \
 			-admin \
@@ -194,7 +188,8 @@ RUN_DEPENDS-network += \
 	net/konversation \
 	net/ktorrent \
 	net/libktorrent \
-	net/kdeconnect-kde
+	net/kdeconnect-kde \
+	net/neochat
 
 KDE_AKONADI = \
 	x11/kde-applications/akonadi \

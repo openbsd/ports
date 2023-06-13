@@ -2,15 +2,15 @@ COMMENT =	KDE PIM kontact plugin interface library
 DISTNAME =	kontactinterface-${VERSION}
 CATEGORIES =	devel mail
 
-SHARED_LIBS +=  KF5KontactInterface       2.0 # 5.13.2
+SHARED_LIBS +=  KPim5KontactInterface     0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
 WANTLIB += KF5I18n KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets
 WANTLIB += KF5Parts KF5Service KF5Solid KF5SonnetUi KF5TextWidgets
 WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
-WANTLIB += X11 m
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5X11Extras
+WANTLIB += Qt5Xml X11 m
 
 MODKDE5_TRANSLATIONS = yes
 

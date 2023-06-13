@@ -1,14 +1,13 @@
 COMMENT =	PIM Akonadi calendar tools
 DISTNAME =	akonadi-calendar-tools-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
-WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiCalendar KF5AkonadiCore
-WANTLIB += KF5CalendarCore KF5CalendarSupport KF5CalendarUtils
-WANTLIB += KF5ConfigCore KF5ConfigGui KF5CoreAddons KF5I18n
-WANTLIB += KF5ItemModels KF5Mime KF5WidgetsAddons Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5PrintSupport Qt5Widgets Qt5Xml c m
-WANTLIB += KF5IdentityManagement
+WANTLIB += ${COMPILER_LIBCXX} KF5CalendarCore KF5ConfigCore KF5ConfigGui
+WANTLIB += KF5CoreAddons KF5I18n KF5ItemModels KF5WidgetsAddons
+WANTLIB += KPim5AkonadiCalendar KPim5AkonadiCore KPim5CalendarSupport
+WANTLIB += KPim5CalendarUtils KPim5IdentityManagement KPim5Mime
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5PrintSupport Qt5Widgets Qt5Xml
+WANTLIB += c m
 
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_ICON_CACHE = yes

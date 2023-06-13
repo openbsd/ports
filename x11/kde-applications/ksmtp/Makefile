@@ -4,7 +4,7 @@ CATEGORIES =	devel mail
 
 HOMEPAGE =	https://kontact.kde.org/
 
-SHARED_LIBS +=  KPimSMTP               3.0 # 5.13.3
+SHARED_LIBS +=  KPim5SMTP                 0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5ConfigCore KF5CoreAddons KF5I18n
 WANTLIB += KF5KIOCore KF5Service Qt5Concurrent Qt5Core Qt5DBus

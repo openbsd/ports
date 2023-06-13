@@ -12,6 +12,7 @@ WANTLIB += Qt5Network Qt5Widgets X11 c m
 MODKDE5_TRANSLATIONS = yes
 MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
+MODKDE5_DESKTOP_FILE = yes
 
 LIB_DEPENDS =	devel/kf5/kcompletion \
 		devel/kf5/kconfig \

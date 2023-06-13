@@ -1,7 +1,6 @@
 COMMENT =	jigsaw puzzle game
 DISTNAME =	palapeli-${VERSION}
 CATEGORIES =	games
-REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/palapeli
 

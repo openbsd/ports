@@ -1,7 +1,6 @@
 COMMENT =	periodic table of elements
 DISTNAME =	kalzium-${VERSION}
 CATEGORIES =	education math
-REVISION =	0
 
 HOMEPAGE =	https://edu.kde.org/kalzium/
 
@@ -13,7 +12,7 @@ WANTLIB += KF5I18n KF5ItemViews KF5JobWidgets KF5KIOCore KF5KIOGui
 WANTLIB += KF5KIOWidgets KF5Plotting KF5Service KF5Solid KF5SonnetUi
 WANTLIB += KF5TextWidgets KF5UnitConversion KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Script Qt5Svg Qt5Widgets Qt5Xml X11 c m openbabel
+WANTLIB += Qt5Script Qt5Svg Qt5Widgets Qt5Xml X11 c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

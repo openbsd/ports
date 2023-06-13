@@ -1,27 +1,28 @@
 COMMENT =	calendar and scheduling component of kontact
 DISTNAME =	korganizer-${VERSION}
 CATEGORIES =	net www
-REVISION =	0
 
 SHARED_LIBS +=  korganizer_core         3.0 # 5.13.2
 SHARED_LIBS +=  korganizer_interfaces   1.0 # 5.13.2
-SHARED_LIBS +=  korganizerprivate       6.1 # 5.13.2
+SHARED_LIBS +=  korganizerprivate       7.0 # 5.13.2
 
-WANTLIB += ${COMPILER_LIBCXX} GL Grantlee_Templates KF5AkonadiCalendar
-WANTLIB += KF5AkonadiContact KF5AkonadiCore KF5AkonadiMime KF5AkonadiNotes
-WANTLIB += KF5AkonadiWidgets KF5Attica KF5Auth KF5AuthCore KF5CalendarCore
-WANTLIB += KF5CalendarSupport KF5CalendarUtils KF5Codecs KF5Completion
+WANTLIB += ${COMPILER_LIBCXX} GL Grantlee_Templates KF5Attica
+WANTLIB += KF5Auth KF5AuthCore KF5CalendarCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5Contacts
-WANTLIB += KF5CoreAddons KF5Crash KF5EventViews KF5GrantleeTheme
-WANTLIB += KF5Holidays KF5I18n KF5IMAP KF5IconThemes KF5IdentityManagement
-WANTLIB += KF5IncidenceEditor KF5ItemModels KF5ItemViews KF5JobWidgets
-WANTLIB += KF5KCMUtils KF5KIOCore KF5KIOGui KF5KIOWidgets KF5KontactInterface
-WANTLIB += KF5Ldap KF5Libkdepim KF5MailTransport KF5MailTransportAkonadi
-WANTLIB += KF5Mime KF5NewStuff KF5NewStuffCore KF5NewStuffWidgets
-WANTLIB += KF5Notifications KF5Parts KF5PimCommon KF5PimCommonAkonadi
-WANTLIB += KF5PimCommonAutoCorrection KF5PimTextEdit KF5Service
-WANTLIB += KF5Solid KF5SonnetUi KF5TextWidgets KF5Wallet KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KF5XmlGui KUserFeedbackCore KUserFeedbackWidgets
+WANTLIB += KF5CoreAddons KF5Crash KF5Holidays KF5I18n KF5IconThemes
+WANTLIB += KF5ItemModels KF5ItemViews KF5JobWidgets KF5KCMUtils
+WANTLIB += KF5KIOCore KF5KIOGui KF5KIOWidgets KF5NewStuff KF5NewStuffCore
+WANTLIB += KF5NewStuffWidgets KF5Notifications KF5Parts KF5PimCommon
+WANTLIB += KF5PimCommonAkonadi KF5Service KF5Solid KF5SonnetUi
+WANTLIB += KF5TextAutoCorrectionCore KF5TextAutoCorrectionWidgets
+WANTLIB += KF5TextEditTextToSpeech KF5TextWidgets KF5Wallet KF5WidgetsAddons
+WANTLIB += KF5WindowSystem KF5XmlGui KPim5AkonadiCalendar KPim5AkonadiContact
+WANTLIB += KPim5AkonadiCore KPim5AkonadiMime KPim5AkonadiNotes
+WANTLIB += KPim5AkonadiWidgets KPim5CalendarSupport KPim5CalendarUtils
+WANTLIB += KPim5EventViews KPim5GrantleeTheme KPim5IMAP KPim5IdentityManagement
+WANTLIB += KPim5IncidenceEditor KPim5KontactInterface KPim5Ldap
+WANTLIB += KPim5Libkdepim KPim5MailTransport KPim5MailTransportAkonadi
+WANTLIB += KPim5Mime KPim5TextEdit KUserFeedbackCore KUserFeedbackWidgets
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
 WANTLIB += Qt5Widgets Qt5Xml X11 c m
 

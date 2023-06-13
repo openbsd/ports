@@ -2,9 +2,10 @@ COMMENT =	PIM Akonadi notes support library
 DISTNAME =	akonadi-notes-${VERSION}
 CATEGORIES =	devel mail
 
-SHARED_LIBS +=  KF5AkonadiNotes       1.0 # 5.13.2
+SHARED_LIBS +=  KPim5AkonadiNotes       1.0 # 5.13.2
 
-WANTLIB += ${COMPILER_LIBCXX} KF5I18n KF5Mime Qt5Core Qt5Xml m
+WANTLIB += ${COMPILER_LIBCXX} KF5I18n KPim5Mime Qt5Core Qt5Xml
+WANTLIB += m
 
 MODKDE5_TRANSLATIONS = yes
 

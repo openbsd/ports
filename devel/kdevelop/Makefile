@@ -5,24 +5,23 @@ COMMENT =	IDE for C, C++, Python, QML/JavaScript and PHP
 CATEGORIES =	devel x11
 
 DISTNAME =	kdevelop-${MODKDE_VERSION}
-REVISION =	0
 
 HOMEPAGE =	https://www.kdevelop.org/
 
-SHARED_LIBS +=  KDevPlatformDebugger      4.0 # 5.2
+SHARED_LIBS +=  KDevPlatformDebugger      5.0 # 5.2
 SHARED_LIBS +=  KDevPlatformDocumentation 3.0 # 5.2
 SHARED_LIBS +=  KDevPlatformInterfaces    3.1 # 5.2
-SHARED_LIBS +=  KDevPlatformLanguage      6.0 # 5.2
+SHARED_LIBS +=  KDevPlatformLanguage      7.0 # 5.2
 SHARED_LIBS +=  KDevPlatformOutputView    2.0 # 5.2
 SHARED_LIBS +=  KDevPlatformProject       3.0 # 5.2
 SHARED_LIBS +=  KDevPlatformSerialization 5.0 # 5.2
-SHARED_LIBS +=  KDevPlatformShell         5.0 # 5.2
+SHARED_LIBS +=  KDevPlatformShell         6.0 # 5.2
 SHARED_LIBS +=  KDevPlatformSublime       3.0 # 5.2
 SHARED_LIBS +=  KDevPlatformTests         4.0 # 5.2
 SHARED_LIBS +=  KDevPlatformUtil          3.2 # 5.2
 SHARED_LIBS +=  KDevPlatformVcs           3.0 # 5.2
-SHARED_LIBS +=  KDevClangPrivate          1.2 # 5.5
-SHARED_LIBS +=  KDevCMakeCommon           2.0 # 5.5
+SHARED_LIBS +=  KDevClangPrivate          2.0 # 5.5
+SHARED_LIBS +=  KDevCMakeCommon           2.1 # 5.5
 SHARED_LIBS +=  KDevCompileAnalyzerCommon 0.0 # 5.5
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
@@ -36,19 +35,19 @@ WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
 WANTLIB += KF5Crash KF5Declarative KF5GuiAddons KF5I18n KF5IconThemes
 WANTLIB += KF5ItemModels KF5ItemViews KF5JobWidgets KF5KCMUtils
 WANTLIB += KF5KIOCore KF5KIOFileWidgets KF5KIOGui KF5KIOWidgets
-WANTLIB += KF5NewStuff KF5NewStuffCore KF5Notifications KF5NotifyConfig
-WANTLIB += KF5Package KF5Parts KF5Plasma KF5Purpose KF5PurposeWidgets
-WANTLIB += KF5Runner KF5Service KF5Solid KF5SonnetUi KF5SyntaxHighlighting
-WANTLIB += KF5TextEditor KF5TextWidgets KF5ThreadWeaver KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KF5XmlGui Kasten4Controllers Kasten4Core
-WANTLIB += Kasten4Gui Kasten4Okteta2Controllers Kasten4Okteta2Core
-WANTLIB += Kasten4Okteta2Gui Okteta3Core Okteta3Gui Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Help Qt5Network Qt5Positioning
-WANTLIB += Qt5PrintSupport Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickWidgets
-WANTLIB += Qt5Sql Qt5Test Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
-WANTLIB += Qt5Widgets Qt5Xml X11 apr-1 aprutil-1 c clang komparediff2
-WANTLIB += m svn_client-1 svn_fs-1 svn_ra-1 svn_repos-1 svn_subr-1
-WANTLIB += svn_wc-1
+WANTLIB += KF5NewStuff KF5NewStuffCore KF5NewStuffWidgets KF5Notifications
+WANTLIB += KF5NotifyConfig KF5Package KF5Parts KF5Plasma KF5Purpose
+WANTLIB += KF5PurposeWidgets KF5Runner KF5Service KF5Solid KF5SonnetUi
+WANTLIB += KF5SyntaxHighlighting KF5TextEditor KF5TextWidgets
+WANTLIB += KF5ThreadWeaver KF5WidgetsAddons KF5WindowSystem KF5XmlGui
+WANTLIB += Kasten4Controllers Kasten4Core Kasten4Gui Kasten4Okteta2Controllers
+WANTLIB += Kasten4Okteta2Core Kasten4Okteta2Gui Okteta3Core Okteta3Gui
+WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Help Qt5Network
+WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels
+WANTLIB += Qt5Quick Qt5QuickWidgets Qt5Sql Qt5Test Qt5WebChannel
+WANTLIB += Qt5WebEngineCore Qt5WebEngineWidgets Qt5Widgets Qt5Xml
+WANTLIB += X11 apr-1 aprutil-1 c clang komparediff2 m svn_client-1
+WANTLIB += svn_fs-1 svn_ra-1 svn_repos-1 svn_subr-1 svn_wc-1
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
 

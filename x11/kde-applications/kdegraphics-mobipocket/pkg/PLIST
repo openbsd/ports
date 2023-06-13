@@ -1,9 +1,11 @@
 @conflict kdegraphics-mobipocket-<=19.12.3p0
 @pkgpath x11/kde4/graphics-mobipocket
-include/qmobipocket/
-include/qmobipocket/mobipocket.h
-include/qmobipocket/qfilestream.h
-include/qmobipocket/qmobipocket_export.h
+include/QMobipocket/
+include/QMobipocket/qmobipocket/
+include/QMobipocket/qmobipocket/mobipocket.h
+include/QMobipocket/qmobipocket/qfilestream.h
+include/QMobipocket/qmobipocket/qmobipocket_export.h
+include/QMobipocket/qmobipocket_version.h
 lib/cmake/QMobipocket/
 lib/cmake/QMobipocket/QMobipocketConfig.cmake
 lib/cmake/QMobipocket/QMobipocketConfigVersion.cmake

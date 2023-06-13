@@ -1,7 +1,6 @@
 COMMENT =	four-in-a-row board game
 DISTNAME =	kfourinline-${VERSION}
 CATEGORIES =	games
-REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/kfourinline
 

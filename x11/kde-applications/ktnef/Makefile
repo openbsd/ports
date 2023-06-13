@@ -2,11 +2,12 @@ COMMENT =	KDE PIM TNEF library
 DISTNAME =	ktnef-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  KF5Tnef       1.0 # 5.13.2
+SHARED_LIBS +=  KPim5Tnef                 0.0 # 0.0
 
-WANTLIB += ${COMPILER_LIBCXX} KF5CalendarCore KF5CalendarUtils
-WANTLIB += KF5ConfigCore KF5ConfigGui KF5Contacts KF5CoreAddons
-WANTLIB += KF5I18n Qt5Core Qt5Gui Qt5Widgets Qt5Xml m
+WANTLIB += ${COMPILER_LIBCXX} KF5CalendarCore KF5ConfigCore KF5ConfigGui
+WANTLIB += KF5Contacts KF5CoreAddons KF5I18n KPim5CalendarUtils
+WANTLIB += Qt5Core Qt5Gui Qt5Widgets Qt5Xml m
+
 
 MODKDE5_TRANSLATIONS = yes
 

@@ -1,7 +1,6 @@
 COMMENT =	KDE app localization tools
 DISTNAME =	lokalize-${VERSION}
 CATEGORIES =	x11 devel
-REVISION =	0
 
 HOMEPAGE =	https://kde.org/applications/office/org.kde.lokalize
 
@@ -46,10 +45,9 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/sonnet \
 		textproc/hunspell
 
-MODPY_ADJ_FILES =	scripts/xliffmerge.py
-
+# XXX ||true: ignore error due to some old python2 syntax still around (unused)
 post-install:
-	find ${PREFIX}/share/lokalize/scripts/odf \
-		-type f -name \*.py -exec ${MODPY_BIN_ADJ} {} +
-
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+		${PREFIX}/share/lokalize/scripts/ \
+		${PREFIX}/share/lokalize/scripts/odf/ || true
 .include <bsd.port.mk>

@@ -1,26 +1,26 @@
 COMMENT =	Akonadi management and debugging console
 DISTNAME =	akonadiconsole-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
-SHARED_LIBS +=  akonadiconsole       1.1 # 5.13.2
-
-WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiCalendar
-WANTLIB += KF5AkonadiContact KF5AkonadiCore KF5AkonadiMime KF5AkonadiPrivate
-WANTLIB += KF5AkonadiSearchCore KF5AkonadiSearchXapian KF5AkonadiWidgets
-WANTLIB += KF5AkonadiXml KF5Auth KF5AuthCore KF5CalendarCore KF5CalendarSupport
-WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
-WANTLIB += KF5ConfigWidgets KF5Contacts KF5CoreAddons KF5Crash
-WANTLIB += KF5DBusAddons KF5GrantleeTheme KF5I18n KF5IdentityManagement
-WANTLIB += KF5ItemModels KF5ItemViews KF5KIOCore KF5Libkdepim
-WANTLIB += KF5Libkleo KF5MessageCore KF5MessageViewer KF5Mime
-WANTLIB += KF5MimeTreeParser KF5PimCommon KF5PimCommonAutoCorrection
-WANTLIB += KF5PimTextEdit KF5Service KF5SonnetUi KF5TextWidgets
-WANTLIB += KF5WidgetsAddons KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5PrintSupport Qt5Sql Qt5Widgets
+SHARED_LIBS +=  akonadiconsole            2.0 # 5.13.2
+WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Auth KF5AuthCore
+WANTLIB += KF5CalendarCore KF5Codecs KF5Completion KF5ConfigCore
+WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5Contacts KF5CoreAddons
+WANTLIB += KF5Crash KF5DBusAddons KF5I18n KF5ItemModels KF5ItemViews
+WANTLIB += KF5KIOCore KF5PimCommon KF5Service KF5SonnetUi KF5TextAutoCorrectionCore
+WANTLIB += KF5TextAutoCorrectionWidgets KF5TextEditTextToSpeech
+WANTLIB += KF5TextWidgets KF5WidgetsAddons KF5XmlGui KPim5AkonadiCalendar
+WANTLIB += KPim5AkonadiContact KPim5AkonadiCore KPim5AkonadiMime
+WANTLIB += KPim5AkonadiPrivate KPim5AkonadiSearchCore KPim5AkonadiSearchXapian
+WANTLIB += KPim5AkonadiWidgets KPim5AkonadiXml KPim5CalendarSupport
+WANTLIB += KPim5GrantleeTheme KPim5IdentityManagement KPim5Libkdepim
+WANTLIB += KPim5Libkleo KPim5MessageCore KPim5MessageViewer KPim5Mime
+WANTLIB += KPim5MimeTreeParser KPim5TextEdit Qt5Concurrent Qt5Core
+WANTLIB += Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Sql Qt5Widgets
 WANTLIB += Qt5Xml assuan c gpgme gpgmepp m qgpgme xapian
 
 WANTLIB += lib/inotify/inotify
+
 
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DESKTOP_FILE = yes
@@ -59,6 +59,6 @@ LIB_DEPENDS =	databases/xapian-core \
 
 TEST_IS_INTERACTIVE =	X11
 
-CXXFLAGS +=	-I${LOCALBASE}/include/KF5/MessageViewer
+CXXFLAGS +=	-I${LOCALBASE}/include/KPim5/MessageViewer
 
 .include <bsd.port.mk>

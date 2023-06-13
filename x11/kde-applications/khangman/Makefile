@@ -1,14 +1,16 @@
 COMMENT =	KDE hangman game
 DISTNAME =	khangman-${VERSION}
+
 CATEGORIES =	games education
-REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} KEduVocDocument KF5Attica KF5Auth
 WANTLIB += KF5AuthCore KF5Codecs KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
 WANTLIB += KF5CoreAddons KF5Crash KF5I18n KF5NewStuff KF5NewStuffCore
-WANTLIB += KF5Service KF5WidgetsAddons KF5XmlGui Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickWidgets
-WANTLIB += Qt5Widgets Qt5Xml c m
+WANTLIB += KF5NewStuffWidgets KF5Service KF5WidgetsAddons KF5XmlGui
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml Qt5QmlModels
+WANTLIB += Qt5Quick Qt5QuickWidgets Qt5Widgets Qt5Xml c m
+
+WANTLIB += lib/inotify/inotify
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -32,6 +34,7 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kservice \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kxmlgui \
+		devel/libinotify \
 		x11/kde-applications/libkeduvocdocument \
 		x11/qt5/qtdeclarative
 

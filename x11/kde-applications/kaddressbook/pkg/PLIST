@@ -1,34 +1,39 @@
 @conflict kdepimlibs-<=4
 @pkgpath x11/kde4/akregator
 @bin bin/kaddressbook
-include/KPim/KAddressBookImportExport/
-include/KPim/KAddressBookImportExport/ContactFields
-include/KPim/KAddressBookImportExport/ContactList
-include/KPim/KAddressBookImportExport/ContactSelectionDialog
-include/KPim/KAddressBookImportExport/ContactSelectionWidget
-include/KPim/KAddressBookImportExport/ExportSelectionWidget
-include/KPim/KAddressBookImportExport/ImportExportEngine
-include/KPim/KAddressBookImportExport/Plugin
-include/KPim/KAddressBookImportExport/PluginInterface
-include/KPim/KAddressBookImportExport/PluginManager
-include/KPim/kaddressbookimportexport/
-include/KPim/kaddressbookimportexport/contactfields.h
-include/KPim/kaddressbookimportexport/contactlist.h
-include/KPim/kaddressbookimportexport/contactselectiondialog.h
-include/KPim/kaddressbookimportexport/contactselectionwidget.h
-include/KPim/kaddressbookimportexport/exportselectionwidget.h
-include/KPim/kaddressbookimportexport/importexportengine.h
-include/KPim/kaddressbookimportexport/kaddressbook_importexport_export.h
-include/KPim/kaddressbookimportexport/plugin.h
-include/KPim/kaddressbookimportexport/plugininterface.h
-include/KPim/kaddressbookimportexport/pluginmanager.h
-include/KPim/kaddressbookimportexport_version.h
+include/KPim5/KAddressBookImportExport/
+include/KPim5/KAddressBookImportExport/ContactFields
+include/KPim5/KAddressBookImportExport/ContactList
+include/KPim5/KAddressBookImportExport/ContactSelectionDialog
+include/KPim5/KAddressBookImportExport/ContactSelectionWidget
+include/KPim5/KAddressBookImportExport/ExportSelectionWidget
+include/KPim5/KAddressBookImportExport/ImportExportEngine
+include/KPim5/KAddressBookImportExport/Plugin
+include/KPim5/KAddressBookImportExport/PluginInterface
+include/KPim5/KAddressBookImportExport/PluginManager
+include/KPim5/kaddressbookimportexport/
+include/KPim5/kaddressbookimportexport/contactfields.h
+include/KPim5/kaddressbookimportexport/contactlist.h
+include/KPim5/kaddressbookimportexport/contactselectiondialog.h
+include/KPim5/kaddressbookimportexport/contactselectionwidget.h
+include/KPim5/kaddressbookimportexport/exportselectionwidget.h
+include/KPim5/kaddressbookimportexport/importexportengine.h
+include/KPim5/kaddressbookimportexport/kaddressbook_importexport_export.h
+include/KPim5/kaddressbookimportexport/plugin.h
+include/KPim5/kaddressbookimportexport/plugininterface.h
+include/KPim5/kaddressbookimportexport/pluginmanager.h
+include/KPim5/kaddressbookimportexport_version.h
+lib/cmake/KPim5AddressbookImportExport/
+lib/cmake/KPim5AddressbookImportExport/KPim5AddressbookImportExportConfig.cmake
+lib/cmake/KPim5AddressbookImportExport/KPim5AddressbookImportExportConfigVersion.cmake
+lib/cmake/KPim5AddressbookImportExport/KPim5AddressbookImportExportTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/KPim5AddressbookImportExport/KPim5AddressbookImportExportTargets.cmake
 lib/cmake/KPimAddressbookImportExport/
 lib/cmake/KPimAddressbookImportExport/KPimAddressbookImportExportConfig.cmake
 lib/cmake/KPimAddressbookImportExport/KPimAddressbookImportExportConfigVersion.cmake
 lib/cmake/KPimAddressbookImportExport/KPimAddressbookImportExportTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KPimAddressbookImportExport/KPimAddressbookImportExportTargets.cmake
-@lib lib/libKPimAddressbookImportExport.so.${LIBKPimAddressbookImportExport_VERSION}
+@lib lib/libKPim5AddressbookImportExport.so.${LIBKPim5AddressbookImportExport_VERSION}
 @lib lib/libkaddressbookprivate.so.${LIBkaddressbookprivate_VERSION}
 @so lib/qt5/plugins/kaddressbookpart.so
 @so lib/qt5/plugins/pim5/kcms/kaddressbook/kaddressbook_config_plugins.so

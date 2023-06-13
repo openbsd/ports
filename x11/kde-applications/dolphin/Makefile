@@ -2,9 +2,8 @@ COMMENT =	KDE File Manager
 DISTNAME =	dolphin-${VERSION}
 PKGNAME =	dolphin-kf5-${VERSION}
 CATEGORIES =	x11
-REVISION =	0
 
-SHARED_LIBS +=  dolphinprivate            8.0 # 5.0
+SHARED_LIBS +=  dolphinprivate            9.0 # 5.0
 SHARED_LIBS +=  dolphinvcs                2.1 # 5.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Activities KF5Attica KF5Auth
@@ -17,7 +16,8 @@ WANTLIB += KF5NewStuff KF5NewStuffCore KF5NewStuffWidgets KF5Notifications
 WANTLIB += KF5Parts KF5Service KF5Solid KF5SonnetUi KF5TextWidgets
 WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui KUserFeedbackCore
 WANTLIB += KUserFeedbackWidgets Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5Xml X11 c m phonon4qt5
+WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5X11Extras Qt5Xml X11
+WANTLIB += c m phonon4qt5
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

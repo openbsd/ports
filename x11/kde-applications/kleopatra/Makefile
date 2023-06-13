@@ -1,20 +1,19 @@
 COMMENT =	certificate manager and a universal crypto GUI
 DISTNAME =	kleopatra-${VERSION}
 CATEGORIES =	security x11
-REVISION =	0
 
 SHARED_LIBS +=  kleopatraclientcore     1.0 # 1.3.0
 SHARED_LIBS +=  kleopatraclientgui      1.0 # 1.3.0
 
-WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiCore KF5AkonadiMime KF5Auth
-WANTLIB += KF5AuthCore KF5Codecs KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
-WANTLIB += KF5CoreAddons KF5Crash KF5DBusAddons KF5I18n KF5IconThemes
-WANTLIB += KF5IdentityManagement KF5ItemModels KF5Libkleo KF5MailTransport
-WANTLIB += KF5MailTransportAkonadi KF5Mime KF5Notifications KF5SonnetUi
-WANTLIB += KF5TextWidgets KF5Wallet KF5WidgetsAddons KF5WindowSystem
-WANTLIB += KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Widgets Qt5Xml X11 assuan c gpg-error gpgme gpgmepp
-WANTLIB += m qgpgme
+WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
+WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
+WANTLIB += KF5DBusAddons KF5I18n KF5IconThemes KF5ItemModels KF5Notifications
+WANTLIB += KF5SonnetUi KF5TextWidgets KF5Wallet KF5WidgetsAddons
+WANTLIB += KF5WindowSystem KF5XmlGui KPim5AkonadiCore KPim5AkonadiMime
+WANTLIB += KPim5IdentityManagement KPim5Libkleo KPim5MailTransport
+WANTLIB += KPim5MailTransportAkonadi KPim5Mime Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets Qt5Xml
+WANTLIB += X11 assuan c gpg-error gpgme gpgmepp m qgpgme
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -55,7 +54,7 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		x11/kde-applications/kmime \
 		x11/kde-applications/libkleo
 
-CXXFLAGS +=	-I${LOCALBASE}/include/KF5/Libkleo/
-CFLAGS +=	-I${LOCALBASE}/include/KF5/Libkleo/
+CXXFLAGS +=	-I${LOCALBASE}/include/KPim5/Libkleo/
+CFLAGS +=	-I${LOCALBASE}/include/KPim5/Libkleo/
 
 .include <bsd.port.mk>

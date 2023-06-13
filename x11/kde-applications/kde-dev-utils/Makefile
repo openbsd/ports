@@ -1,7 +1,6 @@
 COMMENT =	KDE development helper utilities
 DISTNAME =	kde-dev-utils-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
 HOMEPAGE =	https://kde.org/applications/development/
 

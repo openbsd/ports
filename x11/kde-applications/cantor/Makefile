@@ -3,17 +3,16 @@ USE_WXNEEDED =	Yes
 COMMENT =	KDE mathematical applications
 DISTNAME =	cantor-${VERSION}
 CATEGORIES =	education math
-REVISION =	0
 
-SHARED_LIBS +=  cantorlibs                54.0 # 17.08
+SHARED_LIBS +=  cantorlibs                54.1 # 17.08
 
 WANTLIB += ${COMPILER_LIBCXX} Analitza AnalitzaGui KF5Archive
 WANTLIB += KF5Attica KF5Auth KF5AuthCore KF5Bookmarks KF5Codecs
 WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
 WANTLIB += KF5CoreAddons KF5Crash KF5I18n KF5IconThemes KF5ItemViews
 WANTLIB += KF5JobWidgets KF5KIOCore KF5KIOFileWidgets KF5KIOGui
-WANTLIB += KF5KIOWidgets KF5NewStuff KF5NewStuffCore KF5Parts
-WANTLIB += KF5Pty KF5Service KF5Solid KF5SonnetUi KF5SyntaxHighlighting
+WANTLIB += KF5KIOWidgets KF5NewStuff KF5NewStuffCore KF5NewStuffWidgets
+WANTLIB += KF5Parts KF5Pty KF5Service KF5Solid KF5SonnetUi KF5SyntaxHighlighting
 WANTLIB += KF5TextEditor KF5TextWidgets KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Help
 WANTLIB += Qt5Network Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels

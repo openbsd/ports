@@ -1,21 +1,22 @@
 COMMENT =	KMail account wizard
 DISTNAME =	kmail-account-wizard-${VERSION}
 CATEGORIES =	net www
-REVISION =	0
 
-SHARED_LIBS +=  kmailprivate       1.0 # 5.13.2
+SHARED_LIBS +=  kmailprivate       2.0 # 5.13.2
 
-WANTLIB += ${COMPILER_LIBCXX} GL KF5AkonadiCore KF5AkonadiMime
-WANTLIB += KF5AkonadiWidgets KF5Attica KF5Auth KF5AuthCore KF5Codecs
-WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
-WANTLIB += KF5Crash KF5DBusAddons KF5I18n KF5IdentityManagement
-WANTLIB += KF5ItemModels KF5ItemViews KF5KCMUtils KF5KIOCore KF5KrossCore
-WANTLIB += KF5Ldap KF5Libkdepim KF5Libkleo KF5MailTransport KF5MailTransportAkonadi
-WANTLIB += KF5Mime KF5NewStuff KF5NewStuffCore KF5Notifications
-WANTLIB += KF5PimCommon KF5PimCommonAutoCorrection KF5PimTextEdit
-WANTLIB += KF5Service KF5Wallet KF5WidgetsAddons KF5XmlGui Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Script Qt5Widgets
-WANTLIB += Qt5Xml assuan c gpgme gpgmepp m qgpgme
+WANTLIB += ${COMPILER_LIBCXX} GL KF5Attica KF5Auth KF5AuthCore
+WANTLIB += KF5Codecs KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
+WANTLIB += KF5CoreAddons KF5Crash KF5DBusAddons KF5I18n KF5ItemModels
+WANTLIB += KF5ItemViews KF5KCMUtils KF5KIOCore KF5KrossCore KF5NewStuff
+WANTLIB += KF5NewStuffCore KF5Notifications KF5PimCommon KF5Service
+WANTLIB += KF5TextAutoCorrectionCore KF5TextAutoCorrectionWidgets
+WANTLIB += KF5TextEditTextToSpeech KF5Wallet KF5WidgetsAddons
+WANTLIB += KF5XmlGui KPim5AkonadiCore KPim5AkonadiMime KPim5AkonadiWidgets
+WANTLIB += KPim5IdentityManagement KPim5Ldap KPim5Libkdepim KPim5Libkleo
+WANTLIB += KPim5MailTransport KPim5MailTransportAkonadi KPim5Mime
+WANTLIB += KPim5TextEdit Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
+WANTLIB += Qt5Network Qt5Script Qt5Widgets Qt5Xml assuan c gpgme
+WANTLIB += gpgmepp m qgpgme
 
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes

@@ -1,30 +1,31 @@
 COMMENT =	notes management tool
 DISTNAME =	knotes-${VERSION}
 CATEGORIES =	net www
-REVISION =	0
 
 HOMEPAGE =	http://knotesapp.com/
 
-SHARED_LIBS +=  knotesprivate           1.1 # 5.13.2
-SHARED_LIBS +=  notesharedprivate       3.0 # 5.13.2
+SHARED_LIBS +=  knotesprivate           2.0 # 5.13.2
+SHARED_LIBS +=  notesharedprivate       4.0 # 5.13.2
 
-WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates ICE KF5AkonadiAgentBase
-WANTLIB += KF5AkonadiContact KF5AkonadiCore KF5AkonadiNotes KF5AkonadiSearchDebug
-WANTLIB += KF5AkonadiSearchPIM KF5AkonadiWidgets KF5Attica KF5Auth
-WANTLIB += KF5AuthCore KF5Bookmarks KF5CalendarCore KF5CalendarUtils
-WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
-WANTLIB += KF5ConfigWidgets KF5Contacts KF5CoreAddons KF5Crash
-WANTLIB += KF5DNSSD KF5GlobalAccel KF5GrantleeTheme KF5I18n KF5IMAP
-WANTLIB += KF5IconThemes KF5ItemModels KF5ItemViews KF5JobWidgets
+WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates ICE KF5Attica
+WANTLIB += KF5Auth KF5AuthCore KF5Bookmarks KF5CalendarCore KF5Codecs
+WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
+WANTLIB += KF5Contacts KF5CoreAddons KF5Crash KF5DNSSD KF5GlobalAccel
+WANTLIB += KF5I18n KF5IconThemes KF5ItemModels KF5ItemViews KF5JobWidgets
 WANTLIB += KF5KCMUtils KF5KIOCore KF5KIOFileWidgets KF5KIOGui
-WANTLIB += KF5KIOWidgets KF5KontactInterface KF5Libkdepim KF5Mime
-WANTLIB += KF5NewStuff KF5NewStuffCore KF5NewStuffWidgets KF5Notifications
-WANTLIB += KF5NotifyConfig KF5Parts KF5PimCommon KF5PimCommonAkonadi
-WANTLIB += KF5PimCommonAutoCorrection KF5PimTextEdit KF5Service
-WANTLIB += KF5Solid KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets Qt5X11Extras
-WANTLIB += Qt5Xml SM X11 Xext c m
+WANTLIB += KF5KIOWidgets KF5NewStuff KF5NewStuffCore KF5NewStuffWidgets
+WANTLIB += KF5Notifications KF5NotifyConfig KF5Parts KF5PimCommon
+WANTLIB += KF5PimCommonAkonadi KF5Service KF5Solid KF5SonnetUi
+WANTLIB += KF5TextAutoCorrectionCore KF5TextAutoCorrectionWidgets
+WANTLIB += KF5TextEditTextToSpeech KF5TextWidgets KF5WidgetsAddons
+WANTLIB += KF5WindowSystem KF5XmlGui KPim5AkonadiAgentBase KPim5AkonadiContact
+WANTLIB += KPim5AkonadiCore KPim5AkonadiNotes KPim5AkonadiSearchDebug
+WANTLIB += KPim5AkonadiSearchPIM KPim5AkonadiWidgets KPim5CalendarUtils
+WANTLIB += KPim5GrantleeTheme KPim5IMAP KPim5KontactInterface
+WANTLIB += KPim5Libkdepim KPim5Mime KPim5TextEdit Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets
+WANTLIB += Qt5X11Extras Qt5Xml SM X11 Xext c m
+
 
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes

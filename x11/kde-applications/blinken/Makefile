@@ -1,9 +1,9 @@
 COMMENT =	memory enhancement game
 DISTNAME =	blinken-${VERSION}
 CATEGORIES =	games education
-REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/education/blinken/
+
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash

@@ -16,6 +16,7 @@ include/KCddb5/kcddb/configbase.h
 include/KCddb5/kcddb/genres.h
 include/KCddb5/kcddb/kcddb.h
 include/KCddb5/kcddb/kcddb_export.h
+include/KCddb5/kcddb_version.h
 include/KF5/KCddb/
 include/KF5/KCddb/Categories
 include/KF5/KCddb/Cdinfo
@@ -29,14 +30,14 @@ include/KF5/KCddb/client.h
 include/KF5/KCddb/genres.h
 include/KF5/KCddb/kcddb.h
 include/KF5/KCddb/kcddbconfig.h
-include/KF5/kcddb_version.h
 lib/cmake/KF5Cddb/
 lib/cmake/KF5Cddb/KF5CddbConfig.cmake
 lib/cmake/KF5Cddb/KF5CddbConfigVersion.cmake
 lib/cmake/KF5Cddb/KF5CddbTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5Cddb/KF5CddbTargets.cmake
 @lib lib/libKF5Cddb.so.${LIBKF5Cddb_VERSION}
-@so lib/qt5/plugins/kcm_cddb.so
+@so lib/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcm_cddb.so
+share/applications/kcm_cddb.desktop
 share/config.kcfg/
 share/config.kcfg/libkcddb5.kcfg
 share/doc/HTML/ca/kcontrol/
@@ -103,7 +104,6 @@ share/doc/HTML/uk/kcontrol/cddbretrieval5/
 share/doc/HTML/uk/kcontrol/cddbretrieval5/index.cache.bz2
 share/doc/HTML/uk/kcontrol/cddbretrieval5/index.docbook
 share/kf5/mkspecs/qt_KCddb.pri
-share/kservices5/libkcddb.desktop
 share/locale/ar/LC_MESSAGES/kcmcddb.mo
 share/locale/ar/LC_MESSAGES/libkcddb.mo
 share/locale/be/LC_MESSAGES/kcmcddb.mo
@@ -245,3 +245,4 @@ share/locale/zh_HK/LC_MESSAGES/kcmcddb.mo
 share/locale/zh_TW/LC_MESSAGES/kcmcddb.mo
 share/locale/zh_TW/LC_MESSAGES/libkcddb.mo
 share/qlogging-categories5/libkcddb.categories
+@tag update-desktop-database

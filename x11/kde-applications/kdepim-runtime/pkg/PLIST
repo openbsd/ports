@@ -134,7 +134,6 @@ share/doc/HTML/gl/kioslave5/pop3/index.docbook
 share/doc/HTML/it/kioslave5/pop3/
 share/doc/HTML/it/kioslave5/pop3/index.cache.bz2
 share/doc/HTML/it/kioslave5/pop3/index.docbook
-share/doc/HTML/ko/kioslave5/
 share/doc/HTML/ko/kioslave5/pop3/
 share/doc/HTML/ko/kioslave5/pop3/index.cache.bz2
 share/doc/HTML/ko/kioslave5/pop3/index.docbook
@@ -159,6 +158,9 @@ share/doc/HTML/sr@latin/kioslave5/pop3/index.docbook
 share/doc/HTML/sv/kioslave5/pop3/
 share/doc/HTML/sv/kioslave5/pop3/index.cache.bz2
 share/doc/HTML/sv/kioslave5/pop3/index.docbook
+share/doc/HTML/tr/kioslave5/pop3/
+share/doc/HTML/tr/kioslave5/pop3/index.cache.bz2
+share/doc/HTML/tr/kioslave5/pop3/index.docbook
 share/doc/HTML/uk/kioslave5/pop3/
 share/doc/HTML/uk/kioslave5/pop3/index.cache.bz2
 share/doc/HTML/uk/kioslave5/pop3/index.docbook
@@ -186,6 +188,7 @@ share/kservices5/akonadi/davgroupware-providers/
 share/kservices5/akonadi/davgroupware-providers/citadel.desktop
 share/kservices5/akonadi/davgroupware-providers/davical.desktop
 share/kservices5/akonadi/davgroupware-providers/egroupware.desktop
+share/kservices5/akonadi/davgroupware-providers/mailbox-org.desktop
 share/kservices5/akonadi/davgroupware-providers/nextcloud.desktop
 share/kservices5/akonadi/davgroupware-providers/opengroupware.desktop
 share/kservices5/akonadi/davgroupware-providers/owncloud-pre5.desktop

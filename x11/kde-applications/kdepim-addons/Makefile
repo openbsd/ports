@@ -1,7 +1,6 @@
 COMMENT =	KDE PIM mail related libraries
 DISTNAME =	kdepim-addons-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
 SHARED_LIBS +=  adblocklibprivate                        2.0 # 5.13.2
 SHARED_LIBS +=  coisceim_widget                          2.0 # 5.13.2
@@ -20,31 +19,34 @@ SHARED_LIBS +=  kmailconfirmbeforedeleting               2.0 # 5.18.3
 SHARED_LIBS +=  scamconfiguresettings                    1.0 # 5.19.0
 SHARED_LIBS +=  openurlwithconfigure                     1.0 # 5.19.0
 SHARED_LIBS +=  akonadidatasetools                       1.0 # 0.0
-
-WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiCalendar
-WANTLIB += KF5AkonadiContact KF5AkonadiCore KF5AkonadiMime KF5AkonadiNotes
-WANTLIB += KF5AkonadiWidgets KF5Archive KF5Auth KF5AuthCore KF5CalendarCore
-WANTLIB += KF5CalendarEvents KF5CalendarSupport KF5CalendarUtils
-WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
-WANTLIB += KF5ConfigWidgets KF5ContactEditor KF5Contacts KF5CoreAddons
-WANTLIB += KF5EventViews KF5GrantleeTheme KF5Gravatar KF5GuiAddons
-WANTLIB += KF5Holidays KF5I18n KF5IMAP KF5IconThemes KF5IdentityManagement
-WANTLIB += KF5IdentityManagementWidgets KF5IncidenceEditor KF5ItemModels
-WANTLIB += KF5ItemViews KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets
-WANTLIB += KF5KManageSieve KF5KSieve KF5KSieveUi KF5Libkdepim
-WANTLIB += KF5Libkleo KF5MailCommon KF5MailImporter KF5MailImporterAkonadi
-WANTLIB += KF5MailTransport KF5MailTransportAkonadi KF5MessageComposer
-WANTLIB += KF5MessageCore KF5MessageViewer KF5Mime KF5MimeTreeParser
-WANTLIB += KF5PimCommon KF5PimCommonAkonadi KF5PimTextEdit KF5Prison
-WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5SyntaxHighlighting
-WANTLIB += KF5TemplateParser KF5TextWidgets KF5Tnef KF5Wallet
-WANTLIB += KF5WebEngineViewer KF5WidgetsAddons KF5WindowSystem
-WANTLIB += KF5XmlGui KPimAddressbookImportExport KPimImportWizard
-WANTLIB += KPimItinerary KPimPkPass Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport Qt5Qml
-WANTLIB += Qt5QmlModels Qt5Quick Qt5WebChannel Qt5WebEngineCore
+WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Archive KF5Auth
+WANTLIB += KF5AuthCore KF5CalendarCore KF5CalendarEvents KF5Codecs
+WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
+WANTLIB += KF5Contacts KF5CoreAddons KF5GuiAddons KF5Holidays
+WANTLIB += KF5I18n KF5IconThemes KF5ItemModels KF5ItemViews KF5JobWidgets
+WANTLIB += KF5KIOCore KF5KIOGui KF5KIOWidgets KF5PimCommon KF5PimCommonAkonadi
+WANTLIB += KF5Prison KF5Service KF5Solid KF5SonnetUi KF5SyntaxHighlighting
+WANTLIB += KF5TextAutoCorrectionCore KF5TextAutoCorrectionWidgets
+WANTLIB += KF5TextEditTextToSpeech KF5TextGrammarCheck KF5TextTranslator
+WANTLIB += KF5TextWidgets KF5Wallet KF5WidgetsAddons KF5WindowSystem
+WANTLIB += KF5XmlGui KPim5AddressbookImportExport KPim5AkonadiCalendar
+WANTLIB += KPim5AkonadiContact KPim5AkonadiCore KPim5AkonadiMime
+WANTLIB += KPim5AkonadiNotes KPim5AkonadiWidgets KPim5CalendarSupport
+WANTLIB += KPim5CalendarUtils KPim5ContactEditor KPim5EventViews
+WANTLIB += KPim5GrantleeTheme KPim5Gravatar KPim5IMAP KPim5IdentityManagement
+WANTLIB += KPim5IdentityManagementWidgets KPim5ImportWizard KPim5IncidenceEditor
+WANTLIB += KPim5Itinerary KPim5KManageSieve KPim5KSieve KPim5KSieveUi
+WANTLIB += KPim5Libkdepim KPim5Libkleo KPim5MailCommon KPim5MailImporter
+WANTLIB += KPim5MailImporterAkonadi KPim5MailTransport KPim5MailTransportAkonadi
+WANTLIB += KPim5MessageComposer KPim5MessageCore KPim5MessageViewer
+WANTLIB += KPim5Mime KPim5MimeTreeParser KPim5PkPass KPim5TemplateParser
+WANTLIB += KPim5TextEdit KPim5Tnef KPim5WebEngineViewer Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport
+WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5WebChannel Qt5WebEngineCore
 WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml X11 assuan gpgme
 WANTLIB += gpgmepp m markdown qgpgme
+
+WANTLIB += lib/inotify/inotify
 
 
 MODKDE5_TRANSLATIONS = yes
@@ -122,6 +124,6 @@ LIB_DEPENDS =	devel/kf5/karchive \
 
 TEST_IS_INTERACTIVE =	X11
 
-CXXFLAGS +=	-I${LOCALBASE}/include/KF5/MessageViewer
+CXXFLAGS +=	-I${LOCALBASE}/include/KPim5/MessageViewer
 
 .include <bsd.port.mk>

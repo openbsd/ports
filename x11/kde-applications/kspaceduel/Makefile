@@ -1,7 +1,6 @@
 COMMENT =	2D space arcade game for KDE
 DISTNAME =	kspaceduel-${VERSION}
 CATEGORIES =	games
-REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/kspaceduel
 

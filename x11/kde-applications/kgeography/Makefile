@@ -1,7 +1,7 @@
 COMMENT =	geography learning tool for KDE
 DISTNAME =	kgeography-${VERSION}
 CATEGORIES =	geo
-REVISION =	0
+
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash

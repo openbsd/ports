@@ -3,7 +3,7 @@ COMMENT =	user-friendly TeX/LaTeX editor for KDE
 CATEGORIES =	editors
 
 DISTNAME =	kile-2.9.93
-REVISION =	5
+REVISION =	6
 
 HOMEPAGE =	https://kile.sourceforge.io
 
@@ -30,6 +30,7 @@ BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/kf5/kdoctools \
 		devel/kf5/kinit \
 		x11/kde-applications/kate \
+		x11/kde-applications/okular \
 		multimedia/phonon
 
 RUN_DEPENDS =	devel/desktop-file-utils \
@@ -39,7 +40,8 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
 		print/texlive/base \
 		x11/gtk+4,-guic \
-		x11/kde-applications/kate
+		x11/kde-applications/kate \
+		x11/kde-applications/okular
 
 LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kbookmarks \
@@ -64,7 +66,5 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		print/poppler,-qt5 \
 		x11/qt5/qtscript
 
-# dlopen(3)
-LIB_DEPENDS +=	x11/kde-applications/okular
 
 .include <bsd.port.mk>

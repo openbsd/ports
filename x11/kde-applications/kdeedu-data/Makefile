@@ -1,7 +1,6 @@
 COMMENT =	data files for KDE education applications
 DISTNAME =	kdeedu-data-${VERSION}
 CATEGORIES =	devel education
-REVISION =	0
 
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes

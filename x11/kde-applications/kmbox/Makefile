@@ -2,9 +2,9 @@ COMMENT =	library for accessing mail storages in MBox format
 DISTNAME =	kmbox-${VERSION}
 CATEGORIES =	devel mail
 
-SHARED_LIBS +=  KF5Mbox                   2.0 # 5.5
+SHARED_LIBS +=  KPim5Mbox                 0.0 # 0.0
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Mime Qt5Core m
+WANTLIB += ${COMPILER_LIBCXX} KPim5Mime Qt5Core m
 
 LIB_DEPENDS =	x11/kde-applications/kmime
 

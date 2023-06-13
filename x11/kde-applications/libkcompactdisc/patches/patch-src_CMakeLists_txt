@@ -10,5 +10,5 @@ Index: src/CMakeLists.txt
 +endif ()
 +
  target_sources(KCompactDisc PRIVATE
-     kcompactdisc.cpp
-     kcompactdisc_p.cpp
+     kcompactdisc.cpp kcompactdisc.h
+     kcompactdisc_p.cpp kcompactdisc_p.h

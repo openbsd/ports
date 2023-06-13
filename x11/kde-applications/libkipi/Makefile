@@ -1,9 +1,9 @@
 COMMENT =	interface to use kipi-plugins from a KDE application
 DISTNAME =	libkipi-${VERSION}
 CATEGORIES =	devel graphics
-REVISION =	0
 
 SHARED_LIBS +=  KF5Kipi                   2.0 # 5.2
+
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Service

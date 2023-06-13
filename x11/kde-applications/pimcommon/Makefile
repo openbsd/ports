@@ -2,22 +2,22 @@ COMMENT =	common libraries for KDE PIM
 DISTNAME =	pimcommon-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  KF5PimCommon                5.0 # 5.13.3
-SHARED_LIBS +=  KF5PimCommonAkonadi         6.0 # 5.13.3
-SHARED_LIBS +=  KF5PimCommonAutoCorrection  0.0 # 0.0
+SHARED_LIBS +=  KF5PimCommon              0.0 # 0.0
+SHARED_LIBS +=  KF5PimCommonAkonadi       0.0 # 0.0
 
-WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiContact
-WANTLIB += KF5AkonadiCore KF5AkonadiSearchPIM KF5AkonadiWidgets
-WANTLIB += KF5Archive KF5Attica KF5Auth KF5AuthCore KF5Codecs
-WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
-WANTLIB += KF5Contacts KF5CoreAddons KF5GrantleeTheme KF5I18n
-WANTLIB += KF5IMAP KF5ItemModels KF5ItemViews KF5JobWidgets KF5KCMUtils
-WANTLIB += KF5KIOCore KF5KIOGui KF5KIOWidgets KF5Ldap KF5Libkdepim
-WANTLIB += KF5Mime KF5NewStuff KF5NewStuffCore KF5NewStuffWidgets
-WANTLIB += KF5PimTextEdit KF5Purpose KF5PurposeWidgets KF5Service
-WANTLIB += KF5Solid KF5WidgetsAddons KF5WindowSystem KF5XmlGui
-WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets
-WANTLIB += Qt5Xml X11 m
+WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Attica KF5Auth
+WANTLIB += KF5AuthCore KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
+WANTLIB += KF5ConfigWidgets KF5Contacts KF5CoreAddons KF5I18n
+WANTLIB += KF5ItemModels KF5ItemViews KF5JobWidgets KF5KCMUtils
+WANTLIB += KF5KIOCore KF5KIOGui KF5KIOWidgets KF5NewStuff KF5NewStuffCore
+WANTLIB += KF5NewStuffWidgets KF5Purpose KF5PurposeWidgets KF5Service
+WANTLIB += KF5Solid KF5TextAutoCorrectionCore KF5TextAutoCorrectionWidgets
+WANTLIB += KF5TextEditTextToSpeech KF5WidgetsAddons KF5WindowSystem
+WANTLIB += KF5XmlGui KPim5AkonadiContact KPim5AkonadiCore KPim5AkonadiSearchPIM
+WANTLIB += KPim5AkonadiWidgets KPim5GrantleeTheme KPim5IMAP KPim5Ldap
+WANTLIB += KPim5Libkdepim KPim5Mime KPim5TextEdit Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
+WANTLIB += X11 m
 
 MODKDE5_TRANSLATIONS = yes
 
@@ -27,7 +27,6 @@ BUILD_DEPENDS =	textproc/libxslt \
 		devel/boost
 
 LIB_DEPENDS =	devel/kf5/attica \
-		devel/kf5/karchive \
 		devel/kf5/kauth \
 		devel/kf5/kcodecs \
 		devel/kf5/kconfig \
@@ -43,6 +42,8 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kxmlgui \
 		devel/kf5/purpose \
+		devel/kf5/kcmutils \
+		textproc/ktextaddons \
 		x11/kde-applications/akonadi \
 		x11/kde-applications/akonadi-contacts \
 		x11/kde-applications/akonadi-search \

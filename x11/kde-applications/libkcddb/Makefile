@@ -14,6 +14,7 @@ WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets
 WANTLIB += Qt5Xml X11 m musicbrainz5
 
 MODKDE5_TRANSLATIONS = yes
+MODKDE5_DESKTOP_FILE = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 

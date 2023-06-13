@@ -3,7 +3,6 @@ USE_WXNEEDED =	Yes
 COMMENT =	Akonadi calendar application
 
 DISTNAME =	kalendar-${MODKDE_VERSION}
-REVISION =	0
 
 CATEGORIES =	productivity x11
 
@@ -16,24 +15,27 @@ PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
 
-WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiAgentBase
-WANTLIB += KF5AkonadiCalendar KF5AkonadiContact KF5AkonadiCore
-WANTLIB += KF5AkonadiMime KF5AkonadiWidgets KF5AkonadiXml KF5Auth
-WANTLIB += KF5AuthCore KF5CalendarCore KF5CalendarSupport KF5CalendarUtils
-WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
-WANTLIB += KF5ConfigWidgets KF5Contacts KF5CoreAddons KF5DBusAddons
-WANTLIB += KF5EventViews KF5GrantleeTheme KF5I18n KF5IMAP KF5IdentityManagement
-WANTLIB += KF5IdentityManagementWidgets KF5ItemModels KF5KIOCore
-WANTLIB += KF5Libkdepim KF5Libkleo KF5MailCommon KF5MessageComposer
-WANTLIB += KF5MessageCore KF5MessageViewer KF5Mime KF5MimeTreeParser
-WANTLIB += KF5PimCommon KF5PimCommonAkonadi KF5PimCommonAutoCorrection
-WANTLIB += KF5PimTextEdit KF5Service KF5WidgetsAddons KF5WindowSystem
-WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5PrintSupport Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickControls2
-WANTLIB += Qt5Svg Qt5Widgets Qt5Xml X11 assuan c gpgme gpgmepp
-WANTLIB += m qgpgme
+WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Auth KF5AuthCore
+WANTLIB += KF5CalendarCore KF5Codecs KF5Completion KF5ConfigCore
+WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5Contacts KF5CoreAddons
+WANTLIB += KF5DBusAddons KF5I18n KF5ItemModels KF5KIOCore KF5PimCommon
+WANTLIB += KF5PimCommonAkonadi KF5Service KF5TextAutoCorrectionCore
+WANTLIB += KF5TextAutoCorrectionWidgets KF5TextEditTextToSpeech
+WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui KPim5AkonadiAgentBase
+WANTLIB += KPim5AkonadiCalendar KPim5AkonadiContact KPim5AkonadiCore
+WANTLIB += KPim5AkonadiMime KPim5AkonadiWidgets KPim5AkonadiXml
+WANTLIB += KPim5CalendarSupport KPim5CalendarUtils KPim5EventViews
+WANTLIB += KPim5GrantleeTheme KPim5IMAP KPim5IdentityManagement
+WANTLIB += KPim5IdentityManagementWidgets KPim5Libkdepim KPim5Libkleo
+WANTLIB += KPim5MailCommon KPim5MessageComposer KPim5MessageCore
+WANTLIB += KPim5MessageViewer KPim5Mime KPim5MimeTreeParser KPim5TextEdit
+WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
+WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickControls2 Qt5Svg
+WANTLIB += Qt5Widgets Qt5Xml X11 assuan c gpgme gpgmepp m qgpgme
 
 WANTLIB += lib/inotify/inotify
+
+
 
 MODULES =	x11/kde-applications \
 		devel/kf5
@@ -52,12 +54,14 @@ BUILD_DEPENDS =	devel/boost \
 		devel/kf5/qqc2-desktop-style \
 		devel/kf5/solid \
 		devel/kf5/sonnet \
+		graphics/kirigami-addons \
 		misc/shared-mime-info
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/kf5/kirigami2 \
 		devel/kf5/plasma-framework \
 		devel/kf5/qqc2-desktop-style \
+		graphics/kirigami-addons \
 		x11/gtk+4,-guic
 
 LIB_DEPENDS =	devel/kf5/kauth \

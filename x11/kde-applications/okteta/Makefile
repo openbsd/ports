@@ -3,7 +3,6 @@ VERSION =	0.26.10
 DISTNAME =	okteta-${VERSION}
 CATEGORIES =	editors
 EPOCH =		0
-REVISION =	0
 
 SHARED_LIBS +=  Kasten4Controllers        0.4 # 0.4
 SHARED_LIBS +=  Kasten4Core               0.1 # 0.4

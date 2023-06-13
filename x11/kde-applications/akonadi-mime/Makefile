@@ -2,13 +2,13 @@ COMMENT =	PIM Akonadi mime support library
 DISTNAME =	akonadi-mime-${VERSION}
 CATEGORIES =	devel productivity
 
-SHARED_LIBS +=  KF5AkonadiMime            3.0 # 5.6
+SHARED_LIBS +=  KPim5AkonadiMime          0.0 # 0.0
 
-WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiCore KF5AkonadiPrivate
-WANTLIB += KF5AkonadiWidgets KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
+WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5I18n
-WANTLIB += KF5ItemModels KF5KIOCore KF5Mime KF5Service KF5WidgetsAddons
-WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
+WANTLIB += KF5ItemModels KF5KIOCore KF5Service KF5WidgetsAddons
+WANTLIB += KF5XmlGui KPim5AkonadiCore KPim5AkonadiPrivate KPim5AkonadiWidgets
+WANTLIB += KPim5Mime Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB += Qt5Test Qt5Widgets Qt5Xml c m
 
 MODKDE5_TRANSLATIONS = yes

@@ -1,7 +1,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -67,15 +67,10 @@ set_package_properties(FLEX PROPERTIES PURPOSE "Lexer 
+@@ -74,15 +74,10 @@ set_package_properties(FLEX PROPERTIES PURPOSE "Lexer 
  find_package(BISON REQUIRED)
  set_package_properties(BISON PROPERTIES PURPOSE "Grammar generator for parsing opening hours expressions")
  

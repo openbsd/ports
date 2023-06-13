@@ -68,6 +68,11 @@ share/doc/HTML/sv/dragonplayer/
 share/doc/HTML/sv/dragonplayer/index.cache.bz2
 share/doc/HTML/sv/dragonplayer/index.docbook
 share/doc/HTML/sv/dragonplayer/main.png
+share/doc/HTML/tr/dragonplayer/
+share/doc/HTML/tr/dragonplayer/index.cache.bz2
+share/doc/HTML/tr/dragonplayer/index.docbook
+share/doc/HTML/tr/dragonplayer/main.png
+share/doc/HTML/tr/dragonplayer/playmedia.png
 share/doc/HTML/uk/dragonplayer/
 share/doc/HTML/uk/dragonplayer/index.cache.bz2
 share/doc/HTML/uk/dragonplayer/index.docbook
@@ -102,7 +107,6 @@ share/icons/oxygen/scalable/actions/
 share/icons/oxygen/scalable/actions/player-volume-muted.svgz
 share/kservices5/ServiceMenus/
 share/kservices5/ServiceMenus/dragonplayer_play_dvd.desktop
-share/kservices5/dragonplayer_part.desktop
 share/locale/ar/LC_MESSAGES/dragonplayer.mo
 share/locale/be/LC_MESSAGES/dragonplayer.mo
 share/locale/bg/LC_MESSAGES/dragonplayer.mo

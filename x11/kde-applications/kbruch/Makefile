@@ -1,9 +1,9 @@
 COMMENT =	KDE calculating fractions practicing app
 DISTNAME =	kbruch-${VERSION}
 CATEGORIES =	education x11
-REVISION =	0
 
 HOMEPAGE =	https://edu.kde.org/kbruch/
+
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash

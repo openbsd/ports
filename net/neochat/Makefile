@@ -1,11 +1,10 @@
 COMMENT =	client for Matrix chat
-VERSION =	23.01.0
-DISTNAME =	neochat-${VERSION}
-REVISION =	0
-
+DISTNAME =	neochat-${MODKDE_VERSION}
 CATEGORIES=	net
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/plasma-mobile/${VERSION}/}
+MASTER_SITES =	${MASTER_SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
+
+HOMEPAGE =	https://apps.kde.org/de/neochat/
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes
@@ -20,7 +19,8 @@ WANTLIB += Qt5Multimedia Qt5Network Qt5Qml Qt5QmlModels Qt5Quick
 WANTLIB += Qt5QuickControls2 Qt5Widgets Qt5Xml QtOlm Quotient
 WANTLIB += X11 c cmark m olm qt5keychain
 
-MODULES =	devel/kf5
+MODULES =	x11/kde-applications \
+		devel/kf5
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/kf5/kitemmodels \

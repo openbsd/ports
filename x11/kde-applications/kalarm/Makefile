@@ -1,10 +1,9 @@
 COMMENT =	personal alarm message, command and email scheduler
 DISTNAME =	kalarm-${VERSION}
 CATEGORIES =	productivity
-REVISION =	0
 
-SHARED_LIBS +=  kalarmcalendar           1.1 # 0.0
-SHARED_LIBS +=  kalarmplugin             1.0 # 0.0
+SHARED_LIBS +=  kalarmcalendar           2.0 # 0.0
+SHARED_LIBS +=  kalarmplugin             2.0 # 0.0
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -14,21 +13,21 @@ MODKDE5_DOCS = yes
 MODKF5_L10N_CONFLICT = yes
 MODKF5_I18N_CONFLICT = yes
 
-WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiContact
-WANTLIB += KF5AkonadiCore KF5AkonadiMime KF5AkonadiWidgets KF5Auth
-WANTLIB += KF5AuthCore KF5Bookmarks KF5CalendarCore KF5CalendarUtils
-WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
-WANTLIB += KF5ConfigWidgets KF5Contacts KF5CoreAddons KF5Crash
-WANTLIB += KF5DBusAddons KF5GlobalAccel KF5GrantleeTheme KF5GuiAddons
-WANTLIB += KF5Holidays KF5I18n KF5IdentityManagement KF5IdentityManagementWidgets
-WANTLIB += KF5IdleTime KF5ItemModels KF5ItemViews KF5JobWidgets
-WANTLIB += KF5KIOCore KF5KIOFileWidgets KF5KIOGui KF5KIOWidgets
-WANTLIB += KF5MailTransport KF5MailTransportAkonadi KF5Mime KF5Notifications
-WANTLIB += KF5NotifyConfig KF5PimTextEdit KF5Service KF5Solid
-WANTLIB += KF5SonnetUi KF5TextWidgets KF5Wallet KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5X11Extras Qt5Xml X11
-WANTLIB += c m phonon4qt5
+WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Auth KF5AuthCore
+WANTLIB += KF5Bookmarks KF5CalendarCore KF5Codecs KF5Completion
+WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5Contacts
+WANTLIB += KF5CoreAddons KF5Crash KF5DBusAddons KF5GlobalAccel
+WANTLIB += KF5GuiAddons KF5Holidays KF5I18n KF5IdleTime KF5ItemModels
+WANTLIB += KF5ItemViews KF5JobWidgets KF5KIOCore KF5KIOFileWidgets
+WANTLIB += KF5KIOGui KF5KIOWidgets KF5Notifications KF5NotifyConfig
+WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5TextEditTextToSpeech
+WANTLIB += KF5TextWidgets KF5Wallet KF5WidgetsAddons KF5WindowSystem
+WANTLIB += KF5XmlGui KPim5AkonadiContact KPim5AkonadiCore KPim5AkonadiMime
+WANTLIB += KPim5AkonadiWidgets KPim5CalendarUtils KPim5GrantleeTheme
+WANTLIB += KPim5IdentityManagement KPim5IdentityManagementWidgets
+WANTLIB += KPim5MailTransport KPim5MailTransportAkonadi KPim5Mime
+WANTLIB += KPim5TextEdit Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
+WANTLIB += Qt5Network Qt5Widgets Qt5X11Extras Qt5Xml X11 c m phonon4qt5
 
 BUILD_DEPENDS =	devel/boost \
 		x11/kde-applications/mailcommon
@@ -66,6 +65,7 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kxmlgui \
 		devel/kf5/solid \
 		devel/kf5/sonnet \
+		textproc/ktextaddons \
 		multimedia/phonon \
 		x11/kde-applications/grantleetheme \
 		x11/kde-applications/akonadi \

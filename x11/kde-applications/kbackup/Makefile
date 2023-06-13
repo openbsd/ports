@@ -1,7 +1,6 @@
 COMMENT =	KDE backup program with an easy to use user interface
 DISTNAME =	kbackup-${VERSION}
 CATEGORIES =	x11 sysutils
-REVISION =	0
 
 HOMEPAGE =	https://kde.org/applications/utilities/org.kde.kbackup
 
@@ -12,7 +11,8 @@ WANTLIB += KF5IconThemes KF5ItemViews KF5JobWidgets KF5KIOCore
 WANTLIB += KF5KIOFileWidgets KF5KIOGui KF5KIOWidgets KF5Notifications
 WANTLIB += KF5Service KF5Solid KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Widgets Qt5Xml X11 c m
+WANTLIB += Qt5Widgets Qt5Xml X11 archive c m
+
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -38,6 +38,10 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kservice \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kxmlgui \
-		devel/kf5/solid
+		devel/kf5/solid \
+		archivers/libarchive
+
+CXXFLAGS +=		-I${LOCALBASE}/include
+MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

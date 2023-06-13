@@ -397,7 +397,6 @@ share/kig/icons/hicolor/scalable/actions/vectordifference.svgz
 share/kig/icons/hicolor/scalable/actions/vectorsum.svgz
 share/kig/icons/hicolor/scalable/actions/w.svgz
 share/kig/tips
-share/kservices5/kig_part.desktop
 share/kxmlgui5/
 share/kxmlgui5/kig/
 share/kxmlgui5/kig/kigpartui.rc

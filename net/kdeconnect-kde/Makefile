@@ -1,7 +1,6 @@
 COMMENT =	KDE app that allows your devices to communicate
 
 DISTNAME =	kdeconnect-kde-${MODKDE_VERSION}
-REVISION =	0
 
 SHARED_LIBS +=	kdeconnectcore		3.0 # 1.4
 SHARED_LIBS +=	kdeconnectinterfaces	3.1 # 1.4
@@ -20,13 +19,13 @@ WANTLIB += ${COMPILER_LIBCXX} ICE KF5Auth KF5AuthCore KF5Bookmarks
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5DBusAddons KF5GuiAddons
 WANTLIB += KF5I18n KF5IconThemes KF5ItemViews KF5JobWidgets KF5KCMUtils
-WANTLIB += KF5KIOCore KF5KIOFileWidgets KF5KIOGui KF5KIONTLM KF5KIOWidgets
-WANTLIB += KF5Notifications KF5People KF5Service KF5Solid KF5WaylandClient
-WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Multimedia Qt5Network Qt5Qml
-WANTLIB += Qt5QmlModels Qt5Quick Qt5QuickControls2 Qt5WaylandClient
-WANTLIB += Qt5Widgets Qt5X11Extras Qt5Xml SM X11 Xext Xtst c fakekey
-WANTLIB += m qca-qt5 wayland-client
+WANTLIB += KF5KIOCore KF5KIOFileWidgets KF5KIOGui KF5KIOWidgets
+WANTLIB += KF5Notifications KF5People KF5Service KF5Solid KF5WidgetsAddons
+WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Multimedia Qt5Network Qt5Qml Qt5QmlModels
+WANTLIB += Qt5Quick Qt5QuickControls2 Qt5WaylandClient Qt5Widgets
+WANTLIB += Qt5X11Extras Qt5Xml SM X11 Xext Xtst c fakekey m qca-qt5
+WANTLIB += wayland-client xkbcommon
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
 
@@ -67,14 +66,15 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kpeople \
 		devel/kf5/kpeople \
 		devel/kf5/kservice \
-		devel/kf5/kwayland \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kxmlgui \
 		devel/kf5/solid \
 		security/qca-qt5 \
 		x11/libfakekey \
 		x11/qt5/qtdeclarative \
+		x11/qt5/qtmultimedia \
 		x11/qt5/qtquickcontrols2 \
+		x11/qt5/qtwayland \
 		x11/qt5/qtx11extras
 
 MODPY_ADJ_FILES =	nautilus-extension/kdeconnect-share.py

@@ -2,18 +2,20 @@ COMMENT =	libraries and daemons to implement searching in Akonadi
 DISTNAME =	akonadi-search-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  KF5AkonadiSearchCore           1.0 # 5.13.2
-SHARED_LIBS +=  KF5AkonadiSearchDebug          2.0 # 5.13.2
-SHARED_LIBS +=  KF5AkonadiSearchPIM            1.0 # 5.13.2
-SHARED_LIBS +=  KF5AkonadiSearchXapian         1.0 # 5.13.2
+SHARED_LIBS +=  KPim5AkonadiSearchCore           1.0 # 5.13.2
+SHARED_LIBS +=  KPim5AkonadiSearchDebug          2.0 # 5.13.2
+SHARED_LIBS +=  KPim5AkonadiSearchPIM            1.0 # 5.13.2
+SHARED_LIBS +=  KPim5AkonadiSearchXapian         1.0 # 5.13.2
 
-WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiAgentBase KF5AkonadiCore
-WANTLIB += KF5AkonadiMime KF5Auth KF5AuthCore KF5CalendarCore
+WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5CalendarCore
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5Contacts KF5CoreAddons KF5I18n
-WANTLIB += KF5ItemModels KF5KCMUtils KF5Mime KF5Package KF5Plasma
-WANTLIB += KF5Runner KF5Service KF5WidgetsAddons Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Widgets Qt5Xml c m xapian
+WANTLIB += KF5ItemModels KF5KCMUtils KF5Package KF5Plasma KF5Runner
+WANTLIB += KF5Service KF5WidgetsAddons KPim5AkonadiAgentBase KPim5AkonadiCore
+WANTLIB += KPim5AkonadiMime KPim5Mime Qt5Core Qt5DBus Qt5Gui Qt5Widgets
+WANTLIB += Qt5Xml c m xapian
+
+WANTLIB += lib/inotify/inotify
 
 MODKDE5_TRANSLATIONS = yes
 
@@ -36,6 +38,7 @@ LIB_DEPENDS =	databases/xapian-core \
 		devel/kf5/kservice \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/plasma-framework \
+		devel/libinotify \
 		x11/kde-applications/akonadi \
 		x11/kde-applications/akonadi-mime \
 		x11/kde-applications/kmime

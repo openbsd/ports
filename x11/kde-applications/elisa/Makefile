@@ -1,11 +1,10 @@
 COMMENT =	audio player with QML and KDE Plasma integration
 DISTNAME =	elisa-${VERSION}
 CATEGORIES =	audio
-REVISION =	0
 
 HOMEPAGE =	https://elisa.kde.org/
 
-SHARED_LIBS +=  elisaLib                  1.0 # 0.1
+SHARED_LIBS +=  elisaLib                  2.0 # 0.1
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Baloo KF5Bookmarks
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui

@@ -253,12 +253,37 @@
      # x11/yakuake
      # devel/kdevelop
      # productivity/kalendar
+     # New in KDE Gear/23.04
+     # neochat
 
      # TODO
      # kosmindoormap
      # kpmcore
      # kpublictransport
      # partitionmanager
+
+     # New in KDE Gear/23.04
+     # alligator
+     # angelfish
+     # audiotube
+     # calindori
+     # ghostwriter
+     # kalk
+     # kasts
+     # kclock
+     # kde-inotify-survey
+     # keysmith
+     # kio-admin
+     # kjournald
+     # koko
+     # kongress
+     # krecorder
+     # ktrip
+     # kweather
+     # plasmatube
+     # qmlkonsole
+     # telly-skout
+     # tokodon
 
 
 .include <bsd.port.subdir.mk>

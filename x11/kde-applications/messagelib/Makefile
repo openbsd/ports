@@ -2,33 +2,33 @@ COMMENT =	KDE PIM messaging library
 DISTNAME =	messagelib-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  KF5MessageComposer       12.0 # 5.13.2
-SHARED_LIBS +=  KF5MessageCore           3.1 # 5.13.2
-SHARED_LIBS +=  KF5MessageList           6.0 # 5.13.2
-SHARED_LIBS +=  KF5MessageViewer         6.3 # 5.13.2
-SHARED_LIBS +=  KF5MimeTreeParser        4.1 # 5.13.2
-SHARED_LIBS +=  KF5TemplateParser        3.0 # 5.13.2
-SHARED_LIBS +=  KF5WebEngineViewer       7.1 # 5.13.2
+SHARED_LIBS +=  KPim5MessageComposer      0.0 # 0.0
+SHARED_LIBS +=  KPim5MessageCore          0.0 # 0.0
+SHARED_LIBS +=  KPim5MessageList          0.0 # 0.0
+SHARED_LIBS +=  KPim5MessageViewer        0.0 # 0.0
+SHARED_LIBS +=  KPim5MimeTreeParser       0.0 # 0.0
+SHARED_LIBS +=  KPim5TemplateParser       0.0 # 0.0
+SHARED_LIBS +=  KPim5WebEngineViewer      0.0 # 0.0
 
-WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiContact
-WANTLIB += KF5AkonadiCore KF5AkonadiMime KF5AkonadiSearchPIM KF5AkonadiWidgets
-WANTLIB += KF5Archive KF5Auth KF5AuthCore KF5Bookmarks KF5CalendarCore
-WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
-WANTLIB += KF5ConfigWidgets KF5Contacts KF5CoreAddons KF5GrantleeTheme
-WANTLIB += KF5Gravatar KF5GuiAddons KF5I18n KF5IMAP KF5IconThemes
-WANTLIB += KF5IdentityManagement KF5IdentityManagementWidgets
+WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Archive KF5Auth
+WANTLIB += KF5AuthCore KF5Bookmarks KF5CalendarCore KF5Codecs
+WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
+WANTLIB += KF5Contacts KF5CoreAddons KF5GuiAddons KF5I18n KF5IconThemes
 WANTLIB += KF5ItemModels KF5ItemViews KF5JobWidgets KF5KIOCore
-WANTLIB += KF5KIOFileWidgets KF5KIOGui KF5KIOWidgets KF5Libkdepim
-WANTLIB += KF5Libkleo KF5MailTransport KF5MailTransportAkonadi
-WANTLIB += KF5Mbox KF5Mime KF5Notifications KF5PimCommon KF5PimCommonAkonadi
-WANTLIB += KF5PimCommonAutoCorrection KF5PimTextEdit KF5Service
-WANTLIB += KF5Solid KF5SonnetCore KF5SonnetUi KF5SyntaxHighlighting
+WANTLIB += KF5KIOFileWidgets KF5KIOGui KF5KIOWidgets KF5Notifications
+WANTLIB += KF5PimCommon KF5PimCommonAkonadi KF5Service KF5Solid
+WANTLIB += KF5SonnetCore KF5SonnetUi KF5SyntaxHighlighting KF5TextAutoCorrectionCore
+WANTLIB += KF5TextAutoCorrectionWidgets KF5TextEditTextToSpeech
 WANTLIB += KF5TextWidgets KF5Wallet KF5WidgetsAddons KF5WindowSystem
-WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels
-WANTLIB += Qt5Quick Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
-WANTLIB += Qt5Widgets Qt5Xml X11 assuan gpgme gpgmepp m qca-qt5
-WANTLIB += qgpgme
+WANTLIB += KF5XmlGui KPim5AkonadiContact KPim5AkonadiCore KPim5AkonadiMime
+WANTLIB += KPim5AkonadiSearchPIM KPim5AkonadiWidgets KPim5GrantleeTheme
+WANTLIB += KPim5Gravatar KPim5IMAP KPim5IdentityManagement KPim5IdentityManagementWidgets
+WANTLIB += KPim5Libkdepim KPim5Libkleo KPim5MailTransport KPim5MailTransportAkonadi
+WANTLIB += KPim5Mbox KPim5Mime KPim5TextEdit Qt5Concurrent Qt5Core
+WANTLIB += Qt5DBus Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport
+WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5WebChannel Qt5WebEngineCore
+WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml X11 assuan gpgme
+WANTLIB += gpgmepp m qca-qt5 qgpgme
 
 WANTLIB += lib/inotify/inotify
 
@@ -66,6 +66,7 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		x11/grantlee-qt5 \
 		security/gpgme,-qt \
 		security/gpgme \
+		textproc/ktextaddons \
 		x11/kde-applications/akonadi \
 		x11/kde-applications/akonadi-contacts \
 		x11/kde-applications/grantleetheme \

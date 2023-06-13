@@ -1,6 +1,6 @@
 @pkgpath x11/kde4/kwalletmanager
 @bin bin/kwalletmanager5
-@so lib/qt5/plugins/kcm_kwallet5.so
+@so lib/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcm_kwallet5.so
 @bin libexec/kauth/kcm_kwallet_helper5
 share/applications/kwalletmanager5-kwalletd.desktop
 share/applications/org.kde.kwalletmanager5.desktop
@@ -61,6 +61,20 @@ share/doc/HTML/sr@latin/kwallet5/index.docbook
 share/doc/HTML/sv/kwallet5/
 share/doc/HTML/sv/kwallet5/index.cache.bz2
 share/doc/HTML/sv/kwallet5/index.docbook
+share/doc/HTML/tr/kwallet5/
+share/doc/HTML/tr/kwallet5/application-request-to-open-wallet.png
+share/doc/HTML/tr/kwallet5/error-nokey.png
+share/doc/HTML/tr/kwallet5/first-open-request.png
+share/doc/HTML/tr/kwallet5/index.cache.bz2
+share/doc/HTML/tr/kwallet5/index.docbook
+share/doc/HTML/tr/kwallet5/key-selection.png
+share/doc/HTML/tr/kwallet5/kwallet-access-control.png
+share/doc/HTML/tr/kwallet5/kwallet-applications.png
+share/doc/HTML/tr/kwallet5/kwallet-edit.png
+share/doc/HTML/tr/kwallet5/kwalletmanager.png
+share/doc/HTML/tr/kwallet5/openwallet-request.png
+share/doc/HTML/tr/kwallet5/save-login-information.png
+share/doc/HTML/tr/kwallet5/wallet-encryption-selection.png
 share/doc/HTML/uk/kwallet5/
 share/doc/HTML/uk/kwallet5/index.cache.bz2
 share/doc/HTML/uk/kwallet5/index.docbook
@@ -80,7 +94,6 @@ share/icons/hicolor/48x48/apps/kwalletmanager.png
 share/icons/hicolor/48x48/apps/kwalletmanager2.png
 share/icons/hicolor/64x64/apps/kwalletmanager.png
 share/icons/hicolor/64x64/apps/kwalletmanager2.png
-share/kservices5/kwalletconfig5.desktop
 share/kservices5/kwalletmanager5_show.desktop
 share/locale/ar/LC_MESSAGES/kcmkwallet.mo
 share/locale/ar/LC_MESSAGES/kwalletmanager.mo
@@ -140,6 +153,8 @@ share/locale/ia/LC_MESSAGES/kcmkwallet.mo
 share/locale/ia/LC_MESSAGES/kwalletmanager.mo
 share/locale/id/LC_MESSAGES/kcmkwallet.mo
 share/locale/id/LC_MESSAGES/kwalletmanager.mo
+share/locale/ie/LC_MESSAGES/kcmkwallet.mo
+share/locale/ie/LC_MESSAGES/kwalletmanager.mo
 share/locale/is/LC_MESSAGES/kcmkwallet.mo
 share/locale/is/LC_MESSAGES/kwalletmanager.mo
 share/locale/it/LC_MESSAGES/kcmkwallet.mo

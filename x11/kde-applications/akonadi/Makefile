@@ -1,23 +1,21 @@
 COMMENT =	PIM Storage Service
 DISTNAME =	akonadi-${VERSION}
 CATEGORIES =	databases productivity
-REVISION =	1
 
 HOMEPAGE =	https://kontact.kde.org/
 
-SHARED_LIBS +=  KF5AkonadiAgentBase       2.0 # 5.6
-SHARED_LIBS +=  KF5AkonadiCore            3.2 # 5.6
-SHARED_LIBS +=  KF5AkonadiPrivate         2.0 # 5.6
-SHARED_LIBS +=  KF5AkonadiWidgets         2.1 # 5.6
-SHARED_LIBS +=  KF5AkonadiXml             1.0 # 5.6
+SHARED_LIBS +=  KPim5AkonadiAgentBase     0.0 # 0.0
+SHARED_LIBS +=  KPim5AkonadiCore          0.0 # 0.0
+SHARED_LIBS +=  KPim5AkonadiPrivate       0.0 # 0.0
+SHARED_LIBS +=  KPim5AkonadiWidgets       0.0 # 0.0
+SHARED_LIBS +=  KPim5AkonadiXml           0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
-WANTLIB += KF5I18n KF5IconThemes KF5ItemModels KF5ItemViews KF5KIOCore
-WANTLIB += KF5Service KF5WidgetsAddons KF5WindowSystem KF5XmlGui
-WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Sql
-WANTLIB += Qt5Widgets Qt5Xml X11 accounts-qt5 c kaccounts lzma
-WANTLIB += m sqlite3 xml2
+WANTLIB += KF5I18n KF5IconThemes KF5ItemModels KF5KIOCore KF5Service
+WANTLIB += KF5WidgetsAddons KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Network Qt5Sql Qt5Widgets Qt5Xml accounts-qt5
+WANTLIB += c kaccounts lzma m sqlite3 xml2
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -42,11 +40,11 @@ BUILD_DEPENDS +=	databases/mariadb,-server \
 			x11/qt5/qtbase,-psql
 
 RUN_DEPENDS =		devel/kf5/kdesignerplugin \
-			misc/shared-mime-info
+			misc/shared-mime-info \
+			x11/qt5/qtbase,-mysql \
+			x11/qt5/qtbase,-psql
 
 LIB_DEPENDS =		databases/sqlite3 \
-			devel/kf5/kauth \
-			devel/kf5/kcodecs \
 			devel/kf5/kconfig \
 			devel/kf5/kconfigwidgets \
 			devel/kf5/kcoreaddons \
@@ -55,9 +53,7 @@ LIB_DEPENDS =		databases/sqlite3 \
 			devel/kf5/kiconthemes \
 			devel/kf5/kio \
 			devel/kf5/kitemmodels \
-			devel/kf5/kitemviews \
 			devel/kf5/kwidgetsaddons \
-			devel/kf5/kwindowsystem \
 			devel/kf5/kxmlgui \
 			net/libaccounts-qt \
 			textproc/libxml \

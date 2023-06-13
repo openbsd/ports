@@ -2,7 +2,6 @@ COMMENT =	KDE SANE (scanner) wrapper library
 DISTNAME =	libksane-${VERSION}
 PKGNAME =	libksane-kf5-${VERSION}
 CATEGORIES =	graphics devel
-REVISION =	0
 
 SHARED_LIBS +=  KF5Sane                   4.0 # 5.1
 

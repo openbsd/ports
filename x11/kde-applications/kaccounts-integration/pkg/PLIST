@@ -38,6 +38,7 @@ lib/qt5/plugins/kaccounts/daemonplugins/
 lib/qt5/qml/org/kde/kaccounts/
 @so lib/qt5/qml/org/kde/kaccounts/libkaccountsdeclarativeplugin.so
 lib/qt5/qml/org/kde/kaccounts/qmldir
+share/applications/kcm_kaccounts.desktop
 share/kpackage/
 share/kpackage/kcms/
 share/kpackage/kcms/kcm_kaccounts/
@@ -68,6 +69,7 @@ share/locale/fr/LC_MESSAGES/kaccounts-integration.mo
 share/locale/gl/LC_MESSAGES/kaccounts-integration.mo
 share/locale/hu/LC_MESSAGES/kaccounts-integration.mo
 share/locale/ia/LC_MESSAGES/kaccounts-integration.mo
+share/locale/id/LC_MESSAGES/kaccounts-integration.mo
 share/locale/it/LC_MESSAGES/kaccounts-integration.mo
 share/locale/ja/LC_MESSAGES/kaccounts-integration.mo
 share/locale/ka/LC_MESSAGES/kaccounts-integration.mo
@@ -92,3 +94,4 @@ share/locale/tr/LC_MESSAGES/kaccounts-integration.mo
 share/locale/uk/LC_MESSAGES/kaccounts-integration.mo
 share/locale/zh_CN/LC_MESSAGES/kaccounts-integration.mo
 share/locale/zh_TW/LC_MESSAGES/kaccounts-integration.mo
+@tag update-desktop-database

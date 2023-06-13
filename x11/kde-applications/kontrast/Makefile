@@ -1,7 +1,6 @@
 COMMENT =	color contrast checker
 DISTNAME =	kontrast-${VERSION}
 CATEGORIES =	x11 graphics
-REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5CoreAddons KF5I18n Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Network Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickControls2

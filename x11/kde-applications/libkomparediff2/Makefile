@@ -5,6 +5,7 @@ CATEGORIES =	devel
 
 SHARED_LIBS +=  komparediff2              2.0 # 5.2
 
+
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5I18n
 WANTLIB += KF5KIOCore KF5Service KF5WidgetsAddons KF5XmlGui Qt5Concurrent

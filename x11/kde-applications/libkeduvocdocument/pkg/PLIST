@@ -22,6 +22,7 @@ include/libkeduvocdocument/keduvoccontainer.h
 include/libkeduvocdocument/keduvocdeclension.h
 include/libkeduvocdocument/keduvocdocument.h
 include/libkeduvocdocument/keduvocdocument_export.h
+include/libkeduvocdocument/keduvocdocument_version.h
 include/libkeduvocdocument/keduvocexpression.h
 include/libkeduvocdocument/keduvocidentifier.h
 include/libkeduvocdocument/keduvockvtml2writer.h

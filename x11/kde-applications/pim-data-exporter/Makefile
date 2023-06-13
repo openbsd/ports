@@ -2,26 +2,29 @@ COMMENT =	KDE PIM data exporter
 DISTNAME =	pim-data-exporter-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  pimdataexporterprivate       4.0 # 5.13.2
-
-WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiContact
-WANTLIB += KF5AkonadiCore KF5AkonadiMime KF5AkonadiNotes KF5AkonadiWidgets
-WANTLIB += KF5Archive KF5Auth KF5AuthCore KF5Bookmarks KF5CalendarCore
-WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
-WANTLIB += KF5ConfigWidgets KF5Contacts KF5CoreAddons KF5Crash
-WANTLIB += KF5DBusAddons KF5GrantleeTheme KF5I18n KF5IMAP KF5IdentityManagement
-WANTLIB += KF5IdentityManagementWidgets KF5ItemModels KF5ItemViews
-WANTLIB += KF5JobWidgets KF5KIOCore KF5KIOFileWidgets KF5KIOGui
-WANTLIB += KF5KIOWidgets KF5Libkdepim KF5Libkleo KF5MailCommon
-WANTLIB += KF5MailTransport KF5MessageComposer KF5MessageCore
-WANTLIB += KF5MessageViewer KF5Mime KF5MimeTreeParser KF5Notifications
-WANTLIB += KF5PimCommon KF5PimCommonAkonadi KF5PimCommonAutoCorrection
-WANTLIB += KF5PimTextEdit KF5Service KF5Solid KF5Wallet KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KF5XmlGui KUserFeedbackCore KUserFeedbackWidgets
+SHARED_LIBS +=  pimdataexporterprivate    0.0 # 0.0
+WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Archive KF5Auth
+WANTLIB += KF5AuthCore KF5Bookmarks KF5CalendarCore KF5Codecs
+WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
+WANTLIB += KF5Contacts KF5CoreAddons KF5Crash KF5DBusAddons KF5I18n
+WANTLIB += KF5ItemModels KF5ItemViews KF5JobWidgets KF5KIOCore
+WANTLIB += KF5KIOFileWidgets KF5KIOGui KF5KIOWidgets KF5Notifications
+WANTLIB += KF5PimCommon KF5PimCommonAkonadi KF5Service KF5Solid
+WANTLIB += KF5TextAutoCorrectionCore KF5TextAutoCorrectionWidgets
+WANTLIB += KF5TextEditTextToSpeech KF5Wallet KF5WidgetsAddons
+WANTLIB += KF5WindowSystem KF5XmlGui KPim5AkonadiContact KPim5AkonadiCore
+WANTLIB += KPim5AkonadiMime KPim5AkonadiNotes KPim5AkonadiWidgets
+WANTLIB += KPim5GrantleeTheme KPim5IMAP KPim5IdentityManagement
+WANTLIB += KPim5IdentityManagementWidgets KPim5Libkdepim KPim5Libkleo
+WANTLIB += KPim5MailCommon KPim5MailTransport KPim5MessageComposer
+WANTLIB += KPim5MessageCore KPim5MessageViewer KPim5Mime KPim5MimeTreeParser
+WANTLIB += KPim5TextEdit KUserFeedbackCore KUserFeedbackWidgets
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets
 WANTLIB += Qt5Xml X11 assuan c gpgme gpgmepp m qgpgme
 
 WANTLIB += lib/inotify/inotify
+
+
 
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DESKTOP_FILE = yes
@@ -70,6 +73,6 @@ LIB_DEPENDS =	devel/kf5/karchive \
 
 TEST_IS_INTERACTIVE =	X11
 
-CXXFLAGS +=	-I${LOCALBASE}/include/KF5/MessageViewer
+CXXFLAGS +=	-I${LOCALBASE}/include/KPim5/MessageViewer
 
 .include <bsd.port.mk>

@@ -1,9 +1,9 @@
 COMMENT =	screen ruler for KDE
 DISTNAME =	kruler-${VERSION}
 CATEGORIES =	graphics
-REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/graphics/kruler/
+
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5I18n

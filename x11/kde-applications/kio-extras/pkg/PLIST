@@ -469,9 +469,6 @@ share/doc/HTML/pt_BR/kioslave5/man/index.docbook
 share/doc/HTML/pt_BR/kioslave5/nfs/
 share/doc/HTML/pt_BR/kioslave5/nfs/index.cache.bz2
 share/doc/HTML/pt_BR/kioslave5/nfs/index.docbook
-share/doc/HTML/pt_BR/kioslave5/recentdocuments/
-share/doc/HTML/pt_BR/kioslave5/recentdocuments/index.cache.bz2
-share/doc/HTML/pt_BR/kioslave5/recentdocuments/index.docbook
 share/doc/HTML/pt_BR/kioslave5/sftp/
 share/doc/HTML/pt_BR/kioslave5/sftp/index.cache.bz2
 share/doc/HTML/pt_BR/kioslave5/sftp/index.docbook
@@ -646,6 +643,48 @@ share/doc/HTML/sv/kioslave5/xz/index.docbook
 share/doc/HTML/sv/kioslave5/zstd/
 share/doc/HTML/sv/kioslave5/zstd/index.cache.bz2
 share/doc/HTML/sv/kioslave5/zstd/index.docbook
+share/doc/HTML/tr/kioslave5/bookmarks/
+share/doc/HTML/tr/kioslave5/bookmarks/index.cache.bz2
+share/doc/HTML/tr/kioslave5/bookmarks/index.docbook
+share/doc/HTML/tr/kioslave5/bzip2/
+share/doc/HTML/tr/kioslave5/bzip2/index.cache.bz2
+share/doc/HTML/tr/kioslave5/bzip2/index.docbook
+share/doc/HTML/tr/kioslave5/fish/
+share/doc/HTML/tr/kioslave5/fish/index.cache.bz2
+share/doc/HTML/tr/kioslave5/fish/index.docbook
+share/doc/HTML/tr/kioslave5/gzip/
+share/doc/HTML/tr/kioslave5/gzip/index.cache.bz2
+share/doc/HTML/tr/kioslave5/gzip/index.docbook
+share/doc/HTML/tr/kioslave5/info/
+share/doc/HTML/tr/kioslave5/info/index.cache.bz2
+share/doc/HTML/tr/kioslave5/info/index.docbook
+share/doc/HTML/tr/kioslave5/man/
+share/doc/HTML/tr/kioslave5/man/index.cache.bz2
+share/doc/HTML/tr/kioslave5/man/index.docbook
+share/doc/HTML/tr/kioslave5/nfs/
+share/doc/HTML/tr/kioslave5/nfs/index.cache.bz2
+share/doc/HTML/tr/kioslave5/nfs/index.docbook
+share/doc/HTML/tr/kioslave5/recentdocuments/
+share/doc/HTML/tr/kioslave5/recentdocuments/index.cache.bz2
+share/doc/HTML/tr/kioslave5/recentdocuments/index.docbook
+share/doc/HTML/tr/kioslave5/sftp/
+share/doc/HTML/tr/kioslave5/sftp/index.cache.bz2
+share/doc/HTML/tr/kioslave5/sftp/index.docbook
+share/doc/HTML/tr/kioslave5/smb/
+share/doc/HTML/tr/kioslave5/smb/index.cache.bz2
+share/doc/HTML/tr/kioslave5/smb/index.docbook
+share/doc/HTML/tr/kioslave5/tar/
+share/doc/HTML/tr/kioslave5/tar/index.cache.bz2
+share/doc/HTML/tr/kioslave5/tar/index.docbook
+share/doc/HTML/tr/kioslave5/thumbnail/
+share/doc/HTML/tr/kioslave5/thumbnail/index.cache.bz2
+share/doc/HTML/tr/kioslave5/thumbnail/index.docbook
+share/doc/HTML/tr/kioslave5/xz/
+share/doc/HTML/tr/kioslave5/xz/index.cache.bz2
+share/doc/HTML/tr/kioslave5/xz/index.docbook
+share/doc/HTML/tr/kioslave5/zstd/
+share/doc/HTML/tr/kioslave5/zstd/index.cache.bz2
+share/doc/HTML/tr/kioslave5/zstd/index.docbook
 share/doc/HTML/uk/kioslave5/bookmarks/
 share/doc/HTML/uk/kioslave5/bookmarks/index.cache.bz2
 share/doc/HTML/uk/kioslave5/bookmarks/index.docbook
@@ -712,6 +751,7 @@ share/locale/af/LC_MESSAGES/kio5_smb.mo
 share/locale/af/LC_MESSAGES/kio5_thumbnail.mo
 share/locale/ar/LC_MESSAGES/kfileaudiopreview5.mo
 share/locale/ar/LC_MESSAGES/kio5_activities.mo
+share/locale/ar/LC_MESSAGES/kio5_afc.mo
 share/locale/ar/LC_MESSAGES/kio5_archive.mo
 share/locale/ar/LC_MESSAGES/kio5_bookmarks.mo
 share/locale/ar/LC_MESSAGES/kio5_fish.mo
@@ -724,10 +764,16 @@ share/locale/ar/LC_MESSAGES/kio5_sftp.mo
 share/locale/ar/LC_MESSAGES/kio5_smb.mo
 share/locale/ar/LC_MESSAGES/kio5_thumbnail.mo
 share/locale/be/LC_MESSAGES/kfileaudiopreview5.mo
+share/locale/be/LC_MESSAGES/kio5_activities.mo
+share/locale/be/LC_MESSAGES/kio5_afc.mo
 share/locale/be/LC_MESSAGES/kio5_archive.mo
+share/locale/be/LC_MESSAGES/kio5_bookmarks.mo
 share/locale/be/LC_MESSAGES/kio5_fish.mo
+share/locale/be/LC_MESSAGES/kio5_info.mo
 share/locale/be/LC_MESSAGES/kio5_man.mo
+share/locale/be/LC_MESSAGES/kio5_mtp.mo
 share/locale/be/LC_MESSAGES/kio5_nfs.mo
+share/locale/be/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/be/LC_MESSAGES/kio5_sftp.mo
 share/locale/be/LC_MESSAGES/kio5_smb.mo
 share/locale/be/LC_MESSAGES/kio5_thumbnail.mo
@@ -740,6 +786,7 @@ share/locale/be@latin/LC_MESSAGES/kio5_smb.mo
 share/locale/be@latin/LC_MESSAGES/kio5_thumbnail.mo
 share/locale/bg/LC_MESSAGES/kfileaudiopreview5.mo
 share/locale/bg/LC_MESSAGES/kio5_activities.mo
+share/locale/bg/LC_MESSAGES/kio5_afc.mo
 share/locale/bg/LC_MESSAGES/kio5_archive.mo
 share/locale/bg/LC_MESSAGES/kio5_bookmarks.mo
 share/locale/bg/LC_MESSAGES/kio5_fish.mo
@@ -785,6 +832,7 @@ share/locale/bs/LC_MESSAGES/kio5_smb.mo
 share/locale/bs/LC_MESSAGES/kio5_thumbnail.mo
 share/locale/ca/LC_MESSAGES/kfileaudiopreview5.mo
 share/locale/ca/LC_MESSAGES/kio5_activities.mo
+share/locale/ca/LC_MESSAGES/kio5_afc.mo
 share/locale/ca/LC_MESSAGES/kio5_archive.mo
 share/locale/ca/LC_MESSAGES/kio5_bookmarks.mo
 share/locale/ca/LC_MESSAGES/kio5_fish.mo
@@ -798,6 +846,7 @@ share/locale/ca/LC_MESSAGES/kio5_smb.mo
 share/locale/ca/LC_MESSAGES/kio5_thumbnail.mo
 share/locale/ca@valencia/LC_MESSAGES/kfileaudiopreview5.mo
 share/locale/ca@valencia/LC_MESSAGES/kio5_activities.mo
+share/locale/ca@valencia/LC_MESSAGES/kio5_afc.mo
 share/locale/ca@valencia/LC_MESSAGES/kio5_archive.mo
 share/locale/ca@valencia/LC_MESSAGES/kio5_bookmarks.mo
 share/locale/ca@valencia/LC_MESSAGES/kio5_fish.mo
@@ -811,6 +860,7 @@ share/locale/ca@valencia/LC_MESSAGES/kio5_smb.mo
 share/locale/ca@valencia/LC_MESSAGES/kio5_thumbnail.mo
 share/locale/cs/LC_MESSAGES/kfileaudiopreview5.mo
 share/locale/cs/LC_MESSAGES/kio5_activities.mo
+share/locale/cs/LC_MESSAGES/kio5_afc.mo
 share/locale/cs/LC_MESSAGES/kio5_archive.mo
 share/locale/cs/LC_MESSAGES/kio5_bookmarks.mo
 share/locale/cs/LC_MESSAGES/kio5_fish.mo
@@ -851,6 +901,7 @@ share/locale/da/LC_MESSAGES/kio5_smb.mo
 share/locale/da/LC_MESSAGES/kio5_thumbnail.mo
 share/locale/de/LC_MESSAGES/kfileaudiopreview5.mo
 share/locale/de/LC_MESSAGES/kio5_activities.mo
+share/locale/de/LC_MESSAGES/kio5_afc.mo
 share/locale/de/LC_MESSAGES/kio5_archive.mo
 share/locale/de/LC_MESSAGES/kio5_bookmarks.mo
 share/locale/de/LC_MESSAGES/kio5_fish.mo
@@ -877,6 +928,7 @@ share/locale/el/LC_MESSAGES/kio5_smb.mo
 share/locale/el/LC_MESSAGES/kio5_thumbnail.mo
 share/locale/en_GB/LC_MESSAGES/kfileaudiopreview5.mo
 share/locale/en_GB/LC_MESSAGES/kio5_activities.mo
+share/locale/en_GB/LC_MESSAGES/kio5_afc.mo
 share/locale/en_GB/LC_MESSAGES/kio5_archive.mo
 share/locale/en_GB/LC_MESSAGES/kio5_bookmarks.mo
 share/locale/en_GB/LC_MESSAGES/kio5_fish.mo
@@ -900,6 +952,7 @@ share/locale/eo/LC_MESSAGES/kio5_smb.mo
 share/locale/eo/LC_MESSAGES/kio5_thumbnail.mo
 share/locale/es/LC_MESSAGES/kfileaudiopreview5.mo
 share/locale/es/LC_MESSAGES/kio5_activities.mo
+share/locale/es/LC_MESSAGES/kio5_afc.mo
 share/locale/es/LC_MESSAGES/kio5_archive.mo
 share/locale/es/LC_MESSAGES/kio5_bookmarks.mo
 share/locale/es/LC_MESSAGES/kio5_fish.mo
@@ -926,6 +979,7 @@ share/locale/et/LC_MESSAGES/kio5_smb.mo
 share/locale/et/LC_MESSAGES/kio5_thumbnail.mo
 share/locale/eu/LC_MESSAGES/kfileaudiopreview5.mo
 share/locale/eu/LC_MESSAGES/kio5_activities.mo
+share/locale/eu/LC_MESSAGES/kio5_afc.mo
 share/locale/eu/LC_MESSAGES/kio5_archive.mo
 share/locale/eu/LC_MESSAGES/kio5_bookmarks.mo
 share/locale/eu/LC_MESSAGES/kio5_fish.mo
@@ -950,6 +1004,7 @@ share/locale/fa/LC_MESSAGES/kio5_smb.mo
 share/locale/fa/LC_MESSAGES/kio5_thumbnail.mo
 share/locale/fi/LC_MESSAGES/kfileaudiopreview5.mo
 share/locale/fi/LC_MESSAGES/kio5_activities.mo
+share/locale/fi/LC_MESSAGES/kio5_afc.mo
 share/locale/fi/LC_MESSAGES/kio5_archive.mo
 share/locale/fi/LC_MESSAGES/kio5_bookmarks.mo
 share/locale/fi/LC_MESSAGES/kio5_fish.mo
@@ -963,6 +1018,7 @@ share/locale/fi/LC_MESSAGES/kio5_smb.mo
 share/locale/fi/LC_MESSAGES/kio5_thumbnail.mo
 share/locale/fr/LC_MESSAGES/kfileaudiopreview5.mo
 share/locale/fr/LC_MESSAGES/kio5_activities.mo
+share/locale/fr/LC_MESSAGES/kio5_afc.mo
 share/locale/fr/LC_MESSAGES/kio5_archive.mo
 share/locale/fr/LC_MESSAGES/kio5_bookmarks.mo
 share/locale/fr/LC_MESSAGES/kio5_fish.mo
@@ -1089,6 +1145,7 @@ share/locale/hy/LC_MESSAGES/kfileaudiopreview5.mo
 share/locale/hy/LC_MESSAGES/kio5_fish.mo
 share/locale/ia/LC_MESSAGES/kfileaudiopreview5.mo
 share/locale/ia/LC_MESSAGES/kio5_activities.mo
+share/locale/ia/LC_MESSAGES/kio5_afc.mo
 share/locale/ia/LC_MESSAGES/kio5_archive.mo
 share/locale/ia/LC_MESSAGES/kio5_bookmarks.mo
 share/locale/ia/LC_MESSAGES/kio5_fish.mo
@@ -1130,6 +1187,7 @@ share/locale/is/LC_MESSAGES/kio5_smb.mo
 share/locale/is/LC_MESSAGES/kio5_thumbnail.mo
 share/locale/it/LC_MESSAGES/kfileaudiopreview5.mo
 share/locale/it/LC_MESSAGES/kio5_activities.mo
+share/locale/it/LC_MESSAGES/kio5_afc.mo
 share/locale/it/LC_MESSAGES/kio5_archive.mo
 share/locale/it/LC_MESSAGES/kio5_bookmarks.mo
 share/locale/it/LC_MESSAGES/kio5_fish.mo
@@ -1143,6 +1201,7 @@ share/locale/it/LC_MESSAGES/kio5_smb.mo
 share/locale/it/LC_MESSAGES/kio5_thumbnail.mo
 share/locale/ja/LC_MESSAGES/kfileaudiopreview5.mo
 share/locale/ja/LC_MESSAGES/kio5_activities.mo
+share/locale/ja/LC_MESSAGES/kio5_afc.mo
 share/locale/ja/LC_MESSAGES/kio5_archive.mo
 share/locale/ja/LC_MESSAGES/kio5_bookmarks.mo
 share/locale/ja/LC_MESSAGES/kio5_fish.mo
@@ -1156,6 +1215,7 @@ share/locale/ja/LC_MESSAGES/kio5_smb.mo
 share/locale/ja/LC_MESSAGES/kio5_thumbnail.mo
 share/locale/ka/LC_MESSAGES/kfileaudiopreview5.mo
 share/locale/ka/LC_MESSAGES/kio5_activities.mo
+share/locale/ka/LC_MESSAGES/kio5_afc.mo
 share/locale/ka/LC_MESSAGES/kio5_archive.mo
 share/locale/ka/LC_MESSAGES/kio5_bookmarks.mo
 share/locale/ka/LC_MESSAGES/kio5_fish.mo
@@ -1204,6 +1264,7 @@ share/locale/kn/LC_MESSAGES/kio5_smb.mo
 share/locale/kn/LC_MESSAGES/kio5_thumbnail.mo
 share/locale/ko/LC_MESSAGES/kfileaudiopreview5.mo
 share/locale/ko/LC_MESSAGES/kio5_activities.mo
+share/locale/ko/LC_MESSAGES/kio5_afc.mo
 share/locale/ko/LC_MESSAGES/kio5_archive.mo
 share/locale/ko/LC_MESSAGES/kio5_bookmarks.mo
 share/locale/ko/LC_MESSAGES/kio5_fish.mo
@@ -1229,6 +1290,7 @@ share/locale/lb/LC_MESSAGES/kio5_archive.mo
 share/locale/lb/LC_MESSAGES/kio5_nfs.mo
 share/locale/lt/LC_MESSAGES/kfileaudiopreview5.mo
 share/locale/lt/LC_MESSAGES/kio5_activities.mo
+share/locale/lt/LC_MESSAGES/kio5_afc.mo
 share/locale/lt/LC_MESSAGES/kio5_archive.mo
 share/locale/lt/LC_MESSAGES/kio5_bookmarks.mo
 share/locale/lt/LC_MESSAGES/kio5_fish.mo
@@ -1338,6 +1400,7 @@ share/locale/ne/LC_MESSAGES/kio5_smb.mo
 share/locale/ne/LC_MESSAGES/kio5_thumbnail.mo
 share/locale/nl/LC_MESSAGES/kfileaudiopreview5.mo
 share/locale/nl/LC_MESSAGES/kio5_activities.mo
+share/locale/nl/LC_MESSAGES/kio5_afc.mo
 share/locale/nl/LC_MESSAGES/kio5_archive.mo
 share/locale/nl/LC_MESSAGES/kio5_bookmarks.mo
 share/locale/nl/LC_MESSAGES/kio5_fish.mo
@@ -1392,6 +1455,7 @@ share/locale/pa/LC_MESSAGES/kio5_smb.mo
 share/locale/pa/LC_MESSAGES/kio5_thumbnail.mo
 share/locale/pl/LC_MESSAGES/kfileaudiopreview5.mo
 share/locale/pl/LC_MESSAGES/kio5_activities.mo
+share/locale/pl/LC_MESSAGES/kio5_afc.mo
 share/locale/pl/LC_MESSAGES/kio5_archive.mo
 share/locale/pl/LC_MESSAGES/kio5_bookmarks.mo
 share/locale/pl/LC_MESSAGES/kio5_fish.mo
@@ -1405,6 +1469,7 @@ share/locale/pl/LC_MESSAGES/kio5_smb.mo
 share/locale/pl/LC_MESSAGES/kio5_thumbnail.mo
 share/locale/pt/LC_MESSAGES/kfileaudiopreview5.mo
 share/locale/pt/LC_MESSAGES/kio5_activities.mo
+share/locale/pt/LC_MESSAGES/kio5_afc.mo
 share/locale/pt/LC_MESSAGES/kio5_archive.mo
 share/locale/pt/LC_MESSAGES/kio5_bookmarks.mo
 share/locale/pt/LC_MESSAGES/kio5_fish.mo
@@ -1418,6 +1483,7 @@ share/locale/pt/LC_MESSAGES/kio5_smb.mo
 share/locale/pt/LC_MESSAGES/kio5_thumbnail.mo
 share/locale/pt_BR/LC_MESSAGES/kfileaudiopreview5.mo
 share/locale/pt_BR/LC_MESSAGES/kio5_activities.mo
+share/locale/pt_BR/LC_MESSAGES/kio5_afc.mo
 share/locale/pt_BR/LC_MESSAGES/kio5_archive.mo
 share/locale/pt_BR/LC_MESSAGES/kio5_bookmarks.mo
 share/locale/pt_BR/LC_MESSAGES/kio5_fish.mo
@@ -1444,6 +1510,7 @@ share/locale/ro/LC_MESSAGES/kio5_smb.mo
 share/locale/ro/LC_MESSAGES/kio5_thumbnail.mo
 share/locale/ru/LC_MESSAGES/kfileaudiopreview5.mo
 share/locale/ru/LC_MESSAGES/kio5_activities.mo
+share/locale/ru/LC_MESSAGES/kio5_afc.mo
 share/locale/ru/LC_MESSAGES/kio5_archive.mo
 share/locale/ru/LC_MESSAGES/kio5_bookmarks.mo
 share/locale/ru/LC_MESSAGES/kio5_fish.mo
@@ -1474,6 +1541,7 @@ share/locale/si/LC_MESSAGES/kio5_smb.mo
 share/locale/si/LC_MESSAGES/kio5_thumbnail.mo
 share/locale/sk/LC_MESSAGES/kfileaudiopreview5.mo
 share/locale/sk/LC_MESSAGES/kio5_activities.mo
+share/locale/sk/LC_MESSAGES/kio5_afc.mo
 share/locale/sk/LC_MESSAGES/kio5_archive.mo
 share/locale/sk/LC_MESSAGES/kio5_bookmarks.mo
 share/locale/sk/LC_MESSAGES/kio5_fish.mo
@@ -1487,6 +1555,7 @@ share/locale/sk/LC_MESSAGES/kio5_smb.mo
 share/locale/sk/LC_MESSAGES/kio5_thumbnail.mo
 share/locale/sl/LC_MESSAGES/kfileaudiopreview5.mo
 share/locale/sl/LC_MESSAGES/kio5_activities.mo
+share/locale/sl/LC_MESSAGES/kio5_afc.mo
 share/locale/sl/LC_MESSAGES/kio5_archive.mo
 share/locale/sl/LC_MESSAGES/kio5_bookmarks.mo
 share/locale/sl/LC_MESSAGES/kio5_fish.mo
@@ -1619,6 +1688,7 @@ share/locale/th/LC_MESSAGES/kio5_smb.mo
 share/locale/th/LC_MESSAGES/kio5_thumbnail.mo
 share/locale/tr/LC_MESSAGES/kfileaudiopreview5.mo
 share/locale/tr/LC_MESSAGES/kio5_activities.mo
+share/locale/tr/LC_MESSAGES/kio5_afc.mo
 share/locale/tr/LC_MESSAGES/kio5_archive.mo
 share/locale/tr/LC_MESSAGES/kio5_bookmarks.mo
 share/locale/tr/LC_MESSAGES/kio5_fish.mo
@@ -1644,6 +1714,7 @@ share/locale/ug/LC_MESSAGES/kio5_smb.mo
 share/locale/ug/LC_MESSAGES/kio5_thumbnail.mo
 share/locale/uk/LC_MESSAGES/kfileaudiopreview5.mo
 share/locale/uk/LC_MESSAGES/kio5_activities.mo
+share/locale/uk/LC_MESSAGES/kio5_afc.mo
 share/locale/uk/LC_MESSAGES/kio5_archive.mo
 share/locale/uk/LC_MESSAGES/kio5_bookmarks.mo
 share/locale/uk/LC_MESSAGES/kio5_fish.mo
@@ -1673,6 +1744,7 @@ share/locale/uz@cyrillic/LC_MESSAGES/kio5_smb.mo
 share/locale/uz@cyrillic/LC_MESSAGES/kio5_thumbnail.mo
 share/locale/vi/LC_MESSAGES/kfileaudiopreview5.mo
 share/locale/vi/LC_MESSAGES/kio5_activities.mo
+share/locale/vi/LC_MESSAGES/kio5_afc.mo
 share/locale/vi/LC_MESSAGES/kio5_archive.mo
 share/locale/vi/LC_MESSAGES/kio5_bookmarks.mo
 share/locale/vi/LC_MESSAGES/kio5_fish.mo
@@ -1701,6 +1773,7 @@ share/locale/xh/LC_MESSAGES/kio5_sftp.mo
 share/locale/xh/LC_MESSAGES/kio5_smb.mo
 share/locale/zh_CN/LC_MESSAGES/kfileaudiopreview5.mo
 share/locale/zh_CN/LC_MESSAGES/kio5_activities.mo
+share/locale/zh_CN/LC_MESSAGES/kio5_afc.mo
 share/locale/zh_CN/LC_MESSAGES/kio5_archive.mo
 share/locale/zh_CN/LC_MESSAGES/kio5_bookmarks.mo
 share/locale/zh_CN/LC_MESSAGES/kio5_fish.mo
@@ -1715,6 +1788,7 @@ share/locale/zh_CN/LC_MESSAGES/kio5_thumbnail.mo
 share/locale/zh_HK/LC_MESSAGES/kfileaudiopreview5.mo
 share/locale/zh_TW/LC_MESSAGES/kfileaudiopreview5.mo
 share/locale/zh_TW/LC_MESSAGES/kio5_activities.mo
+share/locale/zh_TW/LC_MESSAGES/kio5_afc.mo
 share/locale/zh_TW/LC_MESSAGES/kio5_archive.mo
 share/locale/zh_TW/LC_MESSAGES/kio5_bookmarks.mo
 share/locale/zh_TW/LC_MESSAGES/kio5_fish.mo

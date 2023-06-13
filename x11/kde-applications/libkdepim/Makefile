@@ -2,7 +2,7 @@ COMMENT =	library for common kdepim apps
 DISTNAME =	libkdepim-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  KF5Libkdepim               4.0 # 5.6
+SHARED_LIBS +=  KPim5Libkdepim            0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5I18n KF5WidgetsAddons Qt5Core Qt5Gui Qt5Widgets

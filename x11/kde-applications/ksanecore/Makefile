@@ -1,7 +1,6 @@
 COMMENT =	KDE SANE (scanner) core library
 DISTNAME =	ksanecore-${VERSION}
 CATEGORIES =	graphics devel
-REVISION =	0
 
 SHARED_LIBS +=  KSaneCore                 0.0 # 0.0
 

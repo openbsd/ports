@@ -23,8 +23,6 @@ LIB_DEPENDS =	devel/kf5/kcompletion \
 		devel/kf5/kio \
 		devel/kf5/kjobwidgets \
 		devel/kf5/kwidgetsaddons \
-		devel/kf5/kpackage \
-		devel/kf5/kdeclarative \
 		x11/qt5/qtdeclarative
 
 .include <bsd.port.mk>

@@ -1,14 +1,17 @@
 @conflict kdebase-<4
-include/audiocdencoder.h
-include/audiocdplugins_export.h
+include/audiocdplugins/
+include/audiocdplugins/audiocdencoder.h
+include/audiocdplugins/audiocdplugins_export.h
+include/audiocdplugins/audiocdplugins_version.h
 @lib lib/libaudiocdplugins.so.${LIBaudiocdplugins_VERSION}
-@so lib/qt5/plugins/kcm_audiocd.so
 @so lib/qt5/plugins/kf5/kio/audiocd.so
 @so lib/qt5/plugins/libaudiocd_encoder_flac.so
 @so lib/qt5/plugins/libaudiocd_encoder_lame.so
 @so lib/qt5/plugins/libaudiocd_encoder_opus.so
 @so lib/qt5/plugins/libaudiocd_encoder_vorbis.so
 @so lib/qt5/plugins/libaudiocd_encoder_wav.so
+@so lib/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcm_audiocd.so
+share/applications/kcm_audiocd.desktop
 share/config.kcfg/audiocd_flac_encoder.kcfg
 share/config.kcfg/audiocd_lame_encoder.kcfg
 share/config.kcfg/audiocd_opus_encoder.kcfg
@@ -105,7 +108,6 @@ share/konqsidebartng/
 share/konqsidebartng/virtual_folders/
 share/konqsidebartng/virtual_folders/services/
 share/konqsidebartng/virtual_folders/services/audiocd.desktop
-share/kservices5/audiocd.desktop
 share/locale/af/LC_MESSAGES/kcmaudiocd.mo
 share/locale/af/LC_MESSAGES/kio_audiocd.mo
 share/locale/ar/LC_MESSAGES/audiocd_encoder_flac.mo
@@ -489,3 +491,4 @@ share/qlogging-categories5/kio_audiocd.renamecategories
 share/solid/
 share/solid/actions/
 share/solid/actions/solid_audiocd.desktop
+@tag update-desktop-database

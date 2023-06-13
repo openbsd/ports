@@ -2,8 +2,8 @@ COMMENT =	KDE terminal emulator
 DISTNAME =	konsole-${VERSION}
 CATEGORIES =	editors x11
 
-SHARED_LIBS +=  konsoleprivate            9.0 # 17.08
-SHARED_LIBS +=  konsoleapp                2.0 # 21
+SHARED_LIBS +=  konsoleprivate            10.0 # 17.08
+SHARED_LIBS +=  konsoleapp                3.0 # 21
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Attica KF5Auth KF5AuthCore KF5Bookmarks
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
@@ -13,8 +13,8 @@ WANTLIB += KF5KIOCore KF5KIOGui KF5KIOWidgets KF5NewStuff KF5NewStuffCore
 WANTLIB += KF5NewStuffWidgets KF5Notifications KF5NotifyConfig
 WANTLIB += KF5Parts KF5Pty KF5Service KF5Solid KF5SonnetUi KF5TextWidgets
 WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets
-WANTLIB += Qt5Xml X11 c icui18n icuuc m z
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Multimedia Qt5Network Qt5PrintSupport
+WANTLIB += Qt5Widgets Qt5Xml X11 c icui18n icuuc m z
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_TRANSLATIONS = yes
@@ -47,7 +47,8 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/knewstuff \
 		devel/kf5/kwindowsystem \
 		devel/kf5/kcoreaddons \
-		devel/kf5/kxmlgui
+		devel/kf5/kxmlgui \
+		x11/qt5/qtmultimedia
 
 TEST_IS_INTERACTIVE =	X11
 TEST_DEPENDS =		${BUILD_PKGPATH}

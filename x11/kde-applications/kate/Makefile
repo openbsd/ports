@@ -1,11 +1,10 @@
 COMMENT =	KDE advanced text editor
 DISTNAME =	kate-${VERSION}
 CATEGORIES =	editors
-REVISION =	0
 
 HOMEPAGE =	https://kate-editor.org/
 
-SHARED_LIBS +=  kateprivate               2.0 # 0.0
+SHARED_LIBS +=  kateprivate               3.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Activities KF5Attica KF5Auth
 WANTLIB += KF5AuthCore KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
@@ -17,7 +16,7 @@ WANTLIB += KF5Parts KF5Service KF5Solid KF5SonnetUi KF5SyntaxHighlighting
 WANTLIB += KF5TextEditor KF5TextWidgets KF5Wallet KF5WidgetsAddons
 WANTLIB += KF5WindowSystem KF5XmlGui KUserFeedbackCore KUserFeedbackWidgets
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Sql
-WANTLIB += Qt5Widgets Qt5Xml X11 c m
+WANTLIB += Qt5Widgets Qt5X11Extras Qt5Xml X11 c intl m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

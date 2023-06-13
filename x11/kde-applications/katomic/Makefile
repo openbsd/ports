@@ -1,7 +1,6 @@
 COMMENT =	Sokoban-like logic game
 DISTNAME =	katomic-${VERSION}
 CATEGORIES =	games
-REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/katomic
 

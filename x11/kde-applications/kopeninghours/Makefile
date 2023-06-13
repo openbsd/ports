@@ -2,7 +2,7 @@ COMMENT =	library for parsing and evaluating OSM data
 DISTNAME =	kopeninghours-${VERSION}
 CATEGORIES =	devel geo
 
-SHARED_LIBS +=  KOpeningHours       0.0 # 21.8.1
+SHARED_LIBS +=  KOpeningHours       0.1 # 21.8.1
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Holidays KF5I18n Qt5Core Qt5Network
 WANTLIB += Qt5Qml boost_python${MODPY_VERSION:C/\.//g}-mt m ${MODPY_WANTLIB}

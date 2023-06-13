@@ -4,7 +4,6 @@ USE_WXNEEDED =	Yes
 COMMENT =	non-linear video editor for KDE
 DISTNAME =	kdenlive-${VERSION}
 CATEGORIES =	multimedia
-REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Attica KF5Auth KF5AuthCore
 WANTLIB += KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
@@ -24,6 +23,8 @@ MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DOCS = yes
+
+MODULES +=	lang/python
 
 RUN_DEPENDS =	devel/kf5/breeze-icons \
 		devel/kf5/kinit \
@@ -74,5 +75,9 @@ LIB_DEPENDS =	devel/kf5/attica \
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_LibV4L2=Yes
 
 TEST_IS_INTERACTIVE =	X11
+
+post-install:
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+		 ${PREFIX}/share/kdenlive/scripts/
 
 .include <bsd.port.mk>

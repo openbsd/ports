@@ -1,9 +1,9 @@
 COMMENT =	arcade bombing game
 DISTNAME =	bomber-${VERSION}
 CATEGORIES =	games
-REVISION =	0
 
 HOMEPAGE =	https://apps.kde.org/bomber/
+
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash

@@ -58,7 +58,8 @@ LIB_DEPENDS =	devel/kf5/karchive  \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kwindowsystem \
 		devel/kf5/solid \
-		security/qca-qt5
+		security/qca-qt5 \
+		x11/qt5/qtmultimedia
 
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \

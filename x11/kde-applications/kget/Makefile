@@ -1,7 +1,6 @@
 COMMENT =	download manager for KDE
 DISTNAME =	kget-${VERSION}
 CATEGORIES =	net www
-REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/internet/kget/
 

@@ -2,14 +2,15 @@ COMMENT =	KDE PIM mail importer library
 DISTNAME =	mailimporter-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  KF5MailImporter              1.0 # 5.13.2
-SHARED_LIBS +=  KF5MailImporterAkonadi       1.0 # 5.13.2
+SHARED_LIBS +=  KPim5MailImporter         0.0 # 0.0
+SHARED_LIBS +=  KPim5MailImporterAkonadi  0.0 # 0.0
 
-WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiCore KF5AkonadiMime KF5Archive
-WANTLIB += KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore KF5ConfigGui
-WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5I18n KF5ItemModels
-WANTLIB += KF5KIOCore KF5Mime KF5PimCommon KF5PimCommonAutoCorrection
-WANTLIB += KF5PimTextEdit KF5Service KF5WidgetsAddons Qt5Concurrent
+WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5AuthCore KF5Codecs
+WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
+WANTLIB += KF5I18n KF5ItemModels KF5KIOCore KF5PimCommon KF5Service
+WANTLIB += KF5TextAutoCorrectionCore KF5TextAutoCorrectionWidgets
+WANTLIB += KF5TextEditTextToSpeech KF5WidgetsAddons KPim5AkonadiCore
+WANTLIB += KPim5AkonadiMime KPim5Mime KPim5TextEdit Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
 WANTLIB += m
 
@@ -25,6 +26,7 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/ki18n \
 		devel/kf5/kitemmodels \
 		x11/kde-applications/akonadi \
+		x11/kde-applications/akonadi-mime \
 		x11/kde-applications/kmime \
 		x11/kde-applications/pimcommon
 

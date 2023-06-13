@@ -5,22 +5,20 @@ DISTNAME =	grantlee-editor-${VERSION}
 CATEGORIES =	devel
 
 SHARED_LIBS +=  grantleethemeeditor       1.0 # 5.13.2
-
-WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiContact
-WANTLIB += KF5AkonadiCore KF5AkonadiMime KF5AkonadiWidgets KF5Archive
-WANTLIB += KF5Attica KF5Auth KF5AuthCore KF5Codecs KF5Completion
-WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5Contacts
-WANTLIB += KF5CoreAddons KF5Crash KF5DBusAddons KF5GrantleeTheme
-WANTLIB += KF5I18n KF5ItemModels KF5JobWidgets KF5KIOCore KF5KIOGui
-WANTLIB += KF5KIOWidgets KF5Libkleo KF5MessageCore KF5MessageViewer
-WANTLIB += KF5Mime KF5MimeTreeParser KF5NewStuff KF5NewStuffCore
-WANTLIB += KF5PimCommon KF5PimCommonAutoCorrection KF5PimTextEdit
-WANTLIB += KF5Service KF5Solid KF5SyntaxHighlighting KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport Qt5Qml
-WANTLIB += Qt5QmlModels Qt5Quick Qt5WebChannel Qt5WebEngineCore
-WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml X11 assuan c
-WANTLIB += gpgme gpgmepp m qgpgme
+WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Archive KF5Auth
+WANTLIB += KF5AuthCore KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
+WANTLIB += KF5ConfigWidgets KF5Contacts KF5CoreAddons KF5Crash
+WANTLIB += KF5DBusAddons KF5I18n KF5ItemModels KF5JobWidgets KF5KIOCore
+WANTLIB += KF5KIOGui KF5KIOWidgets KF5PimCommon KF5Service KF5Solid
+WANTLIB += KF5SyntaxHighlighting KF5TextAutoCorrectionCore KF5TextAutoCorrectionWidgets
+WANTLIB += KF5TextEditTextToSpeech KF5WidgetsAddons KF5WindowSystem
+WANTLIB += KF5XmlGui KPim5AkonadiContact KPim5AkonadiCore KPim5AkonadiMime
+WANTLIB += KPim5AkonadiWidgets KPim5GrantleeTheme KPim5Libkleo
+WANTLIB += KPim5MessageCore KPim5MessageViewer KPim5Mime KPim5MimeTreeParser
+WANTLIB += KPim5TextEdit Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
+WANTLIB += Qt5Network Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels
+WANTLIB += Qt5Quick Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
+WANTLIB += Qt5Widgets Qt5Xml X11 assuan c gpgme gpgmepp m qgpgme
 
 WANTLIB += lib/inotify/inotify
 
@@ -35,8 +33,7 @@ BUILD_DEPENDS =	devel/boost \
 
 RUN_DEPENDS =	x11/kde-applications/kdepim-runtime
 
-LIB_DEPENDS =	devel/kf5/attica \
-		devel/kf5/karchive \
+LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kauth \
 		devel/kf5/kcodecs \
 		devel/kf5/kcompletion \
@@ -50,7 +47,6 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kio \
 		devel/kf5/kitemmodels \
 		devel/kf5/kjobwidgets \
-		devel/kf5/knewstuff \
 		devel/kf5/kservice \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kxmlgui \
@@ -68,6 +64,6 @@ LIB_DEPENDS =	devel/kf5/attica \
 		x11/qt5/qtwebchannel \
 		x11/qt5/qtwebengine
 
-CXXFLAGS +=	-I${LOCALBASE}/include/KF5/MessageViewer
+CXXFLAGS +=	-I${LOCALBASE}/include/KPim5/MessageViewer
 
 .include <bsd.port.mk>

@@ -1,7 +1,6 @@
 COMMENT =	graphical floppy format utility for KDE
 DISTNAME =	kfloppy-${VERSION}
 CATEGORIES =	x11 sysutils
-REVISION =	0
 
 HOMEPAGE =	https://kde.org/applications/utilities/org.kde.kfloppy
 

@@ -118,6 +118,10 @@ share/doc/HTML/sv/kdf/index.cache.bz2
 share/doc/HTML/sv/kdf/index.docbook
 share/doc/HTML/sv/kdf/kdf.png
 share/doc/HTML/sv/kdf/kdf_config.png
+share/doc/HTML/tr/kcontrol/
+share/doc/HTML/tr/kcontrol/blockdevices/
+share/doc/HTML/tr/kcontrol/blockdevices/index.cache.bz2
+share/doc/HTML/tr/kcontrol/blockdevices/index.docbook
 share/doc/HTML/uk/kcontrol/
 share/doc/HTML/uk/kcontrol/blockdevices/
 share/doc/HTML/uk/kcontrol/blockdevices/index.cache.bz2
@@ -142,7 +146,6 @@ share/icons/hicolor/48x48/apps/kdf.png
 share/icons/hicolor/48x48/apps/kwikdisk.png
 share/icons/hicolor/64x64/apps/kdf.png
 share/icons/hicolor/64x64/apps/kwikdisk.png
-share/kservices5/kcmdf.desktop
 share/kxmlgui5/
 share/kxmlgui5/kdf/
 share/kxmlgui5/kdf/kdfui.rc

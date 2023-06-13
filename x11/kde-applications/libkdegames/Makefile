@@ -40,7 +40,6 @@ LIB_DEPENDS =	devel/kf5/kconfig \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/karchive \
 		devel/kf5/kdnssd \
-		devel/kf5/kdeclarative \
 		devel/kf5/kguiaddons \
 		devel/kf5/kxmlgui \
 		x11/qt5/qtdeclarative \

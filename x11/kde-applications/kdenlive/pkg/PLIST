@@ -1,7 +1,8 @@
 @pkgpath multimedia/kdenlive
 @bin bin/kdenlive
 @bin bin/kdenlive_render
-@so lib/qt5/plugins/mltpreview.so
+lib/qt5/plugins/kf5/thumbcreator/
+@so lib/qt5/plugins/kf5/thumbcreator/mltpreview.so
 @man man/man1/kdenlive.1
 @man man/man1/kdenlive_render.1
 share/applications/org.kde.kdenlive.desktop
@@ -120,9 +121,10 @@ share/doc/Kdenlive/
 share/doc/Kdenlive/AUTHORS
 share/doc/Kdenlive/LICENSES/
 share/doc/Kdenlive/LICENSES/BSD-3-Clause.txt
+share/doc/Kdenlive/LICENSES/BSL-1.0.txt
+share/doc/Kdenlive/LICENSES/CC-BY-SA-4.0.txt
 share/doc/Kdenlive/LICENSES/CC0-1.0.txt
 share/doc/Kdenlive/LICENSES/GPL-2.0-only.txt
-share/doc/Kdenlive/LICENSES/GPL-2.0-or-later.txt
 share/doc/Kdenlive/LICENSES/GPL-3.0-only.txt
 share/doc/Kdenlive/LICENSES/GPL-3.0-or-later.txt
 share/doc/Kdenlive/LICENSES/LGPL-3.0-only.txt
@@ -162,6 +164,7 @@ share/icons/hicolor/scalable/mimetypes/application-x-kdenlive.svgz
 share/icons/hicolor/scalable/mimetypes/application-x-kdenlivetitle.svgz
 share/icons/hicolor/scalable/mimetypes/video-mlt-playlist.svgz
 share/kdenlive/
+share/kdenlive/clipjobsettings.rc
 share/kdenlive/effect-templates/
 share/kdenlive/effect-templates/secondary_color_correction.xml
 share/kdenlive/effect-templates/shut_off.xml
@@ -478,6 +481,7 @@ share/kdenlive/effects/subtitles.xml
 share/kdenlive/effects/swapchannels.xml
 share/kdenlive/effects/tcolor.xml
 share/kdenlive/effects/threshold.xml
+share/kdenlive/effects/timer.xml
 share/kdenlive/effects/tracker.xml
 share/kdenlive/effects/typewriter.xml
 share/kdenlive/effects/update/
@@ -565,10 +569,21 @@ share/kdenlive/resourceproviders/pexels_photo.json
 share/kdenlive/resourceproviders/pexels_video.json
 share/kdenlive/resourceproviders/pixabay_photo.json
 share/kdenlive/scripts/
+${MODPY_COMMENT}share/kdenlive/scripts/${MODPY_PYCACHE}/
+share/kdenlive/scripts/${MODPY_PYCACHE}checkgpu.${MODPY_PYC_MAGIC_TAG}pyc
+share/kdenlive/scripts/${MODPY_PYCACHE}checkpackages.${MODPY_PYC_MAGIC_TAG}pyc
+share/kdenlive/scripts/${MODPY_PYCACHE}otiointerface.${MODPY_PYC_MAGIC_TAG}pyc
+share/kdenlive/scripts/${MODPY_PYCACHE}speech.${MODPY_PYC_MAGIC_TAG}pyc
+share/kdenlive/scripts/${MODPY_PYCACHE}speechtotext.${MODPY_PYC_MAGIC_TAG}pyc
+share/kdenlive/scripts/${MODPY_PYCACHE}whispertosrt.${MODPY_PYC_MAGIC_TAG}pyc
+share/kdenlive/scripts/${MODPY_PYCACHE}whispertotext.${MODPY_PYC_MAGIC_TAG}pyc
+share/kdenlive/scripts/checkgpu.py
 share/kdenlive/scripts/checkpackages.py
 share/kdenlive/scripts/otiointerface.py
 share/kdenlive/scripts/speech.py
 share/kdenlive/scripts/speechtotext.py
+share/kdenlive/scripts/whispertosrt.py
+share/kdenlive/scripts/whispertotext.py
 share/kdenlive/shortcuts/
 share/kdenlive/shortcuts/Premiere
 share/kdenlive/slideanimations.rc
@@ -602,12 +617,28 @@ share/kdenlive/transitions/frei0r_hue.xml
 share/kdenlive/transitions/frei0r_lighten.xml
 share/kdenlive/transitions/frei0r_multiply.xml
 share/kdenlive/transitions/frei0r_overlay.xml
+share/kdenlive/transitions/frei0r_push-down.xml
+share/kdenlive/transitions/frei0r_push-left.xml
+share/kdenlive/transitions/frei0r_push-right.xml
+share/kdenlive/transitions/frei0r_push-up.xml
 share/kdenlive/transitions/frei0r_saturation.xml
 share/kdenlive/transitions/frei0r_screen.xml
+share/kdenlive/transitions/frei0r_slide-down.xml
+share/kdenlive/transitions/frei0r_slide-left.xml
+share/kdenlive/transitions/frei0r_slide-right.xml
+share/kdenlive/transitions/frei0r_slide-up.xml
 share/kdenlive/transitions/frei0r_softlight.xml
 share/kdenlive/transitions/frei0r_subtract.xml
 share/kdenlive/transitions/frei0r_uvmap.xml
 share/kdenlive/transitions/frei0r_value.xml
+share/kdenlive/transitions/frei0r_wipe-barn-door-h.xml
+share/kdenlive/transitions/frei0r_wipe-barn-door-v.xml
+share/kdenlive/transitions/frei0r_wipe-circle.xml
+share/kdenlive/transitions/frei0r_wipe-down.xml
+share/kdenlive/transitions/frei0r_wipe-left.xml
+share/kdenlive/transitions/frei0r_wipe-rect.xml
+share/kdenlive/transitions/frei0r_wipe-right.xml
+share/kdenlive/transitions/frei0r_wipe-up.xml
 share/kdenlive/transitions/luma.xml
 share/kdenlive/transitions/matte.xml
 share/kdenlive/transitions/mix.xml
@@ -624,7 +655,6 @@ share/knsrcfiles/kdenlive_luts.knsrc
 share/knsrcfiles/kdenlive_renderprofiles.knsrc
 share/knsrcfiles/kdenlive_titles.knsrc
 share/knsrcfiles/kdenlive_wipes.knsrc
-share/kservices5/mltpreview.desktop
 share/kxmlgui5/
 share/kxmlgui5/kdenlive/
 share/kxmlgui5/kdenlive/kdenliveui.rc

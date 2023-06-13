@@ -1,7 +1,7 @@
 Index: src/lib/pdf/pdfdocument.cpp
 --- src/lib/pdf/pdfdocument.cpp.orig
 +++ src/lib/pdf/pdfdocument.cpp
-@@ -298,7 +298,7 @@ QDateTime PdfDocument::modificationTime() const
+@@ -323,7 +323,7 @@ QDateTime PdfDocument::modificationTime() const
  }
  
  

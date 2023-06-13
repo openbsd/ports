@@ -1,25 +1,23 @@
 Index: messageviewer/src/CMakeLists.txt
 --- messageviewer/src/CMakeLists.txt.orig
 +++ messageviewer/src/CMakeLists.txt
-@@ -397,10 +397,9 @@ endif()
+@@ -399,9 +399,8 @@ endif()
+ generate_export_header(KPim${KF_MAJOR_VERSION}MessageViewer BASE_NAME messageviewer)
  
- generate_export_header(KF5MessageViewer BASE_NAME messageviewer)
- 
--if (${Inotify_FOUND})
--    target_include_directories(KF5MessageViewer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/MessageViewer/;${Inotify_INCLUDE_DIRS}>")
+ if (${Inotify_FOUND})
+-    target_include_directories(KPim${KF_MAJOR_VERSION}MessageViewer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MessageViewer/;${Inotify_INCLUDE_DIRS}>")
 -else()
--    target_include_directories(KF5MessageViewer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/MessageViewer/>")
-+if(Inotify_FOUND)
-+    target_include_directories(KF5MessageViewer PRIVATE ${Inotify_INCLUDE_DIRS})
-+    target_link_libraries(KF5MessageViewer PUBLIC ${Inotify_LIBRARIES} )
+-    target_include_directories(KPim${KF_MAJOR_VERSION}MessageViewer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MessageViewer/>")
++    target_include_directories(KPim${KF_MAJOR_VERSION}MessageViewer PRIVATE ${Inotify_INCLUDE_DIRS})
++    target_link_libraries(KPim${KF_MAJOR_VERSION}MessageViewer PUBLIC ${Inotify_LIBRARIES} )
  endif()
  
- target_link_libraries(KF5MessageViewer
-@@ -433,7 +432,6 @@ target_link_libraries(KF5MessageViewer
-     KF5::AkonadiContact
+ target_link_libraries(KPim${KF_MAJOR_VERSION}MessageViewer
+@@ -435,7 +434,6 @@ target_link_libraries(KPim${KF_MAJOR_VERSION}MessageVi
+     KPim${KF_MAJOR_VERSION}::AkonadiContact
      ${TEMPLATES_LIB}
      Qt::PrintSupport
 -    ${Inotify_LIBRARIES}
      qca-qt${QT_MAJOR_VERSION}
-     KF5::Notifications
+     KF${KF_MAJOR_VERSION}::Notifications
      )

@@ -2,17 +2,21 @@ COMMENT =	PIM calendar support library
 DISTNAME =	calendarsupport-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  KF5CalendarSupport       5.0 # 5.13.2
+SHARED_LIBS +=  KPim5CalendarSupport      0.0 # 0.0
 
-WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiCalendar KF5AkonadiCore
-WANTLIB += KF5AkonadiNotes KF5AkonadiWidgets KF5Auth KF5AuthCore
-WANTLIB += KF5CalendarCore KF5CalendarUtils KF5Codecs KF5Completion
-WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
-WANTLIB += KF5GuiAddons KF5Holidays KF5I18n KF5IdentityManagement
-WANTLIB += KF5ItemModels KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets
-WANTLIB += KF5Mime KF5PimTextEdit KF5Service KF5Solid KF5WidgetsAddons
-WANTLIB += KF5WindowSystem Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
+WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5CalendarCore
+WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
+WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5GuiAddons KF5Holidays
+WANTLIB += KF5I18n KF5ItemModels KF5JobWidgets KF5KIOCore KF5KIOGui
+WANTLIB += KF5KIOWidgets KF5Service KF5Solid KF5TextEditTextToSpeech
+WANTLIB += KF5WidgetsAddons KF5WindowSystem KPim5AkonadiCalendar
+WANTLIB += KPim5AkonadiCore KPim5AkonadiNotes KPim5AkonadiWidgets
+WANTLIB += KPim5CalendarUtils KPim5IdentityManagement KPim5Mime
+WANTLIB += KPim5TextEdit Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
 WANTLIB += Qt5Network Qt5PrintSupport Qt5Widgets Qt5Xml X11 m
+
+WANTLIB += lib/inotify/inotify
+
 
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
@@ -36,6 +40,8 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kjobwidgets \
 		devel/kf5/kservice \
 		devel/kf5/kwidgetsaddons \
+		devel/libinotify \
+		textproc/ktextaddons \
 		x11/kde-applications/akonadi \
 		x11/kde-applications/akonadi-calendar \
 		x11/kde-applications/akonadi-notes \

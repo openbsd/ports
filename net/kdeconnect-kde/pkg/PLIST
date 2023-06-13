@@ -7,7 +7,6 @@
 @lib lib/libkdeconnectcore.so.${LIBkdeconnectcore_VERSION}
 @lib lib/libkdeconnectinterfaces.so.${LIBkdeconnectinterfaces_VERSION}
 @lib lib/libkdeconnectpluginkcm.so.${LIBkdeconnectpluginkcm_VERSION}
-@so lib/qt5/plugins/kcm_kdeconnect.so
 lib/qt5/plugins/kdeconnect/
 lib/qt5/plugins/kdeconnect/kcms/
 @so lib/qt5/plugins/kdeconnect/kcms/kdeconnect_clipboard_config.so
@@ -43,6 +42,7 @@ lib/qt5/plugins/kdeconnect/kcms/
 lib/qt5/plugins/kf5/kfileitemaction/
 @so lib/qt5/plugins/kf5/kfileitemaction/kdeconnectfileitemaction.so
 @so lib/qt5/plugins/kf5/kio/kdeconnect.so
+@so lib/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcm_kdeconnect.so
 lib/qt5/qml/org/kde/kdeconnect/
 lib/qt5/qml/org/kde/kdeconnect/DBusProperty.qml
 lib/qt5/qml/org/kde/kdeconnect/PluginChecker.qml
@@ -53,6 +53,7 @@ lib/qt5/qml/org/kde/kdeconnect/qmldir
 share/Thunar/
 share/Thunar/sendto/
 share/Thunar/sendto/kdeconnect-thunar.desktop
+share/applications/kcm_kdeconnect.desktop
 share/applications/org.kde.kdeconnect-settings.desktop
 share/applications/org.kde.kdeconnect.app.desktop
 share/applications/org.kde.kdeconnect.daemon.desktop
@@ -101,6 +102,9 @@ share/doc/HTML/ru/kdeconnect-kde/index.docbook
 share/doc/HTML/sv/kdeconnect-kde/
 share/doc/HTML/sv/kdeconnect-kde/index.cache.bz2
 share/doc/HTML/sv/kdeconnect-kde/index.docbook
+share/doc/HTML/tr/kdeconnect-kde/
+share/doc/HTML/tr/kdeconnect-kde/index.cache.bz2
+share/doc/HTML/tr/kdeconnect-kde/index.docbook
 share/doc/HTML/uk/kdeconnect-kde/
 share/doc/HTML/uk/kdeconnect-kde/index.cache.bz2
 share/doc/HTML/uk/kdeconnect-kde/index.docbook
@@ -158,7 +162,6 @@ share/kdeconnect/kdeconnect_runcommand_config.qml
 share/kdeconnect/kdeconnect_sendnotifications_config.qml
 share/kdeconnect/kdeconnect_share_config.qml
 share/knotifications5/kdeconnect.notifyrc
-share/kservices5/kcm_kdeconnect.desktop
 share/kservices5/plasma-kdeconnect.desktop
 share/locale/ar/LC_MESSAGES/kdeconnect-app.mo
 share/locale/ar/LC_MESSAGES/kdeconnect-cli.mo
@@ -458,6 +461,16 @@ share/locale/id/LC_MESSAGES/kdeconnect-settings.mo
 share/locale/id/LC_MESSAGES/kdeconnect-sms.mo
 share/locale/id/LC_MESSAGES/kdeconnect-urlhandler.mo
 share/locale/id/LC_MESSAGES/plasma_applet_org.kde.kdeconnect.mo
+share/locale/ie/LC_MESSAGES/kdeconnect-app.mo
+share/locale/ie/LC_MESSAGES/kdeconnect-core.mo
+share/locale/ie/LC_MESSAGES/kdeconnect-fileitemaction.mo
+share/locale/ie/LC_MESSAGES/kdeconnect-indicator.mo
+share/locale/ie/LC_MESSAGES/kdeconnect-interfaces.mo
+share/locale/ie/LC_MESSAGES/kdeconnect-kcm.mo
+share/locale/ie/LC_MESSAGES/kdeconnect-kio.mo
+share/locale/ie/LC_MESSAGES/kdeconnect-nautilus-extension.mo
+share/locale/ie/LC_MESSAGES/kdeconnect-settings.mo
+share/locale/ie/LC_MESSAGES/plasma_applet_org.kde.kdeconnect.mo
 share/locale/is/LC_MESSAGES/kdeconnect-app.mo
 share/locale/is/LC_MESSAGES/kdeconnect-cli.mo
 share/locale/is/LC_MESSAGES/kdeconnect-core.mo

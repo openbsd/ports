@@ -1,9 +1,8 @@
 COMMENT =	KDE image viewer
 DISTNAME =	gwenview-${VERSION}
 CATEGORIES =	graphics x11
-REVISION =	0
 
-SHARED_LIBS +=  gwenviewlib               59.2 # 4.97
+SHARED_LIBS +=  gwenviewlib               59.3 # 4.97
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Activities KF5Auth KF5AuthCore
 WANTLIB += KF5Baloo KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
@@ -14,8 +13,9 @@ WANTLIB += KF5KIOGui KF5KIOWidgets KF5Notifications KF5Parts KF5Purpose
 WANTLIB += KF5PurposeWidgets KF5Service KF5Solid KF5SonnetUi KF5TextWidgets
 WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Svg
-WANTLIB += Qt5Widgets Qt5X11Extras Qt5Xml X11 c cfitsio exiv2
-WANTLIB += jpeg kImageAnnotator lcms2 m phonon4qt5 png tiff z
+WANTLIB += Qt5WaylandClient Qt5Widgets Qt5X11Extras Qt5Xml X11
+WANTLIB += c cfitsio exiv2 jpeg kImageAnnotator lcms2 m phonon4qt5
+WANTLIB += png tiff wayland-client z
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

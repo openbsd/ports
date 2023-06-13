@@ -1,6 +1,6 @@
 @so lib/qt5/plugins/kf5/kio/kio_kamera.so
-@so lib/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kamera.so
-share/applications/kamera.desktop
+@so lib/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcm_kamera.so
+share/applications/kcm_kamera.desktop
 share/doc/HTML/ca/kcontrol/
 share/doc/HTML/ca/kcontrol/kamera/
 share/doc/HTML/ca/kcontrol/kamera/index.cache.bz2
@@ -61,6 +61,10 @@ share/doc/HTML/sv/kcontrol/
 share/doc/HTML/sv/kcontrol/kamera/
 share/doc/HTML/sv/kcontrol/kamera/index.cache.bz2
 share/doc/HTML/sv/kcontrol/kamera/index.docbook
+share/doc/HTML/tr/kcontrol/
+share/doc/HTML/tr/kcontrol/kamera/
+share/doc/HTML/tr/kcontrol/kamera/index.cache.bz2
+share/doc/HTML/tr/kcontrol/kamera/index.docbook
 share/doc/HTML/uk/kcontrol/
 share/doc/HTML/uk/kcontrol/kamera/
 share/doc/HTML/uk/kcontrol/kamera/index.cache.bz2
@@ -180,6 +184,7 @@ share/locale/zh_TW/LC_MESSAGES/kcmkamera.mo
 share/locale/zh_TW/LC_MESSAGES/kio5_kamera.mo
 share/metainfo/
 share/metainfo/org.kde.kamera.metainfo.xml
+share/qlogging-categories5/kamera.categories
 share/solid/
 share/solid/actions/
 share/solid/actions/solid_camera.desktop

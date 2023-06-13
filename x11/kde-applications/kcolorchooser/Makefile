@@ -1,9 +1,9 @@
 COMMENT =	KDE color selector
 DISTNAME =	kcolorchooser-${VERSION}
 CATEGORIES =	x11 graphics
-REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/graphics/kcolorchooser/
+
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5I18n

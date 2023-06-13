@@ -64,6 +64,7 @@ lib/qt5/plugins/konqueror_kcms/
 @so lib/qt5/plugins/konqueror_kcms/kcm_performance.so
 @so lib/qt5/plugins/konqueror_kcms/khtml_appearance.so
 @so lib/qt5/plugins/konqueror_kcms/khtml_behavior.so
+@so lib/qt5/plugins/konqueror_kcms/khtml_cache.so
 @so lib/qt5/plugins/konqueror_kcms/khtml_filter.so
 @so lib/qt5/plugins/konqueror_kcms/khtml_general.so
 @so lib/qt5/plugins/konqueror_kcms/khtml_java_js.so
@@ -780,6 +781,21 @@ share/doc/HTML/sv/konqueror/konqorg.png
 share/doc/HTML/sv/konqueror/parts.png
 share/doc/HTML/sv/konqueror/shortcut1.png
 share/doc/HTML/sv/konqueror/shortcut2.png
+share/doc/HTML/tr/kcontrol5/bookmarks/
+share/doc/HTML/tr/kcontrol5/bookmarks/index.cache.bz2
+share/doc/HTML/tr/kcontrol5/bookmarks/index.docbook
+share/doc/HTML/tr/kcontrol5/filemanager/
+share/doc/HTML/tr/kcontrol5/filemanager/index.cache.bz2
+share/doc/HTML/tr/kcontrol5/filemanager/index.docbook
+share/doc/HTML/tr/kcontrol5/history/
+share/doc/HTML/tr/kcontrol5/history/index.cache.bz2
+share/doc/HTML/tr/kcontrol5/history/index.docbook
+share/doc/HTML/tr/kcontrol5/khtml-adblock/
+share/doc/HTML/tr/kcontrol5/khtml-adblock/index.cache.bz2
+share/doc/HTML/tr/kcontrol5/khtml-adblock/index.docbook
+share/doc/HTML/tr/kcontrol5/khtml-general/
+share/doc/HTML/tr/kcontrol5/khtml-general/index.cache.bz2
+share/doc/HTML/tr/kcontrol5/khtml-general/index.docbook
 share/doc/HTML/uk/kcontrol5/bookmarks/
 share/doc/HTML/uk/kcontrol5/bookmarks/index.cache.bz2
 share/doc/HTML/uk/kcontrol5/bookmarks/index.docbook

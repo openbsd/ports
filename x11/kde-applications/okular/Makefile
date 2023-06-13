@@ -1,7 +1,10 @@
 COMMENT =	KDE document viewer
 DISTNAME =	okular-${VERSION}
 CATEGORIES =	textproc
-REVISION =	0
+
+# TODO Poppler (required version >= 22.02.0)
+VERSION =	22.12.3
+REVISION =	1
 
 HOMEPAGE =	https://okular.kde.org/
 

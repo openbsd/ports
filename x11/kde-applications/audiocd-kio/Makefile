@@ -14,6 +14,7 @@ WANTLIB += cdda_interface cdda_paranoia m ogg vorbis vorbisenc
 WANTLIB += vorbisfile
 
 MODKDE5_TRANSLATIONS = yes
+MODKDE5_DESKTOP_FILE = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
