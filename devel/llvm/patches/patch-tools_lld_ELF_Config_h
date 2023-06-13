@@ -1,9 +1,19 @@
 - XXX no comment
+- Implement support for PT_OPENBSD_NOBTCFI in lld(1).  This can be set using
+  the -z nobtcfi option.
 
 Index: tools/lld/ELF/Config.h
 --- tools/lld/ELF/Config.h.orig
 +++ tools/lld/ELF/Config.h
-@@ -266,8 +266,13 @@ struct Configuration {
+@@ -236,6 +236,7 @@ struct Configuration {
+   bool zInitfirst;
+   bool zInterpose;
+   bool zKeepTextSectionPrefix;
++  bool zNoBtCfi;
+   bool zNodefaultlib;
+   bool zNodelete;
+   bool zNodlopen;
+@@ -266,8 +267,13 @@ struct Configuration {
    ELFKind ekind = ELFNoneKind;
    uint16_t emachine = llvm::ELF::EM_NONE;
    llvm::Optional<uint64_t> imageBase;
