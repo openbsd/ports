@@ -1,4 +1,5 @@
 USE_WXNEEDED=	Yes
+USE_NOBTCFI=	Yes
 
 ONLY_FOR_ARCHS= amd64 i386 aarch64
 
@@ -23,6 +24,7 @@ SHARED_LIBS +=  wps-0.4-lo                4.12 # 4.12
 
 BV=		7.5
 VERSION=	${BV}.3.2
+REVISION=	0
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 CATEGORIES=	editors productivity
