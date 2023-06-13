@@ -92,9 +92,16 @@ share/mlt-7/
 share/mlt-7/avformat/
 share/mlt-7/avformat/blacklist.txt
 share/mlt-7/avformat/consumer_avformat.yml
+share/mlt-7/avformat/filter_avcolour_space.yml
+share/mlt-7/avformat/filter_avdeinterlace.yml
+share/mlt-7/avformat/filter_swresample.yml
+share/mlt-7/avformat/filter_swscale.yml
+share/mlt-7/avformat/link_avdeinterlace.yml
+share/mlt-7/avformat/link_swresample.yml
 share/mlt-7/avformat/producer_avformat.yml
 share/mlt-7/avformat/resolution_scale.yml
 share/mlt-7/avformat/yuv_only.txt
+share/mlt-7/chain_normalizers.ini
 share/mlt-7/core/
 share/mlt-7/core/consumer_multi.yml
 share/mlt-7/core/filter_audiomap.yml
@@ -125,6 +132,7 @@ share/mlt-7/core/loader.ini
 share/mlt-7/core/producer_colour.yml
 share/mlt-7/core/producer_consumer.yml
 share/mlt-7/core/producer_hold.yml
+share/mlt-7/core/producer_loader-nogl.yml
 share/mlt-7/core/producer_loader.yml
 share/mlt-7/core/producer_melt.yml
 share/mlt-7/core/producer_melt_file.yml
@@ -315,6 +323,15 @@ share/mlt-7/presets/consumer/avformat/stills/PPM
 share/mlt-7/presets/consumer/avformat/stills/TGA
 share/mlt-7/presets/consumer/avformat/stills/TIFF
 share/mlt-7/presets/consumer/avformat/stills/webp
+share/mlt-7/presets/consumer/avformat/ten_bit/
+share/mlt-7/presets/consumer/avformat/ten_bit/AV1
+share/mlt-7/presets/consumer/avformat/ten_bit/DNxHR-HQ
+share/mlt-7/presets/consumer/avformat/ten_bit/FFV1
+share/mlt-7/presets/consumer/avformat/ten_bit/ProRes 422
+share/mlt-7/presets/consumer/avformat/ten_bit/ProRes 444
+share/mlt-7/presets/consumer/avformat/ten_bit/ProRes HQ
+share/mlt-7/presets/consumer/avformat/ten_bit/x264-high10
+share/mlt-7/presets/consumer/avformat/ten_bit/x265-main10
 share/mlt-7/presets/consumer/avformat/vp9
 share/mlt-7/presets/consumer/avformat/webm
 share/mlt-7/presets/consumer/avformat/webm-pass1
@@ -419,6 +436,7 @@ share/mlt-7/profiles/vertical_hd_30
 share/mlt-7/profiles/vertical_hd_60
 share/mlt-7/qt/filter_gpsgraphic.yml
 share/mlt-7/qt/filter_gpstext.yml
+share/mlt-7/resample/link_resample.yml
 share/mlt-7/sdl/
 share/mlt-7/sdl/consumer_sdl.yml
 share/mlt-7/sdl/consumer_sdl_audio.yml
@@ -432,6 +450,9 @@ share/mlt-7/sox/filter_sox.yml
 share/mlt-7/sox/filter_sox_effect.yml
 share/mlt-7/vorbis/
 share/mlt-7/vorbis/producer_vorbis.yml
+share/mlt-7/xine/
+share/mlt-7/xine/filter_deinterlace.yml
+share/mlt-7/xine/link_deinterlace.yml
 share/mlt-7/xml/
 share/mlt-7/xml/consumer_xml.yml
 share/mlt-7/xml/mlt-xml.dtd

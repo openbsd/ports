@@ -1,11 +1,9 @@
 COMMENT-main =		multimedia transformations framework
 COMMENT-gpl2 =		GPLv2-licensed modules for mlt
-VERSION =		7.12.0
+VERSION =		7.16.0
 DISTNAME =		mlt-${VERSION}
 PKGNAME-main =		mlt7-${VERSION}
 PKGNAME-gpl2 =		mlt7-gpl2-${VERSION}
-REVISION-gpl2 =		0
-REVISION-main =		0
 
 CATEGORIES =		multimedia devel
 
@@ -17,8 +15,8 @@ MASTER_SITES =		\
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 # XXX versions should be kept in sync together
-SHARED_LIBS =		mlt-7		4.0
-SHARED_LIBS +=		mlt++-7		4.0
+SHARED_LIBS =		mlt-7		4.1
+SHARED_LIBS +=		mlt++-7		4.1
 
 # GPLv2+, LGPLv2.1+
 # Actually, qimage module could be under GPLv3+ if one more object
@@ -32,7 +30,8 @@ WANTLIB-main += m pango-1.0 pangoft2-1.0 sox swresample swscale vorbis
 WANTLIB-main += vorbisfile xml2
 
 WANTLIB-gpl2 += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Svg Qt5Widgets
-WANTLIB-gpl2 += Qt5Xml exif m mlt++-7 mlt-7 pulse pulse-simple samplerate
+WANTLIB-gpl2 += Qt5Xml exif fftw3 m mlt++-7 mlt-7 pulse pulse-simple
+WANTLIB-gpl2 += samplerate vidstab
 
 MULTI_PACKAGES =	-main -gpl2
 
@@ -63,6 +62,8 @@ LIB_DEPENDS-gpl2 =	${BUILD_PKGPATH},-main \
 			audio/libsamplerate \
 			audio/pulseaudio \
 			graphics/libexif \
+			math/fftw3 \
+			multimedia/libvidstab \
 			x11/qt5/qtsvg
 
 CONFIGURE_ARGS =	-DMOD_RUBBERBAND=OFF

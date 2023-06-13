@@ -6,6 +6,6 @@ Index: src/tests/test_properties/test_properties.cpp
  
  extern "C" {
 -#define __APPLE__
- #include <framework/mlt_property.h>
  #include <framework/mlt_animation.h>
+ #include <framework/mlt_property.h>
  }
