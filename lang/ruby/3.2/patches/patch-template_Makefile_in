@@ -1,0 +1,16 @@
+Allow linking libruby to libc++abi on amd64/aarch64, so other
+software that links to libruby other than ruby itself does
+not need to manually handle arch-dependent linking.
+
+Index: template/Makefile.in
+--- template/Makefile.in.orig
++++ template/Makefile.in
+@@ -339,7 +339,7 @@ verify-static-library: $(LIBRUBY_A)
+ $(LIBRUBY_SO):
+ 		@-[ -n "$(EXTSTATIC)" ] || $(PRE_LIBRUBY_UPDATE)
+ 		$(ECHO) linking shared-library $@
+-		$(Q) $(LDSHARED) $(DLDFLAGS) $(OBJS) $(DLDOBJS) $(SOLIBS) $(EXTSOLIBS) $(OUTFLAG)$@
++		$(Q) $(LDSHARED) ${LIBRUBY_DLDFLAGS} $(DLDFLAGS) $(OBJS) $(DLDOBJS) $(SOLIBS) $(EXTSOLIBS) $(OUTFLAG)$@
+ 		-$(Q) $(OBJCOPY) -w -L '$(SYMBOL_PREFIX)Init_*' -L '$(SYMBOL_PREFIX)ruby_static_id_*' \
+ 			-L '$(SYMBOL_PREFIX)*_threadptr_*' -L '$(SYMBOL_PREFIX)*_ec_*' $@
+ 		$(Q) $(POSTLINK)

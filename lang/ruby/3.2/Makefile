@@ -3,6 +3,7 @@ DISTNAME =		ruby-${VERSION}
 SHARED_LIBS =		ruby32	0.0
 NEXTVER =		3.3
 PKGSPEC-main ?=         ruby->=3.2.0,<${NEXTVER}
+REVISION-main =		0
 
 PSEUDO_FLAVORS=		no_ri_docs bootstrap
 # Do not build the RI docs on slow arches
@@ -16,6 +17,7 @@ FLAVOR?=
 # Support YJIT JIT compiler on arches Ruby supports
 BUILD_DEPENDS +=	lang/rust
 WANTLIB-main +=		c++abi
+MAKE_ENV +=		LIBRUBY_DLDFLAGS="-lc++abi"
 .endif
 
 MULTI_PACKAGES =	-main -ri_docs
