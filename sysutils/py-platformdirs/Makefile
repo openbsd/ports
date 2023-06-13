@@ -1,6 +1,6 @@
 COMMENT=	determine appropriate platform-specific directories
 
-MODPY_EGG_VERSION=	3.5.0
+MODPY_EGG_VERSION=	3.5.3
 DISTNAME=	platformdirs-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 
@@ -22,8 +22,5 @@ TEST_DEPENDS=	devel/py-appdirs${MODPY_FLAVOR} \
 
 FLAVORS=	python3
 FLAVOR=		python3
-
-post-install:
-	rm ${WRKINST}${MODPY_SITEPKG}/platformdirs/unix.py${PATCHORIG}
 
 .include <bsd.port.mk>
