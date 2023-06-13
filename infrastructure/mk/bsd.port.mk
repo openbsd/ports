@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1591 2023/06/13 10:19:37 semarie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1592 2023/06/13 10:28:40 semarie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -3133,7 +3133,7 @@ print-plist-libs-with-depends:
 print-plist-all:
 .for _S in ${BUILD_PACKAGES}
 		@${ECHO_MSG} "===> ${FULLPKGNAME${_S}}"
-.  if ${STATIC_PLIST${_s}:L} == "yes"
+.  if ${STATIC_PLIST${_S}:L} == "yes"
 		@${_PKG_CREATE} -n -q ${PKG_ARGS${_S}} ${_PACKAGE_COOKIE${_S}}
 .  else
 		@${_PKG_CREATE} -n -q ${PKG_ARGS${_S}:S@^-f$@-D@g} -f/dev/null ${_PACKAGE_COOKIE${_S}}
