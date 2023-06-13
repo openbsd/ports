@@ -10,7 +10,7 @@ V =		8.0.0
 PKGNAME =	digikam-${V}
 DISTNAME =	digiKam-${V}
 CATEGORIES =	graphics
-REVISION =	2
+REVISION =	3
 
 HOMEPAGE =	https://www.digikam.org/
 
@@ -24,14 +24,14 @@ SHARED_LIBS +=  digikamgui                5.0 # 8.0
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} EGL GL GLU Grantlee_Templates ICE
-WANTLIB += KF5AkonadiContact KF5AkonadiCore KF5AkonadiWidgets
 WANTLIB += KF5Auth KF5AuthCore KF5CalendarCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5Contacts
-WANTLIB += KF5CoreAddons KF5FileMetaData KF5GrantleeTheme KF5I18n
-WANTLIB += KF5IconThemes KF5ItemModels KF5JobWidgets KF5KIOCore
-WANTLIB += KF5KIOGui KF5KIOWidgets KF5Notifications KF5NotifyConfig
-WANTLIB += KF5Sane KF5Service KF5Solid KF5SonnetCore KF5SonnetUi
-WANTLIB += KF5ThreadWeaver KF5WidgetsAddons KF5WindowSystem KF5XmlGui
+WANTLIB += KF5CoreAddons KF5FileMetaData KF5I18n KF5IconThemes
+WANTLIB += KF5ItemModels KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets
+WANTLIB += KF5Notifications KF5NotifyConfig KF5Sane KF5Service
+WANTLIB += KF5Solid KF5SonnetCore KF5SonnetUi KF5ThreadWeaver
+WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui KPim5AkonadiContact
+WANTLIB += KPim5AkonadiCore KPim5AkonadiWidgets KPim5GrantleeTheme
 WANTLIB += Magick++-6.Q16 MagickCore-6.Q16 MagickWand-6.Q16 Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5NetworkAuth Qt5OpenGL
 WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels

@@ -3,7 +3,7 @@ here
 Index: core/libs/dplugins/webservices/o2/src/o2.cpp
 --- core/libs/dplugins/webservices/o2/src/o2.cpp.orig
 +++ core/libs/dplugins/webservices/o2/src/o2.cpp
-@@ -185,7 +185,7 @@ void O2::link() {
+@@ -204,7 +204,7 @@ void O2::link() {
          } else {
              // Start listening to authentication replies
              if (!replyServer()->isListening()) {
