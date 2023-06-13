@@ -2,7 +2,7 @@ COMMENT=	XMPP desktop client
 VERSION=	0.4.2
 DISTNAME=	dino-${VERSION}
 CATEGORIES=	net x11
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=	crypto-vala               0.0 # 0.0
 SHARED_LIBS +=	dino                      2.0 # 0.0
@@ -24,7 +24,8 @@ BUILD_DEPENDS=	devel/gettext,-tools \
 RUN_DEPENDS=	devel/desktop-file-utils \
 		multimedia/gstreamer1/plugins-good \
 		x11/gtk+4,-guic
-LIB_DEPENDS=	devel/libgee \
+LIB_DEPENDS=	audio/libcanberra,-main \
+		devel/libgee \
 		devel/libsoup3 \
 		graphics/libqrencode \
 		multimedia/gstreamer1/plugins-base \
@@ -38,14 +39,18 @@ LIB_DEPENDS=	devel/libgee \
 		x11/gnome/libadwaita \
 		x11/gtk+4
 
-WANTLIB += adwaita-1 c cairo cairo-gobject gcrypt gdk_pixbuf-2.0 gee-0.8
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnutls gobject-2.0 gpgme
-WANTLIB += graphene-1.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstreamer-1.0
-WANTLIB += gstrtp-1.0 gstvideo-1.0 gtk-4 harfbuzz icudata icuuc
-WANTLIB += intl m nice pango-1.0 pangocairo-1.0 qrencode signal-protocol-c
-WANTLIB += soup-3.0 sqlite3 srtp2
+WANTLIB += adwaita-1 c cairo cairo-gobject canberra gcrypt gdk_pixbuf-2.0
+WANTLIB += gee-0.8 gio-2.0 glib-2.0 gmodule-2.0 gnutls gobject-2.0
+WANTLIB += gpgme graphene-1.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0
+WANTLIB += gstreamer-1.0 gstrtp-1.0 gstvideo-1.0 gtk-4 harfbuzz
+WANTLIB += icudata icuuc intl m nice pango-1.0 pangocairo-1.0
+WANTLIB += qrencode signal-protocol-c soup-3.0 sqlite3 srtp2
 
-CONFIGURE_ARGS =	-DBUILD_TESTS=ON -DUSE_SOUP3=yes
+
+CONFIGURE_ARGS =	-DBUILD_TESTS=ON \
+			-DUSE_SOUP3=yes \
+			-DENABLED_PLUGINS=notification-sound
+
 
 MODCMAKE_LDFLAGS =		-L${LOCALBASE}/lib
 

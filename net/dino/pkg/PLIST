@@ -8,6 +8,7 @@ lib/dino/
 lib/dino/plugins/
 @so lib/dino/plugins/http-files.so
 @so lib/dino/plugins/ice.so
+@so lib/dino/plugins/notification-sound.so
 @so lib/dino/plugins/omemo.so
 @so lib/dino/plugins/openpgp.so
 @so lib/dino/plugins/rtp.so
