@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1590 2023/06/12 17:40:46 sthen Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1591 2023/06/13 10:19:37 semarie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -794,7 +794,8 @@ USE_LLD ?= Yes
 USE_LLD ?= No
 .endif
 
-USE_NOBTCFI ?= No
+USE_NOBTCFI-${MACHINE_ARCH} ?= No
+USE_NOBTCFI ?= ${USE_NOBTCFI-${MACHINE_ARCH}}
 .if ${USE_NOBTCFI:L} == "yes" && ${USE_LLD:L} == "yes"
 _LINKER_FLAGS += -z nobtcfi
 .endif
