@@ -1,6 +1,6 @@
 COMMENT=	command-line tool for installing Python packages
 
-MODPY_EGG_VERSION=	23.1.1
+MODPY_EGG_VERSION=	23.1.2
 
 DISTNAME=	pip-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
