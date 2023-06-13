@@ -123,6 +123,8 @@ RUN_DEPENDS +=	${MODMOZ_RUN_DEPENDS}
 
 USE_GMAKE ?=	Yes
 
+USE_NOBTCFI ?=	Yes
+
 # no --with-system-jpeg starting with fx 18, requires libjpeg-turbo because of bug 791305
 # no --with-system-ffi, needs 3.0.10 when not using gcc
 # no --with-system-cairo, removed in #1432751

@@ -2,7 +2,7 @@ COMMENT =	Firefox web browser, Extended Support Release
 ONLY_FOR_ARCHS =	amd64 aarch64
 
 MOZILLA_VERSION =	102.12.0esr
-REVISION =		0
+REVISION =		1
 MOZILLA_PROFDATA_TASKID=Bf-yEotXQlqhx_XIVkOp4Q
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox-esr
