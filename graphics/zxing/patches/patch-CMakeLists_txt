@@ -10,14 +10,42 @@ Index: CMakeLists.txt
  if(OpenCV_FOUND)
      list(APPEND LIBZXING_FILES
          opencv/src/zxing/MatSource.cpp
-@@ -57,8 +57,8 @@ if(OpenCV_FOUND)
+@@ -87,20 +87,17 @@ file(GLOB_RECURSE ZXING_FILES
+ add_executable(zxing ${ZXING_FILES})
+ target_link_libraries(zxing libzxing)
+ 
+-install(TARGETS zxing libzxing EXPORT zxing-targets
+-	LIBRARY DESTINATION lib
++install(TARGETS zxing 
+ 	RUNTIME DESTINATION bin
+-	ARCHIVE DESTINATION lib
+-    INCLUDES DESTINATION include
+ )
+ 
+-install(EXPORT zxing-targets DESTINATION lib/zxing/cmake NAMESPACE zxing::)
++#install(EXPORT zxing-targets DESTINATION lib/zxing/cmake NAMESPACE zxing::)
+ 
+-install(
+-    DIRECTORY core/src/zxing/
+-    DESTINATION include/zxing
+-    FILES_MATCHING PATTERN "*.h"
+-)
++#install(
++#    DIRECTORY core/src/zxing/
++#    DESTINATION include/zxing
++#    FILES_MATCHING PATTERN "*.h"
++#)
+ 
+ if(OpenCV_FOUND)
+     install(
+@@ -110,8 +107,8 @@ if(OpenCV_FOUND)
+     )
  endif()
  
- include_directories(core/src)
--add_library(libzxing ${LIBZXING_FILES})
--set_target_properties(libzxing PROPERTIES PREFIX "")
-+add_library(libzxing SHARED ${LIBZXING_FILES})
-+set_target_properties(libzxing PROPERTIES PREFIX "" VERSION ${LIBzxing_VERSION})
+-configure_file(cmake/zxing-config.cmake.in zxing-config.cmake @ONLY)
+-install(FILES ${CMAKE_BINARY_DIR}/zxing-config.cmake DESTINATION lib/zxing/cmake)
++#configure_file(cmake/zxing-config.cmake.in zxing-config.cmake @ONLY)
++#install(FILES ${CMAKE_BINARY_DIR}/zxing-config.cmake DESTINATION lib/zxing/cmake)
  
- find_package(Iconv)
- if(ICONV_FOUND)
+ if(BUILD_TESTING)
+     # Add testrunner executable.
