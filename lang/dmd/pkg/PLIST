@@ -12,6 +12,7 @@ include/dmd/druntime/import/core/checkedint.d
 include/dmd/druntime/import/core/cpuid.d
 include/dmd/druntime/import/core/demangle.d
 include/dmd/druntime/import/core/exception.d
+include/dmd/druntime/import/core/factory.d
 include/dmd/druntime/import/core/gc/
 include/dmd/druntime/import/core/gc/config.d
 include/dmd/druntime/import/core/gc/gcinterface.d

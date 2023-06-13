@@ -1,7 +1,7 @@
 # i386 forthcoming
 ONLY_FOR_ARCHS =	amd64
 
-V =		2.102.0
+V =		2.104.0
 COMMENT =	reference compiler for the D programming language
 DISTFILES =	dmd-${V}{v${V}}.tar.gz:1 \
 		dmd-${V}-bootstrap.tar.gz:0 \
