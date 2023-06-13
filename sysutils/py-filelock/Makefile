@@ -1,6 +1,6 @@
 COMMENT=	platform independent file lock
 
-MODPY_EGG_VERSION=	3.12.0
+MODPY_EGG_VERSION=	3.12.1
 DISTNAME=	filelock-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 
@@ -17,6 +17,7 @@ MODPY_PI=	Yes
 MODPY_PYBUILD=	hatch-vcs
 
 TEST_DEPENDS=	devel/py-test-cov${MODPY_FLAVOR} \
+		devel/py-test-mock${MODPY_FLAVOR} \
 		devel/py-test-timeout${MODPY_FLAVOR}
 
 FLAVORS=	python3
