@@ -347,5 +347,6 @@
      SUBDIR += zimg
      SUBDIR += zint
      SUBDIR += zxing
+     SUBDIR += zxing-cpp
 
 .include <bsd.port.subdir.mk>
