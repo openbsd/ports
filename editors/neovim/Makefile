@@ -14,6 +14,10 @@ COMMENT =	continuation and extension of Vim
 GH_ACCOUNT =	neovim
 GH_PROJECT =	neovim
 GH_TAGNAME =	v0.9.1
+REVISION =	0
+
+# embedded luajit
+USE_NOBTCFI =	Yes
 
 CATEGORIES =	editors devel
 HOMEPAGE =	https://neovim.io
