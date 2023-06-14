@@ -1,6 +1,6 @@
 COMMENT =	easy to use 2D geometry library in C++
 
-V =		1.2.2
+V =		1.3
 DISTNAME =	lib2geom-${V}
 
 CATEGORIES =	geo graphics
