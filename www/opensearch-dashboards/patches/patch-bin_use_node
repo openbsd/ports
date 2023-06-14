@@ -10,7 +10,7 @@ Index: bin/use_node
  elif [ $UNAME = "Darwin" ]; then
    OS="darwin"
  else
-@@ -68,7 +70,7 @@ fi
+@@ -74,7 +76,7 @@ fi
  if [ -x "$NODE" ]; then
    # Node.js binary was found where it was expected; no need to show an error
    NODE_ERROR_SHOW=
