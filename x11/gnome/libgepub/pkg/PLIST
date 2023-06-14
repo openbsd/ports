@@ -3,9 +3,7 @@ include/libgepub-0.7/gepub-archive.h
 include/libgepub-0.7/gepub-doc.h
 include/libgepub-0.7/gepub-text-chunk.h
 include/libgepub-0.7/gepub.h
-lib/girepository-1.0/
 lib/girepository-1.0/Gepub-0.7.typelib
 @lib lib/libgepub-0.7.so.${LIBgepub-0.7_VERSION}
 lib/pkgconfig/libgepub-0.7.pc
-share/gir-1.0/
 share/gir-1.0/Gepub-0.7.gir
