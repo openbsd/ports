@@ -257,6 +257,7 @@
      SUBDIR += pixiewps
      SUBDIR += pizauth
      SUBDIR += plaso
+     SUBDIR += plass
      SUBDIR += polarssl
      SUBDIR += portscanner
      SUBDIR += portsentry
