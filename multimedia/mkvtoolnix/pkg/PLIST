@@ -85,6 +85,7 @@ share/metainfo/
 share/metainfo/org.bunkus.mkvtoolnix-gui.appdata.xml
 share/mime/packages/org.bunkus.mkvtoolnix-gui.xml
 share/mkvtoolnix/
+share/mkvtoolnix/qt_resources.rcc
 share/mkvtoolnix/sounds/
 share/mkvtoolnix/sounds/finished-1.webm
 share/mkvtoolnix/sounds/finished-2.webm

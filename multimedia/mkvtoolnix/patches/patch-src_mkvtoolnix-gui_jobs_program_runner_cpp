@@ -1,7 +1,7 @@
 Index: src/mkvtoolnix-gui/jobs/program_runner.cpp
 --- src/mkvtoolnix-gui/jobs/program_runner.cpp.orig
 +++ src/mkvtoolnix-gui/jobs/program_runner.cpp
-@@ -15,6 +15,8 @@
+@@ -16,6 +16,8 @@
  #include "mkvtoolnix-gui/jobs/program_runner/linux_program_runner.h"
  #elif defined(SYS_APPLE)
  #include "mkvtoolnix-gui/jobs/program_runner/macos_program_runner.h"
@@ -10,7 +10,7 @@ Index: src/mkvtoolnix-gui/jobs/program_runner.cpp
  #elif defined(SYS_WINDOWS)
  #include "mkvtoolnix-gui/jobs/program_runner/windows_program_runner.h"
  #endif // SYS_WINDOWS
-@@ -167,6 +169,8 @@ ProgramRunner::create() {
+@@ -168,6 +170,8 @@ ProgramRunner::create() {
    runner.reset(new LinuxProgramRunner{});
  #elif defined(SYS_APPLE)
    runner.reset(new MacOSProgramRunner{});
