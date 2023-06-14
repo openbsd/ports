@@ -1,8 +1,7 @@
 COMMENT =	planetarium simulator for KDE
 
-DISTNAME =	kstars-3.6.4
+DISTNAME =	kstars-3.6.5
 EPOCH =		0
-REVISION =	0
 
 CATEGORIES =	astro education
 
@@ -22,8 +21,8 @@ WANTLIB += KF5NotifyConfig KF5Plotting KF5Service KF5Solid KF5WidgetsAddons
 WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
 WANTLIB += Qt5DataVisualization Qt5Gui Qt5Network Qt5PrintSupport
 WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5Sql Qt5Svg Qt5WebSockets
-WANTLIB += Qt5Widgets Qt5Xml X11 c cfitsio m nova qt5keychain
-WANTLIB += raw wcs z
+WANTLIB += Qt5Widgets Qt5Xml X11 c cfitsio gsl gslcblas m nova
+WANTLIB += qt5keychain raw wcs z
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/kstars/}
 
@@ -62,6 +61,7 @@ LIB_DEPENDS =		astro/wcslib \
 			devel/kf5/kwidgetsaddons \
 			devel/kf5/kxmlgui \
 			devel/kf5/solid \
+			devel/gsl \
 			graphics/libraw \
 			math/cfitsio>=3.450 \
 			security/qtkeychain \
