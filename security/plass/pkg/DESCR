@@ -1,0 +1,9 @@
+plass is a password manager inspired by password-store in the essence
+but completely reimplemented with a smaller and cleaner interface.  It
+doesn't have fancy trees nor colors in the output; the absence of these
+is considered a feature.
+
+With plass every password lives inside a gpg(1) encrypted file somewhere
+inside ~/.password-store which is managed with the got(1) VCS to keep
+track of changes, recover accidental overwrites and synchronize it
+across devices.

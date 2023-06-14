@@ -1,0 +1,6 @@
+bin/plass
+bin/pwg
+@bin bin/totp
+@man man/man1/plass.1
+@man man/man1/pwg.1
+@man man/man1/totp.1
