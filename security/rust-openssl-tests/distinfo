@@ -6,7 +6,7 @@ SHA256 (cargo/cexpr-0.6.0.tar.gz) = b6w4epi7fDcpIFfP/FbWLstimQACZAJjOukWDfk6h2Y=
 SHA256 (cargo/cfg-if-0.1.10.tar.gz) = R4W90clrKoRrK9fMAuhraz2/FOflNEbE9UySo2EECCI=
 SHA256 (cargo/cfg-if-1.0.0.tar.gz) = uvHeQzl2FYi8Bhnjy8ASDuWC67dLU7Tvv3kRe9LaQP0=
 SHA256 (cargo/clang-sys-1.6.1.tar.gz) = xoj8dEMoCOPraEyuiDCoa+HWaivVjh8kjtCWClkLr28=
-SHA256 (cargo/ctest2-0.4.6.tar.gz) = fGrtNUn21CXpiX6SPqf3FGcyFRoAmpZWeaCxl5BUWtE=
+SHA256 (cargo/ctest2-0.4.7.tar.gz) = 8q36puSQsb/v/TjpCAziIW7obJfpmAh1bi1R6P7+XYQ=
 SHA256 (cargo/dirs-2.0.2.tar.gz) = E66omlyTNkqY6bN7L6I37/u2lNXP4BxbcJQffrCH1eM=
 SHA256 (cargo/dirs-sys-0.3.7.tar.gz) = Gx0dkcky70HA8mY6qLDKA0LURNhCwGkUqgp+NS0LraY=
 SHA256 (cargo/either-1.8.1.tar.gz) = f8qrsv74yRDn9MfOn2ehKDoXFYeafCMMqdbRrjHxbZE=
@@ -23,7 +23,7 @@ SHA256 (cargo/lazy_static-1.4.0.tar.gz) = 4qutI/vEKzcA8vJ5hE3IMq2ysusGmy35GPRVxO
 SHA256 (cargo/lazycell-1.3.0.tar.gz) = gw0Izh0dlB5rMGRfGg61ZDAT2DXON3ml/CCCYdvhD1U=
 SHA256 (cargo/libc-0.2.146.tar.gz) = +SvkkzwT/UmIYqngKjBV+KjZwDnOM9uXMG/Vpsqn8ps=
 SHA256 (cargo/libloading-0.7.4.tar.gz) = tnOA/TsvvnUnpgbhhynSHG85UWM9BQBXTE3CLS1ji58=
-SHA256 (cargo/log-0.4.18.tar.gz) = UY73by+HNlkWsUKETBbY/v2FA5vFaZBQIQp3eO4c0d4=
+SHA256 (cargo/log-0.4.19.tar.gz) = sGpM3kwPJxpEZ4Lj7/jeeJVIzlfbyOypKSwn9KQgBLQ=
 SHA256 (cargo/memchr-2.5.0.tar.gz) = Lf/lLs8ndy5gGQW3Uiy073kNLMIDSIu9Di/oX8t0Vm0=
 SHA256 (cargo/minimal-lexical-0.2.1.tar.gz) = aDVMXGvTbXP/P+zrBe+lm2rLdiZhf0livjIqgl5h95o=
 SHA256 (cargo/nom-7.1.3.tar.gz) = 0nOYPFplenCj6PKgEymCLzuMgXK3OCZBGlV1HkBKCko=
@@ -58,7 +58,7 @@ SHA256 (cargo/which-4.4.0.tar.gz) = JEHHhMUrKJoFS3IB/JMlPiiPCU4vS+kFg0MSfEImomk=
 SHA256 (cargo/winapi-0.3.9.tar.gz) = XIOaZ0/NepiVLlkyQupACr6TmSdGdh44ZBQF0osA9Bk=
 SHA256 (cargo/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = rDuHxjYgQm3ZuZHlzgMp7/VFvMu7NPO+Cf9vtqtRt7Y=
 SHA256 (cargo/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = cS4ieEHQV8HuHNL7Ivp+WlRhro5I+iynnsQs/BkxGD8=
-SHA256 (rust-openssl-tests-20230608-006afe98.tar.gz) = V4ktH+H1Od5/xApJ0wpUpUhCJdRGSLCdsdWHnSa1tS0=
+SHA256 (rust-openssl-tests-20230614-8e16a8b6.tar.gz) = Jv1dtvu24fdoFkNwyQa+stCRC51rYabS5SXZwfLtaPc=
 SIZE (cargo/bindgen-0.64.0.tar.gz) = 204700
 SIZE (cargo/bitflags-1.3.2.tar.gz) = 23021
 SIZE (cargo/bssl-sys-0.1.0.tar.gz) = 1061
@@ -67,7 +67,7 @@ SIZE (cargo/cexpr-0.6.0.tar.gz) = 17966
 SIZE (cargo/cfg-if-0.1.10.tar.gz) = 7933
 SIZE (cargo/cfg-if-1.0.0.tar.gz) = 7934
 SIZE (cargo/clang-sys-1.6.1.tar.gz) = 41346
-SIZE (cargo/ctest2-0.4.6.tar.gz) = 23286
+SIZE (cargo/ctest2-0.4.7.tar.gz) = 23309
 SIZE (cargo/dirs-2.0.2.tar.gz) = 11779
 SIZE (cargo/dirs-sys-0.3.7.tar.gz) = 10597
 SIZE (cargo/either-1.8.1.tar.gz) = 16027
@@ -84,7 +84,7 @@ SIZE (cargo/lazy_static-1.4.0.tar.gz) = 10443
 SIZE (cargo/lazycell-1.3.0.tar.gz) = 12502
 SIZE (cargo/libc-0.2.146.tar.gz) = 684707
 SIZE (cargo/libloading-0.7.4.tar.gz) = 27580
-SIZE (cargo/log-0.4.18.tar.gz) = 38339
+SIZE (cargo/log-0.4.19.tar.gz) = 38073
 SIZE (cargo/memchr-2.5.0.tar.gz) = 65812
 SIZE (cargo/minimal-lexical-0.2.1.tar.gz) = 94841
 SIZE (cargo/nom-7.1.3.tar.gz) = 117570
@@ -119,4 +119,4 @@ SIZE (cargo/which-4.4.0.tar.gz) = 10889
 SIZE (cargo/winapi-0.3.9.tar.gz) = 1200382
 SIZE (cargo/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = 2918815
 SIZE (cargo/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 2947998
-SIZE (rust-openssl-tests-20230608-006afe98.tar.gz) = 344808
+SIZE (rust-openssl-tests-20230614-8e16a8b6.tar.gz) = 344894
