@@ -1,6 +1,6 @@
 COMMENT =		framework for managing git pre-commit hooks
 
-MODPY_EGG_VERSION =	3.3.2
+MODPY_EGG_VERSION =	3.3.3
 DISTNAME =		pre_commit-${MODPY_EGG_VERSION}
 PKGNAME =		pre-commit-${MODPY_EGG_VERSION}
 
