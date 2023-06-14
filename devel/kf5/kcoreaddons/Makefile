@@ -23,6 +23,6 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 # gamin is totally unmaintained low quality software
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_FAM=ON
 
-CONFIGURE_ARGS +=	-DACCOUNTS_SERVICE_ICON_DIR=/var/db/AccountsService/icons
+CONFIGURE_ARGS +=	-DACCOUNTS_SERVICE_ICON_DIR=${VARBASE}/db/AccountsService/icons
 
 .include <bsd.port.mk>

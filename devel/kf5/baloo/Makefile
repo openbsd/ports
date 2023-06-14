@@ -13,10 +13,7 @@ WANTLIB += Qt5Network Qt5Qml c lmdb m
 
 WANTLIB += lib/inotify/inotify
 
-BUILD_DEPENDS =	devel/gettext,-tools \
-		devel/kf5/kidletime>=${MODKF5_VERSION}
-
-RUN_DEPENDS =	devel/kf5/kidletime>=${MODKF5_VERSION}
+BUILD_DEPENDS =	devel/gettext,-tools
 
 LIB_DEPENDS =	databases/lmdb \
 		devel/kf5/kconfig>=${MODKF5_VERSION} \
@@ -29,6 +26,7 @@ LIB_DEPENDS =	databases/lmdb \
 		devel/kf5/kio>=${MODKF5_VERSION} \
 		devel/kf5/kservice>=${MODKF5_VERSION} \
 		devel/kf5/solid>=${MODKF5_VERSION} \
+		devel/kf5/kidletime>=${MODKF5_VERSION} \
 		devel/libinotify \
 		x11/qt5/qtdeclarative
 
