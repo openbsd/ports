@@ -1,16 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2022/11/04 08:49:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2023/06/14 06:46:41 ajacoutot Exp $
 
 COMMENT=		collection of GStreamer effects for GNOME
 
 GNOME_PROJECT=		gnome-video-effects
-GNOME_VERSION=		0.5.0.20220219
-REVISION=		0
-
-# override gnome MODULE
-COMMIT=                 dd9ae10b74f12c9b476aceb42a64cf58b818a72f
-MASTER_SITES=           https://gitlab.gnome.org/GNOME/${GNOME_PROJECT}/-/archive/${COMMIT}/
-WRKDIST=                ${WRKDIR}/${GNOME_PROJECT}-${COMMIT}
-EXTRACT_SUFX=           .tar.gz
+GNOME_VERSION=		0.6.0
 
 CATEGORIES=		multimedia
 
