@@ -1,10 +1,11 @@
 - Add support for building against libestdc++ from ports-gcc.
-- Make clang emit the proper path to our libcompiler_rt.a when asked to.
+- Enable unwind tables on all clang architectures.
+- Arm is not ready for unwinding yet. Disable unwind info generation for now.
 
 Index: tools/clang/lib/Driver/ToolChains/OpenBSD.h
 --- tools/clang/lib/Driver/ToolChains/OpenBSD.h.orig
 +++ tools/clang/lib/Driver/ToolChains/OpenBSD.h
-@@ -77,6 +77,11 @@ class LLVM_LIBRARY_VISIBILITY OpenBSD : public Generic
+@@ -77,8 +77,22 @@ class LLVM_LIBRARY_VISIBILITY OpenBSD : public Generic
    void AddCXXStdlibLibArgs(const llvm::opt::ArgList &Args,
                             llvm::opt::ArgStringList &CmdArgs) const override;
  
@@ -15,4 +16,15 @@ Index: tools/clang/lib/Driver/ToolChains/OpenBSD.h
 +
    std::string getCompilerRT(const llvm::opt::ArgList &Args, StringRef Component,
                              FileType Type = ToolChain::FT_Static) const override;
++
++  bool IsUnwindTablesDefault(const llvm::opt::ArgList &Args) const override {
++    switch (getArch()) {
++      case llvm::Triple::arm:
++        return false;
++      default:
++        return true;
++    }
++  }
  
+   LangOptions::StackProtectorMode
+   GetDefaultStackProtectorLevel(bool KernelOrKext) const override {

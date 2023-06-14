@@ -29,11 +29,33 @@
   gain a slight advantage, but would avoid the variety of important runtime
   checks our malloc(3) code does.  In essence, the transforms performed are
   considered "anti-mitigation".
+- Make -mbranch-protection=bti the default on OpenBSD.
+- On openbsd amd64, emit IBT endbr64 instructions by default (meaning,
+  -fcf-protection=branch is the default).
+- On openbsd amd64, the compiler has been found to generate some nasty jump
+  table variations (calculate address into %rax, jmp %rax) which is not
+  compatible with IBT endbr64.  So we will have to disable jump tables by
+  default.
+- Turn on pointer-authentication on arm64 as well by default.  This means
+  we effectively enable -mbranch-protection=standard on arm64 now.
 
 Index: tools/clang/lib/Driver/ToolChains/Clang.cpp
 --- tools/clang/lib/Driver/ToolChains/Clang.cpp.orig
 +++ tools/clang/lib/Driver/ToolChains/Clang.cpp
-@@ -2489,6 +2489,11 @@ static void CollectArgsForIntegratedAssembler(Compilat
+@@ -1818,6 +1818,12 @@ void Clang::AddAArch64TargetArgs(const ArgList &Args,
+         Args.MakeArgString(Twine("-msign-return-address-key=") + Key));
+     if (IndirectBranches)
+       CmdArgs.push_back("-mbranch-target-enforce");
++  } else {
++    if (Triple.isOSOpenBSD()) {
++      CmdArgs.push_back("-msign-return-address=non-leaf");
++      CmdArgs.push_back("-msign-return-address-key=a_key");
++      CmdArgs.push_back("-mbranch-target-enforce");
++    }
+   }
+ 
+   // Handle -msve_vector_bits=<bits>
+@@ -2489,6 +2495,11 @@ static void CollectArgsForIntegratedAssembler(Compilat
            CmdArgs.push_back("-soft-float");
            continue;
          }
@@ -45,7 +67,7 @@ Index: tools/clang/lib/Driver/ToolChains/Clang.cpp
  
          MipsTargetFeature = llvm::StringSwitch<const char *>(Value)
                                  .Case("-mips1", "+mips1")
-@@ -4943,9 +4948,12 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -4943,9 +4954,12 @@ void Clang::ConstructJob(Compilation &C, const JobActi
        OFastEnabled ? options::OPT_Ofast : options::OPT_fstrict_aliasing;
    // We turn strict aliasing off by default if we're in CL mode, since MSVC
    // doesn't do any TBAA.
@@ -60,7 +82,7 @@ Index: tools/clang/lib/Driver/ToolChains/Clang.cpp
      CmdArgs.push_back("-relaxed-aliasing");
    if (!Args.hasFlag(options::OPT_fstruct_path_tbaa,
                      options::OPT_fno_struct_path_tbaa))
-@@ -5868,7 +5876,8 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -5868,7 +5882,8 @@ void Clang::ConstructJob(Compilation &C, const JobActi
                                        options::OPT_fno_strict_overflow)) {
      if (A->getOption().matches(options::OPT_fno_strict_overflow))
        CmdArgs.push_back("-fwrapv");
@@ -70,7 +92,7 @@ Index: tools/clang/lib/Driver/ToolChains/Clang.cpp
  
    if (Arg *A = Args.getLastArg(options::OPT_freroll_loops,
                                 options::OPT_fno_reroll_loops))
-@@ -5888,7 +5897,48 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -5888,7 +5903,48 @@ void Clang::ConstructJob(Compilation &C, const JobActi
                     options::OPT_mno_speculative_load_hardening, false))
      CmdArgs.push_back(Args.MakeArgString("-mspeculative-load-hardening"));
  
@@ -120,7 +142,19 @@ Index: tools/clang/lib/Driver/ToolChains/Clang.cpp
    RenderSCPOptions(TC, Args, CmdArgs);
    RenderTrivialAutoVarInitOptions(D, TC, Args, CmdArgs);
  
-@@ -6445,6 +6495,18 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -5961,6 +6017,11 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+   if (Arg *A = Args.getLastArg(options::OPT_fcf_protection_EQ)) {
+     CmdArgs.push_back(
+         Args.MakeArgString(Twine("-fcf-protection=") + A->getValue()));
++  } else if (Triple.isOSOpenBSD() && Triple.getArch() == llvm::Triple::x86_64) {
++    // Emit IBT endbr64 instructions by default
++    CmdArgs.push_back("-fcf-protection=branch");
++    // jump-table can generate indirect jumps, which are not permitted
++    CmdArgs.push_back("-fno-jump-tables");
+   }
+ 
+   // Forward -f options with positive and negative forms; we translate these by
+@@ -6445,6 +6506,18 @@ void Clang::ConstructJob(Compilation &C, const JobActi
                                       options::OPT_fno_rewrite_imports, false);
    if (RewriteImports)
      CmdArgs.push_back("-frewrite-imports");

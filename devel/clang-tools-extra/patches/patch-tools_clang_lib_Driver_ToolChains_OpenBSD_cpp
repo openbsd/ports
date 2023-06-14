@@ -1,6 +1,7 @@
 - Add support for building against libestdc++ from ports-gcc.
 - Allow the compiler driver to link the libclang_rt.profile library.
 - Use Component in OpenBSD::getCompilerRT to find libraries.
+- Enable kernel-address sanitizer for clang openbsd target
 
 Index: tools/clang/lib/Driver/ToolChains/OpenBSD.cpp
 --- tools/clang/lib/Driver/ToolChains/OpenBSD.cpp.orig
@@ -46,7 +47,18 @@ Index: tools/clang/lib/Driver/ToolChains/OpenBSD.cpp
    }
  
    if (!Args.hasArg(options::OPT_nostdlib, options::OPT_nostartfiles)) {
-@@ -301,17 +313,34 @@ void OpenBSD::AddCXXStdlibLibArgs(const ArgList &Args,
+@@ -247,6 +259,10 @@ SanitizerMask OpenBSD::getSupportedSanitizers() const 
+     Res |= SanitizerKind::FuzzerNoLink;
+   }
+ 
++  if (IsX86_64) {
++    Res |= SanitizerKind::KernelAddress;
++  }
++
+   return Res;
+ }
+ 
+@@ -301,17 +317,34 @@ void OpenBSD::AddCXXStdlibLibArgs(const ArgList &Args,
                                    ArgStringList &CmdArgs) const {
    bool Profiling = Args.hasArg(options::OPT_pg);
  
@@ -87,7 +99,7 @@ Index: tools/clang/lib/Driver/ToolChains/OpenBSD.cpp
  }
  
  Tool *OpenBSD::buildAssembler() const {
-@@ -321,3 +350,54 @@ Tool *OpenBSD::buildAssembler() const {
+@@ -321,3 +354,54 @@ Tool *OpenBSD::buildAssembler() const {
  Tool *OpenBSD::buildLinker() const { return new tools::openbsd::Linker(*this); }
  
  bool OpenBSD::HasNativeLLVMSupport() const { return true; }
