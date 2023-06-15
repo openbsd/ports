@@ -1,10 +1,10 @@
-SHARED_LIBS+=	scamperfile               4.1 # 5.0
-SHARED_LIBS +=  scamperctrl               0.0 # 1.0
+SHARED_LIBS+=	scamperfile               5.0 # 6.0
+SHARED_LIBS +=  scamperctrl               1.0 # 2.0
 
 COMMENT=	parallel internet measurement utility
 
 # https://mailman.caida.org/pipermail/scamper-announce/
-V=		20230323
+V=		20230614
 DISTNAME=	scamper-cvs-$V
 PKGNAME=	scamper-$V
 
@@ -26,7 +26,7 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-privsep-user=_scamper
 
 post-install:
-.for i in trace ping tracelb dealias neighbourdisc sniff
+.for i in trace ping tracelb dealias neighbourdisc sniff host
 	ln ${PREFIX}/bin/scamper ${PREFIX}/bin/scamper-$i
 .endfor
 
