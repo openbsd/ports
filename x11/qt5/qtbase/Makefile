@@ -31,7 +31,7 @@ SHARED_LIBS +=  Qt5Xml                       3.0 # 5.15
 SHARED_LIBS +=  Qt5EglFSDeviceIntegration    1.0 # 5.15
 SHARED_LIBS +=  Qt5EglFsKmsSupport           1.0 # 5.15
 SHARED_LIBS +=  Qt5OpenGLExtensions          0.0 # 5.15
-SHARED_LIBS +=  Qt5XcbQpa                    0.1 # 5.15
+SHARED_LIBS +=  Qt5XcbQpa                    1.0 # 5.15
 
 WANTLIB-main += ${COMPILER_LIBCXX} EGL GL ICE SM X11 X11-xcb Xext atk-1.0
 WANTLIB-main += c cairo cairo-gobject crypto cups dbus-1 double-conversion

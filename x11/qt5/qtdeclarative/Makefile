@@ -4,7 +4,7 @@ COMMENT-main =		Qt5 Quick and QML components
 MULTI_PACKAGES =	-main -examples
 DPB_PROPERTIES =	parallel
 
-SHARED_LIBS =   Qt5Qml                    3.3 # 5.9
+SHARED_LIBS =   Qt5Qml                    3.4 # 5.9
 SHARED_LIBS +=  Qt5Quick                  5.0 # 5.9
 SHARED_LIBS +=  Qt5QuickParticles         3.0 # 5.9
 SHARED_LIBS +=  Qt5QuickTest              3.0 # 5.9

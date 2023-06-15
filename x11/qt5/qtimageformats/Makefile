@@ -1,8 +1,8 @@
 QT5NAME =		QtImageFormats
 COMMENT =		support for additional image formats in Qt5
 
-WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui jasper m mng tiff
-WANTLIB += webp webpdemux webpmux
+WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui jasper m mng sharpyuv
+WANTLIB += tiff webp webpdemux webpmux
 
 LIB_DEPENDS =		graphics/jasper \
 			graphics/tiff \

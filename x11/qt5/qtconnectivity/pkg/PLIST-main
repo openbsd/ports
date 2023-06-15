@@ -7,6 +7,7 @@ include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/adapter1_bluez5_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/adapter_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/agent_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/androidbroadcastreceiver_p.h
+include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/androidutils_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/battery1_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/bluetoothmanagement_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/bluez5_helper_p.h
@@ -76,7 +77,7 @@ include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qbluetoothtransferrep
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qbluetoothtransferreply_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qbluetoothtransferrequest_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qbluetoothutils_winrt_p.h
-include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qleadvertiser_p.h
+include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qleadvertiser_bluez_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qlowenergycontroller_android_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qlowenergycontroller_bluez_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qlowenergycontroller_bluezdbus_p.h
