@@ -1,13 +1,12 @@
 COMMENT =	rspamd integration to the OpenSMTPD daemon
 
 # V is used in opensmtpd-filters/Makefile.inc
-V =		0.1.7
+V =		0.1.8
 
 MODGO_MODNAME =	github.com/poolpOrg/filter-rspamd
 MODGO_VERSION =	v${V}
 
 DISTNAME =	filter-rspamd-${MODGO_VERSION:S/v//}
-REVISION =	1
 
 FILTER_NAME =	rspamd
 
