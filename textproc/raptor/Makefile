@@ -1,14 +1,13 @@
 COMMENT=		RDF Parser Toolkit for Redland
-DISTNAME=		raptor2-2.0.15
+DISTNAME=		raptor2-2.0.16
 PKGNAME=		${DISTNAME:C/raptor2/raptor/}
 CATEGORIES=		textproc
-REVISION=		6
 
-SHARED_LIBS +=  raptor2              0.0      # 0.0
+SHARED_LIBS +=  raptor2              0.1      # 0.0
 
-HOMEPAGE=		http://librdf.org/
+HOMEPAGE=		https://librdf.org/
 
-MASTER_SITES=		http://download.librdf.org/source/
+MASTER_SITES=		https://download.librdf.org/source/
 
 # LGPL 2.1+, GPL 2+ or Apache 2+
 PERMIT_PACKAGE=	Yes
