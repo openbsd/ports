@@ -3,7 +3,7 @@ COMMENT =	terminal-based music player
 GH_ACCOUNT =	clangen
 GH_PROJECT =	musikcube
 GH_TAGNAME =	3.0.0
-
+REVISION =	0
 CATEGORIES =	audio
 
 HOMEPAGE =	https://musikcube.com/
@@ -19,10 +19,10 @@ COMPILER =	base-clang ports-gcc
 
 MODULES =	devel/cmake
 
-CONFIGURE_ARGS += -DENABLE_BUNDLED_TAGLIB=false
-
-BUILD_DEPENDS+=	devel/asio
-LIB_DEPENDS =	audio/libopenmpt \
+BUILD_DEPENDS+=	devel/asio \
+		textproc/nlohmann-json
+LIB_DEPENDS =	audio/lame \
+		audio/libopenmpt \
 		audio/taglib \
 		devel/libev \
 		graphics/ffmpeg \
