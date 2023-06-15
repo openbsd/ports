@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Sql.pm,v 1.35 2021/01/29 08:30:37 espie Exp $
+# $OpenBSD: Sql.pm,v 1.36 2023/06/15 14:33:13 espie Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -17,96 +17,83 @@
 
 # This does implement objects for an Sql Tree.
 
-use strict;
-use warnings;
+use v5.36;
 
 package Sql::Object;
-sub new
+sub new($class, $name, %rest)
 {
-	my ($class, $name, %rest) = @_;
 	my $o = \%rest;
 	$o->{name} = $name;
 	bless $o, $class;
 }
 
-sub indent
+sub indent($self, $string, $plus)
 {
-	my ($self, $string, $plus) = @_;
 	$self->{level} //= 0;
 	return ' 'x(($self->{level}+$plus)).$string;
 }
 
-sub name
+sub name($self)
 {
-	my $self = shift;
 	return $self->{name};
 }
 
-sub drop
+sub drop($self)
 {
-	my $self = shift;
 	return "DROP ".$self->type." IF EXISTS ".$self->name;
 }
 
-sub dump
+sub dump($self)
 {
-	my $self = shift;
-	print $self->stringize, "\n";
+	say $self->stringize;
 }
 
-sub add
+sub add($self, @p)
 {
-	my $self = shift;
-	for my $o (@_) {
+	for my $o (@p) {
 		$o->add_to($self);
 	}
 	return $self;
 }
 
-sub add_to
+sub add_to($o, $c)
 {
-	my ($o, $c) = @_;
 	$o->{parent} = $c;
 	push(@{$c->{$o->category}}, $o);
 }
 
-sub prepend
+sub prepend($self, @p)
 {
-	my $self = shift;
-	for my $o (reverse @_) {
+	for my $o (reverse @p) {
 		$o->prepend_to($self);
 	}
 	return $self;
 }
 
-sub prepend_to
+sub prepend_to($o, $c)
 {
-	my ($o, $c) = @_;
 	$o->{parent} = $c;
 	unshift(@{$c->{$o->category}}, $o);
 }
 
-sub is_table
+sub is_table($)
 {
 	0
 }
 
-sub origin
+sub origin($self)
 {
-	my $self = shift;
 	return $self->{origin};
 }
 
-sub normalize
+sub normalize($self, $v)
 {
-	my ($self, $v) = @_;
 	$v =~ tr/A-Z/a-z/;
 	return $v;
 }
 
-sub identify
+sub identify($self)
 {
-	my $self = shift;
 	my $string = "object ".ref($self)." named ".$self->name;
 	if (exists $self->{origin}) {
 		$string .= " (from $self->{origin})";
@@ -117,12 +104,12 @@ sub identify
 	return $string;
 }
 
-sub is_view
+sub is_view($)
 {
 	0
 }
 
-sub is_index
+sub is_index($)
 {
 	0
 }
@@ -132,69 +119,58 @@ our @ISA = qw(Sql::Object);
 
 my $register;
 
-sub stringize
+sub stringize($self)
 {
-	my $self = shift;
 	return "CREATE ".($self->{temp} ? "TEMP ": "").$self->type.
 	    " ".$self->name." ".join("\n", $self->contents);
 }
 
-sub sort
+sub sort($self)
 {
-	my $self = shift;
-
 	$self->{columns} = [ sort {$a->name cmp $b->name} @{$self->{columns}}];
 	return $self;
 }
 
-sub all_tables
+sub all_tables($class)
 {
-	my $class = shift;
 	return grep {$_->is_table} (sort {$a->name cmp $b->name} values %$register);
 }
 
-sub all_views
+sub all_views($class)
 {
-	my $class = shift;
 	return grep {$_->is_view} (sort {$a->name cmp $b->name} values %$register);
 }
 
-sub all_indices
+sub all_indices($class)
 {
-	my $class = shift;
 	return grep {$_->is_index} (sort {$a->name cmp $b->name} values %$register);
 }
 
-sub key
+sub key($class, $name)
 {
-	my ($class, $name) = @_;
 	return $class->find($name)->{key};
 }
 
-sub find
+sub find($class, $name)
 {
-	my ($class, $name) = @_;
 	return $register->{$class->normalize($name)};
 }
 
-sub dump_all
+sub dump_all($class)
 {
-	my $class = shift;
 	for my $v (values %$register) {
 		$v->dump;
 	}
 }
 
-sub register
+sub register($self)
 {
-	my $self = shift;
 	$register->{$self->normalize($self->name)} = $self;
 	return $self;
 }
 
-sub add_column_names
+sub add_column_names($self, $name)
 {
-	my ($self, $name) = @_;
 	my $o = $self->find($name);
 	if (!defined $o) {
 	#	print STDERR $name, "\n";
@@ -203,17 +179,15 @@ sub add_column_names
 	$self->add_column_names_from($o);
 }
 
-sub add_column_names_from
+sub add_column_names_from($self, $o)
 {
-	my ($self, $o) = @_;
 	for my $c ($o->columns) {
 		$self->{column_names}{$self->normalize($c->name)}++;
 	}
 }
 
-sub known_column
+sub known_column($self, $name)
 {
-	my ($self, $name) = @_;
 	$name = $self->normalize($name);
 	for my $c ($self->columns) {
 		if ($self->normalize($c->name) eq $name) {
@@ -223,9 +197,8 @@ sub known_column
 	return 0;
 }
 
-sub is_table_column
+sub is_table_column($self, $table, $name)
 {
-	my ($self, $table, $name) = @_;
 	my $t = $self->find($table);
 	if (defined $t) {
 		return $t->known_column($name);
@@ -234,15 +207,13 @@ sub is_table_column
 	}
 }
 
-sub columns
+sub columns($self)
 {
-	my $self = shift;
 	return @{$self->{columns}};
 }
 
-sub column_names
+sub column_names($self)
 {
-	my $self = shift;
 	my @names;
 	for my $c ($self->columns) {
 		next if $c->is_key;
@@ -251,9 +222,8 @@ sub column_names
 	return @names;
 }
 
-sub temp
+sub temp($self)
 {
-	my $self = shift;
 	$self->{temp} = 1;
 	return $self;
 }
@@ -261,19 +231,18 @@ sub temp
 package Sql::Create::Table;
 our @ISA = qw(Sql::Create);
 
-sub type
+sub type($)
 {
 	"TABLE"
 }
 
-sub is_table
+sub is_table($)
 {
 	1
 }
 
-sub contents
+sub contents($self)
 {
-	my $self = shift;
 	my @c;
 	my @d;
 	for my $col (@{$self->{columns}}) {
@@ -291,9 +260,8 @@ sub contents
 	return "(". join(', ', @c).")";
 }
 
-sub inserter
+sub inserter($self)
 {
-	my $self = shift;
 	my (@names, @placeholders);
 	my $alt = $self->{ignore} ? " OR IGNORE" :
 	    ($self->{noreplace} ? "" : " OR REPLACE");
@@ -306,58 +274,51 @@ sub inserter
 	    join(', ', @names).") VALUES (".join(', ', @placeholders).")";
 }
 
-sub noreplace
+sub noreplace($self)
 {
-	my $self = shift;
 	$self->{noreplace} = 1;
 	return $self;
 }
 
-sub ignore
+sub ignore($self)
 {
-	my $self = shift;
 	$self->{ignore} = 1;
 	return $self;
 }
 
-sub new
+sub new($class, @p)
 {
-	my $class = shift;
-	$class->SUPER::new(@_)->register;
+	$class->SUPER::new(@p)->register;
 }
 
 package Sql::Create::View;
 our @ISA = qw(Sql::Create);
-sub type
+sub type($)
 {
 	"VIEW"
 }
 
-sub is_view
+sub is_view($)
 {
 	1
 }
 
-sub new
+sub new($class, @p)
 {
-	my $class = shift;
-	my $o = $class->SUPER::new(@_);
+	my $o = $class->SUPER::new(@p);
 	my $a = "T0001";
 	$o->{alias} = \$a;
-	$o->{select} = Sql::Select->new(@_);
+	$o->{select} = Sql::Select->new(@p);
 	$o->register;
 }
 
-sub cache
+sub cache($self, $name = $self->name."_Cache")
 {
-	my ($self, $name) = @_;
-	$name //= $self->name."_Cache";
 	return "CREATE TABLE $name (". $self->{select}->cache. ")";
 }
 
-sub contents
+sub contents($self)
 {
-	my $self = shift;
 	my @parts = ();
 
 	$self->{select}{level} = ($self->{level}//0)+4;
@@ -366,31 +327,27 @@ sub contents
 	return ("AS", $self->{select}->contents);
 }
 
-sub columns
+sub columns($self)
 {
-	my $self = shift;
 	if (!defined $self->{select}{columns}) {
 		die $self->identify, " has no columns";
 	}
 	return @{$self->{select}{columns}};
 }
 
-sub add
+sub add($self, @p)
 {
-	my $self = shift;
-	$self->{select}->add(@_);
+	$self->{select}->add(@p);
 	return $self;
 }
 
-sub prepend
+sub prepend($self, @p)
 {
-	my $self = shift;
-	$self->{select}->prepend(@_);
+	$self->{select}->prepend(@p);
 	return $self;
 }
-sub sort
+sub sort($self)
 {
-	my $self = shift;
 	$self->{select}->sort;
 	return $self;
 }
@@ -399,10 +356,8 @@ package Sql::Select;
 our @ISA = qw(Sql::Create);
 
 
-sub contents
+sub contents($self)
 {
-	my $self = shift;
-
 	my @parts = ();
 	# compute the joins
 	my $joins = {};
@@ -487,9 +442,8 @@ sub contents
 	return @parts;
 }
 
-sub is_unique_name
+sub is_unique_name($self, $name)
 {
-	my ($self, $name) = @_;
 	my $c = $self->{column_names}{$self->normalize($name)};
 	if (!defined $c) {
 		die "$name not registed in ", $self->identify;
@@ -497,10 +451,8 @@ sub is_unique_name
 	return $c == 1;
 }
 
-sub cache
+sub cache($self)
 {
-	my $self = shift;
-
 	my @c;
 	my $base = Sql::Create->find($self->origin);
 	for my $c (@{$self->{columns}}) {
@@ -528,97 +480,87 @@ sub cache
 
 package Sql::With;
 our @ISA = qw(Sql::Object);
-sub category
+sub category($)
 {
 	"with"
 }
 
-sub new
+sub new($class, @p)
 {
-	my $class = shift;
-	my $o = $class->SUPER::new(@_);
-	$o->{select} = Sql::Select->new(@_);
+	my $o = $class->SUPER::new(@p);
+	$o->{select} = Sql::Select->new(@p);
 	return $o;
 }
 
-sub contents
+sub contents($self)
 {
-	my $self = shift;
 	return $self->{select}->contents;
 }
 
-sub add
+sub add($self, @p)
 {
-	my $self = shift;
-	$self->{select}->add(@_);
+	$self->{select}->add(@p);
 	return $self;
 }
 
-sub prepend
+sub prepend($self, @p)
 {
-	my $self = shift;
-	$self->{select}->prepend(@_);
+	$self->{select}->prepend(@p);
 	return $self;
 }
 
-sub columns
+sub columns($self)
 {
-	my $self = shift;
 	return $self->{select}->columns;
 }
 
 package Sql::Order;
 our @ISA = qw(Sql::Object);
-sub category
+sub category($)
 {
 	"order"
 }
 
 package Sql::Group;
 our @ISA = qw(Sql::Object);
-sub category
+sub category($)
 {
 	"group"
 }
 
 package Sql::Column;
 our @ISA = qw(Sql::Object);
-sub category
+sub category($)
 {
 	"columns"
 }
 
-sub notnull
+sub notnull($self)
 {
-	my $self = shift;
 	$self->{notnull} = 1;
 	return $self;
 }
 
-sub null
+sub null($self)
 {
-	my $self = shift;
 	delete $self->{notnull};
 	return $self;
 }
 
-sub unique
+sub unique($self)
 {
-	my $self = shift;
 	$self->{unique} = 1;
 	return $self;
 }
 
-sub indexed
+sub indexed($self)
 {
-	my $self = shift;
 	$self->{want_index} = 1;
 	return $self;
 }
 
-sub stringize
+sub stringize($self)
 {
-	my $self = shift;
 	my @c = ($self->name, $self->type);
 	if ($self->{notnull}) {
 		push(@c, "NOT NULL");
@@ -633,33 +575,31 @@ sub stringize
 	return join(" ", @c);
 }
 
-sub placeholder
+sub placeholder($)
 {
 	'?';
 }
 
-sub is_key
+sub is_key($)
 {
 	0
 }
 
-sub constraint
+sub constraint($self)
 {
-	my $self = shift;
 	$self->{is_constraint} = 1;
 	return $self;
 }
 package Sql::Column::Integer;
 our @ISA = qw(Sql::Column);
 
-sub type
+sub type($)
 {
 	"INTEGER"
 }
 
-sub reference_field
+sub reference_field($self)
 {
-	my $self = shift;
 	if (defined $self->{references}{field}) {
 		return $self->{references}{field};
 	} else {
@@ -678,23 +618,20 @@ sub reference_field
 	}
 }
 
-sub may_reference
+sub may_reference($self, $table, $field = undef)
 {
-	my ($self, $table, $field) = @_;
 	$self->{references}{table} = $table;
 	$self->{references}{field} = $field if defined $field;
 	return $self;
 }
 
-sub references
+sub references($self, $table, $field = undef)
 {
-	my ($self, $table, $field) = @_;
 	return $self->may_reference($table, $field)->notnull;
 }
 
-sub placeholder
+sub placeholder($self)
 {
-	my $self = shift;
 	if (!defined $self->{references}) {
 		return '?';
 	}
@@ -723,10 +660,8 @@ our @ISA = qw(Sql::Column);
 
 # this is the code I need to rewrite to provide column names based on the
 # container or the join
-sub stringize
+sub stringize($self)
 {
-	my $self = shift;
-
 	if ($self->{parent}->is_unique_name($self->origin)) {
 		if ($self->origin eq $self->name) {
 			return $self->name;
@@ -738,25 +673,19 @@ sub stringize
 	}
 }
 
-sub stringize_with_alias
+sub stringize_with_alias($self)
 {
-	my $self = shift;
 	return $self->expr." AS ".$self->name;
 }
 
-sub expr
+sub expr($self, @p)
 {
-	my $self = shift;
-	return $self->column(@_);
+	return $self->column(@p);
 }
 
 
-sub column
+sub column($self, $name = $self->origin)
 {
-	my ($self, $name) = @_;
-
-	$name //= $self->origin;
-
 	if ($self->{parent}->is_unique_name($name)) {
 		return $name;
 	}
@@ -768,22 +697,19 @@ sub column
 	}
 }
 
-sub group_by
+sub group_by($self)
 {
-	my $self = shift;
 	$self->{group_by} = 1;
 	return $self;
 }
 
-sub join_table
+sub join_table($self)
 {
-	my $self = shift;
 	return $self->{parent}->origin;
 }
 
-sub join
+sub join($self, @j)
 {
-	my ($self, @j) = @_;
 	my $subject = $self;
 	for my $j (@j) {
 		$subject->{join} = $j;
@@ -793,35 +719,31 @@ sub join
 	return $self;
 }
 
-sub left
+sub left($self)
 {
-	my $self = shift;
 	if (defined $self->{join}) {
 		$self->{join}->left;
 	}
 	return $self;
 }
 
-sub new
+sub new($class, @p)
 {
-    my $class = shift;
-    my $o = $class->SUPER::new(@_);
+    my $o = $class->SUPER::new(@p);
     $o->{origin} //= $o->name;
     return $o;
 }
 
-sub add_to
+sub add_to($self, $container)
 {
-	my ($self, $container) = @_;
 	$self->SUPER::add_to($container);
 	if ($self->{group_by}) {
 		push(@{$container->{group}}, $self);
 	}
 }
 
-sub prepend_to
+sub prepend_to($self, $container)
 {
-	my ($self, $container) = @_;
 	$self->SUPER::prepend_to($container);
 	if ($self->{group_by}) {
 		unshift(@{$container->{group}}, $self);
@@ -831,84 +753,75 @@ sub prepend_to
 package Sql::Column::View::Expr;
 our @ISA = qw(Sql::Column::View);
 
-sub stringize
+sub stringize($self)
 {
-	my $self = shift;
 	return $self->stringize_with_alias;
 }
 
 package Sql::Column::View::Concat;
 our @ISA = qw(Sql::Column::View::Expr);
 
-sub new
+sub new($class, @p)
 {
-    my $class = shift;
-    my $o = $class->SUPER::new(@_);
+    my $o = $class->SUPER::new(@p);
     $o->{separator} //= ' ';
     return $o;
 }
 
-sub expr
+sub expr($self)
 {
-	my $self = shift;
 	return "group_concat(".$self->column.", '".$self->{separator}."')";
 }
 
 package Sql::Column::Text;
 our @ISA = qw(Sql::Column);
-sub type
+sub type($)
 {
 	"TEXT";
 }
 
 package Sql::Column::CurrentDate;
 our @ISA = qw(Sql::Column::Text);
-sub placeholder
+sub placeholder($)
 {
 	"CURRENT_DATE";
 }
 
 package Sql::Column::Key;
 our @ISA = qw(Sql::Column::Integer);
-sub new
+sub new($class, @p)
 {
-	my $class = shift;
-	my $o = $class->SUPER::new(@_);
+	my $o = $class->SUPER::new(@p);
 	$o->{autoincrement} = 1;
 	return $o;
 }
 
-sub is_key
+sub is_key($self)
 {
-	my $self = shift;
 	return $self->{autoincrement};
 }
 
-sub add_to
+sub add_to($self, $c)
 {
-	my ($self, $c) = @_;
 	$c->{key} = $self;
 	$self->SUPER::add_to($c);
 }
 
 
-sub prepend_to
+sub prepend_to($self, $c)
 {
-	my ($self, $c) = @_;
 	$c->{key} = $self;
 	$self->SUPER::prepend_to($c);
 }
 
-sub noautoincrement
+sub noautoincrement($self)
 {
-	my $self = shift;
 	$self->{autoincrement} = 0;
 	return $self;
 }
 
-sub type
+sub type($self)
 {
-	my $self = shift;
 	if ($self->{autoincrement}) {
 		return "INTEGER PRIMARY KEY AUTOINCREMENT";
 	} else {
@@ -918,14 +831,13 @@ sub type
 
 package Sql::Join;
 our @ISA = qw(Sql::Object);
-sub category
+sub category($)
 {
 	"joins"
 }
 
-sub join_part
+sub join_part($self)
 {
-	my $self = shift;
 	my $s = "JOIN ".$self->name;
 	if (defined $self->{alias}) {
 		$s .= " ".$self->{alias};
@@ -939,31 +851,27 @@ sub join_part
 	return $s;
 }
 
-sub join_table
+sub join_table($self)
 {
-	my $self = shift;
 	return $self->{alias} // $self->name;
 }
 
-sub on_part
+sub on_part($self, $view)
 {
-	my ($self, $view) = @_;
 	return map {$_->equation($self, $view)} @{$self->{equals}};
 
 }
 
-sub is_natural
+sub is_natural($self)
 {
-	my ($self) = @_;
 	for my $e (@{$self->{equals}}) {
 		return 0 if !$e->is_natural;
 	}
 	return 1;
 }
 
-sub left
+sub left($self)
 {
-	my $self = shift;
 	$self->{left} = 1;
 	return $self;
 }
@@ -971,21 +879,18 @@ sub left
 package Sql::Equal;
 our @ISA = qw(Sql::Object);
 
-sub new
+sub new($class, $a, $b)
 {
-	my ($class, $a, $b) = @_;
 	bless {a => $a, b => $b}, $class;
 }
 
-sub category
+sub category($)
 {
 	"equals"
 }
 
-sub equation
+sub equation($self, $join, $view)
 {
-	my ($self, $join, $view) = @_;
-
 	my $a = $self->{a};
 	my $b = $self->{b};
 	if (!$view->is_unique_name($a)) {
@@ -997,17 +902,15 @@ sub equation
 	return "$a=$b";
 }
 
-sub is_natural
+sub is_natural($self)
 {
-	my $self = shift;
 	return $self->{a} eq $self->{b};
 }
 
 package Sql::EqualConstant;
 our @ISA = qw(Sql::Equal);
-sub equation
+sub equation($self, $join, $view)
 {
-	my ($self, $join, $view) = @_;
 	my $a = $self->{a};
 	if (!$view->is_unique_name($a)) {
 		$a = $join->join_table.".".$a;
@@ -1016,16 +919,23 @@ sub equation
 	return "$a=$self->{b}";
 }
 
-sub is_natural
+sub is_natural($)
 {
 	0
 }
 
 package Sql::IsNull;
 our @ISA = qw(Sql::Equal);
-sub equation
+
+# :IsNull is a "kind of" equal but it has only one single value
+# it's okay because everything referencing b is overriden.
+sub new($class, $a)
 {
-	my ($self, $join, $view) = @_;
+	bless {a => $a}, $class;
+}
+
+sub equation($self, $join, $view)
+{
 	my $a = $self->{a};
 	if (!$view->is_unique_name($a)) {
 		$a = $join->join_table.".".$a;
@@ -1034,7 +944,7 @@ sub equation
 	return "$a IS NULL";
 }
 
-sub is_natural
+sub is_natural($)
 {
 	0
 }
@@ -1042,27 +952,25 @@ sub is_natural
 package Sql::Create::Index;
 our @ISA = qw(Sql::Create);
 
-sub type
+sub type($)
 {
 	"INDEX"
 }
 
-sub is_index
+sub is_index($)
 {
 	1
 }
 
-sub new
+sub new($class, $table, $col)
 {
-	my ($class, $table, $col) = @_;
 	my $name = $table->name."_".$col->name;
 	my $o = bless { name => $name, table => $table, col => $col}, $class;
 	$o->register;
 }
 
-sub contents
+sub contents($self)
 {
-	my $self = shift;
 	return "ON ". $self->{table}->name."(".$self->{col}->name.")";
 }
 
