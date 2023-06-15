@@ -2,10 +2,10 @@ COMMENT =	lightweight game library for java
 
 BROKEN-i386 =	ld: error: undefined symbol: __stack_smash_handler
 
-V =		3.2.4alpha2
+V =		3.3.1.0
 DISTNAME =	lwjgl3-${V}
 
-KOTLIN_V =	1.3.61
+KOTLIN_V =	1.6.20-M1
 
 .if ${MACHINE_ARCH} == "i386"
 M_ARCH =	""
@@ -32,11 +32,11 @@ MAINTAINER =	Kurt Mosiejczuk <kmos@openbsd.org>
 
 COMPILER =	base-clang ports-gcc
 
-EXTRACT_ONLY =	${DISTNAME}.tgz
+EXTRACT_ONLY =	${DISTNAME}.tar.gz
 
 # Build downloads kotlin compiler and libraries from maven if not available
 
-DISTFILES +=	${DISTNAME}.tgz \
+DISTFILES +=	${DISTNAME}.tar.gz \
 		kotlin-compiler-${KOTLIN_V}.zip:1 \
 		lwjgl3-maven-20210208.tar.gz:2
 MASTER_SITES =	\
@@ -50,20 +50,19 @@ PERMIT_PACKAGE =	Yes
 
 # GL listed here as it is dlopen()d by the lib
 WANTLIB += 	${COMPILER_LIBCXX} GL X11 Xcursor Xext Xrandr Xxf86vm assimp \
-		glfw glib-2.0 gobject-2.0 gtk-3 lmdb lz4 m openal \
+		ffi glfw glib-2.0 gobject-2.0 gtk-3 lmdb lz4 m openal \
 		opus pthread xxhash
 
 MODULES =	java
 MODJAVA_VER =	11
 MODJAVA_BUILD =	ant
 
-BUILD_DEPENDS =	archivers/unzip \
-		devel/bullet \
-		devel/dyncall
+BUILD_DEPENDS =	archivers/unzip
 LIB_DEPENDS =	archivers/lz4 \
 		audio/openal \
 		audio/opus \
 		databases/lmdb \
+		devel/libffi \
 		graphics/glfw \
 		multimedia/assimp \
 		sysutils/xxhash \
@@ -94,7 +93,8 @@ do-build:
 	cd ${MODJAVA_BUILD_DIR} && \
 		${SETENV} ${MAKE_ENV} LWJGL_BUILD_OFFLINE=true \
 		JAVA8_HOME=${JAVA_HOME} ${LOCALBASE}/bin/ant \
-		-buildfile ${MODJAVA_BUILD_FILE} release ${MODJAVA_BUILD_ARGS}
+		-Djavadoc.skip=true -buildfile ${MODJAVA_BUILD_FILE} \
+		release ${MODJAVA_BUILD_ARGS}
 
 do-install:
 	${INSTALL_DATA_DIR} ${LWJGL3_HOME}

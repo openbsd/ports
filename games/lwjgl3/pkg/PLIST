@@ -2,18 +2,17 @@ share/lwjgl3/
 share/lwjgl3/assimp_license.txt
 share/lwjgl3/bgfx_license.txt
 share/lwjgl3/blendish_license.txt
-share/lwjgl3/bullet_license.txt
 share/lwjgl3/cuda_license.txt
-share/lwjgl3/dyncall_license.txt
 share/lwjgl3/glfw_license.txt
 share/lwjgl3/jemalloc_license.txt
 share/lwjgl3/khronos_license.txt
 share/lwjgl3/libdivide_license.txt
+share/lwjgl3/libffi_license.txt
+share/lwjgl3/liburing_license.txt
 share/lwjgl3/llvm_license.txt
 share/lwjgl3/lmdb_license.txt
 share/lwjgl3/lwjgl-assimp.jar
 share/lwjgl3/lwjgl-bgfx.jar
-share/lwjgl3/lwjgl-bullet.jar
 share/lwjgl3/lwjgl-cuda.jar
 share/lwjgl3/lwjgl-egl.jar
 share/lwjgl3/lwjgl-glfw.jar
@@ -41,6 +40,7 @@ share/lwjgl3/lwjgl-opengl-natives-openbsd.jar
 share/lwjgl3/lwjgl-opengl.jar
 share/lwjgl3/lwjgl-opengles-natives-openbsd.jar
 share/lwjgl3/lwjgl-opengles.jar
+share/lwjgl3/lwjgl-openxr.jar
 share/lwjgl3/lwjgl-opus.jar
 share/lwjgl3/lwjgl-par-natives-openbsd.jar
 share/lwjgl3/lwjgl-par.jar
@@ -71,6 +71,7 @@ share/lwjgl3/meshoptimizer_license.txt
 share/lwjgl3/nanosvg_license.txt
 share/lwjgl3/nanovg_license.txt
 share/lwjgl3/openal_soft_license.txt
+share/lwjgl3/openxr_license.txt
 share/lwjgl3/opus_license.txt
 share/lwjgl3/remotery_license.txt
 share/lwjgl3/rpmalloc_license.txt
