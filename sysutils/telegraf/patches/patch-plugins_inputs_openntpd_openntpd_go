@@ -1,7 +1,7 @@
 Index: plugins/inputs/openntpd/openntpd.go
 --- plugins/inputs/openntpd/openntpd.go.orig
 +++ plugins/inputs/openntpd/openntpd.go
-@@ -74,7 +74,7 @@ func openntpdRunner(cmdName string, timeout config.Dur
+@@ -62,7 +62,7 @@ func openntpdRunner(cmdName string, timeout config.Dur
  
  	if useSudo {
  		cmdArgs = append([]string{cmdName}, cmdArgs...)

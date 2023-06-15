@@ -1,7 +1,7 @@
 Index: plugins/inputs/opensmtpd/opensmtpd.go
 --- plugins/inputs/opensmtpd/opensmtpd.go.orig
 +++ plugins/inputs/opensmtpd/opensmtpd.go
-@@ -58,7 +58,7 @@ func opensmtpdRunner(cmdName string, timeout config.Du
+@@ -43,7 +43,7 @@ func opensmtpdRunner(cmdName string, timeout config.Du
  
  	if useSudo {
  		cmdArgs = append([]string{cmdName}, cmdArgs...)

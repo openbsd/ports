@@ -2,13 +2,12 @@ COMMENT =	plugin-driven server agent for collecting metrics
 
 BROKEN-arm =	build fails, no error message
 
-MODGO_VERSION=	v1.22.4
+MODGO_VERSION=	v1.27.0
 MODGO_MODNAME=	github.com/influxdata/telegraf
 GH_ACCOUNT =	influxdata
 GH_PROJECT =	telegraf
 GH_TAGNAME =	${MODGO_VERSION}
 HOMEPAGE =	https://www.influxdata.com/time-series-platform/telegraf/
-REVISION =	0
 
 MAINTAINER =	Lucas Raab <tuftedocelot@fastmail.fm>
 
@@ -23,6 +22,10 @@ WANTLIB +=	c pthread
 WRKDIST=	${WRKSRC}
 
 .include "modules.inc"
+
+# generate config
+post-build:
+	${MODGO_WORKSPACE}/bin/telegraf config > ${WRKSRC}/etc/telegraf.conf
 
 do-install:
 	${MODGO_INSTALL_TARGET}
