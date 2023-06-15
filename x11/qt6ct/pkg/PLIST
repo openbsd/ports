@@ -1,0 +1,22 @@
+@bin bin/qt6ct
+@lib lib/libqt6ct-common.so.${LIBqt6ct-common_VERSION}
+@so lib/qt6/plugins/platformthemes/libqt6ct.so
+lib/qt6/plugins/styles/
+@so lib/qt6/plugins/styles/libqt6ct-style.so
+share/applications/qt6ct.desktop
+share/qt6ct/
+share/qt6ct/colors/
+share/qt6ct/colors/airy.conf
+share/qt6ct/colors/darker.conf
+share/qt6ct/colors/dusk.conf
+share/qt6ct/colors/ia_ora.conf
+share/qt6ct/colors/sand.conf
+share/qt6ct/colors/simple.conf
+share/qt6ct/colors/waves.conf
+share/qt6ct/qss/
+share/qt6ct/qss/fusion-fixes.qss
+share/qt6ct/qss/scrollbar-simple.qss
+share/qt6ct/qss/sliders-simple.qss
+share/qt6ct/qss/tooltip-simple.qss
+share/qt6ct/qss/traynotification-simple.qss
+@tag update-desktop-database

@@ -1,0 +1,4 @@
+This program allows users to configure Qt6 settings (theme, font, icons, etc.)
+under DE/WM without Qt integration.
+
+Set QT_QPA_PLATFORMTHEME=qt6ct in the environment to use it.
