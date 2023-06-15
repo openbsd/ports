@@ -1,7 +1,6 @@
 @bin bin/alacritty
 @man man/man1/alacritty.1
-share/bash-completion/
-share/bash-completion/completions/
+share/applications/Alacritty.desktop
 share/bash-completion/completions/alacritty
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/alacritty/
@@ -9,6 +8,8 @@ share/examples/alacritty/alacritty.yml
 share/fish/
 share/fish/completions/
 share/fish/completions/alacritty.fish
+share/pixmaps/
+share/pixmaps/Alacritty.svg
 share/terminfo/
 share/terminfo/a/
 share/terminfo/a/alacritty
@@ -17,3 +18,4 @@ share/terminfo/a/alacritty-direct
 share/zsh/
 share/zsh/site-functions/
 share/zsh/site-functions/_alacritty
+@tag update-desktop-database

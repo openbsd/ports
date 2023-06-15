@@ -1,7 +1,7 @@
 Index: alacritty.yml
 --- alacritty.yml.orig
 +++ alacritty.yml
-@@ -407,7 +407,7 @@
+@@ -439,7 +439,7 @@
    #thickness: 0.15
  
  # Live config reload (changes require restart)
@@ -10,8 +10,8 @@ Index: alacritty.yml
  
  # Shell
  #
-@@ -420,9 +420,9 @@
- #   - (Linux/BSD) user login shell
+@@ -451,9 +451,9 @@
+ #   - (Linux/BSD/macOS) `$SHELL` or the user's login shell, if `$SHELL` is unset
  #   - (Windows) powershell
  #shell:
 -#  program: /bin/bash
