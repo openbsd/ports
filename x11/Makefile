@@ -251,6 +251,7 @@
      SUBDIR += qt5
      SUBDIR += qt5ct
      SUBDIR += qt6
+     SUBDIR += qt6ct
      SUBDIR += qtfm
      SUBDIR += qwt
      SUBDIR += ratmen
