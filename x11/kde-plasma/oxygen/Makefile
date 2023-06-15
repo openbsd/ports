@@ -7,10 +7,9 @@ SHARED_LIBS +=		oxygenstyleconfig5	0.0
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
 WANTLIB += KF5GuiAddons KF5I18n KF5KCMUtils KF5Service KF5Style
-WANTLIB += KF5WaylandClient KF5WidgetsAddons KF5WindowSystem Qt5Core
-WANTLIB += Qt5DBus Qt5Gui Qt5Network Qt5Qml Qt5QmlModels Qt5Quick
-WANTLIB += Qt5Widgets Qt5X11Extras Qt5Xml X11 c kdecorations2
-WANTLIB += m xcb
+WANTLIB += KF5WidgetsAddons KF5WindowSystem Qt5Core Qt5DBus Qt5Gui
+WANTLIB += Qt5Network Qt5Qml Qt5QmlModels Qt5Quick Qt5Widgets
+WANTLIB += Qt5X11Extras Qt5Xml X11 c kdecorations2 m xcb
 
 MODKDE5_TRANSLATIONS = Yes
 

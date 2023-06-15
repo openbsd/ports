@@ -1,6 +1,5 @@
 COMMENT =		Breeze KDE desktop theme
 DISTNAME =		breeze-${VERSION}
-REVISION =		0
 
 SHARED_LIBS +=  breezecommon5         1.0 # 5.12.0
 
@@ -9,7 +8,7 @@ WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5GuiAddons
 WANTLIB += KF5I18n KF5IconThemes KF5KCMUtils KF5Kirigami2 KF5Service
 WANTLIB += KF5Style KF5WidgetsAddons KF5WindowSystem Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Network Qt5Qml Qt5QmlModels Qt5Quick Qt5Widgets
-WANTLIB += Qt5X11Extras Qt5Xml X11 c kdecorations2 m xcb
+WANTLIB += Qt5X11Extras Qt5Xml X11 c kdecorations2 m
 
 MODKDE5_TRANSLATIONS = Yes
 MODKDE5_ICON_CACHE = Yes
