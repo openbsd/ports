@@ -1,5 +1,5 @@
 COMMENT =		minimalistic text based status bar
-REVISION =		0
+REVISION =		1
 
 MODCABAL_STEM =		xmobar
 MODCABAL_VERSION =	0.46
@@ -10,8 +10,10 @@ HOMEPAGE =		https://xmobar.org
 PERMIT_PACKAGE =	Yes
 
 WANTLIB =		X11 Xext Xft Xinerama Xrandr Xrender \
-			Xss c charset ffi gmp iconv \
-			lib/inotify/inotify m pthread util xml2 z
+			Xss c ffi gmp iconv \
+			lib/inotify/inotify m pthread util z \
+			cairo glib-2.0 gobject-2.0 harfbuzz intl \
+			pango-1.0 pangocairo-1.0 png
 
 MODULES =		devel/cabal
 MODCABAL_FLAGS =	with_xft with_mpd with_mpris with_inotify
@@ -149,8 +151,9 @@ MODCABAL_MANIFEST	= \
 LIB_DEPENDS =		converters/libiconv \
 			devel/gmp \
 			devel/libffi \
+			devel/pango \
 			devel/libinotify \
-			textproc/libxml
+			graphics/cairo
 
 EXAMPLEDIR =		${PREFIX}/share/examples/xmobar
 
