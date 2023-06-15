@@ -1,7 +1,7 @@
 COMMENT =	Display server protocol
 
 DISTNAME =	wayland-${V}
-V =		1.21.0
+V =		1.21.91
 
 CATEGORIES =	wayland
 
@@ -10,7 +10,7 @@ HOMEPAGE =	https://wayland.freedesktop.org/
 SHARED_LIBS +=  wayland-client          0.1 # 0.21.0
 SHARED_LIBS +=  wayland-cursor          0.0 # 0.21.0
 SHARED_LIBS +=  wayland-egl             0.0 # 1.0
-SHARED_LIBS +=  wayland-server          0.1 # 0.21.0
+SHARED_LIBS +=  wayland-server          0.2 # 0.21.0
 
 WANTLIB += c epoll-shim expat ffi xml2
 
