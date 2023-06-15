@@ -3,7 +3,7 @@
 Index: misc/units
 --- misc/units.orig
 +++ misc/units
-@@ -2002,7 +2002,7 @@ failed_git_marker ()
+@@ -2007,7 +2007,7 @@ failed_git_marker ()
      local f=$1
      local l
  

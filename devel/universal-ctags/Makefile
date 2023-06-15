@@ -1,19 +1,17 @@
 COMMENT =	multilanguage reimplementation of the Unix ctags utility
 
-V =		5.9.20211024.0
-GH_ACCOUNT =	universal-ctags
-GH_PROJECT =	ctags
-GH_TAGNAME =	p${V}
+V =		6.0.0
 DISTNAME =	universal-ctags-${V}
-REVISION =	0
 
 CATEGORIES =	devel
 
 HOMEPAGE =	https://ctags.io/
 
+MASTER_SITES =	https://github.com/universal-ctags/ctags/releases/download/v${V}/
+
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
-WANTLIB += c xml2 yaml-0 pthread
+WANTLIB += c pcre2-8 pthread xml2 yaml-0
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
@@ -40,7 +38,8 @@ AUTORECONF =		./autogen.sh
 BUILD_DEPENDS =		textproc/py-docutils,python3
 
 LIB_DEPENDS +=		textproc/libxml \
-			devel/libyaml
+			devel/libyaml \
+			devel/pcre2
 
 TEST_DEPENDS =		textproc/gdiff \
 			sysutils/coreutils
@@ -49,20 +48,20 @@ FLAVORS=		iconv aspell
 FLAVOR?=
 
 .if ${FLAVOR:Miconv}
+WANTLIB += iconv
 CONFIGURE_ARGS+=	--enable-iconv
 LIB_DEPENDS+=		converters/libiconv
-WANTLIB+=		iconv
 .else
 CONFIGURE_ARGS+=	--disable-iconv
 .endif
 
 .if ${FLAVOR:Maspell}
+WANTLIB += aspell
 CONFIGURE_ARGS+=	--enable-aspell
 LIB_DEPENDS+=		textproc/aspell/core
 # textproc/aspell does not install a aspell.pc file
 CONFIGURE_ENV +=	ASPELL_LIBS="-L${LOCALBASE}/lib -laspell" \
 			ASPELL_CFLAGS="-I${LOCALBASE}/include"
-WANTLIB+=		aspell
 .else
 CONFIGURE_ARGS+=	--disable-aspell
 .endif
