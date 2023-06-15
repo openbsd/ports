@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: TreeWalker.pm,v 1.17 2021/01/29 10:28:31 espie Exp $
+# $OpenBSD: TreeWalker.pm,v 1.18 2023/06/15 12:53:07 espie Exp $
 #
 # Copyright (c) 2006-2013 Marc Espie <espie@openbsd.org>
 #
@@ -15,27 +15,24 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-use strict;
+use v5.36;
 use warnings;
 
 package TreeWalker;
 use PkgPath;
 
-sub new
+sub new($class, $strict, $startdir)
 {
-	my ($class, $strict, $startdir) = @_;
 	return bless { strict => $strict, startdir => $startdir }, $class;
 }
 
-sub subdirlist
+sub subdirlist($self, $list)
 {
-	my ($self, $list) = @_;
 	return join(' ', sort keys %$list);
 }
 
-sub dump_dirs
+sub dump_dirs($self, $subdirs = undef)
 {
-	my ($self, $subdirs) = @_;
 	my ($pid, $fd);
 	unless (defined($pid = open($fd, "-|"))) {
 		die "can't fork : $!";
@@ -69,13 +66,12 @@ sub dump_dirs
 	}
 }
 
-sub parse_dump
+sub parse_dump($self, $fd, $subdirs)
 {
-	my ($self, $fd, $subdirs) = @_;
 	my $h = {};
 	my $seen = {};
 	my $subdir;
-	my $reset = sub {
+	my $reset = sub() {
 		$h = PkgPath->handle_equivalences($self, $h, $subdirs);
 		for my $pkgpath (sort values %$h) {
 			$self->handle_path($pkgpath, $self->{equivs});
@@ -95,7 +91,7 @@ sub parse_dump
 		}
 		if (m/^\=\=\=\>\s*(.*)/) {
 			$subdir = PkgPath->new($1);
-			&$reset;
+			&$reset();
 		} elsif (my ($pkgpath, $var, $arch, $value) =
 		    m/^(.*?)\.([A-Z][A-Z_0-9]*)(?:\-([a-z0-9]+))?\=\s*(.*)\s*$/) {
 			if ($value =~ m/^\"(.*)\"$/) {
@@ -112,21 +108,22 @@ sub parse_dump
 			$h= {};
 		}
 	}
-	&$reset;
+	&$reset();
 }
 
-sub handle_value
+# $self->handle_value($o, $var, $value, $arch)
+sub handle_value($, $, $, $, $)
 {
 }
 
-sub handle_path
+# $self->handle_path($pkgpath, $equivs)
+sub handle_path($, $, $)
 {
 }
 
-sub dump_all_dirs
+sub dump_all_dirs($self)
 {
-	my $self = shift;
-	$self->dump_dirs(undef);
+	$self->dump_dirs;
 
 	my $i = 1;
 	while (1) {
@@ -147,7 +144,7 @@ sub dump_all_dirs
 		}
 		last if (keys %$subdirlist) == 0;
 		$i++;
-		print "pass #$i\n";
+		say "pass #$i";
 		$self->dump_dirs($subdirlist);
 	}
 }

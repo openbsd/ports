@@ -4,9 +4,7 @@
 # a normalized version (zaps extraneous spaces, rewrites
 # everything as lowercase, sorts by table/view name)
 
-use strict;
-use warnings;
-use autodie;
+use v5.36;
 
 my ($object, $comment);
 
@@ -24,7 +22,7 @@ while(<STDIN>) {
 		} elsif ($stmt =~ m/^create view (\S+)/) {
 			$object->{$1} = $stmt;
 		} else {
-			print $stmt, "\n";
+			say $stmt;
 		}
 		$stmt = '';
 	}
@@ -32,8 +30,8 @@ while(<STDIN>) {
 
 for my $k (sort keys %$object) {
 	if ($object->{$k} =~ m,\s/\*,) {
-		print "$`\n/*$'\n\n";
+		say "$`\n/*$'\n";
 	} else {
-		print $object->{$k}, "\n\n";
+		say $object->{$k}, "\n";
 	}
 }

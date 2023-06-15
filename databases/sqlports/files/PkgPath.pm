@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.6 2018/11/26 22:53:41 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.7 2023/06/15 12:53:07 espie Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -15,6 +15,10 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
+use v5.36;
+
+my $ports1;
+
 BEGIN {
 	$ports1 = $ENV{PORTSDIR} || '/usr/ports';
 }
@@ -26,25 +30,22 @@ package PkgPath;
 our @ISA = qw(DPB::BasePkgPath);
 use Info;
 
-sub init
+sub init($)
 {
 }
 
-sub clone_properties
+sub clone_properties($n, $o)
 {
-	my ($n, $o) = @_;
 	$n->{info} //= $o->{info};
 }
 
-sub subpackage
+sub subpackage($self)
 {
-	my $self = shift;
 	return $self->{info}->value('SUBPACKAGE');
 }
 
-sub flavor
+sub flavor($self)
 {
-	my $self = shift;
 	my $value = $self->{info}->value('FLAVOR');
 	$value =~ s/^\s+//;
 	$value =~ s/\s+$//;
@@ -54,19 +55,18 @@ sub flavor
 	return \%values;
 }
 
-sub equates
+# $class->equates($hash)
+sub equates($, $)
 {
 }
 
-sub simplifies_to
+sub simplifies_to($self, $simpler, $walker)
 {
-	my ($self, $simpler, $walker) = @_;
 	$walker->{equivs}{$self->fullpkgpath} = $simpler->fullpkgpath;
 }
 
-sub change_multi
+sub change_multi($path, $multi)
 {
-	my ($path, $multi) = @_;
 	# make a tmp copy, non registered
 	my $tmp = ref($path)->create($path->fullpkgpath);
 	if ($multi eq '-main') {
@@ -77,12 +77,10 @@ sub change_multi
 	return $tmp->normalize;
 }
 
-sub break
+sub break($path, $message)
 {
-	my ($path, $message) = @_;
 	$path->{parent} //= '?';
-	print STDERR $path->fullpkgpath, "(", $path->{parent}, "):", 
-	    $message, "\n";
+	say STDERR $path->fullpkgpath, "(", $path->{parent}, "):", $message;
 }
 
 1;
