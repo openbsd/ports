@@ -2,8 +2,7 @@ COMMENT =	PNG compressor
 
 GH_ACCOUNT =	kornelski
 GH_PROJECT =	pngquant
-GH_TAGNAME =	2.15.1
-REVISION =	0
+GH_TAGNAME =	2.18.0
 
 CATEGORIES =	graphics
 
