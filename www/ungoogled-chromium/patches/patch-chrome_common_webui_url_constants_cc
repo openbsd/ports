@@ -58,7 +58,7 @@ Index: chrome/common/webui_url_constants.cc
  const char kChromeUIWebAppSettingsURL[] = "chrome://app-settings/";
  const char kChromeUIWebAppSettingsHost[] = "app-settings";
  #endif
-@@ -869,7 +869,7 @@ const char* const kChromeDebugURLs[] = {
+@@ -870,7 +870,7 @@ const char* const kChromeDebugURLs[] = {
      blink::kChromeUIGpuJavaCrashURL,
      kChromeUIJavaCrashURL,
  #endif
