@@ -3,11 +3,7 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	distraction-free Markdown editor
 
-GH_ACCOUNT =	KDE
-GH_PROJECT =	ghostwriter
-GH_COMMIT =	151268bcfdca57bba4944caa7172dde9549f0622
-DISTNAME =	ghostwriter-2.2.0
-REVISION =	0
+DISTNAME =	ghostwriter-${MODKDE_VERSION}
 
 CATEGORIES =	editors
 
@@ -16,26 +12,36 @@ HOMEPAGE =	https://ghostwriter.kde.org/
 # GPLv3 code, CC BY-SA 4.0 resources
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL Qt5Concurrent Qt5Core Qt5Gui
-WANTLIB += Qt5Network Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels
-WANTLIB += Qt5Quick Qt5Svg Qt5WebChannel Qt5WebEngineCore
-WANTLIB += Qt5WebEngineWidgets Qt5Widgets c hunspell-1.7 m
+WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
+WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5SonnetCore
+WANTLIB += KF5SonnetUi KF5WidgetsAddons KF5XmlGui Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport
+WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5Svg Qt5WebChannel Qt5WebEngineCore
+WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml c hunspell-1.7
+WANTLIB += m
 
-USE_GMAKE =	Yes
+MASTER_SITES =	${MASTER_SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
 
-MODULES =		devel/qmake \
-			x11/qt5
+MODULES =		x11/kde-applications \
+			devel/kf5
+
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+4,-guic
-LIB_DEPENDS =		textproc/hunspell \
+
+LIB_DEPENDS =		devel/kf5/kauth \
+			devel/kf5/kcodecs \
+			devel/kf5/kconfig \
+			devel/kf5/kconfigwidgets \
+			devel/kf5/kcoreaddons \
+			devel/kf5/sonnet \
+			devel/kf5/kwidgetsaddons \
+			devel/kf5/kxmlgui \
+			textproc/hunspell \
 			x11/qt5/qtbase \
 			x11/qt5/qtsvg \
 			x11/qt5/qtwebengine
 
 NO_TEST =		Yes
 
-pre-configure:
-	@sed -i 's,/share/man/man1,/man/man1,' \
-		${WRKSRC}/ghostwriter.pro
 
 .include <bsd.port.mk>
