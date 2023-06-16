@@ -128,6 +128,34 @@ pre-build:
 .  endif
 .endif
 
+# Add possibility to include additional build or test dependencies from 
+# https://hex.pm.
+MASTER_SITE_HEX =	https://repo.hex.pm/tarballs/
+
+MODERL_MASTER_SITEN =	9
+MASTER_SITES${MODERL_MASTER_SITEN} ?= ${MASTER_SITE_HEX}
+MODERL_DIST_SUBDIR ?=	hex_modules
+
+.  for _m _v in ${MODERL_MODULES}
+MODERL_DISTFILES += ${MODERL_DIST_SUBDIR}/{}${_m}-${_v}.tar:${MODERL_MASTER_SITEN}
+.  endfor
+
+.  if ! empty(MODERL_MODULES)
+.    for _m _v in ${MODERL_MODULES}
+MODERL_SETUP_WORKSPACE += mkdir -p ${WRKDIR}/${MODERL_DIST_SUBDIR}/${_m}; \
+		tar xf ${FULLDISTDIR}/${MODERL_DIST_SUBDIR}/${_m}-${_v}.tar -C ${WRKDIR}/${MODERL_DIST_SUBDIR}/${_m}; \
+		mkdir -p ${WRKSRC}/_checkouts/${_m}; \
+		mkdir -p ${WRKSRC}/_build/default/lib; \
+		tar xzf ${WRKDIR}/${MODERL_DIST_SUBDIR}/${_m}/contents.tar.gz -C ${WRKSRC}/_checkouts/${_m}; \
+		cp -r ${WRKSRC}/_checkouts/${_m} ${WRKSRC}/_build/default/lib/;
+.    endfor
+MODERLANG_post-extract += ${MODERL_SETUP_WORKSPACE}
+.  endif
+
+.  if defined(MODERL_DISTFILES)
+DISTFILES += ${MODERL_DISTFILES}
+.  endif
+
 # Regression test handling:
 # If nothing is explicitly set, then MODERL_TEST=Yes and default
 # target 'test' is used. Otherwise, if MODERL_TEST=eunit, then
