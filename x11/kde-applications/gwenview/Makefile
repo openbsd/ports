@@ -24,6 +24,8 @@ MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
+BUILD_DEPENDS =	wayland/wayland-protocols
+
 RUN_DEPENDS =	devel/kf5/kfilemetadata \
 		x11/kde-applications/ffmpegthumbs \
 		x11/kde-applications/kdesdk-thumbnailers \
