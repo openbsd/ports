@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Trace.pm,v 1.1 2018/11/17 12:19:08 espie Exp $
+# $OpenBSD: Trace.pm,v 1.2 2023/06/16 04:17:56 espie Exp $
 #
 # Copyright (c) 2015-2018 Marc Espie <espie@openbsd.org>
 #
@@ -15,10 +15,11 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
+use v5.36;
 package Trace;
 
 # inspired by Carp::Always
-sub trace_message
+sub trace_message()
 {
 	my $msg = '';
 	my $x = 1;
@@ -52,10 +53,8 @@ sub trace_message
 
 my ($sig, $olddie, $oldwarn);
 
-sub setup
+sub setup($class, $sig)
 {
-	my $class = shift;
-	$sig = shift;
 	$olddie = $SIG{__DIE__};
 	$oldwarn = $SIG{__WARN__};
 	$sig->{__WARN__} = sub {
@@ -63,7 +62,7 @@ sub setup
 		my $a = pop @_;
 		$a =~ s/(.*)( at .*? line .*?)\n$/$1$2/s;
 		push @_, $a;
-		my $msg = join("\n", @_, &trace_message);
+		my $msg = join("\n", @_, &trace_message());
 		warn $msg;
 	};
 
@@ -73,15 +72,12 @@ sub setup
 		my $a = pop @_;
 		$a =~ s/(.*)( at .*? line .*?)\n$/$1$2/s;
 		push @_, $a;
-		if (defined $reporter) {
-			$reporter->reset_cursor;
-		}
-		my $msg = join("\n", @_, &trace_message);
+		my $msg = join("\n", @_, &trace_message());
 		die $msg;
 	};
 
 	$sig->{INFO} = sub {
-		print "Trace:\n", &trace_message;
+		print "Trace:\n", &trace_message();
 		sleep 1;
 	};
 }
