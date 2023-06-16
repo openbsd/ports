@@ -245,16 +245,16 @@
 
      # XXX keep in sync
      # life outside of x11/kde-applications
+     # devel/kdevelop
+     # editors/ghostwriter
      # graphics/skanlite
      # net/kdeconnect-kde
      # net/konversation
-     # net/libktorrent
      # net/ktorrent
-     # x11/yakuake
-     # devel/kdevelop
+     # net/libktorrent
+     # net/neochat
      # productivity/kalendar
-     # New in KDE Gear/23.04
-     # neochat
+     # x11/yakuake
 
      # TODO
      # kosmindoormap
@@ -267,7 +267,6 @@
      # angelfish
      # audiotube
      # calindori
-     # ghostwriter
      # kalk
      # kasts
      # kclock
@@ -284,6 +283,5 @@
      # qmlkonsole
      # telly-skout
      # tokodon
-
 
 .include <bsd.port.subdir.mk>
