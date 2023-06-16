@@ -75,6 +75,7 @@ include/freeipmi/record-format/ipmi-sel-oem-record-format.h
 include/freeipmi/record-format/ipmi-sel-record-format.h
 include/freeipmi/record-format/oem/
 include/freeipmi/record-format/oem/ipmi-fru-wistron-oem-record-format.h
+include/freeipmi/record-format/oem/ipmi-fru-xilinx-oem-record-format.h
 include/freeipmi/record-format/oem/ipmi-sdr-oem-intel-node-manager-record-format.h
 include/freeipmi/record-format/oem/ipmi-sdr-oem-intel-record-format.h
 include/freeipmi/record-format/oem/ipmi-sel-oem-intel-record-format.h

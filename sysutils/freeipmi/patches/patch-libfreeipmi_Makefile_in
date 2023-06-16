@@ -17,5 +17,5 @@ Index: libfreeipmi/Makefile.in
 -	-DIPMI_IPCKEY=\"$(localstatedir)/lib/$(PACKAGE_NAME)/ipckey\" \
 +	-DIPMI_IPCKEY=\"$(localstatedir)/db/$(PACKAGE_NAME)/ipckey\" \
  	-DIPMI_DEBUG_IPCKEY=\"$(top_builddir)/libfreeipmi/driver/ipmi-semaphores.h\" \
- 	-D_GNU_SOURCE \
  	-D_REENTRANT
+ 
