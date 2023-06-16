@@ -19,12 +19,8 @@ FLAVORS +=		erlang25
 FLAVOR?=		# empty
 
 # When no flavor is explicitly set, assume MODERL_DEFAULT_VERSION
-.if ${FLAVOR:Merlang21}
-ERRORS +=		"Invalid FLAVOR set: ${FLAVOR}."
-.else
 MODERL_VERSION ?=	${MODERL_DEFAULT_VERSION}
 _MODERL_FLAVOR ?=	# empty
-.endif
 
 .if ${MODERL_VERSION} == 25
 _MODERL_FLAVOR =	erlang25
