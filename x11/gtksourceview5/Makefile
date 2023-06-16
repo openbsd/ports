@@ -14,6 +14,9 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2/LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
+COMPILER=		base-clang ports-gcc
+COMPILER_LANGS=		c
+
 WANTLIB += cairo fontconfig fribidi gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gobject-2.0 gtk-4 intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre2-8 xml2
