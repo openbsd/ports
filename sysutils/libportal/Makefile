@@ -27,6 +27,9 @@ PERMIT_PACKAGE=		Yes
 MASTER_SITES=		https://github.com/flatpak/libportal/releases/download/${V}/
 EXTRACT_SUFX=		.tar.xz
 
+# C++
+COMPILER=		base-clang ports-gcc
+
 MULTI_PACKAGES=		-main -gtk3 -gtk4 -qt5
 
 WANTLIB-main += gio-2.0 glib-2.0 gobject-2.0
