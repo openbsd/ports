@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Inserter.pm,v 1.41 2021/01/29 08:30:37 espie Exp $
+# $OpenBSD: Inserter.pm,v 1.42 2023/06/16 04:54:20 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -15,15 +15,13 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-use strict;
-use warnings;
+use v5.36;
 use Sql;
 
 package Inserter;
 # this is the object to use to put stuff into the db...
-sub new
+sub new($class, $db, $i, $verbose, $create)
 {
-	my ($class, $db, $i, $verbose, $create) = @_;
 	$db->do("PRAGMA foreign_keys=ON");
 	bless {
 		db => $db,
@@ -39,20 +37,18 @@ sub new
 	}, $class;
 }
 
-sub add_error
+# $self->add_error($msg)
+sub add_error($, $)
 {
 }
 
-sub current_path
+sub current_path($self)
 {
-	my $self = shift;
 	return $self->{current_path};
 }
 
-sub create_tables
+sub create_tables($self, $vars)
 {
-	my ($self, $vars) = @_;
-
 	my $t = $self->{ports_table} = Sql::Create::Table->new("_Ports");
 	my $v = $self->{ports_view} = Sql::Create::View->new("Ports", 
 	    origin => '_Ports');
@@ -73,22 +69,18 @@ sub create_tables
 	print '-'x50, "\n" if $self->{verbose};
 }
 
-sub add_to_ports_table
+sub add_to_ports_table($self, @column)
 {
-	my ($self, @column) = @_;
 	$self->{ports_table}->add(@column);
 }
 
-sub add_to_ports_view
+sub add_to_ports_view($self, @o)
 {
-	my ($self, @o) = @_;
 	$self->{ports_view}->add(@o);
 }
 
-sub make_ordered_view
+sub make_ordered_view($self, $class)
 {
-	my ($self, $class) = @_;
-
 	my $view = $self->view_name($class->table."_ordered");
 	my @subselect = $class->subselect;
 	my @select = (Sql::Column::View->new('FullPkgPath')->group_by,
@@ -99,31 +91,28 @@ sub make_ordered_view
 	    @select);
 }
 
-sub set
+sub set($self, $ref)
 {
-	my ($self, $ref) = @_;
 	$self->{ref} = $ref;
 }
 
-sub db
+sub db($self)
 {
-	return shift->{db};
+	return $self->{db};
 }
 
-sub last_id
+sub last_id($self)
 {
-	return shift->db->func('last_insert_rowid');
+	return $self->db->func('last_insert_rowid');
 }
 
-sub insert_done
+sub insert_done($self)
 {
-	my $self = shift;
 	$self->{transaction}++;
 }
 
-sub new_sql
+sub new_sql($self, $sql)
 {
-	my ($self, $sql) = @_;
 	my $n = $sql->name;
 	return if defined $self->{created}{$n};
 	$self->{created}{$n} = 1;
@@ -135,9 +124,8 @@ sub new_sql
 	$self->db->do($request);
 }
 
-sub create_schema
+sub create_schema($self)
 {
-	my $self = shift;
 	if ($self->{create}) {
 		for my $t (Sql::Create->all_tables) {
 			$self->new_sql($t);
@@ -157,15 +145,13 @@ sub create_schema
 	$self->commit_to_db;
 }
 
-sub prepare
+sub prepare($self, $s)
 {
-	my ($self, $s) = @_;
 	return $self->db->prepare($s);
 }
 
-sub finish_port
+sub finish_port($self)
 {
-	my $self = shift;
 	my @values = ($self->ref);
 	for my $i (@{$self->{varlist}}) {
 		push(@values, $self->{vars}{$i});
@@ -178,34 +164,29 @@ sub finish_port
 	}
 }
 
-sub add_to_port
+sub add_to_port($self, $var, $value)
 {
-	my ($self, $var, $value) = @_;
 	$self->{vars}{$var} = $value;
 }
 
-sub ref
+sub ref($self)
 {
-	return shift->{ref};
+	return $self->{ref};
 }
 
-sub insert
+sub insert($self, $table, @p)
 {
-	my $self = shift;
-	my $table = shift;
-	$self->{insert}{$table}->execute(@_);
+	$self->{insert}{$table}->execute(@p);
 	$self->insert_done;
 }
 
-sub add_var
+sub add_var($self, $v)
 {
-	my ($self, $v) = @_;
 	$v->add($self);
 }
 
-sub create_canonical_depends
+sub create_canonical_depends($self, $class)
 {
-	my ($self, $class) = @_;
 	my $t = $self->table_name($class->table);
 	my $p = $self->table_name("Paths");
 	Sql::Create::View->new("_canonical_depends", origin=>$t)->add(
@@ -229,31 +210,27 @@ sub create_canonical_depends
 	    Sql::Column::View->new("Type"));
 }
 
-sub commit_to_db
+sub commit_to_db($self)
 {
-	my $self = shift;
 	$self->db->commit;
 }
 
-sub table_name
+sub table_name($class, $name)
 {
-	my ($class, $name) = @_;
 	return "_$name";
 }
 
-sub view_name
+sub view_name($class, $name)
 {
-	my ($class, $name) = @_;
 	return $name;
 }
 
-sub adjust
+sub adjust($self)
 {
-	my $self = shift;
 	return $self->{adjust} //= $self->prepare("UPDATE _Paths set Canonical=? where Id=?");
 }
 
-sub create_meta
+sub create_meta($)
 {
 	Sql::Create::Table->new("Meta")->add(
 	    Sql::Column::Text->new("SchemaVersion"),
@@ -261,7 +238,7 @@ sub create_meta
 	    Sql::Column::CurrentDate->new("CreationDate"));
 }
 
-sub create_path_table
+sub create_path_table($)
 {
 	my $t = "_Paths";
 	my $v = "Paths";
@@ -285,12 +262,10 @@ sub create_path_table
 
 my $path_cache = {};
 my $newid = 1;
-sub find_pathkey
+sub find_pathkey($self, $key)
 {
-	my ($self, $key) = @_;
-
 	if (!defined $key or $key eq '') {
-		print STDERR "Empty pathkey\n";
+		say STDERR "Empty pathkey";
 		return 0;
 	}
 	if (defined $path_cache->{$key}) {
@@ -312,21 +287,19 @@ sub find_pathkey
 	return $r;
 }
 
-sub add_path
+sub add_path($self, $key, $alias)
 {
-	my ($self, $key, $alias) = @_;
 	$self->adjust->execute($path_cache->{$alias}, $path_cache->{$key});
 }
 
-sub set_newkey
+sub set_newkey($self, $key)
 {
-	my ($self, $key) = @_;
-
 	$self->set($self->find_pathkey($key));
 	$self->{current_path} = $key;
 }
 
-sub write_log
+# $self->write_log($fh)
+sub write_log($, $)
 {
 }
 

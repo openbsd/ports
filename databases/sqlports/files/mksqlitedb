@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: mksqlitedb,v 1.59 2023/06/15 12:53:07 espie Exp $
+# $OpenBSD: mksqlitedb,v 1.60 2023/06/16 04:54:20 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -36,36 +36,32 @@ use Trace;
 package MyTreeWalker;
 our @ISA = (qw(TreeWalker));
 
-sub new
+sub new($class, $inserter, @r)
 {
-	my ($class, $inserter, @r) = @_;
 	my $o =  $class->SUPER::new(@r);
 	$o->{inserter} = $inserter;
 	return $o;
 }
 
-sub inserter
+sub inserter($self)
 {
-	return shift->{inserter};
+	return $self->{inserter};
 }
 
-sub handle_value
+sub handle_value($self, $o, $var, $value, $arch)
 {
-	my ($self, $o, $var, $value, $arch) = @_;
 	$o->{info} //= Info->new($o);
 	$o->{info}->create($var, $value, $arch, $o);
 }
 
-sub parse_dump
+sub parse_dump($self, $fd, $subdirs)
 {
-	my ($self, $fd, $subdirs) = @_;
 	$self->SUPER::parse_dump($fd, $subdirs);
 	$self->inserter->commit_to_db;
 }
 
-sub create_missing_vars
+sub create_missing_vars($self, $o)
 {
-	my ($self, $o) = @_;
 	for my $name (qw(SHARED_LIBS TARGETS)) {
 		if (!defined $o->{info}->{vars}{$name}) {
 			$o->{info}->create($name, '', undef, $o);
@@ -73,9 +69,8 @@ sub create_missing_vars
 	}
 }
 
-sub handle_path
+sub handle_path($self, $pkgpath, $equivs)
 {
-	my ($self, $pkgpath, $equivs) = @_;
 	$self->create_missing_vars($pkgpath);
 	my $key = $pkgpath->fullpkgpath;
 	while (defined $equivs->{$key}) {
@@ -100,10 +95,8 @@ package main;
 use Digest::SHA;
 use MIME::Base64;
 
-sub digest
+sub digest($filename)
 {
-	my $filename = shift;
-
 	my $d = Digest::SHA->new(256);
 	$d->addfile($filename);
 	return encode_base64($d->digest, '');
@@ -136,18 +129,18 @@ my $walker = MyTreeWalker->new($inserter, $opt_s, $opt_S);
 if (defined $opt_C) {
 	open(my $f, '>', $opt_C) or die;
 	my $cache = "PortsQ";
-	print $f "DROP TABLE if exists $cache;\n";
-	print $f Sql::Create->find('ports')->cache($cache), ";\n";
-	print $f "INSERT INTO $cache select * from Ports;\n";
-	print $f "ANALYZE;\n";
+	say $f "DROP TABLE if exists $cache;";
+	say $f Sql::Create->find('ports')->cache($cache), ";";
+	say $f "INSERT INTO $cache select * from Ports;";
+	say $f "ANALYZE;";
 	close $f;
 }
 
 if (defined $opt_w) {
 	open(my $f, '>', $opt_w) or die;
 	for my $v (Sql::Create->all_views) {
-		print $f $v->drop, ";\n";
-		print $f $v->stringize, ";\n";
+		say $f $v->drop, ";";
+		say $f $v->stringize, ";";
 	}
 	close $f;
 }
@@ -170,7 +163,7 @@ $walker->inserter->commit_to_db;
 $db->disconnect;
 
 while (my ($k, $v) = each %$Info::unknown) {
-	print STDERR "Unknown variable $k in ", $v->fullpkgpath, "\n";
+	say STDERR "Unknown variable $k in ", $v->fullpkgpath;
 }
 
 if (defined $opt_q) {

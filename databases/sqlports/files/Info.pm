@@ -1,4 +1,4 @@
-# $OpenBSD: Info.pm,v 1.37 2023/06/12 10:06:30 sthen Exp $
+# $OpenBSD: Info.pm,v 1.38 2023/06/16 04:54:20 espie Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -19,8 +19,7 @@
 #
 # usage: cd /usr/ports && make dump-vars |mksqlitedb
 
-use strict;
-use warnings;
+use v5.36;
 use Var;
 
 package Info;
@@ -127,21 +126,18 @@ my @indexed = qw(FULLPKGNAME RUN_DEPENDS LIB_DEPENDS IGNORE
 my $indexed = {map {($_, 1)} @indexed};
 our $unknown = {};
 
-sub is_indexed
+sub is_indexed($class, $name)
 {
-	my ($class, $name) = @_;
 	return $indexed->{$name};
 }
 
-sub new
+sub new($class, $p)
 {
-	my ($class, $p) = @_;
 	bless {path => $p, vars => {}}, $class;
 }
 
-sub create
+sub create($self, $var, $value, $arch, $path)
 {
-	my ($self, $var, $value, $arch, $path) = @_;
 	my $k = $var;
 	if (defined $arch) {
 		$k .= "-$arch";
@@ -154,15 +150,13 @@ sub create
 	}
 }
 
-sub variables
+sub variables($self)
 {
-	my $self = shift;
 	return values %{$self->{vars}};
 }
 
-sub value
+sub value($self, $name)
 {
-	my ($self, $name) = @_;
 	if (defined $self->{vars}{$name}) {
 		return $self->{vars}{$name}->value;
 	} else {
@@ -170,9 +164,8 @@ sub value
 	}
 }
 
-sub reclaim
+sub reclaim($self)
 {
-	my $self = shift;
 	my $n = {};
 	for my $k (qw(SUBPACKAGE FLAVOR)) {
 		$n->{$k} = $self->{vars}{$k};
