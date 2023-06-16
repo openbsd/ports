@@ -38,6 +38,7 @@ MODPY_RUNDEP =	No
 BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/kf5/qqc2-desktop-style \
 		devel/kf5/kirigami2 \
+		wayland/wayland-protocols \
 		wayland/plasma-wayland-protocols
 
 RUN_DEPENDS =	devel/desktop-file-utils \
