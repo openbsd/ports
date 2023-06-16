@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.63 2022/11/14 12:54:47 espie Exp $
+# $OpenBSD: Var.pm,v 1.64 2023/06/16 06:04:01 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -14,7 +14,7 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-use strict;
+use v5.36;
 use warnings;
 
 # use a Template Method approach to store the variable values.
@@ -24,68 +24,60 @@ use warnings;
 # to store them in secondary tables (because of one/many associations).
 
 package AnyVar;
-sub ports_table_column
+sub ports_table_column($self, $name)
 {
-	my ($self, $name) = @_;
 	return Sql::Column::Text->new($name);
 }
 
-sub ports_view_column
+sub ports_view_column($self, $name)
 {
-	my ($self, $name) = @_;
 	return Sql::Column::View->new($name);
 }
 
-sub table() { undef }
-sub keyword_table() { undef }
+sub table($) { undef }
+sub keyword_table($) { undef }
 
-sub table_name
+sub table_name($class, $name)
 {
-	my ($class, $name) = @_;
 	return "_$name";
 }
 
-sub new
+sub new($class, $var, $value, $arch = undef, $ = undef)
 {
-	my ($class, $var, $value, $arch) = @_;
 	die "No arch for $var" if defined $arch;
 	bless [$var, $value], $class;
 }
 
-sub var
+sub var($self)
 {
-	return shift->[0];
+	return $self->[0];
 }
 
-sub value
+sub value($self)
 {
-	return shift->[1];
+	return $self->[1];
 }
 
-sub words
+sub words($self)
 {
-	my $self = shift;
 	my $v = $self->value;
 	$v =~ s/^\s+//;
 	$v =~ s/\s+$//;
 	return split(/\s+/, $v);
 }
 
-sub add
+sub add($self, $ins)
 {
-	my ($self, $ins) = @_;
 	$ins->add_to_port($self->var, $self->value);
 }
 
-sub add_value
+sub add_value($self, $ins, $value, @extra)
 {
-	my ($self, $ins, $value) = @_;
-	$ins->add_to_port($self->var, $value);
+	$ins->add_to_port($self->var, $value, @extra);
 }
 
-sub prepare_tables
+sub prepare_tables($self, $inserter, $name)
 {
-	my ($self, $inserter, $name) = @_;
 	if ($self->need_in_ports_table) {
 		$inserter->add_to_ports_table($self->ports_table_column($name));
 	}
@@ -95,16 +87,14 @@ sub prepare_tables
 	$self->create_tables($inserter);
 }
 
-sub keyword
+sub keyword($self, $ins, $value)
 {
-	my ($self, $ins, $value) = @_;
 	$ins->insert($self->keyword_table, $value);
 	return $value;
 }
 
-sub create_keyword_table
+sub create_keyword_table($self)
 {
-	my $self = shift;
 	if (defined $self->keyword_table) {
 		Sql::Create::Table->new($self->keyword_table)->ignore->add(
 			Sql::Column::Key->new("KeyRef"),
@@ -112,51 +102,45 @@ sub create_keyword_table
 	}
 }
 
-sub create_tables
+sub create_tables($self, $inserter)
 {
-	my ($self, $inserter) = @_;
 	$self->create_keyword_table;
 }
 
-sub normal_insert
+sub normal_insert($self, $ins, @p)
 {
-	my $self = shift;
-	my $ins = shift;
-    	$ins->insert($self->table_name($self->table), $ins->ref, @_);
+    	$ins->insert($self->table_name($self->table), $ins->ref, @p);
 }
 
-sub subselect
+sub subselect($)
 {
-	my ($self, $inserter) = @_;
 	return (Sql::Column::View->new('FullPkgPath'),
 	    Sql::Column::View->new('Value'),
 	    Sql::Order->new('N'));
 }
 
-sub select
+sub select($)
 {
 	return ();
 }
 
-sub want_in_ports_view
+sub want_in_ports_view($self)
 {
-	my $self = shift;
 	return !defined $self->table;
 }
 
-sub need_in_ports_table
+sub need_in_ports_table($self)
 {
-	my $self = shift;
 	return !defined $self->table;
 }
 
-sub fullpkgpath
+sub fullpkgpath($)
 {
 	return Sql::Column::Integer->new("FullPkgPath")->references("_Paths")
 	    ->constraint->indexed;
 }
 
-sub pathref
+sub pathref($)
 {
 	my $j = Sql::Join->new('_Paths')->add(
 	    Sql::Equal->new('Canonical', 'FullPkgPath'));
@@ -164,16 +148,14 @@ sub pathref
 	    Sql::Column::View->new('FullPkgPath')->join($j));
 }
 
-sub create_table
+sub create_table($self, @c)
 {
-	my ($self, @c) = @_;
 	Sql::Create::Table->new($self->table_name($self->table))->add(@c);
 	$self->create_keyword_table;
 }
 
-sub create_view
+sub create_view($self, @c)
 {
-	my ($self, @c) = @_;
 	Sql::Create::View->new($self->table,
 	    origin => $self->table_name($self->table))->add(@c);
 }
@@ -185,26 +167,24 @@ our @ISA = qw(AnyVar);
 # for variables we want to know about, but not register in the db
 package IgnoredVar;
 our @ISA = qw(AnyVar);
-sub add
+sub add($, $)
 {
 }
 
-sub prepare_tables
+sub prepare_tables($, $, $)
 {
 }
 
 package KeyVar;
 our @ISA = qw(AnyVar);
-sub ports_table_column
+sub ports_table_column($self, $name)
 {
-	my ($self, $name) = @_;
 	return Sql::Column::Integer->new($name)
 	    ->references($self->keyword_table);
 }
 
-sub compute_join
+sub compute_join($self, $name)
 {
-	my ($self, $name) = @_;
 	if (defined $self->keyword_table) {
 		return Sql::Join->new($self->keyword_table)
 		    ->add(Sql::Equal->new("KeyRef", $name));
@@ -214,50 +194,45 @@ sub compute_join
 	}
 }
 
-sub ports_view_column
+sub ports_view_column($self, $name)
 {
-	my ($self, $name) = @_;
 	return Sql::Column::View->new($name, origin => 'Value')->join(
 		$self->compute_join($name));
 }
 
-sub add
+sub add($self, $ins)
 {
-	my ($self, $ins) = @_;
 	$self->add_value($ins, $self->keyword($ins, $self->value));
 }
 
 
 package ArchKeyVar;
 our @ISA = qw(KeyVar);
-sub keyword_table() { '_Arch' }
+sub keyword_table($) { '_Arch' }
 
 package PrefixKeyVar;
 our @ISA = qw(KeyVar);
-sub keyword_table() { '_Prefix' }
+sub keyword_table($) { '_Prefix' }
 
 package SubstVar;
 our @ISA = qw(ListKeyVar);
-sub table() { 'SubstVars' }
-sub keyword_table() { '_SubstVarsKey' }
+sub table($) { 'SubstVars' }
+sub keyword_table($) { '_SubstVarsKey' }
 
 package OptKeyVar;
 our @ISA = qw(KeyVar);
-sub ports_table_column
+sub ports_table_column($self, $name)
 {
-	my ($self, $name) = @_;
 	return $self->SUPER::ports_table_column($name)->null;
 }
 
-sub compute_join
+sub compute_join($self, $name)
 {
-	my ($self, $name) = @_;
 	return $self->SUPER::compute_join($name)->left;
 }
 
-sub add
+sub add($self, $ins)
 {
-	my ($self, $ins) = @_;
 	if ($self->value ne '') {
 		$self->SUPER::add($ins);
 	}
@@ -265,23 +240,20 @@ sub add
 
 package ArchDependentVar;
 our @ISA = qw(AnyVar);
-sub keyword_table() { '_Arch' }
+sub keyword_table($) { '_Arch' }
 
-sub new
+sub new($class, $var, $value, $arch, $ = undef)
 {
-	my ($class, $var, $value, $arch) = @_;
 	bless [$var, $value, $arch], $class;
 }
 
-sub arch
+sub arch($self)
 {
-	return shift->[2];
+	return $self->[2];
 }
 
-sub add
+sub add($self, $ins)
 {
-	my ($self, $ins) = @_;
-
 	my $arch = $self->arch;
 	if (defined $arch) {
 		$arch = $self->keyword($ins, $arch);
@@ -291,9 +263,8 @@ sub add
 	$self->normal_insert($ins, $arch, $self->value);
 }
 
-sub create_tables
+sub create_tables($self, $inserter)
 {
-	my ($self, $inserter) = @_;
 	my $k = $self->keyword_table;
 	$self->create_table(
 	    $self->fullpkgpath,
@@ -309,20 +280,17 @@ sub create_tables
 
 package BrokenVar;
 our @ISA = qw(ArchDependentVar);
-sub table() { 'Broken' }
+sub table($) { 'Broken' }
 
 package ValuedVar;
 our @ISA = qw(AnyVar);
-sub ports_table_column
+sub ports_table_column($self, $name)
 {
-	my ($self, $name) = @_;
 	return Sql::Column::Integer->new($name);
 }
 
-sub find_value
+sub find_value($self, $ins)
 {
-	my ($self, $ins) = @_;
-
 	my $key = $self->value;
 	my $h = $self->values;
 	while (my ($v, $k) = each %$h) {
@@ -334,9 +302,8 @@ sub find_value
 	return undef;
 }
 
-sub add
+sub add($self, $ins)
 {
-	my ($self, $ins) = @_;
 	if (defined $self->value) {
 		$self->add_value($ins, $self->find_value($ins));
 	} else {
@@ -346,7 +313,7 @@ sub add
 
 package YesNoVar;
 our @ISA = qw(ValuedVar);
-sub values
+sub values($)
 {
 	return { 
 	    	yes => 1,
@@ -360,7 +327,7 @@ our @ISA = qw(YesNoVar);
 package YesNoGnuVar;
 our @ISA = qw(ValuedVar);
 
-sub values
+sub values($)
 {
 	return { 
 		yes => 1,
@@ -372,7 +339,7 @@ sub values
 package YesNoSpecialVar;
 our @ISA = qw(ValuedVar);
 
-sub values
+sub values($)
 {
 	return { 
 		yes => 1,
@@ -385,9 +352,8 @@ sub values
 package DefinedVar;
 our @ISA = qw(AnyVar);
 
-sub add
+sub add($self, $ins)
 {
-	my ($self, $ins) = @_;
 	return if $self->value eq '';
 	$self->SUPER::add($ins);
 }
@@ -396,21 +362,19 @@ sub add
 # all the dependencies are converted into lists. 
 package DependsVar;
 our @ISA = qw(AnyVar);
-sub table() { 'Depends' }
-sub want_in_ports_view { 1 }
+sub table($) { 'Depends' }
+sub want_in_ports_view($) { 1 }
 
-sub ports_view_column
+sub ports_view_column($self, $name)
 {
-	my ($self, $name) = @_;
 	return Sql::Column::View->new($name, origin => 'Value')->join(
 	    Sql::Join->new($self->table."_ordered")->left
 	    	->add(Sql::Equal->new("FullPkgpath", "FullPkgpath"),
 		    Sql::EqualConstant->new("Type", $self->match)));
 }
 
-sub add
+sub add($self, $ins)
 {
-	my ($self, $ins) = @_;
 	$self->SUPER::add($ins);
 	my $n = 0;
 	for my $depends ($self->words) {
@@ -437,10 +401,8 @@ sub add
 	}
 }
 
-sub create_tables
+sub create_tables($self, $inserter)
 {
-	my ($self, $inserter) = @_;
-
 	my $t = $self->table_name($self->table);
 
 	$self->create_table(
@@ -467,14 +429,13 @@ sub create_tables
 	$inserter->create_canonical_depends($self);
 }
 
-sub select
+sub select($)
 {
 	return (Sql::Column::View->new('Type')->group_by);
 }
 
-sub subselect
+sub subselect($)
 {
-	my $self = shift;
 	return (Sql::Column::View->new('FullPkgPath'),
 	    Sql::Column::View->new('Value', origin => 'FullDepends'),
 	    Sql::Column::View->new('Type'),
@@ -483,21 +444,19 @@ sub subselect
 
 package PkgPathsVar;
 our @ISA = qw(AnyVar);
-sub want_in_ports_view { 1 }
+sub want_in_ports_view($) { 1 }
 
-sub ports_view_column
+sub ports_view_column($self, $name)
 {
-	my ($self, $name) = @_;
 	return Sql::Column::View->new($name, origin => 'Value')->join(
 	    Sql::Join->new($self->table."_ordered")->left
 	    	->add(Sql::Equal->new("FullPkgpath", "FullPkgpath")));
 
 }
 
-sub table() { 'PkgPaths' }
-sub create_tables
+sub table($) { 'PkgPaths' }
+sub create_tables($self, $inserter)
 {
-	my ($self, $inserter) = @_;
 	$self->create_table(
 	    $self->fullpkgpath,
 	    Sql::Column::Integer->new("Value")->references("_Paths"),
@@ -511,9 +470,8 @@ sub create_tables
 	$inserter->make_ordered_view($self);
 }
 
-sub add
+sub add($self, $ins)
 {
-	my ($self, $ins) = @_;
 	$self->SUPER::add($ins);
 	my $n = 0;
 	for my $pkgpath ($self->words) {
@@ -528,40 +486,37 @@ sub add
 
 package LibDependsVar;
 our @ISA = qw(DependsVar);
-sub match() { 0 }
+sub match($) { 0 }
 
 package RunDependsVar;
 our @ISA = qw(DependsVar);
-sub match() { 1 }
+sub match($) { 1 }
 
 package BuildDependsVar;
 our @ISA = qw(DependsVar);
-sub match() { 2 }
+sub match($) { 2 }
 
 package TestDependsVar;
 our @ISA = qw(DependsVar);
-sub match() { 3 }
+sub match($) { 3 }
 
 # Stuff that gets stored in another table
 package SecondaryVar;
 our @ISA = qw(KeyVar);
-sub keyword_table() { undef }
+sub keyword_table($) { undef }
 
-sub add_value
+sub add_value($self, $ins, $value, @r)
 {
-	my ($self, $ins, $value, @r) = @_;
 	$self->normal_insert($ins, $value, @r);
 }
 
-sub add_keyword
+sub add_keyword($self, $ins, $value, @r)
 {
-	my ($self, $ins, $value, @r) = @_;
 	$self->add_value($ins, $self->keyword($ins, $value), @r);
 }
 
-sub create_tables
+sub create_tables($self, $inserter)
 {
-	my ($self, $inserter) = @_;
 	my $k = $self->keyword_table;
 	
 	$self->create_table(
@@ -571,9 +526,8 @@ sub create_tables
 	    $self->pathref, $self->view_columns($k));
 }
 
-sub view_columns
+sub view_columns($self, $k = undef)
 {
-	my ($self, $k) = @_;
 	my $c = Sql::Column::View->new("Value");
 	if (defined $k) {
 		$c->join(Sql::Join->new($k)
@@ -582,9 +536,8 @@ sub view_columns
 	return $c;
 }
 
-sub table_columns
+sub table_columns($self, $k = undef)
 {
-	my ($self, $k) = @_;
 	if (defined $k) {
 		return Sql::Column::Integer->new("Value")->references($k)
 		    ->constraint;
@@ -596,44 +549,39 @@ sub table_columns
 package CountedSecondaryVar;
 our @ISA = qw(SecondaryVar);
 
-sub view_columns
+sub view_columns($self, $k = undef)
 {
-	my ($self, $k) = @_;
 	return ($self->SUPER::view_columns($k),
 		Sql::Column::View->new("N"));
 }
 
-sub table_columns
+sub table_columns($self, $k = undef)
 {
-	my ($self, $k) = @_;
 	return ($self->SUPER::table_columns($k),
 	    Sql::Column::Integer->new("N")->notnull->constraint);
 }
 
-sub ports_view_column
+sub ports_view_column($self, $name)
 {
-	my ($self, $name) = @_;
 	return Sql::Column::View->new($name, origin => 'Value')->join(
 	    Sql::Join->new($self->table."_ordered")->left
 	    	->add(Sql::Equal->new("FullPkgpath", "FullPkgpath")));
 
 }
 
-sub create_tables
+sub create_tables($self, $inserter)
 {
-	my ($self, $inserter) = @_;
 	$self->SUPER::create_tables($inserter);
 	$inserter->make_ordered_view($self);
 }
 
 package MasterSitesVar;
 our @ISA = qw(OptKeyVar);
-sub table() { 'MasterSites' }
-sub want_in_ports_view { 1 }
+sub table($) { 'MasterSites' }
+sub want_in_ports_view($) { 1 }
 
-sub compute_join
+sub compute_join($self, $name)
 {
-	my ($self, $name) = @_;
 	my $j = Sql::Join->new($self->table_name($self->table))->left
 	    ->add(Sql::Equal->new("FullPkgPath", "FullPkgPath"));
 	if ($name =~ m/^MASTER_SITES(\d)$/) {
@@ -644,16 +592,14 @@ sub compute_join
 	return $j;
 }
 
-sub ports_view_column
+sub ports_view_column($self, $name)
 {
-	my ($self, $name) = @_;
 	return Sql::Column::View->new($name, origin => 'Value')->join(
 		$self->compute_join($name));
 }
 
-sub add
+sub add($self, $ins)
 {
-	my ($self, $ins) = @_;
 	$self->AnyVar::add($ins);
 
 	my $n;
@@ -663,9 +609,8 @@ sub add
 	$self->normal_insert($ins, $n, $self->value);
 }
 
-sub create_tables
+sub create_tables($self, $inserter)
 {
-	my ($self, $inserter) = @_;
 	my $t = $self->table_name($self->table);
 	$self->create_table(
 	    $self->fullpkgpath,
@@ -680,11 +625,10 @@ sub create_tables
 # Generic handling for any blank-separated list
 package ListVar;
 our @ISA = qw(CountedSecondaryVar);
-sub want_in_ports_view { 1 }
+sub want_in_ports_view($) { 1 }
 
-sub add
+sub add($self, $ins)
 {
-	my ($self, $ins) = @_;
 	$self->AnyVar::add($ins);
 	my $n = 0;
 	for my $d ($self->words) {
@@ -696,12 +640,11 @@ sub add
 
 package ListKeyVar;
 our @ISA = qw(CountedSecondaryVar);
-sub keyword_table() { '_Keywords' }
-sub want_in_ports_view { 1 }
+sub keyword_table($) { '_Keywords' }
+sub want_in_ports_view($) { 1 }
 
-sub add
+sub add($self, $ins)
 {
-	my ($self, $ins) = @_;
 	$self->AnyVar::add($ins);
 	my $n = 0;
 	for my $d ($self->words) {
@@ -711,9 +654,8 @@ sub add
 	}
 }
 
-sub subselect
+sub subselect($self)
 {
-	my $self = shift;
 	my $k = $self->keyword_table;
 	return (Sql::Column::View->new('FullPkgPath'),
 	    Sql::Column::View->new('Value')
@@ -724,9 +666,8 @@ sub subselect
 
 package Sql::Column::View::QuoteExpr;
 our @ISA = qw(Sql::Column::View::Expr);
-sub expr
+sub expr($self)
 {
-	my $self = shift;
 	my $q = $self->column("QuoteType");
 	my $v = $self->column;
 	return
@@ -740,9 +681,8 @@ END};
 package QuotedListVar;
 our @ISA = qw(ListVar);
 
-sub add
+sub add($self, $ins)
 {
-	my ($self, $ins) = @_;
 	$self->AnyVar::add($ins);
 	my @l = ($self->words);
 	my $n = 0;
@@ -765,23 +705,20 @@ sub add
 	}
 }
 
-sub view_columns
+sub view_columns($self, $k)
 {
-	my ($self, $k) = @_;
 	return ($self->SUPER::view_columns($k),
 	    Sql::Column::View->new("QuoteType"));
 }
 
-sub table_columns
+sub table_columns($self, $k)
 {
-	my ($self, $k) = @_;
 	return ($self->SUPER::table_columns($k), 
 	    Sql::Column::Integer->new("QuoteType")->notnull);
 }
 
-sub subselect
+sub subselect($self)
 {
-	my $self = shift;
 	my $t = $self->table_name($self->table);
 	return (Sql::Column::View->new('FullPkgPath'),
 	    Sql::Column::View::QuoteExpr->new('Value'),
@@ -791,9 +728,8 @@ sub subselect
 package DefinedListKeyVar;
 our @ISA = qw(ListKeyVar);
 
-sub add
+sub add($self, $ins)
 {
-	my ($self, $ins) = @_;
 	return if $self->value eq '';
 	$self->SUPER::add($ins);
 }
@@ -802,8 +738,8 @@ package MakefilesListVar;
 our @ISA = qw(DefinedListKeyVar);
 
 my $portsdir = $ENV{PORTSDIR} || '/usr/ports';
-sub table() { 'Makefiles' }
-sub keyword_table() { '_Filename' }
+sub table($) { 'Makefiles' }
+sub keyword_table($) { '_Filename' }
 
 my $always = {
 	map {($_, 1)} (
@@ -822,9 +758,8 @@ my $always = {
 		)
 };
 	
-sub words
+sub words($self)
 {
-	my $self = shift;
 	my @result = ();
 	for my $x ($self->SUPER::words) {
 		$x =~ s,^\Q$portsdir\E/,\$\{PORTSDIR\}/,;
@@ -837,41 +772,40 @@ sub words
 package CRLFFiles;
 our @ISA = qw(DefinedListKeyVar);
 
-sub table() { 'FixCRLFFiles' }
-sub keyword_table() { '_Filename2' }
+sub table($) { 'FixCRLFFiles' }
+sub keyword_table($) { '_Filename2' }
 
 package FlavorsVar;
 our @ISA = qw(DefinedListKeyVar);
-sub table() { 'Flavors' }
+sub table($) { 'Flavors' }
 
 package PseudoFlavorsVar;
 our @ISA = qw(DefinedListKeyVar);
-sub table() { 'PseudoFlavors' }
+sub table($) { 'PseudoFlavors' }
 
 package ArchListVar;
 our @ISA = qw(DefinedListKeyVar);
-sub keyword_table() { '_Arch' }
+sub keyword_table($) { '_Arch' }
 
 package CompilerLinksVar;
 our @ISA = qw(DefinedListKeyVar);
-sub table() { 'CompilerLinks' }
-sub keyword_table() { '_Compiler' }
+sub table($) { 'CompilerLinks' }
+sub keyword_table($) { '_Compiler' }
 
 package OnlyForArchListVar;
 our @ISA = qw(ArchListVar);
-sub table() { 'OnlyForArch' }
+sub table($) { 'OnlyForArch' }
 
 package NotForArchListVar;
 our @ISA = qw(ArchListVar);
-sub table() { 'NotForArch' }
+sub table($) { 'NotForArch' }
 
 package CategoriesVar;
 our @ISA = qw(ListKeyVar);
-sub table() { 'Categories' }
-sub keyword_table() { '_CategoryKeys' }
-sub ports_view_column
+sub table($) { 'Categories' }
+sub keyword_table($) { '_CategoryKeys' }
+sub ports_view_column($self, $name)
 {
-	my ($self, $name) = @_;
 	return Sql::Column::View->new($name, origin => 'Value')->join(
 	    Sql::Join->new($self->table."_ordered")
 	    	->add(Sql::Equal->new("FullPkgpath", "FullPkgpath")));
@@ -880,22 +814,21 @@ sub ports_view_column
 
 package TargetsVar;
 our @ISA = qw(ListKeyVar);
-sub table() { 'Targets' }
-sub keyword_table() { '_TargetKeys' }
+sub table($) { 'Targets' }
+sub keyword_table($) { '_TargetKeys' }
 
 package DPBPropertiesVar;
 our @ISA = qw(DefinedListKeyVar);
-sub table() { 'DPBProperties' }
-sub keyword_table() { '_DPBKeys' }
+sub table($) { 'DPBProperties' }
+sub keyword_table($) { '_DPBKeys' }
 
 package MultiVar;
 our @ISA = qw(ListVar);
-sub table() { 'Multi' }
-sub want_in_ports_view { 0 }
+sub table($) { 'Multi' }
+sub want_in_ports_view($) { 0 }
 
-sub create_tables
+sub create_tables($self, $inserter)
 {
-	my ($self, $inserter) = @_;
 	$self->create_table(
 	    $self->fullpkgpath,
 	    Sql::Column::Text->new("Value")->notnull->constraint,
@@ -908,27 +841,24 @@ sub create_tables
 		    ->add(Sql::Equal->new('Id', 'SubPkgPath'))));
 }
 
-sub new
+sub new($class, $var, $value, $arch = undef, $path = undef)
 {
-	my ($class, $var, $value, $arch, $path) = @_;
 	die "No arch fo $var" if defined $arch;
 	bless [$var, $value, $path], $class;
 }
 
-sub path
+sub path($self)
 {
-	return shift->[2];
+	return $self->[2];
 }
 
-sub dont_add
+sub dont_add($self)
 {
-	my $self = shift;
 	return $self->value eq '-';
 }
 
-sub add
+sub add($self, $ins)
 {
-	my ($self, $ins) = @_;
 	return if $self->dont_add;
 	my $base = $self->path;
 	$self->AnyVar::add($ins);
@@ -941,36 +871,35 @@ sub add
 
 package DebugPackagesVar;
 our @ISA = qw(MultiVar);
-sub table() { 'DebugPackages' }
+sub table($) { 'DebugPackages' }
 
-sub dont_add
+sub dont_add($)
 {
 	0
 }
 
 package ModulesVar;
 our @ISA = qw(DefinedListKeyVar);
-sub table() { 'Modules' }
-sub keyword_table() { '_ModuleKeys' }
+sub table($) { 'Modules' }
+sub keyword_table($) { '_ModuleKeys' }
 
 package ConfigureVar;
 our @ISA = qw(DefinedListKeyVar);
-sub table() { 'Configure' }
-sub keyword_table() { '_ConfigureKeys' }
+sub table($) { 'Configure' }
+sub keyword_table($) { '_ConfigureKeys' }
 
 package ConfigureArgsVar;
 our @ISA = qw(QuotedListVar);
-sub table() { 'ConfigureArgs' }
+sub table($) { 'ConfigureArgs' }
 
 package DebugConfigureArgsVar;
 our @ISA = qw(ConfigureArgsVar);
-sub table() { 'DebugConfigureArgs' }
+sub table($) { 'DebugConfigureArgs' }
 package Sql::Column::View::WithSite;
 our @ISA = qw(Sql::Column::View::Expr);
 
-sub expr
+sub expr($self)
 {
-	my $self = shift;
 	my $c = $self->column;
 	my $n = $self->column("N");
 	return
@@ -983,21 +912,19 @@ END
 
 package DistfilesVar;
 our @ISA = qw(ListVar);
-sub keyword_table() { '_fetchfiles' }
-sub table() { 'Distfiles' }
-sub match() { 0 }
-sub want_in_ports_view { 1 }
+sub keyword_table($) { '_fetchfiles' }
+sub table($) { 'Distfiles' }
+sub match($) { 0 }
+sub want_in_ports_view($) { 1 }
 
-sub _add
+sub _add($self, $ins, $value, $num)
 {
-	my ($self, $ins, $value, $num) = @_;
 	$self->normal_insert($ins, $self->keyword($ins, $value), $num, 
 	    $self->match);
 }
 
-sub add_value
+sub add_value($self, $ins, $value, @extra)
 {
-	my ($self, $ins, $value) = @_;
 	if ($value =~ m/^(.*?)\:(\d)$/) {
 		$self->_add($ins, $1, $2);
 	} else {
@@ -1005,9 +932,8 @@ sub add_value
 	}
 }
 
-sub create_tables
+sub create_tables($self, $inserter)
 {
-	my ($self, $inserter) = @_;
 	my $t = $self->table_name($self->table);
 	my $k = $self->keyword_table;
 	$self->create_table(
@@ -1024,9 +950,8 @@ sub create_tables
 	$inserter->make_ordered_view($self);
 }
 
-sub subselect
+sub subselect($self)
 {
-	my $self = shift;
 	my $t = $self->table_name($self->table);
 	my $k = $self->keyword_table;
 	return (Sql::Column::View->new('FullPkgPath'),
@@ -1036,14 +961,13 @@ sub subselect
 	    Sql::Order->new("Value"));
 }
 
-sub select
+sub select($)
 {
 	return (Sql::Column::View->new("Type")->group_by);
 }
 
-sub ports_view_column
+sub ports_view_column($self, $name)
 {
-	my ($self, $name) = @_;
 	return Sql::Column::View->new($name, origin => 'Value')->join(
 	    Sql::Join->new($self->table."_ordered")->left
 	    	->add(Sql::Equal->new("FullPkgpath", "FullPkgpath"),
@@ -1052,18 +976,17 @@ sub ports_view_column
 
 package SupdistfilesVar;
 our @ISA = qw(DistfilesVar);
-sub match() { 1 }
+sub match($) { 1 }
 
 package PatchfilesVar;
 our @ISA = qw(DistfilesVar);
-sub match() { 2 }
+sub match($) { 2 }
 
 package Sql::Column::View::WithExtra;
 our @ISA = qw(Sql::Column::View::Expr);
 
-sub expr
+sub expr($self)
 {
-	my $self = shift;
 	my $c = $self->column;
 	my $extra = $self->column("Extra");
 	return
@@ -1076,19 +999,17 @@ END
 
 package WantlibVar;
 our @ISA = qw(ListVar);
-sub table() { 'Wantlib' }
-sub keyword_table() { '_Library' }
-sub want_in_ports_view { 1 }
+sub table($) { 'Wantlib' }
+sub keyword_table($) { '_Library' }
+sub want_in_ports_view($) { 1 }
 
-sub _add
+sub _add($self, $ins, $value, $extra = undef)
 {
-	my ($self, $ins, $value, $extra) = @_;
 	$self->normal_insert($ins, $self->keyword($ins, $value), $extra);
 }
 
-sub add_value
+sub add_value($self, $ins, $value, @)
 {
-	my ($self, $ins, $value) = @_;
 	if ($value =~ m/^(.*?)(\>?\=\d+\.\d+)$/) {
 		$self->_add($ins, $1, $2);
 	} elsif ($value =~ m/^(.*?)(\>?\=\d+)$/) {
@@ -1098,9 +1019,8 @@ sub add_value
 	}
 }
 
-sub create_tables
+sub create_tables($self, $inserter)
 {
-	my ($self, $inserter) = @_;
 	my $t = $self->table_name($self->table);
 	my $k = $self->keyword_table;
 	$self->create_table(
@@ -1115,9 +1035,8 @@ sub create_tables
 	$inserter->make_ordered_view($self);
 }
 
-sub subselect
+sub subselect($self)
 {
-	my $self = shift;
 	my $t = $self->table_name($self->table);
 	my $k = $self->keyword_table;
 	return (Sql::Column::View->new('FullPkgPath'),
@@ -1126,14 +1045,13 @@ sub subselect
 	    Sql::Order->new("FullPkgPath"), Sql::Order->new("Value"));
 }
 
-sub select
+sub select($)
 {
 	return ();
 }
 
-sub ports_view_column
+sub ports_view_column($self, $name)
 {
-	my ($self, $name) = @_;
 	return Sql::Column::View->new($name, origin => 'Value')->join(
 	    Sql::Join->new($self->table."_ordered")->left
 	    	->add(Sql::Equal->new("FullPkgpath", "FullPkgpath")));
@@ -1141,16 +1059,15 @@ sub ports_view_column
 
 package OnlyForArchVar;
 our @ISA = qw(DefinedListKeyVar);
-sub table() { 'OnlyForArch' }
-sub keyword_table() { '_Arches' }
+sub table($) { 'OnlyForArch' }
+sub keyword_table($) { '_Arches' }
 
 package FileVar;
 our @ISA = qw(SecondaryVar);
-sub want_in_ports_view { 1 }
+sub want_in_ports_view($) { 1 }
 
-sub new
+sub new($class, $var, $value, $arch, $pkg)
 {
-	my ($class, $var, $value, $arch, $pkg) = @_;
 	my $path = $value;
 	if ($value =~ m,^/,) {
 		$value =~ s,^\Q$portsdir\E/,,;
@@ -1163,13 +1080,13 @@ sub new
 	return $o;
 }
 
-sub fullpath
+sub fullpath($self)
 {
-	return shift->[2];
+	return $self->[2];
 }
-sub add
+
+sub add($self, $ins)
 {
-	my ($self, $ins) = @_;
 	$self->AnyVar::add($ins);
 	my $filename = $self->fullpath;
 	open my $file, '<', $filename or die "Can't open $filename: $!";
@@ -1181,23 +1098,20 @@ sub add
 	$self->add_value($ins, $contents, $self->value);
 }
 
-sub view_columns
+sub view_columns($self, $k)
 {
-	my ($self, $k) = @_;
 	return ($self->SUPER::view_columns($k),
 	    Sql::Column::View->new("Filename"));
 }
 
-sub table_columns
+sub table_columns($, $)
 {
-	my ($self, $k) = @_;
 	return (Sql::Column::Text->new("Value")->notnull,
 	    Sql::Column::Text->new("Filename")->notnull);
 }
 
-sub ports_view_column
+sub ports_view_column($self, $name)
 {
-	my ($self, $name) = @_;
 	my $j = $self->compute_join($name);
 	return (Sql::Column::View->new($name, origin => 'Filename')->join($j),
 	    Sql::Column::View->new($name."_CONTENTS", origin => 'Value')
@@ -1206,25 +1120,23 @@ sub ports_view_column
 
 package ReadmeVar;
 our @ISA = qw(FileVar);
-sub table() { 'ReadMe' }
+sub table($) { 'ReadMe' }
 
-sub compute_join
+sub compute_join($self, $name)
 {
-	my ($self, $name) = @_;
 	return $self->SUPER::compute_join($name)->left;
 }
 
 package DescrVar;
 our @ISA = qw(FileVar);
-sub table() { 'Descr' }
+sub table($) { 'Descr' }
 use File::Basename;
 
 # README does not exist as an actual variable, but it's trivial
 # to add it as a subsidiary of DESCR when the file exists.
 
-sub new
+sub new($class, $var, $value, $arch, $path)
 {
-	my ($class, $var, $value, $arch, $path) = @_;
 	my $dir = dirname($value);
 	my $readme = "$dir/README";
 	my $multi = $path->multi;
@@ -1240,9 +1152,8 @@ sub new
 
 package Sql::Column::View::AddVersion;
 our @ISA = qw(Sql::Column::View::Expr);
-sub expr
+sub expr($self)
 {
-	my $self = shift;
 	my $c = $self->column;
 	my $extra = $self->column("Version");
 	return "$c || ' '||$extra";
@@ -1250,13 +1161,12 @@ sub expr
 
 package SharedLibsVar;
 our @ISA = qw(KeyVar);
-sub table() { 'Shared_Libs' }
-sub keyword_table() { '_Library' }
-sub want_in_ports_view { 1 }
+sub table($) { 'Shared_Libs' }
+sub keyword_table($) { '_Library' }
+sub want_in_ports_view($) { 1 }
 
-sub add
+sub add($self, $ins)
 {
-	my ($self, $ins) = @_;
 	$self->AnyVar::add($ins);
 	my %t = $self->words;
 	while (my ($k, $v) = each %t) {
@@ -1264,9 +1174,8 @@ sub add
 	}
 }
 
-sub create_tables
+sub create_tables($self, $inserter)
 {
-	my ($self, $inserter) = @_;
 	my $k = $self->keyword_table;
 	$self->create_table(
 	    $self->fullpkgpath,
@@ -1280,9 +1189,8 @@ sub create_tables
 	$inserter->make_ordered_view($self);
 }
 
-sub subselect
+sub subselect($self)
 {
-	my $self = shift;
 	my $t = $self->table_name($self->table);
 	my $k = $self->keyword_table;
 	return (Sql::Column::View->new('FullPkgPath'),
@@ -1291,14 +1199,13 @@ sub subselect
 	    Sql::Order->new("Value"));
 }
 
-sub select
+sub select($)
 {
 	return ();
 }
 
-sub ports_view_column
+sub ports_view_column($self, $name)
 {
-	my ($self, $name) = @_;
 	return Sql::Column::View->new($name, origin => 'Value')->join(
 	    Sql::Join->new($self->table."_ordered")->left
 	    	->add(Sql::Equal->new("FullPkgpath", "FullPkgpath")));
@@ -1306,14 +1213,14 @@ sub ports_view_column
 
 package EmailVar;
 our @ISA = qw(KeyVar);
-sub keyword_table() { '_Email' }
+sub keyword_table($) { '_Email' }
 
 package YesKeyVar;
 our @ISA = qw(KeyVar);
-sub keyword_table() { '_Keywords2' }
+sub keyword_table($) { '_Keywords2' }
 
 package AutoVersionVar;
 our @ISA = qw(OptKeyVar);
-sub keyword_table() { '_AutoVersion' }
+sub keyword_table($) { '_AutoVersion' }
 
 1;
