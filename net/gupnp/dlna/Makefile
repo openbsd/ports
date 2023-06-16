@@ -2,7 +2,7 @@ COMMENT=		DLNA integration for GUPnP
 
 GNOME_PROJECT=		gupnp-dlna
 GNOME_VERSION=		0.12.0
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=	gupnp-dlna-2.0            0.0 # 3.0
 SHARED_LIBS +=	gupnp-dlna-gst-2.0        0.0 # 3.0
@@ -17,7 +17,9 @@ MODGNOME_TOOLS += gobject-introspection vala
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-LIB_DEPENDS=		multimedia/gstreamer1/plugins-base
+LIB_DEPENDS=		multimedia/gstreamer1/plugins-base \
+			textproc/libxml
+
 RUN_DEPENDS=		net/gupnp/core
 
 # support for various media files
