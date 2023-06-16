@@ -17,6 +17,8 @@ MODKF5_L10N_CONFLICT = yes
 # XXX fix with new libgphoto2; revisit at next update
 CXXFLAGS +=	-I${LOCALBASE}/include -DHAVE_GPHOTO2_5
 
+BUILD_DEPENDS =	devel/kf5/kcmutils
+
 LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcodecs \
 		devel/kf5/kconfig \
