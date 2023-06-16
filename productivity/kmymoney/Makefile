@@ -4,7 +4,7 @@ COMMENT =	accounting for KDE 5
 
 V =		5.1.3
 DISTNAME =	kmymoney-${V}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	productivity x11
 
@@ -28,22 +28,21 @@ PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${MASTER_SITE_KDE:=stable/kmymoney/${V}/src/}
 
-WANTLIB += ${COMPILER_LIBCXX} KChart KF5Activities KF5AkonadiCore
-WANTLIB += KF5Archive KF5Auth KF5AuthCore KF5Bookmarks KF5Codecs
-WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
-WANTLIB += KF5Contacts KF5CoreAddons KF5Holidays KF5I18n KF5IconThemes
-WANTLIB += KF5IdentityManagement KF5ItemModels KF5ItemViews KF5JobWidgets
-WANTLIB += KF5KCMUtils KF5KIOCore KF5KIOFileWidgets KF5KIOGui
-WANTLIB += KF5KIONTLM KF5KIOWidgets KF5Notifications KF5Service
-WANTLIB += KF5Solid KF5SonnetUi KF5TextWidgets KF5Wallet KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
+WANTLIB += ${COMPILER_LIBCXX} KChart KF5Activities KF5Archive
+WANTLIB += KF5Auth KF5AuthCore KF5Bookmarks KF5Codecs KF5Completion
+WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5Contacts
+WANTLIB += KF5CoreAddons KF5Holidays KF5I18n KF5IconThemes KF5ItemModels
+WANTLIB += KF5ItemViews KF5JobWidgets KF5KCMUtils KF5KIOCore KF5KIOFileWidgets
+WANTLIB += KF5KIOGui KF5KIONTLM KF5KIOWidgets KF5Notifications
+WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5TextWidgets KF5Wallet
+WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui KPim5AkonadiCore
+WANTLIB += KPim5IdentityManagement Qt5Concurrent Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport Qt5Qml
 WANTLIB += Qt5QmlModels Qt5Quick Qt5QuickWidgets Qt5Sql Qt5WebChannel
 WANTLIB += Qt5WebEngineCore Qt5WebEngineWidgets Qt5WebKit Qt5WebKitWidgets
 WANTLIB += Qt5Widgets Qt5Xml X11 alkimia5 aqbanking assuan c db
 WANTLIB += db_cxx gmp gpgme gpgmepp gwengui-cpp gwengui-qt5 gwenhywfar
-WANTLIB += ical icalss icalvcal icui18n icuuc m ofx
-#WANTLIB += ${MODPY_WANTLIB}
+WANTLIB += ical icalss icalvcal icui18n icuuc m ofx python3.10
 
 MODULES =		lang/python \
 			devel/kf5
