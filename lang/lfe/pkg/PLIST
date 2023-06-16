@@ -1,0 +1,68 @@
+bin/lfe
+bin/lfec
+bin/lfedoc
+bin/lfescript
+lib/lfe/
+lib/lfe/bin/
+lib/lfe/bin/lfe
+lib/lfe/bin/lfec
+lib/lfe/bin/lfedoc
+lib/lfe/bin/lfescript
+lib/lfe/ebin/
+lib/lfe/ebin/cl.beam
+lib/lfe/ebin/clj.beam
+lib/lfe/ebin/lfe.app
+lib/lfe/ebin/lfe.beam
+lib/lfe/ebin/lfe_abstract_code.beam
+lib/lfe/ebin/lfe_bits.beam
+lib/lfe/ebin/lfe_codegen.beam
+lib/lfe/ebin/lfe_codelift.beam
+lib/lfe/ebin/lfe_comp.beam
+lib/lfe/ebin/lfe_docs.beam
+lib/lfe/ebin/lfe_edlin_expand.beam
+lib/lfe/ebin/lfe_env.beam
+lib/lfe/ebin/lfe_eval.beam
+lib/lfe/ebin/lfe_eval_bits.beam
+lib/lfe/ebin/lfe_gen.beam
+lib/lfe/ebin/lfe_init.beam
+lib/lfe/ebin/lfe_internal.beam
+lib/lfe/ebin/lfe_io.beam
+lib/lfe/ebin/lfe_io_format.beam
+lib/lfe/ebin/lfe_io_pretty.beam
+lib/lfe/ebin/lfe_io_write.beam
+lib/lfe/ebin/lfe_lib.beam
+lib/lfe/ebin/lfe_lint.beam
+lib/lfe/ebin/lfe_macro.beam
+lib/lfe/ebin/lfe_macro_export.beam
+lib/lfe/ebin/lfe_macro_include.beam
+lib/lfe/ebin/lfe_macro_record.beam
+lib/lfe/ebin/lfe_macro_struct.beam
+lib/lfe/ebin/lfe_ms.beam
+lib/lfe/ebin/lfe_parse.beam
+lib/lfe/ebin/lfe_qlc.beam
+lib/lfe/ebin/lfe_scan.beam
+lib/lfe/ebin/lfe_shell.beam
+lib/lfe/ebin/lfe_shell_docs.beam
+lib/lfe/ebin/lfe_struct.beam
+lib/lfe/ebin/lfe_translate.beam
+lib/lfe/ebin/lfe_types.beam
+lib/lfe/ebin/lfescript.beam
+lib/lfe/ebin/scm.beam
+lib/lfe/include/
+lib/lfe/include/cl.lfe
+lib/lfe/include/clj.lfe
+lib/lfe/include/match-spec.lfe
+lib/lfe/include/scm.lfe
+@man man/man1/lfe.1
+@man man/man1/lfescript.1
+@man man/man3/lfe_bits.3
+@man man/man3/lfe_cl.3
+@man man/man3/lfe_clj.3
+@man man/man3/lfe_comp.3
+@man man/man3/lfe_docs.3
+@man man/man3/lfe_gen.3
+@man man/man3/lfe_io.3
+@man man/man3/lfe_lib.3
+@man man/man3/lfe_macro.3
+@man man/man7/lfe_guide.7
+@man man/man7/lfe_types.7

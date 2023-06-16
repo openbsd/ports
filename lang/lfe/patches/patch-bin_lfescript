@@ -1,0 +1,12 @@
+Index: bin/lfescript
+--- bin/lfescript.orig
++++ bin/lfescript
+@@ -45,7 +45,7 @@ export LFE_BINDIR
+ export LFE_PROGNAME
+ 
+ # Set which emulator to use, the default is erl.
+-emulator=${LFESCRIPT_EMULATOR-"erl"}
++emulator=${LFESCRIPT_EMULATOR-"erl${MODERL_VERSION}"}
+ 
+ # Collect any script options starting with '-' upto the script name.
+ # Valid script options are only flags without arguments.

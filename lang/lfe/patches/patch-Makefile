@@ -1,0 +1,18 @@
+- adjust symlinks for fake install
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -142,7 +142,11 @@ install-bin:
+ 		$(BINDIR)/lfescript \
+ 		$(DESTBINDIR)
+ 	$(INSTALL_DIR) $(PREFIX)/bin
+-	ln -sf $(DESTBINDIR)/* $(PREFIX)/bin/
++	ln -sf  ../lib/lfe/${BINDIR}/lfe \
++		../lib/lfe/$(BINDIR)/lfec \
++		../lib/lfe/$(BINDIR)/lfedoc \
++		../lib/lfe/$(BINDIR)/lfescript \
++		$(PREFIX)/bin/
+ 
+ clean:
+ 	rm -rf $(EBINDIR)/*.beam erl_crash.dump comp_opts.mk
