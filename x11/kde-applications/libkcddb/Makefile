@@ -18,6 +18,8 @@ MODKDE5_DESKTOP_FILE = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
+BUILD_DEPENDS =	devel/kf5/kcmutils
+
 LIB_DEPENDS =	audio/libmusicbrainz5 \
 		devel/kf5/kauth \
 		devel/kf5/kcodecs \
