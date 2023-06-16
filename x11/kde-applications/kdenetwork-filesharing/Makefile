@@ -17,6 +17,8 @@ MODKF5_L10N_CONFLICT = yes
 RUN_DEPENDS =	net/samba \
 		x11/dbus,-suid
 
+BUILD_DEPENDS =	devel/qcoro
+
 LIB_DEPENDS =	devel/kf5/kcompletion \
 		devel/kf5/kconfig \
 		devel/kf5/ki18n \
