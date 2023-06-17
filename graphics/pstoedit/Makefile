@@ -3,6 +3,7 @@ COMMENT=	translate PostScript/PDF graphics to other vector formats
 DISTNAME=	pstoedit-3.78
 SHARED_LIBS=	pstoedit 3.0
 CATEGORIES=	graphics
+REVISION=	0
 
 HOMEPAGE=	http://www.pstoedit.net/
 
@@ -15,6 +16,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pstoedit/}
 
 RUN_DEPENDS=	print/ghostscript/gnu
 BUILD_DEPENDS=	${RUN_DEPENDS}
+LIB_DEPENDS=	graphics/gd
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
@@ -29,6 +31,8 @@ WANTLIB=	c ${COMPILER_LIBCXX} m
 
 # c++14
 COMPILER =	base-clang ports-gcc
+
+CONFIGURE_ENV+=	CXXFLAGS="-I/usr/local/include"
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/pstoedit.1 ${PREFIX}/man/man1
