@@ -10,6 +10,9 @@ SHARED_LIBS +=  ykpiv                     1.0 # 5.4
 
 CATEGORIES=	sysutils
 
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 WANTLIB +=	c pthread crypto pcsclite
 
 BUILD_DEPENDS=	devel/check \
