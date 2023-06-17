@@ -1,3 +1,5 @@
+BROKEN-sparc64= Doesn't support sparc64 as an architecture
+
 COMMENT=	meta build framework for ninja
 DPB_PROPERTIES=	parallel
 
