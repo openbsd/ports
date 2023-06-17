@@ -13,6 +13,9 @@ MAINTAINER=	Sergey A. Osokin <osa@FreeBSD.org>
 # 2 clause BSD
 PERMIT_PACKAGE=	Yes
 
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 WANTLIB=	c crypto pcre2-8 readline ssl xml2 z
 
 LIB_DEPENDS=	devel/pcre2 \
