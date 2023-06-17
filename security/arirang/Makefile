@@ -13,6 +13,9 @@ HOMEPAGE =	http://www.monkey.org/~pilot
 # BSD
 PERMIT_PACKAGE=	Yes
 
+COMPILER =	base-clang ports-gcc
+COMPILER_LANGS =	c
+
 CONFIGURE_STYLE =	simple
 CONFIGURE_SCRIPT =	${SETENV} ${MAKE_ENV} ${RUBY} extconf.rb
 
