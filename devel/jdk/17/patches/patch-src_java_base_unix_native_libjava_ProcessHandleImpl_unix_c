@@ -1,0 +1,14 @@
+Start using waitid(2)
+
+Index: src/java.base/unix/native/libjava/ProcessHandleImpl_unix.c
+--- src/java.base/unix/native/libjava/ProcessHandleImpl_unix.c.orig
++++ src/java.base/unix/native/libjava/ProcessHandleImpl_unix.c
+@@ -252,7 +252,7 @@ Java_java_lang_ProcessHandleImpl_waitForProcessExit0(J
+             return status;
+         }
+      } else {
+-#if defined(__OpenBSD__)
++#if defined(__OpenBSD__) && OpenBSD < 202304
+         return os_waitForProcessExitNoReap(pid);
+ #else
+         /*
