@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.5 2023/05/06 05:20:32 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.6 2023/06/17 19:25:51 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -46,7 +46,7 @@ sub start_build($self, $v, $core, $lock)
 {
 	$self->log('J', $v);
 	$self->{engine}{state}->fetch->fetch($v, $core,
-	    sub { 
+	    sub($core) { 
 	    	$self->end($core, $v, $core->{status});
 	    });
 }

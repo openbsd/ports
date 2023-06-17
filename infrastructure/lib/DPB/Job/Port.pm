@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.209 2023/06/11 16:53:17 espie Exp $
+# $OpenBSD: Port.pm,v 1.210 2023/06/17 19:25:51 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -902,11 +902,11 @@ sub new($class, %prop)
 
 	my $e = $job->{endcode};
 
-	$job->{endcode} = sub {
+	$job->{endcode} = sub($core) {
 	    print {$job->{logfh}} ">>> Ended at ", DPB::Util->current_ts, "\n";
 	    print {$job->{logfh}} $job->timings, "\n";
 	    close($job->{logfh});
-	    &$e;
+	    &$e($core);
 	};
 	$job->{tasks} = [];
 	# for stuff that doesn't really lock
