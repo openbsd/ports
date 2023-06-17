@@ -1,0 +1,12 @@
+Index: libavcodec/aarch64/simple_idct_neon.S
+--- libavcodec/aarch64/simple_idct_neon.S.orig
++++ libavcodec/aarch64/simple_idct_neon.S
+@@ -58,7 +58,7 @@ endconst
+ .endm
+ 
+ .macro idct_end
+-        br              x10
++        ret             x10
+ .endm
+ 
+ .macro smull1 a, b, c
