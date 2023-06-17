@@ -26,4 +26,9 @@ WANTLIB +=	z
 
 MODULES =		devel/cmake
 
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+CFLAGS +=	-std=gnu99
+.endif
+
 .include <bsd.port.mk>
