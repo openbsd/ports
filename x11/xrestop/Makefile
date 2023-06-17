@@ -1,5 +1,5 @@
 COMMENT=	top-like X server resources usage display tool
-DISTNAME=	xrestop-0.5
+DISTNAME=	xrestop-0.6
 
 CATEGORIES=	x11
 
