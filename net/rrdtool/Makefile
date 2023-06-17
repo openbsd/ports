@@ -22,6 +22,8 @@ MASTER_SITES=	https://github.com/oetiker/rrdtool-1.x/releases/download/v$V/
 # named open-source licenses; see COPYRIGHT
 PERMIT_PACKAGE=	 Yes
 
+COMPILER=	base-clang ports-gcc
+
 USE_GMAKE=	Yes
 
 PSEUDO_FLAVORS=	no_ruby
