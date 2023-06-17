@@ -1,0 +1,11 @@
+Index: common/aarch64/asm.S
+--- common/aarch64/asm.S.orig
++++ common/aarch64/asm.S
+@@ -83,6 +83,7 @@ FUNC    .endfunc
+ ELF     .type   EXTERN_ASM\name, %function
+ FUNC    .func   EXTERN_ASM\name
+ EXTERN_ASM\name:
++        bti     c
+     .else
+ ELF     .type   \name, %function
+ FUNC    .func   \name
