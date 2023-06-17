@@ -9,6 +9,10 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/ruby
 
+# C++
+COMPILER =	base-clang ports-gcc
+COMPILER_LANGS =	c c++
+
 WANTLIB =	${COMPILER_LIBCXX}
 
 CONFIGURE_STYLE = ruby gem ext
