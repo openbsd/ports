@@ -24,6 +24,9 @@ PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://cdn.zabbix.com/zabbix/sources/stable/${MAJV}/
 
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 MODULES =		lang/php
 MODPHP_BUILDDEP =	No
 
