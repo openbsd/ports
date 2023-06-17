@@ -13,6 +13,9 @@ CATEGORIES=	mail www productivity
 
 MODULES=	devel/cmake lang/python
 
+# C++
+COMPILER=	base-clang ports-gcc
+
 WANTLIB += ${COMPILER_LIBCXX} m
 
 BUILD_DEPENDS=	devel/py-pybind11${MODPY_FLAVOR}
