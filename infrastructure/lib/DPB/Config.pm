@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.94 2023/05/26 15:28:47 espie Exp $
+# $OpenBSD: Config.pm,v 1.95 2023/06/17 19:27:32 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -275,6 +275,16 @@ sub parse_command_line($class, $state)
 		$state->{tests} = 1;
 	}
 
+	if ($state->define_present('STATS_BACKLOG')) {
+	    $state->{stats_backlog} = $state->{subst}->value('STATS_BACKLOG');
+	}
+	$state->{stats_backlog} //= 25;
+	
+	if ($state->define_present('STATS_USED')) {
+	    $state->{stats_used} = $state->{subst}->value('STATS_USED');
+	}
+	$state->{stats_used} //= 10;
+
 	$state->{opt}{f} //= 2;
 	if ($state->opt('f')) {
 		$state->{want_fetchinfo} = 1;
@@ -381,7 +391,6 @@ sub command_line_overrides($class, $state)
 	if ($state->opt('M')) {
 		$override_prop->{mem} = $state->opt('M');
 	}
-
 	if ($state->define_present('SYSLOG')) {
 		require Sys::Syslog;
 		Sys::Syslog::openlog('dpb', "nofatal");

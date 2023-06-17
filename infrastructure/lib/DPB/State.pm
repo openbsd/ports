@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: State.pm,v 1.34 2023/05/29 09:04:37 espie Exp $
+# $OpenBSD: State.pm,v 1.35 2023/06/17 19:27:32 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -294,9 +294,11 @@ LINE:
 sub add_build_info($state, @consumers)
 {
 	for my $p (DPB::PkgPath->seen) {
-		next unless defined $p->{stats};
+		my $stats = $p->{stats};
+		next unless defined $stats;
 		my ($i, $time, $sz, $host);
-		for my $s (@{$p->{stats}}) {
+		for my $s ($state->{stats_used} >= @{$stats} ?
+		    @{$stats} : @{$stats}[-$state->{stats_used}..-1]) {
 			$time += $s->{time};
 			$sz += $s->{size};
 			$i++;
@@ -314,9 +316,11 @@ sub rewrite_build_info($state, $filename)
 	    sub($f) {
 		for my $p (sort {$a->fullpkgpath cmp $b->fullpkgpath}
 		    DPB::PkgPath->seen) {
-			next unless defined $p->{stats};
-			shift @{$p->{stats}} while @{$p->{stats}} > 10;
-			for my $s (@{$p->{stats}}) {
+		    	my $stats = $p->{stats};
+			next unless defined $stats;
+			for my $s ($state->{stats_backlog} >= @{$stats} ?
+			    @{$stats} : 
+			    @{$stats}[-$state->{stats_backlog}..-1]) {
 				print $f DPB::Serialize::Build->write($s), "\n"
 				    or return 0;
 			}
