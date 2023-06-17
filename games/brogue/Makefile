@@ -17,6 +17,9 @@ MAINTAINER =	Anton Konyahin <me@konyahin.xyz>
 # Assets: CC BY-SA 4.0
 PERMIT_PACKAGE =	Yes
 
+COMPILER =	base-clang ports-gcc
+COMPILER_LANGS =	c
+
 FLAVORS =	no_x11
 FLAVOR ?=
 
