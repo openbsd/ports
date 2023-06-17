@@ -27,6 +27,9 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 # donation-ware
 PERMIT_PACKAGE=	Yes
 
+# ruby 3.2 libraries need ports-gcc
+COMPILER=	base-clang ports-gcc
+
 WANTLIB +=	c curses iconv intl m sodium
 
 LIB_DEPENDS-main= ${LIB_DEPENDS} \
