@@ -17,6 +17,9 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		devel/cmake
 
+# C++
+COMPILER =		base-clang ports-gcc
+
 CONFIGURE_ARGS =	-DBUILD_SHARED_LIBS=ON \
 			-DMZ_BUILD_TEST=ON \
 			-DMZ_BUILD_UNIT_TEST=ON
