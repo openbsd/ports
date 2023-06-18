@@ -1,6 +1,6 @@
 COMMENT =	Perl interface to the gd2 graphics library
 
-DISTNAME =	GD-2.76
+DISTNAME =	GD-2.77
 
 CATEGORIES =	graphics
 
