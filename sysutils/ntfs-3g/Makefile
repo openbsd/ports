@@ -1,13 +1,13 @@
 COMMENT =	FUSE NTFS driver with read/write support
 
-V =		2022.5.17
-REVISION =	0
+V =		2022.10.3
+
 DISTNAME =	ntfs-3g_ntfsprogs-${V}
 PKGNAME =	ntfs_3g-${V}
 SHARED_LIBS +=	ntfs-3g		1.0	# 89.0
 CATEGORIES =	sysutils
 
-HOMEPAGE =	https://www.tuxera.com/community/open-source-ntfs-3g/
+HOMEPAGE =	https://www.tuxera.com/company/open-source/
 
 MAINTAINER =	Paul Irofti <paul@irofti.net>
 

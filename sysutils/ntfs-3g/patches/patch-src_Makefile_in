@@ -11,7 +11,7 @@ Index: src/Makefile.in
  subdir = src
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
  am__aclocal_m4_deps = $(top_srcdir)/m4/libtool.m4 \
-@@ -543,7 +542,7 @@ install-rootbinPROGRAMS: $(rootbin_PROGRAMS)
+@@ -544,7 +543,7 @@ install-rootbinPROGRAMS: $(rootbin_PROGRAMS)
  	    if test "$$dir" = .; then dir=; else dir=/$$dir; fi; \
  	    test -z "$$files" || { \
  	    echo " $(INSTALL_PROGRAM_ENV) $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(INSTALL_PROGRAM) $$files '$(DESTDIR)$(rootbindir)$$dir'"; \
