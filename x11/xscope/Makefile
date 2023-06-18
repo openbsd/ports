@@ -1,5 +1,5 @@
 COMMENT =	X Window Protocol Viewer
-DISTNAME =	xscope-1.4.3
+DISTNAME =	xscope-1.4.4
 CATEGORIES =	x11
 
 HOMEPAGE =	https://gitlab.freedesktop.org/xorg/app/xscope
