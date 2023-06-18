@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.108 2023/06/08 14:13:12 espie Exp $
+# $OpenBSD: Core.pm,v 1.109 2023/06/18 11:38:39 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -416,6 +416,28 @@ sub start_clock($class, $tm)
 	DPB::Core::Clock->start($tm);
 }
 
+sub details_at($core, $time)
+{
+	my $hostname = $core->hostname;
+
+	my $s = $core->job->description;
+    	if ($core->{squiggle}) {
+		$s = '~'.$s;
+	}
+	if (defined $core->{swallowed}) {
+		$s = (scalar(@{$core->{swallowed}})+1).'*'.$s;
+	}
+	if ($core->{inmem}) {
+		$s .= '+';
+	}
+	$s .= " [$core->{pid}]";
+	if (!DPB::Host->name_is_localhost($hostname)) {
+		$s .= " on ".$hostname;
+	}
+	$s .= $core->job->watched($time, $core);
+    	return $s;
+}
+
 package DPB::Core;
 our @ISA = qw(DPB::Core::WithJobs);
 
@@ -539,28 +561,6 @@ sub wake_jobs($self)
 		next if $sleepin->{$host};
 		$core->job->wake_others($core);
 	}
-}
-
-sub details_at($core, $time)
-{
-	my $hostname = $core->hostname;
-
-	my $s = $core->job->description;
-    	if ($core->{squiggle}) {
-		$s = '~'.$s;
-	}
-	if (defined $core->{swallowed}) {
-		$s = (scalar(@{$core->{swallowed}})+1).'*'.$s;
-	}
-	if ($core->{inmem}) {
-		$s .= '+';
-	}
-	$s .= " [$core->{pid}]";
-	if (!DPB::Host->name_is_localhost($hostname)) {
-		$s .= " on ".$hostname;
-	}
-	$s .= $core->job->watched($time, $core);
-    	return $s;
 }
 
 sub report_tty($, $)
