@@ -126,6 +126,7 @@ share/bluefish/plugins/htmlbar/ui/htmlbar_menu_ui.xml
 share/bluefish/plugins/zencoding/
 share/bluefish/plugins/zencoding/__init__.py
 ${MODPY_COMMENT}share/bluefish/plugins/zencoding/${MODPY_PYCACHE}/
+share/bluefish/plugins/zencoding/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/bluefish/plugins/zencoding/${MODPY_PYCACHE}html_matcher.${MODPY_PYC_MAGIC_TAG}pyc
 share/bluefish/plugins/zencoding/${MODPY_PYCACHE}resources.${MODPY_PYC_MAGIC_TAG}pyc
 share/bluefish/plugins/zencoding/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
