@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1592 2023/06/13 10:28:40 semarie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1593 2023/06/18 16:42:55 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2658,6 +2658,7 @@ ${_BULK_COOKIE}:
 # disabled, and there are hooks to override behavior.
 
 ${_WRKDIR_COOKIE}:
+	@${ECHO_MSG} "===> Building from scratch ${FULLPKGNAME}${_MASTER}"
 	@${_PBUILD} rm -rf ${WRKDIR}
 	@appdefaults=${LOCALBASE}/lib/X11/app-defaults; \
 	if ! test -d $$appdefaults -a -h $$appdefaults; then \
