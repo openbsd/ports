@@ -3,10 +3,10 @@ NOT_FOR_ARCHS =	${BE_ARCHS}
 
 # FakeJit fallback broken in (at least) 1.10.3
 # ppsspp-1.10.3/Core/MIPS/JitCommon/JitCommon.cpp:75:10: error: cannot initialize return object of type 'MIPSComp::JitInterface *' with an rvalue of type 'MIPSComp::FakeJit *'
-PPSSPP_JIT_ARCHS =	arm aarch64 i386 amd64
+PPSSPP_JIT_ARCHS =	aarch64 amd64 arm i386
 ONLY_FOR_ARCHS =	${PPSSPP_JIT_ARCHS}
 
-V =		1.14.4
+V =		1.15.4
 DISTNAME =	ppsspp-$V
 
 COMMENT =	Sony PlayStation Portable emulator
