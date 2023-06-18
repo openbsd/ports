@@ -5,10 +5,10 @@ V=		2.3.10
 DISTNAME=	gkrellm-${V}
 PKGNAME-main=	gkrellm-server-${V}
 PKGNAME-client=	gkrellm-${V}
-REVISION=	3
+REVISION=	4
 CATEGORIES=	sysutils
 
-HOMEPAGE=	http://www.gkrellm.net/
+HOMEPAGE=	http://gkrellm.srcbox.net/
 
 # GPLv3 with OpenSSL license exception
 PERMIT_PACKAGE=	Yes
