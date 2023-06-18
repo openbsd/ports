@@ -3,7 +3,7 @@ COMMENT =		movie player based on MPlayer/mplayer2
 GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
 GH_TAGNAME =		v0.35.1
-REVISION =		4
+REVISION =		5
 USE_NOBTCFI =		Yes
 
 SHARED_LIBS +=		mpv		1.0 # 2.0
