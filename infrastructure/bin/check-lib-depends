@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.49 2023/05/20 12:45:24 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.50 2023/06/18 09:17:01 espie Exp $
 # Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -586,7 +586,6 @@ sub do_pkg($self, $state, $pkgname)
 	$self->analyze($state, $plist);
 	$true_package->close;
 	$true_package->wipe_info;
-	$plist->forget;
 	if ($state->{dest}) {
 		$state->{dump}->dump($state->{dest});
 	}
