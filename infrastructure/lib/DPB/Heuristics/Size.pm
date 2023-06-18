@@ -1,6 +1,6 @@
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Size.pm,v 1.10 2023/05/06 05:20:31 espie Exp $
+# $OpenBSD: Size.pm,v 1.11 2023/06/18 11:37:22 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -81,7 +81,6 @@ sub build_in_memory($self, $fh, $core, $v)
 
 sub finished($self, $v)
 {
-	my ($self, $v) = @_;
 	my $p = $v->pkgpath_and_flavors;
 	if (defined $used_memory->{$p}) {
 		my $hostname = $used_memory->{$p};
