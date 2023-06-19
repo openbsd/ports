@@ -4,11 +4,8 @@ COMMENT =		tool for live-coding pixel shaders
 
 GH_ACCOUNT =		Gargaj
 GH_PROJECT =		Bonzomatic
-GH_TAGNAME =		2022-08-20
+GH_TAGNAME =		2023-06-15
 PKGNAME =		bonzomatic-${GH_TAGNAME:S/-//g}
-REVISION =		0
-
-PATCH_DIST_STRIP =	-p1
 
 CATEGORIES =		graphics
 
