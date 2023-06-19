@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Serialize.pm,v 1.5 2023/05/06 05:20:31 espie Exp $
+# $OpenBSD: Serialize.pm,v 1.6 2023/06/19 08:41:30 espie Exp $
 #
 # Copyright (c) 2013 Marc Espie <espie@openbsd.org>
 #
@@ -75,7 +75,7 @@ package DPB::Serialize::Build;
 our @ISA = qw(DPB::Serialize);
 sub list($)
 {
-	return (qw(host time size ts));
+	return (qw(host time size ts clean));
 }
 
 package DPB::Serialize::Size;

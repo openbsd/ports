@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.210 2023/06/17 19:25:51 espie Exp $
+# $OpenBSD: Port.pm,v 1.211 2023/06/19 08:41:30 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -183,7 +183,6 @@ sub finalize($self, $core)
 	delete $core->job->{nojunk};
 	$self->SUPER::finalize($core);
 }
-
 
 # some ports prevent junking only up-to-configure
 package DPB::Task::Port::Configure;
@@ -520,8 +519,8 @@ sub finalize($self, $core)
 {
 	my $job = $core->{job};
 	my $v = $job->{v};
-	# reopen log at right location
-	my $fh = $job->{builder}->logger->open('<', $job->{log});
+	# peek at log at the right location
+	open(my $fh, "<&", $job->{logfh});
 	if (defined $fh && seek($fh, $job->{pos}, 0)) {
 		my @r;
 		while (<$fh>) {

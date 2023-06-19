@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Logger.pm,v 1.26 2023/05/06 05:20:31 espie Exp $
+# $OpenBSD: Logger.pm,v 1.27 2023/06/19 08:41:30 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -101,7 +101,7 @@ sub make_logs($self, $v)
 	if ($self->{clean}) {
 		$self->unlink($log);
 	}
-	my $fh = $self->open(">>", $log);
+	my $fh = $self->open("+>>", $log);
 	DPB::Util->die_bang($self->user->user. " can't write to $log") 
 	    unless defined $fh;
 	for my $w ($v->build_path_list) {
