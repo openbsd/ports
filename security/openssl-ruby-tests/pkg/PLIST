@@ -39,6 +39,8 @@ share/openssl-ruby-tests/ext/openssl/ossl_pkey_dh.c
 share/openssl-ruby-tests/ext/openssl/ossl_pkey_dsa.c
 share/openssl-ruby-tests/ext/openssl/ossl_pkey_ec.c
 share/openssl-ruby-tests/ext/openssl/ossl_pkey_rsa.c
+share/openssl-ruby-tests/ext/openssl/ossl_provider.c
+share/openssl-ruby-tests/ext/openssl/ossl_provider.h
 share/openssl-ruby-tests/ext/openssl/ossl_rand.c
 share/openssl-ruby-tests/ext/openssl/ossl_rand.h
 share/openssl-ruby-tests/ext/openssl/ossl_ssl.c
@@ -119,6 +121,7 @@ share/openssl-ruby-tests/test/openssl/test_pkey_dh.rb
 share/openssl-ruby-tests/test/openssl/test_pkey_dsa.rb
 share/openssl-ruby-tests/test/openssl/test_pkey_ec.rb
 share/openssl-ruby-tests/test/openssl/test_pkey_rsa.rb
+share/openssl-ruby-tests/test/openssl/test_provider.rb
 share/openssl-ruby-tests/test/openssl/test_random.rb
 share/openssl-ruby-tests/test/openssl/test_ssl.rb
 share/openssl-ruby-tests/test/openssl/test_ssl_session.rb
