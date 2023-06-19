@@ -1,0 +1,2 @@
+@man man/man8/lsblk.8
+@bin sbin/lsblk

@@ -1,0 +1,6 @@
+Show information about block devices that are attached to the system,
+including name, size, type, and information about the disklabel on them,
+such as name, size, type, and mount point of each partition.
+Because it accesses the raw disk devices, it must be run as root.
+
+This is an incompatible clone of util-linux's lsblk(8) for OpenBSD.
