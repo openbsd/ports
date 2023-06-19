@@ -5,11 +5,10 @@ NOT_FOR_ARCHS =		${BE_ARCHS} i386
 
 COMMENT =		Telegram Desktop messenger
 PORTROACH =		limit:-full$$
-V =			4.8.1
+V =			4.8.4
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
-REVISION =		0
 
 DPB_PROPERTIES =	parallel
 
@@ -17,12 +16,6 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 HOMEPAGE =		https://desktop.telegram.org
 MASTER_SITES =		https://github.com/telegramdesktop/tdesktop/releases/download/v${V}/
-
-MASTER_SITES0 =		https://github.com/telegramdesktop/tdesktop/
-# "Explicitly specify QVector element type to fix build with clang13+range-v3+qt6"
-# merged https://github.com/telegramdesktop/tdesktop/pull/26219
-PATCHFILES =		fix-clang13-build-{commit/}1190629.patch:0
-PATCH_DIST_STRIP =	-p1
 
 MAINTAINER =		Andrew Krasavin <noiseless-ak@yandex.ru>, \
 			Klemens Nanni <kn@openbsd.org>
@@ -36,13 +29,13 @@ MAINTAINER =		Andrew Krasavin <noiseless-ak@yandex.ru>, \
 # kcoreaddons:	LGPLv2.1+, GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} Qt6Core Qt6Core5Compat Qt6DBus Qt6Gui Qt6Network
+WANTLIB += ${COMPILER_LIBCXX} Qt6Core Qt6DBus Qt6Gui Qt6Network
 WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6Svg Qt6Widgets absl_strings
-WANTLIB += avcodec avfilter avformat avutil c crypto dispatch gio-2.0 giomm-2.68
-WANTLIB += glib-2.0 glibmm-2.68 gobject-2.0 hunspell-1.7 jpeg lz4
-WANTLIB += m openal opus protobuf-lite qrcodegencpp rnnoise sigc-3.0
-WANTLIB += swresample swscale tg_owt xcb xcb-keysyms xcb-record xcb-screensaver
-WANTLIB += xxhash z
+WANTLIB += avcodec avfilter avformat avutil c crypto dispatch
+WANTLIB += gio-2.0 giomm-2.68 glib-2.0 glibmm-2.68 gobject-2.0
+WANTLIB += hunspell-1.7 jpeg lz4 m openal opus protobuf-lite qrcodegencpp
+WANTLIB += rnnoise sigc-3.0 swresample swscale tg_owt xcb xcb-keysyms
+WANTLIB += xcb-record xcb-screensaver xxhash z
 
 # C++20
 COMPILER =		base-clang ports-gcc
@@ -55,7 +48,8 @@ MODULES =		devel/cmake \
 			x11/qt6
 MODPY_RUNDEP =		No
 
-BUILD_DEPENDS =		devel/crc32c \
+BUILD_DEPENDS =		devel/boost,-main \
+			devel/crc32c \
 			devel/microsoft-gsl \
 			devel/range-v3>=0.11.0p0 \
 			devel/tl-expected
@@ -82,7 +76,6 @@ LIB_DEPENDS =		archivers/lz4 \
 			net/tg_owt>=0.0.0.20230501p1 \
 			sysutils/xxhash \
 			textproc/hunspell \
-			x11/qt6/qt5compat \
 			x11/qt6/qtsvg
 
 RUN_DEPENDS =		devel/desktop-file-utils \
