@@ -5,7 +5,7 @@
  */
 
 /*
- * Allow members of the operator group to shutdown and reboot without
+ * Allow members of the _shutdown group to shutdown and reboot without
  * password authentication"
  */
 polkit.addRule(function(action, subject) {
@@ -13,7 +13,7 @@ polkit.addRule(function(action, subject) {
         action.id == "org.freedesktop.consolekit.system.stop-multiple-users" ||
         action.id == "org.freedesktop.consolekit.system.restart" ||
         action.id == "org.freedesktop.consolekit.system.restart-multiple-users") {
-            if (subject.local && subject.active && subject.isInGroup("operator")) {
+            if (subject.local && subject.active && subject.isInGroup("_shutdown")) {
                 return polkit.Result.YES;
             } else {
                 return polkit.Result.AUTH_ADMIN;
