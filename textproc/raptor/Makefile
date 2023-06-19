@@ -2,6 +2,7 @@ COMMENT=		RDF Parser Toolkit for Redland
 DISTNAME=		raptor2-2.0.16
 PKGNAME=		${DISTNAME:C/raptor2/raptor/}
 CATEGORIES=		textproc
+REVISION=		0
 
 SHARED_LIBS +=  raptor2              0.1      # 0.0
 
@@ -12,12 +13,14 @@ MASTER_SITES=		https://download.librdf.org/source/
 # LGPL 2.1+, GPL 2+ or Apache 2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB =  c crypto curl iconv intl lzma m nghttp2 pthread ssl xml2 xslt
-WANTLIB += yajl z
+WANTLIB += ${COMPILER_LIBCXX} c crypto curl iconv icudata icuuc
+WANTLIB += lzma m nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_openssl
+WANTLIB += ssl xml2 xslt yajl z
 
 LIB_DEPENDS=		devel/libyajl \
 			net/curl \
-			textproc/libxslt
+			textproc/libxslt \
+			textproc/icu4c
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-parsers=all \
