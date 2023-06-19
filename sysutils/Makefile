@@ -199,6 +199,7 @@
      SUBDIR += loki
      SUBDIR += lookat
      SUBDIR += lr
+     SUBDIR += lsblk
      SUBDIR += lscpu
      SUBDIR += lsd
      SUBDIR += lsyncd
