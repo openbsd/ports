@@ -57,6 +57,8 @@ DEBUG_PACKAGES ?=	-main -gdbm -tkinter
 COMPILER =		base-clang ports-gcc base-gcc
 COMPILER_LANGS =	c
 
+USE_NOBTCFI =		Yes
+
 # All subpackages depend on the main python package.
 
 RUN_DEPENDS =		${FULLPKGNAME-main}:lang/python/${VERSION},-main
