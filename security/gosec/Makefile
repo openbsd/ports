@@ -1,7 +1,7 @@
 COMMENT =	security checker for Go projects
 
 MODGO_MODNAME =	github.com/securego/gosec/v2
-MODGO_VERSION =	v2.15.0
+MODGO_VERSION =	v2.16.0
 
 DISTNAME =	gosec-${MODGO_VERSION}
 
