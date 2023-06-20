@@ -1,7 +1,7 @@
 COMMENT=	library for reading and writing Matlab MAT files
 
-DISTNAME=	matio-1.5.21
-SHARED_LIBS=	matio	3.1      # 11.3
+DISTNAME=	matio-1.5.23
+SHARED_LIBS=	matio	3.2      # 11.4
 CATEGORIES=	math
 
 HOMEPAGE=	https://sourceforge.net/projects/matio/
