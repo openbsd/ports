@@ -158,13 +158,6 @@ lib/python${MODPY_VERSION}/site-packages/printrun/zscaper.py
 share/applications/plater.desktop
 share/applications/pronsole.desktop
 share/applications/pronterface.desktop
-share/locale/de/LC_MESSAGES/plater.mo
-share/locale/de/LC_MESSAGES/pronterface.mo
-share/locale/fr/LC_MESSAGES/plater.mo
-share/locale/fr/LC_MESSAGES/pronterface.mo
-share/locale/it/LC_MESSAGES/plater.mo
-share/locale/it/LC_MESSAGES/pronterface.mo
-share/locale/nl/LC_MESSAGES/pronterface.mo
 share/metainfo/
 share/metainfo/plater.appdata.xml
 share/metainfo/pronsole.appdata.xml

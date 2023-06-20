@@ -1,6 +1,6 @@
 COMMENT=	3D printing host suite
 
-MODPY_EGG_VERSION=	2.0.0rc8
+MODPY_EGG_VERSION=	2.0.1
 DISTNAME=	printrun-${MODPY_EGG_VERSION}
 
 GH_ACCOUNT=	kliment
