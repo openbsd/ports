@@ -50,9 +50,11 @@ MODPY_RUNDEP =		No
 
 BUILD_DEPENDS =		devel/boost,-main \
 			devel/crc32c \
+			devel/fmt \
 			devel/microsoft-gsl \
 			devel/range-v3>=0.11.0p0 \
-			devel/tl-expected
+			devel/tl-expected \
+			x11/qt6/qtdeclarative
 
 # libtgvoip expects either ALSA or PulseAudio to be present, we build against
 # PulseAudio, but nothing in tdesktop then actually links against it.
