@@ -9,8 +9,10 @@ PERMIT_PACKAGE ?=	Yes
 
 MAINTAINER ?=		Anthony J. Bentley <anthony@anjbe.name>
 
+.if defined(GH_TAGNAME)
 GH_ACCOUNT ?=		googlefonts
 GH_PROJECT ?=		noto-${NOTO_PROJECT}
+.endif
 
 NO_BUILD ?=		Yes
 NO_TEST ?=		Yes

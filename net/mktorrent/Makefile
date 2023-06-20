@@ -1,11 +1,9 @@
 COMMENT =	command-line .torrent file creator
 
-V =		1.1
 REVISION =	0
 GH_ACCOUNT =	pobrn
 GH_PROJECT =	mktorrent
-DISTNAME =	${GH_PROJECT}-${V}
-DISTFILES =	v${V}.tar.gz
+GH_TAGNAME =	v1.1
 CATEGORIES =	net
 
 HOMEPAGE =	https://github.com/pobrn/mktorrent

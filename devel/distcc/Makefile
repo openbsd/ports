@@ -2,8 +2,6 @@ COMMENT-main =		distributed builds for C, C++ and Objective C
 COMMENT-gtk =		GTK+ monitor for distcc
 COMMENT-server =	distcc server
 
-GH_PROJECT =		distcc
-GH_ACCOUNT =		distcc
 VERSION =		3.3.5
 DISTNAME =		distcc-${VERSION}
 EPOCH =			0
