@@ -3,10 +3,9 @@ CATEGORIES =	x11
 
 MAINTAINER =	Eric Auge <eau+obsd@unix4fun.net>
 
-VERSION =	0.12.1
-DISTNAME =	alacritty-${VERSION}
-MASTER_SITES =	https://github.com/alacritty/alacritty/
-DISTFILES +=	alacritty-{archive/refs/tags/}v${VERSION}${EXTRACT_SUFX}
+GH_ACCOUNT =	alacritty
+GH_PROJECT =	alacritty
+GH_TAGNAME =	v0.12.1
 
 HOMEPAGE =	https://alacritty.org/
 

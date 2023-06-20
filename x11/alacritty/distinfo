@@ -1,4 +1,4 @@
-SHA256 (alacritty-v0.12.1.tar.gz) = FLzgv8U4hyyX4OOLkjOp0fqZLc+DoitgNdpf5YpVvGw=
+SHA256 (alacritty-0.12.1.tar.gz) = FLzgv8U4hyyX4OOLkjOp0fqZLc+DoitgNdpf5YpVvGw=
 SHA256 (cargo/adler-1.0.2.tar.gz) = 8mIBYEyHseAb09mPjV2aj8u4FejO20H/zL60v1k6Nf4=
 SHA256 (cargo/android-activity-0.4.0.tar.gz) = QWWhrvcDIyAxtApuiQjC+eMU1JXxGqf5jbddOaSXzGo=
 SHA256 (cargo/android-properties-0.2.2.tar.gz) = /H6yCbFRjWu4eyg8IAlfUijs2kYNpwtE8IAlI96m2gQ=
@@ -231,7 +231,7 @@ SHA256 (cargo/xcursor-0.3.4.tar.gz) = RjcFpjMTzUMBGEOBxegELwp+m0u2NlPyFjEdSudGkL
 SHA256 (cargo/xdg-2.4.1.tar.gz) = DEWD21y9TEwDA98tFa+A8FOdtwP6HGiALUy70t0PiPY=
 SHA256 (cargo/xml-rs-0.8.4.tar.gz) = 0tfTlIYT91yY/ZMoz9zEWsxNNgZVKJ0KfU7JMTkiAKM=
 SHA256 (cargo/yaml-rust-0.4.5.tar.gz) = VsGTbEzHocmrIaHrtgLrlCuoaMvUSpnLfNxYkjNeHIU=
-SIZE (alacritty-v0.12.1.tar.gz) = 1493994
+SIZE (alacritty-0.12.1.tar.gz) = 1493994
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
 SIZE (cargo/android-activity-0.4.0.tar.gz) = 235580
 SIZE (cargo/android-properties-0.2.2.tar.gz) = 4563
