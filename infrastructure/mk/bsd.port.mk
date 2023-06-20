@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1593 2023/06/18 16:42:55 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1594 2023/06/20 06:19:32 sthen Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1263,11 +1263,15 @@ ECHO_MSG ?= echo
 .  if !empty(GH_COMMIT) && !empty(GH_TAGNAME)
 ERRORS += "Fatal: specifying both GH_TAGNAME and GH_COMMIT is invalid"
 .  endif
-.  if ${GH_TAGNAME} == master
-ERRORS += "Fatal: using master as GH_TAGNAME is invalid"
-.  endif
+.  if !empty(GH_TAGNAME)
 MASTER_SITES_GITHUB += \
-	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/archive/${GH_TAGNAME:S/$/\//}
+	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/archive/refs/tags/${GH_TAGNAME:S/$/\//}
+.  elif !empty(GH_COMMIT)
+MASTER_SITES_GITHUB += \
+	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/archive/
+.  else
+ERRORS += "Fatal: if using GH_*, one of GH_TAGNAME or GH_COMMIT must be set"
+.endif
 
 MASTER_SITES ?= ${MASTER_SITES_GITHUB}
 HOMEPAGE ?= https://github.com/${GH_ACCOUNT}/${GH_PROJECT}
