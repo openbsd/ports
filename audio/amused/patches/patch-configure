@@ -1,0 +1,11 @@
+Index: configure
+--- configure.orig
++++ configure
+@@ -711,6 +711,7 @@ cat << __HEREDOC__
+ #define HAVE_GETDTABLECOUNT ${HAVE_GETDTABLECOUNT}
+ #define HAVE_GETEXECNAME ${HAVE_GETEXECNAME}
+ #define HAVE_GETPROGNAME ${HAVE_GETPROGNAME}
++#define HAVE_IMSG ${HAVE_IMSG}
+ #define HAVE_INFTIM ${HAVE_INFTIM}
+ #define HAVE_LANDLOCK ${HAVE_LANDLOCK}
+ #define HAVE_MEMMEM ${HAVE_MEMMEM}
