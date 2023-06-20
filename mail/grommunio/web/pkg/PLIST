@@ -989,8 +989,6 @@ grommunio-web/client/themes/
 grommunio-web/client/themes/dark/
 grommunio-web/client/themes/dark/css/
 grommunio-web/client/themes/dark/css/themedark.css
-grommunio-web/client/themes/dark/img/
-grommunio-web/client/themes/dark/img/grommunio_logo_light.svg
 grommunio-web/client/themes/highcontrast/
 grommunio-web/client/themes/highcontrast/css/
 grommunio-web/client/themes/highcontrast/css/themehighcontrast.css
