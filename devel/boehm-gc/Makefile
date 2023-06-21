@@ -1,9 +1,9 @@
 COMMENT-main=	garbage collection and memory leak detection for C and C++
 COMMENT-atomic=	access to hardware provided atomic memory operations
 
-VERSION=	8.0.4
-LIBAO_VERSION=	7.6.10
-REVISION=	0
+VERSION=	8.2.4
+LIBAO_VERSION=	7.8.0
+
 # has various machine-dependent parts; updates definitely need
 # tests on more than just amd64.
 
@@ -13,20 +13,22 @@ PKGNAME-atomic=	libatomic_ops-${LIBAO_VERSION}
 PKGNAME-main=	boehm-gc-${VERSION}
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		libatomic_ops-${LIBAO_VERSION}${EXTRACT_SUFX}
+		libatomic_ops-${LIBAO_VERSION}${EXTRACT_SUFX}:0
 
 MULTI_PACKAGES=	-main -atomic
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
-SHARED_LIBS +=	gc		5.0	# 5.3
+SHARED_LIBS +=	gc		6.0	# 6.2
 SHARED_LIBS +=	gccpp		1.0	# 5.0
-SHARED_LIBS +=	cord		3.0	# 5.0
-SHARED_LIBS +=  atomic_ops	3.0	# 2.1
-SHARED_LIBS +=  atomic_ops_gpl	3.0	# 2.2
+SHARED_LIBS +=	gctba		0.0	# 5.0
+SHARED_LIBS +=	cord		3.0	# 6.0
+SHARED_LIBS +=	atomic_ops	3.0	# 3.0
+SHARED_LIBS +=	atomic_ops_gpl	3.0	# 3.0
 
 CATEGORIES=	devel
 
-MASTER_SITES=	https://hboehm.info/gc/gc_source/
+MASTER_SITES=	https://github.com/ivmai/bdwgc/releases/download/v${VERSION}/
+MASTER_SITES0=	https://github.com/ivmai/libatomic_ops/releases/download/v${LIBAO_VERSION}/
 
 HOMEPAGE=	https://hboehm.info/gc/
 
@@ -36,9 +38,9 @@ NOT_FOR_ARCHS=	m88k
 # HP MIT-like license
 PERMIT_PACKAGE=	Yes
 
-WANTLIB-main += m pthread ${COMPILER_LIBCXX}
+WANTLIB-main +=	m pthread ${COMPILER_LIBCXX}
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
 MAKE_ENV=	CP="cp" \
 		INSTALL_DATA="${INSTALL_DATA}" \

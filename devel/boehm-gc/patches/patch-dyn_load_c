@@ -3,7 +3,7 @@
 Index: dyn_load.c
 --- dyn_load.c.orig
 +++ dyn_load.c
-@@ -81,13 +81,6 @@ STATIC GC_has_static_roots_func GC_has_static_roots = 
+@@ -82,13 +82,6 @@ STATIC GC_has_static_roots_func GC_has_static_roots = 
  #   define ELFSIZE ARCH_ELFSIZE
  #endif
  
@@ -14,18 +14,6 @@ Index: dyn_load.c
 -# endif
 -#endif /* OPENBSD */
 -
- #if defined(SCO_ELF) || defined(DGUX) || defined(HURD) \
+ #if defined(SCO_ELF) || defined(DGUX) || defined(HURD) || defined(NACL) \
      || (defined(__ELF__) && (defined(LINUX) || defined(FREEBSD) \
-                              || defined(NACL) || defined(NETBSD) \
-@@ -150,8 +143,10 @@ STATIC GC_has_static_roots_func GC_has_static_roots = 
- #    elif defined(NETBSD) || defined(OPENBSD)
- #      if ELFSIZE == 32
- #        define ElfW(type) Elf32_##type
--#      else
-+#      elif ELFSIZE == 64
- #        define ElfW(type) Elf64_##type
-+#      else
-+#        error Missing required ELFSIZE define
- #      endif
- #    else
- #      if !defined(ELF_CLASS) || ELF_CLASS == ELFCLASS32
+                              || defined(NETBSD) || defined(OPENBSD)))

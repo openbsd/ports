@@ -1,17 +1,12 @@
 Index: Makefile.in
-
-PARALLEL MAKE BUG
-Fix build race: Our make(1) treats ./libgc.la and libgc.la as distinct
-targets.
-
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -1345,7 +1345,7 @@ libatomic_ops/src/atomic_ops_sysdeps.lo:  \
- libatomic_ops/src/atomic_ops.lo: libatomic_ops/src/$(am__dirstamp) \
+@@ -1448,7 +1448,7 @@ libatomic_ops/src/atomic_ops_sysdeps.lo:  \
+ 	libatomic_ops/src/$(am__dirstamp) \
  	libatomic_ops/src/$(DEPDIR)/$(am__dirstamp)
  
 -libgc.la: $(libgc_la_OBJECTS) $(libgc_la_DEPENDENCIES) $(EXTRA_libgc_la_DEPENDENCIES) 
-+libgc.la ./libgc.la: $(libgc_la_OBJECTS) $(libgc_la_DEPENDENCIES) $(EXTRA_libgc_la_DEPENDENCIES) 
++libgc.la ./libgc.la: $(libgc_la_OBJECTS) $(libgc_la_DEPENDENCIES) $(EXTRA_libgc_la_DEPENDENCIES)
  	$(AM_V_CCLD)$(libgc_la_LINK) -rpath $(libdir) $(libgc_la_OBJECTS) $(libgc_la_LIBADD) $(LIBS)
  
  libgccpp.la: $(libgccpp_la_OBJECTS) $(libgccpp_la_DEPENDENCIES) $(EXTRA_libgccpp_la_DEPENDENCIES) 

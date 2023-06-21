@@ -5,5 +5,5 @@ atomic memory operations.  These might allow you to write code:
 - Makes more effective use of multiprocessors by allowing you to write
   clever lock-free code.  Note that such code is very difficult to get
   right, and will unavoidably be less portable than lock-based code.  It
-  ia also not always faster than lock-based code.  But it may occasionally
+  is also not always faster than lock-based code.  But it may occasionally
   be a large performance win.

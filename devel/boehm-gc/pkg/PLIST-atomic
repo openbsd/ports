@@ -19,6 +19,7 @@ include/atomic_ops/sysdeps/gcc/alpha.h
 include/atomic_ops/sysdeps/gcc/arm.h
 include/atomic_ops/sysdeps/gcc/avr32.h
 include/atomic_ops/sysdeps/gcc/cris.h
+include/atomic_ops/sysdeps/gcc/e2k.h
 include/atomic_ops/sysdeps/gcc/generic-arithm.h
 include/atomic_ops/sysdeps/gcc/generic-small.h
 include/atomic_ops/sysdeps/gcc/generic.h
@@ -60,6 +61,7 @@ include/atomic_ops/sysdeps/loadstore/short_atomic_load.h
 include/atomic_ops/sysdeps/loadstore/short_atomic_store.h
 include/atomic_ops/sysdeps/msftc/
 include/atomic_ops/sysdeps/msftc/arm.h
+include/atomic_ops/sysdeps/msftc/arm64.h
 include/atomic_ops/sysdeps/msftc/common32_defs.h
 include/atomic_ops/sysdeps/msftc/x86.h
 include/atomic_ops/sysdeps/msftc/x86_64.h
@@ -82,8 +84,10 @@ lib/libatomic_ops_gpl.la
 @lib lib/libatomic_ops_gpl.so.${LIBatomic_ops_gpl_VERSION}
 lib/pkgconfig/atomic_ops.pc
 share/doc/libatomic_ops/
+share/doc/libatomic_ops/AUTHORS
 share/doc/libatomic_ops/COPYING
-share/doc/libatomic_ops/LICENSING.txt
+share/doc/libatomic_ops/ChangeLog
+share/doc/libatomic_ops/LICENSE
 share/doc/libatomic_ops/README.md
 share/doc/libatomic_ops/README_details.txt
 share/doc/libatomic_ops/README_malloc.txt

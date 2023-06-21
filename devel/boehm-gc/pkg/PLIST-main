@@ -29,6 +29,9 @@ lib/libgc.la
 @static-lib lib/libgccpp.a
 lib/libgccpp.la
 @lib lib/libgccpp.so.${LIBgccpp_VERSION}
+@static-lib lib/libgctba.a
+lib/libgctba.la
+@lib lib/libgctba.so.${LIBgctba_VERSION}
 lib/pkgconfig/bdw-gc.pc
 @man man/man3/gc.3
 @comment share/gc/gc.man
@@ -43,6 +46,7 @@ share/doc/gc/README.autoconf
 share/doc/gc/README.cmake
 share/doc/gc/README.cords
 share/doc/gc/README.darwin
+share/doc/gc/README.emscripten
 share/doc/gc/README.environment
 share/doc/gc/README.ews4800
 share/doc/gc/README.hp
