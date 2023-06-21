@@ -1,21 +1,21 @@
-COMMENT =		xpath 1.0/2.0 parsers and selectors for elementtree
+COMMENT=	xpath 1.0/2.0 parsers and selectors for elementtree
 
-MODPY_EGG_VERSION =	4.1.2
-DISTNAME =		elementpath-${MODPY_EGG_VERSION}
-PKGNAME =		py-${DISTNAME}
+MODPY_EGG_VERSION=	4.1.3
+DISTNAME=	elementpath-${MODPY_EGG_VERSION}
+PKGNAME=	py-${DISTNAME}
 
-CATEGORIES =		textproc
+CATEGORIES=	textproc
 
-HOMEPAGE =		https://github.com/sissaschool/elementpath
+HOMEPAGE=	https://github.com/sissaschool/elementpath
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+MODULES=	lang/python
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools
 
-FLAVORS =		python3
-FLAVOR =		python3
+FLAVORS=	python3
+FLAVOR=		python3
 
 .include <bsd.port.mk>
