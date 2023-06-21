@@ -1,5 +1,8 @@
 Use modern ruby macros for accessing ptr/len for strings and arrays.
 
+Undefine the allocation function for a few constants to prevent
+warnings on Ruby 3.2.
+
 Index: ext/estraier.c
 --- ext/estraier.c.orig
 +++ ext/estraier.c
@@ -12,7 +15,31 @@ Index: ext/estraier.c
    for(i = 0; i < len; i++){
      Check_Type(rb_ary_entry(vwords, i), T_STRING);
    }
-@@ -764,7 +764,7 @@ static VALUE db_search_meta(VALUE vself, VALUE vdbs, V
+@@ -368,6 +368,7 @@ static VALUE doc_make_snippet(VALUE vself, VALUE vword
+ static void cond_init(void){
+   cls_cond = rb_define_class_under(mod_estraier, "Condition", rb_cObject);
+   cls_cond_data = rb_define_class_under(mod_estraier, "Condition_data", rb_cObject);
++  rb_undef_alloc_func(cls_cond_data);
+   rb_define_const(cls_cond, "SURE", INT2NUM(ESTCONDSURE));
+   rb_define_const(cls_cond, "USUAL", INT2NUM(ESTCONDUSUAL));
+   rb_define_const(cls_cond, "FAST", INT2NUM(ESTCONDFAST));
+@@ -519,6 +520,7 @@ static VALUE cond_set_mask(VALUE vself, VALUE vmask){
+ static void res_init(void){
+   cls_res = rb_define_class_under(mod_estraier, "Result", rb_cObject);
+   cls_res_data = rb_define_class_under(mod_estraier, "Result_data", rb_cObject);
++  rb_undef_alloc_func(cls_res_data);
+   rb_define_private_method(cls_res, "initialize", res_initialize, 0);
+   rb_define_method(cls_res, "doc_num", res_doc_num, 0);
+   rb_define_method(cls_res, "get_doc_id", res_get_doc_id, 1);
+@@ -662,6 +664,7 @@ static VALUE res_get_shadows(VALUE vself, VALUE vid){
+ static void db_init(void){
+   cls_db = rb_define_class_under(mod_estraier, "Database", rb_cObject);
+   cls_db_data = rb_define_class_under(mod_estraier, "Database_data", rb_cObject);
++  rb_undef_alloc_func(cls_db_data);
+   rb_define_const(cls_db, "VERSION", rb_str_new2(est_version));
+   rb_define_const(cls_db, "ERRNOERR", INT2NUM(ESTENOERR));
+   rb_define_const(cls_db, "ERRINVAL", INT2NUM(ESTEINVAL));
+@@ -764,7 +767,7 @@ static VALUE db_search_meta(VALUE vself, VALUE vdbs, V
    CBMAP *hints;
    int i, dnum, *res, rnum;
    Check_Type(vdbs, T_ARRAY);
@@ -21,7 +48,7 @@ Index: ext/estraier.c
    dbs = cbmalloc(dnum * sizeof(ESTMTDB *) + 1);
    for(i = 0; i < dnum; i++){
      vdb = rb_ary_entry(vdbs, i);
-@@ -1189,10 +1189,10 @@ static CBLIST *objtocblist(VALUE obj){
+@@ -1189,10 +1192,10 @@ static CBLIST *objtocblist(VALUE obj){
    VALUE str;
    int i, len;
    list = cblistopen();
@@ -34,7 +61,7 @@ Index: ext/estraier.c
    }
    return list;
  }
-@@ -1218,14 +1218,14 @@ static CBMAP *objtocbmap(VALUE obj){
+@@ -1218,14 +1221,14 @@ static CBMAP *objtocbmap(VALUE obj){
    int i, len;
    map = cbmapopenex(31);
    keys = rb_funcall(obj, rb_intern("keys"), 0);

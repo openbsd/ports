@@ -3,7 +3,7 @@ COMMENT=		Ruby interface to hyperestraier
 V=			1.4.10
 DISTNAME=		estraier-${V}
 PKGNAME=		hyperestraier-${V}
-REVISION =		0
+REVISION =		1
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://fallabs.com/hyperestraier/rubynativeapi/
