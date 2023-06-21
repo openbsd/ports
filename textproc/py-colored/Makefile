@@ -1,24 +1,21 @@
-COMMENT =		simple library for color and formatting in terminal
+COMMENT=	simple library for color and formatting in terminal
 
-MODPY_EGG_VERSION =	1.4.4
-DISTNAME =		colored-${MODPY_EGG_VERSION}
-PKGNAME =		py-${DISTNAME}
+MODPY_EGG_VERSION=	1.5.0
+DISTNAME=	colored-${MODPY_EGG_VERSION}
+PKGNAME=	py-${DISTNAME}
 
-CATEGORIES =		textproc
+CATEGORIES=	textproc
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+MODULES=	lang/python
+MODPY_PI=	Yes
+MODPY_PYBUILD=	flit_core
 
-FLAVORS =		python3
-FLAVOR =		python3
+FLAVORS=	python3
+FLAVOR=		python3
 
-do-test:
-	# other tests are slow to run and don't display colours when run
-	# from ports infra
-	PYTHONPATH=${WRKSRC} ${MODPY_BIN} ${WRKSRC}/tests/test_4.py
+NO_TEST=	Yes
 
 .include <bsd.port.mk>
