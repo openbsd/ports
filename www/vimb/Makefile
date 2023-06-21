@@ -2,8 +2,7 @@ COMMENT =	modal webkit-based browser inspired by vim
 
 GH_ACCOUNT =	fanglingsu
 GH_PROJECT =	vimb
-GH_TAGNAME =	3.6.0
-REVISION =	1
+GH_TAGNAME =	3.7.0
 
 CATEGORIES =	www x11
 
@@ -13,10 +12,10 @@ HOMEPAGE =	https://fanglingsu.github.io/vimb/
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-3 harfbuzz intl javascriptcoregtk-4.0
-WANTLIB += pango-1.0 pangocairo-1.0 soup-2.4 webkit2gtk-4.0 gmodule-2.0 pthread
+WANTLIB += intl javascriptcoregtk-4.1 pango-1.0 pangocairo-1.0
+WANTLIB += pthread soup-3.0 webkit2gtk-4.1
 
-LIB_DEPENDS =	www/webkitgtk4
+LIB_DEPENDS =	www/webkitgtk4,webkitgtk41
 
 RUN_DEPENDS =	devel/desktop-file-utils
 
