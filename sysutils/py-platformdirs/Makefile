@@ -1,6 +1,6 @@
 COMMENT=	determine appropriate platform-specific directories
 
-MODPY_EGG_VERSION=	3.6.0
+MODPY_EGG_VERSION=	3.7.0
 DISTNAME=	platformdirs-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 
