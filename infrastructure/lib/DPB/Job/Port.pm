@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.211 2023/06/19 08:41:30 espie Exp $
+# $OpenBSD: Port.pm,v 1.212 2023/06/21 08:56:17 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -53,8 +53,24 @@ sub want_percent($) { 1 }
 
 sub finalize($self, $core)
 {
+	my $job = $core->job;
+	if ($job->{pos}) {
+		open(my $fh, "<&", $job->{logfh});
+		if (defined $fh && seek($fh, $job->{pos}, 0)) {
+			for my $i (1 .. 10) {
+				my $l = <$fh>;
+				last if !defined $l;
+				if ($l =~ m/^\=\=\=\>\s+Building from scratch/) {
+					$job->{fromscratch} = $i;
+					last;
+				}
+			}
+		}
+		$job->{fromscratch} //= 0;
+		delete $job->{pos};
+	}
 	$self->SUPER::finalize($core);
-	$core->job->finished_task($self);
+	$job->finished_task($self);
 	return $core->{status} == 0;
 }
 
@@ -712,6 +728,17 @@ sub setup($self, $core)
 	return $job->next_task($core);
 }
 
+# likewise, just a task that gets inserted to remind the next one
+# to track "Building from scratch"
+package DPB::Task::Port::Placeholder;
+our @ISA = qw(DPB::Task::BasePort);
+sub setup($self, $core)
+{
+	my $job = $core->job;
+	$job->{pos} = tell($job->{logfh});
+	return $job->next_task($core);
+}
+
 package DPB::Task::Port::ShowSize;
 our @ISA = qw(DPB::Task::Port);
 
@@ -861,6 +888,7 @@ my $repo = {
 	'show-size' => 'DPB::Task::Port::ShowSize',
 	junk => 'DPB::Task::Port::Uninstall',
 	inbetween => 'DPB::Task::Port::InBetween',
+	placeholder => 'DPB::Task::Port::Placeholder',
 	fake => 'DPB::Task::Port::Fake',
 	signature => 'DPB::Task::Port::Signature',
 	test => 'DPB::Task::Test',
@@ -1181,6 +1209,7 @@ sub add_normal_tasks($self, $should_clean, $core)
 		# depends only install dependencies, stuff that have
 		# an extra :patch/:configure stage need to complete prepare !
 		if (exists $self->{v}{info}{BEXTRA}) {
+			push(@todo, 'placeholder');
 			push(@todo, 'prepare');
 		}
 		push(@todo, 'show-prepare-results');
@@ -1204,6 +1233,9 @@ sub add_normal_tasks($self, $should_clean, $core)
 	push(@todo, qw(inbetween));
 	my $nojunk = $self->{v}{info}->has_property("nojunk");
 	my $nojunk2 = $self->{v}{info}->has_property("noconfigurejunk");
+	if (!$c) {
+		push(@todo, 'placeholder');
+	}
 	if ($nojunk || $nojunk2) {
 		push(@todo, qw(extract));
 	}

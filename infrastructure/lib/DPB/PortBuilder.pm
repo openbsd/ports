@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.94 2023/05/30 05:35:19 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.95 2023/06/21 08:56:17 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -192,7 +192,8 @@ sub report($self, $v, $job, $core)
 		    pkgpath => $pkgpath, 
 		    host => $host, 
 		    time => $job->totaltime, 
-		    size => $sz}), "\n";
+		    size => $sz,
+		    clean => $job->{fromscratch}}), "\n";
 	}
 }
 
