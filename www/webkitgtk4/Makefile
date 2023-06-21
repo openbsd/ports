@@ -2,6 +2,7 @@
 # patches/patch-Source_WebKit_gtk_webkit2gtk-web-extension_pc_in
 # patches/patch-Source_WebKit_gtk_webkit2gtk_pc_in
 USE_WXNEEDED =		Yes
+USE_NOBTCFI =		Yes
 
 BROKEN-alpha =		GCC 5.0.0 is required to build WebKitGTK+, use a newer GCC version or clang
 BROKEN-hppa =		GCC 5.0.0 is required to build WebKitGTK+, use a newer GCC version or clang
@@ -16,13 +17,15 @@ DISTNAME =		webkitgtk-${V}
 PKGNAME =		webkitgtk${API:S/.//}-${V}
 FULLPKGNAME =		${PKGNAME}
 
+REVISION =		0
+
 EXTRACT_SUFX =		.tar.xz
 SUBST_VARS =		API
 DPB_PROPERTIES =	parallel
 
-SHARED_LIBS +=  javascriptcoregtk-${API}     3.8
-SHARED_LIBS +=  webkit2gtk-${API}            3.8
-SHARED_LIBS +=	webkitgtk-6.0                0.0
+SHARED_LIBS +=  javascriptcoregtk-${API}     3.9
+SHARED_LIBS +=  webkit2gtk-${API}            3.9
+SHARED_LIBS +=	webkitgtk-6.0                0.1
 
 CATEGORIES =		www
 

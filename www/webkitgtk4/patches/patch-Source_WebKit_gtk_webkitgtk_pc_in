@@ -6,5 +6,5 @@ Index: Source/WebKit/gtk/webkitgtk.pc.in
  Version: @PROJECT_VERSION@
  Requires: glib-2.0 @GTK_PC_NAME@ libsoup-@SOUP_API_VERSION@ javascriptcoregtk-@WEBKITGTK_API_VERSION@
 -Libs: -L${libdir} -lwebkit@WEBKITGTK_API_INFIX@gtk-@WEBKITGTK_API_VERSION@
-+Libs: -L${libdir} -lwebkit@WEBKITGTK_API_INFIX@gtk-@WEBKITGTK_API_VERSION@ -Wl,-z,wxneeded
++Libs: -L${libdir} -lwebkit@WEBKITGTK_API_INFIX@gtk-@WEBKITGTK_API_VERSION@ -Wl,-z,wxneeded -Wl,-z,nobtcfi
  Cflags: -I${includedir}/webkitgtk-@WEBKITGTK_API_VERSION@
