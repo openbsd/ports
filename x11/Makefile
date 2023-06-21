@@ -301,6 +301,7 @@
      SUBDIR += tigervnc
      SUBDIR += tilda
      SUBDIR += tint2
+     SUBDIR += tipp10
      SUBDIR += tk
      SUBDIR += tkcon
      SUBDIR += tkdnd
