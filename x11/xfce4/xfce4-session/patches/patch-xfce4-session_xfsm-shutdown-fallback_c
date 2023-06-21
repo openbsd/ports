@@ -9,7 +9,7 @@ Index: xfce4-session/xfsm-shutdown-fallback.c
  
        gr = getgrgid (groups[i]);
 -      if (gr != NULL && strncmp(gr->gr_name, "operator", 8) == 0)
-+      if (gr != NULL && strncmp(gr->gr_name, "_shutdown", 8) == 0)
++      if (gr != NULL && strncmp(gr->gr_name, "_shutdown", 9) == 0)
          {
            is_operator = TRUE;
            break;
