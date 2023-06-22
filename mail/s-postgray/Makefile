@@ -11,6 +11,9 @@ MAINTAINER=		Steffen Nurpmeso <steffen@sdaoden.eu>
 # ISC
 PERMIT_PACKAGE=		Yes
 
+COMPILER=		base-clang ports-gcc
+COMPILER_LANGS=		c
+
 # uses pledge()
 # uses unveil()
 WANTLIB+=		c
