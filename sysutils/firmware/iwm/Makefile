@@ -1,4 +1,4 @@
-V=		2023-03-06
+V=		2023-03-30
 FW_DRIVER=	iwm
 FW_VER=		${V:S/-//g}
 DISTNAME=	linux-firmware-iwlwifi-fw-$V
