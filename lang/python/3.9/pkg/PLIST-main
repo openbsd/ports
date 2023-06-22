@@ -910,10 +910,6 @@ lib/python3.9/config-3.9/
 lib/python3.9/config-3.9/Makefile
 lib/python3.9/config-3.9/Setup
 lib/python3.9/config-3.9/Setup.local
-lib/python3.9/config-3.9/__pycache__/
-lib/python3.9/config-3.9/__pycache__/python-config.cpython-39.opt-1.pyc
-lib/python3.9/config-3.9/__pycache__/python-config.cpython-39.opt-2.pyc
-lib/python3.9/config-3.9/__pycache__/python-config.cpython-39.pyc
 lib/python3.9/config-3.9/config.c
 lib/python3.9/config-3.9/config.c.in
 lib/python3.9/config-3.9/install-sh
