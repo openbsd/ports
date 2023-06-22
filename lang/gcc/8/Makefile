@@ -18,7 +18,7 @@ USE_NOEXECONLY = Yes
 V = 8.4.0
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
-REVISION = 16
+REVISION = 17
 
 ADASTRAP-amd64 = adastrap-amd64-$V-2.tar.xz
 ADASTRAP-arm = adastrap-arm-4.9.4-0.tar.xz
@@ -66,10 +66,8 @@ EXTRACT_ONLY =	${DISTNAME}.tar.xz
 BUILD_DEPENDS +=	devel/bison
 
 .if ${MACHINE_ARCH} == "aarch64" || ${MACHINE_ARCH} == "amd64" || \
-    ${MACHINE_ARCH} == "arm" || \
+    ${MACHINE_ARCH} == "arm" || ${MACHINE_ARCH} == "i386" || \
     ${MACHINE_ARCH} == "powerpc64" || ${MACHINE_ARCH} == "riscv64"
-# would be helpful on i386/amd64 too, but some ports also need the old
-# ld.bfd in base which can't cope with new gas.
 BUILD_DEPENDS +=	devel/gas
 RUN_DEPENDS +=		devel/gas
 RUN_DEPENDS-main +=	devel/gas
