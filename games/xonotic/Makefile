@@ -6,7 +6,7 @@ COMMENT-server =	fast-paced first person shooter, server
 
 MULTI_PACKAGES =	-main -data -server
 
-V =			0.8.5
+V =			0.8.6
 DISTNAME =		xonotic-${V}
 PKGNAME-data =		xonotic-data-${V}
 PKGNAME-server =	xonotic-server-${V}

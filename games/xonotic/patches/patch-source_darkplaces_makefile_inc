@@ -1,16 +1,16 @@
 Index: source/darkplaces/makefile.inc
 --- source/darkplaces/makefile.inc.orig
 +++ source/darkplaces/makefile.inc
-@@ -194,7 +194,7 @@ OPTIM_DEBUG=$(CPUOPTIMIZATIONS)
- #OPTIM_RELEASE=-O2 -fno-strict-aliasing -fno-math-errno -fno-trapping-math -fno-signaling-nans -fcx-limited-range -funroll-loops $(CPUOPTIMIZATIONS)
+@@ -197,7 +197,7 @@ OPTIM_DEBUG=$(CPUOPTIMIZATIONS)
  #OPTIM_RELEASE=-O2 -fno-strict-aliasing -funroll-loops $(CPUOPTIMIZATIONS)
  #OPTIM_RELEASE=-O2 -fno-strict-aliasing $(CPUOPTIMIZATIONS)
--OPTIM_RELEASE=-O3 -fno-strict-aliasing $(CPUOPTIMIZATIONS)
-+OPTIM_RELEASE=-fno-strict-aliasing $(CPUOPTIMIZATIONS)
+ #OPTIM_RELEASE=-O3 -fno-strict-aliasing $(CPUOPTIMIZATIONS)
+-OPTIM_RELEASE=-O3 -fno-strict-aliasing -fno-math-errno -fno-trapping-math $(CPUOPTIMIZATIONS)
++OPTIM_RELEASE=-fno-strict-aliasing -fno-math-errno -fno-trapping-math $(CPUOPTIMIZATIONS)
  # NOTE: *never* *ever* use the -ffast-math or -funsafe-math-optimizations flag
  # Also, since gcc 5, -ffinite-math-only makes NaN and zero compare equal inside engine code but not inside QC, which causes error spam for seemingly valid QC code like if (x != 0) return 1 / x;
  
-@@ -212,9 +212,9 @@ LDFLAGS_RELEASE=$(OPTIM_RELEASE) -DSVNREVISION=`{ test
+@@ -215,9 +215,9 @@ LDFLAGS_RELEASE=$(OPTIM_RELEASE) -DSVNREVISION=`{ test
  OBJ_GLX= builddate.c sys_linux.o vid_glx.o thread_pthread.o keysym2ucs.o $(OBJ_MENU) $(OBJ_SOUND) $(OBJ_CD) $(OBJ_VIDEO_CAPTURE) $(OBJ_COMMON)
  
  LDFLAGS_UNIXCOMMON=-lm $(LIB_ODE) $(LIB_Z) $(LIB_JPEG) $(LIB_CRYPTO) $(LIB_CRYPTO_RIJNDAEL)
