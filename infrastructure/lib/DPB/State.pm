@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: State.pm,v 1.35 2023/06/17 19:27:32 espie Exp $
+# $OpenBSD: State.pm,v 1.36 2023/06/23 09:39:05 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -294,20 +294,22 @@ LINE:
 sub add_build_info($state, @consumers)
 {
 	for my $p (DPB::PkgPath->seen) {
-		my $stats = $p->{stats};
-		next unless defined $stats;
+		next unless defined $p->{stats};
 		my ($i, $time, $sz, $host);
-		for my $s ($state->{stats_used} >= @{$stats} ?
-		    @{$stats} : @{$stats}[-$state->{stats_used}..-1]) {
+		# most recent first
+		$p->{stats} = [sort {$b->{ts} <=> $a->{ts}} @{$p->{stats}}];
+		for my $s (@{$p->{stats}}) {
+			$i++;
+			last unless $i <= $state->{stats_used};
 			$time += $s->{time};
 			$sz += $s->{size};
-			$i++;
 			$host = $s->{host}; # XXX
 		}
 		for my $c (@consumers) {
 			$c->add_build_info($p, $host, $time/$i, $sz/$i);
 		}
 	}
+
 }
 
 sub rewrite_build_info($state, $filename)
@@ -316,18 +318,18 @@ sub rewrite_build_info($state, $filename)
 	    sub($f) {
 		for my $p (sort {$a->fullpkgpath cmp $b->fullpkgpath}
 		    DPB::PkgPath->seen) {
-		    	my $stats = $p->{stats};
-			next unless defined $stats;
-			for my $s ($state->{stats_backlog} >= @{$stats} ?
-			    @{$stats} : 
-			    @{$stats}[-$state->{stats_backlog}..-1]) {
+			next unless defined $p->{stats};
+			my $i = 0;
+			for my $s (@{$p->{stats}}) {
+				$i++;
+				last unless $i <= $state->{stats_backlog};
 				print $f DPB::Serialize::Build->write($s), "\n"
 				    or return 0;
 			}
 			delete $p->{stats};
 		}
 		return 1;
-	    });
+	});
 }
 
 sub handle_build_files($state)
@@ -358,10 +360,10 @@ sub handle_continue($state)
 
 sub find_window_size($state)
 {
-	$state->SUPER::find_window_size;
-	if (defined $state->{reporter}) {
-		$state->{reporter}->handle_window;
-	}
+$state->SUPER::find_window_size;
+if (defined $state->{reporter}) {
+    $state->{reporter}->handle_window;
+}
 }
 
 1;
