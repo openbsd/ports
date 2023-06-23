@@ -2,7 +2,7 @@ COMMENT=	full text search plugin for Dovecot using Xapian
 
 GH_ACCOUNT=	slusarz
 GH_PROJECT=	dovecot-fts-flatcurve
-GH_TAGNAME=	v0.3.3
+GH_TAGNAME=	v0.3.4
 
 CATEGORIES=	mail
 
