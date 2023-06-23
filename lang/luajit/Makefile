@@ -18,6 +18,7 @@ COMMENT =	just-in-time compiler for Lua
 V =		2.0.5
 DISTNAME =	LuaJIT-${V}pl20210608
 PKGNAME =	${DISTNAME:L}
+REVISION =	0
 
 CATEGORIES =	lang
 
@@ -25,6 +26,8 @@ HOMEPAGE =	https://luajit.org/
 
 # MIT
 PERMIT_PACKAGE =	Yes
+
+USE_NOBTCFI =	Yes
 
 WANTLIB =	c m
 

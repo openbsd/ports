@@ -2,11 +2,14 @@ COMMENT =		GTK+2 IRC Client
 DISTNAME =		hexchat-2.16.1
 EXTRACT_SUFX =		.tar.xz
 CATEGORIES =		net x11
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://hexchat.github.io/
 # GPLv2+
 PERMIT_PACKAGE =	Yes
+
+# luajit
+USE_NOBTCFI =		Yes
 
 WANTLIB += X11 c canberra crypto dbus-glib-1 gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gtk-x11-2.0

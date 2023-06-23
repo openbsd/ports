@@ -2,7 +2,7 @@ V =		1.6.0
 COMMENT =	open-source Zelda-like 2D game engine
 DISTNAME =	solarus-${V}-src
 PKGNAME =	solarus-${V}
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS +=	solarus                   0.0 # 1.5
 
@@ -10,6 +10,9 @@ HOMEPAGE =	https://www.solarus-games.org/
 
 # GPLv3+
 PERMIT_PACKAGE =		Yes
+
+# luajit
+USE_NOBTCFI =	Yes
 
 WANTLIB += Qt5Core Qt5Gui Qt5Widgets SDL2 SDL2_image SDL2_ttf
 WANTLIB += c luajit-5.1 m modplug ogg openal physfs pthread vorbis
