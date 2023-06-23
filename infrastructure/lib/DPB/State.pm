@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: State.pm,v 1.36 2023/06/23 09:39:05 espie Exp $
+# $OpenBSD: State.pm,v 1.37 2023/06/23 09:49:12 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -298,12 +298,32 @@ sub add_build_info($state, @consumers)
 		my ($i, $time, $sz, $host);
 		# most recent first
 		$p->{stats} = [sort {$b->{ts} <=> $a->{ts}} @{$p->{stats}}];
+		# first loop: we use clean builds
 		for my $s (@{$p->{stats}}) {
+			# so we keep stuff that predates the tag
+			# and stuff that's actually clean
+			# (see Job/Port.pm: clean is the number of the line
+			# at which we found the clean build marker)
+			if (defined $s->{clean} && $s->{clean} == 0) {
+				next;
+			}
 			$i++;
 			last unless $i <= $state->{stats_used};
 			$time += $s->{time};
 			$sz += $s->{size};
-			$host = $s->{host}; # XXX
+			$host = $s->{host}; # XXX we don't do anything with
+					    # host information
+		}
+		# no clean build found: partial stats are better than
+		# nothing
+		if ($i == 0) {
+			for my $s (@{$p->{stats}}) {
+				$i++;
+				last unless $i <= $state->{stats_used};
+				$time += $s->{time};
+				$sz += $s->{size};
+				$host = $s->{host};
+			}
 		}
 		for my $c (@consumers) {
 			$c->add_build_info($p, $host, $time/$i, $sz/$i);
