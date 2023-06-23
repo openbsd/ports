@@ -12,7 +12,6 @@ share/doc/haproxy/SOCKS4.protocol.txt
 share/doc/haproxy/SPOE.txt
 share/doc/haproxy/WURFL-device-detection.txt
 share/doc/haproxy/architecture.txt
-share/doc/haproxy/close-options.txt
 share/doc/haproxy/configuration.txt
 share/doc/haproxy/cookie-options.txt
 share/doc/haproxy/intro.txt
