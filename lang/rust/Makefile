@@ -13,6 +13,7 @@ COMMENT-main =		compiler for Rust Language
 COMMENT-gdb =		Rust debugger through gdb
 COMMENT-clippy =	Rust linter
 COMMENT-rustfmt =	Rust code formatter
+COMMENT-src =		Rust source component
 
 V =			1.70.0
 REVISION =		0
@@ -32,8 +33,9 @@ PKGNAME-main =		rust-${V}
 PKGNAME-gdb =		rust-gdb-${V}
 PKGNAME-clippy =	rust-clippy-${V}
 PKGNAME-rustfmt =	rust-rustfmt-${V}
+PKGNAME-src =		rust-src-${V}
 
-MULTI_PACKAGES =	-main -gdb -clippy -rustfmt
+MULTI_PACKAGES =	-main -gdb -clippy -rustfmt -src
 
 CATEGORIES =		lang
 
@@ -154,6 +156,9 @@ RUN_DEPENDS-gdb +=	lang/rust,-main \
 			devel/gdb
 RUN_DEPENDS-clippy +=	lang/rust,-main
 RUN_DEPENDS-rustfmt +=	lang/rust,-main
+RUN_DEPENDS-src +=	lang/rust,-main
+
+PKG_ARCH-src =		*
 
 MAKE_ENV +=	LD_LIBRARY_PATH="${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${BV}/lib" \
 		CARGO_HOME=${WRKBUILD}/cargo-home \
@@ -223,7 +228,6 @@ do-configure:
 	echo 'deny-warnings = false' >>${WRKBUILD}/config.toml
 
 	echo '[dist]' >>${WRKBUILD}/config.toml
-	echo 'src-tarball = false' >>${WRKBUILD}/config.toml
 	echo 'compression-formats = ["gz"]' >>${WRKBUILD}/config.toml
 
 	echo '[llvm]' >>${WRKBUILD}/config.toml
@@ -245,18 +249,23 @@ TEST_BIN = cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} ${TEST_ENV} \
 
 do-build:
 	${BUILD_BIN} dist --jobs=${MAKE_JOBS} \
-		rust-std rustc cargo clippy rustfmt
+		rust-std rustc cargo clippy rustfmt rust-src
 	rm -rf -- ${WRKBUILD}/build/tmp
 
-COMPONENTS ?=	rustc-${V} rust-std-${V} cargo-${V} \
-		clippy-${V} rustfmt-${V}
+COMPONENTS ?=	rustc-${V}-${TRIPLE_ARCH} \
+		rust-std-${V}-${TRIPLE_ARCH} \
+		cargo-${V}-${TRIPLE_ARCH} \
+		clippy-${V}-${TRIPLE_ARCH} \
+		rustfmt-${V}-${TRIPLE_ARCH} \
+		rust-src-${V}
+
 do-install:
 	rm -rf ${WRKBUILD}/_extractdist
 .for _c in ${COMPONENTS}
 	mkdir ${WRKBUILD}/_extractdist
 	cd ${WRKBUILD}/_extractdist && tar zxf \
-		${WRKBUILD}/build/dist/${_c}-${TRIPLE_ARCH}.tar.gz
-	cd ${WRKBUILD}/_extractdist/${_c}-${TRIPLE_ARCH} && \
+		${WRKBUILD}/build/dist/${_c}.tar.gz
+	cd ${WRKBUILD}/_extractdist/${_c} && \
 		${LOCALBASE}/bin/bash ./install.sh \
 		--prefix="${PREFIX}" \
 		--mandir="${PREFIX}/man"
@@ -267,6 +276,7 @@ do-install:
 		${PREFIX}/lib/rustlib/{install.log,uninstall.sh,rust-installer-version} \
 		${PREFIX}/lib/rustlib/components \
 		${PREFIX}/lib/rustlib/manifest-*
+	find ${PREFIX}/lib/rustlib/src -name '*${PATCHORIG}' -delete
 	# rehash libraries to have stables filenames
 	cd ${PREFIX} && ${MODPY_BIN} "${.CURDIR}/files/rehash.py" \
 		${TRIPLE_ARCH} \
@@ -300,7 +310,7 @@ bootstrap: build
 	${MAKE} clean=fake
 	${MAKE} fake \
 		PREFIX="${BOOTSTRAPDIR}" \
-		COMPONENTS="rustc-${V} rust-std-${V} cargo-${V}" \
+		COMPONENTS="rustc-${V}-${TRIPLE_ARCH} rust-std-${V}-${TRIPLE_ARCH} cargo-${V}-${TRIPLE_ARCH}" \
 		FAKE_SETUP=""
 	${_PBUILD} rm -rf ${BOOTSTRAPDIR}/{man,share} \
 		${BOOTSTRAPDIR}/bin/rust-gdb*
