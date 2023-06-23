@@ -215,6 +215,8 @@ share/a2ps/sheets/xs.ssh
 share/a2ps/sheets/yacc.ssh
 share/a2ps/sheets/zsh.ssh
 share/doc/pkg-readmes/${PKGSTEM}
+share/emacs/
+share/emacs/site-lisp/
 share/emacs/site-lisp/a2ps-print.el
 share/emacs/site-lisp/a2ps.el
 share/examples/a2ps/
@@ -238,6 +240,8 @@ share/locale/de/LC_MESSAGES/a2ps-gnulib.mo
 share/locale/de/LC_MESSAGES/a2ps.mo
 share/locale/el/LC_MESSAGES/a2ps-gnulib.mo
 share/locale/el/LC_MESSAGES/a2ps.mo
+share/locale/en_GB/
+share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/a2ps.mo
 share/locale/eo/LC_MESSAGES/a2ps-gnulib.mo
 share/locale/eo/LC_MESSAGES/a2ps.mo
@@ -260,9 +264,13 @@ share/locale/it/LC_MESSAGES/a2ps-gnulib.mo
 share/locale/it/LC_MESSAGES/a2ps.mo
 share/locale/ja/LC_MESSAGES/a2ps-gnulib.mo
 share/locale/ja/LC_MESSAGES/a2ps.mo
+share/locale/ka/
+share/locale/ka/LC_MESSAGES/
 share/locale/ka/LC_MESSAGES/a2ps-gnulib.mo
 share/locale/ko/LC_MESSAGES/a2ps-gnulib.mo
 share/locale/ko/LC_MESSAGES/a2ps.mo
+share/locale/ms/
+share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/a2ps-gnulib.mo
 share/locale/ms/LC_MESSAGES/a2ps.mo
 share/locale/nb/LC_MESSAGES/a2ps-gnulib.mo
