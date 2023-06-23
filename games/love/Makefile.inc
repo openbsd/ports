@@ -34,6 +34,7 @@ USE_LUAJIT ?=		Yes
 WANTLIB +=		luajit-5.1
 LIB_DEPENDS +=		lang/luajit
 CONFIGURE_ARGS +=	--with-lua=luajit
+USE_NOBTCFI =		Yes
 .else
 WANTLIB +=		${MODLUA_WANTLIB}
 LIB_DEPENDS +=		${MODLUA_LIB_DEPENDS}

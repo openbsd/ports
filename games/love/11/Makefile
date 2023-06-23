@@ -3,6 +3,7 @@
 NOT_FOR_ARCHS =		${BE_ARCHS}
 
 VERSION =		11.4
+REVISION =		0
 
 SHARED_LIBS =		love-${VERSION}	0.0
 

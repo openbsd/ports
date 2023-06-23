@@ -1,4 +1,5 @@
 VERSION =		0.10.2
+REVISION =		0
 
 SHARED_LIBS=		love-${VERSION}	0.0
 
