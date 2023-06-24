@@ -1,5 +1,6 @@
 BROKEN-alpha=	beam/erl_process.c:6692: internal compiler error: in final_scan_insn, at final.c:2449
 
+USE_NOBTCFI=	Yes
 USE_WXNEEDED=	Yes
 
 COMMENT-main=	${COMMENT}
@@ -12,6 +13,7 @@ PKGNAME=	erlang-${V}
 PKGNAME-main=	erlang-${V}
 PKGNAME-wx=	erlang-wx-${V}
 EPOCH=		0
+REVISION=	0
 
 VERSION_SPEC=	>=26v0,<27v0
 PKGSPEC-main=	erlang-${VERSION_SPEC}
