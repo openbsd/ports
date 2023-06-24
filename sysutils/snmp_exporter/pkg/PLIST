@@ -20,6 +20,7 @@ share/examples/snmp_exporter/generator.yml
 @sample ${SYSCONFDIR}/snmp_exporter/generator.yml
 share/examples/snmp_exporter/mibs/
 @comment share/examples/snmp_exporter/mibs/.cisco_v2
+@comment share/examples/snmp_exporter/mibs/.do_not_remove
 @comment share/examples/snmp_exporter/mibs/.kemp-lm
 @comment share/examples/snmp_exporter/mibs/.net-snmp
 @comment share/examples/snmp_exporter/mibs/.paloalto_panos
@@ -33,9 +34,7 @@ share/examples/snmp_exporter/mibs/AIRESPACE-WIRELESS-MIB
 share/examples/snmp_exporter/mibs/ARISTA-ENTITY-SENSOR-MIB
 share/examples/snmp_exporter/mibs/ARISTA-SMI-MIB
 share/examples/snmp_exporter/mibs/ARISTA-SW-IP-FORWARDING-MIB
-share/examples/snmp_exporter/mibs/EATON-EPDU-MIB.txt
-share/examples/snmp_exporter/mibs/EATON-OIDS.txt
-share/examples/snmp_exporter/mibs/EATON-SENSOR-MIB.txt
+share/examples/snmp_exporter/mibs/CyberPower.MIB
 share/examples/snmp_exporter/mibs/ENTITY-MIB
 share/examples/snmp_exporter/mibs/ENTITY-SENSOR-MIB
 share/examples/snmp_exporter/mibs/ENTITY-STATE-MIB
