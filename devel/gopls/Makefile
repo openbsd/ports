@@ -1,7 +1,7 @@
 COMMENT =	official Go language server developed by the Go team
 
 MODGO_MODNAME =	golang.org/x/tools/gopls
-MODGO_VERSION =	v0.11.0
+MODGO_VERSION =	v0.12.4
 
 DISTNAME =	gopls-${MODGO_VERSION}
 
@@ -27,4 +27,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/design/*.md ${DOCDIR}/doc/design
 
 .include "modules.inc"
+
 .include <bsd.port.mk>

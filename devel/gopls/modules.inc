@@ -19,49 +19,52 @@ MODGO_MODULES =	\
 	github.com/stretchr/objx	 v0.1.0 \
 	github.com/stretchr/testify	 v1.4.0 \
 	github.com/yuin/goldmark	 v1.4.13 \
-	golang.org/x/exp		 v0.0.0-20221031165847-c99f073a8326 \
-	golang.org/x/exp/typeparams	 v0.0.0-20221031165847-c99f073a8326 \
-	golang.org/x/mod		 v0.7.0 \
-	golang.org/x/net		 v0.2.0 \
-	golang.org/x/sync		 v0.1.0 \
-	golang.org/x/sys		 v0.2.0 \
-	golang.org/x/text		 v0.4.0 \
-	golang.org/x/tools		 v0.3.1-0.20221213193459-ca17b2c27ca8 \
-	golang.org/x/vuln		 v0.0.0-20221109205719-3af8368ee4fe \
+	golang.org/x/exp		 v0.0.0-20220722155223-a9213eeb770e \
+	golang.org/x/exp/typeparams	 v0.0.0-20221212164502-fae10dda9338 \
+	golang.org/x/mod		 v0.11.0 \
+	golang.org/x/net		 v0.11.0 \
+	golang.org/x/sync		 v0.3.0 \
+	golang.org/x/sys		 v0.9.0 \
+	golang.org/x/text		 v0.10.0 \
+	golang.org/x/tools		 v0.10.1-0.20230622221742-0622ad2359a7 \
+	golang.org/x/vuln		 v0.0.0-20230110180137-6ad3e3d07815 \
+	golang.org/x/xerrors		 v0.0.0-20200804184101-5ec99f83aff1 \
 	gopkg.in/check.v1		 v1.0.0-20190902080502-41f04d3bba15 \
 	gopkg.in/errgo.v2		 v2.1.0 \
 	gopkg.in/yaml.v2		 v2.2.4 \
 	gopkg.in/yaml.v3		 v3.0.1 \
-	honnef.co/go/tools		 v0.3.3 \
+	honnef.co/go/tools		 v0.4.2 \
 	mvdan.cc/gofumpt		 v0.4.0 \
 	mvdan.cc/unparam		 v0.0.0-20211214103731-d0ef000c54e5 \
 	mvdan.cc/xurls/v2		 v2.4.0
 
 MODGO_MODFILES =	\
 	github.com/!burnt!sushi/toml	 v0.3.1 \
-	github.com/!burnt!sushi/toml	 v0.4.1 \
 	github.com/davecgh/go-spew	 v1.1.0 \
 	github.com/google/go-cmp	 v0.5.8 \
 	github.com/google/safehtml	 v0.0.2 \
 	github.com/kr/pretty		 v0.1.0 \
 	github.com/kr/text		 v0.1.0 \
 	github.com/rogpeppe/go-internal	 v1.8.1 \
-	golang.org/x/exp		 v0.0.0-20220722155223-a9213eeb770e \
-	golang.org/x/exp/typeparams	 v0.0.0-20220218215828-6cf2b201936e \
-	golang.org/x/mod		 v0.6.0 \
+	golang.org/x/exp/typeparams	 v0.0.0-20221208152030-732eee02a75a \
+	golang.org/x/mod		 v0.6.0-dev.0.20220106191415-9b9b3d81d5e3 \
 	golang.org/x/mod		 v0.6.0-dev.0.20220419223038-86c51ed26bb4 \
+	golang.org/x/mod		 v0.7.0 \
+	golang.org/x/mod		 v0.8.0 \
 	golang.org/x/sync		 v0.0.0-20210220032951-036812b2e83c \
 	golang.org/x/sync		 v0.0.0-20220819030929-7fc1605a5dde \
+	golang.org/x/sync		 v0.1.0 \
 	golang.org/x/sys		 v0.0.0-20211019181941-9d821ace8654 \
-	golang.org/x/sys		 v0.0.0-20220722155257-8c9f86f7a55f \
 	golang.org/x/sys		 v0.0.0-20220829200755-d48e67d00261 \
-	golang.org/x/sys		 v0.1.0 \
+	golang.org/x/sys		 v0.3.0 \
+	golang.org/x/sys		 v0.5.0 \
 	golang.org/x/text		 v0.3.3 \
 	golang.org/x/tools		 v0.0.0-20180917221912-90fa682c2a6e \
-	golang.org/x/tools		 v0.1.11-0.20220513221640-090b14e8501f \
+	golang.org/x/tools		 v0.1.10 \
 	golang.org/x/tools		 v0.1.12 \
-	golang.org/x/tools		 v0.2.0 \
-	golang.org/x/tools		 v0.2.1-0.20221108172846-9474ca31d0df \
+	golang.org/x/tools		 v0.4.1-0.20221208213631-3f74d914ae6d \
+	golang.org/x/tools		 v0.4.1-0.20221217013628-b4dfc36097e2 \
+	golang.org/x/tools		 v0.6.0 \
 	gopkg.in/check.v1		 v0.0.0-20161208181325-20d25e280405 \
 	gopkg.in/check.v1		 v1.0.0-20180628173108-788fd7840127 \
 	gopkg.in/yaml.v2		 v2.2.2 \
