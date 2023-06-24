@@ -1810,6 +1810,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/pricing/2017-10-15/endpoi
 lib/python${MODPY_VERSION}/site-packages/botocore/data/pricing/2017-10-15/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/pricing/2017-10-15/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/pricing/2017-10-15/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/pricing/2017-10-15/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/privatenetworks/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/privatenetworks/2021-12-03/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/privatenetworks/2021-12-03/endpoint-rule-set-1.json
