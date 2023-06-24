@@ -1349,7 +1349,7 @@ SHA256 (go_modules/rsc.io/binaryregexp/@v/v0.2.0.mod) = AyRzu+VUpUpEX6hVu7K/piNN
 SHA256 (go_modules/rsc.io/binaryregexp/@v/v0.2.0.zip) = s+cGqiePp/iA0y+hzEDvgoLR/H1uADVlee0NuI87AEc=
 SHA256 (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.2.0.mod) = ycxHNZ55+c2ONOTeypncJ5t0zinSW0a1T86Qmw5wOm8=
 SHA256 (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.2.0.zip) = qse6k1xBU6O0e8ObNvLorTJD8DNJwRy33Mlt2fMWn6Y=
-SHA256 (lego-v4.12.1.zip) = HPQpG+Wh5+Helr4oDQukAmbS1uqagyIlKoNEAui/QwE=
+SHA256 (lego-v4.12.3.zip) = rMIirXWGhpZ6Q2w4lRA387mBHQPkdlLwI+cU73oC1uA=
 SIZE (go_modules/cloud.google.com/go/@v/v0.107.0.mod) = 1091
 SIZE (go_modules/cloud.google.com/go/@v/v0.107.0.zip) = 542234
 SIZE (go_modules/cloud.google.com/go/@v/v0.26.0.mod) = 27
@@ -2701,4 +2701,4 @@ SIZE (go_modules/rsc.io/binaryregexp/@v/v0.2.0.mod) = 36
 SIZE (go_modules/rsc.io/binaryregexp/@v/v0.2.0.zip) = 450232
 SIZE (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.2.0.mod) = 127
 SIZE (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.2.0.zip) = 36374
-SIZE (lego-v4.12.1.zip) = 1271269
+SIZE (lego-v4.12.3.zip) = 1270936
