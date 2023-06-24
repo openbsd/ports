@@ -51,6 +51,7 @@ MODPY_RUNDEP =		No
 BUILD_DEPENDS =		devel/boost,-main \
 			devel/crc32c \
 			devel/fmt \
+			devel/gobject-introspection \
 			devel/microsoft-gsl \
 			devel/range-v3>=0.11.0p0 \
 			devel/tl-expected \
