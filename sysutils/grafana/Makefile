@@ -1,11 +1,10 @@
 COMMENT =	monitoring and metric analytics dashboards
 
-V =		9.5.2
+V =		9.5.5
 DISTNAME =	grafana+vendor-$V
 WRKDIST =	${WRKDIR}/grafana-$V
 EXTRACT_SUFX =	.tar.zst
 PKGNAME =	grafana-$V
-REVISION =	0
 
 MAINTAINER = Lucas Raab <tuftedocelot@fastmail.fm>
 
