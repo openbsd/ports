@@ -1,6 +1,6 @@
 COMMENT =	source of XYZ tiles providers
 
-MODPY_EGG_VERSION =	2023.2.0
+MODPY_EGG_VERSION =	2023.5.0
 
 DISTNAME =	xyzservices-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
@@ -18,7 +18,8 @@ MODULES =	lang/python
 FLAVOR =	python3
 FLAVORS =	python3
 
-MODPY_PYBUILD =	setuptools
+MODPY_PYBUILD =	setuptools_scm
+MAKE_ENV =      SETUPTOOLS_SCM_PRETEND_VERSION=${MODPY_EGG_VERSION}
 
 # Many tests want to get online, but there are passing tests
 TEST_DEPENDS =	geo/py-mercantile${MODPY_FLAVOR} \
