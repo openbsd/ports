@@ -1,8 +1,10 @@
-COMMENT =		a new kind of shell
+# nushell removed support for arm and riscv64 in 0.81.0
+NOT_FOR_ARCHS =		arm riscv64
+COMMENT =		a new type of shell
 
 GH_ACCOUNT =		nushell
 GH_PROJECT =		nushell
-GH_TAGNAME =		0.76.0
+GH_TAGNAME =		0.82.0
 
 CATEGORIES =		shells
 
