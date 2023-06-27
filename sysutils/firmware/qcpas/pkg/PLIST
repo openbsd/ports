@@ -1,0 +1,9 @@
+firmware/qcom/
+firmware/qcom/sc8280xp/
+firmware/qcom/sc8280xp/LENOVO/
+firmware/qcom/sc8280xp/LENOVO/21BX/
+firmware/qcom/sc8280xp/LENOVO/21BX/qcadsp8280.mbn
+firmware/qcom/sc8280xp/LENOVO/21BX/qccdsp8280.mbn
+firmware/qcom/sc8280xp/LENOVO/21BX/qcdxkmsuc8280.mbn
+firmware/qcom/sc8280xp/LENOVO/21BX/qcslpi8280.mbn
+firmware/qcpas-license
