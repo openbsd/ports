@@ -3,9 +3,10 @@ ONLY_FOR_ARCHS =	amd64 aarch64
 COMMENT =		runtime for JavaScript and TypeScript
 
 USE_WXNEEDED =		Yes
+USE_NOBTCFI =		Yes
 
 VERSION =		1.32.5
-REVISION =		0
+REVISION =		1
 HOMEPAGE =		https://deno.com/runtime
 
 DISTNAME =		deno-${VERSION}
