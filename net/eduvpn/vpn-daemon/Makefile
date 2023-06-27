@@ -5,13 +5,16 @@ BROKEN-i386=	unix.SOCK_CLOEXEC/unix.SOCK_NONBLOCK aren't listed in golang.org/x/
 V=		3.0.2
 DISTNAME=	vpn-daemon-$V
 
+REVISION=	0
+
 # MIT
 PERMIT_PACKAGE=	Yes
 
-MODULES=	lang/go
-WRKDIST=	${WRKDIR}/${DISTNAME}
-
 WANTLIB=	c pthread
+
+MAKE_FLAGS=	GOBUILDFLAGS="-v -buildvcs=false -p=${MAKE_JOBS}"
+ALL_TARGET=	vpn-daemon
+PORTHOME=	${WRKDIR}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/vpn-daemon

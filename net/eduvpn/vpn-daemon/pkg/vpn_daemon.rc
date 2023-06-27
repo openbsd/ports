@@ -1,6 +1,6 @@
 #!/bin/ksh
 
-daemon="${TRUEPREFIX}/bin/vpn-daemon"
+daemon="${TRUEPREFIX}/sbin/vpn-daemon"
 daemon_logger="daemon.info"
 daemon_user="_eduvpn"
 
