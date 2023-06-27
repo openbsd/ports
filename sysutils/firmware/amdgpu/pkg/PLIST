@@ -109,6 +109,7 @@ firmware/amdgpu/gc_11_0_0_me.bin
 firmware/amdgpu/gc_11_0_0_mec.bin
 firmware/amdgpu/gc_11_0_0_mes.bin
 firmware/amdgpu/gc_11_0_0_mes1.bin
+firmware/amdgpu/gc_11_0_0_mes_2.bin
 firmware/amdgpu/gc_11_0_0_pfp.bin
 firmware/amdgpu/gc_11_0_0_rlc.bin
 firmware/amdgpu/gc_11_0_1_imu.bin
@@ -116,6 +117,7 @@ firmware/amdgpu/gc_11_0_1_me.bin
 firmware/amdgpu/gc_11_0_1_mec.bin
 firmware/amdgpu/gc_11_0_1_mes.bin
 firmware/amdgpu/gc_11_0_1_mes1.bin
+firmware/amdgpu/gc_11_0_1_mes_2.bin
 firmware/amdgpu/gc_11_0_1_pfp.bin
 firmware/amdgpu/gc_11_0_1_rlc.bin
 firmware/amdgpu/gc_11_0_2_imu.bin
@@ -123,8 +125,17 @@ firmware/amdgpu/gc_11_0_2_me.bin
 firmware/amdgpu/gc_11_0_2_mec.bin
 firmware/amdgpu/gc_11_0_2_mes.bin
 firmware/amdgpu/gc_11_0_2_mes1.bin
+firmware/amdgpu/gc_11_0_2_mes_2.bin
 firmware/amdgpu/gc_11_0_2_pfp.bin
 firmware/amdgpu/gc_11_0_2_rlc.bin
+firmware/amdgpu/gc_11_0_4_imu.bin
+firmware/amdgpu/gc_11_0_4_me.bin
+firmware/amdgpu/gc_11_0_4_mec.bin
+firmware/amdgpu/gc_11_0_4_mes.bin
+firmware/amdgpu/gc_11_0_4_mes1.bin
+firmware/amdgpu/gc_11_0_4_mes_2.bin
+firmware/amdgpu/gc_11_0_4_pfp.bin
+firmware/amdgpu/gc_11_0_4_rlc.bin
 firmware/amdgpu/green_sardine_asd.bin
 firmware/amdgpu/green_sardine_ce.bin
 firmware/amdgpu/green_sardine_dmcub.bin
@@ -335,6 +346,8 @@ firmware/amdgpu/polaris12_uvd.bin
 firmware/amdgpu/polaris12_vce.bin
 firmware/amdgpu/psp_13_0_0_sos.bin
 firmware/amdgpu/psp_13_0_0_ta.bin
+firmware/amdgpu/psp_13_0_11_ta.bin
+firmware/amdgpu/psp_13_0_11_toc.bin
 firmware/amdgpu/psp_13_0_4_ta.bin
 firmware/amdgpu/psp_13_0_4_toc.bin
 firmware/amdgpu/psp_13_0_5_asd.bin
