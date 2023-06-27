@@ -9,7 +9,7 @@ V =			4.8.4
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
-REVISION =		0
+REVISION =		1
 
 DPB_PROPERTIES =	parallel
 
@@ -58,6 +58,13 @@ BUILD_DEPENDS =		devel/boost,-main \
 			devel/tl-expected \
 			x11/qt6/qtdeclarative
 
+# libtgvoip expects either ALSA or PulseAudio to be present, we build against
+# PulseAudio, but nothing in tdesktop then actually links against it.
+#
+# This should probably be patched out upstream so that libtgvoip builds with
+# OpenAL alone...
+BUILD_DEPENDS +=	audio/pulseaudio
+
 LIB_DEPENDS =		archivers/lz4 \
 			audio/openal \
 			audio/opus \
@@ -92,8 +99,7 @@ CONFIGURE_ARGS +=	-DTDESKTOP_API_ID=611335 \
 # disable unported/unwanted components
 CONFIGURE_ARGS +=	-DDESKTOP_APP_DISABLE_JEMALLOC=ON \
 			-DDESKTOP_APP_DISABLE_WAYLAND_INTEGRATION=ON \
-			-DLIBTGVOIP_DISABLE_ALSA=ON \
-			-DLIBTGVOIP_DISABLE_PULSEAUDIO=ON
+			-DLIBTGVOIP_DISABLE_ALSA=ON
 
 # Since cmake 3.25.1, BSDs are no longer recognised as Linux (in this port).
 # Upstream should probably become BSD aware, but until that happens,
