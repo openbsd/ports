@@ -1,18 +1,12 @@
 Index: arch/arm64/boot/dts/qcom/sc8280xp-pmics.dtsi
 --- arch/arm64/boot/dts/qcom/sc8280xp-pmics.dtsi.orig
 +++ arch/arm64/boot/dts/qcom/sc8280xp-pmics.dtsi
-@@ -96,6 +96,14 @@
- 			#thermal-sensor-cells = <1>;
+@@ -101,7 +101,7 @@
+ 			compatible = "qcom,pmk8350-rtc";
+ 			reg = <0x6100>, <0x6200>;
+ 			reg-names = "rtc", "alarm";
+-			interrupts = <0x0 0x62 0x1 IRQ_TYPE_EDGE_RISING>;
++			interrupts-extended = <&spmi_bus 0 0x62 0x1 IRQ_TYPE_EDGE_RISING>;
+ 			wakeup-source;
  			status = "disabled";
  		};
-+
-+		pmk8280_rtc: rtc@6100 {
-+			compatible = "qcom,pmk8350-rtc";
-+			reg = <0x6100>, <0x6200>;
-+			reg-names = "rtc", "alarm";
-+			interrupts-extended = <&spmi_bus 0 0x62 0x1 IRQ_TYPE_EDGE_RISING>;
-+			status = "disabled";
-+		};
- 	};
- 
- 	pmc8280_1: pmic@1 {
