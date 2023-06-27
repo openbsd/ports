@@ -9,18 +9,19 @@ Index: common.gypi
          'conditions': [
            ['enable_lto=="true"', {
              'cflags': ['<(lto)'],
-@@ -409,7 +408,9 @@
+@@ -409,7 +408,10 @@
            }],
            ['OS=="openbsd"', {
              'cflags': [ '-I/usr/local/include' ],
 -            'ldflags': [ '-Wl,-z,wxneeded' ],
 +            'ldflags': [ '-Wl,-z,wxneeded'
++                , '-Wl,-z,nobtcfi'
 +                , '-Wl,-rpath,${EOPENSSL_LIB}'
 +            ],
            }],
          ],
          'conditions': [
-@@ -426,7 +427,7 @@
+@@ -426,7 +428,7 @@
              'ldflags': [ '-m32' ],
            }],
            [ 'target_arch=="ppc64" and OS not in "aix os400"', {
