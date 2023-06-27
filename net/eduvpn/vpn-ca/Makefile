@@ -3,14 +3,18 @@ COMMENT=	simple CA to manage server and client certificates
 V=		4.0.1
 DISTNAME=	vpn-ca-$V
 
+REVISION=	0
+
 # MIT
 PERMIT_PACKAGE=	Yes
-
-MODULES=	lang/go
 
 WANTLIB=	c pthread
 
 BUILD_DEPENDS=	textproc/scdoc
+
+MAKE_FLAGS=     GOBUILDFLAGS="-v -buildvcs=false -p=${MAKE_JOBS}"
+ALL_TARGET=     vpn-ca
+PORTHOME=       ${WRKDIR}
 
 post-build:
 	scdoc < ${WRKSRC}/vpn-ca.1.scd > ${WRKSRC}/vpn-ca.1
