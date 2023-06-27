@@ -1,5 +1,7 @@
 COMMENT =		high-level decoding and seeking API for Opus files
-DISTNAME =		opusfile-0.12
+
+VERSION =		0.12
+DISTNAME =		opusfile-${VERSION}
 CATEGORIES =		audio
 
 SHARED_LIBS +=		opusfile                  1.0 # 4.5
@@ -13,7 +15,8 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		crypto m ogg opus ssl
 
-MASTER_SITES =		https://downloads.xiph.org/releases/opus/
+MASTER_SITES =	https://downloads.xiph.org/releases/opus/ \
+		https://github.com/xiph/opusfile/releases/download/v${VERSION}/
 
 LIB_DEPENDS =		audio/libogg \
 			audio/opus

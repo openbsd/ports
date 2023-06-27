@@ -1,6 +1,7 @@
 COMMENT=	audio compression codec library
 
-DISTNAME=	libvorbis-1.3.7
+VERSION=	1.3.7
+DISTNAME=	libvorbis-${VERSION}
 CATEGORIES=    	audio
 HOMEPAGE=	https://xiph.org/vorbis/
 SHARED_LIBS +=  vorbis               9.0      # 4.9
@@ -12,7 +13,8 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://downloads.xiph.org/releases/vorbis/
+MASTER_SITES=	https://downloads.xiph.org/releases/vorbis/ \
+		https://github.com/xiph/vorbis/releases/download/v${VERSION}/
 EXTRACT_SUFX=	.tar.xz
 
 WANTLIB=	m ogg

@@ -1,6 +1,7 @@
 COMMENT=	IETF audio codec
 
-DISTNAME=	opus-1.4
+VERSION=	1.4
+DISTNAME=	opus-${VERSION}
 SHARED_LIBS=	opus		1.4	# 9.0
 CATEGORIES=	audio
 
@@ -12,7 +13,7 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	https://downloads.xiph.org/releases/opus/ \
-		https://github.com/xiph/opus/releases/download/v1.4/
+		https://github.com/xiph/opus/releases/download/v${VERSION}/
 
 WANTLIB=	m
 
