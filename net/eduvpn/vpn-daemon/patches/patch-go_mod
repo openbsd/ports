@@ -1,11 +1,9 @@
 Index: go.mod
 --- go.mod.orig
 +++ go.mod
-@@ -1,9 +1,18 @@
- module tuxed.net/vpn-daemon
+@@ -2,8 +2,17 @@ module tuxed.net/vpn-daemon
  
--go 1.15
-+go 1.17
+ go 1.15
  
 +require golang.zx2c4.com/wireguard/wgctrl v0.0.0-20221104135756-97bc4ad4a1cb
 +
