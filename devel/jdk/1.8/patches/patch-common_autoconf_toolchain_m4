@@ -1,0 +1,18 @@
+Index: common/autoconf/toolchain.m4
+--- common/autoconf/toolchain.m4.orig
++++ common/autoconf/toolchain.m4
+@@ -855,12 +855,12 @@ AC_DEFUN_ONCE([TOOLCHAIN_MISC_CHECKS],
+   if test "`uname -s`" = "OpenBSD"; then
+     AC_MSG_CHECKING([if ld requires -z wxneeded])
+     PUSHED_LDFLAGS="$LDFLAGS"
+-    LDFLAGS="$LDFLAGS -Wl,-z,wxneeded"
++    LDFLAGS="$LDFLAGS -Wl,-z,wxneeded -Wl,-z,nobtcfi"
+     AC_LINK_IFELSE([AC_LANG_SOURCE([[int main() { }]])],
+         [
+           if $READELF -l conftest$ac_exeext | $GREP OPENBSD_WXNEED > /dev/null; then
+             AC_MSG_RESULT([yes])
+-            LDFLAGS_JDK="${LDFLAGS_JDK} -Wl,-z,wxneeded"
++            LDFLAGS_JDK="${LDFLAGS_JDK} -Wl,-z,wxneeded -Wl,-z,nobtcfi"
+           else
+             AC_MSG_RESULT([yes])
+           fi

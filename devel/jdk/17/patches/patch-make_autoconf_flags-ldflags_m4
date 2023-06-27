@@ -1,0 +1,18 @@
+Index: make/autoconf/flags-ldflags.m4
+--- make/autoconf/flags-ldflags.m4.orig
++++ make/autoconf/flags-ldflags.m4
+@@ -127,12 +127,12 @@ AC_DEFUN([FLAGS_SETUP_LDFLAGS_HELPER],
+     if test "x$OPENJDK_TARGET_OS_ENV" = xbsd.openbsd; then
+       AC_MSG_CHECKING([if ld requires -z wxneeded])
+       PUSHED_LDFLAGS="$LDFLAGS"
+-      LDFLAGS="$LDFLAGS -Wl,-z,wxneeded"
++      LDFLAGS="$LDFLAGS -Wl,-z,wxneeded -Wl,-z,nobtcfi"
+       AC_LINK_IFELSE([AC_LANG_SOURCE([[int main() { }]])],
+           [
+             if $READELF -l conftest$ac_exeext | $GREP WXNEED > /dev/null; then
+               AC_MSG_RESULT([yes])
+-              OS_LDFLAGS="-Wl,-z,wxneeded"
++              OS_LDFLAGS="-Wl,-z,wxneeded -Wl,-z,nobtcfi"
+             else
+               AC_MSG_RESULT([no])
+             fi
