@@ -1,7 +1,7 @@
 COMMENT =		personal and small-business financial-accounting software
 
 GNOME_PROJECT =		gnucash
-GNOME_VERSION =		5.1
+GNOME_VERSION =		5.3
 EXTRACT_SUFX =		.tar.bz2
 
 SHARED_LIBS +=  gnc-core-utils       1.1      # unknown
@@ -43,7 +43,7 @@ BUILD_DEPENDS =		databases/libdbi-drivers,-sqlite3 \
 			devel/swig
 
 RUN_DEPENDS =		databases/libdbi-drivers,-sqlite3 \
-			productivity/gnucash-docs>=${GNOME_VERSION}
+			productivity/gnucash-docs
 
 # gnc-fq-helper(1)
 RUN_DEPENDS +=		converters/p5-DateManip \
