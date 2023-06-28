@@ -1,7 +1,6 @@
 COMMENT=	tools and library routines for working with TIFF images
 
-DISTNAME=	tiff-4.5.0
-REVISION=	0
+DISTNAME=	tiff-4.5.1
 SHARED_LIBS=	tiff	42.0	# 13.0
 SHARED_LIBS+=	tiffxx	42.0	# 13.0
 CATEGORIES=	graphics

@@ -1,7 +1,7 @@
 Index: doc/Makefile.in
 --- doc/Makefile.in.orig
 +++ doc/Makefile.in
-@@ -609,7 +609,7 @@ install-man3: $(man3_MANS)
+@@ -610,7 +610,7 @@ install-man3: $(man3_MANS)
  	  if test -f $$p; then d=; else d="$(srcdir)/"; fi; \
  	  echo "$$d$$p"; echo "$$p"; \
  	done | \

@@ -200,6 +200,7 @@ share/doc/tiff/manual/_sources/images.rst.txt
 share/doc/tiff/manual/_sources/index.rst.txt
 share/doc/tiff/manual/_sources/internals.rst.txt
 share/doc/tiff/manual/_sources/libtiff.rst.txt
+share/doc/tiff/manual/_sources/multi_page.rst.txt
 share/doc/tiff/manual/_sources/project/
 share/doc/tiff/manual/_sources/project/acknowledgements.rst.txt
 share/doc/tiff/manual/_sources/project/bugs.rst.txt
@@ -265,6 +266,7 @@ share/doc/tiff/manual/_sources/releases/v4.2.0.rst.txt
 share/doc/tiff/manual/_sources/releases/v4.3.0.rst.txt
 share/doc/tiff/manual/_sources/releases/v4.4.0.rst.txt
 share/doc/tiff/manual/_sources/releases/v4.5.0.rst.txt
+share/doc/tiff/manual/_sources/releases/v4.5.1.rst.txt
 share/doc/tiff/manual/_sources/specification/
 share/doc/tiff/manual/_sources/specification/bigtiff.rst.txt
 share/doc/tiff/manual/_sources/specification/coverage-bigtiff.rst.txt
@@ -296,14 +298,11 @@ share/doc/tiff/manual/_sources/tools/tiffmedian.rst.txt
 share/doc/tiff/manual/_sources/tools/tiffset.rst.txt
 share/doc/tiff/manual/_sources/tools/tiffsplit.rst.txt
 share/doc/tiff/manual/_static/
-share/doc/tiff/manual/_static/_sphinx_javascript_frameworks_compat.js
 share/doc/tiff/manual/_static/basic.css
 share/doc/tiff/manual/_static/contents.png
 share/doc/tiff/manual/_static/doctools.js
 share/doc/tiff/manual/_static/documentation_options.js
 share/doc/tiff/manual/_static/file.png
-share/doc/tiff/manual/_static/jquery-3.6.0.js
-share/doc/tiff/manual/_static/jquery.js
 share/doc/tiff/manual/_static/language_data.js
 share/doc/tiff/manual/_static/minus.png
 share/doc/tiff/manual/_static/navigation.png
@@ -312,8 +311,6 @@ share/doc/tiff/manual/_static/pygments.css
 share/doc/tiff/manual/_static/searchtools.js
 share/doc/tiff/manual/_static/sphinx_highlight.js
 share/doc/tiff/manual/_static/sphinxdoc.css
-share/doc/tiff/manual/_static/underscore-1.13.1.js
-share/doc/tiff/manual/_static/underscore.js
 share/doc/tiff/manual/addingtags.html
 share/doc/tiff/manual/build.html
 share/doc/tiff/manual/contrib.html
@@ -383,6 +380,7 @@ share/doc/tiff/manual/images.html
 share/doc/tiff/manual/index.html
 share/doc/tiff/manual/internals.html
 share/doc/tiff/manual/libtiff.html
+share/doc/tiff/manual/multi_page.html
 share/doc/tiff/manual/objects.inv
 share/doc/tiff/manual/project/
 share/doc/tiff/manual/project/acknowledgements.html
@@ -449,6 +447,7 @@ share/doc/tiff/manual/releases/v4.2.0.html
 share/doc/tiff/manual/releases/v4.3.0.html
 share/doc/tiff/manual/releases/v4.4.0.html
 share/doc/tiff/manual/releases/v4.5.0.html
+share/doc/tiff/manual/releases/v4.5.1.html
 share/doc/tiff/manual/search.html
 share/doc/tiff/manual/searchindex.js
 share/doc/tiff/manual/specification/
