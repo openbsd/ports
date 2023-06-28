@@ -7,7 +7,6 @@
 @bin bin/goid-tool
 @bin bin/iasecc-tool
 @bin bin/netkey-tool
-@bin bin/npa-tool
 @bin bin/openpgp-tool
 @bin bin/opensc-asn1
 @bin bin/opensc-explorer
@@ -106,8 +105,6 @@ share/opensc/iasecc_generic_oberthur.profile
 share/opensc/iasecc_generic_pki.profile
 share/opensc/incrypto34.profile
 share/opensc/isoApplet.profile
-share/opensc/jcop.profile
-share/opensc/miocos.profile
 share/opensc/muscle.profile
 share/opensc/myeid.profile
 share/opensc/oberthur.profile

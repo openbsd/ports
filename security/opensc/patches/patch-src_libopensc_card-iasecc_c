@@ -1,0 +1,16 @@
+LibreSSL does provide an EVP_MD_CTX_md_data() accessor
+
+Index: src/libopensc/card-iasecc.c
+--- src/libopensc/card-iasecc.c.orig
++++ src/libopensc/card-iasecc.c
+@@ -45,10 +45,6 @@
+  * LibreSSL
+  */
+ 
+-#if defined(LIBRESSL_VERSION_NUMBER)
+-# define  EVP_MD_CTX_md_data(x)  (x->md_data)
+-#endif
+-
+ #include "internal.h"
+ #include "asn1.h"
+ #include "cardctl.h"

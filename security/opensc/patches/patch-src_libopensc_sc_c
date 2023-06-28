@@ -7,7 +7,7 @@ but we might as well use this which conceals secure allocations from dumps.
 Index: src/libopensc/sc.c
 --- src/libopensc/sc.c.orig
 +++ src/libopensc/sc.c
-@@ -912,14 +912,18 @@ void *sc_mem_secure_alloc(size_t len)
+@@ -923,14 +923,18 @@ void *sc_mem_secure_alloc(size_t len)
  		len = pages * page_size;
  	}
  
@@ -28,7 +28,7 @@ Index: src/libopensc/sc.c
  #endif
  
  	return p;
-@@ -927,10 +931,14 @@ void *sc_mem_secure_alloc(size_t len)
+@@ -938,10 +942,14 @@ void *sc_mem_secure_alloc(size_t len)
  
  void sc_mem_secure_free(void *ptr, size_t len)
  {

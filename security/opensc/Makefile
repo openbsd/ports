@@ -1,10 +1,9 @@
 COMMENT=	set of libraries and utilities to access smart cards
 
-V=		0.22.0
-REVISION=	3
+V=		0.23.0
 DISTNAME=	opensc-${V}
 
-SHARED_LIBS +=	opensc 7.3	# 8.0
+SHARED_LIBS +=	opensc 8.0	# 9.0
 SHARED_LIBS +=	smm-local 3.1
 
 CATEGORIES=	security
@@ -14,8 +13,7 @@ HOMEPAGE=	https://github.com/OpenSC/OpenSC/wiki
 # LGPLv2.1+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	c crypto curses ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 \
-		iconv intl pcre2-8 pthread readline z
+WANTLIB=	c crypto curses gio-2.0 gobject-2.0 iconv pthread readline z
 
 MASTER_SITES=	https://github.com/OpenSC/OpenSC/releases/download/${V}/
 
@@ -24,7 +22,8 @@ BUILD_DEPENDS=	security/pcsc-lite \
 		textproc/docbook-xsl
 RUN_DEPENDS=	devel/desktop-file-utils \
 		security/ccid
-TEST_DEPENDS=	shells/bash
+TEST_DEPENDS=	security/softhsm2 \
+		shells/bash
 LIB_DEPENDS=	devel/glib2
 LIBTOOL_FLAGS=	--tag=disable-static
 
@@ -38,6 +37,10 @@ CONFIGURE_ARGS=	--enable-static \
 		--with-pkcs11-provider=${LOCALBASE}/lib/pkcs11/opensc-pkcs11.so \
 		--with-xsl-stylesheetsdir=${LOCALBASE}/share/xsl/docbook
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/PCSC"
+
+# upstream tries to find a library for dlopen(3) unless LDL_LIBS is set;
+# the empty string acts as NOOP preventing configure failure to find -ldl
+CONFIGURE_ENV+=	LDL_LIBS=' '
 
 FAKE_FLAGS=	mandir="${PREFIX}/man/" \
 		sysconfdir="${PREFIX}/share/examples/opensc/"

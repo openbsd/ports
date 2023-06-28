@@ -1,7 +1,7 @@
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -414,7 +414,7 @@ AC_FUNC_STAT
+@@ -427,7 +427,7 @@ AC_FUNC_STAT
  AC_FUNC_VPRINTF
  AC_CHECK_FUNCS([ \
  	getpass gettimeofday getline memset mkdir \
