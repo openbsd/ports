@@ -1,10 +1,9 @@
 COMMENT-main=	execute a command as another user
 COMMENT-python=	sudo Python plugin
 
-V=		1.9.13p3
+V=		1.9.14
 DISTNAME=	sudo-${V}
 CATEGORIES=	security
-REVISION-python=0
 
 PKGNAME-main=	sudo-${V:S/p/./}
 PKGNAME-python=	sudo-python-${V:S/p/./}
@@ -18,8 +17,7 @@ HOMEPAGE=	https://www.sudo.ws/
 
 MASTER_SITES=	https://www.sudo.ws/dist/ \
 		https://bigsearcher.com/mirrors/sudo/ \
-		https://mirrors.concertpass.com/sudo/ \
-		ftp://ftp.uwsg.indiana.edu/pub/security/sudo/
+		https://mirrors.concertpass.com/sudo/
 
 SEPARATE_BUILD=		Yes
 CONFIGURE_STYLE=	gnu
