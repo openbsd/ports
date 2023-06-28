@@ -12,6 +12,8 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c pthread
 
+BUILD_DEPENDS=	lang/go
+
 MAKE_FLAGS=	GOBUILDFLAGS="-v -buildvcs=false -p=${MAKE_JOBS}"
 ALL_TARGET=	vpn-daemon
 PORTHOME=	${WRKDIR}
