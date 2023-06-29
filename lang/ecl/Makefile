@@ -5,13 +5,14 @@ V =		21.2.1
 DISTNAME =	ecl-$V
 SHARED_LIBS +=	ecl	8.0
 
+REVISION =	0
+
 HOMEPAGE =	https://common-lisp.net/project/ecl/
 MAINTAINER =	Timo Myyra <timo.myyra@bittivirhe.fi>
 
-SUBST_VARS =	V
 EXTRACT_SUFX =	.tgz
 
-# GPLv2 or later
+# LGPLv2 or later
 PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${HOMEPAGE}static/files/release/
@@ -27,7 +28,7 @@ CONFIGURE_ENV +=	CPPFLAGS=-I${LOCALBASE}/include \
 
 CONFIGURE_ARGS +=	--enable-boehm=system \
 			--enable-libatomic=system \
-			--with-system-gmp \
+			--enable-gmp=system \
 			--with-gmp-prefix=${LOCALBASE}
 
 # etags gets picked up if it's installed, and dumps core while
