@@ -1,13 +1,16 @@
 COMMENT =	data visualization and analysis software
 
 DISTNAME =	labplot-2.10.0
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	math x11
 
 HOMEPAGE =	https://labplot.kde.org/
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
+
+# luajit (via cantorlibs)
+USE_NOBTCFI =	Yes
 
 # LGPL, GPL and many others
 PERMIT_PACKAGE =	Yes

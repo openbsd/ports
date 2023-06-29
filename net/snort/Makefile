@@ -1,7 +1,7 @@
 COMMENT =		highly flexible sniffer/NIDS
 
 DISTNAME =		snort-2.9.20
-REVISION =		1
+REVISION =		2
 RULESV =		29200
 SUBST_VARS =		RULESV APPID_COMMENT
 
@@ -48,6 +48,7 @@ APPID_COMMENT =		"@comment "
 LIB_DEPENDS +=		lang/luajit
 WANTLIB +=		c++abi luajit-5.1
 APPID_COMMENT =
+USE_NOBTCFI =		Yes
 .endif
 
 CONFIGS	=		classification.config gen-msg.map reference.config \
