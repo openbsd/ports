@@ -23,6 +23,8 @@ lib/python${MODPY_VERSION}/site-packages/patroni/${MODPY_PYCACHE}api.${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/patroni/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/patroni/${MODPY_PYCACHE}async_executor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/patroni/${MODPY_PYCACHE}async_executor.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/patroni/${MODPY_PYCACHE}collections.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/patroni/${MODPY_PYCACHE}collections.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/patroni/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/patroni/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/patroni/${MODPY_PYCACHE}ctl.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -49,6 +51,7 @@ lib/python${MODPY_VERSION}/site-packages/patroni/${MODPY_PYCACHE}version.${MODPY
 lib/python${MODPY_VERSION}/site-packages/patroni/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/patroni/api.py
 lib/python${MODPY_VERSION}/site-packages/patroni/async_executor.py
+lib/python${MODPY_VERSION}/site-packages/patroni/collections.py
 lib/python${MODPY_VERSION}/site-packages/patroni/config.py
 lib/python${MODPY_VERSION}/site-packages/patroni/ctl.py
 lib/python${MODPY_VERSION}/site-packages/patroni/daemon.py
@@ -110,6 +113,8 @@ lib/python${MODPY_VERSION}/site-packages/patroni/postgresql/${MODPY_PYCACHE}sync
 lib/python${MODPY_VERSION}/site-packages/patroni/postgresql/${MODPY_PYCACHE}sync.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/patroni/postgresql/${MODPY_PYCACHE}validator.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/patroni/postgresql/${MODPY_PYCACHE}validator.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/patroni/postgresql/available_parameters/
+lib/python${MODPY_VERSION}/site-packages/patroni/postgresql/available_parameters/0_postgres.yml
 lib/python${MODPY_VERSION}/site-packages/patroni/postgresql/bootstrap.py
 lib/python${MODPY_VERSION}/site-packages/patroni/postgresql/callback_executor.py
 lib/python${MODPY_VERSION}/site-packages/patroni/postgresql/cancellable.py
