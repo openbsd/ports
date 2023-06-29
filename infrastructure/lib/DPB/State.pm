@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: State.pm,v 1.37 2023/06/23 09:49:12 espie Exp $
+# $OpenBSD: State.pm,v 1.38 2023/06/29 13:27:28 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -316,7 +316,7 @@ sub add_build_info($state, @consumers)
 		}
 		# no clean build found: partial stats are better than
 		# nothing
-		if ($i == 0) {
+		if (!defined $i) {
 			for my $s (@{$p->{stats}}) {
 				$i++;
 				last unless $i <= $state->{stats_used};
