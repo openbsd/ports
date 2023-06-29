@@ -2,21 +2,20 @@ COMMENT = 		Erlang build tool
 
 GH_ACCOUNT =		erlang
 GH_PROJECT =		rebar3
-GH_TAGNAME =		3.20.0
+GH_TAGNAME =		3.22.0
 CATEGORIES =		devel
 HOMEPAGE =		https://www.rebar3.org
-MAINTAINER =		Jonathan Matthew <jmatthew@openbsd.org>
+MAINTAINER =		Volker Schlecht <openbsd-ports@schlecht.dev>
 
 # APLv2
 PERMIT_PACKAGE =	Yes
 
-# rebar 3.19 only supports OTP 23..25
-FLAVORS =		erlang25
+FLAVORS =		erlang25 erlang26
 FLAVOR ?=		erlang25
 
 MASTER_SITES1 = 	https://repo.hex.pm/tarballs/
 
-.if ${FLAVOR:Merlang25}
+.if ${FLAVOR:Merlang25} || ${FLAVOR:Merlang26} 
 _EV =                   ${FLAVOR:C/.*([0-9][0-9]+\$)/\1/}
 RUN_DEPENDS =           lang/erlang/${_EV}
 ERL_VERSION =           ${_EV}
