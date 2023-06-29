@@ -6,18 +6,18 @@ COMMENT =	desktop geographical information system
 
 DPB_PROPERTIES =	parallel
 
-DISTNAME =	qgis-3.30.3
+DISTNAME =	qgis-3.32.0
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 DEBUG_PACKAGES =${BUILD_PACKAGES}
 
-SHARED_LIBS =	qgis_core	69.2 \
-		qgis_app	45.0 \
-		qgis_gui	52.1 \
-		qgis_analysis	21.0 \
-		qgis_server	18.2 \
+SHARED_LIBS =	qgis_core	70.0 \
+		qgis_app	46.0 \
+		qgis_gui	53.0 \
+		qgis_analysis	22.0 \
+		qgis_server	19.0 \
 		qgispython	6.0 \
-		qgis_3d		15.0 \
+		qgis_3d		16.0 \
 		qgis_native	0.3
 
 HOMEPAGE =	https://www.qgis.org/
