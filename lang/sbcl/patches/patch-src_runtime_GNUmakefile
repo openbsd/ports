@@ -1,3 +1,6 @@
+- don't hardcode optimization
+- pass -I${LOCALBASE}/include
+
 Index: src/runtime/GNUmakefile
 --- src/runtime/GNUmakefile.orig
 +++ src/runtime/GNUmakefile
@@ -6,7 +9,7 @@ Index: src/runtime/GNUmakefile
  include ../../output/prefix.def
  
 -CFLAGS += -g -Wall -Wundef -Wsign-compare -Wpointer-arith -O3
-+CFLAGS += -Wall -Wundef -Wsign-compare -Wpointer-arith
++CFLAGS += -g -Wall -Wundef -Wsign-compare -Wpointer-arith -I/usr/local/include
  ASFLAGS += $(CFLAGS)
  CPPFLAGS += -I.
  

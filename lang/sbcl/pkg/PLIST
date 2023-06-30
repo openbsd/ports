@@ -20,8 +20,6 @@ lib/sbcl/contrib/sb-executable.asd
 lib/sbcl/contrib/sb-executable.fasl
 lib/sbcl/contrib/sb-gmp.asd
 lib/sbcl/contrib/sb-gmp.fasl
-lib/sbcl/contrib/sb-graph.asd
-lib/sbcl/contrib/sb-graph.fasl
 lib/sbcl/contrib/sb-grovel.asd
 lib/sbcl/contrib/sb-grovel.fasl
 lib/sbcl/contrib/sb-introspect.asd
@@ -38,6 +36,8 @@ lib/sbcl/contrib/sb-rotate-byte.asd
 lib/sbcl/contrib/sb-rotate-byte.fasl
 lib/sbcl/contrib/sb-rt.asd
 lib/sbcl/contrib/sb-rt.fasl
+${COMMENT_SB_SIMD}lib/sbcl/contrib/sb-simd.asd
+${COMMENT_SB_SIMD}lib/sbcl/contrib/sb-simd.fasl
 lib/sbcl/contrib/sb-simple-streams.asd
 lib/sbcl/contrib/sb-simple-streams.fasl
 lib/sbcl/contrib/sb-sprof.asd

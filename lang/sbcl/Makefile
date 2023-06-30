@@ -1,98 +1,125 @@
-# not yet ported to other arches
-ONLY_FOR_ARCHS =	amd64 i386 powerpc
-USE_WXNEEDED =		Yes
+COMMENT =	high performance Common Lisp compiler
 
-COMMENT=		compiler and runtime system for ANSI Common Lisp
+V =		2.3.6
+DISTNAME =	sbcl-${V}-source
+PKGNAME =	sbcl-${V}
 
-V =			2.2.5
-REVISION =		0
-DISTNAME=		sbcl-${V}-source
-PKGNAME=		sbcl-${V}
-WRKDIST=		${WRKDIR}/sbcl-${V}
-EXTRACT_SUFX=		.tar.bz2
+CATEGORIES =	lang
 
-CATEGORIES=		lang
-HOMEPAGE=		http://www.sbcl.org/
-MAINTAINER =		Joshua Elsasser <josh@elsasser.org>
+HOMEPAGE =	https://www.sbcl.org/
+
+MAINTAINER =	Sebastien Marie <semarie@online.fr>
 
 # Public domain and BSD
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE =	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sbcl/}
+WANTLIB +=		c m util zstd
 
-WANTLIB=		c m util z
+USE_WXNEEDED =		Yes
+USE_NOEXECONLY =	Yes
+USE_NOBTCFI =		Yes
 
-PSEUDO_FLAVORS=		native_bootstrap
+MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=sbcl/}
+EXTRACT_SUFX =		.tar.bz2
+WRKDIST =		${WRKDIR}/sbcl-${V}
 
-FLAVORS=		threads
-FLAVOR?=
+PSEUDO_FLAVORS =	native_bootstrap
+FLAVORS =		threads
+FLAVOR ?=
 
-MAKE_PARAMS =		--prefix=${PREFIX}
+# Supported bootstrap methods:
+# - "ecl"   : default (for portability)
+# - "clisp" : build might be faster than with ecl
+# - "sbcl"  : for native bootstrap
+#
+# For testing, it could be manually overrided by passing
+# BOOTSTRAP_METHOD=xxx on make command-line.
 
-.if ${FLAVOR:Mthreads}
-ONLY_FOR_ARCHS =	amd64 powerpc
-MAKE_PARAMS +=		--with-sb-thread
-WANTLIB+=		pthread
-.endif
-# enable features from --fancy other than :sb-thread
-MAKE_PARAMS +=		--with-sb-core-compression \
-			--with-sb-xref-for-internals
+BOOTSTRAP_METHOD-amd64	=	clisp
+BOOTSTRAP_METHOD-powerpc =	clisp
+BOOTSTRAP_METHOD-${MACHINE_ARCH} ?=	ecl
 
-# contrib/sb-capstone/test.lisp uses it at build-time if present
-BUILD_DEPENDS =		devel/capstone/main
+BOOTSTRAP_METHOD ?=	${BOOTSTRAP_METHOD-${MACHINE_ARCH}}
 
 .if ${FLAVOR:Mnative_bootstrap}
-BUILD_DEPENDS+=		lang/sbcl
-BOOTSTRAP_CMD=		${LOCALBASE}/bin/sbcl \
-			--disable-debugger --no-sysinit --no-userinit
-.elif ${MACHINE_ARCH:Mi386}
-# ecl is slower but lang/clisp fails to build sbcl on i386
-BUILD_DEPENDS +=	lang/ecl
-BOOTSTRAP_CMD =		${LOCALBASE}/bin/ecl -q --norc
-.else
+BOOTSTRAP_METHOD =	sbcl
+.endif
+
+.if ${BOOTSTRAP_METHOD:Msbcl}
+BUILD_DEPENDS +=	lang/sbcl
+XCHOST_CMD =		${LOCALBASE}/bin/sbcl \
+				--disable-debugger --no-sysinit --no-userinit
+
+.elif ${BOOTSTRAP_METHOD:Mclisp}
 BUILD_DEPENDS +=	lang/clisp
-BOOTSTRAP_CMD =		${LOCALBASE}/bin/clisp -q -norc
-.endif
-MAKE_PARAMS +=		--xc-host="${BOOTSTRAP_CMD}" ${EXTRA_PARAMS}
-TEST_DEPENDS =		devel/gmp
+XCHOST_CMD =		${LOCALBASE}/bin/clisp -q -norc
 
-# base makeinfo chokes on sbcl texinfo files
-BUILD_DEPENDS +=	print/texinfo
+.elif ${BOOTSTRAP_METHOD:Mecl}
+BUILD_DEPENDS +=	lang/ecl
+XCHOST_CMD =		${LOCALBASE}/bin/ecl -q --norc
 
-USE_GMAKE=		Yes
-PORTHOME=		${TMPDIR}
-MAKE_ENV=		GNUMAKE=${GMAKE} INSTALL_ROOT=${PREFIX} \
-			MAN_DIR=${PREFIX}/man INFO_DIR=${PREFIX}/info \
-			MAKEINFO=${PREFIX}/bin/gmakeinfo
-
-# Upstream asks that packagers append something like this to the
-# version to distinguish official tarballs from third-party packages.
-.if defined(REVISION) && !empty(REVISION)
-LOCAL_VERSION =		openbsd.${REVISION}
 .else
-LOCAL_VERSION =		openbsd
+ERRORS +=	"Fatal: unknown BOOTSTRAP_METHOD"
 .endif
-VERSION_FILE =		${WRKSRC}/version.lisp-expr
 
-pre-configure:
-	sed -i 's/^"\([0-9.]*\)"$$/"\1.${LOCAL_VERSION}"/' ${VERSION_FILE}
+# sb-thread is available only on some architectures and required on others
+.if ${FLAVOR:Mthreads}
+ONLY_FOR_ARCHS +=	riscv64 powerpc powerpc64 i386 amd64 aarch64
+EXTRA_PARAMS +=		--with-sb-thread
+WANTLIB +=		pthread
+.else
+NOT_FOR_ARCHS +=	aarch64 powerpc64
+EXTRA_PARAMS +=		--without-sb-thread
+.endif
+
+# sb-simd is available on amd64 only
+COMMENT_SB_SIMD-${MACHINE_ARCH} ?=	"@comment "
+COMMENT_SB_SIMD-amd64	=
+COMMENT_SB_SIMD	?=	${COMMENT_SB_SIMD-${MACHINE_ARCH}}
+
+SUBST_VARS +=		COMMENT_SB_SIMD
+UPDATE_PLIST_ARGS +=	-c COMMENT_SB_SIMD
+
+BUILD_DEPENDS +=	print/texinfo
+LIB_DEPENDS +=		archivers/zstd
+TEST_DEPENDS +=		devel/capstone/main \
+			devel/gmp
+
+MAKE_ENV +=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib" \
+			LINKFLAGS="-L${LOCALBASE}/lib" \
+			MAKEINFO=${PREFIX}/bin/gmakeinfo \
+			MAN_DIR="${PREFIX}/man/" \
+			INFO_DIR="${PREFIX}/info/"
+
+USE_GMAKE =		Yes
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
+
+do-configure:
+	printf '"%s.%s.%s"\n' "${V}" "openbsd" "${FULLPKGNAME}" \
+		>${WRKSRC}/version.lisp-expr
 
 do-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} SBCL_CONTRIB_TARGET=all \
-		/bin/sh make.sh ${MAKE_PARAMS}
-	cd ${WRKSRC}/doc/manual && touch sbcl.texinfo && \
-		${SETENV} ${MAKE_ENV} ${GMAKE} asdf.info sbcl.info
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
+		/bin/sh ./make.sh \
+			--prefix="${PREFIX}" \
+			--xc-host="${XCHOST_CMD}" \
+			--with-sb-core-compression \
+			--with-sb-xref-for-internals \
+			${EXTRA_PARAMS}
+	cd ${WRKSRC}/doc/manual/ && ${SETENV} ${MAKE_ENV} \
+		${GMAKE} info
 
 do-install:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} /bin/sh install.sh
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
+		/bin/sh ./install.sh \
+			--prefix="${PREFIX}"
 
 post-install:
-	chown -R 0:0 ${PREFIX}/lib/sbcl
-	rmdir ${PREFIX}/share/doc/sbcl/html
+	rmdir ${PREFIX}/share/doc/sbcl/html/
 
 do-test:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} DONT_CLEAN_SBCL_CONTRIB=1 \
-	    /bin/sh make-target-contrib.sh
-	cd ${WRKSRC}/tests && ${SETENV} ${MAKE_ENV} /bin/sh run-tests.sh
+	cd ${WRKSRC}/tests/ && ${SETENV} ${MAKE_ENV} /bin/sh ./run-tests.sh
 
 .include <bsd.port.mk>
