@@ -5,7 +5,7 @@ PKGNAME =		retroarch-${GH_TAGNAME:S/v//}
 GH_ACCOUNT =		libretro
 GH_PROJECT =		RetroArch
 GH_TAGNAME =		v1.10.3
-REVISION = 		1
+REVISION = 		2
 
 CATEGORIES =		emulators
 
@@ -18,7 +18,7 @@ WANTLIB += ${COMPILER_LIBCXX} EGL GL Qt5Concurrent Qt5Core Qt5Gui
 WANTLIB += Qt5Network Qt5Widgets SDL2 X11 X11-xcb Xext Xinerama
 WANTLIB += Xrandr Xv Xxf86vm ass avcodec avformat avutil c crypto
 WANTLIB += drm fontconfig freetype fribidi gbm m openal ssl swresample
-WANTLIB += swscale usb-1.0 xcb xkbcommon z
+WANTLIB += swscale usb-1.0 xcb xkbcommon
 WANTLIB += mbedcrypto mbedtls mbedx509
 
 MODULES =		x11/qt5
@@ -34,6 +34,7 @@ LIB_DEPENDS =		audio/openal \
 
 MAKE_FLAGS =		V=1 \
 			CXX="${CXX}" \
+			HAVE_CHD=0 \
 			HAVE_OSS=0 \
 			HAVE_OSS_BSD=0 \
 			OPTIMIZE_FLAG=
