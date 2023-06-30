@@ -1,8 +1,6 @@
 COMMENT =	system monitoring and alert notifier
-DISTNAME =	reed-alert-v1.05
-REVISION =	0
+DISTNAME =	reed-alert-v1.06
 PKGNAME =	${DISTNAME:S/-v/-/}
-EXTRACT_SUFX =	.tgz
 CATEGORIES =	sysutils
 
 HOMEPAGE =	https://dataswamp.org/~solene/2018-01-17-reed-alert.html
@@ -15,7 +13,10 @@ MASTER_SITES =	ftp://bitreich.org/releases/reed-alert/
 RUN_DEPENDS =	net/curl \
 		lang/ecl
 
-NO_TEST =	Yes
+# required for tests
+PORTHOME =	${WRKDIR}
+
+TEST_DEPENDS =	lang/ecl
 
 PKG_ARCH =	*
 
