@@ -9,3 +9,8 @@ and current working directory of the process running rec_control.
 It is also possible to write to stdout by specifying `-' as file.
 
 See https://docs.powerdns.com/recursor/upgrade.html for more details.
+
+On OpenBSD it is recommended to set
+
+reuseport=no
+pdns-distributes-queries=yes
