@@ -1,18 +1,17 @@
---- Makefile.orig	2002-01-06 02:09:37.000000000 +0100
-+++ Makefile	2003-08-06 09:55:23.000000000 +0200
-@@ -9,9 +9,9 @@
+--- Makefile.orig.port	Tue May 26 06:29:37 2020
++++ Makefile	Fri Jun 30 11:04:58 2023
+@@ -9,8 +9,8 @@
  
  # User-definable stuff:
  
--CFLAGS=-Wall -O2
-+#CFLAGS=-Wall -O2
- #DATA_PREFIX=$(PWD)/data/
+-CC=gcc
 -PREFIX=/usr/local
++#CC=gcc
 +#PREFIX=/usr/local
  MAN_PREFIX=$(PREFIX)
  BIN_PREFIX=$(PREFIX)/bin
  DATA_PREFIX=$(PREFIX)/share/defendguin/
-@@ -20,11 +20,11 @@ JOY=YES
+@@ -20,11 +20,11 @@
  
  # Other definitions:
  

@@ -1,6 +1,6 @@
 COMMENT =	clone of arcade game 'Defender' with a Linux theme
 
-DISTNAME =	defendguin-0.0.12
+DISTNAME =	defendguin-0.0.13
 CATEGORIES =	games x11
 FIX_EXTRACT_PERMISSIONS=Yes
 
