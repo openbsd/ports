@@ -1,7 +1,6 @@
 ONLY_FOR_ARCHS =	${RUST_ARCHS}
 
 BROKEN-powerpc64 =	needs new bootstrap
-BROKEN-riscv64 =	needs new bootstrap
 
 .if "${MACHINE_ARCH}" == "i386"
 DPB_PROPERTIES =	lonesome
@@ -24,7 +23,7 @@ BV-aarch64 =		1.70.0-20230602
 BV-amd64 =		1.70.0-20230608
 BV-i386 =		1.70.0-20230601
 BV-powerpc64 =		1.65.0-20221213
-BV-riscv64 =		1.68.0-20230417
+BV-riscv64 =		1.69.0-20230602
 BV-sparc64 =		1.69.0-20230522
 BV =			${BV-${MACHINE_ARCH}}
 
