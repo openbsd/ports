@@ -2,6 +2,7 @@ COMMENT=		easily hackable Common LISP window manager
 
 VERSION=		22.11
 DISTNAME=		stumpwm-${VERSION}
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -12,7 +13,7 @@ MAINTAINER=		Timo Myyra <timo.myyra@bittivirhe.fi>
 # GPLv2
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += c m pthread util z
+WANTLIB += c m pthread util zstd
 
 MASTER_SITES=		https://github.com/stumpwm/stumpwm/archive/
 MASTER_SITES0=		https://github.com/edicl/cl-ppcre/archive/
@@ -26,6 +27,7 @@ DISTFILES=		${DISTNAME}{${VERSION}}${EXTRACT_SUFX} \
 
 BUILD_DEPENDS=		lang/sbcl,threads \
 			print/texinfo
+LIB_DEPENDS=		archivers/zstd
 
 AUTOCONF_VERSION=	2.69
 CONFIGURE_STYLE=	autoconf no-autoheader
