@@ -405,6 +405,7 @@
      SUBDIR += volatility
      SUBDIR += vpnc
      SUBDIR += wapiti
+     SUBDIR += web-eid-app
      SUBDIR += wesng
      SUBDIR += wfuzz
      SUBDIR += wpa_supplicant
