@@ -1,6 +1,6 @@
 COMMENT =		search backend for Mew with Hyper Estrairer
 
-V =			0.9.24
+V =			0.9.25
 GH_ACCOUNT =		yasuoka
 GH_PROJECT =		mailest
 GH_TAGNAME =		mailest-${V}
