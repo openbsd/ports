@@ -11,14 +11,16 @@ NO_CCACHE =		Yes
 # Upstream bug: https://gitlab.haskell.org/ghc/ghc/-/issues/22782
 USE_NOEXECONLY =	Yes
 
+USE_NOBTCFI =		Yes
+
 GHC_VERSION =		9.2.7
-REVISION =		1
+REVISION =		2
 DISTNAME =		ghc-${GHC_VERSION}
 CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/
 
 # Version of the precompiled binaries
-BIN_VER =		8.10.7.20230316
+BIN_VER =		8.10.7.20230613
 
 # lang/python needed for regression tests.
 MODULES =		lang/python
@@ -114,7 +116,8 @@ CONFIGURE_ARGS +=	--with-ffi-includes=${LOCALBASE}/include \
 
 CONFIGURE_ENV += SPHINXBUILD=${LOCALBASE}/bin/sphinx-build${MODPY_BIN_SUFFIX}
 
-GHC_CC_OPTS =		-Wl,--no-execute-only -Qunused-arguments
+GHC_CC_OPTS =		-Wl,--no-execute-only -Qunused-arguments \
+			-Wl,-z,nobtcfi
 CONFIGURE_ENV +=	CONF_GCC_LINKER_OPTS_STAGE0="${GHC_CC_OPTS}" \
 			CONF_GCC_LINKER_OPTS_STAGE1="${GHC_CC_OPTS}" \
 			CONF_GCC_LINKER_OPTS_STAGE2="${GHC_CC_OPTS}" \

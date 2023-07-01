@@ -12,13 +12,15 @@ NO_CCACHE =		Yes
 # Upstream bug: https://gitlab.haskell.org/ghc/ghc/-/issues/22782
 USE_NOEXECONLY =	Yes
 
+USE_NOBTCFI =		Yes
+
 GHC_VERSION =		8.10.7
 DISTNAME =		ghc-${GHC_VERSION}
 CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/
 
 # Version of the precompiled binaries
-BIN_VER =		8.10.7.20230222
+BIN_VER =		8.10.7.20230613
 
 # BSD w/o advertising clause.
 # Distfile is bundled with other stuff like libffi, mingw
@@ -110,7 +112,8 @@ CONFIGURE_ARGS +=	--with-ffi-includes=${LOCALBASE}/include \
 			--with-system-libffi \
 			CC="${CC}"
 
-GHC_CC_OPTS =		-Wl,--no-execute-only -Qunused-arguments
+GHC_CC_OPTS =		-Wl,--no-execute-only -Qunused-arguments \
+			-Wl,-z,nobtcfi
 CONFIGURE_ENV +=	CONF_GCC_LINKER_OPTS_STAGE0="${GHC_CC_OPTS}" \
 			CONF_GCC_LINKER_OPTS_STAGE1="${GHC_CC_OPTS}" \
 			CONF_GCC_LINKER_OPTS_STAGE2="${GHC_CC_OPTS}" \
@@ -159,7 +162,7 @@ post-patch:
 # It doesn't matter whether this is the actual date of the bootstrapper
 # build. It's just used to get different distfiles whenever new
 # bootstrappers have to be built.
-BOOTSTRAP_DATE =	20230316
+BOOTSTRAP_DATE =	20230613
 
 # Create a bootstrapper. This compiles a stripped-down version of
 # ghc and creates a `bindist', i.e. a tarball with binaries that
