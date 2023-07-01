@@ -31,6 +31,7 @@
      SUBDIR += ogx
      SUBDIR += otus
      SUBDIR += pgt
+     SUBDIR += qcpas
      SUBDIR += radeondrm
      SUBDIR += uath
      SUBDIR += ulpt
