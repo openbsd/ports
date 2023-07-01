@@ -1,0 +1,5 @@
+The Web eID application peforms cryptographic digital signing and
+authentication operations with electronic ID smart cards for the Web eID
+browser extension, for which it acts as native messaging host.
+
+Also works standalone without the extension in command-line mode.
