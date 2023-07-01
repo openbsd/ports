@@ -75,6 +75,7 @@
      SUBDIR += halibut
      SUBDIR += heirloom-doctools
      SUBDIR += hevea
+     SUBDIR += hexyl
      SUBDIR += hfst
      SUBDIR += hgrep
      SUBDIR += highlight
