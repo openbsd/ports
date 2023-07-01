@@ -25,12 +25,13 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 TEST_DEPENDS=	security/softhsm2 \
 		shells/bash
 LIB_DEPENDS=	devel/glib2
+# --disable-static does not work
 LIBTOOL_FLAGS=	--tag=disable-static
 
 USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=autoreconf
-CONFIGURE_ARGS=	--enable-static \
+CONFIGURE_ARGS=	--disable-static \
 		--sysconfdir=${SYSCONFDIR} \
 		--enable-sm \
 		--disable-cryptotokenkit \
