@@ -1,4 +1,4 @@
-LibreSSL does provide EVP_sha3_*() and EVP_PKEY_new(3)
+pending "LibreSSL fixes" https://github.com/OpenSC/OpenSC/pull/2816
 
 Index: src/libopensc/sc-ossl-compat.h
 --- src/libopensc/sc-ossl-compat.h.orig

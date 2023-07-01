@@ -1,4 +1,6 @@
-LibreSSL does provide an EVP_MD_CTX_md_data() accessor
+merged da01e5fab9be9865db1aac203e574e0edbfd6584
+"fixed compatibility with LibreSSL >= 3.5.0"
+fixes https://github.com/OpenSC/OpenSC/issues/2664
 
 Index: src/libopensc/card-iasecc.c
 --- src/libopensc/card-iasecc.c.orig

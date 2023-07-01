@@ -1,5 +1,4 @@
-Call EVP_cleanup(3) through OpenSSL_cleanup() instead of
-OpenSSL CRYPTO_secure_malloc_done() (LibreSSL does not have it).
+pending "LibreSSL fixes" https://github.com/OpenSC/OpenSC/pull/2816
 
 Index: src/pkcs11/pkcs11-global.c
 --- src/pkcs11/pkcs11-global.c.orig
