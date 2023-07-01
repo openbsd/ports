@@ -191,6 +191,12 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/appconfigdata/2021-11-11/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/appconfigdata/2021-11-11/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/appconfigdata/2021-11-11/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/appconfigdata/2021-11-11/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/appfabric/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/appfabric/2023-05-19/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/appfabric/2023-05-19/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/appfabric/2023-05-19/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/appfabric/2023-05-19/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/appfabric/2023-05-19/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/appflow/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/appflow/2020-08-23/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/appflow/2020-08-23/endpoint-rule-set-1.json
