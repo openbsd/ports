@@ -10,7 +10,7 @@ COMMENT=		password agent for the GNOME project
 
 GNOME_PROJECT=		gnome-keyring
 GNOME_VERSION=		42.1
-REVISION=		1
+REVISION=		2
 
 # GPLv2/LGPLv2
 PERMIT_PACKAGE=		Yes
@@ -23,7 +23,7 @@ WANTLIB += gcr-ui-3 gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gpg-error graphite2 gtk-3 harfbuzz
 WANTLIB += iconv intl jpeg m p11-kit pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre2-8 pixman-1 png xcb xcb-render xcb-shm
-WANTLIB += z
+WANTLIB += z atspi dbus-1
 
 MODULES=		devel/dconf \
 			x11/gnome
@@ -44,7 +44,7 @@ DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnome-keyring
-	mv ${WRKINST}/etc/{pkcs11,xdg} ${PREFIX}/share/examples/gnome-keyring
+	mv ${WRKINST}/etc/xdg ${PREFIX}/share/examples/gnome-keyring
 	rm ${PREFIX}/lib/gnome-keyring/devel/*.{a,la}
 	rm ${PREFIX}/lib/pkcs11/*.{a,la}
 
