@@ -3,7 +3,7 @@ COMMENT =		DigiDoc4 GUI client for signing and encrypting documents
 V =			4.3.0
 DISTNAME =		qdigidoc4-${V}
 CATEGORIES =		security x11
-REVISION =		0
+REVISION =		1
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
@@ -18,7 +18,7 @@ DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
 
 MASTER_SITES0 =		https://id.eesti.ee/
-CONFIG_NAME =		config-20230405
+CONFIG_NAME =		config-20230702
 # need to be in sync due to CONFIG_URL handling
 .for _suffix in json pub rsa
 DISTFILES +=		${CONFIG_NAME}{config}.${_suffix}:0
