@@ -6,7 +6,7 @@
 @bin bin/softhsm2-migrate
 @bin bin/softhsm2-util
 lib/softhsm/
-lib/softhsm/libsofthsm2.so
+@so lib/softhsm/libsofthsm2.so
 @man man/man1/softhsm2-dump-db.1
 @man man/man1/softhsm2-dump-file.1
 @man man/man1/softhsm2-keyconv.1
@@ -19,7 +19,8 @@ share/examples/softhsm2/
 share/examples/softhsm2/softhsm2.conf
 @sample ${SYSCONFDIR}/softhsm2.conf
 @comment share/examples/softhsm2/softhsm2.conf.sample
-share/examples/softhsm2/softhsm2.module
-@sample ${SYSCONFDIR}/pkcs11/modules/softhsm2.module
+share/p11-kit/
+share/p11-kit/modules/
+share/p11-kit/modules/softhsm2.module
 @sample ${LOCALSTATEDIR}/db/softhsm/
 @sample ${LOCALSTATEDIR}/db/softhsm/tokens/

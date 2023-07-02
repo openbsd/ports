@@ -2,7 +2,7 @@ COMMENT =	software PKCS\#11 cryptographic token
 
 DISTNAME =	softhsm-2.6.1
 PKGNAME =	${DISTNAME:S/-/2-/}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	security
 
@@ -13,13 +13,14 @@ MAINTAINER =	Pavel Korovin <pvk@openbsd.org>
 # BSD
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=	${COMPILER_LIBCXX} botan-2 bz2 c crypto lzma m sqlite3 z
+WANTLIB +=	${COMPILER_LIBCXX} botan-2 bz2 c lzma m sqlite3 z
 
 MASTER_SITES =	http://dist.opendnssec.org/source/
 
 COMPILER =	base-clang ports-gcc base-gcc
 
-BUILD_DEPENDS = devel/cppunit
+BUILD_DEPENDS = devel/cppunit \
+		security/p11-kit
 
 LIB_DEPENDS =	databases/sqlite3 \
 		security/botan2
@@ -35,8 +36,7 @@ CONFIGURE_ARGS =	--with-crypto-backend=botan \
 			--with-botan=${PREFIX} \
 			--with-migrate \
 			--with-objectstore-backend-db \
-			--with-sqlite3=${PREFIX} \
-			--with-p11-kit=${PREFIX}/share/examples/softhsm2
+			--with-sqlite3=${PREFIX}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/softhsm2
