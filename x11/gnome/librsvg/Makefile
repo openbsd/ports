@@ -1,3 +1,5 @@
+PORTROACH=		skipv:2.56.90
+
 COMMENT=		SAX-based render library for SVG files
 
 GNOME_PROJECT=		librsvg
