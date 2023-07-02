@@ -1,22 +1,25 @@
 COMMENT =		REINER SCT cyberJack chipcard reader driver
 
-DISTNAME =		pcsc-cyberjack_3.99.5final.SP13
+V =			3.99.5
+SP =			15
+DISTNAME =		pcsc-cyberjack_${V}final.SP${SP}
 PKGNAME =		${DISTNAME:S/_/-/}
 
-SHARED_LIBS =		ifd-cyberjack		0.0 # 6.0
+SHARED_LIBS =		ifd-cyberjack		0.1 # 6.0
 
 CATEGORIES =		security
 
 HOMEPAGE =		https://www.reiner-sct.com/support/
 
-MAINTAINER =		Ingo Feinerer <feinerer@logic.at>
+MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 # LGPL2.1+
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} m usb-1.0
 
-MASTER_SITES =		https://support.reiner-sct.de/downloads/LINUX/V3.99.5_SP13/
+MASTER_SITES =		https://support.reiner-sct.de/downloads/LINUX/V${V}_SP${SP}/
+EXTRACT_SUFX =		.tar.bz2
 
 # -std=c++11
 COMPILER =		base-clang ports-clang ports-gcc
