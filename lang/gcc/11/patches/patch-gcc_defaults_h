@@ -1,12 +1,16 @@
 Index: gcc/defaults.h
 --- gcc/defaults.h.orig
 +++ gcc/defaults.h
-@@ -1464,6 +1464,10 @@ see the files COPYING3 and COPYING.RUNTIME respectivel
+@@ -1464,6 +1464,14 @@ see the files COPYING3 and COPYING.RUNTIME respectivel
  #define TARGET_VTABLE_USES_DESCRIPTORS 0
  #endif
  
 +#ifndef PIE_DEFAULT
 +#define PIE_DEFAULT 0
++#endif
++
++#ifndef CF_DEFAULT
++#define CF_DEFAULT CF_NONE
 +#endif
 +
  #endif /* GCC_INSN_FLAGS_H  */

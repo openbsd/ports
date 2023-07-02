@@ -87,7 +87,7 @@ Index: gcc/config.gcc
  	gnu_ld=yes
  	;;
  x86_64-*-openbsd*)
-+	tm_defines="${tm_defines} DEFAULT_FLAG_PIE=1"
++	tm_defines="${tm_defines} DEFAULT_FLAG_PIE=1 CF_DEFAULT=CF_BRANCH"
  	tm_file="${tm_file} i386/unix.h i386/att.h dbxelf.h elfos.h"
  	tm_file="${tm_file} openbsd.h openbsd-stdint.h openbsd-libpthread.h i386/x86-64.h i386/openbsdelf.h"
  	extra_options="${extra_options} openbsd.opt"

@@ -59,6 +59,15 @@ Index: gcc/common.opt
  Process #ident directives.
  
  fif-conversion
+@@ -1783,7 +1791,7 @@ fcf-protection
+ Common RejectNegative Alias(fcf-protection=,full)
+ 
+ fcf-protection=
+-Common Joined RejectNegative Enum(cf_protection_level) Var(flag_cf_protection) Init(CF_NONE)
++Common Joined RejectNegative Enum(cf_protection_level) Var(flag_cf_protection) Init(CF_DEFAULT)
+ -fcf-protection=[full|branch|return|none|check]	Instrument functions with checks to verify jump/call/return control-flow transfer
+ instructions have valid targets.
+ 
 @@ -1941,7 +1949,7 @@ Common Var(flag_ivopts) Init(1) Optimization
  Optimize induction variables on trees.
  
