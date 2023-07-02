@@ -3,7 +3,7 @@
 Index: p11-kit/server.c
 --- p11-kit/server.c.orig
 +++ p11-kit/server.c
-@@ -553,7 +553,7 @@ server_loop (Server *server,
+@@ -558,7 +558,7 @@ server_loop (Server *server,
  
  		/* timeout */
  		if (ret == 0 && children_avail == 0 && timeout != NULL) {

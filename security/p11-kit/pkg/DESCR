@@ -1,2 +1,4 @@
-p11-kit provides a way to load and enumerate PKCS#11 modules. It implements a
-standard discoverable configuration for installed PKCS#11 modules.
+p11-kit aims to solve problems with coordinating the use of PKCS #11 by
+different components or libraries living in the same process, by providing a way
+to load and enumerate PKCS #11 modules, as well as a standard configuration
+setup for installing PKCS #11 modules in such a way that they're discoverable.

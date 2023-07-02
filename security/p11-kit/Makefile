@@ -2,11 +2,11 @@ COMMENT=		library for loading and enumerating PKCS\#11 modules
 
 GH_PROJECT=		p11-kit
 GH_ACCOUNT=		p11-glue
-GH_TAGNAME=		0.24.1
+GH_TAGNAME=		0.25.0
 
 CATEGORIES=		security
 
-SHARED_LIBS += p11-kit                   3.0 # 0.3.0
+SHARED_LIBS += p11-kit                   3.1 # 0.3.0
 
 HOMEPAGE=		http://p11-glue.freedesktop.org/
 
