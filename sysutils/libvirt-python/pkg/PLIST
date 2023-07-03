@@ -13,10 +13,7 @@ lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}libvirtaio.${MODPY_PYC_
 lib/python${MODPY_VERSION}/site-packages/libvirt.py
 lib/python${MODPY_VERSION}/site-packages/libvirt_lxc.py
 lib/python${MODPY_VERSION}/site-packages/libvirt_python-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/libvirt_python-${MODPY_EGG_VERSION}.dist-info/AUTHORS
-lib/python${MODPY_VERSION}/site-packages/libvirt_python-${MODPY_EGG_VERSION}.dist-info/AUTHORS.in
 lib/python${MODPY_VERSION}/site-packages/libvirt_python-${MODPY_EGG_VERSION}.dist-info/COPYING
-lib/python${MODPY_VERSION}/site-packages/libvirt_python-${MODPY_EGG_VERSION}.dist-info/COPYING.LESSER
 lib/python${MODPY_VERSION}/site-packages/libvirt_python-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/libvirt_python-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/libvirt_python-${MODPY_EGG_VERSION}.dist-info/WHEEL
