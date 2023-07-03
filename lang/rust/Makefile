@@ -23,7 +23,7 @@ BV-aarch64 =		1.70.0-20230602
 BV-amd64 =		1.70.0-20230608
 BV-i386 =		1.70.0-20230601
 BV-powerpc64 =		1.65.0-20221213
-BV-riscv64 =		1.69.0-20230602
+BV-riscv64 =		1.70.0-20230702
 BV-sparc64 =		1.69.0-20230522
 BV =			${BV-${MACHINE_ARCH}}
 
@@ -275,7 +275,7 @@ do-install:
 		${PREFIX}/lib/rustlib/{install.log,uninstall.sh,rust-installer-version} \
 		${PREFIX}/lib/rustlib/components \
 		${PREFIX}/lib/rustlib/manifest-*
-	find ${PREFIX}/lib/rustlib/src -name '*${PATCHORIG}' -delete
+	-find ${PREFIX}/lib/rustlib/src -name '*${PATCHORIG}' -delete
 	# rehash libraries to have stables filenames
 	cd ${PREFIX} && ${MODPY_BIN} "${.CURDIR}/files/rehash.py" \
 		${TRIPLE_ARCH} \
