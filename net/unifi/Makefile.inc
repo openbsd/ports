@@ -56,9 +56,18 @@ MODJAVA_VER ?=	1.8
 # building snappy-java for i386 is even more of a pain than for amd64)
 ONLY_FOR_ARCHS =	amd64
 
-RUN_DEPENDS =	databases/mongodb/36 \
-		java/javaPathHelper
+RUN_DEPENDS =	java/javaPathHelper
 
+MONGODB_VER ?=	44
+.if ${MONGODB_VER} == 36
+# <=3.6 only
+RUN_DEPENDS +=	mongodb-<3.7:databases/mongodb/${MONGODB_VER}
+.elif ${MONGODB_VER} == 44
+# permit any, prefer 44 for new installs
+RUN_DEPENDS +=	mongodb-*:databases/mongodb/${MONGODB_VER}
+.else
+ERRORS +=	Fatal: bad MONGODB_VER
+.endif
 # disable dup file check, embedded version numbers in PLISTs result
 # in many changes for each update resulting in burning cpu on all
 # cores for many minutes at a time while pkglocate runs.
