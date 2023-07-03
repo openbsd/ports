@@ -2,14 +2,13 @@
 @newuser _dendrite:860:860::Matrix.org Daemon:/var/dendrite:/sbin/nologin
 @rcscript ${RCDIR}/dendrite
 @comment bin/client-api-proxy
+@bin bin/dendrite
 @bin bin/dendrite-create-account
 @comment bin/dendrite-demo-libp2p
 @comment bin/dendrite-demo-pinecone
 @comment bin/dendrite-demo-yggdrasil
 @bin bin/dendrite-generate-config
 @bin bin/dendrite-generate-keys
-@bin bin/dendrite-monolith-server
-@bin bin/dendrite-polylith-multi
 @comment bin/dendritejs
 @comment bin/federation-api-proxy
 @comment bin/goose

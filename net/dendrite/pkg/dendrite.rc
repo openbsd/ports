@@ -1,6 +1,6 @@
 #!/bin/ksh
 
-daemon="${TRUEPREFIX}/bin/dendrite-monolith-server"
+daemon="${TRUEPREFIX}/bin/dendrite"
 daemon_user="_dendrite"
 daemon_flags="-config ${SYSCONFDIR}/dendrite.yaml -http-bind-address 127.0.0.1:8011"
 
