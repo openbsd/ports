@@ -25,6 +25,7 @@
      SUBDIR += qelectrotech
      SUBDIR += qflow
      SUBDIR += qrouter
+     SUBDIR += solvespace
      SUBDIR += tkgate
      SUBDIR += xcircuit
      SUBDIR += xnecview
