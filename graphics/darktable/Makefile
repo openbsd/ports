@@ -2,7 +2,7 @@ ONLY_FOR_ARCHS=	amd64 aarch64
 
 COMMENT=	virtual lighttable and darkroom for photographers
 
-V=		4.2.1
+V=		4.4.1
 DISTNAME=	darktable-$V
 PORTROACH=	limitw:1,even skipv:release-$V
 EXTRACT_SUFX=	.tar.xz
@@ -21,7 +21,7 @@ WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gphoto2 gphoto2_port gthread-2.0 gtk-3 harfbuzz
 WANTLIB += heif icudata icui18n icuuc intl jpeg json-glib-1.0 jxl
 WANTLIB += jxl_threads lcms2 lensfun m openjp2 pango-1.0 pangocairo-1.0
-WANTLIB += png pugixml raw rsvg-2 secret-1 soup-2.4 sqlite3 tiff webp
+WANTLIB += png pugixml raw rsvg-2 secret-1 sqlite3 tiff webp
 WANTLIB += webpmux xml2 z
 
 
