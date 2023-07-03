@@ -301,6 +301,12 @@ do-install:
 do-test:
 	${TEST_BIN} test --jobs=${MAKE_JOBS} --no-fail-fast
 
+STRIP ?=	strip
+# Try to avoid strip from our ancient binutils-2.17
+.if ${LINKER_VERSION} != "lld"
+STRIP =		llvm-strip
+.endif
+
 # bootstrap target permits to regenerate the bootstrap archive
 BOOTSTRAPDIR=${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${V}-new
 bootstrap: build
@@ -313,10 +319,10 @@ bootstrap: build
 		FAKE_SETUP=""
 	${_PBUILD} rm -rf ${BOOTSTRAPDIR}/{man,share} \
 		${BOOTSTRAPDIR}/bin/rust-gdb*
-	${_PBUILD} llvm-strip ${BOOTSTRAPDIR}/lib/lib*.so \
+	${_PBUILD} ${STRIP} ${BOOTSTRAPDIR}/lib/lib*.so \
 		${BOOTSTRAPDIR}/lib/rustlib/${TRIPLE_ARCH}/lib/lib*.so
 .for _bin in rustc rustdoc cargo
-	${_PBUILD} llvm-strip ${BOOTSTRAPDIR}/bin/${_bin}
+	${_PBUILD} ${STRIP} ${BOOTSTRAPDIR}/bin/${_bin}
 	ldd ${BOOTSTRAPDIR}/bin/${_bin} \
 		| sed -ne 's,.* \(/.*/lib/lib.*\.so.[.0-9]*\)$$,\1,p' \
 		| xargs -r -J % ${_PBUILD} cp % ${BOOTSTRAPDIR}/lib || true
