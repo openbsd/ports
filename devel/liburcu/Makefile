@@ -1,22 +1,21 @@
 COMMENT =		user-level RCU implementation
 
-DISTNAME =		userspace-rcu-0.13.2
-PKGNAME =		liburcu-0.13.2
+V =			0.14.0
+DISTNAME =		userspace-rcu-$V
+PKGNAME =		liburcu-$V
 
-SHARED_LIBS +=  urcu-bp                   2.0 # 8.0
-SHARED_LIBS +=  urcu-cds                  2.0 # 8.0
-SHARED_LIBS +=  urcu-common               2.0 # 8.0
-SHARED_LIBS +=  urcu-mb                   2.0 # 8.0
-SHARED_LIBS +=  urcu-memb                 0.0 # 8.0
-SHARED_LIBS +=  urcu-qsbr                 1.0 # 8.0
-SHARED_LIBS +=  urcu-signal               2.0 # 8.0
-SHARED_LIBS +=  urcu                      2.0 # 8.0
+SHARED_LIBS +=  urcu-bp                   3.0 # 9.0
+SHARED_LIBS +=  urcu-cds                  2.1 # 9.0
+SHARED_LIBS +=  urcu-common               2.0 # 9.0
+SHARED_LIBS +=  urcu-mb                   3.0 # 9.0
+SHARED_LIBS +=  urcu-memb                 1.0 # 9.0
+SHARED_LIBS +=  urcu-qsbr                 2.0 # 9.0
+SHARED_LIBS +=  urcu-signal               3.0 # 9.0
+SHARED_LIBS +=  urcu                      3.0 # 9.0
 
 CATEGORIES =		devel
 
 HOMEPAGE =		https://liburcu.org/
-
-MAINTAINER = 		Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE =	Yes

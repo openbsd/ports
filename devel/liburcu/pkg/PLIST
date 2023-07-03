@@ -24,6 +24,7 @@ include/urcu/arch/s390.h
 include/urcu/arch/sparc64.h
 include/urcu/arch/tile.h
 include/urcu/arch/x86.h
+include/urcu/assert.h
 include/urcu/call-rcu.h
 include/urcu/cds.h
 include/urcu/compiler.h
@@ -92,6 +93,7 @@ include/urcu/urcu-bp.h
 include/urcu/urcu-futex.h
 include/urcu/urcu-mb.h
 include/urcu/urcu-memb.h
+include/urcu/urcu-poll.h
 include/urcu/urcu-qsbr.h
 include/urcu/urcu-signal.h
 include/urcu/urcu.h
