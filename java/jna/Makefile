@@ -4,9 +4,8 @@ GH_PROJECT=	jna
 GH_ACCOUNT=	java-native-access
 GH_TAGNAME=	5.11.0
 CATEGORIES=	devel
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	https://github.com/java-native-access/jna
 
