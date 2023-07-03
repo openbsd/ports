@@ -1,6 +1,6 @@
 COMMENT =	match/case syntax for perl
 
-DISTNAME =	Syntax-Keyword-Match-0.10
+DISTNAME =	Syntax-Keyword-Match-0.12
 
 CATEGORIES =	devel
 
