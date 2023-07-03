@@ -1,5 +1,8 @@
 COMMENT=		tunnel IPv4 data through DNS
 
+# XXX iodine-0.8.0 client/server communication seems broken
+PORTROACH=		skipv:0.8.0
+
 DISTNAME=		iodine-0.7.0
 CATEGORIES=		net
 REVISION=		8
