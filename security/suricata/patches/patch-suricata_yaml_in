@@ -118,7 +118,7 @@ Index: suricata.yaml.in
  
  # Daemon working directory
  # Suricata will change directory to this one if provided
-@@ -1912,14 +1921,38 @@ napatech:
+@@ -1920,14 +1929,38 @@ napatech:
      #
      hashmode: hash5tuplesorted
  
