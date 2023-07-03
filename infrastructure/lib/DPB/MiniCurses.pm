@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: MiniCurses.pm,v 1.18 2023/05/06 05:20:31 espie Exp $
+# $OpenBSD: MiniCurses.pm,v 1.19 2023/07/03 14:01:58 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -132,7 +132,7 @@ sub bg($self, $expr, $color)
 	return sprintf($self->{bg}, $color).$expr.$self->{resetbg};
 }
 
-sub blink($self, $expr, $color)
+sub blink($self, $expr)
 {
 	return $self->{blink}.$expr.$self->{dontblink};
 }
