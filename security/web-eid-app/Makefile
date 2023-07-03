@@ -54,7 +54,8 @@ WANTLIB-main +=	c crypto m pcsclite
 MODULES =		devel/cmake \
 			x11/qt6
 
-BUILD_DEPENDS =		devel/gtest
+BUILD_DEPENDS =		devel/gtest \
+			x11/qt6/qttools
 
 LIB_DEPENDS-main =	${MODQT_LIB_DEPENDS} \
 			security/pcsc-lite
