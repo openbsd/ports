@@ -1,0 +1,17 @@
+don't exit the program for Glib charset
+
+Index: src/platform/guigtk.cpp
+--- src/platform/guigtk.cpp.orig
++++ src/platform/guigtk.cpp
+@@ -1505,10 +1505,7 @@ std::vector<std::string> InitGui(int argc, char **argv
+     // character set; otherwise it thinks it is always ANSI_X3.4-1968.
+     // We set it back to C after all so that printf() and friends behave in a consistent way.
+     setlocale(LC_ALL, "");
+-    if(!Glib::get_charset()) {
+-        dbp("Sorry, only UTF-8 locales are supported.");
+-        exit(1);
+-    }
++    Glib::get_charset();
+     setlocale(LC_ALL, "C");
+
+     // Let GTK parse arguments and update argc/argv. (They're passed by reference.)

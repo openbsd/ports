@@ -1,0 +1,20 @@
+SOLVESPACE is a free parametric 3D CAD tool. Applications include:
+
+- Modeling 3D parts: draw with extrudes, revolves, helixes and
+  Boolean (union / difference / intersection) operations
+
+- Modeling 2D parts: draw the part as a single section, and export
+  DXF, PDF, SVG; use 3D assembly to verify fit
+
+- 3D-printed parts: export the STL or other triangle mesh expected
+  by most 3D printers
+
+- Preparing CAM data: export 2D vector art for a waterjet machine
+  or laser cutter; or generate STEP or STL, for import into
+  third-party CAM software for machining
+
+- Mechanism design: use the constraint solver to simulate planar
+  or spatial linkages, with pin, ball, or slide joints
+
+- Plane and solid geometry: replace hand-solved trigonometry and
+  spreadsheets with a live dimensioned drawing

@@ -1,0 +1,32 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -34,9 +34,9 @@ endif()
+ # NOTE TO PACKAGERS: The embedded git commit hash is critical for rapid bug triage when the builds
+ # can come from a variety of sources. If you are mirroring the sources or otherwise build when
+ # the .git directory is not present, please comment the following line:
+-include(GetGitCommitHash)
++#include(GetGitCommitHash)
+ # and instead uncomment the following, adding the complete git hash of the checkout you are using:
+-# set(GIT_COMMIT_HASH 0000000000000000000000000000000000000000)
++set(GIT_COMMIT_HASH 70bde63cb32a7f049fa56cbdf924e2695fcb2916)
+
+ string(SUBSTRING "${GIT_COMMIT_HASH}" 0 8 solvespace_GIT_HASH)
+ project(solvespace
+@@ -269,7 +269,7 @@ else()
+     find_package(ZLIB REQUIRED)
+     find_package(PNG REQUIRED)
+     find_package(Freetype REQUIRED)
+-    pkg_check_modules(CAIRO REQUIRED cairo)
++    find_package(Cairo REQUIRED)
+ endif()
+
+ # GUI dependencies
+@@ -305,7 +305,6 @@ if(ENABLE_GUI)
+         find_library(APPKIT_LIBRARY AppKit REQUIRED)
+     else()
+         find_package(OpenGL REQUIRED)
+-        find_package(SpaceWare)
+         pkg_check_modules(FONTCONFIG REQUIRED fontconfig)
+         pkg_check_modules(JSONC REQUIRED json-c)
+         pkg_check_modules(GTKMM REQUIRED gtkmm-3.0>=3.18 pangomm-1.4 x11)
