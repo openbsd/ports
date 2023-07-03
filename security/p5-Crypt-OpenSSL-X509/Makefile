@@ -1,6 +1,6 @@
 COMMENT =	access OpenSSL X509 API from Perl
 
-DISTNAME =	Crypt-OpenSSL-X509-1.914
+DISTNAME =	Crypt-OpenSSL-X509-1.915
 
 CATEGORIES =	security
 
