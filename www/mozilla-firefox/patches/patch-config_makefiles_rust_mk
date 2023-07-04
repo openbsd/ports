@@ -9,7 +9,7 @@ Index: config/makefiles/rust.mk
  # Never enable when coverage is enabled to work around https://github.com/rust-lang/rust/issues/90045.
  ifndef MOZ_CODE_COVERAGE
  ifeq (,$(findstring gkrust_gtest,$(RUST_LIBRARY_FILE)))
--cargo_rustc_flags += -Clto
+-cargo_rustc_flags += -Clto$(if $(filter full,$(MOZ_LTO_RUST_CROSS)),=fat)
 +cargo_rustc_flags += -Clto=thin
 +export CARGO_PROFILE_RELEASE_LTO=thin
  endif
