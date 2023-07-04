@@ -22,8 +22,7 @@
 # OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
 # SUCH DAMAGE.
 
-use strict;
-use warnings;
+v5.36;
 use Getopt::Std;
 
 my %opts;
@@ -55,6 +54,6 @@ if (defined $ENV{FAKELOG} && ($opts{g} || $opts{o})) {
 	if ($opts{o}) {
 		unshift(@args, '-o', $opts{o});
 	}
-	print $fh join(" ", Cwd::getcwd(), 'install', @args), "\n";
+	say $fh join(" ", Cwd::getcwd(), 'install', @args);
 }
 exec {'/usr/bin/install'} ('install', @ARGV);

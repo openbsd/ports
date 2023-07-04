@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: port-search-helper,v 1.1 2018/07/09 13:48:16 espie Exp $
+# $OpenBSD: port-search-helper,v 1.2 2023/07/04 14:10:03 espie Exp $
 # Copyright (c) 2000
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -24,8 +24,7 @@
 # SUCH DAMAGE.
 
 # simple script to retrieve part of the INDEX
-use strict;
-use warnings;
+use v5.36;
 
 my ($index, $iscategory, $ismaintainer, $iskey);
 for (@ARGV) {
