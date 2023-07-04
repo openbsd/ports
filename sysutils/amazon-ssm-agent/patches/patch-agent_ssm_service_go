@@ -1,7 +1,7 @@
 Index: agent/ssm/service.go
 --- agent/ssm/service.go.orig
 +++ agent/ssm/service.go
-@@ -253,7 +253,7 @@ func (svc *sdkService) UpdateInstanceInformation(
+@@ -255,7 +255,7 @@ func (svc *sdkService) UpdateInstanceInformation(
  	switch goOS {
  	case "windows":
  		params.PlatformType = aws.String(ssm.PlatformTypeWindows)
