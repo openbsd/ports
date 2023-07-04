@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Util.pm,v 1.9 2023/05/06 05:20:31 espie Exp $
+# $OpenBSD: Util.pm,v 1.10 2023/07/04 13:36:32 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -35,9 +35,15 @@ sub safe_join($class, $sep, @l)
 my @name =qw(Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec);
 sub time2string($class, $time)
 {
-	my ($sec, $min, $hour, $mday, $mon) = (localtime $time)[0 .. 4];
-	return sprintf("%d %s %02d:%02d:%02d", $mday, $name[$mon],
-	    $hour, $min, $sec);
+	state $current = 0;
+	state $string;
+	if ($current != $time) {
+		my ($sec, $min, $hour, $mday, $mon) = (localtime $time)[0 .. 4];
+		$string = sprintf("%d %s %02d:%02d:%02d", $mday, $name[$mon],
+		    $hour, $min, $sec);
+		$current = $time;
+	}
+	return $string;
 }
 
 sub die_bang($class, $msg)
