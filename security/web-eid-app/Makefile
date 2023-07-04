@@ -55,6 +55,7 @@ MODULES =		devel/cmake \
 			x11/qt6
 
 BUILD_DEPENDS =		devel/gtest \
+			x11/qt6/qtsvg \
 			x11/qt6/qttools
 
 LIB_DEPENDS-main =	${MODQT_LIB_DEPENDS} \
