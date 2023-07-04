@@ -3,7 +3,7 @@ Do not override PTLIBDIR in the environment.
 Index: configure
 --- configure.orig
 +++ configure
-@@ -4141,7 +4141,9 @@ $as_echo "yes" >&6; }
+@@ -4121,7 +4121,9 @@ $as_echo "yes" >&6; }
  	HAS_PTLIB=1
  fi
    if test ${HAS_PTLIB}x = 1x; then

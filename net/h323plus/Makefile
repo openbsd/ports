@@ -2,13 +2,12 @@ COMMENT=		H.323 video conferencing library
 
 GH_ACCOUNT=		willamowius
 GH_PROJECT=		h323plus
-GH_TAGNAME=		v1_27_2
+GH_TAGNAME=		v1_28_0
 PKGNAME=		${DISTNAME:S/_/./g}
-REVISION=		3
 
 CATEGORIES=		net devel
 
-SHARED_LIBS +=		h323	6.3
+SHARED_LIBS +=		h323	6.4
 
 HOMEPAGE=		http://www.h323plus.org/
 
