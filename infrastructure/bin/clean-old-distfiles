@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: clean-old-distfiles,v 1.7 2016/01/24 20:26:56 espie Exp $
+# $OpenBSD: clean-old-distfiles,v 1.8 2023/07/04 13:43:46 espie Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -16,29 +16,21 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-use strict;
-use warnings;
-use feature qw(say);
-use OpenBSD::Getopt;
+use v5.36;
 use OpenBSD::md5;
+use OpenBSD::State;
+use OpenBSD::ProgressMeter;
 use File::Basename;
 
-sub usage
-{
-	my $err = shift;
-	my $prog = $0;
-	$prog =~ s/.*\///;
-	$err =~ s/\sat.*//s;
-	say STDERR "$prog: $err";
-	say STDERR "Usage: $prog [-nv] [-e except] [-h history] [cutdate]";
-	exit 1;
-}
+my $state = OpenBSD::State->new('clean-old-distfiles');
 
-our ($opt_v, $opt_n, $opt_e, $opt_h);
-eval { getopts('e:h:vn'); };
-if ($@) {
-	usage($@);
-}
+our ($opt_v, $opt_n, $opt_e, $opt_h, $opt_x, $opt_m);
+
+$state->handle_options('e:h:vnxm',
+    "[-nmvx] [-e except] [-h history] [cutdate]");
+
+my $progress = OpenBSD::ProgressMeter->new;
+$progress->setup($opt_x, $opt_m, $state);
 
 if (@ARGV > 1) {
 	usage("too many arguments");
@@ -49,10 +41,9 @@ if ($opt_h) {
 	$opt_v = 1;
 }
 
-sub really_remove
+sub really_remove($file)
 {
-	my $file = shift;
-	say "rm $file" if $opt_v;
+	$state->say("rm #1", $file) if $opt_v;
 	return if $opt_n;
 	if (unlink $file) {
 		my $dirname = $file;
@@ -60,13 +51,12 @@ sub really_remove
 			$dirname = File::Basename::dirname $dirname;
 		} while (rmdir $dirname);
 	} else {
-		say STDERR "Couldn't remove $file: $!";
+		$state->errsay("Couldn't remove #1: #2", $file, $!);
 	}
 }
 
-sub remove_file
+sub remove_file($file, $sha)
 {
-	my ($file, $sha) = @_;
 	# let's do i-node caching to avoid doing the same file twice.
 	my $basename = $file;
 	my $inode;
@@ -82,12 +72,13 @@ sub remove_file
 		if (defined $inode && $inode2 == $inode) {
 			really_remove($file);
 		} else {
-			my $ck = OpenBSD::sha->new($file);
-			if ($ck->stringize eq $sha) {
+			my $ck = OpenBSD::sha->new($file)->stringize;
+			if ($ck eq $sha) {
 				really_remove($file);
 			} else {
-				say STDERR "SHA256 mismatch on $file: ", 
-				    $ck->stringize, " vs $sha";
+				$state->errsay(
+				    "SHA256 mismatch on #1: #2 vs #3",
+				    $file, $ck, $sha);
 			}
 	    	}
     	}
@@ -101,17 +92,21 @@ chdir($DISTDIR) or die "Can't chdir to $DISTDIR";
 
 my $history = $opt_h ? $opt_h : 'history';
 
-open my $fh, '<', $history or die "No $history to prune";
+open my $fh, '<', $history or 
+    $state->fatal("No #1 to prune: #2", $history, $!);
+
 my $fh2;
 
 unless ($opt_n) {
-	open $fh2, '>', "history.new" or die "Can't write new history";
+	open $fh2, '>', "history.new" or 
+	    $state->fatal( "Can't write new history: #1", $!);
 }
 
 my $except = {};
 
 if ($opt_e) {
-	open(my $e, '<', $opt_e) or die "Can't read exception file $opt_e: $!";
+	open(my $e, '<', $opt_e) or 
+	    $state->fatal("Can't read exception file #1: #2", $opt_e, $!);
 
 	while (<$e>) {
 		chomp;
@@ -120,22 +115,33 @@ if ($opt_e) {
 	close $e;
 }
 
+my @l = ();
 while (<$fh>) {
+	chomp;
 	my ($ts, $file, $sha);
 	if (m/^(\d+)\s+SHA256\s*\((.*)\) \= (.*)$/) {
 		($ts, $file, $sha) = ($1, $2, $3);
 	} else {
-		die "Bad history line $_";
+		$state->fatal("Bad history line #1 at line #2", $1, $.);
 	}
 	if ($except->{$file} || (defined $cutdate && $ts > $cutdate)) {
 		if ($fh2) {
-			print $fh2 $_;
+			say $fh2 $_;
 		}
 	} else {
-		remove_file($file, $sha);
+		push(@l, [$file, $sha]);
 	}
 }
 close $fh;
+
+$progress->for_list("Removing files", \@l,
+	sub($entry) {
+		my ($file, $sha) = @$entry;
+		remove_file($file,$sha);
+	}
+);
+
+exit(0);
 
 if ($fh2) {
 	close $fh2;
