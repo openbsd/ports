@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: clean-old-distfiles,v 1.9 2023/07/04 18:28:32 espie Exp $
+# $OpenBSD: clean-old-distfiles,v 1.10 2023/07/05 19:08:24 gkoehler Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -155,7 +155,7 @@ sub remove_file($file, $sha)
 }
 
 my $cutdate = $ARGV[0];
-if ($cutdate !~ m/^\d+$/) {
+if (defined $cutdate && $cutdate !~ m/^\d+$/) {
 	my $ts = ISO8601Parser->string2time($cutdate);
 	if (!defined $ts) {
 		$state->fatal("String #1 does not parse as ISO8601 date (YYYY-MM-DDTHH:MM:SSZ)", $cutdate);
