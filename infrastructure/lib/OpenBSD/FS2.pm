@@ -1,4 +1,4 @@
-# $OpenBSD: FS2.pm,v 1.41 2023/05/30 05:36:29 espie Exp $
+# $OpenBSD: FS2.pm,v 1.42 2023/07/05 15:07:54 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -55,7 +55,14 @@ my $gid_lookup = OpenBSD::GnameCache->new;
 
 sub create($class, $path, $fs)
 {
-	my ($uid, $gid) = (lstat $fs->destdir($path))[4,5];
+	my $real = $fs->destdir($path);
+	my ($uid, $gid) = (lstat $real)[4,5];
+	if (!defined $uid) {
+		$fs->{state}->errsay("Resolving #1 to #2 didn't work: #3",
+		    $path, $real, $!);
+		# fake it as root
+	    	#($uid, $gid) = (0, 0);
+	}
 	$path =~ s,^/etc/X11/app-defaults\b,/usr/local/lib/X11/app-defaults,;
 	return $class->new($path,
 	    $uid_lookup->lookup($uid), $gid_lookup->lookup($gid));
