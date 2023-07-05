@@ -1,12 +1,12 @@
 COMMENT=	2d geometry and topology engine
-DISTNAME=	geos-3.11.2
+DISTNAME=	geos-3.12.0
 
 CATEGORIES=	geo
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
-SHARED_LIBS=	geos	21.0 \
-		geos_c	4.7
+SHARED_LIBS=	geos	22.0 \
+		geos_c	4.8
 
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
