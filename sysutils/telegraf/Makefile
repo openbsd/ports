@@ -4,6 +4,7 @@ BROKEN-arm =	build fails, no error message
 BROKEN-i386 =	/usr/local/go/pkg/tool/openbsd_386/link: mapping output file failed: cannot allocate memory
 
 MODGO_VERSION=	v1.27.0
+REVISION =	0
 MODGO_MODNAME=	github.com/influxdata/telegraf
 GH_ACCOUNT =	influxdata
 GH_PROJECT =	telegraf
@@ -19,6 +20,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/go
 
+MODGO_LDFLAGS =	-X github.com/influxdata/telegraf/internal.Version=${MODGO_VERSION:S/v//}
 WANTLIB +=	c pthread
 WRKDIST=	${WRKSRC}
 
