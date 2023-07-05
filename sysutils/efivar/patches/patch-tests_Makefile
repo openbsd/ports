@@ -1,0 +1,23 @@
+Several tests are built around mocking procfs of Linux via a regular
+file system and make use of grub2-editenv.  Exclude them.
+
+Also exclude threading test as it wants to read EFI variables which
+requires superuser privileges.
+
+Index: tests/Makefile
+--- tests/Makefile.orig
++++ tests/Makefile
+@@ -3,12 +3,8 @@
+ # Peter Jones, 2019-06-18 11:10
+ #
+ 
+-TESTS = test.dmpstore.export \
+-	test.efivar.export \
+-	test.grubenv.var \
+-	test.bootorder.var \
++TESTS = test.bootorder.var \
+ 	test.conin.var \
+-	test.efivar.threading \
+ 	test.parse.db \
+ 	test.esl.annotation \
+ 	test.esl.sha256.unsorted \

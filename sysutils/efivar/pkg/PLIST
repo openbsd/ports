@@ -1,0 +1,51 @@
+@bin bin/efisecdb
+@bin bin/efivar
+include/efivar/
+include/efivar/efiboot-creator.h
+include/efivar/efiboot-loadopt.h
+include/efivar/efiboot.h
+include/efivar/efisec-secdb.h
+include/efivar/efisec-types.h
+include/efivar/efisec.h
+include/efivar/efivar-dp.h
+include/efivar/efivar-guids.h
+include/efivar/efivar-time.h
+include/efivar/efivar-types.h
+include/efivar/efivar.h
+@lib lib/libefiboot.so.${LIBefiboot_VERSION}
+@lib lib/libefisec.so.${LIBefisec_VERSION}
+@lib lib/libefivar.so.${LIBefivar_VERSION}
+lib/pkgconfig/efiboot.pc
+lib/pkgconfig/efisec.pc
+lib/pkgconfig/efivar.pc
+@man man/man1/efisecdb.1
+@man man/man1/efivar.1
+@man man/man3/efi_append_variable.3
+@man man/man3/efi_del_variable.3
+@man man/man3/efi_get_next_variable_name.3
+@man man/man3/efi_get_variable.3
+@man man/man3/efi_get_variable_attributes.3
+@man man/man3/efi_get_variable_size.3
+@man man/man3/efi_guid_to_id_guid.3
+@man man/man3/efi_guid_to_name.3
+@man man/man3/efi_guid_to_str.3
+@man man/man3/efi_guid_to_symbol.3
+@man man/man3/efi_name_to_guid.3
+@man man/man3/efi_set_variable.3
+@man man/man3/efi_str_to_guid.3
+@man man/man3/efi_symbol_to_guid.3
+@man man/man3/efi_variable_alloc.3
+@man man/man3/efi_variable_export.3
+@man man/man3/efi_variable_free.3
+@man man/man3/efi_variable_get_attributes.3
+@man man/man3/efi_variable_get_data.3
+@man man/man3/efi_variable_get_guid.3
+@man man/man3/efi_variable_get_name.3
+@man man/man3/efi_variable_import.3
+@man man/man3/efi_variable_realize.3
+@man man/man3/efi_variable_set_attributes.3
+@man man/man3/efi_variable_set_data.3
+@man man/man3/efi_variable_set_guid.3
+@man man/man3/efi_variable_set_name.3
+@man man/man3/efi_variable_t.3
+@man man/man3/efi_variables_supported.3

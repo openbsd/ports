@@ -1,0 +1,17 @@
+Fix .so versioning.
+Don't create symlinks for shared libraries.
+
+Index: src/Makefile
+--- src/Makefile.orig
++++ src/Makefile
+@@ -147,9 +147,7 @@ clean : 
+ install : all
+ 	$(INSTALL) -d -m 755 $(DESTDIR)$(LIBDIR)
+ 	$(foreach x,$(LIBTARGETS), \
+-		$(INSTALL) -m 755 $(x) $(DESTDIR)$(LIBDIR)/$(x).1.$(VERSION) ;\
+-		ln -fs $(x).1.$(VERSION) $(DESTDIR)$(LIBDIR)/$(x).1 ;\
+-		ln -fs $(x).1.$(VERSION) $(DESTDIR)$(LIBDIR)/$(x) ;\
++		$(INSTALL) -m 755 $(x) $(DESTDIR)$(LIBDIR)/$(x).$(LIB$(subst lib,,$(x:%.so=%))_VERSION) ;\
+ 		)
+ 	$(INSTALL) -d -m 755 $(DESTDIR)$(PCDIR)
+ 	$(foreach x, $(PCTARGETS), $(INSTALL) -m 644 $(x) $(DESTDIR)$(PCDIR) ;)

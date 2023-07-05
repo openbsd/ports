@@ -1,0 +1,4 @@
+This packages provides user-space tools and libraries for EFI.
+It includes libraries for managing EFI variables (libefivar), device paths,
+load options (both by libefiboot), security certificates (libefisec) as well
+as binaries for accessing EFI variables (efivar) and certificates (efisecdb).
