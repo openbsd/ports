@@ -10,3 +10,7 @@ Undocumented Z-80 instructions are supported as well as 8080 code.
 zmac strives to be a powerful assembler with expressions familiar to C
 programmers while providing good backward compatibility with original
 assemblers such as Edtasm, MRAS and Macro-80.
+
+This package also includes the ld80 .rel object file linker. ld80 is a
+linker for .rel object files as seen on CP/M and TRS-80 machines. It is
+a clone of Microsoft's original L80 linker.

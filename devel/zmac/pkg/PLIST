@@ -1,1 +1,3 @@
+@bin bin/ld80
 @bin bin/zmac
+@man man/man1/ld80.1
