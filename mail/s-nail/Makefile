@@ -3,6 +3,7 @@ COMMENT=		SysV mail/BSD Mail/POSIX mailx: send and receive mail
 DISTNAME=		s-nail-14.9.24
 CATEGORIES=		mail
 HOMEPAGE=		https://www.sdaoden.eu/code.html\#s-mailx
+REVISION=		0
 
 # BSD
 PERMIT_PACKAGE=		Yes
