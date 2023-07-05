@@ -1,0 +1,2 @@
+Splicebench implements a relay for OpenBSD socket splicing.  Goal
+it to have a minimal setup for performance and reliability testing.
