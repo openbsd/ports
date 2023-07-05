@@ -1,8 +1,7 @@
 COMMENT=		email application built around conversations
 
 GNOME_PROJECT=		geary
-GNOME_VERSION=		43.0
-REVISION=		1
+GNOME_VERSION=		44.0
 
 CATEGORIES=		mail
 

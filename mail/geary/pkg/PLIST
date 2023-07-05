@@ -2,7 +2,7 @@
 @pkgpath mail/postler
 @bin bin/geary
 lib/geary/
-@so lib/geary/libgeary-client-43.0.so
+@so lib/geary/libgeary-client-44.0.so
 lib/geary/plugins/
 lib/geary/plugins/desktop-notifications/
 lib/geary/plugins/desktop-notifications/desktop-notifications.plugin
@@ -166,6 +166,23 @@ share/help/es/geary/search.page
 share/help/es/geary/shortcuts.page
 share/help/es/geary/star.page
 share/help/es/geary/write.page
+share/help/eu/
+share/help/eu/geary/
+share/help/eu/geary/accounts.page
+share/help/eu/geary/archive.page
+share/help/eu/geary/bugs.page
+share/help/eu/geary/contributing.page
+share/help/eu/geary/figures/
+share/help/eu/geary/figures/geary.svg
+share/help/eu/geary/index.page
+share/help/eu/geary/label.page
+share/help/eu/geary/limits.page
+share/help/eu/geary/overview.page
+share/help/eu/geary/preferences.page
+share/help/eu/geary/search.page
+share/help/eu/geary/shortcuts.page
+share/help/eu/geary/star.page
+share/help/eu/geary/write.page
 share/help/fr/
 share/help/fr/geary/
 share/help/fr/geary/accounts.page
@@ -366,6 +383,7 @@ share/locale/hi/LC_MESSAGES/geary.mo
 share/locale/hr/LC_MESSAGES/geary.mo
 share/locale/hu/LC_MESSAGES/geary.mo
 share/locale/id/LC_MESSAGES/geary.mo
+share/locale/ie/LC_MESSAGES/geary.mo
 share/locale/it/LC_MESSAGES/geary.mo
 share/locale/ja/LC_MESSAGES/geary.mo
 share/locale/kk/LC_MESSAGES/geary.mo
