@@ -1,6 +1,6 @@
 COMMENT=	resource manager for PC/SC
 
-V=		1.9.9
+V=		2.0.0
 DISTNAME=	pcsc-lite-${V}
 CATEGORIES=	security
 
@@ -47,7 +47,8 @@ CONFIGURE_ENV=	ac_cv_lib_lex='none needed'
 TEST_DEPENDS=	${BUILD_PKGPATH}=${V} \
 		security/ccid
 
-# The pcscd server needs to be up and running
+# The pcscd server needs to be up and running and tests prompt/wait for
+# insertion of a smart card reader as well as smart card
 TEST_IS_INTERACTIVE= Yes
 
 do-test:
