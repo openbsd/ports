@@ -35,11 +35,13 @@ lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/utils/${MODPY_PYCACHE}_ordere
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/utils/${MODPY_PYCACHE}lists.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/utils/${MODPY_PYCACHE}log.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/utils/${MODPY_PYCACHE}ordered_dict.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/utils/${MODPY_PYCACHE}progress_report.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/utils/${MODPY_PYCACHE}statics.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/utils/_ordered_dict.py
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/utils/lists.py
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/utils/log.py
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/utils/ordered_dict.py
+lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/utils/progress_report.py
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/utils/statics.py
 share/tlsfuzzer/
 share/tlsfuzzer/scripts/
