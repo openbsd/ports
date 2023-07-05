@@ -17,6 +17,7 @@
      SUBDIR += siege
      SUBDIR += smtp-benchmark
      SUBDIR += speedtest-cli
+     SUBDIR += splicebench
      SUBDIR += sysbench
      SUBDIR += sysbench,mysql
      SUBDIR += sysbench,pgsql
