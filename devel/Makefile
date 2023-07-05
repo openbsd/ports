@@ -66,6 +66,7 @@
      SUBDIR += ccache
      SUBDIR += ccrtp
      SUBDIR += cdk
+     SUBDIR += cereal
      SUBDIR += cflow
      SUBDIR += cgdb
      SUBDIR += check
