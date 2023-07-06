@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb-replay,v 1.7 2023/05/06 05:24:06 espie Exp $
+# $OpenBSD: dpb-replay,v 1.8 2023/07/06 10:54:18 espie Exp $
 #
 # Copyright (c) 2013 Marc Espie <espie@openbsd.org>
 #
@@ -32,13 +32,21 @@ our @ISA = (qw(OpenBSD::State));
 
 sub handle_options($state)
 {
-	$state->SUPER::handle_options('Ccs:e:', '[-c] [-s speedup] [-e regexp] file');
+	$state->SUPER::handle_options('Ccs:e:t:', '[-c] [-s speedup] [-e regexp] [-t ts] file');
 	if ($state->opt('c') || $state->opt('C')) {
 		$state->{color} = 1;
 	}
 	if ($state->opt('e')) {
 		my $e = $state->opt('e');
 		$state->{regexp} = qr{$e};
+	}
+	if ($state->opt('t')) {
+		$state->{ts} = $state->opt('t');
+		if ($state->{ts} !~ m/^\d+$/) {
+			require DPB::ISO8601;
+			$state->{ts} = DPB::ISO8601->string2time($state->{ts}, 
+			    $state);
+		}
 	}
 }
 
@@ -72,13 +80,19 @@ open(my $fh, '<', $file);
 my $start_ts;
 my $start_time = time();
 my $msg = '';
-my $display = defined $state->{regexp} ? 0 : 1;
+my $display = (defined $state->{regexp} || defined $state->{ts}) ? 0 : 1;
 while(<$fh>) {
 	if (m/^\@\@\@(\d+)$/) {
 		chomp;
 		my $ts = int($1);
-		if (!$display && $msg =~ m/$state->{regexp}/) {
-			$display = 1;
+		if (!$display) {
+			if (defined $state->{regexp} && 
+			    $msg =~ m/$state->{regexp}/) {
+				$display = 1;
+			} elsif (defined $state->{ts} &&
+				$ts >= $state->{ts}) {
+				$display = 1;
+		    	}
 		}
 		if ($display) {
 			$start_ts //= $ts;
