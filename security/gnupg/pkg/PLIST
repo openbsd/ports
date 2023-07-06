@@ -5,7 +5,9 @@
 @bin bin/dirmngr-client
 @bin bin/gpg
 @bin bin/gpg-agent
+@bin bin/gpg-card
 @bin bin/gpg-connect-agent
+@bin bin/gpg-wks-client
 @bin bin/gpg-wks-server
 @bin bin/gpgconf
 @bin bin/gpgparsemail
@@ -17,13 +19,17 @@
 @bin bin/kbxutil
 @bin bin/watchgnupg
 @info info/gnupg.info
+@bin libexec/gpg-auth
 @bin libexec/gpg-check-pattern
+@bin libexec/gpg-pair-tool
 @bin libexec/gpg-preset-passphrase
 @bin libexec/gpg-protect-tool
-@bin libexec/gpg-wks-client
+libexec/gpg-wks-client
+@bin libexec/keyboxd
 @bin libexec/scdaemon
 @man man/man1/dirmngr-client.1
 @man man/man1/gpg-agent.1
+@man man/man1/gpg-card.1
 @man man/man1/gpg-check-pattern.1
 @man man/man1/gpg-connect-agent.1
 @man man/man1/gpg-preset-passphrase.1
@@ -53,13 +59,12 @@ share/doc/gnupg/OpenPGP
 share/doc/gnupg/README
 share/doc/gnupg/TRANSLATE
 share/doc/gnupg/examples/
-share/doc/gnupg/examples/Automatic.prf
 share/doc/gnupg/examples/README
-share/doc/gnupg/examples/VS-NfD.prf
-share/doc/gnupg/examples/debug.prf
+share/doc/gnupg/examples/common.conf
 share/doc/gnupg/examples/gpgconf.conf
 share/doc/gnupg/examples/gpgconf.rnames
 share/doc/gnupg/examples/pwpattern.list
+share/doc/gnupg/examples/qualified.txt
 share/doc/gnupg/examples/scd-event
 share/doc/gnupg/examples/trustlist.txt
 share/doc/pkg-readmes/${PKGSTEM}

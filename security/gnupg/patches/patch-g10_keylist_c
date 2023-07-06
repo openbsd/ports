@@ -1,7 +1,7 @@
 Index: g10/keylist.c
 --- g10/keylist.c.orig
 +++ g10/keylist.c
-@@ -255,12 +255,11 @@ print_card_key_info (estream_t fp, kbnode_t keyblock)
+@@ -329,12 +329,11 @@ print_card_key_info (estream_t fp, kbnode_t keyblock)
            else
              s2k_char = '#';  /* Key not found.  */
  

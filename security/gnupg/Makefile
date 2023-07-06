@@ -2,7 +2,7 @@ PORTROACH =	limitw:1,even
 
 COMMENT =	GNU privacy guard - a free PGP replacement
 
-DISTNAME =	gnupg-2.2.41
+DISTNAME =	gnupg-2.4.3
 
 CATEGORIES =	security
 
@@ -23,6 +23,7 @@ EXTRACT_SUFX =		.tar.bz2
 FLAVORS =		ldap
 FLAVOR ?=
 
+USE_GMAKE =		Yes
 LIB_DEPENDS =		archivers/bzip2 \
 			databases/sqlite3 \
 			devel/gettext,-runtime \

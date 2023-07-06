@@ -1,7 +1,7 @@
 Index: agent/protect.c
 --- agent/protect.c.orig
 +++ agent/protect.c
-@@ -563,24 +563,47 @@ do_encryption (const unsigned char *hashbegin, size_t 
+@@ -513,24 +513,47 @@ do_encryption (const unsigned char *hashbegin, size_t 
       and dummy values as placeholders.  */
    {
      char countbuf[35];
@@ -14,7 +14,7 @@ Index: agent/protect.c
 -       (int)strlen (modestr), modestr,
 -       &saltpos,
 -       (unsigned int)strlen (countbuf), countbuf,
--       use_ocb? 12 : blklen, &ivpos, use_ocb? 12 : blklen, "",
+-       12, &ivpos, 12, "",
 -       enclen, &encpos, enclen, "");
 +
 +#define FMT1	"(9:protected%d:%s((4:sha18:"
@@ -27,12 +27,12 @@ Index: agent/protect.c
 +    saltpos = strlen(p1);
 +
 +    p2 = xtryasprintf (FMT2, (unsigned int)strlen (countbuf), countbuf,
-+       use_ocb? 12 : blklen);
++       12);
 +    if (!p2)
 +	goto fail;
 +    ivpos = saltpos + strlen(p2);
 +
-+    p3 = xtryasprintf (FMT3, use_ocb? 12 : blklen, "", enclen);
++    p3 = xtryasprintf (FMT3, 12, "", enclen);
 +    if (!p3)
 +	goto fail;
 +    encpos = ivpos + strlen(p3);
