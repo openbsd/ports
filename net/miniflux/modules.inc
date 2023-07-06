@@ -31,29 +31,29 @@ MODGO_MODULES =	\
 	github.com/mwitkow/go-conntrack				 v0.0.0-20190716064945-2f068394615f \
 	github.com/pmezard/go-difflib				 v1.0.0 \
 	github.com/pquerna/cachecontrol				 v0.1.0 \
-	github.com/prometheus/client_golang			 v1.15.1 \
+	github.com/prometheus/client_golang			 v1.16.0 \
 	github.com/prometheus/client_model			 v0.3.0 \
 	github.com/prometheus/common				 v0.42.0 \
-	github.com/prometheus/procfs				 v0.9.0 \
+	github.com/prometheus/procfs				 v0.10.1 \
 	github.com/rogpeppe/go-internal				 v1.10.0 \
 	github.com/rylans/getlang				 v0.0.0-20201227074721-9e7f44ff8aa0 \
 	github.com/spf13/pflag					 v1.0.5 \
 	github.com/stretchr/objx				 v0.1.0 \
 	github.com/stretchr/testify				 v1.8.0 \
-	github.com/tdewolff/minify/v2				 v2.12.5 \
-	github.com/tdewolff/parse/v2				 v2.6.5 \
-	github.com/tdewolff/test				 v1.0.7 \
+	github.com/tdewolff/minify/v2				 v2.12.7 \
+	github.com/tdewolff/parse/v2				 v2.6.6 \
+	github.com/tdewolff/test				 v1.0.9 \
 	github.com/technoweenie/multipartstreamer		 v1.0.1 \
 	github.com/xhit/go-str2duration				 v1.2.0 \
 	github.com/yuin/goldmark				 v1.5.4 \
-	golang.org/x/crypto					 v0.8.0 \
+	golang.org/x/crypto					 v0.10.0 \
 	golang.org/x/mod					 v0.10.0 \
-	golang.org/x/net					 v0.9.0 \
-	golang.org/x/oauth2					 v0.7.0 \
-	golang.org/x/sync					 v0.1.0 \
-	golang.org/x/sys					 v0.8.0 \
-	golang.org/x/term					 v0.8.0 \
-	golang.org/x/text					 v0.9.0 \
+	golang.org/x/net					 v0.11.0 \
+	golang.org/x/oauth2					 v0.9.0 \
+	golang.org/x/sync					 v0.2.0 \
+	golang.org/x/sys					 v0.9.0 \
+	golang.org/x/term					 v0.9.0 \
+	golang.org/x/text					 v0.10.0 \
 	golang.org/x/tools					 v0.6.0 \
 	golang.org/x/xerrors					 v0.0.0-20191204190536-9bdfabe68543 \
 	google.golang.org/appengine				 v1.6.7 \
@@ -77,6 +77,7 @@ MODGO_MODFILES =	\
 	github.com/prometheus/client_golang	 v1.14.0 \
 	github.com/prometheus/procfs		 v0.8.0 \
 	github.com/stretchr/testify		 v1.6.1 \
+	github.com/tdewolff/test		 v1.0.7 \
 	github.com/yuin/goldmark		 v1.4.13 \
 	golang.org/x/crypto			 v0.0.0-20190308221718-c2843e01d9a2 \
 	golang.org/x/crypto			 v0.0.0-20210921155107-089bfa567519 \
@@ -87,11 +88,13 @@ MODGO_MODFILES =	\
 	golang.org/x/net			 v0.0.0-20210226172049-e18ecbb05110 \
 	golang.org/x/net			 v0.0.0-20210916014120-12bc252f5db8 \
 	golang.org/x/net			 v0.0.0-20220722155237-a158d28d115b \
+	golang.org/x/net			 v0.10.0 \
 	golang.org/x/net			 v0.7.0 \
 	golang.org/x/oauth2			 v0.5.0 \
 	golang.org/x/sync			 v0.0.0-20181221193216-37e7f081c4d4 \
 	golang.org/x/sync			 v0.0.0-20190423024810-112230192c58 \
 	golang.org/x/sync			 v0.0.0-20220722155255-886fb9371eb4 \
+	golang.org/x/sync			 v0.1.0 \
 	golang.org/x/sys			 v0.0.0-20190215142949-d0b11bdaac8a \
 	golang.org/x/sys			 v0.0.0-20201119102817-f84b799fce68 \
 	golang.org/x/sys			 v0.0.0-20210423082822-04245dca01da \
@@ -99,14 +102,12 @@ MODGO_MODFILES =	\
 	golang.org/x/sys			 v0.0.0-20220520151302-bc2c85ada10a \
 	golang.org/x/sys			 v0.0.0-20220722155257-8c9f86f7a55f \
 	golang.org/x/sys			 v0.0.0-20220908164124-27713097b956 \
-	golang.org/x/sys			 v0.3.0 \
 	golang.org/x/sys			 v0.5.0 \
 	golang.org/x/sys			 v0.6.0 \
-	golang.org/x/sys			 v0.7.0 \
+	golang.org/x/sys			 v0.8.0 \
 	golang.org/x/term			 v0.0.0-20201126162022-7de9c90e9dd1 \
 	golang.org/x/term			 v0.0.0-20210927222741-03fcf44c2211 \
 	golang.org/x/term			 v0.5.0 \
-	golang.org/x/term			 v0.7.0 \
 	golang.org/x/text			 v0.3.0 \
 	golang.org/x/text			 v0.3.2 \
 	golang.org/x/text			 v0.3.3 \
