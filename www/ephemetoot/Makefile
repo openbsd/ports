@@ -1,6 +1,6 @@
 COMMENT =		tool for deleting old Mastodon toots
 
-MODPY_EGG_VERSION =	3.1.4
+MODPY_EGG_VERSION =	3.2.0
 DISTNAME =		ephemetoot-${MODPY_EGG_VERSION}
 
 CATEGORIES =		www
@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_PYBUILD =		poetry-core
+MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =		textproc/py-yaml${MODPY_FLAVOR}>=5.0 \
 			www/py-mastodon.py${MODPY_FLAVOR} \
