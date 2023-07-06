@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: clean-old-distfiles,v 1.10 2023/07/05 19:08:24 gkoehler Exp $
+# $OpenBSD: clean-old-distfiles,v 1.11 2023/07/06 09:33:23 espie Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -17,80 +17,18 @@
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 use v5.36;
+my $ports1;
+use FindBin;
+BEGIN {
+	$ports1 = $ENV{PORTSDIR} || '/usr/ports';
+}
+
+use lib ("$ports1/infrastructure/lib", "$FindBin::Bin/../lib");
+
 use OpenBSD::md5;
 use OpenBSD::State;
 use OpenBSD::ProgressMeter;
 use File::Basename;
-
-
-# this parses a subset of ISO8601, so that the timestamp can be a string
-package ISO8601Parser;
-
-sub parse($class, $s)
-{
-	my $o = bless {
-		hour => 0,
-		min => 0,
-		sec => 0,
-		islocal => 1 }, $class;
-
-	if ($s =~ s/Z$//) {
-		$o->{islocal} = 0;
-	}
-	if ($s =~ s/^(\d{4})\-(\d{2})\-(\d{2})(T|$)//) {
-		($o->{year}, $o->{month}, $o->{day}) = ($1, $2, $3);
-	} else {
-		return undef;
-	}
-	if ($s eq '') {
-		return $o;
-	}
-	if ($s =~ s/^(\d{2})(\:|$)//) {
-		$o->{hour} = $1;
-	} else {
-		return undef;
-	}
-	if ($s eq '') {
-		return $o;
-	}
-	if ($s =~ s/^(\d{2})(\:|$)//) {
-		$o->{min} = $1;
-	} else {
-		return undef;
-	}
-	if ($s eq '') {
-		return $o;
-	} 
-	if ($s =~ s/^(\d{2})(\:|$)//) {
-		$o->{sec} = $1;
-	} else {
-		return undef;
-	}
-	if ($s eq '') {
-		return $o;
-	} else {
-		return undef;
-	}
-}
-
-sub string2time($class, $s)
-{
-	my $o = $class->parse($s);
-	if (defined $o) {
-		require POSIX;
-		local $ENV{TZ};
-		if (!$o->{islocal}) {
-			$ENV{TZ} = 'UTC';
-		}
-		my $t = POSIX::mktime($o->{sec}, $o->{min}, $o->{hour}, 
-		    $o->{day}, $o->{month} - 1, $o->{year} - 1900);
-		return $t;
-	} else {
-		return undef;
-	}
-}
-
-package main;
 
 my $state = OpenBSD::State->new('clean-old-distfiles');
 
@@ -100,7 +38,10 @@ $state->handle_options('e:h:vnxm',
     "[-nmvx] [-e except] [-h history] [cutdate]");
 
 my $progress = OpenBSD::ProgressMeter->new;
-$progress->setup($opt_x, $opt_m, $state);
+	
+if (!$opt_v) {
+	$progress->setup($opt_x, $opt_m, $state);
+}
 
 if (@ARGV > 1) {
 	usage("too many arguments");
@@ -156,11 +97,8 @@ sub remove_file($file, $sha)
 
 my $cutdate = $ARGV[0];
 if (defined $cutdate && $cutdate !~ m/^\d+$/) {
-	my $ts = ISO8601Parser->string2time($cutdate);
-	if (!defined $ts) {
-		$state->fatal("String #1 does not parse as ISO8601 date (YYYY-MM-DDTHH:MM:SSZ)", $cutdate);
-	}
-	$cutdate = $ts;
+	require DPB::ISO8601;
+	$cutdate = DPB::ISO8601->string2time($cutdate, $state);
 }
 
 my $PORTSDIR = $ENV{PORTSDIR} // '/usr/ports';
@@ -217,8 +155,6 @@ $progress->for_list("Removing files", \@l,
 		remove_file($file,$sha);
 	}
 );
-
-exit(0);
 
 if ($fh2) {
 	close $fh2;
