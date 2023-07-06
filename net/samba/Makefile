@@ -1,7 +1,6 @@
-VERSION =		4.17.8
+VERSION =		4.18.4
 DISTNAME =		samba-${VERSION}
 EPOCH =			0
-REVISION =		0
 
 COMMENT-main =		SMB and CIFS client and server for UNIX
 COMMENT-docs =		additional documentation and examples for Samba
@@ -17,22 +16,22 @@ SHARED_LIBS =		dcerpc			1.1 \
 			dcerpc-server-core	3.0 \
 			ldb			2.2 \
 			ndr			3.0 \
-			ndr-krb5pac		1.1 \
+			ndr-krb5pac		1.2 \
 			ndr-nbt			1.0 \
 			ndr-standard		4.2 \
 			netapi			3.2 \
 			samba-credentials	1.2 \
 			samba-errors		2.1 \
-			samba-hostconfig	11.0 \
+			samba-hostconfig	12.0 \
 			samba-passdb		3.0 \
-			samba-util		8.0 \
+			samba-util		9.0 \
 			samdb			2.1 \
 			smbclient		6.1 \
-			smbconf			12.2 \
+			smbconf			13.0 \
 			smbldap			1.0 \
-			tevent			2.1 \
+			tevent			2.2 \
 			tevent-util		2.0 \
-			wbclient		5.0
+			wbclient		5.1
 
 # Those have to be handled specially, see "Python ABI" below.
 SHARED_LIBS +=		pyldb-util.cpython-${MODPY_MAJORMINOR}		1.0
@@ -49,7 +48,7 @@ MAINTAINER =		Ian McWilliam <kaosagnt@gmail.com>, \
 PERMIT_PACKAGE =	Yes
 
 WANTLIB-main =		${MODPY_WANTLIB}
-WANTLIB-main +=		avahi-client avahi-common cups c execinfo
+WANTLIB-main +=		archive avahi-client avahi-common cups c execinfo
 WANTLIB-main +=		iconv jansson lber ldap pam popt pthread gnutls
 WANTLIB-main +=		pytalloc-util.cpython-${MODPY_MAJORMINOR} readline
 WANTLIB-main +=		talloc tasn1 tdb z lib/inotify/inotify
@@ -80,12 +79,13 @@ RUN_DEPENDS-main =	databases/tdb,-python \
 
 RUN_DEPENDS-docs =
 
-LIB_DEPENDS-main =	converters/libiconv \
+LIB_DEPENDS-main =	archivers/libarchive \
+			converters/libiconv \
 			databases/openldap \
-			databases/tdb>=1.4.7 \
+			databases/tdb>=1.4.8 \
 			devel/jansson \
 			devel/libinotify \
-			devel/libtalloc>=2.3.4 \
+			devel/libtalloc>=2.4.0 \
 			devel/libtalloc,-python \
 			devel/popt \
 			net/avahi,-libs \
@@ -119,7 +119,6 @@ CONFIGURE_ARGS =	--enable-fhs \
 			--pedantic \
 			--without-regedit \
 			--without-acl-support \
-			--without-libarchive \
 			--disable-rpath \
 			--without-ad-dc \
 			--without-gpgme \
