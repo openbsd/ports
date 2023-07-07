@@ -1,17 +1,16 @@
 COMMENT=	high-performance and extensible DHCP server engine from ISC
 
-VERSION=	2.2.0
+VERSION=	2.4.0
 PORTROACH=	limitw:1,even
 
 DISTNAME=	kea-${VERSION}
 PKGNAME-main=	kea-${VERSION:S/-P/pl/}
-REVISION=	0
 
 .for i in kea-asiodns kea-asiolink kea-cc kea-cfgclient kea-cryptolink \
     kea-d2srv kea-database kea-dhcp++ kea-dhcp_ddns kea-dhcpsrv kea-dns++ \
     kea-eval kea-exceptions kea-hooks kea-http kea-log kea-mysql kea-pgsql \
-    kea-process kea-stats kea-threads kea-util kea-util-io
-SHARED_LIBS +=  $i 10.0
+    kea-process kea-stats kea-tcp kea-threads kea-util kea-util-io
+SHARED_LIBS +=  $i 11.0
 .endfor
 
 CATEGORIES=	net
@@ -27,6 +26,7 @@ MASTER_SITES=	${MASTER_SITE_ISC:=kea/${VERSION}/}
 
 LIB_DEPENDS=	devel/boost \
 		devel/log4cplus
+BUILD_DEPENDS+=	devel/bison
 
 FLAVOR?=
 FLAVORS=	mysql postgresql
@@ -36,7 +36,8 @@ FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --with-openssl=/usr \
                  --with-boost-libs=-lboost_system \
-                 --with-boost-lib-dir=${LOCALBASE}/lib
+                 --with-boost-lib-dir=${LOCALBASE}/lib \
+		 --enable-generate-parser
 
 USE_GMAKE=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static

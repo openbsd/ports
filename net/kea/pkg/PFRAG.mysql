@@ -35,4 +35,11 @@ share/kea/scripts/mysql/upgrade_009.5_to_009.6.sh
 share/kea/scripts/mysql/upgrade_009.6_to_010.0.sh
 share/kea/scripts/mysql/upgrade_010_to_011.sh
 share/kea/scripts/mysql/upgrade_011_to_012.sh
+share/kea/scripts/mysql/upgrade_012_to_013.sh
+share/kea/scripts/mysql/upgrade_013_to_014.sh
+share/kea/scripts/mysql/upgrade_014_to_015.sh
+share/kea/scripts/mysql/upgrade_015_to_016.sh
+share/kea/scripts/mysql/upgrade_016_to_017.sh
+share/kea/scripts/mysql/upgrade_017_to_018.sh
+share/kea/scripts/mysql/upgrade_018_to_019.sh
 share/kea/scripts/mysql/wipe_data.sh

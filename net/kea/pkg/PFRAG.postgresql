@@ -30,4 +30,9 @@ share/kea/scripts/pgsql/upgrade_009_to_010.sh
 share/kea/scripts/pgsql/upgrade_010_to_011.sh
 share/kea/scripts/pgsql/upgrade_011_to_012.sh
 share/kea/scripts/pgsql/upgrade_012_to_013.sh
+share/kea/scripts/pgsql/upgrade_013_to_014.sh
+share/kea/scripts/pgsql/upgrade_014_to_015.sh
+share/kea/scripts/pgsql/upgrade_015_to_016.sh
+share/kea/scripts/pgsql/upgrade_016_to_017.sh
+share/kea/scripts/pgsql/upgrade_017_to_018.sh
 share/kea/scripts/pgsql/wipe_data.sh
