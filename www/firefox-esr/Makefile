@@ -49,6 +49,7 @@ CONFIGURE_SCRIPT =	${MODPY_BIN} ${WRKSRC}/configure.py
 CONFIGURE_ARGS +=	--prefix=${PREFIX}
 MAKE_ENV +=		BUILD_VERBOSE_LOG="1" CARGOFLAGS="-j${MAKE_JOBS}"
 CONFIGURE_ENV +=	CPPFLAGS=-Wno-backend-plugin
+CONFIGURE_ENV +=	LDFLAGS=-Wl,--threads=${MAKE_JOBS}
 
 # avoid conflict with mainline firefox
 CONFIGURE_ARGS +=	--with-app-name=${MOZILLA_PROJECT}
