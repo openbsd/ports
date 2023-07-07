@@ -2,7 +2,6 @@ ONLY_FOR_ARCHS =	amd64 aarch64 i386 powerpc64 riscv64
 DPB_PROPERTIES =	parallel
 
 USE_WXNEEDED =		Yes
-USE_NOBTCFI =		Yes
 
 COMMENT = JavaScript runtime built on Chrome's V8 JavaScript engine
 
@@ -14,7 +13,7 @@ DISTFILES =		node-pledge-{}${PLEDGE_VER}.tar.gz:0 \
 
 DISTNAME =		node-${NODE_VERSION}
 PKGNAME =		${DISTNAME:S/v//g}
-REVISION =		0
+REVISION =		1
 EPOCH =			0
 
 MASTER_SITES0 =		https://github.com/qbit/node-pledge/archive/
