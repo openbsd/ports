@@ -2,14 +2,13 @@ COMMENT=		parse, analyze and manipulate Perl
 
 MODULES=		cpan
 PKG_ARCH=		*
-DISTNAME=		PPI-1.271
+DISTNAME=		PPI-1.276
 CATEGORIES=		textproc
 
 # perl
 PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=		devel/p5-Clone>=0.30 \
-			devel/p5-IO-String>=1.07 \
 			devel/p5-Params-Util>=1.00 \
 			devel/p5-Task-Weaken
 TEST_DEPENDS=		devel/p5-Class-Inspector>=1.22 \
