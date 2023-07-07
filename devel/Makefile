@@ -624,6 +624,7 @@
      SUBDIR += p5-Data-Printer
      SUBDIR += p5-Data-Random
      SUBDIR += p5-Data-SExpression
+     SUBDIR += p5-Data-Section
      SUBDIR += p5-Data-Section-Simple
      SUBDIR += p5-Data-ShowTable
      SUBDIR += p5-Data-Stag
@@ -1045,6 +1046,7 @@
      SUBDIR += p5-Shell-Guess
      SUBDIR += p5-Signal-Mask
      SUBDIR += p5-Smart-Comments
+     SUBDIR += p5-Software-License
      SUBDIR += p5-Sort-Key
      SUBDIR += p5-Sort-Naturally
      SUBDIR += p5-Specio
