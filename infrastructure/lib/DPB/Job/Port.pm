@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.212 2023/06/21 08:56:17 espie Exp $
+# $OpenBSD: Port.pm,v 1.213 2023/07/07 11:34:16 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -62,6 +62,10 @@ sub finalize($self, $core)
 				last if !defined $l;
 				if ($l =~ m/^\=\=\=\>\s+Building from scratch/) {
 					$job->{fromscratch} = $i;
+					if (defined $job->{watched}) {
+						$job->{watched}->set_offset(
+						    $job->{pos});
+					}
 					last;
 				}
 			}
