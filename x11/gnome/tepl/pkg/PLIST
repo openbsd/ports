@@ -38,6 +38,9 @@ include/tepl-6/tepl/tepl-progress-info-bar.h
 include/tepl-6/tepl/tepl-settings.h
 include/tepl-6/tepl/tepl-signal-group.h
 include/tepl-6/tepl/tepl-space-drawer-prefs.h
+include/tepl-6/tepl/tepl-stack-item.h
+include/tepl-6/tepl/tepl-stack-switcher-menu.h
+include/tepl-6/tepl/tepl-stack.h
 include/tepl-6/tepl/tepl-statusbar.h
 include/tepl-6/tepl/tepl-style-scheme-chooser-widget.h
 include/tepl-6/tepl/tepl-tab-group.h
@@ -47,8 +50,6 @@ include/tepl-6/tepl/tepl-tab-saving.h
 include/tepl-6/tepl/tepl-tab.h
 include/tepl-6/tepl/tepl-utils.h
 include/tepl-6/tepl/tepl-view.h
-include/tepl-6/tepl/tepl-widget-list-category.h
-include/tepl-6/tepl/tepl-widget-list-item.h
 include/tepl-6/tepl/tepl.h
 lib/girepository-1.0/Tepl-6.typelib
 @lib lib/libtepl-6.so.${LIBtepl-6_VERSION}
@@ -79,6 +80,9 @@ share/gtk-doc/html/tepl-6/TeplPrefsDialog.html
 share/gtk-doc/html/tepl-6/TeplProgressInfoBar.html
 share/gtk-doc/html/tepl-6/TeplSettings.html
 share/gtk-doc/html/tepl-6/TeplSpaceDrawerPrefs.html
+share/gtk-doc/html/tepl-6/TeplStack.html
+share/gtk-doc/html/tepl-6/TeplStackItem.html
+share/gtk-doc/html/tepl-6/TeplStackSwitcherMenu.html
 share/gtk-doc/html/tepl-6/TeplStatusbar.html
 share/gtk-doc/html/tepl-6/TeplStyleSchemeChooserWidget.html
 share/gtk-doc/html/tepl-6/TeplTab.html
@@ -104,6 +108,7 @@ share/gtk-doc/html/tepl-6/api-index-5-0.html
 share/gtk-doc/html/tepl-6/api-index-6-0.html
 share/gtk-doc/html/tepl-6/api-index-6-2.html
 share/gtk-doc/html/tepl-6/api-index-6-4.html
+share/gtk-doc/html/tepl-6/api-index-6-6.html
 share/gtk-doc/html/tepl-6/api-index-deprecated.html
 share/gtk-doc/html/tepl-6/api-index-full.html
 share/gtk-doc/html/tepl-6/api-reference-general-utilities.html
@@ -140,8 +145,6 @@ share/gtk-doc/html/tepl-6/tepl-6-TeplPango.html
 share/gtk-doc/html/tepl-6/tepl-6-TeplPrefs.html
 share/gtk-doc/html/tepl-6/tepl-6-TeplSignalGroup.html
 share/gtk-doc/html/tepl-6/tepl-6-TeplUtils.html
-share/gtk-doc/html/tepl-6/tepl-6-TeplWidgetListCategory.html
-share/gtk-doc/html/tepl-6/tepl-6-TeplWidgetListItem.html
 share/gtk-doc/html/tepl-6/tepl-6.devhelp2
 share/gtk-doc/html/tepl-6/up-insensitive.png
 share/gtk-doc/html/tepl-6/up.png
