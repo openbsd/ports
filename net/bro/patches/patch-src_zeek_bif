@@ -1,7 +1,7 @@
 Index: src/zeek.bif
 --- src/zeek.bif.orig
 +++ src/zeek.bif
-@@ -4160,11 +4160,11 @@ static bool mmdb_try_open_loc ()
+@@ -4270,11 +4270,11 @@ static bool mmdb_try_open_loc ()
  		}
  
  	return mmdb_open_loc("/usr/share/GeoIP/GeoLite2-City.mmdb")
@@ -15,7 +15,7 @@ Index: src/zeek.bif
  	    || mmdb_open_loc("/usr/local/share/GeoIP/GeoLite2-Country.mmdb")
  	    || mmdb_open_loc("/usr/local/var/GeoIP/GeoLite2-Country.mmdb");
  	}
-@@ -4183,7 +4183,7 @@ static bool mmdb_try_open_asn ()
+@@ -4293,7 +4293,7 @@ static bool mmdb_try_open_asn ()
  		}
  
  	return mmdb_open_asn("/usr/share/GeoIP/GeoLite2-ASN.mmdb")
