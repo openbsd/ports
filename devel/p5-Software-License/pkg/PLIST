@@ -1,0 +1,70 @@
+${P5SITE}/Software/
+${P5SITE}/Software/License/
+${P5SITE}/Software/License.pm
+${P5SITE}/Software/License/AGPL_3.pm
+${P5SITE}/Software/License/Apache_1_1.pm
+${P5SITE}/Software/License/Apache_2_0.pm
+${P5SITE}/Software/License/Artistic_1_0.pm
+${P5SITE}/Software/License/Artistic_1_0_Perl.pm
+${P5SITE}/Software/License/Artistic_2_0.pm
+${P5SITE}/Software/License/BSD.pm
+${P5SITE}/Software/License/CC0_1_0.pm
+${P5SITE}/Software/License/Custom.pm
+${P5SITE}/Software/License/EUPL_1_1.pm
+${P5SITE}/Software/License/EUPL_1_2.pm
+${P5SITE}/Software/License/FreeBSD.pm
+${P5SITE}/Software/License/GFDL_1_2.pm
+${P5SITE}/Software/License/GFDL_1_3.pm
+${P5SITE}/Software/License/GPL_1.pm
+${P5SITE}/Software/License/GPL_2.pm
+${P5SITE}/Software/License/GPL_3.pm
+${P5SITE}/Software/License/ISC.pm
+${P5SITE}/Software/License/LGPL_2_1.pm
+${P5SITE}/Software/License/LGPL_3_0.pm
+${P5SITE}/Software/License/MIT.pm
+${P5SITE}/Software/License/Mozilla_1_0.pm
+${P5SITE}/Software/License/Mozilla_1_1.pm
+${P5SITE}/Software/License/Mozilla_2_0.pm
+${P5SITE}/Software/License/None.pm
+${P5SITE}/Software/License/OpenSSL.pm
+${P5SITE}/Software/License/Perl_5.pm
+${P5SITE}/Software/License/PostgreSQL.pm
+${P5SITE}/Software/License/QPL_1_0.pm
+${P5SITE}/Software/License/SSLeay.pm
+${P5SITE}/Software/License/Sun.pm
+${P5SITE}/Software/License/Zlib.pm
+${P5SITE}/Software/LicenseUtils.pm
+@man man/man3p/Software::License.3p
+@man man/man3p/Software::License::AGPL_3.3p
+@man man/man3p/Software::License::Apache_1_1.3p
+@man man/man3p/Software::License::Apache_2_0.3p
+@man man/man3p/Software::License::Artistic_1_0.3p
+@man man/man3p/Software::License::Artistic_1_0_Perl.3p
+@man man/man3p/Software::License::Artistic_2_0.3p
+@man man/man3p/Software::License::BSD.3p
+@man man/man3p/Software::License::CC0_1_0.3p
+@man man/man3p/Software::License::Custom.3p
+@man man/man3p/Software::License::EUPL_1_1.3p
+@man man/man3p/Software::License::EUPL_1_2.3p
+@man man/man3p/Software::License::FreeBSD.3p
+@man man/man3p/Software::License::GFDL_1_2.3p
+@man man/man3p/Software::License::GFDL_1_3.3p
+@man man/man3p/Software::License::GPL_1.3p
+@man man/man3p/Software::License::GPL_2.3p
+@man man/man3p/Software::License::GPL_3.3p
+@man man/man3p/Software::License::ISC.3p
+@man man/man3p/Software::License::LGPL_2_1.3p
+@man man/man3p/Software::License::LGPL_3_0.3p
+@man man/man3p/Software::License::MIT.3p
+@man man/man3p/Software::License::Mozilla_1_0.3p
+@man man/man3p/Software::License::Mozilla_1_1.3p
+@man man/man3p/Software::License::Mozilla_2_0.3p
+@man man/man3p/Software::License::None.3p
+@man man/man3p/Software::License::OpenSSL.3p
+@man man/man3p/Software::License::Perl_5.3p
+@man man/man3p/Software::License::PostgreSQL.3p
+@man man/man3p/Software::License::QPL_1_0.3p
+@man man/man3p/Software::License::SSLeay.3p
+@man man/man3p/Software::License::Sun.3p
+@man man/man3p/Software::License::Zlib.3p
+@man man/man3p/Software::LicenseUtils.3p
