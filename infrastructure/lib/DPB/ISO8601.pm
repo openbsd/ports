@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: ISO8601.pm,v 1.1 2023/07/05 09:16:55 espie Exp $
+# $OpenBSD: ISO8601.pm,v 1.2 2023/07/07 14:43:57 espie Exp $
 #
 # Copyright (c) 2023 Marc Espie <espie@openbsd.org>
 #
@@ -92,6 +92,15 @@ sub string2time($class, $ts, $state)
 		$state->fatal("String #1 does not parse as ISO8601 date (YYYY-MM-DDTHH:MM:SSZ)", $ts);
 	}
 	return $result;
+}
+
+sub time2string($class, $ts)
+{
+	my $time = int($ts);
+	my ($sufx, $sec, $min, $hour, $day, $month, $year, @rest) = 
+	    defined $ENV{TZ} ? ('', localtime($ts)) : ('Z', gmtime($ts));
+	return sprintf("%04d-%02d-%02dT%02d:%02d:%02d%s",
+	    $year+1900, $month+1, $day, $hour, $min, $sec, $sufx);
 }
 
 1;

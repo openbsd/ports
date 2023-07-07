@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.150 2023/05/06 05:20:31 espie Exp $
+# $OpenBSD: Engine.pm,v 1.151 2023/07/07 14:43:56 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -51,10 +51,10 @@ sub new($class, $state)
 	    errors => DPB::ErrorList->new,
 	    locks => DPB::LockList->new,
 	    nfslist => DPB::NFSList->new,
-	    ts => Time::HiRes::time(),
 	    built_packages => 0,
 	    requeued => DPB::ListQueue->new,
 	    ignored => DPB::ListQueue->new}, $class;
+	$o->set_current_time;
 	$o->{buildable} = $class->build_subengine_class($state)->new($o, 
 	    $state->builder);
 	$o->{tofetch} = $class->fetch_subengine_class($state)->new($o);
@@ -62,6 +62,24 @@ sub new($class, $state)
 	$o->{log} = $state->logger->append("engine");
 	$o->{stats} = DPB::Stats->new($state);
 	return $o;
+}
+
+sub set_current_time($self)
+{
+	my $ts = Time::HiRes::time();
+	$self->{ts} = $ts;
+	$self->{timestring} = DPB::Util->ts2string($ts);
+	if ($self->{state}->defines('EXTRA_TS')) {
+		require DPB::ISO8601;
+		state $ts2 = 0;
+		state $extra = '';
+		my $ts3 = int($ts);
+		if ($ts2 != $ts3) {
+			$ts2 = $ts3;
+			$extra = DPB::ISO8601->time2string($ts2);
+		}
+		$self->{timestring}.="($extra)";
+	}
 }
 
 sub dump_queue($self, @l)
@@ -130,8 +148,7 @@ sub recheck_errors($self)
 sub log_same_ts($self, $kind, $v = undef, $extra = '')
 {
 	my $fh = $self->{log};
-	my $ts = DPB::Util->ts2string($self->{ts});
-	print $fh "$$\@$ts: $kind";
+	print $fh "$$\@$self->{timestring}: $kind";
 	if (defined $v) {
 		print $fh ": ", $v->logname;
 		if (defined $extra) {
@@ -143,7 +160,7 @@ sub log_same_ts($self, $kind, $v = undef, $extra = '')
 
 sub log($self, @l)
 {
-	$self->{ts} = Time::HiRes::time();
+	$self->set_current_time;
 	$self->log_same_ts(@l);
 }
 
