@@ -10,11 +10,6 @@ lib/gedit/plugins/codecomment.plugin
 lib/gedit/plugins/codecomment.py
 lib/gedit/plugins/colorpicker.plugin
 lib/gedit/plugins/colorpicker.py
-lib/gedit/plugins/colorschemer/
-lib/gedit/plugins/colorschemer.plugin
-lib/gedit/plugins/colorschemer/__init__.py
-lib/gedit/plugins/colorschemer/languages.py
-lib/gedit/plugins/colorschemer/schemer.py
 lib/gedit/plugins/drawspaces.plugin
 lib/gedit/plugins/git/
 lib/gedit/plugins/git.plugin
@@ -50,11 +45,6 @@ lib/gedit/plugins/sessionsaver/store/sessionstore.py
 lib/gedit/plugins/sessionsaver/store/xmlsessionstore.py
 lib/gedit/plugins/sessionsaver/windowactivable.py
 lib/gedit/plugins/smartspaces.plugin
-lib/gedit/plugins/synctex/
-lib/gedit/plugins/synctex.plugin
-lib/gedit/plugins/synctex/__init__.py
-lib/gedit/plugins/synctex/evince_dbus.py
-lib/gedit/plugins/synctex/synctex.py
 lib/gedit/plugins/terminal.plugin
 lib/gedit/plugins/terminal.py
 lib/gedit/plugins/textsize/
@@ -63,9 +53,6 @@ lib/gedit/plugins/textsize/__init__.py
 lib/gedit/plugins/textsize/signals.py
 lib/gedit/plugins/textsize/viewactivatable.py
 lib/gedit/plugins/wordcompletion.plugin
-share/gedit/plugins/colorschemer/
-share/gedit/plugins/colorschemer/ui/
-share/gedit/plugins/colorschemer/ui/schemer.ui
 share/gedit/plugins/sessionsaver/
 share/gedit/plugins/sessionsaver/ui/
 share/gedit/plugins/sessionsaver/ui/sessionsaver.ui
@@ -83,7 +70,6 @@ share/help/C/gedit/join-split-lines.page
 share/help/C/gedit/legal-plugins.xml
 share/help/C/gedit/multi-edit.page
 share/help/C/gedit/session-saver.page
-share/help/C/gedit/synctex.page
 share/help/C/gedit/terminal.page
 share/help/C/gedit/text-size.page
 share/help/C/gedit/word-completion.page
@@ -98,7 +84,6 @@ share/help/ar/gedit/join-split-lines.page
 share/help/ar/gedit/legal-plugins.xml
 share/help/ar/gedit/multi-edit.page
 share/help/ar/gedit/session-saver.page
-share/help/ar/gedit/synctex.page
 share/help/ar/gedit/terminal.page
 share/help/ar/gedit/text-size.page
 share/help/ar/gedit/word-completion.page
@@ -113,7 +98,6 @@ share/help/bg/gedit/join-split-lines.page
 share/help/bg/gedit/legal-plugins.xml
 share/help/bg/gedit/multi-edit.page
 share/help/bg/gedit/session-saver.page
-share/help/bg/gedit/synctex.page
 share/help/bg/gedit/terminal.page
 share/help/bg/gedit/text-size.page
 share/help/bg/gedit/word-completion.page
@@ -128,7 +112,6 @@ share/help/ca/gedit/join-split-lines.page
 share/help/ca/gedit/legal-plugins.xml
 share/help/ca/gedit/multi-edit.page
 share/help/ca/gedit/session-saver.page
-share/help/ca/gedit/synctex.page
 share/help/ca/gedit/terminal.page
 share/help/ca/gedit/text-size.page
 share/help/ca/gedit/word-completion.page
@@ -143,7 +126,6 @@ share/help/cs/gedit/join-split-lines.page
 share/help/cs/gedit/legal-plugins.xml
 share/help/cs/gedit/multi-edit.page
 share/help/cs/gedit/session-saver.page
-share/help/cs/gedit/synctex.page
 share/help/cs/gedit/terminal.page
 share/help/cs/gedit/text-size.page
 share/help/cs/gedit/word-completion.page
@@ -158,7 +140,6 @@ share/help/da/gedit/join-split-lines.page
 share/help/da/gedit/legal-plugins.xml
 share/help/da/gedit/multi-edit.page
 share/help/da/gedit/session-saver.page
-share/help/da/gedit/synctex.page
 share/help/da/gedit/terminal.page
 share/help/da/gedit/text-size.page
 share/help/da/gedit/word-completion.page
@@ -173,7 +154,6 @@ share/help/de/gedit/join-split-lines.page
 share/help/de/gedit/legal-plugins.xml
 share/help/de/gedit/multi-edit.page
 share/help/de/gedit/session-saver.page
-share/help/de/gedit/synctex.page
 share/help/de/gedit/terminal.page
 share/help/de/gedit/text-size.page
 share/help/de/gedit/word-completion.page
@@ -188,7 +168,6 @@ share/help/el/gedit/join-split-lines.page
 share/help/el/gedit/legal-plugins.xml
 share/help/el/gedit/multi-edit.page
 share/help/el/gedit/session-saver.page
-share/help/el/gedit/synctex.page
 share/help/el/gedit/terminal.page
 share/help/el/gedit/text-size.page
 share/help/el/gedit/word-completion.page
@@ -203,7 +182,6 @@ share/help/es/gedit/join-split-lines.page
 share/help/es/gedit/legal-plugins.xml
 share/help/es/gedit/multi-edit.page
 share/help/es/gedit/session-saver.page
-share/help/es/gedit/synctex.page
 share/help/es/gedit/terminal.page
 share/help/es/gedit/text-size.page
 share/help/es/gedit/word-completion.page
@@ -218,7 +196,6 @@ share/help/eu/gedit/join-split-lines.page
 share/help/eu/gedit/legal-plugins.xml
 share/help/eu/gedit/multi-edit.page
 share/help/eu/gedit/session-saver.page
-share/help/eu/gedit/synctex.page
 share/help/eu/gedit/terminal.page
 share/help/eu/gedit/text-size.page
 share/help/eu/gedit/word-completion.page
@@ -233,7 +210,6 @@ share/help/fi/gedit/join-split-lines.page
 share/help/fi/gedit/legal-plugins.xml
 share/help/fi/gedit/multi-edit.page
 share/help/fi/gedit/session-saver.page
-share/help/fi/gedit/synctex.page
 share/help/fi/gedit/terminal.page
 share/help/fi/gedit/text-size.page
 share/help/fi/gedit/word-completion.page
@@ -248,7 +224,6 @@ share/help/fr/gedit/join-split-lines.page
 share/help/fr/gedit/legal-plugins.xml
 share/help/fr/gedit/multi-edit.page
 share/help/fr/gedit/session-saver.page
-share/help/fr/gedit/synctex.page
 share/help/fr/gedit/terminal.page
 share/help/fr/gedit/text-size.page
 share/help/fr/gedit/word-completion.page
@@ -263,7 +238,6 @@ share/help/gl/gedit/join-split-lines.page
 share/help/gl/gedit/legal-plugins.xml
 share/help/gl/gedit/multi-edit.page
 share/help/gl/gedit/session-saver.page
-share/help/gl/gedit/synctex.page
 share/help/gl/gedit/terminal.page
 share/help/gl/gedit/text-size.page
 share/help/gl/gedit/word-completion.page
@@ -278,7 +252,6 @@ share/help/hu/gedit/join-split-lines.page
 share/help/hu/gedit/legal-plugins.xml
 share/help/hu/gedit/multi-edit.page
 share/help/hu/gedit/session-saver.page
-share/help/hu/gedit/synctex.page
 share/help/hu/gedit/terminal.page
 share/help/hu/gedit/text-size.page
 share/help/hu/gedit/word-completion.page
@@ -293,7 +266,6 @@ share/help/it/gedit/join-split-lines.page
 share/help/it/gedit/legal-plugins.xml
 share/help/it/gedit/multi-edit.page
 share/help/it/gedit/session-saver.page
-share/help/it/gedit/synctex.page
 share/help/it/gedit/terminal.page
 share/help/it/gedit/text-size.page
 share/help/it/gedit/word-completion.page
@@ -308,7 +280,6 @@ share/help/ja/gedit/join-split-lines.page
 share/help/ja/gedit/legal-plugins.xml
 share/help/ja/gedit/multi-edit.page
 share/help/ja/gedit/session-saver.page
-share/help/ja/gedit/synctex.page
 share/help/ja/gedit/terminal.page
 share/help/ja/gedit/text-size.page
 share/help/ja/gedit/word-completion.page
@@ -323,7 +294,6 @@ share/help/ko/gedit/join-split-lines.page
 share/help/ko/gedit/legal-plugins.xml
 share/help/ko/gedit/multi-edit.page
 share/help/ko/gedit/session-saver.page
-share/help/ko/gedit/synctex.page
 share/help/ko/gedit/terminal.page
 share/help/ko/gedit/text-size.page
 share/help/ko/gedit/word-completion.page
@@ -338,7 +308,6 @@ share/help/lv/gedit/join-split-lines.page
 share/help/lv/gedit/legal-plugins.xml
 share/help/lv/gedit/multi-edit.page
 share/help/lv/gedit/session-saver.page
-share/help/lv/gedit/synctex.page
 share/help/lv/gedit/terminal.page
 share/help/lv/gedit/text-size.page
 share/help/lv/gedit/word-completion.page
@@ -353,7 +322,6 @@ share/help/oc/gedit/join-split-lines.page
 share/help/oc/gedit/legal-plugins.xml
 share/help/oc/gedit/multi-edit.page
 share/help/oc/gedit/session-saver.page
-share/help/oc/gedit/synctex.page
 share/help/oc/gedit/terminal.page
 share/help/oc/gedit/text-size.page
 share/help/oc/gedit/word-completion.page
@@ -368,7 +336,6 @@ share/help/pl/gedit/join-split-lines.page
 share/help/pl/gedit/legal-plugins.xml
 share/help/pl/gedit/multi-edit.page
 share/help/pl/gedit/session-saver.page
-share/help/pl/gedit/synctex.page
 share/help/pl/gedit/terminal.page
 share/help/pl/gedit/text-size.page
 share/help/pl/gedit/word-completion.page
@@ -383,7 +350,6 @@ share/help/pt_BR/gedit/join-split-lines.page
 share/help/pt_BR/gedit/legal-plugins.xml
 share/help/pt_BR/gedit/multi-edit.page
 share/help/pt_BR/gedit/session-saver.page
-share/help/pt_BR/gedit/synctex.page
 share/help/pt_BR/gedit/terminal.page
 share/help/pt_BR/gedit/text-size.page
 share/help/pt_BR/gedit/word-completion.page
@@ -398,7 +364,6 @@ share/help/ru/gedit/join-split-lines.page
 share/help/ru/gedit/legal-plugins.xml
 share/help/ru/gedit/multi-edit.page
 share/help/ru/gedit/session-saver.page
-share/help/ru/gedit/synctex.page
 share/help/ru/gedit/terminal.page
 share/help/ru/gedit/text-size.page
 share/help/ru/gedit/word-completion.page
@@ -413,7 +378,6 @@ share/help/sl/gedit/join-split-lines.page
 share/help/sl/gedit/legal-plugins.xml
 share/help/sl/gedit/multi-edit.page
 share/help/sl/gedit/session-saver.page
-share/help/sl/gedit/synctex.page
 share/help/sl/gedit/terminal.page
 share/help/sl/gedit/text-size.page
 share/help/sl/gedit/word-completion.page
@@ -428,7 +392,6 @@ share/help/sv/gedit/join-split-lines.page
 share/help/sv/gedit/legal-plugins.xml
 share/help/sv/gedit/multi-edit.page
 share/help/sv/gedit/session-saver.page
-share/help/sv/gedit/synctex.page
 share/help/sv/gedit/terminal.page
 share/help/sv/gedit/text-size.page
 share/help/sv/gedit/word-completion.page
@@ -443,7 +406,6 @@ share/help/te/gedit/join-split-lines.page
 share/help/te/gedit/legal-plugins.xml
 share/help/te/gedit/multi-edit.page
 share/help/te/gedit/session-saver.page
-share/help/te/gedit/synctex.page
 share/help/te/gedit/terminal.page
 share/help/te/gedit/text-size.page
 share/help/te/gedit/word-completion.page
@@ -458,7 +420,6 @@ share/help/th/gedit/join-split-lines.page
 share/help/th/gedit/legal-plugins.xml
 share/help/th/gedit/multi-edit.page
 share/help/th/gedit/session-saver.page
-share/help/th/gedit/synctex.page
 share/help/th/gedit/terminal.page
 share/help/th/gedit/text-size.page
 share/help/th/gedit/word-completion.page
@@ -473,7 +434,6 @@ share/help/uk/gedit/join-split-lines.page
 share/help/uk/gedit/legal-plugins.xml
 share/help/uk/gedit/multi-edit.page
 share/help/uk/gedit/session-saver.page
-share/help/uk/gedit/synctex.page
 share/help/uk/gedit/terminal.page
 share/help/uk/gedit/text-size.page
 share/help/uk/gedit/word-completion.page
@@ -488,7 +448,6 @@ share/help/zh_CN/gedit/join-split-lines.page
 share/help/zh_CN/gedit/legal-plugins.xml
 share/help/zh_CN/gedit/multi-edit.page
 share/help/zh_CN/gedit/session-saver.page
-share/help/zh_CN/gedit/synctex.page
 share/help/zh_CN/gedit/terminal.page
 share/help/zh_CN/gedit/text-size.page
 share/help/zh_CN/gedit/word-completion.page
@@ -503,7 +462,6 @@ share/help/zh_HK/gedit/join-split-lines.page
 share/help/zh_HK/gedit/legal-plugins.xml
 share/help/zh_HK/gedit/multi-edit.page
 share/help/zh_HK/gedit/session-saver.page
-share/help/zh_HK/gedit/synctex.page
 share/help/zh_HK/gedit/terminal.page
 share/help/zh_HK/gedit/text-size.page
 share/help/zh_HK/gedit/word-completion.page
@@ -518,7 +476,6 @@ share/help/zh_TW/gedit/join-split-lines.page
 share/help/zh_TW/gedit/legal-plugins.xml
 share/help/zh_TW/gedit/multi-edit.page
 share/help/zh_TW/gedit/session-saver.page
-share/help/zh_TW/gedit/synctex.page
 share/help/zh_TW/gedit/terminal.page
 share/help/zh_TW/gedit/text-size.page
 share/help/zh_TW/gedit/word-completion.page
@@ -623,13 +580,11 @@ share/metainfo/gedit-bracketcompletion.metainfo.xml
 share/metainfo/gedit-charmap.metainfo.xml
 share/metainfo/gedit-codecomment.metainfo.xml
 share/metainfo/gedit-colorpicker.metainfo.xml
-share/metainfo/gedit-colorschemer.metainfo.xml
 share/metainfo/gedit-drawspaces.metainfo.xml
 share/metainfo/gedit-git.metainfo.xml
 share/metainfo/gedit-joinlines.metainfo.xml
 share/metainfo/gedit-multiedit.metainfo.xml
 share/metainfo/gedit-smartspaces.metainfo.xml
-share/metainfo/gedit-synctex.metainfo.xml
 share/metainfo/gedit-terminal.metainfo.xml
 share/metainfo/gedit-textsize.metainfo.xml
 share/metainfo/gedit-wordcompletion.metainfo.xml
