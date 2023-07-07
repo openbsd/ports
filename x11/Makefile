@@ -156,6 +156,7 @@
      SUBDIR += libfakekey
      SUBDIR += libfm
      SUBDIR += libgdiplus
+     SUBDIR += libgedit-gtksourceview
      SUBDIR += libhandy
      #SUBDIR += libindicator
      #SUBDIR += libappindicator
