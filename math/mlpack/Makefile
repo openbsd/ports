@@ -4,6 +4,7 @@ BROKEN-sparc64 = Exhausts virtual memory
 
 COMMENT-main =	 C++ machine learning library
 COMMENT-python = python bindings to C++ machine learning library
+DPB_PROPERTIES = parallel
 
 V = 		3.4.2
 
