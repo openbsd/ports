@@ -67,6 +67,9 @@ ERRORS +=	"Fatal: unknown BOOTSTRAP_METHOD"
 ONLY_FOR_ARCHS +=	riscv64 powerpc powerpc64 i386 amd64 aarch64
 EXTRA_PARAMS +=		--with-sb-thread
 WANTLIB +=		pthread
+
+# sb-thread on i386 requires i386_set_ldt()
+NOT_FOR_ARCHS +=	i386
 .else
 NOT_FOR_ARCHS +=	aarch64 powerpc64
 EXTRA_PARAMS +=		--without-sb-thread
