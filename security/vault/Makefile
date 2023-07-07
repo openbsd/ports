@@ -1,3 +1,5 @@
+BROKEN-i386=		/usr/local/go/pkg/tool/openbsd_386/link: mapping output file failed: cannot allocate memory
+
 COMMENT=		secure secret storage
 
 VERSION=		1.14.0
