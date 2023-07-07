@@ -266,7 +266,8 @@ COMMENT-gd=		image manipulation extensions for php
 HOMEPAGE-gd=		https://www.php.net/image
 LIB_DEPENDS-gd=		graphics/gd
 WANTLIB-gd+=		${COMPILER_LIBCXX} expat fontconfig freetype \
-			gd iconv jpeg lzma m png pthread tiff webp z zstd
+			gd iconv jpeg lzma m png pthread sharpyuv \
+			tiff webp z zstd
 .if ${BUILD_PACKAGES:M-gd}
 CONFIGURE_ARGS+=	--with-external-gd \
 			--enable-gd=shared \
