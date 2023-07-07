@@ -66,7 +66,6 @@
      SUBDIR += ftgl
      SUBDIR += fyre
      SUBDIR += gd
-     SUBDIR += gdcm
      SUBDIR += gdk-pixbuf-xlib
      SUBDIR += gdk-pixbuf2
      SUBDIR += geeqie
