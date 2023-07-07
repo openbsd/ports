@@ -5,8 +5,9 @@ COMMENT =		open source compiler for Pascal/Object Pascal
 V =			3.2.2
 DISTNAME =		fpcbuild-${V}
 PKGNAME =		fpc-${V}
+REVISION =		0
 
-FPCBOOT-amd64 =		fpcboot-openbsd-amd64-$V-1.tar.gz
+FPCBOOT-amd64 =		fpcboot-openbsd-amd64-$V-2.tar.gz
 FPCBOOT-i386 =		fpcboot-openbsd-i386-$V-1.tar.gz
 
 CATEGORIES =		lang

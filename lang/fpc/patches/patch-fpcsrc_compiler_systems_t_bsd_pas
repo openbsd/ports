@@ -1,0 +1,14 @@
+Index: fpcsrc/compiler/systems/t_bsd.pas
+--- fpcsrc/compiler/systems/t_bsd.pas.orig
++++ fpcsrc/compiler/systems/t_bsd.pas
+@@ -497,6 +497,10 @@ begin
+      not(cs_create_pic in current_settings.moduleswitches) then
+     Info.ExtraOptions:=Info.ExtraOptions+' -nopie';
+ 
++{ Use -znobtcfi on OpenBSD }
++  if (target_info.system in systems_openbsd) then
++    Info.ExtraOptions:=Info.ExtraOptions+' -z nobtcfi';
++
+ { -N seems to be needed on NetBSD/earm }
+   if (target_info.system in [system_arm_netbsd]) then
+     Info.ExtraOptions:=Info.ExtraOptions+' -N';
