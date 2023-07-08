@@ -7,6 +7,7 @@ GH_PROJECT =		web-eid-app
 GH_TAGNAME =		v2.3.1
 DISTFILES =		${GH_DISTFILE}
 PKGNAME-main =		${PKGNAME:S/app/native/}
+REVISION-main =		0
 PKGNAME-chrome =	${PKGNAME:S/app/chrome/}
 
 # TODO: firefox
@@ -78,7 +79,7 @@ post-extract:
 	# replace empty directories with symlinks to prefetched submodules
 .for _submod in EID PCSC MOCK
 	rmdir ${${_submod}_DIR}/
-	ln -s ${${_submod}_SRC}/ ${${_submod}_DIR}
+	mv ${${_submod}_SRC}/ ${${_submod}_DIR}
 .endfor
 
 .include <bsd.port.mk>
