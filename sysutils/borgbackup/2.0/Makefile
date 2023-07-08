@@ -4,6 +4,7 @@ USE_NOEXECONLY=		Yes
 .endif
 
 MODPY_EGG_VERSION =	2.0.0b6
+REVISION =		0
 
 COMPILER_LANGS =	c
 
@@ -14,12 +15,7 @@ BUILD_DEPENDS =		devel/py-pkgconfig${MODPY_FLAVOR} \
 			security/openssl/1.1
 RUN_DEPENDS =		net/py-msgpack${MODPY_FLAVOR} \
 			security/py-argon2-cffi${MODPY_FLAVOR} \
-			sysutils/py-platformdirs${MODPY_FLAVOR}>=3.0.0
+			sysutils/py-platformdirs${MODPY_FLAVOR}>=3.8.1
 TEST_DEPENDS =		devel/py-dateutil${MODPY_FLAVOR}
-
-# XXX Several tests fail because py-platformdirs gives invalid directory.
-# https://github.com/borgbackup/borg/issues/7638
-# https://github.com/platformdirs/platformdirs/issues/190
-TEST_ENV =		XDG_RUNTIME_DIR=${PORTHOME}
 
 .include <bsd.port.mk>
