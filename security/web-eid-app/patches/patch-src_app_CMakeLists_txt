@@ -1,5 +1,6 @@
 - skip firefox files until the extension actually works
 - avoid downloading and shipping the firefox extension, users download it
+  pending "Linux, BSD: Add BUNDLE_XPI option" https://github.com/web-eid/web-eid-app/pull/275
 
 Index: src/app/CMakeLists.txt
 --- src/app/CMakeLists.txt.orig

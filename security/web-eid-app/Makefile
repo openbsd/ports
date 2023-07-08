@@ -2,6 +2,8 @@ COMMENT-main =		native messaging host for Web eID browser extension
 COMMENT-chrome =	chromium extension
 CATEGORIES =		security www
 
+# open "release tarballs with bundled git submodules"
+# https://github.com/web-eid/web-eid-app/issues/274
 GH_ACCOUNT =		web-eid
 GH_PROJECT =		web-eid-app
 GH_TAGNAME =		v2.3.1
