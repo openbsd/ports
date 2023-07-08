@@ -1,6 +1,6 @@
 COMMENT =	character set detector library
 
-MODPY_EGG_VERSION =	3.1.0
+MODPY_EGG_VERSION =	3.2.0
 
 DISTNAME =	charset-normalizer-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
