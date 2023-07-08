@@ -33,4 +33,11 @@ BUILD_DEPENDS=	devel/py-babel${MODPY_FLAVOR} \
 TEST_DEPENDS=	devel/py-mock${MODPY_FLAVOR} \
 		devel/py-twisted${MODPY_FLAVOR}
 
+post-build:
+	cd ${WRKSRC}; sphinx-build -b man doc/sphinx/source build
+
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/build/bpython.1 ${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/build/bpython-config.5 ${PREFIX}/man/man5/
+
 .include <bsd.port.mk>
