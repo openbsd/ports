@@ -1,6 +1,6 @@
 COMMENT=	JVM-based scripting language for web apps (open-source CFML)
 
-V=		5.4.0.80
+V=		5.4.1.8
 DISTNAME=	lucee-$V
 EXTRACT_SUFX=	.war
 
