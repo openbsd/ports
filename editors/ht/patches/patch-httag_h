@@ -1,8 +1,9 @@
 fix arch where char are unsigned by default
 
---- httag.h.orig	Wed Jun 27 22:32:27 2018
-+++ httag.h	Wed Jun 27 22:33:33 2018
-@@ -69,7 +69,7 @@
+Index: httag.h
+--- httag.h.orig
++++ httag.h
+@@ -69,7 +69,7 @@ struct ht_tag_flags {
  } PACKED;
  
  struct ht_tag_flags_s {

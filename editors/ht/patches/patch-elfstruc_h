@@ -1,12 +1,15 @@
---- elfstruc.h.orig	Sun Sep 14 17:55:26 2014
-+++ elfstruc.h	Mon Apr 17 14:17:39 2017
-@@ -374,6 +374,9 @@ struct ELF_SECTION_HEADER64 {
+Index: elfstruc.h
+--- elfstruc.h.orig
++++ elfstruc.h
+@@ -374,6 +374,11 @@ struct ELF_SECTION_HEADER64 {
  #define ELF_PT_GNU_STACK	0x6474e551 /* Indicates stack executability */
  #define ELF_PT_GNU_RELRO	0x6474e552 /* Read-only after relocation    */ 
  #define ELF_PT_PAX_FLAGS	0x65041580 /* Indicates PaX flag markings */
-+#define ELF_PT_OPENBSD_RANDOMIZE	0x65a3dbe6 /* Fill with random data. */
-+#define ELF_PT_OPENBSD_WXNEEDED	0x65a3dbe7 /* Program does W^X violations */
-+#define ELF_PT_OPENBSD_BOOTDATA	0x65a41be6 /* Section for boot arguments */
++#define ELF_PT_OPENBSD_MUTABLE	0x65a3dbe5      /* like bss, but not immutable */
++#define ELF_PT_OPENBSD_RANDOMIZE	0x65a3dbe6      /* fill with random data */
++#define ELF_PT_OPENBSD_WXNEEDED	0x65a3dbe7      /* program performs W^X violations */
++#define ELF_PT_OPENBSD_NOBTCFI	0x65a3dbe8      /* no branch target CFI */
++#define ELF_PT_OPENBSD_BOOTDATA	0x65a41be6      /* section for boot arguments */
  
  struct ELF_PROGRAM_HEADER32 {
  	elf32_word p_type;

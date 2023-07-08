@@ -27,12 +27,14 @@ Index: htelfphs.cc
  	{"offset",		STATICTAG_EDIT_QWORD_VE("00000008")},
  	{"virtual address",	STATICTAG_EDIT_QWORD_VE("00000010")},
  	{"physical address",	STATICTAG_EDIT_QWORD_VE("00000018")},
-@@ -67,6 +67,9 @@ static int_hash elf_ph_type[] =
+@@ -67,6 +67,11 @@ static int_hash elf_ph_type[] =
  	{ELF_PT_GNU_STACK,	"gnu stack"},
  	{ELF_PT_GNU_RELRO,	"gnu relro"},
  	{ELF_PT_PAX_FLAGS,	"pax flags"},
++	{ELF_PT_OPENBSD_MUTABLE,	"openbsd mutable"},
 +	{ELF_PT_OPENBSD_RANDOMIZE,	"openbsd randomize"},
 +	{ELF_PT_OPENBSD_WXNEEDED,	"openbsd wxneeded"},
++	{ELF_PT_OPENBSD_NOBTCFI,	"openbsd nobtcfi"},
 +	{ELF_PT_OPENBSD_BOOTDATA,	"openbsd bootdata"},
  	{0, 0}
  };
