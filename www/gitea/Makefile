@@ -1,9 +1,8 @@
 COMMENT =		compact self-hosted Git service
 
-VERSION =		1.19.3
+VERSION =		1.19.4
 DISTNAME =		gitea-src-${VERSION}
 PKGNAME =		gitea-${VERSION}
-REVISION =		0
 
 MASTER_SITES =		https://github.com/go-gitea/gitea/releases/download/v${VERSION}/
 
