@@ -13,7 +13,6 @@ lib/python${MODPY_VERSION}/site-packages/PIL/DdsImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/EpsImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/ExifTags.py
 lib/python${MODPY_VERSION}/site-packages/PIL/FitsImagePlugin.py
-lib/python${MODPY_VERSION}/site-packages/PIL/FitsStubImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/FliImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/FontFile.py
 lib/python${MODPY_VERSION}/site-packages/PIL/FpxImagePlugin.py
@@ -114,8 +113,6 @@ lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}ExifTags.${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}ExifTags.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}FitsImagePlugin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}FitsImagePlugin.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}FitsStubImagePlugin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}FitsStubImagePlugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}FliImagePlugin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}FliImagePlugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}FontFile.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
