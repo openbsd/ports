@@ -1,8 +1,7 @@
 COMMENT-main=	multimedia communication library (SIP, RTP, ICE, etc)
 COMMENT-pjsua=	lightweight sip client
 
-V=		2.13
-REVISION=	0
+V=		2.13.1
 
 GH_ACCOUNT=	pjsip
 GH_PROJECT=	pjproject
