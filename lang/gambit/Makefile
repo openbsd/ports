@@ -1,7 +1,6 @@
 BROKEN-riscv64=	gsi and gsi-script segfault at startup
 
 COMMENT=	complete, efficient and reliable implementation of Scheme
-DPB_PROPERTIES=	parallel
 
 V=		4.9.4
 REVISION=	0
