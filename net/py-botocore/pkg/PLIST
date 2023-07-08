@@ -80,6 +80,8 @@ lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}tokens.${MODPY
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}tokens.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}translate.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}translate.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}useragent.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}useragent.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}validate.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1734,6 +1736,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/outposts/2019-12-03/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/outposts/2019-12-03/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/outposts/2019-12-03/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/outposts/2019-12-03/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/outposts/2019-12-03/paginators-1.sdk-extras.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/outposts/2019-12-03/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/panorama/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/panorama/2019-07-24/
@@ -2501,6 +2504,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/signers.py
 lib/python${MODPY_VERSION}/site-packages/botocore/stub.py
 lib/python${MODPY_VERSION}/site-packages/botocore/tokens.py
 lib/python${MODPY_VERSION}/site-packages/botocore/translate.py
+lib/python${MODPY_VERSION}/site-packages/botocore/useragent.py
 lib/python${MODPY_VERSION}/site-packages/botocore/utils.py
 lib/python${MODPY_VERSION}/site-packages/botocore/validate.py
 lib/python${MODPY_VERSION}/site-packages/botocore/vendored/
