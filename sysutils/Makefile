@@ -89,6 +89,7 @@
      SUBDIR += dwdiff
      SUBDIR += e2fsprogs
      SUBDIR += ec2-api-tools
+     SUBDIR += efivar
      SUBDIR += entr
      SUBDIR += envconsul
      SUBDIR += eventlog
