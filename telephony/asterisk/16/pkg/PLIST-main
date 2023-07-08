@@ -609,7 +609,7 @@ share/asterisk/static-http/prototype.js
 share/asterisk/third-party/
 share/doc/asterisk/
 share/doc/asterisk/BUGS
-share/doc/asterisk/CHANGES
+share/doc/asterisk/CHANGES.md
 share/doc/asterisk/COPYING
 share/doc/asterisk/CREDITS
 share/doc/asterisk/IAX2-security.pdf
