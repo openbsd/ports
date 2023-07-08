@@ -1,6 +1,6 @@
 COMMENT=	simplified packaging system for Python modules
 
-MODPY_EGG_VERSION=	67.6.1
+MODPY_EGG_VERSION=	68.0.0
 DISTNAME=		setuptools-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 EPOCH=			0
@@ -17,8 +17,7 @@ PERMIT_PACKAGE=		Yes
 MODULES=		lang/python
 
 MODPY_PI=		Yes
-# setuptools is a dependency of py-build, so can't use MODPY_PYBUILD
-MODPY_SETUPTOOLS=	Yes
+MODPY_PYBUILD=		Yes
 MODPY_PYTEST=		Yes
 # test_editable_install.py needs pip_run
 MODPY_PYTEST_ARGS =	setuptools/tests \
@@ -29,6 +28,7 @@ SUBST_VARS+=		MODPY_FLAVOR
 FLAVORS=		python3
 FLAVOR=			python3
 
+BUILD_DEPENDS=		devel/py-wheel${MODPY_FLAVOR}
 TEST_DEPENDS=		devel/py-jaraco-envs${MODPY_FLAVOR} \
 			devel/py-jaraco-path${MODPY_FLAVOR} \
 			devel/py-path${MODPY_FLAVOR} \
