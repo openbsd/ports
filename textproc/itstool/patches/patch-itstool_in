@@ -2,6 +2,9 @@ Bug: https://github.com/itstool/itstool/issues/25
 Bug-Debian: https://bugs.debian.org/912099
 Forwarded: https://github.com/itstool/itstool/issues/25
 
+Bug: https://github.com/itstool/itstool/issues/36
+PR: https://github.com/itstool/itstool/pull/47
+
 Index: itstool.in
 --- itstool.in.orig
 +++ itstool.in
@@ -40,7 +43,16 @@ Index: itstool.in
                  self._xml_err = ''
                  return node
          def scan_node(node):
-@@ -1104,9 +1117,9 @@ class Document (object):
+@@ -1096,6 +1109,8 @@ class Document (object):
+                         child.replaceNode(newnode)
+                     else:
+                         repl = self.get_translated(ph_node, translations, strict=strict, lang=lang)
++                        if repl == ph_node:
++                            repl = repl.copyNode(1)
+                         child.replaceNode(repl)
+                 scan_node(child)
+         try:
+@@ -1104,9 +1119,9 @@ class Document (object):
              if strict:
                  raise
              else:
