@@ -1,6 +1,6 @@
 COMMENT=		implements an XML/HTML/XHTML markup safe string
 
-MODPY_EGG_VERSION=	2.1.2
+MODPY_EGG_VERSION=	2.1.3
 DISTNAME=		MarkupSafe-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
