@@ -3,8 +3,8 @@ ONLY_FOR_ARCHS =	amd64 aarch64
 
 # Don't forget to bump www/firefox-i18n after updates.
 
-MOZILLA_VERSION =	115.0
-MOZILLA_PROFDATA_TASKID=dcc-WyUFQR-YTqMniu6Pow
+MOZILLA_VERSION =	115.0.1
+MOZILLA_PROFDATA_TASKID=Ne47QzUrS7-bKdVbiuXasQ
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
@@ -51,12 +51,7 @@ CONFIGURE_SCRIPT =	${MODPY_BIN} ${WRKSRC}/configure.py
 CONFIGURE_ARGS +=	--prefix=${PREFIX}
 MAKE_ENV +=		BUILD_VERBOSE_LOG="1" CARGOFLAGS="-j${MAKE_JOBS}"
 CONFIGURE_ENV +=	CPPFLAGS=-Wno-backend-plugin
-DSIZE != ulimit -d
-.if ${DSIZE} > 18000000
 CONFIGURE_ENV +=	LDFLAGS=-Wl,--threads=${MAKE_JOBS}
-.else
-CONFIGURE_ENV +=	LDFLAGS=-Wl,--threads=2
-.endif
 
 CONFIGURE_ARGS +=	--enable-release #1386371
 CONFIGURE_ARGS +=	--enable-sandbox
