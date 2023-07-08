@@ -2,7 +2,7 @@ COMMENT =	easy-to-use minimalistic disassembler library
 
 DISTNAME =	udis86-1.7.2
 CATEGORIES =	devel
-REVISION =	8
+REVISION =	9
 
 SHARED_LIBS=	udis86		1.0
 
@@ -18,7 +18,6 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=udis86/}
 WANTLIB +=	c
 
 MODULES =	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 BUILD_DEPENDS =	devel/yasm \
 		textproc/py-sphinx,python3>=4.0.2
