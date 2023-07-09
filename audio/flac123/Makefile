@@ -1,16 +1,13 @@
 COMMENT=		command-line FLAC player
 
-DISTNAME=		flac123-0.0.12
-CATEGORIES=		audio
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=flac-tools/}
-REVISION=		0
+GH_ACCOUNT=		flac123
+GH_PROJECT=		flac123
+GH_TAGNAME=		v2.1.0
 
-HOMEPAGE=		http://flac-tools.sourceforge.net/
+CATEGORIES=		audio
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
-
-DISTFILES=		${DISTNAME}-release.tar.gz
 
 WANTLIB=		FLAC ao c m ogg popt
 LIB_DEPENDS=		audio/flac \
@@ -21,12 +18,9 @@ SEPARATE_BUILD=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-default-audio=sndio
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 
-# prevent autotools rebuild cascade
-post-patch:
-	@touch -r ${WRKSRC}/configure.ac ${WRKSRC}/aclocal.m4
-
-post-install:
-	${INSTALL_MAN} ${FILESDIR}/flac123.1 ${PREFIX}/man/man1
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
