@@ -40,6 +40,7 @@ CONFIGURE_ARGS += -Ddefault_library=both \
 		-Dcfitsio=disabled \
 		-Dexif=disabled \
 		-Dfftw=disabled \
+		-Dfontconfig=disabled \
 		-Dgsf=disabled \
 		-Dheif=disabled \
 		-Djpeg-xl=disabled \
