@@ -23,6 +23,10 @@ MAINTAINER=	Jeremie Courreges-Anglas <jca@wxcvbn.org>
 # LGPLv3+
 PERMIT_PACKAGE=	Yes
 
+# Needs thread-local storage
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 WANTLIB-main=	c pthread
 WANTLIB-python=	intl m pthread tdb util
 # Extra
