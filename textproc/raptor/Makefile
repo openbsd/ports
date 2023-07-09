@@ -13,6 +13,9 @@ MASTER_SITES=		https://download.librdf.org/source/
 # LGPL 2.1+, GPL 2+ or Apache 2+
 PERMIT_PACKAGE=	Yes
 
+# C++
+COMPILER=	base-clang ports-gcc
+
 WANTLIB += ${COMPILER_LIBCXX} c crypto curl iconv icudata icuuc
 WANTLIB += lzma m nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_openssl
 WANTLIB += ssl xml2 xslt yajl z
