@@ -3,6 +3,7 @@ ONLY_FOR_ARCHS=	amd64 aarch64
 COMMENT=	virtual lighttable and darkroom for photographers
 
 V=		4.4.1
+REVISION=	0
 DISTNAME=	darktable-$V
 PORTROACH=	limitw:1,even skipv:release-$V
 EXTRACT_SUFX=	.tar.xz
@@ -47,7 +48,6 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 
 LIB_DEPENDS=	devel/gettext,-runtime \
 		devel/json-glib \
-		devel/libsoup \
 		devel/sdl2 \
 		graphics/exiv2>=0.22 \
 		graphics/GraphicsMagick \
