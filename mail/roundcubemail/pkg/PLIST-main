@@ -311,6 +311,7 @@ roundcubemail/plugins/acl/localization/th_TH.inc
 roundcubemail/plugins/acl/localization/ti.inc
 roundcubemail/plugins/acl/localization/tr_TR.inc
 roundcubemail/plugins/acl/localization/tzl.inc
+roundcubemail/plugins/acl/localization/ug.inc
 roundcubemail/plugins/acl/localization/uk_UA.inc
 roundcubemail/plugins/acl/localization/uz.inc
 roundcubemail/plugins/acl/localization/vi_VN.inc
@@ -409,6 +410,7 @@ roundcubemail/plugins/archive/localization/ta_IN.inc
 roundcubemail/plugins/archive/localization/th_TH.inc
 roundcubemail/plugins/archive/localization/tr_TR.inc
 roundcubemail/plugins/archive/localization/tzl.inc
+roundcubemail/plugins/archive/localization/ug.inc
 roundcubemail/plugins/archive/localization/uk_UA.inc
 roundcubemail/plugins/archive/localization/uz.inc
 roundcubemail/plugins/archive/localization/vi_VN.inc
@@ -472,6 +474,7 @@ roundcubemail/plugins/attachment_reminder/localization/mk_MK.inc
 roundcubemail/plugins/attachment_reminder/localization/ml_IN.inc
 roundcubemail/plugins/attachment_reminder/localization/mn_MN.inc
 roundcubemail/plugins/attachment_reminder/localization/nb_NO.inc
+roundcubemail/plugins/attachment_reminder/localization/nl_BE.inc
 roundcubemail/plugins/attachment_reminder/localization/nl_NL.inc
 roundcubemail/plugins/attachment_reminder/localization/pl_PL.inc
 roundcubemail/plugins/attachment_reminder/localization/pt_BR.inc
@@ -484,6 +487,7 @@ roundcubemail/plugins/attachment_reminder/localization/sq_AL.inc
 roundcubemail/plugins/attachment_reminder/localization/sr_CS.inc
 roundcubemail/plugins/attachment_reminder/localization/sv_SE.inc
 roundcubemail/plugins/attachment_reminder/localization/tr_TR.inc
+roundcubemail/plugins/attachment_reminder/localization/ug.inc
 roundcubemail/plugins/attachment_reminder/localization/uk_UA.inc
 roundcubemail/plugins/attachment_reminder/localization/uz.inc
 roundcubemail/plugins/attachment_reminder/localization/vi_VN.inc
@@ -560,6 +564,7 @@ roundcubemail/plugins/emoticons/localization/sq_AL.inc
 roundcubemail/plugins/emoticons/localization/sr_CS.inc
 roundcubemail/plugins/emoticons/localization/sv_SE.inc
 roundcubemail/plugins/emoticons/localization/tr_TR.inc
+roundcubemail/plugins/emoticons/localization/ug.inc
 roundcubemail/plugins/emoticons/localization/uk_UA.inc
 roundcubemail/plugins/emoticons/localization/uz.inc
 roundcubemail/plugins/emoticons/localization/zh_CN.inc
@@ -667,6 +672,7 @@ roundcubemail/plugins/enigma/localization/th_TH.inc
 roundcubemail/plugins/enigma/localization/ti.inc
 roundcubemail/plugins/enigma/localization/tr_TR.inc
 roundcubemail/plugins/enigma/localization/tzl.inc
+roundcubemail/plugins/enigma/localization/ug.inc
 roundcubemail/plugins/enigma/localization/uk_UA.inc
 roundcubemail/plugins/enigma/localization/ur_PK.inc
 roundcubemail/plugins/enigma/localization/uz.inc
@@ -771,6 +777,7 @@ roundcubemail/plugins/help/localization/th_TH.inc
 roundcubemail/plugins/help/localization/ti.inc
 roundcubemail/plugins/help/localization/tr_TR.inc
 roundcubemail/plugins/help/localization/tzl.inc
+roundcubemail/plugins/help/localization/ug.inc
 roundcubemail/plugins/help/localization/uk_UA.inc
 roundcubemail/plugins/help/localization/uz.inc
 roundcubemail/plugins/help/localization/vi_VN.inc
@@ -859,6 +866,7 @@ roundcubemail/plugins/hide_blockquote/localization/sv_SE.inc
 roundcubemail/plugins/hide_blockquote/localization/th_TH.inc
 roundcubemail/plugins/hide_blockquote/localization/tr_TR.inc
 roundcubemail/plugins/hide_blockquote/localization/tzl.inc
+roundcubemail/plugins/hide_blockquote/localization/ug.inc
 roundcubemail/plugins/hide_blockquote/localization/uk_UA.inc
 roundcubemail/plugins/hide_blockquote/localization/ur_PK.inc
 roundcubemail/plugins/hide_blockquote/localization/uz.inc
@@ -1097,6 +1105,7 @@ roundcubemail/plugins/managesieve/localization/th_TH.inc
 roundcubemail/plugins/managesieve/localization/ti.inc
 roundcubemail/plugins/managesieve/localization/tr_TR.inc
 roundcubemail/plugins/managesieve/localization/tzl.inc
+roundcubemail/plugins/managesieve/localization/ug.inc
 roundcubemail/plugins/managesieve/localization/uk_UA.inc
 roundcubemail/plugins/managesieve/localization/ur_PK.inc
 roundcubemail/plugins/managesieve/localization/uz.inc
@@ -1157,6 +1166,7 @@ roundcubemail/plugins/markasjunk/localization/is_IS.inc
 roundcubemail/plugins/markasjunk/localization/it_IT.inc
 roundcubemail/plugins/markasjunk/localization/ja_JP.inc
 roundcubemail/plugins/markasjunk/localization/ko_KR.inc
+roundcubemail/plugins/markasjunk/localization/ku.inc
 roundcubemail/plugins/markasjunk/localization/lt_LT.inc
 roundcubemail/plugins/markasjunk/localization/lv_LV.inc
 roundcubemail/plugins/markasjunk/localization/nb_NO.inc
@@ -1169,6 +1179,7 @@ roundcubemail/plugins/markasjunk/localization/sk_SK.inc
 roundcubemail/plugins/markasjunk/localization/sq_AL.inc
 roundcubemail/plugins/markasjunk/localization/sv_SE.inc
 roundcubemail/plugins/markasjunk/localization/tr_TR.inc
+roundcubemail/plugins/markasjunk/localization/ug.inc
 roundcubemail/plugins/markasjunk/localization/zh_TW.inc
 roundcubemail/plugins/markasjunk/markasjunk.js
 roundcubemail/plugins/markasjunk/markasjunk.min.js
@@ -1245,6 +1256,7 @@ roundcubemail/plugins/new_user_dialog/localization/sr_CS.inc
 roundcubemail/plugins/new_user_dialog/localization/sv_SE.inc
 roundcubemail/plugins/new_user_dialog/localization/th_TH.inc
 roundcubemail/plugins/new_user_dialog/localization/tr_TR.inc
+roundcubemail/plugins/new_user_dialog/localization/ug.inc
 roundcubemail/plugins/new_user_dialog/localization/uk_UA.inc
 roundcubemail/plugins/new_user_dialog/localization/vi_VN.inc
 roundcubemail/plugins/new_user_dialog/localization/zh_CN.inc
@@ -1330,6 +1342,7 @@ roundcubemail/plugins/newmail_notifier/localization/sv_SE.inc
 roundcubemail/plugins/newmail_notifier/localization/th_TH.inc
 roundcubemail/plugins/newmail_notifier/localization/ti.inc
 roundcubemail/plugins/newmail_notifier/localization/tr_TR.inc
+roundcubemail/plugins/newmail_notifier/localization/ug.inc
 roundcubemail/plugins/newmail_notifier/localization/uk_UA.inc
 roundcubemail/plugins/newmail_notifier/localization/uz.inc
 roundcubemail/plugins/newmail_notifier/localization/vi_VN.inc
@@ -1457,6 +1470,7 @@ roundcubemail/plugins/password/localization/sv_SE.inc
 roundcubemail/plugins/password/localization/th_TH.inc
 roundcubemail/plugins/password/localization/ti.inc
 roundcubemail/plugins/password/localization/tr_TR.inc
+roundcubemail/plugins/password/localization/ug.inc
 roundcubemail/plugins/password/localization/uk_UA.inc
 roundcubemail/plugins/password/localization/uz.inc
 roundcubemail/plugins/password/localization/vi_VN.inc
@@ -1553,6 +1567,7 @@ roundcubemail/plugins/subscriptions_option/localization/sr_CS.inc
 roundcubemail/plugins/subscriptions_option/localization/sv_SE.inc
 roundcubemail/plugins/subscriptions_option/localization/th_TH.inc
 roundcubemail/plugins/subscriptions_option/localization/tr_TR.inc
+roundcubemail/plugins/subscriptions_option/localization/ug.inc
 roundcubemail/plugins/subscriptions_option/localization/uk_UA.inc
 roundcubemail/plugins/subscriptions_option/localization/uz.inc
 roundcubemail/plugins/subscriptions_option/localization/vi_VN.inc
@@ -1631,6 +1646,7 @@ roundcubemail/plugins/userinfo/localization/sv_SE.inc
 roundcubemail/plugins/userinfo/localization/th_TH.inc
 roundcubemail/plugins/userinfo/localization/ti.inc
 roundcubemail/plugins/userinfo/localization/tr_TR.inc
+roundcubemail/plugins/userinfo/localization/ug.inc
 roundcubemail/plugins/userinfo/localization/uk_UA.inc
 roundcubemail/plugins/userinfo/localization/uz.inc
 roundcubemail/plugins/userinfo/localization/vi_VN.inc
@@ -1706,6 +1722,7 @@ roundcubemail/plugins/vcard_attachments/localization/sr_CS.inc
 roundcubemail/plugins/vcard_attachments/localization/sv_SE.inc
 roundcubemail/plugins/vcard_attachments/localization/th_TH.inc
 roundcubemail/plugins/vcard_attachments/localization/tr_TR.inc
+roundcubemail/plugins/vcard_attachments/localization/ug.inc
 roundcubemail/plugins/vcard_attachments/localization/uk_UA.inc
 roundcubemail/plugins/vcard_attachments/localization/uz.inc
 roundcubemail/plugins/vcard_attachments/localization/vi_VN.inc
@@ -1792,6 +1809,7 @@ roundcubemail/plugins/zipdownload/localization/sr_CS.inc
 roundcubemail/plugins/zipdownload/localization/sv_SE.inc
 roundcubemail/plugins/zipdownload/localization/th_TH.inc
 roundcubemail/plugins/zipdownload/localization/tr_TR.inc
+roundcubemail/plugins/zipdownload/localization/ug.inc
 roundcubemail/plugins/zipdownload/localization/uk_UA.inc
 roundcubemail/plugins/zipdownload/localization/uz.inc
 roundcubemail/plugins/zipdownload/localization/vi_VN.inc
@@ -2383,6 +2401,7 @@ roundcubemail/program/localization/ka_GE/labels.inc
 roundcubemail/program/localization/ka_GE/messages.inc
 roundcubemail/program/localization/kab/
 roundcubemail/program/localization/kab/labels.inc
+roundcubemail/program/localization/kab/messages.inc
 roundcubemail/program/localization/km_KH/
 roundcubemail/program/localization/km_KH/labels.inc
 roundcubemail/program/localization/km_KH/messages.inc
@@ -2746,6 +2765,7 @@ roundcubemail/vendor/composer/autoload_static.php
 roundcubemail/vendor/composer/include_paths.php
 roundcubemail/vendor/composer/installed.json
 roundcubemail/vendor/composer/installed.php
+roundcubemail/vendor/composer/platform_check.php
 roundcubemail/vendor/dasprid/
 roundcubemail/vendor/dasprid/enum/
 roundcubemail/vendor/dasprid/enum/LICENSE
@@ -2837,8 +2857,13 @@ roundcubemail/vendor/guzzlehttp/promises/src/RejectionException.php
 roundcubemail/vendor/guzzlehttp/promises/src/TaskQueue.php
 roundcubemail/vendor/guzzlehttp/promises/src/TaskQueueInterface.php
 roundcubemail/vendor/guzzlehttp/promises/src/Utils.php
-roundcubemail/vendor/guzzlehttp/promises/src/functions.php
-roundcubemail/vendor/guzzlehttp/promises/src/functions_include.php
+roundcubemail/vendor/guzzlehttp/promises/vendor-bin/
+roundcubemail/vendor/guzzlehttp/promises/vendor-bin/php-cs-fixer/
+roundcubemail/vendor/guzzlehttp/promises/vendor-bin/php-cs-fixer/composer.json
+roundcubemail/vendor/guzzlehttp/promises/vendor-bin/phpstan/
+roundcubemail/vendor/guzzlehttp/promises/vendor-bin/phpstan/composer.json
+roundcubemail/vendor/guzzlehttp/promises/vendor-bin/psalm/
+roundcubemail/vendor/guzzlehttp/promises/vendor-bin/psalm/composer.json
 roundcubemail/vendor/guzzlehttp/psr7/
 roundcubemail/vendor/guzzlehttp/psr7/CHANGELOG.md
 roundcubemail/vendor/guzzlehttp/psr7/LICENSE
@@ -2978,6 +3003,7 @@ roundcubemail/vendor/pear/console_commandline/README.rst
 roundcubemail/vendor/pear/console_commandline/composer.json
 roundcubemail/vendor/pear/console_commandline/data/
 roundcubemail/vendor/pear/console_commandline/data/xmlschema.rng
+roundcubemail/vendor/pear/console_commandline/phpunit.xml
 roundcubemail/vendor/pear/console_getopt/
 roundcubemail/vendor/pear/console_getopt/Console/
 roundcubemail/vendor/pear/console_getopt/Console/Getopt.php
@@ -3072,7 +3098,6 @@ roundcubemail/vendor/psr/http-client/src/ClientInterface.php
 roundcubemail/vendor/psr/http-client/src/NetworkExceptionInterface.php
 roundcubemail/vendor/psr/http-client/src/RequestExceptionInterface.php
 roundcubemail/vendor/psr/http-factory/
-roundcubemail/vendor/psr/http-factory/.pullapprove.yml
 roundcubemail/vendor/psr/http-factory/LICENSE
 roundcubemail/vendor/psr/http-factory/README.md
 roundcubemail/vendor/psr/http-factory/composer.json
@@ -3088,6 +3113,9 @@ roundcubemail/vendor/psr/http-message/CHANGELOG.md
 roundcubemail/vendor/psr/http-message/LICENSE
 roundcubemail/vendor/psr/http-message/README.md
 roundcubemail/vendor/psr/http-message/composer.json
+roundcubemail/vendor/psr/http-message/docs/
+roundcubemail/vendor/psr/http-message/docs/PSR7-Interfaces.md
+roundcubemail/vendor/psr/http-message/docs/PSR7-Usage.md
 roundcubemail/vendor/psr/http-message/src/
 roundcubemail/vendor/psr/http-message/src/MessageInterface.php
 roundcubemail/vendor/psr/http-message/src/RequestInterface.php
