@@ -15,6 +15,7 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/INSTALL.txt
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/ISSUES.txt
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/README.mkd
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/README.txt
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/SABnzbd.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sabnzbd/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/${MODPY_PYCACHE}SABnzbd.${MODPY_PYC_MAGIC_TAG}pyc
