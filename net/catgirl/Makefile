@@ -1,6 +1,5 @@
 COMMENT =	curses TLS-only IRC client
-DISTNAME =	catgirl-2.1
-REVISION =	1
+DISTNAME =	catgirl-2.2
 
 CATEGORIES =	net
 
