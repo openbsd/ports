@@ -1,7 +1,6 @@
 COMMENT=	XMPP real time collaboration server
-V=		4.2.3
-REVISION=	2
-DISTNAME=	openfire_src_${V:S/./_/g}
+V=		4.6.8
+DISTNAME=	openfire_${V:S/./_/g}
 PKGNAME=	openfire-$V
 CATEGORIES=	net
 
@@ -9,46 +8,44 @@ MASTER_SITES=	https://www.igniterealtime.org/downloadServlet?filename=openfire/
 
 HOMEPAGE=	https://www.igniterealtime.org/projects/openfire/index.jsp
 
+MAINTAINER=	Ian Darwin <ian@openbsd.org>
+
 # ASL 2.0
 PERMIT_PACKAGE=	Yes
 
+NO_BUILD=	yes
 NO_TEST=	yes
 
 MODULES=	java
-MODJAVA_VER=	1.8
+MODJAVA_VER=	17
 MODJAVA_JRE=	Yes
-MODJAVA_BUILD=	ant
 
 RUN_DEPENDS=	java/javaPathHelper
 
-WRKDIST=	${WRKDIR}/openfire_src
-WRKSRC=		${WRKDIST}/build
+WRKDIST=	${WRKDIR}/openfire
 
 OPENFIREDEST=	${PREFIX}/openfire
-DATADIRS=	lib logs plugins resources
-
-pre-install:
-	rm -rf ${WRKDIST}/target/openfire/resources/nativeAuth
-	mv ${WRKDIST}/target/openfire/resources/security ${WRKBUILD}
+DATADIRS=	lib plugins resources
+DOCDIRS=	documentation
 
 do-install:
-	cd ${WRKDIST}/target/openfire && \
+	rm -rf ${WRKDIST}/resources/nativeAuth
+	cd ${WRKDIST} && \
 		find ${DATADIRS} -type d \
 			-exec ${INSTALL_DATA_DIR} ${OPENFIREDEST}/{} \; && \
 		find ${DATADIRS} ! -type d \
 			-exec ${INSTALL_DATA} -m 644 {} ${OPENFIREDEST}/{} \;
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/openfire
-	${INSTALL_DATA} ${WRKDIST}/documentation/docs/*-guide.html \
-		${PREFIX}/share/doc/openfire
-	${INSTALL_DATA} ${WRKDIST}/documentation/docs/database.html \
-		${PREFIX}/share/doc/openfire
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/openfire/security
+	cd ${WRKDIST} && \
+		find ${DOCDIRS} -type d \
+			-exec ${INSTALL_DATA_DIR} ${PREFIX}/share/doc/openfire/{} \; && \
+		find ${DOCDIRS}/* ! -type d \
+			-exec ${INSTALL_DATA} -m 644 {} ${PREFIX}/share/doc/openfire \;
+	${INSTALL_DATA_DIR} ${OPENFIREDEST}/logs
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/openfire/
-	${INSTALL_DATA} ${WRKDIST}/target/openfire/conf/openfire.xml \
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/openfire/security
+	${INSTALL_DATA} ${WRKDIST}/conf/openfire.xml \
 		${PREFIX}/share/examples/openfire/
-	${INSTALL_DATA} ${WRKDIST}/target/openfire/conf/security.xml \
+	${INSTALL_DATA} ${WRKDIST}/conf/security.xml \
 		${PREFIX}/share/examples/openfire/
-	${INSTALL_DATA} ${WRKBUILD}/security/* \
-		${PREFIX}/share/examples/openfire/security
 
 .include <bsd.port.mk>

@@ -7,7 +7,7 @@ JAVACMD="$(${LOCALBASE}/bin/javaPathHelper -c openfire)"
 JAVA_HOME="$(${LOCALBASE}/bin/javaPathHelper -h openfire)"
 
 daemon="${JAVACMD}"
-daemon_flags="-server -DopenfireHome=${OPENFIRE_HOME} -Dopenfire.lib.dir=${OPENFIRE_LIB} -jar ${OPENFIRE_LIB}/startup.jar"
+daemon_flags="-server -DopenfireHome=${OPENFIRE_HOME} -Dopenfire.lib.dir=${OPENFIRE_LIB} -Dlog4j.configurationFile=${OPENFIRE_HOME}/lib/log4j2.xml -jar ${OPENFIRE_LIB}/startup.jar"
 daemon_user="_openfire"
 
 . /etc/rc.d/rc.subr

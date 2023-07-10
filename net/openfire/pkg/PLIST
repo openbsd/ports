@@ -12,20 +12,116 @@ openfire/
 @owner
 @group
 openfire/lib/
-openfire/lib/bcpg-jdk15on.jar
-openfire/lib/bcpkix-jdk15on.jar
-openfire/lib/bcprov-jdk15on.jar
-openfire/lib/hsqldb.jar
-openfire/lib/javax.websocket-api.jar
-openfire/lib/jtds.jar
-openfire/lib/log4j.xml
-openfire/lib/mail.jar
-openfire/lib/mysql.jar
-openfire/lib/npn-boot.jar
-openfire/lib/openfire.jar
-openfire/lib/postgres.jar
-openfire/lib/slf4j-log4j12.jar
+openfire/lib/FastInfoset-1.2.16.jar
+openfire/lib/activation-1.1.jar
+openfire/lib/ant-1.10.9.jar
+openfire/lib/ant-launcher-1.10.9.jar
+openfire/lib/apache-el-8.5.54.jar
+openfire/lib/apache-jsp-8.5.54.jar
+openfire/lib/apache-jsp-9.4.35.v20201120.jar
+openfire/lib/asm-9.0.jar
+openfire/lib/asm-analysis-9.0.jar
+openfire/lib/asm-commons-9.0.jar
+openfire/lib/asm-tree-9.0.jar
+openfire/lib/bcpg-jdk15on-1.68.jar
+openfire/lib/bcpkix-jdk15on-1.68.jar
+openfire/lib/bcprov-jdk15on-1.68.jar
+openfire/lib/caffeine-2.7.0.jar
+openfire/lib/checker-qual-3.5.0.jar
+openfire/lib/common-image-3.5.jar
+openfire/lib/common-io-3.5.jar
+openfire/lib/common-lang-3.5.jar
+openfire/lib/commons-codec-1.12.jar
+openfire/lib/commons-dbcp2-2.6.0.jar
+openfire/lib/commons-fileupload-1.4.jar
+openfire/lib/commons-io-2.7.jar
+openfire/lib/commons-lang3-3.9.jar
+openfire/lib/commons-logging-1.2.jar
+openfire/lib/commons-pool2-2.6.2.jar
+openfire/lib/commons-text-1.6.jar
+openfire/lib/dom4j-2.1.3.jar
+openfire/lib/dwr-3.0.2-RELEASE.jar
+openfire/lib/ecj-3.19.0.jar
+openfire/lib/error_prone_annotations-2.3.4.jar
+openfire/lib/failureaccess-1.0.1.jar
+openfire/lib/guava-30.1-jre.jar
+openfire/lib/hsqldb-2.4.1.jar
+openfire/lib/httpclient-4.5.13.jar
+openfire/lib/httpcore-4.4.13.jar
+openfire/lib/i18n-4.6.8.jar
+openfire/lib/imageio-bmp-3.5.jar
+openfire/lib/imageio-core-3.5.jar
+openfire/lib/istack-commons-runtime-3.0.8.jar
+openfire/lib/j2objc-annotations-1.3.jar
+openfire/lib/jakarta.activation-api-1.2.1.jar
+openfire/lib/jakarta.xml.bind-api-2.3.2.jar
+openfire/lib/javassist-3.24.1-GA.jar
+openfire/lib/javax.activation-api-1.2.0.jar
+openfire/lib/javax.annotation-api-1.3.2.jar
+openfire/lib/javax.mail-1.6.2.jar
+openfire/lib/javax.servlet-api-3.1.0.jar
+openfire/lib/jaxb-api-2.3.1.jar
+openfire/lib/jaxb-runtime-2.3.2.jar
+openfire/lib/jaxen-1.2.0.jar
+openfire/lib/jcip-annotations-1.0.jar
+openfire/lib/jcl-over-slf4j-1.7.30.jar
+openfire/lib/jdom2-2.0.6.jar
+openfire/lib/jetty-annotations-9.4.35.v20201120.jar
+openfire/lib/jetty-client-9.4.35.v20201120.jar
+openfire/lib/jetty-continuation-9.4.35.v20201120.jar
+openfire/lib/jetty-http-9.4.35.v20201120.jar
+openfire/lib/jetty-io-9.4.35.v20201120.jar
+openfire/lib/jetty-jmx-9.4.35.v20201120.jar
+openfire/lib/jetty-jndi-9.4.35.v20201120.jar
+openfire/lib/jetty-plus-9.4.35.v20201120.jar
+openfire/lib/jetty-schemas-3.1.2.jar
+openfire/lib/jetty-security-9.4.35.v20201120.jar
+openfire/lib/jetty-server-9.4.35.v20201120.jar
+openfire/lib/jetty-servlet-9.4.35.v20201120.jar
+openfire/lib/jetty-servlets-9.4.35.v20201120.jar
+openfire/lib/jetty-util-9.4.35.v20201120.jar
+openfire/lib/jetty-util-ajax-9.4.35.v20201120.jar
+openfire/lib/jetty-webapp-9.4.35.v20201120.jar
+openfire/lib/jetty-xml-9.4.35.v20201120.jar
+openfire/lib/jmdns-1.0.jar
+openfire/lib/jsmpp-2.3.7.jar
+openfire/lib/jsr305-3.0.2.jar
+openfire/lib/jtds-1.3.1.jar
+openfire/lib/jzlib-1.1.3.jar
+openfire/lib/libidn-1.35.jar
+openfire/lib/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+openfire/lib/log4j-api-2.17.1.jar
+openfire/lib/log4j-core-2.17.1.jar
+openfire/lib/log4j-slf4j-impl-2.17.1.jar
+openfire/lib/log4j2.xml
+openfire/lib/mina-core-2.1.3.jar
+openfire/lib/mina-filter-compression-2.1.3.jar
+openfire/lib/mina-integration-beans-2.1.3.jar
+openfire/lib/mina-integration-jmx-2.1.3.jar
+openfire/lib/mina-integration-ognl-2.1.3.jar
+openfire/lib/mssql-jdbc-7.2.2.jre8.jar
+openfire/lib/mysql-connector-java-8.0.21.jar
+openfire/lib/ognl-3.2.10.jar
+openfire/lib/postgresql-42.2.14.jar
+openfire/lib/protobuf-java-3.11.4.jar
+openfire/lib/rome-1.12.0.jar
+openfire/lib/rome-utils-1.12.0.jar
+openfire/lib/shaj-0.5.jar
+openfire/lib/sitemesh-2.4.2.jar
+openfire/lib/slf4j-api-1.7.30.jar
 openfire/lib/startup.jar
+openfire/lib/stax-ex-1.8.1.jar
+openfire/lib/taglibs-standard-impl-1.2.5.jar
+openfire/lib/taglibs-standard-spec-1.2.5.jar
+openfire/lib/tinder-2.0.0.jar
+openfire/lib/txw2-2.3.2.jar
+openfire/lib/websocket-api-9.4.35.v20201120.jar
+openfire/lib/websocket-client-9.4.35.v20201120.jar
+openfire/lib/websocket-common-9.4.35.v20201120.jar
+openfire/lib/websocket-server-9.4.35.v20201120.jar
+openfire/lib/websocket-servlet-9.4.35.v20201120.jar
+openfire/lib/xmppserver-4.6.8.jar
+openfire/lib/xpp3-1.1.4c.jar
 @mode 770
 @owner root
 @group _openfire
@@ -39,21 +135,22 @@ openfire/plugins/admin/plugin.xml
 openfire/plugins/admin/webapp/
 openfire/plugins/admin/webapp/META-INF/
 openfire/plugins/admin/webapp/META-INF/admin.tld
+openfire/plugins/admin/webapp/META-INF/tags/
+openfire/plugins/admin/webapp/META-INF/tags/admin/
+openfire/plugins/admin/webapp/META-INF/tags/admin/contentBox.tagx
+openfire/plugins/admin/webapp/META-INF/tags/admin/infoBox.tagx
+openfire/plugins/admin/webapp/META-INF/tags/admin/security/
+openfire/plugins/admin/webapp/META-INF/tags/admin/security/identityStoreConfig.tagx
+openfire/plugins/admin/webapp/META-INF/tags/admin/security/trustStoreConfig.tagx
 openfire/plugins/admin/webapp/WEB-INF/
 openfire/plugins/admin/webapp/WEB-INF/admin.tld
 openfire/plugins/admin/webapp/WEB-INF/classes/
 openfire/plugins/admin/webapp/WEB-INF/classes/openfire_init.xml
 openfire/plugins/admin/webapp/WEB-INF/decorators.xml
 openfire/plugins/admin/webapp/WEB-INF/dwr.xml
-openfire/plugins/admin/webapp/WEB-INF/lib/
-openfire/plugins/admin/webapp/WEB-INF/lib/admin-jsp.jar
-openfire/plugins/admin/webapp/WEB-INF/lib/commons-fileupload.jar
-openfire/plugins/admin/webapp/WEB-INF/lib/commons-io.jar
-openfire/plugins/admin/webapp/WEB-INF/lib/dwr.jar
-openfire/plugins/admin/webapp/WEB-INF/lib/readme.txt
-openfire/plugins/admin/webapp/WEB-INF/lib/versions.txt
 openfire/plugins/admin/webapp/WEB-INF/sitemesh.xml
 openfire/plugins/admin/webapp/WEB-INF/web.xml
+openfire/plugins/admin/webapp/decorators/
 openfire/plugins/admin/webapp/favicon.ico
 openfire/plugins/admin/webapp/images/
 openfire/plugins/admin/webapp/images/add-16x16.gif
@@ -134,6 +231,7 @@ openfire/plugins/admin/webapp/images/percent-bar-used-low.gif
 openfire/plugins/admin/webapp/images/plugin-16x16.gif
 openfire/plugins/admin/webapp/images/redlight-24x24.gif
 openfire/plugins/admin/webapp/images/refresh-16x16.gif
+openfire/plugins/admin/webapp/images/search-16x16.png
 openfire/plugins/admin/webapp/images/server-network-24x24.gif
 openfire/plugins/admin/webapp/images/server_16x16.gif
 openfire/plugins/admin/webapp/images/setup-header.png
@@ -207,11 +305,23 @@ openfire/plugins/admin/webapp/js/unittest.js
 openfire/plugins/admin/webapp/setup/
 openfire/plugins/admin/webapp/setup/setup-style.css
 openfire/plugins/admin/webapp/style/
+openfire/plugins/admin/webapp/style/framework/
+openfire/plugins/admin/webapp/style/framework/css/
+openfire/plugins/admin/webapp/style/framework/css/bootstrap.min.css
+openfire/plugins/admin/webapp/style/framework/css/font-awesome.min.css
+openfire/plugins/admin/webapp/style/framework/fonts/
+openfire/plugins/admin/webapp/style/framework/fonts/fontawesome-webfont3e6e.eot
+openfire/plugins/admin/webapp/style/framework/fonts/fontawesome-webfont3e6e.svg
+openfire/plugins/admin/webapp/style/framework/fonts/fontawesome-webfont3e6e.ttf
+openfire/plugins/admin/webapp/style/framework/fonts/fontawesome-webfont3e6e.woff
+openfire/plugins/admin/webapp/style/framework/fonts/fontawesome-webfont3e6e.woff2
+openfire/plugins/admin/webapp/style/framework/fonts/fontawesome-webfontd41d.eot
 openfire/plugins/admin/webapp/style/global.css
 openfire/plugins/admin/webapp/style/ldap.css
 openfire/plugins/admin/webapp/style/lightbox.css
 openfire/plugins/admin/webapp/style/login.css
 openfire/plugins/admin/webapp/style/setup.css
+openfire/plugins/search.jar
 openfire/resources/
 openfire/resources/database/
 openfire/resources/database/openfire_db2.sql
@@ -372,6 +482,54 @@ openfire/resources/database/upgrade/26/openfire_oracle.sql
 openfire/resources/database/upgrade/26/openfire_postgresql.sql
 openfire/resources/database/upgrade/26/openfire_sqlserver.sql
 openfire/resources/database/upgrade/26/openfire_sybase.sql
+openfire/resources/database/upgrade/27/
+openfire/resources/database/upgrade/27/openfire_db2.sql
+openfire/resources/database/upgrade/27/openfire_hsqldb.sql
+openfire/resources/database/upgrade/27/openfire_mysql.sql
+openfire/resources/database/upgrade/27/openfire_oracle.sql
+openfire/resources/database/upgrade/27/openfire_postgresql.sql
+openfire/resources/database/upgrade/27/openfire_sqlserver.sql
+openfire/resources/database/upgrade/27/openfire_sybase.sql
+openfire/resources/database/upgrade/28/
+openfire/resources/database/upgrade/28/openfire_db2.sql
+openfire/resources/database/upgrade/28/openfire_hsqldb.sql
+openfire/resources/database/upgrade/28/openfire_mysql.sql
+openfire/resources/database/upgrade/28/openfire_oracle.sql
+openfire/resources/database/upgrade/28/openfire_postgresql.sql
+openfire/resources/database/upgrade/28/openfire_sqlserver.sql
+openfire/resources/database/upgrade/28/openfire_sybase.sql
+openfire/resources/database/upgrade/29/
+openfire/resources/database/upgrade/29/openfire_db2.sql
+openfire/resources/database/upgrade/29/openfire_hsqldb.sql
+openfire/resources/database/upgrade/29/openfire_mysql.sql
+openfire/resources/database/upgrade/29/openfire_oracle.sql
+openfire/resources/database/upgrade/29/openfire_postgresql.sql
+openfire/resources/database/upgrade/29/openfire_sqlserver.sql
+openfire/resources/database/upgrade/29/openfire_sybase.sql
+openfire/resources/database/upgrade/30/
+openfire/resources/database/upgrade/30/openfire_db2.sql
+openfire/resources/database/upgrade/30/openfire_hsqldb.sql
+openfire/resources/database/upgrade/30/openfire_mysql.sql
+openfire/resources/database/upgrade/30/openfire_oracle.sql
+openfire/resources/database/upgrade/30/openfire_postgresql.sql
+openfire/resources/database/upgrade/30/openfire_sqlserver.sql
+openfire/resources/database/upgrade/30/openfire_sybase.sql
+openfire/resources/database/upgrade/31/
+openfire/resources/database/upgrade/31/openfire_db2.sql
+openfire/resources/database/upgrade/31/openfire_hsqldb.sql
+openfire/resources/database/upgrade/31/openfire_mysql.sql
+openfire/resources/database/upgrade/31/openfire_oracle.sql
+openfire/resources/database/upgrade/31/openfire_postgresql.sql
+openfire/resources/database/upgrade/31/openfire_sqlserver.sql
+openfire/resources/database/upgrade/31/openfire_sybase.sql
+openfire/resources/database/upgrade/32/
+openfire/resources/database/upgrade/32/openfire_db2.sql
+openfire/resources/database/upgrade/32/openfire_hsqldb.sql
+openfire/resources/database/upgrade/32/openfire_mysql.sql
+openfire/resources/database/upgrade/32/openfire_oracle.sql
+openfire/resources/database/upgrade/32/openfire_postgresql.sql
+openfire/resources/database/upgrade/32/openfire_sqlserver.sql
+openfire/resources/database/upgrade/32/openfire_sybase.sql
 openfire/resources/database/upgrade/4/
 openfire/resources/database/upgrade/4/openfire_db2.sql
 openfire/resources/database/upgrade/4/openfire_hsqldb.sql
@@ -420,24 +578,65 @@ openfire/resources/database/upgrade/9/openfire_oracle.sql
 openfire/resources/database/upgrade/9/openfire_postgresql.sql
 openfire/resources/database/upgrade/9/openfire_sqlserver.sql
 openfire/resources/database/upgrade/9/openfire_sybase.sql
+@mode 775
+@owner root
+@group _openfire
+@sample openfire/resources/security/
+@sample openfire/resources/security/archive/
+openfire/resources/security/archive/readme.txt
+@sample openfire/resources/security/client.truststore
+@sample openfire/resources/security/keystore
+@sample openfire/resources/security/truststore
+@mode
+@owner
+@group
 openfire/resources/spank/
 openfire/resources/spank/WEB-INF/
 openfire/resources/spank/WEB-INF/web.xml
 openfire/resources/spank/index.html
 share/doc/openfire/
+share/doc/openfire/LICENSE-dom4j.txt
+share/doc/openfire/LICENSE-jaxen.txt
+share/doc/openfire/LICENSE-xpp3.txt
+share/doc/openfire/VSCode-1.png
+share/doc/openfire/VSCode-2.png
+share/doc/openfire/VSCode-3.png
+share/doc/openfire/VSCode-4.png
+share/doc/openfire/VSCode-5.png
+share/doc/openfire/VSCode-6.png
+share/doc/openfire/VSCode-7.png
+share/doc/openfire/VSCode-8.png
+share/doc/openfire/VSCode-9.png
+share/doc/openfire/active_directory.png
 share/doc/openfire/database-guide.html
 share/doc/openfire/database.html
 share/doc/openfire/db-integration-guide.html
+share/doc/openfire/documentation/
+share/doc/openfire/documentation/images/
+share/doc/openfire/documentation/licenses/
+share/doc/openfire/header_logo.gif
+share/doc/openfire/ide-vscode-setup.html
+share/doc/openfire/index.html
 share/doc/openfire/install-guide.html
+share/doc/openfire/launcher.png
 share/doc/openfire/ldap-guide.html
+share/doc/openfire/openfire.doap
+share/doc/openfire/overlay.html
 share/doc/openfire/pluggable-roster-support-guide.html
 share/doc/openfire/plugin-dev-guide.html
+share/doc/openfire/protocol-support.html
 share/doc/openfire/separating-admin-users-guide.html
+share/doc/openfire/setup_ldap.png
+share/doc/openfire/sitemesh.png
+share/doc/openfire/source-build.html
 share/doc/openfire/ssl-guide.html
+share/doc/openfire/style.css
 share/doc/openfire/translator-guide.html
 share/doc/openfire/upgrade-guide.html
+share/doc/openfire/wildfire-ent-3_2_0-upgrade.html
+share/doc/openfire/wildfire-openfire-upgrade.html
+share/doc/openfire/windows_service.png
 share/doc/pkg-readmes/${PKGSTEM}
-share/examples/openfire/
 @mode 775
 @owner root
 @group _openfire
@@ -445,6 +644,7 @@ share/examples/openfire/
 @mode
 @owner
 @group
+share/examples/openfire/
 share/examples/openfire/openfire.xml
 @mode 660
 @owner root
@@ -454,39 +654,8 @@ share/examples/openfire/openfire.xml
 @owner
 @group
 share/examples/openfire/security/
-@mode 775
-@owner root
-@group _openfire
-@sample openfire/resources/security/
-@mode
-@owner
-@group
 share/examples/openfire/security.xml
 @mode 660
 @owner root
 @group _openfire
 @sample openfire/conf/security.xml
-@mode
-@owner
-@group
-share/examples/openfire/security/client.truststore
-@mode 660
-@owner root
-@group _openfire
-@sample openfire/resources/security/client.truststore
-@mode
-@owner
-@group
-share/examples/openfire/security/keystore
-@mode 660
-@owner root
-@group _openfire
-@sample openfire/resources/security/keystore
-@mode
-@owner
-@group
-share/examples/openfire/security/truststore
-@mode 660
-@owner root
-@group _openfire
-@sample openfire/resources/security/truststore
