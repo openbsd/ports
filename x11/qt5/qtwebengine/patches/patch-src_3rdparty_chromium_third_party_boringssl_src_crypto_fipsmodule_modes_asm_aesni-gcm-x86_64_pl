@@ -1,0 +1,19 @@
+Index: src/3rdparty/chromium/third_party/boringssl/src/crypto/fipsmodule/modes/asm/aesni-gcm-x86_64.pl
+--- src/3rdparty/chromium/third_party/boringssl/src/crypto/fipsmodule/modes/asm/aesni-gcm-x86_64.pl.orig
++++ src/3rdparty/chromium/third_party/boringssl/src/crypto/fipsmodule/modes/asm/aesni-gcm-x86_64.pl
+@@ -983,6 +983,7 @@ ___
+ 
+ $code.=<<___;
+ .align	64
++.rodata
+ .Lbswap_mask:
+ 	.byte	15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0
+ .Lpoly:
+@@ -995,6 +996,7 @@ $code.=<<___;
+ 	.byte	1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+ .asciz	"AES-NI GCM module for x86_64, CRYPTOGAMS by <appro\@openssl.org>"
+ .align	64
++.previous
+ ___
+ if ($win64) {
+ $rec="%rcx";

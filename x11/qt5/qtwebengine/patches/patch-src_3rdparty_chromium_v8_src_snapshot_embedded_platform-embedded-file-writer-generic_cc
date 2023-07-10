@@ -21,7 +21,7 @@ Index: src/3rdparty/chromium/v8/src/snapshot/embedded/platform-embedded-file-wri
    } else {
      fprintf(fp_, ".section .text\n");
    }
-@@ -70,7 +76,17 @@ void PlatformEmbeddedFileWriterGeneric::DeclareSymbolG
+@@ -73,7 +79,17 @@ void PlatformEmbeddedFileWriterGeneric::DeclareSymbolG
  }
  
  void PlatformEmbeddedFileWriterGeneric::AlignToCodeAlignment() {

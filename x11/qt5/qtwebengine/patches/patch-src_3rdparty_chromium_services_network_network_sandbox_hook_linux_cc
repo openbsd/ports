@@ -1,16 +1,25 @@
 Index: src/3rdparty/chromium/services/network/network_sandbox_hook_linux.cc
 --- src/3rdparty/chromium/services/network/network_sandbox_hook_linux.cc.orig
 +++ src/3rdparty/chromium/services/network/network_sandbox_hook_linux.cc
-@@ -14,6 +14,7 @@ using sandbox::syscall_broker::MakeBrokerCommandSet;
+@@ -4,6 +4,8 @@
+ 
+ #include "services/network/network_sandbox_hook_linux.h"
+ #include "sandbox/linux/syscall_broker/broker_command.h"
++#include "sandbox/linux/syscall_broker/broker_file_permission.h"
++#include "sandbox/linux/syscall_broker/broker_file_permission.h"
+ 
+ #include "base/rand_util.h"
+ #include "base/system/sys_info.h"
+@@ -14,6 +16,7 @@ using sandbox::syscall_broker::MakeBrokerCommandSet;
  namespace network {
  
- bool NetworkPreSandboxHook(service_manager::SandboxLinux::Options options) {
+ bool NetworkPreSandboxHook(sandbox::policy::SandboxLinux::Options options) {
 +#if !defined(OS_BSD)
-   auto* instance = service_manager::SandboxLinux::GetInstance();
+   auto* instance = sandbox::policy::SandboxLinux::GetInstance();
  
    // TODO(tsepez): remove universal permission under filesytem root.
-@@ -32,6 +33,7 @@ bool NetworkPreSandboxHook(service_manager::SandboxLin
-       service_manager::SandboxLinux::PreSandboxHook(), options);
+@@ -32,6 +35,7 @@ bool NetworkPreSandboxHook(sandbox::policy::SandboxLin
+       sandbox::policy::SandboxLinux::PreSandboxHook(), options);
  
    instance->EngageNamespaceSandboxIfPossible();
 +#endif

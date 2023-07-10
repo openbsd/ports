@@ -1,12 +1,12 @@
 Index: src/3rdparty/chromium/content/utility/BUILD.gn
 --- src/3rdparty/chromium/content/utility/BUILD.gn.orig
 +++ src/3rdparty/chromium/content/utility/BUILD.gn
-@@ -82,7 +82,7 @@ jumbo_source_set("utility") {
+@@ -85,7 +85,7 @@ jumbo_source_set("utility") {
      deps += [ "//services/proxy_resolver:lib" ]
    }
  
--  if (is_linux && !use_qt) {
-+  if (is_linux && !use_qt && !is_openbsd) {
-     deps += [ "//content/utility/soda:soda_sandbox_hook" ]
+-  if ((is_linux || is_chromeos) && !use_qt) {
++  if ((is_linux || is_chromeos) && !is_openbsd) {
+     deps += [ "//content/utility/speech:speech_recognition_sandbox_hook" ]
    }
  

@@ -1,16 +1,16 @@
 Index: src/3rdparty/chromium/components/crash/content/browser/BUILD.gn
 --- src/3rdparty/chromium/components/crash/content/browser/BUILD.gn.orig
 +++ src/3rdparty/chromium/components/crash/content/browser/BUILD.gn
-@@ -28,7 +28,7 @@ source_set("browser") {
+@@ -35,7 +35,7 @@ source_set("browser") {
      "//content/public/common",
    ]
  
--  if (is_linux || is_android) {
-+  if ((is_linux && !is_openbsd) || is_android) {
+-  if (is_linux || is_chromeos || is_android) {
++  if ((is_linux && !is_openbsd) || is_chromeos || is_android) {
      set_sources_assignment_filter([])
  
      # Want this file on both Linux and Android.
-@@ -42,13 +42,13 @@ source_set("browser") {
+@@ -49,13 +49,13 @@ source_set("browser") {
      deps += [ "//third_party/crashpad/crashpad/client" ]
    }
  

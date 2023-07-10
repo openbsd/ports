@@ -5,8 +5,8 @@ Index: src/3rdparty/chromium/gpu/ipc/service/gpu_memory_buffer_factory.cc
  #include "gpu/ipc/service/gpu_memory_buffer_factory_io_surface.h"
  #endif
  
--#if defined(OS_LINUX) || defined(OS_FUCHSIA)
-+#if defined(OS_LINUX) || defined(OS_FUCHSIA) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_FUCHSIA) || defined(OS_BSD)
  #include "gpu/ipc/service/gpu_memory_buffer_factory_native_pixmap.h"
  #endif
  
@@ -14,8 +14,8 @@ Index: src/3rdparty/chromium/gpu/ipc/service/gpu_memory_buffer_factory.cc
    return std::make_unique<GpuMemoryBufferFactoryIOSurface>();
  #elif defined(OS_ANDROID)
    return std::make_unique<GpuMemoryBufferFactoryAndroidHardwareBuffer>();
--#elif defined(OS_LINUX) || defined(OS_FUCHSIA)
-+#elif defined(OS_LINUX) || defined(OS_FUCHSIA) || defined(OS_BSD)
+-#elif defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
++#elif defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_FUCHSIA) || defined(OS_BSD)
    return std::make_unique<GpuMemoryBufferFactoryNativePixmap>(
        vulkan_context_provider);
  #elif defined(OS_WIN)

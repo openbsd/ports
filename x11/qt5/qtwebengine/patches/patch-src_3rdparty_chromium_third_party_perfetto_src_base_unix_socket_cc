@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/third_party/perfetto/src/base/unix_socket.cc
 --- src/3rdparty/chromium/third_party/perfetto/src/base/unix_socket.cc.orig
 +++ src/3rdparty/chromium/third_party/perfetto/src/base/unix_socket.cc
-@@ -603,7 +603,11 @@ void UnixSocket::ReadPeerCredentials() {
+@@ -627,7 +627,11 @@ void UnixSocket::ReadPeerCredentials() {
  
  #if PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) || \
      PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID)

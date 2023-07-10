@@ -1,0 +1,12 @@
+Index: src/3rdparty/chromium/chrome/browser/printing/print_job_worker.cc
+--- src/3rdparty/chromium/chrome/browser/printing/print_job_worker.cc.orig
++++ src/3rdparty/chromium/chrome/browser/printing/print_job_worker.cc
+@@ -235,7 +235,7 @@ void PrintJobWorker::UpdatePrintSettings(base::Value n
+     crash_key = std::make_unique<crash_keys::ScopedPrinterInfo>(
+         print_backend->GetPrinterDriverInfo(printer_name));
+ 
+-#if defined(OS_LINUX) && defined(USE_CUPS) && !defined(OS_CHROMEOS)
++#if (defined(OS_BSD) || defined(OS_LINUX)) && defined(USE_CUPS) && !defined(OS_CHROMEOS)
+     PrinterBasicInfo basic_info;
+     if (print_backend->GetPrinterBasicInfo(printer_name, &basic_info)) {
+       base::Value advanced_settings(base::Value::Type::DICTIONARY);

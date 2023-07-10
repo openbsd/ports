@@ -1,26 +1,26 @@
 Index: mkspecs/features/functions.prf
 --- mkspecs/features/functions.prf.orig
 +++ mkspecs/features/functions.prf
-@@ -84,6 +84,10 @@ defineReplace(gnWebEngineArgs) {
-         include($$QTWEBENGINE_ROOT/src/buildtools/config/windows.pri)
-         include($$QTWEBENGINE_ROOT/src/core/config/windows.pri)
+@@ -81,6 +81,10 @@ defineReplace(gnWebEngineArgs) {
+         include($$QTWEBENGINE_ROOT/src/buildtools/config/linux.pri)
+         include($$QTWEBENGINE_ROOT/src/core/config/linux.pri)
      }
-+    openbsd: {
++    openbsd {
 +        include($$QTWEBENGINE_ROOT/src/buildtools/config/openbsd.pri)
 +        include($$QTWEBENGINE_ROOT/src/core/config/openbsd.pri)
 +    }
-     isEmpty(gn_args): error(No gn_args found please make sure you have valid configuration.)
-     return($$gn_args)
- }
-@@ -93,6 +97,7 @@ defineReplace(gnPdfArgs) {
+     macos {
+         include($$QTWEBENGINE_ROOT/src/buildtools/config/mac_osx.pri)
+         include($$QTWEBENGINE_ROOT/src/core/config/mac_osx.pri)
+@@ -95,6 +99,7 @@ defineReplace(gnWebEngineArgs) {
+ 
+ defineReplace(gnPdfArgs) {
+     linux: include($$QTWEBENGINE_ROOT/src/buildtools/config/linux.pri)
++    openbsd: include($$QTWEBENGINE_ROOT/src/buildtools/config/opebsd.pri)
      macos: include($$QTWEBENGINE_ROOT/src/buildtools/config/mac_osx.pri)
      ios: include($$QTWEBENGINE_ROOT/src/pdf/config/ios.pri)
      win32: include($$QTWEBENGINE_ROOT/src/buildtools/config/windows.pri)
-+    openbsd: include($$QTWEBENGINE_ROOT/src/buildtools/config/openbsd.pri)
-     include($$QTWEBENGINE_ROOT/src/pdf/config/common.pri)
-     isEmpty(gn_args): error(No gn_args found please make sure you have valid configuration.)
-     return($$gn_args)
-@@ -113,6 +118,7 @@ defineReplace(gnOS) {
+@@ -119,6 +124,7 @@ defineReplace(gnOS) {
      macos: return(mac)
      win32: return(win)
      linux: return(linux)

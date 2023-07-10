@@ -1,0 +1,12 @@
+Index: src/3rdparty/chromium/content/browser/devtools/protocol/system_info_handler.cc
+--- src/3rdparty/chromium/content/browser/devtools/protocol/system_info_handler.cc.orig
++++ src/3rdparty/chromium/content/browser/devtools/protocol/system_info_handler.cc
+@@ -48,7 +48,7 @@ std::unique_ptr<SystemInfo::Size> GfxSizeToSystemInfoS
+ // Linux Debug builds need more time -- see Issue 796437 and 1046598.
+ // Windows builds need more time -- see Issue 873112 and 1004472.
+ #if ((defined(OS_LINUX) || defined(OS_CHROMEOS)) && !defined(NDEBUG)) || \
+-    defined(OS_WIN)
++    defined(OS_WIN) || defined(OS_BSD)
+ const int kGPUInfoWatchdogTimeoutMs = 30000;
+ #else
+ const int kGPUInfoWatchdogTimeoutMs = 5000;

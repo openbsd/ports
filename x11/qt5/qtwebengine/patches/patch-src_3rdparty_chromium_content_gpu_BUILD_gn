@@ -1,0 +1,12 @@
+Index: src/3rdparty/chromium/content/gpu/BUILD.gn
+--- src/3rdparty/chromium/content/gpu/BUILD.gn.orig
++++ src/3rdparty/chromium/content/gpu/BUILD.gn
+@@ -114,7 +114,7 @@ target(link_target_type, "gpu_sources") {
+     deps += [ "//components/metal_util" ]
+   }
+ 
+-  if (use_x11) {
++  if (use_x11 || is_openbsd) {
+     deps += [
+       "//ui/events/platform/x11",
+       "//ui/gfx/linux:gpu_memory_buffer_support_x11",

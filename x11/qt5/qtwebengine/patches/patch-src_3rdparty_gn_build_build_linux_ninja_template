@@ -1,0 +1,12 @@
+Index: src/3rdparty/gn/build/build_linux.ninja.template
+--- src/3rdparty/gn/build/build_linux.ninja.template.orig
++++ src/3rdparty/gn/build/build_linux.ninja.template
+@@ -11,7 +11,7 @@ rule cxx
+   deps = gcc
+ 
+ rule alink_thin
+-  command = rm -f $out && $ar rcsT $out $in
++  command = rm -f $out && $ar rcs $out $in
+   description = AR $out
+ 
+ rule link

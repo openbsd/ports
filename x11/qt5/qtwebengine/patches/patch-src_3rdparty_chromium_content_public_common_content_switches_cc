@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/content/public/common/content_switches.cc
 --- src/3rdparty/chromium/content/public/common/content_switches.cc.orig
 +++ src/3rdparty/chromium/content/public/common/content_switches.cc
-@@ -377,6 +377,8 @@ const char kEnableLowResTiling[] = "enable-low-res-til
+@@ -356,6 +356,8 @@ const char kEnableGpuMemoryBufferVideoFrames[] =
  // builds.
  const char kEnableLogging[]                 = "enable-logging";
  
@@ -10,7 +10,16 @@ Index: src/3rdparty/chromium/content/public/common/content_switches.cc
  // Enables the type, downlinkMax attributes of the NetInfo API. Also, enables
  // triggering of change attribute of the NetInfo API when there is a change in
  // the connection type.
-@@ -1005,7 +1007,7 @@ const char kEnableAggressiveDOMStorageFlushing[] =
+@@ -907,7 +909,7 @@ const char kWebXrRuntimeWMR[] = "windows-mixed-reality
+ const char kDisableAcceleratedVideoDecode[] =
+     "disable-accelerated-video-decode";
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS) && !defined(OS_ANDROID)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS) && !defined(OS_ANDROID)
+ // Enables hardware acceleration of video decoding on linux. (defaults to off)
+ const char kEnableAcceleratedVideoDecode[] = "enable-accelerated-video-decode";
+ #endif
+@@ -971,7 +973,7 @@ const char kEnableAggressiveDOMStorageFlushing[] =
  // Enable indication that browser is controlled by automation.
  const char kEnableAutomation[] = "enable-automation";
  

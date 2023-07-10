@@ -7,10 +7,10 @@ Index: src/3rdparty/chromium/base/threading/platform_thread_posix.cc
  
 -#if !defined(OS_NACL)
 +#if !defined(OS_NACL) && !defined(OS_BSD)
-     // Threads on linux/android may inherit their priority from the thread
-     // where they were created. This explicitly sets the priority of all new
-     // threads.
-@@ -327,6 +327,9 @@ void PlatformThread::SetCurrentThreadPriorityImpl(Thre
+ 
+ #if defined(OS_APPLE)
+     PlatformThread::SetCurrentThreadRealtimePeriodValue(
+@@ -333,6 +333,9 @@ void PlatformThread::SetCurrentThreadPriorityImpl(Thre
  ThreadPriority PlatformThread::GetCurrentThreadPriority() {
  #if defined(OS_NACL)
    NOTIMPLEMENTED();

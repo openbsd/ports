@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/ui/gl/BUILD.gn
 --- src/3rdparty/chromium/ui/gl/BUILD.gn.orig
 +++ src/3rdparty/chromium/ui/gl/BUILD.gn
-@@ -156,8 +156,6 @@ jumbo_component("gl") {
+@@ -159,8 +159,6 @@ jumbo_component("gl") {
      defines += [ "GPU_ENABLE_SERVICE_LOGGING" ]
    }
  
@@ -10,7 +10,7 @@ Index: src/3rdparty/chromium/ui/gl/BUILD.gn
    all_dependent_configs = [ ":gl_config" ]
  
    public_configs = [ "//third_party/khronos:khronos_headers" ]
-@@ -171,7 +169,6 @@ jumbo_component("gl") {
+@@ -174,7 +172,6 @@ jumbo_component("gl") {
    ]
    public_deps = [
      "//base",
@@ -18,7 +18,7 @@ Index: src/3rdparty/chromium/ui/gl/BUILD.gn
      "//ui/events/platform",
      "//ui/gfx",
      "//ui/gfx/geometry",
-@@ -219,7 +216,7 @@ jumbo_component("gl") {
+@@ -224,7 +221,7 @@ jumbo_component("gl") {
        ]
      }
  
@@ -27,7 +27,7 @@ Index: src/3rdparty/chromium/ui/gl/BUILD.gn
        # Windows has USE_EGL but doesn't support base::FileDescriptor.
        # libsync isn't supported or needed on MacOSX.
        # Fuchsia is excluded due to a libsync dependency and because it's
-@@ -375,7 +372,6 @@ jumbo_component("gl") {
+@@ -382,7 +379,6 @@ jumbo_component("gl") {
        data_deps += [
          "//third_party/angle:libEGL",
          "//third_party/angle:libGLESv2",
@@ -35,12 +35,12 @@ Index: src/3rdparty/chromium/ui/gl/BUILD.gn
        ]
        if (enable_swiftshader) {
          data_deps += [ "//third_party/swiftshader" ]
-@@ -624,8 +620,6 @@ test("gl_unittests") {
+@@ -639,8 +635,6 @@ test("gl_unittests") {
      "//ui/platform_window",
      "//ui/platform_window:platform_impls",
    ]
 -
 -  data_deps = [ "//third_party/mesa_headers" ]
  
+   # TODO(https://crbug.com/789065): this must be moved to Ozone.
    if (use_x11) {
-     sources += [ "gl_context_glx_unittest.cc" ]

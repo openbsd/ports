@@ -1,12 +1,12 @@
 Index: src/3rdparty/chromium/base/process/kill.h
 --- src/3rdparty/chromium/base/process/kill.h.orig
 +++ src/3rdparty/chromium/base/process/kill.h
-@@ -118,7 +118,7 @@ BASE_EXPORT TerminationStatus GetTerminationStatus(Pro
+@@ -113,7 +113,7 @@ BASE_EXPORT TerminationStatus GetTerminationStatus(Pro
  BASE_EXPORT TerminationStatus GetKnownDeadTerminationStatus(
      ProcessHandle handle, int* exit_code);
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  // Spawns a thread to wait asynchronously for the child |process| to exit
  // and then reaps it.
  BASE_EXPORT void EnsureProcessGetsReaped(Process process);

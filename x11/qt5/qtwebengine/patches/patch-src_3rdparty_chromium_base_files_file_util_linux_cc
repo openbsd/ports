@@ -1,0 +1,27 @@
+Index: src/3rdparty/chromium/base/files/file_util_linux.cc
+--- src/3rdparty/chromium/base/files/file_util_linux.cc.orig
++++ src/3rdparty/chromium/base/files/file_util_linux.cc
+@@ -5,14 +5,13 @@
+ #include "base/files/file_util.h"
+ 
+ #include <errno.h>
+-#include <linux/magic.h>
+-#include <sys/vfs.h>
+ 
+ #include "base/files/file_path.h"
+ 
+ namespace base {
+ 
+ bool GetFileSystemType(const FilePath& path, FileSystemType* type) {
++  /* XXX OPENBSD FIX
+   struct statfs statfs_buf;
+   if (statfs(path.value().c_str(), &statfs_buf) < 0) {
+     if (errno == ENOENT)
+@@ -57,6 +56,7 @@ bool GetFileSystemType(const FilePath& path, FileSyste
+     default:
+       *type = FILE_SYSTEM_OTHER;
+   }
++    */
+   return true;
+ }
+ 

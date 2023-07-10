@@ -1,18 +1,18 @@
 Index: src/3rdparty/chromium/base/allocator/allocator.gni
 --- src/3rdparty/chromium/base/allocator/allocator.gni.orig
 +++ src/3rdparty/chromium/base/allocator/allocator.gni
-@@ -8,7 +8,7 @@ import("//build/config/sanitizers/sanitizers.gni")
+@@ -7,7 +7,7 @@ import("//build/config/sanitizers/sanitizers.gni")
+ 
  # Temporarily disable tcmalloc on arm64 linux to get rid of compilation errors.
- if (is_android || is_mac || is_ios || is_asan || is_lsan || is_tsan ||
-     is_msan || is_win || is_fuchsia || (is_linux && target_cpu == "arm64") ||
--    (is_cast_audio_only && target_cpu == "arm")) {
-+    (is_cast_audio_only && target_cpu == "arm") || is_openbsd) {
+ if (is_android || is_apple || is_asan || is_lsan || is_tsan || is_msan ||
+-    is_win || is_fuchsia ||
++    is_win || is_fuchsia || is_openbsd ||
+     ((is_linux || is_chromeos) && target_cpu == "arm64") ||
+     (is_cast_audio_only && target_cpu == "arm")) {
    _default_allocator = "none"
- } else {
-   _default_allocator = "tcmalloc"
-@@ -19,7 +19,7 @@ if (is_android || is_mac || is_ios || is_asan || is_ls
+@@ -20,7 +20,7 @@ if (is_android || is_apple || is_asan || is_lsan || is
  # against the debug CRT with "is_nacl=false".
- if ((is_linux || is_android || is_mac ||
+ if ((is_linux || is_chromeos || is_android || is_apple ||
       (is_win && !is_component_build && !is_debug)) && !is_asan && !is_hwasan &&
 -    !is_lsan && !is_tsan && !is_msan) {
 +    !is_lsan && !is_tsan && !is_msan && !is_openbsd) {

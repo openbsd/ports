@@ -1,0 +1,12 @@
+Index: src/3rdparty/chromium/third_party/glfw/src/src/egl_context.c
+--- src/3rdparty/chromium/third_party/glfw/src/src/egl_context.c.orig
++++ src/3rdparty/chromium/third_party/glfw/src/src/egl_context.c
+@@ -655,7 +655,7 @@ GLFWbool _glfwCreateContextEGL(_GLFWwindow* window,
+ #elif defined(_GLFW_WIN32)
+ #elif defined(_GLFW_COCOA)
+ #else
+-            "libGL.so.1",
++            "libGL.so",
+ #endif
+             NULL
+         };

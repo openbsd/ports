@@ -35,8 +35,8 @@ Index: src/3rdparty/chromium/media/capture/video/linux/video_capture_device_fact
      const std::string file_name = ExtractFileNameFromDeviceId(device_id);
      const std::string interface_path =
          base::StringPrintf(kInterfacePathTemplate, file_name.c_str());
-@@ -250,7 +260,7 @@ void VideoCaptureDeviceFactoryLinux::GetSupportedForma
-   GetSupportedFormatsForV4L2BufferType(fd.get(), supported_formats);
+@@ -236,7 +246,7 @@ void VideoCaptureDeviceFactoryLinux::GetDevicesInfo(
+   std::move(callback).Run(std::move(devices_info));
  }
  
 -int VideoCaptureDeviceFactoryLinux::DoIoctl(int fd, int request, void* argp) {

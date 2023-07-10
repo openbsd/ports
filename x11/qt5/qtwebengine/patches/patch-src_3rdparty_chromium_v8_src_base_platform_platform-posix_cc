@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/v8/src/base/platform/platform-posix.cc
 --- src/3rdparty/chromium/v8/src/base/platform/platform-posix.cc.orig
 +++ src/3rdparty/chromium/v8/src/base/platform/platform-posix.cc
-@@ -433,7 +433,7 @@ bool OS::DiscardSystemPages(void* address, size_t size
+@@ -466,7 +466,7 @@ bool OS::DiscardSystemPages(void* address, size_t size
  
  // static
  bool OS::HasLazyCommits() {
@@ -10,12 +10,12 @@ Index: src/3rdparty/chromium/v8/src/base/platform/platform-posix.cc
    return true;
  #else
    // TODO(bbudge) Return true for all POSIX platforms.
-@@ -970,7 +970,7 @@ void Thread::SetThreadLocal(LocalStorageKey key, void*
- // pthread_getattr_np used below is non portable (hence the _np suffix). We
+@@ -1002,7 +1002,7 @@ void Thread::SetThreadLocal(LocalStorageKey key, void*
  // keep this version in POSIX as most Linux-compatible derivatives will
  // support it. MacOS and FreeBSD are different here.
--#if !defined(V8_OS_FREEBSD) && !defined(V8_OS_MACOSX)
-+#if !defined(V8_OS_FREEBSD) && !defined(V8_OS_MACOSX) && !defined(V8_OS_OPENBSD)
+ #if !defined(V8_OS_FREEBSD) && !defined(V8_OS_MACOSX) && !defined(_AIX) && \
+-    !defined(V8_OS_SOLARIS)
++    !defined(V8_OS_SOLARIS) && !defined(V8_OS_OPENBSD)
  
  // static
  void* Stack::GetStackStart() {

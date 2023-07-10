@@ -1,14 +1,14 @@
 Index: src/3rdparty/chromium/media/audio/BUILD.gn
 --- src/3rdparty/chromium/media/audio/BUILD.gn.orig
 +++ src/3rdparty/chromium/media/audio/BUILD.gn
-@@ -230,8 +230,19 @@ source_set("audio") {
+@@ -234,9 +234,20 @@ source_set("audio") {
      ]
    }
  
--  if (is_linux) {
-+  if (is_linux && !is_openbsd) {
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_openbsd) {
      sources += [ "linux/audio_manager_linux.cc" ]
-+  }
+   }
 +
 +  if (is_openbsd) {
 +    libs += [ "sndio" ]
@@ -19,6 +19,7 @@ Index: src/3rdparty/chromium/media/audio/BUILD.gn
 +      "sndio/sndio_output.cc",
 +      "sndio/sndio_output.h"
 +    ]
-   }
++   }
  
    if (use_alsa) {
+     libs += [ "asound" ]

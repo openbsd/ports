@@ -1,0 +1,39 @@
+Index: src/3rdparty/chromium/build/config/clang/BUILD.gn
+--- src/3rdparty/chromium/build/config/clang/BUILD.gn.orig
++++ src/3rdparty/chromium/build/config/clang/BUILD.gn
+@@ -10,21 +10,21 @@ config("find_bad_constructs") {
+ 
+     # The plugin is built directly into clang, so there's no need to load it
+     # dynamically.
+-    cflags += [
+-      "-Xclang",
+-      "-add-plugin",
+-      "-Xclang",
+-      "find-bad-constructs",
+-    ]
++    #cflags += [
++    #  "-Xclang",
++    #  "-add-plugin",
++    #  "-Xclang",
++    #  "find-bad-constructs",
++    #]
+ 
+-    if (is_linux || is_chromeos || is_android || is_fuchsia) {
+-      cflags += [
+-        "-Xclang",
+-        "-plugin-arg-find-bad-constructs",
+-        "-Xclang",
+-        "check-ipc",
+-      ]
+-    }
++    #if ((is_linux || is_chromeos || is_android || is_fuchsia) && !_is_openbsd) {
++    #  cflags += [
++    #    "-Xclang",
++    #    "-plugin-arg-find-bad-constructs",
++    #    "-Xclang",
++    #    "check-ipc",
++    #  ]
++    #}
+   }
+ }
+ 

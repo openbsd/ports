@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/ui/views/controls/label.cc
 --- src/3rdparty/chromium/ui/views/controls/label.cc.orig
 +++ src/3rdparty/chromium/ui/views/controls/label.cc
-@@ -695,7 +695,7 @@ bool Label::OnMousePressed(const ui::MouseEvent& event
+@@ -726,7 +726,7 @@ bool Label::OnMousePressed(const ui::MouseEvent& event
      GetFocusManager()->SetFocusedView(this);
    }
  
@@ -10,7 +10,7 @@ Index: src/3rdparty/chromium/ui/views/controls/label.cc
    if (event.IsOnlyMiddleMouseButton() && GetFocusManager() && !had_focus)
      GetFocusManager()->SetFocusedView(this);
  #endif
-@@ -881,7 +881,7 @@ bool Label::PasteSelectionClipboard() {
+@@ -913,7 +913,7 @@ bool Label::PasteSelectionClipboard() {
  }
  
  void Label::UpdateSelectionClipboard() {

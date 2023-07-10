@@ -1,20 +1,20 @@
-Index: src/3rdparty/chromium/services/service_manager/sandbox/BUILD.gn
---- src/3rdparty/chromium/services/service_manager/sandbox/BUILD.gn.orig
-+++ src/3rdparty/chromium/services/service_manager/sandbox/BUILD.gn
-@@ -26,7 +26,7 @@ component("sandbox") {
-     "//base",
+Index: src/3rdparty/chromium/sandbox/policy/BUILD.gn
+--- src/3rdparty/chromium/sandbox/policy/BUILD.gn.orig
++++ src/3rdparty/chromium/sandbox/policy/BUILD.gn
+@@ -27,7 +27,7 @@ component("policy") {
      "//sandbox:common",
    ]
--  if (is_linux) {
-+  if (is_linux && !is_openbsd) {
+   public_deps = []
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_openbsd) {
      sources += [
        "linux/bpf_audio_policy_linux.cc",
        "linux/bpf_audio_policy_linux.h",
-@@ -74,6 +74,16 @@ component("sandbox") {
-       "//sandbox/linux:seccomp_bpf",
+@@ -76,6 +76,18 @@ component("policy") {
        "//sandbox/linux:suid_sandbox_client",
      ]
-+  }
+   }
++
 +  if (is_openbsd) {
 +    sources += [
 +      "openbsd/sandbox_openbsd.cc",
@@ -24,6 +24,8 @@ Index: src/3rdparty/chromium/services/service_manager/sandbox/BUILD.gn
 +      "//sandbox:sandbox_buildflags",
 +    ]
 +    libs = [ "util" ]
-   }
++  }
++
    if (is_chromeos) {
      sources += [
+       "linux/bpf_ime_policy_linux.cc",

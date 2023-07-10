@@ -1,0 +1,12 @@
+Index: src/3rdparty/chromium/printing/printing_features.h
+--- src/3rdparty/chromium/printing/printing_features.h.orig
++++ src/3rdparty/chromium/printing/printing_features.h
+@@ -38,7 +38,7 @@ PRINTING_EXPORT bool ShouldPrintUsingXps(bool source_i
+ #endif  // defined(OS_WIN)
+ 
+ #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
+-    defined(OS_CHROMEOS)
++    defined(OS_CHROMEOS) || defined(OS_BSD)
+ PRINTING_EXPORT extern const base::Feature kEnableOopPrintDrivers;
+ #endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) ||
+         // defined(OS_CHROMEOS)

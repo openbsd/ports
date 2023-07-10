@@ -1,0 +1,12 @@
+Index: src/3rdparty/chromium/base/files/file_path_watcher_linux.cc
+--- src/3rdparty/chromium/base/files/file_path_watcher_linux.cc.orig
++++ src/3rdparty/chromium/base/files/file_path_watcher_linux.cc
+@@ -7,7 +7,7 @@
+ #include <errno.h>
+ #include <stddef.h>
+ #include <string.h>
+-#include <sys/inotify.h>
++#include <inotify/sys/inotify.h>
+ #include <sys/ioctl.h>
+ #include <sys/select.h>
+ #include <unistd.h>

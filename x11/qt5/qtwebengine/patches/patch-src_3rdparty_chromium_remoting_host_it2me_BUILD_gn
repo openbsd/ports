@@ -1,0 +1,21 @@
+Index: src/3rdparty/chromium/remoting/host/it2me/BUILD.gn
+--- src/3rdparty/chromium/remoting/host/it2me/BUILD.gn.orig
++++ src/3rdparty/chromium/remoting/host/it2me/BUILD.gn
+@@ -59,7 +59,7 @@ source_set("common") {
+     "//remoting/resources",
+     "//remoting/signaling",
+   ]
+-  if (use_gtk) {
++  if (is_openbsd) {
+     deps += [
+       "//build/config/linux/gtk",
+ 
+@@ -238,7 +238,7 @@ if (!is_chromeos && enable_remoting_host) {
+         deps += [ "//third_party/webrtc_overrides:webrtc_component" ]
+       }
+ 
+-      if (use_gtk) {
++      if (is_openbsd) {
+         deps += [ "//build/config/linux/gtk" ]
+       }
+     }

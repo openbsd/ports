@@ -1,12 +1,12 @@
 Index: src/3rdparty/chromium/extensions/browser/browser_context_keyed_service_factories.cc
 --- src/3rdparty/chromium/extensions/browser/browser_context_keyed_service_factories.cc.orig
 +++ src/3rdparty/chromium/extensions/browser/browser_context_keyed_service_factories.cc
-@@ -81,7 +81,7 @@ void EnsureBrowserContextKeyedServiceFactoriesBuilt() 
-   IdleManagerFactory::GetInstance();
- #endif // !defined(TOOLKIT_QT)
-   ManagementAPI::GetFactoryInstance();
--#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_MACOSX)
-+#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_BSD)
+@@ -107,7 +107,7 @@ void EnsureBrowserContextKeyedServiceFactoriesBuilt() 
+   NetworkingConfigServiceFactory::GetInstance();
+ #endif
+ #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_WIN) || \
+-    defined(OS_MAC)
++    defined(OS_MAC) || defined(OS_BSD)
    NetworkingPrivateEventRouterFactory::GetInstance();
  #endif
    PowerAPI::GetFactoryInstance();

@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/third_party/crashpad/crashpad/minidump/minidump_misc_info_writer.cc
 --- src/3rdparty/chromium/third_party/crashpad/crashpad/minidump/minidump_misc_info_writer.cc.orig
 +++ src/3rdparty/chromium/third_party/crashpad/crashpad/minidump/minidump_misc_info_writer.cc
-@@ -110,6 +110,8 @@ std::string MinidumpMiscInfoDebugBuildString() {
+@@ -119,6 +119,8 @@ std::string MinidumpMiscInfoDebugBuildString() {
    static constexpr char kOS[] = "win";
  #elif defined(OS_FUCHSIA)
    static constexpr char kOS[] = "fuchsia";

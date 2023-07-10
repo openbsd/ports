@@ -1,12 +1,12 @@
 Index: src/3rdparty/chromium/content/browser/webui/shared_resources_data_source.cc
 --- src/3rdparty/chromium/content/browser/webui/shared_resources_data_source.cc.orig
 +++ src/3rdparty/chromium/content/browser/webui/shared_resources_data_source.cc
-@@ -131,7 +131,7 @@ const std::map<int, std::string> CreateMojoResourceIdT
-          "mojo/mojo/public/mojom/base/text_direction.mojom.html"},
+@@ -121,7 +121,7 @@ const std::map<int, std::string> CreateMojoResourceIdT
          {IDR_MOJO_TEXT_DIRECTION_MOJOM_LITE_JS,
           "mojo/mojo/public/mojom/base/text_direction.mojom-lite.js"},
--#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
-+#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+ #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
+-    defined(OS_CHROMEOS) || defined(OS_ANDROID)
++    defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_BSD)
          {IDR_MOJO_TIME_MOJOM_HTML,
           "mojo/mojo/public/mojom/base/time.mojom.html"},
          {IDR_MOJO_TIME_MOJOM_LITE_JS,

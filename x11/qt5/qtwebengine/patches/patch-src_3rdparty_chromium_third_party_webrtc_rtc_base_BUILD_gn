@@ -1,12 +1,14 @@
 Index: src/3rdparty/chromium/third_party/webrtc/rtc_base/BUILD.gn
 --- src/3rdparty/chromium/third_party/webrtc/rtc_base/BUILD.gn.orig
 +++ src/3rdparty/chromium/third_party/webrtc/rtc_base/BUILD.gn
-@@ -932,7 +932,7 @@ rtc_library("rtc_base") {
+@@ -1004,9 +1004,8 @@ rtc_library("rtc_base") {
      deps += [ "system:cocoa_threading" ]
    }
  
--  if (is_linux) {
-+  if (is_linux && !is_openbsd) {
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_openbsd) {
      libs += [
-       "dl",
+-      "dl",
        "rt",
+     ]
+   }

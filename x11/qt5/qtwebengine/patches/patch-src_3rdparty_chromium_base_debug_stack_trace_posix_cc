@@ -5,8 +5,8 @@ Index: src/3rdparty/chromium/base/debug/stack_trace_posix.cc
  #include <AvailabilityMacros.h>
  #endif
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  #include "base/debug/proc_maps_linux.h"
  #endif
  

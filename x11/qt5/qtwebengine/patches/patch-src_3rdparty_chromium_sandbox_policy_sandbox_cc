@@ -1,0 +1,23 @@
+Index: src/3rdparty/chromium/sandbox/policy/sandbox.cc
+--- src/3rdparty/chromium/sandbox/policy/sandbox.cc.orig
++++ src/3rdparty/chromium/sandbox/policy/sandbox.cc
+@@ -16,6 +16,10 @@
+ #include "sandbox/policy/linux/sandbox_linux.h"
+ #endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
+ 
++#if defined(OS_BSD)
++#include "sandbox/policy/openbsd/sandbox_openbsd.h"
++#endif  // defined(OS_BSD)
++
+ #if defined(OS_MAC)
+ #include "sandbox/mac/seatbelt.h"
+ #include "sandbox/policy/mac/sandbox_mac.h"
+@@ -30,7 +34,7 @@
+ namespace sandbox {
+ namespace policy {
+ 
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+ bool Sandbox::Initialize(SandboxType sandbox_type,
+                          SandboxLinux::PreSandboxHook hook,
+                          const SandboxLinux::Options& options) {

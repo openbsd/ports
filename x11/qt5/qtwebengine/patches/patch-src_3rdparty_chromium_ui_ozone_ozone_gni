@@ -1,0 +1,18 @@
+Index: src/3rdparty/chromium/ui/ozone/ozone.gni
+--- src/3rdparty/chromium/ui/ozone/ozone.gni.orig
++++ src/3rdparty/chromium/ui/ozone/ozone.gni
+@@ -72,9 +72,13 @@ declare_args() {
+       ozone_platform = "x11"
+       ozone_platform_drm = true
+       ozone_platform_x11 = true
+-    } else if (is_desktop_linux) {
++    } else if (is_desktop_linux && !is_openbsd) {
+       ozone_platform = "x11"
+       ozone_platform_wayland = true
++      ozone_platform_x11 = true
++    } else if (is_openbsd) {
++      ozone_platform = "qt"
++      ozone_platform_wayland = false
+       ozone_platform_x11 = true
+     } else if (is_win) {
+       ozone_platform = "windows"

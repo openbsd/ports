@@ -1,0 +1,21 @@
+Index: src/3rdparty/chromium/ui/gfx/linux/BUILD.gn
+--- src/3rdparty/chromium/ui/gfx/linux/BUILD.gn.orig
++++ src/3rdparty/chromium/ui/gfx/linux/BUILD.gn
+@@ -5,7 +5,7 @@
+ import("//build/config/ui.gni")
+ import("//ui/ozone/ozone.gni")
+ 
+-assert(use_x11 || ozone_platform_drm || ozone_platform_wayland)
++#assert((use_x11 || is_openbsd) || ozone_platform_drm || ozone_platform_wayland)
+ 
+ source_set("drm") {
+   sources = [
+@@ -45,7 +45,7 @@ source_set("gbm") {
+   ]
+ }
+ 
+-if (use_x11) {
++if (use_x11 || is_openbsd) {
+   component("gpu_memory_buffer_support_x11") {
+     sources = [
+       "gpu_memory_buffer_support_x11.cc",

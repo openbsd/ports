@@ -1,30 +1,30 @@
 Index: src/3rdparty/chromium/ui/base/ui_base_features.cc
 --- src/3rdparty/chromium/ui/base/ui_base_features.cc.orig
 +++ src/3rdparty/chromium/ui/base/ui_base_features.cc
-@@ -121,7 +121,7 @@ const base::Feature kPrecisionTouchpadLogging{
-     "PrecisionTouchpadLogging", base::FEATURE_DISABLED_BY_DEFAULT};
+@@ -100,7 +100,7 @@ const base::Feature kCompositorThreadedScrollbarScroll
+ // native apps on Windows.
+ const base::Feature kExperimentalFlingAnimation {
+   "ExperimentalFlingAnimation",
+-#if defined(OS_WIN) || (defined(OS_LINUX) && !defined(OS_CHROMEOS))
++#if defined(OS_WIN) || (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+       base::FEATURE_ENABLED_BY_DEFAULT
+ #else
+       base::FEATURE_DISABLED_BY_DEFAULT
+@@ -133,7 +133,7 @@ const base::Feature kPrecisionTouchpadLogging{
  #endif  // defined(OS_WIN)
  
--#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
-+#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+ #if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || \
+-    defined(OS_CHROMEOS)
++    defined(OS_CHROMEOS) || defined(OS_BSD)
  // Enables stylus appearing as touch when in contact with digitizer.
  const base::Feature kDirectManipulationStylus = {
      "DirectManipulationStylus",
-@@ -131,7 +131,7 @@ const base::Feature kDirectManipulationStylus = {
-     base::FEATURE_DISABLED_BY_DEFAULT
- #endif
- };
--#endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
-+#endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
- 
- // Enables forced colors mode for web content.
- const base::Feature kForcedColors{"ForcedColors",
-@@ -158,7 +158,7 @@ bool IsEyeDropperEnabled() {
+@@ -183,7 +183,7 @@ bool IsCSSColorSchemeUARenderingEnabled() {
  // Mac launch bug.
  const base::Feature kFormControlsRefresh = {"FormControlsRefresh",
  #if defined(OS_WIN) || defined(OS_CHROMEOS) || defined(OS_LINUX) || \
--    defined(OS_MACOSX)
-+    defined(OS_MACOSX) || defined(OS_BSD)
+-    defined(OS_APPLE)
++    defined(OS_APPLE) || defined(OS_BSD)
                                              base::FEATURE_ENABLED_BY_DEFAULT
  #else
                                              base::FEATURE_DISABLED_BY_DEFAULT

@@ -1,0 +1,12 @@
+Index: src/3rdparty/chromium/printing/print_settings.cc
+--- src/3rdparty/chromium/printing/print_settings.cc.orig
++++ src/3rdparty/chromium/printing/print_settings.cc
+@@ -277,7 +277,7 @@ void PrintSettings::Clear() {
+ #endif
+   is_modifiable_ = true;
+   pages_per_sheet_ = 1;
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+   advanced_settings_.clear();
+ #endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
+ #if defined(OS_CHROMEOS)

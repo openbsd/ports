@@ -1,12 +1,12 @@
 Index: src/3rdparty/chromium/third_party/usrsctp/BUILD.gn
 --- src/3rdparty/chromium/third_party/usrsctp/BUILD.gn.orig
 +++ src/3rdparty/chromium/third_party/usrsctp/BUILD.gn
-@@ -121,9 +121,14 @@ static_library("usrsctp") {
+@@ -127,9 +127,14 @@ static_library("usrsctp") {
      "-UINET6",
    ]
  
--  if (is_linux || is_android) {
-+  if ((is_linux && !is_openbsd) || is_android) {
+-  if (is_linux || is_chromeos || is_android) {
++  if ((is_linux || is_chromeos || is_android) && !is_openbsd) {
      defines += [
        "__Userspace_os_Linux",
 +      "_GNU_SOURCE",
@@ -16,4 +16,4 @@ Index: src/3rdparty/chromium/third_party/usrsctp/BUILD.gn
 +      "__Userspace_os_OpenBSD",
        "_GNU_SOURCE",
      ]
-   } else if (is_mac || is_ios) {
+   } else if (is_apple) {

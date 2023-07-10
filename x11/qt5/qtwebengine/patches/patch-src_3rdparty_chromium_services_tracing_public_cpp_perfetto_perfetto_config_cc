@@ -1,12 +1,12 @@
 Index: src/3rdparty/chromium/services/tracing/public/cpp/perfetto/perfetto_config.cc
 --- src/3rdparty/chromium/services/tracing/public/cpp/perfetto/perfetto_config.cc.orig
 +++ src/3rdparty/chromium/services/tracing/public/cpp/perfetto/perfetto_config.cc
-@@ -103,7 +103,7 @@ perfetto::TraceConfig GetDefaultPerfettoConfig(
- // Capture system trace events if supported and enabled. The datasources will
- // only emit events if system tracing is enabled in |chrome_config|.
+@@ -66,7 +66,7 @@ void AddDataSourceConfigs(
+   // Capture system trace events if supported and enabled. The datasources will
+   // only emit events if system tracing is enabled in |chrome_config|.
    if (!privacy_filtering_enabled) {
 -#if defined(OS_CHROMEOS) || (BUILDFLAG(IS_CHROMECAST) && defined(OS_LINUX))
 +#if defined(OS_CHROMEOS) || (BUILDFLAG(IS_CHROMECAST) && defined(OS_LINUX)) || defined(OS_BSD)
-     AddDataSourceConfig(&perfetto_config,
-                         tracing::mojom::kSystemTraceDataSourceName,
-                         chrome_config_string, privacy_filtering_enabled);
+     if (source_names.empty() ||
+         source_names.count(tracing::mojom::kSystemTraceDataSourceName) == 1) {
+       AddDataSourceConfig(perfetto_config,

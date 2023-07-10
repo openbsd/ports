@@ -6,16 +6,16 @@ Index: src/buildtools/config/support.pri
  # this should match webengine-core-support
  defineReplace(qtwebengine_checkWebEngineCoreError) {
 -    !linux:!win32:!macos {
-+    !linux:!win32:!macos!openbsd {
++    !linux:!win32:!macos:!openbsd {
          qtwebengine_skipBuild("QtWebEngine can be built only on Linux, Windows or macOS.")
          return(false)
      }
-@@ -38,7 +38,7 @@ defineReplace(qtwebengine_checkWebEngineCoreError) {
+@@ -39,7 +39,7 @@ defineReplace(qtwebengine_checkWebEngineCoreError) {
  
  # this shuold match webengine-qtpdf-support
  defineReplace(qtwebengine_checkPdfError) {
 -    !linux:!win32:!macos:!ios {
-+    !linux:!win32:!macos:!ios!openbsd {
++    !linux:!win32:!macos:!ios:!openbsd {
          qtwebengine_skipBuild("QtPdf can be built only on Linux, Windows, macOS or iOS.")
          return(false)
      }

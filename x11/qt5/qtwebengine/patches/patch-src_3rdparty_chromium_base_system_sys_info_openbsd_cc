@@ -3,7 +3,7 @@ Index: src/3rdparty/chromium/base/system/sys_info_openbsd.cc
 +++ src/3rdparty/chromium/base/system/sys_info_openbsd.cc
 @@ -12,6 +12,7 @@
  
- #include "base/logging.h"
+ #include "base/notreached.h"
  #include "base/stl_util.h"
 +#include "base/strings/string_util.h"
  

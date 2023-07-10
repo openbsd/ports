@@ -1,39 +1,21 @@
 Index: src/3rdparty/chromium/components/feature_engagement/public/feature_list.h
 --- src/3rdparty/chromium/components/feature_engagement/public/feature_list.h.orig
 +++ src/3rdparty/chromium/components/feature_engagement/public/feature_list.h
-@@ -112,7 +112,7 @@ DEFINE_VARIATION_PARAM(kIPHBadgedTranslateManualTrigge
+@@ -127,7 +127,7 @@ DEFINE_VARIATION_PARAM(kIPHDiscoverFeedHeaderFeature,
  #endif  // defined(OS_IOS)
  
- #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
+ #if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || \
 -    defined(OS_CHROMEOS)
 +    defined(OS_CHROMEOS) || defined(OS_BSD)
+ DEFINE_VARIATION_PARAM(kIPHDesktopTabGroupsNewGroupFeature,
+                        "IPH_DesktopTabGroupsNewGroup");
  DEFINE_VARIATION_PARAM(kIPHFocusModeFeature, "IPH_FocusMode");
- DEFINE_VARIATION_PARAM(kIPHGlobalMediaControls, "IPH_GlobalMediaControls");
- DEFINE_VARIATION_PARAM(kIPHReopenTabFeature, "IPH_ReopenTab");
-@@ -123,7 +123,7 @@ DEFINE_VARIATION_PARAM(kIPHIncognitoWindowFeature, "IP
- DEFINE_VARIATION_PARAM(kIPHNewTabFeature, "IPH_NewTab");
- #endif  // BUILDFLAG(ENABLE_LEGACY_DESKTOP_IN_PRODUCT_HELP)
- #endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) ||
--        // defined(OS_CHROMEOS)
-+        // defined(OS_CHROMEOS) || defined(OS_BSD)
- 
- }  // namespace
- 
-@@ -173,7 +173,7 @@ constexpr flags_ui::FeatureEntry::FeatureVariation
-         VARIATION_ENTRY(kIPHBadgedReadingListFeature),
+@@ -197,7 +197,7 @@ constexpr flags_ui::FeatureEntry::FeatureVariation
          VARIATION_ENTRY(kIPHBadgedTranslateManualTriggerFeature),
- #elif defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
+         VARIATION_ENTRY(kIPHDiscoverFeedHeaderFeature),
+ #elif defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || \
 -    defined(OS_CHROMEOS)
 +    defined(OS_CHROMEOS) || defined(OS_BSD)
+         VARIATION_ENTRY(kIPHDesktopTabGroupsNewGroupFeature),
          VARIATION_ENTRY(kIPHFocusModeFeature),
          VARIATION_ENTRY(kIPHGlobalMediaControls),
-         VARIATION_ENTRY(kIPHReopenTabFeature),
-@@ -184,7 +184,7 @@ constexpr flags_ui::FeatureEntry::FeatureVariation
-         VARIATION_ENTRY(kIPHNewTabFeature),
- #endif  // BUILDFLAG(ENABLE_LEGACY_DESKTOP_IN_PRODUCT_HELP)
- #endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) ||
--        // defined(OS_CHROMEOS)
-+        // defined(OS_CHROMEOS) || defined(OS_BSD)
- };
- 
- #undef DEFINE_VARIATION_PARAM

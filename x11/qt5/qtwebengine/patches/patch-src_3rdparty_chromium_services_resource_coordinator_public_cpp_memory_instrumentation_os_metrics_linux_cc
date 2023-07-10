@@ -1,7 +1,17 @@
 Index: src/3rdparty/chromium/services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics_linux.cc
 --- src/3rdparty/chromium/services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics_linux.cc.orig
 +++ src/3rdparty/chromium/services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics_linux.cc
-@@ -24,8 +24,10 @@
+@@ -5,7 +5,9 @@
+ #include <dlfcn.h>
+ #include <fcntl.h>
+ #include <stdint.h>
++#if !defined(__OpenBSD__)
+ #include <sys/prctl.h>
++#endif
+ 
+ #include <memory>
+ 
+@@ -27,8 +29,10 @@
  #include "build/build_config.h"
  #include "services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics.h"
  
@@ -12,7 +22,7 @@ Index: src/3rdparty/chromium/services/resource_coordinator/public/cpp/memory_ins
  
  namespace memory_instrumentation {
  
-@@ -37,6 +39,7 @@ using mojom::VmRegionPtr;
+@@ -40,6 +44,7 @@ using mojom::VmRegionPtr;
  const char kClearPeakRssCommand[] = "5";
  const uint32_t kMaxLineSize = 4096;
  
@@ -20,15 +30,15 @@ Index: src/3rdparty/chromium/services/resource_coordinator/public/cpp/memory_ins
  // TODO(chiniforooshan): Many of the utility functions in this anonymous
  // namespace should move to base/process/process_metrics_linux.cc to make the
  // code a lot cleaner.  However, we should do so after we made sure the metrics
-@@ -226,6 +229,7 @@ uint32_t ReadLinuxProcSmapsFile(FILE* smaps_file,
-   }
-   return num_valid_regions;
- }
+@@ -269,6 +274,7 @@ class ScopedProcessSetDumpable {
+ 
+   bool was_dumpable_;
+ };
 +#endif
  
  }  // namespace
  
-@@ -239,6 +243,9 @@ void OSMetrics::SetProcSmapsForTesting(FILE* f) {
+@@ -282,6 +288,9 @@ void OSMetrics::SetProcSmapsForTesting(FILE* f) {
  // static
  bool OSMetrics::FillOSMemoryDump(base::ProcessId pid,
                                   mojom::RawOSMemDump* dump) {
@@ -38,7 +48,7 @@ Index: src/3rdparty/chromium/services/resource_coordinator/public/cpp/memory_ins
    // TODO(chiniforooshan): There is no need to read both /statm and /status
    // files. Refactor to get everything from /status using ProcessMetric.
    auto statm_file = GetProcPidDir(pid).Append("statm");
-@@ -291,10 +298,12 @@ bool OSMetrics::FillOSMemoryDump(base::ProcessId pid,
+@@ -338,10 +347,12 @@ bool OSMetrics::FillOSMemoryDump(base::ProcessId pid,
  #endif  //  defined(OS_ANDROID)
  
    return true;
@@ -51,7 +61,7 @@ Index: src/3rdparty/chromium/services/resource_coordinator/public/cpp/memory_ins
    std::vector<VmRegionPtr> maps;
    uint32_t res = 0;
    if (g_proc_smaps_for_testing) {
-@@ -312,8 +321,13 @@ std::vector<VmRegionPtr> OSMetrics::GetProcessMemoryMa
+@@ -359,8 +370,13 @@ std::vector<VmRegionPtr> OSMetrics::GetProcessMemoryMa
      return std::vector<VmRegionPtr>();
  
    return maps;
@@ -65,7 +75,7 @@ Index: src/3rdparty/chromium/services/resource_coordinator/public/cpp/memory_ins
  // static
  OSMetrics::MappedAndResidentPagesDumpState OSMetrics::GetMappedAndResidentPages(
      const size_t start_address,
-@@ -395,5 +409,6 @@ size_t OSMetrics::GetPeakResidentSetSize(base::Process
+@@ -448,5 +464,6 @@ size_t OSMetrics::GetPeakResidentSetSize(base::Process
    }
    return 0;
  }

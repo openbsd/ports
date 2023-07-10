@@ -1,0 +1,12 @@
+Index: src/3rdparty/chromium/base/process/memory.h
+--- src/3rdparty/chromium/base/process/memory.h.orig
++++ src/3rdparty/chromium/base/process/memory.h
+@@ -25,7 +25,7 @@ BASE_EXPORT void EnableTerminationOnOutOfMemory();
+ BASE_EXPORT void TerminateBecauseOutOfMemory(size_t size);
+ 
+ #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || \
+-    defined(OS_AIX)
++    defined(OS_AIX) || defined(OS_OPENBSD)
+ BASE_EXPORT extern size_t g_oom_size;
+ 
+ // The maximum allowed value for the OOM score.

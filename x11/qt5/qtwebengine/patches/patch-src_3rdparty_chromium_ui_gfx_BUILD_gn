@@ -1,12 +1,12 @@
 Index: src/3rdparty/chromium/ui/gfx/BUILD.gn
 --- src/3rdparty/chromium/ui/gfx/BUILD.gn.orig
 +++ src/3rdparty/chromium/ui/gfx/BUILD.gn
-@@ -582,7 +582,7 @@ jumbo_source_set("memory_buffer_sources") {
+@@ -573,7 +573,7 @@ jumbo_source_set("memory_buffer_sources") {
      deps += [ "//build/config/linux/libdrm" ]
    }
  
--  if (is_linux || is_android) {
-+  if ((is_linux || is_android) && !is_openbsd) {
+-  if (is_linux || is_chromeos || is_android) {
++  if ((is_linux || is_chromeos || is_android) && !is_openbsd) {
      deps += [ "//third_party/libsync" ]
    }
  

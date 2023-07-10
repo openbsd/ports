@@ -1,0 +1,12 @@
+Index: src/3rdparty/chromium/base/allocator/partition_allocator/spinning_futex_linux.h
+--- src/3rdparty/chromium/base/allocator/partition_allocator/spinning_futex_linux.h.orig
++++ src/3rdparty/chromium/base/allocator/partition_allocator/spinning_futex_linux.h
+@@ -12,7 +12,7 @@
+ #include "base/compiler_specific.h"
+ #include "build/build_config.h"
+ 
+-#if !(defined(OS_LINUX) || defined(OS_ANDROID))
++#if !(defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD))
+ #error "Not supported"
+ #endif
+ 

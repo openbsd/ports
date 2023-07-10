@@ -1,0 +1,12 @@
+Index: src/3rdparty/chromium/third_party/abseil-cpp/absl/debugging/failure_signal_handler.cc
+--- src/3rdparty/chromium/third_party/abseil-cpp/absl/debugging/failure_signal_handler.cc.orig
++++ src/3rdparty/chromium/third_party/abseil-cpp/absl/debugging/failure_signal_handler.cc
+@@ -136,7 +136,7 @@ static bool SetupAlternateStackOnce() {
+   const size_t page_mask = sysconf(_SC_PAGESIZE) - 1;
+ #endif
+   size_t stack_size =
+-      (std::max<size_t>(SIGSTKSZ, 65536) + page_mask) & ~page_mask;
++      (std::max(static_cast<int>(SIGSTKSZ), 65536) + page_mask) & ~page_mask;
+ #if defined(ABSL_HAVE_ADDRESS_SANITIZER) || \
+     defined(ABSL_HAVE_MEMORY_SANITIZER) || defined(ABSL_HAVE_THREAD_SANITIZER)
+   // Account for sanitizer instrumentation requiring additional stack space.

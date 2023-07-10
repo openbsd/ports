@@ -1,13 +1,12 @@
-Index: src/3rdparty/chromium/services/service_manager/sandbox/openbsd/sandbox_openbsd.h
---- src/3rdparty/chromium/services/service_manager/sandbox/openbsd/sandbox_openbsd.h.orig
-+++ src/3rdparty/chromium/services/service_manager/sandbox/openbsd/sandbox_openbsd.h
-@@ -0,0 +1,265 @@
+Index: src/3rdparty/chromium/sandbox/policy/openbsd/sandbox_openbsd.h
+--- src/3rdparty/chromium/sandbox/policy/openbsd/sandbox_openbsd.h.orig
++++ src/3rdparty/chromium/sandbox/policy/openbsd/sandbox_openbsd.h
+@@ -0,0 +1,266 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
-+
-+#ifndef SERVICES_SERVICE_MANAGER_SANDBOX_LINUX_SANDBOX_LINUX_H_
-+#define SERVICES_SERVICE_MANAGER_SANDBOX_LINUX_SANDBOX_LINUX_H_
++#ifndef SANDBOX_POLICY_LINUX_SANDBOX_OPENBSD_H_
++#define SANDBOX_POLICY_LINUX_SANDBOX_OPENBSD_H_
 +
 +#include <memory>
 +#include <string>
@@ -16,10 +15,10 @@ Index: src/3rdparty/chromium/services/service_manager/sandbox/openbsd/sandbox_op
 +#include "base/logging.h"
 +#include "base/macros.h"
 +#include "base/posix/global_descriptors.h"
-+#include "services/service_manager/sandbox/export.h"
-+#include "services/service_manager/sandbox/linux/sandbox_seccomp_bpf_linux.h"
-+#include "services/service_manager/sandbox/sandbox_type.h"
-+#include "services/service_manager/sandbox/sanitizer_buildflags.h"
++#include "sandbox/policy/export.h"
++#include "sandbox/policy/linux/sandbox_seccomp_bpf_linux.h"
++#include "sandbox/policy/sandbox_type.h"
++#include "sandbox/policy/sanitizer_buildflags.h"
 +
 +#if BUILDFLAG(USING_SANITIZER)
 +#include <sanitizer/common_interface_defs.h>
@@ -37,7 +36,8 @@ Index: src/3rdparty/chromium/services/service_manager/sandbox/openbsd/sandbox_op
 +}  // namespace syscall_broker
 +}  // namespace sandbox
 +
-+namespace service_manager {
++namespace sandbox {
++namespace policy {
 +
 +// A singleton class to represent and change our sandboxing state for the
 +// three main Linux sandboxes.
@@ -49,7 +49,7 @@ Index: src/3rdparty/chromium/services/service_manager/sandbox/openbsd/sandbox_op
 +// InitializeSandbox(). InitializeSandbox() is also responsible for "sealing"
 +// the first layer of sandboxing. That is, InitializeSandbox must always be
 +// called to have any meaningful sandboxing at all.
-+class SERVICE_MANAGER_SANDBOX_EXPORT SandboxLinux {
++class SANDBOX_POLICY_EXPORT SandboxLinux {
 + public:
 +  // This is a list of sandbox IPC methods which the renderer may send to the
 +  // sandbox host. See
@@ -168,7 +168,7 @@ Index: src/3rdparty/chromium/services/service_manager/sandbox/openbsd/sandbox_op
 +  // Check the policy and eventually start the seccomp-bpf sandbox. This should
 +  // never be called with threads started. If we detect that threads have
 +  // started we will crash.
-+  bool StartSeccompBPF(service_manager::SandboxType sandbox_type,
++  bool StartSeccompBPF(SandboxType sandbox_type,
 +                       PreSandboxHook hook,
 +                       const Options& options);
 +
@@ -236,7 +236,7 @@ Index: src/3rdparty/chromium/services/service_manager/sandbox/openbsd/sandbox_op
 +
 +  // GetStatus() makes promises as to how the sandbox will behave. This
 +  // checks that no promises have been broken.
-+  void CheckForBrokenPromises(service_manager::SandboxType sandbox_type);
++  void CheckForBrokenPromises(SandboxType sandbox_type);
 +
 +  // Stop |thread| and make sure it does not appear in /proc/self/tasks/
 +  // anymore.
@@ -264,6 +264,7 @@ Index: src/3rdparty/chromium/services/service_manager/sandbox/openbsd/sandbox_op
 +  DISALLOW_COPY_AND_ASSIGN(SandboxLinux);
 +};
 +
-+}  // namespace service_manager
++}  // namespace policy
++}  // namespace sandbox
 +
-+#endif  // SERVICES_SERVICE_MANAGER_SANDBOX_LINUX_SANDBOX_LINUX_H_
++#endif  // SANDBOX_POLICY_LINUX_SANDBOX_OPENBSD_H_

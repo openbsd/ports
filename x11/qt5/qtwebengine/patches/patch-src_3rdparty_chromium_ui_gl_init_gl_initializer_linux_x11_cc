@@ -1,0 +1,19 @@
+Index: src/3rdparty/chromium/ui/gl/init/gl_initializer_linux_x11.cc
+--- src/3rdparty/chromium/ui/gl/init/gl_initializer_linux_x11.cc.orig
++++ src/3rdparty/chromium/ui/gl/init/gl_initializer_linux_x11.cc
+@@ -29,12 +29,13 @@ namespace {
+ 
+ #if defined(OS_OPENBSD)
+ const char kGLLibraryName[] = "libGL.so";
++const char kGLESv2LibraryName[] = "libGLESv2.so";
++const char kEGLLibraryName[] = "libEGL.so";
+ #else
+ const char kGLLibraryName[] = "libGL.so.1";
+-#endif
+-
+ const char kGLESv2LibraryName[] = "libGLESv2.so.2";
+ const char kEGLLibraryName[] = "libEGL.so.1";
++#endif
+ 
+ const char kGLESv2ANGLELibraryName[] = "libGLESv2.so";
+ const char kEGLANGLELibraryName[] = "libEGL.so";

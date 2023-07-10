@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/third_party/blink/renderer/platform/graphics/begin_frame_provider.cc
 --- src/3rdparty/chromium/third_party/blink/renderer/platform/graphics/begin_frame_provider.cc.orig
 +++ src/3rdparty/chromium/third_party/blink/renderer/platform/graphics/begin_frame_provider.cc
-@@ -61,7 +61,11 @@ void BeginFrameProvider::CreateCompositorFrameSinkIfNe
+@@ -65,7 +65,11 @@ void BeginFrameProvider::CreateCompositorFrameSinkIfNe
  
    // Once we are using RAF, this thread is driving Display updates. Update
    // priority accordingly.

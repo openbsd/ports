@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/third_party/angle/third_party/vulkan-loader/src/loader/loader.c
 --- src/3rdparty/chromium/third_party/angle/third_party/vulkan-loader/src/loader/loader.c.orig
 +++ src/3rdparty/chromium/third_party/angle/third_party/vulkan-loader/src/loader/loader.c
-@@ -229,7 +229,7 @@ void *loader_device_heap_realloc(const struct loader_d
+@@ -250,7 +250,7 @@ void *loader_device_heap_realloc(const struct loader_d
  }
  
  // Environment variables
@@ -10,10 +10,10 @@ Index: src/3rdparty/chromium/third_party/angle/third_party/vulkan-loader/src/loa
  
  static inline bool IsHighIntegrity() {
      return geteuid() != getuid() || getegid() != getgid();
-@@ -243,7 +243,7 @@ static inline char *loader_getenv(const char *name, co
- }
+@@ -265,7 +265,7 @@ static inline char *loader_getenv(const char *name, co
  
  static inline char *loader_secure_getenv(const char *name, const struct loader_instance *inst) {
+     char *out;
 -#if defined(__APPLE__)
 +#if defined(__APPLE__) || defined(__OpenBSD__)
      // Apple does not appear to have a secure getenv implementation.

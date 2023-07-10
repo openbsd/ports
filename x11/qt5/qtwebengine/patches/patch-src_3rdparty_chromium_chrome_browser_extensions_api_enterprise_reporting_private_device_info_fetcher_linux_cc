@@ -11,19 +11,19 @@ Index: src/3rdparty/chromium/chrome/browser/extensions/api/enterprise_reporting_
  
  #include <string>
  
-@@ -91,6 +93,7 @@ enterprise_reporting_private::SettingValue GetScreenlo
+@@ -107,6 +109,7 @@ enterprise_reporting_private::SettingValue GetScreenlo
  // Implements the logic from the native host installation script. First find the
  // root device identifier, then locate its parent and get its type.
  enterprise_reporting_private::SettingValue GetDiskEncrypted() {
 +#if !defined(OS_BSD)
    struct stat info;
-   // First figure out the device identifier.
-   stat("/", &info);
-@@ -110,6 +113,7 @@ enterprise_reporting_private::SettingValue GetDiskEncr
-     return is_encrypted ? enterprise_reporting_private::SETTING_VALUE_ENABLED
-                         : enterprise_reporting_private::SETTING_VALUE_DISABLED;
+   // First figure out the device identifier. Fail fast if this fails.
+   if (stat("/", &info) != 0)
+@@ -130,6 +133,7 @@ enterprise_reporting_private::SettingValue GetDiskEncr
+     }
+     return enterprise_reporting_private::SETTING_VALUE_UNKNOWN;
    }
 +#endif
-   return enterprise_reporting_private::SETTING_VALUE_UNKNOWN;
+   return enterprise_reporting_private::SETTING_VALUE_DISABLED;
  }
  

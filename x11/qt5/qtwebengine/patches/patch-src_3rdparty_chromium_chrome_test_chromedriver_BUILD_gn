@@ -1,0 +1,21 @@
+Index: src/3rdparty/chromium/chrome/test/chromedriver/BUILD.gn
+--- src/3rdparty/chromium/chrome/test/chromedriver/BUILD.gn.orig
++++ src/3rdparty/chromium/chrome/test/chromedriver/BUILD.gn
+@@ -322,7 +322,7 @@ python_library("chromedriver_py_tests") {
+     "//chrome:chrome",
+   ]
+ 
+-  pydeps_file = "test/run_py_tests.pydeps"
++  #pydeps_file = "test/run_py_tests.pydeps"
+   data = [
+     "//chrome/test/data/chromedriver/",
+     "//chrome/test/chromedriver/js/",
+@@ -346,7 +346,7 @@ python_library("chromedriver_replay_unittests") {
+   testonly = true
+   deps = [ ":chromedriver" ]
+ 
+-  pydeps_file = "log_replay/client_replay_unittest.pydeps"
++  #pydeps_file = "log_replay/client_replay_unittest.pydeps"
+ }
+ 
+ test("chromedriver_unittests") {

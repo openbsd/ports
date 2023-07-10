@@ -5,8 +5,8 @@ Index: src/3rdparty/chromium/build/config/features.gni
    proprietary_codecs = is_chrome_branded || is_chromecast
  
    # libudev usage. This currently only affects the content layer.
--  use_udev = is_linux && !is_chromecast
-+  use_udev = is_linux && !is_chromecast && !is_openbsd
+-  use_udev = (is_linux || is_chromeos) && !is_chromecast
++  use_udev = (is_linux || is_chromeos) && !is_chromecast && !is_openbsd
  
-   use_dbus = is_linux && !is_chromecast
+   use_dbus = (is_linux || is_chromeos) && !is_chromecast
  

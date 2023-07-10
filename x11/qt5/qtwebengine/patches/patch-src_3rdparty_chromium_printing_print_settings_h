@@ -1,0 +1,39 @@
+Index: src/3rdparty/chromium/printing/print_settings.h
+--- src/3rdparty/chromium/printing/print_settings.h.orig
++++ src/3rdparty/chromium/printing/print_settings.h
+@@ -19,7 +19,7 @@
+ #include "ui/gfx/geometry/rect.h"
+ #include "ui/gfx/geometry/size.h"
+ 
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+ #include <map>
+ 
+ #include "base/values.h"
+@@ -80,7 +80,7 @@ class PRINTING_EXPORT PrintSettings {
+     }
+   };
+ 
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+   using AdvancedSettings = std::map<std::string, base::Value>;
+ #endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
+ 
+@@ -221,7 +221,7 @@ class PRINTING_EXPORT PrintSettings {
+     pages_per_sheet_ = pages_per_sheet;
+   }
+ 
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+   AdvancedSettings& advanced_settings() { return advanced_settings_; }
+   const AdvancedSettings& advanced_settings() const {
+     return advanced_settings_;
+@@ -320,7 +320,7 @@ class PRINTING_EXPORT PrintSettings {
+   // Number of pages per sheet.
+   int pages_per_sheet_;
+ 
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+   // Advanced settings.
+   AdvancedSettings advanced_settings_;
+ #endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)

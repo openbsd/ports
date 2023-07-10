@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/ui/strings/app_locale_settings.grd
 --- src/3rdparty/chromium/ui/strings/app_locale_settings.grd.orig
 +++ src/3rdparty/chromium/ui/strings/app_locale_settings.grd
-@@ -216,7 +216,7 @@
+@@ -217,7 +217,7 @@
            75%
          </message>
        </if>

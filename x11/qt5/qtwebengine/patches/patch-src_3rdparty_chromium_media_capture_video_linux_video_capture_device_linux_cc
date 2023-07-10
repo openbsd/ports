@@ -8,12 +8,12 @@ Index: src/3rdparty/chromium/media/capture/video/linux/video_capture_device_linu
 -#if LINUX_VERSION_CODE >= KERNEL_VERSION(3,2,0)
 +//#if LINUX_VERSION_CODE >= KERNEL_VERSION(3,2,0)
        // If we have no idea of the frequency, at least try and set it to AUTO.
--      return V4L2_CID_POWER_LINE_FREQUENCY_AUTO;
+       return V4L2_CID_POWER_LINE_FREQUENCY_AUTO;
 -#else
-+//      return V4L2_CID_POWER_LINE_FREQUENCY_AUTO;
-+//#else
-       return V4L2_CID_POWER_LINE_FREQUENCY_60HZ;
+-      return V4L2_CID_POWER_LINE_FREQUENCY_60HZ;
 -#endif
++//#else
++//      return V4L2_CID_POWER_LINE_FREQUENCY_60HZ;
 +//#endif
    }
  }

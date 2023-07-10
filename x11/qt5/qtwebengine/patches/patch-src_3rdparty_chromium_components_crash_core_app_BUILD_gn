@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/components/crash/core/app/BUILD.gn
 --- src/3rdparty/chromium/components/crash/core/app/BUILD.gn.orig
 +++ src/3rdparty/chromium/components/crash/core/app/BUILD.gn
-@@ -47,16 +47,15 @@ static_library("app") {
+@@ -57,16 +57,15 @@ static_library("app") {
      "crash_switches.h",
      "crashpad.h",
      "crashpad_android.cc",
@@ -10,49 +10,49 @@ Index: src/3rdparty/chromium/components/crash/core/app/BUILD.gn
      "crashpad_win.cc",
    ]
  
--  if (is_mac || is_win || is_android || is_linux) {
-+  if ((is_mac || is_win || is_android || is_linux) && !is_openbsd) {
+-  if (is_mac || is_win || is_android || is_linux || is_chromeos) {
++  if ((is_mac || is_win || is_android || is_linux || is_chromeos) && !is_openbsd) {
      sources += [ "crashpad.cc" ]
    }
  
--  if (is_linux) {
-+  if (is_linux && !is_openbsd) {
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_openbsd) {
      sources += [
        "breakpad_linux.cc",
        "breakpad_linux.h",
-@@ -72,7 +71,7 @@ static_library("app") {
-     "//build:branding_buildflags",
+@@ -83,7 +82,7 @@ static_library("app") {
+     "//content/public/common:content_descriptors",
    ]
  
--  if (is_mac || is_win || is_android || is_linux) {
-+  if ((is_mac || is_win || is_android || is_linux) && !is_openbsd) {
+-  if (is_mac || is_win || is_android || is_linux || is_chromeos) {
++  if ((is_mac || is_win || is_android || is_linux || is_chromeos) && !is_openbsd) {
      deps += [
        "//third_party/crashpad/crashpad/client",
        "//third_party/crashpad/crashpad/util",
-@@ -88,7 +87,7 @@ static_library("app") {
+@@ -99,7 +98,7 @@ static_library("app") {
      ]
    }
  
--  if (is_android || is_linux) {
-+  if (is_android || (is_linux && !is_openbsd)) {
+-  if (is_android || is_linux || is_chromeos) {
++  if ((is_android || is_linux || is_chromeos) && !is_openbsd) {
      deps += [
        "//base:base_static",
        "//components/crash/core/common",
-@@ -96,7 +95,7 @@ static_library("app") {
+@@ -107,7 +106,7 @@ static_library("app") {
      ]
    }
  
--  if (is_linux) {
-+  if (is_linux && !is_openbsd) {
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_openbsd) {
      deps += [ "//third_party/breakpad:client" ]
    }
  
-@@ -127,7 +126,7 @@ static_library("app") {
+@@ -138,7 +137,7 @@ static_library("app") {
      libs = [ "log" ]
    }
  
--  if (is_linux) {
-+  if (is_linux && !is_openbsd) {
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_openbsd) {
      data_deps = [ "//third_party/crashpad/crashpad/handler:crashpad_handler" ]
    }
  }

@@ -1,14 +1,14 @@
 Index: src/3rdparty/chromium/components/metrics/BUILD.gn
 --- src/3rdparty/chromium/components/metrics/BUILD.gn.orig
 +++ src/3rdparty/chromium/components/metrics/BUILD.gn
-@@ -150,6 +150,10 @@ jumbo_static_library("metrics") {
-     "//url",
-   ]
+@@ -163,6 +163,10 @@ jumbo_static_library("metrics") {
+     ]
+   }
  
 +  if (is_openbsd) {
 +    sources -= [ "system_memory_stats_recorder_linux.cc" ]
 +  }
 +
-   if (is_chromeos) {
-     deps += [ ":serialization" ]
-   }
+   if (is_mac) {
+     sources += [ "drive_metrics_provider_mac.mm" ]
+     frameworks = [

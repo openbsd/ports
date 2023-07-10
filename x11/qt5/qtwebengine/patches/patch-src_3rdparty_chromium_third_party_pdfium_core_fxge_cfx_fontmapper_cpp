@@ -1,0 +1,12 @@
+Index: src/3rdparty/chromium/third_party/pdfium/core/fxge/cfx_fontmapper.cpp
+--- src/3rdparty/chromium/third_party/pdfium/core/fxge/cfx_fontmapper.cpp.orig
++++ src/3rdparty/chromium/third_party/pdfium/core/fxge/cfx_fontmapper.cpp
+@@ -154,7 +154,7 @@ const AltFontFamily g_AltFontFamilies[] = {
+     {"ForteMT", "Forte"},
+ };
+ 
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ASMJS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ASMJS) || defined(OS_BSD)
+ const char kNarrowFamily[] = "LiberationSansNarrow";
+ #elif defined(OS_ANDROID)
+ const char kNarrowFamily[] = "RobotoCondensed";

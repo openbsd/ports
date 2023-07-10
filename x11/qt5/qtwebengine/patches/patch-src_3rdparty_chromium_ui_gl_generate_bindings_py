@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/ui/gl/generate_bindings.py
 --- src/3rdparty/chromium/ui/gl/generate_bindings.py.orig
 +++ src/3rdparty/chromium/ui/gl/generate_bindings.py
-@@ -2805,6 +2805,9 @@ GLX_FUNCTIONS = [
+@@ -2902,6 +2902,9 @@ GLX_FUNCTIONS = [
    'arguments':
        'Display* dpy, GLXDrawable drawable, int32_t* numerator, '
        'int32_t* denominator' },

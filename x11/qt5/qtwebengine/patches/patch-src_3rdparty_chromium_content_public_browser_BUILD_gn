@@ -1,11 +1,11 @@
 Index: src/3rdparty/chromium/content/public/browser/BUILD.gn
 --- src/3rdparty/chromium/content/public/browser/BUILD.gn.orig
 +++ src/3rdparty/chromium/content/public/browser/BUILD.gn
-@@ -450,6 +450,7 @@ jumbo_source_set("browser_sources") {
+@@ -477,6 +477,7 @@ jumbo_source_set("browser_sources") {
      "//media/capture",
      "//net",
      "//ppapi/c",
 +    "//services/content/public/cpp:cpp",
      "//services/device/public/cpp/geolocation",
      "//services/metrics/public/cpp:metrics_cpp",
-     "//services/service_manager/embedder:embedder_result_codes",
+     "//ui/accessibility",

@@ -5,8 +5,8 @@ Index: src/3rdparty/chromium/base/memory/discardable_memory_internal.h
  #include "base/metrics/field_trial_params.h"
  #include "build/build_config.h"
  
--#if defined(OS_ANDROID) || defined(OS_LINUX)
-+#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  
  namespace base {
  

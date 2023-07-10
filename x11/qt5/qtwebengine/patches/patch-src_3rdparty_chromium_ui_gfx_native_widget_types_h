@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/ui/gfx/native_widget_types.h
 --- src/3rdparty/chromium/ui/gfx/native_widget_types.h.orig
 +++ src/3rdparty/chromium/ui/gfx/native_widget_types.h
-@@ -104,7 +104,7 @@ class ViewAndroid;
+@@ -103,7 +103,7 @@ class ViewAndroid;
  #endif
  class SkBitmap;
  
@@ -10,8 +10,8 @@ Index: src/3rdparty/chromium/ui/gfx/native_widget_types.h
  extern "C" {
  struct _AtkObject;
  typedef struct _AtkObject AtkObject;
-@@ -205,7 +205,7 @@ typedef id NativeViewAccessible;
- #elif defined(OS_MACOSX)
+@@ -204,7 +204,7 @@ typedef id NativeViewAccessible;
+ #elif defined(OS_MAC)
  typedef NSFont* NativeFont;
  typedef id NativeViewAccessible;
 -#elif defined(OS_LINUX) && !defined(OS_CHROMEOS)

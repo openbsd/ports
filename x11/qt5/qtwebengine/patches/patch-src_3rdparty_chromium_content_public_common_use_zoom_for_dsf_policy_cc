@@ -5,8 +5,8 @@ Index: src/3rdparty/chromium/content/public/common/use_zoom_for_dsf_policy.cc
  #endif
  
  bool IsUseZoomForDSFEnabledByDefault() {
--#if defined(OS_LINUX) || defined(OS_FUCHSIA)
-+#if defined(OS_LINUX) || defined(OS_FUCHSIA) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_FUCHSIA) || defined(OS_BSD)
    return true;
  #elif defined(OS_WIN) || defined(OS_ANDROID)
    return base::FeatureList::IsEnabled(kUseZoomForDsfEnabledByDefault);

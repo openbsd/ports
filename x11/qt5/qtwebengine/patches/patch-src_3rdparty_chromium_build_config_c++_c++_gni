@@ -5,8 +5,8 @@ Index: src/3rdparty/chromium/build/config/c++/c++.gni
    use_custom_libcxx =
        is_fuchsia || is_android || is_mac || (is_ios && !use_xcode_clang) ||
        (is_win && is_clang) ||
--      (is_linux &&
-+      (is_linux && !is_openbsd &&
+-      ((is_linux || is_chromeos) &&
++      (((is_linux && !is_openbsd) || is_chromeos) &&
         (!is_chromeos || default_toolchain != "//build/toolchain/cros:target"))
  
    # Use libc++ instead of stdlibc++ when using the host_cpu toolchain, even if

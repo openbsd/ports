@@ -14,8 +14,8 @@ Index: src/3rdparty/chromium/third_party/libusb/BUILD.gn
      ]
    }
  
--  if (is_linux) {
-+  if (is_linux && !is_openbsd) {
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_openbsd) {
      sources += [
        "src/libusb/os/linux_usbfs.c",
        "src/libusb/os/linux_usbfs.h",
@@ -40,8 +40,8 @@ Index: src/3rdparty/chromium/third_party/libusb/BUILD.gn
      deps += [ "//build/linux/libudev" ]
    }
  
--  if (is_linux && !use_udev) {
-+  if (is_linux && !use_udev && !is_openbsd) {
+-  if ((is_linux || is_chromeos) && !use_udev) {
++  if ((is_linux || is_chromeos) && !use_udev && !is_openbsd) {
      sources += [ "src/libusb/os/linux_netlink.c" ]
      defines += [ "HAVE_LINUX_NETLINK_H" ]
    }

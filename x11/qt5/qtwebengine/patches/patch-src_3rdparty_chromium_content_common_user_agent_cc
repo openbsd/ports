@@ -1,9 +1,9 @@
 Index: src/3rdparty/chromium/content/common/user_agent.cc
 --- src/3rdparty/chromium/content/common/user_agent.cc.orig
 +++ src/3rdparty/chromium/content/common/user_agent.cc
-@@ -160,6 +160,16 @@ std::string BuildOSCpuInfo(bool include_android_build_
- #endif
+@@ -214,6 +214,16 @@ std::string BuildOSCpuInfoFromOSVersionAndCpuType(cons
    );
+ #endif
  
 +#if defined(OS_OPENBSD)
 +#if defined(__x86_64__)

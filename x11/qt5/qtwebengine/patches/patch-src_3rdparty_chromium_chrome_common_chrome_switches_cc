@@ -1,12 +1,12 @@
 Index: src/3rdparty/chromium/chrome/common/chrome_switches.cc
 --- src/3rdparty/chromium/chrome/common/chrome_switches.cc.orig
 +++ src/3rdparty/chromium/chrome/common/chrome_switches.cc
-@@ -850,7 +850,7 @@ const char kAllowNaClFileHandleAPI[]        = "allow-n
- const char kAllowNaClSocketAPI[]            = "allow-nacl-socket-api";
+@@ -809,7 +809,7 @@ const char kAllowNaClSocketAPI[]            = "allow-n
  #endif
  
--#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
-+#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_BSD)
+ #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_MAC) || \
+-    defined(OS_WIN)
++    defined(OS_WIN) || defined(OS_BSD)
  const char kEnableNewAppMenuIcon[] = "enable-new-app-menu-icon";
  
  // Causes the browser to launch directly in guest mode.

@@ -1,0 +1,20 @@
+Fix build with -Werror
+Index: src/3rdparty/chromium/third_party/nasm/asm/preproc.c
+--- src/3rdparty/chromium/third_party/nasm/asm/preproc.c.orig
++++ src/3rdparty/chromium/third_party/nasm/asm/preproc.c
+@@ -5349,7 +5349,6 @@ static SMacro *expand_one_smacro(Token ***tpp)
+         int brackets = 0;
+         int paren;
+         bool bracketed = false;
+-        bool bad_bracket = false;
+         enum sparmflags flags;
+ 
+         nparam = m->nparam;
+@@ -5441,7 +5440,6 @@ static SMacro *expand_one_smacro(Token ***tpp)
+             if (!skip) {
+                 Token *t;
+ 
+-                bad_bracket |= bracketed && !brackets;
+ 
+                 if (white) {
+                     *pep = t = new_White(NULL);

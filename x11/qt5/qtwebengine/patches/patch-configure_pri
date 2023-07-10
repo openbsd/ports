@@ -1,0 +1,14 @@
+Index: configure.pri
+--- configure.pri.orig
++++ configure.pri
+@@ -114,6 +114,10 @@ defineTest(qtwebengine_platformError) {
+ defineTest(qtConfTest_detectPlatform) {
+     QT_FOR_CONFIG += gui-private
+ 
++    openbsd:qtwebengine_isLinuxPlatformSupported() {
++        $${1}.platform = "openbsd"
++    }
++
+     linux:qtwebengine_isLinuxPlatformSupported() {
+         $${1}.platform = "linux"
+     }

@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/extensions/shell/browser/shell_extensions_api_client.h
 --- src/3rdparty/chromium/extensions/shell/browser/shell_extensions_api_client.h.orig
 +++ src/3rdparty/chromium/extensions/shell/browser/shell_extensions_api_client.h
-@@ -32,14 +32,14 @@ class ShellExtensionsAPIClient : public ExtensionsAPIC
+@@ -33,14 +33,14 @@ class ShellExtensionsAPIClient : public ExtensionsAPIC
        content::BrowserContext* browser_context) const override;
    std::unique_ptr<DisplayInfoProvider> CreateDisplayInfoProvider()
        const override;

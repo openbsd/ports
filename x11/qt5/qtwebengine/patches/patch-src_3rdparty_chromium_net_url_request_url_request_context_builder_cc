@@ -1,12 +1,12 @@
 Index: src/3rdparty/chromium/net/url_request/url_request_context_builder.cc
 --- src/3rdparty/chromium/net/url_request/url_request_context_builder.cc.orig
 +++ src/3rdparty/chromium/net/url_request/url_request_context_builder.cc
-@@ -485,7 +485,7 @@ std::unique_ptr<URLRequestContext> URLRequestContextBu
+@@ -497,7 +497,7 @@ std::unique_ptr<URLRequestContext> URLRequestContextBu
    }
  
    if (!proxy_resolution_service_) {
--#if !defined(OS_LINUX) && !defined(OS_ANDROID)
-+#if !defined(OS_LINUX) && !defined(OS_ANDROID) && !defined(OS_BSD)
+-#if !defined(OS_LINUX) && !defined(OS_CHROMEOS) && !defined(OS_ANDROID)
++#if !defined(OS_LINUX) && !defined(OS_CHROMEOS) && !defined(OS_ANDROID) && !defined(OS_BSD)
      // TODO(willchan): Switch to using this code when
      // ConfiguredProxyResolutionService::CreateSystemProxyConfigService()'s
      // signature doesn't suck.

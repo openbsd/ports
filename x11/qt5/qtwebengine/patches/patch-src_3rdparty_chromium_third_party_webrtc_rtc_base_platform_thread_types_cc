@@ -11,7 +11,7 @@ Index: src/3rdparty/chromium/third_party/webrtc/rtc_base/platform_thread_types.c
  #include <sys/syscall.h>
  #endif
  
-@@ -27,8 +29,10 @@ PlatformThreadId CurrentThreadId() {
+@@ -37,8 +39,10 @@ PlatformThreadId CurrentThreadId() {
    return gettid();
  #elif defined(WEBRTC_FUCHSIA)
    return zx_thread_self();
@@ -23,15 +23,15 @@ Index: src/3rdparty/chromium/third_party/webrtc/rtc_base/platform_thread_types.c
  #elif defined(__EMSCRIPTEN__)
    return static_cast<PlatformThreadId>(pthread_self());
  #else
-@@ -57,6 +61,7 @@ bool IsThreadRefEqual(const PlatformThreadRef& a, cons
+@@ -67,6 +71,7 @@ bool IsThreadRefEqual(const PlatformThreadRef& a, cons
  }
  
  void SetCurrentThreadName(const char* name) {
 +#if !defined(__OpenBSD__)
  #if defined(WEBRTC_WIN)
-   // For details see:
-   // https://docs.microsoft.com/en-us/visualstudio/debugger/how-to-set-a-thread-name-in-native-code
-@@ -81,6 +86,7 @@ void SetCurrentThreadName(const char* name) {
+   // The SetThreadDescription API works even if no debugger is attached.
+   // The names set with this API also show up in ETW traces. Very handy.
+@@ -109,6 +114,7 @@ void SetCurrentThreadName(const char* name) {
    prctl(PR_SET_NAME, reinterpret_cast<unsigned long>(name));  // NOLINT
  #elif defined(WEBRTC_MAC) || defined(WEBRTC_IOS)
    pthread_setname_np(name);

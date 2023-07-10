@@ -1,12 +1,12 @@
 Index: src/3rdparty/chromium/third_party/webrtc/webrtc.gni
 --- src/3rdparty/chromium/third_party/webrtc/webrtc.gni.orig
 +++ src/3rdparty/chromium/third_party/webrtc/webrtc.gni
-@@ -269,7 +269,7 @@ rtc_opus_dir = "//third_party/opus"
+@@ -282,7 +282,7 @@ rtc_opus_dir = "//third_party/opus"
  # Desktop capturer is supported only on Windows, OSX and Linux.
  rtc_desktop_capture_supported =
      (is_win && current_os != "winuwp") || is_mac ||
--    (is_linux && (rtc_use_x11_extensions || rtc_use_pipewire))
-+    ((is_linux && !is_openbsd) && (rtc_use_x11_extensions || rtc_use_pipewire))
+-    ((is_linux || is_chromeos) && (rtc_use_x11_extensions || rtc_use_pipewire))
++    (((is_linux || is_chromeos) && !is_openbsd) && (rtc_use_x11_extensions || rtc_use_pipewire))
  
  ###############################################################################
  # Templates

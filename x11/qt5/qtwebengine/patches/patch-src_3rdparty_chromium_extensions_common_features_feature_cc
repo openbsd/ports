@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/extensions/common/features/feature.cc
 --- src/3rdparty/chromium/extensions/common/features/feature.cc.orig
 +++ src/3rdparty/chromium/extensions/common/features/feature.cc
-@@ -26,6 +26,8 @@ Feature::Platform Feature::GetCurrentPlatform() {
+@@ -32,6 +32,8 @@ Feature::Platform Feature::GetCurrentPlatform() {
    return MACOSX_PLATFORM;
  #elif defined(OS_WIN)
    return WIN_PLATFORM;

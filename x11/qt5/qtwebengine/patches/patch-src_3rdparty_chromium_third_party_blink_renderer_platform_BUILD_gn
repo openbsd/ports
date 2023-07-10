@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/third_party/blink/renderer/platform/BUILD.gn
 --- src/3rdparty/chromium/third_party/blink/renderer/platform/BUILD.gn.orig
 +++ src/3rdparty/chromium/third_party/blink/renderer/platform/BUILD.gn
-@@ -102,6 +102,7 @@ executable("character_data_generator") {
+@@ -111,6 +111,7 @@ executable("character_data_generator") {
      "//build/win:default_exe_manifest",
      "//third_party/icu",
    ]

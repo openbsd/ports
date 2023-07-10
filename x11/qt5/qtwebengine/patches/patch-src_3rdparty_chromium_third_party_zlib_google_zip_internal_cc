@@ -1,0 +1,11 @@
+Index: src/3rdparty/chromium/third_party/zlib/google/zip_internal.cc
+--- src/3rdparty/chromium/third_party/zlib/google/zip_internal.cc.orig
++++ src/3rdparty/chromium/third_party/zlib/google/zip_internal.cc
+@@ -14,7 +14,6 @@
+ #include "base/strings/utf_string_conversions.h"
+ 
+ #if defined(USE_SYSTEM_MINIZIP)
+-#include <minizip/ioapi.h>
+ #include <minizip/unzip.h>
+ #include <minizip/zip.h>
+ #else

@@ -1,12 +1,21 @@
 Index: src/3rdparty/chromium/chrome/common/chrome_features.h
 --- src/3rdparty/chromium/chrome/common/chrome_features.h.orig
 +++ src/3rdparty/chromium/chrome/common/chrome_features.h
-@@ -59,7 +59,7 @@ extern const base::Feature kAppServiceIntentHandling;
+@@ -82,7 +82,7 @@ extern const base::Feature kAppShimNewCloseBehavior;
  
  COMPONENT_EXPORT(CHROME_FEATURES) extern const base::Feature kAsyncDns;
  
--#if defined(OS_WIN) || defined(OS_LINUX)
-+#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::Feature kBackgroundModeAllowRestart;
- #endif  // defined(OS_WIN) || defined(OS_LINUX)
+ #endif  // defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS)
+@@ -214,7 +214,7 @@ extern const base::Feature kEnableAmbientAuthenticatio
+ COMPONENT_EXPORT(CHROME_FEATURES)
+ extern const base::Feature kEnableAmbientAuthenticationInIncognito;
+ 
+-#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MAC)
++#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MAC) || defined(OS_BSD)
+ COMPONENT_EXPORT(CHROME_FEATURES)
+ extern const base::Feature kEnableEphemeralGuestProfilesOnDesktop;
+ #endif  // defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MAC)

@@ -1,7 +1,7 @@
 Index: src/core/api/core_api.pro
 --- src/core/api/core_api.pro.orig
 +++ src/core/api/core_api.pro
-@@ -67,7 +67,7 @@ SOURCES = \
+@@ -73,7 +73,7 @@ SOURCES = \
      qwebengineurlschemehandler.cpp
  
  ### Qt6 Remove this workaround

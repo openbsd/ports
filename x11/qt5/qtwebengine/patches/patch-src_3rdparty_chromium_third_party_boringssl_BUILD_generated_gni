@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/third_party/boringssl/BUILD.generated.gni
 --- src/3rdparty/chromium/third_party/boringssl/BUILD.generated.gni.orig
 +++ src/3rdparty/chromium/third_party/boringssl/BUILD.generated.gni
-@@ -172,6 +172,7 @@ crypto_sources = [
+@@ -182,6 +182,7 @@ crypto_sources = [
    "src/crypto/rand_extra/deterministic.c",
    "src/crypto/rand_extra/forkunsafe.c",
    "src/crypto/rand_extra/fuchsia.c",

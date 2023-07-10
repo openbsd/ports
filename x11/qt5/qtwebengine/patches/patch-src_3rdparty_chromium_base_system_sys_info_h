@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/base/system/sys_info.h
 --- src/3rdparty/chromium/base/system/sys_info.h.orig
 +++ src/3rdparty/chromium/base/system/sys_info.h
-@@ -197,6 +197,8 @@ class BASE_EXPORT SysInfo {
+@@ -202,6 +202,8 @@ class BASE_EXPORT SysInfo {
    // On Desktop this returns true when memory <= 512MB.
    static bool IsLowEndDevice();
  
@@ -10,3 +10,12 @@ Index: src/3rdparty/chromium/base/system/sys_info.h
   private:
    FRIEND_TEST_ALL_PREFIXES(SysInfoTest, AmountOfAvailablePhysicalMemory);
    FRIEND_TEST_ALL_PREFIXES(debug::SystemMetricsTest, ParseMeminfo);
+@@ -212,7 +214,7 @@ class BASE_EXPORT SysInfo {
+   static HardwareInfo GetHardwareInfoSync();
+ 
+ #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || \
+-    defined(OS_AIX)
++    defined(OS_AIX) || defined(OS_OPENBSD)
+   static int64_t AmountOfAvailablePhysicalMemory(
+       const SystemMemoryInfoKB& meminfo);
+ #endif

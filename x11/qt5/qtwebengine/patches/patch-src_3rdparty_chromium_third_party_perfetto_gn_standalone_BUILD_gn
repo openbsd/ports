@@ -1,13 +1,16 @@
 Index: src/3rdparty/chromium/third_party/perfetto/gn/standalone/BUILD.gn
 --- src/3rdparty/chromium/third_party/perfetto/gn/standalone/BUILD.gn.orig
 +++ src/3rdparty/chromium/third_party/perfetto/gn/standalone/BUILD.gn
-@@ -145,9 +145,6 @@ config("default") {
+@@ -151,9 +151,9 @@ config("default") {
      ]
    }
  
 -  if (is_debug) {
 -    libs += [ "dl" ]
 -  }
++  #if (is_debug) {
++    #libs += [ "dl" ]
++  #}
  
    if (is_android) {
      asmflags += [ "--target=$android_abi_target" ]

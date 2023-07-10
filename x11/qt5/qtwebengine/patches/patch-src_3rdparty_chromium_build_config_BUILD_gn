@@ -1,12 +1,14 @@
 Index: src/3rdparty/chromium/build/config/BUILD.gn
 --- src/3rdparty/chromium/build/config/BUILD.gn.orig
 +++ src/3rdparty/chromium/build/config/BUILD.gn
-@@ -233,7 +233,7 @@ config("default_libs") {
+@@ -233,9 +233,8 @@ config("default_libs") {
        "CoreText.framework",
        "Foundation.framework",
      ]
--  } else if (is_linux) {
-+  } else if (is_linux && !is_openbsd) {
+-  } else if (is_linux || is_chromeos) {
++  } else if ((is_linux && !is_openbsd) || is_chromeos) {
      libs = [
-       "dl",
+-      "dl",
        "pthread",
+       "rt",
+     ]

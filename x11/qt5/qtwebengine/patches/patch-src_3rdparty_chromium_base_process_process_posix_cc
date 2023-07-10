@@ -13,7 +13,7 @@ Index: src/3rdparty/chromium/base/process/process_posix.cc
  #if BUILDFLAG(CLANG_PROFILING)
  #include "base/test/clang_profiling.h"
  #endif
-@@ -380,7 +385,38 @@ bool Process::SetProcessBackgrounded(bool value) {
+@@ -384,7 +389,38 @@ bool Process::SetProcessBackgrounded(bool value) {
  
  int Process::GetPriority() const {
    DCHECK(IsValid());

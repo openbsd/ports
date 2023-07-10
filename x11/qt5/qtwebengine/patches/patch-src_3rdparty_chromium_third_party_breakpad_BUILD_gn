@@ -1,19 +1,12 @@
 Index: src/3rdparty/chromium/third_party/breakpad/BUILD.gn
 --- src/3rdparty/chromium/third_party/breakpad/BUILD.gn.orig
 +++ src/3rdparty/chromium/third_party/breakpad/BUILD.gn
-@@ -483,7 +483,6 @@ if (is_linux || is_android) {
+@@ -500,7 +500,7 @@ if (is_linux || is_chromeos || is_android) {
  
        configs += [ ":tools_config" ]
  
 -      libs = [ "dl" ]
++      #libs = [ "dl" ]
      }
  
      # dump_syms is a host tool, so only compile it for the host system.
-@@ -633,7 +632,6 @@ if (is_linux || is_android) {
-       sources += [ "breakpad/src/common/android/breakpad_getcontext.S" ]
-     }
- 
--    libs = [ "dl" ]
- 
-     include_dirs = [
-       ".",

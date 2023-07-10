@@ -1,9 +1,9 @@
 Index: src/3rdparty/chromium/chrome/test/BUILD.gn
 --- src/3rdparty/chromium/chrome/test/BUILD.gn.orig
 +++ src/3rdparty/chromium/chrome/test/BUILD.gn
-@@ -6144,7 +6144,7 @@ test("chrome_app_unittests") {
-     "//components/gwp_asan/buildflags",
+@@ -6606,7 +6606,7 @@ test("chrome_app_unittests") {
      "//components/safe_browsing:buildflags",
+     "//pdf:pdf_ppapi",
    ]
 -  if (!is_fuchsia) {
 +  if (!is_fuchsia && !is_openbsd) {

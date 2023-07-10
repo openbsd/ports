@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/third_party/node/node.py
 --- src/3rdparty/chromium/third_party/node/node.py.orig
 +++ src/3rdparty/chromium/third_party/node/node.py
-@@ -13,6 +13,7 @@ def GetBinaryPath():
+@@ -33,6 +33,7 @@ def GetBinaryPath():
    return os_path.join(os_path.dirname(__file__), *{
      'Darwin': ('mac', 'node-darwin-x64', 'bin', 'node'),
      'Linux': ('linux', 'node-linux-x64', 'bin', 'node'),

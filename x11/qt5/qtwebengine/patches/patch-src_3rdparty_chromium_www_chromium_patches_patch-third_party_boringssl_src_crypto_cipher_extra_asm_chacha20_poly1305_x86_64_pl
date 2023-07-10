@@ -1,0 +1,23 @@
+Index: src/3rdparty/chromium/www/chromium/patches/patch-third_party_boringssl_src_crypto_cipher_extra_asm_chacha20_poly1305_x86_64_pl
+--- src/3rdparty/chromium/www/chromium/patches/patch-third_party_boringssl_src_crypto_cipher_extra_asm_chacha20_poly1305_x86_64_pl.orig
++++ src/3rdparty/chromium/www/chromium/patches/patch-third_party_boringssl_src_crypto_cipher_extra_asm_chacha20_poly1305_x86_64_pl
+@@ -0,0 +1,19 @@
++Index: third_party/boringssl/src/crypto/cipher_extra/asm/chacha20_poly1305_x86_64.pl
++--- third_party/boringssl/src/crypto/cipher_extra/asm/chacha20_poly1305_x86_64.pl.orig
+++++ third_party/boringssl/src/crypto/cipher_extra/asm/chacha20_poly1305_x86_64.pl
++@@ -42,6 +42,7 @@ $code.=<<___;
++ 
++ chacha20_poly1305_constants:
++ 
+++.rodata
++ .align 64
++ .Lchacha20_consts:
++ .byte 'e','x','p','a','n','d',' ','3','2','-','b','y','t','e',' ','k'
++@@ -79,6 +80,7 @@ chacha20_poly1305_constants:
++ .byte 0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0x00,0x00
++ .byte 0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0x00
++ .byte 0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff
+++.previous
++ ___
++ 
++ my ($oup,$inp,$inl,$adp,$keyp,$itr1,$itr2,$adl)=("%rdi","%rsi","%rbx","%rcx","%r9","%rcx","%r8","%r8");

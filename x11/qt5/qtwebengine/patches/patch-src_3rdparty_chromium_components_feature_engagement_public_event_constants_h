@@ -1,32 +1,21 @@
 Index: src/3rdparty/chromium/components/feature_engagement/public/event_constants.h
 --- src/3rdparty/chromium/components/feature_engagement/public/event_constants.h.orig
 +++ src/3rdparty/chromium/components/feature_engagement/public/event_constants.h
-@@ -14,16 +14,16 @@ namespace events {
+@@ -13,7 +13,7 @@ namespace events {
  
  // Desktop and IOS.
- #if defined(OS_IOS) || defined(OS_WIN) || defined(OS_MACOSX) || \
--    defined(OS_LINUX) || defined(OS_CHROMEOS)
-+    defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+ #if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || \
+-    defined(OS_CHROMEOS)
++    defined(OS_CHROMEOS) || defined(OS_BSD)
  // The user has explicitly opened a new tab via an entry point from inside of
  // Chrome.
  extern const char kNewTabOpened[];
- #endif  // defined(OS_IOS) || defined(OS_WIN) || defined(OS_MACOSX) ||
--        // defined(OS_LINUX) || defined(OS_CHROMEOS)
-+        // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+@@ -22,7 +22,7 @@ extern const char kNewTabOpened[];
  
  // Desktop
- #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
+ #if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || \
 -    defined(OS_CHROMEOS)
 +    defined(OS_CHROMEOS) || defined(OS_BSD)
- // All conditions for reopen closed tab IPH were met. Since this IPH needs to
- // track user events (opening/closing tabs, focusing the omnibox, etc) on the
- // second level, it must be done manually.
-@@ -81,7 +81,7 @@ extern const char kIncognitoWindowSessionTimeMet[];
- #endif  // BUILDFLAG(ENABLE_LEGACY_DESKTOP_IN_PRODUCT_HELP)
- 
- #endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) ||
--        // defined(OS_CHROMEOS)
-+        // defined(OS_CHROMEOS) || defined(OS_BSD)
- 
- #if defined(OS_IOS)
- // The user has opened Chrome (cold start or from background).
+ // A new tab was opened when 5 (or more) tabs were already open.
+ extern const char kSixthTabOpened[];
+ // The user made a new tab group.

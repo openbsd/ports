@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/v8/BUILD.gn
 --- src/3rdparty/chromium/v8/BUILD.gn.orig
 +++ src/3rdparty/chromium/v8/BUILD.gn
-@@ -735,6 +735,9 @@ config("toolchain") {
+@@ -859,6 +859,9 @@ config("toolchain") {
    } else if (target_os == "win") {
      defines += [ "V8_HAVE_TARGET_OS" ]
      defines += [ "V8_TARGET_OS_WIN" ]
@@ -11,16 +11,16 @@ Index: src/3rdparty/chromium/v8/BUILD.gn
    }
  
    # TODO(jochen): Support v8_enable_prof on Windows.
-@@ -3790,7 +3793,7 @@ v8_component("v8_libbase") {
+@@ -4116,7 +4119,7 @@ v8_component("v8_libbase") {
      }
    }
  
--  if (is_linux) {
-+  if (is_linux && !is_openbsd) {
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_openbsd) {
      sources += [
        "src/base/debug/stack_trace_posix.cc",
        "src/base/platform/platform-linux.cc",
-@@ -3800,6 +3803,12 @@ v8_component("v8_libbase") {
+@@ -4126,6 +4129,12 @@ v8_component("v8_libbase") {
        "dl",
        "rt",
      ]

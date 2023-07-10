@@ -1,0 +1,19 @@
+Index: src/3rdparty/chromium/remoting/remoting_version.gni
+--- src/3rdparty/chromium/remoting/remoting_version.gni.orig
++++ src/3rdparty/chromium/remoting/remoting_version.gni
+@@ -5,13 +5,13 @@
+ import("//build/config/chrome_build.gni")
+ import("//build/util/version.gni")
+ 
+-remoting_version_file = "//remoting/VERSION"
++remoting_version_file = "//chrome/VERSION"
+ 
+ _version_py_abspath = "//build/util/version.py"
+ if (is_chrome_branded) {
+   _remoting_branding_abspath = "//remoting/branding_Chrome"
+ } else {
+-  _remoting_branding_abspath = "//remoting/branding_Chromium"
++  _remoting_branding_abspath = "//chrome/app/theme/chromium/BRANDING"
+ }
+ 
+ # Set these files as being input dependencies to the scripts, so the build will

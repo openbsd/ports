@@ -5,8 +5,8 @@ Index: src/3rdparty/chromium/third_party/crashpad/crashpad/util/misc/address_typ
  #include <mach/mach_types.h>
  #elif defined(OS_WIN)
  #include "util/win/address_types.h"
--#elif defined(OS_LINUX) || defined(OS_ANDROID)
-+#elif defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+-#elif defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID)
++#elif defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_BSD)
  #include "util/linux/address_types.h"
  #elif defined(OS_FUCHSIA)
  #include <zircon/types.h>
@@ -14,8 +14,8 @@ Index: src/3rdparty/chromium/third_party/crashpad/crashpad/util/misc/address_typ
  using VMAddress = WinVMAddress;
  using VMSize = WinVMSize;
  
--#elif defined(OS_LINUX) || defined(OS_ANDROID)
-+#elif defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+-#elif defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID)
++#elif defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_BSD)
  
  using VMAddress = LinuxVMAddress;
  using VMSize = LinuxVMSize;

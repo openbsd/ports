@@ -1,8 +1,8 @@
 Index: src/3rdparty/chromium/ui/compositor/compositor.cc
 --- src/3rdparty/chromium/ui/compositor/compositor.cc.orig
 +++ src/3rdparty/chromium/ui/compositor/compositor.cc
-@@ -705,7 +705,7 @@ void Compositor::OnFrameTokenChanged(uint32_t frame_to
-   NOTREACHED();
+@@ -730,7 +730,7 @@ void Compositor::CancelThroughtputTracker(TrackerId tr
+   throughput_tracker_map_.erase(tracker_id);
  }
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)

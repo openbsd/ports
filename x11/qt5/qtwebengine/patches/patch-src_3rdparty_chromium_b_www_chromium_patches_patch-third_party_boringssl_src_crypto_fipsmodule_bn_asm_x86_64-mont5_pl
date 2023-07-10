@@ -1,0 +1,21 @@
+Index: src/3rdparty/chromium/b/www/chromium/patches/patch-third_party_boringssl_src_crypto_fipsmodule_bn_asm_x86_64-mont5_pl
+--- src/3rdparty/chromium/b/www/chromium/patches/patch-third_party_boringssl_src_crypto_fipsmodule_bn_asm_x86_64-mont5_pl.orig
++++ src/3rdparty/chromium/b/www/chromium/patches/patch-third_party_boringssl_src_crypto_fipsmodule_bn_asm_x86_64-mont5_pl
+@@ -0,0 +1,17 @@
++Index: third_party/boringssl/src/crypto/fipsmodule/bn/asm/x86_64-mont5.pl
++--- third_party/boringssl/src/crypto/fipsmodule/bn/asm/x86_64-mont5.pl.orig
+++++ third_party/boringssl/src/crypto/fipsmodule/bn/asm/x86_64-mont5.pl
++@@ -3544,11 +3544,13 @@ $code.=<<___;
++ ___
++ }
++ $code.=<<___;
+++.rodata
++ .align	64
++ .Linc:
++ 	.long	0,0, 1,1
++ 	.long	2,2, 2,2
++ .asciz	"Montgomery Multiplication with scatter/gather for x86_64, CRYPTOGAMS by <appro\@openssl.org>"
+++.previous
++ ___
++ 
++ # EXCEPTION_DISPOSITION handler (EXCEPTION_RECORD *rec,ULONG64 frame,

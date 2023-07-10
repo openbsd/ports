@@ -15,8 +15,8 @@ Index: src/3rdparty/chromium/third_party/blink/renderer/controller/memory_usage_
 +#endif
  }
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  // static
  void MemoryUsageMonitorPosix::Bind(
      mojo::PendingReceiver<mojom::blink::MemoryUsageMonitorLinux> receiver) {

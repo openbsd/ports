@@ -9,4 +9,4 @@ Index: src/3rdparty/chromium/components/content_settings/core/browser/website_se
 +#elif (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
    if (!(platform & PLATFORM_LINUX))
      return nullptr;
- #elif defined(OS_MACOSX) && !defined(OS_IOS)
+ #elif defined(OS_MAC)

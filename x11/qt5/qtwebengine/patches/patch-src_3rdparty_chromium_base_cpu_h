@@ -1,0 +1,12 @@
+Index: src/3rdparty/chromium/base/cpu.h
+--- src/3rdparty/chromium/base/cpu.h.orig
++++ src/3rdparty/chromium/base/cpu.h
+@@ -74,7 +74,7 @@ class BASE_EXPORT CPU final {
+   const std::string& cpu_brand() const { return cpu_brand_; }
+ 
+ #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || \
+-    defined(OS_AIX)
++    defined(OS_AIX) || defined(OS_BSD)
+   enum class CoreType {
+     kUnknown = 0,
+     kOther,

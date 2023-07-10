@@ -5,8 +5,8 @@ Index: src/3rdparty/chromium/content/utility/utility_blink_platform_with_sandbox
  #include "build/build_config.h"
  #include "third_party/blink/public/platform/platform.h"
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  #include "components/services/font/public/cpp/font_loader.h"  // nogncheck
  #include "third_party/skia/include/core/SkRefCnt.h"           // nogncheck
  #endif
@@ -14,12 +14,12 @@ Index: src/3rdparty/chromium/content/utility/utility_blink_platform_with_sandbox
    blink::WebSandboxSupport* GetSandboxSupport() override;
  
   private:
--#if defined(OS_LINUX) || defined(OS_MACOSX)
-+#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_MAC)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_MAC) || defined(OS_BSD)
    std::unique_ptr<blink::WebSandboxSupport> sandbox_support_;
  #endif
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    sk_sp<font_service::FontLoader> font_loader_;
  #endif
  

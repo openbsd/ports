@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/third_party/pdfium/BUILD.gn
 --- src/3rdparty/chromium/third_party/pdfium/BUILD.gn.orig
 +++ src/3rdparty/chromium/third_party/pdfium/BUILD.gn
-@@ -196,9 +196,9 @@ component("pdfium") {
+@@ -207,9 +207,9 @@ component("pdfium") {
      configs -= [ "//build/config/compiler:thin_archive" ]
    }
  

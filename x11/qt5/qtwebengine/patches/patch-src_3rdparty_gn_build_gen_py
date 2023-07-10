@@ -1,0 +1,41 @@
+Index: src/3rdparty/gn/build/gen.py
+--- src/3rdparty/gn/build/gen.py.orig
++++ src/3rdparty/gn/build/gen.py
+@@ -54,6 +54,9 @@ class Platform(object):
+   def is_linux(self):
+     return self._platform == 'linux'
+ 
++  def is_openbsd(self):
++    return self._platform == 'openbsd'
++
+   def is_mingw(self):
+     return self._platform == 'mingw'
+ 
+@@ -188,7 +191,7 @@ def WriteGenericNinja(path, static_libraries, executab
+       'linux': 'build_linux.ninja.template',
+       'freebsd': 'build_linux.ninja.template',
+       'aix': 'build_aix.ninja.template',
+-      'openbsd': 'build_openbsd.ninja.template',
++      'openbsd': 'build_linux.ninja.template',
+   }[platform.platform()])
+ 
+   with open(template_filename) as f:
+@@ -365,7 +368,7 @@ def WriteGNNinja(path, platform, host, options):
+         ldflags.append('-static-libstdc++')
+ 
+       # This is needed by libc++.
+-      libs.append('-ldl')
++      #libs.append('-ldl')
+     elif platform.is_darwin():
+       min_mac_version_flag = '-mmacosx-version-min=10.9'
+       cflags.append(min_mac_version_flag)
+@@ -376,6 +379,9 @@ def WriteGNNinja(path, platform, host, options):
+ 
+     if platform.is_posix():
+       ldflags.append('-pthread')
++
++    if platform.is_openbsd():
++      ldflags.append('-lkvm')
+ 
+     if options.use_lto:
+       cflags.extend(['-flto', '-fwhole-program-vtables'])

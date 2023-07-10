@@ -1,0 +1,11 @@
+Index: src/3rdparty/chromium/content/browser/BUILD.gn
+--- src/3rdparty/chromium/content/browser/BUILD.gn.orig
++++ src/3rdparty/chromium/content/browser/BUILD.gn
+@@ -2802,7 +2802,6 @@ jumbo_static_library("browser") {
+     ]
+     deps += [
+       "//components/speech",
+-      "//content/browser/speech/proto",
+       "//third_party/flac",
+     ]
+   }

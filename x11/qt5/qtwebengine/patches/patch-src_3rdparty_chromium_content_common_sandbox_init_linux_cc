@@ -6,7 +6,7 @@ Index: src/3rdparty/chromium/content/common/sandbox_init_linux.cc
  bool InitializeSandbox(std::unique_ptr<sandbox::bpf_dsl::Policy> policy,
                         base::ScopedFD proc_fd) {
 +#if !defined(OS_BSD)
-   return service_manager::SandboxSeccompBPF::StartSandboxWithExternalPolicy(
+   return sandbox::policy::SandboxSeccompBPF::StartSandboxWithExternalPolicy(
        std::move(policy), std::move(proc_fd));
 +#else
 +  return false;
@@ -16,5 +16,5 @@ Index: src/3rdparty/chromium/content/common/sandbox_init_linux.cc
 -#if !defined(OS_NACL_NONSFI)
 +#if !defined(OS_NACL_NONSFI) && !defined(OS_BSD)
  std::unique_ptr<sandbox::bpf_dsl::Policy> GetBPFSandboxBaselinePolicy() {
-   return service_manager::SandboxSeccompBPF::GetBaselinePolicy();
+   return sandbox::policy::SandboxSeccompBPF::GetBaselinePolicy();
  }

@@ -1,0 +1,24 @@
+Index: src/3rdparty/chromium/remoting/host/BUILD.gn
+--- src/3rdparty/chromium/remoting/host/BUILD.gn.orig
++++ src/3rdparty/chromium/remoting/host/BUILD.gn
+@@ -375,9 +375,7 @@ static_library("common") {
+       "//ui/events/platform/x11",
+       "//ui/gfx/x",
+     ]
+-    if (use_gtk) {
+       deps += [ "//build/config/linux/gtk" ]
+-    }
+   } else {
+     sources -= [
+       "clipboard_x11.cc",
+@@ -777,9 +775,7 @@ if (enable_me2me_host) {
+       ]
+     }
+ 
+-    if (use_gtk) {
+-      deps += [ "//build/config/linux/gtk" ]
+-    }
++    deps += [ "//build/config/linux/gtk" ]
+     if ((is_linux && !is_chromeos) || is_mac) {
+       libs = [ "pam" ]
+     }

@@ -1,0 +1,12 @@
+Index: src/3rdparty/chromium/remoting/test/BUILD.gn
+--- src/3rdparty/chromium/remoting/test/BUILD.gn.orig
++++ src/3rdparty/chromium/remoting/test/BUILD.gn
+@@ -136,7 +136,7 @@ if (enable_remoting_host && !is_android && !is_chromeo
+ 
+     deps = [ ":it2me_standalone_host" ]
+ 
+-    if (use_gtk) {
++    if (is_openbsd) {
+       deps += [ "//build/config/linux/gtk" ]
+     }
+ 

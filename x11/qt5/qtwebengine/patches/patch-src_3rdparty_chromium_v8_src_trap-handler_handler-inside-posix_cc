@@ -1,27 +1,26 @@
 Index: src/3rdparty/chromium/v8/src/trap-handler/handler-inside-posix.cc
 --- src/3rdparty/chromium/v8/src/trap-handler/handler-inside-posix.cc.orig
 +++ src/3rdparty/chromium/v8/src/trap-handler/handler-inside-posix.cc
-@@ -48,8 +48,12 @@ bool IsKernelGeneratedSignal(siginfo_t* info) {
-   // si_code at its default of 0 for signals that don’t originate in hardware.
+@@ -49,7 +49,12 @@ bool IsKernelGeneratedSignal(siginfo_t* info) {
    // The other conditions are only relevant for Linux.
    return info->si_code > 0 && info->si_code != SI_USER &&
--         info->si_code != SI_QUEUE && info->si_code != SI_TIMER &&
+          info->si_code != SI_QUEUE && info->si_code != SI_TIMER &&
 -         info->si_code != SI_ASYNCIO && info->si_code != SI_MESGQ;
 +         info->si_code != SI_QUEUE && info->si_code != SI_TIMER
 +#ifdef V8_OS_OPENBSD
-+	 ;
++    ;
 +#else
-+         && info->si_code != SI_ASYNCIO && info->si_code != SI_MESGQ;
++        && info->si_code != SI_ASYNCIO && info->si_code != SI_MESGQ;
 +#endif
  }
  
  class SigUnmaskStack {
-@@ -114,6 +118,8 @@ bool TryHandleSignal(int signum, siginfo_t* info, void
-     auto* context_rip = &uc->uc_mcontext->__ss.__rip;
- #elif V8_OS_FREEBSD
-     auto* context_rip = &uc->uc_mcontext.mc_rip;
+@@ -120,6 +125,8 @@ bool TryHandleSignal(int signum, siginfo_t* info, void
+     auto* context_ip = &uc->uc_mcontext.mc_rip;
+ #elif V8_OS_FREEBSD && V8_HOST_ARCH_ARM64
+     auto* context_ip = &uc->uc_mcontext.mc_pc;
 +#elif V8_OS_OPENBSD
-+    auto* context_rip = &uc->sc_rip;
++    auto* context_ip = &uc->sc_rip;
  #else
  #error Unsupported platform
  #endif

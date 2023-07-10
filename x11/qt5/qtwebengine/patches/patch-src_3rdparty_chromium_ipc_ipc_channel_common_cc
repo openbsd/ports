@@ -5,8 +5,8 @@ Index: src/3rdparty/chromium/ipc/ipc_channel_common.cc
  
  namespace IPC {
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  
  namespace {
  int g_global_pid = 0;
