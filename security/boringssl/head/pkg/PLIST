@@ -7,6 +7,7 @@ eboringssl/include/openssl/
 eboringssl/include/openssl/aead.h
 eboringssl/include/openssl/aes.h
 eboringssl/include/openssl/arm_arch.h
+eboringssl/include/openssl/asm_base.h
 eboringssl/include/openssl/asn1.h
 eboringssl/include/openssl/asn1_mac.h
 eboringssl/include/openssl/asn1t.h
@@ -80,6 +81,7 @@ eboringssl/include/openssl/srtp.h
 eboringssl/include/openssl/ssl.h
 eboringssl/include/openssl/ssl3.h
 eboringssl/include/openssl/stack.h
+eboringssl/include/openssl/target.h
 eboringssl/include/openssl/thread.h
 eboringssl/include/openssl/time.h
 eboringssl/include/openssl/tls1.h
