@@ -1,7 +1,76 @@
 Index: pregenerated/x86_64-mont5-elf.S
 --- pregenerated/x86_64-mont5-elf.S.orig
 +++ pregenerated/x86_64-mont5-elf.S
-@@ -3777,10 +3777,12 @@ GFp_bn_gather5:
+@@ -1,6 +1,12 @@
+ # This file is generated from a similarly-named Perl script in the BoringSSL
+ # source tree. Do not edit by hand.
+ 
++#if defined(__CET__)
++#include <cet.h>
++#else
++#define _CET_ENDBR
++#endif
++
+ #if defined(__has_feature)
+ #if __has_feature(memory_sanitizer) && !defined(OPENSSL_NO_ASM)
+ #define OPENSSL_NO_ASM
+@@ -19,6 +25,7 @@
+ .align	64
+ GFp_bn_mul_mont_gather5:
+ .cfi_startproc	
++	_CET_ENDBR
+ 	movl	%r9d,%r9d
+ 	movq	%rsp,%rax
+ .cfi_def_cfa_register	%rax
+@@ -1093,6 +1100,7 @@ mul4x_internal:
+ .align	32
+ GFp_bn_power5:
+ .cfi_startproc	
++	_CET_ENDBR
+ 	movq	%rsp,%rax
+ .cfi_def_cfa_register	%rax
+ 	leaq	GFp_ia32cap_P(%rip),%r11
+@@ -1232,6 +1240,7 @@ GFp_bn_power5:
+ GFp_bn_sqr8x_internal:
+ __bn_sqr8x_internal:
+ .cfi_startproc	
++	_CET_ENDBR
+ 
+ 
+ 
+@@ -2070,6 +2079,7 @@ __bn_post4x_internal:
+ .align	32
+ GFp_bn_from_montgomery:
+ .cfi_startproc	
++	_CET_ENDBR
+ 	testl	$7,%r9d
+ 	jz	bn_from_mont8x
+ 	xorl	%eax,%eax
+@@ -2922,6 +2932,7 @@ bn_powerx5:
+ GFp_bn_sqrx8x_internal:
+ __bn_sqrx8x_internal:
+ .cfi_startproc	
++	_CET_ENDBR
+ 
+ 
+ 
+@@ -3594,6 +3605,7 @@ __bn_postx4x_internal:
+ .align	16
+ GFp_bn_scatter5:
+ .cfi_startproc	
++	_CET_ENDBR
+ 	cmpl	$0,%esi
+ 	jz	.Lscatter_epilogue
+ 	leaq	(%rdx,%rcx,8),%rdx
+@@ -3615,6 +3627,7 @@ GFp_bn_scatter5:
+ .align	32
+ GFp_bn_gather5:
+ .cfi_startproc	
++	_CET_ENDBR
+ .LSEH_begin_GFp_bn_gather5:
+ 
+ .byte	0x4c,0x8d,0x14,0x24
+@@ -3777,10 +3790,12 @@ GFp_bn_gather5:
  .LSEH_end_GFp_bn_gather5:
  .cfi_endproc	
  .size	GFp_bn_gather5,.-GFp_bn_gather5

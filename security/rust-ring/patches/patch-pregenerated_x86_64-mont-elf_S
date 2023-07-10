@@ -1,0 +1,24 @@
+Index: pregenerated/x86_64-mont-elf.S
+--- pregenerated/x86_64-mont-elf.S.orig
++++ pregenerated/x86_64-mont-elf.S
+@@ -1,6 +1,12 @@
+ # This file is generated from a similarly-named Perl script in the BoringSSL
+ # source tree. Do not edit by hand.
+ 
++#if defined(__CET__)
++#include <cet.h>
++#else
++#define _CET_ENDBR
++#endif
++
+ #if defined(__has_feature)
+ #if __has_feature(memory_sanitizer) && !defined(OPENSSL_NO_ASM)
+ #define OPENSSL_NO_ASM
+@@ -19,6 +25,7 @@
+ .align	16
+ GFp_bn_mul_mont:
+ .cfi_startproc	
++	_CET_ENDBR
+ 	movl	%r9d,%r9d
+ 	movq	%rsp,%rax
+ .cfi_def_cfa_register	%rax

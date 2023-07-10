@@ -1,7 +1,20 @@
 Index: pregenerated/chacha20_poly1305_x86_64-elf.S
 --- pregenerated/chacha20_poly1305_x86_64-elf.S.orig
 +++ pregenerated/chacha20_poly1305_x86_64-elf.S
-@@ -14,6 +14,7 @@
+@@ -1,6 +1,12 @@
+ # This file is generated from a similarly-named Perl script in the BoringSSL
+ # source tree. Do not edit by hand.
+ 
++#if defined(__CET__)
++#include <cet.h>
++#else
++#define _CET_ENDBR
++#endif
++
+ #if defined(__has_feature)
+ #if __has_feature(memory_sanitizer) && !defined(OPENSSL_NO_ASM)
+ #define OPENSSL_NO_ASM
+@@ -14,6 +20,7 @@
  
  chacha20_poly1305_constants:
  
@@ -9,7 +22,7 @@ Index: pregenerated/chacha20_poly1305_x86_64-elf.S
  .align	64
  .Lchacha20_consts:
  .byte	'e','x','p','a','n','d',' ','3','2','-','b','y','t','e',' ','k'
-@@ -51,6 +52,7 @@ chacha20_poly1305_constants:
+@@ -51,6 +58,7 @@ chacha20_poly1305_constants:
  .byte	0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0x00,0x00
  .byte	0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0x00
  .byte	0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff
@@ -17,3 +30,19 @@ Index: pregenerated/chacha20_poly1305_x86_64-elf.S
  
  .type	poly_hash_ad_internal,@function
  .align	64
+@@ -225,6 +233,7 @@ poly_hash_ad_internal:
+ .align	64
+ GFp_chacha20_poly1305_open:
+ .cfi_startproc	
++	_CET_ENDBR
+ 	pushq	%rbp
+ .cfi_adjust_cfa_offset	8
+ .cfi_offset	%rbp,-16
+@@ -2109,6 +2118,7 @@ GFp_chacha20_poly1305_open:
+ .align	64
+ GFp_chacha20_poly1305_seal:
+ .cfi_startproc	
++	_CET_ENDBR
+ 	pushq	%rbp
+ .cfi_adjust_cfa_offset	8
+ .cfi_offset	%rbp,-16

@@ -1,7 +1,20 @@
 Index: pregenerated/chacha-x86_64-elf.S
 --- pregenerated/chacha-x86_64-elf.S.orig
 +++ pregenerated/chacha-x86_64-elf.S
-@@ -13,6 +13,7 @@
+@@ -1,6 +1,12 @@
+ # This file is generated from a similarly-named Perl script in the BoringSSL
+ # source tree. Do not edit by hand.
+ 
++#if defined(__CET__)
++#include <cet.h>
++#else
++#define _CET_ENDBR
++#endif
++
+ #if defined(__has_feature)
+ #if __has_feature(memory_sanitizer) && !defined(OPENSSL_NO_ASM)
+ #define OPENSSL_NO_ASM
+@@ -13,6 +19,7 @@
  .extern	GFp_ia32cap_P
  .hidden GFp_ia32cap_P
  
@@ -9,7 +22,7 @@ Index: pregenerated/chacha-x86_64-elf.S
  .align	64
  .Lzero:
  .long	0,0,0,0
-@@ -42,6 +43,7 @@
+@@ -42,12 +49,14 @@
  .Lsixteen:
  .long	16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16
  .byte	67,104,97,67,104,97,50,48,32,102,111,114,32,120,56,54,95,54,52,44,32,67,82,89,80,84,79,71,65,77,83,32,98,121,32,60,97,112,112,114,111,64,111,112,101,110,115,115,108,46,111,114,103,62,0
@@ -17,3 +30,10 @@ Index: pregenerated/chacha-x86_64-elf.S
  .globl	GFp_ChaCha20_ctr32
  .hidden GFp_ChaCha20_ctr32
  .type	GFp_ChaCha20_ctr32,@function
+ .align	64
+ GFp_ChaCha20_ctr32:
+ .cfi_startproc	
++	_CET_ENDBR
+ 	cmpq	$0,%rdx
+ 	je	.Lno_data
+ 	movq	GFp_ia32cap_P+4(%rip),%r10

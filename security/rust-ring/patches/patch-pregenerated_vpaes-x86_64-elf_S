@@ -1,0 +1,40 @@
+Index: pregenerated/vpaes-x86_64-elf.S
+--- pregenerated/vpaes-x86_64-elf.S.orig
++++ pregenerated/vpaes-x86_64-elf.S
+@@ -1,6 +1,12 @@
+ # This file is generated from a similarly-named Perl script in the BoringSSL
+ # source tree. Do not edit by hand.
+ 
++#if defined(__CET__)
++#include <cet.h>
++#else
++#define _CET_ENDBR
++#endif
++
+ #if defined(__has_feature)
+ #if __has_feature(memory_sanitizer) && !defined(OPENSSL_NO_ASM)
+ #define OPENSSL_NO_ASM
+@@ -579,6 +585,7 @@ _vpaes_schedule_mangle:
+ .align	16
+ GFp_vpaes_set_encrypt_key:
+ .cfi_startproc	
++	_CET_ENDBR
+ #ifdef BORINGSSL_DISPATCH_TEST
+ .extern	BORINGSSL_function_hit
+ .hidden BORINGSSL_function_hit
+@@ -604,6 +611,7 @@ GFp_vpaes_set_encrypt_key:
+ .align	16
+ GFp_vpaes_encrypt:
+ .cfi_startproc	
++	_CET_ENDBR
+ 	movdqu	(%rdi),%xmm0
+ 	call	_vpaes_preheat
+ 	call	_vpaes_encrypt_core
+@@ -617,6 +625,7 @@ GFp_vpaes_encrypt:
+ .align	16
+ GFp_vpaes_ctr32_encrypt_blocks:
+ .cfi_startproc	
++	_CET_ENDBR
+ 
+ 	xchgq	%rcx,%rdx
+ 	testq	%rcx,%rcx

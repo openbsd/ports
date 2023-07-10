@@ -1,7 +1,60 @@
 Index: pregenerated/ghash-x86_64-elf.S
 --- pregenerated/ghash-x86_64-elf.S.orig
 +++ pregenerated/ghash-x86_64-elf.S
-@@ -1100,6 +1100,7 @@ GFp_gcm_ghash_avx:
+@@ -1,6 +1,12 @@
+ # This file is generated from a similarly-named Perl script in the BoringSSL
+ # source tree. Do not edit by hand.
+ 
++#if defined(__CET__)
++#include <cet.h>
++#else
++#define _CET_ENDBR
++#endif
++
+ #if defined(__has_feature)
+ #if __has_feature(memory_sanitizer) && !defined(OPENSSL_NO_ASM)
+ #define OPENSSL_NO_ASM
+@@ -17,6 +23,7 @@
+ .align	16
+ GFp_gcm_init_clmul:
+ .cfi_startproc	
++	_CET_ENDBR
+ .L_init_clmul:
+ 	movdqu	(%rsi),%xmm2
+ 	pshufd	$78,%xmm2,%xmm2
+@@ -176,6 +183,7 @@ GFp_gcm_init_clmul:
+ .align	16
+ GFp_gcm_gmult_clmul:
+ .cfi_startproc	
++	_CET_ENDBR
+ .L_gmult_clmul:
+ 	movdqu	(%rdi),%xmm0
+ 	movdqa	.Lbswap_mask(%rip),%xmm5
+@@ -230,6 +238,7 @@ GFp_gcm_gmult_clmul:
+ .align	32
+ GFp_gcm_ghash_clmul:
+ .cfi_startproc	
++	_CET_ENDBR
+ .L_ghash_clmul:
+ 	movdqa	.Lbswap_mask(%rip),%xmm10
+ 
+@@ -617,6 +626,7 @@ GFp_gcm_ghash_clmul:
+ .align	32
+ GFp_gcm_init_avx:
+ .cfi_startproc	
++	_CET_ENDBR
+ 	vzeroupper
+ 
+ 	vmovdqu	(%rsi),%xmm2
+@@ -727,6 +737,7 @@ GFp_gcm_init_avx:
+ .align	32
+ GFp_gcm_ghash_avx:
+ .cfi_startproc	
++	_CET_ENDBR
+ 	vzeroupper
+ 
+ 	vmovdqu	(%rdi),%xmm10
+@@ -1100,6 +1111,7 @@ GFp_gcm_ghash_avx:
  	.byte	0xf3,0xc3
  .cfi_endproc	
  .size	GFp_gcm_ghash_avx,.-GFp_gcm_ghash_avx
@@ -9,7 +62,7 @@ Index: pregenerated/ghash-x86_64-elf.S
  .align	64
  .Lbswap_mask:
  .byte	15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0
-@@ -1111,5 +1112,6 @@ GFp_gcm_ghash_avx:
+@@ -1111,5 +1123,6 @@ GFp_gcm_ghash_avx:
  
  .byte	71,72,65,83,72,32,102,111,114,32,120,56,54,95,54,52,44,32,67,82,89,80,84,79,71,65,77,83,32,98,121,32,60,97,112,112,114,111,64,111,112,101,110,115,115,108,46,111,114,103,62,0
  .align	64
