@@ -1,21 +1,53 @@
-fix build with geos 3.11.
+From a7c2ec216cb50fa4f01d61c358cb93e7a17b01d1 Mon Sep 17 00:00:00 2001
+From: eyal0 <109809+eyal0@users.noreply.github.com>
+Date: Wed, 7 Dec 2022 22:09:53 -0700
+Subject: [PATCH] fix: Don't use the CoordinateSequenceFactory.
 
-https://github.com/pcb2gcode/pcb2gcode/commit/f7b93da36eb607f92b4d35ea576658ae008ca6a5
+It's not used anymore in geos since geos commit
+https://github.com/libgeos/geos/commit/d463bcb6df8fc1f01f276b27719ee8ccfb2d788a .
 
 Index: geos_helpers.cpp
 --- geos_helpers.cpp.orig
 +++ geos_helpers.cpp
-@@ -3,13 +3,10 @@
- #include "geos_helpers.hpp"
+@@ -4,11 +4,20 @@
  #include "geometry.hpp"
  #include <geos/io/WKTReader.h>
--#include <geos/io/WKTReader.inl>
  #include <geos/io/WKTWriter.h>
- #include <geos/geom/CoordinateSequenceFactory.h>
+-#include <geos/geom/CoordinateSequenceFactory.h>
  #include <geos/geom/Coordinate.h>
--#include <geos/geom/Coordinate.inl>
  #include <geos/geom/GeometryFactory.h>
--#include <geos/geom/GeometryFactory.inl>
  #include <boost/pointer_cast.hpp>
++#include <geos/version.h>
++#include <geos/util.h>
++#if ((GEOS_VERSION_MAJOR > 3) ||                           \
++     (GEOS_VERSION_MAJOR == 3 && GEOS_VERSION_MINOR > 11))
++  #define CoordinateArraySequence CoordinateSequence
++  #include <geos/geom/CoordinateSequence.h>
++#else
++  #include <geos/geom/CoordinateArraySequence.h>
++#endif
  
++
  linestring_type_fp from_geos(const geos::geom::LineString* ls) {
+   linestring_type_fp ret;
+   ret.reserve(ls->getNumPoints());
+@@ -86,8 +95,7 @@ multi_polygon_type_fp from_geos(const std::unique_ptr<
+ std::unique_ptr<geos::geom::LineString> to_geos(
+     const linestring_type_fp& ls) {
+   auto geom_factory = geos::geom::GeometryFactory::create();
+-  auto coord_factory = geom_factory->getCoordinateSequenceFactory();
+-  auto coords = coord_factory->create(ls.size(), 2 /* dimensions */);
++  auto coords = geos::detail::make_unique<geos::geom::CoordinateArraySequence>(ls.size(), 2 /* dimensions */);
+   for (size_t i = 0; i < ls.size(); i++) {
+     coords->setAt(geos::geom::Coordinate(ls[i].x(), ls[i].y()), i);
+   }
+@@ -96,8 +104,7 @@ std::unique_ptr<geos::geom::LineString> to_geos(
+ 
+ std::unique_ptr<geos::geom::LinearRing> to_geos(const ring_type_fp& ring) {
+   auto geom_factory = geos::geom::GeometryFactory::create();
+-  auto coord_factory = geom_factory->getCoordinateSequenceFactory();
+-  auto coords = coord_factory->create(ring.size(), 2 /* dimensions */);
++  auto coords = geos::detail::make_unique<geos::geom::CoordinateArraySequence>(ring.size(), 2 /* dimensions */);
+   for (size_t i = 0; i < ring.size(); i++) {
+     // reverse rings for geos.
+     coords->setAt(geos::geom::Coordinate(ring[i].x(), ring[i].y()), i);

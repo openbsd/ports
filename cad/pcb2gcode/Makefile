@@ -1,10 +1,9 @@
 COMMENT =		tool for isolation, routing, and drilling of PCBs
-V =			2.4.0
+V =			2.5.0
 
 GH_ACCOUNT =		pcb2gcode
 GH_PROJECT =		pcb2gcode
 GH_TAGNAME =		v${V}
-REVISION =		2
 
 CATEGORIES =		cad
 
