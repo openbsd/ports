@@ -2,6 +2,7 @@ COMMENT =		SMTP server
 
 GH_PROJECT =		smtp-server
 GH_TAGNAME =		v0.1.2
+REVISION =		0
 
 HOMEPAGE =	https://smtp.stalw.art/
 

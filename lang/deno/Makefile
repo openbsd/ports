@@ -6,7 +6,7 @@ USE_WXNEEDED =		Yes
 USE_NOBTCFI =		Yes
 
 VERSION =		1.32.5
-REVISION =		1
+REVISION =		2
 HOMEPAGE =		https://deno.com/runtime
 
 DISTNAME =		deno-${VERSION}
