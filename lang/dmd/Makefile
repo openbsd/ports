@@ -1,6 +1,9 @@
 # i386 forthcoming
 ONLY_FOR_ARCHS =	amd64
 
+# No BT CFI yet.
+USE_NOBTCFI =	Yes
+
 V =		2.104.0
 COMMENT =	reference compiler for the D programming language
 DISTFILES =	dmd-${V}{v${V}}.tar.gz:1 \

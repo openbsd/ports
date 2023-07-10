@@ -1,0 +1,16 @@
+Index: dmd/compiler/src/dmd/link.d
+--- dmd/compiler/src/dmd/link.d.orig
++++ dmd/compiler/src/dmd/link.d
+@@ -515,6 +515,12 @@ public int runLINK()
+             if (driverParams.dll)
+                 argv.push("-shared");
+         }
++        // No BT CFI
++        version (OpenBSD)
++        {
++            argv.push("-Wl,--no-execute-only");
++            argv.push("-Wl,-z,nobtcfi");
++        }
+         // None of that a.out stuff. Use explicit exe file name, or
+         // generate one from name of first source file.
+         argv.push("-o");
