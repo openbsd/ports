@@ -2,6 +2,7 @@ BROKEN-sparc64= fibers requires either ucontext or asm code (not present for spa
 
 PHP_VERSION=	8.2.8
 PHP_PKGSPEC=	>=8.2,<8.3
+REVISION-main=	0
 
 # keep REVISION-gd >= -stable for 7.3 cycle;
 # libwebp gained additional WANTLIB post 7.3-release

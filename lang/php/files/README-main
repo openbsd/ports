@@ -54,7 +54,7 @@ NGINX Unit
 ----------
 NGINX Unit (https://unit.nginx.org/) is a standalone application server,
 distinct to the standard NGINX web server. It uses its own compiled module
-to provide PHP support. Install the relevant package (e.g.  unit-php${SV})
+to provide PHP support. Install the relevant package (e.g. unit-php${SV})
 and follow the usual documentation for Unit.
 
 Apache httpd

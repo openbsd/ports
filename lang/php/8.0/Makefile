@@ -1,6 +1,7 @@
 PORTROACH=	limit:^8\.0
 PHP_VERSION=	8.0.29
 PHP_PKGSPEC=	>=8.0,<8.1
+REVISION-main=	0
 
 # keep REVISION-gd >= -stable for 7.3 cycle;
 # libwebp gained additional WANTLIB post 7.3-release

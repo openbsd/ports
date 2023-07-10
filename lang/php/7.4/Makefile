@@ -1,7 +1,7 @@
 PORTROACH=	limit:^7\.4
 PHP_VERSION=	7.4.33
 PHP_PKGSPEC=	<7.5
-REVISION-main=	0
+REVISION-main=	1
 REVISION-curl=	0
 
 # keep REVISION-gd >= -stable for 7.3 cycle;
