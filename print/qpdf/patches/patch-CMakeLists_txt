@@ -3,7 +3,7 @@ Don't pick up libatomic from ports gcc if it happens to be installed.
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -188,7 +188,7 @@ int main() {
+@@ -194,7 +194,7 @@ int main() {
      set(ATOMIC_LIBRARY atomic PARENT_SCOPE)
    endif()
  endfunction()
