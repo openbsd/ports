@@ -9,6 +9,7 @@
      SUBDIR += galera
      SUBDIR += gdbm
      SUBDIR += influxdb
+     SUBDIR += influx-cli
      SUBDIR += iodbc
      SUBDIR += jxplorer
      SUBDIR += kdb
