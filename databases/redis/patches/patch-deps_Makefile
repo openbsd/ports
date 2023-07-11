@@ -1,7 +1,7 @@
 Index: deps/Makefile
 --- deps/Makefile.orig
 +++ deps/Makefile
-@@ -47,19 +47,16 @@ ifeq ($(BUILD_TLS),yes)
+@@ -49,19 +49,16 @@ ifeq ($(BUILD_TLS),yes)
  endif
  
  hiredis: .make-prerequisites
@@ -21,7 +21,7 @@ Index: deps/Makefile
  	cd hdr_histogram && $(MAKE)
  
  .PHONY: hdr_histogram
-@@ -78,7 +75,6 @@ AR=ar
+@@ -85,7 +82,6 @@ AR=ar
  ARFLAGS=rc
  
  lua: .make-prerequisites
