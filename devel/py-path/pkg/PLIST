@@ -16,8 +16,6 @@ lib/python${MODPY_VERSION}/site-packages/path/${MODPY_PYCACHE}masks.${MODPY_PYC_
 lib/python${MODPY_VERSION}/site-packages/path/${MODPY_PYCACHE}masks.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/path/${MODPY_PYCACHE}matchers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/path/${MODPY_PYCACHE}matchers.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/path/${MODPY_PYCACHE}py37compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/path/${MODPY_PYCACHE}py37compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/path/classes.py
 lib/python${MODPY_VERSION}/site-packages/path/classes.pyi
 lib/python${MODPY_VERSION}/site-packages/path/masks.py
@@ -25,5 +23,3 @@ lib/python${MODPY_VERSION}/site-packages/path/masks.pyi
 lib/python${MODPY_VERSION}/site-packages/path/matchers.py
 lib/python${MODPY_VERSION}/site-packages/path/matchers.pyi
 lib/python${MODPY_VERSION}/site-packages/path/py.typed
-lib/python${MODPY_VERSION}/site-packages/path/py37compat.py
-lib/python${MODPY_VERSION}/site-packages/path/py37compat.pyi
