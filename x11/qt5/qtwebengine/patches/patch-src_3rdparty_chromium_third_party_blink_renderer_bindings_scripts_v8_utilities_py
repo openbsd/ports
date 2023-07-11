@@ -1,0 +1,12 @@
+Index: src/3rdparty/chromium/third_party/blink/renderer/bindings/scripts/v8_utilities.py
+--- src/3rdparty/chromium/third_party/blink/renderer/bindings/scripts/v8_utilities.py.orig
++++ src/3rdparty/chromium/third_party/blink/renderer/bindings/scripts/v8_utilities.py
+@@ -271,7 +271,7 @@ EXPOSED_WORKERS = set([
+ ])
+ 
+ 
+-class ExposureSet:
++class ExposureSet(object):
+     """An ExposureSet is a collection of Exposure instructions."""
+ 
+     def __init__(self, exposures=None):

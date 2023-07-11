@@ -9,6 +9,19 @@ Index: src/buildtools/configure.json
              "sources": [
                  { "type": "pkgConfig", "args": "minizip" }
              ]
+@@ -295,9 +296,9 @@
+             "label": "system ninja",
+             "type": "detectNinja"
+         },
+-        "webengine-python2": {
+-            "label": "python2",
+-            "type": "detectPython2",
++        "webengine-python": {
++            "label": "python",
++            "type": "detectPython",
+             "log": "location"
+         },
+         "webengine-winversion": {
 @@ -364,47 +365,12 @@
      "features": {
          "webengine-core-support": {
@@ -59,6 +72,23 @@ Index: src/buildtools/configure.json
              "output": [ "privateFeature" ]
          },
          "build-qtwebengine-core": {
+@@ -423,12 +389,12 @@
+             "autoDetect": "features.private_tests",
+             "output": [ "privateFeature" ]
+         },
+-        "webengine-python2": {
+-            "label": "python2",
+-            "condition": "tests.webengine-python2",
++        "webengine-python": {
++            "label": "python",
++            "condition": "tests.webengine-python",
+             "output": [
+                 "privateFeature",
+-                { "type": "varAssign", "name": "QMAKE_PYTHON2", "value": "tests.webengine-python2.location" }
++                { "type": "varAssign", "name": "QMAKE_PYTHON", "value": "tests.webengine-python.location" }
+             ]
+         },
+         "webengine-gperf": {
 @@ -519,7 +485,7 @@
          },
          "webengine-system-glibc": {

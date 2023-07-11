@@ -1,0 +1,11 @@
+Index: src/3rdparty/chromium/tools/metrics/BUILD.gn
+--- src/3rdparty/chromium/tools/metrics/BUILD.gn.orig
++++ src/3rdparty/chromium/tools/metrics/BUILD.gn
+@@ -56,7 +56,6 @@ group("metrics_python_tests") {
+     "//testing/scripts/common.py",
+     "//testing/xvfb.py",
+     "//testing/test_env.py",
+-    "//third_party/catapult/third_party/typ/",
+ 
+     # Scripts we depend on. Their unit tests are also included.
+     "//tools/json_comment_eater/json_comment_eater.py",

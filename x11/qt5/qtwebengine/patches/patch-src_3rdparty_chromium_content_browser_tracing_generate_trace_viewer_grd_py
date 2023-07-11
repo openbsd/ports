@@ -1,0 +1,12 @@
+Index: src/3rdparty/chromium/content/browser/tracing/generate_trace_viewer_grd.py
+--- src/3rdparty/chromium/content/browser/tracing/generate_trace_viewer_grd.py.orig
++++ src/3rdparty/chromium/content/browser/tracing/generate_trace_viewer_grd.py
+@@ -74,7 +74,7 @@ def main(argv):
+   for filename in parsed_args.source_files:
+     add_file_to_grd(doc, os.path.basename(filename))
+ 
+-  with open(parsed_args.output_filename, 'w') as output_file:
++  with open(parsed_args.output_filename, 'wb') as output_file:
+     output_file.write(doc.toxml(encoding='UTF-8'))
+ 
+ 

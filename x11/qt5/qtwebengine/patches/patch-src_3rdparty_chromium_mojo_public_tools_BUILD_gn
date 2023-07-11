@@ -1,0 +1,9 @@
+Index: src/3rdparty/chromium/mojo/public/tools/BUILD.gn
+--- src/3rdparty/chromium/mojo/public/tools/BUILD.gn.orig
++++ src/3rdparty/chromium/mojo/public/tools/BUILD.gn
+@@ -14,5 +14,4 @@ group("mojo_python_unittests") {
+     "//testing/xvfb.py",
+   ]
+   deps = [ "//mojo/public/tools/mojom/mojom:tests" ]
+-  data_deps = [ "//third_party/catapult/third_party/typ/" ]
+ }

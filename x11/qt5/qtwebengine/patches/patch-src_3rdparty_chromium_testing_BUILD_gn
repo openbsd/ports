@@ -1,0 +1,11 @@
+Index: src/3rdparty/chromium/testing/BUILD.gn
+--- src/3rdparty/chromium/testing/BUILD.gn.orig
++++ src/3rdparty/chromium/testing/BUILD.gn
+@@ -27,7 +27,6 @@ group("run_perf_test") {
+ 
+   data_deps = [
+     ":test_scripts_shared",
+-    "//third_party/catapult/tracing:convert_chart_json",
+   ]
+ 
+   if (is_android) {

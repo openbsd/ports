@@ -1,0 +1,19 @@
+Index: src/3rdparty/chromium/weblayer/shell/BUILD.gn
+--- src/3rdparty/chromium/weblayer/shell/BUILD.gn.orig
++++ src/3rdparty/chromium/weblayer/shell/BUILD.gn
+@@ -161,7 +161,6 @@ repack("support_pak") {
+     "$root_gen_dir/components/strings/components_locale_settings_en-US.pak",
+     "$root_gen_dir/components/strings/components_strings_en-US.pak",
+     "$root_gen_dir/content/app/resources/content_resources_100_percent.pak",
+-    "$root_gen_dir/content/browser/tracing/tracing_resources.pak",
+     "$root_gen_dir/content/content_resources.pak",
+     "$root_gen_dir/content/dev_ui_content_resources.pak",
+     "$root_gen_dir/mojo/public/js/mojo_bindings_resources.pak",
+@@ -182,7 +181,6 @@ repack("support_pak") {
+     "//content:content_resources",
+     "//content:dev_ui_content_resources",
+     "//content/app/resources",
+-    "//content/browser/tracing:resources",
+     "//mojo/public/js:resources",
+     "//net:net_resources",
+     "//third_party/blink/public:resources",

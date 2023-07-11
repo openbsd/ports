@@ -1,0 +1,22 @@
+Index: src/3rdparty/chromium/third_party/webrtc/test/BUILD.gn
+--- src/3rdparty/chromium/third_party/webrtc/test/BUILD.gn.orig
++++ src/3rdparty/chromium/third_party/webrtc/test/BUILD.gn
+@@ -258,10 +258,6 @@ rtc_library("perf_test") {
+   absl_deps = [ "//third_party/abseil-cpp/absl/types:optional" ]
+   if (rtc_enable_protobuf) {
+     sources += [ "testsupport/perf_test_histogram_writer.cc" ]
+-    deps += [
+-      "//third_party/catapult/tracing/tracing:histogram",
+-      "//third_party/catapult/tracing/tracing:reserved_infos",
+-    ]
+   } else {
+     sources += [ "testsupport/perf_test_histogram_writer_no_protobuf.cc" ]
+   }
+@@ -566,7 +562,6 @@ if (rtc_include_tests) {
+ 
+     if (rtc_enable_protobuf) {
+       sources += [ "testsupport/perf_test_histogram_writer_unittest.cc" ]
+-      deps += [ "//third_party/catapult/tracing/tracing:histogram" ]
+     }
+ 
+     data = test_support_unittests_resources

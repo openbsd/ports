@@ -10,3 +10,44 @@ Index: src/3rdparty/chromium/chrome/test/BUILD.gn
      # TODO(crbug.com/753619): Enable crash reporting on Fuchsia.
      deps += [ "//third_party/breakpad:client" ]
    }
+@@ -7103,8 +7103,6 @@ if (!is_fuchsia && !is_android) {
+       "//chrome/test/data/password/captured_sites/",
+       "//chrome/test/data/web_page_replay_go_helper_scripts/automation_helper.js",
+       "//components/test/data/autofill/web_page_replay_support_files/",
+-      "//third_party/catapult/telemetry/telemetry/bin/",
+-      "//third_party/catapult/web_page_replay_go/deterministic.js",
+     ]
+ 
+     if (is_linux || is_chromeos || is_win) {
+@@ -7141,7 +7139,6 @@ if (!is_fuchsia && !is_android) {
+ 
+       # TODO(uwyiming@chromium.org) create a gn target for Web Page Replay Go (WPR Go) and only WPR Go.
+       # So that test targets requiring WPR Go does not pull down the whole telemetry tool chain.
+-      "//third_party/catapult:telemetry_chrome_test_support",
+       "//third_party/hunspell",
+       "//third_party/icu",
+       "//third_party/libpng",
+@@ -7171,7 +7168,6 @@ if (!is_fuchsia && !is_android) {
+     deps = [ "//tools/perf/chrome_telemetry_build:telemetry_chrome_test" ]
+ 
+     data = [
+-      "//third_party/catapult/telemetry/telemetry/internal/bin/",
+       "//tools/perf/run_telemetry_tests",
+ 
+       # For isolate contract.
+@@ -7189,7 +7185,6 @@ if (!is_fuchsia && !is_android) {
+   group("telemetry_gpu_unittests") {
+     testonly = true
+     deps = [
+-      "//third_party/catapult:telemetry_chrome_test_support",
+       "//tools/metrics:metrics_python_tests",
+     ]
+     data = [
+@@ -7313,7 +7308,6 @@ if (is_mac || is_win || is_android) {
+       "//testing/scripts",
+       "//testing/test_env.py",
+       "//testing/xvfb.py",
+-      "//third_party/catapult",
+       "//tools",
+     ]
+   }

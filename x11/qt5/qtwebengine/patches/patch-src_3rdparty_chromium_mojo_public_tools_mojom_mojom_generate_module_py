@@ -1,0 +1,13 @@
+Index: src/3rdparty/chromium/mojo/public/tools/mojom/mojom/generate/module.py
+--- src/3rdparty/chromium/mojo/public/tools/mojom/mojom/generate/module.py.orig
++++ src/3rdparty/chromium/mojo/public/tools/mojom/mojom/generate/module.py
+@@ -398,7 +398,8 @@ class Field(object):
+ 
+ 
+ class StructField(Field):
+-  pass
++  def __hash__(self):
++    return super(Field, self).__hash__()
+ 
+ 
+ class UnionField(Field):

@@ -1,0 +1,11 @@
+Index: src/3rdparty/chromium/tools/perf/core/perfetto_binary_roller/BUILD.gn
+--- src/3rdparty/chromium/tools/perf/core/perfetto_binary_roller/BUILD.gn.orig
++++ src/3rdparty/chromium/tools/perf/core/perfetto_binary_roller/BUILD.gn
+@@ -7,7 +7,6 @@ import("//build/util/generate_wrapper.gni")
+ generate_wrapper("upload_trace_processor") {
+   testonly = true
+   data_deps = [
+-    "//third_party/catapult:telemetry_chrome_test_support",
+     "//third_party/perfetto/src/trace_processor:trace_processor_shell",
+   ]
+   data = [

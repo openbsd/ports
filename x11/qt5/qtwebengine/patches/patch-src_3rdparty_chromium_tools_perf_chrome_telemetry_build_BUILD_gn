@@ -10,7 +10,12 @@ Index: src/3rdparty/chromium/tools/perf/chrome_telemetry_build/BUILD.gn
      data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
  
      # CrOS currently has issues with the locally compiled version of
-@@ -112,7 +112,7 @@ group("telemetry_chrome_test_without_chrome") {
+@@ -107,12 +107,11 @@ group("telemetry_chrome_test_without_chrome") {
+     "//tools/perf/core/",  # chrome_telemetry_build/ depends on core/
+   ]
+   data_deps = [
+-    "//third_party/catapult:telemetry_chrome_test_support",
+     "//tools/metrics:metrics_python_tests",
    ]
  
    # Cr-Fuchsia doesn't support breakpad.
@@ -19,3 +24,11 @@ Index: src/3rdparty/chromium/tools/perf/chrome_telemetry_build/BUILD.gn
      data_deps += [
        # This is defined for Windows, but is unused by Telemetry on
        # Windows, and including it can have issues when cross-compiling
+@@ -151,7 +150,5 @@ group("telemetry_chrome_test_without_chrome") {
+       "//build/android:devil_chromium_py",
+       "//build/android:stack_tools",
+     ]
+-  } else if (!is_fuchsia) {
+-    data_deps += [ "//third_party/catapult/telemetry:bitmaptools" ]
+   }
+ }

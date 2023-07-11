@@ -1,0 +1,38 @@
+Index: src/3rdparty/chromium/third_party/blink/renderer/bindings/scripts/bind_gen/code_node.py
+--- src/3rdparty/chromium/third_party/blink/renderer/bindings/scripts/bind_gen/code_node.py.orig
++++ src/3rdparty/chromium/third_party/blink/renderer/bindings/scripts/bind_gen/code_node.py
+@@ -503,13 +503,13 @@ class CompositeNode(CodeNode):
+         gensym_kwargs = {}
+         template_vars = {}
+         for arg in args:
+-            assert isinstance(arg, (CodeNode, int, long, str))
++            assert isinstance(arg, (CodeNode, int, str))
+             gensym = CodeNode.gensym()
+             gensym_args.append("${{{}}}".format(gensym))
+             template_vars[gensym] = arg
+         for key, value in kwargs.items():
+-            assert isinstance(key, (int, long, str))
+-            assert isinstance(value, (CodeNode, int, long, str))
++            assert isinstance(key, (int, str))
++            assert isinstance(value, (CodeNode, int, str))
+             gensym = CodeNode.gensym()
+             gensym_kwargs[key] = "${{{}}}".format(gensym)
+             template_vars[gensym] = value
+@@ -602,7 +602,7 @@ class ListNode(CodeNode):
+     def insert(self, index, node):
+         if node is None:
+             return
+-        assert isinstance(index, (int, long))
++        assert isinstance(index, int)
+         assert isinstance(node, CodeNode)
+         assert node.outer is None and node.prev is None
+ 
+@@ -721,7 +721,7 @@ class SymbolScopeNode(SequenceNode):
+             if not scope_chains:
+                 return counts
+ 
+-            self_index = iter(scope_chains).next().index(self)
++            self_index = next(iter(scope_chains)).index(self)
+             scope_chains = map(
+                 lambda scope_chain: scope_chain[self_index + 1:], scope_chains)
+             scope_to_likeliness = {}

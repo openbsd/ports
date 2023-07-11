@@ -1,7 +1,23 @@
 Index: src/3rdparty/chromium/content/shell/BUILD.gn
 --- src/3rdparty/chromium/content/shell/BUILD.gn.orig
 +++ src/3rdparty/chromium/content/shell/BUILD.gn
-@@ -800,7 +800,7 @@ group("content_shell_crash_test") {
+@@ -390,7 +390,6 @@ repack("pak") {
+   sources = [
+     "$root_gen_dir/content/app/resources/content_resources_100_percent.pak",
+     "$root_gen_dir/content/browser/resources/media/media_internals_resources.pak",
+-    "$root_gen_dir/content/browser/tracing/tracing_resources.pak",
+     "$root_gen_dir/content/browser/webrtc/resources/webrtc_internals_resources.pak",
+     "$root_gen_dir/content/content_resources.pak",
+     "$root_gen_dir/content/dev_ui_content_resources.pak",
+@@ -413,7 +412,6 @@ repack("pak") {
+     "//content:dev_ui_content_resources",
+     "//content/app/resources",
+     "//content/browser/resources/media:media_internals_resources",
+-    "//content/browser/tracing:resources",
+     "//content/browser/webrtc/resources",
+     "//mojo/public/js:resources",
+     "//net:net_resources",
+@@ -800,7 +798,7 @@ group("content_shell_crash_test") {
    if (is_win) {
      data_deps += [ "//build/win:copy_cdb_to_output" ]
    }

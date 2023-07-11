@@ -1,0 +1,14 @@
+Index: src/3rdparty/chromium/mojo/public/tools/bindings/generators/mojom_java_generator.py
+--- src/3rdparty/chromium/mojo/public/tools/bindings/generators/mojom_java_generator.py.orig
++++ src/3rdparty/chromium/mojo/public/tools/bindings/generators/mojom_java_generator.py
+@@ -25,6 +25,10 @@ sys.path.append(os.path.join(os.path.dirname(__file__)
+                              'build', 'android', 'gyp'))
+ from util import build_utils
+ 
++# TODO(crbug.com/1174969): Remove this once Python2 is obsoleted.
++if sys.version_info.major != 2:
++  basestring = str
++  long = int
+ 
+ GENERATOR_PREFIX = 'java'
+ 

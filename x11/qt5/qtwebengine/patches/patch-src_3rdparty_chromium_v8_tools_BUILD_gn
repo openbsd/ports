@@ -1,0 +1,14 @@
+Index: src/3rdparty/chromium/v8/tools/BUILD.gn
+--- src/3rdparty/chromium/v8/tools/BUILD.gn.orig
++++ src/3rdparty/chromium/v8/tools/BUILD.gn
+@@ -31,10 +31,6 @@ group("v8_android_test_runner_deps") {
+ 
+   if (is_android && !build_with_chromium) {
+     data_deps = [ "//build/android:test_runner_py" ]
+-    data = [
+-      # This is used by android.py, but not included by test_runner_py above.
+-      "//third_party/catapult/devil/devil/android/perf/",
+-    ]
+   }
+ }
+ 

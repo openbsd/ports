@@ -1,0 +1,10 @@
+Index: src/3rdparty/chromium/tools/polymer/BUILD.gn
+--- src/3rdparty/chromium/tools/polymer/BUILD.gn.orig
++++ src/3rdparty/chromium/tools/polymer/BUILD.gn
+@@ -10,6 +10,5 @@ group("polymer_tools_python_unittests") {
+     "//testing/scripts/run_isolated_script_test.py",
+     "//testing/xvfb.py",
+     "//tools/polymer/",
+-    "//third_party/catapult/third_party/typ/",
+   ]
+ }

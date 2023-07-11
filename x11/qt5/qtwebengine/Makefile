@@ -13,7 +13,7 @@ COMMENT =		Chromium-based web engine for Qt5
 # Many parts are copied from www/chromium port, so keep in sync
 DISTNAME =		qtwebengine-everywhere-opensource-src-${QT5_WEBENGINE_VERSION}
 QT5NAME =		QtWebEngine
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		www
 
@@ -41,8 +41,6 @@ MODULES =	lang/python \
 		devel/qmake
 
 MODPY_RUNDEP =	No
-
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 RUN_DEPENDS =	fonts/noto/fonts \
 		graphics/libexif \

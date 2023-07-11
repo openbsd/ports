@@ -1,0 +1,19 @@
+Index: src/3rdparty/chromium/headless/BUILD.gn
+--- src/3rdparty/chromium/headless/BUILD.gn.orig
++++ src/3rdparty/chromium/headless/BUILD.gn
+@@ -37,7 +37,6 @@ repack("pak") {
+     "$root_gen_dir/components/components_resources.pak",
+     "$root_gen_dir/components/strings/components_strings_en-US.pak",
+     "$root_gen_dir/content/app/resources/content_resources_100_percent.pak",
+-    "$root_gen_dir/content/browser/tracing/tracing_resources.pak",
+     "$root_gen_dir/content/content_resources.pak",
+     "$root_gen_dir/content/dev_ui_content_resources.pak",
+     "$root_gen_dir/headless/headless_lib_resources.pak",
+@@ -65,7 +64,6 @@ repack("pak") {
+     "//content:content_resources",
+     "//content:dev_ui_content_resources",
+     "//content/app/resources",
+-    "//content/browser/tracing:resources",
+     "//mojo/public/js:resources",
+     "//net:net_resources",
+     "//third_party/blink/public:resources",

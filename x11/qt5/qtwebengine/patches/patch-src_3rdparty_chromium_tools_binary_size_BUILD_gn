@@ -1,0 +1,11 @@
+Index: src/3rdparty/chromium/tools/binary_size/BUILD.gn
+--- src/3rdparty/chromium/tools/binary_size/BUILD.gn.orig
++++ src/3rdparty/chromium/tools/binary_size/BUILD.gn
+@@ -18,7 +18,6 @@ python_library("binary_size_trybot_py") {
+ python_library("sizes_py") {
+   testonly = true
+   pydeps_file = "sizes.pydeps"
+-  data_deps = [ "//third_party/catapult/tracing:convert_chart_json" ]
+ }
+ 
+ if (is_linux || is_chromeos) {

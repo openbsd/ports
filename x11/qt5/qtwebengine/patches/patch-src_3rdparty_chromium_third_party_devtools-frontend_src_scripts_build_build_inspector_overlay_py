@@ -1,0 +1,13 @@
+Index: src/3rdparty/chromium/third_party/devtools-frontend/src/scripts/build/build_inspector_overlay.py
+--- src/3rdparty/chromium/third_party/devtools-frontend/src/scripts/build/build_inspector_overlay.py.orig
++++ src/3rdparty/chromium/third_party/devtools-frontend/src/scripts/build/build_inspector_overlay.py
+@@ -45,7 +45,8 @@ def rollup(input_path, output_path, filename, max_size
+         ['--format', 'iife', '-n', 'InspectorOverlay'] + ['--input', target] +
+         ['--plugin', rollup_plugin],
+         stdout=subprocess.PIPE,
+-        stderr=subprocess.PIPE)
++        stderr=subprocess.PIPE,
++        text=True)
+     out, error = rollup_process.communicate()
+     if not out:
+         raise Exception("rollup failed: " + error)

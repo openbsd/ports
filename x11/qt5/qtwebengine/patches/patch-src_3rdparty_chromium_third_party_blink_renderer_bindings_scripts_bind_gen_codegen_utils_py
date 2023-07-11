@@ -1,0 +1,9 @@
+Index: src/3rdparty/chromium/third_party/blink/renderer/bindings/scripts/bind_gen/codegen_utils.py
+--- src/3rdparty/chromium/third_party/blink/renderer/bindings/scripts/bind_gen/codegen_utils.py.orig
++++ src/3rdparty/chromium/third_party/blink/renderer/bindings/scripts/bind_gen/codegen_utils.py
+@@ -116,4 +116,4 @@ def write_code_node_to_file(code_node, filepath):
+ #                               stderr=format_result.error_message))
+ #
+ #    web_idl.file_io.write_to_file_if_changed(filepath, format_result.contents)
+-    web_idl.file_io.write_to_file_if_changed(filepath, rendered_text)
++    web_idl.file_io.write_to_file_if_changed(filepath, rendered_text.encode('utf-8'))
