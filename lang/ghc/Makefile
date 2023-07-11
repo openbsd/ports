@@ -14,7 +14,7 @@ USE_NOEXECONLY =	Yes
 USE_NOBTCFI =		Yes
 
 GHC_VERSION =		9.2.7
-REVISION =		2
+REVISION =		3
 DISTNAME =		ghc-${GHC_VERSION}
 CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/
@@ -54,6 +54,17 @@ BINDISTFILE =		${BINDISTFILE-${MACHINE_ARCH}}
 DISTFILES =		ghc-${GHC_VERSION}-src.tar.xz \
 			ghc-${GHC_VERSION}-testsuite.tar.xz \
 			${BINDISTFILE}
+
+# sphinx-rtd-theme update patch set
+# mirrored from https://gitlab.haskell.org/ghc/ghc/-/commit/70526f5bd8886126f49833ef20604a2c6477780a.patch
+# "GIT binary patch" (gpatch doesn't handle it, patch segfaults)
+# (sorry! -sthen)
+MASTER_SITES1 =		https://spacehopper.org/mirrors/
+DISTFILES +=		ghc-rtd-update-70526f5bd8.diff:1
+EXTRACT_ONLY =		${DISTFILES:Nghc-rtd-update*:S/:0//}
+BUILD_DEPENDS +=	devel/git
+pre-patch:
+	cd ${WRKSRC}; env -i git apply ${FULLDISTDIR}/ghc-rtd-update-70526f5bd8.diff
 
 .for m in amd64
 BINDISTFILE-$m =	ghc-${BIN_VER}-$m-unknown-openbsd.tar.xz:0 \
