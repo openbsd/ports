@@ -3,12 +3,12 @@ getProcessPath() doesn't work on OpenBSD.
 Index: src/version.cpp
 --- src/version.cpp.orig
 +++ src/version.cpp
-@@ -497,7 +497,7 @@ void Exiv2::dumpLibraryInfo(std::ostream& os,const exv
-     output(os,keys,"version"        , __VERSION__);
-     output(os,keys,"date"           , __DATE__   );
-     output(os,keys,"time"           , __TIME__   );
--    output(os,keys,"processpath"    , Exiv2::getProcessPath());
-+    //output(os,keys,"processpath"    , Exiv2::getProcessPath());
+@@ -424,7 +424,7 @@ void Exiv2::dumpLibraryInfo(std::ostream& os, const st
+   output(os, keys, "version", __VERSION__);
+   output(os, keys, "date", __DATE__);
+   output(os, keys, "time", __TIME__);
+-  output(os, keys, "processpath", Exiv2::getProcessPath());
++  //output(os, keys, "processpath", Exiv2::getProcessPath());
  #ifdef EXV_ENABLE_NLS
-     output(os,keys,"localedir"      , EXV_LOCALEDIR);
+   output(os, keys, "localedir", EXV_LOCALEDIR);
  #endif

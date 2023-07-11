@@ -1,20 +1,4 @@
-@bin bin/addmoddel
-@bin bin/exifcomment
-@bin bin/exifdata
-@bin bin/exifprint
-@bin bin/exifvalue
 @bin bin/exiv2
-@bin bin/exiv2json
-@bin bin/geotag
-@bin bin/iptceasy
-@bin bin/iptcprint
-@bin bin/metacopy
-@bin bin/mrwthumb
-@bin bin/taglist
-@bin bin/xmpdump
-@bin bin/xmpparse
-@bin bin/xmpprint
-@bin bin/xmpsample
 include/exiv2/
 include/exiv2/asfvideo.hpp
 include/exiv2/basicio.hpp
@@ -36,7 +20,7 @@ include/exiv2/futils.hpp
 include/exiv2/gifimage.hpp
 include/exiv2/http.hpp
 include/exiv2/image.hpp
-include/exiv2/ini.hpp
+include/exiv2/image_types.hpp
 include/exiv2/iptc.hpp
 include/exiv2/jp2image.hpp
 include/exiv2/jpgimage.hpp
@@ -45,6 +29,7 @@ include/exiv2/metadatum.hpp
 include/exiv2/mrwimage.hpp
 include/exiv2/orfimage.hpp
 include/exiv2/pgfimage.hpp
+include/exiv2/photoshop.hpp
 include/exiv2/pngimage.hpp
 include/exiv2/preview.hpp
 include/exiv2/properties.hpp
@@ -53,14 +38,11 @@ include/exiv2/quicktimevideo.hpp
 include/exiv2/rafimage.hpp
 include/exiv2/riffvideo.hpp
 include/exiv2/rw2image.hpp
-include/exiv2/rwlock.hpp
 include/exiv2/slice.hpp
-include/exiv2/ssh.hpp
 include/exiv2/tags.hpp
 include/exiv2/tgaimage.hpp
 include/exiv2/tiffimage.hpp
 include/exiv2/types.hpp
-include/exiv2/utilsvideo.hpp
 include/exiv2/value.hpp
 include/exiv2/version.hpp
 include/exiv2/webpimage.hpp
@@ -71,7 +53,6 @@ lib/cmake/exiv2/
 lib/cmake/exiv2/exiv2Config${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/exiv2/exiv2Config.cmake
 lib/cmake/exiv2/exiv2ConfigVersion.cmake
-@static-lib lib/libexiv2-xmp.a
 @lib lib/libexiv2.so.${LIBexiv2_VERSION}
 lib/pkgconfig/exiv2.pc
 @man man/man1/exiv2.1

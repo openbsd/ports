@@ -1,0 +1,17 @@
+From 3202e86e737ea181a1904c9d3b9a6b619c3baba5 Mon Sep 17 00:00:00 2001
+From: Kevin Backhouse <kevinbackhouse@github.com>
+Date: Sat, 17 Jun 2023 13:39:15 +0100
+Subject: [PATCH] Avoid triggering assertion in std::vector::operator[]
+
+Index: src/types.cpp
+--- src/types.cpp.orig
++++ src/types.cpp
+@@ -173,7 +173,7 @@ byte* Exiv2::DataBuf::data(size_t offset) {
+ }
+ 
+ const byte* Exiv2::DataBuf::c_data(size_t offset) const {
+-  if (pData_.empty()) {
++  if (pData_.empty() || offset == pData_.size()) {
+     return nullptr;
+   }
+   if (offset >= pData_.size()) {

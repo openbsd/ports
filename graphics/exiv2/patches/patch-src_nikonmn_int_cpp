@@ -1,0 +1,80 @@
+From 360c6cd41f15baf6d999da12e1fc077180f5da91 Mon Sep 17 00:00:00 2001
+From: Kevin Backhouse <kevinbackhouse@github.com>
+Date: Sun, 25 Jun 2023 16:14:06 +0100
+Subject: [PATCH] Check if the metadata is NULL.
+
+Index: src/nikonmn_int.cpp
+--- src/nikonmn_int.cpp.orig
++++ src/nikonmn_int.cpp
+@@ -3384,7 +3384,7 @@ std::ostream& Nikon3MakerNote::printExternalFlashData2
+ 
+ std::ostream& Nikon3MakerNote::printFlashMasterDataFl6(std::ostream& os, const Value& value, const ExifData* metadata) {
+   std::ios::fmtflags f(os.flags());
+-  if (value.count() != 1 || value.typeId() != unsignedByte) {
++  if (value.count() != 1 || value.typeId() != unsignedByte || !metadata) {
+     os << "(" << value << ")";
+     os.flags(f);
+     return os;
+@@ -3413,7 +3413,7 @@ std::ostream& Nikon3MakerNote::printFlashMasterDataFl6
+ 
+ std::ostream& Nikon3MakerNote::printFlashMasterDataFl7(std::ostream& os, const Value& value, const ExifData* metadata) {
+   std::ios::fmtflags f(os.flags());
+-  if (value.count() != 1 || value.typeId() != unsignedByte) {
++  if (value.count() != 1 || value.typeId() != unsignedByte || !metadata) {
+     os << "(" << value << ")";
+     os.flags(f);
+     return os;
+@@ -3480,7 +3480,7 @@ std::ostream& Nikon3MakerNote::printFlashGroupBCContro
+ 
+ std::ostream& Nikon3MakerNote::printFlashGroupADataFl6(std::ostream& os, const Value& value, const ExifData* metadata) {
+   std::ios::fmtflags f(os.flags());
+-  if (value.count() != 1 || value.typeId() != unsignedByte) {
++  if (value.count() != 1 || value.typeId() != unsignedByte || !metadata) {
+     os << "(" << value << ")";
+     os.flags(f);
+     return os;
+@@ -3509,7 +3509,7 @@ std::ostream& Nikon3MakerNote::printFlashGroupADataFl6
+ 
+ std::ostream& Nikon3MakerNote::printFlashGroupADataFl7(std::ostream& os, const Value& value, const ExifData* metadata) {
+   std::ios::fmtflags f(os.flags());
+-  if (value.count() != 1 || value.typeId() != unsignedByte) {
++  if (value.count() != 1 || value.typeId() != unsignedByte || !metadata) {
+     os << "(" << value << ")";
+     os.flags(f);
+     return os;
+@@ -3538,7 +3538,7 @@ std::ostream& Nikon3MakerNote::printFlashGroupADataFl7
+ 
+ std::ostream& Nikon3MakerNote::printFlashGroupBDataFl6(std::ostream& os, const Value& value, const ExifData* metadata) {
+   std::ios::fmtflags f(os.flags());
+-  if (value.count() != 1 || value.typeId() != unsignedByte) {
++  if (value.count() != 1 || value.typeId() != unsignedByte || !metadata) {
+     os << "(" << value << ")";
+     os.flags(f);
+     return os;
+@@ -3567,7 +3567,7 @@ std::ostream& Nikon3MakerNote::printFlashGroupBDataFl6
+ 
+ std::ostream& Nikon3MakerNote::printFlashGroupBDataFl7(std::ostream& os, const Value& value, const ExifData* metadata) {
+   std::ios::fmtflags f(os.flags());
+-  if (value.count() != 1 || value.typeId() != unsignedByte) {
++  if (value.count() != 1 || value.typeId() != unsignedByte || !metadata) {
+     os << "(" << value << ")";
+     os.flags(f);
+     return os;
+@@ -3596,7 +3596,7 @@ std::ostream& Nikon3MakerNote::printFlashGroupBDataFl7
+ 
+ std::ostream& Nikon3MakerNote::printFlashGroupCDataFl6(std::ostream& os, const Value& value, const ExifData* metadata) {
+   std::ios::fmtflags f(os.flags());
+-  if (value.count() != 1 || value.typeId() != unsignedByte) {
++  if (value.count() != 1 || value.typeId() != unsignedByte || !metadata) {
+     os << "(" << value << ")";
+     os.flags(f);
+     return os;
+@@ -3625,7 +3625,7 @@ std::ostream& Nikon3MakerNote::printFlashGroupCDataFl6
+ 
+ std::ostream& Nikon3MakerNote::printFlashGroupCDataFl7(std::ostream& os, const Value& value, const ExifData* metadata) {
+   std::ios::fmtflags f(os.flags());
+-  if (value.count() != 1 || value.typeId() != unsignedByte) {
++  if (value.count() != 1 || value.typeId() != unsignedByte || !metadata) {
+     os << "(" << value << ")";
+     os.flags(f);
+     return os;

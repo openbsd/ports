@@ -1,36 +1,40 @@
-COMMENT=	image metadata manipulation
+COMMENT=		image metadata manipulation
 
-CATEGORIES=	graphics devel
+CATEGORIES=		graphics devel
 
-GH_ACCOUNT=	Exiv2
-GH_PROJECT=	exiv2
-GH_TAGNAME=	v0.27.7
-EPOCH=		0
+GH_ACCOUNT=		Exiv2
+GH_PROJECT=		exiv2
+GH_TAGNAME=		v0.28.0
+EPOCH=			0
 
-SHARED_LIBS +=  exiv2                12.1      # 14.0
+SHARED_LIBS +=  exiv2                13.0
 
-HOMEPAGE=	https://www.exiv2.org/
+HOMEPAGE=		https://www.exiv2.org/
 
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE=		Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c expat iconv intl m z
+WANTLIB += ${COMPILER_LIBCXX} brotlicommon brotlidec c expat iconv
+WANTLIB += intl m z
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER=		base-clang ports-gcc base-gcc
 
-MODULES =		devel/cmake
+MODULES=		devel/cmake
 
-BUILD_DEPENDS =		devel/gettext,-tools
-LIB_DEPENDS =		devel/gettext,-runtime
+BUILD_DEPENDS=		devel/gettext,-tools
 
-CONFIGURE_ARGS =	-DEXIV2_ENABLE_NLS=ON
+LIB_DEPENDS=		archivers/brotli \
+			devel/gettext,-runtime
 
-FIX_CRLF_FILES =	cmake/compilerFlags.cmake
+CONFIGURE_ARGS=		-DEXIV2_ENABLE_NLS=ON \
+			-DEXIV2_ENABLE_INIH=OFF
+
+FIX_CRLF_FILES=		cmake/compilerFlags.cmake
 
 # XXX ninja: error: unknown target 'test', did you mean 'tests'?
-NO_TEST =		Yes
+NO_TEST=		Yes
 
 .include <bsd.port.mk>
 .if ${USE_CCACHE:L} == "yes"
