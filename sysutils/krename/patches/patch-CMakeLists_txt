@@ -1,0 +1,22 @@
+From e7dd767a9a1068ee1fe1502c4d619b57d3b12add Mon Sep 17 00:00:00 2001
+From: Andreas Sturmlechner <asturm@gentoo.org>
+Date: Fri, 26 May 2023 23:23:10 +0200
+Subject: [PATCH] Fix build with >=exiv2-0.28, raise minimum to 0.27
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -54,12 +54,8 @@ set_package_properties(Taglib PROPERTIES
+     TYPE OPTIONAL)
+ 
+ # Find exiv2
+-find_package(LibExiv2 0.13) # AccessMode was added in 0.13
++find_package(LibExiv2 0.27) # EXIV2_TEST_VERSION was added in 0.27
+ set_package_properties(LibExiv2 PROPERTIES TYPE OPTIONAL)
+-
+-if (LibExiv2_VERSION VERSION_GREATER_EQUAL "0.27")
+-    set(HAVE_LIBEXIV2_0_27 TRUE)
+-endif()
+ 
+ # Find podofo
+ find_package(PoDoFo)

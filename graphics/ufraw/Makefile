@@ -1,9 +1,11 @@
-# XXX there's a maintained fork at https://github.com/sergiomb2/ufraw
+# XXX there are a couple of maintained forks:
+# https://sourceforge.net/projects/nufraw/
+# https://github.com/sergiomb2/ufraw
 
 COMMENT=	read and manipulate raw images from digital cameras
 
 DISTNAME=	ufraw-0.22
-REVISION=	7
+REVISION=	8
 
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ufraw/}

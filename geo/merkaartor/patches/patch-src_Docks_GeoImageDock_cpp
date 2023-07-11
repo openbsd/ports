@@ -1,0 +1,44 @@
+From 1e20d2ccd743ea5f8c2358e4ae36fead8b9390fd Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Ladislav=20L=C3=A1ska?= <krakonos@krakonos.org>
+Date: Sat, 16 Jul 2022 12:41:33 +0200
+Subject: [PATCH] Replaced use of AutoPtr with std::unique_ptr in GeoImageDock.cpp.
+
+Index: src/Docks/GeoImageDock.cpp
+--- src/Docks/GeoImageDock.cpp.orig
++++ src/Docks/GeoImageDock.cpp
+@@ -456,7 +456,7 @@ void GeoImageDock::loadImages(QStringList fileNames)
+     Document *theDocument = Main->document();
+     MapView *theView = Main->view();
+ 
+-    Exiv2::Image::AutoPtr image;
++    std::unique_ptr<Exiv2::Image> image;
+     Exiv2::ExifData exifData;
+     bool positionValid = false;
+ 
+@@ -868,7 +868,7 @@ void GeoImageDock::saveImage()
+ //    fn = QFileDialog::getSaveFileName(0, "Specify output filename", fn, tr("JPEG Images (*.jpg)"));
+     qDebug() << fn;
+     if (!fn.isEmpty()) {
+-        Exiv2::Image::AutoPtr imageIn, imageOut;
++        std::unique_ptr<Exiv2::Image> imageIn, imageOut;
+         Exiv2::ExifData exifData;
+         try {
+             imageIn = Exiv2::ImageFactory::open(usedTrackPoints.at(index).filename.toStdString());
+@@ -892,7 +892,7 @@ Coord GeoImageDock::getGeoDataFromImage(const QString 
+ {
+     Coord pos;
+     double lat = 0.0, lon = 0.0;
+-    Exiv2::Image::AutoPtr image;
++    std::unique_ptr<Exiv2::Image> image;
+     Exiv2::ExifData exifData;
+     bool positionValid = false;
+ 
+@@ -932,7 +932,7 @@ Coord GeoImageDock::getGeoDataFromImage(const QString 
+ 
+ void GeoImageDock::addGeoDataToImage(Coord position, const QString & file)
+ {
+-    Exiv2::Image::AutoPtr image;
++    std::unique_ptr<Exiv2::Image> image;
+ 
+     try {
+         image = Exiv2::ImageFactory::open(file.toStdString());

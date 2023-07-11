@@ -1,0 +1,16 @@
+From 4896cef032ed2468b927d770ae26d0a3e2de07b8 Mon Sep 17 00:00:00 2001
+From: Gilles Caulier <caulier.gilles@gmail.com>
+Date: Mon, 15 May 2023 07:18:40 +0200
+Subject: [PATCH] fix broken compilation with Exiv2 0.28 (missing header)
+
+Index: core/libs/metadataengine/engine/metaengine_p.h
+--- core/libs/metadataengine/engine/metaengine_p.h.orig
++++ core/libs/metadataengine/engine/metaengine_p.h
+@@ -89,6 +89,7 @@
+ #   define AutoPtr UniquePtr
+ #   define AnyError Error
+ #   define kerErrorMessage ErrorCode::kerErrorMessage
++#   include <exiv2/photoshop.hpp>
+ #endif
+ 
+ #if EXIV2_TEST_VERSION(0,27,4)

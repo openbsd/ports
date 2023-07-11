@@ -1,0 +1,17 @@
+From 06adc8fb70cb8c77c0cd364195d8251811106ef8 Mon Sep 17 00:00:00 2001
+From: Jens Georg <mail@jensge.org>
+Date: Sat, 6 May 2023 10:47:32 +0000
+Subject: [PATCH] Fix compatibility with exiv2 main branch
+
+Index: gexiv2/meson.build
+--- gexiv2/meson.build.orig
++++ gexiv2/meson.build
+@@ -61,7 +61,7 @@ gexiv2 = library('gexiv2',
+                   'gexiv2-preview-properties-private.h',
+                   'gexiv2-preview-image-private.h'] +
+                  gexiv2_headers +
+-                 [version_header] +
++                 [version_header, config_h] +
+                  enum_sources,
+                  include_directories : include_directories('..'),
+                  version: libversion,

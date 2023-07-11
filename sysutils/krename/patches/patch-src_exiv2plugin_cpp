@@ -1,0 +1,42 @@
+From e7dd767a9a1068ee1fe1502c4d619b57d3b12add Mon Sep 17 00:00:00 2001
+From: Andreas Sturmlechner <asturm@gentoo.org>
+Date: Fri, 26 May 2023 23:23:10 +0200
+Subject: [PATCH] Fix build with >=exiv2-0.28, raise minimum to 0.27
+
+Index: src/exiv2plugin.cpp
+--- src/exiv2plugin.cpp.orig
++++ src/exiv2plugin.cpp
+@@ -17,20 +17,9 @@
+ 
+ #include "exiv2plugin.h"
+ 
+-#include "../config-krename.h"
+-
+ #include <KLocalizedString>
+ 
+-#include <exiv2/error.hpp>
+-#include <exiv2/exif.hpp>
+-#include <exiv2/image.hpp>
+-#include <exiv2/iptc.hpp>
+-#ifdef HAVE_LIBEXIV2_0_27
+-    #include <exiv2/xmp_exiv2.hpp>
+-#else
+-    #include <exiv2/xmp.hpp>
+-#endif
+-#include <exiv2/tags.hpp>
++#include <exiv2/exiv2.hpp>
+ 
+ #include "batchrenamer.h"
+ #include "tokenhelpdialog.h"
+@@ -395,7 +384,11 @@ QString Exiv2Plugin::processFile(BatchRenamer *b, int 
+     std::string strFilename(asc.constData(), asc.length());
+ 
+     try {
++#if EXIV2_TEST_VERSION(0,28,0)
++        Image::UniquePtr image = Exiv2::ImageFactory::open(strFilename);
++#else
+         Image::AutoPtr image = Exiv2::ImageFactory::open(strFilename);
++#endif
+         if (image.get() != nullptr && image->good()) {
+             image->readMetadata();
+ 

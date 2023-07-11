@@ -3,9 +3,6 @@
 @bin bin/nikon-curve
 @bin bin/ufraw
 @bin bin/ufraw-batch
-lib/gimp/
-lib/gimp/2.0/
-lib/gimp/2.0/plug-ins/
 @bin lib/gimp/2.0/plug-ins/ufraw-gimp
 @man man/man1/ufraw.1
 share/locale/ca/LC_MESSAGES/ufraw.mo
@@ -23,8 +20,6 @@ share/locale/pl/LC_MESSAGES/ufraw.mo
 share/locale/pt/LC_MESSAGES/ufraw.mo
 share/locale/ru/LC_MESSAGES/ufraw.mo
 share/locale/sr/LC_MESSAGES/ufraw.mo
-share/locale/sr@latin/
-share/locale/sr@latin/LC_MESSAGES/
 share/locale/sr@latin/LC_MESSAGES/ufraw.mo
 share/locale/sv/LC_MESSAGES/ufraw.mo
 share/locale/zh_CN/LC_MESSAGES/ufraw.mo

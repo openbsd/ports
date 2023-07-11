@@ -1,0 +1,104 @@
+https://github.com/hellosiyan/Viewnior/pull/130
+
+Index: src/uni-exiv2.cpp
+--- src/uni-exiv2.cpp.orig
++++ src/uni-exiv2.cpp
+@@ -22,21 +22,32 @@
+ 
+ #include <exiv2/exiv2.hpp>
+ #include <iostream>
++#include <memory>
+ 
+ #include "uni-exiv2.hpp"
+ 
+ #define ARRAY_SIZE(array) (sizeof array/sizeof(array[0]))
+ 
+-static Exiv2::Image::AutoPtr cached_image;
++#ifdef EXIV2_VERSION
++    #ifdef EXIV2_TEST_VERSION
++        #if EXIV2_TEST_VERSION(0,28,0)
++            #define EXIV_ERROR Exiv2::Error
++        #endif
++    #endif
++#else
++    #define EXIV_ERROR Exiv2::AnyError
++#endif
+ 
++static std::unique_ptr<Exiv2::Image> cached_image;
++
+ extern "C"
+ void
+ uni_read_exiv2_map(const char *uri, void (*callback)(const char*, const char*, void*), void *user_data)
+ {
+     Exiv2::LogMsg::setLevel(Exiv2::LogMsg::mute);
+     try {
+-        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open(uri);
+-        if ( image.get() == 0 ) {
++        std::unique_ptr<Exiv2::Image> image = Exiv2::ImageFactory::open(uri);
++        if (image == nullptr) {
+             return;
+         }
+ 
+@@ -80,7 +91,7 @@ uni_read_exiv2_map(const char *uri, void (*callback)(c
+                 }
+             }
+         }
+-    } catch (Exiv2::AnyError& e) {
++    } catch (EXIV_ERROR& e) {
+         std::cerr << "Exiv2: '" << e << "'\n";
+     }
+ }
+@@ -91,19 +102,19 @@ uni_read_exiv2_to_cache(const char *uri)
+ {
+     Exiv2::LogMsg::setLevel(Exiv2::LogMsg::mute);
+ 
+-    if ( cached_image.get() != NULL ) {
++    if (cached_image != nullptr) {
+         cached_image->clearMetadata();
+-        cached_image.reset(NULL);
++        cached_image.reset(nullptr);
+     }
+ 
+     try {
+         cached_image = Exiv2::ImageFactory::open(uri);
+-        if ( cached_image.get() == 0 ) {
++        if (cached_image == nullptr) {
+             return 1;
+         }
+ 
+         cached_image->readMetadata();
+-    } catch (Exiv2::AnyError& e) {
++    } catch (EXIV_ERROR& e) {
+         std::cerr << "Exiv2: '" << e << "'\n";
+     }
+ 
+@@ -116,13 +127,13 @@ uni_write_exiv2_from_cache(const char *uri)
+ {
+     Exiv2::LogMsg::setLevel(Exiv2::LogMsg::mute);
+ 
+-    if ( cached_image.get() == NULL ) {
++    if (cached_image == nullptr) {
+         return 1;
+     }
+ 
+     try {
+-        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open(uri);
+-        if ( image.get() == 0 ) {
++        std::unique_ptr<Exiv2::Image> image = Exiv2::ImageFactory::open(uri);
++        if (image == nullptr) {
+             return 2;
+         }
+ 
+@@ -130,10 +141,10 @@ uni_write_exiv2_from_cache(const char *uri)
+         image->writeMetadata();
+ 
+         cached_image->clearMetadata();
+-        cached_image.reset(NULL);
++        cached_image.reset(nullptr);
+ 
+         return 0;
+-    } catch (Exiv2::AnyError& e) {
++    } catch (EXIV_ERROR& e) {
+         std::cerr << "Exiv2: '" << e << "'\n";
+     }
+ 

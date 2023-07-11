@@ -1,0 +1,65 @@
+https://sourceforge.net/p/hugin/hugin/ci/089e2886b5ea8c61d240d38166c211e21088ee6c/
+
+Index: src/hugin_base/panodata/SrcPanoImage.cpp
+--- src/hugin_base/panodata/SrcPanoImage.cpp.orig
++++ src/hugin_base/panodata/SrcPanoImage.cpp
+@@ -384,7 +384,11 @@ bool SrcPanoImage::readEXIF()
+                     pos = xmpData.findKey(Exiv2::XmpKey("Xmp.GPano.CroppedAreaImageWidthPixels"));
+                     if (pos != xmpData.end())
+                     {
++#if defined EXIV2_VERSION && EXIV2_TEST_VERSION(0,28,0)
++                        croppedWidth = pos->toInt64();
++#else
+                         croppedWidth = pos->toLong();
++#endif
+                     }
+                     else
+                     {
+@@ -394,7 +398,11 @@ bool SrcPanoImage::readEXIF()
+                     pos = xmpData.findKey(Exiv2::XmpKey("Xmp.GPano.CroppedAreaImageHeightPixels"));
+                     if (pos != xmpData.end())
+                     {
++#if defined EXIV2_VERSION && EXIV2_TEST_VERSION(0,28,0)
++                        croppedHeight = pos->toInt64();
++#else
+                         croppedHeight = pos->toLong();
++#endif
+                     }
+                     else
+                     {
+@@ -408,7 +416,11 @@ bool SrcPanoImage::readEXIF()
+                         double hfov = 0;
+                         if (pos != xmpData.end())
+                         {
++#if defined EXIV2_VERSION && EXIV2_TEST_VERSION(0,28,0)
++                            hfov = 360 * croppedWidth / (double)pos->toInt64();
++#else
+                             hfov = 360 * croppedWidth / (double)pos->toLong();
++#endif
+                         }
+                         else
+                         {
+@@ -419,7 +431,11 @@ bool SrcPanoImage::readEXIF()
+                         pos = xmpData.findKey(Exiv2::XmpKey("Xmp.GPano.FullPanoHeightPixels"));
+                         if (pos != xmpData.end())
+                         {
++#if defined EXIV2_VERSION && EXIV2_TEST_VERSION(0,28,0)
++                            fullHeight = pos->toInt64();
++#else
+                             fullHeight = pos->toLong();
++#endif
+                         }
+                         else
+                         {
+@@ -430,7 +446,11 @@ bool SrcPanoImage::readEXIF()
+                         pos = xmpData.findKey(Exiv2::XmpKey("Xmp.GPano.CroppedAreaTopPixels"));
+                         if (pos != xmpData.end())
+                         {
++#if defined EXIV2_VERSION && EXIV2_TEST_VERSION(0,28,0)
++                            cropTop = pos->toInt64();
++#else
+                             cropTop = pos->toLong();
++#endif
+                         }
+                         else
+                         {

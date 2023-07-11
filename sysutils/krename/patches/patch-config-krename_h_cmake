@@ -1,0 +1,18 @@
+From e7dd767a9a1068ee1fe1502c4d619b57d3b12add Mon Sep 17 00:00:00 2001
+From: Andreas Sturmlechner <asturm@gentoo.org>
+Date: Fri, 26 May 2023 23:23:10 +0200
+Subject: [PATCH] Fix build with >=exiv2-0.28, raise minimum to 0.27
+
+Index: config-krename.h.cmake
+--- config-krename.h.cmake.orig
++++ config-krename.h.cmake
+@@ -6,9 +6,6 @@
+ /* have Exiv2 */
+ #cmakedefine01 HAVE_EXIV2
+ 
+-/* Defined if we have libexiv2 >= 0.27 */
+-#cmakedefine HAVE_LIBEXIV2_0_27
+-
+ /* have PoDoFo */
+ #cmakedefine01 HAVE_PODOFO
+ 

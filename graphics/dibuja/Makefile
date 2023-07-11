@@ -1,5 +1,5 @@
 V =		0.21.12
-REVISION =	1
+REVISION =	2
 COMMENT =	simple to use paint program
 DISTNAME =	dibuja-${V}
 CATEGORIES =	graphics x11
@@ -10,14 +10,14 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} X11 Xcomposite Xcursor Xdamage Xext
-WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 babl-0.1
-WANTLIB += c cairo exiv2 expat ffi fontconfig freetype fribidi
-WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gegl-0.4 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gtk-x11-2.0 harfbuzz
-WANTLIB += iconv intl json-glib-1.0 lcms2 m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre2-8 pixman-1 png xcb xcb-render xcb-shm
-WANTLIB += z Xau Xdmcp jpeg
+WANTLIB += ${COMPILER_LIBCXX} X11 Xau Xcomposite Xcursor Xdamage
+WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0
+WANTLIB += babl-0.1 brotlicommon brotlidec c cairo exiv2 expat
+WANTLIB += ffi fontconfig freetype fribidi gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += gegl-0.4 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
+WANTLIB += gtk-x11-2.0 harfbuzz iconv intl jpeg json-glib-1.0
+WANTLIB += lcms2 m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8
+WANTLIB += pixman-1 png xcb xcb-render xcb-shm z
 
 MASTER_SITES =	https://launchpad.net/dibuja/trunk/${V}/+download/
 

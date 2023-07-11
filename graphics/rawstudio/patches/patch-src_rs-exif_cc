@@ -1,4 +1,4 @@
-unbreak with exiv2 2.27
+Fix build with exiv2 >=0.28.0.
 
 Index: src/rs-exif.cc
 --- src/rs-exif.cc.orig
@@ -11,3 +11,54 @@ Index: src/rs-exif.cc
  #include <exiv2/image.hpp>
  #include <exiv2/exif.hpp>
  #include "rs-exif.h"
+@@ -117,7 +118,7 @@ rs_exif_load_from_file(const gchar *filename)
+ 	RS_EXIF_DATA *exif_data;
+ 	try
+ 	{
+-		Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open(filename);
++		Exiv2::Image::UniquePtr image = Exiv2::ImageFactory::open(filename);
+ 		assert(image.get() != 0);
+ 		image->readMetadata();
+ 
+@@ -125,7 +126,7 @@ rs_exif_load_from_file(const gchar *filename)
+ 
+ 		exif_data_init(exif_data);
+ 	}
+-	catch (Exiv2::AnyError& e)
++	catch (Exiv2::Error& e)
+ 	{
+ 		return NULL;
+ 	}
+@@ -139,7 +140,7 @@ rs_exif_load_from_rawfile(RAWFILE *rawfile)
+ 	RS_EXIF_DATA *rs_exif_data;
+ 	try
+ 	{
+-		Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open(
++		Exiv2::Image::UniquePtr image = Exiv2::ImageFactory::open(
+ 			(const Exiv2::byte*) raw_get_map(rawfile), raw_get_filesize(rawfile));
+ 
+ 		assert(image.get() != 0);
+@@ -149,7 +150,7 @@ rs_exif_load_from_rawfile(RAWFILE *rawfile)
+ 
+ 		exif_data_init(rs_exif_data);
+ 	}
+-	catch (Exiv2::AnyError& e)
++	catch (Exiv2::Error& e)
+ 	{
+ 		return NULL;
+ 	}
+@@ -166,12 +167,12 @@ rs_exif_add_to_file(RS_EXIF_DATA *d, const gchar *file
+ 	try
+ 	{
+ 		Exiv2::ExifData *data = (Exiv2::ExifData *) d;
+-		Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open(filename);
++		Exiv2::Image::UniquePtr image = Exiv2::ImageFactory::open(filename);
+ 
+ 		image->setExifData(*data);
+ 		image->writeMetadata();
+ 	}
+-	catch (Exiv2::AnyError& e)
++	catch (Exiv2::Error& e)
+ 	{
+ 		g_warning("Couldn't add EXIF data to %s", filename);
+ 	}

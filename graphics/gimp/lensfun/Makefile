@@ -7,7 +7,7 @@ GH_ACCOUNT = seebk
 GH_PROJECT = GIMP-Lensfun
 GH_TAGNAME = $V
 
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	graphics
 
@@ -23,7 +23,7 @@ WANTLIB += gegl-0.4 gimp-2.0 gimpbase-2.0 gimpcolor-2.0 gimpconfig-2.0
 WANTLIB += gimpmath-2.0 gimpmodule-2.0 gimpui-2.0 gimpwidgets-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gtk-x11-2.0
 WANTLIB += harfbuzz intl json-glib-1.0 m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 z lensfun
+WANTLIB += pangoft2-1.0 lensfun
 
 
 # MASTER_SITES = http://www.logarithmic.net/pfh-files/resynthesizer/

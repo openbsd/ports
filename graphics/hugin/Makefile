@@ -4,7 +4,7 @@ COMMENT =	panorama image stitcher
 
 DISTNAME =	hugin-2022.0.0
 EXTRACT_SUFX =	.tar.bz2
-REVISION =	2
+REVISION =	3
 
 # not needed for releases, but makes RCs/betas easier to work with
 PKGNAME =	${DISTNAME:S/_//:L}

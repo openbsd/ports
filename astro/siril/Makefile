@@ -1,6 +1,8 @@
 COMMENT = 	astronomical image processing tool
 
 DISTNAME = 	siril-1.0.6
+REVISION =	0
+
 CATEGORIES = 	astro
 HOMEPAGE = 	https://siril.org/
 
@@ -15,7 +17,7 @@ WANTLIB += json-glib-1.0 lcms2 m opencv_calib3d opencv_core opencv_dnn
 WANTLIB += opencv_features2d opencv_flann opencv_highgui opencv_imgcodecs
 WANTLIB += opencv_imgproc opencv_ml opencv_objdetect opencv_photo
 WANTLIB += opencv_stitching opencv_video opencv_videoio pango-1.0
-WANTLIB += pangocairo-1.0 png raw swresample swscale tiff z
+WANTLIB += pangocairo-1.0 png raw swresample swscale tiff
 WANTLIB += rtprocess wcs kplot
 
 MASTER_SITES = https://free-astro.org/download/
