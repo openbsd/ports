@@ -3,12 +3,12 @@ BROKEN-alpha=	serverpath.h:17:19: error: variable 'CServerPath final' has initia
 
 COMMENT=	fast FTP and SFTP GUI client with a lot of features
 
-V=		3.64.0
+V=		3.65.0
 PKGNAME=	filezilla-$V
 DISTNAME=	FileZilla_$V_src
 
-SHARED_LIBS+=	fzclient-commonui-private	4.0
-SHARED_LIBS+=	fzclient-private		8.0
+SHARED_LIBS+=	fzclient-commonui-private	4.1
+SHARED_LIBS+=	fzclient-private		9.0
 
 CATEGORIES=	net
 
@@ -28,7 +28,7 @@ WANTLIB += fontconfig freetype fribidi gcrypt gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gmp gnutls gobject-2.0
 WANTLIB += gpg-error graphite2 gspell-1 gthread-2.0 gtk-3 harfbuzz
 WANTLIB += hogweed iconv icudata icuuc idn idn2 intl jpeg lzma
-WANTLIB += m mspack nettle nghttp2 ngtcp2 ngtcp2_crypto_openssl
+WANTLIB += m mspack nettle nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_openssl
 WANTLIB += notify p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre2-32 pcre2-8 pixman-1 png pugixml samplerate secret-1
 WANTLIB += sndio sqlite3 ssl tasn1 tiff unistring usbhid wx_baseu-3.2
@@ -45,7 +45,7 @@ COMPILER=	base-clang ports-gcc
 LIB_DEPENDS=	databases/sqlite3 \
 		devel/harfbuzz \
 		devel/libidn \
-		net/libfilezilla>=0.42.2 \
+		net/libfilezilla>=0.44.0 \
 		security/gnutls \
 		textproc/pugixml \
 		x11/dbus \
