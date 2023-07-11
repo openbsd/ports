@@ -3,6 +3,7 @@ COMMENT-classic=classic skin for Roundcube webmail
 COMMENT-larry=	larry skin for Roundcube webmail
 
 V=		1.6.2
+REVISION-main=	0
 
 DISTNAME=	roundcubemail-$V
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \

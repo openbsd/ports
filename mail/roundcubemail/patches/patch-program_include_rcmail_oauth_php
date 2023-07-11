@@ -3,10 +3,15 @@ From: Aleksander Machniak <alec@alec.pl>
 Date: Sun, 9 Jul 2023 11:23:44 +0200
 Subject: [PATCH] Fix regression that broke use_secure_urls feature (#9052)
 
+From ca1b23ea9d8ddbfeaf973158f508a5f70ae51db8 Mon Sep 17 00:00:00 2001
+From: Aleksander Machniak <alec@alec.pl>
+Date: Mon, 10 Jul 2023 18:27:56 +0200
+Subject: [PATCH] More fixes regarding rcmail::url() (#9052)
+
 Index: program/include/rcmail_oauth.php
 --- program/include/rcmail_oauth.php.orig
 +++ program/include/rcmail_oauth.php
-@@ -120,8 +120,14 @@ class rcmail_oauth
+@@ -120,8 +120,12 @@ class rcmail_oauth
       */
      public function get_redirect_uri()
      {
@@ -14,9 +19,7 @@ Index: program/include/rcmail_oauth.php
 +
          // rewrite redirect URL to not contain query parameters because some providers do not support this
 -        return preg_replace('/\/?\?_task=[a-z]+/', '/index.php/login/oauth', $this->rcmail->url([], true, true));
-+        // also make sure to not duplicate the index.php/... path
 +        $url = preg_replace('/\?.*/', '', $url);
-+        $url = preg_replace('/index\.php.*$/', '', $url);
 +
 +        return slashify($url) . 'index.php/login/oauth';
      }

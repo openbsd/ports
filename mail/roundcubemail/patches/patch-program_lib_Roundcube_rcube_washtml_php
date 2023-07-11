@@ -1,0 +1,18 @@
+From f211757286e32d69c265233b4b90c7804d4bd0d9 Mon Sep 17 00:00:00 2001
+From: Aleksander Machniak <alec@alec.pl>
+Date: Sun, 9 Jul 2023 14:46:19 +0200
+Subject: [PATCH] Fix bug where a duplicate `<title>` tag in HTML email could
+ cause some parts being cut off (#9029)
+
+Index: program/lib/Roundcube/rcube_washtml.php
+--- program/lib/Roundcube/rcube_washtml.php.orig
++++ program/lib/Roundcube/rcube_washtml.php
+@@ -744,7 +744,7 @@ class rcube_washtml
+             // space(s) between <NOBR>
+             '/(<\/nobr>)(\s+)(<nobr>)/i',
+             // PHP bug #32547 workaround: remove title tag
+-            '/<title[^>]*>.*<\/title>/i',
++            '/<title[^>]*>.*<\/title>/iU',
+             // remove <!doctype> before BOM (#1490291)
+             '/<\!doctype[^>]+>[^<]*/im',
+             // byte-order mark (only outlook?)
