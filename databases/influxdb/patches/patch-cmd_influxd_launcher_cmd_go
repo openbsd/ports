@@ -1,0 +1,12 @@
+Index: cmd/influxd/launcher/cmd.go
+--- cmd/influxd/launcher/cmd.go.orig
++++ cmd/influxd/launcher/cmd.go
+@@ -207,7 +207,7 @@ func NewOpts(viper *viper.Viper) *InfluxdOpts {
+ 
+ 		LogLevel:          zapcore.InfoLevel,
+ 		FluxLogEnabled:    false,
+-		ReportingDisabled: false,
++		ReportingDisabled: true,
+ 
+ 		BoltPath:   filepath.Join(dir, bolt.DefaultFilename),
+ 		SqLitePath: filepath.Join(dir, sqlite.DefaultFilename),

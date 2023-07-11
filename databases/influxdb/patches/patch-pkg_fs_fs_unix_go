@@ -1,0 +1,18 @@
+https://github.com/golang/go/issues/47958
+
+Index: pkg/fs/fs_unix.go
+--- pkg/fs/fs_unix.go.orig
++++ pkg/fs/fs_unix.go
+@@ -80,9 +80,9 @@ func DiskUsage(path string) (*DiskStatus, error) {
+ 	}
+ 
+ 	var disk DiskStatus
+-	disk.All = fs.Blocks * uint64(fs.Bsize)
+-	disk.Avail = uint64(fs.Bavail) * uint64(fs.Bsize)
+-	disk.Free = fs.Bfree * uint64(fs.Bsize)
++	disk.All = fs.F_blocks * uint64(fs.F_bsize)
++	disk.Avail = uint64(fs.F_bavail) * uint64(fs.F_bsize)
++	disk.Free = fs.F_bfree * uint64(fs.F_bsize)
+ 	disk.Used = disk.All - disk.Free
+ 	return &disk, nil
+ }

@@ -2,25 +2,10 @@
 @newuser _influx:797:_influx::InfluxDB user:${VARBASE}/influxdb:/sbin/nologin
 @rcscript ${RCDIR}/influxdb
 @extraunexec rm -rf ${VARBASE}/influxdb/
-@bin bin/influx
-@bin bin/influx_inspect
-@bin bin/influx_tools
 @bin bin/influxd
-@man man/man1/influx.1
-@man man/man1/influx_inspect.1
-@man man/man1/influxd-backup.1
-@man man/man1/influxd-config.1
-@man man/man1/influxd-restore.1
-@man man/man1/influxd-run.1
-@man man/man1/influxd-version.1
-@man man/man1/influxd.1
-share/examples/influxdb/
-@sample ${SYSCONFDIR}/influxdb/
-share/examples/influxdb/config.sample.toml
-@mode 0640
+@bin bin/telemetryd
 @owner _influx
 @group _influx
-@sample ${SYSCONFDIR}/influxdb/influxdb.conf
 @mode 0750
 @sample ${VARBASE}/influxdb/
 @mode
