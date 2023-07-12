@@ -1,7 +1,6 @@
 COMMENT =	data visualization and analysis software
 
-DISTNAME =	labplot-2.10.0
-REVISION =	4
+DISTNAME =	labplot-2.10.1
 
 CATEGORIES =	math x11
 
@@ -89,7 +88,7 @@ LIB_DEPENDS +=	devel/kf5/syntax-highlighting \
 #  <http://sourceforge.net/projects/liborigin>
 #* Qt5Mqtt, Qt Module to implement MQTT protocol version 3.1 and 3.1.1,
 # <https://github.com/qt/qtmqtt>
-#* ReadStat, A command-line tool and library for reading files from 
+#* ReadStat, A command-line tool and library for reading files from
 # popular stats packages, <https://github.com/WizardMac/ReadStat>
 CONFIGURE_ARGS =	-DENABLE_READSTAT=OFF
 CONFIGURE_ARGS +=	-DENABLE_MQTT=OFF
@@ -109,6 +108,5 @@ TEST_IS_INTERACTIVE =	X11
 pre-configure:
 	# use system dependencies
 	rm -rf ${WRKSRC}/src/3rdparty/{cmake,kdmactouchbar,liborigin,QXlsx}
-	rm -rf ${WRKSRC}/cmake/FindQXlsx.cmake
 
 .include <bsd.port.mk>
