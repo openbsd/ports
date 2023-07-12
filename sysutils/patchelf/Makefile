@@ -36,12 +36,14 @@ TEST_TARGET =		check
 # (closed) https://github.com/NixOS/patchelf/issues/350
 TEST_DEPENDS +=		devel/gas
 
+pre-test:
+	ln -sf ${LOCALBASE}/bin/gas ${WRKDIR}/bin/as
+.endif
+
+.if !${PROPERTIES:Mlld}
 # strip `--build-ld' since base ld.bfd(1) 2.17 is too old to know it;
 # this unbreaks the test build/allows to run tests in the first place.
 TEST_FLAGS +=		libbuildid_so_LDFLAGS='$$(LDFLAGS_sharedlib)'
-
-pre-test:
-	ln -sf /usr/local/bin/gas ${WRKDIR}/bin/as
 .endif
 
 .include <bsd.port.mk>
