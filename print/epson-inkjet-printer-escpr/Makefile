@@ -1,12 +1,15 @@
 # MASTER_SITES changes at each version; when looking for updates, try searching
 # ${HOMEPAGE} for a linux driver, for e.g. sx200
 PORTROACH=		ignore:1
-MASTER_SITES=		https://download3.ebz.epson.net/dsc/f/03/00/14/48/15/c864d000b06bebeec8832ce6f68bb079c36d838a/
+MASTER_SITES=		https://download3.ebz.epson.net/dsc/f/03/00/14/61/06/ad3f08f88782de47a1aec9acda205e354309636e/
 
 COMMENT=		printer driver for Epson ESC/P-R inkjets
 
-DISTNAME=		epson-inkjet-printer-escpr-1.7.26
-EXTRACT_SUFX=		-1lsb3.2.tar.gz
+V=			1.8.0
+DISTNAME=		epson-inkjet-printer-escpr-${V}-1
+EXTRACT_SUFX=		.src.rpm
+WRKDIST=		${WRKDIR}/epson-inkjet-printer-escpr-${V}
+PKGNAME=		epson-inkjet-printer-escpr-${V}
 
 SHARED_LIBS +=  escpr                0.0      # 1.0
 
@@ -40,5 +43,8 @@ DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 FIX_CRLF_FILES=		src/linux_cmn.c lib/epson-escpr-api.c \
 			lib/epson-typedefs.h lib/epson-usb.c
+
+post-extract:
+	cd ${WRKDIR} && ${TAR} -xzf ${DISTNAME}.tar.gz
 
 .include <bsd.port.mk>
