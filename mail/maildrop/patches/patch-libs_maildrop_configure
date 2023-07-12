@@ -1,7 +1,7 @@
 Index: libs/maildrop/configure
 --- libs/maildrop/configure.orig
 +++ libs/maildrop/configure
-@@ -19762,10 +19762,7 @@ then :
+@@ -19896,10 +19896,7 @@ then :
  else $as_nop
    # Courier defaults to ./Maildir
  

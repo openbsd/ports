@@ -9,4 +9,4 @@ Index: libs/maildrop/maildropfilter.7.in
 +Name of the user to whom the message is being delivered\&.
  .RE
  .PP
- \fIMAILDROP_OLD_REGEXP\fR
+ \fIMAILFILTER\fR

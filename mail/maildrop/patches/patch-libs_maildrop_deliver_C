@@ -16,7 +16,7 @@ gracefully handle the delivery of new mail to an open folder.
 Index: libs/maildrop/deliver.C
 --- libs/maildrop/deliver.C.orig
 +++ libs/maildrop/deliver.C
-@@ -226,15 +226,7 @@ Buffer	b;
+@@ -223,15 +223,7 @@ FormatMbox	format_mbox;
  		{
  			format_mbox.Init(1);
  
