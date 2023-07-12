@@ -44,5 +44,5 @@ Check if the YubiKey is recognized by GnuPG:
 In some cases you may need to explicitely disable the internal CCID
 driver.
 
-    $ echo "disable-ccid"" >> ~/.gnupg/scdaemon.conf
+    $ echo "disable-ccid" >> ~/.gnupg/scdaemon.conf
     $ gpgconf --kill scdaemon
