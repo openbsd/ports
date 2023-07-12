@@ -1,7 +1,7 @@
 Index: libs/maildir/Makefile.in
 --- libs/maildir/Makefile.in.orig
 +++ libs/maildir/Makefile.in
-@@ -636,7 +636,7 @@ clean-noinstLTLIBRARIES:
+@@ -650,7 +650,7 @@ clean-noinstLTLIBRARIES:
  	}
  
  libmaildir.la: $(libmaildir_la_OBJECTS) $(libmaildir_la_DEPENDENCIES) $(EXTRA_libmaildir_la_DEPENDENCIES) 

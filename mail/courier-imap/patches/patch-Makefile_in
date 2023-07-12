@@ -1,7 +1,7 @@
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -417,10 +417,10 @@ CLEANFILES = $(databin_SCRIPTS) $(man_MANS) $(sysconf_
+@@ -421,10 +421,10 @@ CLEANFILES = $(databin_SCRIPTS) $(man_MANS) $(sysconf_
  databindir = $(datadir)
  databin_SCRIPTS = mkimapdcert mkpop3dcert mkdhparams
  binPROGRAMS = imapd pop3d maildirmake maildiracl deliverquota maildirkw \
@@ -14,3 +14,13 @@ Index: Makefile.in
  bin_PROGRAMS = @binPROGRAMS_exec@
  sbin_PROGRAMS = @sbinPROGRAMS_exec@
  libexec_PROGRAMS = @libexecPROGRAMS_exec@
+@@ -1474,9 +1474,6 @@ install-exec-local:
+ 	test ! -x libs/tcpd/couriertls || $(INSTALL_PROGRAM) $(INSTALL_STRIP_FLAG) \
+ 		libs/tcpd/couriertls $(DESTDIR)$(bindir)/couriertls
+ 	$(mkinstalldirs) $(DESTDIR)$(sbindir)
+-	for f in mkimapdcert mkpop3dcert mkdhparams; \
+-		do rm -f $(DESTDIR)$(sbindir)/$$f ; \
+-		$(LN_S) `realpath --relative-to $(sbindir) -m $(databindir)/$$f` $(DESTDIR)$(sbindir)/$$f ; done
+ 	$(mkinstalldirs) $(DESTDIR)$(localstatedir)
+ 
+ install-exec-hook:

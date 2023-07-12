@@ -1,13 +1,11 @@
 COMMENT-main=		imap server for maildir format mailboxes
 COMMENT-pop3=		pop3 server for maildir format mailboxes
 
-V=			5.1.8
+V=			5.2.4
 DISTNAME=		courier-imap-${V}
 PKGNAME-main=		${DISTNAME}
 FULLPKGNAME-pop3=	courier-pop3-${V}
 FULLPKGPATH-pop3=	mail/courier-imap,-pop3
-REVISION-main=		0
-REVISION-pop3=		0
 
 CATEGORIES=		mail
 
@@ -23,13 +21,13 @@ PERMIT_PACKAGE=	Yes
 COMPILER =		base-clang ports-gcc
 
 WANTLIB=		c courierauth courierauthcommon courierauthsasl courier-unicode
-WANTLIB+=		gdbm iconv intl idn m pcre2-8 ${COMPILER_LIBCXX}
+WANTLIB+=		gdbm iconv intl idn2 m pcre2-8 ${COMPILER_LIBCXX}
 WANTLIB-pop3=		c courierauth courierauthcommon courierauthsasl courier-unicode
-WANTLIB-pop3+=		iconv intl idn m pcre2-8 ${COMPILER_LIBCXX}
+WANTLIB-pop3+=		iconv intl idn2 m pcre2-8 ${COMPILER_LIBCXX}
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.69
+AUTOCONF_VERSION=	2.71
 AUTOMAKE_VERSION=	1.15
 
 # AM_PROG_LIBTOOL, aclocal is run during build
@@ -44,7 +42,7 @@ CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
 			ac_cv_lib_db_db_env_create=no
 
 LIB_DEPENDS=		mail/courier-authlib \
-			devel/libidn \
+			devel/libidn2 \
 			devel/pcre2
 
 EXAMPLE_DIR=		${PREFIX}/share/examples/courier
