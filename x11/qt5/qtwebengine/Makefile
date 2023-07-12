@@ -54,6 +54,7 @@ BUILD_DEPENDS =	archivers/bzip2 \
 		shells/bash \
 		sysutils/flock \
 		sysutils/pciutils \
+		x11/gnome/libgnome-keyring \
 		x11/gtk+3 \
 		x11/py-xcbgen
 
