@@ -40,3 +40,9 @@ Check if the YubiKey is recognized by GnuPG:
 
     $ gpg --card-status
     Reader ...........: Yubico Yubikey 4 OTP U2F CCID 00 00
+
+In some cases you may need to explicitely disable the internal CCID
+driver.
+
+    $ echo "disable-ccid"" >> ~/.gnupg/scdaemon.conf
+    $ gpgconf --kill scdaemon
