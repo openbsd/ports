@@ -191,6 +191,8 @@ BUILD_DEPENDS+=	devel/nasm
 GN_ARGS+=	extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib -Wl,--no-keep-memory\"
 PKG_ARGS+=	-Dswiftshader=1
 FFMPEG_TARGET=	ia32
+.else
+PKG_ARGS+=	-Dswiftshader=0
 .endif
 
 FFMPEG_BRAND=	Chrome
