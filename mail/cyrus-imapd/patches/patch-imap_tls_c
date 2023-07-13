@@ -1,0 +1,12 @@
+Index: imap/tls.c
+--- imap/tls.c.orig
++++ imap/tls.c
+@@ -257,7 +257,7 @@ static DH *get_dh1024(void)
+     dh = DH_new();
+     if (!dh) return NULL;
+ 
+-    p = get_rfc2409_prime_1024(NULL);
++    p = BN_get_rfc2409_prime_1024(NULL);
+     BN_dec2bn(&g, "2");
+ 
+     if (DH_set0_pqg(dh, p, NULL, g))
