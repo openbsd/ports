@@ -4,7 +4,7 @@ COMMENT-main =	graphical network protocol analyzer, Qt user-interface
 COMMENT-text =	network protocol analyzer
 
 DPB_PROPERTIES =parallel
-V =		4.0.6
+V =		4.0.7
 PORTROACH =	limitw:1,even
 DISTNAME =	wireshark-$V
 PKGNAME-main =	wireshark-$V
@@ -14,8 +14,6 @@ SHARED_LIBS +=	wscodecs             1.0
 SHARED_LIBS +=	wsutil               4.0
 SHARED_LIBS +=	wiretap              4.0
 SHARED_LIBS +=	wireshark            4.0
-
-REVISION-main =	0
 
 CATEGORIES =	net security x11
 
