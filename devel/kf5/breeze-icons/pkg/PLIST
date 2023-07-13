@@ -1,3 +1,6 @@
+lib/cmake/KF5BreezeIcons/
+lib/cmake/KF5BreezeIcons/KF5BreezeIconsConfig.cmake
+lib/cmake/KF5BreezeIcons/KF5BreezeIconsConfigVersion.cmake
 share/icons/breeze/
 share/icons/breeze-dark/
 share/icons/breeze-dark/actions/
