@@ -1,0 +1,155 @@
+Index: src/x86/itx16_avx512.asm
+--- src/x86/itx16_avx512.asm.orig
++++ src/x86/itx16_avx512.asm
+@@ -274,6 +274,7 @@ cglobal inv_txfm_add_%1_%2_%4_10bpc, 4, 7, 0, dst, str
+     times ((%%end - %%p1) >> 31) & 1 jmp %%p1
+ ALIGN function_align
+ %%end:
++    _CET_ENDBR
+ %endif
+ %endmacro
+ 
+@@ -330,6 +331,7 @@ cglobal idct_8x8_internal_10bpc, 0, 7, 16, dst, stride
+     punpckldq            m0, m2
+     jmp                tx2q
+ .pass2:
++    _CET_ENDBR
+     lea                  r5, [o_base_8bpc]
+     vextracti32x8       ym2, m0, 1
+     vextracti32x8       ym3, m1, 1
+@@ -461,6 +463,7 @@ cglobal iadst_8x8_internal_10bpc, 0, 7, 16, dst, strid
+     vpermt2q             m0, m2, m3
+     jmp                tx2q
+ .pass2:
++    _CET_ENDBR
+     call .main_pass2
+     movu                m10, [permC+2]
+     vbroadcasti32x8     m12, [pw_2048_m2048+16]
+@@ -531,6 +534,7 @@ cglobal iflipadst_8x8_internal_10bpc, 0, 7, 16, dst, s
+     paddd                m4, m11
+     jmp m(iadst_8x8_internal_10bpc).pass1_end
+ .pass2:
++    _CET_ENDBR
+     call m(iadst_8x8_internal_10bpc).main_pass2
+     movu                m10, [permC+1]
+     vbroadcasti32x8     m12, [pw_m2048_2048+16]
+@@ -561,6 +565,7 @@ cglobal iidentity_8x8_internal_10bpc, 0, 7, 16, dst, s
+     punpckhdq            m1, m2        ; 2 3   6 7
+     jmp                tx2q
+ .pass2:
++    _CET_ENDBR
+     movu                 m3, [o(permC+2)]
+     vpbroadcastd        m12, [o(pw_4096)]
+     psrlq                m2, m3, 32
+@@ -600,6 +605,7 @@ cglobal idct_8x16_internal_10bpc, 0, 7, 16, dst, strid
+     packssdw             m3, m7
+     jmp                tx2q
+ .pass2:
++    _CET_ENDBR
+     mova                 m8, [o(idct8x16p)]
+     REPX  {vpermb x, m8, x}, m0, m1, m2, m3
+     punpckhdq            m5, m0, m1
+@@ -829,6 +835,7 @@ cglobal iadst_8x16_internal_10bpc, 0, 7, 16, dst, stri
+     vextracti32x8       ym3, m3, 1
+     jmp                tx2q
+ .pass2:
++    _CET_ENDBR
+     call .pass2_main
+     movu                 m4, [permB+2]
+     vbroadcasti32x8     m12, [pw_2048_m2048+16]
+@@ -964,6 +971,7 @@ cglobal iflipadst_8x16_internal_10bpc, 0, 7, 16, dst, 
+     paddd                m4, m11
+     jmp m(iadst_8x16_internal_10bpc).fast_end
+ .pass2:
++    _CET_ENDBR
+     call m(iadst_8x16_internal_10bpc).pass2_main
+     movu                 m7, [permB+2]
+     vbroadcasti32x8     m12, [pw_m2048_2048+16]
+@@ -985,6 +993,7 @@ cglobal iidentity_8x16_internal_10bpc, 0, 7, 16, dst, 
+     call m(idct_8x16_internal_10bpc).load2
+     jmp m(idct_8x16_internal_10bpc).pass1_end
+ .pass2:
++    _CET_ENDBR
+     vpbroadcastd         m8, [o(pw_1697x16)]
+     pmulhrsw             m4, m8, m0
+     pmulhrsw             m5, m8, m1
+@@ -1131,6 +1140,7 @@ cglobal idct_16x8_internal_10bpc, 0, 7, 16, dst, strid
+     call .transpose_16x8
+     jmp                tx2q
+ .pass2:
++    _CET_ENDBR
+     lea                  r5, [o_base_8bpc]
+     call m(idct_16x8_internal_8bpc).main
+     movshdup             m4, [permC]
+@@ -1270,6 +1280,7 @@ cglobal iadst_16x8_internal_10bpc, 0, 7, 16, dst, stri
+     REPX       {psrad x, 1}, m0, m4, m1, m5, m2, m6, m3, m7
+     jmp m(idct_16x8_internal_10bpc).pass1_end2
+ .pass2:
++    _CET_ENDBR
+     call .main_pass2
+     vpermq               m8, m11, m0
+     vpermq               m9, m11, m1
+@@ -1436,6 +1447,7 @@ cglobal iflipadst_16x8_internal_10bpc, 0, 7, 16, dst, 
+     psubd                m0, m9, m8
+     jmp m(iadst_16x8_internal_10bpc).pass1_end
+ .pass2:
++    _CET_ENDBR
+     call m(iadst_16x8_internal_10bpc).main_pass2
+     psrlq               m11, 8
+     vpermq               m8, m11, m3
+@@ -1465,6 +1477,7 @@ cglobal iidentity_16x8_internal_10bpc, 0, 7, 16, dst, 
+     call m(idct_16x8_internal_10bpc).transpose_16x8
+     jmp                tx2q
+ .pass2:
++    _CET_ENDBR
+     movshdup             m4, [o(permC)]
+     vpbroadcastd        m11, [o(pw_4096)]
+     mova                 m5, m4
+@@ -1538,6 +1551,7 @@ cglobal idct_16x16_internal_10bpc, 0, 7, 16, dst, stri
+     jge .zero_loop
+     jmp                tx2q
+ .pass2:
++    _CET_ENDBR
+     lea                  r5, [o_base_8bpc]
+     call m(idct_16x16_internal_8bpc).main
+     movshdup            m12, [permC]
+@@ -1801,6 +1815,7 @@ cglobal iadst_16x16_internal_10bpc, 0, 7, 16, dst, str
+     REPX {mova [cq+64*x], ym4}, 0, 1, 2, 3, 4, 5, 6, 7
+     jmp                tx2q
+ .pass2:
++    _CET_ENDBR
+     lea                  r5, [o_base_8bpc]
+     call m(iadst_16x16_internal_8bpc).main_pass2b
+     movshdup            m12, [permC]
+@@ -2001,6 +2016,7 @@ cglobal iflipadst_16x16_internal_10bpc, 0, 7, 16, dst,
+     psubd                m0, m9, m8
+     jmp m(iadst_16x16_internal_10bpc).pass1_fast_end
+ .pass2:
++    _CET_ENDBR
+     lea                  r5, [o_base_8bpc]
+     call m(iadst_16x16_internal_8bpc).main_pass2b
+     movshdup            m12, [permC]
+@@ -2064,6 +2080,7 @@ cglobal iidentity_16x16_internal_10bpc, 0, 7, 16, dst,
+     REPX       {mova x, m7}, m4, m5, m6
+     jmp m(idct_16x16_internal_10bpc).pass1_end3
+ .pass2:
++    _CET_ENDBR
+     movshdup            m14, [o(permC)]
+     vpbroadcastd        m15, [o(pw_1697x16)]
+     lea                  r6, [strideq*3]
+@@ -4434,7 +4451,6 @@ cglobal inv_txfm_add_dct_dct_32x64_10bpc, 4, 7, 0, dst
+     mova                m10, m13
+     call .pass2_fast2_start
+ .end:
+-
+     pxor                m31, m31
+ 
+ .left_zero_loop:
+@@ -5050,6 +5066,7 @@ ALIGN function_align
+     call .pass2
+     RET
+ .pass2:
++    _CET_ENDBR
+     psrlq               m12, [permC], 24    ;  0  2  8 10  1  3  9 11
+     psrlq               m13, m12, 32        ;  4  6 12 14  5  7 13 15
+     call m(inv_txfm_add_dct_dct_32x16_10bpc).transpose_16x32

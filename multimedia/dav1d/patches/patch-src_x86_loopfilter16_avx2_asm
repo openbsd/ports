@@ -1,0 +1,19 @@
+Index: src/x86/loopfilter16_avx2.asm
+--- src/x86/loopfilter16_avx2.asm.orig
++++ src/x86/loopfilter16_avx2.asm
+@@ -1023,6 +1023,7 @@ cglobal lpf_v_sb_y_16bpc, 6, 12, 16, 32 * 5, \
+     RET
+ ALIGN function_align
+ .v4:
++    _CET_ENDBR
+     FILTER         4, v
+     ret
+ 
+@@ -1075,6 +1076,7 @@ cglobal lpf_h_sb_y_16bpc, 6, 12, 16, 32 * 15, \
+     RET
+ ALIGN function_align
+ .h4:
++    _CET_ENDBR
+     FILTER         4, h
+     ret
+ 

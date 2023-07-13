@@ -1,0 +1,896 @@
+Index: src/x86/mc16_sse.asm
+--- src/x86/mc16_sse.asm.orig
++++ src/x86/mc16_sse.asm
+@@ -184,12 +184,14 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
+     test               mxyd, mxyd
+     jnz .v
+ .put:
++    _CET_ENDBR
+     tzcnt                wd, wd
+     movzx                wd, word [base+put_ssse3_table+wq*2]
+     add                  wq, t0
+     movifnidn            hd, hm
+     jmp                  wq
+ .put_w2:
++    _CET_ENDBR
+     mov                 r4d, [srcq+ssq*0]
+     mov                 r6d, [srcq+ssq*1]
+     lea                srcq, [srcq+ssq*2]
+@@ -200,6 +202,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
+     jg .put_w2
+     RET
+ .put_w4:
++    _CET_ENDBR
+     movq                 m0, [srcq+ssq*0]
+     movq                 m1, [srcq+ssq*1]
+     lea                srcq, [srcq+ssq*2]
+@@ -210,6 +213,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
+     jg .put_w4
+     RET
+ .put_w8:
++    _CET_ENDBR
+     movu                 m0, [srcq+ssq*0]
+     movu                 m1, [srcq+ssq*1]
+     lea                srcq, [srcq+ssq*2]
+@@ -220,6 +224,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
+     jg .put_w8
+     RET
+ .put_w16:
++    _CET_ENDBR
+     movu                 m0, [srcq+ssq*0+16*0]
+     movu                 m1, [srcq+ssq*0+16*1]
+     movu                 m2, [srcq+ssq*1+16*0]
+@@ -234,6 +239,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
+     jg .put_w16
+     RET
+ .put_w32:
++    _CET_ENDBR
+     movu                 m0, [srcq+16*0]
+     movu                 m1, [srcq+16*1]
+     movu                 m2, [srcq+16*2]
+@@ -248,6 +254,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
+     jg .put_w32
+     RET
+ .put_w64:
++    _CET_ENDBR
+     movu                 m0, [srcq+16*0]
+     movu                 m1, [srcq+16*1]
+     movu                 m2, [srcq+16*2]
+@@ -270,6 +277,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
+     jg .put_w64
+     RET
+ .put_w128:
++    _CET_ENDBR
+     add                srcq, 16*8
+     add                dstq, 16*8
+ .put_w128_loop:
+@@ -311,6 +319,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
+     jg .put_w128_loop
+     RET
+ .h:
++    _CET_ENDBR
+     movd                 m5, mxyd
+     mov                mxyd, r7m ; my
+     mova                 m4, [base+pw_16]
+@@ -329,6 +338,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
+     cmp                  wd, -4
+     je .h_w4
+ .h_w2:
++    _CET_ENDBR
+     movq                 m1, [srcq+ssq*0]
+     movhps               m1, [srcq+ssq*1]
+     lea                srcq, [srcq+ssq*2]
+@@ -346,6 +356,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
+     jg .h_w2
+     RET
+ .h_w4:
++    _CET_ENDBR
+     movq                 m0, [srcq+ssq*0]
+     movhps               m0, [srcq+ssq*1]
+     movq                 m1, [srcq+ssq*0+2]
+@@ -363,6 +374,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
+     jg .h_w4
+     RET
+ .h_w8:
++    _CET_ENDBR
+     movu                 m0, [srcq+ssq*0]
+     movu                 m1, [srcq+ssq*0+2]
+     pmullw               m0, m4
+@@ -385,6 +397,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
+     jg .h_w8
+     RET
+ .h_w16:
++    _CET_ENDBR
+     lea                srcq, [srcq+wq*2]
+     lea                dstq, [dstq+wq*2]
+     neg                  wq
+@@ -415,6 +428,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
+     jg .h_w16_loop0
+     RET
+ .v:
++    _CET_ENDBR
+     shl                mxyd, 11
+     movd                 m5, mxyd
+     pshufb               m5, [base+pw_256]
+@@ -423,6 +437,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
+     jg .v_w8
+     je .v_w4
+ .v_w2:
++    _CET_ENDBR
+     movd                 m0, [srcq+ssq*0]
+ .v_w2_loop:
+     movd                 m1, [srcq+ssq*1]
+@@ -441,6 +456,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
+     jg .v_w2_loop
+     RET
+ .v_w4:
++    _CET_ENDBR
+     movq                 m0, [srcq+ssq*0]
+ .v_w4_loop:
+     movq                 m1, [srcq+ssq*1]
+@@ -458,6 +474,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
+     jg .v_w4_loop
+     RET
+ .v_w8:
++    _CET_ENDBR
+ %if ARCH_X86_64
+ %if WIN64
+     push                 r7
+@@ -508,6 +525,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
+ %endif
+     RET
+ .hv:
++    _CET_ENDBR
+     WIN64_SPILL_XMM       8
+     shl                mxyd, 11
+     mova                 m3, [base+pw_2]
+@@ -525,6 +543,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
+     jg .hv_w8
+     je .hv_w4
+ .hv_w2:
++    _CET_ENDBR
+     movddup              m0, [srcq+ssq*0]
+     pshufhw              m1, m0, q0321
+     pmullw               m0, m4
+@@ -557,6 +576,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
+     jg .hv_w2_loop
+     RET
+ .hv_w4:
++    _CET_ENDBR
+     movddup              m0, [srcq+ssq*0]
+     movddup              m1, [srcq+ssq*0+2]
+     pmullw               m0, m4
+@@ -589,6 +609,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
+     jg .hv_w4_loop
+     RET
+ .hv_w8:
++    _CET_ENDBR
+ %if ARCH_X86_64
+ %if WIN64
+     push                 r7
+@@ -672,6 +693,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
+     test               mxyd, mxyd
+     jnz .v
+ .prep:
++    _CET_ENDBR
+     tzcnt                wd, wd
+     movzx                wd, word [base+prep_ssse3_table+wq*2]
+     mov                 r5d, r7m ; bitdepth_max
+@@ -682,6 +704,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
+     lea            stride3q, [strideq*3]
+     jmp                  wq
+ .prep_w4:
++    _CET_ENDBR
+     movq                 m0, [srcq+strideq*0]
+     movhps               m0, [srcq+strideq*1]
+     movq                 m1, [srcq+strideq*2]
+@@ -698,6 +721,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
+     jg .prep_w4
+     RET
+ .prep_w8:
++    _CET_ENDBR
+     movu                 m0, [srcq+strideq*0]
+     movu                 m1, [srcq+strideq*1]
+     movu                 m2, [srcq+strideq*2]
+@@ -714,6 +738,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
+     jg .prep_w8
+     RET
+ .prep_w16:
++    _CET_ENDBR
+     movu                 m0, [srcq+strideq*0+16*0]
+     movu                 m1, [srcq+strideq*0+16*1]
+     movu                 m2, [srcq+strideq*1+16*0]
+@@ -730,6 +755,8 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
+     jg .prep_w16
+     RET
+ .prep_w32:
++    _CET_ENDBR
++    _CET_ENDBR
+     movu                 m0, [srcq+16*0]
+     movu                 m1, [srcq+16*1]
+     movu                 m2, [srcq+16*2]
+@@ -746,6 +773,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
+     jg .prep_w32
+     RET
+ .prep_w64:
++    _CET_ENDBR
+     movu                 m0, [srcq+16*0]
+     movu                 m1, [srcq+16*1]
+     movu                 m2, [srcq+16*2]
+@@ -772,6 +800,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
+     jg .prep_w64
+     RET
+ .prep_w128:
++    _CET_ENDBR
+     movu                 m0, [srcq+16* 0]
+     movu                 m1, [srcq+16* 1]
+     movu                 m2, [srcq+16* 2]
+@@ -818,6 +847,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
+     jg .prep_w128
+     RET
+ .h:
++    _CET_ENDBR
+     movd                 m4, mxyd
+     mov                mxyd, r6m ; my
+     mova                 m3, [base+pw_16]
+@@ -835,6 +865,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
+     je .h_w8
+     jg .h_w16
+ .h_w4:
++    _CET_ENDBR
+     movq                 m0, [srcq+strideq*0]
+     movhps               m0, [srcq+strideq*1]
+     movq                 m1, [srcq+strideq*0+2]
+@@ -851,6 +882,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
+     jg .h_w4
+     RET
+ .h_w8:
++    _CET_ENDBR
+     movu                 m0, [srcq+strideq*0]
+     movu                 m1, [srcq+strideq*0+2]
+     pmullw               m0, m3
+@@ -873,6 +905,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
+     jg .h_w8
+     RET
+ .h_w16:
++    _CET_ENDBR
+     lea                srcq, [srcq+wq*2]
+     neg                  wq
+ .h_w16_loop0:
+@@ -902,6 +935,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
+     jg .h_w16_loop0
+     RET
+ .v:
++    _CET_ENDBR
+     movd                 m4, mxyd
+     mova                 m3, [base+pw_16]
+     pshufb               m4, [base+pw_256]
+@@ -916,6 +950,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
+     je .v_w8
+     jg .v_w16
+ .v_w4:
++    _CET_ENDBR
+     movq                 m0, [srcq+strideq*0]
+ .v_w4_loop:
+     movq                 m2, [srcq+strideq*1]
+@@ -934,6 +969,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
+     jg .v_w4_loop
+     RET
+ .v_w8:
++    _CET_ENDBR
+     movu                 m0, [srcq+strideq*0]
+ .v_w8_loop:
+     movu                 m2, [srcq+strideq*1]
+@@ -956,6 +992,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
+     jg .v_w8_loop
+     RET
+ .v_w16:
++    _CET_ENDBR
+ %if WIN64
+     push                 r7
+ %endif
+@@ -1011,6 +1048,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
+ %endif
+     RET
+ .hv:
++    _CET_ENDBR
+     WIN64_SPILL_XMM       7
+     shl                mxyd, 11
+     movd                 m6, mxyd
+@@ -1019,6 +1057,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
+     je .hv_w8
+     jg .hv_w16
+ .hv_w4:
++    _CET_ENDBR
+     movddup              m0, [srcq+strideq*0]
+     movddup              m1, [srcq+strideq*0+2]
+     pmullw               m0, m3
+@@ -1048,6 +1087,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
+     jg .hv_w4_loop
+     RET
+ .hv_w8:
++    _CET_ENDBR
+     movu                 m0, [srcq+strideq*0]
+     movu                 m1, [srcq+strideq*0+2]
+     pmullw               m0, m3
+@@ -1084,6 +1124,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
+     jg .hv_w8_loop
+     RET
+ .hv_w16:
++    _CET_ENDBR
+ %if WIN64
+     push                 r7
+ %endif
+@@ -1234,6 +1275,7 @@ cglobal put_8tap_16bpc, 4, 9, 0, dst, ds, src, ss, w, 
+ %endif
+     jmp                  wq
+ .h:
++    _CET_ENDBR
+     test                myd, 0xf00
+     jnz .hv
+     mov                 myd, r8m
+@@ -1252,6 +1294,7 @@ cglobal put_8tap_16bpc, 4, 9, 0, dst, ds, src, ss, w, 
+     psraw                m3, 8 ; sign-extend
+     je .h_w4
+ .h_w2:
++    _CET_ENDBR
+     mova                 m2, [base+spel_h_shuf2]
+     pshufd               m3, m3, q2121
+ .h_w2_loop:
+@@ -1277,6 +1320,7 @@ cglobal put_8tap_16bpc, 4, 9, 0, dst, ds, src, ss, w, 
+     jg .h_w2_loop
+     RET
+ .h_w4:
++    _CET_ENDBR
+     WIN64_SPILL_XMM       8
+     mova                 m6, [base+spel_h_shufA]
+     mova                 m7, [base+spel_h_shufB]
+@@ -1302,6 +1346,7 @@ cglobal put_8tap_16bpc, 4, 9, 0, dst, ds, src, ss, w, 
+     jg .h_w4_loop
+     RET
+ .h_w8:
++    _CET_ENDBR
+ %if WIN64
+     %assign stack_offset stack_offset - stack_size_padded
+     WIN64_SPILL_XMM      12
+@@ -1378,6 +1423,7 @@ cglobal put_8tap_16bpc, 4, 9, 0, dst, ds, src, ss, w, 
+     jg .h_w8_loop0
+     RET
+ .v:
++    _CET_ENDBR
+     movzx               mxd, myb
+     shr                 myd, 16
+     cmp                  hd, 6
+@@ -1418,6 +1464,7 @@ cglobal put_8tap_16bpc, 4, 9, 0, dst, ds, src, ss, w, 
+     cmp                  wd, 2
+     jne .v_w4
+ .v_w2:
++    _CET_ENDBR
+     movd                 m1, [srcq+ssq*0]
+     movd                 m4, [srcq+ssq*1]
+     movd                 m2, [srcq+ssq*2]
+@@ -1466,6 +1513,7 @@ cglobal put_8tap_16bpc, 4, 9, 0, dst, ds, src, ss, w, 
+     jg .v_w2_loop
+     RET
+ .v_w4:
++    _CET_ENDBR
+ %if ARCH_X86_32
+     shl                  wd, 14
+ %if STACK_ALIGNMENT < 16
+@@ -1604,6 +1652,7 @@ cglobal put_8tap_16bpc, 4, 9, 0, dst, ds, src, ss, w, 
+     jg .v_w4_loop0
+     RET
+ .hv:
++    _CET_ENDBR
+ %if STACK_ALIGNMENT < 16
+     %xdefine           rstk  rsp
+ %else
+@@ -1741,8 +1790,10 @@ cglobal put_8tap_16bpc, 4, 9, 0, dst, ds, src, ss, w, 
+     jg .hv_w2_loop
+     RET
+ .hv_w8:
++    _CET_ENDBR
+     shr                 mxd, 16
+ .hv_w4:
++    _CET_ENDBR
+     movq                 m2, [base+subpel_filters+mxq*8]
+     movzx               mxd, myb
+     shr                 myd, 16
+@@ -2060,6 +2111,7 @@ cglobal prep_8tap_16bpc, 4, 8, 0, tmp, src, ss, w, h, 
+ %endif
+     jmp                  wq
+ .h:
++    _CET_ENDBR
+     test                myd, 0xf00
+     jnz .hv
+     movifnidn           ssq, r2mp
+@@ -2107,6 +2159,7 @@ cglobal prep_8tap_16bpc, 4, 8, 0, tmp, src, ss, w, h, 
+     jg .h_w4_loop
+     RET
+ .h_w8:
++    _CET_ENDBR
+     WIN64_SPILL_XMM      11
+     shr                 mxd, 16
+     movq                 m2, [base+subpel_filters+mxq*8]
+@@ -2177,6 +2230,7 @@ cglobal prep_8tap_16bpc, 4, 8, 0, tmp, src, ss, w, h, 
+     jg .h_w8_loop0
+     RET
+ .v:
++    _CET_ENDBR
+     movzx               mxd, myb
+     shr                 myd, 16
+     cmp                  hd, 4
+@@ -2339,6 +2393,7 @@ cglobal prep_8tap_16bpc, 4, 8, 0, tmp, src, ss, w, h, 
+     jg .v_loop0
+     RET
+ .hv:
++    _CET_ENDBR
+ %if STACK_ALIGNMENT < 16
+     %xdefine           rstk  rsp
+ %else
+@@ -3008,6 +3063,7 @@ cglobal prep_8tap_scaled_16bpc, 0, 6, 8, 0x200, tmp, s
+     jmp                  wq
+ %if isput
+ .w2:
++    _CET_ENDBR
+  %if ARCH_X86_64
+     mov                 myd, mym
+     movzx               t0d, t0b
+@@ -3259,6 +3315,7 @@ cglobal prep_8tap_scaled_16bpc, 0, 6, 8, 0x200, tmp, s
+ %endif
+ INIT_XMM ssse3
+ .w4:
++    _CET_ENDBR
+ %if ARCH_X86_64
+     mov                 myd, mym
+     mova         [rsp+0x10], m11
+@@ -3695,22 +3752,27 @@ INIT_XMM ssse3
+  %define stk rsp+0x20
+ %endif
+ .w8:
++    _CET_ENDBR
+     mov    dword [stk+0xf0], 1
+     movifprep   tmp_stridem, 16
+     jmp .w_start
+ .w16:
++    _CET_ENDBR
+     mov    dword [stk+0xf0], 2
+     movifprep   tmp_stridem, 32
+     jmp .w_start
+ .w32:
++    _CET_ENDBR
+     mov    dword [stk+0xf0], 4
+     movifprep   tmp_stridem, 64
+     jmp .w_start
+ .w64:
++    _CET_ENDBR
+     mov    dword [stk+0xf0], 8
+     movifprep   tmp_stridem, 128
+     jmp .w_start
+ .w128:
++    _CET_ENDBR
+     mov    dword [stk+0xf0], 16
+     movifprep   tmp_stridem, 256
+ .w_start:
+@@ -4277,6 +4339,7 @@ INIT_XMM ssse3
+     jmp                  wq
+ %if isput
+ .dy1_w2:
++    _CET_ENDBR
+  %if ARCH_X86_64
+     mov                 myd, mym
+     movzx               t0d, t0b
+@@ -4477,6 +4540,7 @@ INIT_XMM ssse3
+ %endif
+ INIT_XMM ssse3
+ .dy1_w4:
++    _CET_ENDBR
+ %if ARCH_X86_64
+     mov                 myd, mym
+     mova         [rsp+0x10], m11
+@@ -4857,22 +4921,27 @@ INIT_XMM ssse3
+     MC_8TAP_SCALED_RET ; why not jz .ret?
+ INIT_XMM ssse3
+ .dy1_w8:
++    _CET_ENDBR
+     mov    dword [stk+0xf0], 1
+     movifprep   tmp_stridem, 16
+     jmp .dy1_w_start
+ .dy1_w16:
++    _CET_ENDBR
+     mov    dword [stk+0xf0], 2
+     movifprep   tmp_stridem, 32
+     jmp .dy1_w_start
+ .dy1_w32:
++    _CET_ENDBR
+     mov    dword [stk+0xf0], 4
+     movifprep   tmp_stridem, 64
+     jmp .dy1_w_start
+ .dy1_w64:
++    _CET_ENDBR
+     mov    dword [stk+0xf0], 8
+     movifprep   tmp_stridem, 128
+     jmp .dy1_w_start
+ .dy1_w128:
++    _CET_ENDBR
+     mov    dword [stk+0xf0], 16
+     movifprep   tmp_stridem, 256
+ .dy1_w_start:
+@@ -5395,11 +5464,13 @@ INIT_XMM ssse3
+  %define stk rsp+0x20
+ %endif
+ .dy2:
++    _CET_ENDBR
+     movzx                wd, word [base+%1_8tap_scaled_ssse3_dy2_table+wq*2]
+     add                  wq, base_reg
+     jmp                  wq
+ %if isput
+ .dy2_w2:
++    _CET_ENDBR
+  %if ARCH_X86_64
+     mov                 myd, mym
+     mova         [rsp+0x10], m13
+@@ -5609,6 +5680,7 @@ INIT_XMM ssse3
+ %endif
+ INIT_XMM ssse3
+ .dy2_w4:
++    _CET_ENDBR
+ %if ARCH_X86_64
+     mov                 myd, mym
+     mova         [rsp+0x10], m11
+@@ -5946,22 +6018,27 @@ INIT_XMM ssse3
+     MC_8TAP_SCALED_RET ; why not jz .ret?
+ INIT_XMM ssse3
+ .dy2_w8:
++    _CET_ENDBR
+     mov    dword [stk+0xf0], 1
+     movifprep   tmp_stridem, 16
+     jmp .dy2_w_start
+ .dy2_w16:
++    _CET_ENDBR
+     mov    dword [stk+0xf0], 2
+     movifprep   tmp_stridem, 32
+     jmp .dy2_w_start
+ .dy2_w32:
++    _CET_ENDBR
+     mov    dword [stk+0xf0], 4
+     movifprep   tmp_stridem, 64
+     jmp .dy2_w_start
+ .dy2_w64:
++    _CET_ENDBR
+     mov    dword [stk+0xf0], 8
+     movifprep   tmp_stridem, 128
+     jmp .dy2_w_start
+ .dy2_w128:
++    _CET_ENDBR
+     mov    dword [stk+0xf0], 16
+     movifprep   tmp_stridem, 256
+ .dy2_w_start:
+@@ -6812,6 +6889,7 @@ ALIGN function_align
+     ret
+ ALIGN function_align
+ .h:
++    _CET_ENDBR
+     lea                tmpd, [mxq+alphaq]
+     shr                 mxd, 10
+     movq                 m3, [filterq+mxq*8]
+@@ -6890,6 +6968,7 @@ ALIGN function_align
+     call .main
+     lea                dstq, [dstq+strideq*2]
+ .w4:
++    _CET_ENDBR
+     movq   [dstq+strideq*0], m0
+     movhps [dstq+strideq*1], m0
+     lea                dstq, [dstq+strideq*2]
+@@ -6903,6 +6982,7 @@ ALIGN function_align
+     call .main
+     lea                dstq, [dstq+strideq*2]
+ .w8:
++    _CET_ENDBR
+     mova   [dstq+strideq*0], m0
+     mova   [dstq+strideq*1], m1
+     sub                  hd, 2
+@@ -6912,6 +6992,7 @@ ALIGN function_align
+     call .main
+     add                dstq, strideq
+ .w16:
++    _CET_ENDBR
+     mova        [dstq+16*0], m0
+     mova        [dstq+16*1], m1
+     dec                  hd
+@@ -6921,6 +7002,7 @@ ALIGN function_align
+     call .main
+     add                dstq, strideq
+ .w32:
++    _CET_ENDBR
+     mova        [dstq+16*0], m0
+     mova        [dstq+16*1], m1
+     call .main
+@@ -6933,6 +7015,7 @@ ALIGN function_align
+     call .main
+     add                dstq, strideq
+ .w64:
++    _CET_ENDBR
+     mova        [dstq+16*0], m0
+     mova        [dstq+16*1], m1
+     call .main
+@@ -6951,6 +7034,7 @@ ALIGN function_align
+     call .main
+     add                dstq, strideq
+ .w128:
++    _CET_ENDBR
+     mova       [dstq+16* 0], m0
+     mova       [dstq+16* 1], m1
+     call .main
+@@ -7174,6 +7258,7 @@ cglobal w_mask_420_16bpc, 4, 7, 12, dst, stride, tmp1,
+     lea                dstq, [dstq+strideq*2]
+     add               maskq, 4
+ .w4:
++    _CET_ENDBR
+     movq   [dstq+strideq*0], m0
+     phaddw               m2, m3
+     movhps [dstq+strideq*1], m0
+@@ -7193,6 +7278,7 @@ cglobal w_mask_420_16bpc, 4, 7, 12, dst, stride, tmp1,
+     lea                dstq, [dstq+strideq*2]
+     add               maskq, 4
+ .w8:
++    _CET_ENDBR
+     mova   [dstq+strideq*0], m0
+     paddw                m2, m3
+     phaddw               m2, m2
+@@ -7209,6 +7295,7 @@ cglobal w_mask_420_16bpc, 4, 7, 12, dst, stride, tmp1,
+     lea                dstq, [dstq+strideq*2]
+     add               maskq, 8
+ .w16:
++    _CET_ENDBR
+     mova [dstq+strideq*1+16*0], m2
+     mova [dstq+strideq*0+16*0], m0
+     mova [dstq+strideq*1+16*1], m3
+@@ -7231,6 +7318,7 @@ cglobal w_mask_420_16bpc, 4, 7, 12, dst, stride, tmp1,
+     lea                dstq, [dstq+strideq*2]
+     add               maskq, 16
+ .w32:
++    _CET_ENDBR
+     mova [dstq+strideq*1+16*0], m2
+     mova [dstq+strideq*0+16*0], m0
+     mova [dstq+strideq*1+16*1], m3
+@@ -7266,6 +7354,7 @@ cglobal w_mask_420_16bpc, 4, 7, 12, dst, stride, tmp1,
+     lea                dstq, [dstq+strideq*2]
+     add               maskq, 16*2
+ .w64:
++    _CET_ENDBR
+     mova [dstq+strideq*1+16*1], m2
+     mova [dstq+strideq*0+16*0], m0
+     mova [dstq+strideq*1+16*2], m3
+@@ -7330,6 +7419,7 @@ cglobal w_mask_420_16bpc, 4, 7, 12, dst, stride, tmp1,
+     lea                dstq, [dstq+strideq*2]
+     add               maskq, 16*4
+ .w128:
++    _CET_ENDBR
+     mova [dstq+strideq*1+16* 1], m2
+     mova [dstq+strideq*0+16* 0], m0
+     mova [dstq+strideq*1+16* 2], m3
+@@ -7511,6 +7601,7 @@ cglobal w_mask_422_16bpc, 4, 7, 12, dst, stride, tmp1,
+     call .main
+     lea                dstq, [dstq+strideq*2]
+ .w4:
++    _CET_ENDBR
+     movq   [dstq+strideq*0], m0
+     movhps [dstq+strideq*1], m0
+     lea                dstq, [dstq+strideq*2]
+@@ -7524,6 +7615,7 @@ cglobal w_mask_422_16bpc, 4, 7, 12, dst, stride, tmp1,
+     call .main
+     lea                dstq, [dstq+strideq*2]
+ .w8:
++    _CET_ENDBR
+     mova   [dstq+strideq*0], m0
+     mova   [dstq+strideq*1], m1
+     sub                  hd, 2
+@@ -7534,6 +7626,7 @@ cglobal w_mask_422_16bpc, 4, 7, 12, dst, stride, tmp1,
+     call .main
+     lea                dstq, [dstq+strideq*2]
+ .w16:
++    _CET_ENDBR
+     mova [dstq+strideq*0+16*0], m0
+     mova [dstq+strideq*0+16*1], m1
+     call .main
+@@ -7546,6 +7639,7 @@ cglobal w_mask_422_16bpc, 4, 7, 12, dst, stride, tmp1,
+     call .main
+     add                dstq, strideq
+ .w32:
++    _CET_ENDBR
+     mova        [dstq+16*0], m0
+     mova        [dstq+16*1], m1
+     call .main
+@@ -7558,6 +7652,7 @@ cglobal w_mask_422_16bpc, 4, 7, 12, dst, stride, tmp1,
+     call .main
+     add                dstq, strideq
+ .w64:
++    _CET_ENDBR
+     mova        [dstq+16*0], m0
+     mova        [dstq+16*1], m1
+     call .main
+@@ -7576,6 +7671,7 @@ cglobal w_mask_422_16bpc, 4, 7, 12, dst, stride, tmp1,
+     call .main
+     add                dstq, strideq
+ .w128:
++    _CET_ENDBR
+     mova       [dstq+16* 0], m0
+     mova       [dstq+16* 1], m1
+     call .main
+@@ -7649,6 +7745,7 @@ cglobal w_mask_444_16bpc, 4, 7, 12, dst, stride, tmp1,
+     call .main
+     lea                dstq, [dstq+strideq*2]
+ .w4:
++    _CET_ENDBR
+     movq   [dstq+strideq*0], m0
+     movhps [dstq+strideq*1], m0
+     lea                dstq, [dstq+strideq*2]
+@@ -7662,6 +7759,7 @@ cglobal w_mask_444_16bpc, 4, 7, 12, dst, stride, tmp1,
+     call .main
+     lea                dstq, [dstq+strideq*2]
+ .w8:
++    _CET_ENDBR
+     mova   [dstq+strideq*0], m0
+     mova   [dstq+strideq*1], m1
+     sub                  hd, 2
+@@ -7672,6 +7770,7 @@ cglobal w_mask_444_16bpc, 4, 7, 12, dst, stride, tmp1,
+     call .main
+     lea                dstq, [dstq+strideq*2]
+ .w16:
++    _CET_ENDBR
+     mova [dstq+strideq*0+16*0], m0
+     mova [dstq+strideq*0+16*1], m1
+     call .main
+@@ -7684,6 +7783,7 @@ cglobal w_mask_444_16bpc, 4, 7, 12, dst, stride, tmp1,
+     call .main
+     add                dstq, strideq
+ .w32:
++    _CET_ENDBR
+     mova        [dstq+16*0], m0
+     mova        [dstq+16*1], m1
+     call .main
+@@ -7696,6 +7796,7 @@ cglobal w_mask_444_16bpc, 4, 7, 12, dst, stride, tmp1,
+     call .main
+     add                dstq, strideq
+ .w64:
++    _CET_ENDBR
+     mova        [dstq+16*0], m0
+     mova        [dstq+16*1], m1
+     call .main
+@@ -7714,6 +7815,7 @@ cglobal w_mask_444_16bpc, 4, 7, 12, dst, stride, tmp1,
+     call .main
+     add                dstq, strideq
+ .w128:
++    _CET_ENDBR
+     mova       [dstq+16* 0], m0
+     mova       [dstq+16* 1], m1
+     call .main
+@@ -7770,6 +7872,7 @@ cglobal blend_16bpc, 3, 7, 8, dst, stride, tmp, w, h, 
+     pxor                 m6, m6
+     jmp                  wq
+ .w4:
++    _CET_ENDBR
+     mova                 m5, [maskq]
+     movq                 m0, [dstq+strideq*0]
+     movhps               m0, [dstq+strideq*1]
+@@ -7796,6 +7899,7 @@ cglobal blend_16bpc, 3, 7, 8, dst, stride, tmp, w, h, 
+     jg .w4
+     RET
+ .w8:
++    _CET_ENDBR
+     mova                 m5, [maskq]
+     mova                 m0, [dstq+strideq*0]
+     mova                 m1, [dstq+strideq*1]
+@@ -7818,6 +7922,7 @@ cglobal blend_16bpc, 3, 7, 8, dst, stride, tmp, w, h, 
+     jg .w8
+     RET
+ .w16:
++    _CET_ENDBR
+     mova                 m5, [maskq]
+     mova                 m0, [dstq+16*0]
+     mova                 m1, [dstq+16*1]
+@@ -7840,6 +7945,7 @@ cglobal blend_16bpc, 3, 7, 8, dst, stride, tmp, w, h, 
+     jg .w16
+     RET
+ .w32:
++    _CET_ENDBR
+     mova                 m5, [maskq+16*0]
+     mova                 m0, [dstq+16*0]
+     mova                 m1, [dstq+16*1]
+@@ -7886,6 +7992,7 @@ cglobal blend_v_16bpc, 3, 6, 6, dst, stride, tmp, w, h
+     add                  wq, r5
+     jmp                  wq
+ .w2:
++    _CET_ENDBR
+     movd                 m4, [base+obmc_masks+2*2]
+ .w2_loop:
+     movd                 m0, [dstq+strideq*0]
+@@ -7906,6 +8013,7 @@ cglobal blend_v_16bpc, 3, 6, 6, dst, stride, tmp, w, h
+     jg .w2_loop
+     RET
+ .w4:
++    _CET_ENDBR
+     movddup              m2, [base+obmc_masks+4*2]
+ .w4_loop:
+     movq                 m0, [dstq+strideq*0]
+@@ -7922,6 +8030,7 @@ cglobal blend_v_16bpc, 3, 6, 6, dst, stride, tmp, w, h
+     jg .w4_loop
+     RET
+ .w8:
++    _CET_ENDBR
+     mova                 m4, [base+obmc_masks+8*2]
+ .w8_loop:
+     mova                 m0, [dstq+strideq*0]
+@@ -7942,6 +8051,7 @@ cglobal blend_v_16bpc, 3, 6, 6, dst, stride, tmp, w, h
+     jg .w8_loop
+     RET
+ .w16:
++    _CET_ENDBR
+     mova                 m4, [base+obmc_masks+16*2]
+     movq                 m5, [base+obmc_masks+16*3]
+ .w16_loop:
+@@ -7963,6 +8073,7 @@ cglobal blend_v_16bpc, 3, 6, 6, dst, stride, tmp, w, h
+     jg .w16_loop
+     RET
+ .w32:
++    _CET_ENDBR
+ %if WIN64
+     movaps          [rsp+8], m6
+ %endif
+@@ -8030,6 +8141,7 @@ cglobal blend_h_16bpc, 3, 7, 6, dst, ds, tmp, w, h, ma
+     neg                  hq
+     jmp                  wq
+ .w2:
++    _CET_ENDBR
+     movd                 m0, [dstq+dsq*0]
+     movd                 m2, [dstq+dsq*1]
+     movd                 m3, [maskq+hq*2]
+@@ -8048,6 +8160,7 @@ cglobal blend_h_16bpc, 3, 7, 6, dst, ds, tmp, w, h, ma
+     jl .w2
+     RET
+ .w4:
++    _CET_ENDBR
+     mova                 m3, [base+blend_shuf]
+ .w4_loop:
+     movq                 m0, [dstq+dsq*0]
+@@ -8066,6 +8179,7 @@ cglobal blend_h_16bpc, 3, 7, 6, dst, ds, tmp, w, h, ma
+     jl .w4_loop
+     RET
+ .w8:
++    _CET_ENDBR
+     movddup              m5, [base+blend_shuf+8]
+ %if WIN64
+     movaps         [rsp+ 8], m6
+@@ -8097,6 +8211,7 @@ cglobal blend_h_16bpc, 3, 7, 6, dst, ds, tmp, w, h, ma
+ %endif
+     RET
+ .w16:
++    _CET_ENDBR
+     movd                 m5, [maskq+hq*2]
+     pshufb               m5, m4
+     BLEND_H_ROW           0, 0, 2
+@@ -8105,6 +8220,7 @@ cglobal blend_h_16bpc, 3, 7, 6, dst, ds, tmp, w, h, ma
+     jl .w16
+     RET
+ .w32:
++    _CET_ENDBR
+     movd                 m5, [maskq+hq*2]
+     pshufb               m5, m4
+     BLEND_H_ROW           0, 0
+@@ -8114,6 +8230,7 @@ cglobal blend_h_16bpc, 3, 7, 6, dst, ds, tmp, w, h, ma
+     jl .w32
+     RET
+ .w64:
++    _CET_ENDBR
+     movd                 m5, [maskq+hq*2]
+     pshufb               m5, m4
+     BLEND_H_ROW           0, 0
+@@ -8125,6 +8242,7 @@ cglobal blend_h_16bpc, 3, 7, 6, dst, ds, tmp, w, h, ma
+     jl .w64
+     RET
+ .w128:
++    _CET_ENDBR
+     movd                 m5, [maskq+hq*2]
+     pshufb               m5, m4
+     BLEND_H_ROW           0,  0

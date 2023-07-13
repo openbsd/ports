@@ -1,0 +1,63 @@
+Index: src/x86/filmgrain_sse.asm
+--- src/x86/filmgrain_sse.asm.orig
++++ src/x86/filmgrain_sse.asm
+@@ -156,6 +156,7 @@ cglobal generate_grain_y_8bpc, 2, 7 + 2 * ARCH_X86_64,
+     jmp              r2
+ 
+ .ar1:
++    _CET_ENDBR
+ %if ARCH_X86_32
+     DEFINE_ARGS buf, fg_data, cf3, unused, val3, min, max
+ %elif WIN64
+@@ -228,9 +229,11 @@ cglobal generate_grain_y_8bpc, 2, 7 + 2 * ARCH_X86_64,
+     dec              hd
+     jg .y_loop_ar1
+ .ar0:
++    _CET_ENDBR
+     RET
+ 
+ .ar2:
++    _CET_ENDBR
+ %if ARCH_X86_32
+ %assign stack_offset_old stack_offset
+     ALLOC_STACK -16*8
+@@ -331,6 +334,7 @@ cglobal generate_grain_y_8bpc, 2, 7 + 2 * ARCH_X86_64,
+     RET
+ 
+ .ar3:
++    _CET_ENDBR
+     DEFINE_ARGS buf, fg_data, shift
+ %if ARCH_X86_32
+ %assign stack_offset stack_offset_old
+@@ -598,6 +602,7 @@ cglobal generate_grain_uv_%1_8bpc, 1, 7 + 3 * ARCH_X86
+     jmp              r5
+ 
+ .ar0:
++    _CET_ENDBR
+     DEFINE_ARGS buf, bufy, fg_data, uv, unused, shift
+     movifnidn     bufyq, bufymp
+ %if ARCH_X86_32
+@@ -737,6 +742,7 @@ cglobal generate_grain_uv_%1_8bpc, 1, 7 + 3 * ARCH_X86
+     RET
+ 
+ .ar1:
++    _CET_ENDBR
+ %if ARCH_X86_32
+ %assign stack_offset stack_offset_old
+ %assign stack_size_padded 0
+@@ -880,6 +886,7 @@ cglobal generate_grain_uv_%1_8bpc, 1, 7 + 3 * ARCH_X86
+     RET
+ 
+ .ar2:
++    _CET_ENDBR
+ %if ARCH_X86_32
+ %assign stack_offset stack_offset_old
+ %assign stack_size_padded 0
+@@ -1013,6 +1020,7 @@ cglobal generate_grain_uv_%1_8bpc, 1, 7 + 3 * ARCH_X86
+     RET
+ 
+ .ar3:
++    _CET_ENDBR
+ %if ARCH_X86_32
+ %assign stack_offset stack_offset_old
+ %assign stack_size_padded 0

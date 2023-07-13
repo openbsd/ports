@@ -1,0 +1,241 @@
+Index: src/x86/refmvs.asm
+--- src/x86/refmvs.asm.orig
++++ src/x86/refmvs.asm
+@@ -224,18 +224,21 @@ cglobal save_tmvs, 6, 7, 8, rp, stride, rr, ref_sign, 
+     jg .loop_y
+     RET
+ .write1:
++    _CET_ENDBR
+     movd    [rpq+xq+0], m0
+     psrlq           m0, 8
+     movd    [rpq+xq+1], m0
+     add             xq, 5*1
+     ret
+ .write2:
++    _CET_ENDBR
+     movq    [rpq+xq+0], m0
+     psrlq           m0, 8
+     movd    [rpq+xq+6], m0
+     add             xq, 5*2
+     ret
+ .write4:
++    _CET_ENDBR
+     pshufb          m0, m9
+     movu   [rpq+xq+ 0], m0
+     psrlq           m0, 8
+@@ -243,6 +246,7 @@ cglobal save_tmvs, 6, 7, 8, rp, stride, rr, ref_sign, 
+     add             xq, 5*4
+     ret
+ .write8:
++    _CET_ENDBR
+     pshufb          m2, m0, m9
+     movu   [rpq+xq+ 0], m2
+     pshufb          m0, m10
+@@ -252,6 +256,7 @@ cglobal save_tmvs, 6, 7, 8, rp, stride, rr, ref_sign, 
+     add             xq, 5*8
+     ret
+ .write16:
++    _CET_ENDBR
+     pshufb          m2, m0, m9
+     movu   [rpq+xq+ 0], m2
+     pshufb          m0, m10
+@@ -285,6 +290,7 @@ cglobal splat_mv, 4, 5, 3, rr, a, bx4, bw4, bh4
+     lea             aq, [aq+bx4q*4]
+     jmp           bw4q
+ .w32:
++    _CET_ENDBR
+     mova    [aq-16*16], m0
+     mova    [aq-16*15], m1
+     mova    [aq-16*14], m2
+@@ -298,6 +304,7 @@ cglobal splat_mv, 4, 5, 3, rr, a, bx4, bw4, bh4
+     mova    [aq-16* 6], m1
+     mova    [aq-16* 5], m2
+ .w16:
++    _CET_ENDBR
+     mova    [aq-16* 4], m0
+     mova    [aq-16* 3], m1
+     mova    [aq-16* 2], m2
+@@ -305,10 +312,12 @@ cglobal splat_mv, 4, 5, 3, rr, a, bx4, bw4, bh4
+     mova    [aq+16* 0], m1
+     mova    [aq+16* 1], m2
+ .w8:
++    _CET_ENDBR
+     mova    [aq+16* 2], m0
+     mova    [aq+16* 3], m1
+     mova    [aq+16* 4], m2
+ .w4:
++    _CET_ENDBR
+     mova    [aq+16* 5], m0
+     mova    [aq+16* 6], m1
+     mova    [aq+16* 7], m2
+@@ -316,12 +325,14 @@ cglobal splat_mv, 4, 5, 3, rr, a, bx4, bw4, bh4
+     jg .loop
+     RET
+ .w2:
++    _CET_ENDBR
+     movu      [aq+104], m0
+     movq      [aq+120], m1
+     dec           bh4d
+     jg .loop
+     RET
+ .w1:
++    _CET_ENDBR
+     movq      [aq+116], m0
+     movd      [aq+124], m2
+     dec           bh4d
+@@ -401,17 +412,20 @@ cglobal save_tmvs, 4, 13, 10, rp, stride, rr, ref_sign
+     jg .loop_y
+     RET
+ .write1:
++    _CET_ENDBR
+     movd   [rpq+xq+ 0], xm0
+     pextrb [rpq+xq+ 4], xm0, 4
+     add             xq, 5*1
+     ret
+ .write2:
++    _CET_ENDBR
+     movq    [rpq+xq+0], xm0
+     psrlq          xm1, xm0, 8
+     movd    [rpq+xq+6], xm1
+     add             xq, 5*2
+     ret
+ .write4:
++    _CET_ENDBR
+     pshufb         xm1, xm0, xm8
+     movu   [rpq+xq+ 0], xm1
+     psrlq          xm1, 8
+@@ -419,6 +433,7 @@ cglobal save_tmvs, 4, 13, 10, rp, stride, rr, ref_sign
+     add             xq, 5*4
+     ret
+ .write8:
++    _CET_ENDBR
+     vinserti128     m1, m0, xm0, 1
+     pshufb          m1, m8
+     movu   [rpq+xq+ 0], m1
+@@ -427,6 +442,7 @@ cglobal save_tmvs, 4, 13, 10, rp, stride, rr, ref_sign
+     add             xq, 5*8
+     ret
+ .write16:
++    _CET_ENDBR
+     vinserti128     m1, m0, xm0, 1
+     pshufb          m2, m1, m8
+     movu   [rpq+xq+ 0], m2
+@@ -455,6 +471,7 @@ cglobal splat_mv, 4, 5, 3, rr, a, bx4, bw4, bh4
+     lea             aq, [aq+bx4q*4]
+     jmp           bw4q
+ .w32:
++    _CET_ENDBR
+     mova     [aq-32*8], m0
+     mova     [aq-32*7], m1
+     mova     [aq-32*6], m2
+@@ -462,10 +479,12 @@ cglobal splat_mv, 4, 5, 3, rr, a, bx4, bw4, bh4
+     mova     [aq-32*4], m1
+     mova     [aq-32*3], m2
+ .w16:
++    _CET_ENDBR
+     mova     [aq-32*2], m0
+     mova     [aq-32*1], m1
+     mova     [aq+32*0], m2
+ .w8:
++    _CET_ENDBR
+     mova     [aq+32*1], m0
+     mova     [aq+32*2], m1
+     mova     [aq+32*3], m2
+@@ -473,18 +492,21 @@ cglobal splat_mv, 4, 5, 3, rr, a, bx4, bw4, bh4
+     jg .loop
+     RET
+ .w4:
++    _CET_ENDBR
+     movu      [aq+ 80], m0
+     mova      [aq+112], xm1
+     dec           bh4d
+     jg .loop
+     RET
+ .w2:
++    _CET_ENDBR
+     movu      [aq+104], xm0
+     movq      [aq+120], xm2
+     dec           bh4d
+     jg .loop
+     RET
+ .w1:
++    _CET_ENDBR
+     movq      [aq+116], xm0
+     movd      [aq+124], xm1
+     dec           bh4d
+@@ -584,25 +606,30 @@ cglobal save_tmvs, 4, 15, 10, rp, stride, rr, ref_sign
+     jg .loop_y
+     RET
+ .write1:
++    _CET_ENDBR
+     vmovdqu8 [rpq+xq]{k2}, xm0
+     add             xq, 5*1
+     ret
+ .write2:
++    _CET_ENDBR
+     pshufb         xm0, xm8
+     vmovdqu16 [rpq+xq]{k2}, xm0
+     add             xq, 5*2
+     ret
+ .write4:
++    _CET_ENDBR
+     vpermb         ym0, ym8, ym0
+     vmovdqu32 [rpq+xq]{k2}, ym0
+     add             xq, 5*4
+     ret
+ .write8:
++    _CET_ENDBR
+     vpermb          m0, m8, m0
+     vmovdqu64 [rpq+xq]{k2}, m0
+     add             xq, 5*8
+     ret
+ .write16:
++    _CET_ENDBR
+     vpermb          m1, m8, m0
+     movu   [rpq+xq+ 0], m1
+     pshufb         xm0, xm9
+@@ -626,24 +653,28 @@ cglobal splat_mv, 4, 7, 3, rr, a, bx4, bw4, bh4
+     kmovb              k1, r1d
+     jmp              bw4q
+ .w1:
++    _CET_ENDBR
+     mov                r1, [rrq+r6*8]
+     vmovdqu16 [r1+bx4q*4]{k1}, xm0
+     inc                r6
+     jl .w1
+     RET
+ .w2:
++    _CET_ENDBR
+     mov                r1, [rrq+r6*8]
+     vmovdqu32 [r1+bx4q*4]{k1}, ym0
+     inc                r6
+     jl .w2
+     RET
+ .w4:
++    _CET_ENDBR
+     mov                r1, [rrq+r6*8]
+     vmovdqu64 [r1+bx4q*4]{k1}, m0
+     inc                r6
+     jl .w4
+     RET
+ .w8:
++    _CET_ENDBR
+     pshufd            ym1, ym0, q1021
+ .w8_loop:
+     mov                r1, [rrq+r6*8+0]
+@@ -656,6 +687,7 @@ cglobal splat_mv, 4, 7, 3, rr, a, bx4, bw4, bh4
+     jl .w8_loop
+     RET
+ .w16:
++    _CET_ENDBR
+     pshufd             m1, m0, q1021
+     pshufd             m2, m0, q2102
+ .w16_loop:
+@@ -671,6 +703,7 @@ cglobal splat_mv, 4, 7, 3, rr, a, bx4, bw4, bh4
+     jl .w16_loop
+     RET
+ .w32:
++    _CET_ENDBR
+     pshufd             m1, m0, q1021
+     pshufd             m2, m0, q2102
+ .w32_loop:

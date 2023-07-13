@@ -1,0 +1,1757 @@
+Index: src/x86/itx_sse.asm
+--- src/x86/itx_sse.asm.orig
++++ src/x86/itx_sse.asm
+@@ -246,6 +246,7 @@ cglobal inv_txfm_add_%1_%2_%3_8bpc, 4, 6, %4, dst, str
+     call %%p1
+     RET
+ %%end:
++    _CET_ENDBR
+ %else
+     lea                  tx2q, [o(m(i%2_%3_internal_8bpc).pass2)]
+ %ifidn %1_%2, dct_dct
+@@ -255,6 +256,7 @@ cglobal inv_txfm_add_%1_%2_%3_8bpc, 4, 6, %4, dst, str
+     times ((%%end - %%p1) >> 31) & 1 jmp %%p1
+ ALIGN function_align
+ %%end:
++    _CET_ENDBR
+ %endif
+ %endif
+ %endmacro
+@@ -295,6 +297,7 @@ cglobal idct_4x4_internal_8bpc, 0, 0, 0, dst, stride, 
+     jmp                tx2q
+ 
+ .pass2:
++    _CET_ENDBR
+     IDCT4_1D_PACKED
+ 
+     pxor                 m2, m2
+@@ -319,14 +322,17 @@ cglobal iadst_4x4_internal_8bpc, 0, 0, 0, dst, stride,
+     jmp                tx2q
+ 
+ .pass2:
++    _CET_ENDBR
+     call .main
+ 
+ .end:
++    _CET_ENDBR
+     pxor                 m2, m2
+     mova      [coeffq+16*0], m2
+     mova      [coeffq+16*1], m2
+ 
+ .end2:
++    _CET_ENDBR
+     ITX4_END              0, 1, 2, 3
+ 
+ ALIGN function_align
+@@ -371,14 +377,17 @@ cglobal iflipadst_4x4_internal_8bpc, 0, 0, 0, dst, str
+     jmp                tx2q
+ 
+ .pass2:
++    _CET_ENDBR
+     call m(iadst_4x4_internal_8bpc).main
+ 
+ .end:
++    _CET_ENDBR
+     pxor                 m2, m2
+     mova      [coeffq+16*0], m2
+     mova      [coeffq+16*1], m2
+ 
+ .end2:
++    _CET_ENDBR
+     ITX4_END              3, 2, 1, 0
+ 
+ INV_TXFM_4X4_FN identity, dct
+@@ -401,6 +410,7 @@ cglobal iidentity_4x4_internal_8bpc, 0, 0, 0, dst, str
+     jmp                tx2q
+ 
+ .pass2:
++    _CET_ENDBR
+     mova                 m3, [o(pw_1697x8)]
+     pmulhrsw             m2, m3, m0
+     pmulhrsw             m3, m1
+@@ -568,10 +578,12 @@ cglobal idct_4x8_internal_8bpc, 0, 0, 0, dst, stride, 
+     pmulhrsw             m3,     [coeffq+16*3]
+ 
+ .pass1:
++    _CET_ENDBR
+     call m(idct_8x4_internal_8bpc).main
+     jmp m(iadst_4x8_internal_8bpc).pass1_end
+ 
+ .pass2:
++    _CET_ENDBR
+     call .main
+     shufps               m1, m1, q1032
+     shufps               m3, m3, q1032
+@@ -597,13 +609,16 @@ cglobal iadst_4x8_internal_8bpc, 0, 0, 0, dst, stride,
+     pmulhrsw             m3,     [coeffq+16*3]
+ 
+ .pass1:
++    _CET_ENDBR
+     call m(iadst_8x4_internal_8bpc).main
+ 
+ .pass1_end:
++    _CET_ENDBR
+     INV_4X8
+     jmp                tx2q
+ 
+ .pass2:
++    _CET_ENDBR
+     shufps               m0, m0, q1032
+     shufps               m1, m1, q1032
+     call .main
+@@ -612,9 +627,11 @@ cglobal iadst_4x8_internal_8bpc, 0, 0, 0, dst, stride,
+     psubw                m5, m4
+ 
+ .end:
++    _CET_ENDBR
+     punpcklqdq           m4, m5
+ 
+ .end2:
++    _CET_ENDBR
+     pmulhrsw             m0, m4
+     pmulhrsw             m1, m4
+     pmulhrsw             m2, m4
+@@ -626,6 +643,7 @@ cglobal iadst_4x8_internal_8bpc, 0, 0, 0, dst, stride,
+     mova      [coeffq+16*3], m5
+ 
+ .end3:
++    _CET_ENDBR
+     WRITE_4X8             0, 1, 2, 3
+     RET
+ 
+@@ -688,6 +706,7 @@ cglobal iflipadst_4x8_internal_8bpc, 0, 0, 0, dst, str
+     pmulhrsw             m3,     [coeffq+16*3]
+ 
+ .pass1:
++    _CET_ENDBR
+     call m(iadst_8x4_internal_8bpc).main
+ 
+     punpcklwd            m4, m3, m2
+@@ -701,6 +720,7 @@ cglobal iflipadst_4x8_internal_8bpc, 0, 0, 0, dst, str
+     jmp                tx2q
+ 
+ .pass2:
++    _CET_ENDBR
+     shufps               m0, m0, q1032
+     shufps               m1, m1, q1032
+     call m(iadst_4x8_internal_8bpc).main
+@@ -729,6 +749,7 @@ cglobal iidentity_4x8_internal_8bpc, 0, 0, 0, dst, str
+     pmulhrsw             m3,     [coeffq+16*3]
+ 
+ .pass1:
++    _CET_ENDBR
+     mova                 m7, [o(pw_1697x8)]
+     pmulhrsw             m4, m7, m0
+     pmulhrsw             m5, m7, m1
+@@ -741,6 +762,7 @@ cglobal iidentity_4x8_internal_8bpc, 0, 0, 0, dst, str
+     jmp m(iadst_4x8_internal_8bpc).pass1_end
+ 
+ .pass2:
++    _CET_ENDBR
+     mova                 m4, [o(pw_4096)]
+     jmp m(iadst_4x8_internal_8bpc).end2
+ 
+@@ -822,6 +844,7 @@ cglobal idct_8x4_internal_8bpc, 0, 0, 0, dst, stride, 
+     jmp                tx2q
+ 
+ .pass2:
++    _CET_ENDBR
+     call .main
+     jmp m(iadst_8x4_internal_8bpc).end
+ 
+@@ -865,9 +888,11 @@ cglobal iadst_8x4_internal_8bpc, 0, 0, 0, dst, stride,
+     jmp              tx2q
+ 
+ .pass2:
++    _CET_ENDBR
+     call .main
+ 
+ .end:
++    _CET_ENDBR
+     mova                 m4, [o(pw_2048)]
+     pmulhrsw             m0, m4
+     pmulhrsw             m1, m4
+@@ -875,12 +900,14 @@ cglobal iadst_8x4_internal_8bpc, 0, 0, 0, dst, stride,
+     pmulhrsw             m3, m4
+ 
+ .end2:
++    _CET_ENDBR
+     pxor                 m6, m6
+     mova      [coeffq+16*0], m6
+     mova      [coeffq+16*1], m6
+     mova      [coeffq+16*2], m6
+     mova      [coeffq+16*3], m6
+ .end3:
++    _CET_ENDBR
+     WRITE_8X4             0, 1, 2, 3, 4, 5, 6
+     RET
+ 
+@@ -984,6 +1011,7 @@ cglobal iflipadst_8x4_internal_8bpc, 0, 0, 0, dst, str
+     jmp                  tx2q
+ 
+ .pass2:
++    _CET_ENDBR
+     call m(iadst_8x4_internal_8bpc).main
+     mova                 m4, m0
+     mova                 m5, m1
+@@ -1024,6 +1052,7 @@ cglobal iidentity_8x4_internal_8bpc, 0, 0, 0, dst, str
+     jmp                tx2q
+ 
+ .pass2:
++    _CET_ENDBR
+     mova                 m7, [o(pw_1697x8)]
+     pmulhrsw             m4, m7, m0
+     pmulhrsw             m5, m7, m1
+@@ -1049,6 +1078,7 @@ cglobal iidentity_8x4_internal_8bpc, 0, 0, 0, dst, str
+     pmulhrsw             m0, m1
+     pmulhrsw             m0, m2
+ .end:
++    _CET_ENDBR
+     mov                 r3d, 2
+     lea                tx2q, [o(m(inv_txfm_add_dct_dct_8x8_8bpc).end3)]
+ .loop:
+@@ -1058,6 +1088,7 @@ cglobal iidentity_8x4_internal_8bpc, 0, 0, 0, dst, str
+     jg .loop
+     jmp                tx2q
+ .end3:
++    _CET_ENDBR
+     RET
+ %endif
+ %endmacro
+@@ -1104,16 +1135,20 @@ cglobal idct_8x8_internal_8bpc, 0, 0, 0, dst, stride, 
+     LOAD_8ROWS          coeffq, 16
+ 
+ .pass1:
++    _CET_ENDBR
+     call .main
+ 
+ .pass1_end:
++    _CET_ENDBR
+     mova                    m7, [o(pw_16384)]
+ 
+ .pass1_end1:
++    _CET_ENDBR
+     REPX      {pmulhrsw x, m7}, m0, m2, m4, m6
+     mova    [rsp+gprsize+16*1], m6
+ 
+ .pass1_end2:
++    _CET_ENDBR
+     REPX      {pmulhrsw x, m7}, m1, m3, m5
+     pmulhrsw                m7, [rsp+gprsize+16*0]
+ 
+@@ -1151,29 +1186,34 @@ cglobal_label .pass1_end3
+     jmp                   tx2q
+ 
+ .pass2:
++    _CET_ENDBR
+     lea                   tx2q, [o(m(idct_8x8_internal_8bpc).end4)]
+ 
+ .pass2_main:
+     call .main
+ 
+ .end:
++    _CET_ENDBR
+     mova                    m7, [o(pw_2048)]
+     REPX      {pmulhrsw x, m7}, m0, m2, m4, m6
+     mova    [rsp+gprsize+16*1], m6
+ 
+ .end2:
++    _CET_ENDBR
+     REPX      {pmulhrsw x, m7}, m1, m3, m5
+     pmulhrsw                m7, [rsp+gprsize+16*0]
+     mova    [rsp+gprsize+16*2], m5
+     mova    [rsp+gprsize+16*0], m7
+ 
+ .end3:
++    _CET_ENDBR
+     WRITE_8X4                0, 1, 2, 3, 5, 6, 7
+     lea                   dstq, [dstq+strideq*2]
+     WRITE_8X4                4, [rsp+gprsize+16*2], [rsp+gprsize+16*1], [rsp+gprsize+16*0], 5, 6, 7
+     jmp                   tx2q
+ 
+ .end4:
++    _CET_ENDBR
+     pxor                    m7, m7
+     REPX   {mova [coeffq+16*x], m7}, 0,  1,  2,  3,  4,  5,  6,  7
+     ret
+@@ -1216,13 +1256,16 @@ cglobal iadst_8x8_internal_8bpc, 0, 0, 0, dst, stride,
+     LOAD_8ROWS          coeffq, 16
+ 
+ .pass1:
++    _CET_ENDBR
+     call .main
+     call .main_pass1_end
+ 
+ .pass1_end:
++    _CET_ENDBR
+     mova                    m7, [o(pw_16384)]
+ 
+ .pass1_end1:
++    _CET_ENDBR
+     REPX      {pmulhrsw x, m7}, m0, m2, m4, m6
+     mova    [rsp+gprsize+16*1], m6
+     pxor                    m6, m6
+@@ -1232,6 +1275,7 @@ cglobal iadst_8x8_internal_8bpc, 0, 0, 0, dst, stride,
+ 
+ ALIGN function_align
+ .pass2:
++    _CET_ENDBR
+     lea                   tx2q, [o(m(idct_8x8_internal_8bpc).end4)]
+ 
+ .pass2_main:
+@@ -1239,6 +1283,7 @@ ALIGN function_align
+     call .main_pass2_end
+ 
+ .end:
++    _CET_ENDBR
+     mova                    m7, [o(pw_2048)]
+     REPX      {pmulhrsw x, m7}, m0, m2, m4, m6
+     mova    [rsp+gprsize+16*1], m6
+@@ -1355,13 +1400,16 @@ cglobal iflipadst_8x8_internal_8bpc, 0, 0, 0, dst, str
+     LOAD_8ROWS          coeffq, 16
+ 
+ .pass1:
++    _CET_ENDBR
+     call m(iadst_8x8_internal_8bpc).main
+     call m(iadst_8x8_internal_8bpc).main_pass1_end
+ 
+ .pass1_end:
++    _CET_ENDBR
+     mova                    m7, [o(pw_m16384)]
+ 
+ .pass1_end1:
++    _CET_ENDBR
+     pmulhrsw                m1, m7
+     mova    [rsp+gprsize+16*1], m1
+     mova                    m1, m6
+@@ -1382,6 +1430,7 @@ cglobal iflipadst_8x8_internal_8bpc, 0, 0, 0, dst, str
+ 
+ ALIGN function_align
+ .pass2:
++    _CET_ENDBR
+     lea                   tx2q, [o(m(idct_8x8_internal_8bpc).end4)]
+ 
+ .pass2_main:
+@@ -1389,6 +1438,7 @@ ALIGN function_align
+     call m(iadst_8x8_internal_8bpc).main_pass2_end
+ 
+ .end:
++    _CET_ENDBR
+     mova                    m7, [o(pw_2048)]
+     REPX      {pmulhrsw x, m7}, m0, m2, m4, m6
+     mova    [rsp+gprsize+16*2], m2
+@@ -1419,9 +1469,11 @@ cglobal iidentity_8x8_internal_8bpc, 0, 0, 0, dst, str
+ 
+ ALIGN function_align
+ .pass2:
++    _CET_ENDBR
+     lea                   tx2q, [o(m(idct_8x8_internal_8bpc).end4)]
+ 
+ .end:
++    _CET_ENDBR
+     pmulhrsw                m7, [o(pw_4096)]
+     mova    [rsp+gprsize+16*0], m7
+     mova                    m7, [o(pw_4096)]
+@@ -1443,6 +1495,7 @@ ALIGN function_align
+     pmulhrsw              m0, m1
+     pmulhrsw              m0, [o(pw_2048)]
+ .end:
++    _CET_ENDBR
+     WRITE_4X4             0, 0, 1, 2, 3, 0, 1, 2, 3
+     lea                dstq, [dstq+strideq*4]
+     WRITE_4X4             0, 0, 1, 2, 3, 0, 1, 2, 3
+@@ -1463,6 +1516,7 @@ cglobal idct_4x16_internal_8bpc, 0, 0, 0, dst, stride,
+     lea                  r3, [o(m(idct_4x8_internal_8bpc).pass1)]
+ 
+ .pass1:
++    _CET_ENDBR
+     mova                 m0, [coeffq+16*1]
+     mova                 m1, [coeffq+16*3]
+     mova                 m2, [coeffq+16*5]
+@@ -1472,6 +1526,7 @@ cglobal idct_4x16_internal_8bpc, 0, 0, 0, dst, stride,
+     jmp                  r3
+ 
+ .pass1_2:
++    _CET_ENDBR
+     mova      [coeffq+16*1], m0
+     mova      [coeffq+16*3], m1
+     mova      [coeffq+16*5], m2
+@@ -1484,6 +1539,7 @@ cglobal idct_4x16_internal_8bpc, 0, 0, 0, dst, stride,
+     jmp                  r3
+ 
+ .pass1_end:
++    _CET_ENDBR
+     pop                tx2q
+ 
+     mova                 m4, [coeffq+16*1]
+@@ -1497,15 +1553,18 @@ cglobal idct_4x16_internal_8bpc, 0, 0, 0, dst, stride,
+     jmp                tx2q
+ 
+ .pass2:
++    _CET_ENDBR
+     call m(idct_16x4_internal_8bpc).main
+ 
+ .end:
++    _CET_ENDBR
+     mova                  m7, [o(pw_2048)]
+     REPX    {pmulhrsw x, m7}, m0, m1, m2, m3, m4, m5, m6
+     pmulhrsw              m7, [coeffq+16*7]
+     mova       [coeffq+16*4], m4
+ 
+ .end1:
++    _CET_ENDBR
+     mova       [coeffq+16*5], m5
+     mova       [coeffq+16*6], m6
+     mov                   r3, coeffq
+@@ -1519,6 +1578,7 @@ cglobal idct_4x16_internal_8bpc, 0, 0, 0, dst, stride,
+     WRITE_4X8              0, 1, 3, 2
+ 
+ .end2:
++    _CET_ENDBR
+     pxor                  m7, m7
+     REPX     {mova [r3+16*x], m7}, 0,  1,  2,  3,  4,  5,  6,  7
+     ret
+@@ -1533,6 +1593,7 @@ cglobal iadst_4x16_internal_8bpc, 0, 0, 0, dst, stride
+     jmp   m(idct_4x16_internal_8bpc).pass1
+ 
+ .pass2:
++    _CET_ENDBR
+     call m(iadst_16x4_internal_8bpc).main
+     call m(iadst_16x4_internal_8bpc).main_pass2_end
+ 
+@@ -1552,6 +1613,7 @@ cglobal iadst_4x16_internal_8bpc, 0, 0, 0, dst, stride
+     mova                  m7, [o(pw_2048)]
+ 
+ .end1:
++    _CET_ENDBR
+     REPX    {pmulhrsw x, m7}, m0, m5, m4, m6
+     pxor                  m3, m3
+     psubw                 m3, m7
+@@ -1573,6 +1635,7 @@ cglobal iadst_4x16_internal_8bpc, 0, 0, 0, dst, stride
+     mova                  m3, m4
+ 
+ .end2:
++    _CET_ENDBR
+     mova       [coeffq+16*5], m5
+     mova       [coeffq+16*6], m6
+     mov                   r3, coeffq
+@@ -1586,6 +1649,7 @@ cglobal iadst_4x16_internal_8bpc, 0, 0, 0, dst, stride
+     WRITE_4X8              0, 1, 2, 3
+ 
+ .end3:
++    _CET_ENDBR
+     pxor                  m7, m7
+     REPX     {mova [r3+16*x], m7}, 0,  1,  2,  3,  4,  5,  6,  7
+     ret
+@@ -1601,6 +1665,7 @@ cglobal iflipadst_4x16_internal_8bpc, 0, 0, 0, dst, st
+     jmp   m(idct_4x16_internal_8bpc).pass1
+ 
+ .pass2:
++    _CET_ENDBR
+     call m(iadst_16x4_internal_8bpc).main
+     call m(iadst_16x4_internal_8bpc).main_pass2_end
+ 
+@@ -1646,6 +1711,7 @@ cglobal iidentity_4x16_internal_8bpc, 0, 0, 0, dst, st
+     mov                   r3, tx2q
+     lea                 tx2q, [o(.pass1_2)]
+ .pass1:
++    _CET_ENDBR
+     pmulhrsw              m4, m6, m0
+     pmulhrsw              m5, m6, m1
+     pavgw                 m4, m0
+@@ -1664,6 +1730,7 @@ cglobal iidentity_4x16_internal_8bpc, 0, 0, 0, dst, st
+     pandn                 m3, m5
+     jmp m(iadst_4x8_internal_8bpc).pass1_end
+ .pass1_2:
++    _CET_ENDBR
+     mova       [coeffq+16*1], m0
+     mova       [coeffq+16*3], m1
+     mova       [coeffq+16*5], m2
+@@ -1675,11 +1742,13 @@ cglobal iidentity_4x16_internal_8bpc, 0, 0, 0, dst, st
+     lea                 tx2q, [o(.pass1_end)]
+     jmp .pass1
+ .pass1_end:
++    _CET_ENDBR
+     mova                  m4, [coeffq+16*1]
+     mova                  m5, [coeffq+16*3]
+     mova                  m6, [coeffq+16*5]
+     jmp                   r3
+ .pass2:
++    _CET_ENDBR
+     mova                  m7, [o(pw_1697x16)]
+     mova       [coeffq+16*6], m6
+     REPX    {IDTX16 x, 6, 7}, 0, 1, 2, 3, 4, 5
+@@ -1734,6 +1803,7 @@ cglobal iidentity_4x16_internal_8bpc, 0, 0, 0, dst, st
+     jg .dconly_loop
+     jmp                tx2q
+ .end:
++    _CET_ENDBR
+     RET
+ %endif
+ %endmacro
+@@ -1801,6 +1871,7 @@ cglobal idct_16x4_internal_8bpc, 0, 0, 0, dst, stride,
+     call .main
+ 
+ .pass1_end:
++    _CET_ENDBR
+     punpckhwd             m7, m0, m2                 ;packed out1,  out5
+     punpcklwd             m0, m2                     ;packed out0,  out4
+     punpcklwd             m2, m1, m3                 ;packed out3,  out7
+@@ -1813,12 +1884,14 @@ cglobal idct_16x4_internal_8bpc, 0, 0, 0, dst, stride,
+     punpckhwd             m5, m7                     ;packed out10, out14
+ 
+ .pass1_end2:
++    _CET_ENDBR
+     mova                  m7, [o(pw_16384)]
+     REPX    {pmulhrsw x, m7}, m0, m1, m2, m3, m4, m5, m6
+     pmulhrsw              m7, [coeffq+16*6]
+     mova       [coeffq+16*6], m7
+ 
+ .pass1_end3:
++    _CET_ENDBR
+     punpckhwd             m7, m3, m6                 ;packed 9, 11, 13, 15 high
+     punpcklwd             m3, m6                     ;packed 9, 10, 13, 15 low
+     punpckhwd             m6, m4, m5                 ;packed 8, 10, 12, 14 high
+@@ -1839,10 +1912,13 @@ cglobal idct_16x4_internal_8bpc, 0, 0, 0, dst, stride,
+     punpcklwd             m2, m7                     ;0, 1, 2, 3, 4, 5, 6, 7(2)
+     jmp                 tx2q
+ 
++    _CET_ENDBR
+ .pass2:
++    _CET_ENDBR
+     lea                 tx2q, [o(m(idct_8x4_internal_8bpc).pass2)]
+ 
+ .pass2_end:
++    _CET_ENDBR
+     mova       [coeffq+16*4], m4
+     mova       [coeffq+16*5], m5
+     mova       [coeffq+16*6], m6
+@@ -1922,6 +1998,7 @@ cglobal iadst_16x4_internal_8bpc, 0, 0, 0, dst, stride
+     mova                  m7, [o(pw_16384)]
+ 
+ .pass1_end:
++    _CET_ENDBR
+     REPX    {pmulhrsw x, m7}, m0, m1, m4, m5
+     pxor                  m2, m2
+     psubw                 m2, m7
+@@ -1932,6 +2009,7 @@ cglobal iadst_16x4_internal_8bpc, 0, 0, 0, dst, stride
+     jmp   m(idct_16x4_internal_8bpc).pass1_end3
+ 
+ .pass2:
++    _CET_ENDBR
+     lea                 tx2q, [o(m(iadst_8x4_internal_8bpc).pass2)]
+     jmp   m(idct_16x4_internal_8bpc).pass2_end
+ 
+@@ -2107,6 +2185,7 @@ cglobal iflipadst_16x4_internal_8bpc, 0, 0, 0, dst, st
+     jmp   m(iadst_16x4_internal_8bpc).pass1_end
+ 
+ .pass2:
++    _CET_ENDBR
+     lea                 tx2q, [o(m(iflipadst_8x4_internal_8bpc).pass2)]
+     jmp   m(idct_16x4_internal_8bpc).pass2_end
+ 
+@@ -2169,6 +2248,7 @@ cglobal iidentity_16x4_internal_8bpc, 0, 0, 0, dst, st
+     jmp   m(idct_16x4_internal_8bpc).pass1_end3
+ 
+ .pass2:
++    _CET_ENDBR
+     lea                 tx2q, [o(m(iidentity_8x4_internal_8bpc).pass2)]
+     jmp   m(idct_16x4_internal_8bpc).pass2_end
+ 
+@@ -2202,6 +2282,7 @@ cglobal iidentity_16x4_internal_8bpc, 0, 0, 0, dst, st
+     lea                tx2q, [o(m(inv_txfm_add_dct_dct_8x16_8bpc).end)]
+     jmp m(inv_txfm_add_dct_dct_8x8_8bpc).loop
+ .end:
++    _CET_ENDBR
+     RET
+ %endif
+ %endmacro
+@@ -2215,18 +2296,21 @@ cglobal idct_8x16_internal_8bpc, 0, 0, 0, dst, stride,
+     lea                    r3, [o(m(idct_8x8_internal_8bpc).pass1)]
+ 
+ .pass1:
++    _CET_ENDBR
+     LOAD_8ROWS    coeffq+16*1, 32, 1
+     mov   [rsp+gprsize+16*11], tx2q
+     lea                  tx2q, [o(m(idct_8x16_internal_8bpc).pass1_end)]
+     jmp                    r3
+ 
+ .pass1_end:
++    _CET_ENDBR
+     SAVE_8ROWS    coeffq+16*1, 32
+     LOAD_8ROWS    coeffq+16*0, 32, 1
+     mov                  tx2q, [rsp+gprsize+16*11]
+     jmp                    r3
+ 
+ .pass2:
++    _CET_ENDBR
+     lea                  tx2q, [o(m(idct_8x16_internal_8bpc).end)]
+ 
+ .pass2_pre:
+@@ -2261,6 +2345,7 @@ cglobal idct_8x16_internal_8bpc, 0, 0, 0, dst, stride,
+     jmp  m(idct_8x8_internal_8bpc).end
+ 
+ .end:
++    _CET_ENDBR
+     LOAD_8ROWS   rsp+gprsize+16*3, 16
+     mova   [rsp+gprsize+16*0], m7
+     lea                  tx2q, [o(m(idct_8x16_internal_8bpc).end1)]
+@@ -2268,6 +2353,7 @@ cglobal idct_8x16_internal_8bpc, 0, 0, 0, dst, stride,
+     jmp  m(idct_8x8_internal_8bpc).end
+ 
+ .end1:
++    _CET_ENDBR
+     pxor                   m7, m7
+     REPX  {mova [coeffq+16*x], m7}, 0,  1,  2,  3,  4,  5,  6,  7,  8,  9,  10, 11, 12, 13, 14, 15
+     ret
+@@ -2282,6 +2368,7 @@ cglobal iadst_8x16_internal_8bpc, 0, 0, 0, dst, stride
+     jmp  m(idct_8x16_internal_8bpc).pass1
+ 
+ .pass2:
++    _CET_ENDBR
+     lea                  tx2q, [o(m(iadst_8x16_internal_8bpc).end)]
+ 
+ .pass2_pre:
+@@ -2316,6 +2403,7 @@ cglobal iadst_8x16_internal_8bpc, 0, 0, 0, dst, stride
+     jmp m(iadst_8x8_internal_8bpc).end
+ 
+ .end:
++    _CET_ENDBR
+     LOAD_8ROWS   rsp+gprsize+16*3, 16
+     mova   [rsp+gprsize+16*0], m7
+     lea                  tx2q, [o(m(idct_8x16_internal_8bpc).end1)]
+@@ -2333,6 +2421,7 @@ cglobal iflipadst_8x16_internal_8bpc, 0, 0, 0, dst, st
+     jmp  m(idct_8x16_internal_8bpc).pass1
+ 
+ .pass2:
++    _CET_ENDBR
+     lea                   tx2q, [o(m(iflipadst_8x16_internal_8bpc).end)]
+     lea                     r3, [dstq+strideq*8]
+ 
+@@ -2365,6 +2454,7 @@ cglobal iflipadst_8x16_internal_8bpc, 0, 0, 0, dst, st
+     jmp  m(iflipadst_8x8_internal_8bpc).end
+ 
+ .end:
++    _CET_ENDBR
+     LOAD_8ROWS    rsp+gprsize+16*3, 16
+     mova    [rsp+gprsize+16*0], m7
+     lea                   tx2q, [o(m(idct_8x16_internal_8bpc).end1)]
+@@ -2385,6 +2475,7 @@ cglobal iidentity_8x16_internal_8bpc, 0, 0, 0, dst, st
+     jmp  m(idct_8x8_internal_8bpc).pass1_end3
+ 
+ .pass1_end:
++    _CET_ENDBR
+     SAVE_8ROWS    coeffq+16*1, 32
+     LOAD_8ROWS    coeffq+16*0, 32, 1
+     mov                  tx2q, r3
+@@ -2392,9 +2483,11 @@ cglobal iidentity_8x16_internal_8bpc, 0, 0, 0, dst, st
+     jmp  m(idct_8x8_internal_8bpc).pass1_end3
+ 
+ .pass2:
++    _CET_ENDBR
+     lea                  tx2q, [o(.end1)]
+ 
+ .end:
++    _CET_ENDBR
+     mova   [rsp+gprsize+16*0], m7
+     mova   [rsp+gprsize+16*1], m6
+     mova                   m7, [o(pw_1697x16)]
+@@ -2413,6 +2506,7 @@ cglobal iidentity_8x16_internal_8bpc, 0, 0, 0, dst, st
+     jmp  m(idct_8x8_internal_8bpc).end3
+ 
+ .end1:
++    _CET_ENDBR
+     LOAD_8ROWS    coeffq+16*1, 32
+     lea                  tx2q, [o(m(idct_8x16_internal_8bpc).end1)]
+     lea                  dstq, [dstq+strideq*2]
+@@ -2431,6 +2525,7 @@ cglobal iidentity_8x16_internal_8bpc, 0, 0, 0, dst, st
+     lea                tx2q, [o(m(inv_txfm_add_dct_dct_16x8_8bpc).end)]
+     jmp m(inv_txfm_add_dct_dct_16x4_8bpc).dconly
+ .end:
++    _CET_ENDBR
+     RET
+ %endif
+ %endmacro
+@@ -2452,6 +2547,7 @@ cglobal idct_16x8_internal_8bpc, 0, 0, 0, dst, stride,
+     jmp  m(idct_8x8_internal_8bpc).pass1_end
+ 
+ .pass1_end:
++    _CET_ENDBR
+     SAVE_8ROWS    coeffq+16*1, 32
+     LOAD_8ROWS   rsp+gprsize+16*3, 16
+     mova   [rsp+gprsize+16*0], m7
+@@ -2459,11 +2555,13 @@ cglobal idct_16x8_internal_8bpc, 0, 0, 0, dst, stride,
+     jmp  m(idct_8x8_internal_8bpc).pass1_end
+ 
+ .pass2:
++    _CET_ENDBR
+     lea                  tx2q, [o(.end)]
+     lea                    r3, [dstq+8]
+     jmp  m(idct_8x8_internal_8bpc).pass2_main
+ 
+ .end:
++    _CET_ENDBR
+     LOAD_8ROWS    coeffq+16*1, 32
+     lea                  tx2q, [o(m(idct_8x16_internal_8bpc).end1)]
+     mov                  dstq, r3
+@@ -2591,6 +2689,7 @@ cglobal iadst_16x8_internal_8bpc, 0, 0, 0, dst, stride
+     jmp m(iadst_8x8_internal_8bpc).pass1_end
+ 
+ .pass1_end:
++    _CET_ENDBR
+     SAVE_8ROWS    coeffq+16*1, 32
+     LOAD_8ROWS   rsp+gprsize+16*3, 16
+     mova   [rsp+gprsize+16*0], m7
+@@ -2598,11 +2697,13 @@ cglobal iadst_16x8_internal_8bpc, 0, 0, 0, dst, stride
+     jmp m(iadst_8x8_internal_8bpc).pass1_end
+ 
+ .pass2:
++    _CET_ENDBR
+     lea                  tx2q, [o(.end)]
+     lea                    r3, [dstq+8]
+     jmp m(iadst_8x8_internal_8bpc).pass2_main
+ 
+ .end:
++    _CET_ENDBR
+     LOAD_8ROWS    coeffq+16*1, 32
+     lea                  tx2q, [o(m(idct_8x16_internal_8bpc).end1)]
+     mov                  dstq, r3
+@@ -2876,6 +2977,7 @@ cglobal iflipadst_16x8_internal_8bpc, 0, 0, 0, dst, st
+     jmp m(iflipadst_8x8_internal_8bpc).pass1_end
+ 
+ .pass1_end:
++    _CET_ENDBR
+     SAVE_8ROWS     coeffq+16*1, 32
+     LOAD_8ROWS     coeffq+16*0, 32
+     mova    [rsp+gprsize+16*0], m7
+@@ -2883,11 +2985,13 @@ cglobal iflipadst_16x8_internal_8bpc, 0, 0, 0, dst, st
+     jmp m(iflipadst_8x8_internal_8bpc).pass1_end
+ 
+ .pass2:
++    _CET_ENDBR
+     lea                   tx2q, [o(.end)]
+     lea                     r3, [dstq+8]
+     jmp m(iflipadst_8x8_internal_8bpc).pass2_main
+ 
+ .end:
++    _CET_ENDBR
+     LOAD_8ROWS     coeffq+16*1, 32
+     lea                   tx2q, [o(m(idct_8x16_internal_8bpc).end1)]
+     mov                   dstq, r3
+@@ -2909,6 +3013,7 @@ cglobal iidentity_16x8_internal_8bpc, 0, 0, 0, dst, st
+     lea                  tx2q, [o(.pass1_end)]
+ 
+ .pass1:
++    _CET_ENDBR
+     mova                   m0, [o(pw_2896x8)]
+     mova                   m2, [o(pw_1697x16)]
+     mova                   m3, [o(pw_16384)]
+@@ -2948,6 +3053,7 @@ cglobal iidentity_16x8_internal_8bpc, 0, 0, 0, dst, st
+     jmp   m(idct_8x8_internal_8bpc).pass1_end3
+ 
+ .pass1_end:
++    _CET_ENDBR
+     mova        [coeffq+16*1], m4
+     mova        [coeffq+16*3], m5
+     mova        [coeffq+16*5], m6
+@@ -2964,11 +3070,13 @@ cglobal iidentity_16x8_internal_8bpc, 0, 0, 0, dst, st
+     jmp .pass1
+ 
+ .pass2:
++    _CET_ENDBR
+     lea                  tx2q, [o(.end)]
+     lea                    r3, [dstq+8]
+     jmp  m(iidentity_8x8_internal_8bpc).end
+ 
+ .end:
++    _CET_ENDBR
+     LOAD_8ROWS    coeffq+16*1, 32
+     lea                  tx2q, [o(m(idct_8x16_internal_8bpc).end1)]
+     mov                  dstq, r3
+@@ -2986,6 +3094,7 @@ cglobal iidentity_16x8_internal_8bpc, 0, 0, 0, dst, st
+     lea                  tx2q, [o(m(inv_txfm_add_dct_dct_16x16_8bpc).end)]
+     jmp m(inv_txfm_add_dct_dct_16x4_8bpc).dconly
+ .end:
++    _CET_ENDBR
+     RET
+ %endif
+ %endmacro
+@@ -3007,6 +3116,7 @@ cglobal idct_16x16_internal_8bpc, 0, 0, 0, dst, stride
+     jmp   m(idct_8x8_internal_8bpc).pass1_end1
+ 
+ .pass1_end:
++    _CET_ENDBR
+     SAVE_8ROWS    coeffq+16*17, 32
+     LOAD_8ROWS    rsp+gprsize+16*3, 16
+     mova    [rsp+gprsize+16*0], m7
+@@ -3015,6 +3125,7 @@ cglobal idct_16x16_internal_8bpc, 0, 0, 0, dst, stride
+     jmp   m(idct_8x8_internal_8bpc).pass1_end1
+ 
+ .pass1_end1:
++    _CET_ENDBR
+     SAVE_8ROWS     coeffq+16*1, 32
+     LOAD_8ROWS     coeffq+16*0, 64
+     call  m(idct_8x8_internal_8bpc).main
+@@ -3026,6 +3137,7 @@ cglobal idct_16x16_internal_8bpc, 0, 0, 0, dst, stride
+     jmp   m(idct_8x8_internal_8bpc).pass1_end1
+ 
+ .pass1_end2:
++    _CET_ENDBR
+     SAVE_8ROWS    coeffq+16*16, 32
+     LOAD_8ROWS    rsp+gprsize+16*3, 16
+     mova    [rsp+gprsize+16*0], m7
+@@ -3034,10 +3146,12 @@ cglobal idct_16x16_internal_8bpc, 0, 0, 0, dst, stride
+     jmp   m(idct_8x8_internal_8bpc).pass1_end1
+ 
+ .pass2:
++    _CET_ENDBR
+     lea                   tx2q, [o(.end)]
+     jmp  m(idct_8x16_internal_8bpc).pass2_pre
+ 
+ .end:
++    _CET_ENDBR
+     LOAD_8ROWS    rsp+gprsize+16*3, 16
+     mova    [rsp+gprsize+16*0], m7
+     lea                   tx2q, [o(.end1)]
+@@ -3046,6 +3160,7 @@ cglobal idct_16x16_internal_8bpc, 0, 0, 0, dst, stride
+     jmp   m(idct_8x8_internal_8bpc).end
+ 
+ .end1:
++    _CET_ENDBR
+     pxor                    m7, m7
+     REPX   {mova [coeffq+16*x], m7}, 0,  1,  2,  3,  4,  5,  6,  7,  8,  9,  10, 11, 12, 13, 14, 15
+ 
+@@ -3133,6 +3248,7 @@ cglobal iadst_16x16_internal_8bpc, 0, 0, 0, dst, strid
+     jmp  m(iadst_8x8_internal_8bpc).pass1_end1
+ 
+ .pass1_end:
++    _CET_ENDBR
+     SAVE_8ROWS    coeffq+16*17, 32
+     LOAD_8ROWS    rsp+gprsize+16*3, 16
+     mova    [rsp+gprsize+16*0], m7
+@@ -3141,6 +3257,7 @@ cglobal iadst_16x16_internal_8bpc, 0, 0, 0, dst, strid
+     jmp  m(iadst_8x8_internal_8bpc).pass1_end1
+ 
+ .pass1_end1:
++    _CET_ENDBR
+     SAVE_8ROWS     coeffq+16*1, 32
+     ITX_16X16_ADST_LOAD_EVEN_COEFS
+     call m(iadst_16x8_internal_8bpc).main
+@@ -3151,6 +3268,7 @@ cglobal iadst_16x16_internal_8bpc, 0, 0, 0, dst, strid
+     jmp  m(iadst_8x8_internal_8bpc).pass1_end1
+ 
+ .pass1_end2:
++    _CET_ENDBR
+     SAVE_8ROWS    coeffq+16*16, 32
+     LOAD_8ROWS    rsp+gprsize+16*3, 16
+     mova    [rsp+gprsize+16*0], m7
+@@ -3159,10 +3277,12 @@ cglobal iadst_16x16_internal_8bpc, 0, 0, 0, dst, strid
+     jmp  m(iadst_8x8_internal_8bpc).pass1_end1
+ 
+ .pass2:
++    _CET_ENDBR
+     lea                   tx2q, [o(.end)]
+     jmp m(iadst_8x16_internal_8bpc).pass2_pre
+ 
+ .end:
++    _CET_ENDBR
+     LOAD_8ROWS    rsp+gprsize+16*3, 16
+     mova    [rsp+gprsize+16*0], m7
+     lea                   tx2q, [o(.end1)]
+@@ -3171,6 +3291,7 @@ cglobal iadst_16x16_internal_8bpc, 0, 0, 0, dst, strid
+     jmp  m(iadst_8x8_internal_8bpc).end
+ 
+ .end1:
++    _CET_ENDBR
+     pxor                    m7, m7
+     REPX   {mova [coeffq+16*x], m7}, 0,  1,  2,  3,  4,  5,  6,  7,  8,  9,  10, 11, 12, 13, 14, 15
+ 
+@@ -3208,6 +3329,7 @@ cglobal iflipadst_16x16_internal_8bpc, 0, 0, 0, dst, s
+     jmp  m(iflipadst_8x8_internal_8bpc).pass1_end1
+ 
+ .pass1_end:
++    _CET_ENDBR
+     SAVE_8ROWS     coeffq+16*1, 32
+     LOAD_8ROWS    rsp+gprsize+16*3, 16
+     mova    [rsp+gprsize+16*0], m7
+@@ -3216,6 +3338,7 @@ cglobal iflipadst_16x16_internal_8bpc, 0, 0, 0, dst, s
+     jmp  m(iflipadst_8x8_internal_8bpc).pass1_end1
+ 
+ .pass1_end1:
++    _CET_ENDBR
+     SAVE_8ROWS    coeffq+16*17, 32
+     ITX_16X16_ADST_LOAD_EVEN_COEFS
+     call m(iadst_16x8_internal_8bpc).main
+@@ -3230,6 +3353,7 @@ cglobal iflipadst_16x16_internal_8bpc, 0, 0, 0, dst, s
+     jmp  m(iflipadst_8x8_internal_8bpc).pass1_end1
+ 
+ .pass1_end2:
++    _CET_ENDBR
+     SAVE_8ROWS    coeffq+16*16, 32
+     LOAD_8ROWS    coeffq+16* 0, 32
+     mova    [rsp+gprsize+16*0], m7
+@@ -3238,11 +3362,13 @@ cglobal iflipadst_16x16_internal_8bpc, 0, 0, 0, dst, s
+     jmp m(iflipadst_8x8_internal_8bpc).pass1_end1
+ 
+ .pass2:
++    _CET_ENDBR
+     lea                   tx2q, [o(.end)]
+     lea                     r3, [dstq+8]
+     jmp m(iflipadst_8x16_internal_8bpc).pass2_pre
+ 
+ .end:
++    _CET_ENDBR
+     LOAD_8ROWS    rsp+gprsize+16*3, 16
+     mova    [rsp+gprsize+16*0], m7
+     lea                   tx2q, [o(.end1)]
+@@ -3250,6 +3376,7 @@ cglobal iflipadst_16x16_internal_8bpc, 0, 0, 0, dst, s
+     jmp  m(iflipadst_8x8_internal_8bpc).end
+ 
+ .end1:
++    _CET_ENDBR
+     pxor                    m7, m7
+     REPX   {mova [coeffq+16*x], m7}, 0,  1,  2,  3,  4,  5,  6,  7,  8,  9,  10, 11, 12, 13, 14, 15
+ 
+@@ -3273,6 +3400,7 @@ cglobal iflipadst_16x16_internal_8bpc, 0, 0, 0, dst, s
+     jmp m(iflipadst_8x16_internal_8bpc).pass2_main
+ 
+ .end2:
++    _CET_ENDBR
+     LOAD_8ROWS    rsp+gprsize+16*3, 16
+     mova    [rsp+gprsize+16*0], m7
+     lea                   tx2q, [o(m(idct_8x16_internal_8bpc).end1)]
+@@ -3295,6 +3423,7 @@ cglobal iidentity_16x16_internal_8bpc, 0, 0, 0, dst, s
+     lea                   tx2q, [o(.pass1_end)]
+ 
+ .pass1:
++    _CET_ENDBR
+     mova                    m6, [o(pw_1697x16)]
+     mova                    m7, [coeffq+32*6]
+     mova                    m0, [coeffq+32*0]
+@@ -3311,28 +3440,33 @@ cglobal iidentity_16x16_internal_8bpc, 0, 0, 0, dst, s
+     jmp   m(idct_8x8_internal_8bpc).pass1_end3
+ 
+ .pass1_end:
++    _CET_ENDBR
+     SAVE_8ROWS          coeffq, 32
+     sub                 coeffq, 16
+     lea                   tx2q, [o(.pass1_end1)]
+     jmp .pass1
+ 
+ .pass1_end1:
++    _CET_ENDBR
+     SAVE_8ROWS          coeffq, 32
+     sub                 coeffq, 15*16
+     lea                   tx2q, [o(.pass1_end2)]
+     jmp .pass1
+ 
+ .pass1_end2:
++    _CET_ENDBR
+     SAVE_8ROWS          coeffq, 32
+     sub                 coeffq, 16
+     mov                   tx2q, r3
+     jmp .pass1
+ 
+ .pass2:
++    _CET_ENDBR
+     lea                     r3, [dstq+8]
+     lea                   tx2q, [o(.end1)]
+ 
+ .end:
++    _CET_ENDBR
+     mova    [rsp+gprsize+16*0], m7
+     mova    [rsp+gprsize+16*1], m4
+     mova                    m7, [o(pw_1697x16)]
+@@ -3352,12 +3486,14 @@ cglobal iidentity_16x16_internal_8bpc, 0, 0, 0, dst, s
+     jmp   m(idct_8x8_internal_8bpc).end3
+ 
+ .end1:
++    _CET_ENDBR
+     LOAD_8ROWS     coeffq+16*1, 32
+     lea                   tx2q, [o(.end2)]
+     lea                   dstq, [dstq+strideq*2]
+     jmp .end
+ 
+ .end2:
++    _CET_ENDBR
+     pxor                    m7, m7
+     REPX   {mova [coeffq+16*x], m7}, 0,  1,  2,  3,  4,  5,  6,  7,  8,  9,  10, 11, 12, 13, 14, 15
+ 
+@@ -3368,6 +3504,7 @@ cglobal iidentity_16x16_internal_8bpc, 0, 0, 0, dst, s
+     jmp .end
+ 
+ .end3:
++    _CET_ENDBR
+     LOAD_8ROWS     coeffq+16*1, 32
+     lea                   tx2q, [o(m(idct_8x16_internal_8bpc).end1)]
+     lea                   dstq, [dstq+strideq*2]
+@@ -3399,6 +3536,7 @@ cglobal inv_txfm_add_dct_dct_8x32_8bpc, 4, 6, 8, 16*36
+     jmp m(inv_txfm_add_dct_dct_8x8_8bpc).loop
+ 
+ .end:
++    _CET_ENDBR
+     RET
+ 
+ 
+@@ -3414,6 +3552,7 @@ cglobal idct_8x32_internal_8bpc, 0, 0, 0, dst, stride,
+     jmp   m(idct_8x8_internal_8bpc).pass1_end1
+ 
+ .pass1:
++    _CET_ENDBR
+     mova   [rsp+gprsize+16*9 ], m0                        ;in24
+     mova   [rsp+gprsize+16*10], m4                        ;in28
+     mova   [rsp+gprsize+16*17], m2                        ;in26
+@@ -3429,6 +3568,7 @@ cglobal idct_8x32_internal_8bpc, 0, 0, 0, dst, stride,
+     jmp   m(idct_8x8_internal_8bpc).pass1_end1
+ 
+ .pass1_1:
++    _CET_ENDBR
+     mova   [rsp+gprsize+16*7 ], m0                        ;in16
+     mova   [rsp+gprsize+16*8 ], m4                        ;in20
+     mova   [rsp+gprsize+16*15], m2                        ;in18
+@@ -3446,6 +3586,7 @@ cglobal idct_8x32_internal_8bpc, 0, 0, 0, dst, stride,
+     jmp   m(idct_8x8_internal_8bpc).pass1_end1
+ 
+ .pass1_end:
++    _CET_ENDBR
+     mova   [rsp+gprsize+16*5 ], m0                        ;in8
+     mova   [rsp+gprsize+16*6 ], m4                        ;in12
+     mova   [rsp+gprsize+16*13], m2                        ;in10
+@@ -3461,6 +3602,7 @@ cglobal idct_8x32_internal_8bpc, 0, 0, 0, dst, stride,
+     jmp   m(idct_8x8_internal_8bpc).pass1_end1
+ 
+ .pass1_end1:
++    _CET_ENDBR
+     mova   [rsp+gprsize+16*11], m2                        ;in2
+     mova   [rsp+gprsize+16*12], m6                        ;in6
+     mova   [rsp+gprsize+16*19], m1                        ;in1
+@@ -3505,13 +3647,16 @@ cglobal idct_8x32_internal_8bpc, 0, 0, 0, dst, stride,
+     call .main
+ 
+ .pass2:
++    _CET_ENDBR
+     lea                     r3, [o(.end6)]
+ 
+ .end:
++    _CET_ENDBR
+     mova   [rsp+gprsize+16*0 ], m7
+     lea                   tx2q, [o(.end2)]
+ 
+ .end1:
++    _CET_ENDBR
+     pxor                    m7, m7
+     REPX   {mova [coeffq+16*x], m7}, 0,  1,  2,  3,  4,  5,  6,  7,  \
+                                      8,  9,  10, 11, 12, 13, 14, 15, \
+@@ -3521,10 +3666,12 @@ cglobal idct_8x32_internal_8bpc, 0, 0, 0, dst, stride,
+     jmp                   tx2q
+ 
+ .end2:
++    _CET_ENDBR
+     lea                   tx2q, [o(.end3)]
+     jmp   m(idct_8x8_internal_8bpc).end
+ 
+ .end3:
++    _CET_ENDBR
+     LOAD_8ROWS   rsp+gprsize+16*11, 16
+     mova   [rsp+gprsize+16*0 ], m7
+     lea                   dstq, [dstq+strideq*2]
+@@ -3532,6 +3679,7 @@ cglobal idct_8x32_internal_8bpc, 0, 0, 0, dst, stride,
+     jmp   m(idct_8x8_internal_8bpc).end
+ 
+ .end4:
++    _CET_ENDBR
+     LOAD_8ROWS   rsp+gprsize+16*19, 16
+     mova   [rsp+gprsize+16*0 ], m7
+     lea                   dstq, [dstq+strideq*2]
+@@ -3539,6 +3687,7 @@ cglobal idct_8x32_internal_8bpc, 0, 0, 0, dst, stride,
+     jmp   m(idct_8x8_internal_8bpc).end
+ 
+ .end5:
++    _CET_ENDBR
+     LOAD_8ROWS   rsp+gprsize+16*27, 16
+     mova   [rsp+gprsize+16*0 ], m7
+     lea                   dstq, [dstq+strideq*2]
+@@ -3546,6 +3695,7 @@ cglobal idct_8x32_internal_8bpc, 0, 0, 0, dst, stride,
+     jmp   m(idct_8x8_internal_8bpc).end
+ 
+ .end6:
++    _CET_ENDBR
+     ret
+ 
+ ALIGN function_align
+@@ -3906,6 +4056,7 @@ cglobal inv_txfm_add_dct_dct_32x8_8bpc, 4, 6, 8, 16*36
+     jmp                   tx2q
+ 
+ .end:
++    _CET_ENDBR
+     RET
+ 
+ 
+@@ -3947,21 +4098,25 @@ cglobal idct_32x8_internal_8bpc, 0, 0, 0, dst, stride,
+     call m(idct_8x32_internal_8bpc).main
+ 
+ .pass2:
++    _CET_ENDBR
+     mova   [rsp+gprsize+16*0 ], m7
+     lea                   tx2q, [o(.end)]
+     jmp  m(idct_8x32_internal_8bpc).end1
+ 
+ .end:
++    _CET_ENDBR
+     mova                    m7, [o(pw_8192)]
+     lea                   tx2q, [o(.end1)]
+     jmp   m(idct_8x8_internal_8bpc).pass1_end1
+ 
+ .end1:
++    _CET_ENDBR
+     lea                     r3, [dstq+8]
+     lea                   tx2q, [o(.end2)]
+     jmp   m(idct_8x8_internal_8bpc).pass2_main
+ 
+ .end2:
++    _CET_ENDBR
+     LOAD_8ROWS   rsp+gprsize+16*11, 16
+     mova   [rsp+gprsize+16*0 ], m7
+     mova                    m7, [o(pw_8192)]
+@@ -3969,12 +4124,14 @@ cglobal idct_32x8_internal_8bpc, 0, 0, 0, dst, stride,
+     jmp   m(idct_8x8_internal_8bpc).pass1_end1
+ 
+ .end3:
++    _CET_ENDBR
+     mov                   dstq, r3
+     add                     r3, 8
+     lea                   tx2q, [o(.end4)]
+     jmp   m(idct_8x8_internal_8bpc).pass2_main
+ 
+ .end4:
++    _CET_ENDBR
+     LOAD_8ROWS   rsp+gprsize+16*19, 16
+     mova   [rsp+gprsize+16*0 ], m7
+     mova                    m7, [o(pw_8192)]
+@@ -3982,12 +4139,14 @@ cglobal idct_32x8_internal_8bpc, 0, 0, 0, dst, stride,
+     jmp   m(idct_8x8_internal_8bpc).pass1_end1
+ 
+ .end5:
++    _CET_ENDBR
+     mov                   dstq, r3
+     add                     r3, 8
+     lea                   tx2q, [o(.end6)]
+     jmp   m(idct_8x8_internal_8bpc).pass2_main
+ 
+ .end6:
++    _CET_ENDBR
+     LOAD_8ROWS   rsp+gprsize+16*27, 16
+     mova   [rsp+gprsize+16*0 ], m7
+     mova                    m7, [o(pw_8192)]
+@@ -3995,11 +4154,13 @@ cglobal idct_32x8_internal_8bpc, 0, 0, 0, dst, stride,
+     jmp   m(idct_8x8_internal_8bpc).pass1_end1
+ 
+ .end7:
++    _CET_ENDBR
+     mov                   dstq, r3
+     lea                   tx2q, [o(.end8)]
+     jmp   m(idct_8x8_internal_8bpc).pass2_main
+ 
+ .end8:
++    _CET_ENDBR
+     ret
+ 
+ 
+@@ -4076,6 +4237,7 @@ cglobal inv_txfm_add_dct_dct_16x32_8bpc, 4, 6, 8, 16*3
+     jz .dconly
+     call  m(idct_16x32_internal_8bpc)
+ .end:
++    _CET_ENDBR
+     RET
+ 
+ .dconly:
+@@ -4099,6 +4261,7 @@ cglobal idct_16x32_internal_8bpc, 0, 0, 0, dst, stride
+     jmp   m(idct_8x8_internal_8bpc).pass1_end
+ 
+ .pass1_end:
++    _CET_ENDBR
+     SAVE_8ROWS    coeffq+16*33, 64               ;in8~in15
+     LOAD_8ROWS    rsp+gprsize+16*3, 16
+     mova    [rsp+gprsize+16*0], m7
+@@ -4106,6 +4269,7 @@ cglobal idct_16x32_internal_8bpc, 0, 0, 0, dst, stride
+     jmp   m(idct_8x8_internal_8bpc).pass1_end
+ 
+ .pass1_end1:
++    _CET_ENDBR
+     mova        [coeffq+16*1 ], m0                        ;in8
+     mova        [coeffq+16*5 ], m4                        ;in12
+     mova   [rsp+gprsize+16*13], m2                        ;in10
+@@ -4123,6 +4287,7 @@ cglobal idct_16x32_internal_8bpc, 0, 0, 0, dst, stride
+     jmp   m(idct_8x8_internal_8bpc).pass1_end
+ 
+ .pass1_end2:
++    _CET_ENDBR
+     SAVE_8ROWS    coeffq+16*32, 64               ;in0~in7
+     LOAD_8ROWS    rsp+gprsize+16*3, 16
+     mova    [rsp+gprsize+16*0], m7
+@@ -4130,6 +4295,7 @@ cglobal idct_16x32_internal_8bpc, 0, 0, 0, dst, stride
+     jmp   m(idct_8x8_internal_8bpc).pass1_end
+ 
+ .pass1_end3:
++    _CET_ENDBR
+     mova   [rsp+gprsize+16*11], m2                        ;in2
+     mova   [rsp+gprsize+16*12], m6                        ;in6
+     mova   [rsp+gprsize+16*19], m1                        ;in1
+@@ -4173,6 +4339,7 @@ cglobal idct_16x32_internal_8bpc, 0, 0, 0, dst, stride
+     jmp   m(idct_8x8_internal_8bpc).pass1_end
+ 
+ .pass1_end4:
++    _CET_ENDBR
+     SAVE_8ROWS    coeffq+16*34, 64               ;in16~in23
+     LOAD_8ROWS    rsp+gprsize+16*3, 16
+     mova    [rsp+gprsize+16*0], m7
+@@ -4180,6 +4347,7 @@ cglobal idct_16x32_internal_8bpc, 0, 0, 0, dst, stride
+     jmp   m(idct_8x8_internal_8bpc).pass1_end
+ 
+ .pass1_end5:
++    _CET_ENDBR
+     mova        [coeffq+16*2 ], m0                        ;in16
+     mova        [coeffq+16*6 ], m4                        ;in20
+     mova   [rsp+gprsize+16*15], m2                        ;in18
+@@ -4198,6 +4366,7 @@ cglobal idct_16x32_internal_8bpc, 0, 0, 0, dst, stride
+     jmp   m(idct_8x8_internal_8bpc).pass1_end
+ 
+ .pass1_end6:
++    _CET_ENDBR
+     SAVE_8ROWS    coeffq+16*35, 64                        ;in24~in31
+     LOAD_8ROWS    rsp+gprsize+16*3, 16
+     mova    [rsp+gprsize+16*0], m7
+@@ -4205,6 +4374,7 @@ cglobal idct_16x32_internal_8bpc, 0, 0, 0, dst, stride
+     jmp   m(idct_8x8_internal_8bpc).pass1_end
+ 
+ .pass1_end7:
++    _CET_ENDBR
+     mova   [rsp+gprsize+16*17], m2                        ;in26
+     mova   [rsp+gprsize+16*18], m6                        ;in30
+     mova   [rsp+gprsize+16*31], m1                        ;in25
+@@ -4230,6 +4400,7 @@ cglobal idct_16x32_internal_8bpc, 0, 0, 0, dst, stride
+     call m(idct_8x32_internal_8bpc).main
+ 
+ .pass2:
++    _CET_ENDBR
+     mov  [rsp+gprsize*1+16*35], eobd
+     lea                     r3, [dstq+8]
+     mov  [rsp+gprsize*2+16*35], r3
+@@ -4237,6 +4408,7 @@ cglobal idct_16x32_internal_8bpc, 0, 0, 0, dst, stride
+     jmp  m(idct_8x32_internal_8bpc).end
+ 
+ .end:
++    _CET_ENDBR
+     mov                   dstq, [rsp+gprsize*2+16*35]
+     mov                   eobd, [rsp+gprsize*1+16*35]
+     add                 coeffq, 16*32
+@@ -4377,6 +4549,7 @@ cglobal idct_32x16_internal_8bpc, 0, 0, 0, dst, stride
+     add                 coeffq, 16
+     lea                     r3, [o(.pass1_end1)]
+ .pass1:
++    _CET_ENDBR
+     LOAD_8ROWS     coeffq+16*0, 128, 1
+     call  m(idct_8x8_internal_8bpc).main
+     SAVE_7ROWS    rsp+gprsize+16*3, 16
+@@ -4408,11 +4581,13 @@ cglobal idct_32x16_internal_8bpc, 0, 0, 0, dst, stride
+     call m(idct_8x32_internal_8bpc).main
+ 
+ .pass1_end:
++    _CET_ENDBR
+     mova   [rsp+gprsize+16*0 ], m7
+     mov                   tx2q, r3
+     jmp   m(idct_8x8_internal_8bpc).pass1_end
+ 
+ .pass1_end1:
++    _CET_ENDBR
+     SAVE_8ROWS     coeffq+16*0, 32
+     LOAD_8ROWS   rsp+gprsize+16*11, 16
+     mova   [rsp+gprsize+16*0 ], m7
+@@ -4420,6 +4595,7 @@ cglobal idct_32x16_internal_8bpc, 0, 0, 0, dst, stride
+     jmp   m(idct_8x8_internal_8bpc).pass1_end
+ 
+ .pass1_end2:
++    _CET_ENDBR
+     SAVE_8ROWS    coeffq+16*16, 32
+     LOAD_8ROWS   rsp+gprsize+16*19, 16
+     mova   [rsp+gprsize+16*0 ], m7
+@@ -4427,6 +4603,7 @@ cglobal idct_32x16_internal_8bpc, 0, 0, 0, dst, stride
+     jmp   m(idct_8x8_internal_8bpc).pass1_end
+ 
+ .pass1_end3:
++    _CET_ENDBR
+     SAVE_8ROWS    coeffq+16*32, 32
+     LOAD_8ROWS   rsp+gprsize+16*27, 16
+     mova   [rsp+gprsize+16*0 ], m7
+@@ -4434,6 +4611,7 @@ cglobal idct_32x16_internal_8bpc, 0, 0, 0, dst, stride
+     jmp   m(idct_8x8_internal_8bpc).pass1_end
+ 
+ .pass1_end4:
++    _CET_ENDBR
+     SAVE_8ROWS    coeffq+16*48, 32
+ 
+     sub                 coeffq, 16
+@@ -4441,6 +4619,7 @@ cglobal idct_32x16_internal_8bpc, 0, 0, 0, dst, stride
+     jmp .pass1
+ 
+ .end:
++    _CET_ENDBR
+     ret
+ 
+ 
+@@ -4658,12 +4837,14 @@ cglobal idct_32x32_internal_8bpc, 0, 0, 0, dst, stride
+     call m(idct_8x32_internal_8bpc).main_fast
+ 
+ .pass1_end:
++    _CET_ENDBR
+     mova    [rsp+gprsize+16*0], m7
+     mova                    m7, [o(pw_8192)]
+     lea                   tx2q, [o(.pass1_end1)]
+     jmp   m(idct_8x8_internal_8bpc).pass1_end1
+ 
+ .pass1_end1:
++    _CET_ENDBR
+     SAVE_8ROWS     coeffq+64*0, 64
+     LOAD_8ROWS   rsp+gprsize+16*11, 16
+     mova    [rsp+gprsize+16*0], m7
+@@ -4672,6 +4853,7 @@ cglobal idct_32x32_internal_8bpc, 0, 0, 0, dst, stride
+     jmp   m(idct_8x8_internal_8bpc).pass1_end1
+ 
+ .pass1_end2:
++    _CET_ENDBR
+     SAVE_8ROWS     coeffq+64*8, 64
+     LOAD_8ROWS   rsp+gprsize+16*19, 16
+     mova    [rsp+gprsize+16*0], m7
+@@ -4680,6 +4862,7 @@ cglobal idct_32x32_internal_8bpc, 0, 0, 0, dst, stride
+     jmp   m(idct_8x8_internal_8bpc).pass1_end1
+ 
+ .pass1_end3:
++    _CET_ENDBR
+     SAVE_8ROWS    coeffq+64*16, 64
+     LOAD_8ROWS   rsp+gprsize+16*27, 16
+     mova    [rsp+gprsize+16*0], m7
+@@ -4688,6 +4871,7 @@ cglobal idct_32x32_internal_8bpc, 0, 0, 0, dst, stride
+     jmp   m(idct_8x8_internal_8bpc).pass1_end1
+ 
+ .pass1_end4:
++    _CET_ENDBR
+     SAVE_8ROWS    coeffq+64*24, 64
+ 
+     add                 coeffq, 16
+@@ -4696,6 +4880,7 @@ cglobal idct_32x32_internal_8bpc, 0, 0, 0, dst, stride
+ 
+ 
+ .pass2:
++    _CET_ENDBR
+     mov                 coeffq, [rsp+gprsize*2+16*35]
+     mov                    r3d, 4
+     lea                   tx2q, [o(.pass2_end)]
+@@ -4794,10 +4979,12 @@ cglobal idct_32x32_internal_8bpc, 0, 0, 0, dst, stride
+     jmp                   tx2q
+ 
+ .pass2_end:
++    _CET_ENDBR
+     lea                     r3, [o(.pass2_end1)]
+     jmp  m(idct_8x32_internal_8bpc).end
+ 
+ .pass2_end1:
++    _CET_ENDBR
+     lea                   tx2q, [o(.pass2_end)]
+     add                 coeffq, 16*32
+     mov                   dstq, [rsp+gprsize*2+16*35]
+@@ -4871,6 +5058,7 @@ cglobal inv_txfm_add_dct_dct_16x64_8bpc, 4, 6, 8, 16*6
+     jz .dconly
+     call m(idct_16x64_internal_8bpc)
+ .end:
++    _CET_ENDBR
+     RET
+ 
+ .dconly:
+@@ -4907,6 +5095,7 @@ cglobal idct_16x64_internal_8bpc, 0, 0, 0, dst, stride
+     jmp   m(idct_8x8_internal_8bpc).pass1_end1
+ 
+ .pass1_end:
++    _CET_ENDBR
+     SAVE_8ROWS     coeffq+64*8, 64
+     LOAD_8ROWS    rsp+gprsize+16*3, 16
+     mova    [rsp+gprsize+16*0], m7
+@@ -4915,6 +5104,7 @@ cglobal idct_16x64_internal_8bpc, 0, 0, 0, dst, stride
+     jmp   m(idct_8x8_internal_8bpc).pass1_end1
+ 
+ .pass1_end1:
++    _CET_ENDBR
+     SAVE_8ROWS     coeffq+64*0, 64
+ 
+     add                 coeffq, 16
+@@ -5043,12 +5233,14 @@ cglobal idct_16x64_internal_8bpc, 0, 0, 0, dst, stride
+     call .main_fast
+ 
+ .end:
++    _CET_ENDBR
+     LOAD_8ROWS   rsp+gprsize+16*3, 16
+     mova    [rsp+gprsize+16*0], m7
+     mov                     r3, r4
+     jmp  m(idct_8x32_internal_8bpc).end2
+ 
+ .end1:
++    _CET_ENDBR
+     LOAD_8ROWS   rsp+gprsize+16*35, 16
+     lea                   dstq, [dstq+strideq*2]
+     lea                     r3, [rsp+16*32+gprsize]
+@@ -5804,6 +5996,7 @@ cglobal inv_txfm_add_dct_dct_64x16_8bpc, 4, 6, 8, 16*1
+     jmp                   tx2q
+ 
+ .end:
++    _CET_ENDBR
+     RET
+ 
+ 
+@@ -5892,6 +6085,7 @@ cglobal idct_64x16_internal_8bpc, 0, 0, 0, dst, stride
+     jmp   m(idct_8x8_internal_8bpc).pass1_end1
+ 
+ .pass1_end:
++    _CET_ENDBR
+     SAVE_8ROWS     coeffq+32*0, 32
+     LOAD_8ROWS   rsp+gprsize+16*11, 16
+     mova    [rsp+gprsize+16*0], m7
+@@ -5900,6 +6094,7 @@ cglobal idct_64x16_internal_8bpc, 0, 0, 0, dst, stride
+     jmp   m(idct_8x8_internal_8bpc).pass1_end1
+ 
+ .pass1_end1:
++    _CET_ENDBR
+     SAVE_8ROWS     coeffq+32*8, 32
+     LOAD_8ROWS   rsp+gprsize+16*19, 16
+     mova    [rsp+gprsize+16*0], m7
+@@ -5908,6 +6103,7 @@ cglobal idct_64x16_internal_8bpc, 0, 0, 0, dst, stride
+     jmp   m(idct_8x8_internal_8bpc).pass1_end1
+ 
+ .pass1_end2:
++    _CET_ENDBR
+     SAVE_8ROWS    coeffq+32*16, 32
+     LOAD_8ROWS   rsp+gprsize+16*27, 16
+     mova    [rsp+gprsize+16*0], m7
+@@ -5916,6 +6112,7 @@ cglobal idct_64x16_internal_8bpc, 0, 0, 0, dst, stride
+     jmp   m(idct_8x8_internal_8bpc).pass1_end1
+ 
+ .pass1_end3:
++    _CET_ENDBR
+     SAVE_8ROWS    coeffq+32*24, 32
+     LOAD_8ROWS   rsp+gprsize+16*35, 16
+     mova    [rsp+gprsize+16*0], m7
+@@ -5924,6 +6121,7 @@ cglobal idct_64x16_internal_8bpc, 0, 0, 0, dst, stride
+     jmp   m(idct_8x8_internal_8bpc).pass1_end1
+ 
+ .pass1_end4:
++    _CET_ENDBR
+     SAVE_8ROWS       dstq+32*0, 32
+     LOAD_8ROWS   rsp+gprsize+16*43, 16
+     mova    [rsp+gprsize+16*0], m7
+@@ -5932,6 +6130,7 @@ cglobal idct_64x16_internal_8bpc, 0, 0, 0, dst, stride
+     jmp   m(idct_8x8_internal_8bpc).pass1_end1
+ 
+ .pass1_end5:
++    _CET_ENDBR
+     SAVE_8ROWS       dstq+32*8, 32
+     LOAD_8ROWS   rsp+gprsize+16*51, 16
+     mova    [rsp+gprsize+16*0], m7
+@@ -5940,6 +6139,7 @@ cglobal idct_64x16_internal_8bpc, 0, 0, 0, dst, stride
+     jmp   m(idct_8x8_internal_8bpc).pass1_end1
+ 
+ .pass1_end6:
++    _CET_ENDBR
+     SAVE_8ROWS      dstq+32*16, 32
+     LOAD_8ROWS   rsp+gprsize+16*59, 16
+     mova    [rsp+gprsize+16*0], m7
+@@ -5948,6 +6148,7 @@ cglobal idct_64x16_internal_8bpc, 0, 0, 0, dst, stride
+     jmp   m(idct_8x8_internal_8bpc).pass1_end1
+ 
+ .pass1_end7:
++    _CET_ENDBR
+     SAVE_8ROWS      dstq+32*24, 32
+ 
+     add                 coeffq, 16
+@@ -5956,6 +6157,7 @@ cglobal idct_64x16_internal_8bpc, 0, 0, 0, dst, stride
+     jg .pass1_loop
+ 
+ .pass2:
++    _CET_ENDBR
+     mov                   dstq, [rsp+gprsize*2+16*67]
+     sub                 coeffq, 32
+     mov                    r3d, 4
+@@ -5977,6 +6179,7 @@ cglobal idct_64x16_internal_8bpc, 0, 0, 0, dst, stride
+     jmp  m(idct_8x8_internal_8bpc).end
+ 
+ .end:
++    _CET_ENDBR
+     LOAD_8ROWS   rsp+gprsize+16*3, 16
+     mova   [rsp+gprsize+16*0], m7
+     lea                  tx2q, [o(.end1)]
+@@ -5984,6 +6187,7 @@ cglobal idct_64x16_internal_8bpc, 0, 0, 0, dst, stride
+     jmp  m(idct_8x8_internal_8bpc).end
+ 
+ .end1:
++    _CET_ENDBR
+     pxor                   m7, m7
+     REPX  {mova [coeffq+16*x], m7}, 0,  1,  2,  3,  4,  5,  6,  7,  8,  9,  10, 11, 12, 13, 14, 15
+ 
+@@ -6014,6 +6218,7 @@ cglobal idct_64x16_internal_8bpc, 0, 0, 0, dst, stride
+     jmp  m(idct_8x8_internal_8bpc).end
+ 
+ .end2:
++    _CET_ENDBR
+     LOAD_8ROWS   rsp+gprsize+16*3, 16
+     mova   [rsp+gprsize+16*0], m7
+     lea                  tx2q, [o(.end3)]
+@@ -6021,7 +6226,7 @@ cglobal idct_64x16_internal_8bpc, 0, 0, 0, dst, stride
+     jmp  m(idct_8x8_internal_8bpc).end
+ 
+ .end3:
+-
++    _CET_ENDBR
+     add                 coeffq, 16*16
+     mov                    r3d, [rsp+gprsize*1+16*67]
+     mov                   dstq, [rsp+gprsize*2+16*67]
+@@ -6040,6 +6245,7 @@ cglobal inv_txfm_add_dct_dct_32x64_8bpc, 4, 6, 8, 16*6
+     jz .dconly
+     call m(idct_32x64_internal_8bpc)
+ .end:
++    _CET_ENDBR
+     RET
+ 
+ .dconly:
+@@ -6120,11 +6326,13 @@ cglobal idct_32x64_internal_8bpc, 0, 0, 0, dst, stride
+     call m(idct_8x32_internal_8bpc).main_fast
+ 
+ .pass1_end:
++    _CET_ENDBR
+     mova    [rsp+gprsize+16*0], m7
+     lea                   tx2q, [o(.pass1_end1)]
+     jmp   m(idct_8x8_internal_8bpc).pass1_end
+ 
+ .pass1_end1:
++    _CET_ENDBR
+     SAVE_8ROWS     coeffq+64*0, 64
+     LOAD_8ROWS   rsp+gprsize+16*11, 16
+     mova    [rsp+gprsize+16*0], m7
+@@ -6132,6 +6340,7 @@ cglobal idct_32x64_internal_8bpc, 0, 0, 0, dst, stride
+     jmp   m(idct_8x8_internal_8bpc).pass1_end
+ 
+ .pass1_end2:
++    _CET_ENDBR
+     SAVE_8ROWS     coeffq+64*8, 64
+     LOAD_8ROWS   rsp+gprsize+16*19, 16
+     mova    [rsp+gprsize+16*0], m7
+@@ -6139,6 +6348,7 @@ cglobal idct_32x64_internal_8bpc, 0, 0, 0, dst, stride
+     jmp   m(idct_8x8_internal_8bpc).pass1_end
+ 
+ .pass1_end3:
++    _CET_ENDBR
+     SAVE_8ROWS    coeffq+64*16, 64
+     LOAD_8ROWS   rsp+gprsize+16*27, 16
+     mova    [rsp+gprsize+16*0], m7
+@@ -6146,6 +6356,7 @@ cglobal idct_32x64_internal_8bpc, 0, 0, 0, dst, stride
+     jmp   m(idct_8x8_internal_8bpc).pass1_end
+ 
+ .pass1_end4:
++    _CET_ENDBR
+     SAVE_8ROWS    coeffq+64*24, 64
+ 
+     add                 coeffq, 16
+@@ -6153,6 +6364,7 @@ cglobal idct_32x64_internal_8bpc, 0, 0, 0, dst, stride
+     jg .pass1_loop
+ 
+ .pass2:
++    _CET_ENDBR
+     mov                 coeffq, [rsp+gprsize*2+16*67]
+     mov                    r3d, 4
+     lea                     r4, [dstq+8]
+@@ -6169,6 +6381,7 @@ cglobal inv_txfm_add_dct_dct_64x32_8bpc, 4, 6, 8, 16*1
+     jz .dconly
+     call m(idct_64x32_internal_8bpc)
+ .end:
++    _CET_ENDBR
+     RET
+ 
+ .dconly:
+@@ -6254,6 +6467,7 @@ cglobal idct_64x32_internal_8bpc, 0, 0, 0, dst, stride
+     jmp   m(idct_8x8_internal_8bpc).pass1_end
+ 
+ .pass1_end:
++    _CET_ENDBR
+     SAVE_8ROWS     coeffq+64*0, 64
+     LOAD_8ROWS   rsp+gprsize+16*11, 16
+     mova    [rsp+gprsize+16*0], m7
+@@ -6261,6 +6475,7 @@ cglobal idct_64x32_internal_8bpc, 0, 0, 0, dst, stride
+     jmp   m(idct_8x8_internal_8bpc).pass1_end
+ 
+ .pass1_end1:
++    _CET_ENDBR
+     SAVE_8ROWS     coeffq+64*8, 64
+     LOAD_8ROWS   rsp+gprsize+16*19, 16
+     mova    [rsp+gprsize+16*0], m7
+@@ -6268,6 +6483,7 @@ cglobal idct_64x32_internal_8bpc, 0, 0, 0, dst, stride
+     jmp   m(idct_8x8_internal_8bpc).pass1_end
+ 
+ .pass1_end2:
++    _CET_ENDBR
+     SAVE_8ROWS    coeffq+64*16, 64
+     LOAD_8ROWS   rsp+gprsize+16*27, 16
+     mova    [rsp+gprsize+16*0], m7
+@@ -6275,6 +6491,7 @@ cglobal idct_64x32_internal_8bpc, 0, 0, 0, dst, stride
+     jmp   m(idct_8x8_internal_8bpc).pass1_end
+ 
+ .pass1_end3:
++    _CET_ENDBR
+     SAVE_8ROWS    coeffq+64*24, 64
+     LOAD_8ROWS   rsp+gprsize+16*35, 16
+     mova    [rsp+gprsize+16*0], m7
+@@ -6282,6 +6499,7 @@ cglobal idct_64x32_internal_8bpc, 0, 0, 0, dst, stride
+     jmp   m(idct_8x8_internal_8bpc).pass1_end
+ 
+ .pass1_end4:
++    _CET_ENDBR
+     SAVE_8ROWS       dstq+64*0, 64
+     LOAD_8ROWS   rsp+gprsize+16*43, 16
+     mova    [rsp+gprsize+16*0], m7
+@@ -6289,6 +6507,7 @@ cglobal idct_64x32_internal_8bpc, 0, 0, 0, dst, stride
+     jmp   m(idct_8x8_internal_8bpc).pass1_end
+ 
+ .pass1_end5:
++    _CET_ENDBR
+     SAVE_8ROWS       dstq+64*8, 64
+     LOAD_8ROWS   rsp+gprsize+16*51, 16
+     mova    [rsp+gprsize+16*0], m7
+@@ -6296,6 +6515,7 @@ cglobal idct_64x32_internal_8bpc, 0, 0, 0, dst, stride
+     jmp   m(idct_8x8_internal_8bpc).pass1_end
+ 
+ .pass1_end6:
++    _CET_ENDBR
+     SAVE_8ROWS      dstq+64*16, 64
+     LOAD_8ROWS   rsp+gprsize+16*59, 16
+     mova    [rsp+gprsize+16*0], m7
+@@ -6303,6 +6523,7 @@ cglobal idct_64x32_internal_8bpc, 0, 0, 0, dst, stride
+     jmp   m(idct_8x8_internal_8bpc).pass1_end
+ 
+ .pass1_end7:
++    _CET_ENDBR
+     SAVE_8ROWS      dstq+64*24, 64
+ 
+     add                 coeffq, 16
+@@ -6311,6 +6532,7 @@ cglobal idct_64x32_internal_8bpc, 0, 0, 0, dst, stride
+     jg .pass1_loop
+ 
+ .pass2:
++    _CET_ENDBR
+     mov                 coeffq, [rsp+gprsize*4+16*67]
+     mov                   dstq, [rsp+gprsize*3+16*67]
+     mov                   eobd, [rsp+gprsize*1+16*67]
+@@ -6321,11 +6543,13 @@ cglobal idct_64x32_internal_8bpc, 0, 0, 0, dst, stride
+     jmp m(idct_32x32_internal_8bpc).pass2_loop
+ 
+ .pass2_end:
++    _CET_ENDBR
+     mova    [rsp+gprsize+16*0], m7
+     lea                     r3, [o(.pass2_end1)]
+     jmp  m(idct_8x32_internal_8bpc).end2
+ 
+ .pass2_end1:
++    _CET_ENDBR
+     lea                   tx2q, [o(.pass2_end)]
+     add                 coeffq, 16*32
+     mov                   dstq, [rsp+gprsize*2+16*35]
+@@ -6334,6 +6558,7 @@ cglobal idct_64x32_internal_8bpc, 0, 0, 0, dst, stride
+     jg m(idct_32x32_internal_8bpc).pass2_loop
+ 
+ .pass2_end2:
++    _CET_ENDBR
+     mov                   dstq, [rsp+gprsize*3+16*67]
+     mov                 coeffq, [rsp+gprsize*2+16*67]
+     lea                   tx2q, [o(m(idct_32x32_internal_8bpc).pass2_end)]
+@@ -6434,6 +6659,7 @@ cglobal idct_64x64_internal_8bpc, 0, 0, 0, dst, stride
+     jmp   m(idct_8x8_internal_8bpc).pass1_end1
+ 
+ .pass1_end:
++    _CET_ENDBR
+     SAVE_8ROWS     coeffq+64*0, 64
+     LOAD_8ROWS   rsp+gprsize+16*11, 16
+     mova    [rsp+gprsize+16*0], m7
+@@ -6442,6 +6668,7 @@ cglobal idct_64x64_internal_8bpc, 0, 0, 0, dst, stride
+     jmp   m(idct_8x8_internal_8bpc).pass1_end1
+ 
+ .pass1_end1:
++    _CET_ENDBR
+     SAVE_8ROWS     coeffq+64*8, 64
+     LOAD_8ROWS   rsp+gprsize+16*19, 16
+     mova    [rsp+gprsize+16*0], m7
+@@ -6450,6 +6677,7 @@ cglobal idct_64x64_internal_8bpc, 0, 0, 0, dst, stride
+     jmp   m(idct_8x8_internal_8bpc).pass1_end1
+ 
+ .pass1_end2:
++    _CET_ENDBR
+     SAVE_8ROWS    coeffq+64*16, 64
+     LOAD_8ROWS   rsp+gprsize+16*27, 16
+     mova    [rsp+gprsize+16*0], m7
+@@ -6458,6 +6686,7 @@ cglobal idct_64x64_internal_8bpc, 0, 0, 0, dst, stride
+     jmp   m(idct_8x8_internal_8bpc).pass1_end1
+ 
+ .pass1_end3:
++    _CET_ENDBR
+     SAVE_8ROWS    coeffq+64*24, 64
+     LOAD_8ROWS   rsp+gprsize+16*35, 16
+     mova    [rsp+gprsize+16*0], m7
+@@ -6466,6 +6695,7 @@ cglobal idct_64x64_internal_8bpc, 0, 0, 0, dst, stride
+     jmp   m(idct_8x8_internal_8bpc).pass1_end1
+ 
+ .pass1_end4:
++    _CET_ENDBR
+     SAVE_8ROWS       dstq+64*0, 64
+     LOAD_8ROWS   rsp+gprsize+16*43, 16
+     mova    [rsp+gprsize+16*0], m7
+@@ -6474,6 +6704,7 @@ cglobal idct_64x64_internal_8bpc, 0, 0, 0, dst, stride
+     jmp   m(idct_8x8_internal_8bpc).pass1_end1
+ 
+ .pass1_end5:
++    _CET_ENDBR
+     SAVE_8ROWS       dstq+64*8, 64
+     LOAD_8ROWS   rsp+gprsize+16*51, 16
+     mova    [rsp+gprsize+16*0], m7
+@@ -6482,6 +6713,7 @@ cglobal idct_64x64_internal_8bpc, 0, 0, 0, dst, stride
+     jmp   m(idct_8x8_internal_8bpc).pass1_end1
+ 
+ .pass1_end6:
++    _CET_ENDBR
+     SAVE_8ROWS      dstq+64*16, 64
+     LOAD_8ROWS   rsp+gprsize+16*59, 16
+     mova    [rsp+gprsize+16*0], m7
+@@ -6490,6 +6722,7 @@ cglobal idct_64x64_internal_8bpc, 0, 0, 0, dst, stride
+     jmp   m(idct_8x8_internal_8bpc).pass1_end1
+ 
+ .pass1_end7:
++    _CET_ENDBR
+     SAVE_8ROWS      dstq+64*24, 64
+ 
+     add                 coeffq, 16
+@@ -6498,6 +6731,7 @@ cglobal idct_64x64_internal_8bpc, 0, 0, 0, dst, stride
+     jg .pass1_loop
+ 
+ .pass2:
++    _CET_ENDBR
+     mov                   dstq, [rsp+gprsize*3+16*67]
+     mov                 coeffq, [rsp+gprsize*2+16*67]
+     lea                   dstq, [dstq+32]
+@@ -6508,6 +6742,7 @@ cglobal idct_64x64_internal_8bpc, 0, 0, 0, dst, stride
+     jmp m(idct_16x64_internal_8bpc).pass2_loop
+ 
+ .pass2_end:
++    _CET_ENDBR
+     LOAD_8ROWS   rsp+gprsize+16*35, 16
+     lea                   dstq, [dstq+strideq*2]
+     lea                     r3, [rsp+16*32+gprsize]
+@@ -6523,6 +6758,7 @@ cglobal idct_64x64_internal_8bpc, 0, 0, 0, dst, stride
+     jg  m(idct_16x64_internal_8bpc).pass2_loop
+ 
+ .pass2_end2:
++    _CET_ENDBR
+     mov                 coeffq, [rsp+gprsize*4+16*67]
+     mov                   dstq, [rsp+gprsize*2+16*67]
+     mov                    r3d, 4

@@ -1,0 +1,32 @@
+Index: src/ext/x86/x86inc.asm
+--- src/ext/x86/x86inc.asm.orig
++++ src/ext/x86/x86inc.asm
+@@ -226,6 +226,12 @@ DECLARE_REG_TMP_SIZE 0,1,2,3,4,5,6,7,8,9,10,11,12,13,1
+     %define gprsize 4
+ %endif
+ 
++%if ARCH_X86_64
++    %define _CET_ENDBR	endbr64
++%else
++    %define _CET_ENDBR
++%endif
++
+ %macro LEA 2
+ %if ARCH_X86_64
+     lea %1, [%2]
+@@ -795,6 +801,7 @@ BRANCH_INSTR jz, je, jnz, jne, jl, jle, jnl, jnle, jg,
+     %endif
+     align function_align
+     %2:
++    _CET_ENDBR
+     RESET_MM_PERMUTATION        ; needed for x86-64, also makes disassembly somewhat nicer
+     %xdefine rstk rsp           ; copy of the original stack pointer, used when greater alignment than the known stack alignment is required
+     %assign stack_offset 0      ; stack pointer offset relative to the return address
+@@ -816,6 +823,7 @@ BRANCH_INSTR jz, je, jnz, jne, jl, jle, jnl, jnle, jg,
+         global current_function %+ %1
+     %endif
+     %1:
++    _CET_ENDBR
+ %endmacro
+ 
+ %macro cextern 1

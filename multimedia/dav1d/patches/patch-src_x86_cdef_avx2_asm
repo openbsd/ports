@@ -1,0 +1,99 @@
+Index: src/x86/cdef_avx2.asm
+--- src/x86/cdef_avx2.asm.orig
++++ src/x86/cdef_avx2.asm
+@@ -572,6 +572,7 @@ cglobal cdef_filter_%1x%2_8bpc, 5, 11, 0, dst, stride,
+     RET
+ 
+ .d0k0:
++    _CET_ENDBR
+ %if %1 == 4
+  %if %2 == 4
+     vpbroadcastq    m6, [dstq+strideq*1-1]
+@@ -632,6 +633,7 @@ cglobal cdef_filter_%1x%2_8bpc, 5, 11, 0, dst, stride,
+ .d1k0:
+ .d2k0:
+ .d3k0:
++    _CET_ENDBR
+ %if %1 == 4
+  %if %2 == 4
+     movq           xm6, [dstq+strideq*0-1]
+@@ -683,6 +685,7 @@ cglobal cdef_filter_%1x%2_8bpc, 5, 11, 0, dst, stride,
+ %endif
+     ret
+ .d4k0:
++    _CET_ENDBR
+ %if %1 == 4
+  %if %2 == 4
+     vpbroadcastq   m10, [dstq+strideq*1-1]
+@@ -743,6 +746,7 @@ cglobal cdef_filter_%1x%2_8bpc, 5, 11, 0, dst, stride,
+ .d5k0:
+ .d6k0:
+ .d7k0:
++    _CET_ENDBR
+ %if %1 == 4
+  %if %2 == 4
+     movd           xm6, [topq+strideq*1  ]
+@@ -783,6 +787,7 @@ cglobal cdef_filter_%1x%2_8bpc, 5, 11, 0, dst, stride,
+ %endif
+     ret
+ .d0k1:
++    _CET_ENDBR
+ %if %1 == 4
+  %if %2 == 4
+     movd           xm6, [dstq+strideq*2-2]
+@@ -834,6 +839,7 @@ cglobal cdef_filter_%1x%2_8bpc, 5, 11, 0, dst, stride,
+ %endif
+     ret
+ .d1k1:
++    _CET_ENDBR
+ %if %1 == 4
+  %if %2 == 4
+     vpbroadcastq    m6, [dstq+strideq*1-2]
+@@ -891,6 +897,7 @@ cglobal cdef_filter_%1x%2_8bpc, 5, 11, 0, dst, stride,
+ %endif
+     ret
+ .d2k1:
++    _CET_ENDBR
+ %if %1 == 4
+  %if %2 == 4
+     movq          xm11, [leftq]
+@@ -935,6 +942,7 @@ cglobal cdef_filter_%1x%2_8bpc, 5, 11, 0, dst, stride,
+ %endif
+     ret
+ .d3k1:
++    _CET_ENDBR
+ %if %1 == 4
+  %if %2 == 4
+     vpbroadcastq   m11, [dstq+strideq*1-2]
+@@ -988,6 +996,7 @@ cglobal cdef_filter_%1x%2_8bpc, 5, 11, 0, dst, stride,
+ %endif
+     ret
+ .d4k1:
++    _CET_ENDBR
+ %if %1 == 4
+  %if %2 == 4
+     vinserti128     m6, [dstq+strideq*0-2], 1
+@@ -1039,6 +1048,7 @@ cglobal cdef_filter_%1x%2_8bpc, 5, 11, 0, dst, stride,
+ %endif
+     ret
+ .d5k1:
++    _CET_ENDBR
+ %if %1 == 4
+  %if %2 == 4
+     movd           xm6, [topq+strideq*0-1]
+@@ -1097,6 +1107,7 @@ cglobal cdef_filter_%1x%2_8bpc, 5, 11, 0, dst, stride,
+ %endif
+     ret
+ .d6k1:
++    _CET_ENDBR
+ %if %1 == 4
+  %if %2 == 4
+     movd           xm6, [topq+strideq*0]
+@@ -1139,6 +1150,7 @@ cglobal cdef_filter_%1x%2_8bpc, 5, 11, 0, dst, stride,
+ %endif
+     ret
+ .d7k1:
++    _CET_ENDBR
+ %if %1 == 4
+  %if %2 == 4
+     movd           xm5, [dstq+strideq*2-1]
