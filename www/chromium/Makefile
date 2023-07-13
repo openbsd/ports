@@ -7,7 +7,7 @@ DPB_PROPERTIES=		parallel parallel2
 COMMENT=		Chromium browser
 
 V=			114.0.5735.198
-REVISION=		2
+REVISION=		3
 
 DISTNAME=		chromium-${V}
 
@@ -135,7 +135,7 @@ BUILDDIR=	${WRKSRC}/out/${BUILDTYPE}
 # These libraries are used from the system and the build infrastructure
 # removes them from the bundled third_party directory and replaces them
 # with hooks to use them from the system.
-GN_SYSTEM_LIBS=	\
+GN_SYSTEM_LIBS=	dav1d \
 		icu \
 		libevent \
 		libjpeg \
@@ -145,11 +145,6 @@ GN_SYSTEM_LIBS=	\
 		openh264 \
 		opus \
 		snappy
-
-# XXX
-.if ${MACHINE_ARCH} != "amd64"
-GN_SYSTEM_LIBS+=dav1d
-.endif
 
 GN_ARGS=	enable_nacl=false \
 		is_official_build=true \
@@ -244,10 +239,6 @@ GN_ARGS+=	use_thin_lto=false \
 .endif
 
 pre-configure:
-.if ${MACHINE_ARCH} == "amd64"
-	sed -i -e "s,^enable_nasm.*,enable_nasm = false,g;s,(is_msan),(!enable_nasm),g" \
-		${WRKSRC}/third_party/dav1d/BUILD.gn
-.endif
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 	@ln -sf ${MODQT5_MOC} ${WRKDIR}/bin/moc
 	cd ${WRKSRC}/third_party/ffmpeg && \
