@@ -7,7 +7,7 @@ VERSION=		73.2
 DISTNAME=		icu4c-${VERSION:S/./_/g}-src
 PKGNAME-main=		icu4c-${VERSION}
 PKGNAME-wwwdata=	icu4c-wwwdata-${VERSION}
-
+REVISION-main=		0
 EPOCH-main=		0
 EPOCH-wwwdata=		0
 

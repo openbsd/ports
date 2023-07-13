@@ -1,0 +1,32 @@
+https://unicode-org.atlassian.net/browse/ICU-22132
+https://bugzilla.mozilla.org/show_bug.cgi?id=1790071
+https://hg.mozilla.org/releases/mozilla-esr115/raw-file/tip/intl/icu-patches/bug-1790071-ICU-22132-standardize-vtzone-output.diff
+
+Index: source/i18n/vtzone.cpp
+--- source/i18n/vtzone.cpp.orig
++++ source/i18n/vtzone.cpp
+@@ -1735,14 +1735,17 @@ VTimeZone::write(VTZWriter& writer, UErrorCode& status
+             }
+         }
+     } else {
+-        UnicodeString icutzprop;
+-        UVector customProps(nullptr, uhash_compareUnicodeString, status);
++        UVector customProps(uprv_deleteUObject, uhash_compareUnicodeString, status);
+         if (olsonzid.length() > 0 && icutzver.length() > 0) {
+-            icutzprop.append(olsonzid);
+-            icutzprop.append(u'[');
+-            icutzprop.append(icutzver);
+-            icutzprop.append(u']');
+-            customProps.addElement(&icutzprop, status);
++            LocalPointer<UnicodeString> icutzprop(new UnicodeString(ICU_TZINFO_PROP), status);
++            if (U_FAILURE(status)) {
++                return;
++            }
++            icutzprop->append(olsonzid);
++            icutzprop->append(u'[');
++            icutzprop->append(icutzver);
++            icutzprop->append(u']');
++            customProps.adoptElement(icutzprop.orphan(), status);
+         }
+         writeZone(writer, *tz, &customProps, status);
+     }
