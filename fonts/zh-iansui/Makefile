@@ -1,6 +1,6 @@
 COMMENT =		Chinese truetype font derived from Klee One
 
-V =			0.943
+V =			1.000
 PKGNAME =		zh-iansui-${V}
 
 GH_ACCOUNT =		ButTaiwan
@@ -20,10 +20,11 @@ NO_BUILD =		Yes
 NO_TEST =		Yes
 
 FONTDIR =		${PREFIX}/share/fonts/iansui
+DOCDIR =		${PREFIX}/share/doc/iansui
 
 do-install:
-	${INSTALL_DATA_DIR} ${FONTDIR}
-	${INSTALL_DATA} ${WRKSRC}/Iansui${V:S/.//:C/.$//}-Regular.ttf \
-		${FONTDIR}/Iansui-Regular.ttf
+	${INSTALL_DATA_DIR} ${FONTDIR} ${DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/Iansui-Regular.ttf ${FONTDIR}
+	${INSTALL_DATA} ${WRKSRC}/{README.md,OFL.txt} ${DOCDIR}
 
 .include <bsd.port.mk>
