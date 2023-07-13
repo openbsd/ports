@@ -36,6 +36,7 @@ include/digikam/digikam_gui_export.h
 include/digikam/digikam_version.h
 include/digikam/dimg.h
 include/digikam/dimgbuiltinfilter.h
+include/digikam/dimgloader.h
 include/digikam/dimgloaderobserver.h
 include/digikam/dimgloadersettings.h
 include/digikam/dimgpreviewitem.h
@@ -51,6 +52,7 @@ include/digikam/dpluginaction.h
 include/digikam/dpluginauthor.h
 include/digikam/dpluginbqm.h
 include/digikam/dplugindialog.h
+include/digikam/dplugindimg.h
 include/digikam/dplugineditor.h
 include/digikam/dplugingeneric.h
 include/digikam/dpluginloader.h
@@ -438,13 +440,17 @@ share/digikam/templates/
 share/digikam/templates/1_photo_10.5x14.8cm.desktop
 share/digikam/templates/1_photo_10x15cm.desktop
 share/digikam/templates/1_photo_20x25cm.desktop
+share/digikam/templates/1_photo_4x6_2_photos_2x3.desktop
+share/digikam/templates/1_photo_5x7_corner.desktop
 share/digikam/templates/1_photo_8x10.desktop
 share/digikam/templates/1_photo_9x13cm.desktop
 share/digikam/templates/2_photos_13x18cm.desktop
+share/digikam/templates/2_photos_4x6.desktop
 share/digikam/templates/2_photos_5x7.desktop
 share/digikam/templates/3_photos_10x15cm.desktop
 share/digikam/templates/3_photos_4x6.desktop
 share/digikam/templates/4_photos_10x13.33cm.desktop
+share/digikam/templates/4_photos_2.5x3.5.desktop
 share/digikam/templates/4_photos_3.5x5.desktop
 share/digikam/templates/4_photos_4.5x5cm.desktop
 share/digikam/templates/4_photos_9x13cm.desktop
