@@ -2,13 +2,14 @@ COMMENT-main =	network monitoring system
 COMMENT-mysql =	MySQL support for icinga2
 COMMENT-pgsql =	PostgreSQL support for icinga2
 
-V =		2.13.7
+V =		2.14.0
 
 GH_PROJECT =	icinga2
 GH_TAGNAME =	v$V
 PKGNAME-main =	icinga2-$V
 PKGNAME-mysql =	icinga2-ido-mysql-$V
 PKGNAME-pgsql =	icinga2-ido-pgsql-$V
+DPB_PROPERTIES =parallel
 EPOCH =		0
 
 SHARED_LIBS +=	base                      0.0 # 2.6
@@ -73,6 +74,7 @@ CONFIGURE_ARGS += \
 	-DCMAKE_INSTALL_MANDIR=${PREFIX}/man \
 	-DCMAKE_INSTALL_LOCALSTATEDIR=${LOCALSTATEDIR} \
 	-DCMAKE_INSTALL_SYSCONFDIR=${PREFIX}/share/examples \
+	-DICINGA2_UNITY_BUILD=OFF \
 	-DICINGA2_CONFIGDIR=${SYSCONFDIR}/icinga2 \
 	-DICINGA2_USER=_icinga \
 	-DICINGA2_GROUP=_icinga \
@@ -92,10 +94,6 @@ CONFIGURE_ARGS += -DICINGA2_WITH_MYSQL=OFF
 .endif
 .if !${BUILD_PACKAGES:M-pgsql}
 CONFIGURE_ARGS += -DICINGA2_WITH_PGSQL=OFF
-.endif
-
-.if !${PROPERTIES:Mlp64} || defined(DEBUG)
-CONFIGURE_ARGS += -DICINGA2_UNITY_BUILD=OFF
 .endif
 
 post-install:
