@@ -387,7 +387,180 @@ Index: src/arm/64/ipred16.S
  endfunc
  
  const padding_mask_buf
-@@ -3880,13 +3898,13 @@ function ipred_filter_\bpc\()bpc_neon
+@@ -1728,11 +1746,11 @@ endfunc
+ //                                const int dx, const int max_base_x);
+ function ipred_z1_fill1_16bpc_neon, export=1
+         clz             w9,  w3
+-        adr             x8,  L(ipred_z1_fill1_tbl)
++        adrp            x8,  L(ipred_z1_fill1_tbl)
++        add             x8,  x8, :lo12: L(ipred_z1_fill1_tbl)
+         sub             w9,  w9,  #25
+-        ldrh            w9,  [x8, w9, uxtw #1]
++        ldr             x8,  [x8, w9, uxtw #3]
+         add             x10, x2,  w6,  uxtw #1    // top[max_base_x]
+-        sub             x8,  x8,  w9,  uxtw
+         ld1r            {v31.8h}, [x10]           // padding
+         mov             w7,  w5
+         mov             w15, #64
+@@ -1917,12 +1935,14 @@ function ipred_z1_fill1_16bpc_neon, export=1
+         mov             w3,  w12
+         b               169b
+ 
++	.pushsection .data.rel.ro, "aw"
+ L(ipred_z1_fill1_tbl):
+-        .hword L(ipred_z1_fill1_tbl) - 640b
+-        .hword L(ipred_z1_fill1_tbl) - 320b
+-        .hword L(ipred_z1_fill1_tbl) - 160b
+-        .hword L(ipred_z1_fill1_tbl) -  80b
+-        .hword L(ipred_z1_fill1_tbl) -  40b
++        .xword 640b
++        .xword 320b
++        .xword 160b
++        .xword  80b
++        .xword  40b
++	.popsection
+ endfunc
+ 
+ function ipred_z1_fill2_16bpc_neon, export=1
+@@ -2050,11 +2070,11 @@ endconst
+ //                                const int dx, const int dy);
+ function ipred_z2_fill1_16bpc_neon, export=1
+         clz             w10, w4
+-        adr             x9,  L(ipred_z2_fill1_tbl)
++        adrp            x9,  L(ipred_z2_fill1_tbl)
++        add             x9,  x9, :lo12: L(ipred_z2_fill1_tbl)
+         sub             w10, w10, #25
+-        ldrh            w10, [x9, w10, uxtw #1]
++        ldr             x9, [x9, w10, uxtw #3]
+         mov             w8,  #(1 << 6)            // xpos = 1 << 6
+-        sub             x9,  x9,  w10, uxtw
+         sub             w8,  w8,  w6              // xpos -= dx
+ 
+         movrel          x11, increments
+@@ -2815,12 +2835,14 @@ function ipred_z2_fill1_16bpc_neon, export=1
+         ldp             d8,  d9,  [sp], 0x40
+         ret
+ 
++	.pushsection .data.rel.ro, "aw"
+ L(ipred_z2_fill1_tbl):
+-        .hword L(ipred_z2_fill1_tbl) - 640b
+-        .hword L(ipred_z2_fill1_tbl) - 320b
+-        .hword L(ipred_z2_fill1_tbl) - 160b
+-        .hword L(ipred_z2_fill1_tbl) -  80b
+-        .hword L(ipred_z2_fill1_tbl) -  40b
++        .xword 640b
++        .xword 320b
++        .xword 160b
++        .xword  80b
++        .xword  40b
++	.popsection
+ endfunc
+ 
+ function ipred_z2_fill2_16bpc_neon, export=1
+@@ -3432,11 +3454,11 @@ endfunc
+ //                                const int dy, const int max_base_y);
+ function ipred_z3_fill1_16bpc_neon, export=1
+         clz             w9,  w4
+-        adr             x8,  L(ipred_z3_fill1_tbl)
++        adrp            x8,  L(ipred_z3_fill1_tbl)
++        add             x8,  x8, :lo12: L(ipred_z3_fill1_tbl)
+         sub             w9,  w9,  #25
+-        ldrh            w9,  [x8, w9, uxtw #1]
++        ldr             x8,  [x8, w9, uxtw #3]
+         add             x10, x2,  w6,  uxtw #1    // left[max_base_y]
+-        sub             x8,  x8,  w9,  uxtw
+         ld1r            {v31.8h}, [x10]           // padding
+         mov             w7,  w5
+         mov             w15, #64
+@@ -3638,17 +3660,20 @@ function ipred_z3_fill1_16bpc_neon, export=1
+ 9:
+         ret
+ 
++	.pushsection .data.rel.ro, "aw"
+ L(ipred_z3_fill1_tbl):
+-        .hword L(ipred_z3_fill1_tbl) - 640b
+-        .hword L(ipred_z3_fill1_tbl) - 320b
+-        .hword L(ipred_z3_fill1_tbl) - 160b
+-        .hword L(ipred_z3_fill1_tbl) -  80b
+-        .hword L(ipred_z3_fill1_tbl) -  40b
++        .xword 640b
++        .xword 320b
++        .xword 160b
++        .xword  80b
++        .xword  40b
++	.popsection
+ endfunc
+ 
+ function ipred_z3_fill_padding_neon, export=0
+         cmp             w3,  #8
+-        adr             x8,  L(ipred_z3_fill_padding_tbl)
++        adrp            x8,  L(ipred_z3_fill_padding_tbl)
++        add             x8,  x8, :lo12: L(ipred_z3_fill_padding_tbl)
+         b.gt            L(ipred_z3_fill_padding_wide)
+         // w3 = remaining width, w4 = constant height
+         mov             w12, w4
+@@ -3659,10 +3684,11 @@ function ipred_z3_fill_padding_neon, export=0
+         // power of two in the remaining width, and repeating.
+         clz             w9,  w3
+         sub             w9,  w9,  #25
+-        ldrh            w9,  [x8, w9, uxtw #1]
+-        sub             x9,  x8,  w9,  uxtw
++        ldr             x9,  [x8, w9, uxtw #3]
+         br              x9
+ 
++20:
++        AARCH64_VALID_JUMP_TARGET
+ 2:
+         st1             {v31.s}[0], [x0],  x1
+         subs            w4,  w4,  #4
+@@ -3681,6 +3707,8 @@ function ipred_z3_fill_padding_neon, export=0
+         mov             w4,  w12
+         b               1b
+ 
++40:
++        AARCH64_VALID_JUMP_TARGET
+ 4:
+         st1             {v31.4h}, [x0],  x1
+         subs            w4,  w4,  #4
+@@ -3699,10 +3727,11 @@ function ipred_z3_fill_padding_neon, export=0
+         mov             w4,  w12
+         b               1b
+ 
+-8:
+-16:
+-32:
+-64:
++80:
++160:
++320:
++640:
++        AARCH64_VALID_JUMP_TARGET
+         st1             {v31.8h}, [x0],  x1
+         subs            w4,  w4,  #4
+         st1             {v31.8h}, [x13], x1
+@@ -3723,13 +3752,15 @@ function ipred_z3_fill_padding_neon, export=0
+ 9:
+         ret
+ 
++	.pushsection .data.rel.ro, "aw"
+ L(ipred_z3_fill_padding_tbl):
+-        .hword L(ipred_z3_fill_padding_tbl) - 64b
+-        .hword L(ipred_z3_fill_padding_tbl) - 32b
+-        .hword L(ipred_z3_fill_padding_tbl) - 16b
+-        .hword L(ipred_z3_fill_padding_tbl) -  8b
+-        .hword L(ipred_z3_fill_padding_tbl) -  4b
+-        .hword L(ipred_z3_fill_padding_tbl) -  2b
++        .xword 640b
++        .xword 320b
++        .xword 160b
++        .xword  80b
++        .xword  40b
++        .xword  20b
++	.popsection
+ 
+ L(ipred_z3_fill_padding_wide):
+         // Fill a WxH rectangle with padding, with W > 8.
+@@ -3880,13 +3911,13 @@ function ipred_filter_\bpc\()bpc_neon
          add             x6,  x6,  w5, uxtw
          ld1             {v16.8b, v17.8b, v18.8b, v19.8b}, [x6], #32
          clz             w9,  w3
@@ -404,7 +577,7 @@ Index: src/arm/64/ipred16.S
          sxtl            v18.8h,  v18.8b
          sxtl            v19.8h,  v19.8b
          add             x6,  x0,  x1
-@@ -4160,11 +4178,13 @@ function ipred_filter_\bpc\()bpc_neon
+@@ -4160,11 +4191,13 @@ function ipred_filter_\bpc\()bpc_neon
  9:
          ret
  
@@ -422,7 +595,7 @@ Index: src/arm/64/ipred16.S
  endfunc
  .endm
  
-@@ -4184,11 +4204,11 @@ endfunc
+@@ -4184,11 +4217,11 @@ endfunc
  function pal_pred_16bpc_neon, export=1
          ld1             {v30.8h}, [x2]
          clz             w9,  w4
@@ -437,7 +610,7 @@ Index: src/arm/64/ipred16.S
          br              x6
  40:
          AARCH64_VALID_JUMP_TARGET
-@@ -4357,12 +4377,14 @@ function pal_pred_16bpc_neon, export=1
+@@ -4357,12 +4390,14 @@ function pal_pred_16bpc_neon, export=1
          b.gt            64b
          ret
  
@@ -457,7 +630,7 @@ Index: src/arm/64/ipred16.S
  endfunc
  
  // void ipred_cfl_128_16bpc_neon(pixel *dst, const ptrdiff_t stride,
-@@ -4373,12 +4395,12 @@ endfunc
+@@ -4373,12 +4408,12 @@ endfunc
  function ipred_cfl_128_16bpc_neon, export=1
          dup             v31.8h,  w7   // bitdepth_max
          clz             w9,  w3
@@ -473,7 +646,7 @@ Index: src/arm/64/ipred16.S
          add             x6,  x0,  x1
          lsl             x1,  x1,  #1
          movi            v30.8h,  #0
-@@ -4510,12 +4532,14 @@ L(ipred_cfl_splat_w16):
+@@ -4510,12 +4545,14 @@ L(ipred_cfl_splat_w16):
          b.gt            1b
          ret
  
@@ -492,7 +665,7 @@ Index: src/arm/64/ipred16.S
  endfunc
  
  // void ipred_cfl_top_16bpc_neon(pixel *dst, const ptrdiff_t stride,
-@@ -4526,12 +4550,12 @@ endfunc
+@@ -4526,12 +4563,12 @@ endfunc
  function ipred_cfl_top_16bpc_neon, export=1
          dup             v31.8h,  w7   // bitdepth_max
          clz             w9,  w3
@@ -508,7 +681,7 @@ Index: src/arm/64/ipred16.S
          add             x6,  x0,  x1
          lsl             x1,  x1,  #1
          movi            v30.8h,  #0
-@@ -4569,11 +4593,13 @@ function ipred_cfl_top_16bpc_neon, export=1
+@@ -4569,11 +4606,13 @@ function ipred_cfl_top_16bpc_neon, export=1
          dup             v0.8h,   v0.h[0]
          b               L(ipred_cfl_splat_w16)
  
@@ -526,7 +699,7 @@ Index: src/arm/64/ipred16.S
  endfunc
  
  // void ipred_cfl_left_16bpc_neon(pixel *dst, const ptrdiff_t stride,
-@@ -4586,15 +4612,15 @@ function ipred_cfl_left_16bpc_neon, export=1
+@@ -4586,15 +4625,15 @@ function ipred_cfl_left_16bpc_neon, export=1
          sub             x2,  x2,  w4, uxtw #1
          clz             w9,  w3
          clz             w8,  w4
@@ -548,7 +721,7 @@ Index: src/arm/64/ipred16.S
          add             x6,  x0,  x1
          lsl             x1,  x1,  #1
          movi            v30.8h,  #0
-@@ -4636,11 +4662,13 @@ L(ipred_cfl_left_h32):
+@@ -4636,11 +4675,13 @@ L(ipred_cfl_left_h32):
          dup             v0.8h,   v0.h[0]
          br              x9
  
@@ -566,7 +739,7 @@ Index: src/arm/64/ipred16.S
  endfunc
  
  // void ipred_cfl_16bpc_neon(pixel *dst, const ptrdiff_t stride,
-@@ -4656,16 +4684,15 @@ function ipred_cfl_16bpc_neon, export=1
+@@ -4656,16 +4697,15 @@ function ipred_cfl_16bpc_neon, export=1
          clz             w9,  w3
          clz             w6,  w4
          dup             v16.4s, w8               // width + height
@@ -587,7 +760,7 @@ Index: src/arm/64/ipred16.S
          ushr            v16.4s,  v16.4s,  #1     // (width + height) >> 1
          dup             v17.4s,  w8              // -ctz(width + height)
          add             x6,  x0,  x1
-@@ -4789,15 +4816,17 @@ L(ipred_cfl_w32):
+@@ -4789,15 +4829,17 @@ L(ipred_cfl_w32):
          dup             v0.8h,   v0.h[0]
          b               L(ipred_cfl_splat_w16)
  
@@ -613,7 +786,7 @@ Index: src/arm/64/ipred16.S
  endfunc
  
  // void cfl_ac_420_16bpc_neon(int16_t *const ac, const pixel *const ypx,
-@@ -4806,14 +4835,14 @@ endfunc
+@@ -4806,14 +4848,14 @@ endfunc
  function ipred_cfl_ac_420_16bpc_neon, export=1
          clz             w8,  w5
          lsl             w4,  w4,  #2
@@ -631,7 +804,7 @@ Index: src/arm/64/ipred16.S
          sub             w8,  w6,  w4         // height - h_pad
          rbit            w9,  w5              // rbit(width)
          rbit            w10, w6              // rbit(height)
-@@ -4945,9 +4974,9 @@ L(ipred_cfl_ac_420_w8_hpad):
+@@ -4945,9 +4987,9 @@ L(ipred_cfl_ac_420_w8_hpad):
  
  L(ipred_cfl_ac_420_w16):
          AARCH64_VALID_JUMP_TARGET
@@ -644,7 +817,7 @@ Index: src/arm/64/ipred16.S
          br              x7
  
  L(ipred_cfl_ac_420_w16_wpad0):
-@@ -5124,17 +5153,19 @@ L(ipred_cfl_ac_420_w16_hpad):
+@@ -5124,17 +5166,19 @@ L(ipred_cfl_ac_420_w16_hpad):
          lsl             w6,  w6,  #2
          b               L(ipred_cfl_ac_420_w4_calc_subtract_dc)
  
@@ -672,7 +845,7 @@ Index: src/arm/64/ipred16.S
  endfunc
  
  // void cfl_ac_422_16bpc_neon(int16_t *const ac, const pixel *const ypx,
-@@ -5143,14 +5174,14 @@ endfunc
+@@ -5143,14 +5187,14 @@ endfunc
  function ipred_cfl_ac_422_16bpc_neon, export=1
          clz             w8,  w5
          lsl             w4,  w4,  #2
@@ -690,7 +863,7 @@ Index: src/arm/64/ipred16.S
          sub             w8,  w6,  w4         // height - h_pad
          rbit            w9,  w5              // rbit(width)
          rbit            w10, w6              // rbit(height)
-@@ -5251,9 +5282,9 @@ L(ipred_cfl_ac_422_w8_wpad):
+@@ -5251,9 +5295,9 @@ L(ipred_cfl_ac_422_w8_wpad):
  
  L(ipred_cfl_ac_422_w16):
          AARCH64_VALID_JUMP_TARGET
@@ -703,7 +876,7 @@ Index: src/arm/64/ipred16.S
          br              x7
  
  L(ipred_cfl_ac_422_w16_wpad0):
-@@ -5372,17 +5403,19 @@ L(ipred_cfl_ac_422_w16_wpad3):
+@@ -5372,17 +5416,19 @@ L(ipred_cfl_ac_422_w16_wpad3):
          mov             v1.16b,  v3.16b
          b               L(ipred_cfl_ac_420_w16_hpad)
  
@@ -731,7 +904,7 @@ Index: src/arm/64/ipred16.S
  endfunc
  
  // void cfl_ac_444_16bpc_neon(int16_t *const ac, const pixel *const ypx,
-@@ -5391,14 +5424,14 @@ endfunc
+@@ -5391,14 +5437,14 @@ endfunc
  function ipred_cfl_ac_444_16bpc_neon, export=1
          clz             w8,  w5
          lsl             w4,  w4,  #2
@@ -749,7 +922,7 @@ Index: src/arm/64/ipred16.S
          sub             w8,  w6,  w4         // height - h_pad
          rbit            w9,  w5              // rbit(width)
          rbit            w10, w6              // rbit(height)
-@@ -5507,10 +5540,11 @@ L(ipred_cfl_ac_444_w16_wpad):
+@@ -5507,10 +5553,11 @@ L(ipred_cfl_ac_444_w16_wpad):
  
  L(ipred_cfl_ac_444_w32):
          AARCH64_VALID_JUMP_TARGET
@@ -764,7 +937,7 @@ Index: src/arm/64/ipred16.S
          br              x7
  
  L(ipred_cfl_ac_444_w32_wpad0):
-@@ -5625,15 +5659,17 @@ L(ipred_cfl_ac_444_w32_hpad):
+@@ -5625,15 +5672,17 @@ L(ipred_cfl_ac_444_w32_hpad):
          lsl             w6,  w6,  #3
          b               L(ipred_cfl_ac_420_w4_calc_subtract_dc)
  
