@@ -38,15 +38,16 @@ Index: src/3rdparty/chromium/build/config/compiler/BUILD.gn
    if (use_qt && is_clang) {
      cflags += [
        "-Wno-unknown-attributes",
-@@ -398,6 +407,7 @@ config("compiler") {
+@@ -398,7 +407,7 @@ config("compiler") {
      }
  
      ldflags += [
+-      "-Wl,-z,noexecstack",
 +      "-Wl,-z,wxneeded",
-       "-Wl,-z,noexecstack",
        "-Wl,-z,relro",
      ]
-@@ -406,13 +416,8 @@ config("compiler") {
+ 
+@@ -406,13 +415,8 @@ config("compiler") {
        ldflags += [ "-Wl,-z,now" ]
      }
  
@@ -62,7 +63,7 @@ Index: src/3rdparty/chromium/build/config/compiler/BUILD.gn
      }
    }
  
-@@ -499,7 +504,7 @@ config("compiler") {
+@@ -499,7 +503,7 @@ config("compiler") {
      ldflags += [ "-Wl,-z,keep-text-section-prefix" ]
    }
  
@@ -71,7 +72,7 @@ Index: src/3rdparty/chromium/build/config/compiler/BUILD.gn
      cflags += [ "-fcrash-diagnostics-dir=" + clang_diagnostic_dir ]
  
      cflags += [
-@@ -782,7 +787,7 @@ config("compiler_cpu_abi") {
+@@ -782,7 +786,7 @@ config("compiler_cpu_abi") {
          ]
        }
      } else if (current_cpu == "arm") {
@@ -80,7 +81,7 @@ Index: src/3rdparty/chromium/build/config/compiler/BUILD.gn
          cflags += [ "--target=arm-linux-gnueabihf" ]
          ldflags += [ "--target=arm-linux-gnueabihf" ]
        }
-@@ -796,7 +801,7 @@ config("compiler_cpu_abi") {
+@@ -796,7 +800,7 @@ config("compiler_cpu_abi") {
          cflags += [ "-mtune=$arm_tune" ]
        }
      } else if (current_cpu == "arm64") {
@@ -89,7 +90,7 @@ Index: src/3rdparty/chromium/build/config/compiler/BUILD.gn
          cflags += [ "--target=aarch64-linux-gnu" ]
          ldflags += [ "--target=aarch64-linux-gnu" ]
        }
-@@ -1454,11 +1459,6 @@ config("default_warnings") {
+@@ -1454,11 +1458,6 @@ config("default_warnings") {
        cflags += [ "-Wundeclared-selector" ]
      }
  
@@ -101,7 +102,7 @@ Index: src/3rdparty/chromium/build/config/compiler/BUILD.gn
  
      if (!is_clang) {
        cflags_cc += [
-@@ -1575,9 +1575,6 @@ config("default_warnings") {
+@@ -1575,9 +1574,6 @@ config("default_warnings") {
  
            # TODO(https://crbug.com/1028110): Evaluate and possible enable.
            "-Wno-deprecated-copy",
@@ -111,7 +112,7 @@ Index: src/3rdparty/chromium/build/config/compiler/BUILD.gn
          ]
  
          cflags_c += [
-@@ -1589,7 +1586,7 @@ config("default_warnings") {
+@@ -1589,7 +1585,7 @@ config("default_warnings") {
            cflags += [ "-Wmax-tokens" ]
          } else {
            # TODO(https://crbug.com/1049569): Remove after Clang 87b235db.
@@ -120,7 +121,7 @@ Index: src/3rdparty/chromium/build/config/compiler/BUILD.gn
          }
        }
      }
-@@ -1725,7 +1722,7 @@ config("no_chromium_code") {
+@@ -1725,7 +1721,7 @@ config("no_chromium_code") {
        # suppressing them individually, we just blanket suppress them here.
        "-Wno-unused-variable",
      ]
@@ -129,7 +130,7 @@ Index: src/3rdparty/chromium/build/config/compiler/BUILD.gn
        cflags += [
          # TODO(https://crbug.com/1031169): Clean up and enable.
          "-Wno-misleading-indentation",
-@@ -1803,7 +1800,7 @@ config("thin_archive") {
+@@ -1803,7 +1799,7 @@ config("thin_archive") {
    # Mac and iOS use the mac-specific "libtool" command, not ar, which doesn't
    # have a "thin archive" mode (it does accept -T, but it means truncating
    # archive names to 16 characters, which is not what we want).
@@ -138,7 +139,7 @@ Index: src/3rdparty/chromium/build/config/compiler/BUILD.gn
      arflags = [ "-T" ]
    } else if (is_win && use_lld) {
      arflags = [ "/llvmlibthin" ]
-@@ -2244,7 +2241,7 @@ config("afdo_optimize_size") {
+@@ -2244,7 +2240,7 @@ config("afdo_optimize_size") {
  # between //base/allocator:tcmalloc and AFDO on GCC), so we provide a separate
  # config to allow AFDO to be disabled per-target.
  config("afdo") {
@@ -147,7 +148,7 @@ Index: src/3rdparty/chromium/build/config/compiler/BUILD.gn
      cflags = []
      if (clang_emit_debug_info_for_profiling) {
        # Add the following flags to generate debug info for profiling.
-@@ -2260,7 +2257,7 @@ config("afdo") {
+@@ -2260,7 +2256,7 @@ config("afdo") {
        cflags += [ "-fprofile-sample-use=${rebased_clang_sample_profile}" ]
        inputs = [ _clang_sample_profile ]
      }
@@ -156,7 +157,7 @@ Index: src/3rdparty/chromium/build/config/compiler/BUILD.gn
      cflags = [ "-fauto-profile=${auto_profile_path}" ]
      inputs = [ auto_profile_path ]
    }
-@@ -2344,11 +2341,11 @@ config("symbols") {
+@@ -2344,11 +2340,11 @@ config("symbols") {
      # flag, so we can use use -g1 for pnacl and nacl-clang compiles.
      # gcc nacl is is_nacl && !is_clang, pnacl and nacl-clang are && is_clang.
      if (!is_nacl || is_clang) {
