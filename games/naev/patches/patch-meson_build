@@ -1,11 +1,10 @@
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -195,17 +196,6 @@ if buildExec.disabled() == false
-    naev_deps += blas
+@@ -196,17 +196,6 @@ if buildExec.disabled() == false
  
     ### Soft deps (required: false)
--
+ 
 -   # libdl can be used for debugging stack traces. On non-Windows platforms, GLAD relies on dlopen().
 -   glad_requires_libdl = not cc.has_header('windows.h')
 -   if glad_requires_libdl or debug
@@ -16,6 +15,7 @@ Index: meson.build
 -       naev_deps += subproject('dlfcn-win32').get_variable('dl_dep')
 -     endif
 -   endif
- 
+-
     if get_option('debug')
        libbacktrace = cc.find_library('backtrace', has_headers: 'backtrace.h', required: false)
+       if not libbacktrace.found() or 'backtrace' in forced_fallbacks or 'libbacktrace' in forced_fallbacks or get_option('wrap_mode') == 'forcefallback'
