@@ -1,6 +1,7 @@
 COMMENT =		readthedocs.org theme for Sphinx
 
 MODPY_EGG_VERSION =	1.2.2
+REVISION =		0
 
 GH_ACCOUNT =		readthedocs
 GH_PROJECT =		sphinx_rtd_theme
@@ -17,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 BUILD_DEPEMDS =		textproc/py-sphinx-contrib/jquery${MODPY_FLAVOR}
+RUN_DEPEMDS =		textproc/py-sphinx-contrib/jquery${MODPY_FLAVOR}
 
 MODPY_PYBUILD =		setuptools
 MASTER_SITES0 =		${MASTER_SITE_DEBIAN:=main/s/sphinx-rtd-theme/}
