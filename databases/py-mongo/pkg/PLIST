@@ -39,13 +39,14 @@ lib/python${MODPY_VERSION}/site-packages/bson/${MODPY_PYCACHE}son.${MODPY_PYC_MA
 lib/python${MODPY_VERSION}/site-packages/bson/${MODPY_PYCACHE}son.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bson/${MODPY_PYCACHE}timestamp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bson/${MODPY_PYCACHE}timestamp.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/bson/${MODPY_PYCACHE}typings.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/bson/${MODPY_PYCACHE}typings.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bson/${MODPY_PYCACHE}tz_util.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bson/${MODPY_PYCACHE}tz_util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bson/_helpers.py
 lib/python${MODPY_VERSION}/site-packages/bson/binary.py
 lib/python${MODPY_VERSION}/site-packages/bson/code.py
 lib/python${MODPY_VERSION}/site-packages/bson/codec_options.py
-lib/python${MODPY_VERSION}/site-packages/bson/codec_options.pyi
 lib/python${MODPY_VERSION}/site-packages/bson/datetime_ms.py
 lib/python${MODPY_VERSION}/site-packages/bson/dbref.py
 lib/python${MODPY_VERSION}/site-packages/bson/decimal128.py
@@ -60,6 +61,7 @@ lib/python${MODPY_VERSION}/site-packages/bson/raw_bson.py
 lib/python${MODPY_VERSION}/site-packages/bson/regex.py
 lib/python${MODPY_VERSION}/site-packages/bson/son.py
 lib/python${MODPY_VERSION}/site-packages/bson/timestamp.py
+lib/python${MODPY_VERSION}/site-packages/bson/typings.py
 lib/python${MODPY_VERSION}/site-packages/bson/tz_util.py
 lib/python${MODPY_VERSION}/site-packages/gridfs/
 lib/python${MODPY_VERSION}/site-packages/gridfs/__init__.py
@@ -94,6 +96,8 @@ lib/python${MODPY_VERSION}/site-packages/pymongo/${MODPY_PYCACHE}auth.${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/pymongo/${MODPY_PYCACHE}auth.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymongo/${MODPY_PYCACHE}auth_aws.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pymongo/${MODPY_PYCACHE}auth_aws.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pymongo/${MODPY_PYCACHE}auth_oidc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pymongo/${MODPY_PYCACHE}auth_oidc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymongo/${MODPY_PYCACHE}bulk.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pymongo/${MODPY_PYCACHE}bulk.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymongo/${MODPY_PYCACHE}change_stream.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -203,6 +207,7 @@ lib/python${MODPY_VERSION}/site-packages/pymongo/_version.py
 lib/python${MODPY_VERSION}/site-packages/pymongo/aggregation.py
 lib/python${MODPY_VERSION}/site-packages/pymongo/auth.py
 lib/python${MODPY_VERSION}/site-packages/pymongo/auth_aws.py
+lib/python${MODPY_VERSION}/site-packages/pymongo/auth_oidc.py
 lib/python${MODPY_VERSION}/site-packages/pymongo/bulk.py
 lib/python${MODPY_VERSION}/site-packages/pymongo/change_stream.py
 lib/python${MODPY_VERSION}/site-packages/pymongo/client_options.py
