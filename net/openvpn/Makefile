@@ -1,6 +1,7 @@
 COMMENT=	easy-to-use, robust, and highly configurable VPN
 
 DISTNAME=	openvpn-2.6.5
+REVISION=	0
 
 CATEGORIES=	net security
 
@@ -24,6 +25,7 @@ CONFIGURE_STYLE= gnu
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}"
+CONFIGURE_ARGS+=--with-openssl-engine=no
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
