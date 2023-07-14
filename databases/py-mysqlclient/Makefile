@@ -1,37 +1,38 @@
-COMMENT =		Python interface to MySQL
+COMMENT=	Python interface to MySQL
 
-MODPY_EGG_VERSION =	2.1.1
-DISTNAME =		mysqlclient-${MODPY_EGG_VERSION}
-PKGNAME =		py-${DISTNAME}
-REVISION =		1
+MODPY_EGG_VERSION=	2.2.0
+DISTNAME=	mysqlclient-${MODPY_EGG_VERSION}
+PKGNAME=	py-${DISTNAME}
 
-CATEGORIES =		databases
+CATEGORIES=	databases
 
 # https://github.com/PyMySQL/mysqlclient-python/
-HOMEPAGE =		https://mysqlclient.readthedocs.io/
+HOMEPAGE=	https://mysqlclient.readthedocs.io/
 
 # GPLv2+
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${MODPY_WANTLIB} mariadb pthread
 
-MASTER_SITES =		${MASTER_SITE_PYPI:=m/mysqlclient/}
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
 
-COMPILER =		base-clang ports-gcc
-COMPILER_LANGS =	c
+MODULES=	databases/mariadb \
+		lang/python
+MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
-MODULES =		lang/python
-MODPY_PYBUILD =		setuptools
-MODPY_PYTEST_ARGS =	tests
+FLAVORS=	python3
+FLAVOR=		python3
 
-FLAVORS =		python3
-FLAVOR =		python3
+LIB_DEPENDS=	databases/mariadb
 
-LIB_DEPENDS =		databases/mariadb
+MODMARIADB_TEST_CMD= ${MODPY_TEST_TARGET}
+TEST_ENV=	TESTDB=${WRKSRC}/tests/default.cnf
+TEST_DEPENDS=	databases/mariadb \
+		devel/py-mock${MODPY_FLAVOR}
 
-# You must setup a default.cnf file config and a MySQL server
-TEST_IS_INTERACTIVE =	Yes
-TEST_DEPENDS =		databases/mariadb \
-			devel/py-mock${MODPY_FLAVOR}
+pre-test:
+	printf '[MySQLdb-tests]\nhost = localhost\nport = ${MODMARIADB_TEST_SOCKET}\ndatabase = test\ndefault-character-set = utf8mb4\n' > ${WRKSRC}/tests/default.cnf
 
 .include <bsd.port.mk>
