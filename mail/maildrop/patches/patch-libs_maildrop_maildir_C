@@ -8,7 +8,7 @@ Index: libs/maildrop/maildir.C
  
  #if EXPLICITDIRSYNC
 -			int syncfd=open(dir, O_RDONLY);
-+			int syncfd=open(p, O_RDONLY);
++			int syncfd=open(dir.c_str(), O_RDONLY);
  
  			if (syncfd >= 0)
  			{

@@ -4,6 +4,7 @@ COMMENT-utils=		quota tools for the Courier mail suite
 V=			3.1.5
 DISTNAME=		maildrop-$V
 PKGNAME-main=		maildrop-$V
+REVISION=		0
 FULLPKGNAME-utils=	courier-utils-$V
 FULLPKGPATH-utils=	mail/maildrop,-utils
 CATEGORIES=		mail
@@ -80,11 +81,11 @@ CONFIGURE_ARGS+=	--without-trashquota
 CONFIGURE_ARGS+=	--with-trashquota
 .endif
 
-LIB_DEPENDS=		devel/libidn \
+LIB_DEPENDS=		devel/libidn2 \
 			mail/courier-unicode>=2.1 \
 			devel/pcre2
 
-WANTLIB =		c courier-unicode iconv idn intl pcre2-8
+WANTLIB =		c courier-unicode iconv idn2 pcre2-8
 
 WANTLIB-main=		${WANTLIB} gdbm m ${COMPILER_LIBCXX} pcre2-8 courierauth
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
