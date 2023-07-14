@@ -1,6 +1,7 @@
 COMMENT =	ECDSA encoding and decoding using OpenSSL
 
 DISTNAME =	Crypt-OpenSSL-ECDSA-0.10
+REVISION =	0
 
 CATEGORIES =	security
 
