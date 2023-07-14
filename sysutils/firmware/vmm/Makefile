@@ -51,22 +51,22 @@ MAKE_FLAGS=	V=1 \
 		PYTHON="${MODPY_BIN}"
 
 post-extract:
-	mv ${WRKDIR}/sgabios-* ${WRKDIR}/sgabios
+	mv ${WRKDIR}/sgabios-* ${WRKSRC}/sgabios
 	cp ${FILESDIR}/config ${WRKSRC}/.config
 
 post-build:
 	sed -i 's,^#define BUILD_CL.*,#define BUILD_CL "${SB_VER}",' \
-	    ${WRKDIR}/sgabios/sgabios.S
-	cd ${WRKDIR}/sgabios; env ${MAKE_ENV} ${MAKE_PROGRAM} \
+	    ${WRKSRC}/sgabios/sgabios.S
+	cd ${WRKSRC}/sgabios; env ${MAKE_ENV} ${MAKE_PROGRAM} \
 	    BUILD_USER='\"_<vmm\"' BUILD_HOST='\"OpenBSD>\"' LD="ld.bfd"
 	dd if=/dev/zero of=${WRKDIR}/space bs=1 count=196608
-	cat ${WRKDIR}/sgabios/sgabios.bin ${WRKDIR}/space \
+	cat ${WRKSRC}/sgabios/sgabios.bin ${WRKDIR}/space \
 	    ${WRKSRC}/out/bios.bin > ${WRKDIR}/vmm-bios
 	printf 'vmm-bios includes SeaBIOS (LGPLv3) and ' > ${WRKDIR}/vmm-bios-license
 	printf 'SGABIOS (Apache License 2.0\\n-----\\n' >> ${WRKDIR}/vmm-bios-license
 	cat ${WRKSRC}/COPYING.LESSER >> ${WRKDIR}/vmm-bios-license
 	printf '-----\\n' >> ${WRKDIR}/vmm-bios-license
-	cat ${WRKDIR}/sgabios/COPYING >> ${WRKDIR}/vmm-bios-license
+	cat ${WRKSRC}/sgabios/COPYING >> ${WRKDIR}/vmm-bios-license
 	printf '-----\\n' >> ${WRKDIR}/vmm-bios-license
 
 post-build:

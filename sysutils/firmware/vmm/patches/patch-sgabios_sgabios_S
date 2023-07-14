@@ -1,7 +1,7 @@
-Index: ../sgabios/sgabios.S
---- ../sgabios/sgabios.S.orig	Wed Apr 21 20:03:40 2010
-+++ ../sgabios/sgabios.S	Sun May 16 20:29:58 2021
-@@ -2360,6 +2360,7 @@ resize_end:
+Index: sgabios/sgabios.S
+--- sgabios/sgabios.S.orig
++++ sgabios/sgabios.S
+@@ -2362,6 +2362,7 @@ resize_end:
    popw %ds                             /* ds = cs */
    call get_byte                        /* flush any remaining "wrong" input */
    jnz resize_end
@@ -9,7 +9,7 @@ Index: ../sgabios/sgabios.S
    call send_crlf                       /* place cursor on start of last line */
    movw $mfg_string, %si
    call send_asciz_out
-@@ -2370,27 +2371,34 @@ resize_end:
+@@ -2372,27 +2373,34 @@ resize_end:
    movw $long_version, %si
    call send_asciz_out
    call send_crlf
@@ -44,7 +44,7 @@ Index: ../sgabios/sgabios.S
    movb $3, BDA_MODE_NUM
    movb $0x29, BDA_MODE_SEL
    movw $VGA_IO_BASE, BDA_6845_ADDR
-@@ -2418,6 +2426,7 @@ post_bda_init_tail:
+@@ -2420,6 +2428,7 @@ post_bda_init_tail:
    movw $ebda_info, %si
    call send_asciz_out
    movw %cs:sgabios_ebda_logbuf_offset, %ax
@@ -52,7 +52,7 @@ Index: ../sgabios/sgabios.S
    xchgb %ah, %al
    call send_number
    movb $0x20, %al
-@@ -2425,6 +2434,7 @@ post_bda_init_tail:
+@@ -2427,6 +2436,7 @@ post_bda_init_tail:
    movb %ah, %al
    call send_number
    call send_crlf

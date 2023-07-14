@@ -16,8 +16,6 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c jpeg lzma m pthread tiff z zstd
 
-WRKDIST=	${WRKDIR}/spandsp-0.0.6
-
 LIB_DEPENDS+=	graphics/tiff
 
 CONFIGURE_STYLE= gnu
