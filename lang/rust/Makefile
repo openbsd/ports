@@ -14,17 +14,16 @@ COMMENT-clippy =	Rust linter
 COMMENT-rustfmt =	Rust code formatter
 COMMENT-src =		Rust source component
 
-V =			1.70.0
-REVISION =		0
+V =			1.71.0
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
-BV-aarch64 =		1.70.0-20230602
-BV-amd64 =		1.70.0-20230608
-BV-i386 =		1.70.0-20230601
+BV-aarch64 =		1.71.0-20230712
+BV-amd64 =		1.71.0-20230711
+BV-i386 =		1.71.0-20230711
 BV-powerpc64 =		1.65.0-20221213
 BV-riscv64 =		1.70.0-20230702
-BV-sparc64 =		1.69.0-20230522
+BV-sparc64 =		1.70.0p0-20230710
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
@@ -120,6 +119,7 @@ LIBRUST_REHASH +=	rustc_std_workspace_core
 LIBRUST_REHASH +=	rustc_std_workspace_std
 LIBRUST_REHASH +=	std
 LIBRUST_REHASH +=	std_detect
+LIBRUST_REHASH +=	sysroot
 LIBRUST_REHASH +=	test
 LIBRUST_REHASH +=	unicode_width
 LIBRUST_REHASH +=	unwind
@@ -145,6 +145,8 @@ BUILD_DEPENDS +=	devel/gdb
 
 .if !${USE_EMB_LLVM:L:Myes}
 BUILD_DEPENDS +=	devel/llvm
+.else
+WANTLIB-main +=		execinfo
 .endif
 
 LIB_DEPENDS-main +=	${LIB_DEPENDS} \
@@ -291,10 +293,9 @@ do-install:
 	done
 	# install cargo bash-completion
 	mkdir -p ${PREFIX}/share/bash-completion/completions
-	mv ${PREFIX}${SYSCONFDIR}/bash_completion.d/cargo \
+	mv ${PREFIX}/src/etc/bash_completion.d/cargo \
 		${PREFIX}/share/bash-completion/completions
-	rmdir ${PREFIX}${SYSCONFDIR}/bash_completion.d \
-		${PREFIX}${SYSCONFDIR}
+	-rmdir -p ${PREFIX}/src/etc/bash_completion.d
 	# compile python stuff
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${PREFIX}/lib/rustlib/etc
 

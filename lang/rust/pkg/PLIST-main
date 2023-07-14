@@ -5,7 +5,7 @@
 @bin bin/rustdoc
 @so lib/librustc_driver-${LIBRUST_HASH}11.so
 @so lib/libstd-${LIBRUST_HASH}15.so
-@so lib/libtest-${LIBRUST_HASH}17.so
+@so lib/libtest-${LIBRUST_HASH}18.so
 lib/rustlib/
 lib/rustlib/${TRIPLE_ARCH}/
 lib/rustlib/${TRIPLE_ARCH}/lib/
@@ -32,10 +32,11 @@ lib/rustlib/${TRIPLE_ARCH}/lib/librustc_std_workspace_std-${LIBRUST_HASH}14.rlib
 lib/rustlib/${TRIPLE_ARCH}/lib/libstd-${LIBRUST_HASH}15.rlib
 @so lib/rustlib/${TRIPLE_ARCH}/lib/libstd-${LIBRUST_HASH}15.so
 lib/rustlib/${TRIPLE_ARCH}/lib/libstd_detect-${LIBRUST_HASH}16.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/libtest-${LIBRUST_HASH}17.rlib
-@so lib/rustlib/${TRIPLE_ARCH}/lib/libtest-${LIBRUST_HASH}17.so
-lib/rustlib/${TRIPLE_ARCH}/lib/libunicode_width-${LIBRUST_HASH}18.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/libunwind-${LIBRUST_HASH}19.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libsysroot-${LIBRUST_HASH}17.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libtest-${LIBRUST_HASH}18.rlib
+@so lib/rustlib/${TRIPLE_ARCH}/lib/libtest-${LIBRUST_HASH}18.so
+lib/rustlib/${TRIPLE_ARCH}/lib/libunicode_width-${LIBRUST_HASH}19.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libunwind-${LIBRUST_HASH}1a.rlib
 @bin libexec/cargo-credential-1password
 @man man/man1/cargo-add.1
 @man man/man1/cargo-bench.1
