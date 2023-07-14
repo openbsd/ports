@@ -3,7 +3,7 @@ COMMENT=	anonymity service using onion routing
 DISTNAME=	tor-0.4.7.13
 CATEGORIES=	net
 HOMEPAGE=	https://www.torproject.org/
-REVISION=	0
+REVISION=	1
 
 MAINTAINER=	Pascal Stumpf <pascal@stumpf.co>
 
@@ -24,6 +24,7 @@ CONFIGURE_ARGS=	--with-ssl-dir=/usr \
 		--disable-lzma \
 		--disable-zstd
 CONFIGURE_ENV+=ac_cv_member_struct_ssl_method_st_get_cipher_by_char=no
+CFLAGS+=	-DDISABLE_ENGINES
 
 LIB_DEPENDS=	devel/libevent2
 
