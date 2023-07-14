@@ -9,6 +9,7 @@ V =		3.5.2
 GODOTSTEAM_V =	g35-s155-gs3171
 DISTNAME =	godot-${V}-stable
 PKGNAME =	godot-${V}
+REVISION =	0
 
 CATEGORIES =	games
 
@@ -124,7 +125,7 @@ post-extract:
 	cp -R	${FILESDIR}/sndio ${WRKDIST}/drivers
 	cp	${FILESDIR}/ujoy/joypad_openbsd.{cpp,h} \
 		${WRKDIST}/platform/x11/
-	ln -sf	${WRKDIR}/GodotSteam-${GODOTSTEAM_V} ${WRKSRC}/GodotSteam
+	cp -R	${WRKDIR}/GodotSteam-${GODOTSTEAM_V} ${WRKSRC}/GodotSteam
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/misc/dist/linux/*.desktop
