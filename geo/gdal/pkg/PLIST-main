@@ -187,7 +187,9 @@ share/gdal/gdalicon.png
 share/gdal/gdalinfo_output.schema.json
 share/gdal/gdalmdiminfo_output.schema.json
 share/gdal/gdalvrt.xsd
+share/gdal/gfs.xsd
 share/gdal/gml_registry.xml
+share/gdal/gml_registry.xsd
 share/gdal/gmlasconf.xml
 share/gdal/gmlasconf.xsd
 share/gdal/grib2_center.csv
