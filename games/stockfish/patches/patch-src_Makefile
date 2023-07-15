@@ -12,7 +12,7 @@ Index: src/Makefile
  BINDIR = $(PREFIX)/bin
  
  ### Built-in benchmark for pgo-builds
-@@ -364,8 +364,8 @@ ifeq ($(COMP),)
+@@ -376,8 +376,8 @@ ifeq ($(COMP),)
  endif
  
  ifeq ($(COMP),gcc)
@@ -20,6 +20,6 @@ Index: src/Makefile
 -	CXX=g++
 +	comp=${CC}
 +	CXX?=g++
- 	CXXFLAGS += -pedantic -Wextra -Wshadow
+ 	CXXFLAGS += -pedantic -Wextra -Wshadow -Wmissing-declarations
  
  	ifeq ($(arch),$(filter $(arch),armv7 armv8 riscv64))

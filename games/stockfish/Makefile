@@ -4,10 +4,10 @@ BROKEN-i386 =	problems with mmx intrinsics
 #               acc[k] = vec_add_16(acc[k], column[k]);
 # etc.etc.
 
-V =		15.1
+V =		16
 COMMENT =	open source chess engine
 PKGNAME =	stockfish-${V}
-NNUE =		nn-ad9b42354671.nnue
+NNUE =		nn-5af11540bbfe.nnue
 CATEGORIES =	games
 
 HOMEPAGE =	https://stockfishchess.org/
