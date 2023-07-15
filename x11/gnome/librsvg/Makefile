@@ -2,6 +2,8 @@ PORTROACH=		skipv:2.56.90
 
 COMMENT=		SAX-based render library for SVG files
 
+# !!! /!\ make sure both distinfo are updated on version change:
+# make makesum && make RUST_ARCHS= makesum
 GNOME_PROJECT=		librsvg
 STABLE_VERSION=		2.56.2
 OLD_VERSION=		2.40.21
