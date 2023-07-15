@@ -1,3 +1,5 @@
+NOT_FOR_ARCHS +=	riscv64
+
 COMMENT =	high performance Common Lisp compiler
 
 V =		2.3.6
