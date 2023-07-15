@@ -8,6 +8,7 @@ V=		1.8.3
 DISTNAME=	ldns-$V
 PKGNAME-main=	libldns-$V
 PKGNAME-drill=	drill-$V
+REVISION=	0
 
 SHARED_LIBS +=	ldns                 8.0      # 7.0
 
@@ -32,6 +33,7 @@ USE_GMAKE=	Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-drill \
 			--with-examples \
+			--disable-gost \
 			--disable-ldns-config \
 			--with-trust-anchor=/var/unbound/db/root.key \
 			--with-ca-file=/etc/ssl/cert.pem
@@ -42,6 +44,7 @@ CONFIGURE_ARGS=		--with-drill \
 CONFIGURE_ARGS+=	--disable-dane-ta-usage
 
 CONFIGURE_ENV+=		ac_cv_prog_doxygen= \
+			ac_cv_header_openssl_engine_h= \
 			CPPFLAGS=-DOPENSSL_NO_ENGINE
 
 NO_TEST=		Yes
