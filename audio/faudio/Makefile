@@ -1,5 +1,5 @@
 # versions are in sync with FNA versions
-V =		23.05
+V =		23.07
 COMMENT =	XAudio reimplementation for open platforms
 DISTNAME =	fna-${V:S/.//g}
 PKGNAME =	faudio-${V}
