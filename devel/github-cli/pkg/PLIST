@@ -13,6 +13,9 @@
 @man man/man1/gh-auth-token.1
 @man man/man1/gh-auth.1
 @man man/man1/gh-browse.1
+@man man/man1/gh-cache-delete.1
+@man man/man1/gh-cache-list.1
+@man man/man1/gh-cache.1
 @man man/man1/gh-codespace-code.1
 @man man/man1/gh-codespace-cp.1
 @man man/man1/gh-codespace-create.1
@@ -139,6 +142,10 @@
 @man man/man1/gh-repo-unarchive.1
 @man man/man1/gh-repo-view.1
 @man man/man1/gh-repo.1
+@man man/man1/gh-ruleset-check.1
+@man man/man1/gh-ruleset-list.1
+@man man/man1/gh-ruleset-view.1
+@man man/man1/gh-ruleset.1
 @man man/man1/gh-run-cancel.1
 @man man/man1/gh-run-delete.1
 @man man/man1/gh-run-download.1
