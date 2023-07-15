@@ -123,6 +123,7 @@ RUN_DEPENDS +=	${MODMOZ_RUN_DEPENDS}
 
 USE_GMAKE ?=	Yes
 
+#1626955 & #510629
 USE_NOBTCFI ?=	Yes
 
 # no --with-system-jpeg starting with fx 18, requires libjpeg-turbo because of bug 791305
@@ -130,6 +131,7 @@ USE_NOBTCFI ?=	Yes
 # no --with-system-cairo, removed in #1432751
 # no --with-system-png, apng support not bundled in
 # no --with-system-sqlite, option removed in #1611386 and we need to use bundled sqlite which has SQLITE_ENABLE_FTS3_TOKENIZER (#1252937)
+# no --with-system-dav1d, cf #1493397 comment 12
 # no --enable-system-hunspell, removed in #1460600
 
 AUTOCONF_VERSION =	2.13
