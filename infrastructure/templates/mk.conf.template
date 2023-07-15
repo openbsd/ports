@@ -1,4 +1,4 @@
-# $OpenBSD: mk.conf.template,v 1.33 2022/12/09 16:23:05 sthen Exp $
+# $OpenBSD: mk.conf.template,v 1.34 2023/07/15 21:09:33 sthen Exp $
 
 # This file contains some mk.conf entries suitable for ports work.
 #
@@ -17,6 +17,7 @@
 
 # Common(ish) misspellings:
 .poison BUILD_DEPEDNS
+.poison BUILD_DEPEMDS
 .poison BUILD_DEPEND
 .poison COMPILERS
 .poison DISTFLIES
@@ -25,6 +26,7 @@
 .poison GH_TAG
 .poison LIB_DEPEDNS
 .poison LIB_DEPEND
+.poison LIB_DEPEMDS
 .poison MASTER_SITE_SOURCEFORGET
 .poison MODGCC3_ARCHES
 .poison MODGCC4_ARCHES
@@ -46,6 +48,7 @@
 .poison REVISON
 .poison REVSION
 .poison RUN_DEPEND
+.poison RUN_DEPEMDS
 .poison RUN_DEPEDNS
 .poison SEPERATE_BUILD
 .poison SUBIDR
