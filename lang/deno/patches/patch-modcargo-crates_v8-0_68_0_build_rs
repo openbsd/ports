@@ -1,7 +1,7 @@
-Index: modcargo-crates/v8-0.68.0/build.rs
---- modcargo-crates/v8-0.68.0/build.rs.orig
-+++ modcargo-crates/v8-0.68.0/build.rs
-@@ -167,9 +167,6 @@ fn build_v8() {
+Index: modcargo-crates/v8-0.74.2/build.rs
+--- modcargo-crates/v8-0.74.2/build.rs.orig
++++ modcargo-crates/v8-0.74.2/build.rs
+@@ -176,9 +176,6 @@ fn build_v8() {
        || target_triple == "aarch64-linux-android"
      {
        gn_args.push(r#"target_cpu="arm64""#.to_string());
@@ -11,12 +11,14 @@ Index: modcargo-crates/v8-0.68.0/build.rs
      };
  
      if target_triple == "aarch64-linux-android" {
-@@ -251,6 +248,8 @@ fn maybe_install_sysroot(arch: &str) {
+@@ -262,7 +259,9 @@ fn maybe_install_sysroot(arch: &str) {
  }
  
  fn platform() -> String {
-+  #[cfg(target_os = "openbsd")]
-+  let os = "openbsd";
-   #[cfg(target_os = "linux")]
-   let os = "linux";
-   #[cfg(target_os = "macos")]
+-  let os = if cfg!(target_os = "linux") {
++  let os = if cfg!(target_os = "openbsd") {
++    "openbsd"
++  } else if cfg!(target_os = "linux") {
+     "linux"
+   } else if cfg!(target_os = "macos") {
+     "mac"

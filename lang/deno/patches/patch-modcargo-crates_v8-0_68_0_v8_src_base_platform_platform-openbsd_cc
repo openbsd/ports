@@ -1,6 +1,6 @@
-Index: modcargo-crates/v8-0.68.0/v8/src/base/platform/platform-openbsd.cc
---- modcargo-crates/v8-0.68.0/v8/src/base/platform/platform-openbsd.cc.orig
-+++ modcargo-crates/v8-0.68.0/v8/src/base/platform/platform-openbsd.cc
+Index: modcargo-crates/v8-0.74.2/v8/src/base/platform/platform-openbsd.cc
+--- modcargo-crates/v8-0.74.2/v8/src/base/platform/platform-openbsd.cc.orig
++++ modcargo-crates/v8-0.74.2/v8/src/base/platform/platform-openbsd.cc
 @@ -6,6 +6,7 @@
  // POSIX-compatible parts, the implementation is in platform-posix.cc.
  
@@ -15,7 +15,7 @@ Index: modcargo-crates/v8-0.68.0/v8/src/base/platform/platform-openbsd.cc
  void OS::AdjustSchedulingParams() {}
 +
 +// static
-+Stack::StackSlot Stack::GetStackStart() {
++Stack::StackSlot Stack::ObtainCurrentThreadStackStart() {
 +  stack_t ss;
 +  void *base;
 +  if (pthread_stackseg_np(pthread_self(), &ss) != 0)

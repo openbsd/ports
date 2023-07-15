@@ -5,8 +5,7 @@ COMMENT =		runtime for JavaScript and TypeScript
 USE_WXNEEDED =		Yes
 USE_NOBTCFI =		Yes
 
-VERSION =		1.32.5
-REVISION =		2
+VERSION =		1.35.1
 HOMEPAGE =		https://deno.com/runtime
 
 DISTNAME =		deno-${VERSION}
@@ -24,8 +23,6 @@ MODULES =		devel/cargo
 MODCARGO_CRATES_KEEP +=	libsqlite3-sys \
 			libz-sys
 
-MODCARGO_CRATES_UPDATE += dprint-plugin-json
-
 MODCARGO_ENV +=		V8_FROM_SOURCE=1 \
 			GN=${LOCALBASE}/bin/gn \
 			NINJA=${LOCALBASE}/bin/ninja \
@@ -42,7 +39,6 @@ WANTLIB +=		${MODCARGO_WANTLIB} ${COMPILER_LIBCXX} m execinfo ffi zstd
 BUILD_DEPENDS =		databases/sqlite3 \
 			devel/gmake \
 			devel/gn \
-			devel/llvm \
 			devel/ninja
 
 LIB_DEPENDS =		archivers/zstd \
@@ -58,7 +54,7 @@ DOCDIR =		${PREFIX}/share/doc/deno
 WRKDIST =		${WRKDIR}/deno
 PORTHOME =		${WRKSRC}
 
-V8_CARGO_V =		0.68.0
+V8_CARGO_V =		0.74.2
 
 V8_DISTDIR =		${MODCARGO_VENDOR_DIR}/v8-${V8_CARGO_V}
 V8_BPGO_DIR =		${V8_DISTDIR}/v8/tools/builtins-pgo
@@ -69,10 +65,13 @@ post-patch:
 	mkdir -p ${V8_BPGO_DIR}/{x64.profile,arm64.profile}
 	${SUBST_CMD} ${V8_DISTDIR}/v8/tools/run.py
 	cd ${WRKSRC} && ${SUBST_CMD} \
-	    cli/standalone.rs \
-	    cli/tools/standalone.rs \
-	    modcargo-crates/deno_task_shell-0.11.0/src/shell/commands/executable.rs \
+	    cli/build.rs \
+	    cli/main.rs \
+	    cli/standalone/binary.rs \
+	    modcargo-crates/deno_task_shell-0.12.0/src/shell/commands/executable.rs \
 	    runtime/ops/os/mod.rs
+	cp ${WRKSRC}/cli/napi/generated_symbol_exports_list_linux.def \
+	    ${WRKSRC}/cli/napi/generated_symbol_exports_list_openbsd.def
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/target/release/deno ${PREFIX}/bin

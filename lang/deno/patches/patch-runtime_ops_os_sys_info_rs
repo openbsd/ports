@@ -1,7 +1,7 @@
 Index: runtime/ops/os/sys_info.rs
 --- runtime/ops/os/sys_info.rs.orig
 +++ runtime/ops/os/sys_info.rs
-@@ -56,7 +56,7 @@ pub fn os_release() -> String {
+@@ -57,7 +57,7 @@ pub fn os_release() -> String {
        _ => String::from(""),
      }
    }

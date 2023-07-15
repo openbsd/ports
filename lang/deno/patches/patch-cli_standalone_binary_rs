@@ -1,0 +1,21 @@
+Index: cli/standalone/binary.rs
+--- cli/standalone/binary.rs.orig
++++ cli/standalone/binary.rs
+@@ -143,7 +143,8 @@ pub struct Metadata {
+ }
+ 
+ pub fn load_npm_vfs(root_dir_path: PathBuf) -> Result<FileBackedVfs, AnyError> {
+-  let file_path = current_exe().unwrap();
++  let file_path =
++    current_exe().unwrap_or(PathBuf::from("${LOCALBASE}/bin/deno"));
+   let mut file = std::fs::File::open(file_path)?;
+   file.seek(SeekFrom::End(-(TRAILER_SIZE as i64)))?;
+   let mut trailer = [0; TRAILER_SIZE];
+@@ -403,7 +404,7 @@
+     target: Option<String>,
+   ) -> Result<Vec<u8>, AnyError> {
+     if target.is_none() {
+-      let path = std::env::current_exe()?;
++      let path = PathBuf::from("${LOCALBASE}/bin/deno");
+       return Ok(std::fs::read(path)?);
+     }

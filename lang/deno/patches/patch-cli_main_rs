@@ -1,0 +1,13 @@
+Index: cli/main.rs
+--- cli/main.rs.orig
++++ cli/main.rs
+@@ -262,7 +262,8 @@ pub fn main() {
+   let args: Vec<String> = env::args().collect();
+ 
+   let future = async move {
+-    let current_exe_path = current_exe()?;
++    let current_exe_path = current_exe()
++      .unwrap_or(PathBuf::from("${LOCALBASE}/bin/deno"));
+     let standalone_res =
+       match standalone::extract_standalone(&current_exe_path, args.clone())
+         .await

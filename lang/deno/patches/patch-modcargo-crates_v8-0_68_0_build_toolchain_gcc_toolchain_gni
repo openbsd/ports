@@ -1,7 +1,7 @@
-Index: modcargo-crates/v8-0.68.0/build/toolchain/gcc_toolchain.gni
---- modcargo-crates/v8-0.68.0/build/toolchain/gcc_toolchain.gni.orig
-+++ modcargo-crates/v8-0.68.0/build/toolchain/gcc_toolchain.gni
-@@ -812,13 +812,13 @@ template("clang_toolchain") {
+Index: modcargo-crates/v8-0.74.2/build/toolchain/gcc_toolchain.gni
+--- modcargo-crates/v8-0.74.2/build/toolchain/gcc_toolchain.gni.orig
++++ modcargo-crates/v8-0.74.2/build/toolchain/gcc_toolchain.gni
+@@ -868,13 +868,13 @@ template("clang_toolchain") {
      } else {
        prefix = rebase_path(_path, root_build_dir)
      }
