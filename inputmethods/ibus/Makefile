@@ -7,17 +7,30 @@ COMMENT-gtk4 =		IBus IM module for GTK4
 
 GH_PROJECT =		ibus
 GH_ACCOUNT =		ibus
-GH_TAGNAME =		1.5.28
+#GH_TAGNAME =		1.5.28
 
-PKGNAME-main =		ibus-${GH_TAGNAME}
-PKGNAME-gtk2 =		ibus-gtk2-${GH_TAGNAME}
-PKGNAME-gtk3 =		ibus-gtk3-${GH_TAGNAME}
-PKGNAME-gtk4 =		ibus-gtk4-${GH_TAGNAME}
+#PKGNAME-main =		ibus-${GH_TAGNAME}
+#PKGNAME-gtk2 =		ibus-gtk2-${GH_TAGNAME}
+#PKGNAME-gtk3 =		ibus-gtk3-${GH_TAGNAME}
+#PKGNAME-gtk4 =		ibus-gtk4-${GH_TAGNAME}
 
-REVISION-gtk2 =		1
-REVISION-gtk3 =		1
-REVISION-gtk4 =		1
-REVISION-main =		1
+### BEGIN XXX bring changes from 1.5.28 and add a patch to:
+# Fix sync ibus_input_context_process_key_event()
+# https://github.com/ibus/ibus/pull/2532
+# https://github.com/ibus/ibus/issues/2486
+V =			1.5.28.20230714
+GH_COMMIT =		580ea41b303d4f2dc5ccc64d39612c57cd7c5a0e
+MASTER_SITES0 =		https://github.com/ibus/ibus/pull/2532/commits/
+PATCHFILES =		139e0be07bfbc96d5ff95e5f5ebd760fbc7d94c0.diff:0 \
+			e495f8068380856c01fd22ceebb9398072fd65d8.diff:0 \
+			3670faf74a7b4594ceda3b4a8c01515840cc1991.diff:0
+PATCH_DIST_STRIP =	-p1
+DISTNAME =		ibus-${V}
+PKGNAME-main =		ibus-${V}
+PKGNAME-gtk2 =		ibus-gtk2-${V}
+PKGNAME-gtk3 =		ibus-gtk3-${V}
+PKGNAME-gtk4 =		ibus-gtk4-${V}
+### END
 
 SHARED_LIBS +=  ibus-1.0             4.4      # 5.528
 
@@ -51,7 +64,7 @@ WANTLIB-gtk3 += epoxy gdk-3 gtk-3 ibus-1.0 atspi
 
 WANTLIB-gtk4 += ${WANTLIB}
 WANTLIB-gtk4 += cairo-gobject cairo-script-interpreter dbus-1 epoxy
-WANTLIB-gtk4 += graphene-1.0 gtk-4 ibus-1.0 lzo2 lzma tiff zstd
+WANTLIB-gtk4 += graphene-1.0 gtk-4 ibus-1.0 lzo2 lzma tiff zstd dbus-1
 
 MODULES =		devel/dconf \
 			lang/python \
@@ -116,7 +129,6 @@ do-gen:
 	cd ${WRKSRC} && gtkdocize
 
 post-install:
-	gunzip ${PREFIX}/man/man{1,5}/*.gz
 	rm ${PREFIX}/lib/gtk-{2,3,4}.0/*/immodules/*.{a,la}
 
 .include <bsd.port.mk>

@@ -10,5 +10,5 @@ Index: configure.ac
 -AM_INIT_AUTOMAKE([1.11.1 parallel-tests])
 +AM_INIT_AUTOMAKE([1.11.1 foreign parallel-tests])
  AM_MAINTAINER_MODE([enable])
- AC_GNU_SOURCE
+ AC_USE_SYSTEM_EXTENSIONS
  
