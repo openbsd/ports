@@ -3,14 +3,14 @@ CATEGORIES =	sysutils
 
 GH_ACCOUNT =	tavianator
 GH_PROJECT =	bfs
-GH_TAGNAME =	2.6.3
+GH_TAGNAME =	3.0
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c onig
+WANTLIB += c onig pthread
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
