@@ -101,13 +101,6 @@ share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_setup_w
 share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_02_global_zone.png
 share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_03.png
 share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_04.png
-share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_05_nsclient_01.png
-share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_05_nsclient_02.png
-share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_05_nsclient_03.png
-share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_05_nsclient_04.png
-share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_05_nsclient_05.png
-share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_05_nsclient_06.png
-share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_05_nsclient_07.png
 share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_06_finish_no_ticket.png
 share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_06_finish_with_ticket.png
 share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_examine_config.png
@@ -186,8 +179,6 @@ share/examples/icinga2/features-available/opentsdb.conf
 @sample ${SYSCONFDIR}/icinga2/features-available/opentsdb.conf
 share/examples/icinga2/features-available/perfdata.conf
 @sample ${SYSCONFDIR}/icinga2/features-available/perfdata.conf
-share/examples/icinga2/features-available/statusdata.conf
-@sample ${SYSCONFDIR}/icinga2/features-available/statusdata.conf
 share/examples/icinga2/features-available/syslog.conf
 @sample ${SYSCONFDIR}/icinga2/features-available/syslog.conf
 @mode 775
