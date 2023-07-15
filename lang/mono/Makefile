@@ -2,10 +2,10 @@ USE_WXNEEDED=	Yes
 
 COMMENT=	cross platform, open source .NET developement framework
 
-V=		6.12.0.182
+V=		6.12.0.199
+MONOLITEV=	1A5E0066-58DC-428A-B21C-0AD6CDAE2789
 
 DISTNAME=	mono-${V}
-REVISION=	2
 
 CATEGORIES=	lang devel
 
@@ -28,8 +28,10 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=  c execinfo m pthread z
 
-MASTER_SITES=	https://download.mono-project.com/sources/mono/
-EXTRACT_SUFX=	.tar.xz
+MASTER_SITES=	https://nerd.hu/distfiles/
+
+DISTFILES+=	mono-${V}.tar.xz \
+		monolite-unix-${MONOLITEV}-openbsd.tar.gz
 
 MODULES=	lang/mono \
 		lang/python
@@ -54,6 +56,7 @@ RUN_DEPENDS=	x11/libgdiplus
 TEST_DEPENDS=	${MODPY_RUN_DEPENDS}
 
 CONFIGURE_STYLE=autoreconf
+AUTORECONF=	./autogen.sh
 AUTOCONF_VERSION=2.69
 AUTOMAKE_VERSION=1.15
 
@@ -76,6 +79,9 @@ DLLMAP_FILES=	mcs/class/System.Windows.Forms/System.Windows.Forms/MimeIcon.cs \
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples
 
 pre-configure:
+	${INSTALL_DATA_DIR} ${WRKSRC}/mcs/class/lib/monolite-unix/${MONOLITEV}
+	cp -pR ${WRKDIR}/monolite-unix-${MONOLITEV}-openbsd/* \
+		${WRKSRC}/mcs/class/lib/monolite-unix/${MONOLITEV}/
 	${SUBST_CMD} ${WRKSRC}/runtime/mono-wrapper.in \
 		${WRKSRC}/runtime/monodis-wrapper.in
 	sed -i -e 's,^prefix=.*,prefix=\@prefix\@,g;' \

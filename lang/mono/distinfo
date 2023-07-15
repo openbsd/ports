@@ -1,2 +1,4 @@
-SHA256 (mono-6.12.0.182.tar.xz) = VzZqarTztezxEdSFSAMWFbOhANuHxnn8AG6Mik79lCQ=
-SIZE (mono-6.12.0.182.tar.xz) = 303230932
+SHA256 (mono-6.12.0.199.tar.xz) = MRicHbm4LOp+gBY5hiQdN3IK35tPy1ciLWF5OBy78lM=
+SHA256 (monolite-unix-1A5E0066-58DC-428A-B21C-0AD6CDAE2789-openbsd.tar.gz) = xxeonNeV8uj3YX0mgHP/OjXs4zgI48P1wgrbY7d34/M=
+SIZE (mono-6.12.0.199.tar.xz) = 259103312
+SIZE (monolite-unix-1A5E0066-58DC-428A-B21C-0AD6CDAE2789-openbsd.tar.gz) = 5339509
