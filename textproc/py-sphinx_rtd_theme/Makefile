@@ -17,8 +17,8 @@ CATEGORIES =		textproc
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-BUILD_DEPENDS =		textproc/py-sphinx-contrib/jquery${MODPY_FLAVOR}
-RUN_DEPENDS =		textproc/py-sphinx-contrib/jquery${MODPY_FLAVOR}
+BUILD_DEPENDS =		textproc/py-sphinxcontrib/jquery${MODPY_FLAVOR}
+RUN_DEPENDS =		textproc/py-sphinxcontrib/jquery${MODPY_FLAVOR}
 
 MODPY_PYBUILD =		setuptools
 MASTER_SITES0 =		${MASTER_SITE_DEBIAN:=main/s/sphinx-rtd-theme/}
