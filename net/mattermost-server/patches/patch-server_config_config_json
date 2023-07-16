@@ -1,6 +1,6 @@
-Index: config/config.json
---- config/config.json.orig
-+++ config/config.json
+Index: server/config/config.json
+--- server/config/config.json.orig
++++ server/config/config.json
 @@ -12,7 +12,7 @@
      "TLSStrictTransportMaxAge": 63072000,
      "TLSOverwriteCiphers": [],
@@ -10,8 +10,8 @@ Index: config/config.json
      "Forward80To443": false,
      "TrustedProxyIPHeader": [],
      "ReadTimeout": 300,
-@@ -92,7 +92,7 @@
-     "PostPriority": true,
+@@ -97,7 +97,7 @@
+     "PersistentNotificationMaxRecipients": 5,
      "EnableAPIChannelDeletion": false,
      "EnableLocalMode": false,
 -    "LocalModeSocketLocation": "/var/tmp/mattermost_local.socket",
@@ -19,8 +19,8 @@ Index: config/config.json
      "EnableAWSMetering": false,
      "SplitKey": "",
      "FeatureFlagSyncIntervalSeconds": 30,
-@@ -152,14 +152,14 @@
-     "ReplicaLagSettings": []
+@@ -157,14 +157,14 @@
+     "ReplicaMonitorIntervalSeconds": 5
    },
    "LogSettings": {
 -    "EnableConsole": true,
@@ -36,7 +36,7 @@ Index: config/config.json
      "EnableWebhookDebugging": true,
      "EnableDiagnostics": true,
      "VerboseDiagnostics": false,
-@@ -177,14 +177,14 @@
+@@ -184,14 +184,14 @@
      "AdvancedLoggingConfig": ""
    },
    "NotificationLogSettings": {
@@ -50,10 +50,10 @@ Index: config/config.json
      "FileJson": true,
 -    "FileLocation": "",
 +    "FileLocation": "${LOCALSTATEDIR}/log/mattermost",
+     "AdvancedLoggingJSON": {},
      "AdvancedLoggingConfig": ""
    },
-   "PasswordSettings": {
-@@ -202,7 +202,7 @@
+@@ -210,7 +210,7 @@
      "MaxImageResolution": 33177600,
      "MaxImageDecoderConcurrency": -1,
      "DriverName": "local",
@@ -62,7 +62,7 @@ Index: config/config.json
      "EnablePublicLink": false,
      "ExtractContent": true,
      "ArchiveRecursion": false,
-@@ -234,11 +234,11 @@
+@@ -242,11 +242,11 @@
      "EnableSMTPAuth": false,
      "SMTPUsername": "",
      "SMTPPassword": "",
@@ -77,7 +77,7 @@ Index: config/config.json
      "PushNotificationServer": "https://push-test.mattermost.com",
      "PushNotificationContents": "full",
      "PushNotificationBuffer": 1000,
-@@ -269,13 +269,13 @@
+@@ -276,13 +276,13 @@
    "SupportSettings": {
      "TermsOfServiceLink": "https://mattermost.com/terms-of-use/",
      "PrivacyPolicyLink": "https://mattermost.com/privacy-policy/",
@@ -93,7 +93,7 @@ Index: config/config.json
    },
    "AnnouncementSettings": {
      "EnableBanner": false,
-@@ -381,7 +381,7 @@
+@@ -388,7 +388,7 @@
    },
    "ComplianceSettings": {
      "Enable": false,
@@ -102,7 +102,7 @@ Index: config/config.json
      "EnableDaily": false,
      "BatchSize": 30000
    },
-@@ -543,8 +543,8 @@
+@@ -550,8 +550,8 @@
      "EnableUploads": false,
      "AllowInsecureDownloadURL": false,
      "EnableHealthCheck": true,
@@ -112,9 +112,9 @@ Index: config/config.json
 +    "ClientDirectory": "${LOCALSTATEDIR}/mattermost/client/plugins",
      "Plugins": {},
      "PluginStates": {
-       "com.mattermost.apps": {
+       "com.mattermost.calls": {
 @@ -623,11 +623,11 @@
-     "OnboardingTourTips": true
+     "CloudReverseTrial": false
    },
    "ImportSettings": {
 -    "Directory": "./import",

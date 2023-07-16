@@ -1,7 +1,7 @@
-Index: config/file.go
---- config/file.go.orig
-+++ config/file.go
-@@ -66,7 +66,7 @@ func resolveConfigFilePath(path string) (string, error
+Index: server/config/file.go
+--- server/config/file.go.orig
++++ server/config/file.go
+@@ -72,7 +72,7 @@ func resolveConfigFilePath(path string) (string, error
  
  	// Search for the relative path to the file in the config folder, taking into account
  	// various common starting points.

@@ -1,6 +1,6 @@
-Index: utils/fileutils/fileutils.go
---- utils/fileutils/fileutils.go.orig
-+++ utils/fileutils/fileutils.go
+Index: server/channels/utils/fileutils/fileutils.go
+--- server/channels/utils/fileutils/fileutils.go.orig
++++ server/channels/utils/fileutils/fileutils.go
 @@ -10,11 +10,7 @@ import (
  
  func CommonBaseSearchPaths() []string {

@@ -1,0 +1,14 @@
+Index: server/cmd/mmctl/commands/utils_unix.go
+--- server/cmd/mmctl/commands/utils_unix.go.orig
++++ server/cmd/mmctl/commands/utils_unix.go
+@@ -1,8 +1,8 @@
+ // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
+ // See LICENSE.txt for license information.
+ 
+-//go:build linux || darwin
+-// +build linux darwin
++//go:build linux || darwin || openbsd
++// +build linux darwin openbsd
+ 
+ package commands
+ 
