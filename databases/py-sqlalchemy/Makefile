@@ -1,7 +1,8 @@
 COMMENT=	database toolkit for Python
 
-# 2.x is a major update; dependent ports need checking
-MODPY_EGG_VERSION=	1.4.48
+# 2.x is a major update with incompatible changes;
+#dependent ports need checking
+MODPY_EGG_VERSION=	1.4.49
 DISTNAME=	SQLAlchemy-${MODPY_EGG_VERSION}
 PKGNAME=	py-sqlalchemy-${MODPY_EGG_VERSION}
 
