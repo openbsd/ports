@@ -18,6 +18,8 @@ WANTLIB += Qt5Network Qt5PrintSupport Qt5Widgets Qt5Xml X11 m
 WANTLIB += lib/inotify/inotify
 
 
+
+
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
 

@@ -15,6 +15,8 @@ WANTLIB += X11 m
 
 WANTLIB += lib/inotify/inotify
 
+
+
 MODKDE5_TRANSLATIONS = yes
 
 LIB_DEPENDS =	devel/kf5/kauth \

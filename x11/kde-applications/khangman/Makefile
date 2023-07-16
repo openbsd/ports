@@ -12,6 +12,8 @@ WANTLIB += Qt5Quick Qt5QuickWidgets Qt5Widgets Qt5Xml c m
 
 WANTLIB += lib/inotify/inotify
 
+
+
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes

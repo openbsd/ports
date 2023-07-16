@@ -32,7 +32,6 @@ share/locale/sl/LC_MESSAGES/akonadiconsole.mo
 share/locale/tr/LC_MESSAGES/akonadiconsole.mo
 share/locale/uk/LC_MESSAGES/akonadiconsole.mo
 share/locale/zh_CN/LC_MESSAGES/akonadiconsole.mo
-share/qlogging-categories5/
 share/qlogging-categories5/akonadiconsole.categories
 share/qlogging-categories5/akonadiconsole.renamecategories
 @tag update-desktop-database

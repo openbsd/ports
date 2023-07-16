@@ -17,6 +17,8 @@ WANTLIB += Qt5Xml c m xapian
 
 WANTLIB += lib/inotify/inotify
 
+
+
 MODKDE5_TRANSLATIONS = yes
 
 BUILD_DEPENDS =	devel/boost

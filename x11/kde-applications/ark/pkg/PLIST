@@ -69,7 +69,6 @@ share/doc/HTML/pl/ark/index.docbook
 share/doc/HTML/pt/ark/
 share/doc/HTML/pt/ark/index.cache.bz2
 share/doc/HTML/pt/ark/index.docbook
-share/doc/HTML/pt_BR/
 share/doc/HTML/pt_BR/ark/
 share/doc/HTML/pt_BR/ark/ark-mainwindow.png
 share/doc/HTML/pt_BR/ark/create-protected-archive.png
@@ -81,7 +80,6 @@ share/doc/HTML/ru/ark/index.docbook
 share/doc/HTML/sr/ark/
 share/doc/HTML/sr/ark/index.cache.bz2
 share/doc/HTML/sr/ark/index.docbook
-share/doc/HTML/sr@latin/
 share/doc/HTML/sr@latin/ark/
 share/doc/HTML/sr@latin/ark/index.cache.bz2
 share/doc/HTML/sr@latin/ark/index.docbook
@@ -106,7 +104,6 @@ share/icons/hicolor/128x128/apps/ark.png
 share/icons/hicolor/48x48/apps/ark.png
 share/icons/hicolor/64x64/apps/ark.png
 share/icons/hicolor/scalable/apps/ark.svgz
-share/kconf_update/
 share/kconf_update/ark.upd
 share/kconf_update/ark_add_hamburgermenu_to_toolbar.sh
 share/locale/af/LC_MESSAGES/ark.mo

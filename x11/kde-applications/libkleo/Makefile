@@ -12,6 +12,8 @@ WANTLIB += gpgme gpgmepp m qgpgme
 
 WANTLIB += lib/inotify/inotify
 
+
+
 MODKDE5_TRANSLATIONS = yes
 MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes

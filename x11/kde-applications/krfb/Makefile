@@ -17,6 +17,8 @@ WANTLIB += xcb-shm xcb-xfixes
 
 WANTLIB += lib/inotify/inotify
 
+
+
 HOMEPAGE =	https://kde.org/applications/internet/org.kde.krfb
 
 MODKDE5_DESKTOP_FILE = yes
