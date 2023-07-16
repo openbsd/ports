@@ -1,4 +1,5 @@
 USE_WXNEEDED=	Yes
+USE_NOBTCFI=	Yes
 
 COMMENT=	cross platform, open source .NET developement framework
 
@@ -6,6 +7,7 @@ V=		6.12.0.199
 MONOLITEV=	1A5E0066-58DC-428A-B21C-0AD6CDAE2789
 
 DISTNAME=	mono-${V}
+REVISION=	0
 
 CATEGORIES=	lang devel
 
