@@ -1,0 +1,4 @@
+${P5SITE}/HTML/
+${P5SITE}/HTML/Selector/
+${P5SITE}/HTML/Selector/XPath.pm
+@man man/man3p/HTML::Selector::XPath.3p
