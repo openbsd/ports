@@ -12,7 +12,6 @@
      SUBDIR += gaupol
      SUBDIR += get_flash_videos
      SUBDIR += get_iplayer
-     SUBDIR += gnome-twitch
      SUBDIR += gstreamer1
      SUBDIR += handbrake
      SUBDIR += hdhomerun
