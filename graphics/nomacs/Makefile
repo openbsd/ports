@@ -2,8 +2,7 @@ COMMENT =	small and fast Qt image viewer
 
 GH_ACCOUNT =	nomacs
 GH_PROJECT =	nomacs
-GH_TAGNAME =	3.17.2206
-REVISION =	1
+GH_TAGNAME =	3.17.2282
 
 CATEGORIES =	graphics
 
