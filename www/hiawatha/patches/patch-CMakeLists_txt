@@ -7,7 +7,7 @@ Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
 @@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.0)
- project(Hiawatha VERSION 11.3 LANGUAGES C)
+ project(Hiawatha VERSION 11.4 LANGUAGES C)
  
  # Compiler
 -set(CMAKE_C_FLAGS "-O2 -Wall -Wextra ${CMAKE_C_FLAGS} -gdwarf-4")
