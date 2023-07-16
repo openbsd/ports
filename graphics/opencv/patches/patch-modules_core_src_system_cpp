@@ -2,7 +2,7 @@ Fix build on i386 and arm64.
 Index: modules/core/src/system.cpp
 --- modules/core/src/system.cpp.orig
 +++ modules/core/src/system.cpp
-@@ -255,7 +255,7 @@ std::wstring GetTempFileNameWinRT(std::wstring prefix)
+@@ -245,7 +245,7 @@ std::wstring GetTempFileNameWinRT(std::wstring prefix)
  #include "omp.h"
  #endif
  
@@ -11,7 +11,7 @@ Index: modules/core/src/system.cpp
  #include <unistd.h>
  #include <stdio.h>
  #include <sys/types.h>
-@@ -607,7 +607,7 @@ struct HWFeatures
+@@ -597,7 +597,7 @@ struct HWFeatures
          CV_LOG_INFO(NULL, "- FP16 instructions is NOT enabled via build flags");
          #endif
        #endif

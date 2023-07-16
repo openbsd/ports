@@ -4,7 +4,7 @@ CATEGORIES =		graphics devel
 COMMENT-main =		library for computer vision real-time processing
 COMMENT-java =		Java bindings for OpenCV
 
-V =			4.7.0
+V =			4.8.0
 GH_ACCOUNT =		opencv
 GH_PROJECT =		opencv
 GH_TAGNAME =		${V}
@@ -20,19 +20,19 @@ MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
   opencv_flann opencv_highgui opencv_imgproc opencv_ml opencv_objdetect \
   opencv_photo opencv_stitching opencv_video opencv_imgcodecs \
   opencv_videoio opencv_dnn
-SHARED_LIBS += $i 11.0
+SHARED_LIBS += $i 12.0
 .endfor
 
-WANTLIB-main += ${COMPILER_LIBCXX} avcodec avformat avutil OpenEXR-3_1
+WANTLIB-main += ${COMPILER_LIBCXX} OpenEXR-3_1 avcodec avformat avutil
 WANTLIB-main += c cairo gdk-3 gdk_pixbuf-2.0 glib-2.0 gobject-2.0 gstapp-1.0
-WANTLIB-main += gstbase-1.0 gstaudio-1.0 gstpbutils-1.0 gstreamer-1.0
-WANTLIB-main += gstriff-1.0 gstvideo-1.0 gtk-3 jpeg m openjp2 png swscale tiff
-WANTLIB-main += webp z
+WANTLIB-main += gstaudio-1.0 gstbase-1.0 gstpbutils-1.0 gstreamer-1.0
+WANTLIB-main += gstriff-1.0 gstvideo-1.0 gtk-3 jpeg m openjp2 png swscale
+WANTLIB-main += tiff webp z
 
 WANTLIB-java += ${COMPILER_LIBCXX} opencv_calib3d opencv_core opencv_dnn
-WANTLIB-java += opencv_features2d opencv_flann opencv_imgcodecs
-WANTLIB-java += opencv_imgproc opencv_ml opencv_objdetect opencv_photo
-WANTLIB-java += opencv_video opencv_videoio
+WANTLIB-java += opencv_features2d opencv_flann opencv_imgcodecs opencv_imgproc
+WANTLIB-java += opencv_ml opencv_objdetect opencv_photo opencv_video
+WANTLIB-java += opencv_videoio
 
 COMPILER =		base-clang ports-gcc
 

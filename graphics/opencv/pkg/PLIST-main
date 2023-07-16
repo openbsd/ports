@@ -84,6 +84,9 @@ include/opencv4/opencv2/core/hal/intrin_msa.hpp
 include/opencv4/opencv2/core/hal/intrin_neon.hpp
 include/opencv4/opencv2/core/hal/intrin_rvv.hpp
 include/opencv4/opencv2/core/hal/intrin_rvv071.hpp
+include/opencv4/opencv2/core/hal/intrin_rvv_010_compat_non-policy.hpp
+include/opencv4/opencv2/core/hal/intrin_rvv_010_compat_overloaded-non-policy.hpp
+include/opencv4/opencv2/core/hal/intrin_rvv_compat_overloaded.hpp
 include/opencv4/opencv2/core/hal/intrin_rvv_scalable.hpp
 include/opencv4/opencv2/core/hal/intrin_sse.hpp
 include/opencv4/opencv2/core/hal/intrin_sse_em.hpp
@@ -242,9 +245,11 @@ include/opencv4/opencv2/objdetect.hpp
 include/opencv4/opencv2/objdetect/aruco_board.hpp
 include/opencv4/opencv2/objdetect/aruco_detector.hpp
 include/opencv4/opencv2/objdetect/aruco_dictionary.hpp
+include/opencv4/opencv2/objdetect/barcode.hpp
 include/opencv4/opencv2/objdetect/charuco_detector.hpp
 include/opencv4/opencv2/objdetect/detection_based_tracker.hpp
 include/opencv4/opencv2/objdetect/face.hpp
+include/opencv4/opencv2/objdetect/graphical_code_detector.hpp
 include/opencv4/opencv2/objdetect/objdetect.hpp
 include/opencv4/opencv2/opencv.hpp
 include/opencv4/opencv2/opencv_modules.hpp
@@ -331,6 +336,7 @@ lib/python${MODPY_VERSION}/site-packages/cv2/misc/${MODPY_PYCACHE}version.${MODP
 lib/python${MODPY_VERSION}/site-packages/cv2/misc/version.py
 lib/python${MODPY_VERSION}/site-packages/cv2/python-${MODPY_VERSION}/
 @so lib/python${MODPY_VERSION}/site-packages/cv2/python-${MODPY_VERSION}/cv2.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/cv2/typing/
 lib/python${MODPY_VERSION}/site-packages/cv2/utils/
 lib/python${MODPY_VERSION}/site-packages/cv2/utils/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cv2/utils/${MODPY_PYCACHE}/
@@ -338,6 +344,7 @@ lib/python${MODPY_VERSION}/site-packages/cv2/utils/${MODPY_PYCACHE}__init__.${MO
 share/licenses/
 share/licenses/opencv4/
 share/licenses/opencv4/SoftFloat-COPYING.txt
+share/licenses/opencv4/flatbuffers-LICENSE.txt
 share/licenses/opencv4/protobuf-LICENSE
 share/licenses/opencv4/protobuf-README.md
 share/licenses/opencv4/quirc-LICENSE
