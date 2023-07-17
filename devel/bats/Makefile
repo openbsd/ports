@@ -2,7 +2,7 @@ COMMENT =	bash automated testing system
 
 GH_ACCOUNT =	bats-core
 GH_PROJECT =	bats-core
-GH_TAGNAME =	v1.9.0
+GH_TAGNAME =	v1.10.0
 PKGNAME =	${DISTNAME:S/-core//}
 
 CATEGORIES =	devel
@@ -24,7 +24,7 @@ post-extract:
 do-install:
 	cd ${WRKSRC} && ./install.sh ${PREFIX}
 
-# Test #96 fails as we do not have lsof or procstat
+# Test #97 fails as we do not have lsof or procstat
 do-test:
 	cd ${WRKSRC} && ./bin/bats --print-output-on-failure --formatter tap test
 
