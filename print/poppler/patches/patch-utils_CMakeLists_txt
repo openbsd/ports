@@ -4,12 +4,12 @@ up any already installed older version of libpoppler.so.
 Index: utils/CMakeLists.txt
 --- utils/CMakeLists.txt.orig
 +++ utils/CMakeLists.txt
-@@ -37,7 +37,7 @@ if (HAVE_CAIRO)
+@@ -36,7 +36,7 @@ if (HAVE_CAIRO)
    )
    add_definitions(${CAIRO_CFLAGS})
    add_executable(pdftocairo ${pdftocairo_SOURCES})
--  target_link_libraries(pdftocairo ${CAIRO_LIBRARIES} ${FREETYPE_LIBRARIES} ${common_libs})
-+  target_link_libraries(pdftocairo ${common_libs} ${CAIRO_LIBRARIES} ${FREETYPE_LIBRARIES})
-   if(CMAKE_USE_PTHREADS_INIT)
-     target_link_libraries(pdftocairo Threads::Threads)
-   endif()
+-  target_link_libraries(pdftocairo ${CAIRO_LIBRARIES} Freetype::Freetype ${common_libs})
++  target_link_libraries(pdftocairo ${common_libs} ${CAIRO_LIBRARIES} Freetype::Freetype)
+   target_include_directories(pdftocairo SYSTEM PRIVATE ${CAIRO_INCLUDE_DIRS})
+   if(LCMS2_FOUND)
+     target_link_libraries(pdftocairo ${LCMS2_LIBRARIES})
