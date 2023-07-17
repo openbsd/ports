@@ -19,8 +19,7 @@ COMPILER =		base-clang ports-gcc
 SEPARATE_BUILD =	Yes
 USE_GMAKE =		Yes
 
-CONFIGURE_STYLE =	simple
-CONFIGURE_ARGS =	--mandir=${PREFIX}/man
+CONFIGURE_STYLE =	gnu
 
 .include <bsd.port.arch.mk>
 
