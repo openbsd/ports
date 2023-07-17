@@ -1,0 +1,8 @@
+${P5SITE}/Web/
+${P5SITE}/Web/Scraper/
+${P5SITE}/Web/Scraper.pm
+${P5SITE}/Web/Scraper/Filter.pm
+${P5SITE}/Web/Scraper/LibXML.pm
+@man man/man3p/Web::Scraper.3p
+@man man/man3p/Web::Scraper::Filter.3p
+@man man/man3p/Web::Scraper::LibXML.3p
