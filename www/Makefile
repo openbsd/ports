@@ -255,6 +255,7 @@
      SUBDIR += p5-HTML-RewriteAttributes
      SUBDIR += p5-HTML-SBC
      SUBDIR += p5-HTML-Scrubber
+     SUBDIR += p5-HTML-Selector-XPath
      SUBDIR += p5-HTML-SimpleParse
      SUBDIR += p5-HTML-SiteTear
      SUBDIR += p5-HTML-Stream
@@ -371,6 +372,7 @@
      SUBDIR += p5-WWW-Wikipedia
      SUBDIR += p5-Weather-Com
      SUBDIR += p5-Web-Machine
+     SUBDIR += p5-Web-Scraper
      SUBDIR += p5-WebService-Audioscrobbler
      SUBDIR += p5-WebService-MusicBrainz
      SUBDIR += p5-XML-Atom
