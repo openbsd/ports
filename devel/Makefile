@@ -642,6 +642,7 @@
      SUBDIR += p5-Date-Handler
      SUBDIR += p5-Date-ICal
      SUBDIR += p5-Date-Leapyear
+     SUBDIR += p5-Date-Range
      SUBDIR += p5-Date-Simple
      SUBDIR += p5-DateTime
      SUBDIR += p5-DateTime-Calendar-Mayan
