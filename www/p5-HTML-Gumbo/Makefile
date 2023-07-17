@@ -14,4 +14,6 @@ WANTLIB += c perl gumbo
 
 CONFIGURE_STYLE =	perl modbuild
 
+TEST_DEPENDS =		www/p5-HTML-Tree
+
 .include <bsd.port.mk>
