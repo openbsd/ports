@@ -3,7 +3,7 @@ DPB_PROPERTIES=	parallel
 COMMENT=	desktop publishing program
 DISTNAME=	scribus-1.5.8
 CATEGORIES=	print
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	https://www.scribus.net/
 
@@ -45,8 +45,10 @@ LIB_DEPENDS=	graphics/lcms2 \
 		graphics/jpeg \
 		${MODPY_LIB_DEPENDS}
 
+CXXFLAGS+=	-D CMS_NO_REGISTER_KEYWORD
 CONFIGURE_ARGS+=	-DCMAKE_INSTALL_MANDIR="${LOCALBASE}/man/" \
-			-DWANT_NOOSG=1
+			-DWANT_NOOSG=1 \
+			-DWANT_CPP17=ON
 #DEBUG_CONFIGURE_ARGS +=	-DWANT_DEBUG=1
 
 FIX_CRLF_FILES=	`find . -type f \( -name "*.cpp" -o -name "*.h" \)`
