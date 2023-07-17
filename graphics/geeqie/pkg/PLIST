@@ -28,6 +28,7 @@ share/geeqie/applications/rotate.desktop
 share/geeqie/applications/symlink.desktop
 share/geeqie/applications/tethered-photography.desktop
 share/geeqie/template.desktop
+share/icons/hicolor/scalable/apps/geeqie.svg
 share/locale/ar/LC_MESSAGES/geeqie.mo
 share/locale/be/LC_MESSAGES/geeqie.mo
 share/locale/bg/LC_MESSAGES/geeqie.mo
@@ -73,3 +74,4 @@ share/metainfo/org.geeqie.Geeqie.appdata.xml
 share/pixmaps/
 share/pixmaps/geeqie.png
 @tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor

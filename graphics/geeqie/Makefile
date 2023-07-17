@@ -1,6 +1,6 @@
 COMMENT=		lightweight Gtk+3 based image viewer
 
-V=			2.0.1
+V=			2.1
 DISTNAME=		geeqie-${V}
 EXTRACT_SUFX=		.tar.xz
 CATEGORIES=		graphics
@@ -18,7 +18,8 @@ WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += gtk-3 heif intl jpeg lcms2 m openjp2 pango-1.0
 WANTLIB += pangocairo-1.0 raw tiff
 
-COMPILER=		base-clang ports-gcc base-gcc
+# C++14
+COMPILER=		base-clang ports-gcc
 
 MASTER_SITES=		https://github.com/BestImageViewer/geeqie/releases/download/v${V}/
 
@@ -30,7 +31,8 @@ BUILD_DEPENDS=		devel/gettext,-tools \
 RUN_DEPENDS=		devel/desktop-file-utils \
 			devel/xdg-utils \
 			graphics/ImageMagick \
-			graphics/exiftran
+			graphics/exiftran \
+			x11/gtk+4,-guic
 
 LIB_DEPENDS=		graphics/exiv2 \
 			graphics/libraw \
@@ -40,13 +42,13 @@ LIB_DEPENDS=		graphics/exiv2 \
 
 CONFIGURE_ARGS+=	-Darchive=disabled \
 			-Ddjvu=disabled \
+			-Dexecinfo=disabled \
 			-Dgps-map=disabled \
 			-Djpegxl=disabled \
 			-Dlua=disabled \
 			-Dpdf=disabled \
 			-Dspell=disabled \
 			-Dvideothumbnailer=disabled \
-			-Dwebp=disabled \
 			-Dgq_htmldir=${PREFIX}/share/doc/geeqie \
 			-Dgq_helpdir=${PREFIX}/share/doc/geeqie
 

@@ -1,25 +1,25 @@
-Index: src/window.c
---- src/window.c.orig
-+++ src/window.c
-@@ -173,19 +173,11 @@ static gchar *html_browsers[] =
+Index: src/window.cc
+--- src/window.cc.orig
++++ src/window.cc
+@@ -173,19 +173,11 @@ static const gchar *html_browsers[] =
  {
  	/* Our specific script */
- 	GQ_APPNAME_LC "_html_browser", NULL,
+ 	GQ_APPNAME_LC "_html_browser", nullptr,
 -	/* Redhat has a nifty htmlview script to start the user's preferred browser */
--	"htmlview",	NULL,
+-	"htmlview",	nullptr,
 -	/* Debian has even better approach with alternatives */
--	"sensible-browser", NULL,
+-	"sensible-browser", nullptr,
 -	/* GNOME 2 */
 -	"gconftool-2",	"gconftool-2 -g /desktop/gnome/url-handlers/http/command",
 -	/* KDE */
 -	"kfmclient",	"!kfmclient exec \"%s\"",
 +	/* fd.o */
-+	"xdg-open",	NULL,
++	"xdg-open",	nullptr,
  	/* use fallbacks */
- 	"firefox",	NULL,
--	"mozilla",	NULL,
- 	"konqueror",	NULL,
--	"netscape",	NULL,
+ 	"firefox",	nullptr,
+-	"mozilla",	nullptr,
+ 	"konqueror",	nullptr,
+-	"netscape",	nullptr,
  	"opera",	"!opera --remote 'openURL(%s,new-page)'",
- 	NULL,		NULL
+ 	nullptr,		nullptr
  };

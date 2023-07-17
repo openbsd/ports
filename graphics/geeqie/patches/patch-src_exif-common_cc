@@ -1,0 +1,11 @@
+Index: src/exif-common.cc
+--- src/exif-common.cc.orig
++++ src/exif-common.cc
+@@ -17,6 +17,7 @@
+  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+  */
+ 
++#include <stdlib.h>
+ #include <config.h>
+ 
+ #define _XOPEN_SOURCE
