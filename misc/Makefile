@@ -76,6 +76,7 @@
      SUBDIR += p5-OPCUA-Open62541
      SUBDIR += p5-Spreadsheet-ParseExcel
      SUBDIR += p5-Spreadsheet-WriteExcel
+     SUBDIR += p5-Spreadsheet-XLSX
      SUBDIR += p5-Term-Animation
      SUBDIR += p5-Umph-Prompt
      SUBDIR += p5-User
