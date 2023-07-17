@@ -1,0 +1,13 @@
+Fix build with poppler-23.05.
+
+--- filters/karbon/pdf/SvgOutputDev.cpp.orig
++++ filters/karbon/pdf/SvgOutputDev.cpp
+@@ -410,7 +410,7 @@ void SvgOutputDev::drawString(GfxState * state, const 
+     if (s->getLength() == 0)
+         return;
+ 
+-    GfxFont * font = state->getFont();
++    GfxFont * font = state->getFont().get();
+ 
+     QString str;
+ 

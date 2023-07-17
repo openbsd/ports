@@ -1,0 +1,15 @@
+Fix build with poppler-23.05.
+
+--- filters/karbon/pdf/Pdf2OdgImport.cpp.orig
++++ filters/karbon/pdf/Pdf2OdgImport.cpp
+@@ -86,8 +86,8 @@ KoFilter::ConversionStatus Pdf2OdgImport::convert(cons
+     if (! globalParams)
+         return KoFilter::NotImplemented;
+ 
+-    GooString * fname = new GooString(QFile::encodeName(m_chain->inputFile()).data());
+-    PDFDoc * pdfDoc = new PDFDoc(fname, 0, 0, 0);
++    PDFDoc * pdfDoc = new PDFDoc(std::make_unique<GooString>(QFile::encodeName(m_chain->inputFile()).data()),
++				 std::nullopt, std::nullopt, 0);
+     if (! pdfDoc) {
+ #ifdef HAVE_POPPLER_PRE_0_83
+         delete globalParams;
