@@ -2,6 +2,7 @@ COMMENT =		creates DjVu files from PDF files
 
 V =			0.9.19
 DISTNAME =		pdf2djvu-${V}
+REVISION =		0
 
 CATEGORIES =		graphics
 
@@ -43,6 +44,7 @@ CONFIGURE_ARGS +=	--disable-openmp \
 			--disable-rpath \
 			--without-pstreams
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
+			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+			CXXFLAGS="-std=gnu++17"
 
 .include <bsd.port.mk>
