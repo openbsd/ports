@@ -1,6 +1,6 @@
 COMMENT =	high performance library for simulating rigid body dynamics
-SHARED_LIBS += 	ode	4.0	# 8.3
-DISTNAME = 	ode-0.16.3
+SHARED_LIBS += 	ode	4.1	# 9.0
+DISTNAME = 	ode-0.16.4
 CATEGORIES =	devel
 
 HOMEPAGE =	https://www.ode.org/
@@ -12,10 +12,10 @@ MASTER_SITES =	https://bitbucket.org/odedevs/ode/downloads/
 # LGPLv2.1+ / 3-clause BSD
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += GL GLU X11 X11-xcb Xext Xfixes Xxf86vm
+WANTLIB += GL GLU X11 X11-xcb Xau Xdmcp xcb-shm Xext Xfixes Xxf86vm
 WANTLIB += c drm expat glapi m pthread ${COMPILER_LIBCXX} xcb xcb-dri2
-WANTLIB += xcb-glx xcb-dri3 xcb-present xcb-sync xcb-xfixes xshmfence z
-WANTLIB += Xau Xdmcp xcb-shm
+WANTLIB += xcb-glx xcb-dri3 xcb-present xcb-randr xcb-sync xcb-xfixes
+WANTLIB += xshmfence z
 
 COMPILER =		base-clang ports-gcc base-gcc
 

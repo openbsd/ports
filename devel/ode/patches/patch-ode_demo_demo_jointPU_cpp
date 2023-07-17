@@ -1,7 +1,7 @@
 Index: ode/demo/demo_jointPU.cpp
 --- ode/demo/demo_jointPU.cpp.orig
 +++ ode/demo/demo_jointPU.cpp
-@@ -576,7 +576,7 @@ int main (int argc, char **argv)
+@@ -577,7 +577,7 @@ int main (int argc, char **argv)
        if (0 == strcmp ("-t", argv[i]) || 0 == strcmp ("--texture-path", argv[i]) ) {
          int j = i+1;
          if ( j >= argc      ||  // Check if we have enough arguments
