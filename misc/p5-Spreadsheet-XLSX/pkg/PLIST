@@ -1,0 +1,7 @@
+${P5SITE}/Spreadsheet/XLSX/
+${P5SITE}/Spreadsheet/XLSX.pm
+${P5SITE}/Spreadsheet/XLSX/Fmt2007.pm
+${P5SITE}/Spreadsheet/XLSX/Utility2007.pm
+@man man/man3p/Spreadsheet::XLSX.3p
+@man man/man3p/Spreadsheet::XLSX::Fmt2007.3p
+@man man/man3p/Spreadsheet::XLSX::Utility2007.3p
