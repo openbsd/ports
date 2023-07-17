@@ -1,0 +1,3 @@
+${P5SITE}/String/
+${P5SITE}/String/Util.pm
+@man man/man3p/String::Util.3p
