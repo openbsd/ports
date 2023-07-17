@@ -1,0 +1,3 @@
+${P5SITE}/Date/
+${P5SITE}/Date/Range.pm
+@man man/man3p/Date::Range.3p
