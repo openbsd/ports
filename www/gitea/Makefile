@@ -1,6 +1,6 @@
 COMMENT =		compact self-hosted Git service
 
-VERSION =		1.19.4
+VERSION =		1.20.0
 DISTNAME =		gitea-src-${VERSION}
 PKGNAME =		gitea-${VERSION}
 
@@ -18,7 +18,7 @@ WANTLIB +=		c pthread
 
 MODULES =		lang/go
 
-GO_TAGS =		sqlite sqlite_unlock_notify
+GO_TAGS =		purego sqlite sqlite_unlock_notify
 MODGO_FLAGS +=		-tags "${GO_TAGS}"
 MODGO_LDFLAGS += -X code.gitea.io/gitea/modules/setting.AppWorkPath=${LOCALBASE}/share/gitea
 MODGO_LDFLAGS += -X code.gitea.io/gitea/modules/setting.CustomConf=${SYSCONFDIR}/gitea/app.ini

@@ -8,9 +8,9 @@ Index: custom/conf/app.example.ini
 -RUN_USER = ; git
 +RUN_USER = _gitea
  ;;
- ;; Application run mode, affects performance and debugging. Either "dev", "prod" or "test", default is "prod"
- RUN_MODE = ; prod
-@@ -149,7 +149,7 @@ RUN_MODE = ; prod
+ ;; Application run mode, affects performance and debugging: "dev" or "prod", default is "prod"
+ ;; Mode "dev" makes Gitea easier to develop and debug, values other than "dev" are treated as "prod" which is for production use.
+@@ -150,7 +150,7 @@ RUN_USER = ; git
  ;SSH_LISTEN_HOST =
  ;;
  ;; Port number to be exposed in clone URL
@@ -19,7 +19,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; The port number the builtin SSH server should listen on
  ;SSH_LISTEN_PORT = %(SSH_PORT)s
-@@ -278,7 +278,7 @@ RUN_MODE = ; prod
+@@ -278,7 +278,7 @@ RUN_USER = ; git
  ;STATIC_ROOT_PATH = ; Will default to the built-in value _`StaticRootPath`_
  ;;
  ;; Default path for App data
@@ -28,12 +28,12 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Enable gzip compression for runtime-generated content, static resources excluded
  ;ENABLE_GZIP = false
-@@ -289,7 +289,7 @@ RUN_MODE = ; prod
+@@ -289,7 +289,7 @@ RUN_USER = ; git
  ;ENABLE_PPROF = false
  ;;
  ;; PPROF_DATA_PATH, use an absolute path when you start gitea as service
 -;PPROF_DATA_PATH = data/tmp/pprof ; Path is relative to _`AppWorkPath`_
-+PPROF_DATA_PATH = ${LOCALSTATEDIR}/gitea/data/tmp/pprof
++;PPROF_DATA_PATH = ${LOCALSTATEDIR}/gitea/data/tmp/pprof
  ;;
  ;; Landing page, can be "home", "explore", "organizations", "login", or any URL such as "/org/repo" or even "https://anotherwebsite.com"
  ;; The "login" choice is not a security measure but just a UI flow change, use REQUIRE_SIGNIN_VIEW to force users to log in.
@@ -48,7 +48,7 @@ Index: custom/conf/app.example.ini
 +;DB_TYPE = mysql
 +;HOST = 127.0.0.1:3306 ; can use socket e.g. /var/run/mysqld/mysqld.sock
 +;NAME = gitea
-+;USER = root
++;USER = %(RUN_USER)s
  ;PASSWD = ;Use PASSWD = `your password` for quoting if you use special characters in the password.
  ;SSL_MODE = false ; either "false" (default), "true", or "skip-verify"
  ;CHARSET = utf8mb4 ;either "utf8" or "utf8mb4", default is "utf8mb4".
@@ -57,7 +57,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;DB_TYPE = postgres
 -;HOST = 127.0.0.1:5432 ; can use socket e.g. /var/run/postgresql/
-+;HOST = /tmp
++;HOST = 127.0.0.1:5432 ; can use socket e.g. /tmp
  ;NAME = gitea
 -;USER = root
 +;USER = %(RUN_USER)s
@@ -75,15 +75,6 @@ Index: custom/conf/app.example.ini
  ;SQLITE_TIMEOUT = ; Query timeout defaults to: 500
  ;SQLITE_JOURNAL_MODE = ; defaults to sqlite database default (often DELETE), can be used to enable WAL mode. https://www.sqlite.org/pragma.html#pragma_journal_mode
  ;;
-@@ -425,7 +425,7 @@ SECRET_KEY =
- ;SECRET_KEY_URI = file:/etc/gitea/secret_key
- ;;
- ;; Secret used to validate communication within Gitea binary.
--INTERNAL_TOKEN=
-+INTERNAL_TOKEN =
- ;;
- ;; Alternative location to specify internal token, instead of this file; you cannot specify both this and INTERNAL_TOKEN, and must pick one
- ;INTERNAL_TOKEN_URI = file:/etc/gitea/internal_token
 @@ -461,7 +461,7 @@ INTERNAL_TOKEN=
  ;; This enables the users to access and modify this config file and the Gitea database and interrupt the Gitea service.
  ;; By modifying the Gitea database, users can gain Gitea administrator privileges.
@@ -112,14 +103,14 @@ Index: custom/conf/app.example.ini
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;; Main Logger
  ;;
- ;; Either "console", "file", "conn", "smtp" or "database", default is "console"
+ ;; Either "console", "file" or "conn", default is "console"
  ;; Use comma to separate multiple modes, e.g. "console, file"
 -MODE = console
 +MODE = file
  ;;
- ;; Either "Trace", "Debug", "Info", "Warn", "Error", "Critical" or "None", default is "Info"
+ ;; Either "Trace", "Debug", "Info", "Warn", "Error" or "None", default is "Info"
  LEVEL = Info
-@@ -734,7 +734,7 @@ ROUTER = console
+@@ -727,7 +727,7 @@ LEVEL = Info
  ;EMAIL_DOMAIN_BLOCKLIST =
  ;;
  ;; Disallow registration, only allow admins to create accounts.
@@ -128,7 +119,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Allow registration only using gitea itself, it works only when DISABLE_REGISTRATION is false
  ;ALLOW_ONLY_INTERNAL_REGISTRATION = false
-@@ -743,7 +743,7 @@ ROUTER = console
+@@ -736,7 +736,7 @@ LEVEL = Info
  ;ALLOW_ONLY_EXTERNAL_REGISTRATION = false
  ;;
  ;; User must sign in to view anything.
@@ -137,7 +128,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Mail notification
  ;ENABLE_NOTIFY_MAIL = false
-@@ -793,11 +793,11 @@ ROUTER = console
+@@ -786,11 +786,11 @@ LEVEL = Info
  ;;
  ;; Default value for KeepEmailPrivate
  ;; Each new user will get the value of this setting copied into their profile
@@ -151,7 +142,7 @@ Index: custom/conf/app.example.ini
  ;; Default value for IsRestricted
  ;; Every new user will have restricted permissions depending on this setting
  ;DEFAULT_USER_IS_RESTRICTED = false
-@@ -806,7 +806,7 @@ ROUTER = console
+@@ -799,7 +799,7 @@ LEVEL = Info
  ;; Limited is for users visible only to signed users
  ;; Private is for users visible only to members of their organizations
  ;; Public is for users visible for everyone
@@ -160,7 +151,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Set which visibility modes a user can have
  ;ALLOWED_USER_VISIBILITY_MODES = public,limited,private
-@@ -815,7 +815,7 @@ ROUTER = console
+@@ -808,7 +808,7 @@ LEVEL = Info
  ;; Limited is for organizations visible only to signed users
  ;; Private is for organizations visible only to members of the organization
  ;; Public is for organizations visible to everyone
@@ -169,7 +160,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Default value for DefaultOrgMemberVisible
  ;; True will make the membership of the users visible when added to the organisation
-@@ -880,14 +880,14 @@ ROUTER = console
+@@ -873,14 +873,14 @@ LEVEL = Info
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -187,7 +178,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; DETECTED_CHARSETS_ORDER tie-break order for detected charsets.
  ;; If the charsets have equal confidence, tie-breaking will be done by order in this list
-@@ -902,7 +902,7 @@ ROUTER = console
+@@ -895,7 +895,7 @@ LEVEL = Info
  ;FORCE_PRIVATE = false
  ;;
  ;; Default privacy setting when creating a new repository, allowed values: last, private, public. Default is last which means the last setting used.
@@ -196,22 +187,16 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Default private when using push-to-create
  ;DEFAULT_PUSH_CREATE_PRIVATE = true
-@@ -918,7 +918,7 @@ ROUTER = console
+@@ -905,7 +905,7 @@ LEVEL = Info
  ;;
  ;; Preferred Licenses to place at the top of the List
  ;; The name here must match the filename in options/license or custom/options/license
 -;PREFERRED_LICENSES = Apache License 2.0,MIT License
-+PREFERRED_LICENSES = BSD-2-Clause,ISC ; Apache License 2.0,MIT License
++PREFERRED_LICENSES = BSD-2-Clause,ISC
  ;;
  ;; Disable the ability to interact with repositories using the HTTP protocol
  ;DISABLE_HTTP_GIT = false
-@@ -984,16 +984,16 @@ ROUTER = console
- 
- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
--;[repository.local]
-+[repository.local]
- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+@@ -975,11 +975,11 @@ LEVEL = Info
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;
  ;; Path for local repository copy. Defaults to `tmp/local-repo` (content gets deleted on gitea restart)
@@ -225,7 +210,7 @@ Index: custom/conf/app.example.ini
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;
-@@ -1001,7 +1001,7 @@ ROUTER = console
+@@ -987,7 +987,7 @@ LEVEL = Info
  ;ENABLED = true
  ;;
  ;; Path for uploads. Defaults to `data/tmp/uploads` (content gets deleted on gitea restart)
@@ -234,7 +219,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Comma-separated list of allowed file extensions (`.zip`), mime types (`text/plain`) or wildcard type (`image/*`, `audio/*`, `video/*`). Empty value or `*/*` allows all types.
  ;ALLOWED_TYPES =
-@@ -1166,7 +1166,7 @@ ROUTER = console
+@@ -1155,7 +1155,7 @@ LEVEL = Info
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -243,7 +228,7 @@ Index: custom/conf/app.example.ini
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;
-@@ -1199,7 +1199,7 @@ ROUTER = console
+@@ -1184,7 +1184,7 @@ LEVEL = Info
  ;MAX_DISPLAY_FILE_SIZE = 8388608
  ;;
  ;; Whether the email of the user should be shown in the Explore Users page
@@ -252,7 +237,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Set the default theme for the Gitea install
  ;DEFAULT_THEME = auto
-@@ -1341,7 +1341,7 @@ ROUTER = console
+@@ -1324,7 +1324,7 @@ LEVEL = Info
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -261,16 +246,16 @@ Index: custom/conf/app.example.ini
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;
-@@ -1352,7 +1352,7 @@ ROUTER = console
+@@ -1335,7 +1335,7 @@ LEVEL = Info
  ;ISSUE_INDEXER_TYPE = bleve
  ;;
  ;; Issue indexer storage path, available when ISSUE_INDEXER_TYPE is bleve
 -;ISSUE_INDEXER_PATH = indexers/issues.bleve ; Relative paths will be made absolute against _`AppWorkPath`_.
 +ISSUE_INDEXER_PATH = ${LOCALSTATEDIR}/gitea/indexers/issues.bleve
  ;;
- ;; Issue indexer connection string, available when ISSUE_INDEXER_TYPE is elasticsearch
+ ;; Issue indexer connection string, available when ISSUE_INDEXER_TYPE is elasticsearch or meilisearch
  ;ISSUE_INDEXER_CONN_STR = http://elastic:changeme@localhost:9200
-@@ -1391,7 +1391,7 @@ ROUTER = console
+@@ -1362,7 +1362,7 @@ LEVEL = Info
  ;REPO_INDEXER_TYPE = bleve
  ;;
  ;; Index file used for code search. available when `REPO_INDEXER_TYPE` is bleve
@@ -279,7 +264,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Code indexer connection string, available when `REPO_INDEXER_TYPE` is elasticsearch. i.e. http://elastic:changeme@localhost:9200
  ;REPO_INDEXER_CONN_STR =
-@@ -1471,19 +1471,19 @@ ROUTER = console
+@@ -1419,19 +1419,19 @@ LEVEL = Info
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -302,7 +287,7 @@ Index: custom/conf/app.example.ini
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;
-@@ -1504,7 +1504,7 @@ ROUTER = console
+@@ -1452,7 +1452,7 @@ LEVEL = Info
  ;;  - <username>.livejournal.com
  ;;
  ;; Whether to allow signin in via OpenID
@@ -311,7 +296,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Whether to allow registering via OpenID
  ;; Do not include to rely on rhw DISABLE_REGISTRATION setting
-@@ -1589,7 +1589,7 @@ ROUTER = console
+@@ -1537,7 +1537,7 @@ LEVEL = Info
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -320,7 +305,7 @@ Index: custom/conf/app.example.ini
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;
-@@ -1612,12 +1612,12 @@ ROUTER = console
+@@ -1560,12 +1560,12 @@ LEVEL = Info
  ;; If your provider does not explicitly say which protocol it uses but does provide a port,
  ;; you can set SMTP_PORT instead and this will be inferred.
  ;; (Before 1.18, see the notice, this was controlled via MAILER_TYPE and IS_TLS_ENABLED.)
@@ -335,7 +320,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Mail server port. Common ports are:
  ;;   25:  insecure SMTP
-@@ -1640,11 +1640,11 @@ ROUTER = console
+@@ -1588,11 +1588,11 @@ LEVEL = Info
  ;;
  ;; Use client certificate in connection.
  ;USE_CLIENT_CERT = false
@@ -350,7 +335,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Sometimes it is helpful to use a different address on the envelope. Set this to use ENVELOPE_FROM as the from on the envelope. Set to `<>` to send an empty address.
  ;ENVELOPE_FROM =
-@@ -1656,10 +1656,10 @@ ROUTER = console
+@@ -1604,10 +1604,10 @@ LEVEL = Info
  ;PASSWD =
  ;;
  ;; Send mails only in plain text, without HTML alternative
@@ -363,7 +348,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Specify any extra sendmail arguments
  ;; WARNING: if your sendmail program interprets options you should set this to "--" or terminate these args with "--"
-@@ -1756,20 +1756,20 @@ ROUTER = console
+@@ -1705,13 +1705,13 @@ LEVEL = Info
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -372,22 +357,23 @@ Index: custom/conf/app.example.ini
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;
- ;; Either "memory", "file", "redis", "db", "mysql", "couchbase", "memcache" or "postgres"
+ ;; Either "memory", "file", "redis", "redis-cluster", "db", "mysql", "couchbase", "memcache" or "postgres"
  ;; Default is "memory". "db" will reuse the configuration in [database]
 -;PROVIDER = memory
 +PROVIDER = file
  ;;
  ;; Provider config options
  ;; memory: doesn't have any config yet
- ;; file: session file path, e.g. `data/sessions`
+@@ -1719,7 +1719,7 @@ LEVEL = Info
  ;; redis: `redis://127.0.0.1:6379/0?pool_size=100&idle_timeout=180s`
+ ;; redis-cluster: `redis+cluster://127.0.0.1:6379/0?pool_size=100&idle_timeout=180s`
  ;; mysql: go-sql-driver/mysql dsn config string, e.g. `root:password@/session_table`
 -;PROVIDER_CONFIG = data/sessions ; Relative paths will be made absolute against _`AppWorkPath`_.
 +PROVIDER_CONFIG = ${LOCALSTATEDIR}/gitea/data/sessions
  ;;
  ;; Session cookie name
  ;COOKIE_NAME = i_like_gitea
-@@ -1788,12 +1788,12 @@ ROUTER = console
+@@ -1738,12 +1738,12 @@ LEVEL = Info
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -403,7 +389,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; How Gitea deals with missing repository avatars
  ;; none = no avatar will be displayed; random = random avatar will be displayed; image = default image will be used
-@@ -1818,7 +1818,7 @@ ROUTER = console
+@@ -1771,7 +1771,7 @@ LEVEL = Info
  ;GRAVATAR_SOURCE = gravatar
  ;;
  ;; This value will always be true in offline mode.
@@ -412,16 +398,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Federated avatar lookup uses DNS to discover avatar associated
  ;; with emails, see https://www.libravatar.org
-@@ -1827,7 +1827,7 @@ ROUTER = console
- 
- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
--;[attachment]
-+[attachment]
- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
- ;;
-@@ -1852,7 +1852,7 @@ ROUTER = console
+@@ -1805,7 +1805,7 @@ LEVEL = Info
  ;SERVE_DIRECT = false
  ;;
  ;; Path for attachments. Defaults to `data/attachments` only available when STORAGE_TYPE is `local`
@@ -430,7 +407,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Minio endpoint to connect only available when STORAGE_TYPE is `minio`
  ;MINIO_ENDPOINT = localhost:9000
-@@ -1883,14 +1883,14 @@ ROUTER = console
+@@ -1836,7 +1836,7 @@ LEVEL = Info
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -439,15 +416,7 @@ Index: custom/conf/app.example.ini
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;
- ;; Specifies the format for fully outputted dates. Defaults to RFC1123
- ;; Special supported values are ANSIC, UnixDate, RubyDate, RFC822, RFC822Z, RFC850, RFC1123, RFC1123Z, RFC3339, RFC3339Nano, Kitchen, Stamp, StampMilli, StampMicro and StampNano
- ;; For more information about the format see http://golang.org/pkg/time/#pkg-constants
--;FORMAT =
-+FORMAT = RFC1123Z
- ;;
- ;; Location the UI time display i.e. Asia/Shanghai
- ;; Empty means server's location setting
-@@ -2204,10 +2204,10 @@ ROUTER = console
+@@ -2152,10 +2152,10 @@ LEVEL = Info
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;; Check for new Gitea versions
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -460,7 +429,7 @@ Index: custom/conf/app.example.ini
  ;RUN_AT_START = false
  ;ENABLE_SUCCESS_NOTICE = false
  ;SCHEDULE = @every 168h
-@@ -2324,14 +2324,14 @@ ROUTER = console
+@@ -2246,13 +2246,13 @@ LEVEL = Info
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -468,7 +437,6 @@ Index: custom/conf/app.example.ini
 +[other]
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
- ;SHOW_FOOTER_BRANDING = false
  ;; Show version information about Gitea and Go in the footer
 -;SHOW_FOOTER_VERSION = true
 +SHOW_FOOTER_VERSION = false
@@ -478,7 +446,7 @@ Index: custom/conf/app.example.ini
  ;; Generate sitemap. Defaults to `true`.
  ;ENABLE_SITEMAP = true
  ;; Enable/Disable RSS/Atom feed
-@@ -2464,7 +2464,7 @@ ROUTER = console
+@@ -2385,7 +2385,7 @@ LEVEL = Info
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -487,8 +455,8 @@ Index: custom/conf/app.example.ini
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;
-@@ -2472,7 +2472,7 @@ ROUTER = console
- ;ENABLED = true
+@@ -2397,7 +2397,7 @@ LEVEL = Info
+ ;MINIO_BASE_PATH = packages/
  ;;
  ;; Path for chunked uploads. Defaults to APP_DATA_PATH + `tmp/package-upload`
 -;CHUNKED_UPLOAD_PATH = tmp/package-upload
@@ -496,12 +464,12 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Maximum count of package versions a single owner can have (`-1` means no limits)
  ;LIMIT_TOTAL_OWNER_COUNT = -1
-@@ -2537,7 +2537,7 @@ ROUTER = console
+@@ -2487,7 +2487,7 @@ LEVEL = Info
  ;STORAGE_TYPE = local
  ;;
  ;; Where your lfs files reside, default is data/lfs.
 -;PATH = data/lfs
 +;PATH = ${LOCALSTATEDIR}/gitea/data/lfs
- 
- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ ;;
+ ;; override the minio base path if storage type is minio
+ ;MINIO_BASE_PATH = lfs/
