@@ -1,8 +1,8 @@
 COMMENT =	ahead of time compiler for numeric kernels
 
-MODPY_EGG_VERSION =	0.12.0
+MODPY_EGG_VERSION =	0.13.1
+
 DISTNAME =	pythran-${MODPY_EGG_VERSION}
-REVISION =	0
 
 CATEGORIES =	lang
 
@@ -19,6 +19,7 @@ FLAVOR  =	python3
 MODPY_PI =	Yes
 MODPY_PYBUILD =	setuptools
 
+# There are tests in the github tarball; they take hours to run.
 NO_TEST =	Yes
 
 RUN_DEPENDS =	devel/py-ply${MODPY_FLAVOR}>=3.4 \

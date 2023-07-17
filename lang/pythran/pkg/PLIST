@@ -765,6 +765,13 @@ lib/python${MODPY_VERSION}/site-packages/pythran/boost/math/
 lib/python${MODPY_VERSION}/site-packages/pythran/boost/math/constants/
 lib/python${MODPY_VERSION}/site-packages/pythran/boost/math/constants/calculate_constants.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/boost/math/constants/constants.hpp
+lib/python${MODPY_VERSION}/site-packages/pythran/boost/math/distributions/
+lib/python${MODPY_VERSION}/site-packages/pythran/boost/math/distributions/complement.hpp
+lib/python${MODPY_VERSION}/site-packages/pythran/boost/math/distributions/detail/
+lib/python${MODPY_VERSION}/site-packages/pythran/boost/math/distributions/detail/common_error_handling.hpp
+lib/python${MODPY_VERSION}/site-packages/pythran/boost/math/distributions/detail/derived_accessors.hpp
+lib/python${MODPY_VERSION}/site-packages/pythran/boost/math/distributions/fwd.hpp
+lib/python${MODPY_VERSION}/site-packages/pythran/boost/math/distributions/normal.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/boost/math/policies/
 lib/python${MODPY_VERSION}/site-packages/pythran/boost/math/policies/error_handling.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/boost/math/policies/policy.hpp
@@ -2499,6 +2506,8 @@ lib/python${MODPY_VERSION}/site-packages/pythran/optimizations/${MODPY_PYCACHE}c
 lib/python${MODPY_VERSION}/site-packages/pythran/optimizations/${MODPY_PYCACHE}comprehension_patterns.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pythran/optimizations/${MODPY_PYCACHE}constant_folding.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pythran/optimizations/${MODPY_PYCACHE}constant_folding.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pythran/optimizations/${MODPY_PYCACHE}copyto.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pythran/optimizations/${MODPY_PYCACHE}copyto.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pythran/optimizations/${MODPY_PYCACHE}dead_code_elimination.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pythran/optimizations/${MODPY_PYCACHE}dead_code_elimination.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pythran/optimizations/${MODPY_PYCACHE}forward_substitution.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2533,6 +2542,7 @@ lib/python${MODPY_VERSION}/site-packages/pythran/optimizations/${MODPY_PYCACHE}t
 lib/python${MODPY_VERSION}/site-packages/pythran/optimizations/${MODPY_PYCACHE}tuple_to_shape.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pythran/optimizations/comprehension_patterns.py
 lib/python${MODPY_VERSION}/site-packages/pythran/optimizations/constant_folding.py
+lib/python${MODPY_VERSION}/site-packages/pythran/optimizations/copyto.py
 lib/python${MODPY_VERSION}/site-packages/pythran/optimizations/dead_code_elimination.py
 lib/python${MODPY_VERSION}/site-packages/pythran/optimizations/forward_substitution.py
 lib/python${MODPY_VERSION}/site-packages/pythran/optimizations/inline_builtins.py
@@ -3184,6 +3194,7 @@ lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/numpy/fabs.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/numpy/fft/
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/numpy/fft/c2c.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/numpy/fft/fft.hpp
+lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/numpy/fft/fftn.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/numpy/fft/hfft.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/numpy/fft/ifft.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/numpy/fft/ihfft.hpp
@@ -3607,6 +3618,7 @@ lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/scipy/
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/scipy/special/
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/scipy/special/binom.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/scipy/special/gamma.hpp
+lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/scipy/special/gammaincinv.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/scipy/special/gammaln.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/scipy/special/hankel1.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/scipy/special/hankel2.hpp
@@ -3618,6 +3630,8 @@ lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/scipy/special/
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/scipy/special/jvp.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/scipy/special/kv.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/scipy/special/kvp.hpp
+lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/scipy/special/ndtr.hpp
+lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/scipy/special/ndtri.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/scipy/special/spherical_jn.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/scipy/special/spherical_yn.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/scipy/special/yv.hpp
@@ -3903,6 +3917,7 @@ lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/numpy/fabs.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/numpy/fft/
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/numpy/fft/c2c.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/numpy/fft/fft.hpp
+lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/numpy/fft/fftn.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/numpy/fft/hfft.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/numpy/fft/ifft.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/numpy/fft/ihfft.hpp
@@ -4334,6 +4349,7 @@ lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/scipy/special/
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/scipy/special/binom.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/scipy/special/chbevl.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/scipy/special/gamma.hpp
+lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/scipy/special/gammaincinv.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/scipy/special/gammaln.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/scipy/special/hankel1.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/scipy/special/hankel2.hpp
@@ -4345,6 +4361,8 @@ lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/scipy/special/jv.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/scipy/special/jvp.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/scipy/special/kv.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/scipy/special/kvp.hpp
+lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/scipy/special/ndtr.hpp
+lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/scipy/special/ndtri.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/scipy/special/spherical_jn.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/scipy/special/spherical_yn.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/scipy/special/yv.hpp
@@ -4484,6 +4502,8 @@ lib/python${MODPY_VERSION}/site-packages/pythran/transformations/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/pythran/transformations/${MODPY_PYCACHE}normalize_static_if.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pythran/transformations/${MODPY_PYCACHE}normalize_tuples.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pythran/transformations/${MODPY_PYCACHE}normalize_tuples.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pythran/transformations/${MODPY_PYCACHE}normalize_typeis.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pythran/transformations/${MODPY_PYCACHE}normalize_typeis.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pythran/transformations/${MODPY_PYCACHE}remove_comprehension.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pythran/transformations/${MODPY_PYCACHE}remove_comprehension.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pythran/transformations/${MODPY_PYCACHE}remove_fstrings.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -4511,6 +4531,7 @@ lib/python${MODPY_VERSION}/site-packages/pythran/transformations/normalize_metho
 lib/python${MODPY_VERSION}/site-packages/pythran/transformations/normalize_return.py
 lib/python${MODPY_VERSION}/site-packages/pythran/transformations/normalize_static_if.py
 lib/python${MODPY_VERSION}/site-packages/pythran/transformations/normalize_tuples.py
+lib/python${MODPY_VERSION}/site-packages/pythran/transformations/normalize_typeis.py
 lib/python${MODPY_VERSION}/site-packages/pythran/transformations/remove_comprehension.py
 lib/python${MODPY_VERSION}/site-packages/pythran/transformations/remove_fstrings.py
 lib/python${MODPY_VERSION}/site-packages/pythran/transformations/remove_lambdas.py
@@ -4562,9 +4583,10 @@ lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/arch/xsimd_avx512cd.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/arch/xsimd_avx512dq.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/arch/xsimd_avx512f.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/arch/xsimd_constants.hpp
-lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/arch/xsimd_fma3.hpp
+lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/arch/xsimd_fma3_avx.hpp
+lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/arch/xsimd_fma3_avx2.hpp
+lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/arch/xsimd_fma3_sse.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/arch/xsimd_fma4.hpp
-lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/arch/xsimd_fma5.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/arch/xsimd_generic.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/arch/xsimd_generic_fwd.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/arch/xsimd_isa.hpp
@@ -4576,19 +4598,16 @@ lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/arch/xsimd_sse3.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/arch/xsimd_sse4_1.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/arch/xsimd_sse4_2.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/arch/xsimd_ssse3.hpp
+lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/arch/xsimd_sve.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/config/
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/config/xsimd_arch.hpp
-lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/config/xsimd_arch.hpp.rej
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/config/xsimd_config.hpp
-lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/config/xsimd_config.hpp.rej
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/config/xsimd_cpuid.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/math/
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/math/xsimd_rem_pio2.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/memory/
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/memory/xsimd_aligned_allocator.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/memory/xsimd_alignment.hpp
-lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/stl/
-lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/stl/algorithms.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/xsimd_all_registers.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/xsimd_api.hpp
@@ -4600,8 +4619,10 @@ lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/xsimd_avx512f_regis
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/xsimd_avx_register.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/xsimd_batch.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/xsimd_batch_constant.hpp
-lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/xsimd_fma3_register.hpp
-lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/xsimd_fma5_register.hpp
+lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/xsimd_fma3_avx2_register.hpp
+lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/xsimd_fma3_avx_register.hpp
+lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/xsimd_fma3_sse_register.hpp
+lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/xsimd_fma4_register.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/xsimd_generic_arch.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/xsimd_neon64_register.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/xsimd_neon_register.hpp
@@ -4611,7 +4632,7 @@ lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/xsimd_sse3_register
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/xsimd_sse4_1_register.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/xsimd_sse4_2_register.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/xsimd_ssse3_register.hpp
+lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/xsimd_sve_register.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/xsimd_traits.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/xsimd_utils.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/xsimd.hpp
-lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/xsimd.hpp.rej
