@@ -1,6 +1,6 @@
 COMMENT=	X11 image display and modification tool
 
-V=		4.1.1
+V=		4.2.0
 DISTNAME=	xv-3.10a-js-$V
 PKGNAME=	xv-$V
 
