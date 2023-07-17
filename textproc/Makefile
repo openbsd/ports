@@ -262,6 +262,7 @@
      SUBDIR += p5-String-ShellQuote
      SUBDIR += p5-String-Similarity
      SUBDIR += p5-String-ToIdentifier-EN
+     SUBDIR += p5-String-Util
      SUBDIR += p5-Syntax-Highlight-HTML
      SUBDIR += p5-Syntax-Highlight-Mason
      SUBDIR += p5-Syntax-Highlight-Perl
