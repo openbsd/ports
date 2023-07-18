@@ -2,6 +2,8 @@
 ONLY_FOR_ARCHS =	amd64 aarch64
 COMMENT =		runtime for JavaScript and TypeScript
 
+DPB_PROPERTIES =	parallel
+
 USE_WXNEEDED =		Yes
 USE_NOBTCFI =		Yes
 
