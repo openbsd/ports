@@ -8,7 +8,7 @@ CATEGORIES =	www
 GH_ACCOUNT =	h2o
 GH_PROJECT =	h2o
 GH_TAGNAME =	v2.2.6
-REVISION =	8
+REVISION =	9
 
 HOMEPAGE =	https://h2o.examp1e.net/
 MAINTAINER =	Otto Moerbeek <otto@drijf.net>

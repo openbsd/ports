@@ -1,0 +1,16 @@
+Index: deps/neverbleed/neverbleed.h
+--- deps/neverbleed/neverbleed.h.orig
++++ deps/neverbleed/neverbleed.h
+@@ -34,7 +34,12 @@ extern "C" {
+ #define NEVERBLEED_AUTH_TOKEN_SIZE 32
+ 
+ typedef struct st_neverbleed_t {
++#ifdef OPENSSL_NO_ENGINE
++    RSA_METHOD *rsa_method;
++    void *ecdsa_method;
++#else
+     ENGINE *engine;
++#endif
+     pid_t daemon_pid;
+     struct sockaddr_un sun_;
+     pthread_key_t thread_key;
