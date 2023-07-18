@@ -205,7 +205,7 @@ SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHd
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
 SHA256 (go_modules/howett.net/plist/@v/v1.0.0.mod) = yCzVtVedg9sbqQjwQYS1bAT7SpBSBC6DLOaPetxzkzU=
 SHA256 (go_modules/howett.net/plist/@v/v1.0.0.zip) = lfIFr5R/WlEcL2kEa6/1b9g1cr9v0FG6TEMM65zF0hQ=
-SHA256 (node_exporter-v1.6.0.zip) = sg+p2f+KoWkw0R45zty4feP08kNrLuRKVZGzDZjnPtg=
+SHA256 (node_exporter-v1.6.1.zip) = DI2AHHXSEOA1L5+/W6FjYD0DYhwUEDckJAhR7BlOjZw=
 SIZE (go_modules/cloud.google.com/go/compute/metadata/@v/v0.2.0.mod) = 53
 SIZE (go_modules/cloud.google.com/go/compute/metadata/@v/v0.2.0.zip) = 19434
 SIZE (go_modules/github.com/alecthomas/kingpin/v2/@v/v2.3.2.mod) = 352
@@ -413,4 +413,4 @@ SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = 104623
 SIZE (go_modules/howett.net/plist/@v/v1.0.0.mod) = 218
 SIZE (go_modules/howett.net/plist/@v/v1.0.0.zip) = 71680
-SIZE (node_exporter-v1.6.0.zip) = 521863
+SIZE (node_exporter-v1.6.1.zip) = 521898
