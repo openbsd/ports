@@ -1,14 +1,20 @@
 --- coregrind/m_debuglog.c.orig
 +++ coregrind/m_debuglog.c
-@@ -470,7 +470,11 @@ static UInt local_sys_write_stderr ( HChar* buf, Int n )
-    __asm__ volatile (
-       "subq  $256, %%rsp\n"     /* don't trash the stack redzone */
-       "pushq %%r15\n"           /* r15 is callee-save */
-+#if __clang_major__ >= 6
-+      "lea   %0, %%r15\n"       /* r15 = &block */
-+#else
-       "movq  %0, %%r15\n"       /* r15 = &block */
-+#endif
-       "pushq %%r15\n"           /* save &block */
-       "movq  $"VG_STRINGIFY(__NR_write)", %%rax\n" /* rax = __NR_write */
-       "movq  $2, %%rdi\n"       /* rdi = stderr */
+@@ -435,7 +435,7 @@
+    return (UInt)(__res);
+ }
+ 
+-#elif defined(VGP_x86_freebsd)
++#elif defined(VGP_x86_freebsd) || defined(VGP_x86_openbsd)
+ static UInt local_sys_write_stderr (const HChar* buf, Int n )
+ {
+    Int result;
+@@ -475,7 +475,7 @@
+    return __res;
+ }
+ 
+-#elif defined(VGP_amd64_freebsd)
++#elif defined(VGP_amd64_freebsd) || defined(VGP_amd64_openbsd)
+ __attribute__((noinline))
+ static UInt local_sys_write_stderr (const HChar* buf, Int n )
+ {

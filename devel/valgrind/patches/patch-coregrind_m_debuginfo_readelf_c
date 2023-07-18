@@ -1,12 +1,42 @@
-Index: coregrind/m_debuginfo/readelf.c
 --- coregrind/m_debuginfo/readelf.c.orig
 +++ coregrind/m_debuginfo/readelf.c
-@@ -57,7 +57,7 @@
- #if !defined(VGO_openbsd)
- #include <elf.h>
- #else
--#include <libelf/gelf.h>
-+#include <gelf.h>
- #endif
- /* --- !!! --- EXTERNAL HEADERS end --- !!! --- */
+@@ -27,7 +27,7 @@
+    The GNU General Public License is contained in the file COPYING.
+ */
  
+-#if defined(VGO_linux) || defined(VGO_solaris) || defined(VGO_freebsd)
++#if defined(VGO_linux) || defined(VGO_solaris) || defined(VGO_freebsd) || defined(VGO_openbsd)
+ 
+ #include "pub_core_basics.h"
+ #include "pub_core_vki.h"
+@@ -58,7 +58,11 @@
+ #include "config.h"
+ 
+ /* --- !!! --- EXTERNAL HEADERS start --- !!! --- */
++#if !defined(VGO_openbsd)
+ #include <elf.h>
++#else
++#include <gelf.h>
++#endif
+ #if defined(VGO_solaris)
+ #include <sys/link.h>              /* ElfXX_Dyn, DT_* */
+ #endif
+@@ -1783,7 +1787,7 @@
+ #if defined(VGP_arm64_linux) || defined(VGP_nanomips_linux)
+       res = VG_(do_syscall4)(__NR_readlinkat, VKI_AT_FDCWD,
+                                               (UWord)path, (UWord)buf, bufsiz);
+-#elif defined(VGO_linux) || defined(VGO_darwin) || defined(VGO_freebsd)
++#elif defined(VGO_linux) || defined(VGO_darwin) || defined(VGO_freebsd) || defined(VGO_openbsd)
+       res = VG_(do_syscall3)(__NR_readlink, (UWord)path, (UWord)buf, bufsiz);
+ #elif defined(VGO_solaris)
+       res = VG_(do_syscall4)(__NR_readlinkat, VKI_AT_FDCWD, (UWord)path,
+@@ -2654,7 +2658,8 @@
+          || defined(VGP_mips32_linux) || defined(VGP_mips64_linux) \
+          || defined(VGP_arm64_linux) || defined(VGP_nanomips_linux) \
+          || defined(VGP_x86_solaris) || defined(VGP_amd64_solaris) \
+-         || defined(VGP_x86_freebsd) || defined(VGP_amd64_freebsd)
++         || defined(VGP_x86_freebsd) || defined(VGP_amd64_freebsd) \
++	 || defined(VGP_x86_openbsd) || defined(VGP_amd64_openbsd)
+       /* Accept .plt where mapped as rx (code) */
+       if (0 == VG_(strcmp)(name, ".plt")) {
+          if (inrx && !di->plt_present) {

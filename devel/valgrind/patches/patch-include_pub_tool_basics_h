@@ -1,0 +1,40 @@
+--- include/pub_tool_basics.h.orig
++++ include/pub_tool_basics.h
+@@ -102,7 +102,7 @@
+ // always a signed 64-bit int.  So we defined our own Off64T as well.
+ #if defined(VGO_linux) || defined(VGO_solaris)
+ typedef Word                   OffT;      // 32             64
+-#elif defined(VGO_freebsd)
++#elif defined(VGO_freebsd) || defined(VGO_openbsd)
+ typedef Long                   OffT;      // 64             64
+ #elif defined(VGO_darwin)
+ typedef Long                   OffT;      // 64             64
+@@ -227,7 +227,7 @@
+       SysResMode _mode;
+    }
+    SysRes;
+-#elif defined(VGO_freebsd)
++#elif defined(VGO_freebsd) || defined(VGO_openbsd)
+ typedef
+    struct {
+       UWord _val;
+@@ -235,8 +235,8 @@
+       Bool  _isError;
+ #if defined(VGP_amd64_freebsd)
+       char  padding[7];
+-#else
+-      char  padding[3];
++#elif defined(VGO_openbsd)
++      Bool  _hasVal2;
+ #endif
+    }
+    SysRes;
+@@ -321,7 +321,7 @@
+           && sr1._isError == sr2._isError;
+ }
+ 
+-#elif defined(VGO_freebsd)
++#elif defined(VGO_freebsd) || defined(VGO_openbsd)
+ 
+ static inline Bool sr_isError ( SysRes sr ) {
+    return sr._isError;

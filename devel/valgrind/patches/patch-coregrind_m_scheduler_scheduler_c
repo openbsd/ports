@@ -1,0 +1,60 @@
+--- coregrind/m_scheduler/scheduler.c.orig
++++ coregrind/m_scheduler/scheduler.c
+@@ -514,7 +514,8 @@
+    /* 
+       Tell the kernel we're yielding.
+     */
+-#  if defined(VGO_linux) || defined(VGO_darwin) || defined(VGO_freebsd)
++#  if defined(VGO_linux) || defined(VGO_darwin) || defined(VGO_freebsd) \
++   || defined(VGO_openbsd)
+    VG_(do_syscall0)(__NR_sched_yield);
+ #  elif defined(VGO_solaris)
+    VG_(do_syscall0)(__NR_yield);
+@@ -556,7 +557,7 @@
+    tst->os_state.stk_id = NULL_STK_ID;
+ #  if defined(VGO_linux)
+    /* no other fields to clear */
+-#  elif defined(VGO_freebsd)
++#  elif defined(VGO_freebsd) || defined(VGO_freebsd) || defined(VGO_openbsd)
+    /* no other fields to clear */
+ #  elif defined(VGO_darwin)
+    tst->os_state.post_mach_trap_fn = NULL;
+@@ -933,6 +934,10 @@
+    volatile ThreadState* tst            = NULL; /* stop gcc complaining */
+    volatile Int          done_this_time = 0;
+    volatile HWord        host_code_addr = 0;
++#if defined(VGO_openbsd)
++   NSegment *seg;
++   Bool     result;
++#endif
+ 
+    /* Paranoia */
+    vg_assert(VG_(is_valid_tid)(tid));
+@@ -1026,6 +1031,14 @@
+    vg_assert(VG_(in_generated_code) == False);
+    VG_(in_generated_code) = True;
+ 
++#if defined(VGO_openbsd)
++   seg = VG_(am_find_nsegment)(host_code_addr);
++   vg_assert(seg != NULL);
++   result = VG_(am_mprotect)(seg->start, seg->end - seg->start + 1,
++			     VKI_PROT_EXEC);
++   vg_assert(result != False);
++#endif
++
+    SCHEDSETJMP(
+       tid, 
+       jumped, 
+@@ -1035,6 +1048,12 @@
+          host_code_addr
+       )
+    );
++
++#if defined(VGO_openbsd)
++   result = VG_(am_mprotect)(seg->start, seg->end - seg->start + 1,
++			      VKI_PROT_READ | VKI_PROT_WRITE);
++   vg_assert(result != False);
++#endif
+ 
+    vg_assert(VG_(in_generated_code) == True);
+    VG_(in_generated_code) = False;

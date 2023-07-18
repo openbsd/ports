@@ -1,0 +1,20 @@
+--- coregrind/vg_preloaded.c.orig
++++ coregrind/vg_preloaded.c
+@@ -64,7 +64,7 @@
+ DEFINE_GDB_PY_SCRIPT(VG_LIBDIR "/valgrind-monitor.py")
+ #endif
+ 
+-#if defined(VGO_linux) || defined(VGO_solaris) || defined(VGO_freebsd)
++#if defined(VGO_linux) || defined(VGO_solaris) || defined(VGO_freebsd) || defined(VGO_openbsd)
+ 
+ /* ---------------------------------------------------------------------
+    Hook for running __gnu_cxx::__freeres() and __libc_freeres() once
+@@ -226,7 +226,7 @@
+     // but don't care if it's initialized
+ }
+ 
+-#elif defined(VGO_freebsd)
++#elif defined(VGO_freebsd) || defined(VGO_openbsd)
+ 
+ // nothing specific currently
+ 

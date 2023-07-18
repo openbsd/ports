@@ -1,0 +1,20 @@
+--- coregrind/m_debuginfo/readdwarf3.c.orig
++++ coregrind/m_debuginfo/readdwarf3.c
+@@ -33,7 +33,7 @@
+    without prior written permission.
+ */
+ 
+-#if defined(VGO_linux) || defined(VGO_darwin) || defined(VGO_solaris) || defined(VGO_freebsd)
++#if defined(VGO_linux) || defined(VGO_darwin) || defined(VGO_solaris) || defined(VGO_freebsd) || defined(VGO_openbsd)
+ 
+ /* REFERENCE (without which this code will not make much sense):
+ 
+@@ -6262,7 +6262,7 @@
+    TRACE_SYMTAB("\n");
+ #endif
+ 
+-#endif // defined(VGO_linux) || defined(VGO_darwin) || defined(VGO_solaris) || defined(VGO_freebsd)
++#endif // defined(VGO_linux) || defined(VGO_darwin) || defined(VGO_solaris) || defined(VGO_freebsd) || defined(VGO_openbsd)
+ 
+ /*--------------------------------------------------------------------*/
+ /*--- end                                                          ---*/

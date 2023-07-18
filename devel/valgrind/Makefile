@@ -1,21 +1,16 @@
-BROKEN =		syscall table and wrappers need to be updated to reflect reality
 ONLY_FOR_ARCHS =	amd64
 
 COMMENT =		instrumentation framework for dynamic analysis tools
 CATEGORIES =		devel
 
-V =			3.10.1
-PV =			20160331
-REVISION =		20
+V =			3.21.0
 DISTNAME =		valgrind-${V}
 EXTRACT_SUFX =		.tar.bz2
 
-MASTER_SITES =		${HOMEPAGE:=downloads/}
-MASTER_SITES0 =		https://bitbucket.org/uebayasi/valgrind-openbsd/downloads/
-PATCH_DIST_STRIP =	-p1
-PATCHFILES =		valgrind-${V}-openbsd-${PV}.patch:0
+MASTER_SITES =		https://sourceware.org/pub/valgrind/
+PATCH_DIST_STRIP =	-p0
 
-HOMEPAGE =		http://www.valgrind.org/
+HOMEPAGE =		https://valgrind.org/
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
@@ -24,8 +19,8 @@ WANTLIB +=		c pthread
 
 CONFIGURE_STYLE =	autoreconf
 USE_GMAKE =		Yes
-AUTOCONF_VERSION =	2.69
-AUTOMAKE_VERSION =	1.15
+AUTOCONF_VERSION =	2.71
+AUTOMAKE_VERSION =	1.16
 AUTORECONF =		/bin/sh ./autogen.sh
 
 .include <bsd.port.mk>

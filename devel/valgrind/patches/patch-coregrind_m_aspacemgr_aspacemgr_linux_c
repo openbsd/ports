@@ -1,0 +1,179 @@
+--- coregrind/m_aspacemgr/aspacemgr-linux.c.orig
++++ coregrind/m_aspacemgr/aspacemgr-linux.c
+@@ -30,7 +30,7 @@
+    The GNU General Public License is contained in the file COPYING.
+ */
+ 
+-#if defined(VGO_linux) || defined(VGO_darwin) || defined(VGO_solaris) || defined(VGO_freebsd)
++#if defined(VGO_linux) || defined(VGO_darwin) || defined(VGO_solaris) || defined(VGO_freebsd) || defined(VGO_openbsd)
+ 
+ /* *************************************************************
+    DO NOT INCLUDE ANY OTHER FILES HERE.
+@@ -314,7 +314,7 @@
+ # endif
+ #elif defined(VGO_solaris)
+    = (Addr) 0x00100000; // 1MB
+-#elif defined(VGO_freebsd)
++#elif defined(VGO_freebsd) || defined(VGO_openbsd)
+    = (Addr) 0x04000000; // 64M
+ #else
+ #endif
+@@ -1550,7 +1550,7 @@
+    if (filename || (dev != 0 && ino != 0)) 
+       seg.kind = SkFileV;
+ 
+-#  if defined(VGO_darwin)
++#  if defined(VGO_darwin) || defined(VGO_openbsd)
+    // GrP fixme no dev/ino on darwin
+    if (offset != 0) 
+       seg.kind = SkFileV;
+@@ -2697,7 +2697,11 @@
+       a client request to call the outer VG_(am_get_advisory). */
+    sres = VG_(am_do_mmap_NO_NOTIFY)( 
+              advised, length, 
++#if defined(VGO_openbsd)
++             VKI_PROT_READ|VKI_PROT_WRITE,
++#else
+              VKI_PROT_READ|VKI_PROT_WRITE|VKI_PROT_EXEC, 
++#endif
+              VKI_MAP_FIXED|VKI_MAP_PRIVATE|VKI_MAP_ANONYMOUS, 
+              VM_TAG_VALGRIND, 0
+           );
+@@ -2742,6 +2746,54 @@
+    return sres;
+ }
+ 
++#if defined(VGO_openbsd)
++SysRes VG_(am_mmap_anon_float_valgrind_stack)( SizeT length )
++{
++   SysRes     sres;
++   NSegment   seg;
++   Addr       advised;
++   Bool       ok;
++   MapRequest req;
++
++   /* Not allowable. */
++   if (length == 0)
++      return VG_(mk_SysRes_Error)( VKI_EINVAL );
++
++   /* Ask for an advisory.  If it's negative, fail immediately. */
++   req.rkind = MAny;
++   req.start = 0;
++   req.len   = length;
++   advised = VG_(am_get_advisory)( &req, False/*forClient*/, &ok );
++   if (!ok)
++      return VG_(mk_SysRes_Error)( VKI_EINVAL );
++
++   /* We have been advised that the mapping is allowable at the
++      specified address.  So hand it off to the kernel, and propagate
++      any resulting failure immediately. */
++   sres = VG_(am_do_mmap_NO_NOTIFY)(
++             advised, length,
++             VKI_PROT_READ|VKI_PROT_WRITE,
++             VKI_MAP_PRIVATE|VKI_MAP_ANONYMOUS|VKI_MAP_STACK,
++             VM_TAG_VALGRIND, 0
++          );
++   if (sr_isError(sres))
++      return sres;
++
++   /* Ok, the mapping succeeded.  Now notify the interval map. */
++   init_nsegment( &seg );
++   seg.kind  = SkAnonV;
++   seg.start = sr_Res(sres);
++   seg.end   = seg.start + VG_PGROUNDUP(length) - 1;
++   seg.hasR  = True;
++   seg.hasW  = True;
++   seg.hasX  = True;
++   add_segment( &seg );
++
++   AM_SANITY_CHECK;
++   return sres;
++}
++#endif
++
+ /* Really just a wrapper around VG_(am_mmap_anon_float_valgrind). */
+ 
+ SysRes VG_(am_shadow_alloc)(SizeT size)
+@@ -3896,10 +3948,14 @@
+ /*------END-procmaps-parser-for-Darwin---------------------------*/
+ 
+ /*------BEGIN-procmaps-parser-for-Freebsd------------------------*/
+-#elif defined(VGO_freebsd)
++#elif defined(VGO_freebsd) || defined(VGO_openbsd)
+ 
++#if defined(VGO_freebsd)
+ /* Size of a smallish table used to read /proc/self/map entries. */
+-#define M_PROCMAP_BUF 10485760	/* 10M */
++ #define M_PROCMAP_BUF 10485760	/* 10M */
++#else
++ #define M_PROCMAP_BUF (sizeof(struct vki_kinfo_vmentry) * 64/* XXX */)
++#endif
+ 
+ /* static ... to keep it out of the stack frame. */
+ static char procmap_buf[M_PROCMAP_BUF];
+@@ -3911,6 +3967,7 @@
+       void (*record_gap)( Addr addr, SizeT len )
+    )
+ {
++#if defined(VGO_freebsd)
+     Addr   start, endPlusOne, gapStart;
+     char* filename;
+     char   *p;
+@@ -3968,6 +4025,57 @@
+  
+     if (record_gap && gapStart < Addr_MAX)
+        (*record_gap) ( gapStart, Addr_MAX - gapStart + 1 );
++#elif defined(VGO_openbsd)
++#define	rounddown(x, y)	(((x)/(y))*(y))
++    Int mib[3];
++    Int res;
++    struct vki_kinfo_vmentry *kve;
++    vki_size_t len;
++    char *p;
++    Addr gapStart;
++
++    mib[0] = VKI_CTL_KERN;
++    mib[1] = VKI_KERN_PROC_VMMAP;
++    mib[2] = sr_Res(VG_(do_syscall0)(__NR_getpid));
++    len = rounddown(M_PROCMAP_BUF, sizeof(struct vki_kinfo_vmentry));
++    res = VG_(sysctl)(mib, 3, procmap_buf, &len, NULL, 0);
++    if (res) {
++       VG_(debugLog)(0, "procselfmaps", "sysctll %ld\n", res);
++       ML_(am_exit)(1);
++    }
++
++    gapStart = Addr_MIN;
++    p = procmap_buf;
++    while (p < (char *)procmap_buf + len) {
++       Addr start, endPlusOne;
++       ULong foffset, dev, ino;
++       UInt prot;
++
++       kve = (struct vki_kinfo_vmentry *)p;
++       start = (UWord)kve->kve_start;
++       endPlusOne = (UWord)kve->kve_end;
++       foffset = kve->kve_offset;
++       dev = 0; // XXX kve->kve_dev;
++       ino = 0; // XXX kve->kve_ino;
++
++       prot = 0;
++       if (kve->kve_protection & VKI_KVE_PROT_READ)  prot |= VKI_PROT_READ;
++       if (kve->kve_protection & VKI_KVE_PROT_WRITE) prot |= VKI_PROT_WRITE;
++       if (kve->kve_protection & VKI_KVE_PROT_EXEC)  prot |= VKI_PROT_EXEC;
++       if (record_gap && gapStart < start)
++          (*record_gap) ( gapStart, start-gapStart );
++
++       if (record_mapping && start < endPlusOne)
++          (*record_mapping) ( start, endPlusOne-start,
++                              prot, dev, ino,
++                              foffset, NULL );
++       gapStart = endPlusOne;
++       p += sizeof(*kve);
++    }
++
++    if (record_gap && gapStart < Addr_MAX)
++       (*record_gap) ( gapStart, Addr_MAX - gapStart + 1 );
++#endif
+ }
+ 
+ /*------END-procmaps-parser-for-Freebsd--------------------------*/

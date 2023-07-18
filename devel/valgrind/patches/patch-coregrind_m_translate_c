@@ -1,0 +1,12 @@
+--- coregrind/m_translate.c.orig
++++ coregrind/m_translate.c
+@@ -1692,6 +1692,9 @@
+    vex_abiinfo.guest_amd64_assume_fs_is_const = True;
+    vex_abiinfo.guest_amd64_sigbus_on_misalign = True;
+ #  endif
++#  if defined(VGP_amd64_openbsd)
++   vex_abiinfo.guest_amd64_assume_fs_is_const = True;
++#  endif
+ #  if defined(VGP_amd64_darwin)
+    vex_abiinfo.guest_amd64_assume_gs_is_const = True;
+ #  endif

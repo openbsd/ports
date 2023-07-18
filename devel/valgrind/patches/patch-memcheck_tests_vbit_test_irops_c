@@ -1,0 +1,20 @@
+--- memcheck/tests/vbit-test/irops.c.orig
++++ memcheck/tests/vbit-test/irops.c
+@@ -1189,6 +1189,17 @@
+   { DEFOP(Iop_ReinterpI128asF128, UNDEF_ALL_64x2), .ppc64 = 1, .ppc32 = 1 },
+   { DEFOP(Iop_ReinterpV128asI128, UNDEF_ALL_64x2), .ppc64 = 1, .ppc32 = 1 },
+   { DEFOP(Iop_ReinterpI128asV128, UNDEF_ALL_64x2), .ppc64 = 1, .ppc32 = 1 },
++#if defined(VGO_openbsd)
++  /* ------------------ Segment register ------------------ */
++  { DEFOP(Iop_MovFromSeg8, UNDEF_UNKNOWN), },
++  { DEFOP(Iop_MovFromSeg16, UNDEF_UNKNOWN), },
++  { DEFOP(Iop_MovFromSeg32, UNDEF_UNKNOWN), },
++  { DEFOP(Iop_MovFromSeg64, UNDEF_UNKNOWN), },
++  { DEFOP(Iop_MovToSeg8, UNDEF_UNKNOWN), },
++  { DEFOP(Iop_MovToSeg16, UNDEF_UNKNOWN), },
++  { DEFOP(Iop_MovToSeg32, UNDEF_UNKNOWN), },
++  { DEFOP(Iop_MovToSeg64, UNDEF_UNKNOWN), },
++#endif
+ };
+ 
+ /* Force compile time failure in case libvex_ir.h::IROp was updated

@@ -5,5 +5,3 @@ can also use Valgrind to build new tools.
 
 This OpenBSD port is still very preliminary and has minimal functionality
 (memcheck).  All problems should be reported to the "valgrind-openbsd" page:
-
-https://bitbucket.org/uebayasi/valgrind-openbsd/

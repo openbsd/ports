@@ -1,14 +1,10 @@
-https://bugs.kde.org/show_bug.cgi?id=357833
-https://bitbucket.org/uebayasi/valgrind-openbsd/issues/40/mmap-failure-cannot-allocate-memory-on
-
-Index: coregrind/m_main.c
 --- coregrind/m_main.c.orig
 +++ coregrind/m_main.c
-@@ -1524,7 +1524,38 @@
+@@ -1244,7 +1244,38 @@
  
  /* --- end of Forwards decls to do with shutdown --- */
  
-+#if defined(__OpenBSD__)
++#if defined(VGO_openbsd)
 +#include <tib.h>
  
 +#define ELF_ROUND(x,malign)	(((x) + (malign)-1) & ~((malign)-1))
@@ -26,10 +22,10 @@ Index: coregrind/m_main.c
 +	size = ELF_ROUND(0 + sizeof *tib, 4096);
 +	sres = VG_(am_mmap_anon_float_valgrind)(size);
 +        if (sr_isError(sres)) {
-+           VG_(out_of_memory_NORETURN)("TIB", size);
++           VG_(out_of_memory_NORETURN)("TIB", size, sr_Err(sres));
 +	   /*NOTREACHED*/
 +        }
-+        base = (char *)(AddrH)sr_Res(sres);
++        base = (char *)(Addr64)sr_Res(sres);
 +
 +	tib = (struct tib *)base;
 +
@@ -43,15 +39,15 @@ Index: coregrind/m_main.c
  /* By the time we get to valgrind_main, the_iicii should already have
     been filled in with any important details as required by whatever
     OS we have been built for.
-@@ -1612,6 +1643,7 @@
+@@ -1320,6 +1351,7 @@
     // Ensure we're on a plausible stack.
     //   p: logging
     //--------------------------------------------------------------
-+#if !defined(__OpenBSD__)
++#if !defined(VGO_openbsd)
     VG_(debugLog)(1, "main", "Checking current stack is plausible\n");
     { HChar* limLo  = (HChar*)(&VG_(interim_stack).bytes[0]);
       HChar* limHi  = limLo + sizeof(VG_(interim_stack));
-@@ -1643,6 +1675,7 @@
+@@ -1351,6 +1383,7 @@
          VG_(exit)(1);
       }
     }
@@ -59,52 +55,180 @@ Index: coregrind/m_main.c
  
     //--------------------------------------------------------------
     // Ensure we have a plausible pointer to the stack on which
-@@ -1725,7 +1758,9 @@
-    // child processes will have a reasonable brk value.
-    VG_(getrlimit)(VKI_RLIMIT_DATA, &VG_(client_rlimit_data));
-    zero.rlim_max = VG_(client_rlimit_data).rlim_max;
-+#if !defined(__OpenBSD__)
-    VG_(setrlimit)(VKI_RLIMIT_DATA, &zero);
-+#endif
+@@ -1592,7 +1625,7 @@
+    if (!need_help) {
+       VG_(debugLog)(1, "main", "Create initial image\n");
  
-    // Get the current process stack rlimit.
-    VG_(getrlimit)(VKI_RLIMIT_STACK, &VG_(client_rlimit_stack));
-@@ -2433,6 +2468,10 @@
+-#     if defined(VGO_linux) || defined(VGO_darwin) || defined(VGO_solaris) || defined(VGO_freebsd)
++#     if defined(VGO_linux) || defined(VGO_darwin) || defined(VGO_solaris) || defined(VGO_freebsd) || defined(VGO_openbsd)
+       the_iicii.argv              = argv;
+       the_iicii.envp              = envp;
+       the_iicii.toolname          = VG_(clo_toolname);
+@@ -1863,7 +1896,8 @@
+    addr2dihandle = VG_(newXA)( VG_(malloc), "main.vm.2",
+                                VG_(free), sizeof(Addr_n_ULong) );
+ 
+-#  if defined(VGO_linux) || defined(VGO_solaris) || defined(VGO_freebsd)
++#  if defined(VGO_linux) || defined(VGO_solaris) || defined(VGO_freebsd) || defined(VGO_openbsd)
++/* XXX */
+    { Addr* seg_starts;
+      Int   n_seg_starts;
+      Addr_n_ULong anu;
+@@ -1888,6 +1922,7 @@
+      VG_(free)( seg_starts );
+    }
+ #  elif defined(VGO_darwin)
++/* XXX !! defined(VGO_openbsd) */
+    { Addr* seg_starts;
+      Int   n_seg_starts;
+      seg_starts = VG_(get_segment_starts)( SkFileC, &n_seg_starts );
+@@ -2167,6 +2202,10 @@
     VG_(address_of_m_main_shutdown_actions_NORETURN)
        = & shutdown_actions_NORETURN;
  
-+#if defined(__OpenBSD__)
++#if defined(VGO_openbsd)
 +   setup_static_tib();
 +#endif
 +
     /* Run the first thread, eventually ending up at the continuation
        address. */
     VG_(main_thread_wrapper_NORETURN)(1);
-@@ -3159,6 +3198,8 @@
-     "__start:\n"
-     /* pass args (long argc, char **argv, ...) on stack */
-     "\tmovq  %rsp, %rdi\n"
-+#if !defined(__OpenBSD__)
-+    /* OpenBSD 6.4 and later can not use BBS for stack area */
-     /* set up the new stack in %rsi */
-     "\tmovq  $vgPlain_interim_stack, %rsi\n"
-     "\taddq  $"VG_STRINGIFY(VG_STACK_GUARD_SZB)", %rsi\n"
-@@ -3166,6 +3207,9 @@
-     "\tandq  $~15, %rsi\n"
-     /* install it, and collect the original one */
-     "\txchgq %rsi, %rsp\n"
-+#else
+@@ -3478,6 +3517,138 @@
+    /* NOTREACHED */
+    VG_(exit)(r);
+ }
++/*====================================================================*/
++/*=== Getting to main() alive: OpenBSD                             ===*/
++/*====================================================================*/
++#elif defined(VGO_openbsd)
++
++/*
++ * Could probably extract __OpenBSD_version at configure time
++ */
++/* --- !!! --- EXTERNAL HEADERS start --- !!! --- */
++#include <sys/param.h>       /* __OpenBSD_version */
++/* --- !!! --- EXTERNAL HEADERS end --- !!! --- */
++
++#if defined(VGP_x86_openbsd)
++asm("\n"
++    ".text\n"
++    "\t.globl __start\n"
++    "\t.type __start,@function\n"
++    "__start:\n"
++    /* set up the new stack in %eax */
++    "\tmovl  $vgPlain_interim_stack, %eax\n"
++    "\taddl  $"VG_STRINGIFY(VG_STACK_GUARD_SZB)", %eax\n"
++    "\taddl  $"VG_STRINGIFY(VG_DEFAULT_STACK_ACTIVE_SZB)", %eax\n"
++    /* allocate at least 16 bytes on the new stack, and aligned */
++    "\tsubl  $16, %eax\n"
++    "\tandl  $~15, %eax\n"
++    /* install it, and collect the original one */
++    "\txchgl %eax, %esp\n"
++    "\tsubl  $12, %esp\n"  /* Keep stack 16-byte aligned. */
++    /* call _start_in_C_freebsd, passing it the startup %esp */
++    "\tpushl %eax\n"
++    "\tcall  _start_in_C_freebsd\n"
++    "\thlt\n"
++    ".previous\n"
++);
++#elif defined(VGP_amd64_openbsd)
++asm("\n"
++    ".text\n"
++    "\t.globl __start\n"
++    "\t.type __start,@function\n"
++    "__start:\n"
++    /* pass args (long argc, char **argv, ...) on stack */
++    "\tmovq  %rsp, %rdi\n"
 +    "\tmov   %rsp, %rsi\n"
++    /* call _start_in_C_amd64_openbsd, passing it the startup %rsp */
++    "\tcall  _start_in_C_amd64_openbsd\n"
++    "\thlt\n"
++    ".size __start, . - __start\n"
++    ".previous\n"
++);
++
++void _start_in_C_amd64_openbsd ( UWord* pArgc, UWord *initial_sp );
++void _start_in_C_amd64_openbsd ( UWord* pArgc, UWord *initial_sp )
++{
++   Int     r;
++   Word    argc = pArgc[0];
++   HChar** argv = (HChar**)&pArgc[1];
++   HChar** envp = (HChar**)&pArgc[1+argc+1];
++
++   VG_(memset)( &the_iicii, 0, sizeof(the_iicii) );
++   VG_(memset)( &the_iifii, 0, sizeof(the_iifii) );
++
++   the_iicii.sp_at_startup = (Addr)initial_sp;
++
++   r = valgrind_main( (Int)argc, argv, envp );
++   /* NOTREACHED */
++   VG_(exit)(r);
++}
 +#endif
-     /* call _start_in_C_amd64_freebsd, passing it the startup %rsp */
-     "\tcall  _start_in_C_amd64_openbsd\n"
-     "\thlt\n"
-@@ -3233,7 +3235,7 @@ __asm(" .section \".note.openbsd.ident\", \"a\"\n"
- #if !defined(VGO_openbsd)
- #include <elf.h>
- #else
--#include <libelf/gelf.h>
++
++__asm(" .section \".note.openbsd.ident\", \"a\"\n"
++"       .p2align 2\n"
++"       .long   8\n"
++"       .long   4\n"
++"       .long   1\n"
++"       .ascii \"OpenBSD\\0\"\n"
++"       .long   0\n"
++"       .previous\n");
++
++/* XXX */
++/* --- !!! --- EXTERNAL HEADERS start --- !!! --- */
++#define _GNU_SOURCE
++#define _FILE_OFFSET_BITS 64
++/* This is in order to get AT_NULL and AT_PAGESIZE. */
++#if !defined(VGO_openbsd)
++#include <elf.h>
++#else
 +#include <gelf.h>
- #endif
- /* --- !!! --- EXTERNAL HEADERS end --- !!! --- */
++#endif
++/* --- !!! --- EXTERNAL HEADERS end --- !!! --- */
++
++void *memcpy(void *dest, const void *src, size_t n);
++void *memcpy(void *dest, const void *src, size_t n) {
++   return VG_(memcpy)(dest, src, n);
++}
++void* memmove(void *dest, const void *src, SizeT n);
++void* memmove(void *dest, const void *src, SizeT n) {
++   return VG_(memmove)(dest,src,n);
++}
++void* memset(void *s, int c, SizeT n);
++void* memset(void *s, int c, SizeT n) {
++  return VG_(memset)(s,c,n);
++}
++
++__attribute__ ((used))
++void _start_in_C_openbsd ( UWord* pArgc, UWord *initial_sp );
++__attribute__ ((used))
++void _start_in_C_openbsd ( UWord* pArgc, UWord *initial_sp )
++{
++   Int     r;
++   Word    argc = pArgc[0];
++   HChar** argv = (HChar**)&pArgc[1];
++   HChar** envp = (HChar**)&pArgc[1+argc+1];
++
++   INNER_REQUEST
++      ((void) VALGRIND_STACK_REGISTER
++       (&VG_(interim_stack).bytes[0],
++        &VG_(interim_stack).bytes[0] + sizeof(VG_(interim_stack))));
++
++   VG_(memset)( &the_iicii, 0, sizeof(the_iicii) );
++   VG_(memset)( &the_iifii, 0, sizeof(the_iifii) );
++
++#if defined(VGP_amd64_openbsd)
++   the_iicii.sp_at_startup = (Addr)initial_sp;
++#else
++   the_iicii.sp_at_startup = (Addr)pArgc;
++#endif
++
++   r = valgrind_main( (Int)argc, argv, envp );
++   /* NOTREACHED */
++   VG_(exit)(r);
++}
++
  
+ #else
+ #  error "Unknown OS"

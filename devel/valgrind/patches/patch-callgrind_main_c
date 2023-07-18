@@ -1,0 +1,12 @@
+--- callgrind/main.c.orig
++++ callgrind/main.c
+@@ -1726,7 +1726,8 @@
+       break;
+     }
+    case systime_nsec:
+-#  if defined(VGO_linux) || defined(VGO_solaris) || defined(VGO_freebsd)
++#  if defined(VGO_linux) || defined(VGO_solaris) || defined(VGO_freebsd) || \
++      defined(VGO_openbsd)
+       VG_(clock_gettime)(systime, VKI_CLOCK_MONOTONIC);
+       VG_(clock_gettime)(syscputime, VKI_CLOCK_THREAD_CPUTIME_ID);
+ 

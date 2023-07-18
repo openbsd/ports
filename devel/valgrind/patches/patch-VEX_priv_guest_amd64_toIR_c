@@ -1,10 +1,20 @@
 --- VEX/priv/guest_amd64_toIR.c.orig
 +++ VEX/priv/guest_amd64_toIR.c
-@@ -312,7 +312,11 @@ static IROp mkSizedOp ( IRType ty, IROp op8 )
+@@ -169,6 +169,9 @@
+ #include "guest_generic_x87.h"
+ #include "guest_amd64_defs.h"
+ 
++#if defined(VGO_openbsd)
++#include "callgrind/global.h"
++#endif
+ 
+ /*------------------------------------------------------------*/
+ /*--- Globals                                              ---*/
+@@ -310,7 +313,11 @@
             || op8 == Iop_Shl8 || op8 == Iop_Shr8 || op8 == Iop_Sar8
             || op8 == Iop_CmpEQ8 || op8 == Iop_CmpNE8
             || op8 == Iop_CasCmpNE8
-+#if !defined(__OpenBSD__)
++#if !defined(VGO_openbsd)
             || op8 == Iop_Not8 );
 +#else
 +           || op8 == Iop_Not8 || op8 == Iop_MovFromSeg8);
@@ -12,11 +22,11 @@
     switch (ty) {
        case Ity_I8:  return 0 +op8;
        case Ity_I16: return 1 +op8;
-@@ -709,6 +713,12 @@ static Bool haveF3 ( Prefix pfx ) {
+@@ -714,6 +721,12 @@
     return toBool((pfx & PFX_F3) > 0);
  }
  
-+#if defined(__OpenBSD__)
++#if defined(VGO_openbsd)
 +static Bool haveFS( Prefix pfx ) {
 +   return toBool((pfx & PFX_FS) > 0);
 +}
@@ -25,19 +35,11 @@
  static Bool have66 ( Prefix pfx ) {
     return toBool((pfx & PFX_66) > 0);
  }
-@@ -1213,7 +1223,6 @@ static void putIRegRexB ( Int sz, Prefix pfx, UInt lo3bits, IRExpr* e )
-    ));
- }
- 
--
- /* Functions for getting register numbers from modrm bytes and REX
-    when we don't have to consider the complexities of integer subreg
-    accesses.
-@@ -3137,6 +3146,136 @@ ULong dis_op2_G_E ( VexAbiInfo* vbi,
+@@ -3335,6 +3348,136 @@
  }
  
  
-+#if defined(__OpenBSD__)
++#if defined(VGO_openbsd)
 +/* Handle binary integer instructions of the form
 +      op S, G, E  meaning
 +      op segment reg, reg, reg
@@ -170,11 +172,11 @@
  /* Handle move instructions of the form
        mov E, G  meaning
        mov reg-or-mem, reg
-@@ -3173,6 +3312,15 @@ ULong dis_mov_E_G ( VexAbiInfo* vbi,
+@@ -3371,6 +3514,15 @@
  
     /* E refers to memory */    
     {
-+#if defined(__OpenBSD__)
++#if defined(VGO_openbsd)
 +      if (haveFS(pfx)) {
 +         len = dis_op3_S_G_E(vbi, pfx, Iop_MovFromSeg64, size, delta0, dis_buf);
 +         DIP("mov%c %s,%s\n", nameISize(size),
@@ -186,11 +188,11 @@
        IRTemp addr = disAMode ( &len, vbi, pfx, delta0, dis_buf, 0 );
        putIRegG(size, pfx, rm, loadLE(szToITy(size), mkexpr(addr)));
        DIP("mov%c %s,%s\n", nameISize(size), 
-@@ -3213,6 +3361,16 @@ ULong dis_mov_G_E ( VexAbiInfo*  vbi,
-
+@@ -3411,6 +3563,15 @@
+ 
     *ok = True;
-
-+#if defined(__OpenBSD__)
+ 
++#if defined(VGO_openbsd)
 +   if (haveFS(pfx)) {
 +      len = dis_op3_G_S_E(vbi, pfx, Iop_MovToSeg64, size, delta0, dis_buf);
 +      DIP("mov%c %s,%s\n", nameISize(size),
@@ -199,7 +201,6 @@
 +      return delta0+len;
 +   }
 +#endif
-+
     if (epartIsReg(rm)) {
        if (haveF2orF3(pfx)) { *ok = False; return delta0; }
        putIRegE(size, pfx, rm, getIRegG(size, pfx, rm));

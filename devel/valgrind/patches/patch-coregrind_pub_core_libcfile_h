@@ -1,0 +1,11 @@
+--- coregrind/pub_core_libcfile.h.orig
++++ coregrind/pub_core_libcfile.h
+@@ -110,7 +110,7 @@
+    return if the working directory couldn't be found.  */
+ extern void VG_(record_startup_wd) ( void );
+ 
+-#if defined(VGO_freebsd)
++#if defined(VGO_freebsd) || defined(VGO_openbsd)
+ extern Bool VG_(realpath)(const HChar *path, HChar *resolved);
+ #endif
+ 

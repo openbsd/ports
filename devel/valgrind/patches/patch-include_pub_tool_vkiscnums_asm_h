@@ -1,0 +1,12 @@
+--- include/pub_tool_vkiscnums_asm.h.orig
++++ include/pub_tool_vkiscnums_asm.h
+@@ -77,6 +77,9 @@
+ #elif defined(VGP_x86_freebsd) || defined(VGP_amd64_freebsd)
+ #  include "vki/vki-scnums-freebsd.h"
+ 
++#elif defined(VGP_x86_openbsd) || defined(VGP_amd64_openbsd)
++#  include "vki/vki-scnums-openbsd.h"
++
+ #elif defined(VGP_x86_darwin) || defined(VGP_amd64_darwin)
+ #  include "vki/vki-scnums-darwin.h"
+ 

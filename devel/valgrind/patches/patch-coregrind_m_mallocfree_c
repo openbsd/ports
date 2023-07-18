@@ -1,14 +1,14 @@
 --- coregrind/m_mallocfree.c.orig
 +++ coregrind/m_mallocfree.c
-@@ -854,7 +854,11 @@
+@@ -867,7 +867,11 @@
     if (a->clientmem) {
        // client allocation -- return 0 to client if it fails
-       sres = VG_(am_mmap_anon_float_client)
-+#if defined(__OpenBSD__)
+       sres = VG_(am_mmap_client_heap)
++#if defined(VGO_openbsd)
 +         ( cszB, VKI_PROT_READ|VKI_PROT_WRITE );
 +#else
           ( cszB, VKI_PROT_READ|VKI_PROT_WRITE|VKI_PROT_EXEC );
 +#endif
        if (sr_isError(sres))
           return 0;
-       sb = (Superblock*)(AddrH)sr_Res(sres);
+       sb = (Superblock*)(Addr)sr_Res(sres);

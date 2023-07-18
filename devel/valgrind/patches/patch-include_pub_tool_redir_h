@@ -1,0 +1,45 @@
+--- include/pub_tool_redir.h.orig
++++ include/pub_tool_redir.h
+@@ -241,7 +241,7 @@
+ 
+ /* --- Soname of the standard C library. --- */
+ 
+-#if defined(VGO_linux) || defined(VGO_solaris) || defined(VGO_freebsd)
++#if defined(VGO_linux) || defined(VGO_solaris) || defined(VGO_freebsd) || defined(VGO_openbsd)
+ # if defined(MUSL_LIBC)
+ #  define  VG_Z_LIBC_SONAME  libcZdZa              // libc.*
+ #else
+@@ -285,6 +285,8 @@
+ #  define  VG_Z_LIBPTHREAD_SONAME  libpthreadZdsoZd0     // libpthread.so.0
+ #elif defined(VGO_freebsd)
+ #  define  VG_Z_LIBPTHREAD_SONAME  libthrZdsoZa          // libthr.so*
++#elif defined(VGO_openbsd)
++#  define  VG_Z_LIBPTHREAD_SONAME  libpthreadZdsoZda     // libpthread.so.*
+ #elif defined(VGO_darwin)
+ #  define  VG_Z_LIBPTHREAD_SONAME  libSystemZdZaZddylib  // libSystem.*.dylib
+ #elif defined(VGO_solaris)
+@@ -335,6 +337,15 @@
+ 
+ #endif
+ 
++/* --- Sonames for OpenBSD ELF linkers, plus unencoded versions. --- */
++
++#if defined(VGO_openbsd)
++
++#define  VG_Z_LD_ELF_SO_1           ldZdsoZd           // ld.so
++#define  VG_U_LD_ELF_SO_1           "ld.so"
++
++#endif
++
+ /* --- Executable name for Darwin Mach-O linker. --- */
+ 
+ #if defined(VGO_darwin)
+@@ -405,7 +416,7 @@
+ // FreeBSD is b) pthread functions are lin libthr but semaphore
+ // functions are lin libc
+ 
+-#if defined(VGO_darwin) || defined(VGO_freebsd)
++#if defined(VGO_darwin) || defined(VGO_freebsd) || defined(VGO_openbsd)
+ #define VG_WRAP_THREAD_FUNCTION_LIBPTHREAD_ONLY
+ #elif defined(VGO_solaris) || (defined(VGO_linux) && defined(MUSL_LIBC))
+ #define VG_WRAP_THREAD_FUNCTION_LIBC_ONLY

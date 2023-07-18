@@ -1,0 +1,11 @@
+--- coregrind/m_vkiscnums.c.orig
++++ coregrind/m_vkiscnums.c
+@@ -67,7 +67,7 @@
+ #endif
+ 
+ //---------------------------------------------------------------------------
+-#elif defined(VGO_freebsd)
++#elif defined(VGO_freebsd) || defined(VGO_openbsd)
+ //---------------------------------------------------------------------------
+ 
+ const HChar* VG_(sysnum_string)(Word sysnum)

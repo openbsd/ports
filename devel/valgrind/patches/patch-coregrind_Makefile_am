@@ -1,0 +1,84 @@
+--- coregrind/Makefile.am.orig
++++ coregrind/Makefile.am
+@@ -54,6 +54,11 @@
+ 	launcher-freebsd.c \
+ 	m_debuglog.c
+ endif
++if VGCONF_OS_IS_OPENBSD
++valgrind_SOURCES = \
++	launcher-openbsd.c \
++	m_debuglog.c
++endif
+ 
+ # for valgrind coregrind building, use the LTO versions, in case they differ from non lto versions
+ AR = ${LTO_AR}
+@@ -100,6 +105,9 @@
+ if VGCONF_OS_IS_FREEBSD
+ vgdb_SOURCES += vgdb-invoker-freebsd.c
+ endif
++if VGCONF_OS_IS_OPENBSD
++vgdb_SOURCES += vgdb-invoker-openbsd.c
++endif
+ 
+ vgdb_CPPFLAGS  = $(AM_CPPFLAGS_PRI)
+ vgdb_CFLAGS    = $(AM_CFLAGS_PRI) $(LTO_CFLAGS)
+@@ -285,6 +293,7 @@
+ 	m_syswrap/priv_syswrap-linux.h \
+ 	m_syswrap/priv_syswrap-linux-variants.h \
+ 	m_syswrap/priv_syswrap-freebsd.h \
++	m_syswrap/priv_syswrap-openbsd.h \
+ 	m_syswrap/priv_syswrap-darwin.h \
+ 	m_syswrap/priv_syswrap-solaris.h \
+ 	m_syswrap/priv_syswrap-main.h \
+@@ -389,6 +398,8 @@
+ 	m_dispatch/dispatch-nanomips-linux.S \
+ 	m_dispatch/dispatch-x86-freebsd.S \
+ 	m_dispatch/dispatch-amd64-freebsd.S \
++	m_dispatch/dispatch-x86-openbsd.S \
++	m_dispatch/dispatch-amd64-openbsd.S \
+ 	m_dispatch/dispatch-x86-darwin.S \
+ 	m_dispatch/dispatch-amd64-darwin.S \
+ 	m_dispatch/dispatch-x86-solaris.S \
+@@ -414,6 +425,7 @@
+ 	m_gdbserver/version.c \
+ 	m_initimg/initimg-linux.c \
+ 	m_initimg/initimg-freebsd.c \
++	m_initimg/initimg-openbsd.c \
+ 	m_initimg/initimg-darwin.c \
+ 	m_initimg/initimg-solaris.c \
+ 	m_mach/mach_basics.c \
+@@ -430,6 +442,8 @@
+ 	m_sigframe/sigframe-amd64-linux.c \
+ 	m_sigframe/sigframe-x86-freebsd.c \
+ 	m_sigframe/sigframe-amd64-freebsd.c \
++	m_sigframe/sigframe-x86-openbsd.c \
++	m_sigframe/sigframe-amd64-openbsd.c \
+ 	m_sigframe/sigframe-ppc32-linux.c \
+ 	m_sigframe/sigframe-ppc64-linux.c \
+ 	m_sigframe/sigframe-arm-linux.c \
+@@ -454,6 +468,8 @@
+ 	m_syswrap/syscall-nanomips-linux.S \
+ 	m_syswrap/syscall-x86-freebsd.S \
+ 	m_syswrap/syscall-amd64-freebsd.S \
++	m_syswrap/syscall-x86-openbsd.S \
++	m_syswrap/syscall-amd64-openbsd.S \
+ 	m_syswrap/syscall-x86-darwin.S \
+ 	m_syswrap/syscall-amd64-darwin.S \
+ 	m_syswrap/syscall-x86-solaris.S \
+@@ -463,6 +479,7 @@
+ 	m_syswrap/syswrap-linux.c \
+ 	m_syswrap/syswrap-linux-variants.c \
+ 	m_syswrap/syswrap-freebsd.c \
++	m_syswrap/syswrap-openbsd.c \
+ 	m_syswrap/syswrap-darwin.c \
+ 	m_syswrap/syswrap-solaris.c \
+ 	m_syswrap/syswrap-x86-linux.c \
+@@ -471,6 +488,8 @@
+ 	m_syswrap/syswrap-ppc64-linux.c \
+ 	m_syswrap/syswrap-x86-freebsd.c \
+ 	m_syswrap/syswrap-amd64-freebsd.c \
++	m_syswrap/syswrap-x86-openbsd.c \
++	m_syswrap/syswrap-amd64-openbsd.c \
+ 	m_syswrap/syswrap-arm-linux.c \
+ 	m_syswrap/syswrap-arm64-linux.c \
+ 	m_syswrap/syswrap-s390x-linux.c \

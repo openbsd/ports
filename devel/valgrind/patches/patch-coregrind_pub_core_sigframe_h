@@ -1,0 +1,11 @@
+--- coregrind/pub_core_sigframe.h.orig
++++ coregrind/pub_core_sigframe.h
+@@ -58,7 +58,7 @@
+ 
+ /* Remove a signal frame from thread 'tid's stack, and 
+    restore the CPU state from it. */
+-#ifdef VGO_freebsd
++#if defined(VGO_freebsd) || defined(VGO_openbsd)
+ extern 
+ void VG_(sigframe_destroy)( ThreadId tid );
+ #else

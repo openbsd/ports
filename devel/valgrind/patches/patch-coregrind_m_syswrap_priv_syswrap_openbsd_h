@@ -1,19 +1,310 @@
 --- coregrind/m_syswrap/priv_syswrap-openbsd.h.orig
 +++ coregrind/m_syswrap/priv_syswrap-openbsd.h
-@@ -50,7 +50,7 @@
- DECL_TEMPLATE(openbsd, sys_open);
- DECL_TEMPLATE(openbsd, sys_close);
- DECL_TEMPLATE(openbsd, sys_getentropy);
--DECL_TEMPLATE(openbsd, sys___tfork);
-+DECL_TEMPLATE(openbsd, sys___tfork_thread);
- DECL_TEMPLATE(openbsd, sys_link);
- DECL_TEMPLATE(openbsd, sys_unlink);
- DECL_TEMPLATE(openbsd, sys_wait4);
-@@ -144,6 +144,7 @@
- DECL_TEMPLATE(openbsd, sys_pledge);
- DECL_TEMPLATE(openbsd, sys_ppoll);
- DECL_TEMPLATE(openbsd, sys_pselect);
+@@ -0,0 +1,307 @@
++
++/*--------------------------------------------------------------------*/
++/*--- FreeBSD-specific syscalls stuff.          priv_syswrap-freebsd.h ---*/
++/*--------------------------------------------------------------------*/
++
++/*
++   This file is part of Valgrind, a dynamic binary instrumentation
++   framework.
++
++   Copyright (C) 2000-2008 Nicholas Nethercote
++      njn@valgrind.org
++
++   This program is free software; you can redistribute it and/or
++   modify it under the terms of the GNU General Public License as
++   published by the Free Software Foundation; either version 2 of the
++   License, or (at your option) any later version.
++
++   This program is distributed in the hope that it will be useful, but
++   WITHOUT ANY WARRANTY; without even the implied warranty of
++   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++   General Public License for more details.
++
++   You should have received a copy of the GNU General Public License
++   along with this program; if not, write to the Free Software
++   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
++   02111-1307, USA.
++
++   The GNU General Public License is contained in the file COPYING.
++*/
++
++#ifndef __PRIV_SYSWRAP_OPENBSD_H
++#define __PRIV_SYSWRAP_OPENBSD_H
++
++/* requires #include "priv_types_n_macros.h" */
++
++// Clone-related functions
++extern Word ML_(start_thread_NORETURN) ( void* arg );
++extern Addr ML_(allocstack)            ( ThreadId tid );
++extern void ML_(call_on_new_stack_0_1) ( Addr stack, Addr retaddr,
++			                 void (*f)(Word), Word arg1 );
++extern SysRes ML_(do_fork) ( ThreadId tid );
++extern SysRes ML_(do_vfork) ( ThreadId tid );
++extern SysRes ML_(do_rfork) ( ThreadId tid, Int flags );
++
++DECL_TEMPLATE(openbsd, sys_syscall);
++DECL_TEMPLATE(openbsd, sys_exit);
++DECL_TEMPLATE(openbsd, sys_fork);
++DECL_TEMPLATE(openbsd, sys_read);
++DECL_TEMPLATE(openbsd, sys_write);
++DECL_TEMPLATE(openbsd, sys_open);
++DECL_TEMPLATE(openbsd, sys_close);
++DECL_TEMPLATE(openbsd, sys_getentropy);
++DECL_TEMPLATE(openbsd, sys___tfork);
++DECL_TEMPLATE(openbsd, sys_link);
++DECL_TEMPLATE(openbsd, sys_unlink);
++DECL_TEMPLATE(openbsd, sys_wait4);
++DECL_TEMPLATE(openbsd, sys_chdir);
++DECL_TEMPLATE(openbsd, sys_fchdir);
++DECL_TEMPLATE(openbsd, sys_mknod);
++DECL_TEMPLATE(openbsd, sys_chmod);
++DECL_TEMPLATE(openbsd, sys_chown);
++DECL_TEMPLATE(openbsd, sys_break);
++DECL_TEMPLATE(openbsd, sys_getdtablecount);
++DECL_TEMPLATE(openbsd, sys_getpid);
++DECL_TEMPLATE(openbsd, sys_mount);
++DECL_TEMPLATE(openbsd, sys_unmount);
++DECL_TEMPLATE(openbsd, sys_setuid);
++DECL_TEMPLATE(openbsd, sys_getuid);
++DECL_TEMPLATE(openbsd, sys_geteuid);
++DECL_TEMPLATE(openbsd, sys_ptrace);
++DECL_TEMPLATE(openbsd, sys_recvmsg);
++DECL_TEMPLATE(openbsd, sys_sendmsg);
++DECL_TEMPLATE(openbsd, sys_recvfrom);
++DECL_TEMPLATE(openbsd, sys_accept);
++DECL_TEMPLATE(openbsd, sys_accept4);
++DECL_TEMPLATE(openbsd, sys_getpeername);
++DECL_TEMPLATE(openbsd, sys_getsockname);
++DECL_TEMPLATE(openbsd, sys_access);
++DECL_TEMPLATE(openbsd, sys_chflags);
++DECL_TEMPLATE(openbsd, sys_chflagsat);
++DECL_TEMPLATE(openbsd, sys_fchflags);
++DECL_TEMPLATE(openbsd, sys_sync);
++DECL_TEMPLATE(openbsd, sys_msyscall);
++DECL_TEMPLATE(openbsd, sys_kill);
++DECL_TEMPLATE(openbsd, sys_getppid);
++DECL_TEMPLATE(openbsd, sys_dup);
++DECL_TEMPLATE(openbsd, sys_dup3);
++DECL_TEMPLATE(openbsd, sys_getegid);
++DECL_TEMPLATE(openbsd, sys_profil);
++DECL_TEMPLATE(openbsd, sys_ktrace);
++DECL_TEMPLATE(openbsd, sys_sigaction);
++DECL_TEMPLATE(openbsd, sys_sigaction4);
++DECL_TEMPLATE(openbsd, sys_getgid);
++DECL_TEMPLATE(openbsd, sys_sigprocmask);
++DECL_TEMPLATE(openbsd, sys_sigtimedwait);
++DECL_TEMPLATE(openbsd, sys_sigwaitinfo);
++DECL_TEMPLATE(openbsd, sys_getlogin_r);
++DECL_TEMPLATE(openbsd, sys_setlogin);
++DECL_TEMPLATE(openbsd, sys_acct);
++DECL_TEMPLATE(openbsd, sys_sigpending);
++DECL_TEMPLATE(openbsd, sys_ioctl);
++DECL_TEMPLATE(openbsd, sys_reboot);
++DECL_TEMPLATE(openbsd, sys_revoke);
++DECL_TEMPLATE(openbsd, sys_undelete);
++DECL_TEMPLATE(openbsd, sys_yield);
++DECL_TEMPLATE(openbsd, sys_symlink);
++DECL_TEMPLATE(openbsd, sys_readlink);
++DECL_TEMPLATE(openbsd, sys_execve);
++DECL_TEMPLATE(openbsd, sys_umask);
++DECL_TEMPLATE(openbsd, sys_chroot);
++DECL_TEMPLATE(openbsd, sys_getfsstat);
++DECL_TEMPLATE(openbsd, sys_statfs);
++DECL_TEMPLATE(openbsd, sys_statfs6);
++DECL_TEMPLATE(openbsd, sys_fstatfs);
++DECL_TEMPLATE(openbsd, sys_fstatfs6);
++DECL_TEMPLATE(openbsd, sys_fhstatfs);
++DECL_TEMPLATE(openbsd, sys_fhstatfs6);
++DECL_TEMPLATE(openbsd, sys_vfork);
++DECL_TEMPLATE(openbsd, sys_munmap);
++DECL_TEMPLATE(openbsd, sys_mprotect);
++DECL_TEMPLATE(openbsd, sys_madvise);
++DECL_TEMPLATE(openbsd, sys_mquery);
++DECL_TEMPLATE(openbsd, sys_getgroups);
++DECL_TEMPLATE(openbsd, sys_setgroups);
++DECL_TEMPLATE(openbsd, sys_getpgrp);
++DECL_TEMPLATE(openbsd, sys_setpgid);
++DECL_TEMPLATE(openbsd, sys_sendsyslog);
++DECL_TEMPLATE(openbsd, sys_setitimer);
++DECL_TEMPLATE(openbsd, sys_getitimer);
++DECL_TEMPLATE(openbsd, sys_dup2);
++DECL_TEMPLATE(openbsd, sys_getcontext);
++DECL_TEMPLATE(openbsd, sys_setcontext);
++DECL_TEMPLATE(openbsd, sys_swapcontext);
++DECL_TEMPLATE(openbsd, sys_fcntl);
++DECL_TEMPLATE(openbsd, sys_select);
++DECL_TEMPLATE(openbsd, sys_fsync);
++DECL_TEMPLATE(openbsd, sys_setpriority);
++DECL_TEMPLATE(openbsd, sys_socket);
++DECL_TEMPLATE(openbsd, sys_connect);
++DECL_TEMPLATE(openbsd, sys_getpriority);
++DECL_TEMPLATE(openbsd, sys_sigreturn);
++DECL_TEMPLATE(openbsd, sys_bind);
++DECL_TEMPLATE(openbsd, sys_setsockopt);
++DECL_TEMPLATE(openbsd, sys_listen);
++DECL_TEMPLATE(openbsd, sys_pledge);
++DECL_TEMPLATE(openbsd, sys_ppoll);
++DECL_TEMPLATE(openbsd, sys_pselect);
 +DECL_TEMPLATE(openbsd, sys_unveil);
- DECL_TEMPLATE(openbsd, sys_sigsuspend);
- DECL_TEMPLATE(openbsd, sys_gettimeofday);
- DECL_TEMPLATE(openbsd, sys_getrusage);
++DECL_TEMPLATE(openbsd, sys___realpath);
++DECL_TEMPLATE(openbsd, sys_recvmmsg);
++DECL_TEMPLATE(openbsd, sys_sendmmsg);
++DECL_TEMPLATE(openbsd, sys_sigsuspend);
++DECL_TEMPLATE(openbsd, sys_gettimeofday);
++DECL_TEMPLATE(openbsd, sys_getrusage);
++DECL_TEMPLATE(openbsd, sys_getsockopt);
++DECL_TEMPLATE(openbsd, sys_readv);
++DECL_TEMPLATE(openbsd, sys_writev);
++DECL_TEMPLATE(openbsd, sys_settimeofday);
++DECL_TEMPLATE(openbsd, sys_fchown);
++DECL_TEMPLATE(openbsd, sys_fchmod);
++DECL_TEMPLATE(openbsd, sys_setreuid);
++DECL_TEMPLATE(openbsd, sys_setregid);
++DECL_TEMPLATE(openbsd, sys_rename);
++DECL_TEMPLATE(openbsd, sys_flock);
++DECL_TEMPLATE(openbsd, sys_mkfifo);
++DECL_TEMPLATE(openbsd, sys_sendto);
++DECL_TEMPLATE(openbsd, sys_shutdown);
++DECL_TEMPLATE(openbsd, sys_socketpair);
++DECL_TEMPLATE(openbsd, sys_mkdir);
++DECL_TEMPLATE(openbsd, sys_rmdir);
++DECL_TEMPLATE(openbsd, sys_utimes);
++DECL_TEMPLATE(openbsd, sys_adjtime);
++DECL_TEMPLATE(openbsd, sys_setsid);
++DECL_TEMPLATE(openbsd, sys_quotactl);
++DECL_TEMPLATE(openbsd, sys_ypconnect);
++DECL_TEMPLATE(openbsd, sys_nfssvc);
++DECL_TEMPLATE(openbsd, sys_mimmutable);
++DECL_TEMPLATE(openbsd, sys_waitid);
++DECL_TEMPLATE(openbsd, sys_getdomainname);
++DECL_TEMPLATE(openbsd, sys_setdomainname);
++DECL_TEMPLATE(openbsd, sys_getfh);
++DECL_TEMPLATE(openbsd, sys___tmpfd);
++DECL_TEMPLATE(openbsd, sys_sysarch);
++DECL_TEMPLATE(openbsd, sys_pread);
++DECL_TEMPLATE(openbsd, sys_pwrite);
++DECL_TEMPLATE(openbsd, sys_setgid);
++DECL_TEMPLATE(openbsd, sys_setegid);
++DECL_TEMPLATE(openbsd, sys_lutimes);
++DECL_TEMPLATE(openbsd, sys_seteuid);
++DECL_TEMPLATE(openbsd, sys_pathconf);
++DECL_TEMPLATE(openbsd, sys_fpathconf);
++DECL_TEMPLATE(openbsd, sys_lchmod);
++DECL_TEMPLATE(openbsd, sys_swapctl);
++DECL_TEMPLATE(openbsd, sys_getrlimit);
++DECL_TEMPLATE(openbsd, sys_setrlimit);
++DECL_TEMPLATE(openbsd, sys_mmap);
++DECL_TEMPLATE(openbsd, sys___syscall);
++DECL_TEMPLATE(openbsd, sys_lseek);
++DECL_TEMPLATE(openbsd, sys_truncate);
++DECL_TEMPLATE(openbsd, sys_ftruncate);
++DECL_TEMPLATE(openbsd, sys___sysctl);
++DECL_TEMPLATE(openbsd, sys_sendfile);
++DECL_TEMPLATE(openbsd, sys_mlock);
++DECL_TEMPLATE(openbsd, sys_munlock);
++DECL_TEMPLATE(openbsd, sys_futimes);
++DECL_TEMPLATE(openbsd, sys_getpgid);
++DECL_TEMPLATE(openbsd, sys_utrace);
++DECL_TEMPLATE(openbsd, sys_semget);
++DECL_TEMPLATE(openbsd, sys_shm_open);
++DECL_TEMPLATE(openbsd, sys_shm_unlink);
++DECL_TEMPLATE(openbsd, sys_msgget);
++DECL_TEMPLATE(openbsd, sys_msgsnd);
++DECL_TEMPLATE(openbsd, sys_msgrcv);
++DECL_TEMPLATE(openbsd, sys_shmat);
++DECL_TEMPLATE(openbsd, sys_shmdt);
++DECL_TEMPLATE(openbsd, sys_kbind);
++DECL_TEMPLATE(openbsd, sys_clock_gettime);
++DECL_TEMPLATE(openbsd, sys_clock_settime);
++DECL_TEMPLATE(openbsd, sys_clock_getres);
++DECL_TEMPLATE(openbsd, sys_nanosleep);
++DECL_TEMPLATE(openbsd, sys_minherit);
++DECL_TEMPLATE(openbsd, sys_poll);
++DECL_TEMPLATE(openbsd, sys_issetugid);
++DECL_TEMPLATE(openbsd, sys_lchown);
++DECL_TEMPLATE(openbsd, sys_getsid);
++DECL_TEMPLATE(openbsd, sys_msync);
++DECL_TEMPLATE(openbsd, sys_pipe);
++DECL_TEMPLATE(openbsd, sys_pipe2);
++DECL_TEMPLATE(openbsd, sys_fhopen);
++DECL_TEMPLATE(openbsd, sys_preadv);
++DECL_TEMPLATE(openbsd, sys_pwritev);
++DECL_TEMPLATE(openbsd, sys_kqueue);
++DECL_TEMPLATE(openbsd, sys_kevent);
++DECL_TEMPLATE(openbsd, sys_mlockall);
++DECL_TEMPLATE(openbsd, sys_munlockall);
++DECL_TEMPLATE(openbsd, sys_getresuid);
++DECL_TEMPLATE(openbsd, sys_setresuid);
++DECL_TEMPLATE(openbsd, sys_getresgid);
++DECL_TEMPLATE(openbsd, sys_setresgid);
++DECL_TEMPLATE(openbsd, sys_closefrom);
++DECL_TEMPLATE(openbsd, sys_sigaltstack);
++DECL_TEMPLATE(openbsd, sys_shmget);
++DECL_TEMPLATE(openbsd, sys_semop);
++DECL_TEMPLATE(openbsd, sys_stat);
++DECL_TEMPLATE(openbsd, sys_fstat);
++DECL_TEMPLATE(openbsd, sys_lstat);
++DECL_TEMPLATE(openbsd, sys_fhstat);
++DECL_TEMPLATE(openbsd, sys___semctl);
++DECL_TEMPLATE(openbsd, sys_shmctl);
++DECL_TEMPLATE(openbsd, sys_msgctl);
++DECL_TEMPLATE(openbsd, sys_sched_yield);
++DECL_TEMPLATE(openbsd, sys_sched_get_priority_max);
++DECL_TEMPLATE(openbsd, sys_sched_get_priority_min);
++DECL_TEMPLATE(openbsd, sys_getthrid);
++DECL_TEMPLATE(openbsd, sys___thrsleep);
++DECL_TEMPLATE(openbsd, sys___thrwakeup);
++DECL_TEMPLATE(openbsd, sys___threxit);
++DECL_TEMPLATE(openbsd, sys___thrsigdivert);
++DECL_TEMPLATE(openbsd, sys___getcwd);
++DECL_TEMPLATE(openbsd, sys_getfsstat4);
++DECL_TEMPLATE(openbsd, sys_adjfreq);
++DECL_TEMPLATE(openbsd, sys_setrtable);
++DECL_TEMPLATE(openbsd, sys_getrtable);
++DECL_TEMPLATE(openbsd, sys_getdirentries);
++DECL_TEMPLATE(openbsd, sys_faccessat);
++DECL_TEMPLATE(openbsd, sys_fchmodat);
++DECL_TEMPLATE(openbsd, sys_fchownat);
++DECL_TEMPLATE(openbsd, sys_fstatat);
++DECL_TEMPLATE(openbsd, sys_linkat);
++DECL_TEMPLATE(openbsd, sys_mkdirat);
++DECL_TEMPLATE(openbsd, sys_mkfifoat);
++DECL_TEMPLATE(openbsd, sys_mknodat);
++DECL_TEMPLATE(openbsd, sys_openat);
++DECL_TEMPLATE(openbsd, sys_readlinkat);
++DECL_TEMPLATE(openbsd, sys_renameat);
++DECL_TEMPLATE(openbsd, sys_symlinkat);
++DECL_TEMPLATE(openbsd, sys_unlinkat);
++DECL_TEMPLATE(openbsd, sys_utimensat);
++DECL_TEMPLATE(openbsd, sys_futimens);
++DECL_TEMPLATE(openbsd, sys___set_tcb);
++DECL_TEMPLATE(openbsd, sys___get_tcb);
++DECL_TEMPLATE(openbsd, sys_lkmnosys0);
++DECL_TEMPLATE(openbsd, sys_lkmnosys1);
++DECL_TEMPLATE(openbsd, sys_lkmnosys2);
++DECL_TEMPLATE(openbsd, sys_lkmnosys3);
++DECL_TEMPLATE(openbsd, sys_lkmnosys4);
++DECL_TEMPLATE(openbsd, sys_lkmnosys5);
++DECL_TEMPLATE(openbsd, sys_lkmnosys6);
++DECL_TEMPLATE(openbsd, sys_lkmnosys7);
++DECL_TEMPLATE(openbsd, sys_lkmnosys8);
++DECL_TEMPLATE(openbsd, sys_thr_self);
++DECL_TEMPLATE(openbsd, sys_thr_exit);
++DECL_TEMPLATE(openbsd, sys_thr_set_name);
++DECL_TEMPLATE(openbsd, sys_thr_kill);
++DECL_TEMPLATE(openbsd, sys_thr_kill2);
++DECL_TEMPLATE(openbsd, sys_thr_wake);
++DECL_TEMPLATE(openbsd, sys__umtx_op);
++DECL_TEMPLATE(openbsd, sys__umtx_lock);
++DECL_TEMPLATE(openbsd, sys__umtx_unlock);
++DECL_TEMPLATE(openbsd, sys_rtprio_thread);
++DECL_TEMPLATE(openbsd, sys_sigpending);
++DECL_TEMPLATE(openbsd, sys_fake_sigreturn);
++#endif   // __PRIV_SYSWRAP_OPENBSD_H
++
++/*--------------------------------------------------------------------*/
++/*--- end                                                          ---*/
++/*--------------------------------------------------------------------*/

@@ -1,10 +1,10 @@
 --- memcheck/mc_translate.c.orig
 +++ memcheck/mc_translate.c
-@@ -4222,6 +4222,12 @@ IRAtom* expr2vbits_Binop ( MCEnv* mce,
-                           binop(Iop_V128HLtoV256, qV, shV));
+@@ -5021,6 +5021,12 @@
+          return mkUifUV128(mce, narrowed, rmPCasted);
        }
  
-+#if defined(__OpenBSD__)
++#if defined(VGO_openbsd)
 +      case Iop_MovFromSeg64:
 +      case Iop_MovToSeg64:
 +         return assignNew('V', mce, Ity_I64, binop(op, atom1, atom2));

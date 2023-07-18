@@ -1,21 +1,259 @@
 --- coregrind/m_libcsignal.c.orig
 +++ coregrind/m_libcsignal.c
-@@ -397,6 +397,7 @@
- Int VG_(tkill)( Int lwpid, Int signo )
+@@ -39,7 +39,9 @@
+ #if !defined(VGO_solaris)
+ #   define _VKI_MAXSIG (_VKI_NSIG - 1)
+ #endif
++#if !defined(VGO_openbsd)
+ STATIC_ASSERT((_VKI_MAXSIG % _VKI_NSIG_BPW) != 0);
++#endif
+ 
+ /* IMPORTANT: on Darwin it is essential to use the _nocancel versions
+    of syscalls rather than the vanilla version, if a _nocancel version
+@@ -62,26 +64,35 @@
+ 
+ Int VG_(sigfillset)( vki_sigset_t* set )
  {
- #  if defined(__NR_tkill)
-+   PRINT("sys___tfork ( %ld, %ld )",ARG1,ARG2);
-    SysRes res = VG_(mk_SysRes_Error)(VKI_ENOSYS);
-    res = VG_(do_syscall2)(__NR_tkill, lwpid, signo);
-    if (sr_isError(res) && sr_Err(res) == VKI_ENOSYS)
-@@ -415,7 +416,9 @@
++#if !defined(VGO_openbsd)
+    Int i;
+    if (set == NULL)
+       return -1;
+    for (i = 0; i < _VKI_NSIG_WORDS; i++)
+       set->sig[i] = ~0;
++#else
++   *set = ~0U;
++#endif
+    return 0;
+ }
+ 
+ Int VG_(sigemptyset)( vki_sigset_t* set )
+ {
++#if !defined(VGO_openbsd)
+    Int i;
+    if (set == NULL)
+       return -1;
+    for (i = 0; i < _VKI_NSIG_WORDS; i++)
+       set->sig[i] = 0;
++#else
++   *set = 0U;
++#endif
+    return 0;
+ }
+ 
+ Bool VG_(isemptysigset)( const vki_sigset_t* set )
+ {
++#if !defined(VGO_openbsd)
+    Int i;
+    vg_assert(set != NULL);
+    for (i = 0; i < _VKI_NSIG_WORDS; i++) {
+@@ -97,10 +108,14 @@
+       }
+    }
+    return True;
++#else
++   return (*set == 0U);
++#endif
+ }
+ 
+ Bool VG_(isfullsigset)( const vki_sigset_t* set )
+ {
++#if !defined(VGO_openbsd)
+    Int i;
+    vg_assert(set != NULL);
+    for (i = 0; i < _VKI_NSIG_WORDS; i++) {
+@@ -116,10 +131,14 @@
+       }
+    }
+    return True;
++#else
++   return (*set == ~0U);
++#endif
+ }
+ 
+ Bool VG_(iseqsigset)( const vki_sigset_t* set1, const vki_sigset_t* set2 )
+ {
++#if !defined(VGO_openbsd)
+    Int i;
+    vg_assert(set1 != NULL && set2 != NULL);
+    for (i = 0; i < _VKI_NSIG_WORDS; i++) {
+@@ -135,6 +154,9 @@
+       }
+    }
+    return True;
++#else
++   return *set1 == *set2;
++#endif
+ }
+ 
+ 
+@@ -145,7 +167,11 @@
+    if (signum < 1 || signum > _VKI_NSIG)
+       return -1;
+    signum--;
++#if !defined(VGO_openbsd)
+    set->sig[signum / _VKI_NSIG_BPW] |= (1ULL << (signum % _VKI_NSIG_BPW));
++#else
++   *set |= 1U << signum;
++#endif
+    return 0;
+ }
+ 
+@@ -156,7 +182,11 @@
+    if (signum < 1 || signum > _VKI_NSIG)
+       return -1;
+    signum--;
++#if !defined(VGO_openbsd)
+    set->sig[signum / _VKI_NSIG_BPW] &= ~(1ULL << (signum % _VKI_NSIG_BPW));
++#else
++   *set &= ~(1U << signum);
++#endif
+    return 0;
+ }
+ 
+@@ -167,46 +197,66 @@
+    if (signum < 1 || signum > _VKI_NSIG)
+       return 0;
+    signum--;
++#if !defined(VGO_openbsd)
+    if (1 & ((set->sig[signum / _VKI_NSIG_BPW]) >> (signum % _VKI_NSIG_BPW)))
+       return 1;
+    else
+       return 0;
++#else
++   return (*set & (1U << signum)) != 0;
++#endif
+ }
+ 
+ /* Add all signals in src to dst. */
+ void VG_(sigaddset_from_set)( vki_sigset_t* dst, const vki_sigset_t* src )
+ {
++#if !defined(VGO_openbsd)
+    Int i;
+    vg_assert(dst != NULL && src != NULL);
+    for (i = 0; i < _VKI_NSIG_WORDS; i++)
+       dst->sig[i] |= src->sig[i];
++#else
++   *dst |= *src;
++#endif
+ }
+ 
+ /* Remove all signals in src from dst. */
+ void VG_(sigdelset_from_set)( vki_sigset_t* dst, const vki_sigset_t* src )
+ {
++#if !defined(VGO_openbsd)
+    Int i;
+    vg_assert(dst != NULL && src != NULL);
+    for (i = 0; i < _VKI_NSIG_WORDS; i++)
+       dst->sig[i] &= ~(src->sig[i]);
++#else
++   *dst &= ~*src;
++#endif
+ }
+ 
+ /* dst = dst `intersect` src. */
+ void VG_(sigintersectset)( vki_sigset_t* dst, const vki_sigset_t* src )
+ {
++#if !defined(VGO_openbsd)
+    Int i;
+    vg_assert(dst != NULL && src != NULL);
+    for (i = 0; i < _VKI_NSIG_WORDS; i++)
+       dst->sig[i] &= src->sig[i];
++#else
++   *dst &= *src;
++#endif
+ }
+ 
+ /* dst = ~src */
+ void VG_(sigcomplementset)( vki_sigset_t* dst, const vki_sigset_t* src )
+ {
++#if !defined(VGO_openbsd)
+    Int i;
+    vg_assert(dst != NULL && src != NULL);
+    for (i = 0; i < _VKI_NSIG_WORDS; i++)
+       dst->sig[i] = ~ src->sig[i];
++#else
++   *dst = ~*src;
++#endif
+ }
+ 
+ 
+@@ -231,6 +281,21 @@
+       __NR___pthread_sigmask instead. */
+    SysRes res =  VG_(do_syscall3)(__NR___pthread_sigmask, 
+                                   how, (UWord)set, (UWord)oldset);
++#  elif defined(VGO_openbsd)
++   /* OpenBSD's sigprocmask(2) returns old mask as return value. */
++   UWord v;
++   if (set == NULL) {
++      how = VKI_SIG_BLOCK;
++      v = 0;
++   } else {
++      v = *set;
++   }
++   SysRes res =  VG_(do_syscall2)(__NR_sigprocmask, how, v);
++   if (!sr_isError(res)) {
++      if (oldset != NULL) {
++         *oldset = sr_Res(res);
++      }
++   }
+ #  else
+ #    error "Unknown OS"
+ #  endif
+@@ -319,7 +384,7 @@
+                                  signum, (UWord)act, (UWord)oldact);
+    return sr_isError(res) ? -1 : 0;
+    
+-#  elif defined(VGO_freebsd)
++#  elif defined(VGO_freebsd) || defined(VGO_openbsd)
+    SysRes res = VG_(do_syscall3)(__NR_sigaction,
+                                  signum, (UWord)act, (UWord)oldact);
+    return sr_isError(res) ? -1 : 0;
+@@ -342,7 +407,8 @@
+ VG_(convert_sigaction_fromK_to_toK)( const vki_sigaction_fromK_t* fromK,
+                                      /*OUT*/vki_sigaction_toK_t* toK )
+ {
+-#  if defined(VGO_linux) || defined(VGO_solaris) || defined(VGO_freebsd)
++#  if defined(VGO_linux) || defined(VGO_solaris) || defined(VGO_freebsd) \
++   || defined(VGO_openbsd)
+    *toK = *fromK;
+ #  elif defined(VGO_darwin)
+    toK->ksa_handler = fromK->ksa_handler;
+@@ -357,7 +423,7 @@
+ 
+ Int VG_(kill)( Int pid, Int signo )
+ {
+-#  if defined(VGO_linux) || defined(VGO_solaris)
++#  if defined(VGO_linux) || defined(VGO_solaris) || defined(VGO_openbsd)
+    SysRes res = VG_(do_syscall2)(__NR_kill, pid, signo);
+ #  elif defined(VGO_darwin) || defined(VGO_freebsd)
+    SysRes res = VG_(do_syscall3)(__NR_kill,
+@@ -403,6 +469,11 @@
+    res = VG_(do_syscall2)(__NR_thr_kill, lwpid, signo);
     return sr_isError(res) ? -1 : 0;
  
- #  elif defined(VGO_openbsd)
--   I_die_here;
++#  elif defined(VGO_openbsd)
 +   SysRes res;
 +   res = VG_(do_syscall3)(__NR_thrkill, lwpid, signo, NULL);
 +   return sr_isError(res) ? -1 : 0;
- 
++
  #  else
  #    error "Unsupported plat"
+ #  endif
+@@ -577,6 +648,17 @@
+    SysRes res = VG_(do_syscall3)(__NR_sigtimedwait, (UWord)set, (UWord)info,
+                                    (UWord)&zero);
+    return sr_isError(res) ? -1 : sr_Res(res);
++}
++
++#elif defined(VGO_openbsd)
++// XXX VGO_openbsd
++#ifndef __NR_sigtimedwait
++#define __NR_sigtimedwait 0
++#endif
++
++Int VG_(sigtimedwait_zero)( const vki_sigset_t *set, vki_siginfo_t *info )
++{
++  return -1;
+ }
+ 
+ #else

@@ -1,13 +1,35 @@
 --- coregrind/pub_core_aspacemgr.h.orig
 +++ coregrind/pub_core_aspacemgr.h
-@@ -242,6 +242,9 @@ extern SysRes VG_(am_mmap_anon_float_client) ( SizeT length,
- Int prot );
-    segment array accordingly.  This is fundamentally how V allocates
-    itself more address space when needed. */
- extern SysRes VG_(am_mmap_anon_float_valgrind)( SizeT cszB );
-+#if defined(__OpenBSD__)
+@@ -176,6 +176,11 @@
+    specified address range. */
+ extern Bool VG_(am_notify_client_shmat)( Addr a, SizeT len, UInt prot );
+ 
++#if defined(VGO_openbsd)
++extern SysRes VG_(am_do_mprotect_NO_NOTIFY)
++   ( Addr start, SizeT length, UInt prot);
++#endif
++
+ /* Notifies aspacem that an mprotect was completed successfully.  The
+    segment array is updated accordingly.  Note, as with
+    VG_(am_notify_munmap), it is not the job of this function to reject
+@@ -245,6 +250,9 @@
+    mapping in object files to read their debug info.  */
+ extern SysRes VG_(am_mmap_file_float_valgrind)
+    ( SizeT length, UInt prot, Int fd, Off64T offset );
++#if defined(VGO_openbsd)
 +extern SysRes VG_(am_mmap_anon_float_valgrind_stack)( SizeT cszB );
 +#endif
-
- /* Map privately a file at an unconstrained address for V, and update the
-    segment array accordingly.  This is used by V for transiently
+ 
+ /* Map shared a file at an unconstrained address for V, and update the
+    segment array accordingly.  This is used by V for communicating
+@@ -387,6 +395,10 @@
+ #if defined(VGO_freebsd)
+ /* For kern.usrstack syscall on FreeBSD */
+ extern Word VG_(get_usrstack)(void);
++#endif
++
++#if defined(VGO_openbsd)
++extern Bool VG_(am_mprotect)(Addr start, SizeT length, UInt prot);
+ #endif
+ 
+ #endif   // __PUB_CORE_ASPACEMGR_H

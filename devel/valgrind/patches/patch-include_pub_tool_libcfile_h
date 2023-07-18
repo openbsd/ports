@@ -1,0 +1,12 @@
+--- include/pub_tool_libcfile.h.orig
++++ include/pub_tool_libcfile.h
+@@ -69,6 +69,9 @@
+    ULong   ctime_nsec;
+ };
+ 
++#if defined(VGO_openbsd)
++extern SysRes VG_(mkfifo)  ( const HChar* pathname, Int mode );
++#endif
+ extern SysRes VG_(mknod)  ( const HChar* pathname, Int mode, UWord dev );
+ extern SysRes VG_(open)   ( const HChar* pathname, Int flags, Int mode );
+ /* fd_open words like the open(2) system call: 

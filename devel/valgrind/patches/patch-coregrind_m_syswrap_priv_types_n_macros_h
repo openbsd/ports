@@ -1,0 +1,99 @@
+--- coregrind/m_syswrap/priv_types_n_macros.h.orig
++++ coregrind/m_syswrap/priv_types_n_macros.h
+@@ -50,7 +50,7 @@
+ /* Arguments for a syscall. */
+ typedef
+    struct SyscallArgs {
+-#if defined(VGO_freebsd)
++#if defined(VGO_freebsd) || defined(VGO_openbsd)
+       Word klass;
+ #endif
+       Word sysno;
+@@ -112,7 +112,7 @@
+       Int o_arg6;
+       Int o_arg7;
+       Int uu_arg8;
+-#     elif defined(VGP_x86_freebsd)
++#     elif defined(VGP_x86_freebsd) || defined(VGP_x86_openbsd)
+       Int s_arg1;
+       Int s_arg2;
+       Int s_arg3;
+@@ -121,7 +121,7 @@
+       Int s_arg6;
+       Int s_arg7;
+       Int s_arg8;
+-#     elif defined(VGP_amd64_freebsd)
++#     elif defined(VGP_amd64_freebsd) || defined(VGP_amd64_openbsd)
+       Int o_arg1;
+       Int o_arg2;
+       Int o_arg3;
+@@ -246,6 +246,10 @@
+ extern
+ const SyscallTableEntry* ML_(get_freebsd_syscall_entry)( UInt sysno );
+ 
++#elif defined(VGO_openbsd)
++extern
++const SyscallTableEntry* ML_(get_openbsd_syscall_entry)( UInt sysno );
++
+ #else
+ #  error Unknown OS
+ #endif   
+@@ -324,7 +328,7 @@
+     vgSysWrap_##auxstr##_##name##_after
+ 
+ /* Add a generic wrapper to a syscall table. */
+-#if defined(VGO_linux) || defined(VGO_solaris) || defined(VGO_freebsd)
++#if defined(VGO_linux) || defined(VGO_solaris) || defined(VGO_freebsd) || defined(VGO_openbsd)
+ #  define GENX_(sysno, name)  WRAPPER_ENTRY_X_(generic, sysno, name)
+ #  define GENXY(sysno, name)  WRAPPER_ENTRY_XY(generic, sysno, name)
+ #elif defined(VGO_darwin)
+@@ -339,10 +343,17 @@
+ #define LINX_(sysno, name)    WRAPPER_ENTRY_X_(linux, sysno, name) 
+ #define LINXY(sysno, name)    WRAPPER_ENTRY_XY(linux, sysno, name)
+ 
++#if defined(VGO_freebsd)
+ /* Add a FreeBSD-specific, arch-independent wrapper to a syscall
+    table. */
+ #define BSDX_(sysno, name)    WRAPPER_ENTRY_X_(freebsd, sysno, name) 
+ #define BSDXY(sysno, name)    WRAPPER_ENTRY_XY(freebsd, sysno, name)
++#elif defined(VGO_openbsd)
++/* Add a OpenBSD-specific, arch-independent wrapper to a syscall
++   table. */
++#define BSDX_(sysno, name)    WRAPPER_ENTRY_X_(openbsd, sysno, name)
++#define BSDXY(sysno, name)    WRAPPER_ENTRY_XY(openbsd, sysno, name)
++#endif
+ 
+ 
+ /* ---------------------------------------------------------------------
+@@ -418,6 +429,13 @@
+    } while (0)
+ #endif
+ 
++#ifdef VGO_openbsd
++#define SET_STATUS_Success2(zzz, zzz2)               \
++   do { status->what = SsComplete;                   \
++        status->sres = VG_(mk_SysRes_amd64_openbsd)(zzz, zzz2, False);  \
++   } while (0)
++#endif
++
+ #define SET_STATUS_Failure(zzz)                      \
+    do { Word wzz = (Word)(zzz);                      \
+         /* Catch out wildly bogus error values. */   \
+@@ -470,7 +488,7 @@
+ #  define PRA5(s,t,a) PRRAn(5,s,t,a)
+ #  define PRA6(s,t,a) PRRAn(6,s,t,a)
+ 
+-#elif defined(VGP_x86_freebsd)
++#elif defined(VGP_x86_freebsd) || defined(VGP_x86_openbsd)
+    /* Up to 8 parameters, all on the stack. */
+ #  define PRA1(s,t,a) PSRAn(1,s,t,a)
+ #  define PRA2(s,t,a) PSRAn(2,s,t,a)
+@@ -481,7 +499,7 @@
+ #  define PRA7(s,t,a) PSRAn(7,s,t,a)
+ #  define PRA8(s,t,a) PSRAn(8,s,t,a)
+ 
+-#elif defined(VGP_amd64_freebsd)
++#elif defined(VGP_amd64_freebsd) || defined(VGP_amd64_openbsd)
+    /* Up to 8 parameters, 6 in registers, 2 on the stack. */
+    /* or 7 in registers and 3 on the stack */
+ #  define PRA1(s,t,a) PRRAn(1,s,t,a)

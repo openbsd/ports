@@ -1,10 +1,10 @@
 --- VEX/priv/host_amd64_defs.c.orig
 +++ VEX/priv/host_amd64_defs.c
-@@ -1009,6 +1009,23 @@ AMD64Instr* AMD64Instr_ProfInc ( void ) {
+@@ -1069,7 +1069,24 @@
     i->tag        = Ain_ProfInc;
     return i;
  }
-+#if defined(__OpenBSD__)
++#if defined(VGO_openbsd)
 +AMD64Instr* AMD64Instr_MovFromSeg64 ( HReg off, HReg dst ) {
 +   AMD64Instr* i      = LibVEX_Alloc(sizeof(AMD64Instr));
 +   i->tag             = Ain_MovFromSeg64;
@@ -12,7 +12,7 @@
 +   i->Ain.MovSeg.dst  = dst;
 +   return i;
 +}
-+
+ 
 +AMD64Instr* AMD64Instr_MovToSeg64 ( HReg src, HReg off ) {
 +   AMD64Instr* i      = LibVEX_Alloc(sizeof(AMD64Instr));
 +   i->tag             = Ain_MovToSeg64;
@@ -21,14 +21,15 @@
 +   return i;
 +}
 +#endif
- 
- void ppAMD64Instr ( AMD64Instr* i, Bool mode64 ) 
++
+ void ppAMD64Instr ( const AMD64Instr* i, Bool mode64 ) 
  {
-@@ -1320,6 +1337,21 @@ void ppAMD64Instr ( AMD64Instr* i, Bool mode64 )
+    vassert(mode64 == True);
+@@ -1444,6 +1461,21 @@
        case Ain_ProfInc:
           vex_printf("(profInc) movabsq $NotKnownYet, %%r11; incq (%%r11)");
           return;
-+#if defined(__OpenBSD__)
++#if defined(VGO_openbsd)
 +      case Ain_MovFromSeg64:
 +         vex_printf("addr32 mov fs:(");
 +         ppHRegAMD64(i->Ain.MovSeg.off);
@@ -46,11 +47,11 @@
        default:
           vpanic("ppAMD64Instr");
     }
-@@ -1625,6 +1657,16 @@ void getRegUsage_AMD64Instr ( HRegUsage* u, AMD64Instr* i, Bool mode64 )
+@@ -1799,6 +1831,16 @@
        case Ain_ProfInc:
           addHRegUse(u, HRmWrite, hregAMD64_R11());
           return;
-+#if defined(__OpenBSD__)
++#if defined(VGO_openbsd)
 +      case Ain_MovFromSeg64:
 +         addHRegUse(u, HRmRead,  i->Ain.MovSeg.off);
 +         addHRegUse(u, HRmWrite, i->Ain.MovSeg.dst);
@@ -63,11 +64,11 @@
        default:
           ppAMD64Instr(i, mode64);
           vpanic("getRegUsage_AMD64Instr");
-@@ -1808,6 +1850,16 @@ void mapRegs_AMD64Instr ( HRegRemap* m, AMD64Instr* i, Bool mode64 )
+@@ -2008,6 +2050,16 @@
        case Ain_ProfInc:
           /* hardwires r11 -- nothing to modify. */
           return;
-+#if defined(__OpenBSD__)
++#if defined(VGO_openbsd)
 +      case Ain_MovFromSeg64:
 +         mapReg(m, &i->Ain.MovSeg.off);
 +         mapReg(m, &i->Ain.MovSeg.dst);
@@ -80,11 +81,11 @@
        default:
           ppAMD64Instr(i, mode64);
           vpanic("mapRegs_AMD64Instr");
-@@ -3522,6 +3574,65 @@ Int emit_AMD64Instr ( /*MB_MOD*/Bool* is_profInc,
+@@ -4125,6 +4177,64 @@
        goto done;
     }
  
-+#if defined(__OpenBSD__)
++#if defined(VGO_openbsd)
 +   case Ain_MovFromSeg64: {
 +      /* Following rm and reg are means r/m and reg of prefix ModR/M.
 +         bit 7 6 5 4 3 2 1 0
@@ -96,8 +97,8 @@
 +      *p++ = 0x64; /* Prefix of FS register */
 +      *p++ = rexAMode_R( i->Ain.MovSeg.dst, i->Ain.MovSeg.off );
 +      *p++ = 0x8b; /* Opcode of mov */
-+      rm = hregNumber( i->Ain.MovSeg.off );
-+      d_reg = hregNumber( i->Ain.MovSeg.dst );
++      rm = hregEncoding( i->Ain.MovSeg.off );
++      d_reg = hregEncoding( i->Ain.MovSeg.dst );
 +      switch (rm) {
 +      case 4:  /* rsp */
 +      case 12: /* r12 */
@@ -110,8 +111,8 @@
 +         *p++ = 0x00;
 +         goto done;
 +      }
-+      rm = iregBits210( i->Ain.MovSeg.off );
-+      d_reg = iregBits210( i->Ain.MovSeg.dst) << 3;
++      rm = iregEnc210( i->Ain.MovSeg.off );
++      d_reg = iregEnc210( i->Ain.MovSeg.dst) << 3;
 +      *p++ = rm | d_reg;
 +      goto done;
 +   }
@@ -123,9 +124,9 @@
 +      *p++ = 0x64; /* Prefix of FS register */
 +      *p++ = rexAMode_R( i->Ain.MovSeg.src, i->Ain.MovSeg.off );
 +      *p++ = 0x89; /* Opcode of mov */
-+      rm = hregNumber( i->Ain.MovSeg.off );
++      rm = hregEncoding( i->Ain.MovSeg.off );
 +      o_reg = rm & 0x7;
-+      s_reg = (hregNumber( i->Ain.MovSeg.src ) & 0x7) << 3;
++      s_reg = (hregEncoding( i->Ain.MovSeg.src ) & 0x7) << 3;
 +      switch (rm) {
 +      case 4: /* rsp */
 +      case 12: /* r12 */
@@ -142,7 +143,6 @@
 +      goto done;
 +   }
 +#endif
-+
     default: 
        goto bad;
     }

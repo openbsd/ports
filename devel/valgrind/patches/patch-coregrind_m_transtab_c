@@ -1,21 +1,21 @@
---- coregrind/m_transtab.c.orig	Wed Nov 26 04:41:21 2014
-+++ coregrind/m_transtab.c	Mon Dec 10 17:05:02 2018
-@@ -749,6 +749,10 @@
-    /* Get the CPU info established at startup. */
-    VexArch     arch_host = VexArch_INVALID;
-    VexArchInfo archinfo_host;
-+#if defined(__OpenBSD__)
-+   UInt        len;
-+   SysRes      sres;
-+#endif
+--- coregrind/m_transtab.c.orig
++++ coregrind/m_transtab.c
+@@ -876,6 +876,10 @@
     VG_(bzero_inline)(&archinfo_host, sizeof(archinfo_host));
     VG_(machine_get_VexArchInfo)( &arch_host, &archinfo_host );
     VexEndness endness_host = archinfo_host.endness;
-@@ -789,6 +793,18 @@
-
-    TTEntry* from_tte = index_tte(from_sNo, from_tteNo);
-
-+#if defined(__OpenBSD__)
++#if defined(VGO_openbsd)
++   UInt        len;
++   SysRes      sres;
++#endif
+ 
+    // host_code is where we're patching to.  So it needs to
+    // take into account, whether we're jumping to the slow
+@@ -912,6 +916,18 @@
+ 
+    TTEntryC* from_tteC = index_tteC(from_sNo, from_tteNo);
+ 
++#if defined(VGO_openbsd)
 +   /* Protect the host code areas. */
 +   len = (Long)sectors[to_sNo].tc_next - (Long)host_code;
 +   sres = VG_(am_do_mprotect_NO_NOTIFY)(
@@ -30,11 +30,11 @@
     /* Get VEX to do the patching itself.  We have to hand it off
        since it is host-dependent. */
     VexInvalRange vir
-@@ -802,6 +818,17 @@
+@@ -925,6 +941,17 @@
          );
     VG_(invalidate_icache)( (void*)vir.start, vir.len );
-
-+#if defined(__OpenBSD__)
+ 
++#if defined(VGO_openbsd)
 +   /* Protect the host code areas. */
 +   sres = VG_(am_do_mprotect_NO_NOTIFY)(
 +      (Addr)sectors[to_sNo].tc, 8 * tc_sector_szQ, VKI_PROT_READ | VKI_PROT_EXEC
@@ -48,22 +48,21 @@
     /* Now do the tricky bit -- update the ch_succs and ch_preds info
        for the two translations involved, so we can undo the chaining
        later, which we will have to do if the to_ block gets removed
-@@ -1530,6 +1550,9 @@
+@@ -1744,6 +1771,9 @@
     ULong  *tcptr, *tcptr2;
     UChar* srcP;
     UChar* dstP;
-+#if defined(__OpenBSD__)
++#if defined(VGO_openbsd)
 +   SysRes sres;
 +#endif
-
+ 
     vg_assert(init_done);
     vg_assert(vge->n_used >= 1 && vge->n_used <= 3);
-@@ -1629,12 +1629,34 @@
-    tcptr = sectors[y].tc_next;
+@@ -1818,11 +1848,33 @@
     vg_assert(tcptr >= &sectors[y].tc[0]);
     vg_assert(tcptr <= &sectors[y].tc[tc_sector_szQ]);
-+ 
-+#if defined(__OpenBSD__)
+ 
++#if defined(VGO_openbsd)
 +   /* Protect the host code areas. */
 +   sres = VG_(am_do_mprotect_NO_NOTIFY)(
 +      (Addr)sectors[y].tc, 8 * tc_sector_szQ, VKI_PROT_READ | VKI_PROT_WRITE
@@ -73,14 +72,14 @@
 +      vg_assert(0);
 +   }
 +#endif
- 
++
     dstP = (UChar*)tcptr;
     srcP = (UChar*)code;
     VG_(memcpy)(dstP, srcP, code_len);
     sectors[y].tc_next += reqdQ;
     sectors[y].tt_n_inuse++;
-+ 
-+#if defined(__OpenBSD__)
++
++#if defined(VGO_openbsd)
 +   /* Protect the host code areas. */
 +   sres = VG_(am_do_mprotect_NO_NOTIFY)(
 +      (Addr)sectors[y].tc, 8 * tc_sector_szQ, VKI_PROT_READ | VKI_PROT_EXEC

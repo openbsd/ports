@@ -1,0 +1,111 @@
+--- coregrind/m_syscall.c.orig
++++ coregrind/m_syscall.c
+@@ -400,6 +400,41 @@
+    return r;
+ }
+ 
++#elif defined(VGO_openbsd)
++
++SysRes VG_(mk_SysRes_x86_openbsd) ( UInt val, UInt val2, Bool err ) {
++   SysRes r;
++   r._isError = err;
++   r._val = val;
++   r._val2 = val2;
++   return r;
++}
++
++SysRes VG_(mk_SysRes_amd64_openbsd) ( ULong val, ULong val2, Bool err ) {
++   SysRes r;
++   r._isError = err;
++   r._val = val;
++   r._val2 = val2;
++   return r;
++}
++
++/* Generic constructors. */
++SysRes VG_(mk_SysRes_Error) ( UWord err ) {
++   SysRes r;
++   r._val     = err;
++   r._val2    = 0;
++   r._isError = True;
++   return r;
++}
++
++SysRes VG_(mk_SysRes_Success) ( UWord res ) {
++   SysRes r;
++   r._val     = res;
++   r._val2    = 0;
++   r._isError = False;
++   return r;
++}
++
+ #else
+ #  error "Unknown OS"
+ #endif
+@@ -707,7 +742,7 @@
+ ".previous\n"
+ );
+ 
+-#elif defined(VGP_x86_freebsd)
++#elif defined(VGP_x86_freebsd) || defined(VGP_x86_openbsd)
+ /* Incoming args (syscall number + up to 8 args) are on the stack.
+    FreeBSD has a syscall called 'syscall' that takes all args (including
+    the syscall number) off the stack.  Since we're called, the return
+@@ -785,6 +820,38 @@
+ ".previous\n"
+ );
+ 
++#elif defined(VGP_amd64_openbsd)
++extern UWord do_syscall_WRK (
++          UWord a1, UWord a2, UWord a3,
++          UWord a4, UWord a5, UWord a6,
++          UWord a7,		/* sp + 8 */
++          UWord a8,		/* sp + 16 */
++          UWord syscall_no,	/* sp + 24 */
++          UWord *val1,		/* sp + 32 */
++          UWord *err);		/* sp + 40 */
++asm(
++".text\n"
++".globl do_syscall_WRK\n"
++"do_syscall_WRK:\n"
++        /* Convert function calling convention --> syscall calling
++           convention */
++	/* Copy %rcx to %r10.  See:
++	   - sys/arch/x86/x86/syscall.c
++	   - lib/libc/arch/x86_64/SYS.h */
++        /* XXX Actually this is pretty much x86-64 SysV ABI */
++"	movq	%rcx, %r10\n"
++"	movq    24(%rsp), %rax\n"	/* syscall_no */
++"	syscall\n"
++"	jnc	1f\n"
++"	movq    40(%rsp), %rcx\n"	/* err */
++"	movq    $1, (%rcx)\n"		/* *err = 1 */
++"1:\n"
++"	movq    32(%rsp), %rcx\n"	/* val1 */
++"	movq    %rdx, (%rcx)\n"		/* *val1 = %rdx; */
++"	ret\n"
++".previous\n"
++);
++
+ #elif defined(VGP_x86_darwin)
+ 
+ /* Incoming args (syscall number + up to 8 args) come in on the stack
+@@ -1155,6 +1222,18 @@
+    val = do_syscall_WRK(sysno, a1, a2, a3, a4, a5,
+                         a6, a7, a8, &err, &val2);
+    return VG_(mk_SysRes_amd64_freebsd)( val, val2, (err & 1) != 0 ? True : False);
++
++#  elif defined(VGP_x86_openbsd)
++   ULong val;
++   UInt err = 0;
++   val = do_syscall_WRK(sysno, a1, a2, a3, a4, a5,
++                        a6, a7, a8, &err);
++   return VG_(mk_SysRes_x86_openbsd)( (UInt)val, (UInt)(val>>32), (err & 1) != 0 ? True : False);
++
++#  elif defined(VGP_amd64_openbsd)
++   UWord val0, val1, err = 0;
++   val0 = do_syscall_WRK(a1, a2, a3, a4, a5, a6, a7, a8, sysno, &val1, &err);
++   return VG_(mk_SysRes_amd64_openbsd)(val0, val1, (err & 1) != 0 ? True : False);
+ 
+ #  elif defined(VGP_ppc32_linux)
+    ULong ret     = do_syscall_WRK(sysno,a1,a2,a3,a4,a5,a6);

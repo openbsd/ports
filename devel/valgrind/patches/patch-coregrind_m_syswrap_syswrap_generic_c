@@ -1,16 +1,95 @@
 --- coregrind/m_syswrap/syswrap-generic.c.orig
 +++ coregrind/m_syswrap/syswrap-generic.c
-@@ -2240,7 +2240,13 @@
-    /* Otherwise we're OK (so far).  Install aspacem's choice of
-       address, and let the mmap go through.  */
-    sres = VG_(am_do_mmap_NO_NOTIFY)(advised, arg2, arg3,
-+#if defined(VGO_openbsd)
-+	/* Could not specified VKI_MAP_STACK and VKI_MAP_FIXED at the same
-+	   time */
-+                                    arg4,
-+#else
-                                     arg4 | VKI_MAP_FIXED,
-+#endif
-                                     arg5, arg6);
+@@ -28,7 +28,7 @@
+    The GNU General Public License is contained in the file COPYING.
+ */
  
-    /* A refinement: it may be that the kernel refused aspacem's choice
+-#if defined(VGO_linux) || defined(VGO_darwin) || defined(VGO_solaris) || defined(VGO_freebsd)
++#if defined(VGO_linux) || defined(VGO_darwin) || defined(VGO_solaris) || defined(VGO_freebsd) || defined(VGO_openbsd)
+ 
+ #include "pub_core_basics.h"
+ #include "pub_core_vki.h"
+@@ -938,7 +938,7 @@
+   out:
+    VG_(close)(sr_Res(f));
+ 
+-#elif defined(VGO_darwin) || defined(VGO_freebsd)
++#elif defined(VGO_darwin) || defined(VGO_freebsd) || defined(VGO_openbsd)
+    init_preopened_fds_without_proc_self_fd();
+ 
+ #elif defined(VGO_solaris)
+@@ -1869,7 +1869,7 @@
+    case VKI_IPC_INFO|VKI_IPC_64:
+    case VKI_SEM_INFO|VKI_IPC_64:
+ #endif
+-#if defined(VGO_freebsd)
++#if defined(VGO_freebsd) || defined(VGO_openbsd)
+       PRE_MEM_WRITE( "semctl(IPC_INFO, arg.buf)",
+                      (Addr)arg.buf, sizeof(struct vki_semid_ds) );
+ #else
+@@ -1955,7 +1955,7 @@
+    case VKI_IPC_INFO|VKI_IPC_64:
+    case VKI_SEM_INFO|VKI_IPC_64:
+ #endif
+-#if defined(VGO_freebsd)
++#if defined(VGO_freebsd) || defined(VGO_openbsd)
+       POST_MEM_WRITE( (Addr)arg.buf, sizeof(struct vki_semid_ds) );
+ #else
+       POST_MEM_WRITE( (Addr)arg.buf, sizeof(struct vki_seminfo) );
+@@ -2156,7 +2156,7 @@
+    switch (arg1 /* cmd */) {
+ #if defined(VKI_IPC_INFO)
+    case VKI_IPC_INFO:
+-#   if defined(VGO_freebsd)
++#   if defined(VGO_freebsd) || defined(VGO_openbsd)
+       PRE_MEM_WRITE( "shmctl(IPC_INFO, buf)",
+                      arg2, sizeof(struct vki_shmid_ds) );
+ #   else
+@@ -2220,7 +2220,7 @@
+    switch (arg1 /* cmd */) {
+ #if defined(VKI_IPC_INFO)
+    case VKI_IPC_INFO:
+-#   if defined(VGO_freebsd)
++#   if defined(VGO_freebsd) || defined(VGO_openbsd)
+       POST_MEM_WRITE( arg2, sizeof(struct vki_shmid_ds) );
+ #   else
+       POST_MEM_WRITE( arg2, sizeof(struct vki_shminfo) );
+@@ -3464,7 +3464,7 @@
+ 
+    if (!SUCCESS) return;
+ 
+-#if defined(VGO_linux) || defined(VGO_freebsd)
++#if defined(VGO_linux) || defined(VGO_freebsd) || defined(VGO_openbsd)
+    // RES is 0 for child, non-0 (the child's PID) for parent.
+    is_child = ( RES == 0 ? True : False );
+    child_pid = ( is_child ? -1 : RES );
+@@ -4711,7 +4711,7 @@
+    PRE_MEM_RASCIIZ( "unlink(pathname)", ARG1 );
+ }
+ 
+-#if !defined(VGO_freebsd)
++#if !defined(VGO_freebsd) && !defined(VGO_openbsd)
+ PRE(sys_newuname)
+ {
+    PRINT("sys_newuname ( %#" FMT_REGWORD "x )", ARG1);
+@@ -4869,6 +4869,20 @@
+ 
+ #undef PRE
+ #undef POST
++
++#if defined(VGO_openbsd)
++char *
++VG_(pathname_by_fd)(Int fd)
++{
++   OpenFd *a;
++
++   for (a = allocated_fds; a; a = a->next) {
++      if (a->fd == fd && a->pathname)
++         return a->pathname;
++   }
++   return NULL;
++}
++#endif
+ 
+ #endif // defined(VGO_linux) || defined(VGO_darwin) || defined(VGO_solaris) || defined(VGO_freebsd)
+ 

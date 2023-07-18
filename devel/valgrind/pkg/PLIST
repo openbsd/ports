@@ -2,21 +2,21 @@ bin/callgrind_annotate
 bin/callgrind_control
 bin/cg_annotate
 bin/cg_diff
-@bin bin/cg_merge
+bin/cg_merge
 bin/ms_print
 @bin bin/valgrind
 @bin bin/valgrind-di-server
 @bin bin/valgrind-listener
 @bin bin/vgdb
-include/valgrind/
 include/valgrind/callgrind.h
 include/valgrind/config.h
+include/valgrind/dhat.h
 include/valgrind/drd.h
 include/valgrind/helgrind.h
 include/valgrind/libvex.h
 include/valgrind/libvex_basictypes.h
 include/valgrind/libvex_emnote.h
-include/valgrind/libvex_guest_${MACHINE_ARCH}.h
+include/valgrind/libvex_guest_amd64.h
 include/valgrind/libvex_guest_arm.h
 include/valgrind/libvex_guest_arm64.h
 include/valgrind/libvex_guest_mips32.h
@@ -26,6 +26,7 @@ include/valgrind/libvex_guest_ppc32.h
 include/valgrind/libvex_guest_ppc64.h
 include/valgrind/libvex_guest_s390x.h
 include/valgrind/libvex_guest_x86.h
+include/valgrind/libvex_inner.h
 include/valgrind/libvex_ir.h
 include/valgrind/libvex_s390x_common.h
 include/valgrind/libvex_trc_values.h
@@ -42,6 +43,7 @@ include/valgrind/pub_tool_deduppoolalloc.h
 include/valgrind/pub_tool_errormgr.h
 include/valgrind/pub_tool_execontext.h
 include/valgrind/pub_tool_gdbserver.h
+include/valgrind/pub_tool_guest.h
 include/valgrind/pub_tool_hashtable.h
 include/valgrind/pub_tool_libcassert.h
 include/valgrind/pub_tool_libcbase.h
@@ -64,34 +66,35 @@ include/valgrind/pub_tool_sparsewa.h
 include/valgrind/pub_tool_stacktrace.h
 include/valgrind/pub_tool_threadstate.h
 include/valgrind/pub_tool_tooliface.h
+include/valgrind/pub_tool_transtab.h
 include/valgrind/pub_tool_vki.h
 include/valgrind/pub_tool_vkiscnums.h
 include/valgrind/pub_tool_vkiscnums_asm.h
 include/valgrind/pub_tool_wordfm.h
 include/valgrind/pub_tool_xarray.h
+include/valgrind/pub_tool_xtmemory.h
+include/valgrind/pub_tool_xtree.h
 include/valgrind/valgrind.h
-include/valgrind/vki/
-include/valgrind/vki/vki-${MACHINE_ARCH}-freebsd.h
-include/valgrind/vki/vki-${MACHINE_ARCH}-linux.h
-include/valgrind/vki/vki-${MACHINE_ARCH}-openbsd.h
+include/valgrind/vki/vki-amd64-freebsd.h
+include/valgrind/vki/vki-amd64-linux.h
 include/valgrind/vki/vki-arm-linux.h
 include/valgrind/vki/vki-arm64-linux.h
 include/valgrind/vki/vki-darwin.h
 include/valgrind/vki/vki-freebsd.h
 include/valgrind/vki/vki-linux-drm.h
+include/valgrind/vki/vki-linux-io_uring.h
 include/valgrind/vki/vki-linux.h
-include/valgrind/vki/vki-machine-types-${MACHINE_ARCH}-freebsd.h
-include/valgrind/vki/vki-machine-types-${MACHINE_ARCH}-openbsd.h
+include/valgrind/vki/vki-machine-types-amd64-freebsd.h
 include/valgrind/vki/vki-machine-types-x86-freebsd.h
-include/valgrind/vki/vki-machine-types-x86-openbsd.h
 include/valgrind/vki/vki-mips32-linux.h
 include/valgrind/vki/vki-mips64-linux.h
-include/valgrind/vki/vki-openbsd.h
-include/valgrind/vki/vki-posixtypes-${MACHINE_ARCH}-linux.h
+include/valgrind/vki/vki-nanomips-linux.h
+include/valgrind/vki/vki-posixtypes-amd64-linux.h
 include/valgrind/vki/vki-posixtypes-arm-linux.h
 include/valgrind/vki/vki-posixtypes-arm64-linux.h
 include/valgrind/vki/vki-posixtypes-mips32-linux.h
 include/valgrind/vki/vki-posixtypes-mips64-linux.h
+include/valgrind/vki/vki-posixtypes-nanomips-linux.h
 include/valgrind/vki/vki-posixtypes-ppc32-linux.h
 include/valgrind/vki/vki-posixtypes-ppc64-linux.h
 include/valgrind/vki/vki-posixtypes-s390x-linux.h
@@ -99,163 +102,173 @@ include/valgrind/vki/vki-posixtypes-x86-linux.h
 include/valgrind/vki/vki-ppc32-linux.h
 include/valgrind/vki/vki-ppc64-linux.h
 include/valgrind/vki/vki-s390x-linux.h
-include/valgrind/vki/vki-scnums-${MACHINE_ARCH}-linux.h
+include/valgrind/vki/vki-scnums-32bit-linux.h
+include/valgrind/vki/vki-scnums-amd64-linux.h
 include/valgrind/vki/vki-scnums-arm-linux.h
 include/valgrind/vki/vki-scnums-arm64-linux.h
 include/valgrind/vki/vki-scnums-darwin.h
 include/valgrind/vki/vki-scnums-freebsd.h
 include/valgrind/vki/vki-scnums-mips32-linux.h
 include/valgrind/vki/vki-scnums-mips64-linux.h
-include/valgrind/vki/vki-scnums-openbsd.h
+include/valgrind/vki/vki-scnums-nanomips-linux.h
 include/valgrind/vki/vki-scnums-ppc32-linux.h
 include/valgrind/vki/vki-scnums-ppc64-linux.h
 include/valgrind/vki/vki-scnums-s390x-linux.h
+include/valgrind/vki/vki-scnums-shared-linux.h
+include/valgrind/vki/vki-scnums-solaris.h
 include/valgrind/vki/vki-scnums-x86-linux.h
+include/valgrind/vki/vki-solaris-repcache.h
+include/valgrind/vki/vki-solaris.h
 include/valgrind/vki/vki-x86-freebsd.h
 include/valgrind/vki/vki-x86-linux.h
-include/valgrind/vki/vki-x86-openbsd.h
 include/valgrind/vki/vki-xen-domctl.h
 include/valgrind/vki/vki-xen-evtchn.h
 include/valgrind/vki/vki-xen-gnttab.h
 include/valgrind/vki/vki-xen-hvm.h
 include/valgrind/vki/vki-xen-memory.h
 include/valgrind/vki/vki-xen-mmuext.h
+include/valgrind/vki/vki-xen-physdev.h
+include/valgrind/vki/vki-xen-schedop.h
 include/valgrind/vki/vki-xen-sysctl.h
 include/valgrind/vki/vki-xen-tmem.h
 include/valgrind/vki/vki-xen-version.h
 include/valgrind/vki/vki-xen-x86.h
+include/valgrind/vki/vki-xen-xsm.h
 include/valgrind/vki/vki-xen.h
 lib/pkgconfig/valgrind.pc
-lib/valgrind/
-lib/valgrind/32bit-core-valgrind-s1.xml
-lib/valgrind/32bit-core-valgrind-s2.xml
-lib/valgrind/32bit-core.xml
-lib/valgrind/32bit-linux-valgrind-s1.xml
-lib/valgrind/32bit-linux-valgrind-s2.xml
-lib/valgrind/32bit-linux.xml
-lib/valgrind/32bit-sse-valgrind-s1.xml
-lib/valgrind/32bit-sse-valgrind-s2.xml
-lib/valgrind/32bit-sse.xml
-lib/valgrind/64bit-avx-valgrind-s1.xml
-lib/valgrind/64bit-avx-valgrind-s2.xml
-lib/valgrind/64bit-avx.xml
-lib/valgrind/64bit-core-valgrind-s1.xml
-lib/valgrind/64bit-core-valgrind-s2.xml
-lib/valgrind/64bit-core.xml
-lib/valgrind/64bit-linux-valgrind-s1.xml
-lib/valgrind/64bit-linux-valgrind-s2.xml
-lib/valgrind/64bit-linux.xml
-lib/valgrind/64bit-sse-valgrind-s1.xml
-lib/valgrind/64bit-sse-valgrind-s2.xml
-lib/valgrind/64bit-sse.xml
-lib/valgrind/${MACHINE_ARCH}-avx-coresse-valgrind.xml
-lib/valgrind/${MACHINE_ARCH}-avx-coresse.xml
-lib/valgrind/${MACHINE_ARCH}-avx-linux-valgrind.xml
-lib/valgrind/${MACHINE_ARCH}-avx-linux.xml
-lib/valgrind/${MACHINE_ARCH}-coresse-valgrind.xml
-lib/valgrind/${MACHINE_ARCH}-linux-valgrind.xml
-lib/valgrind/arm-core-valgrind-s1.xml
-lib/valgrind/arm-core-valgrind-s2.xml
-lib/valgrind/arm-core.xml
-lib/valgrind/arm-vfpv3-valgrind-s1.xml
-lib/valgrind/arm-vfpv3-valgrind-s2.xml
-lib/valgrind/arm-vfpv3.xml
-lib/valgrind/arm-with-vfpv3-valgrind.xml
-lib/valgrind/arm-with-vfpv3.xml
-@bin lib/valgrind/cachegrind-${MACHINE_ARCH}-openbsd
-@bin lib/valgrind/callgrind-${MACHINE_ARCH}-openbsd
-lib/valgrind/default.supp
-@bin lib/valgrind/drd-${MACHINE_ARCH}-openbsd
-@bin lib/valgrind/exp-bbv-${MACHINE_ARCH}-openbsd
-@bin lib/valgrind/exp-dhat-${MACHINE_ARCH}-openbsd
-@bin lib/valgrind/exp-sgcheck-${MACHINE_ARCH}-openbsd
-@bin lib/valgrind/getoff-${MACHINE_ARCH}-openbsd
-@bin lib/valgrind/helgrind-${MACHINE_ARCH}-openbsd
-lib/valgrind/i386-coresse-valgrind.xml
-lib/valgrind/i386-linux-valgrind.xml
-@bin lib/valgrind/lackey-${MACHINE_ARCH}-openbsd
-lib/valgrind/libcoregrind-${MACHINE_ARCH}-openbsd.a
-lib/valgrind/libreplacemalloc_toolpreload-${MACHINE_ARCH}-openbsd.a
-lib/valgrind/libvex-${MACHINE_ARCH}-openbsd.a
-@bin lib/valgrind/massif-${MACHINE_ARCH}-openbsd
-@bin lib/valgrind/memcheck-${MACHINE_ARCH}-openbsd
-lib/valgrind/mips-cp0-valgrind-s1.xml
-lib/valgrind/mips-cp0-valgrind-s2.xml
-lib/valgrind/mips-cp0.xml
-lib/valgrind/mips-cpu-valgrind-s1.xml
-lib/valgrind/mips-cpu-valgrind-s2.xml
-lib/valgrind/mips-cpu.xml
-lib/valgrind/mips-fpu-valgrind-s1.xml
-lib/valgrind/mips-fpu-valgrind-s2.xml
-lib/valgrind/mips-fpu.xml
-lib/valgrind/mips-linux-valgrind.xml
-lib/valgrind/mips-linux.xml
-lib/valgrind/mips64-cp0-valgrind-s1.xml
-lib/valgrind/mips64-cp0-valgrind-s2.xml
-lib/valgrind/mips64-cp0.xml
-lib/valgrind/mips64-cpu-valgrind-s1.xml
-lib/valgrind/mips64-cpu-valgrind-s2.xml
-lib/valgrind/mips64-cpu.xml
-lib/valgrind/mips64-fpu-valgrind-s1.xml
-lib/valgrind/mips64-fpu-valgrind-s2.xml
-lib/valgrind/mips64-fpu.xml
-lib/valgrind/mips64-linux-valgrind.xml
-lib/valgrind/mips64-linux.xml
-@bin lib/valgrind/none-${MACHINE_ARCH}-openbsd
-lib/valgrind/power-altivec-valgrind-s1.xml
-lib/valgrind/power-altivec-valgrind-s2.xml
-lib/valgrind/power-altivec.xml
-lib/valgrind/power-core-valgrind-s1.xml
-lib/valgrind/power-core-valgrind-s2.xml
-lib/valgrind/power-core.xml
-lib/valgrind/power-fpu-valgrind-s1.xml
-lib/valgrind/power-fpu-valgrind-s2.xml
-lib/valgrind/power-fpu.xml
-lib/valgrind/power-linux-valgrind-s1.xml
-lib/valgrind/power-linux-valgrind-s2.xml
-lib/valgrind/power-linux.xml
-lib/valgrind/power64-core-valgrind-s1.xml
-lib/valgrind/power64-core-valgrind-s2.xml
-lib/valgrind/power64-core.xml
-lib/valgrind/power64-linux-valgrind-s1.xml
-lib/valgrind/power64-linux-valgrind-s2.xml
-lib/valgrind/power64-linux.xml
-lib/valgrind/powerpc-altivec32l-valgrind.xml
-lib/valgrind/powerpc-altivec32l.xml
-lib/valgrind/powerpc-altivec64l-valgrind.xml
-lib/valgrind/powerpc-altivec64l.xml
-lib/valgrind/s390-acr-valgrind-s1.xml
-lib/valgrind/s390-acr-valgrind-s2.xml
-lib/valgrind/s390-acr.xml
-lib/valgrind/s390-fpr-valgrind-s1.xml
-lib/valgrind/s390-fpr-valgrind-s2.xml
-lib/valgrind/s390-fpr.xml
-lib/valgrind/s390x-core64-valgrind-s1.xml
-lib/valgrind/s390x-core64-valgrind-s2.xml
-lib/valgrind/s390x-core64.xml
-lib/valgrind/s390x-generic-valgrind.xml
-lib/valgrind/s390x-generic.xml
-lib/valgrind/s390x-linux64-valgrind-s1.xml
-lib/valgrind/s390x-linux64-valgrind-s2.xml
-lib/valgrind/s390x-linux64.xml
-lib/valgrind/vgpreload_core-${MACHINE_ARCH}-openbsd.so
-lib/valgrind/vgpreload_drd-${MACHINE_ARCH}-openbsd.so
-lib/valgrind/vgpreload_exp-dhat-${MACHINE_ARCH}-openbsd.so
-lib/valgrind/vgpreload_exp-sgcheck-${MACHINE_ARCH}-openbsd.so
-lib/valgrind/vgpreload_helgrind-${MACHINE_ARCH}-openbsd.so
-lib/valgrind/vgpreload_massif-${MACHINE_ARCH}-openbsd.so
-lib/valgrind/vgpreload_memcheck-${MACHINE_ARCH}-openbsd.so
-@man man/man1/callgrind_annotate.1
-@man man/man1/callgrind_control.1
-@man man/man1/cg_annotate.1
-@man man/man1/cg_diff.1
-@man man/man1/cg_merge.1
-@man man/man1/ms_print.1
-@man man/man1/valgrind-listener.1
-@man man/man1/valgrind.1
-@man man/man1/vgdb.1
-share/doc/valgrind/
-share/doc/valgrind/html/
+@static-lib lib/valgrind/libcoregrind-${MACHINE_ARCH}-openbsd.a
+@static-lib lib/valgrind/libgcc-sup-${MACHINE_ARCH}-openbsd.a
+@static-lib lib/valgrind/libreplacemalloc_toolpreload-${MACHINE_ARCH}-openbsd.a
+@static-lib lib/valgrind/libvex-${MACHINE_ARCH}-openbsd.a
+@static-lib lib/valgrind/libvexmultiarch-${MACHINE_ARCH}-openbsd.a
+libexec/valgrind/32bit-core-valgrind-s1.xml
+libexec/valgrind/32bit-core-valgrind-s2.xml
+libexec/valgrind/32bit-core.xml
+libexec/valgrind/32bit-linux-valgrind-s1.xml
+libexec/valgrind/32bit-linux-valgrind-s2.xml
+libexec/valgrind/32bit-linux.xml
+libexec/valgrind/32bit-sse-valgrind-s1.xml
+libexec/valgrind/32bit-sse-valgrind-s2.xml
+libexec/valgrind/32bit-sse.xml
+libexec/valgrind/64bit-avx-valgrind-s1.xml
+libexec/valgrind/64bit-avx-valgrind-s2.xml
+libexec/valgrind/64bit-avx.xml
+libexec/valgrind/64bit-core-valgrind-s1.xml
+libexec/valgrind/64bit-core-valgrind-s2.xml
+libexec/valgrind/64bit-core.xml
+libexec/valgrind/64bit-linux-valgrind-s1.xml
+libexec/valgrind/64bit-linux-valgrind-s2.xml
+libexec/valgrind/64bit-linux.xml
+libexec/valgrind/64bit-sse-valgrind-s1.xml
+libexec/valgrind/64bit-sse-valgrind-s2.xml
+libexec/valgrind/64bit-sse.xml
+libexec/valgrind/amd64-avx-coresse-valgrind.xml
+libexec/valgrind/amd64-avx-coresse.xml
+libexec/valgrind/amd64-avx-linux-valgrind.xml
+libexec/valgrind/amd64-avx-linux.xml
+libexec/valgrind/amd64-coresse-valgrind.xml
+libexec/valgrind/amd64-linux-valgrind.xml
+libexec/valgrind/arm-core-valgrind-s1.xml
+libexec/valgrind/arm-core-valgrind-s2.xml
+libexec/valgrind/arm-core.xml
+libexec/valgrind/arm-vfpv3-valgrind-s1.xml
+libexec/valgrind/arm-vfpv3-valgrind-s2.xml
+libexec/valgrind/arm-vfpv3.xml
+libexec/valgrind/arm-with-vfpv3-valgrind.xml
+libexec/valgrind/arm-with-vfpv3.xml
+@bin libexec/valgrind/cachegrind-${MACHINE_ARCH}-openbsd
+@bin libexec/valgrind/callgrind-${MACHINE_ARCH}-openbsd
+libexec/valgrind/default.supp
+libexec/valgrind/dh_view.css
+libexec/valgrind/dh_view.html
+libexec/valgrind/dh_view.js
+@bin libexec/valgrind/dhat-${MACHINE_ARCH}-openbsd
+@bin libexec/valgrind/drd-${MACHINE_ARCH}-openbsd
+@bin libexec/valgrind/exp-bbv-${MACHINE_ARCH}-openbsd
+@bin libexec/valgrind/getoff-${MACHINE_ARCH}-openbsd
+@bin libexec/valgrind/helgrind-${MACHINE_ARCH}-openbsd
+libexec/valgrind/i386-coresse-valgrind.xml
+libexec/valgrind/i386-linux-valgrind.xml
+@bin libexec/valgrind/lackey-${MACHINE_ARCH}-openbsd
+@bin libexec/valgrind/massif-${MACHINE_ARCH}-openbsd
+@bin libexec/valgrind/memcheck-${MACHINE_ARCH}-openbsd
+libexec/valgrind/mips-cp0-valgrind-s1.xml
+libexec/valgrind/mips-cp0-valgrind-s2.xml
+libexec/valgrind/mips-cp0.xml
+libexec/valgrind/mips-cpu-valgrind-s1.xml
+libexec/valgrind/mips-cpu-valgrind-s2.xml
+libexec/valgrind/mips-cpu.xml
+libexec/valgrind/mips-fpu-valgrind-s1.xml
+libexec/valgrind/mips-fpu-valgrind-s2.xml
+libexec/valgrind/mips-fpu.xml
+libexec/valgrind/mips-linux-valgrind.xml
+libexec/valgrind/mips-linux.xml
+libexec/valgrind/mips64-cp0-valgrind-s1.xml
+libexec/valgrind/mips64-cp0-valgrind-s2.xml
+libexec/valgrind/mips64-cp0.xml
+libexec/valgrind/mips64-cpu-valgrind-s1.xml
+libexec/valgrind/mips64-cpu-valgrind-s2.xml
+libexec/valgrind/mips64-cpu.xml
+libexec/valgrind/mips64-fpu-valgrind-s1.xml
+libexec/valgrind/mips64-fpu-valgrind-s2.xml
+libexec/valgrind/mips64-fpu.xml
+libexec/valgrind/mips64-linux-valgrind.xml
+libexec/valgrind/mips64-linux.xml
+@bin libexec/valgrind/none-${MACHINE_ARCH}-openbsd
+libexec/valgrind/power-altivec-valgrind-s1.xml
+libexec/valgrind/power-altivec-valgrind-s2.xml
+libexec/valgrind/power-altivec.xml
+libexec/valgrind/power-core-valgrind-s1.xml
+libexec/valgrind/power-core-valgrind-s2.xml
+libexec/valgrind/power-core.xml
+libexec/valgrind/power-fpu-valgrind-s1.xml
+libexec/valgrind/power-fpu-valgrind-s2.xml
+libexec/valgrind/power-fpu.xml
+libexec/valgrind/power-linux-valgrind-s1.xml
+libexec/valgrind/power-linux-valgrind-s2.xml
+libexec/valgrind/power-linux.xml
+libexec/valgrind/power-vsx-valgrind-s1.xml
+libexec/valgrind/power-vsx-valgrind-s2.xml
+libexec/valgrind/power-vsx.xml
+libexec/valgrind/power64-core-valgrind-s1.xml
+libexec/valgrind/power64-core-valgrind-s2.xml
+libexec/valgrind/power64-core.xml
+libexec/valgrind/power64-core2-valgrind-s1.xml
+libexec/valgrind/power64-core2-valgrind-s2.xml
+libexec/valgrind/power64-linux-valgrind-s1.xml
+libexec/valgrind/power64-linux-valgrind-s2.xml
+libexec/valgrind/power64-linux.xml
+libexec/valgrind/powerpc-altivec32l-valgrind.xml
+libexec/valgrind/powerpc-altivec32l.xml
+libexec/valgrind/powerpc-altivec64l-valgrind.xml
+libexec/valgrind/powerpc-altivec64l.xml
+libexec/valgrind/s390-acr-valgrind-s1.xml
+libexec/valgrind/s390-acr-valgrind-s2.xml
+libexec/valgrind/s390-acr.xml
+libexec/valgrind/s390-fpr-valgrind-s1.xml
+libexec/valgrind/s390-fpr-valgrind-s2.xml
+libexec/valgrind/s390-fpr.xml
+libexec/valgrind/s390-vx-valgrind-s1.xml
+libexec/valgrind/s390-vx-valgrind-s2.xml
+libexec/valgrind/s390-vx.xml
+libexec/valgrind/s390x-core64-valgrind-s1.xml
+libexec/valgrind/s390x-core64-valgrind-s2.xml
+libexec/valgrind/s390x-core64.xml
+libexec/valgrind/s390x-generic-valgrind.xml
+libexec/valgrind/s390x-generic.xml
+libexec/valgrind/s390x-linux64-valgrind-s1.xml
+libexec/valgrind/s390x-linux64-valgrind-s2.xml
+libexec/valgrind/s390x-linux64.xml
+libexec/valgrind/s390x-vx-linux-valgrind.xml
+libexec/valgrind/s390x-vx-linux.xml
+libexec/valgrind/valgrind-monitor-def.py
+libexec/valgrind/valgrind-monitor.py
+libexec/valgrind/vgpreload_core-${MACHINE_ARCH}-openbsd.so
+libexec/valgrind/vgpreload_dhat-${MACHINE_ARCH}-openbsd.so
+libexec/valgrind/vgpreload_drd-${MACHINE_ARCH}-openbsd.so
+libexec/valgrind/vgpreload_helgrind-${MACHINE_ARCH}-openbsd.so
+libexec/valgrind/vgpreload_massif-${MACHINE_ARCH}-openbsd.so
+libexec/valgrind/vgpreload_memcheck-${MACHINE_ARCH}-openbsd.so
 share/doc/valgrind/html/FAQ.html
 share/doc/valgrind/html/QuickStart.html
 share/doc/valgrind/html/bbv-manual.html
@@ -271,16 +284,19 @@ share/doc/valgrind/html/dist.news.old.html
 share/doc/valgrind/html/dist.readme-android.html
 share/doc/valgrind/html/dist.readme-android_emulator.html
 share/doc/valgrind/html/dist.readme-developers.html
+share/doc/valgrind/html/dist.readme-freebsd.html
 share/doc/valgrind/html/dist.readme-mips.html
 share/doc/valgrind/html/dist.readme-missing.html
 share/doc/valgrind/html/dist.readme-packagers.html
 share/doc/valgrind/html/dist.readme-s390.html
+share/doc/valgrind/html/dist.readme-solaris.html
 share/doc/valgrind/html/dist.readme.html
 share/doc/valgrind/html/drd-manual.html
 share/doc/valgrind/html/faq.html
 share/doc/valgrind/html/hg-manual.html
-share/doc/valgrind/html/images/
+share/doc/valgrind/html/images/dh-tree.png
 share/doc/valgrind/html/images/home.png
+share/doc/valgrind/html/images/kcachegrind_xtree.png
 share/doc/valgrind/html/images/next.png
 share/doc/valgrind/html/images/prev.png
 share/doc/valgrind/html/images/up.png
@@ -298,8 +314,17 @@ share/doc/valgrind/html/mc-manual.html
 share/doc/valgrind/html/ms-manual.html
 share/doc/valgrind/html/nl-manual.html
 share/doc/valgrind/html/quick-start.html
-share/doc/valgrind/html/sg-manual.html
 share/doc/valgrind/html/tech-docs.html
 share/doc/valgrind/html/vg_basic.css
 share/doc/valgrind/valgrind_manual.pdf
 share/doc/valgrind/valgrind_manual.ps
+@man man/man1/callgrind_annotate.1
+@man man/man1/callgrind_control.1
+@man man/man1/cg_annotate.1
+@man man/man1/cg_diff.1
+@man man/man1/cg_merge.1
+@man man/man1/ms_print.1
+@man man/man1/valgrind-di-server.1
+@man man/man1/valgrind-listener.1
+@man man/man1/valgrind.1
+@man man/man1/vgdb.1

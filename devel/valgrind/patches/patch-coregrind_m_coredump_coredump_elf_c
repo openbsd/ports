@@ -1,0 +1,89 @@
+--- coregrind/m_coredump/coredump-elf.c.orig
++++ coregrind/m_coredump/coredump-elf.c
+@@ -26,7 +26,7 @@
+    The GNU General Public License is contained in the file COPYING.
+ */
+ 
+-#if defined(VGO_linux) || defined(VGO_freebsd)
++#if defined(VGO_linux) || defined(VGO_freebsd) || defined(VGO_openbsd)
+ 
+ #include "pub_core_basics.h"
+ #include "pub_core_vki.h"
+@@ -51,7 +51,11 @@
+   Generate a standard ELF core file corresponding to the client state
+   at the time of a crash.
+  */
++#if !defined(VGO_openbsd)
+ #include <elf.h>
++#else
++#include <gelf.h>
++#endif
+ #ifndef NT_PRXFPREG
+ #define NT_PRXFPREG    0x46e62b7f /* copied from gdb5.1/include/elf/common.h */
+ #endif /* NT_PRXFPREG */
+@@ -196,7 +200,7 @@
+    VG_(write)(fd, &n->note, note_size(n));
+ }
+ 
+-#if defined(VGO_freebsd)
++#if defined(VGO_freebsd) || defined(VGO_openbsd)
+ static void fill_prpsinfo(const ThreadState *tst,
+                           struct vki_elf_prpsinfo *prpsinfo)
+ {
+@@ -255,7 +259,7 @@
+ 
+    VG_(memset)(prs, 0, sizeof(*prs));
+ 
+-#if defined(VGO_freebsd)
++#if defined(VGO_freebsd) || defined(VGO_openbsd)
+    prs->pr_version = VKI_PRSTATUS_VERSION;
+    prs->pr_statussz = sizeof(struct vki_elf_prstatus);
+    prs->pr_gregsetsz = sizeof(vki_elf_gregset_t);
+@@ -489,7 +493,7 @@
+    regs[VKI_MIPS32_EF_CP0_STATUS] = arch->vex.guest_CP0_status;
+    regs[VKI_MIPS32_EF_CP0_EPC]    = arch->vex.guest_PC;
+ #  undef DO
+-#elif defined(VGP_amd64_freebsd)
++#elif defined(VGP_amd64_freebsd) || defined(VGP_amd64_openbsd)
+    regs->rflags = LibVEX_GuestAMD64_get_rflags( &arch->vex );
+    regs->rsp    = arch->vex.guest_RSP;
+    regs->rip    = arch->vex.guest_RIP;
+@@ -508,7 +512,7 @@
+    regs->r13    = arch->vex.guest_R13;
+    regs->r14    = arch->vex.guest_R14;
+    regs->r15    = arch->vex.guest_R15;
+-#elif defined(VGP_x86_freebsd)
++#elif defined(VGP_x86_freebsd) || defined(VGP_x86_openbsd)
+    regs->eflags = LibVEX_GuestX86_get_eflags( &arch->vex );
+    regs->esp    = arch->vex.guest_ESP;
+    regs->eip    = arch->vex.guest_EIP;
+@@ -654,9 +658,9 @@
+ #  undef DO
+ #elif defined(VGP_nanomips_linux)
+ 
+-#elif defined(VGP_x86_freebsd)
++#elif defined(VGP_x86_freebsd) || defined(VGP_x86_openbsd)
+ 
+-#elif defined(VGP_amd64_freebsd)
++#elif defined(VGP_amd64_freebsd) || defined(VGP_amd64_openbsd)
+ 
+ #  define DO(n)  VG_(memcpy)(fpu->xmm_space + n * 4, \
+                              &arch->vex.guest_YMM##n[0], 16)
+@@ -700,13 +704,15 @@
+    vki_elf_fpregset_t  fpu;
+    struct vki_elf_prstatus prstatus;
+    const HChar* name;
+-#  if   !defined(VGO_freebsd)
++#  if   !defined(VGO_freebsd) && !defined(VGO_openbsd)
+    name = "CORE";
+-#  else
++#  elif defined(VGO_freebsd)
+    /* lldb on FreeBSD expects a prstatus with name "FreeBSD"
+     * see llvm::Error ProcessElfCore::parseFreeBSDNotes(llvm::ArrayRef<CoreNote> notes) in ProcessElfCore.cpp
+     * Otherwise it exits with "Could not find NT_PRSTATUS note in core file." */
+    name = "FreeBSD";
++#  elif defined(VGO_openbsd)
++   name = "OpenBSD";
+ #  endif
+    VG_(memset)(&fpu, 0, sizeof(fpu));
+    VG_(memset)(&prstatus, 0, sizeof(prstatus));

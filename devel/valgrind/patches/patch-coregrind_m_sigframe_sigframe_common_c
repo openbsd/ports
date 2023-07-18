@@ -1,0 +1,11 @@
+--- coregrind/m_sigframe/sigframe-common.c.orig
++++ coregrind/m_sigframe/sigframe-common.c
+@@ -47,7 +47,7 @@
+    VG_TRACK( new_mem_stack_signal, addr - VG_STACK_REDZONE_SZB, size, tid );
+ }
+ 
+-#if defined(VGO_linux) || defined(VGO_solaris) || defined(VGO_freebsd)
++#if defined(VGO_linux) || defined(VGO_solaris) || defined(VGO_freebsd) || defined(VGO_openbsd)
+ 
+ /* Extend the stack segment downwards if needed so as to ensure the
+    new signal frames are mapped to something.  Return a Bool

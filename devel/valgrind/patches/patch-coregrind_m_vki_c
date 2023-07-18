@@ -1,0 +1,28 @@
+--- coregrind/m_vki.c.orig
++++ coregrind/m_vki.c
+@@ -70,13 +70,15 @@
+    // Set's size must agree with _VKI_NSIG
+    vg_assert( 8 * sizeof(set) == _VKI_NSIG );
+    // Set's word size must agree with _VKI_NSIG_BPW
++#if !defined(VGO_openbsd)
+    vg_assert( 8 * sizeof(set.sig[0]) == _VKI_NSIG_BPW );
+    // The set elements are 32- or 64-bit
+    vg_assert( _VKI_NSIG_BPW == 32 || _VKI_NSIG_BPW == 64 );
++#endif
+ 
+    /* --- Platform-specific checks on signal sets --- */
+ 
+-#  if defined(VGO_linux) || defined(VGO_solaris) || defined(VGO_freebsd)
++#  if defined(VGO_linux) || defined(VGO_solaris) || defined(VGO_freebsd) || defined(VGO_openbsd)
+    /* nothing to check */
+ #  elif defined(VGP_x86_darwin) || defined(VGP_amd64_darwin)
+    vg_assert(_VKI_NSIG == NSIG);
+@@ -90,7 +92,7 @@
+ 
+    /* --- Platform-specific checks on sigactions --- */
+ 
+-#  if defined(VGO_linux) || defined(VGO_freebsd)
++#  if defined(VGO_linux) || defined(VGO_freebsd) || defined(VGO_openbsd)
+    /* the toK- and fromK- forms are identical */
+    vg_assert( sizeof(vki_sigaction_toK_t) 
+               == sizeof(vki_sigaction_fromK_t) );

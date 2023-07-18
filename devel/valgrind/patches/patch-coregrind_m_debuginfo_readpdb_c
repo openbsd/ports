@@ -1,0 +1,20 @@
+--- coregrind/m_debuginfo/readpdb.c.orig
++++ coregrind/m_debuginfo/readpdb.c
+@@ -33,7 +33,7 @@
+    The GNU General Public License is contained in the file COPYING.
+ */
+ 
+-#if defined(VGO_linux) || defined(VGO_darwin) || defined(VGO_solaris) || defined(VGO_freebsd)
++#if defined(VGO_linux) || defined(VGO_darwin) || defined(VGO_solaris) || defined(VGO_freebsd) || defined(VGO_openbsd)
+ 
+ #include "pub_core_basics.h"
+ #include "pub_core_debuginfo.h"
+@@ -2605,7 +2605,7 @@
+    return res;
+ }
+ 
+-#endif // defined(VGO_linux) || defined(VGO_darwin) || defined(VGO_solaris) || defined(VGO_freebsd)
++#endif // defined(VGO_linux) || defined(VGO_darwin) || defined(VGO_solaris) || defined(VGO_freebsd) || defined(VGO_openbsd)
+ 
+ /*--------------------------------------------------------------------*/
+ /*--- end                                                          ---*/
