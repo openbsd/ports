@@ -14,6 +14,8 @@ include/catch2/benchmark/catch_sample_analysis.hpp
 include/catch2/benchmark/detail/
 include/catch2/benchmark/detail/catch_analyse.hpp
 include/catch2/benchmark/detail/catch_benchmark_function.hpp
+include/catch2/benchmark/detail/catch_benchmark_stats.hpp
+include/catch2/benchmark/detail/catch_benchmark_stats_fwd.hpp
 include/catch2/benchmark/detail/catch_complete_invoke.hpp
 include/catch2/benchmark/detail/catch_estimate_clock.hpp
 include/catch2/benchmark/detail/catch_measure.hpp
@@ -60,8 +62,8 @@ include/catch2/interfaces/catch_interfaces_generatortracker.hpp
 include/catch2/interfaces/catch_interfaces_registry_hub.hpp
 include/catch2/interfaces/catch_interfaces_reporter.hpp
 include/catch2/interfaces/catch_interfaces_reporter_factory.hpp
-include/catch2/interfaces/catch_interfaces_reporter_registry.hpp
 include/catch2/interfaces/catch_interfaces_tag_alias_registry.hpp
+include/catch2/interfaces/catch_interfaces_test_invoker.hpp
 include/catch2/interfaces/catch_interfaces_testcase.hpp
 include/catch2/internal/
 include/catch2/internal/catch_assertion_handler.hpp
@@ -73,6 +75,7 @@ include/catch2/internal/catch_compare_traits.hpp
 include/catch2/internal/catch_compiler_capabilities.hpp
 include/catch2/internal/catch_config_android_logwrite.hpp
 include/catch2/internal/catch_config_counter.hpp
+include/catch2/internal/catch_config_static_analysis_support.hpp
 include/catch2/internal/catch_config_uncaught_exceptions.hpp
 include/catch2/internal/catch_config_wchar.hpp
 include/catch2/internal/catch_console_colour.hpp
@@ -105,6 +108,7 @@ include/catch2/internal/catch_parse_numbers.hpp
 include/catch2/internal/catch_platform.hpp
 include/catch2/internal/catch_polyfills.hpp
 include/catch2/internal/catch_preprocessor.hpp
+include/catch2/internal/catch_preprocessor_internal_stringify.hpp
 include/catch2/internal/catch_preprocessor_remove_parens.hpp
 include/catch2/internal/catch_random_number_generator.hpp
 include/catch2/internal/catch_random_seed_generation.hpp
@@ -130,6 +134,7 @@ include/catch2/internal/catch_test_case_tracker.hpp
 include/catch2/internal/catch_test_failure_exception.hpp
 include/catch2/internal/catch_test_macro_impl.hpp
 include/catch2/internal/catch_test_registry.hpp
+include/catch2/internal/catch_test_run_info.hpp
 include/catch2/internal/catch_test_spec_parser.hpp
 include/catch2/internal/catch_textflow.hpp
 include/catch2/internal/catch_to_string.hpp
@@ -180,6 +185,8 @@ lib/cmake/Catch2/Catch2ConfigVersion.cmake
 lib/cmake/Catch2/Catch2Targets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Catch2/Catch2Targets.cmake
 lib/cmake/Catch2/CatchAddTests.cmake
+lib/cmake/Catch2/CatchShardTests.cmake
+lib/cmake/Catch2/CatchShardTestsImpl.cmake
 lib/cmake/Catch2/ParseAndAddCatchTests.cmake
 @static-lib lib/libCatch2.a
 @static-lib lib/libCatch2Main.a
