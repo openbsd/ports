@@ -1,7 +1,7 @@
 Index: mesonbuild/build.py
 --- mesonbuild/build.py.orig
 +++ mesonbuild/build.py
-@@ -36,7 +36,7 @@ from .mesonlib import (
+@@ -35,7 +35,7 @@ from .mesonlib import (
      File, MesonException, MachineChoice, PerMachine, OrderedSet, listify,
      extract_as_list, typeslistify, stringlistify, classify_unity_sources,
      get_filenames_templates_dict, substitute_values, has_path_sep,
@@ -10,7 +10,7 @@ Index: mesonbuild/build.py
      MesonBugException, EnvironmentVariables, pickle_load,
  )
  from .compilers import (
-@@ -2289,6 +2289,26 @@ class SharedLibrary(BuildTarget):
+@@ -2390,6 +2390,26 @@ class SharedLibrary(BuildTarget):
              elif self.soversion:
                  # If unspecified, pick the soversion
                  self.darwin_versions = 2 * [self.soversion]
@@ -37,7 +37,7 @@ Index: mesonbuild/build.py
  
          # Visual Studio module-definitions file
          if 'vs_module_defs' in kwargs:
-@@ -2360,6 +2380,8 @@ class SharedLibrary(BuildTarget):
+@@ -2461,6 +2481,8 @@ class SharedLibrary(BuildTarget):
          # filename. If ltversion != soversion we create an soversion alias:
          # libfoo.so.0 -> libfoo.so.0.100.0
          # Where libfoo.so.0.100.0 is the actual library
