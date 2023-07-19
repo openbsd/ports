@@ -1,3 +1,4 @@
+Index: mmv.c
 --- mmv.c.orig
 +++ mmv.c
 @@ -88,7 +88,6 @@ on the command line.\n";
@@ -61,7 +62,24 @@
  #endif
  #ifndef RENAME
  static int rename(/* char *from, char *to */);
-@@ -2550,10 +2545,9 @@ static void breakout()
+@@ -410,7 +405,7 @@ static CHUNK *freechunks = NULL;
+ static SLICER slicer[2] = {{NULL, NULL, 0}, {NULL, NULL, 0}};
+ 
+ static int badreps = 0, paterr = 0, direrr, failed = 0, gotsig = 0, repbad;
+-static FILE *outfile = stdout;
++static FILE *outfile;
+ 
+ static char IDF[] = "$$mmvdid.";
+ static char TEMP[] = "$$mmvtmp.";
+@@ -471,6 +466,7 @@ int main(argc, argv)
+ {
+ 	char *frompat, *topat;
+ 
++	outfile = stdout;
+ 	init();
+ 	procargs(argc, argv, &frompat, &topat);
+ 	domatch(frompat, topat);
+@@ -2550,10 +2546,9 @@ static void breakout()
  }
  
  
@@ -73,7 +91,7 @@
  }
  
  
-@@ -2745,7 +2739,7 @@ static int getreply(m, failact)
+@@ -2745,7 +2740,7 @@ static int getreply(m, failact)
  	static FILE *tty = NULL;
  	int c, r;
  
@@ -82,7 +100,7 @@
  	if (tty == NULL && (tty = fopen(TTY, "r")) == NULL) {
  		fprintf(stderr, "Can not open %s to get reply.\n", TTY);
  		if (failact == -1)
-@@ -2832,7 +2826,7 @@ static void chgive(p, k)
+@@ -2832,7 +2827,7 @@ static void chgive(p, k)
  }
  
  
