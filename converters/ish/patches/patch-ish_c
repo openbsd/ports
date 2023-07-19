@@ -1,0 +1,20 @@
+Index: ish.c
+--- ish.c.orig
++++ ish.c
+@@ -52,7 +52,7 @@ char *filename = "file.ish";
+ int    mline = 0;
+ int    lfflag = 0;
+ 
+-FILE *opath = stdout;
++FILE *opath;
+ FILE *ipath;
+ char name[NAMLEN];
+ 
+@@ -75,6 +75,7 @@ char **argv;
+     int ac;
+     char **av;
+ 
++    opath = stdout;
+     if (argc < 2)
+ 	help();
+     ac = argc -1;
