@@ -1,0 +1,15 @@
+Highlight mouse pointer/cursor using a dot - useful for presentations, screen
+sharing, ...
+
+To quit the program press Ctrl+C in the terminal where you started it, or
+(p)kill the process.
+
+Features
+- Very lightweight, should work on any Linux/Unix system running an X server
+- Should work with any software capturing/sharing the screen regardless if it
+  shows the cursor (like Zoom) or not (like Skype)
+- Set color for mouse button released and/or pressed state
+- Highlight using a filled or outlined dot
+- Auto-hide highlight and/or cursor after a time when not moving and re-show
+  when moving again
+- Global hotkeys for toggling cursor or highlighter and for toggling auto-hiding

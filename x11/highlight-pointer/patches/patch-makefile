@@ -1,0 +1,10 @@
+disable LTO for easier platform compatibility
+honor CFLAGS
+
+Index: makefile
+--- makefile.orig
++++ makefile
+@@ -1,2 +1,2 @@
+ highlight-pointer: highlight-pointer.c
+-	$(CC) $^ -o $@ -flto -O3 -Wall -Wextra -Wshadow -std=c99 -lX11 -lXext -lXfixes -lXi
++	$(CC) $^ -o $@ $(CFLAGS) -Wextra -Wshadow -std=c99 -lX11 -lXext -lXfixes -lXi
