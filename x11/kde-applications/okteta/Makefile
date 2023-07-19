@@ -1,5 +1,5 @@
 COMMENT =	Hex Editor
-VERSION =	0.26.11
+VERSION =	0.26.12
 DISTNAME =	okteta-${VERSION}
 CATEGORIES =	editors
 EPOCH =		0
