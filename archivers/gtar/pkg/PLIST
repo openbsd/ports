@@ -1,6 +1,5 @@
 @bin bin/gtar
 @info info/tar.info
-@comment lib/charset.alias
 @bin libexec/grmt
 @man man/man1/gtar.1
 @man man/man8/grmt.8
@@ -24,6 +23,9 @@ share/locale/hu/LC_MESSAGES/tar.mo
 share/locale/id/LC_MESSAGES/tar.mo
 share/locale/it/LC_MESSAGES/tar.mo
 share/locale/ja/LC_MESSAGES/tar.mo
+share/locale/ka/
+share/locale/ka/LC_MESSAGES/
+share/locale/ka/LC_MESSAGES/tar.mo
 share/locale/ko/LC_MESSAGES/tar.mo
 share/locale/ky/
 share/locale/ky/LC_MESSAGES/

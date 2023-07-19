@@ -1,8 +1,7 @@
 COMMENT=	GNU version of the traditional tape archiver
 
-DISTNAME=	tar-1.34
+DISTNAME=	tar-1.35
 PKGNAME=	g${DISTNAME}
-REVISION=	0
 CATEGORIES=	archivers
 HOMEPAGE=	https://www.gnu.org/software/tar/
 
@@ -43,6 +42,10 @@ WANTLIB+=	iconv intl
 LIB_DEPENDS+=	devel/gettext,-runtime
 LDSTATIC=
 .endif
+
+# 1.35 has too many problems in the testsuite:
+# missing .at source files, bashisms, brittle xz tests
+NO_TEST=	Yes
 
 # do not rebuild tar.info
 post-patch:
