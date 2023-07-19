@@ -111,10 +111,10 @@ CONFIGURE_ARGS +=	-DUSE_WPE_RENDERER=OFF
 CONFIGURE_ARGS +=	-DENABLE_GAMEPAD=OFF
 
 # sync with Source/JavaScriptCore/assembler/MacroAssembler.h
-# native support for riscv64 in LLInt fails to link with relocation errors
 .if ${MACHINE_ARCH} != "aarch64" && ${MACHINE_ARCH} != "amd64" && \
     ${MACHINE_ARCH} != "arm" && ${MACHINE_ARCH} != "i386" && \
-    ${MACHINE_ARCH} != "mips64" && ${MACHINE_ARCH} != "mips64el"
+    ${MACHINE_ARCH} != "mips64" && ${MACHINE_ARCH} != "mips64el" && \
+    ${MACHINE_ARCH} != "riscv64"
 # #error "The MacroAssembler is not supported on this platform."
 CONFIGURE_ARGS +=	-DENABLE_JIT=OFF
 CONFIGURE_ARGS +=	-DENABLE_C_LOOP=ON

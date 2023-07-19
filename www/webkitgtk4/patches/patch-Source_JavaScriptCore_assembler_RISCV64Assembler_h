@@ -1,0 +1,55 @@
+Add definitions to work around type assumptions: on OpenBSD intptr_t is a long
+and int64_t is a long long.
+
+Index: Source/JavaScriptCore/assembler/RISCV64Assembler.h
+--- Source/JavaScriptCore/assembler/RISCV64Assembler.h.orig
++++ Source/JavaScriptCore/assembler/RISCV64Assembler.h
+@@ -186,7 +186,7 @@ struct ImmediateBase {
+ 
+     template<typename T>
+     static auto isValid(T immValue)
+-        -> std::enable_if_t<(std::is_same_v<T, int32_t> || std::is_same_v<T, int64_t>), bool>
++        -> std::enable_if_t<(std::is_same_v<T, int32_t> || std::is_same_v<T, int64_t> || std::is_same_v<T, intptr_t>), bool>
+     {
+         constexpr unsigned shift = sizeof(T) * 8 - immediateSize;
+         return immValue == ((immValue << shift) >> shift);
+@@ -209,6 +209,14 @@ struct ImmediateBase {
+     }
+ 
+     template<typename ImmediateType>
++    static ImmediateType v(intptr_t immValue)
++    {
++        ASSERT(isValid(immValue));
++        intptr_t value = *reinterpret_cast<intptr_t*>(&immValue);
++        return ImmediateType(uint32_t(value & immediateMask<intptr_t>()));
++    }
++
++    template<typename ImmediateType>
+     static ImmediateType v(int64_t immValue)
+     {
+         ASSERT(isValid(immValue));
+@@ -310,7 +318,7 @@ struct JImmediate : ImmediateBase<21> {
+ };
+ 
+ struct ImmediateDecomposition {
+-    template<typename T, typename = std::enable_if_t<(std::is_same_v<T, int32_t> || std::is_same_v<T, int64_t>)>>
++    template<typename T, typename = std::enable_if_t<(std::is_same_v<T, int32_t> || std::is_same_v<T, int64_t> || std::is_same_v<T, intptr_t>)>>
+     explicit ImmediateDecomposition(T immediate)
+         : upper(UImmediate(0))
+         , lower(IImmediate(0))
+@@ -2182,7 +2190,15 @@ class RISCV64Assembler { (public)
+             : ImmediateLoader(int64_t(imm))
+         { }
+ 
++        ImmediateLoader(intptr_t imm)
++            : ImmediateLoader(int64_t(imm))
++        { }
++
+         ImmediateLoader(PlaceholderTag, int32_t imm)
++            : ImmediateLoader(Placeholder, int64_t(imm))
++        { }
++
++        ImmediateLoader(PlaceholderTag, intptr_t imm)
+             : ImmediateLoader(Placeholder, int64_t(imm))
+         { }
+ 

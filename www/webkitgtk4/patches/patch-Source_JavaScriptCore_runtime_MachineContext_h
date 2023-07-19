@@ -1,7 +1,7 @@
 Index: Source/JavaScriptCore/runtime/MachineContext.h
 --- Source/JavaScriptCore/runtime/MachineContext.h.orig
 +++ Source/JavaScriptCore/runtime/MachineContext.h
-@@ -193,6 +193,22 @@ static inline void*& stackPointerImpl(mcontext_t& mach
+@@ -193,6 +193,24 @@ static inline void*& stackPointerImpl(mcontext_t& mach
  #error Unknown Architecture
  #endif
  
@@ -17,6 +17,8 @@ Index: Source/JavaScriptCore/runtime/MachineContext.h
 +    return reinterpret_cast<void*&>((uintptr_t&) machineContext.sc_sp);
 +#elif CPU(MIPS)
 +    return reinterpret_cast<void*&>((uintptr_t&) machineContext.mc_regs[29]);
++#elif CPU(RISCV64)
++    return reinterpret_cast<void*&>((uintptr_t&) machineContext.sc_sp);
 +#else
 +#error Unknown Architecture
 +#endif
@@ -24,7 +26,7 @@ Index: Source/JavaScriptCore/runtime/MachineContext.h
  #elif OS(FUCHSIA) || OS(LINUX)
  
  #if CPU(X86)
-@@ -338,6 +354,22 @@ static inline void*& framePointerImpl(mcontext_t& mach
+@@ -338,6 +356,24 @@ static inline void*& framePointerImpl(mcontext_t& mach
  #error Unknown Architecture
  #endif
  
@@ -40,6 +42,8 @@ Index: Source/JavaScriptCore/runtime/MachineContext.h
 +    return reinterpret_cast<void*&>((uintptr_t&) machineContext.sc_x[29]);
 +#elif CPU(MIPS)
 +    return reinterpret_cast<void*&>((uintptr_t&) machineContext.mc_regs[30]);
++#elif CPU(RISCV64)
++    return reinterpret_cast<void*&>((uintptr_t&) machineContext.sc_s[0]);
 +#else
 +#error Unknown Architecture
 +#endif
@@ -47,7 +51,7 @@ Index: Source/JavaScriptCore/runtime/MachineContext.h
  #elif OS(FUCHSIA) || OS(LINUX)
  
  // The following sequence depends on glibc's sys/ucontext.h.
-@@ -496,6 +528,22 @@ static inline void*& instructionPointerImpl(mcontext_t
+@@ -496,6 +532,24 @@ static inline void*& instructionPointerImpl(mcontext_t
  #error Unknown Architecture
  #endif
  
@@ -63,6 +67,8 @@ Index: Source/JavaScriptCore/runtime/MachineContext.h
 +    return reinterpret_cast<void*&>((uintptr_t&) machineContext.sc_elr);
 +#elif CPU(MIPS)
 +    return reinterpret_cast<void*&>((uintptr_t&) machineContext.mc_pc);
++#elif CPU(RISCV64)
++    return reinterpret_cast<void*&>((uintptr_t&) machineContext.sc_sepc);
 +#else
 +#error Unknown Architecture
 +#endif
@@ -70,7 +76,7 @@ Index: Source/JavaScriptCore/runtime/MachineContext.h
  #elif OS(FUCHSIA) || OS(LINUX)
  
  // The following sequence depends on glibc's sys/ucontext.h.
-@@ -652,6 +700,22 @@ inline void*& argumentPointer<1>(mcontext_t& machineCo
+@@ -652,6 +706,24 @@ inline void*& argumentPointer<1>(mcontext_t& machineCo
  #error Unknown Architecture
  #endif
  
@@ -86,6 +92,8 @@ Index: Source/JavaScriptCore/runtime/MachineContext.h
 +    return reinterpret_cast<void*&>((uintptr_t&) machineContext.sc_x[1]);
 +#elif CPU(MIPS)
 +    return reinterpret_cast<void*&>((uintptr_t&) machineContext.mc_regs[5]);
++#elif CPU(RISCV64)
++    return reinterpret_cast<void*&>((uintptr_t&) machineContext.sc_a[1]);
 +#else
 +#error Unknown Architecture
 +#endif
@@ -93,12 +101,10 @@ Index: Source/JavaScriptCore/runtime/MachineContext.h
  #elif OS(FUCHSIA) || OS(LINUX)
  
  // The following sequence depends on glibc's sys/ucontext.h.
-@@ -765,6 +829,22 @@ inline void*& llintInstructionPointer(mcontext_t& mach
-     return reinterpret_cast<void*&>((uintptr_t&) machineContext.__gregs[_REG_R8]);
- #elif CPU(ARM64)
+@@ -767,6 +839,24 @@ inline void*& llintInstructionPointer(mcontext_t& mach
      return reinterpret_cast<void*&>((uintptr_t&) machineContext.mc_gpregs.gp_x[4]);
-+#elif CPU(MIPS)
-+    return reinterpret_cast<void*&>((uintptr_t&) machineContext.mc_regs[12]);
+ #elif CPU(MIPS)
+     return reinterpret_cast<void*&>((uintptr_t&) machineContext.mc_regs[12]);
 +#else
 +#error Unknown Architecture
 +#endif
@@ -113,6 +119,10 @@ Index: Source/JavaScriptCore/runtime/MachineContext.h
 +    return reinterpret_cast<void*&>((uintptr_t&) machineContext.__gregs[_REG_R8]);
 +#elif CPU(ARM64)
 +    return reinterpret_cast<void*&>((uintptr_t&) machineContext.sc_x[4]);
- #elif CPU(MIPS)
-     return reinterpret_cast<void*&>((uintptr_t&) machineContext.mc_regs[12]);
++#elif CPU(MIPS)
++    return reinterpret_cast<void*&>((uintptr_t&) machineContext.mc_regs[12]);
++#elif CPU(RISCV64)
++    return reinterpret_cast<void*&>((uintptr_t&) machineContext.sc_a[3]);
  #else
+ #error Unknown Architecture
+ #endif
