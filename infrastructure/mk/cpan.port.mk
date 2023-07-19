@@ -1,8 +1,8 @@
-# $OpenBSD: cpan.port.mk,v 1.22 2020/07/03 21:42:55 sthen Exp $
+# $OpenBSD: cpan.port.mk,v 1.23 2023/07/19 11:09:50 sthen Exp $
 
 PKGNAME ?=	p5-${DISTNAME}
 .if !defined(CPAN_AUTHOR)
-MASTER_SITES ?=	${MASTER_SITE_PERL_CPAN:=${DISTNAME:C/-.*$//}/}
+MASTER_SITES ?=	${MASTER_SITE_PERL_CPAN:N*backpan.perl.org*:=${DISTNAME:C/-.*$//}/}
 .else
 MASTER_SITES ?=	${MASTER_SITE_PERL_CPAN:=../by-authors/id/${CPAN_AUTHOR:C/^(.).*/\1/}/${CPAN_AUTHOR:C/^(..).*/\1/}/${CPAN_AUTHOR}/}
 .endif
