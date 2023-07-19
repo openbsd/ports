@@ -1,7 +1,7 @@
 COMMENT-main=	toolkit for OATH/HOTP and TOTP
 COMMENT-pskc=	toolkit for RFC 6030 Portable Symmetric Key Container
 
-V=		2.6.7
+V=		2.6.9
 DISTNAME=	oath-toolkit-$V
 PKGNAME-main=	oath-toolkit-$V
 PKGNAME-pskc=	oath-toolkit-pskc-$V
