@@ -1,0 +1,20 @@
+Index: diskrescue.c
+--- diskrescue.c.orig
++++ diskrescue.c
+@@ -76,7 +76,7 @@ struct operations {
+ 	{ NULL, OPC_INVALID }
+ };
+ 
+-FILE			*resfd = stderr;
++FILE			*resfd;
+ int			quiet = 0;
+ int			abort_on_error = 0;
+ volatile sig_atomic_t   running = 1;
+@@ -611,6 +611,7 @@ main(int argc, char *argv[])
+ 	int			c, i, operation = OPC_INVALID, rv = 1;
+ 	char			*error = "no error";
+ 
++	resfd = stderr;
+ 	while ((c = getopt(argc, argv, "R:ab:i:r:qo:v")) != -1) {
+ 		switch (c) {
+ 		case 'R':

@@ -6,6 +6,7 @@ GH_ACCOUNT =		conformal
 GH_PROJECT =		diskrescue
 DISTNAME =		${GH_PROJECT}-${V}
 CATEGORIES =		sysutils
+REVISION =		0
 
 HOMEPAGE =		https://github.com/conformal/diskrescue/wiki
 
