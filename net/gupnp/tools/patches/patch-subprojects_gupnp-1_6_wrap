@@ -1,0 +1,17 @@
+From 1372f9ebe45180d58cefb6c0475fafe77de37ef2 Mon Sep 17 00:00:00 2001
+From: Jens Georg <mail@jensge.org>
+Date: Sun, 9 Jul 2023 21:47:48 +0200
+Subject: [PATCH] build: Fix wrap file syntax
+
+Index: subprojects/gupnp-1.6.wrap
+--- subprojects/gupnp-1.6.wrap.orig
++++ subprojects/gupnp-1.6.wrap
+@@ -3,6 +3,6 @@ url = https://gitlab.gnome.org/GNOME/gupnp.git
+ revision = master
+ depth = 1
+  
+-[provides]
+-dependency_name = gupnp-1.2
++[provide]
++dependency_names = gupnp-1.2
+ 
