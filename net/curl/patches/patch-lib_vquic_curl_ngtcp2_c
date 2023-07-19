@@ -1,9 +1,24 @@
 Revert "ngtcp2: use 0.15.0"
 https://github.com/curl/curl/commit/10998e3b89be65e2bf9d9666bd9a1734c186ec0a
 
+Revert "ngtcp2: build with 0.16.0 and nghttp3 0.12.0"
+https://github.com/curl/curl/commit/cae9d10be3d3446beda9e217a0abca91b1b2ab79
+
+Revert "ngtcp2: build with 0.17.0 and nghttp3 0.13.0"
+https://github.com/curl/curl/commit/e0093b4b732f6495b0fb1cd6747cbfedcdcf63ed
+
 Index: lib/vquic/curl_ngtcp2.c
 --- lib/vquic/curl_ngtcp2.c.orig
 +++ lib/vquic/curl_ngtcp2.c
+@@ -33,7 +33,7 @@
+ #ifdef OPENSSL_IS_BORINGSSL
+ #include <ngtcp2/ngtcp2_crypto_boringssl.h>
+ #else
+-#include <ngtcp2/ngtcp2_crypto_quictls.h>
++#include <ngtcp2/ngtcp2_crypto_openssl.h>
+ #endif
+ #include "vtls/openssl.h"
+ #elif defined(USE_GNUTLS)
 @@ -140,7 +140,7 @@ struct cf_ngtcp2_ctx {
    uint32_t version;
    ngtcp2_settings settings;
@@ -13,7 +28,27 @@ Index: lib/vquic/curl_ngtcp2.c
    ngtcp2_crypto_conn_ref conn_ref;
  #ifdef USE_OPENSSL
    SSL_CTX *sslctx;
-@@ -730,9 +730,9 @@ static int cb_recv_stream_data(ngtcp2_conn *tconn, uin
+@@ -351,7 +351,7 @@ static void quic_settings(struct cf_ngtcp2_ctx *ctx,
+   t->initial_max_streams_uni = QUIC_MAX_STREAMS;
+   t->max_idle_timeout = QUIC_IDLE_TIMEOUT;
+   if(ctx->qlogfd != -1) {
+-    s->qlog_write = qlog_callback;
++    s->qlog.write = qlog_callback;
+   }
+ }
+ 
+@@ -407,8 +407,8 @@ static CURLcode quic_ssl_ctx(SSL_CTX **pssl_ctx,
+     goto out;
+   }
+ #else
+-  if(ngtcp2_crypto_quictls_configure_client_context(ssl_ctx) != 0) {
+-    failf(data, "ngtcp2_crypto_quictls_configure_client_context failed");
++  if(ngtcp2_crypto_openssl_configure_client_context(ssl_ctx) != 0) {
++    failf(data, "ngtcp2_crypto_openssl_configure_client_context failed");
+     goto out;
+   }
+ #endif
+@@ -754,9 +754,9 @@ static int cb_recv_stream_data(ngtcp2_conn *tconn, uin
    DEBUGF(LOG_CF(data, cf, "[h3sid=%" PRId64 "] read_stream(len=%zu) -> %zd",
                  stream_id, buflen, nconsumed));
    if(nconsumed < 0) {
@@ -26,7 +61,7 @@ Index: lib/vquic/curl_ngtcp2.c
      return NGTCP2_ERR_CALLBACK_FAILURE;
    }
  
-@@ -789,8 +789,8 @@ static int cb_stream_close(ngtcp2_conn *tconn, uint32_
+@@ -813,8 +813,8 @@ static int cb_stream_close(ngtcp2_conn *tconn, uint32_
    DEBUGF(LOG_CF(data, cf, "[h3sid=%" PRId64 "] quic close(err=%"
                  PRIu64 ") -> %d", stream3_id, app_error_code, rv));
    if(rv) {
@@ -37,7 +72,61 @@ Index: lib/vquic/curl_ngtcp2.c
      return NGTCP2_ERR_CALLBACK_FAILURE;
    }
  
-@@ -1259,7 +1259,7 @@ static int init_ngh3_conn(struct Curl_cfilter *cf)
+@@ -926,13 +926,13 @@ static int cb_get_new_connection_id(ngtcp2_conn *tconn
+   return 0;
+ }
+ 
+-static int cb_recv_rx_key(ngtcp2_conn *tconn, ngtcp2_encryption_level level,
++static int cb_recv_rx_key(ngtcp2_conn *tconn, ngtcp2_crypto_level level,
+                           void *user_data)
+ {
+   struct Curl_cfilter *cf = user_data;
+   (void)tconn;
+ 
+-  if(level != NGTCP2_ENCRYPTION_LEVEL_1RTT) {
++  if(level != NGTCP2_CRYPTO_LEVEL_APPLICATION) {
+     return 0;
+   }
+ 
+@@ -1017,7 +1017,7 @@ static CURLcode check_and_set_expiry(struct Curl_cfilt
+       if(rv) {
+         failf(data, "ngtcp2_conn_handle_expiry returned error: %s",
+               ngtcp2_strerror(rv));
+-        ngtcp2_ccerr_set_liberr(&ctx->last_error, rv, NULL, 0);
++        ngtcp2_connection_close_error_set_transport_error_liberr(&ctx->last_error, rv, NULL, 0);
+         return CURLE_SEND_ERROR;
+       }
+       result = cf_progress_ingress(cf, data, pktx);
+@@ -1286,8 +1286,7 @@ static int cb_h3_stop_sending(nghttp3_conn *conn, int6
+   (void)conn;
+   (void)stream_user_data;
+ 
+-  rv = ngtcp2_conn_shutdown_stream_read(ctx->qconn, 0, stream_id,
+-                                        app_error_code);
++  rv = ngtcp2_conn_shutdown_stream_read(ctx->qconn, stream_id, app_error_code);
+   if(rv && rv != NGTCP2_ERR_STREAM_NOT_FOUND) {
+     return NGTCP2_ERR_CALLBACK_FAILURE;
+   }
+@@ -1305,7 +1304,7 @@ static int cb_h3_reset_stream(nghttp3_conn *conn, int6
+   (void)conn;
+   (void)data;
+ 
+-  rv = ngtcp2_conn_shutdown_stream_write(ctx->qconn, 0, stream_id,
++  rv = ngtcp2_conn_shutdown_stream_write(ctx->qconn, stream_id,
+                                          app_error_code);
+   DEBUGF(LOG_CF(data, cf, "[h3sid=%" PRId64 "] reset -> %d", stream_id, rv));
+   if(rv && rv != NGTCP2_ERR_STREAM_NOT_FOUND) {
+@@ -1329,8 +1328,7 @@ static nghttp3_callbacks ngh3_callbacks = {
+   cb_h3_stop_sending,
+   NULL, /* end_stream */
+   cb_h3_reset_stream,
+-  NULL, /* shutdown */
+-  NULL /* recv_settings */
++  NULL /* shutdown */
+ };
+ 
+ static int init_ngh3_conn(struct Curl_cfilter *cf)
+@@ -1340,7 +1338,7 @@ static int init_ngh3_conn(struct Curl_cfilter *cf)
    int rc;
    int64_t ctrl_stream_id, qpack_enc_stream_id, qpack_dec_stream_id;
  
@@ -46,7 +135,7 @@ Index: lib/vquic/curl_ngtcp2.c
      return CURLE_QUIC_CONNECT_ERROR;
    }
  
-@@ -1794,12 +1794,13 @@ static CURLcode recv_pkt(const unsigned char *pkt, siz
+@@ -1915,12 +1913,13 @@ static CURLcode recv_pkt(const unsigned char *pkt, siz
                    ngtcp2_strerror(rv)));
      if(!ctx->last_error.error_code) {
        if(rv == NGTCP2_ERR_CRYPTO) {
@@ -64,7 +153,7 @@ Index: lib/vquic/curl_ngtcp2.c
        }
      }
  
-@@ -1886,9 +1887,9 @@ static ssize_t read_pkt_to_send(void *userp,
+@@ -2006,9 +2005,9 @@ static ssize_t read_pkt_to_send(void *userp,
        if(veccnt < 0) {
          failf(x->data, "nghttp3_conn_writev_stream returned error: %s",
                nghttp3_strerror((int)veccnt));
@@ -77,7 +166,7 @@ Index: lib/vquic/curl_ngtcp2.c
          *err = CURLE_SEND_ERROR;
          return -1;
        }
-@@ -1928,7 +1929,8 @@ static ssize_t read_pkt_to_send(void *userp,
+@@ -2048,7 +2047,8 @@ static ssize_t read_pkt_to_send(void *userp,
          DEBUGASSERT(ndatalen == -1);
          failf(x->data, "ngtcp2_conn_writev_stream returned error: %s",
                ngtcp2_strerror((int)n));
@@ -87,17 +176,7 @@ Index: lib/vquic/curl_ngtcp2.c
          *err = CURLE_SEND_ERROR;
          nwritten = -1;
          goto out;
-@@ -1975,7 +1977,8 @@ static CURLcode cf_flush_egress(struct Curl_cfilter *c
-   if(rv) {
-     failf(data, "ngtcp2_conn_handle_expiry returned error: %s",
-           ngtcp2_strerror(rv));
--    ngtcp2_ccerr_set_liberr(&ctx->last_error, rv, NULL, 0);
-+    ngtcp2_connection_close_error_set_transport_error_liberr(&ctx->last_error,
-+                                                             rv, NULL, 0);
-     return CURLE_SEND_ERROR;
-   }
- 
-@@ -2328,7 +2331,7 @@ static CURLcode cf_connect_start(struct Curl_cfilter *
+@@ -2420,7 +2420,7 @@ static CURLcode cf_connect_start(struct Curl_cfilter *
    ngtcp2_conn_set_tls_native_handle(ctx->qconn, ctx->ssl);
  #endif
  
@@ -106,3 +185,12 @@ Index: lib/vquic/curl_ngtcp2.c
  
    ctx->conn_ref.get_conn = get_conn;
    ctx->conn_ref.user_data = cf;
+@@ -2496,7 +2496,7 @@ static CURLcode cf_ngtcp2_connect(struct Curl_cfilter 
+ 
+ out:
+   if(result == CURLE_RECV_ERROR && ctx->qconn &&
+-     ngtcp2_conn_in_draining_period(ctx->qconn)) {
++     ngtcp2_conn_is_in_draining_period(ctx->qconn)) {
+     /* When a QUIC server instance is shutting down, it may send us a
+      * CONNECTION_CLOSE right away. Our connection then enters the DRAINING
+      * state.
