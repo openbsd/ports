@@ -2,13 +2,9 @@ COMMENT =	KDE document viewer
 DISTNAME =	okular-${VERSION}
 CATEGORIES =	textproc
 
-# TODO Poppler (required version >= 22.02.0)
-VERSION =	22.12.3
-REVISION =	1
-
 HOMEPAGE =	https://okular.kde.org/
 
-SHARED_LIBS +=  Okular5Core               4.1 # 9.0
+SHARED_LIBS +=  Okular5Core               4.2 # 9.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Activities KF5Archive KF5Auth
 WANTLIB += KF5AuthCore KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
@@ -19,8 +15,8 @@ WANTLIB += KF5KIOWidgets KF5Parts KF5Pty KF5Purpose KF5PurposeWidgets
 WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5TextWidgets KF5ThreadWeaver
 WANTLIB += KF5Wallet KF5WidgetsAddons KF5WindowSystem KF5XmlGui
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Svg Qt5TextToSpeech Qt5Widgets Qt5Xml X11 c chm
-WANTLIB += djvulibre epub freetype jpeg m markdown phonon4qt5
+WANTLIB += Qt5Svg Qt5TextToSpeech Qt5Widgets Qt5X11Extras Qt5Xml
+WANTLIB += X11 c chm djvulibre epub freetype jpeg m markdown phonon4qt5
 WANTLIB += poppler poppler-qt5 qmobipocket spectre tiff z zip
 
 MODKDE5_DESKTOP_FILE = yes
@@ -70,7 +66,7 @@ LIB_DEPENDS =	devel/chmlib \
 		graphics/djvulibre \
 		graphics/tiff \
 		multimedia/phonon \
-		print/poppler,-qt5 \
+		print/poppler,-qt5>=23.05.0 \
 		print/libspectre \
 		textproc/discount \
 		textproc/ebook-tools \
