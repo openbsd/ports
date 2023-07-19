@@ -1,10 +1,9 @@
 COMMENT=	easy-to-use Modbus RTU/ASCII implementation for Python
 
-MODPY_EGG_VERSION=	2.0.1
+MODPY_EGG_VERSION=	2.1.1
 DISTNAME=		minimalmodbus-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		net
-REVISION=		2
 
 HOMEPAGE=		https://github.com/pyhys/minimalmodbus
 
@@ -13,7 +12,7 @@ MAINTAINER=		Martin Reindl <martin@catai.org>
 # Apache License, Version 2.0
 PERMIT_PACKAGE=		Yes
 
-MODPY_PYBUILD=		setuptools
+MODPY_PYBUILD=		flit_core
 MODPY_PI=		Yes
 MODPY_PYTEST=		Yes
 
