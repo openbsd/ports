@@ -420,6 +420,7 @@ lib/rabbitmq/plugins/${RABBIT_OSIRIS}/ebin/osiris.app
 lib/rabbitmq/plugins/${RABBIT_OSIRIS}/ebin/osiris.beam
 lib/rabbitmq/plugins/${RABBIT_OSIRIS}/ebin/osiris_app.beam
 lib/rabbitmq/plugins/${RABBIT_OSIRIS}/ebin/osiris_bench.beam
+lib/rabbitmq/plugins/${RABBIT_OSIRIS}/ebin/osiris_bloom.beam
 lib/rabbitmq/plugins/${RABBIT_OSIRIS}/ebin/osiris_counters.beam
 lib/rabbitmq/plugins/${RABBIT_OSIRIS}/ebin/osiris_ets.beam
 lib/rabbitmq/plugins/${RABBIT_OSIRIS}/ebin/osiris_log.beam
@@ -1038,6 +1039,10 @@ lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_wm_queue_actions.
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_wm_queue_get.beam
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_wm_queue_purge.beam
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_wm_queues.beam
+lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_wm_quorum_queue_replicas_add_member.beam
+lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_wm_quorum_queue_replicas_delete_member.beam
+lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_wm_quorum_queue_replicas_grow.beam
+lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_wm_quorum_queue_replicas_shrink.beam
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_wm_rebalance_queues.beam
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_wm_redirect.beam
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_wm_reset.beam
@@ -1493,6 +1498,7 @@ lib/rabbitmq/plugins/rabbitmq_web_dispatch-${V}/ebin/rabbit_cowboy_middleware.be
 lib/rabbitmq/plugins/rabbitmq_web_dispatch-${V}/ebin/rabbit_cowboy_redirect.beam
 lib/rabbitmq/plugins/rabbitmq_web_dispatch-${V}/ebin/rabbit_cowboy_stream_h.beam
 lib/rabbitmq/plugins/rabbitmq_web_dispatch-${V}/ebin/rabbit_web_dispatch.beam
+lib/rabbitmq/plugins/rabbitmq_web_dispatch-${V}/ebin/rabbit_web_dispatch_access_control.beam
 lib/rabbitmq/plugins/rabbitmq_web_dispatch-${V}/ebin/rabbit_web_dispatch_app.beam
 lib/rabbitmq/plugins/rabbitmq_web_dispatch-${V}/ebin/rabbit_web_dispatch_listing_handler.beam
 lib/rabbitmq/plugins/rabbitmq_web_dispatch-${V}/ebin/rabbit_web_dispatch_registry.beam
@@ -1501,6 +1507,8 @@ lib/rabbitmq/plugins/rabbitmq_web_dispatch-${V}/ebin/rabbit_web_dispatch_util.be
 lib/rabbitmq/plugins/rabbitmq_web_dispatch-${V}/ebin/rabbitmq_web_dispatch.app
 lib/rabbitmq/plugins/rabbitmq_web_dispatch-${V}/ebin/webmachine_log.beam
 lib/rabbitmq/plugins/rabbitmq_web_dispatch-${V}/ebin/webmachine_log_handler.beam
+lib/rabbitmq/plugins/rabbitmq_web_dispatch-${V}/include/
+lib/rabbitmq/plugins/rabbitmq_web_dispatch-${V}/include/rabbitmq_web_dispatch_records.hrl
 lib/rabbitmq/plugins/rabbitmq_web_mqtt-${V}/
 lib/rabbitmq/plugins/rabbitmq_web_mqtt-${V}/ebin/
 lib/rabbitmq/plugins/rabbitmq_web_mqtt-${V}/ebin/rabbit_web_mqtt_app.beam
