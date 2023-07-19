@@ -5,6 +5,7 @@ COMMENT-pgsql=		pgsql authentication module for courier-authLib
 COMMENT-userdb=		userdb authentication module for courier-authLib
 
 DISTNAME=		courier-authlib-0.72.0
+REVISION=		0
 PKGNAME-main=		${DISTNAME}
 PKGNAME-ldap=		${DISTNAME:S/lib-/lib-ldap-/}
 PKGNAME-mysql=		${DISTNAME:S/lib-/lib-mysql-/}
@@ -69,7 +70,7 @@ CONFIGURE_ARGS+=	--enable-static \
 RUN_DEPENDS-main=	lang/expect
 BUILD_DEPENDS=		lang/expect
 # Only used by regress tests
-BUILD_DEPENDS+=		devel/libidn \
+BUILD_DEPENDS+=		devel/libidn2 \
 			mail/courier-unicode>=2.0
 
 DOCS=			COPYING COPYING.GPL INSTALL NEWS README
