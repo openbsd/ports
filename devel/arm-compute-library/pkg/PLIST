@@ -141,8 +141,10 @@ include/arm_compute/dynamic_fusion/sketch/gpu/operators/GpuOutput.h
 include/arm_compute/dynamic_fusion/sketch/gpu/operators/GpuPool2d.h
 include/arm_compute/dynamic_fusion/sketch/gpu/operators/GpuReshape.h
 include/arm_compute/dynamic_fusion/sketch/gpu/operators/GpuResize.h
+include/arm_compute/dynamic_fusion/sketch/gpu/operators/GpuSigmoid.h
 include/arm_compute/dynamic_fusion/sketch/gpu/operators/GpuSoftmax.h
 include/arm_compute/dynamic_fusion/sketch/gpu/operators/GpuSub.h
+include/arm_compute/dynamic_fusion/sketch/gpu/operators/GpuTanh.h
 include/arm_compute/graph/
 include/arm_compute/graph.h
 include/arm_compute/graph/DataLayerVisitor.h
@@ -343,6 +345,7 @@ include/arm_compute/runtime/CL/functions/CLLSTMLayerQuantized.h
 include/arm_compute/runtime/CL/functions/CLLogicalAnd.h
 include/arm_compute/runtime/CL/functions/CLLogicalNot.h
 include/arm_compute/runtime/CL/functions/CLLogicalOr.h
+include/arm_compute/runtime/CL/functions/CLMatMul.h
 include/arm_compute/runtime/CL/functions/CLMaxUnpoolingLayer.h
 include/arm_compute/runtime/CL/functions/CLMeanStdDevNormalizationLayer.h
 include/arm_compute/runtime/CL/functions/CLNormalizationLayer.h
@@ -472,6 +475,7 @@ include/arm_compute/runtime/NEON/functions/NEL2NormalizeLayer.h
 include/arm_compute/runtime/NEON/functions/NELSTMLayer.h
 include/arm_compute/runtime/NEON/functions/NELSTMLayerQuantized.h
 include/arm_compute/runtime/NEON/functions/NELogical.h
+include/arm_compute/runtime/NEON/functions/NEMatMul.h
 include/arm_compute/runtime/NEON/functions/NEMaxUnpoolingLayer.h
 include/arm_compute/runtime/NEON/functions/NEMeanStdDevNormalizationLayer.h
 include/arm_compute/runtime/NEON/functions/NENormalizationLayer.h
@@ -490,6 +494,7 @@ include/arm_compute/runtime/NEON/functions/NEROIPoolingLayer.h
 include/arm_compute/runtime/NEON/functions/NERange.h
 include/arm_compute/runtime/NEON/functions/NEReduceMean.h
 include/arm_compute/runtime/NEON/functions/NEReductionOperation.h
+include/arm_compute/runtime/NEON/functions/NEReorderLayer.h
 include/arm_compute/runtime/NEON/functions/NEReorgLayer.h
 include/arm_compute/runtime/NEON/functions/NEReshapeLayer.h
 include/arm_compute/runtime/NEON/functions/NEReverse.h
@@ -532,6 +537,7 @@ include/libnpy/npy.hpp
 include/stb/
 include/stb/stb_image.h
 include/support/
+include/support/AclRequires.h
 include/support/BUILD.bazel
 include/support/Bfloat16.h
 include/support/CRTP.h
@@ -542,7 +548,6 @@ include/support/ICloneable.h
 include/support/Iterable.h
 include/support/Mutex.h
 include/support/Random.h
-include/support/Requires.h
 include/support/Rounding.h
 include/support/SaturateCast.h
 include/support/Semaphore.h

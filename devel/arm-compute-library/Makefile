@@ -2,7 +2,7 @@ ONLY_FOR_ARCHS =	aarch64
 
 COMMENT =	Arm compute library
 
-V = 		23.02.1
+V = 		23.05.1
 PKGNAME =	arm-compute-library-${V}
 
 GH_ACCOUNT =	ARM-software
@@ -16,8 +16,8 @@ HOMEPAGE =	https://github.com/ARM-software/ComputeLibrary
 MAINTAINER = 	Kevin Lo <kevlo@openbsd.org>
 
 CORE_SO_V =	2.0
-GRAPH_SO_V =	2.1
-COMPUTE_SO_V =	3.3
+GRAPH_SO_V =	2.2
+COMPUTE_SO_V =	3.4
 
 SHARED_LIBS +=	arm_compute ${COMPUTE_SO_V}
 SHARED_LIBS +=	arm_compute_core ${CORE_SO_V}
