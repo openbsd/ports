@@ -3,7 +3,7 @@ Copied from log_file_linux.go
 Index: command/agent/log_file_bsd.go
 --- command/agent/log_file_bsd.go.orig
 +++ command/agent/log_file_bsd.go
-@@ -11,7 +11,8 @@ import (
+@@ -14,7 +14,8 @@ import (
  
  func (l *logFile) createTime(stat os.FileInfo) time.Time {
  	stat_t := stat.Sys().(*syscall.Stat_t)

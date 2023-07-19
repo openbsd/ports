@@ -1,7 +1,7 @@
 Index: command/agent/host/unix.go
 --- command/agent/host/unix.go.orig
 +++ command/agent/host/unix.go
-@@ -61,9 +61,9 @@ func makeDf(path string) (*df, error) {
+@@ -64,9 +64,9 @@ func makeDf(path string) (*df, error) {
  }
  
  func (d *df) total() uint64 {
