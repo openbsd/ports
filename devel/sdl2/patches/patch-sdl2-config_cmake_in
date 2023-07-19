@@ -1,7 +1,7 @@
 Index: sdl2-config.cmake.in
 --- sdl2-config.cmake.in.orig
 +++ sdl2-config.cmake.in
-@@ -124,7 +124,7 @@ if(WIN32)
+@@ -134,7 +134,7 @@ if(WIN32)
    unset(_sdl2_implib)
    unset(_sdl2_dll)
  else()

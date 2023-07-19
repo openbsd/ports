@@ -3,9 +3,9 @@
 Index: src/SDL.c
 --- src/SDL.c.orig
 +++ src/SDL.c
-@@ -558,6 +558,10 @@ SDL_GetRevisionNumber(void)
- const char *
- SDL_GetPlatform(void)
+@@ -544,6 +544,10 @@ int SDL_GetRevisionNumber(void)
+ /* Get the name of the platform */
+ const char *SDL_GetPlatform(void)
  {
 +    const char *platform;
 +    if (platform = SDL_getenv("SDL_PLATFORM")) {

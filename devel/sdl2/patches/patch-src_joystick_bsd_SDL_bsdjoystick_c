@@ -5,7 +5,7 @@ https://github.com/libsdl-org/SDL/issues/7609#issuecomment-1522831640
 Index: src/joystick/bsd/SDL_bsdjoystick.c
 --- src/joystick/bsd/SDL_bsdjoystick.c.orig
 +++ src/joystick/bsd/SDL_bsdjoystick.c
-@@ -728,6 +728,18 @@ BSD_JoystickUpdate(SDL_Joystick *joy)
+@@ -711,6 +711,18 @@ static void BSD_JoystickUpdate(SDL_Joystick *joy)
                              /* scaleaxe */
                              v = (Sint32) hid_get_data(REP_BUF_DATA(rep), &hitem);
                              v = (((SDL_JOYSTICK_AXIS_MAX - SDL_JOYSTICK_AXIS_MIN) * (v - hitem.logical_minimum) ) / (hitem.logical_maximum - hitem.logical_minimum)) + SDL_JOYSTICK_AXIS_MIN;
