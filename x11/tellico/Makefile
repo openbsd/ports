@@ -2,7 +2,7 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	organizer for book/dvd/music collections
 
-DISTNAME =	tellico-3.5
+DISTNAME =	tellico-3.5.1
 
 CATEGORIES =	x11
 
@@ -19,14 +19,14 @@ WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
 WANTLIB += KF5FileMetaData KF5GuiAddons KF5I18n KF5IconThemes
 WANTLIB += KF5ItemModels KF5ItemViews KF5JobWidgets KF5KIOCore
 WANTLIB += KF5KIOFileWidgets KF5KIOGui KF5KIOWidgets KF5NewStuff
-WANTLIB += KF5NewStuffCore KF5Sane KF5Service KF5Solid KF5SonnetCore
-WANTLIB += KF5SonnetUi KF5TextWidgets KF5Wallet KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KF5XmlGui Qt5Charts Qt5Concurrent Qt5Core
-WANTLIB += Qt5DBus Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport
-WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5WebChannel Qt5WebEngineCore
-WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml X11 c cdio exempi
-WANTLIB += exslt iconv iso9660 m poppler poppler-qt5 tag xml2
-WANTLIB += xslt yaz z
+WANTLIB += KF5NewStuffCore KF5NewStuffWidgets KF5Sane KF5Service
+WANTLIB += KF5Solid KF5SonnetCore KF5SonnetUi KF5TextWidgets KF5Wallet
+WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Charts
+WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Positioning
+WANTLIB += Qt5PrintSupport Qt5Qml Qt5QmlModels Qt5Quick Qt5WebChannel
+WANTLIB += Qt5WebEngineCore Qt5WebEngineWidgets Qt5Widgets Qt5Xml
+WANTLIB += X11 c cdio exempi exslt iconv iso9660 m poppler poppler-qt5
+WANTLIB += tag xml2 xslt yaz z
 
 MASTER_SITES =	http://tellico-project.org/files/
 EXTRACT_SUFX =	.tar.xz

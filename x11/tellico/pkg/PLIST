@@ -242,7 +242,6 @@ share/kconf_update/tellico-3-4-update.pl
 share/kconf_update/tellico-rename.upd
 share/kconf_update/tellico.upd
 share/knsrcfiles/
-share/knsrcfiles/tellico-script.knsrc
 share/knsrcfiles/tellico-template.knsrc
 share/kxmlgui5/
 share/kxmlgui5/tellico/
@@ -298,6 +297,7 @@ share/tellico/MARC21slim2MODS3.xsl
 share/tellico/MARC21slimUtils.xsl
 share/tellico/UNIMARC2MODS3.xsl
 share/tellico/arxiv2tellico.xsl
+share/tellico/atom2tellico.xsl
 share/tellico/biblioshare2tellico.xsl
 share/tellico/bibtex-translation.xml
 share/tellico/bibtexml2tellico.xsl
@@ -398,6 +398,7 @@ share/tellico/report-templates/
 share/tellico/report-templates/Column_View.xsl
 share/tellico/report-templates/Group_Summary.xsl
 share/tellico/report-templates/Group_View.xsl
+share/tellico/report-templates/Image_Grid.xsl
 share/tellico/report-templates/Image_List.xsl
 share/tellico/report-templates/Loan_View.xsl
 share/tellico/report-templates/Title_Listing_(Horizontal).xsl
