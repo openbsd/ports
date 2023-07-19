@@ -121,6 +121,7 @@
      SUBDIR += gxmessage
      SUBDIR += herbstluftwm
      SUBDIR += hicolor-icon-theme
+     SUBDIR += highlight-pointer
      SUBDIR += hk
      SUBDIR += hsetroot
      SUBDIR += human-icon-theme
