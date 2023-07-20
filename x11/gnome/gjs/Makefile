@@ -1,5 +1,5 @@
 USE_WXNEEDED=		Yes
-# probably due to devel/spidermonkey102
+# due to devel/spidermonkey102 (matches mozilla.port.mk)
 # mozilla #1626955 & #510629
 USE_NOBTCFI=		Yes
 
