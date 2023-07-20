@@ -317,7 +317,6 @@ MODGO_MODULES =	\
 	github.com/hashicorp/packer-plugin-azure		 v1.4.0 \
 	github.com/hashicorp/packer-plugin-docker		 v1.0.8 \
 	github.com/hashicorp/packer-plugin-googlecompute	 v1.1.0 \
-	github.com/hashicorp/packer-plugin-parallels		 v1.0.3 \
 	github.com/hashicorp/packer-plugin-qemu			 v1.0.9 \
 	github.com/hashicorp/packer-plugin-sdk			 v0.4.0 \
 	github.com/hashicorp/packer-plugin-vagrant		 v1.0.3 \

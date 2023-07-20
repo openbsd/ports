@@ -803,8 +803,6 @@ SHA256 (go_modules/github.com/hashicorp/packer-plugin-docker/@v/v1.0.8.mod) = pn
 SHA256 (go_modules/github.com/hashicorp/packer-plugin-docker/@v/v1.0.8.zip) = EmF1wditeHx0zCetJY8qnYJJeUh2SqzA5UvocfRBKVE=
 SHA256 (go_modules/github.com/hashicorp/packer-plugin-googlecompute/@v/v1.1.0.mod) = H7QdsLrUXpFf7edWGrPCjl/3+vQkh9TJP8V8tbZ9uN4=
 SHA256 (go_modules/github.com/hashicorp/packer-plugin-googlecompute/@v/v1.1.0.zip) = HM2sDaP4gtz4Is/myjCEtfyYnTRtoAm0Sdp60Y3vX14=
-SHA256 (go_modules/github.com/hashicorp/packer-plugin-parallels/@v/v1.0.3.mod) = SespPAc8L0reQOPB7gRmzXygq/Y76+Tf4h0XfkkeM/8=
-SHA256 (go_modules/github.com/hashicorp/packer-plugin-parallels/@v/v1.0.3.zip) = cSVjGRcoFS5t9/vBc1wJTjRklBHKojxyPrbYyygopp8=
 SHA256 (go_modules/github.com/hashicorp/packer-plugin-qemu/@v/v1.0.9.mod) = UY6fxBhTqkPT9ozEGA9kSd4Oz0xo1jEqqkErAHGviLo=
 SHA256 (go_modules/github.com/hashicorp/packer-plugin-qemu/@v/v1.0.9.zip) = WDszKJleowwwSOB6oWBgaAL4qWbBgXTrEehDR192u68=
 SHA256 (go_modules/github.com/hashicorp/packer-plugin-sdk/@v/v0.3.0.mod) = TukNTpM4lY0HKOY2aF0hB2Gw72v6EzqoTmsxwvoJm/k=
@@ -1540,7 +1538,7 @@ SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.2.1.mod) = MZI3y2a
 SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.2.1.zip) = 9L7QuayfT9ekxDVbSACgzs8kQ0ISmRJM7oZtb4J54Lc=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.3.0.mod) = L8eybun2ctl7QvpvJfWxWlWYK7usaZYdduux0DbRUAE=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.3.0.zip) = qsiNpVHCpRK2Qss1ZYvz3IYllaNWa9hA6/GOSALx/Mk=
-SHA256 (packer-v1.9.1.zip) = OreK3ybxcI618nJw18/nmOzUd47BzHZl4nzQ9JKzshw=
+SHA256 (packer-v1.9.2.zip) = 1RBfa/sYcBQPGUrPEtMYLuZ37KMGLFuZC90ODjo6irY=
 SIZE (go_modules/bazil.org/fuse/@v/v0.0.0-20160811212531-371fbbdaa898.mod) = 22
 SIZE (go_modules/bazil.org/fuse/@v/v0.0.0-20160811212531-371fbbdaa898.zip) = 220662
 SIZE (go_modules/cloud.google.com/go/@v/v0.104.0.mod) = 1091
@@ -2346,8 +2344,6 @@ SIZE (go_modules/github.com/hashicorp/packer-plugin-docker/@v/v1.0.8.mod) = 4588
 SIZE (go_modules/github.com/hashicorp/packer-plugin-docker/@v/v1.0.8.zip) = 142990
 SIZE (go_modules/github.com/hashicorp/packer-plugin-googlecompute/@v/v1.1.0.mod) = 4538
 SIZE (go_modules/github.com/hashicorp/packer-plugin-googlecompute/@v/v1.1.0.zip) = 185181
-SIZE (go_modules/github.com/hashicorp/packer-plugin-parallels/@v/v1.0.3.mod) = 4415
-SIZE (go_modules/github.com/hashicorp/packer-plugin-parallels/@v/v1.0.3.zip) = 156400
 SIZE (go_modules/github.com/hashicorp/packer-plugin-qemu/@v/v1.0.9.mod) = 4860
 SIZE (go_modules/github.com/hashicorp/packer-plugin-qemu/@v/v1.0.9.zip) = 1713375
 SIZE (go_modules/github.com/hashicorp/packer-plugin-sdk/@v/v0.3.0.mod) = 5402
@@ -3083,4 +3079,4 @@ SIZE (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.2.1.mod) = 346
 SIZE (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.2.1.zip) = 239376
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.3.0.mod) = 106
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.3.0.zip) = 21567
-SIZE (packer-v1.9.1.zip) = 2824099
+SIZE (packer-v1.9.2.zip) = 2831387
