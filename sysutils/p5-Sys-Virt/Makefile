@@ -1,4 +1,4 @@
-PORTROACH=		skipv:4.0.0,4.1.0,4.2.0
+PORTROACH=		skipv:3.9.1,4.0.0,4.1.0,4.2.0
 
 COMMENT=		represent and manage a libvirt hypervisor connection
 
