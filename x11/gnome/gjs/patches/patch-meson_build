@@ -1,3 +1,4 @@
+First chunks:
 In file included from /usr/include/readline/readline.h:38:
 In file included from /usr/include/readline/keymaps.h:36:
 In file included from /usr/include/readline/chardefs.h:39:
@@ -35,3 +36,11 @@ Index: meson.build
              required: readline.found()))
  endif
  header_conf.set('USE_UNITY_BUILD', get_option('unity'))
+@@ -619,6 +624,7 @@ pkg.generate(libgjs, name: api_name, description: 'JS 
+     requires: [glib, gobject, gio], requires_private: pkg_dependencies,
+     libraries_private: libraries_private,
+     subdirs: api_name,
++    libraries: declare_dependency(link_args : '-Wl,-z,nobtcfi'),
+     variables: [
+         'exec_prefix=${prefix}',
+         'bindir=${exec_prefix}' / get_option('bindir'),
