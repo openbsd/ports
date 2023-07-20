@@ -1,6 +1,6 @@
 COMMENT=	C-based regular expression scanner generator
 
-V=		3.0
+V=		3.1
 DISTNAME=	re2c-$V
 EXTRACT_SUFX=	.tar.xz
 CATEGORIES=	devel
@@ -12,7 +12,8 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c m ${COMPILER_LIBCXX}
 
-COMPILER=	base-clang ports-gcc base-gcc
+# C++11
+COMPILER=	base-clang ports-gcc
 
 MASTER_SITES=	https://github.com/skvadrik/re2c/releases/download/$V/
 
