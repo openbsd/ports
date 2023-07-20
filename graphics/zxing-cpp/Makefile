@@ -2,9 +2,9 @@ COMMENT=	C++ barcode image processing library
 
 GH_ACCOUNT=	zxing-cpp
 GH_PROJECT=	zxing-cpp
-GH_TAGNAME=	v2.0.0
+GH_TAGNAME=	v2.1.0
 
-SHARED_LIBS +=  ZXing                     0.0 # 0.0
+SHARED_LIBS +=  ZXing                     1.0 # 0.0
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
