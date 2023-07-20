@@ -10,7 +10,7 @@ Index: content/browser/network_service_instance_impl.cc
  #include "content/browser/system_dns_resolution/system_dns_resolver.h"
  #include "services/network/public/mojom/system_dns_resolution.mojom-forward.h"
  #endif
-@@ -422,7 +422,7 @@ network::mojom::NetworkServiceParamsPtr CreateNetworkS
+@@ -458,7 +458,7 @@ network::mojom::NetworkServiceParamsPtr CreateNetworkS
    }
  #endif  // BUILDFLAG(IS_POSIX)
  

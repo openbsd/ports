@@ -1,9 +1,9 @@
 Index: sandbox/policy/mojom/sandbox.mojom
 --- sandbox/policy/mojom/sandbox.mojom.orig
 +++ sandbox/policy/mojom/sandbox.mojom
-@@ -76,6 +76,12 @@ enum Sandbox {
-   [EnableIf=is_win]
-   kFileUtil,
+@@ -72,6 +72,12 @@ enum Sandbox {
+   [EnableIf=is_fuchsia]
+   kVideoCapture,
  
 +  [EnableIf=is_openbsd]
 +  kVideoCapture,

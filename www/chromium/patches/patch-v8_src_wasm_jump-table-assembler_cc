@@ -19,7 +19,7 @@ Index: v8/src/wasm/jump-table-assembler.cc
  
  bool JumpTableAssembler::EmitJumpSlot(Address target) {
    intptr_t displacement = static_cast<intptr_t>(
--      reinterpret_cast<byte*>(target) - pc_ - kNearJmpInstrSize);
+-      reinterpret_cast<uint8_t*>(target) - pc_ - kNearJmpInstrSize);
 +      reinterpret_cast<uint8_t*>(target) - (pc_ + 4) - kNearJmpInstrSize);
    if (!is_int32(displacement)) return false;
 +  CodeEntry();                                 // 4 bytes

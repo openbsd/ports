@@ -9,7 +9,7 @@ Index: v8/src/codegen/x64/assembler-x64.h
  
    void pblendw(XMMRegister dst, Operand src, uint8_t mask);
    void pblendw(XMMRegister dst, XMMRegister src, uint8_t mask);
-@@ -904,8 +905,8 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBa
+@@ -913,8 +914,8 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBa
    void jmp(Handle<Code> target, RelocInfo::Mode rmode);
  
    // Jump near absolute indirect (r64)

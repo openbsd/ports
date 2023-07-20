@@ -19,7 +19,7 @@ Index: chrome/browser/sync/sync_service_factory.cc
      (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
    syncer::SyncPrefs prefs(profile->GetPrefs());
    local_sync_backend_enabled = prefs.IsLocalSyncEnabled();
-@@ -257,7 +257,7 @@ SyncServiceFactory::SyncServiceFactory()
+@@ -244,7 +244,7 @@ SyncServiceFactory::SyncServiceFactory()
    DependsOn(ThemeServiceFactory::GetInstance());
  #endif  // !BUILDFLAG(IS_ANDROID)
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \

@@ -9,7 +9,7 @@ Index: content/browser/gpu/gpu_process_host.cc
      switches::kDoubleBufferCompositing,
      switches::kHeadless,
      switches::kLoggingLevel,
-@@ -285,7 +286,7 @@ static const char* const kSwitchNames[] = {
+@@ -284,7 +285,7 @@ static const char* const kSwitchNames[] = {
      switches::kOzoneDumpFile,
      switches::kDisableBufferBWCompression,
  #endif
