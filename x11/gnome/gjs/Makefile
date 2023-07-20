@@ -1,9 +1,13 @@
 USE_WXNEEDED=		Yes
+# probably due to devel/spidermonkey102
+# mozilla #1626955 & #510629
+USE_NOBTCFI=		Yes
 
 COMMENT=		Javascript bindings for GNOME
 
 GNOME_PROJECT=		gjs
 GNOME_VERSION=		1.76.2
+REVISION=		0
 
 SHARED_LIBS += gjs                       6.2 # 0.0.0
 
