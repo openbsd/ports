@@ -4,6 +4,7 @@ COMMENT=		GNOME settings daemon
 
 GNOME_PROJECT=		gnome-settings-daemon
 GNOME_VERSION=		44.1
+REVISION=		0
 
 # GPLv3
 PERMIT_PACKAGE=		Yes
@@ -45,6 +46,8 @@ RUN_DEPENDS +=		sysutils/consolekit
 
 MODGNOME_TOOLS=		docbook
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
+# XXX needed for gsd-usb-protection
+MODGNOME_LDFLAGS +=	-Wl,-z,nobtcfi
 
 CONFIGURE_ARGS= 	-Dalsa=false \
 			-Dgudev=false \
