@@ -1,5 +1,5 @@
 COMMENT =		encoding files for poppler
-DISTNAME =		poppler-data-0.4.11
+DISTNAME =		poppler-data-0.4.12
 CATEGORIES =		print
 HOMEPAGE =		https://poppler.freedesktop.org/
 
