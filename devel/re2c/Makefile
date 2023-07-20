@@ -29,6 +29,6 @@ CONFIGURE_ENV=	ac_cv_path_BISON=no
 
 # don't force the dep for Python; seems only used to run docutils, not for
 # a normal build from the tarball
-CONFIGURE_ENV=	am_cv_pathless_PYTHON=python3
+CONFIGURE_ENV+=	am_cv_pathless_PYTHON=python3
 
 .include <bsd.port.mk>
