@@ -3,7 +3,7 @@ CATEGORIES =	sysutils
 
 GH_ACCOUNT =	tavianator
 GH_PROJECT =	bfs
-GH_TAGNAME =	3.0
+GH_TAGNAME =	3.0.1
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
