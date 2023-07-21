@@ -24,9 +24,9 @@ Index: components/policy/core/common/cloud/cloud_policy_util.cc
 +#define HOST_NAME_MAX MAXHOSTNAMELEN
 +#endif
 +
+ #include <algorithm>
  #include <utility>
  
- #include "base/check.h"
 @@ -82,7 +87,7 @@ namespace em = enterprise_management;
  
  std::string GetMachineName() {

@@ -8,9 +8,8 @@ DPB_PROPERTIES=		parallel parallel2
 
 COMMENT=		Chromium browser sans integration with Google
 
-V=			114.0.5735.198
+V=			115.0.5790.98
 UGV=			${V}-1
-REVISION=		0
 
 DISTNAME=		ungoogled-chromium-${V}
 
@@ -153,6 +152,7 @@ GN_ARGS=	is_official_build=true \
 		is_debug=false \
 		is_cfi=false \
 		optimize_webui=true \
+		enable_rust=false \
 		use_bundled_fontconfig=false \
 		use_kerberos=false \
 		use_sndio=true \
@@ -280,6 +280,8 @@ pre-configure:
 # 2. bootstrap gn, the tool to generate ninja files
 # 3. run gn with the appropriate configuration arguments
 do-configure:
+	# Regenerate build and perlasm files (force json to not overwrite our local gn patches)
+	@cd ${WRKSRC}/third_party/boringssl && ${MODPY_BIN} src/util/generate_build_files.py json
 	@cd ${WRKSRC} && env -i ${MAKE_ENV} build/linux/unbundle/replace_gn_files.py \
 		--system-libraries ${GN_SYSTEM_LIBS}
 	@cd ${WRKSRC}/tools/gn && env -i ${MAKE_ENV} LDFLAGS=-L${LOCALBASE}/lib ${MODPY_BIN} bootstrap/bootstrap.py \
