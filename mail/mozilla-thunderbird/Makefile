@@ -3,7 +3,7 @@ COMMENT =		Mozilla e-mail, calendar, rss and usenet client
 
 # Don't forget to bump mail/thunderbird-i18n after updates.
 
-MOZILLA_VERSION =	102.13.0
+MOZILLA_VERSION =	115.0.1
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	thunderbird
 MOZILLA_CODENAME =	comm/mail
@@ -15,11 +15,11 @@ DWZ = :
 
 HOMEPAGE =	https://www.thunderbird.net/
 
-SO_VERSION =	37.0
+SO_VERSION =	38.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 
-MOZILLA_LIBS = lgpllibs mozgtk mozsqlite3 xul
+MOZILLA_LIBS = lgpllibs mozavcodec mozavutil mozgtk mozsqlite3 xul
 
 CATEGORIES=	mail news
 
@@ -31,9 +31,6 @@ MODPY_RUNDEP =	No
 
 COMPILER =	ports-clang
 MODCLANG_ARCHS =	amd64 aarch64
-
-# 56 requires 59.1
-MOZILLA_USE_BUNDLED_ICU =	Yes
 
 # 63 requires node because why not #1483595
 BUILD_DEPENDS +=	lang/node
@@ -70,10 +67,13 @@ DEBUG_CONFIGURE_ARGS +=	--enable-debug-symbols \
 			--disable-install-strip
 MAKE_ENV +=		BUILD_VERBOSE_LOG="1" CARGOFLAGS="-j${MAKE_JOBS}"
 
-LIB_DEPENDS +=	security/rnp \
-		devel/libffi
+# detected by configure & dlopened
+BUILD_DEPENDS +=	security/rnp
+# #1830858
+RUN_DEPENDS +=	security/rnp>=0.17.0
+LIB_DEPENDS +=	devel/libffi
 
-WANTLIB +=	Xrandr Xtst ffi rnp
+WANTLIB +=	Xrandr Xtst ffi
 
 ALL_TARGET =	default
 

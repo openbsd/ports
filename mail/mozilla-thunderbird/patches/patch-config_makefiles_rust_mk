@@ -3,11 +3,11 @@ try to consume less memory when linking gkrust with debug symbols ?
 Index: config/makefiles/rust.mk
 --- config/makefiles/rust.mk.orig
 +++ config/makefiles/rust.mk
-@@ -90,7 +90,7 @@ ifndef rustflags_sancov
+@@ -92,7 +92,7 @@ ifndef rustflags_sancov
  # Never enable when coverage is enabled to work around https://github.com/rust-lang/rust/issues/90045.
  ifndef MOZ_CODE_COVERAGE
  ifeq (,$(findstring gkrust_gtest,$(RUST_LIBRARY_FILE)))
--cargo_rustc_flags += -Clto
+-cargo_rustc_flags += -Clto$(if $(filter full,$(MOZ_LTO_RUST_CROSS)),=fat)
 +cargo_rustc_flags += -Clto=thin
  endif
  # We need -Cembed-bitcode=yes for all crates when using -Clto.

@@ -8,6 +8,8 @@ lib/${MOZILLA_PROJECT}/application.ini
 lib/${MOZILLA_PROJECT}/chrome/
 lib/${MOZILLA_PROJECT}/chrome/icons/
 lib/${MOZILLA_PROJECT}/chrome/icons/default/
+lib/${MOZILLA_PROJECT}/chrome/icons/default/calendar-alarm-dialog.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/calendar-general-dialog.png
 lib/${MOZILLA_PROJECT}/chrome/icons/default/default128.png
 lib/${MOZILLA_PROJECT}/chrome/icons/default/default16.png
 lib/${MOZILLA_PROJECT}/chrome/icons/default/default22.png
@@ -16,6 +18,10 @@ lib/${MOZILLA_PROJECT}/chrome/icons/default/default256.png
 lib/${MOZILLA_PROJECT}/chrome/icons/default/default32.png
 lib/${MOZILLA_PROJECT}/chrome/icons/default/default48.png
 lib/${MOZILLA_PROJECT}/chrome/icons/default/default64.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/msgcomposeWindow16.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/msgcomposeWindow24.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/msgcomposeWindow32.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/msgcomposeWindow48.png
 lib/${MOZILLA_PROJECT}/defaults/
 lib/${MOZILLA_PROJECT}/defaults/messenger/
 lib/${MOZILLA_PROJECT}/defaults/messenger/mailViews.dat
@@ -25,6 +31,7 @@ lib/${MOZILLA_PROJECT}/defaults/pref/channel-prefs.js
 lib/${MOZILLA_PROJECT}/dependentlibs.list
 lib/${MOZILLA_PROJECT}/distribution/
 lib/${MOZILLA_PROJECT}/distribution/distribution.ini
+@bin lib/${MOZILLA_PROJECT}/glxtest
 lib/${MOZILLA_PROJECT}/isp/
 lib/${MOZILLA_PROJECT}/isp/Bogofilter.sfd
 lib/${MOZILLA_PROJECT}/isp/DSPAM.sfd
@@ -32,6 +39,8 @@ lib/${MOZILLA_PROJECT}/isp/POPFile.sfd
 lib/${MOZILLA_PROJECT}/isp/SpamAssassin.sfd
 lib/${MOZILLA_PROJECT}/isp/SpamPal.sfd
 @lib lib/${MOZILLA_PROJECT}/liblgpllibs.so.${LIBlgpllibs_VERSION}
+@lib lib/${MOZILLA_PROJECT}/libmozavcodec.so.${LIBmozavcodec_VERSION}
+@lib lib/${MOZILLA_PROJECT}/libmozavutil.so.${LIBmozavutil_VERSION}
 @lib lib/${MOZILLA_PROJECT}/libmozgtk.so.${LIBmozgtk_VERSION}
 @lib lib/${MOZILLA_PROJECT}/libmozsqlite3.so.${LIBmozsqlite3_VERSION}
 @lib lib/${MOZILLA_PROJECT}/libxul.so.${LIBxul_VERSION}
