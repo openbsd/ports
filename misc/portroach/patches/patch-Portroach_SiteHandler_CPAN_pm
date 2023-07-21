@@ -1,8 +1,20 @@
+not yet upstream: first hunk, addition of v? in second hunk
+
+other parts in
 https://github.com/jasperla/portroach/commit/6c856d0fe68e17c6d8de9aa2ad730bdf45fb1778
 
 Index: Portroach/SiteHandler/CPAN.pm
 --- Portroach/SiteHandler/CPAN.pm.orig
 +++ Portroach/SiteHandler/CPAN.pm
+@@ -73,7 +73,7 @@ sub CanHandle
+ 
+ 	my ($url) = @_;
+ 
+-	return ($url =~ /(http|ftp):\/\/(.*?)\/CPAN\/modules\//);
++	return ($url =~ /(https?|ftp):\/\/(.*?\/CPAN|[a-z\.]*\.(meta)?cpan\.org)\/modules\//);
+ }
+ 
+ 
 @@ -96,14 +96,14 @@ sub GetFiles
  	my ($url, $port, $files) = @_;
  
@@ -11,7 +23,8 @@ Index: Portroach/SiteHandler/CPAN.pm
 +	$metacpan = 'https://fastapi.metacpan.org/v1/release/';
  
  	# Strip all the digits at the end to keep the stem of the module.
- 	if ($port->{distname} =~ /(.*?)-(\d+)/) {
+-	if ($port->{distname} =~ /(.*?)-(\d+)/) {
++	if ($port->{distname} =~ /(.*?)-(v?\d+)/) {
  	    $module = $1;
  	}
  

@@ -3,7 +3,7 @@ COMMENT=		OpenBSD ports distfile version scanner
 GH_ACCOUNT=		jasperla
 GH_PROJECT=		portroach
 GH_TAGNAME=		2.0.11
-REVISION =		3
+REVISION=		4
 
 CATEGORIES=		misc
 
