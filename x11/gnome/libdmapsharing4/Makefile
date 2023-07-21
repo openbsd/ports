@@ -1,9 +1,8 @@
 COMMENT=		DMAP client and server library
 
 GNOME_PROJECT=		libdmapsharing
-GNOME_VERSION=		3.9.12
+GNOME_VERSION=		3.9.13
 PKGNAME=		${GNOME_PROJECT}4-${GNOME_VERSION}
-REVISION=		0
 
 # override gnome MODULE
 MASTER_SITES=		https://www.flyn.org/projects/libdmapsharing/
@@ -24,7 +23,7 @@ WANTLIB += png psl pthread soup-3.0 sqlite3 unistring z
 
 MODULES=		x11/gnome
 
-MODGNOME_TOOLS=		vala
+MODGNOME_TOOLS=		gobject-introspection vala
 
 BUILD_DEPENDS=		devel/libgee
 
@@ -37,13 +36,5 @@ CONFIGURE_STYLE=	gnu
 
 # would add LDEP on devel/check
 CONFIGURE_ARGS=		--disable-tests
-
-# XXX
-# find: ./../libdmapsharing/.libs/libdmapsharing-3.0.so: No such file or directory
-# find: ./../libdmapsharing/.libs/libdmapsharing-3.0.so: No such file or directory
-# In file included from <stdin>:1:
-# libdmapsharing/daap-connection.h:22:10: fatal error: 'libdmapsharing/dmap-connection.h' file not found
-# ** (gen-introspect-0.54:16069): ERROR **: 09:29:44.472: cpp returned error code: 256
-# MODGNOME_TOOLS +=	gobject-introspection
 
 .include <bsd.port.mk>

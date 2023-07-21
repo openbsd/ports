@@ -28,10 +28,12 @@ include/libdmapsharing-4.0/libdmapsharing/dmap-share.h
 include/libdmapsharing-4.0/libdmapsharing/dmap-transcode-stream.h
 include/libdmapsharing-4.0/libdmapsharing/dmap-utils.h
 include/libdmapsharing-4.0/libdmapsharing/dmap.h
+lib/girepository-1.0/Dmap-4.0.typelib
 @static-lib lib/libdmapsharing-4.0.a
 lib/libdmapsharing-4.0.la
 @lib lib/libdmapsharing-4.0.so.${LIBdmapsharing-4.0_VERSION}
 lib/pkgconfig/libdmapsharing-4.0.pc
+share/gir-1.0/Dmap-4.0.gir
 share/gtk-doc/html/libdmapsharing-4.0/
 share/gtk-doc/html/libdmapsharing-4.0/DmapAvConnection.html
 share/gtk-doc/html/libdmapsharing-4.0/DmapAvRecord.html
@@ -84,3 +86,4 @@ share/gtk-doc/html/libdmapsharing-4.0/shareapi.html
 share/gtk-doc/html/libdmapsharing-4.0/style.css
 share/gtk-doc/html/libdmapsharing-4.0/up-insensitive.png
 share/gtk-doc/html/libdmapsharing-4.0/up.png
+share/vala/vapi/libdmapsharing-4.0.vapi
