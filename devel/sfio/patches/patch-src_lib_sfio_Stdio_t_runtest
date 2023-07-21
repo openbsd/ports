@@ -1,0 +1,12 @@
+Return 1 if test fail
+Index: src/lib/sfio/Stdio_t/runtest
+--- src/lib/sfio/Stdio_t/runtest.orig
++++ src/lib/sfio/Stdio_t/runtest
+@@ -114,6 +114,6 @@ do
+ 	fi
+ 	echo "	$status"
+ 	if test "$status" != "Passed"
+-	then if test "$exit_on_fail" = "1"; then exit; fi
++	then if test "$exit_on_fail" = "1"; then exit 1; fi
+ 	fi
+ done

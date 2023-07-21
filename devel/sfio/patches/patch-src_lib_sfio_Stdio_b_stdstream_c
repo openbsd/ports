@@ -1,0 +1,19 @@
+Index: src/lib/sfio/Stdio_b/stdstream.c
+--- src/lib/sfio/Stdio_b/stdstream.c.orig
++++ src/lib/sfio/Stdio_b/stdstream.c
+@@ -240,6 +240,7 @@ FILE*	f;
+ 	if(sm && !ISSYNC(f))
+ 		_sfstdsync(sf);
+ 
++	SFMTXLOCK(sf);
+ 	if((sf->mode&SF_RDWR) != sf->mode)
+ 	{	flags = sf->flags; sf->flags |= SF_SHARE|SF_PUBLIC;
+ 		n = _sfmode(sf,0,0);
+@@ -247,6 +248,7 @@ FILE*	f;
+ 		if(n < 0)
+ 			sfclrlock(sf);
+ 	}
++	SFMTXUNLOCK(sf);
+ 
+ 	if(sm)
+ 		_stdclrerr(f);

@@ -1,0 +1,14 @@
+f->data and f->next might be overwrap.
+
+Index: src/lib/sfio/sffilbuf.c
+--- src/lib/sfio/sffilbuf.c.orig
++++ src/lib/sfio/sffilbuf.c
+@@ -48,7 +48,7 @@ reg int	n;	/* see above */
+ 			/* try shifting left to make room for new data */
+ 			if(!(f->bits&SF_MMAP) && f->next > f->data &&
+ 			   n > (f->size - (f->endb-f->data)) )
+-			{	memcpy(f->data, f->next, r);
++			{	memmove(f->data, f->next, r);
+ 				f->next = f->data;
+ 				f->endb = f->data + r;
+ 			}

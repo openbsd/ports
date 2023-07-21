@@ -2,7 +2,7 @@ COMMENT=	Safe/Fast I/O Library
 
 VERSION=	2002
 PKGNAME=	sfio-${VERSION}
-REVISION =	3
+REVISION =	4
 DISTNAME=	sfio_${VERSION}.src.unix_tar
 CATEGORIES=	devel
 
@@ -35,6 +35,7 @@ do-install:
 	${INSTALL_MAN} ${WRKDIR}/man/man3/sfio.3 ${PREFIX}/man/man3
 
 do-test:
-	cd ${WRKDIR}/src/lib/sfio/Sfio_t && ./runtest -mt -lpthread
+	cd ${WRKDIR}/src/lib/sfio/Sfio_t && ./runtest -mt -lm -lpthread
+	cd ${WRKDIR}/src/lib/sfio/Stdio_t && ./runtest -mt -lm -lpthread
 
 .include <bsd.port.mk>
