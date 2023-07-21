@@ -1,8 +1,7 @@
 COMMENT=	GNU Image Manipulation Program
 
 V=		2.99
-DISTNAME=	gimp-${V}.14
-REVISION=	1
+DISTNAME=	gimp-${V}.16
 
 .for i in gimp gimpbase gimpcolor gimpconfig gimpmath gimpmodule \
 	gimpthumb gimpui gimpwidgets gimp-scriptfu
@@ -20,14 +19,15 @@ HOMEPAGE=	https://www.gimp.org/
 # GPLv3+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += Iex-3_1 OpenEXR-3_1 X11 Xcursor Xext Xfixes Xmu Xpm
-WANTLIB += aa appstream-glib archive babl-0.1 bz2 c cairo execinfo
-WANTLIB += fontconfig freetype gdk-3 gdk_pixbuf-2.0 gegl-0.4 gexiv2
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gs gtk-3 harfbuzz
-WANTLIB += heif intl jpeg json-glib-1.0 lcms2 lzma m mypaint openjp2
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 png poppler-glib
-WANTLIB += rsvg-2 tiff webp webpdemux webpmux wmf-0.2 wmflite-0.2
-WANTLIB += z jxl jxl_threads ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} Iex-3_1 OpenEXR-3_1 X11 Xcursor
+WANTLIB += Xext Xfixes Xmu Xpm aa appstream-glib archive babl-0.1
+WANTLIB += bz2 c cairo cfitsio execinfo fontconfig freetype gdk-3
+WANTLIB += gdk_pixbuf-2.0 gegl-0.4 gexiv2 gio-2.0 girepository-1.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gs gtk-3 harfbuzz
+WANTLIB += heif intl jpeg json-glib-1.0 jxl jxl_threads lcms2
+WANTLIB += lzma m mypaint openjp2 pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += png poppler-glib rsvg-2 tiff webp webpdemux webpmux
+WANTLIB += wmf-0.2 wmflite-0.2 z
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
@@ -35,12 +35,16 @@ DEBUG_PACKAGES=	${BUILD_PACKAGES}
 COMPILER=	base-clang ports-gcc
 
 MODULES=	devel/meson \
-		lang/lua \
 		lang/python
 
-SUBST_VARS +=	V
+# needed to get luajit version in patch-meson_build
+MODULES +=	lang/lua
 MODLUA_RUNDEP=	No
 MODLUA_BUILDDEP=No
+LUAJIT_V=	${MODLUA_VERSION:S/.//}
+SUBST_VARS +=	LUAJIT_V
+
+SUBST_VARS +=	V
 
 COMMON_DEPENDS=	archivers/lzip/lzlib \
 		archivers/libarchive \
@@ -53,6 +57,7 @@ COMMON_DEPENDS=	archivers/lzip/lzlib \
 
 BUILD_DEPENDS=	${COMMON_DEPENDS} \
 		devel/gettext,-tools \
+		lang/luajit \
 		lang/vala \
 		shells/bash \
 		textproc/gi-docgen \
@@ -66,6 +71,7 @@ LIB_DEPENDS=	archivers/bzip2 \
 		archivers/xz \
 		devel/appstream-glib \
 		devel/glib2 \
+		devel/gobject-introspection \
 		devel/harfbuzz \
 		devel/pango \
 		graphics/aalib \
@@ -82,6 +88,7 @@ LIB_DEPENDS=	archivers/bzip2 \
 		graphics/openexr \
 		graphics/png \
 		graphics/tiff \
+		math/cfitsio \
 		multimedia/libheif \
 		print/ghostscript/gnu \
 		print/poppler \
@@ -112,9 +119,10 @@ post-patch:
 # see:
 # patch-libgimpwidgets_gimpwidgets-private_c
 # patch-desktop_gimp_desktop_in_in
-CONFIGURE_ARGS +=	-Denable-default-bin=false
+CONFIGURE_ARGS +=	-Denable-default-bin=disabled
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/libgimpwidgets/gimpwidgets-private.c
+	${SUBST_CMD} ${WRKSRC}/meson.build
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/

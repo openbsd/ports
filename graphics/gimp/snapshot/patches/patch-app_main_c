@@ -11,7 +11,7 @@ Index: app/main.c
  #include <stdio.h>
  #include <stdlib.h>
  #include <string.h>
-@@ -554,10 +555,15 @@ main (int    argc,
+@@ -563,10 +564,15 @@ main (int    argc,
    gchar          *backtrace_file     = NULL;
    gint            retval;
    gint            i;
