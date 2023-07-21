@@ -13,6 +13,7 @@
 
      SUBDIR =
      SUBDIR += acx
+     SUBDIR += amd
      SUBDIR += amdgpu
      SUBDIR += apple-boot
      SUBDIR += arm64-qcom-dtb
