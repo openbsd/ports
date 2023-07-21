@@ -13,6 +13,7 @@ COMMENT-ldap_auth=	nginx LDAP authentication module
 COMMENT-lua=		nginx lua scripting module
 COMMENT-headers_more=	nginx module for setting/adding/clearing headers
 COMMENT-perl=		nginx perl scripting module
+COMMENT-njs=		nginx javascript scripting module
 COMMENT-passenger=	nginx passenger (ruby/python/nodejs) integration module
 COMMENT-rtmp=		nginx module for RTMP streaming
 COMMENT-securelink=	nginx HMAC secure link module
@@ -21,6 +22,7 @@ VERSION=	1.24.0
 DISTNAME=	nginx-${VERSION}
 CATEGORIES=	www
 
+VERSION-njs=	0.7.12
 VERSION-rtmp=	1.2.1
 
 PKGNAME-main=		${DISTNAME}
@@ -34,10 +36,12 @@ PKGNAME-ldap_auth=	nginx-ldap_auth-${VERSION}
 PKGNAME-lua=		nginx-lua-${VERSION}
 PKGNAME-headers_more=	nginx-headers-more-${VERSION}
 PKGNAME-perl=		nginx-perl-${VERSION}
+PKGNAME-njs=		nginx-njs-${VERSION}
 PKGNAME-passenger=	nginx-passenger-${VERSION}
 PKGNAME-rtmp=		nginx-rtmp-${VERSION}
 PKGNAME-securelink=	nginx-securelink-${VERSION}
 
+REVISION-main=		0
 REVISION-passenger=	0
 
 ONLY_FOR_ARCHS-passenger= aarch64 amd64 arm i386
@@ -55,6 +59,7 @@ _GH_MODS=	\
 	nbs-system	naxsi				d714f1636ea49a9a9f4f06dba14aee003e970834 \
 	kvspb		nginx-auth-ldap			83c059b73566c2ee9cbda920d91b66657cf120b7 \
 	arut		nginx-rtmp-module		v${VERSION-rtmp} \
+	nginx		njs				${VERSION-njs} \
 	simpl		ngx_devel_kit			v0.3.0 \
 	leev		ngx_http_geoip2_module		3.3 \
 	nginx-modules	ngx_http_hmac_secure_link_module 48c4625fbbf51ed5a95bfec23fa444f6c3702e50
@@ -73,11 +78,11 @@ PERMIT_PACKAGE=	Yes
 MULTI_PACKAGES =	-main -naxsi -perl ${MODULE_PACKAGES}
 
 MODULE_PACKAGES =	-image_filter -geoip2 -xslt -mailproxy -stream \
-			-passenger -headers_more -ldap_auth -lua -rtmp \
-			-securelink
+			-passenger -headers_more -ldap_auth -lua -njs \
+			-rtmp -securelink
 
 FLAVOR ?=
-PSEUDO_FLAVORS =	no_lua no_passenger
+PSEUDO_FLAVORS =	no_lua no_njs no_passenger
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -89,6 +94,7 @@ WANTLIB-stream=
 WANTLIB-image_filter=	gd
 WANTLIB-geoip2=		maxminddb
 WANTLIB-rtmp=
+WANTLIB-njs=		pcre2-8 crypto ssl xml2 z
 WANTLIB-xslt=		exslt xml2 xslt
 WANTLIB-naxsi=
 WANTLIB-ldap_auth=	ldap
@@ -107,6 +113,8 @@ LIB_DEPENDS-ldap_auth=	databases/openldap
 LIB_DEPENDS-lua=	${MODLUA_LIB_DEPENDS}
 LIB_DEPENDS-rtmp=
 LIB_DEPENDS-securelink=
+LIB_DEPENDS-njs=	devel/pcre2 \
+			textproc/libxml
 
 MODLUA_RUNDEP=		No
 RUN_DEPENDS=		www/nginx,-main=${VERSION}
@@ -154,6 +162,10 @@ CONFIGURE_ARGS+=	--add-dynamic-module=${LOCALBASE}/lib/phusion-passenger${GEM_BI
 CONFIGURE_ARGS+=	--add-dynamic-module=${WRKDIR}/nginx-rtmp-module-${VERSION-rtmp}/
 .endif
 
+.if ${BUILD_PACKAGES:M-njs}
+CONFIGURE_ARGS+=	--add-dynamic-module=${WRKSRC}/njs/nginx
+.endif
+
 CONFIGURE_ARGS+=	--prefix=${NGINX_DIR} \
 			--conf-path=${SYSCONFDIR}/nginx/nginx.conf \
 			--sbin-path=${PREFIX}/sbin/nginx \
@@ -197,7 +209,7 @@ NO_TEST=		Yes
 ALL_TARGET=
 
 pre-patch:
-.for i in headers-more-nginx-module lua-nginx-module naxsi \
+.for i in headers-more-nginx-module lua-nginx-module naxsi njs \
 	nginx-auth-ldap ngx_devel_kit ngx_http_geoip2_module \
 	ngx_http_hmac_secure_link_module
 	cd ${WRKSRC} && mv ../$i-* $i
