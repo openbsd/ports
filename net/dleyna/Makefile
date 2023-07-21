@@ -3,6 +3,7 @@ COMMENT=		services and D-Bus APIs to access UPnP and DLNA devices
 GNOME_PROJECT=		dLeyna
 GNOME_VERSION=		0.8.2
 PKGNAME=		dleyna-${GNOME_VERSION}
+REVISION=		0
 
 SHARED_LIBS += dleyna-core-1.0           1.1 # 6.0.0
 SHARED_LIBS += dleyna-renderer-1.0       1.1 # 1.0.3

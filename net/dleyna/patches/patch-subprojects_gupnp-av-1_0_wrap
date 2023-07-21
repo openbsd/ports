@@ -1,0 +1,17 @@
+From 61d24fdccadc1c9a94f1351744376edcc2048105 Mon Sep 17 00:00:00 2001
+From: Sam James <sam@gentoo.org>
+Date: Mon, 17 Jul 2023 13:29:55 +0100
+Subject: [PATCH] subprojects: Fix typos for Meson 1.2 compatibility
+
+Index: subprojects/gupnp-av-1.0.wrap
+--- subprojects/gupnp-av-1.0.wrap.orig
++++ subprojects/gupnp-av-1.0.wrap
+@@ -3,6 +3,6 @@ url = https://gitlab.gnome.org/GNOME/gupnp-av.git
+ revision = master
+ depth = 1
+  
+-[provides]
+-dependency_name = gupnp-av-1.0
++[provide]
++dependency_names = gupnp-av-1.0
+ 

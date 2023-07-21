@@ -37,6 +37,11 @@ lib/pkgconfig/dleyna-core-1.0.pc
 lib/pkgconfig/dleyna-renderer-service-1.0.pc
 lib/pkgconfig/dleyna-server-service-1.0.pc
 lib/python${MODPY_VERSION}/site-packages/dLeyna/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dLeyna/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/dLeyna/${MODPY_PYCACHE}download_sync_controller.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dLeyna/${MODPY_PYCACHE}mediaconsole.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dLeyna/${MODPY_PYCACHE}rendererconsole.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dLeyna/${MODPY_PYCACHE}upload_sync_controller.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dLeyna/download_sync_controller.py
 lib/python${MODPY_VERSION}/site-packages/dLeyna/mediaconsole.py
 lib/python${MODPY_VERSION}/site-packages/dLeyna/rendererconsole.py
