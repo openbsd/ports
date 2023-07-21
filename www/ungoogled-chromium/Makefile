@@ -2,7 +2,6 @@ BROKEN-powerpc64 =	Check failed: false. OS architecture not handled. (powerpc64)
 BROKEN-riscv64 =	Unknown current CPU: riscv64
 
 USE_WXNEEDED=		Yes
-USE_NOBTCFI=		Yes
 
 DPB_PROPERTIES=		parallel parallel2
 
