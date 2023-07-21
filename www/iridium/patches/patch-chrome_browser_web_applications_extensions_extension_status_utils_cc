@@ -10,7 +10,7 @@ Index: chrome/browser/web_applications/extensions/extension_status_utils.cc
  // TODO(b/268221237): Remove this allow-list.
  const char kDefaultAllowedExtensionIds[] =
      "alhngdkjgnedakdlnamimgfihgkmenbh,"
-@@ -113,7 +113,7 @@ bool ClearExternalExtensionUninstalled(content::Browse
+@@ -116,7 +116,7 @@ bool ClearExternalExtensionUninstalled(content::Browse
  }
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -18,4 +18,4 @@ Index: chrome/browser/web_applications/extensions/extension_status_utils.cc
 +    BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
  bool IsExtensionUnsupportedDeprecatedApp(content::BrowserContext* context,
                                           const std::string& extension_id) {
-   if (!base::FeatureList::IsEnabled(features::kChromeAppsDeprecation))
+   if (testing::g_enable_chrome_apps_for_testing) {

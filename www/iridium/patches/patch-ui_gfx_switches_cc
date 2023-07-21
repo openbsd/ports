@@ -1,7 +1,7 @@
 Index: ui/gfx/switches.cc
 --- ui/gfx/switches.cc.orig
 +++ ui/gfx/switches.cc
-@@ -33,7 +33,7 @@ const char kForcePrefersReducedMotion[] = "force-prefe
+@@ -28,7 +28,7 @@ const char kForcePrefersReducedMotion[] = "force-prefe
  // Run in headless mode, i.e., without a UI or display server dependencies.
  const char kHeadless[] = "headless";
  

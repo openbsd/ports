@@ -1,0 +1,12 @@
+Index: services/network/public/cpp/BUILD.gn
+--- services/network/public/cpp/BUILD.gn.orig
++++ services/network/public/cpp/BUILD.gn
+@@ -474,7 +474,7 @@ component("cpp_base") {
+     sources += [ "transferable_directory_fuchsia.cc" ]
+   }
+ 
+-  if (is_linux) {
++  if (is_linux && !is_bsd) {
+     sources += [
+       "network_interface_change_listener_mojom_traits.cc",
+       "network_interface_change_listener_mojom_traits.h",

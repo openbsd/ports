@@ -1,8 +1,8 @@
 Index: services/device/public/mojom/BUILD.gn
 --- services/device/public/mojom/BUILD.gn.orig
 +++ services/device/public/mojom/BUILD.gn
-@@ -90,7 +90,7 @@ mojom("device_service") {
-   cpp_only = true
+@@ -94,7 +94,7 @@ mojom("device_service") {
+   enable_js_fuzzing = false
  
    enabled_features = []
 -  if ((is_linux || is_chromeos) && use_udev) {

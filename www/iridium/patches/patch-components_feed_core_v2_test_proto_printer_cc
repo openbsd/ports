@@ -1,7 +1,7 @@
 Index: components/feed/core/v2/test/proto_printer.cc
 --- components/feed/core/v2/test/proto_printer.cc.orig
 +++ components/feed/core/v2/test/proto_printer.cc
-@@ -157,8 +157,8 @@ class TextProtoPrinter {
+@@ -158,8 +158,8 @@ class TextProtoPrinter {
    }
    TextProtoPrinter& operator<<(const feedwire::Version& v) {
      BeginMessage();

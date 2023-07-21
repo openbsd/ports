@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/webui/management/management_ui_handler.cc
 --- chrome/browser/ui/webui/management/management_ui_handler.cc.orig
 +++ chrome/browser/ui/webui/management/management_ui_handler.cc
-@@ -171,7 +171,7 @@ enum class ReportingType {
+@@ -172,7 +172,7 @@ enum class ReportingType {
    kUserActivity
  };
  
@@ -16,6 +16,6 @@ Index: chrome/browser/ui/webui/management/management_ui_handler.cc
  
 -#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   if (capture_policy::IsGetDisplayMediaSetSelectAllScreensAllowedForAnySite(
-           profile)) {
+   if (capture_policy::IsGetAllScreensMediaAllowedForAnySite(profile)) {
      AddThreatProtectionPermission(kManagementScreenCaptureEvent,
+                                   kManagementScreenCaptureData, &info);

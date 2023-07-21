@@ -19,7 +19,7 @@ Index: media/gpu/buffer_validation.cc
    if (fd < 0) {
      VLOG(1) << "Invalid file descriptor";
      return false;
-@@ -73,7 +73,7 @@ bool VerifyGpuMemoryBufferHandle(
+@@ -76,7 +76,7 @@ bool VerifyGpuMemoryBufferHandle(
      VLOG(1) << "Unsupported: " << pixel_format;
      return false;
    }

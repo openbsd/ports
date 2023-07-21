@@ -10,7 +10,7 @@ Index: gpu/ipc/common/gpu_memory_buffer_support.cc
  #include "gpu/ipc/common/gpu_memory_buffer_impl_native_pixmap.h"
  #endif
  
-@@ -50,7 +50,7 @@ GpuMemoryBufferSupport::GetNativeGpuMemoryBufferType()
+@@ -51,7 +51,7 @@ GpuMemoryBufferSupport::GetNativeGpuMemoryBufferType()
    return gfx::IO_SURFACE_BUFFER;
  #elif BUILDFLAG(IS_ANDROID)
    return gfx::ANDROID_HARDWARE_BUFFER;

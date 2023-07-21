@@ -11,6 +11,7 @@ iridium/headless_lib_strings.pak
 @so iridium/libEGL.so
 @so iridium/libGLESv2.so
 @so iridium/libVkICD_mock_icd.so
+iridium/libudev.so.0
 @so iridium/libvulkan.so
 iridium/locales/
 iridium/locales/af.pak
@@ -149,12 +150,6 @@ share/examples/iridium/unveil.gpu
 @sample ${SYSCONFDIR}/iridium/unveil.gpu
 share/examples/iridium/unveil.main
 @sample ${SYSCONFDIR}/iridium/unveil.main
-share/examples/iridium/unveil.plugin
-@sample ${SYSCONFDIR}/iridium/unveil.plugin
-share/examples/iridium/unveil.renderer
-@sample ${SYSCONFDIR}/iridium/unveil.renderer
-share/examples/iridium/unveil.utility
-@sample ${SYSCONFDIR}/iridium/unveil.utility
 share/examples/iridium/unveil.utility_audio
 @sample ${SYSCONFDIR}/iridium/unveil.utility_audio
 share/examples/iridium/unveil.utility_network

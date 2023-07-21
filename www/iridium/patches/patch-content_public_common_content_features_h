@@ -1,9 +1,9 @@
 Index: content/public/common/content_features.h
 --- content/public/common/content_features.h.orig
 +++ content/public/common/content_features.h
-@@ -115,7 +115,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE(kFractionalScrollO
- CONTENT_EXPORT BASE_DECLARE_FEATURE(kGetDisplayMediaSet);
- CONTENT_EXPORT BASE_DECLARE_FEATURE(kGetDisplayMediaSetAutoSelectAllScreens);
+@@ -115,7 +115,7 @@ CONTENT_EXPORT extern const base::FeatureParam<int>
+     kFledgeLimitNumAuctionsParam;
+ CONTENT_EXPORT BASE_DECLARE_FEATURE(kFractionalScrollOffsets);
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kGreaseUACH);
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
