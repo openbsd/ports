@@ -6,7 +6,7 @@ DPB_PROPERTIES=		parallel parallel2
 
 COMMENT=		Chromium browser
 
-V=			115.0.5790.98
+V=			115.0.5790.102
 
 DISTNAME=		chromium-${V}
 
@@ -265,7 +265,7 @@ do-configure:
 		--system-libraries ${GN_SYSTEM_LIBS}
 	@cd ${WRKSRC}/tools/gn && env -i ${MAKE_ENV} LDFLAGS=-L${LOCALBASE}/lib ${MODPY_BIN} bootstrap/bootstrap.py \
 		--no-clean -s --gn-gen-args "${GN_ARGS}"
-	@cd ${WRKSRC} && env -i ${CONFIGURE_ENV} ${WRKSRC}/out/Release/gn \
+	@cd ${WRKSRC} && env -i ${CONFIGURE_ENV} ${WRKSRC}/out/${BUILDTYPE}/gn \
 		gen --args="${GN_ARGS}" out/${BUILDTYPE}
 
 do-build:
