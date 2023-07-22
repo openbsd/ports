@@ -595,6 +595,7 @@ share/tuxpaint/stamps/animals/fish/clownfish_desc_da.ogg
 share/tuxpaint/stamps/animals/fish/clownfish_desc_el.ogg
 share/tuxpaint/stamps/animals/fish/clownfish_desc_es.ogg
 share/tuxpaint/stamps/animals/fish/clownfish_desc_fr.ogg
+share/tuxpaint/stamps/animals/fish/clownfish_desc_nn.ogg
 share/tuxpaint/stamps/animals/fish/clownfish_desc_ro.ogg
 share/tuxpaint/stamps/animals/fish/clownfish_desc_ru.ogg
 share/tuxpaint/stamps/animals/fish/coraltrout.png
@@ -6105,6 +6106,7 @@ share/tuxpaint/stamps/space/planets/0_sun_desc_da.ogg
 share/tuxpaint/stamps/space/planets/0_sun_desc_el.ogg
 share/tuxpaint/stamps/space/planets/0_sun_desc_es.ogg
 share/tuxpaint/stamps/space/planets/0_sun_desc_fr.ogg
+share/tuxpaint/stamps/space/planets/0_sun_desc_nn.ogg
 share/tuxpaint/stamps/space/planets/0_sun_desc_ro.ogg
 share/tuxpaint/stamps/space/planets/0_sun_desc_ru.ogg
 share/tuxpaint/stamps/space/planets/1_mercury.png
@@ -6116,6 +6118,7 @@ share/tuxpaint/stamps/space/planets/1_mercury_desc_da.ogg
 share/tuxpaint/stamps/space/planets/1_mercury_desc_el.ogg
 share/tuxpaint/stamps/space/planets/1_mercury_desc_es.ogg
 share/tuxpaint/stamps/space/planets/1_mercury_desc_fr.ogg
+share/tuxpaint/stamps/space/planets/1_mercury_desc_nn.ogg
 share/tuxpaint/stamps/space/planets/1_mercury_desc_ro.ogg
 share/tuxpaint/stamps/space/planets/1_mercury_desc_ru.ogg
 share/tuxpaint/stamps/space/planets/2_venus.png
@@ -6126,6 +6129,7 @@ share/tuxpaint/stamps/space/planets/2_venus_desc_da.ogg
 share/tuxpaint/stamps/space/planets/2_venus_desc_el.ogg
 share/tuxpaint/stamps/space/planets/2_venus_desc_es.ogg
 share/tuxpaint/stamps/space/planets/2_venus_desc_fr.ogg
+share/tuxpaint/stamps/space/planets/2_venus_desc_nn.ogg
 share/tuxpaint/stamps/space/planets/2_venus_desc_ro.ogg
 share/tuxpaint/stamps/space/planets/2_venus_desc_ru.ogg
 share/tuxpaint/stamps/space/planets/3_earth.png
@@ -6136,6 +6140,7 @@ share/tuxpaint/stamps/space/planets/3_earth_desc_da.ogg
 share/tuxpaint/stamps/space/planets/3_earth_desc_el.ogg
 share/tuxpaint/stamps/space/planets/3_earth_desc_es.ogg
 share/tuxpaint/stamps/space/planets/3_earth_desc_fr.ogg
+share/tuxpaint/stamps/space/planets/3_earth_desc_nn.ogg
 share/tuxpaint/stamps/space/planets/3_earth_desc_ro.ogg
 share/tuxpaint/stamps/space/planets/3_earth_desc_ru.ogg
 share/tuxpaint/stamps/space/planets/4_mars.png
@@ -6147,6 +6152,7 @@ share/tuxpaint/stamps/space/planets/4_mars_desc_da.ogg
 share/tuxpaint/stamps/space/planets/4_mars_desc_el.ogg
 share/tuxpaint/stamps/space/planets/4_mars_desc_es.ogg
 share/tuxpaint/stamps/space/planets/4_mars_desc_fr.ogg
+share/tuxpaint/stamps/space/planets/4_mars_desc_nn.ogg
 share/tuxpaint/stamps/space/planets/4_mars_desc_ro.ogg
 share/tuxpaint/stamps/space/planets/4_mars_desc_ru.ogg
 share/tuxpaint/stamps/space/planets/5_jupiter.png
@@ -6158,6 +6164,7 @@ share/tuxpaint/stamps/space/planets/5_jupiter_desc_da.ogg
 share/tuxpaint/stamps/space/planets/5_jupiter_desc_el.ogg
 share/tuxpaint/stamps/space/planets/5_jupiter_desc_es.ogg
 share/tuxpaint/stamps/space/planets/5_jupiter_desc_fr.ogg
+share/tuxpaint/stamps/space/planets/5_jupiter_desc_nn.ogg
 share/tuxpaint/stamps/space/planets/5_jupiter_desc_ro.ogg
 share/tuxpaint/stamps/space/planets/5_jupiter_desc_ru.ogg
 share/tuxpaint/stamps/space/planets/6_saturn.png
@@ -6168,6 +6175,7 @@ share/tuxpaint/stamps/space/planets/6_saturn_desc_da.ogg
 share/tuxpaint/stamps/space/planets/6_saturn_desc_el.ogg
 share/tuxpaint/stamps/space/planets/6_saturn_desc_es.ogg
 share/tuxpaint/stamps/space/planets/6_saturn_desc_fr.ogg
+share/tuxpaint/stamps/space/planets/6_saturn_desc_nn.ogg
 share/tuxpaint/stamps/space/planets/6_saturn_desc_ro.ogg
 share/tuxpaint/stamps/space/planets/6_saturn_desc_ru.ogg
 share/tuxpaint/stamps/space/planets/7_uranus.png
@@ -6178,6 +6186,7 @@ share/tuxpaint/stamps/space/planets/7_uranus_desc_da.ogg
 share/tuxpaint/stamps/space/planets/7_uranus_desc_el.ogg
 share/tuxpaint/stamps/space/planets/7_uranus_desc_es.ogg
 share/tuxpaint/stamps/space/planets/7_uranus_desc_fr.ogg
+share/tuxpaint/stamps/space/planets/7_uranus_desc_nn.ogg
 share/tuxpaint/stamps/space/planets/7_uranus_desc_ro.ogg
 share/tuxpaint/stamps/space/planets/7_uranus_desc_ru.ogg
 share/tuxpaint/stamps/space/planets/8_neptune.png
@@ -6189,6 +6198,7 @@ share/tuxpaint/stamps/space/planets/8_neptune_desc_da.ogg
 share/tuxpaint/stamps/space/planets/8_neptune_desc_el.ogg
 share/tuxpaint/stamps/space/planets/8_neptune_desc_es.ogg
 share/tuxpaint/stamps/space/planets/8_neptune_desc_fr.ogg
+share/tuxpaint/stamps/space/planets/8_neptune_desc_nn.ogg
 share/tuxpaint/stamps/space/planets/8_neptune_desc_ro.ogg
 share/tuxpaint/stamps/space/planets/8_neptune_desc_ru.ogg
 share/tuxpaint/stamps/space/planets/9_pluto.png
@@ -6200,6 +6210,7 @@ share/tuxpaint/stamps/space/planets/9_pluto_desc_da.ogg
 share/tuxpaint/stamps/space/planets/9_pluto_desc_el.ogg
 share/tuxpaint/stamps/space/planets/9_pluto_desc_es.ogg
 share/tuxpaint/stamps/space/planets/9_pluto_desc_fr.ogg
+share/tuxpaint/stamps/space/planets/9_pluto_desc_nn.ogg
 share/tuxpaint/stamps/space/planets/9_pluto_desc_ro.ogg
 share/tuxpaint/stamps/space/planets/9_pluto_desc_ru.ogg
 share/tuxpaint/stamps/space/rocket1.svg
@@ -6264,6 +6275,7 @@ share/tuxpaint/stamps/sports/australian_rules_football_desc_ca.ogg
 share/tuxpaint/stamps/sports/australian_rules_football_desc_el.ogg
 share/tuxpaint/stamps/sports/australian_rules_football_desc_es.ogg
 share/tuxpaint/stamps/sports/australian_rules_football_desc_fr.ogg
+share/tuxpaint/stamps/sports/australian_rules_football_desc_nn.ogg
 share/tuxpaint/stamps/sports/australian_rules_football_desc_ro.ogg
 share/tuxpaint/stamps/sports/australian_rules_football_desc_ru.ogg
 share/tuxpaint/stamps/sports/basketball.dat
@@ -6275,6 +6287,7 @@ share/tuxpaint/stamps/sports/basketball_desc_ca.ogg
 share/tuxpaint/stamps/sports/basketball_desc_el.ogg
 share/tuxpaint/stamps/sports/basketball_desc_es.ogg
 share/tuxpaint/stamps/sports/basketball_desc_fr.ogg
+share/tuxpaint/stamps/sports/basketball_desc_nn.ogg
 share/tuxpaint/stamps/sports/basketball_desc_ro.ogg
 share/tuxpaint/stamps/sports/basketball_desc_ru.ogg
 share/tuxpaint/stamps/sports/cartoon/
@@ -6286,6 +6299,7 @@ share/tuxpaint/stamps/sports/cartoon/football_helmet_front_desc_ca.ogg
 share/tuxpaint/stamps/sports/cartoon/football_helmet_front_desc_el.ogg
 share/tuxpaint/stamps/sports/cartoon/football_helmet_front_desc_es.ogg
 share/tuxpaint/stamps/sports/cartoon/football_helmet_front_desc_fr.ogg
+share/tuxpaint/stamps/sports/cartoon/football_helmet_front_desc_nn.ogg
 share/tuxpaint/stamps/sports/cartoon/football_helmet_front_desc_ro.ogg
 share/tuxpaint/stamps/sports/cartoon/football_helmet_front_desc_ru.ogg
 share/tuxpaint/stamps/sports/cartoon/football_helmet_side.dat
@@ -6296,6 +6310,7 @@ share/tuxpaint/stamps/sports/cartoon/football_helmet_side_desc_ca.ogg
 share/tuxpaint/stamps/sports/cartoon/football_helmet_side_desc_el.ogg
 share/tuxpaint/stamps/sports/cartoon/football_helmet_side_desc_es.ogg
 share/tuxpaint/stamps/sports/cartoon/football_helmet_side_desc_fr.ogg
+share/tuxpaint/stamps/sports/cartoon/football_helmet_side_desc_nn.ogg
 share/tuxpaint/stamps/sports/cartoon/football_helmet_side_desc_ro.ogg
 share/tuxpaint/stamps/sports/cartoon/football_helmet_side_desc_ru.ogg
 share/tuxpaint/stamps/sports/cartoon/volleyball.png
@@ -6304,6 +6319,7 @@ share/tuxpaint/stamps/sports/cartoon/volleyball_desc_bg.ogg
 share/tuxpaint/stamps/sports/cartoon/volleyball_desc_ca.ogg
 share/tuxpaint/stamps/sports/cartoon/volleyball_desc_es.ogg
 share/tuxpaint/stamps/sports/cartoon/volleyball_desc_fr.ogg
+share/tuxpaint/stamps/sports/cartoon/volleyball_desc_nn.ogg
 share/tuxpaint/stamps/sports/cartoon/volleyball_desc_ro.ogg
 share/tuxpaint/stamps/sports/cartoon/volleyball_desc_ru.ogg
 share/tuxpaint/stamps/sports/cricketball.dat
@@ -6315,6 +6331,7 @@ share/tuxpaint/stamps/sports/cricketball_desc_ca.ogg
 share/tuxpaint/stamps/sports/cricketball_desc_el.ogg
 share/tuxpaint/stamps/sports/cricketball_desc_es.ogg
 share/tuxpaint/stamps/sports/cricketball_desc_fr.ogg
+share/tuxpaint/stamps/sports/cricketball_desc_nn.ogg
 share/tuxpaint/stamps/sports/cricketball_desc_ro.ogg
 share/tuxpaint/stamps/sports/cricketball_desc_ru.ogg
 share/tuxpaint/stamps/sports/football.png
@@ -6325,6 +6342,7 @@ share/tuxpaint/stamps/sports/football_desc_ca.ogg
 share/tuxpaint/stamps/sports/football_desc_el.ogg
 share/tuxpaint/stamps/sports/football_desc_es.ogg
 share/tuxpaint/stamps/sports/football_desc_fr.ogg
+share/tuxpaint/stamps/sports/football_desc_nn.ogg
 share/tuxpaint/stamps/sports/football_desc_ro.ogg
 share/tuxpaint/stamps/sports/football_desc_ru.ogg
 share/tuxpaint/stamps/sports/rugby_goal_posts.dat
@@ -6335,6 +6353,7 @@ share/tuxpaint/stamps/sports/rugby_goal_posts_desc_ca.ogg
 share/tuxpaint/stamps/sports/rugby_goal_posts_desc_el.ogg
 share/tuxpaint/stamps/sports/rugby_goal_posts_desc_es.ogg
 share/tuxpaint/stamps/sports/rugby_goal_posts_desc_fr.ogg
+share/tuxpaint/stamps/sports/rugby_goal_posts_desc_nn.ogg
 share/tuxpaint/stamps/sports/rugby_goal_posts_desc_ro.ogg
 share/tuxpaint/stamps/sports/rugby_goal_posts_desc_ru.ogg
 share/tuxpaint/stamps/sports/soccer.png
@@ -6345,6 +6364,7 @@ share/tuxpaint/stamps/sports/soccer_desc_ca.ogg
 share/tuxpaint/stamps/sports/soccer_desc_el.ogg
 share/tuxpaint/stamps/sports/soccer_desc_es.ogg
 share/tuxpaint/stamps/sports/soccer_desc_fr.ogg
+share/tuxpaint/stamps/sports/soccer_desc_nn.ogg
 share/tuxpaint/stamps/sports/soccer_desc_ro.ogg
 share/tuxpaint/stamps/sports/soccer_desc_ru.ogg
 share/tuxpaint/stamps/sports/stopwatch.svg
@@ -6353,6 +6373,7 @@ share/tuxpaint/stamps/sports/stopwatch_desc_be.ogg
 share/tuxpaint/stamps/sports/stopwatch_desc_bg.ogg
 share/tuxpaint/stamps/sports/stopwatch_desc_ca.ogg
 share/tuxpaint/stamps/sports/stopwatch_desc_fr.ogg
+share/tuxpaint/stamps/sports/stopwatch_desc_nn.ogg
 share/tuxpaint/stamps/sports/stopwatch_desc_ro.ogg
 share/tuxpaint/stamps/sports/stopwatch_desc_ru.ogg
 share/tuxpaint/stamps/sports/tennis_ball.dat
@@ -6364,6 +6385,7 @@ share/tuxpaint/stamps/sports/tennis_ball_desc_ca.ogg
 share/tuxpaint/stamps/sports/tennis_ball_desc_el.ogg
 share/tuxpaint/stamps/sports/tennis_ball_desc_es.ogg
 share/tuxpaint/stamps/sports/tennis_ball_desc_fr.ogg
+share/tuxpaint/stamps/sports/tennis_ball_desc_nn.ogg
 share/tuxpaint/stamps/sports/tennis_ball_desc_ro.ogg
 share/tuxpaint/stamps/sports/tennis_ball_desc_ru.ogg
 share/tuxpaint/stamps/sports/tennis_racket.dat
@@ -6375,6 +6397,7 @@ share/tuxpaint/stamps/sports/tennis_racket_desc_ca.ogg
 share/tuxpaint/stamps/sports/tennis_racket_desc_el.ogg
 share/tuxpaint/stamps/sports/tennis_racket_desc_es.ogg
 share/tuxpaint/stamps/sports/tennis_racket_desc_fr.ogg
+share/tuxpaint/stamps/sports/tennis_racket_desc_nn.ogg
 share/tuxpaint/stamps/sports/tennis_racket_desc_ro.ogg
 share/tuxpaint/stamps/sports/tennis_racket_desc_ru.ogg
 share/tuxpaint/stamps/sports/trophy_cup.dat
@@ -6386,6 +6409,7 @@ share/tuxpaint/stamps/sports/trophy_cup_desc_ca.ogg
 share/tuxpaint/stamps/sports/trophy_cup_desc_el.ogg
 share/tuxpaint/stamps/sports/trophy_cup_desc_es.ogg
 share/tuxpaint/stamps/sports/trophy_cup_desc_fr.ogg
+share/tuxpaint/stamps/sports/trophy_cup_desc_nn.ogg
 share/tuxpaint/stamps/sports/trophy_cup_desc_ro.ogg
 share/tuxpaint/stamps/sports/trophy_cup_desc_ru.ogg
 share/tuxpaint/stamps/symbols/
