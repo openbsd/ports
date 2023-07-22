@@ -1,11 +1,13 @@
 # qt5 webkit
 USE_WXNEEDED =	Yes
 
+USE_NOBTCFI =	Yes
+
 COMMENT =	simple offline API documentation browser
 
 V =	0.6.1
 DISTNAME = zeal-${V}
-REVISION = 2
+REVISION = 3
 
 CATEGORIES =	devel
 
