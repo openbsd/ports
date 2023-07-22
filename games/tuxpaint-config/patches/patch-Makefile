@@ -5,11 +5,11 @@ Index: Makefile
  
  # Where to install things:
  
--PREFIX=/usr/local
+-PREFIX:=/usr/local
  
  
  # Program:
-@@ -42,20 +41,13 @@ DATA_PREFIX=$(PREFIX)/share/tuxpaint-config/
+@@ -47,20 +46,13 @@ TUXPAINT_DATA_PREFIX=$(PREFIX)/share/tuxpaint
  # Docs and man page:
  
  DOC_PREFIX=$(PREFIX)/share/doc/tuxpaint-config/
@@ -32,16 +32,16 @@ Index: Makefile
  # Icons and launchers:
  
  ICON_PREFIX=$(PREFIX)/share/pixmaps/
-@@ -67,7 +59,7 @@ KDE_ICON_PREFIX=$(shell kde-config --install icon --ex
+@@ -70,7 +62,7 @@ NEWICON_PREFIX:=$(PREFIX)/share/icons/hicolor
  
  # Locale files
  
 -LOCALE_PREFIX=${DESTDIR}$(PREFIX)/share/locale/
 +LOCALE_PREFIX=$(PREFIX)/share/locale/
- # LOCALE_PREFIX=/usr/share/locale/
  
  
-@@ -82,7 +74,6 @@ UNIBREAK_CFLAGS=`pkg-config --cflags libunibreak`
+ # Libraries, paths, and flags:
+@@ -87,7 +79,6 @@ UNIBREAK_CFLAGS=`pkg-config --cflags libunibreak`
  UNIBREAK_LIB=`pkg-config --libs libunibreak`
  
  # Default CFLAGS:
@@ -49,14 +49,12 @@ Index: Makefile
  
  # The entire set of CFLAGS:
  ALL_CFLAGS=$(CFLAGS) $(FLTK_CFLAGS) $(UNIBREAK_CFLAGS) \
-@@ -219,16 +210,9 @@ install-win32:
+@@ -226,15 +217,8 @@ install-win32:
  # (depending on the *PREFIX variables at the top, you probably need
  # to do this as superuser ("root"))
  
 -install:	install-bin install-data install-man install-doc \
--		install-gnome install-kde install-kde-icons \
 +install:	install-bin install-man install-doc \
-+		install-gnome \
  		install-icon install-gettext
 -	@echo
 -	@echo "All done! Now (preferably NOT as 'root' superuser),"
@@ -68,21 +66,37 @@ Index: Makefile
  
  
  # "make clean" deletes the program, the compiled objects and the
-@@ -307,24 +291,15 @@ install-kde-icons:
+@@ -269,32 +253,23 @@ uninstall:
  # and the 24-color 32x32 XPM (for other Window managers):
  
  install-icon:
 -	@echo
 -	@echo "...Installing launcher icon graphics..."
 -	@install -d ${DESTDIR}$(ICON_PREFIX)
--	@cp data/images/icon.png ${DESTDIR}$(ICON_PREFIX)tuxpaint-config.png
--	@chmod 644 ${DESTDIR}$(ICON_PREFIX)tuxpaint-config.png
+-	@install -m 644 data/images/icon.png ${DESTDIR}$(ICON_PREFIX)tuxpaint-config.png
 -	@install -d ${DESTDIR}$(X11_ICON_PREFIX)
--	@cp data/images/icon32x32.xpm ${DESTDIR}$(X11_ICON_PREFIX)tuxpaint-config.xpm
--	@chmod 644 ${DESTDIR}$(X11_ICON_PREFIX)tuxpaint-config.xpm
+-	@install -m 644 data/images/icon32x32.xpm ${DESTDIR}$(X11_ICON_PREFIX)tuxpaint-config.xpm
+-	@install -d ${DESTDIR}$(NEWICON_PREFIX)/16x16/apps
+-	@install -d ${DESTDIR}$(NEWICON_PREFIX)/32x32/apps
+-	@install -d ${DESTDIR}$(NEWICON_PREFIX)/48x48/apps
+-	@cp data/images/icon16x16.png ${DESTDIR}$(NEWICON_PREFIX)/16x16/apps/tuxpaint-config.png
+-	@cp data/images/icon32x32.png ${DESTDIR}$(NEWICON_PREFIX)/32x32/apps/tuxpaint-config.png
+-	@cp data/images/icon48x48.png ${DESTDIR}$(NEWICON_PREFIX)/48x48/apps/tuxpaint-config.png
+-	@echo
+-	@echo "...Installing launcher..."
+-	@install -d ${DESTDIR}$(PREFIX)/share/applications/
+-	@install -m 644 src/tuxpaint-config.desktop ${DESTDIR}$(PREFIX)/share/applications/
 +	${BSD_INSTALL_DATA_DIR} $(ICON_PREFIX)
 +	${BSD_INSTALL_DATA} data/images/icon.png $(ICON_PREFIX)tuxpaint-config.png
 +	${BSD_INSTALL_DATA} data/images/icon32x32.xpm $(ICON_PREFIX)tuxpaint-config.xpm
++	${BSD_INSTALL_DATA_DIR} $(NEWICON_PREFIX)/16x16/apps
++	${BSD_INSTALL_DATA} data/images/icon16x16.png $(NEWICON_PREFIX)/16x16/apps/tuxpaint-config.png
++	${BSD_INSTALL_DATA_DIR} $(NEWICON_PREFIX)/32x32/apps
++	${BSD_INSTALL_DATA} data/images/icon32x32.png $(NEWICON_PREFIX)/32x32/apps/tuxpaint-config.png
++	${BSD_INSTALL_DATA_DIR} $(NEWICON_PREFIX)/48x48/apps
++	${BSD_INSTALL_DATA} data/images/icon48x48.png $(NEWICON_PREFIX)/48x48/apps/tuxpaint-config.png
++	${BSD_INSTALL_DATA_DIR} $(PREFIX)/share/applications/
++	${BSD_INSTALL_DATA} src/tuxpaint-config.desktop $(PREFIX)/share/applications/
  
  
  # Install the program:
@@ -97,7 +111,7 @@ Index: Makefile
  
  
  # Install the data (sound, graphics, fonts):
-@@ -340,31 +315,15 @@ install-data:
+@@ -310,29 +285,15 @@ install-data:
  # Install the text documentation:
  
  install-doc:
@@ -122,9 +136,7 @@ Index: Makefile
  
  install-man:
 -	@echo "...Installing man pages..."
--	# man1 directory...
 -	@install -d ${DESTDIR}$(MAN_PREFIX)/man1/
--	# tuxpaint-config.1
 -	@cp src/tuxpaint-config.1 ${DESTDIR}$(MAN_PREFIX)/man1/
 -	@gzip -9f ${DESTDIR}$(MAN_PREFIX)/man1/tuxpaint-config.1
 -	@chmod a+rx,g-w,o-w ${DESTDIR}$(MAN_PREFIX)/man1/tuxpaint-config.1.gz
@@ -133,27 +145,26 @@ Index: Makefile
  
  
  # Build the program!
-@@ -372,22 +331,22 @@ install-man:
+@@ -340,14 +301,14 @@ install-man:
  tuxpaint-config:	obj/tuxpaint-config.o obj/tuxpaint-config2.o	\
  			obj/defaults.o $(ARCH_LIBS)
  	@echo Linking
 -	$(CXX) $(ALL_CFLAGS) -o tuxpaint-config obj/tuxpaint-config.o 	\
 +	$(CXX) $(ALL_CFLAGS) -liconv -lintl -o tuxpaint-config obj/tuxpaint-config.o 	\
  			obj/tuxpaint-config2.o obj/defaults.o $(ARCH_LIBS) \
- 			$(FLTK_LIBS) $(ARCH_LINKS) $(PAPER_LIB) $(UNIBREAK_LIB)
+ 			$(FLTK_LIBS) $(ARCH_LINKS) $(PAPER_LIB) $(UNIBREAK_LIB) $(PANGO_LIBS)
  
  
  # Build the object for the program!
  
--obj/tuxpaint-config.o:	src/tuxpaint-config.cxx src/tuxpaint-config2.h src/defaults.h src/version.h src/about.h
-+obj/tuxpaint-config.o:	src/tuxpaint-config.cxx src/tuxpaint-config2.h src/defaults.h obj src/version.h src/about.h
+-obj/tuxpaint-config.o:	src/tuxpaint-config.cxx src/tuxpaint-config2.h src/defaults.h src/version.h src/about.h src/debug.h
++obj/tuxpaint-config.o:	src/tuxpaint-config.cxx src/tuxpaint-config2.h src/defaults.h obj src/version.h src/about.h src/debug.h
  	@echo Compiling tuxpaint-config.cxx
  	$(CXX) $(ALL_CFLAGS) -c src/tuxpaint-config.cxx -o obj/tuxpaint-config.o
  
--obj/tuxpaint-config2.o:	src/tuxpaint-config2.cxx src/tuxpaint-config2.h src/defaults.h src/version.h src/about.h
-+obj/tuxpaint-config2.o:	src/tuxpaint-config2.cxx src/tuxpaint-config2.h src/defaults.h obj src/version.h src/about.h
+@@ -355,7 +316,7 @@ obj/tuxpaint-config2.o:	src/tuxpaint-config2.cxx src/t
  	@echo Compiling tuxpaint-config2.cxx
- 	$(CXX) $(ALL_CFLAGS) -c src/tuxpaint-config2.cxx -o obj/tuxpaint-config2.o
+ 	$(CXX) $(ALL_CFLAGS) $(PANGO_CFLAGS) -c src/tuxpaint-config2.cxx -o obj/tuxpaint-config2.o
  
 -obj/defaults.o:	src/defaults.cxx src/defaults.h
 +obj/defaults.o:	src/defaults.cxx obj src/defaults.h
