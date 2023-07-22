@@ -63,6 +63,9 @@ BUILD_DEPENDS=	${COMMON_DEPENDS} \
 		textproc/gi-docgen \
 		textproc/libxslt
 
+# XXX check at next release: this should be optional for building
+BUILD_DEPENDS +=x11/gnome/gjs
+
 RUN_DEPENDS=	${COMMON_DEPENDS} \
 		devel/xdg-utils \
 		x11/gtk+4,-guic
