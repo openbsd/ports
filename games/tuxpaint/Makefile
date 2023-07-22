@@ -1,6 +1,6 @@
 COMMENT=		drawing program for children
 
-V=			0.9.30
+V=			0.9.31
 DISTNAME=		tuxpaint-${V}
 
 CATEGORIES=		games graphics
@@ -13,9 +13,9 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += SDL2 SDL2_Pango SDL2_gfx-1.0 SDL2_image SDL2_mixer
-WANTLIB += SDL2_ttf c cairo freetype fribidi gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gobject-2.0 harfbuzz imagequant intl m pango-1.0
-WANTLIB += paper png pthread rsvg-2 z
+WANTLIB += SDL2_ttf c cairo fontconfig freetype fribidi gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gobject-2.0 harfbuzz imagequant intl
+WANTLIB += m pango-1.0 pangoft2-1.0 paper png pthread rsvg-2 z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=tuxpaint/}
 

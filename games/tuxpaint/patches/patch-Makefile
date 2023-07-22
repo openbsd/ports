@@ -1,7 +1,7 @@
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -57,7 +57,7 @@ else
+@@ -61,7 +61,7 @@ else
            endif
          else
            OS:=linux
@@ -10,7 +10,7 @@ Index: Makefile
          endif
        endif
      endif
-@@ -173,7 +173,7 @@ windows_ARCH_CFLAGS:=
+@@ -177,7 +177,7 @@ windows_ARCH_CFLAGS:=
  macos_ARCH_CFLAGS:=-isysroot $(SDKROOT) -I$(SDKROOT)/usr/include -I$(HOSTROOT)/include -mmacosx-version-min=$(MINVER) -arch $(subst $() $(), -arch ,$(ARCHS)) -w -headerpad_max_install_names -DHAVE_STRCASESTR
  ios_ARCH_CFLAGS:=-isysroot $(SDKROOT) -I$(SDKROOT)/usr/include -I$(HOSTROOT)/include $(MINVEROPT) -arch $(subst $() $(), -arch ,$(ARCHS)) -w -fPIC -DHAVE_STRCASESTR -DUNLINK_ONLY
  beos_ARCH_CFLAGS:=
@@ -19,7 +19,7 @@ Index: Makefile
  ARCH_CFLAGS:=$($(OS)_ARCH_CFLAGS)
  
  windows_ARCH_LDFLAGS:=
-@@ -184,9 +184,8 @@ linux_ARCH_LDFLAGS:=
+@@ -188,9 +188,8 @@ linux_ARCH_LDFLAGS:=
  ARCH_LDFLAGS:=$($(OS)_ARCH_LDFLAGS)
  LDFLAGS:=$(ARCH_LDFLAGS)
  
@@ -31,7 +31,7 @@ Index: Makefile
  
  FRIBIDI_LIB:=$(shell $(PKG_CONFIG) --libs fribidi)
  FRIBIDI_CFLAGS:=$(shell $(PKG_CONFIG) --cflags fribidi)
-@@ -210,7 +209,7 @@ windows_PREFIX:=/usr/local
+@@ -214,7 +213,7 @@ windows_PREFIX:=/usr/local
  macos_PREFIX:=Resources
  ios_PREFIX:=.
  linux_PREFIX:=/usr/local
@@ -40,7 +40,7 @@ Index: Makefile
  
  # Root directory to place files when creating packages.
  # PKG_ROOT is the old name for this, and should be undefined.
-@@ -246,18 +245,18 @@ INCLUDE_PREFIX:=$(DESTDIR)$(PREFIX)/include
+@@ -250,18 +249,18 @@ INCLUDE_PREFIX:=$(DESTDIR)$(PREFIX)/include
  MAGIC_PREFIX:=$(DESTDIR)$(LIBDIR)/lib$(LIBDIRSUFFIX)/tuxpaint/plugins
  
  # Docs and man page:
@@ -64,7 +64,7 @@ Index: Makefile
  endif
  
  ifeq ($(SYSNAME),Haiku)
-@@ -795,18 +794,16 @@ uninstall:	uninstall-i18n
+@@ -808,18 +807,16 @@ uninstall:	uninstall-i18n
  install-default-config:
  	@echo
  	@echo "...Installing default config file..."
@@ -87,7 +87,7 @@ Index: Makefile
  
  
  # Install example stamps
-@@ -814,7 +811,7 @@ install-bash-completion:
+@@ -827,7 +824,7 @@ install-bash-completion:
  install-example-stamps:
  	@echo
  	@echo "...Installing example stamps..."
@@ -96,7 +96,7 @@ Index: Makefile
  	@cp -R stamps/* $(DATA_PREFIX)/stamps
  	@chmod -R a+rX,g-w,o-w $(DATA_PREFIX)/stamps
  
-@@ -864,7 +861,10 @@ $(THUMB_STARTERS):
+@@ -877,7 +874,10 @@ $(THUMB_STARTERS):
  	fi
  
  $(INSTALLED_THUMB_STARTERS): $(DATA_PREFIX)/%: % install-example-starters-dirs
@@ -108,9 +108,9 @@ Index: Makefile
  
  .PHONY: echo-thumb-starters
  echo-thumb-starters:
-@@ -969,36 +969,23 @@ install-nokia770:
+@@ -1000,36 +1000,23 @@ install-pkgxdg: src/tuxpaint.desktop src/tuxpaint-full
  install-xdg: src/tuxpaint.desktop src/tuxpaint-fullscreen.desktop src/org.tuxpaint.Tuxpaint.appdata.xml
- 	@echo
+ 	@echo ""
  	@echo "...Installing launcher icon into desktop environment..."
 -	@if [ "x$(shell which xdg-icon-resource)" != "x" ]; then \
 -	  xdg-icon-resource install --size 192 data/images/icon192x192.png tux4kids-tuxpaint ; \
@@ -142,43 +142,43 @@ Index: Makefile
 -	  update-desktop-database ; \
 -	fi
 -	install --mode=0644 -Dt $(METAINFO_PREFIX) src/org.tuxpaint.Tuxpaint.appdata.xml
-+	${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(PREFIX)/share/icons/hicolor/192x192/apps ; \
-+	${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(PREFIX)/share/icons/hicolor/128x128/apps ; \
-+	${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(PREFIX)/share/icons/hicolor/96x96/apps ; \
-+	${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(PREFIX)/share/icons/hicolor/64x64/apps ; \
-+	${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(PREFIX)/share/icons/hicolor/48x48/apps ; \
-+	${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(PREFIX)/share/icons/hicolor/32x32/apps ; \
-+	${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(PREFIX)/share/icons/hicolor/22x22/apps ; \
-+	${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(PREFIX)/share/icons/hicolor/16x16/apps ; \
-+	${BSD_INSTALL_DATA} data/images/icon192x192.png $(DESTDIR)$(PREFIX)/share/icons/hicolor/192x192/apps/tux4kids-tuxpaint.png ; \
-+	${BSD_INSTALL_DATA} data/images/icon128x128.png $(DESTDIR)$(PREFIX)/share/icons/hicolor/128x128/apps/tux4kids-tuxpaint.png ; \
-+	${BSD_INSTALL_DATA} data/images/icon96x96.png $(DESTDIR)$(PREFIX)/share/icons/hicolor/96x96/apps/tux4kids-tuxpaint.png ; \
-+	${BSD_INSTALL_DATA} data/images/icon64x64.png $(DESTDIR)$(PREFIX)/share/icons/hicolor/64x64/apps/tux4kids-tuxpaint.png ; \
-+	${BSD_INSTALL_DATA} data/images/icon48x48.png $(DESTDIR)$(PREFIX)/share/icons/hicolor/48x48/apps/tux4kids-tuxpaint.png ; \
-+	${BSD_INSTALL_DATA} data/images/icon32x32.png $(DESTDIR)$(PREFIX)/share/icons/hicolor/32x32/apps/tux4kids-tuxpaint.png ; \
-+	${BSD_INSTALL_DATA} data/images/icon22x22.png $(DESTDIR)$(PREFIX)/share/icons/hicolor/22x22/apps/tux4kids-tuxpaint.png ; \
-+	${BSD_INSTALL_DATA} data/images/icon16x16.png $(DESTDIR)$(PREFIX)/share/icons/hicolor/16x16/apps/tux4kids-tuxpaint.png ; \
-+	install -m0644 -D src/org.tuxpaint.Tuxpaint.appdata.xml $(METAINFO_PREFIX)/src/org.tuxpaint.Tuxpaint.appdata.xml
++	${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(PREFIX)/share/icons/hicolor/192x192/apps
++	${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(PREFIX)/share/icons/hicolor/128x128/apps
++	${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(PREFIX)/share/icons/hicolor/96x96/apps
++	${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(PREFIX)/share/icons/hicolor/64x64/apps
++	${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(PREFIX)/share/icons/hicolor/48x48/apps
++	${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(PREFIX)/share/icons/hicolor/32x32/apps
++	${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(PREFIX)/share/icons/hicolor/22x22/apps
++	${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(PREFIX)/share/icons/hicolor/16x16/apps
++	${BSD_INSTALL_DATA} data/images/icon192x192.png $(DESTDIR)$(PREFIX)/share/icons/hicolor/192x192/apps/tux4kids-tuxpaint.png
++	${BSD_INSTALL_DATA} data/images/icon128x128.png $(DESTDIR)$(PREFIX)/share/icons/hicolor/128x128/apps/tux4kids-tuxpaint.png
++	${BSD_INSTALL_DATA} data/images/icon96x96.png $(DESTDIR)$(PREFIX)/share/icons/hicolor/96x96/apps/tux4kids-tuxpaint.png
++	${BSD_INSTALL_DATA} data/images/icon64x64.png $(DESTDIR)$(PREFIX)/share/icons/hicolor/64x64/apps/tux4kids-tuxpaint.png
++	${BSD_INSTALL_DATA} data/images/icon48x48.png $(DESTDIR)$(PREFIX)/share/icons/hicolor/48x48/apps/tux4kids-tuxpaint.png
++	${BSD_INSTALL_DATA} data/images/icon32x32.png $(DESTDIR)$(PREFIX)/share/icons/hicolor/32x32/apps/tux4kids-tuxpaint.png
++	${BSD_INSTALL_DATA} data/images/icon22x22.png $(DESTDIR)$(PREFIX)/share/icons/hicolor/22x22/apps/tux4kids-tuxpaint.png
++	${BSD_INSTALL_DATA} data/images/icon16x16.png $(DESTDIR)$(PREFIX)/share/icons/hicolor/16x16/apps/tux4kids-tuxpaint.png
++	install -m0644 -D src/org.tuxpaint.Tuxpaint.appdata.xml $(METAINFO_PREFIX)/org.tuxpaint.Tuxpaint.appdata.xml
+ #do package path related stuff, ie use destdir
  
  # Install the PNG icon (for KDE desktop, etc.)
- # and the 24-color 32x32 XPM (for other Window managers):
-@@ -1006,12 +993,9 @@ install-xdg: src/tuxpaint.desktop src/tuxpaint-fullscr
- install-icon:
- 	@echo
- 	@echo "...Installing launcher icon graphics..."
--	@install -d $(ICON_PREFIX)
--	@cp data/images/icon.png $(ICON_PREFIX)/tuxpaint.png
--	@chmod 644 $(ICON_PREFIX)/tuxpaint.png
--	@install -d $(X11_ICON_PREFIX)
--	@cp data/images/icon32x32.xpm $(X11_ICON_PREFIX)/tuxpaint.xpm
--	@chmod 644 $(X11_ICON_PREFIX)/tuxpaint.xpm
-+	${BSD_INSTALL_DATA_DIR} $(ICON_PREFIX)
-+	${BSD_INSTALL_DATA} data/images/icon.png $(ICON_PREFIX)/tuxpaint.png
-+	${BSD_INSTALL_DATA} data/images/icon32x32.xpm $(ICON_PREFIX)/tuxpaint.xpm
+@@ -1040,12 +1027,9 @@ install-icon:
+ 	@if [ "x$(PACKAGE_ONLY)" != "xyes" ]; then \
+ 	  echo; \
+ 	  echo "...Installing launcher icon graphics..."; \
+-	  install -d $(ICON_PREFIX); \
+-	  cp data/images/icon.png $(ICON_PREFIX)/tuxpaint.png; \
+-	  chmod 644 $(ICON_PREFIX)/tuxpaint.png; \
+-	  install -d $(X11_ICON_PREFIX); \
+-	  cp data/images/icon32x32.xpm $(X11_ICON_PREFIX)/tuxpaint.xpm; \
+-	  chmod 644 $(X11_ICON_PREFIX)/tuxpaint.xpm; \
++	  ${BSD_INSTALL_DATA_DIR} $(ICON_PREFIX) $(X11_ICON_PREFIX); \
++	  ${BSD_INSTALL_DATA} data/images/icon.png $(ICON_PREFIX)/tuxpaint.png; \
++	  ${BSD_INSTALL_DATA} data/images/icon32x32.xpm $(X11_ICON_PREFIX)/tuxpaint.xpm; \
+ 	fi
  
  
- # Install the program:
-@@ -1019,9 +1003,8 @@ install-icon:
+@@ -1054,9 +1038,8 @@ install-icon:
  install-bin:
  	@echo
  	@echo "...Installing program itself..."
@@ -190,7 +190,7 @@ Index: Makefile
  
  # Install tuxpaint-config and required Windows DLLs into the 'bdist' directory
  .PHONY: install-dlls
-@@ -1053,8 +1036,7 @@ install-haiku:
+@@ -1088,8 +1071,7 @@ install-haiku:
  install-importscript: install-bin
  	@echo
  	@echo "...Installing 'tuxpaint-import' script..."
@@ -200,7 +200,7 @@ Index: Makefile
  
  
  # Install the data (sound, graphics, fonts):
-@@ -1062,12 +1044,14 @@ install-importscript: install-bin
+@@ -1097,12 +1079,14 @@ install-importscript: install-bin
  install-data:
  	@echo
  	@echo "...Installing data files..."
@@ -217,7 +217,7 @@ Index: Makefile
  	@cp -R fonts/locale/* $(DATA_PREFIX)/fonts/locale
  	@chmod -R a+rX,g-w,o-w $(DATA_PREFIX)/fonts/locale
  
-@@ -1087,7 +1071,7 @@ install-osk:
+@@ -1122,7 +1106,7 @@ install-osk:
  install-doc:
  	@echo
  	@echo "...Installing documentation..."
@@ -226,7 +226,7 @@ Index: Makefile
  	@cp -R docs/* $(DOC_PREFIX)
  	@rm $(DOC_PREFIX)/Makefile # Used to generate TXT from HTML
  	@rm $(DOC_PREFIX)/RELEASE.txt # Not useful to end users
-@@ -1111,27 +1095,19 @@ install-man:
+@@ -1146,27 +1130,19 @@ install-man:
  	@echo
  	@echo "...Installing English man pages..."
  	@# man1 directory...
