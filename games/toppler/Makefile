@@ -1,7 +1,7 @@
 COMMENT=		Nebulous rewrite of Tower Toppler
 
 DISTNAME=		toppler-1.1.6
-REVISION=		4
+REVISION=		5
 CATEGORIES=		games
 
 HOMEPAGE=		http://toppler.sourceforge.net/
@@ -17,7 +17,9 @@ COMPILER =		base-clang ports-gcc base-gcc
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=toppler/}
 
 LIB_DEPENDS=		audio/libmikmod \
+			devel/gettext,-runtime \
 			devel/sdl-mixer
+
 RUN_DEPENDS=		devel/desktop-file-utils
 
 CONFIGURE_STYLE=	gnu
