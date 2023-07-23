@@ -1,12 +1,14 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -603,7 +603,7 @@ log_finish
- # detect proper shared library name
+@@ -690,8 +690,8 @@ log_finish
  SHARED_PREFIX="lib"
  STATIC_PREFIX="lib"
--SHARED_EXT=".so.0"
-+SHARED_EXT=".so.${LIBrhash_VERSION}"
  STATIC_EXT=".a"
+-SHARED_EXT=".so.${RHASH_VERSION_MAJOR}"
+-SO_MAJ_EXT=".so.${RHASH_VERSION_MAJOR}"
++SHARED_EXT=".so.${LIBrhash_VERSION}"
++SO_MAJ_EXT=".so.${LIBrhash_VERSION}"
  SOLINK_EXT=".so"
  EXEC_EXT=
+ NEED_IMPLIB=no
