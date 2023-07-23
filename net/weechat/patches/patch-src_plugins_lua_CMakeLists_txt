@@ -11,4 +11,4 @@ Index: src/plugins/lua/CMakeLists.txt
 +  target_link_libraries(lua ${LUA_LIBRARIES} weechat_plugins_scripts coverage_config)
  endif()
  
- install(TARGETS lua LIBRARY DESTINATION ${WEECHAT_LIBDIR}/plugins)
+ install(TARGETS lua LIBRARY DESTINATION "${WEECHAT_LIBDIR}/plugins")
