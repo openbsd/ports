@@ -483,6 +483,7 @@ share/calc/set8700.line
 share/calc/smallfactors.cal
 share/calc/solve.cal
 share/calc/specialfunctions.cal
+share/calc/splitbits.cal
 share/calc/statistics.cal
 share/calc/strings.cal
 share/calc/sumsq.cal
