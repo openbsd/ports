@@ -41,6 +41,7 @@ lib/audacious/General/
 @so lib/audacious/General/statusicon-qt.so
 lib/audacious/Input/
 @so lib/audacious/Input/aac-raw.so
+@so lib/audacious/Input/adplug.so
 @so lib/audacious/Input/cdaudio-ng.so
 @so lib/audacious/Input/console.so
 @so lib/audacious/Input/ffaudio.so
