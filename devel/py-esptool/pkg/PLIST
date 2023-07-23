@@ -183,6 +183,14 @@ lib/python${MODPY_VERSION}/site-packages/espefuse/efuse/esp32s3beta2/mem_definit
 lib/python${MODPY_VERSION}/site-packages/espefuse/efuse/esp32s3beta2/operations.py
 lib/python${MODPY_VERSION}/site-packages/espefuse/efuse/mem_definition_base.py
 lib/python${MODPY_VERSION}/site-packages/espefuse/efuse/util.py
+lib/python${MODPY_VERSION}/site-packages/espefuse/efuse_defs/
+lib/python${MODPY_VERSION}/site-packages/espefuse/efuse_defs/esp32.yaml
+lib/python${MODPY_VERSION}/site-packages/espefuse/efuse_defs/esp32c2.yaml
+lib/python${MODPY_VERSION}/site-packages/espefuse/efuse_defs/esp32c3.yaml
+lib/python${MODPY_VERSION}/site-packages/espefuse/efuse_defs/esp32c6.yaml
+lib/python${MODPY_VERSION}/site-packages/espefuse/efuse_defs/esp32h2.yaml
+lib/python${MODPY_VERSION}/site-packages/espefuse/efuse_defs/esp32s2.yaml
+lib/python${MODPY_VERSION}/site-packages/espefuse/efuse_defs/esp32s3.yaml
 lib/python${MODPY_VERSION}/site-packages/espsecure/
 lib/python${MODPY_VERSION}/site-packages/espsecure/__init__.py
 lib/python${MODPY_VERSION}/site-packages/espsecure/__main__.py
