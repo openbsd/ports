@@ -17,11 +17,21 @@ lib/qt5/qml/org/kde/kirigamiaddons/dateandtime/private/Hand.qml
 lib/qt5/qml/org/kde/kirigamiaddons/dateandtime/private/MobileDateInput.qml
 lib/qt5/qml/org/kde/kirigamiaddons/dateandtime/private/TumblerTimePicker.qml
 lib/qt5/qml/org/kde/kirigamiaddons/dateandtime/qmldir
+lib/qt5/qml/org/kde/kirigamiaddons/delegates/
+lib/qt5/qml/org/kde/kirigamiaddons/delegates/DefaultContentItem.qml
+lib/qt5/qml/org/kde/kirigamiaddons/delegates/IndicatorItemDelegate.qml
+lib/qt5/qml/org/kde/kirigamiaddons/delegates/RoundedItemDelegate.qml
+lib/qt5/qml/org/kde/kirigamiaddons/delegates/SubtitleContentItem.qml
+@so lib/qt5/qml/org/kde/kirigamiaddons/delegates/libdelegatesplugin.so
+lib/qt5/qml/org/kde/kirigamiaddons/delegates/qmldir
 lib/qt5/qml/org/kde/kirigamiaddons/labs/
 lib/qt5/qml/org/kde/kirigamiaddons/labs/components/
 lib/qt5/qml/org/kde/kirigamiaddons/labs/components/AbstractMaximizeComponent.qml
 lib/qt5/qml/org/kde/kirigamiaddons/labs/components/AlbumMaximizeComponent.qml
 lib/qt5/qml/org/kde/kirigamiaddons/labs/components/AlbumModelItem.qml
+lib/qt5/qml/org/kde/kirigamiaddons/labs/components/Avatar.qml
+lib/qt5/qml/org/kde/kirigamiaddons/labs/components/Banner.qml
+lib/qt5/qml/org/kde/kirigamiaddons/labs/components/DownloadAction.qml
 lib/qt5/qml/org/kde/kirigamiaddons/labs/components/ImageMaximizeDelegate.qml
 lib/qt5/qml/org/kde/kirigamiaddons/labs/components/SearchPopupField.qml
 lib/qt5/qml/org/kde/kirigamiaddons/labs/components/VideoMaximizeDelegate.qml
@@ -40,6 +50,7 @@ lib/qt5/qml/org/kde/kirigamiaddons/labs/mobileform/FormComboBoxDelegate.qml
 lib/qt5/qml/org/kde/kirigamiaddons/labs/mobileform/FormDelegateBackground.qml
 lib/qt5/qml/org/kde/kirigamiaddons/labs/mobileform/FormDelegateSeparator.qml
 lib/qt5/qml/org/kde/kirigamiaddons/labs/mobileform/FormGridContainer.qml
+lib/qt5/qml/org/kde/kirigamiaddons/labs/mobileform/FormHeader.qml
 lib/qt5/qml/org/kde/kirigamiaddons/labs/mobileform/FormRadioDelegate.qml
 lib/qt5/qml/org/kde/kirigamiaddons/labs/mobileform/FormSectionText.qml
 lib/qt5/qml/org/kde/kirigamiaddons/labs/mobileform/FormSpinBoxDelegate.qml
