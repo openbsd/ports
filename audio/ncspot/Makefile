@@ -7,14 +7,7 @@ COMMENT =		ncurses Spotify client
 
 GH_ACCOUNT =		hrkfdn
 GH_PROJECT =		ncspot
-GH_TAGNAME =		v0.13.3
-REVISION =		0
-
-MASTER_SITES0 = https://github.com/hrkfdn/ncspot/commit/
-# merged "fix: forward mouse events inside layout"
-# https://github.com/hrkfdn/ncspot/pull/1201
-PATCHFILES = fix-mouse-{}d644397180dc6f90caca656acfdc1e11bb14d281.patch:0
-PATCH_DIST_STRIP = -p1
+GH_TAGNAME =		v0.13.4
 
 CATEGORIES =		audio
 
