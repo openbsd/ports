@@ -1,7 +1,7 @@
 Index: src/tracker/sdl/SDL_Main.cpp
 --- src/tracker/sdl/SDL_Main.cpp.orig
 +++ src/tracker/sdl/SDL_Main.cpp
-@@ -670,7 +670,7 @@ void processSDLUserEvents(const SDL_UserEvent& event)
+@@ -675,7 +675,7 @@ void processSDLUserEvents(const SDL_UserEvent& event)
  {
  	union {
  		void *ptr;

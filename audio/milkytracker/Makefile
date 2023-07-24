@@ -2,10 +2,9 @@ COMMENT =	Fasttracker II inspired MOD tracker
 
 GH_ACCOUNT =	milkytracker
 GH_PROJECT =	MilkyTracker
-GH_TAGNAME =	v1.03.00
+GH_TAGNAME =	v1.04.00
 
 PKGNAME =	${DISTNAME:L}
-REVISION =	0
 
 CATEGORIES =	audio
 
