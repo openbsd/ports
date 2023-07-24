@@ -7,7 +7,7 @@ FW_VER=		20230719
 #EXTRACT_FILES=	${DISTNAME}/{LICENSE.\*,amd-ucode}
 #MASTER_SITES=	https://cdn.kernel.org/pub/linux/kernel/firmware/
 
-# newer microcode for 17h/19h not yet in linux-firmware
+# newer microcode for 17h/19h not yet on linux-firmware cdn
 DISTNAME=	amd-ucode-${FW_VER}
 EXTRACT_SUFX=	.tgz
 MASTER_SITES0=	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/
