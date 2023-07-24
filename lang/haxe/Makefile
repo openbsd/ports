@@ -4,7 +4,7 @@ COMMENT =	toolkit for the Haxe programming language
 
 V =		4.0.5
 DISTNAME =	haxe-${V}
-REVISION =	2
+REVISION =	3
 
 GH_ACCOUNT =	HaxeFoundation
 GH_PROJECT =	haxe

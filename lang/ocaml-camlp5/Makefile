@@ -3,7 +3,7 @@ COMMENT =	OCaml Preprocessor and Pretty-Printer
 DISTFILES =	camlp5-rel${V}{rel${V:S/.//}}${EXTRACT_SUFX}
 PKGNAME =	ocaml-camlp5-${V}
 CATEGORIES =	lang
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://camlp5.github.io/
 MAINTAINER =	Christopher Zimmermann <chrisz@openbsd.org>

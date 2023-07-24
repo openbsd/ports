@@ -8,7 +8,7 @@ PKGNAME =	ocaml-${DISTNAME}
 MASTER_SITES =	https://github.com/mmottl/pcre-ocaml/releases/download/${V}/
 EXTRACT_SUFX =	.tbz
 HOMEPAGE =	https://github.com/mmottl/pcre-ocaml
-REVISION =	0
+REVISION =	1
 
 # GPLv2+
 PERMIT_PACKAGE =		Yes

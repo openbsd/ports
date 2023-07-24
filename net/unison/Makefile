@@ -8,7 +8,7 @@ COMMENT =	multi-platform file synchronization tool
 GH_ACCOUNT =	bcpierce00
 GH_PROJECT =	unison
 GH_TAGNAME =	v2.53.3
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	net
 

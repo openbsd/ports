@@ -4,7 +4,7 @@ V =		2.18.11
 DISTNAME =	lablgtk2-$V
 PKGNAME =	lablgtk2-$V
 CATEGORIES =	x11 devel
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	http://lablgtk.forge.ocamlcore.org/
 GH_ACCOUNT =	garrigue

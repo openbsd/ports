@@ -8,7 +8,7 @@ CATEGORIES =		devel
 GH_ACCOUNT =		Frama-C
 GH_PROJECT =		Frama-C-snapshot
 GH_TAGNAME =		19.0
-REVISION =		5
+REVISION =		6
 DISTNAME =		frama-c-${GH_TAGNAME}-Potassium
 PKGNAME =		frama-c-${GH_TAGNAME}
 

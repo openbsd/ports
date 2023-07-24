@@ -4,6 +4,7 @@ COMMENT-main =		OCaml build system
 COMMENT-configurator =	OCaml library for gathering system configuration
 
 VERSION =		3.6.2
+REVISION-main =		0
 
 CATEGORIES =		devel
 

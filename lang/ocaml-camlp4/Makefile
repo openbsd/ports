@@ -10,6 +10,7 @@ WRKDIST =	${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME:S/+/-/}
 PKGNAME =	ocaml-${DISTNAME}
 # No dynlink compatibility between releases
 PKGSPEC =	ocaml-camlp4-=${V}v${EPOCH}
+REVISION =	0
 
 HOMEPAGE =	https://github.com/ocaml/camlp4/
 

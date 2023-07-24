@@ -2,7 +2,7 @@ COMMENT =	graphics library providing basic drawing primitives
 CATEGORIES =	graphics
 
 V =		5.0.0
-REVISION =	3
+REVISION =	4
 DISTNAME =	graphics-$V
 PKGNAME =	ocaml-graphics-$V
 
