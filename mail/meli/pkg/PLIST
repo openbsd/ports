@@ -1,5 +1,14 @@
+@bin bin/managesieve-client
 @bin bin/meli
 @man man/man1/meli.1
 @man man/man5/meli-themes.5
 @man man/man5/meli.conf.5
 @man man/man7/meli.7
+share/examples/meli/
+share/examples/meli/sample-config.toml
+share/examples/meli/themes/
+share/examples/meli/themes/nord.toml
+share/examples/meli/themes/orca.toml
+share/examples/meli/themes/sail.toml
+share/examples/meli/themes/spooky.toml
+share/examples/meli/themes/watermelon.toml

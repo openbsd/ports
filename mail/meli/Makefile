@@ -2,10 +2,9 @@ COMMENT =		terminal mail client
 
 GH_ACCOUNT =		meli
 GH_PROJECT =		meli
-GH_COMMIT =		2447a2cbfeaa8d6f7ec11a2a8a6f3be1ff2fea58
-DISTNAME =		meli-0.7.2.20230306
-PKGNAME =		meli-0.7.2pl20230306
-REVISION =		0
+GH_COMMIT =		ae25ffba430572efe73fde05eaf8111453f814cf
+DISTNAME =		meli-0.7.3.20230724
+PKGNAME =		meli-0.7.3pl20230724
 
 # ring-v0.16.20 does not support those archs
 NOT_FOR_ARCHS =	powerpc64 riscv64 sparc64
@@ -20,6 +19,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		devel/cargo
 MODCARGO_FEATURES +=	jmap
+MODCARGO_INSTALL_TARGET_PATH =	meli
 
 .include "crates.inc"
 
@@ -36,9 +36,10 @@ WANTLIB +=	c c++abi crypto curl m pcre2-8 pthread sqlite3 ssl
 PORTHOME =	${WRKDIR}
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/docs/meli.1 ${PREFIX}/man/man1/
-	${INSTALL_MAN} ${WRKSRC}/docs/meli.conf.5 ${PREFIX}/man/man5/
-	${INSTALL_MAN} ${WRKSRC}/docs/meli-themes.5 ${PREFIX}/man/man5/
-	${INSTALL_MAN} ${WRKSRC}/docs/meli.7 ${PREFIX}/man/man7/
+	${INSTALL_MAN} ${WRKSRC}/meli/docs/meli.1 ${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/meli/docs/meli.conf.5 ${PREFIX}/man/man5/
+	${INSTALL_MAN} ${WRKSRC}/meli/docs/meli-themes.5 ${PREFIX}/man/man5/
+	${INSTALL_MAN} ${WRKSRC}/meli/docs/meli.7 ${PREFIX}/man/man7/
+	cp -r ${WRKSRC}/meli/docs/samples ${PREFIX}/share/examples/meli/
 
 .include <bsd.port.mk>
