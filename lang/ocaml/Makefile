@@ -5,6 +5,10 @@ COMMENT =	   ML language with complete class-based objective system
 VERSION=	4.12.1
 REVISION=	3
 
+# if the ocaml compiler gains support for BTI, as well as
+# removing USE_NOBTCFI here (or changing to an arch-dependent
+# USE_NOBTCFI-xxx), sync in ocaml.port.mk and bump REVISION
+# for ports using MODULES=lang/ocaml
 USE_NOBTCFI =	Yes
 
 PKGNAME =	ocaml-${VERSION:C/\+//}
