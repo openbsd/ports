@@ -2,8 +2,7 @@ COMMENT =		movie player based on MPlayer/mplayer2
 
 GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
-GH_TAGNAME =		v0.35.1
-REVISION =		5
+GH_TAGNAME =		v0.36.0
 USE_NOBTCFI =		Yes
 
 SHARED_LIBS +=		mpv		1.0 # 2.0
@@ -70,6 +69,7 @@ CONFIGURE_ARGS =	-Dlua=lua${MODLUA_DEP_VERSION} \
 			-Dd3d11=disabled \
 			-Dd3d-hwaccel=disabled \
 			-Ddirect3d=disabled \
+			-Ddmabuf-wayland=disabled \
 			-Degl-android=disabled \
 			-Degl-angle=disabled  \
 			-Degl-angle-lib=disabled \
@@ -83,6 +83,7 @@ CONFIGURE_ARGS =	-Dlua=lua${MODLUA_DEP_VERSION} \
 			-Dios-gl=disabled \
 			-Djack=disabled \
 			-Djavascript=disabled \
+			-Dlibplacebo-next=disabled \
 			-Dmacos-10-11-features=disabled \
 			-Dmacos-10-12-2-features=disabled \
 			-Dmacos-10-14-features=disabled \
@@ -112,6 +113,7 @@ CONFIGURE_ARGS =	-Dlua=lua${MODLUA_DEP_VERSION} \
 			-Dvdpau-gl-x11=disabled \
 			-Dvideotoolbox-gl=disabled \
 			-Dvulkan=disabled \
+			-Dvulkan-interop=disabled \
 			-Dwayland=disabled \
 			-Dwin32-internal-pthreads=disabled \
 			-Dwasapi=disabled
