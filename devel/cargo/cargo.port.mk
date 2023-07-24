@@ -358,11 +358,13 @@ do-build:
 	@${MODCARGO_BUILD_TARGET}
 .endif
 
+MODCARGO_INSTALL_TARGET_PATH ?= .
+
 # Define the install target.
 MODCARGO_INSTALL_TARGET = \
 	${MODCARGO_CARGO_RUN} install \
 		--root="${PREFIX}" \
-		--path . \
+		--path ${MODCARGO_INSTALL_TARGET_PATH} \
 		--offline \
 		--verbose \
 		${MODCARGO_INSTALL_ARGS} ; \
