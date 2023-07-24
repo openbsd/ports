@@ -1,0 +1,22 @@
+On OpenBSD CMAKE_SYSTEM_PROCESSOR returns powerpc on macppc.
+Fixes missing altivec compilation error on macppc.
+
+Index: src/resonance-audio/CMakeLists.txt
+--- src/resonance-audio/CMakeLists.txt.orig
++++ src/resonance-audio/CMakeLists.txt
+@@ -215,13 +215,13 @@ qt_internal_add_3rdparty_library(BundledResonanceAudio
+ )
+ 
+ # Required by pffft on certain PowerPC archs
+-qt_internal_extend_target(BundledResonanceAudio CONDITION GCC AND (${CMAKE_SYSTEM_PROCESSOR} MATCHES "(ppc|ppc64)$")
++qt_internal_extend_target(BundledResonanceAudio CONDITION GCC AND (${CMAKE_SYSTEM_PROCESSOR} MATCHES "(ppc|ppc64|powerpc)$")
+     COMPILE_OPTIONS
+         -maltivec
+ )
+ 
+ # Required by eigen on certain PowerPC archs
+-qt_internal_extend_target(BundledResonanceAudio CONDITION (${CMAKE_SYSTEM_PROCESSOR} MATCHES "(ppc|ppc64)$")
++qt_internal_extend_target(BundledResonanceAudio CONDITION (${CMAKE_SYSTEM_PROCESSOR} MATCHES "(ppc|ppc64|powerpc)$")
+     COMPILE_OPTIONS
+         -mvsx
+ )
