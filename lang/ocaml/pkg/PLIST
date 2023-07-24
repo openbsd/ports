@@ -3,7 +3,7 @@
 bin/ocaml
 bin/ocamlc
 bin/ocamlc.byte
-bin/ocamlcmt
+@bin bin/ocamlcmt
 bin/ocamlcp
 bin/ocamlcp.byte
 bin/ocamldebug

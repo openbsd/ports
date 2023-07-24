@@ -2,10 +2,12 @@ COMMENT =	   ML language with complete class-based objective system
 
 # XXX Don't even think of updating ocaml alone.
 # Do check that the ports that depend on it still work, or repair them.
-VERSION=		4.12.1
-REVISION=		2
+VERSION=	4.12.1
+REVISION=	3
 
-PKGNAME =		ocaml-${VERSION:C/\+//}
+USE_NOBTCFI =	Yes
+
+PKGNAME =	ocaml-${VERSION:C/\+//}
 
 # OCaml has no binary compatibility between releases.
 PKGSPEC =	ocaml-=${VERSION:C/\+//}

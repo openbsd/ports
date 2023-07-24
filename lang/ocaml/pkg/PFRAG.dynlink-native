@@ -1,6 +1,6 @@
-@bin lib/ocaml/bigarray.cmxs
+lib/ocaml/bigarray.cmxs
 lib/ocaml/dynlink.a
 lib/ocaml/dynlink.cmx
 lib/ocaml/dynlink.cmxa
-@bin lib/ocaml/str.cmxs
-@bin lib/ocaml/unix.cmxs
+lib/ocaml/str.cmxs
+lib/ocaml/unix.cmxs
