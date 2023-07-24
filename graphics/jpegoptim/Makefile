@@ -2,7 +2,7 @@ COMMENT =	utility to optimize jpeg files
 
 GH_ACCOUNT =	tjko
 GH_PROJECT =	jpegoptim
-GH_TAGNAME =	v1.5.3
+GH_TAGNAME =	v1.5.4
 
 CATEGORIES =	graphics
 
