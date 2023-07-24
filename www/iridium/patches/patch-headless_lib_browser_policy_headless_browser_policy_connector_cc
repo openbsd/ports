@@ -8,7 +8,7 @@ Index: headless/lib/browser/policy/headless_browser_policy_connector.cc
 +#elif BUILDFLAG(IS_FREEBSD)
 +  base::FilePath config_dir_path(FILE_PATH_LITERAL("/usr/local/etc/iridium/policies"));
  #else
--  base::FilePath config_dir_path(FILE_PATH_LITERAL("/etc/chromium/policies"));
+-  base::FilePath config_dir_path(FILE_PATH_LITERAL("/etc/iridium-browser/policies"));
 +  base::FilePath config_dir_path(FILE_PATH_LITERAL("/etc/iridium/policies"));
  #endif
    std::unique_ptr<AsyncPolicyLoader> loader(new ConfigDirPolicyLoader(
