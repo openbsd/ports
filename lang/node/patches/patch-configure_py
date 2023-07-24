@@ -1,0 +1,14 @@
+Index: configure.py
+--- configure.py.orig
++++ configure.py
+@@ -1565,6 +1565,10 @@ def configure_v8(o):
+     raise Exception(
+         'Only one of the --v8-enable-object-print or --v8-disable-object-print options '
+         'can be specified at a time.')
++  host_arch = host_arch_win() if os.name == 'nt' else host_arch_cc()
++  target_arch = options.dest_cpu or host_arch
++  if target_arch == 'arm64':
++    o['variables']['v8_control_flow_integrity'] = 1
+ 
+ def configure_openssl(o):
+   variables = o['variables']

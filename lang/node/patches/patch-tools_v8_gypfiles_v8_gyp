@@ -7,7 +7,17 @@ from "0.0" if llvm (clang) is detected.
 Index: tools/v8_gypfiles/v8.gyp
 --- tools/v8_gypfiles/v8.gyp.orig
 +++ tools/v8_gypfiles/v8.gyp
-@@ -581,7 +581,7 @@
+@@ -372,6 +372,9 @@
+             'v8_libplatform',
+           ]
+         }],
++        ['v8_control_flow_integrity==1', {
++          'sources': [ '<(V8_ROOT)/src/deoptimizer/deoptimizer-cfi-builtins.cc' ],
++        }],
+       ],
+       'sources': [
+         '<(V8_ROOT)/src/init/setup-isolate-deserialize.cc',
+@@ -581,7 +584,7 @@
                }],
                ['v8_enable_webassembly==1', {
                  'conditions': [
@@ -16,7 +26,7 @@ Index: tools/v8_gypfiles/v8.gyp
                      'sources': [
                        '<!@pymod_do_main(GN-scraper "<(V8_ROOT)/BUILD.gn"  "v8_header_set.\\"v8_internal_headers\\".*?v8_current_cpu == \\"x64\\".*?v8_enable_webassembly.*?is_linux.*?sources \\+= ")',
                      ],
-@@ -821,7 +821,7 @@
+@@ -821,7 +824,7 @@
              }],
              ['v8_enable_webassembly==1', {
                'conditions': [
@@ -25,7 +35,7 @@ Index: tools/v8_gypfiles/v8.gyp
                    'sources': [
                      '<!@pymod_do_main(GN-scraper "<(V8_ROOT)/BUILD.gn"  "\\"v8_base_without_compiler.*?v8_current_cpu == \\"x64\\".*?v8_enable_webassembly.*?is_linux.*?sources \\+= ")',
                    ],
-@@ -977,7 +977,7 @@
+@@ -977,7 +980,7 @@
          }],
          # Platforms that don't have Compare-And-Swap (CAS) support need to link atomic library
          # to implement atomic memory access
@@ -34,3 +44,13 @@ Index: tools/v8_gypfiles/v8.gyp
            'link_settings': {
              'libraries': ['-latomic', ],
            },
+@@ -1434,6 +1437,9 @@
+         '<!@pymod_do_main(GN-scraper "<(V8_ROOT)/BUILD.gn"  "\\"mksnapshot.*?sources = ")',
+       ],
+       'conditions': [
++        ['v8_control_flow_integrity==1', {
++          'sources': [ '<(V8_ROOT)/src/deoptimizer/deoptimizer-cfi-empty.cc' ],
++        }],
+         ['want_separate_host_toolset', {
+           'toolsets': ['host'],
+         }],
