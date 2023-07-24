@@ -12,7 +12,8 @@
 .if ${PROPERTIES:Mocaml_native}
 MODOCAML_NATIVE=Yes
 # include nativecode base files
-PKG_ARGS+=-Dnative=1
+PKG_ARGS+=	-Dnative=1
+USE_NOBTCFI=	Yes
 .else
 MODOCAML_NATIVE=No
 # remove native base file entry from PLIST
