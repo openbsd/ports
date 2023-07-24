@@ -1811,7 +1811,6 @@
      SUBDIR += sdlmm
      SUBDIR += seergdb
      SUBDIR += serd
-     SUBDIR += sfio
      SUBDIR += shapelib
      SUBDIR += sharness
      SUBDIR += shellcheck
