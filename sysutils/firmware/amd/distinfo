@@ -1,2 +1,4 @@
-SHA256 (firmware/linux-firmware-20230625.tar.xz) = h1lxEcDUtxsx5Ty4WpLDhpIbhMglpALbjILg6GAVUA0=
-SIZE (firmware/linux-firmware-20230625.tar.xz) = 280854212
+SHA256 (firmware/LICENSE.amd-ucode) = J5B64ddLlP1vEVmXEVjtMZnkcvEp6h/3SOoTre0qWdU=
+SHA256 (firmware/amd-ucode-20230719.tgz) = 0t+evF8bgdVECBUI3aTGLyZol7gUsd6eZD9cRaXpuXQ=
+SIZE (firmware/LICENSE.amd-ucode) = 3758
+SIZE (firmware/amd-ucode-20230719.tgz) = 39906
