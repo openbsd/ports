@@ -1,8 +1,7 @@
 COMMENT =	SVG vector drawing application
 
-VERSION =	1.2.2
+VERSION =	1.3
 DISTNAME =	inkscape-${VERSION}
-REVISION =	2
 
 CATEGORIES =	graphics
 
@@ -10,12 +9,14 @@ HOMEPAGE =	https://www.inkscape.org/
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
+SHARED_LIBS +=  inkscape_base             0.0 # 0.0
+
 # GPLv2 and LGPLv2.1
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} 2geom ICE Magick++-6.Q16 MagickCore-6.Q16
 WANTLIB += MagickWand-6.Q16 SM X11 Xext atk-1.0 atkmm-1.6 boost_filesystem-mt
-WANTLIB += c cairo cairo-gobject cairomm-1.0 enchant-2 fontconfig
+WANTLIB += c cairo cairo-gobject cairomm-1.0 enchant-2 epoxy fontconfig
 WANTLIB += freetype gc gdk-3 gdk_pixbuf-2.0 gdkmm-3.0 gio-2.0
 WANTLIB += giomm-2.4 glib-2.0 glibmm-2.4 gmodule-2.0 gobject-2.0
 WANTLIB += gsl gslcblas gspell-1 gtk-3 gtkmm-3.0 harfbuzz iconv
@@ -69,7 +70,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		www/py-requests${MODPY_FLAVOR} \
 		x11/gtk+4,-guic
 
-WRKDIST =	${WRKDIR}/inkscape-${VERSION}_2022-12-01_b0a8486541
+WRKDIST =	${WRKDIR}/inkscape-${VERSION}_2023-07-21_0e150ed6c4
 
 SUBST_VARS +=	RUBY MODRUBY_REV
 
