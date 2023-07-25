@@ -1,10 +1,9 @@
 COMMENT=	lightweight image viewer
 
-DISTNAME=	feh-3.9.1
+DISTNAME=	feh-3.10
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	graphics
 FIX_EXTRACT_PERMISSIONS=Yes
-REVISION=	0
 
 HOMEPAGE=	https://feh.finalrewind.org/
 MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
