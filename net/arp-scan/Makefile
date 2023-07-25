@@ -1,11 +1,11 @@
 V=		1.10.0
-REVISION=	1
+REVISION-main=	1
 DISTNAME=	arp-scan-$V
 
 COMMENT-main=	ARP scanning and fingerprinting tool
 PKGNAME-main=	${DISTNAME}
 
-M=		20230503
+M=		20230725
 COMMENT-mac=	MAC address vendor list
 PKGNAME-mac=	mac-vendor-$M
 
