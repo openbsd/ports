@@ -5,6 +5,7 @@ share/feathernotes/translations/
 share/feathernotes/translations/feathernotes_ar_DZ.qm
 share/feathernotes/translations/feathernotes_be.qm
 share/feathernotes/translations/feathernotes_bg.qm
+share/feathernotes/translations/feathernotes_ca.qm
 share/feathernotes/translations/feathernotes_cs.qm
 share/feathernotes/translations/feathernotes_cy.qm
 share/feathernotes/translations/feathernotes_da.qm
@@ -17,6 +18,7 @@ share/feathernotes/translations/feathernotes_fa.qm
 share/feathernotes/translations/feathernotes_fi.qm
 share/feathernotes/translations/feathernotes_fr.qm
 share/feathernotes/translations/feathernotes_he.qm
+share/feathernotes/translations/feathernotes_hr.qm
 share/feathernotes/translations/feathernotes_hu.qm
 share/feathernotes/translations/feathernotes_id.qm
 share/feathernotes/translations/feathernotes_it.qm
@@ -31,11 +33,15 @@ share/feathernotes/translations/feathernotes_pt_BR.qm
 share/feathernotes/translations/feathernotes_ru.qm
 share/feathernotes/translations/feathernotes_si.qm
 share/feathernotes/translations/feathernotes_sk_SK.qm
+share/feathernotes/translations/feathernotes_sv.qm
 share/feathernotes/translations/feathernotes_tr.qm
+share/feathernotes/translations/feathernotes_uk.qm
 share/feathernotes/translations/feathernotes_zh_CN.qm
 share/feathernotes/translations/feathernotes_zh_HANT.qm
 share/icons/hicolor/scalable/apps/feathernotes.svg
 share/icons/hicolor/scalable/mimetypes/text-feathernotes-fnx.svg
+share/metainfo/
+share/metainfo/feathernotes.metainfo.xml
 share/mime/packages/feathernotes.xml
 @tag update-mime-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
