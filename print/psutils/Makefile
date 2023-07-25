@@ -1,6 +1,6 @@
 COMMENT=	manipulate PDF and PostScript documents
 
-MODPY_EGG_VERSION=	3.0.7
+MODPY_EGG_VERSION=	3.0.8
 DISTNAME=	pspdfutils-${MODPY_EGG_VERSION}
 PKGNAME=	psutils-${MODPY_EGG_VERSION}
 
