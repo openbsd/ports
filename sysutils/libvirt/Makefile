@@ -1,6 +1,7 @@
 COMMENT=		tool/library for managing platform virtualization
 
 DISTNAME=		libvirt-9.5.0
+REVISION=		0
 
 CATEGORIES=		sysutils devel emulators
 
@@ -79,6 +80,10 @@ DISABLED_FEATURES +=	storage_disk storage_fs storage_gluster storage_iscsi \
 			storage_rbd storage_vstorage storage_zfs
 
 CONFIGURE_ARGS=		-Dinit_script=none
+
+# XXX use a dedicated unpriv user/group? (e.g. _libvirt)
+CONFIGURE_ARGS +=	-Dqemu_user=root \
+			-Dqemu_group=wheel
 
 .for _d in ${DISABLED_FEATURES}
 CONFIGURE_ARGS +=	-D${_d}=disabled
