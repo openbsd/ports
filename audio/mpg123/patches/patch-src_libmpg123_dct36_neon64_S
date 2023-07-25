@@ -1,0 +1,11 @@
+Index: src/libmpg123/dct36_neon64.S
+--- src/libmpg123/dct36_neon64.S.orig
++++ src/libmpg123/dct36_neon64.S
+@@ -49,6 +49,7 @@ dct36_aarch64_COS9:
+ 	.type ASM_NAME(dct36_neon64), %function
+ #endif
+ ASM_NAME(dct36_neon64):
++	bti		c
+ 	adrp		x5, AARCH64_PCREL_HI(dct36_aarch64_COS9)
+ 	add			x5, x5, AARCH64_PCREL_LO(dct36_aarch64_COS9)
+ 	cmeq		v28.16b, v28.16b, v28.16b
