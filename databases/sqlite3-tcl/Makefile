@@ -1,6 +1,6 @@
 COMMENT =		Tcl bindings for SQLite3
 
-V =			3.40.0
+V =			3.42.0
 VER =			${V:S/.//g}
 
 DISTNAME =		sqlite-autoconf-${VER:C/.$/0\0/}00
@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		pthread
 
-MASTER_SITES =		${HOMEPAGE}2022/
+MASTER_SITES =		${HOMEPAGE}2023/
 
 MODULES =		lang/tcl
 BUILD_DEPENDS =		${MODTCL_BUILD_DEPENDS}
