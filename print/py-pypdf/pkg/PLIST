@@ -22,8 +22,6 @@ lib/python${MODPY_VERSION}/site-packages/pypdf/${MODPY_PYCACHE}_protocols.${MODP
 lib/python${MODPY_VERSION}/site-packages/pypdf/${MODPY_PYCACHE}_protocols.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pypdf/${MODPY_PYCACHE}_reader.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pypdf/${MODPY_PYCACHE}_reader.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pypdf/${MODPY_PYCACHE}_security.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/pypdf/${MODPY_PYCACHE}_security.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pypdf/${MODPY_PYCACHE}_utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pypdf/${MODPY_PYCACHE}_utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pypdf/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -71,7 +69,6 @@ lib/python${MODPY_VERSION}/site-packages/pypdf/_page.py
 lib/python${MODPY_VERSION}/site-packages/pypdf/_page_labels.py
 lib/python${MODPY_VERSION}/site-packages/pypdf/_protocols.py
 lib/python${MODPY_VERSION}/site-packages/pypdf/_reader.py
-lib/python${MODPY_VERSION}/site-packages/pypdf/_security.py
 lib/python${MODPY_VERSION}/site-packages/pypdf/_text_extraction/
 lib/python${MODPY_VERSION}/site-packages/pypdf/_text_extraction/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pypdf/_text_extraction/${MODPY_PYCACHE}/
