@@ -3,7 +3,7 @@ Unbreak launching Xfe as root with sudo or su (fix gnuisms)
 Index: src/xfedefs.h
 --- src/xfedefs.h.orig
 +++ src/xfedefs.h
-@@ -172,11 +172,11 @@
+@@ -190,11 +190,11 @@
  
  // Command to launch Xfe as root with sudo or su, using st as a terminal
  #ifndef DEFAULT_SUDO_CMD

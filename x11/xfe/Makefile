@@ -1,6 +1,6 @@
 COMMENT=	MS-Explorer like file manager for X
 
-DISTNAME=	xfe-1.44
+DISTNAME=	xfe-1.45
 EXTRACT_SUFX=	.tar.xz
 CATEGORIES=	x11
 
@@ -11,7 +11,7 @@ MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} FOX-1.6 X11 X11-xcb Xft Xrandr c
-WANTLIB += fontconfig freetype m png util xcb xcb-util z
+WANTLIB += fontconfig freetype iconv intl m png util xcb xcb-util
 
 COMPILER =		base-clang ports-gcc base-gcc
 

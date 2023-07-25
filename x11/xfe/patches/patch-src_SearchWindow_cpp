@@ -3,7 +3,7 @@ Remove gnuisms. The Find Hidden checkbox does nothing now.
 Index: src/SearchWindow.cpp
 --- src/SearchWindow.cpp.orig
 +++ src/SearchWindow.cpp
-@@ -644,7 +644,7 @@ long SearchWindow::onCmdStart(FXObject*, FXSelector, v
+@@ -650,7 +650,7 @@ long SearchWindow::onCmdStart(FXObject*, FXSelector, v
      }
      else
      {
@@ -12,7 +12,7 @@ Index: src/SearchWindow.cpp
      }
  
      // Ignore case
-@@ -750,7 +750,7 @@ long SearchWindow::onCmdStart(FXObject*, FXSelector, v
+@@ -756,7 +756,7 @@ long SearchWindow::onCmdStart(FXObject*, FXSelector, v
      // Hidden files
      if (!findhidden->getCheck())
      {

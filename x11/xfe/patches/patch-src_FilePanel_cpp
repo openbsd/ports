@@ -3,7 +3,7 @@ onCmdDirUsage is linux-only for now
 Index: src/FilePanel.cpp
 --- src/FilePanel.cpp.orig
 +++ src/FilePanel.cpp
-@@ -127,7 +127,6 @@ FXDEFMAP(FilePanel) FilePanelMap[] =
+@@ -128,7 +128,6 @@ FXDEFMAP(FilePanel) FilePanelMap[] =
      FXMAPFUNC(SEL_COMMAND, FilePanel::ID_RUN_SCRIPT, FilePanel::onCmdRunScript),
      FXMAPFUNC(SEL_UPDATE, FilePanel::ID_RUN_SCRIPT, FilePanel::onUpdRunScript),
      FXMAPFUNC(SEL_COMMAND, FilePanel::ID_GO_SCRIPTDIR, FilePanel::onCmdGoScriptDir),
@@ -11,7 +11,7 @@ Index: src/FilePanel.cpp
      FXMAPFUNC(SEL_RIGHTBUTTONRELEASE, FilePanel::ID_FILELIST, FilePanel::onCmdPopupMenu),
      FXMAPFUNC(SEL_COMMAND, FilePanel::ID_POPUP_MENU, FilePanel::onCmdPopupMenu),
      FXMAPFUNC(SEL_DOUBLECLICKED, FilePanel::ID_FILELIST, FilePanel::onCmdItemDoubleClicked),
-@@ -158,6 +157,7 @@ FXDEFMAP(FilePanel) FilePanelMap[] =
+@@ -159,6 +158,7 @@ FXDEFMAP(FilePanel) FilePanelMap[] =
      FXMAPFUNC(SEL_UPDATE, FilePanel::ID_TOGGLE_THUMBNAILS, FilePanel::onUpdToggleThumbnails),
      FXMAPFUNC(SEL_UPDATE, FilePanel::ID_DIR_USAGE, FilePanel::onUpdDirUsage),
  #if defined(linux)
