@@ -1,6 +1,6 @@
 COMMENT=	text-to-HTML conversion tool
 
-MODPY_EGG_VERSION=	3.4.3
+MODPY_EGG_VERSION=	3.4.4
 DISTNAME=	Markdown-${MODPY_EGG_VERSION}
 PKGNAME=	py-markdown-${MODPY_EGG_VERSION}
 
@@ -19,10 +19,7 @@ FLAVOR=		python3
 TEST_DEPENDS=	devel/py-coverage${MODPY_FLAVOR} \
 		textproc/py-yaml${MODPY_FLAVOR}
 
-pre-test:
-	ln -fs ${LOCALBASE}/bin/coverage3 ${WRKDIR}/bin/coverage
-
-do-test:
-	cd ${WRKSRC}; ${SETENV} ${ALL_TEST_ENV} make test
+# pytest.PytestCollectionWarning: cannot collect test class 'TestSuite' because it has a __init__ constructor (from: tests/test_syntax/extensions/test_md_in_html.py)
+MODPY_PYTEST_ARGS=	--ignore tests/test_syntax/extensions/test_md_in_html.py
 
 .include <bsd.port.mk>
