@@ -1,0 +1,7 @@
+[source."git+https://github.com/SergioBenitez/Rocket?rev=ce441b5f46fdf5cd99cb32b8b8638835e4c2a5fa"]
+git = "https://github.com/SergioBenitez/Rocket"
+rev = "ce441b5f46fdf5cd99cb32b8b8638835e4c2a5fa"
+replace-with = "vendored-sources"
+
+[source.vendored-sources]
+directory = "${WRKSRC}/myvendordir"
