@@ -8,11 +8,7 @@
 @mode
 @owner
 @group
-@bin bin/step-awskms-init
 @bin bin/step-ca
-@bin bin/step-cloudkms-init
-@bin bin/step-pkcs11-init
-@bin bin/step-yubikey-init
 share/doc/pkg-readmes/${PKGSTEM}
 share/doc/step-ca/
 share/doc/step-ca/CHANGELOG.md
