@@ -208,6 +208,8 @@ lib/python${MODPY_VERSION}/site-packages/gajim/common/modules/${MODPY_PYCACHE}mi
 lib/python${MODPY_VERSION}/site-packages/gajim/common/modules/${MODPY_PYCACHE}misc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gajim/common/modules/${MODPY_PYCACHE}muc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gajim/common/modules/${MODPY_PYCACHE}muc.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gajim/common/modules/${MODPY_PYCACHE}omemo.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gajim/common/modules/${MODPY_PYCACHE}omemo.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gajim/common/modules/${MODPY_PYCACHE}pep.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gajim/common/modules/${MODPY_PYCACHE}pep.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gajim/common/modules/${MODPY_PYCACHE}ping.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -272,6 +274,7 @@ lib/python${MODPY_VERSION}/site-packages/gajim/common/modules/mam.py
 lib/python${MODPY_VERSION}/site-packages/gajim/common/modules/message.py
 lib/python${MODPY_VERSION}/site-packages/gajim/common/modules/misc.py
 lib/python${MODPY_VERSION}/site-packages/gajim/common/modules/muc.py
+lib/python${MODPY_VERSION}/site-packages/gajim/common/modules/omemo.py
 lib/python${MODPY_VERSION}/site-packages/gajim/common/modules/pep.py
 lib/python${MODPY_VERSION}/site-packages/gajim/common/modules/ping.py
 lib/python${MODPY_VERSION}/site-packages/gajim/common/modules/presence.py
@@ -317,11 +320,14 @@ lib/python${MODPY_VERSION}/site-packages/gajim/common/storage/${MODPY_PYCACHE}dr
 lib/python${MODPY_VERSION}/site-packages/gajim/common/storage/${MODPY_PYCACHE}draft.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gajim/common/storage/${MODPY_PYCACHE}events.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gajim/common/storage/${MODPY_PYCACHE}events.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gajim/common/storage/${MODPY_PYCACHE}omemo.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gajim/common/storage/${MODPY_PYCACHE}omemo.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gajim/common/storage/archive.py
 lib/python${MODPY_VERSION}/site-packages/gajim/common/storage/base.py
 lib/python${MODPY_VERSION}/site-packages/gajim/common/storage/cache.py
 lib/python${MODPY_VERSION}/site-packages/gajim/common/storage/draft.py
 lib/python${MODPY_VERSION}/site-packages/gajim/common/storage/events.py
+lib/python${MODPY_VERSION}/site-packages/gajim/common/storage/omemo.py
 lib/python${MODPY_VERSION}/site-packages/gajim/common/structs.py
 lib/python${MODPY_VERSION}/site-packages/gajim/common/styling.py
 lib/python${MODPY_VERSION}/site-packages/gajim/common/task_manager.py
@@ -333,13 +339,24 @@ lib/python${MODPY_VERSION}/site-packages/gajim/common/util/${MODPY_PYCACHE}__ini
 lib/python${MODPY_VERSION}/site-packages/gajim/common/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gajim/common/util/${MODPY_PYCACHE}classes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gajim/common/util/${MODPY_PYCACHE}classes.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gajim/common/util/${MODPY_PYCACHE}decorators.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gajim/common/util/${MODPY_PYCACHE}decorators.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gajim/common/util/${MODPY_PYCACHE}http.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gajim/common/util/${MODPY_PYCACHE}http.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gajim/common/util/${MODPY_PYCACHE}text.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gajim/common/util/${MODPY_PYCACHE}text.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gajim/common/util/classes.py
+lib/python${MODPY_VERSION}/site-packages/gajim/common/util/decorators.py
 lib/python${MODPY_VERSION}/site-packages/gajim/common/util/http.py
 lib/python${MODPY_VERSION}/site-packages/gajim/common/util/text.py
+lib/python${MODPY_VERSION}/site-packages/gajim/common/winapi/
+lib/python${MODPY_VERSION}/site-packages/gajim/common/winapi/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gajim/common/winapi/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gajim/common/winapi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gajim/common/winapi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gajim/common/winapi/${MODPY_PYCACHE}system_style.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gajim/common/winapi/${MODPY_PYCACHE}system_style.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gajim/common/winapi/system_style.py
 lib/python${MODPY_VERSION}/site-packages/gajim/data/
 lib/python${MODPY_VERSION}/site-packages/gajim/data/gui/
 lib/python${MODPY_VERSION}/site-packages/gajim/data/gui/account_page.ui
@@ -383,6 +400,7 @@ lib/python${MODPY_VERSION}/site-packages/gajim/data/gui/mam_preferences.ui
 lib/python${MODPY_VERSION}/site-packages/gajim/data/gui/manage_proxies.ui
 lib/python${MODPY_VERSION}/site-packages/gajim/data/gui/manage_sounds.ui
 lib/python${MODPY_VERSION}/site-packages/gajim/data/gui/message_actions_box.ui
+lib/python${MODPY_VERSION}/site-packages/gajim/data/gui/omemo_trust_manager.ui
 lib/python${MODPY_VERSION}/site-packages/gajim/data/gui/password_dialog.ui
 lib/python${MODPY_VERSION}/site-packages/gajim/data/gui/pep_config.ui
 lib/python${MODPY_VERSION}/site-packages/gajim/data/gui/plugins.ui
@@ -643,6 +661,7 @@ lib/python${MODPY_VERSION}/site-packages/gajim/data/icons/hicolor/scalable/apps/
 lib/python${MODPY_VERSION}/site-packages/gajim/data/icons/hicolor/scalable/apps/org.gajim.Gajim.svg
 lib/python${MODPY_VERSION}/site-packages/gajim/data/icons/hicolor/scalable/categories/
 lib/python${MODPY_VERSION}/site-packages/gajim/data/icons/hicolor/scalable/categories/map.svg
+lib/python${MODPY_VERSION}/site-packages/gajim/data/icons/hicolor/scalable/categories/qr-code-scan-symbolic.svg
 lib/python${MODPY_VERSION}/site-packages/gajim/data/icons/hicolor/scalable/devices/
 lib/python${MODPY_VERSION}/site-packages/gajim/data/icons/hicolor/scalable/devices/LICENSE
 lib/python${MODPY_VERSION}/site-packages/gajim/data/icons/hicolor/scalable/devices/feather-briefcase-symbolic.svg
@@ -665,6 +684,7 @@ lib/python${MODPY_VERSION}/site-packages/gajim/data/icons/hicolor/scalable/devic
 lib/python${MODPY_VERSION}/site-packages/gajim/data/icons/hicolor/scalable/devices/feather-mic-off-symbolic.svg
 lib/python${MODPY_VERSION}/site-packages/gajim/data/icons/hicolor/scalable/devices/feather-mic-symbolic.svg
 lib/python${MODPY_VERSION}/site-packages/gajim/data/icons/hicolor/scalable/devices/feather-more-horizontal-symbolic.svg
+lib/python${MODPY_VERSION}/site-packages/gajim/data/icons/hicolor/scalable/devices/feather-refresh-cw-symbolic.svg
 lib/python${MODPY_VERSION}/site-packages/gajim/data/icons/hicolor/scalable/devices/feather-server-symbolic.svg
 lib/python${MODPY_VERSION}/site-packages/gajim/data/icons/hicolor/scalable/devices/feather-shield-off-symbolic.svg
 lib/python${MODPY_VERSION}/site-packages/gajim/data/icons/hicolor/scalable/devices/feather-shield-symbolic.svg
@@ -672,6 +692,7 @@ lib/python${MODPY_VERSION}/site-packages/gajim/data/icons/hicolor/scalable/devic
 lib/python${MODPY_VERSION}/site-packages/gajim/data/icons/hicolor/scalable/devices/feather-user-check-symbolic.svg
 lib/python${MODPY_VERSION}/site-packages/gajim/data/icons/hicolor/scalable/devices/feather-user-symbolic.svg
 lib/python${MODPY_VERSION}/site-packages/gajim/data/icons/hicolor/scalable/devices/feather-users-symbolic.svg
+lib/python${MODPY_VERSION}/site-packages/gajim/data/icons/hicolor/scalable/devices/feather-zap-symbolic.svg
 lib/python${MODPY_VERSION}/site-packages/gajim/data/icons/hicolor/scalable/status/
 lib/python${MODPY_VERSION}/site-packages/gajim/data/icons/hicolor/scalable/status/dcraven-away.svg
 lib/python${MODPY_VERSION}/site-packages/gajim/data/icons/hicolor/scalable/status/dcraven-chat.svg
@@ -720,6 +741,9 @@ lib/python${MODPY_VERSION}/site-packages/gajim/data/icons/hicolor/scalable/statu
 lib/python${MODPY_VERSION}/site-packages/gajim/data/icons/hicolor/scalable/status/sun-xa.svg
 lib/python${MODPY_VERSION}/site-packages/gajim/data/icons/hicolor/scalable/status/xmpp.svg
 lib/python${MODPY_VERSION}/site-packages/gajim/data/locale/
+lib/python${MODPY_VERSION}/site-packages/gajim/data/locale/ar/
+lib/python${MODPY_VERSION}/site-packages/gajim/data/locale/ar/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/gajim/data/locale/ar/LC_MESSAGES/gajim.mo
 lib/python${MODPY_VERSION}/site-packages/gajim/data/locale/be/
 lib/python${MODPY_VERSION}/site-packages/gajim/data/locale/be/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/gajim/data/locale/be/LC_MESSAGES/gajim.mo
@@ -1010,6 +1034,8 @@ lib/python${MODPY_VERSION}/site-packages/gajim/gtk/${MODPY_PYCACHE}notification.
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/${MODPY_PYCACHE}notification.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/${MODPY_PYCACHE}notification_manager.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/${MODPY_PYCACHE}notification_manager.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gajim/gtk/${MODPY_PYCACHE}omemo_trust_manager.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gajim/gtk/${MODPY_PYCACHE}omemo_trust_manager.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/${MODPY_PYCACHE}password_dialog.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/${MODPY_PYCACHE}password_dialog.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/${MODPY_PYCACHE}pep_config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1156,6 +1182,8 @@ lib/python${MODPY_VERSION}/site-packages/gajim/gtk/conversation/rows/${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/conversation/rows/${MODPY_PYCACHE}command_output.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/conversation/rows/${MODPY_PYCACHE}date.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/conversation/rows/${MODPY_PYCACHE}date.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gajim/gtk/conversation/rows/${MODPY_PYCACHE}encryption_info.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gajim/gtk/conversation/rows/${MODPY_PYCACHE}encryption_info.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/conversation/rows/${MODPY_PYCACHE}file_transfer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/conversation/rows/${MODPY_PYCACHE}file_transfer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/conversation/rows/${MODPY_PYCACHE}file_transfer_jingle.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1180,6 +1208,7 @@ lib/python${MODPY_VERSION}/site-packages/gajim/gtk/conversation/rows/base.py
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/conversation/rows/call.py
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/conversation/rows/command_output.py
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/conversation/rows/date.py
+lib/python${MODPY_VERSION}/site-packages/gajim/gtk/conversation/rows/encryption_info.py
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/conversation/rows/file_transfer.py
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/conversation/rows/file_transfer_jingle.py
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/conversation/rows/info.py
@@ -1229,6 +1258,7 @@ lib/python${MODPY_VERSION}/site-packages/gajim/gtk/message_actions_box.py
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/message_input.py
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/notification.py
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/notification_manager.py
+lib/python${MODPY_VERSION}/site-packages/gajim/gtk/omemo_trust_manager.py
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/password_dialog.py
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/pep_config.py
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/plugins.py
