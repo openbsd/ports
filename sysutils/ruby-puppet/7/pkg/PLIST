@@ -1315,6 +1315,15 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/integration/application/apply/environm
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/integration/application/apply/environments/spec/modules/amod/lib/puppet/provider/applytest/applytest.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/integration/application/apply/environments/spec/modules/amod/lib/puppet/type/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/integration/application/apply/environments/spec/modules/amod/lib/puppet/type/applytest.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/integration/application/module/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/integration/application/module/environments/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/integration/application/module/environments/direnv/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/integration/application/module/environments/direnv/modules/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/integration/application/module/environments/direnv/modules/nginx/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/integration/application/module/environments/direnv/modules/nginx/README
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/integration/application/module/environments/direnv/modules/nginx/manifests/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/integration/application/module/environments/direnv/modules/nginx/manifests/init.pp
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/integration/application/module/environments/direnv/modules/nginx/metadata.json
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/integration/l10n/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/integration/l10n/envs/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/integration/l10n/envs/prod/
