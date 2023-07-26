@@ -294,11 +294,13 @@ webapps/docs/api/org/apache/catalina/core/ContainerBase.ContainerBackgroundProce
 webapps/docs/api/org/apache/catalina/core/ContainerBase.ContainerBackgroundProcessorMonitor.html
 webapps/docs/api/org/apache/catalina/core/ContainerBase.PrivilegedAddChild.html
 webapps/docs/api/org/apache/catalina/core/ContainerBase.html
+webapps/docs/api/org/apache/catalina/core/ContextNamingInfoListener.html
 webapps/docs/api/org/apache/catalina/core/DefaultInstanceManager.html
 webapps/docs/api/org/apache/catalina/core/FrameworkListener.html
 webapps/docs/api/org/apache/catalina/core/JniLifecycleListener.html
 webapps/docs/api/org/apache/catalina/core/JreMemoryLeakPreventionListener.html
 webapps/docs/api/org/apache/catalina/core/NamingContextListener.html
+webapps/docs/api/org/apache/catalina/core/PropertiesRoleMappingListener.html
 webapps/docs/api/org/apache/catalina/core/StandardContext.html
 webapps/docs/api/org/apache/catalina/core/StandardEngine.AccessLogListener.html
 webapps/docs/api/org/apache/catalina/core/StandardEngine.NoopAccessLog.html
@@ -308,6 +310,7 @@ webapps/docs/api/org/apache/catalina/core/StandardPipeline.html
 webapps/docs/api/org/apache/catalina/core/StandardServer.html
 webapps/docs/api/org/apache/catalina/core/StandardService.html
 webapps/docs/api/org/apache/catalina/core/StandardThreadExecutor.html
+webapps/docs/api/org/apache/catalina/core/StandardVirtualThreadExecutor.html
 webapps/docs/api/org/apache/catalina/core/StandardWrapper.html
 webapps/docs/api/org/apache/catalina/core/StandardWrapperFacade.html
 webapps/docs/api/org/apache/catalina/core/ThreadLocalLeakPreventionListener.html
@@ -865,6 +868,7 @@ webapps/docs/api/org/apache/catalina/util/Introspection.html
 webapps/docs/api/org/apache/catalina/util/LifecycleBase.html
 webapps/docs/api/org/apache/catalina/util/LifecycleMBeanBase.html
 webapps/docs/api/org/apache/catalina/util/NetMask.html
+webapps/docs/api/org/apache/catalina/util/NetMaskSet.html
 webapps/docs/api/org/apache/catalina/util/ParameterMap.html
 webapps/docs/api/org/apache/catalina/util/RequestUtil.html
 webapps/docs/api/org/apache/catalina/util/ResourceSet.html
@@ -1655,6 +1659,7 @@ webapps/docs/api/org/apache/tomcat/util/collections/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/collections/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/compat/
 webapps/docs/api/org/apache/tomcat/util/compat/Jre19Compat.html
+webapps/docs/api/org/apache/tomcat/util/compat/Jre21Compat.html
 webapps/docs/api/org/apache/tomcat/util/compat/JreCompat.html
 webapps/docs/api/org/apache/tomcat/util/compat/JrePlatform.html
 webapps/docs/api/org/apache/tomcat/util/compat/JreVendor.html
@@ -1845,8 +1850,10 @@ webapps/docs/api/org/apache/tomcat/util/http/parser/Host.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/HttpParser.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/MediaType.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/MediaTypeCache.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/Priority.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/Ranges.Entry.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/Ranges.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/StructuredField.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/TokenList.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/Upgrade.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/package-summary.html
@@ -2015,6 +2022,7 @@ webapps/docs/api/org/apache/tomcat/util/threads/ThreadPoolExecutor.DiscardOldest
 webapps/docs/api/org/apache/tomcat/util/threads/ThreadPoolExecutor.DiscardPolicy.html
 webapps/docs/api/org/apache/tomcat/util/threads/ThreadPoolExecutor.RejectedExecutionHandler.html
 webapps/docs/api/org/apache/tomcat/util/threads/ThreadPoolExecutor.html
+webapps/docs/api/org/apache/tomcat/util/threads/VirtualThreadExecutor.html
 webapps/docs/api/org/apache/tomcat/util/threads/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/threads/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/xreflection/
