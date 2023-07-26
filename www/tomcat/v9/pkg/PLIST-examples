@@ -68,7 +68,7 @@ webapps/docs/annotationapi/jquery-ui.overrides.css
 webapps/docs/annotationapi/jquery/external/
 webapps/docs/annotationapi/jquery/external/jquery/
 webapps/docs/annotationapi/jquery/external/jquery/jquery.js
-webapps/docs/annotationapi/jquery/jquery-3.6.0.min.js
+webapps/docs/annotationapi/jquery/jquery-3.6.1.min.js
 webapps/docs/annotationapi/jquery/jquery-ui.min.css
 webapps/docs/annotationapi/jquery/jquery-ui.min.js
 webapps/docs/annotationapi/jquery/jszip/
@@ -110,7 +110,7 @@ webapps/docs/api/jquery-ui.overrides.css
 webapps/docs/api/jquery/external/
 webapps/docs/api/jquery/external/jquery/
 webapps/docs/api/jquery/external/jquery/jquery.js
-webapps/docs/api/jquery/jquery-3.6.0.min.js
+webapps/docs/api/jquery/jquery-3.6.1.min.js
 webapps/docs/api/jquery/jquery-ui.min.css
 webapps/docs/api/jquery/jquery-ui.min.js
 webapps/docs/api/jquery/jszip/
@@ -292,11 +292,13 @@ webapps/docs/api/org/apache/catalina/core/ContainerBase.ContainerBackgroundProce
 webapps/docs/api/org/apache/catalina/core/ContainerBase.ContainerBackgroundProcessorMonitor.html
 webapps/docs/api/org/apache/catalina/core/ContainerBase.PrivilegedAddChild.html
 webapps/docs/api/org/apache/catalina/core/ContainerBase.html
+webapps/docs/api/org/apache/catalina/core/ContextNamingInfoListener.html
 webapps/docs/api/org/apache/catalina/core/DefaultInstanceManager.html
 webapps/docs/api/org/apache/catalina/core/FrameworkListener.html
 webapps/docs/api/org/apache/catalina/core/JniLifecycleListener.html
 webapps/docs/api/org/apache/catalina/core/JreMemoryLeakPreventionListener.html
 webapps/docs/api/org/apache/catalina/core/NamingContextListener.html
+webapps/docs/api/org/apache/catalina/core/PropertiesRoleMappingListener.html
 webapps/docs/api/org/apache/catalina/core/StandardContext.html
 webapps/docs/api/org/apache/catalina/core/StandardEngine.AccessLogListener.html
 webapps/docs/api/org/apache/catalina/core/StandardEngine.NoopAccessLog.html
@@ -306,6 +308,7 @@ webapps/docs/api/org/apache/catalina/core/StandardPipeline.html
 webapps/docs/api/org/apache/catalina/core/StandardServer.html
 webapps/docs/api/org/apache/catalina/core/StandardService.html
 webapps/docs/api/org/apache/catalina/core/StandardThreadExecutor.html
+webapps/docs/api/org/apache/catalina/core/StandardVirtualThreadExecutor.html
 webapps/docs/api/org/apache/catalina/core/StandardWrapper.html
 webapps/docs/api/org/apache/catalina/core/StandardWrapperFacade.html
 webapps/docs/api/org/apache/catalina/core/ThreadLocalLeakPreventionListener.html
@@ -337,6 +340,7 @@ webapps/docs/api/org/apache/catalina/filters/ExpiresFilter.html
 webapps/docs/api/org/apache/catalina/filters/FailedRequestFilter.html
 webapps/docs/api/org/apache/catalina/filters/FilterBase.html
 webapps/docs/api/org/apache/catalina/filters/HttpHeaderSecurityFilter.html
+webapps/docs/api/org/apache/catalina/filters/RateLimitFilter.html
 webapps/docs/api/org/apache/catalina/filters/RemoteAddrFilter.html
 webapps/docs/api/org/apache/catalina/filters/RemoteCIDRFilter.html
 webapps/docs/api/org/apache/catalina/filters/RemoteHostFilter.html
@@ -881,6 +885,7 @@ webapps/docs/api/org/apache/catalina/util/LifecycleBase.html
 webapps/docs/api/org/apache/catalina/util/LifecycleMBeanBase.html
 webapps/docs/api/org/apache/catalina/util/ManifestResource.html
 webapps/docs/api/org/apache/catalina/util/NetMask.html
+webapps/docs/api/org/apache/catalina/util/NetMaskSet.html
 webapps/docs/api/org/apache/catalina/util/ParameterMap.html
 webapps/docs/api/org/apache/catalina/util/RequestUtil.html
 webapps/docs/api/org/apache/catalina/util/ResourceSet.html
@@ -890,6 +895,7 @@ webapps/docs/api/org/apache/catalina/util/SessionIdGeneratorBase.html
 webapps/docs/api/org/apache/catalina/util/StandardSessionIdGenerator.html
 webapps/docs/api/org/apache/catalina/util/Strftime.html
 webapps/docs/api/org/apache/catalina/util/TLSUtil.html
+webapps/docs/api/org/apache/catalina/util/TimeBucketCounter.html
 webapps/docs/api/org/apache/catalina/util/ToStringUtil.html
 webapps/docs/api/org/apache/catalina/util/TomcatCSS.html
 webapps/docs/api/org/apache/catalina/util/URLEncoder.html
@@ -1701,6 +1707,7 @@ webapps/docs/api/org/apache/tomcat/util/collections/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/collections/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/compat/
 webapps/docs/api/org/apache/tomcat/util/compat/Jre19Compat.html
+webapps/docs/api/org/apache/tomcat/util/compat/Jre21Compat.html
 webapps/docs/api/org/apache/tomcat/util/compat/JreCompat.html
 webapps/docs/api/org/apache/tomcat/util/compat/JrePlatform.html
 webapps/docs/api/org/apache/tomcat/util/compat/JreVendor.html
@@ -1895,8 +1902,10 @@ webapps/docs/api/org/apache/tomcat/util/http/parser/Host.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/HttpParser.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/MediaType.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/MediaTypeCache.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/Priority.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/Ranges.Entry.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/Ranges.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/StructuredField.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/TokenList.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/Upgrade.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/Vary.html
@@ -2077,6 +2086,7 @@ webapps/docs/api/org/apache/tomcat/util/threads/ThreadPoolExecutor.DiscardOldest
 webapps/docs/api/org/apache/tomcat/util/threads/ThreadPoolExecutor.DiscardPolicy.html
 webapps/docs/api/org/apache/tomcat/util/threads/ThreadPoolExecutor.RejectedExecutionHandler.html
 webapps/docs/api/org/apache/tomcat/util/threads/ThreadPoolExecutor.html
+webapps/docs/api/org/apache/tomcat/util/threads/VirtualThreadExecutor.html
 webapps/docs/api/org/apache/tomcat/util/threads/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/threads/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/xreflection/
@@ -2316,7 +2326,7 @@ webapps/docs/elapi/jquery-ui.overrides.css
 webapps/docs/elapi/jquery/external/
 webapps/docs/elapi/jquery/external/jquery/
 webapps/docs/elapi/jquery/external/jquery/jquery.js
-webapps/docs/elapi/jquery/jquery-3.6.0.min.js
+webapps/docs/elapi/jquery/jquery-3.6.1.min.js
 webapps/docs/elapi/jquery/jquery-ui.min.css
 webapps/docs/elapi/jquery/jquery-ui.min.js
 webapps/docs/elapi/jquery/jszip/
@@ -2435,7 +2445,7 @@ webapps/docs/jaspicapi/jquery-ui.overrides.css
 webapps/docs/jaspicapi/jquery/external/
 webapps/docs/jaspicapi/jquery/external/jquery/
 webapps/docs/jaspicapi/jquery/external/jquery/jquery.js
-webapps/docs/jaspicapi/jquery/jquery-3.6.0.min.js
+webapps/docs/jaspicapi/jquery/jquery-3.6.1.min.js
 webapps/docs/jaspicapi/jquery/jquery-ui.min.css
 webapps/docs/jaspicapi/jquery/jquery-ui.min.js
 webapps/docs/jaspicapi/jquery/jszip/
@@ -2543,7 +2553,7 @@ webapps/docs/jspapi/jquery-ui.overrides.css
 webapps/docs/jspapi/jquery/external/
 webapps/docs/jspapi/jquery/external/jquery/
 webapps/docs/jspapi/jquery/external/jquery/jquery.js
-webapps/docs/jspapi/jquery/jquery-3.6.0.min.js
+webapps/docs/jspapi/jquery/jquery-3.6.1.min.js
 webapps/docs/jspapi/jquery/jquery-ui.min.css
 webapps/docs/jspapi/jquery/jquery-ui.min.js
 webapps/docs/jspapi/jquery/jszip/
@@ -2692,7 +2702,7 @@ webapps/docs/servletapi/jquery-ui.overrides.css
 webapps/docs/servletapi/jquery/external/
 webapps/docs/servletapi/jquery/external/jquery/
 webapps/docs/servletapi/jquery/external/jquery/jquery.js
-webapps/docs/servletapi/jquery/jquery-3.6.0.min.js
+webapps/docs/servletapi/jquery/jquery-3.6.1.min.js
 webapps/docs/servletapi/jquery/jquery-ui.min.css
 webapps/docs/servletapi/jquery/jquery-ui.min.js
 webapps/docs/servletapi/jquery/jszip/
@@ -2806,7 +2816,7 @@ webapps/docs/websocketapi/jquery-ui.overrides.css
 webapps/docs/websocketapi/jquery/external/
 webapps/docs/websocketapi/jquery/external/jquery/
 webapps/docs/websocketapi/jquery/external/jquery/jquery.js
-webapps/docs/websocketapi/jquery/jquery-3.6.0.min.js
+webapps/docs/websocketapi/jquery/jquery-3.6.1.min.js
 webapps/docs/websocketapi/jquery/jquery-ui.min.css
 webapps/docs/websocketapi/jquery/jquery-ui.min.js
 webapps/docs/websocketapi/jquery/jszip/
