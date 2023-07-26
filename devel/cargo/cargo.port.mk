@@ -172,6 +172,7 @@ MODCARGO_post-extract += \
 	rm -rf -- ${MODCARGO_VENDOR_DIR}/${_cratename}-${_cratever}/openssl ;
 
 .    elif "${_cratename}" == "openssl-sys"
+MODCARGO_ENV +=	OPENSSL_NO_VENDOR=1
 MODCARGO_post-extract += \
 	${ECHO_MSG} "[modcargo] Patching ${_cratename}-${_cratever} for supporting -current" ; \
 	sed -i -e "/ => ('.', '.'),/h" \
