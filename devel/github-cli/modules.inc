@@ -133,7 +133,7 @@ MODGO_MODULES =	\
 	github.com/charmbracelet/lipgloss			 v0.5.0 \
 	github.com/cli/browser					 v1.2.0 \
 	github.com/cli/crypto					 v0.0.0-20210929142629-6be313f59b03 \
-	github.com/cli/go-gh/v2					 v2.0.1 \
+	github.com/cli/go-gh/v2					 v2.1.0 \
 	github.com/cli/oauth					 v1.0.1 \
 	github.com/cli/safeexec					 v1.0.1 \
 	github.com/cli/shurcoo!l-graphql			 v0.0.3 \
@@ -303,6 +303,7 @@ MODGO_MODFILES =	\
 	golang.org/x/text			 v0.4.0 \
 	golang.org/x/text			 v0.5.0 \
 	golang.org/x/text			 v0.6.0 \
+	golang.org/x/text			 v0.7.0 \
 	golang.org/x/tools			 v0.0.0-20180917221912-90fa682c2a6e \
 	golang.org/x/tools			 v0.0.0-20191119224855-298f0cb1881e \
 	golang.org/x/tools			 v0.1.10 \
