@@ -60,6 +60,8 @@ lib/python${MODPY_VERSION}/site-packages/nbxmpp/${MODPY_PYCACHE}util.${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/${MODPY_PYCACHE}websocket.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/${MODPY_PYCACHE}websocket.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nbxmpp/${MODPY_PYCACHE}xmppiri.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/nbxmpp/${MODPY_PYCACHE}xmppiri.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/addresses.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/c14n.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/client.py
@@ -297,3 +299,4 @@ lib/python${MODPY_VERSION}/site-packages/nbxmpp/third_party/hsluv.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/types.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/util.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/websocket.py
+lib/python${MODPY_VERSION}/site-packages/nbxmpp/xmppiri.py
