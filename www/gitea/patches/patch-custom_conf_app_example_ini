@@ -1,7 +1,7 @@
 Index: custom/conf/app.example.ini
 --- custom/conf/app.example.ini.orig
 +++ custom/conf/app.example.ini
-@@ -47,7 +47,7 @@
+@@ -44,7 +44,7 @@
  APP_NAME = ; Gitea: Git with a cup of tea
  ;;
  ;; RUN_USER will automatically detect the current user - but you can set it here change it if you run locally

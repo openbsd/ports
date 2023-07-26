@@ -21,7 +21,6 @@ On OpenBSD, initial gitea configuration has the following restrictions:
  - Server runs in "offline" mode, which means that external services such as
    Gravatar/OpenID are not used
  - New repositories have "private" checkbox checked by default
- - Password hash algorithm changed from pbkdf2 to argon2
 
 Adjust these configuration settings according to your requirements.
 
@@ -40,10 +39,12 @@ Relevant configuration directives in ${SYSCONFDIR}/httpd.conf:
 
 	# An HTTPS server using SSL/TLS
 	server "gitea.example.com" {
-		listen on $ext_addr tls port 443
-		tls certificate "/etc/ssl/gitea.example.com.pem"
-		tls key "/etc/ssl/private/gitea.example.com.key"
-		location "*" { fastcgi socket "/run/gitea/gitea.sock" }
+		root "/gitea"
+		listen on * tls port 443
+		log style forwarded
+		location match "/assets/(.*)" { request rewrite "/public/%1" }
+		location "/public/*" { no fastcgi }
+		location "*" { fastcgi socket "run/gitea/gitea.sock" }
 	}
 
 Relevant configuration directives in ${SYSCONFDIR}/gitea/app.ini:
