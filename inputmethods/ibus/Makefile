@@ -14,17 +14,9 @@ GH_ACCOUNT =		ibus
 #PKGNAME-gtk3 =		ibus-gtk3-${GH_TAGNAME}
 #PKGNAME-gtk4 =		ibus-gtk4-${GH_TAGNAME}
 
-### BEGIN XXX bring changes from 1.5.28 and add a patch to:
-# Fix sync ibus_input_context_process_key_event()
-# https://github.com/ibus/ibus/pull/2532
-# https://github.com/ibus/ibus/issues/2486
-V =			1.5.28.20230714
-GH_COMMIT =		580ea41b303d4f2dc5ccc64d39612c57cd7c5a0e
-MASTER_SITES0 =		https://github.com/ibus/ibus/pull/2532/commits/
-PATCHFILES =		139e0be07bfbc96d5ff95e5f5ebd760fbc7d94c0.diff:0 \
-			e495f8068380856c01fd22ceebb9398072fd65d8.diff:0 \
-			3670faf74a7b4594ceda3b4a8c01515840cc1991.diff:0
-PATCH_DIST_STRIP =	-p1
+### BEGIN - move back to use GH_TAGNAME at next release
+V =			1.5.28.20230725
+GH_COMMIT =		7502abbe7eb4289d0d727e53cdfac572baf405d5
 DISTNAME =		ibus-${V}
 PKGNAME-main =		ibus-${V}
 PKGNAME-gtk2 =		ibus-gtk2-${V}
