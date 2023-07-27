@@ -3,7 +3,7 @@ COMMENT-main=	scan ports and fingerprint stack of network hosts
 MODPY_EGG_VERSION=	7.91
 DISTNAME=		nmap-${MODPY_EGG_VERSION}
 PKGNAME-main=		${DISTNAME}
-REVISION=		4
+REVISION=		5
 
 CATEGORIES=	net security
 MASTER_SITES=	${HOMEPAGE}/dist/

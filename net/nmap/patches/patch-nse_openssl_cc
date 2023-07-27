@@ -1,3 +1,5 @@
+Fake amd64 RC4_options() output to avoid more intrusive patch.
+
 Index: nse_openssl.cc
 --- nse_openssl.cc.orig
 +++ nse_openssl.cc
@@ -10,3 +12,12 @@ Index: nse_openssl.cc
  #define HAVE_OPAQUE_STRUCTS 1
  #define FUNC_EVP_MD_CTX_init EVP_MD_CTX_reset
  #define FUNC_EVP_MD_CTX_cleanup EVP_MD_CTX_reset
+@@ -545,7 +545,7 @@ static int l_DES_string_to_key(lua_State *L) /** DES_s
+ #ifndef OPENSSL_NO_RC4
+ static int l_rc4_options (lua_State *L)
+ {
+-  lua_pushstring(L, RC4_options());
++  lua_pushstring(L, "rc4(16x,int)");
+   return 1;
+ }
+ 
