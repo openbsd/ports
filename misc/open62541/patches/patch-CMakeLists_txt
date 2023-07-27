@@ -3,7 +3,7 @@ Move examples to the right place.
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -1716,7 +1716,7 @@ if(UA_PACK_DEBIAN)
+@@ -1720,7 +1720,7 @@ if(UA_PACK_DEBIAN)
          "examples/nodeset"
          "examples/pubsub")
  

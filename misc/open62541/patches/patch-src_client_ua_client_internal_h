@@ -13,7 +13,7 @@ Index: src/client/ua_client_internal.h
  void
  UA_Client_AsyncService_removeAll(UA_Client *client, UA_StatusCode statusCode);
  
-@@ -143,7 +145,7 @@ struct UA_Client {
+@@ -147,7 +149,7 @@ struct UA_Client {
      UA_Boolean pendingConnectivityCheck;
  
      /* Async Service */

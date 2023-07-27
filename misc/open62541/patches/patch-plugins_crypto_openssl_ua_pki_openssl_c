@@ -1,5 +1,6 @@
 Replace X509_STORE_CTX_get_check_issued with X509_check_issued.
 https://github.com/libressl-portable/portable/issues/748
+https://github.com/open62541/open62541/commit/35939a5b688d9647dbc96db88df5df27ebcced7a
 
 Index: plugins/crypto/openssl/ua_pki_openssl.c
 --- plugins/crypto/openssl/ua_pki_openssl.c.orig

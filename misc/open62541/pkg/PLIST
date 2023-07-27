@@ -61,7 +61,6 @@ share/examples/open62541/client.c
 share/examples/open62541/client_async.c
 share/examples/open62541/client_connect.c
 share/examples/open62541/client_connect_loop.c
-share/examples/open62541/client_connectivitycheck_loop.c
 share/examples/open62541/client_historical.c
 share/examples/open62541/client_method_async.c
 share/examples/open62541/client_subscription_loop.c

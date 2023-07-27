@@ -5,7 +5,7 @@ https://cmake.org/cmake/help/latest/command/add_custom_target.html
 Index: doc/CMakeLists.txt
 --- doc/CMakeLists.txt.orig
 +++ doc/CMakeLists.txt
-@@ -74,7 +74,7 @@ add_custom_target(doc_latex ${SPHINX_EXECUTABLE}
+@@ -75,7 +75,7 @@ add_custom_target(doc_latex ${SPHINX_EXECUTABLE}
                    COMMENT "Building LaTeX sources for documentation with Sphinx")
  add_dependencies(doc_latex open62541)
  

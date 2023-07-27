@@ -3,11 +3,12 @@ https://github.com/open62541/open62541/commit/de9d691906547c9fc99e0a77198a80fe5b
 
 fix(client): use after free in asyncServiceTimeoutCheck
 https://github.com/open62541/open62541/pull/5270
+https://github.com/open62541/open62541/commit/713cdb419f0f844517afc549c7c1ef48d8498cfb
 
 Index: src/client/ua_client.c
 --- src/client/ua_client.c.orig
 +++ src/client/ua_client.c
-@@ -505,8 +505,17 @@ UA_Client_AsyncService_cancel(UA_Client *client, Async
+@@ -515,8 +515,17 @@ UA_Client_AsyncService_cancel(UA_Client *client, Async
  }
  
  void UA_Client_AsyncService_removeAll(UA_Client *client, UA_StatusCode statusCode) {
@@ -26,7 +27,7 @@ Index: src/client/ua_client.c
          LIST_REMOVE(ac, pointers);
          UA_Client_AsyncService_cancel(client, ac, statusCode);
          UA_free(ac);
-@@ -617,16 +626,27 @@ UA_Client_removeCallback(UA_Client *client, UA_UInt64 
+@@ -627,16 +636,27 @@ UA_Client_removeCallback(UA_Client *client, UA_UInt64 
  
  static void
  asyncServiceTimeoutCheck(UA_Client *client) {

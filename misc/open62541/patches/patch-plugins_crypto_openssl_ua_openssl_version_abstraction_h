@@ -1,3 +1,5 @@
+https://github.com/open62541/open62541/commit/35939a5b688d9647dbc96db88df5df27ebcced7a
+
 Index: plugins/crypto/openssl/ua_openssl_version_abstraction.h
 --- plugins/crypto/openssl/ua_openssl_version_abstraction.h.orig
 +++ plugins/crypto/openssl/ua_openssl_version_abstraction.h
