@@ -9,6 +9,17 @@ typedef int                     __wchar_t;
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
+@@ -29,8 +29,8 @@ set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake" "${C
+ set(CMAKE_SKIP_RPATH ON)
+ 
+ # compiler options
+-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fsigned-char -fms-extensions -Wall -Wextra -Werror-implicit-function-declaration")
+-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsigned-char -fms-extensions -Wall -Wextra")
++set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fsigned-char -Wall -Wextra -Werror-implicit-function-declaration")
++set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsigned-char -Wall -Wextra")
+ if (CMAKE_C_COMPILER_ID STREQUAL "GNU")
+   # extra options specific to gcc/g++
+   set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wformat-overflow=2 -Wformat-truncation=2")
 @@ -255,7 +255,7 @@ if(DL_LIBRARY)
    list(APPEND EXTRA_LIBS dl)
  endif()

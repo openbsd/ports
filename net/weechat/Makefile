@@ -12,6 +12,11 @@ PKGNAME-lua=	weechat-lua-${V}
 PKGNAME-python=	weechat-python-${V}
 PKGNAME-ruby=	weechat-ruby-${V}
 PKGNAME-tcl=	weechat-tcl-${V}
+REVISION-lua=	0
+REVISION-main=	0
+REVISION-python=0
+REVISION-ruby=	0
+REVISION-tcl=	0
 
 CATEGORIES=	net
 
@@ -80,7 +85,7 @@ CONFIGURE_ARGS+=	-DTCL_TCLSH=${MODTCL_BIN} \
 			-DTCL_INCLUDE_PATH=${MODTCL_INCDIR} \
 			-DMODTCL_LIB=${MODTCL_LIB}
 
-MODCMAKE_LDFLAGS =		-L${LOCALBASE}/lib
+MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
 
 .include <bsd.port.arch.mk>
 .if ${PROPERTIES:Mclang}
