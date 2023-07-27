@@ -11,12 +11,12 @@ Index: lib/usual/tls/tls_compat.h
  
  #define NID_kx_ecdhe (-90)
  #define NID_kx_dhe (-91)
-@@ -79,7 +78,7 @@ static inline X509_OBJECT *X509_STORE_CTX_get_obj_by_s
+@@ -78,6 +77,8 @@ static inline X509_OBJECT *X509_STORE_CTX_get_obj_by_s
+ 	}
  	return NULL;
  }
- 
--
++
 +#endif
- #endif
  
- /* ecdh_auto is broken - ignores main EC key */
+ /*
+  * We need these specific functions for OpenSSL 3.0.0 because the

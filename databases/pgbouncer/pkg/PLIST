@@ -11,10 +11,17 @@
 share/doc/pgbouncer/
 share/doc/pgbouncer/NEWS.md
 share/doc/pgbouncer/README.md
+share/doc/pgbouncer/pgbouncer-minimal.ini
 @mode 640
 @group _pgbouncer
 share/doc/pgbouncer/pgbouncer.ini
 @sample ${SYSCONFDIR}/pgbouncer/pgbouncer.ini
+@mode
+@group
+share/doc/pgbouncer/pgbouncer.service
+share/doc/pgbouncer/pgbouncer.socket
+@mode 640
+@group _pgbouncer
 share/doc/pgbouncer/userlist.txt
 @sample ${SYSCONFDIR}/pgbouncer/userlist.txt
 @mode

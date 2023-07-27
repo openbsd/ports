@@ -1,20 +1,10 @@
 Index: etc/pgbouncer.ini
 --- etc/pgbouncer.ini.orig
 +++ etc/pgbouncer.ini
-@@ -112,7 +112,7 @@ listen_port = 6432
- ;;;
- 
- ;; any, trust, plain, md5, cert, hba, pam
--auth_type = trust
-+auth_type = md5
- auth_file = /etc/pgbouncer/userlist.txt
- 
- ;; Path to HBA-style auth config
-@@ -127,7 +127,7 @@ auth_file = /etc/pgbouncer/userlist.txt
- ;;;
+@@ -138,6 +138,7 @@ auth_file = /etc/pgbouncer/userlist.txt
  
  ;; comma-separated list of users who are allowed to change settings
--;admin_users = user2, someadmin, otheradmin
+ ;admin_users = user2, someadmin, otheradmin
 +admin_users = admin, pgbouncer
  
  ;; comma-separated list of users who are just allowed to use SHOW command
