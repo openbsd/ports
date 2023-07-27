@@ -15,8 +15,8 @@ WANTLIB += ${COMPILER_LIBCXX} GL GLU SDL SDL_image SDL_mixer c m physfs png z
 MASTER_SITES =	https://www.dxx-rebirth.com/download/dxx/rebirth/
 EXTRACT_SUFX =	.tar.xz
 
-# C++14
-COMPILER =	base-clang ports-gcc
+# requires -std=gnu++20
+COMPILER =	base-clang
 
 MODULES =	devel/scons
 MODSCONS_ENV =	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/SDL -I${X11BASE}/include" \
