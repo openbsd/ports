@@ -1,8 +1,7 @@
-MODPY_EGG_VERSION =	223
+MODPY_EGG_VERSION =	245
 COMMENT =	in-depth comparison of files, archives, and directories
 DISTNAME =	diffoscope-${MODPY_EGG_VERSION}
 CATEGORIES =	sysutils devel
-REVISION =	1
 
 HOMEPAGE =	https://diffoscope.org/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
