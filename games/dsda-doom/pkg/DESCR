@@ -1,0 +1,17 @@
+DSDA-Doom (also Doom Speed Demos Archive - Doom) is a source port based
+on the PrBoom+um 2.6.x fork of PrBoom+ by Ryan Krafnick (Kraflab).
+
+It has extra tooling for demo recording and playback, with a focus on
+speedrunning.  It also implements several new standards for mod and map
+authors alike.
+
+New features from PrBoom+ include:
+- Heretic, Hexen, MBF21, and Doom-in-Hexen support
+- In-game console and scripting
+- Full controller support
+- Palette-based lightmode for opengl
+- Debugging features for testing
+- Strict mode for speedrunning
+- Various quality of life improvements
+- Advanced tools for TASing
+- Rewind
