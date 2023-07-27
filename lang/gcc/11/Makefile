@@ -18,7 +18,7 @@ USE_NOEXECONLY = Yes
 V = 11.2.0
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
-REVISION = 7
+REVISION = 8
 
 ADASTRAP-amd64 = adastrap-amd64-$V-3.tar.xz
 ADASTRAP-arm = adastrap-arm-4.9.4-0.tar.xz
@@ -155,7 +155,8 @@ CONFIGURE_ARGS += \
 	--enable-languages=${LANGS} \
 	--disable-libstdcxx-pch \
 	--enable-default-pie \
-	--without-isl
+	--enable-standard-branch-protection \
+	--without-isl	
 
 # Enable the stack protector by default where supported
 .if ${MACHINE_ARCH} != "riscv64"
