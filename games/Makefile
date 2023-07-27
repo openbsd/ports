@@ -76,6 +76,7 @@
      SUBDIR += doomdata
      SUBDIR += dopewars
      SUBDIR += dopewars,no_x11
+     SUBDIR += dsda-doom
      SUBDIR += duke3ddata
      SUBDIR += dunelegacy
      SUBDIR += dungeon
