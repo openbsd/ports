@@ -12,7 +12,7 @@ Index: tests/test_client.py
  from unittest.mock import patch, Mock
  
  import paramiko
-@@ -808,15 +807,7 @@ class PasswordPassphraseTests(ClientTest):
+@@ -797,15 +796,7 @@ class PasswordPassphraseTests(ClientTest):
          # Straightforward / duplicate of earlier basic password test.
          self._test_connection(password="pygmalion")
  
@@ -28,7 +28,7 @@ Index: tests/test_client.py
      def test_passphrase_kwarg_used_for_key_passphrase(self):
          # Straightforward again, with new passphrase kwarg.
          self._test_connection(
-@@ -834,7 +825,6 @@ class PasswordPassphraseTests(ClientTest):
+@@ -823,7 +814,6 @@ class PasswordPassphraseTests(ClientTest):
              password="television",
          )
  

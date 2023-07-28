@@ -18,6 +18,8 @@ lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}agent.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}agent.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}auth_handler.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}auth_handler.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}auth_strategy.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}auth_strategy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}ber.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}ber.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}buffered_pipe.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -102,6 +104,7 @@ lib/python${MODPY_VERSION}/site-packages/paramiko/_version.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/_winapi.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/agent.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/auth_handler.py
+lib/python${MODPY_VERSION}/site-packages/paramiko/auth_strategy.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/ber.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/buffered_pipe.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/channel.py
@@ -146,6 +149,7 @@ share/doc/${MODPY_PY_PREFIX}paramiko/
 share/doc/${MODPY_PY_PREFIX}paramiko/_sources/
 share/doc/${MODPY_PY_PREFIX}paramiko/_sources/api/
 share/doc/${MODPY_PY_PREFIX}paramiko/_sources/api/agent.rst.txt
+share/doc/${MODPY_PY_PREFIX}paramiko/_sources/api/auth.rst.txt
 share/doc/${MODPY_PY_PREFIX}paramiko/_sources/api/buffered_pipe.rst.txt
 share/doc/${MODPY_PY_PREFIX}paramiko/_sources/api/channel.rst.txt
 share/doc/${MODPY_PY_PREFIX}paramiko/_sources/api/client.rst.txt
@@ -182,6 +186,7 @@ share/doc/${MODPY_PY_PREFIX}paramiko/_static/underscore-1.13.1.js
 share/doc/${MODPY_PY_PREFIX}paramiko/_static/underscore.js
 share/doc/${MODPY_PY_PREFIX}paramiko/api/
 share/doc/${MODPY_PY_PREFIX}paramiko/api/agent.html
+share/doc/${MODPY_PY_PREFIX}paramiko/api/auth.html
 share/doc/${MODPY_PY_PREFIX}paramiko/api/buffered_pipe.html
 share/doc/${MODPY_PY_PREFIX}paramiko/api/channel.html
 share/doc/${MODPY_PY_PREFIX}paramiko/api/client.html
