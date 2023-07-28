@@ -6,9 +6,9 @@ User Authentication
 ===================
 
 The server uses an .htpasswd file to specify users. You can create such a file
-at the root of the persistence directory (${VARBASE}/restic by default) by
-executing the following command. In order to append new user to the file, just
-omit the -c argument.
+at the root of the persistence directory (/var/restic by default) by executing
+the following command. In order to append new user to the file, just omit the
+-c argument.
 
   # su -l -s/bin/sh _restic
   $ htpasswd .htpasswd username
@@ -27,7 +27,7 @@ of your persistence directory. The location can be changed with the flags
 The above arguments can be set by using rcctl(8):
 
   rcctl enable restic_rest_server
-  rcctl set restic_rest_server flags --tls --path ${VARBASE}/restic
+  rcctl set restic_rest_server flags --tls --path /var/restic
 
 You can either use a certificate signed by a standard CA, or generate a
 self-signed certificate with the following commands:

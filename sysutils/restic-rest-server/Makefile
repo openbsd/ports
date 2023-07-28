@@ -1,7 +1,7 @@
 COMMENT =	REST backend for the restic backup tool
 
 MODGO_MODNAME =	github.com/restic/rest-server
-MODGO_VERSION =	v0.12.0
+MODGO_VERSION =	v0.12.1
 
 DISTNAME =	rest-server-${MODGO_VERSION}
 PKGNAME =	restic-${DISTNAME:S/-v/-/}
@@ -14,8 +14,6 @@ MAINTAINER =	Stuart Henderson <stu.ports@spacehopper.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += c pthread
-
-SUBST_VARS +=		VARBASE
 
 MODULES =		lang/go
 

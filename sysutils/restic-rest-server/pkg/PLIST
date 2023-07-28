@@ -1,11 +1,11 @@
 @newgroup _restic:802
-@newuser _restic:802:_restic::Restic user:${VARBASE}/restic:/sbin/nologin
+@newuser _restic:802:_restic::Restic user:/var/restic:/sbin/nologin
 @rcscript ${RCDIR}/restic_rest_server
 @bin bin/restic-rest-server
 @owner _restic
 @group _restic
-@sample ${VARBASE}/restic/
-@extraunexec rm -rf ${VARBASE}/restic/{.,}*
+@sample /var/restic/
+@extraunexec rm -rf /var/restic/{.,}*
 @owner
 @group
 share/doc/pkg-readmes/${PKGSTEM}
