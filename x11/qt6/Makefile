@@ -32,7 +32,7 @@
      SUBDIR += qtwayland
      #SUBDIR += qtwebchannel
      #SUBDIR += qtwebengine
-     #SUBDIR += qtwebsockets
+     SUBDIR += qtwebsockets
      #SUBDIR += qtwebview
 
 # Windows only
