@@ -1,6 +1,6 @@
 COMMENT =	retrieve files from the web via HTTP, HTTPS and FTP
 
-DISTNAME =	wget-1.21.3
+DISTNAME =	wget-1.21.4
 CATEGORIES =	net
 
 HOMEPAGE =	https://www.gnu.org/software/wget/
@@ -30,6 +30,9 @@ TEST_DEPENDS =		www/p5-HTTP-Daemon ${MODPY_RUN_DEPENDS}
 TEST_DEPENDS +=		www/p5-HTTP-Message security/p5-IO-Socket-SSL
 
 FAKE_FLAGS =		sysconfdir="${PREFIX}/share/examples/wget"
+
+# for tests
+USE_GMAKE =	Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--with-ssl=openssl
