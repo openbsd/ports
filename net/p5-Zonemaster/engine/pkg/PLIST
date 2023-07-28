@@ -33,6 +33,7 @@ ${P5SITE}/Zonemaster/Engine/Test/Nameserver.pm
 ${P5SITE}/Zonemaster/Engine/Test/Syntax.pm
 ${P5SITE}/Zonemaster/Engine/Test/Zone.pm
 ${P5SITE}/Zonemaster/Engine/TestMethods.pm
+${P5SITE}/Zonemaster/Engine/TestMethodsV2.pm
 ${P5SITE}/Zonemaster/Engine/Translator.pm
 ${P5SITE}/Zonemaster/Engine/Util.pm
 ${P5SITE}/Zonemaster/Engine/Zone.pm
@@ -40,6 +41,7 @@ ${P5SITE}/auto/share/dist/Zonemaster-Engine/
 ${P5SITE}/auto/share/dist/Zonemaster-Engine/GNUmakefile
 ${P5SITE}/auto/share/dist/Zonemaster-Engine/iana-ipv4-special-registry.csv
 ${P5SITE}/auto/share/dist/Zonemaster-Engine/iana-ipv6-special-registry.csv
+${P5SITE}/auto/share/dist/Zonemaster-Engine/json2yaml.pl
 ${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/
 ${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/da/
 ${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/da/LC_MESSAGES/
@@ -62,6 +64,7 @@ ${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/sv/LC_MESSAGES/Zonemaster-Eng
 ${P5SITE}/auto/share/dist/Zonemaster-Engine/modules.txt
 ${P5SITE}/auto/share/dist/Zonemaster-Engine/named.root
 ${P5SITE}/auto/share/dist/Zonemaster-Engine/profile.json
+${P5SITE}/auto/share/dist/Zonemaster-Engine/profile.yaml
 ${P5SITE}/auto/share/dist/Zonemaster-Engine/profile_additional_properties.json
 @man man/man3p/Zonemaster::Engine.3p
 @man man/man3p/Zonemaster::Engine::ASNLookup.3p
@@ -91,6 +94,7 @@ ${P5SITE}/auto/share/dist/Zonemaster-Engine/profile_additional_properties.json
 @man man/man3p/Zonemaster::Engine::Test::Syntax.3p
 @man man/man3p/Zonemaster::Engine::Test::Zone.3p
 @man man/man3p/Zonemaster::Engine::TestMethods.3p
+@man man/man3p/Zonemaster::Engine::TestMethodsV2.3p
 @man man/man3p/Zonemaster::Engine::Translator.3p
 @man man/man3p/Zonemaster::Engine::Util.3p
 @man man/man3p/Zonemaster::Engine::Zone.3p
