@@ -17,7 +17,7 @@ Index: plugins/qca-ossl/qca-ossl.cpp
  
  using namespace QCA;
  
-@@ -1259,6 +1265,7 @@ class opensslPbkdf2Context : public KDFContext (public
+@@ -1262,6 +1268,7 @@ class opensslPbkdf2Context : public KDFContext (public
  protected:
  };
  
@@ -25,7 +25,7 @@ Index: plugins/qca-ossl/qca-ossl.cpp
  class opensslHkdfContext : public HKDFContext
  {
      Q_OBJECT
-@@ -1291,6 +1298,7 @@ class opensslHkdfContext : public HKDFContext (public)
+@@ -1294,6 +1301,7 @@ class opensslHkdfContext : public HKDFContext (public)
          return out;
      }
  };
@@ -33,7 +33,7 @@ Index: plugins/qca-ossl/qca-ossl.cpp
  
  class opensslHMACContext : public MACContext
  {
-@@ -5000,7 +5008,11 @@ class MyTLSContext : public TLSContext (public)
+@@ -5007,7 +5015,11 @@ class MyTLSContext : public TLSContext (public)
          case TLS::TLS_v1:
              ctx = SSL_CTX_new(TLS_client_method());
              SSL_CTX_set_min_proto_version(ctx, TLS1_VERSION);
@@ -45,7 +45,7 @@ Index: plugins/qca-ossl/qca-ossl.cpp
              break;
          case TLS::DTLS_v1:
          default:
-@@ -5021,7 +5033,11 @@ class MyTLSContext : public TLSContext (public)
+@@ -5028,7 +5040,11 @@ class MyTLSContext : public TLSContext (public)
          QStringList cipherList;
          for (int i = 0; i < sk_SSL_CIPHER_num(sk); ++i) {
              const SSL_CIPHER *thisCipher = sk_SSL_CIPHER_value(sk, i);
@@ -57,7 +57,7 @@ Index: plugins/qca-ossl/qca-ossl.cpp
          }
          sk_SSL_CIPHER_free(sk);
  
-@@ -5394,7 +5410,11 @@ class MyTLSContext : public TLSContext (public)
+@@ -5401,7 +5417,11 @@ class MyTLSContext : public TLSContext (public)
              sessInfo.version = TLS::TLS_v1;
          }
  
@@ -69,9 +69,9 @@ Index: plugins/qca-ossl/qca-ossl.cpp
  
          sessInfo.cipherMaxBits = SSL_get_cipher_bits(ssl, &(sessInfo.cipherBits));
  
-@@ -6696,7 +6716,9 @@ class opensslProvider : public Provider (public)
- #endif
-         list += QStringLiteral("pbkdf1(sha1)");
+@@ -6722,7 +6742,9 @@ class opensslProvider : public Provider (public)
+             list += QStringLiteral("pkcs12");
+         }
          list += QStringLiteral("pbkdf2(sha1)");
 +#ifndef LIBRESSL_VERSION_NUMBER
          list += QStringLiteral("hkdf(sha256)");
@@ -79,7 +79,7 @@ Index: plugins/qca-ossl/qca-ossl.cpp
          list += QStringLiteral("pkey");
          list += QStringLiteral("dlgroup");
          list += QStringLiteral("rsa");
-@@ -6765,8 +6787,10 @@ class opensslProvider : public Provider (public)
+@@ -6772,8 +6794,10 @@ class opensslProvider : public Provider (public)
  #endif
          else if (type == QLatin1String("pbkdf2(sha1)"))
              return new opensslPbkdf2Context(this, type);

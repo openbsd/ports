@@ -1,6 +1,6 @@
 COMMENT =	Qt Cryptographic Architecture
 
-V =		2.3.6
+V =		2.3.7
 DISTNAME =	qca-${V}
 PKGNAME =	qca-qt5-${V}
 CATEGORIES =	security
