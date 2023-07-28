@@ -1,6 +1,6 @@
 COMMENT=	GNU versions of the diff utilities
 
-VERSION=	3.9
+VERSION=	3.10
 EXTRACT_SUFX=	.tar.xz
 DISTNAME=	diffutils-${VERSION}
 PKGNAME=	gdiff-${VERSION}
