@@ -1,6 +1,8 @@
 # JIT segfaults without USE_WXNEEDED
 USE_WXNEEDED =	Yes
 
+USE_NOBTCFI =	Yes
+
 COMMENT =	virtual machine for Haxe
 
 V =		1.13
@@ -8,6 +10,7 @@ DISTNAME =	hashlink-${V}
 GH_ACCOUNT =	HaxeFoundation
 GH_PROJECT =	hashlink
 GH_TAGNAME =	${V}
+REVISION =	0
 
 SHARED_LIBS =	hl	1.0	# 1.12
 
