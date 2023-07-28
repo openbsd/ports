@@ -78,6 +78,7 @@ share/calc/dotest.cal
 share/calc/ellip.cal
 share/calc/factorial.cal
 share/calc/factorial2.cal
+share/calc/fnv_tool.cal
 share/calc/gvec.cal
 share/calc/hello.cal
 share/calc/help/
