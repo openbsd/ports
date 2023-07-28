@@ -84,7 +84,8 @@ GMAKE=		${LOCALBASE}/bin/gmake
 PARALLEL_MAKE_FLAGS=
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--disable-option-checking \
+CONFIGURE_ARGS=	OBJCOPY=objcopy OBJDUMP=objdump READLINK=readlink \
+		--disable-option-checking \
 		--with-boot-jdk=${BOOT_JDK} \
 		--with-package-path=${LOCALBASE} \
 		--with-fontconfig=${X11BASE} \
@@ -99,7 +100,8 @@ CONFIGURE_ARGS=	--disable-option-checking \
 		--with-milestone=fcs \
 		--with-update-version=${UPDATE_VER} \
 		--with-build-number=${BUILD_VER}
-CONFIGURE_ENV+=	ac_cv_path_NAWK=awk
+CONFIGURE_ENV+=	ac_cv_path_GIT="" ac_cv_path_HG="" ac_cv_path_NAWK=awk \
+		ac_cv_prog_BDEPS_FTP=ftp ac_cv_prog_BDEPS_UNZIP=unzip
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/common/autoconf/build-aux
 
 MAKE_FLAGS=	LOG=debug
