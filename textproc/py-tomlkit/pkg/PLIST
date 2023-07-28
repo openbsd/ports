@@ -12,6 +12,8 @@ lib/python${MODPY_VERSION}/site-packages/tomlkit/${MODPY_PYCACHE}__init__.${MODP
 lib/python${MODPY_VERSION}/site-packages/tomlkit/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tomlkit/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tomlkit/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tomlkit/${MODPY_PYCACHE}_types.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/tomlkit/${MODPY_PYCACHE}_types.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tomlkit/${MODPY_PYCACHE}_utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tomlkit/${MODPY_PYCACHE}_utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tomlkit/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -33,6 +35,7 @@ lib/python${MODPY_VERSION}/site-packages/tomlkit/${MODPY_PYCACHE}toml_document.$
 lib/python${MODPY_VERSION}/site-packages/tomlkit/${MODPY_PYCACHE}toml_file.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tomlkit/${MODPY_PYCACHE}toml_file.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tomlkit/_compat.py
+lib/python${MODPY_VERSION}/site-packages/tomlkit/_types.py
 lib/python${MODPY_VERSION}/site-packages/tomlkit/_utils.py
 lib/python${MODPY_VERSION}/site-packages/tomlkit/api.py
 lib/python${MODPY_VERSION}/site-packages/tomlkit/container.py
