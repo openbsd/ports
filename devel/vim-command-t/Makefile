@@ -2,13 +2,11 @@ COMMENT =		fast, intuitive file opening in VIM
 
 V =			1.11.2
 DISTNAME =		vim-command-t-${V}
-REVISION =		7
+REVISION =		8
 
 CATEGORIES =		devel editors
 
 HOMEPAGE =		https://wincent.com/products/command-t
-
-MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
 # BSD2
 PERMIT_PACKAGE =	Yes
