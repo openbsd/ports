@@ -4,7 +4,8 @@
 
 Install the official Web eID extension
     https://chrome.google.com/webstore/detail/ncibgoaomkmdpilpocfeponihegamlic
-and add the following unveil rules to ${SYSCONFDIR}/chromium/unveil.main:
+and add the following unveil rules to either of
+    ${SYSCONFDIR}/{chromium,iridium,ungoogled-chromium}/unveil.main:
 
     # native messaging host
     /usr/local/bin r

@@ -1,5 +1,5 @@
 COMMENT-main =		native messaging host for Web eID browser extension
-COMMENT-chrome =	chromium extension
+COMMENT-chrome =	Chromium extension
 CATEGORIES =		security www
 
 # open "release tarballs with bundled git submodules"
@@ -11,6 +11,7 @@ DISTFILES =		${GH_DISTFILE}
 PKGNAME-main =		${PKGNAME:S/app/native/}
 REVISION-main =		0
 PKGNAME-chrome =	${PKGNAME:S/app/chrome/}
+REVISION-chrome =	0
 
 # TODO: firefox
 MULTI_PACKAGES =	-main -chrome
@@ -67,9 +68,7 @@ LIB_DEPENDS-main =	${MODQT_LIB_DEPENDS} \
 RUN_DEPENDS-main =	devel/desktop-file-utils \
 			x11/gtk+4,-guic
 
-# TODO support www/iridium and www/ungoogled-chromium as well
-RUN_DEPENDS-chrome =	${FULLPKGPATH-main} \
-			www/chromium
+RUN_DEPENDS-chrome =	${FULLPKGPATH-main}
 LIB_DEPENDS-chrome =	# empty
 
 # XXX pcsclite is detected with pkg-config, but its -I and -L are ignored

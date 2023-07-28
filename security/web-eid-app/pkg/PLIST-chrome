@@ -1,10 +1,18 @@
-share/doc/pkg-readmes/web-eid-chrome
+share/doc/pkg-readmes/${PKGSTEM}
 share/google-chrome/
 share/google-chrome/extensions/
 @sample ${SYSCONFDIR}/chromium/extensions/
+@sample ${SYSCONFDIR}/iridium/extensions/
+@sample ${SYSCONFDIR}/ungoogled-chromium/extensions/
 share/google-chrome/extensions/ncibgoaomkmdpilpocfeponihegamlic.json
 @sample ${SYSCONFDIR}/chromium/extensions/ncibgoaomkmdpilpocfeponihegamlic.json
+@sample ${SYSCONFDIR}/iridium/extensions/ncibgoaomkmdpilpocfeponihegamlic.json
+@sample ${SYSCONFDIR}/ungoogled-chromium/extensions/ncibgoaomkmdpilpocfeponihegamlic.json
 share/web-eid/
 @sample ${SYSCONFDIR}/chromium/native-messaging-hosts/
+@sample ${SYSCONFDIR}/iridium/native-messaging-hosts/
+@sample ${SYSCONFDIR}/ungoogled-chromium/native-messaging-hosts/
 share/web-eid/eu.webeid.json
 @sample ${SYSCONFDIR}/chromium/native-messaging-hosts/eu.webeid.json
+@sample ${SYSCONFDIR}/iridium/native-messaging-hosts/eu.webeid.json
+@sample ${SYSCONFDIR}/ungoogled-chromium/native-messaging-hosts/eu.webeid.json
