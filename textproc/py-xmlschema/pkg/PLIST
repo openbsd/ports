@@ -94,6 +94,10 @@ lib/python${MODPY_VERSION}/site-packages/xmlschema/locale/it/
 lib/python${MODPY_VERSION}/site-packages/xmlschema/locale/it/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/xmlschema/locale/it/LC_MESSAGES/xmlschema.mo
 lib/python${MODPY_VERSION}/site-packages/xmlschema/locale/it/LC_MESSAGES/xmlschema.po
+lib/python${MODPY_VERSION}/site-packages/xmlschema/locale/pl/
+lib/python${MODPY_VERSION}/site-packages/xmlschema/locale/pl/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/xmlschema/locale/pl/LC_MESSAGES/xmlschema.mo
+lib/python${MODPY_VERSION}/site-packages/xmlschema/locale/pl/LC_MESSAGES/xmlschema.po
 lib/python${MODPY_VERSION}/site-packages/xmlschema/locale/ru/
 lib/python${MODPY_VERSION}/site-packages/xmlschema/locale/ru/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/xmlschema/locale/ru/LC_MESSAGES/xmlschema.mo
@@ -103,6 +107,9 @@ lib/python${MODPY_VERSION}/site-packages/xmlschema/namespaces.py
 lib/python${MODPY_VERSION}/site-packages/xmlschema/py.typed
 lib/python${MODPY_VERSION}/site-packages/xmlschema/resources.py
 lib/python${MODPY_VERSION}/site-packages/xmlschema/schemas/
+lib/python${MODPY_VERSION}/site-packages/xmlschema/schemas/DSIG/
+lib/python${MODPY_VERSION}/site-packages/xmlschema/schemas/DSIG/xmldsig-core-schema.xsd
+lib/python${MODPY_VERSION}/site-packages/xmlschema/schemas/DSIG/xmldsig11-schema.xsd
 lib/python${MODPY_VERSION}/site-packages/xmlschema/schemas/HFP/
 lib/python${MODPY_VERSION}/site-packages/xmlschema/schemas/HFP/XMLSchema-hasFacetAndProperty_minimal.xsd
 lib/python${MODPY_VERSION}/site-packages/xmlschema/schemas/VC/
@@ -112,6 +119,9 @@ lib/python${MODPY_VERSION}/site-packages/xmlschema/schemas/WSDL/soap-encoding.xs
 lib/python${MODPY_VERSION}/site-packages/xmlschema/schemas/WSDL/soap-envelope.xsd
 lib/python${MODPY_VERSION}/site-packages/xmlschema/schemas/WSDL/wsdl-soap.xsd
 lib/python${MODPY_VERSION}/site-packages/xmlschema/schemas/WSDL/wsdl.xsd
+lib/python${MODPY_VERSION}/site-packages/xmlschema/schemas/XENC/
+lib/python${MODPY_VERSION}/site-packages/xmlschema/schemas/XENC/xenc-schema-11.xsd
+lib/python${MODPY_VERSION}/site-packages/xmlschema/schemas/XENC/xenc-schema.xsd
 lib/python${MODPY_VERSION}/site-packages/xmlschema/schemas/XHTML/
 lib/python${MODPY_VERSION}/site-packages/xmlschema/schemas/XHTML/xhtml1-strict.xsd
 lib/python${MODPY_VERSION}/site-packages/xmlschema/schemas/XLINK/
