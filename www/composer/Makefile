@@ -4,13 +4,14 @@ CATEGORIES=	www devel
 
 PORTROACH=	site:https://github.com/composer/composer/archive/
 
-V=		2.5.7
-EPOCH=		0
+V=		2.5.8
 MASTER_SITES=	https://getcomposer.org/download/$V/
 DISTNAME=	composer-$V
 DISTFILES=	composer-$V{composer}.phar
 EXTRACT_SUFX=	.phar
 EXTRACT_ONLY=
+
+EPOCH=		0
 
 HOMEPAGE=	https://getcomposer.org/
 
