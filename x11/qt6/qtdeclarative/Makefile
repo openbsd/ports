@@ -5,8 +5,8 @@ QT6NAME =	QtDeclarative
 COMMENT =	Qt6 Quick and QML components
 PKGSPEC =	qt6-qtdeclarative-${QT6_PKGSPEC}
 
-SHARED_LIBS =   Qt6Qml                    3.0 # 6.5
-SHARED_LIBS +=  Qt6Quick                  4.0 # 6.5
+SHARED_LIBS =   Qt6Qml                    3.1 # 6.5
+SHARED_LIBS +=  Qt6Quick                  4.1 # 6.5
 SHARED_LIBS +=  Qt6QuickParticles         1.0 # 6.5
 SHARED_LIBS +=  Qt6QuickTest              1.0 # 6.5
 SHARED_LIBS +=  Qt6QuickWidgets           1.0 # 6.5
@@ -28,8 +28,8 @@ SHARED_LIBS +=  Qt6QuickDialogs2          1.0 # 6.5
 SHARED_LIBS +=  Qt6QuickDialogs2QuickImpl 2.0 # 6.5
 SHARED_LIBS +=  Qt6QuickDialogs2Utils     1.0 # 6.5
 SHARED_LIBS +=  Qt6QuickLayouts           3.0 # 6.5
-SHARED_LIBS +=  Qt6QuickTemplates2        3.0 # 6.5
-SHARED_LIBS +=  Qt6QmlCompiler            1.1 # 6.5
+SHARED_LIBS +=  Qt6QuickTemplates2        3.1 # 6.5
+SHARED_LIBS +=  Qt6QmlCompiler            1.2 # 6.5
 SHARED_LIBS +=  Qt6QuickEffects           1.0 # 6.5
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6JsonRpc Qt6LanguageServer

@@ -17,6 +17,7 @@ share/doc/qt6/config/exampleurl-qtlottie.qdocconf
 share/doc/qt6/config/exampleurl-qtmacextras.qdocconf
 share/doc/qt6/config/exampleurl-qtmultimedia.qdocconf
 share/doc/qt6/config/exampleurl-qtnetworkauth.qdocconf
+share/doc/qt6/config/exampleurl-qtpositioning.qdocconf
 share/doc/qt6/config/exampleurl-qtpurchasing.qdocconf
 share/doc/qt6/config/exampleurl-qtquickcontrols.qdocconf
 share/doc/qt6/config/exampleurl-qtquickcontrols2.qdocconf

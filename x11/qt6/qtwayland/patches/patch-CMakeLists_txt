@@ -1,9 +1,9 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -17,7 +17,7 @@ find_package(Qt6 ${PROJECT_VERSION} CONFIG REQUIRED CO
-     BuildInternals
+@@ -18,7 +18,7 @@ find_package(Qt6 ${PROJECT_VERSION} CONFIG REQUIRED CO
  )
+ qt_internal_project_setup()
  
 -if(NOT MACOS AND NOT QNX AND (ANDROID OR NOT LINUX))
 +if((NOT MACOS AND NOT QNX AND (ANDROID OR NOT LINUX)) AND NOT OPENBSD)

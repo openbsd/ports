@@ -1,7 +1,7 @@
 Index: cmake/QtBuild.cmake
 --- cmake/QtBuild.cmake.orig
 +++ cmake/QtBuild.cmake
-@@ -433,6 +433,20 @@ if(CMAKE_HOST_APPLE AND APPLE)
+@@ -441,6 +441,20 @@ if(CMAKE_HOST_APPLE AND APPLE)
          set(CMAKE_${lang}_ARCHIVE_APPEND "<CMAKE_AR> qS <TARGET> <LINK_FLAGS> <OBJECTS>")
          set(CMAKE_${lang}_ARCHIVE_FINISH "<CMAKE_RANLIB> -no_warning_for_no_symbols <TARGET>")
      endforeach()

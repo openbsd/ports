@@ -6,7 +6,6 @@ COMMENT-mysql =		MySQL plugin for Qt6
 COMMENT-psql =		PostgresSQL plugin for Qt6
 
 PKGSPEC-main =		qt6-qtbase-${QT6_PKGSPEC}
-REVISION-main =		0
 
 PKGNAME-mysql =		qt6-mysql-${VERSION}
 PKGNAME-global =	qt6-global-${VERSION}
@@ -17,10 +16,10 @@ PKG_ARCH-global =	*
 DPB_PROPERTIES =	parallel
 
 SHARED_LIBS +=  Qt6Concurrent                0.1 # 6.5
-SHARED_LIBS +=  Qt6Core                      2.0 # 6.5
+SHARED_LIBS +=  Qt6Core                      3.0 # 6.5
 SHARED_LIBS +=  Qt6DBus                      2.0 # 6.5
 SHARED_LIBS +=  Qt6Gui                       4.0 # 6.5
-SHARED_LIBS +=  Qt6Network                   1.0 # 6.5
+SHARED_LIBS +=  Qt6Network                   2.0 # 6.5
 SHARED_LIBS +=  Qt6OpenGL                    2.0 # 6.5
 SHARED_LIBS +=  Qt6PrintSupport              0.2 # 6.5
 SHARED_LIBS +=  Qt6Sql                       1.0 # 6.5
@@ -40,11 +39,12 @@ WANTLIB-main += ${COMPILER_LIBCXX} EGL GL ICE SM X11 X11-xcb atk-1.0
 WANTLIB-main += b2 brotlidec c cairo cairo-gobject crypto cups dbus-1
 WANTLIB-main += double-conversion drm execinfo fontconfig freetype
 WANTLIB-main += gbm gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
-WANTLIB-main += gthread-2.0 gtk-3 harfbuzz icudata icui18n icuuc iodbc
-WANTLIB-main += jpeg m pango-1.0 pangocairo-1.0 pcre2-16 png ssl xcb
-WANTLIB-main += xcb-glx xcb-icccm xcb-image xcb-keysyms xcb-randr xcb-render
-WANTLIB-main += xcb-render-util xcb-shape xcb-shm xcb-sync xcb-xfixes
-WANTLIB-main += xcb-xkb xkbcommon xkbcommon-x11 z zstd
+WANTLIB-main += gthread-2.0 gtk-3 harfbuzz icudata icui18n icuuc intl
+WANTLIB-main += iodbc jpeg m pango-1.0 pangocairo-1.0 pcre2-16 png
+WANTLIB-main += ssl xcb xcb-cursor xcb-glx xcb-icccm xcb-image xcb-keysyms
+WANTLIB-main += xcb-randr xcb-render xcb-render-util xcb-shape xcb-shm
+WANTLIB-main += xcb-sync xcb-xfixes xcb-xkb xkbcommon xkbcommon-x11
+WANTLIB-main += z zstd
 
 # those come from gthread-2.0, not used by Qt itself
 WANTLIB-main +=		intl
