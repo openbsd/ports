@@ -1,5 +1,5 @@
 COMMENT =		colorized diff tool
-DISTNAME =		colordiff-1.0.20
+DISTNAME =		colordiff-1.0.21
 CATEGORIES =		devel
 HOMEPAGE =		https://www.colordiff.org/
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
