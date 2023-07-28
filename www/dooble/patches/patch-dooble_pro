@@ -3,9 +3,9 @@ Remove -O3 and -Werror.
 Index: dooble.pro
 --- dooble.pro.orig
 +++ dooble.pro
-@@ -284,13 +284,12 @@ QMAKE_CXXFLAGS_RELEASE += -O3 \
- QMAKE_CXXFLAGS_RELEASE -= -O2
- } else:win32 {
+@@ -305,13 +305,12 @@ versionAtLeast(QT_VERSION, 6.0.0) {
+ QMAKE_LFLAGS += /entry:mainCRTStartup
+ }
  } else {
 -QMAKE_CXXFLAGS_RELEASE += -O3 \
 +QMAKE_CXXFLAGS_RELEASE += \
@@ -17,8 +17,8 @@ Index: dooble.pro
 -                          -Werror \
                            -Wextra \
                            -Wformat-overflow=2 \
- 			  -Wformat-signedness \
-@@ -314,7 +313,6 @@ QMAKE_CXXFLAGS_RELEASE += -O3 \
+                           -Wformat-security \
+@@ -342,7 +341,6 @@ QMAKE_CXXFLAGS_RELEASE += -Wl,-z,relro \
  versionAtLeast(QT_VERSION, 6.0.0) {
  QMAKE_CXXFLAGS_RELEASE += -Wno-int-in-bool-context
  }
