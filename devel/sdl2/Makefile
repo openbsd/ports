@@ -3,6 +3,7 @@ COMMENT=	cross-platform multimedia library
 V=		2.28.1
 DISTNAME=	SDL2-${V}
 PKGNAME=	sdl2-${V}
+REVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	https://www.libsdl.org/release/
 
