@@ -1,8 +1,10 @@
-NOT_FOR_ARCHS +=	riscv64
+# codegen for mips, mips64, riscv64, and sparc64 is present,
+# but it needs some portage for OpenBSD.
+ONLY_FOR_ARCHS +=	aarch64 amd64 arm i386 powerpc powerpc64
 
 COMMENT =	high performance Common Lisp compiler
 
-V =		2.3.6
+V =		2.3.7
 DISTNAME =	sbcl-${V}-source
 PKGNAME =	sbcl-${V}
 
@@ -66,15 +68,20 @@ ERRORS +=	"Fatal: unknown BOOTSTRAP_METHOD"
 
 # sb-thread is available only on some architectures and required on others
 .if ${FLAVOR:Mthreads}
-ONLY_FOR_ARCHS +=	riscv64 powerpc powerpc64 i386 amd64 aarch64
 EXTRA_PARAMS +=		--with-sb-thread
 WANTLIB +=		pthread
 
 # sb-thread on i386 requires i386_set_ldt()
 NOT_FOR_ARCHS +=	i386
+
+# no support for sb-thread
+NOT_FOR_ARCHS +=	arm
+
 .else
-NOT_FOR_ARCHS +=	aarch64 powerpc64
 EXTRA_PARAMS +=		--without-sb-thread
+
+# no support without sb-thread
+NOT_FOR_ARCHS +=	aarch64 powerpc64
 .endif
 
 # sb-simd is available on amd64 only
