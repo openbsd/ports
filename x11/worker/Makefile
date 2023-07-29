@@ -1,6 +1,6 @@
 BROKEN-hppa =	no atomic ops
 COMMENT =	Midnight Commander-like file manager for X
-DISTNAME =	worker-4.8.1
+DISTNAME =	worker-4.12.1
 CATEGORIES =	x11
 
 HOMEPAGE =	http://www.boomerangsworld.de/
@@ -27,8 +27,5 @@ CONFIGURE_ARGS =	--without-avfs \
 			--without-libmagic \
 			--disable-inotify \
 			--disable-lua
-
-TEST_DEPENDS =	devel/check
-TEST_FLAGS =	CXXFLAGS="${CXXFLAGS} -std=c++11 -I${LOCALBASE}/include"
 
 .include <bsd.port.mk>

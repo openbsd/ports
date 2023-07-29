@@ -9,6 +9,8 @@ man/it/man1/
 share/appdata/
 share/appdata/worker.appdata.xml
 share/applications/worker.desktop
+share/metainfo/
+share/metainfo/de.boomerangsworld.worker.metainfo.xml
 share/pixmaps/
 share/pixmaps/WorkerIcon.xpm
 share/pixmaps/WorkerIcon16.xpm
@@ -92,6 +94,8 @@ share/worker/config-updates/update-3.8.4-utf8.conf
 share/worker/config-updates/update-3.8.4.conf
 share/worker/config-updates/update-3.9.0-utf8.conf
 share/worker/config-updates/update-3.9.0.conf
+share/worker/config-updates/update-4.10.0-utf8.conf
+share/worker/config-updates/update-4.10.0.conf
 share/worker/config-updates/update-4.4.0-utf8.conf
 share/worker/config-updates/update-4.4.0.conf
 share/worker/config-updates/update-4.4.1-utf8.conf
