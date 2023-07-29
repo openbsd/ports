@@ -2,7 +2,7 @@ COMMENT=		source code editing widget
 
 GH_ACCOUNT=		gedit-technology
 GH_PROJECT=		libgedit-gtksourceview
-GH_TAGNAME=		299.0.3
+GH_TAGNAME=		299.0.4
 
 SHARED_LIBS += gedit-gtksourceview-300   0.0 # 0
 

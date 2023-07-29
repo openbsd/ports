@@ -257,7 +257,6 @@ share/libgedit-gtksourceview-300/language-specs/systemverilog.lang
 share/libgedit-gtksourceview-300/language-specs/t2t.lang
 share/libgedit-gtksourceview-300/language-specs/tcl.lang
 share/libgedit-gtksourceview-300/language-specs/tera.lang
-share/libgedit-gtksourceview-300/language-specs/testv1.lang
 share/libgedit-gtksourceview-300/language-specs/texinfo.lang
 share/libgedit-gtksourceview-300/language-specs/thrift.lang
 share/libgedit-gtksourceview-300/language-specs/toml.lang
