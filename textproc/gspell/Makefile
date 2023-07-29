@@ -1,7 +1,7 @@
 COMMENT=		spell-checking library for GTK+
 
 GNOME_PROJECT=		gspell
-GNOME_VERSION=		1.12.1
+GNOME_VERSION=		1.12.2
 
 CATEGORIES=		textproc
 
