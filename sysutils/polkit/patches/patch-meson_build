@@ -3,7 +3,7 @@ Fix check for whether setnetgrent has a return value
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -184,8 +184,11 @@ setnetgrent_return_src = '''
+@@ -189,8 +189,11 @@ setnetgrent_return_src = '''
    };
  '''
  
