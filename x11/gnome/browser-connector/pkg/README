@@ -1,0 +1,14 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+In order to use browser integration you need to add specific unveil rules.
+
+Chrome-based browsers
+---------------------
+Append the following rules to ${SYSCONFDIR}/BROWSER/unveil.main, where BROWSER
+is one of chromium, iridium, or ungoogled-chromium:
+
+# gnome-browser-connector
+${LOCALBASE}/bin r
+${LOCALBASE}/bin/gnome-browser-connector-host rx
