@@ -9,6 +9,7 @@ ${LOCALBASE}/bin r
 ${LOCALBASE}/bin/keepassxc-proxy rx
 
 to the corresponding configuration file:
-* Chromium ->	${SYSCONFDIR}/chromium/unveil.main
-* Firefox ->	${SYSCONFDIR}/firefox/unveil.main
-* Iridium ->	${SYSCONFDIR}/iridium/unveil.main
+* Chromium ->		${SYSCONFDIR}/chromium/unveil.main
+* Firefox ->		${SYSCONFDIR}/firefox/unveil.main
+* Iridium ->		${SYSCONFDIR}/iridium/unveil.main
+* Ungoogled-chromium ->	${SYSCONFDIR}/ungoogled-chromium/unveil.main
