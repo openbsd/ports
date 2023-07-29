@@ -60,7 +60,6 @@ lib/qbs/plugins/
 @so lib/qbs/plugins/libqbs_qt_scanner.so
 @so lib/qbs/plugins/libvisualstudiogenerator.so
 libexec/qbs/
-libexec/qbs/dmgbuild
 @bin libexec/qbs/qbs_processlauncher
 share/qbs/
 share/qbs/examples/
@@ -654,6 +653,7 @@ share/qbs/python/biplist/
 share/qbs/python/biplist/__init__.py
 share/qbs/python/dmgbuild/
 share/qbs/python/dmgbuild/__init__.py
+share/qbs/python/dmgbuild/__main__.py
 share/qbs/python/dmgbuild/badge.py
 share/qbs/python/dmgbuild/colors.py
 share/qbs/python/dmgbuild/core.py
