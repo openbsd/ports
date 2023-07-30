@@ -1,7 +1,7 @@
 COMMENT=		plugins for Gedit
 
 GNOME_PROJECT=		gedit-plugins
-GNOME_VERSION=		45.0
+GNOME_VERSION=		46.0
 
 CATEGORIES=		editors
 
