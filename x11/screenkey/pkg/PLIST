@@ -23,6 +23,12 @@ lib/python${MODPY_VERSION}/site-packages/Screenkey/locale/
 lib/python${MODPY_VERSION}/site-packages/Screenkey/locale/ca/
 lib/python${MODPY_VERSION}/site-packages/Screenkey/locale/ca/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/Screenkey/locale/ca/LC_MESSAGES/screenkey.mo
+lib/python${MODPY_VERSION}/site-packages/Screenkey/locale/de/
+lib/python${MODPY_VERSION}/site-packages/Screenkey/locale/de/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/Screenkey/locale/de/LC_MESSAGES/screenkey.mo
+lib/python${MODPY_VERSION}/site-packages/Screenkey/locale/de_DE/
+lib/python${MODPY_VERSION}/site-packages/Screenkey/locale/de_DE/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/Screenkey/locale/de_DE/LC_MESSAGES/screenkey.mo
 lib/python${MODPY_VERSION}/site-packages/Screenkey/locale/es/
 lib/python${MODPY_VERSION}/site-packages/Screenkey/locale/es/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/Screenkey/locale/es/LC_MESSAGES/screenkey.mo
@@ -41,6 +47,7 @@ lib/python${MODPY_VERSION}/site-packages/Screenkey/locale/zh_CN/LC_MESSAGES/scre
 lib/python${MODPY_VERSION}/site-packages/Screenkey/screenkey.py
 lib/python${MODPY_VERSION}/site-packages/Screenkey/xlib.py
 lib/python${MODPY_VERSION}/site-packages/screenkey-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/screenkey-${MODPY_EGG_VERSION}.dist-info/COPYING.txt
 lib/python${MODPY_VERSION}/site-packages/screenkey-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/screenkey-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/screenkey-${MODPY_EGG_VERSION}.dist-info/WHEEL

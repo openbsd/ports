@@ -1,8 +1,7 @@
 COMMENT =		display keypresses on screen
 
-MODPY_EGG_VERSION =	1.4
+MODPY_EGG_VERSION =	1.5
 DISTNAME =		screenkey-${MODPY_EGG_VERSION}
-REVISION =		2
 
 CATEGORIES =		x11
 
