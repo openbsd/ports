@@ -1,5 +1,5 @@
 COMMENT =	small and easy to use console text editor
-DISTNAME =	dte-1.10
+DISTNAME =	dte-1.11.1
 CATEGORIES =	editors
 
 HOMEPAGE =	https://craigbarnes.gitlab.io/dte/
@@ -16,6 +16,8 @@ COMPILER =	base-clang ports-gcc
 COMPILER_LANGS =	c
 
 LIB_DEPENDS =	converters/libiconv
+
+RUN_DEPENDS =	devel/desktop-file-utils
 
 USE_GMAKE =	Yes
 MAKE_FILE =	GNUmakefile
