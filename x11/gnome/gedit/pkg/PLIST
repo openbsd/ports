@@ -1,27 +1,27 @@
 @bin bin/gedit
-include/gedit-45/
-include/gedit-45/gedit/
-include/gedit-45/gedit/gedit-app-activatable.h
-include/gedit-45/gedit/gedit-app.h
-include/gedit-45/gedit/gedit-commands.h
-include/gedit-45/gedit/gedit-debug.h
-include/gedit-45/gedit/gedit-document.h
-include/gedit-45/gedit/gedit-encodings-combo-box.h
-include/gedit-45/gedit/gedit-enum-types.h
-include/gedit-45/gedit/gedit-menu-extension.h
-include/gedit-45/gedit/gedit-message-bus.h
-include/gedit-45/gedit/gedit-message.h
-include/gedit-45/gedit/gedit-statusbar.h
-include/gedit-45/gedit/gedit-tab.h
-include/gedit-45/gedit/gedit-utils.h
-include/gedit-45/gedit/gedit-view-activatable.h
-include/gedit-45/gedit/gedit-view.h
-include/gedit-45/gedit/gedit-window-activatable.h
-include/gedit-45/gedit/gedit-window.h
+include/gedit-46/
+include/gedit-46/gedit/
+include/gedit-46/gedit/gedit-app-activatable.h
+include/gedit-46/gedit/gedit-app.h
+include/gedit-46/gedit/gedit-commands.h
+include/gedit-46/gedit/gedit-debug.h
+include/gedit-46/gedit/gedit-document.h
+include/gedit-46/gedit/gedit-encodings-combo-box.h
+include/gedit-46/gedit/gedit-enum-types.h
+include/gedit-46/gedit/gedit-menu-extension.h
+include/gedit-46/gedit/gedit-message-bus.h
+include/gedit-46/gedit/gedit-message.h
+include/gedit-46/gedit/gedit-statusbar.h
+include/gedit-46/gedit/gedit-tab.h
+include/gedit-46/gedit/gedit-utils.h
+include/gedit-46/gedit/gedit-view-activatable.h
+include/gedit-46/gedit/gedit-view.h
+include/gedit-46/gedit/gedit-window-activatable.h
+include/gedit-46/gedit/gedit-window.h
 lib/gedit/
 lib/gedit/girepository-1.0/
 lib/gedit/girepository-1.0/Gedit-3.0.typelib
-@so lib/gedit/libgedit-45.so
+@so lib/gedit/libgedit-46.so
 lib/gedit/plugins/
 lib/gedit/plugins/docinfo.plugin
 lib/gedit/plugins/externaltools/
@@ -81,6 +81,7 @@ lib/gedit/plugins/spell.plugin
 lib/gedit/plugins/time.plugin
 lib/pkgconfig/gedit.pc
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/Gedit.py
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}Gedit.${MODPY_PYC_MAGIC_TAG}pyc
 @man man/man1/gedit.1
 share/applications/org.gnome.gedit.desktop
 share/dbus-1/services/org.gnome.gedit.service
@@ -172,6 +173,7 @@ share/gtk-doc/html/gedit/ix02.html
 share/gtk-doc/html/gedit/ix03.html
 share/gtk-doc/html/gedit/ix04.html
 share/gtk-doc/html/gedit/ix05.html
+share/gtk-doc/html/gedit/ix06.html
 share/gtk-doc/html/gedit/left-insensitive.png
 share/gtk-doc/html/gedit/left.png
 share/gtk-doc/html/gedit/right-insensitive.png

@@ -1,7 +1,7 @@
 COMMENT=		lightweight GNOME text editor
 
 GNOME_PROJECT=		gedit
-GNOME_VERSION=		45.0
+GNOME_VERSION=		46.0
 
 CATEGORIES=		editors
 
@@ -10,7 +10,7 @@ HOMEPAGE=		https://gedit-technology.net/
 # GPLv2+
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += amtk-5 atk-1.0 c cairo gdk-3 gdk_pixbuf-2.0 gedit-gtksourceview-300
+WANTLIB += c cairo gdk-3 gdk_pixbuf-2.0 gedit-amtk-5 gedit-gtksourceview-300
 WANTLIB += gio-2.0 girepository-1.0 glib-2.0 gobject-2.0 gspell-1
 WANTLIB += gtk-3 intl m pango-1.0 peas-1.0 peas-gtk-1.0 tepl-6
 
