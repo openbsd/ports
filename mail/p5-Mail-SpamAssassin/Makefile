@@ -3,6 +3,7 @@ COMMENT=		mailfilter to identify and mark spam
 VER=			4.0.0
 DISTNAME=		Mail-SpamAssassin-${VER}
 PKGNAME=		p5-${DISTNAME}
+REVISION=		0
 RULESNAME=		Mail-SpamAssassin-rules-${VER}.r1905950.tgz
 CATEGORIES=		mail perl5
 
