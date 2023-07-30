@@ -17,6 +17,7 @@ share/dibuja/brushes/09-heart.png
 share/dibuja/brushes/11-crosshatch.png
 share/dibuja/brushes/12-rectangle.png
 share/dibuja/brushes/13-ellipse.png
+share/dibuja/brushes/image-brush.png
 share/dibuja/brushes/rand_dots.png
 share/dibuja/brushes/smiley.png
 share/dibuja/ui/
@@ -63,6 +64,7 @@ share/doc/dibuja/polygon-tool.png
 share/doc/dibuja/polyline-tool.png
 share/doc/dibuja/rectangle-tool.png
 share/doc/dibuja/rectangular-selection.png
+share/doc/dibuja/selection-leave-cutout.png
 share/doc/dibuja/selection.png
 share/doc/dibuja/stock-tool-ellipse-select-22.png
 share/doc/dibuja/stock-tool-free-select-22.png
