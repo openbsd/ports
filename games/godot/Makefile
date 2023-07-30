@@ -4,12 +4,10 @@ COMMENT-main =	2D and 3D game engine
 COMMENT-tools=	2D and 3D game engine (with tools)
 
 V =		3.5.2
-# Later versions of GodotSteam need isteamdualsense.h.
-# Can only update once that is part of games/goldberg_emulator
-GODOTSTEAM_V =	g35-s155-gs3171
+GODOTSTEAM_V =	g352-s157-gs3193
 DISTNAME =	godot-${V}-stable
 PKGNAME =	godot-${V}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	games
 
@@ -36,7 +34,7 @@ WANTLIB-tools = ${WANTLIB}
 COMPILER =	base-clang ports-gcc
 
 MASTER_SITES =	https://downloads.tuxfamily.org/godotengine/${V}/
-MASTER_SITES0 =	https://github.com/Gramps/GodotSteam/archive/refs/tags/
+MASTER_SITES0 =	https://github.com/CoaguCo-Industries/GodotSteam/archive/refs/tags/
 DISTFILES =     ${DISTNAME}${EXTRACT_SUFX} \
 		${GODOTSTEAM_V}.tar.gz:0
 EXTRACT_SUFX =	.tar.xz
@@ -66,7 +64,7 @@ MODSCONS_FLAGS =	CC="${CC}" \
 			builtin_pcre2=no \
 			builtin_zlib=no \
 			builtin_zstd=no \
-			custom_modules=${WRKSRC}/GodotSteam/godotsteam \
+			custom_modules=${WRKSRC}/godotsteam \
 			progress=no \
 			pulseaudio=no \
 			verbose=yes \
@@ -120,12 +118,12 @@ WANTLIB +=     atomic
 
 CFLAGS +=	-I${LOCALBASE}/include/goldberg_emulator
 
-# symlink to allow patching GodotSteam
+# copy over to allow patching GodotSteam
 post-extract:
 	cp -R	${FILESDIR}/sndio ${WRKDIST}/drivers
 	cp	${FILESDIR}/ujoy/joypad_openbsd.{cpp,h} \
 		${WRKDIST}/platform/x11/
-	cp -R	${WRKDIR}/GodotSteam-${GODOTSTEAM_V} ${WRKSRC}/GodotSteam
+	cp -R	${WRKDIR}/GodotSteam-${GODOTSTEAM_V} ${WRKSRC}/godotsteam
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/misc/dist/linux/*.desktop

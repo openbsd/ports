@@ -1,0 +1,13 @@
+don't use isteamdualsense.h API while not part of games/goldberg_emulator
+
+Index: godotsteam/godotsteam.h
+--- godotsteam/godotsteam.h.orig
++++ godotsteam/godotsteam.h
+@@ -22,7 +22,6 @@
+ // Include Steamworks API headers
+ #include "steam/steam_api.h"
+ #include "steam/steamnetworkingfakeip.h"
+-#include "steam/isteamdualsense.h"
+ 
+ // Include Godot headers
+ #include "core/object.h"

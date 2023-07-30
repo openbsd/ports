@@ -1,0 +1,14 @@
+match steam SDK 1.57 API
+
+Index: native/common.cpp
+--- native/common.cpp.orig
++++ native/common.cpp
+@@ -208,7 +208,7 @@ vdynamic *CallbackHandler::EncodeAuthSessionTicketResp
+ 
+ HL_PRIM vbyte *HL_NAME(get_auth_ticket)( int *size, int *authTicket ) {
+ 	vbyte *ticket = hl_alloc_bytes(1024);
+-	*authTicket = SteamUser()->GetAuthSessionTicket(ticket,1024,(uint32*)size);
++	*authTicket = SteamUser()->GetAuthSessionTicket(ticket,1024,(uint32*)size, NULL);
+ 	return ticket;
+ }
+ 

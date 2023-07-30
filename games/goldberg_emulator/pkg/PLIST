@@ -57,6 +57,7 @@ include/goldberg_emulator/steam/isteamgameserver010.h
 include/goldberg_emulator/steam/isteamgameserver011.h
 include/goldberg_emulator/steam/isteamgameserver012.h
 include/goldberg_emulator/steam/isteamgameserver013.h
+include/goldberg_emulator/steam/isteamgameserver014.h
 include/goldberg_emulator/steam/isteamgameserverstats.h
 include/goldberg_emulator/steam/isteamhtmlsurface.h
 include/goldberg_emulator/steam/isteamhtmlsurface001.h
@@ -139,6 +140,7 @@ include/goldberg_emulator/steam/isteamugc012.h
 include/goldberg_emulator/steam/isteamugc013.h
 include/goldberg_emulator/steam/isteamugc014.h
 include/goldberg_emulator/steam/isteamugc015.h
+include/goldberg_emulator/steam/isteamugc016.h
 include/goldberg_emulator/steam/isteamunifiedmessages.h
 include/goldberg_emulator/steam/isteamuser.h
 include/goldberg_emulator/steam/isteamuser009.h
@@ -153,6 +155,8 @@ include/goldberg_emulator/steam/isteamuser017.h
 include/goldberg_emulator/steam/isteamuser018.h
 include/goldberg_emulator/steam/isteamuser019.h
 include/goldberg_emulator/steam/isteamuser020.h
+include/goldberg_emulator/steam/isteamuser021.h
+include/goldberg_emulator/steam/isteamuser022.h
 include/goldberg_emulator/steam/isteamuserstats.h
 include/goldberg_emulator/steam/isteamuserstats001.h
 include/goldberg_emulator/steam/isteamuserstats002.h

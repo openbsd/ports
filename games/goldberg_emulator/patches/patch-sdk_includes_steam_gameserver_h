@@ -3,7 +3,7 @@ remove duplicate function definition with only different return type
 Index: sdk_includes/steam_gameserver.h
 --- sdk_includes/steam_gameserver.h.orig
 +++ sdk_includes/steam_gameserver.h
-@@ -62,9 +62,6 @@ const uint16 STEAMGAMESERVER_QUERY_PORT_SHARED = 0xfff
+@@ -63,9 +63,6 @@ const uint16 STEAMGAMESERVER_QUERY_PORT_SHARED = 0xfff
  //		ISteamGameServer::GetNextOutgoingPacket.)
  // - The version string should be in the form x.x.x.x, and is used by the master server to detect when the
  //		server is out of date.  (Only servers with the latest version will be listed.)

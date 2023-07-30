@@ -5,6 +5,7 @@ GH_ACCOUNT =	HeapsIO
 GH_PROJECT =	hlsteam
 # checkout from 2022-03-22
 GH_COMMIT =	f774d8ea2b7255a3067254fde8d18063455dec24
+REVISION =	0
 CATEGORIES =	games
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 
@@ -13,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} hl m steam_api
 
-FIX_CRLF_FILES =	Makefile native/gameserver.cpp
+FIX_CRLF_FILES =	Makefile native/common.cpp native/gameserver.cpp
 
 COMPILER =		base-clang ports-gcc
 LIB_DEPENDS =		games/goldberg_emulator \

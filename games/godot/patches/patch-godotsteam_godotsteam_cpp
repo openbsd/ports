@@ -1,23 +1,14 @@
-fix function signature in call to SteamGameServer_Init()
-stub Steam::setDualSenseTriggerEffect
 stub Steam::inputActionEventCallback
+stub setDualSenseTriggerEffect
 remove deprecated/incompatible namespaces ISteamHTMLSurface
 InitiateGameConnection_DEPRECATED => InitiateGameConnection
+fix DEFVAL(NULL) ambiguous conversion -> back port cherry-picked from
+commit 5f38ffca92fc348aa103903196f8bcec2cbbd38b
 
-Index: GodotSteam/godotsteam/godotsteam.cpp
---- GodotSteam/godotsteam/godotsteam.cpp.orig
-+++ GodotSteam/godotsteam/godotsteam.cpp
-@@ -461,7 +461,8 @@ bool Steam::serverInit(const String& ip, uint16 game_p
- 		return false;
- 	}
- 	uint32_t ip4 = *((uint32_t *)address.get_ipv4());
--	if(!SteamGameServer_Init(ip4, game_port, query_port, mode, version_string.utf8().get_data())){
-+	/* use '0' in port for uint16 usSteamPort in the API */
-+	if(!SteamGameServer_Init(ip4, 0, game_port, query_port, mode, version_string.utf8().get_data())){
- 		return false;
- 	}
- 	return true;
-@@ -2389,7 +2390,7 @@ void Steam::keyChar(uint32 unicode_char, int key_modif
+Index: godotsteam/godotsteam.cpp
+--- godotsteam/godotsteam.cpp.orig
++++ godotsteam/godotsteam.cpp
+@@ -1866,7 +1866,7 @@ void Steam::keyChar(uint32 unicode_char, int key_modif
  		if(this_handle == 0){
  			this_handle = browser_handle;
  		}
@@ -26,7 +17,7 @@ Index: GodotSteam/godotsteam/godotsteam.cpp
  	}
  }
  
-@@ -2400,7 +2401,7 @@ void Steam::keyDown(uint32 native_key_code, int key_mo
+@@ -1877,7 +1877,7 @@ void Steam::keyDown(uint32 native_key_code, int key_mo
  		if(this_handle == 0){
  			this_handle = browser_handle;
  		}
@@ -35,7 +26,7 @@ Index: GodotSteam/godotsteam/godotsteam.cpp
  	}
  }
  
-@@ -2411,7 +2412,7 @@ void Steam::keyUp(uint32 native_key_code, int key_modi
+@@ -1888,7 +1888,7 @@ void Steam::keyUp(uint32 native_key_code, int key_modi
  		if(this_handle == 0){
  			this_handle = browser_handle;
  		}
@@ -44,7 +35,7 @@ Index: GodotSteam/godotsteam/godotsteam.cpp
  	}
  }
  
-@@ -2433,7 +2434,7 @@ void Steam::mouseDoubleClick(int mouse_button, uint32 
+@@ -1910,7 +1910,7 @@ void Steam::mouseDoubleClick(HTMLMouseButton mouse_but
  		if(this_handle == 0){
  			this_handle = browser_handle;
  		}
@@ -53,7 +44,7 @@ Index: GodotSteam/godotsteam/godotsteam.cpp
  	}
  }
  
-@@ -2444,7 +2445,7 @@ void Steam::mouseDown(int mouse_button, uint32 this_ha
+@@ -1921,7 +1921,7 @@ void Steam::mouseDown(HTMLMouseButton mouse_button, ui
  		if(this_handle == 0){
  			this_handle = browser_handle;
  		}
@@ -62,7 +53,7 @@ Index: GodotSteam/godotsteam/godotsteam.cpp
  	}
  }
  
-@@ -2466,7 +2467,7 @@ void Steam::mouseUp(int mouse_button, uint32 this_hand
+@@ -1943,7 +1943,7 @@ void Steam::mouseUp(HTMLMouseButton mouse_button, uint
  		if(this_handle == 0){
  			this_handle = browser_handle;
  		}
@@ -71,16 +62,16 @@ Index: GodotSteam/godotsteam/godotsteam.cpp
  	}
  }
  
-@@ -3212,6 +3213,8 @@ bool Steam::setInputActionManifestFilePath(const Strin
+@@ -2689,6 +2689,8 @@ bool Steam::setInputActionManifestFilePath(const Strin
  
  // Set the trigger effect for a DualSense controller
- void Steam::setDualSenseTriggerEffect(uint64_t input_handle, int parameter_index, int trigger_mask, int effect_mode, int position, int amplitude, int frequency){
+ void Steam::setDualSenseTriggerEffect(uint64_t input_handle, int parameter_index, int trigger_mask, SCEPadTriggerEffectMode effect_mode, int position, int amplitude, int frequency){
 +	return;
 +	/*
  	if(SteamInput() != NULL){
  		ScePadTriggerEffectParam these_parameters;
  		memset(&these_parameters, 0, sizeof(these_parameters));
-@@ -3242,6 +3245,7 @@ void Steam::setDualSenseTriggerEffect(uint64_t input_h
+@@ -2719,6 +2721,7 @@ void Steam::setDualSenseTriggerEffect(uint64_t input_h
  		these_parameters.command[parameter_index].commandData.vibrationParam.frequency = frequency;
  		SteamInput()->SetDualSenseTriggerEffect((InputHandle_t)input_handle, &these_parameters);
  	}
@@ -88,7 +79,7 @@ Index: GodotSteam/godotsteam/godotsteam.cpp
  }
  
  //! Waits on an IPC event from Steam sent when there is new data to be fetched from the data drop. Returns true when data was recievied before the timeout expires. Useful for games with a dedicated input thread.
-@@ -8251,7 +8255,7 @@ Dictionary Steam::initiateGameConnection(uint64_t serv
+@@ -7892,7 +7895,7 @@ Dictionary Steam::initiateGameConnection(uint64_t serv
  		int authSize = 2048;
  		auth.resize(authSize);
  		CSteamID server = (uint64)server_id;
@@ -97,7 +88,7 @@ Index: GodotSteam/godotsteam/godotsteam.cpp
  			connection["auth_blob"] = auth;
  			connection["server_id"] = server_id;
  			connection["server_ip"] = server_ip;
-@@ -8350,7 +8354,7 @@ void Steam::stopVoiceRecording(){
+@@ -7991,7 +7994,7 @@ void Steam::stopVoiceRecording(){
  //! Notify the game server that we are disconnecting. NOTE: This is part of the old user authentication API and should not be mixed with the new API.
  void Steam::terminateGameConnection(uint32 server_ip, uint16 server_port){
  	if(SteamUser() != NULL){
@@ -106,7 +97,7 @@ Index: GodotSteam/godotsteam/godotsteam.cpp
  	}
  }
  
-@@ -10044,27 +10048,28 @@ void Steam::http_request_headers_received(HTTPRequestH
+@@ -9487,27 +9490,28 @@ void Steam::http_request_headers_received(HTTPRequestH
  //
  // Purpose: when callbacks are enabled this fires each time a controller action state changes
  void Steam::inputActionEventCallback(SteamInputActionEvent_t* call_data){
@@ -153,3 +144,14 @@ Index: GodotSteam/godotsteam/godotsteam.cpp
  }
  
  //! Purpose: called when a new controller has been connected, will fire once per controller if multiple new controllers connect in the same frame
+@@ -11682,8 +11686,8 @@ void Steam::_bind_methods(){
+ 	ClassDB::bind_method(D_METHOD("cancelAuthTicket", "auth_ticket"), &Steam::cancelAuthTicket);
+ 	ClassDB::bind_method(D_METHOD("decompressVoice", "voice", "voice_size", "sample_rate"), &Steam::decompressVoice);
+ 	ClassDB::bind_method(D_METHOD("endAuthSession", "steam_id"), &Steam::endAuthSession);
+-	ClassDB::bind_method(D_METHOD("getAuthSessionTicket", "identity_reference"), &Steam::getAuthSessionTicket, DEFVAL(NULL));
+-	ClassDB::bind_method(D_METHOD("getAuthTicketForWebApi", "identity_reference"), &Steam::getAuthTicketForWebApi, DEFVAL(NULL));
++	ClassDB::bind_method(D_METHOD("getAuthSessionTicket", "identity_reference"), &Steam::getAuthSessionTicket, DEFVAL(""));
++	ClassDB::bind_method(D_METHOD("getAuthTicketForWebApi", "identity_reference"), &Steam::getAuthTicketForWebApi, DEFVAL(""));
+ 	ClassDB::bind_method("getAvailableVoice", &Steam::getAvailableVoice);
+ 	ClassDB::bind_method("getDurationControl", &Steam::getDurationControl);
+ 	ClassDB::bind_method("getEncryptedAppTicket", &Steam::getEncryptedAppTicket);
