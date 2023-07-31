@@ -4,10 +4,9 @@ USE_NOBTCFI=	Yes
 COMMENT=	cross platform, open source .NET developement framework
 
 V=		6.12.0.199
-MONOLITEV=	1A5E0066-58DC-428A-B21C-0AD6CDAE2789
 
 DISTNAME=	mono-${V}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	lang devel
 
@@ -30,10 +29,8 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=  c execinfo m pthread z
 
-MASTER_SITES=	https://nerd.hu/distfiles/
-
-DISTFILES+=	mono-${V}.tar.xz \
-		monolite-unix-${MONOLITEV}-openbsd.tar.gz
+MASTER_SITES=	https://download.mono-project.com/sources/mono/
+EXTRACT_SUFX=	.tar.xz
 
 MODULES=	lang/mono \
 		lang/python
@@ -81,9 +78,6 @@ DLLMAP_FILES=	mcs/class/System.Windows.Forms/System.Windows.Forms/MimeIcon.cs \
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples
 
 pre-configure:
-	${INSTALL_DATA_DIR} ${WRKSRC}/mcs/class/lib/monolite-unix/${MONOLITEV}
-	cp -pR ${WRKDIR}/monolite-unix-${MONOLITEV}-openbsd/* \
-		${WRKSRC}/mcs/class/lib/monolite-unix/${MONOLITEV}/
 	${SUBST_CMD} ${WRKSRC}/runtime/mono-wrapper.in \
 		${WRKSRC}/runtime/monodis-wrapper.in
 	sed -i -e 's,^prefix=.*,prefix=\@prefix\@,g;' \
