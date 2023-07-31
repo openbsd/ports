@@ -39,6 +39,7 @@ share/doc/newsboat/contrib/image-preview/nbparser
 share/doc/newsboat/contrib/image-preview/nbrun
 share/doc/newsboat/contrib/image-preview/vifmimg
 share/doc/newsboat/contrib/kitty-img-pager.sh
+share/doc/newsboat/contrib/move_url.py
 share/doc/newsboat/contrib/newsboat_reorganize.py
 share/doc/newsboat/contrib/pinboard.pl
 share/doc/newsboat/contrib/slashdot.rb
