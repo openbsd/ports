@@ -14,12 +14,12 @@ Index: configure
  set var(DEBUG) {-DNDEBUG}
  set var(OBJS) {$(SCIDOBJS)}
  set var(THREADS) {-pthread}
--set var(OPTIMIZE) {-std=c++14 -O3 -march=native -fno-rtti -fno-exceptions}
-+set var(OPTIMIZE) {${CXXFLAGS} -std=c++14 -fno-rtti -fno-exceptions}
+-set var(OPTIMIZE) {-std=c++20 -O3 -march=native -fno-rtti -fno-exceptions}
++set var(OPTIMIZE) {${CXXFLAGS} -std=c++20 -fno-rtti -fno-exceptions}
  set var(PROFILE) {}
  set var(SCIDFLAGS) {}
 -set var(SHAREDIR) /usr/local/share/scid
 +set var(SHAREDIR) ${LOCALBASE}/share/scid
- set var(TB) {-DSCID_USE_TB -DT41_INCLUDE}
  set var(TCL_VERSION) $tcl_version
  set var(WARNINGS) -Wall
+ set var(MAKEFILE) Makefile.conf

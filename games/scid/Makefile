@@ -1,11 +1,11 @@
-V =		4.7.0
+V =		5.0.2
 COMMENT =	chess database software
-DISTNAME =	scid-code-${V}
+DISTNAME =	scid_src_${V}
 PKGNAME =	scid-${V}
 EXTRACT_SUFX =	.zip
 CATEGORIES =	games x11
 
-HOMEPAGE =	http://scid.sourceforge.net/
+HOMEPAGE =	https://scid.sourceforge.net/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
@@ -15,12 +15,11 @@ WANTLIB += ${COMPILER_LIBCXX} ${MODTCL_WANTLIB} c m
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=scid/}
 
-# C++11
-COMPILER =	base-clang ports-gcc base-gcc
+# C++20
+COMPILER =	base-clang ports-gcc
 
 MODULES =	lang/python \
 		x11/tk
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODTK_VERSION =	8.6
 MODPY_ADJ_FILES =	scripts/pgnfix.py
 
@@ -35,7 +34,7 @@ MAKE_FLAGS =	CXX="${CXX}"
 
 NO_TEST =	Yes
 
-WRKDIST =	${WRKDIR}/scid
+WRKDIST =	${WRKDIR}/scid-${V}
 FIX_CRLF_FILES = engines/togaII1.2.1a/src/Makefile
 
 pre-configure:
@@ -51,5 +50,8 @@ post-configure:
 	@${MODTCL_TCLSH_ADJ} ${WRKSRC}/tcl/lang/checklangs.tcl
 	@${MODTCL_TCLSH_ADJ} ${WRKSRC}/tcl/lang/propagatelang.tcl
 	@${MODTCL_TCLSH_ADJ} ${WRKSRC}/tcl/lang/removetoken.tcl
+
+post-install:
+	rm -f ${PREFIX}/share/scid/tcl/utils/tooltip.tcl.orig.port
 
 .include <bsd.port.mk>
