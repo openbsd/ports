@@ -1,9 +1,9 @@
 COMMENT =	OpenMPT based module player library and command-line player
 
-DISTNAME =	libopenmpt-0.6.10+release.autotools
+DISTNAME =	libopenmpt-0.7.2+release.autotools
 PKGNAME =	${DISTNAME:S/+release.autotools//}
 
-SHARED_LIBS +=  openmpt              0.1      # 3.3
+SHARED_LIBS +=  openmpt              0.2      # 4.4
 
 CATEGORIES =	audio devel
 
