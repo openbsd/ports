@@ -1,0 +1,13 @@
+Remove -Werror
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -182,7 +182,6 @@ if(NOT MSVC)
+ 		-Wall
+ 		-Wextra
+ 		#-Wshadow  # Note: Candy Crisis goes crazy with shadowing
+-		-Werror=return-type
+ 		-Wstrict-aliasing=2
+ 		-Wno-multichar
+ 	)
