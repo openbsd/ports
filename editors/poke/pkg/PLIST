@@ -11,6 +11,8 @@ lib/libpoke.la
 lib/pkgconfig/poke.pc
 @man man/man1/poke.1
 @man man/man1/poked.1
+share/aclocal/
+share/aclocal/poke.m4
 share/emacs/
 share/emacs/site-lisp/
 share/emacs/site-lisp/poke-map-mode.el
@@ -80,6 +82,7 @@ share/poke/pickles/sframe.pk
 share/poke/pickles/time.pk
 share/poke/pickles/ustar.pk
 share/poke/pickles/uuid.pk
+share/poke/pkl-config.pk
 share/poke/pkl-rt.pk
 share/poke/poke/
 share/poke/poke/nodelist
