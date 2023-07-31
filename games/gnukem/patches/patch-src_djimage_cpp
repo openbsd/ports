@@ -3,7 +3,7 @@ Fix big endian issue
 Index: src/djimage.cpp
 --- src/djimage.cpp.orig
 +++ src/djimage.cpp
-@@ -264,8 +264,13 @@ int djImage::LoadTGA( const char * szFilename )
+@@ -257,8 +257,13 @@ int djImage::LoadTGA( const char * szFilename )
  					for ( unsigned int j=0; j<nWidth; ++j )
  					{
  						// reverse endianness from file
@@ -17,7 +17,7 @@ Index: src/djimage.cpp
  					}
  				}
  				djDELV(pBuf);
-@@ -285,10 +290,17 @@ int djImage::LoadTGA( const char * szFilename )
+@@ -278,10 +283,17 @@ int djImage::LoadTGA( const char * szFilename )
  					for ( unsigned int j=0; j<nWidth; j++ )
  					{
  						// A,B,G,R
@@ -35,7 +35,7 @@ Index: src/djimage.cpp
  					}
  				}
  				djDELV(pBuf);
-@@ -314,10 +326,17 @@ int djImage::LoadTGA( const char * szFilename )
+@@ -307,10 +319,17 @@ int djImage::LoadTGA( const char * szFilename )
  						// FIXME: Interesting "problem" .. it seems the VNC server
  						// inverts the ordering of some of this stuff! So while doing
  						// the remote thing I had everything confused!

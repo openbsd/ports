@@ -5,7 +5,7 @@ Revert commit/a94bae1f70b9110431f8a21f0118141c25a343d8
 Index: src/sdl/djgraph.cpp
 --- src/sdl/djgraph.cpp.orig
 +++ src/sdl/djgraph.cpp
-@@ -747,15 +747,10 @@ bool djCreateImageHWSurface( djImage* pImage/*, djVisu
+@@ -756,15 +756,10 @@ void* djCreateImageHWSurface( djImage* pImage/*, djVis
  		pImage->Height(),
  		32,
  		pImage->Pitch(),
@@ -19,5 +19,5 @@ Index: src/sdl/djgraph.cpp
  		0xFF000000
 -		#endif
  	);
- 	g_SurfaceMap[ pImage ] = pSurfaceFoo;
- 
+ 	//fixme should be sped up:
+ 	// 1. A map is not really the most efficient way to do this as it must do a lookup for every blit

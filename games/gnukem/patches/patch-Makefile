@@ -3,28 +3,40 @@ Fix up Makefile.
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -8,8 +8,8 @@
- # 2017-07-29: Remove obsolete standalone-editor-related stuff, and add new thing_monsters.o
- #
+@@ -22,20 +22,20 @@ VERSION  = v$(V_NUM) - $(V_DATE)
  
--CPP = g++
--CC = gcc
-+CPP ?= g++
-+CC ?= gcc
+ # paths
+ PREFIX   = /usr/local
+-DATA_DIR = $(PREFIX)/share/games/$(BIN)/# the trailing slash is required for paths in the source
++DATA_DIR = $(PREFIX)/share/$(BIN)/# the trailing slash is required for paths in the source
  
+ LIBS    = `sdl2-config --libs` -lSDL2_mixer
+ LDFLAGS = $(LIBS)
  
- # dj2016-10 Add L -I/usr/local/include/SDL in process of getting this working on Mac OS X - not sure if this is 'bad' to just have both /usr/include and /usr/local/include??
-@@ -21,11 +21,11 @@ INCLUDEDIRS= -I/usr/include/SDL -I/usr/local/include/S
- # If you don't -DDATA_DIR to a valid dir, then data files will be assumed
- # to be in current directory
- #CCFLAGS = -Wall -I/usr/local/include -DHAVE_SOUND -DDEBUG -O -m486
--CCFLAGS = -Wall -Wno-switch -DDEBUG $(INCLUDEDIRS)
-+CCFLAGS = ${CXXFLAGS} -Wall -Wno-switch -I${LOCALBASE}/include/SDL
- #Release version:
- #CCFLAGS = -O -Wall -I/usr/local/include -DHAVE_SOUND $(INCLUDEDIRS)
+ CPPFLAGS = -DDATA_DIR=\"$(DATA_DIR)\" -DVERSION=\"'$(VERSION)'\"
  
--LIBS = -lSDL -lSDLmain -lSDL_mixer -lpthread 
-+LIBS = -L${LOCALBASE}/lib -lSDL -lSDLmain -lSDL_mixer -lpthread 
- BIN = davegnukem
+-CXX = g++
++CXX ?= g++
  
+ OBJ = $(shell find src -iname '*.cpp' -type f | sed 's/\.cpp$$/.o/')
  
+ # debug
+ #CXXFLAGS = -ggdb -DDEBUG -std=c++14 -Wall `sdl2-config --cflags` $(CPPFLAGS)
+-CXXFLAGS = -O2 -std=c++14 -Wall `sdl2-config --cflags` $(CPPFLAGS)
++CXXFLAGS += $(FLAGS) -std=c++14 -Wall `sdl2-config --cflags` $(CPPFLAGS)
+ 
+ all: options davegnukem
+ 
+@@ -64,9 +64,9 @@ dist: clean
+ 
+ install: 
+ 	# binary
+-	mkdir -p $(DESTDIR)$(PREFIX)/games
+-	cp -f $(BIN) $(DESTDIR)$(PREFIX)/games
+-	chmod 755 $(DESTDIR)$(PREFIX)/games/$(BIN)
++	mkdir -p $(DESTDIR)$(PREFIX)/bin
++	cp -f $(BIN) $(DESTDIR)$(PREFIX)/bin
++	chmod 755 $(DESTDIR)$(PREFIX)/bin/$(BIN)
+ 	# data
+ 	mkdir -p $(DESTDIR)$(DATA_DIR)
+ 	cp -fR data/* $(DESTDIR)$(DATA_DIR)

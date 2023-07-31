@@ -1,38 +1,38 @@
+V =		1.0.3
 COMMENT =	open source retro-style 2D scrolling platform shooter game
-DISTNAME =	gnukem-1.0.1
+DISTFILES =	davegnukem_${V}.orig.tar.xz \
+		davegnukem_${V}.orig-data.tar.xz
+PKGNAME =	gnukem-${V}
 CATEGORIES =	games x11
 
 HOMEPAGE =	https://djoffe.com/gnukem/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # Dual licensed: MIT or GPLv2 only
+# Data assets: CC-BY-3.0, CC0
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} SDL SDL_mixer c m
+WANTLIB += ${COMPILER_LIBCXX} SDL2 SDL2_mixer c m
 
-# Upstream data fetching is ugh...
-MASTER_SITES =	https://mirrors.nycbug.org/pub/distfiles/
+MASTER_SITES =	https://github.com/davidjoffe/dave_gnukem/releases/download/${V}/
 
+# C++14
 COMPILER =	base-clang ports-gcc
 
-LIB_DEPENDS =	devel/sdl-mixer
+LIB_DEPENDS =	devel/sdl2-mixer
+
+RUN_DEPENDS =	devel/desktop-file-utils \
+		x11/gtk+4,-guic
 
 USE_GMAKE =	Yes
-ALL_TARGET =	default
-MAKE_FLAGS =	CC="${CC}" CPP="${CXX}" \
-		CXXFLAGS="${CXXFLAGS}"
+MAKE_FLAGS =	CC="${CC}" CXX="${CXX}" \
+		FLAGS="${CXXFLAGS}"
 
 NO_TEST =	Yes
 
-# No install routine
-do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/gnukem/data
-	cd ${WRKSRC}/data && find * -type d -exec ${INSTALL_DATA_DIR} \
-		"${PREFIX}/share/gnukem/data/{}" \;
-	cd ${WRKSRC}/data && find * -type f -exec ${INSTALL_DATA} \
-		"{}" "${PREFIX}/share/gnukem/data/{}" \;
-	echo "#!/bin/sh\ncd ${TRUEPREFIX}/share/gnukem && ./davegnukem \"\$$@\"" >> ${WRKSRC}/gnukem.sh
-	${INSTALL_PROGRAM} ${WRKSRC}/davegnukem ${PREFIX}/share/gnukem
-	${INSTALL_SCRIPT} ${WRKSRC}/gnukem.sh ${PREFIX}/bin/davegnukem
+WRKDIST =	${WRKDIR}/dave_gnukem-${V}
+
+post-extract:
+	mv ${WRKDIR}/gnukem_data-${V} ${WRKDIST}/data
 
 .include <bsd.port.mk>
