@@ -377,6 +377,7 @@ share/postgresql/extension/address_standardizer--3.2.5--${V}.sql
 share/postgresql/extension/address_standardizer--3.3.0--${V}.sql
 share/postgresql/extension/address_standardizer--3.3.1--${V}.sql
 share/postgresql/extension/address_standardizer--3.3.2--${V}.sql
+share/postgresql/extension/address_standardizer--3.3.3--${V}.sql
 share/postgresql/extension/address_standardizer--${V}--${V}next.sql
 share/postgresql/extension/address_standardizer--${V}.sql
 share/postgresql/extension/address_standardizer--${V}next--${V}.sql
@@ -471,6 +472,7 @@ share/postgresql/extension/address_standardizer_data_us--3.2.5--${V}.sql
 share/postgresql/extension/address_standardizer_data_us--3.3.0--${V}.sql
 share/postgresql/extension/address_standardizer_data_us--3.3.1--${V}.sql
 share/postgresql/extension/address_standardizer_data_us--3.3.2--${V}.sql
+share/postgresql/extension/address_standardizer_data_us--3.3.3--${V}.sql
 share/postgresql/extension/address_standardizer_data_us--${V}--${V}next.sql
 share/postgresql/extension/address_standardizer_data_us--${V}.sql
 share/postgresql/extension/address_standardizer_data_us--${V}next--${V}.sql
@@ -565,6 +567,7 @@ share/postgresql/extension/postgis--3.2.5--${V}.sql
 share/postgresql/extension/postgis--3.3.0--${V}.sql
 share/postgresql/extension/postgis--3.3.1--${V}.sql
 share/postgresql/extension/postgis--3.3.2--${V}.sql
+share/postgresql/extension/postgis--3.3.3--${V}.sql
 share/postgresql/extension/postgis--${V}--${V}next.sql
 share/postgresql/extension/postgis--${V}.sql
 share/postgresql/extension/postgis--${V}next--${V}.sql
@@ -661,6 +664,7 @@ share/postgresql/extension/postgis_raster--3.2.5--${V}.sql
 share/postgresql/extension/postgis_raster--3.3.0--${V}.sql
 share/postgresql/extension/postgis_raster--3.3.1--${V}.sql
 share/postgresql/extension/postgis_raster--3.3.2--${V}.sql
+share/postgresql/extension/postgis_raster--3.3.3--${V}.sql
 share/postgresql/extension/postgis_raster--${V}--${V}next.sql
 share/postgresql/extension/postgis_raster--${V}.sql
 share/postgresql/extension/postgis_raster--${V}next--${V}.sql
@@ -757,6 +761,7 @@ share/postgresql/extension/postgis_tiger_geocoder--3.2.5--${V}.sql
 share/postgresql/extension/postgis_tiger_geocoder--3.3.0--${V}.sql
 share/postgresql/extension/postgis_tiger_geocoder--3.3.1--${V}.sql
 share/postgresql/extension/postgis_tiger_geocoder--3.3.2--${V}.sql
+share/postgresql/extension/postgis_tiger_geocoder--3.3.3--${V}.sql
 share/postgresql/extension/postgis_tiger_geocoder--${V}--${V}next.sql
 share/postgresql/extension/postgis_tiger_geocoder--${V}.sql
 share/postgresql/extension/postgis_tiger_geocoder--${V}next--${V}.sql
@@ -852,6 +857,7 @@ share/postgresql/extension/postgis_topology--3.2.5--${V}.sql
 share/postgresql/extension/postgis_topology--3.3.0--${V}.sql
 share/postgresql/extension/postgis_topology--3.3.1--${V}.sql
 share/postgresql/extension/postgis_topology--3.3.2--${V}.sql
+share/postgresql/extension/postgis_topology--3.3.3--${V}.sql
 share/postgresql/extension/postgis_topology--${V}--${V}next.sql
 share/postgresql/extension/postgis_topology--${V}.sql
 share/postgresql/extension/postgis_topology--${V}next--${V}.sql
