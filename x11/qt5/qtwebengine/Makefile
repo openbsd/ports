@@ -1,3 +1,5 @@
+BROKEN-aarch64 =	Failed to reserve memory for new V8 Isolate
+
 USE_WXNEEDED =		Yes
 USE_NOBTCFI =		Yes
 
