@@ -7,7 +7,7 @@ COMMENT =	signal-processing toolkit for SDR (software-defined radio)
 
 V =		3.8.2.0
 DISTNAME =	gnuradio-$V
-REVISION =	6
+REVISION =	7
 
 SHARED_LIBS +=  gnuradio-analog           0.0 # 3.7
 SHARED_LIBS +=  gnuradio-atsc             0.0 # 3.7
@@ -42,7 +42,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB}
 WANTLIB += Qt5Core Qt5Gui Qt5Widgets SDL boost_atomic-mt boost_chrono-mt
-WANTLIB += boost_date_time-mt boost_filesystem-mt boost_program_options-mt
+WANTLIB += boost_filesystem-mt boost_program_options-mt
 WANTLIB += boost_regex-mt boost_system-mt boost_thread-mt c fftw3f
 WANTLIB += fftw3f_threads gmp gmpxx gsl gslcblas gsm iconv jack
 WANTLIB += log4cpp m orc-0.4 portaudio qwt zmq
@@ -80,6 +80,10 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		textproc/py-lxml${MODPY_FLAVOR} \
 		textproc/py-yaml${MODPY_FLAVOR} \
 		x11/gtk+4,-guic
+
+# gnuradio-companion
+RUN_DEPENDS +=	devel/py-gobject3${MODPY_FLAVOR} \
+		x11/gtk+3
 
 LIB_DEPENDS =	audio/jack \
 		audio/gsm \
