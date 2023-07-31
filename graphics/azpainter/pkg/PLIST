@@ -113,10 +113,11 @@ share/azpainter3/tr/ja.mtr
 share/azpainter3/tr/pt_BR.mtr
 share/azpainter3/tr/zh_CN.mtr
 share/doc/azpainter/
-share/doc/azpainter/ChangeLog
-share/doc/azpainter/GPL3
+share/doc/azpainter/COPYING
 share/doc/azpainter/ReadMe_en
 share/doc/azpainter/ReadMe_ja
+share/doc/azpainter/about_mlk_en.txt
+share/doc/azpainter/about_mlk_ja.txt
 share/doc/azpainter/manual_ja.html
 share/icons/hicolor/48x48/apps/application-x-azpainter-apd.png
 share/icons/hicolor/48x48/apps/azpainter.png
