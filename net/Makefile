@@ -728,6 +728,7 @@
      SUBDIR += toxic,no_x11
      SUBDIR += trafshow
      SUBDIR += transmission
+     SUBDIR += transmission-remote-gtk
      SUBDIR += tremc
      SUBDIR += trickle
      SUBDIR += ttg
