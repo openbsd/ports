@@ -1,0 +1,34 @@
+@bin bin/transmission-remote-gtk
+@man man/man1/transmission-remote-gtk.1
+share/applications/io.github.TransmissionRemoteGtk.desktop
+share/icons/hicolor/16x16/apps/transmission-remote-gtk.png
+share/icons/hicolor/22x22/apps/transmission-remote-gtk.png
+share/icons/hicolor/24x24/apps/transmission-remote-gtk.png
+share/icons/hicolor/32x32/apps/transmission-remote-gtk.png
+share/icons/hicolor/48x48/apps/transmission-remote-gtk.png
+share/icons/hicolor/scalable/apps/transmission-remote-gtk.svg
+share/locale/bg/LC_MESSAGES/transmission-remote-gtk.mo
+share/locale/ca/LC_MESSAGES/transmission-remote-gtk.mo
+share/locale/cs/LC_MESSAGES/transmission-remote-gtk.mo
+share/locale/de/LC_MESSAGES/transmission-remote-gtk.mo
+share/locale/el/LC_MESSAGES/transmission-remote-gtk.mo
+share/locale/es/LC_MESSAGES/transmission-remote-gtk.mo
+share/locale/fr/LC_MESSAGES/transmission-remote-gtk.mo
+share/locale/hu/LC_MESSAGES/transmission-remote-gtk.mo
+share/locale/it/LC_MESSAGES/transmission-remote-gtk.mo
+share/locale/ko/LC_MESSAGES/transmission-remote-gtk.mo
+share/locale/lt/LC_MESSAGES/transmission-remote-gtk.mo
+share/locale/lv/LC_MESSAGES/transmission-remote-gtk.mo
+share/locale/pl/LC_MESSAGES/transmission-remote-gtk.mo
+share/locale/pt_BR/LC_MESSAGES/transmission-remote-gtk.mo
+share/locale/ru/LC_MESSAGES/transmission-remote-gtk.mo
+share/locale/si/LC_MESSAGES/transmission-remote-gtk.mo
+share/locale/sv/LC_MESSAGES/transmission-remote-gtk.mo
+share/locale/tr/LC_MESSAGES/transmission-remote-gtk.mo
+share/locale/uk/LC_MESSAGES/transmission-remote-gtk.mo
+share/locale/zh_CN/LC_MESSAGES/transmission-remote-gtk.mo
+share/locale/zh_TW/LC_MESSAGES/transmission-remote-gtk.mo
+share/metainfo/
+share/metainfo/io.github.TransmissionRemoteGtk.appdata.xml
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database

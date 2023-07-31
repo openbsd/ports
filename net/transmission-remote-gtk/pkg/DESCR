@@ -1,0 +1,2 @@
+transmission-remote-gtk is a GTK client for remote management of the
+Transmission BitTorrent client, using its HTTP RPC protocol.
