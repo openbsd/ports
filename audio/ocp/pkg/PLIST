@@ -4,7 +4,6 @@ bin/ocp-sdl2
 @info info/ocp.info
 lib/ocp/
 lib/ocp/autoload/
-@so lib/ocp/autoload/35-devpdisk.so
 @so lib/ocp/autoload/35-devpnone.so
 @so lib/ocp/autoload/35-devpsdl2.so
 @so lib/ocp/autoload/35-devwmix.so
