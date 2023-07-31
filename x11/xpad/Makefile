@@ -1,9 +1,8 @@
-V=		5.4.0
+V=		5.8.0
 COMMENT=	virtual sticky pad system
 DISTNAME=	xpad-${V}
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	x11
-REVISION=	1
 
 HOMEPAGE=	https://launchpad.net/xpad
 MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
@@ -11,15 +10,15 @@ MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB =  ICE SM atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-3 gtksourceview-3.0 harfbuzz
-WANTLIB += intl pango-1.0 pangocairo-1.0 pthread
+WANTLIB += ICE SM atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-3 gtksourceview-4
+WANTLIB += harfbuzz intl pango-1.0 pangocairo-1.0 pthread
 
 MASTER_SITES=	http://launchpad.net/xpad/trunk/${V}/+download/
 
 MODULES=	textproc/intltool
 
-LIB_DEPENDS=	x11/gtksourceview3
+LIB_DEPENDS=	x11/gtksourceview4
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+4,-guic
