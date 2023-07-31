@@ -1,0 +1,11 @@
+Index: src/libmpg123/dct36_x86_64.S
+--- src/libmpg123/dct36_x86_64.S.orig
++++ src/libmpg123/dct36_x86_64.S
+@@ -74,6 +74,7 @@ dct36_x86_64_sign:
+ 	ALIGN16
+ 	.globl ASM_NAME(dct36_x86_64)
+ ASM_NAME(dct36_x86_64):
++	endbr64
+ #ifdef IS_MSABI
+ 	push		%rbp
+ 	mov			%rsp, %rbp
