@@ -39,6 +39,7 @@
      SUBDIR += brumbrumrally
      SUBDIR += burgerspace
      SUBDIR += bzflag
+     SUBDIR += candycrisis
      SUBDIR += capitan-sevilla
      SUBDIR += cataclysm-dda
      SUBDIR += cataclysm-dda,no_x11
