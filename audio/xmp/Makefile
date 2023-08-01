@@ -1,6 +1,6 @@
 COMMENT=		extended module player
 
-DISTNAME=		xmp-4.1.0
+DISTNAME=		xmp-4.2.0
 CATEGORIES=		audio
 
 HOMEPAGE=		http://xmp.sourceforge.net/
