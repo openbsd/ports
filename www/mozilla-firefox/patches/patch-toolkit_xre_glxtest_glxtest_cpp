@@ -1,7 +1,7 @@
 Index: toolkit/xre/glxtest/glxtest.cpp
 --- toolkit/xre/glxtest/glxtest.cpp.orig
 +++ toolkit/xre/glxtest/glxtest.cpp
-@@ -193,6 +193,9 @@ extern "C" {
+@@ -190,6 +190,9 @@ extern "C" {
  #define PCI_BASE_CLASS_DISPLAY 0x03
  
  static void get_pci_status() {

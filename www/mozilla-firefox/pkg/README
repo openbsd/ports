@@ -27,7 +27,7 @@ ${SYSCONFDIR}/${MOZILLA_PROJECT}/{unveil,pledge}.{content,gpu,main,rdd,socket,ut
 As unveil() can't show non-existing dirs, it is recommended to manually
 create ~/Downloads for files to be properly saved in this directory.
 
-Starting firefox should create this dir though, but it wont be available
+Starting ${MOZILLA_PROJECT} should create this dir though, but it wont be available
 for downloads until it's restarted.
 
 3rd-Party MIME Handlers
@@ -72,8 +72,8 @@ your mailer.
 
 Debugging
 =========
-If you encounter crashes, you might want to install the debug-firefox
-package, and run firefox inside egdb, so that you can gather debugging
+If you encounter crashes, you might want to install the debug-${MOZILLA_PROJECT}
+package, and run ${MOZILLA_PROJECT} inside egdb, so that you can gather debugging
 logs and traces (for all threads!).
 
 If this is a pledge violation, please try to find out which codepath
@@ -89,7 +89,7 @@ just "disable".
 
 D-BUS
 =====
-For proper integration with various desktop-oriented components, firefox
+For proper integration with various desktop-oriented components, ${MOZILLA_PROJECT}
 needs a session bus instance running.
 If you're not running a desktop environment that takes care of it,
 refer to /usr/local/share/doc/pkg-readmes/dbus to configure your
