@@ -1,0 +1,15 @@
+Force the use of the built-in tooltip package.
+Otherwise, there is a problem if you have tk-8.5 and tk-8.6 installed.
+
+Index: tcl/utils/tooltip.tcl
+--- tcl/utils/tooltip.tcl.orig
++++ tcl/utils/tooltip.tcl
+@@ -3,7 +3,7 @@
+ # Tooltips
+ #
+ 
+-set useLocalTklib [catch {package require tooltip 1.4.6}]
++set useLocalTklib 1
+ if {$useLocalTklib} {
+   source [file nativename [file join $::scidTclDir "utils/tklib_tooltip.tcl"]]
+ }
