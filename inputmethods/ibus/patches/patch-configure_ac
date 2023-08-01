@@ -3,7 +3,7 @@ Makefile.am: error: required file './ChangeLog' not found
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -62,7 +62,7 @@ VALA_TARGET_GLIB_VERSION=2.46
+@@ -65,7 +65,7 @@ VALA_TARGET_GLIB_VERSION=2.46
  AC_SUBST(VALA_TARGET_GLIB_VERSION)
  
  # Init automake.

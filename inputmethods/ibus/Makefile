@@ -1,5 +1,3 @@
-# when gtk+4 support is added, split into multi packages (gtk+{2,3,4})
-
 COMMENT-main =		intelligent input bus framework
 COMMENT-gtk2 =		IBus IM module for GTK2
 COMMENT-gtk3 =		IBus IM module for GTK3
@@ -7,24 +5,14 @@ COMMENT-gtk4 =		IBus IM module for GTK4
 
 GH_PROJECT =		ibus
 GH_ACCOUNT =		ibus
-#GH_TAGNAME =		1.5.28
+GH_TAGNAME =		1.5.29-beta1
 
-#PKGNAME-main =		ibus-${GH_TAGNAME}
-#PKGNAME-gtk2 =		ibus-gtk2-${GH_TAGNAME}
-#PKGNAME-gtk3 =		ibus-gtk3-${GH_TAGNAME}
-#PKGNAME-gtk4 =		ibus-gtk4-${GH_TAGNAME}
+PKGNAME-main =		ibus-${GH_TAGNAME:S/-//}
+PKGNAME-gtk2 =		ibus-gtk2-${GH_TAGNAME:S/-//}
+PKGNAME-gtk3 =		ibus-gtk3-${GH_TAGNAME:S/-//}
+PKGNAME-gtk4 =		ibus-gtk4-${GH_TAGNAME:S/-//}
 
-### BEGIN - move back to use GH_TAGNAME at next release
-V =			1.5.28.20230725
-GH_COMMIT =		7502abbe7eb4289d0d727e53cdfac572baf405d5
-DISTNAME =		ibus-${V}
-PKGNAME-main =		ibus-${V}
-PKGNAME-gtk2 =		ibus-gtk2-${V}
-PKGNAME-gtk3 =		ibus-gtk3-${V}
-PKGNAME-gtk4 =		ibus-gtk4-${V}
-### END
-
-SHARED_LIBS +=  ibus-1.0             4.4      # 5.528
+SHARED_LIBS +=  ibus-1.0             4.5      # 5.529
 
 CATEGORIES =		inputmethods chinese japanese korean
 
@@ -45,6 +33,7 @@ WANTLIB += xcb-shm z execinfo jpeg
 WANTLIB-main += ${WANTLIB}
 WANTLIB-main += atk-1.0 atk-bridge-2.0 c cairo-gobject dconf epoxy
 WANTLIB-main += gdk-3 gthread-2.0 gtk-3 Xcomposite notify atspi dbus-1
+WANTLIB-main += dbusmenu-glib dbusmenu-gtk3
 
 WANTLIB-gtk2 += ${WANTLIB}
 WANTLIB-gtk2 += atk-1.0 dbus-1 gdk-x11-2.0 gtk-x11-2.0 ibus-1.0
@@ -65,7 +54,9 @@ MODULES =		devel/dconf \
 BUILD_DEPENDS =		devel/iso-codes \
 			devel/py-gobject3${MODPY_FLAVOR} \
 			lang/vala \
-			textproc/unicode-ucd
+			textproc/unicode/cldr,-annotations \
+			textproc/unicode/emoji \
+			textproc/unicode/ucd
 
 RUN_DEPENDS-main =	${RUN_DEPENDS} \
 			devel/desktop-file-utils \
@@ -76,7 +67,8 @@ RUN_DEPENDS-main =	${RUN_DEPENDS} \
 RUN_DEPENDS-main +=	devel/py-gobject3${MODPY_FLAVOR}
 
 LIB_DEPENDS-main =	devel/libnotify \
-			x11/gtk+3
+			x11/gtk+3 \
+			x11/libdbusmenu
 
 RUN_DEPENDS-gtk2 =	# empty
 LIB_DEPENDS-gtk2 =	${BASE_PKGPATH},-main \
@@ -101,14 +93,10 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 
 CONFIGURE_ARGS =	--disable-python2 \
 			--disable-systemd-services \
+			--disable-wayland \
 			--enable-gtk4 \
-			--enable-introspection \
-		 	--enable-vala \
-			--with-ucd-dir=${LOCALBASE}/share/unicode/ucd
-
-# requires unicode-emoji
-CONFIGURE_ARGS +=	--disable-emoji-dict
-CONFIGURE_ARGS +=	--with-unicode-emoji-dir=${LOCALBASE}/share/unicode/emoji \
+			--with-ucd-dir=${LOCALBASE}/share/unicode/ucd \
+			--with-unicode-emoji-dir=${LOCALBASE}/share/unicode/emoji \
 			--with-emoji-annotation-dir=${LOCALBASE}/share/unicode/cldr/common/annotations
 			
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
