@@ -3,8 +3,8 @@ Don't use malloc.h header on OpenBSD.
 Index: 3rdparty/bx/src/allocator.cpp
 --- 3rdparty/bx/src/allocator.cpp.orig
 +++ 3rdparty/bx/src/allocator.cpp
-@@ -6,8 +6,6 @@
- #include "bx_p.h"
+@@ -5,8 +5,6 @@
+ 
  #include <bx/allocator.h>
  
 -#include <malloc.h>

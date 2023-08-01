@@ -6,7 +6,7 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	Multiple Arcade Machine Emulator
 
-V =		252
+V =		257
 GH_ACCOUNT =	mamedev
 GH_PROJECT =	mame
 GH_TAGNAME =	mame0${V}
@@ -20,13 +20,10 @@ HOMEPAGE =	https://mamedev.org/
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} FLAC GL SDL2 SDL2_ttf X11 Xext Xi
-WANTLIB += Xinerama c expat fontconfig freetype jpeg lua${MODLUA_VERSION} m
-WANTLIB += pugixml sqlite3 util z
+WANTLIB += Xinerama c expat fontconfig freetype jpeg m pugixml
+WANTLIB += sqlite3 util z
 
-MODULES =	lang/lua \
-		lang/python
-
-MODLUA_VERSION = 5.3
+MODULES =	lang/python
 
 MODPY_RUNDEP = No
 
@@ -50,7 +47,6 @@ MAKE_ENV =	NOWERROR=1 TOOLS=1 verbose=1 \
 		USE_SYSTEM_LIB_ZLIB=1 \
 		USE_SYSTEM_LIB_JPEG=1 \
 		USE_SYSTEM_LIB_FLAC=1 \
-		USE_SYSTEM_LIB_LUA=1 \
 		USE_SYSTEM_LIB_SQLITE3=1 \
 		USE_SYSTEM_LIB_PUGIXML=1 \
 		USE_QTDEBUG=0 # avoid depending on Qt
@@ -75,7 +71,6 @@ FIX_CRLF_FILES = makefile scripts/genie.lua \
 post-extract:
 	@mv ${WRKSRC}/3rdparty/genie/build/gmake.freebsd \
 		${WRKSRC}/3rdparty/genie/build/gmake.bsd
-	@sed -i 's,"lua","lua${MODLUA_VERSION}",g' ${WRKSRC}/scripts/extlib.lua
 	@mv ${WRKSRC}/src/lib/util/png.h ${WRKSRC}/src/lib/util/localpng.h
 	@sed -i 's,"util/png.h","png.h",' \
 		${WRKSRC}/src/frontend/mame/ui/icorender.cpp
