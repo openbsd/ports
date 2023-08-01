@@ -4,15 +4,14 @@ USE_NOBTCFI=	Yes
 DPB_PROPERTIES=	parallel
 
 COMMENT=	OpenJDK Software Development Kit v${VERSION_STR}
-BASE_VER=	11.0.19
-PATCH_VER=	7
+BASE_VER=	11.0.20
+PATCH_VER=	8
 BSD_PORT_REL=	1
 VERSION_STR=	${BASE_VER}+${PATCH_VER}-${BSD_PORT_REL}
 PACKAGE_VER=	${BASE_VER}.${PATCH_VER}.${BSD_PORT_REL}
 PKGNAME=	jdk-${PACKAGE_VER}
 PKGSTEM=	jdk-11
 EPOCH=		0
-REVISION=	3
 
 DIST_SUBDIR=	jdk
 DISTNAME=	jdk-${VERSION_STR}
@@ -95,7 +94,7 @@ CONFIGURE_ENV+= AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 CONFIGURE_ARGS=	DOT="" FLOCK="" GIT="" HG="" PANDOC="" \
 		DIFF=diff GZIP=gzip MAKE=${GMAKE} MKDIR=mkdir NAWK=awk \
 		OBJCOPY=objcopy OBJDUMP=objdump PATCH=patch \
-		READLINK=readlink READELF=readelf \
+		READELF=readelf READLINK=readlink \
 		--with-boot-jdk=${BOOT_JDK} \
 		--with-jobs=${MAKE_JOBS} \
 		--with-debug-level=release \
