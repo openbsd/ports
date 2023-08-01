@@ -74,7 +74,7 @@ MODMOZ_BUILD_DEPENDS =	devel/autoconf/2.13 \
 			archivers/zip>=2.3
 
 .if !defined(MOZILLA_USE_BUNDLED_NSS)
-MODMOZ_LIB_DEPENDS +=	security/nss>=3.84
+MODMOZ_LIB_DEPENDS +=	security/nss>=3.92
 MODMOZ_WANTLIB +=	nss3 nssutil3 smime3 ssl3
 CONFIGURE_ARGS +=	--with-system-nss
 .endif
@@ -86,7 +86,7 @@ CONFIGURE_ARGS +=	--with-system-nspr
 .endif
 
 .if !defined(MOZILLA_USE_BUNDLED_ICU)
-MODMOZ_LIB_DEPENDS +=	textproc/icu4c
+MODMOZ_LIB_DEPENDS +=	textproc/icu4c>=73.2p0
 MODMOZ_WANTLIB +=	icudata icui18n icuuc
 CONFIGURE_ARGS +=	--with-system-icu
 .endif
