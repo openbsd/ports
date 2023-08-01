@@ -91,7 +91,10 @@ PARALLEL_MAKE_FLAGS=
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV+= AUTOCONF_VERSION=${AUTOCONF_VERSION}
-CONFIGURE_ARGS=	MAKE=${GMAKE} MKDIR=mkdir AWK=awk \
+CONFIGURE_ARGS=	DOT="" FLOCK="" GIT="" HG="" PANDOC="" \
+		AWK=awk DIFF=diff GZIP=gzip MAKE=${GMAKE} MKDIR=mkdir \
+		OBJCOPY=objcopy OBJDUMP=objdump PATCH=patch \
+		READLINK=readlink READELF=readelf \
 		--with-boot-jdk=${BOOT_JDK} \
 		--with-jobs=${MAKE_JOBS} \
 		--with-debug-level=release \
