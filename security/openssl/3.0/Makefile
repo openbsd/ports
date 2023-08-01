@@ -6,7 +6,7 @@ USE_NOEXECONLY =	Yes
 .endif
 
 PORTROACH=	limit:^3\.0
-V=		3.0.9
+V=		3.0.10
 PKGNAME=	openssl-${V}
 PKGSPEC=	openssl->=3v0,<3.1v0
 EPOCH=		0
