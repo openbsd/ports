@@ -9,7 +9,7 @@ CATEGORIES =		textproc
 
 HOMEPAGE =		https://www.unicode.org/ucd/
 
-# https://www.unicode.org/copyright.html
+# BSD like (https://www.unicode.org/license.txt)
 PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://www.unicode.org/Public/zipped/$V/
