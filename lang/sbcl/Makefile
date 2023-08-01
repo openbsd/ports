@@ -7,6 +7,7 @@ COMMENT =	high performance Common Lisp compiler
 V =		2.3.7
 DISTNAME =	sbcl-${V}-source
 PKGNAME =	sbcl-${V}
+REVISION =	0
 
 CATEGORIES =	lang
 
@@ -28,7 +29,6 @@ EXTRACT_SUFX =		.tar.bz2
 WRKDIST =		${WRKDIR}/sbcl-${V}
 
 PSEUDO_FLAVORS =	native_bootstrap
-FLAVORS =		threads
 FLAVOR ?=
 
 # Supported bootstrap methods:
@@ -66,22 +66,16 @@ XCHOST_CMD =		${LOCALBASE}/bin/ecl -q --norc
 ERRORS +=	"Fatal: unknown BOOTSTRAP_METHOD"
 .endif
 
-# sb-thread is available only on some architectures and required on others
-.if ${FLAVOR:Mthreads}
+# sb-thread is not available everywhere
+SB_THREAD-${MACHINE_ARCH} ?=	Yes
+SB_THREAD-arm =		No
+SB_THREAD-i386 =	No
+
+.if ${SB_THREAD-${MACHINE_ARCH}:MYes}
 EXTRA_PARAMS +=		--with-sb-thread
 WANTLIB +=		pthread
-
-# sb-thread on i386 requires i386_set_ldt()
-NOT_FOR_ARCHS +=	i386
-
-# no support for sb-thread
-NOT_FOR_ARCHS +=	arm
-
 .else
 EXTRA_PARAMS +=		--without-sb-thread
-
-# no support without sb-thread
-NOT_FOR_ARCHS +=	aarch64 powerpc64
 .endif
 
 # sb-simd is available on amd64 only

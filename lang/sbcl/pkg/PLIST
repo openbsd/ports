@@ -1,3 +1,4 @@
+@pkgpath lang/sbcl,threads
 @bin bin/sbcl
 @info info/asdf.info
 @info info/sbcl.info
