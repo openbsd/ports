@@ -54,7 +54,7 @@ DIST_SUBDIR ?=	mozilla
 
 .if defined(MOZILLA_PROFDATA_TASKID)
 DISTFILES =	${MOZILLA_DIST}-${MOZILLA_DIST_VERSION}.source${EXTRACT_SUFX}
-.if ${MOZILLA_PROJECT} == "firefox"
+.if ${MOZILLA_PROJECT:Mfirefox*}
 DISTFILES +=	${DISTNAME}-profdata${EXTRACT_SUFX}:0
 MASTER_SITES0=https://rhaalovely.net/stuff/
 .else
