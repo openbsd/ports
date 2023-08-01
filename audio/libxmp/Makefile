@@ -1,9 +1,9 @@
 COMMENT =	module player library
 
-DISTNAME =	libxmp-4.5.0
+DISTNAME =	libxmp-4.6.0
 CATEGORIES =	audio
 
-SHARED_LIBS +=	xmp		1.1	# 4.5
+SHARED_LIBS +=	xmp		1.1	# 4.6
 
 HOMEPAGE =	http://xmp.sourceforge.net/
 

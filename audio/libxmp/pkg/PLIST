@@ -1,3 +1,7 @@
 include/xmp.h
+lib/cmake/
+lib/cmake/libxmp/
+lib/cmake/libxmp/libxmp-config-version.cmake
+lib/cmake/libxmp/libxmp-config.cmake
 @lib lib/libxmp.so.${LIBxmp_VERSION}
 lib/pkgconfig/libxmp.pc

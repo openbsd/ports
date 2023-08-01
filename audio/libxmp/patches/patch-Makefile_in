@@ -1,7 +1,7 @@
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -35,7 +35,7 @@ DDIRS		= docs include src loaders prowiz depackers win
+@@ -38,7 +38,7 @@ DDIRS		= docs include src loaders prowiz depackers tes
  V		= 0
  LIB		= libxmp.a
  SOLIB		= libxmp.so
@@ -10,7 +10,7 @@ Index: Makefile.in
  SONAME		= $(SOLIB).$(VERSION_MAJOR)
  DLL		= libxmp.dll
  IMPLIB		= libxmp.dll.a
-@@ -108,7 +108,7 @@ lib/$(LIB): $(ALL_OBJS)
+@@ -111,7 +111,7 @@ lib/$(LIB): $(ALL_OBJS)
  
  lib/$(SHLIB): $(LOBJS)
  	@mkdir -p lib
@@ -19,7 +19,7 @@ Index: Makefile.in
  	if [ "$(V)" -gt 0 ]; then echo $$CMD; else echo LD $@ ; fi; \
  	eval $$CMD
  	ln -sf $(SHLIB) lib/$(SONAME)
-@@ -165,8 +165,6 @@ install: all
+@@ -170,8 +170,6 @@ install: all
  	@if [ -f lib/$(SHLIB) ]; then \
  		echo "Installing $(SHLIB)..."; \
  		$(INSTALL) -m644 lib/$(SHLIB) $(DESTDIR)$(LIBDIR); \
