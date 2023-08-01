@@ -1,9 +1,8 @@
 COMMENT=	COBOL compiler, formerly known as OpenCOBOL
 
-DISTNAME =	gnucobol-3.1.2
-REVISION =	0
+DISTNAME =	gnucobol-3.2
 
-SHARED_LIBS +=	cob	5.0	# 5.0
+SHARED_LIBS +=	cob	6.0	# 6.0
 
 CATEGORIES =	lang
 
@@ -13,7 +12,7 @@ HOMEPAGE =	https://gnucobol.sourceforge.io/
 # run-time library: LGPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c curses db gmp iconv intl json-c lzma m pthread xml2
+WANTLIB += c cjson curses db gmp iconv intl lzma m pthread xml2
 WANTLIB += z
 
 MASTER_SITES =	${MASTER_SITE_GNU:=gnucobol/}
@@ -24,7 +23,7 @@ BUILD_DEPENDS =	print/texinfo
 LIB_DEPENDS =	databases/db/v4 \
 		devel/gettext,-runtime \
 		devel/gmp \
-		devel/json-c \
+		devel/cjson \
 		textproc/libxml
 
 CONFIGURE_STYLE = gnu

@@ -9,6 +9,8 @@ include/libcob/cobgetopt.h
 include/libcob/common.h
 include/libcob/exception-io.def
 include/libcob/exception.def
+include/libcob/statement.def
+include/libcob/version.h
 @info info/gnucobol.info
 lib/gnucobol/
 @so lib/gnucobol/CBL_OC_DUMP.so
@@ -23,6 +25,7 @@ share/gnucobol/config/
 share/gnucobol/config/acu-strict.conf
 share/gnucobol/config/acu.conf
 share/gnucobol/config/acu.words
+share/gnucobol/config/alternate.ttbl
 share/gnucobol/config/bs2000-strict.conf
 share/gnucobol/config/bs2000.conf
 share/gnucobol/config/bs2000.words
@@ -33,6 +36,13 @@ share/gnucobol/config/cobol2014.words
 share/gnucobol/config/cobol85.conf
 share/gnucobol/config/cobol85.words
 share/gnucobol/config/default.conf
+share/gnucobol/config/default.ttbl
+share/gnucobol/config/ebcdic500_ascii7bit.ttbl
+share/gnucobol/config/ebcdic500_ascii8bit.ttbl
+share/gnucobol/config/ebcdic500_latin1.ttbl
+share/gnucobol/config/gcos-strict.conf
+share/gnucobol/config/gcos.conf
+share/gnucobol/config/gcos.words
 share/gnucobol/config/ibm-strict.conf
 share/gnucobol/config/ibm.conf
 share/gnucobol/config/ibm.words
@@ -69,3 +79,4 @@ share/locale/nl/LC_MESSAGES/gnucobol.mo
 share/locale/pt/LC_MESSAGES/gnucobol.mo
 share/locale/sr/LC_MESSAGES/gnucobol.mo
 share/locale/sv/LC_MESSAGES/gnucobol.mo
+share/locale/tr/LC_MESSAGES/gnucobol.mo
