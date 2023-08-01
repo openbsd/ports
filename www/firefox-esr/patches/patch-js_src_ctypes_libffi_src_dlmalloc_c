@@ -1,0 +1,20 @@
+use /dev/random to init memory within libffi ?
+Index: js/src/ctypes/libffi/src/dlmalloc.c
+--- js/src/ctypes/libffi/src/dlmalloc.c.orig
++++ js/src/ctypes/libffi/src/dlmalloc.c
+@@ -2525,7 +2525,6 @@ static int init_mparams(void) {
+ 
+ #if (FOOTERS && !INSECURE)
+     {
+-#if USE_DEV_RANDOM
+       int fd;
+       unsigned char buf[sizeof(size_t)];
+       /* Try to use /dev/urandom, else fall back on using time */
+@@ -2535,7 +2534,6 @@ static int init_mparams(void) {
+         close(fd);
+       }
+       else
+-#endif /* USE_DEV_RANDOM */
+         s = (size_t)(time(0) ^ (size_t)0x55555555U);
+ 
+       s |= (size_t)8U;    /* ensure nonzero */

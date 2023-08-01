@@ -15,14 +15,20 @@ switch, which temporarily disables extensions and themes.
 pledge(2) and unveil(2) Support
 ===============================
 Firefox on OpenBSD is secured with pledge(2) and unveil(2) to limit
-the system calls and filesystem access that each of Firefox's three
-process types (main, content, and GPU) is permitted.  By default,
-only ~/Downloads and /tmp can be written to when downloading files,
-or when viewing local files as file:// URLs.  You can edit the
-following files to change the pledge promises, unveil paths, and
-associated permissions:
+the system calls and filesystem access that each of Firefox's process types
+(main, content, remote data decoder, audio decoder, socket and GPU) is
+permitted.  By default, only ~/Downloads and /tmp can be written to when
+downloading files, or when viewing local files as file:// URLs.  You can edit
+the following files to change the pledge promises, unveil paths, and associated
+permissions:
 
-${SYSCONFDIR}/${MOZILLA_PROJECT}/{unveil,pledge}.{main,content,gpu}
+${SYSCONFDIR}/${MOZILLA_PROJECT}/{unveil,pledge}.{content,gpu,main,rdd,socket,utility}
+
+As unveil() can't show non-existing dirs, it is recommended to manually
+create ~/Downloads for files to be properly saved in this directory.
+
+Starting ${MOZILLA_PROJECT} should create this dir though, but it wont be available
+for downloads until it's restarted.
 
 3rd-Party MIME Handlers
 =======================
@@ -66,9 +72,9 @@ your mailer.
 
 Debugging
 =========
-If you encounter crashes, you might want to build the debug FLAVOR of
-this package, and run firefox inside egdb, so that you can gather
-debugging logs and traces (for all threads!).
+If you encounter crashes, you might want to install the debug-${MOZILLA_PROJECT}
+package, and run ${MOZILLA_PROJECT} inside egdb, so that you can gather debugging
+logs and traces (for all threads!).
 
 If this is a pledge violation, please try to find out which codepath
 in which process leads to calling a forbidden syscall, and which pledge
@@ -83,7 +89,7 @@ just "disable".
 
 D-BUS
 =====
-For proper integration with various desktop-oriented components, firefox
+For proper integration with various desktop-oriented components, ${MOZILLA_PROJECT}
 needs a session bus instance running.
 If you're not running a desktop environment that takes care of it,
 refer to /usr/local/share/doc/pkg-readmes/dbus to configure your

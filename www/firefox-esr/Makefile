@@ -1,8 +1,8 @@
 COMMENT =	Firefox web browser, Extended Support Release
 ONLY_FOR_ARCHS =	amd64 aarch64
 
-MOZILLA_VERSION =	102.13.0esr
-MOZILLA_PROFDATA_TASKID=f8wNxnFrSd-sHHYNenLUyw
+MOZILLA_VERSION =	115.1.0esr
+MOZILLA_PROFDATA_TASKID=BAHeVuB7Sh6y-6Uq5oznKg
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox-esr
 MOZILLA_CODENAME =	browser
@@ -11,7 +11,7 @@ MOZILLA_DIST =		firefox
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/esr//}
 HOMEPAGE =	https://www.mozilla.org/firefox/organizations/
 PKGNAME =	${MOZILLA_PROJECT}-${MOZILLA_VERSION:S/esr//}
-SO_VERSION =	9.0
+SO_VERSION =	10.0
 MOZILLA_LIBS =	xul clearkey lgpllibs mozavcodec mozavutil mozgtk mozsqlite3 ipcclientcerts
 
 CATEGORIES =	www
@@ -67,11 +67,6 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 DEBUG_CONFIGURE_ARGS +=	--enable-debug-symbols \
 			--disable-install-strip
 
-post-patch:
-	${SUBST_CMD} ${WRKSRC}/xpcom/build/BinaryPath.h
-	sed -i 's/"files":{[^}]*}/"files":{}/' \
-		${WRKSRC}/third_party/rust/mp4parse/.cargo-checksum.json
-
 post-install:
 	# install prefs
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/${MOZILLA_PROJECT}/browser/defaults/preferences
@@ -97,13 +92,14 @@ post-install:
 		${PREFIX}/share/icons/hicolor/${s}x${s}/apps/org.mozilla.${MOZILLA_PROJECT}.png
 .endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/scalable/apps
-	${INSTALL_DATA} ${WRKSRC}/browser/branding/official/content/about-logo.svg ${PREFIX}/share/icons/hicolor/scalable/apps/org.mozilla.${MOZILLA_PROJECT}.svg
+	${INSTALL_DATA} ${WRKSRC}/browser/branding/official/content/about-logo.svg \
+		${PREFIX}/share/icons/hicolor/scalable/apps/org.mozilla.${MOZILLA_PROJECT}.svg
 
 	# link default48.png to default.png to be used by default by non-icccm compliant wm
 	ln -f ${PREFIX}/lib/${MOZILLA_PROJECT}/browser/chrome/icons/default/default{48,}.png
 
 .for f in unveil pledge
-.for t in content gpu main rdd socket utility utility-audioDecoder
+.for t in content gpu main rdd socket utility
 	${INSTALL_DATA} ${FILESDIR}/${f}.${t} ${PREFIX}/lib/${MOZILLA_PROJECT}/browser/defaults/preferences/
 .endfor
 .endfor
