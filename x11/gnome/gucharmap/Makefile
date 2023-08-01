@@ -2,6 +2,7 @@ COMMENT=		Unicode character map for the GNOME project
 
 GNOME_PROJECT=		gucharmap
 GNOME_VERSION=		15.0.4
+REVISION=		0
 
 # override gnome MODULE
 MASTER_SITES =		https://gitlab.gnome.org/GNOME/${GNOME_PROJECT}/-/archive/${GNOME_VERSION}/
@@ -28,7 +29,7 @@ MODGNOME_TOOLS=		desktop-file-utils gobject-introspection vala yelp
 BUILD_DEPENDS=		archivers/unzip \
 			devel/gsettings-desktop-schemas \
 			textproc/gtk-doc \
-			textproc/unicode-ucd
+			textproc/unicode/ucd
 
 RUN_DEPENDS =		devel/gsettings-desktop-schemas
 
