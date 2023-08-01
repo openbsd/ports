@@ -112,7 +112,6 @@
      SUBDIR += ruby
      SUBDIR += rust
      SUBDIR += sbcl
-     SUBDIR += sbcl,threads
      SUBDIR += scala
      SUBDIR += scheme-report
      SUBDIR += scheme48
