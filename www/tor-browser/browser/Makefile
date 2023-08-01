@@ -5,7 +5,7 @@
 COMMENT =		modified version of Firefox ESR for browsing over Tor
 
 MOZILLA_VERSION =	${TB_VERSION}
-REVISION =		0
+REVISION =		1
 MOZILLA_PROJECT =	${BROWSER_NAME}
 MOZILLA_CODENAME =	browser
 
