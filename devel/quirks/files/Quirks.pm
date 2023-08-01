@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1532 2023/08/01 13:10:01 semarie Exp $
+# $OpenBSD: Quirks.pm,v 1.1533 2023/08/01 14:34:36 mestre Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -2133,6 +2133,7 @@ my $cve = {
 	'www/tomcat/v8' => 'tomcat-<8.5.55',
 	'www/tomcat/v9' => 'tomcat-<9.0.35',
 	'www/webkitgtk4' => 'webkitgtk4-<2.20.5',
+	'www/yt-dlp' => 'yt-dlp-<2023.07.06',
 	'x11/gnome/gdm' => 'gdm-<3.28.3',
 	'x11/rdesktop' => 'rdesktop-<1.8.4',
 };
