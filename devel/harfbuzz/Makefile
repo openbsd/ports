@@ -3,15 +3,15 @@ BROKEN-hppa=		no atomic primitives
 COMMENT-main=		text shaping library
 COMMENT-icu=		ICU support for libharfbuzz
 
-V=			8.0.1
+V=			8.1.0
 DISTNAME=		harfbuzz-${V}
 EXTRACT_SUFX=		.tar.xz
 
-SHARED_LIBS += harfbuzz                  18.4 # 0.60801.0
-SHARED_LIBS += harfbuzz-subset           2.4 # 0.60801.0
-SHARED_LIBS += harfbuzz-cairo            0.1 # 0.60801.0
-SHARED_LIBS += harfbuzz-icu              2.1 # 0.60801.0
-SHARED_LIBS += harfbuzz-gobject          1.1 # 0.60801.0
+SHARED_LIBS += harfbuzz                  18.5 # 0.60810.0
+SHARED_LIBS += harfbuzz-subset           2.4 # 0.60810.0
+SHARED_LIBS += harfbuzz-cairo            0.1 # 0.60810.0
+SHARED_LIBS += harfbuzz-icu              2.1 # 0.60810.0
+SHARED_LIBS += harfbuzz-gobject          1.1 # 0.60810.0
 
 CATEGORIES=		devel graphics textproc
 
@@ -36,6 +36,9 @@ COMPILER=		base-clang ports-gcc ports-clang
 MODULES=		devel/meson
 
 BUILD_DEPENDS=		devel/gobject-introspection
+
+# XXX Program ragel found: NO found 6.9 but need: '6.10' (/usr/local/bin/ragel)
+#BUILD_DEPENDS +=	devel/ragel
 
 LIB_DEPENDS-main=	graphics/cairo \
 			graphics/graphite2
