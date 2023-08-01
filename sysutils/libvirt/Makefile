@@ -1,14 +1,13 @@
 COMMENT=		tool/library for managing platform virtualization
 
-DISTNAME=		libvirt-9.5.0
-REVISION=		0
+DISTNAME=		libvirt-9.6.0
 
 CATEGORIES=		sysutils devel emulators
 
-SHARED_LIBS += virt                      2.4 # 0.9005.0
-SHARED_LIBS += virt-qemu                 2.3 # 0.9005.0
-SHARED_LIBS += virt-lxc                  2.2 # 0.9005.0
-SHARED_LIBS += virt-admin                2.2 # 0.9005.0
+SHARED_LIBS += virt                      2.4 # 0.9006.0
+SHARED_LIBS += virt-qemu                 2.3 # 0.9006.0
+SHARED_LIBS += virt-lxc                  2.2 # 0.9006.0
+SHARED_LIBS += virt-admin                2.2 # 0.9006.0
 
 HOMEPAGE=		https://libvirt.org/
 

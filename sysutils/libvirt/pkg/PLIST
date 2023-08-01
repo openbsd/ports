@@ -186,6 +186,7 @@ share/doc/libvirt/html/cgroups.html
 share/doc/libvirt/html/ci-dashboard.html
 share/doc/libvirt/html/ci-runners.html
 share/doc/libvirt/html/ci.html
+share/doc/libvirt/html/clangd.html
 share/doc/libvirt/html/coding-style.html
 share/doc/libvirt/html/committer-guidelines.html
 share/doc/libvirt/html/compiling.html
