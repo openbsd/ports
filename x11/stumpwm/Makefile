@@ -2,7 +2,7 @@ COMMENT=		easily hackable Common LISP window manager
 
 VERSION=		22.11
 DISTNAME=		stumpwm-${VERSION}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		x11
 
@@ -25,7 +25,7 @@ DISTFILES=		${DISTNAME}{${VERSION}}${EXTRACT_SUFX} \
 			clx-20220707-git.tgz:1 \
 			alexandria-20220707-git.tgz:2
 
-BUILD_DEPENDS=		lang/sbcl,threads \
+BUILD_DEPENDS=		lang/sbcl \
 			print/texinfo
 LIB_DEPENDS=		archivers/zstd
 
