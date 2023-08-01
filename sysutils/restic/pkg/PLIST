@@ -15,8 +15,10 @@
 @man man/man1/restic-ls.1
 @man man/man1/restic-migrate.1
 @man man/man1/restic-prune.1
-@man man/man1/restic-rebuild-index.1
 @man man/man1/restic-recover.1
+@man man/man1/restic-repair-index.1
+@man man/man1/restic-repair-snapshots.1
+@man man/man1/restic-repair.1
 @man man/man1/restic-restore.1
 @man man/man1/restic-rewrite.1
 @man man/man1/restic-snapshots.1
