@@ -1,0 +1,35 @@
+drop CLOBBER bits, otherwise make complains ?
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -49,20 +49,10 @@ ifndef TEST_MOZBUILD
+ ifndef MOZ_PROFILE_USE
+ # We need to explicitly put BUILD_BACKEND_FILES here otherwise the rule in
+ # rules.mk doesn't run early enough.
+-$(TIERS) binaries:: CLOBBER $(BUILD_BACKEND_FILES)
++$(TIERS) binaries:: $(BUILD_BACKEND_FILES)
+ endif
+ endif
+ 
+-ifdef JS_STANDALONE
+-.PHONY: CLOBBER
+-CLOBBER:
+-else
+-CLOBBER: $(topsrcdir)/CLOBBER
+-	@echo 'STOP!  The CLOBBER file has changed.'
+-	@echo 'Please run the build through "mach build".'
+-	@exit 1
+-endif
+-
+ install_manifests := \
+   $(addprefix dist/,branding idl include public private xpi-stage) \
+   _tests \
+@@ -75,7 +65,6 @@ ifeq (,$(filter FasterMake+RecursiveMake,$(BUILD_BACKE
+ install_manifests += dist/bin
+ endif
+ install_manifest_depends = \
+-  CLOBBER \
+   $(BUILD_BACKEND_FILES) \
+   $(NULL)
+ 

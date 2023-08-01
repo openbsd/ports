@@ -5,15 +5,14 @@ COMMENT-lightning =	Mozilla Seamonkey calendar extension
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
 
 # version = (TB version - 3) / 100 + 2
-MOZILLA_VERSION =	2.53.16
+MOZILLA_VERSION =	2.53.17
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	comm/suite
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
-PKGNAME-lightning =	lightning-seamonkey-5.8.16
+PKGNAME-lightning =	lightning-seamonkey-5.8.17
 EPOCH-lightning =	0
-REVISION-main =		2
 
 HOMEPAGE =	https://www.seamonkey-project.org/
 
@@ -29,7 +28,6 @@ CATEGORIES=	www mail net news
 PERMIT_PACKAGE=	Yes
 
 MODULES =	www/mozilla lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_RUNDEP =	No
 
 COMPILER =		base-clang ports-clang
@@ -40,11 +38,6 @@ NO_TEST=	Yes
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS +=	--prefix=${PREFIX}
-
-LIB_DEPENDS +=	textproc/hunspell>=1.7
-WANTLIB +=	hunspell-1.7
-# option removed in 62, cf #1460600
-CONFIGURE_ARGS +=	--with-system-hunspell
 
 BUILD_DEPENDS +=	devel/cbindgen>=0.6.1
 
