@@ -1,8 +1,7 @@
 COMMENT =	GNU binary utilities
 
-DISTNAME =	binutils-2.40
+DISTNAME =	binutils-2.41
 EXTRACT_SUFX =	.tar.bz2
-REVISION =	0
 
 CATEGORIES =	devel
 
