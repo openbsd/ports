@@ -565,7 +565,7 @@
      SUBDIR += uchardet
      SUBDIR += uncrustify
      SUBDIR += uni
-     SUBDIR += unicode-ucd
+     SUBDIR += unicode
      SUBDIR += unrtf
      SUBDIR += urlview
      SUBDIR += urlview,slang
