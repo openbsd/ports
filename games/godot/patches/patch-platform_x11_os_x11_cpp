@@ -1,10 +1,22 @@
 fix libXrandr library name and load sndio
 use OpenBSD joypad class
+suspend X11 screensaver for release builds
 
 Index: platform/x11/os_x11.cpp
 --- platform/x11/os_x11.cpp.orig
 +++ platform/x11/os_x11.cpp
-@@ -173,7 +173,7 @@ Error OS_X11::initialize(const VideoMode &p_desired, i
+@@ -55,6 +55,10 @@
+ #include <X11/extensions/Xinerama.h>
+ #include <X11/extensions/shape.h>
+ 
++#ifdef SUSPEND_SCREENSAVER
++#include <X11/extensions/scrnsaver.h>
++#endif
++
+ // ICCCM
+ #define WM_NormalState 1L // window normal state
+ #define WM_IconicState 3L // window minimized
+@@ -173,7 +177,7 @@ Error OS_X11::initialize(const VideoMode &p_desired, i
  	int xrandr_minor = 0;
  	int event_base, error_base;
  	xrandr_ext_ok = XRRQueryExtension(x11_display, &event_base, &error_base);
@@ -13,7 +25,7 @@ Index: platform/x11/os_x11.cpp
  	if (!xrandr_handle) {
  		err = dlerror();
  		// For some arcane reason, NetBSD now ships libXrandr.so.3 while the rest of the world has libXrandr.so.2...
-@@ -610,7 +610,7 @@ Error OS_X11::initialize(const VideoMode &p_desired, i
+@@ -610,9 +614,13 @@ Error OS_X11::initialize(const VideoMode &p_desired, i
  
  	window_has_focus = true; // Set focus to true at init
  #ifdef JOYDEV_ENABLED
@@ -21,8 +33,14 @@ Index: platform/x11/os_x11.cpp
 +	joypad = memnew(JoypadOpenBSD(input));
  #endif
  
++#ifdef SUSPEND_SCREENSAVER
++	XScreenSaverSuspend(x11_display, true);
++#endif
++
  	power_manager = memnew(PowerX11);
-@@ -4414,6 +4414,11 @@ void OS_X11::update_real_mouse_position() {
+ 
+ 	if (p_desired.layered) {
+@@ -4414,6 +4422,11 @@ void OS_X11::update_real_mouse_position() {
  }
  
  OS_X11::OS_X11() {

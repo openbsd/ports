@@ -7,7 +7,7 @@ V =		3.5.2
 GODOTSTEAM_V =	g352-s157-gs3193
 DISTNAME =	godot-${V}-stable
 PKGNAME =	godot-${V}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	games
 
@@ -24,11 +24,12 @@ WANTLIB += ${COMPILER_LIBCXX} BulletCollision BulletDynamics BulletSoftBody
 WANTLIB += GL LinearMath X11 X11-xcb Xau Xcursor Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm c drm enet execinfo
 WANTLIB += intl m mbedcrypto mbedtls mbedx509 mpcdec ogg opus
-WANTLIB += opusfile pcre2-32 sndio steam_api theora theoradec
+WANTLIB += opusfile pcre2-32 sharpyuv sndio steam_api theora theoradec
 WANTLIB += usbhid vorbis vorbisfile vpx webp xcb xcb-dri2 xcb-glx
 WANTLIB += zstd
 
-WANTLIB-tools = ${WANTLIB}
+WANTLIB-main =	${WANTLIB} Xss
+WANTLIB-tools =	${WANTLIB}
 
 # C++14
 COMPILER =	base-clang ports-gcc
@@ -47,8 +48,6 @@ MODULES =	devel/scons
 MODSCONS_FLAGS =	CC="${CC}" \
 			CXX="${CXX}" \
 			CFLAGS="${CFLAGS}" \
-			CXXFLAGS="${CXXFLAGS} -Wno-deprecated-register" \
-			LINKFLAGS="${LDFLAGS} -lintl -lmpcdec -lusbhid" \
 			builtin_bullet=no \
 			builtin_enet=no \
 			builtin_glew=no \
@@ -129,8 +128,12 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/misc/dist/linux/*.desktop
 
 do-build:
-	@${MODSCONS_BUILD_TARGET} tools=no  target=release
-	@${MODSCONS_BUILD_TARGET} tools=yes target=release_debug
+	@${MODSCONS_BUILD_TARGET} tools=no  target=release \
+		CXXFLAGS="${CXXFLAGS} -Wno-deprecated-register -DSUSPEND_SCREENSAVER=1" \
+		LINKFLAGS="${LDFLAGS} -lintl -lmpcdec -lusbhid -lXss"
+	@${MODSCONS_BUILD_TARGET} tools=yes target=release_debug \
+		CXXFLAGS="${CXXFLAGS} -Wno-deprecated-register" \
+		LINKFLAGS="${LDFLAGS} -lintl -lmpcdec -lusbhid"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/godot.x11.opt.${BINSUFFIX} \
