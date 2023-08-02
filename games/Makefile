@@ -183,6 +183,7 @@
      SUBDIR += lincity-ng
      SUBDIR += lostpixels
      SUBDIR += love
+     SUBDIR += luasteam
      SUBDIR += lugaru
      SUBDIR += lwjgl
      SUBDIR += lwjgl3
