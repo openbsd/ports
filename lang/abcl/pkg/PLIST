@@ -88,6 +88,7 @@ abcl/src/org/armedbear/lisp/FuncallableStandardObject.java
 abcl/src/org/armedbear/lisp/Function.java
 abcl/src/org/armedbear/lisp/FunctionBinding.java
 abcl/src/org/armedbear/lisp/Go.java
+abcl/src/org/armedbear/lisp/GrayStream.java
 abcl/src/org/armedbear/lisp/HashTable.java
 abcl/src/org/armedbear/lisp/HashTableFunctions.java
 abcl/src/org/armedbear/lisp/IllegalMonitorState.java
@@ -311,6 +312,7 @@ abcl/src/org/armedbear/lisp/gc.java
 abcl/src/org/armedbear/lisp/gentemp.lisp
 abcl/src/org/armedbear/lisp/get-pid.lisp
 abcl/src/org/armedbear/lisp/get_properties.java
+abcl/src/org/armedbear/lisp/gray-streams-java.lisp
 abcl/src/org/armedbear/lisp/gray-streams.lisp
 abcl/src/org/armedbear/lisp/gui.lisp
 abcl/src/org/armedbear/lisp/inline.lisp

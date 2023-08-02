@@ -1,5 +1,5 @@
 COMMENT =		Common Lisp dialect for the Java Virtual Machine
-V =			1.9.1
+V =			1.9.2
 DISTNAME =		abcl-src-${V}
 PKGNAME =		abcl-${V}
 PKG_ARCH =		*

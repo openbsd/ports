@@ -1979,6 +1979,7 @@ real-count
 realp
 realpart
 reduce
+register-asdf
 reinitialize-instance
 rem
 remf
@@ -2173,8 +2174,11 @@ system:%format
 system:%fresh-line
 system:%get-output-stream-array
 system:%get-output-stream-bytes
+system:%get-step-counter
 system:%import
 system:%in-package
+system:%initialize-step-block
+system:%initialize-step-counter
 system:%ldb
 system:%length
 system:%load
@@ -2229,6 +2233,7 @@ system:%putf
 system:%read-from-string
 system:%reader-error
 system:%reinit-emf-cache
+system:%return-from-stepper
 system:%reverse
 system:%run-shell-command
 system:%server-socket-close
@@ -2273,6 +2278,8 @@ system:%set-class-layout
 system:%set-class-name
 system:%set-class-precedence-list
 system:%set-class-slots
+system:%set-delimited-stepping-off
+system:%set-delimited-stepping-on
 system:%set-documentation
 system:%set-eighth
 system:%set-elt
@@ -2290,6 +2297,10 @@ system:%set-seventh
 system:%set-sixth
 system:%set-standard-instance-access
 system:%set-std-instance-layout
+system:%set-stepper-off
+system:%set-stepper-on
+system:%set-stepping-task-off
+system:%set-stepping-task-on
 system:%set-stream-external-format
 system:%set-subseq
 system:%set-symbol-function
