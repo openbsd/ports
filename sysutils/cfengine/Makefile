@@ -3,11 +3,13 @@ BROKEN =	pkg_add fails: problem with symlinks
 COMMENT =	GNU system administration tool for networks
 
 DISTNAME =	cfengine-3.7.2
-REVISION =	4
+REVISION =	5
+
+PORTROACH =	site:https://github.com/cfengine/core/archive/
 
 SHARED_LIBS +=  promises	0.0 # 1.0
 CATEGORIES =	sysutils
-HOMEPAGE =	http://cfengine.com/
+HOMEPAGE =	https://cfengine.com/
 
 # GPLv3 only
 PERMIT_PACKAGE =	Yes
