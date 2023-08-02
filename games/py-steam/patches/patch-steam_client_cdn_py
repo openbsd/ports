@@ -1,0 +1,19 @@
+backport https://github.com/ValvePython/steam/pull/437:
+CDNClient: Cope with longer manifest descriptions for some depots
+
+Index: steam/client/cdn.py
+--- steam/client/cdn.py.orig
++++ steam/client/cdn.py
+@@ -836,6 +836,12 @@ class CDNClient(object):
+             else:
+                 manifest_gid = depot_info.get('manifests', {}).get(branch)
+ 
++            if isinstance(manifest_gid, dict):
++                # For some depots, Steam has started returning a dict
++                # {"public": {"gid": GID, "size": ..., "download": ...}, ...}
++                # instead of a simple map {"public": GID, ...}
++                manifest_gid = manifest_gid['gid']
++
+             if manifest_gid is not None:
+                 tasks.append(
+                     self.gpool.spawn(
