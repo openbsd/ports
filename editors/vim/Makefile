@@ -3,22 +3,20 @@ COMMENT-lang=	vi clone, NLS subpackage
 
 # careful with PLISTs if updating; it usually works best if you use
 # a gui flavour rather than no_x11
-V=		9.0.1536
+V=		9.0.1677
 GH_ACCOUNT=	vim
 GH_PROJECT=	vim
 GH_TAGNAME=	v$V
 
 MASTER_SITES0=	https://github.com/vim/colorschemes/archive/
 DISTFILES=	${GH_DISTFILE} \
-		vim-colorschemes-20220522{9d3d216b72dd77a2ce4c27e8746708b916864645}.tar.gz:0
+		vim-colorschemes-20230324{22986fa2a3d2f7229efd4019fcbca411caa6afbb}.tar.gz:0
 
 PKGNAME=	vim-$V
 FULLPKGNAME-lang= vim-lang-$V
 FULLPKGPATH-lang= ${PKGPATH},-lang
 P=		vim${V:R:S/.//}
 CATEGORIES=	editors
-REVISION-main=	0
-REVISION-lang=    0
 
 HOMEPAGE=	https://www.vim.org/
 
@@ -63,7 +61,7 @@ CONFIGURE_ARGS+= --with-tlib="curses" \
 		--enable-cscope
 
 # not directly usable with CONFIGURE_STYLE=autoconf
-AUTOCONF_VERSION= 2.69
+AUTOCONF_VERSION= 2.71
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 		devel/gettext,-tools
 

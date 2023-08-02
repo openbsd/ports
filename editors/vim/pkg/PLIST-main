@@ -77,6 +77,8 @@ share/vim/${P}/autoload/xml/xsd.vim
 share/vim/${P}/autoload/xml/xsl.vim
 share/vim/${P}/autoload/xmlcomplete.vim
 share/vim/${P}/autoload/xmlformat.vim
+share/vim/${P}/autoload/zig/
+share/vim/${P}/autoload/zig/fmt.vim
 share/vim/${P}/autoload/zip.vim
 share/vim/${P}/bugreport.vim
 share/vim/${P}/colors/
@@ -440,6 +442,7 @@ share/vim/${P}/ftplugin/conf.vim
 share/vim/${P}/ftplugin/config.vim
 share/vim/${P}/ftplugin/confini.vim
 share/vim/${P}/ftplugin/context.vim
+share/vim/${P}/ftplugin/corn.vim
 share/vim/${P}/ftplugin/cpp.vim
 share/vim/${P}/ftplugin/crm.vim
 share/vim/${P}/ftplugin/crontab.vim
@@ -543,6 +546,7 @@ share/vim/${P}/ftplugin/logtalk.dict
 share/vim/${P}/ftplugin/logtalk.vim
 share/vim/${P}/ftplugin/lprolog.vim
 share/vim/${P}/ftplugin/lua.vim
+share/vim/${P}/ftplugin/luau.vim
 share/vim/${P}/ftplugin/lynx.vim
 share/vim/${P}/ftplugin/m3build.vim
 share/vim/${P}/ftplugin/m3quake.vim
@@ -668,6 +672,8 @@ share/vim/${P}/ftplugin/udevconf.vim
 share/vim/${P}/ftplugin/udevperm.vim
 share/vim/${P}/ftplugin/udevrules.vim
 share/vim/${P}/ftplugin/updatedb.vim
+share/vim/${P}/ftplugin/urlshortcut.vim
+share/vim/${P}/ftplugin/usd.vim
 share/vim/${P}/ftplugin/vb.vim
 share/vim/${P}/ftplugin/vdf.vim
 share/vim/${P}/ftplugin/verilog.vim
@@ -734,6 +740,7 @@ share/vim/${P}/indent/docbk.vim
 share/vim/${P}/indent/dosbatch.vim
 share/vim/${P}/indent/dtd.vim
 share/vim/${P}/indent/dtrace.vim
+share/vim/${P}/indent/dts.vim
 share/vim/${P}/indent/dune.vim
 share/vim/${P}/indent/dylan.vim
 share/vim/${P}/indent/eiffel.vim
@@ -778,6 +785,7 @@ share/vim/${P}/indent/lisp.vim
 share/vim/${P}/indent/livebook.vim
 share/vim/${P}/indent/logtalk.vim
 share/vim/${P}/indent/lua.vim
+share/vim/${P}/indent/luau.vim
 share/vim/${P}/indent/mail.vim
 share/vim/${P}/indent/make.vim
 share/vim/${P}/indent/matlab.vim
@@ -1394,6 +1402,7 @@ share/vim/${P}/syntax/lscript.vim
 share/vim/${P}/syntax/lsl.vim
 share/vim/${P}/syntax/lss.vim
 share/vim/${P}/syntax/lua.vim
+share/vim/${P}/syntax/luau.vim
 share/vim/${P}/syntax/lynx.vim
 share/vim/${P}/syntax/lyrics.vim
 share/vim/${P}/syntax/m3build.vim
@@ -1708,6 +1717,7 @@ share/vim/${P}/syntax/upstreamdat.vim
 share/vim/${P}/syntax/upstreaminstalllog.vim
 share/vim/${P}/syntax/upstreamlog.vim
 share/vim/${P}/syntax/upstreamrpt.vim
+share/vim/${P}/syntax/urlshortcut.vim
 share/vim/${P}/syntax/usserverlog.vim
 share/vim/${P}/syntax/usw2kagtlog.vim
 share/vim/${P}/syntax/valgrind.vim
