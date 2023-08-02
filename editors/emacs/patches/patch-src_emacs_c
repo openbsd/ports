@@ -3,15 +3,19 @@ Don't use printf %n.
 Index: src/emacs.c
 --- src/emacs.c.orig
 +++ src/emacs.c
-@@ -2746,21 +2746,13 @@ shut_down_emacs (int sig, Lisp_Object stuff)
+@@ -2958,25 +2958,17 @@ shut_down_emacs (int sig, Lisp_Object stuff)
        reset_all_sys_modes ();
        if (sig && sig != SIGTERM)
  	{
 -	  static char const fmt[] = "Fatal error %d: %n%s\n";
++	  static char const fmt[] = "Fatal error %d: ";
+ #ifdef HAVE_HAIKU
+ 	  if (haiku_debug_on_fatal_error)
+ 	    debugger ("Fatal error in Emacs");
+ #endif
 -	  char buf[max ((sizeof fmt - sizeof "%d%n%s\n"
 -			 + INT_STRLEN_BOUND (int) + 1),
 -			min (PIPE_BUF, MAX_ALLOCA))];
-+	  static char const fmt[] = "Fatal error %d: ";
 +	  char buf[sizeof fmt - strlen ("%d") + INT_STRLEN_BOUND (int) + 1];
  	  char const *sig_desc = safe_strsignal (sig);
 -	  int nlen;

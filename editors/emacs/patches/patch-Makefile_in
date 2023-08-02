@@ -3,7 +3,7 @@
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -693,7 +693,7 @@ install-info: info
+@@ -792,7 +792,7 @@ install-info: info
  	      for f in `ls $$elt $$elt-[1-9] $$elt-[1-9][0-9] 2>/dev/null`; do \
  	       (cd "$${thisdir}"; \
  	        ${INSTALL_DATA} ${srcdir}/info/$$f "$(DESTDIR)${infodir}/$$f"); \
@@ -12,7 +12,7 @@ Index: Makefile.in
  	        rm -f "$(DESTDIR)${infodir}/$$f.gz"; \
  	        ${GZIP_PROG} -9n "$(DESTDIR)${infodir}/$$f"; \
  	      done; \
-@@ -717,7 +717,7 @@ install-man:
+@@ -816,7 +816,7 @@ install-man:
  	  dest=`echo "$${page}" | sed -e 's/\.1$$//' -e '$(TRANSFORM)'`.1; \
  	  (cd "$${thisdir}"; \
  	   ${INSTALL_DATA} ${mansrcdir}/$${page} "$(DESTDIR)${man1dir}/$${dest}"); \

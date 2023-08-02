@@ -3,11 +3,11 @@
 Index: lisp/files.el
 --- lisp/files.el.orig
 +++ lisp/files.el
-@@ -2925,6 +2925,7 @@ ARC\\|ZIP\\|LZH\\|LHA\\|ZOO\\|[JEW]AR\\|XPI\\|RAR\\|CB
+@@ -2992,6 +2992,7 @@ ARC\\|ZIP\\|LZH\\|LHA\\|ZOO\\|[JEW]AR\\|XPI\\|RAR\\|CB
       ("\\.\\(as\\|mi\\|sm\\)2\\'" . snmpv2-mode)
       ("\\.\\(diffs?\\|patch\\|rej\\)\\'" . diff-mode)
       ("\\.\\(dif\\|pat\\)\\'" . diff-mode) ; for MS-DOS
 +     ("/patch-[^/]*$" . diff-mode)
       ("\\.[eE]?[pP][sS]\\'" . ps-mode)
-      ("\\.\\(?:PDF\\|DVI\\|OD[FGPST]\\|DOCX\\|XLSX?\\|PPTX?\\|pdf\\|djvu\\|dvi\\|od[fgpst]\\|docx\\|xlsx?\\|pptx?\\)\\'" . doc-view-mode-maybe)
+      ("\\.\\(?:PDF\\|EPUB\\|CBZ\\|FB2\\|O?XPS\\|DVI\\|OD[FGPST]\\|DOCX\\|XLSX?\\|PPTX?\\|pdf\\|epub\\|cbz\\|fb2\\|o?xps\\|djvu\\|dvi\\|od[fgpst]\\|docx\\|xlsx?\\|pptx?\\)\\'" . doc-view-mode-maybe)
       ("configure\\.\\(ac\\|in\\)\\'" . autoconf-mode)

@@ -1,7 +1,6 @@
 COMMENT=		GNU editor: extensible, customizable, self-documenting
 
-VERSION=		28.2
-REVISION=		4
+VERSION=		29.1
 DISTNAME=		emacs-${VERSION}
 
 CATEGORIES=		editors
@@ -13,7 +12,8 @@ MAINTAINER=		Jeremie Courreges-Anglas <jca@wxcvbn.org>
 # GPLv3+
 PERMIT_PACKAGE=		Yes
 
-WANTLIB =		c curses execinfo jansson gmp gnutls m pthread xml2 z
+WANTLIB += c curses execinfo gmp gnutls jansson m pthread sqlite3
+WANTLIB += xml2 z
 
 MASTER_SITES=		${MASTER_SITE_GNU:=emacs/}
 EXTRACT_SUFX=		.tar.xz
@@ -29,6 +29,8 @@ CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build-aux
 CONFIGURE_ARGS=		--build="${GCCARCH}" \
 			--without-sound
+# Uses rust, not supported on all archs
+CONFIGURE_ARGS+=	--without-tree-sitter
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}"
@@ -39,7 +41,8 @@ MAKE_ENV=		INSTALL_EMACS="${INSTALL_SCRIPT}" \
 SUBST_VARS=		GCCARCH VERSION
 
 USE_GMAKE=		Yes
-LIB_DEPENDS=		devel/jansson \
+LIB_DEPENDS=		databases/sqlite3 \
+			devel/jansson \
 			devel/gmp \
 			security/gnutls \
 			textproc/libxml
@@ -61,6 +64,7 @@ LIB_DEPENDS+=		devel/harfbuzz \
 			graphics/tiff \
 			graphics/giflib \
 			graphics/lcms2 \
+			graphics/libwebp \
 			misc/m17n/lib \
 			x11/dbus \
 			x11/gnome/librsvg
@@ -70,11 +74,11 @@ RUN_DEPENDS+=		devel/desktop-file-utils \
 . if ${FLAVOR} == "athena"
 CONFIGURE_ARGS+=	--with-x-toolkit=athena
 LIB_DEPENDS+=		x11/Xaw3d
-WANTLIB += ICE SM X11 X11-xcb Xaw3d Xext Xfixes Xinerama Xmu
-WANTLIB += Xpm Xrandr Xrender Xt cairo dbus-1 fontconfig freetype
-WANTLIB += gdk_pixbuf-2.0 gif gio-2.0 glib-2.0 gobject-2.0 harfbuzz
-WANTLIB += intl jpeg lcms2 m17n-core m17n-flt otf png rsvg-2 tiff
-WANTLIB += xcb
+WANTLIB += ICE SM X11 X11-xcb Xaw3d Xcomposite Xext Xfixes Xi
+WANTLIB += Xinerama Xmu Xpm Xrandr Xrender Xt cairo dbus-1 fontconfig
+WANTLIB += freetype gdk_pixbuf-2.0 gif gio-2.0 glib-2.0 gobject-2.0
+WANTLIB += harfbuzz intl jpeg lcms2 m17n-core m17n-flt otf png
+WANTLIB += rsvg-2 sharpyuv tiff webp webpdemux xcb xcb-shape xcb-util
 . elif ${FLAVOR} == "gtk2"
 CONFIGURE_ARGS+=	--with-x-toolkit=gtk2
 LIB_DEPENDS+=		x11/gtk+2
@@ -83,16 +87,17 @@ WANTLIB += Xfixes Xi Xinerama Xpm Xrandr Xrender atk-1.0 cairo
 WANTLIB += dbus-1 fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gif gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0 harfbuzz
 WANTLIB += intl jpeg lcms2 m17n-core m17n-flt otf pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 png rsvg-2 tiff xcb
+WANTLIB += pangoft2-1.0 png rsvg-2 sharpyuv tiff webp webpdemux
+WANTLIB += xcb xcb-shape xcb-util
 . elif ${FLAVOR} == "gtk3"
 CONFIGURE_ARGS+=	--with-x-toolkit=gtk3
 LIB_DEPENDS+=		x11/gtk+3
-WANTLIB += ICE SM X11 X11-xcb Xext Xfixes Xinerama Xpm Xrandr
-WANTLIB += Xrender atk-1.0 cairo cairo-gobject dbus-1 fontconfig
-WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gif gio-2.0 glib-2.0
-WANTLIB += gobject-2.0 gtk-3 harfbuzz intl jpeg lcms2 m17n-core
-WANTLIB += m17n-flt otf pango-1.0 pangocairo-1.0 png rsvg-2 tiff
-WANTLIB += xcb
+WANTLIB += ICE SM X11 X11-xcb Xcomposite Xext Xfixes Xi Xinerama
+WANTLIB += Xpm Xrandr Xrender atk-1.0 cairo cairo-gobject dbus-1
+WANTLIB += fontconfig freetype gdk-3 gdk_pixbuf-2.0 gif gio-2.0
+WANTLIB += glib-2.0 gobject-2.0 gtk-3 harfbuzz intl jpeg lcms2
+WANTLIB += m17n-core m17n-flt otf pango-1.0 pangocairo-1.0 png
+WANTLIB += rsvg-2 sharpyuv tiff webp webpdemux xcb xcb-shape xcb-util
 . else
 ERRORS+=		"Fatal: Conflicting flavor: ${FLAVOR}"
 . endif
@@ -100,6 +105,8 @@ ERRORS+=		"Fatal: Conflicting flavor: ${FLAVOR}"
 
 post-install:
 	chmod -t ${PREFIX}/bin/emacs-${VERSION}
+	mv ${PREFIX}/libexec/emacs/${VERSION}/${GCCARCH}/emacs-*.pdmp \
+	    ${PREFIX}/libexec/emacs/${VERSION}/${GCCARCH}/emacs.pdmp
 .if ${FLAVOR:Mno_x11}
 	rm -Rf ${PREFIX}/share/applications/ ${PREFIX}/share/icons/
 .endif
