@@ -1,4 +1,5 @@
 @bin bin/glslang
+bin/glslangValidator
 @bin bin/spirv-remap
 include/glslang/
 include/glslang/HLSL/
