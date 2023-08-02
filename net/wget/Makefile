@@ -31,9 +31,6 @@ TEST_DEPENDS +=		www/p5-HTTP-Message security/p5-IO-Socket-SSL
 
 FAKE_FLAGS =		sysconfdir="${PREFIX}/share/examples/wget"
 
-# for tests
-USE_GMAKE =	Yes
-
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--with-ssl=openssl
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \

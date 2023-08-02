@@ -1,0 +1,27 @@
+Our make(1) treats ./unit-tests and unit-tests as distinct targets.
+
+Index: tests/Makefile.in
+--- tests/Makefile.in.orig
++++ tests/Makefile.in
+@@ -2158,7 +2158,7 @@ AM_CPPFLAGS = -I$(top_builddir)/lib -I$(top_srcdir)/li
+ 
+ AM_CFLAGS = $(WERROR_CFLAGS) $(WARN_CFLAGS)
+ CLEANFILES = *~ *.bak core core.[0-9]*
+-TESTS = ./unit-tests$(EXEEXT) $(PX_TESTS)
++TESTS = unit-tests$(EXEEXT) $(PX_TESTS)
+ TEST_EXTENSIONS = .px
+ PX_LOG_COMPILER = $(PERL)
+ AM_PX_LOG_FLAGS = -I$(srcdir)
+@@ -2429,9 +2429,9 @@ recheck: all $(check_PROGRAMS)
+ 	        am__force_recheck=am--force-recheck \
+ 	        TEST_LOGS="$$log_list"; \
+ 	exit $$?
+-./unit-tests.log: ./unit-tests$(EXEEXT)
+-	@p='./unit-tests$(EXEEXT)'; \
+-	b='./unit-tests'; \
++unit-tests.log: unit-tests$(EXEEXT)
++	@p='unit-tests$(EXEEXT)'; \
++	b='unit-tests'; \
+ 	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+ 	--log-file $$b.log --trs-file $$b.trs \
+ 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
