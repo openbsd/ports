@@ -1,0 +1,25 @@
+use steam_gameserver.h from goldberg_emulator port
+work around missing usSteamPort argument for SteamGameServer_Init
+
+Index: src/gameServer.cpp
+--- src/gameServer.cpp.orig
++++ src/gameServer.cpp
+@@ -1,5 +1,5 @@
+ 
+-#include "../sdk/public/steam/steam_gameserver.h"
++#include <steam_gameserver.h>
+ #include "extra.hpp"
+ #include "networkingSockets.hpp"
+ #include "networkingUtils.hpp"
+@@ -139,9 +139,10 @@ EXTERN int luasteam_init_server(lua_State *L) {
+     uint32 ip = luaL_checkinteger(L, 1);
+     uint16 usGamePort = luaL_checkinteger(L, 2);
+     uint16 usQueryPort = luaL_checkinteger(L, 3);
++    uint16 usSteamPort = usGamePort + 1;
+     EServerMode eServerMode = static_cast<EServerMode>(luaL_checkinteger(L, 4));
+     const char *version = (char *)luaL_checkstring(L, 5);
+-    bool success = SteamGameServer_Init(ip, usGamePort, usQueryPort, eServerMode, version);
++    bool success = SteamGameServer_Init(ip, usSteamPort, usGamePort, usQueryPort, eServerMode, version);
+     if (success) {
+         luasteam::init_common(L);
+         luasteam::init_extra(L);

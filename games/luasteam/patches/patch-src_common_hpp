@@ -1,0 +1,14 @@
+use installed steam_api.h
+
+Index: src/common.hpp
+--- src/common.hpp.orig
++++ src/common.hpp
+@@ -1,7 +1,7 @@
+ #ifndef LUASTEAM_COMMON
+ #define LUASTEAM_COMMON
+ 
+-#include "../sdk/public/steam/steam_api.h"
++#include <steam_api.h>
+ extern "C" {
+ #include <lauxlib.h>
+ #include <lua.h>

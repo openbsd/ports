@@ -1,0 +1,9 @@
+luasteam enables you to use SteamWorks API from Lua, for example (but not
+limited to) when you're building games with Love2D. Multiple games use
+luasteam, for example:
+
+- Marvellous Inc.
+- Terraforming Earth
+- Brawl Quest
+- Gravity Circuit
+- Ocean's Heart
