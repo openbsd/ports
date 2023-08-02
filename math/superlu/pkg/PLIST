@@ -6,6 +6,7 @@ include/slu_scomplex.h
 include/slu_sdefs.h
 include/slu_util.h
 include/slu_zdefs.h
+include/superlu_config.h
 include/superlu_enum_consts.h
 include/supermatrix.h
 lib/cmake/
