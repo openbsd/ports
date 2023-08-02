@@ -1,0 +1,29 @@
+fix build failure on i386, fallout from https://bugzilla.mozilla.org/show_bug.cgi?id=1760633
+
+In file included from /build/obj/ports/seamonkey-2.53.17/seamonkey-2.53.17/modules/fdlibm/src/e_acos.cpp:44:
+/build/obj/ports/seamonkey-2.53.17/seamonkey-2.53.17/modules/fdlibm/src/math_private.h:33:21: error: typedef redefinition with different types ('double' vs 'long double')
+typedef double      __double_t;
+                    ^
+/usr/include/machine/_types.h:120:22: note: previous definition is here
+typedef long double             __double_t;
+                                ^
+In file included from /build/obj/ports/seamonkey-2.53.17/seamonkey-2.53.17/modules/fdlibm/src/e_acos.cpp:44:
+/build/obj/ports/seamonkey-2.53.17/seamonkey-2.53.17/modules/fdlibm/src/math_private.h:35:21: error: typedef redefinition with different types ('float' vs 'long double')
+typedef float       __float_t;
+                    ^
+/usr/include/machine/_types.h:121:22: note: previous definition is here
+typedef long double             __float_t;
+
+Index: modules/fdlibm/src/math_private.h
+--- modules/fdlibm/src/math_private.h.orig
++++ modules/fdlibm/src/math_private.h
+@@ -30,9 +30,7 @@
+  * Adapted from https://github.com/freebsd/freebsd-src/search?q=__double_t
+  */
+ 
+-typedef double      __double_t;
+ typedef __double_t  double_t;
+-typedef float       __float_t;
+ 
+ /*
+  * The original fdlibm code used statements like:
