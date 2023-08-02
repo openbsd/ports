@@ -1,6 +1,6 @@
 COMMENT =	Vulkan Validation Layers
 
-V =		1.3.243.0
+V =		1.3.250.1
 PKGNAME =	vulkan-validation-layers-${V}
 GH_TAGNAME =	sdk-${V}
 GH_ACCOUNT =	KhronosGroup
@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} m
 
-# C++11
+# C++17
 COMPILER =	base-clang ports-gcc
 
 MODULES =	devel/cmake \

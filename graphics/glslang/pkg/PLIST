@@ -1,4 +1,4 @@
-@bin bin/glslangValidator
+@bin bin/glslang
 @bin bin/spirv-remap
 include/glslang/
 include/glslang/HLSL/
@@ -76,14 +76,14 @@ lib/cmake/SPIRVTargets.cmake
 lib/cmake/SPVRemapperTargets.cmake
 lib/cmake/glslang/
 lib/cmake/glslang-default-resource-limitsTargets.cmake
+lib/cmake/glslang-standaloneTargets.cmake
 lib/cmake/glslang/glslang-config-version.cmake
 lib/cmake/glslang/glslang-config.cmake
 lib/cmake/glslang/glslang-targets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/glslang/glslang-targets.cmake
-lib/cmake/glslangValidatorTargets.cmake
 lib/cmake/spirv-remapTargets.cmake
 @lib lib/libHLSL.so.${LIBHLSL_VERSION}
 @lib lib/libSPIRV.so.${LIBSPIRV_VERSION}
 @lib lib/libSPVRemapper.so.${LIBSPVRemapper_VERSION}
-@lib lib/libglslang-default-resource-limits.so.${LIBglslang-default-resource-limits_VERSION}
+@static-lib lib/libglslang-default-resource-limits.a
 @lib lib/libglslang.so.${LIBglslang_VERSION}

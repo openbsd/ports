@@ -78,5 +78,4 @@ share/cmake/
 share/cmake/SPIRV-Headers/
 share/cmake/SPIRV-Headers/SPIRV-HeadersConfig.cmake
 share/cmake/SPIRV-Headers/SPIRV-HeadersConfigVersion.cmake
-share/cmake/SPIRV-Headers/SPIRV-HeadersTargets.cmake
 share/pkgconfig/SPIRV-Headers.pc

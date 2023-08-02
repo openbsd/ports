@@ -1,0 +1,18 @@
+avoid collision with major/minor in types.h
+
+Index: layers/vulkan/generated/vk_extension_helper.h
+--- layers/vulkan/generated/vk_extension_helper.h.orig
++++ layers/vulkan/generated/vk_extension_helper.h
+@@ -55,6 +55,12 @@ enum ExtEnabled : unsigned char {
+ 
+ #define VVL_UNRECOGNIZED_API_VERSION 0xFFFFFFFF
+ 
++#ifdef __OpenBSD__
++// collision with types.h
++#undef major
++#undef minor
++#endif
++
+ class APIVersion {
+   public:
+     APIVersion() : api_version_(VVL_UNRECOGNIZED_API_VERSION) {}
