@@ -1,4 +1,3 @@
-@bin bin/tree-sitter
 include/tree_sitter/
 include/tree_sitter/api.h
 include/tree_sitter/parser.h
