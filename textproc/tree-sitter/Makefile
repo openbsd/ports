@@ -1,3 +1,6 @@
+# XXX To keep the requirements list small, do not build the tree-sitter
+# program (written in rust) from this port.  Use a new port instead.
+
 COMMENT =	parser generator tool and incremental parsing library
 
 GH_ACCOUNT =		tree-sitter
