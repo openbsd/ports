@@ -6,13 +6,13 @@ include/anthy/
 include/anthy/anthy.h
 include/anthy/dicutil.h
 include/anthy/input.h
-lib/libanthy.a
+@static-lib lib/libanthy.a
 lib/libanthy.la
 @lib lib/libanthy.so.${LIBanthy_VERSION}
-lib/libanthydic.a
+@static-lib lib/libanthydic.a
 lib/libanthydic.la
 @lib lib/libanthydic.so.${LIBanthydic_VERSION}
-lib/libanthyinput.a
+@static-lib lib/libanthyinput.a
 lib/libanthyinput.la
 @lib lib/libanthyinput.so.${LIBanthyinput_VERSION}
 lib/pkgconfig/anthy.pc

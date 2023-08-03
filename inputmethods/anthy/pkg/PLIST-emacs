@@ -8,9 +8,7 @@ share/emacs/site-lisp/anthy/anthy-conf.elc
 share/emacs/site-lisp/anthy/anthy-dic.el
 share/emacs/site-lisp/anthy/anthy-dic.elc
 share/emacs/site-lisp/anthy/anthy-isearch.el
-share/emacs/site-lisp/anthy/anthy-isearch.elc
 share/emacs/site-lisp/anthy/anthy-kyuri.el
-share/emacs/site-lisp/anthy/anthy-kyuri.elc
 share/emacs/site-lisp/anthy/anthy.el
 share/emacs/site-lisp/anthy/anthy.elc
 share/emacs/site-lisp/anthy/leim-list.el
