@@ -1,12 +1,12 @@
 Index: Source/cmTarget.cxx
 --- Source/cmTarget.cxx.orig
 +++ Source/cmTarget.cxx
-@@ -716,7 +716,7 @@ cmTarget::cmTarget(std::string const& name, cmStateEnu
-     initProp("INSTALL_NAME_DIR");
-     initProp("INSTALL_REMOVE_ENVIRONMENT_RPATH");
-     initPropValue("INSTALL_RPATH", "");
--    initPropValue("INSTALL_RPATH_USE_LINK_PATH", "OFF");
-+    initPropValue("INSTALL_RPATH_USE_LINK_PATH", "ON");
-     // -- Platforms
-     // ---- Android
-     initProp("ANDROID_JAR_DIRECTORIES");
+@@ -476,7 +476,7 @@ TargetProperty const StaticTargetProperties[] = {
+   { "INSTALL_NAME_DIR"_s, IC::CanCompileSources },
+   { "INSTALL_REMOVE_ENVIRONMENT_RPATH"_s, IC::CanCompileSources },
+   { "INSTALL_RPATH"_s, ""_s, IC::CanCompileSources },
+-  { "INSTALL_RPATH_USE_LINK_PATH"_s, "OFF"_s, IC::CanCompileSources },
++  { "INSTALL_RPATH_USE_LINK_PATH"_s, "ON"_s, IC::CanCompileSources },
+   // -- Platforms
+   // ---- AIX
+   { "AIX_EXPORT_ALL_SYMBOLS"_s, IC::TargetWithSymbolExports },

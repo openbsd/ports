@@ -1,9 +1,9 @@
 Index: Source/cmGeneratorTarget.cxx
 --- Source/cmGeneratorTarget.cxx.orig
 +++ Source/cmGeneratorTarget.cxx
-@@ -5259,6 +5259,50 @@ cmGeneratorTarget::Names cmGeneratorTarget::GetLibrary
+@@ -5186,6 +5186,50 @@ cmGeneratorTarget::Names cmGeneratorTarget::GetLibrary
    targetNames.Output =
-     components.prefix + targetNames.Base + components.suffix;
+     cmStrCat(components.prefix, targetNames.Base, components.suffix);
  
 +#if defined(__OpenBSD__)
 +  // Override shared library version using LIBxxx_VERSION

@@ -2,7 +2,7 @@ DPB_PROPERTIES =	parallel
 
 COMMENT =	portable build system
 
-VER =		3.26.4
+VER =		3.27.1
 EPOCH =		0
 DISTNAME =	cmake-${VER}
 CATEGORIES =	devel
@@ -41,8 +41,9 @@ CONFIGURE_ARGS =	--datadir=share/cmake \
 			--parallel=${MAKE_JOBS} \
 			--prefix=${PREFIX} \
 			--sphinx-html \
-			--sphinx-man \
 			--system-libs \
+			--no-system-cppdap \
+			--sphinx-man \
 			--verbose
 
 CONFIGURE_ENV +=	MAKE=${MAKE_PROGRAM}
