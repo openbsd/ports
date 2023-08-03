@@ -1,5 +1,7 @@
 COMMENT =	streaming engine for voice/video telephony applications
 
+REVISION =	0
+
 MODULE =	mediastreamer2
 
 SHARED_LIBS += mediastreamer 2.1 # 11
@@ -31,13 +33,14 @@ LIB_DEPENDS =	telephony/linphone/bctoolbox\
 		security/libsrtp>=2.3.0p2 \
 		graphics/glew \
 		graphics/ffmpeg \
+		graphics/zxing-cpp \
 		x11/qt5/qtdeclarative \
 		audio/opus \
 		audio/speex \
 		audio/speexdsp \
 		audio/gsm
 
-WANTLIB += ${COMPILER_LIBCXX} bctoolbox m
+WANTLIB += ${COMPILER_LIBCXX} ZXing bctoolbox m
 WANTLIB += Qt5Core Qt5Gui Qt5Network Qt5Qml Qt5QmlModels Qt5Quick
 WANTLIB += GLEW X11 Xv avcodec avutil bcg729 bzrtp gsm opus ortp sndio
 WANTLIB += speex speexdsp srtp2 swscale theora turbojpeg v4l1
