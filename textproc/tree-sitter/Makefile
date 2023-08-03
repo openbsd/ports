@@ -7,8 +7,6 @@ REVISION =		0
 
 SHARED_LIBS +=		tree-sitter	3.0
 
-SUBST_VARS +=		LIBtree-sitter_VERSION
-
 CATEGORIES =		textproc
 
 # Unlicense/MIT
