@@ -6,7 +6,7 @@ COMMENT =	parser generator tool and incremental parsing library
 GH_ACCOUNT =		tree-sitter
 GH_PROJECT =		tree-sitter
 GH_TAGNAME =		v0.20.8
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=		tree-sitter	3.0
 
@@ -15,8 +15,8 @@ CATEGORIES =		textproc
 # Unlicense/MIT
 PERMIT_PACKAGE =	Yes
 
-# fix sparc64 build
-COMPILER =		base-clang ports-gcc
+# Uses -std=gnu99, prefer base compiler
+COMPILER =		base-clang base-gcc
 
 MAKE_ENV =		DESTDIR="" \
 			LIBDIR="${LOCALBASE}/lib" \
