@@ -1,7 +1,6 @@
 COMMENT =		OpenStreetMap routing software
 
-DISTNAME =		routino-3.3.3
-REVISION =	0
+DISTNAME =		routino-3.4.1
 
 SHARED_LIBS +=		routino 0.0
 SHARED_LIBS +=		routino-slim 0.0
