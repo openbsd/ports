@@ -55,6 +55,7 @@ share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-atypical-padding.${MODPY_PYC_MAGIC_
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-bleichenbacher-timing-pregenerate.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-bleichenbacher-timing.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-bleichenbacher-workaround.${MODPY_PYC_MAGIC_TAG}pyc
+share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-ccs.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-certificate-malformed.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-certificate-request.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-certificate-verify-malformed-sig.${MODPY_PYC_MAGIC_TAG}pyc
@@ -205,6 +206,7 @@ share/tlsfuzzer/scripts/test-atypical-padding.py
 share/tlsfuzzer/scripts/test-bleichenbacher-timing-pregenerate.py
 share/tlsfuzzer/scripts/test-bleichenbacher-timing.py
 share/tlsfuzzer/scripts/test-bleichenbacher-workaround.py
+share/tlsfuzzer/scripts/test-ccs.py
 share/tlsfuzzer/scripts/test-certificate-malformed.py
 share/tlsfuzzer/scripts/test-certificate-request.py
 share/tlsfuzzer/scripts/test-certificate-verify-malformed-sig.py
