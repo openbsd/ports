@@ -1,2 +1,4 @@
 @bin bin/mawk
 @man man/man1/mawk.1
+@man man/man7/mawk-arrays.7
+@man man/man7/mawk-code.7

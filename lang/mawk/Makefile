@@ -1,7 +1,8 @@
 COMMENT=	fast POSIX-compliant awk
 
-DISTNAME=	mawk-1.3.4-20230525
-PKGNAME=	mawk-1.3.4.20230525
+DATE =		20230730
+DISTNAME=	mawk-1.3.4-${DATE}
+PKGNAME=	mawk-1.3.4.${DATE}
 
 CATEGORIES=	lang
 
