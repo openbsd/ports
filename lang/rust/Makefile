@@ -14,7 +14,7 @@ COMMENT-clippy =	Rust linter
 COMMENT-rustfmt =	Rust code formatter
 COMMENT-src =		Rust source component
 
-V =			1.71.0
+V =			1.71.1
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
@@ -293,9 +293,9 @@ do-install:
 	done
 	# install cargo bash-completion
 	mkdir -p ${PREFIX}/share/bash-completion/completions
-	mv ${PREFIX}/src/etc/bash_completion.d/cargo \
+	mv ${PREFIX}/etc/bash_completion.d/cargo \
 		${PREFIX}/share/bash-completion/completions
-	-rmdir -p ${PREFIX}/src/etc/bash_completion.d
+	-rmdir -p ${PREFIX}/etc/bash_completion.d
 	# compile python stuff
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${PREFIX}/lib/rustlib/etc
 

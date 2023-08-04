@@ -1,0 +1,17 @@
+bootstrap: config: fix version comparison bug
+
+Backport https://github.com/rust-lang/rust/pull/114440
+
+Index: src/bootstrap/config.rs
+--- src/bootstrap/config.rs.orig
++++ src/bootstrap/config.rs
+@@ -1805,7 +1805,8 @@ impl Config {
+                 .unwrap();
+         if !(source_version == rustc_version
+             || (source_version.major == rustc_version.major
+-                && source_version.minor == rustc_version.minor + 1))
++                && (source_version.minor == rustc_version.minor
++                    || source_version.minor == rustc_version.minor + 1)))
+         {
+             let prev_version = format!("{}.{}.x", source_version.major, source_version.minor - 1);
+             eprintln!(
