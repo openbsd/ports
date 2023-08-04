@@ -27,6 +27,8 @@ share/examples/rspamd/composites.conf
 @sample ${ETC}/rspamd/composites.conf
 share/examples/rspamd/groups.conf
 @sample ${ETC}/rspamd/groups.conf
+share/examples/rspamd/lang_detection.inc
+@sample ${ETC}/rspamd/lang_detection.inc
 share/examples/rspamd/local.d/
 @sample ${ETC}/rspamd/local.d/
 share/examples/rspamd/local.d/redis.conf
@@ -325,6 +327,14 @@ share/rspamd/lualib/plugins/dmarc.lua
 share/rspamd/lualib/plugins/neural.lua
 share/rspamd/lualib/plugins/rbl.lua
 share/rspamd/lualib/plugins_stats.lua
+share/rspamd/lualib/redis_scripts/
+share/rspamd/lualib/redis_scripts/neural_maybe_invalidate.lua
+share/rspamd/lualib/redis_scripts/neural_maybe_lock.lua
+share/rspamd/lualib/redis_scripts/neural_save_unlock.lua
+share/rspamd/lualib/redis_scripts/neural_train_size.lua
+share/rspamd/lualib/redis_scripts/ratelimit_check.lua
+share/rspamd/lualib/redis_scripts/ratelimit_cleanup_pending.lua
+share/rspamd/lualib/redis_scripts/ratelimit_update.lua
 share/rspamd/lualib/rescore_utility.lua
 share/rspamd/lualib/rspamadm/
 share/rspamd/lualib/rspamadm/clickhouse.lua
@@ -333,6 +343,7 @@ share/rspamd/lualib/rspamadm/confighelp.lua
 share/rspamd/lualib/rspamadm/configwizard.lua
 share/rspamd/lualib/rspamadm/cookie.lua
 share/rspamd/lualib/rspamadm/corpus_test.lua
+share/rspamd/lualib/rspamadm/dkim_keygen.lua
 share/rspamd/lualib/rspamadm/dmarc_report.lua
 share/rspamd/lualib/rspamadm/dns_tool.lua
 share/rspamd/lualib/rspamadm/fuzzy_convert.lua
@@ -403,6 +414,7 @@ share/rspamd/rules/bitcoin.lua
 share/rspamd/rules/bounce.lua
 share/rspamd/rules/content.lua
 share/rspamd/rules/controller/
+share/rspamd/rules/controller/fuzzy.lua
 share/rspamd/rules/controller/init.lua
 share/rspamd/rules/controller/maps.lua
 share/rspamd/rules/controller/neural.lua

@@ -1,7 +1,7 @@
 Index: src/rspamadm/CMakeLists.txt
 --- src/rspamadm/CMakeLists.txt.orig
 +++ src/rspamadm/CMakeLists.txt
-@@ -23,9 +23,9 @@ ENDIF()
+@@ -22,9 +22,9 @@ ENDIF()
  ADD_EXECUTABLE(rspamadm ${RSPAMADMSRC})
  TARGET_LINK_LIBRARIES(rspamadm rspamd-server)
  
