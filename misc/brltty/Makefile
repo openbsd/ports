@@ -1,10 +1,10 @@
 COMMENT=	access software for a blind person using a braille terminal
 
 DISTNAME=	brltty-3.6
-REVISION=	6
+REVISION=	7
 CATEGORIES=	misc
-HOMEPAGE=	http://mielke.cc/brltty
-MASTER_SITES=	${HOMEPAGE}/releases/
+HOMEPAGE=	https://brltty.app
+MASTER_SITES=	https://brltty.app/archive/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
