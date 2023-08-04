@@ -1,14 +1,13 @@
 COMMENT-main=	library for arbitrary precision arithmetic
 COMMENT-cxx=	C++ library for arbitrary precision arithmetic
 
-VERSION=	6.2.1
-REVISION=	2
+VERSION=	6.3.0
 DISTNAME=	gmp-${VERSION}
 MULTI_PACKAGES=	-main -cxx
 PKGNAME-cxx=	gmpxx-${VERSION}
 
-SHARED_LIBS +=  gmp                  11.0     # 14.1
-SHARED_LIBS +=  gmpxx                3.0      # 10.1
+SHARED_LIBS +=  gmp                  11.1     # 15.0
+SHARED_LIBS +=  gmpxx                3.0      # 11.0
 CATEGORIES=	devel math
 
 HOMEPAGE=	https://gmplib.org/
