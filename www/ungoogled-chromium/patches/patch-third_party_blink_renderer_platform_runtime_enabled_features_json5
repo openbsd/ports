@@ -10,7 +10,7 @@ Index: third_party/blink/renderer/platform/runtime_enabled_features.json5
        status: {
          "Android": "",
          "ChromeOS_Lacros": "",
-@@ -2656,7 +2656,7 @@
+@@ -2661,7 +2661,7 @@
        name: "PaymentHandlerMinimalHeaderUX",
        origin_trial_feature_name: "PaymentHandlerMinimalHeaderUX",
        origin_trial_allows_third_party: true,
@@ -19,7 +19,7 @@ Index: third_party/blink/renderer/platform/runtime_enabled_features.json5
      },
      {
        name: "PaymentInstruments",
-@@ -3616,7 +3616,7 @@
+@@ -3621,7 +3621,7 @@
        name: "UnrestrictedSharedArrayBuffer",
        base_feature: "none",
        origin_trial_feature_name: "UnrestrictedSharedArrayBuffer",
@@ -28,7 +28,7 @@ Index: third_party/blink/renderer/platform/runtime_enabled_features.json5
      },
      {
        // A kill switch for crbug.com/1410332.
-@@ -3647,7 +3647,7 @@
+@@ -3652,7 +3652,7 @@
        origin_trial_feature_name: "UserAgentReduction",
        origin_trial_allows_third_party: true,
        // iOS not included as it should not send a reduced User-Agent string.
@@ -37,7 +37,7 @@ Index: third_party/blink/renderer/platform/runtime_enabled_features.json5
        base_feature: "ReduceUserAgent",
      },
      {
-@@ -3803,12 +3803,12 @@
+@@ -3808,12 +3808,12 @@
        status: "experimental",
        base_feature: "none",
        origin_trial_feature_name: "WebAppUrlHandling",
