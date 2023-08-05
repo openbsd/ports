@@ -1,8 +1,8 @@
 COMMENT =	execute a command for every argument
-DISTNAME =	xe-0.11
+DISTNAME =	xe-1.0
 CATEGORIES =	sysutils
 
-HOMEPAGE =	https://git.vuxu.org/xe/
+HOMEPAGE =	https://git.vuxu.org/xe/about/
 
 MAINTAINER =	Evan Silberman <evan@jklol.net>
 
