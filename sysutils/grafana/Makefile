@@ -1,10 +1,12 @@
 COMMENT =	monitoring and metric analytics dashboards
 
-V =		9.5.5
+V =		10.0.3
 DISTNAME =	grafana+vendor-$V
 WRKDIST =	${WRKDIR}/grafana-$V
 EXTRACT_SUFX =	.tar.zst
 PKGNAME =	grafana-$V
+# running into the too long filenames now
+TAR =		${LOCALBASE}/bin/gtar
 
 MAINTAINER = Lucas Raab <tuftedocelot@fastmail.fm>
 
@@ -32,6 +34,8 @@ WANTLIB +=	c pthread
 
 MODGO_GO111MODULE = on
 MODGO_FLAGS += -ldflags="-w -X main.version=$V"
+
+BUILD_DEPENDS =	archivers/gtar
 
 # remove linux binaries from grafana-$V.linux-amd64.tar.gz
 post-extract:
