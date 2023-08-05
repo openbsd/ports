@@ -56,6 +56,7 @@
 # given variable if it exists in the environment, otherwise defaulting to
 # ~/.cache, ~/.config, and ~/.local/share
 $XDG_RUNTIME_DIR/dconf rwc
+$XDG_CACHE_HOME/at-spi rw
 $XDG_CACHE_HOME/thumbnails rwc
 $XDG_CACHE_HOME/mozilla/firefox rwc
 $XDG_CACHE_HOME/mesa_shader_cache rwc

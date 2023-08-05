@@ -54,6 +54,7 @@
 ~/.terminfo r
 
 ~/.cache/iridium rwc
+~/.cache/at-spi rw
 ~/.cache/dconf rwc
 ~/.cache/fontconfig rwc
 ~/.cache/gvfsd rwc

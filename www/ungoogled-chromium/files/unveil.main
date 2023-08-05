@@ -54,6 +54,7 @@
 ~/.terminfo r
 
 ~/.cache/ungoogled-chromium rwc
+~/.cache/at-spi rw
 ~/.cache/dconf rwc
 ~/.cache/fontconfig rwc
 ~/.cache/thumbnails rwc
