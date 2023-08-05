@@ -2,7 +2,7 @@ COMMENT =	lightweight game library for java
 
 BROKEN-i386 =	ld: error: undefined symbol: __stack_smash_handler
 
-V =		3.3.1.0
+V =		3.3.1.1
 DISTNAME =	lwjgl3-${V}
 
 KOTLIN_V =	1.6.20-M1
@@ -18,6 +18,7 @@ PKG_ARGS +=	-Dx86=1
 M_ARCH =	64
 PKG_ARGS +=	-Dx86=0
 MAKE_ENV+=	LWJGL_BUILD_ARCH=arm64
+MAKE_ENV +=	ANT_OPTS="-Xmx1600M"
 .else
 PKG_ARGS +=	-Dx86=0
 .endif

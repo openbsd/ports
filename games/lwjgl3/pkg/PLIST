@@ -31,6 +31,8 @@ share/lwjgl3/lwjgl-meshoptimizer.jar
 share/lwjgl3/lwjgl-nanovg-natives-openbsd.jar
 share/lwjgl3/lwjgl-nanovg.jar
 share/lwjgl3/lwjgl-natives-openbsd.jar
+share/lwjgl3/lwjgl-nfd-natives-openbsd.jar
+share/lwjgl3/lwjgl-nfd.jar
 share/lwjgl3/lwjgl-nuklear-natives-openbsd.jar
 share/lwjgl3/lwjgl-nuklear.jar
 share/lwjgl3/lwjgl-odbc.jar
@@ -70,6 +72,7 @@ share/lwjgl3/meow_license.txt
 share/lwjgl3/meshoptimizer_license.txt
 share/lwjgl3/nanosvg_license.txt
 share/lwjgl3/nanovg_license.txt
+share/lwjgl3/nfd_license.txt
 share/lwjgl3/openal_soft_license.txt
 share/lwjgl3/openxr_license.txt
 share/lwjgl3/opus_license.txt
