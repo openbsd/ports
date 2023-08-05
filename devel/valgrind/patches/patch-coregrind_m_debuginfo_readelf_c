@@ -30,7 +30,26 @@
        res = VG_(do_syscall3)(__NR_readlink, (UWord)path, (UWord)buf, bufsiz);
  #elif defined(VGO_solaris)
        res = VG_(do_syscall4)(__NR_readlinkat, VKI_AT_FDCWD, (UWord)path,
-@@ -2654,7 +2658,8 @@
+@@ -2141,6 +2145,18 @@
+                            i, (UWord)item.bias);
+                         loaded = True;
+                      }
++#if defined(VGO_openbsd)
++                     if (map->rx
++                         && (a_phdr.p_flags & (PF_X))
++                            == (PF_X)) {
++                        item.exec = True;
++                        VG_(addToXA)(svma_ranges, &item);
++                        TRACE_SYMTAB(
++                           "PT_LOAD[%ld]:   acquired as rx, bias 0x%lx\n",
++                           i, (UWord)item.bias);
++                        loaded = True;
++                     }
++#endif
+                      if (map->ro
+                          && (a_phdr.p_flags & (PF_R | PF_W | PF_X))
+                             == PF_R) {
+@@ -2654,7 +2670,8 @@
           || defined(VGP_mips32_linux) || defined(VGP_mips64_linux) \
           || defined(VGP_arm64_linux) || defined(VGP_nanomips_linux) \
           || defined(VGP_x86_solaris) || defined(VGP_amd64_solaris) \

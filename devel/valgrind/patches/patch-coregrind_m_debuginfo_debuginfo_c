@@ -27,7 +27,17 @@
     ok = ML_(read_elf_debug_info)( di );
  #  elif defined(VGO_darwin)
     ok = ML_(read_macho_debug_info)( di );
-@@ -1347,7 +1347,7 @@
+@@ -1265,6 +1265,9 @@
+       || defined(VGA_mips64) || defined(VGA_nanomips)
+    is_rx_map = seg->hasR && seg->hasX;
+    is_rw_map = seg->hasR && seg->hasW;
++#  elif defined(VGO_openbsd)
++   is_rx_map = seg->hasX;
++   is_rw_map = seg->hasR && seg->hasW;
+ #  elif defined(VGA_amd64) || defined(VGA_ppc64be) || defined(VGA_ppc64le)  \
+         || defined(VGA_arm) || defined(VGA_arm64)
+    is_rx_map = seg->hasR && seg->hasX && !seg->hasW;
+@@ -1347,7 +1350,7 @@
  #endif
  
     /* We're only interested in mappings of object files. */
@@ -36,7 +46,7 @@
  
     rw_load_count = 0;
  
-@@ -2408,7 +2408,7 @@
+@@ -2408,7 +2411,7 @@
         VG_STREQ("generic_start_main", name) ||  // Yellow Dog doggedness
         VG_STREQN(19, "generic_start_main.", name) || // gcc optimization
         VG_STREQ("_start", name) ||

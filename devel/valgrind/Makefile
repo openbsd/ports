@@ -5,6 +5,7 @@ CATEGORIES =		devel
 
 V =			3.21.0
 DISTNAME =		valgrind-${V}
+REVISION =		0
 EXTRACT_SUFX =		.tar.bz2
 
 MASTER_SITES =		https://sourceware.org/pub/valgrind/

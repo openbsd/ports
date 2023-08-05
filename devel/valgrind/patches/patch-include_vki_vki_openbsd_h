@@ -126,7 +126,7 @@
 +typedef  __vki_ct_rune_t   __vki_rune_t;
 +typedef  __vki_ct_rune_t   __vki_wchar_t;
 +typedef  __vki_ct_rune_t   __vki_wint_t;
-+typedef  vki_uint64_t   __vki_dev_t;
++typedef  vki_uint32_t   __vki_dev_t;
 +typedef  vki_uint32_t   __vki_fixpt_t;
 +
 +
