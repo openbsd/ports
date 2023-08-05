@@ -3,7 +3,7 @@ COMMENT-promtail =	tails log files and pushes them to Loki
 
 GH_ACCOUNT =	grafana
 GH_PROJECT =	loki
-GH_TAGNAME =	v2.8.2
+GH_TAGNAME =	v2.8.3
 
 CATEGORIES =	sysutils
 
