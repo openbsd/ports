@@ -1,7 +1,7 @@
 COMMENT=	client for Cisco AnyConnect SSL VPN
 
 DISTNAME=	openconnect-8.20
-REVISION=	2
+REVISION=	3
 
 SHARED_LIBS +=  openconnect               4.5 # 5.6
 
@@ -13,8 +13,8 @@ HOMEPAGE=	https://www.infradead.org/openconnect/
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += brotlidec brotlienc c ffi gmp gnutls hogweed iconv
-WANTLIB += idn2 intl lz4 lzma m nettle p11-kit tasn1 unistring
-WANTLIB += xml2 z zstd pthread
+WANTLIB += idn2 intl lz4 lzma m nettle p11-kit pthread tasn1 unistring
+WANTLIB += xml2 z zstd
 
 COMPILER =	base-clang ports-gcc base-gcc
 
@@ -55,7 +55,9 @@ CONFIGURE_ARGS+= --without-libpcsclite \
 		--without-libproxy \
 		--without-libpskc
 .else
-WANTLIB+=	ltdl pcsclite proxy pskc ${COMPILER_LIBCXX} xmlsec1 xslt
+WANTLIB += ssl ltdl pcsclite proxy pskc xmlsec1 xslt
+WANTLIB += crypto curl duktape gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_openssl pcre2-8
 LIB_DEPENDS+=	net/libproxy>=0.4.6p7 \
 		security/oath-toolkit,-pskc \
 		security/pcsc-lite
