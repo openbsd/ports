@@ -9,7 +9,7 @@ GH_PROJECT =		web-eid-app
 GH_TAGNAME =		v2.3.1
 DISTFILES =		${GH_DISTFILE}
 PKGNAME-main =		${PKGNAME:S/app/native/}
-REVISION-main =		0
+REVISION-main =		1
 PKGNAME-chrome =	${PKGNAME:S/app/chrome/}
 REVISION-chrome =	0
 
@@ -52,6 +52,7 @@ HOMEPAGE =		https://web-eid.eu/
 # -std=gnu++17
 COMPILER =		base-clang ports-gcc
 
+# uses pledge()
 WANTLIB-main +=	${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Network Qt6Widgets
 WANTLIB-main +=	c crypto m pcsclite
 

@@ -1,0 +1,39 @@
+Use pledge(2) after QApplication[0] initialisation (uses shmget(2) not
+covered by pledge) and before execution, covering both CLI and GUI mode.
+
+Index: src/app/main.cpp
+--- src/app/main.cpp.orig
++++ src/app/main.cpp
+@@ -24,6 +24,10 @@
+ #include "controller.hpp"
+ #include "logging.hpp"
+ 
++#ifdef Q_OS_OPENBSD
++#include <unistd.h>
++#endif // Q_OS_OPENBSD
++
+ #include <QTimer>
+ 
+ int main(int argc, char* argv[])
+@@ -32,6 +36,21 @@ int main(int argc, char* argv[])
+     Q_INIT_RESOURCE(translations);
+ 
+     Application app(argc, argv, QStringLiteral("web-eid"));
++
++#ifdef Q_OS_OPENBSD
++    // "rpath cpath wpath" Qt owns web-eid's config and log directories
++    // "inet dns"          web-eid talks to the internet
++    // "fattr flock ps"    Qt locks file access, sysctl(2) KERN_PROC_PID from QLockFile
++    // "unix"              web-eid and Qt communicate with PCSC and D-Bus
++    // "prot_exec"         Qt dlopen(3) libqsvg.so
++    //
++    // src/controller/application.cpp Application::isDarkTheme() has code under
++    // '#elif 0' (the only QProcess occurence in web-eid) that would need "proc exec".
++    if (pledge("stdio rpath cpath wpath inet fattr flock unix dns prot_exec ps", NULL) == -1) {
++        std::cerr << "pledge: " << strerror(errno) << std::endl;
++        return -1;
++    }
++#endif // Q_OS_OPENBSD
+ 
+     try {
+         Controller controller(app.parseArgs());
