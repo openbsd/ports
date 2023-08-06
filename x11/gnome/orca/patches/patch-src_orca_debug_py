@@ -1,0 +1,14 @@
+replace /proc/ with ps(1) in 'orca --list-apps' to get process arguments by PID
+
+Index: src/orca/debug.py
+--- src/orca/debug.py.orig
++++ src/orca/debug.py
+@@ -522,7 +522,7 @@ def getOpenFDCount(pid):
+ 
+ def getCmdline(pid):
+     try:
+-        openFile = os.popen('cat /proc/%s/cmdline' % pid)
++        openFile = os.popen('ps -o args -p %s | sed 1d' % pid)
+         cmdline = openFile.read()
+         openFile.close()
+     except:
