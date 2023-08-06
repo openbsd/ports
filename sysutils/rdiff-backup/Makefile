@@ -2,6 +2,7 @@ COMMENT =	incremental backup
 
 MODPY_EGG_VERSION =	2.0.5
 DISTNAME =	rdiff-backup-${MODPY_EGG_VERSION}
+REVISION =	0
 
 CATEGORIES =	sysutils
 
@@ -20,6 +21,8 @@ MODULES	=		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools_scm
 CFLAGS +=		-I${LOCALBASE}/include
+
+RUN_DEPENDS =		devel/py-setuptools${MODPY_FLAVOR}
 
 # tests are present but are intended to run via Tox in a Docker container
 NO_TEST =		Yes
