@@ -33,9 +33,11 @@
 @man man/man1/hugo-mod-vendor.1
 @man man/man1/hugo-mod-verify.1
 @man man/man1/hugo-mod.1
+@man man/man1/hugo-new-content.1
 @man man/man1/hugo-new-site.1
 @man man/man1/hugo-new-theme.1
 @man man/man1/hugo-new.1
+@man man/man1/hugo-server-trust.1
 @man man/man1/hugo-server.1
 @man man/man1/hugo-version.1
 @man man/man1/hugo.1
