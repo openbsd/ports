@@ -17,8 +17,8 @@ EXTRACT_SUFX =		.tar.bz2
 # Public domain
 PERMIT_PACKAGE =	Yes
 
-# -std=c++17
-COMPILER =		base-clang ports-gcc
+# -std=c++2a
+COMPILER =		base-clang
 MAKE_ENV =		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" gzip_man=no
 FAKE_FLAGS =		PREFIX="${TRUEPREFIX}"
 # some tests fail without en_US.UTF-8
