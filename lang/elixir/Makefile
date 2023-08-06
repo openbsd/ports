@@ -1,6 +1,6 @@
 COMMENT=		functional language for building scalable applications
 
-V=			1.14.4
+V=			1.15.4
 GH_ACCOUNT=		elixir-lang
 GH_PROJECT=		elixir
 GH_TAGNAME=		v$V
@@ -31,7 +31,8 @@ CONFIGURE_STYLE=	None
 MAKE_ENV+=		LC_ALL="en_US.UTF-8"
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/bin/elixir
+	${SUBST_CMD} ${WRKSRC}/bin/elixir \
+		${WRKSRC}/Makefile
 
 pre-install:
 	-rm ${WRKSRC}/bin/*{.beforesubst,${PATCHORIG}}

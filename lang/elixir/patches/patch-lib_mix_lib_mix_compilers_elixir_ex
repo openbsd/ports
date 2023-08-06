@@ -1,0 +1,14 @@
+Backport https://github.com/elixir-lang/elixir/commit/9b7b7d655d140203044af181842754db7bdbb7ef 
+Index: lib/mix/lib/mix/compilers/elixir.ex
+--- lib/mix/lib/mix/compilers/elixir.ex.orig
++++ lib/mix/lib/mix/compilers/elixir.ex
+@@ -454,6 +454,9 @@ defmodule Mix.Compilers.Elixir do
+       8 -> :crypto.hash(:blake2b, contents)
+       _ -> :crypto.hash(:blake2s, contents)
+     end
++  rescue
++    # Blake may not be available on all OpenSSL distribution
++    _ -> :erlang.md5(contents)
+   end
+ 
+   defp set_compiler_opts(opts) do
