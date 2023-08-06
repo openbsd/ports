@@ -8,7 +8,7 @@ include/verbiste-0.1/verbiste/Trie.cpp
 include/verbiste-0.1/verbiste/Trie.h
 include/verbiste-0.1/verbiste/c-api.h
 include/verbiste-0.1/verbiste/misc-types.h
-lib/libverbiste-0.1.a
+@static-lib lib/libverbiste-0.1.a
 lib/libverbiste-0.1.la
 @lib lib/libverbiste-0.1.so.${LIBverbiste-0.1_VERSION}
 lib/pkgconfig/verbiste-0.1.pc
@@ -21,6 +21,14 @@ man/fr/man3/
 @man man/man1/french-conjugator.1
 @man man/man1/french-deconjugator.1
 @man man/man3/verbiste.3
+share/doc/verbiste/
+share/doc/verbiste/AUTHORS
+share/doc/verbiste/COPYING
+share/doc/verbiste/HACKING
+share/doc/verbiste/LISEZMOI
+share/doc/verbiste/NEWS
+share/doc/verbiste/README
+share/doc/verbiste/THANKS
 share/icons/hicolor/128x128/apps/verbiste.png
 share/icons/hicolor/16x16/apps/verbiste.png
 share/icons/hicolor/256x256/apps/verbiste.png
@@ -41,7 +49,7 @@ share/texmf-local/tex/latex/verbiste/
 share/texmf-local/tex/latex/verbiste/verbiste.cfg
 share/texmf-local/tex/latex/verbiste/verbiste.cls
 share/verbiste-0.1/
-@comment share/verbiste-0.1/COPYING
+share/verbiste-0.1/COPYING
 share/verbiste-0.1/conjugation-fr.xml
 share/verbiste-0.1/conjugation-it.xml
 share/verbiste-0.1/verbs-fr.xml
