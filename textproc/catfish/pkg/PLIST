@@ -17,6 +17,7 @@ lib/python${MODPY_VERSION}/site-packages/catfish/${MODPY_PYCACHE}__init__.${MODP
 lib/python${MODPY_VERSION}/site-packages/catfish_lib/
 lib/python${MODPY_VERSION}/site-packages/catfish_lib/Builder.py
 lib/python${MODPY_VERSION}/site-packages/catfish_lib/CatfishSettings.py
+lib/python${MODPY_VERSION}/site-packages/catfish_lib/FiletypeLists.py
 lib/python${MODPY_VERSION}/site-packages/catfish_lib/PrefsDialog.py
 lib/python${MODPY_VERSION}/site-packages/catfish_lib/SudoDialog.py
 lib/python${MODPY_VERSION}/site-packages/catfish_lib/Thumbnailer.py
@@ -25,6 +26,7 @@ lib/python${MODPY_VERSION}/site-packages/catfish_lib/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/catfish_lib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/catfish_lib/${MODPY_PYCACHE}Builder.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/catfish_lib/${MODPY_PYCACHE}CatfishSettings.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/catfish_lib/${MODPY_PYCACHE}FiletypeLists.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/catfish_lib/${MODPY_PYCACHE}PrefsDialog.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/catfish_lib/${MODPY_PYCACHE}SudoDialog.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/catfish_lib/${MODPY_PYCACHE}Thumbnailer.${MODPY_PYC_MAGIC_TAG}pyc
@@ -62,6 +64,7 @@ share/locale/da/LC_MESSAGES/catfish.mo
 share/locale/de/LC_MESSAGES/catfish.mo
 share/locale/el/LC_MESSAGES/catfish.mo
 share/locale/en_AU/LC_MESSAGES/catfish.mo
+share/locale/en_GB/LC_MESSAGES/catfish.mo
 share/locale/eo/LC_MESSAGES/catfish.mo
 share/locale/es/LC_MESSAGES/catfish.mo
 share/locale/et/LC_MESSAGES/catfish.mo
@@ -79,9 +82,8 @@ share/locale/ie/LC_MESSAGES/catfish.mo
 share/locale/is/LC_MESSAGES/catfish.mo
 share/locale/it/LC_MESSAGES/catfish.mo
 share/locale/ja/LC_MESSAGES/catfish.mo
-share/locale/kab/
-share/locale/kab/LC_MESSAGES/
 share/locale/kab/LC_MESSAGES/catfish.mo
+share/locale/kk/LC_MESSAGES/catfish.mo
 share/locale/ko/LC_MESSAGES/catfish.mo
 share/locale/ku/LC_MESSAGES/catfish.mo
 share/locale/lt/LC_MESSAGES/catfish.mo
