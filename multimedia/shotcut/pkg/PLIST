@@ -8,6 +8,10 @@ share/metainfo/
 share/metainfo/org.shotcut.Shotcut.metainfo.xml
 share/mime/packages/org.shotcut.Shotcut.xml
 share/shotcut/
+share/shotcut/filter-sets/
+share/shotcut/filter-sets/Obscure With Blur
+share/shotcut/filter-sets/Obscure With Mosaic
+share/shotcut/filter-sets/Text Simple with Gradient Back
 share/shotcut/qml/
 share/shotcut/qml/export-chapters/
 share/shotcut/qml/export-chapters/export-chapters.js
@@ -334,6 +338,7 @@ share/shotcut/qml/filters/keyspillm0pup/
 share/shotcut/qml/filters/keyspillm0pup/meta.qml
 share/shotcut/qml/filters/keyspillm0pup/ui.qml
 share/shotcut/qml/filters/lenscorrection/
+share/shotcut/qml/filters/lenscorrection/icon.webp
 share/shotcut/qml/filters/lenscorrection/meta.qml
 share/shotcut/qml/filters/lenscorrection/ui.qml
 share/shotcut/qml/filters/levels/
@@ -360,6 +365,7 @@ share/shotcut/qml/filters/mask_alphaspot/
 share/shotcut/qml/filters/mask_alphaspot/icon.webp
 share/shotcut/qml/filters/mask_alphaspot/meta.qml
 share/shotcut/qml/filters/mask_alphaspot/ui.qml
+share/shotcut/qml/filters/mask_alphaspot/vui.qml
 share/shotcut/qml/filters/mask_apply/
 share/shotcut/qml/filters/mask_apply/icon.webp
 share/shotcut/qml/filters/mask_apply/meta.qml
@@ -484,6 +490,12 @@ share/shotcut/qml/filters/spectrum/icon.webp
 share/shotcut/qml/filters/spectrum/meta_spectrum.qml
 share/shotcut/qml/filters/spectrum/ui_spectrum.qml
 share/shotcut/qml/filters/spectrum/vui_spectrum.qml
+share/shotcut/qml/filters/speed/
+share/shotcut/qml/filters/speed/SpeedUI.qml
+share/shotcut/qml/filters/speed/meta_forward.qml
+share/shotcut/qml/filters/speed/meta_forward_reverse.qml
+share/shotcut/qml/filters/speed/ui_forward.qml
+share/shotcut/qml/filters/speed/ui_forward_reverse.qml
 share/shotcut/qml/filters/spillsuppress/
 share/shotcut/qml/filters/spillsuppress/meta.qml
 share/shotcut/qml/filters/spillsuppress/ui.qml
@@ -513,6 +525,11 @@ share/shotcut/qml/filters/timer/icon.webp
 share/shotcut/qml/filters/timer/meta.qml
 share/shotcut/qml/filters/timer/ui.qml
 share/shotcut/qml/filters/timer/vui.qml
+share/shotcut/qml/filters/tracker/
+share/shotcut/qml/filters/tracker/icon.webp
+share/shotcut/qml/filters/tracker/meta.qml
+share/shotcut/qml/filters/tracker/ui.qml
+share/shotcut/qml/filters/tracker/vui.qml
 share/shotcut/qml/filters/trails/
 share/shotcut/qml/filters/trails/icon.webp
 share/shotcut/qml/filters/trails/meta.qml
@@ -559,11 +576,13 @@ share/shotcut/qml/modules/Shotcut/Controls/DoubleSpinBox.qml
 share/shotcut/qml/modules/Shotcut/Controls/EditMenu.qml
 share/shotcut/qml/modules/Shotcut/Controls/Gauge.qml
 share/shotcut/qml/modules/Shotcut/Controls/GradientControl.qml
+share/shotcut/qml/modules/Shotcut/Controls/HorizontalScrollBar.qml
 share/shotcut/qml/modules/Shotcut/Controls/HoverTip.qml
 share/shotcut/qml/modules/Shotcut/Controls/KeyframableFilter.qml
 share/shotcut/qml/modules/Shotcut/Controls/KeyframesButton.qml
 share/shotcut/qml/modules/Shotcut/Controls/Marker.qml
 share/shotcut/qml/modules/Shotcut/Controls/MarkerBar.qml
+share/shotcut/qml/modules/Shotcut/Controls/MotionTrackerDialog.qml
 share/shotcut/qml/modules/Shotcut/Controls/Preset.qml
 share/shotcut/qml/modules/Shotcut/Controls/RectangleControl.qml
 share/shotcut/qml/modules/Shotcut/Controls/SaveDefaultButton.qml
@@ -576,6 +595,7 @@ share/shotcut/qml/modules/Shotcut/Controls/TipBox.qml
 share/shotcut/qml/modules/Shotcut/Controls/ToggleButton.qml
 share/shotcut/qml/modules/Shotcut/Controls/ToolButton.qml
 share/shotcut/qml/modules/Shotcut/Controls/UndoButton.qml
+share/shotcut/qml/modules/Shotcut/Controls/VerticalScrollBar.qml
 share/shotcut/qml/modules/Shotcut/Controls/VuiBase.qml
 share/shotcut/qml/modules/Shotcut/Controls/qmldir
 share/shotcut/qml/scopes/
@@ -584,17 +604,18 @@ share/shotcut/qml/scopes/audioloudness/audioloudnessscope.qml
 share/shotcut/qml/views/
 share/shotcut/qml/views/filter/
 share/shotcut/qml/views/filter/AttachedFilters.qml
+share/shotcut/qml/views/filter/CopyFiltersDialog.qml
 share/shotcut/qml/views/filter/FilterMenu.js
 share/shotcut/qml/views/filter/FilterMenu.qml
 share/shotcut/qml/views/filter/FilterMenuDelegate.qml
 share/shotcut/qml/views/filter/filterview.qml
 share/shotcut/qml/views/keyframes/
-share/shotcut/qml/views/keyframes/Clip.qml
 share/shotcut/qml/views/keyframes/Keyframe.qml
+share/shotcut/qml/views/keyframes/KeyframeClip.qml
+share/shotcut/qml/views/keyframes/KeyframeParameter.qml
+share/shotcut/qml/views/keyframes/KeyframeRuler.qml
 share/shotcut/qml/views/keyframes/Keyframes.js
-share/shotcut/qml/views/keyframes/Parameter.qml
 share/shotcut/qml/views/keyframes/ParameterHead.qml
-share/shotcut/qml/views/keyframes/Ruler.qml
 share/shotcut/qml/views/keyframes/keyframes.qml
 share/shotcut/qml/views/timeline/
 share/shotcut/qml/views/timeline/Clip.qml
@@ -607,6 +628,7 @@ share/shotcut/qml/views/timeline/Track.qml
 share/shotcut/qml/views/timeline/TrackHead.qml
 share/shotcut/qml/views/timeline/timeline.qml
 share/shotcut/translations/
+share/shotcut/translations/.lupdate/
 share/shotcut/translations/shotcut_ar.qm
 share/shotcut/translations/shotcut_ca.qm
 share/shotcut/translations/shotcut_cs.qm
@@ -621,6 +643,7 @@ share/shotcut/translations/shotcut_fi.qm
 share/shotcut/translations/shotcut_fr.qm
 share/shotcut/translations/shotcut_gd.qm
 share/shotcut/translations/shotcut_gl.qm
+share/shotcut/translations/shotcut_he_IL.qm
 share/shotcut/translations/shotcut_hu.qm
 share/shotcut/translations/shotcut_it.qm
 share/shotcut/translations/shotcut_ja.qm
