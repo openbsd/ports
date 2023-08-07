@@ -9,6 +9,7 @@ ${P5SITE}/Bundle/Image/Info/XPM.pm
 ${P5SITE}/Image/
 ${P5SITE}/Image/Info/
 ${P5SITE}/Image/Info.pm
+${P5SITE}/Image/Info/AVIF.pm
 ${P5SITE}/Image/Info/BMP.pm
 ${P5SITE}/Image/Info/GIF.pm
 ${P5SITE}/Image/Info/ICO.pm
@@ -31,6 +32,7 @@ ${P5SITE}/Image/TIFF.pm
 @man man/man3p/Bundle::Image::Info::XBM.3p
 @man man/man3p/Bundle::Image::Info::XPM.3p
 @man man/man3p/Image::Info.3p
+@man man/man3p/Image::Info::AVIF.3p
 @man man/man3p/Image::Info::BMP.3p
 @man man/man3p/Image::Info::GIF.3p
 @man man/man3p/Image::Info::ICO.3p
