@@ -11,11 +11,10 @@ COMMENT =		WebRTC build for Telegram
 GH_ACCOUNT =		desktop-app
 GH_PROJECT =		tg_owt
 # no releases or tags, use latest master
-GH_COMMIT =		dcb5069ff76bd293e86928804208737e6cee2ccc
-DISTNAME =		${GH_PROJECT}-0.0.0.20230501
+GH_COMMIT =		a45d8b8f0a99bd0e5118dda1dc4a8b7b3ad5dcfd
+DISTNAME =		${GH_PROJECT}-0.0.0.20230515
 DISTFILES =		${GH_DISTFILE}
 CATEGORIES =		net
-REVISION =		2
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
