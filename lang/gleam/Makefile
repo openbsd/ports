@@ -2,8 +2,7 @@ COMMENT =		statically typed language for Erlang VM and JavaScript
 
 GH_ACCOUNT =		gleam-lang
 GH_PROJECT =		gleam
-GH_TAGNAME =		v0.29.0
-REVISION =		0
+GH_TAGNAME =		v0.30.5
 
 HOMEPAGE =		https://gleam.run
 
@@ -16,8 +15,8 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		devel/cargo \
 			lang/erlang
+MODERL_VERSION =	25
 BUILD_DEPENDS =		security/rust-ring
-RUN_DEPENDS =		lang/erlang/25
 COMPILER =		base-clang ports-gcc
 WANTLIB += 		${MODCARGO_WANTLIB} m
 
