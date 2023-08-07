@@ -128,6 +128,13 @@ firmware/amdgpu/gc_11_0_2_mes1.bin
 firmware/amdgpu/gc_11_0_2_mes_2.bin
 firmware/amdgpu/gc_11_0_2_pfp.bin
 firmware/amdgpu/gc_11_0_2_rlc.bin
+firmware/amdgpu/gc_11_0_3_imu.bin
+firmware/amdgpu/gc_11_0_3_me.bin
+firmware/amdgpu/gc_11_0_3_mec.bin
+firmware/amdgpu/gc_11_0_3_mes1.bin
+firmware/amdgpu/gc_11_0_3_mes_2.bin
+firmware/amdgpu/gc_11_0_3_pfp.bin
+firmware/amdgpu/gc_11_0_3_rlc.bin
 firmware/amdgpu/gc_11_0_4_imu.bin
 firmware/amdgpu/gc_11_0_4_me.bin
 firmware/amdgpu/gc_11_0_4_mec.bin
@@ -346,6 +353,8 @@ firmware/amdgpu/polaris12_uvd.bin
 firmware/amdgpu/polaris12_vce.bin
 firmware/amdgpu/psp_13_0_0_sos.bin
 firmware/amdgpu/psp_13_0_0_ta.bin
+firmware/amdgpu/psp_13_0_10_sos.bin
+firmware/amdgpu/psp_13_0_10_ta.bin
 firmware/amdgpu/psp_13_0_11_ta.bin
 firmware/amdgpu/psp_13_0_11_toc.bin
 firmware/amdgpu/psp_13_0_4_ta.bin
@@ -399,6 +408,7 @@ firmware/amdgpu/sdma_5_2_7.bin
 firmware/amdgpu/sdma_6_0_0.bin
 firmware/amdgpu/sdma_6_0_1.bin
 firmware/amdgpu/sdma_6_0_2.bin
+firmware/amdgpu/sdma_6_0_3.bin
 firmware/amdgpu/si58_mc.bin
 firmware/amdgpu/sienna_cichlid_ce.bin
 firmware/amdgpu/sienna_cichlid_dmcub.bin
@@ -413,6 +423,7 @@ firmware/amdgpu/sienna_cichlid_sos.bin
 firmware/amdgpu/sienna_cichlid_ta.bin
 firmware/amdgpu/sienna_cichlid_vcn.bin
 firmware/amdgpu/smu_13_0_0.bin
+firmware/amdgpu/smu_13_0_10.bin
 firmware/amdgpu/smu_13_0_7.bin
 firmware/amdgpu/stoney_ce.bin
 firmware/amdgpu/stoney_me.bin
