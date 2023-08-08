@@ -33,6 +33,8 @@ lib/python${MODPY_VERSION}/site-packages/patroni/${MODPY_PYCACHE}daemon.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/patroni/${MODPY_PYCACHE}daemon.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/patroni/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/patroni/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/patroni/${MODPY_PYCACHE}file_perm.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/patroni/${MODPY_PYCACHE}file_perm.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/patroni/${MODPY_PYCACHE}ha.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/patroni/${MODPY_PYCACHE}ha.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/patroni/${MODPY_PYCACHE}log.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -82,6 +84,7 @@ lib/python${MODPY_VERSION}/site-packages/patroni/dcs/kubernetes.py
 lib/python${MODPY_VERSION}/site-packages/patroni/dcs/raft.py
 lib/python${MODPY_VERSION}/site-packages/patroni/dcs/zookeeper.py
 lib/python${MODPY_VERSION}/site-packages/patroni/exceptions.py
+lib/python${MODPY_VERSION}/site-packages/patroni/file_perm.py
 lib/python${MODPY_VERSION}/site-packages/patroni/ha.py
 lib/python${MODPY_VERSION}/site-packages/patroni/log.py
 lib/python${MODPY_VERSION}/site-packages/patroni/postgresql/
