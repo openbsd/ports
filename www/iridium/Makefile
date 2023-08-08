@@ -21,7 +21,7 @@ DISTFILES+=		${IRIDIUM_DISTFILES} \
 IRIDIUM_DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=		${IRIDIUM_DISTFILES}
 
-PATCHFILES=		disable-privacy-sandbox-891b80bbfcdb15e8292143efd1715fa3f30662c4.patch
+PATCHFILES=		disable-privacy-sandbox-891b80bbfcdb15e8292143efd1715fa3f30662c4.patch:0
 PATCH_DIST_STRIP=	-p1
 
 CATEGORIES=		www
@@ -39,8 +39,8 @@ FLAVOR?=
 # BSD-like
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES=		https://downloads.iridiumbrowser.de/source/ \
-			http://nerd.hu/distfiles/
+MASTER_SITES=		https://downloads.iridiumbrowser.de/source/
+MASTER_SITES0=		http://nerd.hu/distfiles/
 
 MODULES=	lang/python x11/qt5
 MODQT5_DEPS=	No
