@@ -5,9 +5,9 @@ GNOME_VERSION=		44.1
 
 GH_ACCOUNT=		rnagy
 GH_PROJECT=		gdm
-GH_COMMIT=		5173625f454f03d7db2a7751ebb0a059d4ca3d54
+GH_COMMIT=		640bb9cef3d16bffb51c198cefeb9cb83612e735
 EXTRACT_SUFX=		.tar.gz
-REVISION=		0
+REVISION=		1
 
 DISTFILES=		${GH_DISTFILE} \
 			gdm-puffy.png:0
@@ -58,7 +58,7 @@ RUN_DEPENDS +=		x11/gnome/orca
 LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			security/openpam \
 			sysutils/accountsservice>=22.08.8p3 \
-			sysutils/consolekit>=1.2.6
+			sysutils/consolekit>=1.2.6p0
 
 MODGNOME_TOOLS=		gobject-introspection yelp
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
