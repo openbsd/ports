@@ -1,4 +1,4 @@
-.\"	$OpenBSD: sqlports.5,v 1.7 2021/02/25 23:26:30 espie Exp $
+.\"	$OpenBSD: sqlports.5,v 1.8 2023/08/08 11:12:06 espie Exp $
 .\"
 .\" Copyright (c) 2020 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: February 25 2021 $
+.Dd $Mdocdate: August 8 2023 $
 .Dt SQLPORTS 5
 .Os
 .Sh NAME
@@ -79,7 +79,6 @@ stored in specialized tables, e.g.,:
 .It IS_INTERACTIVE 
 .It MAINTAINER
 .It NO_*
-.It PATCHFILES
 .It PERMIT_*
 .It PKGNAME 
 .It PKGSPEC
@@ -149,11 +148,12 @@ the actual PKGPATH we depend upon, PKGSPEC, the spec we depend upon
 (if explicit), and REST the remainder of the text (things like :configure and
 such).
 .It _Distfiles(FULLPKGPATH, VALUE, N, Type)
-All distfiles/supdistfiles are stored in a single table, with Type
+All distfiles/patchfiles/supdistfiles are stored in a single table, with Type
 .Bl -tag -width 10 -offset indent -compact
 .It 0
 distfiles
 .It 1 
+patchfiles
 .It 2
 supdistfiles
 .El

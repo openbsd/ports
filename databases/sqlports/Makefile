@@ -1,5 +1,5 @@
 CATEGORIES =		databases
-V =			7.38
+V =			7.39
 DISTNAME =		sqlports-$V
 DISTFILES =
 COMMENT-main =		sqlite database of ports
