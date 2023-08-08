@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1595 2023/07/08 10:20:16 sthen Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1596 2023/08/08 12:43:53 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1326,6 +1326,9 @@ _FILES=
 .  if !empty($v)
 .    for e in ${$v}
 .      for f m u in ${e:C/:[0-9]$//:C/^(.*)\{.*\}(.*)$/\1\2/} MASTER_SITES${e:M*\:[0-9]:C/^.*:([0-9])$/\1/} ${e:C/:[0-9]$//:C/^.*\{(.*)\}(.*)$/\1\2/}
+.        if !defined($m)
+ERRORS += "Fatal: $m is not defined but referenced by $e in $v"
+.        endif
 .        if empty(_FILES:M$f)
 _FILES += $f
 .          if empty(DIST_SUBDIR)
