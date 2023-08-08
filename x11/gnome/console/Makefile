@@ -1,8 +1,7 @@
 COMMENT=		user-friendly terminal emulator for GNOME
 
 GNOME_PROJECT=		gnome-console
-GNOME_VERSION=		44.0
-REVISION=		0
+GNOME_VERSION=		44.4
 
 CATEGORIES=		x11
 
