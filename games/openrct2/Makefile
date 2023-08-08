@@ -1,11 +1,21 @@
 # "#error Unknown endianess!" in src/openrct2/common.h
 NOT_FOR_ARCHS =	${BE_ARCHS}
 
-V =		0.3.1
+V =		0.4.5
+TITLE_V =	0.4.0
+OBJECTS_V =	1.3.11
+OPENSFX_V =	1.0.3
+OPENMSX_V =	1.3.0
+REPLAYS_V =	0.0.78
 COMMENT =	open source re-implementation of RollerCoaster Tycoon 2
-DISTNAME =	openrct2-${V}
+DISTFILES =	openrct2-${V}{v${V}}.tar.gz:0 \
+		title-sequences-${TITLE_V}{title-sequences}.zip:1 \
+		objects-${OBJECTS_V}{objects}.zip:2 \
+		opensfx-${OPENSFX_V}{opensound}.zip:3 \
+		openmsx-${OPENMSX_V}{openmusic}.zip:4 \
+		replays-${REPLAYS_V}{replays}.zip:5
+PKGNAME =	openrct2-${V}
 CATEGORIES =	games x11
-REVISION =	0
 
 HOMEPAGE =	https://openrct2.org/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -13,12 +23,21 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL SDL2 c crypto curl duktape fontconfig
-WANTLIB += freetype icuuc m png speexdsp ssl z zip
+WANTLIB += ${COMPILER_LIBCXX} FLAC GL SDL2 c crypto curl fontconfig
+WANTLIB += freetype icuuc m ogg png speexdsp ssl vorbisfile z
+WANTLIB += zip
 
 # Upstream does not make proper source releases.
 # See: https://github.com/OpenRCT2/OpenRCT2/issues/5887
-MASTER_SITES =	https://mirrors.nycbug.org/pub/distfiles/
+# Find repos and version numbers in top-level CMakeLists.txt
+MASTER_SITES0 =	https://github.com/OpenRCT2/OpenRCT2/archive/refs/tags/
+MASTER_SITES1 =	https://github.com/OpenRCT2/title-sequences/releases/download/v${TITLE_V}/
+MASTER_SITES2 =	https://github.com/OpenRCT2/objects/releases/download/v${OBJECTS_V}/
+MASTER_SITES3 =	https://github.com/OpenRCT2/OpenSoundEffects/releases/download/v${OPENSFX_V}/
+MASTER_SITES4 =	https://github.com/OpenRCT2/OpenMusic/releases/download/v${OPENMSX_V}/
+MASTER_SITES5 =	https://github.com/OpenRCT2/replays/releases/download/v${REPLAYS_V}/
+
+EXTRACT_ONLY =	openrct2-${V}.tar.gz
 
 # C++17
 COMPILER =	base-clang ports-gcc
@@ -27,13 +46,15 @@ MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
 
 MODULES =	devel/cmake
 
-BUILD_DEPENDS =	textproc/nlohmann-json
+BUILD_DEPENDS =	archivers/unzip \
+		textproc/nlohmann-json
 
 LIB_DEPENDS =	archivers/libzip \
+		audio/flac \
+		audio/libvorbis \
 		audio/speexdsp \
 		devel/sdl2 \
 		graphics/png \
-		lang/duktape \
 		net/curl \
 		textproc/icu4c
 
@@ -42,20 +63,31 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+4,-guic
 
 CONFIGURE_ARGS =	-DDOWNLOAD_OBJECTS=OFF \
+			-DDOWNLOAD_OPENMSX=OFF \
+			-DDOWNLOAD_OPENSFX=OFF \
 			-DDOWNLOAD_REPLAYS=OFF \
 			-DDOWNLOAD_TITLE_SEQUENCES=OFF \
 			-DOPENRCT2_BRANCH=master \
-			-DOPENRCT2_COMMIT_SHA1_SHORT="d01dcea"
+			-DOPENRCT2_COMMIT_SHA1_SHORT="76ca840"
 
 # Downloads things. See: https://github.com/OpenRCT2/OpenRCT2/issues/5710
 NO_TEST =	Yes
 
-pre-configure:
-	sed -i 's,/usr/local,${TRUEPREFIX},g' \
-		${WRKSRC}/src/openrct2/platform/Platform.Linux.cpp
+DIST_SUBDIR =	openrct2
 
-# Upstream misnamed this
-post-install:
-	mv ${PREFIX}/share/openrct2/objects ${PREFIX}/share/openrct2/object
+WRKDIST =	${WRKDIR}/OpenRCT2-${V}
+
+post-extract:
+	mkdir -p ${WRKSRC}/testdata
+	unzip -q ${FULLDISTDIR}/title-sequences-${TITLE_V}.zip -d \
+		${WRKSRC}/data/sequence
+	unzip -q ${FULLDISTDIR}/objects-${OBJECTS_V}.zip -d \
+		${WRKSRC}/data/object
+	unzip -q ${FULLDISTDIR}/opensfx-${OPENSFX_V}.zip -d \
+		${WRKSRC}/data/assetpack
+	unzip -q ${FULLDISTDIR}/openmsx-${OPENMSX_V}.zip -d \
+		${WRKSRC}/data/assetpack
+	unzip -q ${FULLDISTDIR}/replays-${REPLAYS_V}.zip -d \
+		${WRKSRC}/testdata/replays
 
 .include <bsd.port.mk>
