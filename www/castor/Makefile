@@ -2,15 +2,12 @@ COMMENT=		graphical browser for plain-text protocols
 
 V=			0.9.0
 DISTNAME=		castor-${V}
-REVISION =		2
 
 DISTFILES=		castor-{castor/archive/}${V}${EXTRACT_SUFX}
 
 CATEGORIES=		www
 
 HOMEPAGE=		https://git.sr.ht/~julienxx/castor
-
-MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE=		Yes
