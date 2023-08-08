@@ -1,7 +1,7 @@
 COMMENT=		lightweight GNOME text editor
 
 GNOME_PROJECT=		gedit
-GNOME_VERSION=		46.0
+GNOME_VERSION=		46.1
 
 CATEGORIES=		editors
 
