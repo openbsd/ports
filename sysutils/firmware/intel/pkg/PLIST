@@ -123,8 +123,11 @@ firmware/intel/06-a6-01
 firmware/intel/06-a7-01
 firmware/intel/06-b7-01
 firmware/intel/06-ba-02
+@comment firmware/intel/06-ba-02_DUPLICATE
 firmware/intel/06-ba-03
+@comment firmware/intel/06-ba-03_DUPLICATE
 firmware/intel/06-be-00
+@comment firmware/intel/06-be-00_DUPLICATE
 firmware/intel/06-bf-02
 firmware/intel/06-bf-05
 firmware/intel/0f-00-07
