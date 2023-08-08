@@ -1,6 +1,7 @@
 /dev/dri/card0 rw
 
 /etc/fonts r
+/etc/localtime r
 /etc/machine-id r
 /usr/local/lib r
 /usr/local/share r
