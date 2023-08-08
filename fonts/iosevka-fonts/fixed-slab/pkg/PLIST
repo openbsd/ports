@@ -1,0 +1,11 @@
+share/fonts/
+@fontdir share/fonts/iosevka/
+share/fonts/iosevka/sgr-iosevka-fixed-slab-bold.ttc
+share/fonts/iosevka/sgr-iosevka-fixed-slab-extrabold.ttc
+share/fonts/iosevka/sgr-iosevka-fixed-slab-extralight.ttc
+share/fonts/iosevka/sgr-iosevka-fixed-slab-heavy.ttc
+share/fonts/iosevka/sgr-iosevka-fixed-slab-light.ttc
+share/fonts/iosevka/sgr-iosevka-fixed-slab-medium.ttc
+share/fonts/iosevka/sgr-iosevka-fixed-slab-regular.ttc
+share/fonts/iosevka/sgr-iosevka-fixed-slab-semibold.ttc
+share/fonts/iosevka/sgr-iosevka-fixed-slab-thin.ttc

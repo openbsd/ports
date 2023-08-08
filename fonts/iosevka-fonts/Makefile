@@ -14,5 +14,6 @@
 
 SUBDIR =
 SUBDIR += default
+SUBDIR += fixed-slab
 
 .include <bsd.port.subdir.mk>
