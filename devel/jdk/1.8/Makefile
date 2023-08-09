@@ -12,6 +12,7 @@ V=		${BASE_VER}.${UPDATE_VER}.${BUILD_VER}.${BSD_PORT_REL}
 PKGNAME=	jdk-${V}
 PKGSTEM=	jdk-${BASE_VER}
 EPOCH=		0
+REVISION=	0
 
 DIST_SUBDIR=	jdk
 DISTNAME=	jdk8u${UPDATE_VER}-${BUILD_VER}.${BSD_PORT_REL}
@@ -89,7 +90,6 @@ CONFIGURE_ARGS=	OBJCOPY=objcopy OBJDUMP=objdump READLINK=readlink \
 		--with-package-path=${LOCALBASE} \
 		--with-fontconfig=${X11BASE} \
 		--with-jobs=${MAKE_JOBS} \
-		--with-cacerts-file=${FILESDIR}/cacerts \
 		--with-debug-level=release \
 		--disable-ccache \
 		--disable-freetype-bundling \
