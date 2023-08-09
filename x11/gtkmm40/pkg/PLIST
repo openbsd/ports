@@ -18,6 +18,7 @@ include/gtkmm-4.0/gdkmm/displaymanager.h
 include/gtkmm-4.0/gdkmm/drag.h
 include/gtkmm-4.0/gdkmm/dragsurface.h
 include/gtkmm-4.0/gdkmm/dragsurfaceimpl.h
+include/gtkmm-4.0/gdkmm/dragsurfacesize.h
 include/gtkmm-4.0/gdkmm/drawcontext.h
 include/gtkmm-4.0/gdkmm/drop.h
 include/gtkmm-4.0/gdkmm/enums.h
@@ -27,6 +28,10 @@ include/gtkmm-4.0/gdkmm/frametimings.h
 include/gtkmm-4.0/gdkmm/general.h
 include/gtkmm-4.0/gdkmm/glcontext.h
 include/gtkmm-4.0/gdkmm/gltexture.h
+include/gtkmm-4.0/gdkmm/gltexturebuilder.h
+include/gtkmm-4.0/gdkmm/graphene_point.h
+include/gtkmm-4.0/gdkmm/graphene_rect.h
+include/gtkmm-4.0/gdkmm/graphene_size.h
 include/gtkmm-4.0/gdkmm/memorytexture.h
 include/gtkmm-4.0/gdkmm/monitor.h
 include/gtkmm-4.0/gdkmm/paintable.h
@@ -53,6 +58,7 @@ include/gtkmm-4.0/gdkmm/private/display_p.h
 include/gtkmm-4.0/gdkmm/private/displaymanager_p.h
 include/gtkmm-4.0/gdkmm/private/drag_p.h
 include/gtkmm-4.0/gdkmm/private/dragsurface_p.h
+include/gtkmm-4.0/gdkmm/private/dragsurfacesize_p.h
 include/gtkmm-4.0/gdkmm/private/drawcontext_p.h
 include/gtkmm-4.0/gdkmm/private/drop_p.h
 include/gtkmm-4.0/gdkmm/private/enums_p.h
@@ -61,6 +67,10 @@ include/gtkmm-4.0/gdkmm/private/frameclock_p.h
 include/gtkmm-4.0/gdkmm/private/frametimings_p.h
 include/gtkmm-4.0/gdkmm/private/glcontext_p.h
 include/gtkmm-4.0/gdkmm/private/gltexture_p.h
+include/gtkmm-4.0/gdkmm/private/gltexturebuilder_p.h
+include/gtkmm-4.0/gdkmm/private/graphene_point_p.h
+include/gtkmm-4.0/gdkmm/private/graphene_rect_p.h
+include/gtkmm-4.0/gdkmm/private/graphene_size_p.h
 include/gtkmm-4.0/gdkmm/private/memorytexture_p.h
 include/gtkmm-4.0/gdkmm/private/monitor_p.h
 include/gtkmm-4.0/gdkmm/private/paintable_p.h
@@ -85,6 +95,7 @@ include/gtkmm-4.0/gdkmm/private/toplevelsize_p.h
 include/gtkmm-4.0/gdkmm/rectangle.h
 include/gtkmm-4.0/gdkmm/rgba.h
 include/gtkmm-4.0/gdkmm/seat.h
+include/gtkmm-4.0/gdkmm/slot_async.h
 include/gtkmm-4.0/gdkmm/snapshot.h
 include/gtkmm-4.0/gdkmm/surface.h
 include/gtkmm-4.0/gdkmm/texture.h
@@ -154,7 +165,9 @@ include/gtkmm-4.0/gtkmm/colorchooserdialog.h
 include/gtkmm-4.0/gtkmm/colordialog.h
 include/gtkmm-4.0/gtkmm/colordialogbutton.h
 include/gtkmm-4.0/gtkmm/columnview.h
+include/gtkmm-4.0/gtkmm/columnviewcell.h
 include/gtkmm-4.0/gtkmm/columnviewcolumn.h
+include/gtkmm-4.0/gtkmm/columnviewrow.h
 include/gtkmm-4.0/gtkmm/columnviewsorter.h
 include/gtkmm-4.0/gtkmm/combobox.h
 include/gtkmm-4.0/gtkmm/comboboxtext.h
@@ -242,6 +255,7 @@ include/gtkmm-4.0/gtkmm/linkbutton.h
 include/gtkmm-4.0/gtkmm/listbase.h
 include/gtkmm-4.0/gtkmm/listbox.h
 include/gtkmm-4.0/gtkmm/listboxrow.h
+include/gtkmm-4.0/gtkmm/listheader.h
 include/gtkmm-4.0/gtkmm/listitem.h
 include/gtkmm-4.0/gtkmm/listitemfactory.h
 include/gtkmm-4.0/gtkmm/liststore.h
@@ -336,7 +350,9 @@ include/gtkmm-4.0/gtkmm/private/colorchooserdialog_p.h
 include/gtkmm-4.0/gtkmm/private/colordialog_p.h
 include/gtkmm-4.0/gtkmm/private/colordialogbutton_p.h
 include/gtkmm-4.0/gtkmm/private/columnview_p.h
+include/gtkmm-4.0/gtkmm/private/columnviewcell_p.h
 include/gtkmm-4.0/gtkmm/private/columnviewcolumn_p.h
+include/gtkmm-4.0/gtkmm/private/columnviewrow_p.h
 include/gtkmm-4.0/gtkmm/private/columnviewsorter_p.h
 include/gtkmm-4.0/gtkmm/private/combobox_p.h
 include/gtkmm-4.0/gtkmm/private/comboboxtext_p.h
@@ -423,6 +439,7 @@ include/gtkmm-4.0/gtkmm/private/linkbutton_p.h
 include/gtkmm-4.0/gtkmm/private/listbase_p.h
 include/gtkmm-4.0/gtkmm/private/listbox_p.h
 include/gtkmm-4.0/gtkmm/private/listboxrow_p.h
+include/gtkmm-4.0/gtkmm/private/listheader_p.h
 include/gtkmm-4.0/gtkmm/private/listitem_p.h
 include/gtkmm-4.0/gtkmm/private/listitemfactory_p.h
 include/gtkmm-4.0/gtkmm/private/liststore_p.h
@@ -475,8 +492,10 @@ include/gtkmm-4.0/gtkmm/private/scalebutton_p.h
 include/gtkmm-4.0/gtkmm/private/scrollable_p.h
 include/gtkmm-4.0/gtkmm/private/scrollbar_p.h
 include/gtkmm-4.0/gtkmm/private/scrolledwindow_p.h
+include/gtkmm-4.0/gtkmm/private/scrollinfo_p.h
 include/gtkmm-4.0/gtkmm/private/searchbar_p.h
 include/gtkmm-4.0/gtkmm/private/searchentry_p.h
+include/gtkmm-4.0/gtkmm/private/sectionmodel_p.h
 include/gtkmm-4.0/gtkmm/private/selectionfiltermodel_p.h
 include/gtkmm-4.0/gtkmm/private/selectionmodel_p.h
 include/gtkmm-4.0/gtkmm/private/separator_p.h
@@ -512,6 +531,7 @@ include/gtkmm-4.0/gtkmm/private/stringsorter_p.h
 include/gtkmm-4.0/gtkmm/private/stylecontext_p.h
 include/gtkmm-4.0/gtkmm/private/styleprovider_p.h
 include/gtkmm-4.0/gtkmm/private/switch_p.h
+include/gtkmm-4.0/gtkmm/private/symbolicpaintable_p.h
 include/gtkmm-4.0/gtkmm/private/text_p.h
 include/gtkmm-4.0/gtkmm/private/textbuffer_p.h
 include/gtkmm-4.0/gtkmm/private/textchildanchor_p.h
@@ -560,8 +580,10 @@ include/gtkmm-4.0/gtkmm/scalebutton.h
 include/gtkmm-4.0/gtkmm/scrollable.h
 include/gtkmm-4.0/gtkmm/scrollbar.h
 include/gtkmm-4.0/gtkmm/scrolledwindow.h
+include/gtkmm-4.0/gtkmm/scrollinfo.h
 include/gtkmm-4.0/gtkmm/searchbar.h
 include/gtkmm-4.0/gtkmm/searchentry.h
+include/gtkmm-4.0/gtkmm/sectionmodel.h
 include/gtkmm-4.0/gtkmm/selectionfiltermodel.h
 include/gtkmm-4.0/gtkmm/selectionlistmodelimpl.h
 include/gtkmm-4.0/gtkmm/selectionmodel.h
@@ -598,6 +620,7 @@ include/gtkmm-4.0/gtkmm/stringsorter.h
 include/gtkmm-4.0/gtkmm/stylecontext.h
 include/gtkmm-4.0/gtkmm/styleprovider.h
 include/gtkmm-4.0/gtkmm/switch.h
+include/gtkmm-4.0/gtkmm/symbolicpaintable.h
 include/gtkmm-4.0/gtkmm/text.h
 include/gtkmm-4.0/gtkmm/textbuffer.h
 include/gtkmm-4.0/gtkmm/textchildanchor.h
