@@ -12,6 +12,7 @@ PACKAGE_VER=	${BASE_VER}.${PATCH_VER}.${BSD_PORT_REL}
 PKGNAME=	jdk-${PACKAGE_VER}
 PKGSTEM=	jdk-17
 EPOCH=		0
+REVISION=	0
 
 DIST_SUBDIR=	jdk
 DISTNAME=	jdk-${VERSION_STR}
@@ -98,7 +99,6 @@ CONFIGURE_ARGS=	DOT="" FLOCK="" GIT="" HG="" PANDOC="" \
 		--with-jobs=${MAKE_JOBS} \
 		--with-debug-level=release \
 		--with-version-string=${VERSION_STR} \
-		--with-cacerts-file=${FILESDIR}/cacerts \
 		--with-fontconfig=${X11BASE} \
 		--with-cups=${LOCALBASE} \
 		--with-freetype=system \
