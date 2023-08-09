@@ -369,8 +369,8 @@ SHA256 (cargo/winreg-0.10.1.tar.gz) = gND04nLIXe8TlHY4CxL5rGCSZondLgHUkjIi9AWAhp
 SHA256 (cargo/winreg-0.50.0.tar.gz) = Uk5XssU3wPmx5p8ZZTEewSGCtBIuRQNbFQjNJNKtrbE=
 SHA256 (cargo/yansi-0.5.1.tar.gz) = CQQc2Qz4X3+LLfYMZG+FO39TXOaPhSROtnMc+J+kmOw=
 SHA256 (cargo/yubico-0.11.0.tar.gz) = Fz910sQBBCmi10rjoRSmmTDFnisaTJexx10lmklg1fs=
-SHA256 (vaultwarden-1.29.0.tar.gz) = L2xRdmNQbYqjtJEeVN32PthE2gxzC6dGauGR0kFNBDE=
-SHA256 (vaultwarden-deps-1.29.0.tgz) = Z6iSiU4yPqqJmtT9okSsM78O3fZDiuUi/te2EmoABvg=
+SHA256 (vaultwarden-1.29.1.tar.gz) = RgblhhVShh59/fCIUY4la1BHbd1eEb9aVnSYMz0eMXU=
+SHA256 (vaultwarden-deps-1.29.1.tgz) = Z6iSiU4yPqqJmtT9okSsM78O3fZDiuUi/te2EmoABvg=
 SIZE (cargo/addr2line-0.20.0.tar.gz) = 39558
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
 SIZE (cargo/aho-corasick-1.0.2.tar.gz) = 167694
@@ -742,5 +742,5 @@ SIZE (cargo/winreg-0.10.1.tar.gz) = 25725
 SIZE (cargo/winreg-0.50.0.tar.gz) = 29703
 SIZE (cargo/yansi-0.5.1.tar.gz) = 16525
 SIZE (cargo/yubico-0.11.0.tar.gz) = 17112
-SIZE (vaultwarden-1.29.0.tar.gz) = 577482
-SIZE (vaultwarden-deps-1.29.0.tgz) = 517334
+SIZE (vaultwarden-1.29.1.tar.gz) = 577480
+SIZE (vaultwarden-deps-1.29.1.tgz) = 517334
