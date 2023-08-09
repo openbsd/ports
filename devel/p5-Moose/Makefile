@@ -1,7 +1,7 @@
 COMMENT =	postmodern object system for Perl 5
 
 MODULES =	cpan
-DISTNAME =	Moose-2.2203
+DISTNAME =	Moose-2.2206
 CATEGORIES =	devel
 
 # Perl

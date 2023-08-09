@@ -508,6 +508,7 @@ ${P5ARCH}/oose.pm
 @man man/man3p/Class::MOP::Overload.3p
 @man man/man3p/Class::MOP::Package.3p
 @man man/man3p/Moose.3p
+@man man/man3p/Moose::Conflicts.3p
 @man man/man3p/Moose::Cookbook.3p
 @man man/man3p/Moose::Cookbook::Basics::BankAccount_MethodModifiersAndSubclassing.3p
 @man man/man3p/Moose::Cookbook::Basics::BinaryTree_AttributeFeatures.3p
