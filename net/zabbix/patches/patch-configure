@@ -1,16 +1,16 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -6782,6 +6782,7 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+@@ -7582,6 +7582,7 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  
  #include <stdlib.h>
  #include <sys/queue.h>
 +#include <sys/select.h>
  #include <sys/sensors.h>
  int
- main ()
-@@ -12370,7 +12371,7 @@ $as_echo "#define HAVE_IPCSERVICE 1" >>confdefs.h
- if test "${with_libevent+set}" = set; then :
+ main (void)
+@@ -13273,7 +13274,7 @@ if test ${with_libevent+y}
+ then :
    withval=$with_libevent;
  			if test "x$withval" = "xyes"; then
 -				if test -f /usr/local/include/event.h; then withval=/usr/local; else withval=/usr; fi
@@ -18,7 +18,7 @@ Index: configure
  			fi
  
  			LIBEVENT_CFLAGS="-I$withval/include"
-@@ -12439,7 +12440,7 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+@@ -13344,7 +13345,7 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
  #include <stdlib.h>
@@ -27,7 +27,7 @@ Index: configure
  #include <event2/thread.h>
  
  int
-@@ -17736,16 +17737,16 @@ $as_echo "no" >&6; }
+@@ -18824,16 +18825,16 @@ printf "%s\n" "no" >&6; }
  RANLIB="ranlib"
  
  

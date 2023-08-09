@@ -1337,7 +1337,6 @@ zabbix/include/views/js/item.preprocessing.js.php
 zabbix/include/views/js/itemtest.js.php
 zabbix/include/views/js/monitoring.history.js.php
 zabbix/include/views/js/monitoring.sysmap.edit.js.php
-zabbix/include/views/js/monitoring.sysmap.list.js.php
 zabbix/include/views/js/monitoring.sysmaps.js.php
 zabbix/include/views/js/reports.toptriggers.js.php
 zabbix/include/views/js/tr_events.js.php
