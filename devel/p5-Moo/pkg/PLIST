@@ -13,8 +13,6 @@ ${P5SITE}/Moo/HandleMoose/_TypeMap.pm
 ${P5SITE}/Moo/Object.pm
 ${P5SITE}/Moo/Role.pm
 ${P5SITE}/Moo/_Utils.pm
-${P5SITE}/Moo/_mro.pm
-${P5SITE}/Moo/_strictures.pm
 ${P5SITE}/Moo/sification.pm
 ${P5SITE}/oo.pm
 @man man/man3p/Moo.3p
