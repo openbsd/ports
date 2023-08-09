@@ -1,9 +1,8 @@
 COMMENT=		control and monitor storage systems using SMART
 
 # XXX at update time check whether C++11 is actually needed
-DISTNAME=		smartmontools-7.3
+DISTNAME=		smartmontools-7.4
 CATEGORIES=		sysutils
-REVISION=		0
 
 HOMEPAGE=		https://www.smartmontools.org/
 
