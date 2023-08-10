@@ -4,6 +4,7 @@
 @conflict texlive_texmf-minimal-<2022
 @conflict texlive_texmf-full-<2022
 @conflict texlive_texmf-context-<2022
+@conflict texlive_base,-mktexlsr-<2022p0
 @pkgpath print/texlive/texmf-minimal
 @pkgpath print/teTeX/texmf
 share/texmf-local/
@@ -5851,7 +5852,6 @@ share/texmf-dist/scripts/texlive/
 share/texmf-dist/scripts/texlive/fmtutil-sys.sh
 share/texmf-dist/scripts/texlive/fmtutil-user.sh
 share/texmf-dist/scripts/texlive/fmtutil.pl
-share/texmf-dist/scripts/texlive/mktexlsr
 share/texmf-dist/scripts/texlive/mktexlsr.pl
 share/texmf-dist/scripts/texlive/mktexmf
 share/texmf-dist/scripts/texlive/mktexpk

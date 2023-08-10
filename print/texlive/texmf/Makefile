@@ -25,6 +25,7 @@ PKGNAME-context =	texlive_texmf-context-${V}
 PKGNAME-buildset =	texlive_texmf-buildset-${V}
 
 REVISION-context =	0
+REVISION-buildset =	0
 
 NO_BUILD =		Yes
 NO_TEST =		Yes
@@ -52,7 +53,7 @@ RUN_DEPENDS-context +=	${FULLPKGNAME-full}:print/texlive/texmf,-full \
 			${MODRUBY_RUN_DEPENDS}
 RUN_DEPENDS-docs +=	texlive_base->=${V}:print/texlive/base,-main \
 			x11/p5-Tk
-RUN_DEPENDS-buildset +=	texlive_mktexlsr->=${V}:print/texlive/base,-mktexlsr
+RUN_DEPENDS-buildset +=	texlive_mktexlsr->=${V}p0:print/texlive/base,-mktexlsr
 
 MULTI_PACKAGES =	-context -docs -full -main -buildset
 

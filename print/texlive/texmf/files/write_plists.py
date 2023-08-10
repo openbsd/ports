@@ -29,6 +29,7 @@ TOP_MATTER = {
         "@conflict texlive_texmf-minimal-<%s" % YEAR,
         "@conflict texlive_texmf-full-<%s" % YEAR,
         "@conflict texlive_texmf-context-<%s" % YEAR,
+        "@conflict texlive_base,-mktexlsr-<%sp0" % YEAR,
         "@pkgpath print/texlive/texmf-minimal",
         "@pkgpath print/teTeX/texmf",
         # Scaffold a dir for ports wishing to install extra tex macros.

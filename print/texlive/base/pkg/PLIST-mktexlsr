@@ -1,7 +1,7 @@
 @conflict teTeX_base-*
 @conflict pdfjam-*
 @conflict ht-<2
-@conflict texlive_texmf-buildset-<2022
+@conflict texlive_texmf-buildset-<2022p0
 @conflict texlive_base-<2022
 @define-tag mktexlsr at-end %D/bin/mktexlsr >/dev/null 2>&1
 @define-tag mktexlsr-local at-end %D/bin/mktexlsr %D/share/texmf-local >/dev/null 2>&1
@@ -62,3 +62,6 @@ include/kpathsea/win32lib.h
 lib/libkpathsea.la
 @lib lib/libkpathsea.so.${LIBkpathsea_VERSION}
 lib/pkgconfig/kpathsea.pc
+share/texmf-dist/scripts/
+share/texmf-dist/scripts/texlive/
+share/texmf-dist/scripts/texlive/mktexlsr

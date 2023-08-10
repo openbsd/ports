@@ -3,6 +3,7 @@ COMMENT-mktexlsr =	mktexlsr for TeXLive typesetting distribution
 COMMENT-synctex =	synctex for TeXLive typesetting distribution
 
 REVISION-main =		0
+REVISION-mktexlsr =	0
 
 DISTNAME =		texlive-${DIST_V}-source
 PKGNAME =		texlive_base-${V}
@@ -14,7 +15,10 @@ PKGNAME-main =		${PKGNAME}
 PKGNAME-synctex =	texlive_synctex-${V}
 
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
-			texlive-${DIST_V}-extra${EXTRACT_SUFX}
+			texlive-${DIST_V}-extra${EXTRACT_SUFX} \
+			mktexlsr-2022.gz:0
+
+MASTER_SITES0 =		https://theunixzoo.co.uk/distfiles/
 
 SHARED_LIBS =		kpathsea	9.0 # 9.2
 SHARED_LIBS +=		ptexenc		6.0 # 5.0
@@ -174,6 +178,15 @@ post-install: tl-symlinks-buildset
 		${PREFIX}/libdata/perl5/site_perl/TeXLive/
 	${INSTALL} ${EXTRA_ROOT}/tlpkg/TeXLive/TLConfig.pm \
 		${PREFIX}/libdata/perl5/site_perl/TeXLive/
+
+	# the `-mktexlsr` sub-package must stand alone without a texmf tree so
+	# that other ports can use it outside of texlive. Unfortunately
+	# `bin/mktexlsr` is a symlink to a shell script in the texmf tree.
+	# Rather than add the texmf distfile here (which would slow down the
+	# build a lot), I've hosted that one script, which we install now.
+	${INSTALL_DATA_DIR} ${PREFIX}/share/texmf-dist/scripts/texlive
+	${INSTALL_SCRIPT} ${WRKDIR}/mktexlsr-${V} \
+		${PREFIX}/share/texmf-dist/scripts/texlive/mktexlsr
 
 .include <bsd.port.mk>
 

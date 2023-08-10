@@ -281,7 +281,9 @@ def should_comment_file(f, commented_files):
         # TeX live installer, we never want
         ("tlmgr" in f and "doc/texlive" not in f) or
         # We don't need build instructions in our binary packages
-        f.endswith("/tlbuild.info")
+        f.endswith("/tlbuild.info") or
+        # mktexlsr is provided by texlive_base,-mktexlsr
+        f == "share/texmf-dist/scripts/texlive/mktexlsr"
     )
 
 
