@@ -551,6 +551,7 @@
      SUBDIR += seamonkey-i18n
      SUBDIR += selfoss
      SUBDIR += sfeed
+     SUBDIR += shiori
      SUBDIR += slowhttptest
      SUBDIR += smarc
      SUBDIR += snownews
