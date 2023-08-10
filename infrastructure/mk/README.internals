@@ -1,4 +1,4 @@
-$OpenBSD: README.internals,v 1.18 2022/10/28 09:35:03 espie Exp $
+$OpenBSD: README.internals,v 1.19 2023/08/10 18:50:58 espie Exp $
 Copyright (C) 2011-2012 Marc Espie <espie@openbsd.org>
 
  Permission to use, copy, modify, and distribute this software for any
@@ -24,6 +24,26 @@ Most of this is not for the faint of heart.
 
 "Imagination could conceive almost anything in connexion with this place."
 (H.P. Lovecraft, At the Mountains of Madness)
+
+IMPORTANT
+---------
+There are connections to other pieces outside of this directory.
+The "infrastructure" consists of
+- those pieces of mk code
+- some internals of OpenBSD make
+- users of introspection output, most specifically dpb, sqlports AND
+pkglocatedb
+- the man pages to this infrastructure, located under share/man[57]
+
+Any change that impacts *mk *MUST* also take these into account
+- new variables must be represented in sqlports
+- dpb reproduces a significant amount of behavior of *mk internally (all the
+fetching/checksumming stuff among others), so checking that dpb is still
+happy after significant changes is mandatory.
+- any new mechanism must be documented, preferably sooner rather than later.
+Documentation is a very good litmus test: if you can't explain it simply,
+chances are your new feature is NOT FINISHED.
+
 
 Some design principles
 ----------------------
@@ -130,7 +150,7 @@ Especially since the shell has tricky precedence rules.
 
 - use trap to clean up at the end of a command. That's mostly used for
 caching stuff (depfile and cache), but also for the locking mechanism.
-beware of existing traps in shell fragments (_depfile_fragment, 
+beware of existing traps in shell fragments (_depfile_fragment,
 _cache_fragment, _SIMPLE_LOCK).  Re-using trap will reset. The only way
 around that is to fork a subshell (see the subpackage target).
 
