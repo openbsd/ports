@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortInfo.pm,v 1.45 2023/05/06 05:20:31 espie Exp $
+# $OpenBSD: PortInfo.pm,v 1.46 2023/08/10 17:49:19 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -281,16 +281,6 @@ my %adder = (
 	FETCH_MANUALLY => 'FetchManually',
 	MISSING_FILES => 'AddList',
 	MASTER_SITES => 'AddOrderedList',
-	MASTER_SITES0 => 'AddOrderedList',
-	MASTER_SITES1 => 'AddOrderedList',
-	MASTER_SITES2 => 'AddOrderedList',
-	MASTER_SITES3 => 'AddOrderedList',
-	MASTER_SITES4 => 'AddOrderedList',
-	MASTER_SITES5 => 'AddOrderedList',
-	MASTER_SITES6 => 'AddOrderedList',
-	MASTER_SITES7 => 'AddOrderedList',
-	MASTER_SITES8 => 'AddOrderedList',
-	MASTER_SITES9 => 'AddOrderedList',
 	MULTI_PACKAGES => 'AddList',
 	PERMIT_DISTFILES => 'AddNegative',
 	PERMIT_PACKAGE => 'AddNegative',
@@ -317,9 +307,15 @@ my %adder = (
 	MAINTAINER => 'AddInfo',
 );
 
+sub find($class, $var)
+{
+	$var =~ s/^(MASTER_SITES).*/$1/;
+	return $adder{$var};
+}
+
 sub wanted($class, $var)
 {
-	return $adder{$var};
+	return $class->find($var);
 }
 
 sub new($class, $pkgpath)
@@ -329,7 +325,7 @@ sub new($class, $pkgpath)
 
 sub add($self, $var, $value, $parent)
 {
-	$adder{$var}->add($var, $self, $value, $parent);
+	$self->find($var)->add($var, $self, $value, $parent);
 }
 
 sub dump($self, $fh)
