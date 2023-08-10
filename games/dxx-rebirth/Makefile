@@ -2,6 +2,7 @@ V =		0.60pl20220929
 COMMENT =	source port of Descent, a 6-degrees-of-freedom shooter
 DISTNAME =	dxx-rebirth_${V:S/0.60pl//g}-src
 PKGNAME =	dxx-rebirth-${V}
+REVISION =	0
 CATEGORIES =	games x11
 
 HOMEPAGE =	https://www.dxx-rebirth.com/
@@ -32,5 +33,9 @@ LIB_DEPENDS =	devel/physfs \
 		graphics/png
 
 NO_TEST =	Yes
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKBUILD}/build/d1x-rebirth/d1x-rebirth ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKBUILD}/build/d2x-rebirth/d2x-rebirth ${PREFIX}/bin/
 
 .include <bsd.port.mk>
