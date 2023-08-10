@@ -13,7 +13,6 @@ SUBST_VARS +=		SO_VERSION
 
 V =			${MOZILLA_VERSION}.14.0
 DISTNAME =		firefox-${V}esr.source
-EXTRACT_SUFX =		.tar.bz2
 PKGNAME =		spidermonkey${MOZILLA_VERSION}-${V}
 EPOCH =			1
 
