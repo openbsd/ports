@@ -1,2 +1,5 @@
 @bin bin/nostt
 @man man/man1/nostt.1
+man/nl/
+man/nl/man1/
+@man man/nl/man1/nostt.1
