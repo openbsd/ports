@@ -15,7 +15,7 @@ Index: src/runtime/sys_openbsd_mips64.s
  //
  
  #include "go_asm.h"
-@@ -14,361 +15,782 @@
+@@ -14,375 +15,790 @@
  #define CLOCK_REALTIME	$0
  #define	CLOCK_MONOTONIC	$3
  
@@ -723,6 +723,20 @@ Index: src/runtime/sys_openbsd_mips64.s
 -	MOVV	$94, R2			// sys___thrsleep
 -	SYSCALL
 -	MOVW	R2, ret+40(FP)
++TEXT runtime·issetugid_trampoline(SB),NOSPLIT,$8
++	MOVV	RSB, 8(R29)
++	MOVV	R4, R16			// pointer to args
++	CALL	libc_issetugid(SB)
++	MOVW	R2, 0(R16)		// return value
++	MOVV	8(R29), RSB
+ 	RET
+ 
+-TEXT runtime·thrwakeup(SB),NOSPLIT,$0
+-	MOVV	ident+0(FP), R4		// arg 1 - ident
+-	MOVW	n+8(FP), R5		// arg 2 - n
+-	MOVV	$301, R2		// sys___thrwakeup
+-	SYSCALL
+-	MOVW	R2, ret+16(FP)
 +// syscall calls a function in libc on behalf of the syscall package.
 +// syscall takes a pointer to a struct like:
 +// struct {
@@ -768,12 +782,18 @@ Index: src/runtime/sys_openbsd_mips64.s
 +	MOVV	8(R29), RSB
  	RET
  
--TEXT runtime·thrwakeup(SB),NOSPLIT,$0
--	MOVV	ident+0(FP), R4		// arg 1 - ident
--	MOVW	n+8(FP), R5		// arg 2 - n
--	MOVV	$301, R2		// sys___thrwakeup
+-TEXT runtime·sysctl(SB),NOSPLIT,$0
+-	MOVV	mib+0(FP), R4		// arg 1 - mib
+-	MOVW	miblen+8(FP), R5	// arg 2 - miblen
+-	MOVV	out+16(FP), R6		// arg 3 - out
+-	MOVV	size+24(FP), R7		// arg 4 - size
+-	MOVV	dst+32(FP), R8		// arg 5 - dest
+-	MOVV	ndst+40(FP), R9		// arg 6 - newlen
+-	MOVV	$202, R2		// sys___sysctl
 -	SYSCALL
--	MOVW	R2, ret+16(FP)
+-	BEQ	R7, 2(PC)
+-	SUBVU	R2, R0, R2	// caller expects negative errno
+-	MOVW	R2, ret+48(FP)
 +// syscallX calls a function in libc on behalf of the syscall package.
 +// syscallX takes a pointer to a struct like:
 +// struct {
@@ -819,18 +839,13 @@ Index: src/runtime/sys_openbsd_mips64.s
 +	MOVV	8(R29), RSB
  	RET
  
--TEXT runtime·sysctl(SB),NOSPLIT,$0
--	MOVV	mib+0(FP), R4		// arg 1 - mib
--	MOVW	miblen+8(FP), R5	// arg 2 - miblen
--	MOVV	out+16(FP), R6		// arg 3 - out
--	MOVV	size+24(FP), R7		// arg 4 - size
--	MOVV	dst+32(FP), R8		// arg 5 - dest
--	MOVV	ndst+40(FP), R9		// arg 6 - newlen
--	MOVV	$202, R2		// sys___sysctl
+-// int32 runtime·kqueue(void);
+-TEXT runtime·kqueue(SB),NOSPLIT,$0
+-	MOVV	$269, R2		// sys_kqueue
 -	SYSCALL
 -	BEQ	R7, 2(PC)
 -	SUBVU	R2, R0, R2	// caller expects negative errno
--	MOVW	R2, ret+48(FP)
+-	MOVW	R2, ret+0(FP)
 +// syscall6 calls a function in libc on behalf of the syscall package.
 +// syscall6 takes a pointer to a struct like:
 +// struct {
@@ -882,13 +897,19 @@ Index: src/runtime/sys_openbsd_mips64.s
 +	MOVV	8(R29), RSB
  	RET
  
--// int32 runtime·kqueue(void);
--TEXT runtime·kqueue(SB),NOSPLIT,$0
--	MOVV	$269, R2		// sys_kqueue
+-// int32 runtime·kevent(int kq, Kevent *changelist, int nchanges, Kevent *eventlist, int nevents, Timespec *timeout);
+-TEXT runtime·kevent(SB),NOSPLIT,$0
+-	MOVW	kq+0(FP), R4		// arg 1 - kq
+-	MOVV	ch+8(FP), R5		// arg 2 - changelist
+-	MOVW	nch+16(FP), R6		// arg 3 - nchanges
+-	MOVV	ev+24(FP), R7		// arg 4 - eventlist
+-	MOVW	nev+32(FP), R8		// arg 5 - nevents
+-	MOVV	ts+40(FP), R9		// arg 6 - timeout
+-	MOVV	$72, R2			// sys_kevent
 -	SYSCALL
 -	BEQ	R7, 2(PC)
 -	SUBVU	R2, R0, R2	// caller expects negative errno
--	MOVW	R2, ret+0(FP)
+-	MOVW	R2, ret+48(FP)
 +// syscall6X calls a function in libc on behalf of the syscall package.
 +// syscall6X takes a pointer to a struct like:
 +// struct {
@@ -940,19 +961,20 @@ Index: src/runtime/sys_openbsd_mips64.s
 +	MOVV	8(R29), RSB
  	RET
  
--// int32 runtime·kevent(int kq, Kevent *changelist, int nchanges, Kevent *eventlist, int nevents, Timespec *timeout);
--TEXT runtime·kevent(SB),NOSPLIT,$0
--	MOVW	kq+0(FP), R4		// arg 1 - kq
--	MOVV	ch+8(FP), R5		// arg 2 - changelist
--	MOVW	nch+16(FP), R6		// arg 3 - nchanges
--	MOVV	ev+24(FP), R7		// arg 4 - eventlist
--	MOVW	nev+32(FP), R8		// arg 5 - nevents
--	MOVV	ts+40(FP), R9		// arg 6 - timeout
--	MOVV	$72, R2			// sys_kevent
+-// func fcntl(fd, cmd, arg int32) (int32, int32)
+-TEXT runtime·fcntl(SB),NOSPLIT,$0
+-	MOVW	fd+0(FP), R4	// fd
+-	MOVW	cmd+4(FP), R5	// cmd
+-	MOVW	arg+8(FP), R6	// arg
+-	MOVV	$92, R2		// sys_fcntl
 -	SYSCALL
--	BEQ	R7, 2(PC)
--	SUBVU	R2, R0, R2	// caller expects negative errno
--	MOVW	R2, ret+48(FP)
+-	MOVV	$0, R4
+-	BEQ	R7, noerr
+-	MOVV	R2, R4
+-	MOVW	$-1, R2
+-noerr:
+-	MOVW	R2, ret+16(FP)
+-	MOVW	R4, errno+20(FP)
 +// syscall10 calls a function in libc on behalf of the syscall package.
 +// syscall10 takes a pointer to a struct like:
 +// struct {
@@ -1014,13 +1036,11 @@ Index: src/runtime/sys_openbsd_mips64.s
 +	MOVV	8(R29), RSB
  	RET
  
--// func closeonexec(fd int32)
--TEXT runtime·closeonexec(SB),NOSPLIT,$0
--	MOVW	fd+0(FP), R4		// arg 1 - fd
--	MOVV	$2, R5			// arg 2 - cmd (F_SETFD)
--	MOVV	$1, R6			// arg 3 - arg (FD_CLOEXEC)
--	MOVV	$92, R2			// sys_fcntl
+-// func issetugid() int32
+-TEXT runtime·issetugid(SB),NOSPLIT,$0
+-	MOVV	$253, R2	// sys_issetugid
 -	SYSCALL
+-	MOVW	R2, ret+0(FP)
 +// syscall10X calls a function in libc on behalf of the syscall package.
 +// syscall10X takes a pointer to a struct like:
 +// struct {

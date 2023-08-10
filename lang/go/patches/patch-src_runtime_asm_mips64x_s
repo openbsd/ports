@@ -1,9 +1,9 @@
 Index: src/runtime/asm_mips64x.s
 --- src/runtime/asm_mips64x.s.orig
 +++ src/runtime/asm_mips64x.s
-@@ -470,9 +470,12 @@ TEXT ·cgocallback(SB),NOSPLIT,$24-24
- 	NO_LOCAL_POINTERS
+@@ -479,9 +479,12 @@ TEXT ·cgocallback(SB),NOSPLIT,$24-24
  
+ loadg:
  	// Load m and g from thread-local storage.
 +#ifndef GOOS_openbsd
  	MOVB	runtime·iscgo(SB), R1
@@ -13,4 +13,4 @@ Index: src/runtime/asm_mips64x.s
 +
  nocgo:
  
- 	// If g is nil, Go did not create the current thread.
+ 	// If g is nil, Go did not create the current thread,

@@ -1,19 +1,8 @@
 Index: src/cmd/link/internal/mips64/obj.go
 --- src/cmd/link/internal/mips64/obj.go.orig
 +++ src/cmd/link/internal/mips64/obj.go
-@@ -51,6 +51,7 @@ func Init() (*sys.Arch, ld.Arch) {
- 		Minalign:         minAlign,
- 		Dwarfregsp:       dwarfRegSP,
- 		Dwarfreglr:       dwarfRegLR,
-+		Adddynrel:        adddynrel,
- 		Archinit:         archinit,
- 		Archreloc:        archreloc,
- 		Archrelocvariant: archrelocvariant,
-@@ -59,8 +60,16 @@ func Init() (*sys.Arch, ld.Arch) {
- 		ElfrelocSize:     24,
- 		Elfsetupplt:      elfsetupplt,
+@@ -59,6 +59,13 @@ func Init() (*sys.Arch, ld.Arch) {
  		Gentext:          gentext,
-+		FixUpSyms:        fixUpSyms,
  		Machoreloc1:      machoreloc1,
  
 +		// TrampLimit is set such that we always run the trampoline
@@ -23,16 +12,6 @@ Index: src/cmd/link/internal/mips64/obj.go
 +		TrampLimit: 1,
 +		Trampoline: trampoline,
 +
- 		Linuxdynld:     "/lib64/ld64.so.1",
- 		LinuxdynldMusl: musl,
- 		Freebsddynld:   "XXX",
-@@ -99,4 +108,9 @@ func archinit(ctxt *ld.Link) {
- 			*ld.FlagRound = 0x10000
- 		}
- 	}
-+
-+	// .dynsym always has one NULL entry prior to any symbols being added.
-+	dynSymCount = 1
-+	gotLocalCount = 0
-+	gotSymIndex = 0
- }
+ 		ELF: ld.ELFArch{
+ 			Linuxdynld:     "/lib64/ld64.so.1",
+ 			LinuxdynldMusl: musl,

@@ -1,7 +1,7 @@
 Index: src/cmd/internal/obj/riscv/obj.go
 --- src/cmd/internal/obj/riscv/obj.go.orig
 +++ src/cmd/internal/obj/riscv/obj.go
-@@ -1264,6 +1264,11 @@ func encodeSF(ins *instruction) uint32 {
+@@ -1272,6 +1272,11 @@ func encodeSF(ins *instruction) uint32 {
  	return encodeS(ins.as, regI(ins.rd), regF(ins.rs1), uint32(ins.imm))
  }
  
@@ -13,7 +13,7 @@ Index: src/cmd/internal/obj/riscv/obj.go
  // encodeB encodes a B-type RISC-V instruction.
  func encodeB(ins *instruction) uint32 {
  	imm := immI(ins.as, ins.imm, 13)
-@@ -1273,7 +1278,7 @@ func encodeB(ins *instruction) uint32 {
+@@ -1281,7 +1286,7 @@ func encodeB(ins *instruction) uint32 {
  	if enc == nil {
  		panic("encodeB: could not encode instruction")
  	}
@@ -22,7 +22,7 @@ Index: src/cmd/internal/obj/riscv/obj.go
  }
  
  // encodeU encodes a U-type RISC-V instruction.
-@@ -1316,16 +1321,67 @@ func encodeRawIns(ins *instruction) uint32 {
+@@ -1324,16 +1329,67 @@ func encodeRawIns(ins *instruction) uint32 {
  	return uint32(ins.imm)
  }
  
@@ -94,7 +94,7 @@ Index: src/cmd/internal/obj/riscv/obj.go
  func EncodeIImmediate(imm int64) (int64, error) {
  	if !immIFits(imm, 12) {
  		return 0, fmt.Errorf("immediate %#x does not fit in 12 bits", imm)
-@@ -1333,6 +1389,16 @@ func EncodeIImmediate(imm int64) (int64, error) {
+@@ -1341,6 +1397,16 @@ func EncodeIImmediate(imm int64) (int64, error) {
  	return imm << 20, nil
  }
  
@@ -111,7 +111,7 @@ Index: src/cmd/internal/obj/riscv/obj.go
  func EncodeSImmediate(imm int64) (int64, error) {
  	if !immIFits(imm, 12) {
  		return 0, fmt.Errorf("immediate %#x does not fit in 12 bits", imm)
-@@ -1819,6 +1885,53 @@ func instructionsForStore(p *obj.Prog, as obj.As, rd i
+@@ -1827,6 +1893,53 @@ func instructionsForStore(p *obj.Prog, as obj.As, rd i
  	return []*instruction{insLUI, insADD, ins}
  }
  
@@ -165,7 +165,7 @@ Index: src/cmd/internal/obj/riscv/obj.go
  // instructionsForMOV returns the machine instructions for an *obj.Prog that
  // uses a MOV pseudo-instruction.
  func instructionsForMOV(p *obj.Prog) []*instruction {
-@@ -1908,6 +2021,10 @@ func instructionsForMOV(p *obj.Prog) []*instruction {
+@@ -1939,6 +2052,10 @@ func instructionsForMOV(p *obj.Prog) []*instruction {
  			inss = instructionsForLoad(p, movToLoad(p.As), addrToReg(p.From))
  
  		case obj.NAME_EXTERN, obj.NAME_STATIC:
@@ -176,7 +176,7 @@ Index: src/cmd/internal/obj/riscv/obj.go
  			// Note that the values for $off_hi and $off_lo are currently
  			// zero and will be assigned during relocation.
  			//
-@@ -1935,6 +2052,10 @@ func instructionsForMOV(p *obj.Prog) []*instruction {
+@@ -1966,6 +2083,10 @@ func instructionsForMOV(p *obj.Prog) []*instruction {
  			inss = instructionsForStore(p, movToStore(p.As), addrToReg(p.To))
  
  		case obj.NAME_EXTERN, obj.NAME_STATIC:
@@ -187,7 +187,7 @@ Index: src/cmd/internal/obj/riscv/obj.go
  			// Note that the values for $off_hi and $off_lo are currently
  			// zero and will be assigned during relocation.
  			//
-@@ -2198,10 +2319,10 @@ func assemble(ctxt *obj.Link, cursym *obj.LSym, newpro
+@@ -2244,10 +2365,10 @@ func assemble(ctxt *obj.Link, cursym *obj.LSym, newpro
  				break
  			}
  			if addr.Sym.Type == objabi.STLSBSS {

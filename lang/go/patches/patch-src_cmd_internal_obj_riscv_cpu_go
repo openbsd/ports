@@ -1,7 +1,7 @@
 Index: src/cmd/internal/obj/riscv/cpu.go
 --- src/cmd/internal/obj/riscv/cpu.go.orig
 +++ src/cmd/internal/obj/riscv/cpu.go
-@@ -632,13 +632,25 @@ var unaryDst = map[obj.As]bool{
+@@ -619,13 +619,25 @@ var unaryDst = map[obj.As]bool{
  
  // Instruction encoding masks.
  const (

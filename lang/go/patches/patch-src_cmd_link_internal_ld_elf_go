@@ -1,37 +1,25 @@
 Index: src/cmd/link/internal/ld/elf.go
 --- src/cmd/link/internal/ld/elf.go.orig
 +++ src/cmd/link/internal/ld/elf.go
-@@ -1545,11 +1545,20 @@ func (ctxt *Link) doelf() {
- 		dynamic := ldr.CreateSymForUpdate(".dynamic", 0)
- 		dynamic.SetType(sym.SELFSECT) // writable
+@@ -208,7 +208,7 @@ type ELFArch struct {
  
-+		// In the absence of a DT_MIPS_RLD_MAP entry, the openbsd/mips64
-+		// dynamic loader marks the pages surrounding the DT_DEBUG entry
-+		// as writeable, updates it, then marks the pages as read only.
-+		// This leads to bad things happening if .dynamic is in a
-+		// writeable section.
-+		if ctxt.IsMIPS64() && ctxt.HeadType == objabi.Hopenbsd {
-+			dynamic.SetType(sym.SELFROSECT)
-+		}
-+
- 		if ctxt.IsS390X() {
+ 	Reloc1    func(*Link, *OutBuf, *loader.Loader, loader.Sym, loader.ExtReloc, int, int64) bool
+ 	RelocSize uint32 // size of an ELF relocation record, must match Reloc1.
+-	SetupPLT  func(ctxt *Link, plt, gotplt *loader.SymbolBuilder, dynamic loader.Sym)
++	SetupPLT  func(ctxt *Link, ldr *loader.Loader, plt, gotplt *loader.SymbolBuilder, dynamic loader.Sym)
+ 
+ 	// DynamicReadOnly can be set to true to make the .dynamic
+ 	// section read-only. By default it is writable.
+@@ -1583,7 +1583,7 @@ func (ctxt *Link) doelf() {
  			// S390X uses .got instead of .got.plt
  			gotplt = got
  		}
--		thearch.Elfsetupplt(ctxt, plt, gotplt, dynamic.Sym())
-+		thearch.Elfsetupplt(ctxt, ctxt.loader, plt, gotplt, dynamic.Sym())
+-		thearch.ELF.SetupPLT(ctxt, plt, gotplt, dynamic.Sym())
++		thearch.ELF.SetupPLT(ctxt, ctxt.loader, plt, gotplt, dynamic.Sym())
  
  		/*
  		 * .dynamic table
-@@ -1594,6 +1603,7 @@ func (ctxt *Link) doelf() {
- 		// DT_JMPREL is emitted so we have to defer generation of elf.DT_PLTREL,
- 		// DT_PLTRELSZ, and elf.DT_JMPREL dynamic entries until after we know the
- 		// size of .rel(a).plt section.
-+
- 		Elfwritedynent(ctxt.Arch, dynamic, elf.DT_DEBUG, 0)
- 	}
- 
-@@ -2124,6 +2134,10 @@ func asmbElf(ctxt *Link) {
+@@ -2145,6 +2145,10 @@ func asmbElf(ctxt *Link) {
  		ph.Type = elf.PT_GNU_STACK
  		ph.Flags = elf.PF_W + elf.PF_R
  		ph.Align = uint64(ctxt.Arch.RegSize)
@@ -39,6 +27,6 @@ Index: src/cmd/link/internal/ld/elf.go
 +		ph := newElfPhdr()
 +		ph.Type = elf.PT_OPENBSD_NOBTCFI
 +		ph.Flags = elf.PF_X
- 	}
- 
- elfobj:
+ 	} else if ctxt.HeadType == objabi.Hsolaris {
+ 		ph := newElfPhdr()
+ 		ph.Type = elf.PT_SUNWSTACK

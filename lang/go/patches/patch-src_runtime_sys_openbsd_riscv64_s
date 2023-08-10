@@ -1,15 +1,14 @@
 Index: src/runtime/sys_openbsd_riscv64.s
 --- src/runtime/sys_openbsd_riscv64.s.orig
 +++ src/runtime/sys_openbsd_riscv64.s
-@@ -0,0 +1,730 @@
-+// Copyright 2020 The Go Authors. All rights reserved.
+@@ -0,0 +1,742 @@
++// Copyright 2023 The Go Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style
 +// license that can be found in the LICENSE file.
 +//
-+// System calls and other sys.stuff for mips64, OpenBSD
++// System calls and other sys.stuff for riscv64, OpenBSD
 +// System calls are implemented in libc/libpthread, this file
 +// contains trampolines that convert from Go to C calling convention.
-+// Some direct system call implementations currently remain.
 +//
 +
 +#include "go_asm.h"
@@ -389,11 +388,21 @@ Index: src/runtime/sys_openbsd_riscv64.s
 +	RET
 +
 +TEXT runtime·fcntl_trampoline(SB),NOSPLIT,$8
-+	MOVW	4(X10), X11		// arg 2 - cmd
-+	MOVW	8(X10), X12		// arg 3 - arg
-+	MOVW	0(X10), X10		// arg 1 - fd
++	MOV	X10, X9			// pointer to args
++	MOVW	0(X9), X10		// arg 1 - fd
++	MOVW	4(X9), X11		// arg 2 - cmd
++	MOVW	8(X9), X12		// arg 3 - arg
 +	MOV	$0, X13			// vararg
 +	CALL	libc_fcntl(SB)
++	MOV	$-1, X5
++	MOV	$0, X11
++	BNE	X5, X10, noerr
++	CALL	libc_errno(SB)
++	MOVW	(X10), X11		// errno
++	MOV	$-1, X10
++noerr:
++	MOVW	X10, 12(X9)
++	MOVW	X11, 16(X9)
 +	RET
 +
 +TEXT runtime·sigaction_trampoline(SB),NOSPLIT,$8
@@ -426,6 +435,12 @@ Index: src/runtime/sys_openbsd_riscv64.s
 +	BNE	X5, X10, 3(PC)
 +	MOV	$0, X5			// crash on failure
 +	MOV	X5, (X5)
++	RET
++
++TEXT runtime·issetugid_trampoline(SB),NOSPLIT,$0
++	MOV	X10, X9			// pointer to args
++	CALL	libc_issetugid(SB)
++	MOVW	X10, 0(X9)		// return value
 +	RET
 +
 +// syscall calls a function in libc on behalf of the syscall package.
@@ -461,7 +476,8 @@ Index: src/runtime/sys_openbsd_riscv64.s
 +	// Standard libc functions return -1 on error
 +	// and set errno.
 +	MOV	$-1, X5
-+	BNE	X5, X10, ok
++	MOVW	X10, X11
++	BNE	X5, X11, ok
 +
 +	// Get error code from libc.
 +	CALL	libc_errno(SB)
@@ -553,7 +569,8 @@ Index: src/runtime/sys_openbsd_riscv64.s
 +	// Standard libc functions return -1 on error
 +	// and set errno.
 +	MOV	$-1, X5
-+	BNE	X5, X10, ok
++	MOVW	X10, X11
++	BNE	X5, X11, ok
 +
 +	// Get error code from libc.
 +	CALL	libc_errno(SB)
@@ -633,9 +650,8 @@ Index: src/runtime/sys_openbsd_riscv64.s
 +// syscall10 must be called on the g0 stack with the
 +// C calling convention (use libcCall).
 +//
-+// The openbsd/mips64 kernel only accepts eight syscall arguments, except
-+// for SYS_syscall, where an additional argument can be passed on the stack.
-+TEXT runtime·syscall10(SB),NOSPLIT,$8
++// The openbsd/riscv64 kernel only accepts eight syscall arguments.
++TEXT runtime·syscall10(SB),NOSPLIT,$0
 +	MOV	X10, X9			// pointer to args
 +
 +	ADD	$-16, X2
@@ -649,8 +665,6 @@ Index: src/runtime/sys_openbsd_riscv64.s
 +	MOV	(6*8)(X9), X15		// a6
 +	MOV	(7*8)(X9), X16		// a7
 +	MOV	(8*8)(X9), X17		// a8
-+	MOV	(9*8)(X9), X18
-+	MOV	X18, 0(X2)		// a9
 +
 +	JALR	X1, X5
 +
@@ -660,7 +674,8 @@ Index: src/runtime/sys_openbsd_riscv64.s
 +	// Standard libc functions return -1 on error
 +	// and set errno.
 +	MOV	$-1, X5
-+	BNE	X5, X10, ok
++	MOVW	X10, X11
++	BNE	X5, X11, ok
 +
 +	// Get error code from libc.
 +	CALL	libc_errno(SB)
@@ -695,9 +710,8 @@ Index: src/runtime/sys_openbsd_riscv64.s
 +// syscall10X is like syscall10 but expects a 64-bit result
 +// and tests for 64-bit -1 to decide there was an error.
 +//
-+// The openbsd/mips64 kernel only accepts eight syscall arguments, except
-+// for SYS_syscall, where an additional argument can be passed on the stack.
-+TEXT runtime·syscall10X(SB),NOSPLIT,$8
++// The openbsd/riscv64 kernel only accepts eight syscall arguments.
++TEXT runtime·syscall10X(SB),NOSPLIT,$0
 +	MOV	X10, X9			// pointer to args
 +
 +	ADD	$-16, X2
@@ -711,8 +725,6 @@ Index: src/runtime/sys_openbsd_riscv64.s
 +	MOV	(6*8)(X9), X15		// a6
 +	MOV	(7*8)(X9), X16		// a7
 +	MOV	(8*8)(X9), X17		// a8
-+	MOV	(9*8)(X9), X18
-+	MOV	X18, 0(X2)		// a9
 +
 +	JALR	X1, X5
 +

@@ -1,7 +1,7 @@
 Index: src/runtime/os_openbsd_syscall2.go
 --- src/runtime/os_openbsd_syscall2.go.orig
 +++ src/runtime/os_openbsd_syscall2.go
-@@ -1,100 +0,0 @@
+@@ -1,102 +0,0 @@
 -// Copyright 2020 The Go Authors. All rights reserved.
 -// Use of this source code is governed by a BSD-style
 -// license that can be found in the LICENSE file.
@@ -99,6 +99,8 @@ Index: src/runtime/os_openbsd_syscall2.go
 -//go:noescape
 -func sigaltstack(new, old *stackt)
 -
--func closeonexec(fd int32)
+-func fcntl(fd, cmd, arg int32) (ret int32, errno int32)
 -
 -func walltime() (sec int64, nsec int32)
+-
+-func issetugid() int32

@@ -1,7 +1,7 @@
 Index: src/cmd/link/internal/amd64/asm.go
 --- src/cmd/link/internal/amd64/asm.go.orig
 +++ src/cmd/link/internal/amd64/asm.go
-@@ -551,7 +551,7 @@ func archrelocvariant(*ld.Target, *loader.Loader, load
+@@ -554,7 +554,7 @@ func archrelocvariant(*ld.Target, *loader.Loader, load
  	return -1
  }
  
