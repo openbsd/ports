@@ -1,0 +1,33 @@
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+Shiori can be run system wide or per user.
+
+If you run it per user it will place its data directory on
+${XDG_DATA_HOME}/shiori and will use sqlite3 by default.  Check
+https://github.com/go-shiori/shiori/blob/master/docs/Configuration.md
+for more information
+
+On OpenBSD, it is also ready to run system wide.
+By default, it will also use the sqlite3 backend and place its data on
+${LOCALSTATEDIR}/shiori
+One can modify the environment variables needed for configuration by
+modifying the login class located at ${SYSCONFDIR}/login.conf.d/shiori
+
+
+Web Interface
+=============
+
+${PKGSTEM} serves up a web interface on:
+
+	 http://localhost:8080
+
+If you wish to listen on a different interface, port, etc, you can
+modify it via rcctl:
+
+	# rcctl set shiori flags -a 0.0.0.0 -p 1234
+
+The default user password for the web interface is "shiori/gopher".
+The first new account you add will become the owner and it will
+deactivate the "shiori/gopher" default user automatically.

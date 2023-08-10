@@ -1,0 +1,14 @@
+@newgroup _shiori:892
+@newuser _shiori:892:892::Shiori Account:${LOCALSTATEDIR}/shiori:/sbin/nologin
+@rcscript ${RCDIR}/shiori
+@mode 770
+@owner _shiori
+@group _shiori
+@sample ${LOCALSTATEDIR}/shiori/
+@mode
+@owner
+@group
+@bin bin/shiori
+share/doc/pkg-readmes/${PKGSTEM}
+share/examples/login.conf.d/shiori
+@sample ${SYSCONFDIR}/login.conf.d/shiori

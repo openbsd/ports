@@ -1,0 +1,12 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/bin/shiori serve"
+daemon_user="_shiori"
+daemon_flags="-a localhost"
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+rc_reload=NO
+
+rc_cmd $1
