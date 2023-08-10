@@ -7,13 +7,6 @@
 @bin bin/saytheday
 @bin bin/sprayandpray
 @bin bin/youvegothonks
-@man man/man1/hfcs.1
-@man man/man1/honk.1
-@man man/man1/intro.1
-@man man/man3/honk.3
-@man man/man3/vim.3
-@man man/man5/honk.5
-@man man/man7/activitypub.7
 @man man/man8/honk.8
 @mode 750
 @owner _honk
@@ -59,6 +52,9 @@ share/doc/honk/vim.3.html
 @sample ${LOCALSTATEDIR}/honk/docs/vim.3.html
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/honk/
+share/examples/honk/memes/
+share/examples/honk/memes/twowires.jpg
+@sample ${LOCALSTATEDIR}/honk/memes/twowires.jpg
 share/examples/honk/schema.sql
 @sample ${LOCALSTATEDIR}/honk/schema.sql
 share/examples/honk/views/
@@ -94,14 +90,14 @@ share/examples/honk/views/icon.png
 @sample ${LOCALSTATEDIR}/honk/views/icon.png
 share/examples/honk/views/login.html
 @sample ${LOCALSTATEDIR}/honk/views/login.html
+share/examples/honk/views/mastodon.css
+@sample ${LOCALSTATEDIR}/honk/views/mastodon.css
 share/examples/honk/views/misc.js
 @sample ${LOCALSTATEDIR}/honk/views/misc.js
 share/examples/honk/views/msg.html
 @sample ${LOCALSTATEDIR}/honk/views/msg.html
 share/examples/honk/views/onts.html
 @sample ${LOCALSTATEDIR}/honk/views/onts.html
-share/examples/honk/views/pleroma.css
-@sample ${LOCALSTATEDIR}/honk/views/pleroma.css
 share/examples/honk/views/style.css
 @sample ${LOCALSTATEDIR}/honk/views/style.css
 share/examples/honk/views/xzone.html

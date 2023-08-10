@@ -36,7 +36,7 @@ Site CSS may be overridden by creating a views/local.css file in the
 ${LOCALSTATEDIR}/honk directory. Site JS may similarly be included by creating
 views/local.js. A restart is required after changes.
 
-e.g. add this snippet to open all links in honks in new tabs.
+e.g. add the following snippet to open all links in honks in new tabs
 
 function adjusttargets() {
         var els = document.querySelectorAll("p.content a")
@@ -60,10 +60,13 @@ honk# crontab -eu _honk
 MAILTO=root
 @daily ${LOCALBASE}/bin/honk cleanup
 
+Over time, blob.db can grow larger than strictly necessary. Run VACUUM to shrink
+honk$ sqlite3 blob.db vacuum
+
 Database Upgrade
 ================
 
-If you are upgrading from a version before 0.9.8, you will need to upgrade
+If you are upgrading from a version before 0.9.91, you will need to upgrade
 the database format:
 
 Stop the old honk process.
@@ -71,7 +74,9 @@ honk# rcctl stop honk
 
 Perform the upgrade with the upgrade command.
 honk# doas -su _honk
-honk$ umask 077; cd ${LOCALSTATEDIR}/honk && honk upgrade && exit
+honk$ umask 077; cd ${LOCALSTATEDIR}/honk && cp honk.db backup.db
+honk$ honk upgrade && honk cleanup
+honk$ exit
 
 Restart.
 honk# rcctl start honk
