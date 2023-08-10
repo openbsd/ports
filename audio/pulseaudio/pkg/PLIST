@@ -168,10 +168,13 @@ share/examples/pulseaudio/pulse/default.pa
 share/examples/pulseaudio/pulse/system.pa
 @sample ${SYSCONFDIR}/pulse/system.pa
 share/examples/pulseaudio/xdg/
+@sample ${SYSCONFDIR}/xdg/
 share/examples/pulseaudio/xdg/Xwayland-session.d/
+@sample ${SYSCONFDIR}/xdg/Xwayland-session.d/
 share/examples/pulseaudio/xdg/Xwayland-session.d/00-pulseaudio-x11
 @sample ${SYSCONFDIR}/xdg/Xwayland-session.d/00-pulseaudio-x11
 share/examples/pulseaudio/xdg/autostart/
+@sample ${SYSCONFDIR}/xdg/autostart/
 share/examples/pulseaudio/xdg/autostart/pulseaudio.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/pulseaudio.desktop
 share/locale/af/LC_MESSAGES/pulseaudio.mo
@@ -227,6 +230,8 @@ share/locale/tr/LC_MESSAGES/pulseaudio.mo
 share/locale/uk/LC_MESSAGES/pulseaudio.mo
 share/locale/zh_CN/LC_MESSAGES/pulseaudio.mo
 share/locale/zh_TW/LC_MESSAGES/pulseaudio.mo
+share/vala/
+share/vala/vapi/
 share/vala/vapi/libpulse-mainloop-glib.deps
 share/vala/vapi/libpulse-mainloop-glib.vapi
 share/vala/vapi/libpulse-simple.deps
