@@ -1,12 +1,12 @@
 COMMENT=		RSI prevention tool
 
-V=			1.10.50
+V=			1.10.51.1
 DISTNAME=		workrave-v${V}
 PKGNAME=		workrave-${V}
 WRKDIST=		${WRKDIR}/workrave-${V}
-REVISION=		0
 
 SHARED_LIBS +=  workrave-private-1.0 1.0      # unknown
+SHARED_LIBS +=  workrave-gtk4-private-1.0 0.0      # unknown
 
 CATEGORIES=		productivity x11
 
@@ -18,13 +18,14 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xau Xcomposite Xcursor
 WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
 WANTLIB += Xss Xtst atk-1.0 atk-bridge-2.0 atkmm-1.6 atspi c cairo
-WANTLIB += cairo-gobject cairomm-1.0 dbus-1 epoxy execinfo expat
-WANTLIB += ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
-WANTLIB += gdkmm-3.0 gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gmodule-2.0
-WANTLIB += gobject-2.0 graphite2 gstreamer-1.0 gthread-2.0 gtk-3
-WANTLIB += gtkmm-3.0 harfbuzz iconv intl jpeg m pango-1.0 pangocairo-1.0
+WANTLIB += cairo-gobject cairo-script-interpreter cairomm-1.0
+WANTLIB += dbus-1 epoxy execinfo expat ffi fontconfig freetype
+WANTLIB += fribidi gdk-3 gdk_pixbuf-2.0 gdkmm-3.0 gio-2.0 giomm-2.4
+WANTLIB += glib-2.0 glibmm-2.4 gmodule-2.0 gobject-2.0 graphene-1.0
+WANTLIB += graphite2 gstreamer-1.0 gthread-2.0 gtk-3 gtk-4 gtkmm-3.0
+WANTLIB += harfbuzz iconv intl jpeg lzma lzo2 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pangomm-1.4 pcre2-8 pixman-1 png sigc-2.0
-WANTLIB += xcb xcb-render xcb-shm z
+WANTLIB += tiff xcb xcb-render xcb-shm z zstd
 
 MASTER_SITES=		https://github.com/rcaelers/workrave/releases/download/v${V:S/./_/g}/
 
@@ -38,7 +39,8 @@ BUILD_DEPENDS=		devel/boost \
 			www/py-jinja2${MODPY_FLAVOR}
 
 LIB_DEPENDS=		multimedia/gstreamer1/core \
-			x11/gtk3mm
+			x11/gtk3mm \
+			x11/gtk+4
 
 RUN_DEPENDS=		devel/desktop-file-utils \
 			x11/gtk+4,-guic

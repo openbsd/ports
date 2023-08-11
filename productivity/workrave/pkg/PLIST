@@ -1,11 +1,16 @@
 @bin bin/workrave
 lib/girepository-1.0/Workrave-1.0.typelib
+lib/girepository-1.0/Workrave-2.0.typelib
+@static-lib lib/libworkrave-gtk4-private-1.0.a
+lib/libworkrave-gtk4-private-1.0.la
+@lib lib/libworkrave-gtk4-private-1.0.so.${LIBworkrave-gtk4-private-1.0_VERSION}
 @static-lib lib/libworkrave-private-1.0.a
 lib/libworkrave-private-1.0.la
 @lib lib/libworkrave-private-1.0.so.${LIBworkrave-private-1.0_VERSION}
 share/applications/workrave.desktop
 share/dbus-1/services/org.workrave.Workrave.service
 share/gir-1.0/Workrave-1.0.gir
+share/gir-1.0/Workrave-2.0.gir
 share/icons/hicolor/128x128/apps/workrave.png
 share/icons/hicolor/16x16/apps/workrave.png
 share/icons/hicolor/24x24/apps/workrave.png
