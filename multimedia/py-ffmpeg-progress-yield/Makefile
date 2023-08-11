@@ -1,6 +1,6 @@
 COMMENT =		Python FFmpeg progress wrapper
 
-MODPY_EGG_VERSION =	0.7.1
+MODPY_EGG_VERSION =	0.7.8
 
 DISTNAME =		ffmpeg-progress-yield-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
