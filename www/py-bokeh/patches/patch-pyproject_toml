@@ -8,7 +8,7 @@ Index: pyproject.toml
  build-backend = "setuptools.build_meta"
  
  [project]
-@@ -66,14 +66,8 @@ bokeh = "bokeh.__main__:main"
+@@ -65,14 +65,8 @@ bokeh = "bokeh.__main__:main"
  [tool.setuptools.packages.find]
  where = ["src"]
  
