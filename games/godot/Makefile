@@ -4,10 +4,10 @@ COMMENT-main =	2D and 3D game engine
 COMMENT-tools=	2D and 3D game engine (with tools)
 
 V =		3.5.2
-GODOTSTEAM_V =	g352-s157-gs3193
+GODOTSTEAM_V =	v3.20
 DISTNAME =	godot-${V}-stable
 PKGNAME =	godot-${V}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	games
 
@@ -122,7 +122,7 @@ post-extract:
 	cp -R	${FILESDIR}/sndio ${WRKDIST}/drivers
 	cp	${FILESDIR}/ujoy/joypad_openbsd.{cpp,h} \
 		${WRKDIST}/platform/x11/
-	cp -R	${WRKDIR}/GodotSteam-${GODOTSTEAM_V} ${WRKSRC}/godotsteam
+	mv	${WRKDIR}/GodotSteam-${GODOTSTEAM_V:S/v//} ${WRKSRC}/godotsteam
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/misc/dist/linux/*.desktop
