@@ -1,10 +1,12 @@
 COMMENT=		Python library for manipulating pages of PDF files
 
-MODPY_EGG_VERSION=	3.13.0
+MODPY_EGG_VERSION=	3.15.0
 DISTNAME=		pypdf-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
 CATEGORIES=		print graphics
+
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE=	Yes
