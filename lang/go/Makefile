@@ -5,6 +5,8 @@ BIN_BOOTSTRAP_VERSION = 1.20.4
 
 COMMENT =		Go programming language
 
+# increment _MODGO_SYSTEM_VERSION in go.port.mk after updating to a new
+# version, to trigger updates of go-compiled ports
 VERSION =		1.21.0
 DISTNAME =		go${VERSION}.src
 PKGNAME =		go-${VERSION}
