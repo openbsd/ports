@@ -1,13 +1,10 @@
 COMMENT-main=	Civilization clone for X11; multiplayer; game server
 COMMENT-client=	Freeciv client
 COMMENT-share=	shared data files for Freeciv
-REVISION-client=1
-REVISION-share=	0
 
-VERSION=	3.0.6
+VERSION=	3.0.8
 DISTNAME=	freeciv-${VERSION}
 PKGNAME-main=	freeciv-server-${VERSION}
-REVISION-main=	0
 
 CATEGORIES=	games
 
@@ -26,11 +23,11 @@ cWANTLIB += pthread sqlite3 ssl z ${MODLUA_WANTLIB}
 WANTLIB-main += readline ${cWANTLIB}
 
 WANTLIB-client += ${cWANTLIB}
-WANTLIB-client += FLAC SDL2 SDL2_mixer X11 Xcursor Xext Xfixes Xi Xrandr
+WANTLIB-client += SDL2 SDL2_mixer X11 Xcursor Xext Xfixes Xi Xrandr
 WANTLIB-client += Xrender Xss atk-1.0 cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
 WANTLIB-client += gio-2.0 glib-2.0 gobject-2.0 gthread-2.0 gtk-3 harfbuzz
-WANTLIB-client += mikmod modplug mpg123 ogg opus opusfile pango-1.0 pangocairo-1.0
-WANTLIB-client += samplerate sndio usbhid vorbis vorbisfile xcb
+WANTLIB-client += modplug ogg opus opusfile pango-1.0 pangocairo-1.0
+WANTLIB-client += samplerate sndio usbhid xcb
 
 WANTLIB-share=
 
@@ -75,8 +72,7 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LUA_CFLAGS=-I${MODLUA_INCL_DIR} \
 		LUA_LIBS="${MODLUA_LIB} -lm"
 
-CONFIGURE_ARGS=	--with-ggz-client=no \
-		--enable-mapimg=no \
+CONFIGURE_ARGS=	--enable-mapimg=no \
 		--enable-sys-lua \
 		--enable-fcdb=sqlite3
 

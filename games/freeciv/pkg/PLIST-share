@@ -768,6 +768,10 @@ share/locale/es/
 share/locale/es/LC_MESSAGES/
 share/locale/es/LC_MESSAGES/freeciv-core.mo
 share/locale/es/LC_MESSAGES/freeciv-nations.mo
+share/locale/es_419/
+share/locale/es_419/LC_MESSAGES/
+share/locale/es_419/LC_MESSAGES/freeciv-core.mo
+share/locale/es_419/LC_MESSAGES/freeciv-nations.mo
 share/locale/et/
 share/locale/et/LC_MESSAGES/
 share/locale/et/LC_MESSAGES/freeciv-core.mo
