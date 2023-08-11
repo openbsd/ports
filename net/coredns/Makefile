@@ -1,7 +1,3 @@
-# needs this patch but our go module breaks update-patches...
-# https://github.com/coredns/coredns/commit/93139841965d8a4e6791dbe2e4d154991fc6a59b.patch
-BROKEN=		does not build with go >=1.21.0
-
 COMMENT=	fast and flexible DNS server/forwarder
 
 MODGO_MODNAME=	github.com/coredns/coredns
@@ -20,6 +16,15 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += c pthread
 
 MODULES=	lang/go
+
+# XXX drop at next release
+# https://github.com/coredns/coredns/commit/93139841965d8a4e6791dbe2e4d154991fc6a59b.patch
+pre-configure:
+	sed -i "s,github.com/quic-go/quic-go.*,github.com/quic-go/quic-go v0.37.4," \
+		${WRKSRC}/go.mod
+	sed -i -e "s,github.com/quic-go/quic-go v0.37.3 h1.*,github.com/quic-go/quic-go v0.37.4 h1:ke8B73yMCWGq9MfrCCAw0Uzdm7GaViC3i39dsIdDlH4=," \
+		-e "s,github.com/quic-go/quic-go v0.37.3/go.mod h1.*,github.com/quic-go/quic-go v0.37.4/go.mod h1:YsbH1r4mSHPJcLF4k4zruUkLBqctEMBDR6VPvcYjIsU=," \
+		${WRKSRC}/go.sum
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/coredns

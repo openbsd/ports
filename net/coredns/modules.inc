@@ -376,7 +376,7 @@ MODGO_MODULES =	\
 	github.com/prometheus/procfs						 v0.10.1 \
 	github.com/quic-go/qpack						 v0.4.0 \
 	github.com/quic-go/qtls-go1-20						 v0.3.1 \
-	github.com/quic-go/quic-go						 v0.37.3 \
+	github.com/quic-go/quic-go						 v0.37.4 \
 	github.com/rabbitmq/amqp091-go						 v1.5.0 \
 	github.com/rcrowley/go-metrics						 v0.0.0-20201227073835-cf1acfcdf475 \
 	github.com/redis/go-redis/v9						 v9.0.0 \
