@@ -1,6 +1,7 @@
 COMMENT=	OCaml package manager
 CATEGORIES=	sysutils
 DISTNAME=	findlib-1.9.6
+REVISION=	0
 
 MASTER_SITES=	http://download.camlcity.org/download/
 
@@ -10,11 +11,9 @@ HOMEPAGE=	http://projects.camlcity.org/projects/findlib.html
 # MIT/X11
 PERMIT_PACKAGE=	Yes
 
-MODULES+=		x11/tk
+MODULES+=	lang/ocaml x11/tk
 
-WANTLIB +=		c m
-RUN_DEPENDS +=		lang/ocaml
-BUILD_DEPENDS +=	lang/ocaml
+WANTLIB +=	c m
 
 CONFIGURE_STYLE=simple
 CONFIGURE_ARGS= -no-custom \
@@ -26,19 +25,8 @@ NO_TEST=	Yes
 
 .include <bsd.port.arch.mk>
 .if ${PROPERTIES:Mocaml_native}
-PKG_ARGS+=-Dnative=1
-ALL_TARGET +=	all opt
-.else
-PKG_ARGS+=-Dnative=0
-ALL_TARGET =	all
+ALL_TARGET =	all opt
 .endif
-
-.if ${PROPERTIES:Mocaml_native_dynlink}
-PKG_ARGS+=-Ddynlink=1
-.else
-PKG_ARGS+=-Ddynlink=0
-.endif
-
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/findlib
