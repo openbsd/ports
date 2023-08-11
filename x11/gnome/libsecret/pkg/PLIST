@@ -344,8 +344,6 @@ share/doc/libsecret-1/vfunc.Service.prompt_finish.html
 share/doc/libsecret-1/vfunc.Service.prompt_sync.html
 share/gir-1.0/
 share/gir-1.0/Secret-1.gir
-share/locale/ab/
-share/locale/ab/LC_MESSAGES/
 share/locale/ab/LC_MESSAGES/libsecret.mo
 share/locale/an/LC_MESSAGES/libsecret.mo
 share/locale/ar/LC_MESSAGES/libsecret.mo
@@ -375,8 +373,10 @@ share/locale/he/LC_MESSAGES/libsecret.mo
 share/locale/hr/LC_MESSAGES/libsecret.mo
 share/locale/hu/LC_MESSAGES/libsecret.mo
 share/locale/id/LC_MESSAGES/libsecret.mo
+share/locale/ie/LC_MESSAGES/libsecret.mo
 share/locale/it/LC_MESSAGES/libsecret.mo
 share/locale/ja/LC_MESSAGES/libsecret.mo
+share/locale/ka/LC_MESSAGES/libsecret.mo
 share/locale/kk/LC_MESSAGES/libsecret.mo
 share/locale/ko/LC_MESSAGES/libsecret.mo
 share/locale/lt/LC_MESSAGES/libsecret.mo
