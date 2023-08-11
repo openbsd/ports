@@ -1,3 +1,4 @@
+SHA256 (93139841965d8a4e6791dbe2e4d154991fc6a59b.patch) = 9qsN34+jQBvN4NwstE+i2GHXXbQXK+Z/IZJfAR4ecQ8=
 SHA256 (coredns-v1.11.0.zip) = JFPAHG3aTEN/xtDDy+QSf6Ve85ncGXqYxgLBYZlfKdY=
 SHA256 (go_modules/cloud.google.com/go/@v/v0.110.0.mod) = O29NEw+OV6zWIuXjFT6h9S5KXzwbXoW3zojCi1nx384=
 SHA256 (go_modules/cloud.google.com/go/@v/v0.110.2.mod) = /s4a1MvtHl2Hbqh33OyjQI8BVXQ+80/P9rgBsismEqs=
@@ -1358,6 +1359,7 @@ SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.2.3.zip) = gcFHwke
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.mod) = 8ikTVRI4fWZj4fCZmkkiq3CN7UvcgExxzpPj1gK6ld0=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.3.0.mod) = L8eybun2ctl7QvpvJfWxWlWYK7usaZYdduux0DbRUAE=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.3.0.zip) = qsiNpVHCpRK2Qss1ZYvz3IYllaNWa9hA6/GOSALx/Mk=
+SIZE (93139841965d8a4e6791dbe2e4d154991fc6a59b.patch) = 1893
 SIZE (coredns-v1.11.0.zip) = 1024505
 SIZE (go_modules/cloud.google.com/go/@v/v0.110.0.mod) = 1007
 SIZE (go_modules/cloud.google.com/go/@v/v0.110.2.mod) = 1150

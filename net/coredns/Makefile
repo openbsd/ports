@@ -1,3 +1,7 @@
+# needs this patch but our go module breaks update-patches...
+# https://github.com/coredns/coredns/commit/93139841965d8a4e6791dbe2e4d154991fc6a59b.patch
+BROKEN=		does not build with go >=1.21.0
+
 COMMENT=	fast and flexible DNS server/forwarder
 
 MODGO_MODNAME=	github.com/coredns/coredns
@@ -9,6 +13,7 @@ CATEGORIES=	net sysutils
 HOMEPAGE=	https://coredns.io/
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
+
 # Apache v2.0
 PERMIT_PACKAGE=	Yes
 
