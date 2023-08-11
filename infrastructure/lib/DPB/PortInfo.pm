@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortInfo.pm,v 1.46 2023/08/10 17:49:19 espie Exp $
+# $OpenBSD: PortInfo.pm,v 1.47 2023/08/11 10:35:36 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -273,7 +273,7 @@ my %adder = (
 	DPB_PROPERTIES => "AddPropertyList",
 	IGNORE => "AddIgnore",
 	FLAVOR => "AddList",
-	DISTFILES => 'AddOrderedList',
+	DISTFILES => 'AddOrderedList', # ordered for roach to identify 1st
 	PATCHFILES => 'AddList',
 	SUPDISTFILES => 'AddList',
 	DIST_SUBDIR => 'AddInfo',
