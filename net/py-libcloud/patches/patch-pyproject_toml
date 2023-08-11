@@ -1,0 +1,14 @@
+Index: pyproject.toml
+--- pyproject.toml.orig
++++ pyproject.toml
+@@ -15,8 +15,8 @@
+ 
+ [build-system]
+ requires = [
+-    "setuptools~=66.1",
+-    "wheel~=0.37.1"
++    "setuptools",
++    "wheel"
+ ]
+ build-backend = "setuptools.build_meta"
+ 
