@@ -1,9 +1,8 @@
 COMMENT =		progress bar for Python
 
-MODPY_EGG_VERSION =	4.52.0
+MODPY_EGG_VERSION =	4.65.0
 DISTNAME =		tqdm-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
 
 CATEGORIES =		devel
 
@@ -17,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+MODPY_PYBUILD =		setuptools_scm
 
 FLAVORS =		python3
 FLAVOR =		python3
