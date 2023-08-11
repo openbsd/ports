@@ -1,6 +1,6 @@
 COMMENT =	pure-ruby code highlighter compatible with pygments
 
-DISTNAME =	rouge-4.1.2
+DISTNAME =	rouge-4.1.3
 
 CATEGORIES =	textproc
 
