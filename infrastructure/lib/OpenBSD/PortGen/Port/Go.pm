@@ -1,4 +1,4 @@
-# $OpenBSD: Go.pm,v 1.10 2021/03/23 13:17:41 abieber Exp $
+# $OpenBSD: Go.pm,v 1.11 2023/08/11 22:13:18 sthen Exp $
 #
 # Copyright (c) 2019 Aaron Bieber <abieber@openbsd.org>
 #
@@ -167,6 +167,7 @@ sub _go_mod_info
 		foreach my $m (split(/ /, $mod)) {
 			$m =~ s/@/ /;
 			next if $m eq $json->{Module};
+			next if $m =~ /^go /;
 			$m = $self->_go_mod_normalize($m);
 			if (! defined $all_deps->{$m}) {
 				push @mods, $m;
