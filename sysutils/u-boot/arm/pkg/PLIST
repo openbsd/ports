@@ -1,4 +1,5 @@
 @pkgpath sysutils/u-boot,
+@pkgpath sysutils/u-boot,arm
 share/u-boot/
 share/u-boot/A10-OLinuXino-Lime/
 share/u-boot/A10-OLinuXino-Lime/sunxi-spl.bin

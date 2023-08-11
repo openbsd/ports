@@ -1,3 +1,4 @@
+@pkgpath sysutils/u-boot,riscv64
 share/u-boot/
 share/u-boot/qemu-riscv64_smode/
 share/u-boot/qemu-riscv64_smode/u-boot

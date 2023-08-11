@@ -1,4 +1,5 @@
 @pkgpath sysutils/u-boot-pinebook
+@pkgpath sysutils/u-boot,aarch64
 share/u-boot/
 share/u-boot/a64-olinuxino/
 share/u-boot/a64-olinuxino/sunxi-spl.bin
