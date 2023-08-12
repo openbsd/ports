@@ -4,6 +4,7 @@ DISTNAME=	GraphicsMagick-1.3.40
 CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=graphicsmagick/}
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 SHARED_LIBS=	GraphicsMagick		9.3 \
 		GraphicsMagick++	6.1 \
@@ -20,7 +21,7 @@ WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xau Xdmcp Xext aom bz2 c
 WANTLIB += dav1d de265 freetype heif iconv jasper jbig jpeg lcms2
 WANTLIB += ltdl lzma m png tiff webp webpmux wmflite-0.2 x265 xcb
 WANTLIB += brotlicommon brotlidec brotlienc hwy jxl jxl_threads
-WANTLIB += xml2 z zstd
+WANTLIB += xml2 z zstd sharpyuv
 
 WANTLIB += perl # uses perl ABI
 
