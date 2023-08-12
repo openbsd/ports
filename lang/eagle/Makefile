@@ -1,16 +1,16 @@
 COMMENT =	Tcl implementation for the CLR
 
 V =		1.0
-P =		7945.33333
+P =		8503.24499
 DISTNAME =	eagle-${V}
-PKGNAME =	${DISTNAME}beta49
+PKGNAME =	${DISTNAME}beta53
 EPOCH =		0
 CATEGORIES =	lang lang/tcl
 HOMEPAGE =	https://eagle.to/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE =Yes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=eagle/} \
 		https://download.eagle.to/releases/${V}.${P}/ \
