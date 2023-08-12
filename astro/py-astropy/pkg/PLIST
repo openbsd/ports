@@ -1797,6 +1797,8 @@ lib/python${MODPY_VERSION}/site-packages/astropy/modeling/tests/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/astropy/modeling/tests/${MODPY_PYCACHE}test_parameters.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astropy/modeling/tests/${MODPY_PYCACHE}test_physical_models.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astropy/modeling/tests/${MODPY_PYCACHE}test_physical_models.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/astropy/modeling/tests/${MODPY_PYCACHE}test_pickle.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/astropy/modeling/tests/${MODPY_PYCACHE}test_pickle.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astropy/modeling/tests/${MODPY_PYCACHE}test_polynomial.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astropy/modeling/tests/${MODPY_PYCACHE}test_polynomial.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astropy/modeling/tests/${MODPY_PYCACHE}test_projections.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1850,6 +1852,7 @@ lib/python${MODPY_VERSION}/site-packages/astropy/modeling/tests/test_models.py
 lib/python${MODPY_VERSION}/site-packages/astropy/modeling/tests/test_models_quantities.py
 lib/python${MODPY_VERSION}/site-packages/astropy/modeling/tests/test_parameters.py
 lib/python${MODPY_VERSION}/site-packages/astropy/modeling/tests/test_physical_models.py
+lib/python${MODPY_VERSION}/site-packages/astropy/modeling/tests/test_pickle.py
 lib/python${MODPY_VERSION}/site-packages/astropy/modeling/tests/test_polynomial.py
 lib/python${MODPY_VERSION}/site-packages/astropy/modeling/tests/test_projections.py
 lib/python${MODPY_VERSION}/site-packages/astropy/modeling/tests/test_quantities_evaluation.py
