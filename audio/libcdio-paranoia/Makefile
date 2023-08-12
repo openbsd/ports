@@ -1,8 +1,9 @@
 COMMENT =	fork of cdparanoia that uses libcdio for CDROM access
+
 # 10.2 is the cdparanoia version that this is based upon.
 # 2.0.0 is the actual version number.
-DISTNAME =	libcdio-paranoia-10.2+2.0.0
-PKGNAME =	libcdio-paranoia-2.0.0
+DISTNAME =	libcdio-paranoia-10.2+2.0.1
+PKGNAME =	libcdio-paranoia-2.0.1
 EXTRACT_SUFX =	.tar.bz2
 
 SHARED_LIBS +=  cdio_cdda                 1.0 # 2.0

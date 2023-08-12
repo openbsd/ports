@@ -3,10 +3,11 @@
 include/cdio/paranoia/
 include/cdio/paranoia/cdda.h
 include/cdio/paranoia/paranoia.h
-lib/libcdio_cdda.a
+include/cdio/paranoia/toc.h
+@static-lib lib/libcdio_cdda.a
 lib/libcdio_cdda.la
 @lib lib/libcdio_cdda.so.${LIBcdio_cdda_VERSION}
-lib/libcdio_paranoia.a
+@static-lib lib/libcdio_paranoia.a
 lib/libcdio_paranoia.la
 @lib lib/libcdio_paranoia.so.${LIBcdio_paranoia_VERSION}
 lib/pkgconfig/libcdio_cdda.pc
