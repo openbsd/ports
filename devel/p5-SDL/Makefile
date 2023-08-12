@@ -1,10 +1,9 @@
 COMMENT =		Simple DirectMedia Layer for Perl
 
 MODULES =		cpan
-VER =			2.1.3
+VER =			2.2.0
 DISTNAME =		SDL_Perl-${VER}
 PKGNAME =		p5-SDL-${VER}
-REVISION =		9
 CATEGORIES =		devel graphics
 CPAN_AUTHOR =		DGOEHRIG
 
