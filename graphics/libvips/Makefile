@@ -1,13 +1,13 @@
 COMMENT =	fast image processing library with low memory needs
 
-VERSION =	8.14.2
+VERSION =	8.14.3
 DISTNAME =	vips-${VERSION}
 PKGNAME =	lib${DISTNAME}
 CATEGORIES =	graphics
 EXTRACT_SUFX =	.tar.xz
 
-SHARED_LIBS +=  vips       1.0
-SHARED_LIBS +=  vips-cpp   1.0
+SHARED_LIBS += vips                      1.0 # 42.16.3
+SHARED_LIBS += vips-cpp                  1.0 # 42.16.3
 
 HOMEPAGE =	https://libvips.github.io/libvips/
 
