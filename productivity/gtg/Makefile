@@ -1,25 +1,25 @@
 COMMENT=		GTD organizer for GNOME
 
-GH_PROJECT =		gtg
-GH_ACCOUNT =		getting-things-gnome
-GH_COMMIT =		54b2793be236da41549360c5aeb0da5e33a7ff60
-MODPY_EGG_VERSION =	0.4.0
+MODPY_EGG_VERSION =	0.6.0
 DISTNAME =		gtg-${MODPY_EGG_VERSION}
-REVISION =		7
+EXTRACT_SUFX =		.tar.xz
 
-CATEGORIES=		productivity
+CATEGORIES =		productivity
 
-HOMEPAGE=		https://wiki.gnome.org/Apps/GTG
+HOMEPAGE =		https://wiki.gnome.org/Apps/GTG
 
 # GPLv3+
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE=		Yes
 
-MODULES=		lang/python
+MASTER_SITES =		https://github.com/getting-things-gnome/gtg/releases/download/v${MODPY_EGG_VERSION:R}/
 
-BUILD_DEPENDS=		devel/gettext,-tools \
+MODULES =		devel/meson \
+			lang/python
+
+BUILD_DEPENDS =		devel/gettext,-tools \
 			textproc/py-sphinx${MODPY_FLAVOR}
 
-RUN_DEPENDS=		devel/desktop-file-utils \
+RUN_DEPENDS =		devel/desktop-file-utils \
 			devel/py-dateutil${MODPY_FLAVOR} \
 			devel/py-liblarch${MODPY_FLAVOR} \
 			devel/py-xdg${MODPY_FLAVOR} \
@@ -30,8 +30,5 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 TEST_DEPENDS =		devel/py-nose${MODPY_FLAVOR} \
 			devel/py-mock${MODPY_FLAVOR}
 TEST_TARGET =		tests
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/docs/Makefile ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
