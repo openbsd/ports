@@ -1,7 +1,7 @@
 Index: src/Makefile.in
 --- src/Makefile.in.orig
 +++ src/Makefile.in
-@@ -1841,7 +1841,7 @@ lib_LTLIBRARIES = libxerces-c.la
+@@ -1843,7 +1843,7 @@ lib_LTLIBRARIES = libxerces-c.la
  # make pretty-printing won't work.
  #
  AM_CPPFLAGS = $(am__append_3) $(am__append_12) $(am__append_25)

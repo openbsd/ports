@@ -1,6 +1,6 @@
 COMMENT =	validating XML parser written in a portable subset of C++
 
-DISTNAME =	xerces-c-3.2.3
+DISTNAME =	xerces-c-3.2.4
 CATEGORIES =	textproc devel
 
 SHARED_LIBS +=  xerces-c             0.0
