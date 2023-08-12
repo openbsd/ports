@@ -1,6 +1,6 @@
 COMMENT=		MS Excel file reader/writer library
 
-GH_TAGNAME=		v1.4.5
+GH_TAGNAME=		v1.4.6
 GH_ACCOUNT=		QtExcel
 GH_PROJECT=		QXlsx
 PKGNAME=		${DISTNAME:L}
@@ -10,6 +10,8 @@ WRKSRC=			${WRKDIST}/QXlsx
 SHARED_LIBS +=	QXlsxQt5                  0.0 # 0.0
 
 CATEGORIES=		textproc devel
+
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE=		Yes
