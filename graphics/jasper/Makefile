@@ -1,9 +1,9 @@
 COMMENT =	reference implementation of JPEG-2000
 
-V =		3.0.3
+V =		4.0.0
 DISTNAME =	jasper-$V
 
-SHARED_LIBS =	jasper		5.0
+SHARED_LIBS =	jasper		6.0
 
 CATEGORIES =	graphics
 
@@ -23,15 +23,12 @@ COMPILER_LANGS = c
 MODULES =	devel/cmake
 
 # XXX needed at configure time else tests are skipped
+BUILD_DEPENDS +=	shells/bash
 TEST_DEPENDS =	shells/bash
 
-CONFIGURE_ARGS = -DJAS_ENABLE_AUTOMATIC_DEPENDENCIES=false \
-		-DJAS_ENABLE_DOC=false \
+CONFIGURE_ARGS = -DJAS_ENABLE_DOC=false \
 		-DJAS_ENABLE_LATEX=false \
 		-DJAS_ENABLE_LIBJPEG=false \
 		-DJAS_ENABLE_OPENGL=false
-
-post-extract:
-	sed -i '1s@^#!.*bash@#!${LOCALBASE}/bin/bash@' ${WRKSRC}/test/bin/*
 
 .include <bsd.port.mk>
