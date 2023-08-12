@@ -443,8 +443,6 @@
      SUBDIR += ttyload
      SUBDIR += ttyplot
      SUBDIR += u-boot
-     SUBDIR += u-boot,aarch64
-     SUBDIR += u-boot,riscv64
      SUBDIR += u-boot-asahi
      SUBDIR += udfclient
      SUBDIR += uefitool
