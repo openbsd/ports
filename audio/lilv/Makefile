@@ -1,7 +1,6 @@
 COMMENT=	library for simple use of LV2 plugins in applications
 
-DISTNAME=	lilv-0.24.12
-REVISION=	2
+DISTNAME=	lilv-0.24.14
 
 SHARED_LIBS=	lilv-0		0.0 # 0.24
 
@@ -13,7 +12,7 @@ HOMEPAGE=	https://drobilla.net/software/lilv
 PERMIT_PACKAGE= Yes
 
 WANTLIB += FLAC c ogg opus serd-0 sndfile sord-0 sratom-0 vorbis
-WANTLIB += vorbisenc
+WANTLIB += vorbisenc mpg123
 
 MASTER_SITES=	https://download.drobilla.net/
 
