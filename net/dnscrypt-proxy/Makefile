@@ -1,9 +1,8 @@
-BROKEN =	The version of quic-go you're using can't be built on Go 1.21 yet.
 COMMENT =	flexible DNS proxy with support for encrypted DNS protocols
 
 GH_ACCOUNT =	jedisct1
 GH_PROJECT =	dnscrypt-proxy
-GH_TAGNAME =	2.1.4
+GH_TAGNAME =	2.1.5
 
 CATEGORIES =	net
 
