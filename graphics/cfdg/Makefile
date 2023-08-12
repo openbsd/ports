@@ -1,8 +1,10 @@
 COMMENT =	Context Free Design Grammar
 
-VERSION =	3.3
+VERSION =	3.4
 DISTNAME =	ContextFreeSource${VERSION}
 PKGNAME =	cfdg-${VERSION}
+
+WRKDIST =	${WRKDIR}/context-free${VERSION}
 
 CATEGORIES =	graphics
 
@@ -25,13 +27,12 @@ COMPILER =	base-clang ports-gcc
 
 USE_GMAKE =	Yes
 
-# 3.0.11 is a bad tarball...
-WRKDIST =	${WRKDIR}
-
 MAKE_ENV +=	CPPFLAGS="${CFLAGS}"
 MAKE_FLAGS =	CXX="${CXX}" CC="${CXX}" COMPILER_LIBCXX="${LIBCXX}"
 
 EXAMPLEDIR =	${PREFIX}/share/examples/cfdg
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 # Work-around bad installation of FlexLexer.h
 post-extract:
