@@ -1,6 +1,6 @@
 COMMENT=	library for HTTP/2
 
-V=		1.55.0
+V=		1.55.1
 DISTNAME=	nghttp2-$V
 
 SHARED_LIBS +=	nghttp2              0.21     # 38.0
