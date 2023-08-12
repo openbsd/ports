@@ -6,8 +6,8 @@ DISTNAME =	libcdio-paranoia-10.2+2.0.1
 PKGNAME =	libcdio-paranoia-2.0.1
 EXTRACT_SUFX =	.tar.bz2
 
-SHARED_LIBS +=  cdio_cdda                 1.0 # 2.0
-SHARED_LIBS +=  cdio_paranoia             1.0 # 2.0
+SHARED_LIBS +=  cdio_cdda                 1.1 # 2.0
+SHARED_LIBS +=  cdio_paranoia             1.1 # 2.0
 
 CATEGORIES =	audio
 HOMEPAGE =	https://www.gnu.org/software/libcdio/
