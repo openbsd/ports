@@ -1,9 +1,8 @@
 COMMENT=		curses based frontend for mpd
 
-VER=			0.48
+VER=			0.49
 DISTNAME=		ncmpc-${VER}
 EPOCH=			0
-REVISION=		0
 CATEGORIES=		audio
 
 HOMEPAGE=		https://www.musicpd.org/clients/ncmpc/
