@@ -7,7 +7,7 @@ COMMENT =		2D animation software studio
 V =			1.5.1
 DISTNAME =		synfigstudio-$V
 API_V =			0.0
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS +=  synfigapp                 3.0 # 0.0
 
@@ -24,7 +24,7 @@ WANTLIB += OpenEXRCore-3_1 OpenEXRUtil-3_1 SM X11 Xau Xcomposite
 WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender Xt aom atk-1.0 atk-bridge-2.0 atkmm-1.6 avcodec
 WANTLIB += avformat avutil bz2 c cairo cairo-gobject cairomm-1.0
-WANTLIB += crypto dav1d db de265 djvulibre epoxy execinfo expat
+WANTLIB += crypto dav1d db djvulibre epoxy execinfo expat
 WANTLIB += ffi fftw3 fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
 WANTLIB += gdkmm-3.0 gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gmodule-2.0
 WANTLIB += gobject-2.0 graphite2 gsm gtk-3 gtkmm-3.0 harfbuzz
@@ -34,7 +34,7 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 pangomm-1.4 pcre2-8 pixman-1
 WANTLIB += png raw_r sigc-2.0 speex ssl swresample swscale synfig
 WANTLIB += theoradec theoraenc tiff vorbis vorbisenc vpx webp
 WANTLIB += webpdemux webpmux x264 x265 xcb xcb-render xcb-shm
-WANTLIB += xml++-2.6 xml2 xvidcore z zstd
+WANTLIB += xml++-2.6 xml2 xvidcore z zstd atspi dbus-1 sharpyuv
 
 
 MASTER_SITES=		https://github.com/synfig/synfig/releases/download/v${V}/
