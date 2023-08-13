@@ -1,2 +1,2 @@
-@bin bin/${MODCABAL_STEM}
-@man man/man1/${MODCABAL_STEM}.1
+@bin bin/pandoc
+@man man/man1/pandoc.1
