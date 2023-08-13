@@ -1,0 +1,7 @@
+@bin bin/seatd
+@bin bin/seatd-launch
+include/libseat.h
+@lib lib/libseat.so.${LIBseat_VERSION}
+lib/pkgconfig/libseat.pc
+@man man/man1/seatd-launch.1
+@man man/man1/seatd.1
