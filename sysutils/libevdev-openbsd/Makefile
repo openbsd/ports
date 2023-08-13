@@ -1,11 +1,10 @@
 COMMENT		= minimal set of libevedev functions for Wayland on OpenBSD
 
 V		= 20230706
-PKGNAME		= libevdev-openbsd-$V
+DISTNAME	= libevdev-openbsd-$V
 CATEGORIES	= sysutils
 
 MASTER_SITES	= https://gitlab.tetaneutral.net/mherrb/libevdev-openbsd/-/archive/${V}/
-DISTFILES	= libevdev-openbsd-${V}${EXTRACT_SUFX}
 
 SHARED_LIBS	+=  evdev 0.0 # 0.0
 
@@ -14,7 +13,7 @@ WRKSRC =	${WRKDIR}/libevdev-openbsd-${V}
 # MIT
 PERMIT_PACKAGE	= Yes
 
-BUILD_DEPENDS	= devel/libinput-openbsd
+BUILD_DEPENDS	= wayland/libinput-openbsd
 
 post-install:
 	cd ${WRKSRC} && make includes DESTDIR=""
