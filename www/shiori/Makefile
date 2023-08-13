@@ -1,3 +1,6 @@
+# on OpenBSD, modernc.org/sqlite only supports these
+ONLY_FOR_ARCHS =	amd64 aarch64
+
 COMMENT =		simple bookmarks manager
 
 MODGO_MODNAME =		github.com/go-shiori/shiori
