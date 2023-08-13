@@ -2,6 +2,7 @@ COMMENT =	Display server protocol
 
 DISTNAME =	wayland-${V}
 V =		1.22.0
+REVISION =	0
 
 CATEGORIES =	wayland
 
@@ -32,8 +33,11 @@ LIB_DEPENDS =		devel/libffi \
 			textproc/libxml \
 			devel/epoll-shim
 
-MODMESON_CONFIGURE_ARGS +=	-Ddocumentation=false
+MODMESON_CONFIGURE_ARGS +=	-Ddocumentation=false \
+				-Dicon_directory="~/.icons:/usr/local/lib/X11/icons:/usr/local/share/icons:/usr/local/share/pixmaps:${X11BASE}/share/icons:${X11BASE}/share/pixmaps"
 
 TEST_DEPENDS =		devel/llvm,-main
+
+DEBUG_PACKAGES = 	${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
