@@ -1,3 +1,2 @@
-This is a port of libinput to OpenBSD.
-Originally by Martin Pieuchot, now maintained by Rafael Sadowski and
-Matthieu Herrb.
+This is a remimplementation of libinput to OpenBSD.
+Original code by Martin Pieuchot <mpi@openbsd.org>

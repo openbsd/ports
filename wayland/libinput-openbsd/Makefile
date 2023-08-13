@@ -1,6 +1,6 @@
 COMMENT		= OpenBSD port of libinput
 DISTNAME	= libinput-openbsd-20230714
-REVISION	= 0
+REVISION	= 1
 
 SHARED_LIBS	= input 0.0
 
