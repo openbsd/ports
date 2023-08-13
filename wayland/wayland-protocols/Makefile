@@ -1,6 +1,6 @@
 COMMENT =	Wayland protocols
 
-V =		1.31
+V =		1.32
 DISTNAME =	wayland-protocols-${V}
 
 CATEGORIES =	wayland
