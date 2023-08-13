@@ -1,0 +1,7 @@
+include/libinput.h
+include/linux/
+include/linux/input-event-codes.h
+include/linux/input.h
+@static-lib lib/libinput.a
+@lib lib/libinput.so.${LIBinput_VERSION}
+lib/pkgconfig/libinput.pc
