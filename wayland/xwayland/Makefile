@@ -1,0 +1,40 @@
+COMMENT =	X server running as wayland application
+
+DISTNAME =	xwayland-23.1.2
+
+CATEGORIES =	wayland
+
+HOMEPAGE =	https://gitlab.freedesktop.org/xorg/xserver
+
+MAINTAINER =	matthieu@openbsd.org
+
+# MIT
+PERMIT_PACKAGE =	Yes
+
+WANTLIB =		GL Xau Xdmcp Xfont2 gbm xcvt drm kvm pthread c m
+WANTLIB +=		pixman-1 xshmfence epoxy wayland-client
+
+MASTER_SITES =		${MASTER_SITE_XORG:=xserver/}
+EXTRACT_SUFX =		.tar.xz
+
+MODULES =		devel/meson
+
+BUILD_DEPENDS =		wayland/libinput-openbsd \
+			wayland/wayland-protocols
+
+RUN_DEPENDS =		devel/desktop-file-utils
+
+LIB_DEPENDS =		wayland/wayland
+
+SEPARATE_BUILD =	yes
+
+CONFIGURE_ARGS =	-Dxdm-auth-1=false \
+			-Dsecure-rpc=false
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
+
+post-install:
+	rm ${PREFIX}/lib/xorg/protocol.txt
+	rm ${PREFIX}/man/man1/Xserver.1
+
+.include <bsd.port.mk>

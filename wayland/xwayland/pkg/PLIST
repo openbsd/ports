@@ -1,0 +1,6 @@
+@bin bin/Xwayland
+lib/pkgconfig/xwayland.pc
+@man man/man1/Xwayland.1
+share/applications/
+share/applications/org.freedesktop.Xwayland.desktop
+@tag update-desktop-database

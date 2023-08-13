@@ -1,0 +1,6 @@
+XWayland is a fully fledged X server implementation that act as a
+proxy between X11 clients and a Wayland compositor. It runs as a
+specialized Wayland client, while optionally using a set of XWayland
+specific Wayland protocols for implementing certain functionality. The
+Wayland compositor acts both as the Wayland display server XWayland
+connects to, as well as the Window Manager.
