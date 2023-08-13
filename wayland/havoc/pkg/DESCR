@@ -1,0 +1,7 @@
+A minimal terminal emulator for Wayland ported to OpenBSD.
+
+havoc will search for a file called havoc.cfg in $XDG_CONFIG_HOME
+first, then in $HOME/.config and last in the current working
+directory.
+
+See the example havoc.cfg for available options.

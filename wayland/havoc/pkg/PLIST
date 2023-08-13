@@ -1,0 +1,3 @@
+@bin bin/havoc
+share/examples/havoc/
+share/examples/havoc/havoc.cfg

@@ -1,0 +1,9 @@
+Index: tsm/Makefile
+--- tsm/Makefile.orig
++++ tsm/Makefile
+@@ -1,4 +1,5 @@
+ CFLAGS ?= -Wall -Wextra -Wno-unused-parameter -Wno-parentheses
++CFLAGS += -I/usr/local/include
+ 
+ OBJ=wcwidth.o shl-htable.o\
+ 	tsm-render.o tsm-screen.o tsm-selection.o\

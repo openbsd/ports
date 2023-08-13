@@ -1,0 +1,25 @@
+Index: havoc.cfg
+--- havoc.cfg.orig
++++ havoc.cfg
+@@ -11,7 +11,7 @@ margin=no
+ 
+ [terminal]
+ # size of terminal
+-rows=16
++rows=35
+ columns=140
+ 
+ # number of lines to keep in scrollback
+@@ -19,10 +19,10 @@ scrollback=1000
+ 
+ [font]
+ # height of a single glyph in pixels
+-size=18
++size=14
+ 
+ # absolute path to a truetype font
+-path=/usr/share/fonts/TTF/DejaVuSansMono.ttf
++path=/usr/X11R6/lib/X11/fonts/TTF/DejaVuSansMono.ttf
+ 
+ [bind]
+ # bind keys to actions

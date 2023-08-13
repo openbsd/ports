@@ -1,0 +1,144 @@
+Index: main.c
+--- main.c.orig
++++ main.c
+@@ -13,7 +13,13 @@
+ #include <sys/timerfd.h>
+ #include <fcntl.h>
+ #include <unistd.h>
++#ifndef __OpenBSD__
+ #include <pty.h>
++#else
++#include <sys/ioctl.h>
++#include <sys/ttycom.h>
++#include <util.h>
++#endif
+ 
+ #include <xkbcommon/xkbcommon-compose.h>
+ #include <wayland-client-core.h>
+@@ -191,7 +197,7 @@ static void wcb(struct tsm_vte *vte, const char *u8, s
+ {
+ 	assert(len <= PIPE_BUF);
+ 	if (term.master_fd >= 0 && write(term.master_fd, u8, len) < 0) {
+-		fprintf(stderr, "could not write to pty master: %m\n");
++		fprintf(stderr, "could not write to pty master: %s\n", strerror(errno));
+ 		abort();
+ 	}
+ }
+@@ -202,7 +208,7 @@ static void handle_display(int ev)
+ 		term.die = true;
+ 	} else if (ev & EPOLLIN) {
+ 		if (wl_display_dispatch(term.display) < 0) {
+-			fprintf(stderr, "could not dispatch events: %m\n");
++			fprintf(stderr, "could not dispatch events: %s\n", strerror(errno));
+ 			abort();
+ 		}
+ 	}
+@@ -213,22 +219,22 @@ static void handle_tty(int ev)
+ 	char data[256];
+ 	int len;
+ 
+-	if (ev & EPOLLIN) {
++	if (ev & EPOLLHUP) {
++		epoll_ctl(term.fd, EPOLL_CTL_DEL, term.master_fd, NULL);
++		close(term.master_fd);
++		term.master_fd = -1;
++		if (!term.opt.linger)
++			term.die = true;
++	}  else if (ev & EPOLLIN) {
+ 		term.need_redraw = true;
+ 		len = read(term.master_fd, data, sizeof(data));
+ 		assert(len);
+ 		if (len < 0) {
+-			fprintf(stderr, "could not read from pty: %m\n");
++			fprintf(stderr, "could not read from pty: %s\n", strerror(errno));
+ 			abort();
+ 		} else {
+ 			tsm_vte_input(term.vte, data, len);
+ 		}
+-	} else if (ev & EPOLLHUP) {
+-		epoll_ctl(term.fd, EPOLL_CTL_DEL, term.master_fd, NULL);
+-		close(term.master_fd);
+-		term.master_fd = -1;
+-		if (!term.opt.linger)
+-			term.die = true;
+ 	}
+ }
+ 
+@@ -508,13 +514,13 @@ static int buffer_init(struct buffer *buf)
+ 	} while (fd < 0 && errno == EEXIST && --max);
+ 
+ 	if (fd < 0) {
+-		fprintf(stderr, "shm_open failed: %m\n");
++		fprintf(stderr, "shm_open failed: %s\n", strerror(errno));
+ 		return -1;
+ 	}
+ 	shm_unlink(shm_name);
+ 
+ 	if (ftruncate(fd, buf->size) < 0) {
+-		fprintf(stderr, "ftruncate failed: %m\n");
++		fprintf(stderr, "ftruncate failed: %s\n", strerror(errno));
+ 		close(fd);
+ 		return -1;
+ 	}
+@@ -523,7 +529,7 @@ static int buffer_init(struct buffer *buf)
+ 			 fd, 0);
+ 
+ 	if (buf->data == MAP_FAILED) {
+-		fprintf(stderr, "mmap failed: %m\n");
++		fprintf(stderr, "mmap failed: %s\n", strerror(errno));
+ 		close(fd);
+ 		return -1;
+ 	}
+@@ -1440,7 +1446,7 @@ static void configure(void *d, struct xdg_surface *sur
+ 	term.row = row;
+ 	tsm_screen_resize(term.screen, col, row);
+ 	if (term.master_fd >= 0 && ioctl(term.master_fd, TIOCSWINSZ, &ws) < 0)
+-		fprintf(stderr, "could not resize pty: %m\n");
++		fprintf(stderr, "could not resize pty: %s\n", strerror(errno));
+ 
+ 	term.need_redraw = true;
+ 	term.resize = 2;
+@@ -1507,7 +1513,7 @@ static void setup_pty(char *argv[])
+ 	pid_t pid = forkpty(&term.master_fd, NULL, NULL, NULL);
+ 
+ 	if (pid < 0) {
+-		fprintf(stderr, "forkpty failed: %m");
++		fprintf(stderr, "forkpty failed: %s", strerror(errno));
+ 		exit(EXIT_FAILURE);
+ 	} else if (pid == 0) {
+ 		char *prog;
+@@ -1519,7 +1525,7 @@ static void setup_pty(char *argv[])
+ 			execlp(term.cfg.shell, term.cfg.shell, (char *) NULL);
+ 			prog = term.cfg.shell;
+ 		}
+-		fprintf(stderr, "could not execute %s: %m", prog);
++		fprintf(stderr, "could not execute %s: %s", prog, strerror(errno));
+ 		pause();
+ 		exit(EXIT_FAILURE);
+ 	}
+@@ -1717,9 +1723,9 @@ static FILE *open_config(void)
+ 
+ 		f = fopen(term.opt.config, "r");
+ 		if (f == NULL)
+-			fprintf(stderr, "could not open '%s': %m, "
++			fprintf(stderr, "could not open '%s': %s, "
+ 				"using default configuration\n",
+-				term.opt.config);
++				term.opt.config, strerror(errno));
+ 		return f;
+ 	}
+ 
+@@ -1929,9 +1935,10 @@ retry:
+ 
+ 	term.repeat.fd = timerfd_create(CLOCK_MONOTONIC,
+ 					TFD_NONBLOCK | TFD_CLOEXEC);
+-	if (term.repeat.fd < 0)
+-		fail(etimer, "could not create key repeat timer: %m");
+-
++	if (term.repeat.fd < 0) {
++		fprintf(stderr, "could not create key repeat timer: %s", strerror(errno));
++		goto etimer;
++	}
+ 	if (term.d_dm && term.seat) {
+ 		term.d_d = wl_data_device_manager_get_data_device(
+ 			term.d_dm, term.seat);
