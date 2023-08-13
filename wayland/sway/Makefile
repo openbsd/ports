@@ -2,6 +2,7 @@ COMMENT =	i3-compatible Wayland compositor
 
 V =		20230812
 PKGNAME =	sway-${V}
+REVISION =	0
 
 GH_ACCOUNT =	mherrb
 GH_PROJECT =	sway
@@ -38,8 +39,12 @@ LIB_DEPENDS =	devel/json-c \
 
 RUN_DEPENDS =	x11/gnome/themes-extra
 
-CONFIGURE_ARGS += -Dtray=disabled
+CONFIGURE_ARGS = -Dtray=disabled
 
 DEBUG_PACKAGES = ${BUILD_PACKAGES}
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/sway
+	mv ${WRKINST}${SYSCONFDIR}/sway ${PREFIX}/share/examples/sway/
 
 .include <bsd.port.mk>
