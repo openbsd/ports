@@ -3,7 +3,7 @@ COMMENT=		GTD organizer for GNOME
 MODPY_EGG_VERSION =	0.6.0
 DISTNAME =		gtg-${MODPY_EGG_VERSION}
 EXTRACT_SUFX =		.tar.xz
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		productivity
 
@@ -27,7 +27,9 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			devel/py-liblarch${MODPY_FLAVOR} \
 			devel/py-xdg${MODPY_FLAVOR} \
 			productivity/py-caldav${MODPY_FLAVOR} \
+			textproc/py-lxml${MODPY_FLAVOR} \
 			x11/dbus-python${MODPY_FLAVOR} \
+			x11/gnome/libsecret \
 			x11/gtk+4,-guic \
 			x11/gtksourceview4
 
