@@ -2,10 +2,9 @@ COMMENT=	memory optimized serialization library
 
 GH_ACCOUNT=	google
 GH_PROJECT=	flatbuffers
-GH_TAGNAME=	v2.0.0
-REVISION=	0
+GH_TAGNAME=	v23.5.26
 
-SHARED_LIBS=	flatbuffers	1.0	# 2.0.0
+SHARED_LIBS=	flatbuffers	2.0	# 2.0.0
 
 CATEGORIES=	devel
 HOMEPAGE=	https://google.github.io/flatbuffers/
