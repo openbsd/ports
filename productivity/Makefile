@@ -37,6 +37,7 @@
      SUBDIR += p5-Business-Tax-VAT-Validation
      SUBDIR += p5-iCal-Parser
      SUBDIR += projectlibre
+     SUBDIR += py-caldav,python3
      SUBDIR += py-tasklib,python3
      SUBDIR += qbirthday
      SUBDIR += radicale
