@@ -1,7 +1,6 @@
 COMMENT =		OCaml parser generator for LR(1) grammars
 
-V =			20211012
-REVISION =		1
+V =			20230608
 DISTNAME =		menhir-${V}
 PKGNAME =		ocaml-${DISTNAME}
 
