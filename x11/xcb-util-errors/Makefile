@@ -1,6 +1,8 @@
-COMMENT =	XCB utility library naming error, event & request codes.
+COMMENT =	XCB utility library naming error, event & request codes
 
 DISTNAME =	xcb-util-errors-1.0.1
+REVISION =	0
+
 CATEGORIES =	x11
 
 HOMEPAGE =	https://xcb.freedesktop.org
