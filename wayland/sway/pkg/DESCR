@@ -1,0 +1,19 @@
+sway is an i3-compatible Wayland compositor.
+
+Configuration
+
+If you already use i3, then copy your i3 config to
+`~/.config/sway/config` and it'll work out of the box. Otherwise, copy
+the sample configuration file to `~/.config/sway/config`. It is
+usually located at `/etc/sway/config`.  Run `man 5 sway` for
+information on the configuration.
+
+Running
+
+On OpenBSD
+
+doas seatd -u $(whoami) -l debug &
+
+export XDG_RUNTIME_DIR=/tmp
+export WLR_DRM_DEVICES=/dev/dri/card0
+sway
