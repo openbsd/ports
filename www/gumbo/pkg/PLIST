@@ -1,6 +1,6 @@
 include/gumbo.h
 include/tag_enum.h
-lib/libgumbo.a
+@static-lib lib/libgumbo.a
 lib/libgumbo.la
 @lib lib/libgumbo.so.${LIBgumbo_VERSION}
 lib/pkgconfig/gumbo.pc

@@ -1,18 +1,21 @@
 COMMENT =	HTML5 parsing library in pure C99
 
-GH_ACCOUNT =	google
-GH_PROJECT =	gumbo-parser
-GH_TAGNAME =	v0.10.1
+V =		0.12.0
+DISTNAME =	gumbo-parser-$V
+DISTFILES =	${DISTNAME}{$V}.tar.gz
+PKGNAME =	gumbo-$V
+WRKDIST =	${WRKDIR}/gumbo-parser
 
-PKGNAME =	${DISTNAME:S/-parser//}
-REVISION =	0
-
-SHARED_LIBS +=	gumbo	0.0 # 1.0
+SHARED_LIBS +=	gumbo	1.0 # 1.0
 
 CATEGORIES =	www
 
+HOMEPAGE =	https://codeberg.org/grisha/gumbo-parser
+
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
+
+MASTER_SITES =	https://codeberg.org/grisha/gumbo-parser/archive/
 
 TEST_DEPENDS =	devel/gtest
 
@@ -21,8 +24,8 @@ CONFIGURE_STYLE =	autoreconf
 # Allow gtest detection
 CONFIGURE_ENV =	LDFLAGS=-L${LOCALBASE}/lib
 
-AUTOCONF_VERSION =	2.69
-AUTOMAKE_VERSION =	1.15
+AUTOCONF_VERSION =	2.71
+AUTOMAKE_VERSION =	1.16
 AUTORECONF =		./autogen.sh
 
 pre-test:
