@@ -715,10 +715,11 @@ share/doc/postgresql/html/regress-run.html
 share/doc/postgresql/html/regress-tap.html
 share/doc/postgresql/html/regress-variant.html
 share/doc/postgresql/html/regress.html
-share/doc/postgresql/html/release-15.html
 share/doc/postgresql/html/release-15-1.html
 share/doc/postgresql/html/release-15-2.html
 share/doc/postgresql/html/release-15-3.html
+share/doc/postgresql/html/release-15-4.html
+share/doc/postgresql/html/release-15.html
 share/doc/postgresql/html/release-prior.html
 share/doc/postgresql/html/release.html
 share/doc/postgresql/html/replication-origins.html
