@@ -1,0 +1,5 @@
+include/libevdev/
+include/libevdev/libevdev.h
+@static-lib lib/libevdev.a
+@lib lib/libevdev.so.${LIBevdev_VERSION}
+lib/pkgconfig/libevdev.pc

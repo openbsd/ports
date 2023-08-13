@@ -1,0 +1,5 @@
+On Linux libevdev is a wrapper library for evdev devices.
+
+OpenBSD doesn't use evdev directly, but a layer emulating
+libinput. Some applications bypass libinput and use some libevdev
+functions directly. This shim library provides the needed functions.
