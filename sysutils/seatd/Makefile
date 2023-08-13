@@ -1,28 +1,26 @@
-COMMENT		= minimal seat management daemon and universal library
+COMMENT	=	minimal seat management daemon and universal library
 
-V		= 20230706
-PKGNAME		= seatd-$V
-CATEGORIES	= sysutils
+V =		20230813
+PKGNAME =	seatd-$V
+DISTNAME =	seatd-openbsd-$V
+CATEGORIES =	sysutils
+REVISION =	0
 
-MASTER_SITES	= https://gitlab.tetaneutral.net/mherrb/seatd/-/archive/obsd/
+MASTER_SITES =	https://gitlab.tetaneutral.net/mherrb/seatd/-/archive/openbsd-${V}/
 
-DISTFILES	= seatd-obsd${EXTRACT_SUFX}
-
-SHARED_LIBS	+=  seat 0.0 # 0.0
-
-WRKSRC		= ${WRKDIR}/seatd-obsd
+SHARED_LIBS+=	seat 0.0 # 0.0
 
 # MIT
-PERMIT_PACKAGE	= Yes
+PERMIT_PACKAGE = Yes
 
-WANTLIB		= c
+WANTLIB	=	c
 
-MODULES		= devel/meson
+MODULES	=	devel/meson
 
-BUILD_DEPENDS	= textproc/scdoc
+BUILD_DEPENDS =	textproc/scdoc
 
-CONFIGURE_ARGS	= -Dlibseat-logind=disabled -Dlibseat-builtin=enabled
+CONFIGURE_ARGS = -Dlibseat-logind=disabled -Dlibseat-builtin=enabled
 
-DEBUG_PACKAGES	= ${BUILD_PACKAGES}
+DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
