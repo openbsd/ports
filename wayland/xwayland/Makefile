@@ -1,6 +1,7 @@
 COMMENT =	X server running as wayland application
 
 DISTNAME =	xwayland-23.1.2
+REVISION =	0
 
 CATEGORIES =	wayland
 
@@ -34,7 +35,7 @@ CONFIGURE_ARGS =	-Dxdm-auth-1=false \
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 post-install:
-	rm ${PREFIX}/lib/xorg/protocol.txt
+	rm -r ${PREFIX}/lib/xorg
 	rm ${PREFIX}/man/man1/Xserver.1
 
 .include <bsd.port.mk>
