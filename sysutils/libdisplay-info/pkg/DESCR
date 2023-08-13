@@ -1,0 +1,4 @@
+libdisplay-info provides a set of high-level, easy-to-use, opinionated
+functions as well as low-level functions to access detailed display
+information.  It is well-tested and fuzzed, and favors simplicity and
+correctness over performance and resource usage.
