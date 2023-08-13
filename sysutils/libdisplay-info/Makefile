@@ -19,4 +19,3 @@ MODULES = 	devel/meson
 BUILD_DEPENDS =	misc/hwdata
 
 .include <bsd.port.mk>
-
