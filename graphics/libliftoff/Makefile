@@ -22,4 +22,3 @@ WANTLIB = 	drm
 DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
-
