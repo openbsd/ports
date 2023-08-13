@@ -387,5 +387,3 @@ share/metainfo/
 share/metainfo/org.gnome.GTG.appdata.xml
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
-@tag gtk-update-icon-cache %D/share/icons/ubuntu-mono-dark
-@tag gtk-update-icon-cache %D/share/icons/ubuntu-mono-light
