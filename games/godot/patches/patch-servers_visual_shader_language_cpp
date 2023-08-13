@@ -1,0 +1,95 @@
+disable strict shader syntax check errors for export template build and warn
+instead
+
+Index: servers/visual/shader_language.cpp
+--- servers/visual/shader_language.cpp.orig
++++ servers/visual/shader_language.cpp
+@@ -596,6 +596,7 @@ ShaderLanguage::Token ShaderLanguage::_get_token() {
+ 							}
+ 						}
+ 
++#ifdef TOOLS_ENABLED
+ 						if (error) {
+ 							if (hexa_found) {
+ 								return _make_token(TK_ERROR, "Invalid (hexadecimal) numeric constant");
+@@ -608,6 +609,9 @@ ShaderLanguage::Token ShaderLanguage::_get_token() {
+ 							}
+ 							return _make_token(TK_ERROR, "Invalid (integer) numeric constant");
+ 						}
++#else
++						WARN_PRINT_ONCE("Invalid shader numeric constant");
++#endif
+ 						str += symbol;
+ 						i++;
+ 					}
+@@ -622,24 +626,40 @@ ShaderLanguage::Token ShaderLanguage::_get_token() {
+ 					} else if (period_found || exponent_found || float_suffix_found) {
+ 						//floats
+ 						if (exponent_found && (!_is_number(last_char) && last_char != 'f')) { // checks for eg: "2E", "2E-", "2E+"
++#ifdef TOOLS_ENABLED
+ 							return _make_token(TK_ERROR, "Invalid (float) numeric constant");
++#else
++        						WARN_PRINT_ONCE("Invalid shader numeric constant");
++#endif
+ 						}
+ 						if (period_found) {
+ 							if (float_suffix_found) {
+ 								//checks for eg "1.f" or "1.99f" notations
+ 								if (last_char != 'f') {
++#ifdef TOOLS_ENABLED
+ 									return _make_token(TK_ERROR, "Invalid (float) numeric constant");
++#else
++                        						WARN_PRINT_ONCE("Invalid shader numeric constant");
++#endif
+ 								}
+ 							} else {
+ 								//checks for eg. "1." or "1.99" notations
+ 								if (last_char != '.' && !_is_number(last_char)) {
++#ifdef TOOLS_ENABLED
+ 									return _make_token(TK_ERROR, "Invalid (float) numeric constant");
++#else
++                        						WARN_PRINT_ONCE("Invalid shader numeric constant");
++#endif
+ 								}
+ 							}
+ 						} else if (float_suffix_found) {
+ 							// if no period found the float suffix must be the last character, like in "2f" for "2.0"
+ 							if (last_char != 'f') {
++#ifdef TOOLS_ENABLED
+ 								return _make_token(TK_ERROR, "Invalid (float) numeric constant");
++#else
++                        						WARN_PRINT_ONCE("Invalid shader numeric constant");
++#endif
+ 							}
+ 						}
+ 
+@@ -651,7 +671,11 @@ ShaderLanguage::Token ShaderLanguage::_get_token() {
+ 						}
+ 
+ 						if (!str.is_valid_float()) {
++#ifdef TOOLS_ENABLED
+ 							return _make_token(TK_ERROR, "Invalid (float) numeric constant");
++#else
++            						WARN_PRINT_ONCE("Invalid shader numeric constant");
++#endif
+ 						}
+ 					} else {
+ 						//integers
+@@ -661,6 +685,7 @@ ShaderLanguage::Token ShaderLanguage::_get_token() {
+ 							// Compensate reading cursor position.
+ 							char_idx += 1;
+ 						}
++#ifdef TOOLS_ENABLED
+ 						if (!str.is_valid_integer()) {
+ 							if (uint_suffix_found) {
+ 								return _make_token(TK_ERROR, "Invalid (unsigned integer) numeric constant");
+@@ -668,6 +693,9 @@ ShaderLanguage::Token ShaderLanguage::_get_token() {
+ 								return _make_token(TK_ERROR, "Invalid (integer) numeric constant");
+ 							}
+ 						}
++#else
++    						WARN_PRINT_ONCE("Invalid shader numeric constant");
++#endif
+ 					}
+ 
+ 					char_idx += str.length();
