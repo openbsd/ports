@@ -1,0 +1,3 @@
+include/libliftoff.h
+@lib lib/libliftoff.so.${LIBliftoff_VERSION}
+lib/pkgconfig/libliftoff.pc

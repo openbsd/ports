@@ -1,0 +1,14 @@
+Drop libdrm version 
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -27,7 +27,7 @@ add_project_arguments(cc.get_supported_arguments([
+ 
+ liftoff_inc = include_directories('include')
+ 
+-drm = dependency('libdrm', include_type: 'system', version: '>= 2.4.108')
++drm = dependency('libdrm', include_type: 'system')
+ 
+ liftoff_deps = [drm]
+ 
