@@ -1,0 +1,9 @@
+This project is a CalDAV (http://www.ietf.org/rfc/rfc4791.txt) client library
+for Python.
+
+Features:
+
+ * create, modify calendar
+ * create, update and delete event
+ * search events by dates
+ * etc.
