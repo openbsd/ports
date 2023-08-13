@@ -9,6 +9,6 @@ Index: CorsixTH/Lua/app.lua
    self.savegame_version = SAVEGAME_VERSION
 -  self.check_for_updates = true
 +  self.check_for_updates = false
+   self.idle_tick = 0
  end
  
- --! Starts a Lua DBGp client & connects it to a DBGp server.

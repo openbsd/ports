@@ -1,6 +1,4 @@
-ONLY_FOR_ARCHS =	${CXX11_ARCHS}
-
-V =		0.66
+V =		0.67
 COMMENT =	open source clone of Theme Hospital
 PKGNAME =	corsixth-${V}
 CATEGORIES =	games x11
@@ -36,8 +34,8 @@ RUN_DEPENDS =	audio/timidity \
 
 NO_TEST =	Yes
 
-# Remove the .orig file
+# Remove the .orig.port file
 post-install:
-	@rm -f ${PREFIX}/share/corsix-th/Lua/app.lua.orig
+	@rm -f ${PREFIX}/share/corsix-th/Lua/app.lua.orig.port
 
 .include <bsd.port.mk>
