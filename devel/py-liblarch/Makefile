@@ -2,11 +2,10 @@ COMMENT=		python library to easily handle data structure
 
 GH_ACCOUNT=		getting-things-gnome
 GH_PROJECT=		liblarch
-GH_TAGNAME=		v3.0
+GH_TAGNAME=		v3.2.0
 MODPY_EGG_VERSION=	${GH_TAGNAME:S/v//}
 DISTNAME=		liblarch-${MODPY_EGG_VERSION}
 PKGNAME=		py-liblarch-${MODPY_EGG_VERSION}
-REVISION=		4
 
 CATEGORIES=		devel
 

@@ -2,7 +2,7 @@
 @pkgpath devel/py-liblarch_gtk
 @pkgpath devel/py-liblarch
 lib/python${MODPY_VERSION}/site-packages/liblarch/
-lib/python${MODPY_VERSION}/site-packages/liblarch-3.0.0-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/liblarch-3.2.0-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/liblarch/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/liblarch/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/liblarch/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
