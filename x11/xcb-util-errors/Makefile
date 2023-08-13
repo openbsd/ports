@@ -7,7 +7,7 @@ CATEGORIES =	x11
 
 HOMEPAGE =	https://xcb.freedesktop.org
 
-MAINTAINER =	xenocara@openbsd.org
+MAINTAINER =	matthieu@openbsd.org
 
 SHARED_LIBS=    xcb-errors 0.0
 
