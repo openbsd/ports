@@ -3,7 +3,7 @@ Convenience test target
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -226,7 +226,7 @@ runtime:
+@@ -229,7 +229,7 @@ runtime:
  
  FORCE:
  
@@ -12,7 +12,7 @@ Index: Makefile
  
  documentation: $(FILES)
  	mkdir -p doc/html
-@@ -333,6 +333,10 @@ ifeq ($(INSTALL_COQDEV),true)
+@@ -341,6 +341,10 @@ ifeq ($(INSTALL_COQDEV),true)
  	install -m 0644 ./compcert.config $(DESTDIR)$(COQDEVDIR)
  	@(echo "To use, pass the following to coq_makefile or add the following to _CoqProject:"; echo "-R $(COQDEVDIR) compcert") > $(DESTDIR)$(COQDEVDIR)/README
  endif

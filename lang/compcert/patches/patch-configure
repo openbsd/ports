@@ -3,7 +3,7 @@ Add configuration support for macppc and aarch64 on OpenBSD
 Index: configure
 --- configure.orig
 +++ configure
-@@ -42,6 +42,7 @@ Supported targets:
+@@ -43,6 +43,7 @@ Supported targets:
    ppc-eabi             (PowerPC, EABI with GNU/Unix tools)
    ppc-eabi-diab        (PowerPC, EABI with Diab tools)
    ppc-linux            (PowerPC, Linux)
@@ -28,7 +28,7 @@ Index: configure
    ppc64-               PowerPC 64 bits
    e5500-               Freescale e5500 core (PowerPC 64 bit, EREF extensions)
  
-@@ -230,7 +232,7 @@ clinker_options=""
+@@ -233,7 +235,7 @@ clinker_options=""
  clinker_needs_no_pie=true
  cprepro="${toolprefix}gcc"
  cprepro_options="-E"
@@ -37,7 +37,7 @@ Index: configure
  libmath="-lm"
  responsefile="gnu"
  
-@@ -263,7 +265,7 @@ fi
+@@ -266,7 +268,7 @@ fi
  if test "$arch" = "powerpc"; then
  
    case "$target" in
@@ -46,7 +46,7 @@ Index: configure
          ;;
      *)
          echo "Error: invalid eabi/system '$target' for architecture PowerPC." 1>&2
-@@ -295,6 +297,11 @@ if test "$arch" = "powerpc"; then
+@@ -298,6 +300,11 @@ if test "$arch" = "powerpc"; then
          system="diab"
          responsefile="diab"
          ;;
@@ -58,7 +58,7 @@ Index: configure
      *)
          casmruntime="${toolprefix}gcc -c -Wa,-mregnames"
          cprepro_options="-U__GNUC__ -E"
-@@ -415,6 +422,11 @@ if test "$arch" = "aarch64"; then
+@@ -410,6 +417,11 @@ if test "$arch" = "aarch64"; then
          abi="standard"
          cprepro_options="-U__GNUC__ -E"
          system="linux";;
