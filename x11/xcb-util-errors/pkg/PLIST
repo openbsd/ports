@@ -1,0 +1,5 @@
+include/xcb/xcb_errors.h
+@static-lib lib/libxcb-errors.a
+lib/libxcb-errors.la
+@lib lib/libxcb-errors.so.${LIBxcb-errors_VERSION}
+lib/pkgconfig/xcb-errors.pc
