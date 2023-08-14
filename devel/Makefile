@@ -1365,6 +1365,7 @@
      SUBDIR += py-cloudpickle,python3
      SUBDIR += py-codestyle,python3
      SUBDIR += py-colorama,python3
+     SUBDIR += py-colorlog,python3
      SUBDIR += py-configargparse,python3
      SUBDIR += py-configobj,python3
      SUBDIR += py-constantly,python3
