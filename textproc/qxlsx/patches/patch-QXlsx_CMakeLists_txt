@@ -1,0 +1,18 @@
+REVERT (to unbreak stellarium):
+From 3222f30d2a7e68e85322efb40620c9177817453f Mon Sep 17 00:00:00 2001
+From: Antonio Rojas <arojas@archlinux.org>
+Date: Thu, 23 Mar 2023 19:31:34 +0100
+Subject: [PATCH] Make Qt5/Qt6 versions fully coinstallable
+
+Index: QXlsx/CMakeLists.txt
+--- QXlsx/CMakeLists.txt.orig
++++ QXlsx/CMakeLists.txt
+@@ -193,7 +193,7 @@ install(TARGETS QXlsx
+     EXPORT ${EXPORT_NAME}Targets DESTINATION ${CMAKE_INSTALL_LIBDIR}
+     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR} COMPONENT runtime
+     ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR} COMPONENT devel
+-    PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/QXlsxQt${QT_VERSION_MAJOR} COMPONENT devel
++    PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/QXlsx COMPONENT devel
+ )
+ 
+ install(EXPORT ${EXPORT_NAME}Targets
