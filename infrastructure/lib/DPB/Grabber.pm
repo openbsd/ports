@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Grabber.pm,v 1.48 2023/05/06 05:20:31 espie Exp $
+# $OpenBSD: Grabber.pm,v 1.49 2023/08/14 14:01:42 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -110,6 +110,7 @@ sub finish($self, $h)
 			$self->{engine}->add_fatal($v, $v->{broken});
 			delete $v->{broken};
 		} else {
+			$self->{known}{$v->pkgpath} = 1;
 			if ($v->{wantbuild}) {
 				delete $v->{wantbuild};
 				delete $v->{wantfetch};
@@ -216,12 +217,20 @@ sub find_new_dirs($self)
 	return $subdirlist;
 }
 
-sub complete_subdirs($self, $core, $skip = undef)
+sub complete_subdirs($self, $core, $skip, $shownew)
 {
 	while (1) {
 		my $subdirlist = $self->find_new_dirs;
 		$self->{engine}->flush_log;
 		last if (keys %$subdirlist) == 0;
+		if ($shownew) {
+			for my $i (values %$subdirlist) {
+				if (!defined $self->{known}{$i->pkgpath}) {
+					print {$self->{loglist}} "NEW ", 
+					    $i->pkgpath, "\n";
+				}
+			}
+		}
 
 		DPB::Vars->grab_list($core, $self, $subdirlist, $skip, 0,
 		    $self->{loglist}, $self->{dpb},

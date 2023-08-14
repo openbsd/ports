@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: SubEngine.pm,v 1.36 2023/05/06 05:20:31 espie Exp $
+# $OpenBSD: SubEngine.pm,v 1.37 2023/08/14 14:01:42 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -282,6 +282,9 @@ sub get_core($self)
 
 sub preempt_core($self, $core)
 {
+	my $h = $self->{engine}{state}{listing_host};
+	return 0 if defined $h && $h ne $core->hostname;
+
 	if (@{$self->{engine}{requeued}} > 0) {
 		# XXX note this borrows the core temporarily
 		$self->{engine}->rebuild_info($core);

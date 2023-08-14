@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.148 2023/05/07 06:24:45 espie Exp $
+# $OpenBSD: dpb,v 1.149 2023/08/14 14:01:41 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -174,7 +174,7 @@ $state->{reporter}->add_producers($state->engine);
 $state->{grabber} = DPB::Grabber->new($state, \&handle_non_waiting_jobs);
 
 print "Waiting for hosts to finish STARTUP...";
-while (!DPB::Core->avail) {
+while (!DPB::Core->avail($state->{listing_host})) {
 	DPB::Core->reap;
 	sleep 1;
 }
@@ -184,7 +184,7 @@ sub reread_config()
 {
 }
 
-my $core = DPB::Core->get;
+my $core = DPB::Core->get($state->{listing_host});
 print "ready on ", $core->hostname, "\n";
 
 if (!$state->{fetch_only} && !$state->{scan_only} &&
@@ -307,14 +307,14 @@ if ($state->{all} && !$state->{random} && !$state->defines("NO_QUICK_SCAN")) {
 	}
 }
 
-$state->grabber->complete_subdirs($core, $skip);
+$state->grabber->complete_subdirs($core, $skip, 0);
 
 if ($state->{all}) {
 	$state->grabber->grab_subdirs($core, undef, $skip);
 }
 
 
-$state->grabber->complete_subdirs($core);
+$state->grabber->complete_subdirs($core, undef, 1);
 # give back "our" core to the pool.
 
 my $occupied = 0;

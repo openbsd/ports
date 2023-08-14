@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: External.pm,v 1.30 2023/05/06 05:20:31 espie Exp $
+# $OpenBSD: External.pm,v 1.31 2023/08/14 14:01:42 espie Exp $
 #
 # Copyright (c) 2017 Marc Espie <espie@openbsd.org>
 #
@@ -273,15 +273,16 @@ sub receive_commands($self)
 			}
 		}
 	}
+	my $state = $self->{state};
 
-	if (keys %{$self->{subdirlist}} > 0 && DPB::Core->avail) {
+	if (keys %{$self->{subdirlist}} > 0 && 
+	    DPB::Core->avail($state->{listing_host})) {
 		# XXX store value first, re-entrancy
 		my $subdirlist = $self->{subdirlist};
 		$self->{subdirlist} = {};
-		my $core = DPB::Core->get;
-		$self->{state}->grabber->grab_subdirs($core, $subdirlist, 
-		    undef);
-		$self->{state}->grabber->complete_subdirs($core, undef);
+		my $core = DPB::Core->get($state->{listing_host});
+		$state->grabber->grab_subdirs($core, $subdirlist, undef);
+		$state->grabber->complete_subdirs($core, undef, 0);
 		$core->mark_ready;
 	}
 }
