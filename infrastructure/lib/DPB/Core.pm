@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.110 2023/08/14 13:34:43 espie Exp $
+# $OpenBSD: Core.pm,v 1.111 2023/08/14 13:52:07 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -702,8 +702,8 @@ sub get($self, $hostname = undef)
 		}
 	}
 	if (defined $hostname) {
-		@$a = (grep {$_->hostname eq $hostname} @$a,
-		    grep {$_->hostname ne $hostname} @$a);
+		@$a = ((grep {$_->hostname eq $hostname} @$a),
+		    (grep {$_->hostname ne $hostname} @$a));
 	}
 	my $core = shift @$a;
 	if ($core->may_unsquiggle) {
