@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Sql.pm,v 1.36 2023/06/15 14:33:13 espie Exp $
+# $OpenBSD: Sql.pm,v 1.37 2023/08/14 09:21:36 espie Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -446,7 +446,7 @@ sub is_unique_name($self, $name)
 {
 	my $c = $self->{column_names}{$self->normalize($name)};
 	if (!defined $c) {
-		die "$name not registed in ", $self->identify;
+		die "$name not registered in ", $self->identify;
 	}
 	return $c == 1;
 }
