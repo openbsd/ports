@@ -42,6 +42,7 @@
      SUBDIR += insult
      SUBDIR += lchat
      SUBDIR += lfm
+     SUBDIR += libcpucycles
      SUBDIR += libdivecomputer
      SUBDIR += libstubborn
      SUBDIR += lifelines
