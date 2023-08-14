@@ -3,8 +3,7 @@ PORTROACH = 	limitw:1,even
 BROKEN-hppa =	missing atomic ops
 COMMENT=	fantasy turn-based strategy game
 
-DISTNAME=	wesnoth-1.16.9
-REVISION=	0
+DISTNAME=	wesnoth-1.16.10
 
 CATEGORIES=	games x11
 
