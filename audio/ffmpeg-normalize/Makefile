@@ -20,6 +20,6 @@ RUN_DEPENDS =		devel/py-colorama${MODPY_FLAVOR} \
 			multimedia/py-ffmpeg-progress-yield${MODPY_FLAVOR}>=0.7.4 \
 			devel/py-tqdm${MODPY_FLAVOR} \
 			graphics/ffmpeg
-#TEST_DEPENDS =		devel/py-colorlog${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-colorlog${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
