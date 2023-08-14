@@ -1,0 +1,15 @@
+Default to -fcf-protection=branch
+May need to be tweaked if ldc grows !amd64 packages...
+
+Index: driver/cl_options_instrumentation.cpp
+--- driver/cl_options_instrumentation.cpp.orig
++++ driver/cl_options_instrumentation.cpp
+@@ -95,7 +95,7 @@ cl::opt<CFProtectionType> fCFProtection(
+                clEnumValN(CFProtectionType::Full, "",
+                           "") // default to "full" if no argument specified
+                ),
+-    cl::init(CFProtectionType::None));
++    cl::init(CFProtectionType::Branch));
+ 
+ void initializeInstrumentationOptionsFromCmdline(const llvm::Triple &triple) {
+   if (ASTPGOInstrGenFile.getNumOccurrences() > 0) {

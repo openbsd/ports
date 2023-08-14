@@ -1,8 +1,10 @@
+@bin bin/ldc-build-plugin
 @bin bin/ldc-build-runtime
 @bin bin/ldc-profdata
 @bin bin/ldc-prune-cache
 @bin bin/ldc2
 @bin bin/ldmd2
+@bin bin/timetrace2txt
 include/d/
 include/d/__builtins.di
 include/d/core/
@@ -14,6 +16,7 @@ include/d/core/checkedint.d
 include/d/core/cpuid.d
 include/d/core/demangle.d
 include/d/core/exception.d
+include/d/core/factory.d
 include/d/core/gc/
 include/d/core/gc/config.d
 include/d/core/gc/gcinterface.d

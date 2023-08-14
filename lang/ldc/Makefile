@@ -2,7 +2,7 @@
 # Can use GDC to create said bootstrap compiler.
 ONLY_FOR_ARCHS =	amd64
 
-V =		1.31.0
+V =		1.33.0
 COMMENT =	LLVM D Compiler
 DISTFILES =	ldc-${V}-src.tar.gz:0 \
 		ldc-${V}-bootstrap.tar.gz:1

@@ -12,8 +12,8 @@ Index: runtime/CMakeLists.txt
 +set(D_FLAGS               --relocation-model=pic;-w;-de;-preview=dip1000;-preview=dtorfields;-preview=fieldwise CACHE STRING "Runtime D compiler flags, separated by ';'")
  set(D_EXTRA_FLAGS         ""                                  CACHE STRING "Runtime extra D compiler flags, separated by ';'")
  set(D_FLAGS_DEBUG         -g;-link-defaultlib-debug;-d-debug  CACHE STRING "Runtime D compiler flags (debug libraries), separated by ';'")
- set(D_FLAGS_RELEASE       -O3;-release                        CACHE STRING "Runtime D compiler flags (release libraries), separated by ';'")
-@@ -570,7 +570,7 @@ function(set_common_library_properties target name out
+ set(D_FLAGS_RELEASE       -O3;-release;-femit-local-var-lifetime  CACHE STRING "Runtime D compiler flags (release libraries), separated by ';'")
+@@ -576,7 +576,7 @@ function(set_common_library_properties target name out
      # linker default on Ubuntu 16.10 and above. As we might be building on an
      # older system (e.g. binary packages), we need to make sure the C parts are
      # built as PIC as well.
