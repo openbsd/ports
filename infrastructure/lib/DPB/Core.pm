@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.109 2023/06/18 11:38:39 espie Exp $
+# $OpenBSD: Core.pm,v 1.110 2023/08/14 13:34:43 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -597,7 +597,7 @@ sub mark_ready($self)
 	return $self;
 }
 
-sub avail($self)
+sub avail($self, $hostname = undef)
 {
 	for my $h (keys %stopped) {
 		if (!-e "$logdir/stop-$h") {
@@ -605,7 +605,12 @@ sub avail($self)
 			delete $stopped{$h};
 		}
 	}
-	return scalar(@{$self->available});
+	if (defined $hostname) {
+		return scalar(grep {$_->hostname eq $hostname} 
+		    @{$self->available});
+	} else {
+		return scalar(@{$self->available});
+	}
 }
 
 sub stopped($, $host)
@@ -682,7 +687,7 @@ sub running($)
 	return scalar(%$running);
 }
 
-sub get($self)
+sub get($self, $hostname = undef)
 {
 	$a = $self->available;
 	if (@$a > 1) {
@@ -695,6 +700,10 @@ sub get($self)
 			}
 			@$a = sort {$cores{$b->hostname} <=> $cores{$a->hostname}} @$a;
 		}
+	}
+	if (defined $hostname) {
+		@$a = (grep {$_->hostname eq $hostname} @$a,
+		    grep {$_->hostname ne $hostname} @$a);
 	}
 	my $core = shift @$a;
 	if ($core->may_unsquiggle) {
