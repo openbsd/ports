@@ -132,6 +132,7 @@ share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-resumption-with-wrong-ciphers.${MOD
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-rsa-pss-sigs-on-certificate-verify.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-rsa-sigs-on-certificate-verify.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-serverhello-random.${MODPY_PYC_MAGIC_TAG}pyc
+share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-session-ticket-resumption.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-sessionID-resumption.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-sig-algs-renegotiation-resumption.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-sig-algs.${MODPY_PYC_MAGIC_TAG}pyc
@@ -283,6 +284,7 @@ share/tlsfuzzer/scripts/test-resumption-with-wrong-ciphers.py
 share/tlsfuzzer/scripts/test-rsa-pss-sigs-on-certificate-verify.py
 share/tlsfuzzer/scripts/test-rsa-sigs-on-certificate-verify.py
 share/tlsfuzzer/scripts/test-serverhello-random.py
+share/tlsfuzzer/scripts/test-session-ticket-resumption.py
 share/tlsfuzzer/scripts/test-sessionID-resumption.py
 share/tlsfuzzer/scripts/test-sig-algs-renegotiation-resumption.py
 share/tlsfuzzer/scripts/test-sig-algs.py
