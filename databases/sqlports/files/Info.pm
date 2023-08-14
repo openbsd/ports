@@ -1,4 +1,4 @@
-# $OpenBSD: Info.pm,v 1.38 2023/06/16 04:54:20 espie Exp $
+# $OpenBSD: Info.pm,v 1.39 2023/08/14 17:36:43 espie Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -56,16 +56,6 @@ our $vars = {
     MAINTAINER=> 'EmailVar',
     MAKEFILE_LIST => 'MakefilesListVar',
     MASTER_SITES => 'MasterSitesVar',
-    MASTER_SITES0 => 'MasterSitesVar',
-    MASTER_SITES1 => 'MasterSitesVar',
-    MASTER_SITES2 => 'MasterSitesVar',
-    MASTER_SITES3 => 'MasterSitesVar',
-    MASTER_SITES4=> 'MasterSitesVar',
-    MASTER_SITES5 => 'MasterSitesVar',
-    MASTER_SITES6 => 'MasterSitesVar',
-    MASTER_SITES7 => 'MasterSitesVar',
-    MASTER_SITES8 => 'MasterSitesVar',
-    MASTER_SITES9=> 'MasterSitesVar',
     MODULES => 'ModulesVar',
     MULTI_PACKAGES => 'MultiVar',
     NO_BUILD => 'YesNoVar',
@@ -142,8 +132,10 @@ sub create($self, $var, $value, $arch, $path)
 	if (defined $arch) {
 		$k .= "-$arch";
 	}
-	if (defined $vars->{$var}) {
-		$self->{vars}{$k} = $vars->{$var}->new($var, $value, $arch, 
+	my $type = $var;
+	$type =~ s/^(MASTER_SITES|DISTFILES|SUPDISTFILES|PATCHFILES).*/$1/;
+	if (defined $vars->{$type}) {
+		$self->{vars}{$k} = $vars->{$type}->new($var, $value, $arch, 
 		    $path);
 	} else {
 		$unknown->{$k} //= $path;

@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.64 2023/06/16 06:04:01 espie Exp $
+# $OpenBSD: Var.pm,v 1.65 2023/08/14 17:36:43 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -584,11 +584,8 @@ sub compute_join($self, $name)
 {
 	my $j = Sql::Join->new($self->table_name($self->table))->left
 	    ->add(Sql::Equal->new("FullPkgPath", "FullPkgPath"));
-	if ($name =~ m/^MASTER_SITES(\d)$/) {
-		$j->add(Sql::EqualConstant->new("N", $1));
-	} else {
-		$j->add(Sql::IsNull->new("N"));
-	}
+	# for now we only record MASTER_SITES in ports
+	$j->add(Sql::IsNull->new("N"));
 	return $j;
 }
 
@@ -603,7 +600,7 @@ sub add($self, $ins)
 	$self->AnyVar::add($ins);
 
 	my $n;
-	if ($self->var =~ m/^MASTER_SITES(\d)$/) {
+	if ($self->var =~ m/^MASTER_SITES(.+)$/) {
 		$n = $1;
 	}
 	$self->normal_insert($ins, $n, $self->value);
@@ -614,7 +611,7 @@ sub create_tables($self, $inserter)
 	my $t = $self->table_name($self->table);
 	$self->create_table(
 	    $self->fullpkgpath,
-	    Sql::Column::Integer->new("N")->constraint,
+	    Sql::Column::Text->new("N")->constraint,
 	    Sql::Column::Text->new("Value")->notnull->constraint);
 	$self->create_view(
 	    $self->pathref,
@@ -919,8 +916,12 @@ sub want_in_ports_view($) { 1 }
 
 sub _add($self, $ins, $value, $num)
 {
+	my $sufx;
+	if ($self->var =~ m/^(?:DISTFILES|SUPDISTFILES|PATCHFILES)(.+)$/) {
+		$sufx = $1;
+	}
 	$self->normal_insert($ins, $self->keyword($ins, $value), $num, 
-	    $self->match);
+	    $sufx, $self->match);
 }
 
 sub add_value($self, $ins, $value, @extra)
@@ -940,12 +941,14 @@ sub create_tables($self, $inserter)
 	    $self->fullpkgpath,
 	    Sql::Column::Integer->new("Value")->references($k)->constraint,
 	    Sql::Column::Integer->new("N")->constraint,
+	    Sql::Column::Text->new("SUFX")->constraint,
 	    Sql::Column::Integer->new("Type")->constraint->notnull);
 
 	$self->create_view(
 	    $self->pathref,
 	    Sql::Column::View::WithSite->new("Value")->join(Sql::Join->new($k)
 		->add(Sql::Equal->new("KeyRef", "Value"))),
+	    Sql::Column::View->new("Sufx"),
 	    Sql::Column::View->new("Type"));
 	$inserter->make_ordered_view($self);
 }
@@ -957,13 +960,15 @@ sub subselect($self)
 	return (Sql::Column::View->new('FullPkgPath'),
 	    Sql::Column::View::WithSite->new("Value")->join(Sql::Join->new($k)
 		->add(Sql::Equal->new("KeyRef", "Value"))),
+	    Sql::Column::View->new("Sufx"),
 	    Sql::Column::View->new("Type"),
 	    Sql::Order->new("Value"));
 }
 
 sub select($)
 {
-	return (Sql::Column::View->new("Type")->group_by);
+	return (Sql::Column::View->new("Sufx")->group_by,
+	    Sql::Column::View->new("Type")->group_by);
 }
 
 sub ports_view_column($self, $name)
@@ -971,9 +976,10 @@ sub ports_view_column($self, $name)
 	return Sql::Column::View->new($name, origin => 'Value')->join(
 	    Sql::Join->new($self->table."_ordered")->left
 	    	->add(Sql::Equal->new("FullPkgpath", "FullPkgpath"),
+		    Sql::IsNull->new("SUFX"),
 		    Sql::EqualConstant->new("Type", $self->match)));
 }
-
+ 
 package SupdistfilesVar;
 our @ISA = qw(DistfilesVar);
 sub match($) { 1 }

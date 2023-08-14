@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: TreeWalker.pm,v 1.18 2023/06/15 12:53:07 espie Exp $
+# $OpenBSD: TreeWalker.pm,v 1.19 2023/08/14 17:36:43 espie Exp $
 #
 # Copyright (c) 2006-2013 Marc Espie <espie@openbsd.org>
 #
@@ -93,7 +93,7 @@ sub parse_dump($self, $fd, $subdirs)
 			$subdir = PkgPath->new($1);
 			&$reset();
 		} elsif (my ($pkgpath, $var, $arch, $value) =
-		    m/^(.*?)\.([A-Z][A-Z_0-9]*)(?:\-([a-z0-9]+))?\=\s*(.*)\s*$/) {
+		    m/^(.*?)\.([A-Z][A-Za-z0-9_.]*)(?:\-([a-z0-9]+))?\=\s*(.*)\s*$/) {
 			if ($value =~ m/^\"(.*)\"$/) {
 				$value = $1;
 			}
