@@ -1,0 +1,6 @@
+libcpucycles provides a simple API to access hardware precise timers
+to understand and improve software performance.
+
+libcpucycles understands machine-level cycle counters for most architectures.
+libcpucycles also understands common OS-level mechanisms, which give varying
+levels of accuracy.

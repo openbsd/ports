@@ -1,0 +1,14 @@
+OpenBSD neither provides nor requires librt.
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -267,7 +267,7 @@
+   M += '\n'
+   makefile = M + makefile
+   M = 'package/bin/%s: command/%s.o%s.$(LIBcpucycles_VERSION)\n' % (base,base,''.join(' package/lib/%s.%s' % (x,linktype) for x in libs))
+-  M += '\tcd command && ./link bin/%s %s.o%s.$(LIBcpucycles_VERSION) -lm -lrt\n' % (base,base,''.join(' lib/%s.%s' % (x,linktype) for x in libs))
++  M += '\tcd command && ./link bin/%s %s.o%s.$(LIBcpucycles_VERSION) -lm\n' % (base,base,''.join(' lib/%s.%s' % (x,linktype) for x in libs))
+   M += '\n'
+   makefile = M + makefile
+   commands += ['package/bin/%s' % base]

@@ -1,0 +1,37 @@
+Translate OpenBSD architecture name to the name used by upstream.
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -36,13 +36,30 @@ if host.startswith('sparc') or host.startswith('sun'):
+ 
+ makefile = ''
+ 
++
++# Some OpenBSD architecture names don't match the
++# architecture name used by upstream, so they require to
++# be translated, so they can be recognized by build scripts.
++#
++def translate_arch(openbsd_arch):
++  archs = {
++    'arm': 'arm32',
++    'armv7': 'arm32',
++    'i386': 'x86',
++    'powerpc64': 'ppc64',
++    'macppc': 'ppc32',
++    'powerpc': 'ppc32',
++  }
++  return archs.get(openbsd_arch, openbsd_arch)
++
++
+ for arg in sys.argv[1:]:
+   if arg.startswith('--prefix='):
+     prefix = arg[9:]
+     continue
+   if arg.startswith('--host='):
+     host = arg[7:]
+-    host = host.split('-')[0]
++    host = translate_arch(host.split('-')[0])
+     continue
+   if arg.startswith('--soversion='):
+     soversion = arg[12:]

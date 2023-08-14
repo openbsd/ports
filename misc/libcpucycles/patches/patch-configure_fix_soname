@@ -1,0 +1,79 @@
+Fix library soname.
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -10,6 +10,7 @@
+ prefix = '/usr/local'
+ clean = True
+ linktype = 'so'
++soversion = '0.0'
+ 
+ host = platform.machine()
+ host = ''.join(c for c in host if c in '_0123456789abcdefghijklmnopqrstuvwxyz')
+@@ -43,6 +44,9 @@
+     host = arg[7:]
+     host = host.split('-')[0]
+     continue
++  if arg.startswith('--soversion='):
++    soversion = arg[12:]
++    continue
+   if arg == '--clean':
+     clean = True
+     continue
+@@ -54,6 +58,7 @@
+ echoargs = './configure'
+ echoargs += ' --prefix=%s' % prefix
+ echoargs += ' --host=%s' % host
++echoargs += ' --soversion=%s' % soversion
+ if clean: echoargs += ' --clean'
+ if not clean: echoargs += ' --noclean'
+ print(echoargs)
+@@ -222,23 +227,17 @@
+   f.write('%s -shared \\\n' % firstcompiler)
+   if rpath:
+     f.write('  -Wl,-rpath=%s \\\n' % rpath)
+-  f.write('  -Wl,-soname,libcpucycles.so.1 \\\n')
+-  f.write('  -o package/lib/libcpucycles.so.1 \\\n')
++  f.write('  -Wl,-soname,libcpucycles.so.%s \\\n' % soversion)
++  f.write('  -o package/lib/libcpucycles.so.%s \\\n' % soversion)
+   f.write('  "$@"\n')
+-  f.write('chmod 644 package/lib/libcpucycles.so.1\n')
++  f.write('chmod 644 package/lib/libcpucycles.so.%s\n' % soversion)
+ os.chmod('build/%s/scripts/sharedlib' % host,0o755)
+ 
+-M = 'package/lib/libcpucycles.so.1: scripts/sharedlib %s\n' % ' '.join(cpucyclesofiles)
++M = 'package/lib/libcpucycles.so.$(LIBcpucycles_VERSION): scripts/sharedlib %s\n' % ' '.join(cpucyclesofiles)
+ M += '\tscripts/sharedlib %s\n' % ' '.join(cpucyclesofiles)
+ M += '\n'
+ makefile = M + makefile
+ 
+-M = 'package/lib/libcpucycles.so: package/lib/libcpucycles.so.1\n'
+-M += '\trm -f package/lib/libcpucycles.so\n'
+-M += '\tln -s libcpucycles.so.1 package/lib/libcpucycles.so\n'
+-M += '\n'
+-makefile = M + makefile
+-
+ # ----- command
+ 
+ os.makedirs('build/%s/command'%host)
+@@ -267,8 +266,8 @@
+   M += '\tscripts/compiledefault command %s c -I include\n' % base
+   M += '\n'
+   makefile = M + makefile
+-  M = 'package/bin/%s: command/%s.o%s\n' % (base,base,''.join(' package/lib/%s.%s' % (x,linktype) for x in libs))
+-  M += '\tcd command && ./link bin/%s %s.o%s -lm -lrt\n' % (base,base,''.join(' lib/%s.%s' % (x,linktype) for x in libs))
++  M = 'package/bin/%s: command/%s.o%s.$(LIBcpucycles_VERSION)\n' % (base,base,''.join(' package/lib/%s.%s' % (x,linktype) for x in libs))
++  M += '\tcd command && ./link bin/%s %s.o%s.$(LIBcpucycles_VERSION) -lm -lrt\n' % (base,base,''.join(' lib/%s.%s' % (x,linktype) for x in libs))
+   M += '\n'
+   makefile = M + makefile
+   commands += ['package/bin/%s' % base]
+@@ -286,7 +285,7 @@
+ 
+ # ----- make default
+ 
+-M = 'default: package/lib/libcpucycles.a package/lib/libcpucycles.so package/lib/libcpucycles.so.1 \\\n'
++M = 'default: package/lib/libcpucycles.a package/lib/libcpucycles.so.$(LIBcpucycles_VERSION) \\\n'
+ M += 'commands\n'
+ M += '\n'
+ makefile = M + makefile
