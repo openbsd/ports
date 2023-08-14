@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.95 2023/06/17 19:27:32 espie Exp $
+# $OpenBSD: Config.pm,v 1.96 2023/08/14 10:45:44 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -463,6 +463,47 @@ sub parse_hosts_file($class, $filename, $state, $rdefault, $override)
 		    !defined $state->{build_user} &&
 		    !$state->defines("BUILD_USER")) {
 		    	$state->{build_user} = $prop->{build_user};
+		}
+	}
+}
+
+sub read_exceptions_file($class, $state, $filename, $default = 'build')
+{
+	my $properties = {};
+	open my $fh, '<', $filename or
+		$state->fatal("Can't read hosts file #1: #2", $filename, $!);
+	$state->{adjuncts} = {};
+	my @defaults = $default;
+	while(<$fh>) {
+		chomp;
+		s/\#.*//;
+		next if m/^\s*$/;
+		my @paths;
+		my @properties;
+		for my $field (split(/\s+/, $_)) {
+			if ($field =~ m/\//) {
+				push(@paths, DPB::PkgPath->new($field));
+			} elsif (defined $properties->{$field}) {
+				push(@properties, $field);
+			} else {
+				$state->fatal(
+				    "Unknown property in file #1 at #2: #3",
+				    $filename, $., $field);
+			}
+		}
+		if (@properties == 0) {
+			@properties = @defaults;
+		} else {
+			@defaults = @properties;
+		}
+		if (@paths == 0) {
+			$state->fatal("No path in file #1 at #2: #3",
+			    $filename, $., $_);
+		}
+		for my $p (@properties) {
+			for my $v (@paths) {
+				&{$properties->{$p}}($v);
+			}
 		}
 	}
 }
