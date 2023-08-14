@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortInfo.pm,v 1.47 2023/08/11 10:35:36 espie Exp $
+# $OpenBSD: PortInfo.pm,v 1.48 2023/08/14 10:34:53 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -31,7 +31,12 @@ package AddInfo;
 sub add($class, $var, $info, $value, $parent)
 {
 	return if $value =~ m/^[\s\-]*$/;
-	$info->{$var} = $class->new($value, $info, $parent);
+	$class->location($info, $var) = $class->new($value, $info, $parent);
+}
+
+sub location:lvalue ($, $info, $var)
+{
+	return $info->{$var};
 }
 
 sub new($class, $value, $, $)
@@ -44,10 +49,43 @@ sub string($self)
 	return $$self;
 }
 
+sub dump($self, $k, $fh, $level)
+{
+	print $fh "\t"x$level, "$k = ", $self->string, "\n"
+}
+
 # by default don't show up in quick dumps
 sub quickie($)
 {
 	return 0;
+}
+
+package Group;
+our @ISA = qw(AddInfo);
+sub quickie($)
+{
+	return 1;
+}
+
+sub new($class, @)
+{
+	return bless {}, $class;
+}
+
+sub dump($self, $k, $fh, $level)
+{
+	print $fh "\t"x$level, "$k =\n";
+	for my $k2 (sort keys %$self) {
+		$self->{$k2}->dump($k2, $fh, $level+1);
+	}
+}
+
+package GroupMixIn;
+sub location:lvalue ($class, $info, $var)
+{
+	my $groupname = $class->groupname;
+	$info->{$groupname} //= Group->new;
+	return $info->{$groupname}{$var};
 }
 
 package AddIgnore;
@@ -67,7 +105,7 @@ our @ISA = qw(AddInfo);
 sub add($class, $var, $info, $value, $parent)
 {
 	return if $value =~ m/^no$/i;
-	$info->{$var} = $class->new($value, $info, $parent);
+	$class->location($info, $var) = $class->new($value, $info, $parent);
 }
 
 sub new($class, $value, $, $)
@@ -84,7 +122,7 @@ our @ISA = qw(AddInfo);
 sub add($class, $var, $info, $value, $parent)
 {
 	return if $value =~ m/^yes$/i;
-	$info->{$var} = $class->new($value, $info, $parent);
+	$class->location($info, $var) = $class->new($value, $info, $parent);
 }
 
 sub new($class, $value, $, $)
@@ -121,6 +159,11 @@ sub new($class, $value, $, $)
 sub string($self)
 {
 	return join(', ', keys %$self);
+}
+
+sub list($self)
+{
+	return keys %$self;
 }
 
 # specific to DPB_PROPERTIES
@@ -178,6 +221,44 @@ sub new($class, $value, $, $)
 sub string($self)
 {
 	return join(' ', @$self);
+}
+
+sub list($self)
+{
+	return @$self;
+}
+
+package MasterSitesList;
+our @ISA = qw(GroupMixIn AddOrderedList);
+
+sub groupname($)
+{
+	return 'master_sites';
+}
+
+package DistfilesList;
+# ordered for roach to identify 1st
+our @ISA = qw(GroupMixIn AddOrderedList);
+
+sub groupname($)
+{
+	return 'distfiles';
+}
+
+package SupdistfilesList;
+our @ISA = qw(GroupMixIn AddList);
+
+sub groupname($)
+{
+	return 'distfiles';
+}
+
+package PatchfilesList;
+our @ISA = qw(GroupMixIn AddList);
+
+sub groupname($)
+{
+	return 'distfiles';
 }
 
 package FetchManually;
@@ -273,14 +354,14 @@ my %adder = (
 	DPB_PROPERTIES => "AddPropertyList",
 	IGNORE => "AddIgnore",
 	FLAVOR => "AddList",
-	DISTFILES => 'AddOrderedList', # ordered for roach to identify 1st
-	PATCHFILES => 'AddList',
-	SUPDISTFILES => 'AddList',
+	DISTFILES => 'DistfilesList',
+	PATCHFILES => 'PatchfilesList',
+	SUPDISTFILES => 'SupdistfilesList',
 	DIST_SUBDIR => 'AddInfo',
 	CHECKSUM_FILE => 'AddInfo',
 	FETCH_MANUALLY => 'FetchManually',
 	MISSING_FILES => 'AddList',
-	MASTER_SITES => 'AddOrderedList',
+	MASTER_SITES => 'MasterSitesList',
 	MULTI_PACKAGES => 'AddList',
 	PERMIT_DISTFILES => 'AddNegative',
 	PERMIT_PACKAGE => 'AddNegative',
@@ -305,11 +386,13 @@ my %adder = (
 	PORTROACH => 'AddRoachList',
 	PORTROACH_COMMENT => 'AddInfo',
 	MAINTAINER => 'AddInfo',
+	distfiles => 'Group',
+	master_sites => 'Group',
 );
 
 sub find($class, $var)
 {
-	$var =~ s/^(MASTER_SITES).*/$1/;
+	$var =~ s/^(MASTER_SITES|DISTFILES|SUPDISTFILES|PATCHFILES).*/$1/;
 	return $adder{$var};
 }
 
@@ -328,11 +411,10 @@ sub add($self, $var, $value, $parent)
 	$self->find($var)->add($var, $self, $value, $parent);
 }
 
-sub dump($self, $fh)
+sub dump($self, $fh = \*STDOUT, $level = 0)
 {
 	for my $k (sort keys %adder) {
-		print $fh "\t $k = ", $self->{$k}->string, "\n"
-		    if defined $self->{$k};
+		$self->{$k}->dump($k, $fh, $level+1) if defined $self->{$k};
 	}
 }
 
@@ -357,17 +439,11 @@ sub is_stub($self)
 	return $self eq $stub_info;
 }
 
-use Data::Dumper;
-sub quick_dump($self, $fh)
+sub quick_dump($self, $fh, $level = 0)
 {
 	for my $k (sort keys %adder) {
 		if (defined $self->{$k} and $adder{$k}->quickie) {
-			print $fh "\t $k = ";
-			if (ref($self->{$k}) eq 'HASH') {
-				print $fh "????\n";
-			} else {
-				print $fh $self->{$k}->string, "\n" ;
-			}
+			$self->{$k}->dump($k, $fh, $level+1);
 		}
 	}
 }

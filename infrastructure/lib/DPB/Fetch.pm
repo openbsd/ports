@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.92 2023/05/07 06:26:41 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.93 2023/08/14 10:34:53 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -248,9 +248,7 @@ sub read_checksums($self, $filename)
 sub build1info($self, $v, $mirror, $roach)
 {
 	my $info = $v->{info};
-	return unless defined $info->{DISTFILES} ||
-	    defined $info->{PATCHFILES} ||
-	    defined $info->{SUPDISTFILES};
+	return unless defined $info->{distfiles};
 
 	my $dir = $info->{DIST_SUBDIR};
 	my $checksum_file = $info->{CHECKSUM_FILE};
@@ -268,39 +266,37 @@ sub build1info($self, $v, $mirror, $roach)
 	my $checksums = $self->{cache}{$checksum_file};
 
 	my $files = {};
-	my $build = sub($arg) {
+	my $build = sub($arg, $k) {
 		my $site = 'MASTER_SITES';
 		my $url;
 		if ($arg =~ m/^(.*)\:(\d)$/) {
 			$arg = $1;
 			$site.= $2;
 		}
+		if ($k =~ m/^.*?FILES(.+)/) {
+			$site .= $1;
+		}
 		if ($arg =~ m/^(.*)\{(.*)\}(.*)$/) {
 			$arg = $1 . $3;
 			$url = $2 . $3;
 		}
 		return DPB::Distfile->new($arg, $url, $dir,
-		    $info->{$site},
+		    $info->{master_sites}{$site},
 		    $checksums, $fname, $v, $self);
 	};
 
-	for my $d (@{$info->{DISTFILES}}, (keys %{$info->{PATCHFILES}})) {
-		my $file = &$build($d);
-		$files->{$file} = $file if defined $file;
-	}
-	if ($mirror) {
-		for my $d (keys %{$info->{SUPDISTFILES}}) {
-			my $file = &$build($d);
+	while (my ($k, $o) = each %{$info->{distfiles}}) {
+		if ($k =~ m/^SUPDISTFILES/ && !$mirror) {
+			next;
+		}
+		for my $d ($o->list) {
+			my $file = &$build($d, $k);
 			$files->{$file} = $file if defined $file;
 		}
 	}
 
 	$roach->build1info($v);
-	for my $k (qw(DIST_SUBDIR CHECKSUM_FILE DISTFILES
-	    PATCHFILES SUPDISTFILES MASTER_SITES MASTER_SITES0
-	    MASTER_SITES1 MASTER_SITES2 MASTER_SITES3
-	    MASTER_SITES4 MASTER_SITES5 MASTER_SITES6
-	    MASTER_SITES7 MASTER_SITES8 MASTER_SITES9)) {
+	for my $k (qw(DIST_SUBDIR CHECKSUM_FILE distfiles master_sites)) {
 		delete $info->{$k};
 	}
 	bless $files, "AddDepends";
