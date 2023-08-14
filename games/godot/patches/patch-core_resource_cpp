@@ -1,0 +1,20 @@
+when building without tools, don't display error about resources still in use at
+exit unless '--verbose'
+
+Index: core/resource.cpp
+--- core/resource.cpp.orig
++++ core/resource.cpp
+@@ -414,8 +414,13 @@ RWLock ResourceCache::path_cache_lock;
+ 
+ void ResourceCache::clear() {
+ 	if (resources.size()) {
++#if defined(TOOLS_ENABLED)
+ 		ERR_PRINT("Resources still in use at exit (run with --verbose for details).");
++#endif
+ 		if (OS::get_singleton()->is_stdout_verbose()) {
++#ifndef TOOLS_ENABLED
++		ERR_PRINT("Resources still in use at exit (run with --verbose for details).");
++#endif
+ 			const String *K = nullptr;
+ 			while ((K = resources.next(K))) {
+ 				Resource *r = resources[*K];

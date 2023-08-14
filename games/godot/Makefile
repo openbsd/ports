@@ -7,7 +7,7 @@ V =		3.5.2
 GODOTSTEAM_V =	v3.20
 DISTNAME =	godot-${V}-stable
 PKGNAME =	godot-${V}
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	games
 

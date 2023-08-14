@@ -1,0 +1,19 @@
+when building without tools, don't warn about leaked instances at exit unless '--verbose'
+
+Index: core/object.cpp
+--- core/object.cpp.orig
++++ core/object.cpp
+@@ -2067,8 +2067,13 @@ RWLock ObjectDB::rw_lock;
+ void ObjectDB::cleanup() {
+ 	rw_lock.write_lock();
+ 	if (instances.size()) {
++#ifdef TOOLS_ENABLED
+ 		WARN_PRINT("ObjectDB instances leaked at exit (run with --verbose for details).");
++#endif
+ 		if (OS::get_singleton()->is_stdout_verbose()) {
++#ifndef TOOLS_ENABLED
++			WARN_PRINT("ObjectDB instances leaked at exit.");
++#endif
+ 			// Ensure calling the native classes because if a leaked instance has a script
+ 			// that overrides any of those methods, it'd not be OK to call them at this point,
+ 			// now the scripting languages have already been terminated.
