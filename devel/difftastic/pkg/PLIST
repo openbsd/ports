@@ -26,6 +26,7 @@ share/doc/difftastic/diffing.html
 share/doc/difftastic/elasticlunr.min.js
 share/doc/difftastic/favicon.png
 share/doc/difftastic/favicon.svg
+share/doc/difftastic/fossil.html
 share/doc/difftastic/getting_started.html
 share/doc/difftastic/git.html
 share/doc/difftastic/glossary.html
@@ -40,6 +41,7 @@ share/doc/difftastic/mercurial.html
 share/doc/difftastic/parser_vendoring.html
 share/doc/difftastic/parsing.html
 share/doc/difftastic/print.html
+share/doc/difftastic/profiling.html
 share/doc/difftastic/robots.txt
 share/doc/difftastic/searcher.js
 share/doc/difftastic/searchindex.js
