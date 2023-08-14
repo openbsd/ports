@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1597 2023/08/14 14:57:49 kn Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1598 2023/08/14 18:12:50 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -118,9 +118,8 @@ _ALL_VARIABLES_PER_ARCH =
 # consumers of (dump-vars) include sqlports generation and dpb
 # dpb doesn't need everything, those are speed optimizations
 .if ${DPB:L:Mfetch} || ${DPB:L:Mall}
-_ALL_VARIABLES += DISTFILES PATCHFILES SUPDISTFILES DIST_SUBDIR MASTER_SITES \
-	MASTER_SITES0 MASTER_SITES1 MASTER_SITES2 MASTER_SITES3 MASTER_SITES4 \
-	MASTER_SITES5 MASTER_SITES6 MASTER_SITES7 MASTER_SITES8 MASTER_SITES9 \
+_ALL_VARIABLES += ${_ALL_DISTFILES_VARIABLES} DIST_SUBDIR \
+	${_ALL_MASTER_SITES_VARIABLES} \
 	CHECKSUM_FILE FETCH_MANUALLY MISSING_FILES PERMIT_DISTFILES
 .endif
 .if ${DPB:L:Mtest} || ${DPB:L:Mall}
@@ -1284,30 +1283,44 @@ MASTER_SITES ?=
 # sites for distfiles, add them to MASTER_SITE_BACKUP
 
 _warn_checksum = :
-.if !empty(MASTER_SITES:M*[^/])
-_warn_checksum += ;echo ">>> MASTER_SITES not ending in /: ${MASTER_SITES:M*[^/]}"
+
+# stash .VARIABLES, because it's expensive to compute
+_CACHE_VARIABLES = ${.VARIABLES}
+.if empty(_CACHE_VARIABLES)
+ERRORS += "Fatal: requires make(1) with .VARIABLES support"
 .endif
 
-.for _I in 0 1 2 3 4 5 6 7 8 9
-.  if defined(MASTER_SITES${_I})
-.    if !empty(MASTER_SITES${_I}:M*[^/])
-_warn_checksum += ;echo ">>> MASTER_SITES${_I} not ending in /: ${MASTER_SITES${_I}:M*[^/]}"
-.    endif
+#.if ${DPB:L:Mall}
+#.  if !empty(MODULES)
+#.    for _m in ${MODULES}
+#_ALL_VARIABLES += ${_CACHE_VARIABLES:MMOD${_m:T:U}*}
+#.    endfor
+#.  endif
+#.endif
+
+
+_ALL_MASTER_SITES_VARIABLES = ${_CACHE_VARIABLES:MMASTER_SITES*:NMASTER_SITES_*}
+
+.for _S in ${_ALL_MASTER_SITES_VARIABLES}
+.  if !empty(${_S}:M*[^/])
+_warn_checksum += ;echo ">>> ${_S} not ending in /: ${${_S}:M*[^/]}"
 .  endif
 .endfor
-
 
 EXTRACT_SUFX ?= .tar.gz
 
 .if !empty(GH_COMMIT)
 GH_DISTFILE = ${DISTNAME}-${GH_COMMIT:C/(........).*/\1/}{${GH_COMMIT}}${EXTRACT_SUFX}
-DISTFILES ?= ${GH_DISTFILE}
+.  if empty(_CACHE_VARIABLES:MDISTFILES*)
+DISTFILES = ${GH_DISTFILE}
+.  endif
 .elif defined(DISTNAME)
-DISTFILES ?= ${DISTNAME}${EXTRACT_SUFX}
+.  if empty(_CACHE_VARIABLES:MDISTFILES*)
+DISTFILES = ${DISTNAME}${EXTRACT_SUFX}
+.  endif
 .endif
 
-PATCHFILES ?=
-SUPDISTFILES ?=
+_ALL_DISTFILES_VARIABLES =
 
 # the following loop "parses" DISTFILES-style files
 # _PATH_x contains filenames with SUBDIR prepended when necessary
@@ -1323,29 +1336,34 @@ SUPDISTFILES ?=
 # - SUPDISTFILES has to happen later
 _FILES=
 .for v in DISTFILES PATCHFILES SUPDISTFILES
-.  if !empty($v)
-.    for e in ${$v}
-.      for f m u in ${e:C/:[0-9]$//:C/^(.*)\{.*\}(.*)$/\1\2/} MASTER_SITES${e:M*\:[0-9]:C/^.*:([0-9])$/\1/} ${e:C/:[0-9]$//:C/^.*\{(.*)\}(.*)$/\1\2/}
-.        if !defined($m)
+.  for w in ${_CACHE_VARIABLES:M$v*}
+.    if !empty($w)
+_ALL_DISTFILES_VARIABLES += $w
+.      for e in ${$w}
+.        for p in ${e:C/:[0-9]$//}
+.          for f m u in ${p:C/^(.*)\{.*\}(.*)$/\1\2/} ${w:S/$v/MASTER_SITES/}${e:M*\:[0-9]:C/^.*:([0-9])$/\1/} ${p:C/^.*\{(.*)\}(.*)$/\1\2/}
+.            if !defined($m)
 ERRORS += "Fatal: $m is not defined but referenced by $e in $v"
-.        endif
-.        if empty(_FILES:M$f)
+.            endif
+.            if empty(_FILES:M$f)
 _FILES += $f
-.          if empty(DIST_SUBDIR)
+.              if empty(DIST_SUBDIR)
 _FULL_FETCH_LIST += $f $f $m $u
 _PATH_$v += $f
-.          else
+.              else
 _FULL_FETCH_LIST += ${DIST_SUBDIR}/$f $f $m $u
 _PATH_$v += ${DIST_SUBDIR}/$f
-.          endif
+.              endif
 _LIST_$v += $f
-.        endif
+.            endif
+.          endfor
+.        endfor
 .      endfor
-.    endfor
-.  else
+.    else
 _PATH_$v =
 _LIST_$v =
-.  endif
+.    endif
+.  endfor
 .endfor
 _FULL_FETCH_LIST ?=
 
