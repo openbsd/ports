@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: BasePkgPath.pm,v 1.9 2023/05/06 05:20:31 espie Exp $
+# $OpenBSD: BasePkgPath.pm,v 1.10 2023/08/14 13:34:09 espie Exp $
 #
 # Copyright (c) 2010-2019 Marc Espie <espie@openbsd.org>
 #
@@ -142,7 +142,7 @@ sub pkgpath_and_flavors($self)
 
 sub add_to_subdirlist($self, $list)
 {
-	$list->{$self->pkgpath_and_flavors} = 1;
+	$list->{$self->pkgpath_and_flavors} = $self;
 }
 
 # XXX
