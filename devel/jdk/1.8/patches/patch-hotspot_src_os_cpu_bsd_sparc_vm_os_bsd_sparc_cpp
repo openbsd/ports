@@ -1,4 +1,5 @@
 Sync changes with os_linux_sparc.cpp
+Support setting thread stack sizes on sparc64
 
 Index: hotspot/src/os_cpu/bsd_sparc/vm/os_bsd_sparc.cpp
 --- hotspot/src/os_cpu/bsd_sparc/vm/os_bsd_sparc.cpp.orig
@@ -12,3 +13,12 @@ Index: hotspot/src/os_cpu/bsd_sparc/vm/os_bsd_sparc.cpp
        return 1;
      }
  
+@@ -740,7 +740,7 @@ bool os::is_allocatable(size_t bytes) {
+ 
+ size_t os::Bsd::min_stack_allowed  = 128 * K;
+ 
+-bool os::Bsd::supports_variable_stack_size() {  return false; }
++bool os::Bsd::supports_variable_stack_size() {  return true; }
+ 
+ // return default stack size for thr_type
+ size_t os::Bsd::default_stack_size(os::ThreadType thr_type) {
