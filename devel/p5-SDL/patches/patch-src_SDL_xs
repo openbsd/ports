@@ -1,0 +1,23 @@
+Add missing arguments to boot_SDL(); this fixes a crash or failure in
+Perl_xs_handshake() on some arches.  This patch does pass the CV of
+the wrong function, but the handshake accepts it.
+
+Index: src/SDL.xs
+--- src/SDL.xs.orig
++++ src/SDL.xs
+@@ -219,13 +219,13 @@ sdl_perl_atexit (void)
+ 	SDL_Quit();
+ }
+ 
+-void boot_SDL();
++void boot_SDL(pTHX_ CV *);
+ void boot_SDL__OpenGL();
+ 
+ XS(boot_SDL_perl)
+ {
+ 	GET_TLS_CONTEXT
+-	boot_SDL();
++	boot_SDL(aTHX_ cv);
+ }
+ 
+ MODULE = SDL_perl	PACKAGE = SDL
