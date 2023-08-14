@@ -3,9 +3,8 @@ NOT_FOR_ARCHS =         powerpc64 riscv64 sparc64
 
 COMMENT =		OAuth2 authentication daemon
 
-V =			0.3.0
+V =			1.0.1
 DISTNAME =		pizauth-$V
-REVISION =		0
 
 CATEGORIES =		mail security
 
