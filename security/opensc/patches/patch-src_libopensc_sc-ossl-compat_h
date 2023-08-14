@@ -1,4 +1,4 @@
-pending "LibreSSL fixes" https://github.com/OpenSC/OpenSC/pull/2816
+merged "LibreSSL fixes" https://github.com/OpenSC/OpenSC/pull/2816
 
 Index: src/libopensc/sc-ossl-compat.h
 --- src/libopensc/sc-ossl-compat.h.orig
