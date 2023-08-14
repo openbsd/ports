@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.96 2023/08/14 10:45:44 espie Exp $
+# $OpenBSD: Config.pm,v 1.97 2023/08/14 13:35:07 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -220,6 +220,9 @@ sub parse_command_line($class, $state)
 		require DPB::External;
 		$state->{subst}->add('CONTROL', '%L/control-%h-%$');
 		$state->{external} = DPB::External->server($state);
+	}
+	if ($state->define_present('LISTING_HOST')) {
+		$state->{listing_host} = $state->{subst}->value('LISTING_HOST');
 	}
 	$state->{external} //= DPB::ExternalStub->new;
 	if ($state->{opt}{s}) {
@@ -471,7 +474,8 @@ sub read_exceptions_file($class, $state, $filename, $default = 'build')
 {
 	my $properties = {};
 	open my $fh, '<', $filename or
-		$state->fatal("Can't read hosts file #1: #2", $filename, $!);
+		$state->fatal("Can't read exceptions file #1: #2", 
+		    $filename, $!);
 	$state->{adjuncts} = {};
 	my @defaults = $default;
 	while(<$fh>) {
