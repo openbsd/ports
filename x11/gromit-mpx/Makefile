@@ -2,8 +2,7 @@ COMMENT =	draw annotations on X11
 
 GH_ACCOUNT =	bk138
 GH_PROJECT =	gromit-mpx
-GH_TAGNAME =	1.3.1
-REVISION =	0
+GH_TAGNAME =	1.4.3
 
 CATEGORIES =	x11
 
@@ -30,5 +29,7 @@ NO_TEST =	Yes
 
 post-install:
 	rm -f ${PREFIX}/share/doc/gromit-mpx/ChangeLog
+	rm -f ${PREFIX}/share/pixmaps/net.christianbeier.Gromit-MPX.active.png
+	rm -f ${PREFIX}/share/pixmaps/net.christianbeier.Gromit-MPX.png
 
 .include <bsd.port.mk>

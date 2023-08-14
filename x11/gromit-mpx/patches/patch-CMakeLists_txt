@@ -3,13 +3,17 @@ Remove libappindicator support.
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -21,21 +21,18 @@ configure_file(build-config.h_cmake_in build-config.h)
- find_package(PkgConfig)
- 
- pkg_check_modules(gtk3 REQUIRED "gtk+-3.0 >= 2.99.3")
--pkg_check_modules(appindicator3 REQUIRED "appindicator3-0.1 >= 0.4.92")
+@@ -22,25 +22,18 @@ find_package(PkgConfig)
+ pkg_check_modules(gtk3 REQUIRED "gtk+-3.0 >= 3.22")
  pkg_check_modules(xinput REQUIRED "xi >= 1.3")
  pkg_check_modules(x11 REQUIRED x11)
+-pkg_check_modules(appindicator3 "ayatana-appindicator3-0.1 >= 0.5")
+-if(NOT appindicator3_FOUND)
+-  pkg_check_modules(appindicator3 REQUIRED "appindicator3-0.1 >= 0.4.92")
+-  set(APPINDICATOR_IS_LEGACY 1)
+-endif()
+ 
+ configure_file(build-config.h_cmake_in build-config.h)
  
  include_directories(
      ${CMAKE_CURRENT_BINARY_DIR}
@@ -25,7 +29,7 @@ Index: CMakeLists.txt
      ${xinput_LIBRARY_DIRS}
      ${x11_LIBRARY_DIRS}
  )
-@@ -57,7 +54,6 @@ add_executable(${target_name} ${sources})
+@@ -62,7 +55,6 @@ add_executable(${target_name} ${sources})
  
  target_link_libraries(${target_name}
      ${gtk3_LIBRARIES}
