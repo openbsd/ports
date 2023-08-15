@@ -1,2 +1,2 @@
+@bin bin/ssldump
 @man man/man1/ssldump.1
-@bin sbin/ssldump
