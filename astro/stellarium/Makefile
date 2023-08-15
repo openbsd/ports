@@ -4,6 +4,7 @@ COMMENT=		free open source planetarium
 
 V=			23.2
 DISTNAME=		stellarium-${V}
+REVISION=		0
 
 CATEGORIES=		astro x11
 
@@ -53,7 +54,7 @@ CONFIGURE_ARGS=		-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON \
 			-DSTELLARIUM_RELEASE_BUILD=1
 
 # needs Qt6 WebEngineWidgets;
-# !!! sync Qt version with astro/calcmysky and textproc/qxlsx
+# !!! sync Qt version with astro/calcmysky
 CONFIGURE_ARGS +=	-DENABLE_QT6=OFF
 
 CFLAGS +=		-I${LOCALBASE}/include -I${X11BASE}/include
