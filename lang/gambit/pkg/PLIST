@@ -30,6 +30,18 @@ lib/gambit/
 lib/gambit/_arm#.scm
 lib/gambit/_asm#.scm
 lib/gambit/_assert#.scm
+lib/gambit/_base64/
+lib/gambit/_base64/_base64#.scm
+lib/gambit/_base64/_base64.scm
+lib/gambit/_base64/_base64.sld
+lib/gambit/_base64/_base64@gambit${API_V}@C/
+lib/gambit/_base64/_base64@gambit${API_V}@C/_base64.c
+@bin lib/gambit/_base64/_base64@gambit${API_V}@C/_base64.o1
+lib/gambit/_base64/_base64@gambit${API_V}@js/
+lib/gambit/_base64/_base64@gambit${API_V}@js/_base64.js
+lib/gambit/_base64/_base64@gambit${API_V}@js/_base64.o1
+lib/gambit/_base64/test/
+lib/gambit/_base64/test/test.scm
 lib/gambit/_codegen#.scm
 lib/gambit/_define-library/
 lib/gambit/_define-library/_define-library#.scm
@@ -70,6 +82,7 @@ lib/gambit/_digest/_digest@gambit${API_V}@js/_digest.o1
 lib/gambit/_digest/test/
 lib/gambit/_digest/test/test.scm
 lib/gambit/_eval#.scm
+lib/gambit/_fifo#.scm
 lib/gambit/_gambit#.scm
 lib/gambit/_gambit.c
 lib/gambit/_gambit.js
@@ -170,6 +183,15 @@ lib/gambit/_six/js@gambit${API_V}@C/js.c
 lib/gambit/_six/js@gambit${API_V}@js/
 lib/gambit/_six/js@gambit${API_V}@js/js.js
 lib/gambit/_six/js@gambit${API_V}@js/js.o1
+lib/gambit/_six/python#.scm
+lib/gambit/_six/python.scm
+lib/gambit/_six/python.sld
+lib/gambit/_six/python@gambit${API_V}@C/
+lib/gambit/_six/python@gambit${API_V}@C/python.c
+@bin lib/gambit/_six/python@gambit${API_V}@C/python.o1
+lib/gambit/_six/python@gambit${API_V}@js/
+lib/gambit/_six/python@gambit${API_V}@js/python.js
+lib/gambit/_six/python@gambit${API_V}@js/python.o1
 lib/gambit/_six/six-expand#.scm
 lib/gambit/_six/six-expand.scm
 lib/gambit/_six/six-expand@gambit${API_V}@C/
@@ -204,6 +226,7 @@ lib/gambit/_tar/_tar@gambit${API_V}@js/_tar.o1
 lib/gambit/_test/
 lib/gambit/_test/_test#.scm
 lib/gambit/_test/_test.scm
+lib/gambit/_test/_test.sld
 lib/gambit/_test/_test@gambit${API_V}@C/
 lib/gambit/_test/_test@gambit${API_V}@C/_test.c
 @bin lib/gambit/_test/_test@gambit${API_V}@C/_test.o1
@@ -870,6 +893,8 @@ lib/gambit/srfi/0/0@gambit${API_V}@C/0.c
 lib/gambit/srfi/0/0@gambit${API_V}@js/
 lib/gambit/srfi/0/0@gambit${API_V}@js/0.js
 lib/gambit/srfi/0/0@gambit${API_V}@js/0.o1
+lib/gambit/srfi/0/demo/
+lib/gambit/srfi/0/demo/demo.scm
 lib/gambit/srfi/0/test/
 lib/gambit/srfi/0/test/test.scm
 lib/gambit/srfi/1/
@@ -934,8 +959,11 @@ lib/gambit/srfi/132/delndups.scm
 lib/gambit/srfi/132/lmsort.scm
 lib/gambit/srfi/132/merge.scm
 lib/gambit/srfi/132/select.scm
+lib/gambit/srfi/132/sort.scm
+lib/gambit/srfi/132/sortp.scm
 lib/gambit/srfi/132/test/
 lib/gambit/srfi/132/test/test.scm
+lib/gambit/srfi/132/vector-util.scm
 lib/gambit/srfi/132/vhsort.scm
 lib/gambit/srfi/132/visort.scm
 lib/gambit/srfi/132/vmsort.scm
@@ -954,7 +982,32 @@ lib/gambit/srfi/14/14@gambit${API_V}@js/14.js
 lib/gambit/srfi/14/14@gambit${API_V}@js/14.o1
 lib/gambit/srfi/14/test/
 lib/gambit/srfi/14/test/test.scm
+lib/gambit/srfi/141/
+lib/gambit/srfi/141/141#.scm
+lib/gambit/srfi/141/141.scm
+lib/gambit/srfi/141/141.sld
+lib/gambit/srfi/141/141@gambit${API_V}@C/
+lib/gambit/srfi/141/141@gambit${API_V}@C/141.c
+@bin lib/gambit/srfi/141/141@gambit${API_V}@C/141.o1
+lib/gambit/srfi/141/141@gambit${API_V}@js/
+lib/gambit/srfi/141/141@gambit${API_V}@js/141.js
+lib/gambit/srfi/141/141@gambit${API_V}@js/141.o1
+lib/gambit/srfi/141/test/
+lib/gambit/srfi/141/test/test.scm
+lib/gambit/srfi/151/
+lib/gambit/srfi/151/151#.scm
+lib/gambit/srfi/151/151.scm
+lib/gambit/srfi/151/151.sld
+lib/gambit/srfi/151/151@gambit${API_V}@C/
+lib/gambit/srfi/151/151@gambit${API_V}@C/151.c
+@bin lib/gambit/srfi/151/151@gambit${API_V}@C/151.o1
+lib/gambit/srfi/151/151@gambit${API_V}@js/
+lib/gambit/srfi/151/151@gambit${API_V}@js/151.js
+lib/gambit/srfi/151/151@gambit${API_V}@js/151.o1
+lib/gambit/srfi/151/test/
+lib/gambit/srfi/151/test/test.scm
 lib/gambit/srfi/158/
+lib/gambit/srfi/158/158#.scm
 lib/gambit/srfi/158/158.scm
 lib/gambit/srfi/158/158.sld
 lib/gambit/srfi/158/158@gambit${API_V}@C/
@@ -975,10 +1028,23 @@ lib/gambit/srfi/179/179@gambit${API_V}@C/179.c
 lib/gambit/srfi/179/179@gambit${API_V}@js/
 lib/gambit/srfi/179/179@gambit${API_V}@js/179.js
 lib/gambit/srfi/179/179@gambit${API_V}@js/179.o1
+lib/gambit/srfi/179/demo/
+lib/gambit/srfi/179/demo/demo.scm
 lib/gambit/srfi/179/generalized-arrays.scm
-lib/gambit/srfi/179/girl.pgm
-lib/gambit/srfi/179/test-arrays.scm
-lib/gambit/srfi/179/test.pgm
+lib/gambit/srfi/179/test/
+lib/gambit/srfi/179/test/test.scm
+lib/gambit/srfi/19/
+lib/gambit/srfi/19/19#.scm
+lib/gambit/srfi/19/19.scm
+lib/gambit/srfi/19/19.sld
+lib/gambit/srfi/19/19@gambit${API_V}@C/
+lib/gambit/srfi/19/19@gambit${API_V}@C/19.c
+@bin lib/gambit/srfi/19/19@gambit${API_V}@C/19.o1
+lib/gambit/srfi/19/19@gambit${API_V}@js/
+lib/gambit/srfi/19/19@gambit${API_V}@js/19.js
+lib/gambit/srfi/19/19@gambit${API_V}@js/19.o1
+lib/gambit/srfi/19/test/
+lib/gambit/srfi/19/test/test.scm
 lib/gambit/srfi/193/
 lib/gambit/srfi/193/193#.scm
 lib/gambit/srfi/193/193.scm
@@ -1042,6 +1108,28 @@ lib/gambit/srfi/23/23@gambit${API_V}@js/23.js
 lib/gambit/srfi/23/23@gambit${API_V}@js/23.o1
 lib/gambit/srfi/23/test/
 lib/gambit/srfi/23/test/test.scm
+lib/gambit/srfi/231/
+lib/gambit/srfi/231/231#.scm
+lib/gambit/srfi/231/231.scm
+lib/gambit/srfi/231/231.sld
+lib/gambit/srfi/231/231@gambit${API_V}@C/
+lib/gambit/srfi/231/231@gambit${API_V}@C/231.c
+@bin lib/gambit/srfi/231/231@gambit${API_V}@C/231.o1
+lib/gambit/srfi/231/231@gambit${API_V}@js/
+lib/gambit/srfi/231/231@gambit${API_V}@js/231.js
+lib/gambit/srfi/231/231@gambit${API_V}@js/231.o1
+lib/gambit/srfi/231/demo/
+lib/gambit/srfi/231/demo/demo.scm
+lib/gambit/srfi/231/demo2/
+lib/gambit/srfi/231/demo2/demo2.scm
+lib/gambit/srfi/231/demo3/
+lib/gambit/srfi/231/demo3/demo3.scm
+lib/gambit/srfi/231/demo4/
+lib/gambit/srfi/231/demo4/demo4.scm
+lib/gambit/srfi/231/demo4/girl.pgm
+lib/gambit/srfi/231/generalized-arrays.scm
+lib/gambit/srfi/231/test/
+lib/gambit/srfi/231/test/test.scm
 lib/gambit/srfi/26/
 lib/gambit/srfi/26/26#.scm
 lib/gambit/srfi/26/26.scm
@@ -1121,6 +1209,7 @@ lib/gambit/srfi/4/4@gambit${API_V}@js/4.o1
 lib/gambit/srfi/4/test/
 lib/gambit/srfi/4/test/test.scm
 lib/gambit/srfi/41/
+lib/gambit/srfi/41/41#.scm
 lib/gambit/srfi/41/41.scm
 lib/gambit/srfi/41/41.sld
 lib/gambit/srfi/41/41@gambit${API_V}@C/
@@ -1131,6 +1220,18 @@ lib/gambit/srfi/41/41@gambit${API_V}@js/41.js
 lib/gambit/srfi/41/41@gambit${API_V}@js/41.o1
 lib/gambit/srfi/41/test/
 lib/gambit/srfi/41/test/test.scm
+lib/gambit/srfi/42/
+lib/gambit/srfi/42/42#.scm
+lib/gambit/srfi/42/42.scm
+lib/gambit/srfi/42/42.sld
+lib/gambit/srfi/42/42@gambit${API_V}@C/
+lib/gambit/srfi/42/42@gambit${API_V}@C/42.c
+@bin lib/gambit/srfi/42/42@gambit${API_V}@C/42.o1
+lib/gambit/srfi/42/42@gambit${API_V}@js/
+lib/gambit/srfi/42/42@gambit${API_V}@js/42.js
+lib/gambit/srfi/42/42@gambit${API_V}@js/42.o1
+lib/gambit/srfi/42/test/
+lib/gambit/srfi/42/test/test.scm
 lib/gambit/srfi/45/
 lib/gambit/srfi/45/45#.scm
 lib/gambit/srfi/45/45.scm
@@ -1143,6 +1244,18 @@ lib/gambit/srfi/45/45@gambit${API_V}@js/45.js
 lib/gambit/srfi/45/45@gambit${API_V}@js/45.o1
 lib/gambit/srfi/45/test/
 lib/gambit/srfi/45/test/test.scm
+lib/gambit/srfi/48/
+lib/gambit/srfi/48/48#.scm
+lib/gambit/srfi/48/48.scm
+lib/gambit/srfi/48/48.sld
+lib/gambit/srfi/48/48@gambit${API_V}@C/
+lib/gambit/srfi/48/48@gambit${API_V}@C/48.c
+@bin lib/gambit/srfi/48/48@gambit${API_V}@C/48.o1
+lib/gambit/srfi/48/48@gambit${API_V}@js/
+lib/gambit/srfi/48/48@gambit${API_V}@js/48.js
+lib/gambit/srfi/48/48@gambit${API_V}@js/48.o1
+lib/gambit/srfi/48/test/
+lib/gambit/srfi/48/test/test.scm
 lib/gambit/srfi/5/
 lib/gambit/srfi/5/5#.scm
 lib/gambit/srfi/5/5.scm

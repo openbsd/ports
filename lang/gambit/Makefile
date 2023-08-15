@@ -2,8 +2,7 @@ BROKEN-riscv64=	gsi and gsi-script segfault at startup
 
 COMMENT=	complete, efficient and reliable implementation of Scheme
 
-V=		4.9.4
-REVISION=	0
+V=		4.9.5
 DISTNAME=	gambit-v${V:S/./_/g}
 PKGNAME=	gambit-$V
 API_V=		${V:R:S/./0/}00${V:E}
@@ -37,8 +36,6 @@ CONFIGURE_ARGS+=--disable-cplusplus \
 		--enable-poll
 
 CONFIGURE_ENV=	CC=${CC} CXX=${CXX} CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
-
-WRKDIST=	${WRKDIR}/gambit-$V
 
 MAKE_FILE=	${WRKSRC}/makefile
 

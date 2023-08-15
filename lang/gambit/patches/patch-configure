@@ -3,7 +3,7 @@ FLAGS_OPT_RTS doesn't honor the CFLAGS.
 Index: configure
 --- configure.orig
 +++ configure
-@@ -14988,7 +14988,7 @@ if test "$C_COMP_VISUALC" = yes; then
+@@ -15371,7 +15371,7 @@ if test "$C_COMP_VISUALC" = yes; then
  
  else
  
