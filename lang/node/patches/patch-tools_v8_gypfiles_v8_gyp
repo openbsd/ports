@@ -44,7 +44,7 @@ Index: tools/v8_gypfiles/v8.gyp
            'link_settings': {
              'libraries': ['-latomic', ],
            },
-@@ -1434,6 +1437,9 @@
+@@ -1438,6 +1441,9 @@
          '<!@pymod_do_main(GN-scraper "<(V8_ROOT)/BUILD.gn"  "\\"mksnapshot.*?sources = ")',
        ],
        'conditions': [
