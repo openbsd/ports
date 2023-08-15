@@ -10,6 +10,7 @@
      SUBDIR += asql
      SUBDIR += awl
      SUBDIR += awstats
+     SUBDIR += azorius
      SUBDIR += badwolf
      SUBDIR += blogsum
      SUBDIR += bluefish
