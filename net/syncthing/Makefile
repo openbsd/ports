@@ -1,7 +1,6 @@
-BROKEN =	The version of quic-go you're using can't be built on Go 1.21 yet.
 COMMENT =	open decentralized synchronization utility
 
-V =		1.23.6
+V =		1.23.7
 DISTNAME =	syncthing-${V}
 DISTFILES =	syncthing-source-v${V}${EXTRACT_SUFX}
 
@@ -27,10 +26,13 @@ MODGO_TYPE =		bin
 # so we package only these binaries.
 ST_CMDS =	syncthing stdiscosrv strelaysrv
 
+# XXX: `-tags noquic` should be removed once quic works on go-1.21. When
+# removing, check if some tests still fail to build -- I think they are caused
+# by disabling quic.
 do-build:
 .for cmd in ${ST_CMDS}
 	cd ${WRKSRC} && ${MODGO_CMD} run build.go -version v${V} \
-		-no-upgrade install ${cmd}
+		-no-upgrade -tags noquic install ${cmd}
 .endfor
 
 # Connections test hangs and times out. This doesn't appear to interfere with
