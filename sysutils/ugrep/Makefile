@@ -5,6 +5,8 @@ GH_ACCOUNT =	Genivia
 GH_PROJECT =	ugrep
 GH_TAGNAME =	v3.12.7
 
+REVISION =	0
+
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # BSD
