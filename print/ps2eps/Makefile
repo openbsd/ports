@@ -1,17 +1,14 @@
 COMMENT=	convert Postscript to Encapsulated Postscript
 
-DISTNAME=	ps2eps-1.68
+DISTNAME=	ps2eps-1.70
 CATEGORIES=	print
-REVISION =	0
 
-HOMEPAGE=	http://www.tm.uka.de/~bless/ps2eps.html
-
-MAINTAINER=	Laurence Tratt <laurie@tratt.net>
+HOMEPAGE=	https://telematics.tm.kit.edu/english/staff_bless.php?tab=%5B1512%5D
 
 # GPL
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://www.tm.uka.de/~bless/
+MASTER_SITES=	https://tm.kit.edu/~bless/
 
 RUN_DEPENDS=	print/ghostscript/gnu
 
