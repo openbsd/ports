@@ -5,15 +5,16 @@ CATEGORIES=	print
 
 HOMEPAGE=	https://telematics.tm.kit.edu/english/staff_bless.php?tab=%5B1512%5D
 
-# GPL
+# GPLv2+
 PERMIT_PACKAGE=	Yes
+
+WANTLIB=	c
 
 MASTER_SITES=	https://tm.kit.edu/~bless/
 
 RUN_DEPENDS=	print/ghostscript/gnu
 
-WANTLIB=	c
-WRKDIST= 	${WRKDIR}/ps2eps
+WRKDIST=	${WRKDIR}/ps2eps
 NO_TEST=	Yes
 
 do-build:
