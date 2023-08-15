@@ -1,0 +1,26 @@
+include/QXlsxQt6/
+include/QXlsxQt6/xlsxabstractooxmlfile.h
+include/QXlsxQt6/xlsxabstractsheet.h
+include/QXlsxQt6/xlsxabstractsheet_p.h
+include/QXlsxQt6/xlsxcell.h
+include/QXlsxQt6/xlsxcellformula.h
+include/QXlsxQt6/xlsxcelllocation.h
+include/QXlsxQt6/xlsxcellrange.h
+include/QXlsxQt6/xlsxcellreference.h
+include/QXlsxQt6/xlsxchart.h
+include/QXlsxQt6/xlsxchartsheet.h
+include/QXlsxQt6/xlsxconditionalformatting.h
+include/QXlsxQt6/xlsxdatavalidation.h
+include/QXlsxQt6/xlsxdatetype.h
+include/QXlsxQt6/xlsxdocument.h
+include/QXlsxQt6/xlsxformat.h
+include/QXlsxQt6/xlsxglobal.h
+include/QXlsxQt6/xlsxrichstring.h
+include/QXlsxQt6/xlsxworkbook.h
+include/QXlsxQt6/xlsxworksheet.h
+lib/cmake/QXlsxQt6/
+lib/cmake/QXlsxQt6/QXlsxQt6Config.cmake
+lib/cmake/QXlsxQt6/QXlsxQt6ConfigVersion.cmake
+lib/cmake/QXlsxQt6/QXlsxQt6Targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/QXlsxQt6/QXlsxQt6Targets.cmake
+@lib lib/libQXlsxQt6.so.${LIBQXlsxQt6_VERSION}

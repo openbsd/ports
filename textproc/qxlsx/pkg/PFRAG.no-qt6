@@ -1,0 +1,28 @@
+@conflict qxlsx-*
+@pkgpath textproc/qxlsx
+include/QXlsxQt5/
+include/QXlsxQt5/xlsxabstractooxmlfile.h
+include/QXlsxQt5/xlsxabstractsheet.h
+include/QXlsxQt5/xlsxabstractsheet_p.h
+include/QXlsxQt5/xlsxcell.h
+include/QXlsxQt5/xlsxcellformula.h
+include/QXlsxQt5/xlsxcelllocation.h
+include/QXlsxQt5/xlsxcellrange.h
+include/QXlsxQt5/xlsxcellreference.h
+include/QXlsxQt5/xlsxchart.h
+include/QXlsxQt5/xlsxchartsheet.h
+include/QXlsxQt5/xlsxconditionalformatting.h
+include/QXlsxQt5/xlsxdatavalidation.h
+include/QXlsxQt5/xlsxdatetype.h
+include/QXlsxQt5/xlsxdocument.h
+include/QXlsxQt5/xlsxformat.h
+include/QXlsxQt5/xlsxglobal.h
+include/QXlsxQt5/xlsxrichstring.h
+include/QXlsxQt5/xlsxworkbook.h
+include/QXlsxQt5/xlsxworksheet.h
+lib/cmake/QXlsxQt5/
+lib/cmake/QXlsxQt5/QXlsxQt5Config.cmake
+lib/cmake/QXlsxQt5/QXlsxQt5ConfigVersion.cmake
+lib/cmake/QXlsxQt5/QXlsxQt5Targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/QXlsxQt5/QXlsxQt5Targets.cmake
+@lib lib/libQXlsxQt5.so.${LIBQXlsxQt5_VERSION}
