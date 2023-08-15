@@ -489,6 +489,7 @@
      SUBDIR += py-yaml,python3
      SUBDIR += qpdfview
      SUBDIR += qxlsx
+     SUBDIR += qxlsx,qt6
      SUBDIR += raptor
      SUBDIR += rasqal
      SUBDIR += re2
