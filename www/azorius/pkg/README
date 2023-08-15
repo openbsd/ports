@@ -1,0 +1,32 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Initial configuration
+=====================
+
+azorius expects to be fronted by a TLS terminating reverse proxy.
+Make sure to pass the Host header for nginx(8)
+	proxy_set_header Host $http_host;
+
+Setup
+=====
+
+Please see ${TRUEPREFIX}/share/doc/azorius
+
+azorius(8)
+----------
+
+azorius# doas -su _azorius
+azorius$ umask 077; cd ${LOCALSTATEDIR}/azorius && azorius init
+listenaddr: localhost:31337
+servername: azorius.example.com
+username: puffy
+password: OxychromaticBlowfishSwatDynamite
+done.
+azorius$ exit
+
+azorius# rcctl enable azorius
+azorius# rcctl start azorius
+
+Azorius at https://azorius.example.com

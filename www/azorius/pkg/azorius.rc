@@ -1,0 +1,14 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/bin/azorius"
+daemon_flags="-datadir ${LOCALSTATEDIR}/azorius -viewdir ${LOCALSTATEDIR}/azorius"
+daemon_logger="daemon.info"
+daemon_user="_azorius"
+
+. /etc/rc.d/rc.subr
+
+pexp="${TRUEPREFIX}/bin/azorius .*"
+rc_bg=YES
+rc_reload=NO
+
+rc_cmd $1

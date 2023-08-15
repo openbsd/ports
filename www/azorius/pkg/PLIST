@@ -1,0 +1,102 @@
+@newgroup _azorius:892
+@newuser _azorius:892:_azorius::Azorius User:${LOCALSTATEDIR}/azorius:/sbin/nologin
+@rcscript ${RCDIR}/azorius
+@bin bin/azorius
+@mode 750
+@owner _azorius
+@group _azorius
+@sample ${LOCALSTATEDIR}/azorius/
+@sample ${LOCALSTATEDIR}/azorius/attachments/
+@sample ${LOCALSTATEDIR}/azorius/docs/
+@sample ${LOCALSTATEDIR}/azorius/views/
+@mode
+@owner
+@group
+@man man/man1/azorius.1
+@man man/man8/azorius.8
+share/doc/azorius/
+share/doc/azorius/LICENSE
+share/doc/azorius/README
+share/doc/azorius/azorius.1.html
+@sample ${LOCALSTATEDIR}/azorius/docs/azorius.1.html
+share/doc/azorius/azorius.8.html
+@sample ${LOCALSTATEDIR}/azorius/docs/azorius.8.html
+share/doc/azorius/intro.1.html
+@sample ${LOCALSTATEDIR}/azorius/docs/intro.1.html
+share/doc/azorius/mandoc.css
+@sample ${LOCALSTATEDIR}/azorius/docs/mandoc.css
+share/doc/pkg-readmes/${PKGSTEM}
+share/examples/azorius/
+share/examples/azorius/schema.sql
+@sample ${LOCALSTATEDIR}/azorius/schema.sql
+share/examples/azorius/views/
+share/examples/azorius/views/about.html
+@sample ${LOCALSTATEDIR}/azorius/views/about.html
+share/examples/azorius/views/account.html
+@sample ${LOCALSTATEDIR}/azorius/views/account.html
+share/examples/azorius/views/admin.html
+@sample ${LOCALSTATEDIR}/azorius/views/admin.html
+share/examples/azorius/views/admingroups.html
+@sample ${LOCALSTATEDIR}/azorius/views/admingroups.html
+share/examples/azorius/views/adminheader.html
+@sample ${LOCALSTATEDIR}/azorius/views/adminheader.html
+share/examples/azorius/views/adminpeers.html
+@sample ${LOCALSTATEDIR}/azorius/views/adminpeers.html
+share/examples/azorius/views/adminreports.html
+@sample ${LOCALSTATEDIR}/azorius/views/adminreports.html
+share/examples/azorius/views/adminusers.html
+@sample ${LOCALSTATEDIR}/azorius/views/adminusers.html
+share/examples/azorius/views/editcomment.html
+@sample ${LOCALSTATEDIR}/azorius/views/editcomment.html
+share/examples/azorius/views/editgroup.html
+@sample ${LOCALSTATEDIR}/azorius/views/editgroup.html
+share/examples/azorius/views/editpost.html
+@sample ${LOCALSTATEDIR}/azorius/views/editpost.html
+share/examples/azorius/views/error.html
+@sample ${LOCALSTATEDIR}/azorius/views/error.html
+share/examples/azorius/views/formcomment.html
+@sample ${LOCALSTATEDIR}/azorius/views/formcomment.html
+share/examples/azorius/views/formgroup.html
+@sample ${LOCALSTATEDIR}/azorius/views/formgroup.html
+share/examples/azorius/views/formpost.html
+@sample ${LOCALSTATEDIR}/azorius/views/formpost.html
+share/examples/azorius/views/fragcomment.html
+@sample ${LOCALSTATEDIR}/azorius/views/fragcomment.html
+share/examples/azorius/views/groupreports.html
+@sample ${LOCALSTATEDIR}/azorius/views/groupreports.html
+share/examples/azorius/views/groups.html
+@sample ${LOCALSTATEDIR}/azorius/views/groups.html
+share/examples/azorius/views/header.html
+@sample ${LOCALSTATEDIR}/azorius/views/header.html
+share/examples/azorius/views/headergroups.html
+@sample ${LOCALSTATEDIR}/azorius/views/headergroups.html
+share/examples/azorius/views/headeronegroup.html
+@sample ${LOCALSTATEDIR}/azorius/views/headeronegroup.html
+share/examples/azorius/views/homepage.html
+@sample ${LOCALSTATEDIR}/azorius/views/homepage.html
+share/examples/azorius/views/icon.png
+@sample ${LOCALSTATEDIR}/azorius/views/icon.png
+share/examples/azorius/views/login.html
+@sample ${LOCALSTATEDIR}/azorius/views/login.html
+share/examples/azorius/views/msg.html
+@sample ${LOCALSTATEDIR}/azorius/views/msg.html
+share/examples/azorius/views/multipost.html
+@sample ${LOCALSTATEDIR}/azorius/views/multipost.html
+share/examples/azorius/views/newgroup.html
+@sample ${LOCALSTATEDIR}/azorius/views/newgroup.html
+share/examples/azorius/views/newpost.html
+@sample ${LOCALSTATEDIR}/azorius/views/newpost.html
+share/examples/azorius/views/onecomment.html
+@sample ${LOCALSTATEDIR}/azorius/views/onecomment.html
+share/examples/azorius/views/onegroup.html
+@sample ${LOCALSTATEDIR}/azorius/views/onegroup.html
+share/examples/azorius/views/oneperson.html
+@sample ${LOCALSTATEDIR}/azorius/views/oneperson.html
+share/examples/azorius/views/onepost.html
+@sample ${LOCALSTATEDIR}/azorius/views/onepost.html
+share/examples/azorius/views/reply.html
+@sample ${LOCALSTATEDIR}/azorius/views/reply.html
+share/examples/azorius/views/report.html
+@sample ${LOCALSTATEDIR}/azorius/views/report.html
+share/examples/azorius/views/style.css
+@sample ${LOCALSTATEDIR}/azorius/views/style.css
