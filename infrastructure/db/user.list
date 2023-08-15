@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.429 2023/08/10 07:28:59 paco Exp $
+$OpenBSD: user.list,v 1.430 2023/08/15 15:54:30 gonzalo Exp $
 
 This file lists all users and groups that are created by ports. All
 ports' users/groups have to start with an underscore and have to use
@@ -401,3 +401,4 @@ id  user		group		port
 890 _grommunio		_grommunio	mail/grommunio/admin-api
 891 _kiwix-serve	_kiwix-serve	www/kiwix/kiwix-tools
 892 _shiori		_shiori		www/shiori
+893 _azorius		_azorius	www/azorius
