@@ -6,6 +6,7 @@ ONLY_FOR_ARCHS =	aarch64 amd64 arm i386 mips64el powerpc powerpc64 sparc64
 COMMENT =		multi-paradigm programming language
 
 V =			8.9
+REVISION =		0
 PKGNAME =		racket-minimal-$V
 DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX} \
 			racket-openbsd-2${EXTRACT_SUFX}:0
@@ -71,7 +72,7 @@ CONFIGURE_ARGS +=	--disable-docs \
 			--disable-shared \
 			--disable-standalone
 
-CONFIGURE_ENV +=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${LDFLAGS_WXNEEDED}" \
+CONFIGURE_ENV +=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${LDFLAGS_WXNEEDED} ${LDFLAGS_NOBTCFI}" \
 			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
 
 .include <bsd.port.arch.mk>
@@ -88,8 +89,10 @@ FLAVOR ?=
 .if ${FLAVOR:Mpb}
 CONFIGURE_ARGS +=	--enable-pb
 .elif ${MACHINE_ARCH} == "amd64"
+USE_NOBTCFI =		Yes
 USE_WXNEEDED =		Yes
 LDFLAGS_WXNEEDED =	-Wl,-z,wxneeded
+LDFLAGS_NOBTCFI =	-Wl,-z,nobtcfi
 .elif ${MACHINE_ARCH} == "powerpc64" || ${MACHINE_ARCH} == "sparc64"
 CONFIGURE_ARGS +=	--enable-pb \
 			--enable-mach=tpb64b
