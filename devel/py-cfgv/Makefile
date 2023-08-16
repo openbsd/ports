@@ -1,6 +1,6 @@
 COMMENT =		configuration validator
 
-MODPY_EGG_VERSION =	3.3.1
+MODPY_EGG_VERSION =	3.4.0
 DISTNAME =		cfgv-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
