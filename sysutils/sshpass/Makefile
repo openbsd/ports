@@ -1,6 +1,6 @@
 COMMENT =	noninteractive ssh password provider
 
-DISTNAME =	sshpass-1.09
+DISTNAME =	sshpass-1.10
 
 CATEGORIES =	sysutils
 
