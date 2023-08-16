@@ -1,7 +1,16 @@
 Index: Makefile.rules
 --- Makefile.rules.orig
 +++ Makefile.rules
-@@ -320,7 +320,8 @@ installlocalbin: $(INSTALLBINPROGS)
+@@ -139,7 +139,7 @@ installlocalheaders:
+ 		it="$(INCLUDESUBDIRHEADERS)" ; \
+ 		$(SHELL) $(top_srcdir)/mkinstalldirs $(INSTALL_PREFIX)$(includedir)/$(INCLUDESUBDIR) ; \
+ 		for i in $$it ; do \
+-			$(INSTALL_DATA) $(top_srcdir)/include/net-snmp/$(INCLUDESUBDIR)/$$i $(INSTALL_PREFIX)$(includedir)/$(INCLUDESUBDIR) ; \
++			$(INSTALL_DATA) $(top_srcdir)/include/net-snmp/$(INCLUDESUBDIR)/$$i $(INSTALL_PREFIX)$(includedir)/$(INCLUDESUBDIR) || true; \
+ 			echo "installing $$i in $(INSTALL_PREFIX)$(includedir)/$(INCLUDESUBDIR)" ; \
+ 		done \
+ 	fi
+@@ -317,7 +317,8 @@ installlocalbin: $(INSTALLBINPROGS)
  	@if test "$(INSTALLBINPROGS) $(INSTALLBINSCRIPTS)" != " "; then \
  		$(SHELL) $(top_srcdir)/mkinstalldirs $(INSTALL_PREFIX)$(bindir) ; \
  		it="$(INSTALLBINPROGS) $(INSTALLBINSCRIPTS)" ; \
@@ -11,7 +20,7 @@ Index: Makefile.rules
  		for i in $$it ; do   \
  			echo "installing $$i in $(INSTALL_PREFIX)$(bindir)"; \
  		done \
-@@ -358,7 +359,7 @@ installlocalsbin: $(INSTALLSBINPROGS)
+@@ -355,7 +356,7 @@ installlocalsbin: $(INSTALLSBINPROGS)
  	@if test "$(INSTALLSBINPROGS)" != ""; then \
  		it="$(INSTALLSBINPROGS)" ; \
  		$(SHELL) $(top_srcdir)/mkinstalldirs $(INSTALL_PREFIX)$(sbindir) ; \

@@ -1,13 +1,11 @@
 COMMENT-main=	extendable SNMP implementation
 COMMENT-tkmib=	graphical SNMP MIB browser
 
-V=		5.9.3
-DISTNAME=	net-snmp-$V
+V=		5.9.4
+DISTNAME=	net-snmp-${V:S/pre/.pre/}
 MULTI_PACKAGES=	-main -tkmib
 PKGNAME-main=	net-snmp-$V
 PKGNAME-tkmib=	net-snmp-tkmib-$V
-REVISION-main=	4
-REVISION-tkmib=	0
 
 # tkmib isn't flavoured
 FULLPKGPATH-tkmib= net/net-snmp,-tkmib
@@ -15,13 +13,14 @@ FULLPKGNAME-tkmib= net-snmp-tkmib-$V
 
 # N.B. p5 module picks up installed libs in /usr/local
 # please check sysutils/snmp_exporter "make test" if updating
-SHARED_LIBS += netsnmp		19.0
+SHARED_LIBS += netsnmp		19.1
 SHARED_LIBS += netsnmpagent	17.0
 SHARED_LIBS += netsnmphelpers	15.1
-SHARED_LIBS += netsnmpmibs	19.0
+SHARED_LIBS += netsnmpmibs	19.1
 SHARED_LIBS += netsnmptrapd	15.1
 
 CATEGORIES=	net perl5
+PORTROACH=	site:https://github.com/net-snmp/net-snmp/releases/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=net-snmp/}
 
 HOMEPAGE=	http://www.net-snmp.org/
@@ -31,7 +30,7 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 # BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB-main=	c crypto curses kvm m perl
+WANTLIB-main=	c crypto curses kvm m perl ssl
 
 FLAVORS=	readonly
 FLAVOR?=

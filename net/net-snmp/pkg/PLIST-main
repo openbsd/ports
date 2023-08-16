@@ -130,7 +130,6 @@ include/net-snmp/library/snmp-tc.h
 include/net-snmp/library/snmp.h
 include/net-snmp/library/snmpAliasDomain.h
 include/net-snmp/library/snmpCallbackDomain.h
-include/net-snmp/library/snmpIPBaseDomain.h
 include/net-snmp/library/snmpIPv4BaseDomain.h
 include/net-snmp/library/snmpIPv6BaseDomain.h
 include/net-snmp/library/snmpSocketBaseDomain.h
