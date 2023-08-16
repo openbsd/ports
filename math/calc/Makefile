@@ -1,6 +1,6 @@
 COMMENT=	C-style arbitrary precision calculator
 
-V=		2.14.3.0
+V=		2.14.3.4
 DISTNAME=	calc-$V
 EXTRACT_SUFX=	.tar.bz2
 
@@ -43,6 +43,6 @@ USE_GMAKE=	Yes
 TEST_TARGET=	check
 
 post-install:
-	rm ${PREFIX}/lib/lib{cust,}calc.so
+	rm ${PREFIX}/lib/lib{cust,}calc.so{,.*.*.*}
 
 .include <bsd.port.mk>
