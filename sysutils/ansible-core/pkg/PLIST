@@ -2271,12 +2271,16 @@ lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/sanity/
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/sanity/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/sanity/${MODPY_PYCACHE}ansible_doc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/sanity/${MODPY_PYCACHE}ansible_doc.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/sanity/${MODPY_PYCACHE}bin_symlinks.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/sanity/${MODPY_PYCACHE}bin_symlinks.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/sanity/${MODPY_PYCACHE}compile.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/sanity/${MODPY_PYCACHE}compile.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/sanity/${MODPY_PYCACHE}ignores.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/sanity/${MODPY_PYCACHE}ignores.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/sanity/${MODPY_PYCACHE}import.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/sanity/${MODPY_PYCACHE}import.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/sanity/${MODPY_PYCACHE}integration_aliases.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/sanity/${MODPY_PYCACHE}integration_aliases.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/sanity/${MODPY_PYCACHE}mypy.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/sanity/${MODPY_PYCACHE}mypy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/sanity/${MODPY_PYCACHE}pep8.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2285,8 +2289,6 @@ lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/sanity/
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/sanity/${MODPY_PYCACHE}pslint.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/sanity/${MODPY_PYCACHE}pylint.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/sanity/${MODPY_PYCACHE}pylint.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/sanity/${MODPY_PYCACHE}sanity_docs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/sanity/${MODPY_PYCACHE}sanity_docs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/sanity/${MODPY_PYCACHE}shellcheck.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/sanity/${MODPY_PYCACHE}shellcheck.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/sanity/${MODPY_PYCACHE}validate_modules.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2294,14 +2296,15 @@ lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/sanity/
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/sanity/${MODPY_PYCACHE}yamllint.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/sanity/${MODPY_PYCACHE}yamllint.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/sanity/ansible_doc.py
+lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/sanity/bin_symlinks.py
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/sanity/compile.py
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/sanity/ignores.py
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/sanity/import.py
+lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/sanity/integration_aliases.py
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/sanity/mypy.py
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/sanity/pep8.py
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/sanity/pslint.py
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/sanity/pylint.py
-lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/sanity/sanity_docs.py
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/sanity/shellcheck.py
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/sanity/validate_modules.py
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/sanity/yamllint.py
@@ -2517,6 +2520,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_test/_util/controller/sanity/my
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_util/controller/sanity/mypy/ansible-core.ini
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_util/controller/sanity/mypy/ansible-test.ini
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_util/controller/sanity/mypy/modules.ini
+lib/python${MODPY_VERSION}/site-packages/ansible_test/_util/controller/sanity/mypy/packaging.ini
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_util/controller/sanity/pep8/
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_util/controller/sanity/pep8/current-ignore.txt
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_util/controller/sanity/pslint/
@@ -2667,21 +2671,6 @@ lib/python${MODPY_VERSION}/site-packages/ansible_test/config/cloud-config-vultr.
 lib/python${MODPY_VERSION}/site-packages/ansible_test/config/config.yml
 lib/python${MODPY_VERSION}/site-packages/ansible_test/config/inventory.networking.template
 lib/python${MODPY_VERSION}/site-packages/ansible_test/config/inventory.winrm.template
-@man man/man1/ansible-config.1
-@man man/man1/ansible-console.1
-@man man/man1/ansible-doc.1
-@man man/man1/ansible-galaxy.1
-@man man/man1/ansible-inventory.1
-@man man/man1/ansible-playbook.1
-@man man/man1/ansible-pull.1
-@man man/man1/ansible-vault.1
-@man man/man1/ansible.1
 share/doc/ansible/
 share/doc/ansible/CHANGELOG-v2.15.rst
 share/doc/ansible/COPYING
-share/examples/ansible/
-@sample ${SYSCONFDIR}/ansible/
-share/examples/ansible/ansible.cfg
-@sample ${SYSCONFDIR}/ansible/ansible.cfg
-share/examples/ansible/hosts
-@sample ${SYSCONFDIR}/ansible/hosts

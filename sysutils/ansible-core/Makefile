@@ -1,6 +1,6 @@
 COMMENT =		radically simple IT automation
 
-MODPY_EGG_VERSION =	2.15.2
+MODPY_EGG_VERSION =	2.15.3
 DISTNAME =		ansible-core-${MODPY_EGG_VERSION}
 
 CATEGORIES =		sysutils
@@ -18,9 +18,7 @@ MODPY_PI =              Yes
 MODPY_PYBUILD =		setuptools
 
 BUILD_DEPENDS =		devel/py-resolvelib${MODPY_FLAVOR} \
-			devel/py-straight.plugin${MODPY_FLAVOR} \
 			sysutils/py-packaging${MODPY_FLAVOR} \
-			textproc/py-docutils${MODPY_FLAVOR} \
 			textproc/py-yaml${MODPY_FLAVOR} \
 			www/py-jinja2${MODPY_FLAVOR}
 
@@ -46,24 +44,14 @@ USE_GMAKE =		Yes
 TEST_ENV =		HOME=${WRKSRC} ANSIBLE_REMOTE_TMP=${WRKSRC}
 
 pre-install:
-	cd ${WRKSRC} && env PYTHONPATH=lib HOME=./ ${MODPY_BIN} \
-		bin/ansible-config init --disabled -t all > examples/ansible.cfg
-	cd ${WRKSRC} && ${SETENV} HOME=${WRKSRC} PYTHON=${MODPY_BIN} \
-		${MAKE_PROGRAM} docs
-	sed -i -e "s,/usr/,${TRUEPREFIX}/,g;" \
-		${WRKSRC}/examples/ansible.cfg \
-		${WRKSRC}/docs/man/man1/*.1
 	sed -i -e "s,/usr/bin/python,${MODPY_BIN},g;" \
 		${WRKSRC}/test/units/modules/test_async_wrapper.py
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/{doc,examples}/ansible
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ansible
 	${INSTALL_DATA} ${WRKSRC}/COPYING ${PREFIX}/share/doc/ansible
 	${INSTALL_DATA} ${WRKSRC}/changelogs/CHANGELOG-v*.rst \
 		${PREFIX}/share/doc/ansible
-	${INSTALL_MAN} ${WRKSRC}/docs/man/man1/*.1 ${PREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/examples/{ansible.cfg,hosts} \
-		${PREFIX}/share/examples/ansible
 	find ${PREFIX} -type f \( -name '.git*' -o -name '*.orig' \
 		-o -name '.travis.yml' \) -delete
 
