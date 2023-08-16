@@ -1,4 +1,4 @@
-64bit time_t
+64bit time_t + Test for rfc2047 token decoding logic for base64 encodings
 
 Index: tests/test-mime.c
 --- tests/test-mime.c.orig
@@ -12,3 +12,13 @@ Index: tests/test-mime.c
  			
  			if (tz_offset != dates[i].tzone)
  				throw (exception_new ("timezones do not match"));
+@@ -408,6 +408,9 @@ static struct {
+ 	  "blah:\tI am broken",
+ 	  "blah:\tI am broken" },
+ #endif
++	{ "=?UTF-8?B?SGVsbG8=?= =?UTF-8?B?IHdvcmxk?=",
++	  "Hello world",
++	  "Hello world" },
+ 	{ "=?iso-8859-1?Q?Copy_of_Rapport_fra_Norges_R=E5fisklag=2Edoc?=",
+ 	  "Copy of Rapport fra Norges R\xc3\xa5" "fisklag.doc",
+ 	  "Copy of Rapport fra Norges =?iso-8859-1?q?R=E5fisklag=2Edoc?=" },

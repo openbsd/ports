@@ -1,0 +1,26 @@
+Fix rfc2047 token decoding logic for base64 encodings
+Bug report: https://github.com/djcb/mu/issues/2429
+
+Index: gmime/gmime-utils.c
+--- gmime/gmime-utils.c.orig
++++ gmime/gmime-utils.c
+@@ -1789,10 +1789,16 @@ rfc2047_token_decode (rfc2047_token *token, unsigned c
+ 	const unsigned char *inbuf = (const unsigned char *) token->text;
+ 	size_t len = token->length;
+ 	
+-	if (token->encoding == 'B')
++	if (token->encoding == 'B') {
++		/* Note: A state of -1 means that a previous rfc2047 encoded-word token ended with an '=' (aka 'eof'),
++		 * so we need to reset the state. */
++		if (*state == -1)
++			*state = 0;
++
+ 		return g_mime_encoding_base64_decode_step (inbuf, len, outbuf, state, save);
+-	else
+-		return quoted_decode (inbuf, len, outbuf, state, save);
++	}
++
++	return quoted_decode (inbuf, len, outbuf, state, save);
+ }
+ 
+ static char *
