@@ -1,7 +1,7 @@
 COMMENT =		dotfiles manager across multiple diverse machines
 
 MODGO_MODNAME =		github.com/twpayne/chezmoi/v2
-MODGO_VERSION =		v2.32.0
+MODGO_VERSION =		v2.37.0
 
 DISTNAME =		chezmoi-${MODGO_VERSION}
 
@@ -17,6 +17,9 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += 		c pthread
 
 MODULES =		lang/go
+
+MODGO_LDFLAGS +=	-X "main.version=${MODGO_VERSION}" \
+			-X "main.builtBy=OpenBSD-ports"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/zsh/site-functions
