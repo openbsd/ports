@@ -1,12 +1,12 @@
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -193,7 +193,7 @@ setup(
+@@ -294,7 +294,7 @@ setup(
+         ),
      ],
-     scripts=["src/rdiff-backup", "src/rdiff-backup-statistics", "src/rdiff-backup-delete"],
      data_files=[
--        ("share/man/man1", ["build/rdiff-backup.1", "build/rdiff-backup-statistics.1"]),
-+        ("man/man1", ["build/rdiff-backup.1", "build/rdiff-backup-statistics.1"]),
-         (
-             "share/doc/rdiff-backup",
-             [
+-        ("share/man/man1", ["dist/rdiff-backup.1",
++        ("man/man1", ["dist/rdiff-backup.1",
+                             "dist/rdiff-backup-old.1",
+                             "dist/rdiff-backup-delete.1",
+                             "dist/rdiff-backup-statistics.1"]),
