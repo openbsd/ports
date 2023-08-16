@@ -1,0 +1,14 @@
+Tentative fix to build with vala 0.56.11.
+
+Index: main/src/ui/util/helper.vala
+--- main/src/ui/util/helper.vala.orig
++++ main/src/ui/util/helper.vala
+@@ -177,7 +177,7 @@ private const string force_color_css = "%s { color: %s
+ public static Gtk.CssProvider force_css(Gtk.Widget widget, string css) {
+     var p = new Gtk.CssProvider();
+     try {
+-        p.load_from_data(css.data);
++        p.load_from_data((string) css.data, -1);
+         widget.get_style_context().add_provider(p, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+     } catch (GLib.Error err) {
+         // handle err
