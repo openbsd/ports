@@ -18,7 +18,6 @@ share/doc/login_duo/
 share/doc/login_duo/AUTHORS
 share/doc/login_duo/CHANGES
 share/doc/login_duo/CONTRIBUTING.md
-share/doc/login_duo/LICENSE
 share/doc/login_duo/README.md
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/login_duo/
