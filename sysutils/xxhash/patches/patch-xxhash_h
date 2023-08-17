@@ -1,0 +1,17 @@
+Index: xxhash.h
+--- xxhash.h.orig
++++ xxhash.h
+@@ -1983,8 +1983,11 @@ XXH3_128bits_reset_withSecretandSeed(XXH_NOESCAPE XXH3
+    /* prefer __packed__ structures (method 1) for GCC
+     * < ARMv7 with unaligned access (e.g. Raspbian armhf) still uses byte shifting, so we use memcpy
+     * which for some reason does unaligned loads. */
+-#  if defined(__GNUC__) && !(defined(__ARM_ARCH) && __ARM_ARCH < 7 && defined(__ARM_FEATURE_UNALIGNED))
+-#    define XXH_FORCE_MEMORY_ACCESS 1
++#  if defined(__GNUC__)
++#    include <endian.h>   /* __STRICT_ALIGNMENT */
++#    if !defined(__STRICT_ALIGNMENT)
++#      define XXH_FORCE_MEMORY_ACCESS 1
++#    endif
+ #  endif
+ #endif
+ 

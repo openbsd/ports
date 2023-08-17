@@ -3,6 +3,7 @@ COMMENT =	extremely fast non-cryptographic hash algorithm
 GH_ACCOUNT =	Cyan4973
 GH_PROJECT =	xxHash
 GH_TAGNAME =	v0.8.2
+REVISION =	0
 PKGNAME =	${DISTNAME:L}
 
 SHARED_LIBS =	xxhash 0.3	# 0.8.1
