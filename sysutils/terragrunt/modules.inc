@@ -454,7 +454,7 @@ MODGO_MODULES =	\
 	github.com/seccomp/libseccomp-golang				 v0.9.2-0.20210429002308-3879420cc921 \
 	github.com/sergi/go-diff					 v1.2.0 \
 	github.com/shurcoo!l/sanitized_anchor_name			 v1.0.0 \
-	github.com/sirupsen/logrus					 v1.8.1 \
+	github.com/sirupsen/logrus					 v1.9.3 \
 	github.com/slack-go/slack					 v0.10.3 \
 	github.com/smartystreets/assertions				 v0.0.0-20180927180507-b2de0cb4f26d \
 	github.com/smartystreets/goconvey				 v0.0.0-20180222194500-ef6db91d284a \
@@ -514,7 +514,7 @@ MODGO_MODULES =	\
 	golang.org/x/net						 v0.11.0 \
 	golang.org/x/oauth2						 v0.8.0 \
 	golang.org/x/sync						 v0.3.0 \
-	golang.org/x/sys						 v0.9.0 \
+	golang.org/x/sys						 v0.11.0 \
 	golang.org/x/term						 v0.9.0 \
 	golang.org/x/text						 v0.10.0 \
 	golang.org/x/time						 v0.0.0-20220224211638-0e9765cccd65 \
@@ -1060,6 +1060,7 @@ MODGO_MODFILES =	\
 	github.com/sergi/go-diff				 v1.0.0 \
 	github.com/sirupsen/logrus				 v1.2.0 \
 	github.com/sirupsen/logrus				 v1.4.2 \
+	github.com/sirupsen/logrus				 v1.8.1 \
 	github.com/spf13/afero					 v1.2.2 \
 	github.com/spf13/pflag					 v0.0.0-20170130214245-9ff6c6923cff \
 	github.com/spf13/pflag					 v1.0.1 \
@@ -1364,12 +1365,14 @@ MODGO_MODFILES =	\
 	golang.org/x/sys					 v0.0.0-20220610221304-9f5ed59c137d \
 	golang.org/x/sys					 v0.0.0-20220615213510-4f61da869c0c \
 	golang.org/x/sys					 v0.0.0-20220624220833-87e55d714810 \
+	golang.org/x/sys					 v0.0.0-20220715151400-c0bba94af5f8 \
 	golang.org/x/sys					 v0.0.0-20220722155257-8c9f86f7a55f \
 	golang.org/x/sys					 v0.0.0-20220728004956-3c1f35247d10 \
 	golang.org/x/sys					 v0.0.0-20220811171246-fbc7d0a398ab \
 	golang.org/x/sys					 v0.1.0 \
 	golang.org/x/sys					 v0.5.0 \
 	golang.org/x/sys					 v0.6.0 \
+	golang.org/x/sys					 v0.9.0 \
 	golang.org/x/term					 v0.0.0-20201117132131-f5c789dd3221 \
 	golang.org/x/term					 v0.0.0-20201126162022-7de9c90e9dd1 \
 	golang.org/x/term					 v0.0.0-20201210144234-2321bbc49cbf \
