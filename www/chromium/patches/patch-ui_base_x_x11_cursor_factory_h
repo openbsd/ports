@@ -10,7 +10,7 @@ Index: ui/base/x/x11_cursor_factory.h
  class LinuxUi;
  #endif
  
-@@ -59,7 +59,7 @@ class COMPONENT_EXPORT(UI_BASE_X) X11CursorFactory
+@@ -60,7 +60,7 @@ class COMPONENT_EXPORT(UI_BASE_X) X11CursorFactory
  
    std::map<mojom::CursorType, scoped_refptr<X11Cursor>> default_cursors_;
  

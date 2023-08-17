@@ -8,7 +8,7 @@ Index: chrome/test/chromedriver/capabilities.cc
 +#if defined(__clang__) && (__clang_major__ >= 15)
          brands.emplace_back(*brand, *version);
 +#else
-+        brands.emplace_back(BrandVersion{*brand, *version});
++        brands.emplace_back() = {*brand, *version};
 +#endif
        }
  
@@ -20,7 +20,7 @@ Index: chrome/test/chromedriver/capabilities.cc
 +#if defined(__clang__) && (__clang_major__ >= 15)
          full_version_list.emplace_back(*brand, *version);
 +#else
-+        full_version_list.emplace_back(BrandVersion{*brand, *version});
++        full_version_list.emplace_back() = {*brand, *version};
 +#endif
        }
  

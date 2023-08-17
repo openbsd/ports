@@ -10,7 +10,7 @@ Index: content/renderer/render_process_impl.cc
  #include "v8/include/v8-wasm-trap-handler-posix.h"
  #endif
  
-@@ -221,7 +221,7 @@ RenderProcessImpl::RenderProcessImpl()
+@@ -211,7 +211,7 @@ RenderProcessImpl::RenderProcessImpl()
      v8::V8::SetFlagsFromString(kSABPerContextFlag, sizeof(kSABPerContextFlag));
    }
  

@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/webui/realbox/realbox_handler.cc
 --- chrome/browser/ui/webui/realbox/realbox_handler.cc.orig
 +++ chrome/browser/ui/webui/realbox/realbox_handler.cc
-@@ -141,7 +141,7 @@ constexpr char kMacShareIconResourceName[] =
+@@ -144,7 +144,7 @@ constexpr char kMacShareIconResourceName[] =
  #elif BUILDFLAG(IS_WIN)
  constexpr char kWinShareIconResourceName[] =
      "//resources/cr_components/omnibox/icons/win_share.svg";
@@ -10,7 +10,7 @@ Index: chrome/browser/ui/webui/realbox/realbox_handler.cc
  constexpr char kLinuxShareIconResourceName[] =
      "//resources/cr_components/omnibox/icons/share.svg";
  #else
-@@ -688,7 +688,7 @@ std::string RealboxHandler::PedalVectorIconToResourceN
+@@ -735,7 +735,7 @@ std::string RealboxHandler::PedalVectorIconToResourceN
        icon.name == omnibox::kShareWinChromeRefreshIcon.name) {
      return kWinShareIconResourceName;
    }

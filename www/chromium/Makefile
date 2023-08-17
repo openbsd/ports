@@ -6,8 +6,7 @@ DPB_PROPERTIES=		parallel parallel2
 
 COMMENT=		Chromium browser
 
-V=			115.0.5790.170
-REVISION=		0
+V=			116.0.5845.96
 
 DISTNAME=		chromium-${V}
 
@@ -162,7 +161,6 @@ GN_ARGS=	enable_nacl=false \
 		use_system_libjpeg=true \
 		use_system_harfbuzz=true \
 		use_system_freetype=false \
-		use_gnome_keyring=false \
 		icu_use_data_file=false \
 		is_clang=true \
 		use_sysroot=false \

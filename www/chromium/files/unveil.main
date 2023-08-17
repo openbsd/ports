@@ -20,7 +20,9 @@
 /usr/bin/lpr rx
 
 # needed for xdg tools
+/usr/local/bin/update-desktop-database rx
 /usr/local/bin/xdg-desktop-menu rx
+/usr/local/bin/xdg-icon-resource rx
 /usr/local/bin/xdg-open rx
 /usr/local/bin/xdg-settings rx
 

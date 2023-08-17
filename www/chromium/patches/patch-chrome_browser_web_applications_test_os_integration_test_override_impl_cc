@@ -118,7 +118,7 @@ Index: chrome/browser/web_applications/test/os_integration_test_override_impl.cc
    auto callback = base::BindRepeating([](base::FilePath filename_in,
                                           std::string xdg_command,
                                           std::string file_contents) {
-@@ -767,7 +767,7 @@ OsIntegrationTestOverrideImpl::~OsIntegrationTestOverr
+@@ -769,7 +769,7 @@ OsIntegrationTestOverrideImpl::~OsIntegrationTestOverr
        }
      }
    }
