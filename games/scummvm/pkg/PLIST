@@ -25,6 +25,7 @@ share/pixmaps/scummvm.xpm
 share/scummvm/
 share/scummvm/access.dat
 share/scummvm/achievements.dat
+share/scummvm/classicmacfonts.dat
 share/scummvm/cryomni3d.dat
 share/scummvm/drascula.dat
 share/scummvm/encoding.dat
@@ -58,6 +59,10 @@ share/scummvm/shaders/emi_dimplane.fragment
 share/scummvm/shaders/emi_dimplane.vertex
 share/scummvm/shaders/emi_sprite.fragment
 share/scummvm/shaders/emi_sprite.vertex
+share/scummvm/shaders/freescape_bitmap.fragment
+share/scummvm/shaders/freescape_bitmap.vertex
+share/scummvm/shaders/freescape_triangle.fragment
+share/scummvm/shaders/freescape_triangle.vertex
 share/scummvm/shaders/grim_actor.fragment
 share/scummvm/shaders/grim_actor.vertex
 share/scummvm/shaders/grim_actorlights.fragment
