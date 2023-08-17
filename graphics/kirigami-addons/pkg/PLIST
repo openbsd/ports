@@ -2,6 +2,14 @@ lib/cmake/KF5KirigamiAddons/
 lib/cmake/KF5KirigamiAddons/KF5KirigamiAddonsConfig.cmake
 lib/cmake/KF5KirigamiAddons/KF5KirigamiAddonsConfigVersion.cmake
 lib/qt5/qml/org/kde/kirigamiaddons/
+lib/qt5/qml/org/kde/kirigamiaddons/components/
+lib/qt5/qml/org/kde/kirigamiaddons/components/Avatar.qml
+lib/qt5/qml/org/kde/kirigamiaddons/components/AvatarButton.qml
+lib/qt5/qml/org/kde/kirigamiaddons/components/Banner.qml
+lib/qt5/qml/org/kde/kirigamiaddons/components/DoubleFloatingButton.qml
+lib/qt5/qml/org/kde/kirigamiaddons/components/FloatingButton.qml
+@so lib/qt5/qml/org/kde/kirigamiaddons/components/libcomponentsplugin.so
+lib/qt5/qml/org/kde/kirigamiaddons/components/qmldir
 lib/qt5/qml/org/kde/kirigamiaddons/dateandtime/
 lib/qt5/qml/org/kde/kirigamiaddons/dateandtime/ClockFace.qml
 lib/qt5/qml/org/kde/kirigamiaddons/dateandtime/DateInput.qml
@@ -24,6 +32,31 @@ lib/qt5/qml/org/kde/kirigamiaddons/delegates/RoundedItemDelegate.qml
 lib/qt5/qml/org/kde/kirigamiaddons/delegates/SubtitleContentItem.qml
 @so lib/qt5/qml/org/kde/kirigamiaddons/delegates/libdelegatesplugin.so
 lib/qt5/qml/org/kde/kirigamiaddons/delegates/qmldir
+lib/qt5/qml/org/kde/kirigamiaddons/formcard/
+lib/qt5/qml/org/kde/kirigamiaddons/formcard/AboutKDE.qml
+lib/qt5/qml/org/kde/kirigamiaddons/formcard/AboutPage.qml
+lib/qt5/qml/org/kde/kirigamiaddons/formcard/AbstractFormDelegate.qml
+lib/qt5/qml/org/kde/kirigamiaddons/formcard/FormArrow.qml
+lib/qt5/qml/org/kde/kirigamiaddons/formcard/FormButtonDelegate.qml
+lib/qt5/qml/org/kde/kirigamiaddons/formcard/FormCard.qml
+lib/qt5/qml/org/kde/kirigamiaddons/formcard/FormCardPage.qml
+lib/qt5/qml/org/kde/kirigamiaddons/formcard/FormCheckDelegate.qml
+lib/qt5/qml/org/kde/kirigamiaddons/formcard/FormComboBoxDelegate.qml
+lib/qt5/qml/org/kde/kirigamiaddons/formcard/FormDelegateBackground.qml
+lib/qt5/qml/org/kde/kirigamiaddons/formcard/FormDelegateSeparator.qml
+lib/qt5/qml/org/kde/kirigamiaddons/formcard/FormGridContainer.qml
+lib/qt5/qml/org/kde/kirigamiaddons/formcard/FormHeader.qml
+lib/qt5/qml/org/kde/kirigamiaddons/formcard/FormRadioDelegate.qml
+lib/qt5/qml/org/kde/kirigamiaddons/formcard/FormSectionText.qml
+lib/qt5/qml/org/kde/kirigamiaddons/formcard/FormSpinBoxDelegate.qml
+lib/qt5/qml/org/kde/kirigamiaddons/formcard/FormSwitchDelegate.qml
+lib/qt5/qml/org/kde/kirigamiaddons/formcard/FormTextDelegate.qml
+lib/qt5/qml/org/kde/kirigamiaddons/formcard/FormTextFieldDelegate.qml
+@so lib/qt5/qml/org/kde/kirigamiaddons/formcard/libformcardplugin.so
+lib/qt5/qml/org/kde/kirigamiaddons/formcard/private/
+lib/qt5/qml/org/kde/kirigamiaddons/formcard/private/ContentItemLoader.qml
+lib/qt5/qml/org/kde/kirigamiaddons/formcard/private/SpinButton.qml
+lib/qt5/qml/org/kde/kirigamiaddons/formcard/qmldir
 lib/qt5/qml/org/kde/kirigamiaddons/labs/
 lib/qt5/qml/org/kde/kirigamiaddons/labs/components/
 lib/qt5/qml/org/kde/kirigamiaddons/labs/components/AbstractMaximizeComponent.qml
@@ -35,7 +68,7 @@ lib/qt5/qml/org/kde/kirigamiaddons/labs/components/DownloadAction.qml
 lib/qt5/qml/org/kde/kirigamiaddons/labs/components/ImageMaximizeDelegate.qml
 lib/qt5/qml/org/kde/kirigamiaddons/labs/components/SearchPopupField.qml
 lib/qt5/qml/org/kde/kirigamiaddons/labs/components/VideoMaximizeDelegate.qml
-@so lib/qt5/qml/org/kde/kirigamiaddons/labs/components/libcomponentsplugin.so
+@so lib/qt5/qml/org/kde/kirigamiaddons/labs/components/libcomponentslabsplugin.so
 lib/qt5/qml/org/kde/kirigamiaddons/labs/components/qmldir
 lib/qt5/qml/org/kde/kirigamiaddons/labs/mobileform/
 lib/qt5/qml/org/kde/kirigamiaddons/labs/mobileform/AboutKDE.qml
@@ -62,6 +95,11 @@ lib/qt5/qml/org/kde/kirigamiaddons/labs/mobileform/private/
 lib/qt5/qml/org/kde/kirigamiaddons/labs/mobileform/private/ContentItemLoader.qml
 lib/qt5/qml/org/kde/kirigamiaddons/labs/mobileform/private/SpinButton.qml
 lib/qt5/qml/org/kde/kirigamiaddons/labs/mobileform/qmldir
+lib/qt5/qml/org/kde/kirigamiaddons/settings/
+lib/qt5/qml/org/kde/kirigamiaddons/settings/CategorizedSettings.qml
+lib/qt5/qml/org/kde/kirigamiaddons/settings/SettingAction.qml
+@so lib/qt5/qml/org/kde/kirigamiaddons/settings/libsettingsplugin.so
+lib/qt5/qml/org/kde/kirigamiaddons/settings/qmldir
 lib/qt5/qml/org/kde/kirigamiaddons/sounds/
 lib/qt5/qml/org/kde/kirigamiaddons/sounds/SoundsPicker.qml
 @so lib/qt5/qml/org/kde/kirigamiaddons/sounds/libsoundsplugin.so
@@ -89,6 +127,7 @@ share/locale/cs/LC_MESSAGES/kirigami-addons.mo
 share/locale/de/LC_MESSAGES/kirigami-addons.mo
 share/locale/el/LC_MESSAGES/kirigami-addons.mo
 share/locale/en_GB/LC_MESSAGES/kirigami-addons.mo
+share/locale/eo/LC_MESSAGES/kirigami-addons.mo
 share/locale/es/LC_MESSAGES/kirigami-addons.mo
 share/locale/eu/LC_MESSAGES/kirigami-addons.mo
 share/locale/fi/LC_MESSAGES/kirigami-addons.mo
