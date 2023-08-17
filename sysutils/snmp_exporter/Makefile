@@ -2,8 +2,8 @@ COMMENT=	Prometheus exporter for SNMP metrics
 
 # updating: bump V version, "make patch" (fix patches if needed),
 # "make mibs", update M version, "make makesum".
-V=		0.22.0
-M=		0.22.0
+V=		0.23.0
+M=		0.23.0
 GH_ACCOUNT=	prometheus
 GH_PROJECT=	snmp_exporter
 GH_TAGNAME=	v$V
@@ -27,6 +27,7 @@ LIB_DEPENDS=	net/net-snmp
 
 MODULES=	lang/go
 MODGO_GOPATH=	${MODGO_WORKSPACE}
+TEST_DEPENDS=	snmp_exporter-=$V:${BUILD_PKGPATH}
 
 post-extract:
 .if $V == $M
@@ -41,7 +42,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/{doc,examples}/snmp_exporter
 	${INSTALL_PROGRAM} ${WRKDIR}/go/bin/snmp_exporter ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${MODGO_WORKSPACE}/bin/generator ${PREFIX}/bin/snmp_generator
-	${INSTALL_DATA} ${WRKSRC}/{LICENSE,README.md} \
+	${INSTALL_DATA} ${WRKSRC}/{LICENSE,README.md,auth-split-migration.md} \
 	    ${PREFIX}/share/doc/snmp_exporter/
 	${INSTALL_DATA} ${WRKSRC}/{snmp,generator/generator}.yml \
 	    ${FILESDIR}/generator-pf.yml ${PREFIX}/share/examples/snmp_exporter/

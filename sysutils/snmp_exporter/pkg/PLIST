@@ -7,6 +7,7 @@ share/doc/pkg-readmes/${PKGSTEM}
 share/doc/snmp_exporter/
 share/doc/snmp_exporter/LICENSE
 share/doc/snmp_exporter/README.md
+share/doc/snmp_exporter/auth-split-migration.md
 share/examples/snmp_exporter/
 @mode 770
 @owner _snmpexporter

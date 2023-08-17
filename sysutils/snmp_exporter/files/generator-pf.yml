@@ -2,6 +2,16 @@
 # $snmpv3-... as needed) and information from OPENBSD-PF-MIB, based on
 # https://yetiops.net/posts/openbsd-snmp-exporter/.
 
+auths:
+  priv_snmpv3:
+    version: 3
+    username: "$snmpv3-user"
+    password: "$snmpv3-authkey"
+    priv_password: "$snmpv3-enckey"
+    security_level: authPriv
+    auth_protocol: SHA
+    priv_protocol: AES
+
 modules:
   if_mib:
     walk: [sysUpTime, interfaces, ifXTable]
@@ -9,9 +19,11 @@ modules:
       - source_indexes: [ifIndex]
         lookup: ifAlias
       - source_indexes: [ifIndex]
-        lookup: ifDescr
+        # Use OID to avoid conflict with PaloAlto PAN-COMMON-MIB.
+        lookup: 1.3.6.1.2.1.2.2.1.2 # ifDescr
       - source_indexes: [ifIndex]
-        lookup: ifName
+        # Use OID to avoid conflict with Netscaler NS-ROOT-MIB.
+        lookup: 1.3.6.1.2.1.31.1.1.1.1 # ifName
     overrides:
       ifAlias:
         ignore: true # Lookup metric
@@ -21,14 +33,6 @@ modules:
         ignore: true # Lookup metric
       ifType:
         type: EnumAsInfo
-    version: 3
-    auth:
-      username: "$snmpv3-user"
-      security_level: authPriv
-      password: "$snmpv3-authkey"
-      auth_protocol: SHA
-      priv_protocol: AES
-      priv_password: "$snmpv3-enckey"
 
   openbsd_pf:
     walk:
@@ -48,11 +52,3 @@ modules:
     - source_indexes: [pfIfIndex]
       lookup: pfIfDescr
       drop_source_indexes: false
-    version: 3
-    auth:
-      username: "$snmpv3-user"
-      security_level: authPriv
-      password: "$snmpv3-authkey"
-      auth_protocol: SHA
-      priv_protocol: AES
-      priv_password: "$snmpv3-enckey"

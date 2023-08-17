@@ -1,0 +1,23 @@
+add examples for snmpv2 with a different community, and snmpv3
+
+Index: generator/generator.yml
+--- generator/generator.yml.orig
++++ generator/generator.yml
+@@ -4,6 +4,17 @@ auths:
+     version: 1
+   public_v2:
+     version: 2
++  somecommunity_v2:
++    version: 2
++    community: some_community
++  authpriv_v3:
++    username: some_user
++    security_level: authPriv
++    password: some_authkey
++    auth_protocol: SHA
++    priv_protocol: AES
++    priv_password: some_privkey
++    #context_name: context
+ 
+ modules:
+   # Default IF-MIB interfaces table with ifIndex.

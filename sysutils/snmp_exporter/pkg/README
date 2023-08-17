@@ -42,3 +42,30 @@ An example of adapting and building config:
 [...]
 # export MIBDIRS=/usr/share/snmp/mibs:${LOCALBASE}/share/snmp/mibs:${TRUEPREFIX}/share/examples/snmp_exporter/mibs
 # snmp_generator generate
+
+Upgrading from before v0.23.0
+-----------------------------
+
+You will need to update configuration. New versions will not run with
+old configuration.
+
+In older versions, configuration used a single list of modules, which
+incorporated authorisation settings (SNMP version, community/username,
+SNMPv3 auth options) alongside the metric walking/mapping settings.
+
+These have now been split. Authorisation settings ("version" and any
+"auth" sections) should be removed from the various module sections in
+generator.yml and added to a new "auths" section (see the example in
+${LOCALBASE}/share/examples/snmp_exporter/generator.yml).
+
+You will then need to regenerate snmp.yml with "snmp_generator" as
+shown above.
+
+Rather than referencing authorisation settings in module config,
+you now specify the auth section name as a URL query parameter
+when fetching results,, alongside the module and target, e.g.:
+
+http://localhost:9116/snmp?auth=public_v2&module=if_mib&target=192.0.2.8
+
+See ${TRUEPREFIX}/share/doc/snmp_exporter/auth-split-migration.md for
+upstream documentation about this.
