@@ -2,6 +2,7 @@ COMMENT =		Link aggregator and comment site via ActivityPub
 
 MODGO_MODNAME =		humungus.tedunangst.com/r/azorius
 MODGO_VERSION =		v0.2.0
+REVISION =		0
 
 DISTNAME =		azorius-${MODGO_VERSION}
 

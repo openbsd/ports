@@ -1,5 +1,5 @@
-@newgroup _azorius:892
-@newuser _azorius:892:_azorius::Azorius User:${LOCALSTATEDIR}/azorius:/sbin/nologin
+@newgroup _azorius:893
+@newuser _azorius:893:_azorius::Azorius User:${LOCALSTATEDIR}/azorius:/sbin/nologin
 @rcscript ${RCDIR}/azorius
 @bin bin/azorius
 @mode 750
