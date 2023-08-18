@@ -4,7 +4,7 @@ PKGNAME =	kf5-${DISTNAME}
 EPOCH =		0
 
 SHARED_LIBS +=  KF5Baloo                  5.0 # 4.0
-SHARED_LIBS +=  KF5BalooEngine            6.1 # 5.0
+SHARED_LIBS +=  KF5BalooEngine            7.0 # 5.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5ConfigCore KF5CoreAddons KF5Crash
 WANTLIB += KF5DBusAddons KF5FileMetaData KF5I18n KF5IdleTime KF5KIOCore

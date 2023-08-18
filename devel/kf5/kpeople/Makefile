@@ -3,7 +3,7 @@ DISTNAME =	kpeople-${VERSION}
 
 SHARED_LIBS =  KF5People         7.0
 SHARED_LIBS += KF5PeopleBackend  6.0
-SHARED_LIBS += KF5PeopleWidgets  7.0
+SHARED_LIBS += KF5PeopleWidgets  7.1
 
 WANTLIB += ${COMPILER_LIBCXX} KF5CoreAddons KF5I18n KF5ItemViews
 WANTLIB += KF5WidgetsAddons Qt5Core Qt5DBus Qt5Gui Qt5Network
