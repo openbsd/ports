@@ -3,7 +3,7 @@ Index: src/wallet/test/db_tests.cpp
 +++ src/wallet/test/db_tests.cpp
 @@ -18,7 +18,11 @@ BOOST_AUTO_TEST_CASE(getwalletenv_file)
      std::string test_name = "test_name.dat";
-     fs::path datadir = SetDataDir("tempdir");
+     const fs::path datadir = GetDataDir();
      fs::path file_path = datadir / test_name;
 +#if BOOST_VERSION >= 107700
 +    std::ofstream f(BOOST_FILESYSTEM_C_STR(file_path));

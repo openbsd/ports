@@ -18,7 +18,13 @@
 @bin bin/test_litecoin
 include/bitcoinconsensus.h
 include/secp256k1.h
+include/secp256k1_aggsig.h
+include/secp256k1_bulletproofs.h
+include/secp256k1_commitment.h
+include/secp256k1_extrakeys.h
+include/secp256k1_generator.h
 include/secp256k1_recovery.h
+include/secp256k1_schnorrsig.h
 include/univalue.h
 @static-lib lib/libbitcoinconsensus.a
 lib/libbitcoinconsensus.la
@@ -36,6 +42,8 @@ lib/pkgconfig/libunivalue.pc
 @man man/man1/litecoin-tx.1
 @man man/man1/litecoin-wallet.1
 @man man/man1/litecoind.1
+share/bash-completion/
+share/bash-completion/completions/
 share/bash-completion/completions/litecoin/
 share/bash-completion/completions/litecoin/bitcoin-cli.bash-completion
 share/bash-completion/completions/litecoin/bitcoin-tx.bash-completion

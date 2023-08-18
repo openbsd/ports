@@ -1,7 +1,7 @@
 Index: src/wallet/test/init_test_fixture.cpp
 --- src/wallet/test/init_test_fixture.cpp.orig
 +++ src/wallet/test/init_test_fixture.cpp
-@@ -29,7 +29,11 @@ InitWalletDirTestingSetup::InitWalletDirTestingSetup(c
+@@ -31,7 +31,11 @@ InitWalletDirTestingSetup::InitWalletDirTestingSetup(c
      fs::create_directories(m_walletdir_path_cases["default"]);
      fs::create_directories(m_walletdir_path_cases["custom"]);
      fs::create_directories(m_walletdir_path_cases["relative"]);
@@ -13,10 +13,3 @@ Index: src/wallet/test/init_test_fixture.cpp
      f.close();
  }
  
-@@ -41,4 +45,4 @@ InitWalletDirTestingSetup::~InitWalletDirTestingSetup(
- void InitWalletDirTestingSetup::SetWalletDir(const fs::path& walletdir_path)
- {
-     gArgs.ForceSetArg("-walletdir", walletdir_path.string());
--}
-\ No newline at end of file
-+}
