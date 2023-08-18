@@ -20,9 +20,8 @@ MODULES =		devel/cmake
 LIB_DEPENDS =		devel/gflags
 
 CONFIGURE_ARGS +=	-DBUILD_SHARED_LIBS=ON
-CONFIGURE_ENV +=	"LDFLAGS=${LDFLAGS}"
 
-LDFLAGS +=		-lexecinfo
+MODCMAKE_LDFLAGS =	-lexecinfo
 
 # evertyhing except tests
 ALL_TARGET =		glog
