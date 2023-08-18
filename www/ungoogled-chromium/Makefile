@@ -7,11 +7,10 @@ DPB_PROPERTIES=		parallel parallel2
 
 COMMENT=		Chromium browser sans integration with Google
 
-V=			115.0.5790.170
+V=			116.0.5845.96
 UGV=			${V}-1
 
 DISTNAME=		ungoogled-chromium-${V}
-REVISION=		0
 
 DISTFILES+=		${CHROMIUM_DISTFILES} \
 			${UGOOGLE_DISTFILES}:0 \
@@ -161,7 +160,6 @@ GN_ARGS=	is_official_build=true \
 		use_system_libjpeg=true \
 		use_system_harfbuzz=true \
 		use_system_freetype=false \
-		use_gnome_keyring=false \
 		icu_use_data_file=false \
 		is_clang=true \
 		use_sysroot=false \
@@ -235,7 +233,6 @@ GN_ARGS+=	build_with_tflite_lib=false \
 		disable_fieldtrial_testing_config=true \
 		enable_hangout_services_extension=false \
 		enable_mdns=false \
-		enable_mse_mpeg2ts_stream_parser=true \
 		enable_nacl=false \
 		enable_reading_list=false \
 		enable_remoting=false \

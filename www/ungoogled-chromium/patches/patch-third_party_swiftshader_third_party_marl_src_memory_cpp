@@ -5,8 +5,8 @@ Index: third_party/swiftshader/third_party/marl/src/memory.cpp
  
  #include <cstring>
  
--#if defined(__linux__) || defined(__FreeBSD__) || defined(__APPLE__)
-+#if defined(__linux__) || defined(__FreeBSD__) || defined(__APPLE__) || defined(__OpenBSD__)
+-#if defined(__linux__) || defined(__FreeBSD__) || defined(__APPLE__) || defined(__EMSCRIPTEN__)
++#if defined(__linux__) || defined(__FreeBSD__) || defined(__APPLE__) || defined(__EMSCRIPTEN__) || defined(__OpenBSD__)
  #include <sys/mman.h>
  #include <unistd.h>
  namespace {

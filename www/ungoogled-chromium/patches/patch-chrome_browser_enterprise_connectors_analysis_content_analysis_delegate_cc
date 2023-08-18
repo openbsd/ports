@@ -10,7 +10,7 @@ Index: chrome/browser/enterprise/connectors/analysis/content_analysis_delegate.c
  #include "chrome/browser/enterprise/connectors/analysis/content_analysis_sdk_manager.h"  // nogncheck
  #endif
  
-@@ -553,7 +553,7 @@ void ContentAnalysisDelegate::PageRequestCallback(
+@@ -555,7 +555,7 @@ void ContentAnalysisDelegate::PageRequestCallback(
  bool ContentAnalysisDelegate::UploadData() {
    upload_start_time_ = base::TimeTicks::Now();
  

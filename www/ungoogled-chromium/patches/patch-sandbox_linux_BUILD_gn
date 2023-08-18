@@ -16,7 +16,7 @@ Index: sandbox/linux/BUILD.gn
  
    # On Android, use plain GTest.
    use_base_test_suite = is_linux || is_chromeos
-@@ -386,6 +386,17 @@ component("sandbox_services") {
+@@ -385,6 +385,17 @@ component("sandbox_services") {
        "services/libc_interceptor.h",
      ]
    }

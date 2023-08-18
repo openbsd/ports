@@ -9,4 +9,4 @@ Index: skia/ext/skcolorspace_trfn.cc
 +
  #include "skia/ext/skcolorspace_trfn.h"
  
- namespace skia {
+ #include <cmath>

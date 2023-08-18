@@ -7,7 +7,7 @@ Index: chrome/browser/enterprise/remote_commands/cbcm_remote_commands_factory.cc
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
- #include "chrome/browser/enterprise/connectors/device_trust/device_trust_features.h"
+ #include "chrome/browser/enterprise/connectors/device_trust/device_trust_features.h"  // nogncheck
  #include "chrome/browser/enterprise/remote_commands/rotate_attestation_credential_job.h"
  #include "chrome/browser/policy/chrome_browser_policy_connector.h"
 @@ -31,7 +31,7 @@ CBCMRemoteCommandsFactory::BuildJobForType(

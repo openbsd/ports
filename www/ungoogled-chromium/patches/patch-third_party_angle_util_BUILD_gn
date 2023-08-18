@@ -1,7 +1,7 @@
 Index: third_party/angle/util/BUILD.gn
 --- third_party/angle/util/BUILD.gn.orig
 +++ third_party/angle/util/BUILD.gn
-@@ -309,7 +309,7 @@ foreach(is_shared_library,
+@@ -311,7 +311,7 @@ foreach(is_shared_library,
      ]
      libs = []
  
