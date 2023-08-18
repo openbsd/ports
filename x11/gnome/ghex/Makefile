@@ -1,7 +1,7 @@
 COMMENT=		binary editor
 
 GNOME_PROJECT=		ghex
-GNOME_VERSION=		44.1
+GNOME_VERSION=		44.2
 
 SHARED_LIBS += gtkhex-4                  0.0 # 1.4.0
 
