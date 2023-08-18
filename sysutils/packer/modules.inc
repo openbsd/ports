@@ -460,18 +460,18 @@ MODGO_MODULES =	\
 	go.opentelemetry.io/otel/sdk				 v1.11.1 \
 	go.opentelemetry.io/otel/trace				 v1.11.1 \
 	go.uber.org/atomic					 v1.6.0 \
-	golang.org/x/crypto					 v0.0.0-20220622213112-05595931fe9d \
+	golang.org/x/crypto					 v0.11.0 \
 	golang.org/x/exp					 v0.0.0-20200119233911-0405dc783f0a \
 	golang.org/x/image					 v0.0.0-20190802002840-cff245a6509b \
 	golang.org/x/lint					 v0.0.0-20190930215403-16217165b5de \
 	golang.org/x/mobile					 v0.0.0-20210901025245-1fde1d6c3ca1 \
 	golang.org/x/mod					 v0.8.0 \
-	golang.org/x/net					 v0.8.0 \
+	golang.org/x/net					 v0.13.0 \
 	golang.org/x/oauth2					 v0.1.0 \
 	golang.org/x/sync					 v0.1.0 \
-	golang.org/x/sys					 v0.7.0 \
-	golang.org/x/term					 v0.6.0 \
-	golang.org/x/text					 v0.8.0 \
+	golang.org/x/sys					 v0.10.0 \
+	golang.org/x/term					 v0.10.0 \
+	golang.org/x/text					 v0.11.0 \
 	golang.org/x/time					 v0.0.0-20220210224613-90d013bbcef8 \
 	golang.org/x/tools					 v0.6.0 \
 	golang.org/x/xerrors					 v0.0.0-20220907171357-04be3eba64a2 \
@@ -818,6 +818,7 @@ MODGO_MODFILES =	\
 	golang.org/x/crypto					 v0.0.0-20210921155107-089bfa567519 \
 	golang.org/x/crypto					 v0.0.0-20220427172511-eb4f295cb31f \
 	golang.org/x/crypto					 v0.0.0-20220517005047-85d78b3ac167 \
+	golang.org/x/crypto					 v0.0.0-20220622213112-05595931fe9d \
 	golang.org/x/exp					 v0.0.0-20190121172915-509febef88a4 \
 	golang.org/x/exp					 v0.0.0-20190306152737-a1d7652674e8 \
 	golang.org/x/exp					 v0.0.0-20190731235908-ec7cb31e5a56 \
@@ -863,8 +864,10 @@ MODGO_MODFILES =	\
 	golang.org/x/net					 v0.0.0-20221012135044-0b7e1fb9d458 \
 	golang.org/x/net					 v0.0.0-20221014081412-f15817d10f9b \
 	golang.org/x/net					 v0.1.0 \
+	golang.org/x/net					 v0.10.0 \
 	golang.org/x/net					 v0.6.0 \
 	golang.org/x/net					 v0.7.0 \
+	golang.org/x/net					 v0.8.0 \
 	golang.org/x/oauth2					 v0.0.0-20180821212333-d2e6202438be \
 	golang.org/x/oauth2					 v0.0.0-20200107190931-bf48bf16ab8d \
 	golang.org/x/oauth2					 v0.0.0-20201109201403-9fd604954f58 \
@@ -932,10 +935,12 @@ MODGO_MODFILES =	\
 	golang.org/x/sys					 v0.2.0 \
 	golang.org/x/sys					 v0.5.0 \
 	golang.org/x/sys					 v0.6.0 \
+	golang.org/x/sys					 v0.7.0 \
 	golang.org/x/term					 v0.0.0-20201117132131-f5c789dd3221 \
 	golang.org/x/term					 v0.0.0-20201126162022-7de9c90e9dd1 \
 	golang.org/x/term					 v0.0.0-20210615171337-6886f2dfbf5b \
 	golang.org/x/term					 v0.0.0-20210927222741-03fcf44c2211 \
+	golang.org/x/term					 v0.6.0 \
 	golang.org/x/text					 v0.3.0 \
 	golang.org/x/text					 v0.3.2 \
 	golang.org/x/text					 v0.3.3 \
@@ -944,6 +949,7 @@ MODGO_MODFILES =	\
 	golang.org/x/text					 v0.3.7 \
 	golang.org/x/text					 v0.3.8 \
 	golang.org/x/text					 v0.4.0 \
+	golang.org/x/text					 v0.8.0 \
 	golang.org/x/time					 v0.0.0-20190308202827-9d24e82272b4 \
 	golang.org/x/time					 v0.0.0-20200416051211-89c76fbcd5d1 \
 	golang.org/x/time					 v0.0.0-20210723032227-1f47c861a9ac \
