@@ -6,6 +6,7 @@ GH_PROJECT =		ksh
 GH_TAGNAME =		v${V}
 PKGNAME =		ksh93-$V
 EPOCH =			0
+REVISION =		0
 
 CATEGORIES =		shells
 
