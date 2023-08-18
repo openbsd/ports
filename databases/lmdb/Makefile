@@ -1,6 +1,6 @@
 COMMENT =	Symas Lightning Memory-Mapped Database
 
-VERSION =	0.9.29
+VERSION =	0.9.31
 
 DISTNAME =	openldap-LMDB_${VERSION}
 PKGNAME =	lmdb-${VERSION}
