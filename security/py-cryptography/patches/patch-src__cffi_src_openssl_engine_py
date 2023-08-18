@@ -1,13 +1,16 @@
 Fix build with OPENSSL_NO_ENGINE
+https://github.com/pyca/cryptography/pull/9456
 
 Index: src/_cffi_src/openssl/engine.py
 --- src/_cffi_src/openssl/engine.py.orig
 +++ src/_cffi_src/openssl/engine.py
-@@ -43,17 +43,19 @@ typedef void UI_METHOD;
+@@ -42,18 +42,20 @@ static const long Cryptography_HAS_ENGINE = 0;
+ typedef void UI_METHOD;
  #endif
  
- /* Despite being OPENSSL_NO_ENGINE, BoringSSL defines these symbols. */
+-/* Despite being OPENSSL_NO_ENGINE, BoringSSL defines these symbols. */
 -#if !CRYPTOGRAPHY_IS_BORINGSSL
++/* Despite being OPENSSL_NO_ENGINE, BoringSSL/LibreSSL define these symbols. */
 +#if !CRYPTOGRAPHY_IS_BORINGSSL && !CRYPTOGRAPHY_IS_LIBRESSL
  int (*ENGINE_free)(ENGINE *) = NULL;
  void (*ENGINE_load_builtin_engines)(void) = NULL;
