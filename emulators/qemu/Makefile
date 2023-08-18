@@ -4,7 +4,7 @@ DPB_PROPERTIES=	parallel
 COMMENT-main=	multi system emulator
 COMMENT-ga=	QEMU guest agent
 
-VERSION=	8.0.0
+VERSION=	8.0.2
 DISTNAME=	qemu-${VERSION}
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/

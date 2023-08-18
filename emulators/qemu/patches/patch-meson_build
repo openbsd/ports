@@ -13,7 +13,7 @@ Index: meson.build
  config_host_data.set_quoted('CONFIG_QEMU_MODDIR', get_option('prefix') / qemu_moddir)
  config_host_data.set_quoted('CONFIG_SYSCONFDIR', get_option('prefix') / get_option('sysconfdir'))
  
-@@ -3805,9 +3805,6 @@ if targetos == 'darwin'
+@@ -3810,9 +3810,6 @@ if targetos == 'darwin'
    summary_info += {'Objective-C compiler': ' '.join(meson.get_compiler('objc').cmd_array())}
  endif
  option_cflags = (get_option('debug') ? ['-g'] : [])
