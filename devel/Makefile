@@ -1811,6 +1811,7 @@
      SUBDIR += sdl2-ttf
      SUBDIR += sdlmm
      SUBDIR += seergdb
+     SUBDIR += selene
      SUBDIR += serd
      SUBDIR += shapelib
      SUBDIR += sharness
