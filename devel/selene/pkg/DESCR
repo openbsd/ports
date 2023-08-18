@@ -1,0 +1,12 @@
+selene is a command line tool designed to help write correct and
+idiomatic Lua code.
+
+Priorities:
+
+- It's okay to not diagnose every problem, as long as the diagnostics
+  that are made are never wrong.
+
+- Easy to extend and modify.
+
+- Easy to configure... but the user should need to configure as little
+  as possible.
