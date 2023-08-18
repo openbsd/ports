@@ -26,7 +26,8 @@ LIB_DEPENDS =	x11/qt5/qtcharts \
 		x11/qt5/qtdeclarative \
 		x11/qt5/qtsvg
 
-BUILD_DEPENDS =	devel/bison
+BUILD_DEPENDS =	devel/bison \
+		x11/qt5/qtbase,-global
 
 RUN_DEPENDS =	devel/desktop-file-utils
 
