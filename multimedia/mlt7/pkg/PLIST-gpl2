@@ -14,7 +14,6 @@ share/mlt-7/plusgpl/consumer_cbrts.yml
 share/mlt-7/plusgpl/filter_burningtv.yml
 share/mlt-7/plusgpl/filter_lumaliftgaingamma.yml
 share/mlt-7/plusgpl/filter_rotoscoping.yml
-share/mlt-7/qt/
 share/mlt-7/qt/filter_audiolevelgraph.yml
 share/mlt-7/qt/filter_audiospectrum.yml
 share/mlt-7/qt/filter_audiowaveform.yml
@@ -28,7 +27,6 @@ share/mlt-7/qt/producer_qimage.yml
 share/mlt-7/qt/producer_qtext.yml
 share/mlt-7/qt/transition_qtblend.yml
 share/mlt-7/qt/transition_vqm.yml
-share/mlt-7/resample/
 share/mlt-7/resample/filter_resample.yml
 share/mlt-7/rtaudio/
 share/mlt-7/rtaudio/consumer_rtaudio.yml

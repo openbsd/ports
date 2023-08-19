@@ -5,6 +5,9 @@ DISTNAME =		mlt-${VERSION}
 PKGNAME-main =		mlt7-${VERSION}
 PKGNAME-gpl2 =		mlt7-gpl2-${VERSION}
 
+REVISION-main =		0
+REVISION-gpl2 =		0
+
 CATEGORIES =		multimedia devel
 
 HOMEPAGE =		https://www.mltframework.org/
