@@ -2,7 +2,7 @@
 @pkgpath mail/postler
 @bin bin/geary
 lib/geary/
-@so lib/geary/libgeary-client-44.0.so
+@so lib/geary/libgeary-client-44.1.so
 lib/geary/plugins/
 lib/geary/plugins/desktop-notifications/
 lib/geary/plugins/desktop-notifications/desktop-notifications.plugin
