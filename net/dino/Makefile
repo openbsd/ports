@@ -1,3 +1,5 @@
+BROKEN=		does not build with vala->=0.56.11
+
 COMMENT=	XMPP desktop client
 VERSION=	0.4.3
 DISTNAME=	dino-${VERSION}
