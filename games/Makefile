@@ -66,6 +66,7 @@
      SUBDIR += cpat
      SUBDIR += crack-attack
      SUBDIR += crimson
+     SUBDIR += crispy-doom
      SUBDIR += crossfire-client
      SUBDIR += csmash
      SUBDIR += dangerdeep
