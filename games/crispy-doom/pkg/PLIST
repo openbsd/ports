@@ -1,0 +1,66 @@
+@bin bin/crispy-doom
+@bin bin/crispy-doom-setup
+@bin bin/crispy-heretic
+@bin bin/crispy-heretic-setup
+@bin bin/crispy-hexen
+@bin bin/crispy-hexen-setup
+@bin bin/crispy-server
+@bin bin/crispy-strife
+@bin bin/crispy-strife-setup
+@man man/man5/crispy-doom.cfg.5
+@man man/man5/crispy-heretic.cfg.5
+@man man/man5/crispy-hexen.cfg.5
+@man man/man5/crispy-strife.cfg.5
+@man man/man5/crispy_default.cfg.5
+@man man/man5/crispy_heretic.cfg.5
+@man man/man5/crispy_hexen.cfg.5
+@man man/man5/crispy_strife.cfg.5
+@man man/man6/crispy-doom.6
+@man man/man6/crispy-heretic.6
+@man man/man6/crispy-hexen.6
+@man man/man6/crispy-server.6
+@man man/man6/crispy-strife.6
+share/applications/io.github.fabiangreffrath.Doom.desktop
+share/applications/io.github.fabiangreffrath.Heretic.desktop
+share/applications/io.github.fabiangreffrath.Hexen.desktop
+share/applications/io.github.fabiangreffrath.Setup.desktop
+share/applications/io.github.fabiangreffrath.Strife.desktop
+share/applications/screensavers/
+share/applications/screensavers/io.github.fabiangreffrath.Doom_Screensaver.desktop
+share/bash-completion/completions/crispy-doom
+share/bash-completion/completions/crispy-heretic
+share/bash-completion/completions/crispy-hexen
+share/bash-completion/completions/crispy-strife
+share/doc/crispy-doom/
+share/doc/crispy-doom/CMDLINE.doom
+share/doc/crispy-doom/COPYING.md
+share/doc/crispy-doom/ChangeLog
+share/doc/crispy-doom/INSTALL.doom
+share/doc/crispy-doom/NEWS.md
+share/doc/crispy-doom/NOT-BUGS.md
+share/doc/crispy-doom/PHILOSOPHY.md
+share/doc/crispy-doom/README.Music.md
+share/doc/crispy-doom/README.md
+share/doc/crispy-heretic/
+share/doc/crispy-heretic/CMDLINE.heretic
+share/doc/crispy-heretic/INSTALL.heretic
+share/doc/crispy-hexen/
+share/doc/crispy-hexen/CMDLINE.hexen
+share/doc/crispy-hexen/INSTALL.hexen
+share/doc/crispy-strife/
+share/doc/crispy-strife/CMDLINE.strife
+share/doc/crispy-strife/INSTALL.strife
+share/doc/pkg-readmes/${PKGSTEM}
+share/doom/
+share/icons/hicolor/128x128/apps/crispy-doom.png
+share/icons/hicolor/128x128/apps/crispy-heretic.png
+share/icons/hicolor/128x128/apps/crispy-hexen.png
+share/icons/hicolor/128x128/apps/crispy-setup.png
+share/icons/hicolor/128x128/apps/crispy-strife.png
+share/metainfo/
+share/metainfo/io.github.fabiangreffrath.Doom.metainfo.xml
+share/metainfo/io.github.fabiangreffrath.Heretic.metainfo.xml
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database
+share/metainfo/io.github.fabiangreffrath.Hexen.metainfo.xml
+share/metainfo/io.github.fabiangreffrath.Strife.metainfo.xml
