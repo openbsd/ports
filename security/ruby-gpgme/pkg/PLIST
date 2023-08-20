@@ -28,6 +28,11 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/gpgme/sub_key.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/gpgme/user_id.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/gpgme/version.rb
 @so ${GEM_LIB}/gems/${DISTNAME}/lib/gpgme_n.so
+${GEM_LIB}/gems/${DISTNAME}/ports/
+${GEM_LIB}/gems/${DISTNAME}/ports/archives/
+${GEM_LIB}/gems/${DISTNAME}/ports/archives/gpgme-1.21.0.tar.bz2
+${GEM_LIB}/gems/${DISTNAME}/ports/archives/libassuan-2.5.6.tar.bz2
+${GEM_LIB}/gems/${DISTNAME}/ports/archives/libgpg-error-1.47.tar.bz2
 ${GEM_LIB}/gems/${DISTNAME}/test/
 ${GEM_LIB}/gems/${DISTNAME}/test/crypto_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/ctx_test.rb
