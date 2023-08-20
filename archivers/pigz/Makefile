@@ -3,10 +3,9 @@ NOT_FOR_ARCHS=	${GCC3_ARCHS}
 
 COMMENT =	parallel implementation of gzip utilizing multiple cores
 
-DISTNAME =	pigz-2.7
+DISTNAME =	pigz-2.8
 CATEGORIES =	archivers
 HOMEPAGE =	https://zlib.net/pigz/
-REVISION =	1
 
 MAINTAINER =	Klemens Nanni <kn@openbsd.org>
 

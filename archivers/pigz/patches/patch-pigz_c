@@ -8,7 +8,7 @@ Define _BSD_SOURCE to get it back and use pledge.
 Index: pigz.c
 --- pigz.c.orig
 +++ pigz.c
-@@ -344,6 +344,7 @@
+@@ -347,6 +347,7 @@
  #define _FILE_OFFSET_BITS 64            // Use large file functions
  #define _LARGE_FILES                    // Same thing for AIX
  #define _XOPEN_SOURCE 700               // For POSIX 2008
@@ -16,7 +16,7 @@ Index: pigz.c
  
  // Included headers and what is expected from each.
  #include <stdio.h>      // fflush(), fprintf(), fputs(), getchar(), putc(),
-@@ -4601,6 +4602,11 @@ int main(int argc, char **argv) {
+@@ -4604,6 +4605,11 @@ int main(int argc, char **argv) {
      char *opts, *p;                 // environment default options, marker
      ball_t err;                     // error information from throw()
  
@@ -28,7 +28,7 @@ Index: pigz.c
      g.ret = 0;
      try {
          // initialize globals
-@@ -4707,6 +4713,12 @@ int main(int argc, char **argv) {
+@@ -4710,6 +4716,12 @@ int main(int argc, char **argv) {
              else if (option(argv[n]))   // process argument
                  argv[n] = NULL;         // remove if option
          option(NULL);                   // check for missing parameter
