@@ -3,7 +3,7 @@ CATEGORIES =	devel
 
 GH_ACCOUNT =	abseil
 GH_PROJECT =	${GH_ACCOUNT}-cpp
-GH_TAGNAME =	20230125.3
+GH_TAGNAME =	20230802.0
 
 HOMEPAGE =	https://abseil.io/
 
@@ -38,36 +38,28 @@ ABSL_LIBS = \
     raw_logging_internal scoped_set_env spinlock_test_common spinlock_wait \
     stack_consumption stacktrace status statusor str_format_internal strerror \
     strings strings_internal symbolize synchronization test_instance_tracker \
-    throw_delegate time time_internal_test_util time_zone
+    throw_delegate time time_internal_test_util time_zone \
+    kernel_timeout_internal string_view
 .for _lib in ${ABSL_LIBS}
-SHARED_LIBS +=		absl_${_lib}	2.0	# 2301.0.0
+SHARED_LIBS +=		absl_${_lib}	3.0	# 2308.0.0
 .endfor
+
+WANTLIB += ${COMPILER_LIBCXX} execinfo gmock gtest m
 
 # C++17
 COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c++
-WANTLIB =		${COMPILER_LIBCXX} execinfo m
 MODULES =		devel/cmake
 
-CONFIGURE_ARGS +=	-DBUILD_SHARED_LIBS:BOOL=ON
-
-# Force the same highest C++ standard because of ABI differences.
-# https://github.com/abseil/abseil-cpp/issues/819
-CONFIGURE_ARGS +=	-DCMAKE_CXX_STANDARD=17
-
-# A future Abseil release will default ABSL_PROPAGATE_CXX_STD=ON
-# for CMake >= 3.8. Abseil developers recommend enabling this option
-# to ensure that our project builds correctly.
-CONFIGURE_ARGS +=	-DABSL_PROPAGATE_CXX_STD:BOOL=ON
+CONFIGURE_ARGS +=	-DBUILD_SHARED_LIBS=ON
 
 # use googletest from ports
-CONFIGURE_ARGS +=	-DABSL_USE_EXTERNAL_GOOGLETEST:BOOL=${LOCALBASE}/include/gtest
+CONFIGURE_ARGS +=	-DABSL_USE_EXTERNAL_GOOGLETEST=${LOCALBASE}/include/gtest
 # turn on tests builds
-CONFIGURE_ARGS +=	-DBUILD_TESTING:BOOL=ON \
-			-DABSL_BUILD_TESTING:BOOL=ON
+CONFIGURE_ARGS +=	-DBUILD_TESTING=ON \
+			-DABSL_BUILD_TESTING=ON
 
-BUILD_DEPENDS +=	devel/gtest>=1.11.0pl20220208
-TEST_DEPENDS +=		devel/gtest>=1.11.0pl20220208
+LIB_DEPENDS +=		devel/gtest>=1.14.0
 
 TESTTMP =		${WRKDIR}/tmp
 TESTLDPATH =		${WRKDIR}/ldpath

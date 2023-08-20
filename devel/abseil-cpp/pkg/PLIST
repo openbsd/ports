@@ -28,6 +28,7 @@ include/absl/base/internal/inline_variable_testing.h
 include/absl/base/internal/invoke.h
 include/absl/base/internal/low_level_alloc.h
 include/absl/base/internal/low_level_scheduling.h
+include/absl/base/internal/nullability_impl.h
 include/absl/base/internal/per_thread_tls.h
 include/absl/base/internal/prefetch.h
 include/absl/base/internal/pretty_function.h
@@ -51,10 +52,12 @@ include/absl/base/internal/unscaledcycleclock.h
 include/absl/base/internal/unscaledcycleclock_config.h
 include/absl/base/log_severity.h
 include/absl/base/macros.h
+include/absl/base/nullability.h
 include/absl/base/optimization.h
 include/absl/base/options.h
 include/absl/base/policy_checks.h
 include/absl/base/port.h
+include/absl/base/prefetch.h
 include/absl/base/thread_annotations.h
 include/absl/cleanup/
 include/absl/cleanup/cleanup.h
@@ -176,13 +179,14 @@ include/absl/hash/hash_testing.h
 include/absl/hash/internal/
 include/absl/hash/internal/city.h
 include/absl/hash/internal/hash.h
+include/absl/hash/internal/hash_test.h
 include/absl/hash/internal/low_level_hash.h
 include/absl/hash/internal/spy_hash_state.h
 include/absl/log/
 include/absl/log/absl_check.h
 include/absl/log/absl_log.h
 include/absl/log/check.h
-include/absl/log/check_test_impl.h
+include/absl/log/check_test_impl.inc
 include/absl/log/die_if_null.h
 include/absl/log/flags.h
 include/absl/log/globals.h
@@ -209,7 +213,7 @@ include/absl/log/internal/test_helpers.h
 include/absl/log/internal/test_matchers.h
 include/absl/log/internal/voidify.h
 include/absl/log/log.h
-include/absl/log/log_basic_test_impl.h
+include/absl/log/log_basic_test_impl.inc
 include/absl/log/log_entry.h
 include/absl/log/log_sink.h
 include/absl/log/log_sink_registry.h
@@ -357,11 +361,17 @@ include/absl/synchronization/blocking_counter.h
 include/absl/synchronization/internal/
 include/absl/synchronization/internal/create_thread_identity.h
 include/absl/synchronization/internal/futex.h
+include/absl/synchronization/internal/futex_waiter.h
 include/absl/synchronization/internal/graphcycles.h
 include/absl/synchronization/internal/kernel_timeout.h
 include/absl/synchronization/internal/per_thread_sem.h
+include/absl/synchronization/internal/pthread_waiter.h
+include/absl/synchronization/internal/sem_waiter.h
+include/absl/synchronization/internal/stdcpp_waiter.h
 include/absl/synchronization/internal/thread_pool.h
 include/absl/synchronization/internal/waiter.h
+include/absl/synchronization/internal/waiter_base.h
+include/absl/synchronization/internal/win32_waiter.h
 include/absl/synchronization/mutex.h
 include/absl/synchronization/notification.h
 include/absl/time/
@@ -408,8 +418,9 @@ include/absl/types/optional.h
 include/absl/types/span.h
 include/absl/types/variant.h
 include/absl/utility/
+include/absl/utility/internal/
+include/absl/utility/internal/if_constexpr.h
 include/absl/utility/utility.h
-lib/cmake/
 lib/cmake/absl/
 lib/cmake/absl/abslConfig.cmake
 lib/cmake/absl/abslConfigVersion.cmake
@@ -456,6 +467,7 @@ lib/cmake/absl/abslTargets.cmake
 @lib lib/libabsl_hash_generator_testing.so.${LIBabsl_hash_generator_testing_VERSION}
 @lib lib/libabsl_hashtablez_sampler.so.${LIBabsl_hashtablez_sampler_VERSION}
 @lib lib/libabsl_int128.so.${LIBabsl_int128_VERSION}
+@lib lib/libabsl_kernel_timeout_internal.so.${LIBabsl_kernel_timeout_internal_VERSION}
 @lib lib/libabsl_log_entry.so.${LIBabsl_log_entry_VERSION}
 @lib lib/libabsl_log_flags.so.${LIBabsl_log_flags_VERSION}
 @lib lib/libabsl_log_globals.so.${LIBabsl_log_globals_VERSION}
@@ -501,6 +513,7 @@ lib/cmake/absl/abslTargets.cmake
 @lib lib/libabsl_statusor.so.${LIBabsl_statusor_VERSION}
 @lib lib/libabsl_str_format_internal.so.${LIBabsl_str_format_internal_VERSION}
 @lib lib/libabsl_strerror.so.${LIBabsl_strerror_VERSION}
+@lib lib/libabsl_string_view.so.${LIBabsl_string_view_VERSION}
 @lib lib/libabsl_strings.so.${LIBabsl_strings_VERSION}
 @lib lib/libabsl_strings_internal.so.${LIBabsl_strings_internal_VERSION}
 @lib lib/libabsl_symbolize.so.${LIBabsl_symbolize_VERSION}
@@ -596,6 +609,7 @@ lib/pkgconfig/absl_hash_testing.pc
 lib/pkgconfig/absl_hashtable_debug.pc
 lib/pkgconfig/absl_hashtable_debug_hooks.pc
 lib/pkgconfig/absl_hashtablez_sampler.pc
+lib/pkgconfig/absl_if_constexpr.pc
 lib/pkgconfig/absl_inlined_vector.pc
 lib/pkgconfig/absl_inlined_vector_internal.pc
 lib/pkgconfig/absl_int128.pc
@@ -640,6 +654,7 @@ lib/pkgconfig/absl_node_hash_set.pc
 lib/pkgconfig/absl_node_slot_policy.pc
 lib/pkgconfig/absl_non_temporal_arm_intrinsics.pc
 lib/pkgconfig/absl_non_temporal_memcpy.pc
+lib/pkgconfig/absl_nullability.pc
 lib/pkgconfig/absl_numeric.pc
 lib/pkgconfig/absl_numeric_representation.pc
 lib/pkgconfig/absl_optional.pc
@@ -695,6 +710,7 @@ lib/pkgconfig/absl_statusor.pc
 lib/pkgconfig/absl_str_format.pc
 lib/pkgconfig/absl_str_format_internal.pc
 lib/pkgconfig/absl_strerror.pc
+lib/pkgconfig/absl_string_view.pc
 lib/pkgconfig/absl_strings.pc
 lib/pkgconfig/absl_strings_internal.pc
 lib/pkgconfig/absl_symbolize.pc
