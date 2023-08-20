@@ -15,10 +15,14 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c edit crypto json-c pcsclite util z
 
-MODULES =		gnu
-MODGNU_CONFIG_GUESS_DIRS = openssh
+CONFIGURE_STYLE =	autoconf
+AUTOCONF_VERSION =	2.71
+AUTOCONF_DIR =		${WRKDIST}/openssh
+MODGNU_CONFIG_GUESS_DIRS = ${WRKDIST}/openssh
+WRKCONF =		${WRKDIST}/openssh
 
-LIB_DEPENDS =		security/pcsc-lite devel/json-c
+LIB_DEPENDS =		security/pcsc-lite \
+			devel/json-c
 RUN_DEPENDS =		security/ccid
 
 USE_GMAKE =		Yes
@@ -32,6 +36,10 @@ MAKE_FLAGS =		CC="${CC}" \
 
 post-extract:
 	rm -Rf ${WRKDIST}/libressl
+
+do-configure:
+	# the configure script is run from ${WRKSRC}/Makefile,
+	# overridden here to avoid running it twice
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pivy
