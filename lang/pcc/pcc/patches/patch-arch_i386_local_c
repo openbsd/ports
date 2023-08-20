@@ -1,0 +1,12 @@
+Index: arch/i386/local.c
+--- arch/i386/local.c.orig
++++ arch/i386/local.c
+@@ -525,7 +525,7 @@ clocal(P1ND *p)
+ 		break;
+ 
+ 	case USTCALL:
+-#if defined(os_openbsd)
++#if 0
+ 		ap = strattr(p->n_left->n_ap);
+ 		if (ap->amsize == SZCHAR || ap->amsize == SZSHORT ||
+ 		    ap->amsize == SZINT || ap->amsize == SZLONGLONG)
