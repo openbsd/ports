@@ -1,7 +1,6 @@
 COMMENT =	WordPress security scanner
 
-DISTNAME =	wpscan-3.8.22
-REVISION =	0
+DISTNAME =	wpscan-3.8.24
 CATEGORIES =	security
 
 HOMEPAGE =	https://wpscan.org/
