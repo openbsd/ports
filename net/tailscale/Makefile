@@ -1,9 +1,8 @@
-BROKEN =	gohacks build constraint: //go:build go1.13 && !go1.21
 BROKEN-i386 =	unix.EPROTO not defined
 
 COMMENT =	modern overlay-like VPN built on top of WireGuard
 
-V =		1.38.4
+V =		1.48.0
 MODGO_MODNAME =	tailscale.com
 MODGO_VERSION =	v${V}
 
