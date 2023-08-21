@@ -1,4 +1,4 @@
-# $OpenBSD: Info.pm,v 1.39 2023/08/14 17:36:43 espie Exp $
+# $OpenBSD: Info.pm,v 1.40 2023/08/21 10:10:01 espie Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -37,7 +37,7 @@ our $vars = {
     DEBUG_CONFIGURE_ARGS => 'DebugConfigureArgsVar',
     DEBUG_PACKAGES => 'DebugPackagesVar',
     DESCR => 'DescrVar',
-    DISTFILES => 'SupdistfilesVar',
+    DISTFILES => 'DistfilesVar',
     DPB_PROPERTIES => 'DPBPropertiesVar',
     PATCHFILES => 'PatchfilesVar',
     DISTNAME => 'AnyVar',
