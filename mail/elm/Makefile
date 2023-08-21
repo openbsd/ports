@@ -1,7 +1,7 @@
 COMMENT=	once-popular mail user agent
 
 DISTNAME=	elm-2.4ME+66
-REVISION=	3
+REVISION=	4
 CATEGORIES=	mail
 
 MASTER_SITES=	ftp://ftp.ozone.fmi.fi/KEH/

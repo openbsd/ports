@@ -1,0 +1,11 @@
+Index: lib/read_rc.c
+--- lib/read_rc.c.orig
++++ lib/read_rc.c
+@@ -76,7 +76,6 @@ char raw_calendar_file[SLEN] = {0};	/* unexpanded name
+ int clear_pages = 0;		/* flag: act like "page" (more -c)? */
+ int title_messages = 1;		/* flag: title message display?     */
+ int debug = 0; 			/* flag: default is no debug!       */
+-FILE *debugfile = stderr;	/* file for debug output            */
+ 
+ nl_catd  elm_msg_cat = 0;	/* message catalog	    */
+ 

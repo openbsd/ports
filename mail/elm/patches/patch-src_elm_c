@@ -1,5 +1,6 @@
---- src/elm.c.orig	Sat Dec  7 23:51:21 2013
-+++ src/elm.c	Sat Dec  7 23:51:36 2013
+Index: src/elm.c
+--- src/elm.c.orig
++++ src/elm.c
 @@ -21,10 +21,6 @@ static char rcsid[] = "@(#)$Id: elm.c,v 1.12.2.1 1999/
  #include "s_elm.h"
  #include "elmlib.h"
@@ -11,3 +12,20 @@
  #include "mime.h"
  #include "me.h"
  
+@@ -35,6 +31,8 @@ static void do_check_only P_((char *argv[])); /* Proto
+ static void debug_screen P_((void));
+ static void debug_message P_((void));
+ 
++FILE *debugfile;
++
+ int main(argc, argv)
+      int argc;
+      char *argv[];
+@@ -47,6 +45,7 @@ int main(argc, argv)
+ 	long num;		/** another variable for fun..               **/
+ 	extern int errno;
+ 
++	debugfile = stderr;
+ 	locale_init();
+ 	
+ 	req_mfile = parse_arguments(argc, argv, &to_whom, 
