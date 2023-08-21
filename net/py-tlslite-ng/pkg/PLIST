@@ -190,4 +190,4 @@ lib/python${MODPY_VERSION}/site-packages/tlslite/utils/x25519.py
 lib/python${MODPY_VERSION}/site-packages/tlslite/verifierdb.py
 lib/python${MODPY_VERSION}/site-packages/tlslite/x509.py
 lib/python${MODPY_VERSION}/site-packages/tlslite/x509certchain.py
-lib/python${MODPY_VERSION}/site-packages/tlslite_ng-0.8.0_alpha46-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/tlslite_ng-${PLIST_VERSION}-py${MODPY_VERSION}.egg-info
