@@ -1,8 +1,7 @@
 COMMENT=	synchronous multi-master replication engine
 
-VERSION=	26.4.14
+VERSION=	26.4.15
 DISTNAME=	galera-${VERSION}
-REVISION=	1
 
 CATEGORIES=	databases
 
