@@ -1,0 +1,20 @@
+ld.so: can't load library 'libpxbackend-1.0.so'
+reproducible on ports with net/neon in the dep chain (i.e. at least):
+audio/cantata
+audio/libmusicbrainz
+net/cadaver
+x11/gnustep/cynthiune
+
+
+Index: src/libproxy/meson.build
+--- src/libproxy/meson.build.orig
++++ src/libproxy/meson.build
+@@ -43,7 +43,7 @@ install_headers(libproxy_headers, subdir: 'libproxy')
+ 
+ pkg = import('pkgconfig')
+ pkg.generate(
+-  libraries: [libproxy],
++  libraries: [libproxy, '-Wl,-rpath,' + pkglibdir],
+   subdirs: 'libproxy',
+   version: meson.project_version(),
+   name: 'libproxy',
