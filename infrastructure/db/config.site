@@ -1,4 +1,4 @@
-# $OpenBSD: config.site,v 1.31 2022/10/31 21:32:43 kmos Exp $
+# $OpenBSD: config.site,v 1.32 2023/08/21 00:34:03 sthen Exp $
 # Quick start macros for autoconf.
 # XXX kludge for a function we don't actually have.
 #ac_cv_func_getservbyname_r=${ac_cv_func_getservbyname_r=no}
@@ -886,7 +886,6 @@ ac_cv_prog_egrep=${ac_cv_prog_egrep='grep -E'}
 ac_cv_prog_f77_g=${ac_cv_prog_f77_g=yes}
 ac_cv_prog_gcc=${ac_cv_prog_gcc=yes}
 ac_cv_prog_have_hp2ps=${ac_cv_prog_have_hp2ps=1}
-ac_cv_prog_lex_root=${ac_cv_prog_lex_root=lex.yy}
 ac_cv_prog_lex_yytext_pointer=${ac_cv_prog_lex_yytext_pointer=yes}
 ac_cv_prog_make_make_set=${ac_cv_prog_make_make_set=yes}
 ac_cv_sizeof_char=${ac_cv_sizeof_char=1}
