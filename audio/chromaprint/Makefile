@@ -3,6 +3,7 @@ COMMENT =		audio fingerprint extraction library
 GH_ACCOUNT =		acoustid
 GH_PROJECT =		chromaprint
 GH_TAGNAME =		v1.5.1
+REVISION =		0
 
 SHARED_LIBS =		chromaprint               3.0 # 1.5.0
 
@@ -21,9 +22,6 @@ COMPILER =		base-clang ports-gcc
 MODULES =		devel/cmake
 
 BUILD_DEPENDS =		audio/taglib
-# gtest presence is checked in configure stage, so this cannot be
-# in TEST_DEPENDS
-BUILD_DEPENDS +=	devel/gtest
 
 LIB_DEPENDS =		graphics/ffmpeg
 
@@ -34,9 +32,6 @@ TEST_TARGET =		check
 
 CXXFLAGS +=		-I${LOCALBASE}/include
 MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/cmake/modules/FindGTest.cmake
 
 do-test:
 	${WRKBUILD}/tests/all_tests
