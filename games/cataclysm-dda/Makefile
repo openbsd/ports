@@ -55,8 +55,21 @@ MAN_TILES=		-tiles
 
 NO_TEST=		Yes
 
+post-extract:
+	mv ${WRKSRC}/src/third-party/flatbuffers/ \
+		${WRKSRC}/src/third-party/flatbuffers_int/
+
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/src/version.cmake
+	perl -pi -e 's,flatbuffers/,flatbuffers_int/,g' \
+		${WRKSRC}/src/third-party/CMakeLists.txt \
+		${WRKSRC}/src/third-party/flatbuffers_int/*.h \
+		${WRKSRC}/src/third-party/flatbuffers_int/*.cpp \
+		${WRKSRC}/src/third-party/flatbuffers_int/pch/*.h \
+		${WRKSRC}/src/main.cpp \
+		${WRKSRC}/src/flexbuffer_cache.* \
+		${WRKSRC}/src/flexbuffer_json-inl.h \
+		${WRKSRC}/pch/main-pch.hpp
 
 post-configure:
 	touch ${WRKSRC}/VERSION.txt
