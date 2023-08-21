@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.65 2023/08/14 17:36:43 espie Exp $
+# $OpenBSD: Var.pm,v 1.66 2023/08/21 11:35:19 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -982,11 +982,11 @@ sub ports_view_column($self, $name)
  
 package SupdistfilesVar;
 our @ISA = qw(DistfilesVar);
-sub match($) { 1 }
+sub match($) { 2 }
 
 package PatchfilesVar;
 our @ISA = qw(DistfilesVar);
-sub match($) { 2 }
+sub match($) { 1 }
 
 package Sql::Column::View::WithExtra;
 our @ISA = qw(Sql::Column::View::Expr);
