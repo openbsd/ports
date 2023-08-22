@@ -1,4 +1,4 @@
-# $OpenBSD: Info.pm,v 1.40 2023/08/21 10:10:01 espie Exp $
+# $OpenBSD: Info.pm,v 1.41 2023/08/22 14:59:46 espie Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -106,6 +106,7 @@ our $vars = {
     FLAVOR => 'IgnoredVar',
     MISSING_FILES => 'IgnoredVar',
     FIX_CRLF_FILES => 'CRLFFiles',
+    MODULESVAR => 'ModulesVarVar',
 };
 
 my @indexed = qw(FULLPKGNAME RUN_DEPENDS LIB_DEPENDS IGNORE
@@ -134,6 +135,13 @@ sub create($self, $var, $value, $arch, $path)
 	}
 	my $type = $var;
 	$type =~ s/^(MASTER_SITES|DISTFILES|SUPDISTFILES|PATCHFILES).*/$1/;
+	if ($type =~ m/^MOD/ && $type ne 'MODULES') {
+		$type = "MODULESVAR";
+		if (defined $arch) {
+			$var = $k;
+			undef $arch;
+		}
+	}
 	if (defined $vars->{$type}) {
 		$self->{vars}{$k} = $vars->{$type}->new($var, $value, $arch, 
 		    $path);

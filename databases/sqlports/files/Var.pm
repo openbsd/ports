@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.66 2023/08/21 11:35:19 espie Exp $
+# $OpenBSD: Var.pm,v 1.67 2023/08/22 14:59:46 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -948,6 +948,7 @@ sub create_tables($self, $inserter)
 	    $self->pathref,
 	    Sql::Column::View::WithSite->new("Value")->join(Sql::Join->new($k)
 		->add(Sql::Equal->new("KeyRef", "Value"))),
+	    Sql::Column::View->new("N"),
 	    Sql::Column::View->new("Sufx"),
 	    Sql::Column::View->new("Type"));
 	$inserter->make_ordered_view($self);
@@ -1228,5 +1229,31 @@ sub keyword_table($) { '_Keywords2' }
 package AutoVersionVar;
 our @ISA = qw(OptKeyVar);
 sub keyword_table($) { '_AutoVersion' }
+
+package ModulesVarVar;
+our @ISA = qw(KeyVar);
+sub table($) { 'ModulesVar' }
+sub keyword_table($) { '_VarName' }
+sub want_in_ports_view($) { 0 }
+
+sub create_tables($self, $inserter)
+{
+	my $k = $self->keyword_table;
+	$self->create_table(
+	    $self->fullpkgpath,
+	    Sql::Column::Integer->new("VarName")->references($k)->constraint,
+	    Sql::Column::Text->new("Value"));
+	$self->create_view(
+	    $self->pathref,
+	    Sql::Column::View->new("VarName", origin => 'Value')->join($self->compute_join("VarName")),
+	    Sql::Column::View->new("Value"));
+}
+
+sub add($self, $ins)
+{
+	$self->AnyVar::add($ins);
+	$self->normal_insert($ins, $self->keyword($ins, $self->var), 
+	    $self->value);
+}
 
 1;
