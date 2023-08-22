@@ -1,10 +1,10 @@
 COMMENT =		library for creating DigiDoc signature files
 
-V =			3.15.0
+V =			3.16.0
 DISTNAME =		libdigidocpp-${V}
 CATEGORIES =		security
 
-SHARED_LIBS =		digidocpp	2.0	# 0.0
+SHARED_LIBS =		digidocpp	3.0	# 0.0
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
@@ -14,6 +14,12 @@ PERMIT_PACKAGE =	Yes
 
 HOMEPAGE =		https://www.id.ee/
 MASTER_SITES =		https://github.com/open-eid/libdigidocpp/releases/download/v${V}/
+
+# pending "Get EVP_MD_CTX from EVP_Digest(3) to fix LibreSSL build"
+# https://github.com/open-eid/libdigidocpp/pull/550
+MASTER_SITES0 =		https://github.com/open-eid/libdigidocpp/commit/
+PATCHFILES =		2619a2a70a312558d912e9d758e376463e3e6482.patch:0
+PATCH_DIST_STRIP =	-p1
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
@@ -36,10 +42,6 @@ RUN_DEPENDS =		# empty
 
 # move DIGIDOCPP_CONFIG_DIR out of /usr/local/ into /etc/ (PLIST @sample)
 CONFIGURE_ARGS =	-DCMAKE_INSTALL_SYSCONFDIR=share/examples
-
-# pending "Treat dead Xalan-C as optional"
-# https://github.com/open-eid/cmake/pull/38
-CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_XalanC=ON
 
 # skip documentation and heavy dependency (for now)
 CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON

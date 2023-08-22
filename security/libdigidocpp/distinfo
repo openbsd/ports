@@ -1,2 +1,4 @@
-SHA256 (libdigidocpp-3.15.0.tar.gz) = CNHBPeodU2EzvmQBa9KI+1vGuuD25gSwdU9dVhVG04Q=
-SIZE (libdigidocpp-3.15.0.tar.gz) = 2496396
+SHA256 (2619a2a70a312558d912e9d758e376463e3e6482.patch) = uCfGk8Odwj+XF9jKpzf0izmMiaP4J+3K383wsWQH0MA=
+SHA256 (libdigidocpp-3.16.0.tar.gz) = XgObeVQJ2X7hNIelGK55RTtkKvU6D+RkLMc24/PZCzY=
+SIZE (2619a2a70a312558d912e9d758e376463e3e6482.patch) = 1497
+SIZE (libdigidocpp-3.16.0.tar.gz) = 2484988

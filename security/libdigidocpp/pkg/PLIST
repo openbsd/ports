@@ -17,8 +17,6 @@ lib/pkgconfig/libdigidocpp.pc
 @man man/man1/digidoc-tool.1
 share/examples/digidocpp/
 @sample ${SYSCONFDIR}/digidocpp/
-share/examples/digidocpp/798.p12
-@sample ${SYSCONFDIR}/digidocpp/798.p12
 share/examples/digidocpp/digidocpp.conf
 @sample ${SYSCONFDIR}/digidocpp/digidocpp.conf
 share/examples/digidocpp/schema/
