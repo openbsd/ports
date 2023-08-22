@@ -1,9 +1,8 @@
 COMMENT =		DigiDoc4 GUI client for signing and encrypting documents
 
-V =			4.3.0
+V =			4.4.0
 DISTNAME =		qdigidoc4-${V}
 CATEGORIES =		security x11
-REVISION =		1
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
@@ -18,7 +17,7 @@ DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
 
 MASTER_SITES0 =		https://id.eesti.ee/
-CONFIG_NAME =		config-20230702
+CONFIG_NAME =		config-20230813
 # need to be in sync due to CONFIG_URL handling
 .for _suffix in json pub rsa
 DISTFILES +=		${CONFIG_NAME}{config}.${_suffix}:0
@@ -34,7 +33,7 @@ MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 WANTLIB +=		${COMPILER_LIBCXX} GL Qt6Core Qt6Core5Compat Qt6Gui
 WANTLIB +=		Qt6Network Qt6PrintSupport Qt6Svg Qt6SvgWidgets Qt6Widgets
-WANTLIB += 		c crypto digidocpp lber ldap m pcsclite ssl
+WANTLIB +=		c crypto digidocpp flatbuffers lber ldap m pcsclite ssl z
 
 MODULES =		devel/cmake \
 			x11/qt6
@@ -42,8 +41,9 @@ MODULES =		devel/cmake \
 BUILD_DEPENDS =		devel/gettext,-tools \
 			x11/qt6/qttools
 
-LIB_DEPENDS =		databases/openldap,-main \
-			security/libdigidocpp>=3.15.0 \
+LIB_DEPENDS =		devel/flatbuffers \
+			databases/openldap,-main \
+			security/libdigidocpp>=3.16.0 \
 			security/pcsc-lite \
 			x11/qt6/qt5compat \
 			x11/qt6/qtsvg
