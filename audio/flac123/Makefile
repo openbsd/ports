@@ -2,7 +2,7 @@ COMMENT=		command-line FLAC player
 
 GH_ACCOUNT=		flac123
 GH_PROJECT=		flac123
-GH_TAGNAME=		v2.1.0
+GH_TAGNAME=		v2.1.1
 
 CATEGORIES=		audio
 
