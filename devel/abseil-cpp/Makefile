@@ -66,11 +66,9 @@ TESTLDPATH =		${WRKDIR}/ldpath
 TEST_ENV +=		TMPDIR=${TESTTMP} \
 			LD_LIBRARY_PATH=/usr/lib:${TESTLDPATH}
 
-# build whatever is left (ca. 400 test files)
 pre-test:
 	mkdir -p ${TESTTMP} ${TESTLDPATH}
 	find ${WRKBUILD} -type f -name 'libabsl*.so.*' \
 	    -exec ln -s {} ${TESTLDPATH}/ \;
-	@${MODCMAKE_BUILD_TARGET}
 
 .include <bsd.port.mk>
