@@ -50,10 +50,8 @@ dokuwiki/data/index/
 dokuwiki/data/index/_dummy
 dokuwiki/data/locks/
 dokuwiki/data/locks/_dummy
-@owner
 dokuwiki/data/log/
 dokuwiki/data/log/_dummy
-@owner www
 dokuwiki/data/media/
 dokuwiki/data/media/wiki/
 dokuwiki/data/media/wiki/dokuwiki-128.png
