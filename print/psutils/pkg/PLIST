@@ -12,6 +12,7 @@ bin/psresize
 bin/psselect
 bin/pstops
 lib/python${MODPY_VERSION}/site-packages/pspdfutils-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/pspdfutils-${MODPY_EGG_VERSION}.dist-info/.bak.0.SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/pspdfutils-${MODPY_EGG_VERSION}.dist-info/COPYING
 lib/python${MODPY_VERSION}/site-packages/pspdfutils-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/pspdfutils-${MODPY_EGG_VERSION}.dist-info/RECORD
