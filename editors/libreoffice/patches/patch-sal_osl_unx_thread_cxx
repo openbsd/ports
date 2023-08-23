@@ -1,7 +1,7 @@
 Index: sal/osl/unx/thread.cxx
 --- sal/osl/unx/thread.cxx.orig
 +++ sal/osl/unx/thread.cxx
-@@ -30,6 +30,7 @@
+@@ -32,6 +32,7 @@
  #include <string.h>
  #if defined(OPENBSD)
  #include <sched.h>
@@ -9,7 +9,7 @@ Index: sal/osl/unx/thread.cxx
  #endif
  #ifdef __FreeBSD__
  #if __FreeBSD_version <= 1201517
-@@ -576,6 +577,8 @@ void SAL_CALL osl_setThreadName(char const * name)
+@@ -550,6 +551,8 @@ void SAL_CALL osl_setThreadName(char const * name)
      int err = pthread_setname_np( pthread_self(), shortname );
      if ( 0 != err )
          SAL_WARN("sal.osl", "pthread_setname_np failed with errno " << err);
@@ -18,7 +18,7 @@ Index: sal/osl/unx/thread.cxx
  #elif defined __FreeBSD__
      pthread_setname_np( pthread_self(), name );
  #elif defined MACOSX || defined IOS
-@@ -603,7 +606,7 @@ const int HashSize = SAL_N_ELEMENTS(HashTable);
+@@ -577,7 +580,7 @@ const int HashSize = SAL_N_ELEMENTS(HashTable);
  
  static std::mutex HashLock;
  
@@ -27,7 +27,7 @@ Index: sal/osl/unx/thread.cxx
  static oslThreadIdentifier LastIdent = 0;
  #endif
  
-@@ -670,6 +673,8 @@ static oslThreadIdentifier insertThreadId (pthread_t h
+@@ -644,6 +647,8 @@ static oslThreadIdentifier insertThreadId (pthread_t h
          }
  #endif
          pEntry->Ident = tid;

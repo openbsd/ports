@@ -1,7 +1,7 @@
 Index: libreofficekit/qa/gtktiledviewer/gtv-main-toolbar.cxx
 --- libreofficekit/qa/gtktiledviewer/gtv-main-toolbar.cxx.orig
 +++ libreofficekit/qa/gtktiledviewer/gtv-main-toolbar.cxx
-@@ -19,6 +19,7 @@
+@@ -20,6 +20,7 @@
  #include <fstream>
  #include <map>
  #include <memory>

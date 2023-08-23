@@ -1,4 +1,4 @@
-USE_WXNEEDED=	Yes
+uSE_WXNEEDED=	Yes
 USE_NOBTCFI=	Yes
 
 ONLY_FOR_ARCHS= amd64 i386 aarch64
@@ -11,8 +11,8 @@ SHARED_LIBS +=  etonyek-0.1-lo            1.10 # 1.10
 SHARED_LIBS +=  langtag-lo                5.1 # 5.1
 SHARED_LIBS +=  mwaw-0.3-lo               3.21 # 3.21
 SHARED_LIBS +=  odfgen-0.1-lo             1.8 # 1.8
-SHARED_LIBS +=  orcus-0.17                0.0 # 0.0
-SHARED_LIBS +=  orcus-parser-0.17         0.0 # 0.0
+SHARED_LIBS +=  orcus-0.18                0.0 # 0.0
+SHARED_LIBS +=  orcus-parser-0.18         0.0 # 0.0
 SHARED_LIBS +=  staroffice-0.0-lo         0.0 # 0.0
 SHARED_LIBS +=  uno_cppu                  3.0 # 3.0
 SHARED_LIBS +=  uno_cppuhelpergcc3        3.0 # 3.0
@@ -22,8 +22,8 @@ SHARED_LIBS +=  uno_salhelpergcc3         3.0 # 3.0
 SHARED_LIBS +=  wpg-0.3-lo                3.4 # 3.4
 SHARED_LIBS +=  wps-0.4-lo                4.12 # 4.12
 
-BV=		7.5
-VERSION=	${BV}.5.2
+BV=		7.6
+VERSION=	${BV}.0.3
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 CATEGORIES=	editors productivity
@@ -97,6 +97,7 @@ DISTFILES += cppunit-1.15.1.tar.gz:0
 DISTFILES += culmus-0.133.tar.gz:0
 DISTFILES += dragonbox-1.1.3.tar.gz:0
 DISTFILES += dtoa-20180411.tgz:0
+DISTFILES += frozen-1.1.1.tar.gz:0
 DISTFILES += language-subtag-registry-2023-05-11.tar.bz2:0
 DISTFILES += libabw-0.1.3.tar.xz:0
 DISTFILES += libcdr-0.1.7.tar.xz:0
@@ -113,7 +114,7 @@ DISTFILES += liblangtag-0.6.3.tar.bz2:0
 DISTFILES += libmspub-0.1.4.tar.xz:0
 DISTFILES += libmwaw-0.3.21.tar.xz:0
 DISTFILES += libodfgen-0.1.8.tar.xz:0
-DISTFILES += liborcus-0.17.2.tar.bz2:0
+DISTFILES += liborcus-0.18.1.tar.xz:0
 DISTFILES += libpagemaker-0.0.4.tar.xz:0
 DISTFILES += libqxp-0.0.2.tar.xz:0
 DISTFILES += libre-hebrew-1.0.tar.gz:0
@@ -122,16 +123,16 @@ DISTFILES += libvisio-0.1.7.tar.xz:0
 DISTFILES += libwpg-0.3.4.tar.xz:0
 DISTFILES += libwps-0.4.12.tar.xz:0
 DISTFILES += libzmf-0.0.2.tar.xz:0
-DISTFILES += mdds-2.0.3.tar.bz2:0
+DISTFILES += mdds-2.1.1.tar.xz:0
 DISTFILES += noto-fonts-20171024.tar.gz:0
 DISTFILES += pdfium-5778.tar.bz2:0
-DISTFILES += skia-m103-b301ff025004c9cd82816c86c547588e6c24b466.tar.xz:0
+DISTFILES += skia-m111-a31e897fb3dcbc96b2b40999751611d029bf5404.tar.xz:0
 DISTFILES += source-serif-pro-3.000R.tar.gz:0
 DISTFILES += ttf-kacst_2.01+mry.tar.gz:0
 DISTFILES += xmlsec1-1.2.37.tar.gz:0
 DISTFILES += libnumbertext-1.0.11.tar.xz:0
 DISTFILES += box2d-2.4.1.tar.gz:0
-DISTFILES += zxing-cpp-1.4.0.tar.gz:0
+DISTFILES += zxing-cpp-2.0.0.tar.gz:0
 
 DIST_SUBDIR=	libreoffice
 
@@ -286,12 +287,11 @@ AUTOMAKE_VERSION=	1.12
 
 CONFIGURE_ENV=	CONFIG_SHELL=${LOCALBASE}/bin/bash \
 		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -Wl,--threads=${MAKE_JOBS}" \
 		KDE5INC="${LOCALBASE}/include/kde5" KDE5LIB="${LOCALBASE}/lib/kde5/libs"\
 		KF5INC="${LOCALBASE}/include" KF5LIB="${LOCALBASE}/lib" \
 		QT5DIR="${LOCALBASE}/lib/qt5" QT5LIB="${LOCALBASE}/qt5" \
-		QT5INC="${LOCALBASE}/include/X11/qt5" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+		QT5INC="${LOCALBASE}/include/X11/qt5"
 
 CONFIGURE_ARGS+=\
 		--disable-coinmp \

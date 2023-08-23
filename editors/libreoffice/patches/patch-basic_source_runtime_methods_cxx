@@ -1,7 +1,7 @@
 Index: basic/source/runtime/methods.cxx
 --- basic/source/runtime/methods.cxx.orig
 +++ basic/source/runtime/methods.cxx
-@@ -95,6 +95,7 @@ using namespace com::sun::star::uno;
+@@ -96,6 +96,7 @@ using namespace com::sun::star::uno;
  #include <stdio.h>
  #include <stdlib.h>
  #include <errno.h>

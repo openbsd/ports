@@ -1,7 +1,7 @@
 Index: sdext/Module_sdext.mk
 --- sdext/Module_sdext.mk.orig
 +++ sdext/Module_sdext.mk
-@@ -29,12 +29,6 @@ $(eval $(call gb_Module_add_targets,sdext,\
+@@ -25,12 +25,6 @@ $(eval $(call gb_Module_add_targets,sdext,\
      Package_pdfimport_xpdfimport \
  ))
  endif

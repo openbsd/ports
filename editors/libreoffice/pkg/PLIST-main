@@ -151,6 +151,7 @@ lib/libreoffice/help/en-US/text/sbasic/shared/03/sf_session.html
 lib/libreoffice/help/en-US/text/sbasic/shared/03/sf_string.html
 lib/libreoffice/help/en-US/text/sbasic/shared/03/sf_textstream.html
 lib/libreoffice/help/en-US/text/sbasic/shared/03/sf_timer.html
+lib/libreoffice/help/en-US/text/sbasic/shared/03/sf_toc.html
 lib/libreoffice/help/en-US/text/sbasic/shared/03/sf_ui.html
 lib/libreoffice/help/en-US/text/sbasic/shared/03/sf_unittest.html
 lib/libreoffice/help/en-US/text/sbasic/shared/03/sf_writer.html
@@ -434,6 +435,7 @@ lib/libreoffice/help/en-US/text/sbasic/shared/03150002.html
 lib/libreoffice/help/en-US/text/sbasic/shared/03160000.html
 lib/libreoffice/help/en-US/text/sbasic/shared/03170000.html
 lib/libreoffice/help/en-US/text/sbasic/shared/03170010.html
+lib/libreoffice/help/en-US/text/sbasic/shared/03170020.html
 lib/libreoffice/help/en-US/text/sbasic/shared/05060700.html
 lib/libreoffice/help/en-US/text/sbasic/shared/CallByName.html
 lib/libreoffice/help/en-US/text/sbasic/shared/Compiler_options.html
@@ -645,6 +647,9 @@ lib/libreoffice/help/en-US/text/scalc/01/common_func_workdaysintl.html
 lib/libreoffice/help/en-US/text/scalc/01/data_form.html
 lib/libreoffice/help/en-US/text/scalc/01/data_provider.html
 lib/libreoffice/help/en-US/text/scalc/01/databar_more_options.html
+lib/libreoffice/help/en-US/text/scalc/01/default_number_formats.html
+lib/libreoffice/help/en-US/text/scalc/01/duplicate_sheet.html
+lib/libreoffice/help/en-US/text/scalc/01/events_sheet.html
 lib/libreoffice/help/en-US/text/scalc/01/ex_data_stat_func.html
 lib/libreoffice/help/en-US/text/scalc/01/exponsmooth_embd.html
 lib/libreoffice/help/en-US/text/scalc/01/format_graphic.html
@@ -715,6 +720,7 @@ lib/libreoffice/help/en-US/text/scalc/01/func_roundsig.html
 lib/libreoffice/help/en-US/text/scalc/01/func_searchb.html
 lib/libreoffice/help/en-US/text/scalc/01/func_second.html
 lib/libreoffice/help/en-US/text/scalc/01/func_skewp.html
+lib/libreoffice/help/en-US/text/scalc/01/func_style.html
 lib/libreoffice/help/en-US/text/scalc/01/func_sum.html
 lib/libreoffice/help/en-US/text/scalc/01/func_sumifs.html
 lib/libreoffice/help/en-US/text/scalc/01/func_switch.html
@@ -733,9 +739,11 @@ lib/libreoffice/help/en-US/text/scalc/01/func_workday.html
 lib/libreoffice/help/en-US/text/scalc/01/func_workday.intl.html
 lib/libreoffice/help/en-US/text/scalc/01/func_year.html
 lib/libreoffice/help/en-US/text/scalc/01/func_yearfrac.html
+lib/libreoffice/help/en-US/text/scalc/01/hide_sheet.html
 lib/libreoffice/help/en-US/text/scalc/01/live_data_stream.html
 lib/libreoffice/help/en-US/text/scalc/01/recalculate_hard.html
 lib/libreoffice/help/en-US/text/scalc/01/shared_spreadsheet.html
+lib/libreoffice/help/en-US/text/scalc/01/sheet_tab_color.html
 lib/libreoffice/help/en-US/text/scalc/01/solver.html
 lib/libreoffice/help/en-US/text/scalc/01/solver_options.html
 lib/libreoffice/help/en-US/text/scalc/01/solver_options_algo.html
@@ -757,12 +765,8 @@ lib/libreoffice/help/en-US/text/scalc/01/statistics_test_t.html
 lib/libreoffice/help/en-US/text/scalc/01/statistics_test_z.html
 lib/libreoffice/help/en-US/text/scalc/01/text2columns.html
 lib/libreoffice/help/en-US/text/scalc/01/xml_source.html
+lib/libreoffice/help/en-US/text/scalc/01/zoom.html
 lib/libreoffice/help/en-US/text/scalc/02/
-lib/libreoffice/help/en-US/text/scalc/02/02130000.html
-lib/libreoffice/help/en-US/text/scalc/02/02140000.html
-lib/libreoffice/help/en-US/text/scalc/02/02150000.html
-lib/libreoffice/help/en-US/text/scalc/02/02160000.html
-lib/libreoffice/help/en-US/text/scalc/02/02170000.html
 lib/libreoffice/help/en-US/text/scalc/02/06010000.html
 lib/libreoffice/help/en-US/text/scalc/02/06030000.html
 lib/libreoffice/help/en-US/text/scalc/02/06040000.html
@@ -902,6 +906,8 @@ lib/libreoffice/help/en-US/text/scalc/main0210.html
 lib/libreoffice/help/en-US/text/scalc/main0214.html
 lib/libreoffice/help/en-US/text/scalc/main0218.html
 lib/libreoffice/help/en-US/text/scalc/main0503.html
+lib/libreoffice/help/en-US/text/scalc/menu/
+lib/libreoffice/help/en-US/text/scalc/menu/sheet_tab_menu.html
 lib/libreoffice/help/en-US/text/schart/
 lib/libreoffice/help/en-US/text/schart/00/
 lib/libreoffice/help/en-US/text/schart/00/00000004.html
@@ -1007,6 +1013,7 @@ lib/libreoffice/help/en-US/text/sdatabase/dabawiz02access.html
 lib/libreoffice/help/en-US/text/sdatabase/dabawiz02ado.html
 lib/libreoffice/help/en-US/text/sdatabase/dabawiz02connection.html
 lib/libreoffice/help/en-US/text/sdatabase/dabawiz02dbase.html
+lib/libreoffice/help/en-US/text/sdatabase/dabawiz02firebird.html
 lib/libreoffice/help/en-US/text/sdatabase/dabawiz02jdbc.html
 lib/libreoffice/help/en-US/text/sdatabase/dabawiz02mysql.html
 lib/libreoffice/help/en-US/text/sdatabase/dabawiz02odbc.html
@@ -1054,6 +1061,7 @@ lib/libreoffice/help/en-US/text/sdatabase/toolbars.html
 lib/libreoffice/help/en-US/text/sdraw/
 lib/libreoffice/help/en-US/text/sdraw/00/
 lib/libreoffice/help/en-US/text/sdraw/00/00000004.html
+lib/libreoffice/help/en-US/text/sdraw/00/insert_menu.html
 lib/libreoffice/help/en-US/text/sdraw/00/page_menu.html
 lib/libreoffice/help/en-US/text/sdraw/01/
 lib/libreoffice/help/en-US/text/sdraw/01/3dsettings_toolbar.html
@@ -1082,7 +1090,6 @@ lib/libreoffice/help/en-US/text/sdraw/guide/join_objects.html
 lib/libreoffice/help/en-US/text/sdraw/guide/join_objects3d.html
 lib/libreoffice/help/en-US/text/sdraw/guide/keyboard.html
 lib/libreoffice/help/en-US/text/sdraw/guide/layer_move.html
-lib/libreoffice/help/en-US/text/sdraw/guide/layer_new.html
 lib/libreoffice/help/en-US/text/sdraw/guide/layer_tipps.html
 lib/libreoffice/help/en-US/text/sdraw/guide/layers.html
 lib/libreoffice/help/en-US/text/sdraw/guide/main.html
@@ -1093,7 +1100,6 @@ lib/libreoffice/help/en-US/text/sdraw/main0100.html
 lib/libreoffice/help/en-US/text/sdraw/main0101.html
 lib/libreoffice/help/en-US/text/sdraw/main0103.html
 lib/libreoffice/help/en-US/text/sdraw/main0200.html
-lib/libreoffice/help/en-US/text/sdraw/main0202.html
 lib/libreoffice/help/en-US/text/sdraw/main0210.html
 lib/libreoffice/help/en-US/text/sdraw/main0213.html
 lib/libreoffice/help/en-US/text/sdraw/main0503.html
@@ -1259,8 +1265,11 @@ lib/libreoffice/help/en-US/text/shared/01/05070100.html
 lib/libreoffice/help/en-US/text/shared/01/05070200.html
 lib/libreoffice/help/en-US/text/shared/01/05070300.html
 lib/libreoffice/help/en-US/text/shared/01/05070400.html
+lib/libreoffice/help/en-US/text/shared/01/05070410.html
 lib/libreoffice/help/en-US/text/shared/01/05070500.html
+lib/libreoffice/help/en-US/text/shared/01/05070510.html
 lib/libreoffice/help/en-US/text/shared/01/05070600.html
+lib/libreoffice/help/en-US/text/shared/01/05070610.html
 lib/libreoffice/help/en-US/text/shared/01/05080000.html
 lib/libreoffice/help/en-US/text/shared/01/05080100.html
 lib/libreoffice/help/en-US/text/shared/01/05080200.html
@@ -1417,10 +1426,10 @@ lib/libreoffice/help/en-US/text/shared/01/font_features.html
 lib/libreoffice/help/en-US/text/shared/01/formatting_mark.html
 lib/libreoffice/help/en-US/text/shared/01/gallery.html
 lib/libreoffice/help/en-US/text/shared/01/gallery_files.html
-lib/libreoffice/help/en-US/text/shared/01/grid.html
 lib/libreoffice/help/en-US/text/shared/01/grid_and_helplines.html
 lib/libreoffice/help/en-US/text/shared/01/guides.html
 lib/libreoffice/help/en-US/text/shared/01/image_compression.html
+lib/libreoffice/help/en-US/text/shared/01/insert_chart.html
 lib/libreoffice/help/en-US/text/shared/01/mediaplayer.html
 lib/libreoffice/help/en-US/text/shared/01/menu_edit_find.html
 lib/libreoffice/help/en-US/text/shared/01/menu_view_sidebar.html
@@ -1441,6 +1450,8 @@ lib/libreoffice/help/en-US/text/shared/01/pastespecialmenu.html
 lib/libreoffice/help/en-US/text/shared/01/pasteunformatted.html
 lib/libreoffice/help/en-US/text/shared/01/profile_safe_mode.html
 lib/libreoffice/help/en-US/text/shared/01/prop_font_embed.html
+lib/libreoffice/help/en-US/text/shared/01/qrcode.html
+lib/libreoffice/help/en-US/text/shared/01/quickcolorselector.html
 lib/libreoffice/help/en-US/text/shared/01/ref_epub_export.html
 lib/libreoffice/help/en-US/text/shared/01/ref_pdf_export.html
 lib/libreoffice/help/en-US/text/shared/01/ref_pdf_export_digital_signature.html
@@ -1451,11 +1462,14 @@ lib/libreoffice/help/en-US/text/shared/01/ref_pdf_export_security.html
 lib/libreoffice/help/en-US/text/shared/01/ref_pdf_export_universal_accessibility.html
 lib/libreoffice/help/en-US/text/shared/01/ref_pdf_export_user_interface.html
 lib/libreoffice/help/en-US/text/shared/01/ref_pdf_send_as.html
+lib/libreoffice/help/en-US/text/shared/01/scrollbars.html
 lib/libreoffice/help/en-US/text/shared/01/securitywarning.html
+lib/libreoffice/help/en-US/text/shared/01/select_template_category.html
 lib/libreoffice/help/en-US/text/shared/01/selectcertificate.html
 lib/libreoffice/help/en-US/text/shared/01/signexistingpdf.html
 lib/libreoffice/help/en-US/text/shared/01/signsignatureline.html
 lib/libreoffice/help/en-US/text/shared/01/timestampauth.html
+lib/libreoffice/help/en-US/text/shared/01/view_comments.html
 lib/libreoffice/help/en-US/text/shared/01/webhtml.html
 lib/libreoffice/help/en-US/text/shared/01/xformsdata.html
 lib/libreoffice/help/en-US/text/shared/01/xformsdataadd.html
@@ -1600,6 +1614,7 @@ lib/libreoffice/help/en-US/text/shared/02/callouts.html
 lib/libreoffice/help/en-US/text/shared/02/colortoolbar.html
 lib/libreoffice/help/en-US/text/shared/02/flowcharts.html
 lib/libreoffice/help/en-US/text/shared/02/fontwork.html
+lib/libreoffice/help/en-US/text/shared/02/gridtofront.html
 lib/libreoffice/help/en-US/text/shared/02/limit.html
 lib/libreoffice/help/en-US/text/shared/02/namedialog.html
 lib/libreoffice/help/en-US/text/shared/02/paintbrush.html
@@ -1816,10 +1831,10 @@ lib/libreoffice/help/en-US/text/shared/guide/pageformat_max.html
 lib/libreoffice/help/en-US/text/shared/guide/paintbrush.html
 lib/libreoffice/help/en-US/text/shared/guide/palette_files.html
 lib/libreoffice/help/en-US/text/shared/guide/pasting.html
+lib/libreoffice/help/en-US/text/shared/guide/pdf_params.html
 lib/libreoffice/help/en-US/text/shared/guide/print_blackwhite.html
 lib/libreoffice/help/en-US/text/shared/guide/print_faster.html
 lib/libreoffice/help/en-US/text/shared/guide/protection.html
-lib/libreoffice/help/en-US/text/shared/guide/qrcode.html
 lib/libreoffice/help/en-US/text/shared/guide/redaction.html
 lib/libreoffice/help/en-US/text/shared/guide/redlining.html
 lib/libreoffice/help/en-US/text/shared/guide/redlining_accept.html
@@ -1866,8 +1881,8 @@ lib/libreoffice/help/en-US/text/shared/main0650.html
 lib/libreoffice/help/en-US/text/shared/main0800.html
 lib/libreoffice/help/en-US/text/shared/mediaplay_toolbar.html
 lib/libreoffice/help/en-US/text/shared/menu/
+lib/libreoffice/help/en-US/text/shared/menu/comment_menu.html
 lib/libreoffice/help/en-US/text/shared/menu/forms.html
-lib/libreoffice/help/en-US/text/shared/menu/insert_chart.html
 lib/libreoffice/help/en-US/text/shared/menu/insert_form_control.html
 lib/libreoffice/help/en-US/text/shared/menu/insert_shape.html
 lib/libreoffice/help/en-US/text/shared/menu/save_image.html
@@ -1948,6 +1963,7 @@ lib/libreoffice/help/en-US/text/shared/optionen/expertconfig.html
 lib/libreoffice/help/en-US/text/shared/optionen/java.html
 lib/libreoffice/help/en-US/text/shared/optionen/javaclasspath.html
 lib/libreoffice/help/en-US/text/shared/optionen/javaparameters.html
+lib/libreoffice/help/en-US/text/shared/optionen/languagetools.html
 lib/libreoffice/help/en-US/text/shared/optionen/macrosecurity.html
 lib/libreoffice/help/en-US/text/shared/optionen/macrosecurity_sl.html
 lib/libreoffice/help/en-US/text/shared/optionen/macrosecurity_ts.html
@@ -1958,6 +1974,7 @@ lib/libreoffice/help/en-US/text/shared/optionen/search_commands.html
 lib/libreoffice/help/en-US/text/shared/optionen/securityoptionsdialog.html
 lib/libreoffice/help/en-US/text/shared/optionen/serverauthentication.html
 lib/libreoffice/help/en-US/text/shared/optionen/testaccount.html
+lib/libreoffice/help/en-US/text/shared/optionen/translatetools.html
 lib/libreoffice/help/en-US/text/shared/optionen/viewcertificate.html
 lib/libreoffice/help/en-US/text/shared/optionen/viewcertificate_c.html
 lib/libreoffice/help/en-US/text/shared/optionen/viewcertificate_d.html
@@ -2263,6 +2280,7 @@ lib/libreoffice/help/en-US/text/swriter/00/00000403.html
 lib/libreoffice/help/en-US/text/swriter/00/00000404.html
 lib/libreoffice/help/en-US/text/swriter/00/00000405.html
 lib/libreoffice/help/en-US/text/swriter/00/00000406.html
+lib/libreoffice/help/en-US/text/swriter/00/formmenu.html
 lib/libreoffice/help/en-US/text/swriter/00/stylesmenu.html
 lib/libreoffice/help/en-US/text/swriter/01/
 lib/libreoffice/help/en-US/text/swriter/01/01120000.html
@@ -2279,7 +2297,6 @@ lib/libreoffice/help/en-US/text/swriter/01/02120100.html
 lib/libreoffice/help/en-US/text/swriter/01/02130000.html
 lib/libreoffice/help/en-US/text/swriter/01/02140000.html
 lib/libreoffice/help/en-US/text/swriter/01/02150000.html
-lib/libreoffice/help/en-US/text/swriter/01/02160000.html
 lib/libreoffice/help/en-US/text/swriter/01/02170000.html
 lib/libreoffice/help/en-US/text/swriter/01/03050000.html
 lib/libreoffice/help/en-US/text/swriter/01/03070000.html
@@ -2417,9 +2434,8 @@ lib/libreoffice/help/en-US/text/swriter/01/06220000.html
 lib/libreoffice/help/en-US/text/swriter/01/06990000.html
 lib/libreoffice/help/en-US/text/swriter/01/accessibility_check.html
 lib/libreoffice/help/en-US/text/swriter/01/contentcontrol00.html
-lib/libreoffice/help/en-US/text/swriter/01/contentcontrol01.html
-lib/libreoffice/help/en-US/text/swriter/01/edit_reference_submenu.html
 lib/libreoffice/help/en-US/text/swriter/01/format_object.html
+lib/libreoffice/help/en-US/text/swriter/01/goto.html
 lib/libreoffice/help/en-US/text/swriter/01/legacynumbering.html
 lib/libreoffice/help/en-US/text/swriter/01/mailmerge00.html
 lib/libreoffice/help/en-US/text/swriter/01/mailmerge01.html
@@ -2442,11 +2458,17 @@ lib/libreoffice/help/en-US/text/swriter/01/mm_seladdblo.html
 lib/libreoffice/help/en-US/text/swriter/01/mm_seladdlis.html
 lib/libreoffice/help/en-US/text/swriter/01/mm_seltab.html
 lib/libreoffice/help/en-US/text/swriter/01/outlinecontent_visibility.html
+lib/libreoffice/help/en-US/text/swriter/01/pagenumbering.html
 lib/libreoffice/help/en-US/text/swriter/01/protectdocument.html
+lib/libreoffice/help/en-US/text/swriter/01/select_text.html
 lib/libreoffice/help/en-US/text/swriter/01/selection_mode.html
 lib/libreoffice/help/en-US/text/swriter/01/show_whitespace.html
+lib/libreoffice/help/en-US/text/swriter/01/spotlight_styles.html
 lib/libreoffice/help/en-US/text/swriter/01/style_inspector.html
 lib/libreoffice/help/en-US/text/swriter/01/title_page.html
+lib/libreoffice/help/en-US/text/swriter/01/translate.html
+lib/libreoffice/help/en-US/text/swriter/01/view_images_charts.html
+lib/libreoffice/help/en-US/text/swriter/01/view_table_bounds.html
 lib/libreoffice/help/en-US/text/swriter/01/watermark.html
 lib/libreoffice/help/en-US/text/swriter/02/
 lib/libreoffice/help/en-US/text/swriter/02/02110000.html
@@ -2525,6 +2547,7 @@ lib/libreoffice/help/en-US/text/swriter/guide/change_header.html
 lib/libreoffice/help/en-US/text/swriter/guide/chapter_numbering.html
 lib/libreoffice/help/en-US/text/swriter/guide/conditional_text.html
 lib/libreoffice/help/en-US/text/swriter/guide/conditional_text2.html
+lib/libreoffice/help/en-US/text/swriter/guide/contentcontrols.html
 lib/libreoffice/help/en-US/text/swriter/guide/delete_from_dict.html
 lib/libreoffice/help/en-US/text/swriter/guide/dragdroptext.html
 lib/libreoffice/help/en-US/text/swriter/guide/even_odd_sdw.html
@@ -2665,6 +2688,8 @@ lib/libreoffice/help/en-US/text/swriter/main0216.html
 lib/libreoffice/help/en-US/text/swriter/main0220.html
 lib/libreoffice/help/en-US/text/swriter/main0503.html
 lib/libreoffice/help/en-US/text/swriter/menu/
+lib/libreoffice/help/en-US/text/swriter/menu/contentcontrol_submenu.html
+lib/libreoffice/help/en-US/text/swriter/menu/edit_reference_submenu.html
 lib/libreoffice/help/en-US/text/swriter/menu/insert_footnote_endnote.html
 lib/libreoffice/help/en-US/text/swriter/menu/insert_frame.html
 lib/libreoffice/help/en-US/text/swriter/menu/insert_header_footer.html
@@ -2828,6 +2853,7 @@ lib/libreoffice/help/media/helpimg/scalc/IMCSC_equation.svg
 lib/libreoffice/help/media/helpimg/scalc/IMSECH_equation.svg
 lib/libreoffice/help/media/helpimg/scalc/IMSEC_equation.svg
 lib/libreoffice/help/media/helpimg/scalc/IMTAN_equation.svg
+lib/libreoffice/help/media/helpimg/scalc/calczoomslider.png
 lib/libreoffice/help/media/helpimg/scalc/coordinates-to-polar-01.svg
 lib/libreoffice/help/media/helpimg/sd_PresenterConsole01.png
 lib/libreoffice/help/media/helpimg/sd_PresenterConsole02.png
@@ -4134,6 +4160,7 @@ lib/libreoffice/help/media/icon-themes/cmd/32/square.svg
 lib/libreoffice/help/media/icon-themes/cmd/32/square_rounded.svg
 lib/libreoffice/help/media/icon-themes/cmd/32/square_rounded_unfilled.svg
 lib/libreoffice/help/media/icon-themes/cmd/32/square_unfilled.svg
+lib/libreoffice/help/media/icon-themes/cmd/32/stackwindow.svg
 lib/libreoffice/help/media/icon-themes/cmd/32/starshapes.bang.svg
 lib/libreoffice/help/media/icon-themes/cmd/32/starshapes.concave-star6.svg
 lib/libreoffice/help/media/icon-themes/cmd/32/starshapes.doorplate.svg
@@ -4239,6 +4266,7 @@ lib/libreoffice/help/media/icon-themes/cmd/32/viewformasgrid.svg
 lib/libreoffice/help/media/icon-themes/cmd/32/viewrowcolumnheaders.svg
 lib/libreoffice/help/media/icon-themes/cmd/32/viewvaluehighlighting.svg
 lib/libreoffice/help/media/icon-themes/cmd/32/vruler.svg
+lib/libreoffice/help/media/icon-themes/cmd/32/watchwindow.svg
 lib/libreoffice/help/media/icon-themes/cmd/32/watermark.svg
 lib/libreoffice/help/media/icon-themes/cmd/32/window3d.svg
 lib/libreoffice/help/media/icon-themes/cmd/32/wordcountdialog.svg
@@ -5230,6 +5258,7 @@ lib/libreoffice/help/media/icon-themes/cmd/lc_square.svg
 lib/libreoffice/help/media/icon-themes/cmd/lc_square_rounded.svg
 lib/libreoffice/help/media/icon-themes/cmd/lc_square_rounded_unfilled.svg
 lib/libreoffice/help/media/icon-themes/cmd/lc_square_unfilled.svg
+lib/libreoffice/help/media/icon-themes/cmd/lc_stackwindow.svg
 lib/libreoffice/help/media/icon-themes/cmd/lc_starshapes.bang.svg
 lib/libreoffice/help/media/icon-themes/cmd/lc_starshapes.concave-star6.svg
 lib/libreoffice/help/media/icon-themes/cmd/lc_starshapes.doorplate.svg
@@ -5333,6 +5362,7 @@ lib/libreoffice/help/media/icon-themes/cmd/lc_viewformasgrid.svg
 lib/libreoffice/help/media/icon-themes/cmd/lc_viewrowcolumnheaders.svg
 lib/libreoffice/help/media/icon-themes/cmd/lc_viewvaluehighlighting.svg
 lib/libreoffice/help/media/icon-themes/cmd/lc_vruler.svg
+lib/libreoffice/help/media/icon-themes/cmd/lc_watchwindow.svg
 lib/libreoffice/help/media/icon-themes/cmd/lc_watermark.svg
 lib/libreoffice/help/media/icon-themes/cmd/lc_window3d.svg
 lib/libreoffice/help/media/icon-themes/cmd/lc_wordcountdialog.svg
@@ -6267,6 +6297,7 @@ lib/libreoffice/help/media/icon-themes/cmd/sc_square.svg
 lib/libreoffice/help/media/icon-themes/cmd/sc_square_rounded.svg
 lib/libreoffice/help/media/icon-themes/cmd/sc_square_rounded_unfilled.svg
 lib/libreoffice/help/media/icon-themes/cmd/sc_square_unfilled.svg
+lib/libreoffice/help/media/icon-themes/cmd/sc_stackwindow.svg
 lib/libreoffice/help/media/icon-themes/cmd/sc_starshapes.bang.svg
 lib/libreoffice/help/media/icon-themes/cmd/sc_starshapes.concave-star6.svg
 lib/libreoffice/help/media/icon-themes/cmd/sc_starshapes.doorplate.svg
@@ -6371,6 +6402,7 @@ lib/libreoffice/help/media/icon-themes/cmd/sc_viewrowcolumnheaders.svg
 lib/libreoffice/help/media/icon-themes/cmd/sc_viewvaluehighlighting.svg
 lib/libreoffice/help/media/icon-themes/cmd/sc_vruler.svg
 lib/libreoffice/help/media/icon-themes/cmd/sc_warningcellstyles.svg
+lib/libreoffice/help/media/icon-themes/cmd/sc_watchwindow.svg
 lib/libreoffice/help/media/icon-themes/cmd/sc_watermark.svg
 lib/libreoffice/help/media/icon-themes/cmd/sc_window3d.svg
 lib/libreoffice/help/media/icon-themes/cmd/sc_wordcountdialog.svg
@@ -6581,6 +6613,8 @@ lib/libreoffice/help/media/icon-themes/res/ott_96_8.svg
 lib/libreoffice/help/media/icon-themes/res/plus.svg
 lib/libreoffice/help/media/icon-themes/res/printeradmin_16.svg
 lib/libreoffice/help/media/icon-themes/res/printeradmin_32.svg
+lib/libreoffice/help/media/icon-themes/res/recentdoc_pin.svg
+lib/libreoffice/help/media/icon-themes/res/recentdoc_pin_highlighted.svg
 lib/libreoffice/help/media/icon-themes/res/recentdoc_remove.svg
 lib/libreoffice/help/media/icon-themes/res/recentdoc_remove_highlighted.svg
 lib/libreoffice/help/media/icon-themes/res/savemodified_extralarge.svg
@@ -6612,6 +6646,11 @@ lib/libreoffice/help/media/icon-themes/res/tb03.svg
 lib/libreoffice/help/media/icon-themes/res/tb04.svg
 lib/libreoffice/help/media/icon-themes/res/tb05.svg
 lib/libreoffice/help/media/icon-themes/res/templatestar.svg
+lib/libreoffice/help/media/icon-themes/res/tipoftheday.svg
+lib/libreoffice/help/media/icon-themes/res/tipoftheday_c.svg
+lib/libreoffice/help/media/icon-themes/res/tipoftheday_d.svg
+lib/libreoffice/help/media/icon-themes/res/tipoftheday_i.svg
+lib/libreoffice/help/media/icon-themes/res/tipoftheday_w.svg
 lib/libreoffice/help/media/icon-themes/res/versionwarning.svg
 lib/libreoffice/help/media/icon-themes/res/writer128.svg
 lib/libreoffice/help/media/icon-themes/res/writer32.svg
@@ -6812,6 +6851,8 @@ lib/libreoffice/help/media/icon-themes/sd/res/layout_textonly.svg
 lib/libreoffice/help/media/icon-themes/sd/res/layout_vertical01.svg
 lib/libreoffice/help/media/icon-themes/sd/res/layout_vertical02.svg
 lib/libreoffice/help/media/icon-themes/sd/res/minimize_presi_80.svg
+lib/libreoffice/help/media/icon-themes/sd/res/nextslide.svg
+lib/libreoffice/help/media/icon-themes/sd/res/nextslide_mouseover.svg
 lib/libreoffice/help/media/icon-themes/sd/res/nv08.svg
 lib/libreoffice/help/media/icon-themes/sd/res/object.svg
 lib/libreoffice/help/media/icon-themes/sd/res/objects.svg
@@ -6944,6 +6985,8 @@ lib/libreoffice/help/media/icon-themes/sd/res/presenterscreen-ScrollbarThumbTopS
 lib/libreoffice/help/media/icon-themes/sd/res/presenterscreen-Separator.svg
 lib/libreoffice/help/media/icon-themes/sd/res/presenterscreen-Transition.svg
 lib/libreoffice/help/media/icon-themes/sd/res/presenterscreen-ViewBackground.svg
+lib/libreoffice/help/media/icon-themes/sd/res/prevslide.svg
+lib/libreoffice/help/media/icon-themes/sd/res/prevslide_mouseover.svg
 lib/libreoffice/help/media/icon-themes/sd/res/pubdes.svg
 lib/libreoffice/help/media/icon-themes/sd/res/pubdes2.svg
 lib/libreoffice/help/media/icon-themes/sd/res/pubdes3.svg
@@ -6953,6 +6996,8 @@ lib/libreoffice/help/media/icon-themes/sd/res/slide_sorter_focus_border.svg
 lib/libreoffice/help/media/icon-themes/sd/res/slide_sorter_hide_slide_overlay.svg
 lib/libreoffice/help/media/icon-themes/sd/res/slide_sorter_insert_shadow.svg
 lib/libreoffice/help/media/icon-themes/sd/res/slide_sorter_shadow.svg
+lib/libreoffice/help/media/icon-themes/sd/res/slideshowmenu.svg
+lib/libreoffice/help/media/icon-themes/sd/res/slideshowmenu_mouseover.svg
 lib/libreoffice/help/media/icon-themes/sd/res/table.svg
 lib/libreoffice/help/media/icon-themes/sfx2/
 lib/libreoffice/help/media/icon-themes/sfx2/res/
@@ -6977,6 +7022,7 @@ lib/libreoffice/help/media/icon-themes/sfx2/res/signet.svg
 lib/libreoffice/help/media/icon-themes/sfx2/res/symphony/
 lib/libreoffice/help/media/icon-themes/sfx2/res/symphony/morebutton.svg
 lib/libreoffice/help/media/icon-themes/sfx2/res/symphony/open_more.svg
+lib/libreoffice/help/media/icon-themes/sfx2/res/symphony/sidebar-a11y-large.svg
 lib/libreoffice/help/media/icon-themes/sfx2/res/vendor01.svg
 lib/libreoffice/help/media/icon-themes/starmath/
 lib/libreoffice/help/media/icon-themes/starmath/res/
@@ -7211,9 +7257,9 @@ lib/libreoffice/help/media/icon-themes/svx/res/
 lib/libreoffice/help/media/icon-themes/svx/res/3dgeo.svg
 lib/libreoffice/help/media/icon-themes/svx/res/a11y_check_issues_found.svg
 lib/libreoffice/help/media/icon-themes/svx/res/a11y_check_issues_not_found.svg
-lib/libreoffice/help/media/icon-themes/svx/res/adding-selection_10x22.svg
+lib/libreoffice/help/media/icon-themes/svx/res/adding-selection.svg
 lib/libreoffice/help/media/icon-themes/svx/res/blend3d.svg
-lib/libreoffice/help/media/icon-themes/svx/res/block-selection_10x22.svg
+lib/libreoffice/help/media/icon-themes/svx/res/block-selection.svg
 lib/libreoffice/help/media/icon-themes/svx/res/border_cell_all_32.svg
 lib/libreoffice/help/media/icon-themes/svx/res/border_cell_diag_32.svg
 lib/libreoffice/help/media/icon-themes/svx/res/border_cell_l_32.svg
@@ -7234,10 +7280,10 @@ lib/libreoffice/help/media/icon-themes/svx/res/directionsouthwest_22.svg
 lib/libreoffice/help/media/icon-themes/svx/res/directionstraight_22.svg
 lib/libreoffice/help/media/icon-themes/svx/res/directionwest_22.svg
 lib/libreoffice/help/media/icon-themes/svx/res/doc_modified_feedback.svg
-lib/libreoffice/help/media/icon-themes/svx/res/doc_modified_no_14.svg
-lib/libreoffice/help/media/icon-themes/svx/res/doc_modified_yes_14.svg
+lib/libreoffice/help/media/icon-themes/svx/res/doc_modified_no.svg
+lib/libreoffice/help/media/icon-themes/svx/res/doc_modified_yes.svg
 lib/libreoffice/help/media/icon-themes/svx/res/doublesi.svg
-lib/libreoffice/help/media/icon-themes/svx/res/extending-selection_10x22.svg
+lib/libreoffice/help/media/icon-themes/svx/res/extending-selection.svg
 lib/libreoffice/help/media/icon-themes/svx/res/extrusion05inch_16.svg
 lib/libreoffice/help/media/icon-themes/svx/res/extrusion0inch_16.svg
 lib/libreoffice/help/media/icon-themes/svx/res/extrusion1inch_16.svg
@@ -7493,7 +7539,7 @@ lib/libreoffice/help/media/icon-themes/svx/res/slidezoombutton_10.svg
 lib/libreoffice/help/media/icon-themes/svx/res/slidezoomin_10.svg
 lib/libreoffice/help/media/icon-themes/svx/res/slidezoomout_10.svg
 lib/libreoffice/help/media/icon-themes/svx/res/sphere3d.svg
-lib/libreoffice/help/media/icon-themes/svx/res/standard-selection_10x22.svg
+lib/libreoffice/help/media/icon-themes/svx/res/standard-selection.svg
 lib/libreoffice/help/media/icon-themes/svx/res/symphony/
 lib/libreoffice/help/media/icon-themes/svx/res/symphony/ColorModeNormal_16x16.svg
 lib/libreoffice/help/media/icon-themes/svx/res/symphony/ColorModeWaterMark_16x16.svg
@@ -7561,10 +7607,10 @@ lib/libreoffice/help/media/icon-themes/svx/res/zetlver2.svg
 lib/libreoffice/help/media/icon-themes/svx/res/zoom_page_statusbar.svg
 lib/libreoffice/help/media/icon-themes/sw/
 lib/libreoffice/help/media/icon-themes/sw/res/
-lib/libreoffice/help/media/icon-themes/sw/res/doublepage_10x22.svg
-lib/libreoffice/help/media/icon-themes/sw/res/doublepage_a_10x22.svg
-lib/libreoffice/help/media/icon-themes/sw/res/emptypage_10x14.svg
-lib/libreoffice/help/media/icon-themes/sw/res/emptypage_a_10x14.svg
+lib/libreoffice/help/media/icon-themes/sw/res/doublepage.svg
+lib/libreoffice/help/media/icon-themes/sw/res/doublepage_a.svg
+lib/libreoffice/help/media/icon-themes/sw/res/emptypage.svg
+lib/libreoffice/help/media/icon-themes/sw/res/emptypage_a.svg
 lib/libreoffice/help/media/icon-themes/sw/res/envhc_l.svg
 lib/libreoffice/help/media/icon-themes/sw/res/envhc_u.svg
 lib/libreoffice/help/media/icon-themes/sw/res/envhl_l.svg
@@ -7645,8 +7691,8 @@ lib/libreoffice/help/media/icon-themes/sw/res/sidebar/pageproppanel/portraitcopy
 lib/libreoffice/help/media/icon-themes/sw/res/sr20012.svg
 lib/libreoffice/help/media/icon-themes/sw/res/sr20018.svg
 lib/libreoffice/help/media/icon-themes/sw/res/sr20019.svg
-lib/libreoffice/help/media/icon-themes/sw/res/twopages_10x24.svg
-lib/libreoffice/help/media/icon-themes/sw/res/twopages_a_10x24.svg
+lib/libreoffice/help/media/icon-themes/sw/res/twopages.svg
+lib/libreoffice/help/media/icon-themes/sw/res/twopages_a.svg
 lib/libreoffice/help/media/icon-themes/sw/res/wr01.svg
 lib/libreoffice/help/media/icon-themes/sw/res/wr010.svg
 lib/libreoffice/help/media/icon-themes/sw/res/wr011.svg
@@ -8018,7 +8064,6 @@ lib/libreoffice/program/intro.png
 @so lib/libreoffice/program/libLanguageToollo.so
 @so lib/libreoffice/program/libOGLTranslo.so
 @so lib/libreoffice/program/libPresentationMinimizerlo.so
-@so lib/libreoffice/program/libPresenterScreenlo.so
 @so lib/libreoffice/program/libabplo.so
 @so lib/libreoffice/program/libacclo.so
 @so lib/libreoffice/program/libaffine_uno_uno.so
@@ -8053,7 +8098,6 @@ lib/libreoffice/program/intro.png
 @so lib/libreoffice/program/libembobj.so
 @so lib/libreoffice/program/libemboleobj.so
 @lib lib/libreoffice/program/libetonyek-0.1-lo.so.${LIBetonyek-0.1-lo_VERSION}
-@so lib/libreoffice/program/libexpwraplo.so
 @so lib/libreoffice/program/libfilelo.so
 @so lib/libreoffice/program/libflatlo.so
 @so lib/libreoffice/program/libgcc3_uno.so
@@ -8095,8 +8139,8 @@ lib/libreoffice/program/intro.png
 @so lib/libreoffice/program/libodbclo.so
 @lib lib/libreoffice/program/libodfgen-0.1-lo.so.${LIBodfgen-0.1-lo_VERSION}
 @so lib/libreoffice/program/libooxlo.so
-@lib lib/libreoffice/program/liborcus-0.17.so.${LIBorcus-0.17_VERSION}
-@lib lib/libreoffice/program/liborcus-parser-0.17.so.${LIBorcus-parser-0.17_VERSION}
+@lib lib/libreoffice/program/liborcus-0.18.so.${LIBorcus-0.18_VERSION}
+@lib lib/libreoffice/program/liborcus-parser-0.18.so.${LIBorcus-parser-0.18_VERSION}
 @so lib/libreoffice/program/libpcrlo.so
 @so lib/libreoffice/program/libpdffilterlo.so
 @so lib/libreoffice/program/libpdfimportlo.so
@@ -8516,6 +8560,7 @@ lib/libreoffice/share/basic/SFDialogs/
 lib/libreoffice/share/basic/SFDialogs/SF_Dialog.xba
 lib/libreoffice/share/basic/SFDialogs/SF_DialogControl.xba
 lib/libreoffice/share/basic/SFDialogs/SF_DialogListener.xba
+lib/libreoffice/share/basic/SFDialogs/SF_DialogUtils.xba
 lib/libreoffice/share/basic/SFDialogs/SF_Register.xba
 lib/libreoffice/share/basic/SFDialogs/__License.xba
 lib/libreoffice/share/basic/SFDialogs/dialog.xlb
@@ -8528,6 +8573,7 @@ lib/libreoffice/share/basic/SFDocuments/SF_Document.xba
 lib/libreoffice/share/basic/SFDocuments/SF_DocumentListener.xba
 lib/libreoffice/share/basic/SFDocuments/SF_Form.xba
 lib/libreoffice/share/basic/SFDocuments/SF_FormControl.xba
+lib/libreoffice/share/basic/SFDocuments/SF_FormDocument.xba
 lib/libreoffice/share/basic/SFDocuments/SF_Register.xba
 lib/libreoffice/share/basic/SFDocuments/SF_Writer.xba
 lib/libreoffice/share/basic/SFDocuments/__License.xba
@@ -8544,6 +8590,8 @@ lib/libreoffice/share/basic/SFWidgets/SF_Menu.xba
 lib/libreoffice/share/basic/SFWidgets/SF_MenuListener.xba
 lib/libreoffice/share/basic/SFWidgets/SF_PopupMenu.xba
 lib/libreoffice/share/basic/SFWidgets/SF_Register.xba
+lib/libreoffice/share/basic/SFWidgets/SF_Toolbar.xba
+lib/libreoffice/share/basic/SFWidgets/SF_ToolbarButton.xba
 lib/libreoffice/share/basic/SFWidgets/__License.xba
 lib/libreoffice/share/basic/SFWidgets/dialog.xlb
 lib/libreoffice/share/basic/SFWidgets/script.xlb
@@ -8908,6 +8956,7 @@ lib/libreoffice/share/config/soffice.cfg/dbaccess/ui/namematchingpage.ui
 lib/libreoffice/share/config/soffice.cfg/dbaccess/ui/odbcpage.ui
 lib/libreoffice/share/config/soffice.cfg/dbaccess/ui/parametersdialog.ui
 lib/libreoffice/share/config/soffice.cfg/dbaccess/ui/password.ui
+lib/libreoffice/share/config/soffice.cfg/dbaccess/ui/postgrespage.ui
 lib/libreoffice/share/config/soffice.cfg/dbaccess/ui/querycolmenu.ui
 lib/libreoffice/share/config/soffice.cfg/dbaccess/ui/queryfilterdialog.ui
 lib/libreoffice/share/config/soffice.cfg/dbaccess/ui/queryfuncmenu.ui
@@ -9242,8 +9291,8 @@ lib/libreoffice/share/config/soffice.cfg/modules/scalc/ui/deletecontents.ui
 lib/libreoffice/share/config/soffice.cfg/modules/scalc/ui/deleterowentry.ui
 lib/libreoffice/share/config/soffice.cfg/modules/scalc/ui/descriptivestatisticsdialog.ui
 lib/libreoffice/share/config/soffice.cfg/modules/scalc/ui/doubledialog.ui
+lib/libreoffice/share/config/soffice.cfg/modules/scalc/ui/drawtemplatedialog.ui
 lib/libreoffice/share/config/soffice.cfg/modules/scalc/ui/dropmenu.ui
-lib/libreoffice/share/config/soffice.cfg/modules/scalc/ui/erroralerttabpage-mobile.ui
 lib/libreoffice/share/config/soffice.cfg/modules/scalc/ui/erroralerttabpage.ui
 lib/libreoffice/share/config/soffice.cfg/modules/scalc/ui/exponentialsmoothingdialog.ui
 lib/libreoffice/share/config/soffice.cfg/modules/scalc/ui/externaldata.ui
@@ -9378,7 +9427,6 @@ lib/libreoffice/share/config/soffice.cfg/modules/scalc/ui/ttestdialog.ui
 lib/libreoffice/share/config/soffice.cfg/modules/scalc/ui/ungroupdialog.ui
 lib/libreoffice/share/config/soffice.cfg/modules/scalc/ui/validationcriteriapage.ui
 lib/libreoffice/share/config/soffice.cfg/modules/scalc/ui/validationdialog.ui
-lib/libreoffice/share/config/soffice.cfg/modules/scalc/ui/validationhelptabpage-mobile.ui
 lib/libreoffice/share/config/soffice.cfg/modules/scalc/ui/validationhelptabpage.ui
 lib/libreoffice/share/config/soffice.cfg/modules/scalc/ui/warnautocorrect.ui
 lib/libreoffice/share/config/soffice.cfg/modules/scalc/ui/xmlsourcedialog.ui
@@ -10074,6 +10122,7 @@ lib/libreoffice/share/config/soffice.cfg/modules/swriter/toolbar/textstylebar.xm
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/toolbar/toolbar.xml
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/toolbar/viewerbar.xml
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/
+lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/a11ycheckissuespanel.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/abstractdialog.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/addentrydialog.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/addressblockdialog.ui
@@ -10227,6 +10276,7 @@ lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/pagefooterpanel.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/pageformatpanel.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/pageheaderpanel.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/pagemargincontrol.ui
+lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/pagenumberdlg.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/pageorientationcontrol.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/pagesizecontrol.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/pagestylemenu.ui
@@ -10295,6 +10345,7 @@ lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/unfloatbutton.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/viewoptionspage.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/warndatasourcedialog.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/warnemaildialog.ui
+lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/warnhiddensectiondialog.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/watermarkdialog.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/wordcount-mobile.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/wordcount.ui
@@ -10470,7 +10521,6 @@ lib/libreoffice/share/config/soffice.cfg/svx/
 lib/libreoffice/share/config/soffice.cfg/svx/ui/
 lib/libreoffice/share/config/soffice.cfg/svx/ui/absrecbox.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/acceptrejectchangesdialog.ui
-lib/libreoffice/share/config/soffice.cfg/svx/ui/accessibilitycheckdialog.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/accessibilitycheckentry.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/addconditiondialog.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/adddataitemdialog.ui
@@ -10600,6 +10650,8 @@ lib/libreoffice/share/config/soffice.cfg/svx/ui/textcharacterspacingcontrol.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/textcontrolchardialog.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/textcontrolparadialog.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/textunderlinecontrol.ui
+lib/libreoffice/share/config/soffice.cfg/svx/ui/themecoloreditdialog.ui
+lib/libreoffice/share/config/soffice.cfg/svx/ui/themedialog.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/toolbarpopover.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/xformspage.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/xmlsecstatmenu.ui
@@ -11119,18 +11171,6 @@ lib/libreoffice/share/fonts/truetype/Rubik-Italic.ttf
 lib/libreoffice/share/fonts/truetype/Rubik-Regular.ttf
 lib/libreoffice/share/fonts/truetype/Scheherazade-Bold.ttf
 lib/libreoffice/share/fonts/truetype/Scheherazade-Regular.ttf
-lib/libreoffice/share/fonts/truetype/SourceSansPro-Black.ttf
-lib/libreoffice/share/fonts/truetype/SourceSansPro-BlackIt.ttf
-lib/libreoffice/share/fonts/truetype/SourceSansPro-Bold.ttf
-lib/libreoffice/share/fonts/truetype/SourceSansPro-BoldIt.ttf
-lib/libreoffice/share/fonts/truetype/SourceSansPro-ExtraLight.ttf
-lib/libreoffice/share/fonts/truetype/SourceSansPro-ExtraLightIt.ttf
-lib/libreoffice/share/fonts/truetype/SourceSansPro-It.ttf
-lib/libreoffice/share/fonts/truetype/SourceSansPro-Light.ttf
-lib/libreoffice/share/fonts/truetype/SourceSansPro-LightIt.ttf
-lib/libreoffice/share/fonts/truetype/SourceSansPro-Regular.ttf
-lib/libreoffice/share/fonts/truetype/SourceSansPro-Semibold.ttf
-lib/libreoffice/share/fonts/truetype/SourceSansPro-SemiboldIt.ttf
 lib/libreoffice/share/fonts/truetype/fc_local.conf
 lib/libreoffice/share/fonts/truetype/opens___.ttf
 lib/libreoffice/share/gallery/
@@ -11675,11 +11715,6 @@ lib/libreoffice/share/tipoftheday/printnote.png
 lib/libreoffice/share/tipoftheday/remove_hyperlink.png
 lib/libreoffice/share/tipoftheday/statusbar.png
 lib/libreoffice/share/tipoftheday/sum_sheets.png
-lib/libreoffice/share/tipoftheday/tipoftheday.png
-lib/libreoffice/share/tipoftheday/tipoftheday_c.png
-lib/libreoffice/share/tipoftheday/tipoftheday_d.png
-lib/libreoffice/share/tipoftheday/tipoftheday_i.png
-lib/libreoffice/share/tipoftheday/tipoftheday_w.png
 lib/libreoffice/share/tipoftheday/toolbarmode.png
 lib/libreoffice/share/toolbarmode/
 lib/libreoffice/share/toolbarmode/default.png

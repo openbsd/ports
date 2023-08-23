@@ -1,7 +1,7 @@
 Index: vcl/unx/generic/window/salframe.cxx
 --- vcl/unx/generic/window/salframe.cxx.orig
 +++ vcl/unx/generic/window/salframe.cxx
-@@ -647,7 +647,7 @@ void X11SalFrame::Init( SalFrameStyleFlags nSalFrameSt
+@@ -573,7 +573,7 @@ void X11SalFrame::Init( SalFrameStyleFlags nSalFrameSt
              Hints.window_group = GetShellWindow();
      }
  
@@ -10,16 +10,16 @@ Index: vcl/unx/generic/window/salframe.cxx
      updateScreenNumber();
  
      XSync( GetXDisplay(), False );
-@@ -1636,7 +1636,7 @@ void X11SalFrame::SetWindowState( const vcl::WindowDat
+@@ -1471,7 +1471,7 @@ void X11SalFrame::SetWindowState( const vcl::WindowDat
                                pState->width(), pState->height());
              // guess maximized geometry from last time
              maGeometry.setPos({ pState->GetMaximizedX(), pState->GetMaximizedY() });
 -            maGeometry.setSize({ pState->GetMaximizedWidth(), pState->GetMaximizedHeight() });
 +            maGeometry.setSize({ static_cast<tools::Long>(pState->GetMaximizedWidth()), static_cast<tools::Long>(pState->GetMaximizedHeight()) });
+             cairo_xlib_surface_set_size(mpSurface,  pState->GetMaximizedWidth(), pState->GetMaximizedHeight());
              updateScreenNumber();
          }
-         else
-@@ -3632,7 +3632,7 @@ bool X11SalFrame::HandleReparentEvent( XReparentEvent 
+@@ -3479,7 +3479,7 @@ bool X11SalFrame::HandleReparentEvent( XReparentEvent 
           *  note: this works because hWM_Parent is direct child of root,
           *  not necessarily parent of GetShellWindow()
           */
