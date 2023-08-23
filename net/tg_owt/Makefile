@@ -15,10 +15,11 @@ GH_COMMIT =		a45d8b8f0a99bd0e5118dda1dc4a8b7b3ad5dcfd
 DISTNAME =		${GH_PROJECT}-0.0.0.20230515
 DISTFILES =		${GH_DISTFILE}
 CATEGORIES =		net
+REVISION =		0
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-SHARED_LIBS =		tg_owt	6.0	# upstream is static only
+SHARED_LIBS =		tg_owt	7.0	# upstream is static only
 
 DIST_SUBDIR =		tg_owt
 # Fetch bundles/submodules missing from the tarball, see ${WRKSRC}/.gitmodules
@@ -58,9 +59,10 @@ WANTLIB += absl_flags_internal absl_flags_marshalling absl_flags_parse
 WANTLIB += absl_flags_private_handle_accessor absl_flags_program_name
 WANTLIB += absl_flags_reflection absl_flags_usage absl_flags_usage_internal
 WANTLIB += absl_graphcycles_internal absl_hash absl_hashtablez_sampler
-WANTLIB += absl_int128 absl_log_severity absl_low_level_hash absl_malloc_internal
-WANTLIB += absl_raw_hash_set absl_raw_logging_internal absl_spinlock_wait
-WANTLIB += absl_stacktrace absl_str_format_internal absl_strings
+WANTLIB += absl_int128 absl_kernel_timeout_internal absl_log_severity
+WANTLIB += absl_low_level_hash absl_malloc_internal absl_raw_hash_set
+WANTLIB += absl_raw_logging_internal absl_spinlock_wait absl_stacktrace
+WANTLIB += absl_str_format_internal absl_string_view absl_strings
 WANTLIB += absl_strings_internal absl_symbolize absl_synchronization
 WANTLIB += absl_throw_delegate absl_time absl_time_zone avcodec
 WANTLIB += avformat avutil crc32c crypto jpeg m openh264 opus
