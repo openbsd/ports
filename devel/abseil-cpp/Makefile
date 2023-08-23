@@ -4,6 +4,7 @@ CATEGORIES =	devel
 GH_ACCOUNT =	abseil
 GH_PROJECT =	${GH_ACCOUNT}-cpp
 GH_TAGNAME =	20230802.0
+REVISION =	0
 
 HOMEPAGE =	https://abseil.io/
 
@@ -52,6 +53,11 @@ COMPILER_LANGS =	c++
 MODULES =		devel/cmake
 
 CONFIGURE_ARGS +=	-DBUILD_SHARED_LIBS=ON
+
+# A future Abseil release will default ABSL_PROPAGATE_CXX_STD=ON
+# for CMake >= 3.8. Abseil developers recommend enabling this option
+# to ensure that our project builds correctly.
+CONFIGURE_ARGS +=      -DABSL_PROPAGATE_CXX_STD=ON
 
 # use googletest from ports
 CONFIGURE_ARGS +=	-DABSL_USE_EXTERNAL_GOOGLETEST=${LOCALBASE}/include/gtest
