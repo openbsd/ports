@@ -2,6 +2,7 @@ COMMENT =	common code base for all Kiwix ports
 
 KIWIX_PROJECT =	libkiwix
 V =		12.0.0
+REVISION =	0
 
 SHARED_LIBS +=  kiwix                     0.0 # 0.0
 
