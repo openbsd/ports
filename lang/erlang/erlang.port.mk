@@ -128,12 +128,11 @@ pre-build:
 # https://hex.pm.
 MASTER_SITE_HEX =	https://repo.hex.pm/tarballs/
 
-MODERL_MASTER_SITEN =	9
-MASTER_SITES${MODERL_MASTER_SITEN} ?= ${MASTER_SITE_HEX}
+MASTER_SITES.erl	?= ${MASTER_SITE_HEX}
 MODERL_DIST_SUBDIR ?=	hex_modules
 
 .  for _m _v in ${MODERL_MODULES}
-MODERL_DISTFILES += ${MODERL_DIST_SUBDIR}/{}${_m}-${_v}.tar:${MODERL_MASTER_SITEN}
+MODERL_DISTFILES += ${MODERL_DIST_SUBDIR}/{}${_m}-${_v}.tar
 .  endfor
 
 .  if ! empty(MODERL_MODULES)
@@ -149,7 +148,7 @@ MODERLANG_post-extract += ${MODERL_SETUP_WORKSPACE}
 .  endif
 
 .  if defined(MODERL_DISTFILES)
-DISTFILES += ${MODERL_DISTFILES}
+DISTFILES.erl += ${MODERL_DISTFILES}
 .  endif
 
 # Regression test handling:
