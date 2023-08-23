@@ -69,6 +69,7 @@ post-patch:
 		${WRKSRC}/src/main.cpp \
 		${WRKSRC}/src/flexbuffer_cache.* \
 		${WRKSRC}/src/flexbuffer_json-inl.h \
+		${WRKSRC}/src/flexbuffer_json.h \
 		${WRKSRC}/pch/main-pch.hpp
 
 post-configure:
