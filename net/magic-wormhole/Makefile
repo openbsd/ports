@@ -1,8 +1,7 @@
 COMMENT =		securely transfer data between computers
 
-MODPY_EGG_VERSION =	0.12.0
+MODPY_EGG_VERSION =	0.13.0
 DISTNAME =		magic-wormhole-${MODPY_EGG_VERSION}
-REVISION =		4
 
 HOMEPAGE =		https://magic-wormhole.readthedocs.io
 
@@ -26,6 +25,7 @@ RUN_DEPENDS =		devel/py-attrs${MODPY_FLAVOR} \
 			devel/py-txaio${MODPY_FLAVOR} \
 			net/py-txtorcon${MODPY_FLAVOR} \
 			security/py-PyNaCl${MODPY_FLAVOR} \
+			security/py-cryptography${MODPY_FLAVOR} \
 			security/py-hkdf${MODPY_FLAVOR} \
 			security/py-spake2${MODPY_FLAVOR} \
 			textproc/py-humanize${MODPY_FLAVOR} \
