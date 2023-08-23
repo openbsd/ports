@@ -10,8 +10,7 @@ MODGO_DIST_SUBDIR ?=	go_modules
 
 MASTER_SITE_ATHENS =	https://proxy.golang.org/
 
-MODGO_MASTER_SITESN =	9
-MASTER_SITES${MODGO_MASTER_SITESN} ?= ${MASTER_SITE_ATHENS}
+MASTER_SITES.go ?= ${MASTER_SITE_ATHENS}
 
 MODGO_RUN_DEPENDS =	lang/go
 MODGO_BUILD_DEPENDS =	lang/go
@@ -79,13 +78,15 @@ DISTFILES +=		${DISTNAME_ESC}{${MODGO_VERSION}}${EXTRACT_SUFX}
 EXTRACT_ONLY +=		${DISTNAME_ESC}${EXTRACT_SUFX}
 MASTER_SITES ?=		${MASTER_SITE_ATHENS}${MODGO_MODNAME_ESC}/@v/
 .  for _modpath _modver in ${MODGO_MODULES}
-DISTFILES +=	${MODGO_DIST_SUBDIR}/{}${_modpath}/@v/${_modver}.zip:${MODGO_MASTER_SITESN}
-_MODGO_SETUP_ZIP +=	${_modpath}/@v/${_modver}
+DISTFILES.go +=	${MODGO_DIST_SUBDIR}/{}${_modpath}/@v/${_modver}.zip
+DISTFILES.go +=	${MODGO_DIST_SUBDIR}/{}${_modpath}/@v/${_modver}.mod
+_MODGO_SETUP +=	${_modpath}/@v/${_modver}.{zip,mod}
 .  endfor
-.  for _modpath _modver in ${MODGO_MODFILES} ${MODGO_MODULES}
-DISTFILES +=	${MODGO_DIST_SUBDIR}/{}${_modpath}/@v/${_modver}.mod:${MODGO_MASTER_SITESN}
-_MODGO_SETUP_MOD +=	${_modpath}/@v/${_modver}
+.  for _modpath _modver in ${MODGO_MODFILES}
+DISTFILES.go +=	${MODGO_DIST_SUBDIR}/{}${_modpath}/@v/${_modver}.mod
+_MODGO_SETUP += ${_modpath}/@v/${_modver}.mod
 .  endfor
+
 MAKE_ENV +=		GOPROXY=file://${WRKDIR}/go_modules
 MODGO_GO111MODULE ?=	on
 MAKE_ENV +=		GO111MODULE=${MODGO_GO111MODULE} GOPATH="${MODGO_GOPATH}"
@@ -123,11 +124,9 @@ MODGO_SETUP_WORKSPACE =	mkdir -p ${WRKSRC:H}; mv ${MODGO_SUBDIR} ${WRKSRC};
 .else
 WRKSRC ?=		${WRKDIR}/${MODGO_MODNAME}@${MODGO_VERSION}
 MODGO_SETUP_WORKSPACE =	ln -sf ${WRKSRC} ${WRKDIR}/${MODGO_MODNAME}; \
-	for m in ${_MODGO_SETUP_ZIP}; do \
-	    ${INSTALL} -D ${DISTDIR}/${MODGO_DIST_SUBDIR}/$$m.zip ${WRKDIR}/${MODGO_DIST_SUBDIR}/$$m.zip; \
-	done; \
-	for m in ${_MODGO_SETUP_MOD}; do \
-	    ${INSTALL} -D ${DISTDIR}/${MODGO_DIST_SUBDIR}/$$m.mod ${WRKDIR}/${MODGO_DIST_SUBDIR}/$$m.mod; \
+	cd ${DISTDIR}/${MODGO_DIST_SUBDIR}; \
+	for m in ${_MODGO_SETUP}; do \
+	    ${INSTALL} -D $$m ${WRKDIR}/${MODGO_DIST_SUBDIR}/$$m; \
 	done
 .endif
 
