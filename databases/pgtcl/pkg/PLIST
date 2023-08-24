@@ -1,8 +1,46 @@
+@so lib/tcl/libpgtcl${VER}.so
 lib/tcl/pgtcl/
-lib/tcl/pgtcl/libpgtcl${VER}.so
+@so lib/tcl/pgtcl/libpgtcl${VER}.so
 lib/tcl/pgtcl/pkgIndex.tcl
+@man man/mann/PgGetConnectionId.n
+@man man/mann/pg_blocking.n
+@man man/mann/pg_cancelrequest.n
+@man man/mann/pg_conndefaults.n
+@man man/mann/pg_connect.n
+@man man/mann/pg_copy_complete.n
+@man man/mann/pg_dbinfo.n
+@man man/mann/pg_disconnect.n
+@man man/mann/pg_escape_bytea.n
+@man man/mann/pg_escape_string.n
+@man man/mann/pg_exec.n
+@man man/mann/pg_exec_prepared.n
+@man man/mann/pg_execute.n
+@man man/mann/pg_getresult.n
+@man man/mann/pg_isbusy.n
+@man man/mann/pg_listen.n
+@man man/mann/pg_lo_close.n
+@man man/mann/pg_lo_creat.n
+@man man/mann/pg_lo_export.n
+@man man/mann/pg_lo_import.n
+@man man/mann/pg_lo_lseek.n
+@man man/mann/pg_lo_open.n
+@man man/mann/pg_lo_read.n
+@man man/mann/pg_lo_tell.n
+@man man/mann/pg_lo_truncate.n
+@man man/mann/pg_lo_unlink.n
+@man man/mann/pg_lo_write.n
+@man man/mann/pg_null_value_string.n
+@man man/mann/pg_on_connection_loss.n
+@man man/mann/pg_quote.n
+@man man/mann/pg_result.n
+@man man/mann/pg_select.n
+@man man/mann/pg_sendquery.n
+@man man/mann/pg_sendquery_prepared.n
+@man man/mann/pg_sqlite.n
+@man man/mann/pg_unescape_bytea.n
 share/doc/pgtcl/
 share/doc/pgtcl/html/
+share/doc/pgtcl/html/HTML.index
 share/doc/pgtcl/html/index.html
 share/doc/pgtcl/html/libpgtcl-loading.html
 share/doc/pgtcl/html/libpgtcl-ref.html
@@ -15,12 +53,14 @@ share/doc/pgtcl/html/pgtcl-pgcancelrequest.html
 share/doc/pgtcl/html/pgtcl-pgconndefaults.html
 share/doc/pgtcl/html/pgtcl-pgconnect.html
 share/doc/pgtcl/html/pgtcl-pgconninfo.html
+share/doc/pgtcl/html/pgtcl-pgcopycomplete.html
 share/doc/pgtcl/html/pgtcl-pgdisconnect.html
 share/doc/pgtcl/html/pgtcl-pgescape-bytea.html
 share/doc/pgtcl/html/pgtcl-pgescape-string.html
 share/doc/pgtcl/html/pgtcl-pgexec.html
 share/doc/pgtcl/html/pgtcl-pgexecprepared.html
 share/doc/pgtcl/html/pgtcl-pgexecute.html
+share/doc/pgtcl/html/pgtcl-pggetconnectionid.html
 share/doc/pgtcl/html/pgtcl-pggetresult.html
 share/doc/pgtcl/html/pgtcl-pgisbusy.html
 share/doc/pgtcl/html/pgtcl-pglisten.html
@@ -39,6 +79,8 @@ share/doc/pgtcl/html/pgtcl-pgresult.html
 share/doc/pgtcl/html/pgtcl-pgselect.html
 share/doc/pgtcl/html/pgtcl-pgsendquery.html
 share/doc/pgtcl/html/pgtcl-pgsendqueryprepared.html
+share/doc/pgtcl/html/pgtcl-pgsqlite.html
+share/doc/pgtcl/html/pgtcl-pgtruncate.html
 share/doc/pgtcl/html/pgtcl-pgunescape-bytea.html
 share/doc/pgtcl/html/pgtcl-quote.html
 share/doc/pgtcl/html/pgtcl-tclnamespace.html
