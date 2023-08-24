@@ -1,10 +1,11 @@
 COMMENT =	minimalist and opinionated feed reader
 
-MODGO_MODNAME =	miniflux.app
-MODGO_VERSION =	v0.0.0-20230722010713-4a4c309da01e
+V =		2.0.47
 
-DISTNAME =	miniflux.app-${MODGO_VERSION}
-V =		2.0.46.20230722
+MODGO_MODNAME =	miniflux.app/v2
+MODGO_VERSION =	v${V}
+
+DISTNAME =	${MODGO_MODNAME}-${MODGO_VERSION}
 PKGNAME =	miniflux-${V}
 
 CATEGORIES =	net www
@@ -20,7 +21,7 @@ MODULES =		lang/go
 
 ALL_TARGET =		${MODGO_MODNAME}/...
 
-MODGO_LDFLAGS +=	-X miniflux.app/version.Version=${V}
+MODGO_LDFLAGS +=	-X miniflux.app/v2/internal/version.Version=${V}
 
 SUBST_VARS =		VARBASE \
 			SYSCONFDIR
