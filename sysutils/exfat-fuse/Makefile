@@ -1,6 +1,6 @@
 COMMENT =		exFAT file system through FUSE
 
-V =			1.2.8
+V =			1.4.0
 GH_ACCOUNT =		relan
 GH_PROJECT =		exfat
 GH_TAGNAME =		v${V}
