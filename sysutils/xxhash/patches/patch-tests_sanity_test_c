@@ -1,0 +1,19 @@
+Use pledge(2), the sanity test does even not read files.
+
+Index: tests/sanity_test.c
+--- tests/sanity_test.c.orig
++++ tests/sanity_test.c
+@@ -639,6 +639,13 @@ int main(int argc, const char* argv[])
+     (void) argc;
+     (void) argv;
+ 
++#ifdef __OpenBSD__
++    if (pledge("stdio", NULL) == -1) {
++        XSUM_log("pledge: %s\n", strerror(errno));
++        return EXIT_FAILURE;
++    }
++#endif
++
+     {
+         /* XXH32 */
+         size_t const n = sizeof(XSUM_XXH32_testdata) / sizeof(XSUM_XXH32_testdata[0]);
