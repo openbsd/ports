@@ -1,4 +1,4 @@
-disable OSC 8; tcell-term has issues with it.
+disable OSC 8 sequences as our less(1) has issues with it.
 
 Index: filters/colorize.c
 --- filters/colorize.c.orig
