@@ -1,5 +1,6 @@
 @newgroup _osrm_routed:815
 @newuser _osrm_routed:815:815::OSRM Router:/var/empty:/sbin/nologin
+@conflict flatbuffers-*
 @rcscript ${RCDIR}/osrm_routed
 @bin bin/osrm-components
 @bin bin/osrm-contract
