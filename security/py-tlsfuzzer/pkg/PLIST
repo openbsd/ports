@@ -187,6 +187,7 @@ share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-session-resumption.${MODPY_PY
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-shuffled-extentions.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-signature-algorithms.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-symetric-ciphers.${MODPY_PYC_MAGIC_TAG}pyc
+share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-unencrypted-alert.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-unrecognised-groups.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-version-negotiation.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-zero-content-type.${MODPY_PYC_MAGIC_TAG}pyc
@@ -339,6 +340,7 @@ share/tlsfuzzer/scripts/test-tls13-session-resumption.py
 share/tlsfuzzer/scripts/test-tls13-shuffled-extentions.py
 share/tlsfuzzer/scripts/test-tls13-signature-algorithms.py
 share/tlsfuzzer/scripts/test-tls13-symetric-ciphers.py
+share/tlsfuzzer/scripts/test-tls13-unencrypted-alert.py
 share/tlsfuzzer/scripts/test-tls13-unrecognised-groups.py
 share/tlsfuzzer/scripts/test-tls13-version-negotiation.py
 share/tlsfuzzer/scripts/test-tls13-zero-content-type.py
