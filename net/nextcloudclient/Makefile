@@ -2,7 +2,7 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	desktop sync client for Nextcloud
 
-V =		3.9.1
+V =		3.9.3
 DISTNAME =	nextcloudclient-${V}
 
 GH_ACCOUNT =	nextcloud
