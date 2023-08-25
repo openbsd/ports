@@ -4,5 +4,6 @@ lib/vimb/
 @man man/man1/vimb.1
 share/applications/vimb.desktop
 @tag update-desktop-database
+share/doc/pkg-readmes/${PKGSTEM}
 share/metainfo/
 share/metainfo/vimb.metainfo.xml

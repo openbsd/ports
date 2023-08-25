@@ -1,0 +1,8 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+For a full multimedia experience, such as playing MP3 audio or MPEG
+videos, install the "gstreamer1-plugins-libav" package:
+
+# pkg_add gstreamer1-plugins-libav
