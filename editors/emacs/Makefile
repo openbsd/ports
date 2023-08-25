@@ -1,6 +1,7 @@
 COMMENT=		GNU editor: extensible, customizable, self-documenting
 
 VERSION=		29.1
+REVISION=		0
 DISTNAME=		emacs-${VERSION}
 
 CATEGORIES=		editors
@@ -13,7 +14,7 @@ MAINTAINER=		Jeremie Courreges-Anglas <jca@wxcvbn.org>
 PERMIT_PACKAGE=		Yes
 
 WANTLIB += c curses execinfo gmp gnutls jansson m pthread sqlite3
-WANTLIB += xml2 z
+WANTLIB += tree-sitter xml2 z
 
 MASTER_SITES=		${MASTER_SITE_GNU:=emacs/}
 EXTRACT_SUFX=		.tar.xz
@@ -29,8 +30,6 @@ CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build-aux
 CONFIGURE_ARGS=		--build="${GCCARCH}" \
 			--without-sound
-# Uses rust, not supported on all archs
-CONFIGURE_ARGS+=	--without-tree-sitter
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}"
@@ -45,7 +44,8 @@ LIB_DEPENDS=		databases/sqlite3 \
 			devel/jansson \
 			devel/gmp \
 			security/gnutls \
-			textproc/libxml
+			textproc/libxml \
+			textproc/tree-sitter
 
 .if ${FLAVOR} == "no_x11"
 CONFIGURE_ARGS+=	--without-x \
