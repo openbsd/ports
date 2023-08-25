@@ -1,23 +1,16 @@
-just use the bundled manuals
+ignore presence/absence of xsltproc, just use the bundled manuals
+which are included in tarball downloads
 
 Index: man/CMakeLists.txt
 --- man/CMakeLists.txt.orig
 +++ man/CMakeLists.txt
-@@ -6,7 +6,7 @@
+@@ -24,7 +24,9 @@ if(XSLTPROC)
+ 	compile_manpage("mosquitto-tls.7")
+ 	compile_manpage("mqtt.7")
+ 	compile_manpage("mosquitto.8")
++endif()
  
- if(NOT WIN32)
- 	find_program(XSLTPROC xsltproc OPTIONAL)
--	if(XSLTPROC)
-+	if(FALSE)
- 		function(compile_manpage page)
- 			add_custom_command(OUTPUT ${PROJECT_SOURCE_DIR}/man/${page}
- 				COMMAND xsltproc ${PROJECT_SOURCE_DIR}/man/${page}.xml -o ${PROJECT_SOURCE_DIR}/man/
-@@ -25,8 +25,6 @@ if(NOT WIN32)
- 		compile_manpage("mosquitto-tls.7")
- 		compile_manpage("mqtt.7")
- 		compile_manpage("mosquitto.8")
--	else()
--		message(FATAL_ERROR "xsltproc not found: manpages cannot be built")
- 	endif()
- 
- endif()
++if(TRUE)
+ 	install(FILES
+ 		mosquitto_ctrl.1
+ 		mosquitto_ctrl_dynsec.1

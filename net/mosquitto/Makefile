@@ -1,8 +1,7 @@
 COMMENT =		opensource MQTT broker
 
-V =			2.0.15
+V =			2.0.17
 DISTNAME =		mosquitto-$V
-REVISION =		0
 
 SHARED_LIBS +=  mosquitto                 2.1 # 1.5
 SHARED_LIBS +=  mosquittopp               2.0 # 1.5
@@ -40,7 +39,8 @@ CFLAGS +=		-I${LOCALBASE}/include
 TEST_DEPENDS=		${MODPY_RUN_DEPENDS} \
 			${BUILD_PKGPATH}-=$V \
 			devel/cunit \
-			devel/gmake
+			devel/gmake \
+			sysutils/py-psutil${MODPY_FLAVOR}
 
 pre-test:
 	ln -fs ${WRKBUILD}/src/mosquitto ${WRKSRC}/src/
