@@ -164,6 +164,7 @@ man/man4/mysql_adaptor.4gx
 man/man4/pam_gromox.4gx
 man/man4/timer_agent.4gx
 man/man4/user_filter.4gx
+@man man/man5/gromox-selinux.5
 @man man/man5/gromox.cfg.5
 @man man/man7/gromox.7
 man/man7/mapi.7gx
@@ -667,7 +668,6 @@ share/gromox/c1a-2.abkt
 share/gromox/c1a-200.abkt
 share/gromox/c1a-3.abkt
 share/gromox/c1a-6.abkt
-share/gromox/codepage_lang.json
 share/gromox/cpid.txt
 share/gromox/exmdb_list.txt
 share/gromox/folder_names.txt
