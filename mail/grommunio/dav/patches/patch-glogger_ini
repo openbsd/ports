@@ -1,0 +1,11 @@
+Index: glogger.ini
+--- glogger.ini.orig
++++ glogger.ini
+@@ -1,5 +1,5 @@
+ ; Available log levels: FATAL ERROR WARN INFO DEBUG TRACE
+-level = TRACE
+-file = "/var/log/grommunio-dav/dav.log"
++level = INFO
++file = "../logs/grommunio-dav/dav.log"
+ timeFormat = "d.m.Y H:i:s"
+ lineFormat = "%datetime% [%extra.process_id%] [%level_name%] %channel% %message%\n"

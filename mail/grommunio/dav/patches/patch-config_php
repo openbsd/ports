@@ -10,10 +10,3 @@ Index: config.php
  
  // Number of items to send in one request.
  define('MAX_SYNC_ITEMS', 1000);
-@@ -24,4 +24,4 @@ define('MAX_SYNC_ITEMS', 1000);
- // Developer mode: verifies log messages
- define('DEVELOPER_MODE', true);
- 
--// Logging: adjust in log4php.xml
-\ No newline at end of file
-+// Logging: adjust in log4php.xml

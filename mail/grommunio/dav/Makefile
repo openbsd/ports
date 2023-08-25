@@ -1,12 +1,11 @@
 COMMENT=	CalDAV and CardDAV interface for grommunio
 
-V=		1.1
+V=		1.3
 DISTNAME=	grommunio-dav-${V}
-REVISION=	0
 
 GH_ACCOUNT=	grommunio
 GH_PROJECT=     grommunio-dav
-GH_COMMIT=      9976bca1a92329c499b2400adec26dd8cc07ef19
+GH_COMMIT=      a9262794cb6b27acd10943138c92a230b0742ea8
 
 DISTFILES=	${GH_DISTFILE} \
 		${GH_PROJECT}-${GH_COMMIT}-vendor.tar.gz:0
@@ -39,7 +38,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}
 	cd ${WRKSRC} && pax -rw .* * ${INSTDIR}
 	mv ${INSTDIR}/config.php ${INSTDIR}/config.php.dist
-	mv ${INSTDIR}/log4php.xml ${INSTDIR}/log4php.xml.dist
+	mv ${INSTDIR}/glogger.ini ${INSTDIR}/glogger.ini.dist
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
 	find ${INSTDIR} -type f -and -name '.git*' -delete
 	find ${INSTDIR} -type d -and -name '.github' -exec rm -rf {} +
