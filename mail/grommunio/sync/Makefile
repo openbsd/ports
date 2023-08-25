@@ -2,11 +2,11 @@ COMMENT=	EAS (Exchange ActiveSync) interface for grommunio
 
 V=		2.0
 DISTNAME=	grommunio-sync-${V}
-REVISION=	0
+REVISION=	1
 
 GH_ACCOUNT=	grommunio
 GH_PROJECT=     grommunio-sync
-GH_COMMIT=      cba7b39980146c0cb6dc9eb8b1a05998708ad4f8
+GH_COMMIT=      313dd0285dcd53849b2444df524d0e54b4e4ca07
 
 DISTFILES=	${GH_DISTFILE} \
 		${GH_PROJECT}-${GH_COMMIT}-vendor.tar.gz:0
