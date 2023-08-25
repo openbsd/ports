@@ -2,7 +2,7 @@ COMMENT =		Lisp Flavoured Erlang (LFE)
 
 GH_ACCOUNT =		lfe
 GH_PROJECT =		lfe
-GH_TAGNAME =		2.1.1
+GH_TAGNAME =		2.1.2
 
 CATEGORIES =		lang
 
@@ -16,7 +16,6 @@ DISTFILES +=		${GH_DISTFILE}
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/erlang
-MODERL_VERSION =	25
 MODERL_MODULES =	rebar3_proper	0.12.1 \
 			proper		1.4.0
 
