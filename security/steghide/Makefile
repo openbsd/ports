@@ -1,7 +1,7 @@
 COMMENT =		software able to hide data in various kind of files
 
 DISTNAME =		steghide-0.5.1
-REVISION =		9
+REVISION =		10
 CATEGORIES =		security
 HOMEPAGE =		http://steghide.sf.net/
 
@@ -22,7 +22,8 @@ LIB_DEPENDS =		devel/gettext,-runtime \
 CONFIGURE_STYLE =	autoconf
 AUTOCONF_VERSION =	2.57
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -liconv -lintl"
+			LDFLAGS="-L${LOCALBASE}/lib -liconv -lintl" \
+			ac_cv_prog_ac_cv_prog_doxygen=no
 
 CXXFLAGS +=		-std=c++03
 

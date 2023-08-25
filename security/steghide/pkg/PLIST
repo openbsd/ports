@@ -1,4 +1,4 @@
-bin/steghide
+@bin bin/steghide
 @man man/man1/steghide.1
 share/locale/de/LC_MESSAGES/steghide.mo
 share/locale/es/LC_MESSAGES/steghide.mo
