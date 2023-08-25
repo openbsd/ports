@@ -47,6 +47,7 @@
      SUBDIR += nedit
      SUBDIR += neovim
      SUBDIR += neovim-qt
+     SUBDIR += novelwriter
      SUBDIR += nvi
      SUBDIR += nvi,iconv
      SUBDIR += poke
