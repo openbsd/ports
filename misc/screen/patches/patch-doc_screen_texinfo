@@ -1,0 +1,21 @@
+./screen.texinfo:2403: Node `Window Settings' lacks menu item for `Mousetrack' despite being its Up target.
+
+Index: doc/screen.texinfo
+--- doc/screen.texinfo.orig
++++ doc/screen.texinfo
+@@ -2416,6 +2416,7 @@ terminal emulation itself.
+ * Monitor::                     Watch for activity or inactivity in a window
+ * Windows::			List the active windows
+ * Hardstatus::			Set a window's hardstatus line
++* Mousetrack::			Set whether screen should track mouse events.
+ @end menu
+ 
+ @node Naming Windows, Console,  , Window Settings
+@@ -5147,7 +5148,6 @@ categories.
+ * Backtick::			Program a command for a backtick string escape.
+ * Screen Saver::		Define a screen safer.
+ * Zmodem::			Define how screen treats zmodem requests.
+-* Mousetrack::			Set whether screen should track mouse events.
+ @end menu
+ 
+ @node At, Break,  , Miscellaneous
