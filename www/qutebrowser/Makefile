@@ -14,6 +14,7 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
+# prefers PyQt6 if possible; see patch-qutebrowser_qt_machinery_py if switching
 RUN_DEPENDS =		devel/desktop-file-utils \
 			textproc/py-yaml${MODPY_FLAVOR} \
 			x11/gtk+4,-guic \
