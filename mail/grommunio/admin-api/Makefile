@@ -2,11 +2,11 @@ COMMENT=	management REST API for grommunio
 
 V=		1.11
 DISTNAME=	grommunio-admin-api-${V}
-REVISION=	1
+REVISION=	2
 
 GH_ACCOUNT=	grommunio
 GH_PROJECT=	admin-api
-GH_COMMIT=	482afbb15728f36a857e71aad22f47855ce108b5
+GH_COMMIT=	a6e29aec67bc2143622f1a6f8609ddf3401f50ca
 
 CATEGORIES=	mail www productivity
 
@@ -21,7 +21,7 @@ RUN_DEPENDS=	databases/py-ldap3${MODPY_FLAVOR} \
 		devel/py-argcomplete${MODPY_FLAVOR} \
 		devel/py-jsonschema${MODPY_FLAVOR} \
 		mail/grommunio/gromox \
-		mail/grommunio/libexmdbpp \
+		mail/grommunio/libexmdbpp>=1.11 \
 		net/py-idna${MODPY_FLAVOR} \
 		net/py-dnspython${MODPY_FLAVOR} \
 		security/py-cryptography${MODPY_FLAVOR} \
