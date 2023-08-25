@@ -1,6 +1,6 @@
 COMMENT =		keyboard-focused browser with a minimal GUI
 
-MODPY_EGG_VERSION =	2.5.4
+MODPY_EGG_VERSION =	3.0.0
 DISTNAME =		qutebrowser-${MODPY_EGG_VERSION}
 
 HOMEPAGE =		https://www.qutebrowser.org/
@@ -23,16 +23,18 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
-	${INSTALL_DATA} ${WRKSRC}/misc/org.qutebrowser.qutebrowser.desktop ${PREFIX}/share/applications/
+	${INSTALL_DATA} ${WRKSRC}/misc/org.qutebrowser.qutebrowser.desktop \
+		${PREFIX}/share/applications/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps/qutebrowser/
-	${INSTALL_DATA} ${WRKSRC}/icons/*.{ico,xpm} ${PREFIX}/share/pixmaps/qutebrowser/
+	${INSTALL_DATA} ${WRKSRC}/qutebrowser/icons/*.{ico,xpm} \
+		${PREFIX}/share/pixmaps/qutebrowser/
 .for s in 16 24 32 48 64 96 128 256 512
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/${s}x${s}/apps/
-	${INSTALL_DATA} ${WRKSRC}/icons/qutebrowser-${s}x${s}.png \
+	${INSTALL_DATA} ${WRKSRC}/qutebrowser/icons/qutebrowser-${s}x${s}.png \
 		${PREFIX}/share/icons/hicolor/${s}x${s}/apps/qutebrowser.png
 .endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/scalable/apps/
-	${INSTALL_DATA} ${WRKSRC}/icons/qutebrowser.svg \
+	${INSTALL_DATA} ${WRKSRC}/qutebrowser/icons/qutebrowser.svg \
 		${PREFIX}/share/icons/hicolor/scalable/apps/
 
 .include <bsd.port.arch.mk>
