@@ -15,6 +15,8 @@ PERMIT_PACKAGE = Yes
 
 USE_GMAKE =	Yes
 
+BUILD_DEPENDS = wayland/wayland-protocols
+
 LIB_DEPENDS =	devel/epoll-shim \
 		wayland/wayland \
 		x11/xkbcommon
