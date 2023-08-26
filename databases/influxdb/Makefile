@@ -1,3 +1,4 @@
+BROKEN =	doesn't build with rustc-1.72.0
 COMMENT =	time-series datastore for metrics, events, and analytics
 
 MODGO_VERSION=	v2.7.1
