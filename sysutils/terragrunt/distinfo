@@ -2276,7 +2276,7 @@ SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.mod) = 8ikTVRI4fWZj4fCZmkkiq3CN7Uv
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.zip) = Ve0Ixd9EigM79+LCkS1NqoW4VqBchUsMh8zIXH8/v8c=
 SHA256 (go_modules/vizzlo.com/mixpanel/@v/v1.2.0.mod) = yN8LGbDuRyeLE3eF/gW8IbjAla+OSySvL69BbAjwPcg=
 SHA256 (go_modules/vizzlo.com/mixpanel/@v/v1.2.0.zip) = df7t6+njyqtCXJd5NhYLUgZJBtBH6IQpH9kwmJxDJj0=
-SHA256 (terragrunt-v0.50.7.zip) = wi++fkzqLmmCSzrT0Fqr8bwY3xhZDZffhoT88Vk+XoU=
+SHA256 (terragrunt-v0.50.8.zip) = fhoCCEJmxcyA5ufV0vFP+2f8X2RkYKvlrfPGNNVH16o=
 SIZE (go_modules/cloud.google.com/go/@v/v0.100.2.mod) = 531
 SIZE (go_modules/cloud.google.com/go/@v/v0.102.0.mod) = 568
 SIZE (go_modules/cloud.google.com/go/@v/v0.102.1.mod) = 568
@@ -4555,4 +4555,4 @@ SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.mod) = 106
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.zip) = 20937
 SIZE (go_modules/vizzlo.com/mixpanel/@v/v1.2.0.mod) = 36
 SIZE (go_modules/vizzlo.com/mixpanel/@v/v1.2.0.zip) = 10562
-SIZE (terragrunt-v0.50.7.zip) = 2864428
+SIZE (terragrunt-v0.50.8.zip) = 2866735
