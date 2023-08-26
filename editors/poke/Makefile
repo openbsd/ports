@@ -1,6 +1,6 @@
 COMMENT =	interactive, extensible binary editor
 
-DISTNAME =	poke-3.2
+DISTNAME =	poke-3.3
 
 SHARED_LIBS +=  poke                      1.0 # 0.0
 
