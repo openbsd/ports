@@ -1,7 +1,7 @@
 MODGO_MODULES =	\
 	cloud.google.com/go					 v0.110.0 \
 	cloud.google.com/go/bigquery				 v1.8.0 \
-	cloud.google.com/go/compute				 v1.19.0 \
+	cloud.google.com/go/compute				 v1.20.1 \
 	cloud.google.com/go/compute/metadata			 v0.2.3 \
 	cloud.google.com/go/datastore				 v1.1.0 \
 	cloud.google.com/go/firestore				 v1.9.0 \
@@ -88,7 +88,7 @@ MODGO_MODULES =	\
 	github.com/stretchr/objx				 v0.5.0 \
 	github.com/stretchr/testify				 v1.8.3 \
 	github.com/subosito/gotenv				 v1.4.2 \
-	github.com/vultr/govultr/v3				 v3.0.3 \
+	github.com/vultr/govultr/v3				 v3.3.1 \
 	github.com/yuin/goldmark				 v1.2.1 \
 	go.etcd.io/etcd/api/v3					 v3.5.9 \
 	go.etcd.io/etcd/client/pkg/v3				 v3.5.9 \
@@ -98,18 +98,18 @@ MODGO_MODULES =	\
 	go.uber.org/atomic					 v1.9.0 \
 	go.uber.org/multierr					 v1.8.0 \
 	go.uber.org/zap						 v1.21.0 \
-	golang.org/x/crypto					 v0.10.0 \
+	golang.org/x/crypto					 v0.12.0 \
 	golang.org/x/exp					 v0.0.0-20200224162631-6cc2880d07d6 \
 	golang.org/x/image					 v0.0.0-20190802002840-cff245a6509b \
 	golang.org/x/lint					 v0.0.0-20201208152925-83fdc39ff7b5 \
 	golang.org/x/mobile					 v0.0.0-20190719004257-d2bd2a29d028 \
 	golang.org/x/mod					 v0.8.0 \
-	golang.org/x/net					 v0.11.0 \
-	golang.org/x/oauth2					 v0.9.0 \
+	golang.org/x/net					 v0.14.0 \
+	golang.org/x/oauth2					 v0.11.0 \
 	golang.org/x/sync					 v0.1.0 \
-	golang.org/x/sys					 v0.9.0 \
-	golang.org/x/term					 v0.9.0 \
-	golang.org/x/text					 v0.10.0 \
+	golang.org/x/sys					 v0.11.0 \
+	golang.org/x/term					 v0.11.0 \
+	golang.org/x/text					 v0.12.0 \
 	golang.org/x/time					 v0.1.0 \
 	golang.org/x/tools					 v0.6.0 \
 	golang.org/x/xerrors					 v0.0.0-20220907171357-04be3eba64a2 \
@@ -117,7 +117,7 @@ MODGO_MODULES =	\
 	google.golang.org/appengine				 v1.6.7 \
 	google.golang.org/genproto				 v0.0.0-20230410155749-daa745c078e1 \
 	google.golang.org/grpc					 v1.55.0 \
-	google.golang.org/protobuf				 v1.30.0 \
+	google.golang.org/protobuf				 v1.31.0 \
 	gopkg.in/check.v1					 v1.0.0-20201130134442-10cb98267c6c \
 	gopkg.in/errgo.v2					 v2.1.0 \
 	gopkg.in/ini.v1						 v1.67.0 \
@@ -153,7 +153,7 @@ MODGO_MODFILES =	\
 	cloud.google.com/go/bigquery		 v1.4.0 \
 	cloud.google.com/go/bigquery		 v1.5.0 \
 	cloud.google.com/go/bigquery		 v1.7.0 \
-	cloud.google.com/go/compute/metadata	 v0.2.0 \
+	cloud.google.com/go/compute		 v1.19.0 \
 	cloud.google.com/go/datastore		 v1.0.0 \
 	cloud.google.com/go/pubsub		 v1.0.1 \
 	cloud.google.com/go/pubsub		 v1.1.0 \
@@ -195,7 +195,6 @@ MODGO_MODFILES =	\
 	github.com/golang/protobuf		 v1.4.2 \
 	github.com/golang/protobuf		 v1.4.3 \
 	github.com/golang/protobuf		 v1.5.0 \
-	github.com/golang/protobuf		 v1.5.2 \
 	github.com/google/btree			 v0.0.0-20180813153112-4030bb1f1f0c \
 	github.com/google/go-cmp		 v0.2.0 \
 	github.com/google/go-cmp		 v0.3.0 \
@@ -528,7 +527,7 @@ MODGO_MODFILES =	\
 	google.golang.org/protobuf		 v1.25.0 \
 	google.golang.org/protobuf		 v1.26.0 \
 	google.golang.org/protobuf		 v1.26.0-rc.1 \
-	google.golang.org/protobuf		 v1.28.0 \
+	google.golang.org/protobuf		 v1.30.0 \
 	gopkg.in/check.v1			 v0.0.0-20161208181325-20d25e280405 \
 	gopkg.in/check.v1			 v1.0.0-20180628173108-788fd7840127 \
 	gopkg.in/yaml.v3			 v3.0.0-20200313102051-9f266ea9e77c \
