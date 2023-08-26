@@ -18,6 +18,9 @@ WANTLIB =		Xau Xdmcp xcb
 
 MASTER_SITES =		https://xcb.freedesktop.org/dist/
 
+MODULES=                lang/python
+MODPY_BUILDDEP =        Yes
+
 SEPARATE_BUILD =	Yes
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
