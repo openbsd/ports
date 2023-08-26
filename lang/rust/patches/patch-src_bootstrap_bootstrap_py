@@ -3,8 +3,8 @@ Workaround for sparc64: bootstrap segfaults without -O3
 Index: src/bootstrap/bootstrap.py
 --- src/bootstrap/bootstrap.py.orig
 +++ src/bootstrap/bootstrap.py
-@@ -891,6 +891,9 @@ class RustBuild(object):
-         if self.get_toml("deny-warnings", "rust") != "false":
+@@ -938,6 +938,9 @@ class RustBuild(object):
+         if deny_warnings:
              env["RUSTFLAGS"] += " -Dwarnings"
  
 +        if self.build_triple() == "sparc64-unknown-openbsd":

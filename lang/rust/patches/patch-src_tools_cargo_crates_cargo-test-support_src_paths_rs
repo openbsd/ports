@@ -1,7 +1,7 @@
 Index: src/tools/cargo/crates/cargo-test-support/src/paths.rs
 --- src/tools/cargo/crates/cargo-test-support/src/paths.rs.orig
 +++ src/tools/cargo/crates/cargo-test-support/src/paths.rs
-@@ -22,9 +22,7 @@ lazy_static! {
+@@ -17,9 +17,7 @@ static GLOBAL_ROOT: OnceLock<Mutex<Option<PathBuf>>> =
  /// This is used when running cargo is pre-CARGO_TARGET_TMPDIR
  /// TODO: Remove when CARGO_TARGET_TMPDIR grows old enough.
  fn global_root_legacy() -> PathBuf {

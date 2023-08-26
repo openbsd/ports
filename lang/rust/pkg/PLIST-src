@@ -101,7 +101,7 @@ lib/rustlib/src/rust/library/alloc/src/tests.rs
 lib/rustlib/src/rust/library/alloc/src/vec/
 lib/rustlib/src/rust/library/alloc/src/vec/cow.rs
 lib/rustlib/src/rust/library/alloc/src/vec/drain.rs
-lib/rustlib/src/rust/library/alloc/src/vec/drain_filter.rs
+lib/rustlib/src/rust/library/alloc/src/vec/extract_if.rs
 lib/rustlib/src/rust/library/alloc/src/vec/in_place_collect.rs
 lib/rustlib/src/rust/library/alloc/src/vec/in_place_drop.rs
 lib/rustlib/src/rust/library/alloc/src/vec/into_iter.rs
@@ -749,6 +749,8 @@ lib/rustlib/src/rust/library/portable-simd/crates/core_simd/src/ops/deref.rs
 lib/rustlib/src/rust/library/portable-simd/crates/core_simd/src/ops/unary.rs
 lib/rustlib/src/rust/library/portable-simd/crates/core_simd/src/ord.rs
 lib/rustlib/src/rust/library/portable-simd/crates/core_simd/src/select.rs
+lib/rustlib/src/rust/library/portable-simd/crates/core_simd/src/simd/
+lib/rustlib/src/rust/library/portable-simd/crates/core_simd/src/simd/prelude.rs
 lib/rustlib/src/rust/library/portable-simd/crates/core_simd/src/swizzle.rs
 lib/rustlib/src/rust/library/portable-simd/crates/core_simd/src/swizzle_dyn.rs
 lib/rustlib/src/rust/library/portable-simd/crates/core_simd/src/to_bytes.rs
@@ -906,7 +908,9 @@ lib/rustlib/src/rust/library/std/src/io/buffered/linewriter.rs
 lib/rustlib/src/rust/library/std/src/io/buffered/linewritershim.rs
 lib/rustlib/src/rust/library/std/src/io/buffered/mod.rs
 lib/rustlib/src/rust/library/std/src/io/buffered/tests.rs
+lib/rustlib/src/rust/library/std/src/io/copy/
 lib/rustlib/src/rust/library/std/src/io/copy.rs
+lib/rustlib/src/rust/library/std/src/io/copy/tests.rs
 lib/rustlib/src/rust/library/std/src/io/cursor/
 lib/rustlib/src/rust/library/std/src/io/cursor.rs
 lib/rustlib/src/rust/library/std/src/io/cursor/tests.rs
@@ -1437,7 +1441,9 @@ lib/rustlib/src/rust/library/std/src/sys/windows/process/tests.rs
 lib/rustlib/src/rust/library/std/src/sys/windows/rand.rs
 lib/rustlib/src/rust/library/std/src/sys/windows/stack_overflow.rs
 lib/rustlib/src/rust/library/std/src/sys/windows/stack_overflow_uwp.rs
+lib/rustlib/src/rust/library/std/src/sys/windows/stdio/
 lib/rustlib/src/rust/library/std/src/sys/windows/stdio.rs
+lib/rustlib/src/rust/library/std/src/sys/windows/stdio/tests.rs
 lib/rustlib/src/rust/library/std/src/sys/windows/thread.rs
 lib/rustlib/src/rust/library/std/src/sys/windows/thread_local_dtor.rs
 lib/rustlib/src/rust/library/std/src/sys/windows/thread_local_key/
@@ -1781,6 +1787,8 @@ lib/rustlib/src/rust/library/stdarch/examples/Cargo.toml
 lib/rustlib/src/rust/library/stdarch/examples/connect5.rs
 lib/rustlib/src/rust/library/stdarch/examples/hex.rs
 lib/rustlib/src/rust/library/stdarch/examples/wasm.rs
+lib/rustlib/src/rust/library/stdarch/intrinsics_data/
+lib/rustlib/src/rust/library/stdarch/intrinsics_data/arm_intrinsics.json
 lib/rustlib/src/rust/library/stdarch/rustfmt.toml
 lib/rustlib/src/rust/library/stdarch/triagebot.toml
 lib/rustlib/src/rust/library/stdarch/vendor.yml

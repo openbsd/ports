@@ -14,16 +14,16 @@ COMMENT-clippy =	Rust linter
 COMMENT-rustfmt =	Rust code formatter
 COMMENT-src =		Rust source component
 
-V =			1.71.1
+V =			1.72.0
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
-BV-aarch64 =		1.71.0-20230712
-BV-amd64 =		1.71.0-20230711
-BV-i386 =		1.71.0-20230711
+BV-aarch64 =		1.72.0-20230825
+BV-amd64 =		1.72.0-20230824
+BV-i386 =		1.72.0-20230825
 BV-powerpc64 =		1.65.0-20221213
 BV-riscv64 =		1.71.0-20230716
-BV-sparc64 =		1.70.0p0-20230710
+BV-sparc64 =		1.71.1-20230826
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
@@ -51,7 +51,7 @@ WANTLIB-rustfmt =	${COMPILER_LIBCXX} c m pthread
 
 MASTER_SITES =		https://static.rust-lang.org/dist/ \
 			https://dev-static.rust-lang.org/dist/
-MASTER_SITES0 =		http://kapouay.odns.fr/pub/rust/
+MASTER_SITES.bsp =	http://kapouay.odns.fr/pub/rust/
 
 FLAVOR ?=
 PSEUDO_FLAVORS =	native_bootstrap
@@ -62,14 +62,14 @@ DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
 .if ${FLAVOR} == native_bootstrap
 BUILD_DEPENDS +=	lang/rust
 .else
-DISTFILES +=		${BOOTSTRAP}
+DISTFILES.bsp +=	${BOOTSTRAP}
 .endif
 
 .include <bsd.port.arch.mk>
 BOOTSTRAP =		${BOOTSTRAP-${MACHINE_ARCH}}
 .for m in ${ONLY_FOR_ARCHS}
-BOOTSTRAP-$m =		rustc-bootstrap-${m}-${BV-$m}${EXTRACT_SUFX}:0
-SUPDISTFILES +=		${BOOTSTRAP-$m}
+BOOTSTRAP-$m =		rustc-bootstrap-${m}-${BV-$m}${EXTRACT_SUFX}
+SUPDISTFILES.bsp +=	${BOOTSTRAP-$m}
 .endfor
 
 # per MACHINE_ARCH configuration
