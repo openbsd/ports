@@ -3,7 +3,7 @@ CATEGORIES =	devel databases
 DISTFILES =
 
 # API.rev
-PKGNAME =	quirks-6.138
+PKGNAME =	quirks-6.139
 PKG_ARCH =	*
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 

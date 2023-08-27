@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1534 2023/08/15 07:34:23 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1535 2023/08/27 18:24:25 tb Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1833,6 +1833,7 @@ setup_obsolete_reason(
 	3 => 'libquicktime',
 	3 => 'gnome-twitch',
 	5 => 'sfio',
+	3 => 'parrot',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually

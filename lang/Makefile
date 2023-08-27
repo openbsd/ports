@@ -93,7 +93,6 @@
      SUBDIR += ocaml-camlp5
      SUBDIR += otcl
      SUBDIR += p5-Language-Ook
-     SUBDIR += parrot
      SUBDIR += pcbasic
      SUBDIR += pcc
      SUBDIR += pfe
