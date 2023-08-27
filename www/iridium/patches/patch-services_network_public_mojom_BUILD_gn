@@ -1,7 +1,7 @@
 Index: services/network/public/mojom/BUILD.gn
 --- services/network/public/mojom/BUILD.gn.orig
 +++ services/network/public/mojom/BUILD.gn
-@@ -464,11 +464,11 @@ mojom("url_loader_base") {
+@@ -465,11 +465,11 @@ mojom("url_loader_base") {
    }
  
    enabled_features = []

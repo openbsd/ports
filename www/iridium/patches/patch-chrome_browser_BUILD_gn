@@ -1,0 +1,17 @@
+Index: chrome/browser/BUILD.gn
+--- chrome/browser/BUILD.gn.orig
++++ chrome/browser/BUILD.gn
+@@ -6296,6 +6296,13 @@ static_library("browser") {
+     }
+   }
+ 
++  if (is_bsd) {
++    sources -= [
++      "metrics/bluetooth_metrics_provider.cc",
++      "metrics/bluetooth_metrics_provider.h",
++    ]
++  }
++
+   if (is_linux && use_dbus) {
+     sources += [
+       "dbus_memory_pressure_evaluator_linux.cc",

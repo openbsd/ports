@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/managed_ui.cc
 --- chrome/browser/ui/managed_ui.cc.orig
 +++ chrome/browser/ui/managed_ui.cc
-@@ -92,7 +92,7 @@ bool ShouldDisplayManagedByParentUi(Profile* profile) 
+@@ -95,7 +95,7 @@ bool ShouldDisplayManagedByParentUi(Profile* profile) 
    return false;
  #else
  
@@ -9,4 +9,4 @@ Index: chrome/browser/ui/managed_ui.cc
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
    // The EnableManagedByParentUiOnDesktop flag depends on
    // EnableSupervisionOnDesktopAndIOS.
-   CHECK(
+   DCHECK(

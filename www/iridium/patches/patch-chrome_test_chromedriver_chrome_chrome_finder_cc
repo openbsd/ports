@@ -10,12 +10,12 @@ Index: chrome/test/chromedriver/chrome/chrome_finder.cc
  void GetApplicationDirs(std::vector<base::FilePath>* locations) {
    // TODO: Respect users' PATH variables.
    // Until then, we use an approximation of the most common defaults.
-@@ -142,7 +142,7 @@ bool FindChrome(base::FilePath* browser_exe) {
-   base::FilePath browser_exes_array[] = {
- #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC)
-     base::FilePath(chrome::kBrowserProcessExecutablePath),
+@@ -157,7 +157,7 @@ bool FindChrome(base::FilePath* browser_exe) {
+     base::FilePath(chrome::kGoogleChromeForTestingBrowserProcessExecutablePath),
+     base::FilePath(chrome::kGoogleChromeBrowserProcessExecutablePath),
+     base::FilePath(chrome::kChromiumBrowserProcessExecutablePath),
 -#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
-     base::FilePath("google-chrome"),
      base::FilePath(chrome::kBrowserProcessExecutablePath),
-     base::FilePath("chromium"),
+     base::FilePath("chrome"),  // Chrome for Testing or Google Chrome
+     base::FilePath("google-chrome"),

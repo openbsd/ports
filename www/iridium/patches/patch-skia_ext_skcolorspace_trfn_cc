@@ -8,5 +8,5 @@ Index: skia/ext/skcolorspace_trfn.cc
 +#include <cmath>
 +
  #include "skia/ext/skcolorspace_trfn.h"
- #include <cmath>
  
+ #include <cmath>

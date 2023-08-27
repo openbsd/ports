@@ -10,8 +10,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Iridium browser
 
-V=			2023.07.115.1
-REVISION=		0
+V=			2023.08.116
 
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
@@ -143,7 +142,6 @@ GN_ARGS=	enable_nacl=false \
 		use_system_libjpeg=true \
 		use_system_harfbuzz=true \
 		use_system_freetype=false \
-		use_gnome_keyring=false \
 		icu_use_data_file=false \
 		is_clang=true \
 		use_sysroot=false \

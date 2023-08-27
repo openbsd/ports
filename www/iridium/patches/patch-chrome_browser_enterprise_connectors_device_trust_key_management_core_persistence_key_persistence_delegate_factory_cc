@@ -10,7 +10,7 @@ Index: chrome/browser/enterprise/connectors/device_trust/key_management/core/per
  #include "chrome/browser/enterprise/connectors/device_trust/key_management/core/persistence/linux_key_persistence_delegate.h"
  #endif
  
-@@ -44,7 +44,7 @@ KeyPersistenceDelegateFactory::CreateKeyPersistenceDel
+@@ -45,7 +45,7 @@ KeyPersistenceDelegateFactory::CreateKeyPersistenceDel
    return std::make_unique<WinKeyPersistenceDelegate>();
  #elif BUILDFLAG(IS_MAC)
    return std::make_unique<MacKeyPersistenceDelegate>();
