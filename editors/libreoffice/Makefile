@@ -29,6 +29,8 @@ WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel
 
+PORTHOME=	${WRKDIR}
+
 EPOCH=		0
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
