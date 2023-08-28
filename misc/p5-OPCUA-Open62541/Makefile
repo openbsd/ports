@@ -1,6 +1,6 @@
 COMMENT =	Perl XS wrapper for open62541 OPC UA library
 
-DISTNAME =	OPCUA-Open62541-2.03
+DISTNAME =	OPCUA-Open62541-2.04
 CPAN_AUTHOR =	BLUHM
 
 CATEGORIES =	misc
@@ -27,6 +27,7 @@ TEST_DEPENDS =		devel/p5-Test-Deep \
 			devel/p5-Test-Strict \
 			devel/p5-Test-Warn \
 			devel/p5-YAML-Tiny \
+			net/p5-Socket6 \
 			net/p5-Test-TCP \
 			security/p5-IO-Socket-SSL
 
