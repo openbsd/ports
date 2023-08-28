@@ -4,7 +4,7 @@ COMMENT =		a new type of shell
 
 GH_ACCOUNT =		nushell
 GH_PROJECT =		nushell
-GH_TAGNAME =		0.82.0
+GH_TAGNAME =		0.84.0
 
 CATEGORIES =		shells
 
@@ -19,7 +19,10 @@ MODCARGO_CRATES_KEEP +=	libsqlite3-sys
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
 
-WANTLIB +=		c c++abi crypto m pthread ssl
+# For Tests
+PORTHOME =		${WRKSRC}
+
+WANTLIB +=		${MODCARGO_WANTLIB} crypto m ssl
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/target/release/nu ${PREFIX}/bin/
