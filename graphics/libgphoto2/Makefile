@@ -3,7 +3,7 @@ COMMENT=		digital camera library
 VERSION=		2.5.30
 DISTNAME=		libgphoto2-${VERSION}
 PKGNAME=		libgphoto-${VERSION}
-REVISION=		0
+REVISION=		1
 
 GPHOTO2_PORT_API=	0.12.1
 SUBST_VARS=		GPHOTO2_PORT_API VERSION
@@ -26,7 +26,7 @@ WANTLIB += ssl tiff usb usb-1.0 webp xml2 z zstd
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gphoto/}
 
-BUILD_DEPENDS=		devel/doxygen
+BUILD_DEPENDS=		devel/doxygen>=1.9.7
 
 LIB_DEPENDS=		graphics/gd \
 			graphics/libexif \

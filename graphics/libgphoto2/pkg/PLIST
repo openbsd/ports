@@ -142,7 +142,6 @@ share/doc/libgphoto2/libgphoto2-api.html/bayer_8h__incl.png
 share/doc/libgphoto2/libgphoto2-api.html/bayer_8h_source.html
 share/doc/libgphoto2/libgphoto2-api.html/bc_s.png
 share/doc/libgphoto2/libgphoto2-api.html/bc_sd.png
-share/doc/libgphoto2/libgphoto2-api.html/bdwn.png
 share/doc/libgphoto2/libgphoto2-api.html/classes.html
 share/doc/libgphoto2/libgphoto2-api.html/closed.png
 share/doc/libgphoto2/libgphoto2-api.html/compiletime-assert_8h.html
@@ -190,8 +189,8 @@ share/doc/libgphoto2/libgphoto2-api.html/dir_ff2570e7e5c377838c8e56ea8c3b24f7.js
 share/doc/libgphoto2/libgphoto2-api.html/dir_ff2570e7e5c377838c8e56ea8c3b24f7_dep.map
 share/doc/libgphoto2/libgphoto2-api.html/dir_ff2570e7e5c377838c8e56ea8c3b24f7_dep.md5
 share/doc/libgphoto2/libgphoto2-api.html/dir_ff2570e7e5c377838c8e56ea8c3b24f7_dep.png
-share/doc/libgphoto2/libgphoto2-api.html/doc.png
-share/doc/libgphoto2/libgphoto2-api.html/docd.png
+share/doc/libgphoto2/libgphoto2-api.html/doc.svg
+share/doc/libgphoto2/libgphoto2-api.html/docd.svg
 share/doc/libgphoto2/libgphoto2-api.html/doxygen.css
 share/doc/libgphoto2/libgphoto2-api.html/doxygen.svg
 share/doc/libgphoto2/libgphoto2-api.html/dynsections.js
@@ -206,8 +205,10 @@ share/doc/libgphoto2/libgphoto2-api.html/exif_8h__dep__incl.png
 share/doc/libgphoto2/libgphoto2-api.html/exif_8h_source.html
 share/doc/libgphoto2/libgphoto2-api.html/files.html
 share/doc/libgphoto2/libgphoto2-api.html/files_dup.js
-share/doc/libgphoto2/libgphoto2-api.html/folderclosed.png
-share/doc/libgphoto2/libgphoto2-api.html/folderopen.png
+share/doc/libgphoto2/libgphoto2-api.html/folderclosed.svg
+share/doc/libgphoto2/libgphoto2-api.html/folderclosedd.svg
+share/doc/libgphoto2/libgphoto2-api.html/folderopen.svg
+share/doc/libgphoto2/libgphoto2-api.html/folderopend.svg
 share/doc/libgphoto2/libgphoto2-api.html/functions.html
 share/doc/libgphoto2/libgphoto2-api.html/functions_vars.html
 share/doc/libgphoto2/libgphoto2-api.html/gamma_8c.html
