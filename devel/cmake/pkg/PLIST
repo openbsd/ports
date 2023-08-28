@@ -35,6 +35,7 @@ share/bash-completion/completions/ctest
 share/cmake/
 share/cmake/Help/
 share/cmake/Help/command/
+share/cmake/Help/command/DEPRECATED_POLICY_VERSIONS.txt
 share/cmake/Help/command/DEVICE_LINK_OPTIONS.txt
 share/cmake/Help/command/FIND_XXX.txt
 share/cmake/Help/command/FIND_XXX_ORDER.txt
