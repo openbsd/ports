@@ -1,4 +1,4 @@
-V =	3.3.4
+V =	3.4.0
 COMMENT=	geographic objects support for PostgreSQL
 DISTNAME=	postgis-${V}
 CATEGORIES=	geo databases
@@ -47,12 +47,8 @@ CONFIGURE_ARGS=	--with-xsldir=${PREFIX}/share/xsl/docbook/ \
 		--libdir=${PREFIX}/lib/postgresql
 
 SUBST_VARS +=	V
-DOCDIR =	${PREFIX}/share/doc/postgresql/postgis/
 
 post-install:
 	cd ${WRKSRC}/doc && WRKINST=${WRKINST} ${MAKE_PROGRAM} docs-install man-install
-	${INSTALL_DATA_DIR} ${DOCDIR}/images/
-	$(INSTALL_DATA) ${WRKSRC}/doc/html/style.css ${DOCDIR}/
-	$(INSTALL_DATA) ${WRKSRC}/doc/html/images/* ${DOCDIR}/images/
 
 .include <bsd.port.mk>
