@@ -4,711 +4,394 @@ share/doc/nerd-fonts/noto/LICENSE_OFL.txt
 share/fonts/
 share/fonts/nerd-fonts/
 @fontdir share/fonts/nerd-fonts/noto/
-share/fonts/nerd-fonts/noto/Noto Mono Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Mono Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Mono Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Mono Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed Black Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed Black Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed Black Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed Black Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed Black Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed Black Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed Black Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed Black Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed Bold Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed Bold Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed Bold Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed Bold Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed Bold Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed Bold Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed Bold Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed Bold Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed ExtraBold Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed ExtraBold Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed ExtraBold Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed ExtraBold Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed ExtraBold Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed ExtraBold Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed ExtraBold Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed ExtraBold Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed ExtraLight Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed ExtraLight Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed ExtraLight Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed ExtraLight Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed ExtraLight Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed ExtraLight Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed ExtraLight Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed ExtraLight Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed Light Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed Light Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed Light Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed Light Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed Light Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed Light Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed Light Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed Light Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed Medium Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed Medium Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed Medium Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed Medium Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed Medium Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed Medium Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed Medium Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed Medium Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed SemiBold Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed SemiBold Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed SemiBold Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed SemiBold Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed SemiBold Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed SemiBold Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed SemiBold Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed SemiBold Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed Thin Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed Thin Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed Thin Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed Thin Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed Thin Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed Thin Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed Thin Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Condensed Thin Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraBold Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraBold Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraBold Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraBold Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraBold Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraBold Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraBold Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraBold Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed Black Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed Black Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed Black Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed Black Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed Black Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed Black Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed Black Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed Black Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed Bold Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed Bold Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed Bold Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed Bold Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed Bold Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed Bold Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed Bold Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed Bold Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed ExtraBold Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed ExtraBold Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed ExtraBold Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed ExtraBold Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed ExtraBold Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed ExtraBold Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed ExtraBold Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed ExtraBold Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed ExtraLight Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed ExtraLight Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed ExtraLight Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed ExtraLight Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed ExtraLight Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed ExtraLight Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed ExtraLight Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed ExtraLight Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed Light Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed Light Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed Light Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed Light Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed Light Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed Light Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed Light Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed Light Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed Medium Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed Medium Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed Medium Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed Medium Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed Medium Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed Medium Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed Medium Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed Medium Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed SemiBold Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed SemiBold Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed SemiBold Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed SemiBold Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed SemiBold Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed SemiBold Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed SemiBold Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed SemiBold Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed Thin Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed Thin Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed Thin Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed Thin Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed Thin Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed Thin Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed Thin Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraCondensed Thin Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraLight Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraLight Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraLight Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraLight Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraLight Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraLight Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraLight Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans ExtraLight Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Light Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Light Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Light Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Light Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Light Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Light Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Light Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Light Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Medium Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Medium Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Medium Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Medium Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Medium Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Medium Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Medium Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Medium Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Black Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Black Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Black Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Black Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Bold Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Bold Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Bold Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Bold Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Condensed Black Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Condensed Black Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Condensed Black Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Condensed Black Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Condensed Bold Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Condensed Bold Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Condensed Bold Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Condensed Bold Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Condensed ExtraBold Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Condensed ExtraBold Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Condensed ExtraBold Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Condensed ExtraBold Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Condensed ExtraLight Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Condensed ExtraLight Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Condensed ExtraLight Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Condensed ExtraLight Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Condensed Light Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Condensed Light Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Condensed Light Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Condensed Light Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Condensed Medium Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Condensed Medium Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Condensed Medium Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Condensed Medium Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Condensed Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Condensed Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Condensed Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Condensed Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Condensed SemiBold Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Condensed SemiBold Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Condensed SemiBold Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Condensed SemiBold Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Condensed Thin Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Condensed Thin Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Condensed Thin Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Condensed Thin Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono ExtraBold Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono ExtraBold Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono ExtraBold Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono ExtraBold Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono ExtraCondensed Black Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono ExtraCondensed Black Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono ExtraCondensed Black Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono ExtraCondensed Black Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono ExtraCondensed Bold Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono ExtraCondensed Bold Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono ExtraCondensed Bold Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono ExtraCondensed Bold Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono ExtraCondensed ExtraBold Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono ExtraCondensed ExtraBold Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono ExtraCondensed ExtraBold Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono ExtraCondensed ExtraBold Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono ExtraCondensed ExtraLight Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono ExtraCondensed ExtraLight Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono ExtraCondensed ExtraLight Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono ExtraCondensed ExtraLight Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono ExtraCondensed Light Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono ExtraCondensed Light Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono ExtraCondensed Light Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono ExtraCondensed Light Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono ExtraCondensed Medium Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono ExtraCondensed Medium Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono ExtraCondensed Medium Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono ExtraCondensed Medium Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono ExtraCondensed Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono ExtraCondensed Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono ExtraCondensed Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono ExtraCondensed Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono ExtraCondensed SemiBold Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono ExtraCondensed SemiBold Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono ExtraCondensed SemiBold Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono ExtraCondensed SemiBold Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono ExtraCondensed Thin Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono ExtraCondensed Thin Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono ExtraCondensed Thin Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono ExtraCondensed Thin Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono ExtraLight Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono ExtraLight Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono ExtraLight Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono ExtraLight Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Light Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Light Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Light Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Light Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Medium Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Medium Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Medium Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Medium Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Regular Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Regular Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Regular Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Regular Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono SemiBold Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono SemiBold Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono SemiBold Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono SemiBold Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono SemiCondensed Black Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono SemiCondensed Black Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono SemiCondensed Black Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono SemiCondensed Black Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono SemiCondensed Bold Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono SemiCondensed Bold Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono SemiCondensed Bold Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono SemiCondensed Bold Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono SemiCondensed ExtraBold Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono SemiCondensed ExtraBold Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono SemiCondensed ExtraBold Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono SemiCondensed ExtraBold Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono SemiCondensed ExtraLight Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono SemiCondensed ExtraLight Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono SemiCondensed ExtraLight Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono SemiCondensed ExtraLight Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono SemiCondensed Light Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono SemiCondensed Light Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono SemiCondensed Light Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono SemiCondensed Light Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono SemiCondensed Medium Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono SemiCondensed Medium Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono SemiCondensed Medium Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono SemiCondensed Medium Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono SemiCondensed Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono SemiCondensed Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono SemiCondensed Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono SemiCondensed Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono SemiCondensed SemiBold Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono SemiCondensed SemiBold Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono SemiCondensed SemiBold Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono SemiCondensed SemiBold Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono SemiCondensed Thin Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono SemiCondensed Thin Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono SemiCondensed Thin Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono SemiCondensed Thin Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Thin Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Thin Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Thin Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Mono Thin Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Regular Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Regular Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Regular Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Regular Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiBold Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiBold Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiBold Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiBold Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiBold Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiBold Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiBold Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiBold Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed Black Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed Black Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed Black Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed Black Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed Black Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed Black Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed Black Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed Black Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed Bold Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed Bold Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed Bold Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed Bold Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed Bold Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed Bold Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed Bold Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed Bold Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed ExtraBold Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed ExtraBold Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed ExtraBold Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed ExtraBold Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed ExtraBold Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed ExtraBold Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed ExtraBold Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed ExtraBold Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed ExtraLight Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed ExtraLight Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed ExtraLight Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed ExtraLight Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed ExtraLight Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed ExtraLight Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed ExtraLight Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed ExtraLight Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed Light Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed Light Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed Light Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed Light Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed Light Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed Light Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed Light Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed Light Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed Medium Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed Medium Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed Medium Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed Medium Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed Medium Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed Medium Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed Medium Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed Medium Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed SemiBold Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed SemiBold Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed SemiBold Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed SemiBold Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed SemiBold Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed SemiBold Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed SemiBold Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed SemiBold Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed Thin Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed Thin Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed Thin Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed Thin Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed Thin Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed Thin Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed Thin Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans SemiCondensed Thin Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Thin Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Thin Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Thin Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Thin Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Thin Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Thin Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Thin Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Sans Thin Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Black Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Black Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Black Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Black Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Black Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Black Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Black Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Black Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Bold Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Bold Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Bold Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Bold Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Bold Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Bold Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Bold Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Bold Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed Black Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed Black Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed Black Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed Black Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed Black Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed Black Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed Black Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed Black Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed Bold Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed Bold Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed Bold Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed Bold Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed Bold Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed Bold Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed Bold Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed Bold Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed ExtraBold Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed ExtraBold Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed ExtraBold Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed ExtraBold Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed ExtraBold Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed ExtraBold Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed ExtraBold Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed ExtraBold Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed ExtraLight Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed ExtraLight Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed ExtraLight Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed ExtraLight Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed ExtraLight Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed ExtraLight Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed ExtraLight Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed ExtraLight Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed Light Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed Light Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed Light Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed Light Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed Light Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed Light Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed Light Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed Light Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed Medium Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed Medium Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed Medium Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed Medium Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed Medium Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed Medium Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed Medium Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed Medium Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed SemiBold Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed SemiBold Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed SemiBold Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed SemiBold Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed SemiBold Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed SemiBold Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed SemiBold Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed SemiBold Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed Thin Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed Thin Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed Thin Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed Thin Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed Thin Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed Thin Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed Thin Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Condensed Thin Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraBold Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraBold Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraBold Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraBold Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraBold Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraBold Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraBold Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraBold Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed Black Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed Black Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed Black Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed Black Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed Black Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed Black Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed Black Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed Black Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed Bold Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed Bold Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed Bold Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed Bold Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed Bold Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed Bold Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed Bold Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed Bold Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed ExtraBold Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed ExtraBold Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed ExtraBold Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed ExtraBold Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed ExtraBold Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed ExtraBold Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed ExtraBold Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed ExtraBold Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed ExtraLight Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed ExtraLight Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed ExtraLight Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed ExtraLight Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed ExtraLight Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed ExtraLight Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed ExtraLight Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed ExtraLight Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed Light Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed Light Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed Light Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed Light Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed Light Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed Light Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed Light Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed Light Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed Medium Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed Medium Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed Medium Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed Medium Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed Medium Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed Medium Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed Medium Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed Medium Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed SemiBold Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed SemiBold Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed SemiBold Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed SemiBold Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed SemiBold Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed SemiBold Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed SemiBold Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed SemiBold Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed Thin Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed Thin Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed Thin Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed Thin Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed Thin Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed Thin Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed Thin Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraCondensed Thin Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraLight Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraLight Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraLight Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraLight Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraLight Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraLight Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraLight Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif ExtraLight Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Light Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Light Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Light Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Light Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Light Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Light Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Light Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Light Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Medium Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Medium Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Medium Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Medium Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Medium Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Medium Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Medium Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Medium Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Regular Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Regular Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Regular Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Regular Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiBold Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiBold Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiBold Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiBold Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiBold Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiBold Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiBold Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiBold Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed Black Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed Black Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed Black Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed Black Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed Black Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed Black Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed Black Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed Black Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed Bold Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed Bold Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed Bold Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed Bold Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed Bold Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed Bold Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed Bold Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed Bold Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed ExtraBold Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed ExtraBold Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed ExtraBold Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed ExtraBold Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed ExtraBold Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed ExtraBold Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed ExtraBold Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed ExtraBold Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed ExtraLight Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed ExtraLight Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed ExtraLight Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed ExtraLight Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed ExtraLight Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed ExtraLight Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed ExtraLight Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed ExtraLight Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed Light Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed Light Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed Light Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed Light Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed Light Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed Light Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed Light Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed Light Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed Medium Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed Medium Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed Medium Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed Medium Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed Medium Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed Medium Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed Medium Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed Medium Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed SemiBold Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed SemiBold Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed SemiBold Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed SemiBold Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed SemiBold Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed SemiBold Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed SemiBold Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed SemiBold Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed Thin Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed Thin Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed Thin Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed Thin Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed Thin Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed Thin Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed Thin Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif SemiCondensed Thin Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Thin Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Thin Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Thin Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Thin Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Thin Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Thin Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Thin Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/noto/Noto Serif Thin Nerd Font Complete.ttf
+share/fonts/nerd-fonts/noto/NotoMonoNerdFont-Regular.ttf
+share/fonts/nerd-fonts/noto/NotoMonoNerdFontMono-Regular.ttf
+share/fonts/nerd-fonts/noto/NotoMonoNerdFontPropo-Regular.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFont-Black.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFont-Bold.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFont-Condensed.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFont-CondensedBlack.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFont-CondensedBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFont-CondensedExtraBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFont-CondensedExtraLight.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFont-CondensedLight.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFont-CondensedMedium.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFont-CondensedSemiBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFont-CondensedThin.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFont-ExtraBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFont-ExtraCondensed.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFont-ExtraCondensedBlack.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFont-ExtraCondensedBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFont-ExtraCondensedExtraBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFont-ExtraCondensedExtraLight.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFont-ExtraCondensedLight.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFont-ExtraCondensedMedium.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFont-ExtraCondensedSemiBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFont-ExtraCondensedThin.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFont-ExtraLight.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFont-Light.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFont-Medium.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFont-Regular.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFont-SemiBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFont-SemiCondensed.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFont-SemiCondensedBlack.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFont-SemiCondensedBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFont-SemiCondensedExtraBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFont-SemiCondensedExtraLight.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFont-SemiCondensedLight.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFont-SemiCondensedMedium.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFont-SemiCondensedSemiBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFont-SemiCondensedThin.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFont-Thin.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontMono-Black.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontMono-Bold.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontMono-Condensed.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontMono-CondensedBlack.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontMono-CondensedBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontMono-CondensedExtraBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontMono-CondensedExtraLight.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontMono-CondensedLight.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontMono-CondensedMedium.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontMono-CondensedSemiBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontMono-CondensedThin.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontMono-ExtraBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontMono-ExtraCondensed.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontMono-ExtraCondensedBlack.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontMono-ExtraCondensedBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontMono-ExtraCondensedExtraBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontMono-ExtraCondensedExtraLight.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontMono-ExtraCondensedLight.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontMono-ExtraCondensedMedium.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontMono-ExtraCondensedSemiBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontMono-ExtraCondensedThin.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontMono-ExtraLight.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontMono-Light.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontMono-Medium.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontMono-Regular.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontMono-SemiBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontMono-SemiCondensed.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontMono-SemiCondensedBlack.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontMono-SemiCondensedBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontMono-SemiCondensedExtraBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontMono-SemiCondensedExtraLight.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontMono-SemiCondensedLight.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontMono-SemiCondensedMedium.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontMono-SemiCondensedSemiBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontMono-SemiCondensedThin.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontMono-Thin.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontPropo-Black.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontPropo-Bold.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontPropo-Condensed.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontPropo-CondensedBlack.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontPropo-CondensedBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontPropo-CondensedExtraBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontPropo-CondensedExtraLight.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontPropo-CondensedLight.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontPropo-CondensedMedium.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontPropo-CondensedSemiBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontPropo-CondensedThin.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontPropo-ExtraBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontPropo-ExtraCondensed.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontPropo-ExtraCondensedBlack.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontPropo-ExtraCondensedBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontPropo-ExtraCondensedExtraBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontPropo-ExtraCondensedExtraLight.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontPropo-ExtraCondensedLight.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontPropo-ExtraCondensedMedium.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontPropo-ExtraCondensedSemiBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontPropo-ExtraCondensedThin.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontPropo-ExtraLight.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontPropo-Light.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontPropo-Medium.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontPropo-Regular.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontPropo-SemiBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontPropo-SemiCondensed.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontPropo-SemiCondensedBlack.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontPropo-SemiCondensedBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontPropo-SemiCondensedExtraBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontPropo-SemiCondensedExtraLight.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontPropo-SemiCondensedLight.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontPropo-SemiCondensedMedium.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontPropo-SemiCondensedSemiBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontPropo-SemiCondensedThin.ttf
+share/fonts/nerd-fonts/noto/NotoSansMNerdFontPropo-Thin.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-Condensed.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-CondensedBlack.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-CondensedBlackItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-CondensedBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-CondensedBoldItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-CondensedExtraBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-CondensedExtraBoldItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-CondensedExtraLight.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-CondensedExtraLightItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-CondensedItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-CondensedLight.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-CondensedLightItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-CondensedMedium.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-CondensedMediumItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-CondensedSemiBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-CondensedSemiBoldItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-CondensedThin.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-CondensedThinItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-ExtraBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-ExtraBoldItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-ExtraCondensed.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-ExtraCondensedBlack.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-ExtraCondensedBlackItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-ExtraCondensedBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-ExtraCondensedBoldItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-ExtraCondensedExtraBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-ExtraCondensedExtraBoldItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-ExtraCondensedExtraLight.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-ExtraCondensedExtraLightItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-ExtraCondensedItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-ExtraCondensedLight.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-ExtraCondensedLightItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-ExtraCondensedMedium.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-ExtraCondensedMediumItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-ExtraCondensedSemiBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-ExtraCondensedSemiBoldItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-ExtraCondensedThin.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-ExtraCondensedThinItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-ExtraLight.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-ExtraLightItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-Italic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-Light.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-LightItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-Medium.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-MediumItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-Regular.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-SemiBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-SemiBoldItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-SemiCondensed.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-SemiCondensedBlack.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-SemiCondensedBlackItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-SemiCondensedBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-SemiCondensedBoldItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-SemiCondensedExtraBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-SemiCondensedExtraBoldItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-SemiCondensedExtraLight.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-SemiCondensedExtraLightItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-SemiCondensedItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-SemiCondensedLight.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-SemiCondensedLightItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-SemiCondensedMedium.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-SemiCondensedMediumItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-SemiCondensedSemiBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-SemiCondensedSemiBoldItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-SemiCondensedThin.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-SemiCondensedThinItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-Thin.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFont-ThinItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-Condensed.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-CondensedBlack.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-CondensedBlackItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-CondensedBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-CondensedBoldItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-CondensedExtraBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-CondensedExtraBoldItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-CondensedExtraLight.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-CondensedExtraLightItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-CondensedItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-CondensedLight.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-CondensedLightItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-CondensedMedium.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-CondensedMediumItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-CondensedSemiBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-CondensedSemiBoldItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-CondensedThin.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-CondensedThinItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-ExtraBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-ExtraBoldItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-ExtraCondensed.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-ExtraCondensedBlack.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-ExtraCondensedBlackItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-ExtraCondensedBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-ExtraCondensedBoldItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-ExtraCondensedExtraBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-ExtraCondensedExtraBoldItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-ExtraCondensedExtraLight.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-ExtraCondensedExtraLightItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-ExtraCondensedItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-ExtraCondensedLight.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-ExtraCondensedLightItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-ExtraCondensedMedium.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-ExtraCondensedMediumItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-ExtraCondensedSemiBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-ExtraCondensedSemiBoldItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-ExtraCondensedThin.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-ExtraCondensedThinItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-ExtraLight.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-ExtraLightItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-Italic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-Light.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-LightItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-Medium.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-MediumItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-Regular.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-SemiBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-SemiBoldItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-SemiCondensed.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-SemiCondensedBlack.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-SemiCondensedBlackItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-SemiCondensedBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-SemiCondensedBoldItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-SemiCondensedExtraBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-SemiCondensedExtraBoldItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-SemiCondensedExtraLight.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-SemiCondensedExtraLightItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-SemiCondensedItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-SemiCondensedLight.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-SemiCondensedLightItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-SemiCondensedMedium.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-SemiCondensedMediumItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-SemiCondensedSemiBold.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-SemiCondensedSemiBoldItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-SemiCondensedThin.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-SemiCondensedThinItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-Thin.ttf
+share/fonts/nerd-fonts/noto/NotoSansNerdFontPropo-ThinItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-Black.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-BlackItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-Bold.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-BoldItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-Condensed.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-CondensedBlack.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-CondensedBlackItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-CondensedBold.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-CondensedBoldItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-CondensedExtraBold.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-CondensedExtraBoldItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-CondensedExtraLight.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-CondensedExtraLightItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-CondensedItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-CondensedLight.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-CondensedLightItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-CondensedMedium.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-CondensedMediumItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-CondensedSemiBold.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-CondensedSemiBoldItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-CondensedThin.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-CondensedThinItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-ExtraBold.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-ExtraBoldItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-ExtraCondensed.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-ExtraCondensedBlack.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-ExtraCondensedBlackItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-ExtraCondensedBold.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-ExtraCondensedBoldItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-ExtraCondensedExtraBold.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-ExtraCondensedExtraBoldItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-ExtraCondensedExtraLight.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-ExtraCondensedExtraLightItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-ExtraCondensedItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-ExtraCondensedLight.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-ExtraCondensedLightItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-ExtraCondensedMedium.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-ExtraCondensedMediumItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-ExtraCondensedSemiBold.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-ExtraCondensedSemiBoldItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-ExtraCondensedThin.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-ExtraCondensedThinItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-ExtraLight.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-ExtraLightItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-Italic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-Light.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-LightItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-Medium.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-MediumItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-Regular.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-SemiBold.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-SemiBoldItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-SemiCondensed.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-SemiCondensedBlack.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-SemiCondensedBlackItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-SemiCondensedBold.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-SemiCondensedBoldItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-SemiCondensedExtraBold.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-SemiCondensedExtraBoldItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-SemiCondensedExtraLight.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-SemiCondensedExtraLightItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-SemiCondensedItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-SemiCondensedLight.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-SemiCondensedLightItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-SemiCondensedMedium.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-SemiCondensedMediumItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-SemiCondensedSemiBold.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-SemiCondensedSemiBoldItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-SemiCondensedThin.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-SemiCondensedThinItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-Thin.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFont-ThinItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-Black.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-BlackItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-Bold.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-BoldItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-Condensed.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-CondensedBlack.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-CondensedBlackItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-CondensedBold.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-CondensedBoldItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-CondensedExtraBold.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-CondensedExtraBoldItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-CondensedExtraLight.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-CondensedExtraLightItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-CondensedItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-CondensedLight.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-CondensedLightItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-CondensedMedium.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-CondensedMediumItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-CondensedSemiBold.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-CondensedSemiBoldItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-CondensedThin.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-CondensedThinItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-ExtraBold.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-ExtraBoldItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-ExtraCondensed.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-ExtraCondensedBlack.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-ExtraCondensedBlackItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-ExtraCondensedBold.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-ExtraCondensedBoldItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-ExtraCondensedExtraBold.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-ExtraCondensedExtraBoldItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-ExtraCondensedExtraLight.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-ExtraCondensedExtraLightItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-ExtraCondensedItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-ExtraCondensedLight.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-ExtraCondensedLightItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-ExtraCondensedMedium.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-ExtraCondensedMediumItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-ExtraCondensedSemiBold.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-ExtraCondensedSemiBoldItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-ExtraCondensedThin.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-ExtraCondensedThinItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-ExtraLight.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-ExtraLightItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-Italic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-Light.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-LightItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-Medium.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-MediumItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-Regular.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-SemiBold.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-SemiBoldItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-SemiCondensed.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-SemiCondensedBlack.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-SemiCondensedBlackItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-SemiCondensedBold.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-SemiCondensedBoldItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-SemiCondensedExtraBold.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-SemiCondensedExtraBoldItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-SemiCondensedExtraLight.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-SemiCondensedExtraLightItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-SemiCondensedItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-SemiCondensedLight.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-SemiCondensedLightItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-SemiCondensedMedium.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-SemiCondensedMediumItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-SemiCondensedSemiBold.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-SemiCondensedSemiBoldItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-SemiCondensedThin.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-SemiCondensedThinItalic.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-Thin.ttf
+share/fonts/nerd-fonts/noto/NotoSerifNerdFontPropo-ThinItalic.ttf

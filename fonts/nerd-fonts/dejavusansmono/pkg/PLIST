@@ -4,19 +4,15 @@ share/doc/nerd-fonts/dejavusansmono/LICENSE.txt
 share/fonts/
 share/fonts/nerd-fonts/
 @fontdir share/fonts/nerd-fonts/dejavusansmono/
-share/fonts/nerd-fonts/dejavusansmono/DejaVu Sans Mono Bold Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/dejavusansmono/DejaVu Sans Mono Bold Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/dejavusansmono/DejaVu Sans Mono Bold Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/dejavusansmono/DejaVu Sans Mono Bold Nerd Font Complete.ttf
-share/fonts/nerd-fonts/dejavusansmono/DejaVu Sans Mono Bold Oblique Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/dejavusansmono/DejaVu Sans Mono Bold Oblique Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/dejavusansmono/DejaVu Sans Mono Bold Oblique Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/dejavusansmono/DejaVu Sans Mono Bold Oblique Nerd Font Complete.ttf
-share/fonts/nerd-fonts/dejavusansmono/DejaVu Sans Mono Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/dejavusansmono/DejaVu Sans Mono Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/dejavusansmono/DejaVu Sans Mono Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/dejavusansmono/DejaVu Sans Mono Nerd Font Complete.ttf
-share/fonts/nerd-fonts/dejavusansmono/DejaVu Sans Mono Oblique Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/dejavusansmono/DejaVu Sans Mono Oblique Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/dejavusansmono/DejaVu Sans Mono Oblique Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/dejavusansmono/DejaVu Sans Mono Oblique Nerd Font Complete.ttf
+share/fonts/nerd-fonts/dejavusansmono/DejaVuSansMNerdFont-Bold.ttf
+share/fonts/nerd-fonts/dejavusansmono/DejaVuSansMNerdFont-BoldOblique.ttf
+share/fonts/nerd-fonts/dejavusansmono/DejaVuSansMNerdFont-Oblique.ttf
+share/fonts/nerd-fonts/dejavusansmono/DejaVuSansMNerdFont-Regular.ttf
+share/fonts/nerd-fonts/dejavusansmono/DejaVuSansMNerdFontMono-Bold.ttf
+share/fonts/nerd-fonts/dejavusansmono/DejaVuSansMNerdFontMono-BoldOblique.ttf
+share/fonts/nerd-fonts/dejavusansmono/DejaVuSansMNerdFontMono-Oblique.ttf
+share/fonts/nerd-fonts/dejavusansmono/DejaVuSansMNerdFontMono-Regular.ttf
+share/fonts/nerd-fonts/dejavusansmono/DejaVuSansMNerdFontPropo-Bold.ttf
+share/fonts/nerd-fonts/dejavusansmono/DejaVuSansMNerdFontPropo-BoldOblique.ttf
+share/fonts/nerd-fonts/dejavusansmono/DejaVuSansMNerdFontPropo-Oblique.ttf
+share/fonts/nerd-fonts/dejavusansmono/DejaVuSansMNerdFontPropo-Regular.ttf

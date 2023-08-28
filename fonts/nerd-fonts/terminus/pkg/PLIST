@@ -4,19 +4,15 @@ share/doc/nerd-fonts/terminus/LICENSE.txt
 share/fonts/
 share/fonts/nerd-fonts/
 @fontdir share/fonts/nerd-fonts/terminus/
-share/fonts/nerd-fonts/terminus/Terminess (TTF) Bold Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/terminus/Terminess (TTF) Bold Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/terminus/Terminess (TTF) Bold Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/terminus/Terminess (TTF) Bold Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/terminus/Terminess (TTF) Bold Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/terminus/Terminess (TTF) Bold Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/terminus/Terminess (TTF) Bold Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/terminus/Terminess (TTF) Bold Nerd Font Complete.ttf
-share/fonts/nerd-fonts/terminus/Terminess (TTF) Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/terminus/Terminess (TTF) Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/terminus/Terminess (TTF) Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/terminus/Terminess (TTF) Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/terminus/Terminess (TTF) Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/terminus/Terminess (TTF) Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/terminus/Terminess (TTF) Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/terminus/Terminess (TTF) Nerd Font Complete.ttf
+share/fonts/nerd-fonts/terminus/TerminessNerdFont-Bold.ttf
+share/fonts/nerd-fonts/terminus/TerminessNerdFont-BoldItalic.ttf
+share/fonts/nerd-fonts/terminus/TerminessNerdFont-Italic.ttf
+share/fonts/nerd-fonts/terminus/TerminessNerdFont-Regular.ttf
+share/fonts/nerd-fonts/terminus/TerminessNerdFontMono-Bold.ttf
+share/fonts/nerd-fonts/terminus/TerminessNerdFontMono-BoldItalic.ttf
+share/fonts/nerd-fonts/terminus/TerminessNerdFontMono-Italic.ttf
+share/fonts/nerd-fonts/terminus/TerminessNerdFontMono-Regular.ttf
+share/fonts/nerd-fonts/terminus/TerminessNerdFontPropo-Bold.ttf
+share/fonts/nerd-fonts/terminus/TerminessNerdFontPropo-BoldItalic.ttf
+share/fonts/nerd-fonts/terminus/TerminessNerdFontPropo-Italic.ttf
+share/fonts/nerd-fonts/terminus/TerminessNerdFontPropo-Regular.ttf

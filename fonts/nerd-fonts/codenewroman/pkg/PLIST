@@ -4,15 +4,12 @@ share/doc/nerd-fonts/codenewroman/license.txt
 share/fonts/
 share/fonts/nerd-fonts/
 @fontdir share/fonts/nerd-fonts/codenewroman/
-share/fonts/nerd-fonts/codenewroman/Code New Roman Bold Nerd Font Complete Mono Windows Compatible.otf
-share/fonts/nerd-fonts/codenewroman/Code New Roman Bold Nerd Font Complete Mono.otf
-share/fonts/nerd-fonts/codenewroman/Code New Roman Bold Nerd Font Complete Windows Compatible.otf
-share/fonts/nerd-fonts/codenewroman/Code New Roman Bold Nerd Font Complete.otf
-share/fonts/nerd-fonts/codenewroman/Code New Roman Italic Nerd Font Complete Mono Windows Compatible.otf
-share/fonts/nerd-fonts/codenewroman/Code New Roman Italic Nerd Font Complete Mono.otf
-share/fonts/nerd-fonts/codenewroman/Code New Roman Italic Nerd Font Complete Windows Compatible.otf
-share/fonts/nerd-fonts/codenewroman/Code New Roman Italic Nerd Font Complete.otf
-share/fonts/nerd-fonts/codenewroman/Code New Roman Nerd Font Complete Mono Windows Compatible.otf
-share/fonts/nerd-fonts/codenewroman/Code New Roman Nerd Font Complete Mono.otf
-share/fonts/nerd-fonts/codenewroman/Code New Roman Nerd Font Complete Windows Compatible.otf
-share/fonts/nerd-fonts/codenewroman/Code New Roman Nerd Font Complete.otf
+share/fonts/nerd-fonts/codenewroman/CodeNewRomanNerdFont-Bold.otf
+share/fonts/nerd-fonts/codenewroman/CodeNewRomanNerdFont-Italic.otf
+share/fonts/nerd-fonts/codenewroman/CodeNewRomanNerdFont-Regular.otf
+share/fonts/nerd-fonts/codenewroman/CodeNewRomanNerdFontMono-Bold.otf
+share/fonts/nerd-fonts/codenewroman/CodeNewRomanNerdFontMono-Italic.otf
+share/fonts/nerd-fonts/codenewroman/CodeNewRomanNerdFontMono-Regular.otf
+share/fonts/nerd-fonts/codenewroman/CodeNewRomanNerdFontPropo-Bold.otf
+share/fonts/nerd-fonts/codenewroman/CodeNewRomanNerdFontPropo-Italic.otf
+share/fonts/nerd-fonts/codenewroman/CodeNewRomanNerdFontPropo-Regular.otf

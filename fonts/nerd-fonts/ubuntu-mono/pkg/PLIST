@@ -1,19 +1,15 @@
 share/fonts/
 share/fonts/nerd-fonts/
 @fontdir share/fonts/nerd-fonts/ubuntumono/
-share/fonts/nerd-fonts/ubuntumono/Ubuntu Mono Bold Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/ubuntumono/Ubuntu Mono Bold Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/ubuntumono/Ubuntu Mono Bold Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/ubuntumono/Ubuntu Mono Bold Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/ubuntumono/Ubuntu Mono Bold Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/ubuntumono/Ubuntu Mono Bold Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/ubuntumono/Ubuntu Mono Bold Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/ubuntumono/Ubuntu Mono Bold Nerd Font Complete.ttf
-share/fonts/nerd-fonts/ubuntumono/Ubuntu Mono Italic Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/ubuntumono/Ubuntu Mono Italic Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/ubuntumono/Ubuntu Mono Italic Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/ubuntumono/Ubuntu Mono Italic Nerd Font Complete.ttf
-share/fonts/nerd-fonts/ubuntumono/Ubuntu Mono Nerd Font Complete Mono Windows Compatible.ttf
-share/fonts/nerd-fonts/ubuntumono/Ubuntu Mono Nerd Font Complete Mono.ttf
-share/fonts/nerd-fonts/ubuntumono/Ubuntu Mono Nerd Font Complete Windows Compatible.ttf
-share/fonts/nerd-fonts/ubuntumono/Ubuntu Mono Nerd Font Complete.ttf
+share/fonts/nerd-fonts/ubuntumono/UbuntuMonoNerdFont-Bold.ttf
+share/fonts/nerd-fonts/ubuntumono/UbuntuMonoNerdFont-BoldItalic.ttf
+share/fonts/nerd-fonts/ubuntumono/UbuntuMonoNerdFont-Italic.ttf
+share/fonts/nerd-fonts/ubuntumono/UbuntuMonoNerdFont-Regular.ttf
+share/fonts/nerd-fonts/ubuntumono/UbuntuMonoNerdFontMono-Bold.ttf
+share/fonts/nerd-fonts/ubuntumono/UbuntuMonoNerdFontMono-BoldItalic.ttf
+share/fonts/nerd-fonts/ubuntumono/UbuntuMonoNerdFontMono-Italic.ttf
+share/fonts/nerd-fonts/ubuntumono/UbuntuMonoNerdFontMono-Regular.ttf
+share/fonts/nerd-fonts/ubuntumono/UbuntuMonoNerdFontPropo-Bold.ttf
+share/fonts/nerd-fonts/ubuntumono/UbuntuMonoNerdFontPropo-BoldItalic.ttf
+share/fonts/nerd-fonts/ubuntumono/UbuntuMonoNerdFontPropo-Italic.ttf
+share/fonts/nerd-fonts/ubuntumono/UbuntuMonoNerdFontPropo-Regular.ttf
