@@ -1,4 +1,4 @@
-uSE_WXNEEDED=	Yes
+USE_WXNEEDED=	Yes
 USE_NOBTCFI=	Yes
 
 ONLY_FOR_ARCHS= amd64 i386 aarch64
@@ -28,8 +28,6 @@ DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel
-
-PORTHOME=	${WRKDIR}
 
 EPOCH=		0
 
