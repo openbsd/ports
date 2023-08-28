@@ -73,7 +73,6 @@ share/doc/ipe/
 share/doc/ipe/annotated.html
 share/doc/ipe/bc_s.png
 share/doc/ipe/bc_sd.png
-share/doc/ipe/bdwn.png
 share/doc/ipe/blank.png
 share/doc/ipe/class_canvas-members.html
 share/doc/ipe/class_canvas.html
@@ -276,8 +275,8 @@ share/doc/ipe/dir_7b54d492694b293bf8b54c70d2fe7f56.html
 share/doc/ipe/dir_91a90e6e897462a7bb8a7a0fc103953b.html
 share/doc/ipe/dir_d44c64559bbebec7f509842c48db8b23.html
 share/doc/ipe/dir_e27e8af4fb4f24f00c2e8a69665fe110.html
-share/doc/ipe/doc.png
-share/doc/ipe/docd.png
+share/doc/ipe/doc.svg
+share/doc/ipe/docd.svg
 share/doc/ipe/doxygen.css
 share/doc/ipe/doxygen.svg
 share/doc/ipe/dynsections.js
@@ -288,8 +287,10 @@ share/doc/ipe/example4.svg
 share/doc/ipe/example5.svg
 share/doc/ipe/example6.svg
 share/doc/ipe/filming.html
-share/doc/ipe/folderclosed.png
-share/doc/ipe/folderopen.png
+share/doc/ipe/folderclosed.svg
+share/doc/ipe/folderclosedd.svg
+share/doc/ipe/folderopen.svg
+share/doc/ipe/folderopend.svg
 share/doc/ipe/fontbbox.svg
 share/doc/ipe/fontbbox2.svg
 share/doc/ipe/functions.html
