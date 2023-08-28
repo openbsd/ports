@@ -1,6 +1,6 @@
 COMMENT=	PHP extension for parsing and working with plain/MIME email
 
-DISTNAME=	mailparse-3.1.5
+DISTNAME=	mailparse-3.1.6
 CATEGORIES=	mail
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
