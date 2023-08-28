@@ -42,7 +42,6 @@ share/doc/accounts-qt/html/auth-data_8cpp_source.html
 share/doc/accounts-qt/html/auth-data_8h_source.html
 share/doc/accounts-qt/html/bc_s.png
 share/doc/accounts-qt/html/bc_sd.png
-share/doc/accounts-qt/html/bdwn.png
 share/doc/accounts-qt/html/classAccounts_1_1AccountService-members.html
 share/doc/accounts-qt/html/classAccounts_1_1AccountService.html
 share/doc/accounts-qt/html/classAccounts_1_1AccountService.js
@@ -72,8 +71,8 @@ share/doc/accounts-qt/html/closed.png
 share/doc/accounts-qt/html/deprecated.html
 share/doc/accounts-qt/html/dir_c3d1d086c816c0518443c9e800634b9c.html
 share/doc/accounts-qt/html/dir_c3d1d086c816c0518443c9e800634b9c.js
-share/doc/accounts-qt/html/doc.png
-share/doc/accounts-qt/html/docd.png
+share/doc/accounts-qt/html/doc.svg
+share/doc/accounts-qt/html/docd.svg
 share/doc/accounts-qt/html/doxygen.css
 share/doc/accounts-qt/html/doxygen.svg
 share/doc/accounts-qt/html/dynsections.js
@@ -81,8 +80,10 @@ share/doc/accounts-qt/html/error_8cpp_source.html
 share/doc/accounts-qt/html/error_8h_source.html
 share/doc/accounts-qt/html/files.html
 share/doc/accounts-qt/html/files_dup.js
-share/doc/accounts-qt/html/folderclosed.png
-share/doc/accounts-qt/html/folderopen.png
+share/doc/accounts-qt/html/folderclosed.svg
+share/doc/accounts-qt/html/folderclosedd.svg
+share/doc/accounts-qt/html/folderopen.svg
+share/doc/accounts-qt/html/folderopend.svg
 share/doc/accounts-qt/html/functions.html
 share/doc/accounts-qt/html/functions_enum.html
 share/doc/accounts-qt/html/functions_eval.html
