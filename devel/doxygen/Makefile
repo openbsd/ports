@@ -5,7 +5,7 @@ BROKEN-alpha=	.got subsegment exceeds 64K
 
 COMMENT=	source code documentation generator tool
 
-VERSION=	1.9.6
+VERSION=	1.9.7
 DISTNAME=	doxygen-${VERSION}.src
 PKGNAME=	doxygen-${VERSION}
 
@@ -23,6 +23,9 @@ WANTLIB += ${COMPILER_LIBCXX} c iconv m xapian z
 COMPILER =	base-clang ports-gcc base-gcc
 
 MASTER_SITES=	https://doxygen.nl/files/
+TAR =		${LOCALBASE}/bin/gtar
+
+BUILD_DEPENDS = archivers/gtar
 
 LIB_DEPENDS=	converters/libiconv \
 		databases/xapian-core

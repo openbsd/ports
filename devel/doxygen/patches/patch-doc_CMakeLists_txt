@@ -14,44 +14,39 @@ Index: doc/CMakeLists.txt
  include(GNUInstallDirs)
  
  if (doxygen_BINARY_DIR)
-@@ -104,7 +101,6 @@ set(DOC_FILES
-         maintainers.txt
-         translator.py
-         smile.png
--        doxygen_logo.svg
- )
- 
- set(DOC_FILES_IMAGES
-@@ -163,9 +159,6 @@ endforeach()
- configure_file(${PROJECT_SOURCE_DIR}/doc/manual.sty         ${PROJECT_BINARY_DIR}/doc/manual.sty)
- configure_file(${PROJECT_SOURCE_DIR}/doc/doxygen_manual.tex ${PROJECT_BINARY_DIR}/doc/doxygen_manual.tex)
+@@ -161,9 +158,6 @@ endforeach()
+ configure_file(${PROJECT_SOURCE_DIR}/doc/manual.sty         ${PROJECT_BINARY_DIR}/doc/manual.sty COPYONLY)
+ configure_file(${PROJECT_SOURCE_DIR}/doc/doxygen_manual.tex ${PROJECT_BINARY_DIR}/doc/doxygen_manual.tex COPYONLY)
  configure_file(${PROJECT_SOURCE_DIR}/doc/doxygen.1          ${PROJECT_BINARY_DIR}/man/doxygen.1)
 -configure_file(${PROJECT_SOURCE_DIR}/doc/doxywizard.1       ${PROJECT_BINARY_DIR}/man/doxywizard.1)
 -configure_file(${PROJECT_SOURCE_DIR}/doc/doxysearch.1       ${PROJECT_BINARY_DIR}/man/doxysearch.1)
 -configure_file(${PROJECT_SOURCE_DIR}/doc/doxyindexer.1      ${PROJECT_BINARY_DIR}/man/doxyindexer.1)
  
- # doc/language.doc (see tag Doxyfile:INPUT)
- add_custom_command(
-@@ -185,37 +178,7 @@ add_custom_command(
+ # Call the main page "Introduction" in LaTeX, which is more appropriate for that format.
+ set(MAINPAGE_TITLE Doxygen)
+@@ -189,40 +183,6 @@ add_custom_command(
  )
  set_source_files_properties(config.doc PROPERTIES GENERATED 1)
  ################################################################################
 -add_custom_target(run_doxygen
 -        COMMENT "Generating Latex and HTML documentation."
--        COMMAND ${CMAKE_COMMAND} -E env VERSION=${VERSION} ${DOXYGEN_EXECUTABLE}
+-        COMMAND ${CMAKE_COMMAND} -E env VERSION=${VERSION} INDEX_DOC=index_html.doc GENERATE_HTML=YES GENERATE_LATEX=NO ${DOXYGEN_EXECUTABLE}
+-        COMMAND ${CMAKE_COMMAND} -E env VERSION=${VERSION} INDEX_DOC=index_latex.doc GENERATE_HTML=NO GENERATE_LATEX=YES ${DOXYGEN_EXECUTABLE}
 -        DEPENDS ${PROJECT_BINARY_DIR}/doc/language.doc ${PROJECT_BINARY_DIR}/doc/config.doc
 -        DEPENDS ${OUT_DOC_FILES}
 -        DEPENDS examples
 -        DEPENDS doxygen
 -        WORKING_DIRECTORY ${PROJECT_BINARY_DIR}/doc/
 -)
- 
+-
 -add_custom_target(doxygen_pdf
 -        COMMENT "Generating Doxygen Manual PDF."
 -        COMMAND ${CMAKE_COMMAND} -E remove refman.tex
 -        COMMAND ${CMAKE_COMMAND} -E copy ${PROJECT_BINARY_DIR}/doc/doxygen_manual.tex  .
 -        COMMAND ${CMAKE_COMMAND} -E copy ${PROJECT_BINARY_DIR}/doc/manual.sty  .
 -        COMMAND ${CMAKE_COMMAND} -E copy ${PROJECT_SOURCE_DIR}/doc/doxygen_logo.pdf  .
+-        COMMAND ${PDFLATEX}  -shell-escape doxygen_manual.tex
+-        COMMAND ${MAKEINDEX} doxygen_manual.idx
 -        COMMAND ${PDFLATEX}  -shell-escape doxygen_manual.tex
 -        COMMAND ${MAKEINDEX} doxygen_manual.idx
 -        COMMAND ${PDFLATEX}  -shell-escape doxygen_manual.tex
@@ -70,7 +65,7 @@ Index: doc/CMakeLists.txt
  # return status of ${HTML_HELP_COMPILER} is not correct, so we have to do a trick with an "or" statement
  # output is redirected to "nul" as we are on windows no problem
  if (build_doc_chm)
-@@ -243,22 +206,9 @@ endif ()
+@@ -250,22 +210,10 @@ endif ()
  ################################################################################
  install(FILES
          "${PROJECT_BINARY_DIR}/man/doxygen.1"
@@ -84,7 +79,7 @@ Index: doc/CMakeLists.txt
 -    message(FATAL_ERROR \"\nTerminating:\n    documentation has not been generated, \n    create documentation by using the 'docs' target followed by an 'install'\n\")
 -endif()"
 -)
--
+ 
 -install(FILES
 -        "${PROJECT_BINARY_DIR}/latex/doxygen_manual.pdf"
 -        DESTINATION "${CMAKE_INSTALL_PREFIX}/${DOC_INSTALL_DIR}"
@@ -93,7 +88,7 @@ Index: doc/CMakeLists.txt
  if (build_doc_chm)
  install(CODE "if(NOT EXISTS \"${PROJECT_BINARY_DIR}/chm/doxygen_manual.chm\")
      message(FATAL_ERROR \"\nTerminating:\n    CHM documentation has not been generated, \n    create CHM documentation by using the 'docs_chm' target followed by an 'install'\n\")
-@@ -270,8 +220,3 @@ install(FILES
+@@ -277,8 +225,3 @@ install(FILES
          DESTINATION "${CMAKE_INSTALL_PREFIX}/${DOC_INSTALL_DIR}"
  )
  endif ()

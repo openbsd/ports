@@ -5,7 +5,7 @@ BROKEN-alpha=	.got subsegment exceeds 64K
 
 COMMENT=	GUI front-end for doxygen
 
-VERSION=	1.9.6
+VERSION=	1.9.7
 DISTNAME=	doxygen-${VERSION}.src
 PKGNAME=	doxygen-gui-${VERSION}
 
@@ -24,6 +24,9 @@ WANTLIB += c m
 COMPILER =	base-clang ports-gcc base-gcc
 
 MASTER_SITES=	https://doxygen.nl/files/
+TAR =		${LOCALBASE}/bin/gtar
+
+BUILD_DEPENDS = archivers/gtar
 
 LIB_DEPENDS=	${MODQT_LIB_DEPENDS}
 
