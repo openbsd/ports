@@ -1,20 +1,20 @@
 COMMENT =	open asset import library
 CATEGORIES =	multimedia
 
-SHARED_LIBS +=	assimp                    1.0 # 5.0
+SHARED_LIBS +=	assimp                    2.0 # 5.0
 
 GH_ACCOUNT =	assimp
 GH_PROJECT =	assimp
-GH_TAGNAME =	v5.0.0
-REVISION =	1
+GH_TAGNAME =	v5.2.5
 
 HOMEPAGE =	https://www.assimp.org/
+
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c m z
+WANTLIB += ${COMPILER_LIBCXX} m z
 
 # C++11
 COMPILER =	base-clang ports-gcc
@@ -26,9 +26,5 @@ MODULES =	devel/cmake
 BUILD_DEPENDS =	devel/boost
 
 NO_TEST =	Yes
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/assimpTargets-release.cmake.in \
-		${WRKSRC}/assimpTargets-debug.cmake.in
 
 .include <bsd.port.mk>
