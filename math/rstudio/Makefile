@@ -10,7 +10,7 @@ ONLY_FOR_ARCHS =	${LP64_ARCHS}
 V =		1.3.959
 COMMENT =	Integrated Development Environment (IDE) for R
 PKGNAME =	rstudio-${V}
-REVISION =	9
+REVISION =	10
 CATEGORIES =	math x11
 
 HOMEPAGE =	https://www.rstudio.com/
@@ -52,7 +52,7 @@ BUILD_DEPENDS =	devel/apache-ant
 
 LIB_DEPENDS =	devel/boost \
 		devel/libinotify \
-		math/R \
+		math/R>=4.2.3 \
 		security/openpam \
 		sysutils/e2fsprogs \
 		x11/qt5/qtsensors \

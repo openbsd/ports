@@ -8,7 +8,7 @@ Index: src/cpp/core/r_util/REnvironmentPosix.cpp
  #else
  
 -#define kLibRFileName            "libR.so"
-+#define kLibRFileName            "libR.so.39.0"
++#define kLibRFileName            "libR.so.39.1"
  #define kLibraryPathEnvVariable  "LD_LIBRARY_PATH"
  
  FilePath systemDefaultRScript(std::string* pErrMsg)
