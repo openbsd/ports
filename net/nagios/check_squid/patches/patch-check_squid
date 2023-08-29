@@ -1,0 +1,21 @@
+Index: check_squid
+--- check_squid.orig
++++ check_squid
+@@ -122,7 +122,7 @@ $mp->add_arg(
+ $mp->add_arg(
+ 	spec => 'squidclient|s=s',
+ 	help => "-s, --squidclient=<squidclient_path>\n"
+-	. "	Path of squidclient (default: Use which to get command path and if not found set /usr/sbin/squidclient)",
++	. "	Path of squidclient (default: Use which to get command path and if not found set /usr/local/bin/squidclient)",
+ 	required => 0,
+ );
+ 
+@@ -154,7 +154,7 @@ $critical = undef if (defined($critical) and $critical
+ $warning = undef if (defined($warning) and $warning eq '');
+ $squidclient = `which squidclient` if (!defined($squidclient) or $squidclient eq '');
+ $squidclient =~ s/^\s+|\s+$//g;
+-$squidclient = '/usr/sbin/squidclient' if (!defined($squidclient) or $squidclient eq '');
++$squidclient = '/usr/local/bin/squidclient' if (!defined($squidclient) or $squidclient eq '');
+ 
+ $mp->set_thresholds(critical => $critical, warning => $warning);
+ 

@@ -1,0 +1,3 @@
+The check_squid monitoring plugin uses the squidclient binary to monitor
+a Squid proxy. Be sure to give "manager" acl access to the machine running
+the plugin (optionally with username/password).
