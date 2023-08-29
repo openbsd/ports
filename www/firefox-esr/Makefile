@@ -1,13 +1,12 @@
 COMMENT =	Firefox web browser, Extended Support Release
 ONLY_FOR_ARCHS =	amd64 aarch64
 
-MOZILLA_VERSION =	115.1.0esr
-MOZILLA_PROFDATA_TASKID=BAHeVuB7Sh6y-6Uq5oznKg
+MOZILLA_VERSION =	115.2.0esr
+MOZILLA_PROFDATA_TASKID=YL8u6_VMSKO0E0OYbWHzTQ
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox-esr
 MOZILLA_CODENAME =	browser
 MOZILLA_DIST =		firefox
-REVISION =		1
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/esr//}
 HOMEPAGE =	https://www.mozilla.org/firefox/organizations/
