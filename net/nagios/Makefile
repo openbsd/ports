@@ -8,6 +8,7 @@
   SUBDIR += check_postgres
   SUBDIR += check_rabbitmq
   SUBDIR += check_sip
+  SUBDIR += check_squid
   SUBDIR += cnagios
   SUBDIR += nagios
   SUBDIR += nagios,chroot
