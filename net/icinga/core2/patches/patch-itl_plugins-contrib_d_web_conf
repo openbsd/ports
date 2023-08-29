@@ -1,0 +1,21 @@
+Index: itl/plugins-contrib.d/web.conf
+--- itl/plugins-contrib.d/web.conf.orig
++++ itl/plugins-contrib.d/web.conf
+@@ -229,7 +229,7 @@ object CheckCommand "squid" {
+ 		}
+ 		"--squidclient" = {
+ 			value = "$squid_client$"
+-			description = "Path of squidclient (default: /usr/bin/squidclient)"
++			description = "Path of squidclient (default: /usr/local/bin/squidclient)"
+ 		}
+ 		"--timeout" = {
+ 			value = "$squid_timeout$"
+@@ -238,7 +238,7 @@ object CheckCommand "squid" {
+ 	}
+ 
+ 	vars.squid_hostname = "$check_address$"
+-	vars.squid_client = "/usr/bin/squidclient"
++	vars.squid_client = "/usr/local/bin/squidclient"
+ }
+ 
+ object CheckCommand "nginx_status" {
