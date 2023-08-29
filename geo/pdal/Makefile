@@ -1,7 +1,8 @@
 COMMENT =	translator library for point cloud formats
 
-DISTNAME =	PDAL-2.5.5-src
-PKGNAME =	${DISTNAME:L:C/-src//}
+V =	2.5.6
+DISTNAME =	PDAL-${V}-src
+PKGNAME =	pdal-${V}
 EXTRACT_SUFX =	.tar.bz2
 
 SHARED_LIBS =	pdal_base 6.0 # 13.0
@@ -10,7 +11,7 @@ SHARED_LIBS +=  pdal_util 2.0 # 13.0
 CATEGORIES =	geo devel textproc
 
 HOMEPAGE =	https://pdal.io/
-MASTER_SITES =	https://github.com/PDAL/PDAL/releases/download/2.5.5/
+MASTER_SITES =	https://github.com/PDAL/PDAL/releases/download/${V}/
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
