@@ -1,6 +1,7 @@
 COMMENT=	image manipulation library
 
 DISTNAME=	imlib2-1.11.0
+REVISION=	0
 SHARED_LIBS=	Imlib2	8.0	# 12.0
 CATEGORIES=	graphics
 
@@ -11,14 +12,11 @@ PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=enlightenment/}
 
-WANTLIB += ${COMPILER_LIBCXX} X11 X11-xcb Xau Xdmcp Xext Xrender
-WANTLIB += aom brotlicommon brotlidec brotlienc bz2 c cairo cairo-gobject
-WANTLIB += dav1d de265 expat ffi fontconfig freetype gdk_pixbuf-2.0
-WANTLIB += gif gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 harfbuzz
-WANTLIB += heif hwy iconv id3tag intl jpeg jxl jxl_threads lcms2
-WANTLIB += lzma m openjp2 pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre2-8 pixman-1 png rsvg-2 tiff webp webpdemux x265
-WANTLIB += xcb xcb-render xcb-shm xml2 z zstd
+WANTLIB += ${COMPILER_LIBCXX} X11 X11-xcb Xau Xdmcp Xext aom brotlicommon
+WANTLIB += brotlidec brotlienc bz2 c dav1d de265 freetype gif
+WANTLIB += heif hwy id3tag jpeg jxl jxl_threads lcms2 lzma m openjp2
+WANTLIB += png sharpyuv tiff webp webpdemux x265 xcb xcb-shm z
+WANTLIB += zstd
 
 COMPILER=	base-clang ports-gcc
 
@@ -31,14 +29,29 @@ LIB_DEPENDS+=	archivers/bzip2 \
 		graphics/openjp2 \
 		graphics/png \
 		graphics/tiff \
-		multimedia/libheif \
-		x11/gnome/librsvg
+		multimedia/libheif
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 .if ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS+= --disable-mmx
 .endif
+
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mrust}
+# We have librsvg-2.0 >= 2.46 only for rust archs.
+WANTLIB += Xrender cairo cairo-gobject expat ffi fontconfig gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 harfbuzz iconv
+WANTLIB += intl pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8
+WANTLIB += pixman-1 rsvg-2 xcb-render xml2
+LIB_DEPENDS+=		x11/gnome/librsvg
+COMMENT_SVG=
+.else
+CONFIGURE_ARGS+=	--without-svg
+COMMENT_SVG=		"@comment "
+.endif
+SUBST_VARS+=		COMMENT_SVG
+UPDATE_PLIST_ARGS+=	-c COMMENT_SVG
 
 CONFIGURE_ARGS+=	--without-ps
 

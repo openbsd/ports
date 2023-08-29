@@ -33,7 +33,7 @@ lib/imlib2/loaders/
 @so lib/imlib2/loaders/lzma.so
 @so lib/imlib2/loaders/png.so
 @so lib/imlib2/loaders/pnm.so
-@so lib/imlib2/loaders/svg.so
+${COMMENT_SVG}@so lib/imlib2/loaders/svg.so
 @so lib/imlib2/loaders/tga.so
 @so lib/imlib2/loaders/tiff.so
 @so lib/imlib2/loaders/webp.so
