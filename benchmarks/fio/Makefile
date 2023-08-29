@@ -2,7 +2,7 @@ COMMENT=	flexible I/O tester
 
 GH_ACCOUNT=	axboe
 GH_PROJECT=	fio
-GH_TAGNAME=	fio-3.33
+GH_TAGNAME=	fio-3.35
 PKGNAME=	${GH_TAGNAME}
 
 CATEGORIES=	benchmarks
