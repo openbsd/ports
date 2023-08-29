@@ -12,6 +12,8 @@ lib/python${MODPY_VERSION}/site-packages/ykman/${MODPY_PYCACHE}diagnostics.${MOD
 lib/python${MODPY_VERSION}/site-packages/ykman/${MODPY_PYCACHE}diagnostics.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ykman/${MODPY_PYCACHE}fido.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ykman/${MODPY_PYCACHE}fido.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ykman/${MODPY_PYCACHE}hsmauth.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ykman/${MODPY_PYCACHE}hsmauth.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ykman/${MODPY_PYCACHE}logging.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ykman/${MODPY_PYCACHE}logging.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ykman/${MODPY_PYCACHE}logging_setup.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -46,6 +48,8 @@ lib/python${MODPY_VERSION}/site-packages/ykman/_cli/${MODPY_PYCACHE}config.${MOD
 lib/python${MODPY_VERSION}/site-packages/ykman/_cli/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ykman/_cli/${MODPY_PYCACHE}fido.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ykman/_cli/${MODPY_PYCACHE}fido.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ykman/_cli/${MODPY_PYCACHE}hsmauth.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ykman/_cli/${MODPY_PYCACHE}hsmauth.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ykman/_cli/${MODPY_PYCACHE}info.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ykman/_cli/${MODPY_PYCACHE}info.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ykman/_cli/${MODPY_PYCACHE}oath.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -64,6 +68,7 @@ lib/python${MODPY_VERSION}/site-packages/ykman/_cli/aliases.py
 lib/python${MODPY_VERSION}/site-packages/ykman/_cli/apdu.py
 lib/python${MODPY_VERSION}/site-packages/ykman/_cli/config.py
 lib/python${MODPY_VERSION}/site-packages/ykman/_cli/fido.py
+lib/python${MODPY_VERSION}/site-packages/ykman/_cli/hsmauth.py
 lib/python${MODPY_VERSION}/site-packages/ykman/_cli/info.py
 lib/python${MODPY_VERSION}/site-packages/ykman/_cli/oath.py
 lib/python${MODPY_VERSION}/site-packages/ykman/_cli/openpgp.py
@@ -95,6 +100,7 @@ lib/python${MODPY_VERSION}/site-packages/ykman/hid/freebsd.py
 lib/python${MODPY_VERSION}/site-packages/ykman/hid/linux.py
 lib/python${MODPY_VERSION}/site-packages/ykman/hid/macos.py
 lib/python${MODPY_VERSION}/site-packages/ykman/hid/windows.py
+lib/python${MODPY_VERSION}/site-packages/ykman/hsmauth.py
 lib/python${MODPY_VERSION}/site-packages/ykman/logging.py
 lib/python${MODPY_VERSION}/site-packages/ykman/logging_setup.py
 lib/python${MODPY_VERSION}/site-packages/ykman/oath.py
@@ -150,6 +156,8 @@ lib/python${MODPY_VERSION}/site-packages/yubikit/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/yubikit/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/yubikit/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yubikit/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/yubikit/${MODPY_PYCACHE}hsmauth.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/yubikit/${MODPY_PYCACHE}hsmauth.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yubikit/${MODPY_PYCACHE}logging.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yubikit/${MODPY_PYCACHE}logging.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yubikit/${MODPY_PYCACHE}management.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -178,6 +186,7 @@ lib/python${MODPY_VERSION}/site-packages/yubikit/core/${MODPY_PYCACHE}smartcard.
 lib/python${MODPY_VERSION}/site-packages/yubikit/core/fido.py
 lib/python${MODPY_VERSION}/site-packages/yubikit/core/otp.py
 lib/python${MODPY_VERSION}/site-packages/yubikit/core/smartcard.py
+lib/python${MODPY_VERSION}/site-packages/yubikit/hsmauth.py
 lib/python${MODPY_VERSION}/site-packages/yubikit/logging.py
 lib/python${MODPY_VERSION}/site-packages/yubikit/management.py
 lib/python${MODPY_VERSION}/site-packages/yubikit/oath.py
