@@ -4,7 +4,7 @@ CATEGORIES=	math
 
 GH_ACCOUNT=	google
 GH_PROJECT=	double-conversion
-GH_TAGNAME=	v3.2.1
+GH_TAGNAME=	v3.3.0
 
 SHARED_LIBS +=  double-conversion         1.0 # 0.0
 
