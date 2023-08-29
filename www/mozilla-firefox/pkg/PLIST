@@ -81,6 +81,7 @@ lib/${MOZILLA_PROJECT}/omni.ja
 lib/${MOZILLA_PROJECT}/platform.ini
 @bin lib/${MOZILLA_PROJECT}/plugin-container
 lib/${MOZILLA_PROJECT}/removed-files
+@bin lib/${MOZILLA_PROJECT}/vaapitest
 @man man/man1/${MOZILLA_PROJECT}.1
 share/applications/${MOZILLA_PROJECT}.desktop
 share/doc/pkg-readmes/${PKGSTEM}

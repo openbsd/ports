@@ -3,12 +3,11 @@ ONLY_FOR_ARCHS =	amd64 aarch64
 
 # Don't forget to bump www/firefox-i18n after updates.
 
-MOZILLA_VERSION =	116.0
-MOZILLA_PROFDATA_TASKID=cT7BagakRXq_sxHO9y3_rQ
+MOZILLA_VERSION =	117.0
+MOZILLA_PROFDATA_TASKID=ft5nLUuYS0q7NbD1z0PtrQ
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
-REVISION =		2
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/b[0-9]*//}
 HOMEPAGE =	https://www.mozilla.org/firefox/
