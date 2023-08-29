@@ -53,7 +53,7 @@ Index: server/config/config.json
      "AdvancedLoggingJSON": {},
      "AdvancedLoggingConfig": ""
    },
-@@ -210,7 +210,7 @@
+@@ -211,7 +211,7 @@
      "MaxImageResolution": 33177600,
      "MaxImageDecoderConcurrency": -1,
      "DriverName": "local",
@@ -62,7 +62,7 @@ Index: server/config/config.json
      "EnablePublicLink": false,
      "ExtractContent": true,
      "ArchiveRecursion": false,
-@@ -242,11 +242,11 @@
+@@ -258,11 +258,11 @@
      "EnableSMTPAuth": false,
      "SMTPUsername": "",
      "SMTPPassword": "",
@@ -77,14 +77,7 @@ Index: server/config/config.json
      "PushNotificationServer": "https://push-test.mattermost.com",
      "PushNotificationContents": "full",
      "PushNotificationBuffer": 1000,
-@@ -276,13 +276,13 @@
-   "SupportSettings": {
-     "TermsOfServiceLink": "https://mattermost.com/terms-of-use/",
-     "PrivacyPolicyLink": "https://mattermost.com/privacy-policy/",
--    "AboutLink": "https://docs.mattermost.com/about/product.html/",
-+    "AboutLink": "https://docs.mattermost.com/about/product.html",
-     "HelpLink": "https://mattermost.com/default-help/",
-     "ReportAProblemLink": "https://mattermost.com/default-report-a-problem/",
+@@ -299,7 +299,7 @@
      "SupportEmail": "",
      "CustomTermsOfServiceEnabled": false,
      "CustomTermsOfServiceReAcceptancePeriod": 365,
@@ -93,7 +86,7 @@ Index: server/config/config.json
    },
    "AnnouncementSettings": {
      "EnableBanner": false,
-@@ -388,7 +388,7 @@
+@@ -405,7 +405,7 @@
    },
    "ComplianceSettings": {
      "Enable": false,
@@ -102,7 +95,7 @@ Index: server/config/config.json
      "EnableDaily": false,
      "BatchSize": 30000
    },
-@@ -550,8 +550,8 @@
+@@ -568,8 +568,8 @@
      "EnableUploads": false,
      "AllowInsecureDownloadURL": false,
      "EnableHealthCheck": true,
@@ -113,8 +106,8 @@ Index: server/config/config.json
      "Plugins": {},
      "PluginStates": {
        "com.mattermost.calls": {
-@@ -623,11 +623,11 @@
-     "CloudReverseTrial": false
+@@ -639,11 +639,11 @@
+     "DataRetentionConcurrencyEnabled": true
    },
    "ImportSettings": {
 -    "Directory": "./import",
