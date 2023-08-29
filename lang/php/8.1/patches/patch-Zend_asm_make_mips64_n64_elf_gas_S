@@ -1,0 +1,13 @@
+Avoid an incorrect R_MIPS_CALL16 relocation with a local symbol.
+
+Index: Zend/asm/make_mips64_n64_elf_gas.S
+--- Zend/asm/make_mips64_n64_elf_gas.S.orig
++++ Zend/asm/make_mips64_n64_elf_gas.S
+@@ -70,6 +70,7 @@ make_fcontext:
+     sd  $gp, 136($v0)
+ 
+     # psudo instruction compute abs address of label finish based on GP
++    .local  finish
+     dla  $t9, finish
+ 
+     # save address of finish as return-address for context-function
