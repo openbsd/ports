@@ -1,7 +1,6 @@
 COMMENT=	audio player and tagger for GTK+ with regex support
 
-MODPY_EGG_VERSION= 4.5.0
-REVISION=	3
+MODPY_EGG_VERSION= 4.6.0
 DISTNAME=	quodlibet-${MODPY_EGG_VERSION}
 PORTROACH=	skipv:release-${MODPY_EGG_VERSION}
 

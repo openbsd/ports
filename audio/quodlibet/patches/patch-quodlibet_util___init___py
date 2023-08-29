@@ -8,7 +8,7 @@ Index: quodlibet/util/__init__.py
 -    is_linux, is_windows, is_wine, is_osx, is_flatpak, matches_flatpak_runtime
 +    is_linux, is_openbsd, is_windows, is_wine, is_osx, is_flatpak, matches_flatpak_runtime
  from .enum import enum
- from .i18n import _, C_
+ from .i18n import _, ngettext, C_
  
  
  # flake8
