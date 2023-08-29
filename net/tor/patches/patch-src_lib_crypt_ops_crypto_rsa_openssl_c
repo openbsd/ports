@@ -39,12 +39,3 @@ Index: src/lib/crypt_ops/crypto_rsa_openssl.c
    /* It's so stupid that there's no other way to check that n is valid
     * before calling RSA_bits().
     */
-@@ -572,7 +572,7 @@ static bool
- rsa_private_key_too_long(RSA *rsa, int max_bits)
- {
-   const BIGNUM *n, *e, *p, *q, *d, *dmp1, *dmq1, *iqmp;
--#ifdef OPENSSL_1_1_API
-+#if defined(OPENSSL_1_1_API) || defined(LIBRESSL_VERSION_NUMBER)
- 
- #if OPENSSL_VERSION_NUMBER >= OPENSSL_V_SERIES(1,1,1)
-   n = RSA_get0_n(rsa);
