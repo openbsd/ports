@@ -1,7 +1,7 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -47586,7 +47586,7 @@ int main()
+@@ -47606,7 +47606,7 @@ int main(int argc, const char * argv[])
  {
  #ifdef LIBCURL_VERSION_MAJOR
  #if LIBCURL_VERSION_MAJOR > 7
