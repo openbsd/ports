@@ -1,6 +1,5 @@
 COMMENT=	managing meta-data of audio formats
-DISTNAME=	taglib-1.13
-REVISION=	0
+DISTNAME=	taglib-1.13.1
 
 CATEGORIES=	audio devel
 
