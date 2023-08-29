@@ -1299,6 +1299,8 @@ share/gitea/templates/shared/user/
 share/gitea/templates/shared/user/authorlink.tmpl
 share/gitea/templates/shared/user/avatarlink.tmpl
 share/gitea/templates/shared/user/namelink.tmpl
+share/gitea/templates/shared/webhook/
+share/gitea/templates/shared/webhook/icon.tmpl
 share/gitea/templates/status/
 share/gitea/templates/status/404.tmpl
 share/gitea/templates/status/500.tmpl
