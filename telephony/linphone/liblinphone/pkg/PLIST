@@ -296,7 +296,8 @@ share/doc/liblinphone/c/index.html
 share/doc/liblinphone/c/jquery.js
 share/doc/liblinphone/c/menu.js
 share/doc/liblinphone/c/menudata.js
-share/doc/liblinphone/c/modules.html
+share/doc/liblinphone/c/minus.svg
+share/doc/liblinphone/c/minusd.svg
 share/doc/liblinphone/c/nav_f.png
 share/doc/liblinphone/c/nav_fd.png
 share/doc/liblinphone/c/nav_g.png
@@ -304,6 +305,8 @@ share/doc/liblinphone/c/nav_h.png
 share/doc/liblinphone/c/nav_hd.png
 share/doc/liblinphone/c/open.png
 share/doc/liblinphone/c/pages.html
+share/doc/liblinphone/c/plus.svg
+share/doc/liblinphone/c/plusd.svg
 share/doc/liblinphone/c/splitbar.png
 share/doc/liblinphone/c/splitbard.png
 share/doc/liblinphone/c/structIsMapContainer.html
@@ -337,6 +340,7 @@ share/doc/liblinphone/c/tab_hd.png
 share/doc/liblinphone/c/tab_s.png
 share/doc/liblinphone/c/tab_sd.png
 share/doc/liblinphone/c/tabs.css
+share/doc/liblinphone/c/topics.html
 share/doc/liblinphone/cpp/
 share/doc/liblinphone/cpp/annotated.html
 share/doc/liblinphone/cpp/bc_s.png
@@ -650,6 +654,8 @@ share/doc/liblinphone/cpp/index.html
 share/doc/liblinphone/cpp/jquery.js
 share/doc/liblinphone/cpp/menu.js
 share/doc/liblinphone/cpp/menudata.js
+share/doc/liblinphone/cpp/minus.svg
+share/doc/liblinphone/cpp/minusd.svg
 share/doc/liblinphone/cpp/namespacelinphone.html
 share/doc/liblinphone/cpp/namespacemembers.html
 share/doc/liblinphone/cpp/namespacemembers_enum.html
@@ -661,6 +667,8 @@ share/doc/liblinphone/cpp/nav_h.png
 share/doc/liblinphone/cpp/nav_hd.png
 share/doc/liblinphone/cpp/open.png
 share/doc/liblinphone/cpp/pages.html
+share/doc/liblinphone/cpp/plus.svg
+share/doc/liblinphone/cpp/plusd.svg
 share/doc/liblinphone/cpp/splitbar.png
 share/doc/liblinphone/cpp/splitbard.png
 share/doc/liblinphone/cpp/sync_off.png
