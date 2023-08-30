@@ -36,29 +36,30 @@ MODGO_MODULES =	\
 	github.com/prometheus/common				 v0.42.0 \
 	github.com/prometheus/procfs				 v0.10.1 \
 	github.com/rogpeppe/go-internal				 v1.10.0 \
-	github.com/rs/xid					 v1.4.0 \
-	github.com/rs/zerolog					 v1.29.1 \
+	github.com/rs/xid					 v1.5.0 \
+	github.com/rs/zerolog					 v1.30.0 \
 	github.com/skip2/go-qrcode				 v0.0.0-20200617195104-da1b6568686e \
 	github.com/stretchr/testify				 v1.8.4 \
-	github.com/tidwall/gjson				 v1.14.4 \
+	github.com/tidwall/gjson				 v1.16.0 \
 	github.com/tidwall/match				 v1.1.1 \
 	github.com/tidwall/pretty				 v1.2.0 \
 	github.com/tidwall/sjson				 v1.2.5 \
 	github.com/xhit/go-str2duration				 v1.2.0 \
-	github.com/yuin/goldmark				 v1.5.4 \
+	github.com/yuin/goldmark				 v1.5.5 \
 	go.mau.fi/libsignal					 v0.1.0 \
-	go.mau.fi/whatsmeow					 v0.0.0-20230716092751-4bd753344e7b \
+	go.mau.fi/util						 v0.0.0-20230805171708-199bf3eec776 \
+	go.mau.fi/whatsmeow					 v0.0.0-20230816173759-58beaf3b5bd0 \
 	go.mau.fi/zeroconfig					 v0.1.2 \
-	golang.org/x/crypto					 v0.11.0 \
-	golang.org/x/exp					 v0.0.0-20230713183714-613f0c0eb8a1 \
-	golang.org/x/image					 v0.9.0 \
+	golang.org/x/crypto					 v0.12.0 \
+	golang.org/x/exp					 v0.0.0-20230811145659-89c5cff77bcb \
+	golang.org/x/image					 v0.11.0 \
 	golang.org/x/mod					 v0.11.0 \
-	golang.org/x/net					 v0.12.0 \
+	golang.org/x/net					 v0.14.0 \
 	golang.org/x/oauth2					 v0.5.0 \
 	golang.org/x/sync					 v0.2.0 \
-	golang.org/x/sys					 v0.10.0 \
-	golang.org/x/term					 v0.10.0 \
-	golang.org/x/text					 v0.11.0 \
+	golang.org/x/sys					 v0.11.0 \
+	golang.org/x/term					 v0.11.0 \
+	golang.org/x/text					 v0.12.0 \
 	golang.org/x/tools					 v0.6.0 \
 	golang.org/x/xerrors					 v0.0.0-20191204190536-9bdfabe68543 \
 	google.golang.org/appengine				 v1.6.7 \
@@ -69,7 +70,7 @@ MODGO_MODULES =	\
 	gopkg.in/yaml.v3					 v3.0.1 \
 	maunium.net/go/mauflag					 v1.0.0 \
 	maunium.net/go/maulogger/v2				 v2.4.1 \
-	maunium.net/go/mautrix					 v0.15.4
+	maunium.net/go/mautrix					 v0.16.0
 MODGO_MODFILES =	\
 	github.com/cespare/xxhash/v2		 v2.1.2 \
 	github.com/coreos/go-systemd/v22	 v22.3.3-0.20220203105225-a9a7ef127534 \
@@ -85,11 +86,14 @@ MODGO_MODFILES =	\
 	github.com/stretchr/testify		 v1.8.0 \
 	github.com/stretchr/testify		 v1.8.1 \
 	github.com/tidwall/gjson		 v1.14.2 \
+	github.com/tidwall/gjson		 v1.14.4 \
 	github.com/yuin/goldmark		 v1.4.13 \
+	go.mau.fi/util				 v0.0.0-20230805154123-3981666a86f1 \
 	golang.org/x/crypto			 v0.0.0-20190308221718-c2843e01d9a2 \
 	golang.org/x/crypto			 v0.0.0-20210921155107-089bfa567519 \
 	golang.org/x/crypto			 v0.4.0 \
 	golang.org/x/crypto			 v0.8.0 \
+	golang.org/x/exp			 v0.0.0-20230810033253-352e893a4cad \
 	golang.org/x/image			 v0.0.0-20211028202545-6944b10bf410 \
 	golang.org/x/mod			 v0.6.0-dev.0.20220419223038-86c51ed26bb4 \
 	golang.org/x/mod			 v0.8.0 \
@@ -111,6 +115,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sys			 v0.0.0-20220520151302-bc2c85ada10a \
 	golang.org/x/sys			 v0.0.0-20220722155257-8c9f86f7a55f \
 	golang.org/x/sys			 v0.1.0 \
+	golang.org/x/sys			 v0.10.0 \
 	golang.org/x/sys			 v0.5.0 \
 	golang.org/x/sys			 v0.8.0 \
 	golang.org/x/term			 v0.0.0-20201126162022-7de9c90e9dd1 \
