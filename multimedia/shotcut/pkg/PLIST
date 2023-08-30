@@ -36,6 +36,9 @@ share/shotcut/qml/filters/alpha_view/
 share/shotcut/qml/filters/alpha_view/icon.webp
 share/shotcut/qml/filters/alpha_view/meta.qml
 share/shotcut/qml/filters/alpha_view/ui.qml
+share/shotcut/qml/filters/audio_autofade/
+share/shotcut/qml/filters/audio_autofade/meta.qml
+share/shotcut/qml/filters/audio_autofade/ui.qml
 share/shotcut/qml/filters/audio_balance/
 share/shotcut/qml/filters/audio_balance/meta.qml
 share/shotcut/qml/filters/audio_balance/ui.qml
@@ -112,6 +115,9 @@ share/shotcut/qml/filters/audio_pitch/ui.qml
 share/shotcut/qml/filters/audio_reverb/
 share/shotcut/qml/filters/audio_reverb/meta.qml
 share/shotcut/qml/filters/audio_reverb/ui.qml
+share/shotcut/qml/filters/audio_seam/
+share/shotcut/qml/filters/audio_seam/meta.qml
+share/shotcut/qml/filters/audio_seam/ui.qml
 share/shotcut/qml/filters/audio_stereoenhance/
 share/shotcut/qml/filters/audio_stereoenhance/meta.qml
 share/shotcut/qml/filters/audio_stereoenhance/ui.qml
