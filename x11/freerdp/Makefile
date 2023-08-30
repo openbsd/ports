@@ -12,8 +12,10 @@ HOMEPAGE =		https://www.freerdp.com/
 MASTER_SITES =		https://pub.freerdp.com/releases/
 
 # add sndio patchset, not yet in stable branch
-MASTER_SITES0 =		https://github.com/FreeRDP/FreeRDP/commit/
-PATCHFILES =		freerdp-sndio-upd2{b3a2042103a192d9e4482691ce9e7d73f9475b09}.patch:0
+#MASTER_SITES0 =		https://github.com/FreeRDP/FreeRDP/commit/
+#PATCHFILES =		freerdp-sndio-upd2{b3a2042103a192d9e4482691ce9e7d73f9475b09}.patch:0
+MASTER_SITES0 =		https://spacehopper.org/mirrors/
+PATCHFILES =		freerdp-sndio-upd2.patch:0
 PATCH_DIST_STRIP =	-p1
 
 # Apache 2.0
