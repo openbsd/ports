@@ -1,6 +1,6 @@
 COMMENT =	Macintosh-like virtual window manager
 
-V =		0.9.3
+V =		0.9.4
 DISTNAME =	mlvwm-$V
 CATEGORIES =	x11
 
