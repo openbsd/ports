@@ -1,8 +1,8 @@
 Index: sessions/mode.json.in
 --- sessions/mode.json.in.orig
 +++ sessions/mode.json.in
-@@ -2,10 +2,5 @@
-     "parentMode": "user",
+@@ -3,10 +3,5 @@
+     "colorScheme": "prefer-@DefaultVariant@",
      "stylesheetName": "@ThemeName@/gnome-shell.css",
      "themeResourceName": "@ThemeResourcePath@gnome-shell-theme.gresource",
 -    "iconsResourceName": "@ThemeResourcePath@gnome-shell-icons.gresource",

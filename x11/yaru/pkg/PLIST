@@ -44,13 +44,16 @@ share/gnome-shell/theme/Yaru-blue-dark/checkbox-focused-blue-dark.svg
 share/gnome-shell/theme/Yaru-blue-dark/checkbox-off-blue-dark.svg
 share/gnome-shell/theme/Yaru-blue-dark/checkbox-off-focused-blue-dark.svg
 share/gnome-shell/theme/Yaru-blue-dark/dash-placeholder.svg
+share/gnome-shell/theme/Yaru-blue-dark/gnome-shell-high-contrast.css
 share/gnome-shell/theme/Yaru-blue-dark/gnome-shell-start.svg
 share/gnome-shell/theme/Yaru-blue-dark/gnome-shell.css
 share/gnome-shell/theme/Yaru-blue-dark/pad-osd.css
 share/gnome-shell/theme/Yaru-blue-dark/process-working.svg
 share/gnome-shell/theme/Yaru-blue-dark/running-indicator.svg
 share/gnome-shell/theme/Yaru-blue-dark/toggle-off-blue-dark.svg
+share/gnome-shell/theme/Yaru-blue-dark/toggle-off-hc-blue-dark.svg
 share/gnome-shell/theme/Yaru-blue-dark/toggle-on-blue-dark.svg
+share/gnome-shell/theme/Yaru-blue-dark/toggle-on-hc-blue-dark.svg
 share/gnome-shell/theme/Yaru-blue-dark/workspace-placeholder.svg
 share/gnome-shell/theme/Yaru-blue/calendar-today-light.svg
 share/gnome-shell/theme/Yaru-blue/calendar-today.svg
@@ -314,15 +317,12 @@ share/gnome-shell/theme/Yaru/checkbox-light.svg
 share/gnome-shell/theme/Yaru/checkbox-off-focused-light.svg
 share/gnome-shell/theme/Yaru/checkbox-off-light.svg
 share/gnome-shell/theme/Yaru/dash-placeholder.svg
-share/gnome-shell/theme/Yaru/gnome-shell-high-contrast.css
 share/gnome-shell/theme/Yaru/gnome-shell-start.svg
 share/gnome-shell/theme/Yaru/gnome-shell.css
 share/gnome-shell/theme/Yaru/pad-osd.css
 share/gnome-shell/theme/Yaru/process-working.svg
 share/gnome-shell/theme/Yaru/running-indicator.svg
-share/gnome-shell/theme/Yaru/toggle-off-hc-light.svg
 share/gnome-shell/theme/Yaru/toggle-off-light.svg
-share/gnome-shell/theme/Yaru/toggle-on-hc-light.svg
 share/gnome-shell/theme/Yaru/toggle-on-light.svg
 share/gnome-shell/theme/Yaru/workspace-placeholder.svg
 share/gtksourceview-2.0/
@@ -6966,7 +6966,6 @@ share/icons/Yaru/16x16/actions/mail-unread.png
 share/icons/Yaru/16x16/actions/mail_forward.png
 share/icons/Yaru/16x16/actions/mail_new.png
 share/icons/Yaru/16x16/actions/mail_reply.png
-share/icons/Yaru/16x16/actions/printer.png
 share/icons/Yaru/16x16/actions/printers.png
 share/icons/Yaru/16x16/actions/process-stop.png
 share/icons/Yaru/16x16/actions/redo.png
@@ -7008,6 +7007,7 @@ share/icons/Yaru/16x16/actions/system-shut-down.png
 share/icons/Yaru/16x16/actions/system-shutdown.png
 share/icons/Yaru/16x16/actions/system-switch-user.png
 share/icons/Yaru/16x16/actions/undo.png
+share/icons/Yaru/16x16/actions/view-app-grid.png
 share/icons/Yaru/16x16/actions/view-zoom-in.png
 share/icons/Yaru/16x16/actions/view-zoom-out.png
 share/icons/Yaru/16x16/actions/window-close.png
@@ -7025,7 +7025,6 @@ share/icons/Yaru/16x16/apps/accessories-character-map.png
 share/icons/Yaru/16x16/apps/accessories-dictionary.png
 share/icons/Yaru/16x16/apps/accessories-text-editor.png
 share/icons/Yaru/16x16/apps/address-book-app.png
-share/icons/Yaru/16x16/apps/amazon-store.png
 share/icons/Yaru/16x16/apps/applets-screenshooter.png
 share/icons/Yaru/16x16/apps/applications-multimedia.png
 share/icons/Yaru/16x16/apps/applications-office.png
@@ -7255,7 +7254,6 @@ share/icons/Yaru/16x16/apps/workspace-switcher-right-top.png
 share/icons/Yaru/16x16/apps/workspace-switcher-top-left.png
 share/icons/Yaru/16x16/apps/x-office-address-book.png
 share/icons/Yaru/16x16/categories/
-share/icons/Yaru/16x16/categories/application-x-addon.png
 share/icons/Yaru/16x16/categories/applications-accessories.png
 share/icons/Yaru/16x16/categories/applications-development.png
 share/icons/Yaru/16x16/categories/applications-games.png
@@ -7370,7 +7368,6 @@ share/icons/Yaru/16x16/devices/phone.png
 share/icons/Yaru/16x16/devices/printer-network.png
 share/icons/Yaru/16x16/devices/printer.png
 share/icons/Yaru/16x16/emblems/
-share/icons/Yaru/16x16/emblems/config-users.png
 share/icons/Yaru/16x16/emblems/emblem-danger.png
 share/icons/Yaru/16x16/emblems/emblem-default.png
 share/icons/Yaru/16x16/emblems/emblem-dialog-question.png
@@ -7753,6 +7750,7 @@ share/icons/Yaru/16x16/mimetypes/application-x-virtualbox-vmdk.png
 share/icons/Yaru/16x16/mimetypes/application-x-wine-extension-ini.png
 share/icons/Yaru/16x16/mimetypes/application-x-xpinstall.png
 share/icons/Yaru/16x16/mimetypes/application-x-yaml.png
+share/icons/Yaru/16x16/mimetypes/application-x-zerosize.png
 share/icons/Yaru/16x16/mimetypes/application-x-zip.png
 share/icons/Yaru/16x16/mimetypes/application-xml.png
 share/icons/Yaru/16x16/mimetypes/application-zip.png
@@ -8206,6 +8204,7 @@ share/icons/Yaru/16x16/places/inode-directory.png
 share/icons/Yaru/16x16/places/insync-folder.png
 share/icons/Yaru/16x16/places/network-server.png
 share/icons/Yaru/16x16/places/network-workgroup.png
+share/icons/Yaru/16x16/places/start-here.png
 share/icons/Yaru/16x16/places/user-desktop.png
 share/icons/Yaru/16x16/places/user-home.png
 share/icons/Yaru/16x16/places/user-trash.png
@@ -8369,7 +8368,6 @@ share/icons/Yaru/16x16@2x/actions/mail-unread.png
 share/icons/Yaru/16x16@2x/actions/mail_forward.png
 share/icons/Yaru/16x16@2x/actions/mail_new.png
 share/icons/Yaru/16x16@2x/actions/mail_reply.png
-share/icons/Yaru/16x16@2x/actions/printer.png
 share/icons/Yaru/16x16@2x/actions/printers.png
 share/icons/Yaru/16x16@2x/actions/process-stop.png
 share/icons/Yaru/16x16@2x/actions/redo.png
@@ -8411,6 +8409,7 @@ share/icons/Yaru/16x16@2x/actions/system-shut-down.png
 share/icons/Yaru/16x16@2x/actions/system-shutdown.png
 share/icons/Yaru/16x16@2x/actions/system-switch-user.png
 share/icons/Yaru/16x16@2x/actions/undo.png
+share/icons/Yaru/16x16@2x/actions/view-app-grid.png
 share/icons/Yaru/16x16@2x/actions/view-zoom-in.png
 share/icons/Yaru/16x16@2x/actions/view-zoom-out.png
 share/icons/Yaru/16x16@2x/actions/window-close.png
@@ -8428,7 +8427,6 @@ share/icons/Yaru/16x16@2x/apps/accessories-character-map.png
 share/icons/Yaru/16x16@2x/apps/accessories-dictionary.png
 share/icons/Yaru/16x16@2x/apps/accessories-text-editor.png
 share/icons/Yaru/16x16@2x/apps/address-book-app.png
-share/icons/Yaru/16x16@2x/apps/amazon-store.png
 share/icons/Yaru/16x16@2x/apps/applets-screenshooter.png
 share/icons/Yaru/16x16@2x/apps/applications-multimedia.png
 share/icons/Yaru/16x16@2x/apps/applications-office.png
@@ -8658,7 +8656,6 @@ share/icons/Yaru/16x16@2x/apps/workspace-switcher-right-top.png
 share/icons/Yaru/16x16@2x/apps/workspace-switcher-top-left.png
 share/icons/Yaru/16x16@2x/apps/x-office-address-book.png
 share/icons/Yaru/16x16@2x/categories/
-share/icons/Yaru/16x16@2x/categories/application-x-addon.png
 share/icons/Yaru/16x16@2x/categories/applications-accessories.png
 share/icons/Yaru/16x16@2x/categories/applications-development.png
 share/icons/Yaru/16x16@2x/categories/applications-games.png
@@ -8773,7 +8770,6 @@ share/icons/Yaru/16x16@2x/devices/phone.png
 share/icons/Yaru/16x16@2x/devices/printer-network.png
 share/icons/Yaru/16x16@2x/devices/printer.png
 share/icons/Yaru/16x16@2x/emblems/
-share/icons/Yaru/16x16@2x/emblems/config-users.png
 share/icons/Yaru/16x16@2x/emblems/emblem-danger.png
 share/icons/Yaru/16x16@2x/emblems/emblem-default.png
 share/icons/Yaru/16x16@2x/emblems/emblem-dialog-question.png
@@ -8948,6 +8944,7 @@ share/icons/Yaru/16x16@2x/mimetypes/application-x-virtualbox-vmdk.png
 share/icons/Yaru/16x16@2x/mimetypes/application-x-wine-extension-ini.png
 share/icons/Yaru/16x16@2x/mimetypes/application-x-xpinstall.png
 share/icons/Yaru/16x16@2x/mimetypes/application-x-yaml.png
+share/icons/Yaru/16x16@2x/mimetypes/application-x-zerosize.png
 share/icons/Yaru/16x16@2x/mimetypes/application-x-zip.png
 share/icons/Yaru/16x16@2x/mimetypes/application-xml.png
 share/icons/Yaru/16x16@2x/mimetypes/application-zip.png
@@ -9133,6 +9130,7 @@ share/icons/Yaru/16x16@2x/places/inode-directory.png
 share/icons/Yaru/16x16@2x/places/insync-folder.png
 share/icons/Yaru/16x16@2x/places/network-server.png
 share/icons/Yaru/16x16@2x/places/network-workgroup.png
+share/icons/Yaru/16x16@2x/places/start-here.png
 share/icons/Yaru/16x16@2x/places/user-desktop.png
 share/icons/Yaru/16x16@2x/places/user-home.png
 share/icons/Yaru/16x16@2x/places/user-trash.png
@@ -9288,7 +9286,6 @@ share/icons/Yaru/22x22/actions/mail-unread.png
 share/icons/Yaru/22x22/actions/mail_forward.png
 share/icons/Yaru/22x22/actions/mail_new.png
 share/icons/Yaru/22x22/actions/mail_reply.png
-share/icons/Yaru/22x22/actions/printer.png
 share/icons/Yaru/22x22/actions/printers.png
 share/icons/Yaru/22x22/actions/process-stop.png
 share/icons/Yaru/22x22/actions/redo.png
@@ -9324,6 +9321,7 @@ share/icons/Yaru/22x22/actions/system-restart.png
 share/icons/Yaru/22x22/actions/system-shut-down.png
 share/icons/Yaru/22x22/actions/system-shutdown.png
 share/icons/Yaru/22x22/actions/undo.png
+share/icons/Yaru/22x22/actions/view-app-grid.png
 share/icons/Yaru/22x22/actions/view-zoom-in.png
 share/icons/Yaru/22x22/actions/view-zoom-out.png
 share/icons/Yaru/22x22/actions/window-close.png
@@ -9334,7 +9332,13 @@ share/icons/Yaru/22x22/actions/zoom-best-fit.png
 share/icons/Yaru/22x22/actions/zoom-in.png
 share/icons/Yaru/22x22/actions/zoom-out.png
 share/icons/Yaru/22x22/apps/
+share/icons/Yaru/22x22/apps/address-book-app.png
+share/icons/Yaru/22x22/apps/gnome-contacts.png
+share/icons/Yaru/22x22/apps/office-address-book.png
+share/icons/Yaru/22x22/apps/office-addressbook.png
+share/icons/Yaru/22x22/apps/org.gnome.Contacts.png
 share/icons/Yaru/22x22/apps/ubiquity.png
+share/icons/Yaru/22x22/apps/x-office-address-book.png
 share/icons/Yaru/22x22/categories/
 share/icons/Yaru/22x22/categories/preferences-system-bluetooth.png
 share/icons/Yaru/22x22/legacy/
@@ -10266,6 +10270,9 @@ share/icons/Yaru/22x22/panel/xfpm-ups-empty.svg
 share/icons/Yaru/22x22/panel/xfpm-ups-missing.svg
 share/icons/Yaru/22x22/panel/xfpm-ups_charged.svg
 share/icons/Yaru/22x22/panel/xfpm-ups_empty.svg
+share/icons/Yaru/22x22/places/
+share/icons/Yaru/22x22/places/folder-recent.png
+share/icons/Yaru/22x22/places/start-here.png
 share/icons/Yaru/22x22@2x/
 share/icons/Yaru/22x22@2x/actions/
 share/icons/Yaru/22x22@2x/actions/address-book-new.png
@@ -10327,9 +10334,11 @@ share/icons/Yaru/22x22@2x/actions/mail-unread.png
 share/icons/Yaru/22x22@2x/actions/system-log-out.png
 share/icons/Yaru/22x22@2x/actions/system-reboot.png
 share/icons/Yaru/22x22@2x/actions/system-shutdown.png
+share/icons/Yaru/22x22@2x/actions/view-app-grid.png
 share/icons/Yaru/22x22@2x/actions/zoom-in.png
 share/icons/Yaru/22x22@2x/actions/zoom-out.png
 share/icons/Yaru/22x22@2x/apps/
+share/icons/Yaru/22x22@2x/apps/address-book-app.png
 share/icons/Yaru/22x22@2x/apps/ubiquity.png
 share/icons/Yaru/22x22@2x/categories/
 share/icons/Yaru/22x22@2x/categories/preferences-system-bluetooth.png
@@ -10338,6 +10347,8 @@ share/icons/Yaru/22x22@2x/legacy/document-export.png
 share/icons/Yaru/22x22@2x/legacy/document-import.png
 share/icons/Yaru/22x22@2x/legacy/list-add.png
 share/icons/Yaru/22x22@2x/legacy/list-remove.png
+share/icons/Yaru/22x22@2x/places/
+share/icons/Yaru/22x22@2x/places/start-here.png
 share/icons/Yaru/24x24/
 share/icons/Yaru/24x24/actions/
 share/icons/Yaru/24x24/actions/address-book-new.png
@@ -10465,7 +10476,6 @@ share/icons/Yaru/24x24/actions/mail-unread.png
 share/icons/Yaru/24x24/actions/mail_forward.png
 share/icons/Yaru/24x24/actions/mail_new.png
 share/icons/Yaru/24x24/actions/mail_reply.png
-share/icons/Yaru/24x24/actions/printer.png
 share/icons/Yaru/24x24/actions/printers.png
 share/icons/Yaru/24x24/actions/process-stop.png
 share/icons/Yaru/24x24/actions/redo.png
@@ -10507,6 +10517,7 @@ share/icons/Yaru/24x24/actions/system-shut-down.png
 share/icons/Yaru/24x24/actions/system-shutdown.png
 share/icons/Yaru/24x24/actions/system-switch-user.png
 share/icons/Yaru/24x24/actions/undo.png
+share/icons/Yaru/24x24/actions/view-app-grid.png
 share/icons/Yaru/24x24/actions/view-zoom-in.png
 share/icons/Yaru/24x24/actions/view-zoom-out.png
 share/icons/Yaru/24x24/actions/window-close.png
@@ -10572,7 +10583,6 @@ share/icons/Yaru/24x24/apps/accessories-character-map.png
 share/icons/Yaru/24x24/apps/accessories-dictionary.png
 share/icons/Yaru/24x24/apps/accessories-text-editor.png
 share/icons/Yaru/24x24/apps/address-book-app.png
-share/icons/Yaru/24x24/apps/amazon-store.png
 share/icons/Yaru/24x24/apps/applets-screenshooter.png
 share/icons/Yaru/24x24/apps/applications-multimedia.png
 share/icons/Yaru/24x24/apps/applications-office.png
@@ -10802,7 +10812,6 @@ share/icons/Yaru/24x24/apps/workspace-switcher-right-top.png
 share/icons/Yaru/24x24/apps/workspace-switcher-top-left.png
 share/icons/Yaru/24x24/apps/x-office-address-book.png
 share/icons/Yaru/24x24/categories/
-share/icons/Yaru/24x24/categories/application-x-addon.png
 share/icons/Yaru/24x24/categories/applications-accessories.png
 share/icons/Yaru/24x24/categories/applications-development.png
 share/icons/Yaru/24x24/categories/applications-games.png
@@ -10917,7 +10926,6 @@ share/icons/Yaru/24x24/devices/phone.png
 share/icons/Yaru/24x24/devices/printer-network.png
 share/icons/Yaru/24x24/devices/printer.png
 share/icons/Yaru/24x24/emblems/
-share/icons/Yaru/24x24/emblems/config-users.png
 share/icons/Yaru/24x24/emblems/emblem-danger.png
 share/icons/Yaru/24x24/emblems/emblem-default.png
 share/icons/Yaru/24x24/emblems/emblem-dialog-question.png
@@ -11143,6 +11151,7 @@ share/icons/Yaru/24x24/mimetypes/application-x-virtualbox-vmdk.png
 share/icons/Yaru/24x24/mimetypes/application-x-wine-extension-ini.png
 share/icons/Yaru/24x24/mimetypes/application-x-xpinstall.png
 share/icons/Yaru/24x24/mimetypes/application-x-yaml.png
+share/icons/Yaru/24x24/mimetypes/application-x-zerosize.png
 share/icons/Yaru/24x24/mimetypes/application-x-zip.png
 share/icons/Yaru/24x24/mimetypes/application-xml.png
 share/icons/Yaru/24x24/mimetypes/application-zip.png
@@ -11663,6 +11672,7 @@ share/icons/Yaru/24x24/places/inode-directory.png
 share/icons/Yaru/24x24/places/insync-folder.png
 share/icons/Yaru/24x24/places/network-server.png
 share/icons/Yaru/24x24/places/network-workgroup.png
+share/icons/Yaru/24x24/places/start-here.png
 share/icons/Yaru/24x24/places/user-desktop.png
 share/icons/Yaru/24x24/places/user-home.png
 share/icons/Yaru/24x24/places/user-trash.png
@@ -11826,7 +11836,6 @@ share/icons/Yaru/24x24@2x/actions/mail-unread.png
 share/icons/Yaru/24x24@2x/actions/mail_forward.png
 share/icons/Yaru/24x24@2x/actions/mail_new.png
 share/icons/Yaru/24x24@2x/actions/mail_reply.png
-share/icons/Yaru/24x24@2x/actions/printer.png
 share/icons/Yaru/24x24@2x/actions/printers.png
 share/icons/Yaru/24x24@2x/actions/process-stop.png
 share/icons/Yaru/24x24@2x/actions/redo.png
@@ -11868,6 +11877,7 @@ share/icons/Yaru/24x24@2x/actions/system-shut-down.png
 share/icons/Yaru/24x24@2x/actions/system-shutdown.png
 share/icons/Yaru/24x24@2x/actions/system-switch-user.png
 share/icons/Yaru/24x24@2x/actions/undo.png
+share/icons/Yaru/24x24@2x/actions/view-app-grid.png
 share/icons/Yaru/24x24@2x/actions/view-zoom-in.png
 share/icons/Yaru/24x24@2x/actions/view-zoom-out.png
 share/icons/Yaru/24x24@2x/actions/window-close.png
@@ -11885,7 +11895,6 @@ share/icons/Yaru/24x24@2x/apps/accessories-character-map.png
 share/icons/Yaru/24x24@2x/apps/accessories-dictionary.png
 share/icons/Yaru/24x24@2x/apps/accessories-text-editor.png
 share/icons/Yaru/24x24@2x/apps/address-book-app.png
-share/icons/Yaru/24x24@2x/apps/amazon-store.png
 share/icons/Yaru/24x24@2x/apps/applets-screenshooter.png
 share/icons/Yaru/24x24@2x/apps/applications-multimedia.png
 share/icons/Yaru/24x24@2x/apps/applications-office.png
@@ -12115,7 +12124,6 @@ share/icons/Yaru/24x24@2x/apps/workspace-switcher-right-top.png
 share/icons/Yaru/24x24@2x/apps/workspace-switcher-top-left.png
 share/icons/Yaru/24x24@2x/apps/x-office-address-book.png
 share/icons/Yaru/24x24@2x/categories/
-share/icons/Yaru/24x24@2x/categories/application-x-addon.png
 share/icons/Yaru/24x24@2x/categories/applications-accessories.png
 share/icons/Yaru/24x24@2x/categories/applications-development.png
 share/icons/Yaru/24x24@2x/categories/applications-games.png
@@ -12230,7 +12238,6 @@ share/icons/Yaru/24x24@2x/devices/phone.png
 share/icons/Yaru/24x24@2x/devices/printer-network.png
 share/icons/Yaru/24x24@2x/devices/printer.png
 share/icons/Yaru/24x24@2x/emblems/
-share/icons/Yaru/24x24@2x/emblems/config-users.png
 share/icons/Yaru/24x24@2x/emblems/emblem-danger.png
 share/icons/Yaru/24x24@2x/emblems/emblem-default.png
 share/icons/Yaru/24x24@2x/emblems/emblem-dialog-question.png
@@ -12405,6 +12412,7 @@ share/icons/Yaru/24x24@2x/mimetypes/application-x-virtualbox-vmdk.png
 share/icons/Yaru/24x24@2x/mimetypes/application-x-wine-extension-ini.png
 share/icons/Yaru/24x24@2x/mimetypes/application-x-xpinstall.png
 share/icons/Yaru/24x24@2x/mimetypes/application-x-yaml.png
+share/icons/Yaru/24x24@2x/mimetypes/application-x-zerosize.png
 share/icons/Yaru/24x24@2x/mimetypes/application-x-zip.png
 share/icons/Yaru/24x24@2x/mimetypes/application-xml.png
 share/icons/Yaru/24x24@2x/mimetypes/application-zip.png
@@ -12590,6 +12598,7 @@ share/icons/Yaru/24x24@2x/places/inode-directory.png
 share/icons/Yaru/24x24@2x/places/insync-folder.png
 share/icons/Yaru/24x24@2x/places/network-server.png
 share/icons/Yaru/24x24@2x/places/network-workgroup.png
+share/icons/Yaru/24x24@2x/places/start-here.png
 share/icons/Yaru/24x24@2x/places/user-desktop.png
 share/icons/Yaru/24x24@2x/places/user-home.png
 share/icons/Yaru/24x24@2x/places/user-trash.png
@@ -12753,7 +12762,6 @@ share/icons/Yaru/256x256/actions/mail-unread.png
 share/icons/Yaru/256x256/actions/mail_forward.png
 share/icons/Yaru/256x256/actions/mail_new.png
 share/icons/Yaru/256x256/actions/mail_reply.png
-share/icons/Yaru/256x256/actions/printer.png
 share/icons/Yaru/256x256/actions/printers.png
 share/icons/Yaru/256x256/actions/process-stop.png
 share/icons/Yaru/256x256/actions/redo.png
@@ -12795,6 +12803,7 @@ share/icons/Yaru/256x256/actions/system-shut-down.png
 share/icons/Yaru/256x256/actions/system-shutdown.png
 share/icons/Yaru/256x256/actions/system-switch-user.png
 share/icons/Yaru/256x256/actions/undo.png
+share/icons/Yaru/256x256/actions/view-app-grid.png
 share/icons/Yaru/256x256/actions/view-zoom-in.png
 share/icons/Yaru/256x256/actions/view-zoom-out.png
 share/icons/Yaru/256x256/actions/window-close.png
@@ -12812,7 +12821,6 @@ share/icons/Yaru/256x256/apps/accessories-character-map.png
 share/icons/Yaru/256x256/apps/accessories-dictionary.png
 share/icons/Yaru/256x256/apps/accessories-text-editor.png
 share/icons/Yaru/256x256/apps/address-book-app.png
-share/icons/Yaru/256x256/apps/amazon-store.png
 share/icons/Yaru/256x256/apps/applets-screenshooter.png
 share/icons/Yaru/256x256/apps/applications-multimedia.png
 share/icons/Yaru/256x256/apps/applications-office.png
@@ -13042,7 +13050,6 @@ share/icons/Yaru/256x256/apps/workspace-switcher-right-top.png
 share/icons/Yaru/256x256/apps/workspace-switcher-top-left.png
 share/icons/Yaru/256x256/apps/x-office-address-book.png
 share/icons/Yaru/256x256/categories/
-share/icons/Yaru/256x256/categories/application-x-addon.png
 share/icons/Yaru/256x256/categories/applications-accessories.png
 share/icons/Yaru/256x256/categories/applications-development.png
 share/icons/Yaru/256x256/categories/applications-games.png
@@ -13157,7 +13164,6 @@ share/icons/Yaru/256x256/devices/phone.png
 share/icons/Yaru/256x256/devices/printer-network.png
 share/icons/Yaru/256x256/devices/printer.png
 share/icons/Yaru/256x256/emblems/
-share/icons/Yaru/256x256/emblems/config-users.png
 share/icons/Yaru/256x256/emblems/emblem-danger.png
 share/icons/Yaru/256x256/emblems/emblem-default.png
 share/icons/Yaru/256x256/emblems/emblem-dialog-question.png
@@ -13332,6 +13338,7 @@ share/icons/Yaru/256x256/mimetypes/application-x-virtualbox-vmdk.png
 share/icons/Yaru/256x256/mimetypes/application-x-wine-extension-ini.png
 share/icons/Yaru/256x256/mimetypes/application-x-xpinstall.png
 share/icons/Yaru/256x256/mimetypes/application-x-yaml.png
+share/icons/Yaru/256x256/mimetypes/application-x-zerosize.png
 share/icons/Yaru/256x256/mimetypes/application-x-zip.png
 share/icons/Yaru/256x256/mimetypes/application-xml.png
 share/icons/Yaru/256x256/mimetypes/application-zip.png
@@ -13517,6 +13524,7 @@ share/icons/Yaru/256x256/places/inode-directory.png
 share/icons/Yaru/256x256/places/insync-folder.png
 share/icons/Yaru/256x256/places/network-server.png
 share/icons/Yaru/256x256/places/network-workgroup.png
+share/icons/Yaru/256x256/places/start-here.png
 share/icons/Yaru/256x256/places/user-desktop.png
 share/icons/Yaru/256x256/places/user-home.png
 share/icons/Yaru/256x256/places/user-trash.png
@@ -13680,7 +13688,6 @@ share/icons/Yaru/256x256@2x/actions/mail-unread.png
 share/icons/Yaru/256x256@2x/actions/mail_forward.png
 share/icons/Yaru/256x256@2x/actions/mail_new.png
 share/icons/Yaru/256x256@2x/actions/mail_reply.png
-share/icons/Yaru/256x256@2x/actions/printer.png
 share/icons/Yaru/256x256@2x/actions/printers.png
 share/icons/Yaru/256x256@2x/actions/process-stop.png
 share/icons/Yaru/256x256@2x/actions/redo.png
@@ -13722,6 +13729,7 @@ share/icons/Yaru/256x256@2x/actions/system-shut-down.png
 share/icons/Yaru/256x256@2x/actions/system-shutdown.png
 share/icons/Yaru/256x256@2x/actions/system-switch-user.png
 share/icons/Yaru/256x256@2x/actions/undo.png
+share/icons/Yaru/256x256@2x/actions/view-app-grid.png
 share/icons/Yaru/256x256@2x/actions/view-zoom-in.png
 share/icons/Yaru/256x256@2x/actions/view-zoom-out.png
 share/icons/Yaru/256x256@2x/actions/window-close.png
@@ -13739,7 +13747,6 @@ share/icons/Yaru/256x256@2x/apps/accessories-character-map.png
 share/icons/Yaru/256x256@2x/apps/accessories-dictionary.png
 share/icons/Yaru/256x256@2x/apps/accessories-text-editor.png
 share/icons/Yaru/256x256@2x/apps/address-book-app.png
-share/icons/Yaru/256x256@2x/apps/amazon-store.png
 share/icons/Yaru/256x256@2x/apps/applets-screenshooter.png
 share/icons/Yaru/256x256@2x/apps/applications-multimedia.png
 share/icons/Yaru/256x256@2x/apps/applications-office.png
@@ -13969,7 +13976,6 @@ share/icons/Yaru/256x256@2x/apps/workspace-switcher-right-top.png
 share/icons/Yaru/256x256@2x/apps/workspace-switcher-top-left.png
 share/icons/Yaru/256x256@2x/apps/x-office-address-book.png
 share/icons/Yaru/256x256@2x/categories/
-share/icons/Yaru/256x256@2x/categories/application-x-addon.png
 share/icons/Yaru/256x256@2x/categories/applications-accessories.png
 share/icons/Yaru/256x256@2x/categories/applications-development.png
 share/icons/Yaru/256x256@2x/categories/applications-games.png
@@ -14084,7 +14090,6 @@ share/icons/Yaru/256x256@2x/devices/phone.png
 share/icons/Yaru/256x256@2x/devices/printer-network.png
 share/icons/Yaru/256x256@2x/devices/printer.png
 share/icons/Yaru/256x256@2x/emblems/
-share/icons/Yaru/256x256@2x/emblems/config-users.png
 share/icons/Yaru/256x256@2x/emblems/emblem-danger.png
 share/icons/Yaru/256x256@2x/emblems/emblem-default.png
 share/icons/Yaru/256x256@2x/emblems/emblem-dialog-question.png
@@ -14259,6 +14264,7 @@ share/icons/Yaru/256x256@2x/mimetypes/application-x-virtualbox-vmdk.png
 share/icons/Yaru/256x256@2x/mimetypes/application-x-wine-extension-ini.png
 share/icons/Yaru/256x256@2x/mimetypes/application-x-xpinstall.png
 share/icons/Yaru/256x256@2x/mimetypes/application-x-yaml.png
+share/icons/Yaru/256x256@2x/mimetypes/application-x-zerosize.png
 share/icons/Yaru/256x256@2x/mimetypes/application-x-zip.png
 share/icons/Yaru/256x256@2x/mimetypes/application-xml.png
 share/icons/Yaru/256x256@2x/mimetypes/application-zip.png
@@ -14444,6 +14450,7 @@ share/icons/Yaru/256x256@2x/places/inode-directory.png
 share/icons/Yaru/256x256@2x/places/insync-folder.png
 share/icons/Yaru/256x256@2x/places/network-server.png
 share/icons/Yaru/256x256@2x/places/network-workgroup.png
+share/icons/Yaru/256x256@2x/places/start-here.png
 share/icons/Yaru/256x256@2x/places/user-desktop.png
 share/icons/Yaru/256x256@2x/places/user-home.png
 share/icons/Yaru/256x256@2x/places/user-trash.png
@@ -14607,7 +14614,6 @@ share/icons/Yaru/32x32/actions/mail-unread.png
 share/icons/Yaru/32x32/actions/mail_forward.png
 share/icons/Yaru/32x32/actions/mail_new.png
 share/icons/Yaru/32x32/actions/mail_reply.png
-share/icons/Yaru/32x32/actions/printer.png
 share/icons/Yaru/32x32/actions/printers.png
 share/icons/Yaru/32x32/actions/process-stop.png
 share/icons/Yaru/32x32/actions/redo.png
@@ -14649,6 +14655,7 @@ share/icons/Yaru/32x32/actions/system-shut-down.png
 share/icons/Yaru/32x32/actions/system-shutdown.png
 share/icons/Yaru/32x32/actions/system-switch-user.png
 share/icons/Yaru/32x32/actions/undo.png
+share/icons/Yaru/32x32/actions/view-app-grid.png
 share/icons/Yaru/32x32/actions/view-zoom-in.png
 share/icons/Yaru/32x32/actions/view-zoom-out.png
 share/icons/Yaru/32x32/actions/window-close.png
@@ -14666,7 +14673,6 @@ share/icons/Yaru/32x32/apps/accessories-character-map.png
 share/icons/Yaru/32x32/apps/accessories-dictionary.png
 share/icons/Yaru/32x32/apps/accessories-text-editor.png
 share/icons/Yaru/32x32/apps/address-book-app.png
-share/icons/Yaru/32x32/apps/amazon-store.png
 share/icons/Yaru/32x32/apps/applets-screenshooter.png
 share/icons/Yaru/32x32/apps/applications-multimedia.png
 share/icons/Yaru/32x32/apps/applications-office.png
@@ -14896,7 +14902,6 @@ share/icons/Yaru/32x32/apps/workspace-switcher-right-top.png
 share/icons/Yaru/32x32/apps/workspace-switcher-top-left.png
 share/icons/Yaru/32x32/apps/x-office-address-book.png
 share/icons/Yaru/32x32/categories/
-share/icons/Yaru/32x32/categories/application-x-addon.png
 share/icons/Yaru/32x32/categories/applications-accessories.png
 share/icons/Yaru/32x32/categories/applications-development.png
 share/icons/Yaru/32x32/categories/applications-games.png
@@ -15011,7 +15016,6 @@ share/icons/Yaru/32x32/devices/phone.png
 share/icons/Yaru/32x32/devices/printer-network.png
 share/icons/Yaru/32x32/devices/printer.png
 share/icons/Yaru/32x32/emblems/
-share/icons/Yaru/32x32/emblems/config-users.png
 share/icons/Yaru/32x32/emblems/emblem-danger.png
 share/icons/Yaru/32x32/emblems/emblem-default.png
 share/icons/Yaru/32x32/emblems/emblem-dialog-question.png
@@ -15186,6 +15190,7 @@ share/icons/Yaru/32x32/mimetypes/application-x-virtualbox-vmdk.png
 share/icons/Yaru/32x32/mimetypes/application-x-wine-extension-ini.png
 share/icons/Yaru/32x32/mimetypes/application-x-xpinstall.png
 share/icons/Yaru/32x32/mimetypes/application-x-yaml.png
+share/icons/Yaru/32x32/mimetypes/application-x-zerosize.png
 share/icons/Yaru/32x32/mimetypes/application-x-zip.png
 share/icons/Yaru/32x32/mimetypes/application-xml.png
 share/icons/Yaru/32x32/mimetypes/application-zip.png
@@ -15371,6 +15376,7 @@ share/icons/Yaru/32x32/places/inode-directory.png
 share/icons/Yaru/32x32/places/insync-folder.png
 share/icons/Yaru/32x32/places/network-server.png
 share/icons/Yaru/32x32/places/network-workgroup.png
+share/icons/Yaru/32x32/places/start-here.png
 share/icons/Yaru/32x32/places/user-desktop.png
 share/icons/Yaru/32x32/places/user-home.png
 share/icons/Yaru/32x32/places/user-trash.png
@@ -15534,7 +15540,6 @@ share/icons/Yaru/32x32@2x/actions/mail-unread.png
 share/icons/Yaru/32x32@2x/actions/mail_forward.png
 share/icons/Yaru/32x32@2x/actions/mail_new.png
 share/icons/Yaru/32x32@2x/actions/mail_reply.png
-share/icons/Yaru/32x32@2x/actions/printer.png
 share/icons/Yaru/32x32@2x/actions/printers.png
 share/icons/Yaru/32x32@2x/actions/process-stop.png
 share/icons/Yaru/32x32@2x/actions/redo.png
@@ -15576,6 +15581,7 @@ share/icons/Yaru/32x32@2x/actions/system-shut-down.png
 share/icons/Yaru/32x32@2x/actions/system-shutdown.png
 share/icons/Yaru/32x32@2x/actions/system-switch-user.png
 share/icons/Yaru/32x32@2x/actions/undo.png
+share/icons/Yaru/32x32@2x/actions/view-app-grid.png
 share/icons/Yaru/32x32@2x/actions/view-zoom-in.png
 share/icons/Yaru/32x32@2x/actions/view-zoom-out.png
 share/icons/Yaru/32x32@2x/actions/window-close.png
@@ -15593,7 +15599,6 @@ share/icons/Yaru/32x32@2x/apps/accessories-character-map.png
 share/icons/Yaru/32x32@2x/apps/accessories-dictionary.png
 share/icons/Yaru/32x32@2x/apps/accessories-text-editor.png
 share/icons/Yaru/32x32@2x/apps/address-book-app.png
-share/icons/Yaru/32x32@2x/apps/amazon-store.png
 share/icons/Yaru/32x32@2x/apps/applets-screenshooter.png
 share/icons/Yaru/32x32@2x/apps/applications-multimedia.png
 share/icons/Yaru/32x32@2x/apps/applications-office.png
@@ -15823,7 +15828,6 @@ share/icons/Yaru/32x32@2x/apps/workspace-switcher-right-top.png
 share/icons/Yaru/32x32@2x/apps/workspace-switcher-top-left.png
 share/icons/Yaru/32x32@2x/apps/x-office-address-book.png
 share/icons/Yaru/32x32@2x/categories/
-share/icons/Yaru/32x32@2x/categories/application-x-addon.png
 share/icons/Yaru/32x32@2x/categories/applications-accessories.png
 share/icons/Yaru/32x32@2x/categories/applications-development.png
 share/icons/Yaru/32x32@2x/categories/applications-games.png
@@ -15938,7 +15942,6 @@ share/icons/Yaru/32x32@2x/devices/phone.png
 share/icons/Yaru/32x32@2x/devices/printer-network.png
 share/icons/Yaru/32x32@2x/devices/printer.png
 share/icons/Yaru/32x32@2x/emblems/
-share/icons/Yaru/32x32@2x/emblems/config-users.png
 share/icons/Yaru/32x32@2x/emblems/emblem-danger.png
 share/icons/Yaru/32x32@2x/emblems/emblem-default.png
 share/icons/Yaru/32x32@2x/emblems/emblem-dialog-question.png
@@ -16113,6 +16116,7 @@ share/icons/Yaru/32x32@2x/mimetypes/application-x-virtualbox-vmdk.png
 share/icons/Yaru/32x32@2x/mimetypes/application-x-wine-extension-ini.png
 share/icons/Yaru/32x32@2x/mimetypes/application-x-xpinstall.png
 share/icons/Yaru/32x32@2x/mimetypes/application-x-yaml.png
+share/icons/Yaru/32x32@2x/mimetypes/application-x-zerosize.png
 share/icons/Yaru/32x32@2x/mimetypes/application-x-zip.png
 share/icons/Yaru/32x32@2x/mimetypes/application-xml.png
 share/icons/Yaru/32x32@2x/mimetypes/application-zip.png
@@ -16298,6 +16302,7 @@ share/icons/Yaru/32x32@2x/places/inode-directory.png
 share/icons/Yaru/32x32@2x/places/insync-folder.png
 share/icons/Yaru/32x32@2x/places/network-server.png
 share/icons/Yaru/32x32@2x/places/network-workgroup.png
+share/icons/Yaru/32x32@2x/places/start-here.png
 share/icons/Yaru/32x32@2x/places/user-desktop.png
 share/icons/Yaru/32x32@2x/places/user-home.png
 share/icons/Yaru/32x32@2x/places/user-trash.png
@@ -16461,7 +16466,6 @@ share/icons/Yaru/48x48/actions/mail-unread.png
 share/icons/Yaru/48x48/actions/mail_forward.png
 share/icons/Yaru/48x48/actions/mail_new.png
 share/icons/Yaru/48x48/actions/mail_reply.png
-share/icons/Yaru/48x48/actions/printer.png
 share/icons/Yaru/48x48/actions/printers.png
 share/icons/Yaru/48x48/actions/process-stop.png
 share/icons/Yaru/48x48/actions/redo.png
@@ -16503,6 +16507,7 @@ share/icons/Yaru/48x48/actions/system-shut-down.png
 share/icons/Yaru/48x48/actions/system-shutdown.png
 share/icons/Yaru/48x48/actions/system-switch-user.png
 share/icons/Yaru/48x48/actions/undo.png
+share/icons/Yaru/48x48/actions/view-app-grid.png
 share/icons/Yaru/48x48/actions/view-zoom-in.png
 share/icons/Yaru/48x48/actions/view-zoom-out.png
 share/icons/Yaru/48x48/actions/window-close.png
@@ -16520,7 +16525,6 @@ share/icons/Yaru/48x48/apps/accessories-character-map.png
 share/icons/Yaru/48x48/apps/accessories-dictionary.png
 share/icons/Yaru/48x48/apps/accessories-text-editor.png
 share/icons/Yaru/48x48/apps/address-book-app.png
-share/icons/Yaru/48x48/apps/amazon-store.png
 share/icons/Yaru/48x48/apps/applets-screenshooter.png
 share/icons/Yaru/48x48/apps/applications-multimedia.png
 share/icons/Yaru/48x48/apps/applications-office.png
@@ -16750,7 +16754,6 @@ share/icons/Yaru/48x48/apps/workspace-switcher-right-top.png
 share/icons/Yaru/48x48/apps/workspace-switcher-top-left.png
 share/icons/Yaru/48x48/apps/x-office-address-book.png
 share/icons/Yaru/48x48/categories/
-share/icons/Yaru/48x48/categories/application-x-addon.png
 share/icons/Yaru/48x48/categories/applications-accessories.png
 share/icons/Yaru/48x48/categories/applications-development.png
 share/icons/Yaru/48x48/categories/applications-games.png
@@ -16865,7 +16868,6 @@ share/icons/Yaru/48x48/devices/phone.png
 share/icons/Yaru/48x48/devices/printer-network.png
 share/icons/Yaru/48x48/devices/printer.png
 share/icons/Yaru/48x48/emblems/
-share/icons/Yaru/48x48/emblems/config-users.png
 share/icons/Yaru/48x48/emblems/emblem-danger.png
 share/icons/Yaru/48x48/emblems/emblem-default.png
 share/icons/Yaru/48x48/emblems/emblem-dialog-question.png
@@ -17040,6 +17042,7 @@ share/icons/Yaru/48x48/mimetypes/application-x-virtualbox-vmdk.png
 share/icons/Yaru/48x48/mimetypes/application-x-wine-extension-ini.png
 share/icons/Yaru/48x48/mimetypes/application-x-xpinstall.png
 share/icons/Yaru/48x48/mimetypes/application-x-yaml.png
+share/icons/Yaru/48x48/mimetypes/application-x-zerosize.png
 share/icons/Yaru/48x48/mimetypes/application-x-zip.png
 share/icons/Yaru/48x48/mimetypes/application-xml.png
 share/icons/Yaru/48x48/mimetypes/application-zip.png
@@ -17225,6 +17228,7 @@ share/icons/Yaru/48x48/places/inode-directory.png
 share/icons/Yaru/48x48/places/insync-folder.png
 share/icons/Yaru/48x48/places/network-server.png
 share/icons/Yaru/48x48/places/network-workgroup.png
+share/icons/Yaru/48x48/places/start-here.png
 share/icons/Yaru/48x48/places/user-desktop.png
 share/icons/Yaru/48x48/places/user-home.png
 share/icons/Yaru/48x48/places/user-trash.png
@@ -17388,7 +17392,6 @@ share/icons/Yaru/48x48@2x/actions/mail-unread.png
 share/icons/Yaru/48x48@2x/actions/mail_forward.png
 share/icons/Yaru/48x48@2x/actions/mail_new.png
 share/icons/Yaru/48x48@2x/actions/mail_reply.png
-share/icons/Yaru/48x48@2x/actions/printer.png
 share/icons/Yaru/48x48@2x/actions/printers.png
 share/icons/Yaru/48x48@2x/actions/process-stop.png
 share/icons/Yaru/48x48@2x/actions/redo.png
@@ -17430,6 +17433,7 @@ share/icons/Yaru/48x48@2x/actions/system-shut-down.png
 share/icons/Yaru/48x48@2x/actions/system-shutdown.png
 share/icons/Yaru/48x48@2x/actions/system-switch-user.png
 share/icons/Yaru/48x48@2x/actions/undo.png
+share/icons/Yaru/48x48@2x/actions/view-app-grid.png
 share/icons/Yaru/48x48@2x/actions/view-zoom-in.png
 share/icons/Yaru/48x48@2x/actions/view-zoom-out.png
 share/icons/Yaru/48x48@2x/actions/window-close.png
@@ -17447,7 +17451,6 @@ share/icons/Yaru/48x48@2x/apps/accessories-character-map.png
 share/icons/Yaru/48x48@2x/apps/accessories-dictionary.png
 share/icons/Yaru/48x48@2x/apps/accessories-text-editor.png
 share/icons/Yaru/48x48@2x/apps/address-book-app.png
-share/icons/Yaru/48x48@2x/apps/amazon-store.png
 share/icons/Yaru/48x48@2x/apps/applets-screenshooter.png
 share/icons/Yaru/48x48@2x/apps/applications-multimedia.png
 share/icons/Yaru/48x48@2x/apps/applications-office.png
@@ -17677,7 +17680,6 @@ share/icons/Yaru/48x48@2x/apps/workspace-switcher-right-top.png
 share/icons/Yaru/48x48@2x/apps/workspace-switcher-top-left.png
 share/icons/Yaru/48x48@2x/apps/x-office-address-book.png
 share/icons/Yaru/48x48@2x/categories/
-share/icons/Yaru/48x48@2x/categories/application-x-addon.png
 share/icons/Yaru/48x48@2x/categories/applications-accessories.png
 share/icons/Yaru/48x48@2x/categories/applications-development.png
 share/icons/Yaru/48x48@2x/categories/applications-games.png
@@ -17792,7 +17794,6 @@ share/icons/Yaru/48x48@2x/devices/phone.png
 share/icons/Yaru/48x48@2x/devices/printer-network.png
 share/icons/Yaru/48x48@2x/devices/printer.png
 share/icons/Yaru/48x48@2x/emblems/
-share/icons/Yaru/48x48@2x/emblems/config-users.png
 share/icons/Yaru/48x48@2x/emblems/emblem-danger.png
 share/icons/Yaru/48x48@2x/emblems/emblem-default.png
 share/icons/Yaru/48x48@2x/emblems/emblem-dialog-question.png
@@ -17967,6 +17968,7 @@ share/icons/Yaru/48x48@2x/mimetypes/application-x-virtualbox-vmdk.png
 share/icons/Yaru/48x48@2x/mimetypes/application-x-wine-extension-ini.png
 share/icons/Yaru/48x48@2x/mimetypes/application-x-xpinstall.png
 share/icons/Yaru/48x48@2x/mimetypes/application-x-yaml.png
+share/icons/Yaru/48x48@2x/mimetypes/application-x-zerosize.png
 share/icons/Yaru/48x48@2x/mimetypes/application-x-zip.png
 share/icons/Yaru/48x48@2x/mimetypes/application-xml.png
 share/icons/Yaru/48x48@2x/mimetypes/application-zip.png
@@ -18152,6 +18154,7 @@ share/icons/Yaru/48x48@2x/places/inode-directory.png
 share/icons/Yaru/48x48@2x/places/insync-folder.png
 share/icons/Yaru/48x48@2x/places/network-server.png
 share/icons/Yaru/48x48@2x/places/network-workgroup.png
+share/icons/Yaru/48x48@2x/places/start-here.png
 share/icons/Yaru/48x48@2x/places/user-desktop.png
 share/icons/Yaru/48x48@2x/places/user-home.png
 share/icons/Yaru/48x48@2x/places/user-trash.png
@@ -18214,7 +18217,6 @@ share/icons/Yaru/8x8/categories/system-lock-screen.png
 share/icons/Yaru/8x8/categories/system-users.png
 share/icons/Yaru/8x8/categories/unity-screen-panel.png
 share/icons/Yaru/8x8/emblems/
-share/icons/Yaru/8x8/emblems/config-users.png
 share/icons/Yaru/8x8/emblems/emblem-danger.png
 share/icons/Yaru/8x8/emblems/emblem-default.png
 share/icons/Yaru/8x8/emblems/emblem-dialog-question.png
@@ -18277,7 +18279,6 @@ share/icons/Yaru/8x8@2x/categories/system-lock-screen.png
 share/icons/Yaru/8x8@2x/categories/system-users.png
 share/icons/Yaru/8x8@2x/categories/unity-screen-panel.png
 share/icons/Yaru/8x8@2x/emblems/
-share/icons/Yaru/8x8@2x/emblems/config-users.png
 share/icons/Yaru/8x8@2x/emblems/emblem-danger.png
 share/icons/Yaru/8x8@2x/emblems/emblem-default.png
 share/icons/Yaru/8x8@2x/emblems/emblem-dialog-question.png
@@ -18621,7 +18622,6 @@ share/icons/Yaru/scalable/actions/
 share/icons/Yaru/scalable/actions/action-unavailable-symbolic.svg
 share/icons/Yaru/scalable/actions/address-book-new-symbolic.svg
 share/icons/Yaru/scalable/actions/adw-entry-apply-symbolic.svg
-share/icons/Yaru/scalable/actions/adw-expander-arrow-symbolic.svg
 share/icons/Yaru/scalable/actions/adw-mail-send-symbolic.svg
 share/icons/Yaru/scalable/actions/annotations-squiggly-symbolic.svg
 share/icons/Yaru/scalable/actions/annotations-text-symbolic.svg
@@ -18744,7 +18744,6 @@ share/icons/Yaru/scalable/actions/go-previous-symbolic-rtl.svg
 share/icons/Yaru/scalable/actions/go-previous-symbolic.svg
 share/icons/Yaru/scalable/actions/go-top-symbolic.svg
 share/icons/Yaru/scalable/actions/go-up-symbolic.svg
-share/icons/Yaru/scalable/actions/hdy-expander-arrow-symbolic.svg
 share/icons/Yaru/scalable/actions/help-about-symbolic.svg
 share/icons/Yaru/scalable/actions/image-adjust-color-symbolic.svg
 share/icons/Yaru/scalable/actions/image-auto-adjust-symbolic.svg
@@ -18897,7 +18896,6 @@ share/icons/Yaru/scalable/apps/accessories-camera-symbolic.svg
 share/icons/Yaru/scalable/apps/accessories-character-map-symbolic.svg
 share/icons/Yaru/scalable/apps/accessories-text-editor-symbolic.svg
 share/icons/Yaru/scalable/apps/address-book-app-symbolic.svg
-share/icons/Yaru/scalable/apps/amazon-store-symbolic.svg
 share/icons/Yaru/scalable/apps/applets-screenshooter-symbolic.svg
 share/icons/Yaru/scalable/apps/application-x-executable-symbolic.svg
 share/icons/Yaru/scalable/apps/applications-system-symbolic.svg
@@ -19087,6 +19085,7 @@ share/icons/Yaru/scalable/apps/screenshot-app-symbolic.svg
 share/icons/Yaru/scalable/apps/seahorse-symbolic.svg
 share/icons/Yaru/scalable/apps/session-properties-symbolic.svg
 share/icons/Yaru/scalable/apps/settings-app-symbolic.svg
+share/icons/Yaru/scalable/apps/settings-symbolic.svg
 share/icons/Yaru/scalable/apps/shotwell-symbolic.svg
 share/icons/Yaru/scalable/apps/sm.puri.Chatty-symbolic.svg
 share/icons/Yaru/scalable/apps/snap-symbolic.svg
@@ -19200,7 +19199,6 @@ share/icons/Yaru/scalable/categories/org.gnome.Settings-location-symbolic.svg
 share/icons/Yaru/scalable/categories/org.gnome.Settings-microphone-symbolic.svg
 share/icons/Yaru/scalable/categories/org.gnome.Settings-mobile-network-symbolic.svg
 share/icons/Yaru/scalable/categories/org.gnome.Settings-mouse-symbolic.svg
-share/icons/Yaru/scalable/categories/org.gnome.Settings-multitasking-symbolic.svg
 share/icons/Yaru/scalable/categories/org.gnome.Settings-network-symbolic.svg
 share/icons/Yaru/scalable/categories/org.gnome.Settings-notifications-symbolic.svg
 share/icons/Yaru/scalable/categories/org.gnome.Settings-online-accounts-symbolic.svg
@@ -19449,7 +19447,6 @@ share/icons/Yaru/scalable/mimetypes/inode-directory-symbolic.svg
 share/icons/Yaru/scalable/mimetypes/package-x-generic-symbolic.svg
 share/icons/Yaru/scalable/mimetypes/text-x-generic-symbolic.svg
 share/icons/Yaru/scalable/mimetypes/video-x-generic-symbolic.svg
-share/icons/Yaru/scalable/mimetypes/x-office-address-book-symbolic.svg
 share/icons/Yaru/scalable/mimetypes/x-office-calendar-symbolic.svg
 share/icons/Yaru/scalable/mimetypes/x-office-document-symbolic.svg
 share/icons/Yaru/scalable/mimetypes/x-office-drawing-symbolic.svg

@@ -1,9 +1,8 @@
 COMMENT=		Ubuntu GNOME theme
 
-GH_TAGNAME=		23.04.4
+GH_TAGNAME=		23.10.0
 GH_ACCOUNT=		ubuntu
 GH_PROJECT=		yaru
-REVISION=		0
 
 CATEGORIES=		x11
 
