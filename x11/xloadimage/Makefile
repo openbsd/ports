@@ -14,11 +14,11 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_R5CONTRIB}
-MASTER_SITES0=	${MASTER_SITE_DEBIAN:=main/x/xloadimage/}
+MASTER_SITES=		${MASTER_SITE_R5CONTRIB}
+MASTER_SITES.debian=	${MASTER_SITE_DEBIAN:=main/x/xloadimage/}
 
-DISTFILES=	${DISTNAME}.tar.gz \
-		xloadimage_${VERSION}-${REV}.debian.tar.xz:0
+DISTFILES=		${DISTNAME}.tar.gz
+DISTFILES.debian=	xloadimage_${VERSION}-${REV}.debian.tar.xz
 
 LIB_DEPENDS=	graphics/png \
 		graphics/tiff

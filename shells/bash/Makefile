@@ -10,10 +10,10 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_GNU:=bash/}
-MASTER_SITES0=	${MASTER_SITE_GNU:=bash/bash-5.2-patches/}
+MASTER_SITES.p=	${MASTER_SITE_GNU:=bash/bash-5.2-patches/}
 DIST_SUBDIR=	bash
 .for i in
-PATCHFILES+=	bash52-$i:0
+PATCHFILES.p +=	bash52-$i
 .endfor
 
 LIB_DEPENDS=	devel/gettext,-runtime
