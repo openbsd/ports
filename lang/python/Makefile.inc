@@ -57,8 +57,6 @@ DEBUG_PACKAGES ?=	-main -gdbm -tkinter
 COMPILER =		base-clang ports-gcc base-gcc
 COMPILER_LANGS =	c
 
-USE_NOBTCFI =		Yes
-
 # All subpackages depend on the main python package.
 
 RUN_DEPENDS =		${FULLPKGNAME-main}:lang/python/${VERSION},-main
@@ -154,9 +152,11 @@ PY_DEFAULTONLY ?= "@comment "
 PY_PLATFORM =	openbsd${OSMAJOR}
 SUBST_VARS +=	FULL_VERSION VERSION_SPEC PY_PLATFORM PY_DEFAULTONLY
 
-# Python itself is clean, but some extensions e.g. py-cryptography
-# and QtWebKit require W|X mappings.
+# Python itself is clean, but some dlopen()'d extensions e.g. QtWebKit
+# require W|X mappings and/or don't have the required landing pads for
+# branch-tracking control flow integrity.
 USE_WXNEEDED = Yes
+USE_NOBTCFI = Yes
 
 .if ${VERSION} == "2.7"
 ALL_TARGET =	all ./Lib/plat-${PY_PLATFORM}
