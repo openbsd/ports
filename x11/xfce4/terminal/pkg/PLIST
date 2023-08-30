@@ -3,9 +3,6 @@
 @man man/man1/xfce4-terminal.1
 share/applications/xfce4-terminal-settings.desktop
 share/applications/xfce4-terminal.desktop
-share/gnome-control-center/
-share/gnome-control-center/default-apps/
-share/gnome-control-center/default-apps/xfce4-terminal-default-apps.xml
 share/icons/hicolor/128x128/apps/org.xfce.terminal-settings.png
 share/icons/hicolor/128x128/apps/org.xfce.terminal.png
 share/icons/hicolor/16x16/apps/org.xfce.terminal-settings.png
@@ -16,6 +13,10 @@ share/icons/hicolor/32x32/apps/org.xfce.terminal-settings.png
 share/icons/hicolor/32x32/apps/org.xfce.terminal.png
 share/icons/hicolor/48x48/apps/org.xfce.terminal-settings.png
 share/icons/hicolor/48x48/apps/org.xfce.terminal.png
+share/icons/hicolor/64x64/apps/org.xfce.terminal-settings.png
+share/icons/hicolor/64x64/apps/org.xfce.terminal.png
+share/icons/hicolor/96x96/apps/org.xfce.terminal-settings.png
+share/icons/hicolor/96x96/apps/org.xfce.terminal.png
 share/icons/hicolor/scalable/apps/org.xfce.terminal-settings.svg
 share/icons/hicolor/scalable/apps/org.xfce.terminal.svg
 share/locale/ar/LC_MESSAGES/xfce4-terminal.mo
@@ -33,6 +34,9 @@ share/locale/eo/LC_MESSAGES/xfce4-terminal.mo
 share/locale/es/LC_MESSAGES/xfce4-terminal.mo
 share/locale/et/LC_MESSAGES/xfce4-terminal.mo
 share/locale/eu/LC_MESSAGES/xfce4-terminal.mo
+share/locale/fa_IR/
+share/locale/fa_IR/LC_MESSAGES/
+share/locale/fa_IR/LC_MESSAGES/xfce4-terminal.mo
 share/locale/fi/LC_MESSAGES/xfce4-terminal.mo
 share/locale/fr/LC_MESSAGES/xfce4-terminal.mo
 share/locale/gl/LC_MESSAGES/xfce4-terminal.mo
