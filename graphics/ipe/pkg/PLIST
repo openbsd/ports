@@ -464,7 +464,8 @@ share/doc/ipe/manual_usb_stick.html
 share/doc/ipe/manual_views.html
 share/doc/ipe/menu.js
 share/doc/ipe/menudata.js
-share/doc/ipe/modules.html
+share/doc/ipe/minus.svg
+share/doc/ipe/minusd.svg
 share/doc/ipe/namespaceipe.html
 share/doc/ipe/namespacemembers.html
 share/doc/ipe/namespacemembers_enum.html
@@ -481,6 +482,8 @@ share/doc/ipe/next.png
 share/doc/ipe/onepage.html
 share/doc/ipe/onepage_2.html
 share/doc/ipe/open.png
+share/doc/ipe/plus.svg
+share/doc/ipe/plusd.svg
 share/doc/ipe/polygon.pdf
 share/doc/ipe/previous.png
 share/doc/ipe/radgrad1.svg
@@ -535,6 +538,7 @@ share/doc/ipe/tab_hd.png
 share/doc/ipe/tab_s.png
 share/doc/ipe/tab_sd.png
 share/doc/ipe/tabs.css
+share/doc/ipe/topics.html
 share/doc/ipe/up.png
 share/ipe/
 share/ipe/${V}/

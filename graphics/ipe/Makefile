@@ -4,7 +4,7 @@ V =			7.2.24
 SUBST_VARS +=		V
 DISTNAME =		ipe-${V}-src
 PKGNAME =		ipe-${V}
-REVISION =		2
+REVISION =		3
 
 # Upstream libraries would be installed as libxxx.so.${V}
 SHLIB_VERSION =	4.0
@@ -37,7 +37,7 @@ MODULES =		lang/lua \
 MODLUA_VERSION =	5.3
 MODLUA_SA =		Yes
 
-BUILD_DEPENDS =		devel/doxygen>=1.9.7
+BUILD_DEPENDS =		devel/doxygen>=1.9.8
 
 LIB_DEPENDS =		${MODLUA_LIB_DEPENDS} \
 			${MODQT5_LIB_DEPENDS} \
