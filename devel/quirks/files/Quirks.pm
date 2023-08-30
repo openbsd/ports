@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1536 2023/08/30 07:42:36 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1537 2023/08/30 16:56:36 bket Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -2101,6 +2101,7 @@ my $cve = {
 	'security/sudo' => 'sudo-<1.8.31',
 	'shells/bash' => 'bash-<4.3.27',
 	'sysutils/ansible,-main' => 'ansible-<2.7.1',
+	'sysutils/borgbackup/1.2' => 'borgbackup-<1.2.5',
 	'sysutils/mcollective' => 'mcollective-<2.5.3',
 	'sysutils/rclone' => 'rclone-<1.53.3',
 	'sysutils/salt' => 'salt-<3002',
