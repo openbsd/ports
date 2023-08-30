@@ -7,3 +7,8 @@ With plass every password lives inside a gpg(1) encrypted file somewhere
 inside ~/.password-store which is managed with the got(1) VCS to keep
 track of changes, recover accidental overwrites and synchronize it
 across devices.
+
+Two helper utilities are bundled:
+
+ - pwg(1): password and passphrase generator
+ - totp(1): TOTP generator
