@@ -2,7 +2,7 @@ COMMENT =		RESTful DICOM server for healthcare and medical research
 
 DISTNAME =		Orthanc-1.11.1
 PKGNAME =		${DISTNAME:L}
-REVISION =		2
+REVISION =		3
 
 HOMEPAGE =		https://www.orthanc-server.com/
 
@@ -26,7 +26,7 @@ MODULES =		devel/cmake \
 
 MODPY_RUNDEP =		No
 
-BUILD_DEPENDS =		devel/doxygen>=1.9.7 \
+BUILD_DEPENDS =		devel/doxygen>=1.9.8 \
 			devel/gtest
 
 LIB_DEPENDS =		databases/sqlite3 \

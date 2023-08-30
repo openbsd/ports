@@ -50,7 +50,8 @@ share/doc/orthanc/OrthancPlugin/index.html
 share/doc/orthanc/OrthancPlugin/jquery.js
 share/doc/orthanc/OrthancPlugin/menu.js
 share/doc/orthanc/OrthancPlugin/menudata.js
-share/doc/orthanc/OrthancPlugin/modules.html
+share/doc/orthanc/OrthancPlugin/minus.svg
+share/doc/orthanc/OrthancPlugin/minusd.svg
 share/doc/orthanc/OrthancPlugin/nav_f.png
 share/doc/orthanc/OrthancPlugin/nav_fd.png
 share/doc/orthanc/OrthancPlugin/nav_g.png
@@ -58,6 +59,8 @@ share/doc/orthanc/OrthancPlugin/nav_h.png
 share/doc/orthanc/OrthancPlugin/nav_hd.png
 share/doc/orthanc/OrthancPlugin/open.png
 share/doc/orthanc/OrthancPlugin/pages.html
+share/doc/orthanc/OrthancPlugin/plus.svg
+share/doc/orthanc/OrthancPlugin/plusd.svg
 share/doc/orthanc/OrthancPlugin/splitbar.png
 share/doc/orthanc/OrthancPlugin/splitbard.png
 share/doc/orthanc/OrthancPlugin/structOrthancPluginDictionaryEntry-members.html
@@ -79,6 +82,7 @@ share/doc/orthanc/OrthancPlugin/tab_hd.png
 share/doc/orthanc/OrthancPlugin/tab_s.png
 share/doc/orthanc/OrthancPlugin/tab_sd.png
 share/doc/orthanc/OrthancPlugin/tabs.css
+share/doc/orthanc/OrthancPlugin/topics.html
 share/examples/orthanc/
 @sample ${SYSCONFDIR}/orthanc/
 share/examples/orthanc/Configuration.json
