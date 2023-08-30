@@ -3,6 +3,7 @@ COMMENT=		apache HTTP server
 V=			2.4.57
 DISTNAME=		httpd-${V}
 PKGNAME=		apache-httpd-${V}
+REVISION=		0
 
 CATEGORIES=		www net
 
@@ -71,6 +72,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			AWK=awk \
 			GREP=grep \
+			ac_cv_func_ENGINE_init=no \
 			ac_cv_path_RSYNC=no \
 			ac_cv_path_SVN=no
 
