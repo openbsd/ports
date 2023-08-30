@@ -64,6 +64,7 @@ share/examples/snmp_exporter/mibs/PAN-LC-MIB.my
 share/examples/snmp_exporter/mibs/PAN-PRODUCT-MIB.my
 share/examples/snmp_exporter/mibs/PAN-TRAPS.my
 share/examples/snmp_exporter/mibs/PDU-MIB.txt
+share/examples/snmp_exporter/mibs/PDU2-MIB.txt
 share/examples/snmp_exporter/mibs/PICO-IPSEC-FLOW-MONITOR-MIB.txt
 share/examples/snmp_exporter/mibs/PICO-SMI-ID-MIB.txt
 share/examples/snmp_exporter/mibs/PICO-SMI-MIB.txt
@@ -94,7 +95,6 @@ share/examples/snmp_exporter/mibs/UBNT-UniFi-MIB
 share/examples/snmp_exporter/mibs/UCD-SNMP-MIB
 share/examples/snmp_exporter/mibs/VRRP-MIB
 share/examples/snmp_exporter/mibs/VRRPv3-MIB
-share/examples/snmp_exporter/mibs/WIENER-CRATE-MIB-5704.txt
 share/examples/snmp_exporter/mibs/apc-powernet-mib
 share/examples/snmp_exporter/mibs/servertech-sentry3-mib
 share/examples/snmp_exporter/mibs/servertech-sentry4-mib
