@@ -132,6 +132,8 @@ share/doc/signon/html/index.qhp
 share/doc/signon/html/jquery.js
 share/doc/signon/html/menu.js
 share/doc/signon/html/menudata.js
+share/doc/signon/html/minus.svg
+share/doc/signon/html/minusd.svg
 share/doc/signon/html/nav_f.png
 share/doc/signon/html/nav_fd.png
 share/doc/signon/html/nav_g.png
@@ -142,6 +144,8 @@ share/doc/signon/html/navtree.js
 share/doc/signon/html/navtreedata.js
 share/doc/signon/html/navtreeindex0.js
 share/doc/signon/html/open.png
+share/doc/signon/html/plus.svg
+share/doc/signon/html/plusd.svg
 share/doc/signon/html/resize.js
 share/doc/signon/html/splitbar.png
 share/doc/signon/html/splitbard.png

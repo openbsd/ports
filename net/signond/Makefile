@@ -6,7 +6,7 @@ HOMEPAGE =	https://accounts-sso.gitlab.io/
 
 V =		VERSION_8.61
 DISTNAME =	signond-${V:S/VERSION_//}
-REVISION =	3
+REVISION =	4
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
@@ -26,7 +26,7 @@ WANTLIB += Qt5Sql Qt5Xml c m
 MODULES =	x11/qt5 \
 		devel/qmake
 
-BUILD_DEPENDS =	devel/doxygen>=1.9.7
+BUILD_DEPENDS =	devel/doxygen>=1.9.8
 
 WRKDIST =	${WRKDIR}/signond-${V}-5b34c5bbc45eedf55bf553675595b3fcb5c156a8
 
