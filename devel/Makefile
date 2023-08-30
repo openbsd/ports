@@ -1316,7 +1316,6 @@
      SUBDIR += py-aiosignal,python3
      SUBDIR += py-aiostream,python3
      SUBDIR += py-algorithm-munkres,python3
-     SUBDIR += py-altgraph
      SUBDIR += py-altgraph,python3
      SUBDIR += py-ana,python3
      SUBDIR += py-anytree,python3
