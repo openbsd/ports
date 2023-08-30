@@ -99,6 +99,8 @@ share/doc/accounts-qt/html/manager_8h_source.html
 share/doc/accounts-qt/html/manager__p_8h_source.html
 share/doc/accounts-qt/html/menu.js
 share/doc/accounts-qt/html/menudata.js
+share/doc/accounts-qt/html/minus.svg
+share/doc/accounts-qt/html/minusd.svg
 share/doc/accounts-qt/html/nav_f.png
 share/doc/accounts-qt/html/nav_fd.png
 share/doc/accounts-qt/html/nav_g.png
@@ -110,6 +112,8 @@ share/doc/accounts-qt/html/navtreedata.js
 share/doc/accounts-qt/html/navtreeindex0.js
 share/doc/accounts-qt/html/open.png
 share/doc/accounts-qt/html/pages.html
+share/doc/accounts-qt/html/plus.svg
+share/doc/accounts-qt/html/plusd.svg
 share/doc/accounts-qt/html/provider_8cpp_source.html
 share/doc/accounts-qt/html/provider_8h_source.html
 share/doc/accounts-qt/html/resize.js

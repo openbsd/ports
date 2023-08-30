@@ -4,7 +4,7 @@ CATEGORIES =	net
 
 V =		VERSION_1.16
 DISTNAME =	libaccounts-qt-${V:S/VERSION_//}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  accounts-qt5              0.0 # 1.4
 
@@ -23,7 +23,7 @@ WANTLIB += c gio-2.0 glib-2.0 gobject-2.0 intl m
 MODULES =	x11/qt5 \
 		devel/qmake
 
-BUILD_DEPENDS =	devel/doxygen>=1.9.7 \
+BUILD_DEPENDS =	devel/doxygen>=1.9.8 \
 		textproc/gtk-doc
 
 LIB_DEPENDS =	net/libaccounts-glib \
