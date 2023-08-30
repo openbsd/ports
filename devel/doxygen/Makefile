@@ -5,7 +5,7 @@ BROKEN-alpha=	.got subsegment exceeds 64K
 
 COMMENT=	source code documentation generator tool
 
-VERSION=	1.9.7
+VERSION=	1.9.8
 DISTNAME=	doxygen-${VERSION}.src
 PKGNAME=	doxygen-${VERSION}
 
