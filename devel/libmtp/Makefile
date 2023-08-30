@@ -1,9 +1,9 @@
 COMMENT=		Media Transfer Protocol (MTP) implementation
 
-DISTNAME=		libmtp-1.1.19
+DISTNAME=		libmtp-1.1.21
 CATEGORIES=		devel
 
-SHARED_LIBS +=  mtp                  7.1      # 13.0
+SHARED_LIBS +=  mtp                  7.2      # 13.0.4
 
 HOMEPAGE=		http://libmtp.sourceforge.net/
 
