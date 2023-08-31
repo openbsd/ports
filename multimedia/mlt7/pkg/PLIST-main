@@ -106,6 +106,7 @@ share/mlt-7/core/
 share/mlt-7/core/consumer_multi.yml
 share/mlt-7/core/filter_audiomap.yml
 share/mlt-7/core/filter_audiowave.yml
+share/mlt-7/core/filter_autofade.yml
 share/mlt-7/core/filter_box_blur.yml
 share/mlt-7/core/filter_brightness.yml
 share/mlt-7/core/filter_channelcopy.yml
