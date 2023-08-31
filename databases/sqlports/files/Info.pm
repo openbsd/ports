@@ -1,4 +1,4 @@
-# $OpenBSD: Info.pm,v 1.41 2023/08/22 14:59:46 espie Exp $
+# $OpenBSD: Info.pm,v 1.42 2023/08/31 13:49:22 espie Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -43,6 +43,7 @@ our $vars = {
     DISTNAME => 'AnyVar',
     DIST_SUBDIR => 'DefinedVar',
     EPOCH => 'AnyVar',
+    EXTRACT_FILES => 'DefinedVar',
     FLAVORS => 'FlavorsVar',
     FULLPKGNAME => 'FullpkgnameVar',
     GH_ACCOUNT => 'DefinedVar',
