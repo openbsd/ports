@@ -1,6 +1,6 @@
 COMMENT =		FontAwesome icons in PyQt and PySide applications
 
-MODPY_EGG_VERSION =	1.2.1
+MODPY_EGG_VERSION =	1.2.3
 DISTNAME =		QtAwesome-${MODPY_EGG_VERSION}
 PKGNAME =		py-qtawesome-${MODPY_EGG_VERSION}
 CATEGORIES =		x11
