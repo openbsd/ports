@@ -1,8 +1,7 @@
-BROKEN =	The version of quic-go you're using can't be built on Go 1.21 yet.
 COMMENT =	matrix homeserver written in Go
 
 MODGO_MODNAME =	github.com/matrix-org/dendrite
-MODGO_VERSION =	v0.12.0
+MODGO_VERSION =	v0.13.2
 
 DISTNAME =	dendrite-${MODGO_VERSION}
 
