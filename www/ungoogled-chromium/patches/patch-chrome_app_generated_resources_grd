@@ -46,7 +46,7 @@ Index: chrome/app/generated_resources.grd
          <message name="IDS_DEPRECATED_APPS_MONITOR_RENDERER" desc="Dialog content that educates users that Chrome Apps will soon no longer launch.">
            Old versions of Chrome apps won't open on Linux devices after December 2022. You can check if there's a new version available.
          </message>
-@@ -9884,7 +9884,7 @@ Check your passwords anytime in <ph name="GOOGLE_PASSW
+@@ -9902,7 +9902,7 @@ Check your passwords anytime in <ph name="GOOGLE_PASSW
        <message name="IDS_APP_MENU_BUTTON_UPDATE" desc="Short label next to app-menu button when an update is available.">
          Update
        </message>
@@ -55,7 +55,7 @@ Index: chrome/app/generated_resources.grd
          <message name="IDS_APP_MENU_BUTTON_UPDATE_ALT1" desc="Alternate short label next to app-menu button when an update is available.">
            Finish update
          </message>
-@@ -10220,7 +10220,7 @@ Check your passwords anytime in <ph name="GOOGLE_PASSW
+@@ -10238,7 +10238,7 @@ Check your passwords anytime in <ph name="GOOGLE_PASSW
          Google Pay
        </message>
  
@@ -64,7 +64,7 @@ Index: chrome/app/generated_resources.grd
          <message name="IDS_SHOW_WINDOW_DECORATIONS" desc="The label of a radio button in the options dialog for using the system title bar and borders.">
            Use system title bar and borders
          </message>
-@@ -11193,7 +11193,7 @@ Check your passwords anytime in <ph name="GOOGLE_PASSW
+@@ -11211,7 +11211,7 @@ Check your passwords anytime in <ph name="GOOGLE_PASSW
        </message>
  
        <!-- Device Trust Consent dialog -->
@@ -73,7 +73,7 @@ Index: chrome/app/generated_resources.grd
          <message name="IDS_DEVICE_SIGNALS_CONSENT_DIALOG_TITLE" desc="Title of the dialog shown when user consent is required to share device signals.">
            Share device signals?
          </message>
-@@ -11592,7 +11592,7 @@ Please help our engineers fix this problem. Tell us wh
+@@ -11610,7 +11610,7 @@ Please help our engineers fix this problem. Tell us wh
          Set as default
        </message>
  
@@ -82,7 +82,7 @@ Index: chrome/app/generated_resources.grd
          <message name="IDS_MINIMIZE_WINDOW_MENU" desc="The Linux browser window menu item text for minimizing the window.">
            Minimize
          </message>
-@@ -13784,7 +13784,7 @@ Please help our engineers fix this problem. Tell us wh
+@@ -13802,7 +13802,7 @@ Please help our engineers fix this problem. Tell us wh
        Open Anyway
      </message>
  
