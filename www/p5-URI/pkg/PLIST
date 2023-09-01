@@ -31,6 +31,8 @@ ${P5SITE}/URI/ftp.pm
 ${P5SITE}/URI/gopher.pm
 ${P5SITE}/URI/http.pm
 ${P5SITE}/URI/https.pm
+${P5SITE}/URI/icap.pm
+${P5SITE}/URI/icaps.pm
 ${P5SITE}/URI/ldap.pm
 ${P5SITE}/URI/ldapi.pm
 ${P5SITE}/URI/ldaps.pm
@@ -65,4 +67,6 @@ ${P5SITE}/URI/urn/oid.pm
 @man man/man3p/URI::_punycode.3p
 @man man/man3p/URI::data.3p
 @man man/man3p/URI::file.3p
+@man man/man3p/URI::icap.3p
+@man man/man3p/URI::icaps.3p
 @man man/man3p/URI::ldap.3p
