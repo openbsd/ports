@@ -6,6 +6,7 @@ COMMENT-mapi=	gromox MAPI extensions for PHP
 
 V=		2.11
 DISTNAME=	gromox-${V}
+REVISION=	0
 
 PKGNAME-main=	gromox-core-${V}
 PKGNAME-mapi=	gromox-mapi-${V}
@@ -44,9 +45,9 @@ BUILD_DEPENDS=	devel/cppunit \
 
 WANTLIB += HX iconv jsoncpp m pthread tinyxml2 vmime zstd
 
-WANTLIB-main += ${LIBCXX} ${WANTLIB} c crypto curl fmt gumbo icudata icuuc lber
-WANTLIB-main += ldap mariadb nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_openssl 
-WANTLIB-main += sasl2 sqlite3 ssl ssl z
+WANTLIB-main += ${LIBCXX} ${WANTLIB} c crypto curl fmt icudata icuuc lber
+WANTLIB-main += ldap lzma mariadb nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_openssl 
+WANTLIB-main += sasl2 sqlite3 ssl ssl xml2 xxhash z
 
 # Do not substitute MODULE_NAME
 UPDATE_PLIST_ARGS+=	-i MODULE_NAME
@@ -62,10 +63,11 @@ LIB_DEPENDS-main= 	archivers/zstd \
 			devel/libHX \
 			devel/libvmime>=0.9.4 \
 			net/curl \
-			textproc/tinyxml2 \
-			www/gumbo
+			sysutils/xxhash \
+			textproc/libxml \
+			textproc/tinyxml2
 
-WANTLIB-mapi += ${WANTLIB} HX gromox_common m
+WANTLIB-mapi += ${WANTLIB} HX fmt gromox_common m
 
 LIB_DEPENDS-mapi=	${BASE_PKGPATH}>=${V} \
 			archivers/zstd \
