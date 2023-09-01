@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS =	${CXX11_ARCHS}
 V = 			1-11-1
 DISTNAME =		vigra-${V:S/-/./g}-src
 PKGNAME =		vigra-${V:S/-/./g}
-REVISION =		5
+REVISION =		6
 
 SHARED_LIBS =		vigraimpex 0.0 # 5.1
 
@@ -19,7 +19,7 @@ MASTER_SITES = https://github.com/ukoethe/vigra/releases/download/Version-${V}/
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} Iex-3_1 IlmThread-3_1 OpenEXR-3_1
+WANTLIB += ${COMPILER_LIBCXX} Iex-3_2 IlmThread-3_2 OpenEXR-3_2
 WANTLIB += Imath-3_1 boost_atomic-mt boost_chrono-mt boost_date_time-mt
 WANTLIB += boost_system-mt boost_thread-mt fftw3 jpeg m png tiff
 WANTLIB += z

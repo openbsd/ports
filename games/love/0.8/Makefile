@@ -1,14 +1,14 @@
 VERSION =		0.8.0
 USE_LUAJIT =		No
-REVISION =		14
+REVISION =		15
 
-WANTLIB += ${COMPILER_LIBCXX} GL IL Iex-3_1 IlmThread-3_1 Imath-3_1
-WANTLIB += OpenEXR-3_1 OpenEXRCore-3_1 OpenEXRUtil-3_1 SDL X11
+WANTLIB += ${COMPILER_LIBCXX} GL IL Iex-3_2 IlmThread-3_2 Imath-3_1
+WANTLIB += OpenEXR-3_2 OpenEXRCore-3_2 OpenEXRUtil-3_2 SDL X11
 WANTLIB += X11-xcb Xau Xdmcp Xext Xfixes Xxf86vm c drm expat freetype
 WANTLIB += glapi iconv jasper jpeg lcms lzma m mng modplug mpg123
 WANTLIB += ogg openal physfs png sndio tiff usbhid vorbis vorbisfile
 WANTLIB += xcb xcb-dri2 xcb-dri3 xcb-glx xcb-present xcb-shm xcb-sync
-WANTLIB += xcb-xfixes xshmfence z zstd
+WANTLIB += xcb-xfixes xshmfence z zstd xcb-randr
 
 LIB_DEPENDS =		audio/libmodplug \
 			audio/mpg123 \

@@ -8,6 +8,7 @@ GH_PROJECT =		oiio
 GH_TAGNAME =		v$V
 V =			2.4.11.0
 DISTNAME =		openimageio-${V}
+REVISION =		0
 
 SHARED_LIBS +=		OpenImageIO		13.0 # 2.4.10
 SHARED_LIBS +=		OpenImageIO_Util	8.0 # 2.4.10
@@ -19,8 +20,8 @@ HOMEPAGE =		https://sites.google.com/site/openimageio/home
 # BSD
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL GLU Iex-3_1 IlmThread-3_1 Imath-3_1
-WANTLIB += OpenColorIO OpenEXR-3_1 OpenEXRCore-3_1 Qt6Core Qt6Gui
+WANTLIB += ${COMPILER_LIBCXX} GL GLU Iex-3_2 IlmThread-3_2 Imath-3_1
+WANTLIB += OpenColorIO OpenEXR-3_2 OpenEXRCore-3_2 Qt6Core Qt6Gui
 WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6Widgets avcodec avformat
 WANTLIB += avutil boost_atomic-mt boost_chrono-mt boost_filesystem-mt
 WANTLIB += boost_thread-mt bz2 c freetype gif heif jpeg m openjp2

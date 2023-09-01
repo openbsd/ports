@@ -2,7 +2,7 @@ COMMENT=	GNU Image Manipulation Program
 
 DISTNAME =	gimp-2.10.34
 PKGSPEC =	gimp->=2,<2.99
-REVISION =	3
+REVISION =	4
 
 .for i in gimp gimpbase gimpcolor gimpconfig gimpmath gimpmodule \
 	gimpthumb gimpui gimpwidgets
@@ -24,8 +24,8 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += brotlicommon brotlidec brotlienc hwy jxl jxl_threads
-WANTLIB += ICE Iex-3_1 IlmThread-3_1 Imath-3_1 OpenEXR-3_1 OpenEXRCore-3_1
-WANTLIB += OpenEXRUtil-3_1 SM X11 Xau Xcomposite Xcursor Xdamage
+WANTLIB += ICE Iex-3_2 IlmThread-3_2 Imath-3_1 OpenEXR-3_2 OpenEXRCore-3_2
+WANTLIB += OpenEXRUtil-3_2 SM X11 Xau Xcomposite Xcursor Xdamage
 WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xmu Xpm Xrandr Xrender
 WANTLIB += Xt aa aom atk-1.0 avahi-client avahi-common babl-0.1
 WANTLIB += bz2 c cairo cairo-gobject crypto cups curses dav1d
@@ -37,7 +37,7 @@ WANTLIB += jpeg json-c json-glib-1.0 lcms lcms2 lzma m mng mypaint
 WANTLIB += openjp2 pango-1.0 pangocairo-1.0 pangoft2-1.0 paper
 WANTLIB += pcre2-8 pixman-1 png poppler poppler-glib rsvg-2 ssl tiff
 WANTLIB += webp webpdemux webpmux wmf-0.2 wmflite-0.2 x265 xcb
-WANTLIB += xcb-render xcb-shm xml2 z zstd sharpyuv
+WANTLIB += xcb-render xcb-shm xml2 z zstd sharpyuv deflate
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 

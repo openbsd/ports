@@ -3,7 +3,7 @@ ONLY_FOR_ARCHS=	amd64 aarch64
 COMMENT=	virtual lighttable and darkroom for photographers
 
 V=		4.4.1
-REVISION=	0
+REVISION=	1
 DISTNAME=	darktable-$V
 PORTROACH=	limitw:1,even skipv:release-$V
 EXTRACT_SUFX=	.tar.xz
@@ -16,14 +16,14 @@ HOMEPAGE=	https://www.darktable.org/
 PERMIT_PACKAGE=	Yes
 
 WANTLIB =  ${COMPILER_LIBCXX} ${MODLUA_WANTLIB} GraphicsMagick ICE
-WANTLIB += Iex-3_1 IlmThread-3_1 Imath-3_1 OpenEXR-3_1 SDL2 SM X11 Xext
+WANTLIB += Iex-3_2 IlmThread-3_2 Imath-3_1 OpenEXR-3_2 SDL2 SM X11 Xext
 WANTLIB += Xrandr atk-1.0 avif c cairo cairo-gobject cups curl exiv2
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gphoto2 gphoto2_port gthread-2.0 gtk-3 harfbuzz
 WANTLIB += heif icudata icui18n icuuc intl jpeg json-glib-1.0 jxl
 WANTLIB += jxl_threads lcms2 lensfun m openjp2 pango-1.0 pangocairo-1.0
 WANTLIB += png pugixml raw rsvg-2 secret-1 sqlite3 tiff webp
-WANTLIB += webpmux xml2 z
+WANTLIB += webpmux xml2 z OpenEXRCore-3_2
 
 
 MASTER_SITES=	https://github.com/darktable-org/darktable/releases/download/release-$V/

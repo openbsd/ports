@@ -4,7 +4,7 @@ GH_ACCOUNT =		ampas
 GH_PROJECT =		CTL
 GH_TAGNAME =		ctl-1.5.2
 DISTNAME =		${GH_TAGNAME}
-REVISION =		7
+REVISION =		8
 
 SHARED_LIBS +=  IlmCtl               1.0      # .2.0
 SHARED_LIBS +=  IlmCtlMath           1.0      # .2.0
@@ -17,8 +17,8 @@ HOMEPAGE =		https://github.com/ampas/CTL/
 # 3-clause BSD license
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} Iex-3_1 IlmThread-3_1 Imath-3_1 c
-WANTLIB += OpenEXR-3_1 m tiff
+WANTLIB += ${COMPILER_LIBCXX} Iex-3_2 IlmThread-3_2 Imath-3_1 c
+WANTLIB += OpenEXR-3_2 m tiff
 
 COMPILER =		base-clang ports-gcc base-gcc
 

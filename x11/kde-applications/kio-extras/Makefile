@@ -1,18 +1,19 @@
 COMMENT =	extra functionality for kioslaves
 DISTNAME =	kio-extras-${VERSION}
 CATEGORIES =	productivity net
+REVISION =	0
 
 SHARED_LIBS +=  kioarchive                4.0 # 5.97
 SHARED_LIBS +=  molletnetwork5            3.0 # 18.08
 
-WANTLIB += ${COMPILER_LIBCXX} Iex-3_1 IlmThread-3_1 Imath-3_1
+WANTLIB += ${COMPILER_LIBCXX} Iex-3_2 IlmThread-3_2 Imath-3_1
 WANTLIB += KF5Activities KF5ActivitiesStats KF5Archive KF5Auth
 WANTLIB += KF5AuthCore KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5DBusAddons
 WANTLIB += KF5DNSSD KF5GuiAddons KF5I18n KF5ItemViews KF5JobWidgets
 WANTLIB += KF5KExiv2 KF5KIOCore KF5KIOFileWidgets KF5KIOGui KF5KIOWidgets
 WANTLIB += KF5Service KF5Solid KF5SyntaxHighlighting KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KF5XmlGui OpenEXR-3_1 Qt5Concurrent
+WANTLIB += KF5WindowSystem KF5XmlGui OpenEXR-3_2 Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Sql Qt5Svg Qt5Widgets
 WANTLIB += Qt5Xml X11 Xcursor c kdsoap m mtp phonon4qt5 phonon4qt5experimental
 WANTLIB += smbclient ssh tag util z

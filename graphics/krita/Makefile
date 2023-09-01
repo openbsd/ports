@@ -2,7 +2,7 @@ COMMENT =	advanced drawing and image manipulation
 
 VERSION =	5.1.5
 DISTNAME =	krita-${VERSION}
-REVISION =	3
+REVISION =	4
 
 SHARED_LIBS +=  kritabasicflakes          4.1 # 16.0
 SHARED_LIBS +=  kritacolord               2.0 # 16.0
@@ -45,17 +45,17 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 # GPLv2+, LGPLv2+ and GNU FDLv1.2
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} ICE Iex-3_1 IlmThread-3_1 Imath-3_1
+WANTLIB += ${COMPILER_LIBCXX} ICE Iex-3_2 IlmThread-3_2 Imath-3_1
 WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5CoreAddons
 WANTLIB += KF5Crash KF5GuiAddons KF5I18n KF5ItemViews KF5WidgetsAddons
-WANTLIB += KF5WindowSystem OpenColorIO OpenEXR-3_1 Qt5Concurrent
+WANTLIB += KF5WindowSystem OpenColorIO OpenEXR-3_2 Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Multimedia Qt5Network Qt5PrintSupport
 WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickWidgets Qt5Sql
 WANTLIB += Qt5Svg Qt5Widgets Qt5X11Extras Qt5Xml SM X11 Xext Xi
 WANTLIB += boost_system-mt c exiv2 fftw3 gif gsl gslcblas heif
 WANTLIB += jpeg lcms2 m mypaint openjp2 png poppler poppler-qt5
 WANTLIB += quazip1-qt5 raw tiff turbojpeg webp z jxl jxl_threads
-WANTLIB += sharpyuv
+WANTLIB += sharpyuv OpenEXRCore-3_2
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/krita/${VERSION}/}
 EXTRACT_SUFX =	.tar.xz
