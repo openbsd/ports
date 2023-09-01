@@ -1,6 +1,6 @@
 COMMENT=	Ruby bindings for the Yajl JSON library
 
-DISTNAME=	yajl-ruby-1.4.1
+DISTNAME=	yajl-ruby-1.4.3
 
 CATEGORIES=	devel
 

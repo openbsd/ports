@@ -1,9 +1,11 @@
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.codeclimate.yml
+${GEM_LIB}/gems/${DISTNAME}/.github/
+${GEM_LIB}/gems/${DISTNAME}/.github/workflows/
+${GEM_LIB}/gems/${DISTNAME}/.github/workflows/ci.yml
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
 ${GEM_LIB}/gems/${DISTNAME}/.rspec
-${GEM_LIB}/gems/${DISTNAME}/.travis.yml
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
 ${GEM_LIB}/gems/${DISTNAME}/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
@@ -59,7 +61,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/yajl/json_gem.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/yajl/json_gem/encoding.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/yajl/json_gem/parsing.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/yajl/version.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/yajl/yajl.so
+@so ${GEM_LIB}/gems/${DISTNAME}/lib/yajl/yajl.so
 ${GEM_LIB}/gems/${DISTNAME}/script/
 ${GEM_LIB}/gems/${DISTNAME}/script/bootstrap
 ${GEM_LIB}/gems/${DISTNAME}/spec/
