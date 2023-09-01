@@ -1,6 +1,5 @@
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
-${GEM_LIB}/gems/${DISTNAME}/.codeclimate.yml
 ${GEM_LIB}/gems/${DISTNAME}/.devcontainer/
 ${GEM_LIB}/gems/${DISTNAME}/.devcontainer/Dockerfile
 ${GEM_LIB}/gems/${DISTNAME}/.devcontainer/ImageMagick6/
