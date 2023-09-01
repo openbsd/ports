@@ -1,6 +1,6 @@
 COMMENT=		minimal mime type implementation
 
-DISTNAME=		mini_mime-1.1.2
+DISTNAME=		mini_mime-1.1.5
 CATEGORIES=		mail
 
 HOMEPAGE=		https://github.com/discourse/mini_mime/
