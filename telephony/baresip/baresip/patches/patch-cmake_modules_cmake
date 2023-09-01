@@ -1,6 +1,4 @@
-https://github.com/baresip/baresip/pull/2555
-
-(and disable other backends while here)
+disable other backends
 Index: cmake/modules.cmake
 --- cmake/modules.cmake.orig
 +++ cmake/modules.cmake
@@ -16,16 +14,6 @@ Index: cmake/modules.cmake
  find_package(PNG)
 -find_package(PORTAUDIO)
 -find_package(PULSE)
+ find_package(PIPEWIRE)
  find_package(SDL)
  find_package(SNDFILE)
- find_package(SPANDSP)
-@@ -175,6 +172,9 @@ if(X11_XShm_FOUND)
- endif()
- if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-   list(APPEND MODULES evdev)
-+endif()
-+if(${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
-+  list(APPEND MODULES sndio)
- endif()
- if(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
-   list(APPEND MODULES audiounit)
