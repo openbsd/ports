@@ -1,6 +1,6 @@
 COMMENT =	replacement for Ruby's URI implementation
 
-DISTNAME = 	addressable-2.7.0
+DISTNAME = 	addressable-2.8.5
 CATEGORIES =	www
 
 HOMEPAGE =	https://github.com/sporkmonger/addressable
@@ -13,9 +13,8 @@ MODULES =		lang/ruby
 CONFIGURE_STYLE =	ruby gem
 
 BUILD_DEPENDS +=	${RUN_DEPENDS}
-RUN_DEPENDS +=		net/ruby-public_suffix,${MODRUBY_FLAVOR},>=2.0.2,<5
+RUN_DEPENDS +=		net/ruby-public_suffix,${MODRUBY_FLAVOR},>=2.0.2,<6
 
-MODRUBY_TEST =	rake rspec3
-TEST_DEPENDS +=	devel/ruby-rspec/3/its,${MODRUBY_FLAVOR}
+# Tests require dependencies not in ports
 
 .include <bsd.port.mk>
