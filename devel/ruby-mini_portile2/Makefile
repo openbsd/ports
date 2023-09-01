@@ -1,6 +1,6 @@
 COMMENT =		simplified way to compile against dependencies
 
-DISTNAME =		mini_portile2-2.7.1
+DISTNAME =		mini_portile2-2.8.4
 CATEGORIES =		devel
 
 # MIT
