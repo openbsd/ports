@@ -1,3 +1,9 @@
+# XXX check new release if it builds with doxygen;
+# RUN_DEPENDS += devel/doxygen
+# in do-build:
+# ${MAKE_ENV} -> ${MAKE_ENV} DOXYGEN=${LOCALBASE}/bin/doxygen
+# build.py --nodoc -> build.py dox touch etg --nodoc sip build_py
+
 COMMENT-main=	Python bindings for wxWidgets C++ class library
 COMMENT-media=	wxMedia support for wxPython
 COMMENT-webview=wxWebView support for wxPython
@@ -13,6 +19,8 @@ FULLPKGNAME-webview=	py3-wxPython-webview-${V}
 FULLPKGPATH-main=	${BUILD_PKGPATH}
 FULLPKGPATH-media=	${BUILD_PKGPATH},-media
 FULLPKGPATH-webview=	${BUILD_PKGPATH},-webview
+
+REVISION=	0
 
 CATEGORIES=	x11 devel
 
@@ -48,8 +56,7 @@ MODULES=		lang/python
 FLAVORS=		python3
 FLAVOR=			python3
 
-BUILD_DEPENDS=		devel/doxygen \
-			devel/py-setuptools${MODPY_FLAVOR} \
+BUILD_DEPENDS=		devel/py-setuptools${MODPY_FLAVOR} \
 			devel/py-sip${MODPY_FLAVOR} \
 			devel/py-six${MODPY_FLAVOR}
 
@@ -71,9 +78,8 @@ RUN_DEPENDS-webview=	${RUN_DEPENDS} \
 NO_TEST=		Yes
 
 do-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} DOXYGEN=${LOCALBASE}/bin/doxygen \
-		${MODPY_BIN} build.py dox touch etg --nodoc sip build_py \
-		--use_syswx --release --jobs=${MAKE_JOBS}
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MODPY_BIN} build.py --nodoc \
+		sip build_py --use_syswx --release --jobs=${MAKE_JOBS}
 # substitute 2 above lines with this one when rebuilding after a fix, error...
 #		${MODPY_BIN} build.py build_py --use_syswx --jobs=${MAKE_JOBS}
 
