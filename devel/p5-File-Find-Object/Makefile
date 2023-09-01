@@ -3,7 +3,7 @@ COMMENT =	object oriented File::Find replacement
 # Most versions start with v, some do not and confuse portroach, skip those.
 PORTROACH =	skipv:0.0.1,0.0.2,0.3.0
 
-DISTNAME =	File-Find-Object-0.3.7
+DISTNAME =	File-Find-Object-0.3.8
 
 CATEGORIES =	devel
 
