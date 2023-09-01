@@ -1,6 +1,6 @@
 COMMENT =	ruby SQLite3 embedded database library
 
-DISTNAME =	amalgalite-1.7.0
+DISTNAME =	amalgalite-1.9.1
 CATEGORIES =	databases
 
 HOMEPAGE =	https://github.com/copiousfreetime/amalgalite
