@@ -1776,6 +1776,7 @@
      SUBDIR += ruby-subset_sum,ruby32
      SUBDIR += ruby-sync
      SUBDIR += ruby-systemu
+     SUBDIR += ruby-test-unit-ruby-core
      SUBDIR += ruby-therubyracer,ruby31
      SUBDIR += ruby-therubyracer,ruby32
      SUBDIR += ruby-thor
