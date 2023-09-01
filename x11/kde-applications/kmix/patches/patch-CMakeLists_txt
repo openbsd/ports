@@ -1,0 +1,16 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -261,9 +261,9 @@ if (HAVE_OSS_3)
+   set(kmix_backend_SRCS ${kmix_backend_SRCS} backends/mixer_oss.cpp)
+ endif ()
+ 
+-if (HAVE_OSS_4)
+-  set(kmix_backend_SRCS ${kmix_backend_SRCS} backends/mixer_oss4.cpp)
+-endif ()
++#if (HAVE_OSS_4)
++#  set(kmix_backend_SRCS ${kmix_backend_SRCS} backends/mixer_oss4.cpp)
++#endif ()
+ 
+ ####################################################################################################
+ ########### target: kmixcore library ###############################################################
