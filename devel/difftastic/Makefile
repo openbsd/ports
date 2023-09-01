@@ -2,7 +2,7 @@ COMMENT =		diff tool that compares files based on their syntax
 
 GH_ACCOUNT =		Wilfred
 GH_PROJECT =		difftastic
-GH_TAGNAME =		0.49.0
+GH_TAGNAME =		0.51.1
 
 HOMEPAGE =		https://difftastic.wilfred.me.uk/
 
