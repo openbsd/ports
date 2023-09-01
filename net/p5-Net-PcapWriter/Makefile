@@ -1,16 +1,16 @@
-COMMENT =		simple creation of pcap files from code
+COMMENT =	simple creation of pcap files from code
 
-DISTNAME =		Net-PcapWriter-0.724
-REVISION =		0
+DISTNAME =	Net-PcapWriter-0.725
 
-CATEGORIES =		net
+CATEGORIES =	net
 
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
-# perl
+# Perl
 PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
+
 PKG_ARCH =		*
 
 .include <bsd.port.mk>
