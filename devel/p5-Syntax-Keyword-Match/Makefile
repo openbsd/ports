@@ -1,6 +1,6 @@
 COMMENT =	match/case syntax for perl
 
-DISTNAME =	Syntax-Keyword-Match-0.12
+DISTNAME =	Syntax-Keyword-Match-0.13
 
 CATEGORIES =	devel
 
@@ -13,8 +13,8 @@ WANTLIB =		c perl
 
 MODULES =		cpan
 
-BUILD_DEPENDS =		devel/p5-XS-Parse-Keyword>=0.23
-RUN_DEPENDS =		devel/p5-XS-Parse-Keyword>=0.23
+BUILD_DEPENDS =		devel/p5-XS-Parse-Keyword>=0.36
+RUN_DEPENDS =		devel/p5-XS-Parse-Keyword>=0.36
 
 CONFIGURE_STYLE =	modbuild
 
