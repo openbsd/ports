@@ -1,4 +1,3 @@
-BROKEN-aarch64=segfaults during build with llvm13; needs USE_NOEXECONLY with llvm15
 .if ${MACHINE_ARCH} == aarch64
 USE_NOEXECONLY = yes
 .endif
