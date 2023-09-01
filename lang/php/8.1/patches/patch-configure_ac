@@ -1,3 +1,5 @@
+Hunk 1: https://github.com/php/php-src/commit/bf3fb4e5c969db276553eab5c9da9abb792b36e3
+
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
