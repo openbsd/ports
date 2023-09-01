@@ -2,7 +2,7 @@ ONLY_FOR_ARCHS =	amd64 arm64 i386
 
 COMMENT =		statically typed systems programming language
 
-DISTNAME =		nim-1.6.12
+DISTNAME =		nim-1.6.14
 EXTRACT_SUFX =		.tar.xz
 
 CATEGORIES =		lang
