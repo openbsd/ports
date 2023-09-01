@@ -7,7 +7,7 @@ ${GEM_LIB}/gems/${DISTNAME}/VERSION
 ${GEM_LIB}/gems/${DISTNAME}/fcgi.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/fcgi.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/fcgi.so
+@so ${GEM_LIB}/gems/${DISTNAME}/lib/fcgi.so
 ${GEM_LIB}/gems/${DISTNAME}/test/
 ${GEM_LIB}/gems/${DISTNAME}/test/helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_fcgi.rb
