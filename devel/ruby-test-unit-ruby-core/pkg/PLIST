@@ -1,0 +1,7 @@
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/core_assertions.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/envutil.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/find_executable.rb
+${GEM_LIB}/specifications/${DISTNAME}.gemspec
