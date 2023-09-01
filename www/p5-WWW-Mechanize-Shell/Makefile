@@ -1,7 +1,6 @@
 COMMENT =	interactive shell for WWW::Mechanize
 
-DISTNAME =	WWW-Mechanize-Shell-0.59
-REVISION =	0
+DISTNAME =	WWW-Mechanize-Shell-0.62
 
 CATEGORIES =	www
 
