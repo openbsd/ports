@@ -21,7 +21,7 @@ ${GEM_LIB}/gems/${DISTNAME}/archive/slrnpull.conf
 ${GEM_LIB}/gems/${DISTNAME}/kgio.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/kgio.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/kgio_ext.so
+@so ${GEM_LIB}/gems/${DISTNAME}/lib/kgio_ext.so
 ${GEM_LIB}/gems/${DISTNAME}/pkg.mk
 ${GEM_LIB}/gems/${DISTNAME}/setup.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/

@@ -1,6 +1,6 @@
 COMMENT =	kinder, gentler I/O for Ruby
 
-DISTNAME =	kgio-2.11.2
+DISTNAME =	kgio-2.11.4
 CATEGORIES =	devel
 
 MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
