@@ -1,6 +1,6 @@
 COMMENT =	modules for parsing/translating POD format documents
 
-DISTNAME =	Pod-Parser-1.65
+DISTNAME =	Pod-Parser-1.66
 
 CATEGORIES =	textproc
 
