@@ -1,3 +1,4 @@
+${GEM_LIB}/build_info/${DISTNAME}.info
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gemtest
@@ -5,15 +6,13 @@ ${GEM_LIB}/gems/${DISTNAME}/API_CHANGES.md
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
 ${GEM_LIB}/gems/${DISTNAME}/CONTRIBUTING.md
 ${GEM_LIB}/gems/${DISTNAME}/ChangeLog.cvs
+${GEM_LIB}/gems/${DISTNAME}/FAQ.md
 ${GEM_LIB}/gems/${DISTNAME}/Gemfile
+${GEM_LIB}/gems/${DISTNAME}/INSTALLATION.md
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE-DEPENDENCIES
 ${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/dependencies.yml
-${GEM_LIB}/gems/${DISTNAME}/faq/
-${GEM_LIB}/gems/${DISTNAME}/faq/faq.md
-${GEM_LIB}/gems/${DISTNAME}/faq/faq.rb
-${GEM_LIB}/gems/${DISTNAME}/faq/faq.yml
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/sqlite3/
 ${GEM_LIB}/gems/${DISTNAME}/lib/sqlite3.rb
@@ -29,7 +28,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sqlite3/value.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sqlite3/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/ports/
 ${GEM_LIB}/gems/${DISTNAME}/ports/archives/
-${GEM_LIB}/gems/${DISTNAME}/ports/archives/sqlite-autoconf-3400000.tar.gz
+${GEM_LIB}/gems/${DISTNAME}/ports/archives/sqlite-autoconf-3430000.tar.gz
 ${GEM_LIB}/gems/${DISTNAME}/test/
 ${GEM_LIB}/gems/${DISTNAME}/test/helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_backup.rb
@@ -46,6 +45,7 @@ ${GEM_LIB}/gems/${DISTNAME}/test/test_integration_open_close.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_integration_pending.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_integration_resultset.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_integration_statement.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_pragmas.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_result_set.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_sqlite3.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_statement.rb
