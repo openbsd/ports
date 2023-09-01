@@ -1,12 +1,12 @@
 COMMENT =	Ruby binding for the bcrypt() password hashing algorithm
 
-VERSION =	3.1.18
+VERSION =	3.1.19
 DISTNAME =	bcrypt-${VERSION}
 CATEGORIES =	security
 
 MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
 
-HOMEPAGE =	https://github.com/codahale/bcrypt-ruby
+HOMEPAGE =	https://github.com/bcrypt-ruby/bcrypt-ruby
 
 # MIT
 PERMIT_PACKAGE = Yes
