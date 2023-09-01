@@ -3,7 +3,7 @@ Add -I flag position to work with already installed gumbo.h.
 Index: ext/nokogiri/extconf.rb
 --- ext/nokogiri/extconf.rb.orig
 +++ ext/nokogiri/extconf.rb
-@@ -954,7 +954,7 @@ libgumbo_recipe = process_recipe("libgumbo", "1.0.0-no
+@@ -1076,7 +1076,7 @@ libgumbo_recipe = process_recipe("libgumbo", "1.0.0-no
      end
    end
  end
@@ -11,4 +11,4 @@ Index: ext/nokogiri/extconf.rb
 +$CPPFLAGS = "-I#{File.join(libgumbo_recipe.path, "include")} #{$CPPFLAGS}".dup
  $libs = $libs + " " + File.join(libgumbo_recipe.path, "lib", "libgumbo.a")
  $LIBPATH = $LIBPATH | [File.join(libgumbo_recipe.path, "lib")]
- ensure_func("gumbo_parse_with_options", "gumbo.h")
+ ensure_func("gumbo_parse_with_options", "nokogiri_gumbo.h")
