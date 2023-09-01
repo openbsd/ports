@@ -1,6 +1,6 @@
 COMMENT=		modular Ruby webserver interface
 
-DISTNAME=		rack-2.2.3
+DISTNAME=		rack-2.2.8
 CATEGORIES=		www
 
 HOMEPAGE=		http://rack.github.io/
