@@ -156,7 +156,6 @@
      SUBDIR += kcharselect
      SUBDIR += kdebugsettings
      SUBDIR += kdf
-     #SUBDIR += kfloppy
      SUBDIR += kgpg
      SUBDIR += kipi-plugins
      SUBDIR += kteatime
