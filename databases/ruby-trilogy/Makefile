@@ -1,6 +1,6 @@
 COMMENT =	MySQL-compatible library for ruby
 
-DISTNAME =	trilogy-2.4.0
+DISTNAME =	trilogy-2.5.0
 CATEGORIES =	databases
 HOMEPAGE =	https://github.com/github/trilogy
 

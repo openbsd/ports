@@ -7,6 +7,9 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/trilogy/
 ${GEM_LIB}/gems/${DISTNAME}/lib/trilogy.rb
 @so ${GEM_LIB}/gems/${DISTNAME}/lib/trilogy/cext.so
+${GEM_LIB}/gems/${DISTNAME}/lib/trilogy/encoding.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/trilogy/error.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/trilogy/result.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/trilogy/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/trilogy.gemspec
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
