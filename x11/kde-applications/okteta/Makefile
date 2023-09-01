@@ -1,5 +1,5 @@
 COMMENT =	Hex Editor
-VERSION =	0.26.12
+VERSION =	0.26.13
 DISTNAME =	okteta-${VERSION}
 CATEGORIES =	editors
 EPOCH =		0
@@ -13,6 +13,8 @@ SHARED_LIBS +=  Kasten4Okteta2Gui         1.0 # 0.4
 SHARED_LIBS +=  Okteta3Core               1.0 # 0.10
 SHARED_LIBS +=  Okteta3Gui                1.0 # 0.10
 
+MASTER_SITES =	${MASTER_SITE_KDE:=stable/okteta/${VERSION}/src/}
+
 WANTLIB += ${COMPILER_LIBCXX} KF5Attica KF5Auth KF5AuthCore KF5Bookmarks
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5Crash KF5DBusAddons
@@ -23,8 +25,6 @@ WANTLIB += KF5SonnetUi KF5TextWidgets KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB += Qt5PrintSupport Qt5Qml Qt5Script Qt5Widgets Qt5Xml
 WANTLIB += X11 c m qca-qt5
-
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/okteta/${VERSION}/src/}
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
