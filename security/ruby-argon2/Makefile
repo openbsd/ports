@@ -1,6 +1,6 @@
 COMMENT =	Ruby binding for the argon2 password hashing algorithm
 
-DISTNAME =	argon2-2.0.3
+DISTNAME =	argon2-2.2.0
 CATEGORIES =	security
 
 MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
@@ -15,7 +15,7 @@ MODULES =	lang/ruby
 BUILD_DEPENDS = devel/gmake \
 		${RUN_DEPENDS}
 
-RUN_DEPENDS =	devel/ruby-ffi,${MODRUBY_FLAVOR}>=1.14,<2.0 \
+RUN_DEPENDS =	devel/ruby-ffi,${MODRUBY_FLAVOR}>=1.15,<2.0 \
 		devel/ruby-ffi-compiler,${MODRUBY_FLAVOR}>=1.0,<2.0
 
 

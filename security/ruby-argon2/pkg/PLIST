@@ -2,7 +2,7 @@ ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.github/
 ${GEM_LIB}/gems/${DISTNAME}/.github/workflows/
-${GEM_LIB}/gems/${DISTNAME}/.github/workflows/rubocop.yml
+${GEM_LIB}/gems/${DISTNAME}/.github/workflows/codeql.yml
 ${GEM_LIB}/gems/${DISTNAME}/.github/workflows/ruby.yml
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
 ${GEM_LIB}/gems/${DISTNAME}/.gitmodules
@@ -13,13 +13,12 @@ ${GEM_LIB}/gems/${DISTNAME}/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE.txt
 ${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/Steepfile
 ${GEM_LIB}/gems/${DISTNAME}/argon2.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/bin/
 ${GEM_LIB}/gems/${DISTNAME}/bin/console
 ${GEM_LIB}/gems/${DISTNAME}/bin/setup
-${GEM_LIB}/gems/${DISTNAME}/ext/
-${GEM_LIB}/gems/${DISTNAME}/ext/argon2_wrap/
-@so ${GEM_LIB}/gems/${DISTNAME}/ext/argon2_wrap/libargon2_wrap.so
+${GEM_LIB}/gems/${DISTNAME}/bin/test
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/argon2/
 ${GEM_LIB}/gems/${DISTNAME}/lib/argon2.rb
@@ -27,5 +26,12 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/argon2/constants.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/argon2/engine.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/argon2/errors.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/argon2/ffi_engine.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/argon2/hash_format.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/argon2/version.rb
+@so ${GEM_LIB}/gems/${DISTNAME}/lib/libargon2_wrap.so
+${GEM_LIB}/gems/${DISTNAME}/sig/
+${GEM_LIB}/gems/${DISTNAME}/sig/argon2.rbs
+${GEM_LIB}/gems/${DISTNAME}/sig/constants.rbs
+${GEM_LIB}/gems/${DISTNAME}/sig/ffi.rbs
+${GEM_LIB}/gems/${DISTNAME}/sig/version.rbs
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
