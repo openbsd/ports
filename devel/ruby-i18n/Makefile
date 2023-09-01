@@ -1,6 +1,6 @@
 COMMENT =	ruby internationalization and localization solution
 
-DISTNAME =	i18n-1.10.0
+DISTNAME =	i18n-1.14.1
 CATEGORIES =	devel
 
 HOMEPAGE=	https://github.com/ruby-i18n/i18n
