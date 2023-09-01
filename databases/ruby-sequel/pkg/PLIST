@@ -94,7 +94,13 @@ ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.63.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.64.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.65.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.66.0.txt
+${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.67.0.txt
+${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.68.0.txt
+${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.69.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.7.0.txt
+${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.70.0.txt
+${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.71.0.txt
+${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.72.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.8.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.9.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/schema_modification.rdoc
@@ -154,6 +160,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/shared/sqlite.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/sqlanywhere.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/sqlite.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/tinytds.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/trilogy.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/utils/
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/utils/columns_limit_1.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/utils/emulate_offset_with_reverse_and_count.rb
@@ -169,6 +176,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/connection_pool/
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/connection_pool.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/connection_pool/sharded_single.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/connection_pool/sharded_threaded.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/connection_pool/sharded_timed_queue.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/connection_pool/single.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/connection_pool/threaded.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/connection_pool/timed_queue.rb
@@ -189,6 +197,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/dataset/
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/dataset.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/dataset/actions.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/dataset/dataset_module.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/dataset/deprecated_singleton_class_methods.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/dataset/features.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/dataset/graph.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/dataset/misc.rb
@@ -246,6 +255,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/pagination.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/pg_array.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/pg_array_ops.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/pg_auto_parameterize.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/pg_auto_parameterize_in_array.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/pg_enum.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/pg_extended_date_support.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/pg_extended_integer_support.rb
@@ -275,6 +285,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/select_remove.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/sequel_4_dataset_methods.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/server_block.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/server_logging.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/set_literalizer.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/split_array_nil.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/sql_comments.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/sql_expr.rb
@@ -356,9 +367,11 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/modification_detection.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/mssql_optimistic_locking.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/nested_attributes.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/optimistic_locking.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/optimistic_locking_base.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/pg_array_associations.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/pg_auto_constraint_validations.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/pg_row.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/pg_xmin_optimistic_locking.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/prepared_statements.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/prepared_statements_safe.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/primary_key_lookup_check_values.rb
@@ -395,6 +408,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/validate_associated.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/validation_class_methods.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/validation_contexts.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/validation_helpers.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/validation_helpers_generic_type_messages.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/whitelist_security.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/xml_serializer.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/sql.rb
