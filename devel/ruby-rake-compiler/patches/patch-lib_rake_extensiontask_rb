@@ -8,18 +8,15 @@ created can use BSD make extensions.
 Index: lib/rake/extensiontask.rb
 --- lib/rake/extensiontask.rb.orig
 +++ lib/rake/extensiontask.rb
-@@ -157,7 +157,9 @@ module Rake
-       task "copy:#{@name}:#{platf}:#{ruby_ver}" => [lib_path, tmp_binary_path, "#{tmp_path}/Makefile"] do
-         # install in lib for native platform only
-         unless for_platform
--          sh "#{make} install target_prefix=", chdir: tmp_path
-+          command = "#{make} install target_prefix="
-+          command +=  " INSTALL_PROG='/usr/bin/install -c -m 0755'" unless Process.uid == 0
-+          sh command, chdir: tmp_path
-         end
-       end
-       # copy binary from temporary location to staging directory
-@@ -502,20 +504,7 @@ Java extension should be preferred.
+@@ -169,6 +169,7 @@ module Rake
+           make_command_line << "install"
+           make_command_line << "sitearchdir=#{relative_lib_path}"
+           make_command_line << "sitelibdir=#{relative_lib_path}"
++          make_command_line << "INSTALL_PROG=/usr/bin/install -c -m 0755" unless Process.uid == 0
+           make_command_line << "target_prefix="
+ 
+           sh(*make_command_line, chdir: tmp_path)
+@@ -494,20 +495,7 @@ Java extension should be preferred.
      end
  
      def make
