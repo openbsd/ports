@@ -8,11 +8,14 @@ WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
 WANTLIB += KF5I18n KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets
 WANTLIB += KF5Service KF5Solid KF5SonnetCore KF5SonnetUi KF5SyntaxHighlighting
-WANTLIB += KF5TextEditTextToSpeech KF5WidgetsAddons KF5WindowSystem
-WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Widgets Qt5Xml X11 m
+WANTLIB += KF5TextEditTextToSpeech KF5TextEmoticonsCore KF5TextEmoticonsWidgets
+WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
+WANTLIB += X11 m
 
 WANTLIB += lib/inotify/inotify
+
+
 
 
 

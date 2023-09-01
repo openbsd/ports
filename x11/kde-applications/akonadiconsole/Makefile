@@ -7,19 +7,21 @@ WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Auth KF5AuthCore
 WANTLIB += KF5CalendarCore KF5Codecs KF5Completion KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5Contacts KF5CoreAddons
 WANTLIB += KF5Crash KF5DBusAddons KF5I18n KF5ItemModels KF5ItemViews
-WANTLIB += KF5KIOCore KF5PimCommon KF5Service KF5SonnetUi KF5TextAutoCorrectionCore
-WANTLIB += KF5TextAutoCorrectionWidgets KF5TextEditTextToSpeech
-WANTLIB += KF5TextWidgets KF5WidgetsAddons KF5XmlGui KPim5AkonadiCalendar
-WANTLIB += KPim5AkonadiContact KPim5AkonadiCore KPim5AkonadiMime
-WANTLIB += KPim5AkonadiPrivate KPim5AkonadiSearchCore KPim5AkonadiSearchXapian
-WANTLIB += KPim5AkonadiWidgets KPim5AkonadiXml KPim5CalendarSupport
+WANTLIB += KF5KIOCore KF5Service KF5SonnetUi KF5TextAutoCorrectionCore
+WANTLIB += KF5TextAutoCorrectionWidgets KF5TextWidgets KF5WidgetsAddons
+WANTLIB += KF5XmlGui KPim5AkonadiCalendar KPim5AkonadiContact
+WANTLIB += KPim5AkonadiCore KPim5AkonadiMime KPim5AkonadiPrivate
+WANTLIB += KPim5AkonadiSearchCore KPim5AkonadiSearchXapian KPim5AkonadiWidgets
+WANTLIB += KPim5AkonadiXml KPim5CalendarSupport KPim5ContactEditor
 WANTLIB += KPim5GrantleeTheme KPim5IdentityManagement KPim5Libkdepim
 WANTLIB += KPim5Libkleo KPim5MessageCore KPim5MessageViewer KPim5Mime
-WANTLIB += KPim5MimeTreeParser KPim5TextEdit Qt5Concurrent Qt5Core
-WANTLIB += Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Sql Qt5Widgets
-WANTLIB += Qt5Xml assuan c gpgme gpgmepp m qgpgme xapian
+WANTLIB += KPim5MimeTreeParser KPim5PimCommon KPim5TextEdit Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Sql
+WANTLIB += Qt5Widgets Qt5Xml assuan c gpgme gpgmepp m qgpgme xapian
 
 WANTLIB += lib/inotify/inotify
+
+
 
 
 MODKDE5_TRANSLATIONS = yes

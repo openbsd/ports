@@ -4,9 +4,9 @@ CATEGORIES =	devel
 
 SHARED_LIBS +=  KPim5Tnef                 0.0 # 0.0
 
-WANTLIB += ${COMPILER_LIBCXX} KF5CalendarCore KF5ConfigCore KF5ConfigGui
-WANTLIB += KF5Contacts KF5CoreAddons KF5I18n KPim5CalendarUtils
-WANTLIB += Qt5Core Qt5Gui Qt5Widgets Qt5Xml m
+WANTLIB += ${COMPILER_LIBCXX} KF5CalendarCore KF5Contacts KF5CoreAddons
+WANTLIB += KF5I18n KPim5CalendarUtils Qt5Core Qt5Gui Qt5Widgets
+WANTLIB += m
 
 
 MODKDE5_TRANSLATIONS = yes

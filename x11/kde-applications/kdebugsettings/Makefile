@@ -2,7 +2,8 @@ COMMENT =	application to edit QLoggingCategory
 DISTNAME =	kdebugsettings-${VERSION}
 CATEGORIES =	x11 sysutils
 
-SHARED_LIBS +=  kdebugsettings         4.0 # 5.0
+SHARED_LIBS +=  kdebugsettings         5.0 # 5.0
+SHARED_LIBS +=  kdebugsettingscore     0.0 # 5.0
 
 HOMEPAGE =	https://apps.kde.org/kdebugsettings/
 
@@ -13,8 +14,6 @@ WANTLIB += KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Widgets Qt5Xml
 WANTLIB += c m
 
 WANTLIB += lib/inotify/inotify
-
-
 
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DESKTOP_FILE = yes

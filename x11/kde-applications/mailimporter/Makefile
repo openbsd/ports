@@ -2,17 +2,16 @@ COMMENT =	KDE PIM mail importer library
 DISTNAME =	mailimporter-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  KPim5MailImporter         0.0 # 0.0
-SHARED_LIBS +=  KPim5MailImporterAkonadi  0.0 # 0.0
+SHARED_LIBS +=  KPim5MailImporter         1.0 # 0.0
+SHARED_LIBS +=  KPim5MailImporterAkonadi  1.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5AuthCore KF5Codecs
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
-WANTLIB += KF5I18n KF5ItemModels KF5KIOCore KF5PimCommon KF5Service
-WANTLIB += KF5TextAutoCorrectionCore KF5TextAutoCorrectionWidgets
-WANTLIB += KF5TextEditTextToSpeech KF5WidgetsAddons KPim5AkonadiCore
-WANTLIB += KPim5AkonadiMime KPim5Mime KPim5TextEdit Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
-WANTLIB += m
+WANTLIB += KF5I18n KF5ItemModels KF5KIOCore KF5Service KF5TextAutoCorrectionCore
+WANTLIB += KF5TextAutoCorrectionWidgets KF5WidgetsAddons KPim5AkonadiCore
+WANTLIB += KPim5AkonadiMime KPim5Mime KPim5PimCommon KPim5TextEdit
+WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets
+WANTLIB += Qt5Xml m
 
 MODKDE5_TRANSLATIONS = yes
 

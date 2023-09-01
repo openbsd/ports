@@ -3,7 +3,9 @@ DISTNAME =	dolphin-${VERSION}
 PKGNAME =	dolphin-kf5-${VERSION}
 CATEGORIES =	x11
 
-SHARED_LIBS +=  dolphinprivate            9.0 # 5.0
+HOMEPAGE =	https://apps.kde.org/dolphin
+
+SHARED_LIBS +=  dolphinprivate            10.0 # 5.0
 SHARED_LIBS +=  dolphinvcs                2.1 # 5.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Activities KF5Attica KF5Auth

@@ -4,20 +4,23 @@ COMMENT =	news feed reader
 DISTNAME =	akregator-${VERSION}
 CATEGORIES =	net www
 
+HOMEPAGE =	https://apps.kde.org/akregator
+
 SHARED_LIBS +=  akregatorinterfaces       2.0 # 5.13.2
-SHARED_LIBS +=  akregatorprivate          3.0 # 5.13.2
+SHARED_LIBS +=  akregatorprivate          3.1 # 5.13.2
+
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Auth KF5AuthCore
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5Contacts KF5CoreAddons KF5Crash
 WANTLIB += KF5I18n KF5ItemModels KF5JobWidgets KF5KCMUtils KF5KIOCore
 WANTLIB += KF5KIOGui KF5KIOWidgets KF5Notifications KF5NotifyConfig
-WANTLIB += KF5Parts KF5PimCommon KF5Service KF5Solid KF5SonnetUi
-WANTLIB += KF5Syndication KF5TextAutoCorrectionCore KF5TextAutoCorrectionWidgets
+WANTLIB += KF5Parts KF5Service KF5Solid KF5SonnetUi KF5Syndication
+WANTLIB += KF5TextAutoCorrectionCore KF5TextAutoCorrectionWidgets
 WANTLIB += KF5TextEditTextToSpeech KF5TextWidgets KF5WidgetsAddons
 WANTLIB += KF5WindowSystem KF5XmlGui KPim5AkonadiCore KPim5AkonadiMime
 WANTLIB += KPim5GrantleeTheme KPim5KontactInterface KPim5Libkdepim
 WANTLIB += KPim5Libkleo KPim5MessageCore KPim5MessageViewer KPim5Mime
-WANTLIB += KPim5MimeTreeParser KPim5TextEdit KPim5WebEngineViewer
+WANTLIB += KPim5MimeTreeParser KPim5PimCommon KPim5TextEdit KPim5WebEngineViewer
 WANTLIB += KUserFeedbackCore KUserFeedbackWidgets Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport
 WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5WebChannel Qt5WebEngineCore
@@ -25,8 +28,6 @@ WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml X11 assuan c
 WANTLIB += gpgme gpgmepp m qgpgme
 
 WANTLIB += lib/inotify/inotify
-
-
 
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_ICON_CACHE = yes

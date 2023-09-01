@@ -1,5 +1,7 @@
 COMMENT =	color contrast checker
 DISTNAME =	kontrast-${VERSION}
+# XXX Depends on FutureSQL
+VERSION =	23.04.3
 CATEGORIES =	x11 graphics
 
 WANTLIB += ${COMPILER_LIBCXX} KF5CoreAddons KF5I18n Qt5Core Qt5DBus

@@ -2,21 +2,20 @@ COMMENT =	PIM Akonadi import wizard
 DISTNAME =	akonadi-import-wizard-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  KPim5ImportWizard         0.0 # 0.0
+SHARED_LIBS +=  KPim5ImportWizard         1.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Archive KF5Auth
 WANTLIB += KF5AuthCore KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5Contacts KF5CoreAddons KF5Crash
-WANTLIB += KF5DBusAddons KF5I18n KF5ItemModels KF5KIOCore KF5PimCommon
-WANTLIB += KF5PimCommonAkonadi KF5Service KF5TextAutoCorrectionCore
-WANTLIB += KF5TextAutoCorrectionWidgets KF5TextEditTextToSpeech
-WANTLIB += KF5Wallet KF5WidgetsAddons KF5XmlGui KPim5AkonadiContact
-WANTLIB += KPim5AkonadiCore KPim5AkonadiMime KPim5AkonadiWidgets
-WANTLIB += KPim5GrantleeTheme KPim5IMAP KPim5IdentityManagement
-WANTLIB += KPim5IdentityManagementWidgets KPim5Libkdepim KPim5Libkleo
-WANTLIB += KPim5MailCommon KPim5MailImporter KPim5MailImporterAkonadi
-WANTLIB += KPim5MailTransport KPim5MessageComposer KPim5MessageCore
-WANTLIB += KPim5MessageViewer KPim5Mime KPim5MimeTreeParser KPim5TextEdit
+WANTLIB += KF5DBusAddons KF5I18n KF5ItemModels KF5KIOCore KF5Service
+WANTLIB += KF5TextAutoCorrectionCore KF5TextAutoCorrectionWidgets
+WANTLIB += KF5WidgetsAddons KF5XmlGui KPim5AkonadiContact KPim5AkonadiCore
+WANTLIB += KPim5AkonadiMime KPim5AkonadiWidgets KPim5GrantleeTheme
+WANTLIB += KPim5IMAP KPim5IdentityManagement KPim5IdentityManagementWidgets
+WANTLIB += KPim5Libkdepim KPim5Libkleo KPim5MailCommon KPim5MailImporter
+WANTLIB += KPim5MailImporterAkonadi KPim5MailTransport KPim5MessageComposer
+WANTLIB += KPim5MessageCore KPim5MessageViewer KPim5Mime KPim5MimeTreeParser
+WANTLIB += KPim5PimCommon KPim5PimCommonAkonadi KPim5TextEdit
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets
 WANTLIB += Qt5Xml assuan c gpgme gpgmepp m qgpgme qt5keychain
 

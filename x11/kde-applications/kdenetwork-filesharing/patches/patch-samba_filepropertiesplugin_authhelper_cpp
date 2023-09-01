@@ -3,7 +3,7 @@ Add OpenBSD usermod support
 Index: samba/filepropertiesplugin/authhelper.cpp
 --- samba/filepropertiesplugin/authhelper.cpp.orig
 +++ samba/filepropertiesplugin/authhelper.cpp
-@@ -102,6 +102,12 @@ ActionReply AuthHelper::addtogroup(const QVariantMap &
+@@ -130,6 +130,12 @@ ActionReply AuthHelper::addtogroup(const QVariantMap &
          QStringLiteral("{%1}").arg(group),
          QStringLiteral("-m"),
          QStringLiteral("{%1}").arg(user) });

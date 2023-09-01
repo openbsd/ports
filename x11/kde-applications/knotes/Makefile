@@ -14,17 +14,17 @@ WANTLIB += KF5Contacts KF5CoreAddons KF5Crash KF5DNSSD KF5GlobalAccel
 WANTLIB += KF5I18n KF5IconThemes KF5ItemModels KF5ItemViews KF5JobWidgets
 WANTLIB += KF5KCMUtils KF5KIOCore KF5KIOFileWidgets KF5KIOGui
 WANTLIB += KF5KIOWidgets KF5NewStuff KF5NewStuffCore KF5NewStuffWidgets
-WANTLIB += KF5Notifications KF5NotifyConfig KF5Parts KF5PimCommon
-WANTLIB += KF5PimCommonAkonadi KF5Service KF5Solid KF5SonnetUi
-WANTLIB += KF5TextAutoCorrectionCore KF5TextAutoCorrectionWidgets
-WANTLIB += KF5TextEditTextToSpeech KF5TextWidgets KF5WidgetsAddons
+WANTLIB += KF5Notifications KF5NotifyConfig KF5Parts KF5Service
+WANTLIB += KF5Solid KF5SonnetUi KF5TextAddonsWidgets KF5TextAutoCorrectionCore
+WANTLIB += KF5TextAutoCorrectionWidgets KF5TextWidgets KF5WidgetsAddons
 WANTLIB += KF5WindowSystem KF5XmlGui KPim5AkonadiAgentBase KPim5AkonadiContact
 WANTLIB += KPim5AkonadiCore KPim5AkonadiNotes KPim5AkonadiSearchDebug
 WANTLIB += KPim5AkonadiSearchPIM KPim5AkonadiWidgets KPim5CalendarUtils
 WANTLIB += KPim5GrantleeTheme KPim5IMAP KPim5KontactInterface
-WANTLIB += KPim5Libkdepim KPim5Mime KPim5TextEdit Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets
-WANTLIB += Qt5X11Extras Qt5Xml SM X11 Xext c m
+WANTLIB += KPim5Libkdepim KPim5Mime KPim5PimCommon KPim5PimCommonAkonadi
+WANTLIB += KPim5TextEdit Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
+WANTLIB += Qt5Network Qt5PrintSupport Qt5Widgets Qt5X11Extras
+WANTLIB += Qt5Xml SM X11 Xext c m
 
 
 MODKDE5_ICON_CACHE = yes

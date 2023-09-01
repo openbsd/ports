@@ -9,18 +9,21 @@ WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Archive KF5Auth
 WANTLIB += KF5AuthCore KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5Contacts KF5CoreAddons KF5Crash
 WANTLIB += KF5DBusAddons KF5I18n KF5ItemModels KF5JobWidgets KF5KIOCore
-WANTLIB += KF5KIOGui KF5KIOWidgets KF5PimCommon KF5Service KF5Solid
-WANTLIB += KF5SyntaxHighlighting KF5TextAutoCorrectionCore KF5TextAutoCorrectionWidgets
-WANTLIB += KF5TextEditTextToSpeech KF5WidgetsAddons KF5WindowSystem
-WANTLIB += KF5XmlGui KPim5AkonadiContact KPim5AkonadiCore KPim5AkonadiMime
-WANTLIB += KPim5AkonadiWidgets KPim5GrantleeTheme KPim5Libkleo
+WANTLIB += KF5KIOGui KF5KIOWidgets KF5Service KF5Solid KF5SyntaxHighlighting
+WANTLIB += KF5TextAutoCorrectionCore KF5TextAutoCorrectionWidgets
+WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui KPim5AkonadiContact
+WANTLIB += KPim5AkonadiCore KPim5AkonadiMime KPim5AkonadiWidgets
+WANTLIB += KPim5ContactEditor KPim5GrantleeTheme KPim5Libkleo
 WANTLIB += KPim5MessageCore KPim5MessageViewer KPim5Mime KPim5MimeTreeParser
-WANTLIB += KPim5TextEdit Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
-WANTLIB += Qt5Network Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels
-WANTLIB += Qt5Quick Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
-WANTLIB += Qt5Widgets Qt5Xml X11 assuan c gpgme gpgmepp m qgpgme
+WANTLIB += KPim5PimCommon KPim5TextEdit Qt5Concurrent Qt5Core
+WANTLIB += Qt5DBus Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport
+WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5WebChannel Qt5WebEngineCore
+WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml X11 assuan c
+WANTLIB += gpgme gpgmepp m qgpgme
 
 WANTLIB += lib/inotify/inotify
+
+
 
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DESKTOP_FILE = yes

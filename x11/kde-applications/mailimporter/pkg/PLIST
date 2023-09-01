@@ -66,14 +66,6 @@ include/KPim5/MailImporterAkonadi/mailimporterakonadi/
 include/KPim5/MailImporterAkonadi/mailimporterakonadi/filterimporterakonadi.h
 include/KPim5/MailImporterAkonadi/mailimporterakonadi/mailimporterakonadi_export.h
 include/KPim5/MailImporterAkonadi/mailimporterakonadi_version.h
-lib/cmake/KF5MailImporter/
-lib/cmake/KF5MailImporter/KF5MailImporterConfig.cmake
-lib/cmake/KF5MailImporter/KF5MailImporterConfigVersion.cmake
-lib/cmake/KF5MailImporterAkonadi/
-lib/cmake/KF5MailImporterAkonadi/KF5MailImporterAkonadiConfig.cmake
-lib/cmake/KF5MailImporterAkonadi/KF5MailImporterAkonadiConfigVersion.cmake
-lib/cmake/KF5MailImporterAkonadi/KPim5MailImporterAkonadiTargets${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/KF5MailImporterAkonadi/KPim5MailImporterAkonadiTargets.cmake
 lib/cmake/KPim5MailImporter/
 lib/cmake/KPim5MailImporter/KPim5MailImporterConfig.cmake
 lib/cmake/KPim5MailImporter/KPim5MailImporterConfigVersion.cmake

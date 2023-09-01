@@ -30,11 +30,7 @@ share/doc/HTML/en/kwordquiz/index.cache.bz2
 share/doc/HTML/en/kwordquiz/index.docbook
 share/doc/HTML/en/kwordquiz/kwordquiz-icon.png
 share/doc/HTML/en/kwordquiz/kwq-dlg-characters.png
-share/doc/HTML/en/kwordquiz/kwq-dlg-configure-appearance.png
-share/doc/HTML/en/kwordquiz/kwq-dlg-configure-characters.png
-share/doc/HTML/en/kwordquiz/kwq-dlg-configure-editor.png
-share/doc/HTML/en/kwordquiz/kwq-dlg-configure-general.png
-share/doc/HTML/en/kwordquiz/kwq-dlg-configure-quiz.png
+share/doc/HTML/en/kwordquiz/kwq-dlg-config.png
 share/doc/HTML/en/kwordquiz/kwq-dlg-languages.png
 share/doc/HTML/en/kwordquiz/kwq-dlg-print-exam.png
 share/doc/HTML/en/kwordquiz/kwq-dlg-print-flashcard.png
@@ -44,11 +40,7 @@ share/doc/HTML/en/kwordquiz/kwq-editor.png
 share/doc/HTML/en/kwordquiz/kwq-flashcard.png
 share/doc/HTML/en/kwordquiz/kwq-multiple.png
 share/doc/HTML/en/kwordquiz/kwq-qanda.png
-share/doc/HTML/en/kwordquiz/kwq-tutor-popup-minimalistic.png
-share/doc/HTML/en/kwordquiz/kwq-tutor-popup-native.png
-share/doc/HTML/en/kwordquiz/kwq-tutor-settings.png
-share/doc/HTML/en/kwordquiz/kwq-tutor-shortcuts.png
-share/doc/HTML/en/kwordquiz/kwq-tutor-welcome.png
+share/doc/HTML/en/kwordquiz/kwq-welcome.png
 share/doc/HTML/es/kwordquiz/
 share/doc/HTML/es/kwordquiz/index.cache.bz2
 share/doc/HTML/es/kwordquiz/index.docbook
@@ -136,6 +128,7 @@ share/icons/hicolor/32x32/mimetypes/application-x-kwordquiz.png
 share/icons/hicolor/48x48/apps/kwordquiz.png
 share/icons/hicolor/48x48/mimetypes/application-x-kwordquiz.png
 share/icons/hicolor/64x64/apps/kwordquiz.png
+share/icons/hicolor/scalable/apps/org.kde.kwordquiz.svg
 share/knotifications5/kwordquiz.notifyrc
 share/knsrcfiles/
 share/knsrcfiles/kwordquiz.knsrc
@@ -309,9 +302,6 @@ share/kwordquiz/icons/hicolor/scalable/actions/multiple.svgz
 share/kwordquiz/icons/hicolor/scalable/actions/qa.svgz
 share/kwordquiz/icons/hicolor/scalable/actions/question.svgz
 share/kwordquiz/icons/hicolor/scalable/actions/unmarkasblank.svgz
-share/kxmlgui5/
-share/kxmlgui5/kwordquiz/
-share/kxmlgui5/kwordquiz/kwordquizui.rc
 share/locale/ar/LC_MESSAGES/kwordquiz.mo
 share/locale/be/LC_MESSAGES/kwordquiz.mo
 share/locale/bg/LC_MESSAGES/kwordquiz.mo

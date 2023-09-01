@@ -4,22 +4,23 @@ COMMENT =	KDE File Manager & Web Browser
 DISTNAME =	konqueror-${VERSION}
 CATEGORIES =	www
 
-SHARED_LIBS +=  KF5Konq              1.2 # 5.97.0
+SHARED_LIBS +=  KF5Konq              1.3 # 5.97.0
 SHARED_LIBS +=  konquerorprivate     1.1 # 5.97.0
 SHARED_LIBS +=  konqsidebarplugin    1.1 # 20.08.0
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5AuthCore KF5Bookmarks
-WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
-WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5Crash KF5DBusAddons
-WANTLIB += KF5GuiAddons KF5I18n KF5IconThemes KF5ItemViews KF5JobWidgets
-WANTLIB += KF5KCMUtils KF5KIOCore KF5KIOFileWidgets KF5KIOGui
-WANTLIB += KF5KIOWidgets KF5Notifications KF5Parts KF5Pty KF5Service
-WANTLIB += KF5Solid KF5SonnetCore KF5SonnetUi KF5Su KF5TextWidgets
-WANTLIB += KF5Wallet KF5WidgetsAddons KF5WindowSystem KF5XmlGui
-WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Positioning
-WANTLIB += Qt5PrintSupport Qt5Qml Qt5QmlModels Qt5Quick Qt5TextToSpeech
-WANTLIB += Qt5WebChannel Qt5WebEngine Qt5WebEngineCore Qt5WebEngineWidgets
-WANTLIB += Qt5Widgets Qt5X11Extras Qt5Xml X11 c m z
+WANTLIB += ${COMPILER_LIBCXX} KF5Activities KF5Archive KF5Auth
+WANTLIB += KF5AuthCore KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
+WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
+WANTLIB += KF5DBusAddons KF5GuiAddons KF5I18n KF5IconThemes KF5ItemViews
+WANTLIB += KF5JobWidgets KF5KCMUtils KF5KIOCore KF5KIOFileWidgets
+WANTLIB += KF5KIOGui KF5KIOWidgets KF5Notifications KF5Parts KF5Pty
+WANTLIB += KF5Service KF5Solid KF5SonnetCore KF5SonnetUi KF5Su
+WANTLIB += KF5TextWidgets KF5Wallet KF5WidgetsAddons KF5WindowSystem
+WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
+WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels
+WANTLIB += Qt5Quick Qt5TextToSpeech Qt5WebChannel Qt5WebEngine
+WANTLIB += Qt5WebEngineCore Qt5WebEngineWidgets Qt5Widgets Qt5X11Extras
+WANTLIB += Qt5Xml X11 c m z
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -49,6 +50,7 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/ki18n \
 		devel/kf5/kiconthemes \
 		devel/kf5/kio \
+		devel/kf5/kactivities \
 		devel/kf5/kitemviews \
 		devel/kf5/kjobwidgets \
 		devel/kf5/knotifications \

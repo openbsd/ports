@@ -6,7 +6,7 @@ PKGNAME =	kdepim-runtime-kf5-${VERSION}
 CATEGORIES =	devel
 
 SHARED_LIBS +=  akonadi-filestore           1.0 # 5.13.2
-SHARED_LIBS +=  akonadi-singlefileresource  1.0 # 5.13.2
+SHARED_LIBS +=  akonadi-singlefileresource  2.0 # 5.13.2
 SHARED_LIBS +=  folderarchivesettings       1.0 # 5.13.2
 SHARED_LIBS +=  kmindexreader               1.0 # 5.13.2
 SHARED_LIBS +=  maildir                     1.0 # 5.13.2
@@ -24,12 +24,12 @@ WANTLIB += KPim5AkonadiMime KPim5AkonadiNotes KPim5AkonadiWidgets
 WANTLIB += KPim5GAPICalendar KPim5GAPICore KPim5GAPIPeople KPim5GAPITasks
 WANTLIB += KPim5GrantleeTheme KPim5IMAP KPim5IdentityManagement
 WANTLIB += KPim5IdentityManagementWidgets KPim5Ldap KPim5Libkdepim
-WANTLIB += KPim5MailTransport KPim5MailTransportAkonadi KPim5Mbox
-WANTLIB += KPim5Mime Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5NetworkAuth Qt5Positioning Qt5PrintSupport Qt5Qml
-WANTLIB += Qt5QmlModels Qt5Quick Qt5TextToSpeech Qt5WebChannel
-WANTLIB += Qt5WebEngineCore Qt5WebEngineWidgets Qt5Widgets Qt5Xml
-WANTLIB += X11 c m qca-qt5 qt5keychain sasl2
+WANTLIB += KPim5MailTransport KPim5Mbox KPim5Mime KPim5TextEdit
+WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5NetworkAuth
+WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels
+WANTLIB += Qt5Quick Qt5TextToSpeech Qt5WebChannel Qt5WebEngineCore
+WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml X11 c m qca-qt5
+WANTLIB += qt5keychain sasl2
 
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DESKTOP_FILE = yes

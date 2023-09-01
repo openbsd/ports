@@ -4,20 +4,21 @@ CATEGORIES =	textproc
 
 HOMEPAGE =	https://okular.kde.org/
 
-SHARED_LIBS +=  Okular5Core               4.2 # 9.0
+SHARED_LIBS +=  Okular5Core               5.0 # 9.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Activities KF5Archive KF5Auth
 WANTLIB += KF5AuthCore KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
-WANTLIB += KF5I18n KF5IconThemes KF5ItemViews KF5JS KF5JSApi KF5JobWidgets
+WANTLIB += KF5I18n KF5IconThemes KF5ItemViews KF5JS KF5JobWidgets
 WANTLIB += KF5KExiv2 KF5KHtml KF5KIOCore KF5KIOFileWidgets KF5KIOGui
 WANTLIB += KF5KIOWidgets KF5Parts KF5Pty KF5Purpose KF5PurposeWidgets
 WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5TextWidgets KF5ThreadWeaver
 WANTLIB += KF5Wallet KF5WidgetsAddons KF5WindowSystem KF5XmlGui
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Svg Qt5TextToSpeech Qt5Widgets Qt5X11Extras Qt5Xml
-WANTLIB += X11 c chm djvulibre epub freetype jpeg m markdown phonon4qt5
-WANTLIB += poppler poppler-qt5 qmobipocket spectre tiff z zip
+WANTLIB += Qt5Qml Qt5Svg Qt5TextToSpeech Qt5Widgets Qt5X11Extras
+WANTLIB += Qt5Xml X11 c chm djvulibre epub freetype jpeg m markdown
+WANTLIB += phonon4qt5 poppler poppler-qt5 qmobipocket spectre
+WANTLIB += tiff z zip
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

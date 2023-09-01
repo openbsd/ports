@@ -2,19 +2,19 @@ COMMENT =	sieve script library
 DISTNAME =	libksieve-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  KPim5KManageSieve         0.0 # 0.0
+SHARED_LIBS +=  KPim5KManageSieve         1.0 # 0.0
 SHARED_LIBS +=  KPim5KSieve               0.0 # 0.0
-SHARED_LIBS +=  KPim5KSieveUi             0.0 # 0.0
+SHARED_LIBS +=  KPim5KSieveUi             1.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Attica KF5Auth KF5AuthCore
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5I18n KF5IconThemes
 WANTLIB += KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets KF5NewStuffCore
-WANTLIB += KF5PimCommon KF5Service KF5Solid KF5SonnetUi KF5SyntaxHighlighting
+WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5SyntaxHighlighting
 WANTLIB += KF5TextAutoCorrectionCore KF5TextAutoCorrectionWidgets
-WANTLIB += KF5TextEditTextToSpeech KF5Wallet KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KPim5IdentityManagement KPim5Libkdepim
-WANTLIB += KPim5MailTransport KPim5Mime KPim5TextEdit Qt5Concurrent
+WANTLIB += KF5TextEditTextToSpeech KF5WidgetsAddons KF5WindowSystem
+WANTLIB += KPim5IdentityManagement KPim5Libkdepim KPim5MailTransport
+WANTLIB += KPim5Mime KPim5PimCommon KPim5TextEdit Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport
 WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5WebChannel Qt5WebEngineCore
 WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml X11 m sasl2

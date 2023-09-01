@@ -1,6 +1,18 @@
 @pkgpath x11/kde4/kturtle
 @bin bin/kturtle
 share/applications/org.kde.kturtle.desktop
+share/doc/HTML/ar/
+share/doc/HTML/ar/kturtle/
+share/doc/HTML/ar/kturtle/getting-started.docbook
+share/doc/HTML/ar/kturtle/glossary.docbook
+share/doc/HTML/ar/kturtle/index.cache.bz2
+share/doc/HTML/ar/kturtle/index.docbook
+share/doc/HTML/ar/kturtle/mainwindow.png
+share/doc/HTML/ar/kturtle/mainwindow_flower_nrs.png
+share/doc/HTML/ar/kturtle/media-playback-pause.png
+share/doc/HTML/ar/kturtle/programming-reference.docbook
+share/doc/HTML/ar/kturtle/translator-guide.docbook
+share/doc/HTML/ar/kturtle/using-kturtle.docbook
 share/doc/HTML/ca/kturtle/
 share/doc/HTML/ca/kturtle/getting-started.docbook
 share/doc/HTML/ca/kturtle/glossary.docbook

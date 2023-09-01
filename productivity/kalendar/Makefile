@@ -2,7 +2,9 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	Akonadi calendar application
 
-DISTNAME =	kalendar-${MODKDE_VERSION}
+# XXX Renamed to Merkuro
+VERSION =	23.04.3
+DISTNAME =	kalendar-${VERSION}
 
 CATEGORIES =	productivity x11
 
@@ -13,7 +15,7 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 # GPLv3+, LGPL-2.1+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
+MASTER_SITES =	${MASTER_SITE_KDE:=stable/release-service/${VERSION}/src/}
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Auth KF5AuthCore
 WANTLIB += KF5CalendarCore KF5Codecs KF5Completion KF5ConfigCore

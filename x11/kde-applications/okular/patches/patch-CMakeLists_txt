@@ -1,7 +1,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -588,7 +588,7 @@ if (KF5Purpose_FOUND)
+@@ -607,7 +607,7 @@ if (KF5Purpose_FOUND)
      target_link_libraries(okularpart KF5::PurposeWidgets)
  endif()
  

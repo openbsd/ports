@@ -2,7 +2,7 @@ COMMENT =	LDAP access API for KDE
 DISTNAME =	kldap-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  KPim5Ldap                 0.0 # 0.0
+SHARED_LIBS +=  KPim5Ldap                 1.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5ConfigCore KF5ConfigGui KF5CoreAddons
 WANTLIB += KF5I18n KF5KIOCore KF5Service KF5WidgetsAddons Qt5Concurrent

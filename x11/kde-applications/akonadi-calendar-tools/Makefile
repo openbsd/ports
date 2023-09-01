@@ -5,9 +5,8 @@ CATEGORIES =	devel
 WANTLIB += ${COMPILER_LIBCXX} KF5CalendarCore KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5CoreAddons KF5I18n KF5ItemModels KF5WidgetsAddons
 WANTLIB += KPim5AkonadiCalendar KPim5AkonadiCore KPim5CalendarSupport
-WANTLIB += KPim5CalendarUtils KPim5IdentityManagement KPim5Mime
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5PrintSupport Qt5Widgets Qt5Xml
-WANTLIB += c m
+WANTLIB += KPim5IdentityManagement KPim5Mime Qt5Core Qt5DBus Qt5Gui
+WANTLIB += Qt5PrintSupport Qt5Widgets Qt5Xml c m
 
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_ICON_CACHE = yes

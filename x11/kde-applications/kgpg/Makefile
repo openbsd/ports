@@ -10,11 +10,13 @@ WANTLIB += KF5JobWidgets KF5KIOCore KF5KIOFileWidgets KF5KIOGui
 WANTLIB += KF5KIOWidgets KF5Notifications KF5Service KF5Solid
 WANTLIB += KF5SonnetUi KF5TextWidgets KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui KPim5AkonadiContact KPim5AkonadiCore KPim5AkonadiWidgets
-WANTLIB += KPim5GrantleeTheme Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
-WANTLIB += Qt5Network Qt5PrintSupport Qt5Widgets Qt5Xml X11 c
-WANTLIB += m
+WANTLIB += KPim5ContactEditor KPim5GrantleeTheme Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets
+WANTLIB += Qt5Xml X11 c m
 
 WANTLIB += lib/inotify/inotify
+
+
 
 
 

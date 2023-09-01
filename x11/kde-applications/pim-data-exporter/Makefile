@@ -9,20 +9,20 @@ WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
 WANTLIB += KF5Contacts KF5CoreAddons KF5Crash KF5DBusAddons KF5I18n
 WANTLIB += KF5ItemModels KF5ItemViews KF5JobWidgets KF5KIOCore
 WANTLIB += KF5KIOFileWidgets KF5KIOGui KF5KIOWidgets KF5Notifications
-WANTLIB += KF5PimCommon KF5PimCommonAkonadi KF5Service KF5Solid
-WANTLIB += KF5TextAutoCorrectionCore KF5TextAutoCorrectionWidgets
-WANTLIB += KF5TextEditTextToSpeech KF5Wallet KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KF5XmlGui KPim5AkonadiContact KPim5AkonadiCore
-WANTLIB += KPim5AkonadiMime KPim5AkonadiNotes KPim5AkonadiWidgets
-WANTLIB += KPim5GrantleeTheme KPim5IMAP KPim5IdentityManagement
+WANTLIB += KF5Service KF5Solid KF5TextAutoCorrectionCore KF5TextAutoCorrectionWidgets
+WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui KPim5AkonadiContact
+WANTLIB += KPim5AkonadiCore KPim5AkonadiMime KPim5AkonadiNotes
+WANTLIB += KPim5AkonadiWidgets KPim5GrantleeTheme KPim5IMAP KPim5IdentityManagement
 WANTLIB += KPim5IdentityManagementWidgets KPim5Libkdepim KPim5Libkleo
 WANTLIB += KPim5MailCommon KPim5MailTransport KPim5MessageComposer
-WANTLIB += KPim5MessageCore KPim5MessageViewer KPim5Mime KPim5MimeTreeParser
+WANTLIB += KPim5MessageCore KPim5Mime KPim5PimCommon KPim5PimCommonAkonadi
 WANTLIB += KPim5TextEdit KUserFeedbackCore KUserFeedbackWidgets
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets
 WANTLIB += Qt5Xml X11 assuan c gpgme gpgmepp m qgpgme
 
 WANTLIB += lib/inotify/inotify
+
+
 
 
 

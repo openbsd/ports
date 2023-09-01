@@ -1,5 +1,6 @@
 @bin bin/kdebugsettings
 @lib lib/libkdebugsettings.so.${LIBkdebugsettings_VERSION}
+@lib lib/libkdebugsettingscore.so.${LIBkdebugsettingscore_VERSION}
 share/applications/org.kde.kdebugsettings.desktop
 share/kdebugsettings/
 share/kdebugsettings/groups/

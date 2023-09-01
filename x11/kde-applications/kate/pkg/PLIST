@@ -29,6 +29,7 @@ lib/qt5/plugins/ktexteditor/
 @so lib/qt5/plugins/ktexteditor/ktexteditorpreviewplugin.so
 @so lib/qt5/plugins/ktexteditor/latexcompletionplugin.so
 @so lib/qt5/plugins/ktexteditor/lspclientplugin.so
+@so lib/qt5/plugins/ktexteditor/openlinkplugin.so
 @so lib/qt5/plugins/ktexteditor/rainbowparens.so
 @so lib/qt5/plugins/ktexteditor/tabswitcherplugin.so
 @so lib/qt5/plugins/ktexteditor/textfilterplugin.so
@@ -468,6 +469,7 @@ share/locale/az/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/az/LC_MESSAGES/katefiletree.mo
 share/locale/az/LC_MESSAGES/kategdbplugin.mo
 share/locale/az/LC_MESSAGES/kategitblameplugin.mo
+share/locale/az/LC_MESSAGES/katekeyboardmacros.mo
 share/locale/az/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/az/LC_MESSAGES/kateproject.mo
 share/locale/az/LC_MESSAGES/katesearch.mo
@@ -1140,6 +1142,7 @@ share/locale/ko/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/ko/LC_MESSAGES/katefiletree.mo
 share/locale/ko/LC_MESSAGES/kategdbplugin.mo
 share/locale/ko/LC_MESSAGES/kategitblameplugin.mo
+share/locale/ko/LC_MESSAGES/katekeyboardmacros.mo
 share/locale/ko/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/ko/LC_MESSAGES/kateproject.mo
 share/locale/ko/LC_MESSAGES/katesearch.mo

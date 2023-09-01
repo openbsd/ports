@@ -3,13 +3,12 @@ USE_WXNEEDED =	Yes
 COMMENT =	BitTorrent Client
 
 DISTNAME =	ktorrent-${MODKDE_VERSION}
-REVISION =	0
 
 SHARED_LIBS +=  ktcore                    3.0 # 0.0
 
 CATEGORIES =	net
 
-HOMEPAGE =	https://www.kde.org/applications/internet/ktorrent/
+HOMEPAGE =	https://apps.kde.org/ktorrent/
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 

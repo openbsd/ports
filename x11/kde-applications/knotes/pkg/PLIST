@@ -2,6 +2,7 @@
 @bin bin/knotes
 @lib lib/libknotesprivate.so.${LIBknotesprivate_VERSION}
 @lib lib/libnotesharedprivate.so.${LIBnotesharedprivate_VERSION}
+lib/qt5/plugins/pim5/kcms/
 lib/qt5/plugins/pim5/kcms/knotes/
 @so lib/qt5/plugins/pim5/kcms/knotes/kcm_knote_action.so
 @so lib/qt5/plugins/pim5/kcms/knotes/kcm_knote_collection.so
@@ -167,7 +168,9 @@ share/locale/el/LC_MESSAGES/libnoteshared.mo
 share/locale/en_GB/LC_MESSAGES/akonadi_notes_agent.mo
 share/locale/en_GB/LC_MESSAGES/knotes.mo
 share/locale/en_GB/LC_MESSAGES/libnoteshared.mo
+share/locale/eo/LC_MESSAGES/akonadi_notes_agent.mo
 share/locale/eo/LC_MESSAGES/knotes.mo
+share/locale/eo/LC_MESSAGES/libnoteshared.mo
 share/locale/es/LC_MESSAGES/akonadi_notes_agent.mo
 share/locale/es/LC_MESSAGES/knotes.mo
 share/locale/es/LC_MESSAGES/libnoteshared.mo

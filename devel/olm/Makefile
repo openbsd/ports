@@ -1,5 +1,5 @@
 COMMENT =	Double Ratchet cryptographic ratchet in C++
-V =		3.2.14
+V =		3.2.15
 DISTNAME =	olm-${V}
 CATEGORIES =	devel security
 

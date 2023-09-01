@@ -61,6 +61,18 @@ share/examples/kalarm/
 share/examples/kalarm/xdg/
 share/examples/kalarm/xdg/autostart/
 share/examples/kalarm/xdg/autostart/kalarm.autostart.desktop
+share/icons/breeze-dark/16x16/
+share/icons/breeze-dark/16x16/actions/
+share/icons/breeze-dark/16x16/actions/show-today.svg
+share/icons/breeze-dark/22x22/
+share/icons/breeze-dark/22x22/actions/
+share/icons/breeze-dark/22x22/actions/show-today.svg
+share/icons/breeze/16x16/
+share/icons/breeze/16x16/actions/
+share/icons/breeze/16x16/actions/show-today.svg
+share/icons/breeze/22x22/
+share/icons/breeze/22x22/actions/
+share/icons/breeze/22x22/actions/show-today.svg
 share/icons/hicolor/128x128/apps/kalarm.png
 share/icons/hicolor/16x16/apps/kalarm.png
 share/icons/hicolor/22x22/apps/kalarm.png
@@ -75,6 +87,7 @@ share/kalarm/icons/oxygen/16x16/actions/
 share/kalarm/icons/oxygen/16x16/actions/document-new-from-template.png
 share/kalarm/icons/oxygen/16x16/actions/new-audio-alarm.png
 share/kalarm/icons/oxygen/16x16/actions/new-command-alarm.png
+share/kalarm/icons/oxygen/16x16/actions/show-today.svg
 share/kalarm/icons/oxygen/22x22/
 share/kalarm/icons/oxygen/22x22/actions/
 share/kalarm/icons/oxygen/22x22/actions/document-new-from-template.png
@@ -83,6 +96,7 @@ share/kalarm/icons/oxygen/22x22/actions/kalarm-partdisabled.png
 share/kalarm/icons/oxygen/22x22/actions/kalarm.png
 share/kalarm/icons/oxygen/22x22/actions/new-audio-alarm.png
 share/kalarm/icons/oxygen/22x22/actions/new-command-alarm.png
+share/kalarm/icons/oxygen/22x22/actions/show-today.svg
 share/knotifications5/kalarm.notifyrc
 share/kxmlgui5/
 share/kxmlgui5/kalarm/
@@ -168,3 +182,5 @@ share/qlogging-categories5/kalarm.categories
 share/qlogging-categories5/kalarm.renamecategories
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/breeze-dark
+@tag gtk-update-icon-cache %D/share/icons/breeze

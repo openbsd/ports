@@ -2,12 +2,11 @@ COMMENT =	library for the handling of calendar data.
 DISTNAME =	kcalutils-${VERSION}
 CATEGORIES =	productivity
 
-SHARED_LIBS +=  KPim5CalendarUtils        0.0 # 0.0
+SHARED_LIBS +=  KPim5CalendarUtils        1.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5CalendarCore
-WANTLIB += KF5Codecs KF5ConfigCore KF5ConfigGui KF5CoreAddons
-WANTLIB += KF5I18n KF5IconThemes KF5WidgetsAddons KPim5IdentityManagement
-WANTLIB += Qt5Core Qt5Gui Qt5Widgets Qt5Xml m
+WANTLIB += KF5Codecs KF5CoreAddons KF5I18n KF5IconThemes KF5WidgetsAddons
+WANTLIB += KPim5IdentityManagement Qt5Core Qt5Gui Qt5Widgets m
 
 MODKDE5_TRANSLATIONS = yes
 

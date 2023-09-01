@@ -3,7 +3,7 @@ DISTNAME =	libkgapi-${VERSION}
 CATEGORIES =	www devel
 
 SHARED_LIBS +=  KPim5GAPIBlogger          0.0 # 0.0
-SHARED_LIBS +=  KPim5GAPICalendar         0.0 # 0.0
+SHARED_LIBS +=  KPim5GAPICalendar         1.0 # 0.0
 SHARED_LIBS +=  KPim5GAPICore             0.0 # 0.0
 SHARED_LIBS +=  KPim5GAPIDrive            0.0 # 0.0
 SHARED_LIBS +=  KPim5GAPILatitude         0.0 # 0.0
@@ -14,7 +14,6 @@ SHARED_LIBS +=  kdexoauth2                3.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5CalendarCore KF5Contacts KF5Wallet
 WANTLIB += Qt5Core Qt5Gui Qt5Network m
-
 
 MODKDE5_TRANSLATIONS = yes
 

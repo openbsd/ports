@@ -2,9 +2,9 @@ COMMENT =	download manager for KDE
 DISTNAME =	kget-${VERSION}
 CATEGORIES =	net www
 
-HOMEPAGE =	https://www.kde.org/applications/internet/kget/
+HOMEPAGE =	https://apps.kde.org/kget
 
-SHARED_LIBS +=  kgetcore                  4.0 # 5.0
+SHARED_LIBS +=  kgetcore                  4.1 # 5.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5AuthCore KF5Codecs
 WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets

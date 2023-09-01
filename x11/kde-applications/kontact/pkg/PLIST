@@ -138,9 +138,6 @@ share/locale/uz@cyrillic/LC_MESSAGES/kontact.mo
 share/locale/wa/LC_MESSAGES/kontact.mo
 share/locale/zh_CN/LC_MESSAGES/kontact.mo
 share/locale/zh_TW/LC_MESSAGES/kontact.mo
-share/messageviewer/
-share/messageviewer/about/
-share/messageviewer/about/default/
 share/messageviewer/about/default/introduction_kontact.html
 share/messageviewer/about/default/loading_kontact.html
 share/metainfo/org.kde.kontact.appdata.xml

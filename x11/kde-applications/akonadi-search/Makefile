@@ -3,7 +3,7 @@ DISTNAME =	akonadi-search-${VERSION}
 CATEGORIES =	devel
 
 SHARED_LIBS +=  KPim5AkonadiSearchCore           1.0 # 5.13.2
-SHARED_LIBS +=  KPim5AkonadiSearchDebug          2.0 # 5.13.2
+SHARED_LIBS +=  KPim5AkonadiSearchDebug          3.0 # 5.13.2
 SHARED_LIBS +=  KPim5AkonadiSearchPIM            1.0 # 5.13.2
 SHARED_LIBS +=  KPim5AkonadiSearchXapian         1.0 # 5.13.2
 
@@ -16,8 +16,6 @@ WANTLIB += KPim5AkonadiMime KPim5Mime Qt5Core Qt5DBus Qt5Gui Qt5Widgets
 WANTLIB += Qt5Xml c m xapian
 
 WANTLIB += lib/inotify/inotify
-
-
 
 MODKDE5_TRANSLATIONS = yes
 

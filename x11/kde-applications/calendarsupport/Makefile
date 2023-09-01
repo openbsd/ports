@@ -2,23 +2,20 @@ COMMENT =	PIM calendar support library
 DISTNAME =	calendarsupport-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  KPim5CalendarSupport      0.0 # 0.0
+SHARED_LIBS +=  KPim5CalendarSupport      1.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5CalendarCore
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5GuiAddons KF5Holidays
 WANTLIB += KF5I18n KF5ItemModels KF5JobWidgets KF5KIOCore KF5KIOGui
-WANTLIB += KF5KIOWidgets KF5Service KF5Solid KF5TextEditTextToSpeech
-WANTLIB += KF5WidgetsAddons KF5WindowSystem KPim5AkonadiCalendar
-WANTLIB += KPim5AkonadiCore KPim5AkonadiNotes KPim5AkonadiWidgets
-WANTLIB += KPim5CalendarUtils KPim5IdentityManagement KPim5Mime
-WANTLIB += KPim5TextEdit Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
-WANTLIB += Qt5Network Qt5PrintSupport Qt5Widgets Qt5Xml X11 m
+WANTLIB += KF5KIOWidgets KF5Service KF5Solid KF5WidgetsAddons
+WANTLIB += KF5WindowSystem KPim5AkonadiCalendar KPim5AkonadiCore
+WANTLIB += KPim5AkonadiNotes KPim5AkonadiWidgets KPim5CalendarUtils
+WANTLIB += KPim5IdentityManagement KPim5Mime KPim5TextEdit Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets
+WANTLIB += Qt5Xml X11 m
 
 WANTLIB += lib/inotify/inotify
-
-
-
 
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes

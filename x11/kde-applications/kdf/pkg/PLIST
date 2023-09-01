@@ -2,7 +2,8 @@
 @bin bin/kdf
 @bin bin/kwikdisk
 @lib lib/libkdfprivate.so.${LIBkdfprivate_VERSION}
-@so lib/qt5/plugins/libkcm_kdf.so
+@so lib/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcm_kdf.so
+share/applications/kcm_kdf.desktop
 share/applications/org.kde.kdf.desktop
 share/applications/org.kde.kwikdisk.desktop
 share/doc/HTML/ca/kcontrol/

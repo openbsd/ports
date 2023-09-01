@@ -4,7 +4,7 @@ listens only on IPv6. Use the IPv4 any-address instead.
 Index: core/backends/lan/lanlinkprovider.cpp
 --- core/backends/lan/lanlinkprovider.cpp.orig
 +++ core/backends/lan/lanlinkprovider.cpp
-@@ -79,7 +79,7 @@ LanLinkProvider::~LanLinkProvider()
+@@ -81,7 +81,7 @@ LanLinkProvider::~LanLinkProvider()
  
  void LanLinkProvider::onStart()
  {

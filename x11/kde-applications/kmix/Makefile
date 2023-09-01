@@ -2,10 +2,9 @@ COMMENT =	sound channel mixer and volume control
 DISTNAME =	kmix-${VERSION}
 CATEGORIES =	audio
 
-HOMEPAGE =	https://kde.org/applications/multimedia/org.kde.kmix
+HOMEPAGE =	https://apps.kde.org/kmix
 
-SHARED_LIBS +=  kmixcore                2.0 # 5.13.80
-
+SHARED_LIBS +=  kmixcore                3.0 # 5.13.80
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5DBusAddons

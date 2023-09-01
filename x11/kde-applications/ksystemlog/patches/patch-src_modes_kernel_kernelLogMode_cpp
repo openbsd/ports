@@ -1,7 +1,7 @@
 Index: src/modes/kernel/kernelLogMode.cpp
 --- src/modes/kernel/kernelLogMode.cpp.orig
 +++ src/modes/kernel/kernelLogMode.cpp
-@@ -42,6 +42,6 @@ Analyzer *KernelLogMode::createAnalyzer(const QVariant
+@@ -42,7 +42,7 @@ Analyzer *KernelLogMode::createAnalyzer(const QVariant
  
  QVector<LogFile> KernelLogMode::createLogFiles()
  {
@@ -9,3 +9,4 @@ Index: src/modes/kernel/kernelLogMode.cpp
 +    const QVector<LogFile> logFiles{LogFile(QUrl::fromLocalFile(QStringLiteral("/sbin/dmesg")), Globals::instance().informationLogLevel())};
      return logFiles;
  }
+ 

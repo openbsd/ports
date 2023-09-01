@@ -27,55 +27,23 @@ include/KPim5/MailTransport/mailtransport/transportmanagementwidget.h
 include/KPim5/MailTransport/mailtransport/transportmanager.h
 include/KPim5/MailTransport/mailtransport/transporttype.h
 include/KPim5/MailTransport/mailtransport_version.h
-include/KPim5/MailTransportAkonadi/
-include/KPim5/MailTransportAkonadi/MailTransportAkonadi/
-include/KPim5/MailTransportAkonadi/MailTransportAkonadi/DispatchModeAttribute
-include/KPim5/MailTransportAkonadi/MailTransportAkonadi/DispatcherInterface
-include/KPim5/MailTransportAkonadi/MailTransportAkonadi/ErrorAttribute
-include/KPim5/MailTransportAkonadi/MailTransportAkonadi/MessageQueueJob
-include/KPim5/MailTransportAkonadi/MailTransportAkonadi/SentActionAttribute
-include/KPim5/MailTransportAkonadi/MailTransportAkonadi/SentBehaviourAttribute
-include/KPim5/MailTransportAkonadi/MailTransportAkonadi/TransportAttribute
-include/KPim5/MailTransportAkonadi/mailtransportakonadi/
-include/KPim5/MailTransportAkonadi/mailtransportakonadi/dispatcherinterface.h
-include/KPim5/MailTransportAkonadi/mailtransportakonadi/dispatchmodeattribute.h
-include/KPim5/MailTransportAkonadi/mailtransportakonadi/errorattribute.h
-include/KPim5/MailTransportAkonadi/mailtransportakonadi/mailtransportakonadi_export.h
-include/KPim5/MailTransportAkonadi/mailtransportakonadi/messagequeuejob.h
-include/KPim5/MailTransportAkonadi/mailtransportakonadi/sentactionattribute.h
-include/KPim5/MailTransportAkonadi/mailtransportakonadi/sentbehaviourattribute.h
-include/KPim5/MailTransportAkonadi/mailtransportakonadi/transportattribute.h
-include/KPim5/MailTransportAkonadi/mailtransportakonadi_version.h
 lib/cmake/KF5MailTransport/
 lib/cmake/KF5MailTransport/KF5MailTransportConfig.cmake
 lib/cmake/KF5MailTransport/KF5MailTransportConfigVersion.cmake
 lib/cmake/KF5MailTransport/KPim5MailTransportTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5MailTransport/KPim5MailTransportTargets.cmake
-lib/cmake/KF5MailTransportAkonadi/
-lib/cmake/KF5MailTransportAkonadi/KF5MailTransportAkonadiConfig.cmake
-lib/cmake/KF5MailTransportAkonadi/KF5MailTransportAkonadiConfigVersion.cmake
-lib/cmake/KF5MailTransportAkonadi/KPim5MailTransportAkonadiTargets${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/KF5MailTransportAkonadi/KPim5MailTransportAkonadiTargets.cmake
 lib/cmake/KPim5MailTransport/
 lib/cmake/KPim5MailTransport/KPim5MailTransportConfig.cmake
 lib/cmake/KPim5MailTransport/KPim5MailTransportConfigVersion.cmake
 lib/cmake/KPim5MailTransport/KPim5MailTransportTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KPim5MailTransport/KPim5MailTransportTargets.cmake
-lib/cmake/KPim5MailTransportAkonadi/
-lib/cmake/KPim5MailTransportAkonadi/KPim5MailTransportAkonadiConfig.cmake
-lib/cmake/KPim5MailTransportAkonadi/KPim5MailTransportAkonadiConfigVersion.cmake
-lib/cmake/KPim5MailTransportAkonadi/KPim5MailTransportAkonadiTargets${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/KPim5MailTransportAkonadi/KPim5MailTransportAkonadiTargets.cmake
 @lib lib/libKPim5MailTransport.so.${LIBKPim5MailTransport_VERSION}
-@lib lib/libKPim5MailTransportAkonadi.so.${LIBKPim5MailTransportAkonadi_VERSION}
-@so lib/qt5/plugins/kcm_mailtransport.so
+lib/qt5/plugins/pim5/
 lib/qt5/plugins/pim5/mailtransport/
-@so lib/qt5/plugins/pim5/mailtransport/mailtransport_akonadiplugin.so
 @so lib/qt5/plugins/pim5/mailtransport/mailtransport_smtpplugin.so
+share/config.kcfg/
 share/config.kcfg/mailtransport.kcfg
 share/kf5/mkspecs/qt_KMailTransport.pri
-share/kf5/mkspecs/qt_KMailTransportAkonadi.pri
-share/kservices5/kcm_mailtransport.desktop
 share/locale/ar/LC_MESSAGES/libmailtransport5.mo
 share/locale/be/LC_MESSAGES/libmailtransport5.mo
 share/locale/bg/LC_MESSAGES/libmailtransport5.mo

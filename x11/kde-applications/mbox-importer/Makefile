@@ -5,19 +5,20 @@ CATEGORIES =	devel
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Archive KF5Auth
 WANTLIB += KF5AuthCore KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5Contacts KF5CoreAddons KF5Crash
-WANTLIB += KF5I18n KF5ItemModels KF5KIOCore KF5PimCommon KF5PimCommonAkonadi
-WANTLIB += KF5Service KF5TextAutoCorrectionCore KF5TextAutoCorrectionWidgets
-WANTLIB += KF5TextEditTextToSpeech KF5WidgetsAddons KPim5AkonadiContact
+WANTLIB += KF5I18n KF5ItemModels KF5KIOCore KF5Service KF5TextAutoCorrectionCore
+WANTLIB += KF5TextAutoCorrectionWidgets KF5WidgetsAddons KPim5AkonadiContact
 WANTLIB += KPim5AkonadiCore KPim5AkonadiMime KPim5AkonadiWidgets
 WANTLIB += KPim5GrantleeTheme KPim5IMAP KPim5IdentityManagement
 WANTLIB += KPim5IdentityManagementWidgets KPim5Libkdepim KPim5Libkleo
 WANTLIB += KPim5MailCommon KPim5MailImporter KPim5MailImporterAkonadi
-WANTLIB += KPim5MessageComposer KPim5MessageCore KPim5MessageViewer
-WANTLIB += KPim5Mime KPim5MimeTreeParser KPim5TextEdit Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
-WANTLIB += assuan c gpgme gpgmepp m qgpgme
+WANTLIB += KPim5MessageComposer KPim5MessageCore KPim5Mime KPim5PimCommon
+WANTLIB += KPim5PimCommonAkonadi KPim5TextEdit Qt5Concurrent Qt5Core
+WANTLIB += Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml assuan
+WANTLIB += c gpgme gpgmepp m qgpgme
 
 WANTLIB += lib/inotify/inotify
+
+
 
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes

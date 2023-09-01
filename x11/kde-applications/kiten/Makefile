@@ -2,7 +2,9 @@ COMMENT =	Japanese reference tool for KDE
 DISTNAME =	kiten-${VERSION}
 CATEGORIES =	education
 
-SHARED_LIBS +=  kiten                     2.0 # 5.0
+HOMEPAGE =	https://apps.kde.org/kiten
+
+SHARED_LIBS +=  kiten                     3.0 # 5.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5AuthCore KF5Codecs
 WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets

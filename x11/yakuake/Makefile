@@ -21,11 +21,11 @@ WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5Crash KF5DBusAddons
 WANTLIB += KF5GlobalAccel KF5I18n KF5IconThemes KF5JobWidgets
 WANTLIB += KF5KIOCore KF5KIOGui KF5KIOWidgets KF5NewStuff KF5NewStuffCore
-WANTLIB += KF5Notifications KF5NotifyConfig KF5Parts KF5Service
-WANTLIB += KF5Solid KF5SonnetUi KF5TextWidgets KF5WaylandClient
-WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5X11Extras
-WANTLIB += Qt5Xml X11 c m
+WANTLIB += KF5NewStuffWidgets KF5Notifications KF5NotifyConfig
+WANTLIB += KF5Parts KF5Service KF5Solid KF5SonnetUi KF5TextWidgets
+WANTLIB += KF5WaylandClient KF5WidgetsAddons KF5WindowSystem KF5XmlGui
+WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets
+WANTLIB += Qt5X11Extras Qt5Xml X11 c m
 
 MODULES =	x11/kde-applications \
 		devel/kf5

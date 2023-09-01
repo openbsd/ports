@@ -1,4 +1,5 @@
 COMMENT =	client for Matrix chat
+MODKDE_VERSION = 23.04.3
 DISTNAME =	neochat-${MODKDE_VERSION}
 CATEGORIES=	net
 

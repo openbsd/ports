@@ -7,9 +7,10 @@ HOMEPAGE =	https://kde.org/applications/utilities/org.kde.kteatime
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
-WANTLIB += KF5I18n KF5IconThemes KF5Notifications KF5NotifyConfig
-WANTLIB += KF5SonnetUi KF5TextWidgets KF5WidgetsAddons KF5XmlGui
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Widgets Qt5Xml c m
+WANTLIB += KF5GuiAddons KF5I18n KF5IconThemes KF5Notifications
+WANTLIB += KF5NotifyConfig KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
+WANTLIB += KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Widgets Qt5Xml
+WANTLIB += c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

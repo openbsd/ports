@@ -2,7 +2,7 @@ COMMENT =	KDE PIM library for creating events
 DISTNAME =	eventviews-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  KPim5EventViews           0.0 # 0.0
+SHARED_LIBS +=  KPim5EventViews           1.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5CalendarCore
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui

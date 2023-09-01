@@ -8,7 +8,7 @@ CATEGORIES =	geo
 HOMEPAGE =	https://marble.kde.org/
 
 SHARED_LIBS +=  astro                     2.0 # 0.17
-SHARED_LIBS +=  marblewidget-qt5          4.0 # 0.28
+SHARED_LIBS +=  marblewidget-qt5          5.0 # 0.28
 SHARED_LIBS +=  marbledeclarative         1.2 # 0.28
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion

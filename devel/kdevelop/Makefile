@@ -10,7 +10,7 @@ HOMEPAGE =	https://www.kdevelop.org/
 
 SHARED_LIBS +=  KDevPlatformDebugger      5.0 # 5.2
 SHARED_LIBS +=  KDevPlatformDocumentation 3.0 # 5.2
-SHARED_LIBS +=  KDevPlatformInterfaces    3.1 # 5.2
+SHARED_LIBS +=  KDevPlatformInterfaces    3.2 # 5.2
 SHARED_LIBS +=  KDevPlatformLanguage      7.0 # 5.2
 SHARED_LIBS +=  KDevPlatformOutputView    2.0 # 5.2
 SHARED_LIBS +=  KDevPlatformProject       3.0 # 5.2
@@ -20,7 +20,7 @@ SHARED_LIBS +=  KDevPlatformSublime       3.0 # 5.2
 SHARED_LIBS +=  KDevPlatformTests         4.0 # 5.2
 SHARED_LIBS +=  KDevPlatformUtil          3.2 # 5.2
 SHARED_LIBS +=  KDevPlatformVcs           3.0 # 5.2
-SHARED_LIBS +=  KDevClangPrivate          2.0 # 5.5
+SHARED_LIBS +=  KDevClangPrivate          3.0 # 5.5
 SHARED_LIBS +=  KDevCMakeCommon           2.1 # 5.5
 SHARED_LIBS +=  KDevCompileAnalyzerCommon 0.0 # 5.5
 

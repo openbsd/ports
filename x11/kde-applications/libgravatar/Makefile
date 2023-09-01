@@ -2,15 +2,14 @@ COMMENT =	libraries provides gravatar support
 DISTNAME =	libgravatar-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  KPim5Gravatar             0.0 # 0.0
+SHARED_LIBS +=  KPim5Gravatar             1.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5I18n
-WANTLIB += KF5KIOCore KF5PimCommon KF5Service KF5SonnetUi KF5TextAutoCorrectionCore
-WANTLIB += KF5TextAutoCorrectionWidgets KF5TextEditTextToSpeech
-WANTLIB += KF5TextWidgets KF5WidgetsAddons KPim5TextEdit Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
-WANTLIB += m
+WANTLIB += KF5KIOCore KF5Service KF5SonnetUi KF5TextAutoCorrectionCore
+WANTLIB += KF5TextAutoCorrectionWidgets KF5TextWidgets KF5WidgetsAddons
+WANTLIB += KPim5PimCommon KPim5TextEdit Qt5Concurrent Qt5Core
+WANTLIB += Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml m
 
 MODKDE5_TRANSLATIONS = yes
 

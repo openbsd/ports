@@ -5,6 +5,7 @@
 @bin bin/kcreatewebarchive
 @bin bin/kfmclient
 @bin bin/konqueror
+include/KF5/asyncselectorinterface.h
 include/KF5/konq_events.h
 include/KF5/konq_historyentry.h
 include/KF5/konq_historyprovider.h
@@ -68,6 +69,7 @@ lib/qt5/plugins/konqueror_kcms/
 @so lib/qt5/plugins/konqueror_kcms/khtml_filter.so
 @so lib/qt5/plugins/konqueror_kcms/khtml_general.so
 @so lib/qt5/plugins/konqueror_kcms/khtml_java_js.so
+@so lib/qt5/plugins/konqueror_kcms/khtml_useragent.so
 @so lib/qt5/plugins/konqueror_kget_browser_integration.so
 lib/qt5/plugins/kwebkitpart/
 lib/qt5/plugins/kwebkitpart/kpartplugins/
@@ -95,6 +97,7 @@ lib/qt5/plugins/webenginepart/kpartplugins/
 share/akregator/
 share/akregator/pics/
 share/akregator/pics/feed.png
+share/applications/bookmarks.desktop
 share/applications/kfmclient.desktop
 share/applications/kfmclient_dir.desktop
 share/applications/kfmclient_html.desktop
@@ -849,6 +852,7 @@ share/examples/konqueror/xdg/konqsidebartngrc
 @sample ${SYSCONFDIR}/xdg/konqsidebartngrc
 share/examples/konqueror/xdg/translaterc
 @sample ${SYSCONFDIR}/xdg/translaterc
+share/examples/konqueror/xdg/useragenttemplatesrc
 share/icons/hicolor/128x128/apps/konqueror.png
 share/icons/hicolor/128x128/apps/webengine.png
 share/icons/hicolor/16x16/actions/babelfish.png
@@ -895,7 +899,19 @@ share/konqsidebartng/plugins/konqsidebar_places.desktop
 share/konqsidebartng/plugins/konqsidebar_tree.desktop
 share/konqueror/
 share/konqueror/about/
+share/konqueror/about/body-background.png
+share/konqueror/about/box-bottom-left.png
+share/konqueror/about/box-bottom-middle.png
+share/konqueror/about/box-bottom-right.png
+share/konqueror/about/box-center.png
+share/konqueror/about/box-middle-left.png
+share/konqueror/about/box-middle-right.png
+share/konqueror/about/box-top-left.png
+share/konqueror/about/box-top-middle.png
+share/konqueror/about/box-top-right.png
 share/konqueror/about/intro.html
+share/konqueror/about/kde_infopage.css
+share/konqueror/about/kde_infopage_rtl.css
 share/konqueror/about/konq.css
 share/konqueror/about/launch.html
 share/konqueror/about/plugins.html
@@ -903,6 +919,7 @@ share/konqueror/about/plugins_rtl.html
 share/konqueror/about/specs.html
 share/konqueror/about/tips.html
 share/konqueror/about/top-left-konqueror.png
+share/konqueror/about/top-middle.png
 share/konqueror/icons/
 share/konqueror/icons/hicolor/
 share/konqueror/icons/hicolor/16x16/

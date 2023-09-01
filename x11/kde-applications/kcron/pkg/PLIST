@@ -1,5 +1,6 @@
-@so lib/qt5/plugins/kcm_cron.so
+@so lib/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcm_cron.so
 @bin libexec/kauth/kcron_helper
+share/applications/kcm_cron.desktop
 share/dbus-1/system-services/local.kcron.crontab.service
 share/dbus-1/system.d/local.kcron.crontab.conf
 share/doc/HTML/ca/kcontrol5/kcron/
@@ -80,7 +81,6 @@ share/doc/HTML/zh_CN/kcontrol5/
 share/doc/HTML/zh_CN/kcontrol5/kcron/
 share/doc/HTML/zh_CN/kcontrol5/kcron/index.cache.bz2
 share/doc/HTML/zh_CN/kcontrol5/kcron/index.docbook
-share/kservices5/kcm_cron.desktop
 share/locale/af/LC_MESSAGES/kcron.mo
 share/locale/ar/LC_MESSAGES/kcron.mo
 share/locale/be/LC_MESSAGES/kcron.mo
@@ -160,3 +160,4 @@ share/metainfo/
 share/metainfo/org.kde.kcron.metainfo.xml
 share/polkit-1/actions/local.kcron.crontab.policy
 share/qlogging-categories5/kcron.categories
+@tag update-desktop-database

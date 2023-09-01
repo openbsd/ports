@@ -8,11 +8,11 @@ SHARED_LIBS +=  kdfprivate               2.1 # 18.12.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
-WANTLIB += KF5I18n KF5IconThemes KF5JobWidgets KF5KIOCore KF5KIOGui
-WANTLIB += KF5KIOWidgets KF5Notifications KF5Service KF5Solid
-WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
-WANTLIB += X11 c m
+WANTLIB += KF5I18n KF5IconThemes KF5JobWidgets KF5KCMUtils KF5KIOCore
+WANTLIB += KF5KIOGui KF5KIOWidgets KF5Notifications KF5Service
+WANTLIB += KF5Solid KF5WidgetsAddons KF5WindowSystem KF5XmlGui
+WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets
+WANTLIB += Qt5Xml X11 c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

@@ -1,7 +1,6 @@
 COMMENT =	scanning application for KDE
 
 DISTNAME =	skanlite-${MODKDE_VERSION}
-REVISION =	0
 
 CATEGORIES =	graphics
 

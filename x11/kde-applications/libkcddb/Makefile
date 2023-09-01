@@ -3,7 +3,7 @@ DISTNAME =	libkcddb-${VERSION}
 PKGNAME =	libkcddb-kf5-${VERSION}
 CATEGORIES =	devel multimedia
 
-SHARED_LIBS +=  KF5Cddb                   2.0 # 5.0
+SHARED_LIBS +=  KF5Cddb                   3.0 # 5.0
 SHARED_LIBS +=  KF5CddbWidgets            2.0 # 5.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion

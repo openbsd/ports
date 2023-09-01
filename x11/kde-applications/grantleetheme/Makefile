@@ -2,7 +2,7 @@ COMMENT =	grantlee theme library
 DISTNAME =	grantleetheme-${VERSION}
 CATEGORIES =	devel x11
 
-SHARED_LIBS +=  KPim5GrantleeTheme        0.0 # 0.0
+SHARED_LIBS +=  KPim5GrantleeTheme        1.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Attica KF5Auth
 WANTLIB += KF5AuthCore KF5Codecs KF5ConfigCore KF5ConfigGui KF5ConfigWidgets

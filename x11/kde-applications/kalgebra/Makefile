@@ -5,12 +5,8 @@ DISTNAME =	kalgebra-${VERSION}
 CATEGORIES =	education
 
 WANTLIB += ${COMPILER_LIBCXX} Analitza AnalitzaGui AnalitzaPlot
-WANTLIB += AnalitzaWidgets KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
-WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5I18n
-WANTLIB += KF5KIOCore KF5Service KF5WidgetsAddons KF5XmlGui Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport
-WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5WebChannel Qt5WebEngineCore
-WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml c ereadline m
+WANTLIB += KF5CoreAddons KF5I18n Qt5Core Qt5Gui Qt5Network Qt5Qml
+WANTLIB += Qt5QmlModels Qt5Quick Qt5Widgets c ereadline m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

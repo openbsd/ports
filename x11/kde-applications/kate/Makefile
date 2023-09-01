@@ -4,7 +4,7 @@ CATEGORIES =	editors
 
 HOMEPAGE =	https://kate-editor.org/
 
-SHARED_LIBS +=  kateprivate               3.0 # 0.0
+SHARED_LIBS +=  kateprivate               4.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Activities KF5Attica KF5Auth
 WANTLIB += KF5AuthCore KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore

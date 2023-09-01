@@ -2,7 +2,7 @@ COMMENT =	personal alarm message, command and email scheduler
 DISTNAME =	kalarm-${VERSION}
 CATEGORIES =	productivity
 
-SHARED_LIBS +=  kalarmcalendar           2.0 # 0.0
+SHARED_LIBS +=  kalarmcalendar           3.0 # 0.0
 SHARED_LIBS +=  kalarmplugin             2.0 # 0.0
 
 MODKDE5_DESKTOP_FILE = yes
@@ -21,13 +21,13 @@ WANTLIB += KF5GuiAddons KF5Holidays KF5I18n KF5IdleTime KF5ItemModels
 WANTLIB += KF5ItemViews KF5JobWidgets KF5KIOCore KF5KIOFileWidgets
 WANTLIB += KF5KIOGui KF5KIOWidgets KF5Notifications KF5NotifyConfig
 WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5TextEditTextToSpeech
-WANTLIB += KF5TextWidgets KF5Wallet KF5WidgetsAddons KF5WindowSystem
-WANTLIB += KF5XmlGui KPim5AkonadiContact KPim5AkonadiCore KPim5AkonadiMime
+WANTLIB += KF5TextWidgets KF5WidgetsAddons KF5WindowSystem KF5XmlGui
+WANTLIB += KPim5AkonadiContact KPim5AkonadiCore KPim5AkonadiMime
 WANTLIB += KPim5AkonadiWidgets KPim5CalendarUtils KPim5GrantleeTheme
 WANTLIB += KPim5IdentityManagement KPim5IdentityManagementWidgets
-WANTLIB += KPim5MailTransport KPim5MailTransportAkonadi KPim5Mime
-WANTLIB += KPim5TextEdit Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
-WANTLIB += Qt5Network Qt5Widgets Qt5X11Extras Qt5Xml X11 c m phonon4qt5
+WANTLIB += KPim5MailTransport KPim5Mime KPim5TextEdit Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5X11Extras
+WANTLIB += Qt5Xml X11 c m phonon4qt5
 
 BUILD_DEPENDS =	devel/boost \
 		x11/kde-applications/mailcommon

@@ -22,11 +22,6 @@ include/KPim5/GrantleeTheme/grantleetheme/grantleethemeengine.h
 include/KPim5/GrantleeTheme/grantleetheme/grantleethememanager.h
 include/KPim5/GrantleeTheme/grantleetheme/qtresourcetemplateloader.h
 include/KPim5/GrantleeTheme/grantleetheme_version.h
-lib/cmake/KF5GrantleeTheme/
-lib/cmake/KF5GrantleeTheme/KF5GrantleeThemeConfig.cmake
-lib/cmake/KF5GrantleeTheme/KF5GrantleeThemeConfigVersion.cmake
-lib/cmake/KF5GrantleeTheme/KPim5GrantleeThemeTargets${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/KF5GrantleeTheme/KPim5GrantleeThemeTargets.cmake
 lib/cmake/KPim5GrantleeTheme/
 lib/cmake/KPim5GrantleeTheme/KPim5GrantleeThemeConfig.cmake
 lib/cmake/KPim5GrantleeTheme/KPim5GrantleeThemeConfigVersion.cmake
@@ -45,6 +40,7 @@ share/locale/da/LC_MESSAGES/libgrantleetheme.mo
 share/locale/de/LC_MESSAGES/libgrantleetheme.mo
 share/locale/el/LC_MESSAGES/libgrantleetheme.mo
 share/locale/en_GB/LC_MESSAGES/libgrantleetheme.mo
+share/locale/eo/LC_MESSAGES/libgrantleetheme.mo
 share/locale/es/LC_MESSAGES/libgrantleetheme.mo
 share/locale/et/LC_MESSAGES/libgrantleetheme.mo
 share/locale/eu/LC_MESSAGES/libgrantleetheme.mo

@@ -5,9 +5,9 @@ CATEGORIES =	x11 graphics
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5I18n
-WANTLIB += KF5KIOCore KF5Service KF5WidgetsAddons KF5XmlGui Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
-WANTLIB += gphoto2 gphoto2_port m
+WANTLIB += KF5KCMUtils KF5KIOCore KF5Service KF5WidgetsAddons
+WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
+WANTLIB += Qt5Widgets Qt5Xml gphoto2 gphoto2_port m
 
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DESKTOP_FILE = yes
@@ -28,6 +28,7 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kio \
 		devel/kf5/kservice \
 		devel/kf5/kwidgetsaddons \
+		devel/kf5/kcmutils \
 		devel/kf5/kxmlgui \
 		graphics/libgphoto2
 

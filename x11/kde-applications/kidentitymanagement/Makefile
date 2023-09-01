@@ -3,19 +3,16 @@ DISTNAME =	kidentitymanagement-${VERSION}
 CATEGORIES =	devel mail
 
 SHARED_LIBS +=  KPim5IdentityManagement   0.0 # 0.0
-SHARED_LIBS +=  KPim5IdentityManagementWidgets 0.0 # 0.0
+SHARED_LIBS +=  KPim5IdentityManagementWidgets 1.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
 WANTLIB += KF5I18n KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets
-WANTLIB += KF5Service KF5Solid KF5TextEditTextToSpeech KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KF5XmlGui KPim5TextEdit Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
-WANTLIB += X11 m
+WANTLIB += KF5Service KF5Solid KF5WidgetsAddons KF5WindowSystem
+WANTLIB += KF5XmlGui KPim5TextEdit Qt5Concurrent Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5Xml X11 m
 
 WANTLIB += lib/inotify/inotify
-
-
 
 MODKDE5_TRANSLATIONS = yes
 

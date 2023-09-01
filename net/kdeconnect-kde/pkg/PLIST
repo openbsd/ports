@@ -320,6 +320,11 @@ share/locale/en_GB/LC_MESSAGES/kdeconnect-settings.mo
 share/locale/en_GB/LC_MESSAGES/kdeconnect-sms.mo
 share/locale/en_GB/LC_MESSAGES/kdeconnect-urlhandler.mo
 share/locale/en_GB/LC_MESSAGES/plasma_applet_org.kde.kdeconnect.mo
+share/locale/eo/LC_MESSAGES/kdeconnect-fileitemaction.mo
+share/locale/eo/LC_MESSAGES/kdeconnect-interfaces.mo
+share/locale/eo/LC_MESSAGES/kdeconnect-kio.mo
+share/locale/eo/LC_MESSAGES/kdeconnect-nautilus-extension.mo
+share/locale/eo/LC_MESSAGES/kdeconnect-settings.mo
 share/locale/es/LC_MESSAGES/kdeconnect-app.mo
 share/locale/es/LC_MESSAGES/kdeconnect-cli.mo
 share/locale/es/LC_MESSAGES/kdeconnect-core.mo
@@ -848,6 +853,7 @@ share/plasma/plasmoids/org.kde.kdeconnect/
 share/plasma/plasmoids/org.kde.kdeconnect/contents/
 share/plasma/plasmoids/org.kde.kdeconnect/contents/ui/
 share/plasma/plasmoids/org.kde.kdeconnect/contents/ui/Battery.qml
+share/plasma/plasmoids/org.kde.kdeconnect/contents/ui/Clipboard.qml
 share/plasma/plasmoids/org.kde.kdeconnect/contents/ui/CompactRepresentation.qml
 share/plasma/plasmoids/org.kde.kdeconnect/contents/ui/Connectivity.qml
 share/plasma/plasmoids/org.kde.kdeconnect/contents/ui/DeviceDelegate.qml

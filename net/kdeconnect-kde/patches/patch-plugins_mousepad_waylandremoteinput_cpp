@@ -83,3 +83,19 @@ Index: plugins/mousepad/waylandremoteinput.cpp
  };
  }
  
+@@ -226,6 +228,7 @@ bool WaylandRemoteInput::handlePacket(const NetworkPac
+             bool shift = np.get<bool>(QStringLiteral("shift"), false);
+             bool super = np.get<bool>(QStringLiteral("super"), false);
+ 
++/*
+             if (ctrl)
+                 s_session->iface->NotifyKeyboardKeycode(s_session->m_xdpPath, {}, KEY_LEFTCTRL, 1);
+             if (alt)
+@@ -258,6 +261,7 @@ bool WaylandRemoteInput::handlePacket(const NetworkPac
+                 s_session->iface->NotifyKeyboardKeycode(s_session->m_xdpPath, {}, KEY_LEFTSHIFT, 0);
+             if (super)
+                 s_session->iface->NotifyKeyboardKeycode(s_session->m_xdpPath, {}, KEY_LEFTMETA, 0);
++*/
+         }
+     } else { // Is a mouse move event
+         s_session->iface->NotifyPointerMotion(s_session->m_xdpPath, {}, dx, dy);

@@ -2,8 +2,8 @@ COMMENT =	KDE app that allows your devices to communicate
 
 DISTNAME =	kdeconnect-kde-${MODKDE_VERSION}
 
-SHARED_LIBS +=	kdeconnectcore		3.0 # 1.4
-SHARED_LIBS +=	kdeconnectinterfaces	3.1 # 1.4
+SHARED_LIBS +=	kdeconnectcore		5.0 # 1.4
+SHARED_LIBS +=	kdeconnectinterfaces	5.0 # 1.4
 SHARED_LIBS +=	kdeconnectpluginkcm	0.0 # 1.4
 
 CATEGORIES =	net
@@ -24,8 +24,9 @@ WANTLIB += KF5Notifications KF5People KF5Service KF5Solid KF5WidgetsAddons
 WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Multimedia Qt5Network Qt5Qml Qt5QmlModels
 WANTLIB += Qt5Quick Qt5QuickControls2 Qt5WaylandClient Qt5Widgets
-WANTLIB += Qt5X11Extras Qt5Xml SM X11 Xext Xtst c fakekey m qca-qt5
-WANTLIB += wayland-client xkbcommon
+WANTLIB += Qt5X11Extras Qt5Xml SM X11 Xext Xtst c fakekey gio-2.0
+WANTLIB += glib-2.0 gobject-2.0 intl m qca-qt5 wayland-client
+WANTLIB += xkbcommon
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
 
