@@ -1,7 +1,6 @@
 COMMENT =	discount implementation of John Gruber's Markdown
 
-DISTNAME =	rdiscount-2.2.0.1
-REVISION =	0
+DISTNAME =	rdiscount-2.2.7.1
 CATEGORIES =	textproc
 
 # BSD
