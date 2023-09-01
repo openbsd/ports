@@ -35,6 +35,7 @@ include/OpenEXR/ImfChromaticitiesAttribute.h
 include/OpenEXR/ImfCompositeDeepScanLine.h
 include/OpenEXR/ImfCompression.h
 include/OpenEXR/ImfCompressionAttribute.h
+include/OpenEXR/ImfCompressor.h
 include/OpenEXR/ImfConvert.h
 include/OpenEXR/ImfDeepCompositing.h
 include/OpenEXR/ImfDeepFrameBuffer.h
@@ -88,6 +89,7 @@ include/OpenEXR/ImfLineOrder.h
 include/OpenEXR/ImfLineOrderAttribute.h
 include/OpenEXR/ImfLut.h
 include/OpenEXR/ImfMatrixAttribute.h
+include/OpenEXR/ImfMisc.h
 include/OpenEXR/ImfMultiPartInputFile.h
 include/OpenEXR/ImfMultiPartOutputFile.h
 include/OpenEXR/ImfMultiView.h
@@ -133,7 +135,8 @@ include/OpenEXR/openexr_attr.h
 include/OpenEXR/openexr_base.h
 include/OpenEXR/openexr_chunkio.h
 include/OpenEXR/openexr_coding.h
-include/OpenEXR/openexr_conf.h
+include/OpenEXR/openexr_compression.h
+include/OpenEXR/openexr_config.h
 include/OpenEXR/openexr_context.h
 include/OpenEXR/openexr_debug.h
 include/OpenEXR/openexr_decode.h
@@ -141,19 +144,20 @@ include/OpenEXR/openexr_encode.h
 include/OpenEXR/openexr_errors.h
 include/OpenEXR/openexr_part.h
 include/OpenEXR/openexr_std_attr.h
+include/OpenEXR/openexr_version.h
 lib/cmake/OpenEXR/
 lib/cmake/OpenEXR/OpenEXRConfig.cmake
 lib/cmake/OpenEXR/OpenEXRConfigVersion.cmake
 lib/cmake/OpenEXR/OpenEXRTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/OpenEXR/OpenEXRTargets.cmake
-@lib lib/libIex-3_1.so.${LIBIex-3_1_VERSION}
+@lib lib/libIex-3_2.so.${LIBIex-3_2_VERSION}
 @lib lib/libIex.so.${LIBIex_VERSION}
-@lib lib/libIlmThread-3_1.so.${LIBIlmThread-3_1_VERSION}
+@lib lib/libIlmThread-3_2.so.${LIBIlmThread-3_2_VERSION}
 @lib lib/libIlmThread.so.${LIBIlmThread_VERSION}
-@lib lib/libOpenEXR-3_1.so.${LIBOpenEXR-3_1_VERSION}
+@lib lib/libOpenEXR-3_2.so.${LIBOpenEXR-3_2_VERSION}
 @lib lib/libOpenEXR.so.${LIBOpenEXR_VERSION}
-@lib lib/libOpenEXRCore-3_1.so.${LIBOpenEXRCore-3_1_VERSION}
+@lib lib/libOpenEXRCore-3_2.so.${LIBOpenEXRCore-3_2_VERSION}
 @lib lib/libOpenEXRCore.so.${LIBOpenEXRCore_VERSION}
-@lib lib/libOpenEXRUtil-3_1.so.${LIBOpenEXRUtil-3_1_VERSION}
+@lib lib/libOpenEXRUtil-3_2.so.${LIBOpenEXRUtil-3_2_VERSION}
 @lib lib/libOpenEXRUtil.so.${LIBOpenEXRUtil_VERSION}
 lib/pkgconfig/OpenEXR.pc

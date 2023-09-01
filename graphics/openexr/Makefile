@@ -2,7 +2,7 @@ COMMENT-main=		high dynamic range image format
 COMMENT-tools=		image viewing tools for OpenEXR
 COMMENT-doc=		developer documentation for OpenEXR
 
-V=			3.1.11
+V=			3.2.0
 GH_ACCOUNT=		AcademySoftwareFoundation
 GH_PROJECT=		openexr
 GH_TAGNAME=		v${V}
@@ -13,10 +13,10 @@ PKGNAME-doc=		OpenEXR-doc-${V}
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
-# /!\ see symlinks creation in post-install (LIBOpenEXR-3_1_VERSION is used)
-.for solib in in Iex IlmThread OpenEXR OpenEXRCore OpenEXRUtil
-SHARED_LIBS +=  ${solib} 1.0 # 28
-SHARED_LIBS +=  ${solib}-3_1 1.0 # 28
+# /!\ see symlinks creation in post-install (LIBOpenEXR-3_2_VERSION is used)
+.for solib in Iex IlmThread OpenEXR OpenEXRCore OpenEXRUtil
+SHARED_LIBS +=  ${solib} 2.0 # 0.0
+SHARED_LIBS +=  ${solib}-3_2 2.0 # 0.0
 .endfor
 
 CATEGORIES=		graphics
@@ -37,12 +37,13 @@ MODULES=		devel/cmake
 CXXFLAGS +=		-mxgot
 .endif
 
-WANTLIB-main += ${COMPILER_LIBCXX} Imath-3_1 m z
+WANTLIB-main += ${COMPILER_LIBCXX} Imath-3_1 deflate m
 
-LIB_DEPENDS-main=	math/imath
+LIB_DEPENDS-main=	archivers/libdeflate \
+			math/imath
 
-WANTLIB-tools += ${COMPILER_LIBCXX} Iex-3_1
-WANTLIB-tools += IlmThread-3_1 Imath-3_1 OpenEXR-3_1 OpenEXRCore-3_1 c m z
+WANTLIB-tools += ${COMPILER_LIBCXX} Iex-3_2
+WANTLIB-tools += IlmThread-3_2 Imath-3_1 OpenEXR-3_2 OpenEXRCore-3_2 c m
 
 LIB_DEPENDS-tools=	${BASE_PKGPATH}
 
@@ -53,14 +54,17 @@ WANTLIB-doc=		# empty
 
 MODCMAKE_LDFLAGS =		-L${LOCALBASE}/lib
 
+# needs python and openexr-images
+CONFIGURE_ARGS=		-DBUILD_TESTING=OFF
+
 post-install:
 # fix links target; symlinks are required for FindIlmbase.cmake etc. to find the
 # corresponding libs (e.g. find_library(ILMBASE_IMATH_LIBRARY Imath))
 	cd ${PREFIX}/lib && \
 		for i in *.so; do \
 			test -h $$i && lib=$${i#lib} && lib=$${lib%.so} && \
-			ln -sf lib$${lib}-3_1.so.${LIBOpenEXR-3_1_VERSION} \
-			$$i.${LIBOpenEXR-3_1_VERSION} && rm $$i ; \
+			ln -sf lib$${lib}-3_2.so.${LIBOpenEXR-3_2_VERSION} \
+			$$i.${LIBOpenEXR-3_2_VERSION} && rm $$i ; \
 		done
 
 .include <bsd.port.mk>

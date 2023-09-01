@@ -1,6 +1,10 @@
 @conflict OpenEXR-<=1.2.2p0
 share/doc/OpenEXR/
 share/doc/OpenEXR/examples/
+share/doc/OpenEXR/examples/deepExamples.cpp
+share/doc/OpenEXR/examples/deepExamples.h
+share/doc/OpenEXR/examples/deepTiledExamples.cpp
+share/doc/OpenEXR/examples/deepTiledExamples.h
 share/doc/OpenEXR/examples/drawImage.cpp
 share/doc/OpenEXR/examples/drawImage.h
 share/doc/OpenEXR/examples/generalInterfaceExamples.cpp
@@ -10,6 +14,8 @@ share/doc/OpenEXR/examples/generalInterfaceTiledExamples.h
 share/doc/OpenEXR/examples/lowLevelIoExamples.cpp
 share/doc/OpenEXR/examples/lowLevelIoExamples.h
 share/doc/OpenEXR/examples/main.cpp
+share/doc/OpenEXR/examples/multipartExamples.cpp
+share/doc/OpenEXR/examples/multipartExamples.h
 share/doc/OpenEXR/examples/namespaceAlias.h
 share/doc/OpenEXR/examples/previewImageExamples.cpp
 share/doc/OpenEXR/examples/previewImageExamples.h
