@@ -1,6 +1,6 @@
 COMMENT =	ruby wrapper for libcmark-gfm
 
-DISTNAME =	commonmarker-0.23.9
+DISTNAME =	commonmarker-0.23.10
 CATEGORIES =	textproc
 HOMEPAGE =	https://github.com/gjtorikian/commonmarker
 
