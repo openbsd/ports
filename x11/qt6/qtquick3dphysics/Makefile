@@ -1,4 +1,5 @@
 BROKEN-i386 =	various problems with MMX intrinsics
+BROKEN-riscv64 = #error "Unknown architecture"
 
 QT6NAME =	QtQuick3dPhysics
 COMMENT =	Quick 3D Physics support for Qt6
