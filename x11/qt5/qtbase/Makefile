@@ -147,8 +147,7 @@ CONFIGURE_ARGS +=	-no-vulkan
 CONFIGURE_ARGS +=	-no-libudev
 
 # disabled
-CONFIGURE_ARGS +=	-no-ccache \
-			-no-compile-examples \
+CONFIGURE_ARGS +=	-no-compile-examples \
 			-no-inotify \
 			-no-journald \
 			-no-mimetype-database \
@@ -246,3 +245,9 @@ post-install:
 		cd ${PREFIX}/lib/qt5 && ln -sf ../../include/X11/qt5 include
 
 .include <bsd.port.mk>
+
+.if ${USE_CCACHE:L} == "yes"
+CONFIGURE_ARGS +=	-ccache
+.else
+CONFIGURE_ARGS +=	-no-ccache
+.endif
