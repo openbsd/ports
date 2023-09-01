@@ -26,6 +26,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/node/element.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/node/finders.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/node/matchers.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/node/simple.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/capybara/node/whitespace_normalizer.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/queries/
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/queries/active_element_query.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/queries/ancestor_query.rb
@@ -300,6 +301,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/spec/views/with_jstree.erb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/spec/views/with_namespace.erb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/spec/views/with_scope.erb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/spec/views/with_scope_other.erb
+${GEM_LIB}/gems/${DISTNAME}/lib/capybara/spec/views/with_shadow.erb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/spec/views/with_simple_html.erb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/spec/views/with_slow_unload.erb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/spec/views/with_sortable_js.erb
@@ -311,6 +313,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/window.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/
 ${GEM_LIB}/gems/${DISTNAME}/spec/basic_node_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/capybara_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/counter_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/css_builder_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/css_splitter_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/dsl_spec.rb
@@ -348,5 +351,6 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/session_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/shared_selenium_node.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/shared_selenium_session.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/whitespace_normalizer_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/xpath_builder_spec.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec

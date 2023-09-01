@@ -1,6 +1,6 @@
 COMMENT =	integration testing tool for rack based web applications
 
-DISTNAME =	capybara-3.36.0
+DISTNAME =	capybara-3.39.2
 CATEGORIES =	www
 
 HOMEPAGE=	https://github.com/jnicklas/capybara
