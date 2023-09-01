@@ -1,8 +1,4 @@
 ${GEM_LIB}/cache/${DISTNAME}.gem
-${GEM_EXTENSIONS_DIR}/gem_make.out
-${GEM_EXTENSIONS_DIR}/mkmf.log
-${GEM_EXTENSIONS_DIR}/msgpack/
-@so ${GEM_EXTENSIONS_DIR}/msgpack/msgpack.so
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/ChangeLog
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
