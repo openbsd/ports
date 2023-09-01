@@ -1,6 +1,6 @@
 COMMENT =	source of XYZ tiles providers
 
-MODPY_EGG_VERSION =	2023.5.0
+MODPY_EGG_VERSION =	2023.7.0
 
 DISTNAME =	xyzservices-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
