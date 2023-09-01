@@ -1,6 +1,6 @@
 COMMENT =	spawn a local HTTP server for testing
 
-DISTNAME =	Test-HTTP-LocalServer-0.74
+DISTNAME =	Test-HTTP-LocalServer-0.75
 
 CATEGORIES =	www
 
