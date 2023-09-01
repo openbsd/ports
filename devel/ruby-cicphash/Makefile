@@ -1,7 +1,6 @@
 COMMENT =	case insensitive, case preserving hash class for ruby
 
-DISTNAME =	cicphash-1.0.0
-REVISION =	5
+DISTNAME =	cicphash-2.0.0
 CATEGORIES =	devel
 
 HOMEPAGE=	https://github.com/jeremyevans/ruby-cicphash
