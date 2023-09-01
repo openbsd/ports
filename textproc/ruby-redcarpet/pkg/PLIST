@@ -1,6 +1,8 @@
 ${GEM_BIN}/redcarpet${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
+${GEM_LIB}/gems/${DISTNAME}/CONTRIBUTING.md
 ${GEM_LIB}/gems/${DISTNAME}/COPYING
 ${GEM_LIB}/gems/${DISTNAME}/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/README.markdown
@@ -10,27 +12,10 @@ ${GEM_LIB}/gems/${DISTNAME}/bin/redcarpet
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/redcarpet/
 ${GEM_LIB}/gems/${DISTNAME}/lib/redcarpet.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/redcarpet.so
+@so ${GEM_LIB}/gems/${DISTNAME}/lib/redcarpet.so
 ${GEM_LIB}/gems/${DISTNAME}/lib/redcarpet/cli.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/redcarpet/compat.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/redcarpet/render_man.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/redcarpet/render_strip.rb
 ${GEM_LIB}/gems/${DISTNAME}/redcarpet.gemspec
-${GEM_LIB}/gems/${DISTNAME}/test/
-${GEM_LIB}/gems/${DISTNAME}/test/benchmark.rb
-${GEM_LIB}/gems/${DISTNAME}/test/custom_render_test.rb
-${GEM_LIB}/gems/${DISTNAME}/test/fixtures/
-${GEM_LIB}/gems/${DISTNAME}/test/fixtures/benchmark.md
-${GEM_LIB}/gems/${DISTNAME}/test/html5_test.rb
-${GEM_LIB}/gems/${DISTNAME}/test/html_render_test.rb
-${GEM_LIB}/gems/${DISTNAME}/test/html_toc_render_test.rb
-${GEM_LIB}/gems/${DISTNAME}/test/markdown_test.rb
-${GEM_LIB}/gems/${DISTNAME}/test/pathological_inputs_test.rb
-${GEM_LIB}/gems/${DISTNAME}/test/redcarpet_bin_test.rb
-${GEM_LIB}/gems/${DISTNAME}/test/redcarpet_compat_test.rb
-${GEM_LIB}/gems/${DISTNAME}/test/safe_render_test.rb
-${GEM_LIB}/gems/${DISTNAME}/test/smarty_html_test.rb
-${GEM_LIB}/gems/${DISTNAME}/test/smarty_pants_test.rb
-${GEM_LIB}/gems/${DISTNAME}/test/stripdown_render_test.rb
-${GEM_LIB}/gems/${DISTNAME}/test/test_helper.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
