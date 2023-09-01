@@ -1,18 +1,12 @@
 COMMENT=		window and compositing manager based on Clutter
 
 GNOME_PROJECT=		mutter
-GNOME_VERSION=		44.3
-REVISION=		1
+GNOME_VERSION=		44.4
 
 SHARED_LIBS += mutter-cogl-12            0.0 # 0.0.0
 SHARED_LIBS += mutter-cogl-pango-12      0.0 # 0.0.0
 SHARED_LIBS += mutter-clutter-12         0.0 # 0.0.0
 SHARED_LIBS += mutter-12                 0.0 # 0.0.0
-
-# see https://gitlab.gnome.org/GNOME/mutter/-/issues/2690#note_1818913
-MASTER_SITES0=		https://gitlab.gnome.org/GNOME/mutter/-/merge_requests/3186/
-PATCHFILES=		diffs.patch:0
-PATCH_DIST_STRIP=	-p1
 
 # GPLv2
 PERMIT_PACKAGE=		Yes
