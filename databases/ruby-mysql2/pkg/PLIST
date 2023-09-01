@@ -18,6 +18,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/mysql2/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/support/
 ${GEM_LIB}/gems/${DISTNAME}/support/3A79BD29.asc
 ${GEM_LIB}/gems/${DISTNAME}/support/5072E1F5.asc
+${GEM_LIB}/gems/${DISTNAME}/support/C74CD1D8.asc
 ${GEM_LIB}/gems/${DISTNAME}/support/libmysql.def
 ${GEM_LIB}/gems/${DISTNAME}/support/mysql_enc_to_ruby.rb
 ${GEM_LIB}/gems/${DISTNAME}/support/ruby_enc_to_mysql.rb
