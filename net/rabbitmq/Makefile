@@ -1,6 +1,6 @@
 COMMENT =	highly reliable Enterprise Messaging System
 
-V =		3.11.20
+V =		3.11.22
 DISTNAME =	rabbitmq-server-$V
 PKGNAME =	rabbitmq-$V
 CATEGORIES =	net
@@ -64,7 +64,7 @@ GETOPT_VSN	1.0.2 \
 GUN_VSN		1.3.3 \
 JOSE_VSN	1.11.3 \
 OBSERVER_CLI_VSN	1.7.3 \
-OSIRIS_VSN	1.5.1 \
+OSIRIS_VSN	1.6.2 \
 PROMETHEUS_VSN	4.10.0 \
 QUANTILE_ESTIMATOR_VSN	0.2.1 \
 RA_VSN		2.6.3 \
