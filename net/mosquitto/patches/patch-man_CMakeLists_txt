@@ -4,6 +4,15 @@ which are included in tarball downloads
 Index: man/CMakeLists.txt
 --- man/CMakeLists.txt.orig
 +++ man/CMakeLists.txt
+@@ -5,7 +5,7 @@
+ # because the install is optional.
+ 
+ find_program(XSLTPROC xsltproc OPTIONAL)
+-if(XSLTPROC)
++if(FALSE)
+ 	function(compile_manpage page)
+ 		add_custom_command(OUTPUT ${PROJECT_SOURCE_DIR}/man/${page}
+ 			COMMAND xsltproc ${PROJECT_SOURCE_DIR}/man/${page}.xml -o ${PROJECT_SOURCE_DIR}/man/
 @@ -24,7 +24,9 @@ if(XSLTPROC)
  	compile_manpage("mosquitto-tls.7")
  	compile_manpage("mqtt.7")
