@@ -43,9 +43,11 @@ ${GEM_LIB}/gems/${DISTNAME}/ruby-prof.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/test/
 ${GEM_LIB}/gems/${DISTNAME}/test/abstract_printer_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/alias_test.rb
-${GEM_LIB}/gems/${DISTNAME}/test/basic_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/call_tree_builder.rb
+${GEM_LIB}/gems/${DISTNAME}/test/call_tree_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/call_tree_visitor_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/call_trees_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/compatibility_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/duplicate_names_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/dynamic_method_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/enumerable_test.rb
@@ -63,6 +65,9 @@ ${GEM_LIB}/gems/${DISTNAME}/test/measure_memory_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/measure_process_time_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/measure_times.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/measure_wall_time_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/measurement_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/merge_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/method_info_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/multi_printer_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/no_method_class_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/pause_resume_test.rb
@@ -78,6 +83,7 @@ ${GEM_LIB}/gems/${DISTNAME}/test/printing_recursive_graph_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/profile_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/rack_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/recursive_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/scheduler.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/singleton_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/stack_printer_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/start_stop_test.rb
