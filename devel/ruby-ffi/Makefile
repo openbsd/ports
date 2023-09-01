@@ -1,6 +1,6 @@
 COMMENT =	cross-platform dynamic library loading for ruby
 
-DISTNAME =	ffi-1.15.3
+DISTNAME =	ffi-1.15.5
 CATEGORIES =	devel
 
 HOMEPAGE=	https://github.com/ffi/ffi
