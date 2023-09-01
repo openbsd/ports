@@ -23,6 +23,7 @@ ${GEM_LIB}/gems/${DISTNAME}/pages/Advanced.md
 ${GEM_LIB}/gems/${DISTNAME}/pages/Compatibility.md
 ${GEM_LIB}/gems/${DISTNAME}/pages/Custom.md
 ${GEM_LIB}/gems/${DISTNAME}/pages/Encoding.md
+${GEM_LIB}/gems/${DISTNAME}/pages/InstallOptions.md
 ${GEM_LIB}/gems/${DISTNAME}/pages/JsonGem.md
 ${GEM_LIB}/gems/${DISTNAME}/pages/Modes.md
 ${GEM_LIB}/gems/${DISTNAME}/pages/Options.md
