@@ -20,6 +20,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/nio/monitor.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/nio/selector.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/nio/version.rb
 @so ${GEM_LIB}/gems/${DISTNAME}/lib/nio4r_ext.so
+${GEM_LIB}/gems/${DISTNAME}/license.md
 ${GEM_LIB}/gems/${DISTNAME}/logo.png
 ${GEM_LIB}/gems/${DISTNAME}/nio4r.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/rakelib/

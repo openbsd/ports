@@ -1,6 +1,6 @@
 COMMENT=		cross-platform asynchronous I/O primitives
 
-DISTNAME=		nio4r-2.5.7
+DISTNAME=		nio4r-2.5.9
 CATEGORIES=		devel
 
 HOMEPAGE=		https://github.com/socketry/nio4r
