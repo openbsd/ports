@@ -1,18 +1,11 @@
 Index: makefile
 --- makefile.orig
 +++ makefile
-@@ -1,5 +1,5 @@
- LIBNAME = lpeg
--LUADIR = ../lua/
-+LUADIR = ${MODLUA_INCL_DIR}
- 
- COPT = -O2 -DNDEBUG
- # COPT = -g
-@@ -15,7 +15,6 @@ CWARNS = -Wall -Wextra -pedantic \
+@@ -16,7 +16,6 @@ CWARNS = -Wall -Wextra -pedantic \
  	-Wundef \
  	-Wwrite-strings \
  	-Wbad-function-cast \
 -	-Wdeclaration-after-statement \
  	-Wmissing-prototypes \
+ 	-Wmissing-declarations \
  	-Wnested-externs \
- 	-Wstrict-prototypes \
