@@ -1,0 +1,25 @@
+Simple OpenBSD build fix
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -17,7 +17,7 @@ wev: wev.c shm.c xdg-shell-protocol.h xdg-shell-protoc
+ 	$(CC) $(CFLAGS) \
+ 		-g -std=c11 -I. \
+ 		-o wev wev.c shm.c xdg-shell-protocol.c \
+-		$(LIBS) -lrt
++		$(LIBS)
+ 
+ wev.1: wev.1.scd
+ 	$(SCDOC) < wev.1.scd > wev.1
+@@ -33,8 +33,8 @@ DESTDIR?=
+ install: wev
+ 	mkdir -p $(DESTDIR)$(BINDIR)
+ 	mkdir -p $(DESTDIR)$(MANDIR)/man1
+-	install -m755 wev $(DESTDIR)$(BINDIR)/wev
+-	install -m644 wev.1 $(DESTDIR)$(MANDIR)/man1/wev.1
++	install -c -m755 wev $(DESTDIR)$(BINDIR)/wev
++	install -c -m644 wev.1 $(DESTDIR)$(MANDIR)/man1/wev.1
+ 
+ clean:
+ 	rm -f wev wev.1 xdg-shell-protocol.h xdg-shell-protocol.c

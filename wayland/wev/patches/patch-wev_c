@@ -1,0 +1,86 @@
+Patches from SourceHut HEAD
+
+- remember to close and unmap buffer after drawing
+- escape control characters
+- Fix logging of modifiers serial/group
+
+Index: wev.c
+--- wev.c.orig
++++ wev.c
+@@ -99,6 +99,26 @@ static int proxy_log(struct wev_state *state,
+ 	return n;
+ }
+ 
++static void escape_utf8(char *buf) {
++	if (strcmp(buf, "\a") == 0) {
++		strcpy(buf, "\\a");
++	} else if (strcmp(buf, "\b") == 0) {
++		strcpy(buf, "\\b");
++	} else if (strcmp(buf, "\e") == 0) {
++		strcpy(buf, "\\e");
++	} else if (strcmp(buf, "\f") == 0) {
++		strcpy(buf, "\\f");
++	} else if (strcmp(buf, "\n") == 0) {
++		strcpy(buf, "\\n");
++	} else if (strcmp(buf, "\r") == 0) {
++		strcpy(buf, "\\r");
++	} else if (strcmp(buf, "\t") == 0) {
++		strcpy(buf, "\\t");
++	} else if (strcmp(buf, "\v") == 0) {
++		strcpy(buf, "\\v");
++	}
++}
++
+ static void wl_pointer_enter(void *data, struct wl_pointer *wl_pointer,
+ 		uint32_t serial, struct wl_surface *surface,
+ 		wl_fixed_t surface_x, wl_fixed_t surface_y) {
+@@ -227,7 +247,7 @@ static void wl_pointer_axis_stop(void *data, struct wl
+ static void wl_pointer_axis_discrete(void *data, struct wl_pointer *wl_pointer,
+ 		uint32_t axis, int32_t discrete) {
+ 	struct wev_state *state = data;
+-	proxy_log(state, (struct wl_proxy *)wl_pointer, "axis_stop",
++	proxy_log(state, (struct wl_proxy *)wl_pointer, "axis_discrete",
+ 			"axis: %d (%s), discrete: %d\n",
+ 			axis, pointer_axis_str(axis), discrete);
+ }
+@@ -307,6 +327,7 @@ static void wl_keyboard_enter(void *data, struct wl_ke
+ 			printf(SPACER "sym: %-12s (%d), ", buf, sym);
+ 			xkb_state_key_get_utf8(
+ 					state->xkb_state, *key + 8, buf, sizeof(buf));
++			escape_utf8(buf);
+ 			printf("utf8: '%s'\n", buf);
+ 		}
+ 	}
+@@ -347,6 +368,7 @@ static void wl_keyboard_key(void *data, struct wl_keyb
+ 		printf(SPACER "sym: %-12s (%d), ", buf, sym);
+ 
+ 		xkb_state_key_get_utf8(wev_state->xkb_state, keycode, buf, sizeof(buf));
++		escape_utf8(buf);
+ 		printf("utf8: '%s'\n", buf);
+ 	}
+ }
+@@ -368,7 +390,7 @@ static void wl_keyboard_modifiers(void *data, struct w
+ 		uint32_t mods_locked, uint32_t group) {
+ 	struct wev_state *state = data;
+ 	int n = proxy_log(state, (struct wl_proxy *)wl_keyboard, "modifiers",
+-			"serial: %d; group: %d\n", group);
++			"serial: %d; group: %d\n", serial, group);
+ 	if (n != 0) {
+ 		printf(SPACER "depressed: %08X", mods_depressed);
+ 		print_modifiers(state, mods_depressed);
+@@ -531,6 +553,7 @@ static struct wl_buffer *create_buffer(struct wev_stat
+ 	struct wl_buffer *buffer = wl_shm_pool_create_buffer(pool, 0,
+ 			state->width, state->height, stride, WL_SHM_FORMAT_XRGB8888);
+ 	wl_shm_pool_destroy(pool);
++	close(fd);
+ 
+ 	for (int y = 0; y < state->height; ++y) {
+ 		for (int x = 0; x < state->width; ++x) {
+@@ -541,6 +564,7 @@ static struct wl_buffer *create_buffer(struct wev_stat
+ 			}
+ 		}
+ 	}
++	munmap(data, size);
+ 
+ 	wl_buffer_add_listener(buffer, &wl_buffer_listener, NULL);
+ 
