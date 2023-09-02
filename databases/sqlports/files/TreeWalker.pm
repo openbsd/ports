@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: TreeWalker.pm,v 1.19 2023/08/14 17:36:43 espie Exp $
+# $OpenBSD: TreeWalker.pm,v 1.20 2023/09/02 10:40:59 espie Exp $
 #
 # Copyright (c) 2006-2013 Marc Espie <espie@openbsd.org>
 #
@@ -20,6 +20,7 @@ use warnings;
 
 package TreeWalker;
 use PkgPath;
+use Baseline;
 
 sub new($class, $strict, $startdir)
 {
@@ -52,16 +53,13 @@ sub dump_dirs($self, $subdirs = undef)
 		}
 		$myenv{'NO_IGNORE'} = 'Yes';
 		$myenv{PORTSDIR} = $portsdir;
-		close STDERR;
-		open STDERR, '>&STDOUT';
 		chdir $portsdir;
 		%ENV = %myenv;
-		my @vars = ('LIBECXX=$${LIBECXX}', 
-		    'COMPILER_LIBCXX=$${COMPILER_LIBCXX}');
+		my @params = ();
 		if (!$self->{strict}) {
-		    push(@vars, "PORTSDIR_PATH=$portsdir");
+		    push(@params, "PORTSDIR_PATH=$portsdir");
 		}
-		exec {'make'} ("make", "dump-vars", @vars);
+		Baseline->dump_vars(@params);
 		die $!;
 	}
 }

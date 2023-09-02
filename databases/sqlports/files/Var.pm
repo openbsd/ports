@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.67 2023/08/22 14:59:46 espie Exp $
+# $OpenBSD: Var.pm,v 1.68 2023/09/02 10:40:59 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -158,6 +158,20 @@ sub create_view($self, @c)
 {
 	Sql::Create::View->new($self->table,
 	    origin => $self->table_name($self->table))->add(@c);
+}
+
+package BaselineMixin;
+
+my $baseline;
+
+sub prime($, $p)
+{
+	$baseline = $p;
+}
+
+sub check($self)
+{
+	return $self->value eq $baseline->{$self->var};
 }
 
 # for distinction later

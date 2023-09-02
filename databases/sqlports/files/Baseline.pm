@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Baseline.pm,v 1.2 2023/09/02 10:24:10 espie Exp $
+# $OpenBSD: Baseline.pm,v 1.3 2023/09/02 10:40:59 espie Exp $
 #
 # Copyright (c) 2006-2013 Marc Espie <espie@openbsd.org>
 #
@@ -19,41 +19,30 @@ use v5.36;
 
 package Baseline;
 
-sub handle_value($self, $pkgpath, $var, $value)
-{
-	print join(" ", $pkgpath, $var, $value), "\n";
-}
-
 sub parse($self, $fd)
 {
 	my $subdir;
+	my $baseline = {};
 	while (<$fd>) {
 		chomp;
-		# kill noise
-		if (m/^\=\=\=\>\s*Exiting (.*) with an error$/) {
-			next;
-		}
-		if (m/^\=\=\=\>\s*(.*)/) {
-			$subdir = PkgPath->new($1);
-		} elsif (my ($pkgpath, $var, $arch, $value) =
+		if (my ($pkgpath, $var, $arch, $value) =
 		    m/^(.*?)\.([A-Z][A-Za-z0-9_.]*)(?:\-([a-z0-9]+))?\=\s*(.*)\s*$/) {
 			if ($value =~ m/^\"(.*)\"$/) {
 				$value = $1;
 			}
-			$self->handle_value($pkgpath, $var, $value);
+			$baseline->{$var} = $value;
 		}
 	}
+	return $baseline;
 }
 
 sub get($class)
 {
 	my $pid = open(my $output, "-|");
 	if ($pid) {
-		$class->parse($output);
-		waitpid($pid, 0);
-		if ($? != 0) {
-			die("while getting baseline");
-		}
+		my $baseline = $class->parse($output);
+		close($output) || die("while getting baseline: $?");
+		return $baseline;
 	} else {
 		delete $ENV{PKGPATH};
 		$class->dump_vars( '-C', '/', 
@@ -69,5 +58,6 @@ sub dump_vars($, @params)
 	my @vars = ('LIBECXX=$${LIBECXX}', 
 	    'COMPILER_LIBCXX=$${COMPILER_LIBCXX}');
 	exec {'make'} ("make", @params, "dump-vars", @vars);
+	die $!;
 }
 1;
