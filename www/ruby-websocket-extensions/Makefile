@@ -1,6 +1,6 @@
 COMMENT =	implementation of WebSocket extensions for ruby 
 
-DISTNAME =	websocket-extensions-0.1.2
+DISTNAME =	websocket-extensions-0.1.5
 CATEGORIES =	www
 
 HOMEPAGE =	https://github.com/faye/websocket-extensions-ruby
