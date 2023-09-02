@@ -1,9 +1,11 @@
 COMMENT=		JSON implementation in C
 
-DISTNAME=		json-c-0.16
+DISTNAME=		json-c-0.17
 CATEGORIES=		devel
 
-SHARED_LIBS=		json-c	2.0
+WANTLIB =		m
+
+SHARED_LIBS=		json-c	2.1
 
 HOMEPAGE=		https://github.com/json-c/json-c/wiki
 
