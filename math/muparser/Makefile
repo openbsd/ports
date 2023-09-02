@@ -3,12 +3,13 @@ COMMENT =	C++ math parser library
 GH_ACCOUNT =	beltoforion
 GH_PROJECT =	muparser
 GH_TAGNAME =	v2.2.6.1
+REVISION =	0
 
 SHARED_LIBS =	muparser	0.0 # 2.2
 
 CATEGORIES =	math
 
-HOMEPAGE =	https://beltoforion.de/article.php?a=muparser
+HOMEPAGE =	https://beltoforion.de/en/muparser/
 
 # MIT
 PERMIT_PACKAGE =Yes
