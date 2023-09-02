@@ -1,7 +1,7 @@
 COMMENT=	anti-censorship proxy and pluggable transports for Tor
 
-MODGO_MODNAME=	git.torproject.org/pluggable-transports/snowflake.git/v2
-V=		2.5.1
+MODGO_MODNAME=	gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/v2
+V=		2.6.0
 MODGO_VERSION=	v$V
 
 DISTNAME=	snowflake.git-${MODGO_VERSION}
@@ -23,7 +23,7 @@ ALL_TARGET=	./proxy/ ./client/ ./server/
 
 # done as a sed instead of patch because the path includes the version number
 post-extract:
-	sed -i 's/Relayed ↑ %v %v, ↓ %v %v/Relayed IN %v %v, OUT %v %v/' \
+	sed -i 's/Relayed ↓ %v %v, ↑ %v %v/Relayed IN %v %v, OUT %v %v/' \
 	    ${WRKSRC}/proxy/lib/pt_event_logger.go
 
 post-install:
