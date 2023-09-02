@@ -1,6 +1,6 @@
 COMMENT=	rather neat animated clock
 
-DISTNAME=	xdaliclock-2.47
+DISTNAME=	xdaliclock-2.48
 CATEGORIES=	x11
 
 HOMEPAGE=	https://www.jwz.org/xdaliclock/
