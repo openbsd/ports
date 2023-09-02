@@ -1,23 +1,19 @@
-Do not pick up LLVM toolchain components (llvm-ar, llvm-ranlib)
-which are only present in the version of LLVM in ports, not the
-version in base.
-
 Fix build with ports-gcc:
 eg++: error: libgomp.spec: No such file or directory
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -422,7 +422,7 @@ ProcessorCount(num_cpus)
- # Compiler stuff
+@@ -594,7 +594,7 @@ include(SetCompilerLinkerFlags)
  
- if(CMAKE_C_COMPILER_ID STREQUAL Clang AND CMAKE_CXX_COMPILER_ID STREQUAL Clang)
+ if(CMAKE_C_COMPILER_ID STREQUAL Clang AND CMAKE_CXX_COMPILER_ID STREQUAL Clang AND NOT MSVC)
+     # TODO: This should also be done for clang-cl.
 -    include(LLVMToolchain)
 +#    include(LLVMToolchain)
  endif()
  
- if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID STREQUAL Clang)
-@@ -526,7 +526,6 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID S
+ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID STREQUAL Clang AND NOT MSVC)
+@@ -721,7 +721,6 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID S
              endif()
          endif()
  

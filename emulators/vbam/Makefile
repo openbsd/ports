@@ -5,9 +5,8 @@ COMMENT =		emulator for Nintendo Game Boy (Color/Advance)
 
 GH_ACCOUNT =		visualboyadvance-m
 GH_PROJECT =		${GH_ACCOUNT}
-GH_TAGNAME =		v2.1.4
+GH_TAGNAME =		v2.1.6
 PKGNAME =		vbam-${GH_TAGNAME:S/v//}
-REVISION =		1
 
 CATEGORIES =		emulators
 
@@ -17,7 +16,7 @@ HOMEPAGE =		https://www.vba-m.com
 PERMIT_PACKAGE =		Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += GL GLU SDL2 c iconv intl m png sfml-network sfml-system
+WANTLIB += GL GLU SDL2 c charset iconv intl m sfml-network sfml-system
 WANTLIB += z
 
 MODULES =		devel/cmake
@@ -29,7 +28,6 @@ BUILD_DEPENDS =		devel/gettext,-tools
 
 LIB_DEPENDS =		devel/gettext,-runtime \
 			devel/sdl2 \
-			graphics/png \
 			multimedia/sfml
 
 CONFIGURE_ARGS +=	-DENABLE_FFMPEG=OFF \

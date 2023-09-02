@@ -1,7 +1,7 @@
 Index: src/common/Patch.cpp
 --- src/common/Patch.cpp.orig
 +++ src/common/Patch.cpp
-@@ -15,7 +15,7 @@
+@@ -16,7 +16,7 @@
  #ifndef __LIBRETRO__
  
  #ifdef __GNUC__
