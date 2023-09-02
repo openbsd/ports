@@ -57,7 +57,6 @@ ONLY_FOR_ARCHS ?= ${CXX11_ARCHS}
 MODQT6_VERSION =	${QT6_VERSION}
 MODQT_VERSION ?=	${MODQT6_VERSION}
 
-_MODQT6_PKGMATCH !=
 show_deps: patch
 	@cpkgs=$$(echo ${_MODQT6_CMAKE_PKGS:NQt6} | sed 's/ /|/g'); \
 	find ${WRKSRC} \( -name '*.pr[iof]' -o -iname '*cmake*' \) -exec \
