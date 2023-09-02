@@ -1,7 +1,7 @@
-Index: arch/arm/boot/dts/am335x-evm.dts
---- arch/arm/boot/dts/am335x-evm.dts.orig
-+++ arch/arm/boot/dts/am335x-evm.dts
-@@ -682,31 +682,28 @@
+Index: arch/arm/boot/dts/ti/omap/am335x-evmsk.dts
+--- arch/arm/boot/dts/ti/omap/am335x-evmsk.dts.orig
++++ arch/arm/boot/dts/ti/omap/am335x-evmsk.dts
+@@ -596,17 +596,19 @@
  	};
  };
  
@@ -10,8 +10,8 @@ Index: arch/arm/boot/dts/am335x-evm.dts
  	pinctrl-names = "default", "sleep";
  	pinctrl-0 = <&cpsw_default>;
  	pinctrl-1 = <&cpsw_sleep>;
++	dual_emac = <1>;
  	status = "okay";
-+	slaves = <1>;
  };
  
 -&davinci_mdio_sw {
@@ -23,6 +23,7 @@ Index: arch/arm/boot/dts/am335x-evm.dts
  
  	ethphy0: ethernet-phy@0 {
  		reg = <0>;
+@@ -617,16 +619,16 @@
  	};
  };
  
@@ -31,10 +32,15 @@ Index: arch/arm/boot/dts/am335x-evm.dts
  	phy-handle = <&ethphy0>;
  	phy-mode = "rgmii-id";
 -	ti,dual-emac-pvid = <1>;
--};
--
--&cpsw_port2 {
--	 status = "disabled";
++	dual_emac_res_vlan = <1>;
  };
  
- &tscadc {
+-&cpsw_port2 {
++&cpsw_emac1 {
+ 	phy-handle = <&ethphy1>;
+ 	phy-mode = "rgmii-id";
+-	ti,dual-emac-pvid = <2>;
++	dual_emac_res_vlan = <2>;
+ };
+ 
+ &mmc1 {

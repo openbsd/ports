@@ -1,11 +1,11 @@
-Index: arch/arm/boot/dts/am335x-sancloud-bbe-common.dtsi
---- arch/arm/boot/dts/am335x-sancloud-bbe-common.dtsi.orig
-+++ arch/arm/boot/dts/am335x-sancloud-bbe-common.dtsi
+Index: arch/arm/boot/dts/ti/omap/am335x-sancloud-bbe-common.dtsi
+--- arch/arm/boot/dts/ti/omap/am335x-sancloud-bbe-common.dtsi.orig
++++ arch/arm/boot/dts/ti/omap/am335x-sancloud-bbe-common.dtsi
 @@ -40,6 +40,22 @@
  		>;
  	};
  
-+	davinci_mdio_default: davinci_mdio_default {
++	davinci_mdio_default: davinci-mdio-default-pins {
 +		pinctrl-single,pins = <
 +			/* MDIO */
 +			AM33XX_PADCONF(AM335X_PIN_MDIO, PIN_INPUT_PULLUP | SLEWCTRL_FAST, MUX_MODE0)
@@ -13,7 +13,7 @@ Index: arch/arm/boot/dts/am335x-sancloud-bbe-common.dtsi
 +		>;
 +	};
 +
-+	davinci_mdio_sleep: davinci_mdio_sleep {
++	davinci_mdio_sleep: davinci-mdio-sleep-pins {
 +		pinctrl-single,pins = <
 +			/* MDIO reset value */
 +			AM33XX_PADCONF(AM335X_PIN_MDIO, PIN_INPUT_PULLDOWN, MUX_MODE7)
@@ -21,7 +21,7 @@ Index: arch/arm/boot/dts/am335x-sancloud-bbe-common.dtsi
 +		>;
 +	};
 +
- 	usb_hub_ctrl: usb_hub_ctrl {
+ 	usb_hub_ctrl: usb-hub-ctrl-pins {
  		pinctrl-single,pins = <
  			AM33XX_PADCONF(AM335X_PIN_RMII1_REF_CLK, PIN_OUTPUT_PULLUP, MUX_MODE7)     /* rmii1_refclk.gpio0_29 */
 @@ -47,12 +63,26 @@
