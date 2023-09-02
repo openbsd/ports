@@ -51,15 +51,14 @@ DISTFILES.my = 	wndw3-my-ebook.pdf
 
 PKG_ARCH =	*
 
+EXTRACT_ONLY =
 NO_BUILD =	Yes
 NO_TEST =	Yes
 
-EXTRACT_CASES = *.pdf) mkdir -p ${WRKDIST}; ln -sf ${FULLDISTDIR}/$$archive ${WRKDIST};;
-
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/wndw
-	for i in ${WRKDIST}/*.pdf; do \
-		${INSTALL_DATA} $$i ${PREFIX}/share/doc/wndw; \
+	for i in ${ALL_DISTFILES}; do \
+		${INSTALL_DATA} ${FULLDISTDIR}/$$i ${PREFIX}/share/doc/wndw; \
 	done
 
 .include <bsd.port.mk>
