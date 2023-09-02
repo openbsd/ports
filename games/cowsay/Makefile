@@ -1,10 +1,10 @@
 COMMENT=	speaking ascii cow
 
-DISTNAME=	Acme-Cow-0.2
+V=		0.2.1
+DISTNAME=	Acme-Cow-$V
+PKGNAME=	cowsay-$V
 MODULES=	cpan
-PKGNAME=	cowsay-0.2
 EPOCH=		0
-REVISION=	1
 
 CATEGORIES=	games
 
