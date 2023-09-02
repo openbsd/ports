@@ -1,7 +1,7 @@
 Index: src/cxx_supportlib/Constants.h
 --- src/cxx_supportlib/Constants.h.orig
 +++ src/cxx_supportlib/Constants.h
-@@ -63,7 +63,7 @@
+@@ -64,7 +64,7 @@
  #define DEFAULT_POOL_IDLE_TIME 300
  #define DEFAULT_PYTHON "python"
  #define DEFAULT_RESPONSE_BUFFER_HIGH_WATERMARK 134217728

@@ -6,15 +6,15 @@ Index: src/ruby_supportlib/phusion_passenger.rb
 --- src/ruby_supportlib/phusion_passenger.rb.orig
 +++ src/ruby_supportlib/phusion_passenger.rb
 @@ -34,7 +34,7 @@ module PhusionPassenger
-   VERSION_STRING = '6.0.4'
+   VERSION_STRING = '6.0.18'
  
    # Tip: find the SHA-256 with ./dev/nginx_version_sha2 <VERSION>
--  PREFERRED_NGINX_VERSION = '1.17.3'
+-  PREFERRED_NGINX_VERSION = '1.24.0'
 +  PREFERRED_NGINX_VERSION = '${NGINX_VERSION}'
-   NGINX_SHA256_CHECKSUM = '3b84fe1c2cf9ca22fde370e486a9ab16b6427df1b6ea62cdb61978c9f34d0f3c'
+   NGINX_SHA256_CHECKSUM = '77a2541637b92a621e3ee76776c8b7b40cf6d707e69ba53a940283e30ff2f55d'
  
    # Packaging may be locked to an older version due to the specific module configuration being
-@@ -323,18 +323,6 @@ private
+@@ -323,18 +323,6 @@ module PhusionPassenger
    # example `sudo` preserves it. That's why we don't respect it by
    # default.
    def self.home_dir(respect_home_env = false)

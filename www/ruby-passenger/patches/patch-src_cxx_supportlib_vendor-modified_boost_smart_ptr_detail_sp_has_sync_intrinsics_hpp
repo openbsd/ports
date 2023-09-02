@@ -1,0 +1,12 @@
+Index: src/cxx_supportlib/vendor-modified/boost/smart_ptr/detail/sp_has_sync_intrinsics.hpp
+--- src/cxx_supportlib/vendor-modified/boost/smart_ptr/detail/sp_has_sync_intrinsics.hpp.orig
++++ src/cxx_supportlib/vendor-modified/boost/smart_ptr/detail/sp_has_sync_intrinsics.hpp
+@@ -30,7 +30,7 @@
+ 
+ # define BOOST_SP_HAS_SYNC_INTRINSICS
+ 
+-#elif defined( __GNUC__ ) && ( __GNUC__ * 100 + __GNUC_MINOR__ >= 401 ) && !defined( __c2__ )
++#elif defined( __GNUC__ ) && ( __GNUC__ * 100 + __GNUC_MINOR__ >= 401 ) && !defined( __c2__ ) && !defined( __hppa )
+ 
+ #define BOOST_SP_HAS_SYNC_INTRINSICS
+ 

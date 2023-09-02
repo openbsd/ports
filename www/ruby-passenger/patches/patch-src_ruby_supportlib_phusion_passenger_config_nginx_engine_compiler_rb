@@ -3,7 +3,7 @@ Remove hiding of build steps.
 Index: src/ruby_supportlib/phusion_passenger/config/nginx_engine_compiler.rb
 --- src/ruby_supportlib/phusion_passenger/config/nginx_engine_compiler.rb.orig
 +++ src/ruby_supportlib/phusion_passenger/config/nginx_engine_compiler.rb
-@@ -285,37 +285,17 @@ module PhusionPassenger
+@@ -286,37 +286,17 @@ module PhusionPassenger
  
        def compile_support_libraries
          puts "Compiling support libraries (step 1 of 2)..."
@@ -44,7 +44,7 @@ Index: src/ruby_supportlib/phusion_passenger/config/nginx_engine_compiler.rb
  
          FileUtils.cp("#{@working_dir}/nginx-#{@nginx_version}/objs/nginx",
            "#{@destdir}/nginx-#{@nginx_version}")
-@@ -340,60 +320,12 @@ module PhusionPassenger
+@@ -341,60 +321,12 @@ module PhusionPassenger
          command << "#{shell} ./configure --prefix=/tmp " +
            "#{self.class.configure_script_options} " +
            "--add-module=#{Shellwords.escape PhusionPassenger.nginx_module_source_dir}"
