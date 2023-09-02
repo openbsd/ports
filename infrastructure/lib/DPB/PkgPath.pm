@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.67 2023/05/06 05:20:31 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.68 2023/09/02 12:07:23 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -71,8 +71,8 @@ sub check_path($class, $w, $p)
 	my $k = $w->fullpkgname;
 	$lock_bypkgname->{$k} //= $lock;
 	if ($lock_bypkgname->{$k} ne $lock) {
-		return " has inconsistent lockname $lock for $k ",
-		    "(is also $lock_bypkgname->{$k})\n";
+		return " has inconsistent lockname $lock for $k ".
+		    "(is also $lock_bypkgname->{$k})";
 	}
 	return undef;
 }
