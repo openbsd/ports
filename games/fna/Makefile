@@ -2,6 +2,7 @@ V =		23.07
 COMMENT =	XNA4 reimplementation for open platforms
 DISTNAME =	fna-${V:S/.//g}
 PKGNAME =	fna-${V}
+REVISION =	0
 CATEGORIES =	games
 HOMEPAGE =	https://fna-xna.github.io/
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
