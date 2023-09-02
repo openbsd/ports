@@ -1,21 +1,12 @@
---- ext/raindrops/extconf.rb.orig	Wed Feb 22 13:17:45 2017
-+++ ext/raindrops/extconf.rb	Wed Feb 22 13:18:16 2017
-@@ -31,18 +31,6 @@ SRC
+Index: ext/raindrops/extconf.rb
+--- ext/raindrops/extconf.rb.orig
++++ ext/raindrops/extconf.rb
+@@ -134,7 +134,7 @@ SRC
    if try_link(src)
      $defs.push(format("-DHAVE_GCC_ATOMIC_BUILTINS"))
      true
 -  else
--    # some compilers still target 386 by default, but we need at least 486
--    # to run atomic builtins.
--    prev_cflags = $CFLAGS
--    $CFLAGS += " -march=i486 "
--    if try_link(src)
--      $defs.push(format("-DHAVE_GCC_ATOMIC_BUILTINS"))
--      true
--    else
--      prev_cflags = $CFLAGS
--      false
--    end
-   end
- end or have_header('atomic_ops.h') or abort <<-SRC
- 
++  elsif false
+     # some compilers still target 386 by default, but we need at least 486
+     # to run atomic builtins.
+     prev_cflags = $CFLAGS

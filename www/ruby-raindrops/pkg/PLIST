@@ -38,7 +38,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/raindrops/middleware.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/raindrops/middleware/proxy.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/raindrops/struct.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/raindrops/watcher.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/raindrops_ext.so
+@so ${GEM_LIB}/gems/${DISTNAME}/lib/raindrops_ext.so
 ${GEM_LIB}/gems/${DISTNAME}/pkg.mk
 ${GEM_LIB}/gems/${DISTNAME}/raindrops.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/setup.rb
@@ -53,6 +53,7 @@ ${GEM_LIB}/gems/${DISTNAME}/test/test_linux_all_tcp_listen_stats.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_linux_all_tcp_listen_stats_leak.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_linux_ipv6.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_linux_middleware.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_linux_reuseport_tcp_listen_stats.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_middleware.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_middleware_unicorn.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_middleware_unicorn_ipv6.rb

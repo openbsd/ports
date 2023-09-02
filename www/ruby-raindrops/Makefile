@@ -1,7 +1,6 @@
 COMMENT =	real-time stats toolkit for Rack HTTP servers
 
-DISTNAME =	raindrops-0.19.0
-REVISION =	0
+DISTNAME =	raindrops-0.20.1
 CATEGORIES =	www
 
 MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
@@ -22,7 +21,7 @@ TEST_DEPENDS =		devel/gmake \
 			${FULLPKGNAME}:${BUILD_PKGPATH}
 
 do-test:
-	cd ${WRKSRC} && ${SETENV} RUBYOPT=-rubygems \
+	cd ${WRKSRC} && ${SETENV} \
 		RUBYLIB=${WRKSRC}/lib gmake test RUBY=${RUBY}
 
 .include <bsd.port.mk>
