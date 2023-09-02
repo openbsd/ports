@@ -69,6 +69,10 @@ Porting it required adding uchar.h to base, and a few ports (devel/tllist, devel
 
 [Sway](https://github.com/swaywm/sway) is a tiled Wayland compositor, compatible with i3, [ported to OpenBSD](https://github.com/mherrb/sway.git)
 
+### wayland/wev
+
+[Wev](https://git.sr.ht/~sircmpwn/wev) is a Wayland event viewer, similar to [xev(1)](https://man.openbsd.org/xev)
+
 ### swayimg
 
 TODO : port
@@ -122,8 +126,7 @@ It can also be started manually, but not in rootless mode (this is a Wayland sec
 
  - Multiple devices and hotplugging
  - Explicit tablets and touchscreens support
- - Pointer accelleration profiles
- - Keyboard remapping (international layouts)
+ - Pointer acceleration profiles
 
 ### Gtk applications
 
@@ -139,11 +142,6 @@ So far gtk-demos (Gtk-4) fails to start, it still tries to connect to an X serer
 Qt 5 and 6 are normally built with Wayland support. I tried keepassxc(1) (Qt5) which could'nt connect to the compositor. qt6/qtbase doesn't build on my system from some reason. FIXME 
 
 
-### <uchar.h> and char32_t 
-
-A number of Wayland applications use UTF-32 internally and require support for the above that it not (yet) available on OpenBSD. TODO: one implementation exists in DragonFlyBSD. 
-Thay would probably unlock [foot](https://codeberg.org/dnkl/foot.git) and others.
-
 ### swaylock
 
 To get a screen locker, swaylock needs to be tought about BSD auth to replace PAM. 
@@ -158,4 +156,4 @@ None of the above currenty implement pledge() or unveil() support, nor any other
 * Sway will crash the kernel during startup from time to time. I don't know if it's a problem specific to the dri driver for the Intel iris (12th gen) GPU in my test laptop or a general bug. TODO: test on a machine with a serial console to get a backtrace if possible.
 
 -----
-Last modified: 2023-08-13T13:05:16
+Last modified: 2023-09-02T13:25:23
