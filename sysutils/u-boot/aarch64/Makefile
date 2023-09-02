@@ -2,7 +2,6 @@ VERSION=	2021.10
 REVISION=	7
 
 SOC=		aarch64
-SOC_CPU=	arm64
 
 SUNXI64=\
 	a64-olinuxino \
@@ -35,5 +34,16 @@ BOARDS=\
 	rock-pi-n10-rk3399pro \
 	rockpro64-rk3399 \
 	rpi_arm64
+
+BUILD_DEPENDS+= devel/arm-none-eabi/gcc,aarch64 \
+		devel/py-elftools${MODPY_FLAVOR} \
+		sysutils/arm-trusted-firmware>=2.2p0v0
+MAKE_ENV+=	CROSS_COMPILE="aarch64-none-elf-"
+RK3328_BL31=	${LOCALBASE}/share/arm-trusted-firmware/rk3328-bl31.elf
+RK3399_BL31=	${LOCALBASE}/share/arm-trusted-firmware/rk3399-bl31.elf
+SUNXI_BL31=	${LOCALBASE}/share/arm-trusted-firmware/sun50i_a64-bl31.bin
+SUNXI_H6_BL31=	${LOCALBASE}/share/arm-trusted-firmware/sun50i_h6-bl31.bin
+
+MODPY_ADJ_FILES= arch/arm/mach-rockchip/make_fit_atf.py
 
 .include <bsd.port.mk>

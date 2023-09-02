@@ -17,7 +17,7 @@ MASTER_SITES=	https://ftp.denx.de/pub/u-boot/
 EXTRACT_SUFX=	.tar.bz2
 PKG_ARCH=	*
 
-BUILD_DEPENDS=	devel/bison \
+BUILD_DEPENDS+=	devel/bison \
 		devel/dtc \
 		devel/swig
 
@@ -27,30 +27,8 @@ BUILD_DEPENDS+=	devel/py-setuptools${MODPY_FLAVOR}
 MODULES=	lang/python
 MODPY_RUNDEP=	No
 
-MODPY_ADJ_FILES=\
-	arch/arm/mach-rockchip/make_fit_atf.py
-
-MAKE_ENV=	KBUILD_VERBOSE=1 \
+MAKE_ENV+=	KBUILD_VERBOSE=1 \
 		PYTHON="${MODPY_BIN}"
-
-.if "${SOC_CPU}" == "arm64"
-BUILD_DEPENDS+=	devel/arm-none-eabi/gcc,aarch64 \
-		devel/py-elftools${MODPY_FLAVOR} \
-		sysutils/arm-trusted-firmware>=2.2p0v0
-MAKE_ENV+=	CROSS_COMPILE="aarch64-none-elf-"
-RK3328_BL31=	"${LOCALBASE}/share/arm-trusted-firmware/rk3328-bl31.elf"
-RK3399_BL31=	"${LOCALBASE}/share/arm-trusted-firmware/rk3399-bl31.elf"
-SUNXI_BL31=	"${LOCALBASE}/share/arm-trusted-firmware/sun50i_a64-bl31.bin"
-SUNXI_H6_BL31=	"${LOCALBASE}/share/arm-trusted-firmware/sun50i_h6-bl31.bin"
-.elif "${SOC_CPU}" == "arm"
-BUILD_DEPENDS+=	devel/arm-none-eabi/gcc,arm
-MAKE_ENV+=	CROSS_COMPILE="arm-none-eabi-"
-.elif "${SOC_CPU}" == "riscv64"
-BUILD_DEPENDS+= devel/riscv-elf/gcc \
-		sysutils/opensbi>=0.9p0
-MAKE_ENV+=	CROSS_COMPILE="riscv64-unknown-elf-"
-FW_DYNAMIC=	"${LOCALBASE}/share/opensbi/generic/fw_dynamic.bin"
-.endif
 
 USE_GMAKE=	Yes
 NO_TEST=	Yes

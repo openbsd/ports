@@ -2,7 +2,6 @@ VERSION=	2021.10
 REVISION=	7
 
 SOC=		arm
-SOC_CPU=	arm
 
 OMAP=\
 	omap4_panda \
@@ -60,5 +59,8 @@ BOARDS=\
 	rpi_3_32b \
 	tinker-rk3288 \
 	turris_omnia
+
+BUILD_DEPENDS+=	devel/arm-none-eabi/gcc,arm
+MAKE_ENV+=	CROSS_COMPILE="arm-none-eabi-"
 
 .include <bsd.port.mk>
