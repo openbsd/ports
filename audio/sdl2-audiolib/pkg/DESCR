@@ -1,0 +1,7 @@
+SDL_audiolib is an audio decoding, resampling and mixing library.
+
+It is a small and simple to use C++ library for playing various audio
+formats. It is a thin (-ish) wrapper around existing resampling (like
+SRC or SoX) and decoding libraries (like libmpg123 or libvorbis).
+
+Most popular audio formats are supported.
