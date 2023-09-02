@@ -13,8 +13,8 @@ HOMEPAGE =		https://github.com/AntonKueltz/fastecdsa
 MAINTAINER =		Theo Buehler <tb@openbsd.org>
 
 # Avoid fetching test cases from the internet during 'make test'
-MASTER_SITES0 =		https://tools.ietf.org/rfc/
-DISTFILES +=		rfc6979.txt:0
+MASTER_SITES.ietf =	https://tools.ietf.org/rfc/
+DISTFILES.ietf +=	rfc6979.txt
 EXTRACT_CASES =		*.txt)	cp ${FULLDISTDIR}/$$archive ${MODPY_TEST_DIR};;
 
 # Unlicense
