@@ -128,9 +128,9 @@ MASTER_SITES =		???
 #
 # Get source from pypi.org
 #MODPY_PI =		Yes
-#MODPY_SETUPTOOLS =	Yes
-# If port is python2 only
-#MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
+#MODPY_PYBUILD =	setuptools
+#			or flit_core, hatchling, etc - see python-module(5)
+#
 # If port is a Python module (py-*) that is or might be used by other Python
 # ports, set FLAVOR=python3 and FLAVORS=python3
 
