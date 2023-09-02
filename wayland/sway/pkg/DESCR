@@ -10,10 +10,17 @@ information on the configuration.
 
 Running
 
-On OpenBSD
+On OpenBSD, create a script (call it startwl for example) containing :
 
-doas seatd -u $(whoami) -l debug &
-
-export XDG_RUNTIME_DIR=/tmp
+#! /bin/ksh
+export XDG_RUNTIME_DIR=/tmp/run/$(id -u)
+if [ ! -d $XDG_RUNTIME_DIR ]; then
+    mkdir -m 700 -p $XDG_RUNTIME_DIR
+fi
 export WLR_DRM_DEVICES=/dev/dri/card0
-sway
+export LIBSEAT_BACKEND=noop
+
+# export MOZ_ENABLE_WAYLAND=1 # doesn't work yet
+export XDG_CURRENT_DESKTOP=sway
+
+exec sway $*

@@ -2,7 +2,7 @@ COMMENT =	i3-compatible Wayland compositor
 
 V =		20230812
 PKGNAME =	sway-${V}
-REVISION =	0
+REVISION =	1
 
 GH_ACCOUNT =	mherrb
 GH_PROJECT =	sway
@@ -37,7 +37,8 @@ LIB_DEPENDS =	devel/json-c \
 		wayland/wlroots \
 		x11/xkbcommon
 
-RUN_DEPENDS =	x11/gnome/themes-extra
+RUN_DEPENDS =	x11/gnome/themes-extra \
+		wayland/foot
 
 CONFIGURE_ARGS = -Dtray=disabled
 
