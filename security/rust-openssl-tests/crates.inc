@@ -1,4 +1,4 @@
-MODCARGO_CRATES +=	aho-corasick	1.0.4	# Unlicense OR MIT
+MODCARGO_CRATES +=	aho-corasick	1.0.5	# Unlicense OR MIT
 MODCARGO_CRATES +=	bindgen	0.64.0	# BSD-3-Clause
 MODCARGO_CRATES +=	bitflags	1.3.2	# MIT/Apache-2.0
 MODCARGO_CRATES +=	bitflags	2.4.0	# MIT OR Apache-2.0
@@ -26,7 +26,7 @@ MODCARGO_CRATES +=	lazycell	1.3.0	# MIT/Apache-2.0
 MODCARGO_CRATES +=	libc	0.2.147	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	libloading	0.7.4	# ISC
 MODCARGO_CRATES +=	log	0.4.20	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	memchr	2.5.0	# Unlicense/MIT
+MODCARGO_CRATES +=	memchr	2.6.2	# Unlicense OR MIT
 MODCARGO_CRATES +=	minimal-lexical	0.2.1	# MIT/Apache-2.0
 MODCARGO_CRATES +=	nom	7.1.3	# MIT
 MODCARGO_CRATES +=	once_cell	1.18.0	# MIT OR Apache-2.0
