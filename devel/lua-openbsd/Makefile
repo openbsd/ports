@@ -2,7 +2,7 @@ COMMENT =	lua bindings for OpenBSD functions
 
 GH_ACCOUNT =	n0la
 GH_PROJECT =	lua-openbsd
-GH_TAGNAME =	v0.4
+GH_TAGNAME =	v0.5
 
 CATEGORIES =	devel
 

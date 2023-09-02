@@ -1,4 +1,5 @@
 @so lib/lua/${MODLUA_VERSION}/openbsd.so
 share/examples/${FULLPKGNAME}/
 share/examples/${FULLPKGNAME}/openbsd-example.lua
+share/examples/${FULLPKGNAME}/unveil.lua
 share/examples/${FULLPKGNAME}/userokay.lua
