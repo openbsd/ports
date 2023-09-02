@@ -1,16 +1,16 @@
 Index: example/config.yaml
 --- example/config.yaml.orig
 +++ example/config.yaml
-@@ -240,7 +240,7 @@ storage-backend: "local"
- # this directory, and create new subdirectories and files within it.
+@@ -514,7 +514,7 @@ storage-backend: "local"
+ # Only required when running with the local storage backend.
  # Examples: ["/home/gotosocial/storage", "/opt/gotosocial/datastorage"]
  # Default: "/gotosocial/storage"
 -storage-local-base-path: "/gotosocial/storage"
 +storage-local-base-path: "${LOCALSTATEDIR}/gotosocial/storage"
  
- ###########################
- ##### STATUSES CONFIG #####
-@@ -306,7 +306,7 @@ letsencrypt-port: 80
+ # String. API endpoint of the S3 compatible service.
+ # Only required when running with the s3 storage backend.
+@@ -626,7 +626,7 @@ letsencrypt-port: 80
  # In any case, make sure GoToSocial has permissions to write to / read from this directory.
  # Examples: ["/home/gotosocial/storage/certs", "/acmecerts"]
  # Default: "/gotosocial/storage/certs"
