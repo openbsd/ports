@@ -1,6 +1,6 @@
 COMMENT =		HTTP server toolkit
 
-DISTNAME =		webrick-1.7.0
+DISTNAME =		webrick-1.8.1
 
 CATEGORIES =		www
 
