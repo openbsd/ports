@@ -43,8 +43,13 @@ lib/python${MODPY_VERSION}/site-packages/bson/${MODPY_PYCACHE}typings.${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/bson/${MODPY_PYCACHE}typings.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bson/${MODPY_PYCACHE}tz_util.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bson/${MODPY_PYCACHE}tz_util.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/bson/_cbsonmodule.c
+lib/python${MODPY_VERSION}/site-packages/bson/_cbsonmodule.h
 lib/python${MODPY_VERSION}/site-packages/bson/_helpers.py
 lib/python${MODPY_VERSION}/site-packages/bson/binary.py
+lib/python${MODPY_VERSION}/site-packages/bson/bson-endian.h
+lib/python${MODPY_VERSION}/site-packages/bson/buffer.c
+lib/python${MODPY_VERSION}/site-packages/bson/buffer.h
 lib/python${MODPY_VERSION}/site-packages/bson/code.py
 lib/python${MODPY_VERSION}/site-packages/bson/codec_options.py
 lib/python${MODPY_VERSION}/site-packages/bson/datetime_ms.py
@@ -60,6 +65,10 @@ lib/python${MODPY_VERSION}/site-packages/bson/py.typed
 lib/python${MODPY_VERSION}/site-packages/bson/raw_bson.py
 lib/python${MODPY_VERSION}/site-packages/bson/regex.py
 lib/python${MODPY_VERSION}/site-packages/bson/son.py
+lib/python${MODPY_VERSION}/site-packages/bson/time64.c
+lib/python${MODPY_VERSION}/site-packages/bson/time64.h
+lib/python${MODPY_VERSION}/site-packages/bson/time64_config.h
+lib/python${MODPY_VERSION}/site-packages/bson/time64_limits.h
 lib/python${MODPY_VERSION}/site-packages/bson/timestamp.py
 lib/python${MODPY_VERSION}/site-packages/bson/typings.py
 lib/python${MODPY_VERSION}/site-packages/bson/tz_util.py
@@ -202,6 +211,7 @@ lib/python${MODPY_VERSION}/site-packages/pymongo/${MODPY_PYCACHE}uri_parser.${MO
 lib/python${MODPY_VERSION}/site-packages/pymongo/${MODPY_PYCACHE}uri_parser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymongo/${MODPY_PYCACHE}write_concern.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pymongo/${MODPY_PYCACHE}write_concern.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pymongo/_cmessagemodule.c
 lib/python${MODPY_VERSION}/site-packages/pymongo/_csot.py
 lib/python${MODPY_VERSION}/site-packages/pymongo/_version.py
 lib/python${MODPY_VERSION}/site-packages/pymongo/aggregation.py

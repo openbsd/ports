@@ -1,6 +1,6 @@
 COMMENT =	Python driver for mongodb
 
-MODPY_EGG_VERSION = 4.4.1
+MODPY_EGG_VERSION = 4.5.0
 DISTNAME =	pymongo-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:S/py//}
 
