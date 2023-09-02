@@ -22,6 +22,7 @@
      SUBDIR += lha
      SUBDIR += libarchive
      SUBDIR += libdeflate
+     SUBDIR += libmpq
      SUBDIR += libmspack
      SUBDIR += libtar
      SUBDIR += libzim
