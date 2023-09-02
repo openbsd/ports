@@ -1,3 +1,5 @@
+PORTROACH =		limit:^7
+
 COMMENT =		Puppet server
 
 VERSION =		7.9.5
