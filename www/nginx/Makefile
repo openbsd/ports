@@ -42,7 +42,7 @@ PKGNAME-rtmp=		nginx-rtmp-${VERSION}
 PKGNAME-securelink=	nginx-securelink-${VERSION}
 
 REVISION-main=		0
-REVISION-passenger=	0
+REVISION-passenger=	1
 
 ONLY_FOR_ARCHS-passenger= aarch64 amd64 arm i386
 
