@@ -1,6 +1,6 @@
 COMMENT =	implementation of the WebSocket protocol for ruby
 
-DISTNAME =	websocket-driver-0.7.1
+DISTNAME =	websocket-driver-0.7.6
 CATEGORIES =	www
 
 HOMEPAGE =	https://github.com/faye/websocket-driver-ruby
