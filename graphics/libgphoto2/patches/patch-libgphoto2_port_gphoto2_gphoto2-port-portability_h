@@ -4,7 +4,7 @@ symbols like snprintf (from FreeBSD ports).
 Index: libgphoto2_port/gphoto2/gphoto2-port-portability.h
 --- libgphoto2_port/gphoto2/gphoto2-port-portability.h.orig
 +++ libgphoto2_port/gphoto2/gphoto2-port-portability.h
-@@ -85,20 +85,6 @@ typedef struct {
+@@ -86,20 +86,6 @@ typedef struct {
  
  /* yummy. :) */
  
