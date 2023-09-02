@@ -57,8 +57,11 @@ share/dbus-1/interfaces/org.kde.baloo.main.xml
 share/dbus-1/interfaces/org.kde.baloo.scheduler.xml
 share/examples/kf5-baloo/
 share/examples/kf5-baloo/xdg/
+@sample ${SYSCONFDIR}/xdg/
 share/examples/kf5-baloo/xdg/autostart/
+@sample ${SYSCONFDIR}/xdg/autostart/
 share/examples/kf5-baloo/xdg/autostart/baloo_file.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/baloo_file.desktop
 share/kf5/mkspecs/qt_Baloo.pri
 share/locale/ar/LC_MESSAGES/baloo_file5.mo
 share/locale/ar/LC_MESSAGES/baloo_file_extractor5.mo
