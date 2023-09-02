@@ -1,24 +1,24 @@
 COMMENT =		weighted finite-state transducers library
 
-DISTNAME =		openfst-1.8.1
+DISTNAME =		openfst-1.8.2
 
-SHARED_LIBS +=		fst			1.1	# 24.0
-SHARED_LIBS +=		fstscript		1.1	# 24.0
-SHARED_LIBS +=		fstcompact		0.0	# 24.0
-SHARED_LIBS +=		fstcompressscript	0.0	# 24.0
-SHARED_LIBS +=		fstconst		0.0	# 24.0
+SHARED_LIBS +=		fst			2.0	# 24.0
+SHARED_LIBS +=		fstscript		2.0	# 24.0
+SHARED_LIBS +=		fstcompact		1.0	# 24.0
+SHARED_LIBS +=		fstcompressscript	1.0	# 24.0
+SHARED_LIBS +=		fstconst		1.0	# 24.0
 SHARED_LIBS +=		fstfar			0.0	# 24.0
-SHARED_LIBS +=		fstfarscript		0.0	# 24.0
-SHARED_LIBS +=		fstlinearscript		0.0	# 24.0
-SHARED_LIBS +=		fstlookahead		0.0	# 24.0
-SHARED_LIBS +=		fstpdtscript		0.0	# 24.0
-SHARED_LIBS +=		fstmpdtscript		0.0	# 24.0
-SHARED_LIBS +=		fstngram		0.0	# 24.0
-SHARED_LIBS +=		fstspecial		0.0	# 24.0
+SHARED_LIBS +=		fstfarscript		1.0	# 24.0
+SHARED_LIBS +=		fstlinearscript		1.0	# 24.0
+SHARED_LIBS +=		fstlookahead		1.0	# 24.0
+SHARED_LIBS +=		fstpdtscript		1.0	# 24.0
+SHARED_LIBS +=		fstmpdtscript		1.0	# 24.0
+SHARED_LIBS +=		fstngram		1.0	# 24.0
+SHARED_LIBS +=		fstspecial		1.0	# 24.0
 
 CATEGORIES =		math devel textproc
 
-HOMEPAGE =		http://www.openfst.org/twiki/bin/view/FST/WebHome
+HOMEPAGE =		https://www.openfst.org/twiki/bin/view/FST/WebHome
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes

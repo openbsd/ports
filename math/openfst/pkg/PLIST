@@ -1,6 +1,7 @@
 @bin bin/farcompilestrings
 @bin bin/farconvert
 @bin bin/farcreate
+@bin bin/farencode
 @bin bin/farequal
 @bin bin/farextract
 @bin bin/farinfo
@@ -74,7 +75,6 @@ include/fst/complement.h
 include/fst/compose-filter.h
 include/fst/compose.h
 include/fst/concat.h
-include/fst/config.h
 include/fst/connect.h
 include/fst/const-fst.h
 include/fst/determinize.h
@@ -99,6 +99,7 @@ include/fst/extensions/far/
 include/fst/extensions/far/compile-strings.h
 include/fst/extensions/far/convert.h
 include/fst/extensions/far/create.h
+include/fst/extensions/far/encode.h
 include/fst/extensions/far/equal.h
 include/fst/extensions/far/extract.h
 include/fst/extensions/far/far-class.h
@@ -108,6 +109,7 @@ include/fst/extensions/far/farscript.h
 include/fst/extensions/far/getters.h
 include/fst/extensions/far/info.h
 include/fst/extensions/far/isomorphic.h
+include/fst/extensions/far/map-reduce.h
 include/fst/extensions/far/print-strings.h
 include/fst/extensions/far/script-impl.h
 include/fst/extensions/far/stlist.h
@@ -169,7 +171,6 @@ include/fst/lock.h
 include/fst/log.h
 include/fst/lookahead-filter.h
 include/fst/lookahead-matcher.h
-include/fst/map.h
 include/fst/mapped-file.h
 include/fst/matcher-fst.h
 include/fst/matcher.h
@@ -199,6 +200,7 @@ include/fst/rmepsilon.h
 include/fst/rmfinalepsilon.h
 include/fst/script/
 include/fst/script/arc-class.h
+include/fst/script/arcfilter-impl.h
 include/fst/script/arciterator-class.h
 include/fst/script/arcsort.h
 include/fst/script/arg-packs.h
@@ -277,7 +279,6 @@ include/fst/test/rand-fst.h
 include/fst/test/weight-tester.h
 include/fst/topsort.h
 include/fst/tuple-weight.h
-include/fst/types.h
 include/fst/union-find.h
 include/fst/union-weight.h
 include/fst/union.h
