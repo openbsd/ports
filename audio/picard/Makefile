@@ -1,8 +1,7 @@
 COMMENT =	automatic audio files tagger using the MusicBrainz database
 
-MODPY_EGG_VERSION =	2.8.5
+MODPY_EGG_VERSION =	2.9.1
 DISTNAME =		picard-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		audio
 
@@ -10,8 +9,6 @@ HOMEPAGE =		https://picard.musicbrainz.org/
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
-
-WANTLIB =		${MODPY_WANTLIB} pthread
 
 MODULES =		lang/python
 
