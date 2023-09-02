@@ -1,6 +1,7 @@
 COMMENT =	archiving Tool
 DISTNAME =	ark-${VERSION}
 CATEGORIES =	archivers
+REVISION =	0
 
 SHARED_LIBS +=  kerfuffle                 9.1 # 17.08
 
