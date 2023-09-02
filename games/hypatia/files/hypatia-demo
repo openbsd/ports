@@ -1,4 +1,0 @@
-#!/bin/sh
-
-cd "${TRUEPREFIX}/share/examples/hypatia" && \
-	exec ${MODPY_BIN} game.py

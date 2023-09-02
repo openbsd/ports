@@ -156,7 +156,6 @@
      SUBDIR += heroes
      SUBDIR += hex-a-hop
      SUBDIR += hlsteam
-     SUBDIR += hypatia
      SUBDIR += hyperrogue
      SUBDIR += icebreaker
      SUBDIR += inform6

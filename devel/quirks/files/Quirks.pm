@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1538 2023/09/01 10:17:56 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.1539 2023/09/02 21:34:25 daniel Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1836,6 +1836,7 @@ setup_obsolete_reason(
 	5 => 'sfio',
 	3 => 'parrot',
 	3 => 'kfloppy',
+	3 => 'py3-hypatia',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
