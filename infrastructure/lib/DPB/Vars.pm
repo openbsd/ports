@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Vars.pm,v 1.64 2023/08/13 09:48:20 espie Exp $
+# $OpenBSD: Vars.pm,v 1.65 2023/09/02 10:16:14 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -46,48 +46,22 @@ our @ISA = qw(DPB::GetThings);
 
 use OpenBSD::Paths;
 
-# this is the "complex" stuff that prints out a *small* Makefile on a pipe,
-# passes it off to make, and gets the result on the other side,
-# so we bypass the normal job creation process
 sub get($class, $shell, $state, @names)
 {
-	pipe(my $rh, my $wh);
-	my $pid = fork();
-	if ($pid == 0) {
-		# XXX note we do assume this will be written entirely
-		# as there are at most 10 or 12 names, this is okay
-		DPB::Job->cleanup_after_fork;
-		print $wh "print-data:\n";
-		for my $n (@names) {
-			print $wh "\t\@echo \${$n}\n";
-		}
-		print $wh <<EOT;
-DUMMY_PACKAGE=Yes
-.PHONY: print-data
-.include <bsd.port.mk>
-EOT
-		close $wh;
-		exit 0;
-	}
-	close $wh;
 	my @list;
-	my $pid2 = open(my $output, "-|");
+	my $pid = open(my $output, "-|");
 	my $make = $state->make;
-	if ($pid2) {
-		close $rh;
+	if ($pid) {
 		@list = <$output>;
 		chomp for @list;
 		waitpid($pid, 0);
-		waitpid($pid2, 0);
 		if ($? != 0) {
 			DPB::Util->die("$make errored out with ".
 			    $state->child_error." while getting vars");
 		}
 	} else {
 		DPB::Job->cleanup_after_fork;
-		close STDIN;
-		open(STDIN, '<&', $rh);
-		$shell->exec($make, '-C', '/', '-f', '-', 'print-data');
+		$shell->exec($make, '-C', '/', '-f', '/usr/share/mk/bsd.port.mk', "DUMMY_PACKAGE=Yes", "show='".join(' ', @names)."'");
 		DPB::Util->die("oops couldn't exec $make");
     	}
 	return @list;
