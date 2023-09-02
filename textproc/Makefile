@@ -541,6 +541,7 @@
      SUBDIR += sablotron
      SUBDIR += scdoc
      SUBDIR += sim
+     SUBDIR += simpleini
      SUBDIR += solr
      SUBDIR += source-highlight
      SUBDIR += sp
