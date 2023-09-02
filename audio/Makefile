@@ -216,6 +216,7 @@
      SUBDIR += s-cdda-to-db
      SUBDIR += schismtracker
      SUBDIR += scmpc
+     SUBDIR += sdl2-audiolib
      SUBDIR += shairport-sync
      SUBDIR += shntool
      SUBDIR += shorten
