@@ -25,6 +25,8 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rack/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rack/adapter/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rack/adapter/loader.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rack/adapter/rails.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rack/handler/
+${GEM_LIB}/gems/${DISTNAME}/lib/rack/handler/thin.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/thin/
 ${GEM_LIB}/gems/${DISTNAME}/lib/thin.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/thin/backends/
@@ -50,5 +52,5 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/thin/stats.html.erb
 ${GEM_LIB}/gems/${DISTNAME}/lib/thin/stats.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/thin/statuses.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/thin/version.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/thin_parser.so
+@so ${GEM_LIB}/gems/${DISTNAME}/lib/thin_parser.so
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
