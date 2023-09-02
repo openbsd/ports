@@ -1,5 +1,5 @@
 COMMENT =		DeaDBeeF is an audio player
-DISTNAME =		deadbeef-1.9.3
+DISTNAME =		deadbeef-1.9.4
 CATEGORIES =		audio
 
 HOMEPAGE =		https://deadbeef.sourceforge.io/
