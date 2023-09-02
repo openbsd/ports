@@ -1,6 +1,7 @@
 COMMENT =	PIM Akonadi calendar support library
 DISTNAME =	akonadi-calendar-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=  KPim5AkonadiCalendar      1.0 # 0.0
 

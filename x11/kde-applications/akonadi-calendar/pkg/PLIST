@@ -59,8 +59,11 @@ share/akonadi/plugins/serializer/akonadi_serializer_kcalcore.desktop
 share/dbus-1/services/org.kde.kalendarac.service
 share/examples/akonadi-calendar/
 share/examples/akonadi-calendar/xdg/
+@sample ${SYSCONFDIR}/xdg/
 share/examples/akonadi-calendar/xdg/autostart/
+@sample ${SYSCONFDIR}/xdg/autostart/
 share/examples/akonadi-calendar/xdg/autostart/org.kde.kalendarac.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/org.kde.kalendarac.desktop
 share/kf5/mkspecs/qt_AkonadiCalendar.pri
 share/knotifications5/kalendarac.notifyrc
 share/locale/ar/LC_MESSAGES/kalendarac.mo
