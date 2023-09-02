@@ -1,10 +1,9 @@
 COMMENT=	Qt widgets for technical applications
 
-VERSION =	6.1.6
+VERSION =	6.2.0
 DISTNAME =	qwt-${VERSION}
-REVISION =	1
 
-SHARED_LIBS =	qwt${QTLIBSUFFIX} 7.1
+SHARED_LIBS =	qwt${QTLIBSUFFIX} 8.0
 
 CATEGORIES =	x11
 
@@ -28,9 +27,8 @@ MODQMAKE_INSTALL_ROOT =
 NO_TEST =	Yes
 USE_GMAKE =	Yes
 
-BUILD_DEPENDS =	x11/qt5/qtsvg
-LIB_DEPENDS =	x11/qt5/qttools,-main
-RUN_DEPENDS =	x11/qt5/qtsvg
+LIB_DEPENDS =	x11/qt5/qttools,-main \
+		x11/qt5/qtsvg
 
 QTVER =		qt5
 SUBST_VARS =	WRKINST QTVER QTLIBSUFFIX
@@ -38,7 +36,6 @@ SUBST_VARS =	WRKINST QTVER QTLIBSUFFIX
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/{qwtconfig.pri,qwt.prf} \
 		${WRKSRC}/designer/designer.pro \
-		${WRKSRC}/textengines/textengines.pri \
 		${WRKSRC}/src/src.pro
 post-configure:
 	# ensure CXXFLAGS/-std=c++11 is passed to all clang++
