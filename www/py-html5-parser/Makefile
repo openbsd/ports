@@ -1,10 +1,9 @@
 COMMENT =	fast C based HTML 5 parsing for python
 
-MODPY_EGG_VERSION =	0.4.10
+MODPY_EGG_VERSION =	0.4.11
 
 DISTNAME =	html5-parser-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	2
 
 CATEGORIES =	www
 
@@ -21,11 +20,10 @@ WANTLIB += pthread xml2
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 MODPY_PYTEST_ARGS =	test/*py
 
-TEST_ENV +=		PYTHONPATH=${WRKSRC}/lib.openbsd-${OSREV}-${ARCH}-${MODPY_VERSION}/
+#TEST_ENV +=		PYTHONPATH=${WRKSRC}/lib.openbsd-${OSREV}-${ARCH}-${MODPY_VERSION}/
 
 LIB_DEPENDS =		textproc/libxml
 

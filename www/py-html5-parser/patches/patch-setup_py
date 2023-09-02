@@ -11,4 +11,4 @@ Index: setup.py
 +cargs = ('-std=c99 -fvisibility=hidden'.split())
  
  
- class Test(Build):
+ class Test(Command):
