@@ -1,0 +1,24 @@
+include/fcft/
+include/fcft/fcft.h
+include/fcft/stride.h
+@lib lib/libfcft.so.${LIBfcft_VERSION}
+lib/pkgconfig/fcft.pc
+@man man/man3/fcft_capabilities.3
+@man man/man3/fcft_clone.3
+@man man/man3/fcft_destroy.3
+@man man/man3/fcft_fini.3
+@man man/man3/fcft_from_name.3
+@man man/man3/fcft_init.3
+@man man/man3/fcft_kerning.3
+@man man/man3/fcft_log_init.3
+@man man/man3/fcft_precompose.3
+@man man/man3/fcft_rasterize_char_utf32.3
+@man man/man3/fcft_rasterize_grapheme_utf32.3
+@man man/man3/fcft_rasterize_text_run_utf32.3
+@man man/man3/fcft_set_emoji_presentation.3
+@man man/man3/fcft_set_scaling_filter.3
+@man man/man3/fcft_text_run_destroy.3
+share/doc/fcft/
+share/doc/fcft/CHANGELOG.md
+share/doc/fcft/LICENSE
+share/doc/fcft/README.md

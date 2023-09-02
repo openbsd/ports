@@ -1,0 +1,21 @@
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -28,7 +28,7 @@ is_debug_build = get_option('buildtype').startswith('d
+ cc = meson.get_compiler('c')
+ 
+ add_project_arguments(
+-  ['-D_GNU_SOURCE=200809L'] +
++  ['-D_GNU_SOURCE=200809L', '-DHAVE_STRUCT_TIMESPEC'] +
+   (is_debug_build ? ['-D_DEBUG'] : []) +
+   (cc.has_function('memfd_create') ? ['-DMEMFD_CREATE'] : []) +
+   (cc.has_argument('-fvisibility=default') ? ['-DFCFT_EXPORT=__attribute__((visibility("default")))'] : ['-DFCFT_EXPORT=']),
+@@ -70,7 +70,7 @@ harfbuzz1 = dependency('harfbuzz', required: get_optio
+ harfbuzz2 = dependency('harfbuzz', required: get_option('run-shaping'))
+ utf8proc = dependency('libutf8proc', required: get_option('run-shaping'))
+ pixman = dependency('pixman-1')
+-stdthreads = cc.find_library('stdthreads', required: false)
++stdthreads = [dependency('stdthreads', required: false), cc.find_library('stdthreads', required: false)]
+ 
+ tllist = dependency('tllist', version: '>=1.0.1', fallback: 'tllist')
+ 
