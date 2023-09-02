@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Baseline.pm,v 1.1 2023/09/01 23:00:13 espie Exp $
+# $OpenBSD: Baseline.pm,v 1.2 2023/09/02 10:24:10 espie Exp $
 #
 # Copyright (c) 2006-2013 Marc Espie <espie@openbsd.org>
 #
@@ -47,33 +47,27 @@ sub parse($self, $fd)
 
 sub get($class)
 {
-	pipe(my $rh, my $wh);
-	my $pid = fork();
-	if ($pid == 0) {
-		print $wh <<EOT;
-DUMMY_PACKAGE=Yes
-.include <bsd.port.mk>
-EOT
-		close $wh;
-		exit 0;
-	}
-	close $wh;
-	my @list;
-	my $pid2 = open(my $output, "-|");
-	if ($pid2) {
-		close $rh;
+	my $pid = open(my $output, "-|");
+	if ($pid) {
 		$class->parse($output);
 		waitpid($pid, 0);
-		waitpid($pid2, 0);
 		if ($? != 0) {
 			die("while getting baseline");
 		}
 	} else {
-		close STDIN;
-		open(STDIN, '<&', $rh);
 		delete $ENV{PKGPATH};
-		exec {'make'} ('make', '-C', '/', '-f', '-', 'dump-vars');
+		$class->dump_vars( '-C', '/', 
+		    '-f', '/usr/share/mk/bsd.port.mk', 
+		    'DUMMY_PACKAGE=Yes');
     	}
 }
 
+sub dump_vars($, @params)
+{
+	close STDERR;
+	open STDERR, '>&STDOUT';
+	my @vars = ('LIBECXX=$${LIBECXX}', 
+	    'COMPILER_LIBCXX=$${COMPILER_LIBCXX}');
+	exec {'make'} ("make", @params, "dump-vars", @vars);
+}
 1;
