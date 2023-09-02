@@ -4,6 +4,7 @@ CATEGORIES =	textproc
 GH_ACCOUNT =	brofield
 GH_PROJECT =	simpleini
 GH_TAGNAME =	v4.20
+REVISION =	0
 
 # MIT
 PERMIT_PACKAGE =	Yes
@@ -11,6 +12,7 @@ PERMIT_PACKAGE =	Yes
 NO_BUILD =		Yes
 
 TEST_DEPENDS =	devel/gtest
+USE_GMAKE =	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include
