@@ -10,7 +10,9 @@ share/examples/dpic/sources/
 share/examples/dpic/sources/Zalgebra.pic
 share/examples/dpic/sources/arcs.pic
 share/examples/dpic/sources/arrowheads.pic
+share/examples/dpic/sources/arrowmarks.pic
 share/examples/dpic/sources/arrows.pic
+share/examples/dpic/sources/arrowwide.pic
 share/examples/dpic/sources/basictests.pic
 share/examples/dpic/sources/diag1.pic
 share/examples/dpic/sources/diag2.pic
@@ -63,6 +65,7 @@ share/examples/dpic/sources/man46.pic
 share/examples/dpic/sources/man47.pic
 share/examples/dpic/sources/man48.pic
 share/examples/dpic/sources/man49.pic
+share/examples/dpic/sources/man50.pic
 share/examples/dpic/sources/mode.tex
 share/examples/dpic/sources/plotlib.pic
 share/examples/dpic/sources/test1.tex

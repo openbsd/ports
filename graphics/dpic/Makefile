@@ -1,7 +1,6 @@
 COMMENT =		pic-like interpreter for producing line graphics
 
-DISTNAME =		dpic-2023.02.01
-REVISION =		0
+DISTNAME =		dpic-2023.06.01
 
 CATEGORIES =		graphics
 
