@@ -15,6 +15,7 @@ lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/Qsci/qscicommand.si
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/Qsci/qscicommandset.sip
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/Qsci/qscidocument.sip
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/Qsci/qscilexer.sip
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/Qsci/qscilexerasm.sip
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/Qsci/qscilexeravs.sip
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/Qsci/qscilexerbash.sip
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/Qsci/qscilexerbatch.sip
@@ -28,15 +29,19 @@ lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/Qsci/qscilexerd.sip
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/Qsci/qscilexerdiff.sip
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/Qsci/qscilexerfortran.sip
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/Qsci/qscilexerfortran77.sip
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/Qsci/qscilexerhex.sip
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/Qsci/qscilexerhtml.sip
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/Qsci/qscilexeridl.sip
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/Qsci/qscilexerintelhex.sip
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/Qsci/qscilexerjava.sip
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/Qsci/qscilexerjavascript.sip
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/Qsci/qscilexerjson.sip
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/Qsci/qscilexerlua.sip
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/Qsci/qscilexermakefile.sip
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/Qsci/qscilexermarkdown.sip
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/Qsci/qscilexermasm.sip
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/Qsci/qscilexermatlab.sip
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/Qsci/qscilexernasm.sip
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/Qsci/qscilexeroctave.sip
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/Qsci/qscilexerpascal.sip
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/Qsci/qscilexerperl.sip
@@ -48,7 +53,9 @@ lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/Qsci/qscilexerpytho
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/Qsci/qscilexerruby.sip
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/Qsci/qscilexerspice.sip
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/Qsci/qscilexersql.sip
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/Qsci/qscilexersrec.sip
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/Qsci/qscilexertcl.sip
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/Qsci/qscilexertekhex.sip
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/Qsci/qscilexertex.sip
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/Qsci/qscilexerverilog.sip
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/Qsci/qscilexervhdl.sip

@@ -1,13 +1,13 @@
 COMMENT =	Qt port of the Scintilla source code editor
 
 # XXX update py-qscintilla alongside this port (same distfile).
-VERSION =	2.13.3
+VERSION =	2.14.1
 DISTNAME =	QScintilla_src-${VERSION}
 PKGNAME =	qscintilla-${VERSION}
 
 CATEGORIES =	editors x11
 
-SHARED_LIBS +=  qscintilla2_qt5          1.0 # 15.0
+SHARED_LIBS +=  qscintilla2_qt5          2.0 # 15.0
 
 HOMEPAGE =	https://www.riverbankcomputing.com/software/qscintilla/
 

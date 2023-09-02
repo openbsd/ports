@@ -8,6 +8,7 @@ include/X11/qt5/Qsci/qscicommandset.h
 include/X11/qt5/Qsci/qscidocument.h
 include/X11/qt5/Qsci/qsciglobal.h
 include/X11/qt5/Qsci/qscilexer.h
+include/X11/qt5/Qsci/qscilexerasm.h
 include/X11/qt5/Qsci/qscilexeravs.h
 include/X11/qt5/Qsci/qscilexerbash.h
 include/X11/qt5/Qsci/qscilexerbatch.h
@@ -22,15 +23,19 @@ include/X11/qt5/Qsci/qscilexerdiff.h
 include/X11/qt5/Qsci/qscilexeredifact.h
 include/X11/qt5/Qsci/qscilexerfortran.h
 include/X11/qt5/Qsci/qscilexerfortran77.h
+include/X11/qt5/Qsci/qscilexerhex.h
 include/X11/qt5/Qsci/qscilexerhtml.h
 include/X11/qt5/Qsci/qscilexeridl.h
+include/X11/qt5/Qsci/qscilexerintelhex.h
 include/X11/qt5/Qsci/qscilexerjava.h
 include/X11/qt5/Qsci/qscilexerjavascript.h
 include/X11/qt5/Qsci/qscilexerjson.h
 include/X11/qt5/Qsci/qscilexerlua.h
 include/X11/qt5/Qsci/qscilexermakefile.h
 include/X11/qt5/Qsci/qscilexermarkdown.h
+include/X11/qt5/Qsci/qscilexermasm.h
 include/X11/qt5/Qsci/qscilexermatlab.h
+include/X11/qt5/Qsci/qscilexernasm.h
 include/X11/qt5/Qsci/qscilexeroctave.h
 include/X11/qt5/Qsci/qscilexerpascal.h
 include/X11/qt5/Qsci/qscilexerperl.h
@@ -42,7 +47,9 @@ include/X11/qt5/Qsci/qscilexerpython.h
 include/X11/qt5/Qsci/qscilexerruby.h
 include/X11/qt5/Qsci/qscilexerspice.h
 include/X11/qt5/Qsci/qscilexersql.h
+include/X11/qt5/Qsci/qscilexersrec.h
 include/X11/qt5/Qsci/qscilexertcl.h
+include/X11/qt5/Qsci/qscilexertekhex.h
 include/X11/qt5/Qsci/qscilexertex.h
 include/X11/qt5/Qsci/qscilexerverilog.h
 include/X11/qt5/Qsci/qscilexervhdl.h
@@ -64,6 +71,8 @@ lib/qt5/qsci/api/python/Python-2.5.api
 lib/qt5/qsci/api/python/Python-2.6.api
 lib/qt5/qsci/api/python/Python-2.7.api
 lib/qt5/qsci/api/python/Python-3.1.api
+lib/qt5/qsci/api/python/Python-3.10.api
+lib/qt5/qsci/api/python/Python-3.11.api
 lib/qt5/qsci/api/python/Python-3.2.api
 lib/qt5/qsci/api/python/Python-3.3.api
 lib/qt5/qsci/api/python/Python-3.4.api

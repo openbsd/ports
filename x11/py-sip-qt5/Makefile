@@ -1,12 +1,12 @@
 COMMENT=	sip module support for PyQt5
 
-MODPY_EGG_VERSION=	12.11.0
+MODPY_EGG_VERSION=	12.12.2
 
 DISTNAME=	PyQt5_sip-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME:L}
-REVISION=	1
 
 WANTLIB =  pthread
+
 CATEGORIES=	x11
 
 HOMEPAGE=	https://www.riverbankcomputing.com/software/sip/
