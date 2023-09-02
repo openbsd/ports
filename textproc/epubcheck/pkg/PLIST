@@ -3,6 +3,8 @@ share/epubcheck/
 share/epubcheck/epubcheck.jar
 share/epubcheck/lib/
 share/epubcheck/lib/Saxon-HE-11.4.jar
+share/epubcheck/lib/accessors-smart-2.4.9.jar
+share/epubcheck/lib/asm-9.3.jar
 share/epubcheck/lib/checker-qual-3.12.0.jar
 share/epubcheck/lib/common-image-3.9.4.jar
 share/epubcheck/lib/common-io-3.9.4.jar
@@ -25,10 +27,14 @@ share/epubcheck/lib/j2objc-annotations-1.3.jar
 share/epubcheck/lib/jackson-core-asl-1.9.12.jar
 share/epubcheck/lib/jackson-mapper-asl-1.9.12.jar
 share/epubcheck/lib/jing-20181222.jar
+share/epubcheck/lib/json-path-2.8.0.jar
+share/epubcheck/lib/json-path-assert-2.8.0.jar
+share/epubcheck/lib/json-smart-2.4.10.jar
 share/epubcheck/lib/jsr305-3.0.2.jar
 share/epubcheck/lib/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
 share/epubcheck/lib/sac-1.3.jar
-share/epubcheck/lib/slf4j-api-1.7.25.jar
+share/epubcheck/lib/slf4j-api-1.7.36.jar
+share/epubcheck/lib/slf4j-nop-1.7.36.jar
 share/epubcheck/lib/xercesImpl-2.9.1.jar
 share/epubcheck/lib/xml-apis-1.4.01.jar
 share/epubcheck/lib/xmlresolver-4.4.3-data.jar
