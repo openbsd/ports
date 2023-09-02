@@ -37,7 +37,7 @@ MODCARGO_WANTLIB +=
 .endif
 
 # Define MASTER_SITES_CRATESIO for crates.io
-MASTER_SITES_CRATESIO =	https://crates.io/api/v1/crates/
+MASTER_SITES.cargo =	https://crates.io/api/v1/crates/
 
 # Save crates inside particular DIST_SUBDIR by default.
 # If you use DIST_SUBDIR, adjust MODCARGO_DIST_SUBDIR.
@@ -52,11 +52,6 @@ _MODCARGO_DIST_SUBDIR =
 _MODCARGO_DIST_SUBDIR = ${MODCARGO_DIST_SUBDIR}/
 .endif
 
-# Use MASTER_SITES9 to grab crates by default.
-# Could be changed by setting MODCARGO_MASTER_SITESN.
-MODCARGO_MASTER_SITESN ?= 9
-MASTER_SITES${MODCARGO_MASTER_SITESN} ?= ${MASTER_SITES_CRATESIO}
-
 # allow override default configuration, and keep all files
 MODCARGO_CRATES_KEEP ?=
 
@@ -66,7 +61,7 @@ DISTFILES +=	${GH_DISTFILE}
 
 # Generated list of DISTFILES.
 .for _cratename _cratever in ${MODCARGO_CRATES}
-DISTFILES +=	${_MODCARGO_DIST_SUBDIR}${_cratename}-${_cratever}.tar.gz{${_cratename}/${_cratever}/download}:${MODCARGO_MASTER_SITESN}
+DISTFILES.cargo +=	${_MODCARGO_DIST_SUBDIR}${_cratename}-${_cratever}.tar.gz{${_cratename}/${_cratever}/download}
 .endfor
 
 # post-extract target for preparing crates directory.
