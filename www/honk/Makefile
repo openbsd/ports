@@ -1,6 +1,6 @@
 COMMENT =		federated status conveyance
 
-DISTNAME =		honk-1.0.0
+DISTNAME =		honk-1.1.1
 CATEGORIES =		www
 
 HOMEPAGE =		https://humungus.tedunangst.com/r/honk
@@ -20,8 +20,6 @@ LIB_DEPENDS =		databases/sqlite3
 
 NO_TEST =		Yes
 ALL_TARGET =		humungus.tedunangst.com/r/honk
-
-SUBST_VARS +=		SYSCONFDIR
 
 DOCDIR ?=		${PREFIX}/share/doc/honk
 EXAMPLESDIR = 		${PREFIX}/share/examples/honk
