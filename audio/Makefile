@@ -95,6 +95,7 @@
      SUBDIR += libopusenc
      SUBDIR += libsamplerate
      SUBDIR += libsidplay
+     SUBDIR += libsmackerdec
      SUBDIR += libsndfile
      SUBDIR += libsoxr
      SUBDIR += libvorbis
