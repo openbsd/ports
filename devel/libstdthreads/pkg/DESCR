@@ -1,0 +1,3 @@
+libstdthreads implements the C11 threads standard as a wrapper around
+POSIX threads.
+The code comes from FreeBSD's src/lib/libstdtread/.

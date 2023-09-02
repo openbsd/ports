@@ -1,0 +1,6 @@
+include/threads.h
+@static-lib lib/libstdthreads.a
+@lib lib/libstdthreads.so.${LIBstdthreads_VERSION}
+@static-lib lib/libstdthreads_p.a
+lib/pkgconfig/stdthreads.pc
+@man man/man3/thrd_create.3
