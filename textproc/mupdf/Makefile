@@ -1,7 +1,7 @@
 COMMENT =	graphic library, pdf parser, viewer and utilities
 
 # bump and test textproc/zathura/plugins/mupdf if updating
-V =		1.22.2
+V =		1.23.2
 DISTNAME =	mupdf-$V-source
 PKGNAME =	mupdf-${V:S/-rc/rc/}
 
@@ -40,10 +40,17 @@ LIB_DEPENDS =	devel/harfbuzz \
 USE_GMAKE =	Yes
 NO_TEST =	Yes
 
+LDFLAGS =	-L${LOCALBASE}/lib -L${X11BASE}/lib -lgumbo
+
+CPPFLAGS =	-I$(WRKSRC)/fitz -I$(WRKSRC)/pdf -I$(WRKSRC)/xps \
+		-I${X11BASE}/include -I${X11BASE}/include/freetype2 \
+		-I${LOCALBASE}/include/harfbuzz \
+		-I${LOCALBASE}/include/openjpeg-2.5 -I${LOCALBASE}/include
 MAKE_FLAGS =	CC="${CC}" CXX="${CXX}" \
-		XCFLAGS="${CFLAGS} -fPIC -I$(WRKSRC)/fitz -I$(WRKSRC)/pdf -I$(WRKSRC)/xps -I${X11BASE}/include" \
+		XCFLAGS="${CFLAGS} -fPIC ${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}" LLD_EMUL="${LLD_EMUL}" \
 		USE_SYSTEM_LIBS=yes \
+		SYS_FREETYPE_LIBS=-lfreetype \
 		HAVE_TESSERACT=no HAVE_LEPTONICA=no \
 		build=release verbose=yes
 

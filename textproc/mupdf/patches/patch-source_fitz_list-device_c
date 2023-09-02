@@ -4,7 +4,7 @@ cast to pointer dereferences 8 byte aligned.
 Index: source/fitz/list-device.c
 --- source/fitz/list-device.c.orig
 +++ source/fitz/list-device.c
-@@ -113,6 +113,9 @@ typedef struct
+@@ -119,6 +119,9 @@ typedef struct
  	unsigned int ctm    : 3;
  	unsigned int stroke : 1;
  	unsigned int flags  : 6;

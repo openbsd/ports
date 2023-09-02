@@ -13,7 +13,7 @@ Index: source/helpers/pkcs7/pkcs7-openssl.c
  {
  	return 1;
  }
-@@ -513,6 +513,9 @@ check_certificate(fz_context *ctx, pdf_pkcs7_verifier 
+@@ -518,6 +518,9 @@ check_certificate(fz_context *ctx, pdf_pkcs7_verifier 
  			X509_STORE_add_cert(st, c);
  		}
  	}

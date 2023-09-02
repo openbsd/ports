@@ -1,39 +1,24 @@
 Index: Makerules
 --- Makerules.orig
 +++ Makerules
-@@ -83,8 +83,8 @@ ifeq ($(build),debug)
+@@ -92,7 +92,7 @@ ifeq ($(build),debug)
    CFLAGS += -pipe -g
    LDFLAGS += -g
  else ifeq ($(build),release)
--  CFLAGS += -pipe -O2 -DNDEBUG -fomit-frame-pointer
--  LDFLAGS += $(LDREMOVEUNREACH) -Wl,-s
+-  CFLAGS += -pipe -O2 -DNDEBUG
 +  CFLAGS += -DNDEBUG
-+  LDFLAGS += $(LDREMOVEUNREACH)
- else ifeq ($(build),small)
-   CFLAGS += -pipe -Os -DNDEBUG -fomit-frame-pointer
    LDFLAGS += $(LDREMOVEUNREACH) -Wl,-s
-@@ -168,8 +168,8 @@ else ifeq ($(OS),MACOS)
+ else ifeq ($(build),small)
+   CFLAGS += -pipe -Os -DNDEBUG
+@@ -180,9 +180,9 @@ else ifeq ($(OS),MACOS)
      endif
    endif
  
 -else ifeq ($(OS),Linux)
--  HAVE_OBJCOPY := yes
-+else
-+  HAVE_OBJCOPY ?= yes
- 
-   ifeq ($(shell pkg-config --exists freetype2 && echo yes),yes)
- 	SYS_FREETYPE_CFLAGS := $(shell pkg-config --cflags freetype2)
-@@ -230,10 +230,10 @@ else ifeq ($(OS),Linux)
- 	X11_LIBS := $(shell pkg-config --libs x11 xext)
-   endif
- 
--  HAVE_LIBCRYPTO := $(shell pkg-config --exists 'libcrypto >= 1.1.0' && echo yes)
-+  HAVE_LIBCRYPTO := yes
-   ifeq ($(HAVE_LIBCRYPTO),yes)
--	LIBCRYPTO_CFLAGS := $(shell pkg-config --cflags libcrypto) -DHAVE_LIBCRYPTO
--	LIBCRYPTO_LIBS := $(shell pkg-config --libs libcrypto)
-+	LIBCRYPTO_CFLAGS := -DHAVE_LIBCRYPTO
-+	LIBCRYPTO_LIBS := -lcrypto
-   endif
- 
-   HAVE_PTHREAD := yes
++else ifneq (,$(filter $(OS),Linux OpenBSD))
+   ifeq ($(PYODIDE_ROOT),)
+-    HAVE_OBJCOPY := yes
++    HAVE_OBJCOPY ?= yes
+   else
+     # Pyodide's ld does not support -b so we cannot use it to create object
+     # files containing font data, so leave HAVE_OBJCOPY unset. And we need
