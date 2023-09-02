@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: State.pm,v 1.38 2023/06/29 13:27:28 espie Exp $
+# $OpenBSD: State.pm,v 1.39 2023/09/02 12:33:54 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -308,21 +308,21 @@ sub add_build_info($state, @consumers)
 				next;
 			}
 			$i++;
-			last unless $i <= $state->{stats_used};
 			$time += $s->{time};
 			$sz += $s->{size};
 			$host = $s->{host}; # XXX we don't do anything with
 					    # host information
+			last unless $i <= $state->{stats_used};
 		}
 		# no clean build found: partial stats are better than
 		# nothing
 		if (!defined $i) {
 			for my $s (@{$p->{stats}}) {
 				$i++;
-				last unless $i <= $state->{stats_used};
 				$time += $s->{time};
 				$sz += $s->{size};
 				$host = $s->{host};
+				last unless $i <= $state->{stats_used};
 			}
 		}
 		for my $c (@consumers) {
