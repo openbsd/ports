@@ -59,8 +59,12 @@ A version of [wlroots](https://gitlab.freedesktop.org/wlroots/wlroots) that has 
 
 ### wayland/havoc
 
-[Havoc](https://github.com/ii8/havoc) is the simplest terminal emulator application for Wayland that I could find and that builds on OpenBSD with [minimal changes](https://github.com/mherrb/havoc.git).
-    
+[Havoc](https://github.com/ii8/havoc) is the simplest terminal emulator application for Wayland that I could find and that builds on OpenBSD with minimal changes.
+
+### wayland/foot
+[Foot](https://codeberg.org/dnkl/foot) is a more complete terminal emulator.
+Porting it required adding uchar.h to base, and a few ports (devel/tllist, devel/libstdthreads, graphics/fcft) which are also used by other not yet ported Wayland applications.
+
 ### wayland/sway
 
 [Sway](https://github.com/swaywm/sway) is a tiled Wayland compositor, compatible with i3, [ported to OpenBSD](https://github.com/mherrb/sway.git)
