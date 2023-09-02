@@ -24,6 +24,8 @@ PKGNAME-pim =		kde-pim-${MODKDE_VERSION}
 PKGNAME-development =	kde-development-${MODKDE_VERSION}
 PKGNAME-utils =		kde-utils-${MODKDE_VERSION}
 
+REVISION-utils =	0
+
 MULTI_PACKAGES +=	-main \
 			-games \
 			-admin \
@@ -235,7 +237,6 @@ RUN_DEPENDS-utils = \
 	x11/kde-applications/kcharselect \
 	x11/kde-applications/kdebugsettings \
 	x11/kde-applications/kdf \
-	x11/kde-applications/kfloppy \
 	x11/kde-applications/kgpg \
 	x11/kde-applications/kteatime \
 	x11/kde-applications/ktimer \
