@@ -2,14 +2,12 @@
 NOT_FOR_ARCHS=	${GCC3_ARCHS}
 
 COMMENT =		memory-efficient hash_map and hash_set C++ classes
-V=			2.0.3
+V=			2.0.4
 GH_ACCOUNT =		sparsehash
 GH_PROJECT =		sparsehash
 GH_TAGNAME =		sparsehash-$V
-DISTNAME =		sparsehash-$V
+PKGNAME =		sparsehash-$V
 CATEGORIES =		devel
-HOMEPAGE =		https://github.com/geoffpike/sparsehash
-WRKDIST =		${WRKDIR}/sparsehash-sparsehash-$V
 
 # 3-clause BSDL
 PERMIT_PACKAGE =	Yes
