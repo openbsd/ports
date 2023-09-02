@@ -1,4 +1,4 @@
-# $OpenBSD: modules.port.mk,v 1.14 2017/08/22 10:27:33 espie Exp $
+# $OpenBSD: modules.port.mk,v 1.15 2023/09/02 18:32:47 espie Exp $
 #
 #  Copyright (c) 2001 Marc Espie
 # 
@@ -35,6 +35,10 @@ ERRORS += "Fatal: COMPILER coming from a file included *after* the gcc module"
 .  endif
 COMPILER_LANGS ?= c c++
 _COMPILER=compiler
+.endif
+
+.if defined(DIST_TUPLE) || defined(DIST_TUPLE_MV) && empty(MODULES:Mdist-tuple)
+MODULES += dist-tuple
 .endif
 
 .for _m in ${_COMPILER} ${MODULES:L}
