@@ -2,7 +2,7 @@ COMMENT =	very basic terminfo library
 
 GH_ACCOUNT =	neovim
 GH_PROJECT =	unibilium
-GH_TAGNAME =	v2.1.0
+GH_TAGNAME =	v2.1.1
 
 SHARED_LIBS +=	unibilium	1.1 # 4.1
 
