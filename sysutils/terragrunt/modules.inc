@@ -312,7 +312,7 @@ MODGO_MODULES =	\
 	github.com/grpc-ecosystem/go-grpc-middleware			 v1.0.0 \
 	github.com/grpc-ecosystem/go-grpc-prometheus			 v1.2.0 \
 	github.com/grpc-ecosystem/grpc-gateway				 v1.16.0 \
-	github.com/gruntwork-io/go-commons				 v0.16.2 \
+	github.com/gruntwork-io/go-commons				 v0.17.1 \
 	github.com/gruntwork-io/gruntwork-cli				 v0.7.0 \
 	github.com/gruntwork-io/terratest				 v0.41.0 \
 	github.com/hashicorp/aws-sdk-go-base				 v0.6.0 \
@@ -555,8 +555,7 @@ MODGO_MODULES =	\
 	rsc.io/sampler							 v1.3.0 \
 	sigs.k8s.io/structured-merge-diff				 v0.0.0-20190525122527-15d366b2352e \
 	sigs.k8s.io/structured-merge-diff/v4				 v4.0.3 \
-	sigs.k8s.io/yaml						 v1.2.0 \
-	vizzlo.com/mixpanel						 v1.2.0
+	sigs.k8s.io/yaml						 v1.2.0
 
 MODGO_MODFILES =	\
 	cloud.google.com/go					 v0.100.2 \
