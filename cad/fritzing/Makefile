@@ -9,7 +9,7 @@ REVISION=	6
 DISTNAME=	fritzing-${GH_TAGNAME}
 CATEGORIES=	cad
 
-DISTFILES=	${DISTNAME}.tar.gz \
+DISTFILES=	${DISTNAME}-1{${DISTNAME}}.tar.gz \
 		fritzing-parts-${GH_TAGNAME}${EXTRACT_SUFX}:0
 
 HOMEPAGE=	https://fritzing.org/
