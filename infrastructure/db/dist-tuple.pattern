@@ -26,6 +26,6 @@ TEMPLATE_DISTFILES.srht ?= \
 
 # templates for HOMEPAGE; same substitutions as for DISTFILES.x
 
-PROTO_HOMEPAGE.github ?=	https://github.com/<account>/<project>
-PROTO_HOMEPAGE.gitlab ?=	https://gitlab.com/<account>/<project>
-PROTO_HOMEPAGE.srht ?=		https://git.sr.ht/~<account>/<project>
+TEMPLATE_HOMEPAGE.github ?=	https://github.com/<account>/<project>
+TEMPLATE_HOMEPAGE.gitlab ?=	https://gitlab.com/<account>/<project>
+TEMPLATE_HOMEPAGE.srht ?=	https://git.sr.ht/~<account>/<project>

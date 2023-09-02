@@ -34,7 +34,7 @@ DISTFILES ?= ${DISTNAME}${EXTRACT_SUFX}
 
 # check if _template is valid
 .    if empty(MASTER_SITES.${_template})
-ERRORS += "Fatal: invalid choice for distexpand: ${_template}"
+ERRORS += "Fatal: invalid choice for DIST_TUPLE: ${_template}"
 .    endif
 
 # detect GitHub tagname format
@@ -63,7 +63,7 @@ HOMEPAGE ?=	${TEMPLATE_HOMEPAGE.${_template}:S/%account/${_account}/g:S/%project
 
 # check if _template is valid
 .    if empty(MASTER_SITES.${_template})
-ERRORS += "Fatal: invalid choice for distexpand: ${_template}"
+ERRORS += "Fatal: invalid choice for DIST_TUPLE_MV: ${_template}"
 .    endif
 
 # detect GitHub tagname format
