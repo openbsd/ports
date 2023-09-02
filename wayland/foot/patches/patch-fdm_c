@@ -1,0 +1,41 @@
+use NSIG for signals table
+
+Index: fdm.c
+--- fdm.c.orig
++++ fdm.c
+@@ -71,7 +71,7 @@ fdm_init(void)
+     }
+ 
+     xassert(received_signals == NULL); /* Only one FDM instance supported */
+-    received_signals = xcalloc(SIGRTMAX, sizeof(received_signals[0]));
++    received_signals = xcalloc(NSIG, sizeof(received_signals[0]));
+     got_signal = false;
+ 
+     struct fdm *fdm = malloc(sizeof(*fdm));
+@@ -80,7 +80,7 @@ fdm_init(void)
+         return NULL;
+     }
+ 
+-    struct sig_handler *sig_handlers = calloc(SIGRTMAX, sizeof(sig_handlers[0]));
++    struct sig_handler *sig_handlers = calloc(NSIG, sizeof(sig_handlers[0]));
+ 
+     if (sig_handlers == NULL) {
+         LOG_ERRNO("failed to allocate signal handler array");
+@@ -111,7 +111,7 @@ fdm_destroy(struct fdm *fdm)
+     if (tll_length(fdm->fds) > 0)
+         LOG_WARN("FD list not empty");
+ 
+-    for (int i = 0; i < SIGRTMAX; i++) {
++    for (int i = 0; i < NSIG; i++) {
+         if (fdm->signal_handlers[i].callback != NULL)
+             LOG_WARN("handler for signal %d not removed", i);
+     }
+@@ -434,7 +434,7 @@ fdm_poll(struct fdm *fdm)
+     if (unlikely(got_signal)) {
+         got_signal = false;
+ 
+-        for (int i = 0; i < SIGRTMAX; i++) {
++        for (int i = 0; i < NSIG; i++) {
+             if (received_signals[i]) {
+                 received_signals[i] = false;
+                 struct sig_handler *handler = &fdm->signal_handlers[i];

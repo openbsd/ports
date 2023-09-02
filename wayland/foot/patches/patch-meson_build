@@ -1,0 +1,52 @@
+Use libstdthreads
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -120,7 +120,7 @@ if cc.has_argument('-fmacro-prefix-map=/foo=')
+ endif
+ 
+ math = cc.find_library('m')
+-threads = [dependency('threads'), cc.find_library('stdthreads', required: false)]
++stdthreads = dependency('stdthreads')
+ libepoll = dependency('epoll-shim', required: false)
+ pixman = dependency('pixman-1')
+ wayland_protocols = dependency('wayland-protocols')
+@@ -218,7 +218,8 @@ common = static_library(
+   'char32.c', 'char32.h',
+   'debug.c', 'debug.h',
+   'xmalloc.c', 'xmalloc.h',
+-  'xsnprintf.c', 'xsnprintf.h'
++  'xsnprintf.c', 'xsnprintf.h',
++  dependencies: [stdthreads]
+ )
+ 
+ misc = static_library(
+@@ -226,7 +227,8 @@ misc = static_library(
+   'hsl.c', 'hsl.h',
+   'macros.h',
+   'misc.c', 'misc.h',
+-  'uri.c', 'uri.h'
++  'uri.c', 'uri.h',
++  dependencies: [stdthreads],
+ )
+ 
+ vtlib = static_library(
+@@ -261,7 +263,7 @@ if get_option('b_pgo') == 'generate'
+     'pgo',
+     'pgo/pgo.c',
+     wl_proto_src + wl_proto_headers,
+-    dependencies: [math, threads, libepoll, pixman, wayland_client, xkb, utf8proc, fcft, tllist],
++    dependencies: [math, stdthreads, libepoll, pixman, wayland_client, xkb, utf8proc, fcft, tllist],
+     link_with: pgolib,
+   )
+ endif
+@@ -294,7 +296,7 @@ executable(
+   'user-notification.c', 'user-notification.h',
+   'wayland.c', 'wayland.h', 'shm-formats.h',
+   wl_proto_src + wl_proto_headers, version,
+-  dependencies: [math, threads, libepoll, pixman, wayland_client, wayland_cursor, xkb, fontconfig, utf8proc,
++  dependencies: [math, stdthreads, libepoll, pixman, wayland_client, wayland_cursor, xkb, fontconfig, utf8proc,
+                  tllist, fcft],
+   link_with: pgolib,
+   install: true)

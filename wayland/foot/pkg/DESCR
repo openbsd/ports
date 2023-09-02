@@ -1,0 +1,18 @@
+Foot, the fast, lightweight and minimalistic Wayland terminal emulator.
+
+* DE agnostic
+* Server/daemon mode
+* User configurable font fallback
+* On-the-fly font resize
+* On-the-fly DPI font size adjustment
+* Scrollback search
+* Keyboard driven URL detection
+* Color emoji support
+* IME (via `text-input-v3`)
+* Multi-seat
+* True Color (24bpp)
+* Synchronized Updates support
+* Sixel image support
+
+Configuration is done in ~/.config/foot/foot.ini (a template can be
+found in ${PREFIX}/share/examples/foot).

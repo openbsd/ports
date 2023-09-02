@@ -1,0 +1,96 @@
+@bin bin/foot
+@bin bin/footclient
+@man man/man1/foot.1
+@man man/man1/footclient.1
+@man man/man5/foot.ini.5
+@man man/man7/foot-ctlseqs.7
+share/applications/org.codeberg.dnkl.foot-server.desktop
+share/applications/org.codeberg.dnkl.foot.desktop
+share/applications/org.codeberg.dnkl.footclient.desktop
+share/bash-completion/completions/foot
+share/bash-completion/completions/footclient
+share/doc/foot/
+share/doc/foot/CHANGELOG.md
+share/doc/foot/LICENSE
+share/doc/foot/README.md
+share/examples/foot/
+@sample ${SYSCONFDIR}/xdg/
+@sample ${SYSCONFDIR}/xdg/foot/
+share/examples/foot/foot.ini
+@sample ${SYSCONFDIR}/xdg/foot/foot.ini
+share/fish/
+share/fish/vendor_completions.d/
+share/fish/vendor_completions.d/foot.fish
+share/fish/vendor_completions.d/footclient.fish
+share/foot/
+share/foot/themes/
+share/foot/themes/aeroroot
+share/foot/themes/apprentice
+share/foot/themes/ayu-mirage
+share/foot/themes/catppuccin
+share/foot/themes/chiba-dark
+share/foot/themes/derp
+share/foot/themes/deus
+share/foot/themes/dracula
+share/foot/themes/gruvbox-dark
+share/foot/themes/gruvbox-light
+share/foot/themes/hacktober
+share/foot/themes/jetbrains-darcula
+share/foot/themes/kitty
+share/foot/themes/material-amber
+share/foot/themes/material-design
+share/foot/themes/modus-operandi
+share/foot/themes/modus-vivendi
+share/foot/themes/monokai-pro
+share/foot/themes/moonfly
+share/foot/themes/nightfly
+share/foot/themes/nord
+share/foot/themes/nordiq
+share/foot/themes/onedark
+share/foot/themes/paper-color-dark
+share/foot/themes/paper-color-light
+share/foot/themes/rezza
+share/foot/themes/rose-pine
+share/foot/themes/selenized-black
+share/foot/themes/selenized-dark
+share/foot/themes/selenized-light
+share/foot/themes/selenized-white
+share/foot/themes/solarized-dark
+share/foot/themes/solarized-dark-normal-brights
+share/foot/themes/solarized-light
+share/foot/themes/srcery
+share/foot/themes/starlight
+share/foot/themes/tango
+share/foot/themes/tempus-autumn
+share/foot/themes/tempus-classic
+share/foot/themes/tempus-dawn
+share/foot/themes/tempus-day
+share/foot/themes/tempus-dusk
+share/foot/themes/tempus-fugit
+share/foot/themes/tempus-future
+share/foot/themes/tempus-night
+share/foot/themes/tempus-past
+share/foot/themes/tempus-rift
+share/foot/themes/tempus-spring
+share/foot/themes/tempus-summer
+share/foot/themes/tempus-tempest
+share/foot/themes/tempus-totus
+share/foot/themes/tempus-warp
+share/foot/themes/tempus-winter
+share/foot/themes/tokyonight-day
+share/foot/themes/tokyonight-night
+share/foot/themes/tokyonight-storm
+share/foot/themes/visibone
+share/foot/themes/zenburn
+share/icons/hicolor/48x48/apps/foot.png
+share/icons/hicolor/scalable/apps/foot.svg
+share/terminfo/
+share/terminfo/f/
+share/terminfo/f/foot
+share/terminfo/f/foot-direct
+share/zsh/
+share/zsh/site-functions/
+share/zsh/site-functions/_foot
+share/zsh/site-functions/_footclient
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database
