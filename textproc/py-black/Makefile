@@ -1,6 +1,6 @@
 COMMENT=	Python code formatter
 
-MODPY_EGG_VERSION=	23.3.0
+MODPY_EGG_VERSION=	23.7.0
 DISTNAME=	black-${MODPY_EGG_VERSION}
 PKGNAME=	py-black-${MODPY_EGG_VERSION:S/b/beta/}
 
