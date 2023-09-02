@@ -1,8 +1,7 @@
 COMMENT =	common code base for all Kiwix ports
 
 KIWIX_PROJECT =	libkiwix
-V =		12.0.0
-REVISION =	0
+V =		12.1.0
 
 SHARED_LIBS +=  kiwix                     0.0 # 0.0
 
@@ -14,7 +13,8 @@ WANTLIB += curl icui18n icuuc m microhttpd pugixml xapian z zim
 
 COMPILER =		base-clang ports-gcc
 
-BUILD_DEPENDS =		devel/kainjow-mustache
+BUILD_DEPENDS =		devel/gtest \
+			devel/kainjow-mustache
 LIB_DEPENDS =		archivers/libzim \
 			databases/xapian-core \
 			net/curl \
