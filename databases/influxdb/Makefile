@@ -28,7 +28,6 @@ COMPILER =		base-clang ports-gcc
 MODCARGO_BUILD =	No
 MODCARGO_INSTALL =	No
 MODCARGO_CARGOTOML =	${WRKDIR}/go/pkg/mod/github.com/influxdata/flux@v0.193.0/libflux/Cargo.toml
-MODCARGO_MASTER_SITESN =8
 MODCARGO_TARGET_DIR =	${WRKDIR}/go/pkg/mod/github.com/influxdata/flux@v0.193.0/libflux/target
 # needed to make sure unwind* symbols are found
 MODCARGO_RUSTFLAGS +=-C link-arg=-lc++abi
