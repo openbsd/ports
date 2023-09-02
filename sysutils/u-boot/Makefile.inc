@@ -32,6 +32,11 @@ MAKE_ENV+=	KBUILD_VERBOSE=1 \
 
 USE_GMAKE=	Yes
 NO_TEST=	Yes
+.if ${USE_CCACHE:L} == yes
+MAKE_ENV+=	CROSS_COMPILE="${COMPILER_WRAPPER} ${CROSS_COMPILE}"
+.else
+MAKE_ENV+=	CROSS_COMPILE="${CROSS_COMPILE}"
+.endif
 
 FILES=\
 	MLO \
@@ -115,7 +120,15 @@ do-build:
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/u-boot
 .for BOARD in ${BOARDS} ${SUNXI64}
-	${INSTALL_DATA_DIR} ${PREFIX}/share/u-boot/${BOARD}
-	-cd ${WRKSRC}/build/${BOARD} && \
-	    cp ${FILES} ${PREFIX}/share/u-boot/${BOARD}/
+	@[ -d ${WRKSRC}/build/${BOARD} ] && \
+	echo ${INSTALL_DATA_DIR} ${PREFIX}/share/u-boot/${BOARD} && \
+	${INSTALL_DATA_DIR} ${PREFIX}/share/u-boot/${BOARD} && \
+	echo cd ${WRKSRC}/build/${BOARD} && \
+	cd ${WRKSRC}/build/${BOARD} && \
+	for i in ${FILES}; do \
+		if [ -f $$i ]; then \
+			echo ${INSTALL_DATA} $$i ${PREFIX}/share/u-boot/${BOARD}/; \
+			${INSTALL_DATA} $$i ${PREFIX}/share/u-boot/${BOARD}/; \
+		fi; \
+	done
 .endfor

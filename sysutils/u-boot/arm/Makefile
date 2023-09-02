@@ -61,6 +61,6 @@ BOARDS=\
 	turris_omnia
 
 BUILD_DEPENDS+=	devel/arm-none-eabi/gcc,arm
-MAKE_ENV+=	CROSS_COMPILE="arm-none-eabi-"
+CROSS_COMPILE=	arm-none-eabi-
 
 .include <bsd.port.mk>

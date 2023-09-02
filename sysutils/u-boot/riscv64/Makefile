@@ -9,7 +9,7 @@ BOARDS=\
 
 BUILD_DEPENDS+=	devel/riscv-elf/gcc \
 		sysutils/opensbi>=0.9p0
-MAKE_ENV+=	CROSS_COMPILE="riscv64-unknown-elf-"
+CROSS_COMPILE=	riscv64-unknown-elf-
 FW_DYNAMIC=	${LOCALBASE}/share/opensbi/generic/fw_dynamic.bin
 
 .include <bsd.port.mk>
