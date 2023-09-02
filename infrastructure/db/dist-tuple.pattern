@@ -1,0 +1,31 @@
+# known MASTER_SITES.x
+MASTER_SITES.github ?=	https://github.com/
+MASTER_SITES.gitlab ?=	https://gitlab.com/
+MASTER_SITES.srht ?=	https://git.sr.ht/
+
+# EXTRACT_SUFX.x for each site
+EXTRACT_SUFX.github ?=	.tar.gz
+EXTRACT_SUFX.gitlab ?=	.tar.gz
+EXTRACT_SUFX.srht ?=	.tar.gz
+
+# templates for the DISTFILES.x; the following user strings are recognized and substituted:
+# - <account>
+# - <project>
+# - <id>
+#
+# (<_subdir> is for internal use based on recognition of tag format of <id>.)
+
+TEMPLATE_DISTFILES.github ?= \
+	<account>-<project>-{<account>/<project>/archive/<_subdir>}<id>${EXTRACT_SUFX.github}
+
+TEMPLATE_DISTFILES.gitlab ?= \
+	<account>-<project>-{<account>/<project>/-/archive/<id>/}<id>${EXTRACT_SUFX.gitlab}
+
+TEMPLATE_DISTFILES.srht ?= \
+	<account>-<project>-{~<account>/<project>/archive/}<id>${EXTRACT_SUFX.srht}
+
+# templates for HOMEPAGE; same substitutions as for DISTFILES.x
+
+PROTO_HOMEPAGE.github ?=	https://github.com/<account>/<project>
+PROTO_HOMEPAGE.gitlab ?=	https://gitlab.com/<account>/<project>
+PROTO_HOMEPAGE.srht ?=		https://git.sr.ht/~<account>/<project>
