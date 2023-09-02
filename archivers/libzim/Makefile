@@ -22,6 +22,7 @@ COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/meson
 
+BUILD_DEPENDS =		devel/gtest
 LIB_DEPENDS =		archivers/xz \
 			archivers/zstd \
 			databases/xapian-core \
