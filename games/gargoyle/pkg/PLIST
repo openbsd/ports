@@ -18,11 +18,14 @@ libexec/gargoyle/
 @bin libexec/gargoyle/jacl
 @bin libexec/gargoyle/level9
 @bin libexec/gargoyle/magnetic
+@bin libexec/gargoyle/plus
 @bin libexec/gargoyle/scare
 @bin libexec/gargoyle/scott
 @bin libexec/gargoyle/tadsr
-share/applications/
-share/applications/gargoyle.desktop
+@bin libexec/gargoyle/taylor
+@man man/man6/gargoyle.6
+share/applications/io.github.garglk.Gargoyle.desktop
+share/applications/io.github.garglk.GargoyleEditConfig.desktop
 share/examples/gargoyle/
 share/examples/gargoyle/garglk.ini
 @sample ${SYSCONFDIR}/garglk.ini
@@ -36,11 +39,6 @@ share/fonts/gargoyle/Gargoyle-Serif-Bold-Italic.ttf
 share/fonts/gargoyle/Gargoyle-Serif-Bold.ttf
 share/fonts/gargoyle/Gargoyle-Serif-Italic.ttf
 share/fonts/gargoyle/Gargoyle-Serif.ttf
-share/icons/
-share/icons/gargoyle-house.png
-share/icons/hicolor/
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/mimetypes/
 share/icons/hicolor/32x32/mimetypes/application-x-adrift.png
 share/icons/hicolor/32x32/mimetypes/application-x-advsys.png
 share/icons/hicolor/32x32/mimetypes/application-x-agt.png
@@ -52,8 +50,23 @@ share/icons/hicolor/32x32/mimetypes/application-x-level9.png
 share/icons/hicolor/32x32/mimetypes/application-x-magscroll.png
 share/icons/hicolor/32x32/mimetypes/application-x-tads.png
 share/icons/hicolor/32x32/mimetypes/application-x-zmachine.png
-share/mime/
-share/mime/packages/
+share/icons/io.github.garglk.Gargoyle.png
+share/io.github.garglk/
+share/io.github.garglk/Gargoyle/
+share/io.github.garglk/Gargoyle/themes/
+share/io.github.garglk/Gargoyle/themes/Blue.json
+share/io.github.garglk/Gargoyle/themes/Breeze Darker.json
+share/io.github.garglk/Gargoyle/themes/Lectrote Dark.json
+share/io.github.garglk/Gargoyle/themes/Lectrote Sepia.json
+share/io.github.garglk/Gargoyle/themes/Lectrote Slate.json
+share/io.github.garglk/Gargoyle/themes/Pencil.json
+share/io.github.garglk/Gargoyle/themes/Zoom.json
+share/io.github.garglk/Gargoyle/themes/dark.json
+share/io.github.garglk/Gargoyle/themes/light.json
+share/io.github.garglk/Gargoyle/unifont.otf
+share/io.github.garglk/Gargoyle/unifont_upper.otf
+share/metainfo/
+share/metainfo/io.github.garglk.Gargoyle.appdata.xml
 share/mime/packages/interactive-fiction.xml
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
