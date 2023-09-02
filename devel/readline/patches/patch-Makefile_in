@@ -1,7 +1,7 @@
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -99,8 +99,8 @@ GCC_LINT_CFLAGS = $(XCCFLAGS) $(GCC_LINT_FLAGS) @CFLAG
+@@ -105,8 +105,8 @@ install_examples = @EXAMPLES_INSTALL_TARGET@
  	$(CC) -c $(CCFLAGS) $<
  
  # The name of the main library target.
@@ -12,7 +12,7 @@ Index: Makefile.in
  
  # The C code source files for this library.
  CSOURCES = $(srcdir)/readline.c $(srcdir)/funmap.c $(srcdir)/keymaps.c \
-@@ -162,12 +162,12 @@ everything: all examples
+@@ -171,12 +171,12 @@ asan:
  
  static: $(STATIC_LIBS)
  
@@ -27,20 +27,18 @@ Index: Makefile.in
  	$(RM) $@
  	$(AR) $(ARFLAGS) $@ $(HISTOBJ) xmalloc.o xfree.o
  	-test -n "$(RANLIB)" && $(RANLIB) $@
-@@ -233,12 +233,12 @@ uninstall-headers:
- maybe-uninstall-headers: uninstall-headers
+@@ -252,12 +252,10 @@ uninstall-pc:
+ maybe-uninstall-pc: uninstall-pc
  
- install-static: installdirs $(STATIC_LIBS) install-headers install-doc install-examples
+ install-static: installdirs $(STATIC_LIBS) install-headers install-doc ${install_examples} install-pc
 -	-$(MV) $(DESTDIR)$(libdir)/libreadline.a $(DESTDIR)$(libdir)/libreadline.old
 -	$(INSTALL_DATA) libreadline.a $(DESTDIR)$(libdir)/libreadline.a
 -	-test -n "$(RANLIB)" && $(RANLIB) $(DESTDIR)$(libdir)/libreadline.a
 -	-$(MV) $(DESTDIR)$(libdir)/libhistory.a $(DESTDIR)$(libdir)/libhistory.old
 -	$(INSTALL_DATA) libhistory.a $(DESTDIR)$(libdir)/libhistory.a
 -	-test -n "$(RANLIB)" && $(RANLIB) $(DESTDIR)$(libdir)/libhistory.a
-+	-$(MV) $(DESTDIR)$(libdir)/libereadline.a $(DESTDIR)$(libdir)/libreadline.old
 +	$(INSTALL_DATA) libereadline.a $(DESTDIR)$(libdir)/libereadline.a
 +	-test -n "$(RANLIB)" && $(RANLIB) $(DESTDIR)$(libdir)/libereadline.a
-+	-$(MV) $(DESTDIR)$(libdir)/libehistory.a $(DESTDIR)$(libdir)/libehistory.old
 +	$(INSTALL_DATA) libehistory.a $(DESTDIR)$(libdir)/libehistory.a
 +	-test -n "$(RANLIB)" && $(RANLIB) $(DESTDIR)$(libdir)/libehistory.a
  

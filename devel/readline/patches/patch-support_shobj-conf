@@ -1,6 +1,7 @@
---- support/shobj-conf.orig	Mon Feb 24 04:06:29 2014
-+++ support/shobj-conf	Sat Oct 31 13:00:38 2015
-@@ -212,7 +212,16 @@ darwin*)
+Index: support/shobj-conf
+--- support/shobj-conf.orig
++++ support/shobj-conf
+@@ -174,7 +174,16 @@ darwin*)
  	SHLIB_LIBS='-lncurses'	# see if -lcurses works on MacOS X 10.1 
  	;;
  

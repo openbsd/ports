@@ -1,17 +1,16 @@
 COMMENT =		library to edit command lines as they are typed in
 
-V =			7.0
+V =			8.2
 DISTNAME =		readline-${V}
 PKGNAME =		readline-${V}
-REVISION =		0
 
-LIBV =			2.0
+LIBV =			3.0
 SHARED_LIBS +=		ehistory ${LIBV}
 SHARED_LIBS +=		ereadline ${LIBV}
 
 CATEGORIES =		devel
 
-HOMEPAGE =		http://tiswww.case.edu/php/chet/readline/rltop.html
+HOMEPAGE =		https://tiswww.case.edu/php/chet/readline/rltop.html
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
