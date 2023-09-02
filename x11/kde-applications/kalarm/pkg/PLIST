@@ -59,8 +59,11 @@ share/doc/HTML/uk/kalarm/index.cache.bz2
 share/doc/HTML/uk/kalarm/index.docbook
 share/examples/kalarm/
 share/examples/kalarm/xdg/
+@sample ${SYSCONFDIR}/xdg/
 share/examples/kalarm/xdg/autostart/
+@sample ${SYSCONFDIR}/xdg/autostart/
 share/examples/kalarm/xdg/autostart/kalarm.autostart.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/kalarm.autostart.desktop
 share/icons/breeze-dark/16x16/
 share/icons/breeze-dark/16x16/actions/
 share/icons/breeze-dark/16x16/actions/show-today.svg
