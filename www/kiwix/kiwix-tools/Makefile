@@ -1,7 +1,7 @@
 COMMENT =	command-line Kiwix tools
 
 KIWIX_PROJECT =	kiwix-tools
-V =		3.4.0
+V =		3.5.0
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
