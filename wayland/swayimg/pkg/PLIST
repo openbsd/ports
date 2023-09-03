@@ -1,0 +1,18 @@
+@bin bin/swayimg
+@man man/man1/swayimg.1
+@man man/man5/swayimgrc.5
+share/applications/
+share/applications/swayimg.desktop
+share/bash-completion/
+share/bash-completion/completions/
+share/bash-completion/completions/swayimg
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/64x64/
+share/icons/hicolor/64x64/apps/
+share/icons/hicolor/64x64/apps/swayimg.png
+share/zsh/
+share/zsh/site-functions/
+share/zsh/site-functions/_swayimg
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor

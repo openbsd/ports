@@ -1,0 +1,8 @@
+Swayimg is a lightweight image viewer for Wayland display servers.
+
+In a Sway compatible mode, the viewer creates an "overlay" above the
+currently active window, which gives the illusion that you are opening
+the image directly in a terminal window.
+
+Supported image formats: JPEG, JPEG XL, PNG, GIF, SVG, WebP,
+HEIF/AVIF, TIFF, EXR, BMP, PNM
