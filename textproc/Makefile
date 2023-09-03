@@ -221,6 +221,7 @@
      SUBDIR += p5-Lingua-Treebank
      SUBDIR += p5-List-SomeUtils
      SUBDIR += p5-List-SomeUtils-XS
+     SUBDIR += p5-List-Util-WeightedChoice
      SUBDIR += p5-List-UtilsBy
      SUBDIR += p5-Mojolicious-Plugin-TtRenderer
      SUBDIR += p5-Number-Format
