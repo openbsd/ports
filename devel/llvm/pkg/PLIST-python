@@ -1,8 +1,0 @@
-lib/python${MODPY_VERSION}/site-packages/clang/
-lib/python${MODPY_VERSION}/site-packages/clang/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/clang/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/clang/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/clang/${MODPY_PYCACHE}cindex.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/clang/${MODPY_PYCACHE}enumerations.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/clang/cindex.py
-lib/python${MODPY_VERSION}/site-packages/clang/enumerations.py

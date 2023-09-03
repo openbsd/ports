@@ -1,0 +1,8 @@
+#!/bin/sh
+
+tool=$0
+[ -L "$tool" ] && tool=$(/usr/bin/realpath $tool)
+tool=${tool##*/}
+tool="${TRUEPREFIX}/${LLVM_BASE}/bin/${tool%-${LLVM_MAJOR}}"
+LD_LIBRARY_PATH="${LD_LIBRARY_PATH:+${LD_LIBRARY_PATH}:}${TRUEPREFIX}/${LLVM_BASE}/lib" \
+    exec "${tool}" "${@}"
