@@ -30,3 +30,21 @@ azorius# rcctl enable azorius
 azorius# rcctl start azorius
 
 Azorius at https://azorius.example.com
+
+Database Upgrade
+================
+
+If you are upgrading from a version before 0.2.0, you will need to upgrade
+the database format:
+
+Stop the old azorius process.
+azorius# rcctl stop azorius
+
+Perform the upgrade with the upgrade command.
+azorius# doas -su _azorius
+azorius$ umask 077; cd ${LOCALSTATEDIR}/azorius && cp azorius.db backup.db
+azorius$ azorius upgrade
+azorius$ exit
+
+Restart.
+azorius# rcctl start azorius

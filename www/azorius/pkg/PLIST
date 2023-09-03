@@ -12,19 +12,20 @@
 @mode
 @owner
 @group
-@man man/man1/azorius.1
 @man man/man8/azorius.8
 share/doc/azorius/
 share/doc/azorius/LICENSE
 share/doc/azorius/README
+share/doc/azorius/activitypub.7.html
+@sample ${LOCALSTATEDIR}/azorius/docs/activitypub.7.html
 share/doc/azorius/azorius.1.html
 @sample ${LOCALSTATEDIR}/azorius/docs/azorius.1.html
 share/doc/azorius/azorius.8.html
 @sample ${LOCALSTATEDIR}/azorius/docs/azorius.8.html
+share/doc/azorius/filters.1.html
+@sample ${LOCALSTATEDIR}/azorius/docs/filters.1.html
 share/doc/azorius/intro.1.html
 @sample ${LOCALSTATEDIR}/azorius/docs/intro.1.html
-share/doc/azorius/mandoc.css
-@sample ${LOCALSTATEDIR}/azorius/docs/mandoc.css
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/azorius/
 share/examples/azorius/schema.sql
@@ -34,8 +35,14 @@ share/examples/azorius/views/about.html
 @sample ${LOCALSTATEDIR}/azorius/views/about.html
 share/examples/azorius/views/account.html
 @sample ${LOCALSTATEDIR}/azorius/views/account.html
+share/examples/azorius/views/accountfilters.html
+@sample ${LOCALSTATEDIR}/azorius/views/accountfilters.html
+share/examples/azorius/views/accountheader.html
+@sample ${LOCALSTATEDIR}/azorius/views/accountheader.html
 share/examples/azorius/views/admin.html
 @sample ${LOCALSTATEDIR}/azorius/views/admin.html
+share/examples/azorius/views/adminfilters.html
+@sample ${LOCALSTATEDIR}/azorius/views/adminfilters.html
 share/examples/azorius/views/admingroups.html
 @sample ${LOCALSTATEDIR}/azorius/views/admingroups.html
 share/examples/azorius/views/adminheader.html
@@ -56,12 +63,16 @@ share/examples/azorius/views/error.html
 @sample ${LOCALSTATEDIR}/azorius/views/error.html
 share/examples/azorius/views/formcomment.html
 @sample ${LOCALSTATEDIR}/azorius/views/formcomment.html
+share/examples/azorius/views/formfilter.html
+@sample ${LOCALSTATEDIR}/azorius/views/formfilter.html
 share/examples/azorius/views/formgroup.html
 @sample ${LOCALSTATEDIR}/azorius/views/formgroup.html
 share/examples/azorius/views/formpost.html
 @sample ${LOCALSTATEDIR}/azorius/views/formpost.html
 share/examples/azorius/views/fragcomment.html
 @sample ${LOCALSTATEDIR}/azorius/views/fragcomment.html
+share/examples/azorius/views/groupchat.html
+@sample ${LOCALSTATEDIR}/azorius/views/groupchat.html
 share/examples/azorius/views/groupreports.html
 @sample ${LOCALSTATEDIR}/azorius/views/groupreports.html
 share/examples/azorius/views/groups.html
@@ -72,6 +83,8 @@ share/examples/azorius/views/headergroups.html
 @sample ${LOCALSTATEDIR}/azorius/views/headergroups.html
 share/examples/azorius/views/headeronegroup.html
 @sample ${LOCALSTATEDIR}/azorius/views/headeronegroup.html
+share/examples/azorius/views/help.html
+@sample ${LOCALSTATEDIR}/azorius/views/help.html
 share/examples/azorius/views/homepage.html
 @sample ${LOCALSTATEDIR}/azorius/views/homepage.html
 share/examples/azorius/views/icon.png
@@ -86,6 +99,8 @@ share/examples/azorius/views/newgroup.html
 @sample ${LOCALSTATEDIR}/azorius/views/newgroup.html
 share/examples/azorius/views/newpost.html
 @sample ${LOCALSTATEDIR}/azorius/views/newpost.html
+share/examples/azorius/views/notifs.html
+@sample ${LOCALSTATEDIR}/azorius/views/notifs.html
 share/examples/azorius/views/onecomment.html
 @sample ${LOCALSTATEDIR}/azorius/views/onecomment.html
 share/examples/azorius/views/onegroup.html

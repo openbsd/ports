@@ -1,7 +1,8 @@
 #!/bin/ksh
 
 daemon="${TRUEPREFIX}/bin/azorius"
-daemon_flags="-datadir ${LOCALSTATEDIR}/azorius -viewdir ${LOCALSTATEDIR}/azorius"
+daemon_flags="-datadir ${LOCALSTATEDIR}/azorius -viewdir \
+	${LOCALSTATEDIR}/azorius"
 daemon_logger="daemon.info"
 daemon_user="_azorius"
 

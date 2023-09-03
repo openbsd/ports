@@ -1,11 +1,6 @@
-COMMENT =		Link aggregator and comment site via ActivityPub
+COMMENT =		link aggregator and comment site via ActivityPub
 
-MODGO_MODNAME =		humungus.tedunangst.com/r/azorius
-MODGO_VERSION =		v0.2.0
-REVISION =		0
-
-DISTNAME =		azorius-${MODGO_VERSION}
-
+DISTNAME =		azorius-0.3.1
 CATEGORIES =		www
 
 HOMEPAGE =		https://humungus.tedunangst.com/r/azorius
@@ -17,34 +12,33 @@ MAINTAINER =		Horia Racoviceanu <horia@racoviceanu.com> \
 PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		c pthread sqlite3
-LIB_DEPENDS =		databases/sqlite3
+
+MASTER_SITES =		${HOMEPAGE}/d/
+EXTRACT_SUFX =		.tgz
 
 MODULES =		lang/go
+LIB_DEPENDS =		databases/sqlite3
 
 NO_TEST =		Yes
+ALL_TARGET =		humungus.tedunangst.com/r/azorius
 
 DOCDIR ?=		${PREFIX}/share/doc/azorius
 EXAMPLESDIR =		${PREFIX}/share/examples/azorius
 
 post-install:
-.for m in azorius.1 azorius.8 intro.1
-	mandoc -T html -O style=mandoc.css,man=%N.%S.html ${WRKSRC}/docs/${m} >\
-		${WRKSRC}/docs/${m}.html
-.endfor
-.for p in 1 8
-	${INSTALL_MAN} ${WRKSRC}/docs/azorius.${p} \
- 		${PREFIX}/man/man${p}
-	rm ${WRKSRC}/docs/*.${p}
+	${INSTALL_MAN} ${MODGO_WORKSPACE}/src/${ALL_TARGET}/docs/azorius.8 \
+		${PREFIX}/man/man8
+.for p in 1 7 8
+	rm ${MODGO_WORKSPACE}/src/${ALL_TARGET}/docs/*.${p}
 .endfor
 	${INSTALL_DATA_DIR} ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/{LICENSE,README,docs/*} \
+	${INSTALL_DATA} \
+		${MODGO_WORKSPACE}/src/${ALL_TARGET}/{LICENSE,README,docs/*} \
 		${DOCDIR}/
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}/views
-	${INSTALL_DATA} ${WRKSRC}/views/* \
+	${INSTALL_DATA} ${MODGO_WORKSPACE}/src/${ALL_TARGET}/views/* \
 		${EXAMPLESDIR}/views/
-	${INSTALL_DATA} ${WRKSRC}/schema.sql \
+	${INSTALL_DATA} ${MODGO_WORKSPACE}/src/${ALL_TARGET}/schema.sql \
 		${EXAMPLESDIR}/
-
-.include "modules.inc"
 
 .include <bsd.port.mk>
