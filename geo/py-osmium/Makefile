@@ -5,6 +5,7 @@ GH_TAGNAME =	v${MODPY_EGG_VERSION}
 GH_ACCOUNT =	osmcode
 GH_PROJECT =	pyosmium
 PKGNAME =	py-osmium-${MODPY_EGG_VERSION}
+REVISION =	0
 
 CATEGORIES =	geo
 
@@ -19,7 +20,9 @@ COMPILER =	base-clang ports-gcc
 FLAVORS =		python3
 FLAVOR =		python3
 
-MODULES =	lang/python
+MODULES =	lang/clang lang/python
+
+MODCLANG_COMPILER_LINKS=	No
 
 MODPY_PYBUILD =		setuptools
 MODPY_PYTEST =		Yes
@@ -34,7 +37,6 @@ WANTLIB +=	${COMPILER_LIBCXX} bz2 expat lz4 m z
 # doesn't work with MODULES=devel/cmake
 BUILD_DEPENDS +=	devel/boost \
 			devel/cmake \
-			devel/llvm \
 			geo/libosmium \
 			devel/protozero \
 			devel/py-pybind11${MODPY_FLAVOR}
