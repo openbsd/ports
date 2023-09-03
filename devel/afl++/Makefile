@@ -6,6 +6,7 @@ GH_PROJECT =	AFLplusplus
 GH_TAGNAME =	4.05c
 PKGNAME =	afl++-${GH_TAGNAME}
 CATEGORIES=	devel
+REVISION =	0
 
 HOMEPAGE=	https://aflplus.plus/
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -18,7 +19,8 @@ USE_GMAKE=		Yes
 
 MODULES =		lang/clang
 
-MAKE_FLAGS =		NO_PYTHON=1
+MAKE_FLAGS =		LLVM_CONFIG=llvm-config-${MODCLANG_VERSION} \
+			NO_PYTHON=1
 FAKE_FLAGS=		PREFIX="${TRUEPREFIX}"
 TEST_TARGET=		tests
 
