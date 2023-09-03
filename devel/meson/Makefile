@@ -15,9 +15,12 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # Apache 2.0
 PERMIT_PACKAGE=		Yes
 
-MODULES=		lang/python
+MODULES=		lang/clang lang/python
 
 MODPY_PYBUILD=		setuptools
+
+MODCLANG_COMPILER_LINKS=	No
+MODCLANG_BUILDDEP=		No 
 
 RUN_DEPENDS=		devel/ninja
 
@@ -48,7 +51,7 @@ TEST_DEPENDS=		devel/git \
 			textproc/hotdoc
 
 # clang-format
-TEST_DEPENDS +=		devel/llvm
+TEST_DEPENDS +=		devel/llvm/${MODCLANG_VERSION}
 
 # FAIL: test_testsetups (__main__.AllPlatformTests)
 #    self.assertTrue('TEST_ENV is set' in vg_log)
@@ -67,6 +70,7 @@ do-test:
 	ln -sf ${LOCALBASE}/jdk-11/bin/javac ${WRKDIR}/bin/javac
 	ln -sf ${LOCALBASE}/bin/egfortran ${WRKDIR}/bin/gfortran
 	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
+	ln -sf ${LOCALBASE}/bin/clang-format-${MODCLANG_VERSION} ${WRKDIR}/bin/clang-format
 	cd ${WRKSRC} && PATH=${PORTPATH} LC_CTYPE="en_US.UTF-8" \
 		./run_tests.py --failfast
 
