@@ -32,7 +32,7 @@ DISTFILES +=	zig-${ZIG_VERSION}-${ZIG_COMMIT:C/(........).*/\1/}${EXTRACT_SUFX}{
 COMPILER =	base-clang ports-gcc
 
 # link with static-libs of llvm
-BUILD_DEPENDS +=	devel/llvm>=13,<14
+BUILD_DEPENDS +=	devel/llvm/13>=13,<14
 
 BUILD_DEPENDS +=	devel/cmake \
 			devel/ninja
