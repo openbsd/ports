@@ -1,6 +1,6 @@
 COMMENT = 	test output of other modules
 
-DISTNAME =	Test-Output-1.033
+DISTNAME =	Test-Output-1.034
 
 CATEGORIES =	devel
 
@@ -8,6 +8,7 @@ CATEGORIES =	devel
 PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
+
 RUN_DEPENDS =		sysutils/p5-Capture-Tiny>=0.17
 TEST_DEPENDS =		devel/p5-Test-Pod>=1.14 \
 			devel/p5-Test-Pod-Coverage>=1.04
