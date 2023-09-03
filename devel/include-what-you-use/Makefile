@@ -2,7 +2,7 @@ COMMENT=	tool to analyse \#includes in C and C++ source files
 CATEGORIES=	devel
 DISTNAME=	include-what-you-use-0.17.src
 PKGNAME=	${DISTNAME:.src=}
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://include-what-you-use.org
 MASTER_SITES=	${HOMEPAGE}/downloads/
@@ -13,14 +13,18 @@ MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 # BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	${COMPILER_LIBCXX} c clang-cpp m pthread
-LLVM_V=		13.0.0
-BUILD_DEPENDS=	devel/llvm>=${LLVM_V}
-RUN_DEPENDS=	devel/llvm>=${LLVM_V}
+WANTLIB=	${COMPILER_LIBCXX} c m pthread
 
-MODULES=		devel/cmake lang/python
+MODULES=		devel/cmake lang/clang lang/python
 MODPY_BUILDDEP=		No
 MODPY_ADJ_FILES=	*.py
+
+MODCLANG_COMPILER_LINKS=	No
+MODCLANG_RUNDEP=		Yes
+
+LLVM_CMAKE_BASE =	${LOCALBASE}/llvm${MODCLANG_VERSION}/lib/cmake
+CONFIGURE_ARGS =	-DLLVM_DIR=${LLVM_CMAKE_BASE}/llvm \
+			-DClang_DIR=${LLVM_CMAKE_BASE}/clang
 
 COMPILER=		base-clang ports-gcc
 COMPILER_LANGS=		c++
