@@ -1,0 +1,2 @@
+Perl extension to allow for nonnormalized weighted choices.  Just
+one function, a simple means of making a weighted random choice.

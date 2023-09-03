@@ -1,0 +1,9 @@
+${P5SITE}/List/
+${P5SITE}/List/Util/
+${P5SITE}/List/Util/WeightedChoice.pm
+${P5SITE}/auto/
+${P5SITE}/auto/List/
+${P5SITE}/auto/List/Util/
+${P5SITE}/auto/List/Util/WeightedChoice/
+${P5SITE}/auto/List/Util/WeightedChoice/autosplit.ix
+@man man/man3p/List::Util::WeightedChoice.3p
