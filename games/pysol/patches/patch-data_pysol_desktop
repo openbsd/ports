@@ -1,13 +1,12 @@
---- data/pysol.desktop.orig	Fri Jun  6 08:58:50 2008
-+++ data/pysol.desktop	Sun May 24 23:52:58 2015
-@@ -1,8 +1,8 @@
+Index: data/pysol.desktop
+--- data/pysol.desktop.orig
++++ data/pysol.desktop
+@@ -1,7 +1,7 @@
  [Desktop Entry]
- Encoding=UTF-8
  Name=PySol Fan Club Edition
+ Comment=More than 1000 solitaire card games
 -Exec=pysol.py
 +Exec=pysol
+ StartupWMClass=Pysol
  Terminal=false
  Type=Application
- Categories=Game;CardGame;
--Icon=/usr/share/icons/pysol01.png
-+Icon=pysol01

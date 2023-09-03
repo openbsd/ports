@@ -1,0 +1,24 @@
+Revert https://github.com/shlomif/PySolFC/commit/0515a01a025be3fa3ecfc3e0e72803f5e7370728
+Needs random2 from pip for python3 ?
+
+Index: pysollib/game/__init__.py
+--- pysollib/game/__init__.py.orig
++++ pysollib/game/__init__.py
+@@ -67,7 +67,7 @@ from pysollib.settings import PACKAGE, TITLE, TOOLKIT,
+ from pysollib.settings import VERSION, VERSION_TUPLE
+ from pysollib.struct_new import NewStruct
+ 
+-import random2
++import random
+ 
+ import six
+ from six import BytesIO
+@@ -3343,7 +3343,7 @@ class Game(object):
+         game.random = construct_random(initial_seed)
+         state = pload()
+         if (game.random is not None and
+-                not isinstance(game.random, random2.Random) and
++                not isinstance(game.random, random.Random) and
+                 isinstance(state, int)):
+             game.random.setstate(state)
+         # if not hasattr(game.random, "origin"):
