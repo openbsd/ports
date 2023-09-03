@@ -76,6 +76,7 @@ lib/girepository-1.0/Ggit-1.0.typelib
 @lib lib/libgit2-glib-1.0.so.${LIBgit2-glib-1.0_VERSION}
 lib/pkgconfig/libgit2-glib-1.0.pc
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/Ggit.py
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}Ggit.${MODPY_PYC_MAGIC_TAG}pyc
 share/gir-1.0/Ggit-1.0.gir
 share/vala/
 share/vala/vapi/
