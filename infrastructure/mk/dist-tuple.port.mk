@@ -32,23 +32,19 @@ DISTFILES ?= ${DISTNAME}${EXTRACT_SUFX}
 .if !empty(DIST_TUPLE)
 .  for _template _account _project _id in ${DIST_TUPLE}
 
-# check if _template is valid
 .    if empty(MASTER_SITES.${_template})
 ERRORS += "Fatal: invalid choice for DIST_TUPLE: ${_template}"
 .    endif
 
-# detect GitHub tagname format
 .    if "${_template}" == "github"
 _subdir =
-_test_tagname = ${_id}
-.      if ${_test_tagname} == "HASH" || ${_test_tagname:C/^[0-9a-f]{40}$/HASH/} != "HASH"
+.      if ${_id} == "HASH" || ${_id:C/^[0-9a-f]{40}$/HASH/} != "HASH"
 # set DISTNAME if not done by the port and add refs/tags/ subdir
 DISTNAME ?= ${_project}-${_id:S/^v//}
 _subdir =	refs/tags/
 .      endif
 .    endif
 
-# set the variables for bsd.port.mk
 DISTFILES.${_template} +=	${TEMPLATE_DISTFILES.${_template}:S/<account>/${_account}/g:S/<project>/${_project}/g:S/<id>/${_id}/g:S/<_subdir>/${_subdir}/g}
 .    if !empty(TEMPLATE_HOMEPAGE.${_template})
 HOMEPAGE ?=	${TEMPLATE_HOMEPAGE.${_template}:S/%account/${_account}/g:S/%project/${_project}/g}
@@ -61,7 +57,6 @@ HOMEPAGE ?=	${TEMPLATE_HOMEPAGE.${_template}:S/%account/${_account}/g:S/%project
 .if !empty(DIST_TUPLE_MV)
 .  for _template _account _project _id _targetdir in ${DIST_TUPLE_MV}
 
-# check if _template is valid
 .    if empty(MASTER_SITES.${_template})
 ERRORS += "Fatal: invalid choice for DIST_TUPLE_MV: ${_template}"
 .    endif
@@ -69,21 +64,18 @@ ERRORS += "Fatal: invalid choice for DIST_TUPLE_MV: ${_template}"
 # detect GitHub tagname format
 .    if "${_template}" == "github"
 _subdir =
-_test_tagname = ${_id}
-.      if ${_test_tagname} == "HASH" || ${_test_tagname:C/^[0-9a-f]{40}$/HASH/} != "HASH"
+.      if ${_id} == "HASH" || ${_test_tagname:C/^[0-9a-f]{40}$/HASH/} != "HASH"
 # set DISTNAME if not done by the port and add refs/tags/ subdir
 DISTNAME ?= ${_project}-${_id:S/^v//}
 _subdir =	refs/tags/
 .      endif
 .    endif
 
-# set the variables for bsd.port.mk
 DISTFILES.${_template} +=	${TEMPLATE_DISTFILES.${_template}:S/<account>/${_account}/g:S/<project>/${_project}/g:S/<id>/${_id}/g:S/<_subdir>/${_subdir}/g}
 .    if !empty(TEMPLATE_HOMEPAGE.${_template})
 HOMEPAGE ?=	${TEMPLATE_HOMEPAGE.${_template}:S/%account/${_account}/g:S/%project/${_project}/g}
 .    endif
 
-# add to post-extract target
 MODDIST-TUPLE_post-extract += \
         [[ -d ${WRKSRC}/${_targetdir} ]] && rmdir ${WRKSRC}/${_targetdir} \
                         || mkdir -p `dirname ${WRKSRC}/${_targetdir}` ; \
