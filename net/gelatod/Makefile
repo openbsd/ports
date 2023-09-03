@@ -6,7 +6,7 @@ CATEGORIES =		net
 # BSD 2-clause
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://github.com/fobser/gelatod/releases/download/v${V}/
+MASTER_SITES =		https://codeberg.org/fobser/gelatod/releases/download/v${V}/
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
