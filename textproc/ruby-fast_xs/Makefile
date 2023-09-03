@@ -16,7 +16,6 @@ MODULES =		lang/ruby
 CONFIGURE_STYLE =	ruby gem ext
 
 MODRUBY_TEST =		testrb
-MODRUBY_TEST_ENV =	RUBYOPT=-rubygems
 TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH} \
 			www/ruby-rack,${MODRUBY_FLAVOR}
 
