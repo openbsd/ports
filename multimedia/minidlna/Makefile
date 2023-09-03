@@ -1,6 +1,6 @@
 COMMENT=		lightweight DLNA/UPnP-AV media server (aka ReadyMedia)
 
-DISTNAME=		minidlna-1.3.2
+DISTNAME=		minidlna-1.3.3
 
 CATEGORIES=		multimedia
 
