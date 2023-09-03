@@ -16,6 +16,6 @@ CONFIGURE_STYLE=	ruby gem ext
 MODRUBY_TEST=	rake
 TEST_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH}
 do-test:
-	cd ${WRKSRC} && RUBYOPT="-I. -rubygems" ${RAKE} test
+	cd ${WRKSRC} && RUBYOPT=-I. ${RAKE} test
 
 .include <bsd.port.mk>
