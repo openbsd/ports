@@ -14,7 +14,4 @@ MODULES =	lang/ruby
 
 CONFIGURE_STYLE = ruby gem ext
 
-MODRUBY_TEST =	rspec
-TEST_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH}
-
 .include <bsd.port.mk>
