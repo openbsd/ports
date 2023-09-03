@@ -7,7 +7,7 @@ Index: llvm/lib/Target/AArch64/AArch64ReturnProtectorLowering.h
 --- llvm/lib/Target/AArch64/AArch64ReturnProtectorLowering.h.orig
 +++ llvm/lib/Target/AArch64/AArch64ReturnProtectorLowering.h
 @@ -0,0 +1,52 @@
-+//===-- AArch64ReturnProtectorLowering.h - --------------------- llvm/-*- C++ -*-==//
++//===-- AArch64ReturnProtectorLowering.h - --------------------- -*- C++ -*-==//
 +//
 +//                     The LLVM Compiler Infrastructure
 +//

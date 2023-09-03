@@ -4,7 +4,7 @@ Index: llvm/lib/Target/X86/X86ReturnProtectorLowering.h
 --- llvm/lib/Target/X86/X86ReturnProtectorLowering.h.orig
 +++ llvm/lib/Target/X86/X86ReturnProtectorLowering.h
 @@ -0,0 +1,45 @@
-+//===-- X86ReturnProtectorLowering.h - ------------------------- llvm/-*- C++ -*-==//
++//===-- X86ReturnProtectorLowering.h - ------------------------- -*- C++ -*-==//
 +//
 +//                     The LLVM Compiler Infrastructure
 +//

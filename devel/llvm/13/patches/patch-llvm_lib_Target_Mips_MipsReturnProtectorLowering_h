@@ -4,7 +4,7 @@ Index: llvm/lib/Target/Mips/MipsReturnProtectorLowering.h
 --- llvm/lib/Target/Mips/MipsReturnProtectorLowering.h.orig
 +++ llvm/lib/Target/Mips/MipsReturnProtectorLowering.h
 @@ -0,0 +1,46 @@
-+//===-- MipsReturnProtectorLowering.h - --------------------- llvm/-*- C++ -*-==//
++//===-- MipsReturnProtectorLowering.h - --------------------- -*- C++ -*-==//
 +//
 +//                     The LLVM Compiler Infrastructure
 +//

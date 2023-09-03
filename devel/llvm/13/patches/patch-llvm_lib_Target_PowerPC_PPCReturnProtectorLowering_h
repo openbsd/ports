@@ -4,7 +4,7 @@ Index: llvm/lib/Target/PowerPC/PPCReturnProtectorLowering.h
 --- llvm/lib/Target/PowerPC/PPCReturnProtectorLowering.h.orig
 +++ llvm/lib/Target/PowerPC/PPCReturnProtectorLowering.h
 @@ -0,0 +1,46 @@
-+//===-- PPCReturnProtectorLowering.h - --------------------- llvm/-*- C++ -*-==//
++//===-- PPCReturnProtectorLowering.h - --------------------- -*- C++ -*-==//
 +//
 +//                     The LLVM Compiler Infrastructure
 +//
