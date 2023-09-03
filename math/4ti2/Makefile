@@ -1,11 +1,10 @@
 COMMENT =	solve algebraic, geometric, combinatorial problems
 
-V =		1.6.9
+V =		1.6.10
 GH_ACCOUNT =	4ti2
 GH_PROJECT =	4ti2
 GH_TAGNAME =	Release_${V:S/./_/g}
 DISTNAME =	${GH_PROJECT}-${V}
-REVISION =	1
 
 CATEGORIES =	math
 
@@ -29,7 +28,7 @@ LIB_DEPENDS =		devel/glpk \
 			devel/gmp,-cxx
 
 AUTOCONF_VERSION =	2.69
-AUTOMAKE_VERSION =	1.11
+AUTOMAKE_VERSION =	1.16
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	autoreconf
 CONFIGURE_ARGS =	--disable-static \
