@@ -21,7 +21,7 @@ Index: llvm/lib/Target/Mips/AsmParser/MipsAsmParser.cpp
    bool expandLoadImm(MCInst &Inst, bool Is32BitImm, SMLoc IDLoc,
                       MCStreamer &Out, const MCSubtargetInfo *STI);
  
-@@ -2104,6 +2108,19 @@ bool MipsAsmParser::processInstruction(MCInst &Inst, S
+@@ -2104,6 +2108,20 @@ bool MipsAsmParser::processInstruction(MCInst &Inst, S
      Inst = BInst;
    }
  
@@ -33,6 +33,7 @@ Index: llvm/lib/Target/Mips/AsmParser/MipsAsmParser.cpp
 +    case Mips::JalTwoReg:
 +      if (emitLoongson2FBTBFlush(Inst, TOut, IDLoc, STI))
 +        return true;
++      LLVM_FALLTHROUGH;
 +    default:
 +      break;
 +    }
@@ -41,7 +42,7 @@ Index: llvm/lib/Target/Mips/AsmParser/MipsAsmParser.cpp
    // This expansion is not in a function called by tryExpandInstruction()
    // because the pseudo-instruction doesn't have a distinct opcode.
    if ((Opcode == Mips::JAL || Opcode == Mips::JAL_MM) && inPicMode()) {
-@@ -3334,6 +3351,39 @@ bool MipsAsmParser::emitPartialAddress(MipsTargetStrea
+@@ -3334,6 +3352,39 @@ bool MipsAsmParser::emitPartialAddress(MipsTargetStrea
        TOut.emitRRI(Mips::DSLL, ATReg, ATReg, 16, IDLoc, STI);
      }
    }

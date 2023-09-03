@@ -1,4 +1,5 @@
 - sync --execute-only archs described in the manual with current code
+- add note about nobtcfi
 
 Index: lld/docs/ld.lld.1
 --- lld/docs/ld.lld.1.orig
@@ -14,3 +15,15 @@ Index: lld/docs/ld.lld.1
  .It Fl -exclude-libs Ns = Ns Ar value
  Exclude static libraries from automatic export.
  .It Fl -export-dynamic , Fl E
+@@ -830,6 +832,11 @@ This is the default.
+ .It Cm wxneeded
+ Create a
+ .Dv PT_OPENBSD_WXNEEDED
++segment.
++.Pp
++.It Cm nobtcfi
++Create a
++.Dv PT_OPENBSD_NOBTCFI
+ segment.
+ .El
+ .El

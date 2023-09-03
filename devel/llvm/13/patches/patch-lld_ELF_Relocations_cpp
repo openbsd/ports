@@ -1,4 +1,5 @@
 - add .gnu.warning.SYMBOL support to ld.lld(1)
+- fix https://reviews.llvm.org/D114982
 
 Index: lld/ELF/Relocations.cpp
 --- lld/ELF/Relocations.cpp.orig
@@ -22,12 +23,23 @@ Index: lld/ELF/Relocations.cpp
  // Report an undefined symbol if necessary.
  // Returns true if the undefined symbol will produce an error message.
  static bool maybeReportUndefined(Symbol &sym, InputSectionBase &sec,
-@@ -1326,6 +1338,8 @@ static void scanReloc(InputSectionBase &sec, OffsetGet
-   // marker relocations, e.g. R_*_NONE and R_ARM_V4BX. Don't error on them.
+@@ -1327,6 +1339,8 @@ static void scanReloc(InputSectionBase &sec, OffsetGet
    if (symIndex != 0 && maybeReportUndefined(sym, sec, rel.r_offset))
      return;
-+
-+  reportGNUWarning(sym, sec, rel.r_offset);
  
++  reportGNUWarning(sym, sec, rel.r_offset);
++
    const uint8_t *relocatedAddr = sec.data().begin() + rel.r_offset;
    RelExpr expr = target->getRelExpr(type, sym, relocatedAddr);
+ 
+@@ -1403,8 +1417,8 @@ static void scanReloc(InputSectionBase &sec, OffsetGet
+   // The 4 types that relative GOTPLT are all x86 and x86-64 specific.
+   if (oneof<R_GOTPLTONLY_PC, R_GOTPLTREL, R_GOTPLT, R_TLSGD_GOTPLT>(expr)) {
+     in.gotPlt->hasGotPltOffRel = true;
+-  } else if (oneof<R_GOTONLY_PC, R_GOTREL, R_PPC64_TOCBASE, R_PPC64_RELAX_TOC>(
+-                 expr)) {
++  } else if (oneof<R_GOTONLY_PC, R_GOTREL, R_PPC32_PLTREL, R_PPC64_TOCBASE,
++                   R_PPC64_RELAX_TOC>(expr)) {
+     in.got->hasGotOffRel = true;
+   }
+ 
