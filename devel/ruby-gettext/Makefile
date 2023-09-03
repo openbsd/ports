@@ -14,6 +14,4 @@ RUN_DEPENDS +=		devel/ruby-locale,${MODRUBY_FLAVOR}>=2.0.5 \
 
 CONFIGURE_STYLE=	ruby gem
 
-MODRUBY_TEST =	rake
-
 .include <bsd.port.mk>
