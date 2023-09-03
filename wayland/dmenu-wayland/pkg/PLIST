@@ -1,0 +1,4 @@
+@bin bin/dmenu-wl
+@bin bin/dmenu-wl_path
+bin/dmenu-wl_run
+@man man/man1/dmenu-wl.1

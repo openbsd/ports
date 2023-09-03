@@ -1,0 +1,33 @@
+Build on OpenBSD
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -19,11 +19,12 @@ add_project_arguments(
+ cc = meson.get_compiler('c')
+ 
+ cairo               = dependency('cairo')
++epoll_shim	    = dependency('epoll-shim')
+ glib                = dependency('glib-2.0')
+ gobject             = dependency('gobject-2.0')
+ pango               = dependency('pango')
+ pangocairo          = dependency('pangocairo')
+-rt                  = cc.find_library('rt')
++# rt                  = cc.find_library('rt')
+ wayland_client      = dependency('wayland-client')
+ wayland_protos      = dependency('wayland-protocols')
+ wayland_scanner_dep = dependency('wayland-scanner')
+@@ -61,11 +62,12 @@ endforeach
+ 
+ dmenu_deps = [
+   cairo,
++  epoll_shim,
+   glib,
+   gobject,
+   pango,
+   pangocairo,
+-  rt,
++#  rt,
+   wayland_client,
+   xkbcommon
+ ]
