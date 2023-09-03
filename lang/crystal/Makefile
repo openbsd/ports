@@ -10,6 +10,7 @@ V_MOLINILLO =	0.2.0
 COMMENT =	statically typed object oriented language
 DISTNAME =	crystal-${V}
 CATEGORIES =	lang
+REVISION = 	0
 
 HOMEPAGE =	https://crystal-lang.org/
 MAINTAINER =	joshua stein <jcs@jcs.org>
@@ -40,11 +41,9 @@ DISTFILES =	crystal-${V}{${V}}.tar.gz \
 		crystal-molinillo-${V}{v${V_MOLINILLO}}.tar.gz:2
 
 # Build requires llvm-config from ports, not from base
+MODULES =	lang/clang
 COMPILER =	ports-clang
-LLVM_CONFIG =	${LOCALBASE}/bin/llvm-config
-
-BUILD_DEPENDS =	devel/llvm
-RUN_DEPENDS =	devel/llvm,-main
+LLVM_CONFIG =	llvm-config-${MODCLANG_VERSION}
 
 LIB_DEPENDS =	converters/libiconv \
 		devel/boehm-gc \
@@ -71,9 +70,10 @@ do-build:
 		${WRKSRC}/../crystal.o \
 		${WRKSRC}/src/llvm/ext/llvm_ext.o \
 		`(${LLVM_CONFIG} --libs --system-libs --ldflags 2> /dev/null)` \
-		-liconv -lpcre -levent_core -lgc -lyaml
+		-L${LOCALBASE}/lib -liconv -lpcre -levent_core -lgc -lyaml
 	cd ${WRKSRC}/shards-${V_SHARDS} && \
-		env CRYSTAL_PATH=lib:${WRKSRC}/src:${WRKSRC}/crystal-molinillo-${V_MOLINILLO}/src \
+		env LD_LIBRARY_PATH=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib \
+		CRYSTAL_PATH=lib:${WRKSRC}/src:${WRKSRC}/crystal-molinillo-${V_MOLINILLO}/src \
 		CRYSTAL=${WRKSRC}/.build/crystal \
 		${MAKE_PROGRAM}
 
