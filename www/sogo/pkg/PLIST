@@ -71,6 +71,7 @@ ${SOGOLIBDIR}/Headers/GCSSpecialQueries+SOGoCacheObject.h
 ${SOGOLIBDIR}/Headers/JWT.h
 ${SOGOLIBDIR}/Headers/LDAPSource.h
 ${SOGOLIBDIR}/Headers/LDAPSourceSchema.h
+${SOGOLIBDIR}/Headers/NGMimeBodyPart+SOGo.h
 ${SOGOLIBDIR}/Headers/NSArray+DAV.h
 ${SOGOLIBDIR}/Headers/NSArray+Utilities.h
 ${SOGOLIBDIR}/Headers/NSCalendarDate+SOGo.h
@@ -245,6 +246,7 @@ lib/GNUstep/Libraries/Resources/NGCards/TimeZones/America/Cayenne.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/America/Cayman.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/America/Chicago.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/America/Chihuahua.ics
+lib/GNUstep/Libraries/Resources/NGCards/TimeZones/America/Ciudad_Juarez.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/America/Coral_Harbour.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/America/Cordoba.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/America/Costa_Rica.ics
@@ -2841,6 +2843,7 @@ lib/GNUstep/SOGo/WebServerResources/js/vendor/lodash.js
 lib/GNUstep/SOGo/WebServerResources/js/vendor/lodash.min.js
 lib/GNUstep/SOGo/WebServerResources/js/vendor/ng-sortable.min.js
 lib/GNUstep/SOGo/WebServerResources/js/vendor/ng-sortable.min.js.map
+lib/GNUstep/SOGo/WebServerResources/js/vendor/punycode.js
 lib/GNUstep/SOGo/WebServerResources/js/vendor/qrcode.js
 lib/GNUstep/SOGo/WebServerResources/js/vendor/qrcode.min.js
 lib/GNUstep/SaxDrivers-4.9/

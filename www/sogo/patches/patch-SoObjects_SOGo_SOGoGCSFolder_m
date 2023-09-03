@@ -1,0 +1,57 @@
+$OpenBSD: patch-SoObjects_SOGo_SOGoGCSFolder_m,v 1.1 2023/09/03 16:07:41 sebastia Exp $
+
+prevent build issue, see: https://github.com/Alinto/sogo/commit/4f7c73143f38b1e7e00a51b9457b55ce609a02a9
+
+Index: SoObjects/SOGo/SOGoGCSFolder.m
+--- SoObjects/SOGo/SOGoGCSFolder.m.orig
++++ SoObjects/SOGo/SOGoGCSFolder.m
+@@ -150,7 +150,7 @@ static NSArray *childRecordFields = nil;
+   if ([pathElements count] > 1)
+     ocsName = [pathElements objectAtIndex: 1];
+   else
+-    ocsName = [[context request] isMacOSXVenturaCalendarApp] ? @"Personal" : @"personal";
++    ocsName = @"personal";
+ 
+   path = [NSString stringWithFormat: @"/Users/%@/%@/%@",
+ 		   login, [pathElements objectAtIndex: 0], ocsName];
+@@ -401,13 +401,6 @@ static NSArray *childRecordFields = nil;
+ 
+ - (void) setOCSPath: (NSString *) _path
+ {
+-  // FIXME: Improve MacOSX Ventura support 
+-  // Check if the problem will be fixed by Apple or if this fix should be kept in the future
+-  // Ticket #5639
+-  if ([[context request] isMacOSXVenturaCalendarApp]) {
+-    _path = [_path stringByReplacingOccurrencesOfString:@"/PERSONAL" withString:@"/personal"];
+-  }
+-  
+   if (![ocsPath isEqualToString:_path])
+     {
+       if (ocsPath)
+@@ -438,12 +431,6 @@ static NSArray *childRecordFields = nil;
+ 
+   cache = [SOGoCache sharedCache];
+   record = [[cache valueForKey: _path] objectFromJSONString];
+-  // FIXME: Improve MacOSX Ventura support 
+-  // Check if the problem will be fixed by Apple or if this fix should be kept in the future
+-  // Ticket #5639
+-  if ([[context request] isMacOSXVenturaCalendarApp]) {
+-    _path = [_path stringByReplacingOccurrencesOfString:@"PERSONAL" withString:@"personal"];
+-  }
+ 
+   // We check if we got a cache miss or a potentially bogus
+   // entry from the cache
+@@ -470,13 +457,6 @@ static NSArray *childRecordFields = nil;
+   NSString *realNameInContainer;
+ 
+   realNameInContainer = [self realNameInContainer];
+-
+-  // FIXME: Improve MacOSX Ventura support 
+-  // Check if the problem will be fixed by Apple or if this fix should be kept in the future
+-  // Ticket #5639
+-  if ([[context request] isMacOSXVenturaCalendarApp]) {
+-    realNameInContainer = [realNameInContainer stringByReplacingOccurrencesOfString:@"PERSONAL" withString:@"personal"];
+-  }
+ 
+   return [NSString stringWithFormat: @"%@:%@/%@",
+ 		   owner,
