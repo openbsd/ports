@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: mksqlitedb,v 1.61 2023/09/02 10:40:59 espie Exp $
+# $OpenBSD: mksqlitedb,v 1.62 2023/09/03 11:16:41 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -145,9 +145,9 @@ if (defined $opt_w) {
 	close $f;
 }
 
-use Baseline;
+#use Baseline;
 
-BaselineMixin->prime(Baseline->get);
+#BaselineMixin->prime(Baseline->get);
 
 $walker->dump_all_dirs;
 
