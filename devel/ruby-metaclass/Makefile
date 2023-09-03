@@ -11,6 +11,4 @@ MODULES=		lang/ruby
 
 CONFIGURE_STYLE=	ruby gem
 
-MODRUBY_TEST=		rake
-
 .include <bsd.port.mk>
