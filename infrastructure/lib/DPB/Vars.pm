@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Vars.pm,v 1.65 2023/09/02 10:16:14 espie Exp $
+# $OpenBSD: Vars.pm,v 1.66 2023/09/03 10:13:12 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -49,8 +49,8 @@ use OpenBSD::Paths;
 sub get($class, $shell, $state, @names)
 {
 	my @list;
-	my $pid = open(my $output, "-|");
 	my $make = $state->make;
+	my $pid = open(my $output, "-|");
 	if ($pid) {
 		@list = <$output>;
 		chomp for @list;
@@ -61,7 +61,11 @@ sub get($class, $shell, $state, @names)
 		}
 	} else {
 		DPB::Job->cleanup_after_fork;
-		$shell->exec($make, '-C', '/', '-f', '/usr/share/mk/bsd.port.mk', "DUMMY_PACKAGE=Yes", "show='".join(' ', @names)."'");
+		$ENV{show} = join(' ', @names);
+		$shell->exec($make,
+		    '-C', '/', 
+		    '-f', '/usr/share/mk/bsd.port.mk', 
+		    "DUMMY_PACKAGE=Yes");
 		DPB::Util->die("oops couldn't exec $make");
     	}
 	return @list;
