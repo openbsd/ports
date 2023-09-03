@@ -14,8 +14,4 @@ post-install:
 	perl -pi -e 's/version = ">= 0"/version = "~> 1.3"/' \
 		${WRKINST}${LOCALBASE}/${GEM_BIN}/spec${GEM_BIN_SUFFIX}
 
-# Requires heckle and quite a few other libraries to run its own
-# specs, so this is currently broken.
-MODRUBY_TEST =	rake rspec
-
 .include <bsd.port.mk>
