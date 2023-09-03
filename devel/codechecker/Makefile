@@ -4,6 +4,8 @@ GH_ACCOUNT =	Ericsson
 GH_PROJECT =	codechecker
 GH_TAGNAME =	v6.21.0
 
+REVISION =	0
+
 CATEGORIES =	devel
 
 HOMEPAGE =	https://codechecker.readthedocs.io
@@ -23,7 +25,11 @@ DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 
 EXTRACT_ONLY =	${DISTNAME}${EXTRACT_SUFX}
 
-MODULES =	lang/python
+MODULES =	lang/clang lang/python
+
+MODCLANG_COMPILER_LINKS=	No
+MODCLANG_BUILDDEP=		No
+MODCLANG_RUNDEP=		Yes
 
 CONFIGURE_STYLE =	none
 
@@ -32,7 +38,6 @@ USE_GMAKE =	Yes
 
 RUN_DEPENDS =	databases/py-alembic${MODPY_FLAVOR} \
 		databases/py-sqlalchemy${MODPY_FLAVOR} \
-		devel/llvm \
 		devel/py-portalocker${MODPY_FLAVOR} \
 		devel/py-thrift${MODPY_FLAVOR} \
 		sysutils/py-psutil${MODPY_FLAVOR} \
