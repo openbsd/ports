@@ -8,6 +8,7 @@ DISTFILES =	ldc-${V}-src.tar.gz:0 \
 		ldc-${V}-bootstrap.tar.gz:1
 PKGNAME =	ldc-${V}
 CATEGORIES =	lang
+REVISION =	0
 
 HOMEPAGE =	https://wiki.dlang.org/LDC
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -25,17 +26,16 @@ MASTER_SITES1 =	https://github.com/ibara/ldc/releases/download/bootstrap-${V}/
 # C++14
 COMPILER =	base-clang ports-gcc
 
-MODULES =	devel/cmake
+MODULES =	lang/clang devel/cmake
 
-BUILD_DEPENDS =	devel/llvm
-
-RUN_DEPENDS =	devel/llvm
+MODCLANG_COMPILER_LINKS =	No
+MODCLANG_RUNDEP =		No
 
 # COMPILE_D_MODULES_SEPARATELY=ON lets ldc compile with sane memory limits.
 CONFIGURE_ARGS =	-DCOMPILE_D_MODULES_SEPARATELY=ON \
 			-DLDC_DYNAMIC_COMPILE=OFF \
 			-DLDC_WITH_LLD=OFF \
-			-DLLVM_CONFIG="${LOCALBASE}/bin/llvm-config"
+			-DLLVM_CONFIG="${LOCALBASE}/bin/llvm-config-${MODCLANG_VERSION}"
 
 # Use a bootstrap compiler, similar to DMD.
 CONFIGURE_ENV =	DMD="${WRKDIR}/ldc-${V}-bootstrap/${MACHINE_ARCH}/ldmd2" \
@@ -62,10 +62,10 @@ post-patch:
 #   We're using LLVM 13 now, but LLVM 15 is coming.
 post-configure:
 	sed -i \
-	's,-lLLVM-13,`${LOCALBASE}/bin/llvm-config --libs all --link-static --ignore-libllvm` -lz,g' \
+	's,-lLLVM-13,`${LOCALBASE}/bin/llvm-config-${MODCLANG_VERSION} --libs all --link-static --ignore-libllvm` -lz,g' \
 	${WRKBUILD}/build.ninja
 	sed -i \
-	's,-lLLVM-15,`${LOCALBASE}/bin/llvm-config --libs all --link-static --ignore-libllvm` -lz,g' \
+	's,-lLLVM-15,`${LOCALBASE}/bin/llvm-config-${MODCLANG_VERSION} --libs all --link-static --ignore-libllvm` -lz,g' \
 	${WRKBUILD}/build.ninja
 
 # Move the default ldc2.conf to its proper packaging location.
