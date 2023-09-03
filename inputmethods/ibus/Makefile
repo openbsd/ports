@@ -5,7 +5,7 @@ COMMENT-gtk4 =		IBus IM module for GTK4
 
 GH_PROJECT =		ibus
 GH_ACCOUNT =		ibus
-GH_TAGNAME =		1.5.29-beta2
+GH_TAGNAME =		1.5.29-rc1
 
 PKGNAME-main =		ibus-${GH_TAGNAME:S/-//}
 PKGNAME-gtk2 =		ibus-gtk2-${GH_TAGNAME:S/-//}
