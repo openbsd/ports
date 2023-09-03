@@ -56,6 +56,7 @@ ${P5SITE}/SNMP/Info/Layer2/Exinda.pm
 ${P5SITE}/SNMP/Info/Layer2/HP.pm
 ${P5SITE}/SNMP/Info/Layer2/HP4000.pm
 ${P5SITE}/SNMP/Info/Layer2/HPVC.pm
+${P5SITE}/SNMP/Info/Layer2/Hirschmann.pm
 ${P5SITE}/SNMP/Info/Layer2/Kentrox.pm
 ${P5SITE}/SNMP/Info/Layer2/N2270.pm
 ${P5SITE}/SNMP/Info/Layer2/NAP222x.pm
@@ -110,6 +111,7 @@ ${P5SITE}/SNMP/Info/Layer3/Microsoft.pm
 ${P5SITE}/SNMP/Info/Layer3/Mikrotik.pm
 ${P5SITE}/SNMP/Info/Layer3/N1600.pm
 ${P5SITE}/SNMP/Info/Layer3/NetSNMP.pm
+${P5SITE}/SNMP/Info/Layer3/Netonix.pm
 ${P5SITE}/SNMP/Info/Layer3/Netscreen.pm
 ${P5SITE}/SNMP/Info/Layer3/Nexus.pm
 ${P5SITE}/SNMP/Info/Layer3/OneAccess.pm
@@ -202,6 +204,7 @@ ${P5SITE}/SNMP/Info/SONMP.pm
 @man man/man3p/SNMP::Info::Layer2::HP.3p
 @man man/man3p/SNMP::Info::Layer2::HP4000.3p
 @man man/man3p/SNMP::Info::Layer2::HPVC.3p
+@man man/man3p/SNMP::Info::Layer2::Hirschmann.3p
 @man man/man3p/SNMP::Info::Layer2::Kentrox.3p
 @man man/man3p/SNMP::Info::Layer2::N2270.3p
 @man man/man3p/SNMP::Info::Layer2::NAP222x.3p
@@ -255,6 +258,7 @@ ${P5SITE}/SNMP/Info/SONMP.pm
 @man man/man3p/SNMP::Info::Layer3::Mikrotik.3p
 @man man/man3p/SNMP::Info::Layer3::N1600.3p
 @man man/man3p/SNMP::Info::Layer3::NetSNMP.3p
+@man man/man3p/SNMP::Info::Layer3::Netonix.3p
 @man man/man3p/SNMP::Info::Layer3::Netscreen.3p
 @man man/man3p/SNMP::Info::Layer3::Nexus.3p
 @man man/man3p/SNMP::Info::Layer3::OneAccess.3p
