@@ -176,6 +176,7 @@ share/ibus-typing-booster/data/annotationsDerived/as.xml
 share/ibus-typing-booster/data/annotationsDerived/ast.xml
 share/ibus-typing-booster/data/annotationsDerived/az.xml
 share/ibus-typing-booster/data/annotationsDerived/be.xml
+share/ibus-typing-booster/data/annotationsDerived/bew.xml
 share/ibus-typing-booster/data/annotationsDerived/bg.xml
 share/ibus-typing-booster/data/annotationsDerived/bgn.xml
 share/ibus-typing-booster/data/annotationsDerived/bn.xml
@@ -187,6 +188,7 @@ share/ibus-typing-booster/data/annotationsDerived/ceb.xml
 share/ibus-typing-booster/data/annotationsDerived/chr.xml
 share/ibus-typing-booster/data/annotationsDerived/ckb.xml
 share/ibus-typing-booster/data/annotationsDerived/cs.xml
+share/ibus-typing-booster/data/annotationsDerived/cv.xml
 share/ibus-typing-booster/data/annotationsDerived/cy.xml
 share/ibus-typing-booster/data/annotationsDerived/da.xml
 share/ibus-typing-booster/data/annotationsDerived/de.xml
@@ -242,6 +244,7 @@ share/ibus-typing-booster/data/annotationsDerived/km.xml
 share/ibus-typing-booster/data/annotationsDerived/kn.xml
 share/ibus-typing-booster/data/annotationsDerived/ko.xml
 share/ibus-typing-booster/data/annotationsDerived/kok.xml
+share/ibus-typing-booster/data/annotationsDerived/ku.xml
 share/ibus-typing-booster/data/annotationsDerived/ky.xml
 share/ibus-typing-booster/data/annotationsDerived/lb.xml
 share/ibus-typing-booster/data/annotationsDerived/lij.xml
@@ -275,6 +278,7 @@ share/ibus-typing-booster/data/annotationsDerived/pt.xml
 share/ibus-typing-booster/data/annotationsDerived/pt_PT.xml
 share/ibus-typing-booster/data/annotationsDerived/qu.xml
 share/ibus-typing-booster/data/annotationsDerived/quc.xml
+share/ibus-typing-booster/data/annotationsDerived/rhg.xml
 share/ibus-typing-booster/data/annotationsDerived/rm.xml
 share/ibus-typing-booster/data/annotationsDerived/ro.xml
 share/ibus-typing-booster/data/annotationsDerived/root.xml
@@ -416,6 +420,7 @@ share/locale/hu/LC_MESSAGES/ibus-typing-booster.mo
 share/locale/it/LC_MESSAGES/ibus-typing-booster.mo
 share/locale/ja/LC_MESSAGES/ibus-typing-booster.mo
 share/locale/ka/LC_MESSAGES/ibus-typing-booster.mo
+share/locale/lt/LC_MESSAGES/ibus-typing-booster.mo
 share/locale/nl/LC_MESSAGES/ibus-typing-booster.mo
 share/locale/or/LC_MESSAGES/ibus-typing-booster.mo
 share/locale/pl/LC_MESSAGES/ibus-typing-booster.mo
