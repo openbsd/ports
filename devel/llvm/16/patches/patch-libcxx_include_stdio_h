@@ -1,0 +1,12 @@
+Index: libcxx/include/stdio.h
+--- libcxx/include/stdio.h.orig
++++ libcxx/include/stdio.h
+@@ -115,6 +115,8 @@ void perror(const char* s);
+ #undef clearerr
+ #undef feof
+ #undef ferror
++#undef putchar
++#undef getchar
+ 
+ #endif
+ 

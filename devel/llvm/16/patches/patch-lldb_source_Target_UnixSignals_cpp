@@ -1,0 +1,22 @@
+Index: lldb/source/Target/UnixSignals.cpp
+--- lldb/source/Target/UnixSignals.cpp.orig
++++ lldb/source/Target/UnixSignals.cpp
+@@ -11,6 +11,7 @@
+ #include "Plugins/Process/Utility/LinuxSignals.h"
+ #include "Plugins/Process/Utility/MipsLinuxSignals.h"
+ #include "Plugins/Process/Utility/NetBSDSignals.h"
++#include "Plugins/Process/Utility/OpenBSDSignals.h"
+ #include "lldb/Host/HostInfo.h"
+ #include "lldb/Utility/ArchSpec.h"
+ #include <optional>
+@@ -45,8 +46,9 @@ lldb::UnixSignalsSP UnixSignals::Create(const ArchSpec
+     }
+   }
+   case llvm::Triple::FreeBSD:
+-  case llvm::Triple::OpenBSD:
+     return std::make_shared<FreeBSDSignals>();
++  case llvm::Triple::OpenBSD:
++    return std::make_shared<OpenBSDSignals>();
+   case llvm::Triple::NetBSD:
+     return std::make_shared<NetBSDSignals>();
+   default:

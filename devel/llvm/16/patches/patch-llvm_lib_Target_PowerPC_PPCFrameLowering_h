@@ -1,0 +1,21 @@
+Index: llvm/lib/Target/PowerPC/PPCFrameLowering.h
+--- llvm/lib/Target/PowerPC/PPCFrameLowering.h.orig
++++ llvm/lib/Target/PowerPC/PPCFrameLowering.h
+@@ -12,6 +12,7 @@
+ #ifndef LLVM_LIB_TARGET_POWERPC_PPCFRAMELOWERING_H
+ #define LLVM_LIB_TARGET_POWERPC_PPCFRAMELOWERING_H
+ 
++#include "PPCReturnProtectorLowering.h"
+ #include "llvm/ADT/STLExtras.h"
+ #include "llvm/CodeGen/TargetFrameLowering.h"
+ #include "llvm/Target/TargetMachine.h"
+@@ -173,6 +174,9 @@ class PPCFrameLowering: public TargetFrameLowering { (
+   /// function prologue/epilogue.
+   bool canUseAsPrologue(const MachineBasicBlock &MBB) const override;
+   bool canUseAsEpilogue(const MachineBasicBlock &MBB) const override;
++
++  const PPCReturnProtectorLowering RPL;
++  const ReturnProtectorLowering *getReturnProtector() const override;
+ };
+ } // End llvm namespace
+ 

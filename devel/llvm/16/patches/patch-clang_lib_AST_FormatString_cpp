@@ -1,0 +1,33 @@
+Index: clang/lib/AST/FormatString.cpp
+--- clang/lib/AST/FormatString.cpp.orig
++++ clang/lib/AST/FormatString.cpp
+@@ -828,6 +828,10 @@ bool FormatSpecifier::hasValidLengthModifier(const Tar
+         case ConversionSpecifier::XArg:
+         case ConversionSpecifier::nArg:
+           return true;
++        case ConversionSpecifier::FreeBSDbArg:
++          return Target.getTriple().isOSFreeBSD() ||
++                 Target.getTriple().isPS4() ||
++                 Target.getTriple().isOSOpenBSD();
+         case ConversionSpecifier::FreeBSDrArg:
+         case ConversionSpecifier::FreeBSDyArg:
+           return Target.getTriple().isOSFreeBSD() || Target.getTriple().isPS();
+@@ -863,6 +867,10 @@ bool FormatSpecifier::hasValidLengthModifier(const Tar
+         case ConversionSpecifier::ScanListArg:
+         case ConversionSpecifier::ZArg:
+           return true;
++        case ConversionSpecifier::FreeBSDbArg:
++          return Target.getTriple().isOSFreeBSD() ||
++                 Target.getTriple().isPS4() ||
++                 Target.getTriple().isOSOpenBSD();
+         case ConversionSpecifier::FreeBSDrArg:
+         case ConversionSpecifier::FreeBSDyArg:
+           return Target.getTriple().isOSFreeBSD() || Target.getTriple().isPS();
+@@ -1024,6 +1032,7 @@ bool FormatSpecifier::hasStandardLengthConversionCombi
+         case ConversionSpecifier::uArg:
+         case ConversionSpecifier::xArg:
+         case ConversionSpecifier::XArg:
++        case ConversionSpecifier::FreeBSDbArg:
+           return false;
+         default:
+           return true;

@@ -1,0 +1,13 @@
+Index: clang/include/clang/Basic/CodeGenOptions.def
+--- clang/include/clang/Basic/CodeGenOptions.def.orig
++++ clang/include/clang/Basic/CodeGenOptions.def
+@@ -385,6 +385,9 @@ VALUE_CODEGENOPT(SmallDataLimit, 32, 0)
+ /// The lower bound for a buffer to be considered for stack protection.
+ VALUE_CODEGENOPT(SSPBufferSize, 32, 0)
+ 
++/// Whether to use return protectors
++CODEGENOPT(ReturnProtector, 1, 0)
++
+ /// The kind of generated debug info.
+ ENUM_CODEGENOPT(DebugInfo, codegenoptions::DebugInfoKind, 4, codegenoptions::NoDebugInfo)
+ 
