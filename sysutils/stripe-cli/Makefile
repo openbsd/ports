@@ -1,7 +1,7 @@
 
 COMMENT =	build, test, and manage your Stripe integration
 
-V =		1.14.7
+V =		1.17.2
 MODGO_MODNAME =	github.com/stripe/stripe-cli
 MODGO_VERSION =	v${V}
 

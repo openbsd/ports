@@ -872,7 +872,7 @@ SHA256 (go_modules/rsc.io/quote/v3/@v/v3.1.0.mod) = shHZ8WtVQpcPA6LmJJ30UDgwSjeh
 SHA256 (go_modules/rsc.io/quote/v3/@v/v3.1.0.zip) = tDTLv8MsF7UijQsO3erqib707JvZC1yPxVtk+M4T7rk=
 SHA256 (go_modules/rsc.io/sampler/@v/v1.3.0.mod) = oq5uhUCkC4XldwPMYYuZxbEHU4bZWOiZmg4tTALzpwU=
 SHA256 (go_modules/rsc.io/sampler/@v/v1.3.0.zip) = 2iArDagDqyZhq5imgLuk9kEjoyblQMJVgrbNu53BFKo=
-SHA256 (stripe-cli-v1.14.7.zip) = fag+0QPoVoIoi3ygxRopWkspAAlaie6e3lOX1Ke/t88=
+SHA256 (stripe-cli-v1.17.2.zip) = /Apj0keragSCDSz9cwhqu0h2Mu2f0iApDXJGUjrC1C4=
 SIZE (go_modules/cloud.google.com/go/@v/v0.100.2.mod) = 531
 SIZE (go_modules/cloud.google.com/go/@v/v0.100.2.zip) = 567152
 SIZE (go_modules/cloud.google.com/go/@v/v0.26.0.mod) = 27
@@ -1747,4 +1747,4 @@ SIZE (go_modules/rsc.io/quote/v3/@v/v3.1.0.mod) = 55
 SIZE (go_modules/rsc.io/quote/v3/@v/v3.1.0.zip) = 2223
 SIZE (go_modules/rsc.io/sampler/@v/v1.3.0.mod) = 88
 SIZE (go_modules/rsc.io/sampler/@v/v1.3.0.zip) = 14308
-SIZE (stripe-cli-v1.14.7.zip) = 1680580
+SIZE (stripe-cli-v1.17.2.zip) = 1693112
