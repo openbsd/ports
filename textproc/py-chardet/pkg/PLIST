@@ -10,9 +10,12 @@ lib/python${MODPY_VERSION}/site-packages/chardet-${MODPY_EGG_VERSION}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/chardet-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/chardet-${MODPY_EGG_VERSION}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/chardet/__init__.py
+lib/python${MODPY_VERSION}/site-packages/chardet/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/chardet/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/chardet/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/chardet/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/chardet/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/chardet/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chardet/${MODPY_PYCACHE}big5freq.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/chardet/${MODPY_PYCACHE}big5freq.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chardet/${MODPY_PYCACHE}big5prober.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

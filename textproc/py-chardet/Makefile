@@ -1,6 +1,6 @@
 COMMENT=		character encoding auto-detection in Python
 
-MODPY_EGG_VERSION=	5.1.0
+MODPY_EGG_VERSION=	5.2.0
 DISTNAME=		chardet-${MODPY_EGG_VERSION}
 PKGNAME=		py-chardet-${MODPY_EGG_VERSION}
 
