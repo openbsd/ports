@@ -4,7 +4,7 @@ Bug report: https://github.com/djcb/mu/issues/2429
 Index: gmime/gmime-utils.c
 --- gmime/gmime-utils.c.orig
 +++ gmime/gmime-utils.c
-@@ -1789,10 +1789,16 @@ rfc2047_token_decode (rfc2047_token *token, unsigned c
+@@ -1799,10 +1799,16 @@ rfc2047_token_decode (rfc2047_token *token, unsigned c
  	const unsigned char *inbuf = (const unsigned char *) token->text;
  	size_t len = token->length;
  	

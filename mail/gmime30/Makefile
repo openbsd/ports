@@ -2,11 +2,10 @@ COMMENT=		MIME messages creation and parsing library
 
 GH_ACCOUNT=		jstedfast
 GH_PROJECT=		gmime
-GH_TAGNAME=		3.2.13
+GH_TAGNAME=		3.2.14
 PKGNAME=		gmime30-${GH_TAGNAME}
-REVISION=		1
 
-SHARED_LIBS +=  gmime-3.0            2.2      # 213.0
+SHARED_LIBS +=  gmime-3.0            2.2      # 214.0
 
 CATEGORIES=		mail devel
 
