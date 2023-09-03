@@ -1,6 +1,6 @@
 COMMENT =	interact with keepass databases from Python
 
-MODPY_EGG_VERSION =	4.0.5
+MODPY_EGG_VERSION =	4.0.6
 
 DISTNAME =	pykeepass-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
@@ -24,7 +24,6 @@ NO_TEST =		Yes
 
 RUN_DEPENDS =	devel/py-construct${MODPY_FLAVOR} \
 		devel/py-dateutil${MODPY_FLAVOR} \
-		devel/py-future${MODPY_FLAVOR} \
 		security/py-argon2-cffi${MODPY_FLAVOR} \
 		security/py-cryptodome${MODPY_FLAVOR} \
 		textproc/py-lxml${MODPY_FLAVOR}
