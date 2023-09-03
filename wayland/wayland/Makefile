@@ -24,7 +24,11 @@ COMPILER_LANGS =	c
 MASTER_SITES =		https://gitlab.freedesktop.org/wayland/wayland/-/releases/${V}/downloads/
 EXTRACT_SUFX =		.tar.xz
 
-MODULES =		devel/meson
+MODULES =		devel/meson \
+			lang/clang
+
+MODCLANG_COMPILER_LINKS=No
+MODCLANG_BUILDDEP=	No
 
 BUILD_DEPENDS =		textproc/libxslt \
 			devel/ninja
@@ -36,7 +40,7 @@ LIB_DEPENDS =		devel/libffi \
 MODMESON_CONFIGURE_ARGS +=	-Ddocumentation=false \
 				-Dicon_directory="~/.icons:/usr/local/lib/X11/icons:/usr/local/share/icons:/usr/local/share/pixmaps:${X11BASE}/share/icons:${X11BASE}/share/pixmaps"
 
-TEST_DEPENDS =		devel/llvm,-main
+TEST_DEPENDS =		devel/llvm/${MODCLANG_VERSION},-main
 
 DEBUG_PACKAGES = 	${BUILD_PACKAGES}
 
