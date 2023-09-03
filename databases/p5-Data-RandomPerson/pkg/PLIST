@@ -12,6 +12,9 @@ ${P5SITE}/Data/RandomPerson/Names/BasqueFemale.pm
 ${P5SITE}/Data/RandomPerson/Names/BasqueMale.pm
 ${P5SITE}/Data/RandomPerson/Names/CelticFemale.pm
 ${P5SITE}/Data/RandomPerson/Names/CelticMale.pm
+${P5SITE}/Data/RandomPerson/Names/DutchFemale.pm
+${P5SITE}/Data/RandomPerson/Names/DutchLast.pm
+${P5SITE}/Data/RandomPerson/Names/DutchMale.pm
 ${P5SITE}/Data/RandomPerson/Names/EnglishFemale.pm
 ${P5SITE}/Data/RandomPerson/Names/EnglishLast.pm
 ${P5SITE}/Data/RandomPerson/Names/EnglishMale.pm
@@ -34,6 +37,43 @@ ${P5SITE}/Data/RandomPerson/Names/ThaiFemale.pm
 ${P5SITE}/Data/RandomPerson/Names/ThaiMale.pm
 ${P5SITE}/Data/RandomPerson/Names/VikingFemale.pm
 ${P5SITE}/Data/RandomPerson/Names/VikingMale.pm
+${P5SITE}/Data/RandomPerson/WeightedNames.pm
+${P5SITE}/auto/share/dist/Data-RandomPerson/
+${P5SITE}/auto/share/dist/Data-RandomPerson/.VikingFemale.pm.swp.txt
+${P5SITE}/auto/share/dist/Data-RandomPerson/AncientGreekFemale.txt
+${P5SITE}/auto/share/dist/Data-RandomPerson/AncientGreekMale.txt
+${P5SITE}/auto/share/dist/Data-RandomPerson/ArabicFemale.txt
+${P5SITE}/auto/share/dist/Data-RandomPerson/ArabicLast.txt
+${P5SITE}/auto/share/dist/Data-RandomPerson/ArabicMale.txt
+${P5SITE}/auto/share/dist/Data-RandomPerson/BasqueFemale.txt
+${P5SITE}/auto/share/dist/Data-RandomPerson/BasqueMale.txt
+${P5SITE}/auto/share/dist/Data-RandomPerson/CelticFemale.txt
+${P5SITE}/auto/share/dist/Data-RandomPerson/CelticMale.txt
+${P5SITE}/auto/share/dist/Data-RandomPerson/DutchFemale.tsv
+${P5SITE}/auto/share/dist/Data-RandomPerson/DutchLast.tsv
+${P5SITE}/auto/share/dist/Data-RandomPerson/DutchMale.tsv
+${P5SITE}/auto/share/dist/Data-RandomPerson/EnglishFemale.txt
+${P5SITE}/auto/share/dist/Data-RandomPerson/EnglishLast.txt
+${P5SITE}/auto/share/dist/Data-RandomPerson/EnglishMale.txt
+${P5SITE}/auto/share/dist/Data-RandomPerson/Female.txt
+${P5SITE}/auto/share/dist/Data-RandomPerson/HindiFemale.txt
+${P5SITE}/auto/share/dist/Data-RandomPerson/HindiMale.txt
+${P5SITE}/auto/share/dist/Data-RandomPerson/JapaneseFemale.txt
+${P5SITE}/auto/share/dist/Data-RandomPerson/JapaneseMale.txt
+${P5SITE}/auto/share/dist/Data-RandomPerson/Last.txt
+${P5SITE}/auto/share/dist/Data-RandomPerson/LatvianFemale.txt
+${P5SITE}/auto/share/dist/Data-RandomPerson/LatvianMale.txt
+${P5SITE}/auto/share/dist/Data-RandomPerson/Male.txt
+${P5SITE}/auto/share/dist/Data-RandomPerson/ModernGreekFemale.txt
+${P5SITE}/auto/share/dist/Data-RandomPerson/ModernGreekLast.txt
+${P5SITE}/auto/share/dist/Data-RandomPerson/ModernGreekMale.txt
+${P5SITE}/auto/share/dist/Data-RandomPerson/SpanishFemale.txt
+${P5SITE}/auto/share/dist/Data-RandomPerson/SpanishLast.txt
+${P5SITE}/auto/share/dist/Data-RandomPerson/SpanishMale.txt
+${P5SITE}/auto/share/dist/Data-RandomPerson/ThaiFemale.txt
+${P5SITE}/auto/share/dist/Data-RandomPerson/ThaiMale.txt
+${P5SITE}/auto/share/dist/Data-RandomPerson/VikingFemale.txt
+${P5SITE}/auto/share/dist/Data-RandomPerson/VikingMale.txt
 @man man/man3p/Data::RandomPerson.3p
 @man man/man3p/Data::RandomPerson::Choice.3p
 @man man/man3p/Data::RandomPerson::Names.3p
@@ -46,6 +86,9 @@ ${P5SITE}/Data/RandomPerson/Names/VikingMale.pm
 @man man/man3p/Data::RandomPerson::Names::BasqueMale.3p
 @man man/man3p/Data::RandomPerson::Names::CelticFemale.3p
 @man man/man3p/Data::RandomPerson::Names::CelticMale.3p
+@man man/man3p/Data::RandomPerson::Names::DutchFemale.3p
+@man man/man3p/Data::RandomPerson::Names::DutchLast.3p
+@man man/man3p/Data::RandomPerson::Names::DutchMale.3p
 @man man/man3p/Data::RandomPerson::Names::EnglishFemale.3p
 @man man/man3p/Data::RandomPerson::Names::EnglishLast.3p
 @man man/man3p/Data::RandomPerson::Names::EnglishMale.3p
@@ -68,3 +111,4 @@ ${P5SITE}/Data/RandomPerson/Names/VikingMale.pm
 @man man/man3p/Data::RandomPerson::Names::ThaiMale.3p
 @man man/man3p/Data::RandomPerson::Names::VikingFemale.3p
 @man man/man3p/Data::RandomPerson::Names::VikingMale.3p
+@man man/man3p/Data::RandomPerson::WeightedNames.3p
