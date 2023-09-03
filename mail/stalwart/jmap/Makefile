@@ -1,7 +1,7 @@
 COMMENT =		JMAP server
 
 GH_PROJECT =		jmap-server
-REVISION =		4
+REVISION =		5
 
 .include "crates.inc"
 
@@ -14,12 +14,14 @@ MODCARGO_CRATES +=	sieve-rs	0.2.0	# AGPL-3.0-only
 # otherwise blows because rocksdb wants to statically links against libz ?
 MODCARGO_CRATES_KEEP +=	libz-sys
 
+MODULES +=	lang/clang
+MODCLANG_COMPILER_LINKS =	No
+
 # for rocksdb bindings
-MODCARGO_ENV=	LIBCLANG_PATH=${LOCALBASE}/lib
+MODCARGO_ENV=	LIBCLANG_PATH=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib
 MAKE_ENV +=	DEP_BZIP2_INCLUDE=${LOCALBASE}/include
 
 #librocksdb-sys looks for libclang.so
-BUILD_DEPENDS=	devel/llvm
 LIB_DEPENDS +=	archivers/zstd \
 		archivers/bzip2
 
