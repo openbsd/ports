@@ -1,0 +1,12 @@
+Index: config/Makefile.SH
+--- config/Makefile.SH.orig
++++ config/Makefile.SH
+@@ -515,8 +515,6 @@ install-lib-dyn-base:
+ install-lib-dyn-link: install-lib-dyn-base
+ 	-if test "\$(LIBPARI_DYN)" != "\$(LIBDIR)/\$(LIBPARI_SO)"; then \
+           \$(LN) \$(LIBPARI_DYN) \$(LIBDIR)/\$(LIBPARI_SO); fi
+-	-if test "\$(LIBPARI_SONAME)" != "\$(LIBPARI_SO)"; then \
+-	  \$(LN) \$(LIBPARI_DYN) \$(LIBDIR)/\$(LIBPARI_SONAME); fi
+ install-lib-dyn: \$(LIBPARI_DYN) install-lib-dyn-link
+ 
+ nsis: gp

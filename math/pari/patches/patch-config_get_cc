@@ -9,6 +9,6 @@ Index: config/get_cc
    ASMINLINE=yes
 -  OPTFLAGS="$OPTFLAGS $warn"
 +  OPTFLAGS="$CFLAGS $warn"
-   cmd="$CC $CFLAGS $extraflag -fno-strict-aliasing -o $exe gnu.c"
+   cmd="$CC $CFLAGS $extraflag -ffp-contract=off -o $exe gnu.c"
    . log_cmd
    if test -s $exe; then

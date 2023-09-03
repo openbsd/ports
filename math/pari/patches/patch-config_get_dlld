@@ -1,0 +1,18 @@
+Index: config/get_dlld
+--- config/get_dlld.orig
++++ config/get_dlld
+@@ -6,12 +6,12 @@ _dlld_list='DL_DFLT_NAME DLLD DLLDFLAGS EXTRADLLDFLAGS
+ # Some others (SunOS 5) need a link from a .so
+ # Some others (HPUX 09) do not want version numbers.
+ DLSUFFIX=so
+-soname=.$soname_num
++soname=.`echo $LIBpari_gmp_VERSION`
+ do_dll=yes
+ case "$osname" in
+   gnu*|aix|osf1|solaris|linux|*bsd)
+     case $pari_release_verbose in
+-      *STABLE*)      sodest=.$version.$patch;; # released version
++      *STABLE*)      sodest=.`echo $LIBpari_gmp_VERSION`;; # released version
+       *DEVELOPMENT*) sodest=.$patch.0.0;;      # unstable version
+     esac ;;
+   sunos) sodest=.$VersionMajor$VersionMinor.$patch
