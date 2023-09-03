@@ -5,7 +5,7 @@ COMMENT =		cross-platform IDE for use with Qt
 V =			8.0.2
 DISTNAME =		qt-creator-opensource-src-${V}
 PKGNAME =		qt-creator-${V}
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS +=  Aggregation               1.1 # 0.0
 SHARED_LIBS +=  CPlusPlus                 6.0 # 0.0
@@ -46,13 +46,16 @@ MASTER_SITES =	https://download.qt.io/official_releases/qtcreator/${V:R}/${V}/ \
 		https://mirrors.ocf.berkeley.edu/qt/official_releases/qtcreator/${V:R}/${V}/
 
 MODULES =	x11/qt5 \
+		lang/clang \
 		lang/python \
 		devel/cmake
+
+MODCLANG_COMPILER_LINKS =	No
+MODCLANG_RUNDEP =		Yes
 
 CONFIGURE_STYLE = cmake
 
 BUILD_DEPENDS =	devel/clang-tools-extra \
-		devel/llvm \
 		lang/clazy \
 		x11/qt5/qtquickcontrols
 
@@ -60,7 +63,6 @@ RUN_DEPENDS =	devel/clang-tools-extra \
 		devel/desktop-file-utils \
 		devel/gdb \
 		devel/gmake \
-		devel/llvm \
 		lang/clazy \
 		x11/gtk+4,-guic \
 		x11/qt5/qtquickcontrols
