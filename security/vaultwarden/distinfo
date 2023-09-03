@@ -373,7 +373,7 @@ SHA256 (cargo/yansi-0.5.1.tar.gz) = CQQc2Qz4X3+LLfYMZG+FO39TXOaPhSROtnMc+J+kmOw=
 SHA256 (cargo/yansi-1.0.0-rc.1.tar.gz) = E2cpW494jTcc4tvIQse3Ccc+4TZNMDUd0wDsIgOxI3c=
 SHA256 (cargo/yubico-0.11.0.tar.gz) = Fz910sQBBCmi10rjoRSmmTDFnisaTJexx10lmklg1fs=
 SHA256 (vaultwarden-1.29.2.tar.gz) = RPgsHMNZXCttujj7SsCYn0DcoKOSJfrPQE5woFcyZ6o=
-SHA256 (vaultwarden-deps-1.29.1.tgz) = Z6iSiU4yPqqJmtT9okSsM78O3fZDiuUi/te2EmoABvg=
+SHA256 (vaultwarden-deps-1.29.2.tgz) = Z6iSiU4yPqqJmtT9okSsM78O3fZDiuUi/te2EmoABvg=
 SIZE (cargo/addr2line-0.20.0.tar.gz) = 39558
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
 SIZE (cargo/aho-corasick-1.0.3.tar.gz) = 168361
@@ -749,4 +749,4 @@ SIZE (cargo/yansi-0.5.1.tar.gz) = 16525
 SIZE (cargo/yansi-1.0.0-rc.1.tar.gz) = 28933
 SIZE (cargo/yubico-0.11.0.tar.gz) = 17112
 SIZE (vaultwarden-1.29.2.tar.gz) = 595139
-SIZE (vaultwarden-deps-1.29.1.tgz) = 517334
+SIZE (vaultwarden-deps-1.29.2.tgz) = 517334
