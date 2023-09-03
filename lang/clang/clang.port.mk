@@ -1,7 +1,18 @@
-MODCLANG_VERSION=	13.0.0
+MODCLANG_VERSION=	13
+
+MODCLANG_RUN_DEPENDS=     devel/llvm/${MODCLANG_VERSION}
+MODCLANG_LIB_DEPENDS=     devel/llvm/${MODCLANG_VERSION}
+_MODCLANG_BUILD_DEPENDS=  devel/llvm/${MODCLANG_VERSION}
 
 MODCLANG_ARCHS ?= ${LLVM_ARCHS}
 MODCLANG_LANGS ?=
+MODCLANG_COMPILER_LINKS ?= Yes
+MODCLANG_BUILDDEP ?= Yes
+MODCLANG_RUNDEP ?= No
+
+.if ${MODCLANG_RUNDEP:L} == "yes"
+RUN_DEPENDS+=           ${MODCLANG_RUN_DEPENDS}
+.endif
 
 .if !${MODCLANG_LANGS:L:Mc}
 # Always include support for this
@@ -33,13 +44,20 @@ _MODCLANG_ARCH_CLANG = Yes
 
 .if ${_MODCLANG_ARCH_USES:L} == "yes"
 
-BUILD_DEPENDS += devel/llvm>=${MODCLANG_VERSION}
-COMPILER_LINKS = gcc ${LOCALBASE}/bin/clang cc ${LOCALBASE}/bin/clang \
-	clang ${LOCALBASE}/bin/clang
+.  if ${NO_BUILD:L} == "no" && ${MODCLANG_BUILDDEP:L} == "yes"
+BUILD_DEPENDS += ${_MODCLANG_BUILD_DEPENDS}
+.  endif
 
-.  if ${MODCLANG_LANGS:L:Mc++}
-COMPILER_LINKS += g++ ${LOCALBASE}/bin/clang++ c++ ${LOCALBASE}/bin/clang++ \
-	clang++ ${LOCALBASE}/bin/clang++
+.  if ${MODCLANG_COMPILER_LINKS:L} == "yes"
+COMPILER_LINKS = 	gcc ${LOCALBASE}/bin/clang-${MODCLANG_VERSION} \
+			cc ${LOCALBASE}/bin/clang-${MODCLANG_VERSION} \
+			clang ${LOCALBASE}/bin/clang-${MODCLANG_VERSION}
+.  endif
+
+.  if ${MODCLANG_LANGS:L:Mc++} && ${MODCLANG_COMPILER_LINKS:L} == "yes"
+COMPILER_LINKS +=	g++ ${LOCALBASE}/bin/clang++-${MODCLANG_VERSION} \
+			c++ ${LOCALBASE}/bin/clang++-${MODCLANG_VERSION} \
+			clang++ ${LOCALBASE}/bin/clang++-${MODCLANG_VERSION}
 
 .    if ${_MODCLANG_ARCH_CLANG:L} == "no"
 # uses libestdc++
