@@ -6,6 +6,8 @@ CATEGORIES =	devel x11
 
 DISTNAME =	kdevelop-${MODKDE_VERSION}
 
+REVISION =	0
+
 HOMEPAGE =	https://www.kdevelop.org/
 
 SHARED_LIBS +=  KDevPlatformDebugger      5.0 # 5.2
@@ -46,15 +48,19 @@ WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Help Qt5Network
 WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels
 WANTLIB += Qt5Quick Qt5QuickWidgets Qt5Sql Qt5Test Qt5WebChannel
 WANTLIB += Qt5WebEngineCore Qt5WebEngineWidgets Qt5Widgets Qt5Xml
-WANTLIB += X11 apr-1 aprutil-1 c clang komparediff2 m svn_client-1
+WANTLIB += X11 apr-1 aprutil-1 c komparediff2 m svn_client-1
 WANTLIB += svn_fs-1 svn_ra-1 svn_repos-1 svn_subr-1 svn_wc-1
+WANTLIB += llvm${MODCLANG_VERSION}/lib/clang
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
 
 MODULES =	x11/kde-applications \
 		devel/kf5 \
+		lang/clang \
 		lang/python
 
+MODCLANG_COMPILER_LINKS=No
+MODCLANG_BUILDDEP=	No
 MODPY_BUILDDEP =	No
 
 BUILD_DEPENDS =	archivers/gtar \
@@ -100,7 +106,7 @@ LIB_DEPENDS =	devel/kf5/kconfig \
 		devel/kf5/kxmlgui \
 		devel/kf5/purpose \
 		devel/kf5/threadweaver \
-		devel/llvm \
+		${MODCLANG_LIB_DEPENDS} \
 		devel/subversion \
 		x11/grantlee-qt5>=5.3 \
 		x11/kde-applications/libkomparediff2 \
@@ -118,6 +124,7 @@ TEST_ENV +=	QT_PLUGIN_PATH="${PREFIX}/lib/qt5/plugins"
 pre-configure:
 	ln -sf ${LOCALBASE}/bin/gtar ${WRKDIR}/bin/tar
 # don't pick up llvm-config(1) from base
-	ln -sf ${LOCALBASE}/bin/llvm-config ${WRKDIR}/bin/llvm-config
+	ln -sf ${LOCALBASE}/bin/llvm-config-${MODCLANG_VERSION} \
+		 ${WRKDIR}/bin/llvm-config
 
 .include <bsd.port.mk>
