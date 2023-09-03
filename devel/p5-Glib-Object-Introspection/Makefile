@@ -1,8 +1,10 @@
 COMMENT=	dynamically create Perl language bindings
 
-DISTNAME =	Glib-Object-Introspection-0.050
+DISTNAME =	Glib-Object-Introspection-0.051
 
 CATEGORIES=	devel
+
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
