@@ -4,7 +4,15 @@ pthread_setname_np -> pthread_set_name_np
 Index: src/std/thread.c
 --- src/std/thread.c.orig
 +++ src/std/thread.c
-@@ -809,6 +809,8 @@ HL_PRIM int hl_thread_id() {
+@@ -73,6 +73,7 @@ struct _hl_tls {
+ #else
+ 
+ #	include <pthread.h>
++#	include <pthread_np.h>
+ #	include <unistd.h>
+ #	include <sys/syscall.h>
+ #	include <sys/time.h>
+@@ -809,6 +810,8 @@ HL_PRIM int hl_thread_id() {
  	uint64_t tid64;
  	pthread_threadid_np(NULL, &tid64);
  	return (pid_t)tid64;
@@ -13,7 +21,7 @@ Index: src/std/thread.c
  #elif defined(SYS_gettid) && !defined(HL_TVOS)
  	return syscall(SYS_gettid);
  #else
-@@ -940,7 +942,7 @@ HL_PRIM void hl_thread_set_name( hl_thread *t, const c
+@@ -940,7 +943,7 @@ HL_PRIM void hl_thread_set_name( hl_thread *t, const c
  #elif defined(HL_MAC)
  	// pthread_setname_np only possible for current thread
  #else

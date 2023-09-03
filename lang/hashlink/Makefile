@@ -10,7 +10,7 @@ DISTNAME =	hashlink-${V}
 GH_ACCOUNT =	HaxeFoundation
 GH_PROJECT =	hashlink
 GH_TAGNAME =	${V}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	hl	1.0	# 1.12
 
