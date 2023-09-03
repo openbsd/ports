@@ -1,3 +1,5 @@
+See also https://github.com/octo/liboping/issues/72
+
 Index: src/oping.c
 --- src/oping.c.orig
 +++ src/oping.c
