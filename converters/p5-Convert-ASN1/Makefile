@@ -1,6 +1,6 @@
 COMMENT =	module to encode and decode ASN.1 data structures
 
-DISTNAME =	Convert-ASN1-0.33
+DISTNAME =	Convert-ASN1-0.34
 
 CATEGORIES =	converters
 
