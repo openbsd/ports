@@ -1,10 +1,9 @@
 COMMENT=		IntelliJ IDEA Java IDE
 
-V=			2022.2.3
-DISTNAME=		ideaIC-${V}-no-jbr
+V=			2023.2.1
+DISTNAME=		ideaIC-${V}
 PKGNAME=		intellij-${V}
 CATEGORIES=		devel
-REVISION=		0
 
 HOMEPAGE=		https://www.jetbrains.com/idea/
 MAINTAINER=		Lucas Raab <tuftedocelot@fastmail.fm>
@@ -24,7 +23,7 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 
 NO_TEST=		Yes
 
-WRKDIST=	${WRKDIR}/idea-IC-222.4345.14
+WRKDIST=	${WRKDIR}/idea-IC-232.9559.62
 IJ=			${PREFIX}/intellij
 
 # If NO_BUILD is set, JAVA_HOME doesn't get defined. So do
@@ -35,6 +34,7 @@ do-build:
 do-install:
 	${INSTALL_DATA_DIR} ${IJ}
 	@cd ${WRKDIST} && pax -rw . ${IJ}
+	@rm -rf ${IJ}/jbr
 	@rm -rf ${IJ}/bin/libdbm64.so
 	@rm -rf ${IJ}/plugins/android
 	@rm -rf ${IJ}/plugins/design-tools
