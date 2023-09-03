@@ -1,6 +1,8 @@
 ONLY_FOR_ARCHS=	aarch64 amd64 arm i386 powerpc powerpc64 riscv64 sparc64
 DPB_PROPERTIES=	parallel
 
+USE_NOBTCFI=	Yes
+
 COMMENT-main=	multi system emulator
 COMMENT-ga=	QEMU guest agent
 
@@ -9,6 +11,7 @@ DISTNAME=	qemu-${VERSION}
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 HOMEPAGE=	https://www.qemu.org/
 
