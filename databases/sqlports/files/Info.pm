@@ -1,4 +1,4 @@
-# $OpenBSD: Info.pm,v 1.42 2023/08/31 13:49:22 espie Exp $
+# $OpenBSD: Info.pm,v 1.43 2023/09/03 11:40:30 espie Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -108,6 +108,8 @@ our $vars = {
     MISSING_FILES => 'IgnoredVar',
     FIX_CRLF_FILES => 'CRLFFiles',
     MODULESVAR => 'ModulesVarVar',
+    DIST_TUPLE => 'DistTupleVar',
+    DIST_TUPLE_MV => 'DistTupleMvVar',
 };
 
 my @indexed = qw(FULLPKGNAME RUN_DEPENDS LIB_DEPENDS IGNORE

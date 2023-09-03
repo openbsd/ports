@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.68 2023/09/02 10:40:59 espie Exp $
+# $OpenBSD: Var.pm,v 1.69 2023/09/03 11:40:30 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -1230,6 +1230,60 @@ sub ports_view_column($self, $name)
 	return Sql::Column::View->new($name, origin => 'Value')->join(
 	    Sql::Join->new($self->table."_ordered")->left
 	    	->add(Sql::Equal->new("FullPkgpath", "FullPkgpath")));
+}
+
+package DistTupleVar;
+our @ISA = qw(AnyVar);
+sub table($) { 'DistTuple' };
+
+sub add($self, $ins)
+{
+	$self->AnyVar::add($ins);
+	my @l = $self->words;
+	while(@l > 0) {
+		my $type = shift @l;
+		my $account = shift @l;
+		my $project = shift @l;
+		my $id = shift @l;
+		my $mv = undef;
+		$self->normal_insert($ins, $type, $account, $project, $id, $mv);
+	}
+}
+
+sub create_tables($self, $inserter)
+{
+	$self->create_table(
+	    $self->fullpkgpath,
+	    Sql::Column::Text->new("Type"),
+	    Sql::Column::Text->new("Account"),
+	    Sql::Column::Text->new("Project"),
+	    Sql::Column::Text->new("Id"),
+	    Sql::Column::Text->new("Mv"));
+	$self->create_view(
+	    $self->pathref,
+	    Sql::Column::View->new("Type"),
+	    Sql::Column::View->new("Account"),
+	    Sql::Column::View->new("Project"),
+	    Sql::Column::View->new("Id"),
+	    Sql::Column::View->new("Mv"));
+}
+
+package DistTupleMvVar;
+our @ISA = qw(AnyVar);
+sub table($) { 'DistTuple' };
+
+sub add($self, $ins)
+{
+	$self->AnyVar::add($ins);
+	my @l = $self->words;
+	while(@l > 0) {
+		my $type = shift @l;
+		my $account = shift @l;
+		my $project = shift @l;
+		my $id = shift @l;
+		my $mv = shift @l;
+		$self->normal_insert($ins, $type, $account, $project, $id, $mv);
+	}
 }
 
 package EmailVar;
