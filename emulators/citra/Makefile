@@ -69,10 +69,4 @@ PKG_ARGS +=	-Dx86=1
 PKG_ARGS +=	-Dx86=0
 .endif
 
-.include <bsd.port.arch.mk>
-
-.if ${PROPERTIES:Mclang}
-BUILD_DEPENDS+=	devel/llvm
-.endif
-
 .include <bsd.port.mk>
