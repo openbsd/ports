@@ -144,7 +144,9 @@ BUILD_DEPENDS +=	devel/ninja
 BUILD_DEPENDS +=	devel/gdb
 
 .if !${USE_EMB_LLVM:L:Myes}
-BUILD_DEPENDS +=	devel/llvm
+MODULES +=			lang/clang
+MODCLANG_VERSION=		16
+MODCLANG_COMPILER_LINKS=	No
 .else
 WANTLIB-main +=		execinfo
 .endif
@@ -239,7 +241,7 @@ do-configure:
 
 	echo '[target.${TRIPLE_ARCH}]' >>${WRKBUILD}/config.toml
 .if !${USE_EMB_LLVM:L:Myes}
-	echo 'llvm-config = "${LOCALBASE}/bin/llvm-config"' \
+	echo 'llvm-config = "${LOCALBASE}/bin/llvm-config-${MODCLANG_VERSION}"' \
 		>>${WRKBUILD}/config.toml
 .endif
 
