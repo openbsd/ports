@@ -10,9 +10,8 @@ GH_TAGNAME=	v$V
 
 REVISION-main=	0
 
-MASTER_SITES0=	https://github.com/vim/colorschemes/archive/
-DISTFILES=	${GH_DISTFILE} \
-		vim-colorschemes-20230324{22986fa2a3d2f7229efd4019fcbca411caa6afbb}.tar.gz:0
+DIST_TUPLE+=	github vim vim		v9.0.1859 \
+		github vim colorschemes	22986fa2a3d2f7229efd4019fcbca411caa6afbb
 
 PKGNAME=	vim-$V
 FULLPKGNAME-lang= vim-lang-$V
