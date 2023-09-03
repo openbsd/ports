@@ -251,6 +251,7 @@
      SUBDIR += pygame_sdl2
      SUBDIR += pyganim
      SUBDIR += pysol
+     SUBDIR += pysol-cards
      SUBDIR += qqwing
      SUBDIR += qstat
      SUBDIR += quadrupleback
