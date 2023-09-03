@@ -1,11 +1,13 @@
 COMMENT=	perl interface to the Glib libraries
 
-V =		1.3293
+V =		1.3294
 DISTNAME=	Glib-${V}
 PKGNAME=	p5-Glib2-${V}
 CATEGORIES=	x11 devel
 
 CPAN_AUTHOR=	XAOC
+
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
