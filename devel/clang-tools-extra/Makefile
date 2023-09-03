@@ -15,7 +15,7 @@ COMMENT=	Clang extra tools
 LLVM_V =	13.0.0
 DISTNAME =	llvm-${LLVM_V}.src
 PKGNAME=	clang-tools-extra-${LLVM_V}
-REVISION =	5
+REVISION =	6
 
 CATEGORIES =	devel
 
@@ -38,9 +38,12 @@ DISTFILES =	llvm-${LLVM_V}.src${EXTRACT_SUFX} \
 COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake \
+			lang/clang \
 			lang/python
 
-RUN_DEPENDS =		devel/llvm
+MODCLANG_BUILDDEP ?=		No
+MODCLANG_RUNDEP ?=		Yes
+MODCLANG_COMPILER_LINKS ?=	No
 
 CONFIGURE_STYLE =	cmake
 
