@@ -1,0 +1,37 @@
+Build system is broken around SDL2_image.
+Same with libsmackerdec and libmpq.
+asio is a header-only library...
+
+Index: Source/CMakeLists.txt
+--- Source/CMakeLists.txt.orig
++++ Source/CMakeLists.txt
+@@ -166,7 +166,6 @@ set(libdevilutionx_SRCS
+   utils/utf8.cpp)
+ 
+ if(SUPPORTS_MPQ)
+-  list(APPEND libdevilutionx_DEPS libmpq)
+   list(APPEND libdevilutionx_SRCS
+     mpq/mpq_reader.cpp
+     mpq/mpq_sdl_rwops.cpp
+@@ -260,21 +259,13 @@ target_link_libraries(libdevilutionx PUBLIC
+   Threads::Threads
+   DevilutionX::SDL
+   fmt::fmt
+-  libsmackerdec
+   simpleini::simpleini
+   tl
+   hoehrmann_utf8
+   ${libdevilutionx_DEPS}
+ )
+ 
+-if(NOT USE_SDL1)
+-  target_link_libraries(libdevilutionx PUBLIC SDL2::SDL2_image)
+-endif()
+-
+ if(NOT NONET)
+-  if(NOT DISABLE_TCP)
+-    target_link_libraries(libdevilutionx PUBLIC asio)
+-  endif()
+   if(PACKET_ENCRYPTION)
+     target_link_libraries(libdevilutionx PUBLIC sodium)
+   endif()

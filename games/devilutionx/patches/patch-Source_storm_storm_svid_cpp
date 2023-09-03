@@ -1,0 +1,13 @@
+Audio on video sequences leads to a crash.
+Index: Source/storm/storm_svid.cpp
+--- Source/storm/storm_svid.cpp.orig
++++ Source/storm/storm_svid.cpp
+@@ -248,7 +248,7 @@ bool SVidPlayBegin(const char *filename, int flags)
+ 	}
+ 
+ #ifndef NOSOUND
+-	const bool enableAudio = (flags & 0x1000000) == 0;
++	const bool enableAudio = false;
+ 
+ 	auto audioInfo = Smacker_GetAudioTrackDetails(SVidHandle, 0);
+ 	LogVerbose(LogCategory::Audio, "SVid audio depth={} channels={} rate={}", audioInfo.bitsPerSample, audioInfo.nChannels, audioInfo.sampleRate);
