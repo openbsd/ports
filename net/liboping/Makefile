@@ -1,7 +1,7 @@
 COMMENT =	library and tools to generate ICMP echo requests
 
 DISTNAME =	liboping-1.10.0
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=	oping 0.1 # 3.0
 
@@ -13,6 +13,7 @@ HOMEPAGE =	https://noping.cc/
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m curses perl
+CFLAGS += -Wno-error
 
 MASTER_SITES =	https://noping.cc/files/
 CONFIGURE_STYLE =	gnu
