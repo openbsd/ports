@@ -1,6 +1,7 @@
 COMMENT =	general purpose flash card program for KDE
 DISTNAME =	kwordquiz-${VERSION}
 CATEGORIES =	games
+REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/kwordquiz
 
@@ -17,6 +18,10 @@ MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_DOCS = yes
+
+BUILD_DEPENDS =	graphics/kirigami-addons
+
+RUN_DEPENDS =	graphics/kirigami-addons
 
 LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kauth \
