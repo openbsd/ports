@@ -1,0 +1,51 @@
+No random2 port; just use python3 random instead.
+
+Index: pysol_cards/random.py
+--- pysol_cards/random.py.orig
++++ pysol_cards/random.py
+@@ -11,7 +11,7 @@ import re
+ from pysol_cards.cards import ms_rearrange
+ from pysol_cards.random_base import RandomBase
+ 
+-import random2
++import random
+ 
+ 
+ class PysolRandom(RandomBase):
+@@ -116,14 +116,14 @@ class LCRandom31(_LCBase):
+ 
+ 
+ # * Mersenne Twister random number generator
+-class MTRandom(RandomBase, random2.Random):
++class MTRandom(RandomBase, random.Random):
+     MAX_SEED = 100000000000000000000  # 20 digits
+ 
+     def __init__(self, seed=None):
+         if seed is None:
+             seed = self._getRandomSeed()
+         RandomBase.__init__(self)
+-        random2.Random.__init__(self, seed)
++        random.Random.__init__(self, seed)
+         self.initial_seed = seed
+         self.initial_state = self.getstate()
+         self.origin = self.ORIGIN_UNKNOWN
+@@ -131,16 +131,16 @@ class MTRandom(RandomBase, random2.Random):
+     def getstate(self):
+         return (
+             RandomBase.getstate(self),
+-            random2.Random.getstate(self)
++            random.Random.getstate(self)
+         )
+ 
+     def setstate(self, token):
+         base, r2 = token
+         RandomBase.setstate(self, base)
+-        random2.Random.setstate(self, r2)
++        random.Random.setstate(self, r2)
+ 
+     def setSeed(self, seed):
+-        random2.Random.__init__(self, seed)
++        random.Random.__init__(self, seed)
+         self.initial_state = self.getstate()
+         return seed
+ 
