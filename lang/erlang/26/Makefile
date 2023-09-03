@@ -6,7 +6,7 @@ USE_WXNEEDED=	Yes
 COMMENT-main=	${COMMENT}
 COMMENT-wx=	WxWidgets bindings for Erlang
 
-V=		26.0.1
+V=		26.0.2
 DISTNAME=	otp_src_${V}
 PORTROACH=	limit:^OTP-26\.
 PKGNAME=	erlang-${V}
@@ -69,7 +69,7 @@ UPDATE_PLIST_ARGS = -i V
 ERL_VERSIONS=	\
 ASN1_VSN        5.1 \
 COMMON_TEST_VSN 1.25 \
-COMPILER_VSN    8.3.1 \
+COMPILER_VSN    8.3.2 \
 CRYPTO_VSN      5.2 \
 DEBUGGER_VSN    5.3.1 \
 DIALYZER_VSN    5.1 \
@@ -85,7 +85,7 @@ EUNIT_VSN       2.8.2 \
 FTP_VSN         1.2 \
 INETS_VSN       9.0.1 \
 JINTERFACE_VSN  1.14 \
-KERNEL_VSN      9.0.1 \
+KERNEL_VSN      9.0.2 \
 MEGACO_VSN      4.4.4 \
 MNESIA_VSN      4.22 \
 OBSERVER_VSN    2.15 \
@@ -97,14 +97,14 @@ RELTOOL_VSN     1.0 \
 RUNTIME_TOOLS_VSN       2.0 \
 SASL_VSN        4.2.1 \
 SNMP_VSN        5.14 \
-SSH_VSN         5.0 \
-SSL_VSN         11.0.1 \
-STDLIB_VSN      5.0.1 \
+SSH_VSN         5.0.1 \
+SSL_VSN         11.0.2 \
+STDLIB_VSN      5.0.2 \
 SYNTAX_TOOLS_VSN        3.1 \
 TFTP_VSN        1.1 \
 TOOLS_VSN       3.6 \
 WX_VSN          2.3 \
 XMERL_VSN       1.3.32 \
-ERTS_VSN        14.0.1
+ERTS_VSN        14.0.2
 
 .include <bsd.port.mk>
