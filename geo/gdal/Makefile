@@ -5,6 +5,7 @@ V =		3.7.1
 DISTNAME =	gdal-${V}
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		gdalautotest-${V}${EXTRACT_SUFX}
+REVISION =	0
 
 FULLPKGNAME-main =	${DISTNAME}
 FULLPKGPATH-main =	geo/gdal,-main
@@ -36,6 +37,7 @@ MULTI_PACKAGES =	-main -python
 MODPY_RUNDEP = No
 LIB_DEPENDS-main =	databases/sqlite3 \
 			archivers/libarchive \
+			archivers/libdeflate \
 			archivers/zstd \
 			graphics/tiff \
 			net/curl \
@@ -57,7 +59,7 @@ LIB_DEPENDS-main =	databases/sqlite3 \
 			devel/proj>=6.0 \
 			devel/geotiff>=1.5.0
 
-WANTLIB-main =		archive c crypto curl expat freexl geos_c geotiff \
+WANTLIB-main =		archive c crypto curl deflate expat freexl geos_c geotiff \
 			gif hdf5 iconv jpeg json-c jxl jxl_threads lzma lz4 m \
 			netcdf openjp2 pcre2-8 png poppler pq proj pthread qhull_r \
 			spatialite sqlite3 ssl tiff xml2 webp z zstd \
