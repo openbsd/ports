@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.68 2023/09/02 12:07:23 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.69 2023/09/03 16:13:26 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -84,6 +84,7 @@ sub sanity_check($class, $state)
 		next if defined $p->{category};
 		next unless defined $p->{info};
 		for my $w ($p->build_path_list) {
+			next if defined $w->{info} and $w->{info}->is_stub;
 			my $reason = $class->check_path($w, $p);
 			if (defined $reason) {
 				$reason = $w->fullpkgpath.$reason;
