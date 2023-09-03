@@ -1,6 +1,18 @@
+Respect LDFLAGS, see upstream PR
+https://github.com/ocaml/ocaml/pull/10091
+
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
+@@ -41,7 +41,7 @@ libraries_man_section=3
+ # ($OC_CFLAGS and $CFLAGS), but at the moment they are not taken into
+ # account on Windows, because flexlink, which is used to build
+ # executables on this platform, can not handle them.
+-mkexe="\$(CC) \$(OC_CFLAGS) \$(CFLAGS) \$(OC_LDFLAGS)"
++mkexe="\$(CC) \$(OC_CFLAGS) \$(CFLAGS) \$(OC_LDFLAGS) \$(LDFLAGS)"
+ 
+ # Flags for building executable files with debugging symbols
+ mkexedebugflag="-g"
 @@ -735,6 +735,11 @@ AS_CASE([$CC,$host],
  )
  
@@ -13,20 +25,22 @@ Index: configure.ac
  ## Program to use to install files
  AC_PROG_INSTALL
  
-@@ -867,10 +872,10 @@ AS_IF([test x"$enable_shared" != "xno"],
+@@ -867,10 +872,11 @@ AS_IF([test x"$enable_shared" != "xno"],
      [[*-*-linux*|*-*-freebsd[3-9]*|*-*-freebsd[1-9][0-9]*\
      |*-*-openbsd*|*-*-netbsd*|*-*-dragonfly*|*-*-gnu*|*-*-haiku*]],
        [sharedlib_cflags="-fPIC"
-+      oc_ldflags="$oc_ldflags -Wl,-E"
-        AS_CASE([$CC,$host],
-            [gcc*,powerpc-*-linux*], [mksharedlib="$CC -shared -mbss-plt"],
+-       AS_CASE([$CC,$host],
+-           [gcc*,powerpc-*-linux*], [mksharedlib="$CC -shared -mbss-plt"],
 -           [mksharedlib="$CC -shared"])
--      oc_ldflags="$oc_ldflags -Wl,-E"
-+           [mksharedlib="$CC -shared $oc_ldflags"])
+       oc_ldflags="$oc_ldflags -Wl,-E"
++       AS_CASE([$CC,$host],
++           [gcc*,powerpc-*-linux*], 
++           [mksharedlib="$CC -shared -mbss-plt \$(LDFLAGS)"],
++           [mksharedlib="$CC -shared $oc_ldflags \$(LDFLAGS)"])
        rpath="-Wl,-rpath,"
        mksharedlibrpath="-Wl,-rpath,"
        natdynlinkopts="-Wl,-E"
-@@ -912,6 +917,7 @@ AS_IF([test x"$enable_shared" != "xno"],
+@@ -912,6 +918,7 @@ AS_IF([test x"$enable_shared" != "xno"],
      [earm*-*-netbsd*], [natdynlink=true],
      [aarch64-*-linux*], [natdynlink=true],
      [aarch64-*-freebsd*], [natdynlink=true],
@@ -34,7 +48,7 @@ Index: configure.ac
      [riscv*-*-linux*], [natdynlink=true])])
  
  # Try to work around the Skylake/Kaby Lake processor bug.
-@@ -1013,6 +1019,8 @@ AS_CASE([$host],
+@@ -1013,6 +1020,8 @@ AS_CASE([$host],
      [arch=arm64; system=linux],
    [aarch64-*-freebsd*],
      [arch=arm64; system=freebsd],

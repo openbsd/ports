@@ -3,7 +3,7 @@ COMMENT =	   ML language with complete class-based objective system
 # XXX Don't even think of updating ocaml alone.
 # Do check that the ports that depend on it still work, or repair them.
 VERSION=	4.12.1
-REVISION=	3
+REVISION=	4
 
 # if the ocaml compiler gains support for BTI, as well as
 # removing USE_NOBTCFI here (or changing to an arch-dependent
@@ -50,12 +50,15 @@ LDFLAGS +=	-L${LOCALBASE}/lib
 LDFLAGS+=		-Wl,-z,notext
 .endif
 
+# We need to pass nobtcfi in LDFLAGS so that ocamlopt
+# will pick it up when building OCaml native binaries
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "arm64"
+LDFLAGS+=		-Wl,-z,nobtcfi
+.endif
+
 USE_GMAKE=	Yes
 
-WANTLIB =		c iberty m pthread z
-
-# for libbfd (used by ocamlobjinfo on .cmxs files)
-BUILD_DEPENDS +=	devel/gdb
+WANTLIB =		c m pthread
 
 .if ${PROPERTIES:Mocaml_native}
 ALL_TARGET=	world.opt
