@@ -39,7 +39,7 @@ ERRORS += "Fatal: invalid choice for DIST_TUPLE: ${_template}"
 .    if "${_template}" == "github"
 _subdir =
 _test_tagname = ${_id}
-.      if ${_test_tagname} == "HASH" || ${_test_tagname:/^[0-9a-f]{40}$/HASH/} != "HASH"
+.      if ${_test_tagname} == "HASH" || ${_test_tagname:C/^[0-9a-f]{40}$/HASH/} != "HASH"
 # set DISTNAME if not done by the port and add refs/tags/ subdir
 DISTNAME ?= ${_project}-${_id:S/^v//}
 _subdir =	refs/tags/
