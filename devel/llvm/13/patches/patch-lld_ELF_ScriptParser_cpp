@@ -1,0 +1,15 @@
+- In the linkers, collect objects in section "openbsd.mutable" and place
+  them into a page-aligned region in the bss, with the right markers for
+  kernel/ld.so to identify the region and skip making it immutable.
+
+Index: lld/ELF/ScriptParser.cpp
+--- lld/ELF/ScriptParser.cpp.orig
++++ lld/ELF/ScriptParser.cpp
+@@ -1478,6 +1478,7 @@ unsigned ScriptParser::readPhdrType() {
+                      .Case("PT_GNU_EH_FRAME", PT_GNU_EH_FRAME)
+                      .Case("PT_GNU_STACK", PT_GNU_STACK)
+                      .Case("PT_GNU_RELRO", PT_GNU_RELRO)
++                     .Case("PT_OPENBSD_MUTABLE", PT_OPENBSD_MUTABLE)
+                      .Case("PT_OPENBSD_RANDOMIZE", PT_OPENBSD_RANDOMIZE)
+                      .Case("PT_OPENBSD_WXNEEDED", PT_OPENBSD_WXNEEDED)
+                      .Case("PT_OPENBSD_BOOTDATA", PT_OPENBSD_BOOTDATA)

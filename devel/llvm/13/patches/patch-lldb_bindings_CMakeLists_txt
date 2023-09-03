@@ -1,0 +1,15 @@
+Fix build with swig 4.1.0
+cf https://reviews.llvm.org/D134877
+cf https://bugzilla.redhat.com/show_bug.cgi?id=2128646
+Index: lldb/bindings/CMakeLists.txt
+--- lldb/bindings/CMakeLists.txt.orig
++++ lldb/bindings/CMakeLists.txt
+@@ -26,8 +26,6 @@ set(SWIG_COMMON_FLAGS
+   -features autodoc
+   -I${LLDB_SOURCE_DIR}/include
+   -I${CMAKE_CURRENT_SOURCE_DIR}
+-  -D__STDC_LIMIT_MACROS
+-  -D__STDC_CONSTANT_MACROS
+   ${DARWIN_EXTRAS}
+ )
+ 

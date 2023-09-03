@@ -1,0 +1,22 @@
+- Adapt the -mfix-loongson2f-btb workaround from as(1) to LLVM/clang.
+- Add retguard for octeon/mips64.
+
+Index: llvm/lib/Target/Mips/CMakeLists.txt
+--- llvm/lib/Target/Mips/CMakeLists.txt.orig
++++ llvm/lib/Target/Mips/CMakeLists.txt
+@@ -41,6 +41,7 @@ add_llvm_target(MipsCodeGen
+   MipsISelLowering.cpp
+   MipsFrameLowering.cpp
+   MipsLegalizerInfo.cpp
++  MipsLoongson2FBTBFix.cpp
+   MipsBranchExpansion.cpp
+   MipsMCInstLower.cpp
+   MipsMachineFunction.cpp
+@@ -50,6 +51,7 @@ add_llvm_target(MipsCodeGen
+   MipsPreLegalizerCombiner.cpp
+   MipsRegisterBankInfo.cpp
+   MipsRegisterInfo.cpp
++  MipsReturnProtectorLowering.cpp
+   MipsSEFrameLowering.cpp
+   MipsSEInstrInfo.cpp
+   MipsSEISelDAGToDAG.cpp

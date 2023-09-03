@@ -1,0 +1,12 @@
+Index: clang/tools/clang-format/clang-format-sublime.py
+--- clang/tools/clang-format/clang-format-sublime.py.orig
++++ clang/tools/clang-format/clang-format-sublime.py
+@@ -18,7 +18,7 @@ import sublime_plugin
+ import subprocess
+ 
+ # Change this to the full path if clang-format is not on the path.
+-binary = 'clang-format'
++binary = 'clang-format-${LLVM_MAJOR}'
+ 
+ # Change this to format according to other formatting styles. See the output of
+ # 'clang-format --help' for a list of supported styles. The default looks for

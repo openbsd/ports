@@ -1,0 +1,14 @@
+Generate __data_start symbol that marks the start of .data when __data_start
+is referenced from code being linked.
+
+Index: lld/ELF/Symbols.cpp
+--- lld/ELF/Symbols.cpp.orig
++++ lld/ELF/Symbols.cpp
+@@ -48,6 +48,7 @@ std::string lld::toELFString(const Archive::Symbol &b)
+ }
+ 
+ Defined *ElfSym::bss;
++Defined *ElfSym::data;
+ Defined *ElfSym::etext1;
+ Defined *ElfSym::etext2;
+ Defined *ElfSym::edata1;

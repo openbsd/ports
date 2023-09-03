@@ -1,0 +1,19 @@
+Don't build MachO2 support in lld.  This code reaches into libunwind
+internals.
+
+Index: lld/tools/lld/lld.cpp
+--- lld/tools/lld/lld.cpp.orig
++++ lld/tools/lld/lld.cpp
+@@ -148,10 +148,12 @@ static int lldMain(int argc, const char **argv, llvm::
+     return !elf::link(args, exitEarly, stdoutOS, stderrOS);
+   case WinLink:
+     return !coff::link(args, exitEarly, stdoutOS, stderrOS);
++#if 0
+   case Darwin:
+     return !macho::link(args, exitEarly, stdoutOS, stderrOS);
+   case DarwinOld:
+     return !mach_o::link(args, exitEarly, stdoutOS, stderrOS);
++#endif
+   case Wasm:
+     return !lld::wasm::link(args, exitEarly, stdoutOS, stderrOS);
+   default:

@@ -1,0 +1,15 @@
+fix build with swig 4.1.0
+https://github.com/llvm/llvm-project/commit/f0a25fe0b746f56295d5c02116ba28d2f965c175
+
+Index: lldb/bindings/python/python-typemaps.swig
+--- lldb/bindings/python/python-typemaps.swig.orig
++++ lldb/bindings/python/python-typemaps.swig
+@@ -439,7 +439,7 @@ bool SetNumberFromPyObject<double>(double &number, PyO
+ 
+ %typemap(out) lldb::FileSP {
+   $result = nullptr;
+-  lldb::FileSP &sp = $1;
++  const lldb::FileSP &sp = $1;
+   if (sp) {
+     PythonFile pyfile = unwrapOrSetPythonException(PythonFile::FromFile(*sp));
+     if (!pyfile.IsValid())

@@ -1,0 +1,14 @@
+- Don't create IBT .plt if there are no PLT entries.  Cherry picked from
+  upstream.
+
+Index: lld/ELF/SyntheticSections.h
+--- lld/ELF/SyntheticSections.h.orig
++++ lld/ELF/SyntheticSections.h
+@@ -769,6 +769,7 @@ class IBTPltSection : public SyntheticSection {
+ public:
+   IBTPltSection();
+   void writeTo(uint8_t *Buf) override;
++  bool isNeeded() const override;
+   size_t getSize() const override;
+ };
+ 

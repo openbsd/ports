@@ -1,0 +1,14 @@
+Don't build MachO2 support in lld.  This code reaches into libunwind
+internals.
+
+Index: lld/tools/lld/CMakeLists.txt
+--- lld/tools/lld/CMakeLists.txt.orig
++++ lld/tools/lld/CMakeLists.txt
+@@ -15,7 +15,6 @@ target_link_libraries(lld
+   lldCOFF
+   lldDriver
+   lldELF
+-  lldMachO2
+   lldMinGW
+   lldWasm
+   )

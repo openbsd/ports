@@ -1,0 +1,17 @@
+Add a clang pass that identifies potential ROP gadgets and replaces ROP
+friendly instructions with safe alternatives. This initial commit fixes
+3 instruction forms that will lower to include a c3 (return) byte.
+Additional problematic instructions can be fixed incrementally using
+this framework.
+
+Index: llvm/lib/Target/X86/X86TargetMachine.cpp
+--- llvm/lib/Target/X86/X86TargetMachine.cpp.orig
++++ llvm/lib/Target/X86/X86TargetMachine.cpp
+@@ -546,6 +546,7 @@ void X86PassConfig::addPreEmitPass() {
+   addPass(createX86EvexToVexInsts());
+   addPass(createX86DiscriminateMemOpsPass());
+   addPass(createX86InsertPrefetchPass());
++  addPass(createX86FixupGadgetsPass());
+   addPass(createX86InsertX87waitPass());
+ }
+ 

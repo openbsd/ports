@@ -1,0 +1,14 @@
+Switch Powerpc64 Big Endian to ELFv2 on OpenBSD.
+
+Index: llvm/lib/Target/PowerPC/PPCTargetMachine.cpp
+--- llvm/lib/Target/PowerPC/PPCTargetMachine.cpp.orig
++++ llvm/lib/Target/PowerPC/PPCTargetMachine.cpp
+@@ -228,6 +228,8 @@ static PPCTargetMachine::PPCABI computeTargetABI(const
+   case Triple::ppc64le:
+     return PPCTargetMachine::PPC_ABI_ELFv2;
+   case Triple::ppc64:
++    if (TT.isOSOpenBSD())
++      return PPCTargetMachine::PPC_ABI_ELFv2;
+     return PPCTargetMachine::PPC_ABI_ELFv1;
+   default:
+     return PPCTargetMachine::PPC_ABI_UNKNOWN;
