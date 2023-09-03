@@ -84,8 +84,6 @@ share/cantor/octavebackend/cantor_plot2d.m
 share/cantor/octavebackend/cantor_plot3d.m
 share/cantor/python/
 share/cantor/python/graphic_packages.xml
-share/cantor/sagebackend/
-share/cantor/sagebackend/cantor-execsage
 share/cantor/xslt/
 share/cantor/xslt/latex.xsl
 share/config.kcfg/
