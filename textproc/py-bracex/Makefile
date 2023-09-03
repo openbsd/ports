@@ -1,6 +1,6 @@
 COMMENT=	brace expanding library
 
-MODPY_EGG_VERSION=	2.3.post1
+MODPY_EGG_VERSION=	2.4
 DISTNAME=	bracex-${MODPY_EGG_VERSION}
 PKGNAME=	py-bracex-${MODPY_EGG_VERSION:S/.post/pl/}
 
