@@ -1,23 +1,23 @@
-COMMENT =	share your terminal over the web
+COMMENT=	share your terminal over the web
 
-GH_ACCOUNT =	tsl0922
-GH_PROJECT =	ttyd
-GH_TAGNAME =	1.7.2
+GH_ACCOUNT=	tsl0922
+GH_PROJECT=	ttyd
+GH_TAGNAME=	1.7.3
 
-CATEGORIES =	www
+CATEGORIES=	www
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-COMPILER =	base-clang ports-gcc
-COMPILER_LANGS =	c
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
 
 WANTLIB += c crypto json-c m pthread ssl util websockets z
 
-MODULES =		devel/cmake
+MODULES=		devel/cmake
 # vim is needed for xxd
-BUILD_DEPENDS =		editors/vim,-main
-LIB_DEPENDS =		www/libwebsockets \
+BUILD_DEPENDS=		editors/vim,-main
+LIB_DEPENDS=		www/libwebsockets \
 			devel/json-c
 
 .include <bsd.port.mk>
