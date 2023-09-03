@@ -3,10 +3,12 @@ COMMENT-lang=	vi clone, NLS subpackage
 
 # careful with PLISTs if updating; it usually works best if you use
 # a gui flavour rather than no_x11
-V=		9.0.1853
+V=		9.0.1859
 GH_ACCOUNT=	vim
 GH_PROJECT=	vim
 GH_TAGNAME=	v$V
+
+REVISION-main=	0
 
 MASTER_SITES0=	https://github.com/vim/colorschemes/archive/
 DISTFILES=	${GH_DISTFILE} \
@@ -27,6 +29,7 @@ PERMIT_PACKAGE=	Yes
 
 # ruby 3.2 libraries need ports-gcc
 COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
 
 WANTLIB +=	c curses iconv intl m sodium
 
