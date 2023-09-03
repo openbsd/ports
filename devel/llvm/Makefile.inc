@@ -175,3 +175,11 @@ post-install:
 	# lit and FileCheck are not installed
 	@rm ${PREFIX}/man/man1/lit-${LLVM_MAJOR}.1
 	@rm ${PREFIX}/man/man1/FileCheck-${LLVM_MAJOR}.1
+
+diff-to-base:
+.for _subdir in clang lld lldb llvm
+	@_d=/tmp/llvm${LLVM_MAJOR}_${_subdir}.diff && echo "Creating $${_d} ..." && \
+		diff -ruN -x CVS -x test -x '*${PATCHORIG}' -x '*.beforesubst' \
+		${BSDSRCDIR}/gnu/llvm/${_subdir} ${WRKDIST}/${_subdir} \
+		> $${_d} || true
+.endfor
