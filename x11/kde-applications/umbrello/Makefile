@@ -3,6 +3,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	UML Modeller
 DISTNAME =	umbrello-${VERSION}
 CATEGORIES =	x11 productivity
+REVISION =	0
 
 HOMEPAGE =	https://umbrello.kde.org/
 
@@ -21,11 +22,11 @@ MODKDE5_TRANSLATIONS = yes
 MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
+MODCLANG_COMPILER_LINKS = no
 
-MODULES +=	lang/python
+MODULES +=	lang/clang lang/python
 
 RUN_DEPENDS =	math/graphviz
-BUILD_DEPENDS =	devel/llvm
 
 LIB_DEPENDS =	devel/kf5/ki18n \
 		devel/kf5/karchive \
@@ -54,7 +55,8 @@ LIB_DEPENDS =	devel/kf5/ki18n \
 
 
 CONFIGURE_ARGS =	-DBUILD_APIDOC=OFF \
-			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON
+			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON \
+			-DClang_DIR=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib/cmake/clang
 
 TEST_IS_INTERACTIVE =	X11
 
