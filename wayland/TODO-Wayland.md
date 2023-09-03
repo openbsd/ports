@@ -69,22 +69,16 @@ Porting it required adding uchar.h to base, and a few ports (devel/tllist, devel
 
 [Sway](https://github.com/swaywm/sway) is a tiled Wayland compositor, compatible with i3, [ported to OpenBSD](https://github.com/mherrb/sway.git)
 
+### wayland/dmenu-wayland
+[dmenu-wayland](https://github.com/nyyManni/dmenu-wayland) is a dynamic menu for sway and other wlroots based compositors, similar to dmenu for X11.
+
 ### wayland/wev
 
 [Wev](https://git.sr.ht/~sircmpwn/wev) is a Wayland event viewer, similar to [xev(1)](https://man.openbsd.org/xev)
 
-### swayimg
+### wayland/swayimg
 
-TODO : port
-
-An image viewer for Wayland that builds on OpenBSD without patches \o/
-
-    git clone https://github.com/artemsen/swayimg.git
-    cd swayimg 
-    meson setup build
-    ninja -C build
-    doas -C build ninja install
-    
+[swayimg](https://github.com/artemsen/swayimg) is an image viewer for Wayland that builds on OpenBSD
     
 ### Default cursor theme
 
