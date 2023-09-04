@@ -1,13 +1,14 @@
 COMMENT =	Perl extension for formatting numbers
 
-MODULES =	cpan
-PKG_ARCH =	*
-DISTNAME =	Number-Format-1.75
-CATEGORIES =	textproc
-FIX_EXTRACT_PERMISSIONS=Yes
-REVISION =	0
+DISTNAME =	Number-Format-1.76
 
-# Artistic License
+CATEGORIES =	textproc
+
+# Perl
 PERMIT_PACKAGE =	Yes
+
+MODULES =		cpan
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
