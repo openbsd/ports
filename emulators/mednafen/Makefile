@@ -4,6 +4,7 @@ COMMENT =	emulates numerous game consoles
 VERSION =	1.31.0-UNSTABLE
 DISTNAME =	mednafen-${VERSION}
 PKGNAME =	mednafen-${VERSION:C/-UNSTABLE//}
+REVISION =	0
 
 CATEGORIES =	emulators games
 HOMEPAGE =	https://mednafen.github.io
@@ -41,6 +42,8 @@ CONFIGURE_ARGS =	--disable-alsa \
 .if ${MACHINE_ARCH} == "powerpc"
 CONFIGURE_ARGS +=	--disable-altivec
 .endif
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 pre-configure:
 	sed -i.beforesubst 's/^__inline//' ${WRKDIST}/src/quicklz/quicklz.c

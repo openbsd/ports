@@ -1,0 +1,14 @@
+Index: src/drivers/main.cpp
+--- src/drivers/main.cpp.orig
++++ src/drivers/main.cpp
+@@ -563,10 +563,6 @@ static SignalInfo SignalDefs[] =
+  { SIGHUP, "SIGHUP", gettext_noop("Reach out and hang-up on someone.\n"), NULL, FALSE },
+  #endif
+ 
+- #ifdef SIGSEGV
+- { SIGSEGV, "SIGSEGV", gettext_noop("Iyeeeeeeeee!!!  A segmentation fault has occurred.  Have a fluffy day.\n"), NULL, FALSE },
+- #endif
+-
+  #ifdef SIGPIPE
+  { SIGPIPE, "SIGPIPE", gettext_noop("The pipe has broken!  Better watch out for floods...\n"), NULL, FALSE },
+  #endif
