@@ -10,9 +10,9 @@ MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 # MS-PL, includes lzxdecoder (dual MSPL/LGPL) and Mono.Xna (MIT)
 PERMIT_PACKAGE =	Yes
 
-DIST_TUPLE_MV += github FNA-XNA FNA.NetStub ebff244074bb3c28aeeb8cf7b383b5a029d7e28d \
+DIST_TUPLE += 	github FNA-XNA FNA.NetStub ebff244074bb3c28aeeb8cf7b383b5a029d7e28d \
 		../FNA.NetStub # Ms-PL
-DIST_TUPLE_MV += github flibitijibibo Vorbisfile-CS \
+DIST_TUPLE += 	github flibitijibibo Vorbisfile-CS \
 		521c8532f03b3608a141b36d7c1343e816b46cb1 Vorbisfile-CS # zlib
 
 MASTER_SITES =	https://github.com/FNA-XNA/FNA/releases/download/${V}/
