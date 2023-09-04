@@ -1,9 +1,9 @@
     SUBDIR =
-    SUBDIR += core,${FLAVOR}
-    SUBDIR += expectations,${FLAVOR}
-    SUBDIR += its,${FLAVOR}
-    SUBDIR += mocks,${FLAVOR}
-    SUBDIR += rspec,${FLAVOR}
-    SUBDIR += support,${FLAVOR}
+    SUBDIR += core
+    SUBDIR += expectations
+    SUBDIR += its
+    SUBDIR += mocks
+    SUBDIR += rspec
+    SUBDIR += support
 
 .include <bsd.port.subdir.mk>
