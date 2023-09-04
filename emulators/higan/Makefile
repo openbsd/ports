@@ -1,11 +1,17 @@
+# libco requires custom asm per arch
+ONLY_FOR_ARCHS =	aarch64 arm amd64 i386
+
 COMMENT =	multi-system Nintendo emulator
 
 V =		106
-DISTNAME =	higan_v$V-source
-PKGNAME =	higan-$V
-REVISION =	6
+REVISION =	7
+
+GH_ACCOUNT =	higan-emu
+GH_PROJECT =	higan
+GH_TAGNAME =	v$V
 
 USE_WXNEEDED =	Yes
+USE_NOBTCFI =	Yes
 
 CATEGORIES =	emulators
 
@@ -14,16 +20,12 @@ HOMEPAGE =	https://byuu.org/emulation/higan/
 # GPLv3: https://byuu.org/emulation/higan/licensing
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL SDL X11 Xcomposite Xcursor Xdamage
+WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += harfbuzz GL SDL X11 Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xv atk-1.0 c
 WANTLIB += cairo fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0 gtksourceview-2.0
 WANTLIB += intl m openal pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += z harfbuzz
-
-# upstream only provides .7z
-#MASTER_SITES =	https://download.byuu.org/
-MASTER_SITES =	https://distfiles.roadrunner.page/
 
 RUN_DEPENDS =	devel/desktop-file-utils
 LIB_DEPENDS =	audio/openal \
@@ -36,7 +38,8 @@ MAKE_FLAGS =	compiler="${CXX}" \
 			-I${LOCALBASE}/include -I${X11BASE}/include" \
 		build=
 
-COMPILER =	base-clang ports-gcc base-gcc
+# c++14
+COMPILER =	base-clang ports-gcc
 
 USE_GMAKE =	Yes
 
