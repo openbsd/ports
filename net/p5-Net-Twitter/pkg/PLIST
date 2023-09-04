@@ -28,7 +28,10 @@ ${P5SITE}/Net/Twitter/Role/RateLimit.pm
 ${P5SITE}/Net/Twitter/Role/RetryOnError.pm
 ${P5SITE}/Net/Twitter/Role/SimulateCursors.pm
 ${P5SITE}/Net/Twitter/Role/WrapError.pm
+${P5SITE}/Net/Twitter/Role/WrapResult.pm
 ${P5SITE}/Net/Twitter/Search.pm
+${P5SITE}/Net/Twitter/Types.pm
+${P5SITE}/Net/Twitter/WrappedResult.pm
 @man man/man3p/Net::Identica.3p
 @man man/man3p/Net::Twitter.3p
 @man man/man3p/Net::Twitter::API.3p
@@ -53,7 +56,10 @@ ${P5SITE}/Net/Twitter/Search.pm
 @man man/man3p/Net::Twitter::Role::RetryOnError.3p
 @man man/man3p/Net::Twitter::Role::SimulateCursors.3p
 @man man/man3p/Net::Twitter::Role::WrapError.3p
+@man man/man3p/Net::Twitter::Role::WrapResult.3p
 @man man/man3p/Net::Twitter::Search.3p
+@man man/man3p/Net::Twitter::Types.3p
+@man man/man3p/Net::Twitter::WrappedResult.3p
 share/examples/p5-Net-Twitter/
 share/examples/p5-Net-Twitter/oauth_desktop.pl
 share/examples/p5-Net-Twitter/oauth_webapp.pl
