@@ -576,6 +576,7 @@
      SUBDIR += py-libcloud,python3
      SUBDIR += py-libknot,python3
      SUBDIR += py-minimalmodbus,python3
+     SUBDIR += py-modbus,python3
      SUBDIR += py-msgpack,python3
      SUBDIR += py-nbxmpp,python3
      SUBDIR += py-ncclient,python3
@@ -601,6 +602,8 @@
      SUBDIR += py-socketio,python3
      SUBDIR += py-socketio-client,python3
      SUBDIR += py-socks,python3
+     SUBDIR += py-solaredge-interface,python3
+     SUBDIR += py-solaredge-modbus,python3
      SUBDIR += py-stem,python3
      SUBDIR += py-telegram,python3
      SUBDIR += py-tinytuya,python3
