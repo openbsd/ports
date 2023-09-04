@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1607 2023/09/04 16:03:02 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1608 2023/09/04 16:50:42 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1249,12 +1249,15 @@ MASTER_SITES_GITHUB += \
 	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/archive/
 .  else
 ERRORS += "Fatal: if using GH_*, one of GH_TAGNAME or GH_COMMIT must be set"
-.endif
+.  endif
 
 MASTER_SITES ?= ${MASTER_SITES_GITHUB}
 HOMEPAGE ?= https://github.com/${GH_ACCOUNT}/${GH_PROJECT}
 .else
-# Empty declarations to avoid "variable XXX is recursive" errors
+# There are two types of ports with DISTFILES but no actionable MASTER_SITES:
+# - FETCH_MANUALLY port
+# - stuff that used to have MASTER_SITES but is orphaned, and defaults
+#   to MASTER_SITES_BACKUP
 MASTER_SITES ?=
 .endif
 
@@ -1334,7 +1337,7 @@ DISTFILES = ${GH_DISTFILE}
 _CACHE_VARIABLES += DISTFILES
 .  endif
 .elif defined(DISTNAME)
-.  if defined(MASTER_SITES) && !empty(MASTER_SITES) && !defined(DISTFILES)
+.  if !empty(MASTER_SITES) && !defined(DISTFILES)
 DISTFILES = ${DISTNAME}${EXTRACT_SUFX}
 _CACHE_VARIABLES += DISTFILES
 .  endif
