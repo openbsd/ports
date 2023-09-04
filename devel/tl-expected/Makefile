@@ -7,11 +7,11 @@ PKGNAME =		tl-${DISTNAME}
 CATEGORIES =		devel
 
 DIST_SUBDIR =		tl-expected
-MASTER_SITES0 =		https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/
+MASTER_SITES.pr =	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/
 # pending "Added packaged Catch2 support and switched to v3"
-PATCHFILES =		use-system-catch2-{pull/}141.patch:0
+PATCHFILES.pr =		use-system-catch2-{pull/}141.patch
 # pending "Fixed version number in exported CMake configs"
-PATCHFILES +=		fix-version-{pull/}142.patch:0
+PATCHFILES.pr +=	fix-version-{pull/}142.patch
 
 PATCH_DIST_STRIP =	-p1
 

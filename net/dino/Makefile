@@ -12,10 +12,10 @@ SHARED_LIBS +=	xmpp-vala                 3.0 # 0.1
 HOMEPAGE=	https://dino.im/
 
 MASTER_SITES=	https://github.com/dino/dino/releases/download/v${VERSION}/
-MASTER_SITES0=	https://github.com/dino/dino/commit/
+MASTER_SITES.fix= https://github.com/dino/dino/commit/
 # "Always export symbols to fix startup on BSDs" merged in master but not (yet)
 # into the "v0.4" release branch: https://github.com/dino/dino/issues/438
-PATCHFILES=	b75b6062abc07b25d0dcd6717e168aa85be7cf4e.patch:0
+PATCHFILES.fix=	b75b6062abc07b25d0dcd6717e168aa85be7cf4e.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	Klemens Nanni <kn@openbsd.org>

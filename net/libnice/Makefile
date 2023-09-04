@@ -12,11 +12,11 @@ WANTLIB += gupnp-igd-1.6
 HOMEPAGE =		https://libnice.freedesktop.org
 DIST_SUBDIR =		libnice
 MASTER_SITES =		https://libnice.freedesktop.org/releases/
-MASTER_SITES0 =		https://gitlab.freedesktop.org/libnice/libnice/-/
+MASTER_SITES.pr =	https://gitlab.freedesktop.org/libnice/libnice/-/
 # merged "Fix build with clang"
-PATCHFILES +=		fix-clang15-build-{commit/}f4e2838f.patch:0
+PATCHFILES.pr =		fix-clang15-build-{commit/}f4e2838f.patch
 # merged "Use ifr_index to fix build on OpenBSD"
-PATCHFILES +=		use-ifr_index-{merge_requests/}251.patch:0
+PATCHFILES.pr +=	use-ifr_index-{merge_requests/}251.patch
 
 PATCH_DIST_STRIP =	-p1
 
