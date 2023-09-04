@@ -13,7 +13,6 @@ MULTI_PACKAGES =	-main -chrome
 
 # pending/accepted "Upload complete source tarball as release asset"
 # https://github.com/web-eid/web-eid-app/pull/279
-MASTER_SITES0 =		https://github.com/${GH_ACCOUNT}/
 
 # submodules of ${GH_PROJECT} at release, see
 #	cd path/to/repo
@@ -22,21 +21,21 @@ MASTER_SITES0 =		https://github.com/${GH_ACCOUNT}/
 EID_REPO =	libelectronic-id
 EID_COMMIT =	fb84aa8cf7ae1073f5472b7093d4df2ed95dc718
 EID_DIR =	${WRKSRC}/lib/${EID_REPO}
-DISTFILES +=	${EID_REPO}-{${EID_REPO}/archive/}${EID_COMMIT}${EXTRACT_SUFX}:0
+DIST_TUPLE +=	github	${GH_ACCOUNT}	${EID_REPO}	${EID_COMMIT}	# MIT
 EID_SRC =	${WRKDIR}/${EID_REPO}-${EID_COMMIT}
 
 # submodules of ${EID_REPO} submodule at release
 PCSC_REPO =	libpcsc-cpp
 PCSC_COMMIT =	6f04aacfc594b486bc4500737ee3877492c95328
 PCSC_DIR =	${EID_DIR}/lib/${PCSC_REPO}
-DISTFILES +=	${PCSC_REPO}-{${PCSC_REPO}/archive/}${PCSC_COMMIT}${EXTRACT_SUFX}:0
+DIST_TUPLE +=	github	${GH_ACCOUNT}	${PCSC_REPO}	${PCSC_COMMIT}	# MIT
 PCSC_SRC =	${WRKDIR}/${PCSC_REPO}-${PCSC_COMMIT}
 
 # submodules of ${PCSC_REPO} submodule at release
 MOCK_REPO =	libpcsc-mock
 MOCK_COMMIT =	488cb42301a42d8ced964a0aaafe4be0d258126d
 MOCK_DIR =	${PCSC_DIR}/tests/lib/${MOCK_REPO}
-DISTFILES +=	${MOCK_REPO}-{${MOCK_REPO}/archive/}${MOCK_COMMIT}${EXTRACT_SUFX}:0
+DIST_TUPLE +=	github	${GH_ACCOUNT}	${MOCK_REPO}	${MOCK_COMMIT}	# MIT
 MOCK_SRC =	${WRKDIR}/${MOCK_REPO}-${MOCK_COMMIT}
 
 # MIT
