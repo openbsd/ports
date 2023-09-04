@@ -8,6 +8,7 @@ ${P5SITE}/Mail/DKIM/ARC/Verifier.pm
 ${P5SITE}/Mail/DKIM/Algorithm/
 ${P5SITE}/Mail/DKIM/Algorithm/Base.pm
 ${P5SITE}/Mail/DKIM/Algorithm/dk_rsa_sha1.pm
+${P5SITE}/Mail/DKIM/Algorithm/ed25519_sha256.pm
 ${P5SITE}/Mail/DKIM/Algorithm/rsa_sha1.pm
 ${P5SITE}/Mail/DKIM/Algorithm/rsa_sha256.pm
 ${P5SITE}/Mail/DKIM/AuthorDomainPolicy.pm
@@ -44,6 +45,7 @@ ${P5SITE}/Mail/DKIM/Verifier.pm
 @man man/man3p/Mail::DKIM::ARC::Verifier.3p
 @man man/man3p/Mail::DKIM::Algorithm::Base.3p
 @man man/man3p/Mail::DKIM::Algorithm::dk_rsa_sha1.3p
+@man man/man3p/Mail::DKIM::Algorithm::ed25519_sha256.3p
 @man man/man3p/Mail::DKIM::Algorithm::rsa_sha1.3p
 @man man/man3p/Mail::DKIM::Algorithm::rsa_sha256.3p
 @man man/man3p/Mail::DKIM::AuthorDomainPolicy.3p

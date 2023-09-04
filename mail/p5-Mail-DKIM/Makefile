@@ -1,6 +1,6 @@
 COMMENT =	DKIM and DomainKeys message-signing implementation
 
-DISTNAME =	Mail-DKIM-1.20230212
+DISTNAME =	Mail-DKIM-1.20230630
 
 CATEGORIES =	mail
 
@@ -13,8 +13,8 @@ RUN_DEPENDS =		devel/p5-Getopt-Long-Descriptive \
 			mail/p5-Mail-AuthenticationResults \
 			mail/p5-Mail-Tools \
 			net/p5-Net-DNS \
-			security/p5-Crypt-OpenSSL-RSA
-
+			security/p5-Crypt-OpenSSL-RSA \
+			security/p5-CryptX
 TEST_DEPENDS =		devel/p5-Test-RequiresInternet \
 			devel/p5-YAML-XS \
 			net/p5-Net-DNS-Resolver-Mock
