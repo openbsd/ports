@@ -27,7 +27,7 @@ RUN_DEPENDS =		lang/ghc
 EXTRACT_ONLY =		${DISTNAME}.tar.gz
 DISTFILES =		${EXTRACT_ONLY}
 DIST_SUBDIR =		hackage
-MASTER_SITES0 =		https://hackage.haskell.org/package/
+MASTER_SITES.hs =	https://hackage.haskell.org/package/
 
 # Produced by manually copying values out of files/openbsd.json.
 _MANIFEST = \
@@ -64,8 +64,8 @@ _MANIFEST = \
 	zlib	0.6.3.0	1
 
 .for _package _version _revision in ${_MANIFEST}
-DISTFILES += {${_package}-${_version}/}${_package}-${_version}.tar.gz:0
-DISTFILES += ${_package}-${_version}_${_revision}{${_package}-${_version}/revision/${_revision}}.cabal:0
+DISTFILES.hs += {${_package}-${_version}/}${_package}-${_version}.tar.gz
+DISTFILES.hs += ${_package}-${_version}_${_revision}{${_package}-${_version}/revision/${_revision}}.cabal
 .endfor
 
 BUILD_DEPENDS +=	lang/ghc>=8.10.6

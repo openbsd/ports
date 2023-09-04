@@ -35,10 +35,7 @@ ONLY_FOR_ARCHS ?=	i386 amd64
 BUILD_DEPENDS +=	devel/cabal-install>=3.4.0.0 \
 			lang/ghc>=8.6.4
 
-# Takes over :9 site for hackage. The day when we have a port using
-# both Go/Rust and Hackage we'll have to resolve their common
-# insistance on grabbing :9.
-MASTER_SITES9 =		https://hackage.haskell.org/package/
+MASTER_SITES.hs =	https://hackage.haskell.org/package/
 
 DIST_SUBDIR ?= 		hackage
 
@@ -47,8 +44,8 @@ DIST_SUBDIR ?= 		hackage
 EXTRACT_CASES += *.cabal) ;;
 
 DISTNAME ?=		${MODCABAL_STEM}-${MODCABAL_VERSION}
-HOMEPAGE ?=		${MASTER_SITES9}${MODCABAL_STEM}
-MASTER_SITES ?=		${MASTER_SITES9}${DISTNAME}/
+HOMEPAGE ?=		${MASTER_SITES.hs}${MODCABAL_STEM}
+MASTER_SITES ?=		${MASTER_SITES.hs}${DISTNAME}/
 DISTFILES ?=		${DISTNAME}.tar.gz
 SUBST_VARS +=		MODCABAL_STEM MODCABAL_VERSION PKGNAME
 
@@ -63,7 +60,7 @@ MODCABAL_post-extract = \
 # Some packages need an updated .cabal file from hackage to overwrite
 # the one in the tar ball.
 .if defined(MODCABAL_REVISION)
-DISTFILES += ${DISTNAME}_${MODCABAL_REVISION}{revision/${MODCABAL_REVISION}}.cabal
+DISTFILES.hs += ${DISTNAME}_${MODCABAL_REVISION}{revision/${MODCABAL_REVISION}}.cabal
 MODCABAL_post-extract += \
 	&& cp ${FULLDISTDIR}/${DISTNAME}_${MODCABAL_REVISION}.cabal \
 		${WRKSRC}/${MODCABAL_STEM}.cabal
@@ -71,9 +68,9 @@ MODCABAL_post-extract += \
 
 # The dependent sources get downloaded from hackage.
 .for _package _version _revision in ${MODCABAL_MANIFEST}
-DISTFILES += {${_package}-${_version}/}${_package}-${_version}.tar.gz:9
+DISTFILES.hs += {${_package}-${_version}/}${_package}-${_version}.tar.gz
 .  if ${_revision} > 0
-DISTFILES += ${_package}-${_version}_${_revision}{${_package}-${_version}/revision/${_revision}}.cabal:9
+DISTFILES.hs += ${_package}-${_version}_${_revision}{${_package}-${_version}/revision/${_revision}}.cabal
 MODCABAL_post-extract += \
 	&& cp ${FULLDISTDIR}/${_package}-${_version}_${_revision}.cabal \
 		${WRKDIR}/${_package}-${_version}/${_package}.cabal
