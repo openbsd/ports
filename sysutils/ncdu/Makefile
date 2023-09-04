@@ -1,3 +1,5 @@
+PORTROACH=		limit:^1
+
 COMMENT=		ncurses-based du(1)
 
 DISTNAME=		ncdu-1.18.1
