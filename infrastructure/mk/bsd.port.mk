@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1608 2023/09/04 16:50:42 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1609 2023/09/04 21:36:13 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1337,11 +1337,14 @@ DISTFILES = ${GH_DISTFILE}
 _CACHE_VARIABLES += DISTFILES
 .  endif
 .elif defined(DISTNAME)
-.  if !empty(MASTER_SITES) && !defined(DISTFILES)
+.  if !defined(DISTFILES)
+.    if !empty(MASTER_SITES) || empty(_CACHE_VARIABLES:MDISTFILES*)
 DISTFILES = ${DISTNAME}${EXTRACT_SUFX}
 _CACHE_VARIABLES += DISTFILES
+.    endif
 .  endif
 .endif
+
 
 _ALL_DISTFILES_VARIABLES =
 
