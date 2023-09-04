@@ -5,6 +5,7 @@
      #SUBDIR += libinput-openbsd
      SUBDIR += plasma-wayland-protocols
      #SUBDIR += sway
+     #SUBDIR += swaybg
      #SUBDIR += swayimg
      SUBDIR += wayland
      SUBDIR += wayland-protocols
