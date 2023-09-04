@@ -21,21 +21,21 @@ MULTI_PACKAGES =	-main -chrome
 EID_REPO =	libelectronic-id
 EID_COMMIT =	fb84aa8cf7ae1073f5472b7093d4df2ed95dc718
 EID_DIR =	${WRKSRC}/lib/${EID_REPO}
-DIST_TUPLE +=	github	${GH_ACCOUNT}	${EID_REPO}	${EID_COMMIT}	# MIT
+DIST_TUPLE +=	github	${GH_ACCOUNT}	${EID_REPO}	${EID_COMMIT}	.	# MIT
 EID_SRC =	${WRKDIR}/${EID_REPO}-${EID_COMMIT}
 
 # submodules of ${EID_REPO} submodule at release
 PCSC_REPO =	libpcsc-cpp
 PCSC_COMMIT =	6f04aacfc594b486bc4500737ee3877492c95328
 PCSC_DIR =	${EID_DIR}/lib/${PCSC_REPO}
-DIST_TUPLE +=	github	${GH_ACCOUNT}	${PCSC_REPO}	${PCSC_COMMIT}	# MIT
+DIST_TUPLE +=	github	${GH_ACCOUNT}	${PCSC_REPO}	${PCSC_COMMIT}	.	# MIT
 PCSC_SRC =	${WRKDIR}/${PCSC_REPO}-${PCSC_COMMIT}
 
 # submodules of ${PCSC_REPO} submodule at release
 MOCK_REPO =	libpcsc-mock
 MOCK_COMMIT =	488cb42301a42d8ced964a0aaafe4be0d258126d
 MOCK_DIR =	${PCSC_DIR}/tests/lib/${MOCK_REPO}
-DIST_TUPLE +=	github	${GH_ACCOUNT}	${MOCK_REPO}	${MOCK_COMMIT}	# MIT
+DIST_TUPLE +=	github	${GH_ACCOUNT}	${MOCK_REPO}	${MOCK_COMMIT}	.	# MIT
 MOCK_SRC =	${WRKDIR}/${MOCK_REPO}-${MOCK_COMMIT}
 
 # MIT
