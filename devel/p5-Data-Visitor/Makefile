@@ -1,21 +1,20 @@
-COMMENT=	visitor-style traversal of Perl data structures
+COMMENT =	visitor-style traversal of Perl data structures
 
-MODULES=	cpan
-PKG_ARCH=	*
-DISTNAME=	Data-Visitor-0.30
-CATEGORIES=	devel
-REVISION=	0
+DISTNAME =	Data-Visitor-0.32
+FIX_EXTRACT_PERMISSIONS = Yes
 
-# perl
-PERMIT_PACKAGE=	Yes
+CATEGORIES =	devel
 
-RUN_DEPENDS=	devel/p5-Class-Load>=0.06 \
-		devel/p5-Moose>=0.89 \
-		devel/p5-Task-Weaken \
-		devel/p5-Tie-ToObject>=0.01 \
-		devel/p5-namespace-clean>=0.19
+# Perl
+PERMIT_PACKAGE =	Yes
 
-TEST_DEPENDS=	devel/p5-Test-Requires \
-		devel/p5-Test-Script>=1.05
+MODULES =		cpan
+
+RUN_DEPENDS =		devel/p5-Moose>=0.89 \
+			devel/p5-Tie-ToObject>=0.01 \
+			devel/p5-namespace-clean>=0.19
+TEST_DEPENDS =		devel/p5-Test-Needs
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
