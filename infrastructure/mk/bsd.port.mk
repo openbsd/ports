@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1603 2023/09/03 11:40:46 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1604 2023/09/04 10:03:23 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1243,7 +1243,7 @@ MASTER_SITES ?=
 _warn_checksum = :
 
 # stash .VARIABLES, because it's expensive to compute
-_CACHE_VARIABLES = ${.VARIABLES}
+_CACHE_VARIABLES := ${.VARIABLES}
 .if empty(_CACHE_VARIABLES)
 ERRORS += "Fatal: requires make(1) with .VARIABLES support"
 .endif
@@ -1308,12 +1308,14 @@ EXTRACT_SUFX ?= .tar.gz
 
 .if !empty(GH_COMMIT)
 GH_DISTFILE = ${DISTNAME}-${GH_COMMIT:C/(........).*/\1/}{${GH_COMMIT}}${EXTRACT_SUFX}
-.  if empty(_CACHE_VARIABLES:MDISTFILES*)
+.  if !defined(DISTFILES)
 DISTFILES = ${GH_DISTFILE}
+_CACHE_VARIABLES += DISTFILES
 .  endif
 .elif defined(DISTNAME)
-.  if empty(_CACHE_VARIABLES:MDISTFILES*)
+.  if defined(MASTER_SITES) && !defined(DISTFILES)
 DISTFILES = ${DISTNAME}${EXTRACT_SUFX}
+_CACHE_VARIABLES += DISTFILES
 .  endif
 .endif
 
