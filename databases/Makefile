@@ -203,16 +203,12 @@
      SUBDIR += ruby-hiera-file,ruby31
      SUBDIR += ruby-hiera-file,ruby32
      SUBDIR += ruby-hiera3
-     SUBDIR += ruby-kirbybase
      SUBDIR += ruby-ldap,ruby31
      SUBDIR += ruby-ldap,ruby32
      SUBDIR += ruby-mysql2,ruby31
      SUBDIR += ruby-mysql2,ruby32
      SUBDIR += ruby-pg,ruby31
      SUBDIR += ruby-pg,ruby32
-     SUBDIR += ruby-redis
-     SUBDIR += ruby-redis-namespace
-     SUBDIR += ruby-resque
      SUBDIR += ruby-sequel
      SUBDIR += ruby-sequel_pg,ruby31
      SUBDIR += ruby-sequel_pg,ruby32

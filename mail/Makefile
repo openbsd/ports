@@ -212,10 +212,6 @@
      SUBDIR += rspamd,hyperscan
      SUBDIR += rss2email
      SUBDIR += rssgoemail
-     SUBDIR += ruby-mail
-     SUBDIR += ruby-mime
-     SUBDIR += ruby-mime-types
-     SUBDIR += ruby-mime-types-data
      SUBDIR += ruby-mini_mime
      SUBDIR += s-nail
      SUBDIR += s-postgray

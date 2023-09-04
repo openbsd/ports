@@ -355,8 +355,6 @@
      SUBDIR += rtty
      SUBDIR += ruby-augeas,ruby31
      SUBDIR += ruby-augeas,ruby32
-     SUBDIR += ruby-capistrano
-     SUBDIR += ruby-directory_watcher
      SUBDIR += ruby-facter
      SUBDIR += ruby-libvirt,ruby31
      SUBDIR += ruby-libvirt,ruby32
@@ -372,7 +370,6 @@
      SUBDIR += ruby-serverengine
      SUBDIR += ruby-sigdump
      SUBDIR += ruby-tzinfo
-     SUBDIR += ruby-vlad
      SUBDIR += rundeck
      SUBDIR += runit
      SUBDIR += rustic

@@ -346,8 +346,6 @@
      SUBDIR += ruby-cms_scanner
      SUBDIR += ruby-gpgme,ruby31
      SUBDIR += ruby-gpgme,ruby32
-     SUBDIR += ruby-hmac
-     SUBDIR += ruby-openid
      SUBDIR += ruby-pledge,ruby31
      SUBDIR += ruby-pledge,ruby32
      SUBDIR += ruby-rbnacl
