@@ -26,4 +26,4 @@ DISTFILES +=	compiler-rt-${LLVM_V}.src${EXTRACT_SUFX}
 .endif
 
 post-build:
-	${LOCALBASE}/bin/llvm-ranlib ${WRKBUILD}/lib/${LIBPATH}
+	${LOCALBASE}/bin/llvm-ranlib-${MODCLANG_VERSION} ${WRKBUILD}/lib/${LIBPATH}
