@@ -21,11 +21,6 @@ DIST_TUPLE ?=
 # set as DISTNAME.
 DIST_TUPLE_MV ?=
 
-# needed to work with traditional MASTER_SITES + DISTNAME
-.if defined(DISTNAME) && defined(MASTER_SITES)
-DISTFILES ?= ${DISTNAME}${EXTRACT_SUFX}
-.endif
-
 .include "${PORTSDIR}/infrastructure/db/dist-tuple.pattern"
 
 # DIST_TUPLE
