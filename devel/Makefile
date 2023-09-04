@@ -447,6 +447,7 @@
      SUBDIR += npth
      SUBDIR += nspr
      SUBDIR += nuget
+     SUBDIR += objfw
      SUBDIR += ocaml-cppo
      SUBDIR += ocaml-graph
      SUBDIR += ocaml-menhir
