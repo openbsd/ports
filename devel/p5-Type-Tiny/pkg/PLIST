@@ -31,6 +31,7 @@ ${P5SITE}/Type/Registry.pm
 ${P5SITE}/Type/Tie.pm
 ${P5SITE}/Type/Tiny/
 ${P5SITE}/Type/Tiny.pm
+${P5SITE}/Type/Tiny/Bitfield.pm
 ${P5SITE}/Type/Tiny/Class.pm
 ${P5SITE}/Type/Tiny/ConstrainedObject.pm
 ${P5SITE}/Type/Tiny/Duck.pm
@@ -95,6 +96,7 @@ ${P5SITE}/Types/TypeTiny.pm
 @man man/man3p/Type::Registry.3p
 @man man/man3p/Type::Tie.3p
 @man man/man3p/Type::Tiny.3p
+@man man/man3p/Type::Tiny::Bitfield.3p
 @man man/man3p/Type::Tiny::Class.3p
 @man man/man3p/Type::Tiny::ConstrainedObject.3p
 @man man/man3p/Type::Tiny::Duck.3p
