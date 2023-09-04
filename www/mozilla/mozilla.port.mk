@@ -105,8 +105,6 @@ MODMOZ_BUILD_DEPENDS +=	devel/nasm
 
 # 53 needs rust
 MODMOZ_BUILD_DEPENDS +=	lang/rust
-# stylo build needs LLVM
-MODMOZ_BUILD_DEPENDS +=	devel/llvm
 #1670807
 MODMOZ_BUILD_DEPENDS +=	devel/m4
 
@@ -167,7 +165,7 @@ MAKE_ENV +=	MOZILLA_OFFICIAL=1 \
 		MOZ_APP_REMOTINGNAME=${MOZILLA_PROJECT} \
 		SHELL=/bin/sh \
 		SO_VERSION="${SO_VERSION}" \
-		LLVM_CONFIG="${LOCALBASE}/bin/llvm-config"
+		LLVM_CONFIG="${LOCALBASE}/bin/llvm-config-${MODCLANG_VERSION}"
 
 CONFIGURE_ENV +=	${MAKE_ENV}
 # ensure libffi's configure doesnt pick gsed/gmkdir/gawk
