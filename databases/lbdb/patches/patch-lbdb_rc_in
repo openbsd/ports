@@ -1,7 +1,7 @@
 Index: lbdb.rc.in
 --- lbdb.rc.in.orig
 +++ lbdb.rc.in
-@@ -57,8 +57,8 @@ METHODS="m_inmail m_passwd m_finger"
+@@ -59,8 +59,8 @@ METHODS="m_inmail m_passwd m_finger"
  
  #
  # If it isn't possible to find out the correct mail domain name of

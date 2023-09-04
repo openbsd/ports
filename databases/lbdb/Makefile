@@ -1,7 +1,7 @@
 COMMENT-main =		"little brother's database", email address query tools
 COMMENT-ldap =		LDAP support for lbdb
 
-DISTNAME =		lbdb-0.51.1
+DISTNAME =		lbdb-0.52.1
 
 CATEGORIES =		databases mail
 
