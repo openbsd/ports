@@ -6,7 +6,7 @@ Index: Makefile
 @@ -22,8 +22,8 @@ ASSUME_MASK ?= 0
  
  CPPFLAGS = -I libfdt -I . -DFDT_ASSUME_MASK=$(ASSUME_MASK)
- WARNINGS = -Wall -Wpointer-arith -Wcast-qual -Wnested-externs \
+ WARNINGS = -Wall -Wpointer-arith -Wcast-qual -Wnested-externs -Wsign-compare \
 -	-Wstrict-prototypes -Wmissing-prototypes -Wredundant-decls -Wshadow
 -CFLAGS = -g -Os $(SHAREDLIB_CFLAGS) -Werror $(WARNINGS) $(EXTRA_CFLAGS)
 +	-Wstrict-prototypes -Wmissing-prototypes -Wshadow
@@ -32,7 +32,7 @@ Index: Makefile
  		fi; \
  	fi; \
  	if [ "$${can_build}" = "yes" ]; then \
-@@ -207,9 +207,8 @@ $(LIBFDT_archive): $(addprefix $(LIBFDT_dir)/,$(LIBFDT
+@@ -214,9 +214,8 @@ $(LIBFDT_archive): $(addprefix $(LIBFDT_dir)/,$(LIBFDT
  
  $(LIBFDT_lib): $(addprefix $(LIBFDT_dir)/,$(LIBFDT_OBJS)) $(LIBFDT_version)
  	@$(VECHO) LD $@
@@ -43,7 +43,7 @@ Index: Makefile
  
  ifneq ($(DEPTARGETS),)
  -include $(LIBFDT_OBJS:%.o=$(LIBFDT_dir)/%.d)
-@@ -230,8 +229,6 @@ install-lib: all
+@@ -237,8 +236,6 @@ install-lib: all
  	@$(VECHO) INSTALL-LIB
  	$(INSTALL) -d $(DESTDIR)$(LIBDIR)
  	$(INSTALL_LIB) $(LIBFDT_lib) $(DESTDIR)$(LIBDIR)

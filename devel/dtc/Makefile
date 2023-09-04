@@ -1,11 +1,11 @@
 COMMENT=		Device Tree Compiler
 
-DISTNAME=		dtc-1.6.1
+DISTNAME=		dtc-1.7.0
 CATEGORIES=		sysutils devel
 MASTER_SITES=		https://www.kernel.org/pub/software/utils/dtc/
 EXTRACT_SUFX=		.tar.xz
 
-SHARED_LIBS=		fdt	5.1
+SHARED_LIBS=		fdt	5.2
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
