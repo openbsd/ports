@@ -23,7 +23,7 @@ Index: pregenerated/p256-x86_64-asm-elf.S
  .align	64
  .Lpoly:
  .quad	0xffffffffffffffff, 0x00000000ffffffff, 0x0000000000000000, 0xffffffff00000001
-@@ -31,9 +37,9 @@
+@@ -31,14 +37,15 @@
  .quad	0xf3b9cac2fc632551, 0xbce6faada7179e84, 0xffffffffffffffff, 0xffffffff00000000
  .LordK:
  .quad	0xccd1c8aaee00bc4f
@@ -34,7 +34,13 @@ Index: pregenerated/p256-x86_64-asm-elf.S
  .globl	GFp_nistz256_add
  .hidden GFp_nistz256_add
  .type	GFp_nistz256_add,@function
-@@ -87,6 +93,7 @@ GFp_nistz256_add:
+ .align	32
+ GFp_nistz256_add:
++	_CET_ENDBR
+ 	pushq	%r12
+ 	pushq	%r13
+ 
+@@ -87,6 +94,7 @@ GFp_nistz256_add:
  .align	32
  GFp_nistz256_neg:
  .cfi_startproc	
@@ -42,7 +48,7 @@ Index: pregenerated/p256-x86_64-asm-elf.S
  	pushq	%r12
  .cfi_adjust_cfa_offset	8
  .cfi_offset	%r12,-16
-@@ -149,6 +156,7 @@ GFp_nistz256_neg:
+@@ -149,6 +157,7 @@ GFp_nistz256_neg:
  .align	32
  GFp_p256_scalar_mul_mont:
  .cfi_startproc	
@@ -50,7 +56,7 @@ Index: pregenerated/p256-x86_64-asm-elf.S
  	leaq	GFp_ia32cap_P(%rip),%rcx
  	movq	8(%rcx),%rcx
  	andl	$0x80100,%ecx
-@@ -483,6 +491,7 @@ GFp_p256_scalar_mul_mont:
+@@ -483,6 +492,7 @@ GFp_p256_scalar_mul_mont:
  .align	32
  GFp_p256_scalar_sqr_rep_mont:
  .cfi_startproc	
@@ -58,7 +64,7 @@ Index: pregenerated/p256-x86_64-asm-elf.S
  	leaq	GFp_ia32cap_P(%rip),%rcx
  	movq	8(%rcx),%rcx
  	andl	$0x80100,%ecx
-@@ -1242,6 +1251,7 @@ ecp_nistz256_ord_sqr_montx:
+@@ -1242,6 +1252,7 @@ ecp_nistz256_ord_sqr_montx:
  .align	32
  GFp_nistz256_mul_mont:
  .cfi_startproc	
@@ -66,7 +72,7 @@ Index: pregenerated/p256-x86_64-asm-elf.S
  	leaq	GFp_ia32cap_P(%rip),%rcx
  	movq	8(%rcx),%rcx
  	andl	$0x80100,%ecx
-@@ -1539,6 +1549,7 @@ __ecp_nistz256_mul_montq:
+@@ -1539,6 +1550,7 @@ __ecp_nistz256_mul_montq:
  .align	32
  GFp_nistz256_sqr_mont:
  .cfi_startproc	
@@ -74,7 +80,7 @@ Index: pregenerated/p256-x86_64-asm-elf.S
  	leaq	GFp_ia32cap_P(%rip),%rcx
  	movq	8(%rcx),%rcx
  	andl	$0x80100,%ecx
-@@ -2069,6 +2080,7 @@ __ecp_nistz256_sqr_montx:
+@@ -2069,6 +2081,7 @@ __ecp_nistz256_sqr_montx:
  .align	32
  GFp_nistz256_select_w5:
  .cfi_startproc	
@@ -82,7 +88,7 @@ Index: pregenerated/p256-x86_64-asm-elf.S
  	leaq	GFp_ia32cap_P(%rip),%rax
  	movq	8(%rax),%rax
  	testl	$32,%eax
-@@ -2136,6 +2148,7 @@ GFp_nistz256_select_w5:
+@@ -2136,6 +2149,7 @@ GFp_nistz256_select_w5:
  .align	32
  GFp_nistz256_select_w7:
  .cfi_startproc	
@@ -90,7 +96,7 @@ Index: pregenerated/p256-x86_64-asm-elf.S
  	leaq	GFp_ia32cap_P(%rip),%rax
  	movq	8(%rax),%rax
  	testl	$32,%eax
-@@ -2255,6 +2268,7 @@ GFp_nistz256_avx2_select_w5:
+@@ -2255,6 +2269,7 @@ GFp_nistz256_avx2_select_w5:
  .align	32
  GFp_nistz256_avx2_select_w7:
  .cfi_startproc	
@@ -98,7 +104,7 @@ Index: pregenerated/p256-x86_64-asm-elf.S
  .Lavx2_select_w7:
  	vzeroupper
  	vmovdqa	.LThree(%rip),%ymm0
-@@ -2462,6 +2476,7 @@ __ecp_nistz256_mul_by_2q:
+@@ -2462,6 +2477,7 @@ __ecp_nistz256_mul_by_2q:
  .align	32
  GFp_nistz256_point_double:
  .cfi_startproc	
@@ -106,7 +112,7 @@ Index: pregenerated/p256-x86_64-asm-elf.S
  	leaq	GFp_ia32cap_P(%rip),%rcx
  	movq	8(%rcx),%rcx
  	andl	$0x80100,%ecx
-@@ -2696,6 +2711,7 @@ GFp_nistz256_point_double:
+@@ -2696,6 +2712,7 @@ GFp_nistz256_point_double:
  .align	32
  GFp_nistz256_point_add:
  .cfi_startproc	
@@ -114,7 +120,7 @@ Index: pregenerated/p256-x86_64-asm-elf.S
  	leaq	GFp_ia32cap_P(%rip),%rcx
  	movq	8(%rcx),%rcx
  	andl	$0x80100,%ecx
-@@ -3133,6 +3149,7 @@ GFp_nistz256_point_add:
+@@ -3133,6 +3150,7 @@ GFp_nistz256_point_add:
  .align	32
  GFp_nistz256_point_add_affine:
  .cfi_startproc	

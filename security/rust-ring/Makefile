@@ -4,7 +4,7 @@ COMMENT =		ring crate source patched for x-only assembly
 VERSION =		0.16.20
 DISTNAME =		ring-${VERSION}
 PKGNAME =		rust-${DISTNAME}
-REVISION =		7
+REVISION =		8
 
 SUBST_VARS =		VERSION
 
