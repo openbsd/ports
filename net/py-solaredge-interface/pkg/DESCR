@@ -1,0 +1,14 @@
+The SolarEdge Interface provides both a command-line interface, and a
+Python module interface to interact with the SolarEdge API service.
+
+- All (documented) SolarEdge API endpoints are implemented with
+  multisite support for endpoints that provide multisite queries.
+- Response data for all endpoints are available as a Python-dict
+  structure, a Pandas-DataFrame or as raw-JSON.
+- The command-line interface output can be formatted as a CSV; as a
+  Pandas style JSON structure or; as plain-JSON.
+- Timestamps can be returned as datetime values with their respective
+  site timezones applied. Doing so is the default behaviour, however
+  this can be disabled if required.
+- Configuration via environment variables or config file is possible,
+  thus making it safer to manage your API key value(s).
