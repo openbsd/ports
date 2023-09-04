@@ -1,0 +1,2 @@
+solaredge_modbus is a python library that collects data from SolarEdge
+inverters over Modbus RTU or Modbus TCP.
