@@ -8,13 +8,11 @@ EXTRACT_SUFX.github ?=	.tar.gz
 EXTRACT_SUFX.gitlab ?=	.tar.gz
 EXTRACT_SUFX.srht ?=	.tar.gz
 
-# templates for the DISTFILES.x; the following user strings are recognized and substituted:
+# templates for the DISTFILES.x; the following strings are substituted based on DIST_TUPLE
 # - <account>
 # - <project>
 # - <id>
-#
-# (<_subdir> is for internal use based on recognition of tag format of <id>.)
-
+# - <subdir> - used automatically if <id> is in tag format
 TEMPLATE_DISTFILES.github ?= \
 	<account>-<project>-{<account>/<project>/archive/<subdir>}<id>${EXTRACT_SUFX.github}
 
@@ -25,7 +23,6 @@ TEMPLATE_DISTFILES.srht ?= \
 	<account>-<project>-{~<account>/<project>/archive/}<id>${EXTRACT_SUFX.srht}
 
 # templates for HOMEPAGE; same substitutions as for DISTFILES.x
-
 TEMPLATE_HOMEPAGE.github ?=	https://github.com/<account>/<project>
 TEMPLATE_HOMEPAGE.gitlab ?=	https://gitlab.com/<account>/<project>
 TEMPLATE_HOMEPAGE.srht ?=	https://git.sr.ht/~<account>/<project>
