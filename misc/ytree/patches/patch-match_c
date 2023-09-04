@@ -1,21 +1,19 @@
+Prefer regcomp(3) over obsolete re_comp(3) for which support has been
+removed in OpenBSD.
+
 Index: match.c
 --- match.c.orig
 +++ match.c
-@@ -7,7 +7,7 @@
- 
+@@ -8,10 +8,10 @@
  #include "ytree.h"
  
--#if defined( sun ) || defined( linux ) || defined( __NeXT__ ) || defined( OSF1 ) ||  defined( __OpenBSD__ ) || defined(__NetBSD__) || defined( __FreeBSD__ ) || defined( __GNU__ )
-+#if defined( sun ) || defined( linux ) || defined( __NeXT__ ) || defined( OSF1 ) || defined(__NetBSD__) || defined( __FreeBSD__ ) || defined( __GNU__ )
+ 
+-#if defined( hpux ) || defined ( __APPLE__ ) || defined ( linux )
++#if defined( hpux ) || defined ( __APPLE__ ) || defined ( linux ) || defined( __OpenBSD__ )
+ #define HAS_REGCOMP
+ #else
+-#if defined( sun ) || defined( __NeXT__ ) || defined( OSF1 ) ||  defined( __OpenBSD__ ) || defined(__NetBSD__) || defined( __FreeBSD__ ) || defined( __GNU__ )
++#if defined( sun ) || defined( __NeXT__ ) || defined( OSF1 ) || defined(__NetBSD__) || defined( __FreeBSD__ ) || defined( __GNU__ )
  #define HAS_REGEX
  #endif
- 
-@@ -17,7 +17,7 @@
- #define _REGEX_RE_COMP
  #endif
- 
--#if defined( hpux ) || defined ( __APPLE__ )
-+#if defined( hpux ) || defined ( __APPLE__ ) || defined( __OpenBSD__ )
- #define HAS_REGCOMP
- #endif
- 

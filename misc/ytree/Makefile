@@ -1,6 +1,6 @@
 COMMENT=	DOS-XTREE(tm) look-a-like file manager
 
-DISTNAME =	ytree-2.04
+DISTNAME =	ytree-2.05
 CATEGORIES=	misc
 
 HOMEPAGE=	https://www.han.de/~werner/ytree.html
