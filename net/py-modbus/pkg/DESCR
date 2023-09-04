@@ -1,0 +1,11 @@
+Pymodbus is a full Modbus protocol implementation using a synchronous or
+asynchronous (using asyncio) core.
+
+Supported modbus communication modes: tcp, rtu-over-tcp, udp, serial, tls
+
+Pymodbus can be used without any third party dependencies (aside from pyserial)
+and is a very lightweight project.
+
+Pymodbus also provides a lot of ready to use examples as well as a
+server/client simulator which can be controlled via a REST API and can be
+easily integrated into test suites.
