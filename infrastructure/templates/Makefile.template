@@ -185,8 +185,8 @@ MASTER_SITES =		???
 
 # if debug packages are a good idea, extra configure args may be necessary
 # and DEBUG_PACKAGES will commonly be set to ${BUILD_PACKAGES}
-# DEBUG_CONFIGURE_ARGS =	???
-# DEBUG_PACKAGES = ${BUILD_PACKAGES}
+#DEBUG_CONFIGURE_ARGS =	???
+#DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 # for gnu stuff
 #AUTOCONF_VERSION =	??? (defaults to 2.13)
