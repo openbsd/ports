@@ -1968,6 +1968,7 @@ zabbix/widgets/trigover/assets/
 zabbix/widgets/trigover/assets/js/
 zabbix/widgets/trigover/assets/js/class.widget.js
 zabbix/widgets/trigover/includes/
+zabbix/widgets/trigover/includes/ViewHelper.php
 zabbix/widgets/trigover/includes/WidgetForm.php
 zabbix/widgets/trigover/manifest.json
 zabbix/widgets/trigover/partials/
