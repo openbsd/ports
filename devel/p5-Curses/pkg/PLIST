@@ -2,5 +2,5 @@ ${P5ARCH}/
 ${P5ARCH}/Curses.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Curses/
-${P5ARCH}/auto/Curses/Curses.so
+@so ${P5ARCH}/auto/Curses/Curses.so
 @man man/man3p/Curses.3p
