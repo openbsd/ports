@@ -3,7 +3,17 @@ Remove sys-proctable dependency, only needed on Windows.
 Index: .metadata
 --- .metadata.orig
 +++ .metadata
-@@ -161,7 +161,7 @@ dependencies:
+@@ -51,9 +51,6 @@ dependencies:
+     - - ">="
+       - !ruby/object:Gem::Version
+         version: 1.11.4
+-    - - "<"
+-      - !ruby/object:Gem::Version
+-        version: 1.14.0
+   type: :runtime
+   prerelease: false
+   version_requirements: !ruby/object:Gem::Requirement
+@@ -167,7 +164,7 @@ dependencies:
      - - "~>"
        - !ruby/object:Gem::Version
          version: 1.2.2
