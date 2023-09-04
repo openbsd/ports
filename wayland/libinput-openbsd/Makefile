@@ -1,22 +1,32 @@
-COMMENT		= OpenBSD port of libinput
-DISTNAME	= libinput-openbsd-20230714
-REVISION	= 1
+COMMENT =	wscons(4) and kqueue(2) based port of libinput
 
-SHARED_LIBS	= input 0.0
+CATEGORIES =	x11 wayland
 
-GH_ACCOUNT	= mherrb
-GH_PROJECT	= libinput
-GH_COMMIT	= 8d1fa015a90733b9db502bfe2de31f15b1d85b48
+GH_ACCOUNT =	sizeofvoid
+GH_PROJECT =	libopeninput
+GH_COMMIT =	26b7c6bc8b79f2fbc8c58e01d3432ffd7e346d8d
 
-CATEGORIES	= wayland
-HOMEPAGE	= https://github.com/sizeofvoid/libinput
+DISTNAME =	libinput-openbsd-1.24.0
 
-# MIT
-PERMIT_PACKAGE	= Yes
+SHARED_LIBS =	input	0.0
 
-post-install:
-	cd $(WRKSRC) &&  make includes DESTDIR=""
+WANTLIB += epoll-shim m udev
 
-DEBUG_PACKAGES	= ${BUILD_PACKAGES}
+# BSD
+PERMIT_PACKAGE =	Yes
+
+MODULES =	devel/meson \
+		lang/python
+
+LIB_DEPENDS =	devel/epoll-shim \
+		sysutils/libudev-openbsd
+
+CONFIGURE_ARGS =	-Dlibwacom=false \
+			-Ddocumentation=false
+
+# XXX debugging
+CFLAGS =		-O0 -g
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
