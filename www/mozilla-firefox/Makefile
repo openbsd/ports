@@ -58,7 +58,7 @@ CONFIGURE_ARGS +=	--enable-sandbox
 CONFIGURE_ARGS +=	--enable-forkserver
 CONFIGURE_ARGS +=	--enable-lto=thin
 CONFIGURE_ARGS +=	--with-wasi-sysroot=${LOCALBASE}/share/wasi-sysroot
-CONFIGURE_ARGS +=	--with-libclang-path=${LOCALBASE}/lib
+CONFIGURE_ARGS +=	--with-libclang-path=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib
 
 # XXX badly formed debug ?
 DWZ = :
