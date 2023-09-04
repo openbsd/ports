@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1604 2023/09/04 10:03:23 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1605 2023/09/04 10:05:35 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -79,7 +79,7 @@ CLEANDEPENDS ?= No
 BULK ?= Auto
 WRKDIR_LINKNAME ?=
 INSTALL_DEBUG_PACKAGES ?= No
-
+ 
 .if ${FETCH_PACKAGES:L} == "yes"
 ERRORS += "Fatal: old syntax for FETCH_PACKAGES, see ports(7)"
 .endif
@@ -148,6 +148,7 @@ WRKOBJDIR_${PKGPATH} ?= ${WRKOBJDIR_MFS}
 .else
 WRKOBJDIR_${PKGPATH} ?= ${WRKOBJDIR}
 .endif
+
 FAKEOBJDIR_${PKGPATH} ?= ${FAKEOBJDIR}
 
 BULK_${PKGPATH} ?= ${BULK}
@@ -197,6 +198,41 @@ _ARCH_DEFINES_INCLUDED = Done
 .  include "${PORTSDIR}/infrastructure/mk/arch-defines.mk"
 .endif
 
+# User choices
+
+# consider read-only from a given port
+BASELOCALSTATEDIR ?= ${VARBASE}
+BASESYSCONFDIR ?= /etc
+
+CHECK_LIB_DEPENDS ?= No
+CHECKSUM_PACKAGES ?= No
+
+
+# Used to print all the '===>' style prompts - override this to turn them off.
+ECHO_MSG ?= echo
+
+ECHO_REORDER ?= :
+
+IGNORE_IS_FATAL ?= "No"
+
+LOCKDIR ?= ${WRKOBJDIR}/locks
+LOCK_VERBOSE ?= No
+LOCK_CMD ?= ${_PBUILD} ${_PERLSCRIPT}/portlock
+UNLOCK_CMD ?= ${_PBUILD} rm -f
+
+NO_DEPENDS ?= No
+
+# XXX there are still many bugs in parallel make.
+# so MAKE_JOBS is used sparingly by dpb for obvious gains.
+#
+PARALLEL_MAKE_FLAGS ?= -j${MAKE_JOBS}
+
+TRY_BROKEN ?= No
+
+USE_CCACHE ?= No
+
+WARNINGS ?= no
+
 .if !defined(_MAKEFILE_INC_DONE)
 .  if exists(${.CURDIR}/../Makefile.inc)
 _MAKEFILE_INC_DONE = Yes
@@ -241,7 +277,6 @@ COMPILER_LINKS ?=
 
 # These variables must be defined before modules
 CONFIGURE_STYLE ?=
-NO_DEPENDS ?= No
 NO_BUILD ?= No
 NO_TEST ?= No
 INSTALL_TARGET ?= install
@@ -350,13 +385,9 @@ MAKE_FLAGS ?=
 FAKE_FLAGS ?=
 LIBTOOL_FLAGS ?=
 
-# User choice, consider read-only from a given port
-BASESYSCONFDIR ?= /etc
 # where configuration files should actually go
 SYSCONFDIR ?= ${BASESYSCONFDIR}
 
-# User choice, consider read-only from a given port
-BASELOCALSTATEDIR ?= ${VARBASE}
 # Defaut localstatedir for gnu ports
 LOCALSTATEDIR ?= ${BASELOCALSTATEDIR}
 
@@ -403,7 +434,6 @@ MAKE_FLAGS += LIBTOOL="${_LIBTOOL}" ${_lt_libs}
 .endif
 # log for the SHARED_LIBS override
 MAKE_FLAGS += SHARED_LIBS_LOG=${WRKBUILD}/shared_libs.log
-USE_CCACHE ?= No
 NO_CCACHE ?= No
 CCACHE_ENV ?=
 .if ${USE_CCACHE:L} == "yes" && ${NO_CCACHE:L} == "no" && ${NO_BUILD:L} == "no"
@@ -423,11 +453,6 @@ ALL_FAKE_FLAGS=	${MAKE_FLAGS:N-j[0-9]*} ${DESTDIRNAME}=${WRKINST} ${FAKE_FLAGS}
 .if ${LOCALBASE:L} != "/usr/local"
 _PKG_ADD += -L ${LOCALBASE}
 .endif
-
-# XXX there are still many bugs in parallel make.
-# so MAKE_JOBS is used sparingly by dpb for obvious gains.
-#
-PARALLEL_MAKE_FLAGS ?= -j${MAKE_JOBS}
 
 .if !defined(MAKE_JOBS) && ${DPB_PROPERTIES:Mparallel}
 .  if defined(PARALLEL_MAKE_JOBS)
@@ -695,7 +720,6 @@ PORTPATH ?= ${WRKDIR}/bin:/usr/bin:/bin:/usr/sbin:/sbin:${LOCALBASE}/bin:${X11BA
 # what we pass in.
 CFLAGS += ${COPTS}
 CXXFLAGS += ${CXXOPTS}
-WARNINGS ?= no
 .if ${WARNINGS:L} == "yes"
 CFLAGS += ${CDIAGFLAGS}
 CXXFLAGS += ${CXXDIAGFLAGS}
@@ -1209,9 +1233,6 @@ YACC ?= yacc
 # command is expanded from a variable, as this could be a shell construct
 SETENV ?= /usr/bin/env -i
 
-# Used to print all the '===>' style prompts - override this to turn them off.
-ECHO_MSG ?= echo
-
 # basic master sites configuration
 
 .include "${PORTSDIR}/infrastructure/db/network.conf"
@@ -1523,7 +1544,6 @@ MISSING_FILES += ${_F}
 #
 # Don't build a port if it comes with the base system.
 ################################################################
-TRY_BROKEN ?= No
 _IGNORE_TEST ?=
 .if ${TEST_IS_INTERACTIVE:L} != "no" && defined(BATCH)
 _IGNORE_TEST += "has interactive tests"
@@ -1555,7 +1575,6 @@ IGNORE += "is marked as broken: ${BROKEN:Q}"
 IGNORE += "-- ${FULLPKGNAME${SUBPACKAGE}:C/-[0-9].*//g} comes with OpenBSD as of release ${COMES_WITH}"
 .endif
 
-IGNORE_IS_FATAL ?= "No"
 # XXX even if subpackage is invalid, define this, so that errors come out
 # from ERRORS and not make internals.
 IGNORE${SUBPACKAGE} ?=
@@ -1771,7 +1790,6 @@ DPB_PROPERTIES += noconfigurejunk
 .endif
 
 REORDER_DEPENDENCIES ?=
-ECHO_REORDER ?= :
 
 # recheck WRK...
 .for w in WRKDIR WRKDIST WRKSRC WRKCONF WRKBUILD WRKINST DIST_SUBDIR
@@ -1782,12 +1800,8 @@ ERRORS += "Fatal: $w ends with a slash: ${$w}"
 
 # Lock infrastructure:
 # to remove locks handling, define LOCKDIR to an empty value
-LOCKDIR ?= ${WRKOBJDIR}/locks
 
-LOCK_CMD ?= ${_PBUILD} ${_PERLSCRIPT}/portlock
-UNLOCK_CMD ?= ${_PBUILD} rm -f
 _LOCKS_HELD ?=
-LOCK_VERBOSE ?= No
 .if !empty(LOCKDIR)
 .  if ${LOCK_VERBOSE:L} == "yes"
 _LOCK = echo "Locking $$lock (${BUILD_PKGPATH}) from $@"; ${LOCK_CMD} ${LOCKDIR_MODE} ${LOCKDIR}/$$lock.lock ${BUILD_PKGPATH}
@@ -1816,7 +1830,6 @@ _SIMPLE_LOCK = \
 _SIMPLE_LOCK ?= :
 _DO_LOCK ?= :
 
-CHECKSUM_PACKAGES ?= No
 _PACKAGE_CHECKSUM_DIR = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/cksums
 
 _do_checksum_package = \
