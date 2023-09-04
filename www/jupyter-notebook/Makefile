@@ -1,6 +1,6 @@
 COMMENT =		web-based notebook for interactive computing
 
-MODPY_EGG_VERSION =	6.2.0
+MODPY_EGG_VERSION =	6.3.0
 DISTNAME =		notebook-${MODPY_EGG_VERSION}
 PKGNAME =		jupyter-notebook-${MODPY_EGG_VERSION}
 
