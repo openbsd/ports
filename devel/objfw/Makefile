@@ -31,9 +31,4 @@ MAKE_FLAGS +=	OBJFWRT_LIB_MINOR=${LIBobjfwrt_VERSION:E}
 MAKE_FLAGS +=	OBJFWTLS_LIB_MAJOR=${LIBobjfwtls_VERSION:R}
 MAKE_FLAGS +=	OBJFWTLS_LIB_MINOR=${LIBobjfwtls_VERSION:E}
 
-# Remove silent
-pre-configure:
-	echo "/^\.SILENT:$$/d\n%s/\$${MAKE} -s/\$${MAKE}/\nwq" | \
-		ed -s ${WRKSRC}/buildsys.mk.in
-
 .include <bsd.port.mk>
