@@ -33,6 +33,8 @@ lib/imlib2/loaders/
 @so lib/imlib2/loaders/lzma.so
 @so lib/imlib2/loaders/png.so
 @so lib/imlib2/loaders/pnm.so
+@so lib/imlib2/loaders/qoi.so
+@so lib/imlib2/loaders/raw.so
 ${COMMENT_SVG}@so lib/imlib2/loaders/svg.so
 @so lib/imlib2/loaders/tga.so
 @so lib/imlib2/loaders/tiff.so
@@ -70,3 +72,4 @@ share/imlib2/data/images/sh2.png
 share/imlib2/data/images/sh3.png
 share/imlib2/data/images/stop.png
 share/imlib2/data/images/tnt.png
+share/imlib2/rgb.txt

@@ -6,7 +6,7 @@ we're about to mmap.
 Index: src/bin/imlib2_load.c
 --- src/bin/imlib2_load.c.orig
 +++ src/bin/imlib2_load.c
-@@ -112,16 +112,19 @@ image_load_mem(const char *file, int *perr)
+@@ -91,16 +91,19 @@ image_load_mem(const char *file, int *perr)
     else
        ext = file;
  

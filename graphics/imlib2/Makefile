@@ -1,11 +1,12 @@
 COMMENT=	image manipulation library
 
-DISTNAME=	imlib2-1.11.0
-REVISION=	0
-SHARED_LIBS=	Imlib2	8.0	# 12.0
+DISTNAME=	imlib2-1.12.0
+SHARED_LIBS=	Imlib2	9.0	# 13.0
 CATEGORIES=	graphics
 
 HOMEPAGE=	https://docs.enlightenment.org/api/imlib2/html/
+
+MAINTAINER=	Omar Polo <op@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE=	Yes
@@ -14,17 +15,19 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=enlightenment/}
 
 WANTLIB += ${COMPILER_LIBCXX} X11 X11-xcb Xau Xdmcp Xext aom brotlicommon
 WANTLIB += brotlidec brotlienc bz2 c dav1d de265 freetype gif
-WANTLIB += heif hwy id3tag jpeg jxl jxl_threads lcms2 lzma m openjp2
-WANTLIB += png sharpyuv tiff webp webpdemux x265 xcb xcb-shm z
-WANTLIB += zstd
+WANTLIB += heif hwy id3tag jasper jpeg jxl jxl_threads lcms2 lzma
+WANTLIB += m openjp2 png raw sharpyuv tiff webp webpdemux x265
+WANTLIB += xcb xcb-shm z zstd
 
 COMPILER=	base-clang ports-gcc
 
 LIB_DEPENDS+=	archivers/bzip2 \
 		audio/libid3tag \
 		graphics/giflib \
+		graphics/jasper \
 		graphics/jpeg \
 		graphics/libjxl \
+		graphics/libraw \
 		graphics/libwebp \
 		graphics/openjp2 \
 		graphics/png \
@@ -32,7 +35,10 @@ LIB_DEPENDS+=	archivers/bzip2 \
 		multimedia/libheif
 
 SEPARATE_BUILD=	Yes
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= autoreconf
+AUTOCONF_VERSION= 2.71
+AUTOMAKE_VERSION= 1.16
+
 .if ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS+= --disable-mmx
 .endif
