@@ -13,7 +13,7 @@ TEST_DEPENDS+=	${MODPY_RUN_DEPENDS} \
 		www/unit/unit-php \
 		www/unit/unit-python \
 		www/unit/unit-ruby \
-		www/ruby-rack,${MODRUBY_FLAVOR}
+		www/ruby-rack
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/unit/modules/
