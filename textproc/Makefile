@@ -497,6 +497,7 @@
      SUBDIR += recutils
      SUBDIR += redland
      SUBDIR += redland-bindings
+     SUBDIR += riff
      SUBDIR += ripgrep
      SUBDIR += rman
      SUBDIR += rubber
