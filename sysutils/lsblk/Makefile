@@ -1,6 +1,5 @@
 COMMENT =	list block devices
-DISTNAME =	lsblk-1.2.4
-REVISION =	0
+DISTNAME =	lsblk-1.3.1
 CATEGORIES =	sysutils
 HOMEPAGE =	https://git.stuerz.xyz/openbsd/lsblk
 MASTER_SITES =	${HOMEPAGE}/snapshot/
