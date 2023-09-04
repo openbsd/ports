@@ -8,9 +8,9 @@ PKGNAME =		postgresql-pllua-${VERSION}
 REVISION =		0
 
 # Use upstream pull request for PostgreSQL 15 support
-MASTER_SITES0 =        https://github.com/pllua/pllua/commit/
+MASTER_SITES.github =	https://github.com/pllua/pllua/commit/
 PATCH_DIST_STRIP =     -p1
-PATCHFILES =            pllua-pg-15-fix{d0e014cdfd4e9ad801e7d2814584ff4b1892a08c}.patch:0
+PATCHFILES.github =	pllua-pg-15-fix{d0e014cdfd4e9ad801e7d2814584ff4b1892a08c}.patch
 
 CATEGORIES =		databases
 

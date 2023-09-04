@@ -9,9 +9,8 @@ DISTNAME =		passenger-${PASS_VERSION}
 ONLY_FOR_ARCHS =	aarch64 amd64 arm i386
 
 CATEGORIES =	www
-DISTFILES =	${DISTNAME}.gem \
-		nginx-${NGINX_VERSION}.tar.gz:0
-MASTER_SITES0 =	https://nginx.org/download/
+DISTFILES.nginx = 	nginx-${NGINX_VERSION}.tar.gz
+MASTER_SITES.nginx =	https://nginx.org/download/
 
 HOMEPAGE =	https://www.phusionpassenger.com/
 
