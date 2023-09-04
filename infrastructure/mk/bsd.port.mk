@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1605 2023/09/04 10:05:35 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1606 2023/09/04 12:34:12 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1364,6 +1364,7 @@ _T =${w:N$v:N$v.*}
 ERRORS += "Fatal: suffix not starting with . in ${_T}"
 .      endif
 .      for e in ${$w}
+_warn_distfiles += ${e:M*\:[0-9]}
 .        for p in ${e:C/:[0-9]$//}
 .          for f m u in ${p:C/^(.*)\{.*\}(.*)$/\1\2/} ${w:S/$v/MASTER_SITES/}${e:M*\:[0-9]:C/^.*:([0-9])$/\1/} ${p:C/^.*\{(.*)\}(.*)$/\1\2/}
 .            if !defined($m)
@@ -2703,6 +2704,9 @@ ${_BULK_COOKIE}:
 
 ${_WRKDIR_COOKIE}:
 	@${ECHO_MSG} "===> Building from scratch ${FULLPKGNAME}${_MASTER}"
+.if !empty(_warn_distfiles)
+	@echo "WARNING: old style distfiles ${_warn_distfiles} found"
+.endif
 	@${_PBUILD} rm -rf ${WRKDIR}
 	@appdefaults=${LOCALBASE}/lib/X11/app-defaults; \
 	if ! test -d $$appdefaults -a -h $$appdefaults; then \
