@@ -2,8 +2,9 @@ COMMENT=	HEIF and AVIF file format decoder and encoder
 
 V=		1.16.2
 DISTNAME=	libheif-$V
+REVISION=	0
 
-SHARED_LIBS +=  heif                      1.6 # 9.0
+SHARED_LIBS +=  heif 1.6
 
 CATEGORIES=	multimedia graphics
 
@@ -13,7 +14,8 @@ HOMEPAGE=	https://github.com/strukturag/libheif
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} aom c dav1d de265 gdk_pixbuf-2.0
-WANTLIB += glib-2.0 gobject-2.0 intl jpeg m png x265 z
+WANTLIB += glib-2.0 gobject-2.0 intl jpeg m png sharpyuv x265
+WANTLIB += z
 
 MASTER_SITES=	https://github.com/strukturag/libheif/releases/download/v$V/
 
@@ -22,6 +24,7 @@ COMPILER=	base-clang ports-gcc
 MODULES=	devel/cmake
 
 LIB_DEPENDS=	graphics/gdk-pixbuf2 \
+		graphics/libwebp \
 		multimedia/aom \
 		multimedia/dav1d \
 		multimedia/libde265 \
