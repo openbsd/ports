@@ -17,8 +17,8 @@ MASTER_SITES =		https://github.com/open-eid/libdigidocpp/releases/download/v${V}
 
 # pending "Get EVP_MD_CTX from EVP_Digest(3) to fix LibreSSL build"
 # https://github.com/open-eid/libdigidocpp/pull/550
-MASTER_SITES0 =		https://github.com/open-eid/libdigidocpp/commit/
-PATCHFILES =		2619a2a70a312558d912e9d758e376463e3e6482.patch:0
+MASTER_SITES.pr =	https://github.com/open-eid/libdigidocpp/commit/
+PATCHFILES.pr =		2619a2a70a312558d912e9d758e376463e3e6482.patch
 PATCH_DIST_STRIP =	-p1
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
