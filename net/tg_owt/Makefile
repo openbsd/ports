@@ -27,17 +27,17 @@ DIST_SUBDIR =		tg_owt
 # https://chromium.googlesource.com/libyuv/libyuv clone, no releases or tags
 # main/master/stable/<commit> tarballs are *not reproducible*
 # use a mirror to get stable tarballs for latest master
-MASTER_SITES0 =		https://github.com/klemensn/libyuv/archive/
+MASTER_SITES.libyuv =	https://github.com/klemensn/libyuv/archive/
 LIBYUV_COMMIT =		77c2121f7e6b8e694d6e908bbbe9be24214097da
-DISTFILES +=		libyuv-20230420-{}${LIBYUV_COMMIT}${EXTRACT_SUFX}:0
+DISTFILES.libyuv =	libyuv-20230420-{}${LIBYUV_COMMIT}${EXTRACT_SUFX}
 
-MASTER_SITES1 =		https://github.com/desktop-app/tg_owt/commit/
+MASTER_SITES.tg_owt =	https://github.com/desktop-app/tg_owt/commit/
 # Pending "Defer third-party source handling to when it is needed"
 # https://github.com/desktop-app/tg_owt/pull/85
-PATCHFILES +=		defer-third-party-sources-{}a264c33.patch:1
+PATCHFILES.tg_owt +=	defer-third-party-sources-{}a264c33.patch
 # Pending "Unbundle libSRTP"
 # https://github.com/desktop-app/tg_owt/pull/123
-PATCHFILES +=		use-system-libsrtp-{}46cb0ce7.patch:1
+PATCHFILES.tg_owt +=	use-system-libsrtp-{}46cb0ce7.patch
 
 PATCH_DIST_STRIP =	-p1
 
