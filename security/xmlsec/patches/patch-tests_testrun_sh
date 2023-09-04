@@ -1,14 +1,46 @@
+GNU uname aka. guname(1) -o, --operating-system is uname(1) -s.
+Fix a few tests (probably shell quote/file handling messed up).
 Remove bash-ism.
 
 Index: tests/testrun.sh
 --- tests/testrun.sh.orig
 +++ tests/testrun.sh
-@@ -472,7 +472,7 @@ execEncTest() {
+@@ -1,6 +1,6 @@
+ #!/bin/sh
+ 
+-OS_ARCH=`uname -o`
++OS_ARCH=`uname -s`
+ OS_KERNEL=`uname -s`
+ 
+ #
+@@ -704,7 +704,9 @@ execEncTest() {
+                 cat $tmpfile | $outputTransform > $tmpfile.2
+                 mv $tmpfile.2 $tmpfile
+             fi
+-            diff $diff_param $full_file.data $tmpfile >> $curlogfile 2>> $curlogfile
++	    # $outputTransform may be set to "base64" in which case identical
++	    # strings happen to differ, ignoring trailing spaces fixes that
++            diff -b $diff_param $full_file.data $tmpfile >> $curlogfile 2>> $curlogfile
+             printRes $expected_res $?
+         else
+             printRes $expected_res $res
+@@ -736,7 +738,9 @@ execEncTest() {
+                 cat $tmpfile.2 | $outputTransform > $tmpfile
+                 mv $tmpfile $tmpfile.2
+             fi
+-            diff $diff_param $full_file.data $tmpfile.2 >> $curlogfile 2>> $curlogfile
++	    # $outputTransform may be set to "base64" in which case identical
++	    # strings happen to differ, ignoring trailing spaces fixes that
++            diff -b $diff_param $full_file.data $tmpfile.2 >> $curlogfile 2>> $curlogfile
+             printRes $res_success $?
+         else
+             printRes $res_success $res
+@@ -761,7 +765,7 @@ execEncTest() {
  rm -rf $tmpfile $tmpfile.2 tmpfile.3
  
  # run tests
 -source "$testfile"
 +. "$testfile"
  
- # print results
- echo "--- TOTAL OK: $count_success; TOTAL FAILED: $count_fail; TOTAL SKIPPED: $count_skip" >> $logfile
+ # calculate success
+ percent_success=0

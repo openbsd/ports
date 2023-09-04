@@ -1,12 +1,12 @@
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -1177,7 +1177,7 @@ check: check-all check-info
+@@ -1206,7 +1206,7 @@ check: check-all check-info
  
- check-all: $(TEST_APP) 
+ check-all: $(TEST_APP)
  	for crypto in $(CHECK_CRYPTO_LIST) ; do \
 -		make check-crypto-$$crypto || exit 1 ; \
 +		$(MAKE) check-crypto-$$crypto || exit 1 ; \
  	done
  
- check-crypto-%: $(TEST_APP) 
+ check-crypto-%: $(TEST_APP)

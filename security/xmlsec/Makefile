@@ -1,15 +1,15 @@
 COMMENT-main=	XML security library
 COMMENT-docs=	XML security library documentation
 
-VERSION=	1.2.34
+VERSION=	1.3.1
 DISTNAME=	xmlsec1-${VERSION}
 PKGNAME-main=	xmlsec-${VERSION}
 PKGNAME-docs=	xmlsec-docs-${VERSION}
 CATEGORIES=	security
-SHARED_LIBS=	xmlsec1-gnutls	5.0 \
-		xmlsec1-openssl	4.1 \
-		xmlsec1-gcrypt	0.0 \
-		xmlsec1		8.2
+SHARED_LIBS=	xmlsec1-gnutls	6.0 \
+		xmlsec1-openssl	5.0 \
+		xmlsec1-gcrypt	1.0 \
+		xmlsec1		9.0
 
 HOMEPAGE=	https://www.aleksey.com/xmlsec/
 
@@ -46,7 +46,8 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 # see /usr/local/include/libxml2/libxml/xmlversion.h:413
 CONFIGURE_ENV +=	ac_cv_header_ansidecl_h=no
 
-TEST_DEPENDS=		xmlsec-${VERSION}:security/xmlsec
+TEST_DEPENDS=		converters/base64 \
+			xmlsec-${VERSION}:security/xmlsec
 TEST_FLAGS=		ABS_BUILDDIR="${WRKSRC}"
 
 .include <bsd.port.arch.mk>

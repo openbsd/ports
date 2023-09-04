@@ -18,6 +18,7 @@ include/xmlsec1/xmlsec/gcrypt/symbols.h
 include/xmlsec1/xmlsec/gnutls/
 include/xmlsec1/xmlsec/gnutls/app.h
 include/xmlsec1/xmlsec/gnutls/crypto.h
+include/xmlsec1/xmlsec/gnutls/keysstore.h
 include/xmlsec1/xmlsec/gnutls/symbols.h
 include/xmlsec1/xmlsec/gnutls/x509.h
 include/xmlsec1/xmlsec/io.h
@@ -30,9 +31,9 @@ include/xmlsec1/xmlsec/membuf.h
 include/xmlsec1/xmlsec/nodeset.h
 include/xmlsec1/xmlsec/openssl/
 include/xmlsec1/xmlsec/openssl/app.h
-include/xmlsec1/xmlsec/openssl/bn.h
 include/xmlsec1/xmlsec/openssl/crypto.h
 include/xmlsec1/xmlsec/openssl/evp.h
+include/xmlsec1/xmlsec/openssl/keysstore.h
 include/xmlsec1/xmlsec/openssl/symbols.h
 include/xmlsec1/xmlsec/openssl/x509.h
 include/xmlsec1/xmlsec/parser.h

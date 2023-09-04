@@ -85,7 +85,6 @@ share/doc/xmlsec1/api/xmlsec-notes-new-crypto-keys.html
 share/doc/xmlsec1/api/xmlsec-notes-new-crypto-klasses.html
 share/doc/xmlsec1/api/xmlsec-notes-new-crypto-sharing-results.html
 share/doc/xmlsec1/api/xmlsec-notes-new-crypto-simple-keys-mngr.html
-share/doc/xmlsec1/api/xmlsec-notes-new-crypto-skeleton.html
 share/doc/xmlsec1/api/xmlsec-notes-new-crypto-transforms.html
 share/doc/xmlsec1/api/xmlsec-notes-new-crypto.html
 share/doc/xmlsec1/api/xmlsec-notes-overview.html
@@ -125,7 +124,6 @@ share/doc/xmlsec1/api/xmlsec-verify-with-keys-mngr.html
 share/doc/xmlsec1/api/xmlsec-verify-with-restrictions.html
 share/doc/xmlsec1/api/xmlsec-verify-with-x509.html
 share/doc/xmlsec1/api/xmlsec-version.html
-share/doc/xmlsec1/api/xmlsec-x509.html
 share/doc/xmlsec1/api/xmlsec-xmldsig.html
 share/doc/xmlsec1/api/xmlsec-xmlenc.html
 share/doc/xmlsec1/api/xmlsec-xmlsec.html
@@ -145,6 +143,7 @@ share/doc/xmlsec1/images/logo.gif
 share/doc/xmlsec1/images/openssl-logo.png
 share/doc/xmlsec1/images/xmlsec-logo.gif
 share/doc/xmlsec1/index.html
+share/doc/xmlsec1/mailing-list.html
 share/doc/xmlsec1/news.html
 share/doc/xmlsec1/related.html
 share/doc/xmlsec1/xmldsig-verifier.html
