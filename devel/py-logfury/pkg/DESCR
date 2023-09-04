@@ -1,0 +1,2 @@
+Logfury is a tool for python library maintainers.  It allows for responsible,
+low-boilerplat logging of method calls.
