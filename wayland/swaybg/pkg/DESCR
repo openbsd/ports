@@ -1,0 +1,3 @@
+swaybg is a wallpaper utility for Wayland compositors. It is compatible
+with any Wayland compositor which implements the wlr-layer-shell
+protocol and wl_output version 4.
