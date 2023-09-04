@@ -231,6 +231,7 @@ share/mc/hints/mc.hint.hu
 share/mc/hints/mc.hint.id
 share/mc/hints/mc.hint.it
 share/mc/hints/mc.hint.ja
+share/mc/hints/mc.hint.ka
 share/mc/hints/mc.hint.ko
 share/mc/hints/mc.hint.lt
 share/mc/hints/mc.hint.nb
@@ -286,6 +287,7 @@ share/mc/syntax/as.syntax
 share/mc/syntax/aspx.syntax
 share/mc/syntax/assembler.syntax
 share/mc/syntax/awk.syntax
+share/mc/syntax/b.syntax
 share/mc/syntax/c.syntax
 share/mc/syntax/cabal.syntax
 share/mc/syntax/changelog.syntax
