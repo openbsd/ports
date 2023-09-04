@@ -25,9 +25,34 @@ libexec/fvwm3/${VERSION}/FvwmPerl
 @bin libexec/fvwm3/${VERSION}/FvwmRearrange
 @bin libexec/fvwm3/${VERSION}/FvwmScript
 libexec/fvwm3/${VERSION}/FvwmTalk
+@man man/man1/FvwmCommand3.1
+@man man/man1/fvwm3-FvwmAnimate.1
+@man man/man1/fvwm3-FvwmAuto.1
+@man man/man1/fvwm3-FvwmBacker.1
+@man man/man1/fvwm3-FvwmButtons.1
+@man man/man1/fvwm3-FvwmCommand3.1
+@man man/man1/fvwm3-FvwmConsole.1
+@man man/man1/fvwm3-FvwmEvent.1
+@man man/man1/fvwm3-FvwmForm.1
+@man man/man1/fvwm3-FvwmIconMan.1
+@man man/man1/fvwm3-FvwmIdent.1
+@man man/man1/fvwm3-FvwmMFL.1
+@man man/man1/fvwm3-FvwmPager.1
+@man man/man1/fvwm3-FvwmPerl.1
+@man man/man1/fvwm3-FvwmPrompt.1
+@man man/man1/fvwm3-FvwmRearrange.1
+@man man/man1/fvwm3-FvwmScript.1
+@man man/man1/fvwm3-convert-2.6.1
+@man man/man1/fvwm3-menu-desktop.1
 @man man/man1/fvwm3-menu-directory.1
 @man man/man1/fvwm3-menu-xlock.1
 @man man/man1/fvwm3-perllib.1
+@man man/man1/fvwm3-root.1
+@man man/man1/fvwm3.1
+@man man/man1/fvwm3all.1
+@man man/man1/fvwm3commands.1
+@man man/man1/fvwm3menus.1
+@man man/man1/fvwm3styles.1
 share/fvwm3/
 share/fvwm3/ConfigFvwmBacker
 share/fvwm3/ConfigFvwmButtons

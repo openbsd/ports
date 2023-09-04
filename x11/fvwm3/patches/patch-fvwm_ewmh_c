@@ -1,0 +1,24 @@
+https://github.com/fvwmorg/fvwm3/commit/4d5a697fac3282af18cacebb6d061c92db410f1a
+Fixes https://github.com/fvwmorg/fvwm3/issues/873
+
+Index: fvwm/ewmh.c
+--- fvwm/ewmh.c.orig
++++ fvwm/ewmh.c
+@@ -458,7 +458,7 @@ void *atom_get(Window win, Atom to_get, Atom type, int
+ 		int asize;
+ 
+ 		asize = atom_size(format_ret);
+-		data = fxmalloc(num_ret * asize);
++		data = fxmalloc(num_ret * asize + 1);
+ 		if (format_ret == 32 && asize * 8 != format_ret)
+ 		{
+ 			int i;
+@@ -472,7 +472,7 @@ void *atom_get(Window win, Atom to_get, Atom type, int
+ 		{
+ 			if (data)
+ 			{
+-				memcpy(data, retval, num_ret * asize);
++				memcpy(data, retval, num_ret * asize + 1);
+ 			}
+ 		}
+ 		XFree(retval);

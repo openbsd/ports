@@ -1,6 +1,6 @@
 COMMENT=	multiple virtual desktop window manager
 
-VERSION=	1.0.6a
+VERSION=	1.0.7
 DISTNAME=	fvwm3-${VERSION}
 
 CATEGORIES=     x11
@@ -20,13 +20,14 @@ WANTLIB += readline rsvg-2 event_core event_extra
 
 MASTER_SITES=	https://github.com/fvwmorg/fvwm3/releases/download/${VERSION}/
 
+BUILD_DEPENDS+=	textproc/asciidoctor
+
 LIB_DEPENDS+=	graphics/png \
 		x11/gnome/librsvg \
 		devel/libevent2
 
 SUBST_VARS=	VERSION
 
-SEPARATE_BUILD=		Yes
 CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ARGS+=	--enable-mandoc \
@@ -39,7 +40,14 @@ CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 
 DEBUG_PACKAGES =       ${BUILD_PACKAGES}
 
+USE_GMAKE =	yes
+
 post-install:
+	cd ${WRKINST}/${TRUEPREFIX}/man/man1 && for m in Fvwm*.1; \
+		do mv {,fvwm3-}$$m; done
+	cd ${WRKINST}/${TRUEPREFIX}/man/man1/ && \
+		mv fvwm3-FvwmCommand{,3}.1 && \
+		ln -s fvwm3-FvwmCommand3.1 FvwmCommand3.1
 	mv ${WRKINST}/${TRUEPREFIX}/bin/FvwmCommand{,3}
 	mv ${WRKINST}/${TRUEPREFIX}/share/FvwmScript-* \
 		${WRKINST}/${TRUEPREFIX}/share/fvwm3/

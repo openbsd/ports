@@ -1,7 +1,7 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -11779,7 +11779,7 @@ then :
+@@ -11726,7 +11726,7 @@ then :
  else $as_nop
  
      with_intl=maybe

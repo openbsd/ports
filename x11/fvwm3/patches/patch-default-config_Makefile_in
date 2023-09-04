@@ -1,7 +1,7 @@
 Index: default-config/Makefile.in
 --- default-config/Makefile.in.orig
 +++ default-config/Makefile.in
-@@ -593,9 +593,10 @@ uninstall-am: uninstall-configDATA
+@@ -574,9 +574,10 @@ uninstall-am: uninstall-configDATA
  
  install-data-hook:
  	cp -r $(srcdir)/images $(inst_location)/default-config
