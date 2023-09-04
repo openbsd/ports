@@ -11,11 +11,14 @@ BROKEN-i386 =	fails "build fpm (stage1) using the bootstrap (stage0)"
 COMMENT =	Fortran Package Manager
 
 V =		0.7.0
-REVISION =	0
+REVISION =	1
 
-GH_ACCOUNT =	fortran-lang
-GH_PROJECT =	fpm
-GH_TAGNAME =	v${V}
+DIST_TUPLE +=	github fortran-lang fpm v0.7.0 .
+# external dependencies (see fpm.toml)
+DIST_TUPLE +=	github toml-f toml-f e49f5523e4ee67db6628618864504448fb8c8939 \
+		vendor/toml-f # Apache-2.0, MIT
+DIST_TUPLE +=	github urbanjost M_CLI2 90a1a146e19c8ad37b0469b8cbd04bc28eb67a50 \
+		vendor/M_CLI2 # Unlicense
 
 CATEGORIES =	devel
 
@@ -24,19 +27,9 @@ HOMEPAGE =	https://fpm.fortran-lang.org/
 # MIT
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	${MASTER_SITES_GITHUB}
-MASTER_SITES0 =	https://github.com/fortran-lang/fpm/releases/download/v${V}/
-MASTER_SITES1 =	https://github.com/toml-f/toml-f/archive/${TOMLF_COMMIT}/
-MASTER_SITES2 = https://github.com/urbanjost/M_CLI2/archive/${MCLI2_COMMIT}/
+MASTER_SITES.fpm =	https://github.com/fortran-lang/fpm/releases/download/v${V}/
 
-DISTFILES =	${GH_DISTFILE} \
-		fpm-${V}.F90:0 \
-		toml-f-${TOMLF_COMMIT:C/(........).*/\1/}{${TOMLF_COMMIT}}${EXTRACT_SUFX}:1 \
-		M_CLI2-${MCLI2_COMMIT:C/(........).*/\1/}{${MCLI2_COMMIT}}${EXTRACT_SUFX}:2
-
-# external dependencies (see fpm.toml)
-TOMLF_COMMIT =	e49f5523e4ee67db6628618864504448fb8c8939
-MCLI2_COMMIT =	90a1a146e19c8ad37b0469b8cbd04bc28eb67a50
+DISTFILES.fpm =	fpm-${V}.F90
 
 EXTRACT_CASES += \
 	*.F90)  install -m 0644 ${FULLDISTDIR}/$$archive ${WRKDIR};;
@@ -67,9 +60,6 @@ FPM_BIN1 =	${WRKBUILD}/stage1/fpm
 
 post-extract:
 	mv ${WRKDIR}/fpm-${V}.F90 ${FPM_SRC0}
-	mkdir ${WRKSRC}/vendor
-	mv ${WRKDIR}/toml-f-${TOMLF_COMMIT} ${WRKSRC}/vendor/toml-f
-	mv ${WRKDIR}/M_CLI2-${MCLI2_COMMIT} ${WRKSRC}/vendor/M_CLI2
 
 do-build:
 	mkdir -p ${WRKBUILD}/{stage0,stage1,stage2}
