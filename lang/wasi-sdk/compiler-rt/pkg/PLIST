@@ -1,1 +1,7 @@
-lib/clang/13.0.0/lib/wasi/libclang_rt.builtins-wasm32.a
+llvm${MODCLANG_VERSION}/
+llvm${MODCLANG_VERSION}/lib/
+llvm${MODCLANG_VERSION}/lib/clang/
+llvm${MODCLANG_VERSION}/lib/clang/${MODCLANG_VERSION}.0.0/
+llvm${MODCLANG_VERSION}/lib/clang/${MODCLANG_VERSION}.0.0/lib/
+llvm${MODCLANG_VERSION}/lib/clang/${MODCLANG_VERSION}.0.0/lib/wasi/
+@static-lib llvm${MODCLANG_VERSION}/lib/clang/${MODCLANG_VERSION}.0.0/lib/wasi/libclang_rt.builtins-wasm32.a

@@ -2,6 +2,7 @@ COMMENT =	LLVM runtime library for WebAssembly System Interface
 
 DISTNAME =	compiler-rt-${LLVM_V}.src
 PKGNAME =	wasi-compiler-rt-${LLVM_V}
+REVISION =	0
 LIBPATH =	wasi/libclang_rt.builtins-wasm32.a
 BUILDSUBDIR =	lib/builtins
 BUILD_DEPENDS +=	lang/wasi-libc
@@ -14,7 +15,7 @@ CONFIGURE_ARGS=	\
 		-DLLVM_CONFIG_PATH=${LOCALBASE}/bin/llvm-config-${MODCLANG_VERSION} \
 		-DCMAKE_C_COMPILER_WORKS=1 \
 		-DCMAKE_CXX_COMPILER_WORKS=1 \
-		-DCMAKE_STAGING_PREFIX=${LOCALBASE}/lib/clang/${LLVM_V} \
+		-DCMAKE_STAGING_PREFIX=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib/clang/${LLVM_V} \
 		-DCMAKE_SYSROOT=${WASI_SYSROOT} \
 		-DUNIX:BOOL=ON \
 		-DCOMPILER_RT_BAREMETAL_BUILD=ON \
