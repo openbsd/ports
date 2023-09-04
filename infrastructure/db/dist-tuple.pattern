@@ -16,7 +16,7 @@ EXTRACT_SUFX.srht ?=	.tar.gz
 # (<_subdir> is for internal use based on recognition of tag format of <id>.)
 
 TEMPLATE_DISTFILES.github ?= \
-	<account>-<project>-{<account>/<project>/archive/<_subdir>}<id>${EXTRACT_SUFX.github}
+	<account>-<project>-{<account>/<project>/archive/<subdir>}<id>${EXTRACT_SUFX.github}
 
 TEMPLATE_DISTFILES.gitlab ?= \
 	<account>-<project>-{<account>/<project>/-/archive/<id>/}<id>${EXTRACT_SUFX.gitlab}
