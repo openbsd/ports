@@ -1,0 +1,18 @@
+backport https://github.com/gnuradio/gnuradio/pull/5302 so
+gnuradio can build with Qwt 6.2
+
+Index: gr-qtgui/include/gnuradio/qtgui/DisplayPlot.h
+--- gr-qtgui/include/gnuradio/qtgui/DisplayPlot.h.orig
++++ gr-qtgui/include/gnuradio/qtgui/DisplayPlot.h
+@@ -41,7 +41,10 @@
+ #include <vector>
+ 
+ #if QWT_VERSION >= 0x060000
+-#include <qwt_compat.h>
++typedef QPointF QwtDoublePoint;
++typedef QRectF QwtDoubleRect;
++
++typedef QwtInterval QwtDoubleInterval;
+ #endif
+ 
+ typedef QList<QColor> QColorList;
