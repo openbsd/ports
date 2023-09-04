@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.69 2023/09/03 11:40:30 espie Exp $
+# $OpenBSD: Var.pm,v 1.70 2023/09/04 15:34:18 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -1245,7 +1245,7 @@ sub add($self, $ins)
 		my $account = shift @l;
 		my $project = shift @l;
 		my $id = shift @l;
-		my $mv = undef;
+		my $mv = shift @l;
 		$self->normal_insert($ins, $type, $account, $project, $id, $mv);
 	}
 }
@@ -1266,24 +1266,6 @@ sub create_tables($self, $inserter)
 	    Sql::Column::View->new("Project"),
 	    Sql::Column::View->new("Id"),
 	    Sql::Column::View->new("Mv"));
-}
-
-package DistTupleMvVar;
-our @ISA = qw(AnyVar);
-sub table($) { 'DistTuple' };
-
-sub add($self, $ins)
-{
-	$self->AnyVar::add($ins);
-	my @l = $self->words;
-	while(@l > 0) {
-		my $type = shift @l;
-		my $account = shift @l;
-		my $project = shift @l;
-		my $id = shift @l;
-		my $mv = shift @l;
-		$self->normal_insert($ins, $type, $account, $project, $id, $mv);
-	}
 }
 
 package EmailVar;
