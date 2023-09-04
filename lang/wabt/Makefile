@@ -1,7 +1,7 @@
 COMMENT =	WebAssembly binary toolkit
 
 DISTNAME =	wabt-${V}
-V =		1.0.32
+V =		1.0.33
 
 CATEGORIES =	lang
 
@@ -11,7 +11,7 @@ HOMEPAGE =	https://github.com/WebAssembly/wabt/
 PERMIT_PACKAGE =	Yes
 
 # use pledge()
-WANTLIB = ${COMPILER_LIBCXX} c m
+WANTLIB = ${COMPILER_LIBCXX} c crypto m
 
 MASTER_SITES =	https://github.com/WebAssembly/wabt/releases/download/${V}/
 

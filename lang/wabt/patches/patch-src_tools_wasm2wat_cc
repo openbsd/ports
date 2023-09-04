@@ -11,7 +11,7 @@ Index: src/tools/wasm2wat.cc
  #include "wabt/apply-names.h"
  #include "wabt/binary-reader-ir.h"
  #include "wabt/binary-reader.h"
-@@ -103,6 +106,13 @@ int ProgramMain(int argc, char** argv) {
+@@ -105,6 +108,13 @@ int ProgramMain(int argc, char** argv) {
    InitStdio();
    ParseOptions(argc, argv);
  

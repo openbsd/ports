@@ -1,9 +1,9 @@
 Index: src/tools/wasm-strip.cc
 --- src/tools/wasm-strip.cc.orig
 +++ src/tools/wasm-strip.cc
-@@ -14,6 +14,9 @@
-  * limitations under the License.
+@@ -15,6 +15,9 @@
   */
+ #include <set>
  
 +#include <err.h>
 +#include <unistd.h>
@@ -11,7 +11,7 @@ Index: src/tools/wasm-strip.cc
  #include "wabt/binary-reader-nop.h"
  #include "wabt/binary-reader.h"
  #include "wabt/binary.h"
-@@ -87,6 +90,11 @@ int ProgramMain(int argc, char** argv) {
+@@ -112,6 +115,11 @@ int ProgramMain(int argc, char** argv) {
    InitStdio();
    ParseOptions(argc, argv);
  

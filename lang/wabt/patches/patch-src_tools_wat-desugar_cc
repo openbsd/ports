@@ -11,7 +11,7 @@ Index: src/tools/wat-desugar.cc
  #include "wabt/config.h"
  
  #include "wabt/apply-names.h"
-@@ -83,6 +86,13 @@ static void ParseOptions(int argc, char** argv) {
+@@ -85,6 +88,13 @@ static void ParseOptions(int argc, char** argv) {
  int ProgramMain(int argc, char** argv) {
    InitStdio();
    ParseOptions(argc, argv);

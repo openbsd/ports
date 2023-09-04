@@ -11,7 +11,7 @@ Index: src/tools/wasm2c.cc
  #include "wabt/apply-names.h"
  #include "wabt/binary-reader-ir.h"
  #include "wabt/binary-reader.h"
-@@ -126,6 +129,9 @@ int ProgramMain(int argc, char** argv) {
+@@ -201,6 +204,9 @@ int ProgramMain(int argc, char** argv) {
  
    InitStdio();
    ParseOptions(argc, argv);
@@ -19,5 +19,5 @@ Index: src/tools/wasm2c.cc
 +  if (pledge("stdio rpath wpath cpath", NULL) != 0)
 +    err(1, "pledge");
  
-   std::vector<uint8_t> file_data;
-   result = ReadFile(s_infile.c_str(), &file_data);
+   Errors errors;
+   result = Wasm2cMain(errors);
