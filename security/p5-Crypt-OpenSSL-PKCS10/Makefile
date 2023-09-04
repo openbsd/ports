@@ -1,17 +1,17 @@
 COMMENT =	Perl extension to OpenSSL's PKCS10 API
 
-MODULES =	cpan
+DISTNAME =	Crypt-OpenSSL-PKCS10-0.23
 
-DISTNAME =	Crypt-OpenSSL-PKCS10-0.19
 CATEGORIES =	security
 
 # Perl
-PERMIT_PACKAGE = Yes
+PERMIT_PACKAGE =	Yes
 
-WANTLIB +=	c crypto perl ssl
+WANTLIB =		c crypto perl ssl
 
-BUILD_DEPENDS =	security/p5-Crypt-OpenSSL-Guess
+MODULES =		cpan
 
-RUN_DEPENDS =	security/p5-Crypt-OpenSSL-RSA
+BUILD_DEPENDS =		security/p5-Crypt-OpenSSL-Guess>=0.11
+RUN_DEPENDS =		security/p5-Crypt-OpenSSL-RSA
 
 .include <bsd.port.mk>
