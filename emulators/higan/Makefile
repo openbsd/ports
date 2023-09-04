@@ -1,10 +1,13 @@
 # libco requires custom asm per arch
 ONLY_FOR_ARCHS =	aarch64 arm amd64 i386
+BROKEN-aarch64 =	mprotect asm fixes required
+BROKEN-arm =		mprotect asm fixes required
+BROKEN-i386 =		mprotect asm fixes required
 
 COMMENT =	multi-system Nintendo emulator
 
 V =		106
-REVISION =	7
+REVISION =	8
 
 GH_ACCOUNT =	higan-emu
 GH_PROJECT =	higan

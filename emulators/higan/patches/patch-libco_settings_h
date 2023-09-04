@@ -1,0 +1,12 @@
+Index: libco/settings.h
+--- libco/settings.h.orig
++++ libco/settings.h
+@@ -3,7 +3,7 @@
+ /*[amd64, arm, ppc, x86]:
+    by default, co_swap_function is marked as a text (code) section
+    if not supported, uncomment the below line to use mprotect instead */
+-/* #define LIBCO_MPROTECT */
++#define LIBCO_MPROTECT
+ 
+ /*[amd64]:
+    Win64 only: provides a substantial speed-up, but will thrash XMM regs
