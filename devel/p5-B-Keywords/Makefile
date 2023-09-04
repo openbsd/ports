@@ -1,19 +1,16 @@
-COMMENT =	lists of Perl keywords for use in backend modules
+COMMENT =	lists of Perl reserved barewords and symbol names
 
-DISTNAME =	B-Keywords-1.24
+DISTNAME =	B-Keywords-1.26
+
 CATEGORIES =	devel
 
-# perl
+# Perl
 PERMIT_PACKAGE =	Yes
 
-MODULES =	cpan
-PKG_ARCH =	*
+MODULES =		cpan
 
-TEST_DEPENDS=	devel/p5-Test-CPAN-Meta
+MAKE_ENV =		TEST_POD=Yes
 
-MAKE_ENV=	TEST_POD=Yes
-# This would require Perl::MinimumVersion, Test::MinimumVersion and
-# Test::Kwalitee that we don't ship.
-TEST_ENV=	IS_MAINTAINER=No
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
