@@ -68,6 +68,7 @@ ${LLVM_BASE}/include/lldb/API/SBThread.h
 ${LLVM_BASE}/include/lldb/API/SBThreadCollection.h
 ${LLVM_BASE}/include/lldb/API/SBThreadPlan.h
 ${LLVM_BASE}/include/lldb/API/SBTrace.h
+${LLVM_BASE}/include/lldb/API/SBTraceCursor.h
 ${LLVM_BASE}/include/lldb/API/SBType.h
 ${LLVM_BASE}/include/lldb/API/SBTypeCategory.h
 ${LLVM_BASE}/include/lldb/API/SBTypeEnumMember.h
@@ -114,7 +115,9 @@ ${LLVM_BASE}/include/lldb/Core/AddressResolver.h
 ${LLVM_BASE}/include/lldb/Core/AddressResolverFileLine.h
 ${LLVM_BASE}/include/lldb/Core/Architecture.h
 ${LLVM_BASE}/include/lldb/Core/Communication.h
+${LLVM_BASE}/include/lldb/Core/DataFileCache.h
 ${LLVM_BASE}/include/lldb/Core/Debugger.h
+${LLVM_BASE}/include/lldb/Core/DebuggerEvents.h
 ${LLVM_BASE}/include/lldb/Core/Declaration.h
 ${LLVM_BASE}/include/lldb/Core/Disassembler.h
 ${LLVM_BASE}/include/lldb/Core/DumpDataExtractor.h
@@ -150,6 +153,7 @@ ${LLVM_BASE}/include/lldb/Core/StructuredDataImpl.h
 ${LLVM_BASE}/include/lldb/Core/ThreadSafeDenseMap.h
 ${LLVM_BASE}/include/lldb/Core/ThreadSafeDenseSet.h
 ${LLVM_BASE}/include/lldb/Core/ThreadSafeValue.h
+${LLVM_BASE}/include/lldb/Core/ThreadedCommunication.h
 ${LLVM_BASE}/include/lldb/Core/UniqueCStringMap.h
 ${LLVM_BASE}/include/lldb/Core/UserSettingsController.h
 ${LLVM_BASE}/include/lldb/Core/Value.h
@@ -189,6 +193,7 @@ ${LLVM_BASE}/include/lldb/DataFormatters/VectorIterator.h
 ${LLVM_BASE}/include/lldb/DataFormatters/VectorType.h
 ${LLVM_BASE}/include/lldb/Expression/
 ${LLVM_BASE}/include/lldb/Expression/DWARFExpression.h
+${LLVM_BASE}/include/lldb/Expression/DWARFExpressionList.h
 ${LLVM_BASE}/include/lldb/Expression/DiagnosticManager.h
 ${LLVM_BASE}/include/lldb/Expression/DynamicCheckerFunctions.h
 ${LLVM_BASE}/include/lldb/Expression/Expression.h
@@ -280,6 +285,7 @@ ${LLVM_BASE}/include/lldb/Host/posix/HostInfoPosix.h
 ${LLVM_BASE}/include/lldb/Host/posix/HostProcessPosix.h
 ${LLVM_BASE}/include/lldb/Host/posix/HostThreadPosix.h
 ${LLVM_BASE}/include/lldb/Host/posix/LockFilePosix.h
+${LLVM_BASE}/include/lldb/Host/posix/MainLoopPosix.h
 ${LLVM_BASE}/include/lldb/Host/posix/PipePosix.h
 ${LLVM_BASE}/include/lldb/Host/posix/ProcessLauncherPosixFork.h
 ${LLVM_BASE}/include/lldb/Host/windows/
@@ -289,6 +295,7 @@ ${LLVM_BASE}/include/lldb/Host/windows/HostInfoWindows.h
 ${LLVM_BASE}/include/lldb/Host/windows/HostProcessWindows.h
 ${LLVM_BASE}/include/lldb/Host/windows/HostThreadWindows.h
 ${LLVM_BASE}/include/lldb/Host/windows/LockFileWindows.h
+${LLVM_BASE}/include/lldb/Host/windows/MainLoopWindows.h
 ${LLVM_BASE}/include/lldb/Host/windows/PipeWindows.h
 ${LLVM_BASE}/include/lldb/Host/windows/PosixApi.h
 ${LLVM_BASE}/include/lldb/Host/windows/ProcessLauncherWindows.h
@@ -304,6 +311,7 @@ ${LLVM_BASE}/include/lldb/Interpreter/CommandHistory.h
 ${LLVM_BASE}/include/lldb/Interpreter/CommandInterpreter.h
 ${LLVM_BASE}/include/lldb/Interpreter/CommandObject.h
 ${LLVM_BASE}/include/lldb/Interpreter/CommandObjectMultiword.h
+${LLVM_BASE}/include/lldb/Interpreter/CommandOptionArgumentTable.h
 ${LLVM_BASE}/include/lldb/Interpreter/CommandOptionValidators.h
 ${LLVM_BASE}/include/lldb/Interpreter/CommandReturnObject.h
 ${LLVM_BASE}/include/lldb/Interpreter/OptionArgParser.h
@@ -311,6 +319,7 @@ ${LLVM_BASE}/include/lldb/Interpreter/OptionGroupArchitecture.h
 ${LLVM_BASE}/include/lldb/Interpreter/OptionGroupBoolean.h
 ${LLVM_BASE}/include/lldb/Interpreter/OptionGroupFile.h
 ${LLVM_BASE}/include/lldb/Interpreter/OptionGroupFormat.h
+${LLVM_BASE}/include/lldb/Interpreter/OptionGroupMemoryTag.h
 ${LLVM_BASE}/include/lldb/Interpreter/OptionGroupOutputFile.h
 ${LLVM_BASE}/include/lldb/Interpreter/OptionGroupPlatform.h
 ${LLVM_BASE}/include/lldb/Interpreter/OptionGroupPythonClassWithDict.h
@@ -345,6 +354,9 @@ ${LLVM_BASE}/include/lldb/Interpreter/OptionValues.h
 ${LLVM_BASE}/include/lldb/Interpreter/Options.h
 ${LLVM_BASE}/include/lldb/Interpreter/Property.h
 ${LLVM_BASE}/include/lldb/Interpreter/ScriptInterpreter.h
+${LLVM_BASE}/include/lldb/Interpreter/ScriptedInterface.h
+${LLVM_BASE}/include/lldb/Interpreter/ScriptedMetadata.h
+${LLVM_BASE}/include/lldb/Interpreter/ScriptedPlatformInterface.h
 ${LLVM_BASE}/include/lldb/Interpreter/ScriptedProcessInterface.h
 ${LLVM_BASE}/include/lldb/Symbol/
 ${LLVM_BASE}/include/lldb/Symbol/ArmUnwindInfo.h
@@ -371,6 +383,7 @@ ${LLVM_BASE}/include/lldb/Symbol/Symbol.h
 ${LLVM_BASE}/include/lldb/Symbol/SymbolContext.h
 ${LLVM_BASE}/include/lldb/Symbol/SymbolContextScope.h
 ${LLVM_BASE}/include/lldb/Symbol/SymbolFile.h
+${LLVM_BASE}/include/lldb/Symbol/SymbolFileOnDemand.h
 ${LLVM_BASE}/include/lldb/Symbol/SymbolVendor.h
 ${LLVM_BASE}/include/lldb/Symbol/Symtab.h
 ${LLVM_BASE}/include/lldb/Symbol/TaggedASTType.h
@@ -384,8 +397,10 @@ ${LLVM_BASE}/include/lldb/Symbol/Variable.h
 ${LLVM_BASE}/include/lldb/Symbol/VariableList.h
 ${LLVM_BASE}/include/lldb/Target/
 ${LLVM_BASE}/include/lldb/Target/ABI.h
+${LLVM_BASE}/include/lldb/Target/AppleArm64ExceptionClass.h
 ${LLVM_BASE}/include/lldb/Target/AssertFrameRecognizer.h
 ${LLVM_BASE}/include/lldb/Target/DynamicLoader.h
+${LLVM_BASE}/include/lldb/Target/DynamicRegisterInfo.h
 ${LLVM_BASE}/include/lldb/Target/ExecutionContext.h
 ${LLVM_BASE}/include/lldb/Target/ExecutionContextScope.h
 ${LLVM_BASE}/include/lldb/Target/InstrumentationRuntime.h
@@ -398,6 +413,7 @@ ${LLVM_BASE}/include/lldb/Target/Memory.h
 ${LLVM_BASE}/include/lldb/Target/MemoryHistory.h
 ${LLVM_BASE}/include/lldb/Target/MemoryRegionInfo.h
 ${LLVM_BASE}/include/lldb/Target/MemoryTagManager.h
+${LLVM_BASE}/include/lldb/Target/MemoryTagMap.h
 ${LLVM_BASE}/include/lldb/Target/ModuleCache.h
 ${LLVM_BASE}/include/lldb/Target/OperatingSystem.h
 ${LLVM_BASE}/include/lldb/Target/PathMappingList.h
@@ -421,6 +437,7 @@ ${LLVM_BASE}/include/lldb/Target/StackFrame.h
 ${LLVM_BASE}/include/lldb/Target/StackFrameList.h
 ${LLVM_BASE}/include/lldb/Target/StackFrameRecognizer.h
 ${LLVM_BASE}/include/lldb/Target/StackID.h
+${LLVM_BASE}/include/lldb/Target/Statistics.h
 ${LLVM_BASE}/include/lldb/Target/StopInfo.h
 ${LLVM_BASE}/include/lldb/Target/StructuredDataPlugin.h
 ${LLVM_BASE}/include/lldb/Target/SystemRuntime.h
@@ -451,6 +468,7 @@ ${LLVM_BASE}/include/lldb/Target/ThreadPlanTracer.h
 ${LLVM_BASE}/include/lldb/Target/ThreadSpec.h
 ${LLVM_BASE}/include/lldb/Target/Trace.h
 ${LLVM_BASE}/include/lldb/Target/TraceCursor.h
+${LLVM_BASE}/include/lldb/Target/TraceDumper.h
 ${LLVM_BASE}/include/lldb/Target/TraceExporter.h
 ${LLVM_BASE}/include/lldb/Target/UnixSignals.h
 ${LLVM_BASE}/include/lldb/Target/Unwind.h
@@ -471,6 +489,7 @@ ${LLVM_BASE}/include/lldb/Utility/DataBufferHeap.h
 ${LLVM_BASE}/include/lldb/Utility/DataBufferLLVM.h
 ${LLVM_BASE}/include/lldb/Utility/DataEncoder.h
 ${LLVM_BASE}/include/lldb/Utility/DataExtractor.h
+${LLVM_BASE}/include/lldb/Utility/Diagnostics.h
 ${LLVM_BASE}/include/lldb/Utility/Endian.h
 ${LLVM_BASE}/include/lldb/Utility/Environment.h
 ${LLVM_BASE}/include/lldb/Utility/Event.h
@@ -478,8 +497,10 @@ ${LLVM_BASE}/include/lldb/Utility/FileSpec.h
 ${LLVM_BASE}/include/lldb/Utility/Flags.h
 ${LLVM_BASE}/include/lldb/Utility/GDBRemote.h
 ${LLVM_BASE}/include/lldb/Utility/IOObject.h
+${LLVM_BASE}/include/lldb/Utility/Instrumentation.h
 ${LLVM_BASE}/include/lldb/Utility/Iterable.h
 ${LLVM_BASE}/include/lldb/Utility/LLDBAssert.h
+${LLVM_BASE}/include/lldb/Utility/LLDBLog.h
 ${LLVM_BASE}/include/lldb/Utility/Listener.h
 ${LLVM_BASE}/include/lldb/Utility/Log.h
 ${LLVM_BASE}/include/lldb/Utility/NameMatches.h
@@ -515,6 +536,8 @@ ${LLVM_BASE}/include/lldb/Utility/UserIDResolver.h
 ${LLVM_BASE}/include/lldb/Utility/VASPrintf.h
 ${LLVM_BASE}/include/lldb/Utility/VMRange.h
 ${LLVM_BASE}/include/lldb/Utility/XcodeSDK.h
+${LLVM_BASE}/include/lldb/Version/
+${LLVM_BASE}/include/lldb/Version/Version.h
 ${LLVM_BASE}/include/lldb/lldb-defines.h
 ${LLVM_BASE}/include/lldb/lldb-enumerations.h
 ${LLVM_BASE}/include/lldb/lldb-forward.h
@@ -533,10 +556,8 @@ ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/__init__.py
 ${MODPY_COMMENT}${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/${MODPY_PYCACHE}/
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/_lldb.${MODPY_PYC_MAGIC_TAG}so
-${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/plugins/${MODPY_PYCACHE}scripted_platform.${MODPY_PYC_MAGIC_TAG}pyc
-${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/plugins/scripted_platform.py
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/${MODPY_PYCACHE}embedded_interpreter.${MODPY_PYC_MAGIC_TAG}pyc
+${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/_lldb.${MODPY_PYC_MAGIC_TAG}so
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/embedded_interpreter.py
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/formatters/
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/formatters/Logger.py
@@ -565,7 +586,9 @@ ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/plugins/
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/plugins/__init__.py
 ${MODPY_COMMENT}${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/plugins/${MODPY_PYCACHE}/
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/plugins/${MODPY_PYCACHE}scripted_platform.${MODPY_PYC_MAGIC_TAG}pyc
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/plugins/${MODPY_PYCACHE}scripted_process.${MODPY_PYC_MAGIC_TAG}pyc
+${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/plugins/scripted_platform.py
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/plugins/scripted_process.py
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/utils/
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/utils/__init__.py

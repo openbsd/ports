@@ -12,3 +12,15 @@ Index: lld/docs/ld.lld.1
  .It Fl -exclude-libs Ns = Ns Ar value
  Exclude static libraries from automatic export.
  .It Fl -export-dynamic , Fl E
+@@ -874,6 +876,11 @@ This is the default.
+ .It Cm wxneeded
+ Create a
+ .Dv PT_OPENBSD_WXNEEDED
++segment.
++.Pp
++.It Cm nobtcfi
++Create a
++.Dv PT_OPENBSD_NOBTCFI
+ segment.
+ .El
+ .El
