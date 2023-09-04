@@ -6,6 +6,7 @@ COMMENT =			modern Lua linter written in Rust
 GH_ACCOUNT =			Kampfkarren
 GH_PROJECT =			selene
 GH_TAGNAME =			0.25.0
+REVISION =			0
 
 CATEGORIES =			devel
 

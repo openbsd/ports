@@ -9,6 +9,7 @@ USE_NOBTCFI =		Yes
 
 VERSION =		1.35.1
 HOMEPAGE =		https://deno.com/runtime
+REVISION =		0
 
 DISTNAME =		deno-${VERSION}
 DISTFILES =		${DISTNAME}{deno_src}${EXTRACT_SUFX}
