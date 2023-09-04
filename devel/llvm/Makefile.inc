@@ -23,7 +23,7 @@ PKGSPEC-python =	${MODPY_PY_PREFIX}llvm-${LLVM_PKGSPEC}
 CATEGORIES =	devel
 
 MAINTAINER =	Sebastien Marie <semarie@online.fr> \
-		Robert Nagy <robert@openbsd.org
+		Robert Nagy <robert@openbsd.org>
 
 LLVM_BASE =	llvm${LLVM_MAJOR}
 SUBST_VARS +=	LLVM_BASE LLVM_MAJOR LLVM_VERSION LLVM_PKGSPEC
