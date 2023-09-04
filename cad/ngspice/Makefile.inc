@@ -6,8 +6,6 @@ CATEGORIES ?=		cad
 
 HOMEPAGE ?=		http://ngspice.sourceforge.net/
 
-MAINTAINER ?=		Anthony J. Bentley <anthony@anjbe.name>
-
 # BSD
 PERMIT_PACKAGE ?=	Yes
 

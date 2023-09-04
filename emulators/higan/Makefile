@@ -3,15 +3,13 @@ COMMENT =	multi-system Nintendo emulator
 V =		106
 DISTNAME =	higan_v$V-source
 PKGNAME =	higan-$V
-REVISION =	5
+REVISION =	6
 
 USE_WXNEEDED =	Yes
 
 CATEGORIES =	emulators
 
 HOMEPAGE =	https://byuu.org/emulation/higan/
-
-MAINTAINER =	Anthony J. Bentley <anthony@anjbe.name>
 
 # GPLv3: https://byuu.org/emulation/higan/licensing
 PERMIT_PACKAGE =	Yes

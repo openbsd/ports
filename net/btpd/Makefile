@@ -1,10 +1,8 @@
 COMMENT=		BitTorrent Protocol Daemon
 
 DISTNAME=		btpd-0.16
-REVISION=		1
+REVISION=		2
 CATEGORIES=		net
-
-MAINTAINER=		Anthony J. Bentley <anthony@anjbe.name>
 
 HOMEPAGE=		http://wiki.github.com/btpd/btpd/
 

@@ -1,6 +1,7 @@
 COMMENT =		ngspice shared library, based on Berkeley SPICE
 
 PKGNAME =		libngspice-${V}
+REVISION =		0
 
 SHARED_LIBS +=		ngspice			0.0 # 0.0
 

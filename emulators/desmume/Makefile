@@ -3,13 +3,11 @@ USE_WXNEEDED =	Yes
 COMMENT =	Nintendo DS emulator
 
 DISTNAME =	desmume-0.9.11
-REVISION =	11
+REVISION =	12
 
 CATEGORIES =	emulators
 
 HOMEPAGE =	https://desmume.org/
-
-MAINTAINER =	Anthony J. Bentley <anthony@anjbe.name>
 
 # GPLv2+
 PERMIT_PACKAGE =		Yes

@@ -5,13 +5,11 @@ COMMENT =		fast-paced sidescrolling shoot-em-up
 
 V =			0.13
 DISTNAME =		vacuum-${V}a
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		games
 
 HOMEPAGE =		http://apocalypse.rulez.org/vacuum
-
-MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 
 # GPLv2+, see bin/vacuum.pl
 PERMIT_PACKAGE =	Yes
