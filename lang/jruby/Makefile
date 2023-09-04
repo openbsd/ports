@@ -7,9 +7,8 @@ V =		9.4.3.0
 DISTNAME =	jruby-dist-${V}-bin
 PKGNAME =	jruby-${V}
 CATEGORIES =	lang lang/ruby
-DISTFILES =	${DISTNAME}.tar.gz \
-		jffi-1.3.10.tar.gz:0 \
-		${JRUBY_LAUNCHER_GEM}:1
+DISTFILES.jffi =jffi-1.3.10.tar.gz
+DISTFILES.gem =	${JRUBY_LAUNCHER_GEM}
 
 HOMEPAGE =	http://www.jruby.org/
 
@@ -19,8 +18,8 @@ MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	https://repo1.maven.org/maven2/org/jruby/jruby-dist/${V}/
-MASTER_SITES0 =	https://github.com/jnr/jffi/archive/refs/tags/
-MASTER_SITES1 =	${MASTER_SITE_RUBYGEMS}
+MASTER_SITES.jffi =	https://github.com/jnr/jffi/archive/refs/tags/
+MASTER_SITES.gem =	${MASTER_SITE_RUBYGEMS}
 
 MODULES =	java
 MODJAVA_VER =	17+
