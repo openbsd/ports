@@ -173,8 +173,9 @@ post-install:
 		${PREFIX}/man/man1/
 	cd ${PREFIX}/man/man1 && for _f in `echo *.1`; do mv $${_f} $${_f%%.1}-${LLVM_MAJOR}.1; done
 	# lit and FileCheck are not installed
-	@rm ${PREFIX}/man/man1/lit-${LLVM_MAJOR}.1
-	@rm ${PREFIX}/man/man1/FileCheck-${LLVM_MAJOR}.1
+	rm ${PREFIX}/man/man1/lit-${LLVM_MAJOR}.1
+	rm ${PREFIX}/man/man1/FileCheck-${LLVM_MAJOR}.1
+	rm -rf ${PREFIX}/${LLVM_BASE}/man    
 
 diff-to-base:
 .for _subdir in clang lld lldb llvm
