@@ -69,7 +69,6 @@
      SUBDIR += ldc
      SUBDIR += lfe
      SUBDIR += librep
-     SUBDIR += libv8
      SUBDIR += lua
      SUBDIR += luabridge
      SUBDIR += luajit

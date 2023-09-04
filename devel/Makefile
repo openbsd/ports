@@ -1731,8 +1731,6 @@
      SUBDIR += ruby-json_pure
      SUBDIR += ruby-kgio,ruby31
      SUBDIR += ruby-kgio,ruby32
-     SUBDIR += ruby-libv8,ruby31
-     SUBDIR += ruby-libv8,ruby32
      SUBDIR += ruby-locale
      SUBDIR += ruby-log4r
      SUBDIR += ruby-metaclass
@@ -1778,8 +1776,6 @@
      SUBDIR += ruby-sync
      SUBDIR += ruby-systemu
      SUBDIR += ruby-test-unit-ruby-core
-     SUBDIR += ruby-therubyracer,ruby31
-     SUBDIR += ruby-therubyracer,ruby32
      SUBDIR += ruby-thor
      SUBDIR += ruby-thread_safe
      SUBDIR += ruby-tilt

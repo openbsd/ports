@@ -140,7 +140,6 @@
      SUBDIR += ophcrack
      SUBDIR += opm
      SUBDIR += opmsg
-     SUBDIR += origami
      SUBDIR += ossec-hids
      SUBDIR += osv-scanner
      SUBDIR += otpcalc
