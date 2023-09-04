@@ -1,2 +1,0 @@
-The libv8 gem provides access to v8 from ruby. It's designed to be used
-by therubyracer.
