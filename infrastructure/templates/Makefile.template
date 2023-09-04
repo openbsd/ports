@@ -95,10 +95,14 @@ MASTER_SITES =		???
 #MASTER_SITES =		${MASTER_SITE_foo:=subdir/}
 
 # if more master sites are needed...
-#MASTER_SITES0 =
+#MASTER_SITES.sufx =
 # ...
 #DISTFILES =		???
+
+# for grabbing DISTFILES from MASTER_SITES.sufx
+#DISTFILES.sufx = ...
 #EXTRACT_ONLY =		???
+
 
 # Needs to be specified if tarball does not end with .tar.gz
 #EXTRACT_SUFX =		.tar.bz2
@@ -109,7 +113,7 @@ MASTER_SITES =		???
 # Optional subdirectory of DISTDIR where distfiles and patches will be placed
 #DIST_SUBDIR =		???
 
-# PATCHFILES are also retrieved from MASTER_SITES*
+# use PATCHFILES.sufx for going to MASTER_SITES.sufx
 #PATCHFILES =		???
 #PATCH_DIST_STRIP =	-p0
 
