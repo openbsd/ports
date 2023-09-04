@@ -1469,6 +1469,7 @@
      SUBDIR += py-lief,python3
      SUBDIR += py-littleutils,python3
      SUBDIR += py-llvmlite,python3
+     SUBDIR += py-logfury,python3
      SUBDIR += py-logilab-common,python3
      SUBDIR += py-looseversion,python3
      SUBDIR += py-magic,python3
