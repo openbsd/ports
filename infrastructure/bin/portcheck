@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.144 2023/04/24 11:44:20 ajacoutot Exp $
+# $OpenBSD: portcheck,v 1.145 2023/09/05 13:52:44 espie Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -169,7 +169,7 @@ fi
 # when SKIPDIR framework is used
 set -A make_args -- \
 	SKIPDIR= STARTAFTER= STARTDIR= \
-	MASTER_SITE_OPENBSD= \
+	SITE_OPENBSD= \
 	PORTSDIR_PATH="$portsdir:$(cd /usr/ports && make -V PORTSDIR_PATH || true)"
 
 if $rootrun; then
@@ -295,8 +295,8 @@ INTERACTIVE
 LIST_DB
 LOCKDIR
 LOCK_VERBOSE
-MASTER_SITE_BACKUP
-MASTER_SITE_OVERRIDE
+SITE_BACKUP
+SITE_OVERRIDE
 NO_CHECKSUM
 NO_DEPENDS
 NO_IGNORE
@@ -662,12 +662,12 @@ check_port_dir() {
 	# We request all info at once for speed.
 
 	local categories dist_subdir distfiles flavor flavors
-	local gh_commit master_sites
+	local gh_commit sites
 	local multi_packages pkgpath_this pseudo_flavor pseudo_flavors
 	local shared_libs subst_cmd
 	local permit_package permit_distfiles
 	local show_items="CATEGORIES DIST_SUBDIR DISTFILES FLAVOR FLAVORS GH_COMMIT"
-	local show_items="$show_items MASTER_SITES MULTI_PACKAGES PKGPATH"
+	local show_items="$show_items SITES MULTI_PACKAGES PKGPATH"
 	local show_items="$show_items PSEUDO_FLAVOR PSEUDO_FLAVORS"
 	local show_items="$show_items SHARED_LIBS SUBST_CMD"
 	local show_items="$show_items PERMIT_PACKAGE PERMIT_DISTFILES"
@@ -681,7 +681,7 @@ check_port_dir() {
 	read -pr flavor &&
 	read -pr flavors &&
 	read -pr gh_commit &&
-	read -pr master_sites &&
+	read -pr sites &&
 	read -pr multi_packages &&
 	read -pr pkgpath_this &&
 	read -pr pseudo_flavor &&
@@ -718,7 +718,7 @@ check_port_dir() {
 
 	check_categories "$dir" $categories
 	check_distfiles "$dir" "$dist_subdir" $distfiles
-	check_master_sites "$dir" $master_sites
+	check_sites "$dir" $sites
 	check_permit_dist "$dir" "$permit_package" "$permit_distfiles"
 	$pkg_exists && check_pkg_dir "$dir"/pkg "$subst_cmd"
 	$existing_port || check_shlibs_versions "$dir" $shared_libs
@@ -815,9 +815,9 @@ check_distfiles() {
 }
 
 # Checks made:
-#   * No unreliable (without fixed distfiles) hosting listed in MASTER_SITES.
-check_master_sites() {
-	$debugging && echo "CALLED: check_master_sites($*)" >&2
+#   * No unreliable (without fixed distfiles) hosting listed in SITES.
+check_sites() {
+	$debugging && echo "CALLED: check_sites($*)" >&2
 
 	local dir=$1; shift
 	local portref=$(portref "$dir")
