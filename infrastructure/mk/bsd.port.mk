@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1609 2023/09/04 21:36:13 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1610 2023/09/05 13:50:33 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1266,13 +1266,18 @@ MASTER_SITES ?=
 
 _warn_checksum = :
 
+.for v in ${.VARIABLES:MMASTER_SITE*}
+${v:S/MASTER_//} ?= ${$v}
+.endfor
+
 # stash .VARIABLES, because it's expensive to compute
 _CACHE_VARIABLES := ${.VARIABLES}
 .if empty(_CACHE_VARIABLES)
 ERRORS += "Fatal: requires make(1) with .VARIABLES support"
 .endif
 
-_ALL_MASTER_SITES_VARIABLES = ${_CACHE_VARIABLES:MMASTER_SITES*:NMASTER_SITES_*}
+_ALL_SITES_VARIABLES = ${_CACHE_VARIABLES:MSITES*:NSITES_*}
+
 
 # All variables relevant to the port's description (see dump-vars)
 _ALL_VARIABLES = BUILD_DEPENDS IS_INTERACTIVE \
@@ -1287,7 +1292,7 @@ _ALL_VARIABLES_PER_ARCH =
 # dpb doesn't need everything, those are speed optimizations
 .if ${DPB:L:Mfetch} || ${DPB:L:Mall}
 _ALL_VARIABLES += ${_ALL_DISTFILES_VARIABLES} DIST_SUBDIR \
-	${_ALL_MASTER_SITES_VARIABLES} \
+	${_ALL_SITES_VARIABLES} \
 	CHECKSUM_FILE FETCH_MANUALLY MISSING_FILES PERMIT_DISTFILES
 .endif
 .if ${DPB:L:Mtest} || ${DPB:L:Mall}
@@ -1322,7 +1327,7 @@ _ALL_VARIABLES_INDEXED += COMMENT PKGNAME \
 	EPOCH REVISION STATIC_PLIST PKG_ARCH
 .endif
 
-.for _S in ${_ALL_MASTER_SITES_VARIABLES}
+.for _S in ${_ALL_SITES_VARIABLES}
 .  if !empty(${_S}:M*[^/])
 _warn_checksum += ;echo ">>> ${_S} not ending in /: ${${_S}:M*[^/]}"
 .  endif
@@ -1354,7 +1359,7 @@ _ALL_DISTFILES_VARIABLES =
 #
 # _FULL_FETCH_LIST is used for creating all targets later on:
 # 	say if DISTFILES=filename{url}sufx:0 DIST_SUBDIR=foo/
-#	it will expand to  foo/filenamesufx filename MASTER_SITES0 urlsufx
+#	it will expand to  foo/filenamesufx filename SITES0 urlsufx
 #
 # _FILES is used to de-duplicates names
 # the order matters: DISTFILES PATCHFILES SUPDISTFILES
@@ -1372,7 +1377,7 @@ ERRORS += "Fatal: suffix not starting with . in ${_T}"
 .      for e in ${$w}
 _warn_distfiles += ${e:M*\:[0-9]}
 .        for p in ${e:C/:[0-9]$//}
-.          for f m u in ${p:C/^(.*)\{.*\}(.*)$/\1\2/} ${w:S/$v/MASTER_SITES/}${e:M*\:[0-9]:C/^.*:([0-9])$/\1/} ${p:C/^.*\{(.*)\}(.*)$/\1\2/}
+.          for f m u in ${p:C/^(.*)\{.*\}(.*)$/\1\2/} ${w:S/$v/SITES/}${e:M*\:[0-9]:C/^.*:([0-9])$/\1/} ${p:C/^.*\{(.*)\}(.*)$/\1\2/}
 .            if !defined($m)
 ERRORS += "Fatal: $m is not defined but referenced by $e in $v"
 .            endif
@@ -3745,7 +3750,7 @@ peek-ftp:
 	@echo "DISTFILES=${DISTFILES}"
 	@${_PFETCH} install -d ${DISTDIR_MODE} ${FULLDISTDIR}; \
 	cd ${FULLDISTDIR}; echo "cd ${FULLDISTDIR}"; \
-	for i in ${MASTER_SITES:Mftp*}; do \
+	for i in ${SITES:Mftp*}; do \
 		echo "Connecting to $$i"; ${_PFETCH} ${FETCH_CMD} $$i ; break; \
 	done
 

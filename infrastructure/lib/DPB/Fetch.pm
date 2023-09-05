@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.93 2023/08/14 10:34:53 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.94 2023/09/05 13:50:32 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -267,7 +267,7 @@ sub build1info($self, $v, $mirror, $roach)
 
 	my $files = {};
 	my $build = sub($arg, $k) {
-		my $site = 'MASTER_SITES';
+		my $site = 'SITES';
 		my $url;
 		if ($arg =~ m/^(.*)\:(\d)$/) {
 			$arg = $1;
@@ -281,7 +281,7 @@ sub build1info($self, $v, $mirror, $roach)
 			$url = $2 . $3;
 		}
 		return DPB::Distfile->new($arg, $url, $dir,
-		    $info->{master_sites}{$site},
+		    $info->{sites}{$site},
 		    $checksums, $fname, $v, $self);
 	};
 
@@ -296,7 +296,7 @@ sub build1info($self, $v, $mirror, $roach)
 	}
 
 	$roach->build1info($v);
-	for my $k (qw(DIST_SUBDIR CHECKSUM_FILE distfiles master_sites)) {
+	for my $k (qw(DIST_SUBDIR CHECKSUM_FILE distfiles sites)) {
 		delete $info->{$k};
 	}
 	bless $files, "AddDepends";

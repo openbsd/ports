@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortInfo.pm,v 1.48 2023/08/14 10:34:53 espie Exp $
+# $OpenBSD: PortInfo.pm,v 1.49 2023/09/05 13:50:33 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -228,12 +228,12 @@ sub list($self)
 	return @$self;
 }
 
-package MasterSitesList;
+package SitesList;
 our @ISA = qw(GroupMixIn AddOrderedList);
 
 sub groupname($)
 {
-	return 'master_sites';
+	return 'sites';
 }
 
 package DistfilesList;
@@ -361,7 +361,7 @@ my %adder = (
 	CHECKSUM_FILE => 'AddInfo',
 	FETCH_MANUALLY => 'FetchManually',
 	MISSING_FILES => 'AddList',
-	MASTER_SITES => 'MasterSitesList',
+	SITES => 'SitesList',
 	MULTI_PACKAGES => 'AddList',
 	PERMIT_DISTFILES => 'AddNegative',
 	PERMIT_PACKAGE => 'AddNegative',
@@ -387,12 +387,12 @@ my %adder = (
 	PORTROACH_COMMENT => 'AddInfo',
 	MAINTAINER => 'AddInfo',
 	distfiles => 'Group',
-	master_sites => 'Group',
+	sites => 'Group',
 );
 
 sub find($class, $var)
 {
-	$var =~ s/^(MASTER_SITES|DISTFILES|SUPDISTFILES|PATCHFILES).*/$1/;
+	$var =~ s/^(SITES|DISTFILES|SUPDISTFILES|PATCHFILES).*/$1/;
 	return $adder{$var};
 }
 
