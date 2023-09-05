@@ -277,7 +277,6 @@
      SUBDIR += miniupnp
      SUBDIR += mirmon
      SUBDIR += mktorrent
-     SUBDIR += mldonkey
      SUBDIR += mlvpn
      SUBDIR += mon
      SUBDIR += monitoring-plugins
