@@ -3,7 +3,7 @@ fix time_t format specifier
 Index: lib/mu-store.cc
 --- lib/mu-store.cc.orig
 +++ lib/mu-store.cc
-@@ -603,7 +603,7 @@ Store::set_dirstamp(const std::string& path, time_t ts
+@@ -699,7 +699,7 @@ Store::set_dirstamp(const std::string& path, time_t ts
  {
  	std::array<char, 2 * sizeof(tstamp) + 1> data{};
  	const auto len = static_cast<size_t>(

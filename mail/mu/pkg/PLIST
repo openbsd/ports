@@ -1,8 +1,7 @@
 @bin bin/mu
-@info info/mu4e.info
+info/mu4e.info
 @man man/man1/mu-add.1
 @man man/man1/mu-cfind.1
-@man man/man1/mu-easy.1
 @man man/man1/mu-extract.1
 @man man/man1/mu-fields.1
 @man man/man1/mu-find.1
@@ -12,12 +11,12 @@
 @man man/man1/mu-init.1
 @man man/man1/mu-mkdir.1
 @man man/man1/mu-remove.1
-@man man/man1/mu-script.1
 @man man/man1/mu-server.1
 @man man/man1/mu-verify.1
 @man man/man1/mu-view.1
 @man man/man1/mu.1
 @man man/man5/mu-bookmarks.5
+@man man/man7/mu-easy.7
 @man man/man7/mu-query.7
 %%guile%%
 share/doc/mu/
@@ -33,7 +32,6 @@ share/emacs/site-lisp/mu4e/mu4e-bookmarks.elc
 share/emacs/site-lisp/mu4e/mu4e-compose.el
 share/emacs/site-lisp/mu4e/mu4e-compose.elc
 share/emacs/site-lisp/mu4e/mu4e-config.el
-share/emacs/site-lisp/mu4e/mu4e-config.elc
 share/emacs/site-lisp/mu4e/mu4e-contacts.el
 share/emacs/site-lisp/mu4e/mu4e-contacts.elc
 share/emacs/site-lisp/mu4e/mu4e-context.el
@@ -58,8 +56,16 @@ share/emacs/site-lisp/mu4e/mu4e-mark.el
 share/emacs/site-lisp/mu4e/mu4e-mark.elc
 share/emacs/site-lisp/mu4e/mu4e-message.el
 share/emacs/site-lisp/mu4e/mu4e-message.elc
+share/emacs/site-lisp/mu4e/mu4e-modeline.el
+share/emacs/site-lisp/mu4e/mu4e-modeline.elc
+share/emacs/site-lisp/mu4e/mu4e-notification.el
+share/emacs/site-lisp/mu4e/mu4e-notification.elc
+share/emacs/site-lisp/mu4e/mu4e-obsolete.el
+share/emacs/site-lisp/mu4e/mu4e-obsolete.elc
 share/emacs/site-lisp/mu4e/mu4e-org.el
 share/emacs/site-lisp/mu4e/mu4e-org.elc
+share/emacs/site-lisp/mu4e/mu4e-query-items.el
+share/emacs/site-lisp/mu4e/mu4e-query-items.elc
 share/emacs/site-lisp/mu4e/mu4e-search.el
 share/emacs/site-lisp/mu4e/mu4e-search.elc
 share/emacs/site-lisp/mu4e/mu4e-server.el
@@ -72,9 +78,9 @@ share/emacs/site-lisp/mu4e/mu4e-vars.el
 share/emacs/site-lisp/mu4e/mu4e-vars.elc
 share/emacs/site-lisp/mu4e/mu4e-view.el
 share/emacs/site-lisp/mu4e/mu4e-view.elc
+share/emacs/site-lisp/mu4e/mu4e-window.el
+share/emacs/site-lisp/mu4e/mu4e-window.elc
 share/emacs/site-lisp/mu4e/mu4e.el
 share/emacs/site-lisp/mu4e/mu4e.elc
-share/emacs/site-lisp/mu4e/org-mu4e.el
-share/emacs/site-lisp/mu4e/org-mu4e.elc
 @comment mu is compiled without gtk
 @comment man/man1/mug.1

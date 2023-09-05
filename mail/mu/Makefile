@@ -1,62 +1,58 @@
 COMMENT=	maildir indexer and searcher with emacs frontend
 
-V=		1.8.14
-GUILE_V=	3.0
+V =		1.10.7
+GUILE_V =	3.0
 
-DISTNAME=	mu-$V
+DISTNAME =	mu-$V
 
-FLAVORS=	guile
+FLAVORS =	guile
 FLAVOR ?=
 
-SHARED_LIBS=	guile-mu	0.0
+SHARED_LIBS =	guile-mu	0.1
 
-CATEGORIES=	mail
-HOMEPAGE=	http://www.djcbsoftware.nl/code/mu/
+CATEGORIES =	mail
+HOMEPAGE =	http://www.djcbsoftware.nl/code/mu/
 
-MAINTAINER=	Stefan Hagen <sh+ports@codevoid.de>
+MAINTAINER =	Stefan Hagen <sh+ports@codevoid.de>
 
 # GPLv3+
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} assuan c curses ffi gio-2.0 glib-2.0
-WANTLIB += gmime-3.0 gmodule-2.0 gobject-2.0 gpg-error gpgme gthread-2.0
-WANTLIB += iconv idn2 intl m pcre2-8 readline unistring xapian z
+WANTLIB += ${COMPILER_LIBCXX} c gio-2.0 glib-2.0 gmime-3.0 gobject-2.0
+WANTLIB += m xapian
 
-MASTER_SITES=	https://github.com/djcb/mu/releases/download/v${V}/
-EXTRACT_SUFX=	.tar.xz
+MASTER_SITES =	https://github.com/djcb/mu/releases/download/v${V}/
+EXTRACT_SUFX =	.tar.xz
 
-BUILD_DEPENDS=	emacs->=24:editors/emacs
+MODULES =	devel/meson
 
-LIB_DEPENDS=	databases/xapian-core \
+BUILD_DEPENDS =	emacs->=26.3:editors/emacs
+
+LIB_DEPENDS =	databases/xapian-core \
 		devel/glib2 \
-		mail/gmime30 \
-		security/gpgme
+		mail/gmime30
 
 # C++17
 COMPILER=	base-clang ports-gcc
 
-AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.15
-CONFIGURE_STYLE=	autoreconf
-
 .if ${FLAVOR} == "guile"
-WANTLIB +=		guile-${GUILE_V} gc ltdl gmp
-LIB_DEPENDS +=		devel/libtool,-ltdl \
-			lang/guile3
+WANTLIB +=	guile-${GUILE_V}
+LIB_DEPENDS +=	lang/guile3
 .else
-CONFIGURE_ARGS +=	--disable-guile
+CONFIGURE_ARGS +=	-Dguile=disabled
 .endif
 
-MAKE_FLAGS =		"CPPFLAGS=${CPPFLAGS} -I/usr/include"
-
-USE_GMAKE=		Yes
-
-SEPARATE_BUILD=		Yes
+# needs readline >= 8.0
+CONFIGURE_ARGS +=	-Dreadline=disabled
 
 pre-configure:
 	sed -e 's/exec guile/exec guile${GUILE_V}/' -i \
 		${WRKDIST}/guile/*/*.scm
-	sed -e 's/guile-snarf/guile-snarf${GUILE_V}/' -i \
-		${WRKDIST}/configure.ac
+
+post-install:
+	gunzip ${WRKINST}/${TRUEPREFIX}/share/info/*.info.gz
+	mv ${WRKINST}/${TRUEPREFIX}/share/info/*.info \
+		${WRKINST}/${TRUEPREFIX}/info/
+	rm -r ${WRKINST}/${TRUEPREFIX}/share/info
 
 .include <bsd.port.mk>

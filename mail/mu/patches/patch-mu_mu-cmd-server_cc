@@ -3,12 +3,12 @@
 Index: mu/mu-cmd-server.cc
 --- mu/mu-cmd-server.cc.orig
 +++ mu/mu-cmd-server.cc
-@@ -130,7 +130,7 @@ Mu::mu_cmd_server(const MuConfig* opts) try {
- 		  opts->debug ? "yes" : "no",
+@@ -125,7 +125,7 @@ Mu::mu_cmd_server(const Mu::Options& opts) try {
+ 		  opts.debug ? "yes" : "no",
  		  have_readline() ? "yes" : "no");
  
 -	tty = ::isatty(::fileno(stdout));
 +	tty = ::isatty(fileno(stdout));
- 	const auto eval = std::string{opts->commands ? "(help :full t)"
- 				      : opts->eval   ? opts->eval
- 						     : ""};
+ 	const auto eval = std::string{opts.server.commands ? "(help :full t)" : opts.server.eval};
+ 	if (!eval.empty()) {
+ 		server.invoke(eval);
