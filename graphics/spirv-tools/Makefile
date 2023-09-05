@@ -1,11 +1,13 @@
 COMMENT =	API and commands for processing SPIR-V
 
-V =		1.3.250.1
+V =		1.3.261.1
 DISTNAME =	spirv-tools-${V}
 GH_ACCOUNT =	KhronosGroup
 GH_PROJECT =	SPIRV-Tools
 GH_TAGNAME =	sdk-${V}
 EPOCH =		0
+
+SHARED_LIBS +=	SPIRV-Tools-shared	0.0	# 1.3.261.1
 
 CATEGORIES =	devel graphics
 

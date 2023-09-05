@@ -3,7 +3,7 @@ avoid collision with major/minor in types.h
 Index: layers/vulkan/generated/vk_extension_helper.h
 --- layers/vulkan/generated/vk_extension_helper.h.orig
 +++ layers/vulkan/generated/vk_extension_helper.h
-@@ -55,6 +55,12 @@ enum ExtEnabled : unsigned char {
+@@ -74,6 +74,12 @@ Times to NOT use it
  
  #define VVL_UNRECOGNIZED_API_VERSION 0xFFFFFFFF
  

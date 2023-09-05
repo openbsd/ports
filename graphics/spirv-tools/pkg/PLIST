@@ -48,7 +48,7 @@ lib/cmake/SPIRV-Tools/SPIRV-ToolsTarget.cmake
 @static-lib lib/libSPIRV-Tools-lint.a
 @static-lib lib/libSPIRV-Tools-opt.a
 @static-lib lib/libSPIRV-Tools-reduce.a
-@so lib/libSPIRV-Tools-shared.so
+@lib lib/libSPIRV-Tools-shared.so.${LIBSPIRV-Tools-shared_VERSION}
 @static-lib lib/libSPIRV-Tools.a
 lib/pkgconfig/SPIRV-Tools-shared.pc
 lib/pkgconfig/SPIRV-Tools.pc
