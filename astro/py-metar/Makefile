@@ -13,7 +13,7 @@ MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://www.schwarzvogel.de/pkgs/
+SITES =			https://www.schwarzvogel.de/pkgs/
 
 MODULES =		lang/python
 

@@ -2,7 +2,7 @@ COMMENT=	set the root window to the image of earth
 DISTNAME=	xearth-1.1
 REVISION =	5
 CATEGORIES=	astro x11
-MASTER_SITES=	${MASTER_SITE_XCONTRIB:=applications/}
+SITES=		${SITE_XCONTRIB:=applications/}
 
 PERMIT_PACKAGE=     Yes
 

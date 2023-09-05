@@ -10,7 +10,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		X11 Xext Xpm c m
 
-MASTER_SITES=		https://www.dockapps.net/download/
+SITES=			https://www.dockapps.net/download/
 
 RUN_DEPENDS=		devel/desktop-file-utils
 

@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		X11 Xext Xpm c m z jpeg tiff png gif wraster
 
-MASTER_SITES=		https://www.dockapps.net/download/
+SITES=			https://www.dockapps.net/download/
 
 LIB_DEPENDS=		graphics/jpeg \
 			graphics/tiff \

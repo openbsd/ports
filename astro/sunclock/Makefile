@@ -5,7 +5,7 @@ VERSION=		3.57
 DISTNAME=		sunclock-${VERSION}
 CATEGORIES=		astro
 
-MASTER_SITES=		https://raw.githubusercontent.com/nongiach/Sunclock/f4106eb0a81f7594726d6b2859efd8fc64cc1225/
+SITES=	https://raw.githubusercontent.com/nongiach/Sunclock/f4106eb0a81f7594726d6b2859efd8fc64cc1225/
 SUPDISTFILES=		big_images_270804.tar.bz2 \
 			medium_images_270804.tar.bz2 \
 			e43_color1_sh_16k.jpg \

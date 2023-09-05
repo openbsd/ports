@@ -20,7 +20,7 @@ WANTLIB += opencv_stitching opencv_video opencv_videoio pango-1.0
 WANTLIB += pangocairo-1.0 png raw swresample swscale tiff
 WANTLIB += rtprocess wcs kplot
 
-MASTER_SITES = https://free-astro.org/download/
+SITES = 	https://free-astro.org/download/
 EXTRACT_SUFX = .tar.bz2
 
 # follow opencv to be safe

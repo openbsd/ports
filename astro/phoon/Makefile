@@ -11,7 +11,7 @@ HOMEPAGE=		http://www.acme.com/software/phoon/
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c m
 
-MASTER_SITES=		${HOMEPAGE}
+SITES=			${HOMEPAGE}
 
 MAKE_FLAGS=		CC="${CC}" CFLAGS="${CFLAGS} -DOS_BSD" LDFLAGS=""
 

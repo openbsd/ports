@@ -9,7 +9,7 @@ HOMEPAGE=	http://jday.sourceforge.net/
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=jday/}
+SITES=		${SITE_SOURCEFORGE:=jday/}
 
 WANTLIB=	c
 

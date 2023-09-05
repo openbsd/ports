@@ -1,7 +1,7 @@
 COMMENT=	interactive astronomical ephemeris
 DISTNAME=	xephem-3.2.3
 CATEGORIES=	astro
-MASTER_SITES=	https://distfiles.sigtrap.nl/
+SITES=		https://distfiles.sigtrap.nl/
 
 HOMEPAGE=	http://www.clearskyinstitute.com/xephem/
 

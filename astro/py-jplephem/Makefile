@@ -13,10 +13,9 @@ CATEGORIES =	astro
 # MIT
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES0=	https://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/planets/a_old_versions/
-DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
-		de405.bsp:0 \
-		de421.bsp:0
+SITES.jpl=	https://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/planets/a_old_versions/
+DISTFILES =	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES.jpl = de405.bsp de421.bsp
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MODULES =	lang/python

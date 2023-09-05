@@ -15,7 +15,7 @@ WANTLIB += bz2 c cfitsio crypto curl git2 gsl gslcblas http_parser
 WANTLIB += jpeg lzma m nghttp2 pcre pthread ssh2 ssl
 WANTLIB += tiff wcs z zstd nghttp3 ngtcp2 ngtcp2_crypto_openssl
 
-MASTER_SITES =	${MASTER_SITE_GNU:=gnuastro/}
+SITES =		${SITE_GNU:=gnuastro/}
 
 # Claimed to be too old; uses it anyway.
 BUILD_DEPENDS =	print/ghostscript/gnu

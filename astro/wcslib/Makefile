@@ -11,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c cfitsio m
 
-MASTER_SITES =	http://www.atnf.csiro.au/people/mcalabre/WCS/
+SITES =		http://www.atnf.csiro.au/people/mcalabre/WCS/
 EXTRACT_SUFX =	.tar.bz2
 
 MODULES =		gcc4

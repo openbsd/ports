@@ -24,7 +24,7 @@ WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5Sql Qt5Svg Qt5WebSockets
 WANTLIB += Qt5Widgets Qt5Xml X11 c cfitsio gsl gslcblas m nova
 WANTLIB += qt5keychain raw wcs z
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/kstars/}
+SITES =			${SITE_KDE:=stable/kstars/}
 
 MODULES =		devel/kf5
 

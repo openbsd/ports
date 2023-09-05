@@ -9,7 +9,7 @@ MAINTAINER =		Brian Callahan <bcallah@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE = Yes
 
-MASTER_SITES =		${MASTER_SITE_GNU:=gcal/}
+SITES =			${SITE_GNU:=gcal/}
 
 BUILD_DEPENDS =		devel/gettext,-tools
 LIB_DEPENDS =		converters/libunistring \

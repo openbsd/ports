@@ -2,7 +2,7 @@ COMMENT=	Differential GPS over IP communication device
 
 DISTNAME=	dgpsip-1.35
 CATEGORIES=	astro
-MASTER_SITES=	http://www.wsrcc.com/wolfgang/ftp/
+SITES=		http://www.wsrcc.com/wolfgang/ftp/
 REVISION =	1
 
 HOMEPAGE=	http://www.wsrcc.com/wolfgang/gps/dgps-ip.html

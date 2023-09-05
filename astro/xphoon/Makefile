@@ -4,7 +4,7 @@ REVISION=	1
 CATEGORIES=	astro x11
 
 HOMEPAGE=	http://xphoon.sourceforge.net/
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xphoon/}
+SITES=		${SITE_SOURCEFORGE:=xphoon/}
 
 # BSD like
 PERMIT_PACKAGE=     Yes

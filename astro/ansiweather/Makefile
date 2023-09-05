@@ -10,7 +10,7 @@ HOMEPAGE =	https://github.com/fcambus/ansiweather
 # BSD
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://github.com/fcambus/ansiweather/releases/download/$V/
+SITES =		https://github.com/fcambus/ansiweather/releases/download/$V/
 
 RUN_DEPENDS =	textproc/jq
 
