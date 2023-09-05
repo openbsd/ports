@@ -1,0 +1,13 @@
+@conflict lha-*
+@bin bin/lha
+include/liblhasa-1.0/
+include/liblhasa-1.0/lha_decoder.h
+include/liblhasa-1.0/lha_file_header.h
+include/liblhasa-1.0/lha_input_stream.h
+include/liblhasa-1.0/lha_reader.h
+include/liblhasa-1.0/lhasa.h
+@static-lib lib/liblhasa.a
+lib/liblhasa.la
+@lib lib/liblhasa.so.${LIBlhasa_VERSION}
+lib/pkgconfig/liblhasa.pc
+@man man/man1/lha.1
