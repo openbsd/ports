@@ -65,8 +65,7 @@ post-build:
 		--nginx-tarball ${FULLDISTDIR}/nginx-${NGINX_VERSION}.tar.gz
 	cd ${PASS_DIR} && ${RUBY} bin/passenger-config build-native-support
 	cd ${PASS_DIR} && ${RAKE} nginx:as_dynamic_module 
-	rm -r ${PASS_DIR}/nginx-${NGINX_VERSION} \
-		${PASS_DIR}/bin/passenger-install-*-module \
+	rm -r ${PASS_DIR}/bin/passenger-install-*-module \
 		${GEM_BASE_BIN}/passenger-install-*-module*
 	mv ${PASS_DIR}/src/.passenger/support-binaries/${PASS_VERSION}/* \
 		${PASS_DIR}/buildout/support-binaries/
