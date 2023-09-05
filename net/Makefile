@@ -553,6 +553,7 @@
      SUBDIR += py-IOSXR,python3
      SUBDIR += py-IP,python3
      SUBDIR += py-aiodns,python3
+     SUBDIR += py-b2sdk,python3
      SUBDIR += py-boto3,python3
      SUBDIR += py-botocore,python3
      SUBDIR += py-cares,python3
