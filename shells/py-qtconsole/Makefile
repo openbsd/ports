@@ -3,7 +3,7 @@ COMMENT =		Jupyter Qt console
 MODPY_EGG_VERSION =	5.0.3
 DISTNAME =		qtconsole-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		shells
 
@@ -17,13 +17,17 @@ MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 
 RUN_DEPENDS =		devel/ipython${MODPY_FLAVOR}>=5.1.0 \
+			devel/py-ipython_genutils${MODPY_FLAVOR} \
 			devel/py-ipykernel${MODPY_FLAVOR} \
-			devel/py-jupyter_client${MODPY_FLAVOR} \
+			devel/py-jupyter_client${MODPY_FLAVOR}>=4.1 \
 			devel/py-jupyter_core${MODPY_FLAVOR} \
 			devel/py-pexpect${MODPY_FLAVOR} \
 			devel/py-traitlets${MODPY_FLAVOR} \
 			textproc/py-pygments${MODPY_FLAVOR} \
-			x11/py-qt5${MODPY_FLAVOR}
+			x11/py-qt5${MODPY_FLAVOR} \
+			x11/py-qtpy${MODPY_FLAVOR}
+
+TEST_DEPENDS =		devel/py-flaky${MODPY_FLAVOR}
 
 FLAVORS =		python3
 FLAVOR =		python3
