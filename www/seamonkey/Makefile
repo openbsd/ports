@@ -27,11 +27,12 @@ CATEGORIES=	www mail net news
 # MPL
 PERMIT_PACKAGE=	Yes
 
-MODULES =	www/mozilla lang/python
+MODULES =	www/mozilla lang/python lang/clang
 MODPY_RUNDEP =	No
 
 COMPILER =		base-clang ports-clang
 MODCLANG_ARCHS =	amd64 i386
+MODCLANG_COMPILER_LINKS =	No
 
 CONFIGURE_ARGS +=	--disable-gconf
 NO_TEST=	Yes
