@@ -35,6 +35,7 @@ lib/python${MODPY_VERSION}/site-packages/tifffile/_imagecodecs.py
 lib/python${MODPY_VERSION}/site-packages/tifffile/geodb.py
 lib/python${MODPY_VERSION}/site-packages/tifffile/lsm2bin.py
 lib/python${MODPY_VERSION}/site-packages/tifffile/numcodecs.py
+lib/python${MODPY_VERSION}/site-packages/tifffile/py.typed
 lib/python${MODPY_VERSION}/site-packages/tifffile/tiff2fsspec.py
 lib/python${MODPY_VERSION}/site-packages/tifffile/tiffcomment.py
 lib/python${MODPY_VERSION}/site-packages/tifffile/tifffile.py
