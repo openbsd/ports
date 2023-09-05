@@ -44,7 +44,7 @@ Updated to reflect that all of this in now a work in progress set of ports
    * libinput is the library that permits reading evdev events from the Linux
      kernel and  handling many of the higher level interpretation of the events
      (getting the keyboard mapping, mouse gestures or multi-touch).. It also
-     handles device configuration. mpiW did a simple libinput port back in 2015,
+     handles device configuration. mpi@ did a simple libinput port back in 2015,
      and rsadowski improved it a bit in 2022 and matthieu@ also implemented some
      missing bits. More work is needed, especially to support multiple devices
      and fancy pointer accelerat. Keyboard mapping also needs some help.
@@ -64,10 +64,12 @@ and some sort of session management.
 
 ### wayland/libinput-openbsd
 
-[This](https://github.com/mherrb/libinput.git) is the version from mpi@,
-patched@ by radowski, plus extra udev code from me.  I've now added proper
-events translation (for mouse buttons and keyboard) so that the input works in
-a usable way in Wayland.
+This is the port providing
+[libopeninput](https://github.com/sizeofvoid/libopeninput), the
+libinput port to OpenBSD maintained by rsadowski@, based on the
+original work of mpi@ and additions for proper events translation (for
+mouse buttons and keyboard) so that the input works in a usable way in
+Wayland.
 
 ### sysutils/libevdev-openbsd
 
@@ -122,6 +124,11 @@ for sway and other wlroots based compositors, similar to dmenu for X11.
 
 [swayimg](https://github.com/artemsen/swayimg) is an image viewer for Wayland
 that builds on OpenBSD
+
+### wayland/swaybg
+
+[swaybg](https://github.com/swaywm/swaybg/) is a small utility to set the
+background for wlroots based compositors, including sway.
 
 ### Default cursor theme
 
