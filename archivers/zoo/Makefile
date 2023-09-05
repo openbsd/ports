@@ -4,7 +4,7 @@ DISTNAME=	zoo-2.10pl1
 PKGNAME=	zoo-2.10.1
 REVISION =	2
 CATEGORIES=	archivers
-MASTER_SITES=	https://spacehopper.org/mirrors/
+SITES=		https://spacehopper.org/mirrors/
 
 # Conditional
 PERMIT_PACKAGE=	Yes

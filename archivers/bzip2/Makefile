@@ -15,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 # uses pledge()
 WANTLIB += c
 
-MASTER_SITES=	https://sourceware.org/pub/bzip2/
+SITES=		https://sourceware.org/pub/bzip2/
 
 BZ2_CFLAGS=	-Wall -Winline -fomit-frame-pointer
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} ${BZ2_CFLAGS}" \

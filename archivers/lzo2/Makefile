@@ -6,7 +6,7 @@ PKGNAME=	${DISTNAME:S/lzo/lzo2/}
 
 CATEGORIES=	archivers devel
 
-MASTER_SITES=	${HOMEPAGE}download/
+SITES=		${HOMEPAGE}download/
 
 SHARED_LIBS +=	lzo2	1.0 # .2.0
 

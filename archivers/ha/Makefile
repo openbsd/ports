@@ -4,7 +4,7 @@ DISTNAME=	ha0999
 PKGNAME=	ha-0.999b
 REVISION =	2
 CATEGORIES=	archivers
-MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/arcers/
+SITES=		ftp://ftp.kiarchive.ru/pub/unix/arcers/
 EXTRACT_SUFX=	.tgz
 
 # GPL

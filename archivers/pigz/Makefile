@@ -15,7 +15,7 @@ PERMIT_PACKAGE =		Yes
 # uses pledge()
 WANTLIB =	c m pthread z
 
-MASTER_SITES =	https://zlib.net/pigz/
+SITES =		https://zlib.net/pigz/
 
 MAKE_FLAGS =	CC="${CC}" \
 		CFLAGS="${CFLAGS} -Wall -Wextra"

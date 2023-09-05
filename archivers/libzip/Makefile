@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += bz2 c crypto lzma z zstd
 
-MASTER_SITES=		https://libzip.org/download/
+SITES=			https://libzip.org/download/
 
 MODULES =		devel/cmake
 

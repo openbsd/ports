@@ -7,7 +7,7 @@ CATEGORIES=	archivers
 
 HOMEPAGE=	https://www.gnu.org/software/sharutils/
 
-MASTER_SITES=	${MASTER_SITE_GNU:=sharutils/}
+SITES=		${SITE_GNU:=sharutils/}
 
 # GPLv3
 PERMIT_PACKAGE=	Yes

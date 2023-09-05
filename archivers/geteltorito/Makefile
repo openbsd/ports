@@ -8,7 +8,7 @@ HOMEPAGE =	https://userpages.uni-koblenz.de/~krienke/ftp/noarch/geteltorito/
 # GPL v2 only
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${HOMEPAGE}
+SITES =			${HOMEPAGE}
 
 WRKSRC =		${WRKDIR}/geteltorito
 NO_BUILD =		Yes

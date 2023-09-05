@@ -10,7 +10,7 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://www.libarchive.org/downloads/
+SITES=		https://www.libarchive.org/downloads/
 EXTRACT_SUFX=	.tar.xz
 
 WANTLIB=	b2 bz2 c crypto expat iconv lz4 lzma pthread z zstd

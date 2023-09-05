@@ -7,7 +7,7 @@ DISTNAME =	unzip${VERSION:S/.//}
 PKGNAME =	unzip-${VERSION}
 REVISION =	16
 CATEGORIES =	archivers
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=infozip/} \
+SITES =		${SITE_SOURCEFORGE:=infozip/} \
 		ftp://ftp.info-zip.org/pub/infozip/src/
 
 HOMEPAGE =	http://infozip.sourceforge.net/UnZip.html

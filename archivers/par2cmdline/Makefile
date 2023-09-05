@@ -18,7 +18,7 @@ WANTLIB =	c m ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =	${HOMEPAGE}releases/download/v$V/
+SITES =		${HOMEPAGE}releases/download/v$V/
 
 BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}

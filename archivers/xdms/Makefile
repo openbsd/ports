@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c
 
-MASTER_SITES =		http://zakalwe.fi/~shd/foss/xdms/
+SITES =			http://zakalwe.fi/~shd/foss/xdms/
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	simple

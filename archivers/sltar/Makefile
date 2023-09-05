@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 
-MASTER_SITES=		http://s01.de/dl/sltar/
+SITES=			http://s01.de/dl/sltar/
 
 MAKE_FLAGS=		CC="${CC}"
 MAKE_ENV=		LDFLAGS="${LDFLAGS}"

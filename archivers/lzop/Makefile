@@ -7,7 +7,7 @@ HOMEPAGE=	https://www.lzop.org/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${HOMEPAGE}download/
+SITES=		${HOMEPAGE}download/
 
 LIB_DEPENDS=	archivers/lzo2
 WANTLIB=	c lzo2

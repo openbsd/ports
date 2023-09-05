@@ -21,7 +21,7 @@ WANTLIB-rar=	${WANTLIB}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=p7zip/}
+SITES=		${SITE_SOURCEFORGE:=p7zip/}
 EXTRACT_SUFX=	.tar.bz2
 
 MULTI_PACKAGES=	-main -rar

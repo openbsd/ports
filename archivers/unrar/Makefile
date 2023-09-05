@@ -23,7 +23,7 @@ WANTLIB=	c crypto m pthread ${COMPILER_LIBCXX}
 
 COMPILER =	base-clang ports-gcc base-gcc
 
-MASTER_SITES=	${HOMEPAGE}rar/
+SITES=		${HOMEPAGE}rar/
 
 WRKDIST=	${WRKDIR}/unrar
 

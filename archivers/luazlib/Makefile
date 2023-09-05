@@ -2,7 +2,7 @@ COMMENT=	lua binding of zlib
 DISTNAME=	luazlib-20100731
 REVISION=	2
 CATEGORIES=	archivers
-MASTER_SITES=	https://distfiles.sigtrap.nl/
+SITES=		https://distfiles.sigtrap.nl/
 
 HOMEPAGE=	https://github.com/brimworks/lua-zlib/
 

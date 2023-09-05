@@ -5,7 +5,7 @@ DISTNAME =		lzlib-1.13
 SHARED_LIBS +=		lz	1.4 # 1.13
 
 HOMEPAGE =		http://lzip.nongnu.org/lzlib.html
-MASTER_SITES =		${MASTER_SITE_SAVANNAH:=lzip/lzlib/}
+SITES =			${SITE_SAVANNAH:=lzip/lzlib/}
 
 # 2-clause BSD
 PERMIT_PACKAGE =	Yes

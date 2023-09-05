@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	m ${COMPILER_LIBCXX}
 
-MASTER_SITES =	https://github.com/LASzip/LASzip/releases/download/${V}/
+SITES =		https://github.com/LASzip/LASzip/releases/download/${V}/
 
 #c++11
 COMPILER =	base-clang ports-gcc

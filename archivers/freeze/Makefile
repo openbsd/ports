@@ -3,7 +3,7 @@ COMMENT=	FREEZE / MELT compression program - often used in QNX
 DISTNAME=	freeze-2.5
 CATEGORIES=	archivers
 
-MASTER_SITES=	http://www.arcane-labs.net/download/OpenBSD/
+SITES=		http://www.arcane-labs.net/download/OpenBSD/
 
 # None
 PERMIT_PACKAGE=		No

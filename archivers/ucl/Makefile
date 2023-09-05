@@ -10,7 +10,7 @@ HOMEPAGE=	https://www.oberhumer.com/opensource/ucl/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://www.oberhumer.com/opensource/ucl/download/
+SITES=		https://www.oberhumer.com/opensource/ucl/download/
 
 CONFIGURE_STYLE=	gnu
 SEPARATE_BUILD=		Yes

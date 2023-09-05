@@ -2,7 +2,7 @@ COMMENT=	command line implementation of the PAR v1.0 specification
 DISTNAME=	par-v1.1
 PKGNAME=	par1cmdline-1.1
 CATEGORIES=	archivers
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=parchive/}
+SITES=		${SITE_SOURCEFORGE:=parchive/}
 
 HOMEPAGE=	http://parchive.sourceforge.net/
 

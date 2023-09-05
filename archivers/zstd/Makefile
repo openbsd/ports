@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c lz4 lzma pthread z
 
-MASTER_SITES =		https://github.com/facebook/zstd/releases/download/v${V}/
+SITES =			https://github.com/facebook/zstd/releases/download/v${V}/
 
 LIB_DEPENDS =		archivers/lz4 \
 			archivers/xz

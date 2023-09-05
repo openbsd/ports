@@ -10,8 +10,8 @@ PERMIT_DISTFILES=	No
 REVISION =	4
 WANTLIB=		c
 
-MASTER_SITES=	https://spacehopper.org/mirrors/ \
-		ftp://ftp.rz.hu-berlin.de/pub/mirrors/www.ibiblio.org/distfiles/
+SITES=	https://spacehopper.org/mirrors/ \
+	ftp://ftp.rz.hu-berlin.de/pub/mirrors/www.ibiblio.org/distfiles/
 # XXX hu-berlin fails with EPSV
 EXTRACT_SUFX=		.shar.Z
 

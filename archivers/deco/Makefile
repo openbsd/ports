@@ -12,8 +12,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c
 
-MASTER_SITES=	https://github.com/peha/
-MASTER_SITES0=	https://github.com/peha/
+SITES=		https://github.com/peha/
 
 DISTFILES=	deco-{deco/archive/}${V}${EXTRACT_SUFX} \
 		deco-archive-{deco-archive/archive/}${ARCHIVE_V}${EXTRACT_SUFX}

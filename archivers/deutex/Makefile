@@ -10,7 +10,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c png z
 
-MASTER_SITES =	https://github.com/Doom-Utils/deutex/releases/download/v${V}/
+SITES =		https://github.com/Doom-Utils/deutex/releases/download/v${V}/
 EXTRACT_SUFX =	.tar.zst
 
 BUILD_DEPENDS =		textproc/asciidoc

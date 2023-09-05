@@ -10,7 +10,7 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_GNU:=cpio/}
+SITES=		${SITE_GNU:=cpio/}
 EXTRACT_SUFX=	.tar.bz2
 
 LIB_DEPENDS=	devel/gettext,-runtime

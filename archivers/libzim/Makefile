@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} icui18n icuuc lzma xapian zstd
 
-MASTER_SITES =		https://download.openzim.org/release/libzim/
+SITES =			https://download.openzim.org/release/libzim/
 
 EXTRACT_SUFX =		.tar.xz
 

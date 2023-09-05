@@ -4,8 +4,8 @@
 
 CATEGORIES =		archivers
 
-MASTER_SITES ?=		${MASTER_SITE_SAVANNAH:=lzip/} \
-			${MASTER_SITE_SAVANNAH:=lzip/old/}
+SITES ?=		${SITE_SAVANNAH:=lzip/} \
+			${SITE_SAVANNAH:=lzip/old/}
 # Upstream also releases the tarballs compressed with gz but to use the
 # lz version of the tarballs for the lzip project give us a quick and simple
 # test to detect problems with the lzip format on every OpenBSD platform.

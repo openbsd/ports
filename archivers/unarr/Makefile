@@ -19,7 +19,7 @@ COMPILER_LANGS =	c
 
 WANTLIB += bz2 lzma z
 
-MASTER_SITES =		${HOMEPAGE:=releases/download/v${V}/}
+SITES =			${HOMEPAGE:=releases/download/v${V}/}
 
 EXTRACT_SUFX =		.tar.xz
 

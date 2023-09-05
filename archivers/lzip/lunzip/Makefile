@@ -3,7 +3,7 @@ COMMENT =		decompressor written in C for lzip files
 DISTNAME =		lunzip-1.13
 
 HOMEPAGE =		http://lzip.nongnu.org/lunzip.html
-MASTER_SITES =		${MASTER_SITE_SAVANNAH:=lzip/lunzip/}
+SITES =			${SITE_SAVANNAH:=lzip/lunzip/}
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

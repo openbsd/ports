@@ -12,7 +12,7 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=lzmautils/}
+SITES=		${SITE_SOURCEFORGE:=lzmautils/}
 
 # uses pledge()
 WANTLIB=	c pthread

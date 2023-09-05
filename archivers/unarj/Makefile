@@ -3,7 +3,7 @@ COMMENT=	extract files from ARJ archives
 DISTNAME=	unarj-2.43
 REVISION=	3
 CATEGORIES=	archivers
-MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/arcers/
+SITES=		ftp://ftp.kiarchive.ru/pub/unix/arcers/
 EXTRACT_SUFX=	.tgz
 
 # Restrictive

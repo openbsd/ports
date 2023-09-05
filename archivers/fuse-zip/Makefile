@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		${COMPILER_LIBCXX} c fuse m zip
 
-MASTER_SITES =		https://bitbucket.org/agalanin/fuse-zip/downloads/
+SITES =			https://bitbucket.org/agalanin/fuse-zip/downloads/
 
 COMPILER =		base-clang ports-gcc
 

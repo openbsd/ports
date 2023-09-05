@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB +=	c
 
-MASTER_SITES=	https://www.cabextract.org.uk/libmspack/
+SITES=		https://www.cabextract.org.uk/libmspack/
 
 CONFIGURE_STYLE=gnu
 

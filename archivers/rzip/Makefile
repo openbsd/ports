@@ -10,7 +10,7 @@ MAINTAINER=	Lawrence Teo <lteo@openbsd.org>
 # GPL
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${HOMEPAGE}ftp/rzip/ \
+SITES=		${HOMEPAGE}ftp/rzip/ \
 		${HOMEPAGE}ftp/rzip/old-versions/
 
 LIB_DEPENDS =	archivers/bzip2

@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=	boost_filesystem-mt boost_iostreams-mt boost_program_options-mt
 WANTLIB+=	c iconv lzma m ${COMPILER_LIBCXX}
 
-MASTER_SITES =	${HOMEPAGE}files/
+SITES =		${HOMEPAGE}files/
 
 # C++17
 COMPILER=	base-clang ports-gcc

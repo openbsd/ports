@@ -10,7 +10,7 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_GNU:=tar/}
+SITES=		${SITE_GNU:=tar/}
 EXTRACT_SUFX=	.tar.xz
 
 # fake WANTLIB to ensure updates occur for major changes in base even for static
