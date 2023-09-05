@@ -4,7 +4,7 @@ COMMENT =	emulates numerous game consoles
 VERSION =	1.31.0-UNSTABLE
 DISTNAME =	mednafen-${VERSION}
 PKGNAME =	mednafen-${VERSION:C/-UNSTABLE//}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	emulators games
 HOMEPAGE =	https://mednafen.github.io

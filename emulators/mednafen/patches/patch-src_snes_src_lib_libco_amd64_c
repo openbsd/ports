@@ -1,0 +1,53 @@
+Index: src/snes/src/lib/libco/amd64.c
+--- src/snes/src/lib/libco/amd64.c.orig
++++ src/snes/src/lib/libco/amd64.c
+@@ -2,6 +2,9 @@
+ #include "libco.h"
+ #include "settings.h"
+ 
++#include <err.h>
++#include <stdint.h>
++
+ #ifdef __cplusplus
+ extern "C" {
+ #endif
+@@ -76,7 +79,7 @@ static void (*co_swap)(cothread_t, cothread_t) = 0;
+   }
+ #else
+   /* ABI: SystemV */
+-  static const unsigned char co_swap_function[4096] = {
++  static const unsigned char co_swap_function_[4096] = {
+     0x48, 0x89, 0x26,        /* mov [rsi],rsp    */
+     0x48, 0x8b, 0x27,        /* mov rsp,[rdi]    */
+     0x58,                    /* pop rax          */
+@@ -94,6 +97,7 @@ static void (*co_swap)(cothread_t, cothread_t) = 0;
+     0x4c, 0x8b, 0x7f, 0x30,  /* mov r15,[rdi+48] */
+     0xff, 0xe0,              /* jmp rax          */
+   };
++  void *co_swap_function;
+ 
+   #ifdef LIBCO_MPROTECT
+     #include <unistd.h>
+@@ -101,11 +105,18 @@ static void (*co_swap)(cothread_t, cothread_t) = 0;
+   #endif
+ 
+   static void co_init() {
++    int protect;
+     #ifdef LIBCO_MPROTECT
+-    unsigned long long addr = (unsigned long long)co_swap_function;
+-    unsigned long long base = addr - (addr % sysconf(_SC_PAGESIZE));
+-    unsigned long long size = (addr - base) + sizeof co_swap_function;
+-    mprotect((void*)base, size, PROT_READ | PROT_EXEC);
++    long pagesize = sysconf(_SC_PAGESIZE);
++    if (pagesize == -1)
++      err(1, "sysconf failed");
++    co_swap_function = mmap(NULL, pagesize, PROT_READ|PROT_WRITE, MAP_ANON, -1, 0);
++    if (co_swap_function == MAP_FAILED)
++      err(1, "mmap failed");
++    memcpy(co_swap_function, co_swap_function_, pagesize);
++    protect = mprotect(co_swap_function, pagesize, PROT_READ|PROT_EXEC);
++    if (protect == -1)
++      err(1, "mprotect failed");
+     #endif
+   }
+ #endif
