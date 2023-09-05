@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1610 2023/09/05 13:50:33 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1611 2023/09/05 14:24:15 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -3366,6 +3366,7 @@ _internal-clean:
 .endif
 # these commands are split up because go.port.mk distfiles are redonculous
 .if ${_clean:Mdist}
+.  if ${FETCH_MANUALLY:L} == "no"
 	@${ECHO_MSG} "===>  Dist cleaning for ${FULLPKGNAME${SUBPACKAGE}}"
 	@if cd ${DISTDIR} 2>/dev/null; then \
 		${_PFETCH} rm -f ${MAKESUMFILES}; \
@@ -3376,6 +3377,9 @@ _internal-clean:
 	@if cd ${DISTDIR} 2>/dev/null; then \
 		${_PFETCH} rmdir -p ${MAKESUMFILES:H} 2>/dev/null || true; \
 	fi
+.  else
+	@${ECHO_MSG} "===>   FETCH_MANUALLY detected, override: ${MAKE} clean=dist FETCH_MANUALLY=No"
+.  endif
 .endif
 .if ${_clean:Minstall}
 .  if ${_clean:Msub}
