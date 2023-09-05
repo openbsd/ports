@@ -37,7 +37,7 @@ DISTNAME =	???
 
 #
 # github:
-# /releases/ -> preferred. ignore GH_*, just use MASTER_SITES and DISTNAME.
+# /releases/ -> preferred. ignore GH_*, just use SITES and DISTNAME.
 # /archive/ ->  GH_ACCOUNT and GH_PROJECT, plus either GH_TAGNAME or GH_COMMIT.
 #
 # set DISTNAME if using GH_COMMIT, or if using GH_TAGNAME and the tag is not in
@@ -90,16 +90,16 @@ CATEGORIES =	???
 
 # where the source files and patches can be fetched
 #
-MASTER_SITES =		???
-#MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=subdir/}
-#MASTER_SITES =		${MASTER_SITE_foo:=subdir/}
+SITES =		???
+#SITES =		${SITE_SOURCEFORGE:=subdir/}
+#SITES =		${SITE_foo:=subdir/}
 
 # if more master sites are needed...
-#MASTER_SITES.sufx =
+#SITES.sufx =
 # ...
 #DISTFILES =		???
 
-# for grabbing DISTFILES from MASTER_SITES.sufx
+# for grabbing DISTFILES from SITES.sufx
 #DISTFILES.sufx = ...
 #EXTRACT_ONLY =		???
 
@@ -113,7 +113,7 @@ MASTER_SITES =		???
 # Optional subdirectory of DISTDIR where distfiles and patches will be placed
 #DIST_SUBDIR =		???
 
-# use PATCHFILES.sufx for going to MASTER_SITES.sufx
+# use PATCHFILES.sufx for going to SITES.sufx
 #PATCHFILES =		???
 #PATCH_DIST_STRIP =	-p0
 
