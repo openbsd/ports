@@ -453,7 +453,6 @@
      SUBDIR += ocaml-menhir
      SUBDIR += ocaml-ocamlbuild
      SUBDIR += ocaml-parmap
-     SUBDIR += ocaml-pcre
      SUBDIR += ocaml-yojson
      SUBDIR += ode
      SUBDIR += ois
