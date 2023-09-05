@@ -1,5 +1,6 @@
 COMMENT =		style for Qt/KDE Applications
 DISTNAME =		oxygen-${VERSION}
+REVISION =		0
 
 SHARED_LIBS =		oxygenstyle5		1.0
 SHARED_LIBS +=		oxygenstyleconfig5	0.0
@@ -26,7 +27,6 @@ LIB_DEPENDS =		devel/kf5/frameworkintegration \
 			devel/kf5/kguiaddons \
 			devel/kf5/ki18n \
 			devel/kf5/kservice \
-			devel/kf5/kwayland \
 			devel/kf5/kwindowsystem \
 			x11/kde-plasma/kdecoration \
 			x11/qt5/qtdeclarative \
