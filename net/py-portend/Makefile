@@ -1,9 +1,8 @@
 COMMENT =		monitor TCP ports for bound or unbound states
 
-MODPY_EGG_VERSION =	3.1.0
+MODPY_EGG_VERSION =	3.2.0
 DISTNAME =		portend-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
 
 CATEGORIES =		net
 
