@@ -1,12 +1,14 @@
 COMMENT =		client lib to access B2 cloud storage
 
+# optional dep for duplicity; there's a problem with newer versions so holding at
+# 1.18.0 for now. https://gitlab.com/duplicity/duplicity/-/issues/701
 MODPY_EGG_VERSION =	1.18.0
 DISTNAME =		b2sdk-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel net
 
 # MIT
-PERMIT_PACKAGE = 	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
