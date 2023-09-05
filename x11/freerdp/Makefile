@@ -1,5 +1,5 @@
 COMMENT =		client for Microsoft RDP (remote desktop protocol)
-DISTNAME =		freerdp-2.11.0
+DISTNAME =		freerdp-2.11.1
 DPB_PROPERTIES =	parallel
 CATEGORIES =		x11 net
 
@@ -12,10 +12,10 @@ HOMEPAGE =		https://www.freerdp.com/
 MASTER_SITES =		https://pub.freerdp.com/releases/
 
 # add sndio patchset, not yet in stable branch
-#MASTER_SITES0 =		https://github.com/FreeRDP/FreeRDP/commit/
-#PATCHFILES =		freerdp-sndio-upd2{b3a2042103a192d9e4482691ce9e7d73f9475b09}.patch:0
-MASTER_SITES0 =		https://spacehopper.org/mirrors/
-PATCHFILES =		freerdp-sndio-upd2.patch:0
+# mirrored from https://github.com/FreeRDP/FreeRDP/commit/b3a2042103a192d9e4482691ce9e7d73f9475b09.patch
+# (github patch files aren't stable)
+MASTER_SITES.sndio =	https://spacehopper.org/mirrors/
+PATCHFILES.sndio =	freerdp-sndio-upd2.patch
 PATCH_DIST_STRIP =	-p1
 
 # Apache 2.0
