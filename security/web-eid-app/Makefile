@@ -8,6 +8,7 @@ GH_TAGNAME =		v2.4.0
 DISTFILES =		${GH_DISTFILE}
 PKGNAME-main =		${PKGNAME:S/app/native/}
 PKGNAME-chrome =	${PKGNAME:S/app/chrome/}
+REVISION-main =		0
 
 MULTI_PACKAGES =	-main -chrome
 
