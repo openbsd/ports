@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c
 
-MASTER_SITES =	https://soulsphere.org/projects/lhasa/
+SITES=		https://soulsphere.org/projects/lhasa/
 
 CONFIGURE_STYLE = gnu
 
