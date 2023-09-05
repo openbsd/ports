@@ -13,10 +13,9 @@ COMPILER_LANGS=	c
 # alignments.  As a result, this project can not be built.
 
 FW_DRIVER=	vmm
-FW_VER=		1.14.0
+FW_VER=		1.16.2
 SB_VER=		20180715
 DISTNAME=	seabios-${FW_VER}
-REVISION=	4
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 	sgabios-${SB_VER}{72f39d48bedf044e202fd51fecf3e2218fc2ae66}.tar.gz:0
 

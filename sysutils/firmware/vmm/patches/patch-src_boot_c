@@ -1,7 +1,7 @@
 Index: src/boot.c
 --- src/boot.c.orig
 +++ src/boot.c
-@@ -909,7 +909,7 @@ boot_cdrom(struct drive_s *drive)
+@@ -919,7 +919,7 @@ boot_cdrom(struct drive_s *drive)
  {
      if (! CONFIG_CDROM_BOOT)
          return;
@@ -10,7 +10,7 @@ Index: src/boot.c
  
      int status = cdrom_boot(drive);
      if (status) {
-@@ -935,7 +935,7 @@ boot_cbfs(struct cbfs_file *file)
+@@ -945,7 +945,7 @@ boot_cbfs(struct cbfs_file *file)
  {
      if (!CONFIG_COREBOOT_FLASH)
          return;
@@ -19,7 +19,7 @@ Index: src/boot.c
      cbfs_run_payload(file);
  }
  
-@@ -943,7 +943,7 @@ boot_cbfs(struct cbfs_file *file)
+@@ -953,7 +953,7 @@ boot_cbfs(struct cbfs_file *file)
  static void
  boot_rom(u32 vector)
  {
@@ -28,7 +28,7 @@ Index: src/boot.c
      struct segoff_s so;
      so.segoff = vector;
      call_boot_entry(so, 0);
-@@ -983,11 +983,11 @@ do_boot(int seq_nr)
+@@ -993,11 +993,11 @@ do_boot(int seq_nr)
      struct bev_s *ie = &BEV[seq_nr];
      switch (ie->type) {
      case IPL_TYPE_FLOPPY:
