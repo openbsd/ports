@@ -1,6 +1,6 @@
 COMMENT =	open decentralized synchronization utility
 
-V =		1.23.7
+V =		1.24.0
 DISTNAME =	syncthing-${V}
 DISTFILES =	syncthing-source-v${V}${EXTRACT_SUFX}
 
@@ -26,13 +26,13 @@ MODGO_TYPE =		bin
 # so we package only these binaries.
 ST_CMDS =	syncthing stdiscosrv strelaysrv
 
-# XXX: `-tags noquic` should be removed once quic works on go-1.21. When
-# removing, check if some tests still fail to build -- I think they are caused
-# by disabling quic.
+# If at any point quic is busted for our in-tree go version, then you can
+# temporarily add `-tags noquic` to at least get syncthing building (albeit
+# without quic support obviously). When you do that, some more tests will fail.
 do-build:
 .for cmd in ${ST_CMDS}
 	cd ${WRKSRC} && ${MODGO_CMD} run build.go -version v${V} \
-		-no-upgrade -tags noquic install ${cmd}
+		-no-upgrade install ${cmd}
 .endfor
 
 # Connections test hangs and times out. This doesn't appear to interfere with
