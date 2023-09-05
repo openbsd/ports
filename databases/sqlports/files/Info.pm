@@ -1,4 +1,4 @@
-# $OpenBSD: Info.pm,v 1.44 2023/09/04 15:34:18 espie Exp $
+# $OpenBSD: Info.pm,v 1.45 2023/09/05 13:51:33 espie Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -56,7 +56,7 @@ our $vars = {
     LIB_DEPENDS => 'LibDependsVar',
     MAINTAINER=> 'EmailVar',
     MAKEFILE_LIST => 'MakefilesListVar',
-    MASTER_SITES => 'MasterSitesVar',
+    SITES => 'SitesVar',
     MODULES => 'ModulesVar',
     MULTI_PACKAGES => 'MultiVar',
     NO_BUILD => 'YesNoVar',
@@ -136,7 +136,7 @@ sub create($self, $var, $value, $arch, $path)
 		$k .= "-$arch";
 	}
 	my $type = $var;
-	$type =~ s/^(MASTER_SITES|DISTFILES|SUPDISTFILES|PATCHFILES).*/$1/;
+	$type =~ s/^(SITES|DISTFILES|SUPDISTFILES|PATCHFILES).*/$1/;
 	if ($type =~ m/^MOD/ && $type ne 'MODULES') {
 		$type = "MODULESVAR";
 		if (defined $arch) {

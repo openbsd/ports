@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.70 2023/09/04 15:34:18 espie Exp $
+# $OpenBSD: Var.pm,v 1.71 2023/09/05 13:51:33 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -589,16 +589,16 @@ sub create_tables($self, $inserter)
 	$inserter->make_ordered_view($self);
 }
 
-package MasterSitesVar;
+package SitesVar;
 our @ISA = qw(OptKeyVar);
-sub table($) { 'MasterSites' }
+sub table($) { 'Sites' }
 sub want_in_ports_view($) { 1 }
 
 sub compute_join($self, $name)
 {
 	my $j = Sql::Join->new($self->table_name($self->table))->left
 	    ->add(Sql::Equal->new("FullPkgPath", "FullPkgPath"));
-	# for now we only record MASTER_SITES in ports
+	# for now we only record SITES in ports
 	$j->add(Sql::IsNull->new("N"));
 	return $j;
 }
@@ -614,7 +614,7 @@ sub add($self, $ins)
 	$self->AnyVar::add($ins);
 
 	my $n;
-	if ($self->var =~ m/^MASTER_SITES(.+)$/) {
+	if ($self->var =~ m/^SITES(.+)$/) {
 		$n = $1;
 	}
 	$self->normal_insert($ins, $n, $self->value);
