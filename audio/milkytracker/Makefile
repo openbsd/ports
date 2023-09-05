@@ -5,15 +5,18 @@ GH_PROJECT =	MilkyTracker
 GH_TAGNAME =	v1.04.00
 
 PKGNAME =	${DISTNAME:L}
+REVISION =	0
 
 CATEGORIES =	audio
 
 HOMEPAGE =	https://milkytracker.org/
 
+MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
+
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=	SDL2 c m ${COMPILER_LIBCXX} z zzip
+WANTLIB +=	${COMPILER_LIBCXX} SDL2 c lhasa m z zzip
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -26,7 +29,8 @@ RUN_DEPENDS =	audio/jack \
 		devel/desktop-file-utils \
 		x11/gtk+4,-guic
 
-LIB_DEPENDS =	archivers/zziplib \
+LIB_DEPENDS =	archivers/lhasa \
+		archivers/zziplib \
 		devel/sdl2
 
 CONFIGURE_ARGS = -DCMAKE_INSTALL_DOCDIR=${PREFIX}/share/doc/milkytracker
