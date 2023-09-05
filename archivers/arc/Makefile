@@ -9,7 +9,7 @@ HOMEPAGE=	http://arc.sourceforge.net/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=arc/}
+SITES=	${SITE_SOURCEFORGE:=arc/}
 
 WANTLIB=	c
 
