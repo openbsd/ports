@@ -1,7 +1,6 @@
      SUBDIR =
      #SUBDIR += bluedevil
      SUBDIR += breeze
-     SUBDIR += breeze-grub
      SUBDIR += breeze-gtk
      #SUBDIR += discover
      #SUBDIR += drkonqi
