@@ -1,6 +1,6 @@
 COMMENT=		maths, science and engineering modules for Python
 
-MODPY_EGG_VERSION=	1.6.3
+MODPY_EGG_VERSION=	1.7.3
 DISTNAME=		scipy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
@@ -29,7 +29,9 @@ MODPY_DISTUTILS_BUILDARGS = --fcompiler=gnu95
 
 BUILD_DEPENDS=		${RUN_DEPENDS} \
 			${MODFORTRAN_BUILD_DEPENDS} \
-			devel/py-pybind11${MODPY_FLAVOR}>=2.4.3
+			devel/py-pybind11${MODPY_FLAVOR}>=2.4.3 \
+			lang/cython${MODPY_FLAVOR} \
+			lang/pythran${MODPY_FLAVOR}
 
 LIB_DEPENDS=		${MODFORTRAN_LIB_DEPENDS} \
 			math/cblas \
