@@ -17,6 +17,8 @@ WANTLIB =	cairo epoll-shim
 WANTLIB +=	glib-2.0 gobject-2.0 pango-1.0 pangocairo-1.0
 WANTLIB +=	wayland-client xkbcommon c
 
+BUILD_DEPENDS =	wayland/wayland-protocols
+
 LIB_DEPENDS =	devel/epoll-shim \
 		devel/glib2 \
 		devel/pango \

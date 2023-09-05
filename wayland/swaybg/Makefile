@@ -10,7 +10,8 @@ PERMIT_PACKAGE = Yes
 
 MODULES =	devel/meson
 
-BUILD_DEPENDS =	textproc/scdoc
+BUILD_DEPENDS =	wayland/wayland-protocols \
+		textproc/scdoc
 
 LIB_DEPENDS =	graphics/gdk-pixbuf2 \
 		graphics/cairo \

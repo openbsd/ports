@@ -35,10 +35,11 @@ LIB_DEPENDS =	devel/epoll-shim \
 		x11/gnome/librsvg \
 		x11/xkbcommon
 
-BUILD_DEPENDS = shells/bash-completion
+BUILD_DEPENDS =	wayland/wayland-protocols \
+		shells/bash-completion
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-                x11/gtk+4,-guic
+		x11/gtk+4,-guic
 
 DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
