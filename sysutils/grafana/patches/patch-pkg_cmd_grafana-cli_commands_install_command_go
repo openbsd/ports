@@ -1,7 +1,7 @@
 Index: pkg/cmd/grafana-cli/commands/install_command.go
 --- pkg/cmd/grafana-cli/commands/install_command.go.orig
 +++ pkg/cmd/grafana-cli/commands/install_command.go
-@@ -44,7 +44,7 @@ func validateInput(c utils.CommandLine, pluginFolder s
+@@ -65,7 +65,7 @@ func validateInput(c utils.CommandLine) error {
  }
  
  func logRestartNotice() {
@@ -9,4 +9,4 @@ Index: pkg/cmd/grafana-cli/commands/install_command.go
 +	logger.Info(color.GreenString("Please restart Grafana after installing or removing plugins. rcctl restart grafana.\n\n"))
  }
  
- func (cmd Command) installCommand(c utils.CommandLine) error {
+ func installCommand(c utils.CommandLine) error {
