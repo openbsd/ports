@@ -1,17 +1,20 @@
 # should be fine for ${LLVM_ARCHS}, but it needs insane amount of datasize
 ONLY_FOR_ARCHS =	amd64 arm64 powerpc64
 
-BROKEN-amd64 =		allocation failed
 BROKEN-arm64 =		generated binary segfault
 BROKEN-powerpc64 =	ld: error: undefined symbol: __subkf3 (and others)
 
 COMMENT =	zig compiler and toolchain
 
-DISTNAME =	zig-0.9.1
+DISTNAME =	zig-0.11.0
 
-# see https://github.com/ziglang/zig/tree/0.9.x
-ZIG_VERSION =	0.9.1
-ZIG_COMMIT =	6d44a6222d6eba600deb7f16c124bfa30628fb60
+GH_ACCOUNT =	ziglang
+GH_PROJECT =	zig
+GH_TAGNAME =	0.11.0
+
+# see https://github.com/ziglang/zig/tree/0.11.x
+ZIG_VERSION =	${GH_TAGNAME}
+ZIG_COMMIT =	67709b638224ac03820226c6744d8b6ead59184c
 
 CATEGORIES =	lang
 
@@ -24,43 +27,47 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =	${COMPILER_LIBCXX} c m
 
-MASTER_SITES =	https://github.com/ziglang/zig/archive/
+# C++17
+COMPILER =	ports-clang
 
-DISTFILES +=	zig-${ZIG_VERSION}-${ZIG_COMMIT:C/(........).*/\1/}${EXTRACT_SUFX}{${ZIG_COMMIT}${EXTRACT_SUFX}}
+MODULES +=		devel/cmake
 
-# C++11
-COMPILER =	base-clang ports-gcc
-
-# link with static-libs of llvm
-BUILD_DEPENDS +=	devel/llvm/13>=13,<14
-
-BUILD_DEPENDS +=	devel/cmake \
-			devel/ninja
+MODULES +=		lang/clang
+MODCLANG_LANGS =	c c++
+MODCLANG_VERSION =	16
 
 SEPARATE_BUILD =	Yes
 
-MAKE_ENV +=	CXXFLAGS="${CXXFLAGS}" \
-		MAKE_JOBS="${MAKE_JOBS}" \
-		WRKSRC="${WRKSRC}" \
-		WRKBUILD="${WRKBUILD}"
+CONFIGURE_ARGS +=	\
+	-DZIG_VERSION="${ZIG_VERSION}+${ZIG_COMMIT:C/(.........).*/\1/}" \
+	-DZIG_STATIC_LLVM=ON \
+	-DZIG_TARGET_TRIPLE=native \
+	-DZIG_TARGET_MCPU=baseline \
+	-DLLVM_CONFIG_EXE="${LOCALBASE}/bin/llvm-config-${MODCLANG_VERSION}"
 
-# command to build/install/test
-BUILDCMD =	cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
-		    sh "${.CURDIR}/files/build.sh" \
-		        "${ZIG_VERSION}+${ZIG_COMMIT:C/(.........).*/\1/}"
+# disable some llvm protections in the compiler to regain performance
+XFLAGS-aarch64 =	-fno-ret-protector
+XFLAGS-amd64 =		-fno-ret-protector -mno-retpoline
+XFLAGS-i386 =		-fno-ret-protector -mno-retpoline
+XFLAGS-mips64 =		-fno-ret-protector -fomit-frame-pointer
+XFLAGS-mips64el =	-fno-ret-protector -fomit-frame-pointer
+XFLAGS-powerpc =	-fno-ret-protector
 
-post-extract:
-	mkdir -p ${WRKSRC}
-	mv ${WRKDIR}/zig-${ZIG_COMMIT} ${WRKSRC}/zig
+CFLAGS +=		${XFLAGS-${MACHINE_ARCH}}
+CXXFLAGS +=		${XFLAGS-${MACHINE_ARCH}}
 
-do-build:
-	${BUILDCMD} build
+MAKE_ENV +=	ZIG_GLOBAL_CACHE_DIR=${WRKBUILD}/zig-global-cache \
+		ZIG_LOCAL_CACHE_DIR=${WRKBUILD}/zig-local-cache
 
 do-install:
-	${BUILDCMD} install
-	find ${PREFIX}/lib/zig -name '*.orig' -delete
+	cp -R ${WRKBUILD}/stage3/* ${PREFIX}
+	find ${PREFIX}/lib/zig -name '*${PATCHORIG}' -delete
 
 do-test:
-	${BUILDCMD} test
+	cd ${WRKSRC} && exec ${SETENV} ${MAKE_ENV} ${TEST_ENV} \
+		${WRKBUILD}/stage3/bin/zig build test \
+			-j${MAKE_JOBS} \
+			--verbose \
+			--verbose-link
 
 .include <bsd.port.mk>

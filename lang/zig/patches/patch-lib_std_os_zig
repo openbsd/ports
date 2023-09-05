@@ -1,0 +1,13 @@
+Index: lib/std/os.zig
+--- lib/std/os.zig.orig
++++ lib/std/os.zig
+@@ -5303,6 +5303,9 @@ pub fn getFdPath(fd: fd_t, out_buffer: *[MAX_PATH_BYTE
+             const len = mem.indexOfScalar(u8, out_buffer[0..], @as(u8, 0)) orelse MAX_PATH_BYTES;
+             return out_buffer[0..len];
+         },
++        .openbsd => {
++            return error.FileNotFound;
++        },
+         else => @compileError("querying for canonical path of a handle is unsupported on this host"),
+     }
+ }
