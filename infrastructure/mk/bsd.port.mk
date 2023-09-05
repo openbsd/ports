@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1611 2023/09/05 14:24:15 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1612 2023/09/05 14:58:37 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1254,10 +1254,9 @@ ERRORS += "Fatal: if using GH_*, one of GH_TAGNAME or GH_COMMIT must be set"
 MASTER_SITES ?= ${MASTER_SITES_GITHUB}
 HOMEPAGE ?= https://github.com/${GH_ACCOUNT}/${GH_PROJECT}
 .else
-# There are two types of ports with DISTFILES but no actionable MASTER_SITES:
-# - FETCH_MANUALLY port
-# - stuff that used to have MASTER_SITES but is orphaned, and defaults
-#   to MASTER_SITES_BACKUP
+# There are two types of ports with DISTFILES but no actionable (MASTER_)SITES:
+# - FETCH_MANUALLY
+# - orphaned port, defaults to SITES_BACKUP
 MASTER_SITES ?=
 .endif
 
@@ -1343,7 +1342,7 @@ _CACHE_VARIABLES += DISTFILES
 .  endif
 .elif defined(DISTNAME)
 .  if !defined(DISTFILES)
-.    if !empty(MASTER_SITES) || empty(_CACHE_VARIABLES:MDISTFILES*)
+.    if !empty(SITES) || empty(_CACHE_VARIABLES:MDISTFILES*)
 DISTFILES = ${DISTNAME}${EXTRACT_SUFX}
 _CACHE_VARIABLES += DISTFILES
 .    endif
