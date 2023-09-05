@@ -11,9 +11,9 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	${COMPILER_LIBCXX} c m curses ogg pthread sidplay sndio vorbis vorbisfile
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mp3blaster/}
+SITES=		${SITE_SOURCEFORGE:=mp3blaster/}
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
 LIB_DEPENDS=	audio/libsidplay \
 		audio/libvorbis

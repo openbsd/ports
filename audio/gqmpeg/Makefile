@@ -16,7 +16,7 @@ WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 iconv intl m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread xcb
 WANTLIB += xcb-render xcb-shm z harfbuzz sndio
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gqmpeg/}
+SITES=			${SITE_SOURCEFORGE:=gqmpeg/}
 
 RUN_DEPENDS=		audio/mpg321 \
 			devel/desktop-file-utils

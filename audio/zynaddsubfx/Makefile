@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB +=	${COMPILER_LIBCXX} GL X11 c fftw3f lo m mxml sndio
 WANTLIB +=	z
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=zynaddsubfx/}
+SITES=		${SITE_SOURCEFORGE:=zynaddsubfx/}
 EXTRACT_SUFX=	.tar.bz2
 
 COMPILER=	base-clang ports-gcc

@@ -16,9 +16,9 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c m ${COMPILER_LIBCXX}
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
-MASTER_SITES=	http://bsd.cenkes.org/myports/
+SITES=		http://bsd.cenkes.org/myports/
 
 
 CONFIGURE_STYLE=gnu

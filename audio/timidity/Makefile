@@ -6,10 +6,11 @@ PKGNAME=	timidity-${V}
 CATEGORIES=	audio
 REVISION=	1
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=timidity/}
-MASTER_SITES0=	https://mirrors.nycbug.org/pub/distfiles/
-TIINS=		TimGM6mb-20170802.tar.gz
-DISTFILES=	${TIINS}:0 ${DISTNAME}.tar.gz
+SITES=		${SITE_SOURCEFORGE:=timidity/}
+SITES.nycbug=	https://mirrors.nycbug.org/pub/distfiles/
+
+DISTFILES.nycbug=	TimGM6mb-20170802.tar.gz
+DISTFILES=		${DISTNAME}.tar.gz
 
 HOMEPAGE=	http://timidity.sourceforge.net/
 MAINTAINER=	Brian Callahan <bcallah@openbsd.org>

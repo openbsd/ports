@@ -8,7 +8,7 @@ HOMEPAGE=		http://jk.yazzy.org/projects/vlorb/
 # GPL
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${HOMEPAGE}/releases/
+SITES=			${HOMEPAGE}/releases/
 
 RUN_DEPENDS=		audio/cdparanoia \
 			audio/flac \

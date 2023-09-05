@@ -10,7 +10,7 @@ HOMEPAGE=	https://abcde.einval.com/
 # Artistic or GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://abcde.einval.com/download/
+SITES=		https://abcde.einval.com/download/
 
 RUN_DEPENDS=	audio/cdparanoia \
 		audio/cd-discid \

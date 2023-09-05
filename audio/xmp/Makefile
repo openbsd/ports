@@ -8,7 +8,7 @@ HOMEPAGE=		http://xmp.sourceforge.net/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=xmp/}
+SITES=			${SITE_SOURCEFORGE:=xmp/}
 
 WANTLIB += c sndio xmp
 

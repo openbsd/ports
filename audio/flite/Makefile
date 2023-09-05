@@ -27,7 +27,7 @@ HOMEPAGE=	http://www.cmuflite.org/
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c m sndio
 
-MASTER_SITES=	http://www.speech.cs.cmu.edu/flite/packed/flite-${VERSION}/
+SITES=		http://www.speech.cs.cmu.edu/flite/packed/flite-${VERSION}/
 
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS= --enable-shared --with-audio=sndio

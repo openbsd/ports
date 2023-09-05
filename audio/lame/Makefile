@@ -17,7 +17,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses iconv m
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=lame/}
+SITES=		${SITE_SOURCEFORGE:=lame/}
 
 LIB_DEPENDS=	converters/libiconv
 

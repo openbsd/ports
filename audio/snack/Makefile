@@ -11,7 +11,7 @@ REVISION-main = 6
 REVISION-python =2
 
 HOMEPAGE = 	http://www.speech.kth.se/snack
-MASTER_SITES =	${HOMEPAGE}/dist/
+SITES =		${HOMEPAGE}/dist/
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # BSD/GPLv2

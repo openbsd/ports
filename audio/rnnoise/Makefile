@@ -9,7 +9,7 @@ CATEGORIES =		audio
 SHARED_LIBS =		rnnoise	0.0	# 4.1
 
 HOMEPAGE =		https://jmvalin.ca/demo/rnnoise
-MASTER_SITES =		https://gitlab.xiph.org/xiph/rnnoise/-/archive/master/
+SITES =			https://gitlab.xiph.org/xiph/rnnoise/-/archive/master/
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 

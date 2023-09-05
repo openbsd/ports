@@ -9,7 +9,7 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://downloads.xiph.org/releases/vorbis/
+SITES=		https://downloads.xiph.org/releases/vorbis/
 
 LIB_DEPENDS=	audio/flac \
 		audio/libao \

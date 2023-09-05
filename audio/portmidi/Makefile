@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB	=	pthread sndio
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=portmedia/}
+SITES =		${SITE_SOURCEFORGE:=portmedia/}
 EXTRACT_SUFX =	.zip
 
 MODULES =       devel/cmake

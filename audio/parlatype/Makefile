@@ -21,7 +21,7 @@ WANTLIB += gtk-3 harfbuzz iconv intl m orc-0.4 pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre2-8 pixman-1 png pthread xcb xcb-render xcb-shm
 WANTLIB += z Xau Xdmcp ${COMPILER_LIBCXX} execinfo jpeg
 
-MASTER_SITES =	https://github.com/gkarsay/parlatype/releases/download/v${V}/
+SITES =		https://github.com/gkarsay/parlatype/releases/download/v${V}/
 
 MODULES =	devel/dconf \
 		textproc/intltool \

@@ -5,7 +5,7 @@ DISTNAME =	cantata-${V}
 HOMEPAGE =	https://github.com/CDrummond/cantata
 REVISION =	0
 
-MASTER_SITES =	https://github.com/CDrummond/cantata/releases/download/v${V}/
+SITES =		https://github.com/CDrummond/cantata/releases/download/v${V}/
 EXTRACT_SUFX =	.tar.bz2
 
 CATEGORIES =	audio

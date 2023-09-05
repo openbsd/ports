@@ -4,7 +4,7 @@ DISTNAME=		s-cdda-to-db-0.8.0
 CATEGORIES=		audio
 HOMEPAGE=		https://www.sdaoden.eu/code.html\#s-cdda-to-db
 
-MASTER_SITES=		https://ftp.sdaoden.eu/
+SITES=			https://ftp.sdaoden.eu/
 FIX_EXTRACT_PERMISSIONS=Yes
 
 MAINTAINER=		Steffen Nurpmeso <steffen@sdaoden.eu>

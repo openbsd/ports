@@ -16,7 +16,7 @@ WANTLIB += ${COMPILER_LIBCXX} FLAC c m mp3lame mpg123 ogg opus
 WANTLIB += portaudio sndfile sndio vorbis vorbisenc vorbisfile
 WANTLIB += z
 
-MASTER_SITES =	https://lib.openmpt.org/files/libopenmpt/src/
+SITES =		https://lib.openmpt.org/files/libopenmpt/src/
 
 COMPILER =	base-clang ports-gcc
 

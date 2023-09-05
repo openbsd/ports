@@ -10,7 +10,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c m ogg vorbis>=4 vorbisfile>=4
 
-MASTER_SITES=		http://sjeng.org/ftp/vorbis/
+SITES=			http://sjeng.org/ftp/vorbis/
 EXTRACT_SUFX=		.zip
 
 LIB_DEPENDS=		audio/libvorbis

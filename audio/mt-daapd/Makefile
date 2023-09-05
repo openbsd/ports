@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += avahi-client avahi-common c gdbm id3tag>=3 pthread z
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mt-daapd/}
+SITES=		${SITE_SOURCEFORGE:=mt-daapd/}
 
 LIB_DEPENDS=	net/avahi,-libs \
 		audio/libid3tag \

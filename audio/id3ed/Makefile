@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c curses m readline ${COMPILER_LIBCXX}
 
-MASTER_SITES=		${HOMEPAGE}
+SITES=			${HOMEPAGE}
 
 COMPILER =		base-clang ports-gcc base-gcc
 

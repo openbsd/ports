@@ -16,7 +16,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 EXTRACT_SUFX =		.tar.bz2
 
-MASTER_SITES =		http://kokkinizita.net/linuxaudio/downloads/
+SITES =			http://kokkinizita.net/linuxaudio/downloads/
 
 MAKE_FLAGS =		CPPFLAGS="${CPPFLAGS} -D_REENTRANT -fPIC"
 

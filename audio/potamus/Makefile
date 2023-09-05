@@ -15,7 +15,7 @@ WANTLIB += glade-2.0 glib-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
 WANTLIB += harfbuzz intl m mad modplug opusfile pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pthread samplerate vorbisfile xml2 z
 
-MASTER_SITES =	http://offog.org/files/
+SITES =		http://offog.org/files/
 
 LIB_DEPENDS =	audio/libao \
 		audio/libmad \

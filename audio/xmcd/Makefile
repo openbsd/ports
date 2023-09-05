@@ -9,7 +9,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 Xau Xaw Xdmcp Xext Xm Xmu Xpm Xt c curses m
 
-MASTER_SITES=	https://distfiles.sigtrap.nl/
+SITES=		https://distfiles.sigtrap.nl/
 
 LIB_DEPENDS+=	x11/motif
 

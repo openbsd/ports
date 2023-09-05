@@ -8,7 +8,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB= X11 Xext Xpm c xcb
 
-MASTER_SITES=		http://mercury.chem.pitt.edu/~shank/
+SITES=			http://mercury.chem.pitt.edu/~shank/
 
 CONFIGURE_STYLE=	gnu
 

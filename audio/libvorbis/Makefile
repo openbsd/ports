@@ -13,7 +13,7 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://downloads.xiph.org/releases/vorbis/ \
+SITES=		https://downloads.xiph.org/releases/vorbis/ \
 		https://github.com/xiph/vorbis/releases/download/v${VERSION}/
 EXTRACT_SUFX=	.tar.xz
 

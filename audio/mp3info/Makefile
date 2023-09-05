@@ -8,7 +8,7 @@ CATEGORIES=	audio
 
 HOMEPAGE=	http://www.ibiblio.org/mp3info/
 
-MASTER_SITES=	${MASTER_SITE_SUNSITE:=apps/sound/mp3-utils/mp3info/}
+SITES=		${SITE_SUNSITE:=apps/sound/mp3-utils/mp3info/}
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

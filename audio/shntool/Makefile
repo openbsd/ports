@@ -12,7 +12,7 @@ PERMIT_PACKAGE =		Yes
 
 WANTLIB +=	c
 
-MASTER_SITES =		${HOMEPAGE}dist/src/
+SITES =			${HOMEPAGE}dist/src/
 
 CONFIGURE_STYLE =	gnu
 

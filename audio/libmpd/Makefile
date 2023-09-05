@@ -15,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += glib-2.0 iconv intl pcre2-8 pthread
 
-MASTER_SITES=		https://www.musicpd.org/download/libmpd/${VERSION}/
+SITES=			https://www.musicpd.org/download/libmpd/${VERSION}/
 
 LIB_DEPENDS=		devel/glib2
 

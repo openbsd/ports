@@ -10,7 +10,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c confuse curl glib-2.0 iconv intl mpdclient
 
-MASTER_SITES=		https://bitbucket.org/cmende/scmpc/downloads/
+SITES=			https://bitbucket.org/cmende/scmpc/downloads/
 
 CONFIGURE_STYLE=	gnu
 

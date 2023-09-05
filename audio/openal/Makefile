@@ -17,7 +17,7 @@ PERMIT_PACKAGE =Yes
 
 WANTLIB +=	c m mysofa pthread sndio z ${COMPILER_LIBCXX}
 
-MASTER_SITES =	${HOMEPAGE}openal-releases/
+SITES =		${HOMEPAGE}openal-releases/
 EXTRACT_SUFX =	.tar.bz2
 
 LIB_DEPENDS +=	audio/libmysofa

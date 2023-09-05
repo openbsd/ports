@@ -15,7 +15,7 @@ PERMIT_PACKAGE= Yes
 
 WANTLIB += m serd-0 sord-0
 
-MASTER_SITES=	https://download.drobilla.net/
+SITES=		https://download.drobilla.net/
 
 EXTRACT_SUFX=	.tar.bz2
 

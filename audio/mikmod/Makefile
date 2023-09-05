@@ -11,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c m mikmod curses pthread sndio
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=mikmod/}
+SITES =		${SITE_SOURCEFORGE:=mikmod/}
 
 CONFIGURE_STYLE = gnu
 

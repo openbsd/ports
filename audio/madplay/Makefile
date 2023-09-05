@@ -10,8 +10,8 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	ftp://ftp.mars.org/pub/mpeg/ \
-		${MASTER_SITE_SOURCEFORGE:=mad/}
+SITES=		ftp://ftp.mars.org/pub/mpeg/ \
+		${SITE_SOURCEFORGE:=mad/}
 
 LIB_DEPENDS=	audio/libid3tag \
 		audio/libmad \

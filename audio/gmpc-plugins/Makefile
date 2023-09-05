@@ -9,7 +9,7 @@ CATEGORIES =		audio
 MAINTAINER =		Landry Breuil <landry@openbsd.org>
 
 HOMEPAGE =		https://gmpc.fandom.com/wiki/Plugins
-MASTER_SITES =		https://www.musicpd.org/download/gmpc-plugins/${VERSION}/
+SITES =		https://www.musicpd.org/download/gmpc-plugins/${VERSION}/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

@@ -16,7 +16,7 @@ WANTLIB +=	binio c m ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =	https://github.com/adplug/adplug/releases/download/adplug-${V}/
+SITES =		https://github.com/adplug/adplug/releases/download/adplug-${V}/
 
 EXTRACT_SUFX =	.tar.bz2
 

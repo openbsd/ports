@@ -21,7 +21,7 @@ WANTLIB += xcb-shm z jpeg lzo2
 
 MODULES +=	lang/python
 
-MASTER_SITES=	https://lv2plug.in/spec/
+SITES=		https://lv2plug.in/spec/
 
 EXTRACT_SUFX=	.tar.bz2
 

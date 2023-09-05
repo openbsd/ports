@@ -7,7 +7,7 @@ MAINTAINER =		Alexandre Ratchov <alex@caoua.org>
 # ISC
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${HOMEPAGE}/dist/
+SITES =			${HOMEPAGE}/dist/
 
 # uses pledge()
 WANTLIB +=		FLAC c curses faad mp4v2 mpg123 opusfile pthread sndfile

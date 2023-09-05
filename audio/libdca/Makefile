@@ -5,7 +5,7 @@ DISTNAME=		libdca-${V}
 REVISION=		2
 EXTRACT_SUFX=		.tar.bz2
 CATEGORIES=		audio
-MASTER_SITES=		https://download.videolan.org/pub/videolan/libdca/${V}/
+SITES=			https://download.videolan.org/pub/videolan/libdca/${V}/
 
 SHARED_LIBS=	dca	0.0
 

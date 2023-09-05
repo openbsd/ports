@@ -11,7 +11,7 @@ SHARED_LIBS +=          modplug         1.0     # 1.0
 # Public domain
 PERMIT_PACKAGE = Yes
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=modplug-xmms/}
+SITES =			${SITE_SOURCEFORGE:=modplug-xmms/}
 
 WANTLIB +=		m ${COMPILER_LIBCXX}
 

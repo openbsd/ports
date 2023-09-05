@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c crypto iconv m
 
-MASTER_SITES =		https://github.com/dbry/wavpack/releases/download/${VERSION}/
+SITES =	https://github.com/dbry/wavpack/releases/download/${VERSION}/
 EXTRACT_SUFX =		.tar.xz
 
 BUILD_DEPENDS =		textproc/docbook-xsl

@@ -7,7 +7,7 @@ SHARED_LIBS +=  gpod                 722.0    # 7.2
 
 CATEGORIES=	audio
 
-MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=gtkpod/}
+SITES=   	${SITE_SOURCEFORGE:=gtkpod/}
 EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	http://www.gtkpod.org/libgpod/

@@ -23,7 +23,7 @@ WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 intl jack m mpg123
 WANTLIB += ogg opus pcre2-8 perl python2.7 readline sndfile sqlite3
 WANTLIB += swresample vorbis vorbisenc vorbisfile xml2 z
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=xmms2/}
+SITES =			${SITE_SOURCEFORGE:=xmms2/}
 
 MODPERL_REGEN_PPPORT =	src/clients/lib/perl/ppport.h
 

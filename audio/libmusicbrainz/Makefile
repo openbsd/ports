@@ -15,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += discid m neon ${COMPILER_LIBCXX}
 
-MASTER_SITES=		ftp://ftp.musicbrainz.org/pub/musicbrainz/ \
+SITES=			ftp://ftp.musicbrainz.org/pub/musicbrainz/ \
 			http://uk.musicbrainz.org/pub/musicbrainz/
 
 COMPILER =		base-clang ports-gcc base-gcc

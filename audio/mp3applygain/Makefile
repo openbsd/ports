@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB= c m
 
-MASTER_SITES=	https://github.com/jeremyevans/mp3applygain/releases/download/${VERSION}/
+SITES= https://github.com/jeremyevans/mp3applygain/releases/download/${VERSION}/
 
 NO_TEST=	Yes
 

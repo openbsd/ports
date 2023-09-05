@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c m ${COMPILER_LIBCXX} z
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=id3lib/}
+SITES =			${SITE_SOURCEFORGE:=id3lib/}
 
 COMPILER =		base-clang ports-gcc base-gcc
 

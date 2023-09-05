@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB +=	${COMPILER_LIBCXX} c curses iconv intl m mpdclient>=1
 WANTLIB +=	pcre2-8
 
-MASTER_SITES=		https://www.musicpd.org/download/ncmpc/${VER:R}/
+SITES=			https://www.musicpd.org/download/ncmpc/${VER:R}/
 
 EXTRACT_SUFX=		.tar.xz
 

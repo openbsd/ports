@@ -14,7 +14,7 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # CC-SAv2.0 - CC-Av3.0 Unported
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://people.freedesktop.org/~mccann/dist/
+SITES=		http://people.freedesktop.org/~mccann/dist/
 
 MODULES=	textproc/intltool
 

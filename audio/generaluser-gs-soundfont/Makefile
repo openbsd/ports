@@ -13,7 +13,7 @@ HOMEPAGE=	http://www.schristiancollins.com/generaluser.php
 # see LICENSE.TXT
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://www.schristiancollins.com/soundfonts/ \
+SITES=		http://www.schristiancollins.com/soundfonts/ \
 		https://spacehopper.org/mirrors/
 
 NO_BUILD=	Yes

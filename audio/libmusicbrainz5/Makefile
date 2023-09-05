@@ -18,7 +18,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += m neon ${COMPILER_LIBCXX}
 
-MASTER_SITES=		https://github.com/downloads/metabrainz/libmusicbrainz/
+SITES=			https://github.com/downloads/metabrainz/libmusicbrainz/
 
 COMPILER =		base-clang ports-gcc base-gcc
 

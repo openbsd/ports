@@ -29,7 +29,7 @@ WANTLIB += unistring xcb xcb-render xcb-shm xml2 z
 WANTLIB += ${COMPILER_LIBCXX} brotlicommon brotlidec execinfo
 WANTLIB += fribidi jpeg psl Xau Xdmcp brotlienc zstd
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=ario-player/}
+SITES =		${SITE_SOURCEFORGE:=ario-player/}
 
 MODULES =	textproc/intltool
 

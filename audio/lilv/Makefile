@@ -14,7 +14,7 @@ PERMIT_PACKAGE= Yes
 WANTLIB += FLAC c ogg opus serd-0 sndfile sord-0 sratom-0 vorbis
 WANTLIB += vorbisenc mpg123
 
-MASTER_SITES=	https://download.drobilla.net/
+SITES=		https://download.drobilla.net/
 
 EXTRACT_SUFX=	.tar.bz2
 

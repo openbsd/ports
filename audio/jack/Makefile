@@ -17,7 +17,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += FLAC c celt0>=1 curses db m ogg pthread readline samplerate
 WANTLIB += sndfile sndio vorbis vorbisenc opus
 
-MASTER_SITES =		${HOMEPAGE}downloads/
+SITES =			${HOMEPAGE}downloads/
 
 LIB_DEPENDS =		audio/libsndfile \
 			audio/libsamplerate \

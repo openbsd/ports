@@ -22,7 +22,7 @@ WANTLIB += xcb-shm z
 
 COMPILER=		base-clang ports-gcc base-gcc
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=grip/}
+SITES=			${SITE_SOURCEFORGE:=grip/}
 
 MODULES=		x11/gnome
 

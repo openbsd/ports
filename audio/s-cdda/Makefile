@@ -4,7 +4,7 @@ DISTNAME=		s-cdda-0.8.5
 CATEGORIES=		audio
 HOMEPAGE=		https://www.sdaoden.eu/code.html\#s-cdda
 
-MASTER_SITES=		https://ftp.sdaoden.eu/
+SITES=			https://ftp.sdaoden.eu/
 FIX_EXTRACT_PERMISSIONS=Yes
 
 MAINTAINER=		Steffen Nurpmeso <steffen@sdaoden.eu>

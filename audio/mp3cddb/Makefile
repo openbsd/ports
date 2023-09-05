@@ -6,7 +6,7 @@ CATEGORIES=	audio
 
 HOMEPAGE=	http://drewie.host.sk/mp3cddb/
 
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 
 # GPL
 PERMIT_PACKAGE=	Yes

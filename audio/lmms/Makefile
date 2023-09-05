@@ -11,7 +11,7 @@ CATEGORIES =		audio
 
 HOMEPAGE =		https://lmms.io/
 
-MASTER_SITES =		https://github.com/LMMS/lmms/releases/download/v$V/
+SITES =			https://github.com/LMMS/lmms/releases/download/v$V/
 
 # GPLv2
 PERMIT_PACKAGE =	Yes

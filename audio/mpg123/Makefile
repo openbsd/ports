@@ -13,7 +13,7 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 # LGPL 2.1
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mpg123/} \
+SITES=		${SITE_SOURCEFORGE:=mpg123/} \
 		https://mpg123.org/download/
 EXTRACT_SUFX=	.tar.bz2
 

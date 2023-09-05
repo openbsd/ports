@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		crypto m ogg opus ssl
 
-MASTER_SITES =	https://downloads.xiph.org/releases/opus/ \
+SITES =		https://downloads.xiph.org/releases/opus/ \
 		https://github.com/xiph/opusfile/releases/download/v${VERSION}/
 
 LIB_DEPENDS =		audio/libogg \

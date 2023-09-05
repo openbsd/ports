@@ -12,8 +12,8 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 
-# XXX: When updating, MASTER_SITES= ${HOMEPAGE}/install/
-MASTER_SITES=	https://distfiles.sigtrap.nl/
+# XXX: When updating, SITES= ${HOMEPAGE}/install/
+SITES=	https://distfiles.sigtrap.nl/
 
 SEPARATE_BUILD=	Yes
 USE_GMAKE=	Yes

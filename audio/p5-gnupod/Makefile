@@ -6,8 +6,8 @@ REVISION =	5
 CATEGORIES =	audio
 
 HOMEPAGE =	https://www.gnu.org/software/gnupod/
-MASTER_SITES =	http://blinkenlights.ch/gnupod-dist/stable/ \
-		${MASTER_SITE_SAVANNAH:=gnupod/}
+SITES =		http://blinkenlights.ch/gnupod-dist/stable/ \
+		${SITE_SAVANNAH:=gnupod/}
 
 # GPLv3
 PERMIT_PACKAGE =	Yes

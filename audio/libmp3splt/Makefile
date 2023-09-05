@@ -16,7 +16,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += FLAC id3tag m mad ltdl ogg pcre vorbis vorbisfile z
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mp3splt/}
+SITES=		${SITE_SOURCEFORGE:=mp3splt/}
 
 LIB_DEPENDS=	audio/flac \
 		audio/libmad \

@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 
-MASTER_SITES=	https://spacehopper.org/mirrors/
+SITES=		https://spacehopper.org/mirrors/
 
 NO_TEST=	Yes
 

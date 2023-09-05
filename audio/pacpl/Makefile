@@ -11,7 +11,7 @@ HOMEPAGE=		http://pacpl.sourceforge.net/
 # GPLv3
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=pacpl/}
+SITES=			${SITE_SOURCEFORGE:=pacpl/}
 
 NO_BUILD=		Yes
 NO_TEST=		Yes

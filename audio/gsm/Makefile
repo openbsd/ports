@@ -9,7 +9,7 @@ SHARED_LIBS=	gsm	1.0
 CATEGORIES=	audio
 
 HOMEPAGE=	https://www.quut.com/gsm/
-MASTER_SITES=	https://www.quut.com/gsm/
+SITES=		${HOMEPAGE}
 
 # ISC-like
 PERMIT_PACKAGE=	Yes

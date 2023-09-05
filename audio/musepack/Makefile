@@ -13,7 +13,7 @@ SHARED_LIBS +=		mpcdec		4.0	# .7.0
 # BSD and LGPLv2.1
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://files.musepack.net/source/
+SITES =			https://files.musepack.net/source/
 DISTFILES =		musepack_src_r${V}.tar.gz libreplaygain_r${V}.tar.gz
 
 WANTLIB += c cue m

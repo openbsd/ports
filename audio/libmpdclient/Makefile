@@ -9,7 +9,7 @@ HOMEPAGE=		https://www.musicpd.org/libs/libmpdclient/
 # 3-BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		https://www.musicpd.org/download/libmpdclient/${VER:R}/
+SITES=			https://www.musicpd.org/download/libmpdclient/${VER:R}/
 
 EXTRACT_SUFX=		.tar.xz
 

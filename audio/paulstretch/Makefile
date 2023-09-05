@@ -14,9 +14,9 @@ WANTLIB += X11 Xau Xdmcp Xext Xft Xinerama audiofile c fltk fontconfig
 WANTLIB += m mad mxml ogg portaudio pthread ${COMPILER_LIBCXX} vorbis vorbisenc
 WANTLIB += vorbisfile z Xcursor Xfixes
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=hypermammut/}
+SITES =		${SITE_SOURCEFORGE:=hypermammut/}
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
 LIB_DEPENDS =	audio/libmad \
 		audio/libvorbis \

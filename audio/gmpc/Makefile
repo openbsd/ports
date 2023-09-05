@@ -22,7 +22,7 @@ WANTLIB += Xau Xdmcp brotlicommon brotlidec execinfo fribidi
 WANTLIB += idn2 jpeg psl unistring
 WANTLIB += ${COMPILER_LIBCXX}
 
-MASTER_SITES=		https://www.musicpd.org/download/gmpc/${VERSION}/
+SITES=			https://www.musicpd.org/download/gmpc/${VERSION}/
 
 MODULES=		textproc/intltool x11/gnome
 

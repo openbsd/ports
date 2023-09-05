@@ -7,7 +7,7 @@ MAINTAINER=		Alexandre Ratchov <alex@caoua.org>
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${HOMEPAGE}
+SITES=			${HOMEPAGE}
 WANTLIB=		c sndio
 CONFIGURE_STYLE=	simple
 CONFIGURE_ARGS=		--prefix=${PREFIX}

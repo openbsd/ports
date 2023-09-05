@@ -6,7 +6,7 @@ REVISION=	1
 CATEGORIES=	audio
 
 HOMEPAGE=	http://dumb.sourceforge.net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=dumb/}
+SITES=		${SITE_SOURCEFORGE:=dumb/}
 
 # free, with some not-seriously-intended joke clauses
 PERMIT_PACKAGE=	Yes

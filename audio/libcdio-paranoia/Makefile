@@ -19,7 +19,7 @@ WANTLIB += c cdio iconv m
 
 USE_GMAKE =		Yes
 
-MASTER_SITES =		${MASTER_SITE_GNU:=libcdio/}
+SITES =			${SITE_GNU:=libcdio/}
 
 LIB_DEPENDS =		audio/libcdio>=2.0.0
 

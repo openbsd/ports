@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses pthread usb usb-1.0 z
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=libnjb/}
+SITES=			${SITE_SOURCEFORGE:=libnjb/}
 
 LIB_DEPENDS=		devel/libusb-compat
 

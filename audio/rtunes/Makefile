@@ -3,7 +3,7 @@ COMMENT=		Streams audio to Apple AirPort Express device
 DISTNAME=		rtunes-0.8
 REVISION=		2
 CATEGORIES=		audio net
-MASTER_SITES=		http://www.nazgul.ch/dev/
+SITES=			http://www.nazgul.ch/dev/
 
 HOMEPAGE=		http://www.nazgul.ch/dev.html
 

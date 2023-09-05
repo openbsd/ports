@@ -8,7 +8,7 @@ REVISION=		0
 # https://github.com/yktoo/ymuse/archive/v$VERSION/ymuse-$VERSION.tar.gz
 # and running "go mod tidy" + "go mod vendor"
 DISTNAME=		ymuse-vendored-${VERSION}
-MASTER_SITES=		https://distfiles.bsdfrog.org/
+SITES=			https://distfiles.bsdfrog.org/
 ALL_TARGET=		github.com/yktoo/ymuse
 
 CATEGORIES=		audio x11

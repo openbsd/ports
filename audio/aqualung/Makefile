@@ -22,7 +22,7 @@ WANTLIB += gdk_pixbuf-2.0 xml2 mac mad mpcdec FLAC avcodec
 WANTLIB += avformat avutil wavpack lrdf oggz speex cddb cdio
 WANTLIB += cdio_cdda cdio_paranoia modplug ${MODLUA_WANTLIB}
 
-MASTER_SITES=	https://github.com/jeremyevans/aqualung/releases/download/${VERSION}/
+SITES=	https://github.com/jeremyevans/aqualung/releases/download/${VERSION}/
 
 COMPILER =		base-clang ports-gcc base-gcc
 

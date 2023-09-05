@@ -16,7 +16,7 @@ LIB_DEPENDS=		audio/libmpdclient>=2.2 \
 			converters/libiconv
 
 BUILD_DEPENDS +=	textproc/py-sphinx,python3
-MASTER_SITES=		https://www.musicpd.org/download/mpc/${VER:R}/
+SITES=			https://www.musicpd.org/download/mpc/${VER:R}/
 
 MODULES=		devel/meson
 

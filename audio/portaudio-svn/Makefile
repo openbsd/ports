@@ -4,7 +4,7 @@ DISTNAME =		pa_stable_v190700_20210406
 PKGNAME =		portaudio-svn-1970
 REVISION =		0
 CATEGORIES=		audio
-MASTER_SITES =		http://files.portaudio.com/archives/
+SITES =			http://files.portaudio.com/archives/
 EXTRACT_SUFX =		.tgz
 
 SHARED_LIBS =		portaudio	1.2

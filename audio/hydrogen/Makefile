@@ -15,7 +15,7 @@ WANTLIB += ${COMPILER_LIBCXX} archive c
 WANTLIB += Qt5Core Qt5Gui Qt5Network Qt5Widgets Qt5Xml Qt5XmlPatterns
 WANTLIB += lrdf m rubberband sndfile sndio z
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=hydrogen/}
+SITES=			${SITE_SOURCEFORGE:=hydrogen/}
 
 LIB_DEPENDS=		audio/libsndfile \
 			audio/rubberband \

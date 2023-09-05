@@ -12,7 +12,7 @@ HOMEPAGE =	https://www.gnu.org/software/solfege/
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=solfege/}
+SITES =		${SITE_SOURCEFORGE:=solfege/}
 
 MODULES =	lang/python
 

@@ -10,7 +10,7 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://downloads.xiph.org/releases/speex/
+SITES=		https://downloads.xiph.org/releases/speex/
 
 WANTLIB=	m
 

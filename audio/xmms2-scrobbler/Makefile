@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		c curl pthread xmmsclient
 
-MASTER_SITES =		ftp://ftp.code-monkey.de/pub/xmms2-scrobbler/
+SITES =			ftp://ftp.code-monkey.de/pub/xmms2-scrobbler/
 
 LIB_DEPENDS =		audio/xmms2
 

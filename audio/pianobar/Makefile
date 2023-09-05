@@ -6,7 +6,7 @@ CATEGORIES =	audio
 
 HOMEPAGE =	https://6xq.net/pianobar/
 
-MASTER_SITES =	${HOMEPAGE}
+SITES =		${HOMEPAGE}
 
 SHARED_LIBS =	piano	11.0	# 0.0.0
 

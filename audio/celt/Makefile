@@ -21,7 +21,7 @@ SHARED_LIBS +=	celt0	2.0	# 2.0
 # BSD
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://downloads.xiph.org/releases/celt/
+SITES =		https://downloads.xiph.org/releases/celt/
 
 WANTLIB =		c m ogg>=5 sndio
 

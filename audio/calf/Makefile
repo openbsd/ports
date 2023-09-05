@@ -19,7 +19,7 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png pthread
 WANTLIB += xcb xcb-render xcb-shm xml2 z fribidi ${COMPILER_LIBCXX}
 WANTLIB += Xau Xdmcp jpeg
 
-MASTER_SITES =		https://calf-studio-gear.org/files/
+SITES =			https://calf-studio-gear.org/files/
 
 COMPILER =		base-clang ports-gcc
 RUN_DEPENDS =		devel/desktop-file-utils \

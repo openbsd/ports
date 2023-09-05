@@ -12,7 +12,7 @@ MAINTAINER =	Martin Ziemer <horrad@horrad.de>
 # LGPLv2.1+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=twolame/}
+SITES=		${SITE_SOURCEFORGE:=twolame/}
 
 WANTLIB=	c m sndfile FLAC ogg vorbis vorbisenc opus
 

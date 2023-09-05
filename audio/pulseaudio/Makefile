@@ -28,7 +28,7 @@ WANTLIB += glib-2.0 gobject-2.0 gstapp-1.0 gstbase-1.0 gstreamer-1.0
 WANTLIB += iconv intl ltdl m pthread sndfile sndio speexdsp tdb
 WANTLIB += xcb
 
-MASTER_SITES=		https://freedesktop.org/software/pulseaudio/releases/
+SITES=			https://freedesktop.org/software/pulseaudio/releases/
 
 MODULES=		devel/meson
 

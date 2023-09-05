@@ -18,7 +18,7 @@ WANTLIB +=	Xrandr Xrender Xss Xxf86vm xcb
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =	https://github.com/adplug/adplay-unix/releases/download/v${V}/
+SITES =		https://github.com/adplug/adplay-unix/releases/download/v${V}/
 
 EXTRACT_SUFX =	.tar.bz2
 

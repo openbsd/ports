@@ -15,7 +15,7 @@ WANTLIB += gtk-3 gtkmm-3.0 harfbuzz intl json-glib-1.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangomm-1.4 pulse pulse-mainloop-glib
 WANTLIB += sigc-2.0
 
-MASTER_SITES =		http://freedesktop.org/software/pulseaudio/pavucontrol/
+SITES =			http://freedesktop.org/software/pulseaudio/pavucontrol/
 
 MODULES =		textproc/intltool
 

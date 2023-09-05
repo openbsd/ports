@@ -19,7 +19,7 @@ WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 harfbuzz intl m
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pthread sndfile
 WANTLIB += sndio z
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=soundtracker/}
+SITES=			${SITE_SOURCEFORGE:=soundtracker/}
 
 LIB_DEPENDS=		audio/libsndfile \
 			x11/gtk+2

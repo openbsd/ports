@@ -10,7 +10,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		m
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tap-plugins/}
+SITES =			${SITE_SOURCEFORGE:=tap-plugins/}
 
 USE_GMAKE =		Yes
 

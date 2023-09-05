@@ -8,7 +8,7 @@ CATEGORIES =		audio
 
 HOMEPAGE =		http://liblo.sourceforge.net/
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=liblo/}
+SITES =			${SITE_SOURCEFORGE:=liblo/}
 
 # LGPLv2.1+
 PERMIT_PACKAGE =	Yes

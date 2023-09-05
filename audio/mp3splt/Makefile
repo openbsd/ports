@@ -10,7 +10,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c mp3splt
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mp3splt/}
+SITES=		${SITE_SOURCEFORGE:=mp3splt/}
 
 BUILD_DEPENDS=	devel/gettext,-runtime
 

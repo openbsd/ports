@@ -2,7 +2,7 @@ COMMENT =	console audio player
 DISTNAME =	moc-2.5.2
 CATEGORIES =	audio
 HOMEPAGE =	http://moc.daper.net/
-MASTER_SITES =	http://ftp.daper.net/pub/soft/moc/stable/ \
+SITES =		http://ftp.daper.net/pub/soft/moc/stable/ \
 		https://distfiles.sigtrap.nl/
 EXTRACT_SUFX =	.tar.bz2
 REVISION =	9

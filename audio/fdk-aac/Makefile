@@ -9,7 +9,7 @@ PERMIT_PACKAGE =	Yes
 SHARED_LIBS =		fdk-aac                   1.0 # 0.4
 WANTLIB =		c m
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=opencore-amr/fdk-aac/}
+SITES =			${SITE_SOURCEFORGE:=opencore-amr/fdk-aac/}
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--enable-example
 

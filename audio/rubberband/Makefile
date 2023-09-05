@@ -17,7 +17,7 @@ WANTLIB +=		c fftw3 m pthread samplerate sndfile vamp-sdk
 # C++11
 COMPILER =		base-clang ports-gcc
 
-MASTER_SITES =		https://breakfastquay.com/files/releases/
+SITES =			https://breakfastquay.com/files/releases/
 
 MODULES =               devel/meson
 

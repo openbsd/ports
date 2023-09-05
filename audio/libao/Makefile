@@ -11,7 +11,7 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://downloads.xiph.org/releases/ao/
+SITES=		https://downloads.xiph.org/releases/ao/
 
 WANTLIB=	sndio
 

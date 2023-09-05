@@ -11,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		fftw3f m pthread
 
-MASTER_SITES =		${HOMEPAGE}/releases/0.4.15/ \
+SITES =			${HOMEPAGE}/releases/0.4.15/ \
 			https://distfiles.sigtrap.nl/
 
 BUILD_DEPENDS =		audio/ladspa

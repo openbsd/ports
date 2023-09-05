@@ -11,7 +11,7 @@ PERMIT_PACKAGE =		Yes
 
 WANTLIB +=		c
 
-MASTER_SITES =		http://crazney.net/programs/itunes/files/
+SITES =			http://crazney.net/programs/itunes/files/
 EXTRACT_SUFX =		.tgz
 
 NO_TEST =		Yes

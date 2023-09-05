@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curl glib-2.0 intl mpdclient
 
-MASTER_SITES =		http://www.musicpd.org/download/mpdscribble/$V/
+SITES =			http://www.musicpd.org/download/mpdscribble/$V/
 
 LIB_DEPENDS =		net/curl \
 			devel/glib2 \

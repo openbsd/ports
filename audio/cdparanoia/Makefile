@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c m
 
-MASTER_SITES=	https://www.xiph.org/paranoia/download/
+SITES=		https://www.xiph.org/paranoia/download/
 EXTRACT_SUFX=	.src.tgz
 
 CONFIGURE_STYLE=	autoconf autoheader

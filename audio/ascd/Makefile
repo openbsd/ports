@@ -9,7 +9,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		X11 Xau Xdmcp Xext Xpm c workman>=1
 
-MASTER_SITES=		https://spacehopper.org/mirrors/
+SITES=			https://spacehopper.org/mirrors/
 DISTFILES=		${DISTNAME}-src.tgz ${DATAFILES}
 DATAFILES=		ascd-0.13pr6-themes.tgz
 

@@ -10,7 +10,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		X11 Xext Xpm c
 
-MASTER_SITES=		${HOMEPAGE}dl/
+SITES=			${HOMEPAGE}dl/
 
 MAKE_ENV=		CC="${CC}"
 

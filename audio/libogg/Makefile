@@ -11,7 +11,7 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://downloads.xiph.org/releases/ogg/ \
+SITES=		https://downloads.xiph.org/releases/ogg/ \
 		https://github.com/xiph/ogg/releases/download/v${VERSION}/
 EXTRACT_SUFX=	.tar.xz
 

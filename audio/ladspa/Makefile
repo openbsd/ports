@@ -5,7 +5,7 @@ REVISION=	0
 DISTNAME=	ladspa_sdk_${V}
 PKGNAME=	ladspa-${V}
 CATEGORIES=	audio devel
-MASTER_SITES=	${HOMEPAGE:=download/} \
+SITES=		${HOMEPAGE:=download/} \
 		https://spacehopper.org/mirrors/
 EXTRACT_SUFX=	.tgz
 

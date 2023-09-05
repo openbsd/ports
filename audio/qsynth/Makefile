@@ -12,7 +12,7 @@ MAINTAINER=		Sebastian Reitenbach <sebastia@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=qsynth/}
+SITES =			${SITE_SOURCEFORGE:=qsynth/}
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Widgets c
 WANTLIB += m fluidsynth GL Qt5Network curses readline

@@ -2,7 +2,7 @@ COMMENT = 	simple metronome
 CATEGORIES =	audio
 DISTNAME = 	metronome-2
 MAINTAINER = 	Marc Espie <espie@openbsd.org>
-MASTER_SITES = 	https://distfiles.sigtrap.nl/
+SITES = 	https://distfiles.sigtrap.nl/
 
 # OpenBSD licence
 PERMIT_PACKAGE =	Yes

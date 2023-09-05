@@ -16,9 +16,9 @@ MAINTAINER =	Edd Barrett <edd@openbsd.org>
 #
 # Do this part as a normal user in their $HOME. It doesn't work as the
 # `_pbuild` user. You will need very liberal -d ulimits too.
-DISTFILES +=		navidrome-build-${MODGO_VERSION}.tar.gz:0
+DISTFILES.zoo =		navidrome-build-${MODGO_VERSION}.tar.gz
 
-MASTER_SITES0 =		https://theunixzoo.co.uk/distfiles/
+SITES.zoo =		https://theunixzoo.co.uk/distfiles/
 
 # GPLv3
 PERMIT_PACKAGE =	Yes

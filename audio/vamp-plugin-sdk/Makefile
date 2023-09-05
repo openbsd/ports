@@ -17,7 +17,7 @@ WANTLIB =		c m ${COMPILER_LIBCXX}
 # C++11
 COMPILER =		base-clang ports-gcc
 
-MASTER_SITES =		https://code.soundsoftware.ac.uk/attachments/download/2588/
+SITES =		https://code.soundsoftware.ac.uk/attachments/download/2588/
 
 MAKE_ENV +=		LIBvamp-sdk_VERSION="${LIBvamp-sdk_VERSION}" \
 			LIBvamp-hostsdk_VERSION="${LIBvamp-hostsdk_VERSION}"

@@ -11,7 +11,7 @@ HOMEPAGE=	https://www.surina.net/soundtouch/
 # LGPLv2.1+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://www.surina.net/soundtouch/
+SITES=		https://www.surina.net/soundtouch/
 WRKDIST=	${WRKDIR}/soundtouch
 
 WANTLIB += ${COMPILER_LIBCXX} c m

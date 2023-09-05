@@ -3,7 +3,7 @@ DISTNAME =	tracker-5.3
 REVISION =	4
 CATEGORIES =	audio
 
-MASTER_SITES =	ftp://ftp.uni-trier.de/pub/unix/audio/tracker/
+SITES =		ftp://ftp.uni-trier.de/pub/unix/audio/tracker/
 EXTRACT_SUFX =	.tgz
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>

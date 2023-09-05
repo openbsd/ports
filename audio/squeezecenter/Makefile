@@ -17,7 +17,7 @@ PERMIT_DISTFILES =	No
 
 EXTRACT_SUFX =	.tgz
 
-MASTER_SITES =	http://downloads.slimdevices.com/SqueezeCenter_v${V}/
+SITES =		http://downloads.slimdevices.com/SqueezeCenter_v${V}/
 
 WRKDIST =	${WRKDIR}/${DISTNAME:S/.no-cpan-arch//}
 

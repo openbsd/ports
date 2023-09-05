@@ -9,7 +9,7 @@ HOMEPAGE=	http://libcdaudio.sourceforge.net/
 # LGPLv2+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=libcdaudio/}
+SITES=   	${SITE_SOURCEFORGE:=libcdaudio/}
 
 CONFIGURE_STYLE= gnu
 

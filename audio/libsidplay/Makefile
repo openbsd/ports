@@ -11,7 +11,7 @@ WANTLIB =		m ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=	https://distfiles.gentoo.org/distfiles/
+SITES=		https://distfiles.gentoo.org/distfiles/
 EXTRACT_SUFX=	.tgz
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/scripts

@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += util
 
-MASTER_SITES=	http://ftp.musicbrainz.org/pub/musicbrainz/libdiscid/
+SITES=		http://ftp.musicbrainz.org/pub/musicbrainz/libdiscid/
 
 SEPARATE_BUILD=	Yes
 

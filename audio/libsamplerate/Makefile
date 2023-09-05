@@ -14,7 +14,7 @@ MAINTAINER=	Jan Stary <hans@stare.cz>
 # 2-BSD license
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://github.com/libsndfile/libsamplerate/releases/download/${VER}/
+SITES=	https://github.com/libsndfile/libsamplerate/releases/download/${VER}/
 
 WANTLIB=	m
 

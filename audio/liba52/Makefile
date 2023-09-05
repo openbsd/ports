@@ -6,7 +6,7 @@ DISTNAME =	a52dec-snapshot
 PKGNAME =	liba52-${V}
 REVISION =	3
 CATEGORIES =	audio
-MASTER_SITES =	https://comstyle.com/source/
+SITES =		https://comstyle.com/source/
 
 SHARED_LIBS =	a52	1.0
 

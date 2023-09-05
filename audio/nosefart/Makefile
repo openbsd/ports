@@ -9,7 +9,7 @@ HOMEPAGE=	http://nosefart.sourceforge.net/
 # GPL
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nosefart/}
+SITES=		${SITE_SOURCEFORGE:=nosefart/}
 
 EXTRACT_SUFX=	.tar.bz2
 NO_TEST=	yes

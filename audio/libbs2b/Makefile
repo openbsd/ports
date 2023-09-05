@@ -14,9 +14,9 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += FLAC c m ogg sndfile ${COMPILER_LIBCXX} vorbis vorbisenc opus
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bs2b/}
+SITES=		${SITE_SOURCEFORGE:=bs2b/}
 
 LIB_DEPENDS=	audio/libsndfile
 SEPARATE_BUILD=	Yes

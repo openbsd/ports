@@ -11,7 +11,7 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mpg321/}
+SITES=		${SITE_SOURCEFORGE:=mpg321/}
 DISTFILES=	mpg321_${VERSION}.orig.tar.gz
 
 WANTLIB=	ao c id3tag m mad pthread z

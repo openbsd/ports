@@ -12,7 +12,7 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://downloads.xiph.org/releases/flac/ \
+SITES=		https://downloads.xiph.org/releases/flac/ \
 		https://github.com/xiph/flac/releases/download/${VERSION}/
 EXTRACT_SUFX=	.tar.xz
 

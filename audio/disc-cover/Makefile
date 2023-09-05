@@ -11,7 +11,7 @@ HOMEPAGE=	http://www.vanhemert.co.uk/disc-cover.html
 # GPL
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=disc-cover/}
+SITES=		${SITE_SOURCEFORGE:=disc-cover/}
 
 RUN_DEPENDS=	print/texlive/base \
 		graphics/ImageMagick \

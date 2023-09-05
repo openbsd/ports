@@ -12,7 +12,7 @@ WANTLIB=		c m sidplay>=1 sndio ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=	${MASTER_SITE_FREEBSD}
+SITES=		${SITE_FREEBSD}
 EXTRACT_SUFX=	.tgz
 
 LIB_DEPENDS=	audio/libsidplay

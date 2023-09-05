@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 
-MASTER_SITES=	http://checkmate.gissen.nl/
+SITES=		http://checkmate.gissen.nl/
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu

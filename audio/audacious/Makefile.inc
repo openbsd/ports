@@ -7,7 +7,7 @@ HOMEPAGE =	https://audacious-media-player.org/
 
 MAINTAINER =	Bjorn Ketelaars <bket@openbsd.org>
 
-MASTER_SITES =	https://distfiles.audacious-media-player.org/
+SITES =		https://distfiles.audacious-media-player.org/
 EXTRACT_SUFX =	.tar.bz2
 
 COMPILER =	base-clang ports-gcc

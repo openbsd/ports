@@ -15,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ao c dotconf espeak-ng glib-2.0 gmodule-2.0 gthread-2.0
 WANTLIB += iconv intl ltdl m pthread sndfile
 
-MASTER_SITES=	https://github.com/brailcom/speechd/releases/download/${V}/
+SITES=		https://github.com/brailcom/speechd/releases/download/${V}/
 
 MODULES=	textproc/intltool \
 		lang/python

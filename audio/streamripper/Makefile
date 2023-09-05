@@ -6,7 +6,7 @@ CATEGORIES=	audio
 
 HOMEPAGE=	http://streamripper.sourceforge.net/
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=streamripper/}
+SITES=		${SITE_SOURCEFORGE:=streamripper/}
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

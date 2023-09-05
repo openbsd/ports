@@ -20,7 +20,7 @@ WANTLIB += Qt5QuickControls2 Qt5QuickWidgets Qt5Sql Qt5Svg Qt5Test
 WANTLIB += Qt5Widgets Qt5Xml Qt5XmlPatterns c freetype m ogg portaudio
 WANTLIB += sndfile vorbis vorbisfile z Qt5QmlModels Qt5QuickTemplates2
 
-MASTER_SITES =	https://github.com/musescore/MuseScore/releases/download/v${V}/
+SITES =		https://github.com/musescore/MuseScore/releases/download/v${V}/
 
 MODULES =	devel/cmake \
 		x11/qt5

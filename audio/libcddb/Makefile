@@ -10,7 +10,7 @@ HOMEPAGE=		http://libcddb.sourceforge.net/
 # LGPL
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=libcddb/}
+SITES=			${SITE_SOURCEFORGE:=libcddb/}
 EXTRACT_SUFX=		.tar.bz2
 
 LIB_DEPENDS=		converters/libiconv

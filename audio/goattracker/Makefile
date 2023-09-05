@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	SDL c m pthread ${COMPILER_LIBCXX}
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=goattracker2/}GoatTracker%202/${V}/
+SITES =		${SITE_SOURCEFORGE:=goattracker2/}GoatTracker%202/${V}/
 
 COMPILER =	base-clang ports-gcc base-gcc
 

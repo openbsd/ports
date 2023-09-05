@@ -8,7 +8,7 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 # BSD
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	http://rhaalovely.net/stuff/
+SITES =		http://rhaalovely.net/stuff/
 
 NO_BUILD=	yes
 NO_TEST=	yes

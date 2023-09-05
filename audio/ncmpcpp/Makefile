@@ -21,7 +21,7 @@ WANTLIB += boost_regex-mt boost_system-mt boost_thread-mt c crypto
 WANTLIB += curl curses ereadline icudata icui18n icuuc m mpdclient
 WANTLIB += nghttp2 ssl tag z boost_atomic-mt
 
-MASTER_SITES =		${HOMEPAGE}stable/
+SITES =			${HOMEPAGE}stable/
 
 LIB_DEPENDS =		audio/libmpdclient>=2.4 \
 			audio/taglib \

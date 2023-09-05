@@ -6,7 +6,7 @@ EXTRACT_SUFX=	.tar.xz
 CATEGORIES=	audio
 
 HOMEPAGE=	https://libsndfile.github.io/libsndfile/
-MASTER_SITES=	https://github.com/libsndfile/libsndfile/releases/download/${V}/
+SITES=		https://github.com/libsndfile/libsndfile/releases/download/${V}/
 
 MAINTAINER=	Jan Stary <hans@stare.cz>
 

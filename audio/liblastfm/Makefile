@@ -16,7 +16,7 @@ WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Network Qt5Sql
 WANTLIB += Qt5Xml c fftw3f m samplerate
 
 # archives are stable but naming scheme sucks, thus DIST_SUBDIR
-MASTER_SITES =	https://github.com/lastfm/liblastfm/archive/
+SITES =		https://github.com/lastfm/liblastfm/archive/
 DIST_SUBDIR =	liblastfm
 WRKDIST =	${WRKDIR}/${PKGNAME}
 

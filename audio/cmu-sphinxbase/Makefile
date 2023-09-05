@@ -16,7 +16,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${MODFORTRAN_WANTLIB}
 WANTLIB += blas c iconv lapack m pthread sndio z
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=cmusphinx/}
+SITES=		${SITE_SOURCEFORGE:=cmusphinx/}
 
 MODULES=	fortran
 MODFORTRAN_COMPILER = gfortran

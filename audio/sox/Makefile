@@ -25,7 +25,7 @@ GIT_COMMIT=	42b3557e13e0fe01a83465b672d89faddbe65f49
 
 # mirror git checkout as tarball for latest fixes until new release.
 # see dist: target and `make dist' to generate tarball.
-MASTER_SITES=	https://namtsui.com/source/
+SITES=		https://namtsui.com/source/
 
 # see CONFIGURE_ARGS below
 LIB_DEPENDS=			\

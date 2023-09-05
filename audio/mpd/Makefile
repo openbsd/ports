@@ -17,7 +17,7 @@ WANTLIB =		FLAC audiofile avcodec avfilter avformat avutil \
 			shout sndfile sndio sqlite3 \
 			vorbis vorbisenc yajl z ${COMPILER_LIBCXX}
 
-MASTER_SITES =		https://www.musicpd.org/download/mpd/${VER:R}/
+SITES =			https://www.musicpd.org/download/mpd/${VER:R}/
 
 COMPILER =		base-clang ports-gcc
 

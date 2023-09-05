@@ -12,9 +12,9 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += SDL c m pthread ${COMPILER_LIBCXX}
 
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
 NO_TEST=	Yes
 

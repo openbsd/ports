@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB += Qt5Qml Qt5Sql Qt5Widgets c m mpv tag
 
-MASTER_SITES =	https://github.com/flaviotordini/musique/releases/download/$V/
+SITES =		https://github.com/flaviotordini/musique/releases/download/$V/
 EXTRACT_SUFX =	.tar.bz2
 
 MODULES =	devel/qmake \

@@ -12,9 +12,9 @@ PERMIT_PACKAGE =		Yes
 WANTLIB += FOX-1.6 GL GLU X11 c dbus-1 expat intl m sqlite3 ${COMPILER_LIBCXX}
 WANTLIB += tag xine z
 
-MASTER_SITES =	http://www.linklevel.net/distfiles/
+SITES =		http://www.linklevel.net/distfiles/
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
 LIB_DEPENDS =	audio/taglib \
 		databases/sqlite3 \

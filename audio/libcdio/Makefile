@@ -4,7 +4,7 @@ DISTNAME=	libcdio-2.1.0
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	audio devel
-MASTER_SITES=	${MASTER_SITE_GNU:=libcdio/}
+SITES=		${SITE_GNU:=libcdio/}
 
 SHARED_LIBS=	cdio		1.0 \
 		cdio++		1.0 \

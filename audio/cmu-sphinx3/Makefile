@@ -12,7 +12,7 @@ HOMEPAGE=	http://cmusphinx.sourceforge.net/
 # CMU
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=cmusphinx/}
+SITES=		${SITE_SOURCEFORGE:=cmusphinx/}
 
 WANTLIB=	blas c iconv lapack m pthread sndio ${MODFORTRAN_WANTLIB} \
 		sphinxad sphinxbase z

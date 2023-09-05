@@ -16,7 +16,7 @@ WANTLIB =		m ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		http://quitte.de/dsp/
+SITES =			http://quitte.de/dsp/
 
 MAKE_FLAGS =		CC=${CXX} \
 			OPTS="${CFLAGS} -fPIC -DPIC"

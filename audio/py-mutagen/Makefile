@@ -9,7 +9,7 @@ CATEGORIES =	audio
 
 HOMEPAGE =	https://mutagen.readthedocs.org/
 
-MASTER_SITES =	https://github.com/quodlibet/mutagen/releases/download/release-${MODPY_EGG_VERSION}/
+SITES =	https://github.com/quodlibet/mutagen/releases/download/release-${MODPY_EGG_VERSION}/
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

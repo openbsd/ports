@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	${COMPILER_LIBCXX} m openal>=1.0 pthread sndio
 
-MASTER_SITES=	http://connect.creativelabs.com/openal/Downloads/ALUT/
+SITES=		http://connect.creativelabs.com/openal/Downloads/ALUT/
 
 LIB_DEPENDS=	audio/openal
 

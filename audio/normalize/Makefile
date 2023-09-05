@@ -4,7 +4,7 @@ DISTNAME=	normalize-0.7.7
 REVISION=	7
 CATEGORIES=	audio
 
-MASTER_SITES=	${MASTER_SITE_SAVANNAH:=normalize/}
+SITES=		${SITE_SAVANNAH:=normalize/}
 
 HOMEPAGE=	http://normalize.nongnu.org/
 

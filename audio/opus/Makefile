@@ -12,7 +12,7 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://downloads.xiph.org/releases/opus/ \
+SITES=		https://downloads.xiph.org/releases/opus/ \
 		https://github.com/xiph/opus/releases/download/v${VERSION}/
 
 WANTLIB=	m

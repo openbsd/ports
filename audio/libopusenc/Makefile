@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	m opus
 
-MASTER_SITES=	https://archive.mozilla.org/pub/opus/
+SITES=		https://archive.mozilla.org/pub/opus/
 
 LIB_DEPENDS=	audio/opus
 

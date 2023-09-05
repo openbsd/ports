@@ -13,7 +13,7 @@ WANTLIB += c curses ogg pthread mad>=2 id3tag>=3 sndfile>=1
 WANTLIB += vorbis>=5 vorbisfile>=4 glib-2.0>=1000 gthread-2.0>=1000
 WANTLIB += curl>=9 ao intl
 
-MASTER_SITES=		${HOMEPAGE}/distfiles/ \
+SITES=			${HOMEPAGE}/distfiles/ \
 			http://www.stack.nl/~ed/projects/herrie/distfiles/ \
 			http://www.il.fontys.nl/~ed/projects/herrie/distfiles/
 

@@ -11,7 +11,7 @@ HOMEPAGE=	https://quodlibet.readthedocs.org/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://github.com/quodlibet/quodlibet/releases/download/release-${MODPY_EGG_VERSION}/
+SITES=		https://github.com/quodlibet/quodlibet/releases/download/release-${MODPY_EGG_VERSION}/
 
 MODULES=	lang/python
 

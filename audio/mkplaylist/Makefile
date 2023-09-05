@@ -9,7 +9,7 @@ HOMEPAGE=		http://bj.spline.de/software.html
 # GPL
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://bj.spline.de/download/mkplaylist/
+SITES=		http://bj.spline.de/download/mkplaylist/
 
 MODULES=	lang/python
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}

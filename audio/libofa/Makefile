@@ -8,7 +8,7 @@ SHARED_LIBS +=	ofa	0.0
 # GPL
 PERMIT_PACKAGE =		Yes
 
-MASTER_SITES =	https://distfiles.sigtrap.nl/
+SITES =		https://distfiles.sigtrap.nl/
 
 WANTLIB +=	m pthread ${COMPILER_LIBCXX} fftw3
 

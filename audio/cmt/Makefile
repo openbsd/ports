@@ -7,7 +7,7 @@ WRKDIST=	${WRKDIR}/cmt
 PKGNAME=	cmt-1.15
 REVISION =	6
 EXTRACT_SUFX=	.tgz
-MASTER_SITES=	${HOMEPAGE:=download/}
+SITES=		${HOMEPAGE:=download/}
 
 # GPL
 PERMIT_PACKAGE=	Yes
