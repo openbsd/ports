@@ -3,8 +3,6 @@ BROKEN-sparc64=	doesn't detect Ruby library in configure
 UNIT_MODNAME=	ruby${MODRUBY_REV}
 UNIT_SHORTNAME=	ruby
 
-REVISION=	0
-
 MODULES+=	lang/ruby
 
 # XXX ruby port provide libruby30.so which is picked up in preference to
