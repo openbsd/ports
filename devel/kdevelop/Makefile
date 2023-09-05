@@ -67,7 +67,7 @@ BUILD_DEPENDS =	archivers/gtar \
 		devel/boost \
 		devel/clang-tools-extra \
 		devel/cppcheck \
-	 	devel/gettext,-tools \
+		devel/gettext,-tools \
 		shells/bash-completion \
 		lang/clazy \
 		misc/shared-mime-info
@@ -83,9 +83,10 @@ RUN_DEPENDS =	devel/clang-tools-extra \
 		x11/kde-applications/kio-extras \
 		x11/kde-applications/konsole
 
-LIB_DEPENDS =	devel/kf5/kconfig \
+LIB_DEPENDS =	${MODCLANG_LIB_DEPENDS} \
 		devel/kf5/karchive \
 		devel/kf5/kcmutils \
+		devel/kf5/kconfig \
 		devel/kf5/kcrash \
 		devel/kf5/kdeclarative \
 		devel/kf5/kguiaddons \
@@ -106,7 +107,6 @@ LIB_DEPENDS =	devel/kf5/kconfig \
 		devel/kf5/kxmlgui \
 		devel/kf5/purpose \
 		devel/kf5/threadweaver \
-		${MODCLANG_LIB_DEPENDS} \
 		devel/subversion \
 		x11/grantlee-qt5>=5.3 \
 		x11/kde-applications/libkomparediff2 \
