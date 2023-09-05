@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1540 2023/09/04 14:37:44 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.1541 2023/09/05 13:44:44 volker Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1838,6 +1838,7 @@ setup_obsolete_reason(
 	3 => 'kfloppy',
 	3 => 'py3-hypatia',
 	1 => 'reprepro',
+	5 => 'ocaml-pcre',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
