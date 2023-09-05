@@ -14,25 +14,20 @@ MODRUBY_HANDLE_FLAVORS ?= No
 # implementations using the same port directory for gem
 # ports.  It does this by adding FLAVORS automatically, unless FLAVORS are
 # already defined or the port defines MODRUBY_REV to tie the port to a specific
-# ruby version.  For example, JDBC gem ports want to set FLAVOR=jruby, since
-# they don't work on other ruby implementations.
+# ruby version.
 .if !defined(MODRUBY_REV)
 .  if ${MODRUBY_HANDLE_FLAVORS:L:Myes}
 
 # If ruby.pork.mk should handle FLAVORs, define a separate FLAVOR
-# for each ruby interpreter
+# for each ruby version.
 .    if !defined(FLAVORS)
 FLAVORS=	ruby30 ruby31 ruby32
-.      if !${CONFIGURE_STYLE:L:Mext}
-FLAVORS+=	jruby
-.      endif
 .    endif
 
 # Instead of adding flavors to the end of the package name, we use
-# different package stems for different ruby versions and implementations.
-# Most ruby versions use rubyXY-* and jruby uses jruby-*.  In most cases,
-# PKGNAME in the port should be set to the same as DISTNAME, and this
-# will insert the correct package prefix.
+# different package stems (rubyXY-*) for different ruby versions.
+# In most cases, PKGNAME in the port should be set to the same as
+# DISTNAME, and this will insert the correct package prefix.
 FULLPKGNAME?=		${MODRUBY_PKG_PREFIX}-${PKGNAME}
 
 # If the port installs binary files or man pages and can work on multiple
@@ -50,13 +45,12 @@ FLAVOR =		ruby32
 
 # Check for conflicting FLAVORs and set MODRUBY_REV appropriately based
 # on the FLAVOR.
-.    for i in ruby30 ruby31 ruby32 jruby
+.    for i in ruby30 ruby31 ruby32
 .      if ${FLAVOR:M$i}
 MODRUBY_REV = ${i:C/ruby([0-9])/\1./}
 .        if ${FLAVOR:N$i:Mruby30} || \
             ${FLAVOR:N$i:Mruby31} || \
-            ${FLAVOR:N$i:Mruby32} || \
-	    ${FLAVOR:N$i:Mjruby}
+            ${FLAVOR:N$i:Mruby32}
 ERRORS += "Fatal: Conflicting flavors used: ${FLAVOR}"
 .        endif
 .      endif
@@ -68,42 +62,14 @@ ERRORS += "Fatal: Conflicting flavors used: ${FLAVOR}"
 # 3.2 for consistency with the default ruby32 FLAVOR for gem ports.
 MODRUBY_REV?=		3.2
 
-# Because the jruby FLAVORs use same binary names but in
-# different directories, GEM_MAN_SUFFIX is used for the man pages to avoid
-# conflicts since all man files go in the same directory.
-GEM_MAN_SUFFIX =	${GEM_BIN_SUFFIX}
-
 # Use the FLAVOR as the prefix for the package, to avoid conflicts.
 MODRUBY_PKG_PREFIX =	${MODRUBY_FLAVOR}
 
-# Set MODRUBY_* variables as well as the path for the ruby interpreter and
-# related commands used by MODRUBY_TEST and manually in some port targets.
-.if ${MODRUBY_REV} == jruby
-GEM_MAN_SUFFIX =	-${MODRUBY_FLAVOR}
-MODRUBY_ARCH=		${MACHINE_ARCH:S/amd64/x86_64/}-java
-MODRUBY_BIN_RSPEC =	${RUBY} -S rspec
-MODRUBY_BIN_TESTRB =	${RUBY} -S testrb
-MODRUBY_FLAVOR =	jruby
-MODRUBY_LIBDIR=		${LOCALBASE}/jruby/lib/ruby
-MODRUBY_LIBREV =	2.5
-MODRUBY_SITEARCHDIR =	${MODRUBY_SITEDIR}/java
-MODRUBY_SITEDIR =	jruby/lib/ruby/${MODRUBY_LIBREV}/site_ruby
-RAKE=			${RUBY} -S rake
-RSPEC=			${RUBY} -S spec
-RUBY=			${LOCALBASE}/jruby/bin/jruby
-MODRUBY_RUN_DEPENDS=	lang/jruby
-
-.  if ${CONFIGURE_STYLE:L:Mext}
-ERRORS += "Fatal: Ruby C extensions are unsupported on JRuby"
-.  endif
-
-.else # not jruby
-
 GEM_BIN_SUFFIX =	${MODRUBY_BINREV}
+GEM_MAN_SUFFIX =	${GEM_BIN_SUFFIX}
 MODRUBY_ARCH=		${MACHINE_ARCH:S/amd64/x86_64/}-openbsd
 MODRUBY_BINREV =	${MODRUBY_LIBREV:S/.//}
 MODRUBY_BIN_RSPEC =	${LOCALBASE}/bin/rspec${MODRUBY_BINREV}
-MODRUBY_BIN_TESTRB =	${LOCALBASE}/bin/testrb${MODRUBY_BINREV}
 MODRUBY_FLAVOR =	ruby${MODRUBY_BINREV}
 MODRUBY_LIBDIR=		${LOCALBASE}/lib/ruby
 MODRUBY_LIBREV =	${MODRUBY_REV}
@@ -113,17 +79,13 @@ MODRUBY_SITEARCHDIR =	${MODRUBY_SITEDIR}/${MODRUBY_ARCH}
 MODRUBY_SITEDIR =	lib/ruby/site_ruby/${MODRUBY_LIBREV}
 MODRUBY_WANTLIB=	ruby${MODRUBY_BINREV}
 RAKE=			${LOCALBASE}/bin/rake${MODRUBY_BINREV}
-RSPEC=			${LOCALBASE}/bin/spec${MODRUBY_BINREV}
 RUBY=			${LOCALBASE}/bin/ruby${MODRUBY_BINREV}
-.endif
 
-MODRUBY_RSPEC_DEPENDS =	devel/ruby-rspec/1,${MODRUBY_FLAVOR}<2.0
 MODRUBY_RSPEC3_DEPENDS = devel/ruby-rspec/3/rspec,${MODRUBY_FLAVOR}>=3.0
 
 .if defined(MODRUBY_TEST)
-.  if !${MODRUBY_TEST:L:Mrspec} && !${MODRUBY_TEST:L:Mrspec3} && \
-     !${MODRUBY_TEST:L:Mrake} && !${MODRUBY_TEST:L:Mruby} && \
-     !${MODRUBY_TEST:L:Mtestrb}
+.  if !${MODRUBY_TEST:L:Mrspec3} && !${MODRUBY_TEST:L:Mtestrb} && \
+     !${MODRUBY_TEST:L:Mrake} && !${MODRUBY_TEST:L:Mruby}
 ERRORS += "Fatal: Unsupported MODRUBY_TEST value: ${MODRUBY_TEST}"
 .  endif
 .else
@@ -159,9 +121,6 @@ BUILD_DEPENDS+=		${MODRUBY_BUILD_DEPENDS}
 RUN_DEPENDS+=		${MODRUBY_RUN_DEPENDS}
 .endif
 
-.if ${MODRUBY_TEST:L:Mrspec}
-TEST_DEPENDS+=	${MODRUBY_RSPEC_DEPENDS}
-.endif
 .if ${MODRUBY_TEST:L:Mrspec3}
 TEST_DEPENDS+=	${MODRUBY_RSPEC3_DEPENDS}
 .endif
@@ -200,9 +159,8 @@ LIB_DEPENDS+=	${MODRUBY_LIB_DEPENDS}
 MASTER_SITES?=	${MASTER_SITE_RUBYGEMS}
 EXTRACT_SUFX=	.gem
 
-# Pure ruby gem ports without C extensions are arch-independent.
 .  if ${CONFIGURE_STYLE:L:Mext}
-# Use ports-gcc for ruby32 extensions
+# Use ports-gcc for ruby32 extensions if base does not use clang
 .    if ${FLAVOR:Mruby32}
 COMPILER ?= 	base-clang ports-gcc
 COMPILER_LANGS ?= c
@@ -214,6 +172,7 @@ GEM_EXTENSIONS_FILE ?= ${GEM_EXTENSIONS_DIR}/gem.build_complete
 SUBST_VARS+=	GEM_EXTENSIONS_DIR
 PKG_ARGS+=	-f ${PORTSDIR}/lang/ruby/rubygems-ext.PLIST
 .  else
+# Pure ruby gem ports without C extensions are arch-independent.
 PKG_ARCH=	*
 .  endif
 
@@ -222,17 +181,10 @@ PKG_ARCH=	*
 SUBST_VARS+=	GEM_LIB GEM_BIN DISTNAME
 UPDATE_PLIST_ARGS += -s GEM_LIB -s GEM_BIN
 
-.  if ${MODRUBY_REV} == jruby
-GEM=		${RUBY} -S gem
-GEM_BIN =	jruby/bin
-GEM_LIB =	jruby/lib/ruby/gems/1.8
-GEM_BASE_LIB=	${GEM_BASE}/jruby/${MODRUBY_LIBREV}
-.  else
 GEM=		${LOCALBASE}/bin/gem${MODRUBY_BINREV}
 GEM_BIN =	bin
 GEM_LIB =	lib/ruby/gems/${MODRUBY_LIBREV}
 GEM_BASE_LIB=	${GEM_BASE}/ruby/${MODRUBY_LIBREV}
-.  endif
 GEM_BASE=	${WRKDIR}/gem-tmp/.gem
 GEM_ABS_PATH=	${PREFIX}/${GEM_LIB}
 GEM_BASE_BIN=	${GEM_BASE_LIB}/bin
@@ -258,8 +210,7 @@ EXTRACT_CASES += *.gem) \
     rm -f ${_GEM_CONTENT}/*.gz.sig ${_GEM_CONTENT}/checksums.yaml.gz;;
 
 # Rebuild the gem manually after possible patching, then install it to a
-# temporary directory (not the final directory under fake, since that would
-# require root access and building C extensions as root).
+# temporary directory (not the final directory under fake).
 MODRUBY_BUILD_TARGET = \
     if [ -f ${WRKDIST}/.metadata ]; then \
 	    cd ${WRKDIST} && gzip .metadata && \
@@ -314,9 +265,7 @@ UPDATE_PLIST_ARGS += -s MODRUBY_SITEARCHDIR -s MODRUBY_SITEDIR
 .  if !target(do-test)
 
 .    if ${MODRUBY_TEST:L:Mrake}
-MODRUBY_TEST_BIN ?=	${RAKE} --trace
-.    elif ${MODRUBY_TEST:L:Mrspec}
-MODRUBY_TEST_BIN ?=	${RSPEC}
+MODRUBY_TEST_BIN ?=	${RAKE}
 .    elif ${MODRUBY_TEST:L:Mrspec3}
 MODRUBY_TEST_BIN ?=	${MODRUBY_BIN_RSPEC}
 .    elif ${MODRUBY_TEST:L:Mtestrb}
@@ -325,7 +274,7 @@ MODRUBY_TEST_BIN ?=	${RUBY} ${PORTSDIR}/lang/ruby/files/testrb.rb
 MODRUBY_TEST_BIN ?=	${RUBY}
 .    endif
 
-.    if ${MODRUBY_TEST:L:Mrspec} || ${MODRUBY_TEST:L:Mrspec3}
+.    if ${MODRUBY_TEST:L:Mrspec3}
 MODRUBY_TEST_TARGET ?=	spec
 .    else
 MODRUBY_TEST_TARGET ?=	test
