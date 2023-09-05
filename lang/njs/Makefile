@@ -2,7 +2,7 @@ COMMENT=	NGINX JavaScript command line utility and static library
 
 GH_ACCOUNT=	nginx
 GH_PROJECT=	njs
-GH_TAGNAME=	0.7.12
+GH_TAGNAME=	0.8.0
 
 CATEGORIES=	lang www
 
@@ -24,6 +24,9 @@ LIB_DEPENDS=	devel/pcre2 \
 CONFIGURE_STYLE=simple
 
 ALL_TARGET=	libnjs njs
+
+post-patch:
+	${SUBST_CMD} ${WRKSRC}/src/njs.pc.in
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIST}/build/njs ${PREFIX}/bin
