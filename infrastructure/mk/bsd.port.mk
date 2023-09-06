@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1614 2023/09/06 12:03:34 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1615 2023/09/06 15:01:45 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1354,7 +1354,7 @@ _ALL_DISTFILES_VARIABLES =
 
 # the following loop "parses" DISTFILES-style files
 # _PATH_x contains filenames with SUBDIR prepended when necessary
-# _LIST_x contains pure filenames
+# ALL_x contains pure filenames
 #
 # _FULL_FETCH_LIST is used for creating all targets later on:
 # 	say if DISTFILES=filename{url}sufx:0 DIST_SUBDIR=foo/
@@ -1389,23 +1389,18 @@ _PATH_$v += $f
 _FULL_FETCH_LIST += ${DIST_SUBDIR}/$f $f $m $u
 _PATH_$v += ${DIST_SUBDIR}/$f
 .              endif
-_LIST_$v += $f
+ALL_$v += $f
 .            endif
 .          endfor
 .        endfor
 .      endfor
 .    else
 _PATH_$v =
-_LIST_$v =
+ALL_$v =
 .    endif
 .  endfor
 .endfor
 _FULL_FETCH_LIST ?=
-
-# TODO maybe rename _LIST* to ALL*, this will expose ALL_SUPDISTFILES
-# which isn't needed but doesn't really matter.
-ALL_DISTFILES =		${_LIST_DISTFILES}
-ALL_PATCHFILES =	${_LIST_PATCHFILES}
 
 CHECKSUMFILES = ${_PATH_DISTFILES} ${_PATH_PATCHFILES}
 MAKESUMFILES = ${CHECKSUMFILES} ${_PATH_SUPDISTFILES}
@@ -1414,11 +1409,11 @@ MAKESUMFILES = ${CHECKSUMFILES} ${_PATH_SUPDISTFILES}
 # by the user.
 
 .if !defined(EXTRACT_ONLY)
-EXTRACT_ONLY = ${_LIST_DISTFILES}
+EXTRACT_ONLY = ${ALL_DISTFILES}
 .else
 .  for f in ${EXTRACT_ONLY}
-.    if empty(_LIST_DISTFILES:M$f)
-ERRORS += "Fatal: EXTRACT_ONLY file $f not part of DISTFILES"
+.    if empty(ALL_DISTFILES:M$f)
+ERRORS += "Fatal: EXTRACT_ONLY file $f not part of DISTFILES*"
 .    endif
 .  endfor
 .endif
@@ -1427,29 +1422,25 @@ PATCH_CASES ?=
 EXTRACT_CASES ?=
 EXTRACT_FILES ?=
 
-# TODO does this make sense, we could just look at _LIST_DISTFILES
-# or even use CHECKSUM_FILES directly
-_LIST_EXTRACTED = ${EXTRACT_ONLY} ${_LIST_PATCHFILES}
-
 # okay, time for some guess work
 # this is mostly ad-hoc, we may want to add more PATCH_CASES eventually.
-.if !empty(_LIST_EXTRACTED:M*.zip)
+.if !empty(CHECKSUMFILES:M*.zip)
 BUILD_DEPENDS += archivers/unzip
 EXTRACT_CASES += *.zip) \
 	${UNZIP} -oq ${FULLDISTDIR}/$$archive -d ${WRKDIR} ${EXTRACT_FILES};;
 .endif
 
-.if !empty(_LIST_EXTRACTED:M*.xz) || \
-	!empty(_LIST_EXTRACTED:M*.lzma) || \
-	!empty(_LIST_EXTRACTED:M*.tar.lz)
+.if !empty(CHECKSUMFILES:M*.xz) || \
+	!empty(CHECKSUMFILES:M*.lzma) || \
+	!empty(CHECKSUMFILES:M*.tar.lz)
 BUILD_DEPENDS += archivers/xz>=5.4.0
 EXTRACT_CASES += *.tar.xz|*.tar.lzma|*.tar.lz) \
 	xz -T${MAKE_JOBS} -d <${FULLDISTDIR}/$$archive | ${TAR} -xf - -- ${EXTRACT_FILES};;
 .endif
 
-.if !empty(_LIST_EXTRACTED:M*.bz2) || \
-	!empty(_LIST_EXTRACTED:M*.tbz2) || \
-	!empty(_LIST_EXTRACTED:M*.tbz)
+.if !empty(CHECKSUMFILES:M*.bz2) || \
+	!empty(CHECKSUMFILES:M*.tbz2) || \
+	!empty(CHECKSUMFILES:M*.tbz)
 BUILD_DEPENDS += archivers/bzip2
 EXTRACT_CASES += *.tar.bz2|*.tbz2|*.tbz) \
 	${BZIP2} -d <${FULLDISTDIR}/$$archive | ${TAR} -xf - -- ${EXTRACT_FILES};;
@@ -1457,8 +1448,8 @@ PATCH_CASES += *.bz2) \
 	${BZIP2} -d <$$patchfile | ${PATCH} ${PATCH_DIST_ARGS};;
 .endif
 
-.if !empty(_LIST_EXTRACTED:M*.tar.zst) || \
-	!empty(_LIST_EXTRACTED:M*.tar.zstd)
+.if !empty(CHECKSUMFILES:M*.tar.zst) || \
+	!empty(CHECKSUMFILES:M*.tar.zstd)
 BUILD_DEPENDS += archivers/zstd
 EXTRACT_CASES += *.tar.zst|*.tar.zstd) \
 	zstdcat <${FULLDISTDIR}/$$archive | ${TAR} -xf - -- ${EXTRACT_FILES};;
@@ -1466,7 +1457,7 @@ PATCH_CASES += *.zst|*.zstd) \
 	zstdcat <$$patchfile | ${PATCH} ${PATCH_DIST_ARGS};;
 .endif
 
-.if !empty(_LIST_EXTRACTED:M*.rpm)
+.if !empty(CHECKSUMFILES:M*.rpm)
 BUILD_DEPENDS += converters/rpm2cpio
 EXTRACT_CASES += *.rpm) \
 	cd ${WRKDIR} && rpm2cpio ${FULLDISTDIR}/$$archive | cpio -id -- ${EXTRACT_FILES};;
@@ -2813,12 +2804,12 @@ ${_PREPATCH_COOKIE}:
 
 
 # run as _pbuild
-.if !target(do-distpatch) && !empty(_LIST_PATCHFILES)
+.if !target(do-distpatch) && !empty(ALL_PATCHFILES)
 do-distpatch:
 # What DISTPATCH normally does
 	@${ECHO_MSG} "===>  Applying distribution patches for ${FULLPKGNAME}${_MASTER}"
 	@cd ${FULLDISTDIR}; \
-	  for patchfile in ${_LIST_PATCHFILES}; do \
+	  for patchfile in ${ALL_PATCHFILES}; do \
 	  	case "${PATCH_DEBUG:L}" in \
 			no) ;; \
 			*) ${ECHO_MSG} "===>   Applying distribution patch $$patchfile" ;; \
