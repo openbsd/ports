@@ -1,0 +1,18 @@
+Use ~/TorBrowser-Data/Browser as the browser data directory.
+
+Index: xpcom/io/nsAppFileLocationProvider.cpp
+--- xpcom/io/nsAppFileLocationProvider.cpp.orig
++++ xpcom/io/nsAppFileLocationProvider.cpp
+@@ -402,6 +402,12 @@ nsresult nsAppFileLocationProvider::GetProductDirector
+   if (NS_FAILED(rv)) {
+     return rv;
+   }
++# if defined(__OpenBSD__)
++  rv = localDir->AppendNative("TorBrowser-Data"_ns);
++  NS_ENSURE_SUCCESS(rv, rv);
++  rv = localDir->AppendNative("Browser"_ns);
++  NS_ENSURE_SUCCESS(rv, rv);
++# endif
+ #else
+ #  error dont_know_how_to_get_product_dir_on_your_platform
+ #endif

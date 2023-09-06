@@ -5,14 +5,13 @@
 COMMENT =		modified version of Firefox ESR for browsing over Tor
 
 MOZILLA_VERSION =	${TB_VERSION}
-REVISION =		1
 MOZILLA_PROJECT =	${BROWSER_NAME}
 MOZILLA_CODENAME =	browser
 
 EXTRACT_SUFX =		.tar.xz
 
 PKGNAME =		${TB_PREFIX}-browser-${TB_VERSION:S/a/alpha/}
-DISTNAME =		src-firefox-tor-browser-102.12.0esr-12.0-1-build2
+DISTNAME =		src-firefox-tor-browser-102.15.0esr-12.5-1-build2
 
 FIX_EXTRACT_PERMISSIONS	= Yes
 DISTFILES +=		${DISTNAME}.tar.xz \
@@ -67,8 +66,7 @@ CONFIGURE_ENV +=	LDFLAGS=-Wl,--threads=${MAKE_JOBS}
 
 # app-name etc. for tor-browser
 CONFIGURE_ARGS +=	--with-app-name=${BROWSER_NAME}			\
-			--with-tor-browser-version=${TB_VERSION}	\
-			--enable-tor-browser-data-outside-app-dir
+			--with-base-browser-version=${TB_VERSION}
 
 # for nss build system
 MAKE_ENV +=		BUILD_OPT=1 \
@@ -149,10 +147,15 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
 	${SUBST_DATA} ${FILESDIR}/${BROWSER_NAME}.desktop \
 		${PREFIX}/share/applications/${BROWSER_NAME}.desktop
-	# install icon for desktop file
-	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps/
-	${INSTALL_DATA} ${BROWSER_DIR}/browser/chrome/icons/default/default128.png \
-		${PREFIX}/share/pixmaps/${BROWSER_NAME}.png
+	# install icons for desktop file
+.for s in 16 22 24 32 48 64 128 256
+	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/${s}x${s}/apps
+	${INSTALL_DATA} ${WRKSRC}/browser/branding/tb-release/default${s}.png \
+		${PREFIX}/share/icons/hicolor/${s}x${s}/apps/${BROWSER_NAME}.png
+.endfor
+	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/scalable/apps
+	${INSTALL_DATA} ${WRKSRC}/browser/branding/tb-release/firefox.svg ${PREFIX}/share/icons/hicolor/scalable/apps/${BROWSER_NAME}.svg
+
 	# link default48.png to default.png to be used by default
 	# by non-icccm compliant wm
 	ln -f ${BROWSER_DIR}/browser/chrome/icons/default/default{48,}.png
@@ -165,7 +168,7 @@ post-install:
 	# install fonts.conf and fonts
 	${INSTALL_DATA_DIR} ${BROWSER_DIR}/browser/fontconfig
 	${SUBST_DATA} \
-	    ${WRKSRC}/tor-browser-linux64/Browser/TorBrowser/Data/fontconfig/fonts.conf \
+	    ${WRKSRC}/tor-browser-linux64/Browser/fontconfig/fonts.conf \
 	    ${BROWSER_DIR}/browser/fontconfig/fonts.conf
 	${INSTALL_DATA_DIR} ${BROWSER_DIR}/browser/fonts
 	cp ${WRKSRC}/tor-browser-linux64/Browser/fonts/* \

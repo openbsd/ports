@@ -1,13 +1,15 @@
-Disable the updater and related stuff. Does nothing under OpenBSD.
+Code behind --with-relative-data-dir does not do what we want
+(which is to use a directory in the home directory), let's not use it.
 
 Index: browser/config/mozconfigs/tor-browser
 --- browser/config/mozconfigs/tor-browser.orig
 +++ browser/config/mozconfigs/tor-browser
-@@ -4,7 +4,4 @@ mk_add_options MOZ_APP_DISPLAYNAME="Tor Browser"
+@@ -2,7 +2,7 @@
  
- ac_add_options --with-relative-profile=TorBrowser/Data/Browser
+ mk_add_options MOZ_APP_DISPLAYNAME="Tor Browser"
  
--ac_add_options --enable-tor-browser-update
--ac_add_options --enable-verify-mar
--
- ac_add_options --with-distribution-id=org.torproject
+-ac_add_options --with-relative-data-dir=TorBrowser/Data/Browser
++#ac_add_options --with-relative-data-dir=TorBrowser/Data/Browser
+ # This is not needed with the relative data directory, but it is when you
+ # disable it, otherwise it is "Mozilla" (on Windows and macOS) or ".mozilla" on
+ # Unix systems.

@@ -10,13 +10,15 @@ https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/41406
 Index: browser/config/mozconfigs/base-browser
 --- browser/config/mozconfigs/base-browser.orig
 +++ browser/config/mozconfigs/base-browser
-@@ -12,19 +12,19 @@ ac_add_options --enable-official-branding
+@@ -12,7 +12,6 @@ ac_add_options --enable-official-branding
  export MOZILLA_OFFICIAL=1
  
  ac_add_options --enable-optimize
 -ac_add_options --enable-rust-simd
  
- ac_add_options --enable-bundled-fonts
+ # Bug 13379: Sign our MAR files.
+ ac_add_options --enable-verify-mar
+@@ -23,13 +22,14 @@ ac_add_options --enable-bundled-fonts
  
  ac_add_options --disable-tests
  ac_add_options --disable-debug
@@ -32,7 +34,7 @@ Index: browser/config/mozconfigs/base-browser
  ac_add_options --enable-proxy-bypass-protection
  # See bugs #30575 and #32418: system policies are harmful either because they
  # could allow proxy bypass, and override a number of other preferences we set
-@@ -37,7 +37,3 @@ ac_add_options --enable-base-browser
+@@ -40,7 +40,3 @@ ac_add_options --disable-backgroundtasks
  
  # Disable telemetry
  ac_add_options MOZ_TELEMETRY_REPORTING=

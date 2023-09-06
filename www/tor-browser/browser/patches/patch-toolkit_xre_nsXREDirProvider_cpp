@@ -1,0 +1,44 @@
+Use ~/TorBrowser-Data/Browser as the browser data directory.
+
+Index: toolkit/xre/nsXREDirProvider.cpp
+--- toolkit/xre/nsXREDirProvider.cpp.orig
++++ toolkit/xre/nsXREDirProvider.cpp
+@@ -1557,6 +1557,19 @@ nsresult nsXREDirProvider::GetUserDataDirectoryHome(ns
+   const char* homeDir = getenv("HOME");
+   if (!homeDir || !*homeDir) return NS_ERROR_FAILURE;
+ 
++# if defined(__OpenBSD__)
++  rv = NS_NewNativeLocalFile(nsDependentCString(homeDir), true,
++                                      getter_AddRefs(localDir));
++  NS_ENSURE_SUCCESS(rv, rv);
++  rv = localDir->AppendNative("TorBrowser-Data"_ns);
++  NS_ENSURE_SUCCESS(rv, rv);
++  rv = localDir->AppendNative("Browser"_ns);
++  NS_ENSURE_SUCCESS(rv, rv);
++  if (aLocal) {
++    rv = localDir->AppendNative("Caches"_ns);
++    NS_ENSURE_SUCCESS(rv, rv);
++  }
++# else
+ #  ifdef ANDROID /* We want (ProfD == ProfLD) on Android. */
+   aLocal = false;
+ #  endif
+@@ -1576,6 +1589,7 @@ nsresult nsXREDirProvider::GetUserDataDirectoryHome(ns
+     rv = NS_NewNativeLocalFile(nsDependentCString(homeDir), true,
+                                getter_AddRefs(localDir));
+   }
++# endif
+ #else
+ #  error "Don't know how to get product dir on your platform"
+ #endif
+@@ -1636,8 +1650,10 @@ nsresult nsXREDirProvider::GetUserDataDirectory(nsIFil
+   nsresult rv = GetUserDataDirectoryHome(getter_AddRefs(localDir), aLocal);
+   NS_ENSURE_SUCCESS(rv, rv);
+ 
++#if !defined(__OpenBSD__)
+   rv = AppendProfilePath(localDir, aLocal);
+   NS_ENSURE_SUCCESS(rv, rv);
++#endif
+ 
+   rv = EnsureDirectoryExists(localDir);
+   NS_ENSURE_SUCCESS(rv, rv);
