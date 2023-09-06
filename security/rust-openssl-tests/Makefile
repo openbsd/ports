@@ -30,4 +30,10 @@ do-install:
 
 .include "crates.inc"
 
+.for _n _v in ${MODCARGO_CRATES}
+VER_${_n} =	${_n}-${_v}
+SUBST_VARS +=	VER_${_n}
+.endfor
+
+
 .include <bsd.port.mk>
