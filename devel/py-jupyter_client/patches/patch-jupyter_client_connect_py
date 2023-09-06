@@ -1,7 +1,7 @@
 Index: jupyter_client/connect.py
 --- jupyter_client/connect.py.orig
 +++ jupyter_client/connect.py
-@@ -18,6 +18,7 @@ import socket
+@@ -15,6 +15,7 @@ import socket
  import stat
  import tempfile
  import warnings
@@ -9,7 +9,7 @@ Index: jupyter_client/connect.py
  from getpass import getpass
  from contextlib import contextmanager
  
-@@ -141,7 +142,7 @@ def write_connection_file(fname=None, shell_port=0, io
+@@ -138,7 +139,7 @@ def write_connection_file(fname=None, shell_port=0, io
      with secure_write(fname) as f:
          f.write(json.dumps(cfg, indent=2))
  

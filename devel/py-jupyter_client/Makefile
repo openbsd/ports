@@ -1,7 +1,6 @@
 COMMENT =		Jupyter protocol implementation and client libraries
 
-MODPY_EGG_VERSION =	5.3.4
-REVISION =		4
+MODPY_EGG_VERSION =	6.1.6
 DISTNAME =		jupyter_client-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -19,6 +18,7 @@ MODPY_PYBUILD =		setuptools
 MODPY_PYTEST_ARGS =	jupyter_client
 
 RUN_DEPENDS =		devel/py-dateutil${MODPY_FLAVOR}>=2.1 \
+			devel/py-ipython_genutils${MODPY_FLAVOR} \
 			devel/py-jupyter_core${MODPY_FLAVOR}>=4.6.0 \
 			devel/py-traitlets${MODPY_FLAVOR} \
 			net/py-zmq${MODPY_FLAVOR}>=13 \
