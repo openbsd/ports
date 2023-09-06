@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1615 2023/09/06 15:01:45 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1616 2023/09/06 20:46:23 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1299,6 +1299,7 @@ _ALL_VARIABLES += NO_TEST TEST_IS_INTERACTIVE TEST_DEPENDS
 .endif
 .if ${DPB:L:Mall} || ${DPB:L:Mroach}
 _ALL_VARIABLES += DISTNAME HOMEPAGE PORTROACH PORTROACH_COMMENT MAINTAINER
+_ALL_VARIABLES += ROACH_URL ROACH_SITES
 .endif
 .if ${DPB:L:Mall}
 _ALL_VARIABLES += BROKEN COMES_WITH \
@@ -1349,6 +1350,24 @@ _CACHE_VARIABLES += DISTFILES
 .  endif
 .endif
 
+.if !defined(ROACH_URL)
+.  for d in ${DISTFILES}
+_ROACH_DISTFILE ?= $d
+.  endfor
+.endif
+.if !defined(ROACH_URL)
+.  for w in ${_CACHE_VARIABLES:MDISTFILES*}
+.    for d in ${$w}
+_ROACH_DISTFILE ?= $d
+.    endfor
+.  endfor
+.endif
+
+.if defined(_ROACH_DISTFILE)
+.  for u in ${_ROACH_DISTFILE:C/:[0-9]$//:C/^.*\{(.*)\}(.*)$/\1\2/}
+ROACH_URL = $u
+.  endfor
+.endif
 
 _ALL_DISTFILES_VARIABLES =
 
@@ -1379,6 +1398,11 @@ _warn_distfiles += ${e:M*\:[0-9]}
 .          for f m u in ${p:C/^(.*)\{.*\}(.*)$/\1\2/} ${w:S/$v/SITES/}${e:M*\:[0-9]:C/^.*:([0-9])$/\1/} ${p:C/^.*\{(.*)\}(.*)$/\1\2/}
 .            if !defined($m)
 ERRORS += "Fatal: $m is not defined but referenced by $e in $v"
+.            endif
+# XXX kanjistroke
+#.            if "${u:S/"//g}" == "${ROACH_URL:S/"//g}"
+.            if "${u}" == "${ROACH_URL}"
+ROACH_SITES = ${$m}
 .            endif
 .            if empty(_FILES:M$f)
 _FILES += $f
@@ -1416,6 +1440,9 @@ EXTRACT_ONLY = ${ALL_DISTFILES}
 ERRORS += "Fatal: EXTRACT_ONLY file $f not part of DISTFILES*"
 .    endif
 .  endfor
+.endif
+.if defined(ROACH_URL) && !defined(ROACH_SITES)
+ERRORS += "Fatal: where should portroach look for ${ROACH_URL}"
 .endif
 
 PATCH_CASES ?=
@@ -3274,7 +3301,7 @@ ${DISTDIR}/$p: # XXX that comment works around a limitation in make
 	file=$@.part; \
 	for site in ${$m}; do \
 		${ECHO_MSG} ">> Fetch $${site}$u"; \
-		if ${_PFETCH} ${FETCH_CMD} -o $$file $${site}$u; then \
+		if ${_PFETCH} ${FETCH_CMD} -o $$file $${site}${u:Q}; then \
 			if ${_MAKESUM}; then \
 				${_PFETCH} mv $$file $@; \
 				exit 0; \
