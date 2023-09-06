@@ -2,7 +2,6 @@
      SUBDIR += a2ps
      SUBDIR += apsfilter
      SUBDIR += apvlv
-     SUBDIR += bg5ps
      SUBDIR += bibview
      SUBDIR += brlaser
      SUBDIR += cups
