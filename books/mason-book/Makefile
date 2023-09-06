@@ -11,7 +11,7 @@ DIST_SUBDIR=	mason-book-${V}
 HOMEPAGE=	http://www.masonbook.com/
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
-MASTER_SITES=	${HOMEPAGE}book/
+SITES=		${HOMEPAGE}book/
 
 BUILD_DEPENDS=	www/p5-HTML-Parser \
 		graphics/p5-Image-Size \

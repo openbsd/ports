@@ -11,7 +11,7 @@ MAINTAINER =	Anthony J. Bentley <anthony@anjbe.name>
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${MASTER_SITE_GNU:=gcide/}
+SITES =			${SITE_GNU:=gcide/}
 
 NO_BUILD =		Yes
 NO_TEST =		Yes

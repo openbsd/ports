@@ -10,7 +10,7 @@ MAINTAINER=	Marc Espie <espie@openbsd.org>
 # Open Publication License
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 HOMEPAGE=	http://sourceware.org/autobook/
 
 EXTRACT_ONLY=	

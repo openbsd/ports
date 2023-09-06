@@ -16,7 +16,7 @@ HOMEPAGE=		http://www.asteriskguide.com/
 # see page vii of the PDF
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		https://spacehopper.org/mirrors/ \
+SITES=			https://spacehopper.org/mirrors/ \
 			${HOMEPAGE}pdf/
 
 NO_BUILD=		Yes

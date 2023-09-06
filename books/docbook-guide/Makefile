@@ -7,7 +7,7 @@ EXTRACT_SUFX=	.zip
 CATEGORIES=	books
 REVISION=	0
 
-MASTER_SITES=	http://docbook.org/tdg/en/ \
+SITES=		http://docbook.org/tdg/en/ \
 		https://spacehopper.org/mirrors/
 HOMEPAGE=	http://docbook.org/tdg/en/
 

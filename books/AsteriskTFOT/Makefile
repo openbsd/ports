@@ -17,7 +17,7 @@ MAINTAINER=		Ian Darwin <ian@openbsd.org>
 # Creative Commons Copyright, see page xi of the PDF
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		http://downloads.oreilly.com/books/
+SITES=			http://downloads.oreilly.com/books/
 
 NO_BUILD=		Yes
 

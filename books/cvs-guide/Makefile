@@ -5,7 +5,7 @@ DISTNAME=	cvsbook-${V}-all
 PKGNAME=	cvs-guide-${V}
 REVISION=	0
 CATEGORIES=	books
-MASTER_SITES=	http://cvsbook.red-bean.com/
+SITES=		http://cvsbook.red-bean.com/
 
 HOMEPAGE=	http://cvsbook.red-bean.com/
 

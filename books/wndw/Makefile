@@ -30,14 +30,14 @@ MULTI_PACKAGES =-main -es -fr -ar -pt -id -my
 # Also available as printed books.
 HOMEPAGE =	http://wndw.net/
 
-MASTER_SITES =		${HOMEPAGE}pdf/wndw3-en/
-MASTER_SITES.es =	${HOMEPAGE}pdf/wndw3-es/
-MASTER_SITES.fr =	${HOMEPAGE}pdf/wndw2-fr/
-MASTER_SITES.ar =	${HOMEPAGE}pdf/wndw2-ar/
-MASTER_SITES.pt =	${HOMEPAGE}pdf/wndw-pt/
-MASTER_SITES.id =	${HOMEPAGE}pdf/wndw-id/ \
-			http://opensource.telkomspeedy.com:5432/furusato/files/
-MASTER_SITES.my =	${HOMEPAGE}pdf/wndw3-my/
+SITES =		${HOMEPAGE}pdf/wndw3-en/
+SITES.es =	${HOMEPAGE}pdf/wndw3-es/
+SITES.fr =	${HOMEPAGE}pdf/wndw2-fr/
+SITES.ar =	${HOMEPAGE}pdf/wndw2-ar/
+SITES.pt =	${HOMEPAGE}pdf/wndw-pt/
+SITES.id =	${HOMEPAGE}pdf/wndw-id/ \
+		http://opensource.telkomspeedy.com:5432/furusato/files/
+SITES.my =	${HOMEPAGE}pdf/wndw3-my/
 
 DISTFILES =	wndw3-ebook.pdf \
 		wndw3-cover.pdf

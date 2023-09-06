@@ -9,7 +9,7 @@ HOMEPAGE=	http://getpython3.com/diveintopython3/
 # Creative Commons Attribution Share-Alike
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://download.tuxfamily.org/jod/books/diveintopython3/
+SITES=		https://download.tuxfamily.org/jod/books/diveintopython3/
 
 NO_BUILD=	Yes
 NO_TEST=	Yes

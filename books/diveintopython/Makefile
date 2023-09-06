@@ -12,7 +12,7 @@ HOMEPAGE=	http://diveintopython.org/
 # FDL
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${HOMEPAGE}/download/
+SITES=		${HOMEPAGE}/download/
 EXTRACT_SUFX=	.zip
 # UNZIP is set here because flag -o has to be used.
 UNZIP=		unzip -o

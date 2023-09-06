@@ -4,7 +4,7 @@ DISTNAME =	man-pages-posix-2017-a
 PKGNAME =	${DISTNAME:C/(-[0-9]+)-/\1/}
 PKG_ARCH =	*
 
-MASTER_SITES =	https://www.kernel.org/pub/linux/docs/man-pages/man-pages-posix/
+SITES =		https://www.kernel.org/pub/linux/docs/man-pages/man-pages-posix/
 EXTRACT_SUFX =	.tar.xz
 
 # custom copyleft license, see POSIX-COPYRIGHT

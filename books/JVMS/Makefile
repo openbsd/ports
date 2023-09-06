@@ -12,7 +12,7 @@ HOMEPAGE =	http://java.sun.com/docs/books/jvms/
 PERMIT_PACKAGE =	Copyright
 PERMIT_DISTFILES =	Copyright
 
-MASTER_SITES =	${HOMEPAGE}download/
+SITES =		${HOMEPAGE}download/
 
 NO_BUILD =	Yes
 NO_TEST =	Yes

@@ -13,7 +13,7 @@ MAINTAINER=	Ian Darwin <ian@openbsd.org>
 # Open Publication License 
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	ftp://ftp.ora.com/pub/openlook/
+SITES=		ftp://ftp.ora.com/pub/openlook/
 DISTFILES=	${DISTNAME}.pdf
 EXTRACT_ONLY=
 

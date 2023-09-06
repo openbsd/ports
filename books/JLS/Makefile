@@ -17,7 +17,7 @@ MAINTAINER=	Ian Darwin <ian@openbsd.org>
 PERMIT_PACKAGE=		Copyright
 PERMIT_DISTFILES=	Copyright
 
-MASTER_SITES=	https://docs.oracle.com/javase/specs/jls/se${MAJOR}/
+SITES=		https://docs.oracle.com/javase/specs/jls/se${MAJOR}/
 
 EXTRACT_ONLY=
 

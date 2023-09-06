@@ -6,7 +6,7 @@ CATEGORIES=		books lang
 
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		ftp://ftp.lispworks.com/pub/software_tools/reference/
+SITES=			ftp://ftp.lispworks.com/pub/software_tools/reference/
 
 NO_BUILD=		Yes
 NO_TEST=		Yes

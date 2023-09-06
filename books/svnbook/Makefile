@@ -12,7 +12,7 @@ HOMEPAGE =		http://svnbook.red-bean.com/
 PERMIT_PACKAGE =	Yes
 
 # ${HOMEPAGE}/en/$V/svn-book-html-chunk.tar.bz2 appears to be auto-generated
-MASTER_SITES =		https://spacehopper.org/mirrors/
+SITES =			https://spacehopper.org/mirrors/
 EXTRACT_SUFX =		.tar.bz2
 
 EXTRACT_ONLY =

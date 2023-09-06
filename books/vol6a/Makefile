@@ -14,7 +14,7 @@ MAINTAINER=	Ian Darwin <ian@openbsd.org>
 # Open Publication License 
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://www.oreilly.com/catalog/motifref2/vol6a/
+SITES=		http://www.oreilly.com/catalog/motifref2/vol6a/
 EXTRACT_ONLY=
 
 NO_BUILD=	Yes

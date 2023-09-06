@@ -12,8 +12,8 @@ MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 # CC-BY-1.0
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://groff.ffii.org/groff/contrib/documentation/utp/ \
-			http://home.windstream.net/kollar/utp/
+SITES =		https://groff.ffii.org/groff/contrib/documentation/utp/ \
+		http://home.windstream.net/kollar/utp/
 
 EXTRACT_ONLY =
 

@@ -14,7 +14,7 @@ MAINTAINER =		Matthias Kilian <kili@openbsd.org>
 # When modified, mark as such and don't call the thing Haskell.
 PERMIT_PACKAGE =		Yes
 
-MASTER_SITES =		http://haskell.org/definition/
+SITES =			http://haskell.org/definition/
 
 PKG_ARCH =		*
 

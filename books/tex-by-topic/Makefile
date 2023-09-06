@@ -9,7 +9,7 @@ REVISION =	1
 
 HOMEPAGE =	http://eijkhout.net/texbytopic/texbytopic.html
 
-MASTER_SITES =	https://bitbucket.org/VictorEijkhout/tex-by-topic/get/
+SITES =		https://bitbucket.org/VictorEijkhout/tex-by-topic/get/
 
 BUILD_DEPENDS =	print/texlive/base
 

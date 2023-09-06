@@ -14,7 +14,7 @@ MAINTAINER =	Anthony J. Bentley <anthony@anjbe.name>
 # CC-BY-NC-SA 3.0
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://github.com/progit/progit2/releases/download/$V/
+SITES =			https://github.com/progit/progit2/releases/download/$V/
 EXTRACT_SUFX =		.pdf
 
 EXTRACT_ONLY =

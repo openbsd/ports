@@ -10,7 +10,7 @@ REVISION=1
 PERMIT_PACKAGE=	Yes
 
 HOMEPAGE=	http://gimp-savvy.com/
-MASTER_SITES=${HOMEPAGE}BOOK/TarDist/
+SITES=		${HOMEPAGE}BOOK/TarDist/
 
 DOC=share/doc/grokking-the-gimp/
 SUBST_VARS=DOC

@@ -10,7 +10,7 @@ HOMEPAGE=		http://thinking-forth.sourceforge.net/
 # attribute, non-commercial, share-alike
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=thinking-forth/}
+SITES=			${SITE_SOURCEFORGE:=thinking-forth/}
 DISTFILES=		${DISTNAME}.pdf
 EXTRACT_ONLY=
 
