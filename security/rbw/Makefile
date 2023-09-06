@@ -3,8 +3,7 @@ NOT_FOR_ARCHS =	powerpc64 riscv64 sparc64
 
 COMMENT =	command line BitWarden client
 
-DISTNAME =	rbw-1.6.0
-REVISION =	1
+DISTNAME =	rbw-1.8.3
 
 CATEGORIES =	security
 
