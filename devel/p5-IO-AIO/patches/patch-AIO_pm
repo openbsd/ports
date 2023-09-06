@@ -1,0 +1,329 @@
+indirect method invocation is deprecated
+
+Index: AIO.pm
+--- AIO.pm.orig
++++ AIO.pm
+@@ -26,7 +26,7 @@ IO::AIO - Asynchronous/Advanced Input/Output
+  $req->cancel; # cancel request if still in queue
+ 
+  my $grp = aio_group sub { print "all stats done\n" };
+- add $grp aio_stat "..." for ...;
++ $grp->add(aio_stat "...") for ...;
+ 
+ =head1 DESCRIPTION
+ 
+@@ -931,15 +931,15 @@ sub aio_load($$;$) {
+    my $grp = aio_group $cb;
+ 
+    aioreq_pri $pri;
+-   add $grp aio_open $path, O_RDONLY, 0, sub {
++   $grp->add(aio_open $path, O_RDONLY, 0, sub {
+       my $fh = shift
+          or return $grp->result (-1);
+ 
+       aioreq_pri $pri;
+-      add $grp aio_read $fh, 0, (-s $fh), $$data, 0, sub {
++      $grp->add(aio_read $fh, 0, (-s $fh), $$data, 0, sub {
+          $grp->result ($_[0]);
+-      };
+-   };
++      });
++   });
+ 
+    $grp
+ }
+@@ -970,57 +970,57 @@ sub aio_copy($$;$) {
+    my $grp = aio_group $cb;
+ 
+    aioreq_pri $pri;
+-   add $grp aio_open $src, O_RDONLY, 0, sub {
++   $grp->add(aio_open $src, O_RDONLY, 0, sub {
+       if (my $src_fh = $_[0]) {
+          my @stat = stat $src_fh; # hmm, might block over nfs?
+ 
+          aioreq_pri $pri;
+-         add $grp aio_open $dst, O_CREAT | O_WRONLY | O_TRUNC, 0200, sub {
++         $grp->add(aio_open $dst, O_CREAT | O_WRONLY | O_TRUNC, 0200, sub {
+             if (my $dst_fh = $_[0]) {
+                aioreq_pri $pri;
+-               add $grp aio_sendfile $dst_fh, $src_fh, 0, $stat[7], sub {
++               $grp->add(aio_sendfile $dst_fh, $src_fh, 0, $stat[7], sub {
+                   if ($_[0] == $stat[7]) {
+                      $grp->result (0);
+                      close $src_fh;
+ 
+                      my $ch = sub {
+                         aioreq_pri $pri;
+-                        add $grp aio_chmod $dst_fh, $stat[2] & 07777, sub {
++                        $grp->add(aio_chmod $dst_fh, $stat[2] & 07777, sub {
+                            aioreq_pri $pri;
+-                           add $grp aio_chown $dst_fh, $stat[4], $stat[5], sub {
++                           $grp->add(aio_chown $dst_fh, $stat[4], $stat[5], sub {
+                               aioreq_pri $pri;
+-                              add $grp aio_close $dst_fh;
+-                           }
+-                        };
++                              $grp->add(aio_close $dst_fh);
++                           });
++                        });
+                      };
+ 
+                      aioreq_pri $pri;
+-                     add $grp aio_utime $dst_fh, $stat[8], $stat[9], sub {
++                     $grp->add(aio_utime $dst_fh, $stat[8], $stat[9], sub {
+                         if ($_[0] < 0 && $! == ENOSYS) {
+                            aioreq_pri $pri;
+-                           add $grp aio_utime $dst, $stat[8], $stat[9], $ch;
++                           $grp->add(aio_utime $dst, $stat[8], $stat[9], $ch);
+                         } else {
+                            $ch->();
+                         }
+-                     };
++                     });
+                   } else {
+                      $grp->result (-1);
+                      close $src_fh;
+                      close $dst_fh;
+ 
+-                     aioreq $pri;
+-                     add $grp aio_unlink $dst;
++                     $pri->aioreq();
++                     $grp->add(aio_unlink $dst);
+                   }
+-               };
++               });
+             } else {
+                $grp->result (-1);
+             }
+-         },
++         });
+ 
+       } else {
+          $grp->result (-1);
+       }
+-   };
++   });
+ 
+    $grp
+ }
+@@ -1044,21 +1044,21 @@ sub aio_move($$;$) {
+    my $grp = aio_group $cb;
+ 
+    aioreq_pri $pri;
+-   add $grp aio_rename $src, $dst, sub {
++   $grp->add(aio_rename $src, $dst, sub {
+       if ($_[0] && $! == EXDEV) {
+          aioreq_pri $pri;
+-         add $grp aio_copy $src, $dst, sub {
++         $grp->add(aio_copy $src, $dst, sub {
+             $grp->result ($_[0]);
+ 
+             unless ($_[0]) {
+                aioreq_pri $pri;
+-               add $grp aio_unlink $src;
++               $grp->add(aio_unlink $src);
+             }
+-         };
++         });
+       } else {
+          $grp->result ($_[0]);
+       }
+-   };
++   });
+ 
+    $grp
+ }
+@@ -1132,7 +1132,7 @@ sub aio_scandir($$;$) {
+ 
+    # get a wd object
+    aioreq_pri $pri;
+-   add $grp aio_wd $path, sub {
++   $grp->add(aio_wd $path, sub {
+       $_[0]
+          or return $grp->result ();
+ 
+@@ -1140,7 +1140,7 @@ sub aio_scandir($$;$) {
+ 
+       # stat once
+       aioreq_pri $pri;
+-      add $grp aio_stat $wd, sub {
++      $grp->add(aio_stat $wd, sub {
+          return $grp->result () if $_[0];
+          my $now = time;
+          my $hash1 = join ":", (stat _)[0,1,3,7,9];
+@@ -1155,7 +1155,7 @@ sub aio_scandir($$;$) {
+ 
+          # read the directory entries
+          aioreq_pri $pri;
+-         add $grp aio_readdirx $wd, $rdxflags, sub {
++         $grp->add(aio_readdirx $wd, $rdxflags, sub {
+             my ($entries, $flags) = @_
+                or return $grp->result ();
+ 
+@@ -1209,7 +1209,7 @@ sub aio_scandir($$;$) {
+ 
+             # stat the dir another time
+             aioreq_pri $pri;
+-            add $grp aio_stat $wd, sub {
++            $grp->add(aio_stat $wd, sub {
+                my $hash2 = join ":", (stat _)[0,1,3,7,9];
+ 
+                my $ndirs;
+@@ -1226,43 +1226,43 @@ sub aio_scandir($$;$) {
+ 
+                my (@dirs, @nondirs);
+ 
+-               my $statgrp = add $grp aio_group sub {
++               my $statgrp = $grp->add(aio_group sub {
+                   $grp->result (\@dirs, \@nondirs);
+-               };
++               });
+ 
+-               limit $statgrp $maxreq;
+-               feed $statgrp sub {
++               $statgrp->limit($maxreq);
++               $statgrp->feed(sub {
+                   return unless @$entries;
+                   my $entry = shift @$entries;
+ 
+                   aioreq_pri $pri;
+                   $wd->[1] = "$entry/.";
+-                  add $statgrp aio_stat $wd, sub {
++                  $statgrp->add(aio_stat $wd, sub {
+                      if ($_[0] < 0) {
+                         push @nondirs, $entry;
+                      } else {
+                         # need to check for real directory
+                         aioreq_pri $pri;
+                         $wd->[1] = $entry;
+-                        add $statgrp aio_lstat $wd, sub {
++                        $statgrp->add(aio_lstat $wd, sub {
+                            if (-d _) {
+                               push @dirs, $entry;
+ 
+                               unless (--$ndirs) {
+                                  push @nondirs, @$entries;
+-                                 feed $statgrp;
++                                 $statgrp->feed();
+                               }
+                            } else {
+                               push @nondirs, $entry;
+                            }
+-                        }
++                        });
+                      }
+-                  };
+-               };
+-            };
+-         };
+-      };
+-   };
++                  });
++               });
++            });
++         });
++      });
++   });
+ 
+    $grp
+ }
+@@ -1284,20 +1284,20 @@ sub aio_rmtree($;$) {
+    my $grp = aio_group $cb;
+ 
+    aioreq_pri $pri;
+-   add $grp aio_scandir $path, 0, sub {
++   $grp->add(aio_scandir($path, 0, sub {
+       my ($dirs, $nondirs) = @_;
+ 
+       my $dirgrp = aio_group sub {
+-         add $grp aio_rmdir $path, sub {
++         $grp->add(aio_rmdir $path, sub {
+             $grp->result ($_[0]);
+-         };
++         });
+       };
+ 
+-      (aioreq_pri $pri), add $dirgrp aio_rmtree "$path/$_" for @$dirs;
+-      (aioreq_pri $pri), add $dirgrp aio_unlink "$path/$_" for @$nondirs;
++      (aioreq_pri $pri), $dirgrp->add(aio_rmtree "$path/$_") for @$dirs;
++      (aioreq_pri $pri), $dirgrp->add(aio_unlink "$path/$_") for @$nondirs;
+ 
+-      add $grp $dirgrp;
+-   };
++      $grp->add($dirgrp);
++   }));
+ 
+    $grp
+ }
+@@ -1414,20 +1414,20 @@ sub aio_pathsync($;$) {
+    my $grp = aio_group $cb;
+ 
+    aioreq_pri $pri;
+-   add $grp aio_open $path, O_RDONLY, 0, sub {
++   $grp->add(aio_open $path, O_RDONLY, 0, sub {
+       my ($fh) = @_;
+       if ($fh) {
+          aioreq_pri $pri;
+-         add $grp aio_fsync $fh, sub {
++         $grp->add(aio_fsync $fh, sub {
+             $grp->result ($_[0]);
+ 
+             aioreq_pri $pri;
+-            add $grp aio_close $fh;
+-         };
++            $grp->add(aio_close $fh);
++         });
+       } else {
+          $grp->result (-1);
+       }
+-   };
++   });
+ 
+    $grp
+ }
+@@ -1563,7 +1563,7 @@ Example:
+       print "all stats done\n";
+    };
+ 
+-   add $grp
++   $grp->add
+       (aio_stat ...),
+       (aio_stat ...),
+       ...;
+@@ -1761,14 +1761,14 @@ C<IO::AIO::REQ> objects:
+ 
+    $grp->add (aio_unlink "...");
+ 
+-   add $grp aio_stat "...", sub {
++   $grp->add(aio_stat "...", sub {
+       $_[0] or return $grp->result ("error");
+ 
+       # add another request dynamically, if first succeeded
+-      add $grp aio_open "...", sub {
++      $grp->add(aio_open "...", sub {
+          $grp->result ("ok");
+-      };
+-   };
++      });
++   });
+ 
+ This makes it very easy to create composite requests (see the source of
+ C<aio_move> for an application) that work and feel like simple requests.
+@@ -1803,6 +1803,8 @@ finished will the the group itself finish.
+ 
+ =item add $grp ...
+ 
++Deprecated.
++
+ =item $grp->add (...)
+ 
+ Add one or more requests to the group. Any type of L<IO::AIO::REQ> can
+@@ -1872,7 +1874,7 @@ Example:
+       my $file = pop @files
+          or return;
+ 
+-      add $grp aio_stat $file, sub { ... };
++      $grp->add(aio_stat $file, sub { ... });
+    };
+ 
+ =item limit $grp $num

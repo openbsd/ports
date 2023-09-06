@@ -3,6 +3,7 @@ COMMENT =	asynchronous Input/Output
 
 DISTNAME =	IO-AIO-4.8
 PKGNAME =	p5-IO-AIO-4.80
+REVISION =	0
 
 CATEGORIES =	devel
 
