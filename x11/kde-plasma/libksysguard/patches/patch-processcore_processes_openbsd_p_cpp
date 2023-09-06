@@ -1,0 +1,84 @@
+Index: processcore/processes_openbsd_p.cpp
+--- processcore/processes_openbsd_p.cpp.orig
++++ processcore/processes_openbsd_p.cpp
+@@ -75,8 +75,9 @@ void ProcessesLocal::Private::readProcStatus(struct ki
+     process->setGid(p->kp_pgid);
+     process->setName(QString(p->kp_comm ? p->kp_comm : "????"));
+ #else
+-    process->setUid(p->kp_eproc.e_ucred.cr_uid);
+-    process->setGid(p->kp_eproc.e_pgid);
++    process->setUid(p->p_uid);
++    process->setGid(p->p_gid);
++    process->setName(QString::fromUtf8(p->p_comm));
+ #endif
+ }
+ 
+@@ -100,11 +101,11 @@ void ProcessesLocal::Private::readProcStat(struct kinf
+     ps->setVmRSS(p->kp_vm_rssize * getpagesize());
+     status = p->kp_stat;
+ #else
+-    ps->setUserTime(p->kp_proc.p_rtime.tv_sec * 100 + p->kp_proc.p_rtime.tv_usec / 100);
+-    ps->setNiceLevel(p->kp_proc.p_nice);
+-    ps->setVmSize(p->kp_eproc.e_vm.vm_map.size);
+-    ps->setVmRSS(p->kp_eproc.e_vm.vm_rssize * getpagesize());
+-    status = p->kp_proc.p_stat;
++    ps->setNiceLevel(p->p_nice);
++    ps->setVmSize(p->p_vm_map_size);
++    ps->setVmRSS(p->p_vm_rssize * getpagesize());
++    status = p->p_stat;
++    ps->setSysTime(0);
+ #endif
+     ps->setSysTime(0);
+ 
+@@ -153,10 +154,10 @@ bool ProcessesLocal::Private::readProcCmdline(long pid
+ 
+     if (sysctl(mib, 4, buf, &buflen, NULL, 0) == -1 || !buflen)
+         return false;
+-    QString command = QString(buf);
++    QString command = QString::fromUtf8(buf);
+ 
+     // cmdline separates parameters with the NULL character
+-    command.replace('\0', ' ');
++    command.replace(QLatin1Char('\0'), QLatin1Char(' '));
+     process->setCommand(command.trimmed());
+ 
+     return true;
+@@ -178,7 +179,7 @@ long ProcessesLocal::getParentPid(long pid)
+ #elif defined(__DragonFly__) && __DragonFly_version >= 190000
+         ppid = p.kp_ppid;
+ #else
+-        ppid = p.kp_eproc.e_ppid;
++        ppid = p.p_ppid;
+ #endif
+     }
+     return ppid;
+@@ -219,7 +220,7 @@ QSet<long> ProcessesLocal::getAllPids()
+ #elif defined(__DragonFly__) && __DragonFly_version >= 190000
+         pids.insert(p[num].kp_pid);
+ #else
+-        pids.insert(p[num].kp_proc.p_pid);
++        pids.insert(p[num].p_pid);
+ #endif
+     free(p);
+     return pids;
+@@ -279,20 +280,6 @@ long long ProcessesLocal::totalPhysicalMemory()
+     return Total /= 1024;
+ }
+ 
+-long int KSysGuard::ProcessesLocal::numberProcessorCores()
+-{
+-    int mib[2];
+-    int ncpu;
+-    size_t len;
+-
+-    mib[0] = CTL_HW;
+-    mib[1] = HW_NCPU;
+-    len = sizeof(ncpu);
+-
+-    if (sysctl(mib, 2, &ncpu, &len, NULL, 0) == -1 || !len)
+-        return 1;
+-    return len;
+-}
+ ProcessesLocal::~ProcessesLocal()
+ {
+     delete d;
