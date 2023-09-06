@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Baseline.pm,v 1.3 2023/09/02 10:40:59 espie Exp $
+# $OpenBSD: Baseline.pm,v 1.4 2023/09/06 11:56:34 espie Exp $
 #
 # Copyright (c) 2006-2013 Marc Espie <espie@openbsd.org>
 #
@@ -41,7 +41,7 @@ sub get($class)
 	my $pid = open(my $output, "-|");
 	if ($pid) {
 		my $baseline = $class->parse($output);
-		close($output) || die("while getting baseline: $?");
+		close($output);
 		return $baseline;
 	} else {
 		delete $ENV{PKGPATH};

@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.71 2023/09/05 13:51:33 espie Exp $
+# $OpenBSD: Var.pm,v 1.72 2023/09/06 11:56:34 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -591,7 +591,7 @@ sub create_tables($self, $inserter)
 
 package SitesVar;
 our @ISA = qw(OptKeyVar);
-sub table($) { 'Sites' }
+sub table($) { 'MasterSites' }
 sub want_in_ports_view($) { 1 }
 
 sub compute_join($self, $name)
