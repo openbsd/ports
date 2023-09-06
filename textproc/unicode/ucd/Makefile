@@ -1,9 +1,8 @@
 COMMENT =		Unicode Character Database (UCD)
 
 # XXX: make sure the major version of this port matches x11/gnome/gucharmap
-V =			15.0.0
+V =			15.1.0
 UNICODE_DATA_NAME =	ucd
-REVISION =		0
 
 MASTER_SITES =		${UNICODE_MASTER_SITES}/zipped/${V}/
 DISTFILES =		UCD${EXTRACT_SUFX} \
