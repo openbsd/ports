@@ -1,5 +1,6 @@
 COMMENT =	KDE Plasma control center
 DISTNAME =	systemsettings-${VERSION}
+PKGNAME =	systemsettings-kf5-${VERSION}
 
 SHARED_LIBS +=  systemsettingsview        0.0 # 0.0
 
