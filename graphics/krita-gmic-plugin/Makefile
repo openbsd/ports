@@ -1,11 +1,17 @@
 COMMENT =	krita gmic plugin
 
-V =		3.1.6.1
+V =		3.2.4.1
 DISTNAME =	krita-gmic-plugin-${V}
 
 CATEGORIES =	graphics
 
 HOMEPAGE =	https://krita.org
+
+# Info about this plugin:
+# https://invent.kde.org/graphics/krita/-/blob/master/README.packagers.md
+
+# Actually developed here:
+# https://github.com/amyspark/gmic
 
 MAINTAINER =	Stefan Hagen <sh+ports@codevoid.de>
 
@@ -27,10 +33,17 @@ LIB_DEPENDS =	graphics/krita \
 
 WRKSRC =	${WRKDIST}/gmic-qt
 
-CONFIGURE_ARGS +=	-DENABLE_SYSTEM_GMIC=false \
+CONFIGURE_ARGS +=	-DCMAKE_PREFIX_PATH=${LOCALBASE}/lib/qt5/cmake \
+			-DENABLE_SYSTEM_GMIC=false \
 			-DGMIC_QT_HOST=krita-plugin
+
+USE_GMAKE =	Yes
 
 post-extract:
 	mv ${WRKDIR}/gmic-${V}-patched ${WRKDIST}
+
+post-configure:
+	chmod +x ${WRKSRC}/translations/lrelease.sh
+	cd ${WRKSRC}/translations/filters && gmake
 
 .include <bsd.port.mk>
