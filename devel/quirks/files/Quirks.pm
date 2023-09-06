@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1544 2023/09/06 09:05:22 jeremy Exp $
+# $OpenBSD: Quirks.pm,v 1.1545 2023/09/06 13:21:45 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1841,6 +1841,9 @@ setup_obsolete_reason(
 	5 => 'ocaml-pcre',
 	1 => 'breeze-grub',
 	3 => 'mldonkey',
+	3 => 'monotone',
+	3 => 'botan',
+	3 => 'bg5ps',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
