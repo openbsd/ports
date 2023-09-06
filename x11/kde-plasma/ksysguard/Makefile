@@ -43,4 +43,6 @@ LIB_DEPENDS =	devel/kf5/attica \
 
 TEST_IS_INTERACTIVE =	X11
 
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
+
 .include <bsd.port.mk>

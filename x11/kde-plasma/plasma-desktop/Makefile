@@ -94,4 +94,6 @@ MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
 CFLAGS +=  -I${LOCALBASE}/include/
 CXXFLAGS +=        -I${LOCALBASE}/include/
 
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
+
 .include <bsd.port.mk>

@@ -11,4 +11,6 @@ LIB_DEPENDS =	devel/kf5/kcoreaddons \
 		devel/kf5/kwallet \
 		devel/kf5/kwidgetsaddons
 
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
+
 .include <bsd.port.mk>

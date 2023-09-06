@@ -17,4 +17,6 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/ki18n \
 		devel/kf5/kwidgetsaddons
 
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
+
 .include <bsd.port.mk>

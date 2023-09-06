@@ -18,4 +18,6 @@ LIB_DEPENDS =	devel/kf5/kconfig \
 		sysutils/libudev-openbsd \
 		x11/kde-plasma/libksysguard
 
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
+
 .include <bsd.port.mk>

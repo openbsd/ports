@@ -17,6 +17,8 @@ LIB_DEPENDS += 	devel/kf5/kwayland \
 BUILD_DEPENDS =	wayland/wayland-protocols \
 		wayland/plasma-wayland-protocols
 
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
+
 TEST_IS_INTERACTIVE =	X11
 
 .include <bsd.port.mk>

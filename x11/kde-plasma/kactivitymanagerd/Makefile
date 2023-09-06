@@ -28,4 +28,6 @@ LIB_DEPENDS =		devel/kf5/kauth \
 			devel/kf5/kwindowsystem \
 			devel/kf5/kxmlgui
 
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
+
 .include <bsd.port.mk>

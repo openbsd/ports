@@ -32,4 +32,6 @@ LIB_DEPENDS =		devel/kf5/frameworkintegration \
 			x11/qt5/qtdeclarative \
 			x11/qt5/qtx11extras
 
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
+
 .include <bsd.port.mk>

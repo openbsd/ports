@@ -23,4 +23,6 @@ LIB_DEPENDS =	devel/kf5/kconfig \
 		devel/kf5/kservice \
 		devel/kf5/plasma-framework
 
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
+
 .include <bsd.port.mk>

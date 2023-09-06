@@ -27,4 +27,6 @@ LIB_DEPENDS =	audio/libcanberra \
 		devel/kf5/kpackage \
 		x11/qt5/qtdeclarative
 
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
+
 .include <bsd.port.mk>

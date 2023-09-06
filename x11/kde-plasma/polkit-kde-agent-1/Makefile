@@ -21,4 +21,6 @@ LIB_DEPENDS =	devel/kf5/kcoreaddons \
 		devel/kf5/kwindowsystem \
 		x11/polkit-qt5
 
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
+
 .include <bsd.port.mk>

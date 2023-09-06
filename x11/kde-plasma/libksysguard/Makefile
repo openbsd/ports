@@ -46,4 +46,6 @@ LIB_DEPENDS =	devel/kf5/kauth \
 
 TEST_IS_INTERACTIVE =	X11
 
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
+
 .include <bsd.port.mk>

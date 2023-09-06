@@ -18,4 +18,6 @@ CONFIGURE_ENV +=	KFWaylandServer_DIR=${MODQT5_LIBDIR}/cmake
 
 TEST_IS_INTERACTIVE =	X11
 
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
+
 .include <bsd.port.mk>

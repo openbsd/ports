@@ -40,4 +40,6 @@ LIB_DEPENDS += \
 	devel/kf5/kxmlgui \
 	x11/kde-plasma/plasma-workspace
 
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
+
 .include <bsd.port.mk>

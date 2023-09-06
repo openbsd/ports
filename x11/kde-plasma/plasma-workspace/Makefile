@@ -118,6 +118,8 @@ MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
 CFLAGS +=		-I${LOCALBASE}/include/
 CXXFLAGS +=		-I${LOCALBASE}/include/
 
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
+
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/kde-puffy.svgz \
 		${PREFIX}/share/plasma/look-and-feel/org.kde.breeze.desktop/contents/splash/images/

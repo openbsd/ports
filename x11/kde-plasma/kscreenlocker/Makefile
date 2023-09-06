@@ -48,4 +48,6 @@ TEST_IS_INTERACTIVE =	X11
 CFLAGS +=	-I${LOCALBASE}/include/
 CXXFLAGS +=	-I${LOCALBASE}/include/
 
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
+
 .include <bsd.port.mk>

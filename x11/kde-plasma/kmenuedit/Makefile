@@ -34,4 +34,6 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/solid \
 		devel/kf5/sonnet
 
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
+
 .include <bsd.port.mk>

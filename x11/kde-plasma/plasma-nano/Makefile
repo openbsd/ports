@@ -17,4 +17,6 @@ LIB_DEPENDS +=	devel/kf5/kconfig \
 		devel/kf5/kwindowsystem \
 		x11/qt5/qtdeclarative
 
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
+
 .include <bsd.port.mk>
