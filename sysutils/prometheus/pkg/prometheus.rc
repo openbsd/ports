@@ -10,6 +10,5 @@ daemon_user="_prometheus"
 
 pexp="${daemon}.*"
 rc_bg=YES
-rc_reload=NO
 
 rc_cmd $1
