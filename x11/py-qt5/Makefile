@@ -5,7 +5,7 @@ DPB_PROPERTIES=	parallel
 MODPY_EGG_VERSION= 5.15.9
 DISTNAME=	PyQt5-${MODPY_EGG_VERSION}
 PKGNAME=	py-qt5-${MODPY_EGG_VERSION}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	x11 devel
 
@@ -31,7 +31,6 @@ FLAVOR=		python3
 BUILD_DEPENDS=	devel/py-qt-builder${MODPY_FLAVOR} \
 		devel/py-ply${MODPY_FLAVOR} \
 		devel/py-setuptools${MODPY_FLAVOR} \
-		textproc/py-toml${MODPY_FLAVOR} \
 		x11/dbus-python${MODPY_FLAVOR}
 
 RUN_DEPENDS=	devel/py-sip${MODPY_FLAVOR}>=5.5.0v0 \
