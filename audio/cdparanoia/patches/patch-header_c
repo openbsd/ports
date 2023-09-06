@@ -1,0 +1,11 @@
+Index: header.c
+--- header.c.orig
++++ header.c
+@@ -9,6 +9,7 @@
+ 
+ #include <unistd.h>
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <string.h>
+ 
+ static void PutNum(long num,int f,int endianness,int bytes){

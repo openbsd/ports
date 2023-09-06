@@ -1,0 +1,11 @@
+Index: paranoia/gap.c
+--- paranoia/gap.c.orig
++++ paranoia/gap.c
+@@ -6,6 +6,7 @@
+  *
+  ***/
+ 
++#include <string.h>
+ #include "p_block.h"
+ #include "cdda_paranoia.h"
+ #include "gap.h"

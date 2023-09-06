@@ -1,6 +1,16 @@
---- interface/utils.h.orig	Thu Apr 20 00:41:04 2000
-+++ interface/utils.h	Fri May  1 16:49:14 2015
-@@ -13,6 +13,7 @@ static inline int bigendianp(void){
+Index: interface/utils.h
+--- interface/utils.h.orig
++++ interface/utils.h
+@@ -1,6 +1,8 @@
+ #include <endian.h>
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <errno.h>
++#include <err.h>
+ #include <string.h>
+ 
+ /* I wonder how many alignment issues this is gonna trip in the
+@@ -13,6 +15,7 @@ static inline int bigendianp(void){
    return(1);
  }
  
@@ -8,7 +18,7 @@
  static inline int32_t swap32(int32_t x){
    return((((u_int32_t)x & 0x000000ffU) << 24) | 
  	 (((u_int32_t)x & 0x0000ff00U) <<  8) | 
-@@ -24,6 +25,7 @@ static inline int16_t swap16(int16_t x){
+@@ -24,6 +27,7 @@ static inline int16_t swap16(int16_t x){
    return((((u_int16_t)x & 0x00ffU) <<  8) | 
  	 (((u_int16_t)x & 0xff00U) >>  8));
  }
@@ -16,7 +26,7 @@
  
  #if BYTE_ORDER == LITTLE_ENDIAN
  
-@@ -112,6 +114,7 @@ static void cderror(cdrom_drive *d,const char *s){
+@@ -112,6 +116,7 @@ static void cderror(cdrom_drive *d,const char *s){
        break;
      case CDDA_MESSAGE_FORGETIT:
      default:
@@ -24,7 +34,7 @@
      }
    }
  }
-@@ -127,6 +130,7 @@ static void cdmessage(cdrom_drive *d,const char *s){
+@@ -127,6 +132,7 @@ static void cdmessage(cdrom_drive *d,const char *s){
        break;
      case CDDA_MESSAGE_FORGETIT:
      default:
@@ -32,7 +42,7 @@
      }
    }
  }
-@@ -169,6 +173,7 @@ static void idperror(int messagedest,char **messages,c
+@@ -169,6 +175,7 @@ static void idperror(int messagedest,char **messages,c
        break;
      case CDDA_MESSAGE_FORGETIT:
      default:
@@ -40,7 +50,7 @@
      }
    }
    if(malloced)free(buffer);
-@@ -205,6 +210,7 @@ static void idmessage(int messagedest,char **messages,
+@@ -205,6 +212,7 @@ static void idmessage(int messagedest,char **messages,
        break;
      case CDDA_MESSAGE_FORGETIT:
      default:
