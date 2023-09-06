@@ -1,0 +1,2 @@
+@so lib/qt5/plugins/kf5/kwindowsystem/KF5WindowSystemKWaylandPlugin.so
+share/qlogging-categories5/kwindowsystem.kwayland.categories
