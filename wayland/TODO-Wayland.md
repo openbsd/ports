@@ -31,7 +31,7 @@ Updated to reflect that all of this in now a work in progress set of ports
  * "Seat" management is going to be minimal, as OpenBSD doesn't support this:
      * seatd and libseat provide support for non-systemd based systems. A basic
        port to OpenBSD/wscons is needed. For now the "noop" backend is enough to
-       be able to run swat.
+       be able to run sway.
  * Input is more complex to get working since Wayland applications expect Linux
    input model with udev, evdev and libinput.
    * udev is used to probe available device and handle hot-plugging on Linux.
