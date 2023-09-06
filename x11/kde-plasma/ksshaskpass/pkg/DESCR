@@ -1,0 +1,5 @@
+Ksshaskpass is a front-end for ssh-add which stores the password of the sh key
+in KWallet.
+
+Ksshaskpass is not meant to be executed directly, you need to tell ssh-add
+about it. ssh-add will then call it if it is not associated to a terminal.
