@@ -1,0 +1,100 @@
+@bin bin/cuttlefish
+@bin bin/lookandfeelexplorer
+@bin bin/plasmaengineexplorer
+@bin bin/plasmathemeexplorer
+@bin bin/plasmoidviewer
+lib/qt5/plugins/ktexteditor/
+@so lib/qt5/plugins/ktexteditor/cuttlefishplugin.so
+@man man/man1/plasmaengineexplorer.1
+@man man/man1/plasmoidviewer.1
+share/applications/org.kde.plasma.cuttlefish.desktop
+share/applications/org.kde.plasma.lookandfeelexplorer.desktop
+share/applications/org.kde.plasma.themeexplorer.desktop
+share/applications/org.kde.plasmaengineexplorer.desktop
+share/applications/org.kde.plasmoidviewer.desktop
+share/kpackage/
+share/kpackage/genericqml/
+share/kpackage/genericqml/org.kde.plasma.lookandfeelexplorer/
+share/kpackage/genericqml/org.kde.plasma.lookandfeelexplorer/contents/
+share/kpackage/genericqml/org.kde.plasma.lookandfeelexplorer/contents/ui/
+share/kpackage/genericqml/org.kde.plasma.lookandfeelexplorer/contents/ui/FormField.qml
+share/kpackage/genericqml/org.kde.plasma.lookandfeelexplorer/contents/ui/MetadataEditor.qml
+share/kpackage/genericqml/org.kde.plasma.lookandfeelexplorer/contents/ui/main.qml
+share/kpackage/genericqml/org.kde.plasma.lookandfeelexplorer/metadata.desktop
+share/kpackage/genericqml/org.kde.plasma.lookandfeelexplorer/metadata.json
+share/kpackage/genericqml/org.kde.plasma.themeexplorer/
+share/kpackage/genericqml/org.kde.plasma.themeexplorer/contents/
+share/kpackage/genericqml/org.kde.plasma.themeexplorer/contents/code/
+share/kpackage/genericqml/org.kde.plasma.themeexplorer/contents/code/openInEditor.sh
+share/kpackage/genericqml/org.kde.plasma.themeexplorer/contents/data/
+share/kpackage/genericqml/org.kde.plasma.themeexplorer/contents/data/themeDescription.json
+share/kpackage/genericqml/org.kde.plasma.themeexplorer/contents/data/todo
+share/kpackage/genericqml/org.kde.plasma.themeexplorer/contents/ui/
+share/kpackage/genericqml/org.kde.plasma.themeexplorer/contents/ui/ColorButton.qml
+share/kpackage/genericqml/org.kde.plasma.themeexplorer/contents/ui/ColorEditor.qml
+share/kpackage/genericqml/org.kde.plasma.themeexplorer/contents/ui/FormLabel.qml
+share/kpackage/genericqml/org.kde.plasma.themeexplorer/contents/ui/MetadataEditor.qml
+share/kpackage/genericqml/org.kde.plasma.themeexplorer/contents/ui/delegates/
+share/kpackage/genericqml/org.kde.plasma.themeexplorer/contents/ui/delegates/Hand.qml
+share/kpackage/genericqml/org.kde.plasma.themeexplorer/contents/ui/delegates/actionbutton.qml
+share/kpackage/genericqml/org.kde.plasma.themeexplorer/contents/ui/delegates/allframesvgs.qml
+share/kpackage/genericqml/org.kde.plasma.themeexplorer/contents/ui/delegates/analog_meter.qml
+share/kpackage/genericqml/org.kde.plasma.themeexplorer/contents/ui/delegates/busyindicator.qml
+share/kpackage/genericqml/org.kde.plasma.themeexplorer/contents/ui/delegates/button.qml
+share/kpackage/genericqml/org.kde.plasma.themeexplorer/contents/ui/delegates/checkmarks.qml
+share/kpackage/genericqml/org.kde.plasma.themeexplorer/contents/ui/delegates/clock.qml
+share/kpackage/genericqml/org.kde.plasma.themeexplorer/contents/ui/delegates/containment-controls.qml
+share/kpackage/genericqml/org.kde.plasma.themeexplorer/contents/ui/delegates/dialog.qml
+share/kpackage/genericqml/org.kde.plasma.themeexplorer/contents/ui/delegates/framesvg.qml
+share/kpackage/genericqml/org.kde.plasma.themeexplorer/contents/ui/delegates/icons.qml
+share/kpackage/genericqml/org.kde.plasma.themeexplorer/contents/ui/delegates/listitem.qml
+share/kpackage/genericqml/org.kde.plasma.themeexplorer/contents/ui/delegates/monitor.qml
+share/kpackage/genericqml/org.kde.plasma.themeexplorer/contents/ui/delegates/panel.qml
+share/kpackage/genericqml/org.kde.plasma.themeexplorer/contents/ui/delegates/progressbar.qml
+share/kpackage/genericqml/org.kde.plasma.themeexplorer/contents/ui/delegates/scrollbar.qml
+share/kpackage/genericqml/org.kde.plasma.themeexplorer/contents/ui/delegates/slider.qml
+share/kpackage/genericqml/org.kde.plasma.themeexplorer/contents/ui/delegates/tabbar.qml
+share/kpackage/genericqml/org.kde.plasma.themeexplorer/contents/ui/delegates/textfield.qml
+share/kpackage/genericqml/org.kde.plasma.themeexplorer/contents/ui/fakecontrols/
+share/kpackage/genericqml/org.kde.plasma.themeexplorer/contents/ui/fakecontrols/Button.qml
+share/kpackage/genericqml/org.kde.plasma.themeexplorer/contents/ui/fakecontrols/CheckBox.qml
+share/kpackage/genericqml/org.kde.plasma.themeexplorer/contents/ui/fakecontrols/LineEdit.qml
+share/kpackage/genericqml/org.kde.plasma.themeexplorer/contents/ui/main.qml
+share/kpackage/genericqml/org.kde.plasma.themeexplorer/metadata.desktop
+share/kpackage/genericqml/org.kde.plasma.themeexplorer/metadata.json
+share/kservices5/plasma-shell-org.kde.plasma.plasmoidviewershell.desktop
+share/metainfo/org.kde.plasma.cuttlefish.appdata.xml
+share/metainfo/org.kde.plasma.lookandfeelexplorer.appdata.xml
+share/metainfo/org.kde.plasma.plasmoidviewershell.appdata.xml
+share/metainfo/org.kde.plasma.themeexplorer.appdata.xml
+share/metainfo/org.kde.plasmaengineexplorer.appdata.xml
+share/metainfo/org.kde.plasmoidviewer.appdata.xml
+share/plasma/shells/
+share/plasma/shells/org.kde.plasma.plasmoidviewershell/
+share/plasma/shells/org.kde.plasma.plasmoidviewershell/contents/
+share/plasma/shells/org.kde.plasma.plasmoidviewershell/contents/applet/
+share/plasma/shells/org.kde.plasma.plasmoidviewershell/contents/applet/AppletError.qml
+share/plasma/shells/org.kde.plasma.plasmoidviewershell/contents/applet/CompactApplet.qml
+share/plasma/shells/org.kde.plasma.plasmoidviewershell/contents/applet/DefaultCompactRepresentation.qml
+share/plasma/shells/org.kde.plasma.plasmoidviewershell/contents/configuration/
+share/plasma/shells/org.kde.plasma.plasmoidviewershell/contents/configuration/AboutPlugin.qml
+share/plasma/shells/org.kde.plasma.plasmoidviewershell/contents/configuration/AppletConfiguration.qml
+share/plasma/shells/org.kde.plasma.plasmoidviewershell/contents/configuration/ConfigCategoryDelegate.qml
+share/plasma/shells/org.kde.plasma.plasmoidviewershell/contents/configuration/ConfigurationAppletPage.qml
+share/plasma/shells/org.kde.plasma.plasmoidviewershell/contents/configuration/ConfigurationContainmentActions.qml
+share/plasma/shells/org.kde.plasma.plasmoidviewershell/contents/configuration/ConfigurationContainmentAppearance.qml
+share/plasma/shells/org.kde.plasma.plasmoidviewershell/contents/configuration/ConfigurationKcmPage.qml
+share/plasma/shells/org.kde.plasma.plasmoidviewershell/contents/configuration/ConfigurationShortcuts.qml
+share/plasma/shells/org.kde.plasma.plasmoidviewershell/contents/configuration/ContainmentConfiguration.qml
+share/plasma/shells/org.kde.plasma.plasmoidviewershell/contents/configuration/MouseEventInputButton.qml
+share/plasma/shells/org.kde.plasma.plasmoidviewershell/contents/configuration/PanelConfiguration.qml
+share/plasma/shells/org.kde.plasma.plasmoidviewershell/contents/defaults
+share/plasma/shells/org.kde.plasma.plasmoidviewershell/contents/views/
+share/plasma/shells/org.kde.plasma.plasmoidviewershell/contents/views/Background.qml
+share/plasma/shells/org.kde.plasma.plasmoidviewershell/contents/views/Desktop.qml
+share/plasma/shells/org.kde.plasma.plasmoidviewershell/contents/views/Konsole.qml
+share/plasma/shells/org.kde.plasma.plasmoidviewershell/contents/views/SdkButtons.qml
+share/plasma/shells/org.kde.plasma.plasmoidviewershell/metadata.desktop
+share/plasma/shells/org.kde.plasma.plasmoidviewershell/metadata.json
+@tag update-desktop-database
+share/zsh/site-functions/_plasmoidviewer
