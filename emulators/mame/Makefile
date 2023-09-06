@@ -1,5 +1,4 @@
-BROKEN-i386 =	broken on 32-bit; enum in src/frontend/mame/ui/videoopt.h starting at 0x80000000
-ONLY_FOR_ARCHS = amd64 i386 aarch64
+ONLY_FOR_ARCHS = amd64 aarch64
 DPB_PROPERTIES = parallel
 
 USE_WXNEEDED =	Yes
