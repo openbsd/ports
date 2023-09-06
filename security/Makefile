@@ -15,7 +15,6 @@
      SUBDIR += bfbtester
      SUBDIR += boofuzz
      SUBDIR += boringssl
-     SUBDIR += botan
      SUBDIR += botan2
      SUBDIR += bounix
      SUBDIR += burpsuite
