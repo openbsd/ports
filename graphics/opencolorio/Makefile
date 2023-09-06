@@ -47,4 +47,8 @@ CONFIGURE_ARGS +=	-DOCIO_USE_SSE=ON
 CONFIGURE_ARGS +=	-DOCIO_USE_SSE=OFF
 .endif
 
+pre-configure:
+	# custom code fails to find yaml-cpp>=0.8.0
+	rm -f ${WRKSRC}/share/cmake/modules/Findyaml-cpp.cmake
+
 .include <bsd.port.mk>

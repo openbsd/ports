@@ -1,16 +1,12 @@
 COMMENT =		YAML parser and emitter in C++
 
-V=			0.7.0
 GH_ACCOUNT=		jbeder
 GH_PROJECT=		yaml-cpp
-GH_TAGNAME=		yaml-cpp-$V
-DISTNAME =		yaml-cpp-$V
+GH_TAGNAME=		0.8.0
 
-SHARED_LIBS =		yaml-cpp	4.0 # 0.5
+SHARED_LIBS =		yaml-cpp	5.0 # 0.5
 
 CATEGORIES =		devel
-
-HOMEPAGE =		https://github.com/jbeder/yaml-cpp
 
 # MIT
 PERMIT_PACKAGE =	Yes
