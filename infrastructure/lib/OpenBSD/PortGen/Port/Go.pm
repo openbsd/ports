@@ -1,4 +1,4 @@
-# $OpenBSD: Go.pm,v 1.13 2023/08/21 13:45:54 paco Exp $
+# $OpenBSD: Go.pm,v 1.14 2023/09/06 12:46:57 espie Exp $
 #
 # Copyright (c) 2019 Aaron Bieber <abieber@openbsd.org>
 #
@@ -280,7 +280,7 @@ sub fill_in_makefile
 	$self->set_license($di->{License});
 
 	$self->set_other( MODGO_MODNAME => $di->{Module} );
-	$self->set_other( MODGO_VERSION => $di->{Version} . ' # this goes in Makefile, not modules.inc' );
+	$self->set_other( MODGO_VERSION => $di->{Version} . '# this goes in Makefile, not modules.inc' );
 	$self->set_distname($di->{Name} . '-${MODGO_VERSION}');
 
 	my @parts = split("-", $di->{Version});
