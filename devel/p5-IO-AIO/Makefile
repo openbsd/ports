@@ -1,15 +1,19 @@
-COMMENT=	asynchronous Input/Output
+COMMENT =	asynchronous Input/Output
 
-MODULES=	cpan
-DISTNAME=	IO-AIO-4.75
-CATEGORIES=	devel
+
+DISTNAME =	IO-AIO-4.8
+PKGNAME =	p5-IO-AIO-4.80
+
+CATEGORIES =	devel
 
 # Perl
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE =	Yes
 
-WANTLIB += c perl pthread
+WANTLIB =		c perl pthread
 
-BUILD_DEPENDS=	devel/p5-Canary-Stability
-RUN_DEPENDS=	devel/p5-common-sense
+MODULES =		cpan
+
+BUILD_DEPENDS =		devel/p5-Canary-Stability>=2001
+RUN_DEPENDS =		devel/p5-common-sense
 
 .include <bsd.port.mk>
