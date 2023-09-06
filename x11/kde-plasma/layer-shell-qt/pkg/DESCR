@@ -1,0 +1,2 @@
+Qt component to allow applications to make use of the Wayland wl-layer-shell
+protocol.

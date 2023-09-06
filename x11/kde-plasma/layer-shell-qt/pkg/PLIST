@@ -1,0 +1,13 @@
+include/LayerShellQt/
+include/LayerShellQt/Shell
+include/LayerShellQt/Window
+include/LayerShellQt/layershellqt_export.h
+include/LayerShellQt/shell.h
+include/LayerShellQt/window.h
+lib/cmake/LayerShellQt/
+lib/cmake/LayerShellQt/LayerShellQtConfig.cmake
+lib/cmake/LayerShellQt/LayerShellQtConfigVersion.cmake
+lib/cmake/LayerShellQt/LayerShellQtTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/LayerShellQt/LayerShellQtTargets.cmake
+@lib lib/libLayerShellQtInterface.so.${LIBLayerShellQtInterface_VERSION}
+@so lib/qt5/plugins/wayland-shell-integration/liblayer-shell.so
