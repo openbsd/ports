@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.72 2023/09/06 11:56:34 espie Exp $
+# $OpenBSD: Var.pm,v 1.73 2023/09/06 21:07:16 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -591,7 +591,7 @@ sub create_tables($self, $inserter)
 
 package SitesVar;
 our @ISA = qw(OptKeyVar);
-sub table($) { 'MasterSites' }
+sub table($) { 'Sites' }
 sub want_in_ports_view($) { 1 }
 
 sub compute_join($self, $name)
@@ -632,6 +632,10 @@ sub create_tables($self, $inserter)
 	    Sql::Column::View->new("N"),
 	    Sql::Column::View->new("Value"));
 }
+
+package RoachSitesVar;
+our @ISA = qw(SitesVar);
+sub table($) { 'RoachSites' }
 
 # Generic handling for any blank-separated list
 package ListVar;
@@ -926,7 +930,7 @@ our @ISA = qw(ListVar);
 sub keyword_table($) { '_fetchfiles' }
 sub table($) { 'Distfiles' }
 sub match($) { 0 }
-sub want_in_ports_view($) { 1 }
+sub want_in_ports_view($) { 0 }
 
 sub _add($self, $ins, $value, $num)
 {

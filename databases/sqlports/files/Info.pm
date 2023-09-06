@@ -1,4 +1,4 @@
-# $OpenBSD: Info.pm,v 1.45 2023/09/05 13:51:33 espie Exp $
+# $OpenBSD: Info.pm,v 1.46 2023/09/06 21:07:16 espie Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -72,6 +72,8 @@ our $vars = {
     PKG_ARCH => 'ArchKeyVar',
     PORTROACH => 'DefinedVar',
     PORTROACH_COMMENT => 'DefinedVar',
+    ROACH_URL => 'AnyVar',
+    ROACH_SITES => 'RoachSitesVar',
     PSEUDO_FLAVOR => 'AnyVar',
     PSEUDO_FLAVORS => 'PseudoFlavorsVar',
     TEST_DEPENDS => 'TestDependsVar',
