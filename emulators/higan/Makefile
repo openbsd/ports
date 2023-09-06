@@ -7,7 +7,7 @@ BROKEN-i386 =		mprotect asm fixes required
 COMMENT =	multi-system Nintendo emulator
 
 V =		106
-REVISION =	8
+REVISION =	9
 
 GH_ACCOUNT =	higan-emu
 GH_PROJECT =	higan
@@ -17,8 +17,6 @@ USE_WXNEEDED =	Yes
 USE_NOBTCFI =	Yes
 
 CATEGORIES =	emulators
-
-HOMEPAGE =	https://byuu.org/emulation/higan/
 
 # GPLv3: https://byuu.org/emulation/higan/licensing
 PERMIT_PACKAGE =	Yes
