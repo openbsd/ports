@@ -1,0 +1,32 @@
+From 12e3f3bc6ec74eb50e04675f5bcf962482d3ff25 Mon Sep 17 00:00:00 2001
+From: Simon Marchi <simon.marchi@efficios.com>
+Date: Thu, 23 Feb 2023 12:35:40 -0500
+Subject: [PATCH] gdbsupport: ignore -Wenum-constexpr-conversion in
+ enum-flags.h
+
+Index: include/diagnostics.h
+--- include/diagnostics.h.orig
++++ include/diagnostics.h
+@@ -63,6 +63,11 @@
+ # define DIAGNOSTIC_IGNORE_FORMAT_NONLITERAL \
+   DIAGNOSTIC_IGNORE ("-Wformat-nonliteral")
+ 
++# if __has_warning ("-Wenum-constexpr-conversion")
++#  define DIAGNOSTIC_IGNORE_ENUM_CONSTEXPR_CONVERSION \
++   DIAGNOSTIC_IGNORE ("-Wenum-constexpr-conversion")
++# endif
++
+ #elif defined (__GNUC__) /* GCC */
+ 
+ # define DIAGNOSTIC_IGNORE_UNUSED_FUNCTION \
+@@ -102,6 +107,10 @@
+ 
+ #ifndef DIAGNOSTIC_IGNORE_FORMAT_NONLITERAL
+ # define DIAGNOSTIC_IGNORE_FORMAT_NONLITERAL
++#endif
++
++#ifndef DIAGNOSTIC_IGNORE_ENUM_CONSTEXPR_CONVERSION
++# define DIAGNOSTIC_IGNORE_ENUM_CONSTEXPR_CONVERSION
+ #endif
+ 
+ #endif /* DIAGNOSTICS_H */
