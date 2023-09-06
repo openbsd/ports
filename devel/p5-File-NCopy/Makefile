@@ -1,14 +1,16 @@
-COMMENT=	copy files and directories with perl
+COMMENT =	copy files and directories with perl
 
-MODULES=	cpan
-PKG_ARCH=	*
+DISTNAME =	File-NCopy-0.36
 
-DISTNAME=	File-NCopy0.32
-PKGNAME=	p5-File-NCopy-0.32
-REVISION=	2
-CATEGORIES=	devel
+CATEGORIES =	devel
 
-# Artistic
-PERMIT_PACKAGE=	Yes
+# Perl
+PERMIT_PACKAGE =	Yes
+
+MODULES =		cpan
+
+TEST_DEPENDS =		devel/p5-Test-Pod>=1.14
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
