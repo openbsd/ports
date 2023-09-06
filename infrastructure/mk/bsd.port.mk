@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1613 2023/09/05 17:55:49 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1614 2023/09/06 12:03:34 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1402,6 +1402,8 @@ _LIST_$v =
 .endfor
 _FULL_FETCH_LIST ?=
 
+# TODO maybe rename _LIST* to ALL*, this will expose ALL_SUPDISTFILES
+# which isn't needed but doesn't really matter.
 ALL_DISTFILES =		${_LIST_DISTFILES}
 ALL_PATCHFILES =	${_LIST_PATCHFILES}
 
@@ -1425,6 +1427,8 @@ PATCH_CASES ?=
 EXTRACT_CASES ?=
 EXTRACT_FILES ?=
 
+# TODO does this make sense, we could just look at _LIST_DISTFILES
+# or even use CHECKSUM_FILES directly
 _LIST_EXTRACTED = ${EXTRACT_ONLY} ${_LIST_PATCHFILES}
 
 # okay, time for some guess work
