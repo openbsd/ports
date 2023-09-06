@@ -1,0 +1,16 @@
+From FreeBSD to fix XDG_CONFIG_DIRS
+
+Index: startkde/startplasma.cpp
+--- startkde/startplasma.cpp.orig
++++ startkde/startplasma.cpp
+@@ -348,6 +348,10 @@ void setupPlasmaEnvironment()
+     }
+     const QString extraConfigDir = QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation) + QLatin1String("/kdedefaults");
+     QDir().mkpath(extraConfigDir);
++    // Additionally also set default value for XDG_CONFIG_DIRS which is not set by default on FreeBSD and OpenBSD
++    if (!qEnvironmentVariableIsSet("XDG_CONFIG_DIRS")) {
++        qputenv("XDG_CONFIG_DIRS", KDE_INSTALL_FULL_CONFDIR ":/etc/xdg:/usr/local/etc/xdg");
++    }
+     qputenv("XDG_CONFIG_DIRS", QFile::encodeName(extraConfigDir) + ':' + currentConfigDirs);
+ 
+     const KConfig globals;
