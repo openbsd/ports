@@ -121,6 +121,9 @@ TEST_DEPENDS =		${BUILD_PKGPATH}
 
 TEST_ENV +=	QT_PLUGIN_PATH="${PREFIX}/lib/qt5/plugins"
 
+CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_KSysGuard=ON \
+			-DCMAKE_DISABLE_FIND_PACKAGE_KF5SysGuard=ON
+
 pre-configure:
 	ln -sf ${LOCALBASE}/bin/gtar ${WRKDIR}/bin/tar
 # don't pick up llvm-config(1) from base
