@@ -79,7 +79,8 @@ LIB_DEPENDS =	devel/kf5/syntax-highlighting \
 CONFIGURE_ARGS =	-DBUILD_CPLUSPLUS_TOOLS=ON \
 			-DENABLE_SVG_SUPPORT=ON \
 			-DBUILD_WITH_PCH=OFF \
-			-DCMAKE_DISABLE_FIND_PACKAGE_Qt6=ON
+			-DCMAKE_DISABLE_FIND_PACKAGE_Qt6=ON \
+			-DClang_DIR=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib/cmake/clang
 
 GDB_ADJ_FILES = \
 	src/plugins/debugger/debuggeritemmanager.cpp \
