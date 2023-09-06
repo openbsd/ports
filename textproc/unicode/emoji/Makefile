@@ -1,6 +1,6 @@
 COMMENT =		Unicode emoji data files
 
-V =			15.0
+V =			15.1
 UNICODE_DATA_NAME =	emoji
 
 MASTER_SITES =		${UNICODE_MASTER_SITES}/emoji/${V}/
