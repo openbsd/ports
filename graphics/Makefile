@@ -268,6 +268,7 @@
      SUBDIR += py-opengl,python3
      SUBDIR += py-pygal,python3
      SUBDIR += py-pyqrcode,python3
+     SUBDIR += py-pyqtgraph,python3
      SUBDIR += py-pyx,python3
      SUBDIR += py-qrcode,python3
      SUBDIR += py-sane,python3
