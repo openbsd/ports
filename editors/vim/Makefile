@@ -3,7 +3,9 @@ COMMENT-lang=	vi clone, NLS subpackage
 
 # careful with PLISTs if updating; it usually works best if you use
 # a gui flavour rather than no_x11
-V=		9.0.1859
+V=		9.0.1876
+
+# keep -current > -stable until 7.4 (guic moved to gtk+4)
 REVISION-main=	0
 
 DIST_TUPLE+=	github vim vim v$V . \
