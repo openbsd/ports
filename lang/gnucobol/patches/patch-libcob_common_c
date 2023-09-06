@@ -1,7 +1,7 @@
 Index: libcob/common.c
 --- libcob/common.c.orig
 +++ libcob/common.c
-@@ -407,7 +407,7 @@ static struct config_tbl gc_conf[] = {
+@@ -504,7 +504,7 @@ static struct config_tbl gc_conf[] = {
  	{"LOGNAME", "logname", 			NULL, 	NULL, GRP_HIDE, ENV_STR, SETPOS (cob_user_name)},
  #if !defined (_WIN32) || defined (__MINGW32__) /* cygwin does not define _WIN32 */
  	{"LANG", "lang", 				NULL, 	NULL, GRP_SYSENV, ENV_STR, SETPOS (cob_sys_lang)},

@@ -1,7 +1,7 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -3112,7 +3112,7 @@ AUTOMAKE=${AUTOMAKE-"${am_missing_run}automake-${am__a
+@@ -3361,7 +3361,7 @@ AUTOMAKE=${AUTOMAKE-"${am_missing_run}automake-${am__a
  AUTOHEADER=${AUTOHEADER-"${am_missing_run}autoheader"}
  
  
