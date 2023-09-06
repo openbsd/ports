@@ -1,0 +1,35 @@
+Index: src/backends/libinput/connection.cpp
+--- src/backends/libinput/connection.cpp.orig
++++ src/backends/libinput/connection.cpp
+@@ -307,6 +307,7 @@ void Connection::processEvents()
+             Q_EMIT ke->device()->keyChanged(ke->key(), ke->state(), ke->time(), ke->device());
+             break;
+         }
++	/*
+         case LIBINPUT_EVENT_POINTER_SCROLL_WHEEL: {
+             const PointerEvent *pointerEvent = static_cast<PointerEvent *>(event.get());
+             const auto axes = pointerEvent->axis();
+@@ -346,6 +347,7 @@ void Connection::processEvents()
+             }
+             break;
+         }
++	*/
+         case LIBINPUT_EVENT_POINTER_BUTTON: {
+             PointerEvent *pe = static_cast<PointerEvent *>(event.get());
+             Q_EMIT pe->device()->pointerButtonChanged(pe->button(), pe->buttonState(), pe->time(), pe->device());
+@@ -458,6 +460,7 @@ void Connection::processEvents()
+             }
+             break;
+         }
++/*
+         case LIBINPUT_EVENT_GESTURE_HOLD_BEGIN: {
+             HoldGestureEvent *he = static_cast<HoldGestureEvent *>(event.get());
+             Q_EMIT he->device()->holdGestureBegin(he->fingerCount(), he->time(), he->device());
+@@ -472,6 +475,7 @@ void Connection::processEvents()
+             }
+             break;
+         }
++*/
+         case LIBINPUT_EVENT_SWITCH_TOGGLE: {
+             SwitchEvent *se = static_cast<SwitchEvent *>(event.get());
+             switch (se->state()) {

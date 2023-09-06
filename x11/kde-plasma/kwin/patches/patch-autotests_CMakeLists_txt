@@ -1,0 +1,12 @@
+Index: autotests/CMakeLists.txt
+--- autotests/CMakeLists.txt.orig
++++ autotests/CMakeLists.txt
+@@ -2,7 +2,7 @@ add_definitions(-DKWIN_UNIT_TEST)
+ remove_definitions(-DQT_USE_QSTRINGBUILDER)
+ add_subdirectory(libkwineffects)
+ add_subdirectory(integration)
+-add_subdirectory(libinput)
++#add_subdirectory(libinput)
+ add_subdirectory(tabbox)
+ add_subdirectory(drm)
+ 

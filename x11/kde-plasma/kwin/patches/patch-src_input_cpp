@@ -1,0 +1,12 @@
+Index: src/input.cpp
+--- src/input.cpp.orig
++++ src/input.cpp
+@@ -2040,7 +2040,7 @@ class TabletInputFilter : public QObject, public Input
+             return;
+         }
+         struct udev_device *const udev_device = libinput_device_get_udev_device(device->device());
+-        const char *devnode = udev_device_get_syspath(udev_device);
++        const char *devnode = ""; // XXX not yet suppoted udev_device_get_syspath(udev_device);
+ 
+         auto deviceGroup = libinput_device_get_device_group(device->device());
+         auto tablet = static_cast<KWaylandServer::TabletV2Interface *>(libinput_device_group_get_user_data(deviceGroup));

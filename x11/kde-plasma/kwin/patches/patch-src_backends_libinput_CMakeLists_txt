@@ -1,0 +1,9 @@
+Index: src/backends/libinput/CMakeLists.txt
+--- src/backends/libinput/CMakeLists.txt.orig
++++ src/backends/libinput/CMakeLists.txt
+@@ -22,4 +22,4 @@ target_sources(kwin PRIVATE
+     libinput_logging.cpp
+     libinputbackend.cpp
+ )
+-target_link_libraries(kwin Libinput::Libinput)
++target_link_libraries(kwin Libinput::Libinput input)

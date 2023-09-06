@@ -1,0 +1,12 @@
+Index: src/xwayland/xwayland.cpp
+--- src/xwayland/xwayland.cpp.orig
++++ src/xwayland/xwayland.cpp
+@@ -226,7 +226,7 @@ void Xwayland::dispatchEvents(DispatchEventsMode mode)
+ 
+     const int connectionError = xcb_connection_has_error(connection);
+     if (connectionError) {
+-        qCWarning(KWIN_XWL, "The X11 connection broke (error %d)", connectionError);
++        qCWarning(KWIN_XWL, "The X11 Xwayland connection broke (error %d)", connectionError);
+         m_launcher->stop();
+         return;
+     }

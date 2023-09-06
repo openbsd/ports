@@ -1,0 +1,19 @@
+Index: src/backends/libinput/context.cpp
+--- src/backends/libinput/context.cpp.orig
++++ src/backends/libinput/context.cpp
+@@ -45,12 +45,12 @@ static void libinputLogHandler(libinput *libinput, lib
+ 
+ Context::Context(Session *session, std::unique_ptr<Udev> &&udev)
+     : m_session(session)
+-    , m_libinput(libinput_udev_create_context(&Context::s_interface, this, *udev.get()))
++    , m_libinput(nullptr)
+     , m_suspended(false)
+     , m_udev(std::move(udev))
+ {
+-    libinput_log_set_priority(m_libinput, LIBINPUT_LOG_PRIORITY_DEBUG);
+-    libinput_log_set_handler(m_libinput, &libinputLogHandler);
++    //libinput_log_set_priority(m_libinput, LIBINPUT_LOG_PRIORITY_DEBUG);
++    //libinput_log_set_handler(m_libinput, &libinputLogHandler);
+ }
+ 
+ Context::~Context()

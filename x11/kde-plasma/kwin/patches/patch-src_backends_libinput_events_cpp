@@ -1,0 +1,53 @@
+Index: src/backends/libinput/events.cpp
+--- src/backends/libinput/events.cpp.orig
++++ src/backends/libinput/events.cpp
+@@ -27,9 +27,9 @@ std::unique_ptr<Event> Event::create(libinput_event *e
+     switch (t) {
+     case LIBINPUT_EVENT_KEYBOARD_KEY:
+         return std::make_unique<KeyEvent>(event);
+-    case LIBINPUT_EVENT_POINTER_SCROLL_WHEEL:
+-    case LIBINPUT_EVENT_POINTER_SCROLL_FINGER:
+-    case LIBINPUT_EVENT_POINTER_SCROLL_CONTINUOUS:
++    //case LIBINPUT_EVENT_POINTER_SCROLL_WHEEL:
++    //case LIBINPUT_EVENT_POINTER_SCROLL_FINGER:
++    //case LIBINPUT_EVENT_POINTER_SCROLL_CONTINUOUS:
+     case LIBINPUT_EVENT_POINTER_BUTTON:
+     case LIBINPUT_EVENT_POINTER_MOTION:
+     case LIBINPUT_EVENT_POINTER_MOTION_ABSOLUTE:
+@@ -48,9 +48,11 @@ std::unique_ptr<Event> Event::create(libinput_event *e
+     case LIBINPUT_EVENT_GESTURE_PINCH_UPDATE:
+     case LIBINPUT_EVENT_GESTURE_PINCH_END:
+         return std::make_unique<PinchGestureEvent>(event, t);
++/*
+     case LIBINPUT_EVENT_GESTURE_HOLD_BEGIN:
+     case LIBINPUT_EVENT_GESTURE_HOLD_END:
+         return std::make_unique<HoldGestureEvent>(event, t);
++*/
+     case LIBINPUT_EVENT_TABLET_TOOL_AXIS:
+     case LIBINPUT_EVENT_TABLET_TOOL_PROXIMITY:
+     case LIBINPUT_EVENT_TABLET_TOOL_TIP:
+@@ -200,18 +202,24 @@ QVector<InputRedirection::PointerAxis> PointerEvent::a
+ 
+ qreal PointerEvent::scrollValue(InputRedirection::PointerAxis axis) const
+ {
++/*
+     const libinput_pointer_axis a = axis == InputRedirection::PointerAxisHorizontal
+         ? LIBINPUT_POINTER_AXIS_SCROLL_HORIZONTAL
+         : LIBINPUT_POINTER_AXIS_SCROLL_VERTICAL;
+     return libinput_event_pointer_get_scroll_value(m_pointerEvent, a) * device()->scrollFactor();
++*/
++    return 0;
+ }
+ 
+ qint32 PointerEvent::scrollValueV120(InputRedirection::PointerAxis axis) const
+ {
++/*
+     const libinput_pointer_axis a = (axis == InputRedirection::PointerAxisHorizontal)
+         ? LIBINPUT_POINTER_AXIS_SCROLL_HORIZONTAL
+         : LIBINPUT_POINTER_AXIS_SCROLL_VERTICAL;
+     return libinput_event_pointer_get_scroll_value_v120(m_pointerEvent, a) * device()->scrollFactor();
++*/
++    return 0;
+ }
+ 
+ TouchEvent::TouchEvent(libinput_event *event, libinput_event_type type)

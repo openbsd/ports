@@ -1,0 +1,12 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -232,7 +232,7 @@ endif()
+ pkg_check_modules(XKBX11 IMPORTED_TARGET xkbcommon-x11 REQUIRED)
+ add_feature_info(XKBX11 XKBX11_FOUND "Required for handling keyboard events in X11 backend")
+ 
+-find_package(Libinput 1.19)
++find_package(Libinput)
+ set_package_properties(Libinput PROPERTIES TYPE REQUIRED PURPOSE "Required for input handling on Wayland.")
+ 
+ find_package(UDev)

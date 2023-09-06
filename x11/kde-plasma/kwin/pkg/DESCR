@@ -1,0 +1,10 @@
+KWin is the window manager for the KDE Plasma Desktop.  It gives you complete
+control over your windows, making sure they're not in the way but aid you in
+your task. It paints the window decoration, the bar on top of every window with
+buttons like close, maximize and minimize. It also handles placing of windows
+and switching between them.
+
+KWin supports compositing, which means using 3D effects for handling your
+windows. This can make window management smoother, easier, more efficient and
+more natural. It's hardware requirements are very modest and pretty much every
+reasonably modern system since 2002 supports it.

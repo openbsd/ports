@@ -1,0 +1,24 @@
+Index: src/tabletmodemanager.cpp
+--- src/tabletmodemanager.cpp.orig
++++ src/tabletmodemanager.cpp
+@@ -28,16 +28,20 @@ static bool shouldIgnoreDevice(InputDevice *device)
+         return true;
+     }
+ 
++    /*
+     auto libinput_device = qobject_cast<LibInput::Device *>(device);
+     if (!libinput_device) {
+         return false;
+     }
++    */
+ 
+     bool ignore = false;
++    /* XXX
+     if (auto udev = libinput_device_get_udev_device(libinput_device->device()); udev) {
+         ignore = udev_device_has_tag(udev, "kwin-ignore-tablet-mode");
+         udev_device_unref(udev);
+     }
++    */
+     return ignore;
+ }
+ 
