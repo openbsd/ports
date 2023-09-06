@@ -1,5 +1,5 @@
 COMMENT =	modern GPS tracking platform
-V =		5.8
+V =		5.9
 PKGNAME =	traccar-${V}
 DISTNAME =	traccar-other-${V}
 EXTRACT_SUFX =	.zip
@@ -12,18 +12,18 @@ MAINTAINER =	Renaud Allard <renaud@allard.it>
 # MPL 2.0
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES = https://github.com/traccar/traccar/releases/download/v${V}/
+MASTER_SITES =	https://github.com/traccar/traccar/releases/download/v${V}/
 
-MODULES =               java
-MODJAVA_VER =           11+
+MODULES =	java
+MODJAVA_VER =	11+
 
-RUN_DEPENDS =		java/javaPathHelper
+RUN_DEPENDS =	java/javaPathHelper
 
 EXTRACT_CASES +=	traccar*.zip) \
 	${UNZIP} -oq ${FULLDISTDIR}/$$archive -d ${WRKDIST};;
 
-NO_BUILD =              Yes
-NO_TEST =               Yes
+NO_BUILD =	Yes
+NO_TEST =	Yes
 
 do-configure:
 	${SUBST_CMD} ${WRKSRC}/conf/{default,traccar}.xml
