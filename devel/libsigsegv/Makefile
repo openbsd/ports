@@ -3,6 +3,7 @@ COMMENT =		library for handling page faults in user mode
 DISTNAME =		libsigsegv-2.14
 SHARED_LIBS =		sigsegv 1.0
 CATEGORIES =		devel
+REVISION =		0
 
 HOMEPAGE =		https://www.gnu.org/software/libsigsegv/
 

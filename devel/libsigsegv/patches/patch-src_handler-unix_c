@@ -1,0 +1,12 @@
+Index: src/handler-unix.c
+--- src/handler-unix.c.orig
++++ src/handler-unix.c
+@@ -382,7 +382,7 @@ install_for (int sig)
+   struct sigaction action;
+ 
+ #ifdef SIGSEGV_FAULT_ADDRESS_FROM_SIGINFO
+-  action.sa_sigaction = &sigsegv_handler;
++  action.sa_sigaction = (void (*) (int, siginfo_t *, void *)) &sigsegv_handler;
+ #else
+   action.sa_handler = (void (*) (int)) &sigsegv_handler;
+ #endif
