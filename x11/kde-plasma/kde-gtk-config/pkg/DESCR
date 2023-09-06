@@ -1,0 +1,8 @@
+Configuration dialog to adapt GTK+ applications appearance to your taste under
+KDE. Among its many features, it lets you:
+
+- Choose which theme is used for GTK+ 2.x and GTK+ 3.x applications.
+- Tweak some GTK+ applications behaviour.
+- Select what icon theme to use in GTK+ applications.
+- Select GTK+ applications default fonts.
+- Easily browse and install new GTK+ 2.x and GTK+ 3.x themes.
