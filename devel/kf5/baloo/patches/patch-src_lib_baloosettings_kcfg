@@ -1,0 +1,14 @@
+Disable indexing by default, it hogs the entire machine.
+
+Index: src/lib/baloosettings.kcfg
+--- src/lib/baloosettings.kcfg.orig
++++ src/lib/baloosettings.kcfg
+@@ -9,7 +9,7 @@
+   <group name="Basic Settings">
+     <entry name="indexingEnabled" key="Indexing-Enabled" type="Bool">
+       <label>Indexing-Enabled</label>
+-      <default>true</default>
++      <default>false</default>
+     </entry>
+   </group>
+   <group name="General">
