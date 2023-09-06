@@ -11,7 +11,7 @@ FLAVOR?=
 # perl licence
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Ace/}
+SITES=		${SITE_PERL_CPAN:=Ace/}
 
 # we patch the Makefile.PL to allow us to set this simply
 CONFIGURE_ENV+=	PERL_MM_USE_DEFAULT=Yes

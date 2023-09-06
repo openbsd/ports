@@ -16,7 +16,7 @@ HOMEPAGE=	 http://emboss.open-bio.org/
 # GPL v2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://distfiles.sigtrap.nl/
+SITES=		https://distfiles.sigtrap.nl/
 
 WANTLIB += X11 c m xcb
 

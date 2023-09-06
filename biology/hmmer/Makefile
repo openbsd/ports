@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m pthread
 
-MASTER_SITES =	http://eddylab.org/software/hmmer3/$V/
+SITES =		http://eddylab.org/software/hmmer3/$V/
 
 MAKE_FLAGS =	V=1
 
