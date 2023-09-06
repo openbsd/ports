@@ -1,3 +1,5 @@
+BROKEN = Will move to KDE gear as merkuro soon
+
 USE_WXNEEDED =	Yes
 
 COMMENT =	Akonadi calendar application
