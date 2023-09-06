@@ -1,4 +1,4 @@
-SHA256 (alacritty-0.12.1.tar.gz) = FLzgv8U4hyyX4OOLkjOp0fqZLc+DoitgNdpf5YpVvGw=
+SHA256 (alacritty-0.12.2.tar.gz) = KFtE0tLoMRirf+YdV1gRu4XV4hFHgIFxvQ5YPp55R0g=
 SHA256 (cargo/adler-1.0.2.tar.gz) = 8mIBYEyHseAb09mPjV2aj8u4FejO20H/zL60v1k6Nf4=
 SHA256 (cargo/android-activity-0.4.0.tar.gz) = QWWhrvcDIyAxtApuiQjC+eMU1JXxGqf5jbddOaSXzGo=
 SHA256 (cargo/android-properties-0.2.2.tar.gz) = /H6yCbFRjWu4eyg8IAlfUijs2kYNpwtE8IAlI96m2gQ=
@@ -62,7 +62,7 @@ SHA256 (cargo/fuchsia-zircon-sys-0.3.3.tar.gz) = Pcqprncl0SzbhbOtmaQ023C0aMCd7Rf
 SHA256 (cargo/gethostname-0.2.3.tar.gz) = wevTTjXEbgC7c+gTYySNYneCckYJ/htjlvVT9o/jhi4=
 SHA256 (cargo/getrandom-0.2.7.tar.gz) = TrGoZKUBYpaR7fbBWlk7elHuuqHoRo6d3GI958m1jsY=
 SHA256 (cargo/gl_generator-0.14.0.tar.gz) = GpXfwjorSpovWrQdGU+L/aPKvsQq9OOfCMM56yoMEk0=
-SHA256 (cargo/glutin-0.30.8.tar.gz) = Yvm3caZfCh4922qhb4Z9h9xzySJBHCVebEq39tRccyc=
+SHA256 (cargo/glutin-0.30.9.tar.gz) = I7A4V4IEi+ZfCp3QRsRp1qdYpT/hqmOoER3qOU0v+i8=
 SHA256 (cargo/glutin_egl_sys-0.5.0.tar.gz) = GzvL3cUVc7l3/G3KXZOGfk8paCzbr10T5I9PpDRtTYc=
 SHA256 (cargo/glutin_glx_sys-0.4.0.tar.gz) = G1PLX+VolkqgZqO6kerF7LrIafsIQs0NyeQSQ08aFJQ=
 SHA256 (cargo/glutin_wgl_sys-0.4.0.tar.gz) = 74k5jpADP8a8Zem9Qv0pu7/Ug72ltW3FVi9FVVBhgWU=
@@ -231,7 +231,7 @@ SHA256 (cargo/xcursor-0.3.4.tar.gz) = RjcFpjMTzUMBGEOBxegELwp+m0u2NlPyFjEdSudGkL
 SHA256 (cargo/xdg-2.4.1.tar.gz) = DEWD21y9TEwDA98tFa+A8FOdtwP6HGiALUy70t0PiPY=
 SHA256 (cargo/xml-rs-0.8.4.tar.gz) = 0tfTlIYT91yY/ZMoz9zEWsxNNgZVKJ0KfU7JMTkiAKM=
 SHA256 (cargo/yaml-rust-0.4.5.tar.gz) = VsGTbEzHocmrIaHrtgLrlCuoaMvUSpnLfNxYkjNeHIU=
-SIZE (alacritty-0.12.1.tar.gz) = 1493994
+SIZE (alacritty-0.12.2.tar.gz) = 1494051
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
 SIZE (cargo/android-activity-0.4.0.tar.gz) = 235580
 SIZE (cargo/android-properties-0.2.2.tar.gz) = 4563
@@ -295,7 +295,7 @@ SIZE (cargo/fuchsia-zircon-sys-0.3.3.tar.gz) = 7191
 SIZE (cargo/gethostname-0.2.3.tar.gz) = 8174
 SIZE (cargo/getrandom-0.2.7.tar.gz) = 28854
 SIZE (cargo/gl_generator-0.14.0.tar.gz) = 22330
-SIZE (cargo/glutin-0.30.8.tar.gz) = 65119
+SIZE (cargo/glutin-0.30.9.tar.gz) = 65356
 SIZE (cargo/glutin_egl_sys-0.5.0.tar.gz) = 6053
 SIZE (cargo/glutin_glx_sys-0.4.0.tar.gz) = 5905
 SIZE (cargo/glutin_wgl_sys-0.4.0.tar.gz) = 5477
