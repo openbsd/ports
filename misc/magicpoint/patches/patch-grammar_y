@@ -26,7 +26,7 @@ Index: grammar.y
  	return ct;
  }
  
-@@ -190,6 +192,7 @@ gen_str(op, str)
+@@ -226,6 +228,7 @@ gen_str(op, str)
  		return ct;
  	}
  	ct->ctc_value = strdup(str);
@@ -34,7 +34,7 @@ Index: grammar.y
  	return ct;
  }
  
-@@ -207,6 +210,7 @@ gen_str2(op, str1, str2)
+@@ -243,6 +246,7 @@ gen_str2(op, str1, str2)
  	}
  	ct->ctc2_value1 = strdup(str1);
  	ct->ctc2_value2 = strdup(str2);

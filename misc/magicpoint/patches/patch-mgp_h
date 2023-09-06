@@ -1,6 +1,7 @@
---- mgp.h.orig	Sat Nov  5 10:09:50 2005
-+++ mgp.h	Sat Nov  5 10:15:33 2005
-@@ -276,6 +276,7 @@ struct ctrl {
+Index: mgp.h
+--- mgp.h.orig
++++ mgp.h
+@@ -310,6 +310,7 @@ struct ctrl {
  	u_char ct_flag;
  	u_int ct_page;
  	struct ctrl *ct_next;
@@ -8,7 +9,7 @@
  	union {
  		struct ctrl_double ctrl_double;
  		struct ctrl_int ctrl_int;
-@@ -291,6 +292,12 @@ struct ctrl {
+@@ -327,6 +328,12 @@ struct ctrl {
  		struct ctrl_pcache ctrl_pcache;
  	} ct_val;
  };

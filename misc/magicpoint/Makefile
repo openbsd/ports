@@ -1,36 +1,44 @@
 COMMENT=	X11-based presentation tool
 
-DISTNAME=	magicpoint-1.09a
-REVISION=	4
+DISTNAME=	magicpoint-1.13a
 EPOCH=		0
+
 CATEGORIES=	misc productivity
+
 MASTER_SITES=	ftp://sh.wide.ad.jp/WIDE/free-ware/mgp/
 
 HOMEPAGE=	http://member.wide.ad.jp/wg/mgp/
 
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=  ICE SM X11 Xau Xdmcp Xext Xmu Xt Xtst c gif iconv intl m mng
-WANTLIB+= png ttf util
+WANTLIB += ICE SM X11 Xau Xdmcp Xext Xft Xmu Xt Xtst c gif iconv
+WANTLIB += m mng png util
+
+RUN_DEPENDS+=	devel/gettext,-runtime
 
 # plus sign is for localized (i.e. Japanese) version
-LIB_DEPENDS+=	devel/gettext,-runtime \
-		print/freetype \
-		graphics/png \
+LIB_DEPENDS+=	graphics/png \
 		graphics/libmng \
 		graphics/giflib
+
 RUN_DEPENDS+=	graphics/netpbm \
 		print/ghostscript/gnu-fonts
 
-AUTOCONF_VERSION=2.13
 # XXX while autoconf will append gnu in CONFIGURE_STYLE, we explicitely
 # set it anyway because order matters
 CONFIGURE_STYLE=autoconf gnu imake no-autoheader
-CONFIGURE_ARGS=	--disable-vflib
-CONFIGURE_ARGS+= --enable-gif
-CONFIGURE_ARGS+= --enable-freetype-charset16
+
+AUTOCONF_VERSION=2.13
+
+CONFIGURE_ARGS=		--disable-vflib \
+			--enable-gif \
+			--enable-locale \
+			--disable-freetype
 
 NO_TEST=	Yes
+
+pre-patch:
+	perl -pi -e 's|malloc.h|stdlib.h|' ${WRKSRC}/image/new.c
 
 post-configure:
 	@cd ${WRKSRC}/contrib/xmindpath && \
@@ -76,5 +84,5 @@ post-install:
 		${PREFIX}/bin/mgp2latex
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/tex2eps.sh \
 		${PREFIX}/bin/tex2eps
-	
+
 .include <bsd.port.mk>

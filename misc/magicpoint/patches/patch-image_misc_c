@@ -1,12 +1,13 @@
 For abort() declaration.
 
---- image/misc.c.orig	Thu Nov 20 01:06:46 2014
-+++ image/misc.c	Thu Nov 20 01:06:59 2014
-@@ -12,6 +12,7 @@
+Index: image/misc.c
+--- image/misc.c.orig
++++ image/misc.c
+@@ -12,7 +12,6 @@
  #include "xloadimage.h"
  #include "patchlevel"
  #include <signal.h>
-+#include <stdlib.h>
+-#include <stdlib.h>
  
  extern int      _Xdebug;
  extern Display *display;
