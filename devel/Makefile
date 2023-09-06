@@ -430,7 +430,6 @@
      SUBDIR += mm
      SUBDIR += mm-common
      SUBDIR += mono-addins
-     SUBDIR += monotone
      SUBDIR += mowgli
      SUBDIR += mpfr
      SUBDIR += msbuild
