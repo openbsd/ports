@@ -2,7 +2,7 @@ COMMENT =	modular, cross-platform and multi-threaded benchmark tool
 DISTNAME =	sysbench-0.4.8
 REVISION =	15
 CATEGORIES =	benchmarks
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=sysbench/}
+SITES =		${SITE_SOURCEFORGE:=sysbench/}
 
 HOMEPAGE =	http://sysbench.sourceforge.net/
 

@@ -1,7 +1,7 @@
 COMMENT=	tool to measure TCP throughput
 DISTNAME=	netstrain-3.0
 CATEGORIES=	benchmarks net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=netstrain/}
+SITES=		${SITE_SOURCEFORGE:=netstrain/}
 REVISION =	0
 
 HOMEPAGE=	http://netstrain.sourceforge.net/

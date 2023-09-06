@@ -5,7 +5,7 @@ CATEGORIES=	benchmarks
 REVISION=	2
 
 HOMEPAGE=	http://randread.sourceforge.net/
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=randread/}
+SITES=		${SITE_SOURCEFORGE:=randread/}
 
 # Public Domain
 PERMIT_PACKAGE=	Yes

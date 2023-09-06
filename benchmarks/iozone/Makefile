@@ -4,7 +4,7 @@ V =		3.490
 DISTNAME=	iozone${V:S/./_/}
 PKGNAME=	iozone-$V
 CATEGORIES=	benchmarks
-MASTER_SITES=	http://www.iozone.org/src/current/
+SITES=		http://www.iozone.org/src/current/
 EXTRACT_SUFX=	.tar
 
 HOMEPAGE=	http://www.iozone.org/

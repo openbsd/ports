@@ -13,6 +13,6 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c event
 
-MASTER_SITES =		https://github.com/bluhm/splicebench/releases/download/v${VERSION}/
+SITES =	https://github.com/bluhm/splicebench/releases/download/v${VERSION}/
 
 .include <bsd.port.mk>

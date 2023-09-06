@@ -6,7 +6,7 @@ HOMEPAGE =		http://sourceforge.net/projects/fsmark/
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 WANTLIB =		c
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=fsmark/}
+SITES =			${SITE_SOURCEFORGE:=fsmark/}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fs_mark ${PREFIX}/bin/

@@ -10,7 +10,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c pthread
 
-MASTER_SITES=	https://spacehopper.org/mirrors/
+SITES=		https://spacehopper.org/mirrors/
 EXTRACT_SUFX=	.tgz
 
 FAKE_FLAGS=	BINDIR=${PREFIX}/sbin MANDIR=${PREFIX}/man/man

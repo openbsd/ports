@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c
 
-MASTER_SITES =		https://nuttcp.net/nuttcp/
+SITES =			https://nuttcp.net/nuttcp/
 
 EXTRACT_SUFX =		.tar.bz2
 

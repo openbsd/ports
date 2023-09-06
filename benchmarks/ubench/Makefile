@@ -5,7 +5,7 @@ CATEGORIES=	benchmarks
 REVISION=	1
 
 HOMEPAGE=	http://www.phystech.com/download/ubench.html
-MASTER_SITES=	http://www.phystech.com/ftp/
+SITES=		http://www.phystech.com/ftp/
 
 # GPL
 PERMIT_PACKAGE=	Yes

@@ -2,7 +2,7 @@ COMMENT=	enhanced performance test of filesystem I/O
 
 DISTNAME=	bonnie++-1.97.3
 CATEGORIES=	benchmarks
-MASTER_SITES=	http://www.coker.com.au/bonnie++/experimental/
+SITES=		http://www.coker.com.au/bonnie++/experimental/
 EXTRACT_SUFX=	.tgz
 REVISION=	1
 

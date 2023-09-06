@@ -8,7 +8,7 @@ HOMEPAGE=	http://www.pureftpd.org/project/blogbench
 # ISC
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://download.pureftpd.org/pub/blogbench/ \
+SITES=		http://download.pureftpd.org/pub/blogbench/ \
 		ftp://ftp.pureftpd.org/pub/pure-ftpd/misc/blogbench/
 
 WANTLIB=	c pthread
