@@ -1,6 +1,6 @@
 COMMENT=		maths, science and engineering modules for Python
 
-MODPY_EGG_VERSION=	1.7.3
+MODPY_EGG_VERSION=	1.10.1
 DISTNAME=		scipy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
@@ -37,16 +37,22 @@ LIB_DEPENDS=		${MODFORTRAN_LIB_DEPENDS} \
 			math/cblas \
 			math/lapack
 
-RUN_DEPENDS=		math/py-numpy${MODPY_FLAVOR}>=1.16.5 \
+RUN_DEPENDS=		math/py-numpy${MODPY_FLAVOR}>=1.19.5 \
 			devel/swig
 
-TEST_DEPENDS=		devel/py-test${MODPY_FLAVOR}
+
+# XXX: requires py-pooch
+NO_TEST=		Yes
+# TEST_DEPENDS=		devel/py-test${MODPY_FLAVOR} \
+#			devel/py-pooch${MODPY_FLAVOR}
 
 MAKE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include"
 MAKE_ENV+=		LDFLAGS="-shared -L${LOCALBASE}/lib -pthread -lutil"
 
 post-install:
 	${MODPY_BIN} -m compileall ${WRKINST}/${MODPY_SITEPKG}/scipy
+
+PORTHOME=	${WRKDIR}
 
 do-test: fake
 	cd ${WRKDIR} && ${MAKE_ENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
