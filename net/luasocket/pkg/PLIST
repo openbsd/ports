@@ -1,8 +1,9 @@
 lib/lua/${MODLUA_VERSION}/mime/
-lib/lua/${MODLUA_VERSION}/mime/core.so
+@so lib/lua/${MODLUA_VERSION}/mime/core.so
 lib/lua/${MODLUA_VERSION}/socket/
-lib/lua/${MODLUA_VERSION}/socket/core.so
-lib/lua/${MODLUA_VERSION}/socket/unix.so
+@so lib/lua/${MODLUA_VERSION}/socket/core.so
+@so lib/lua/${MODLUA_VERSION}/socket/serial.so
+@so lib/lua/${MODLUA_VERSION}/socket/unix.so
 share/doc/${FULLPKGNAME}/
 share/doc/${FULLPKGNAME}/dns.html
 share/doc/${FULLPKGNAME}/ftp.html
@@ -34,7 +35,6 @@ share/examples/${FULLPKGNAME}/mcsend.lua
 share/examples/${FULLPKGNAME}/talker.lua
 share/examples/${FULLPKGNAME}/tinyirc.lua
 share/lua/${MODLUA_VERSION}/ltn12.lua
-share/lua/${MODLUA_VERSION}/mime/
 share/lua/${MODLUA_VERSION}/mime.lua
 share/lua/${MODLUA_VERSION}/socket/
 share/lua/${MODLUA_VERSION}/socket.lua
