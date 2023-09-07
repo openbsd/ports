@@ -1,37 +1,17 @@
 Index: generate/unix/Makefile.config
 --- generate/unix/Makefile.config.orig
 +++ generate/unix/Makefile.config
-@@ -203,7 +203,6 @@ CWARNINGFLAGS = \
-     -Wall\
-     -Wbad-function-cast\
-     -Wdeclaration-after-statement\
--    -Werror\
-     -Wformat=2\
-     -Wmissing-declarations\
-     -Wmissing-prototypes\
-@@ -225,24 +224,7 @@ CWARNINGFLAGS += \
-     -Wmissing-field-initializers\
+@@ -229,11 +229,11 @@ CWARNINGFLAGS += \
      -Wnested-externs\
      -Wold-style-definition\
--    -Wno-format-nonliteral\
+     -Wno-format-nonliteral\
 -    -Wredundant-decls
--#
--# Per-host flags and exclusions
--#
--ifneq ($(ACPI_HOST), _FreeBSD)
--    CWARNINGFLAGS += \
--        -Wempty-body
--
--    ifneq ($(ACPI_HOST), _APPLE)
--        CWARNINGFLAGS += \
--            -Woverride-init\
--            -Wlogical-op\
--            -Wmissing-parameter-type\
--            -Wold-style-declaration\
--            -Wtype-limits
--    endif
--endif
-+    -Wno-format-nonliteral
- 
++
  #
- # Extra warning flags (for possible future use)
+ # Per-host flags and exclusions
+ #
+-ifneq ($(ACPI_HOST), _FreeBSD)
++ifneq ($(ACPI_HOST), _LINUX)
+     CWARNINGFLAGS += \
+         -Wempty-body
+ 

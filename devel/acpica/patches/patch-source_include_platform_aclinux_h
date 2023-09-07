@@ -13,10 +13,10 @@ Index: source/include/platform/aclinux.h
  #ifdef __KERNEL__
  
  #define ACPI_USE_SYSTEM_INTTYPES
-@@ -330,6 +334,7 @@
+@@ -334,6 +338,7 @@
  #if defined(__ia64__)    || (defined(__x86_64__) && !defined(__ILP32__)) ||\
      defined(__aarch64__) || defined(__PPC64__) ||\
-     defined(__s390x__) ||\
+     defined(__s390x__)   || defined(__loongarch__) ||\
 +    defined(__sparc64__) ||\
      (defined(__riscv) && (defined(__LP64__) || defined(_LP64)))
  #define ACPI_MACHINE_WIDTH          64

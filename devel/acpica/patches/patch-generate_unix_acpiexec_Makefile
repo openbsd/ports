@@ -1,7 +1,7 @@
 Index: generate/unix/acpiexec/Makefile
 --- generate/unix/acpiexec/Makefile.orig
 +++ generate/unix/acpiexec/Makefile
-@@ -259,12 +259,6 @@ ifneq ($(ACPI_HOST),_QNX)
+@@ -260,12 +260,6 @@ ifneq ($(ACPI_HOST),_QNX)
  LDFLAGS += -lpthread
  endif
  
