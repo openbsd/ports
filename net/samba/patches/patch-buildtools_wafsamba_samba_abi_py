@@ -5,7 +5,7 @@ breaks binutils-2.17 ld(1).
 Index: buildtools/wafsamba/samba_abi.py
 --- buildtools/wafsamba/samba_abi.py.orig
 +++ buildtools/wafsamba/samba_abi.py
-@@ -169,7 +169,7 @@ def version_script_map_process_file(fname, version, ab
+@@ -170,7 +170,7 @@ def version_script_map_process_file(fname, version, ab
              continue
          if line.startswith("#"):
              continue
@@ -14,7 +14,7 @@ Index: buildtools/wafsamba/samba_abi.py
              in_section = True
              continue
          if line == "};":
-@@ -210,24 +210,7 @@ def abi_write_vscript(f, libname, current_version, ver
+@@ -211,24 +211,7 @@ def abi_write_vscript(f, libname, current_version, ver
          version
      """
  

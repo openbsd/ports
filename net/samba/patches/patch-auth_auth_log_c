@@ -3,7 +3,7 @@ Avoid printf("%s", NULL);
 Index: auth/auth_log.c
 --- auth/auth_log.c.orig
 +++ auth/auth_log.c
-@@ -622,7 +622,8 @@ static void log_authentication_event_human_readable(
+@@ -833,7 +833,8 @@ static void log_authentication_event_human_readable(
  			ui->netlogon_trust_account.account_name);
  		nl = talloc_asprintf(frame,
  			" NETLOGON computer [%s] trust account [%s]",
@@ -13,7 +13,7 @@ Index: auth/auth_log.c
  	}
  
  	remote = tsocket_address_string(ui->remote_host, frame);
-@@ -640,8 +641,10 @@ static void log_authentication_event_human_readable(
+@@ -851,8 +852,10 @@ static void log_authentication_event_human_readable(
  		logon_line = talloc_asprintf(
  				frame,
  				" mapped to [%s]\\[%s].",
@@ -26,7 +26,7 @@ Index: auth/auth_log.c
  	}
  
  	DEBUGC(DBGC_AUTH_AUDIT, debug_level,
-@@ -651,13 +654,14 @@ static void log_authentication_event_human_readable(
+@@ -862,13 +865,14 @@ static void log_authentication_event_human_readable(
  		"%s local host [%s]"
  		" %s\n",
  		ui->service_description,

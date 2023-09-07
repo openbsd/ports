@@ -3,7 +3,7 @@
 Index: python/samba/provision/__init__.py
 --- python/samba/provision/__init__.py.orig
 +++ python/samba/provision/__init__.py
-@@ -2175,7 +2175,7 @@ def provision(logger, session_info, smbconf=None,
+@@ -2214,7 +2214,7 @@ def provision(logger, session_info, smbconf=None,
      root_gid = pwd.getpwuid(root_uid).pw_gid
  
      try:

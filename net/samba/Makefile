@@ -1,4 +1,4 @@
-VERSION =		4.18.6
+VERSION =		4.19.0
 DISTNAME =		samba-${VERSION}
 EPOCH =			0
 
@@ -14,22 +14,22 @@ SHARED_LIBS =		dcerpc			1.1 \
 			dcerpc-binding		4.0 \
 			dcerpc-samr		1.0 \
 			dcerpc-server-core	3.0 \
-			ldb			2.2 \
-			ndr			3.0 \
-			ndr-krb5pac		1.2 \
-			ndr-nbt			1.0 \
-			ndr-standard		4.2 \
+			ldb			2.3 \
+			ndr			3.1 \
+			ndr-krb5pac		1.3 \
+			ndr-nbt			2.0 \
+			ndr-standard		5.0 \
 			netapi			3.2 \
-			samba-credentials	1.2 \
+			samba-credentials	1.3 \
 			samba-errors		2.1 \
-			samba-hostconfig	12.0 \
+			samba-hostconfig	13.0 \
 			samba-passdb		3.0 \
-			samba-util		9.0 \
-			samdb			2.1 \
+			samba-util		10.0 \
+			samdb			3.0 \
 			smbclient		6.1 \
-			smbconf			13.0 \
+			smbconf			14.0 \
 			smbldap			1.0 \
-			tevent			2.2 \
+			tevent			2.3 \
 			tevent-util		2.0 \
 			wbclient		5.1
 
@@ -82,10 +82,10 @@ RUN_DEPENDS-docs =
 LIB_DEPENDS-main =	archivers/libarchive \
 			converters/libiconv \
 			databases/openldap \
-			databases/tdb>=1.4.8 \
+			databases/tdb>=1.4.9 \
 			devel/jansson \
 			devel/libinotify \
-			devel/libtalloc>=2.4.0 \
+			devel/libtalloc>=2.4.1 \
 			devel/libtalloc,-python \
 			devel/popt \
 			net/avahi,-libs \

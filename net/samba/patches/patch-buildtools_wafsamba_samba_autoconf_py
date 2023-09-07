@@ -5,7 +5,7 @@
 Index: buildtools/wafsamba/samba_autoconf.py
 --- buildtools/wafsamba/samba_autoconf.py.orig
 +++ buildtools/wafsamba/samba_autoconf.py
-@@ -922,6 +922,27 @@ def ADD_LDFLAGS(conf, flags, testflags=False):
+@@ -936,6 +936,27 @@ def ADD_LDFLAGS(conf, flags, testflags=False):
      if not 'EXTRA_LDFLAGS' in conf.env:
          conf.env['EXTRA_LDFLAGS'] = []
      conf.env['EXTRA_LDFLAGS'].extend(TO_LIST(flags))
@@ -33,7 +33,7 @@ Index: buildtools/wafsamba/samba_autoconf.py
      return flags
  
  
-@@ -991,7 +1012,7 @@ def SAMBA_CHECK_UNDEFINED_SYMBOL_FLAGS(conf):
+@@ -1007,7 +1028,7 @@ def SAMBA_CHECK_UNDEFINED_SYMBOL_FLAGS(conf):
          # symbols used for fuzzers are only defined by compiler wrappers.
          return
  
