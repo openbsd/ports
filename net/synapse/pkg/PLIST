@@ -939,8 +939,6 @@ lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/${MODPY_PYCACHE}fede
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/${MODPY_PYCACHE}federation.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/${MODPY_PYCACHE}media.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/${MODPY_PYCACHE}media.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/${MODPY_PYCACHE}oidc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/${MODPY_PYCACHE}oidc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/${MODPY_PYCACHE}registration_tokens.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/${MODPY_PYCACHE}registration_tokens.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/${MODPY_PYCACHE}rooms.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -960,7 +958,6 @@ lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/event_reports.py
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/experimental_features.py
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/federation.py
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/media.py
-lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/oidc.py
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/registration_tokens.py
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/rooms.py
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/server_notice_servlet.py
