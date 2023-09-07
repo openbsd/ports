@@ -56,7 +56,6 @@
      SUBDIR += guile2
      SUBDIR += guile3
      SUBDIR += hashlink
-     SUBDIR += haxe
      SUBDIR += icon
      SUBDIR += intel2gas
      SUBDIR += iverilog

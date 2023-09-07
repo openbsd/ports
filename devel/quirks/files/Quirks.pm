@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1545 2023/09/06 13:21:45 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.1546 2023/09/07 03:48:53 thfr Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1844,6 +1844,7 @@ setup_obsolete_reason(
 	3 => 'monotone',
 	3 => 'botan',
 	3 => 'bg5ps',
+	9 => 'haxe',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
