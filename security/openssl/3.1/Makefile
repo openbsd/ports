@@ -16,10 +16,6 @@ WANTLIB=	c
 
 DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
-# dev flavour, pod2man is pretty slow on these
-FLAVOR?=
-FLAVORS=	no_man
-
 CONFIGURE_STYLE=	simple
 CONFIGURE_SCRIPT=	config
 CONFIGURE_ARGS+=	--prefix=${PREFIX} \
@@ -33,16 +29,9 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 CONFIGURE_ARGS+=	no-asm
 .endif
 
-INSTALL_TARGET=		install_sw install_ssldirs
+INSTALL_TARGET=		install_sw install_ssldirs install_man_docs
 
 SUBST_VARS+=		MAN_PREFIX SHLIBVER
-
-.if ${FLAVOR:Mno_man}
-MAN_PREFIX=		"@comment "
-.else
-MAN_PREFIX=		@man lib/eopenssl31/man
-INSTALL_TARGET+=	install_man_docs
-.endif
 
 # install to unusual directory name - this port is *not* intended to be
 # picked up by configure scripts without explicitly CPPFLAGS/LDFLAGS.
