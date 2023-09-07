@@ -1,40 +1,29 @@
 @bin bin/ario
 lib/ario/
 lib/ario/plugins/
-lib/ario/plugins/audioscrobbler.ario-plugin
 lib/ario/plugins/filesystem.ario-plugin
 lib/ario/plugins/information.ario-plugin
-lib/ario/plugins/libaudioscrobbler.a
-lib/ario/plugins/libaudioscrobbler.la
-@lib lib/ario/plugins/libaudioscrobbler.so.${LIBaudioscrobbler_VERSION}
-lib/ario/plugins/libfilesystem.a
+@static-lib lib/ario/plugins/libfilesystem.a
 lib/ario/plugins/libfilesystem.la
 @lib lib/ario/plugins/libfilesystem.so.${LIBfilesystem_VERSION}
-lib/ario/plugins/libinformation.a
+@static-lib lib/ario/plugins/libinformation.a
 lib/ario/plugins/libinformation.la
 @lib lib/ario/plugins/libinformation.so.${LIBinformation_VERSION}
-lib/ario/plugins/liblibnotify.a
-lib/ario/plugins/liblibnotify.la
-@lib lib/ario/plugins/liblibnotify.so.${LIBlibnotify_VERSION}
-lib/ario/plugins/libmmkeys.a
+@static-lib lib/ario/plugins/libmmkeys.a
 lib/ario/plugins/libmmkeys.la
 @lib lib/ario/plugins/libmmkeys.so.${LIBmmkeys_VERSION}
-lib/ario/plugins/libnotify.ario-plugin
-lib/ario/plugins/libradios.a
+@static-lib lib/ario/plugins/libradios.a
 lib/ario/plugins/libradios.la
 @lib lib/ario/plugins/libradios.so.${LIBradios_VERSION}
-lib/ario/plugins/libwikipedia.a
-lib/ario/plugins/libwikipedia.la
-@lib lib/ario/plugins/libwikipedia.so.${LIBwikipedia_VERSION}
 lib/ario/plugins/mmkeys.ario-plugin
 lib/ario/plugins/radios.ario-plugin
-lib/ario/plugins/wikipedia.ario-plugin
 share/applications/ario.desktop
 share/ario/
 share/ario/art/
 share/ario/art/ario-pause.png
 share/ario/art/ario-play.png
 share/ario/art/ario.png
+share/ario/art/consume.png
 share/ario/art/logo.png
 share/ario/art/pl-below.png
 share/ario/art/pl-inside.png
@@ -45,20 +34,19 @@ share/ario/art/shuffle.png
 share/ario/data/
 share/ario/data/profiles.xml.default
 share/ario/plugins/
-share/ario/plugins/audioscrobbler-prefs.ui
-share/ario/plugins/filesystem-ui.xml
-share/ario/plugins/icons/
-share/ario/plugins/icons/audioscrobbler.png
-share/ario/plugins/icons/wikipedia.png
+share/ario/plugins/ario-filesystem-menu.ui
+share/ario/plugins/ario-radios-menu.ui
 share/ario/plugins/information.ui
-share/ario/plugins/radios-ui.xml
 share/ario/plugins/radios.xml.default
-share/ario/plugins/wikipedia-ui.xml
 share/ario/ui/
-share/ario/ui/ario-ui.xml
+share/ario/ui/ario-browser-menu.ui
+share/ario/ui/ario-playlist-menu.ui
+share/ario/ui/ario-shell-menu.ui
+share/ario/ui/ario-songlist-menu.ui
 share/ario/ui/browser-prefs.ui
 share/ario/ui/connection-assistant.ui
 share/ario/ui/connection-autodetect.ui
+share/ario/ui/connection-dialog.ui
 share/ario/ui/connection-prefs.ui
 share/ario/ui/connection-widget.ui
 share/ario/ui/cover-prefs.ui
@@ -72,7 +60,6 @@ share/ario/ui/server-prefs.ui
 share/ario/ui/similar-artists.ui
 share/ario/ui/song-infos.ui
 share/ario/ui/stats-prefs.ui
-share/ario/ui/trayicon-prefs.ui
 share/icons/hicolor/128x128/apps/ario.png
 share/icons/hicolor/16x16/apps/ario.png
 share/icons/hicolor/22x22/apps/ario.png

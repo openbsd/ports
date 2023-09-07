@@ -1,33 +1,27 @@
-COMMENT =	GTK2-based MPD client inspired by Rhythmbox
-DISTNAME =	ario-1.5.1
+COMMENT =	GTK3 MPD client inspired by Rhythmbox
+DISTNAME =	ario-1.6
 CATEGORIES =	audio x11
-REVISION =	22
 
-SHARED_LIBS +=	audioscrobbler		0.0 # 0.0
-SHARED_LIBS +=	filesystem		0.0 # 0.0
-SHARED_LIBS +=	information		0.0 # 0.0
-SHARED_LIBS +=	libnotify		0.0 # 0.0
+SHARED_LIBS +=	filesystem		1.0 # 0.0
+SHARED_LIBS +=	information		1.0 # 0.0
 SHARED_LIBS +=	mmkeys			0.0 # 0.0
-SHARED_LIBS +=	radios			0.0 # 0.0
-SHARED_LIBS +=	wikipedia		0.0 # 0.0
+SHARED_LIBS +=	radios			1.0 # 0.0
 
-HOMEPAGE =	http://ario-player.sourceforge.net/
+HOMEPAGE =	https://ario-player.sourceforge.net/
 
 # GPLv2+
 PERMIT_PACKAGE =		Yes
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender atk-1.0 avahi-client avahi-common avahi-glib c cairo
-WANTLIB += crypto curl dbus-1 dbus-glib-1 expat ffi fontconfig freetype
-WANTLIB += gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gmp gnutls gobject-2.0 gpg-error graphite2
-WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz hogweed iconv idn2 intl lzma
-WANTLIB += m mpdclient nettle nghttp2 notify p11-kit pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png pthread
-WANTLIB += soup-2.4 sqlite3 ssl tag tag_c tasn1 unique-1.0
-WANTLIB += unistring xcb xcb-render xcb-shm xml2 z
-WANTLIB += ${COMPILER_LIBCXX} brotlicommon brotlidec execinfo
-WANTLIB += fribidi jpeg psl Xau Xdmcp brotlienc zstd
+WANTLIB += ${COMPILER_LIBCXX} X11 Xau Xcomposite Xcursor Xdamage
+WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0
+WANTLIB += atk-bridge-2.0 atspi avahi-client avahi-common avahi-glib
+WANTLIB += c cairo cairo-gobject crypto curl dbus-1 dbus-glib-1
+WANTLIB += epoxy execinfo expat ffi fontconfig freetype fribidi
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += graphite2 gthread-2.0 harfbuzz iconv intl jpeg lzma
+WANTLIB += m mpdclient nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_openssl
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1
+WANTLIB += png ssl tag tag_c xcb xcb-render xcb-shm xml2 z
 
 SITES =		${SITE_SOURCEFORGE:=ario-player/}
 
@@ -36,13 +30,14 @@ MODULES =	textproc/intltool
 BUILD_DEPENDS =	devel/gettext,-tools
 LIB_DEPENDS =	audio/libmpdclient \
 		audio/taglib \
-		devel/libnotify \
-		devel/libsoup \
-		devel/libunique \
+		devel/fribidi \
+		devel/pango \
+		graphics/cairo \
+		graphics/graphite2 \
 		net/avahi,-glib \
 		net/curl \
-		security/libgcrypt \
-		security/libgpg-error
+		x11/dbus-glib \
+		x11/gnome/at-spi2-core
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+4,-guic
