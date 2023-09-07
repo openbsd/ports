@@ -90,6 +90,14 @@ MODMOZ_WANTLIB +=	icudata icui18n icuuc
 CONFIGURE_ARGS +=	--with-system-icu
 .endif
 
+.if !defined(MOZILLA_USE_DBUS)
+CONFIGURE_ARGS +=	--disable-dbus
+.else
+MODMOZ_LIB_DEPENDS +=	x11/dbus-glib
+MODMOZ_WANTLIB +=	dbus-1 dbus-glib-1
+CONFIGURE_ARGS +=	--enable-dbus
+.endif
+
 # bug #736961
 SEPARATE_BUILD =	Yes
 
@@ -136,8 +144,7 @@ CONFIGURE_ARGS +=	--with-system-zlib	\
 		--enable-official-branding	\
 		--enable-optimize="${CFLAGS}"	\
 		--disable-tests			\
-		--disable-updater		\
-		--disable-dbus
+		--disable-updater
 
 # firefox >= 46 defaults to gtk+3
 CONFIGURE_ARGS +=	--enable-default-toolkit=cairo-gtk3
