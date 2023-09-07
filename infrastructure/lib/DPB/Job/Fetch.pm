@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.29 2023/06/11 16:53:17 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.30 2023/09/07 11:50:46 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -98,9 +98,12 @@ sub new($class, $job)
 	my $o;
 	if (@{$job->{sites}}) {
 		$o = bless { site => $job->{sites}[0]}, $class;
+		$job->{normal_site} = 1;
 	} elsif (@{$job->{bak}}) {
 		$o = bless { site => $job->{bak}[0]}, $class->backup_class;
+		$job->{normal_site} = 0;
 	}
+	$job->{first} = $job->{prefirst};
 	if (defined $o) {
 		my $sz = (stat $job->{file}->tempfilename)[7];
 		if (defined $sz) {
@@ -197,20 +200,28 @@ sub new_fetch_task($self)
 
 sub next_site($self)
 {
+	$self->{prefirst} = 0;
 	shift @{$self->{sites}} || shift @{$self->{bak}};
 }
 
 sub bad_file($job, $task, $core)
 {
 	my $fh = $job->{file}->logger->append("fetch/bad");
-	print $fh $task->{site}.$job->{file}{short}, "\n";
+	print $fh $job->{file}->fullpkgpath, ": ",
+	    $task->{site}.$job->{file}{short};
+	if ($job->{first}) {
+		print $fh " FIRST";
+	}
 	if ($job->new_fetch_task) {
 		$core->{status} = 0;
-		return 1;
 	} else {
 		$core->{status} = 1;
-		return 0;
 	}
+	if (!$job->{normal}) {
+		print $fh " BACKUP";
+	}
+	print $fh "\n";
+	return !$core->{status};
 }
 
 sub new_checksum_task($self, $fetcher, $status)
@@ -226,6 +237,7 @@ sub new($class, $file, $e, $fetcher, $logger)
 		sites => [@{$file->{site}// []}],
 		bak => [@{$fetcher->{state}{backup_sites}}],
 		file => $file,
+		prefirst => 1,
 		tasks => [],
 		endcode => $e,
 		fetcher => $fetcher,
