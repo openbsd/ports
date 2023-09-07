@@ -1,5 +1,6 @@
 @bin bin/augmatch
 @bin bin/augparse
+@bin bin/augprint
 @bin bin/augtool
 @bin bin/fadot
 include/augeas.h
@@ -14,6 +15,7 @@ lib/libfa.la
 lib/pkgconfig/augeas.pc
 @man man/man1/augmatch.1
 @man man/man1/augparse.1
+@man man/man1/augprint.1
 @man man/man1/augtool.1
 share/augeas/
 share/augeas/lenses/
@@ -31,7 +33,9 @@ share/augeas/lenses/dist/aptcacherngsecurity.aug
 share/augeas/lenses/dist/aptconf.aug
 share/augeas/lenses/dist/aptpreferences.aug
 share/augeas/lenses/dist/aptsources.aug
+share/augeas/lenses/dist/authinfo2.aug
 share/augeas/lenses/dist/authorized_keys.aug
+share/augeas/lenses/dist/authselectpam.aug
 share/augeas/lenses/dist/automaster.aug
 share/augeas/lenses/dist/automounter.aug
 share/augeas/lenses/dist/avahi.aug
@@ -47,8 +51,10 @@ share/augeas/lenses/dist/cgrules.aug
 share/augeas/lenses/dist/channels.aug
 share/augeas/lenses/dist/chrony.aug
 share/augeas/lenses/dist/clamav.aug
+share/augeas/lenses/dist/cmdline.aug
 share/augeas/lenses/dist/cobblermodules.aug
 share/augeas/lenses/dist/cobblersettings.aug
+share/augeas/lenses/dist/cockpit.aug
 share/augeas/lenses/dist/collectd.aug
 share/augeas/lenses/dist/cpanel.aug
 share/augeas/lenses/dist/cron.aug
@@ -73,6 +79,7 @@ share/augeas/lenses/dist/erlang.aug
 share/augeas/lenses/dist/ethers.aug
 share/augeas/lenses/dist/exports.aug
 share/augeas/lenses/dist/fai_diskconfig.aug
+share/augeas/lenses/dist/fail2ban.aug
 share/augeas/lenses/dist/fonts.aug
 share/augeas/lenses/dist/fstab.aug
 share/augeas/lenses/dist/fuse.aug
@@ -204,6 +211,7 @@ share/augeas/lenses/dist/slapd.aug
 share/augeas/lenses/dist/smbusers.aug
 share/augeas/lenses/dist/solaris_system.aug
 share/augeas/lenses/dist/soma.aug
+share/augeas/lenses/dist/sos.aug
 share/augeas/lenses/dist/spacevars.aug
 share/augeas/lenses/dist/splunk.aug
 share/augeas/lenses/dist/squid.aug
@@ -235,7 +243,9 @@ share/augeas/lenses/dist/tests/test_aptcacherngsecurity.aug
 share/augeas/lenses/dist/tests/test_aptconf.aug
 share/augeas/lenses/dist/tests/test_aptpreferences.aug
 share/augeas/lenses/dist/tests/test_aptsources.aug
+share/augeas/lenses/dist/tests/test_authinfo2.aug
 share/augeas/lenses/dist/tests/test_authorized_keys.aug
+share/augeas/lenses/dist/tests/test_authselectpam.aug
 share/augeas/lenses/dist/tests/test_automaster.aug
 share/augeas/lenses/dist/tests/test_automounter.aug
 share/augeas/lenses/dist/tests/test_avahi.aug
@@ -251,8 +261,10 @@ share/augeas/lenses/dist/tests/test_cgrules.aug
 share/augeas/lenses/dist/tests/test_channels.aug
 share/augeas/lenses/dist/tests/test_chrony.aug
 share/augeas/lenses/dist/tests/test_clamav.aug
+share/augeas/lenses/dist/tests/test_cmdline.aug
 share/augeas/lenses/dist/tests/test_cobblermodules.aug
 share/augeas/lenses/dist/tests/test_cobblersettings.aug
+share/augeas/lenses/dist/tests/test_cockpit.aug
 share/augeas/lenses/dist/tests/test_collectd.aug
 share/augeas/lenses/dist/tests/test_cpanel.aug
 share/augeas/lenses/dist/tests/test_cron.aug
@@ -277,6 +289,7 @@ share/augeas/lenses/dist/tests/test_erlang.aug
 share/augeas/lenses/dist/tests/test_ethers.aug
 share/augeas/lenses/dist/tests/test_exports.aug
 share/augeas/lenses/dist/tests/test_fai_diskconfig.aug
+share/augeas/lenses/dist/tests/test_fail2ban.aug
 share/augeas/lenses/dist/tests/test_fonts.aug
 share/augeas/lenses/dist/tests/test_fstab.aug
 share/augeas/lenses/dist/tests/test_fuse.aug
@@ -408,6 +421,7 @@ share/augeas/lenses/dist/tests/test_slapd.aug
 share/augeas/lenses/dist/tests/test_smbusers.aug
 share/augeas/lenses/dist/tests/test_solaris_system.aug
 share/augeas/lenses/dist/tests/test_soma.aug
+share/augeas/lenses/dist/tests/test_sos.aug
 share/augeas/lenses/dist/tests/test_spacevars.aug
 share/augeas/lenses/dist/tests/test_splunk.aug
 share/augeas/lenses/dist/tests/test_squid.aug
@@ -426,6 +440,7 @@ share/augeas/lenses/dist/tests/test_syslog.aug
 share/augeas/lenses/dist/tests/test_systemd.aug
 share/augeas/lenses/dist/tests/test_termcap.aug
 share/augeas/lenses/dist/tests/test_thttpd.aug
+share/augeas/lenses/dist/tests/test_tinc.aug
 share/augeas/lenses/dist/tests/test_tmpfiles.aug
 share/augeas/lenses/dist/tests/test_toml.aug
 share/augeas/lenses/dist/tests/test_trapperkeeper.aug
@@ -447,6 +462,7 @@ share/augeas/lenses/dist/tests/test_xymon_alerting.aug
 share/augeas/lenses/dist/tests/test_yaml.aug
 share/augeas/lenses/dist/tests/test_yum.aug
 share/augeas/lenses/dist/thttpd.aug
+share/augeas/lenses/dist/tinc.aug
 share/augeas/lenses/dist/tmpfiles.aug
 share/augeas/lenses/dist/toml.aug
 share/augeas/lenses/dist/trapperkeeper.aug
@@ -467,6 +483,11 @@ share/augeas/lenses/dist/xymon.aug
 share/augeas/lenses/dist/xymon_alerting.aug
 share/augeas/lenses/dist/yaml.aug
 share/augeas/lenses/dist/yum.aug
+share/bash-completion/
+share/bash-completion/completions/
+share/bash-completion/completions/augmatch
+share/bash-completion/completions/augprint
+share/bash-completion/completions/augtool
 share/vim/
 share/vim/vimfiles/
 share/vim/vimfiles/ftdetect/

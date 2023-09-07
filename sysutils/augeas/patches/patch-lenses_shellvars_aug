@@ -4,7 +4,7 @@
 Index: lenses/shellvars.aug
 --- lenses/shellvars.aug.orig
 +++ lenses/shellvars.aug
-@@ -304,7 +304,6 @@ module Shellvars =
+@@ -305,7 +305,6 @@ module Shellvars =
                       . incl "/etc/environment"
                       . incl "/etc/firewalld/firewalld.conf"
                       . incl "/etc/blkid.conf"
@@ -12,7 +12,7 @@ Index: lenses/shellvars.aug
                       . incl "/etc/cowpoke.conf"
                       . incl "/etc/cvs-cron.conf"
                       . incl "/etc/cvs-pserver.conf"
-@@ -316,9 +315,7 @@ module Shellvars =
+@@ -317,9 +316,7 @@ module Shellvars =
                       . incl "/etc/os-release"
                       . incl "/etc/periodic.conf"
                       . incl "/etc/popularity-contest.conf"

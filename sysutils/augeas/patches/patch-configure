@@ -9,7 +9,7 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -15635,7 +15635,7 @@ fi
+@@ -17841,7 +17841,7 @@ fi
  
      warnCFLAGS=
  

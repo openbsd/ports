@@ -1,12 +1,12 @@
 COMMENT=		configuration editing tool and API
 
-DISTNAME=		augeas-1.12.0
-REVISION=		3
+V=			1.14.1
+DISTNAME=		augeas-${V}
 
 CATEGORIES=		sysutils devel
 
-SHARED_LIBS +=  augeas                    0.2 # 24.0
-SHARED_LIBS +=  fa                        0.0 # 5.4
+SHARED_LIBS +=  augeas                    1.0 # 25.0
+SHARED_LIBS +=  fa                        0.0 # 6.3
 
 HOMEPAGE=		https://augeas.net/
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses iconv lzma m pthread readline xml2 z
 
-MASTER_SITES=		http://download.augeas.net/
+SITES=		https://github.com/hercules-team/augeas/releases/download/release-${V}/
 
 LIB_DEPENDS=		converters/libiconv \
 			textproc/libxml

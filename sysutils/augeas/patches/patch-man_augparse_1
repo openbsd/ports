@@ -1,10 +1,10 @@
 Index: man/augparse.1
 --- man/augparse.1.orig
 +++ man/augparse.1
-@@ -153,7 +153,7 @@ Execute an Augeas module, most commonly to evaluate th
- Add \s-1DIR\s0 to the module loadpath. Can be given multiple times. The
+@@ -75,7 +75,7 @@ Execute an Augeas module, most commonly to evaluate th
+ Add DIR to the module loadpath. Can be given multiple times. The
  directories set here are searched before any directories specified in the
- \&\s-1AUGEAS_LENS_LIB\s0 environment variable, and before the default directory
+ AUGEAS_LENS_LIB environment variable, and before the default directory
 -\&\fI/usr/share/augeas/lenses\fR.
 +\&\fI${PREFIX}/share/augeas/lenses\fR.
  .IP "\fB\-t\fR, \fB\-\-trace\fR" 4
