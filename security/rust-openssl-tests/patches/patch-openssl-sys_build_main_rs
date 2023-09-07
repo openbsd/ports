@@ -3,7 +3,7 @@ The LibreSSL version in -current isn't explicitly supported.
 Index: openssl-sys/build/main.rs
 --- openssl-sys/build/main.rs.orig
 +++ openssl-sys/build/main.rs
-@@ -273,7 +273,7 @@ See rust-openssl documentation for more information:
+@@ -283,7 +283,7 @@ See rust-openssl documentation for more information:
              (3, 7, 1) => ('3', '7', '1'),
              (3, 7, _) => ('3', '7', 'x'),
              (3, 8, 0) => ('3', '8', '0'),
