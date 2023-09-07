@@ -14,7 +14,7 @@ MASTER_SITES =		${HOMEPAGE}
 MODULES =		lang/lua
 MODLUA_TEST_DEPENDS =	textproc/luaexpat
 
-FLAVORS =		lua52 lua53
+FLAVORS =		lua52 lua53 lua54
 FLAVOR ?=
 
 REGRESS_FILES =		test-lom test
