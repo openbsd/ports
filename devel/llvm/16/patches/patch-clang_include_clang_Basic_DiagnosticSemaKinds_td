@@ -46,6 +46,15 @@ Index: clang/include/clang/Basic/DiagnosticSemaKinds.td
  def err_typecheck_convert_incompatible_pointer_sign :
    Error<ext_typecheck_convert_incompatible_pointer_sign.Summary>;
  def ext_typecheck_convert_incompatible_pointer : ExtWarn<
+@@ -8231,7 +8231,7 @@ def err_typecheck_convert_incompatible_function_pointe
+   "; remove &}3">;
+ def ext_typecheck_convert_incompatible_function_pointer : ExtWarn<
+   err_typecheck_convert_incompatible_function_pointer.Summary>,
+-  InGroup<IncompatibleFunctionPointerTypes>, DefaultError;
++  InGroup<IncompatibleFunctionPointerTypes>;
+ def warn_typecheck_convert_incompatible_function_pointer_strict : Warning<
+   err_typecheck_convert_incompatible_function_pointer.Summary>,
+   InGroup<DiagGroup<"incompatible-function-pointer-types-strict">>, DefaultIgnore;
 @@ -9769,6 +9769,9 @@ def err_os_log_argument_too_big : Error<
  def warn_os_log_format_narg : Error<
   "os_log() '%%n' format specifier is not allowed">, DefaultError;
