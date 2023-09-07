@@ -256,6 +256,7 @@
      SUBDIR += luaunbound
      SUBDIR += luaunbound,lua52
      SUBDIR += luaunbound,lua53
+     SUBDIR += luaunbound,lua54
      SUBDIR += mac-telnet
      SUBDIR += maclookup
      SUBDIR += magic-wormhole
