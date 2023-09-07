@@ -23,7 +23,7 @@ PERMIT_PACKAGE=	Yes
 MULTI_PACKAGES=	-main -mysql -pgsql
 
 MODULES=	lang/lua
-FLAVORS=	lua52 lua53
+FLAVORS=	lua52 lua53 lua54
 FLAVOR?=
 
 WANTLIB-main=		sqlite3

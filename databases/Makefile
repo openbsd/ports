@@ -29,6 +29,7 @@
      SUBDIR += luadbi
      SUBDIR += luadbi,lua52
      SUBDIR += luadbi,lua53
+     SUBDIR += luadbi,lua54
      SUBDIR += lualdap
      SUBDIR += luasqlite3
      SUBDIR += mariadb
