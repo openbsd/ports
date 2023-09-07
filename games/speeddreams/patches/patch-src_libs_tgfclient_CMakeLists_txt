@@ -1,8 +1,9 @@
---- src/libs/tgfclient/CMakeLists.txt.orig	Mon Apr 18 17:37:10 2016
-+++ src/libs/tgfclient/CMakeLists.txt	Tue Sep 20 01:28:40 2016
-@@ -116,6 +116,7 @@ ENDIF(WIN32)
+Index: src/libs/tgfclient/CMakeLists.txt
+--- src/libs/tgfclient/CMakeLists.txt.orig
++++ src/libs/tgfclient/CMakeLists.txt
+@@ -82,6 +82,7 @@ ENDIF(WIN32)
  
- IF(UNIX)
+ IF(UNIX AND NOT HAIKU)
      ADD_X11_LIBRARY(tgfclient)
 +    INCLUDE_DIRECTORIES(${X11_INCLUDE_DIR})
      IF(OPTION_XRANDR)

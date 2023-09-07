@@ -1,6 +1,7 @@
---- src/tools/trackgen/CMakeLists.txt.orig	Mon Apr 18 17:37:07 2016
-+++ src/tools/trackgen/CMakeLists.txt	Tue Sep 20 01:28:42 2016
-@@ -60,6 +60,7 @@ ENDIF(MINGW)
+Index: src/tools/trackgen/CMakeLists.txt
+--- src/tools/trackgen/CMakeLists.txt.orig
++++ src/tools/trackgen/CMakeLists.txt
+@@ -52,6 +52,7 @@ ENDIF(MINGW)
  
  IF(UNIX)
      SD_INSTALL_FILES(MAN man6 PREFIX ${SOURCE_DIR}/doc/man FILES ${_TARGET_NAME}.6)

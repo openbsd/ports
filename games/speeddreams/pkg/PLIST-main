@@ -51,6 +51,7 @@ include/speed-dreams-2/racemanagers.h
 include/speed-dreams-2/replay.h
 include/speed-dreams-2/robot.h
 include/speed-dreams-2/robottools.h
+include/speed-dreams-2/sound.h
 include/speed-dreams-2/teammanager.h
 include/speed-dreams-2/telemetry.h
 include/speed-dreams-2/tgf.h
@@ -86,111 +87,121 @@ include/speed-dreams-2/tracks.h
 lib/speed-dreams-2/
 lib/speed-dreams-2/drivers/
 lib/speed-dreams-2/drivers/dandroid/
-lib/speed-dreams-2/drivers/dandroid/dandroid.so
+@so lib/speed-dreams-2/drivers/dandroid/dandroid.so
 lib/speed-dreams-2/drivers/dandroid_36GP/
-lib/speed-dreams-2/drivers/dandroid_36GP/dandroid_36GP.so
+@so lib/speed-dreams-2/drivers/dandroid_36GP/dandroid_36GP.so
 lib/speed-dreams-2/drivers/dandroid_67GP/
-lib/speed-dreams-2/drivers/dandroid_67GP/dandroid_67GP.so
-lib/speed-dreams-2/drivers/dandroid_lp1/
-lib/speed-dreams-2/drivers/dandroid_lp1/dandroid_lp1.so
+@so lib/speed-dreams-2/drivers/dandroid_67GP/dandroid_67GP.so
 lib/speed-dreams-2/drivers/dandroid_ls1/
-lib/speed-dreams-2/drivers/dandroid_ls1/dandroid_ls1.so
+@so lib/speed-dreams-2/drivers/dandroid_ls1/dandroid_ls1.so
 lib/speed-dreams-2/drivers/dandroid_ls2/
-lib/speed-dreams-2/drivers/dandroid_ls2/dandroid_ls2.so
+@so lib/speed-dreams-2/drivers/dandroid_ls2/dandroid_ls2.so
 lib/speed-dreams-2/drivers/dandroid_mpa1/
-lib/speed-dreams-2/drivers/dandroid_mpa1/dandroid_mpa1.so
+@so lib/speed-dreams-2/drivers/dandroid_mpa1/dandroid_mpa1.so
 lib/speed-dreams-2/drivers/dandroid_mpa11/
-lib/speed-dreams-2/drivers/dandroid_mpa11/dandroid_mpa11.so
+@so lib/speed-dreams-2/drivers/dandroid_mpa11/dandroid_mpa11.so
 lib/speed-dreams-2/drivers/dandroid_mpa12/
-lib/speed-dreams-2/drivers/dandroid_mpa12/dandroid_mpa12.so
+@so lib/speed-dreams-2/drivers/dandroid_mpa12/dandroid_mpa12.so
 lib/speed-dreams-2/drivers/dandroid_rs/
-lib/speed-dreams-2/drivers/dandroid_rs/dandroid_rs.so
+@so lib/speed-dreams-2/drivers/dandroid_rs/dandroid_rs.so
 lib/speed-dreams-2/drivers/dandroid_sc/
-lib/speed-dreams-2/drivers/dandroid_sc/dandroid_sc.so
+@so lib/speed-dreams-2/drivers/dandroid_sc/dandroid_sc.so
 lib/speed-dreams-2/drivers/dandroid_srw/
-lib/speed-dreams-2/drivers/dandroid_srw/dandroid_srw.so
+@so lib/speed-dreams-2/drivers/dandroid_srw/dandroid_srw.so
 lib/speed-dreams-2/drivers/dandroid_trb1/
-lib/speed-dreams-2/drivers/dandroid_trb1/dandroid_trb1.so
+@so lib/speed-dreams-2/drivers/dandroid_trb1/dandroid_trb1.so
 lib/speed-dreams-2/drivers/human/
-lib/speed-dreams-2/drivers/human/human.so
-lib/speed-dreams-2/drivers/kilo2008/
-lib/speed-dreams-2/drivers/kilo2008/kilo2008.so
+@so lib/speed-dreams-2/drivers/human/human.so
 lib/speed-dreams-2/drivers/networkhuman/
-lib/speed-dreams-2/drivers/networkhuman/networkhuman.so
+@so lib/speed-dreams-2/drivers/networkhuman/networkhuman.so
+lib/speed-dreams-2/drivers/shadow/
+@so lib/speed-dreams-2/drivers/shadow/shadow.so
+lib/speed-dreams-2/drivers/shadow_36GP/
+@so lib/speed-dreams-2/drivers/shadow_36GP/shadow_36GP.so
+lib/speed-dreams-2/drivers/shadow_67GP/
+@so lib/speed-dreams-2/drivers/shadow_67GP/shadow_67GP.so
+lib/speed-dreams-2/drivers/shadow_ls1/
+@so lib/speed-dreams-2/drivers/shadow_ls1/shadow_ls1.so
+lib/speed-dreams-2/drivers/shadow_ls2/
+@so lib/speed-dreams-2/drivers/shadow_ls2/shadow_ls2.so
+lib/speed-dreams-2/drivers/shadow_mp1/
+@so lib/speed-dreams-2/drivers/shadow_mp1/shadow_mp1.so
+lib/speed-dreams-2/drivers/shadow_mpa1/
+@so lib/speed-dreams-2/drivers/shadow_mpa1/shadow_mpa1.so
+lib/speed-dreams-2/drivers/shadow_mpa11/
+@so lib/speed-dreams-2/drivers/shadow_mpa11/shadow_mpa11.so
+lib/speed-dreams-2/drivers/shadow_mpa12/
+@so lib/speed-dreams-2/drivers/shadow_mpa12/shadow_mpa12.so
+lib/speed-dreams-2/drivers/shadow_sc/
+@so lib/speed-dreams-2/drivers/shadow_sc/shadow_sc.so
+lib/speed-dreams-2/drivers/shadow_trb1/
+@so lib/speed-dreams-2/drivers/shadow_trb1/shadow_trb1.so
 lib/speed-dreams-2/drivers/simplix/
-lib/speed-dreams-2/drivers/simplix/simplix.so
+@so lib/speed-dreams-2/drivers/simplix/simplix.so
 lib/speed-dreams-2/drivers/simplix_36GP/
-lib/speed-dreams-2/drivers/simplix_36GP/simplix_36GP.so
-lib/speed-dreams-2/drivers/simplix_lp1/
-lib/speed-dreams-2/drivers/simplix_lp1/simplix_lp1.so
+@so lib/speed-dreams-2/drivers/simplix_36GP/simplix_36GP.so
+lib/speed-dreams-2/drivers/simplix_67GP/
+@so lib/speed-dreams-2/drivers/simplix_67GP/simplix_67GP.so
 lib/speed-dreams-2/drivers/simplix_ls1/
-lib/speed-dreams-2/drivers/simplix_ls1/simplix_ls1.so
+@so lib/speed-dreams-2/drivers/simplix_ls1/simplix_ls1.so
 lib/speed-dreams-2/drivers/simplix_ls2/
-lib/speed-dreams-2/drivers/simplix_ls2/simplix_ls2.so
+@so lib/speed-dreams-2/drivers/simplix_ls2/simplix_ls2.so
 lib/speed-dreams-2/drivers/simplix_mp5/
-lib/speed-dreams-2/drivers/simplix_mp5/simplix_mp5.so
-lib/speed-dreams-2/drivers/simplix_mpa1/
-lib/speed-dreams-2/drivers/simplix_mpa1/simplix_mpa1.so
-lib/speed-dreams-2/drivers/simplix_mpa11/
-lib/speed-dreams-2/drivers/simplix_mpa11/simplix_mpa11.so
-lib/speed-dreams-2/drivers/simplix_mpa12/
-lib/speed-dreams-2/drivers/simplix_mpa12/simplix_mpa12.so
-lib/speed-dreams-2/drivers/simplix_ref/
-lib/speed-dreams-2/drivers/simplix_ref/simplix_ref.so
+@so lib/speed-dreams-2/drivers/simplix_mp5/simplix_mp5.so
 lib/speed-dreams-2/drivers/simplix_sc/
-lib/speed-dreams-2/drivers/simplix_sc/simplix_sc.so
+@so lib/speed-dreams-2/drivers/simplix_sc/simplix_sc.so
 lib/speed-dreams-2/drivers/simplix_srw/
-lib/speed-dreams-2/drivers/simplix_srw/simplix_srw.so
+@so lib/speed-dreams-2/drivers/simplix_srw/simplix_srw.so
 lib/speed-dreams-2/drivers/simplix_trb1/
-lib/speed-dreams-2/drivers/simplix_trb1/simplix_trb1.so
+@so lib/speed-dreams-2/drivers/simplix_trb1/simplix_trb1.so
 lib/speed-dreams-2/drivers/usr/
-lib/speed-dreams-2/drivers/usr/usr.so
+@so lib/speed-dreams-2/drivers/usr/usr.so
 lib/speed-dreams-2/drivers/usr_36GP/
-lib/speed-dreams-2/drivers/usr_36GP/usr_36GP.so
-lib/speed-dreams-2/drivers/usr_lp1/
-lib/speed-dreams-2/drivers/usr_lp1/usr_lp1.so
+@so lib/speed-dreams-2/drivers/usr_36GP/usr_36GP.so
+lib/speed-dreams-2/drivers/usr_67GP/
+@so lib/speed-dreams-2/drivers/usr_67GP/usr_67GP.so
 lib/speed-dreams-2/drivers/usr_ls1/
-lib/speed-dreams-2/drivers/usr_ls1/usr_ls1.so
+@so lib/speed-dreams-2/drivers/usr_ls1/usr_ls1.so
 lib/speed-dreams-2/drivers/usr_ls2/
-lib/speed-dreams-2/drivers/usr_ls2/usr_ls2.so
+@so lib/speed-dreams-2/drivers/usr_ls2/usr_ls2.so
 lib/speed-dreams-2/drivers/usr_mpa1/
-lib/speed-dreams-2/drivers/usr_mpa1/usr_mpa1.so
+@so lib/speed-dreams-2/drivers/usr_mpa1/usr_mpa1.so
 lib/speed-dreams-2/drivers/usr_mpa11/
-lib/speed-dreams-2/drivers/usr_mpa11/usr_mpa11.so
+@so lib/speed-dreams-2/drivers/usr_mpa11/usr_mpa11.so
 lib/speed-dreams-2/drivers/usr_mpa12/
-lib/speed-dreams-2/drivers/usr_mpa12/usr_mpa12.so
+@so lib/speed-dreams-2/drivers/usr_mpa12/usr_mpa12.so
 lib/speed-dreams-2/drivers/usr_rs/
-lib/speed-dreams-2/drivers/usr_rs/usr_rs.so
+@so lib/speed-dreams-2/drivers/usr_rs/usr_rs.so
 lib/speed-dreams-2/drivers/usr_sc/
-lib/speed-dreams-2/drivers/usr_sc/usr_sc.so
+@so lib/speed-dreams-2/drivers/usr_sc/usr_sc.so
 lib/speed-dreams-2/drivers/usr_trb1/
-lib/speed-dreams-2/drivers/usr_trb1/usr_trb1.so
+@so lib/speed-dreams-2/drivers/usr_trb1/usr_trb1.so
 lib/speed-dreams-2/lib/
-lib/speed-dreams-2/lib/liblearning.so
-lib/speed-dreams-2/lib/libnetworking.so
-lib/speed-dreams-2/lib/libportability.so
-lib/speed-dreams-2/lib/librobottools.so
-lib/speed-dreams-2/lib/libtgf.so
-lib/speed-dreams-2/lib/libtgfclient.so
-lib/speed-dreams-2/lib/libtgfdata.so
+@so lib/speed-dreams-2/lib/liblearning.so
+@so lib/speed-dreams-2/lib/libnetworking.so
+@so lib/speed-dreams-2/lib/libportability.so
+@so lib/speed-dreams-2/lib/librobottools.so
+@so lib/speed-dreams-2/lib/libtgf.so
+@so lib/speed-dreams-2/lib/libtgfclient.so
+@so lib/speed-dreams-2/lib/libtgfdata.so
 lib/speed-dreams-2/modules/
 lib/speed-dreams-2/modules/graphic/
-lib/speed-dreams-2/modules/graphic/osggraph.so
-lib/speed-dreams-2/modules/graphic/ssggraph.so
+@so lib/speed-dreams-2/modules/graphic/osggraph.so
+@so lib/speed-dreams-2/modules/graphic/ssggraph.so
 lib/speed-dreams-2/modules/racing/
-lib/speed-dreams-2/modules/racing/standardgame.so
+@so lib/speed-dreams-2/modules/racing/standardgame.so
 lib/speed-dreams-2/modules/simu/
-lib/speed-dreams-2/modules/simu/simuv2.1.so
-lib/speed-dreams-2/modules/simu/simuv4.so
+@so lib/speed-dreams-2/modules/simu/simuv2.1.so
+@so lib/speed-dreams-2/modules/simu/simuv4.so
 lib/speed-dreams-2/modules/sound/
-lib/speed-dreams-2/modules/sound/snddefault.so
+@so lib/speed-dreams-2/modules/sound/snddefault.so
 lib/speed-dreams-2/modules/telemetry/
-lib/speed-dreams-2/modules/telemetry/telemetryv1.so
+@so lib/speed-dreams-2/modules/telemetry/telemetryv1.so
 lib/speed-dreams-2/modules/track/
-lib/speed-dreams-2/modules/track/trackv1.so
+@so lib/speed-dreams-2/modules/track/trackv1.so
 lib/speed-dreams-2/modules/userinterface/
-lib/speed-dreams-2/modules/userinterface/legacymenu.so
-lib/speed-dreams-2/modules/userinterface/textonly.so
+@so lib/speed-dreams-2/modules/userinterface/legacymenu.so
+@so lib/speed-dreams-2/modules/userinterface/textonly.so
 @man man/man6/sd2-accc.6
 @man man/man6/sd2-nfs2ac.6
 @man man/man6/sd2-nfsperf.6

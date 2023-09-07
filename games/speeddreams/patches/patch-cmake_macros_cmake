@@ -1,6 +1,7 @@
---- cmake/macros.cmake.orig	Wed Jun 18 16:19:18 2014
-+++ cmake/macros.cmake	Fri Jul 11 14:32:00 2014
-@@ -81,22 +81,18 @@ MARK_AS_ADVANCED(SD_TOOLS_EXECPREFIX)
+Index: cmake/macros.cmake
+--- cmake/macros.cmake.orig
++++ cmake/macros.cmake
+@@ -85,22 +85,18 @@ MARK_AS_ADVANCED(SD_TOOLS_EXECPREFIX)
  
  # Determine the default value of the data, bin and lib (and man) folders.
  IF(IN_SOURCETREE)

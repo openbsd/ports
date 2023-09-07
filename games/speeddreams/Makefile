@@ -1,5 +1,3 @@
-BROKEN =		failure on startup
-
 ONLY_FOR_ARCHS =	amd64 i386
 
 MULTI_PACKAGES =	-main -data
@@ -7,12 +5,10 @@ MULTI_PACKAGES =	-main -data
 COMMENT-main =		open source motorsport simulation
 COMMENT-data =		open source motorsport simulation, data files
 
-V =			2.2.1
-REV =			r6404
+V =			2.3.0
+REV =			r8786
 DISTNAME =		speed-dreams-src-base-$V-${REV}
 PKGNAME =		speeddreams-$V
-REVISION-data =		1
-REVISION-main =		1
 
 CATEGORIES =		games
 
@@ -23,10 +19,10 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB-main += GL GLU ICE OpenThreads SDL2 SM X11 Xext Xrandr c enet
-WANTLIB-main += expat jpeg m ogg openal osg osgDB osgFX osgGA osgParticle
-WANTLIB-main += osgShadow osgUtil osgViewer png pthread ${COMPILER_LIBCXX} vorbis
-WANTLIB-main += vorbisfile z
+WANTLIB-main += ${COMPILER_LIBCXX} GL GLU ICE OpenThreads SDL2 SDL2_mixer
+WANTLIB-main += SM X11 Xext Xrandr c curl enet expat jpeg m openal
+WANTLIB-main += osg osgDB osgFX osgGA osgParticle osgShadow osgText
+WANTLIB-main += osgUtil osgViewer png z
 WANTLIB-data = #empty
 
 COMPILER =		base-clang ports-gcc base-gcc
@@ -51,6 +47,7 @@ BUILD_DEPENDS =		devel/plib \
 			archivers/gtar
 LIB_DEPENDS-main =	net/enet \
 			devel/sdl2 \
+			devel/sdl2-mixer \
 			audio/openal \
 			graphics/png \
 			graphics/jpeg \

@@ -1,6 +1,7 @@
---- src/modules/userinterface/legacymenu/CMakeLists.txt.orig	Mon Apr 18 17:37:07 2016
-+++ src/modules/userinterface/legacymenu/CMakeLists.txt	Tue Sep 20 01:28:41 2016
-@@ -63,6 +63,10 @@ ENDIF(OPTION_SDL2)
+Index: src/modules/userinterface/legacymenu/CMakeLists.txt
+--- src/modules/userinterface/legacymenu/CMakeLists.txt.orig
++++ src/modules/userinterface/legacymenu/CMakeLists.txt
+@@ -78,6 +78,10 @@ ADD_SDL2_INCLUDEDIR()
  
  ADD_ENET_INCLUDEDIR()
  

@@ -1,6 +1,7 @@
---- src/libs/robottools/rthumandriver.cpp.orig	Mon Apr 18 17:37:11 2016
-+++ src/libs/robottools/rthumandriver.cpp	Tue Sep 20 01:28:40 2016
-@@ -1406,7 +1406,7 @@ static void common_drive(const int index, tCarElt* car
+Index: src/libs/robottools/rthumandriver.cpp
+--- src/libs/robottools/rthumandriver.cpp.orig
++++ src/libs/robottools/rthumandriver.cpp
+@@ -1462,7 +1462,7 @@ static void common_drive(const int index, tCarElt* car
          }
          ax0 = ax0 * cmd[CMD_THROTTLE].pow;
          car->_accelCmd =  pow(fabs(ax0), 1.0f / cmd[CMD_THROTTLE].sens) / (1.0 + cmd[CMD_THROTTLE].spdSens * car->_speed_x / 1000.0);
