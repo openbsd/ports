@@ -61,6 +61,7 @@ share/doc/libportal-1/class.Portal.html
 share/doc/libportal-1/class.Session.html
 share/doc/libportal-1/classes_hierarchy.html
 share/doc/libportal-1/const.WALLPAPER_TARGET_BOTH.html
+share/doc/libportal-1/ctor.Portal.initable_new.html
 share/doc/libportal-1/ctor.Portal.new.html
 share/doc/libportal-1/enum.ButtonState.html
 share/doc/libportal-1/enum.CameraFlags.html
@@ -156,6 +157,8 @@ share/doc/libportal-1/method.Portal.session_monitor_start.html
 share/doc/libportal-1/method.Portal.session_monitor_start_finish.html
 share/doc/libportal-1/method.Portal.session_monitor_stop.html
 share/doc/libportal-1/method.Portal.session_uninhibit.html
+share/doc/libportal-1/method.Portal.set_background_status.html
+share/doc/libportal-1/method.Portal.set_background_status_finish.html
 share/doc/libportal-1/method.Portal.set_wallpaper.html
 share/doc/libportal-1/method.Portal.set_wallpaper_finish.html
 share/doc/libportal-1/method.Portal.spawn.html
@@ -171,6 +174,7 @@ share/doc/libportal-1/method.Portal.update_monitor_start.html
 share/doc/libportal-1/method.Portal.update_monitor_start_finish.html
 share/doc/libportal-1/method.Portal.update_monitor_stop.html
 share/doc/libportal-1/method.Session.close.html
+share/doc/libportal-1/method.Session.connect_to_eis.html
 share/doc/libportal-1/method.Session.get_devices.html
 share/doc/libportal-1/method.Session.get_persist_mode.html
 share/doc/libportal-1/method.Session.get_restore_token.html

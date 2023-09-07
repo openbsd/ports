@@ -3,7 +3,7 @@ COMMENT-gtk3=		GTK3 backend for libportal
 COMMENT-gtk4=		GTK4 backend for libportal
 COMMENT-qt5=		Qt5 backend for libportal
 
-V=			0.6
+V=			0.7
 DISTNAME=		libportal-${V}
 
 PKGNAME-gtk3=		libportal-gtk3-${V}
