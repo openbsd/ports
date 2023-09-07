@@ -117,6 +117,7 @@
      SUBDIR += luasec
      SUBDIR += luasec,lua52
      SUBDIR += luasec,lua53
+     SUBDIR += luasec,lua54
      SUBDIR += lynis
      SUBDIR += mcrypt
      SUBDIR += mhash
