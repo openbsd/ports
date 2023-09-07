@@ -110,7 +110,4 @@ lib/python${MODPY_VERSION}/site-packages/jupyter_core/utils/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jupyter_core/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jupyter_core/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jupyter_core/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/jupyter_core/utils/${MODPY_PYCACHE}shutil_which.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/jupyter_core/utils/${MODPY_PYCACHE}shutil_which.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/jupyter_core/utils/shutil_which.py
 lib/python${MODPY_VERSION}/site-packages/jupyter_core/version.py

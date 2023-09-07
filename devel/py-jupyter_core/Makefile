@@ -1,9 +1,8 @@
 COMMENT =		Jupyter core package
 
-MODPY_EGG_VERSION =	4.6.3
+MODPY_EGG_VERSION =	4.7.0
 DISTNAME =		jupyter_core-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		4
 
 CATEGORIES =		devel
 

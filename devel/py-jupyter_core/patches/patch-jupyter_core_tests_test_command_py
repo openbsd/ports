@@ -1,7 +1,7 @@
 Index: jupyter_core/tests/test_command.py
 --- jupyter_core/tests/test_command.py.orig
 +++ jupyter_core/tests/test_command.py
-@@ -99,20 +99,24 @@ def test_subcommand_not_found():
+@@ -114,20 +114,24 @@ def test_subcommand_not_found():
  
  @patch.object(sys, 'argv', [__file__] + sys.argv[1:])
  def test_subcommand_list(tmpdir):
@@ -29,7 +29,7 @@ Index: jupyter_core/tests/test_command.py
      
      path = os.pathsep.join(map(str, [a, b]))
  
-@@ -132,13 +136,17 @@ def test_subcommand_list(tmpdir):
+@@ -147,13 +151,17 @@ def test_subcommand_list(tmpdir):
              ]
  
  def test_not_on_path(tmpdir):
@@ -48,7 +48,7 @@ Index: jupyter_core/tests/test_command.py
      witness_src = '#!%s\n%s\n' % (sys.executable, 'print("WITNESS ME")')
      write_executable(witness, witness_src)
  
-@@ -148,23 +156,27 @@ def test_not_on_path(tmpdir):
+@@ -163,23 +171,27 @@ def test_not_on_path(tmpdir):
      if sys.platform == 'win32':
          env[str('PATHEXT')] = '.EXE'
      # This won't work on windows unless
@@ -79,7 +79,7 @@ Index: jupyter_core/tests/test_command.py
      witness_b_src = '#!%s\n%s\n' % (sys.executable, 'print("WITNESS B")')
      write_executable(witness_b, witness_b_src)
  
-@@ -173,5 +185,5 @@ def test_path_priority(tmpdir):
+@@ -188,5 +200,5 @@ def test_path_priority(tmpdir):
          env[str('SYSTEMROOT')] = os.environ['SYSTEMROOT']
      if sys.platform == 'win32':
          env[str('PATHEXT')] = '.EXE'
