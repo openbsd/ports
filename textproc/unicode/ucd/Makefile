@@ -1,6 +1,6 @@
 COMMENT =		Unicode Character Database (UCD)
 
-# XXX: make sure the major version of this port matches x11/gnome/gucharmap
+# XXX make sure the major(.minor) $V of this port matches x11/gnome/gucharmap
 V =			15.1.0
 UNICODE_DATA_NAME =	ucd
 
