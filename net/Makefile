@@ -252,6 +252,7 @@
      SUBDIR += luasocket
      SUBDIR += luasocket,lua52
      SUBDIR += luasocket,lua53
+     SUBDIR += luasocket,lua54
      SUBDIR += luaunbound
      SUBDIR += luaunbound,lua52
      SUBDIR += luaunbound,lua53
