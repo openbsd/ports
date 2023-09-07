@@ -22,6 +22,9 @@ MODULES=		devel/meson \
 MODGNOME_TOOLS=		gi-docgen gobject-introspection gtk-update-icon-cache \
 			vala
 
+# example/meson.build
+BUILD_DEPENDS +=	x11/gtksourceview5
+
 LIB_DEPENDS=		x11/gnome/libadwaita
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
