@@ -1,0 +1,15 @@
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/CHANGES.md
+${GEM_LIB}/gems/${DISTNAME}/LICENSE
+${GEM_LIB}/gems/${DISTNAME}/README.md
+${GEM_LIB}/gems/${DISTNAME}/ed25519.png
+${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/ed25519/
+${GEM_LIB}/gems/${DISTNAME}/lib/ed25519.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/ed25519/signing_key.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/ed25519/verify_key.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/ed25519/version.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/ed25519_jruby.jar
+@so ${GEM_LIB}/gems/${DISTNAME}/lib/ed25519_ref10.so
+${GEM_LIB}/specifications/${DISTNAME}.gemspec

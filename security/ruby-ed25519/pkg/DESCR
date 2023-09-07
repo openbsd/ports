@@ -1,0 +1,2 @@
+A Ruby binding to the Ed25519 elliptic curve public-key signature system
+described in RFC 8032.
