@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/lua
 
-FLAVORS =	lua52 lua53
+FLAVORS =	lua52 lua53 lua54
 FLAVOR ?=
 
 CFLAGS +=	-I${MODLUA_INCL_DIR} -I${LOCALBASE}/include

@@ -395,6 +395,7 @@
      SUBDIR += luafs
      SUBDIR += luafs,lua52
      SUBDIR += luafs,lua53
+     SUBDIR += luafs,lua54
      SUBDIR += lualdoc
      SUBDIR += luapack
      SUBDIR += luapack,lua52
