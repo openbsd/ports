@@ -11,8 +11,9 @@ CATEGORIES =	devel
 
 REVISION =	1
 
-MASTER_SITES =	https://ftp.pcre.org/pub/pcre/ \
-		${MASTER_SITE_SOURCEFORGE:=pcre/} \
+SITES = 	https://github.com/PCRE2Project/pcre2/releases/download/${DISTNAME}/ \
+		https://ftp.pcre.org/pub/pcre/ \
+		${SITE_SOURCEFORGE:=pcre/} \
 		http://ftp.csx.cam.ac.uk/pub/software/programming/pcre/ \
 		ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/
 
