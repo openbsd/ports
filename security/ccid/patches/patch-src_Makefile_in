@@ -4,7 +4,7 @@
 Index: src/Makefile.in
 --- src/Makefile.in.orig
 +++ src/Makefile.in
-@@ -513,7 +513,6 @@ EXTRA_DIST = Info.plist.src create_Info_plist.pl reade
+@@ -525,7 +525,6 @@ EXTRA_DIST = Info.plist.src create_Info_plist.pl reade
  	towitoko/COPYING towitoko/README openct/LICENSE openct/README \
  	convert_version.pl 92_pcscd_ccid.rules
  
@@ -12,7 +12,7 @@ Index: src/Makefile.in
  DISTCLEANFILES = tokenparser.c Info.plist
  all: all-am
  
-@@ -1295,13 +1294,12 @@ install_ccid: libccid.la Info.plist
+@@ -1343,13 +1342,12 @@ install_ccid: libccid.la Info.plist
  	$(mkinstalldirs) "$(DESTDIR)$(usbdropdir)/$(CCID_BUNDLE)/Contents/$(BUNDLE_HOST)/"
  	cp Info.plist "$(DESTDIR)$(usbdropdir)/$(CCID_BUNDLE)/Contents/"
  	cp .libs/$(CCID_LIB) "$(DESTDIR)$(usbdropdir)/$(CCID_BUNDLE)/Contents/$(BUNDLE_HOST)/$(CCID_LIB)"
