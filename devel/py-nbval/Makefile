@@ -1,9 +1,8 @@
 COMMENT =		py.test plugin to validate Jupyter notebooks
 
-MODPY_EGG_VERSION =	0.9.5
+MODPY_EGG_VERSION =	0.9.6
 DISTNAME =		nbval-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
 
 CATEGORIES =		devel
 
