@@ -1,38 +1,36 @@
-# http://marc.info/?l=openbsd-ports&m=140587945502296&w=2
-BROKEN =		allocation error starting socket server
-
 COMMENT =		wxWidgets GUI for the computer algebra system maxima
 
-DISTNAME =		wxMaxima-12.09.0
-CATEGORIES =		math
-REVISION =		2
+V =			19.11.1
+GH_ACCOUNT =		wxMaxima-developers
+GH_PROJECT =		wxmaxima
+GH_TAGNAME =		Version-$V
+PKGNAME =		wxMaxima-$V
 
-HOMEPAGE =		http://wxmaxima.sourceforge.net/
+CATEGORIES =		math
+
+HOMEPAGE =		https://wxmaxima-developers.github.io/
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=wxmaxima/}
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
-WANTLIB += c m pthread ${COMPILER_LIBCXX} wx_base wx_base_net wx_base_xml
-WANTLIB += wx_gtk2_adv wx_gtk2_aui wx_gtk2_core wx_gtk2_html
+WANTLIB += ${COMPILER_LIBCXX} c m wx_baseu-3.2 wx_baseu_net-3.2
+WANTLIB += wx_baseu_xml-3.2 wx_gtk3u_aui-3.2 wx_gtk3u_core-3.2
+WANTLIB += wx_gtk3u_html-3.2 wx_gtk3u_richtext-3.2
+
+MODULES =		devel/cmake
 
 COMPILER =		base-clang ports-gcc base-gcc
+
+BUILD_DEPENDS =		devel/gettext,-tools
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			math/gnuplot \
 			math/maxima
+
 LIB_DEPENDS =		x11/wxWidgets
 
 NO_TEST =		Yes
-
-CONFIGURE_STYLE =	gnu
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/data/wxmaxima.png ${PREFIX}/share/pixmaps
-	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/wxmaxima.desktop ${PREFIX}/share/applications
 
 .include <bsd.port.mk>
