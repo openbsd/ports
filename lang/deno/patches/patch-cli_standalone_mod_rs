@@ -9,7 +9,7 @@ Index: cli/standalone/mod.rs
  use std::pin::Pin;
  use std::rc::Rc;
  use std::sync::Arc;
-@@ -277,7 +278,8 @@ pub async fn run(
+@@ -287,7 +288,8 @@ pub async fn run(
    metadata: Metadata,
  ) -> Result<(), AnyError> {
    let main_module = &metadata.entrypoint;

@@ -1,0 +1,35 @@
+Index: modcargo-crates/psm-0.1.21/src/arch/aarch64_armasm.asm
+--- modcargo-crates/psm-0.1.21/src/arch/aarch64_armasm.asm.orig
++++ modcargo-crates/psm-0.1.21/src/arch/aarch64_armasm.asm
+@@ -3,6 +3,7 @@
+     GLOBAL |rust_psm_stack_direction|
+     ALIGN 4
+ |rust_psm_stack_direction| PROC
++    bti c
+     orr w0, wzr, #2
+     ret
+     ENDP
+@@ -11,6 +12,7 @@
+     GLOBAL |rust_psm_stack_pointer|
+     ALIGN 4
+ |rust_psm_stack_pointer| PROC
++    bti c
+     mov x0, sp
+     ret
+     ENDP
+@@ -19,6 +21,7 @@
+     GLOBAL |rust_psm_replace_stack|
+     ALIGN 4
+ |rust_psm_replace_stack| PROC
++    bti c
+     mov sp, x2
+     br x1
+     ENDP
+@@ -26,6 +29,7 @@
+     GLOBAL |rust_psm_on_stack|
+     ALIGN 4
+ |rust_psm_on_stack| PROC
++    bti c
+     stp x29, x30, [sp, #-16]!
+     mov x29, sp
+     mov sp, x3

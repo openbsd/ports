@@ -1,6 +1,15 @@
-Index: modcargo-crates/v8-0.74.2/v8/BUILD.gn
---- modcargo-crates/v8-0.74.2/v8/BUILD.gn.orig
-+++ modcargo-crates/v8-0.74.2/v8/BUILD.gn
+Index: modcargo-crates/v8-0.74.3/v8/BUILD.gn
+--- modcargo-crates/v8-0.74.3/v8/BUILD.gn.orig
++++ modcargo-crates/v8-0.74.3/v8/BUILD.gn
+@@ -33,7 +33,7 @@ declare_args() {
+ 
+   # Turns on all V8 debug features. Enables running V8 in a pseudo debug mode
+   # within a release Chrome.
+-  v8_enable_debugging_features = is_debug
++  v8_enable_debugging_features = false
+ 
+   # Sets -DV8_ENABLE_FUTURE.
+   v8_enable_future = false
 @@ -1369,6 +1369,10 @@ config("toolchain") {
    } else if (target_os == "chromeos") {
      defines += [ "V8_HAVE_TARGET_OS" ]

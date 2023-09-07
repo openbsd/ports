@@ -1,0 +1,35 @@
+Index: modcargo-crates/psm-0.1.21/src/arch/x86.s
+--- modcargo-crates/psm-0.1.21/src/arch/x86.s.orig
++++ modcargo-crates/psm-0.1.21/src/arch/x86.s
+@@ -26,6 +26,7 @@ TYPE(rust_psm_stack_direction)
+ FUNCTION(rust_psm_stack_direction):
+ /* extern "fastcall" fn() -> u8 (%al) */
+ .cfi_startproc
++    endbr64
+     movb $STACK_DIRECTION_DESCENDING, %al # always descending on x86_64
+     retl
+ .rust_psm_stack_direction_end:
+@@ -39,6 +40,7 @@ TYPE(rust_psm_stack_pointer)
+ FUNCTION(rust_psm_stack_pointer):
+ /* extern "fastcall" fn() -> *mut u8 (%rax) */
+ .cfi_startproc
++    endbr64
+     leal 4(%esp), %eax
+     retl
+ .rust_psm_stack_pointer_end:
+@@ -61,6 +63,7 @@ FUNCTION(rust_psm_replace_stack):
+    would require to adjust the stack manually, which cannot be easily done, because the stack
+    pointer argument is already stored in memory.
+  */
++    endbr64
+     movl 4(%esp), %esp
+     calll *%edx
+     ud2
+@@ -75,6 +78,7 @@ TYPE(rust_psm_on_stack)
+ FUNCTION(rust_psm_on_stack):
+ /* extern "fastcall" fn(%ecx: usize, %edx: usize, 4(%esp): extern "fastcall" fn(usize, usize), 8(%esp): *mut u8) */
+ .cfi_startproc
++    endbr64
+     pushl %ebp
+     .cfi_def_cfa %esp, 8
+     .cfi_offset %ebp, -8

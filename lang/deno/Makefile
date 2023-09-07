@@ -5,11 +5,9 @@ COMMENT =		runtime for JavaScript and TypeScript
 DPB_PROPERTIES =	parallel
 
 USE_WXNEEDED =		Yes
-USE_NOBTCFI =		Yes
 
-VERSION =		1.35.1
+VERSION =		1.36.4
 HOMEPAGE =		https://deno.com/runtime
-REVISION =		0
 
 DISTNAME =		deno-${VERSION}
 DISTFILES =		${DISTNAME}{deno_src}${EXTRACT_SUFX}
@@ -32,6 +30,9 @@ MODCARGO_ENV +=		V8_FROM_SOURCE=1 \
 			CLANG_BASE_PATH=/usr \
 			HOME=${PORTHOME}
 
+# Makes the build look more alive while compiling v8
+MODCARGO_BUILD_ARGS +=	-vv
+
 MODCARGO_RUSTFLAGS +=	-L${LOCALBASE}/lib
 
 MAKE_ENV =		${MODCARGO_ENV}
@@ -40,9 +41,11 @@ COMPILER =		base-clang
 WANTLIB +=		${MODCARGO_WANTLIB} ${COMPILER_LIBCXX} m execinfo ffi zstd
 
 BUILD_DEPENDS =		databases/sqlite3 \
+			devel/cmake \
 			devel/gmake \
 			devel/gn \
-			devel/ninja
+			devel/ninja \
+			devel/protobuf-c
 
 LIB_DEPENDS =		archivers/zstd \
 			devel/libffi
@@ -57,7 +60,8 @@ DOCDIR =		${PREFIX}/share/doc/deno
 WRKDIST =		${WRKDIR}/deno
 PORTHOME =		${WRKSRC}
 
-V8_CARGO_V =		0.74.2
+DENO_TS_V =		0.13.2
+V8_CARGO_V =		0.74.3
 
 V8_DISTDIR =		${MODCARGO_VENDOR_DIR}/v8-${V8_CARGO_V}
 V8_BPGO_DIR =		${V8_DISTDIR}/v8/tools/builtins-pgo
@@ -71,7 +75,7 @@ post-patch:
 	    cli/build.rs \
 	    cli/main.rs \
 	    cli/standalone/binary.rs \
-	    modcargo-crates/deno_task_shell-0.12.0/src/shell/commands/executable.rs \
+	    modcargo-crates/deno_task_shell-${DENO_TS_V}/src/shell/commands/executable.rs \
 	    runtime/ops/os/mod.rs
 	cp ${WRKSRC}/cli/napi/generated_symbol_exports_list_linux.def \
 	    ${WRKSRC}/cli/napi/generated_symbol_exports_list_openbsd.def

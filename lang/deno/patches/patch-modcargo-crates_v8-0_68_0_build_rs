@@ -1,6 +1,6 @@
-Index: modcargo-crates/v8-0.74.2/build.rs
---- modcargo-crates/v8-0.74.2/build.rs.orig
-+++ modcargo-crates/v8-0.74.2/build.rs
+Index: modcargo-crates/v8-0.74.3/build.rs
+--- modcargo-crates/v8-0.74.3/build.rs.orig
++++ modcargo-crates/v8-0.74.3/build.rs
 @@ -176,9 +176,6 @@ fn build_v8() {
        || target_triple == "aarch64-linux-android"
      {

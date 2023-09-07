@@ -1,7 +1,7 @@
 Index: cli/main.rs
 --- cli/main.rs.orig
 +++ cli/main.rs
-@@ -262,7 +262,8 @@ pub fn main() {
+@@ -265,7 +265,8 @@ pub fn main() {
    let args: Vec<String> = env::args().collect();
  
    let future = async move {

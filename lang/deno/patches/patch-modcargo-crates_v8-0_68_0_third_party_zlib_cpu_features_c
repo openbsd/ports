@@ -1,6 +1,6 @@
-Index: modcargo-crates/v8-0.74.2/third_party/zlib/cpu_features.c
---- modcargo-crates/v8-0.74.2/third_party/zlib/cpu_features.c.orig
-+++ modcargo-crates/v8-0.74.2/third_party/zlib/cpu_features.c
+Index: modcargo-crates/v8-0.74.3/third_party/zlib/cpu_features.c
+--- modcargo-crates/v8-0.74.3/third_party/zlib/cpu_features.c.orig
++++ modcargo-crates/v8-0.74.3/third_party/zlib/cpu_features.c
 @@ -34,11 +34,20 @@ int ZLIB_INTERNAL x86_cpu_enable_simd = 0;
  
  #ifndef CPU_NO_SIMD

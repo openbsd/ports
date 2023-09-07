@@ -1,6 +1,6 @@
-Index: modcargo-crates/v8-0.74.2/v8/src/base/platform/platform-posix.cc
---- modcargo-crates/v8-0.74.2/v8/src/base/platform/platform-posix.cc.orig
-+++ modcargo-crates/v8-0.74.2/v8/src/base/platform/platform-posix.cc
+Index: modcargo-crates/v8-0.74.3/v8/src/base/platform/platform-posix.cc
+--- modcargo-crates/v8-0.74.3/v8/src/base/platform/platform-posix.cc.orig
++++ modcargo-crates/v8-0.74.3/v8/src/base/platform/platform-posix.cc
 @@ -55,7 +55,7 @@
  #if V8_OS_DARWIN
  #include <mach/mach.h>
