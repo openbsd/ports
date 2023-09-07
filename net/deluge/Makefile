@@ -1,8 +1,7 @@
 COMMENT =	bittorrent client
 
 DISTNAME =		deluge-${MODPY_EGG_VERSION}
-MODPY_EGG_VERSION =	2.0.5
-REVISION =		2
+MODPY_EGG_VERSION =	2.1.1
 
 CATEGORIES =	net
 
@@ -11,7 +10,7 @@ HOMEPAGE =	https://www.deluge-torrent.org/
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://ftp.osuosl.org/pub/deluge/source/2.0/
+SITES =			https://ftp.osuosl.org/pub/deluge/source/${MODPY_EGG_VERSION:R}/
 
 EXTRACT_SUFX =		.tar.xz
 

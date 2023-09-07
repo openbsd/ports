@@ -21,6 +21,7 @@ lib/python${MODPY_VERSION}/site-packages/deluge/${MODPY_PYCACHE}common.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/deluge/${MODPY_PYCACHE}component.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/deluge/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/deluge/${MODPY_PYCACHE}configmanager.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/deluge/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/deluge/${MODPY_PYCACHE}crypto_utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/deluge/${MODPY_PYCACHE}decorators.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/deluge/${MODPY_PYCACHE}error.${MODPY_PYC_MAGIC_TAG}pyc
@@ -39,6 +40,7 @@ lib/python${MODPY_VERSION}/site-packages/deluge/common.py
 lib/python${MODPY_VERSION}/site-packages/deluge/component.py
 lib/python${MODPY_VERSION}/site-packages/deluge/config.py
 lib/python${MODPY_VERSION}/site-packages/deluge/configmanager.py
+lib/python${MODPY_VERSION}/site-packages/deluge/conftest.py
 lib/python${MODPY_VERSION}/site-packages/deluge/core/
 lib/python${MODPY_VERSION}/site-packages/deluge/core/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/deluge/core/${MODPY_PYCACHE}/
