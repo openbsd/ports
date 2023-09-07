@@ -4,8 +4,11 @@ NOT_FOR_ARCHS =	powerpc64 riscv64 sparc64
 COMMENT =	command line BitWarden client
 
 DISTNAME =	rbw-1.8.3
+REVISION =	0
 
 CATEGORIES =	security
+
+HOMEPAGE =	https://git.tozt.net/rbw/about/
 
 MASTER_SITES =	https://git.tozt.net/rbw/snapshot/
 
