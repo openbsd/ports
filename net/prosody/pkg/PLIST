@@ -171,7 +171,7 @@ lib/prosody/util/adminstream.lua
 lib/prosody/util/argparse.lua
 lib/prosody/util/array.lua
 lib/prosody/util/async.lua
-lib/prosody/util/bit${MODLUA_DEP_VERSION}.lua
+lib/prosody/util/bit53.lua
 lib/prosody/util/bitcompat.lua
 lib/prosody/util/cache.lua
 lib/prosody/util/caps.lua

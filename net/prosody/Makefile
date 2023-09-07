@@ -1,5 +1,6 @@
 COMMENT =	communications server for Jabber/XMPP written in Lua
 DISTNAME =	prosody-0.12.4
+REVISION =	0
 CATEGORIES =	net
 HOMEPAGE =	https://prosody.im/
 
@@ -11,7 +12,7 @@ MASTER_SITES =	https://prosody.im/downloads/source/
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/lua
-MODLUA_VERSION =	5.3
+MODLUA_VERSION =	5.4
 
 MODLUA_RUN_DEPENDS +=	converters/luastruct \
 			databases/luadbi \
