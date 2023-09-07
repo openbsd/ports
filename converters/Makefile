@@ -27,6 +27,7 @@
      SUBDIR += luastruct
      SUBDIR += luastruct,lua52
      SUBDIR += luastruct,lua53
+     SUBDIR += luastruct,lua54
      SUBDIR += mimepp
      SUBDIR += mpack
      SUBDIR += opencc
