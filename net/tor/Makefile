@@ -25,6 +25,10 @@ CONFIGURE_ARGS=	--with-ssl-dir=/usr \
 CONFIGURE_ENV+=ac_cv_member_struct_ssl_method_st_get_cipher_by_char=no
 CFLAGS+=	-DDISABLE_ENGINES
 
+# C11
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 LIB_DEPENDS=	devel/libevent2
 
 DB_DIR=		/var/tor
