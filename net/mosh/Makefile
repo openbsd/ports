@@ -1,6 +1,7 @@
 COMMENT =		mobile shell
 
 DISTNAME =		mosh-1.4.0
+REVISION =		0
 
 CATEGORIES =		net
 
@@ -19,8 +20,9 @@ MASTER_SITES =		${HOMEPAGE}
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-# C++11 needed by protobuf
+# C++17 needed by protobuf
 COMPILER =		base-clang ports-gcc
+CXXFLAGS +=		-std=gnu++17
 
 LIB_DEPENDS =		devel/protobuf
 
