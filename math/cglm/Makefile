@@ -2,9 +2,9 @@ COMMENT =	highly optimized graphics math library
 
 GH_ACCOUNT =	recp
 GH_PROJECT =	cglm
-GH_TAGNAME =	v0.9.0
+GH_TAGNAME =	v0.9.1
 
-SHARED_LIBS =	cglm	0.3	# 0.8.9
+SHARED_LIBS =	cglm	0.4
 
 CATEGORIES =	math
 

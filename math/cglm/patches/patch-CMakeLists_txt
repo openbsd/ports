@@ -1,14 +1,14 @@
- - don't hardcode optimization flags and drop -Werror
+ - drop hardcoded -O3
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -38,7 +38,7 @@ if(MSVC)
+@@ -43,7 +43,7 @@ if(MSVC)
      string(REGEX REPLACE "/RTC(su|[1su])" "" ${flag_var} "${${flag_var}}")
    endforeach(flag_var)
  else()
--  add_compile_options(-Wall -Werror -O3)
+-  add_compile_options(-Wall -O3)
 +  add_compile_options(-Wall)
  endif()
  
- if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
+ get_directory_property(hasParent PARENT_DIRECTORY)
