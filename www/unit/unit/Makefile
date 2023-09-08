@@ -1,8 +1,12 @@
 COMMENT=	dynamic web application server
 
-WANTLIB=	c crypto m pcre2-8 pthread ssl
+REVISION=	0
+
+WANTLIB=	c crypto m pcre2-8 pthread ssl xml2 z
 
 LIB_DEPENDS=	devel/pcre2
+BUILD_DEPENDS=	lang/njs
+RUN_DEPENDS=	lang/njs
 
 MODULES=	lang/python
 MODPY_BUILDDEP=	No

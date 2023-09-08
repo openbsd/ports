@@ -28,6 +28,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--runstatedir=${LOCALSTATEDIR}/run/unit \
 		--statedir=${LOCALSTATEDIR}/db/unit \
 		--tmpdir=${LOCALSTATEDIR}/tmp/unit \
+		--njs \
 		--openssl \
 		--user=_unit \
 		--group=_unit
