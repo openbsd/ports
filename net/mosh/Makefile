@@ -20,7 +20,7 @@ MASTER_SITES =		${HOMEPAGE}
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-# C++17 needed by protobuf
+# C++17 is recent upstream choice since C++14 is needed by protobuf
 COMPILER =		base-clang ports-gcc
 CXXFLAGS +=		-std=gnu++17
 
