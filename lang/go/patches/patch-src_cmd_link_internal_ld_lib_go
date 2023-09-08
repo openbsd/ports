@@ -1,7 +1,7 @@
 Index: src/cmd/link/internal/ld/lib.go
 --- src/cmd/link/internal/ld/lib.go.orig
 +++ src/cmd/link/internal/ld/lib.go
-@@ -1419,6 +1419,7 @@ func (ctxt *Link) hostlink() {
+@@ -1424,6 +1424,7 @@ func (ctxt *Link) hostlink() {
  		}
  	case objabi.Hopenbsd:
  		argv = append(argv, "-Wl,-nopie")

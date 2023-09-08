@@ -256,9 +256,9 @@ go/src/cmd/addr2line/
 go/src/cmd/addr2line/addr2line_test.go
 go/src/cmd/addr2line/main.go
 go/src/cmd/api/
-go/src/cmd/api/api.go
 go/src/cmd/api/api_test.go
 go/src/cmd/api/boring_test.go
+go/src/cmd/api/main_test.go
 go/src/cmd/api/testdata/
 go/src/cmd/api/testdata/src/
 go/src/cmd/api/testdata/src/issue21181/
@@ -668,8 +668,6 @@ go/src/cmd/cgo/internal/testplugin/testdata/common/
 go/src/cmd/cgo/internal/testplugin/testdata/common/common.go
 go/src/cmd/cgo/internal/testplugin/testdata/forkexec/
 go/src/cmd/cgo/internal/testplugin/testdata/forkexec/main.go
-go/src/cmd/cgo/internal/testplugin/testdata/generic/
-go/src/cmd/cgo/internal/testplugin/testdata/generic/plugin.go
 go/src/cmd/cgo/internal/testplugin/testdata/host/
 go/src/cmd/cgo/internal/testplugin/testdata/host/host.go
 go/src/cmd/cgo/internal/testplugin/testdata/iface/
@@ -725,6 +723,8 @@ go/src/cmd/cgo/internal/testplugin/testdata/issue53989/main.go
 go/src/cmd/cgo/internal/testplugin/testdata/issue53989/p/
 go/src/cmd/cgo/internal/testplugin/testdata/issue53989/p/p.go
 go/src/cmd/cgo/internal/testplugin/testdata/issue53989/plugin.go
+go/src/cmd/cgo/internal/testplugin/testdata/mangle/
+go/src/cmd/cgo/internal/testplugin/testdata/mangle/plugin.go
 go/src/cmd/cgo/internal/testplugin/testdata/method/
 go/src/cmd/cgo/internal/testplugin/testdata/method/main.go
 go/src/cmd/cgo/internal/testplugin/testdata/method/plugin.go
@@ -2035,6 +2035,8 @@ go/src/cmd/go/internal/test/internal/genflags/
 go/src/cmd/go/internal/test/internal/genflags/testflag.go
 go/src/cmd/go/internal/test/internal/genflags/vetflag.go
 go/src/cmd/go/internal/test/test.go
+go/src/cmd/go/internal/test/test_nonunix.go
+go/src/cmd/go/internal/test/test_unix.go
 go/src/cmd/go/internal/test/testflag.go
 go/src/cmd/go/internal/tool/
 go/src/cmd/go/internal/tool/tool.go
@@ -2555,6 +2557,7 @@ go/src/cmd/go/testdata/script/gopath_paths.txt
 go/src/cmd/go/testdata/script/gopath_std_vendor.txt
 go/src/cmd/go/testdata/script/gopath_vendor_dup_err.txt
 go/src/cmd/go/testdata/script/goroot_executable.txt
+go/src/cmd/go/testdata/script/goroot_executable_trimpath.txt
 go/src/cmd/go/testdata/script/gotoolchain_local.txt
 go/src/cmd/go/testdata/script/gotoolchain_loop.txt
 go/src/cmd/go/testdata/script/gotoolchain_modcmds.txt
@@ -2728,6 +2731,7 @@ go/src/cmd/go/testdata/script/mod_get_go_file.txt
 go/src/cmd/go/testdata/script/mod_get_hash.txt
 go/src/cmd/go/testdata/script/mod_get_incompatible.txt
 go/src/cmd/go/testdata/script/mod_get_indirect.txt
+go/src/cmd/go/testdata/script/mod_get_insecure_redirect.txt
 go/src/cmd/go/testdata/script/mod_get_issue37438.txt
 go/src/cmd/go/testdata/script/mod_get_issue47979.txt
 go/src/cmd/go/testdata/script/mod_get_issue48511.txt
@@ -2942,6 +2946,7 @@ go/src/cmd/go/testdata/script/mod_tidy_temp.txt
 go/src/cmd/go/testdata/script/mod_tidy_version.txt
 go/src/cmd/go/testdata/script/mod_tidy_version_tooold.txt
 go/src/cmd/go/testdata/script/mod_toolchain.txt
+go/src/cmd/go/testdata/script/mod_toolchain_slash.txt
 go/src/cmd/go/testdata/script/mod_update_sum_readonly.txt
 go/src/cmd/go/testdata/script/mod_upgrade_patch.txt
 go/src/cmd/go/testdata/script/mod_vcs_missing.txt
@@ -7330,6 +7335,9 @@ go/src/internal/types/testdata/fixedbugs/issue60906.go
 go/src/internal/types/testdata/fixedbugs/issue60933.go
 go/src/internal/types/testdata/fixedbugs/issue60946.go
 go/src/internal/types/testdata/fixedbugs/issue61486.go
+go/src/internal/types/testdata/fixedbugs/issue61879.go
+go/src/internal/types/testdata/fixedbugs/issue61903.go
+go/src/internal/types/testdata/fixedbugs/issue62157.go
 go/src/internal/types/testdata/fixedbugs/issue6977.go
 go/src/internal/types/testdata/spec/
 go/src/internal/types/testdata/spec/assignability.go
@@ -12829,6 +12837,10 @@ go/test/fixedbugs/issue61127.go
 go/test/fixedbugs/issue61187.go
 go/test/fixedbugs/issue6131.go
 go/test/fixedbugs/issue6140.go
+go/test/fixedbugs/issue61778.go
+go/test/fixedbugs/issue61908.go
+go/test/fixedbugs/issue61992.go
+go/test/fixedbugs/issue62203.go
 go/test/fixedbugs/issue6247.go
 go/test/fixedbugs/issue6269.go
 go/test/fixedbugs/issue6295.dir/
