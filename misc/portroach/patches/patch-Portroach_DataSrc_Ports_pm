@@ -1,0 +1,40 @@
+Index: Portroach/DataSrc/Ports.pm
+--- Portroach/DataSrc/Ports.pm.orig
++++ Portroach/DataSrc/Ports.pm
+@@ -114,6 +114,8 @@ sub BuildDB
+ 
+ 	$dbh = connect_db();
+ 
++	prepare_sql($sdbh, \%ssths, qw(create_view));
++	$ssths{create_view}->execute or die DBI->errstr;
+ 	prepare_sql($sdbh, \%ssths, qw(sqlports_count_ports sqlports_fullpkgpaths_by_maintainer));
+ 
+ 	if ($settings{restrict_maintainer}) {
+@@ -131,6 +133,7 @@ sub BuildDB
+ 	# Query SQLports for all the information we need. We don't care about
+ 	# restrictions for now as this step basically copies sqlports. Check()
+ 	# will handle any restrictions instead.
++	
+ 	$ssths{sqlports_count_ports}->execute or die DBI->errstr;
+ 	$num_ports = $ssths{sqlports_count_ports}->fetchrow_array();
+ 
+@@ -217,6 +220,10 @@ sub BuildPort
+ 	$name     = fullpkgpathtoport($fullpkgpath);
+ 
+ 	$distname = $ports[2];
++	# get rid of version/epoch markers
++	$distname =~ s/v[0-9]+$//;
++	$distname =~ s/p[0-9]+$//;
++
+ 	foreach my $file (split /\s+/, $ports[3]) {
+ 	    $file =~ s/:[A-Za-z0-9][A-Za-z0-9\,]*$//g;
+ 	    push @distfiles, $file;
+@@ -305,7 +312,7 @@ sub BuildPort
+ 		}
+ 	}
+ 
+-	info(1, $fullpkgpath, "($n_port out of $total_ports)");
++	info(1, $fullpkgpath, "($n_port/$total_ports)");
+ 
+ 	$ps->AddPort({
+ 	    'name'        => $name,

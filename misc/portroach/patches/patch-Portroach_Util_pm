@@ -1,0 +1,12 @@
+Index: Portroach/Util.pm
+--- Portroach/Util.pm.orig
++++ Portroach/Util.pm
+@@ -652,7 +652,7 @@ sub info
+ 	my @items = (@_);
+ 	my ($str, $msg);
+ 
+-	# 60 is chosen as 80 - length of "(xxxx out of xxxx)" (16)" - separators.
++	# 60 is chosen so that "(xxxxx/xxxxx)" will fit
+ 	my $width = 30;
+ 	$width *= 2 if $full;
+ 

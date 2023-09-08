@@ -1,7 +1,93 @@
 Index: Portroach/SQL.pm
 --- Portroach/SQL.pm.orig
 +++ Portroach/SQL.pm
-@@ -311,7 +311,7 @@ $sql{portdata_fullpkgpaths} =
+@@ -71,51 +71,62 @@ $sql{portdata_update} =
+ 	         fullpkgpath = ?
+ 	   WHERE basepkgpath = ?);
+ 
++
+ # Port.pm:BuildPort()
++
++$sql{create_view} =
++   q(CREATE TEMP VIEW RoachData AS
++    SELECT fullpkgpath, categories, fullpkgname as distname, 
++	     roach_url as distfiles,
++             roach_sites as master_sites, 
++	     maintainer, comment, portroach,
++	     portroach_comment, homepage
++        FROM portsq);
++
+ $sql{ports_select} =
+     q(SELECT fullpkgpath, categories, distname, distfiles,
+              master_sites, maintainer, comment, portroach,
+ 	     portroach_comment, homepage
+-        FROM ports);
++        FROM RoachData);
+ 
+ $sql{ports_select_count} =
+     q(SELECT COUNT(fullpkgpath)
+-        FROM ports);
++        FROM RoachData);
+ 
+ $sql{ports_restrict_maintainer} =
+     q(SELECT fullpkgpath, categories, distname, distfiles,
+              master_sites, maintainer, comment, portroach,
+              portroach_comment, homepage
+-        FROM ports
++        FROM RoachData
+        WHERE maintainer like ?);
+ 
+ $sql{ports_restrict_maintainer_count} =
+     q(SELECT COUNT(fullpkgpath)
+-        FROM ports
++        FROM RoachData
+        WHERE maintainer like ?);
+ 
+ $sql{ports_restrict_category} =
+-    q(SELECT fullpkgpath, categories, distname, distfiles,
++    q(SELECT fullpkgpath, categories, distname, distfiles
+              master_sites, maintainer, comment, portroach,
+              portroach_comment, homepage
+-        FROM ports
++        FROM RoachData
+        WHERE categories like ?);
+ 
+ $sql{ports_restrict_category_count} =
+     q(SELECT COUNT(fullpkgpath)
+-        FROM ports
++        FROM RoachData
+        WHERE categories like ?);
+ 
+ $sql{ports_restrict_port} =
+     q(SELECT fullpkgpath, categories, distname, distfiles,
+              master_sites, maintainer, comment, portroach,
+              portroach_comment, homepage
+-        FROM ports
++        FROM RoachData
+        WHERE fullpkgpath like ?);
+ 
+ $sql{ports_restrict_port_count} =
+     q(SELECT COUNT(fullpkgpath)
+-        FROM ports
++        FROM RoachData
+        WHERE fullpkgpath like ?);
+ 
+ $sql{portdata_insert} =
+@@ -127,11 +138,11 @@ $sql{portdata_insert} =
+ 
+ $sql{sqlports_fullpkgpaths_by_maintainer} =
+     q(SELECT fullpkgpath
+-	FROM Ports
++	FROM RoachData
+ 	WHERE MAINTAINER LIKE ?);
+ 
+ $sql{sqlports_count_ports} =
+-    q(SELECT COUNT(FULLPKGPATH) FROM Ports);
++    q(SELECT COUNT(FULLPKGPATH) FROM RoachData);
+ 
+ $sql{portconfig_update} =
+ 	q(UPDATE portdata
+@@ -311,7 +322,7 @@ $sql{portdata_fullpkgpaths} =
  	FROM portdata);
  
  $sql{sqlports_check_fullpkgpath} =
