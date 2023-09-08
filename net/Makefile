@@ -52,6 +52,7 @@
      SUBDIR += crawl
      SUBDIR += ctrace
      SUBDIR += curl
+     SUBDIR += czds
      SUBDIR += czmq
      SUBDIR += daq
      SUBDIR += darkstat
