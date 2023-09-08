@@ -3,12 +3,12 @@ install the desktop files on OpenBSD too
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -272,7 +272,7 @@ install (DIRECTORY resources
- )
+@@ -324,7 +324,7 @@ install(DIRECTORY resources
+         )
  
  # Install desktop shortcuts for Linux
 -if (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 +if ((${CMAKE_SYSTEM_NAME} MATCHES "Linux") OR (${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD"))
- 	message ("Installing desktop files")
+     message("Installing desktop files")
  
- 	# Install icons
+     # Install icons

@@ -1,0 +1,19 @@
+Make audio work by default on OpenBSD.
+
+Index: src/core/control/settings/Settings.h
+--- src/core/control/settings/Settings.h.orig
++++ src/core/control/settings/Settings.h
+@@ -393,11 +393,11 @@ class Settings { (public)
+     fs::path const& getAudioFolder() const;
+     void setAudioFolder(fs::path audioFolder);
+ 
+-    static constexpr PaDeviceIndex AUDIO_INPUT_SYSTEM_DEFAULT = -1;
++    static constexpr PaDeviceIndex AUDIO_INPUT_SYSTEM_DEFAULT = 0;
+     PaDeviceIndex getAudioInputDevice() const;
+     void setAudioInputDevice(PaDeviceIndex deviceIndex);
+ 
+-    static constexpr PaDeviceIndex AUDIO_OUTPUT_SYSTEM_DEFAULT = -1;
++    static constexpr PaDeviceIndex AUDIO_OUTPUT_SYSTEM_DEFAULT = 0;
+     PaDeviceIndex getAudioOutputDevice() const;
+     void setAudioOutputDevice(PaDeviceIndex deviceIndex);
+ 
