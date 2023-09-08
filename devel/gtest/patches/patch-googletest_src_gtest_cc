@@ -1,0 +1,13 @@
+Missing include needed for ports-gcc to have raise in scope
+
+Index: googletest/src/gtest.cc
+--- googletest/src/gtest.cc.orig
++++ googletest/src/gtest.cc
+@@ -44,6 +44,7 @@
+ #include <chrono>  // NOLINT
+ #include <cmath>
+ #include <cstdint>
++#include <csignal>
+ #include <cstdlib>
+ #include <cstring>
+ #include <initializer_list>
