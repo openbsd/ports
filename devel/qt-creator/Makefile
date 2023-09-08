@@ -97,8 +97,6 @@ pre-configure:
 	cd ${WRKSRC}; sed -i 's,"gdb","egdb",g' ${GDB_ADJ_FILES}
 	# use system qbs/syntax-highlighting (qtcreator.pro)
 	rm -rf ${WRKSRC}/src/shared/qbs
-	# custom code fails to find yaml-cpp>=0.8.0
-	rm -f ${WRKSRC}/cmake/Findyaml-cpp.cmake
 
 post-install:
 .for _l _v in ${SHARED_LIBS}
