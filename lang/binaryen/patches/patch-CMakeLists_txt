@@ -1,23 +1,17 @@
-- Remove hardcoded optimizations.
 - Partially revert upstream commit b76d2fb1e5bb839249b25b7094db94219695f515,
   it breaks the build on OpenBSD.
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -283,15 +283,10 @@ else()
-   endif()
-   add_debug_compile_flag("-O0")
-   add_debug_compile_flag("-g3")
--  add_nondebug_compile_flag("-O2")
-   if(BYN_ENABLE_ASSERTIONS)
-     # On non-Debug builds cmake automatically defines NDEBUG, so we
+@@ -296,10 +296,6 @@ else()
      # explicitly undefine it:
      add_nondebug_compile_flag("-UNDEBUG")
--  endif()
+   endif()
 -  if(NOT APPLE AND NOT "${CMAKE_CXX_FLAGS}" MATCHES "-fsanitize")
 -    # This flag only applies to shared libraries so don't use add_link_flag
 -    set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,--no-undefined")
-   endif()
+-  endif()
  endif()
  
+ if(EMSCRIPTEN)
