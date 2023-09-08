@@ -1,0 +1,15 @@
+remove unused include that no longer exists
+
+https://code.qt.io/cgit.cgi/qt/qtgrpc.git/commit/?id=1a610ab9c7edde2e27ff707c9e534172e288e8ed
+
+Index: src/tools/qtgrpcgen/clientdeclarationprinter.cpp
+--- src/tools/qtgrpcgen/clientdeclarationprinter.cpp.orig
++++ src/tools/qtgrpcgen/clientdeclarationprinter.cpp
+@@ -8,7 +8,6 @@
+ #include <google/protobuf/io/printer.h>
+ #include <google/protobuf/io/zero_copy_stream.h>
+ #include <google/protobuf/stubs/common.h>
+-#include <google/protobuf/stubs/logging.h>
+ 
+ #include <string>
+ #include <unordered_set>

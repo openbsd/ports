@@ -1,0 +1,35 @@
+remove unused include that no longer exists
+
+https://code.qt.io/cgit.cgi/qt/qtgrpc.git/commit/?id=1a610ab9c7edde2e27ff707c9e534172e288e8ed
+
+remove call to protobuf FileDescriptor::syntax()
+
+https://code.qt.io/cgit.cgi/qt/qtgrpc.git/commit/?id=2297f2da520b7eebe10dd6b5304e5a4c3c18a57c
+
+Index: src/tools/qtprotobufgen/qprotobufgenerator.cpp
+--- src/tools/qtprotobufgen/qprotobufgenerator.cpp.orig
++++ src/tools/qtprotobufgen/qprotobufgenerator.cpp
+@@ -17,7 +17,6 @@
+ #include <array>
+ #include <numeric>
+ #include <set>
+-#include <google/protobuf/stubs/logging.h>
+ #include <google/protobuf/stubs/common.h>
+ #include <google/protobuf/io/printer.h>
+ #include <google/protobuf/io/zero_copy_stream.h>
+@@ -37,14 +36,9 @@ QProtobufGenerator::~QProtobufGenerator() = default;
+ bool QProtobufGenerator::Generate(const FileDescriptor *file,
+                                   [[maybe_unused]] const std::string &parameter,
+                                   GeneratorContext *generatorContext,
+-                                  std::string *error) const
++                                  [[maybe_unused]] std::string *error) const
+ {
+     assert(file != nullptr && generatorContext != nullptr);
+-
+-    if (file->syntax() != FileDescriptor::SYNTAX_PROTO3) {
+-        *error = "Invalid proto used. qtprotobufgen only supports 'proto3' syntax";
+-        return false;
+-    }
+ 
+     return GenerateMessages(file, generatorContext);
+ }

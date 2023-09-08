@@ -1,0 +1,15 @@
+remove unused include that no longer exists
+
+https://code.qt.io/cgit.cgi/qt/qtgrpc.git/commit/?id=1a610ab9c7edde2e27ff707c9e534172e288e8ed
+
+Index: src/tools/qtprotoccommon/generatorbase.cpp
+--- src/tools/qtprotoccommon/generatorbase.cpp.orig
++++ src/tools/qtprotoccommon/generatorbase.cpp
+@@ -5,7 +5,6 @@
+ #include "generatorbase.h"
+ 
+ #include <google/protobuf/descriptor.h>
+-#include <google/protobuf/stubs/logging.h>
+ #include <google/protobuf/stubs/common.h>
+ #include <google/protobuf/io/printer.h>
+ #include <google/protobuf/io/zero_copy_stream.h>
