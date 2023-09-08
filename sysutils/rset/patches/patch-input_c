@@ -1,4 +1,5 @@
-fix mkstemp(3) call
+fix mkstemp(3) call, backport of upstream commit
+https://github.com/eradman/rset/commit/8482f28016e66bdf
 
 Index: input.c
 --- input.c.orig
