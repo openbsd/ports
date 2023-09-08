@@ -63,6 +63,10 @@ share/homebank/help/images/54txnpopmenu.png
 share/homebank/help/images/56datrang.png
 share/homebank/help/images/56filter.png
 share/homebank/help/images/56stack.png
+share/homebank/help/images/57budgtime.png
+share/homebank/help/images/57cashflow.png
+share/homebank/help/images/57chartdrill.png
+share/homebank/help/images/57newhome.png
 share/homebank/help/images/6.png
 share/homebank/help/images/7.png
 share/homebank/help/images/8.png
@@ -80,6 +84,7 @@ share/homebank/help/images/dlg-budget2.png
 share/homebank/help/images/dlg-category1.png
 share/homebank/help/images/dlg-currencies1.png
 share/homebank/help/images/dlg-currencies2.png
+share/homebank/help/images/dlg-filter-common.png
 share/homebank/help/images/dlg-filter1.png
 share/homebank/help/images/dlg-filter2.png
 share/homebank/help/images/dlg-filter3.png
@@ -97,6 +102,7 @@ share/homebank/help/images/dlg-prefs6.png
 share/homebank/help/images/dlg-prefs7.png
 share/homebank/help/images/dlg-prefs8.png
 share/homebank/help/images/dlg-prefs9.png
+share/homebank/help/images/dlg-prefsF.png
 share/homebank/help/images/dlg-properties1.png
 share/homebank/help/images/dlg-split1.png
 share/homebank/help/images/dlg-tag.png
@@ -122,6 +128,8 @@ share/homebank/help/images/key_c.png
 share/homebank/help/images/key_ctrl.png
 share/homebank/help/images/key_n.png
 share/homebank/help/images/key_r.png
+share/homebank/help/images/new12.png
+share/homebank/help/images/new24.png
 share/homebank/help/images/pm-cash.png
 share/homebank/help/images/pm-ccard.png
 share/homebank/help/images/pm-check.png
@@ -158,10 +166,16 @@ share/homebank/help/images/win-balance2.png
 share/homebank/help/images/win-budget1.png
 share/homebank/help/images/win-budget2.png
 share/homebank/help/images/win-carcost1.png
+share/homebank/help/images/win-main.png
 share/homebank/help/images/win-main1.png
+share/homebank/help/images/win-main2.png
+share/homebank/help/images/win-main3.png
+share/homebank/help/images/win-main4.png
+share/homebank/help/images/win-main5.png
 share/homebank/help/images/win-statistics1.png
 share/homebank/help/images/win-statistics2.png
 share/homebank/help/images/win-statistics3.png
+share/homebank/help/images/win-statistics4.png
 share/homebank/help/images/win-trendtime1.png
 share/homebank/help/images/win-trendtime2.png
 share/homebank/help/index.html
@@ -194,6 +208,7 @@ share/homebank/icons/hicolor/16x16/status/hb-ope-edit.png
 share/homebank/icons/hicolor/16x16/status/hb-ope-forced.png
 share/homebank/icons/hicolor/16x16/status/hb-ope-future.png
 share/homebank/icons/hicolor/16x16/status/hb-ope-new.png
+share/homebank/icons/hicolor/16x16/status/hb-ope-prefilled.png
 share/homebank/icons/hicolor/16x16/status/hb-ope-reconciled.png
 share/homebank/icons/hicolor/16x16/status/hb-ope-remind.png
 share/homebank/icons/hicolor/16x16/status/hb-ope-similar.png
@@ -266,6 +281,7 @@ share/homebank/icons/hicolor/48x48/status/prf-backup.png
 share/homebank/icons/hicolor/48x48/status/prf-columns.png
 share/homebank/icons/hicolor/48x48/status/prf-euro.png
 share/homebank/icons/hicolor/48x48/status/prf-folder.png
+share/homebank/icons/hicolor/48x48/status/prf-forecast.png
 share/homebank/icons/hicolor/48x48/status/prf-general.png
 share/homebank/icons/hicolor/48x48/status/prf-import.png
 share/homebank/icons/hicolor/48x48/status/prf-interface.png
@@ -279,9 +295,11 @@ share/homebank/icons/hicolor/scalable/actions/eye-not-looking-symbolic.svg
 share/homebank/icons/hicolor/scalable/actions/hb-go-down-symbolic.svg
 share/homebank/icons/hicolor/scalable/actions/hb-go-up-symbolic.svg
 share/homebank/icons/hicolor/scalable/actions/list-collapse-all-symbolic.svg
+share/homebank/icons/hicolor/scalable/actions/list-duplicate-symbolic.svg
 share/homebank/icons/hicolor/scalable/actions/list-expand-all-symbolic.svg
 share/homebank/icons/hicolor/scalable/actions/list-merge-symbolic.svg
 share/homebank/icons/hicolor/scalable/actions/list-move-after-symbolic.svg
+share/homebank/icons/hicolor/scalable/actions/open-in-browser-symbolic.svg
 share/homebank/icons/hicolor/scalable/actions/text-casesensitive-symbolic.svg
 share/homebank/icons/hicolor/scalable/actions/text-regularexpression-symbolic.svg
 share/homebank/icons/hicolor/scalable/actions/toggle-sign-symbolic.svg

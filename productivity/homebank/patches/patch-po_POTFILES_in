@@ -1,7 +1,7 @@
 Index: po/POTFILES.in
 --- po/POTFILES.in.orig
 +++ po/POTFILES.in
-@@ -40,6 +40,7 @@ src/ui-budget.c
+@@ -41,6 +41,7 @@ src/ui-budget.c
  src/ui-budget-tabview.c
  src/ui-category.c
  src/ui-currency.c
