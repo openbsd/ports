@@ -1,0 +1,3 @@
+Client to ICANN's Centralized Zone Data Service (CZDS) REST API using
+both the documented and undocumented API endpoints. Should allow you
+to perform almost any action you can in the web interface via this API.

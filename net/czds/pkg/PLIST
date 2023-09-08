@@ -1,0 +1,5 @@
+@bin bin/czds-dl
+@bin bin/czds-request
+@bin bin/czds-status
+share/doc/czds/
+share/doc/czds/README.md
