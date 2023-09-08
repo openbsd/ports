@@ -6,6 +6,7 @@ ${P5ARCH}/Sys/Virt/DomainCheckpoint.pm
 ${P5ARCH}/Sys/Virt/DomainSnapshot.pm
 ${P5ARCH}/Sys/Virt/Error.pm
 ${P5ARCH}/Sys/Virt/Event.pm
+${P5ARCH}/Sys/Virt/EventImpl.pm
 ${P5ARCH}/Sys/Virt/Interface.pm
 ${P5ARCH}/Sys/Virt/NWFilter.pm
 ${P5ARCH}/Sys/Virt/NWFilterBinding.pm
@@ -26,6 +27,7 @@ ${P5ARCH}/auto/Sys/Virt/Virt.bs
 @man man/man3p/Sys::Virt::DomainSnapshot.3p
 @man man/man3p/Sys::Virt::Error.3p
 @man man/man3p/Sys::Virt::Event.3p
+@man man/man3p/Sys::Virt::EventImpl.3p
 @man man/man3p/Sys::Virt::Interface.3p
 @man man/man3p/Sys::Virt::NWFilter.3p
 @man man/man3p/Sys::Virt::NWFilterBinding.3p
