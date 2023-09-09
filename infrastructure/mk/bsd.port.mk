@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1617 2023/09/09 10:06:09 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1618 2023/09/09 10:43:17 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1262,13 +1262,11 @@ _warn_checksum = :
 ${v:S/MASTER_//} ?= ${$v}
 .endfor
 
-# stash .VARIABLES, because it's expensive to compute
-_CACHE_VARIABLES := ${.VARIABLES}
-.if empty(_CACHE_VARIABLES)
+.if empty(.VARIABLES)
 ERRORS += "Fatal: requires make(1) with .VARIABLES support"
 .endif
 
-_ALL_SITES_VARIABLES = ${_CACHE_VARIABLES:MSITES*:NSITES_*}
+_ALL_SITES_VARIABLES = ${.VARIABLES:MSITES*:NSITES_*}
 
 
 # All variables relevant to the port's description (see dump-vars)
@@ -1309,7 +1307,7 @@ _ALL_VARIABLES += BROKEN COMES_WITH \
 	FIX_CRLF_FILES EXTRACT_FILES DIST_TUPLE DIST_TUPLE_MV
 .if !empty(MODULES)
 .  for _m in ${MODULES}
-_ALL_VARIABLES += ${_CACHE_VARIABLES:MMOD${_m:T:U}*}
+_ALL_VARIABLES += ${.VARIABLES:MMOD${_m:T:U}*}
 .  endfor
 .endif
 _ALL_VARIABLES_PER_ARCH += BROKEN
@@ -1332,13 +1330,11 @@ EXTRACT_SUFX ?= .tar.gz
 GH_DISTFILE = ${DISTNAME}-${GH_COMMIT:C/(........).*/\1/}{${GH_COMMIT}}${EXTRACT_SUFX}
 .  if !defined(DISTFILES)
 DISTFILES = ${GH_DISTFILE}
-_CACHE_VARIABLES += DISTFILES
 .  endif
 .elif defined(DISTNAME)
 .  if !defined(DISTFILES)
-.    if !empty(SITES) || empty(_CACHE_VARIABLES:MDISTFILES*)
+.    if !empty(SITES) || empty(.VARIABLES:MDISTFILES*)
 DISTFILES = ${DISTNAME}${EXTRACT_SUFX}
-_CACHE_VARIABLES += DISTFILES
 .    endif
 .  endif
 .endif
@@ -1349,7 +1345,7 @@ _ROACH_DISTFILE ?= $d
 .  endfor
 .endif
 .if !defined(ROACH_URL)
-.  for w in ${_CACHE_VARIABLES:MDISTFILES*}
+.  for w in ${.VARIABLES:MDISTFILES*}
 .    for d in ${$w}
 _ROACH_DISTFILE ?= $d
 .    endfor
@@ -1378,7 +1374,7 @@ _ALL_DISTFILES_VARIABLES =
 # - SUPDISTFILES has to happen later
 _FILES=
 .for v in DISTFILES PATCHFILES SUPDISTFILES
-.  for w in ${_CACHE_VARIABLES:M$v*}
+.  for w in ${.VARIABLES:M$v*}
 .    if !empty($w)
 _ALL_DISTFILES_VARIABLES += $w
 _T =${w:N$v:N$v.*}
