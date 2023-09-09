@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.50 2023/06/18 09:17:01 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.51 2023/09/09 14:56:17 espie Exp $
 # Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -25,7 +25,6 @@ use lib ("$ports1/infrastructure/lib", "$FindBin::Bin/../lib");
 
 use File::Spec;
 use OpenBSD::PackingList;
-use OpenBSD::SharedLibs2;
 use OpenBSD::LibSpec;
 use OpenBSD::Temp;
 use OpenBSD::AddCreateDelete;
@@ -227,7 +226,6 @@ sub handle_options($state)
 	if ($state->opt('D')) {
 		$state->{logger} = Logger->new($state->opt('D'));
 	}
-	$state->{shlibs} = OpenBSD::SharedLibs->new($state);
 }
 
 sub init($self, @parms)
@@ -269,10 +267,10 @@ sub set_context($state, $plist)
 sub perllibs($state)
 {
 	if (!defined $state->{perllibs}) {
-		$state->{shlibs}->add_libs_from_system('/');
+		$state->shlibs->add_libs_from_system('/');
 		eval {
-		    my $perl = $state->{shlibs}->find_best('perl');
-		    my $c = $state->{shlibs}->find_best('c');
+		    my $perl = $state->shlibs->find_best('perl');
+		    my $c = $state->shlibs->find_best('c');
 		    if (!defined $perl || !defined $c) {
 			    $state->fatal("can't find system perl and c");
 		    }
@@ -382,7 +380,7 @@ sub handle_dependency($self, $state, $pkgname, $pkgpath)
 	}
 
 	register_dependencies($plist);
-	$state->{shlibs}->add_libs_from_plist($plist);
+	$state->shlibs->add_libs_from_plist($plist);
 
 	return $plist->pkgname;
 }
@@ -390,7 +388,7 @@ sub handle_dependency($self, $state, $pkgname, $pkgpath)
 sub lookup_library($state, $dir, $spec)
 {
 	my $libspec = OpenBSD::LibSpec->from_string($spec);
-	my $r = $state->{shlibs}->lookup_libspec($dir, $libspec);
+	my $r = $state->shlibs->lookup_libspec($dir, $libspec);
 	if (!defined $r) {
 		return ();
 	} else {
@@ -401,7 +399,7 @@ sub lookup_library($state, $dir, $spec)
 sub report_lib_issue($self, $state, $plist, $lib, $binary)
 {
 
-	$state->{shlibs}->add_libs_from_system('/');
+	$state->shlibs->add_libs_from_system('/');
 	my $libspec = "$lib.0";
 	my $want = $lib;
 	$want =~ s/\.\d+$//;
@@ -532,7 +530,7 @@ sub analyze($self, $state, $plist)
 
 	if (!defined $dependencies->{$pkgname}) {
 		register_dependencies($plist);
-		$state->{shlibs}->add_libs_from_plist($plist);
+		$state->shlibs->add_libs_from_plist($plist);
 	}
 	my $r = { wantlib => {}, libdepends => {}, wantlib2 => {} };
 	for my $lib (sort $needed_libs->libs) {
