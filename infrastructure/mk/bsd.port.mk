@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1618 2023/09/09 10:43:17 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1619 2023/09/09 10:55:59 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -77,7 +77,6 @@ _BSD_PORT_MK = Done
 FETCH_PACKAGES ?= No
 CLEANDEPENDS ?= No
 BULK ?= Auto
-WRKDIR_LINKNAME ?=
 INSTALL_DEBUG_PACKAGES ?= No
  
 .if ${FETCH_PACKAGES:L} == "yes"
@@ -2737,9 +2736,6 @@ ${_WRKDIR_COOKIE}:
 	@${_PBUILD} install -d ${WRKOBJDIR_MODE} `dirname ${WRKDIR}`
 	@${_PBUILD} mkdir -p ${WRKDIR} ${WRKDIR}/bin
 	@${_wrap_install_commands}
-.if !empty(WRKDIR_LINKNAME)
-	@${_PBUILD} ln -sf ${WRKDIR} ${.CURDIR}/${WRKDIR_LINKNAME}
-.endif
 # poison some common binaries unless the relevant BUILD_DEPENDS is used
 .if empty(_BUILD_DEP:Mdevel/gettext,-tools) && \
 		empty(_BUILD_DEP:Mtextproc/intltool)
