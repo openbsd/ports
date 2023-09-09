@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1619 2023/09/09 10:55:59 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1620 2023/09/09 13:06:25 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2187,6 +2187,10 @@ fix-permissions:
 .  for _p in ${_pkg${_S}}
 # run under _pfetch
 ${_CACHE_REPO}${_p}:
+.    if ${_FETCH_RECURSE_HELPER:L} == "no"
+	@${ECHO_MSG} "===> Looking for pre-built ${@F} on the mirrors"
+	@${ECHO_MSG} "     (probably not what you want, but FETCH_PACKAGES is set)"
+.    endif
 	@install -d ${PACKAGE_REPOSITORY_MODE} ${@D}
 	@${ECHO_MSG} -n "===>  Looking for ${@F} in \$$PKG_PATH - "
 	@if ${SETENV} ${_TERM_ENV} PKG_CACHE=${_CACHE_REPO} TRUSTED_PKG_PATH=${_CACHE_REPO}:${_PKG_REPO}:${PACKAGE_REPOSITORY}/${NO_ARCH}/:${TRUSTED_PKG_PATH} PKG_PATH=${_PKG_PATH} ${PKG_ADD} -I -x -n -q ${_PKG_ADD_FORCE} -r -D installed -D downgrade ${FETCH_PACKAGES} ${@F}; then \
