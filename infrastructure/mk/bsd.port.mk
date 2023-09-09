@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1616 2023/09/06 20:46:23 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1617 2023/09/09 10:06:09 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -741,15 +741,8 @@ PATCHORIG ?= .orig.port
 PATCH_STRIP ?= -p0
 PATCH_DIST_STRIP ?= -p0
 
-PATCH_DEBUG ?= Yes
-.if ${PATCH_DEBUG:L} != "no"
 PATCH_ARGS ?= -d ${WRKDIST} -z ${PATCHORIG} -E ${PATCH_STRIP}
 PATCH_DIST_ARGS ?= -z ${DISTORIG} -d ${WRKDIST} -E ${PATCH_DIST_STRIP}
-.else
-PATCH_ARGS ?= -d ${WRKDIST} -z ${PATCHORIG} --forward --quiet -E ${PATCH_STRIP}
-PATCH_DIST_ARGS ?= -z ${DISTORIG} -d ${WRKDIST} --forward --quiet -E \
-	${PATCH_DIST_STRIP}
-.endif
 
 .if ${PATCH_CHECK_ONLY:L} == "yes"
 PATCH_ARGS += -C
@@ -2837,10 +2830,7 @@ do-distpatch:
 	@${ECHO_MSG} "===>  Applying distribution patches for ${FULLPKGNAME}${_MASTER}"
 	@cd ${FULLDISTDIR}; \
 	  for patchfile in ${ALL_PATCHFILES}; do \
-	  	case "${PATCH_DEBUG:L}" in \
-			no) ;; \
-			*) ${ECHO_MSG} "===>   Applying distribution patch $$patchfile" ;; \
-		esac; \
+		${ECHO_MSG} "===>   Applying distribution patch $$patchfile" ; \
 		case $$patchfile in \
 			${PATCH_CASES} \
 		esac; \
@@ -2894,10 +2884,7 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 					;; \
 				*) \
 				    if [ -e $$i ]; then \
-						case "${PATCH_DEBUG:L}" in \
-							no) ;; \
-							*) ${ECHO_MSG} "===>   Applying OpenBSD patch $$i" ;; \
-						esac; \
+						${ECHO_MSG} "===>   Applying OpenBSD patch $$i"; \
 						if [ -s $$i ]; then \
 							${_PBUILD} ${PATCH} ${PATCH_ARGS} < $$i || \
 								{ echo "***>   $$i did not apply cleanly"; \
