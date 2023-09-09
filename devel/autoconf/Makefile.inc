@@ -26,4 +26,4 @@ CONFIGURE_ARGS += 	--program-suffix=${SUFFIX}
 MAKE_FLAGS +=		pkgdatadir=${PREFIX}/share/autoconf${SUFFIX}
 FAKE_FLAGS +=		lispdir=
 
-PORTROACH =		limit:^${VERSION}
+PORTROACH ?=		limit:^${VERSION}

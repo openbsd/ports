@@ -13,7 +13,7 @@ PERMIT_PACKAGE ?=	Yes
 # we're not a python port, don't subst py- prefix
 UPDATE_PLIST_ARGS +=	-i MODPY_PY_PREFIX
 
-PORTROACH =		limit:^${VERSION}
+PORTROACH ?=		limit:^${VERSION}
 
 BUILD_DEPENDS +=	${RUN_DEPENDS}
 CONFIGURE_ARGS +=	--infodir=${PREFIX}/info
