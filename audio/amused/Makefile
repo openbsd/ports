@@ -1,6 +1,6 @@
 COMMENT =	minimalistic music player
 
-DISTNAME =	amused-0.12
+DISTNAME =	amused-0.13
 
 CATEGORIES =	audio
 
@@ -12,7 +12,7 @@ MAINTAINER =	Omar Polo <op@openbsd.org>
 PERMIT_PACKAGE = Yes
 
 # uses pledge
-WANTLIB += FLAC c event mpg123 opusfile sndio util vorbisfile
+WANTLIB += FLAC c mpg123 opusfile sndio util vorbisfile
 
 SITES =		https://ftp.omarpolo.com/
 
@@ -23,6 +23,9 @@ LIB_DEPENDS =	audio/flac \
 
 CONFIGURE_STYLE = simple
 CONFIGURE_ARGS = --backend=sndio
+
+ALL_TARGET =	all web
+FAKE_TARGET =	install install-web
 
 NO_TEST =	Yes
 
