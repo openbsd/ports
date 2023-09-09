@@ -11,7 +11,7 @@ Index: wscript
  
  # Library and package version (UNIX style major, minor, micro)
  # major increment <=> incompatible changes
-@@ -119,7 +120,7 @@ def build(bld):
+@@ -120,7 +121,7 @@ def build(bld):
              uselib          = 'SERD SORD LV2',
              name            = 'libsratom',
              target          = 'sratom-%s' % SRATOM_MAJOR_VERSION,
