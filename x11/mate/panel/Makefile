@@ -1,4 +1,5 @@
 COMMENT=		panel component for MATE
+REVISION=		0
 
 SHARED_LIBS +=  mate-panel-applet-4       1.1 # 1.1
 
