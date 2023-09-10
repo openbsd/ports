@@ -16,6 +16,7 @@ ${P5SITE}/Data/Printer/Filter/FORMAT.pm
 ${P5SITE}/Data/Printer/Filter/GLOB.pm
 ${P5SITE}/Data/Printer/Filter/GenericClass.pm
 ${P5SITE}/Data/Printer/Filter/HASH.pm
+${P5SITE}/Data/Printer/Filter/OBJECT.pm
 ${P5SITE}/Data/Printer/Filter/REF.pm
 ${P5SITE}/Data/Printer/Filter/Regexp.pm
 ${P5SITE}/Data/Printer/Filter/SCALAR.pm
