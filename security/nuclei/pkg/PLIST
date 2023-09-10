@@ -6,3 +6,4 @@
 @comment bin/integration-test
 @bin bin/nuclei
 @comment bin/sign-templates
+@bin bin/tmc
