@@ -1,11 +1,18 @@
-COMMENT=	interface to compute differences between two objects
+COMMENT =	interface to compute differences between two objects
 
-MODULES=	cpan
-PKG_ARCH=	*
-DISTNAME =	Algorithm-Diff-1.1903
-CATEGORIES=	devel
-REVISION =	1
+DISTNAME =	Algorithm-Diff-1.201
+PKGNAME =	p5-Algorithm-Diff-1.2010
 
-PERMIT_PACKAGE=	Yes
+CATEGORIES =	devel
+
+# Perl
+PERMIT_PACKAGE =	Yes
+
+MODULES =		cpan
+
+PKG_ARCH =		*
+
+MODCPAN_EXAMPLES =	Yes
+MODCPAN_EXAMPLES_DIST =	bin
 
 .include <bsd.port.mk>

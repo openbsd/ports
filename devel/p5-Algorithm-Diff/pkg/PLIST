@@ -1,9 +1,10 @@
 ${P5SITE}/Algorithm/
 ${P5SITE}/Algorithm/Diff.pm
 ${P5SITE}/Algorithm/DiffOld.pm
-${P5SITE}/Algorithm/cdiff.pl
-${P5SITE}/Algorithm/diff.pl
-${P5SITE}/Algorithm/diffnew.pl
-${P5SITE}/Algorithm/htmldiff.pl
 @man man/man3p/Algorithm::Diff.3p
 @man man/man3p/Algorithm::DiffOld.3p
+share/examples/p5-Algorithm-Diff/
+share/examples/p5-Algorithm-Diff/cdiff.pl
+share/examples/p5-Algorithm-Diff/diff.pl
+share/examples/p5-Algorithm-Diff/diffnew.pl
+share/examples/p5-Algorithm-Diff/htmldiff.pl
