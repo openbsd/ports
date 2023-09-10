@@ -28,6 +28,8 @@ lib/python${MODPY_VERSION}/site-packages/pypdf/${MODPY_PYCACHE}_version.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/pypdf/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pypdf/${MODPY_PYCACHE}_writer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pypdf/${MODPY_PYCACHE}_writer.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pypdf/${MODPY_PYCACHE}_xobj_image_helpers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pypdf/${MODPY_PYCACHE}_xobj_image_helpers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pypdf/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pypdf/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pypdf/${MODPY_PYCACHE}errors.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -94,6 +96,7 @@ lib/python${MODPY_VERSION}/site-packages/pypdf/_text_extraction/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/pypdf/_utils.py
 lib/python${MODPY_VERSION}/site-packages/pypdf/_version.py
 lib/python${MODPY_VERSION}/site-packages/pypdf/_writer.py
+lib/python${MODPY_VERSION}/site-packages/pypdf/_xobj_image_helpers.py
 lib/python${MODPY_VERSION}/site-packages/pypdf/annotations/
 lib/python${MODPY_VERSION}/site-packages/pypdf/annotations/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pypdf/annotations/${MODPY_PYCACHE}/
@@ -128,12 +131,15 @@ lib/python${MODPY_VERSION}/site-packages/pypdf/generic/${MODPY_PYCACHE}_rectangl
 lib/python${MODPY_VERSION}/site-packages/pypdf/generic/${MODPY_PYCACHE}_rectangle.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pypdf/generic/${MODPY_PYCACHE}_utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pypdf/generic/${MODPY_PYCACHE}_utils.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pypdf/generic/${MODPY_PYCACHE}_viewerpref.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pypdf/generic/${MODPY_PYCACHE}_viewerpref.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pypdf/generic/_base.py
 lib/python${MODPY_VERSION}/site-packages/pypdf/generic/_data_structures.py
 lib/python${MODPY_VERSION}/site-packages/pypdf/generic/_fit.py
 lib/python${MODPY_VERSION}/site-packages/pypdf/generic/_outline.py
 lib/python${MODPY_VERSION}/site-packages/pypdf/generic/_rectangle.py
 lib/python${MODPY_VERSION}/site-packages/pypdf/generic/_utils.py
+lib/python${MODPY_VERSION}/site-packages/pypdf/generic/_viewerpref.py
 lib/python${MODPY_VERSION}/site-packages/pypdf/pagerange.py
 lib/python${MODPY_VERSION}/site-packages/pypdf/papersizes.py
 lib/python${MODPY_VERSION}/site-packages/pypdf/py.typed
