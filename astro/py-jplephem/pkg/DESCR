@@ -12,3 +12,6 @@ Most users will use jplephem with the Satellite Planet Kernel (SPK)
 files that the NAIF facility at NASA JPL offers for use with their own
 SPICE toolkit. They have collected their most useful kernels beneath the
 directory: http://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/
+
+See the project description, https://pypi.org/project/jplephem/#description
+for more information.
