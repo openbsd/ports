@@ -27,6 +27,8 @@ WANTLIB += ${COMPILER_LIBCXX} ICE KF5CoreAddons Qt5Core Qt5Gui
 WANTLIB += Qt5Network Qt5Widgets SM X11 Xext curl fftw3 fftw3_threads
 WANTLIB += kritaqmicinterface m png z
 
+BUILD_DEPENDS =	shells/bash
+
 LIB_DEPENDS =	graphics/krita \
 		net/curl \
 		math/fftw3
