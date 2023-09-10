@@ -1,7 +1,7 @@
 Index: Portroach/SQL.pm
 --- Portroach/SQL.pm.orig
 +++ Portroach/SQL.pm
-@@ -71,51 +71,62 @@ $sql{portdata_update} =
+@@ -71,51 +71,64 @@ $sql{portdata_update} =
  	         fullpkgpath = ?
  	   WHERE basepkgpath = ?);
  
@@ -10,7 +10,9 @@ Index: Portroach/SQL.pm
 +
 +$sql{create_view} =
 +   q(CREATE TEMP VIEW RoachData AS
-+    SELECT fullpkgpath, categories, fullpkgname as distname, 
++    SELECT fullpkgpath, categories,
++	case when distname not null then distname else fullpkgname end
++	as distname,
 +	     roach_url as distfiles,
 +             roach_sites as master_sites, 
 +	     maintainer, comment, portroach,
@@ -73,7 +75,7 @@ Index: Portroach/SQL.pm
         WHERE fullpkgpath like ?);
  
  $sql{portdata_insert} =
-@@ -127,11 +138,11 @@ $sql{portdata_insert} =
+@@ -127,11 +140,11 @@ $sql{portdata_insert} =
  
  $sql{sqlports_fullpkgpaths_by_maintainer} =
      q(SELECT fullpkgpath
@@ -87,7 +89,7 @@ Index: Portroach/SQL.pm
  
  $sql{portconfig_update} =
  	q(UPDATE portdata
-@@ -311,7 +322,7 @@ $sql{portdata_fullpkgpaths} =
+@@ -311,7 +324,7 @@ $sql{portdata_fullpkgpaths} =
  	FROM portdata);
  
  $sql{sqlports_check_fullpkgpath} =
