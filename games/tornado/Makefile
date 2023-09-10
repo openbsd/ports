@@ -2,7 +2,7 @@ COMMENT=	Ouranos (Weather War) clone; multiplayer
 DISTNAME=	tornado-1.4
 CATEGORIES=	games
 MASTER_SITES=	${HOMEPAGE}download/
-REVISION=	2
+REVISION=	3
 
 HOMEPAGE=	http://kiza.kcore.de/software/tornado/
 

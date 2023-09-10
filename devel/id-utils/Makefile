@@ -1,7 +1,7 @@
 COMMENT=	gid/lid tools for looking up variables in code
 
 DISTNAME=	id-utils-3.2d
-REVISION =	4
+REVISION =	5
 CATEGORIES=	devel
 
 # License: GPL
