@@ -6,6 +6,7 @@ GH_ACCOUNT=	audacity
 GH_PROJECT=	audacity
 GH_TAGNAME=	Audacity-3.3.3
 DISTNAME=	${GH_TAGNAME:L}
+REVISION=	0
 
 CATEGORIES=	audio
 

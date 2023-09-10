@@ -1,0 +1,15 @@
+Replace obsolescent %hs printf specifier
+https://github.com/audacity/audacity/commit/e181ee115e727b4754619b04aa6e8ad872113592
+
+Index: locale/ar.po
+--- locale/ar.po.orig
++++ locale/ar.po
+@@ -2304,7 +2304,7 @@ msgstr "لم أتمكن من فتح ملف: \"%s\""
+ #: libraries/lib-xml/XMLFileReader.cpp
+ #, fuzzy, c-format
+ msgid "Error: %s at line %lu"
+-msgstr "خطأ: %hs عند خط %lu"
++msgstr "خطأ: %s عند خط %lu"
+ 
+ #: libraries/lib-xml/XMLFileReader.cpp
+ #, c-format

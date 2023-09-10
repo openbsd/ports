@@ -1,0 +1,15 @@
+Replace obsolescent %hs printf specifier
+https://github.com/audacity/audacity/commit/e181ee115e727b4754619b04aa6e8ad872113592
+
+Index: locale/bg.po
+--- locale/bg.po.orig
++++ locale/bg.po
+@@ -2328,7 +2328,7 @@ msgstr "Не бе възможно да се отво�
+ #: libraries/lib-xml/XMLFileReader.cpp
+ #, fuzzy, c-format
+ msgid "Error: %s at line %lu"
+-msgstr "Грешка: %hs на ред %lu"
++msgstr "Грешка: %s на ред %lu"
+ 
+ #: libraries/lib-xml/XMLFileReader.cpp
+ #, c-format

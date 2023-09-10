@@ -1,0 +1,24 @@
+Replace obsolescent %hs printf specifier
+https://github.com/audacity/audacity/commit/e181ee115e727b4754619b04aa6e8ad872113592
+
+Index: locale/fa.po
+--- locale/fa.po.orig
++++ locale/fa.po
+@@ -4413,7 +4413,7 @@ msgstr ""
+ #: src/FileFormats.cpp
+ #, c-format
+ msgid "Error (file may not have been written): %s"
+-msgstr "خطا (ممکن است در پرونده نوشته شده باشد) : %hs"
++msgstr "خطا (ممکن است در پرونده نوشته شده باشد) : %s"
+ 
+ #: src/FileFormats.cpp
+ msgid "&Copy uncompressed files into the project (safer)"
+@@ -20567,7 +20567,7 @@ msgstr ""
+ #: plug-ins/eq-xml-to-txt-converter.ny
+ #, fuzzy, lisp-format
+ msgid "Error.~%File cannot be written:~%\"~a.txt\""
+-msgstr "خطا (ممکن است در پرونده نوشته شده باشد) : %hs"
++msgstr "خطا (ممکن است در پرونده نوشته شده باشد) : %s"
+ 
+ #: plug-ins/equalabel.ny
+ msgid "Regular Interval Labels"

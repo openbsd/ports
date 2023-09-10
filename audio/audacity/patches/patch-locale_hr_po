@@ -1,0 +1,15 @@
+Replace obsolescent %hs printf specifier
+https://github.com/audacity/audacity/commit/e181ee115e727b4754619b04aa6e8ad872113592
+
+Index: locale/hr.po
+--- locale/hr.po.orig
++++ locale/hr.po
+@@ -2333,7 +2333,7 @@ msgstr "Pogrješka pri otvaranju datoteke: \"%s\""
+ #: libraries/lib-xml/XMLFileReader.cpp
+ #, fuzzy, c-format
+ msgid "Error: %s at line %lu"
+-msgstr "Pogrješka: %hs u retku %lu"
++msgstr "Pogrješka: %s u retku %lu"
+ 
+ #: libraries/lib-xml/XMLFileReader.cpp
+ #, c-format

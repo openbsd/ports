@@ -1,0 +1,15 @@
+Replace obsolescent %hs printf specifier
+https://github.com/audacity/audacity/commit/e181ee115e727b4754619b04aa6e8ad872113592
+
+Index: locale/ta.po
+--- locale/ta.po.orig
++++ locale/ta.po
+@@ -2308,7 +2308,7 @@ msgstr "கோப்பை திறக்க மு�
+ #: libraries/lib-xml/XMLFileReader.cpp
+ #, fuzzy, c-format
+ msgid "Error: %s at line %lu"
+-msgstr "பிழை: %hs வரிசை %lu"
++msgstr "பிழை: %s வரிசை %lu"
+ 
+ #: libraries/lib-xml/XMLFileReader.cpp
+ #, c-format
