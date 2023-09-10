@@ -1,6 +1,6 @@
 COMMENT=	simple, correct PEP 517 build frontend
 
-MODPY_EGG_VERSION=	0.10.0
+MODPY_EGG_VERSION=	1.0.3
 
 DISTNAME=	build-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
