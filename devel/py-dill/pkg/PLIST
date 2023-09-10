@@ -1,4 +1,5 @@
 @pkgpath devel/py-dill
+bin/get_gprof
 bin/get_objgraph
 bin/undill
 lib/python${MODPY_VERSION}/site-packages/dill/
@@ -59,6 +60,8 @@ lib/python${MODPY_VERSION}/site-packages/dill/tests/${MODPY_PYCACHE}__init__.${M
 lib/python${MODPY_VERSION}/site-packages/dill/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dill/tests/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dill/tests/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dill/tests/${MODPY_PYCACHE}test_abc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/dill/tests/${MODPY_PYCACHE}test_abc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dill/tests/${MODPY_PYCACHE}test_check.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dill/tests/${MODPY_PYCACHE}test_check.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dill/tests/${MODPY_PYCACHE}test_classdef.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -113,6 +116,7 @@ lib/python${MODPY_VERSION}/site-packages/dill/tests/${MODPY_PYCACHE}test_temp.${
 lib/python${MODPY_VERSION}/site-packages/dill/tests/${MODPY_PYCACHE}test_temp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dill/tests/${MODPY_PYCACHE}test_weakref.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dill/tests/${MODPY_PYCACHE}test_weakref.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dill/tests/test_abc.py
 lib/python${MODPY_VERSION}/site-packages/dill/tests/test_check.py
 lib/python${MODPY_VERSION}/site-packages/dill/tests/test_classdef.py
 lib/python${MODPY_VERSION}/site-packages/dill/tests/test_dataclasses.py
