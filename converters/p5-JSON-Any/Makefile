@@ -1,18 +1,17 @@
 COMMENT =	wrapper class for the various JSON classes
 
-DISTNAME =	JSON-Any-1.39
-REVISION =	1
+DISTNAME =	JSON-Any-1.40
 FIX_EXTRACT_PERMISSIONS=Yes
 
 CATEGORIES =	converters
 
 # Perl
-PERMIT_PACKAGE = 	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 
 TEST_DEPENDS =		devel/p5-Test-Fatal \
-			devel/p5-Test-Requires \
+			devel/p5-Test-Needs \
 			devel/p5-Test-Warnings>=0.009 \
 			devel/p5-Test-Without-Module
 
