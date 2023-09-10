@@ -1,0 +1,13 @@
+Index: Shared/All.h
+--- Shared/All.h.orig
++++ Shared/All.h
+@@ -10,8 +10,7 @@ PLATFORM_LINUX
+ PLATFORM_ANDROID
+ **************************************************************************************************/
+ #if !defined(PLATFORM_WINDOWS) && !defined(PLATFORM_APPLE) && !defined(PLATFORM_LINUX)
+-    #pragma message("No platform set for MACLib, defaulting to Windows")
+-    #define PLATFORM_WINDOWS
++    #define PLATFORM_LINUX
+ #endif
+ 
+ #ifdef PLATFORM_ANDROID

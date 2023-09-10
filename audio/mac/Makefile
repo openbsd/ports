@@ -2,32 +2,30 @@ ONLY_FOR_ARCHS= aarch64 amd64 arm i386
 
 COMMENT=	Monkey's audio lossless codec
 
-DISTNAME=	mac-3.99-u4-b5
-PKGNAME=	mac-3.99.4.5
-REVISION =	5
-SHARED_LIBS +=  mac                  0.0      # .2.0
+VERSION=	10.20
+DISTNAME=	MAC_1020_SDK
+PKGNAME=	mac-${VERSION}
+SHARED_LIBS +=  MAC                  0.0      # .0.0
 CATEGORIES=	audio
+EXTRACT_SUFX=	.zip
 
-HOMEPAGE=	http://www.monkeysaudio.com/
+HOMEPAGE=	https://monkeysaudio.com
 
-# Monkey's Audio Source Code License Agreement
-# http://www.monkeysaudio.com/license.html
+# BSD-3-Clause
 PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c m ${COMPILER_LIBCXX}
 
 COMPILER =	base-clang ports-gcc base-gcc
 
-SITES=		http://bsd.cenkes.org/myports/
+MODULES =	devel/cmake
 
+SITES=		https://monkeysaudio.com/files/
+WRKDIST=	${WRKDIR}/mac-${VERSION}
+FIX_CRLF_FILES=	Shared/*.h
 
-CONFIGURE_STYLE=gnu
-
-.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
-BUILD_DEPENDS=	devel/yasm
-CONFIGURE_ARGS= --enable-assembly=yes
-.else
-CONFIGURE_ARGS= --enable-assembly=no
-.endif
+post-extract:
+	mkdir ${WRKSRC}
+	mv ${WRKDIR}/!(mac-${VERSION}|bin) ${WRKSRC}
 
 .include <bsd.port.mk>
