@@ -2,7 +2,7 @@ COMMENT=	command-line tools to work with RFCs and Internet Drafts
 
 GH_ACCOUNT=	paulehoffman
 GH_PROJECT=	ietf-cli
-GH_TAGNAME=	1.24
+GH_TAGNAME=	1.26
 
 CATEGORIES=	misc net books
 
