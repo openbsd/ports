@@ -8,6 +8,7 @@ vpn-user-portal/locale/
 vpn-user-portal/locale/CREDITS.md
 vpn-user-portal/locale/af-ZA.php
 vpn-user-portal/locale/ar-MA.php
+vpn-user-portal/locale/ca-ES.php
 vpn-user-portal/locale/da-DK.php
 vpn-user-portal/locale/de-DE.php
 vpn-user-portal/locale/empty.php
@@ -67,7 +68,6 @@ vpn-user-portal/src/Crypto/Minisign/Verifier.php
 vpn-user-portal/src/Crypto/VerifierInterface.php
 vpn-user-portal/src/DnsZoneGenerator.php
 vpn-user-portal/src/Dt.php
-vpn-user-portal/src/Environment.php
 vpn-user-portal/src/Exception/
 vpn-user-portal/src/Exception/ConnectionHookException.php
 vpn-user-portal/src/Exception/ConnectionManagerException.php
@@ -125,6 +125,7 @@ vpn-user-portal/src/Http/JsonResponse.php
 vpn-user-portal/src/Http/LogoutModule.php
 vpn-user-portal/src/Http/NodeApiModule.php
 vpn-user-portal/src/Http/NodeApiService.php
+vpn-user-portal/src/Http/NullSession.php
 vpn-user-portal/src/Http/OAuthModule.php
 vpn-user-portal/src/Http/OAuthTokenModule.php
 vpn-user-portal/src/Http/OAuthTokenService.php
@@ -139,7 +140,6 @@ vpn-user-portal/src/Http/Service.php
 vpn-user-portal/src/Http/ServiceInterface.php
 vpn-user-portal/src/Http/ServiceModuleInterface.php
 vpn-user-portal/src/Http/SessionInterface.php
-vpn-user-portal/src/Http/StaticPermissionHook.php
 vpn-user-portal/src/Http/UpdateUserInfoHook.php
 vpn-user-portal/src/Http/UserInfo.php
 vpn-user-portal/src/Http/VpnApiThreeModule.php
@@ -176,12 +176,14 @@ vpn-user-portal/src/OpenVpn/Exception/
 vpn-user-portal/src/OpenVpn/Exception/ClientConfigException.php
 vpn-user-portal/src/OpenVpn/ServerConfig.php
 vpn-user-portal/src/OpenVpn/TlsCrypt.php
+vpn-user-portal/src/PermissionSourceInterface.php
 vpn-user-portal/src/Protocol.php
 vpn-user-portal/src/QrCode.php
 vpn-user-portal/src/ScriptConnectionHook.php
 vpn-user-portal/src/ServerConfig.php
 vpn-user-portal/src/ServerInfo.php
 vpn-user-portal/src/ServerList.php
+vpn-user-portal/src/StaticPermissionSource.php
 vpn-user-portal/src/Storage.php
 vpn-user-portal/src/SysLogger.php
 vpn-user-portal/src/Tpl.php

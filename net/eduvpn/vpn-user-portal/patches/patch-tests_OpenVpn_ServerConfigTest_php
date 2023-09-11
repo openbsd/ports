@@ -1,0 +1,25 @@
+Index: tests/OpenVpn/ServerConfigTest.php
+--- tests/OpenVpn/ServerConfigTest.php.orig
++++ tests/OpenVpn/ServerConfigTest.php
+@@ -41,8 +41,8 @@ final class ServerConfigTest extends TestCase
+     # OpenVPN Server Config | Automatically Generated | Do NOT modify!
+     verb 3
+     dev-type tun
+-    user openvpn
+-    group openvpn
++    user _openvpn
++    group _openvpn
+     topology subnet
+     persist-key
+     persist-tun
+@@ -110,8 +110,8 @@ final class ServerConfigTest extends TestCase
+     # OpenVPN Server Config | Automatically Generated | Do NOT modify!
+     verb 3
+     dev-type tun
+-    user openvpn
+-    group openvpn
++    user _openvpn
++    group _openvpn
+     topology subnet
+     persist-key
+     persist-tun
