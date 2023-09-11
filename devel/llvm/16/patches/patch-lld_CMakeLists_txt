@@ -1,10 +1,7 @@
-Don't build MachO2 support in lld.  This code reaches into libunwind
-internals.
-
 Index: lld/CMakeLists.txt
 --- lld/CMakeLists.txt.orig
 +++ lld/CMakeLists.txt
-@@ -155,6 +155,20 @@ list (APPEND CMAKE_MODULE_PATH "${LLD_SOURCE_DIR}/cmak
+@@ -161,6 +161,20 @@ list(INSERT CMAKE_MODULE_PATH 0
  
  include(AddLLD)
  
@@ -25,7 +22,7 @@ Index: lld/CMakeLists.txt
  option(LLD_USE_VTUNE
         "Enable VTune user task tracking."
         OFF)
-@@ -206,7 +220,9 @@ endif()
+@@ -210,7 +224,9 @@ endif()
  add_subdirectory(docs)
  add_subdirectory(COFF)
  add_subdirectory(ELF)

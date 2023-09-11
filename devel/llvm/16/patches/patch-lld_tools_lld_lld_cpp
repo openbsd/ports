@@ -1,35 +1,15 @@
 Index: lld/tools/lld/lld.cpp
 --- lld/tools/lld/lld.cpp.orig
 +++ lld/tools/lld/lld.cpp
-@@ -70,6 +70,7 @@ static Flavor getFlavor(StringRef s) {
-       .Default(Invalid);
- }
- 
-+#ifndef __OpenBSD__
- static cl::TokenizerCallback getDefaultQuotingStyle() {
-   if (Triple(sys::getProcessTriple()).getOS() == Triple::Win32)
-     return cl::TokenizeWindowsCommandLine;
-@@ -106,6 +107,7 @@ static bool isPETarget(std::vector<const char *> &v) {
-   return false;
- #endif
- }
-+#endif
- 
- static Flavor parseProgname(StringRef progname) {
-   // Use GNU driver for "ld" by default.
-@@ -149,6 +151,10 @@ static int lldMain(int argc, const char **argv, llvm::
-   std::vector<const char *> args(argv, argv + argc);
-   auto link = [&args]() {
-     Flavor f = parseFlavor(args);
-+#ifdef __OpenBSD__
-+    if (f == Gnu)
-+      return elf::link;
-+#else
-     if (f == Gnu && isPETarget(args))
-       return mingw::link;
-     else if (f == Gnu)
-@@ -159,6 +165,7 @@ static int lldMain(int argc, const char **argv, llvm::
+@@ -155,10 +155,14 @@ static int lldMain(int argc, const char **argv, llvm::
+       return elf::link;
+     else if (f == WinLink)
+       return coff::link;
++#ifdef LLD_ENABLE_MACHO
+     else if (f == Darwin)
        return macho::link;
++#endif
++#ifdef LLD_ENABLE_WASM
      else if (f == Wasm)
        return lld::wasm::link;
 +#endif

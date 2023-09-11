@@ -90,6 +90,11 @@ CONFIGURE_ARGS +=	\
 	-DSPHINX_WARNINGS_AS_ERRORS=OFF \
 	-DSPHINX_OUTPUT_MAN=ON
 
+# OpenBSD specific options
+CONFIGURE_ARGS +=	\
+	-DLLD_ENABLE_MACHO=OFF \
+	-DLLD_ENABLE_WASM=ON
+
 # Disable some protections in the compiler to regain performance.
 CXXFLAGS-aarch64 =	-fno-ret-protector
 CXXFLAGS-amd64 =	-fno-ret-protector -mno-retpoline

@@ -1,23 +1,20 @@
-Don't build MachO2 support in lld.  This code reaches into libunwind
-internals.
-
 Index: lld/tools/lld/CMakeLists.txt
 --- lld/tools/lld/CMakeLists.txt.orig
 +++ lld/tools/lld/CMakeLists.txt
-@@ -15,10 +15,15 @@ target_link_libraries(lld
+@@ -23,10 +23,15 @@ lld_target_link_libraries(lld
+   lldCommon
    lldCOFF
-   lldDriver
    lldELF
--  lldMachO2
+-  lldMachO
    lldMinGW
    lldWasm
    )
 +
 +if (LLD_ENABLE_MACHO)
-+  target_link_libraries(lld
++  target_link_libraries(lld  
 +    lldMachO2
 +    )
-+endif()
++endif() 
  
  install(TARGETS lld
-   RUNTIME DESTINATION bin)
+   RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}")
