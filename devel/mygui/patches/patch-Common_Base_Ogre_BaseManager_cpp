@@ -1,29 +1,25 @@
 Index: Common/Base/Ogre/BaseManager.cpp
 --- Common/Base/Ogre/BaseManager.cpp.orig
 +++ Common/Base/Ogre/BaseManager.cpp
-@@ -59,19 +59,23 @@ namespace base
- 		#if MYGUI_PLATFORM == MYGUI_PLATFORM_APPLE
- 			mResourcePath = macBundlePath() + "/Contents/Resources/";
- 		#else
--			mResourcePath = "";
-+			mResourcePath = "${SYSCONFDIR}/MYGUI/";
- 		#endif
- 	}
- 
- 	bool BaseManager::create(int _width, int _height)
- 	{
+@@ -36,15 +36,19 @@ namespace base
+ #if MYGUI_PLATFORM == MYGUI_PLATFORM_APPLE
+ 		const std::string resourcePath = macBundlePath() + "/Contents/Resources/";
+ #else
+-		const std::string resourcePath = "";
++		const std::string resourcePath = "${SYSCONFDIR}/MYGUI/";
+ #endif
  		Ogre::String pluginsPath;
 +		char *homedir;
 +		homedir = getenv("HOME");
 +		std::string homePath;
-+		homePath = homedir;	
++		homePath = homedir;
  
- 		#ifndef OGRE_STATIC_LIB
- 			pluginsPath = mResourcePath + mPluginCfgName;
- 		#endif
+ #ifndef OGRE_STATIC_LIB
+ 		pluginsPath = resourcePath + "plugins.cfg";
+ #endif
  
--		mRoot = new Ogre::Root(pluginsPath, mResourcePath + "ogre.cfg", mResourcePath + "Ogre.log");
+-		mRoot = new Ogre::Root(pluginsPath, resourcePath + "ogre.cfg", resourcePath + "Ogre.log");
 +		mRoot = new Ogre::Root(pluginsPath, homePath + "/mygui-ogre.cfg", homePath + "/mygui-Ogre.log");
- 
- 		setupResources();
+ 		auto renderSystem = mRoot->getRenderSystemByName(mRoot->getAvailableRenderers()[0]->getName());
+ 		mRoot->setRenderSystem(renderSystem);
  
