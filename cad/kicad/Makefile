@@ -1,13 +1,15 @@
 # Sync cad/kicad-share/Makefile.inc with archs where kicad is broken
 BROKEN-powerpc =	segfaults when trying to run the PCB editor
 
+USE_NOBTCFI =		Yes
+
 DPB_PROPERTIES =	parallel
 
 V =			6.0.11
 COMMENT =		schematic and PCB editing software
 DISTNAME =		kicad-${V}
 EPOCH =			0
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=		kicad_3dsg                1.0 # 2.0
 
