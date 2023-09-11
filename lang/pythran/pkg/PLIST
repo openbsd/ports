@@ -2749,6 +2749,7 @@ lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/builtins/str/lstrip.hp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/builtins/str/replace.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/builtins/str/rstrip.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/builtins/str/split.hpp
+lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/builtins/str/splitlines.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/builtins/str/startswith.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/builtins/str/strip.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/builtins/str/upper.hpp
@@ -2971,6 +2972,7 @@ lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/builtins/str/l
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/builtins/str/replace.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/builtins/str/rstrip.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/builtins/str/split.hpp
+lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/builtins/str/splitlines.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/builtins/str/startswith.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/builtins/str/strip.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/builtins/str/upper.hpp
@@ -3349,6 +3351,7 @@ lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/numpy/ndarray/
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/numpy/ndarray/tofile.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/numpy/ndarray/tolist.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/numpy/ndarray/tostring.hpp
+lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/numpy/ndarray/view.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/numpy/ndenumerate.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/numpy/ndim.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/numpy/ndindex.hpp
@@ -3653,6 +3656,7 @@ lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/types/assignab
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/types/attr.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/types/bool.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/types/cfun.hpp
+lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/types/clongdouble.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/types/combined.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/types/complex.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/types/complex128.hpp
@@ -3679,6 +3683,7 @@ lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/types/intc.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/types/intp.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/types/lazy.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/types/list.hpp
+lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/types/longdouble.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/types/ndarray.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/types/nditerator.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/types/numpy_binary_op.hpp
@@ -4074,6 +4079,7 @@ lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/numpy/ndarray/sort.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/numpy/ndarray/tofile.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/numpy/ndarray/tolist.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/numpy/ndarray/tostring.hpp
+lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/numpy/ndarray/view.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/numpy/ndenumerate.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/numpy/ndim.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/numpy/ndindex.hpp
@@ -4384,6 +4390,7 @@ lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/types/assignable.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/types/attr.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/types/bool.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/types/cfun.hpp
+lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/types/clongdouble.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/types/combined.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/types/complex.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/types/complex128.hpp
@@ -4408,6 +4415,7 @@ lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/types/int8.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/types/intc.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/types/intp.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/types/list.hpp
+lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/types/longdouble.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/types/ndarray.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/types/nditerator.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/types/numpy_binary_op.hpp

@@ -1,6 +1,6 @@
 COMMENT =	ahead of time compiler for numeric kernels
 
-MODPY_EGG_VERSION =	0.13.1
+MODPY_EGG_VERSION =	0.14.0
 
 DISTNAME =	pythran-${MODPY_EGG_VERSION}
 
