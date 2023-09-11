@@ -4,7 +4,6 @@ ${P5SITE}/Perl/Tidy/
 ${P5SITE}/Perl/Tidy.pm
 ${P5SITE}/Perl/Tidy.pod
 ${P5SITE}/Perl/Tidy/Debugger.pm
-${P5SITE}/Perl/Tidy/DevNull.pm
 ${P5SITE}/Perl/Tidy/Diagnostics.pm
 ${P5SITE}/Perl/Tidy/FileWriter.pm
 ${P5SITE}/Perl/Tidy/Formatter.pm
@@ -12,9 +11,6 @@ ${P5SITE}/Perl/Tidy/HtmlWriter.pm
 ${P5SITE}/Perl/Tidy/IOScalar.pm
 ${P5SITE}/Perl/Tidy/IOScalarArray.pm
 ${P5SITE}/Perl/Tidy/IndentationItem.pm
-${P5SITE}/Perl/Tidy/LineBuffer.pm
-${P5SITE}/Perl/Tidy/LineSink.pm
-${P5SITE}/Perl/Tidy/LineSource.pm
 ${P5SITE}/Perl/Tidy/Logger.pm
 ${P5SITE}/Perl/Tidy/Tokenizer.pm
 ${P5SITE}/Perl/Tidy/VerticalAligner/
