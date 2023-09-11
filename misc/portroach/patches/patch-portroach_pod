@@ -1,0 +1,12 @@
+Index: portroach.pod
+--- portroach.pod.orig
++++ portroach.pod
+@@ -61,7 +61,7 @@ The recommended database backend is PostgreSQL.
+ Create database:
+ 
+     # createuser -U postgres -P portroach
+-    # createdb -U postgres portroach
++    # createdb -U postgres -O portroach portroach
+ 
+ Execute the included F<pgsql_init.sql> script via C<psql>:
+ 
