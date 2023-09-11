@@ -1,0 +1,31 @@
+Use rcctl in initdb instructions if using the path that the rc.d
+script handles.
+
+Index: src/bin/initdb/initdb.c
+--- src/bin/initdb/initdb.c.orig
++++ src/bin/initdb/initdb.c
+@@ -3152,6 +3152,16 @@ main(int argc, char *argv[])
+ 
+ 	if (!noinstructions)
+ 	{
++		if (strcmp(pgdata_native, "/var/postgresql/data") == 0)
++		{
++			printf("\nSuccess. You can now start the database server using:\n\n"
++			   "    rcctl start postgresql\n\n"
++			   "To start the PostgreSQL server automatically at boot:\n\n"
++			   "    rcctl enable postgresql\n\n"
++			   );
++		}
++		else
++		{
+ 		/*
+ 		 * Build up a shell command to tell the user how to start the server
+ 		 */
+@@ -3183,6 +3193,7 @@ main(int argc, char *argv[])
+ 			   start_db_cmd->data);
+ 
+ 		destroyPQExpBuffer(start_db_cmd);
++		}
+ 	}
+ 
+ 
