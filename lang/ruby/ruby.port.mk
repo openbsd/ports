@@ -1,5 +1,9 @@
 # ruby module
 
+# Variables defined in this file that prefixed with _ are designed for
+# internal use, not currently used in the ports tree outside this file,
+# and are purposely not documented.
+
 CATEGORIES+=		lang/ruby
 
 # Whether the ruby module should automatically add FLAVORs.
@@ -71,17 +75,18 @@ MODRUBY_ARCH=		${MACHINE_ARCH:S/amd64/x86_64/}-openbsd
 MODRUBY_BINREV =	${MODRUBY_LIBREV:S/.//}
 MODRUBY_BIN_RSPEC =	${LOCALBASE}/bin/rspec${MODRUBY_BINREV}
 MODRUBY_FLAVOR =	ruby${MODRUBY_BINREV}
-MODRUBY_LIBDIR=		${LOCALBASE}/lib/ruby
 MODRUBY_LIBREV =	${MODRUBY_REV}
+MODRUBY_BUILD_DEPENDS=	${MODRUBY_RUN_DEPENDS}
 MODRUBY_LIB_DEPENDS=	${MODRUBY_RUN_DEPENDS}
 MODRUBY_RUN_DEPENDS=	lang/ruby/${MODRUBY_REV}
 MODRUBY_SITEARCHDIR =	${MODRUBY_SITEDIR}/${MODRUBY_ARCH}
 MODRUBY_SITEDIR =	lib/ruby/site_ruby/${MODRUBY_LIBREV}
+MODRUBY_RELEXAMPLEDIR=	share/examples/${MODRUBY_PKG_PREFIX}
 MODRUBY_WANTLIB=	ruby${MODRUBY_BINREV}
 RAKE=			${LOCALBASE}/bin/rake${MODRUBY_BINREV}
 RUBY=			${LOCALBASE}/bin/ruby${MODRUBY_BINREV}
 
-MODRUBY_RSPEC3_DEPENDS = devel/ruby-rspec/3/rspec,${MODRUBY_FLAVOR}>=3.0
+_MODRUBY_RSPEC3_DEPENDS = devel/ruby-rspec/3/rspec,${MODRUBY_FLAVOR}>=3.0
 
 .if defined(MODRUBY_TEST)
 .  if !${MODRUBY_TEST:L:Mrspec3} && !${MODRUBY_TEST:L:Mtestrb} && \
@@ -98,17 +103,6 @@ NO_TEST =	Yes
 MODRUBY_TEST?=
 .endif
 
-MODRUBY_BUILD_DEPENDS=	${MODRUBY_RUN_DEPENDS}
-
-# common directories for ruby extensions
-# used to create docs and examples install path
-MODRUBY_RELDOCDIR=	share/doc/${MODRUBY_PKG_PREFIX}
-MODRUBY_RELEXAMPLEDIR=	share/examples/${MODRUBY_PKG_PREFIX}
-MODRUBY_DOCDIR=		${PREFIX}/${MODRUBY_RELDOCDIR}
-MODRUBY_EXAMPLEDIR=	${PREFIX}/${MODRUBY_RELEXAMPLEDIR}
-SUBST_VARS +=		MODRUBY_RELDOCDIR MODRUBY_RELEXAMPLEDIR
-UPDATE_PLIST_ARGS += -s MODRUBY_RELDOCDIR -s MODRUBY_RELEXAMPLEDIR
-
 # Assume that we want to automatically add ruby to BUILD_DEPENDS
 # and RUN_DEPENDS unless the port specifically requests not to.
 MODRUBY_BUILDDEP?=	Yes
@@ -122,7 +116,7 @@ RUN_DEPENDS+=		${MODRUBY_RUN_DEPENDS}
 .endif
 
 .if ${MODRUBY_TEST:L:Mrspec3}
-TEST_DEPENDS+=	${MODRUBY_RSPEC3_DEPENDS}
+TEST_DEPENDS+=	${_MODRUBY_RSPEC3_DEPENDS}
 .endif
 
 MODRUBY_RUBY_ADJ =	perl -pi \
@@ -131,11 +125,10 @@ MODRUBY_RUBY_ADJ =	perl -pi \
 		-e 'close ARGV if eof;'
 MODRUBY_ADJ_FILES?=
 .if !empty(MODRUBY_ADJ_FILES)
-MODRUBY_ADJ_REPLACE=	for pat in ${MODRUBY_ADJ_FILES:QL}; do \
+MODRUBY_pre-configure +=for pat in ${MODRUBY_ADJ_FILES:QL}; do \
 			 find ${WRKSRC} -type f -name "$$pat" \
 			  -exec ${MODRUBY_RUBY_ADJ} {} + ; \
 			done
-MODRUBY_pre-configure += ${MODRUBY_ADJ_REPLACE}
 .endif
 
 MODRUBY_WANTLIB+=	c gmp m pthread
@@ -168,7 +161,7 @@ COMPILER_LANGS ?= c
 # Add build complete file to package so rubygems doesn't complain
 # or build extensions at runtime
 GEM_EXTENSIONS_DIR ?= ${GEM_LIB}/extensions/${MODRUBY_ARCH:S/i386/x86/}/${MODRUBY_REV}/${DISTNAME}
-GEM_EXTENSIONS_FILE ?= ${GEM_EXTENSIONS_DIR}/gem.build_complete
+_GEM_EXTENSIONS_FILE ?= ${GEM_EXTENSIONS_DIR}/gem.build_complete
 SUBST_VARS+=	GEM_EXTENSIONS_DIR
 PKG_ARGS+=	-f ${PORTSDIR}/lang/ruby/rubygems-ext.PLIST
 .  else
@@ -176,17 +169,12 @@ PKG_ARGS+=	-f ${PORTSDIR}/lang/ruby/rubygems-ext.PLIST
 PKG_ARCH=	*
 .  endif
 
-# PLIST magic.  Set variables so that the same PLIST will work for
-# all ruby versions and implementations.
-SUBST_VARS+=	GEM_LIB GEM_BIN DISTNAME
-UPDATE_PLIST_ARGS += -s GEM_LIB -s GEM_BIN
-
 GEM=		${LOCALBASE}/bin/gem${MODRUBY_BINREV}
 GEM_BIN =	bin
 GEM_LIB =	lib/ruby/gems/${MODRUBY_LIBREV}
-GEM_BASE_LIB=	${GEM_BASE}/ruby/${MODRUBY_LIBREV}
-GEM_BASE=	${WRKDIR}/gem-tmp/.gem
-GEM_ABS_PATH=	${PREFIX}/${GEM_LIB}
+GEM_BASE_LIB=	${_GEM_BASE}/ruby/${MODRUBY_LIBREV}
+_GEM_BASE=	${WRKDIR}/gem-tmp/.gem
+_GEM_ABS_PATH=	${PREFIX}/${GEM_LIB}
 GEM_BASE_BIN=	${GEM_BASE_LIB}/bin
 
 # We purposely do not install documentation for ruby gems, because
@@ -211,7 +199,7 @@ EXTRACT_CASES += *.gem) \
 
 # Rebuild the gem manually after possible patching, then install it to a
 # temporary directory (not the final directory under fake).
-MODRUBY_BUILD_TARGET = \
+_MODRUBY_BUILD_TARGET = \
     if [ -f ${WRKDIST}/.metadata ]; then \
 	    cd ${WRKDIST} && gzip .metadata && \
 		    mv -f .metadata.gz ${_GEM_CONTENT}/metadata.gz; \
@@ -219,8 +207,8 @@ MODRUBY_BUILD_TARGET = \
     cd ${WRKDIST} && pax -wz -s '/.*${PATCHORIG:S@.@\.@g}$$//' \
 	    -x ustar -o write_opt=nodir . >${_GEM_DATAFILE}; \
     cd ${_GEM_CONTENT} && tar -cf ${WRKDIR}/${_GEM_PATCHED} *.gz; \
-    mkdir -p ${GEM_BASE}; \
-    env -i ${MAKE_ENV} HOME=`dirname ${GEM_BASE}` GEM_HOME=${GEM_BASE} \
+    mkdir -p ${_GEM_BASE}; \
+    env -i ${MAKE_ENV} HOME=`dirname ${_GEM_BASE}` GEM_HOME=${_GEM_BASE} \
 	    make=${_GEM_MAKE} \
 	    ${GEM} install ${GEM_FLAGS} ${WRKDIR}/${_GEM_PATCHED} \
 	    -- ${CONFIGURE_ARGS}
@@ -228,7 +216,7 @@ MODRUBY_BUILD_TARGET = \
 # Take the temporary gem directory, install the binary stub files to
 # the appropriate directory, and move and fix ownership the gem library
 # files.
-MODRUBY_INSTALL_TARGET = \
+_MODRUBY_INSTALL_TARGET = \
     if [ -d ${GEM_BASE_BIN} ]; then \
 	    ${INSTALL_DATA_DIR} ${PREFIX}/${GEM_BIN}; \
 	    for f in ${GEM_BASE_BIN}/*; do \
@@ -236,28 +224,30 @@ MODRUBY_INSTALL_TARGET = \
 	    done; \
 	    rm -r ${GEM_BASE_BIN}; \
     fi; \
-    ${INSTALL_DATA_DIR} ${GEM_ABS_PATH}; \
-    cd ${GEM_BASE_LIB} && mv * ${GEM_ABS_PATH}; \
-    if [ 'X' != "X${GEM_EXTENSIONS_FILE}" ]; then \
+    ${INSTALL_DATA_DIR} ${_GEM_ABS_PATH}; \
+    cd ${GEM_BASE_LIB} && mv * ${_GEM_ABS_PATH}; \
+    if [ 'X' != "X${_GEM_EXTENSIONS_FILE}" ]; then \
 	mkdir -p ${PREFIX}/${GEM_EXTENSIONS_DIR}; \
-	touch ${PREFIX}/${GEM_EXTENSIONS_FILE}; \
+	touch ${PREFIX}/${_GEM_EXTENSIONS_FILE}; \
     fi
-    chown -R ${SHAREOWN}:${SHAREGRP} ${GEM_ABS_PATH}
+    chown -R ${SHAREOWN}:${SHAREGRP} ${_GEM_ABS_PATH}
 
 .  if !target(do-build)
 do-build: 
-	${MODRUBY_BUILD_TARGET}
+	${_MODRUBY_BUILD_TARGET}
 .  endif
 .  if !target(do-install)
 do-install: 
-	${MODRUBY_INSTALL_TARGET}
+	${_MODRUBY_INSTALL_TARGET}
 .  endif
 .endif
 
-# These are mostly used by the non-gem ports.
-SUBST_VARS+=	MODRUBY_SITEARCHDIR MODRUBY_SITEDIR MODRUBY_LIBREV \
-		MODRUBY_ARCH
-UPDATE_PLIST_ARGS += -s MODRUBY_SITEARCHDIR -s MODRUBY_SITEDIR
+# PLIST magic.  Set variables so that the same PLIST will work for
+# all ruby versions and implementations.
+SUBST_VARS +=	MODRUBY_RELEXAMPLEDIR MODRUBY_SITEARCHDIR MODRUBY_SITEDIR \
+		MODRUBY_LIBREV MODRUBY_ARCH GEM_LIB GEM_BIN DISTNAME
+UPDATE_PLIST_ARGS +=	-s MODRUBY_RELEXAMPLEDIR -s MODRUBY_SITEARCHDIR \
+			-s MODRUBY_SITEDIR -s GEM_LIB -s GEM_BIN
 
 # test stuff
 
@@ -265,13 +255,13 @@ UPDATE_PLIST_ARGS += -s MODRUBY_SITEARCHDIR -s MODRUBY_SITEDIR
 .  if !target(do-test)
 
 .    if ${MODRUBY_TEST:L:Mrake}
-MODRUBY_TEST_BIN ?=	${RAKE}
+_MODRUBY_TEST_BIN ?=	${RAKE}
 .    elif ${MODRUBY_TEST:L:Mrspec3}
-MODRUBY_TEST_BIN ?=	${MODRUBY_BIN_RSPEC}
+_MODRUBY_TEST_BIN ?=	${MODRUBY_BIN_RSPEC}
 .    elif ${MODRUBY_TEST:L:Mtestrb}
-MODRUBY_TEST_BIN ?=	${RUBY} ${PORTSDIR}/lang/ruby/files/testrb.rb
+_MODRUBY_TEST_BIN ?=	${RUBY} ${PORTSDIR}/lang/ruby/files/testrb.rb
 .    elif ${MODRUBY_TEST:L:Mruby}
-MODRUBY_TEST_BIN ?=	${RUBY}
+_MODRUBY_TEST_BIN ?=	${RUBY}
 .    endif
 
 .    if ${MODRUBY_TEST:L:Mrspec3}
@@ -282,10 +272,9 @@ MODRUBY_TEST_TARGET ?=	test
 
 MODRUBY_TEST_ENV ?= 
 MODRUBY_TEST_ENV += RUBYLIB=.:"$$RUBYLIB"
-MODRUBY_TEST_DIR ?= ${WRKSRC}
 do-test:
-	cd ${MODRUBY_TEST_DIR} && ${SETENV} ${MAKE_ENV} HOME=${WRKBUILD} \
-		${MODRUBY_TEST_ENV} ${MODRUBY_TEST_BIN} \
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} HOME=${WRKBUILD} \
+		${MODRUBY_TEST_ENV} ${_MODRUBY_TEST_BIN} \
 		${MODRUBY_TEST_TARGET}
 .  endif
 .endif
