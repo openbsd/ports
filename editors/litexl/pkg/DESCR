@@ -1,0 +1,14 @@
+Lite XL is a lightweight text editor written mostly in Lua - it
+aims to provide something practical, pretty, small and fast,
+implemented as simply as possible; easy to modify and extend, or
+to use without doing either.
+
+Lite XL is based on the Lite editor and provide some enhancements
+while remaining generally compatible with it. The aim of Lite XL
+compared to Lite is to be more user friendly, improve the quality
+of font rendering, and reduce CPU usage. Please note that Lite XL
+is compatible with Lite for most plugins and all color themes. We
+provide a separate lite-xl-plugins repository for Lite XL, because
+in some cases some adaptations may be needed to make them work
+better with Lite XL. The repository with modified plugins is
+https://github.com/lite-xl/lite-xl-plugins.

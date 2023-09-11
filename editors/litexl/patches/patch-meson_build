@@ -1,0 +1,11 @@
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -82,6 +82,7 @@ if not get_option('source-only')
+     # Lua has no official .pc file
+     # so distros come up with their own names
+     lua_names = [
++        'lua54', # OpenBSD
+         'lua5.4', # Debian
+         'lua-5.4', # FreeBSD
+         'lua',    # Fedora
