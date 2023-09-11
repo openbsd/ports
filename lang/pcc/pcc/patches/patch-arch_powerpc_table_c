@@ -5,9 +5,9 @@ string literals in PIC.
 Index: arch/powerpc/table.c
 --- arch/powerpc/table.c.orig
 +++ arch/powerpc/table.c
-@@ -745,6 +745,14 @@ struct optab table[] = {
-  * The next rules takes care of assignments. "=".
+@@ -792,6 +792,14 @@ struct optab table[] = {
   */
+  
  
 +#if defined(ELFABI)
 +{ ASSIGN,	FOREFF|INAREG,
