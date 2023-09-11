@@ -40,6 +40,7 @@
      SUBDIR += le
      SUBDIR += leafpad
      SUBDIR += libreoffice
+     SUBDIR += litexl
      SUBDIR += micro
      SUBDIR += moe
      SUBDIR += nano
