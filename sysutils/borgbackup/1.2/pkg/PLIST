@@ -1,4 +1,6 @@
 @option is-branch
+@pkgpath sysutils/borgbackup
+@pkgpath sysutils/borgbackup/1.1
 bin/borg
 bin/borgfs
 lib/python${MODPY_VERSION}/site-packages/borg/
