@@ -1,6 +1,6 @@
 COMMENT =	static web mail archive generator
 
-DISTNAME =	smarc-0.1
+DISTNAME =	smarc-0.2
 
 CATEGORIES =	www mail
 
