@@ -2,7 +2,7 @@ COMMENT=	Xfce4 notification daemon
 
 XFCE_VERSION=	0.8.2
 XFCE_GOODIE=	xfce4-notifyd
-REVISION=	0
+REVISION=	1
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -15,7 +15,8 @@ MODXFCE_WANTLIB =	xfce4panel-2.0
 
 LIB_DEPENDS=	x11/xfce4/xfce4-panel \
 		devel/libnotify
-CONFIGURE_ARGS =	--enable-dbus-start-daemon
+CONFIGURE_ARGS =	--enable-dbus-start-daemon \
+		--disable-canberra
 
 WANTLIB += ICE SM X11 X11-xcb Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender
