@@ -1,6 +1,6 @@
 COMMENT=	library for WWW access in Perl
 
-DISTNAME=	libwww-perl-6.68
+DISTNAME=	libwww-perl-6.72
 PKGNAME=	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES=	www
 
