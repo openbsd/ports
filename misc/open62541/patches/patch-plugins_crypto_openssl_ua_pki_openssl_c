@@ -2,10 +2,14 @@ Replace X509_STORE_CTX_get_check_issued with X509_check_issued.
 https://github.com/libressl-portable/portable/issues/748
 https://github.com/open62541/open62541/commit/35939a5b688d9647dbc96db88df5df27ebcced7a
 
+Workaround libressl validation issues with self signed certificates
+by using the legacy verifier.
+https://marc.info/?l=libressl&m=169307453205178&w=2
+
 Index: plugins/crypto/openssl/ua_pki_openssl.c
 --- plugins/crypto/openssl/ua_pki_openssl.c.orig
 +++ plugins/crypto/openssl/ua_pki_openssl.c
-@@ -485,7 +485,7 @@ UA_CertificateVerification_Verify (void *             
+@@ -485,10 +485,15 @@ UA_CertificateVerification_Verify (void *             
      /* Set flag to check if the certificate has an invalid signature */
      X509_STORE_CTX_set_flags (storeCtx, X509_V_FLAG_CHECK_SS_SIGNATURE);
  
@@ -14,7 +18,15 @@ Index: plugins/crypto/openssl/ua_pki_openssl.c
          X509_STORE_CTX_set_flags (storeCtx, X509_V_FLAG_CRL_CHECK);
      }
  
-@@ -505,7 +505,7 @@ UA_CertificateVerification_Verify (void *             
++    /* use the libressl legacy verifier if available */
++#ifdef X509_V_FLAG_LEGACY_VERIFY
++    X509_STORE_CTX_set_flags(storeCtx, X509_V_FLAG_LEGACY_VERIFY);
++#endif
++
+     /* This condition will check whether the certificate is a User certificate or a CA certificate.
+      * If the KU_KEY_CERT_SIGN and KU_CRL_SIGN of key_usage are set, then the certificate shall be
+      * condidered as CA Certificate and cannot be used to establish a connection. Refer the test case
+@@ -505,7 +510,7 @@ UA_CertificateVerification_Verify (void *             
          /* Check if the not trusted certificate has a CRL file. If there is no CRL file available for the corresponding
           * parent certificate then return status code UA_STATUSCODE_BADCERTIFICATEISSUERREVOCATIONUNKNOWN. Refer the test
           * case CTT/Security/Security Certificate Validation/002.js */
@@ -23,3 +35,13 @@ Index: plugins/crypto/openssl/ua_pki_openssl.c
              /* Free X509_STORE_CTX and reuse it for certification verification */
              if (storeCtx != NULL) {
                 X509_STORE_CTX_free(storeCtx);
+@@ -527,6 +532,9 @@ UA_CertificateVerification_Verify (void *             
+             /* Set flags for CRL check */
+             X509_STORE_CTX_set_flags (storeCtx, X509_V_FLAG_CRL_CHECK | X509_V_FLAG_CRL_CHECK_ALL);
+ 
++#ifdef X509_V_FLAG_LEGACY_VERIFY
++            X509_STORE_CTX_set_flags(storeCtx, X509_V_FLAG_LEGACY_VERIFY);
++#endif
+             opensslRet = X509_verify_cert (storeCtx);
+             if (opensslRet != 1) {
+                 opensslRet = X509_STORE_CTX_get_error (storeCtx);
