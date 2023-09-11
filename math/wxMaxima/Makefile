@@ -1,6 +1,6 @@
 COMMENT =		wxWidgets GUI for the computer algebra system maxima
 
-V =			19.11.1
+V =			22.05.0
 GH_ACCOUNT =		wxMaxima-developers
 GH_PROJECT =		wxmaxima
 GH_TAGNAME =		Version-$V
