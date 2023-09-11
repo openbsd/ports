@@ -4,6 +4,7 @@ MODPY_EGG_VERSION=	3.2.2
 GH_TAGNAME=	${MODPY_EGG_VERSION}
 GH_ACCOUNT=	httpie
 GH_PROJECT=	httpie
+REVISION =	0
 
 CATEGORIES=	www net
 
@@ -27,7 +28,9 @@ RUN_DEPENDS=	net/py-socks${MODPY_FLAVOR} \
 		www/py-requests-toolbelt${MODPY_FLAVOR}
 TEST_DEPENDS=	devel/py-test-httpbin${MODPY_FLAVOR} \
 		devel/py-test-lazy-fixture${MODPY_FLAVOR} \
+		devel/py-test-mock${MODPY_FLAVOR} \
 		devel/py-mock${MODPY_FLAVOR} \
+		devel/py-rich${MODPY_FLAVOR} \
 		www/py-responses${MODPY_FLAVOR}
 PORTHOME=	${WRKSRC}
 
