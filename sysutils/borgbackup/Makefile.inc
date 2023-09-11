@@ -14,6 +14,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB +=		lz4 xxhash zstd
 
 COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
 
 MODULES =		lang/python
 MODPY_PYBUILD =		setuptools_scm
@@ -23,8 +24,12 @@ MODPY_PYTEST_ARGS =	build/lib.openbsd-${OSREV}-${ARCH}-cpython-${MODPY_MAJORMINO
 LIB_DEPENDS +=		archivers/lz4 \
 			archivers/zstd \
 			sysutils/xxhash
-RUN_DEPENDS +=		sysutils/py-packaging${MODPY_FLAVOR}
+BUILD_DEPENDS +=	devel/py-pkgconfig${MODPY_FLAVOR} \
+			lang/cython${MODPY_FLAVOR}
+RUN_DEPENDS +=		net/py-msgpack${MODPY_FLAVOR} \
+			sysutils/py-packaging${MODPY_FLAVOR}
 TEST_DEPENDS +=		${FULLPKGNAME}:${FULLPKGPATH} \
+			devel/py-dateutil${MODPY_FLAVOR} \
 			devel/py-test-benchmark${MODPY_FLAVOR}
 
 PORTHOME =		${WRKDIR}
