@@ -433,6 +433,7 @@
      SUBDIR += py-cheroot,python3
      SUBDIR += py-cookies,python3
      SUBDIR += py-feedgenerator,python3
+     SUBDIR += py-flasgger,python3
      SUBDIR += py-flask,python3
      SUBDIR += py-flask-cors,python3
      SUBDIR += py-flask-login,python3
