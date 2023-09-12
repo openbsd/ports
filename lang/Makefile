@@ -95,7 +95,6 @@
      SUBDIR += pcc
      SUBDIR += pfe
      SUBDIR += php
-     SUBDIR += ponyc
      SUBDIR += processing
      SUBDIR += pypy
      SUBDIR += python
