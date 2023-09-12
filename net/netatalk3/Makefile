@@ -1,11 +1,11 @@
 COMMENT=		AFP file and print services for IP networks
 
-V=			3.1.15
+V=			3.1.16
 DISTNAME=		netatalk-${V}
 PKGSPEC=		netatalk->=3,<4
 EPOCH=			0
 
-SHARED_LIBS +=  atalk                16.0     # 18.0
+SHARED_LIBS +=  atalk                16.0     # unknown
 
 CATEGORIES=		net
 
@@ -62,7 +62,7 @@ CONFIGURE_ARGS +=	--with-tracker-pkgconfig-version=0
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
-FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/netatalk \
+FAKE_FLAGS=		DBUS_SYS_DIR=${PREFIX}/share/examples/netatalk/dbus-1/system.d \
 			pkgconfdir=${PREFIX}/share/examples/netatalk/netatalk \
 			localstatedir=${PREFIX}/share/examples/netatalk/var
 
