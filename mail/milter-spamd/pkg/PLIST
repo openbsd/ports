@@ -1,10 +1,13 @@
 @newgroup _milter-spamd:532
 @newuser _milter-spamd:532:_milter-spamd::milter-spamd Account:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/spool/milter-spamd/*
-@bin libexec/milter-spamd
-@man man/man8/milter-spamd.8
 @rcscript ${RCDIR}/milter_spamd
 @mode 700
 @owner _milter-spamd
 @group _milter-spamd
 @sample /var/spool/milter-spamd/
+@mode
+@owner
+@group
+@bin libexec/milter-spamd
+@man man/man8/milter-spamd.8

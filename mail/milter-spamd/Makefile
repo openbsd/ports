@@ -1,11 +1,10 @@
 COMMENT=	sendmail milter plugin for SpamAssassin spamd
 
-DISTNAME=	milter-spamd-0.6
-REVISION=	6
+DISTNAME=	milter-spamd-0.9
 CATEGORIES=	mail
-MASTER_SITES=	http://www.benzedrine.ch/
+MASTER_SITES=	https://www.benzedrine.ch/
 
-HOMEPAGE=	http://www.benzedrine.ch/milter-spamd.html
+HOMEPAGE=	https://www.benzedrine.ch/milter-spamd.html
 
 # BSD
 PERMIT_PACKAGE=	Yes
