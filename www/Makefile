@@ -389,8 +389,6 @@
      SUBDIR += pecl-memcached,php80
      SUBDIR += pecl-memcached,php81
      SUBDIR += pecl-memcached,php82
-     SUBDIR += pecl-pecl_http,php74
-#    SUBDIR += pecl-pecl_http,php80 not yet, and not until pecl-propro has php80
      SUBDIR += pecl-pledge,php74
      SUBDIR += pecl-pledge,php80
      SUBDIR += pecl-pledge,php81
