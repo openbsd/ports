@@ -578,22 +578,66 @@ share/squid/errors/en/error-details.txt
 share/squid/errors/es/
 share/squid/errors/es-ar
 share/squid/errors/es-bo
-@comment share/squid/errors/es-bz
+share/squid/errors/es-bz
 share/squid/errors/es-cl
 share/squid/errors/es-co
-@comment share/squid/errors/es-cr
+share/squid/errors/es-cr
 share/squid/errors/es-cu
 share/squid/errors/es-do
 share/squid/errors/es-ec
 share/squid/errors/es-es
-@comment share/squid/errors/es-gt
-@comment share/squid/errors/es-hn
-@comment share/squid/errors/es-ni
-@comment share/squid/errors/es-pa
+share/squid/errors/es-gt
+share/squid/errors/es-hn
+share/squid/errors/es-mx/
+share/squid/errors/es-mx/ERR_ACCESS_DENIED
+share/squid/errors/es-mx/ERR_ACL_TIME_QUOTA_EXCEEDED
+share/squid/errors/es-mx/ERR_AGENT_CONFIGURE
+share/squid/errors/es-mx/ERR_AGENT_WPAD
+share/squid/errors/es-mx/ERR_CACHE_ACCESS_DENIED
+share/squid/errors/es-mx/ERR_CACHE_MGR_ACCESS_DENIED
+share/squid/errors/es-mx/ERR_CANNOT_FORWARD
+share/squid/errors/es-mx/ERR_CONFLICT_HOST
+share/squid/errors/es-mx/ERR_CONNECT_FAIL
+share/squid/errors/es-mx/ERR_DIR_LISTING
+share/squid/errors/es-mx/ERR_DNS_FAIL
+share/squid/errors/es-mx/ERR_ESI
+share/squid/errors/es-mx/ERR_FORWARDING_DENIED
+share/squid/errors/es-mx/ERR_FTP_DISABLED
+share/squid/errors/es-mx/ERR_FTP_FAILURE
+share/squid/errors/es-mx/ERR_FTP_FORBIDDEN
+share/squid/errors/es-mx/ERR_FTP_NOT_FOUND
+share/squid/errors/es-mx/ERR_FTP_PUT_CREATED
+share/squid/errors/es-mx/ERR_FTP_PUT_ERROR
+share/squid/errors/es-mx/ERR_FTP_PUT_MODIFIED
+share/squid/errors/es-mx/ERR_FTP_UNAVAILABLE
+share/squid/errors/es-mx/ERR_GATEWAY_FAILURE
+share/squid/errors/es-mx/ERR_ICAP_FAILURE
+share/squid/errors/es-mx/ERR_INVALID_REQ
+share/squid/errors/es-mx/ERR_INVALID_RESP
+share/squid/errors/es-mx/ERR_INVALID_URL
+share/squid/errors/es-mx/ERR_LIFETIME_EXP
+share/squid/errors/es-mx/ERR_NO_RELAY
+share/squid/errors/es-mx/ERR_ONLY_IF_CACHED_MISS
+share/squid/errors/es-mx/ERR_PRECONDITION_FAILED
+share/squid/errors/es-mx/ERR_PROTOCOL_UNKNOWN
+share/squid/errors/es-mx/ERR_READ_ERROR
+share/squid/errors/es-mx/ERR_READ_TIMEOUT
+share/squid/errors/es-mx/ERR_SECURE_CONNECT_FAIL
+share/squid/errors/es-mx/ERR_SHUTTING_DOWN
+share/squid/errors/es-mx/ERR_SOCKET_FAILURE
+share/squid/errors/es-mx/ERR_TOO_BIG
+share/squid/errors/es-mx/ERR_UNSUP_HTTPVERSION
+share/squid/errors/es-mx/ERR_UNSUP_REQ
+share/squid/errors/es-mx/ERR_URN_RESOLVE
+share/squid/errors/es-mx/ERR_WRITE_ERROR
+share/squid/errors/es-mx/ERR_ZERO_SIZE_OBJECT
+share/squid/errors/es-mx/error-details.txt
+share/squid/errors/es-ni
+share/squid/errors/es-pa
 share/squid/errors/es-pe
 share/squid/errors/es-pr
 share/squid/errors/es-py
-@comment share/squid/errors/es-sv
+share/squid/errors/es-sv
 share/squid/errors/es-us
 share/squid/errors/es-uy
 share/squid/errors/es-ve

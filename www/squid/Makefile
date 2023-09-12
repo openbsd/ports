@@ -1,16 +1,14 @@
 COMMENT-main=	WWW and FTP proxy cache and accelerator
 COMMENT-ldap=	LDAP authentication/ACL support for Squid
 
-V=		5.9
+V=		6.3
 DISTNAME=	squid-$V
 EXTRACT_SUFX=	.tar.xz
-PKGNAME-main=	squid-$V
-PKGNAME-ldap=	squid-ldap-$V
 DPB_PROPERTIES=	parallel
 
 # subpackages aren't flavoured, so overwrite the default name/path
-FULLPKGNAME-ldap = squid-ldap-$V
-FULLPKGPATH-ldap = ${PKGPATH},-ldap
+FULLPKGNAME-ldap= squid-ldap-$V
+FULLPKGPATH-ldap= ${PKGPATH},-ldap
 RUN_DEPENDS-ldap += squid-$V:www/squid
 
 CATEGORIES=	www
@@ -20,44 +18,41 @@ HOMEPAGE=	http://www.squid-cache.org/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-# requirement introduced with https://github.com/squid-cache/squid/pull/927
-# perhaps this can go away again later
-USE_GMAKE=	Yes
-
-cWANTLIB=	${COMPILER_LIBCXX} brotlidec brotlienc c execinfo \
+COMMONLIB=	${COMPILER_LIBCXX} brotlidec brotlienc c execinfo \
 		gmp gnutls hogweed iconv idn2 intl m nettle p11-kit \
 		pthread ssl tasn1 unistring z zstd
 
 # repo at https://github.com/squid-cache/squid
-MASTER_SITES=	${HOMEPAGE}Versions/v${V:R}/ \
+SITES=		${HOMEPAGE}Versions/v${V:R:R}/ \
 		https://ftp.mirrorservice.org/sites/ftp.squid-cache.org/pub/archive/${V:R:R}/
 
-# C++11
+# C++17
 COMPILER=	base-clang ports-gcc
 
 BUILD_DEPENDS+=	devel/cppunit
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
-SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/cfgaux
+USE_GMAKE=	Yes
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 CONFIGURE_ARGS=	--disable-strict-error-checking \
 		--disable-arch-native \
-		--enable-ssl-crtd
+		--disable-ecap \
+		--disable-esi \
+		--disable-shared
 
 EXTERNAL_ACL=	SQL_session file_userip time_quota \
 		unix_group
 
-WANTLIB-main +=	${cWANTLIB} crypto expat lzma tdb xml2 z
+WANTLIB-main +=	${COMMONLIB} crypto tdb z
 
 LIB_DEPENDS-main += \
 		databases/tdb \
 		devel/gettext,-runtime \
 		security/gnutls \
-		security/libnettle \
-		textproc/libxml
+		security/libnettle
 
 SYSCONFDIR=	${BASESYSCONFDIR}/squid
 LOCALSTATEDIR=	${BASELOCALSTATEDIR}/squid
@@ -69,7 +64,6 @@ FLAVOR?=
 
 CONFIGURE_ARGS+= --datadir="${PREFIX}/share/squid" \
 		--libexecdir="${PREFIX}/libexec/squid" \
-		--disable-loadable-modules \
 		--enable-arp-acl \
 		--enable-auth \
 		--enable-delay-pools \
@@ -84,6 +78,7 @@ CONFIGURE_ARGS+= --datadir="${PREFIX}/share/squid" \
 		--enable-ssl \
 		--enable-ssl-crtd \
 		--enable-stacktraces \
+		--enable-translation \
 		--with-openssl \
 		--enable-storeio="aufs ufs diskd rock" \
 		--with-default-user="_squid" \
@@ -139,23 +134,19 @@ EXTERNAL_ACL+=	LDAP_group eDirectory_userip
 .endif
 LIB_DEPENDS-ldap=   databases/openldap \
 		    security/gnutls
-WANTLIB-ldap +=     ${cWANTLIB} crypto lber ldap sasl2 ssl
+WANTLIB-ldap +=     ${COMMONLIB} crypto lber ldap sasl2 ssl
 
 post-install:
 	rm -rf ${WRKINST}/var/squid
 	cd ${PREFIX}/share/examples/squid; \
 	    rm -f mime.conf squid.conf cachemgr.conf errorpage.css msntauth.conf
-	@# remove unwanted auth helpers; msnt_multi_domain needs Authen::Smb
-	@# (not ported), others are risky (typically accessing master.passwd
-	@# which needs root).
+	# remove unwanted auth helpers; msnt_multi_domain needs Authen::Smb
+	# (not ported), others are risky (typically accessing master.passwd
+	# which needs root).
 .for i in basic_msnt_multi_domain_auth basic_getpwnam_auth basic_pam_auth basic_sasl_auth
 	rm -f ${PREFIX}/libexec/squid/$i ${PREFIX}/man/man8/$i.8
 .endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/snmp/mibs
-	-cd ${PREFIX}/share; mv squid/mib.txt snmp/mibs/SQUID-MIB.txt
-	# XXX was a symlink to es but is now a real directory
-	# remove for now (pkg_add -u can't cope with such updates),
-	# reinstate this and @comment'ed symlinks post release
-	rm -r ${PREFIX}/share/squid/errors/es-mx
+	cd ${PREFIX}/share; mv squid/mib.txt snmp/mibs/SQUID-MIB.txt
 
 .include <bsd.port.mk>
