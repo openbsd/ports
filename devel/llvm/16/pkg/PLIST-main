@@ -3459,7 +3459,6 @@ ${LLVM_BASE}/lib/libear/ear.c
 @static-lib ${LLVM_BASE}/lib/liblldCOFF.a
 @static-lib ${LLVM_BASE}/lib/liblldCommon.a
 @static-lib ${LLVM_BASE}/lib/liblldELF.a
-@static-lib ${LLVM_BASE}/lib/liblldMachO.a
 @static-lib ${LLVM_BASE}/lib/liblldMinGW.a
 @static-lib ${LLVM_BASE}/lib/liblldWasm.a
 ${LLVM_BASE}/lib/libscanbuild/

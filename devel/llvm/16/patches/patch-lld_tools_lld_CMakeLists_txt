@@ -12,7 +12,7 @@ Index: lld/tools/lld/CMakeLists.txt
 +
 +if (LLD_ENABLE_MACHO)
 +  target_link_libraries(lld  
-+    lldMachO2
++    lldMachO
 +    )
 +endif() 
  
