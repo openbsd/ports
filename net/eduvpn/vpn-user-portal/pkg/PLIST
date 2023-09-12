@@ -9,6 +9,7 @@ vpn-user-portal/locale/CREDITS.md
 vpn-user-portal/locale/af-ZA.php
 vpn-user-portal/locale/ar-MA.php
 vpn-user-portal/locale/ca-ES.php
+vpn-user-portal/locale/cs-CZ.php
 vpn-user-portal/locale/da-DK.php
 vpn-user-portal/locale/de-DE.php
 vpn-user-portal/locale/empty.php
@@ -20,6 +21,7 @@ vpn-user-portal/locale/nl-NL.php
 vpn-user-portal/locale/pl-PL.php
 vpn-user-portal/locale/pt-PT.php
 vpn-user-portal/locale/ro-RO.php
+vpn-user-portal/locale/sk-SK.php
 vpn-user-portal/locale/sv-SE.php
 vpn-user-portal/locale/uk-UA.php
 vpn-user-portal/php.mod
