@@ -10,7 +10,7 @@ Index: check_squid
  	required => 0,
  );
  
-@@ -154,7 +154,7 @@ $critical = undef if (defined($critical) and $critical
+@@ -154,13 +154,13 @@ $critical = undef if (defined($critical) and $critical
  $warning = undef if (defined($warning) and $warning eq '');
  $squidclient = `which squidclient` if (!defined($squidclient) or $squidclient eq '');
  $squidclient =~ s/^\s+|\s+$//g;
@@ -19,3 +19,10 @@ Index: check_squid
  
  $mp->set_thresholds(critical => $critical, warning => $warning);
  
+ # squidclient -h localhost -p 8080 -U root -W FPSlsker mgr:info
+ 
+-my @exec = ("-h", "\Q$host", "-p", "\Q$port", "-U", "\Q$user", "-W", "\Q$password", "mgr:info");
++my @exec = ("-h", "\Q$host", "-p", "\Q$port", "-U", "\Q$user", "-W", "\Q$password", "/squid-internal-mgr/info");
+ 
+ if (! -x $squidclient) {
+ 	die "$squidclient not found";
