@@ -1,10 +1,11 @@
 COMMENT=	sendmail milter plugin for regular expression filtering
 
 DISTNAME=	milter-regex-2.4
+REVISION=	0
 CATEGORIES=	mail
-MASTER_SITES=	http://www.benzedrine.ch/
+MASTER_SITES=	https://www.benzedrine.ch/
 
-HOMEPAGE=	http://www.benzedrine.ch/milter-regex.html
+HOMEPAGE=	https://www.benzedrine.ch/milter-regex.html
 
 # BSD
 PERMIT_PACKAGE=	Yes
