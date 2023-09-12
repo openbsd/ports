@@ -21,6 +21,7 @@
      SUBDIR += opensta
      SUBDIR += pcb
      SUBDIR += pcb2gcode
+     SUBDIR += prusaslicer
      SUBDIR += qcad
      SUBDIR += qelectrotech
      SUBDIR += qflow
