@@ -1,6 +1,6 @@
 COMMENT =		compact self-hosted Git service
 
-VERSION =		1.20.3
+VERSION =		1.20.4
 DISTNAME =		gitea-src-${VERSION}
 PKGNAME =		gitea-${VERSION}
 

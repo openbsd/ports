@@ -196,7 +196,13 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Disable the ability to interact with repositories using the HTTP protocol
  ;DISABLE_HTTP_GIT = false
-@@ -975,11 +975,11 @@ LEVEL = Info
+@@ -970,16 +970,16 @@ LEVEL = Info
+ 
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+-;[repository.local]
++[repository.local]
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;
  ;; Path for local repository copy. Defaults to `tmp/local-repo` (content gets deleted on gitea restart)
@@ -305,21 +311,15 @@ Index: custom/conf/app.example.ini
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;
-@@ -1560,12 +1560,12 @@ LEVEL = Info
+@@ -1560,7 +1560,7 @@ LEVEL = Info
  ;; If your provider does not explicitly say which protocol it uses but does provide a port,
  ;; you can set SMTP_PORT instead and this will be inferred.
  ;; (Before 1.18, see the notice, this was controlled via MAILER_TYPE and IS_TLS_ENABLED.)
 -;PROTOCOL =
-+PROTOCOL = smtp
++PROTOCOL = sendmail
  ;;
  ;; Mail server address, e.g. smtp.gmail.com.
  ;; For smtp+unix, this should be a path to a unix socket instead.
- ;; (Before 1.18, see the notice, this was combined with SMTP_PORT as HOST.)
--;SMTP_ADDR =
-+SMTP_ADDR = localhost:25
- ;;
- ;; Mail server port. Common ports are:
- ;;   25:  insecure SMTP
 @@ -1588,11 +1588,11 @@ LEVEL = Info
  ;;
  ;; Use client certificate in connection.
@@ -398,25 +398,25 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Federated avatar lookup uses DNS to discover avatar associated
  ;; with emails, see https://www.libravatar.org
-@@ -1805,7 +1805,7 @@ LEVEL = Info
- ;SERVE_DIRECT = false
+@@ -1780,7 +1780,7 @@ LEVEL = Info
+ 
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+-;[attachment]
++[attachment]
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;
- ;; Path for attachments. Defaults to `data/attachments` only available when STORAGE_TYPE is `local`
--;PATH = data/attachments
+@@ -1806,7 +1806,7 @@ LEVEL = Info
+ ;;
+ ;; Path for attachments. Defaults to `attachments`. Only available when STORAGE_TYPE is `local`
+ ;; Relative paths will be resolved to `${AppDataPath}/${attachment.PATH}`
+-;PATH = attachments
 +PATH = ${LOCALSTATEDIR}/gitea/data/attachments
  ;;
  ;; Minio endpoint to connect only available when STORAGE_TYPE is `minio`
  ;MINIO_ENDPOINT = localhost:9000
-@@ -1836,7 +1836,7 @@ LEVEL = Info
- 
- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
--;[time]
-+[time]
- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
- ;;
-@@ -2152,10 +2152,10 @@ LEVEL = Info
+@@ -2153,10 +2153,10 @@ LEVEL = Info
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;; Check for new Gitea versions
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -429,7 +429,7 @@ Index: custom/conf/app.example.ini
  ;RUN_AT_START = false
  ;ENABLE_SUCCESS_NOTICE = false
  ;SCHEDULE = @every 168h
-@@ -2246,13 +2246,13 @@ LEVEL = Info
+@@ -2247,13 +2247,13 @@ LEVEL = Info
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -446,7 +446,7 @@ Index: custom/conf/app.example.ini
  ;; Generate sitemap. Defaults to `true`.
  ;ENABLE_SITEMAP = true
  ;; Enable/Disable RSS/Atom feed
-@@ -2385,7 +2385,7 @@ LEVEL = Info
+@@ -2386,7 +2386,7 @@ LEVEL = Info
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -455,7 +455,7 @@ Index: custom/conf/app.example.ini
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;
-@@ -2397,7 +2397,7 @@ LEVEL = Info
+@@ -2398,7 +2398,7 @@ LEVEL = Info
  ;MINIO_BASE_PATH = packages/
  ;;
  ;; Path for chunked uploads. Defaults to APP_DATA_PATH + `tmp/package-upload`
@@ -464,7 +464,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Maximum count of package versions a single owner can have (`-1` means no limits)
  ;LIMIT_TOTAL_OWNER_COUNT = -1
-@@ -2487,7 +2487,7 @@ LEVEL = Info
+@@ -2488,7 +2488,7 @@ LEVEL = Info
  ;STORAGE_TYPE = local
  ;;
  ;; Where your lfs files reside, default is data/lfs.
