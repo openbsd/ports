@@ -1,6 +1,6 @@
 COMMENT =	portable, lightweight framework for the Objective-C language
 
-DISTNAME =	objfw-1.0
+DISTNAME =	objfw-1.0.2
 
 SHARED_LIBS +=	objfw		0.0
 SHARED_LIBS +=	objfwrt		0.0
@@ -23,6 +23,7 @@ MASTER_SITES =		https://objfw.nil.im/downloads/
 COMPILER=		base-clang ports-clang
 
 CONFIGURE_STYLE =	gnu
+CONFIGURE_FLAGS +=	--disable-silent-rules
 
 MAKE_FLAGS +=	OBJFW_LIB_MAJOR=${LIBobjfw_VERSION:R}
 MAKE_FLAGS +=	OBJFW_LIB_MINOR=${LIBobjfw_VERSION:E}
