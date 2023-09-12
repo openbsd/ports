@@ -1,12 +1,12 @@
 COMMENT =		source of the rust-openssl crate for regression testing
 
 # Follows HEAD
-VERSION =		20230909
+VERSION =		20230912
 DISTNAME =		rust-openssl-tests-${VERSION}
 
 GH_ACCOUNT =		sfackler
 GH_PROJECT =		rust-openssl
-GH_COMMIT =		2cea9d85c903df82ee949ef397c7d5cd18ac1648
+GH_COMMIT =		b1ac079d98288df03130f6433d74a067c4812dd6
 
 CATEGORIES =		security devel
 
@@ -34,6 +34,5 @@ do-install:
 VER_${_n} =	${_n}-${_v}
 SUBST_VARS +=	VER_${_n}
 .endfor
-
 
 .include <bsd.port.mk>
