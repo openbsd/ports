@@ -2,7 +2,8 @@ COMMENT=	Google WebP image format conversion tool
 
 GH_ACCOUNT=	webmproject
 GH_PROJECT=	libwebp
-GH_TAGNAME=	v1.3.0
+GH_COMMIT=	2af26267cdfcb63a88e5c74a85927a12d6ca1d76
+DISTNAME=	${GH_PROJECT}-1.3.1pl0
 CATEGORIES=	graphics
 
 SHARED_LIBS +=  sharpyuv             0.0      # 0.0
