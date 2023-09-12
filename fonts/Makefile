@@ -83,6 +83,7 @@
      SUBDIR += powerline-fonts
      SUBDIR += profont
      SUBDIR += public-sans
+     SUBDIR += recursive
      SUBDIR += roboto-fonts
      SUBDIR += ru-pscyr
      SUBDIR += ru-ptsans
