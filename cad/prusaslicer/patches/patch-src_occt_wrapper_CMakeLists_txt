@@ -1,0 +1,22 @@
+Index: src/occt_wrapper/CMakeLists.txt
+--- src/occt_wrapper/CMakeLists.txt.orig
++++ src/occt_wrapper/CMakeLists.txt
+@@ -19,9 +19,10 @@ include(GenerateExportHeader)
+ 
+ generate_export_header(OCCTWrapper)
+ 
+-find_package(OpenCASCADE 7.6.2 REQUIRED)
++find_package(OpenCASCADE REQUIRED)
+ 
+ set(OCCT_LIBS
++    -L${CMAKE_INSTALL_PREFIX}/lib
+     TKXDESTEP
+     TKSTEP
+     TKSTEP209
+@@ -56,5 +57,5 @@ target_link_libraries(OCCTWrapper ${OCCT_LIBS})
+ 
+ include(GNUInstallDirs)
+ 
+-install(TARGETS OCCTWrapper DESTINATION "${CMAKE_INSTALL_BINDIR}")
++install(TARGETS OCCTWrapper DESTINATION "${CMAKE_INSTALL_LIBDIR}")
+ 

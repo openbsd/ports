@@ -1,0 +1,13 @@
+Index: tests/fff_print/test_data.cpp
+--- tests/fff_print/test_data.cpp.orig
++++ tests/fff_print/test_data.cpp
+@@ -12,6 +12,9 @@
+ 
+ #include <boost/nowide/cstdio.hpp>
+ #include <boost/filesystem.hpp>
++#ifdef __OpenBSD__
++#  include <boost/filesystem/fstream.hpp>
++#endif
+ #include <libslic3r/ModelArrange.hpp>
+ 
+ using namespace std;

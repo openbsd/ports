@@ -1,0 +1,46 @@
+Index: src/CMakeLists.txt
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -24,8 +24,13 @@ endif ()
+ 
+ if (SLIC3R_GUI)
+     add_subdirectory(imgui)
+-    add_subdirectory(hidapi)
+-    include_directories(hidapi/include)
++    if (CMAKE_SYSTEM_NAME STREQUAL "OpenBSD")
++        pkg_check_modules(HIDAPI REQUIRED hidapi-libusb)
++        include_directories(${HIDAPI_INCLUDE_DIRS})
++    else ()
++        add_subdirectory(hidapi)
++        include_directories(hidapi/include)
++    endif ()
+ 
+     if(WIN32)
+         message(STATUS "WXWIN environment set to: $ENV{WXWIN}")
+@@ -84,7 +89,7 @@ if (SLIC3R_GUI)
+     string(REGEX MATCH "wxexpat" WX_EXPAT_BUILTIN ${wxWidgets_LIBRARIES})
+     if (EXPAT_FOUND AND NOT WX_EXPAT_BUILTIN)
+         list(FILTER wxWidgets_LIBRARIES EXCLUDE REGEX expat)
+-        list(APPEND wxWidgets_LIBRARIES libexpat)
++        list(APPEND wxWidgets_LIBRARIES ${EXPAT_LIBRARIES})
+     endif ()
+     
+     # This is an issue in the new wxWidgets cmake build, doesn't deal with librt
+@@ -127,7 +132,7 @@ if (NOT WIN32 AND NOT APPLE)
+     set_target_properties(PrusaSlicer PROPERTIES OUTPUT_NAME "prusa-slicer")
+ endif ()
+ 
+-target_link_libraries(PrusaSlicer libslic3r cereal)
++target_link_libraries(PrusaSlicer libslic3r)
+ 
+ if (APPLE)
+ #    add_compile_options(-stdlib=libc++)
+@@ -154,6 +159,8 @@ target_link_libraries(PrusaSlicer libslic3r_gui)
+         target_link_libraries(PrusaSlicer ws2_32 uxtheme setupapi)
+     elseif (APPLE)
+         target_link_libraries(PrusaSlicer "-framework OpenGL")
++    elseif (CMAKE_SYSTEM_NAME STREQUAL "OpenBSD")
++        # no-op
+     else ()
+         target_link_libraries(PrusaSlicer -ldl)
+     endif ()

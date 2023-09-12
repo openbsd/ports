@@ -1,0 +1,13 @@
+Index: src/slic3r/GUI/OpenGLManager.cpp
+--- src/slic3r/GUI/OpenGLManager.cpp.orig
++++ src/slic3r/GUI/OpenGLManager.cpp
+@@ -234,7 +234,8 @@ OpenGLManager::~OpenGLManager()
+ bool OpenGLManager::init_gl()
+ {
+     if (!m_gl_initialized) {
+-        if (glewInit() != GLEW_OK) {
++        GLenum err = glewInit();
++        if (err != GLEW_OK && err != GLEW_ERROR_NO_GLX_DISPLAY) {
+             BOOST_LOG_TRIVIAL(error) << "Unable to init glew library";
+             return false;
+         }
