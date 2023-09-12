@@ -10,7 +10,7 @@ Index: server/config/config.json
      "Forward80To443": false,
      "TrustedProxyIPHeader": [],
      "ReadTimeout": 300,
-@@ -97,7 +97,7 @@
+@@ -98,7 +98,7 @@
      "PersistentNotificationMaxRecipients": 5,
      "EnableAPIChannelDeletion": false,
      "EnableLocalMode": false,
@@ -19,7 +19,7 @@ Index: server/config/config.json
      "EnableAWSMetering": false,
      "SplitKey": "",
      "FeatureFlagSyncIntervalSeconds": 30,
-@@ -157,14 +157,14 @@
+@@ -158,14 +158,14 @@
      "ReplicaMonitorIntervalSeconds": 5
    },
    "LogSettings": {
@@ -36,7 +36,7 @@ Index: server/config/config.json
      "EnableWebhookDebugging": true,
      "EnableDiagnostics": true,
      "VerboseDiagnostics": false,
-@@ -184,14 +184,14 @@
+@@ -185,14 +185,14 @@
      "AdvancedLoggingConfig": ""
    },
    "NotificationLogSettings": {
@@ -53,7 +53,7 @@ Index: server/config/config.json
      "AdvancedLoggingJSON": {},
      "AdvancedLoggingConfig": ""
    },
-@@ -211,7 +211,7 @@
+@@ -212,7 +212,7 @@
      "MaxImageResolution": 33177600,
      "MaxImageDecoderConcurrency": -1,
      "DriverName": "local",
@@ -62,7 +62,7 @@ Index: server/config/config.json
      "EnablePublicLink": false,
      "ExtractContent": true,
      "ArchiveRecursion": false,
-@@ -258,11 +258,11 @@
+@@ -259,11 +259,11 @@
      "EnableSMTPAuth": false,
      "SMTPUsername": "",
      "SMTPPassword": "",
@@ -77,7 +77,7 @@ Index: server/config/config.json
      "PushNotificationServer": "https://push-test.mattermost.com",
      "PushNotificationContents": "full",
      "PushNotificationBuffer": 1000,
-@@ -299,7 +299,7 @@
+@@ -300,7 +300,7 @@
      "SupportEmail": "",
      "CustomTermsOfServiceEnabled": false,
      "CustomTermsOfServiceReAcceptancePeriod": 365,
@@ -86,7 +86,7 @@ Index: server/config/config.json
    },
    "AnnouncementSettings": {
      "EnableBanner": false,
-@@ -405,7 +405,7 @@
+@@ -406,7 +406,7 @@
    },
    "ComplianceSettings": {
      "Enable": false,
@@ -95,7 +95,7 @@ Index: server/config/config.json
      "EnableDaily": false,
      "BatchSize": 30000
    },
-@@ -568,8 +568,8 @@
+@@ -570,8 +570,8 @@
      "EnableUploads": false,
      "AllowInsecureDownloadURL": false,
      "EnableHealthCheck": true,
@@ -106,8 +106,8 @@ Index: server/config/config.json
      "Plugins": {},
      "PluginStates": {
        "com.mattermost.calls": {
-@@ -639,11 +639,11 @@
-     "DataRetentionConcurrencyEnabled": true
+@@ -640,11 +640,11 @@
+     "EnableExportDirectDownload": false
    },
    "ImportSettings": {
 -    "Directory": "./import",
