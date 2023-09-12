@@ -1299,7 +1299,6 @@
      SUBDIR += pkgconfig
      SUBDIR += plib
      SUBDIR += poedit
-     SUBDIR += pony-stable
      SUBDIR += popt
      SUBDIR += pre-commit
      SUBDIR += premake4
