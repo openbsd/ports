@@ -4,8 +4,7 @@ ONLY_FOR_ARCHS =	aarch64 amd64
 COMMENT =	create type safe go from SQL
 
 MODGO_MODNAME =	github.com/kyleconroy/sqlc
-MODGO_VERSION =	v1.12.0
-REVISION =	0
+MODGO_VERSION =	v1.15.0
 
 DISTNAME =	sqlc-${MODGO_VERSION}
 
