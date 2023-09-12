@@ -39,4 +39,7 @@ CONFIGURE_ARGS +=	-DXTRKCAD_USE_GETTEXT=on
 CONFIGURE_ENV +=	CFLAGS=-I${PREFIX}/include \
 		LDFLAGS="-pthread -L/usr/X11R6/lib -L${PREFIX}/lib -liconv -lintl"
 
+# patches/patch-app_i18n_fi_po
+FIX_CRLF_FILES=	${WRKSRC}/app/i18n/fi.po
+
 .include <bsd.port.mk>

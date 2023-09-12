@@ -1,0 +1,13 @@
+Erroneously marked as a C format string and flagged as invalid by msgfmt.
+
+Index: app/i18n/fi.po
+--- app/i18n/fi.po.orig
++++ app/i18n/fi.po
+@@ -12813,7 +12813,6 @@ msgstr ""
+ 
+ #. i18n: C:/Users/mf/Documents/XTrackCAD/src/work/app/lib/demos/dmhelix.xtr:28
+ #: ../../../../build/work/app/i18n/custmsg.h:627
+-#, c-format
+ msgid ""
+ "We will be creating a helix with a Elevation Difference of 12\", Grade of "
+ "1.5% and limit the Vertical Separation to at least 2\".\n"
