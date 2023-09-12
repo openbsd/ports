@@ -71,7 +71,7 @@ Index: gettext-runtime/intl/l10nflist.c
    }
  
  #if defined _WIN32 && !defined __CYGWIN__
-@@ -367,7 +370,7 @@ _nl_normalize_codeset (const char *codeset, size_t nam
+@@ -384,7 +387,7 @@ _nl_normalize_codeset (const char *codeset, size_t nam
    if (retval != NULL)
      {
        if (only_digit)

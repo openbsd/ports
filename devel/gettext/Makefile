@@ -2,23 +2,23 @@ COMMENT-runtime=	GNU gettext runtime libraries and programs
 COMMENT-textstyle=	text styling library
 COMMENT-tools=		GNU gettext development and translation tools
 
-VERSION=		0.21.1
+VERSION=		0.22
 DISTNAME=		gettext-${VERSION}
 PKGNAME-textstyle=	libtextstyle-${VERSION}
 
-SHARED_LIBS +=  intl                 7.0      # 11.0
-SHARED_LIBS +=  asprintf             1.1      # unknown
-SHARED_LIBS +=  textstyle            0.1      # 1.2
-SHARED_LIBS +=  gettextlib           11.0     # unknown
-SHARED_LIBS +=  gettextsrc           9.0      # unknown
-SHARED_LIBS +=  gettextpo            11.0     # 5.8
+SHARED_LIBS +=  intl                 8.0      # 11.0
+SHARED_LIBS +=  asprintf             2.0      # unknown
+SHARED_LIBS +=  textstyle            0.2      # 2.0
+SHARED_LIBS +=  gettextlib           12.0     # unknown
+SHARED_LIBS +=  gettextsrc           10.0     # unknown
+SHARED_LIBS +=  gettextpo            12.0     # 5.9
 
 SUBST_VARS=	VERSION
 
 CATEGORIES=	devel
 # DPB: parallel-safe, not worth it. Too much time in configure
 
-MASTER_SITES=	${MASTER_SITE_GNU:=gettext/}
+SITES=		${SITE_GNU:=gettext/}
 EXTRACT_SUFX=	.tar.xz
 
 HOMEPAGE=	https://www.gnu.org/software/gettext/

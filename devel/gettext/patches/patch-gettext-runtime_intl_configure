@@ -1,0 +1,15 @@
+There is no use for a relocatable library and this restores the .la file.
+https://savannah.gnu.org/bugs/index.php?64536
+
+Index: gettext-runtime/intl/configure
+--- gettext-runtime/intl/configure.orig
++++ gettext-runtime/intl/configure
+@@ -6695,7 +6695,7 @@ fi
+ 
+ 
+ 
+-enable_relocatable=yes
++enable_relocatable=no
+ 
+ ac_header= ac_cache=
+ for ac_item in $ac_header_c_list

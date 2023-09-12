@@ -3,12 +3,12 @@
 Index: gettext-tools/gnulib-lib/asyncsafe-spin.c
 --- gettext-tools/gnulib-lib/asyncsafe-spin.c.orig
 +++ gettext-tools/gnulib-lib/asyncsafe-spin.c
-@@ -138,7 +138,7 @@ do_unlock (asyncsafe_spinlock_t *lock)
+@@ -136,7 +136,7 @@ do_unlock (asyncsafe_spinlock_t *lock)
  #  elif (((__GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ >= 1)) \
-           && !defined __sparc__) \
+           && !(defined __sun && defined __sparc__) && !defined __ANDROID__) \
           || __clang_major__ >= 3) \
 -        && !defined __ibmxl__
 +        && !defined __ibmxl__ && !defined(__hppa__)
- /* Use GCC built-ins (available in GCC >= 4.1, except on SPARC, and
-    clang >= 3.0).
+ /* Use GCC built-ins (available in GCC >= 4.1, except on Solaris/SPARC and
+    Android, and clang >= 3.0).
     Documentation:

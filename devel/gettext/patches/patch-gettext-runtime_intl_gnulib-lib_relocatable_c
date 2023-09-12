@@ -1,6 +1,6 @@
-Index: gettext-runtime/intl/relocatable.c
---- gettext-runtime/intl/relocatable.c.orig
-+++ gettext-runtime/intl/relocatable.c
+Index: gettext-runtime/intl/gnulib-lib/relocatable.c
+--- gettext-runtime/intl/gnulib-lib/relocatable.c.orig
++++ gettext-runtime/intl/gnulib-lib/relocatable.c
 @@ -524,13 +524,17 @@ relocate (const char *pathname)
        if (pathname[orig_prefix_len] == '\0')
          {
