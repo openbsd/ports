@@ -3,6 +3,7 @@ COMMENT = C++ header-only serialization library
 GH_ACCOUNT =	USCiLab
 GH_PROJECT =	cereal
 GH_TAGNAME =	v1.3.2
+REVISION =	0
 
 CATEGORIES =	devel
 
@@ -17,10 +18,5 @@ CONFIGURE_ARGS = -DBUILD_DOC=OFF \
 			-DBUILD_SANDBOX=OFF \
 			-DSKIP_PERFORMANCE_COMPARISON=ON \
 			-DBUILD_TESTS=OFF
-
-# just header files
-PKG_ARCH =		*
-
-NO_BUILD =		Yes
 
 .include <bsd.port.mk>
