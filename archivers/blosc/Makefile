@@ -1,4 +1,4 @@
-V =		1.21.4
+V =		1.21.5
 COMMENT =	blocking, shuffling, fast and lossless compression library
 PKGNAME =	blosc-${V}
 CATEGORIES =	archivers
