@@ -3,7 +3,7 @@ SHA256 (cargo/android_system_properties-0.1.5.tar.gz) = gZ5yGdvUEEOsJ5sZgw8u/Ilx
 SHA256 (cargo/arc-swap-1.5.1.tar.gz) = mDzYudSwKm3G/6VXJi61hYonoAOP//4hoPEz6qgZoWQ=
 SHA256 (cargo/autocfg-1.1.0.tar.gz) = 1GiAK6sXy8DMV16bBT9B5yqja/prf1XjUp/6QxYbl/o=
 SHA256 (cargo/base64-0.13.1.tar.gz) = nhtYYnPFcCk2/nt9aJZkTYvnHmMUz+CdMWfJX3Elieg=
-SHA256 (cargo/bcder-0.7.0.tar.gz) = 8AfYrPuO99IZkRxxZMAlptNQRzUSD8XfWcPEeauE6lE=
+SHA256 (cargo/bcder-0.7.3.tar.gz) = vxa+yZD46iXKtmEZmQTvRS/PEfVlxATObP+98/jLvEc=
 SHA256 (cargo/bitflags-1.3.2.tar.gz) = vvONRRY8Lx3eCUp9/TPM9ZXJKQXI+PT9wY0G+xA3cYo=
 SHA256 (cargo/bumpalo-3.11.1.tar.gz) = Vy9pUTYhEYgwjxatLKXIUacSxGQGCuaXSURFjrg4gLo=
 SHA256 (cargo/bytes-1.3.0.tar.gz) = 37JOhmsVoa8qG2Y/EMa2uPOXqEqtuCjxLlsonsI6Ojw=
@@ -203,14 +203,14 @@ SHA256 (cargo/windows_x86_64_msvc-0.36.1.tar.gz) = yBHKSoyFPvQgq9hZK6U927rJBBD6t
 SHA256 (cargo/windows_x86_64_msvc-0.42.0.tar.gz) = 9AAJ2FdZclo02m2JqU5j173FCoYqzw28fI5Ijx7ctvU=
 SHA256 (cargo/winreg-0.10.1.tar.gz) = gND04nLIXe8TlHY4CxL5rGCSZondLgHUkjIi9AWAhp0=
 SHA256 (cargo/xattr-0.2.3.tar.gz) = bRUmu+Wq616waIX02Ye836XiMYcFXem4P+ABVqgh+rw=
-SHA256 (routinator-0.12.1.tar.gz) = gVD+VE+JIFuy1lvKRjiPBVzxOXHTFj/hdQi/Ix+auLw=
+SHA256 (routinator-0.12.2.tar.gz) = XMnEqkUkvN4gXJfDc+lB24Emddxz3EKAfBWuuL+94is=
 SHA256 (routinator-ui-0.3.4.tar.gz) = cHkJaz/ZhqoBsDzz50PPdNN7hEHTEoRMJeKwZd7tgpA=
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
 SIZE (cargo/android_system_properties-0.1.5.tar.gz) = 5243
 SIZE (cargo/arc-swap-1.5.1.tar.gz) = 66157
 SIZE (cargo/autocfg-1.1.0.tar.gz) = 13272
 SIZE (cargo/base64-0.13.1.tar.gz) = 61002
-SIZE (cargo/bcder-0.7.0.tar.gz) = 61289
+SIZE (cargo/bcder-0.7.3.tar.gz) = 63569
 SIZE (cargo/bitflags-1.3.2.tar.gz) = 23021
 SIZE (cargo/bumpalo-3.11.1.tar.gz) = 81207
 SIZE (cargo/bytes-1.3.0.tar.gz) = 57563
@@ -410,5 +410,5 @@ SIZE (cargo/windows_x86_64_msvc-0.36.1.tar.gz) = 661999
 SIZE (cargo/windows_x86_64_msvc-0.42.0.tar.gz) = 659377
 SIZE (cargo/winreg-0.10.1.tar.gz) = 25725
 SIZE (cargo/xattr-0.2.3.tar.gz) = 11959
-SIZE (routinator-0.12.1.tar.gz) = 5426830
+SIZE (routinator-0.12.2.tar.gz) = 5427788
 SIZE (routinator-ui-0.3.4.tar.gz) = 756828
