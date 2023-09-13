@@ -1,4 +1,4 @@
-/dev/dri/card0 rw
+/dev/dri rwx
 
 /etc/fonts r
 /etc/localtime r
