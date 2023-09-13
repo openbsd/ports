@@ -1,7 +1,7 @@
 Index: ui/ozone/platform/wayland/host/wayland_toplevel_window.h
 --- ui/ozone/platform/wayland/host/wayland_toplevel_window.h.orig
 +++ ui/ozone/platform/wayland/host/wayland_toplevel_window.h
-@@ -250,7 +250,7 @@ class WaylandToplevelWindow : public WaylandWindow,
+@@ -256,7 +256,7 @@ class WaylandToplevelWindow : public WaylandWindow,
    // Contains the previous state of the window.
    PlatformWindowState previous_state_ = PlatformWindowState::kUnknown;
  

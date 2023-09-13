@@ -5,7 +5,7 @@ Index: chrome/browser/extensions/api/image_writer_private/removable_storage_prov
  
  void RemovableStorageProvider::GetAllDevices(DeviceListReadyCallback callback) {
    DCHECK_CURRENTLY_ON(content::BrowserThread::UI);
-+#if !defined(OS_BSD)
++#if !BUILDFLAG(IS_BSD)
    if (g_test_device_list.Get().get() != nullptr) {
      base::SingleThreadTaskRunner::GetCurrentDefault()->PostTask(
          FROM_HERE,

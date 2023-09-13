@@ -1,7 +1,7 @@
 Index: chrome/app/profiles_strings.grdp
 --- chrome/app/profiles_strings.grdp.orig
 +++ chrome/app/profiles_strings.grdp
-@@ -60,7 +60,7 @@
+@@ -54,7 +54,7 @@
        Add Profile...
      </message>
    </if>

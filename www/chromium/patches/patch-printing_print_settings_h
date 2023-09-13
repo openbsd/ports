@@ -28,7 +28,7 @@ Index: printing/print_settings.h
    AdvancedSettings& advanced_settings() { return advanced_settings_; }
    const AdvancedSettings& advanced_settings() const {
      return advanced_settings_;
-@@ -377,7 +377,7 @@ class COMPONENT_EXPORT(PRINTING) PrintSettings {
+@@ -381,7 +381,7 @@ class COMPONENT_EXPORT(PRINTING) PrintSettings {
    // Number of pages per sheet.
    int pages_per_sheet_;
  

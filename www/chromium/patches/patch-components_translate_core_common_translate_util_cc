@@ -1,7 +1,7 @@
 Index: components/translate/core/common/translate_util.cc
 --- components/translate/core/common/translate_util.cc.orig
 +++ components/translate/core/common/translate_util.cc
-@@ -33,7 +33,7 @@ BASE_FEATURE(kTranslateSubFrames,
+@@ -21,7 +21,7 @@ const char kSecurityOrigin[] = "https://translate.goog
  BASE_FEATURE(kTFLiteLanguageDetectionEnabled,
               "TFLiteLanguageDetectionEnabled",
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) || \

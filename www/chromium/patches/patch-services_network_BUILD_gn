@@ -1,7 +1,7 @@
 Index: services/network/BUILD.gn
 --- services/network/BUILD.gn.orig
 +++ services/network/BUILD.gn
-@@ -375,7 +375,6 @@ if (is_linux || is_chromeos) {
+@@ -385,7 +385,6 @@ if (is_linux || is_chromeos) {
      ]
      deps = [
        "//base:base",

@@ -1,7 +1,7 @@
 Index: net/dns/host_resolver_cache.cc
 --- net/dns/host_resolver_cache.cc.orig
 +++ net/dns/host_resolver_cache.cc
-@@ -159,7 +159,11 @@ void HostResolverCache::Set(
+@@ -161,7 +161,11 @@ void HostResolverCache::Set(
  
    std::string domain_name = result->domain_name();
    entries_.emplace(

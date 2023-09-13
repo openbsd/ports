@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/views/eye_dropper/eye_dropper_view_aura.cc
 --- chrome/browser/ui/views/eye_dropper/eye_dropper_view_aura.cc.orig
 +++ chrome/browser/ui/views/eye_dropper/eye_dropper_view_aura.cc
-@@ -87,7 +87,7 @@ void EyeDropperView::MoveViewToFront() {
+@@ -119,7 +119,7 @@ void EyeDropperView::MoveViewToFront() {
  }
  
  void EyeDropperView::CaptureInputIfNeeded() {

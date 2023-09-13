@@ -10,7 +10,7 @@ Index: third_party/libusb/BUILD.gn
  
  import("//build/config/chromeos/ui_mode.gni")
  import("//build/config/features.gni")
-@@ -116,7 +116,7 @@ static_library("libusb") {
+@@ -103,7 +103,7 @@ static_library("libusb") {
      ]
    }
  
@@ -19,7 +19,7 @@ Index: third_party/libusb/BUILD.gn
      sources += [
        "src/libusb/os/linux_usbfs.c",
        "src/libusb/os/linux_usbfs.h",
-@@ -127,11 +127,21 @@ static_library("libusb") {
+@@ -114,11 +114,21 @@ static_library("libusb") {
      ]
    }
  
@@ -42,7 +42,7 @@ Index: third_party/libusb/BUILD.gn
      sources += [ "src/libusb/os/linux_udev.cc" ]
      defines += [
        "HAVE_LIBUDEV=1",
-@@ -140,7 +150,7 @@ static_library("libusb") {
+@@ -127,7 +137,7 @@ static_library("libusb") {
      deps += [ "//build/linux/libudev" ]
    }
  

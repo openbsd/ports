@@ -10,7 +10,7 @@ Index: chrome/browser/ui/webui/realbox/realbox_handler.cc
  constexpr char kLinuxShareIconResourceName[] =
      "//resources/cr_components/omnibox/icons/share.svg";
  #else
-@@ -735,7 +735,7 @@ std::string RealboxHandler::PedalVectorIconToResourceN
+@@ -740,7 +740,7 @@ std::string RealboxHandler::PedalVectorIconToResourceN
        icon.name == omnibox::kShareWinChromeRefreshIcon.name) {
      return kWinShareIconResourceName;
    }

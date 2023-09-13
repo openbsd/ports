@@ -10,7 +10,7 @@ Index: chrome/browser/web_applications/test/os_integration_test_override_impl.h
  struct LinuxFileRegistration {
    base::FilePath file_name;
    std::string xdg_command;
-@@ -116,7 +116,7 @@ class OsIntegrationTestOverrideImpl : public OsIntegra
+@@ -112,7 +112,7 @@ class OsIntegrationTestOverrideImpl : public OsIntegra
    bool DeleteApplicationMenuDirOnWin();
  #endif  // BUILDFLAG(IS_WIN)
  
@@ -19,7 +19,7 @@ Index: chrome/browser/web_applications/test/os_integration_test_override_impl.h
    bool DeleteDesktopDirOnLinux();
  #endif  // BUILDFLAG(IS_LINUX)
  
-@@ -235,7 +235,7 @@ class OsIntegrationTestOverrideImpl : public OsIntegra
+@@ -231,7 +231,7 @@ class OsIntegrationTestOverrideImpl : public OsIntegra
    const base::FilePath& chrome_apps_folder() override;
    void EnableOrDisablePathOnLogin(const base::FilePath& file_path,
                                    bool enable_on_login) override;
@@ -28,7 +28,7 @@ Index: chrome/browser/web_applications/test/os_integration_test_override_impl.h
    const base::FilePath& desktop() override;
    const base::FilePath& startup() override;
    const base::FilePath& applications_dir() override;
-@@ -282,7 +282,7 @@ class OsIntegrationTestOverrideImpl : public OsIntegra
+@@ -278,7 +278,7 @@ class OsIntegrationTestOverrideImpl : public OsIntegra
    base::ScopedTempDir chrome_apps_folder_;
    std::map<base::FilePath, bool> startup_enabled_;
  

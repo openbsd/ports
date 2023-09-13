@@ -28,7 +28,7 @@ Index: chrome/app/google_chrome_strings.grd
          <if expr="use_titlecase">
            <message name="IDS_RELAUNCH_TO_UPDATE_ALT" desc="Alternate text label of the relaunch to update Chrome menu item">
              Relaunch to Update - Your tabs will reopen
-@@ -1276,7 +1276,7 @@ Permissions you've already given to websites and apps 
+@@ -1278,7 +1278,7 @@ Permissions you've already given to websites and apps 
          </message>
        </if>
  

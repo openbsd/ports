@@ -1,7 +1,7 @@
 Index: components/power_metrics/BUILD.gn
 --- components/power_metrics/BUILD.gn.orig
 +++ components/power_metrics/BUILD.gn
-@@ -42,7 +42,7 @@ static_library("power_metrics") {
+@@ -41,7 +41,7 @@ static_library("power_metrics") {
      ldflags = [ "/DELAYLOAD:setupapi.dll" ]
    }
  
