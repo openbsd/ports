@@ -182,7 +182,15 @@ post-install:
 	rm ${PREFIX}/man/man1/FileCheck-${LLVM_MAJOR}.1
 	rm -rf ${PREFIX}/${LLVM_BASE}/man    
 
-diff-to-base:
+	# search and remove headers that might conflict with base
+	cd ${PREFIX}/${CLANG_INCLUDE_PATH} && \
+		find . -name '*.h' | sed "s,./,,g" | while read h; \
+		do \
+			if test -e /usr/include/$${h}; then rm $${h}; fi; \
+		done
+
+
+diff-to-base: ${_PATCH_COOKIE}
 .for _subdir in clang lld lldb llvm
 	@_d=/tmp/llvm${LLVM_MAJOR}_${_subdir}.diff && echo "Creating $${_d} ..." && \
 		diff -ruN -x CVS -x test -x '*${PATCHORIG}' -x '*.beforesubst' \

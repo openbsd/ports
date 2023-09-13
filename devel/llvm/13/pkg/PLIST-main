@@ -2783,7 +2783,7 @@ ${CLANG_INCLUDE_PATH}/cuda_wrappers/new
 ${CLANG_INCLUDE_PATH}/emmintrin.h
 ${CLANG_INCLUDE_PATH}/enqcmdintrin.h
 ${CLANG_INCLUDE_PATH}/f16cintrin.h
-${CLANG_INCLUDE_PATH}/float.h
+@comment ${CLANG_INCLUDE_PATH}/float.h
 ${CLANG_INCLUDE_PATH}/fma4intrin.h
 ${CLANG_INCLUDE_PATH}/fmaintrin.h
 ${CLANG_INCLUDE_PATH}/fxsrintrin.h
@@ -2798,11 +2798,11 @@ ${CLANG_INCLUDE_PATH}/hvx_hexagon_protos.h
 ${CLANG_INCLUDE_PATH}/ia32intrin.h
 ${CLANG_INCLUDE_PATH}/immintrin.h
 ${CLANG_INCLUDE_PATH}/intrin.h
-${CLANG_INCLUDE_PATH}/inttypes.h
+@comment ${CLANG_INCLUDE_PATH}/inttypes.h
 ${CLANG_INCLUDE_PATH}/invpcidintrin.h
-${CLANG_INCLUDE_PATH}/iso646.h
+@comment ${CLANG_INCLUDE_PATH}/iso646.h
 ${CLANG_INCLUDE_PATH}/keylockerintrin.h
-${CLANG_INCLUDE_PATH}/limits.h
+@comment ${CLANG_INCLUDE_PATH}/limits.h
 ${CLANG_INCLUDE_PATH}/lwpintrin.h
 ${CLANG_INCLUDE_PATH}/lzcntintrin.h
 ${CLANG_INCLUDE_PATH}/mm3dnow.h
@@ -2846,21 +2846,21 @@ ${CLANG_INCLUDE_PATH}/sgxintrin.h
 ${CLANG_INCLUDE_PATH}/shaintrin.h
 ${CLANG_INCLUDE_PATH}/smmintrin.h
 ${CLANG_INCLUDE_PATH}/stdalign.h
-${CLANG_INCLUDE_PATH}/stdarg.h
+@comment ${CLANG_INCLUDE_PATH}/stdarg.h
 ${CLANG_INCLUDE_PATH}/stdatomic.h
-${CLANG_INCLUDE_PATH}/stdbool.h
-${CLANG_INCLUDE_PATH}/stddef.h
-${CLANG_INCLUDE_PATH}/stdint.h
+@comment ${CLANG_INCLUDE_PATH}/stdbool.h
+@comment ${CLANG_INCLUDE_PATH}/stddef.h
+@comment ${CLANG_INCLUDE_PATH}/stdint.h
 ${CLANG_INCLUDE_PATH}/stdnoreturn.h
 ${CLANG_INCLUDE_PATH}/tbmintrin.h
-${CLANG_INCLUDE_PATH}/tgmath.h
+@comment ${CLANG_INCLUDE_PATH}/tgmath.h
 ${CLANG_INCLUDE_PATH}/tmmintrin.h
 ${CLANG_INCLUDE_PATH}/tsxldtrkintrin.h
 ${CLANG_INCLUDE_PATH}/uintrintrin.h
 ${CLANG_INCLUDE_PATH}/unwind.h
 ${CLANG_INCLUDE_PATH}/vadefs.h
 ${CLANG_INCLUDE_PATH}/vaesintrin.h
-${CLANG_INCLUDE_PATH}/varargs.h
+@comment ${CLANG_INCLUDE_PATH}/varargs.h
 ${CLANG_INCLUDE_PATH}/vecintrin.h
 ${CLANG_INCLUDE_PATH}/vpclmulqdqintrin.h
 ${CLANG_INCLUDE_PATH}/waitpkgintrin.h
