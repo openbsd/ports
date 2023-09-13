@@ -1172,6 +1172,8 @@ share/btest/data/pcaps/communityid/udp.pcap
 share/btest/data/pcaps/conn-size.trace
 share/btest/data/pcaps/contentline-irc-5k-line.pcap
 share/btest/data/pcaps/dce-rpc/
+share/btest/data/pcaps/dce-rpc/20-fids-no-close.pcap
+share/btest/data/pcaps/dce-rpc/20-fids.pcap
 share/btest/data/pcaps/dce-rpc/cs_window7-join_stream092.pcap
 share/btest/data/pcaps/dce-rpc/dce_rpc_netlogon.pcap
 share/btest/data/pcaps/dce-rpc/dce_rpc_ntlm.pcap
@@ -1242,6 +1244,7 @@ share/btest/data/pcaps/erspan.trace
 share/btest/data/pcaps/erspanI.pcap
 share/btest/data/pcaps/erspanII.pcap
 share/btest/data/pcaps/erspanIII.pcap
+share/btest/data/pcaps/fake-syslog-with-padding.pcap
 share/btest/data/pcaps/finger/
 share/btest/data/pcaps/finger/standard.pcap
 share/btest/data/pcaps/finger/verbose.pcap
@@ -1268,6 +1271,7 @@ share/btest/data/pcaps/http/100-continue.trace
 share/btest/data/pcaps/http/206_example_a.pcap
 share/btest/data/pcaps/http/206_example_b.pcap
 share/btest/data/pcaps/http/206_example_c.pcap
+share/btest/data/pcaps/http/basic-auth-with-extra-space.trace
 share/btest/data/pcaps/http/bro.org-filtered.pcap
 share/btest/data/pcaps/http/bro.org.pcap
 share/btest/data/pcaps/http/byteranges.trace
@@ -1291,6 +1295,7 @@ share/btest/data/pcaps/http/http-11-request-then-cruft.pcap
 share/btest/data/pcaps/http/http-bad-content-range-01.pcap
 share/btest/data/pcaps/http/http-bad-request-with-version.trace
 share/btest/data/pcaps/http/http-filename.pcap
+share/btest/data/pcaps/http/http-large-gap.pcap
 share/btest/data/pcaps/http/http-post-large.pcap
 share/btest/data/pcaps/http/http_09.pcap
 share/btest/data/pcaps/http/http_large_req_8001.pcap
@@ -1397,7 +1402,7 @@ share/btest/data/pcaps/mysql/mysql.trace
 share/btest/data/pcaps/mysql/plain-amazon-rds.trace
 share/btest/data/pcaps/mysql/selects_with_new_proto.trace
 share/btest/data/pcaps/mysql/tls-12-amazon-rds.trace
-share/btest/data/pcaps/mysql/tls-13-amazon-rds.trace
+share/btest/data/pcaps/mysql/tls-${MODCLANG_VERSION}-amazon-rds.trace
 share/btest/data/pcaps/ncp.pcap
 share/btest/data/pcaps/negative-time.pcap
 share/btest/data/pcaps/nflog-http.pcap
@@ -1507,6 +1512,7 @@ share/btest/data/pcaps/ssl-and-ssh-using-sslh.trace
 share/btest/data/pcaps/syslog-missing-pri.trace
 share/btest/data/pcaps/syslog-single-udp.trace
 share/btest/data/pcaps/tcp/
+share/btest/data/pcaps/tcp-http-with-padding.pcap
 share/btest/data/pcaps/tcp/fin_retransmission.pcap
 share/btest/data/pcaps/tcp/handshake-reorder.trace
 share/btest/data/pcaps/tcp/http-on-irc-port-missing-syn.pcap
@@ -1544,8 +1550,8 @@ share/btest/data/pcaps/tls/chrome-34-google.trace
 share/btest/data/pcaps/tls/chrome-63.0.3211.0-canary-tls_experiment.pcap
 share/btest/data/pcaps/tls/client-certificate.pcap
 share/btest/data/pcaps/tls/dhe.pcap
-share/btest/data/pcaps/tls/dtls13-cid.pcap
-share/btest/data/pcaps/tls/dtls13-wolfssl.pcap
+share/btest/data/pcaps/tls/dtls${MODCLANG_VERSION}-cid.pcap
+share/btest/data/pcaps/tls/dtls${MODCLANG_VERSION}-wolfssl.pcap
 share/btest/data/pcaps/tls/dtls1_0.pcap
 share/btest/data/pcaps/tls/dtls1_2.pcap
 share/btest/data/pcaps/tls/ecdhe.pcap
@@ -1579,7 +1585,7 @@ share/btest/data/pcaps/tls/ssl.v3.trace
 share/btest/data/pcaps/tls/telesec.pcap
 share/btest/data/pcaps/tls/tls-1.2-handshake-failure.trace
 share/btest/data/pcaps/tls/tls-1.2-stream-keylog.pcap
-share/btest/data/pcaps/tls/tls-13draft19-early-data.pcap
+share/btest/data/pcaps/tls/tls-${MODCLANG_VERSION}draft19-early-data.pcap
 share/btest/data/pcaps/tls/tls-conn-with-extensions.trace
 share/btest/data/pcaps/tls/tls-early-alert.trace
 share/btest/data/pcaps/tls/tls-expired-cert.trace
@@ -1587,13 +1593,13 @@ share/btest/data/pcaps/tls/tls-fragmented-handshake.pcap.gz
 share/btest/data/pcaps/tls/tls1.2-protocol-violation.pcap
 share/btest/data/pcaps/tls/tls1.2.trace
 share/btest/data/pcaps/tls/tls12-decryption.pcap
-share/btest/data/pcaps/tls/tls13_psk_succesfull.pcap
-share/btest/data/pcaps/tls/tls13_wolfssl.pcap
-share/btest/data/pcaps/tls/tls13draft16-chrome55.0.2879.0-canary-aborted.pcap
-share/btest/data/pcaps/tls/tls13draft16-chrome55.0.2879.0-canary.pcap
-share/btest/data/pcaps/tls/tls13draft16-ff52.a01-aborted.pcap
-share/btest/data/pcaps/tls/tls13draft16-ff52.a01.pcap
-share/btest/data/pcaps/tls/tls13draft23-chrome67.0.3368.0-canary.pcap
+share/btest/data/pcaps/tls/tls${MODCLANG_VERSION}_psk_succesfull.pcap
+share/btest/data/pcaps/tls/tls${MODCLANG_VERSION}_wolfssl.pcap
+share/btest/data/pcaps/tls/tls${MODCLANG_VERSION}draft16-chrome55.0.2879.0-canary-aborted.pcap
+share/btest/data/pcaps/tls/tls${MODCLANG_VERSION}draft16-chrome55.0.2879.0-canary.pcap
+share/btest/data/pcaps/tls/tls${MODCLANG_VERSION}draft16-ff52.a01-aborted.pcap
+share/btest/data/pcaps/tls/tls${MODCLANG_VERSION}draft16-ff52.a01.pcap
+share/btest/data/pcaps/tls/tls${MODCLANG_VERSION}draft23-chrome67.0.3368.0-canary.pcap
 share/btest/data/pcaps/tls/tls1_1.pcap
 share/btest/data/pcaps/tls/webrtc-stun.pcap
 share/btest/data/pcaps/tls/x509-generalizedtime.pcap

@@ -1,10 +1,8 @@
-#PORTROACH=		skipv:5.1.0,5.1.1,5.1.2,5.1.3,5.2.0,5.2.1,5.2.2
-
 BROKEN-powerpc64 =	vec_mule and vec_rl calls are ambiguous in highwayhash
 
 COMMENT=		network analysis and security monitoring framework
 
-V=			6.0.0
+V=			6.0.1
 DISTNAME=		zeek-${V}
 
 SHARED_LIBS +=	binpac                    3.0

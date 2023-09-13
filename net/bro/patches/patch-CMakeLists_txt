@@ -1,7 +1,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -484,7 +484,7 @@ if (NOT ZEEK_ETC_INSTALL_DIR)
+@@ -488,7 +488,7 @@ if (NOT ZEEK_ETC_INSTALL_DIR)
  endif ()
  
  if (NOT ZEEK_STATE_DIR)
@@ -10,7 +10,7 @@ Index: CMakeLists.txt
  endif ()
  
  if (NOT ZEEK_SPOOL_DIR)
-@@ -1182,7 +1182,7 @@ if (INSTALL_ZKG)
+@@ -1197,7 +1197,7 @@ if (INSTALL_ZKG)
      configure_file(${CMAKE_CURRENT_SOURCE_DIR}/zkg-config.in ${CMAKE_CURRENT_BINARY_DIR}/zkg-config
                     @ONLY)
  
