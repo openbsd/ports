@@ -1,7 +1,6 @@
 COMMENT=	sendmail milter plugin for regular expression filtering
 
-DISTNAME=	milter-regex-2.4
-REVISION=	0
+DISTNAME=	milter-regex-2.7
 CATEGORIES=	mail
 MASTER_SITES=	https://www.benzedrine.ch/
 
