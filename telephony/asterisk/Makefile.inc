@@ -9,6 +9,7 @@ DISTFILES+=	pjproject-${PJ_V}.tar.gz:0
 
 PKGNAME-main=	asterisk-${VER}
 SHORTVER=	${.CURDIR:T}
+PORTROACH?=	limit:^${SHORTVER}\.
 
 CATEGORIES=	telephony
 

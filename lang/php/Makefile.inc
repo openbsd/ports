@@ -13,6 +13,7 @@ SV=		${PV:S/.//}
 PKGNAME-main?=		php-${PHP_VERSION}
 PKGSTEM=		php-${PV}
 PKGSTEM-main=		php-${PV}
+PORTROACH?=		limit:^${PV}
 
 DISTNAME?=		php-${PHP_VERSION}
 EXTRACT_SUFX?=		.tar.xz
