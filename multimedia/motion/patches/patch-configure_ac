@@ -1,6 +1,7 @@
-fix build with libwebp 1.3.1
-
-from https://github.com/Motion-Project/motionplus/commit/af632f831127499ee541d9c719a930321718f294
+From 40ecd71ff361442f1579089481619dd7cae90ffd Mon Sep 17 00:00:00 2001
+From: Piotr Mionskowski <piotr.mionskowski@gmail.com>
+Date: Sun, 9 Jul 2023 01:44:49 +0200
+Subject: [PATCH] Include libwebp when WEBP is enabled
 
 Index: configure.ac
 --- configure.ac.orig
