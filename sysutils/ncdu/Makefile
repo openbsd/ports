@@ -2,10 +2,12 @@ PORTROACH=		limit:^1
 
 COMMENT=		ncurses-based du(1)
 
-DISTNAME=		ncdu-1.18.1
+DISTNAME=		ncdu-1.19
 CATEGORIES=		sysutils
 
 HOMEPAGE=		https://dev.yorhel.nl/ncdu/
+
+MAINTAINER=		Frederic Cambus <fcambus@openbsd.org>
 
 MASTER_SITES=		https://dev.yorhel.nl/download/
 
