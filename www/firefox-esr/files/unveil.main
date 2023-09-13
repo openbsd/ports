@@ -4,7 +4,7 @@
 /dev/video0 rw
 /dev/fido rw
 # for webgl info in about:support
-/dev/dri/card0 rw
+/dev/dri rwx
 /usr/lib r
 
 /etc/fonts r
