@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1620 2023/09/09 13:06:25 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1621 2023/09/13 07:47:11 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -109,7 +109,6 @@ NONBINMODE = 644
 PATCH_CHECK_ONLY ?= No
 EDIT_PATCHES ?= Yes
 REFETCH ?= false
-PORTROACH ?=
 
 # Global path locations.
 PORTSDIR ?= /usr/ports
@@ -309,6 +308,8 @@ MODULES ?=
 _MODULES_DONE =
 .  include "${PORTSDIR}/infrastructure/mk/modules.port.mk"
 .endif
+
+PORTROACH ?=
 
 # this only happens if we exit modules without having ever gone
 # thru compiler.port.mk - update portcheck if changing COMPILER default
