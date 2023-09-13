@@ -1,6 +1,6 @@
 COMMENT =		IPython kernel for Jupyter
 
-MODPY_EGG_VERSION =	5.1.3
+MODPY_EGG_VERSION =	5.3.0
 DISTNAME =		ipykernel-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 

@@ -54,6 +54,8 @@ lib/python${MODPY_VERSION}/site-packages/ipykernel/${MODPY_PYCACHE}pickleutil.${
 lib/python${MODPY_VERSION}/site-packages/ipykernel/${MODPY_PYCACHE}pickleutil.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ipykernel/${MODPY_PYCACHE}serialize.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ipykernel/${MODPY_PYCACHE}serialize.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ipykernel/${MODPY_PYCACHE}trio_runner.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ipykernel/${MODPY_PYCACHE}trio_runner.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ipykernel/${MODPY_PYCACHE}zmqshell.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ipykernel/${MODPY_PYCACHE}zmqshell.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ipykernel/_eventloop_macos.py
@@ -201,5 +203,6 @@ lib/python${MODPY_VERSION}/site-packages/ipykernel/tests/test_serialize.py
 lib/python${MODPY_VERSION}/site-packages/ipykernel/tests/test_start_kernel.py
 lib/python${MODPY_VERSION}/site-packages/ipykernel/tests/test_zmq_shell.py
 lib/python${MODPY_VERSION}/site-packages/ipykernel/tests/utils.py
+lib/python${MODPY_VERSION}/site-packages/ipykernel/trio_runner.py
 lib/python${MODPY_VERSION}/site-packages/ipykernel/zmqshell.py
 lib/python${MODPY_VERSION}/site-packages/ipykernel_launcher.py
