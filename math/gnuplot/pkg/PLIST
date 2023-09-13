@@ -1,5 +1,4 @@
 @bin bin/gnuplot
-@man man/man1/gnuplot-ja.1
 @man man/man1/gnuplot.1
 share/gnuplot/
 !%%no_x11%%
@@ -34,6 +33,7 @@ share/gnuplot/${V}/js/gnuplot_dashedlines.js
 share/gnuplot/${V}/js/gnuplot_mouse.css
 share/gnuplot/${V}/js/gnuplot_mouse.js
 share/gnuplot/${V}/js/gnuplot_svg.js
+share/gnuplot/${V}/js/gnuplot_svg_2018.js
 share/gnuplot/${V}/js/grid.png
 share/gnuplot/${V}/js/help.png
 share/gnuplot/${V}/js/nextzoom.png

@@ -1,11 +1,10 @@
 COMMENT =	command-driven interactive function plotting program
 
-V =		5.2
-PATCHLEVEL =	7
+V =		5.4
+PATCHLEVEL =	8
 DISTNAME =	gnuplot-${V}.${PATCHLEVEL}
 CATEGORIES =	math graphics
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=gnuplot/}
-REVISION =	1
 
 HOMEPAGE =	http://www.gnuplot.info/
 
@@ -49,15 +48,16 @@ SUBST_VARS =	V
 CONFIGURE_ARGS += --without-x \
 		  --without-gd
 .else
-LIB_DEPENDS +=	converters/libiconv graphics/gd
-WANTLIB +=	X11 fontconfig freetype gd iconv jpeg png tiff webp
+LIB_DEPENDS +=	graphics/gd
+WANTLIB +=	X11 gd
 CONFIGURE_ARGS += --with-x
 .endif
 
 .if ${FLAVOR:Mno_cairo} || ${FLAVOR:Mno_x11}
 CONFIGURE_ARGS += --without-cairo
 .else
-LIB_DEPENDS +=	devel/gettext,-runtime \
+LIB_DEPENDS +=	converters/libiconv \
+		devel/gettext,-runtime \
 		devel/pango \
 		graphics/cairo
 WANTLIB +=	cairo gobject-2.0 glib-2.0 intl pango-1.0 pangocairo-1.0 harfbuzz
