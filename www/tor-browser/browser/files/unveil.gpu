@@ -1,4 +1,4 @@
-/dev/dri rwx
+/dev/dri rw
 
 /usr/local/lib/tor-browser r
 /usr/local/lib/gdk-pixbuf-2.0 r
