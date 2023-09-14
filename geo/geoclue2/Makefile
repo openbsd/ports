@@ -1,6 +1,6 @@
 COMMENT=		modular geoinformation service on top of D-Bus
 
-VERSION=		2.7.0
+VERSION=		2.7.1
 DISTNAME=		geoclue-${VERSION}
 PKGNAME=		geoclue2-${VERSION}
 
@@ -48,7 +48,7 @@ CONFIGURE_ARGS +=	-D3g-source=false \
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/geoclue2
-	mv ${WRKINST}${SYSCONFDIR}/{dbus-1,geoclue,xdg} \
+	mv ${WRKINST}${SYSCONFDIR}/{geoclue,xdg} \
 		${PREFIX}/share/examples/geoclue2
 
 .include <bsd.port.arch.mk>
