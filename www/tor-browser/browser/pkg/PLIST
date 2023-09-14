@@ -203,12 +203,9 @@ lib/${BROWSER_NAME}/fonts/TwemojiMozilla.ttf
 @lib lib/${BROWSER_NAME}/libmozavutil.so.${LIBmozavutil_VERSION}
 @lib lib/${BROWSER_NAME}/libmozgtk.so.${LIBmozgtk_VERSION}
 @lib lib/${BROWSER_NAME}/libmozsqlite3.so.${LIBmozsqlite3_VERSION}
-@lib lib/${BROWSER_NAME}/libnspr4.so.${LIBnspr4_VERSION}
 @lib lib/${BROWSER_NAME}/libnss3.so.${LIBnss3_VERSION}
 @lib lib/${BROWSER_NAME}/libnssckbi.so.${LIBnssckbi_VERSION}
 @lib lib/${BROWSER_NAME}/libnssutil3.so.${LIBnssutil3_VERSION}
-@lib lib/${BROWSER_NAME}/libplc4.so.${LIBplc4_VERSION}
-@lib lib/${BROWSER_NAME}/libplds4.so.${LIBplds4_VERSION}
 @lib lib/${BROWSER_NAME}/libsmime3.so.${LIBsmime3_VERSION}
 @lib lib/${BROWSER_NAME}/libsoftokn3.so.${LIBsoftokn3_VERSION}
 @lib lib/${BROWSER_NAME}/libssl3.so.${LIBssl3_VERSION}

@@ -3,7 +3,7 @@ COMMENT=	Tor Browser meta package
 MAINTAINER=	Caspar Schutijser <caspar@schutijser.com>
 
 PKGNAME=	tor-browser-12.5.3
-ONLY_FOR_ARCHS =	amd64
+ONLY_FOR_ARCHS =	aarch64 amd64
 
 RUN_DEPENDS=	www/tor-browser/browser>=12.5.3 \
 		www/tor-browser/noscript>=11.4.26 \

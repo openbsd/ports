@@ -7,7 +7,7 @@ TB_VERSION =		12.5.3
 TB_PREFIX =		tb
 
 # keep meta/tor-browser in sync
-ONLY_FOR_ARCHS ?=	amd64
+ONLY_FOR_ARCHS ?=	aarch64 amd64
 
 SUBST_VARS +=		BROWSER_NAME TB_VERSION
 

@@ -7,7 +7,7 @@ COMMENT =		modified version of Firefox ESR for browsing over Tor
 MOZILLA_VERSION =	${TB_VERSION}
 MOZILLA_PROJECT =	${BROWSER_NAME}
 MOZILLA_CODENAME =	browser
-REVISION =		0
+REVISION =		1
 
 EXTRACT_SUFX =		.tar.xz
 
@@ -23,7 +23,7 @@ SO_VERSION =		8.0
 MOZILLA_LIBS =		xul clearkey lgpllibs mozavcodec mozavutil mozgtk
 MOZILLA_LIBS +=		freebl3 nss3 nssckbi
 MOZILLA_LIBS +=		nssutil3 smime3 softokn3 ssl3
-MOZILLA_LIBS +=		nspr4 mozsqlite3 plc4 plds4 ipcclientcerts
+MOZILLA_LIBS +=		mozsqlite3 ipcclientcerts
 
 # mozilla public license for the browser
 PERMIT_PACKAGE=	Yes
@@ -37,8 +37,7 @@ MODPY_RUNDEP =		No
 
 COMPILER =		ports-clang
 
-# tor-browser needs built-in nss, sqlite
-MOZILLA_USE_BUNDLED_NSPR =	Yes
+# tor-browser needs built-in nss
 MOZILLA_USE_BUNDLED_NSS =	Yes
 # 63 requires node because why not #1483595
 BUILD_DEPENDS +=	lang/node
