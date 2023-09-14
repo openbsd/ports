@@ -1,7 +1,7 @@
 Index: lang/qt/tests/Makefile.in
 --- lang/qt/tests/Makefile.in.orig
 +++ lang/qt/tests/Makefile.in
-@@ -789,11 +789,11 @@ moc_files = \
+@@ -790,11 +790,11 @@ moc_files = \
  AM_LDFLAGS = -no-install
  @WANT_QT5_TRUE@LDADD = ../../cpp/src/libgpgmepp.la ../src/libqgpgme.la \
  @WANT_QT5_TRUE@        ../../../src/libgpgme.la @GPGME_QT5_LIBS@ @GPG_ERROR_LIBS@ \

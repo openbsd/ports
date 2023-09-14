@@ -1,0 +1,28 @@
+Partial revert of c3171d0cf1a24, build fails with
+"run-importjob.cpp:93:60: error: no member named 'toLogString'
+in namespace 'QGpgME'"
+
+https://git.gnupg.org/cgi-bin/gitweb.cgi?p=gpgme.git;a=commit;h=c3171d0cf1a249618f0763fe141ab84d8a4be240
+
+Index: lang/qt/tests/run-importjob.cpp
+--- lang/qt/tests/run-importjob.cpp.orig
++++ lang/qt/tests/run-importjob.cpp
+@@ -45,6 +45,7 @@
+ #include <QDebug>
+ 
+ #include <set>
++#include <sstream>
+ 
+ GpgME::Protocol guessProtocol(const QString &filename)
+ {
+@@ -90,7 +91,9 @@ int main(int argc, char **argv)
+     auto job = (protocol == GpgME::CMS ? QGpgME::smime() : QGpgME::openpgp())->importJob();
+     const auto result = job->exec(keyData);
+     qDebug() << "Result error:" << result.error().asString();
+-    for (const auto &line : QString::fromStdString(QGpgME::toLogString(result)).split('\n')) {
++    std::ostringstream ostr;
++    ostr << result;
++    for (const auto &line : QString::fromStdString(ostr.str()).split('\n')) {
+         qDebug().noquote() << line;
+     }
+     return 0;

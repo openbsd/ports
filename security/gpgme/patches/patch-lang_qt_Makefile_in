@@ -4,7 +4,7 @@ don't allow doxygen to run even if installed, something with the files
 Index: lang/qt/Makefile.in
 --- lang/qt/Makefile.in.orig
 +++ lang/qt/Makefile.in
-@@ -418,7 +418,7 @@ top_builddir = @top_builddir@
+@@ -419,7 +419,7 @@ top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  @RUN_GPG_TESTS_FALSE@tests = 
  @RUN_GPG_TESTS_TRUE@tests = tests

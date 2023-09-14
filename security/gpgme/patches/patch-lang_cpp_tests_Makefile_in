@@ -3,7 +3,7 @@
 Index: lang/cpp/tests/Makefile.in
 --- lang/cpp/tests/Makefile.in.orig
 +++ lang/cpp/tests/Makefile.in
-@@ -434,7 +434,7 @@ top_srcdir = @top_srcdir@
+@@ -435,7 +435,7 @@ top_srcdir = @top_srcdir@
  AM_LDFLAGS = -no-install
  LDADD = ../../cpp/src/libgpgmepp.la \
          ../../../src/libgpgme.la @GPG_ERROR_LIBS@ \
