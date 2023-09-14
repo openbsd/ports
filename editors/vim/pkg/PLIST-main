@@ -1475,6 +1475,7 @@ share/vim/${P}/syntax/model.vim
 share/vim/${P}/syntax/modsim3.vim
 share/vim/${P}/syntax/modula2.vim
 share/vim/${P}/syntax/modula3.vim
+share/vim/${P}/syntax/mojo.vim
 share/vim/${P}/syntax/monk.vim
 share/vim/${P}/syntax/moo.vim
 share/vim/${P}/syntax/mp.vim
