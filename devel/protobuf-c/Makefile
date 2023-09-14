@@ -2,6 +2,7 @@ COMMENT =		c protocol buffers
 
 V =			1.4.1
 DISTNAME =		protobuf-c-$V
+REVISION =		0
 
 SHARED_LIBS =		protobuf-c 2.0	# 1.0
 
@@ -17,11 +18,12 @@ PERMIT_PACKAGE =	Yes
 WANTLIB =		c m protobuf protoc pthread ${COMPILER_LIBCXX} z
 
 COMPILER =		base-clang ports-gcc
-CXXFLAGS +=		-std=gnu++11
+CXXFLAGS +=		-std=gnu++17
 
 LIB_DEPENDS =		devel/protobuf
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoconf
+AUTOCONF_VERSION =	2.71
 
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

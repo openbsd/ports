@@ -1,0 +1,15 @@
+https://github.com/protobuf-c/protobuf-c/pull/673
+
+Index: protoc-c/c_generator.h
+--- protoc-c/c_generator.h.orig
++++ protoc-c/c_generator.h
+@@ -93,9 +93,6 @@ class PROTOC_C_EXPORT CGenerator : public CodeGenerato
+                 const std::string& parameter,
+                 OutputDirectory* output_directory,
+                 std::string* error) const;
+-
+- private:
+-  GOOGLE_DISALLOW_EVIL_CONSTRUCTORS(CGenerator);
+ };
+ 
+ }  // namespace c
