@@ -13,9 +13,9 @@ MODULES :=		devel/kf5 ${MODULES}
 
 IS_PORTING_AID ?=	No
 .if ${IS_PORTING_AID:L} == "yes"
-MASTER_SITES ?=		${MASTER_SITE_KDE:=stable/frameworks/${VERSION:R}/portingAids/}
+SITES ?=		${MASTER_SITE_KDE:=stable/frameworks/${VERSION:R}/portingAids/}
 .else
-MASTER_SITES ?=		${MASTER_SITE_KDE:=stable/frameworks/${VERSION:R}/}
+SITES ?=		${MASTER_SITE_KDE:=stable/frameworks/${VERSION:R}/}
 .endif
 
 DIST_SUBDIR =		kde

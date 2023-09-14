@@ -1,6 +1,5 @@
 COMMENT =	core KDE extensions to Qt classes
 DISTNAME =	kcoreaddons-${VERSION}
-REVISION =	0
 
 SHARED_LIBS =	KF5CoreAddons		9.0
 

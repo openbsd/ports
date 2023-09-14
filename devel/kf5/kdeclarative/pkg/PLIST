@@ -70,6 +70,7 @@ lib/qt5/qml/org/kde/kcm/SettingStateBinding.qml
 lib/qt5/qml/org/kde/kcm/SimpleKCM.qml
 @so lib/qt5/qml/org/kde/kcm/libkcmcontrolsplugin.so
 lib/qt5/qml/org/kde/kcm/private/
+lib/qt5/qml/org/kde/kcm/private/GridDelegateMenu.qml
 lib/qt5/qml/org/kde/kcm/private/GridViewInternal.qml
 lib/qt5/qml/org/kde/kcm/qmldir
 lib/qt5/qml/org/kde/kconfig/

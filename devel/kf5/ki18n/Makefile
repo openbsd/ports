@@ -4,7 +4,7 @@ DISTNAME =	ki18n-${VERSION}
 SHARED_LIBS =	KF5I18n			7.0
 SHARED_LIBS +=	KF5I18nLocaleData	1.0
 
-WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Network Qt5Qml intl m
+WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Network Qt5Qml m
 
 MODULES +=	lang/python
 

@@ -7,12 +7,12 @@ DISTNAME =		sonnet-${VERSION}
 SHARED_LIBS =		KF5SonnetCore		7.0
 SHARED_LIBS +=		KF5SonnetUi		6.0
 
-WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Network Qt5Qml
-WANTLIB += Qt5QmlModels Qt5Quick Qt5Widgets c m
+WANTLIB-main += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Network Qt5Qml
+WANTLIB-main += Qt5QmlModels Qt5Quick Qt5Widgets c m
 
-WANTLIB-aspell += ${COMPILER_LIBCXX} KF5SonnetCore Qt5Core aspell m
-WANTLIB-hunspell += ${COMPILER_LIBCXX} KF5SonnetCore Qt5Core hunspell-1.7
-WANTLIB-hunspell += m
+WANTLIB-aspell += ${COMPILER_LIBCXX} Qt5Core KF5SonnetCore m
+WANTLIB-hunspell += ${COMPILER_LIBCXX} Qt5Core KF5SonnetCore hunspell-1.7 m
+
 
 MULTI_PACKAGES =	-main -aspell -hunspell
 
