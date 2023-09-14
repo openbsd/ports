@@ -1,20 +1,9 @@
-- XXX ugly workaround unbreak with unicode-ucd >=15.1.0
-
 - ERROR: C shared or static library 'dl' not found
 - ERROR: Assert failed: -Wl,-Bsymbolic-functions is required but not supported
 
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -46,7 +46,7 @@ pcre2_req_version     = '10.21'
- # changes to gucharmap. Therefore, you should NOT upgrade the unicode version
- # of a released gucharmap, but upgrade to the gucharmap version corresponding
- # to the desired unicode version.
--unicode_req_version   = '15.0.0'
-+unicode_req_version   = '15.1.0'
- 
- # API
- 
 @@ -125,18 +125,6 @@ config_h.set('ENABLE_DEBUG', enable_debug)
  # FIXME AC_USE_SYSTEM_EXTENSIONS also supported non-gnu systems
  config_h.set10('_GNU_SOURCE', true)

@@ -1,8 +1,7 @@
 COMMENT=		Unicode character map for the GNOME project
 
 GNOME_PROJECT=		gucharmap
-GNOME_VERSION=		15.0.4
-REVISION=		1
+GNOME_VERSION=		15.1.0
 
 # override gnome MODULE
 MASTER_SITES =		https://gitlab.gnome.org/GNOME/${GNOME_PROJECT}/-/archive/${GNOME_VERSION}/
