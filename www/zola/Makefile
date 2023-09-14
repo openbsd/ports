@@ -5,8 +5,7 @@ COMMENT =	static site generator
 
 GH_ACCOUNT =	getzola
 GH_PROJECT =	zola
-GH_TAGNAME =	v0.16.1
-REVISION =	6
+GH_TAGNAME =	v0.17.2
 
 HOMEPAGE =	https://www.getzola.org
 
@@ -17,12 +16,11 @@ MAINTAINER =	Peter H. Ezetta <protocall7@gmail.com>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=	c c++abi m pthread sass onig
+WANTLIB +=	c c++abi m pthread onig
 
 BUILD_DEPENDS +=	security/rust-ring
 
-LIB_DEPENDS +=	www/libsass \
-		textproc/oniguruma
+LIB_DEPENDS +=	textproc/oniguruma
 
 MODULES =	devel/cargo
 
