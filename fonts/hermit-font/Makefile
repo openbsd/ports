@@ -20,6 +20,6 @@ NO_BUILD=	Yes
 NO_TEST=	Yes
 
 FONTTYPES=	otf
-FONT_DISTDIR=	${WRKDIR}
+WRKDIST=	${WRKDIR}
 
 .include <bsd.port.mk>

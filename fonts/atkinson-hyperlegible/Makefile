@@ -26,7 +26,7 @@ NO_BUILD =	Yes
 NO_TEST =	Yes
 SUBST_VARS +=	VPDF
 
-FONT_DISTDIR =	${WRKDIR}/${TYPEFACE}-Font-Print-and-Web-${V}/Print\ Fonts/
+WRKSRC =	${WRKDIR}/${TYPEFACE}-Font-Print-and-Web-${V}/Print\ Fonts
 DOCDIR =	${PREFIX}/share/doc/hyperlegible
 
 post-install:

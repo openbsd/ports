@@ -15,7 +15,7 @@ MASTER_SITES =	https://download.jetbrains.com/fonts/
 
 TYPEFACE =	JetBrainsMono
 
-FONT_DISTSUBDIR =	fonts/ttf
+WRKSRC =	${WRKDIST}/fonts/ttf
 MODULES =	font
 WRKDIST =	${WRKDIR}
 

@@ -18,7 +18,7 @@ NO_BUILD =		Yes
 NO_TEST =		Yes
 
 WRKDIST =		${WRKDIR}
-FONT_DISTDIR =		${WRKDIST}/TTF
+WRKSRC =		${WRKDIST}/TTF
 DOCDIR =		${PREFIX}/share/doc/clearsans
 
 post-install:

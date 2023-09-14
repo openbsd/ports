@@ -19,7 +19,7 @@ MODULES =		font
 NO_BUILD=		Yes
 NO_TEST=		Yes
 
-FONT_DISTSUBDIR=	fonts
+WRKSRC=			${WRKDIST}/fonts
 WRKDIST=		${WRKDIR}/ttf-arabeyes-$V
 
 .include <bsd.port.mk>
