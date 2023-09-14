@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distfile.pm,v 1.28 2023/05/29 19:04:50 espie Exp $
+# $OpenBSD: Distfile.pm,v 1.29 2023/09/14 15:17:38 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -70,6 +70,7 @@ sub complete($self, $file, $short, $site, $distinfo, $fname, $v, $repo)
 		$v->break("Missing sha for $file in $fname");
 		return;
 	}
+	# XXX todo reset object correctly so that sz is always defined
 	if ($self->{sz} != 0) {
 		if ($self->{sz} != $sz) {
 			$v->break("Inconsistent info for $file in $fname: $self->{sz} vs $sz(".$v->fullpkgpath." vs ".$self->{path}->fullpkgpath.")");
