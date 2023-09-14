@@ -5,7 +5,7 @@ COMMENT =		cross-platform IDE for use with Qt
 V =			8.0.2
 DISTNAME =		qt-creator-opensource-src-${V}
 PKGNAME =		qt-creator-${V}
-REVISION =		4
+REVISION =		5
 
 SHARED_LIBS +=  Aggregation               1.1 # 0.0
 SHARED_LIBS +=  CPlusPlus                 6.0 # 0.0
@@ -96,9 +96,7 @@ MODCMAKE_LDFLAGS +=	-lc
 pre-configure:
 	cd ${WRKSRC}; sed -i 's,"gdb","egdb",g' ${GDB_ADJ_FILES}
 	# use system qbs/syntax-highlighting (qtcreator.pro)
-	rm -rf ${WRKSRC}/src/shared/qbs \
-	${WRKSRC}/cmake/Findyaml-cpp.cmake \
-
+	rm -rf ${WRKSRC}/src/shared/qbs
 
 post-install:
 .for _l _v in ${SHARED_LIBS}

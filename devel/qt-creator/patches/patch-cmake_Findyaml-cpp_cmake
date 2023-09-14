@@ -1,0 +1,30 @@
+ClangTools: Add support for yaml-cpp 0.8
+
+They renamed their target from `yaml-cpp`
+to `yaml-cpp::yaml-cpp`
+
+Still support < 0.8 though.
+
+Fixes: QTCREATORBUG-29537
+Change-Id: Iafa6e75998f0120610542b4c744b205aee3392a3
+
+Index: cmake/Findyaml-cpp.cmake
+--- cmake/Findyaml-cpp.cmake.orig
++++ cmake/Findyaml-cpp.cmake
+@@ -15,7 +15,15 @@ if (yaml-cpp_FOUND)
+     unset(yaml_cpp_include_dir CACHE)
+     find_path(yaml_cpp_include_dir yaml-cpp/yaml.h)
+   endif()
+-  set_target_properties(yaml-cpp PROPERTIES INTERFACE_INCLUDE_DIRECTORIES "${yaml_cpp_include_dir}")
++  if(TARGET yaml-cpp::yaml-cpp)
++    # yaml-cpp >= 0.8
++    set_property(TARGET yaml-cpp::yaml-cpp PROPERTY IMPORTED_GLOBAL TRUE)
++    add_library(yaml-cpp ALIAS yaml-cpp::yaml-cpp)
++    set(yaml-cpp_TARGET yaml-cpp::yaml-cpp)
++  else()
++    set(yaml-cpp_TARGET yaml-cpp)
++  endif()
++  set_target_properties(${yaml-cpp_TARGET} PROPERTIES INTERFACE_INCLUDE_DIRECTORIES "${yaml_cpp_include_dir}")
+ else()
+   if(TARGET yaml-cpp)
+     return()
