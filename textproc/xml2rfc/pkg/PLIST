@@ -43,8 +43,6 @@ lib/python${MODPY_VERSION}/site-packages/xml2rfc/data/SVG-1.2-RFC.rng
 lib/python${MODPY_VERSION}/site-packages/xml2rfc/data/Scripts.txt
 lib/python${MODPY_VERSION}/site-packages/xml2rfc/data/metadata.js
 lib/python${MODPY_VERSION}/site-packages/xml2rfc/data/metadata.min.js
-lib/python${MODPY_VERSION}/site-packages/xml2rfc/data/mt.css
-lib/python${MODPY_VERSION}/site-packages/xml2rfc/data/mt.js
 lib/python${MODPY_VERSION}/site-packages/xml2rfc/data/reference.rnc
 lib/python${MODPY_VERSION}/site-packages/xml2rfc/data/reference.rng
 lib/python${MODPY_VERSION}/site-packages/xml2rfc/data/referencegroup.rnc

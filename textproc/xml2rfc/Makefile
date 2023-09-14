@@ -1,8 +1,7 @@
 COMMENT=	convert memos written in XML to the RFC format
 
-MODPY_EGG_VERSION=	3.15.3
+MODPY_EGG_VERSION=	3.18.0
 DISTNAME=	xml2rfc-${MODPY_EGG_VERSION}
-REVISION=	0
 
 CATEGORIES=	textproc
 
@@ -15,8 +14,10 @@ MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 MODPY_PYTEST_ARGS= test.py
 
-RUN_DEPENDS=	devel/py-appdirs${MODPY_FLAVOR} \
-		devel/py-configargparse${MODPY_FLAVOR} \
+# still uses pkg_resources as of 3.18.0
+RUN_DEPENDS=	devel/py-setuptools${MODPY_FLAVOR}
+
+RUN_DEPENDS+=	devel/py-configargparse${MODPY_FLAVOR} \
 		devel/py-country${MODPY_FLAVOR} \
 		devel/py-html5lib${MODPY_FLAVOR} \
 		devel/py-intervaltree${MODPY_FLAVOR} \
@@ -25,6 +26,7 @@ RUN_DEPENDS=	devel/py-appdirs${MODPY_FLAVOR} \
 		devel/py-wcwidth${MODPY_FLAVOR} \
 		devel/pyflakes${MODPY_FLAVOR} \
 		geo/py-google-i18n-address${MODPY_FLAVOR} \
+		sysutils/py-platformdirs${MODPY_FLAVOR} \
 		textproc/py-MarkupSafe${MODPY_FLAVOR} \
 		textproc/py-dict2xml${MODPY_FLAVOR} \
 		textproc/py-lxml${MODPY_FLAVOR} \
@@ -34,6 +36,6 @@ RUN_DEPENDS=	devel/py-appdirs${MODPY_FLAVOR} \
 
 TEST_DEPENDS=	devel/py-decorator${MODPY_FLAVOR} \
 		graphics/py-cairo${MODPY_FLAVOR} \
-		textproc/py-PyPDF2${MODPY_FLAVOR}
+		print/py-pypdf${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
