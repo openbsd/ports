@@ -3,7 +3,9 @@
 @bin bin/wasm-ctor-eval
 @bin bin/wasm-dis
 @bin bin/wasm-emscripten-finalize
+@bin bin/wasm-fuzz-lattices
 @bin bin/wasm-fuzz-types
+@bin bin/wasm-merge
 @bin bin/wasm-metadce
 @bin bin/wasm-opt
 @bin bin/wasm-reduce
