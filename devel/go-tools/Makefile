@@ -1,7 +1,7 @@
 COMMENT =		various tools for the Go programming language
 
 MODGO_MODNAME =		golang.org/x/tools
-MODGO_VERSION =		v0.9.0
+MODGO_VERSION =		v0.13.0
 
 DISTNAME =		go-tools-${MODGO_VERSION}
 EPOCH =			0
@@ -18,12 +18,16 @@ MODULES =		lang/go
 
 RUN_DEPENDS =		${MODGO_RUN_DEPENDS}
 
-_SUBPKGS =		benchcmp \
+# deprecated in favour of golang.org/x/perf/cmd/benchstat
+_SUBPKGS =		benchcmp
+
+_SUBPKGS +=		bisect \
 			bundle \
 			callgraph \
 			compilebench \
 			digraph \
 			eg \
+			file2fuzz \
 			fiximports \
 			go-contrib-init \
 			godex \

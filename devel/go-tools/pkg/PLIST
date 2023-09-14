@@ -3,11 +3,13 @@
 @pkgpath textproc/godoc
 @rcscript ${RCDIR}/godoc
 @bin bin/benchcmp
+@bin bin/bisect
 @bin bin/bundle
 @bin bin/callgraph
 @bin bin/compilebench
 @bin bin/digraph
 @bin bin/eg
+@bin bin/file2fuzz
 @bin bin/fiximports
 @bin bin/go-contrib-init
 @bin bin/godex
