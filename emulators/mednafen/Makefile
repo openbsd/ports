@@ -4,7 +4,7 @@ COMMENT =	emulates numerous game consoles
 VERSION =	1.31.0-UNSTABLE
 DISTNAME =	mednafen-${VERSION}
 PKGNAME =	mednafen-${VERSION:C/-UNSTABLE//}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	emulators games
 HOMEPAGE =	https://mednafen.github.io
@@ -29,6 +29,7 @@ LIB_DEPENDS =	audio/flac \
 WRKDIST =	${WRKDIR}/mednafen
 
 USE_WXNEEDED =	Yes
+USE_NOBTCFI =	Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/SDL2" \
