@@ -1,6 +1,6 @@
 COMMENT =		enhanced interactive Python shell
 
-MODPY_EGG_VERSION =	8.8.0
+MODPY_EGG_VERSION =	8.13.2
 DISTNAME =		ipython-${MODPY_EGG_VERSION}
 PKGNAME =		ipython${MODPY_MAJOR_VERSION}-${MODPY_EGG_VERSION}
 
@@ -26,11 +26,11 @@ RUN_DEPENDS =		databases/py-pickleshare${MODPY_FLAVOR} \
 			devel/py-decorator${MODPY_FLAVOR} \
 			devel/py-jedi${MODPY_FLAVOR}>=0.16 \
 			devel/py-pexpect${MODPY_FLAVOR}>=4.3 \
-			devel/py-prompt_toolkit${MODPY_FLAVOR}>=2.0.0v1,<3.1.0v1 \
+			devel/py-prompt_toolkit${MODPY_FLAVOR}>=3.0.30v1,<3.1.0v1 \
 			devel/py-stack_data${MODPY_FLAVOR} \
-			devel/py-traitlets${MODPY_FLAVOR}>=4.2 \
+			devel/py-traitlets${MODPY_FLAVOR}>=5 \
 			graphics/py-matplotlib-inline${MODPY_FLAVOR} \
-			textproc/py-pygments${MODPY_FLAVOR}
+			textproc/py-pygments${MODPY_FLAVOR}>=2.4.0
 
 # Note that if you have pdb++ installed, tests will fail.
 TEST_DEPENDS =		devel/py-ipykernel${MODPY_FLAVOR} \
