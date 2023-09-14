@@ -3,7 +3,7 @@ supposed to read CXX & CC from env, but for some reason this doesnt work ?
 Index: tests/tests.rs
 --- tests/tests.rs.orig
 +++ tests/tests.rs
-@@ -69,8 +69,8 @@ fn compile(
+@@ -113,8 +113,8 @@ fn compile(
      skip_warning_as_error: bool,
  ) {
      let cc = match language {
