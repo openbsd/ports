@@ -1,11 +1,7 @@
-# https://github.com/veusz/veusz/issues/595
-BROKEN = Can not build with py-sip
-
 COMMENT =	scientific plotting and graphing package
-MODPY_EGG_VERSION =	3.4
+MODPY_EGG_VERSION =	3.6.2
 DISTNAME =	veusz-${MODPY_EGG_VERSION}
 CATEGORIES =	math graphics
-REVISION =	2
 
 HOMEPAGE =	https://veusz.github.io/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>

@@ -373,6 +373,10 @@ lib/python${MODPY_VERSION}/site-packages/veusz/icons/settings_postline.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/settings_stylesheet.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/settings_subcontourline.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/settings_whisker.svg
+lib/python${MODPY_VERSION}/site-packages/veusz/icons/veusz-arrow-circ.svg
+lib/python${MODPY_VERSION}/site-packages/veusz/icons/veusz-arrow-ew.svg
+lib/python${MODPY_VERSION}/site-packages/veusz/icons/veusz-arrow-nesw.svg
+lib/python${MODPY_VERSION}/site-packages/veusz/icons/veusz-arrow-ns.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/veusz-capture-data.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/veusz-edit-custom.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/veusz-edit-cut.svg
@@ -476,6 +480,7 @@ lib/python${MODPY_VERSION}/site-packages/veusz/ui/license.ui
 lib/python${MODPY_VERSION}/site-packages/veusz/ui/plugin.ui
 lib/python${MODPY_VERSION}/site-packages/veusz/ui/preferences.ui
 lib/python${MODPY_VERSION}/site-packages/veusz/ui/reloaddata.ui
+lib/python${MODPY_VERSION}/site-packages/veusz/ui/softwareversions.ui
 lib/python${MODPY_VERSION}/site-packages/veusz/ui/stylesheet.ui
 lib/python${MODPY_VERSION}/site-packages/veusz/utils/
 lib/python${MODPY_VERSION}/site-packages/veusz/utils/__init__.py
