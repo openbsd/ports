@@ -1,0 +1,17 @@
+@bin bin/mednaffe
+share/applications/mednaffe.desktop
+share/doc/mednaffe/
+share/doc/mednaffe/AUTHORS
+share/doc/mednaffe/COPYING
+share/doc/mednaffe/ChangeLog
+share/doc/mednaffe/README
+share/icons/hicolor/128x128/apps/mednaffe.png
+share/icons/hicolor/16x16/apps/mednaffe.png
+share/icons/hicolor/32x32/apps/mednaffe.png
+share/icons/hicolor/48x48/apps/mednaffe.png
+share/icons/hicolor/64x64/apps/mednaffe.png
+share/icons/hicolor/scalable/apps/mednaffe.svg
+share/pixmaps/
+share/pixmaps/mednaffe.png
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
