@@ -3,7 +3,9 @@
 COMMENT =	full modbus protocol written in python
 
 MODPY_EGG_VERSION =	3.4.1
+REVISION =	0
 DISTNAME =	pymodbus-${MODPY_EGG_VERSION}
+PKGNAME =	py-${DISTNAME}
 
 CATEGORIES =	net
 
