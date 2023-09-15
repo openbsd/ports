@@ -232,6 +232,7 @@
      SUBDIR += openttd-data
      SUBDIR += opentyrian
      SUBDIR += openxcom
+     SUBDIR += orthorobot
      SUBDIR += pacman-arena
      SUBDIR += pathological
      SUBDIR += pentobi
