@@ -35,6 +35,7 @@
      SUBDIR += libretro-pcsx-rearmed
      SUBDIR += mame
      SUBDIR += mednafen
+     SUBDIR += mednaffe
      SUBDIR += mgba
      SUBDIR += mupen64plus
      SUBDIR += nestopia
