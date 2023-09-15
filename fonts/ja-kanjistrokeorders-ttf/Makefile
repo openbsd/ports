@@ -2,7 +2,7 @@ PKG_ARCH =		*
 
 COMMENT =		font to view stroke order diagrams for Kanji, Kana and etc
 
-DISTNAME =		KanjiStrokeOrders_v4.003
+DISTNAME =		KanjiStrokeOrders_v4.004
 PKGNAME =		ja-${DISTNAME:L:S/_v/-ttf-/}
 CATEGORIES =		fonts japanese x11
 
@@ -12,7 +12,7 @@ HOMEPAGE =		https://www.nihilist.org.uk/
 PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://drive.google.com/
-DISTFILES =		KanjiStrokeOrders_v4.003.zip{uc?export=download&id=1gd5vUzwgfUSggn8ZbEG2m03x3bbwYPfL}
+DISTFILES =		KanjiStrokeOrders_v4.004.zip{uc?export=download&id=1snpD-IQmT6fGGQjEePHdDzE2aiwuKrz4}
 
 EXTRACT_SUFX =		.zip
 
