@@ -36,6 +36,7 @@ MODULES=		lang/python
 #COMPILER=		base-clang ports-gcc
 # XXX src/modp_numtoa.c:174:30: error: use of undeclared identifier 'DBL_DECIMAL_DIG'
 COMPILER=		ports-clang
+CFLAGS +=		-DDBL_DECIMAL_DIG=__DBL_DECIMAL_DIG__
 # XXX sparc64 and ports-clang don't go well together:
 # /tmp/sqlite3-1f089a.s:544060: Error: operation combines symbols in different segments
 # clang-13: error: assembler command failed with exit code 1 (use -v to see invocation)
