@@ -1,9 +1,21 @@
 https://cgit.freebsd.org/ports/tree/devel/wasi-libc/Makefile#n40
 avoid rebuilding everything in fake
 
+wasi-libc requires some compiler headers that we remove from our
+llvm ports so we include them here instead
+
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
+@@ -224,7 +224,7 @@ endif
+ #    should come earlier in the search path, so they can "override"
+ #    and/or `#include_next` the public headers. `-isystem` (like
+ #    `-idirafter`) comes later in the search path than `-I`.
+-CFLAGS += -isystem "$(SYSROOT_INC)"
++CFLAGS += -isystem "$(SYSROOT_INC)" -isystem "${WRKDIR}/sysroot/include"
+ 
+ # These variables describe the locations of various files and directories in
+ # the build tree.
 @@ -565,7 +565,7 @@ check-symbols: startup_files libc
  	# This ignores whitespace because on Windows the output has CRLF line endings.
  	diff -wur "$(CURDIR)/expected/$(MULTIARCH_TRIPLE)" "$(SYSROOT_SHARE)"

@@ -5,6 +5,10 @@ GH_PROJECT =	wasi-libc
 GH_COMMIT =	05cd0af0af4b5a191117d47a182adff1d6546b87
 DISTNAME =	wasi-libc-0.20220413
 
+DISTFILES =	${GH_DISTFILE} \
+		wasi-libc-llvm${MODCLANG_VERSION}-std-headers.tar.gz:0
+MASTER_SITES0=	https://nerd.hu/distfiles/
+
 CATEGORIES =	lang
 
 # Apache-2.0 with LLVM Exceptions, Apache-2.0, MIT
@@ -18,4 +22,9 @@ MAKE_ENV +=	AR=${LOCALBASE}/bin/llvm-ar-${MODCLANG_VERSION} \
 		NM=${LOCALBASE}/bin/llvm-nm-${MODCLANG_VERSION} \
 		INSTALL_DIR=${WRKINST}${PREFIX}/share/wasi-sysroot
 
+SUBST_VARS +=	WRKDIR
+
+post-configure:
+	${SUBST_CMD} ${WRKSRC}/Makefile
+	
 .include <bsd.port.mk>
