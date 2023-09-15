@@ -146,8 +146,10 @@ share/wasi-sysroot/include/search.h
 share/wasi-sysroot/include/semaphore.h
 share/wasi-sysroot/include/signal.h
 share/wasi-sysroot/include/stdalign.h
+share/wasi-sysroot/include/stdarg.h
 share/wasi-sysroot/include/stdbool.h
 share/wasi-sysroot/include/stdc-predef.h
+share/wasi-sysroot/include/stddef.h
 share/wasi-sysroot/include/stdint.h
 share/wasi-sysroot/include/stdio.h
 share/wasi-sysroot/include/stdio_ext.h

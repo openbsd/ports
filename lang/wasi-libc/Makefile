@@ -4,6 +4,7 @@ GH_ACCOUNT =	WebAssembly
 GH_PROJECT =	wasi-libc
 GH_COMMIT =	05cd0af0af4b5a191117d47a182adff1d6546b87
 DISTNAME =	wasi-libc-0.20220413
+REVISION =	0
 
 DISTFILES =	${GH_DISTFILE} \
 		wasi-libc-llvm${MODCLANG_VERSION}-std-headers.tar.gz:0
@@ -26,5 +27,9 @@ SUBST_VARS +=	WRKDIR
 
 post-configure:
 	${SUBST_CMD} ${WRKSRC}/Makefile
+
+post-install:
+	${INSTALL_DATA} ${WRKDIR}/sysroot/include/* \
+		${PREFIX}/share/wasi-sysroot/include
 	
 .include <bsd.port.mk>

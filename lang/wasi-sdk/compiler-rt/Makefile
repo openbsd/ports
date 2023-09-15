@@ -5,7 +5,7 @@ PKGNAME =	wasi-compiler-rt-${LLVM_V}
 REVISION =	0
 LIBPATH =	wasi/libclang_rt.builtins-wasm32.a
 BUILDSUBDIR =	lib/builtins
-BUILD_DEPENDS +=	lang/wasi-libc
+BUILD_DEPENDS +=	lang/wasi-libc>=0.20220413p0
 
 # In transition from BSD-ish to Apache 2 + LLVM exceptions
 PERMIT_PACKAGE =	Yes

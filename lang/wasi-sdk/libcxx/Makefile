@@ -8,7 +8,7 @@ BUILDSUBDIR =	libcxx
 # In transition from BSD-ish to Apache 2 + LLVM exceptions
 PERMIT_PACKAGE =	Yes
 
-BUILD_DEPENDS +=	lang/wasi-libc
+BUILD_DEPENDS +=	lang/wasi-libc>=0.20220413p0
 
 CONFIGURE_ARGS=	-DLLVM_PATH=${WRKDIR}/${DISTNAME} \
 		-DCMAKE_C_COMPILER_WORKS=1 \
