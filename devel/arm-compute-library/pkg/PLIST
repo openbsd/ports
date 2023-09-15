@@ -49,6 +49,7 @@ include/arm_compute/core/CPP/kernels/CPPPermuteKernel.h
 include/arm_compute/core/CPP/kernels/CPPTopKVKernel.h
 include/arm_compute/core/CPP/kernels/CPPUpsampleKernel.h
 include/arm_compute/core/Coordinates.h
+include/arm_compute/core/CoreTypes.h
 include/arm_compute/core/Dimensions.h
 include/arm_compute/core/Error.h
 include/arm_compute/core/GPUTarget.h
@@ -85,7 +86,14 @@ include/arm_compute/core/experimental/IPostOp.h
 include/arm_compute/core/experimental/PostOps.h
 include/arm_compute/core/experimental/Types.h
 include/arm_compute/core/utils/
+include/arm_compute/core/utils/ActivationFunctionUtils.h
+include/arm_compute/core/utils/DataLayoutUtils.h
+include/arm_compute/core/utils/DataTypeUtils.h
+include/arm_compute/core/utils/FormatUtils.h
+include/arm_compute/core/utils/InterpolationPolicyUtils.h
+include/arm_compute/core/utils/StringUtils.h
 include/arm_compute/core/utils/helpers/
+include/arm_compute/core/utils/helpers/AdjustVecSize.h
 include/arm_compute/core/utils/helpers/tensor_transform.h
 include/arm_compute/core/utils/io/
 include/arm_compute/core/utils/io/FileHandler.h
@@ -101,6 +109,7 @@ include/arm_compute/core/utils/logging/Printers.h
 include/arm_compute/core/utils/logging/StdPrinter.h
 include/arm_compute/core/utils/logging/Types.h
 include/arm_compute/core/utils/math/
+include/arm_compute/core/utils/math/Math.h
 include/arm_compute/core/utils/math/SafeOps.h
 include/arm_compute/core/utils/misc/
 include/arm_compute/core/utils/misc/InfoHelpers.h
@@ -145,6 +154,12 @@ include/arm_compute/dynamic_fusion/sketch/gpu/operators/GpuSigmoid.h
 include/arm_compute/dynamic_fusion/sketch/gpu/operators/GpuSoftmax.h
 include/arm_compute/dynamic_fusion/sketch/gpu/operators/GpuSub.h
 include/arm_compute/dynamic_fusion/sketch/gpu/operators/GpuTanh.h
+include/arm_compute/function_info/
+include/arm_compute/function_info/ActivationLayerInfo.h
+include/arm_compute/function_info/ConvolutionInfo.h
+include/arm_compute/function_info/FullyConnectedLayerInfo.h
+include/arm_compute/function_info/GEMMInfo.h
+include/arm_compute/function_info/MatMulInfo.h
 include/arm_compute/graph/
 include/arm_compute/graph.h
 include/arm_compute/graph/DataLayerVisitor.h

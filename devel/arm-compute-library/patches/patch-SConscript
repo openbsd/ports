@@ -1,7 +1,7 @@
 Index: SConscript
 --- SConscript.orig
 +++ SConscript
-@@ -650,7 +650,7 @@ else:
+@@ -700,7 +700,7 @@ else:
      elif 'sve' in env['arch']:
          lib_files += lib_files_sve
  
@@ -10,7 +10,7 @@ Index: SConscript
  
  Export('arm_compute_a')
  
-@@ -669,7 +669,7 @@ if env['os'] == 'macos':
+@@ -719,7 +719,7 @@ if env['os'] == 'macos':
      # macos static library archiver fails if given an empty list of files
      arm_compute_core_a = build_library('arm_compute_core-static', arm_compute_env, lib_files, static=True)
  else:
@@ -19,12 +19,12 @@ Index: SConscript
  
  Export('arm_compute_core_a')
  
-@@ -682,7 +682,7 @@ arm_compute_graph_env = arm_compute_env.Clone()
+@@ -732,7 +732,7 @@ arm_compute_graph_env = arm_compute_env.Clone()
  # Build graph libraries
  arm_compute_graph_env.Append(CXXFLAGS = ['-Wno-redundant-move', '-Wno-pessimizing-move'])
  
--arm_compute_graph_a = build_library('arm_compute_graph-static', arm_compute_graph_env, graph_files, static=True, libs = [ arm_compute_a ])
-+arm_compute_graph_a = build_library('arm_compute_graph', arm_compute_graph_env, graph_files, static=True, libs = [ arm_compute_a ])
+-arm_compute_graph_a = build_library('arm_compute_graph-static', arm_compute_graph_env, graph_files, static=True)
++arm_compute_graph_a = build_library('arm_compute_graph', arm_compute_graph_env, graph_files, static=True)
  Export('arm_compute_graph_a')
  
  if env['os'] != 'bare_metal' and not env['standalone']:
