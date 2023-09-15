@@ -1,6 +1,6 @@
 COMMENT =	CSS Selector to XPath compiler
 
-DISTNAME =	HTML-Selector-XPath-0.26
+DISTNAME =	HTML-Selector-XPath-0.28
 
 CATEGORIES =	www
 
