@@ -1,11 +1,13 @@
 COMMENT =		completion input-method to speed up typing
 
-VERSION =		2.24.0
+VERSION =		2.24.1
 DISTNAME =		ibus-typing-booster-${VERSION}
 
 CATEGORIES =		inputmethods
 
 HOMEPAGE =		https://mike-fabian.github.io/ibus-typing-booster/
+
+MAINTAINER =		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv3+, APLv2 (fonts)
 PERMIT_PACKAGE =	Yes
