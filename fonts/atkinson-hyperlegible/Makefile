@@ -1,10 +1,10 @@
 COMMENT =	greater legibility and readability for low vision readers
 
-TYPEFACE =	Atkinson-Hyperlegible
-V =		2020-0514
-VPDF =		2020-1104
-REVISION =	0
-PKGNAME =	${TYPEFACE:L}-${V:S/-/./}
+TYPEFACE =	atkinson-hyperlegible
+VDIST =		2020-0514
+V =		${VDIST:S/-/./}
+REVISION =	1
+DISTNAME =	Atkinson-Hyperlegible-Font-Print-and-Web-${VDIST}
 CATEGORIES =	fonts
 
 HOMEPAGE =	https://brailleinstitute.org/freefont
@@ -15,23 +15,21 @@ PERMIT_PACKAGE = Yes
 MODULES =	font
 FONTTYPES =	otf
 
-MASTER_SITES =	https://brailleinstitute.org/wp-content/uploads/atkinson-hyperlegible-font/
-MASTER_SITES0 =	https://brailleinstitute.org/wp-content/uploads/2020/11/
-DISTFILES =	Atkinson-Hyperlegible-Font-Print-and-Web-${V}.zip \
-		Atkinson-Hyperlegible-Font-License-${VPDF}.pdf:0
+SITES =	https://brailleinstitute.org/wp-content/uploads/atkinson-hyperlegible-font/
+SITES.doc =	https://brailleinstitute.org/wp-content/uploads/2020/11/
+DISTFILES.doc =	Atkinson-Hyperlegible-Font-License-2020-1104.pdf
 
-EXTRACT_ONLY =	Atkinson-Hyperlegible-Font-Print-and-Web-${V}.zip
+EXTRACT_ONLY =	${DISTFILES}
 
 NO_BUILD =	Yes
 NO_TEST =	Yes
-SUBST_VARS +=	VPDF
 
-WRKSRC =	${WRKDIR}/${TYPEFACE}-Font-Print-and-Web-${V}/Print\ Fonts
-DOCDIR =	${PREFIX}/share/doc/hyperlegible
+WRKSRC =	${WRKDIST}/Print\ Fonts
+DOCDIR =	${PREFIX}/share/doc/${TYPEFACE}
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}
-	${INSTALL_DATA} ${FULLDISTDIR}/${TYPEFACE}-Font-License-${VPDF}.pdf \
-	    ${DOCDIR}
+	${INSTALL_DATA} ${FULLDISTDIR}/${DISTFILES.doc} \
+		${DOCDIR}/Atkinson-Hyperlegible-Font-License.pdf
 
 .include <bsd.port.mk>
