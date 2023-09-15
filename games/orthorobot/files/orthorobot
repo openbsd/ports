@@ -1,0 +1,3 @@
+#!/bin/sh
+
+${LOCALBASE}/bin/love-0.10 ${LOCALBASE}/share/orthorobot/orthorobot.love
