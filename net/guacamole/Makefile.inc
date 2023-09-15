@@ -1,4 +1,4 @@
-V?=		1.5.2
+V?=		1.5.3
 
 CATEGORIES=	net
 HOMEPAGE=	https://guacamole.apache.org/
