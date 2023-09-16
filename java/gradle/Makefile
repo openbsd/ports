@@ -1,6 +1,6 @@
 COMMENT =	build automation tool
 
-DISTNAME =	gradle-6.7
+DISTNAME =	gradle-8.3
 EXTRACT_SUFX =	-bin.zip
 EPOCH =		0
 

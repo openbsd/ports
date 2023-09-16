@@ -1,8 +1,8 @@
 Index: bin/gradle
 --- bin/gradle.orig
 +++ bin/gradle
-@@ -83,6 +83,8 @@ esac
- CLASSPATH=$APP_HOME/lib/gradle-launcher-6.6.jar
+@@ -115,6 +115,8 @@ esac
+ CLASSPATH=$APP_HOME/lib/gradle-launcher-8.3.jar
  
  
 +JAVA_HOME="$(javaPathHelper -h gradle)"
