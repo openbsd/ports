@@ -1,0 +1,23 @@
+Index: src/as-system-info.c
+--- src/as-system-info.c.orig
++++ src/as-system-info.c
+@@ -45,7 +45,7 @@
+ 
+ #if defined(__linux__)
+ #include <sys/sysinfo.h>
+-#elif defined(__FreeBSD__)
++#elif defined(__FreeBSD__) || defined(__OpenBSD__)
+ #include <sys/types.h>
+ #include <sys/sysctl.h>
+ #endif
+@@ -408,6 +408,10 @@ as_get_physical_memory_total (void)
+ #elif defined(__FreeBSD__)
+ 	unsigned long physmem;
+ 	sysctl ((int[]){ CTL_HW, HW_PHYSMEM }, 2, &physmem, &(size_t){ sizeof (physmem) }, NULL, 0);
++	return physmem / MB_IN_BYTES;
++#elif defined(__OpenBSD__)
++	unsigned long physmem;
++	sysctl ((int[]){ CTL_HW, HW_PHYSMEM64 }, 2, &physmem, &(size_t){ sizeof (physmem) }, NULL, 0);
+ 	return physmem / MB_IN_BYTES;
+ #else
+ #error "Implementation of as_get_physical_memory_total() missing for this OS."
