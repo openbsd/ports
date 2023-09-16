@@ -15,7 +15,7 @@ COMMENT =		Chromium-based web engine for Qt5
 # Many parts are copied from www/chromium port, so keep in sync
 DISTNAME =		qtwebengine-everywhere-opensource-src-${QT5_WEBENGINE_VERSION}
 QT5NAME =		QtWebEngine
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		www
 
