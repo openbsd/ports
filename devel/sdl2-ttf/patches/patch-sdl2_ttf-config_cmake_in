@@ -1,0 +1,12 @@
+Index: sdl2_ttf-config.cmake.in
+--- sdl2_ttf-config.cmake.in.orig
++++ sdl2_ttf-config.cmake.in
+@@ -55,7 +55,7 @@ if(NOT TARGET SDL2_ttf::SDL2_ttf)
+         unset(_sdl2ttf_dll)
+         unset(_sdl2ttf_imp)
+     else()
+-        set(_sdl2ttf_shl "${_sdl2ttf_libdir}/${CMAKE_SHARED_LIBRARY_PREFIX}SDL2_ttf${CMAKE_SHARED_LIBRARY_SUFFIX}")
++        set(_sdl2ttf_shl "${_sdl2ttf_libdir}/${CMAKE_SHARED_LIBRARY_PREFIX}SDL2_ttf${CMAKE_SHARED_LIBRARY_SUFFIX}.${LIBSDL2_ttf_VERSION}")
+         if(EXISTS "${_sdl2ttf_shl}")
+             add_library(SDL2_ttf::SDL2_ttf SHARED IMPORTED)
+             set_target_properties(SDL2_ttf::SDL2_ttf

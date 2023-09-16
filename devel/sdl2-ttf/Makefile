@@ -2,7 +2,7 @@ V =		2.20.2
 COMMENT =	SDL2 TrueType fonts library
 DISTNAME =	SDL2_ttf-${V}
 PKGNAME =	sdl2-ttf-${V}
-REVISION =	0
+REVISION =	1
 CATEGORIES =	devel graphics fonts
 
 SHARED_LIBS +=	SDL2_ttf		0.1 # 10.2
@@ -25,4 +25,6 @@ LIB_DEPENDS =	devel/sdl2
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
 
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/sdl2_ttf-config.cmake.in
 .include <bsd.port.mk>
