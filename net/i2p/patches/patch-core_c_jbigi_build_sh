@@ -2,8 +2,9 @@ use only local gmp
 change default lib to dynamic
 avoid tests
 
---- core/c/jbigi/build.sh.orig	Mon Aug 24 21:45:06 2020
-+++ core/c/jbigi/build.sh	Sun Oct  4 08:02:36 2020
+Index: core/c/jbigi/build.sh
+--- core/c/jbigi/build.sh.orig
++++ core/c/jbigi/build.sh
 @@ -21,7 +21,6 @@ rm -rf bin/local
  mkdir -p lib bin/local
  
@@ -18,23 +19,23 @@ avoid tests
  echo "Building..."
 -if [ "$1" != "dynamic" ]; then
 +if [ "$1" = "static" ]; then
-     case `uname -sr` in
+     case $(uname -sr) in
          Darwin*)
              # --with-pic is required for static linking
-@@ -50,7 +49,6 @@ if [ "$1" != "dynamic" ]; then
-     make
+@@ -51,7 +50,6 @@ if [ "$1" != "dynamic" ]; then
+     make check
      sh ../../build_jbigi.sh static
  else
 -    shift
      sh ../../build_jbigi.sh dynamic
  fi
  
-@@ -58,7 +56,7 @@ cp *jbigi???* ../../lib/
+@@ -59,7 +57,7 @@ cp -- *jbigi???* ../../lib/
  echo 'Library copied to lib/'
  cd ../..
  
 -if [ "$1" != "notest" ]; then
 +if [ "$1" = "test" ]; then
      if [ -z "$I2P" ]; then
-         if [ -r $HOME/i2p/lib/i2p.jar ]; then
+         if [ -r "$HOME/i2p/lib/i2p.jar" ]; then
              I2P="$HOME/i2p"
