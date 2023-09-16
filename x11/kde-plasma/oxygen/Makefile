@@ -1,6 +1,5 @@
 COMMENT =		style for Qt/KDE Applications
 DISTNAME =		oxygen-${VERSION}
-REVISION =		0
 
 SHARED_LIBS =		oxygenstyle5		1.0
 SHARED_LIBS +=		oxygenstyleconfig5	0.0

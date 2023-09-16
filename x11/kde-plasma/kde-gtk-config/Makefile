@@ -6,8 +6,8 @@ WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5DBusAddons
 WANTLIB += KF5GuiAddons KF5WidgetsAddons KF5WindowSystem Qt5Core
 WANTLIB += Qt5DBus Qt5Gui Qt5Svg Qt5Widgets Qt5Xml X11 atk-1.0
 WANTLIB += c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gobject-2.0 gtk-3 harfbuzz intl kdecorations2
-WANTLIB += kdecorations2private m pango-1.0 pangocairo-1.0
+WANTLIB += glib-2.0 gobject-2.0 gtk-3 harfbuzz kdecorations2 kdecorations2private
+WANTLIB += m pango-1.0 pangocairo-1.0
 
 BUILD_DEPENDS =	www/libsass \
 		www/sass \

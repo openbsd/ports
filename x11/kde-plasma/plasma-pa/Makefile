@@ -8,7 +8,7 @@ WANTLIB += ${COMPILER_LIBCXX} KF5ConfigCore KF5ConfigGui KF5CoreAddons
 WANTLIB += KF5Declarative KF5GlobalAccel KF5I18n KF5Notifications
 WANTLIB += KF5Package KF5QuickAddons Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5Widgets Qt5Xml canberra
-WANTLIB += gio-2.0 glib-2.0 gobject-2.0 intl m pulse pulse-mainloop-glib
+WANTLIB += gio-2.0 glib-2.0 gobject-2.0 m pulse pulse-mainloop-glib
 
 BUILD_DEPENDS =	x11/qt5/qtquickcontrols2 \
 		x11/gtk-vnc

@@ -3,9 +3,9 @@ Index: lookandfeel/org.kde.breeze/contents/splash/Splash.qml
 --- lookandfeel/org.kde.breeze/contents/splash/Splash.qml.orig
 +++ lookandfeel/org.kde.breeze/contents/splash/Splash.qml
 @@ -37,7 +37,7 @@ Rectangle {
- 
              anchors.centerIn: parent
  
+             asynchronous: true
 -            source: "images/plasma.svgz"
 +            source: "images/kde-puffy.svgz"
  

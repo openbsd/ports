@@ -39,9 +39,11 @@ MODKDE5_TRANSLATIONS = Yes
 MODKDE5_ICON_CACHE = Yes
 MODKDE5_DOCS = Yes
 
-BUILD_DEPENDS =		x11/kde-plasma/kwin
+BUILD_DEPENDS =		x11/kde-plasma/kwin \
+			devel/kf5/kquickcharts
 
 RUN_DEPENDS =		devel/desktop-file-utils \
+			devel/kf5/kquickcharts \
 			multimedia/phonon-backend/gstreamer \
 			sysutils/coreutils \
 			x11/dbus,-suid \
