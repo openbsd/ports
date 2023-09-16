@@ -1,14 +1,14 @@
 COMMENT =	list obsolete files between OpenBSD upgrades
 
-V =		3.2
+V =		3.3
 DISTNAME =	sysclean-${V}
 
 CATEGORIES =	sysutils
-HOMEPAGE =	https://github.com/semarie/sysclean/
+HOMEPAGE =	https://codeberg.org/semarie/sysclean/
 
-MAINTAINER =	Sebastien Marie <semarie@online.fr>
+MAINTAINER =	Sebastien Marie <semarie@kapouay.eu.org>
 
-MASTER_SITES =	https://github.com/semarie/sysclean/releases/download/${V}/
+MASTER_SITES = https://codeberg.org/semarie/sysclean/releases/download/${V}/
 
 # ISC
 PERMIT_PACKAGE =	Yes
