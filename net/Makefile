@@ -592,6 +592,7 @@
      SUBDIR += py-pcapy,python3
      SUBDIR += py-pf,python3
      SUBDIR += py-portend,python3
+     SUBDIR += py-python-jsonrpc-server,python3
      SUBDIR += py-ripe.atlas.cousteau,python3
      SUBDIR += py-ripe.atlas.sagan,python3
      SUBDIR += py-ripe.atlas.tools	# standalone, uses python3
