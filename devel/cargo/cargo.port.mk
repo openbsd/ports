@@ -36,6 +36,9 @@ MODCARGO_WANTLIB +=	c++abi
 MODCARGO_WANTLIB +=
 .endif
 
+CHECK_LIB_DEPENDS_ARGS += -S MODCARGO_WANTLIB="${MODCARGO_WANTLIB}"
+CHECK_LIB_DEPENDS_ARGS += -F c++abi
+
 # Define MASTER_SITES_CRATESIO for crates.io
 MASTER_SITES.cargo =	https://crates.io/api/v1/crates/
 
