@@ -1,6 +1,7 @@
 COMMENT =	PIM Storage Service
 DISTNAME =	akonadi-${VERSION}
 CATEGORIES =	databases productivity
+REVISION =	0
 
 HOMEPAGE =	https://kontact.kde.org
 
@@ -37,15 +38,16 @@ BUILD_DEPENDS +=	databases/mariadb,-server \
 			devel/kf5/kcompletion \
 			devel/kf5/kdbusaddons  \
 			x11/qt5/qtbase,-mysql \
-			x11/qt5/qtbase,-psql
+			x11/qt5/qtbase,-psql \
+			databases/sqlite3
 
 RUN_DEPENDS =		devel/kf5/kdesignerplugin \
 			misc/shared-mime-info \
 			x11/qt5/qtbase,-mysql \
-			x11/qt5/qtbase,-psql
+			x11/qt5/qtbase,-psql \
+			databases/sqlite3
 
-LIB_DEPENDS =		databases/sqlite3 \
-			devel/kf5/kconfig \
+LIB_DEPENDS =		devel/kf5/kconfig \
 			devel/kf5/kconfigwidgets \
 			devel/kf5/kcoreaddons \
 			devel/kf5/kcrash \
