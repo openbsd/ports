@@ -1,9 +1,8 @@
 COMMENT=	library for network communications and cryptography
 
-DISTNAME=	libsodium-1.0.18
-REVISION=	1
+DISTNAME=	libsodium-1.0.19
 
-SHARED_LIBS +=  sodium               10.0     # 26.0
+SHARED_LIBS +=  sodium               10.1     # 27.0
 
 CATEGORIES=	security net
 
@@ -19,6 +18,7 @@ MASTER_SITES=	https://download.libsodium.org/libsodium/releases/ \
 
 SEPARATE_BUILD=	Yes
 
+WRKSRC=			${WRKDIR}/libsodium-stable
 CONFIGURE_STYLE=	gnu
 
 post-install:
