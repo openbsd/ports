@@ -327,6 +327,7 @@
      SUBDIR += py-userpath,python3
      SUBDIR += py-vmomi,python3
      SUBDIR += py-vsphere-automation,python3
+     SUBDIR += py-watchdog,python3
      SUBDIR += py-zabbix-api,python3
      SUBDIR += radiusreport
      SUBDIR += radmind
