@@ -1,5 +1,5 @@
 # XXX if we start providing OpenBSD appstream data files into
-# PREFIX/share/app-info, turn the @exec into a @tag;
+# PREFIX/share/app-info, turn the @exec into a @tag (and add to portcheck);
 # for an example, see:
 # https://gitlab.archlinux.org/archlinux/packaging/packages/archlinux-appstream-data/-/blob/main/PKGBUILD
 
