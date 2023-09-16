@@ -3,7 +3,7 @@
 COMMENT=		GNOME settings
 
 GNOME_PROJECT=		gnome-control-center
-GNOME_VERSION=		44.3
+GNOME_VERSION=		44.4
 
 CATEGORIES=		x11
 

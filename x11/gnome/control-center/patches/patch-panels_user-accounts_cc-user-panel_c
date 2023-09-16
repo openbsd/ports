@@ -4,7 +4,7 @@ so that symbols can be resolved in the user panel.
 Index: panels/user-accounts/cc-user-panel.c
 --- panels/user-accounts/cc-user-panel.c.orig
 +++ panels/user-accounts/cc-user-panel.c
-@@ -1543,6 +1543,8 @@ cc_user_panel_init (CcUserPanel *self)
+@@ -1546,6 +1546,8 @@ cc_user_panel_init (CcUserPanel *self)
          g_type_ensure (CC_TYPE_AVATAR_CHOOSER);
          g_type_ensure (CC_TYPE_LIST_ROW);
  
