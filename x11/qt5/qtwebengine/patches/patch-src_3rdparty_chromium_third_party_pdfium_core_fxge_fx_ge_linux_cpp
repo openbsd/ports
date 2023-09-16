@@ -10,15 +10,23 @@ Index: src/3rdparty/chromium/third_party/pdfium/core/fxge/fx_ge_linux.cpp
  #error "Included on the wrong platform"
  #endif
  
-@@ -165,9 +165,8 @@ class CLinuxPlatform : public CFX_GEModule::PlatformIf
+@@ -165,10 +165,16 @@ class CLinuxPlatform : public CFX_GEModule::PlatformIf
    std::unique_ptr<SystemFontInfoIface> CreateDefaultSystemFontInfo() override {
      auto pInfo = std::make_unique<CFX_LinuxFontInfo>();
      if (!pInfo->ParseFontCfg(CFX_GEModule::Get()->GetUserFontPaths())) {
 -      pInfo->AddPath("/usr/share/fonts");
 -      pInfo->AddPath("/usr/share/X11/fonts/Type1");
 -      pInfo->AddPath("/usr/share/X11/fonts/TTF");
++#if defined(OS_BSD)
++      pInfo->AddPath("${X11BASE}/X11/fonts/Type1");
++      pInfo->AddPath("${X11BASE}/X11/fonts/TTF");
++      pInfo->AddPath("${LOCALBASE}/share/fonts/noto");
++      pInfo->AddPath("${LOCALBASE}/share/fonts");
++#else
 +      pInfo->AddPath("/usr/X11R6/lib/X11/fonts/Type1");
 +      pInfo->AddPath("/usr/X11R6/lib/X11/fonts/TTF");
        pInfo->AddPath("/usr/local/share/fonts");
++#endif
      }
      return pInfo;
+   }

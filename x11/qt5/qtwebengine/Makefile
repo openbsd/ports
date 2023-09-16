@@ -15,7 +15,7 @@ COMMENT =		Chromium-based web engine for Qt5
 # Many parts are copied from www/chromium port, so keep in sync
 DISTNAME =		qtwebengine-everywhere-opensource-src-${QT5_WEBENGINE_VERSION}
 QT5NAME =		QtWebEngine
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		www
 
@@ -130,6 +130,7 @@ pre-configure:
 
 pre-build:
 	${SUBST_CMD} ${CHROMESRC}/build/gn_run_binary.py \
+		${WRKSRC}/src/3rdparty/chromium/third_party/pdfium/core/fxge/fx_ge_linux.cpp \
 		${CHROMESRC}/v8/tools/run.py \
 		${CHROMESRC}/tools/protoc_wrapper/protoc_wrapper.py
 
