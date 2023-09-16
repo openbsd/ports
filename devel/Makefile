@@ -11,6 +11,7 @@
      SUBDIR += angr
      SUBDIR += apache-ant
      SUBDIR += apktool
+     SUBDIR += appstream
      SUBDIR += appstream-glib
      SUBDIR += apr
      SUBDIR += apr-util
