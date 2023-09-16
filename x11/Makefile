@@ -165,7 +165,6 @@
      SUBDIR += libqaccessibilityclient
      SUBDIR += libqtolm
      SUBDIR += libquotient
-     SUBDIR += libxcvt
      SUBDIR += libxdg-basedir
      SUBDIR += lightly
      SUBDIR += lsw

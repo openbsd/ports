@@ -1,7 +1,0 @@
-@bin bin/cvt
-include/libxcvt/
-include/libxcvt/libxcvt.h
-include/libxcvt/libxcvt_mode.h
-@lib lib/libxcvt.so.${LIBxcvt_VERSION}
-lib/pkgconfig/libxcvt.pc
-@man man/man1/cvt.1
