@@ -721,6 +721,8 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/${MODPY_PYCACHE}test_a
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/${MODPY_PYCACHE}test_artist.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/${MODPY_PYCACHE}test_axes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/${MODPY_PYCACHE}test_axes.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/${MODPY_PYCACHE}test_axis.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/${MODPY_PYCACHE}test_axis.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/${MODPY_PYCACHE}test_backend_bases.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/${MODPY_PYCACHE}test_backend_bases.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/${MODPY_PYCACHE}test_backend_cairo.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3297,6 +3299,7 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/test_api.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/test_arrow_patches.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/test_artist.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/test_axes.py
+lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/test_axis.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/test_backend_bases.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/test_backend_cairo.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/test_backend_gtk3.py

@@ -1,6 +1,6 @@
 COMMENT=	Python charting and plotting API
 
-MODPY_EGG_VERSION =	3.7.2
+MODPY_EGG_VERSION =	3.7.3
 DISTNAME =		matplotlib-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
