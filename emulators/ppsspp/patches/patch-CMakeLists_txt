@@ -1,24 +1,10 @@
--  Fix building on OpenBSD
-   94aed7a1011ef48e6524fb16bfb7dfb025dc0746
-
-- Fix includes
 - Honor CFLAGS and DEBUG
 - Use system libpng on arm platforms
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -258,6 +258,9 @@ if(MACOSX AND NOT IOS)
- 	endif()
- endif()
- 
-+include_directories(${X11BASE}/include)
-+include_directories(${LOCALBASE}/lib/libzip/include)
-+
- include(FindThreads)
- 
- if(APPLE)
-@@ -358,13 +361,13 @@ if(NOT MSVC)
+@@ -378,13 +378,13 @@ if(NOT MSVC)
  		endif()
  	endif()
  
@@ -36,24 +22,7 @@ Index: CMakeLists.txt
  	set(CMAKE_C_FLAGS_RELWITHDEBINFO "${CMAKE_C_FLAGS_RELWITHDEBINFO} -O2 -g -D_NDEBUG")
  
  	# Enable checking printf-like format strings (also works for logging functions)
-@@ -404,7 +407,7 @@ if(NOT MSVC)
- 			add_definitions(-Wno-psabi)
- 		endif()
- 		add_definitions(-D_XOPEN_SOURCE=700)
--		add_definitions(-D_XOPEN_SOURCE_EXTENDED -D__BSD_VISIBLE=1)
-+		add_definitions(-D_XOPEN_SOURCE_EXTENDED -D__BSD_VISIBLE=1 -D_BSD_SOURCE)
- 		add_definitions(-D_LARGEFILE64_SOURCE=1 -D_FILE_OFFSET_BITS=64)
- 	elseif(ANDROID)
- 		add_definitions(-fsigned-char)
-@@ -933,6 +936,7 @@ endif()
- find_package(LIBZIP)
- if(LIBZIP_FOUND AND USE_SYSTEM_LIBZIP)
- 	add_definitions(-DSHARED_LIBZIP)
-+	include_directories(${LIBZIP_INCLUDE_DIRS})
- else()
- 	add_library(libzip STATIC
- 		ext/libzip/zip_add.c
-@@ -1070,7 +1074,7 @@ else()
+@@ -1125,7 +1125,7 @@ else()
  endif()
  
  # Arm platforms require at least libpng17.

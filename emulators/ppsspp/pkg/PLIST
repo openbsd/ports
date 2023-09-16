@@ -99,8 +99,10 @@ share/ppsspp/assets/mime/ppsspp.xml
 share/ppsspp/assets/ppge_atlas.meta
 share/ppsspp/assets/ppge_atlas.zim
 share/ppsspp/assets/rargray.png
+share/ppsspp/assets/sfx_achievement_unlocked.wav
 share/ppsspp/assets/sfx_back.wav
 share/ppsspp/assets/sfx_confirm.wav
+share/ppsspp/assets/sfx_leaderbord_submitted.wav
 share/ppsspp/assets/sfx_select.wav
 share/ppsspp/assets/sfx_toggle_off.wav
 share/ppsspp/assets/sfx_toggle_on.wav
@@ -114,12 +116,14 @@ share/ppsspp/assets/shaders/GaussianDownscale.fsh
 share/ppsspp/assets/shaders/aacolor.fsh
 share/ppsspp/assets/shaders/aacolor.vsh
 share/ppsspp/assets/shaders/bloom.fsh
+share/ppsspp/assets/shaders/bloomnoblur.fsh
 share/ppsspp/assets/shaders/cartoon.fsh
 share/ppsspp/assets/shaders/cartoon.vsh
 share/ppsspp/assets/shaders/checkers.fsh
 share/ppsspp/assets/shaders/colorcorrection.fsh
 share/ppsspp/assets/shaders/crt.fsh
 share/ppsspp/assets/shaders/defaultshaders.ini
+share/ppsspp/assets/shaders/fakereflections.fsh
 share/ppsspp/assets/shaders/fxaa.fsh
 share/ppsspp/assets/shaders/fxaa.vsh
 share/ppsspp/assets/shaders/natural.fsh
