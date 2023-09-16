@@ -1,3 +1,5 @@
+BROKEN =	non-trivial to update to the latest version
+
 # bundled jython has amd64 components for OpenBSD
 ONLY_FOR_ARCHS =	amd64
 
