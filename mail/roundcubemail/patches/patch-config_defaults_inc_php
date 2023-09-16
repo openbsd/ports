@@ -1,22 +1,7 @@
-hunk 1:
-From d2e8a889c4094b5890a7d1e162aa9b6044b8baad Mon Sep 17 00:00:00 2001
-From: Aleksander Machniak <alec@alec.pl>
-Date: Sun, 9 Jul 2023 11:23:44 +0200
-Subject: [PATCH] Fix regression that broke use_secure_urls feature (#9052)
-
-
 Index: config/defaults.inc.php
 --- config/defaults.inc.php.orig
 +++ config/defaults.inc.php
-@@ -799,6 +799,7 @@ $config['no_save_sent_messages'] = false;
- // Warning: This requires http server configuration. Sample:
- //    RewriteRule ^/roundcubemail/[a-zA-Z0-9]{16}/(.*) /roundcubemail/$1 [PT]
- //    Alias /roundcubemail /var/www/roundcubemail/
-+// Warning: This feature does NOT work with request_path = 'SCRIPT_NAME'
- // Note: Use assets_path to not prevent the browser from caching assets
- $config['use_secure_urls'] = false;
- 
-@@ -935,10 +936,10 @@ $config['spellcheck_dictionary'] = false;
+@@ -936,10 +936,10 @@ $config['spellcheck_dictionary'] = false;
  // - 'pspell'  - requires the PHP Pspell module and aspell installed
  // - 'enchant' - requires the PHP Enchant module
  // - 'atd'     - install your own After the Deadline server or check with the people at http://www.afterthedeadline.com before using their API

@@ -2,12 +2,10 @@ COMMENT-main=	IMAP4 webmail client
 COMMENT-classic=classic skin for Roundcube webmail
 COMMENT-larry=	larry skin for Roundcube webmail
 
-V=		1.6.2
-REVISION-main=	0
+V=		1.6.3
 
 DISTNAME=	roundcubemail-$V
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${DISTNAME}-skins.tar.xz:0
+DISTFILES.skins= ${DISTNAME}-skins.tar.xz
 EXTRACT_SUFX=	-complete.tar.gz
 
 PKGNAME-main=	roundcubemail-${VS}
@@ -25,8 +23,8 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 # GPLv3+ with exceptions for skins & plugins
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://github.com/roundcube/roundcubemail/releases/download/$V/
-MASTER_SITES0=	https://spacehopper.org/mirrors/
+SITES=		https://github.com/roundcube/roundcubemail/releases/download/$V/
+SITES.skins=	https://spacehopper.org/mirrors/
 MULTI_PACKAGES=	-main -classic -larry
 # reduce churn during beta/rc tests
 VS=		${V:S/-//}

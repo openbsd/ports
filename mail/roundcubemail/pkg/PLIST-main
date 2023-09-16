@@ -2529,6 +2529,10 @@ roundcubemail/program/localization/tr_TR/timezones.inc
 roundcubemail/program/localization/tzl/
 roundcubemail/program/localization/tzl/labels.inc
 roundcubemail/program/localization/tzl/messages.inc
+roundcubemail/program/localization/ug/
+roundcubemail/program/localization/ug/labels.inc
+roundcubemail/program/localization/ug/messages.inc
+roundcubemail/program/localization/ug/timezones.inc
 roundcubemail/program/localization/uk_UA/
 roundcubemail/program/localization/uk_UA/labels.inc
 roundcubemail/program/localization/uk_UA/messages.inc
@@ -2857,13 +2861,6 @@ roundcubemail/vendor/guzzlehttp/promises/src/RejectionException.php
 roundcubemail/vendor/guzzlehttp/promises/src/TaskQueue.php
 roundcubemail/vendor/guzzlehttp/promises/src/TaskQueueInterface.php
 roundcubemail/vendor/guzzlehttp/promises/src/Utils.php
-roundcubemail/vendor/guzzlehttp/promises/vendor-bin/
-roundcubemail/vendor/guzzlehttp/promises/vendor-bin/php-cs-fixer/
-roundcubemail/vendor/guzzlehttp/promises/vendor-bin/php-cs-fixer/composer.json
-roundcubemail/vendor/guzzlehttp/promises/vendor-bin/phpstan/
-roundcubemail/vendor/guzzlehttp/promises/vendor-bin/phpstan/composer.json
-roundcubemail/vendor/guzzlehttp/promises/vendor-bin/psalm/
-roundcubemail/vendor/guzzlehttp/promises/vendor-bin/psalm/composer.json
 roundcubemail/vendor/guzzlehttp/psr7/
 roundcubemail/vendor/guzzlehttp/psr7/CHANGELOG.md
 roundcubemail/vendor/guzzlehttp/psr7/LICENSE
