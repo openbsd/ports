@@ -1,7 +1,7 @@
 COMMENT =		HTTP client/server library for GNOME
 
 GNOME_PROJECT =		libsoup
-GNOME_VERSION =		3.4.2
+GNOME_VERSION =		3.4.3
 PKGNAME=		libsoup3-${GNOME_VERSION}
 
 SHARED_LIBS += soup-3.0                  0.3 # 0.7.0
