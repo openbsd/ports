@@ -406,6 +406,7 @@
      SUBDIR += py-demjson,python3
      SUBDIR += py-dict2xml,python3
      SUBDIR += py-dicttoxml,python3
+     SUBDIR += py-diff-match-patch,python3
      SUBDIR += py-docutils,python3
      SUBDIR += py-elasticsearch,python3
      SUBDIR += py-elementpath,python3
@@ -471,6 +472,7 @@
      SUBDIR += py-sphinxcontrib		# subdir; uses python3
      SUBDIR += py-stache,python3
      SUBDIR += py-stemmer,python3
+     SUBDIR += py-textdistance,python3
      SUBDIR += py-textfsm,python3
      SUBDIR += py-tinycss2,python3
      SUBDIR += py-toml,python3
@@ -478,6 +480,7 @@
      SUBDIR += py-tomli_w,python3
      SUBDIR += py-tomlkit,python3
      SUBDIR += py-typogrify,python3
+     SUBDIR += py-ujson,python3
      SUBDIR += py-unicodecsv,python3
      SUBDIR += py-unidecode,python3
      SUBDIR += py-unpaddedbase64,python3
