@@ -126,6 +126,7 @@
      SUBDIR += libxml++
      SUBDIR += libxml++40
      SUBDIR += libxml++50
+     SUBDIR += libxmlb
      SUBDIR += libxmlbird
      SUBDIR += libxslt
      SUBDIR += link-grammar
