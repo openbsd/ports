@@ -10,7 +10,7 @@ Index: third_party/blink/renderer/core/layout/ng/layout_ng_view.cc
  #include "third_party/blink/renderer/platform/fonts/font_cache.h"
  #endif
  
-@@ -57,7 +57,7 @@ void LayoutNGView::UpdateLayout() {
+@@ -53,7 +53,7 @@ void LayoutNGView::UpdateLayout() {
      fragmentation_context_.Clear();
    }
  

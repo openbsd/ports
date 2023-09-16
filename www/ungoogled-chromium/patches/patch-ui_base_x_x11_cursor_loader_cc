@@ -14,7 +14,7 @@ Index: ui/base/x/x11_cursor_loader.cc
      void operator()(void* ptr) const { dlclose(ptr); }
    };
  
-+#if defined(OS_BSD)
++#if BUILDFLAG(IS_BSD)
 +  std::unique_ptr<void, DlCloser> lib(dlopen("libXcursor.so", RTLD_LAZY));
 +#else
    std::unique_ptr<void, DlCloser> lib(dlopen("libXcursor.so.1", RTLD_LAZY));

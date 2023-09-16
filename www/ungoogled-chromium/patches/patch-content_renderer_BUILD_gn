@@ -1,8 +1,8 @@
 Index: content/renderer/BUILD.gn
 --- content/renderer/BUILD.gn.orig
 +++ content/renderer/BUILD.gn
-@@ -204,6 +204,13 @@ target(link_target_type, "renderer") {
-     configs += [ "//build/config/compiler:enable_arc" ]
+@@ -200,6 +200,13 @@ target(link_target_type, "renderer") {
+     ]
    }
  
 +  if (is_bsd) {

@@ -1,7 +1,7 @@
 Index: components/management_strings.grdp
 --- components/management_strings.grdp.orig
 +++ components/management_strings.grdp
-@@ -321,7 +321,7 @@
+@@ -343,7 +343,7 @@
    </if>
  
    <!-- Strings related to Chrome Enterprise Device Signals Sharing -->

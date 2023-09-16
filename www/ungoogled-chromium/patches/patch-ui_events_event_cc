@@ -19,7 +19,7 @@ Index: ui/events/event.cc
  // This value matches Windows, Fuchsia WHEEL_DELTA, and (roughly) Firefox on
  // Linux.
  // static
-@@ -931,7 +931,7 @@ void KeyEvent::InitializeNative() {
+@@ -936,7 +936,7 @@ void KeyEvent::InitializeNative() {
    if (synthesize_key_repeat_enabled_ && IsRepeated(GetLastKeyEvent()))
      set_flags(flags() | EF_IS_REPEAT);
  

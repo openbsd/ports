@@ -109,9 +109,9 @@ Index: content/browser/child_process_launcher_helper_linux.cc
 +#endif
  }
  
- void ChildProcessLauncherHelper::SetProcessBackgroundedOnLauncherThread(
-@@ -174,11 +194,13 @@ void ChildProcessLauncherHelper::SetProcessBackgrounde
-     process.SetProcessBackgrounded(is_background);
+ void ChildProcessLauncherHelper::SetProcessPriorityOnLauncherThread(
+@@ -175,11 +195,13 @@ void ChildProcessLauncherHelper::SetProcessPriorityOnL
+   }
  }
  
 +#if !BUILDFLAG(IS_BSD)

@@ -1,7 +1,7 @@
 Index: chrome/browser/extensions/api/webstore_private/webstore_private_api.cc
 --- chrome/browser/extensions/api/webstore_private/webstore_private_api.cc.orig
 +++ chrome/browser/extensions/api/webstore_private/webstore_private_api.cc
-@@ -905,7 +905,7 @@ void WebstorePrivateBeginInstallWithManifest3Function:
+@@ -901,7 +901,7 @@ void WebstorePrivateBeginInstallWithManifest3Function:
          RequestExtensionApproval(contents);
          return;
        }

@@ -1,7 +1,7 @@
 Index: chrome/browser/content_settings/one_time_permission_provider.cc
 --- chrome/browser/content_settings/one_time_permission_provider.cc.orig
 +++ chrome/browser/content_settings/one_time_permission_provider.cc
-@@ -207,8 +207,13 @@ void OneTimePermissionProvider::OnSuspend() {
+@@ -225,8 +225,13 @@ void OneTimePermissionProvider::OnSuspend() {
  
        while (rule_iterator && rule_iterator->HasNext()) {
          auto rule = rule_iterator->Next();
@@ -15,7 +15,7 @@ Index: chrome/browser/content_settings/one_time_permission_provider.cc
          permissions::PermissionUmaUtil::RecordOneTimePermissionEvent(
              setting_type,
              permissions::OneTimePermissionEvent::EXPIRED_ON_SUSPEND);
-@@ -302,8 +307,13 @@ void OneTimePermissionProvider::DeleteEntriesMatchingG
+@@ -320,8 +325,13 @@ void OneTimePermissionProvider::DeleteEntriesMatchingG
      auto rule = rule_iterator->Next();
      if (rule->primary_pattern.Matches(origin_gurl) &&
          rule->secondary_pattern.Matches(origin_gurl)) {
