@@ -39,7 +39,9 @@ MODULES +=		x11/qt5
 MODKF5_EXAMPLES_DIR =	${PREFIX}/share/examples/${PKGNAME:C/-[0-9].*//}/
 MODKF5_post-install += \
 	cd ${WRKINST}; \
-	find etc -type d -empty -delete; \
+	if [ -d ${WRKINST}/etc ]; then \
+		find etc -type d -empty -delete; \
+	fi; \
 	if [ -d ${WRKINST}/etc ]; then \
 		cd ${WRKINST}/etc; \
 		${INSTALL_DATA_DIR} ${MODKF5_EXAMPLES_DIR}; \
