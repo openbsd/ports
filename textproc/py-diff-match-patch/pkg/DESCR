@@ -1,0 +1,10 @@
+The diff match and patch libraries offer robust algorithms to perform
+the operations required for synchronizing plain text.
+
+This library implements Myer's diff algorithm which is generally
+considered to be the best general-purpose diff. A layer of pre-diff
+speedups and post-diff cleanups surround the diff algorithm, improving
+both performance and output quality.
+
+This library also implements a Bitap matching algorithm at the heart
+of a flexible matching and patching strategy.
