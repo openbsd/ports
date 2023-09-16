@@ -3,8 +3,11 @@ ONLY_FOR_ARCHS =	aarch64 amd64
 
 COMMENT =	create type safe go from SQL
 
-MODGO_MODNAME =	github.com/kyleconroy/sqlc
-MODGO_VERSION =	v1.15.0
+# 1.21.0 hits https://github.com/sqlc-dev/sqlc/issues/2726
+MODGO_MODNAME =	github.com/sqlc-dev/sqlc
+MODGO_VERSION =	v1.20.0
+HOMEPAGE =	https://sqlc.dev/
+PORTROACH =	site:https://github.com/sqlc-dev/sqlc/releases/
 
 DISTNAME =	sqlc-${MODGO_VERSION}
 
@@ -16,7 +19,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += c pthread
 
 MODULES =	lang/go
-MODGO_LDFLAGS =	-X "github.com/kyleconroy/sqlc/internal/cmd.version=${MODGO_VERSION}"
+MODGO_LDFLAGS =	-X "github.com/sqlc-dev/sqlc/internal/cmd.version=${MODGO_VERSION}"
 
 NO_TEST =	Yes
 
