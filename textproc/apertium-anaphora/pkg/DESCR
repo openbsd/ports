@@ -1,0 +1,7 @@
+Anaphora Resolution is the process of resolving references (anaphora) to
+earlier items (antecedents) in discourse. The most common form of this is
+Pronominal Anaphora, where the anaphor is a pronoun and the antecedent is
+a noun.
+
+The apertium-anaphora module adds this capability to the Apertium machine
+translation toolkit.

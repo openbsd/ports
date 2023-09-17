@@ -1,0 +1,5 @@
+@bin bin/apertium-anaphora
+bin/apertium-validate-anaphora
+lib/pkgconfig/apertium-anaphora.pc
+share/apertium-anaphora/
+share/apertium-anaphora/anaphora.dtd

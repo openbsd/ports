@@ -1,0 +1,24 @@
+Index: src/anaphora.cc
+--- src/anaphora.cc.orig
++++ src/anaphora.cc
+@@ -33,6 +33,7 @@
+ #include <vector>
+ #include <libgen.h>
+ #include <getopt.h>
++#include <unistd.h>
+ 
+ using namespace std;
+ 
+@@ -80,6 +81,12 @@ int main(int argc, char **argv)
+ 	char *arxFileName = nullptr;
+ 
+ 	int nullFlush = 0;
++
++	if (pledge("stdio rpath wpath cpath", NULL) == -1)
++	{
++		wcerr << "pledge";
++		exit(EXIT_FAILURE);
++	}
+ 
+ 	LtLocale::tryToSetLocale();
+ 
