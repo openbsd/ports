@@ -42,7 +42,8 @@ MODULES=		devel/meson \
 BUILD_DEPENDS=		devel/gettext,-tools \
 			devel/gobject-introspection \
 			lang/vala \
-			textproc/gtk-doc
+			textproc/gtk-doc \
+			textproc/itstool
 
 LIB_DEPENDS-main=	devel/libyaml \
 			net/curl \
