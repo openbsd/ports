@@ -8,7 +8,7 @@ SHA256 (nginx-rtmp-module-v1.2.1.tar.gz) = h6pZdACwtaBSdO4tI9jLgiThJoYiegq+MdeDs
 SHA256 (ngx_devel_kit-v0.3.0.tar.gz) = iOBamainQZBm9a51lm+x78QJutRSLRSYbaB0VUrmFhk=
 SHA256 (ngx_http_geoip2_module-3.3.tar.gz) = QTeEOMgz4xOhiGnQxKcnBLSDXDCsr3/WgBOrZzL/eKc=
 SHA256 (ngx_http_hmac_secure_link_module-48c4625fbbf51ed5a95bfec23fa444f6c3702e50.tar.gz) = ZXpA2rODS1enIREzlD1OqWwpWcv3NOUXH4eUOgOAmqg=
-SHA256 (njs-0.7.12.tar.gz) = enWjkCLftY2/RhBTkDoHzEjdSUL32CpGYBgZwbAHdoc=
+SHA256 (njs-0.8.1.tar.gz) = BFDZZS08/n3Z+ALW95CjYW4WEu70Rxlc09ql1Ds5WIE=
 SIZE (headers-more-nginx-module-v0.34.tar.gz) = 28827
 SIZE (lua-nginx-module-v0.10.11.tar.gz) = 616653
 SIZE (naxsi-d714f1636ea49a9a9f4f06dba14aee003e970834.tar.gz) = 237272
@@ -19,4 +19,4 @@ SIZE (nginx-rtmp-module-v1.2.1.tar.gz) = 519919
 SIZE (ngx_devel_kit-v0.3.0.tar.gz) = 66455
 SIZE (ngx_http_geoip2_module-3.3.tar.gz) = 8509
 SIZE (ngx_http_hmac_secure_link_module-48c4625fbbf51ed5a95bfec23fa444f6c3702e50.tar.gz) = 6159
-SIZE (njs-0.7.12.tar.gz) = 662554
+SIZE (njs-0.8.1.tar.gz) = 729780
