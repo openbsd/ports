@@ -43,6 +43,7 @@ PKGNAME-securelink=	nginx-securelink-${VERSION}
 
 REVISION-main=		0
 REVISION-passenger=	1
+REVISION-njs=		0
 
 ONLY_FOR_ARCHS-passenger= aarch64 amd64 arm i386
 
