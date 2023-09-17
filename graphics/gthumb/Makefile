@@ -2,6 +2,7 @@ COMMENT=	image viewer and browser for GNOME
 
 GNOME_PROJECT=	gthumb
 GNOME_VERSION=	3.12.3
+REVISION=	0
 
 CATEGORIES=	graphics
 
@@ -22,9 +23,10 @@ MODULES=	devel/dconf \
 		devel/meson \
 		x11/gnome
 
-DEBUG_PACKAGES =	${BUILD_PACKAGES}
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
-BUILD_DEPENDS +=	multimedia/gstreamer1/plugins-base
+BUILD_DEPENDS=		devel/appstream \
+			multimedia/gstreamer1/plugins-base
 
 # web albums
 BUILD_DEPENDS +=	devel/bison
