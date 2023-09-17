@@ -1,7 +1,7 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -6969,6 +6969,9 @@ printf "%s\n" "$PTHREAD_LIBS" >&6; }
+@@ -6978,6 +6978,9 @@ printf "%s\n" "$PTHREAD_LIBS" >&6; }
  
  openbsd*)
      using_freetype_fontconfig=yes
@@ -11,7 +11,7 @@ Index: configure
      using_x11=yes
      PTHREAD_CFLAGS="-D_THREAD_SAFE"
      PTHREAD_LIBS="-pthread"
-@@ -14970,6 +14973,11 @@ openbsd*)
+@@ -14979,6 +14982,11 @@ openbsd*)
      P_SEP=:
  
      case "$host_cpu" in
@@ -23,7 +23,7 @@ Index: configure
      i*86)
          CPUNAME=INTEL
          RTL_ARCH=x86
-@@ -21689,9 +21697,6 @@ _ACEOF
+@@ -21698,9 +21706,6 @@ _ACEOF
          rm -fr libconftest*
          { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gccvisinlineshiddenok" >&5
  printf "%s\n" "$gccvisinlineshiddenok" >&6; }
@@ -33,34 +33,34 @@ Index: configure
      fi
  
     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking if $CXX_BASE has a visibility bug with class-level attributes (GCC bug 26905)" >&5
-@@ -29008,7 +29013,7 @@ then :
+@@ -29017,7 +29022,7 @@ then :
    printf %s "(cached) " >&6
  else $as_nop
  
--	for am_cv_pathless_PYTHON in python python2 python3  python3.9 python3.8 python3.7 python3.6 python3.5 python3.4 python3.3  python3.2 python3.1 python3.0  python2.7 python2.6 python2.5 python2.4 python2.3 python2.2 python2.1  python2.0 none; do
-+	for am_cv_pathless_PYTHON in python${MODPY_VERSION} python2 python3  python3.9 python3.8 python3.7 python3.6 python3.5 python3.4 python3.3  python3.2 python3.1 python3.0  python2.7 python2.6 python2.5 python2.4 python2.3 python2.2 python2.1  python2.0 none; do
+-	for am_cv_pathless_PYTHON in python python2 python3  python3.11 python3.10  python3.9 python3.8 python3.7 python3.6 python3.5 python3.4 python3.3  python3.2 python3.1 python3.0  python2.7 python2.6 python2.5 python2.4 python2.3 python2.2 python2.1  python2.0 none; do
++	for am_cv_pathless_PYTHON in python${MODPY_VERSION} python2 python3  python3.11 python3.10  python3.9 python3.8 python3.7 python3.6 python3.5 python3.4 python3.3  python3.2 python3.1 python3.0  python2.7 python2.6 python2.5 python2.4 python2.3 python2.2 python2.1  python2.0 none; do
  	  test "$am_cv_pathless_PYTHON" = none && break
  	  prog="import sys
  # split strings by '.' and convert to numeric.  Append some zeros
-@@ -29326,7 +29331,7 @@ then :
+@@ -29458,7 +29463,7 @@ then :
    printf %s "(cached) " >&6
  else $as_nop
  
--	for am_cv_pathless_PYTHON in python python2 python3  python3.9 python3.8 python3.7 python3.6 python3.5 python3.4 python3.3  python3.2 python3.1 python3.0  python2.7 python2.6 python2.5 python2.4 python2.3 python2.2 python2.1  python2.0 none; do
-+	for am_cv_pathless_PYTHON in python${MODPY_VERSION} python2 python3  python3.9 python3.8 python3.7 python3.6 python3.5 python3.4 python3.3  python3.2 python3.1 python3.0  python2.7 python2.6 python2.5 python2.4 python2.3 python2.2 python2.1  python2.0 none; do
+-	for am_cv_pathless_PYTHON in python python2 python3  python3.11 python3.10  python3.9 python3.8 python3.7 python3.6 python3.5 python3.4 python3.3  python3.2 python3.1 python3.0  python2.7 python2.6 python2.5 python2.4 python2.3 python2.2 python2.1  python2.0 none; do
++	for am_cv_pathless_PYTHON in python${MODPY_VERSION} python2 python3  python3.11 python3.10  python3.9 python3.8 python3.7 python3.6 python3.5 python3.4 python3.3  python3.2 python3.1 python3.0  python2.7 python2.6 python2.5 python2.4 python2.3 python2.2 python2.1  python2.0 none; do
  	  test "$am_cv_pathless_PYTHON" = none && break
  	  prog="import sys
  # split strings by '.' and convert to numeric.  Append some zeros
-@@ -29652,7 +29657,7 @@ then :
+@@ -29907,7 +29912,7 @@ then :
    printf %s "(cached) " >&6
  else $as_nop
  
--	for am_cv_pathless_PYTHON in python python2 python3  python3.9 python3.8 python3.7 python3.6 python3.5 python3.4 python3.3  python3.2 python3.1 python3.0  python2.7 python2.6 python2.5 python2.4 python2.3 python2.2 python2.1  python2.0 none; do
-+	for am_cv_pathless_PYTHON in python${MODPY_VERSION} python2 python3  python3.9 python3.8 python3.7 python3.6 python3.5 python3.4 python3.3  python3.2 python3.1 python3.0  python2.7 python2.6 python2.5 python2.4 python2.3 python2.2 python2.1  python2.0 none; do
+-	for am_cv_pathless_PYTHON in python python2 python3  python3.11 python3.10  python3.9 python3.8 python3.7 python3.6 python3.5 python3.4 python3.3  python3.2 python3.1 python3.0  python2.7 python2.6 python2.5 python2.4 python2.3 python2.2 python2.1  python2.0 none; do
++	for am_cv_pathless_PYTHON in python${MODPY_VERSION} python2 python3  python3.11 python3.10  python3.9 python3.8 python3.7 python3.6 python3.5 python3.4 python3.3  python3.2 python3.1 python3.0  python2.7 python2.6 python2.5 python2.4 python2.3 python2.2 python2.1  python2.0 none; do
  	  test "$am_cv_pathless_PYTHON" = none && break
  	  prog="import sys
  # split strings by '.' and convert to numeric.  Append some zeros
-@@ -37917,7 +37922,7 @@ printf "%s\n" "internal" >&6; }
+@@ -38295,7 +38300,7 @@ printf "%s\n" "internal" >&6; }
      if test "$COM" = "MSC"; then
          HYPHEN_LIB="${WORKDIR}/LinkTarget/StaticLibrary/hyphen.lib"
      else
@@ -69,7 +69,7 @@ Index: configure
      fi
  fi
  
-@@ -38120,7 +38125,7 @@ printf "%s\n" "internal" >&6; }
+@@ -38498,7 +38503,7 @@ printf "%s\n" "internal" >&6; }
      if test "$COM" = "MSC"; then
          MYTHES_LIBS="${WORKDIR}/LinkTarget/StaticLibrary/mythes.lib"
      else
@@ -78,7 +78,7 @@ Index: configure
      fi
  fi
  
-@@ -38968,8 +38973,8 @@ else
+@@ -39346,8 +39351,8 @@ else
      { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking the flex version" >&5
  printf %s "checking the flex version... " >&6; }
      _flex_version=$($FLEX --version | $SED -e 's/^.*\([[:digit:]]\{1,\}\.[[:digit:]]\{1,\}\.[[:digit:]]\{1,\}\).*$/\1/')
@@ -89,7 +89,7 @@ Index: configure
      fi
  fi
  
-@@ -42865,7 +42870,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+@@ -43243,7 +43248,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
  printf %s "checking for Qt5 libraries... " >&6; }
      qt5_libdir="no"
      for lib_dir in $qt5_libdirs; do
@@ -98,7 +98,7 @@ Index: configure
              qt5_libdir="$lib_dir"
              break
          fi
-@@ -43674,7 +43679,7 @@ printf "%s\n" "$kf5_incdir" >&6; }
+@@ -44052,7 +44057,7 @@ printf "%s\n" "$kf5_incdir" >&6; }
  printf %s "checking for KF5 libraries... " >&6; }
      kf5_libdir="no"
      for kf5_check in $kf5_libdirs; do
@@ -107,7 +107,7 @@ Index: configure
              kf5_libdir="$kf5_check"
              break
          fi
-@@ -45662,7 +45667,7 @@ for i in shasum /usr/local/bin/shasum /usr/sfw/bin/sha
+@@ -46040,7 +46045,7 @@ for i in shasum /usr/local/bin/shasum /usr/sfw/bin/sha
  done
  
  if test -z "$SHA256SUM"; then
@@ -116,7 +116,7 @@ Index: configure
          eval "$i --version" > /dev/null 2>&1
          ret=$?
          if test $ret -eq 0; then
-@@ -46350,7 +46355,7 @@ if test $_os = iOS -o $_os = Android; then
+@@ -46728,7 +46733,7 @@ if test $_os = iOS -o $_os = Android; then
  fi
  
  if test -n "$enable_mergelibs" -a "$enable_mergelibs" != "no"; then
