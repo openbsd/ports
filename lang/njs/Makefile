@@ -2,7 +2,7 @@ COMMENT=	NGINX JavaScript command line utility and static library
 
 GH_ACCOUNT=	nginx
 GH_PROJECT=	njs
-GH_TAGNAME=	0.8.0
+GH_TAGNAME=	0.8.1
 
 CATEGORIES=	lang www
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE=	Yes
 COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
 
-WANTLIB=	c crypto pcre2-8 readline ssl xml2 z
+WANTLIB=	c crypto m pcre2-8 xml2 z
 
 LIB_DEPENDS=	devel/pcre2 \
 		textproc/libxml
