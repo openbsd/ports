@@ -10,9 +10,9 @@ PKGNAME-qt=	transmission-qt-${VER}
 CATEGORIES=	net
 HOMEPAGE=	https://transmissionbt.com/
 MAINTAINER=	Josh Grosse <josh@jggimi.net>
-REVISION-gtk=	0
-REVISION-main=	0
-REVISION-qt=	0
+REVISION-gtk=	1
+REVISION-main=	1
+REVISION-qt=	1
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
@@ -31,7 +31,8 @@ FLAVOR?=
 
 .include <bsd.port.arch.mk>
 
-WANTLIB-common =	${COMPILER_LIBCXX} c crypto curl m miniupnpc natpmp psl ssl
+WANTLIB-common =	${COMPILER_LIBCXX} c crypto curl deflate
+WANTLIB-common +=	m miniupnpc natpmp psl ssl
 
 WANTLIB-main =	${WANTLIB-common}
 
@@ -46,7 +47,8 @@ WANTLIB-qt +=	Qt6Widgets
 MODULES +=		devel/cmake \
 			textproc/intltool
 
-LIB_DEPENDS-common +=	net/curl \
+LIB_DEPENDS-common +=	archivers/libdeflate \
+			net/curl \
 			net/libpsl \
 			net/miniupnp/libnatpmp \
 			net/miniupnp/miniupnpc>=1.9
