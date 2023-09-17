@@ -3,7 +3,7 @@ CATEGORIES =	sysutils
 
 GH_ACCOUNT =	tavianator
 GH_PROJECT =	bfs
-GH_TAGNAME =	3.0.1
+GH_TAGNAME =	3.0.2
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
@@ -14,15 +14,15 @@ WANTLIB += c onig pthread
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-# C11
+# C17
 COMPILER =	base-clang ports-gcc
 
 LIB_DEPENDS =	textproc/oniguruma
 
 USE_GMAKE =	Yes
-MAKE_FLAGS =	CFLAGS="${CFLAGS} -DBFS_HAS_SYS_ACL=0"
+MAKE_FILE =	GNUmakefile
 
-FAKE_FLAGS =	DESTDIR=
+FAKE_FLAGS =	DESTDIR= MANDIR="${DESTDIR}${PREFIX}/man"
 
 TEST_DEPENDS =	shells/bash
 
