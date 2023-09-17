@@ -1,6 +1,6 @@
 COMMENT=	manipulate PDF and PostScript documents
 
-MODPY_EGG_VERSION=	3.2.0
+MODPY_EGG_VERSION=	3.3.1
 DISTNAME=	pspdfutils-${MODPY_EGG_VERSION}
 PKGNAME=	psutils-${MODPY_EGG_VERSION}
 
@@ -21,6 +21,7 @@ MODPY_PYBUILD=	setuptools
 
 BUILD_DEPENDS=	devel/py-puremagic${MODPY_FLAVOR} \
 		devel/py-test-datafiles${MODPY_FLAVOR} \
+		graphics/py-wand${MODPY_FLAVOR} \
 		print/libpaper \
 		print/py-pypdf${MODPY_FLAVOR} \
 		textproc/argparse-manpage
