@@ -4,7 +4,7 @@ GH_TAGNAME=		1.2.6
 GH_ACCOUNT=		ConsoleKit2
 GH_PROJECT=		ConsoleKit2
 PKGNAME=		${DISTNAME:L}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		sysutils	
 
@@ -40,7 +40,8 @@ DEBUG_PACKAGES=		${BUILD_PACKAGES}
 FAKE_FLAGS=		DBUS_SYS_DIR=${TRUEPREFIX}/share/examples/consolekit/dbus-1 \
 			sysconfdir=${TRUEPREFIX}/share/examples/consolekit
 
-BUILD_DEPENDS +=	devel/gettext,-tools
+BUILD_DEPENDS +=	devel/gettext,-tools \
+			textproc/gtk-doc
 AUTORECONF=		./autogen.sh
 AUTOCONF_VERSION=	2.71
 AUTOMAKE_VERSION=	1.16
