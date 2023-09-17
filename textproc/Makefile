@@ -3,6 +3,7 @@
      SUBDIR += amber
      SUBDIR += antiword
      SUBDIR += apertium
+     SUBDIR += apertium-anaphora
      SUBDIR += apertium-dicts
      SUBDIR += apertium-lex-tools
      SUBDIR += apertium-separable
