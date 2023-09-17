@@ -1,7 +1,8 @@
 COMMENT=		AFP file and print services for IP networks
 
-V=			3.1.16
+V=			3.1.17
 DISTNAME=		netatalk-${V}
+EXTRACT_SUFX=		.tar.xz
 PKGSPEC=		netatalk->=3,<4
 EPOCH=			0
 
