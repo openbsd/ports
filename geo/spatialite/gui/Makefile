@@ -3,7 +3,6 @@ DISTNAME =	spatialite_gui-2.1.0-beta1
 PKGNAME =	spatialite_gui-2.1.0beta1
 REVISION =	3
 PROJECT =	spatialite_gui
-MASTER_SITES =	http://www.gaia-gis.it/gaia-sins/spatialite-gui-sources/
 
 LIB_DEPENDS +=	x11/wxWidgets>=3.0.4 \
 		databases/sqlite3 \

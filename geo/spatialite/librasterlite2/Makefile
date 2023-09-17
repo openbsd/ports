@@ -4,7 +4,6 @@ REVISION =	1
 DISTNAME =	${PROJECT}-1.1.0-beta1
 PKGNAME =	${DISTNAME:S/-beta/beta/}
 SHARED_LIBS +=	rasterlite2 0.0 # 1.0
-MASTER_SITES =	http://www.gaia-gis.it/gaia-sins/librasterlite2-sources/
 
 LIB_DEPENDS +=	geo/spatialite/libspatialite>=5.0.0 \
 		geo/librttopo \
