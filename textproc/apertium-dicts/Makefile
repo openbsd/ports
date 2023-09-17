@@ -16,7 +16,7 @@
      SUBDIR += en-es
      SUBDIR += en-gl
      SUBDIR += eng
-     #SUBDIR += eng-cat		needs apertium-anapahora import first
+     SUBDIR += eng-cat
      SUBDIR += eo-ca
      SUBDIR += eo-en
      SUBDIR += eo-es
