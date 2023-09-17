@@ -1,3 +1,9 @@
 include/unarr.h
+lib/cmake/
+lib/cmake/unarr/
+lib/cmake/unarr/unarr-config.cmake
+lib/cmake/unarr/unarr-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/unarr/unarr-targets.cmake
+lib/cmake/unarr/unarr-version.cmake
 @lib lib/libunarr.so.${LIBunarr_VERSION}
 lib/pkgconfig/libunarr.pc

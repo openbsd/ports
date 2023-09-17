@@ -1,33 +1,34 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -105,27 +105,12 @@ endif()
- if(UNIX OR MINGW OR MSYS)
-   target_compile_options(unarr PRIVATE -Wall -Wextra -pedantic
-                     -Wstrict-prototypes -Wmissing-prototypes
--                    -Werror-implicit-function-declaration
--                    $<$<CONFIG:Release>:-fomit-frame-pointer>
--                    $<$<OR:$<C_COMPILER_ID:Clang>,$<C_COMPILER_ID:AppleClang>>:
--                    -Wno-missing-field-initializers>
--                    -flto)
-+                    -Werror-implicit-function-declaration)
-   target_compile_definitions(unarr PRIVATE -D_FILE_OFFSET_BITS=64)
+@@ -191,11 +191,7 @@ if(UNIX
+             -pedantic
+             -Wstrict-prototypes
+             -Wmissing-prototypes
+-            -Werror-implicit-function-declaration
+-            $<$<CONFIG:Release>:-fomit-frame-pointer>
+-            $<$<C_COMPILER_ID:Clang,AppleClang>:
+-            -Wno-missing-field-initializers>
+-            -flto)
++            -Werror-implicit-function-declaration)
+   if(BUILD_FUZZER)
+     target_compile_options(unarr PUBLIC "${sanitize_opts}")
+     target_compile_definitions(
+@@ -208,17 +204,6 @@ if(UNIX
  
-   # Linker flags
- 
--  # Clang linker needs -flto too when doing lto
--  if("${CMAKE_C_COMPILER_ID}" STREQUAL "Clang")
--    set_target_properties(unarr PROPERTIES LINK_FLAGS
--                          "-Wl,--no-undefined -Wl,--as-needed -flto")
--  # Apple ld uses different syntax for undefined symbol check
--  elseif("${CMAKE_C_COMPILER_ID}" STREQUAL "AppleClang")
--    set_target_properties(unarr PROPERTIES LINK_FLAGS
--                          "-Wl,-undefined,error -flto")
+   if(BUILD_FUZZER)
+     set(linker_opts "${sanitize_opts}")
 -  else()
--    set_target_properties(unarr PROPERTIES LINK_FLAGS
--                          "-Wl,--no-undefined -Wl,--as-needed")
+-    if("${CMAKE_C_COMPILER_ID}" STREQUAL "AppleClang")
+-      set(linker_opts "-Wl,-undefined,error")
+-    else()
+-      set(linker_opts "-Wl,--as-needed -Wl,--no-undefined")
+-    endif()
 -  endif()
-+
- endif()
+-
+-  # Clang linker needs -flto too when doing lto
+-  if("${CMAKE_C_COMPILER_ID}" MATCHES "Clang")
+-    set(linker_opts "${linker_opts} -flto")
+   endif()
  
- if(MSVC)
+   set_target_properties(unarr PROPERTIES LINK_FLAGS "${linker_opts}")
