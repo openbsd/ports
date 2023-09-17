@@ -1,0 +1,4 @@
+vgmstream is a library for playback of hundreds of streamed (prerecorded)
+audio formats used in video games. This package contains two components:
+vgmstream-cli, which decodes music files to .wav, and vgmstream123,
+which plays music files.

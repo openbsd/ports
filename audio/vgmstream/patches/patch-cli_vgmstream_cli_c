@@ -1,0 +1,22 @@
+Index: cli/vgmstream_cli.c
+--- cli/vgmstream_cli.c.orig
++++ cli/vgmstream_cli.c
+@@ -4,6 +4,7 @@
+ #define POSIXLY_CORRECT
+ 
+ #include <getopt.h>
++#include <stdlib.h>
+ #include "../src/vgmstream.h"
+ #include "../src/api.h"
+ #include "../src/util.h"
+@@ -593,6 +594,10 @@ int main(int argc, char** argv) {
+     cli_config cfg = {0};
+     int i, res, ok;
+ 
++    if (pledge("stdio rpath wpath cpath", NULL) == -1) {
++        fprintf(stderr, "pledge\n");
++        return 1;
++    }
+ 
+     /* read args */
+     res = parse_config(&cfg, argc, argv);

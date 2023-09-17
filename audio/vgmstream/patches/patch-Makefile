@@ -1,0 +1,12 @@
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -67,8 +67,6 @@ export RMF SHELL CC AR STRIP WINDRES DLLTOOL
+ ###############################################################################
+ ### build defs
+ 
+-DEF_CFLAGS += -ffast-math -O3 -Wall -Werror=format-security -Wvla -Wimplicit-function-declaration -Wignored-qualifiers
+-
+ VGM_DEBUG_FLAGS = 0
+ ifeq ($(VGM_DEBUG_FLAGS),1)
+   #DEF_CFLAGS += -O0

@@ -1,0 +1,22 @@
+Index: cli/vgmstream123.c
+--- cli/vgmstream123.c.orig
++++ cli/vgmstream123.c
+@@ -760,7 +760,18 @@ int main(int argc, char **argv) {
+     signal(SIGINT,  interrupt_handler);
+     signal(SIGQUIT, interrupt_handler);
+ 
++    if (pledge("stdio rpath wpath cpath inet unix dns tty prot_exec audio", NULL) == -1) {
++        fprintf(stderr, "pledge\n");
++        return 1;
++    }
++
+     ao_initialize();
++
++    if (pledge("stdio rpath wpath cpath inet unix dns tty audio", NULL) == -1) {
++        fprintf(stderr, "pledge\n");
++        return 1;
++    }
++
+     driver_id = ao_default_driver_id();
+     memset(&current_sample_format, 0, sizeof(current_sample_format));
+ 
