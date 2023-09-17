@@ -1,11 +1,11 @@
 COMMENT =	CLI tools for spatialite
 PROJECT =	spatialite-tools
-DISTNAME =	${PROJECT}-5.0.1
-REVISION =	1
+DISTNAME =	${PROJECT}-5.1.0a
+PKGNAME =	${DISTNAME:S/a$/pl0/}
 
 LIB_DEPENDS +=	converters/libiconv \
 		databases/sqlite3 \
-		geo/spatialite/libspatialite>=5.0.1 \
+		geo/spatialite/libspatialite>=5.1.0 \
 		geo/spatialite/readosm
 
 WANTLIB += ${COMPILER_LIBCXX}
