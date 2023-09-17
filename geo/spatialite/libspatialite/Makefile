@@ -1,15 +1,14 @@
 COMMENT=	sqlite extented with spatial SQL capabilities
 PROJECT =	libspatialite
-DISTNAME =	${PROJECT}-5.0.1
-SHARED_LIBS =	spatialite 1.2 # 8.2
-REVISION =	1
+DISTNAME =	${PROJECT}-5.1.0
+SHARED_LIBS =	spatialite 2.0 # 9.0
 
 CONFIGURE_ARGS +=	--enable-rttopo \
 			--enable-gcp #required by spatialite_gui
 LIB_DEPENDS +=	converters/libiconv \
 		archivers/minizip \
 		databases/sqlite3 \
-		geo/spatialite/freexl \
+		geo/spatialite/freexl>=2.0.0 \
 		geo/librttopo \
 		textproc/libxml \
 		geo/geos>=3.4.0 \
