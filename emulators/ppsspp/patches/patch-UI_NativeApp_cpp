@@ -7,10 +7,11 @@ Index: UI/NativeApp.cpp
  #if !defined(MOBILE_DEVICE) && !defined(_WIN32) && !PPSSPP_PLATFORM(SWITCH)
 -	g_VFS.Register("", new DirectoryReader(File::GetExeDirectory() / "assets"));
 -	g_VFS.Register("", new DirectoryReader(File::GetExeDirectory()));
- 	g_VFS.Register("", new DirectoryReader(Path("/usr/local/share/ppsspp/assets")));
+-	g_VFS.Register("", new DirectoryReader(Path("/usr/local/share/ppsspp/assets")));
 -	g_VFS.Register("", new DirectoryReader(Path("/usr/local/share/games/ppsspp/assets")));
 -	g_VFS.Register("", new DirectoryReader(Path("/usr/share/ppsspp/assets")));
 -	g_VFS.Register("", new DirectoryReader(Path("/usr/share/games/ppsspp/assets")));
++	g_VFS.Register("", new DirectoryReader(Path("${PREFIX}/share/ppsspp/assets")));
  #endif
  
  #if PPSSPP_PLATFORM(SWITCH)
