@@ -75,6 +75,7 @@ share/gtksourceview-5/language-specs/automake.lang
 share/gtksourceview-5/language-specs/awk.lang
 share/gtksourceview-5/language-specs/bennugd.lang
 share/gtksourceview-5/language-specs/bibtex.lang
+share/gtksourceview-5/language-specs/blueprint.lang
 share/gtksourceview-5/language-specs/bluespec.lang
 share/gtksourceview-5/language-specs/boo.lang
 share/gtksourceview-5/language-specs/c.lang
