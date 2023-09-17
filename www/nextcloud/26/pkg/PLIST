@@ -9568,6 +9568,8 @@ nextcloud/apps/activity/lib/Settings/Personal.php
 nextcloud/apps/activity/lib/Settings/PersonalSection.php
 nextcloud/apps/activity/lib/UserSettings.php
 nextcloud/apps/activity/lib/ViewInfoCache.php
+nextcloud/apps/activity/package-lock.json
+nextcloud/apps/activity/package.json
 nextcloud/apps/activity/templates/
 nextcloud/apps/activity/templates/rss.php
 nextcloud/apps/activity/templates/settings/
@@ -9941,6 +9943,8 @@ nextcloud/apps/bruteforcesettings/lib/Controller/
 nextcloud/apps/bruteforcesettings/lib/Controller/IPWhitelistController.php
 nextcloud/apps/bruteforcesettings/lib/Settings/
 nextcloud/apps/bruteforcesettings/lib/Settings/IPWhitelist.php
+nextcloud/apps/bruteforcesettings/package-lock.json
+nextcloud/apps/bruteforcesettings/package.json
 nextcloud/apps/bruteforcesettings/screenshots/
 nextcloud/apps/bruteforcesettings/screenshots/1.png
 nextcloud/apps/bruteforcesettings/templates/
@@ -11309,6 +11313,8 @@ nextcloud/apps/dav/l10n/et_EE.js
 nextcloud/apps/dav/l10n/et_EE.json
 nextcloud/apps/dav/l10n/eu.js
 nextcloud/apps/dav/l10n/eu.json
+nextcloud/apps/dav/l10n/fa.js
+nextcloud/apps/dav/l10n/fa.json
 nextcloud/apps/dav/l10n/fi.js
 nextcloud/apps/dav/l10n/fi.json
 nextcloud/apps/dav/l10n/fr.js
@@ -13665,6 +13671,76 @@ nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/nn-NO/
 nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/nn-NO/viewer.properties
 nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/oc/
 nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/oc/viewer.properties
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/pa-IN/
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/pa-IN/viewer.properties
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/pl/
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/pl/viewer.properties
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/pt-BR/
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/pt-BR/viewer.properties
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/pt-PT/
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/pt-PT/viewer.properties
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/rm/
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/rm/viewer.properties
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/ro/
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/ro/viewer.properties
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/ru/
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/ru/viewer.properties
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/sat/
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/sat/viewer.properties
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/sc/
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/sc/viewer.properties
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/scn/
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/scn/viewer.properties
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/sco/
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/sco/viewer.properties
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/si/
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/si/viewer.properties
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/sk/
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/sk/viewer.properties
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/skr/
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/skr/viewer.properties
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/sl/
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/sl/viewer.properties
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/son/
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/son/viewer.properties
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/sq/
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/sq/viewer.properties
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/sr/
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/sr/viewer.properties
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/sv-SE/
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/sv-SE/viewer.properties
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/szl/
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/szl/viewer.properties
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/ta/
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/ta/viewer.properties
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/te/
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/te/viewer.properties
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/tg/
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/tg/viewer.properties
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/th/
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/th/viewer.properties
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/tl/
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/tl/viewer.properties
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/tr/
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/tr/viewer.properties
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/trs/
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/trs/viewer.properties
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/uk/
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/uk/viewer.properties
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/ur/
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/ur/viewer.properties
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/uz/
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/uz/viewer.properties
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/vi/
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/vi/viewer.properties
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/wo/
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/wo/viewer.properties
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/xh/
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/xh/viewer.properties
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/zh-CN/
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/zh-CN/viewer.properties
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/zh-TW/
+nextcloud/apps/files_pdfviewer/js/pdfjs/web/locale/zh-TW/viewer.properties
 nextcloud/apps/files_pdfviewer/js/pdfjs/web/standard_fonts/
 nextcloud/apps/files_pdfviewer/js/pdfjs/web/standard_fonts/FoxitDingbats.pfb
 nextcloud/apps/files_pdfviewer/js/pdfjs/web/standard_fonts/FoxitFixed.pfb
@@ -13699,6 +13775,8 @@ nextcloud/apps/files_pdfviewer/lib/Listeners/
 nextcloud/apps/files_pdfviewer/lib/Listeners/CSPListener.php
 nextcloud/apps/files_pdfviewer/lib/Listeners/LoadPublicViewerListener.php
 nextcloud/apps/files_pdfviewer/lib/Listeners/LoadViewerListener.php
+nextcloud/apps/files_pdfviewer/package-lock.json
+nextcloud/apps/files_pdfviewer/package.json
 nextcloud/apps/files_pdfviewer/pdfjs-get.js
 nextcloud/apps/files_pdfviewer/templates/
 nextcloud/apps/files_pdfviewer/templates/viewer.php
@@ -14944,6 +15022,8 @@ nextcloud/apps/firstrunwizard/lib/Notification/BackgroundJob.php
 nextcloud/apps/firstrunwizard/lib/Notification/Notifier.php
 nextcloud/apps/firstrunwizard/lib/Settings/
 nextcloud/apps/firstrunwizard/lib/Settings/Personal.php
+nextcloud/apps/firstrunwizard/package-lock.json
+nextcloud/apps/firstrunwizard/package.json
 nextcloud/apps/firstrunwizard/templates/
 nextcloud/apps/firstrunwizard/templates/page.apps.php
 nextcloud/apps/firstrunwizard/templates/page.clients.php
@@ -15157,6 +15237,8 @@ nextcloud/apps/logreader/lib/Log/SearchFilter.php
 nextcloud/apps/logreader/lib/Settings/
 nextcloud/apps/logreader/lib/Settings/Admin.php
 nextcloud/apps/logreader/lib/Settings/Section.php
+nextcloud/apps/logreader/package-lock.json
+nextcloud/apps/logreader/package.json
 nextcloud/apps/logreader/postcss.config.js
 nextcloud/apps/logreader/screenshots/
 nextcloud/apps/logreader/screenshots/reader.png
@@ -15714,6 +15796,8 @@ nextcloud/apps/notifications/lib/Settings/Admin.php
 nextcloud/apps/notifications/lib/Settings/AdminSection.php
 nextcloud/apps/notifications/lib/Settings/Personal.php
 nextcloud/apps/notifications/lib/Settings/PersonalSection.php
+nextcloud/apps/notifications/package-lock.json
+nextcloud/apps/notifications/package.json
 nextcloud/apps/notifications/templates/
 nextcloud/apps/notifications/templates/settings/
 nextcloud/apps/notifications/templates/settings/admin.php
@@ -16150,6 +16234,8 @@ nextcloud/apps/password_policy/lists/list-6.php
 nextcloud/apps/password_policy/lists/list-7.php
 nextcloud/apps/password_policy/lists/list-8.php
 nextcloud/apps/password_policy/lists/list-9.php
+nextcloud/apps/password_policy/package-lock.json
+nextcloud/apps/password_policy/package.json
 nextcloud/apps/password_policy/templates/
 nextcloud/apps/password_policy/templates/settings.php
 nextcloud/apps/password_policy/webpack.config.js
@@ -16479,6 +16565,8 @@ nextcloud/apps/photos/lib/Service/
 nextcloud/apps/photos/lib/Service/MediaPlaceManager.php
 nextcloud/apps/photos/lib/Service/ReverseGeoCoderService.php
 nextcloud/apps/photos/lib/Service/UserConfigService.php
+nextcloud/apps/photos/package-lock.json
+nextcloud/apps/photos/package.json
 nextcloud/apps/photos/postcss.config.js
 nextcloud/apps/photos/screenshots/
 nextcloud/apps/photos/screenshots/screenshot1.png
@@ -16666,6 +16754,8 @@ nextcloud/apps/privacy/lib/Settings/PrivacySection.php
 nextcloud/apps/privacy/lib/Settings/UserDataManifestoSettings.php
 nextcloud/apps/privacy/lib/Settings/WhereIsYourDataSettings.php
 nextcloud/apps/privacy/lib/Settings/WhoHasAccessSettings.php
+nextcloud/apps/privacy/package-lock.json
+nextcloud/apps/privacy/package.json
 nextcloud/apps/privacy/templates/
 nextcloud/apps/privacy/templates/mission.php
 nextcloud/apps/privacy/templates/user-data-manifesto.php
@@ -16716,6 +16806,8 @@ nextcloud/apps/provisioning_api/l10n/es_EC.js
 nextcloud/apps/provisioning_api/l10n/es_EC.json
 nextcloud/apps/provisioning_api/l10n/eu.js
 nextcloud/apps/provisioning_api/l10n/eu.json
+nextcloud/apps/provisioning_api/l10n/fa.js
+nextcloud/apps/provisioning_api/l10n/fa.json
 nextcloud/apps/provisioning_api/l10n/fr.js
 nextcloud/apps/provisioning_api/l10n/fr.json
 nextcloud/apps/provisioning_api/l10n/gl.js
@@ -16920,6 +17012,8 @@ nextcloud/apps/recommendations/lib/Service/RecentlyEditedFilesSource.php
 nextcloud/apps/recommendations/lib/Service/RecentlySharedFilesSource.php
 nextcloud/apps/recommendations/lib/Service/RecommendationService.php
 nextcloud/apps/recommendations/lib/Service/RecommendedFile.php
+nextcloud/apps/recommendations/package-lock.json
+nextcloud/apps/recommendations/package.json
 nextcloud/apps/recommendations/webpack.config.js
 nextcloud/apps/related_resources/
 nextcloud/apps/related_resources/.nextcloudignore
@@ -17207,6 +17301,8 @@ nextcloud/apps/related_resources/lib/Tools/Traits/
 nextcloud/apps/related_resources/lib/Tools/Traits/TArrayTools.php
 nextcloud/apps/related_resources/lib/Tools/Traits/TDeserialize.php
 nextcloud/apps/related_resources/lib/Tools/Traits/TStringTools.php
+nextcloud/apps/related_resources/package-lock.json
+nextcloud/apps/related_resources/package.json
 nextcloud/apps/related_resources/vendor/
 nextcloud/apps/related_resources/vendor/autoload.php
 nextcloud/apps/related_resources/vendor/composer/
@@ -17348,6 +17444,8 @@ nextcloud/apps/serverinfo/l10n/ko.js
 nextcloud/apps/serverinfo/l10n/ko.json
 nextcloud/apps/serverinfo/l10n/lb.js
 nextcloud/apps/serverinfo/l10n/lb.json
+nextcloud/apps/serverinfo/l10n/lo.js
+nextcloud/apps/serverinfo/l10n/lo.json
 nextcloud/apps/serverinfo/l10n/lt_LT.js
 nextcloud/apps/serverinfo/l10n/lt_LT.json
 nextcloud/apps/serverinfo/l10n/lv.js
@@ -18178,6 +18276,8 @@ nextcloud/apps/survey_client/l10n/et_EE.js
 nextcloud/apps/survey_client/l10n/et_EE.json
 nextcloud/apps/survey_client/l10n/eu.js
 nextcloud/apps/survey_client/l10n/eu.json
+nextcloud/apps/survey_client/l10n/fa.js
+nextcloud/apps/survey_client/l10n/fa.json
 nextcloud/apps/survey_client/l10n/fi.js
 nextcloud/apps/survey_client/l10n/fi.json
 nextcloud/apps/survey_client/l10n/fr.js
@@ -18463,6 +18563,8 @@ nextcloud/apps/suspicious_login/lib/Task/
 nextcloud/apps/suspicious_login/lib/Task/TrainTask.php
 nextcloud/apps/suspicious_login/lib/Util/
 nextcloud/apps/suspicious_login/lib/Util/AddressClassifier.php
+nextcloud/apps/suspicious_login/package-lock.json
+nextcloud/apps/suspicious_login/package.json
 nextcloud/apps/suspicious_login/screenshots/
 nextcloud/apps/suspicious_login/screenshots/admin_settings.png
 nextcloud/apps/suspicious_login/screenshots/notification_android.png
@@ -21375,6 +21477,8 @@ nextcloud/apps/text/l10n/ko.js
 nextcloud/apps/text/l10n/ko.json
 nextcloud/apps/text/l10n/lb.js
 nextcloud/apps/text/l10n/lb.json
+nextcloud/apps/text/l10n/lo.js
+nextcloud/apps/text/l10n/lo.json
 nextcloud/apps/text/l10n/lt_LT.js
 nextcloud/apps/text/l10n/lt_LT.json
 nextcloud/apps/text/l10n/lv.js
@@ -21496,6 +21600,8 @@ nextcloud/apps/text/lib/Service/NotificationService.php
 nextcloud/apps/text/lib/Service/SessionService.php
 nextcloud/apps/text/lib/Service/WorkspaceService.php
 nextcloud/apps/text/lib/TextFile.php
+nextcloud/apps/text/package-lock.json
+nextcloud/apps/text/package.json
 nextcloud/apps/text/templates/
 nextcloud/apps/text/templates/main.php
 nextcloud/apps/theming/
@@ -22151,6 +22257,8 @@ nextcloud/apps/twofactor_totp/lib/Service/ITotp.php
 nextcloud/apps/twofactor_totp/lib/Service/Totp.php
 nextcloud/apps/twofactor_totp/lib/Settings/
 nextcloud/apps/twofactor_totp/lib/Settings/Personal.php
+nextcloud/apps/twofactor_totp/package-lock.json
+nextcloud/apps/twofactor_totp/package.json
 nextcloud/apps/twofactor_totp/screenshots/
 nextcloud/apps/twofactor_totp/screenshots/enter_challenge.png
 nextcloud/apps/twofactor_totp/screenshots/settings.png
@@ -23169,6 +23277,8 @@ nextcloud/apps/viewer/lib/Event/
 nextcloud/apps/viewer/lib/Event/LoadViewer.php
 nextcloud/apps/viewer/lib/Listener/
 nextcloud/apps/viewer/lib/Listener/LoadViewerScript.php
+nextcloud/apps/viewer/package-lock.json
+nextcloud/apps/viewer/package.json
 nextcloud/apps/viewer/test.txt
 nextcloud/apps/viewer/tsconfig.json
 nextcloud/apps/viewer/webpack.config.ts
@@ -23250,6 +23360,8 @@ nextcloud/apps/weather_status/l10n/et_EE.js
 nextcloud/apps/weather_status/l10n/et_EE.json
 nextcloud/apps/weather_status/l10n/eu.js
 nextcloud/apps/weather_status/l10n/eu.json
+nextcloud/apps/weather_status/l10n/fa.js
+nextcloud/apps/weather_status/l10n/fa.json
 nextcloud/apps/weather_status/l10n/fi.js
 nextcloud/apps/weather_status/l10n/fi.json
 nextcloud/apps/weather_status/l10n/fr.js
@@ -23520,6 +23632,8 @@ nextcloud/apps/workflowengine/lib/Settings/Personal.php
 nextcloud/apps/workflowengine/lib/Settings/Section.php
 nextcloud/apps/workflowengine/templates/
 nextcloud/apps/workflowengine/templates/settings.php
+nextcloud/composer.json
+nextcloud/composer.lock
 @mode 0750
 @owner www
 @group www
@@ -24409,6 +24523,7 @@ nextcloud/core/doc/user/_images/mail-composer-indicator.png
 nextcloud/core/doc/user/_images/mail-minimize-composer.png
 nextcloud/core/doc/user/_images/mail.png
 nextcloud/core/doc/user/_images/mail_move-message-to-junk-folder.png
+nextcloud/core/doc/user/_images/mail_trash_retention_settings.png
 nextcloud/core/doc/user/_images/matterbridge-settings.png
 nextcloud/core/doc/user/_images/multi_sharing.png
 nextcloud/core/doc/user/_images/new-mail-account.png
@@ -26346,6 +26461,7 @@ nextcloud/lib/private/Share20/ProviderFactory.php
 nextcloud/lib/private/Share20/PublicShareTemplateFactory.php
 nextcloud/lib/private/Share20/Share.php
 nextcloud/lib/private/Share20/ShareAttributes.php
+nextcloud/lib/private/Share20/ShareDisableChecker.php
 nextcloud/lib/private/Share20/ShareHelper.php
 nextcloud/lib/private/Share20/UserRemovedListener.php
 nextcloud/lib/private/StreamImage.php
@@ -26749,6 +26865,7 @@ nextcloud/lib/public/Files/Config/IMountProvider.php
 nextcloud/lib/public/Files/Config/IMountProviderCollection.php
 nextcloud/lib/public/Files/Config/IRootMountProvider.php
 nextcloud/lib/public/Files/Config/IUserMountCache.php
+nextcloud/lib/public/Files/ConnectionLostException.php
 nextcloud/lib/public/Files/DavUtil.php
 nextcloud/lib/public/Files/EmptyFileNameException.php
 nextcloud/lib/public/Files/EntityTooLargeException.php
@@ -27221,6 +27338,8 @@ nextcloud/ocs-provider/index.php
 nextcloud/ocs/providers.php
 nextcloud/ocs/v1.php
 nextcloud/ocs/v2.php
+nextcloud/package-lock.json
+nextcloud/package.json
 nextcloud/public.php
 nextcloud/remote.php
 nextcloud/resources/
