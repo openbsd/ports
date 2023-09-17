@@ -2,7 +2,7 @@ ONLY_FOR_ARCHS =	aarch64 amd64 i386 powerpc
 
 COMMENT =		high assurance C compiler
 
-V =			3.13
+V =			3.13.1
 GH_ACCOUNT =		AbsInt
 GH_PROJECT =		CompCert
 GH_TAGNAME =		v${V}
