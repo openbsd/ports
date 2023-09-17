@@ -12,7 +12,7 @@ PORTROACH =		limitw:1,even
 
 COMMENT =		GTK+ port of the WebKit (${API}) rendering engine
 
-V =			2.40.5
+V =			2.42.0
 DISTNAME =		webkitgtk-${V}
 PKGNAME =		webkitgtk${API:S/.//}-${V}
 FULLPKGNAME =		${PKGNAME}
@@ -21,9 +21,9 @@ EXTRACT_SUFX =		.tar.xz
 SUBST_VARS =		API
 DPB_PROPERTIES =	parallel
 
-SHARED_LIBS +=  javascriptcoregtk-${API}     3.9
-SHARED_LIBS +=  webkit2gtk-${API}            3.9
-SHARED_LIBS +=	webkitgtk-6.0                0.1
+SHARED_LIBS +=  javascriptcoregtk-${API}     4.0
+SHARED_LIBS +=  webkit2gtk-${API}            4.0
+SHARED_LIBS +=	webkitgtk-6.0                0.2
 
 CATEGORIES =		www
 
@@ -41,9 +41,9 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gpg-error
 WANTLIB += gstallocators-1.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0
 WANTLIB += gstfft-1.0 gstgl-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0
 WANTLIB += gsttranscoder-1.0 gstvideo-1.0 harfbuzz harfbuzz-icu
-WANTLIB += hyphen icudata icui18n icuuc intl jpeg lcms2 m openjp2
-WANTLIB += pango-1.0 pangocairo-1.0 png secret-1 sqlite3 tasn1
-WANTLIB += webp webpdemux woff2dec xml2 xslt z
+WANTLIB += hyphen icudata icui18n icuuc intl jpeg jxl lcms2 m
+WANTLIB += openjp2 pango-1.0 pangocairo-1.0 png secret-1 sqlite3
+WANTLIB += tasn1 webp webpdemux woff2dec xml2 xslt z
 
 MASTER_SITES =		https://webkitgtk.org/releases/
 
@@ -73,6 +73,7 @@ RUN_DEPENDS =		geo/geoclue2 \
 LIB_DEPENDS =		archivers/woff2 \
 			devel/harfbuzz,-icu \
 			graphics/libavif \
+			graphics/libjxl \
 			graphics/libwebp \
 			graphics/openjp2 \
 			multimedia/gstreamer1/plugins-base \

@@ -19,6 +19,7 @@ include/webkitgtk-${API}/webkit/WebKitAutocleanups.h
 include/webkitgtk-${API}/webkit/WebKitAutomationSession.h
 include/webkitgtk-${API}/webkit/WebKitBackForwardList.h
 include/webkitgtk-${API}/webkit/WebKitBackForwardListItem.h
+include/webkitgtk-${API}/webkit/WebKitClipboardPermissionRequest.h
 include/webkitgtk-${API}/webkit/WebKitColorChooserRequest.h
 include/webkitgtk-${API}/webkit/WebKitContextMenu.h
 include/webkitgtk-${API}/webkit/WebKitContextMenuActions.h
@@ -33,6 +34,7 @@ include/webkitgtk-${API}/webkit/WebKitEditorState.h
 include/webkitgtk-${API}/webkit/WebKitEnumTypes.h
 include/webkitgtk-${API}/webkit/WebKitError.h
 include/webkitgtk-${API}/webkit/WebKitFaviconDatabase.h
+include/webkitgtk-${API}/webkit/WebKitFeature.h
 include/webkitgtk-${API}/webkit/WebKitFileChooserRequest.h
 include/webkitgtk-${API}/webkit/WebKitFindController.h
 include/webkitgtk-${API}/webkit/WebKitFormSubmissionRequest.h

@@ -32,7 +32,7 @@ Index: Source/cmake/WebKitCommon.cmake
      endif ()
  
      # -----------------------------------------------------------------------------
-@@ -205,7 +207,7 @@ if (NOT HAS_RUN_WEBKIT_COMMON)
+@@ -206,7 +208,7 @@ if (NOT HAS_RUN_WEBKIT_COMMON)
      include(CheckCXXCompilerFlag)
      include(CheckCXXSourceCompiles)
      include(CheckFunctionExists)

@@ -184,6 +184,7 @@ share/gtk-doc/html/webkit2gtk-${API}/class.AuthenticationRequest.html
 share/gtk-doc/html/webkit2gtk-${API}/class.AutomationSession.html
 share/gtk-doc/html/webkit2gtk-${API}/class.BackForwardList.html
 share/gtk-doc/html/webkit2gtk-${API}/class.BackForwardListItem.html
+share/gtk-doc/html/webkit2gtk-${API}/class.ClipboardPermissionRequest.html
 share/gtk-doc/html/webkit2gtk-${API}/class.ColorChooserRequest.html
 share/gtk-doc/html/webkit2gtk-${API}/class.ContextMenu.html
 share/gtk-doc/html/webkit2gtk-${API}/class.ContextMenuItem.html
@@ -296,6 +297,7 @@ share/gtk-doc/html/webkit2gtk-${API}/enum.ContextMenuAction.html
 share/gtk-doc/html/webkit2gtk-${API}/enum.CookieAcceptPolicy.html
 share/gtk-doc/html/webkit2gtk-${API}/enum.CookiePersistentStorage.html
 share/gtk-doc/html/webkit2gtk-${API}/enum.CredentialPersistence.html
+share/gtk-doc/html/webkit2gtk-${API}/enum.FeatureStatus.html
 share/gtk-doc/html/webkit2gtk-${API}/enum.HardwareAccelerationPolicy.html
 share/gtk-doc/html/webkit2gtk-${API}/enum.InputPurpose.html
 share/gtk-doc/html/webkit2gtk-${API}/enum.InsecureContentEvent.html
@@ -426,10 +428,14 @@ share/gtk-doc/html/webkit2gtk-${API}/method.CookieManager.delete_cookie_finish.h
 share/gtk-doc/html/webkit2gtk-${API}/method.CookieManager.delete_cookies_for_domain.html
 share/gtk-doc/html/webkit2gtk-${API}/method.CookieManager.get_accept_policy.html
 share/gtk-doc/html/webkit2gtk-${API}/method.CookieManager.get_accept_policy_finish.html
+share/gtk-doc/html/webkit2gtk-${API}/method.CookieManager.get_all_cookies.html
+share/gtk-doc/html/webkit2gtk-${API}/method.CookieManager.get_all_cookies_finish.html
 share/gtk-doc/html/webkit2gtk-${API}/method.CookieManager.get_cookies.html
 share/gtk-doc/html/webkit2gtk-${API}/method.CookieManager.get_cookies_finish.html
 share/gtk-doc/html/webkit2gtk-${API}/method.CookieManager.get_domains_with_cookies.html
 share/gtk-doc/html/webkit2gtk-${API}/method.CookieManager.get_domains_with_cookies_finish.html
+share/gtk-doc/html/webkit2gtk-${API}/method.CookieManager.replace_cookies.html
+share/gtk-doc/html/webkit2gtk-${API}/method.CookieManager.replace_cookies_finish.html
 share/gtk-doc/html/webkit2gtk-${API}/method.CookieManager.set_accept_policy.html
 share/gtk-doc/html/webkit2gtk-${API}/method.CookieManager.set_persistent_storage.html
 share/gtk-doc/html/webkit2gtk-${API}/method.Credential.copy.html
@@ -460,6 +466,18 @@ share/gtk-doc/html/webkit2gtk-${API}/method.FaviconDatabase.clear.html
 share/gtk-doc/html/webkit2gtk-${API}/method.FaviconDatabase.get_favicon.html
 share/gtk-doc/html/webkit2gtk-${API}/method.FaviconDatabase.get_favicon_finish.html
 share/gtk-doc/html/webkit2gtk-${API}/method.FaviconDatabase.get_favicon_uri.html
+share/gtk-doc/html/webkit2gtk-${API}/method.Feature.get_category.html
+share/gtk-doc/html/webkit2gtk-${API}/method.Feature.get_default_value.html
+share/gtk-doc/html/webkit2gtk-${API}/method.Feature.get_details.html
+share/gtk-doc/html/webkit2gtk-${API}/method.Feature.get_identifier.html
+share/gtk-doc/html/webkit2gtk-${API}/method.Feature.get_name.html
+share/gtk-doc/html/webkit2gtk-${API}/method.Feature.get_status.html
+share/gtk-doc/html/webkit2gtk-${API}/method.Feature.ref.html
+share/gtk-doc/html/webkit2gtk-${API}/method.Feature.unref.html
+share/gtk-doc/html/webkit2gtk-${API}/method.FeatureList.get.html
+share/gtk-doc/html/webkit2gtk-${API}/method.FeatureList.get_length.html
+share/gtk-doc/html/webkit2gtk-${API}/method.FeatureList.ref.html
+share/gtk-doc/html/webkit2gtk-${API}/method.FeatureList.unref.html
 share/gtk-doc/html/webkit2gtk-${API}/method.FileChooserRequest.cancel.html
 share/gtk-doc/html/webkit2gtk-${API}/method.FileChooserRequest.get_mime_types.html
 share/gtk-doc/html/webkit2gtk-${API}/method.FileChooserRequest.get_mime_types_filter.html
@@ -689,6 +707,7 @@ share/gtk-doc/html/webkit2gtk-${API}/method.Settings.get_enable_webrtc.html
 share/gtk-doc/html/webkit2gtk-${API}/method.Settings.get_enable_write_console_messages_to_stdout.html
 share/gtk-doc/html/webkit2gtk-${API}/method.Settings.get_enable_xss_auditor.html
 share/gtk-doc/html/webkit2gtk-${API}/method.Settings.get_fantasy_font_family.html
+share/gtk-doc/html/webkit2gtk-${API}/method.Settings.get_feature_enabled.html
 share/gtk-doc/html/webkit2gtk-${API}/method.Settings.get_hardware_acceleration_policy.html
 share/gtk-doc/html/webkit2gtk-${API}/method.Settings.get_javascript_can_access_clipboard.html
 share/gtk-doc/html/webkit2gtk-${API}/method.Settings.get_javascript_can_open_windows_automatically.html
@@ -750,6 +769,7 @@ share/gtk-doc/html/webkit2gtk-${API}/method.Settings.set_enable_webrtc.html
 share/gtk-doc/html/webkit2gtk-${API}/method.Settings.set_enable_write_console_messages_to_stdout.html
 share/gtk-doc/html/webkit2gtk-${API}/method.Settings.set_enable_xss_auditor.html
 share/gtk-doc/html/webkit2gtk-${API}/method.Settings.set_fantasy_font_family.html
+share/gtk-doc/html/webkit2gtk-${API}/method.Settings.set_feature_enabled.html
 share/gtk-doc/html/webkit2gtk-${API}/method.Settings.set_hardware_acceleration_policy.html
 share/gtk-doc/html/webkit2gtk-${API}/method.Settings.set_javascript_can_access_clipboard.html
 share/gtk-doc/html/webkit2gtk-${API}/method.Settings.set_javascript_can_open_windows_automatically.html
@@ -1180,7 +1200,9 @@ share/gtk-doc/html/webkit2gtk-${API}/property.WebsiteDataManager.is-ephemeral.ht
 share/gtk-doc/html/webkit2gtk-${API}/property.WebsiteDataManager.itp-directory.html
 share/gtk-doc/html/webkit2gtk-${API}/property.WebsiteDataManager.local-storage-directory.html
 share/gtk-doc/html/webkit2gtk-${API}/property.WebsiteDataManager.offline-application-cache-directory.html
+share/gtk-doc/html/webkit2gtk-${API}/property.WebsiteDataManager.origin-storage-ratio.html
 share/gtk-doc/html/webkit2gtk-${API}/property.WebsiteDataManager.service-worker-registrations-directory.html
+share/gtk-doc/html/webkit2gtk-${API}/property.WebsiteDataManager.total-storage-ratio.html
 share/gtk-doc/html/webkit2gtk-${API}/property.WebsiteDataManager.websql-directory.html
 share/gtk-doc/html/webkit2gtk-${API}/property.WebsitePolicies.autoplay.html
 share/gtk-doc/html/webkit2gtk-${API}/property.WindowProperties.fullscreen.html
@@ -1271,6 +1293,8 @@ share/gtk-doc/html/webkit2gtk-${API}/solarized-dark.css
 share/gtk-doc/html/webkit2gtk-${API}/solarized-light.css
 share/gtk-doc/html/webkit2gtk-${API}/struct.ApplicationInfo.html
 share/gtk-doc/html/webkit2gtk-${API}/struct.Credential.html
+share/gtk-doc/html/webkit2gtk-${API}/struct.Feature.html
+share/gtk-doc/html/webkit2gtk-${API}/struct.FeatureList.html
 share/gtk-doc/html/webkit2gtk-${API}/struct.GeolocationPosition.html
 share/gtk-doc/html/webkit2gtk-${API}/struct.ITPFirstParty.html
 share/gtk-doc/html/webkit2gtk-${API}/struct.ITPThirdParty.html
@@ -1300,6 +1324,9 @@ share/gtk-doc/html/webkit2gtk-${API}/type_func.PolicyError.quark.html
 share/gtk-doc/html/webkit2gtk-${API}/type_func.PrintError.quark.html
 share/gtk-doc/html/webkit2gtk-${API}/type_func.Settings.font_size_to_pixels.html
 share/gtk-doc/html/webkit2gtk-${API}/type_func.Settings.font_size_to_points.html
+share/gtk-doc/html/webkit2gtk-${API}/type_func.Settings.get_all_features.html
+share/gtk-doc/html/webkit2gtk-${API}/type_func.Settings.get_development_features.html
+share/gtk-doc/html/webkit2gtk-${API}/type_func.Settings.get_experimental_features.html
 share/gtk-doc/html/webkit2gtk-${API}/type_func.SnapshotError.quark.html
 share/gtk-doc/html/webkit2gtk-${API}/type_func.UserContentFilterError.quark.html
 share/gtk-doc/html/webkit2gtk-${API}/type_func.UserMessageError.quark.html

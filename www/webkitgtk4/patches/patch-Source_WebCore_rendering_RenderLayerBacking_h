@@ -13,4 +13,4 @@ Index: Source/WebCore/rendering/RenderLayerBacking.h
 +
  namespace WebCore {
  
- class EventRegionContext;
+ class KeyframeList;
