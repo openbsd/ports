@@ -250,6 +250,7 @@
      SUBDIR += umurmur
      SUBDIR += vamp-plugin-sdk
      SUBDIR += vgmplay
+     SUBDIR += vgmstream
      SUBDIR += vlorb
      SUBDIR += vorbis-tools
      SUBDIR += vorbisgain
