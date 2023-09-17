@@ -43,6 +43,9 @@ share/dbus-1/interfaces/org.freedesktop.ConsoleKit.Manager.xml
 share/dbus-1/interfaces/org.freedesktop.ConsoleKit.Seat.xml
 share/dbus-1/interfaces/org.freedesktop.ConsoleKit.Session.xml
 share/dbus-1/system-services/org.freedesktop.ConsoleKit.service
+share/doc/ConsoleKit2/
+share/doc/ConsoleKit2/spec/
+share/doc/ConsoleKit2/spec/ConsoleKit.html
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/consolekit/
 share/examples/consolekit/ConsoleKit/
