@@ -356,6 +356,7 @@ lib/gnome-builder/girepository-1.0/
 lib/gnome-builder/girepository-1.0/Ide-43.typelib
 lib/pkgconfig/gnome-builder-43.7.pc
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/Ide.py
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}Ide.${MODPY_PYC_MAGIC_TAG}pyc
 @bin libexec/gnome-builder-clang
 @bin libexec/gnome-builder-git
 share/applications/org.gnome.Builder.desktop
